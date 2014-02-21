@@ -231,5 +231,7 @@ share/mkcmd/xdr/Cstring.m
 share/mkcmd/xdr/Cstring.mc
 share/mkcmd/xdr/Cstring.mh
 share/mkcmd/xdr/Cstring.mi
+man/man1/mkcmd.1.gz
+man/man5/mkcmd.5.gz
 @dirrm share/mkcmd/xdr
 @dirrm share/mkcmd

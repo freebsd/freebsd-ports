@@ -13,8 +13,7 @@ COMMENT=	IM transparent proxy with monitoring, blocking, and content-filtering
 LICENSE=	GPLv2
 
 CFLAGS+=	-fPIC -I ${LOCALBASE}/include -DHAVE_SSL
-USE_GMAKE=	YES
-USES=		iconv
+USES=		iconv gmake
 USE_OPENSSL=	YES
 USE_LDCONFIG=	${LOCALBASE}/lib/imspector
 
@@ -24,19 +23,20 @@ USE_RC_SUBR=	${PORTNAME}
 
 MAKE_ENV+=	ETCDIR=${ETCDIR}
 
-OPTIONS_DEFINE=	IPFW
-OPTIONS_DEFAULT=	IPFW
-IPFW_DESC=	Add IPFW support
+OPTIONS_DEFINE=	IPFW PLUGINS
+OPTIONS_DEFAULT=IPFW
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+IPFW_DESC=	Add IPFW support
+PLUGINS_DESC=	Build plugins
+
+IPFW_CFLAGS=	-DIPFW_TRANSPARENT=1
+PLUGINS_USE=	MYSQL=yes SQLITE=yes PGSQL=yes
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MIPFW}
-CFLAGS+=	-DIPFW_TRANSPARENT=1
-.endif
-
 post-extract:
-	${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
@@ -46,12 +46,9 @@ post-patch:
 		${WRKSRC}/sslstate.cpp
 	@${REINPLACE_CMD} -e 's,%%ICONV_LIB%%,${ICONV_LIB},' \
 		${WRKSRC}/Makefile
-
-post-install:
-.for f in ${CONFIG_FILES}
-	@if [ ! -f ${ETCDIR}/${f} ]; then \
-		${CP} -p ${ETCDIR}/${f}.sample ${ETCDIR}/${f} ; \
-	fi
-.endfor
+.if ${PORT_OPTIONS:MPLUGINS}
+	@${REINPLACE_CMD} -e 's,#ADD_PLUGINS,ADD_PLUGINS,' \
+		${WRKSRC}/Makefile
+.endif
 
 .include <bsd.port.mk>

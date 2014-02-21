@@ -21,7 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	EXAMPLES 
+OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
 

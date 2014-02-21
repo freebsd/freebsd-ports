@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 

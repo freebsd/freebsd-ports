@@ -24,7 +24,6 @@ ALLDOMAINS_DESC=	Verify any domain with the backend
 EHLO_DESC=		Use EHLO instead of HELO in SMTP session
 USEMAILERTABLE_DESC=	Use mailertable to map domains to backends
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
@@ -55,16 +54,11 @@ post-patch:
 	    ${WRKSRC}/scam-back.c
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/mail
-	${INSTALL_PROGRAM} ${WRKSRC}/scam-back ${PREFIX}/libexec/scam-back
-	${INSTALL_DATA} ${WRKSRC}/scam.conf ${PREFIX}/etc/mail/scam-back.conf.sample
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/INSTALL ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/License ${DOCSDIR}
-.endif
-	${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
+	${INSTALL_PROGRAM} ${WRKSRC}/scam-back ${STAGEDIR}${PREFIX}/libexec/scam-back
+	${INSTALL_DATA} ${WRKSRC}/scam.conf ${STAGEDIR}${PREFIX}/etc/mail/scam-back.conf.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/License ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

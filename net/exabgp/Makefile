@@ -30,7 +30,7 @@ GROUPS=		_bgpd
 MAN1=		${PORTNAME}.1
 
 
-OPTIONS_DEFINE=	EXAMPLES 
+OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
 

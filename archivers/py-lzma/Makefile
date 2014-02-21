@@ -27,7 +27,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 PORTDOCS=	usage.txt
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

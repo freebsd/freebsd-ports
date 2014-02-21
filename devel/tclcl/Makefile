@@ -21,7 +21,7 @@ USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 PORTDOCS=	CHANGES.html TODO.html
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

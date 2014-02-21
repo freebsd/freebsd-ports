@@ -10,13 +10,13 @@ MASTER_SITE_SUBDIR=	gabor
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple/Small/Stupid Text Editor
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/sted
 
-MAN1=		sted.1
-PORTDOCS=	CHANGES COPYING README
-PLIST_FILES=	bin/sted
+PORTDOCS=	CHANGES README
+PLIST_FILES=	bin/sted man/man1/sted.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|CC = gcc|CC ?= gcc|" \
 			-e "s|C_OPTS = -Wall -O2|C_OPTS = ${CFLAGS}|" \
@@ -24,13 +24,11 @@ post-patch:
 	@${REINPLACE_CMD} "s|<curses.h>|<ncurses.h>|" ${WRKSRC}/sted.c
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/sted ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/sted.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/sted ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/sted.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

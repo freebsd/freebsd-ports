@@ -1,0 +1,62 @@
+bin/web-service-request
+%%SITE_PERL%%/GeoIP2.pm
+%%SITE_PERL%%/GeoIP2/Database/Reader.pm
+%%SITE_PERL%%/GeoIP2/Error/Generic.pm
+%%SITE_PERL%%/GeoIP2/Error/HTTP.pm
+%%SITE_PERL%%/GeoIP2/Error/IPAddressNotFound.pm
+%%SITE_PERL%%/GeoIP2/Error/Type.pm
+%%SITE_PERL%%/GeoIP2/Error/WebService.pm
+%%SITE_PERL%%/GeoIP2/Model/City.pm
+%%SITE_PERL%%/GeoIP2/Model/CityISPOrg.pm
+%%SITE_PERL%%/GeoIP2/Model/Country.pm
+%%SITE_PERL%%/GeoIP2/Model/Omni.pm
+%%SITE_PERL%%/GeoIP2/Record/City.pm
+%%SITE_PERL%%/GeoIP2/Record/Continent.pm
+%%SITE_PERL%%/GeoIP2/Record/Country.pm
+%%SITE_PERL%%/GeoIP2/Record/Location.pm
+%%SITE_PERL%%/GeoIP2/Record/MaxMind.pm
+%%SITE_PERL%%/GeoIP2/Record/Postal.pm
+%%SITE_PERL%%/GeoIP2/Record/RepresentedCountry.pm
+%%SITE_PERL%%/GeoIP2/Record/Subdivision.pm
+%%SITE_PERL%%/GeoIP2/Record/Traits.pm
+%%SITE_PERL%%/GeoIP2/Role/Error/HTTP.pm
+%%SITE_PERL%%/GeoIP2/Role/HasLocales.pm
+%%SITE_PERL%%/GeoIP2/Role/Model.pm
+%%SITE_PERL%%/GeoIP2/Role/Model/HasSubdivisions.pm
+%%SITE_PERL%%/GeoIP2/Role/Record/Country.pm
+%%SITE_PERL%%/GeoIP2/Role/Record/HasNames.pm
+%%SITE_PERL%%/GeoIP2/Types.pm
+%%SITE_PERL%%/GeoIP2/WebService/Client.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GeoIP2/.packlist
+%%PERL5_MAN3%%/GeoIP2.3.gz
+%%PERL5_MAN3%%/GeoIP2::Database::Reader.3.gz
+%%PERL5_MAN3%%/GeoIP2::Error::Generic.3.gz
+%%PERL5_MAN3%%/GeoIP2::Error::HTTP.3.gz
+%%PERL5_MAN3%%/GeoIP2::Error::IPAddressNotFound.3.gz
+%%PERL5_MAN3%%/GeoIP2::Error::Type.3.gz
+%%PERL5_MAN3%%/GeoIP2::Error::WebService.3.gz
+%%PERL5_MAN3%%/GeoIP2::Model::City.3.gz
+%%PERL5_MAN3%%/GeoIP2::Model::CityISPOrg.3.gz
+%%PERL5_MAN3%%/GeoIP2::Model::Country.3.gz
+%%PERL5_MAN3%%/GeoIP2::Model::Omni.3.gz
+%%PERL5_MAN3%%/GeoIP2::Record::City.3.gz
+%%PERL5_MAN3%%/GeoIP2::Record::Continent.3.gz
+%%PERL5_MAN3%%/GeoIP2::Record::Country.3.gz
+%%PERL5_MAN3%%/GeoIP2::Record::Location.3.gz
+%%PERL5_MAN3%%/GeoIP2::Record::MaxMind.3.gz
+%%PERL5_MAN3%%/GeoIP2::Record::Postal.3.gz
+%%PERL5_MAN3%%/GeoIP2::Record::RepresentedCountry.3.gz
+%%PERL5_MAN3%%/GeoIP2::Record::Subdivision.3.gz
+%%PERL5_MAN3%%/GeoIP2::Record::Traits.3.gz
+%%PERL5_MAN3%%/GeoIP2::WebService::Client.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GeoIP2
+@dirrm %%SITE_PERL%%/GeoIP2/WebService
+@dirrm %%SITE_PERL%%/GeoIP2/Role/Record
+@dirrm %%SITE_PERL%%/GeoIP2/Role/Model
+@dirrm %%SITE_PERL%%/GeoIP2/Role/Error
+@dirrm %%SITE_PERL%%/GeoIP2/Role
+@dirrm %%SITE_PERL%%/GeoIP2/Record
+@dirrm %%SITE_PERL%%/GeoIP2/Model
+@dirrm %%SITE_PERL%%/GeoIP2/Error
+@dirrm %%SITE_PERL%%/GeoIP2/Database
+@dirrmtry %%SITE_PERL%%/GeoIP2

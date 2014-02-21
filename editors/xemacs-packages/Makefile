@@ -133,7 +133,6 @@ PACKAGES_SUBDIR=	xemacs-packages
 
 FIXME=	gnus/binhex.elc gnus/uudecode.elc
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}
@@ -146,8 +145,8 @@ post-patch:
 	${FIND} ${WRKSRC} -name \*.orig -exec ${RM} -f \{} \;
 
 do-install:
-	${MKDIR} ${XEMACSDIR}/${PACKAGES_SUBDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${XEMACSDIR}/${PACKAGES_SUBDIR})
+	${MKDIR} ${STAGEDIR}${XEMACSDIR}/${PACKAGES_SUBDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${XEMACSDIR}/${PACKAGES_SUBDIR})
 
 post-install:
 	@cd ${WRKDIR} && \

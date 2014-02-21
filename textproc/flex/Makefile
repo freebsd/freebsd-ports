@@ -2,7 +2,7 @@
 
 PORTNAME=	flex
 PORTVERSION=	2.5.38
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -17,7 +17,7 @@ USES=		bison gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 # install flex header to its own dir to avoid conflict with system flex.
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/flex
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/flex --disable-shared
 CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
 INSTALL_TARGET=	install-strip
 

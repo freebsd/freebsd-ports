@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.4.19
-PORTREVISION?=	1
+DISTVERSION?=	8.4.20
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -125,7 +125,7 @@ CONFIGURE_ARGS+=--with-openssl
 .  if ( defined(SERVER_ONLY) && ${PORT_OPTIONS:MICU} ) || make(makesum)
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
-PATCH_SITES+=	http://people.freebsd.org/~crees/postgresql-icu/:icu
+PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	${ICU_PATCHFILE}:icu
 LIB_DEPENDS+=	libicudata.so:${PORTSDIR}/devel/icu
 .  endif

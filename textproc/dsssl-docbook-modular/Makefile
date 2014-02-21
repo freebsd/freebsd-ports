@@ -29,20 +29,16 @@ CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR} DTDDIR=${RELDIR} \
 		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
-NO_STAGE=	yes
 do-build:
 	${RM} -Rf ${WRKSRC}/docsrc
 
 pre-su-install:
-	${MKDIR} ${INSTDIR}
+	${MKDIR} ${STAGEDIR}${INSTDIR}
 	${FIND} ${WRKDIR} -name '*.orig' -exec ${RM} {} \;
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 
 do-install:
-	@cd ${WRKSRC} && ${TAR} cpf - . | (cd ${INSTDIR} && ${TAR} xpf -)
+	@cd ${WRKSRC} && ${TAR} cpf - . | (cd ${STAGEDIR}${INSTDIR} && ${TAR} xpf -)
 
-post-install:
-	-${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${RELDIR}/catalog
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

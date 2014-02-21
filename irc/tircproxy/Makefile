@@ -13,7 +13,7 @@ COMMENT=	IRC proxy server
 WRKSRC=		${WRKDIR}/tircproxy-0.4
 GNU_CONFIGURE=	YES
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

@@ -10,6 +10,7 @@ lib/Gofer/gofc.h
 lib/Gofer/runtime.o
 lib/Gofer/gofer
 lib/Gofer/gofc
+man/man1/gofer.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Readme
 %%PORTDOCS%%%%DOCSDIR%%/appx_a
 %%PORTDOCS%%%%DOCSDIR%%/appx_b

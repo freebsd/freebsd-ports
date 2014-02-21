@@ -12,9 +12,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tcl extension module for Perl5
 
 CONFIGURE_ARGS=	--nousestubs --tclsh ${TCLSH}
-USES=		perl5
+USES=		perl5 tcl
 USE_PERL5=	configure
-USE_TCL=	84+
 
 post-extract:
 	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 \{} \;

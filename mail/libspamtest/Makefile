@@ -17,16 +17,12 @@ LIBS=		libspamtest.a \
 INCLUDES=	spamtest.h \
 		msgstore.h
 
-NO_STAGE=	yes
-
-post-patch-script:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' \
-		${WRKSRC}/${MAKEFILE}
-
 do-install:
-	${MKDIR} ${PREFIX}/ap-mailfilter3/lib ${PREFIX}/ap-mailfilter3/include
-	${INSTALL_DATA} ${LIBS:S,^,${WRKSRC}/,} ${PREFIX}/ap-mailfilter3/lib
+	${MKDIR} ${STAGEDIR}${PREFIX}/ap-mailfilter3/lib \
+		${STAGEDIR}${PREFIX}/ap-mailfilter3/include
+	${INSTALL_DATA} ${LIBS:S,^,${WRKSRC}/,} \
+		${STAGEDIR}${PREFIX}/ap-mailfilter3/lib
 	${INSTALL_DATA} ${INCLUDES:S,^,${WRKSRC}/,} \
-		${PREFIX}/ap-mailfilter3/include
+		${STAGEDIR}${PREFIX}/ap-mailfilter3/include
 
 .include <bsd.port.mk>

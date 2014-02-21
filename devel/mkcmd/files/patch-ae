@@ -5,7 +5,7 @@
  'ifelse(HOSTTYPE,`PTX',
  `BIN=	${ROOT}/bin',
 -`BIN=	${DESTDIR}/usr/local/bin')`
-+`BIN=	${PREFIX}/bin')`
++`BIN=	${DESTDIR}${PREFIX}/bin')`
  PROG=	mkcmd
  
  I=/usr/include

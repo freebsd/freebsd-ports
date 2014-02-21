@@ -12,7 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation for Festival
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 INFO=		festival
 FDOC=		${PREFIX}/share/doc/festival
@@ -25,12 +24,12 @@ post-extract:
 	${RMDIR} ${WRKSRC}/festival/src-manual/images_gen
 
 do-install:
-	${MKDIR} ${FDOC}
+	${MKDIR} ${STAGEDIR}${FDOC}
 	${RM} ${WRKSRC}/festival/info/festival.info.orig
 	cd ${WRKSRC} && info=`${FIND} . -name '*.info*' -type f` && \
-	  ${CP} $$info ${PREFIX}/info && \
-	  ${CP} -r ${WRKSRC}/* ${FDOC} && \
-	  cd ${FDOC} && \
+	  ${CP} $$info ${STAGEDIR}${PREFIX}/info && \
+	  ${CP} -r ${WRKSRC}/* ${STAGEDIR}${FDOC} && \
+	  cd ${STAGEDIR}${FDOC} && \
 	  ${RM} -f $$info && \
 	  ${RMDIR} festival/info
 

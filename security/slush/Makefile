@@ -14,14 +14,11 @@ COMMENT=	A telnet-like application which uses a secure SSL channel
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
-NO_STAGE=	yes
 do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/control.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/slush ${PREFIX}/bin/slush
-	${INSTALL_PROGRAM} ${WRKSRC}/slushd ${PREFIX}/sbin/slushd
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/control.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/slush ${STAGEDIR}${PREFIX}/bin/slush
+	${INSTALL_PROGRAM} ${WRKSRC}/slushd ${STAGEDIR}${PREFIX}/sbin/slushd
 
 .include <bsd.port.mk>

@@ -21,19 +21,16 @@ INSTALL_TARGET=	site-install
 
 EXAMPLES=	hook2.rb test.rb
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/ja/
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja/
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja/
 .endfor
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
-	${INSTALL_DATA} ${WRKSRC}/eb.html ${RUBY_MODDOCDIR}/ja/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/eb.html ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
 .include <bsd.port.post.mk>

@@ -10,22 +10,19 @@ MASTER_SITE_SUBDIR=	system/network/admin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Looks at the icmp messages received by the host
 
-ALL_TARGET=
-MAN1=		icmpinfo.1
-PLIST_FILES=	bin/icmpinfo
+ALL_TARGET=	
+PLIST_FILES=	bin/icmpinfo \
+		man/man1/icmpinfo.man.gz
 PORTDOCS=	README
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/icmpinfo ${PREFIX}/bin
-	${CHOWN} root ${PREFIX}/bin/icmpinfo
-	${CHMOD} 4555 ${PREFIX}/bin/icmpinfo
-	${INSTALL_MAN} ${WRKSRC}/icmpinfo.man ${PREFIX}/man/man1/${MAN1}
+	${INSTALL_PROGRAM} ${WRKSRC}/icmpinfo ${STAGEDIR}${PREFIX}/bin
+	${CHOWN} root ${STAGEDIR}${PREFIX}/bin/icmpinfo
+	${CHMOD} 4555 ${STAGEDIR}${PREFIX}/bin/icmpinfo
+	${INSTALL_MAN} ${WRKSRC}/icmpinfo.man ${STAGEDIR}${PREFIX}/man/man1/${MAN1}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

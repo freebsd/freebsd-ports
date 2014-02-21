@@ -21,17 +21,16 @@ FONTSDIR=	share/fonts/CIDFont
 NO_BUILD=	YES
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/${FONTSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
 	${INSTALL_DATA} ${FILESDIR}/Munhwa-Regular-KSC-EUC-H.gsf \
 			${FILESDIR}/MunhwaGothic-Regular-KSC-EUC-H.gsf \
 			${FILESDIR}/Munhwa-Bold-KSC-EUC-H.gsf \
 			${FILESDIR}/MunhwaGothic-Bold-KSC-EUC-H.gsf \
-			${PREFIX}/${FONTSDIR}
+			${STAGEDIR}${PREFIX}/${FONTSDIR}
 	for file in ${CID_FONTS_KO}; do \
 		${INSTALL_DATA} ${DISTDIR}/$$file \
-			${PREFIX}/${FONTSDIR}; \
+			${STAGEDIR}${PREFIX}/${FONTSDIR}; \
 	done
 
 .include <bsd.port.mk>

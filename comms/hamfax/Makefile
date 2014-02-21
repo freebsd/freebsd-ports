@@ -15,11 +15,8 @@ LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 USE_QT4=	gui moc_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include" \
-					LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib"
 USES=		gmake pkgconfig
 USE_BZIP2=	yes
 
-
-MAN1=		hamfax.1
-NO_STAGE=	yes
 .include <bsd.port.mk>

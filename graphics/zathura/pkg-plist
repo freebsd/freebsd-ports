@@ -10,6 +10,7 @@ libdata/pkgconfig/zathura.pc
 man/man1/zathura.1.gz
 man/man5/zathurarc.5.gz
 share/applications/zathura.desktop
+share/dbus-1/interfaces/org.pwmt.zathura.xml
 %%NLS%%share/locale/ca/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/de/LC_MESSAGES/zathura.mo
@@ -23,6 +24,7 @@ share/applications/zathura.desktop
 %%NLS%%share/locale/hr/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/it/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/no/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/zathura.mo
@@ -38,3 +40,5 @@ share/applications/zathura.desktop
 %%NLS%%@dirrmtry share/locale/ta_IN
 %%NLS%%@dirrmtry share/locale/uk_UA/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/uk_UA
+@dirrmtry share/dbus-1/interfaces
+@dirrmtry share/dbus-1

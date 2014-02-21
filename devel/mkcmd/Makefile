@@ -17,11 +17,8 @@ BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0
 
 MAKE_FLAGS=
 MAKEFILE=
+USES=		desthack
 
-MAN1=		mkcmd.1
-MAN5=		mkcmd.5
-
-NO_STAGE=	yes
 post-patch:
 .for f in bin/mkcmd/machine.h bin/mkcmd/mkcmd.man lib/mkcmd/mkcmd.man
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${f}
@@ -37,8 +34,8 @@ do-install:
 	    ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/bin/mkcmd/mkcmd.man \
-	    ${PREFIX}/man/man1/mkcmd.1
+	    ${STAGEDIR}${PREFIX}/man/man1/mkcmd.1
 	${INSTALL_MAN} ${WRKSRC}/lib/mkcmd/mkcmd.man \
-	    ${PREFIX}/man/man5/mkcmd.5
+	    ${STAGEDIR}${PREFIX}/man/man5/mkcmd.5
 
 .include <bsd.port.mk>

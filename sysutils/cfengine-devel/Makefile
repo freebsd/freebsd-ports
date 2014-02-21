@@ -20,6 +20,8 @@ CONFLICTS=	cfengine-[23]*
 
 IGNORE=		Development has not branched from 3.5.0 yet
 BROKEN=		Not fetchavle
+DEPRECATED=	Broken since June 2013
+EXPIRATION_DATE=2014-03-19
 
 USE_RC_SUBR=	cf-execd cf-serverd
 

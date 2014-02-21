@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	-prefix ${PREFIX} -cc "${CC} ${CFLAGS}" -with-pthread \
 		-bindir ${PREFIX}/lib/metaocaml/bin \
 		-mandir ${DATADIR}/man
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	world opt metaocamlopt opt.opt
 STRIP=
 
@@ -56,8 +56,8 @@ MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
 		camlp4.1 camlp4o.opt.1 camlp4.1 camlp4r.opt.1 \
 		camlp4.1 ocpp.1
 
-OPTIONS_DEFINE=	X11 LABELTK
-OPTIONS_DEFAULT=	X11 LABELTK
+OPTIONS_DEFINE=	X11 LABLTK
+OPTIONS_DEFAULT=	X11 LABLTK
 LABLTK_DESC=	build the LablTk library
 
 PLISTDIR=	${PREFIX}/lib/metaocaml \
@@ -80,11 +80,9 @@ PLIST_SUB+=	X11=""
 PLIST_SUB+=	X11="@comment "
 .endif
 
-# We would like to use bsd.tcl.mk here, but we can't USE_TCL after including
-# bsd.port.pre.mk and we can't test WITH_LABLTK before including bsd.port.pre.mk
 .if ${PORT_OPTIONS:MLABLTK}
-LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-CONFIGURE_ARGS+=-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4"
+USES+=		tk
+CONFIGURE_ARGS+=-tkdefs "-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}"
 CONFIGURE_ARGS+=-tklibs "-L${LOCALBASE}/lib"
 PLIST_SUB+=	LABLTK=""
 .if ! ${PORT_OPTIONS:MX11}

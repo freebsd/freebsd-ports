@@ -15,11 +15,10 @@ ALL_TARGET=	ltl2ba
 CFLAGS+=	-DNXT
 PLIST_FILES=	bin/ltl2ba
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^CC=/d' -e '/^CFLAGS=/d' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ltl2ba ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/ltl2ba ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

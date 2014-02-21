@@ -23,17 +23,12 @@ ALL_TARGET=	tetgen tetlib
 PORTEXAMPLES=	example.poly
 PLIST_FILES=	bin/tetgen include/tetgen.h lib/libtet.a
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tetgen ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/tetgen.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libtet.a ${PREFIX}/lib
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example.poly ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/tetgen ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/tetgen.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/libtet.a ${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example.poly ${STAGEDIR}${EXAMPLESDIR}
 
 regression-test:
 	(cd ${INSTALL_WRKSRC} && ./tetgen -p example.poly )

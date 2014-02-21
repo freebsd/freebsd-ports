@@ -36,7 +36,7 @@ MAKE_ENV+=	GDT_FLAG=-DHAVE_GDT
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

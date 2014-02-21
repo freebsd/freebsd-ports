@@ -16,6 +16,7 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 .endif
 PKGDIR=		${.CURDIR}
 
+USE_GCC=	any
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
@@ -24,7 +25,6 @@ JAVA_RUN=	yes
 
 SVN_BUILD_BINDINGS=yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
 CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME} --with-jikes=no
@@ -32,10 +32,10 @@ CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME} --with-jikes=no
 do-build:
 	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
 	cd ${WRKSRC} ; \
-	  ${MAKE} javahl
+	  ${MAKE} javahl ${MAKE_ARGS}
 
 do-install:
 	cd ${WRKSRC} ; \
-	  ${MAKE} install-javahl
+	  ${MAKE} install-javahl ${MAKE_ARGS}
 
 .include <bsd.port.post.mk>

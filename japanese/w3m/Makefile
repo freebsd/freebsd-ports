@@ -4,7 +4,7 @@
 CATEGORIES=	japanese
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A pager/text-based WWW browser with Japanese support
+COMMENT=	Pager/text-based WWW browser with Japanese support
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
 PKGDIR=		${.CURDIR}
@@ -14,5 +14,4 @@ OPTIONS_SLAVE=	DOCS JAPANESE
 NO_DIALOG=	yes
 CONFLICTS=	ja-w3m-img-0.5.* w3m-0.5.* w3m-img-0.5.*
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

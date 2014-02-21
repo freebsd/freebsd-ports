@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console Yahoo! messenger client
 
+DEPRECATED=	Broken for more than 1 year (http://www.icculus.org/ari-yahoo/)
+EXPIRATION_DATE=	2014-04-18
+
 USES=		gmake
 PLIST_FILES=	bin/ari-yahoo
 USE_GCC=	any

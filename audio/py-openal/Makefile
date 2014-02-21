@@ -21,7 +21,7 @@ PYDISTUTILS_PKGNAME=	PyOpenAL
 WRKSRC=		${WRKDIR}/PyOpenAL-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-openal
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

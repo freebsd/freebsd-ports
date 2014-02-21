@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	nakenchat
-PORTVERSION=	2.12
+PORTVERSION=	2.22
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.mikekohn.net/nakenchat/
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Small (under 50k) chat server with many features
+
+LICENSE=	GPLv2
 
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	nakenchat
@@ -31,12 +33,12 @@ DOTQ_CONFIGURE_ON=		--enable-dotQ
 FUSERLIST_CONFIGURE_ON=		--enable-whofile
 ELITEFILTER_CONFIGURE_ON=	--enable-elite
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-post-install:
-	@if [ ! -f ${PREFIX}/etc/nakenchat.conf ]; then \
-		${CP} -p ${PREFIX}/etc/nakenchat.conf.sample ${PREFIX}/etc/nakenchat.conf ; \
-	fi
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/nakenchat \
+		${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/nakenchat.conf \
+		${STAGEDIR}${PREFIX}/etc/nakenchat.conf.sample
 
 .include <bsd.port.mk>

@@ -11,12 +11,12 @@ MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.8/
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
-LIB_DEPENDS=	oil-0.3.0:${PORTSDIR}/devel/liboil \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-USES=		pkgconfig
+USES=		pkgconfig pathfix
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack gtk20 ltverhack
+USE_GNOME=	gtk20 ltverhack
 USE_GSTREAMER=	core good mp3 ffmpeg
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -27,22 +27,25 @@ PLIST_SUB=	VERSION=${PORTVERSION:R}
 OPTIONS_DEFINE=	PULSEAUDIO
 PULSEAUDIO_DESC="Enable the PulseAudio sound module"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=		pulse.0:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--with-audio=pulse
 .else
 CONFIGURE_ARGS+=	--with-audio=oss
 .endif
 
 post-extract:
-	@${CP} ${FILESDIR}/swfdec_playback_oss.c \
+	${CP} ${FILESDIR}/swfdec_playback_oss.c \
 	    	${WRKSRC}/swfdec-gtk
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+	${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libswfdec-${PORTVERSION:R}.so.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libswfdec-gtk-${PORTVERSION:R}.so.0
 
 .include <bsd.port.post.mk>

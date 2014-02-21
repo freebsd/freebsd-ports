@@ -20,7 +20,8 @@ LIB_DEPENDS=	libSDL_image.so:${PORTSDIR}/graphics/sdl_image \
 RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig compiler:c++11-lang
+USES=		gmake pkgconfig
+USE_GCC=	yes
 
 CONFIGURE_ARGS+=--with-boost-system=boost_system \
 		--with-boost-filesystem=boost_filesystem

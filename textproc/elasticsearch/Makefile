@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_RC_SUBR=	${PORTNAME}
 
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

@@ -17,9 +17,6 @@ USE_RUBY_FEATURES=	iconv
 
 PORTDOCS=	readme.html readme.en.html readme.ja.html
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '1 s|#!.*|#!${RUBY}|' \
@@ -29,12 +26,10 @@ post-patch:
 			${WRKSRC}/${PORTNAME}.rb
 
 do-install:
-	cd ${WRKSRC}/${PORTNAME}/ && ${COPYTREE_SHARE} . ${RUBY_SITELIBDIR}/${PORTNAME}/
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.rb ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.example ${PREFIX}/etc/
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	cd ${WRKSRC}/${PORTNAME} && ${COPYTREE_SHARE} . ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.rb ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.example ${STAGEDIR}${PREFIX}/etc
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

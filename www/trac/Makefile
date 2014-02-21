@@ -39,6 +39,7 @@ SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>0:${PORTSDIR}/devel/py-subver
 CONFLICTS=		ja-trac-[0-9]*
 PORTEXAMPLES=		*
 PORTDATA=		*
+MAKE_ENV=		HOME=/dev/null
 
 USES=			shebangfix
 SHEBANG_FILES=		contrib/cgi-bin/trac.fcgi contrib/cgi-bin/trac.cgi \

@@ -5,14 +5,13 @@ PORTNAME=	policykit-qt
 PORTVERSION=	0.9.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/apps/KDE4.x/admin/
+MASTER_SITES=	KDE/stable/apps/KDE4.x/admin/
 DISTNAME=	polkit-qt-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PolicyKit manager for Qt
 
-LIB_DEPENDS=	polkit.2:${PORTSDIR}/sysutils/policykit
+LIB_DEPENDS=	libpolkit.so:${PORTSDIR}/sysutils/policykit
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -23,7 +22,6 @@ USES=		cmake gettext
 
 PORTSCOUT=	limit:^0
 
-NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt

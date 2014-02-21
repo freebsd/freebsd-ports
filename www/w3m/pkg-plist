@@ -10,6 +10,10 @@ libexec/w3m/cgi-bin/w3mhelperpanel
 libexec/w3m/inflate
 libexec/w3m/xface2xpm
 %%INLINE_IMAGE%%libexec/w3m/w3mimgdisplay
+man/ja/man1/w3m.1.gz
+man/ja/man1/w3mman.1.gz
+man/man1/w3m.1.gz
+man/man1/w3mman.1.gz
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/FAQ.html
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/HISTORY
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/MANUAL.html

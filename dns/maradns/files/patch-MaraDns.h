@@ -1,6 +1,6 @@
---- MaraDns.h.orig	Sat Jun  2 13:46:12 2007
-+++ MaraDns.h	Sat Jun  2 13:47:12 2007
-@@ -75,16 +75,16 @@
+--- ./MaraDns.h.orig	2014-02-12 08:17:18.000000000 +0000
++++ ./MaraDns.h	2014-02-20 15:23:22.000000000 +0000
+@@ -77,21 +77,21 @@
       line to point to Bash
   */
  
@@ -20,3 +20,9 @@
  
  /* The directory that Duende runs in.  This directory has to exist for
     Duende to be able to run.  Again, IF YOU CHANGE THIS, CHANGE THE
+    DUENDE MAN PAGE */
+-#define DUENDE_CHROOT_DIR "/etc/maradns/logger"
++#define DUENDE_CHROOT_DIR "/var/empty/"
+ 
+ /* The default IP address that Askmara uses; this used to be 127.0.0.3
+    but is now 127.0.0.1 because many non-Linux systems only use 127.0.0.1

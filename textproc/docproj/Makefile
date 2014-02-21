@@ -3,7 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -23,7 +23,7 @@ RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
 		${LOCALBASE}/share/xml/dtd/xhtml/xhtml.soc:${PORTSDIR}/textproc/xhtml \
 		docbook-xsl-ns>=1.78.1_4:${PORTSDIR}/textproc/docbook-xsl-ns \
 		${LOCALBASE}/share/xsl/iso-schematron/xslt1/iso_schematron_skeleton_for_xslt1.xsl:${PORTSDIR}/textproc/iso-schematron-xslt \
-		${LOCALBASE}/share/xml/docbook/5.0:${PORTSDIR}/textproc/docbook-500 \
+		${LOCALBASE}/share/xml/docbook/5.0:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent \
 		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser \
 		zip:${PORTSDIR}/archivers/zip

@@ -1,16 +1,4 @@
 bin/quirc
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/color.txt
-%%PORTDOCS%%%%DOCSDIR%%/dccresum.txt
-%%PORTDOCS%%%%DOCSDIR%%/links.txt
-%%PORTDOCS%%%%DOCSDIR%%/nickcomp.txt
-%%PORTDOCS%%%%DOCSDIR%%/quedit.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc1459.txt
-%%PORTDOCS%%%%DOCSDIR%%/tdcc.txt
 %%DATADIR%%/VERSION
 %%DATADIR%%/common/install.tcl
 %%DATADIR%%/dal.tcl
@@ -36,4 +24,3 @@ bin/quirc
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/common
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

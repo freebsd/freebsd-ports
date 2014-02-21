@@ -3,6 +3,7 @@
 
 PORTNAME=	ccons
 PORTVERSION=	r251
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	llvm-config33:${PORTSDIR}/devel/llvm33 \
 		clang++33:${PORTSDIR}/lang/clang33
+RUN_DEPENDS=	clang++33:${PORTSDIR}/lang/clang33
 LIB_DEPENDS=	libncurses.so:${PORTSDIR}/devel/ncurses
 
 ONLY_FOR_ARCHS=	i386 amd64

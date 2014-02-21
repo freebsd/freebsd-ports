@@ -31,18 +31,23 @@ BINFILES=	BIGGUY/bg_test COMBS/combtest CUT/lin_all CUT/mincut \
 		TOOLS/tourlen TSP/bosstell TSP/concorde TSP/cutserv \
 		TSP/poolcat TSP/probserv TSP/test_tsp VERIFY/verify
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/concorde.a ${PREFIX}/lib/libconcorde.a
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 ${PREFIX}/include/concorde
-	${INSTALL_DATA} ${WRKSRC}/concorde.h ${PREFIX}/include/concorde
+	${INSTALL_DATA} ${WRKSRC}/concorde.a \
+		${STAGEDIR}${PREFIX}/lib/libconcorde.a
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
+		${STAGEDIR}${PREFIX}/include/concorde
+	${INSTALL_DATA} ${WRKSRC}/concorde.h \
+		${STAGEDIR}${PREFIX}/include/concorde
 .for f in ${INCFILES}
-	${INSTALL_DATA} ${WRKSRC}/INCLUDE/${f} ${PREFIX}/include/concorde
+	${INSTALL_DATA} ${WRKSRC}/INCLUDE/${f} \
+		${STAGEDIR}${PREFIX}/include/concorde
 .endfor
-	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755 ${PREFIX}/bin/concorde
+	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755 \
+		${STAGEDIR}${PREFIX}/bin/concorde
 .for f in ${BINFILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin/concorde
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/concorde
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/TINY/randtsp.awk ${PREFIX}/bin/concorde
+	${INSTALL_SCRIPT} ${WRKSRC}/TINY/randtsp.awk \
+		${STAGEDIR}${PREFIX}/bin/concorde
 
 .include <bsd.port.mk>

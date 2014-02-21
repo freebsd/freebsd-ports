@@ -76,6 +76,7 @@ OPTIONS_SUB=	yes # GPS GLES
 
 GLES_DESC=	OpenGL ES 2.0 support in kwin and kinfocenter
 GLES_USE=	GL=egl,glesv2
+GLES_CMAKE_OFF=	-DWITH_OpenGLES=off
 
 GPS_DESC=	GPS geolocation via gpsd
 GPS_LIB_DEPENDS=	libgps.so:${PORTSDIR}/astro/gpsd

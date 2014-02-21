@@ -7,7 +7,6 @@ etc/openldap/schema/authldap.schema.default
 lib/courier-authlib/libauthldap.a
 lib/courier-authlib/libauthldap.la
 lib/courier-authlib/libauthldap.so
-lib/courier-authlib/libauthldap.so.0
 %%PORTDOCS%%%%DOCSDIR%%/README.ldap
 @dirrmtry etc/openldap/schema
 @dirrmtry etc/openldap

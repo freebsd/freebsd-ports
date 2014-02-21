@@ -12,12 +12,10 @@ COMMENT=	A tool for making GIF animations
 
 WRKSRC=		${WRKDIR}/whirlgif-3.04.orig
 
-MAN1=		whirlgif.1
-PLIST_FILES=	bin/whirlgif
+PLIST_FILES=	bin/whirlgif man/man1/whirlgif.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/whirlgif ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/whirlgif.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/whirlgif ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/whirlgif.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

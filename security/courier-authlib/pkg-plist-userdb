@@ -8,5 +8,4 @@ sbin/vchkpw2userdb
 lib/courier-authlib/libauthuserdb.a
 lib/courier-authlib/libauthuserdb.la
 lib/courier-authlib/libauthuserdb.so
-lib/courier-authlib/libauthuserdb.so.0
 

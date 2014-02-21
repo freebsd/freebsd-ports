@@ -15,10 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English lexicon for Festival
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 FHOME=		${PREFIX}/share/festival
 
 do-install:
-	${TAR} -C ${FHOME:H} -xzvpf ${_DISTDIR}/${_DISTFILES}
+	${TAR} -C ${STAGEDIR}${FHOME:H} -xzvpf ${_DISTDIR}/${_DISTFILES}
 
 .include <bsd.port.mk>

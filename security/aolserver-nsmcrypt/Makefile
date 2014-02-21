@@ -31,7 +31,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 USE_GMAKE=	yes
 MAKEFILE=	Makefile.ns
 
-USE_TCL=	84+
+USES=		tcl
 
 PLIST_FILES=	${AOLSERVERBASE}/bin/nsmcrypt.so \
 		${AOLSERVERBASE}/lib/libnsmcrypt.a \

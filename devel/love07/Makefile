@@ -41,7 +41,7 @@ PLIST_FILES=	bin/love07
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}07
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

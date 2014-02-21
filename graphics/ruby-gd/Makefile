@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--with-gd-lib="${LOCALBASE}/lib" \
 
 INSTALL_TARGET=	site-install
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 

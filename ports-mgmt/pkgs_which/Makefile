@@ -16,7 +16,7 @@ USES=		perl5
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

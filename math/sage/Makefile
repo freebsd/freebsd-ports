@@ -8,6 +8,7 @@ MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
 		http://www-ftp.lip6.fr/pub/math/sagemath/src/ \
 		http://www.sagemath.org/src-old/
+PKGNAMESUFFIX=	-math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
@@ -33,9 +34,8 @@ NO_STAGE=	yes
 
 PLIST_FILES=	bin/sage
 USE_GCC=	yes
-USE_TK=		yes
 USE_TEX=	latex:build
-USES=		fortran gmake iconv
+USES=		fortran gmake iconv tk
 MAKE_JOBS_SAFE=	yes
 LDFLAGS:=	-Wl,-rpath=${WRKSRC}/local/lib ${LDFLAGS}
 FFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}
@@ -152,27 +152,27 @@ MAKE_ENV+=	MAKE="${MAKE} -j${MAKE_JOBS_NUMBER}"
 
 .ifdef MAINTAINER_MODE
 test-fbsd-patches:	patch
-	rm -rf ${WRKSRC}/build/pkgs/*/src; \
+	${RM} -rf ${WRKSRC}/build/pkgs/*/src; \
 	for d in ${WRKSRC}/build/pkgs/*; do \
 		if ls $$d/fbsd-patch-* > /dev/null 2>&1; then \
-			echo Testing patches in $${d##*/}; \
-			b=$${d##*/}-`cat $$d/package-version.txt | sed 's/\.p.*//'`; \
+			${ECHO_MSG} Testing patches in $${d##*/}; \
+			b=$${d##*/}-`${CAT} $$d/package-version.txt | ${SED} 's/\.p.*//'`; \
 			c=${WRKSRC}/upstream/$$b.tar.bz2 ; \
 			if [ ! -e $$c ]; then \
-				echo Couldn\'t find $$c; \
+				${ECHO_MSG} Couldn\'t find $$c; \
 				exit 1; \
 			fi; \
-			if ! (cd $$d && tar xf $$c && mv $$b src); then \
-				echo Unable to unarchive $$c; \
+			if ! (cd $$d && tar xf $$c && ${MV} $$b src); then \
+				${ECHO_MSG} Unable to unarchive $$c; \
 				exit 1; \
 			fi; \
-			if ! (cd $$d && cat fbsd-patch-* | patch); then \
-				echo Patches in $${d##*/} failed; \
+			if ! (cd $$d && ${CAT} fbsd-patch-* | patch); then \
+				${ECHO_MSG} Patches in $${d##*/} failed; \
 				exit 1; \
 			fi; \
 		fi; \
 	done; \
-	rm -rf ${WRKSRC}/build/pkgs/*/src
+	${RM} -rf ${WRKSRC}/build/pkgs/*/src
 .endif
 
 .include <bsd.port.post.mk>

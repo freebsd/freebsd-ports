@@ -1,0 +1,12 @@
+--- ./configure.orig	2014-01-14 21:46:25.000000000 +0000
++++ ./configure	2014-02-20 15:33:18.000000000 +0000
+@@ -93,6 +93,9 @@
+ 	echo It looks like you are using Cygwin\; this should compile fine
+ 	echo by typing in \'make\'.
+ 	EXITCODE=0
++elif echo $UNAME | grep -i freebsd > /dev/null ; then
++	cat $BUILDDIR/Makefile.freebsd >> Makefile
++	EXITCODE=0
+ # This is a a template for adding support to a new OS for MaraDNS.
+ # Some points: If you port MaraDNS, make sure the underlying OS has
+ # /dev/urandom support or have the default mararc have a

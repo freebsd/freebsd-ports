@@ -12,8 +12,7 @@ LICENSE=	BSD
 
 USE_BZIP2=	yes
 
-MAN1=		rndpassw.1
-PLIST_FILES=	bin/rndpassw
+PLIST_FILES=	bin/rndpassw \
+		man/man1/rndpassw.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

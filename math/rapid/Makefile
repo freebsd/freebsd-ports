@@ -19,21 +19,17 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 ALL_TARGET=
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=	rapid.1
+MAKE_ENV+=	V=1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
 	${REINPLACE_CMD} -E "s/friend RAPID_Collide/friend int RAPID_Collide/" ${WRKSRC}/RAPID_private.H
 
 do-install:
-	${MKDIR} ${PREFIX}/include/RAPID
-	${INSTALL_DATA}	${WRKSRC}/*.H ${PREFIX}/include/RAPID
-	${INSTALL_DATA}	${WRKSRC}/libRAPID.a ${PREFIX}/lib
-	${INSTALL_MAN} ${FILESDIR}/rapid.1 ${MANPREFIX}/man/man1
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/RAPID
+	${INSTALL_DATA}	${WRKSRC}/*.H ${STAGEDIR}${PREFIX}/include/RAPID
+	${INSTALL_DATA}	${WRKSRC}/libRAPID.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_MAN} ${FILESDIR}/rapid.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>

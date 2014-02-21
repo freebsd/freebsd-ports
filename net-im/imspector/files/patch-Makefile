@@ -1,5 +1,5 @@
---- Makefile.orig	2008-12-22 15:03:15.000000000 +0300
-+++ Makefile	2011-06-14 14:26:22.072210675 +0400
+--- Makefile.orig	2010-02-23 14:20:33.000000000 -0300
++++ Makefile	2014-02-11 21:23:19.000000000 -0200
 @@ -1,5 +1,5 @@
 -DESTDIR = /
 -PREFIX = /usr
@@ -46,7 +46,7 @@
  yahooprotocolplugin.so: yahooprotocolplugin.o libimspector.so
  	$(CXX) yahooprotocolplugin.o libimspector.so $(PLUGIN_FLAGS)
  ircprotocolplugin.so: ircprotocolplugin.o libimspector.so
-@@ -162,15 +162,15 @@
+@@ -162,17 +162,17 @@
  install: imspector libimspector.so $(PLUGINS)
  	-mkdir -p $(DESTDIR)/$(PREFIX)/sbin
  	-mkdir -p $(DESTDIR)/$(PREFIX)/lib/imspector
@@ -62,10 +62,14 @@
 -	-install imspector.conf $(DESTDIR)/$(PREFIX)/etc/imspector/imspector.conf
 -	-install badwords.txt $(DESTDIR)/$(PREFIX)/etc/imspector/badwords.txt
 -	-install acl.txt $(DESTDIR)/$(PREFIX)/etc/imspector/acl.txt
+-	-mkdir -p /var/log/imspector
+-	-mkdir -p /var/lib/imspector
 +	-mkdir -p $(DESTDIR)/$(ETCDIR)
 +	-${BSD_INSTALL_DATA} imspector.conf $(DESTDIR)/$(ETCDIR)/imspector.conf.sample
 +	-${BSD_INSTALL_DATA} badwords.txt $(DESTDIR)/$(ETCDIR)/badwords.txt.sample
 +	-${BSD_INSTALL_DATA} acl.txt $(DESTDIR)/$(ETCDIR)/acl.txt.sample
- 	-mkdir -p /var/log/imspector
- 	-mkdir -p /var/lib/imspector
++	-mkdir -p $(DESTDIR)/var/log/imspector
++	-mkdir -p $(DESTDIR)/var/lib/imspector
  
+ install-cert:
+ 	-mkdir -p $(DESTDIR)/$(PREFIX)/etc/imspector

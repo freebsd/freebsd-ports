@@ -45,7 +45,7 @@ post-install:
 	#
 .endif
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 

@@ -23,7 +23,7 @@ MAKE_ARGS=	TOBUILD="dact libdact.so dact.conf"
 MAN1=		dact.1
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 post-patch:

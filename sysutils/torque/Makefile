@@ -58,7 +58,7 @@ MLINKS=		pbs_sched_cc.8 pbs_sched.8 \
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	EXAMPLES 
+OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
 

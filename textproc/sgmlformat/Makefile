@@ -3,7 +3,7 @@
 
 PORTNAME=	sgmlformat
 PORTVERSION=	1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -34,7 +34,7 @@ RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/openjade
 RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 .endif
 RUN_DEPENDS+=	${LOCALBASE}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
-		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410
+		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml
 # Above depending on docbook-4.1 file is just for workaround.  We need
 # some of docbook DTDs, but not all.
 

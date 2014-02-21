@@ -3,6 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	3.1.10
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/3.1/ \
 		http://git.dbmail.eu/paul/dbmail/snapshot/
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/share/sgml/docbook/4.5:${PORTSDIR}/textproc/docbook-450
+		${LOCALBASE}/share/sgml/docbook/4.5:${PORTSDIR}/textproc/docbook-sgml
 
 CONFLICTS=	dbmail-2.* dbmail22-[0-9]*
 

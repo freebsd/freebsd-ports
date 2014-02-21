@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/busy bin/hourglass
 PORTDOCS=	CALIBRATION
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

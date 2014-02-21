@@ -22,7 +22,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 MAN1=	dump_osc.1 send_osc.1
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

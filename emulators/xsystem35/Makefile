@@ -17,9 +17,8 @@ LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 
 OPTIONS_DEFINE=	ESOUND DOCS EXAMPLES
 
-USES=		gettext
+USES=		gettext gmake
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf libtool
 CONFIGURE_ARGS=	--without-included-gettext \
 		--with-cachesize=20 \
@@ -33,7 +32,6 @@ SUB_FILES=	pkg-message
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MESOUND}

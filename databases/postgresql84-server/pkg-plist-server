@@ -426,9 +426,6 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Asia/Qyzylorda
 %%TZDATA%%share/postgresql/timezone/Asia/Rangoon
 %%TZDATA%%share/postgresql/timezone/Asia/Riyadh
-%%TZDATA%%share/postgresql/timezone/Asia/Riyadh87
-%%TZDATA%%share/postgresql/timezone/Asia/Riyadh88
-%%TZDATA%%share/postgresql/timezone/Asia/Riyadh89
 %%TZDATA%%share/postgresql/timezone/Asia/Saigon
 %%TZDATA%%share/postgresql/timezone/Asia/Sakhalin
 %%TZDATA%%share/postgresql/timezone/Asia/Samarkand
@@ -639,9 +636,6 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Mexico/BajaNorte
 %%TZDATA%%share/postgresql/timezone/Mexico/BajaSur
 %%TZDATA%%share/postgresql/timezone/Mexico/General
-%%TZDATA%%share/postgresql/timezone/Mideast/Riyadh87
-%%TZDATA%%share/postgresql/timezone/Mideast/Riyadh88
-%%TZDATA%%share/postgresql/timezone/Mideast/Riyadh89
 %%TZDATA%%share/postgresql/timezone/NZ
 %%TZDATA%%share/postgresql/timezone/NZ-CHAT
 %%TZDATA%%share/postgresql/timezone/Navajo
@@ -746,7 +740,6 @@ share/postgresql/timezonesets/Pacific.txt
 %%TZDATA%%@dirrm share/postgresql/timezone/Europe
 %%TZDATA%%@dirrm share/postgresql/timezone/Indian
 %%TZDATA%%@dirrm share/postgresql/timezone/Mexico
-%%TZDATA%%@dirrm share/postgresql/timezone/Mideast
 %%TZDATA%%@dirrm share/postgresql/timezone/Pacific
 %%TZDATA%%@dirrm share/postgresql/timezone/US
 %%TZDATA%%@dirrm share/postgresql/timezone

@@ -19,9 +19,8 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	%%RUBY_SITELIBDIR%%/htmlsplit.rb
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/htmlsplit.rb ${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/htmlsplit.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
 
 .include <bsd.port.mk>
-#		http://www.moonwolf.com/ruby/archive/htmlsplit102.zip

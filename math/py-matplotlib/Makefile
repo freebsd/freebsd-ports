@@ -14,11 +14,13 @@ COMMENT=	Plotting library uses a syntax familiar to MATLAB users
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		pkgconfig
+USES=		pkgconfig shebangfix
+SHEBANG_FILES=	examples/pylab_examples/unicode_demo.py \
+		examples/animation/old_animation/movie_demo.py
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 CFLAGS+=	-I${LOCALBASE}/include
@@ -32,7 +34,6 @@ WXAGGBACKEND_DESC=	WXAgg backend support
 
 UNIQUENAME=	${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(PACKAGE_BUILDING) && \
@@ -69,8 +70,7 @@ PLIST_SUB+=	GTKAGGBACKEND="@comment "
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
-USE_TCL_RUN=	yes
-USE_TK_RUN=	yes
+USES+=		tk:run
 
 TKAGG_BACKEND=	True
 
@@ -95,15 +95,14 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 post-extract:
 	${CHMOD} -R ga+r ${WRKDIR}
 
-# bsd.tcl.mk doesn't set TK_VER, so we use TCL_VER instead
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 			 -e 's|%%TCL_INCLUDEDIR%%|${TCL_INCLUDEDIR}|g' \
 			 -e 's|%%TK_INCLUDEDIR%%|${TK_INCLUDEDIR}|g' \
 			 -e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}|g' \
 			 -e 's|%%TK_LIBDIR%%|${TK_LIBDIR}|g' \
-			 -e 's|%%TCL_VER%%|${TCL_VER:S/.//}|g' \
-			 -e 's|%%TK_VER%%|${TCL_VER:S/.//}|g' \
+			 -e 's|%%TCL_VER%%|${TCL_SHLIB_VER}|g' \
+			 -e 's|%%TK_VER%%|${TK_SHLIB_VER}|g' \
 		${WRKSRC}/setupext.py
 	${REINPLACE_CMD} -e 's|%%GTK_BACKEND%%|${GTK_BACKEND}|g' \
 			 -e 's|%%GTKAGG_BACKEND%%|${GTKAGG_BACKEND}|g' \
@@ -113,8 +112,8 @@ post-patch:
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -5,6 +5,13 @@ bin/docbook2man
 bin/docbook2texi
 bin/sgml2xml-isoent
 bin/utf8trans
+man/man1/db2x_manxml.1.gz
+man/man1/db2x_texixml.1.gz
+man/man1/db2x_xsltproc.1.gz
+man/man1/docbook2man.1.gz
+man/man1/docbook2texi.1.gz
+man/man1/sgml2xml-isoent.1.gz
+man/man1/utf8trans.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/charsets.html
 %%PORTDOCS%%%%DOCSDIR%%/cindex.html
@@ -166,4 +173,4 @@ bin/utf8trans
 @dirrm %%DATADIR%%/dtd
 @dirrm %%DATADIR%%/charmaps
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

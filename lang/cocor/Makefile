@@ -25,7 +25,7 @@ MAN1=		${PORTNAME}.1
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 

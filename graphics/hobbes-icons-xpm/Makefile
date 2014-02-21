@@ -15,7 +15,7 @@ NO_BUILD=	yes
 
 LIBDIR=		${STAGEDIR}${PREFIX}/include/X11/pixmaps
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

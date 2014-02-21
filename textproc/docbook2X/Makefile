@@ -24,26 +24,14 @@ CONFLICTS=	docbook-utils-*
 
 GNU_CONFIGURE=	yes
 USES=		iconv gmake perl5
+CONFIGURE_ENV=	PERL=${PERL}
 
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc__Makefile.in
-.endif
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+INFO=		docbook2X docbook2man-xslt docbook2texi-xslt
+
 post-patch:
-		@${REINPLACE_CMD} "s|\$${prefix}|${PREFIX}|" \
-			${WRKSRC}/configure
-
-MAN1=		db2x_manxml.1 \
-		db2x_texixml.1 \
-		db2x_xsltproc.1 \
-		docbook2man.1 \
-		docbook2texi.1 \
-		sgml2xml-isoent.1 \
-		utf8trans.1
-
-INFO=		docbook2X \
-		docbook2man-xslt \
-		docbook2texi-xslt
+	@${REINPLACE_CMD} "s|\$${prefix}|${PREFIX}|" \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

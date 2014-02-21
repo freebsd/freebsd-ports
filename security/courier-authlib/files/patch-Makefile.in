@@ -1,5 +1,5 @@
---- Makefile.in.orig	2013-09-29 04:24:36.000000000 +0200
-+++ Makefile.in	2013-10-16 12:26:13.000000000 +0200
+--- Makefile.in.orig	2013-11-11 19:58:27.000000000 +0100
++++ Makefile.in	2013-12-30 11:45:33.000000000 +0100
 @@ -85,11 +85,10 @@
  POST_UNINSTALL = :
  build_triplet = @build@
@@ -305,16 +305,15 @@
 +@HAVE_BASE_TRUE@	-chown @mailuser@ $(DESTDIR)@authdaemonvar@
 +@HAVE_BASE_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authdaemonvar@
  	test "@LIBAUTHUSERDB@" = "" && exit 0 ;\
--		$(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) makedat/makedatprog \
-+ 		$(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) libs/makedat/makedatprog \
+ 		$(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) libs/makedat/makedatprog \
  				$(DESTDIR)$(pkglibexecdir)/makedatprog ; \
 +		$(INSTALL_SCRIPT) userdb/vchkpw2userdb \
 +				$(DESTDIR)$(sbindir)/vchkpw2userdb ; \
  		$(INSTALL_SCRIPT) userdb/pw2userdb \
  				$(DESTDIR)$(sbindir)/pw2userdb ; \
  		$(INSTALL_SCRIPT) userdb/makeuserdb \
-@@ -2034,9 +2096,10 @@
- 	for f in $(pkglib_LTLIBRARIES); do . ./$$f; rm -f $(DESTDIR)$(pkglibdir)/$$dlname.0 $(DESTDIR)$(pkglibdir)/$$dlname.0.0; ln -s $$dlname $(DESTDIR)$(pkglibdir)/$$dlname.0; done
+@@ -2033,9 +2095,10 @@
+ 				$(DESTDIR)$(sbindir)/userdb-test-cram-md5
  
  uninstall-hook: uninstall-authldaprc uninstall-authdaemonrc uninstall-authmysqlrc uninstall-authpgsqlrc uninstall-authsqliterc
 -	rm -f $(DESTDIR)$(pkglibexecdir)/authdaemond
@@ -325,7 +324,7 @@
  				$(DESTDIR)$(sbindir)/pw2userdb \
  				$(DESTDIR)$(sbindir)/makeuserdb \
  				$(DESTDIR)$(sbindir)/userdb \
-@@ -2048,7 +2111,7 @@
+@@ -2046,7 +2109,7 @@
  	$(SHELL) ./config.status --file=authlib.html
  
  authlib.3: authlib.3.in
@@ -334,7 +333,7 @@
  
  @HAVE_SGML_TRUE@authpasswd.html: authpasswd.sgml libs/docbook/sgml2html
  @HAVE_SGML_TRUE@	libs/docbook/sgml2html authpasswd.sgml authpasswd.html
-@@ -2133,10 +2196,10 @@
+@@ -2131,11 +2194,11 @@
  	@SHELL@ authmigrate
  
  install-configure:
@@ -342,10 +341,12 @@
 -	test -f $(DESTDIR)@authmysqlrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authmysqlrc@.dist || true
 -	test -f $(DESTDIR)@authpgsqlrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authpgsqlrc@.dist || true
 -	test -f $(DESTDIR)@authldaprc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authldaprc@.dist || true
-+@HAVE_BASE_TRUE@	test -f $(DESTDIR)@authdaemonrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authdaemonrc@.dist || true ; chmod 0600 $(DESTDIR)@authdaemonrc@
-+@HAVE_AUTHMYSQL_TRUE@	test -f $(DESTDIR)@authmysqlrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authmysqlrc@.dist || true ; chmod 0600 $(DESTDIR)@authmysqlrc@
-+@HAVE_AUTHPGSQL_TRUE@	test -f $(DESTDIR)@authpgsqlrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authpgsqlrc@.dist || true ; chmod 0600 $(DESTDIR)@authpgsqlrc@
-+@HAVE_LDAP_TRUE@	test -f $(DESTDIR)@authldaprc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authldaprc@.dist || true ; chmod 0600 $(DESTDIR)@authldaprc@
+-	test -f $(DESTDIR)@authsqliterc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authsqliterc@.dist || true
++@HAVE_BASE_TRUE@	test -f $(DESTDIR)@authdaemonrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authdaemonrc@.dist || true
++@HAVE_AUTHMYSQL_TRUE@	test -f $(DESTDIR)@authmysqlrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authmysqlrc@.dist || true
++@HAVE_AUTHPGSQL_TRUE@	test -f $(DESTDIR)@authpgsqlrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authpgsqlrc@.dist || true
++@HAVE_LDAP_TRUE@	test -f $(DESTDIR)@authldaprc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authldaprc@.dist || true
++@HAVE_AUTHSQLITE_TRUE@	test -f $(DESTDIR)@authsqliterc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authsqliterc@.dist || true
  
  # For maintainer's use only
  

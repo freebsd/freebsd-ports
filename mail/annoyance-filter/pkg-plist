@@ -1,5 +1,6 @@
 bin/annoyance-filter
 bin/annoyance-filter-run
+man/man1/annoyance-filter.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README

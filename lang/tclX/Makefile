@@ -19,7 +19,7 @@ LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 USE_BZIP2=	yes
 
 USES=		tcl
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/tclx${PORTVERSION}
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${TCL_INCLUDEDIR}/unix\
 		-I${TCL_INCLUDEDIR}/generic

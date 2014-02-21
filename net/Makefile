@@ -131,6 +131,7 @@
     SUBDIR += etherboot
     SUBDIR += etrace
     SUBDIR += exabgp
+    SUBDIR += exaddos
     SUBDIR += findmtu
     SUBDIR += flowgrep
     SUBDIR += fonulator
@@ -531,6 +532,7 @@
     SUBDIR += p5-Geo-IP
     SUBDIR += p5-Geo-IP-PurePerl
     SUBDIR += p5-Geo-IPfree
+    SUBDIR += p5-GeoIP2
     SUBDIR += p5-Google-SAML-Request
     SUBDIR += p5-Google-SAML-Response
     SUBDIR += p5-Growl-GNTP

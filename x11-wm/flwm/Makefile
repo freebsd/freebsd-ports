@@ -15,15 +15,14 @@ LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk-devel
 
 USE_XORG=	x11 xt
 GNU_CONFIGURE=	yes
-
-CFLAGS+=	-DFL_LIBRARY
+CONFIGURE_ENV+=	CXXFLAGS="-DFL_LIBRARY `${LOCALBASE}/bin/fltk-devel/fltk-config --cflags`"
 
 PLIST_FILES=	bin/flwm \
 		man/man1/flwm.1.gz
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; /^main/s|^|int |g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	${REINPLACE_CMD} -e 's|^LIBS =.*|LIBS = `fltk-config --ldflags`|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|^LIBS =.*|LIBS = `${LOCALBASE}/bin/fltk-devel/fltk-config --ldflags`|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flwm ${STAGEDIR}${PREFIX}/bin

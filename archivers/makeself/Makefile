@@ -24,7 +24,7 @@ PLIST_FILES=	bin/makeself bin/makeself-header \
 
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

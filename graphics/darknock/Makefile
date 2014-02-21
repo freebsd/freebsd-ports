@@ -27,7 +27,7 @@ DESKTOP_ENTRIES=	"${PORTNAME}" \
 			"Graphics;Qt;" \
 			"true"
 
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 

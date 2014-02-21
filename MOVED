@@ -5513,6 +5513,7 @@ textproc/p5-ElasticSearch|textproc/p5-ElasticSearch-legacy|2014-02-12|This versi
 x11-fonts/cosmic-sans-neue-mono|x11-fonts/fantasque-sans-mono|2014-02-13|Renamed upstream
 mail/zmailer||2014-02-13|Broken since at least last August
 lang/gcc34|lang/gcc|2014-02-13|Superseded by GCC 4.6 or later
+devel/adabooch-doc-html||2014-02-15|Obsolete; adabooch now has DOCS option
 x11-toolkits/sakura|x11/sakura|2014-02-16|Moved to a better category
 misc/kde4-shared-mime-info||2014-02-18|Removed, the port not needed anymore
 deskutils/kdepim44-runtime||2014-02-18|Removed: conflicts with new kdepimlibs
@@ -5520,3 +5521,19 @@ deskutils/kdepim44||2014-02-18|Removed: depends on deskutils/kdepim44-runtime
 misc/kde-xdg-env||2014-02-18|Removed, remnant of KDE 3
 lang/g95||2014-02-18|Removed, uses an old version of GCC which can't be built anymore
 games/py-ski|games/ski|2014-02-18|Rename to match upstream naming
+textproc/docbook-241|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-300|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-310|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-400|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-410|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-420|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-430|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-440|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-450|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-xml-430|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
+textproc/docbook-xml-440|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
+textproc/docbook-xml-450|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
+textproc/docbook-500|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
+textproc/docbook-sk|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
+emulators/ski||2014-02-19|Removed, does not exist on HP's site anymore
+sysutils/liblogging|devel/liblogging|2014-02-20|Already exists as devel/liblogging

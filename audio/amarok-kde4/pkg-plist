@@ -62,8 +62,8 @@ lib/libamaroklib.so
 lib/libamaroklib.so.1
 lib/libamaroklib.so.1.0.0
 lib/libamarokocsclient.so
-lib/libamarokocsclient.so.5
-lib/libamarokocsclient.so.5.0.1
+lib/libamarokocsclient.so.4
+lib/libamarokocsclient.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libamarokpud.so
 lib/libamarokpud.so.1
 lib/libamarokpud.so.1.0.0

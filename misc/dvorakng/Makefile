@@ -16,22 +16,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS 
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/dvorakng
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README TODO
-.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dvorakng ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/dvorakng ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

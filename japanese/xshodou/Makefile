@@ -8,19 +8,15 @@ CATEGORIES=	japanese tk
 MASTER_SITES=	http://kozos.jp/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Japanese shodou program for X based on Tcl/Tk
+COMMENT=	Japanese shodou program for X based on Tcl/Tk
 
-USE_TK_WRAPPER=	yes
+USES=		tk
 
-MANCOMPRESSED=	yes
-MAN1=		xshodou.1
-
-NO_STAGE=	yes
 post-patch:
-.for f in Makefile xshodou
 	@${REINPLACE_CMD} -e \
 		's|/usr/X11R6|${PREFIX}|g ; \
-		 s|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${f}
-.endfor
+		 s|/usr/local/bin/wish|${WISH}|' ${WRKSRC}/xshodou
+	@${REINPLACE_CMD} -e \
+		's|/usr/X11R6|${STAGEDIR}${PREFIX}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

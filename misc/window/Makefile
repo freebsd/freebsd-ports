@@ -9,17 +9,15 @@ MASTER_SITES=	http://people.FreeBSD.org/~trhodes/
 MAINTAINER=	trhodes@FreeBSD.org
 COMMENT=	Window environment on ASCII terminals
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 
 WRKSRC=		${WRKDIR}/window
 CFLAGS+=	-Wno-return-type
 
-MAN1=		window.1
-PLIST_FILES=	bin/window
+PLIST_FILES=	bin/window man/man1/window.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/window ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/window ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/window.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

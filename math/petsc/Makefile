@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/suitesparse"	\
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

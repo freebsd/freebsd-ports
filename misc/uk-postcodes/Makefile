@@ -18,8 +18,7 @@ EXTRACT_AFTER_ARGS=	> ${WRKSRC}/uk.postcodes
 NO_BUILD=	yes
 PLIST_FILES=	share/misc/uk.postcodes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/uk.postcodes ${PREFIX}/share/misc
+	${INSTALL_DATA} ${WRKSRC}/uk.postcodes ${STAGEDIR}${PREFIX}/share/misc
 
 .include <bsd.port.mk>

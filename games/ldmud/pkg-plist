@@ -1,5 +1,7 @@
 sbin/ldmud
 man/man1/ldmud.1.gz
+@owner mud
+@group mud
 %%LPMUD%%%%DATADIR%%/ACCESS.ALLOW
 %%LPMUD%%%%DATADIR%%/NEWS
 %%LPMUD%%%%DATADIR%%/README
@@ -510,6 +512,8 @@ man/man1/ldmud.1.gz
 %%DEMOLIB%%%%DATADIR%%/sys/tls.h
 %%DEMOLIB%%%%DATADIR%%/telnetneg.h
 %%DEMOLIB%%%%DATADIR%%/uni-crasher/crashleak.c
+@owner root
+@group wheel
 %%PORTDOCS%%%%DOCSDIR%%/man/ldmud.1
 %%PORTDOCS%%%%DOCSDIR%%/3.2vs3.2.1
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
@@ -1397,5 +1401,7 @@ man/man1/ldmud.1.gz
 %%LPMUD%%@dirrm %%DATADIR%%/doc
 %%LPMUD%%@dirrm %%DATADIR%%/banish
 @dirrm %%DATADIR%%
+@owner mud
+@group mud
 @dirrmtry /var/run/ldmud
 @dirrmtry /var/log/ldmud

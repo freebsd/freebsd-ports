@@ -3,6 +3,7 @@
 
 PORTNAME=	duo
 PORTVERSION=	1.9.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://dl.duosecurity.com/ \
 		http://mirrors.rit.edu/zi/
@@ -19,12 +20,6 @@ CONFIGURE_ARGS=	--with-pam=${PREFIX}/lib/security --sysconfdir=${PREFIX}/etc \
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
-
-MAN3=		duo.3
-MAN8=		login_duo.8 pam_duo.8
-
-OPTIONS=	DOCS
-
 
 OPTIONS_DEFINE=	DOCS
 

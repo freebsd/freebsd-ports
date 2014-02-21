@@ -46,7 +46,7 @@ GRAPHICS=	# none
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

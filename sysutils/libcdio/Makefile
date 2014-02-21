@@ -24,18 +24,10 @@ CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG}
 USE_PERL5=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-MAN1=	cd-drive.1 cd-info.1 iso-read.1 iso-info.1 cd-read.1
 
 INFO=		libcdio
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-_MANLANG=	"" ja
-_MAN1=	cd-paranoia.1
-.for lang in ${_MANLANG}
-_MANPAGES+=	${_MAN1:S%^%${MAN1PREFIX}/man/${lang}/man1/%}
-.endfor
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/jp/man1|/ja/man1|' \

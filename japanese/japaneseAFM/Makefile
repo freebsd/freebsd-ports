@@ -16,12 +16,11 @@ NO_BUILD=	yes
 
 AFMDIR=		${PREFIX}/share/fonts/afm
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${AFMDIR}
+	@${MKDIR} ${STAGEDIR}${AFMDIR}
 .for font in GothicBBB-Medium Ryumin-Light
 .for dir in H V
-	${INSTALL_DATA} ${WRKSRC}/${font}-${dir} ${AFMDIR}
+	${INSTALL_DATA} ${WRKSRC}/${font}-${dir} ${STAGEDIR}${AFMDIR}
 .endfor
 .endfor
 

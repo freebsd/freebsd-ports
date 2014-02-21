@@ -10,8 +10,7 @@ MAINTAINER=	rand@meridian-enviro.com
 COMMENT=	Library for Evation's Irman infrared receiver
 
 HAS_CONFIGURE=	YES
-USE_GMAKE=	YES
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+USES=		gmake
+CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

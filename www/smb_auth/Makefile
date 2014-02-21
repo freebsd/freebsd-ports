@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/${SAMBA_PORT}
 ALL_TARGET=	smb_auth
 SAMBA_PORT?=	net/samba36
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

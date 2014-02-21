@@ -1306,6 +1306,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/vcard.pyo
 share/icons/hicolor/64x64/apps/gajim.png
 share/icons/hicolor/scalable/apps/gajim.svg
+man/man1/gajim.1.gz
+man/man1/gajim-remote.1.gz
+man/man1/gajim-history-manager.1.gz
 %%NLS%%share/locale/be/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/be@latin/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gajim.mo

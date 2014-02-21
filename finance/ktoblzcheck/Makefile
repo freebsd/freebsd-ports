@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	ktoblzcheck
-PORTVERSION=	1.44
+PORTVERSION=	1.45
 CATEGORIES=	finance german
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Check bank codes of German banks
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21
 
 USES=		pathfix
 USE_AUTOTOOLS=	libtool

@@ -1,24 +1,18 @@
 # Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
 
-PORTNAME=	${GNUSHOGI_PORTNAME}
-PORTVERSION=	${GNUSHOGI_PORTVERSION}
+PORTNAME=	gnushogi
+PORTVERSION=	1.4.2
 CATEGORIES=	games
-MASTER_SITES=	${GNUSHOGI_MASTER_SITES}
-MASTER_SITE_SUBDIR=	${GNUSHOGI_MASTER_SITE_SUBDIR}
-DISTNAME=	${GNUSHOGI_DISTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU version of Shogi
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-x --without-xshogi
+GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
 
 INFO=		gnushogi
-
-.include "${.CURDIR}/../../games/gnushogi/Makefile.common"
-.include <bsd.port.pre.mk>
 
 post-extract:
 	-@${RM} ${WRKSRC}/doc/gnushogi.info*
@@ -28,6 +22,8 @@ post-patch:
 		${WRKSRC}/gnushogi/Makefile.in
 	@${REINPLACE_CMD} -e '/HAVE_SETLINEBUF/s|ifdef|ifndef|' \
 		${WRKSRC}/gnushogi/gnushogi.h
+	@${REINPLACE_CMD} -e '/<sys\/file.h>/d' \
+		${WRKSRC}/gnushogi/*dsp.c
 
 pre-build:
 	cd ${WRKSRC}/doc && makeinfo --no-split gnushogi
@@ -38,13 +34,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/gnushogi/gnushogi.bbk ${STAGEDIR}${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/gnushogi.info ${STAGEDIR}${PREFIX}/info
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/BOOKFILES ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/PORTING ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.gam ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.rules ${STAGEDIR}${DOCSDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

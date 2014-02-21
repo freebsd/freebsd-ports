@@ -19,16 +19,16 @@ COMMENT=	Local mail delivery agent
 
 INSTALL_TARGET=	install-suid install.man
 
-MAN1=		formail.1 lockfile.1 procmail.1
-MAN5=		procmailex.5 procmailrc.5 procmailsc.5
-PLIST_FILES=	bin/formail bin/lockfile bin/mailstat bin/procmail
+PLIST_FILES=	bin/formail bin/lockfile bin/mailstat bin/procmail \
+		man/man1/formail.1.gz man/man1/lockfile.1.gz \
+		man/man1/procmail.1.gz man/man5/procmailex.5.gz \
+		man/man5/procmailrc.5.gz man/man5/procmailsc.5.gz
 PORTDOCS=	FAQ FEATURES HISTORY KNOWN_BUGS README
 PORTEXAMPLES=	1procmailrc 1rmail 2procmailrc 2rmail 3procmailrc 3rmail \
 		advanced dirname forward local_procmail_lmtp.m4 mailstat
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -38,13 +38,9 @@ post-patch:
 		-E 's|cd (.+); (\$$\(MAKE\))|\2 -C \1|'
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

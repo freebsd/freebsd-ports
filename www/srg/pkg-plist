@@ -11,4 +11,5 @@ bin/srg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/srg.weekly
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
+man/man1/srg.1.gz
 @dirrm %%ETCDIR%%

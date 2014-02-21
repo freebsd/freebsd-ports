@@ -23,7 +23,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	REQUIREMENTS ChangeLog
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

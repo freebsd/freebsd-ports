@@ -29,11 +29,13 @@ bin/pop3d
 %%LIBEXECDIR%%/pop3d-ssl.rc
 %%LIBEXECDIR%%/pop3d.rc
 sbin/imaplogin
+sbin/mkdhparams
 sbin/mkimapdcert
 sbin/mkpop3dcert
 sbin/pop3login
 sbin/sharedindexinstall
 sbin/sharedindexsplit
+share/courier-imap/mkdhparams
 share/courier-imap/mkimapdcert
 share/courier-imap/mkpop3dcert
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

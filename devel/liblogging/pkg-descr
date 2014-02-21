@@ -1,4 +1,8 @@
-Liblogging is an easy to use, portable, open source library for
-system logging.
+Liblogging offers an enhanced replacement for the syslog() call, but
+retains its ease of use. In a nutshell, it permits sytem administrators
+to direct application log output to different destinations without
+requiring the app developer to do any work for this. Liblogging is
+released under a 2-clause BSD license and as such can be used in any
+application.
 
 WWW: http://www.liblogging.org/

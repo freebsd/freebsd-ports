@@ -111,8 +111,7 @@ PLIST_SUB+=	PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=	85+
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+USES+=		tcl:85+
 CMAKE_ARGS+=	-DBSD_TCL_VER=${TCL_VER} \
 		-DBSD_TCL_LIBDIR=${LOCALBASE}/lib \
 		-DBSD_TCL_INCDIR=${TCL_INCLUDEDIR}

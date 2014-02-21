@@ -33,7 +33,7 @@ S=		${PORTVERSION:C|\..*||}
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 

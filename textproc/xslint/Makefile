@@ -24,7 +24,7 @@ SHEBANG_FILES=	xslint.pl
 PLIST_FILES=	bin/xslint
 PORTDOCS=	README xslint.html xslint.xml
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

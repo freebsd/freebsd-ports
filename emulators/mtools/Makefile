@@ -21,18 +21,11 @@ CONFIGURE_ARGS=	--enable-xdf
 
 SUB_FILES=	pkg-message
 
-MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mclasserase.1 mcopy.1 \
-		mdel.1 mdeltree.1 mdir.1 mdu.1 mformat.1 mkmanifest.1 \
-		minfo.1 mlabel.1 mmd.1 mmount.1 mmove.1 mpartition.1 \
-		mrd.1 mren.1 mshowfat.1 mtoolstest.1 mtools.1 mtype.1 \
-		mzip.1
-MAN5=		mtools.5
 INFO=		mtools
 
 OPTIONS_DEFINE=	ICONV X11
 OPTIONS_DEFAULT=ICONV X11
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONV}
@@ -46,7 +39,6 @@ CONFIGURE_ENV+=	ac_cv_header_iconv_h=no
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 sm ice xau
 PLIST_SUB=	X11=""
-MAN1+=		floppyd.1 floppyd_installtest.1
 .else
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB=	X11="@comment "
@@ -65,10 +57,9 @@ post-patch:
 .endfor
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc/mtools.conf.sample
-	@if [ ! -f ${PREFIX}/etc/mtools.conf ]; then \
-		cd ${PREFIX}/etc && ${CP} -p mtools.conf.sample mtools.conf; \
+	${INSTALL_DATA} ${WRKSRC}/mtools.conf ${STAGEDIR}${PREFIX}/etc/mtools.conf.sample
+	@if [ ! -f ${STAGEDIR}${PREFIX}/etc/mtools.conf ]; then \
+		cd ${STAGEDIR}${PREFIX}/etc && ${CP} -p mtools.conf.sample mtools.conf; \
 	fi
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

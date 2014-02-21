@@ -17,7 +17,6 @@ BINFILES=	busgen capgen cubegen fastcap pipedgen pyragen
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -41,16 +40,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,temp\.out,$$@.&,' ${WRKSRC}/src/Makefile*
 
 do-install:
-	${INSTALL_PROGRAM} ${BINFILES:S,^,${WRKSRC}/bin/,} ${PREFIX}/bin
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${CAT} ${WRKSRC}/README ${WRKSRC}/README.mit > ${DOCSDIR}/readme
-	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${DOCSDIR}
-	${GZIP_CMD} ${DOCSDIR}/*
-.endif
+	${INSTALL_PROGRAM} ${BINFILES:S,^,${WRKSRC}/bin/,} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CAT} ${WRKSRC}/README ${WRKSRC}/README.mit > ${STAGEDIR}${DOCSDIR}/readme
+	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${STAGEDIR}${DOCSDIR}
+	${GZIP_CMD} ${STAGEDIR}${DOCSDIR}/*
 
 .include <bsd.port.mk>

@@ -12,13 +12,13 @@ COMMENT=	Dworkin\'s Game Driver
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=	NETWORKING CLOSURES CPLUSPLUS_COMMENTS
+OPTIONS_DEFINE=	NETWORKING CLOSURES CPLUSPLUS_COMMENTS DOCS
 NETWORKING_DESC=Enable networking kfuns
 CLOSURES_DESC=	Enable function pointer support
 CPLUSPLUS_COMMENTS_DESC=	Allow C++ style comments in LPC
 OPTIONS_DEFAULT=CPLUSPLUS_COMMENTS
 
-USE_GMAKE=	yes
+USES=		gmake
 
 DIST_SUBDIR=	dgd
 BASE_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -28,14 +28,11 @@ ALL_TARGET=	install
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV+=	EXTRA_DEFINES="$(EXTRA_DEFINES)"
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 USERS=		mud
 GROUPS=		mud
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 EXTRA_DEFINES=
@@ -56,21 +53,19 @@ post-patch:
 	@cd ${PATCH_WRKSRC} && ${FIND} . -name '*.orig' -delete
 
 do-install:
-	${INSTALL_PROGRAM} ${BASE_WRKSRC}/bin/driver ${PREFIX}/sbin/dgd
-	${INSTALL_PROGRAM} ${BASE_WRKSRC}/bin/precomp ${PREFIX}/bin/precomp
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_PROGRAM} ${BASE_WRKSRC}/bin/driver ${STAGEDIR}${PREFIX}/sbin/dgd
+	${INSTALL_PROGRAM} ${BASE_WRKSRC}/bin/precomp ${STAGEDIR}${PREFIX}/bin/precomp
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${BASE_WRKSRC}/mud.dgd \
-		${PREFIX}/etc/${PORTNAME}/mud.dgd.sample
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/mud.dgd.sample
 	@# Install an RC script for DGD
 	${CAT} ${FILESDIR}/dgd.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
 		-e "s:%%DATADIR%%:${DATADIR}:" > \
-			${PREFIX}/etc/rc.d/dgd.sh.sample
-	${CHMOD} a+x ${PREFIX}/etc/rc.d/dgd.sh.sample
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${BASE_WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${BASE_WRKSRC}/README ${DOCSDIR}
-	cd ${BASE_WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+			${STAGEDIR}${PREFIX}/etc/rc.d/dgd.sh.sample
+	${CHMOD} a+x ${STAGEDIR}${PREFIX}/etc/rc.d/dgd.sh.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${BASE_WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${BASE_WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	cd ${BASE_WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -16,21 +16,15 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 
-MAN1=		apparix.1
 PORTDOCS=	apparix.azm apparix.html apparix.ps
-PLIST_FILES=	bin/apparix
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/apparix man/man1/apparix.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/apparix ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/apparix.1 ${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/apparix ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/apparix.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

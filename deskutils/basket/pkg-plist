@@ -2,8 +2,8 @@ bin/basket
 lib/kde4/basketthumbcreator.so
 lib/kde4/kcm_basket.so
 lib/libbasketcommon.so
-lib/libbasketcommon.so.5
-lib/libbasketcommon.so.5.0.1
+lib/libbasketcommon.so.4
+lib/libbasketcommon.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/applications/kde4/basket.desktop
 share/apps/basket/backgrounds/abstract.png
 share/apps/basket/backgrounds/alien-artifact.png

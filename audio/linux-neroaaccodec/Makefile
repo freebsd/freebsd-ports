@@ -30,7 +30,7 @@ PORTDOCS=	NeroAAC_tut.pdf \
 	license.txt \
 	readme.txt
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

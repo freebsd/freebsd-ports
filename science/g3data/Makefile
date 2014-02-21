@@ -3,7 +3,7 @@
 
 PORTNAME=	g3data
 PORTVERSION=	1.5.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://www.frantz.fi/software/
 
@@ -12,7 +12,7 @@ COMMENT=	Utility for extracting data from graphs
 
 BUILD_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade \
 		${LOCALBASE}/share/sgml/docbook/utils-0.6.14/helpers/docbook2man-spec.pl:${PORTSDIR}/textproc/docbook-utils \
-		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410
+		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml
 
 USES=		pkgconfig
 USE_GNOME=	gtk20

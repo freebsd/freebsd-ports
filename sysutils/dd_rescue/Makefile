@@ -15,13 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 USE_CSTD=	gnu89
+USE_AUTOTOOLS=	autoconf autoheader
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

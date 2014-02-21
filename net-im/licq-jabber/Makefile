@@ -2,7 +2,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -23,7 +23,7 @@ PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
 
 LICQ_PORT?=	net-im/licq
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

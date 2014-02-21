@@ -24,23 +24,19 @@ CONFIGURE_ARGS+=	--disable-qcc
 PLIST_SUB+=	WITH_QICO_MORDA="@comment "
 .endif
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/qico.conf.sample ${PREFIX}/etc/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qico ${PREFIX}/libexec/
+	${INSTALL_DATA} ${WRKSRC}/qico.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qico ${STAGEDIR}${PREFIX}/libexec/
 .if defined(WITH_QICO_MORDA)
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qcc ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qcc ${STAGEDIR}${PREFIX}/bin/
 .endif
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/share/doc/qico
-	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/qico/FAQ.ru
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qico/README.ru
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/qico
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${STAGEDIR}${PREFIX}/share/doc/qico/FAQ.ru
+	${INSTALL_DATA} ${WRKSRC}/README \
+		${STAGEDIR}${PREFIX}/share/doc/qico/README.ru
 
 .include <bsd.port.mk>
