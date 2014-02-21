@@ -1,0 +1,31 @@
+commit 186730742519bfa9cb7f9668fb508a78e65d26cc
+Author: René Ladan <r.c.ladan@gmail.com>
+Date:   Fri Feb 21 12:20:57 2014 +0100
+
+    Add DESTDIR support and add install-strip and uninstall targets.
+
+diff --git a/Makefile b/Makefile
+index d527b55..2ddbb8b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,4 +1,6 @@
+-.PHONY: all clean install
++.PHONY: all clean install install-strip uninstall
++
++INSTALL_PROGRAM?=install
+ 
+ all: bf2c gen_bf
+ 
+@@ -17,4 +19,11 @@ clean:
+ 	rm bf2c gen_bf $(obj)
+ 
+ install:
+-	install bf2c gen_bf $(PREFIX)/bin
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL_PROGRAM) bf2c gen_bf $(DESTDIR)$(PREFIX)/bin
++
++install-strip:
++	$(MAKE) INSTALL_PROGRAM='install -s' install
++
++uninstall:
++	rm -rf $(DESTDIR)$(PREFIX)/bin
