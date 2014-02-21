@@ -37,7 +37,7 @@ PLIST_FILES=	${AOLSERVERBASE}/bin/nszlib.so \
 
 PORTDOCS=	ChangeLog README example.tcl
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 post-patch:

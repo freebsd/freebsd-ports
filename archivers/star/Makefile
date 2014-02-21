@@ -30,7 +30,7 @@ PORTDOCS=	README README.crash README.mtio README.pattern STARvsGNUTAR \
 		README.ACL README.largefiles README.otherbugs \
 		README.posix-2001
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
