@@ -15,17 +15,12 @@ USE_GNOME=	glib20
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-MAN1=		sary.1	mksary.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${FIND} . ! -name "*Makefile*" | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-.endif
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
