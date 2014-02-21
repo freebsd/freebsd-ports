@@ -40,7 +40,7 @@ SUB_FILES=	pkg-message
 DOCSLIST=	FONTLOG.txt GENTIUM-FAQ.txt OFL-FAQ.txt
 PORTDOCS=	${DOCSLIST:C,^.*/,,}
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
