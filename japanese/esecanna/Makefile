@@ -32,6 +32,6 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/esecanna
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/esecanna
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${PREFIX}/share/doc/esecanna/
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
