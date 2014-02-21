@@ -57,6 +57,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}_SHARED/libmetis.so.1 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libmetis.so.1 ${STAGEDIR}${PREFIX}/lib/libmetis.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmetis.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/manual.ps ${STAGEDIR}${DOCSDIR}
 
