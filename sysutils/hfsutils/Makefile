@@ -47,8 +47,7 @@ NO_STAGE=	yes
 .if ${PORT_OPTIONS:MTCLTK}
 CATEGORIES+=	tcl tk
 
-USE_TCL=	84+
-USE_TK=		84+
+USES=		tk
 
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
