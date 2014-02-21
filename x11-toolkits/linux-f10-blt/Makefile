@@ -18,5 +18,4 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" TCLVERSION="8.5"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
