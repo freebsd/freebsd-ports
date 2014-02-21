@@ -9,7 +9,7 @@ MASTER_SITES=	SF/mysql-python/mysql-python/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MySQL-python-${DISTVERSION}
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
 USE_PYTHON=		2
