@@ -15,7 +15,6 @@ COMMENT=	A text-to-HTML conversion tool for web writers
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SHEBANG_FILES=	bin/hikidoc
-NO_STAGE=	yes
 
 PORTDOCS=	NEWS NEWS.ja README README.ja \
 		TextFormattingRules TextFormattingRules.ja
@@ -23,12 +22,10 @@ PORTDOCS=	NEWS NEWS.ja README README.ja \
 PLIST_FILES=	bin/hikidoc \
 		%%RUBY_SITELIBDIR%%/hikidoc.rb
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
