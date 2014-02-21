@@ -23,7 +23,7 @@ FILES_SCRIPTS=	bayes_process_email.pl bayes_spam_check.pl bayestest.pl
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

@@ -26,7 +26,7 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|mail.log|maillog|g' \
 		${WRKSRC}/${PORTNAME}${PORTVERSION}.pl
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
