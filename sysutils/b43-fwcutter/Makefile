@@ -10,10 +10,8 @@ MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Extracts firmware for Broadcom Wireless adapters
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake desthack
 
-MAN1=		b43-fwcutter.1
 PLIST_FILES=	bin/b43-fwcutter
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
