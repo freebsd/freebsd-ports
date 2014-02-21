@@ -60,7 +60,7 @@ SOUNDS_DATE=	2004-04-29
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MNLS}

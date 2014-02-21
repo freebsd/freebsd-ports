@@ -29,7 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS=	XML_I18N_UPDATE="${TRUE}" XML_I18N_EXTRACT="${TRUE}"
 DATADIR=	${PREFIX}/share/gnome-chess
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 

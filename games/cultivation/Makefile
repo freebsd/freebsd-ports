@@ -25,7 +25,7 @@ PORTDOCS=	changeLog.txt how_to_play.txt
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
