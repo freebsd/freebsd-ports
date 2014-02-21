@@ -16,13 +16,11 @@ COMMENT=	Japanized ls
 
 CONFLICTS=	sleuthkit-[0-9]*
 
-MAN1=		jls.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/jls
+PLIST_FILES=	bin/jls \
+		man/man1/jls.1.gz
 
 WRKSRC=	${WRKDIR}/ls
 
-NO_STAGE=	yes
 pre-patch:
 	cd ${WRKSRC}; ${MV} ls.1 jls.1
 
