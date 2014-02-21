@@ -12,21 +12,18 @@ COMMENT=	A tiny expression evaluator
 MAKEFILE=	makefile
 ALL_TARGET=	e
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${RM} ${WRKSRC}/${PORTNAME}
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g ; \
 		s|-O2|${CFLAGS}|g' ${WRKSRC}/makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in EXAMPLES GRAMMAR README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
