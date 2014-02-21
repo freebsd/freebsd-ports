@@ -2,25 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	voro++
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	science
 MASTER_SITES=	http://math.lbl.gov/voro++/download/dir/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Three-dimensional computations of the Voronoi tessellation
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GMAKE=	yes
+USES=		gmake
 
-MAN1=		voro++.1
-
-NO_STAGE=	yes
-post-patch-script:
+post-patch:
 	${REINPLACE_CMD} \
-		-e 's|CC=|CC?=|g' \
+		-e 's|CXX=|CXX?=|g' \
 		-e 's|CFLAGS=|CFLAGS?=|g' \
-		-e "s|/usr/local|${PREFIX}|g" \
+		-e 's|PREFIX=.*|PREFIX?=|g' \
 		${WRKSRC}/config.mk
+	${REINPLACE_CMD} \
+		-e 's|$$(PREFIX)|$$(DESTDIR)$$(PREFIX)|g' \
+		${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/voro++
 
 .include <bsd.port.mk>
