@@ -8,19 +8,16 @@ CATEGORIES+=	www ipv6
 MASTER_SITES=	SF/w3m/w3m/w3m-${PORTVERSION}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
-COMMENT?=	A pager/text-based WWW browser
+COMMENT?=	Pager/text-based WWW browser
 
 USE_OPENSSL=	yes
-LIB_DEPENDS=	gc:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-img-0.5.*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gc=${LOCALBASE}
-
-MAN1=		w3m.1 w3mman.1
-MANLANG=	"" ja
 
 DOCS=		FAQ.html HISTORY MANUAL.html README \
 		README.dict README.func README.m17n STORY.html keymap.default \
@@ -31,7 +28,6 @@ JAPANESE_DESC=		Japanese messages and migemo support
 INLINE_IMAGE_DESC=	Inline image support
 KEY_LYNX_DESC=		Keymap like lynx browser
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJAPANESE}
@@ -80,21 +76,18 @@ post-patch:
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 .if ${PORT_OPTIONS:MJAPANESE}
-	@${MKDIR} ${PREFIX}/share/doc/ja/w3m
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/w3m
 	@cd ${WRKSRC}/doc-jp; \
 	for i in ${DOCS_JP} ; do \
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/ja/w3m/ ; \
+		${INSTALL_DATA} $$i ${STAGEDIR}${PREFIX}/share/doc/ja/w3m/ ; \
 	done
 .endif
 	@cd ${WRKSRC}/doc; \
-	${MKDIR} ${PREFIX}/share/doc/w3m/; \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/w3m/; \
 	for i in ${DOCS} ; do \
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/w3m/ ; \
+		${INSTALL_DATA} $$i ${STAGEDIR}${PREFIX}/share/doc/w3m/ ; \
 	done
 .endif
-	@${INSTALL_MAN} ${WRKSRC}/scripts/w3mman/w3mman.1 ${PREFIX}/man/ja/man1
-.if ${PORT_OPTIONS:MINLINE_IMAGE}
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${INSTALL_MAN} ${WRKSRC}/scripts/w3mman/w3mman.1 ${STAGEDIR}${PREFIX}/man/ja/man1
 
 .include <bsd.port.mk>
