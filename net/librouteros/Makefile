@@ -24,7 +24,7 @@ CFLAGS+=	-I${LOCALBASE}/include -Wno-error
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

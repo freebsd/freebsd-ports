@@ -40,7 +40,7 @@ PORTDATA=	html plugins
 PORTDOCS=	CHANGELOG-get_iplayer.cgi.txt CHANGELOG.txt \
 		README-get_iplayer.cgi.txt README.md web.sh
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
