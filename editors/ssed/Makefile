@@ -14,7 +14,7 @@ COMMENT=	Super-sed - a heavily enhanced version of sed
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=s
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
