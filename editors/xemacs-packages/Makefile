@@ -133,7 +133,6 @@ PACKAGES_SUBDIR=	xemacs-packages
 
 FIXME=	gnus/binhex.elc gnus/uudecode.elc
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}
