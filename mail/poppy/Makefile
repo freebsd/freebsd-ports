@@ -9,14 +9,14 @@ MASTER_SITES=	http://www.cnpbagwell.com/
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A client to perform simple tasks with a POP3/IMAP server
 
+USES=		shebangfix
 NO_BUILD=	yes
 
-#USE_PERL5=	yes
+SHEBANG_FILES=	poppy spamkill
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/poppy ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/spamkill ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/poppy.1 ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/poppy ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/spamkill ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/poppy.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
