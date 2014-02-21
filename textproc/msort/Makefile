@@ -10,9 +10,11 @@ MASTER_SITES=	http://billposer.org/Software/Downloads/
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Sorting files in sophisticated ways
 
-LIB_DEPENDS=	tre:${PORTSDIR}/textproc/libtre \
-    		uninum:${PORTSDIR}/devel/libuninum \
-		utf8proc:${PORTSDIR}/textproc/utf8proc
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre \
+    		libuninum.so:${PORTSDIR}/devel/libuninum \
+		libutf8proc.so:${PORTSDIR}/textproc/utf8proc
 RUN_DEPENDS=	iwidgets>=0:${PORTSDIR}/x11-toolkits/iwidgets
 
 CONFIGURE_ENV=	ac_cv_lib_tre_regwcomp=yes
@@ -20,14 +22,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
-USE_TK_RUN=	yes
-USE_TCL_WRAPPER=	yes
-USES=		gettext
-NO_STAGE=	yes
+USES=		gettext tk:wrapper,run
 
-PLIST_FILES=	bin/msg bin/msort
-
-MAN1=		msort.1
+PLIST_FILES=	bin/msg bin/msort man/man1/msort.1.gz
 
 .ifdef(MAINTAINER_MODE)
 BUILD_DEPENDS+= ${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
