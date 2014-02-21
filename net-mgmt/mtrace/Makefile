@@ -9,15 +9,12 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multicast traceroute program for IPv4
 
-MAN8=		mtrace.8
+PLIST_FILES=	sbin/mtrace man/man8/mtrace.8.gz
 
 ALL_TARGET=	mtrace
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mtrace ${PREFIX}/sbin/mtrace
-	${INSTALL_MAN} ${WRKSRC}/mtrace.8 ${PREFIX}/man/man8
-
-PLIST_FILES=	sbin/mtrace
+	${INSTALL_PROGRAM} ${WRKSRC}/mtrace ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/mtrace.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>
