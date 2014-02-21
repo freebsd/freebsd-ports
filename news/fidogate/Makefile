@@ -23,7 +23,7 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		template.html fido howto misc rfc gatebau/msgid.sgml \
 		gatebau/msgid.tex gatebau/msgid.txt
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
