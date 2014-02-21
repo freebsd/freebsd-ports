@@ -22,12 +22,12 @@ PLIST_FILES=	lib/libml.a \
 		lib/libml.so \
 		lib/libml.so.0
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH}=="i386"
 LDOUBLE_DISTFILE=	ldouble.zip
-USE_ZIP=		yes
 EXTRA_PATCHES=	${FILESDIR}/i386-makefile-patch
 PORTDOCS=	ldoubdoc.html
 PLIST_FILES+=	include/mathl.h
@@ -46,17 +46,16 @@ post-patch:
 		${WRKSRC}/${MAKEFILE}
 
 do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	${INSTALL_DATA} ${WRKSRC}/libml.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libml.so.0 ${PREFIX}/lib
-	${LN} -sf libml.so.0 ${PREFIX}/lib/libml.so
+	${INSTALL_DATA} ${WRKSRC}/libml.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libml.so.0 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libml.so.0 ${STAGEDIR}${PREFIX}/lib/libml.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libml.so
 .if ${ARCH}=="i386"
-	${INSTALL_DATA} ${WRKSRC}/protos.h ${PREFIX}/include/mathl.h
+	${INSTALL_DATA} ${WRKSRC}/protos.h ${STAGEDIR}${PREFIX}/include/mathl.h
 .endif
 
 .include <bsd.port.post.mk>
