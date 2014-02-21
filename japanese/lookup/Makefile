@@ -17,17 +17,14 @@ USE_EMACS=	yes
 
 INFO?=		lookup lookup-guide
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")
 EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
 ELISPDIR=	${EMACSDIR}/lisp/lookup
-PORTINFODIR=	${EMACSDIR}/info
 MANIFEST=	MANIFEST.lookup
 .else
 ELISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/lookup
-PORTINFODIR=	${PREFIX}/info
 PLIST_SUB=	ELISPDIR=${EMACS_VERSION_SITE_LISPDIR}
 .endif
 HAS_CONFIGURE=	yes
