@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagalume
-PORTVERSION=	0.8.5
-PORTREVISION=	4
+PORTVERSION=	0.8.6
 CATEGORIES=	audio
 MASTER_SITES=	http://vagalume.igalia.com/files/source/ \
 		${MASTER_SITE_DEBIAN_POOL}
