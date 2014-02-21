@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqwebmail
-PORTVERSION=	5.7.0
+PORTVERSION=	5.7.2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
@@ -191,11 +191,11 @@ post-patch:
 
 	@${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/libs/pcp/configure
 
-	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}| ; \
-		s|$$(SHELL) $$(MKINSTALLDIRS)|$$(MKINSTALLDIRS)| ; \
-		s|$$(libdir)/charset|$$(prefix)/libdata/charset|g ; \
-		s|$$(libdir)/t-charset|$$(prefix)/libdata/t-charset|g' \
-		${WRKSRC}/libs/pcp/intl/Makefile.in
+#	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}| ; \
+#		s|$$(SHELL) $$(MKINSTALLDIRS)|$$(MKINSTALLDIRS)| ; \
+#		s|$$(libdir)/charset|$$(prefix)/libdata/charset|g ; \
+#		s|$$(libdir)/t-charset|$$(prefix)/libdata/t-charset|g' \
+#		${WRKSRC}/libs/pcp/intl/Makefile.in
 
 post-install:
 #	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
