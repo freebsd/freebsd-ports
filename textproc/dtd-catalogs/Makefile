@@ -16,15 +16,13 @@ RUN_DEPENDS=	${ISO8879_CAT}:${PORTSDIR}/textproc/iso8879 \
 		${LINUXDOC_CAT}:${PORTSDIR}/textproc/linuxdoc
 
 NO_BUILD=	yes
+NO_MTREE=	yes
+NO_INSTALL=	yes
 
 # The following catalogs are listed in catalog-list-file actually.
 ISO8879_CAT=	${LOCALBASE}/share/sgml/iso8879/catalog
 ISO12083_CAT=	${LOCALBASE}/share/sgml/iso12083/catalog
 HTML_CAT=	${LOCALBASE}/share/sgml/html/catalog
 LINUXDOC_CAT=	${LOCALBASE}/share/sgml/linuxdoc/catalog
-
-NO_STAGE=	yes
-do-install:
-	@${DO_NADA}
 
 .include <bsd.port.mk>
