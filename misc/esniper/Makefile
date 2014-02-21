@@ -25,7 +25,7 @@ PORTEXAMPLES=	sample_auction.txt sample_config.txt
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	EXAMPLES 
+OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
 

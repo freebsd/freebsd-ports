@@ -16,7 +16,7 @@ GNU_CONFIGURE=	YES
 
 INFO=		hello
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 

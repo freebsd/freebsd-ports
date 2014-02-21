@@ -25,7 +25,7 @@ TET_CONFIG_TARGET?=	inet	# options are `lite', `xti' and `inet'
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
