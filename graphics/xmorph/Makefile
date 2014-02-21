@@ -30,7 +30,7 @@ INFO=		xmorph
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 
