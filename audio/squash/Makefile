@@ -24,7 +24,7 @@ USES=		gmake
 USE_RUBY=	yes
 MAKE_ARGS=	CC=${CC}
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

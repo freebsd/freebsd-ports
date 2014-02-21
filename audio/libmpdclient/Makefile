@@ -14,7 +14,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake pathfix
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

@@ -18,7 +18,7 @@ PORTDOCS=	manual.html
 PLIST_FILES=	bin/setlistener bin/listener bin/listenersoundpipe \
 		etc/listener.conf.sample
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
