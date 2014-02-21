@@ -460,7 +460,6 @@
     SUBDIR += libfvde
     SUBDIR += libgksu
     SUBDIR += libieee1284
-    SUBDIR += liblogging
     SUBDIR += libretto-config
     SUBDIR += libsunacl
     SUBDIR += liburcu

@@ -86,5 +86,12 @@ libdata/pkgconfig/libudf.pc
 libdata/pkgconfig/libcdio++.pc
 libdata/pkgconfig/libiso9660++.pc
 libdata/pkgconfig/libiso9660.pc
+man/ja/man1/cd-paranoia.1.gz
+man/man1/cd-drive.1.gz
+man/man1/cd-info.1.gz
+man/man1/cd-paranoia.1.gz
+man/man1/cd-read.1.gz
+man/man1/iso-info.1.gz
+man/man1/iso-read.1.gz
 @dirrm include/cdio
 @dirrm include/cdio++
