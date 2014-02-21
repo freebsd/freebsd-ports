@@ -10,10 +10,8 @@ MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	Sendmail logfile summary tool
 
 ALL_TARGET=	ALL
-MAN8=		mreport.8
-PLIST_FILES=	sbin/mreport
+PLIST_FILES=	sbin/mreport man/man8/mreport.8.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/^.TH mreport 1/.TH mreport 8/g; s/^.LO 1/.LO 8/g;" \
 		${WRKSRC}/mreport.1
@@ -21,7 +19,8 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/mreport ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/mreport.1 ${PREFIX}/man/man8/mreport.8
+	${INSTALL_PROGRAM} ${WRKSRC}/mreport ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/mreport.1 \
+		${STAGEDIR}${MANPREFIX}/man/man8/mreport.8
 
 .include <bsd.port.mk>
