@@ -64,8 +64,7 @@ CMAKE_ARGS+=	-DWITH_MOZJS:BOOL=OFF
 . endif
 .endif
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${PREFIX}/lib/libproxy/${PORTVERSION}/modules/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/libproxy/${PORTVERSION}/modules/
 
 .include <bsd.port.mk>
