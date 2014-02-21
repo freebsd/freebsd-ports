@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=--without-adf --without-ccm
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 
