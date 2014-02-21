@@ -39,7 +39,7 @@ REPLACE_EXPR=	-e 's,@INSTDIR@,${INSTDIR},g ; \
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
