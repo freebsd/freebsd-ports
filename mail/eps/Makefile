@@ -14,7 +14,6 @@ OPTIONS_DEFINE=	DOCS
 
 USE_CSTD=	gnu89
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
@@ -31,14 +30,10 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libeps.a ${PREFIX}/lib
-	${MKDIR} ${PREFIX}/include/eps
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/eps
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/${PORTDOCS} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
+	${INSTALL_DATA} ${WRKSRC}/libeps.a ${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/eps
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/eps
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
