@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMTP Fast Exploding External Deliverer for Sendmail
 
 LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 OPTIONS_DEFINE=	DOCS
 
