@@ -10,7 +10,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A binary search library for Ruby
+COMMENT=	Binary search library for Ruby
 
 USE_RUBY=	yes
 
@@ -23,23 +23,17 @@ DOCS_EN=	ChangeLog \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bsearch.rb ${RUBY_SITELIBDIR}/
-
-post-install: doc-install
-
-doc-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bsearch.rb ${STAGEDIR}${RUBY_SITELIBDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
