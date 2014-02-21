@@ -20,7 +20,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mac-robber ${STAGEDIR}${PREFIX}/bin
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

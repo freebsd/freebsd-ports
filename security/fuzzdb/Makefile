@@ -18,7 +18,7 @@ PORTDIRS=	attack-payloads wordlists-misc Discovery \
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

@@ -33,7 +33,7 @@ PLIST_FILES=	bin/pulledpork.pl \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
