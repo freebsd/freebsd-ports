@@ -14,7 +14,7 @@ COMMENT=	Make your XDM login screen look beautiful
 
 USE_XORG=	xpm x11
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

@@ -14,7 +14,7 @@ COMMENT=	Command line tool for switching GTK+ themes
 USE_GNOME=	gtk12
 USES=		gmake
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
