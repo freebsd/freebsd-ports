@@ -9,16 +9,15 @@ MASTER_SITES=	SF
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Enhanced Metafile Library
 
+OPTIONS_DEFINE=	DOCS
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
