@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamtk
-PORTVERSION=	4.44
+PORTVERSION=	4.45
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/ClamTk/${PORTVERSION}
 
@@ -30,7 +30,6 @@ MAN1=		${PORTNAME}.1
 
 LINGUAS=	`${LS} ${WRKSRC}/po/*.mo | ${XARGS} ${BASENAME} -s .mo`
 
-NO_STAGE=	yes
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/${PORTNAME}.1.gz
 
@@ -41,23 +40,23 @@ post-patch:
 		 s|/var/lib/clamav|/var/db/clamav|g' ${WRKSRC}/lib/*.pm
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-	@${MKDIR} ${SITE_PERL}/ClamTk
-	${INSTALL_DATA} ${WRKSRC}/lib/*.pm ${SITE_PERL}/ClamTk
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.xpm ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}-loader.gif ${PREFIX}/share/pixmaps
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}/ClamTk
+	${INSTALL_DATA} ${WRKSRC}/lib/*.pm ${STAGEDIR}${SITE_PERL}/ClamTk
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}-loader.gif ${STAGEDIR}${PREFIX}/share/pixmaps
 	for l in ${LINGUAS}; do \
-		${MKDIR} ${PREFIX}/share/locale/$${l}/LC_MESSAGES; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/$${l}/LC_MESSAGES; \
 		${INSTALL_DATA} ${WRKSRC}/po/$${l}.mo \
-		${PREFIX}/share/locale/$${l}/LC_MESSAGES/${PORTNAME}.mo; \
+		${STAGEDIR}${PREFIX}/share/locale/$${l}/LC_MESSAGES/${PORTNAME}.mo; \
 	done
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in CHANGES DISCLAIMER README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

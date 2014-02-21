@@ -1,4 +1,5 @@
 bin/clamtk
+man/man1/clamtk.1.gz
 %%SITE_PERL%%/ClamTk/App.pm
 %%SITE_PERL%%/ClamTk/Device.pm
 %%SITE_PERL%%/ClamTk/GUI.pm
