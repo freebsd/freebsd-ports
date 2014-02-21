@@ -27,7 +27,7 @@ MAN1=		gtklp.1 gtklpq.1
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
