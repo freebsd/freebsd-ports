@@ -22,7 +22,7 @@ HOSTDB_EXAMPLES_DIRS+=	mailserverexample/out mailserverexample
 SHEBANG_FILES=	bin/mkdestinations bin/mknamedconf bin/zone2hostdbhelper \
 		bin/mkzones bin/canonzone bin/genrange
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 pre-install:
 	${FIND} ${WRKSRC} -name "*\.orig" -delete
