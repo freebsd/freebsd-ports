@@ -24,7 +24,7 @@ SUB_FILES=	pkg-message
 DESKTOP_ENTRIES="Obmenu" "Menu manager for Openbox" ${PORTNAME} \
 		"${PORTNAME}" "Settings;" false
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
