@@ -26,8 +26,6 @@ USE_LDCONFIG=	${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS NEWS README
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS 
 
 .include <bsd.port.options.mk>
@@ -41,10 +39,8 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .endif # ${SLAVE_PORT} == "no"
 
