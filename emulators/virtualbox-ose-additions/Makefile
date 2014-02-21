@@ -108,6 +108,7 @@ post-patch:
 .if empty(ICONV_LIB)
 	@${REINPLACE_CMD} -e 's|iconv||' ${WRKSRC}/Config.kmk ${WRKSRC}/src/VBox/Runtime/Makefile.kmk \
 		${WRKSRC}/src/VBox/Additions/x11/VBoxClient/Makefile.kmk
+	@${ECHO} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 
 pre-build:
