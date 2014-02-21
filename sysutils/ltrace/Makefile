@@ -15,20 +15,14 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	amd64
 
-MAN1=		${PORTNAME}.1
-
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	BUGS COPYING ChangeLog README TODO
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
