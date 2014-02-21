@@ -27,17 +27,16 @@ COMMENT=	Less + zcat + ISO-2022 + UTF-8 - a pager similar to more and pg
 
 LICENSE=	GPLv2
 
+USES=		desthack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cs-regex
 PORTDOCS=	README.iso README.iso.jp README.lesw.euc \
 		README.regex README.regex.jp README.ext.jp
-PLIST_FILES=	bin/jless bin/jlesskey bin/jlessecho
-
-MAN1=		jless.1 jlesskey.1
+PLIST_FILES=	bin/jless bin/jlesskey bin/jlessecho \
+		man/man1/jless.1.gz man/man1/jlesskey.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:
@@ -47,9 +46,7 @@ post-extract:
 			README.lesw.euc ${WRKSRC}
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
