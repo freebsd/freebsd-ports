@@ -21,14 +21,13 @@ PLIST_SUB=	CMAPDIR=${CMAPDIR}
 INSTDIRS=	ac15 ag15 ai0 aj16 aj20 ak12 rksj-cmaps
 CMAPDIR=	share/fonts/${PORTNAME}
 
-NO_STAGE=	yes
 post-extract:
 	${RM} -f ${WRKDIR}/ag15/.nfsFA55
 
 do-install:
-	${MKDIR} ${PREFIX}/${CMAPDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${CMAPDIR}
 	cd ${WRKDIR} && \
 		${TAR} cf - ${INSTDIRS} | \
-		(cd ${PREFIX}/${CMAPDIR} && ${TAR} xf - )
+		(cd ${STAGEDIR}${PREFIX}/${CMAPDIR} && ${TAR} xf - )
 
 .include <bsd.port.mk>
