@@ -37,7 +37,7 @@ DOCS=	../COPYING AUTHORS DEBUGGING INSTALL README RELEASE_NOTES \
 FONTS=	System0-iso.pcf System0.pcf System1-iso.pcf System1.pcf \
 	System2-iso.pcf System2.pcf
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
