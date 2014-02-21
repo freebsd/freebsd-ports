@@ -137,9 +137,9 @@ _EFL_EVAS_LOADERS_ALL=	bmp eet generic gif ico jpeg \
 # Generic evas engines definitions
 #
 _EFL_EVAS_CATEGORY=		graphics
-_EFL_EVAS_MODDIR=		${LOCALBASE}/lib/evas/modules/
-_EFL_EVAS_ENGINES_MODDIR=	${_EFL_EVAS_MODDIR}/engines/
-_EFL_EVAS_LOADERS_MODDIR=	${_EFL_EVAS_MODDIR}/loaders/
+_EFL_EVAS_MODDIR=		${LOCALBASE}/lib/evas/modules
+_EFL_EVAS_ENGINES_MODDIR=	${_EFL_EVAS_MODDIR}/engines
+_EFL_EVAS_LOADERS_MODDIR=	${_EFL_EVAS_MODDIR}/loaders
 
 #
 # Evas engine modules definitions
@@ -288,8 +288,8 @@ _USE_EFL_EVAS_ENGINES_UQ+=	${COMP}
 . endfor
 
 . for COMP in ${_USE_EFL_EVAS_ENGINES_UQ}
-BUILD_DEPENDS+=	${_EFL_EVAS_ENGINES_MODDIR}/${_evas_engine_${COMP}_DIR}/freebsd${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_engine_${COMP}_CATEGORY}/${_evas_engine_${COMP}_PORTNAME}
-RUN_DEPENDS+=	${_EFL_EVAS_ENGINES_MODDIR}/${_evas_engine_${COMP}_DIR}/freebsd${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_engine_${COMP}_CATEGORY}/${_evas_engine_${COMP}_PORTNAME}
+BUILD_DEPENDS+=	${_EFL_EVAS_ENGINES_MODDIR}/${_evas_engine_${COMP}_DIR}/${OPSYS:L}${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_engine_${COMP}_CATEGORY}/${_evas_engine_${COMP}_PORTNAME}
+RUN_DEPENDS+=	${_EFL_EVAS_ENGINES_MODDIR}/${_evas_engine_${COMP}_DIR}/${OPSYS:L}${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_engine_${COMP}_CATEGORY}/${_evas_engine_${COMP}_PORTNAME}
 . endfor
 
 .endif #USE_EFL_EVAS_ENGINES
@@ -316,8 +316,8 @@ _USE_EFL_EVAS_LOADERS_UQ+=	${COMP}
 . endfor
 
 . for COMP in ${_USE_EFL_EVAS_LOADERS_UQ}
-BUILD_DEPENDS+=	${_EFL_EVAS_LOADERS_MODDIR}/${_evas_loader_${COMP}_DIR}/freebsd${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_loader_${COMP}_CATEGORY}/${_evas_loader_${COMP}_PORTNAME}
-RUN_DEPENDS+=	${_EFL_EVAS_LOADERS_MODDIR}/${_evas_loader_${COMP}_DIR}/freebsd${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_loader_${COMP}_CATEGORY}/${_evas_loader_${COMP}_PORTNAME}
+BUILD_DEPENDS+=	${_EFL_EVAS_LOADERS_MODDIR}/${_evas_loader_${COMP}_DIR}/${OPSYS:L}${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_loader_${COMP}_CATEGORY}/${_evas_loader_${COMP}_PORTNAME}
+RUN_DEPENDS+=	${_EFL_EVAS_LOADERS_MODDIR}/${_evas_loader_${COMP}_DIR}/${OPSYS:L}${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_loader_${COMP}_CATEGORY}/${_evas_loader_${COMP}_PORTNAME}
 . endfor
 
 .endif #USE_EFL_EVAS_LOADERS
@@ -398,7 +398,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-PLIST_SUB+=	E17_ARCH=freebsd${OSREL}-${ARCH}
+PLIST_SUB+=	E17_ARCH=${OPSYS:L}${OSREL}-${ARCH}
 
 .if defined(_USE_EFL_LIBRT_HACK)
 #
