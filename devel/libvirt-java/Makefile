@@ -30,7 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/java|${JAVAJARDIR}|' \
 		${WRKSRC}/build.properties
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

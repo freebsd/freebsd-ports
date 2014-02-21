@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_QT4=	corelib gui xml network dbus svg qt3support sql \
 		qmake_build moc_build rcc_build uic_build linguist_build
 
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 

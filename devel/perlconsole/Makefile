@@ -32,7 +32,7 @@ PLIST_FILES=	bin/perlconsole \
 
 PLIST_DIRS=	${SITE_PERL_REL}/PerlConsole
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

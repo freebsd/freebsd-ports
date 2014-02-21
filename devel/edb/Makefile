@@ -27,7 +27,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 STRIP_FILES=	bin/${PORTNAME} libexec/${PORTNAME}/*.so
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

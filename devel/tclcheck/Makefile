@@ -18,7 +18,7 @@ PLIST_FILES=	bin/tclCheck \
 		man/man1/tclCheck.1.gz
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} \

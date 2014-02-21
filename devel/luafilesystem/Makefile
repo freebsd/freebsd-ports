@@ -29,7 +29,7 @@ MAKE_ARGS+=	INCS="-I${LOCALBASE}/include/${LUA_SUBDIR}"
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
