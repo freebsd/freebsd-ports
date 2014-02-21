@@ -4,7 +4,7 @@ PORTNAME=	opengrok
 PORTVERSION=	0.11.1
 PORTREVISION=	1
 CATEGORIES=	devel java
-MASTER_SITES=	http://hub.opensolaris.org/bin/download/Project+opengrok/files/
+MASTER_SITES=	http://java.net/projects/opengrok/downloads/download/
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference engine
