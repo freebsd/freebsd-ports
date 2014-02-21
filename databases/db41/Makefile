@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 \
 		--includedir=${STAGEDIR}${PREFIX}/include/db41
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
