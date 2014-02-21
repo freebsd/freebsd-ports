@@ -18,7 +18,7 @@ USE_RC_SUBR=	${PORTNAME:S/-/_/}
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	EXAMPLES 
+OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
 

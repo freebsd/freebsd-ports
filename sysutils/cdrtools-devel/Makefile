@@ -90,7 +90,7 @@ CDRTLSTARGET=	${ARCH:S/powerpc64/powerpc/}-freebsd-cc
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 
