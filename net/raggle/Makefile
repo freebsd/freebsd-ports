@@ -21,7 +21,7 @@ DOCS=		AUTHORS BUGS COPYING ChangeLog README TODO \
 		doc/default_config.rb doc/pauls_feeds.opml.gz \
 		doc/theme_documentation.txt
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
