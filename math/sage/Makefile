@@ -34,9 +34,8 @@ NO_STAGE=	yes
 
 PLIST_FILES=	bin/sage
 USE_GCC=	yes
-USE_TK=		yes
 USE_TEX=	latex:build
-USES=		fortran gmake iconv
+USES=		fortran gmake iconv tk
 MAKE_JOBS_SAFE=	yes
 LDFLAGS:=	-Wl,-rpath=${WRKSRC}/local/lib ${LDFLAGS}
 FFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}
