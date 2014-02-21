@@ -12,7 +12,6 @@ COMMENT=	An ncurses-based Dvorak typing tutor
 DEPRECATED=	No more public distfiles
 EXPIRATION_DATE=	2014-03-10
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAKE_ARGS=	PROF="${CPPFLAGS} ${CFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -21,6 +20,6 @@ pre-build:
 	@cd ${WRKSRC} ; ${MAKE} clean
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dvorak7min ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dvorak7min ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>
