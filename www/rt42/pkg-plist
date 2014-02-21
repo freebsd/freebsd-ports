@@ -392,6 +392,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/schema.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/schema.SQLite
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0-customfield-checkbox-extension
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc2/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc4/schema.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc4/schema.Pg
@@ -483,6 +484,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/upgrade-mysql-schema.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/vulnerable-passwords
 %%PORTDOCS%%%%DOCSDIR%%/web_deployment.pod
+%%PORTDOCS%%%%DOCSDIR%%/writing_extensions.pod
 %%DATADIR%%/fonts/Droid.README
 %%DATADIR%%/fonts/DroidSans.ttf
 %%DATADIR%%/fonts/DroidSansFallback.ttf
@@ -1067,7 +1069,6 @@ sbin/standalone_httpd
 %%DATADIR%%/po/ja.po
 %%DATADIR%%/po/lt.po
 %%DATADIR%%/po/lv.po
-%%DATADIR%%/po/mk.po
 %%DATADIR%%/po/nb.po
 %%DATADIR%%/po/nl.po
 %%DATADIR%%/po/nn.po
