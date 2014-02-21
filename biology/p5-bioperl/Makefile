@@ -985,7 +985,7 @@ MAN3=		Bio::Align::AlignI.3 \
 # now install all extra stuff (docs, examples, scripts, models)
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
