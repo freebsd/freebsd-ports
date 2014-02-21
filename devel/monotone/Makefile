@@ -57,7 +57,7 @@ PLIST_FILES+=	man/man1/mtn.1.gz \
 .endif
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 

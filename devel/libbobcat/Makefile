@@ -39,7 +39,7 @@ SHEBANG_FILES=	build \
 		documentation/examples/sockets/forkserver2/build \
 		documentation/examples/sockets/server/build
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

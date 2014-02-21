@@ -17,7 +17,7 @@ USE_PYDISTUTILS=	yes
 
 PORTDOCS=	README README.html ChangeLog
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

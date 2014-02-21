@@ -25,7 +25,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ecore
 
 .include "Makefile.inc"
 
-OPTIONS_DEFINE=	NLS EXAMPLES 
+OPTIONS_DEFINE=	NLS EXAMPLES
 
 .include <bsd.port.options.mk>
 

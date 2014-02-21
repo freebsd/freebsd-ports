@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--without-sphinx-build  --enable-shared
 INFO=		udis86
 PORTDOCS=	x86
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

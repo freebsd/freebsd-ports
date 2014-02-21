@@ -26,7 +26,7 @@ USE_PERL5=	configure
 
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
