@@ -63,7 +63,7 @@ MAN8=	lpc.8 checkpc.8 lpd.8
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 
