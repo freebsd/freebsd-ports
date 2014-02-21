@@ -36,7 +36,6 @@ IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 MBSTRING_DESC=	${MULTIBYTE_DESC}
 MYSQL_DESC=	Install MySQL Server
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPC}
@@ -79,12 +78,12 @@ pre-install:
 	fi
 
 do-install:
-	${CP} -R ${WRKDIR}/${TYPO3DUMMY}/ ${PREFIX}/${TYPO3SITE}
-	${CP} -R ${WRKDIR}/${TYPO3SRC} ${PREFIX}/${TYPO3WWW}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPO3SITE}
-	${RM} ${PREFIX}/${TYPO3SITE}/typo3_src && \
-		cd ${PREFIX}/${TYPO3SITE} && \
+	${CP} -R ${WRKDIR}/${TYPO3DUMMY}/ ${STAGEDIR}${PREFIX}/${TYPO3SITE}
+	${CP} -R ${WRKDIR}/${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3WWW}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${TYPO3SITE}
+	${RM} ${STAGEDIR}${PREFIX}/${TYPO3SITE}/typo3_src && \
+		cd ${STAGEDIR}${PREFIX}/${TYPO3SITE} && \
 		${LN} -s ../${TYPO3SRC} typo3_src
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPO3WWW}/${TYPO3SRC}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3SRC}
 
 .include <bsd.port.mk>
