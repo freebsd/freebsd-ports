@@ -17,7 +17,6 @@ FORTUNEFILES=	adams banner computer definizioni formiche italia itatrek \
 		computer-o definizioni-o film-o italia-o jackfr-o leggi-o \
 		luttazzi-o obsc-o zuse-o
 
-NO_STAGE=	yes
 pre-build:
 .if !exists(${STRCMD})
 	@${ECHO_MSG} "Please install the games distribution"
@@ -30,10 +29,11 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/games
-	@${MKDIR} ${PREFIX}/share/games/fortune
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune
 .for f in ${FORTUNEFILES}
-	@${INSTALL_DATA} ${WRKSRC}/testi/${f}* ${PREFIX}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/testi/${f}* \
+		${STAGEDIR}${PREFIX}/share/games/fortune
 .endfor
 
 post-install:
