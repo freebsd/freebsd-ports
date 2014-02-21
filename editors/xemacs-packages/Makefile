@@ -146,8 +146,8 @@ post-patch:
 	${FIND} ${WRKSRC} -name \*.orig -exec ${RM} -f \{} \;
 
 do-install:
-	${MKDIR} ${XEMACSDIR}/${PACKAGES_SUBDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${XEMACSDIR}/${PACKAGES_SUBDIR})
+	${MKDIR} ${STAGEDIR}${XEMACSDIR}/${PACKAGES_SUBDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${XEMACSDIR}/${PACKAGES_SUBDIR})
 
 post-install:
 	@cd ${WRKDIR} && \
