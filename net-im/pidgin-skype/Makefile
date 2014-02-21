@@ -46,7 +46,7 @@ mylibs=		${PTHREAD_LIBS}
 # the upstream translations and .pot file are woefully out of date.
 #OPTIONS_DEFINE=	NLS
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
