@@ -10,7 +10,7 @@ MASTER_SITES=	http://wordnetcode.princeton.edu/${PORTVERSION}/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Dictionaries and thesauri with devel. libraries (C, TCL) and browsers
 
-USE_TCL=	yes
+USES=		tcl
 SCRIPTS_ENV+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION}
 MAKE_ENV+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION}
 PLIST_SUB+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION}
