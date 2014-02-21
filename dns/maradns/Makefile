@@ -36,6 +36,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 post-patch:
+	@${REINPLACE_CMD} -e 's/cc/${CC}/' ${WRKSRC}/build/Makefile.freebsd
 	@${FIND} ${WRKSRC} -type f ! -name "*.orig" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/etc/maradns|${ETCDIR}|g; s|/etc/mararc|${ETCDIR}|g' -e\
 		's|/etc/deadwood|${ETCDIR}|g' -e\
