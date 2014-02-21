@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	8.1.3
+PORTVERSION=	8.1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -13,6 +13,7 @@ BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt
 LIB_DEPENDS=	libee.so:${PORTSDIR}/devel/libee \
 		libestr.so:${PORTSDIR}/devel/libestr \
 		libjson.so:${PORTSDIR}/devel/json-c \
+		liblogging-stdlog.so:${PORTSDIR}/devel/liblogging \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_LDCONFIG=	yes
@@ -161,5 +162,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${STAGEDIR}${DOCSDIR}/
 	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/rsyslog-example.conf ${STAGEDIR}${EXAMPLESDIR}
+.for l in lmregexp lmzlibw lmnet lmnetstrms lmstrmsrv lmnsd_ptcp lmcry_gcry lmtcpsrv lmtcpclt immark imuxsock imtcp imudp omtesting imklog impstats omstdout imfile imdiag ommail
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/rsyslog/${l}.so
+.endfor
 
 .include <bsd.port.post.mk>

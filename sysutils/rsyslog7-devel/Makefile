@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	7.5.7
+PORTVERSION=	7.5.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -161,5 +161,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${STAGEDIR}${DOCSDIR}/
 	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/rsyslog-example.conf ${STAGEDIR}${EXAMPLESDIR}
+.for l in lmregexp lmzlibw lmnet lmnetstrms lmstrmsrv lmnsd_ptcp lmcry_gcry lmtcpsrv lmtcpclt immark imuxsock imtcp imudp omtesting imklog impstats omstdout imfile imdiag ommail omruleset
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/rsyslog/${l}.so
+.endfor
 
 .include <bsd.port.post.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	7.4.7
+PORTVERSION=	7.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -12,7 +12,8 @@ BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt
 
 LIB_DEPENDS=	libee.so:${PORTSDIR}/devel/libee \
 		libestr.so:${PORTSDIR}/devel/libestr \
-		libjson.so:${PORTSDIR}/devel/json-c
+		libjson.so:${PORTSDIR}/devel/json-c \
+		liblogging-stdlog.so:${PORTSDIR}/devel/liblogging
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
@@ -163,8 +164,11 @@ post-patch:
 post-install:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${STAGEDIR}${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/*jpg ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/*png ${STAGEDIR}${DOCSDIR}/
 	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/rsyslog-example.conf ${STAGEDIR}${EXAMPLESDIR}
+.for l in lmregexp lmzlibw lmnet lmnetstrms lmstrmsrv lmnsd_ptcp lmcry_gcry lmtcpsrv lmtcpclt immark imuxsock imtcp imudp omtesting imklog impstats omstdout imfile imdiag ommail omruleset
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/rsyslog/${l}.so
+.endfor
 
 .include <bsd.port.post.mk>
