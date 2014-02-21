@@ -12,12 +12,10 @@ COMMENT=	Watches the growth of files or directories
 
 HAS_CONFIGURE=	yes
 
-MAN1=		xtail.1
-PLIST_FILES=	bin/xtail
+PLIST_FILES=	bin/xtail man/man1/xtail.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xtail ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/xtail.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/xtail ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/xtail.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
