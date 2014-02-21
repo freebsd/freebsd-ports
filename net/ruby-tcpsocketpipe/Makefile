@@ -20,8 +20,8 @@ USE_RUBY_FEATURES=	devel-logger
 NO_BUILD=	yes
 PLIST_FILES=	%%RUBY_SITELIBDIR%%/socketproxy.rb
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/socketproxy.rb ${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/socketproxy.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
 
 .include <bsd.port.mk>
