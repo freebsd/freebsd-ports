@@ -1,6 +1,28 @@
---- listcab.cpp.orig	Tue Aug 19 20:42:27 2003
-+++ listcab.cpp	Tue Aug 19 20:49:27 2003
-@@ -47,13 +47,19 @@
+--- listcab.cpp.orig	1999-10-24 08:11:38.000000000 -0400
++++ listcab.cpp	2014-02-21 16:14:29.246853465 -0500
+@@ -8,8 +8,8 @@
+ #include <stdio.h>
+ #include <string.h>
+ //#include <iomanip.h>
+-#include <fstream.h>
+-#include <iostream.h>
++#include <fstream>
++#include <iostream>
+ #include "cftypes.h"
+ #include "cfheader.h"
+ #include "cffolder.h"
+@@ -19,6 +19,10 @@
+ #include "cfreader.h"
+ #include "cfcreate.h"
+ 
++using std::endl;
++using std::cout;
++using std::cerr;
++
+ ////////////////////////////////////////****************************************
+ 
+ void display_header_info(cabinet_header& cfh);
+@@ -47,13 +51,19 @@
  			cerr << "New Folder Error: " << retval << endl;
  			return 1;
  		}
@@ -24,7 +46,7 @@
  				if((retval = cab.add_file(filename)) != OK)
  				{
  					perror("read");
-@@ -62,10 +68,13 @@
+@@ -62,10 +72,13 @@
  					return 1;
  				}
  			}
