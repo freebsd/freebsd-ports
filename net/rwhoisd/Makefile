@@ -29,8 +29,6 @@ USE_RC_SUBR=	rwhoisd
 BINOWN=		bin
 BINGRP=		bin
 
-MAN8=		rwhois_indexer.8 rwhoisd.8
-
 PORTDOCS=	INSTALL.html TODO UPGRADE operations_guide.html \
 		operations_guide.txt rfc2167.txt security.html security.txt
 
@@ -38,7 +36,6 @@ ETCFILES=	rwhoisd.allow rwhoisd.auth_area rwhoisd.conf rwhoisd.deny \
 		rwhoisd.dir rwhoisd.root rwhoisd.x.dir
 PLIST_SUB+=	ETCFILES="${ETCFILES}"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MIPV6)
@@ -57,13 +54,11 @@ post-patch:
 		${WRKSRC}/common/conf.h
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/rwhois_indexer.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/doc/rwhoisd.8 ${PREFIX}/man/man8
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/rwhois_indexer.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/rwhoisd.8 ${STAGEDIR}${PREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 . endfor
-.endif
 
 .include <bsd.port.mk>
