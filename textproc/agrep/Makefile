@@ -20,7 +20,7 @@ MAKE_ARGS=	CFLAGS="${CFLAGS}"
 PLIST_FILES=	bin/agrep man/man1/agrep.1.gz
 PORTDOCS=	COPYRIGHT agrep.algorithms agrep.ps.1.Z agrep.ps.2.Z
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

@@ -29,7 +29,7 @@ PLIST_FILES=	bin/mxmldoc include/mxml.h \
 		man/man1/mxmldoc.1.gz \
 		man/man3/mxml.3.gz
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
