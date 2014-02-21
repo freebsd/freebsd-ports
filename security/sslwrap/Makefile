@@ -18,8 +18,6 @@ USE_OPENSSL=	yes
 PORTDOCS=	README docs.html
 PLIST_FILES=	bin/sslwrap
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS 
 
 .include <bsd.port.options.mk>
@@ -30,12 +28,10 @@ post-patch:
 		 s|OPENSSL"|"openssl/|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sslwrap ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/sslwrap ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
