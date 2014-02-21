@@ -5,7 +5,7 @@
  
  SHELL=/bin/sh
 -LIB=	${DESTDIR}/usr/local/lib/mkcmd
-+LIB=	${PREFIX}/share/mkcmd
++LIB=	${DESTDIR}${PREFIX}/share/mkcmd
  
  TEMPL=	Template.m bytes.m bytes.mi client.m \
  bsd.m \
