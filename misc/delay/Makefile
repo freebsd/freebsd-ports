@@ -12,12 +12,10 @@ COMMENT=	A delay program with feedback to the user
 
 GNU_CONFIGURE=	yes
 
-MAN1=		delay.1
-PLIST_FILES=	bin/delay
+PLIST_FILES=	bin/delay man/man1/delay.1.gz
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/delay ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/delay.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/delay ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/delay.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
