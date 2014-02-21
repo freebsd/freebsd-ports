@@ -39,7 +39,6 @@ CDBSUFFIX=		#empty
 NO_BUILD=		yes
 .endif
 
-NO_STAGE=	yes
 post-extract:
 	@(cd ${WRKDIR}; ${BZIP2_CMD} -d *.bz2)
 
@@ -76,10 +75,10 @@ do-build:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/${SKKDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SKKDIR}
 .for type in ${SKK_JISYO_TYPE}
 	${INSTALL_DATA} ${WRKSRC}/SKK-JISYO.${type}.${PORTVERSION}${CDBSUFFIX} \
-		${PREFIX}/${SKKDIR}/SKK-JISYO.${type}${CDBSUFFIX}
+		${STAGEDIR}${PREFIX}/${SKKDIR}/SKK-JISYO.${type}${CDBSUFFIX}
 .endfor
 
 .include <bsd.port.mk>
