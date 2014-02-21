@@ -22,7 +22,7 @@ PORTEXAMPLES=	users.sample
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	EXAMPLES 
+OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
 

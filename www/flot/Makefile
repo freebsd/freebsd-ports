@@ -29,7 +29,7 @@ do-install:
 	@${INSTALL} -d -g ${USERS} -o ${GROUPS} ${WWWDIR}
 	${INSTALL_DATA} -o www -g www ${WRKSRC}/*.js ${WWWDIR}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 

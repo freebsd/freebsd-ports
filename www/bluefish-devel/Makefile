@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/applications \
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
