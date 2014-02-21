@@ -9,3 +9,4 @@ install:
 		${DESTDIR}${PREFIX}/sbin/ironsides
 	${BSD_INSTALL_DATA} dfcs.usafa.edu.zonefile \
 		${DESTDIR}${PREFIX}/share/examples/ironsides/
+	${BSD_INSTALL_MAN} ironsides.1 ${DESTDIR}${PREFIX}/man/man1/
