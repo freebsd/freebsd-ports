@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.66.0
+PORTVERSION=	0.66.1
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
@@ -103,7 +103,7 @@ REMOVE_SUBDIRS+=liblock liblog
 .endif
 
 .if ${AUTHMOD} == authuserdb
-MAN8=		makeuserdb.8 userdb.8 userdbpw.8
+MAN8=		makeuserdb.8 userdb.8 userdbpw.8 pw2userdb.8
 .if ${PKGNAMESUFFIX} == -usergdbm
 CONFLICTS+=	${PORTNAME}-userdb-0.*
 LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
