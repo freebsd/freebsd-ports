@@ -18,8 +18,8 @@ EXTRACT_AFTER_ARGS=	> ${WRKSRC}/zipcodes
 NO_BUILD=	yes
 PLIST_FILES=	share/misc/us.zipcodes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/zipcodes ${PREFIX}/share/misc/us.zipcodes
+	${INSTALL_DATA} ${WRKSRC}/zipcodes \
+		${STAGEDIR}${PREFIX}/share/misc/us.zipcodes
 
 .include <bsd.port.mk>
