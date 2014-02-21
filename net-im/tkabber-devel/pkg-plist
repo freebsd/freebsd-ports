@@ -452,37 +452,6 @@ bin/tkabber-remote
 %%DATADIR%%/utils.tcl
 %%DATADIR%%/version
 %%DATADIR%%/xmppmime.tcl
-%%EXAMPLESDIR%%/configs/badlop-config-home.tcl
-%%EXAMPLESDIR%%/configs/badlop-config.tcl
-%%EXAMPLESDIR%%/configs/config.tcl
-%%EXAMPLESDIR%%/configs/mtr-config.tcl
-%%EXAMPLESDIR%%/configs/teo-config.tcl
-%%EXAMPLESDIR%%/tclCarbonNotification-1.0.0/build.sh
-%%EXAMPLESDIR%%/tclCarbonNotification-1.0.0/tclCarbonNotification.tcl
-%%EXAMPLESDIR%%/tools/howto.txt
-%%EXAMPLESDIR%%/tools/jbot
-%%EXAMPLESDIR%%/tools/jsend.tcl
-%%EXAMPLESDIR%%/tools/rssbot
-%%EXAMPLESDIR%%/tools/rssbot.tcl
-%%EXAMPLESDIR%%/tools/tkabber_setstatus
-%%EXAMPLESDIR%%/xrdb/badlop-dark.xrdb
-%%EXAMPLESDIR%%/xrdb/black.xrdb
-%%EXAMPLESDIR%%/xrdb/dark.xrdb
-%%EXAMPLESDIR%%/xrdb/dark2.xrdb
-%%EXAMPLESDIR%%/xrdb/green.xrdb
-%%EXAMPLESDIR%%/xrdb/ice.xrdb
-%%EXAMPLESDIR%%/xrdb/light.xrdb
-%%EXAMPLESDIR%%/xrdb/lighthouse.xrdb
-%%EXAMPLESDIR%%/xrdb/ocean-deep.xrdb
-%%EXAMPLESDIR%%/xrdb/teopetuk.xrdb
-%%EXAMPLESDIR%%/xrdb/warm.xrdb
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/tkabber.html
-%%PORTDOCS%%%%DOCSDIR%%/tkabber.xml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/emoticons/default
 @dirrm %%DATADIR%%/emoticons
 @dirrm %%DATADIR%%/ifacetk
@@ -531,8 +500,3 @@ bin/tkabber-remote
 @dirrm %%DATADIR%%/tclxmpp
 @dirrm %%DATADIR%%/trans
 @dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/configs
-@dirrm %%EXAMPLESDIR%%/tclCarbonNotification-1.0.0
-@dirrm %%EXAMPLESDIR%%/tools
-@dirrm %%EXAMPLESDIR%%/xrdb
-@dirrm %%EXAMPLESDIR%%
