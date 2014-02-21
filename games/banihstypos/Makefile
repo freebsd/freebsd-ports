@@ -16,7 +16,7 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 
 PLIST_FILES=	bin/banihstypos
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

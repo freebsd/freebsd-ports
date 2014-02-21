@@ -39,7 +39,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's/X11R6/local/g; s/libpng/ligpng15/g' ${WRKSRC}/build/openbsd4-config.py && \
 		${MV} ${WRKSRC}/build/openbsd4-config.py ${WRKSRC}/build/${PYTHON_PLATFORM}-config.py
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

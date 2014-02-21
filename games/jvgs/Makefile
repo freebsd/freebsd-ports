@@ -26,7 +26,7 @@ PLIST_FILES=	bin/${PORTNAME} libexec/${PORTNAME}
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
