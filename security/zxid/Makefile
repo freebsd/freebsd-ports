@@ -29,7 +29,7 @@ ZXID_BINS=	smime zxcall zxcot zxdecode zxencdectest zxid zxidhlo \
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

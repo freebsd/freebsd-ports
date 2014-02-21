@@ -18,7 +18,7 @@ USE_OPENSSL=	yes
 PORTDOCS=	README docs.html
 PLIST_FILES=	bin/sslwrap
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

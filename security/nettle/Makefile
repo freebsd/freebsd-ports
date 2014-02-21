@@ -32,7 +32,7 @@ PORTDOCS=	NEWS README TODO nettle.html nettle.pdf
 PORTEXAMPLES=	*.c *.h
 INFO=		nettle
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
