@@ -26,18 +26,15 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 ALL_TARGET=	trafshow
 
-MAN1=		trafshow.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/trafshow ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/trafshow.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/.trafshow ${PREFIX}/etc/trafshow.dist
-	if [ ! -f ${PREFIX}/etc/trafshow ]; then \
-		${CP} ${PREFIX}/etc/trafshow.dist ${PREFIX}/etc/trafshow; \
+	${INSTALL_PROGRAM} ${WRKSRC}/trafshow ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/trafshow.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/.trafshow ${STAGEDIR}${PREFIX}/etc/trafshow.dist
+	if [ ! -f ${STAGEDIR}${PREFIX}/etc/trafshow ]; then \
+		${CP} ${STAGEDIR}${PREFIX}/etc/trafshow.dist ${STAGEDIR}${PREFIX}/etc/trafshow; \
 	fi
 
 .include <bsd.port.mk>
