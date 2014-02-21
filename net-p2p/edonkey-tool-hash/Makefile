@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=	${WRKDIR}/ed2k_hash-${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
 # respect CFLAGS
 	@${REINPLACE_CMD} -E -e \
@@ -29,6 +28,6 @@ post-patch:
 do-install:
 # uphold POLA, do not change binary name
 	@${INSTALL_PROGRAM} ${WRKSRC}/ed2k_hash/ed2k_hash \
-		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.mk>
