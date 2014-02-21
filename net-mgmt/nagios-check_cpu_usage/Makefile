@@ -15,9 +15,9 @@ NO_BUILD=	yes
 PLIST_DIRSTRY=	libexec/nagios
 PLIST_FILES=	libexec/nagios/check_cpu_usage
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/nagios
-	@${INSTALL_SCRIPT} ${.CURDIR}/src/check_cpu_usage ${PREFIX}/libexec/nagios
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${.CURDIR}/src/check_cpu_usage \
+		${STAGEDIR}${PREFIX}/libexec/nagios
 
 .include <bsd.port.mk>
