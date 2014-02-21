@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mod_auth_mellon
-PORTVERSION=		0.5.0
-PORTREVISION=	1
+PORTVERSION=		0.7.0
 CATEGORIES=		www
 MASTER_SITES=		http://modmellon.googlecode.com/files/
 DIST_SUBDIR=		apache2
@@ -19,7 +18,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-apxs2=${APXS}
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-Wall" OPENSSL_LIBS="-lssl"
 
-USE_APACHE=		22
+USE_APACHE=		22+
 
 PLIST_FILES=		${APACHEMODDIR}/mod_auth_mellon.so
 
