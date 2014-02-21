@@ -14,8 +14,7 @@ PLIST_FILES=	bin/bsdbktr_tvtune
 WRKSRC=	${WRKDIR}/${PORTNAME}
 ALL_TARGET=	bsdbktr_tvtune
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bsdbktr_tvtune ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bsdbktr_tvtune ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
