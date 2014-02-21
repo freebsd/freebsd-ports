@@ -17,12 +17,11 @@ COMMENT=	Pseudo cannaserver which wraps some other input engines
 USE_RC_SUBR=	esecanna
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CONFIGURE_ARGS=	--with-piddir="/var/run/esecanna"
 
 DOCS=		CREDITS CHANGES.jp README.First.jp README.jp
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e " \
 		s,!!PREFIX!!,${PREFIX},g; \
@@ -31,11 +30,8 @@ post-patch:
 		${WRKSRC}/esecannarc
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/esecanna
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/esecanna
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/esecanna/
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/esecanna
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/esecanna
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${PREFIX}/share/doc/esecanna/
 
 .include <bsd.port.mk>
