@@ -1,3 +1,4 @@
 bin/nenscript
+man/man1/nenscript.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
