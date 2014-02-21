@@ -16,17 +16,19 @@ MAKE_JOBS_UNSAFE=	yes
 
 TCL_DVER=	${TCL_VER:S/.//}
 
-USE_TCL=	84+
+USES=		gmake tcl:84,85
 USE_AUTOTOOLS=	autoconf
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/unix
 CONFIGURE_ARGS+=--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tcl=${TCL_LIBDIR}
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 SUB_FILES=	httpd.conf pkgIndex.tcl pkg-message
 SUB_LIST+=	TCL_DVER=${TCL_DVER} WS_VER=${PORTVERSION}
 SUB_LIST+=	APACHEETCDIR=${APACHEETCDIR} APACHEMODDIR=${APACHEMODDIR}
 PLIST_SUB+=	TCL_DVER=${TCL_DVER}
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 USE_APACHE=	22+
 CONFIGURE_ARGS+=--with-httpdinclude=`apxs -q includedir`
@@ -36,7 +38,6 @@ CPPFLAGS+=	-I ${LOCALBASE}/include/apr-1
 CPPFLAGS+=	-Wall -Werror
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local/websh,${PREFIX},' \
 		${WRKSRC:H:H}/doc/mod_websh/conf/websh.conf
@@ -61,27 +62,26 @@ post-build test:
 		{print}'
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC:H:H}/doc/mod_websh/conf/*.ws3	\
-		${WRKDIR}/pkgIndex.tcl ${PREFIX}/lib/${PORTNAME}/
+		${WRKDIR}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC:H:H}/doc/mod_websh/conf/websh.conf	\
-		${PREFIX}/etc/websh.conf.dist
+		${STAGEDIR}${PREFIX}/etc/websh.conf.dist
+	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 	${INSTALL_DATA} ${WRKSRC}/mod_websh${PORTVERSION}.so \
-		${PREFIX}/${APACHEMODDIR}/mod_websh.so
-	${INSTALL_DATA} ${WRKSRC}/libwebsh${TCL_DVER}.so.1 ${PREFIX}/lib
+		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_websh.so
+	${INSTALL_DATA} ${WRKSRC}/libwebsh${TCL_DVER}.so.1 \
+	    	${STAGEDIR}${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/libwebsh${TCL_DVER}.so.1 \
-		${PREFIX}/lib/libwebsh${TCL_DVER}.so
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
+		${STAGEDIR}${PREFIX}/lib/libwebsh${TCL_DVER}.so
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC:H:H}/doc/mod_websh/htdocs/*.ws3	\
 		${WRKSRC:H:H}/doc/mod_websh/htdocs/*.whtml		\
-		${WRKDIR}/httpd.conf ${EXAMPLESDIR}/
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC:H:H}/doc/html/* ${DOCSDIR}
-.endif
+		${WRKDIR}/httpd.conf ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC:H:H}/doc/html/* ${STAGEDIR}${DOCSDIR}
 
 post-install:
 	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/mod_${MODULENAME}.so"
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
