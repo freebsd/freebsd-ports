@@ -24,6 +24,6 @@ post-extract:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${TARGET_DIR}
-	${PAX} -rw -s,${WRKSRC},, ${WRKSRC}/locale ${STAGEDIR}${TARGET_DIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} locale ${STAGEDIR}${TARGET_DIR}
 
 .include <bsd.port.mk>
