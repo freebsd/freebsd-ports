@@ -67,7 +67,7 @@ PLIST_SUB+=	NLS=""
 .if ! ${PORT_OPTIONS:MTK}
 CONFIGURE_ARGS+=	--without-tk
 .else
-USE_TK=		yes
+USES+=			tk
 CONFIGURE_ARGS+=	--with-tk-library=${LOCALBASE}/lib \
 			--with-tk-include=${TK_INCLUDEDIR} \
 			--with-tcl-library=${LOCALBASE}/lib \
