@@ -12,18 +12,16 @@ COMMENT=	Creates top-10 lists of the messages in a mailbox
 
 PLIST_FILES=	bin/mboxstats
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|ssize_t|size_t|g' ${WRKSRC}/io.h
 	@${REINPLACE_CMD} -e 's|PATH_MAX|FILENAME_MAX|g' ${WRKSRC}/main.cpp
 	@${REINPLACE_CMD} -e 's|^CC=|CC?=|g' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|^CPPFLAGS|CXXFLAGS|g' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -Ee 's,(stat|open)64,\1,g' ${WRKSRC}/main.cpp
-	@${REINPLACE_CMD} -Ee 's,(stat|mmap|lseek|off)64,\1,g' ${WRKSRC}/br.h ${WRKSRC}/br.cpp
+	@${REINPLACE_CMD} -Ee 's,(stat|mmap|lseek|off)64,\1,g' ${WRKSRC}/br.h \
+		${WRKSRC}/br.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mboxstats ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mboxstats ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
