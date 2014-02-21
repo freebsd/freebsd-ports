@@ -22,7 +22,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 PLIST_FILES=	bin/${DISTNAME:R}
 
-NO_STAGE=	yes
 post-extract:
 	@${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
@@ -31,6 +30,6 @@ do-build:
 		${DISTNAME} -o ${DISTNAME:R}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME:R} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME:R} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
