@@ -21,12 +21,6 @@ NO_BUILD=	yes
 PLIST_SUB+=	DISTNAME="${DISTNAME}" \
 		RUBY_VER_SHORT="${RUBY_VER_SHORT}"
 
-.if !defined(NOPORTDOCS)
-RUBY_SETUP_OPTIONS=	--ri --rdoc
-.else
-RUBY_SETUP_OPTIONS=	--no-ri --no-rdoc
-.endif
-
 GEMS_BASE_DIR=		lib/ruby/gems
 GEMS_BASE_DIR_P=	${GEMS_BASE_DIR}
 GEMS_VER_DIR=		${GEMS_BASE_DIR}/${RUBY_VER}
@@ -37,25 +31,33 @@ GEMS_DOC_DIR=		${GEMS_DOC_BASE_DIR}/${DISTNAME}
 GEMS_DOC_DIR_P=		${GEMS_DOC_BASE_DIR_P}/%%DISTNAME%%
 RUBY_VER_SHORT=		${RUBY_VER:S/.//}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+RUBY_SETUP_OPTIONS=	--ri --rdoc --destdir=${STAGEDIR}
+GEM_ENV+=		GEM_HOME=${STAGEDIR}${PREFIX}/${GEMS_VER_DIR}
+.else
+RUBY_SETUP_OPTIONS=	--no-ri --no-rdoc --destdir=${STAGEDIR}
+.endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/${GEMS_DOC_BASE_DIR}/
-	@${TOUCH} ${PREFIX}/${GEMS_DOC_BASE_DIR}/.keep_this
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${GEMS_DOC_BASE_DIR}/
+	@${TOUCH} ${STAGEDIR}${PREFIX}/${GEMS_DOC_BASE_DIR}/.keep_this
 	cd ${WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBY} ${RUBY_SETUP} ${RUBY_SETUP_OPTIONS}
 
 post-install:
-	@${LN} -sf ${PREFIX}/bin/gem${RUBY_VER_SHORT} ${PREFIX}/bin/gem
+	@${LN} -sf gem${RUBY_VER_SHORT} ${STAGEDIR}${PREFIX}/bin/gem
 
 #
 # Find all RDOC and RI files
 #
-.if !defined(NOPORTDOCS)
-	@${FIND} -ds ${PREFIX}/${GEMS_DOC_DIR}/ ! -type d | \
-	    ${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} -ds ${PREFIX}/${GEMS_DOC_DIR}/ -type d -mindepth 1 | \
-	    ${SED} -E -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.if ${PORT_OPTIONS:MDOCS}
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEMS_DOC_DIR}/ ! -type d | \
+	    ${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEMS_DOC_DIR}/ -type d -mindepth 1 | \
+	    ${SED} -E -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${GEMS_DOC_DIR}" >> ${TMPPLIST}
 .endif
 
@@ -71,19 +73,19 @@ x-generate-plist:
 	${ECHO} %%RUBY_SITELIBDIR%%/gauntlet_rubygems.rb >> pkg-plist.new
 	${ECHO} %%RUBY_SITELIBDIR%%/rbconfig/datadir.rb >> pkg-plist.new
 	${ECHO} %%RUBY_SITELIBDIR%%/rubygems.rb >> pkg-plist.new
-	${FIND} ${RUBY_SITELIBDIR}/rubygems -type f | ${SORT} | ${SED} -e 's,${RUBY_SITELIBDIR},%%RUBY_SITELIBDIR%%,' >> pkg-plist.new
+	${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/rubygems -type f | ${SORT} | ${SED} -e 's,${STAGEDIR}${RUBY_SITELIBDIR},%%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 	${ECHO} %%RUBY_SITELIBDIR%%/ubygems.rb >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEMS_DOC_DIR} -type f | ${SORT} | ${SED} -e 's,${PREFIX}/${GEMS_DOC_DIR},%%PORTDOCS%%${GEMS_DOC_DIR_P},' >> pkg-plist.new
+	${FIND} ${STAGEDIR}${PREFIX}/${GEMS_DOC_DIR} -type f | ${SORT} | ${SED} -e 's,${STAGEDIR}${PREFIX}/${GEMS_DOC_DIR},%%PORTDOCS%%${GEMS_DOC_DIR_P},' >> pkg-plist.new
 
-	${FIND} ${RUBY_SITELIBDIR}/rubygems -type d | ${SORT} -r | ${SED} -e 's,${RUBY_SITELIBDIR},@dirrm %%RUBY_SITELIBDIR%%,' >> pkg-plist.new
+	${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/rubygems -type d | ${SORT} -r | ${SED} -e 's,${STAGEDIR}${RUBY_SITELIBDIR},@dirrm %%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 	${ECHO} @dirrm %%RUBY_SITELIBDIR%%/rbconfig >> pkg-plist.new
 	${ECHO} @dirrmtry ${GEMS_VER_DIR_P}/specifications >> pkg-plist.new
 	${ECHO} @dirrmtry ${GEMS_VER_DIR_P}/gems >> pkg-plist.new
 	${ECHO} @dirrmtry ${GEMS_VER_DIR_P}/cache >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEMS_DOC_DIR} -type d | ${SORT} -r | ${SED} -e 's,${PREFIX}/${GEMS_DOC_DIR},%%PORTDOCS%%@dirrm ${GEMS_DOC_DIR_P},' >> pkg-plist.new
+	${FIND} ${STAGEDIR}${PREFIX}/${GEMS_DOC_DIR} -type d | ${SORT} -r | ${SED} -e 's,${STAGEDIR}${PREFIX}/${GEMS_DOC_DIR},%%PORTDOCS%%@dirrm ${GEMS_DOC_DIR_P},' >> pkg-plist.new
 	${ECHO} ${GEMS_DOC_BASE_DIR_P}/.keep_this  >> pkg-plist.new
 	${ECHO} @dirrmtry ${GEMS_DOC_BASE_DIR_P} >> pkg-plist.new
 	${ECHO} @dirrmtry ${GEMS_VER_DIR_P} >> pkg-plist.new
 	${ECHO} @dirrmtry ${GEMS_BASE_DIR_P} >> pkg-plist.new
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
