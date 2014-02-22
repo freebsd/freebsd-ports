@@ -11,6 +11,9 @@ DISTNAME=	gcc-${DISTVERSION}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.9
 
+LICENSE=	GPLv3 GPLv3RLE
+LICENSE_COMB=	multi
+
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
 		libmpc.so:${PORTSDIR}/math/mpc
