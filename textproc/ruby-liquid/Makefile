@@ -18,16 +18,13 @@ NO_BUILD=	yes
 SADIR=		${RUBY_SITELIBDIR}
 DOCS=		CHANGELOG README.txt History.txt
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${SADIR}/liquid/tags ${SADIR}/liquid/extras
-	${INSTALL_DATA} ${WRKSRC}/lib/liquid.rb ${SADIR}/
-	${INSTALL_DATA} ${WRKSRC}/lib/liquid/*.rb ${SADIR}/liquid/
-	${INSTALL_DATA} ${WRKSRC}/lib/liquid/tags/*.rb ${SADIR}/liquid/tags/
-	${INSTALL_DATA} ${WRKSRC}/lib/extras/*.rb ${SADIR}/liquid/extras/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${SADIR}/liquid/tags ${STAGEDIR}${SADIR}/liquid/extras
+	${INSTALL_DATA} ${WRKSRC}/lib/liquid.rb ${STAGEDIR}${SADIR}/
+	${INSTALL_DATA} ${WRKSRC}/lib/liquid/*.rb ${STAGEDIR}${SADIR}/liquid/
+	${INSTALL_DATA} ${WRKSRC}/lib/liquid/tags/*.rb ${STAGEDIR}${SADIR}/liquid/tags/
+	${INSTALL_DATA} ${WRKSRC}/lib/extras/*.rb ${STAGEDIR}${SADIR}/liquid/extras/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 .include <bsd.port.mk>
