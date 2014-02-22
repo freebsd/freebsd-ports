@@ -12,6 +12,8 @@ DISTNAME=	Last.fm-${PORTVERSION}
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Official Last.fm desktop application suite
 
+BROKEN=		Does not build
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblastfm.so:${PORTSDIR}/audio/liblastfm \
