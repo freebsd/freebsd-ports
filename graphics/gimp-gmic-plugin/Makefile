@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmic
-PORTVERSION=	1.5.8.1
+PORTVERSION=	1.5.8.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/old
@@ -21,13 +21,12 @@ LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick13 \
 
 OPTIONS_DEFINE=	BASH
 OPTIONS_SUB=	yes
-BASH_DESC=	Install programmable completions for Bash
 BASH_RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-OPTIONS_EXCLUDE=NLS DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USES=		gmake
+USE_GCC=	yes
 USE_GNOME=	gtk20
 USE_XORG=	x11 xext xrandr
 
@@ -45,6 +44,9 @@ PLIST_FILES=	bin/gmic \
 		%%PLUGIN_DIR%%/gmic_gimp
 PLIST_DIRSTRY=	%%PLUGIN_DIR%%
 
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
+PORTEXAMPLES=	gmic_in_script.scm gmic_use_lib.cpp
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -56,6 +58,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmic_gimp ${STAGEDIR}${PREFIX}/${PLUGIN_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/gmic ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/../man/gmic.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 .if ${PORT_OPTIONS:MBASH}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_SCRIPT} ${WRKSRC}/gmic_bashcompletion.sh \
