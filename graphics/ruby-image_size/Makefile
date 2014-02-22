@@ -26,19 +26,17 @@ DOCS_EN=	${RUBY_RD_FILES:N*.ja.rd} \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/image_size.rb ${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/lib/image_size.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
-.endif
 
 .include <bsd.port.mk>
