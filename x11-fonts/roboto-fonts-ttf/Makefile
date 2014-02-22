@@ -2,20 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	roboto-fonts-ttf
-PORTVERSION=	20111129
+PORTVERSION=	1.2
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://developer.android.com/design/static/download/
-DISTNAME=	Roboto_Hinted_${PORTVERSION}
+MASTER_SITES=	http://developer.android.com/downloads/design/
+DISTNAME=	roboto-${PORTVERSION}
 
-MAINTAINER=	winstonw@lavabit.com
+MAINTAINER=	winston@ml1.net
 COMMENT=	The Roboto typeface family
 
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_ZIP=	yes
+WRKSRC=		${WRKDIR}/Roboto_v${PORTVERSION}
 
 FONTDIR=	lib/X11/fonts/Roboto
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -23,17 +27,15 @@ PLIST_SUB=	FONTDIR=${FONTDIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 
-NO_STAGE=	yes
 do-build:
-	@cd ${WRKSRC}/ && \
+	@${MV} ${WRKSRC}/Roboto/*.ttf ${WRKSRC}/RobotoCondensed/*.ttf ${WRKSRC}
+	@cd ${WRKSRC} && \
 		${LOCALBASE}/bin/mkfontscale && \
 		${LOCALBASE}/bin/mkfontdir
 
 do-install:
-	${MKDIR} ${PREFIX}/${FONTDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf fonts.* ${PREFIX}/${FONTDIR}/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf fonts.dir fonts.scale \
+		 ${STAGEDIR}${PREFIX}/${FONTDIR}
 
 .include <bsd.port.mk>
