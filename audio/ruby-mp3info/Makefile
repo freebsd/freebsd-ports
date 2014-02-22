@@ -14,7 +14,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library to access to information on mp3 files
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 USE_RUBY_RDOC=	yes
@@ -24,11 +23,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 DOCS=		CHANGELOG EXAMPLES README
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${DOCS}" ${RUBY_MODDOCDIR}/)
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/test.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${DOCS}" ${STAGEDIR}${RUBY_MODDOCDIR}/)
 
 .include <bsd.port.mk>
