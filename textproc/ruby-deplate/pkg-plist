@@ -196,6 +196,7 @@ bin/deplate
 %%DATADIR%%/templates/html-tabbar-right.html
 %%DATADIR%%/templates/html-tabbar-top.html
 %%DATADIR%%/templates/html-tabbar.html
+man/man1/deplate.1.gz
 @dirrm %%RUBY_SITELIBDIR%%/deplate/compat
 @dirrm %%RUBY_SITELIBDIR%%/deplate/ents
 @dirrm %%RUBY_SITELIBDIR%%/deplate/fmt
