@@ -8,7 +8,7 @@ $FreeBSD$
  p.add_option("-c", "--codebase-mode",
      help="""Use "-c none" to load no codebase.
 -See /etc/phpsh/rc.php for other codebase modes.""")
-+See %%PREFIX%%/etc/phpsh/rc.php for other codebase modes.""")
++See %%ETCDIR%%/rc.php for other codebase modes.""")
  p.add_option("-t", "--test-file",
      help="""Run a saved-phpsh-session unit test file.
  See test/ in the phpsh distribution for examples.""")

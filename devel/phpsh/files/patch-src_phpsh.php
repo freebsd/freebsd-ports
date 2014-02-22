@@ -8,7 +8,7 @@ $FreeBSD$
  // phpsh.php <comm-file> <codebase-mode> [-c]
  //
 -// use '' for default codebase-mode, define others in /etc/phpsh/rc.php
-+// use '' for default codebase-mode, define others in %%PREFIX%%/etc/phpsh/rc.php
++// use '' for default codebase-mode, define others in %%ETCDIR%%/rc.php
  // -c turns off color
  
  // set the TFBENV to script
@@ -17,7 +17,7 @@ $FreeBSD$
    require_once $___phpsh___homerc;
  } else {
 -  require_once '/etc/phpsh/rc.php';
-+  require_once '%%PREFIX%%/etc/phpsh/rc.php';
++  require_once '%%ETCDIR%%/rc.php';
  }
  
  $___phpsh___do_color = true;
@@ -26,7 +26,7 @@ $FreeBSD$
              'Not executing input: Possible call to undefined function '.
              $undefd_func."()\n".
 -            'See /etc/phpsh/config.sample to disable UndefinedFunctionCheck.';
-+            'See %%PREFIX%%/etc/phpsh/config.sample to disable UndefinedFunctionCheck.';
++            'See %%ETCDIR%%/config.sample to disable UndefinedFunctionCheck.';
          }
        }
        if ($err_msg) {

@@ -3,6 +3,7 @@
 
 PORTNAME=	phpsh
 PORTVERSION=	20110513
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
 		${MASTER_SITE_LOCAL}
@@ -14,6 +15,7 @@ COMMENT=	An interactive shell for PHP
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 USE_PHP=	pcre posix tokenizer
 
 WANT_PHP_CLI=	yes
@@ -33,8 +35,8 @@ USE_PHP+=	pcntl
 .endif
 
 post-patch:
-	@${GREP} -Rl '%%PREFIX%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
-		-e 's,%%PREFIX%%,${PREFIX},g'
+	@${GREP} -Rl '%%ETCDIR%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
+		-e 's,%%ETCDIR%%,${ETCDIR},g'
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

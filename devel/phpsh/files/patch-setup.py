@@ -21,7 +21,7 @@ $FreeBSD$
  # something better than this?
  if os.getenv("USER") == "root":
 -    config_dir = "/etc/phpsh"
-+    config_dir = "%%PREFIX%%/etc/phpsh"
++    config_dir = "%%ETCDIR%%"
  else:
      config_dir = os.getenv("HOME") + "/.phpsh"
  
