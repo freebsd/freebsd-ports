@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.spmfilter.org/attachments/download/58/
 MAINTAINER=	ast@treibsand.com
 COMMENT=	Spamassassin plugin for spmfilter
 
+BROKEN=		Does not build with last version of spmfilter
+
 BUILD_DEPENDS=	spmfilter>=0.4:${PORTSDIR}/mail/spmfilter
 RUN_DEPENDS=	spmfilter>=0.4:${PORTSDIR}/mail/spmfilter
 
