@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}_beta_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, multi-service communication client from Rambler
 
+BROKEN=		Fails to dos2unix
+
 LICENSE=	GPLv3
 
 USES=		qmake dos2unix
