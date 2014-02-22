@@ -12,7 +12,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby bindings for libarchive
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -26,9 +25,8 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${RUBY_MODDOCDIR}
-	cd ${WRKDIR}; ${COPYTREE_SHARE} "${DOCS}" ${RUBY_MODDOCDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	cd ${WRKDIR}; ${COPYTREE_SHARE} "${DOCS}" ${STAGEDIR}${RUBY_MODDOCDIR}/
+
 
 .include <bsd.port.mk>
