@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ExtUtils-MakeMaker
-PORTVERSION=	6.88
+PORTVERSION=	6.90
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,13 +17,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501400
-BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.58:${PORTSDIR}/devel/p5-ExtUtils-Manifest \
-		p5-JSON-PP>=2.27103:${PORTSDIR}/converters/p5-JSON-PP
-RUN_DEPENDS+=	p5-ExtUtils-Manifest>=1.58:${PORTSDIR}/devel/p5-ExtUtils-Manifest \
-		p5-JSON-PP>=2.27103:${PORTSDIR}/converters/p5-JSON-PP
-.endif
 
 .if ${PERL_LEVEL} < 501600
 BUILD_DEPENDS+=	p5-CPAN-Meta>=2.113640:${PORTSDIR}/devel/p5-CPAN-Meta
