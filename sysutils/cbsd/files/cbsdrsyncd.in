@@ -10,7 +10,6 @@
 #
 
 . /etc/rc.subr
-. /etc/rc.conf
 
 name="cbsdrsyncd"
 rcvar=cbsdrsyncd_enable
