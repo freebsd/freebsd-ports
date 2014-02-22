@@ -24,13 +24,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|.var.qmail|${QMAIL_PREFIX}|" ${WRKSRC}/conf-qmail
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
-	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
+	@${ECHO_CMD} ${STAGEDIR}${PREFIX} > ${WRKSRC}/conf-home
 
-pre-install:
-	@${MV} -f ${WRKSRC}/conf-home ${WRKSRC}/conf-home.sav
-	@echo "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-home
-	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o
-	@cd ${WRKSRC} ; ${MAKE_CMD} install instcheck
-	@${MV} -f ${WRKSRC}/conf-home.sav ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>
