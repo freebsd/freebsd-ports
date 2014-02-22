@@ -20,7 +20,4 @@ USE_ZIP=		yes
 USE_RUBY=		yes
 USE_RUBY_SETUP=		yes
 
-MAN1=			deplate.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
