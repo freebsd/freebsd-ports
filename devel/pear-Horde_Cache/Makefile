@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Cache
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 
