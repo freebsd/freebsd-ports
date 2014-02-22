@@ -5,7 +5,7 @@
  pdfdetach_OBJECTS = $(am_pdfdetach_OBJECTS)
  pdfdetach_LDADD = $(LDADD)
 -pdfdetach_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdfdetach_DEPENDENCIES = 
++pdfdetach_DEPENDENCIES =
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
  am__v_lt_0 = --silent
@@ -14,19 +14,19 @@
  pdffonts_OBJECTS = $(am_pdffonts_OBJECTS)
  pdffonts_LDADD = $(LDADD)
 -pdffonts_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdffonts_DEPENDENCIES = 
++pdffonts_DEPENDENCIES =
  am_pdfimages_OBJECTS = pdfimages.$(OBJEXT) ImageOutputDev.$(OBJEXT) \
  	$(am__objects_1)
  pdfimages_OBJECTS = $(am_pdfimages_OBJECTS)
  pdfimages_LDADD = $(LDADD)
 -pdfimages_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdfimages_DEPENDENCIES = 
++pdfimages_DEPENDENCIES =
  am_pdfinfo_OBJECTS = pdfinfo.$(OBJEXT) printencodings.$(OBJEXT) \
  	$(am__objects_1)
  pdfinfo_OBJECTS = $(am_pdfinfo_OBJECTS)
  pdfinfo_LDADD = $(LDADD)
 -pdfinfo_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdfinfo_DEPENDENCIES = 
++pdfinfo_DEPENDENCIES =
  am_pdfseparate_OBJECTS = pdfseparate.$(OBJEXT) $(am__objects_1)
  pdfseparate_OBJECTS = $(am_pdfseparate_OBJECTS)
  pdfseparate_LDADD = $(LDADD)
