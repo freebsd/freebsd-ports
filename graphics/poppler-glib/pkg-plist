@@ -16,6 +16,7 @@ lib/libpoppler-glib.a
 lib/libpoppler-glib.la
 lib/libpoppler-glib.so
 lib/libpoppler-glib.so.8
+lib/libpoppler-glib.so.8.6.0
 libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/PopplerAnnot.html
 %%DOCSDIR%%/poppler/PopplerAttachment.html
