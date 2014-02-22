@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	sanpei
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Diagnose unhealthy DNS domains
 
+RUN_DEPENDS=	dig:${PORTSDIR}/dns/bind-tools
+
 USE_BZIP2=	yes
 
 AUX_DIR=	lib/doc
