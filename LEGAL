@@ -62,7 +62,7 @@ condor_src-*		sysutils/condor		Requires (free) registration
 contool-*		sysutils/contool	Do not incorporate the source code into a product which is subsequently sold
 cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
-CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Author rights unclear
+CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
 dansguardian-2.[678]*	www/dansguardian	Not free for installation by 3rd parties charging for installation or support; not free for commercial use
 darwinia-demo*		games/linux-darwinia-demo	Redistribution is limited, see license
@@ -132,16 +132,16 @@ httprint_freebsd_*.zip	security/httprint	No cost for personal, education and non
 huludesktop-i386.rpm	multimedia/linux-huludesktop No redistribution allowed, not for commercial use, export controlled
 HyperSpec-*		devel/clisp-hyperspec	Commercial redistribution prohibited
 HyperSpec-*.tar.gz	devel/clisp-hyperspec	Commercial redistribution prohibited
-ICON-AquaFusion.*	x11-themes/gnome-icons-aqua-fusion Author rights unclear
-ICON-Gentoo-Test.*	x11-themes/gnome-icons-gentoo-test Author rights unclear
-ICON-Gnome-RH8.*	x11-themes/gnome-icons-refined Author rights unclear
-ICON-Iris*		x11-themes/gnome-icons-iris Author rights unclear
-ICON-Noia.*		x11-themes/gnome-icons-noia-full Author rights unclear
-ICON-NoiaWarm.*		x11-themes/gnome-icons-noia-warm Author rights unclear
-ICON-Slick.*		x11-themes/gnome-icons-slick Author rights unclear
-ICON-Snow-Apple.*	x11-themes/gnome-icons-snow-apple Author rights unclear
-ICON-Stylish.*		x11-themes/gnome-icons-stylish Author rights unclear
-ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Author rights unclear
+ICON-AquaFusion.*	x11-themes/gnome-icons-aqua-fusion Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
+ICON-Gentoo-Test.*	x11-themes/gnome-icons-gentoo-test Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
+ICON-Gnome-RH8.*	x11-themes/gnome-icons-refined Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
+ICON-Iris*		x11-themes/gnome-icons-iris Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
+ICON-Noia.*		x11-themes/gnome-icons-noia-full Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
+ICON-NoiaWarm.*		x11-themes/gnome-icons-noia-warm Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
+ICON-Slick.*		x11-themes/gnome-icons-slick Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
+ICON-Snow-Apple.*	x11-themes/gnome-icons-snow-apple Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
+ICON-Stylish.*		x11-themes/gnome-icons-stylish Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
+ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 j2sdkee-*		java/j2sdkee13		For development and testing use only; redistribution prohibited
 jaf-*.zip		java/jaf		See the license
 jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
@@ -235,7 +235,7 @@ shorten-*		audio/shorten		May not be sold.  May not be distributed if modified
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Not for redistribution
-SnowIsh-*		x11-themes/gnome-icons-snowish Author rights unclear
+SnowIsh-*		x11-themes/gnome-icons-snowish Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 speedmgmt*		net/pppoa		Not for redistribution -- see http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
