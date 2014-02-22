@@ -82,4 +82,3 @@ share/locale/zh_TW/LC_MESSAGES/caja-open-terminal.mo
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrmtry lib/caja/extensions-2.0

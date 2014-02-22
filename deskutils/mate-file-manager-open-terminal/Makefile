@@ -24,6 +24,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PATHFIX_MAKEFILEIN=	Makefile.*
 
-GLIB_SCHEMAS=	org.mate.apps.caja-open-terminal.gschema.xml
+GLIB_SCHEMAS=	org.mate.caja-open-terminal.gschema.xml
 
 .include <bsd.port.mk>
