@@ -9,6 +9,8 @@ DISTFILES=	# empty
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	PHP interface to Thrift
 
+BROKEN=		Fails to configure
+
 FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
 USE_PHP=	yes
