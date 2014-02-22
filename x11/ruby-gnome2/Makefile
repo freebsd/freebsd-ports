@@ -28,7 +28,16 @@ NO_STAGE=	yes
 
 NO_BUILD=	yes
 
+DEPRECATED=	Use rubygem-gnome2 instead
+EXPIRATION_DATE=2014-03-23
+
 do-install:
 	@${DO_NADA}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} != 1.9
+BROKEN=		Does not work with Ruby 2.x
+.endif
+
+.include <bsd.port.post.mk>
