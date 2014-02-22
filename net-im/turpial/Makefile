@@ -2,67 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	turpial
-PORTVERSION=	1.6.9
+PORTVERSION=	3.0
 CATEGORIES=	net-im python
 MASTER_SITES=	http://files.turpial.org.ve/sources/stable/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Twitter and Identi.ca client written in Python
+COMMENT=	Twitter client written in Python
 
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:${PORTSDIR}/devel/py-notify \
-		${PYTHON_PKGNAMEPREFIX}webkitgtk>=1.1.8:${PORTSDIR}/www/py-webkitgtk \
-		${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.7:${PORTSDIR}/devel/py-setproctitle \
-		${PYTHON_PKGNAMEPREFIX}xdg>=0.19:${PORTSDIR}/devel/py-xdg
+	${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.7:${PORTSDIR}/devel/py-setproctitle \
+	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.1:${PORTSDIR}/devel/py-Jinja2 \
+	${PYTHON_PKGNAMEPREFIX}libturpial>=1.6.0:${PORTSDIR}/net-im/py-libturpial
 
 USE_PYTHON=	2
-USE_GNOME=	pygobject pygtk2
-USE_GSTREAMER=	python
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+INSTALLS_ICONS=	yes
 
-REINPLACE_ARGS=	-i ""
+PYQT4_PORTS=	core gui network phonon webkit
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
-DATADIR=	${PREFIX}/share/${PORTNAME}
+.include "${.CURDIR}/../../devel/py-qt4/bsd.pyqt.mk"
 
-LOCALES_DIR=	ca ca_ES cs de en es es_ES es_VE eu fr gl he hu it nl nn \
-	pt pt_BR ru ru_RU sr uk_UA zh_CN zh_TW
+.for component in ${PYQT4_PORTS}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-${component}>=0:${PORTSDIR}/${${component}_PORT}
+.endfor
 
-.include <bsd.port.pre.mk>
+LOCALES_DIR=	ca de eo es fr it ja pt_BR pt_PT ru_RU tr
 
-# Since Python > 2.7, optparse module is deprecated
-.if ${PYTHON_REL} >= 270
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-argparse-turpial_main.py
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-optparse-turpial_main.py
-.endif
+post-extract:
+# setuptools doesn't exclude these directories
+.for dir in unity gtk
+	@${RM} -Rf ${WRKSRC}/turpial/ui/${dir}
+.endfor
 
 post-patch:
-	@${FIND} ${WRKSRC}/turpial -type f -name '*.py' \
-		| ${XARGS} ${REINPLACE_CMD} 's|bin/python|bin/env python| ; \
-		s|Linux|FreeBSD|g ; \
-		s|from turpial\.|from |g ; \
-		s|%%PREFIX%%|${PREFIX}|g'
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/turpial/ui/lang.py
 
-do-build:
+post-build:
 	@cd ${WRKSRC} && \
 		${PYTHON_CMD} setup.py compile_catalog --directory turpial/i18n
-	@${PYTHON_CMD} -m compileall ${WRKSRC}
 
-	@${ECHO_CMD} "#!/bin/sh" >> ${WRKDIR}/run.sh
-	@${ECHO_CMD} "" >> ${WRKDIR}/run.sh
-	@${ECHO_CMD} "cd ${DATADIR} || exit 1" >> ${WRKDIR}/run.sh
-	@${ECHO_CMD} "exec ${PYTHON_CMD} main.py" >> ${WRKDIR}/run.sh
-
-pre-install:
-	@${FIND} ${WRKSRC} -type f -name '*.orig' \
-		| ${XARGS} rm
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKDIR}/run.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
+post-install:
 .for dir in ${LOCALES_DIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${dir}/LC_MESSAGES
 	@cd ${WRKSRC}/turpial/i18n && \
@@ -70,23 +54,4 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/locale/${dir}/LC_MESSAGES
 .endfor
 
-.for dir in ${PORTNAME} pixmaps applications
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${dir}
-.endfor
-	@cd ${WRKSRC} && \
-		${INSTALL_DATA} turpial/data/pixmaps/turpial.png \
-			${STAGEDIR}${PREFIX}/share/pixmaps ; \
-		${INSTALL_DATA} ${PORTNAME}.desktop \
-			${STAGEDIR}${PREFIX}/share/applications
-	@${RM} -R ${WRKSRC}/turpial/i18n
-	@cd ${WRKSRC}/turpial && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && \
-		${INSTALL_DATA} AUTHORS COPYING TRANSLATORS README.rst \
-			${STAGEDIR}${DOCSDIR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
