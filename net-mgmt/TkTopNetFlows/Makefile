@@ -21,8 +21,6 @@ USES=		perl5 tk:85
 PORTDOCS=	*
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/bin/wish8.4|${WISH}|' \
 	    ${WRKSRC}/TkTopNetFlows.tcl
@@ -35,9 +33,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/view_definitions.pl.example ${STAGEDIR}${PREFIX}/etc
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}-${PORTVERSION}
 	${INSTALL_SCRIPT} ${WRKSRC}/TkTopNetFlows_lib.tcl ${STAGEDIR}${PREFIX}/lib/${PORTNAME}-${PORTVERSION}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
