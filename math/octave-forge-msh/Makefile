@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-msh
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	1.0.10
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
