@@ -52,6 +52,7 @@ libdata/pkgconfig/libfreecell-solver.pc
 %%DATADIR%%/presets/the-iglu-cabal.sh
 %%DATADIR%%/presets/three-eighty.sh
 %%DATADIR%%/presets/toons-for-twenty-somethings.sh
+%%DATADIR%%/presets/video-editing.sh
 %%DATADIR%%/presets/yellow-brick-road.sh
 man/man6/fc-solve-board_gen.6.gz
 man/man6/fc-solve.6.gz
