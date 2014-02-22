@@ -20,6 +20,8 @@ BUILD_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-mast
 RUN_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget \
 		wine:${PORTSDIR}/emulators/wine
 
+USES=		pkgconfig
+
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	only supported under i386 due to wine requirements
 
