@@ -1,0 +1,6 @@
+Test::CPAN::Meta was written to ensure that a META.yml file, provided with a
+standard distribution uploaded to CPAN, meets the specifications that are slowly
+being introduced to module uploads, via the use of package makers and installers
+such as ExtUtils::MakeMaker, Module::Build and Module::Install.
+
+WWW: http://search.cpan.org/dist/Test-CPAN-Meta/
