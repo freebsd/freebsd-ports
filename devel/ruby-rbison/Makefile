@@ -17,24 +17,21 @@ USE_RUBY=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/rbison
 
-DOCS=		ChangeLog		README
-EXAMPLES=	CalcFileLexer.rb	CalcStringLexer.rb	\
-		calc.in 		calc.ry			calc_test.rb
+DOCS=		ChangeLog README
+EXAMPLES=	CalcFileLexer.rb CalcStringLexer.rb	\
+		calc.in calc.ry calc_test.rb
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rbison ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/rbison ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 .endfor
-	${MKDIR} ${RUBY_MODDOCDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
