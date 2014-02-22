@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit-gtk
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	Ruby/WebKitGTK is a Ruby binding of WebKitGTK+
 
 RUN_DEPENDS=	rubygem-gtk3>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-gtk3 \
 		rubygem-gobject-introspection>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-gobject-introspection
-LIB_DEPENDS=	webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3
+LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
