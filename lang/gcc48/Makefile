@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc48
-PORTVERSION=	4.8.3.s20140213
+PORTVERSION=	4.8.3.s20140220
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -10,6 +10,9 @@ DISTNAME=	gcc-${DISTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.8
+
+LICENSE=	GPLv3 GPLv3RLE
+LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
