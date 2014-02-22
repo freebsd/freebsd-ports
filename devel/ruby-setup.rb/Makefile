@@ -24,7 +24,6 @@ RUBY_SHEBANG_FILES=	${_SCRIPTS:S:^:${WRKSRC}/ruby-:}
 DOCS_EN=	doc.en/* NEWS.en Usage_en.txt README.en ChangeLog TODO
 DOCS_JA=	doc.ja/* NEWS.ja Usage_ja.txt README.ja
 
-NO_STAGE=	yes
 post-extract:
 .for f in ${_SCRIPTS}
 	${CP} -p ${WRKSRC}/${f} ${WRKSRC}/ruby-${f}
@@ -32,19 +31,18 @@ post-extract:
 
 do-install:
 .for f in ${_SCRIPTS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/ruby-${f} ${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/ruby-${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
-.endif
 
 .include <bsd.port.mk>
