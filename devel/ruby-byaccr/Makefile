@@ -17,7 +17,6 @@ RUBY_NO_RUN_DEPENDS=	yes
 
 DOCS=		README		README.html
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's,^#include <malloc\.h>,#include <stdlib.h>,' ${WRKSRC}/*.[ch]
 
@@ -25,13 +24,11 @@ pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
