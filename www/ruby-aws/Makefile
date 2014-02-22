@@ -20,27 +20,14 @@ USE_RUBY_SETUP=	yes
 DOCS=		COPYING INSTALL NEWS README
 EXAMPLES=	example/*
 
-RUBY_REQUIRE=	Ruby > 180
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if !defined(RUBY_PROVIDED)
-IGNORE=		depends on Ruby 1.8.0 or later
-.endif
-
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 .endfor
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
