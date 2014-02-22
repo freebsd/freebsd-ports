@@ -8,7 +8,7 @@ $FreeBSD$
  
      def read(self):
 -        config_files = ["/etc/phpsh/config"]
-+        config_files = ["%%PREFIX%%/etc/phpsh/config"]
++        config_files = ["%%ETCDIR%%/config"]
          home = os.getenv("HOME")
          if home:
              homestr = home.strip()
