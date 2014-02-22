@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
+BROKEN=		Does not build
+
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		nettle.4:${PORTSDIR}/security/nettle \
 		p11-kit.0:${PORTSDIR}/security/p11-kit
