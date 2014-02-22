@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zutils
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/zutils
 EXTRACT_SUFX=	.tar.lz
@@ -25,6 +25,9 @@ do-extract:
 
 post-patch:
 	# Remove compiler hardcoded flags and use environment
-	${REINPLACE_CMD} '24,27d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} '24,27d' ${WRKSRC}/configure
+
+post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/info/dir
 
 .include <bsd.port.mk>
