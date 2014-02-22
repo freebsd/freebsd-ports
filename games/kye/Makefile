@@ -3,7 +3,7 @@
 
 PORTNAME=	kye
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games python
 MASTER_SITES=	http://games.moria.org.uk/kye/download/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:levels
@@ -36,6 +36,11 @@ DESKTOP_ENTRIES="Python Kye" "" "Kye" \
 		"Kye" "Game;LogicGame;" ""
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/kye|${DATADIR_REL}|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|/usr/local/share/kye|${DATADIR}|' \
+		${WRKSRC}/kye/common.py
 
 post-extract-script:
 	@${MKDIR} ${WRKDIR}/${PORTNAME}
