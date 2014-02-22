@@ -26,7 +26,6 @@ USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Configure options:
@@ -53,12 +52,10 @@ post-patch:
 		-e 'gsub /ruby-1\.6/, "${RUBY}"' ${WRKSRC}/test/test.sh
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${MKDIR} ${RUBY_MODDOCDIR}
-	@(cd ${WRKSRC}/test/ && ${COPYTREE_SHARE} \* ${RUBY_MODEXAMPLESDIR}/)
-	@(cd ${WRKSRC}/example/ && ${COPYTREE_SHARE} \* ${RUBY_MODEXAMPLESDIR}/)
-	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	@(cd ${WRKSRC}/test/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/)
+	@(cd ${WRKSRC}/example/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/)
+	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 .include <bsd.port.post.mk>
