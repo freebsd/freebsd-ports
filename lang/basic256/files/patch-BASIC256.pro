@@ -1,5 +1,5 @@
---- BASIC256.pro.orig	2013-11-13 18:26:47.000000000 +0100
-+++ BASIC256.pro	2013-11-13 18:36:29.000000000 +0100
+--- BASIC256.pro.orig	2014-02-15 18:45:35.000000000 +0100
++++ BASIC256.pro	2014-02-15 18:46:10.000000000 +0100
 @@ -82,7 +82,7 @@
  
  	## TTS Option 2 - use the espeak library
@@ -9,7 +9,7 @@
  	LIBS					+=	-lespeak
  
  	LIBS					+=	-lm
-@@ -113,19 +113,19 @@
+@@ -117,19 +117,19 @@
  	# rules for make install
  	########
  	exampleFiles.files		=	./Examples
@@ -28,7 +28,7 @@
  	INSTALLS				+=	transFiles
  
  	# main program executable
--	target.path				=	/usr/local/bin
+-	target.path				=	/usr/bin
 +	target.path				=	$$PREFIX/bin
  	INSTALLS				+=	target
  
