@@ -4,6 +4,7 @@ bin/multimarkdown
 %%HELPERS%%bin/mmd2odf
 %%HELPERS%%bin/mmd2opml
 %%HELPERS%%bin/mmd2pdf
+%%HELPERS%%bin/mmd2rtf
 %%HELPERS%%bin/mmd2tex
 
 %%PORTDOCS%%%%DOCSDIR%%/README.md
