@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140222:
+  AFFECTS: users of net-im/turpial
+  AUTHOR: olivierd@FreeBSD.org
+
+  Turpial has been updated to 3.0, due to changes in net-im/turpial port it
+  will be necessary to remove it before updating.
+
 20140220:
   AFFECTS: users of editors/vim
   AUTHOR: sunpoet@FreeBSD.org
