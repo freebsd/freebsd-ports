@@ -1,4 +1,8 @@
 %%ETCDIR%%/nsd.conf.sample
+man/man5/nsd.conf.5.gz
+man/man8/nsd-checkconf.8.gz
+man/man8/nsd-control.8.gz
+man/man8/nsd.8.gz
 sbin/nsd
 sbin/nsd-checkconf
 sbin/nsd-control
