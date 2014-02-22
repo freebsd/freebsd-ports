@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140222:
+  AFFECTS: users of mail/courier-imap
+  AUTHOR: oliver@FreeBSD.org
+
+  When using SSL and updating from an older version, run mkdhparams(8) to 
+  create the new TLS_DHPARAMS file which is needed for Courier IMAP 4.15
+  and up.
+
+20140222:
   AFFECTS: users of net-im/turpial
   AUTHOR: olivierd@FreeBSD.org
 
