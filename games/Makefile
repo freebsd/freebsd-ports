@@ -127,6 +127,7 @@
     SUBDIR += cardpics
     SUBDIR += castlevox
     SUBDIR += cataclysm-dda
+    SUBDIR += catesc
     SUBDIR += cave9
     SUBDIR += cavezofphear
     SUBDIR += ceferino
