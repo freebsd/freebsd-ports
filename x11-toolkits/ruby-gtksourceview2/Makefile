@@ -24,6 +24,9 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 MASTERDIR=	${.CURDIR}/../../x11/ruby-gnome2
 PKGDIR=		${.CURDIR}
 
+DEPRECATED=	Use rubygem-gtksourceview2 instead
+EXPIRATION_DATE=2014-03-23
+
 NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
@@ -44,4 +47,10 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} != 1.9
+BROKEN=		Does not work with Ruby 2.x
+.endif
+
+.include <bsd.port.post.mk>
