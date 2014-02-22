@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Css_Parser
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
