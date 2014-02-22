@@ -13,6 +13,8 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux "A Tale in the Desert" (ATITD) client
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/bin/xhost:${PORTSDIR}/x11/xhost
 
 NO_STAGE=	yes
