@@ -64,18 +64,18 @@ EUI_RRTYPES_DESC=	EUI48 and EUI64 RRtypes support
 
 LIB_DEPENDS+=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
-ROOT_SERVER_CONFIGURE_ON=	--enable-root-server
-LARGEFILE_CONFIGURE_OFF=	--disable-largefile
-IPV6_CONFIGURE_OFF=		--disable-ipv6
-BIND8_STATS_CONFIGURE_ON=	--enable-bind8-stats
-CHECKING_CONFIGURE_ON=		--enable-checking
-NSEC3_CONFIGURE_OFF=		--disable-nsec3
-MINRESPSIZE_CONFIGURE_OFF=	--disable-minimal-responses
-NSEC3PREHASH_CONFIGURE_OFF=	--disable-full-prehash
-MMAP_CONFIGURE_ON=		--enable-mmap
+ROOT_SERVER_CONFIGURE_ENABLE=	root-server
+LARGEFILE_CONFIGURE_ENABLE=	largefile
+IPV6_CONFIGURE_ENABLE=		ipv6
+BIND8_STATS_CONFIGURE_ENABLE=	bind8-stats
+CHECKING_CONFIGURE_ENABLE=	checking
+NSEC3_CONFIGURE_ENABLE=		nsec3
+MINRESPSIZE_CONFIGURE_ENABLE=	minimal-responses
+NSEC3PREHASH_CONFIGURE_ENABLE=	full-prehash
+MMAP_CONFIGURE_ENABLE=		mmap
 MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
-RRL_CONFIGURE_ON=		--enable-ratelimit
-EUI_RRTYPES_CONFIGURE_ON=	--enable-draft-rrtypes
+RRL_CONFIGURE_ENABLE=		ratelimit
+EUI_RRTYPES_CONFIGURE_ENABLE=	draft-rrtypes
 
 pre-patch:
 .if defined(NSD_OPTIONS)
