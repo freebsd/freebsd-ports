@@ -12,7 +12,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby module to manipulate ID3v1.1 tags in MP3 files
 
 USE_RUBY=	yes
-NO_STAGE=	yes
 USE_RUBY_RDOC=	yes
 
 RUBY_RD_FILES=	mp3tag.rb
