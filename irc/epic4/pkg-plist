@@ -1,6 +1,7 @@
 bin/epic
 bin/epic-EPIC4-%%PORTVERSION%%
 libexec/wserv4
+man/man1/epic.1.gz
 share/epic/help/1_General/1_General
 share/epic/help/1_General/away
 share/epic/help/1_General/bye
@@ -1092,6 +1093,7 @@ share/epic/script/tabkey.th
 share/epic/script/tc
 share/epic/script/time
 share/epic/script/tls
+share/epic/script/unicode
 share/epic/script/urlgrab
 share/epic/script/utime
 share/epic/script/vi-binds
