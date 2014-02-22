@@ -27,7 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
 CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-ldb"/-ldb -l${BDB_LIB_CXX_NAME}"/g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/-ldb"/-l${BDB_LIB_CXX_NAME}"/g' ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
