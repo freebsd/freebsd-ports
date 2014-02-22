@@ -31,8 +31,7 @@ LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
 # freetype version included does not compile on 64bit
 ONLY_FOR_ARCHS=	i386
 
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 WRKSRC=		${WRKDIR}
 GNU_CONFIGURE=	yes
 ALL_TARGET=	World
