@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-capistrano>=1.0.0:${PORTSDIR}/sysutils/rubygem-capistrano
 
+DEPRECATED=	Obsolete, Capistrano 3 does not ship with any Railsisms and is better than Capistrano 2 and railsless-deploy
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
