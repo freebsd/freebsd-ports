@@ -3,7 +3,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	4.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -32,8 +32,7 @@ CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
 		--with-dbfile=${NSDDBDIR}/nsd.db \
 		--with-pidfile=${NSDRUNDIR}/nsd.pid
 
-SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST+=	NSDUSER=${NSDUSER} \
+PLIST_SUB=	NSDUSER=${NSDUSER} \
 		NSDGROUP=${NSDGROUP} \
 		NSDDBDIR=${NSDDBDIR} \
 		NSDRUNDIR=${NSDRUNDIR}
@@ -77,26 +76,10 @@ MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
 RRL_CONFIGURE_ENABLE=		ratelimit
 EUI_RRTYPES_CONFIGURE_ENABLE=	draft-rrtypes
 
-pre-patch:
-.if defined(NSD_OPTIONS)
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG} "***** ALERT *****"
-	@${ECHO_MSG} "NSD_OPTIONS is no longer supported,"
-	@${ECHO_MSG} "${PORTNAME} uses OPTIONS, consider running"
-	@${ECHO_MSG} "# make config"
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@sleep 10
-.endif
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/nsd/nsd.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
