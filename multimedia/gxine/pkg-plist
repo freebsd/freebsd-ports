@@ -8,6 +8,12 @@ bin/gxine_client
 %%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.a
 %%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.la
 %%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.so
+man/man1/gxine.1.gz
+man/man1/gxine_client.1.gz
+man/de/man1/gxine.1.gz
+man/de/man1/gxine_client.1.gz
+man/es/man1/gxine.1.gz
+man/es/man1/gxine_client.1.gz
 share/applications/gxine.desktop
 %%DATADIR%%/logo.mpv
 %%DATADIR%%/mediamarks
