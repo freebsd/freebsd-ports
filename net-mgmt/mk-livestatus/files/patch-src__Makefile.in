@@ -1,6 +1,6 @@
---- ./src/Makefile.in.orig	2013-06-10 14:49:28.000000000 +0200
-+++ ./src/Makefile.in	2013-06-16 22:13:23.000000000 +0200
-@@ -264,7 +264,7 @@
+--- ./src/Makefile.in.orig	2014-02-10 10:54:03.000000000 +0100
++++ ./src/Makefile.in	2014-02-20 22:47:49.000000000 +0100
+@@ -260,7 +260,7 @@
  am__quote = @am__quote@
  am__tar = @am__tar@
  am__untar = @am__untar@
@@ -9,11 +9,19 @@
  build_alias = @build_alias@
  builddir = @builddir@
  datadir = @datadir@
-@@ -1966,7 +1966,6 @@
- 	$(INSTALL_PROGRAM) livestatus.o $(DESTDIR)$(pkglibdir)
- 	rm -f $(DESTDIR)$(pkglibdir)/livestatus.so
- 	$(INSTALL_PROGRAM) livecheck $(DESTDIR)$(pkglibdir)
--	rm -f $(DESTDIR)$(bindir)/livecheck
+@@ -366,15 +366,6 @@
+ 	test -z "$$list2" || { \
+ 	  echo " $(INSTALL_DATA) $$list2 '$(DESTDIR)$(pkglibdir)'"; \
+ 	  $(INSTALL_DATA) $$list2 "$(DESTDIR)$(pkglibdir)" || exit $$?; }
+-	@$(POST_INSTALL)
+-	@list='$(pkglib_LIBRARIES)'; test -n "$(pkglibdir)" || list=; \
+-	for p in $$list; do \
+-	  if test -f $$p; then \
+-	    $(am__strip_dir) \
+-	    echo " ( cd '$(DESTDIR)$(pkglibdir)' && $(RANLIB) $$f )"; \
+-	    ( cd "$(DESTDIR)$(pkglibdir)" && $(RANLIB) $$f ) || exit $$?; \
+-	  else :; fi; \
+-	done
  
- clean-local:
- 	rm -f *~
+ uninstall-pkglibLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)

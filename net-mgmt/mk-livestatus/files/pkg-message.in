@@ -12,4 +12,7 @@ Notes:
    to %%PREFIX%%/lib/mk-livestatus
    in order to avoid a conflict with sysutils/ucspi-unix
 
+ * livecheck was removed in 1.2.3.i5,
+   Please adjust your "broker_module=..." directive in etc/nagios/nagios.cfg!
+
 =============================================================================
