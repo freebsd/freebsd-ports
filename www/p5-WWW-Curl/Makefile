@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Curl
-PORTVERSION=	4.16
+PORTVERSION=	4.17
 CATEGORIES=	www ftp perl5
 MASTER_SITES=	CPAN \
 		http://curl.haxx.se/libcurl/perl/
