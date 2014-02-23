@@ -3343,6 +3343,7 @@
     SUBDIR += performance
     SUBDIR += perlconsole
     SUBDIR += php-Psr_Log
+    SUBDIR += php-composer
     SUBDIR += php-java-bridge
     SUBDIR += php-libawl
     SUBDIR += php-memoize
