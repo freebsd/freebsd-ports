@@ -29,7 +29,7 @@ Index: makefile.in
  
  install-cfg : $(SYSCONFDIR)
 -	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg
-+	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg.sample
++	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL) -m 644" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg.sample
  
  install-lss : $(SYSCONFDIR)
 -	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss
