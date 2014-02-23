@@ -12,12 +12,6 @@
 %%SITE_PERL%%/XML/RSS/LibXML/V0_92.pm
 %%SITE_PERL%%/XML/RSS/LibXML/V1_0.pm
 %%SITE_PERL%%/XML/RSS/LibXML/V2_0.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/LibXML/.packlist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark.pl
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/LibXML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/RSS/LibXML
 @dirrmtry %%SITE_PERL%%/XML/RSS
 @dirrmtry %%SITE_PERL%%/XML
