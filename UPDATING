@@ -5,11 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140223:
+  AFFECTS: users of net-mgmt/mk-livestatus
+  AUTHOR: ohauer@FreeBSD.org
+
+  livecheck was removed in 1.2.3.i5. It never was really stable, Nagios4
+  has something similar built in. 
+  Please remove the "livecheck=..." directive from etc/nagios/nagios.cfg.
+
 20140222:
   AFFECTS: users of mail/courier-imap
   AUTHOR: oliver@FreeBSD.org
 
-  When using SSL and updating from an older version, run mkdhparams(8) to 
+  When using SSL and updating from an older version, run mkdhparams(8) to
   create the new TLS_DHPARAMS file which is needed for Courier IMAP 4.15
   and up.
 
@@ -148,8 +156,8 @@ you update your ports collection, before attempting any port upgrades.
 
   To update the existing user on your system, run:
 
-  # pw usermod zabbix -s /bin/sh  
- 
+  # pw usermod zabbix -s /bin/sh
+
 20140114:
   AFFECTS: users of www/mod_authnz_external
   AUTHOR: ohauer@FreeBSD.org
