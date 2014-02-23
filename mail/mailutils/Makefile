@@ -12,6 +12,7 @@ COMMENT=	Mailutils offers utilities and daemons for processing e-mail
 
 DEPRECATED=	This port needs to be taken care of, it suffers from bit rot. \
 Especially with options other than GUILE, uninstall may leave files behind
+EXPIRATION_DATE=2014-03-23
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
