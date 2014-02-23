@@ -12,7 +12,6 @@ COMMENT=	HTTP/2.0 C Library
 LICENSE=	MIT
 
 LIB_DEPENDS=	libevent_openssl.so:${PORTSDIR}/devel/libevent2 \
-		libjansson.so:${PORTSDIR}/devel/jansson \
 		libspdylay.so:${PORTSDIR}/www/spdylay
 
 CONFIGURE_ARGS=	--disable-python-bindings \
