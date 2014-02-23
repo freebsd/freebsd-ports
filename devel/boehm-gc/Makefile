@@ -5,7 +5,7 @@ PORTNAME=	gc
 PORTVERSION=	7.2e
 PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
+MASTER_SITES=	http://www.hboehm.info/gc/gc_source/
 PKGNAMEPREFIX=	boehm-
 .ifdef GC_VARIANT
 PKGNAMESUFFIX=	-${GC_VARIANT}
