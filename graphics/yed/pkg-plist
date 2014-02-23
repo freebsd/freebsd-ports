@@ -1,5 +1,5 @@
-%%DATADIR%%/yed.jar
-%%DATADIR%%/vectorgraphics.jar
-%%DATADIR%%/license.html
 bin/yed
+%%DATADIR%%/license.html
+%%DATADIR%%/vectorgraphics.jar
+%%DATADIR%%/yed.jar
 @dirrm %%DATADIR%%
