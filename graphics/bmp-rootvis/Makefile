@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	bmp-plugins
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	BMP plugin which renders a spectrum analyzer on the root window
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 
 PLIST_FILES=	lib/bmp/Visualization/librootvis.so \

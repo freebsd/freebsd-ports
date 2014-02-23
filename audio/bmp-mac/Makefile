@@ -12,6 +12,9 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monkey's Audio Codec non-win32 port
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 LIB_DEPENDS=	libmac.so:${PORTSDIR}/audio/mac \
 		libbeep.so:${PORTSDIR}/multimedia/beep-media-player
 

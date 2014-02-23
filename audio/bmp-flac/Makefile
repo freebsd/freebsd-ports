@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-CVS-${PORTVERSION}-with-bmp-plugin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLAC input plugin for beep-media-player
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
