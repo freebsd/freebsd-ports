@@ -11,6 +11,7 @@ GID=%%JABBER_GID%%
 ETCDIR=%%JABBER_ETCDIR%%
 RUNDIR=%%JABBER_RUNDIR%%
 SPOOLDIR=%%JABBER_SPOOLDIR%%
+LOGDIR=%%JABBER_LOGDIR%%
 
 if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	if pw groupadd ${GROUP} -g ${GID}; then
@@ -45,6 +46,16 @@ chmod -R go= ${RUNDIR}
 if [ ! -d ${SPOOLDIR} ]; then
 	echo "Creating \"${SPOOLDIR}\"."
 	mkdir -p ${SPOOLDIR}
+fi
+
+if [ ! -d ${SPOOLDIR} ]; then
+	echo "Creating \"${SPOOLDIR}\"."
+	mkdir -p ${SPOOLDIR}
+fi
+
+if [ ! -d ${LOGDIR} ]; then
+	echo "Creating \"${LOGDIR}\"."
+	mkdir -p ${LOGDIR}
 fi
 
 echo "Fixing ownerships and modes in \"${SPOOLDIR}\"."
