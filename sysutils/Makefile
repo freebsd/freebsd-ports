@@ -817,6 +817,7 @@
     SUBDIR += rubygem-god
     SUBDIR += rubygem-guard
     SUBDIR += rubygem-guard-livereload
+    SUBDIR += rubygem-guard-minitest
     SUBDIR += rubygem-guard-rspec
     SUBDIR += rubygem-hiera
     SUBDIR += rubygem-hiera-json
