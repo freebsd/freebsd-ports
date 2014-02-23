@@ -310,6 +310,7 @@
     SUBDIR += lft
     SUBDIR += libarms
     SUBDIR += libbgpdump
+    SUBDIR += libcapn
     SUBDIR += libcmis
     SUBDIR += libdnet
     SUBDIR += libexosip2

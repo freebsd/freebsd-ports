@@ -1,0 +1,8 @@
+include/capn/apn.h
+include/capn/platform.h
+include/capn/version.h
+lib/libcapn.so
+lib/libcapn.so.1
+lib/libcapn.so.1.0.0
+libdata/pkgconfig/libcapn.pc
+@dirrm include/capn
