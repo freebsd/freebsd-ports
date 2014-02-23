@@ -126,6 +126,7 @@
     SUBDIR += nagios-check_mysql_slave
     SUBDIR += nagios-check_netsnmp
     SUBDIR += nagios-check_ports
+    SUBDIR += nagios-check_postgres
     SUBDIR += nagios-check_puppet
     SUBDIR += nagios-check_smartmon
     SUBDIR += nagios-check_tftp
