@@ -55,7 +55,7 @@ DISTFILES+=	X430src-1.tgz:x \
 		X430src-3.tgz:x
 
 .if ${OSVERSION} > 1000054
-USE_GCC=	4.6+
+USE_GCC=	yes
 MAKE_ENV=	IMAKECPP="${CPP}"
 MAKE_ARGS=	AR='ar rc'
 .endif
