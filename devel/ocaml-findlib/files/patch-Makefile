@@ -1,0 +1,54 @@
+--- Makefile.orig	2013-06-11 09:27:39.000000000 +0200
++++ Makefile	2014-02-23 12:02:08.000000000 +0100
+@@ -17,13 +17,13 @@ opt:
+ 	for p in $(PARTS); do ( cd src/$$p; $(MAKE) opt ); done
+ 
+ install:
+-	mkdir -p "$(prefix)$(OCAMLFIND_BIN)"
+-	mkdir -p "$(prefix)$(OCAMLFIND_MAN)"
++	mkdir -p "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)"
++	mkdir -p "$(DESTDIR)$(prefix)$(OCAMLFIND_MAN)"
+ 	for p in $(PARTS); do ( cd src/$$p; $(MAKE) install ); done
+ 	$(MAKE) install-meta
+ 	cd src/findlib; $(MAKE) install-num-top
+ 	$(MAKE) install-config
+-	cp tools/safe_camlp4 "$(prefix)$(OCAMLFIND_BIN)"
++	${BSD_INSTALL_SCRIPT}  tools/safe_camlp4 "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)"
+ 	$(MAKE) install-doc
+ 
+ uninstall:
+@@ -69,9 +69,9 @@ findlib.conf: findlib.conf.in 
+ 
+ .PHONY: install-doc
+ install-doc:
+-	mkdir -p $(prefix)$(OCAMLFIND_MAN)/man1 $(prefix)$(OCAMLFIND_MAN)/man3 $(prefix)$(OCAMLFIND_MAN)/man5
+-	-cp doc/ref-man/ocamlfind.1 $(prefix)$(OCAMLFIND_MAN)/man1
+-	-cp doc/ref-man/META.5 doc/ref-man/site-lib.5 doc/ref-man/findlib.conf.5 $(prefix)$(OCAMLFIND_MAN)/man5
++	mkdir -p $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man1 $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man3 $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man5
++	-cp doc/ref-man/ocamlfind.1 $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man1
++	-cp doc/ref-man/META.5 doc/ref-man/site-lib.5 doc/ref-man/findlib.conf.5 $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man5
+ 
+ .PHONY: uninstall-doc
+ uninstall-doc:
+@@ -84,7 +84,7 @@ uninstall-doc:
+ 
+ .PHONY: install-meta
+ install-meta:
+-	for x in `ls site-lib-src`; do if [ "$$x" != "CVS" -a -f "site-lib-src/$$x/META" ]; then mkdir -p "$(prefix)$(OCAML_SITELIB)/$$x"; cp site-lib-src/$$x/META "$(prefix)$(OCAML_SITELIB)/$$x"; fi; done
++	for x in `ls site-lib-src`; do if [ "$$x" != "CVS" -a -f "site-lib-src/$$x/META" ]; then mkdir -p "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$$x"; ${BSD_INSTALL_DATA}  site-lib-src/$$x/META "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$$x"; fi; done
+ 
+ .PHONY: uninstall-meta
+ uninstall-meta:
+@@ -92,9 +92,9 @@ uninstall-meta:
+ 
+ .PHONY: install-config
+ install-config:
+-	mkdir -p "`dirname \"$(prefix)$(OCAMLFIND_CONF)\"`"
+-	@if [ -f "$(prefix)$(OCAMLFIND_CONF)" ]; then echo "!!! Keeping old $(prefix)$(OCAMLFIND_CONF) !!!"; fi
+-	test -f "$(prefix)$(OCAMLFIND_CONF)" || cp findlib.conf "$(prefix)$(OCAMLFIND_CONF)"
++	mkdir -p "`dirname \"$(DESTDIR)$(prefix)$(OCAMLFIND_CONF)\"`"
++	@if [ -f "$(DESTDIR)$(prefix)$(OCAMLFIND_CONF)" ]; then echo "!!! Keeping old $(DESTDIR)$(prefix)$(OCAMLFIND_CONF) !!!"; fi
++	test -f "$(DESTDIR)$(prefix)$(OCAMLFIND_CONF)" || ${BSD_INSTALL_DATA}  findlib.conf "$(DESTDIR)$(prefix)$(OCAMLFIND_CONF)"
+ 
+ .PHONY: uninstall-config
+ uninstall-config:
