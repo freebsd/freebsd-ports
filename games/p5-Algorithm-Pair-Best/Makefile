@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to generate tournament pairings
 
 DEPRECATED=	Use games/p5-Algorithm-Pair-Best2 instead
+EXPIRATION_DATE=2014-03-23
 
 USES=		perl5
 USE_PERL5=	configure
