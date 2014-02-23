@@ -12,6 +12,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS future composer input plugin
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 

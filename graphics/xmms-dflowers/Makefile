@@ -13,6 +13,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/v/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dual Flowers visualization plugin for XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12

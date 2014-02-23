@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime XMMS plugin for remastering mp3 sound
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	imlib

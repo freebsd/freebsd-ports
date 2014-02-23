@@ -11,6 +11,9 @@ DISTNAME=	XMMS-mp3cue-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS mp3cue adds cue file support to XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes

@@ -12,6 +12,9 @@ DISTNAME=	Blursk-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin inspired by "Blur Scope"
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	xmms>0:${PORTSDIR}/multimedia/xmms

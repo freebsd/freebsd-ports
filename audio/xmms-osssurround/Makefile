@@ -11,6 +11,9 @@ DISTNAME=	xmms-a52dec-1.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OSSSuround adds Surround Sound capabilities to XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes

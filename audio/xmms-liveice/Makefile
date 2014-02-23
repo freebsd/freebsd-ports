@@ -11,6 +11,9 @@ DISTNAME=	liveice-xmms
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use XMMS for streaming audio to Icecast servers
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
 
