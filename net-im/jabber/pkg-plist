@@ -32,6 +32,8 @@ lib/jabber/libjabberdxdbsql.a
 lib/jabber/libjabberdxdbsql.la
 lib/jabber/libjabberdxdbsql.so
 lib/jabber/libjabberdxdbsql.so.2
+man/man5/jabber.xml.5.gz
+man/man8/jabberd14.8.gz
 share/locale/de/LC_MESSAGES/jabberd14.mo
 share/locale/fr/LC_MESSAGES/jabberd14.mo
 share/locale/hu/LC_MESSAGES/jabberd14.mo
@@ -51,5 +53,6 @@ share/locale/nl/LC_MESSAGES/jabberd14.mo
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/mysql.sql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry /var/spool/jabberd
 @dirrmtry lib/jabber
 @dirrmtry include/jabber

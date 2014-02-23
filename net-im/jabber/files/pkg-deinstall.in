@@ -8,6 +8,7 @@ USER=%%JABBER_USER%%
 GROUP=%%JABBER_GROUP%%
 RUNDIR="%%JABBER_RUNDIR%%"
 SPOOLDIR="%%JABBER_SPOOLDIR%%"
+LOGDIR="%%LOGDIR%%"
 
 if pw usershow "${USER}" 2>/dev/null 1>&2; then
 	echo "To delete Jabber user permanently, use 'pw userdel ${USER}'"

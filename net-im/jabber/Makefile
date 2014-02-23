@@ -6,8 +6,8 @@ PORTVERSION=	1.6.1.1
 PORTREVISION=	14
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
-MASTER_SITES=	http://download.jabberd.org/jabberd14/ \
-		http://download.jabberd.org/jabberd14/old/
+MASTER_SITES=	http://download.jabberd.org/jabberd14/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 DISTNAME=	jabberd14-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
@@ -16,27 +16,36 @@ COMMENT=	XMPP/Jabber server daemon
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pth:${PORTSDIR}/devel/pth-hard \
-		popt:${PORTSDIR}/devel/popt \
-		idn:${PORTSDIR}/dns/libidn \
-		expat:${PORTSDIR}/textproc/expat2 \
-		tasn1:${PORTSDIR}/security/libtasn1 \
-		gnutls:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
+		libpth.so:${PORTSDIR}/devel/pth-hard \
+		libidn.so:${PORTSDIR}/dns/libidn \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 OPTIONS_DEFINE= IPV6 MYSQL PGSQL
 
 USE_RC_SUBR=	jabber
-USE_GMAKE=	yes
-USES=		gettext iconv pkgconfig
+USES=		gettext gmake iconv pkgconfig
 USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--sysconfdir=${JABBER_ETCDIR} \
+		--includedir=${PREFIX}/include/jabber \
+		--libdir=${PREFIX}/lib/jabber
 USE_LDCONFIG=	${PREFIX}/lib/jabber
 MAKE_JOBS_UNSAFE=	yes
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN5=		jabber.xml.5
-MAN8=		jabberd14.8
-.endif
+CPPFLAGS+=	$$(pth-config --cflags) \
+		-I${LOCALBASE}/include
+LDFLAGS+=	$$(pth-config --ldflags) \
+		-L${LOCALBASE}/lib
+
+SUB_FILES=	pkg-install pkg-deinstall pkg-message
+SUB_LIST=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
+		JABBER_GROUP=${JABBER_GROUP} JABBER_GID=${JABBER_GID} \
+		JABBER_ETCDIR="${JABBER_ETCDIR}" \
+		JABBER_LOGDIR="${JABBER_LOGDIR}" \
+		JABBER_SPOOLDIR="${JABBER_SPOOLDIR}" \
+		JABBER_RUNDIR="${JABBER_RUNDIR}"
 
 JABBER_USER=	jabber
 JABBER_UID=	93
@@ -47,26 +56,6 @@ JABBER_RUNDIR=	"/var/run/jabberd"
 JABBER_SPOOLDIR="/var/spool/jabberd"
 JABBER_LOGDIR=	"/var/log/jabberd"
 
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--sysconfdir=${JABBER_ETCDIR} \
-		--includedir=${PREFIX}/include/jabber \
-		--libdir=${PREFIX}/lib/jabber
-
-CPPFLAGS+=	-I${LOCALBASE}/include/pth -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/pth -L${LOCALBASE}/lib -ltasn1 -lgcrypt
-
-SUB_FILES+=	pkg-install pkg-deinstall pkg-message
-SUB_LIST+=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
-		JABBER_GROUP=${JABBER_GROUP} JABBER_GID=${JABBER_GID} \
-		JABBER_ETCDIR="${JABBER_ETCDIR}" \
-		JABBER_LOGDIR="${JABBER_LOGDIR}" \
-		JABBER_SPOOLDIR="${JABBER_SPOOLDIR}" \
-		JABBER_RUNDIR="${JABBER_RUNDIR}"
-
-DOCS=		AUTHORS ChangeLog INSTALL NEWS README README.SQL README.config \
-		README.filespool README.karma README.protocols TODO UPGRADE mysql.sql
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -88,29 +77,36 @@ IGNORE=	pth with soft syscalls is installed, please reinstall pth from devel/pth
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|\\\$$(localstatedir)/log/jabberd|${JABBER_LOGDIR}|g" \
-		-e "s|\\\$$(localstatedir)/spool/jabberd|${JABBER_SPOOLDIR}|g" \
-		-e "s|\\\$$(localstatedir)/run/jabberd|${JABBER_RUNDIR}|g" \
+	@${REINPLACE_CMD} -e \
+		's|\\\$$(localstatedir)/log/jabberd|${JABBER_LOGDIR}|g ; \
+		 s|\\\$$(localstatedir)/spool/jabberd|${JABBER_SPOOLDIR}| ; \
+		 s|\\\$$(localstatedir)/run/jabberd|${JABBER_RUNDIR}|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|@localstatedir@/log/jabberd|${JABBER_LOGDIR}|g" \
-		-e "s|@localstatedir@/spool/jabberd|${JABBER_SPOOLDIR}|g" \
-		-e "s|@localstatedir@/run/jabberd|${JABBER_RUNDIR}|g" \
+	@${REINPLACE_CMD} -e \
+		's|@localstatedir@/log/jabberd|${JABBER_LOGDIR}|g ; \
+		 s|@localstatedir@/spool/jabberd|${JABBER_SPOOLDIR}|g ; \
+		 s|@localstatedir@/run/jabberd|${JABBER_RUNDIR}|g' \
 		${WRKSRC}/jabber.xml.dist.in
-	@${LN} -s ${WRKSRC}/man/jabberd.8.in ${WRKSRC}/man/jabberd14.8.in
+	@${REINPLACE_CMD} -e \
+		'/<gcrypt.h>/s|^|//| ; \
+		 /gcry_control/s|^|//|' \
+		${WRKSRC}/jabberd/gcrypt_init.c
+	@${REINPLACE_CMD} -e \
+		's|locale, LOCALEDIR)|locale)|' \
+		${WRKSRC}/jabberd/lib/messages.cc
+	@${REINPLACE_CMD} -e \
+		's|"$(localedir)|"$$(DESTDIR)$(localedir)|' \
+		${WRKSRC}/po/Makefile.in
+	@${LN} -s jabberd.8.in ${WRKSRC}/man/jabberd14.8.in
 
 post-install:
-	@${TOUCH} ${PREFIX}/include/jabber/platform-settings
-	@${INSTALL_DATA} ${WRKSRC}/jabber.xml.dist ${PREFIX}/etc/jabber.xml.sample
-.if !defined(NO_INSTALL_MANPAGES)
-	@cd ${WRKSRC}/man && make install-man
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
+	@${TOUCH} ${STAGEDIR}${PREFIX}/include/jabber/platform-settings
+	(cd ${WRKSRC} && ${INSTALL_DATA} jabber.xml.dist \
+		${STAGEDIR}${PREFIX}/etc/jabber.xml.sample)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in AUTHORS ChangeLog INSTALL NEWS README README.SQL README.config \
+	README.filespool README.karma README.protocols TODO UPGRADE mysql.sql
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
