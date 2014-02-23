@@ -23,6 +23,7 @@ SUB_FILES=	pkg-message
 STRIP=
 STRIP_CMD=	${TRUE}
 DEPRECATED=	Binary port of software abandoned by the vendor
+EXPIRATION_DATE=2014-03-23
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
