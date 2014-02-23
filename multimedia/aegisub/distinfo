@@ -1,4 +1,4 @@
 SHA256 (aegisub-2.1.9.tar.gz) = ac1f20751f3d2732d7e11627ea4cc30b53cb905d11422925b7f881785d373706
 SIZE (aegisub-2.1.9.tar.gz) = 2538256
-SHA256 (ffms-2.17-src.tar.bz2) = 991f7a77982823afdcf0beb8961deddaf7dd0aea949249e51fbf51cb3314643d
-SIZE (ffms-2.17-src.tar.bz2) = 394862
+SHA256 (ffms2-2.19.tar.gz) = 12611778f9f0083af5627067db0b163c48a0c32a43a0b4145da612f43afa69f2
+SIZE (ffms2-2.19.tar.gz) = 512114

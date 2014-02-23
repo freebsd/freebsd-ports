@@ -3,22 +3,20 @@
 
 PORTNAME=	aegisub
 PORTVERSION=	2.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/ \
-		ftp://ftp.aegisub.org/pub/archives/releases/source/ \
-		ftp://ftp2.aegisub.org/pub/archives/releases/source/ \
-		GOOGLE_CODE:ffms
-PROJECTHOST=	ffmpegsource
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${FFMS_DISTFILE}:ffms
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
+		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
+		ftp://ftp2.aegisub.org/pub/archives/releases/source/:aegisub \
+		GH
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:aegisub ${FFMS_DISTFILE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform subtitle editor
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 OPTIONS_DEFINE=	DEBUG PROFILE GCOV EFENCE ASS ALSA OPENAL PORTAUDIO PULSEAUDIO \
 		FFMPEG HUNSPELL LUA DOCS
@@ -28,14 +26,22 @@ EFENCE_DESC=	Electric Fence (require profiling)
 ASS_DESC=	libASS subtitle provider
 HUNSPELL_DESC=	Spell checking via Hunspell
 
-USES=		pkgconfig gettext iconv
+USE_GITHUB=	yes
+GH_ACCOUNT=	FFMS
+GH_PROJECT=	ffms2
+GH_TAGNAME=	${FFMS_VERSION}
+GH_COMMIT=	ec0ef9c
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+USES=		desktop-file-utils gettext gmake pkgconfig
 USE_GNOME=	intltool
 USE_WX=		2.8
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 USE_GL=		glu
-USE_GMAKE=	yes
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gcc-prec --without-lua50
 INSTALLS_ICONS=	yes
@@ -46,16 +52,15 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-FFMS_NAME=	ffms
-FFMS_VERSION=	2.17
-FFMS_DISTNAME=	${FFMS_NAME}-${FFMS_VERSION}-src
-FFMS_DISTFILE=	${FFMS_DISTNAME}.tar.bz2
-FFMS_WRKSRC=	${WRKDIR}/${FFMS_DISTNAME}
+FFMS_NAME=	ffms2
+FFMS_VERSION=	2.19
+FFMS_DISTNAME=	${FFMS_NAME}-${FFMS_VERSION}
+FFMS_DISTFILE=	${FFMS_DISTNAME}.tar.gz
+FFMS_WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 FFMS_CFLAGS=	-I${FFMS_WRKSRC}/include
 FFMS_LIBS=	${FFMS_WRKSRC}/src/core/.libs/libffms2.a \
-		`pkg-config --libs libavcodec libavformat libswscale libavutil`
+		$$(pkg-config --libs libavcodec libavformat libswscale libavutil libavresample)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -69,7 +74,7 @@ WITH_PROFILE=	yes
 .endif
 
 .if ${PORT_OPTIONS:MEFENCE}
-LIB_DEPENDS+=	efence:${PORTSDIR}/devel/ElectricFence
+LIB_DEPENDS+=	libefence.so:${PORTSDIR}/devel/ElectricFence
 CONFIGURE_ARGS+=	--enable-efence
 WITH_PROFILE=	yes
 .endif
@@ -79,19 +84,19 @@ CONFIGURE_ARGS+=	--enable-profile
 .endif
 
 .if ${PORT_OPTIONS:MASS}
-LIB_DEPENDS+=	ass:${PORTSDIR}/multimedia/libass
+LIB_DEPENDS+=	libass.so:${PORTSDIR}/multimedia/libass
 .else
 CONFIGURE_ARGS+=	--without-libass
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--without-alsa
 .endif
 
 .if ${PORT_OPTIONS:MOPENAL}
-USES+=			openal
+USES+=		openal
 .else
 CONFIGURE_ARGS+=	--without-openal
 .endif
@@ -105,13 +110,13 @@ CONFIGURE_ARGS+=	--without-portaudio
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ENV+=	FFMS_CFLAGS="${FFMS_CFLAGS}" FFMS_LIBS="${FFMS_LIBS}"
 CONFIGURE_ARGS+=	--with-provider-video=ffmpegsource \
 			--with-provider-audio=ffmpegsource
@@ -121,7 +126,7 @@ CONFIGURE_ARGS+=	--without-ffms
 .endif
 
 .if ${PORT_OPTIONS:MHUNSPELL}
-LIB_DEPENDS+=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
+LIB_DEPENDS+=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
 .else
 CONFIGURE_ARGS+=	--without-hunspell
 .endif
@@ -135,19 +140,11 @@ CPPFLAGS+=	-I${LUA_INCDIR}
 CONFIGURE_ARGS+=	--without-lua
 .endif
 
-# use multiple make jobs for FFMS_WRKSRC
-_make_jobs=	-j${MAKE_JOBS_NUMBER}
-
-post-extract:
-.for i in ${FFMS_DISTFILE}
-	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${i} ${EXTRACT_AFTER_ARGS})
-.endfor
-
 post-patch:
 .for i in configure
 	@${REINPLACE_CMD} -e \
-		'/opt_flag/s|-O2||' ${WRKSRC}/${i}
+		'/opt_flag/s|-O2|| ; \
+		 /ICONV_LIBS/s|-liconv||' ${WRKSRC}/${i}
 .endfor
 .for i in automation/Makefile.in
 	@${REINPLACE_CMD} -e \
@@ -172,25 +169,20 @@ post-patch:
 pre-configure:
 .if ${PORT_OPTIONS:MFFMPEG}
 	@(cd ${FFMS_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./configure \
-		--disable-shared CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
-		CXXFLAGS="${CXXFLAGS}")
+		--disable-shared --disable-silent-rules CC="${CC}" \
+		CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}")
 .endif
 
 pre-build:
 .if ${PORT_OPTIONS:MFFMPEG}
-	@(cd ${FFMS_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${_make_jobs} ${MAKE_ARGS} \
+	@(cd ${FFMS_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} -j${MAKE_JOBS_NUMBER} ${MAKE_ARGS} \
 		${ALL_TARGET})
 .endif
 
 post-install:
-	@(cd ${WRKSRC}/automation && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+	@(cd ${WRKSRC}/automation && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
-		install-nobase_automationDATA)
-.if ${PORT_OPTIONS:MDOCS}
-	@(cd ${WRKSRC}/automation && ${SETENV} ${MAKE_ENV} ${GMAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
-		install-nobase_share_docDATA)
-.endif
+		install-nobase_automationDATA install-nobase_share_docDATA)
 
 .include <bsd.port.mk>
