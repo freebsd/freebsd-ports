@@ -160,9 +160,6 @@ _GCC_RUNTIME:=		${LOCALBASE}/lib/gcc${V}
 CFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 CXXFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 LDFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME} -L${_GCC_RUNTIME}
-# The following is for the sakes of some ports which use this without
-# ever telling us; to be fixed.
-_GCC_BUILD_DEPENDS:=	${_GCC_PORT_DEPENDS}
 .  else # Use GCC in base.
 CC:=			gcc
 CXX:=			g++
