@@ -10,8 +10,8 @@ MASTER_SITES=	SF/sguil/sguil/sguil-${PORTVERSION}
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Sguil is a network security monitoring program
 
-LIB_DEPENDS=	tls:${PORTSDIR}/devel/tcltls
-RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib \
+RUN_DEPENDS=	tcltls>=0:${PORTSDIR}/devel/tcltls \
+		dtplite:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX \
 		${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets \
 		gpg2:${PORTSDIR}/security/gnupg

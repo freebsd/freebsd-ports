@@ -9,8 +9,8 @@ MASTER_SITES=	SF/sguil/sguil/sguil-${PORTVERSION}
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Sguil is a network security monitoring program
 
-LIB_DEPENDS=	tls:${PORTSDIR}/devel/tcltls
-RUN_DEPENDS=	barnyard2:${PORTSDIR}/security/barnyard2-sguil \
+RUN_DEPENDS=	tcltls>=0:${PORTSDIR}/devel/tcltls \
+		barnyard2:${PORTSDIR}/security/barnyard2-sguil \
 		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX
 
 OPTIONS_DEFINE=	PADS SANCP
@@ -65,7 +65,7 @@ PLIST_SUB+=	USEPADS="@comment "
 
 post-patch:
 .for f in ${AGENTS}
-	@${REINPLACE_CMD} 's|/bin/sh|${STAGEDIR}${PREFIX}/bin/${TCLSH}|' \
+	@${REINPLACE_CMD} 's|/bin/sh|${PREFIX}/bin/${TCLSH}|' \
 		${WRKSRC}/sensor/${f}
 .endfor
 

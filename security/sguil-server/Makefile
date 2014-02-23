@@ -9,11 +9,11 @@ MASTER_SITES=	SF/sguil/sguil/sguil-${PORTVERSION}
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Sguil is a network security monitoring program
 
-RUN_DEPENDS=	p0f:${PORTSDIR}/net-mgmt/p0f \
+RUN_DEPENDS=	tcltls>=0:${PORTSDIR}/devel/tcltls \
+		p0f:${PORTSDIR}/net-mgmt/p0f \
 		tcpflow:${PORTSDIR}/net/tcpflow \
 		dtplite:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX
-LIB_DEPENDS=	tls:${PORTSDIR}/devel/tcltls
 
 OPTIONS_DEFINE=	MYSQL
 MYSQL_DESC=	Depend on databases/mysqltcl
