@@ -1,16 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	banshee
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GNOME
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Music management and playback for gnome
-
-BROKEN=		Does not compile
 
 # Could do without bash, but it's brought in by gnome anyway.
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
@@ -36,10 +33,10 @@ YOUTUBE_DESC=	Build and/or install the Youtube extension
 OPTIONS_DEFAULT=BPMDETECT GIO MTP WEBKIT YOUTUBE
 
 USE_XZ=		yes
-USES=		gmake perl5 pkgconfig
+USES=		desktop-file-utils gmake pathfix perl5 pkgconfig shared-mime-info
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gtksharp20 gnomesharp20
+USE_GNOME=	gtksharp20 gnomesharp20
 USE_GSTREAMER=	cdparanoia
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME:C/-.*//}
 USE_XORG=	xrandr xxf86vm
@@ -48,7 +45,6 @@ INSTALLS_ICONS=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-hardware --disable-boo
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
@@ -97,7 +93,7 @@ PLIST_SUB+=	APPLEDEV="@comment "
 
 .if ${PORT_OPTIONS:MMTP}
 CONFIGURE_ARGS+=--enable-mtp
-LIB_DEPENDS+=	mtp:${PORTSDIR}/audio/libmtp
+LIB_PC_DEPENDS+=${LOCALBASE}/libdata/pkgconfig/libmtp.pc:${PORTSDIR}/audio/libmtp
 PLIST_SUB+=	OPT_MTP=""
 .else
 CONFIGURE_ARGS+=--disable-mtp
@@ -127,5 +123,8 @@ PLIST_SUB+=	OPT_WEBKITORYOUTUBE=""
 .else
 PLIST_SUB+=	OPT_WEBKITORYOUTUBE="@comment "
 .endif
+
+post-patch:
+	${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e 's|-r:Mono.Cairo|-r:${PREFIX}/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll|'
 
 .include <bsd.port.mk>

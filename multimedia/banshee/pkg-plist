@@ -32,6 +32,7 @@ lib/banshee/Banshee.Services.dll
 lib/banshee/Banshee.Services.dll.config
 lib/banshee/Banshee.Services.dll.mdb
 lib/banshee/Banshee.ThickClient.dll
+lib/banshee/Banshee.ThickClient.dll.config
 lib/banshee/Banshee.ThickClient.dll.mdb
 %%OPT_WEBKIT%%lib/banshee/Banshee.WebBrowser.dll
 %%OPT_WEBKIT%%lib/banshee/Banshee.WebBrowser.dll.mdb
@@ -157,6 +158,7 @@ libdata/pkgconfig/banshee-nowplaying.pc
 libdata/pkgconfig/banshee-services.pc
 libdata/pkgconfig/banshee-thickclient.pc
 libdata/pkgconfig/banshee-webbrowser.pc
+share/appdata/banshee.appdata.xml
 share/applications/banshee-audiocd.desktop
 share/applications/banshee-media-player.desktop
 share/applications/banshee.desktop
@@ -549,6 +551,29 @@ share/gnome/help/banshee/ja/search.page
 share/gnome/help/banshee/ja/sort.page
 share/gnome/help/banshee/ja/sync.page
 share/gnome/help/banshee/ja/ui.page
+share/gnome/help/banshee/pt_BR/add-podcast.page
+share/gnome/help/banshee/pt_BR/add-radio.page
+share/gnome/help/banshee/pt_BR/advanced.page
+share/gnome/help/banshee/pt_BR/amazon.page
+share/gnome/help/banshee/pt_BR/emusic.page
+share/gnome/help/banshee/pt_BR/extensions.page
+share/gnome/help/banshee/pt_BR/import.page
+share/gnome/help/banshee/pt_BR/index.page
+share/gnome/help/banshee/pt_BR/introduction.page
+share/gnome/help/banshee/pt_BR/itunes-import.page
+share/gnome/help/banshee/pt_BR/keyboardshortcuts.page
+share/gnome/help/banshee/pt_BR/lastfm.page
+share/gnome/help/banshee/pt_BR/legal.xml
+share/gnome/help/banshee/pt_BR/manage-coverart.page
+share/gnome/help/banshee/pt_BR/manage-playlists.page
+share/gnome/help/banshee/pt_BR/manage-tags.page
+share/gnome/help/banshee/pt_BR/play-queue.page
+share/gnome/help/banshee/pt_BR/play.page
+share/gnome/help/banshee/pt_BR/rb-import.page
+share/gnome/help/banshee/pt_BR/search.page
+share/gnome/help/banshee/pt_BR/sort.page
+share/gnome/help/banshee/pt_BR/sync.page
+share/gnome/help/banshee/pt_BR/ui.page
 share/gnome/help/banshee/sl/add-podcast.page
 share/gnome/help/banshee/sl/add-radio.page
 share/gnome/help/banshee/sl/advanced.page
@@ -683,6 +708,7 @@ share/mime/packages/banshee-emx.xml
 @dirrm share/gnome/help/banshee/zh_CN
 @dirrm share/gnome/help/banshee/uk
 @dirrm share/gnome/help/banshee/sl
+@dirrm share/gnome/help/banshee/pt_BR
 @dirrm share/gnome/help/banshee/ja
 @dirrm share/gnome/help/banshee/hu
 @dirrm share/gnome/help/banshee/gl
@@ -729,6 +755,7 @@ share/mime/packages/banshee-emx.xml
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/audio-profiles
 @dirrm %%DATADIR%%
+@dirrmtry share/appdata
 @dirrm lib/banshee/Extensions
 @dirrm lib/banshee/Backends
 @dirrm lib/banshee
