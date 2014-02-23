@@ -1291,6 +1291,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aetv/URL/AETV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.amt/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.amt/URL/Apple Movie Trailers/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.annakimphotography/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.annakimphotography/URL/Anna Kim Photography/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aolon/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aolon/URL/AOL On/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.arbejdsglaedeTV/ServiceInfo.plist
@@ -1388,8 +1390,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/URL/GiantBomb/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/URL/GiantBomb/ServicePrefs.json
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gizmodo/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gizmodo/URL/Gizmodo/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/URL/Goal/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.golfchannel/ServiceInfo.plist
@@ -1647,15 +1647,7 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.search.videosurf/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Resources/Plex-Silverlight.xml
-%%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Resources/Plex.xml
-%%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Resources/crackle.xml
 %%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Resources/icon-default.png
-%%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Resources/iplayer_live_radio_high.xml
-%%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Resources/iplayer_live_radio_standard.xml
-%%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Resources/iplayer_live_tv_high.xml
-%%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Resources/iplayer_live_tv_standard.xml
-%%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Resources/iplayer_news.xml
 %%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins/System.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins/System.bundle/Contents/Code/agentservice.py
@@ -3427,9 +3419,6 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/URL/Goal
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gizmodo/URL/Gizmodo
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gizmodo/URL
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gizmodo
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/URL/GiantBomb
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb
@@ -3573,6 +3562,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aolon/URL/AOL On
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aolon/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aolon
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.annakimphotography/URL/Anna Kim Photography
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.annakimphotography/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.annakimphotography
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.amt/URL/Apple Movie Trailers
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.amt/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.amt
