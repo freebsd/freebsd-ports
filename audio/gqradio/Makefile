@@ -3,28 +3,42 @@
 
 PORTNAME=	gqradio
 PORTVERSION=	1.9.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	SF/gqmpeg/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 based FM tuner
 
-GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 gnomehack gnomeprefix
-NO_STAGE=	yes
+LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	alpha i386 ia64
+USES=		gettext pathfix pkgconfig
+USE_GNOME=	gtk20
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=		DOCS V4L
+
+V4L_BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
+V4L_CONFIGURE_ENV_OFF=	ac_cv_header_linux_videodev_h=no
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(doc/gqradio\)-\$$VERSION|\1|' \
+	@${REINPLACE_CMD} -e \
+		's|header_machine_ioctl_bt848|header_dev_bktr_ioctl_bt848| ; \
+		 s|machine/ioctl_bt848|dev/bktr/ioctl_bt848| ; \
+		 s|\(doc/gqradio\)-\$$VERSION|\1|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|^\(readmedir = \).*|\1$$(prefix)/share/doc/gqradio|; \
 		 s|COPYING||' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|^\(Icon=\).*|\1${PREFIX}/share/pixmaps/gqradio.png|' \
+		${WRKSRC}/gqradio.desktop
+	@${REINPLACE_CMD} -e \
+		's|machine/ioctl_bt848|dev/bktr/ioctl_bt848|' \
+		${WRKSRC}/src/io_radio.c
 
 .include <bsd.port.mk>
