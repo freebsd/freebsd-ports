@@ -15,6 +15,8 @@ COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+
 CONFLICTS?=	ru-xmms-[0-9]* zh-xmms-[0-9]*
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils pathfix gmake iconv
