@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	cool animated flame
 
 DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=2014-03-23
 
 USES=		imake
 USE_XORG=	x11 xext
