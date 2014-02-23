@@ -121,7 +121,7 @@ post-patch:
 	-e 's+%%FIND%%+${FIND}+' \
 	-e 's+%%XARGS%%+${XARGS}+' \
 	-e 's+%%REINPLACE_CMD%%+${REINPLACE_CMD}+' \
-	-e 's+%%_GCC_BUILD_DEPENDS%%+${_GCC_BUILD_DEPENDS}+' \
+	-e 's+%%_GCC_RUNTIME%%+${_GCC_RUNTIME}+' \
 	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
 		${WRKSRC}/Makefile.system
 .if ${PORT_OPTIONS:MOPENMP}
