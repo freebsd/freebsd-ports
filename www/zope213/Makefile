@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zope213
-PORTVERSION=	2.13.21
+PORTVERSION=	2.13.22
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Zope2-${PORTVERSION}
@@ -79,10 +79,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=2.13.2:${PORTSDIR}/security/p
 		${PYTHON_PKGNAMEPREFIX}Products.StandardCacheManagers>=0:${PORTSDIR}/devel/py-Products.StandardCacheManagers \
 		${PYTHON_PKGNAMEPREFIX}manuel>=0:${PORTSDIR}/devel/py-manuel
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	Zope2
-USE_ZIP=	yes
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	instance-message package-pkg-message pkg-message
@@ -90,9 +90,8 @@ SUB_LIST=	ZOPEINSTANCEBASE=${ZOPEINSTANCEBASE} \
 		ZOPE_USER=${ZOPE_USER} \
 		ZOPEINSTANCEDIR=${ZOPEINSTANCEDIR}
 
-NO_STAGE=	yes
-USE_RC_SUBR=	${PORTNAME}
-ZOPE_USER?=	www
+USE_RC_SUBR=		${PORTNAME}
+ZOPE_USER?=		www
 ZOPEINSTANCEBASE?=	${PREFIX}/www/Zope213
 ZOPEINSTANCEDIR?=	${ZOPEINSTANCEBASE}/${ZOPEINSTANCENAME}
 
@@ -105,10 +104,6 @@ ISBATCH=	""
 .if defined(INSTANCENAME)
 ZOPEINSTANCENAME=	${INSTANCENAME}
 .endif
-
-post-patch:
-	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete -or \
-		-name .DS_Store -delete
 
 instance:
 	@${LOCALBASE}/bin/mkzopeinstance --dir ${ZOPEINSTANCEDIR} ${ISBATCH}
