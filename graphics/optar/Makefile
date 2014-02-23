@@ -3,31 +3,37 @@
 
 PORTNAME=	optar
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	http://xps.crucible.gr/
-DISTFILES=	optar.tgz \
-		font.h
-EXTRACT_ONLY=	optar.tgz
+MASTER_SITES=	http://ronja.twibright.com/
+DISTFILES=	optar.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for encoding data on paper
+COMMENT=	Tool for encoding data on paper
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-10
+LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/libpng15/png.h:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/optar
+WRKSRC=		${WRKDIR}/optar_dist
+
+USES=		gmake
 
 PLIST_FILES=	bin/optar bin/unoptar bin/pgm2ps
 
-NO_STAGE=	yes
-post-extract:
-	@${RM} -v ${WRKSRC}/font.h
-	@${CP} -v ${DISTDIR}/font.h ${WRKSRC}/font.h
-	@${SED} 's:/usr/local:${LOCALBASE}:g' ${WRKSRC}/Makefile > ${WRKSRC}/Makefile.new
-	@${MV} ${WRKSRC}/Makefile.new ${WRKSRC}/Makefile
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS|#CFLAGS| ; \
+		 s|gcc |$$(CC) | ; \
+		 s|-I/usr/local/include/libpng|`libpng-config --I_opts`| ; \
+		 s|-L/usr/local/lib|`libpng-config --L_opts`|' \
+		${WRKSRC}/Makefile
+
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} optar unoptar \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} pgm2ps \
+		${STAGEDIR}${PREFIX}/bin)
+
 .include <bsd.port.mk>
