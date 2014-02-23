@@ -1,0 +1,11 @@
+bin/nghttp
+bin/nghttpd
+bin/nghttpx
+include/nghttp2/nghttp2.h
+include/nghttp2/nghttp2ver.h
+lib/libnghttp2.a
+lib/libnghttp2.la
+lib/libnghttp2.so
+lib/libnghttp2.so.2
+libdata/pkgconfig/libnghttp2.pc
+@dirrm include/nghttp2
