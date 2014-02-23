@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcmanfm
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/PCManFM/
 
@@ -12,32 +11,41 @@ COMMENT=	PCMan File Manager
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
-		libfm-gtk.so.4:${PORTSDIR}/x11/libfm
+LIB_DEPENDS=	libfm-gtk.so:${PORTSDIR}/x11/libfm
 
-USES=		fam gmake pkgconfig
+USE_XZ=		yes
+USES=		desktop-file-utils fam gmake pathfix pkgconfig
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	aclocal automake libtool
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	NLS
+PORTDOCS=	AUTHORS NEWS
+
+OPTIONS_DEFINE=	DEBUG DOCS NLS
 OPTIONS_SUB=	yes
+
+DEBUG_CONFIGURE_ENABLE=	debug
 
 NLS_USES=	gettext
 
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/pcmanfm.conf/ d' ${WRKSRC}/data/Makefile.in
+	@${REINPLACE_CMD} -e '/pcmanfm.conf/ d' ${WRKSRC}/data/Makefile.am
+
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|src po|src|' \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.am
 .endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/default/
 	${INSTALL_DATA} ${WRKSRC}/data/pcmanfm.conf \
 		${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/default/pcmanfm.conf.sample
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

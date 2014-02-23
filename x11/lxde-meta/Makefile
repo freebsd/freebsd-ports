@@ -3,7 +3,7 @@
 
 PORTNAME=	lxde-meta
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -18,7 +18,6 @@ RUN_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox \
 		lxinput:${PORTSDIR}/sysutils/lxinput \
 		lxtask:${PORTSDIR}/sysutils/lxtask \
 		lxterminal:${PORTSDIR}/sysutils/lxterminal \
-		lxshortcut:${PORTSDIR}/deskutils/lxshortcut \
 		pcmanfm:${PORTSDIR}/x11-fm/pcmanfm \
 		gpicview:${PORTSDIR}/graphics/gpicview \
 		lxde-icon-theme>=0:${PORTSDIR}/x11-themes/lxde-icon-theme \
