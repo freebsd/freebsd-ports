@@ -5,7 +5,6 @@
 %%PERL5_MAN3%%/PDF::API2::Basic::PDF::Dict.3.gz
 %%PERL5_MAN3%%/PDF::API2::Basic::PDF::File.3.gz
 %%PERL5_MAN3%%/PDF::API2::Basic::PDF::Filter.3.gz
-%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Filter::RunLengthDecode.3.gz
 %%PERL5_MAN3%%/PDF::API2::Basic::PDF::Name.3.gz
 %%PERL5_MAN3%%/PDF::API2::Basic::PDF::Null.3.gz
 %%PERL5_MAN3%%/PDF::API2::Basic::PDF::Number.3.gz
