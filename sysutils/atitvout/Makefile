@@ -10,12 +10,13 @@ MASTER_SITES=	http://0pointer.de/lennart/projects/atitvout/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toggle TV Out on Mach64 graphics cards
 
-LIB_DEPENDS=	lrmi:${PORTSDIR}/devel/lrmi
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	liblrmi.so:${PORTSDIR}/devel/lrmi
 
 WRKSRC=		${WRKDIR}/atitvout
 MAKEFILE=	Makefile.bsd
 
 PLIST_FILES+=	sbin/atitvout
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
