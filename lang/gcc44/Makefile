@@ -12,6 +12,9 @@ DISTNAME=	gcc-${DISTVERSION}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.4
 
+LICENSE=	GPLv3 GPLv3RLE
+LICENSE_COMB=	multi
+
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
@@ -84,6 +87,7 @@ pre-configure:
 
 post-install:
 	${RM} -f ${STAGEDIR}${TARGLIB}/*.la
+	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
