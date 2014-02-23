@@ -10,6 +10,9 @@ MASTER_SITES=	SF/defx/defx/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-effects processor plug-in for XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake

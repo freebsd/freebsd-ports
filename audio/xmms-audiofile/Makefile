@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.68k.org/~michael/xmms/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin to allow playing libaudiofile supported files
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

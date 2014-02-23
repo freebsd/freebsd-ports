@@ -15,6 +15,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional skins for the XMMS Analog VUmeter plugin
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 RUN_DEPENDS=	${SKINSDIR}/default/skin.cfg:${PORTSDIR}/graphics/xmms-vumeter
 
 USE_BZIP2=	yes

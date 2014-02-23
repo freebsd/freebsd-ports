@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive remote control shell for xmms
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
 		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl

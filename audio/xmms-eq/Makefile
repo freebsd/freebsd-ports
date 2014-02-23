@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-xmms-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time graphical equalizer plugin for XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes

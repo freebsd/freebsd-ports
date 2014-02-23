@@ -10,6 +10,9 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A XMMS input plugin for read AudioCD via IDE bus
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 

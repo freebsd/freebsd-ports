@@ -6,6 +6,9 @@ PORTREVISION=	2
 
 COMMENT=	The Bluecurve XMMS skin
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		unzip:${PORTSDIR}/archivers/unzip
 

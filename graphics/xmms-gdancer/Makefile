@@ -11,6 +11,9 @@ DISTNAME=	gdancer-$(PORTVERSION)
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS Visualization plugin, displays dancing figures
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms

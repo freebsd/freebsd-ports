@@ -11,6 +11,9 @@ DISTNAME=	EFXmms-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send the XMMS audio output through a queue of multiple effect plugins
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake

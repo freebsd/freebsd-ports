@@ -10,6 +10,9 @@ MASTER_SITES=	http://nebulus.tuxfamily.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS visualization plugin that uses SDL and OpenGL
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
