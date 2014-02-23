@@ -139,6 +139,7 @@
     SUBDIR += powerdns-recursor
     SUBDIR += py-adns
     SUBDIR += py-dns
+    SUBDIR += py-dns3
     SUBDIR += py-dnspython
     SUBDIR += py-easyzone
     SUBDIR += py-idnkit2
