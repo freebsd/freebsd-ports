@@ -1,5 +1,5 @@
---- Makefile.bak	Fri Jan  2 17:45:26 2004
-+++ Makefile	Fri Jan  2 17:48:33 2004
+--- ./Makefile.orig	2001-12-22 21:55:11.000000000 -0200
++++ ./Makefile	2014-02-22 22:45:43.000000000 -0300
 @@ -4,7 +4,6 @@
  # Well, the only configurable part is the following variable.
  # Make sure the directory you specify exists.
@@ -8,7 +8,7 @@
  
  # End of configurable part
  
-@@ -16,10 +15,10 @@
+@@ -16,19 +15,19 @@
  all: installwatch.so
  
  installwatch.so: installwatch.o
@@ -21,6 +21,18 @@
  
  localdecls.h:
  	./create-localdecls
+ 
+ install: all
+-	if [ -r $(LIBDIR)/installwatch.so ]; then rm  $(LIBDIR)/installwatch.so; export LD_PRELOAD=""; cp installwatch.so $(LIBDIR); LD_PRELOAD=$(LIBDIR)/installwatch.so; else cp installwatch.so $(LIBDIR); fi
++	if [ -r ${DESTDIR}$(LIBDIR)/installwatch.so ]; then rm  ${DESTDIR}$(LIBDIR)/installwatch.so; export LD_PRELOAD=""; cp installwatch.so ${DESTDIR}$(LIBDIR); LD_PRELOAD=${DESTDIR}$(LIBDIR)/installwatch.so; else cp installwatch.so ${DESTDIR}$(LIBDIR); fi
+ 	
+-	sed -e "s|#PREFIX#|$(PREFIX)|" < installwatch > $(BINDIR)/installwatch
+-	chmod 755 $(BINDIR)/installwatch
++	sed -e "s|#PREFIX#|$(PREFIX)|" < installwatch > ${DESTDIR}$(BINDIR)/installwatch
++	chmod 755 ${DESTDIR}$(BINDIR)/installwatch
+ 
+ uninstall:
+ 	rm $(LIBDIR)/installwatch.so
 @@ -41,7 +40,7 @@
  	tar -czvC .. -f ../installwatch-$(VERSION).tar.gz installwatch-$(VERSION)
  
