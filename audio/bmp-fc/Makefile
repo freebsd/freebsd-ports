@@ -10,6 +10,9 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Future Composer input plug-in for beep-media-player
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player

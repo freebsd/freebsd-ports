@@ -12,6 +12,9 @@ MASTER_SITE_SUBDIR=	novel
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Application which saves your current BMP playlist to html or xml file
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 BUILD_DEPENDS=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 RUN_DEPENDS=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 

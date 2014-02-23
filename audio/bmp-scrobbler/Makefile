@@ -11,6 +11,9 @@ CONFLICTS=	scrobbler-*
 
 MASTERDIR=	${.CURDIR}/../scrobbler
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 NO_STAGE=	yes
 WITH_BMP=	yes
 

@@ -9,6 +9,9 @@ LICENSE=	GPLv2
 
 MASTERDIR=	${.CURDIR}/../festalon
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player
 
 CONFIGURE_ARGS+=	--enable-interface=bmp
