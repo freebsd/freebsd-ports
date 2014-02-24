@@ -1,0 +1,99 @@
+#!/bin/sh
+# Created by: Created by: KalleDK <plexmaintainer@k-moeller.dk>
+#
+# $FreeBSD$
+#
+# PROVIDE: plexmediaserver
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable the Plex Media Server:
+#
+# plexmediaserver_enable="YES"
+#
+# plexmediaserver_support_path="%%SUPPORT_PATH%%" # Plex data: logs, media metadata, settings, etc
+#
+# plexmediaserver_tmp="/tmp" # tmp directory used for the transcoding process
+#
+
+. /etc/rc.subr
+
+name=plexmediaserver
+rcvar=plexmediaserver_enable
+load_rc_config $name
+
+: ${plexmediaserver_enable:=NO}
+: ${plexmediaserver_support_path="%%SUPPORT_PATH%%"}
+: ${plexmediaserver_user="%%USERS%%"}
+: ${plexmediaserver_group="%%GROUPS%%"}
+
+extra_commands=status
+start_precmd=plex_precmd
+start_cmd=plex_startcmd
+status_cmd=plex_statuscmd
+stop_cmd=plex_stopcmd
+pidfile=/var/run/plex/plex.pid
+
+plex_precmd()
+{
+	export SUPPORT_PATH="${plexmediaserver_support_path}"
+	export HOME="${plexmediaserver_support_path}/Plex Media Server"
+	export PYTHONHOME="%%SCRIPT_PATH%%/Resources/Python"
+	export SCRIPTPATH="%%SCRIPT_PATH%%"
+	export LD_LIBRARY_PATH="${SCRIPTPATH}"
+	export PLEX_MEDIA_SERVER_HOME="${SCRIPTPATH}"
+	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6
+	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${plexmediaserver_support_path}
+	export PLEX_MEDIA_SERVER_PIDFILE=${pidfile}
+	if ${plexmediaserver_tmp}; then export PLEX_MEDIA_SERVER_TMPDIR=${plexmediaserver_tmp}; fi
+	export PATH="${SCRIPTPATH}/Resources/Python/bin:${PATH}"
+	export LC_ALL="C"
+	export LANG="C"
+	ulimit -s 3000
+
+	if [ ! -d ${pidfile%/*} ]; then
+		install -d -o ${plexmediaserver_user} ${pidfile%/*};
+	fi
+	
+	if [ ! -d "${plexmediaserver_support_path}/Plex Media Server" ]; then
+		install -d -g ${plexmediaserver_group} -o ${plexmediaserver_user} "${plexmediaserver_support_path}/Plex Media Server";
+	fi
+}
+
+plex_startcmd()
+{
+	if [ -f "${pidfile}" ] && (pgrep -F ${pidfile} Plex >/dev/null); then
+		echo "${name} is already running with pid: $(cat ${pidfile})";
+	else
+		echo "Starting ${name}."
+		/usr/sbin/daemon -u ${plexmediaserver_user} -f '%%SCRIPT_PATH%%/Plex Media Server'
+	fi
+}
+
+plex_statuscmd()
+{
+	if [ -f "${pidfile}" ] && (pgrep -F ${pidfile} Plex >/dev/null); then
+		echo "${name} is running with pid: $(cat ${pidfile})";
+	else
+		echo "${name} is not running.";
+		exit 1;
+	fi	
+}
+
+plex_stopcmd()
+{
+	if [ -f "${pidfile}" ] && (pgrep -F ${pidfile} Plex >/dev/null); then
+		main_pid=$(cat ${pidfile});
+		child_pids=$(pgrep -P ${main_pid});
+		all_pids="${main_pid} ${child_pids}"
+		sig_stop=-QUIT;
+		kill ${sig_stop} ${all_pids};
+		wait_for_pids ${all_pids};
+		rm ${pidfile}
+	else
+		echo "${name} is not running.";
+		exit 1;
+	fi
+}
+
+run_rc_command "$1"
