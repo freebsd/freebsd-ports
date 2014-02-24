@@ -159,7 +159,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g' \
 		-e 's|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g' \
-		-e 's|set dummy lua;|set dummy lua-${LUA_VER};|g' ${WRKSRC}/src/auto/configure
+		-e 's|set dummy lua;|set dummy ${LUA_CMD};|g' ${WRKSRC}/src/auto/configure
 .if ${PORT_OPTIONS:MXTERM_SAVE}
 	@${REINPLACE_CMD} -e '/FEAT_XTERM_SAVE/ s|.*|#define FEAT_XTERM_SAVE|' ${WRKSRC}/src/feature.h
 .endif
