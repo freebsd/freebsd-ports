@@ -13,26 +13,24 @@ COMMENT=	A network tool designed for high performance and accurate monitoring
 DOCS=		Changes.html binaries.html config.html docs.html index.html \
 		jclient.jpg net-example.png sysmon.conf.man.html sysmon.jpg \
 		sysmon.man.html reporting.xml-spec.txt
-MAN8=		sysmon.man.8 sysmon.conf.man.8
+MANPAGE=	sysmon.man.8 sysmon.conf.man.8
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/sysmon ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/sysmond ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/sysmon ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/sysmond ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} \
-		${WRKSRC}/examples/sysmon.conf.dist ${PREFIX}/etc/sysmon.conf.sample
-
-.for man in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/docs/${man:S/.8//} ${MANPREFIX}/man/man8/${man}
+		${WRKSRC}/examples/sysmon.conf.dist \
+			${STAGEDIR}${PREFIX}/etc/sysmon.conf.sample
+.for man in ${MANPAGE}
+	${INSTALL_MAN} ${WRKSRC}/docs/${man:S/.8//} ${STAGEDIR}${MANPREFIX}/man/man8/${man}
 .endfor
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
