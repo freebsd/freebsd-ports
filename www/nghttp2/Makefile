@@ -14,6 +14,9 @@ LICENSE=	MIT
 LIB_DEPENDS=	libevent_openssl.so:${PORTSDIR}/devel/libevent2 \
 		libspdylay.so:${PORTSDIR}/www/spdylay
 
+OPTIONS_DEFINE=	HPACK
+OPTIONS_SUB=	yes
+
 CONFIGURE_ARGS=	--disable-python-bindings \
 		--enable-app \
 		--enable-examples
@@ -30,6 +33,9 @@ USE_XZ=		yes
 USES=		compiler:c++11-lang pathfix pkgconfig
 
 PORTDOCS=	*
+
+HPACK_CONFIGURE_ARGS=	--enable-hpack-tools
+HPACK_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 
 .include <bsd.port.pre.mk>
 

@@ -1,3 +1,5 @@
+%%HPACK%%bin/deflatehd
+%%HPACK%%bin/inflatehd
 bin/nghttp
 bin/nghttpd
 bin/nghttpx
