@@ -20,8 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message pkg-deinstall
-SUB_LIST=	PORTNAME=${PORTNAME}
+SUB_FILES=	pkg-deinstall pkg-message
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/cache/
@@ -39,13 +38,13 @@ MS_DIRRMTRY=	albums cache themes zp-core
 MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 
 genplist: do-clean extract
-	${ECHO} "@owner www" > ${MS_PLIST}
-	${ECHO} "@group www" >> ${MS_PLIST}
+	${ECHO} '@owner www' > ${MS_PLIST}
+	${ECHO} '@group www' >> ${MS_PLIST}
 	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
 	cd ${WRKSRC}/ && ${FIND} -s * -type d | ${TAIL} -r | ${SED} 's|^|@dirrm %%WWWDIR%%/|' >> ${MS_PLIST}
 	${ECHO} '@dirrmtry %%WWWDIR%%' >> ${MS_PLIST}
-	${ECHO} "@owner" >> ${MS_PLIST}
-	${ECHO} "@group" >> ${MS_PLIST}
+	${ECHO} '@owner' >> ${MS_PLIST}
+	${ECHO} '@group' >> ${MS_PLIST}
 .for dir in ${MS_DIRRMTRY}
 	${REINPLACE_CMD} '/^@dirrm %%WWWDIR%%\/${dir:C/\//\\\//g}$$/ s|@dirrm|&try|' ${MS_PLIST}
 .endfor
