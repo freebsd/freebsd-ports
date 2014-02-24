@@ -1,5 +1,5 @@
---- tcpsg.c.orig	Wed Oct 30 13:14:39 2002
-+++ tcpsg.c	Wed Oct 30 13:41:13 2002
+--- ./tcpsg.c.orig	2002-10-25 00:00:42.000000000 +0200
++++ ./tcpsg.c	2014-02-24 16:25:44.577054255 +0100
 @@ -39,8 +39,8 @@
  
  /* Network Headers */
@@ -15,7 +15,7 @@
  {
    int i,j;
 -  i=read_config("/etc/tcpsg.conf");
-+  i=read_config("%%PREFIX%%/etc/tcpsg.conf");
++  i=read_config("/usr/local/etc/tcpsg.conf");
    if (i==0)
    {
      for (i=0;i<main_opt.num_servers;i++)
