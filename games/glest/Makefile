@@ -3,7 +3,7 @@
 
 PORTNAME=	glest
 PORTVERSION=	3.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTVERSION}
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
@@ -12,8 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free 3D real-time customizable strategy game
 
-LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 RUN_DEPENDS=	${DATADIR}/servers.ini:${PORTSDIR}/games/glest-data
 
