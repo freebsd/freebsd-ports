@@ -10,10 +10,9 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	The Droid typeface family
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/NOTICE
 
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 USE_BZIP2=	yes
 
@@ -24,9 +23,8 @@ SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 
 do-build:
-	@cd ${WRKSRC}/ && \
-		${LOCALBASE}/bin/mkfontscale && \
-		${LOCALBASE}/bin/mkfontdir
+	@cd ${WRKSRC}/ && ${LOCALBASE}/bin/mkfontscale
+	@cd ${WRKSRC}/ && ${LOCALBASE}/bin/mkfontdir
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}/
