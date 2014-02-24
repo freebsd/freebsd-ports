@@ -5475,3 +5475,4 @@ emulators/ski||2014-02-19|Removed, does not exist on HP's site anymore
 sysutils/liblogging|devel/liblogging|2014-02-20|Already exists as devel/liblogging
 devel/bzr-grep||2014-02-24|Has expired: Broken for more than 4 months
 multimedia/youtube-viewer||2014-02-24|Has expired: Development ceased for 2.5 branch, conflict with gtk-youtube-viewer
+x11-toolkits/flvw||2014-02-24|Abandonware
