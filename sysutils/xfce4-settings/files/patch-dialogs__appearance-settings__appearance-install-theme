@@ -1,5 +1,5 @@
---- ./dialogs/appearance-settings/appearance-install-theme.orig	2013-05-05 16:12:54.000000000 +0000
-+++ ./dialogs/appearance-settings/appearance-install-theme	2013-05-05 23:09:09.000000000 +0000
+--- ./dialogs/appearance-settings/appearance-install-theme.orig	2014-02-22 23:09:05.000000000 +0000
++++ ./dialogs/appearance-settings/appearance-install-theme	2014-02-23 18:58:38.000000000 +0000
 @@ -89,7 +89,11 @@
  
  # check file size, abort if bigger then 50Mb, only works for files
@@ -7,7 +7,7 @@
 -    dndsize=`stat -c %s "$dndfilename"`
 +    if test "`uname -s`" = "Linux"; then
 +        dndsize=`stat -c %s "$dndfilename"`
-+    elif test "`uname -s`" = "FreeBSD"; then
++    elif [ "`uname -s`" = "FreeBSD" ] || [ "`uname -s`" = "DragonFly" ]; then
 +        dndsize=`stat -f %z "$dndfilename"`
 +    fi
      if test "$dndsize" -gt 52428800; then
