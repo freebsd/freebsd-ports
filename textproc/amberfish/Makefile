@@ -3,6 +3,7 @@
 
 PORTNAME=	amberfish
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	SF/${PORTNAME}/Amberfish%20source%20-%20stable/${PORTVERSION}	\
 		http://etymon.com/software/amberfish/stable/
@@ -10,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/Amberfish%20source%20-%20stable/${PORTVERSION}	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose text retrieval Software
 
-LIB_DEPENDS=	libxerces-c.so.27:${PORTSDIR}/textproc/xerces-c2
+LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
 
 USES=		gmake
 GNU_CONFIGURE=	yes
