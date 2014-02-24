@@ -9,11 +9,11 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org vmmouse input driver
 
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal
 
+USES=		gmake
 XORG_CAT=	driver
 CONFIGURE_ARGS=	--with-hal-callouts-dir=${PREFIX}/libexec/hal/scripts
-USE_GMAKE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	The vmmouse protocol is only supported on x86-compatible architectures.
