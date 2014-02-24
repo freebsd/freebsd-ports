@@ -17,20 +17,20 @@ PLIST_FILES=	sbin/pathneck \
 PORTDOCS=	COPYING ChangeLog README
 MAKEFILE=	Makefile.bsd
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CC .=,CC ?=,' \
 			  -e 's,^CFLAGS .=,CFLAGS +=,' \
 		${WRKSRC}/Makefile.bsd
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pathneck ${PREFIX}/sbin/pathneck
-	${INSTALL_PROGRAM} ${WRKSRC}/get-choke ${PREFIX}/sbin/get-choke
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/pathneck ${STAGEDIR}${PREFIX}/sbin/pathneck
+	${INSTALL_PROGRAM} ${WRKSRC}/get-choke \
+		${STAGEDIR}${PREFIX}/sbin/get-choke
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
