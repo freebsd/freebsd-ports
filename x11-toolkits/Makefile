@@ -12,7 +12,6 @@
     SUBDIR += c++-gtk-utils
     SUBDIR += eel
     SUBDIR += elementary
-    SUBDIR += fl_editor
     SUBDIR += flowcanvas
     SUBDIR += fltk
     SUBDIR += fltk-devel
