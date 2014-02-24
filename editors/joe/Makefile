@@ -14,34 +14,21 @@ COMMENT=	Joe's Own Editor
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
+OPTIONS_DEFINE=	DOCS
+
 CONFLICTS=	joe-2.*
 
 LICENSE=	GPLv1
-USE_GMAKE=	yes
-USES=		iconv ncurses
+USES=		gmake iconv ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 ALL_TARGET=	${PORTNAME}
-MAN1=		${PORTNAME}.1
-
-MANLANG=	"" ru
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-post-patch:
-	${REINPLACE_CMD} 's,install-data-am: install-data_charmapsDATA install-data_docDATA,install-data-am: install-data_charmapsDATA,' \
-		${WRKSRC}/Makefile.in
-.endif
 
 post-install:
-.for file in jmacsrc jpicorc jstarrc rjoerc joerc
-.if !exists(${PREFIX}/etc/${PORTNAME}/${file})
-	@${CP} ${PREFIX}/etc/${PORTNAME}/${file} ${PREFIX}/etc/${PORTNAME}/${file}.dist
-.endif
-.endfor
+	for rc in jmacsrc joerc jpicorc jstarrc rjoerc; do \
+		${MV} ${STAGEDIR}${ETCDIR}/$${rc} ${STAGEDIR}${ETCDIR}/$${rc}.dist ; \
+	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
