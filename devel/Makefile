@@ -168,7 +168,6 @@
     SUBDIR += bzr-externals
     SUBDIR += bzr-fastimport
     SUBDIR += bzr-git
-    SUBDIR += bzr-grep
     SUBDIR += bzr-gtk
     SUBDIR += bzr-loom
     SUBDIR += bzr-pipeline
