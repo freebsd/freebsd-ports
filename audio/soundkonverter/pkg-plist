@@ -28,6 +28,7 @@ lib/kde4/soundkonverter_replaygain_musepackgain.so
 lib/kde4/soundkonverter_replaygain_vorbisgain.so
 lib/kde4/soundkonverter_replaygain_wvgain.so
 lib/kde4/soundkonverter_ripper_cdparanoia.so
+lib/kde4/soundkonverter_ripper_icedax.so
 lib/libsoundkonvertercore.so
 share/applications/kde4/soundkonverter.desktop
 share/apps/solid/actions/soundkonverter-rip-audiocd.desktop
@@ -57,6 +58,7 @@ share/icons/hicolor/64x64/apps/soundkonverter.png
 %%NLS%%share/locale/ru/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/soundkonverter.mo
 share/kde4/services/soundkonverter_codec_aften.desktop
 share/kde4/services/soundkonverter_codec_faac.desktop
@@ -87,6 +89,7 @@ share/kde4/services/soundkonverter_replaygain_musepackgain.desktop
 share/kde4/services/soundkonverter_replaygain_vorbisgain.desktop
 share/kde4/services/soundkonverter_replaygain_wvgain.desktop
 share/kde4/services/soundkonverter_ripper_cdparanoia.desktop
+share/kde4/services/soundkonverter_ripper_icedax.desktop
 share/kde4/servicetypes/soundkonverter_codecplugin.desktop
 share/kde4/servicetypes/soundkonverter_filterplugin.desktop
 share/kde4/servicetypes/soundkonverter_replaygainplugin.desktop
