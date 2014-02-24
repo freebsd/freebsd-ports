@@ -5,7 +5,7 @@
  	$(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man$(MSECT)
  
 -	$(LIBTOOL) --mode=install $(INSTALL_DATA) $(LIB) $(DESTDIR)$(libdir)
-+	$(LIBTOOL) --mode=install $(BSD_INSTALL_DATA) $(LIB) $(DESTDIR)$(libdir)
++	$(LIBTOOL) --mode=install $(BSD_INSTALL_LIB) $(LIB) $(DESTDIR)$(libdir)
  
  #	for file in $(HDR) ; do \
  #		$(INSTALL_DATA) $(srcdir)/$$file $(DESTDIR)$(includedir) ;\

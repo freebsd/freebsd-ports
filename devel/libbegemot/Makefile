@@ -6,7 +6,7 @@ PORTVERSION=	1.11
 PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~harti/libbegemot/ \
-		http://m1cro.tk/ports/distfiles/libbegemot/
+		http://m1cro.me/ports/distfiles/libbegemot/
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Function library for begemot tools
