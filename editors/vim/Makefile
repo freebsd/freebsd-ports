@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	VIM:source \
 		${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|}:patch \
@@ -88,12 +88,11 @@ CONSOLE_MAKE_ARGS=	CONF_OPT_GUI="--enable-gui=no --without-x"
 CSCOPE_MAKE_ARGS=	CONF_OPT_CSCOPE=--enable-cscope
 CSCOPE_RUN_DEPENDS=	${LOCALBASE}/bin/cscope:${PORTSDIR}/devel/cscope
 EXUBERANT_CTAGS_RUN_DEPENDS=	${LOCALBASE}/bin/exctags:${PORTSDIR}/devel/ctags
-GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2 X_LIBS="$(X_LIBS) -lX11 -lXt"
-GNOME_USE=		GNOME=libgnomeui XORG=glproto,xt
-GTK2_MAKE_ARGS=		CONF_OPT_GUI="--enable-gui=gtk2 --with-gtk-prefix=${LOCALBASE}" X_LIBS="$(X_LIBS) -lX11 -lXt"
-GTK2_USE=		GNOME=gtk20 XORG=xt
-LUA_MAKE_ARGS=		CONF_OPT_LUA=--enable-luainterp=dynamic \
-			CONF_OPT_LUA_PREFIX=--with-lua-prefix=${LOCALBASE}
+GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2 X_LIBS="$(X_LIBS) -lX11 -lXpm -lXt"
+GNOME_USE=		GNOME=libgnomeui XORG=glproto,xpm,xt
+GTK2_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk2 X_LIBS="$(X_LIBS) -lX11 -lXpm -lXt"
+GTK2_USE=		GNOME=gtk20 XORG=xpm,xt
+LUA_MAKE_ARGS=		CONF_OPT_LUA=--enable-luainterp=dynamic CONF_OPT_LUA_PREFIX=--with-lua-prefix=${LOCALBASE}
 LUA_USES=		lua
 MOTIF_MAKE_ARGS=	CONF_OPT_GUI='--enable-gui=motif --with-motif-lib="${MOTIFLIB}"' MOTIFHOME=${LOCALBASE}
 MOTIF_USES=		motif
@@ -106,6 +105,7 @@ RUBY_USE=		RUBY=yes
 TCL_MAKE_ARGS=		CONF_OPT_TCL="--enable-tclinterp --with-tclsh=tclsh${TCL_VER}"
 TCL_USES=		tcl:85+
 X11_MAKE_ARGS=		CONF_OPT_GUI="--enable-gui=no --with-x" X_LIBS="$(X_LIBS) -lX11 -lXt"
+X11_USE=		XORG=x11,xt
 
 .include <bsd.port.options.mk>
 
@@ -113,7 +113,7 @@ X11_MAKE_ARGS=		CONF_OPT_GUI="--enable-gui=no --with-x" X_LIBS="$(X_LIBS) -lX11 
 IGNORE=		this port has new UI option (CONSOLE) for users who do not need GUI support. Please run "make config" to modify your setting
 .endif
 
-.if ${PORT_OPTIONS:MCONSOLE}
+.if ${PORT_OPTIONS:MCONSOLE} || ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	GUI="@comment "
 .else
 PLIST_SUB+=	GUI=""
@@ -173,7 +173,7 @@ post-install:
 .for file in evim rview rvim vimdiff
 	${TEST} -e ${STAGEDIR}${PREFIX}/bin/${file} || ${LN} -fs vim ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
-.if !${PORT_OPTIONS:MCONSOLE}
+.if !${PORT_OPTIONS:MCONSOLE} && !${PORT_OPTIONS:MX11}
 .for file in eview gview gvim gvimdiff rgview rgvim
 	${TEST} -e ${STAGEDIR}${PREFIX}/bin/${file} || ${LN} -fs vim ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
