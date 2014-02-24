@@ -68,7 +68,6 @@
     SUBDIR += gtksourceview3
     SUBDIR += gtksourceview3-reference
     SUBDIR += gtksourceviewmm3
-    SUBDIR += gtkunique
     SUBDIR += hippo-canvas
     SUBDIR += hs-GLURaw
     SUBDIR += hs-GLUT
