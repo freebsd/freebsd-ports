@@ -1,5 +1,19 @@
 --- ./Makefile.orig	2013-03-22 05:11:27.000000000 +0100
-+++ ./Makefile	2014-02-24 09:55:51.627688711 +0100
++++ ./Makefile	2014-02-24 11:23:24.503330584 +0100
+@@ -1,8 +1,8 @@
+-prefix=/usr/local
+-man7dir=/usr/local/man/man7
+-CC=clang
+-CFLAGS=-I/usr/local/include
+-LDFLAGS=-L/usr/local/lib -lsqlite3
++prefix=${PREFIX}
++man7dir=${MANPREFIX}/man/man7
++CC?=clang
++CFLAGS+=-I${LOCALBASE}/include
++LDFLAGS+=-L${LOCALBASE}/lib -lsqlite3
+ 
+ all: chucky
+ 
 @@ -12,8 +12,9 @@
  	rm chucky
  
