@@ -5,7 +5,7 @@
  
  #   Change SGBDIR to the directory where all GraphBase files will go:
 -SGBDIR = /usr/local/sgb
-+SGBDIR = ${PREFIX}
++SGBDIR = ${STAGEDIR}/${PREFIX}
  
  #   Change DATADIR to the directory where GraphBase data files will go:
 -DATADIR = $(SGBDIR)/data
