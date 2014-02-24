@@ -5,9 +5,9 @@ PORTNAME=	vtk
 PORTVERSION=	5.10.1
 PORTREVISION=	1
 CATEGORIES=	math graphics
-MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
-		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
+MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/
 PKGNAMESUFFIX=	5
+UNIQUENAME=	${PKGBASE}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The Visualization Toolkit
