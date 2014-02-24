@@ -135,6 +135,7 @@ GVFS_DESC?=		Virtual filesystems support via GVFS
 H323_DESC?=		H.323 support
 HAL_DESC?=		HAL (Hardware Abstraction Layer) support
 HDF5_DESC?=		HDF-5 data format support
+HPACK_DESC?=		Header Compression for HTTP/2.0 support
 HTTPD_DESC?=		httpd output streaming support
 HTTPS_DESC?=		HTTPS protocol support
 HUNSPELL_DESC?=		Spell checking support via Hunspell
