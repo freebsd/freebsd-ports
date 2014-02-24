@@ -7,7 +7,9 @@ CATEGORIES=	lang lisp
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple Lisp interpreter
+COMMENT=	Simple Lisp interpreter
+
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 
