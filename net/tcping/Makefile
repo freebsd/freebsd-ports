@@ -10,18 +10,18 @@ MASTER_SITES=	http://www.linuxco.de/tcping/ \
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Do a TCP connect to the given IP/port combination
 
-DOCS=		README
+PLIST_FILES=	bin/tcping
+PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -DHAVE_HSTRERROR -o tcping tcping.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tcping ${PREFIX}/bin/tcping
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/tcping ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
