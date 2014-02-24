@@ -3,7 +3,7 @@
 
 PORTNAME=	libghthash
 PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 
@@ -14,7 +14,9 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datarootdir=${PREFIX}
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
+AUTOMAKE_ARGS=	-a -c -f
+LIBTOOLIZE_ARGS=-i -c -f
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/ght_hash_table.h \
