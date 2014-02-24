@@ -13,12 +13,10 @@ MAKE_ARGS=	${MAKE_ENV}
 LDFLAGS+=	-lcompat
 CFLAGS+=	-DOPEN_BSD=1 -DHAVE_REGEX -DSTREAM_ANALYZER -DIOCTL_GETWINSIZE -DAUTOSENSE_DLH
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rate ${PREFIX}/bin/rate
-	${INSTALL_MAN} ${WRKSRC}/doc/rate.1 ${PREFIX}/man/man1
+PLIST_FILES=	bin/rate man/man1/rate.1.gz
 
-MAN1=		rate.1
-PLIST_FILES=	bin/rate
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/rate ${STAGEDIR}${PREFIX}/bin/rate
+	${INSTALL_MAN} ${WRKSRC}/doc/rate.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
