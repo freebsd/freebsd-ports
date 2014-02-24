@@ -2155,6 +2155,9 @@ PATCH_DEBUG_TMP=	no
 PATCH_ARGS?=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP}
 PATCH_DIST_ARGS?=	--suffix ${DISTORIG} -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
+.if !defined(QUIET)
+PATCH_SILENT=		PATCH_SILENT=yes
+.endif
 .if defined(BATCH)
 PATCH_ARGS+=		--batch
 PATCH_DIST_ARGS+=	--batch
@@ -3560,7 +3563,7 @@ do-patch:
 							PATCHES_APPLIED="$$PATCHES_APPLIED $$i" ; \
 						else \
 							${ECHO_MSG} `${ECHO_CMD} "=> Patch $$i failed to apply cleanly." | ${SED} "s|${PATCHDIR}/||"` ; \
-							if [ x"$$PATCHES_APPLIED" != x"" ]; then \
+							if [ x"$$PATCHES_APPLIED" != x"" -a ${PATCH_SILENT} != "yes" ]; then \
 								${ECHO_MSG} `${ECHO_CMD} "=> Patch(es) $$PATCHES_APPLIED applied cleanly." | ${SED} "s|${PATCHDIR}/||g"` ; \
 							fi; \
 							${FALSE} ; \
@@ -4283,7 +4286,7 @@ pretty-print-www-site:
 
 .if !target(checkpatch)
 checkpatch:
-	@cd ${.CURDIR} && ${MAKE} PATCH_CHECK_ONLY=yes ${_PATCH_DEP} ${_PATCH_REAL_SEQ}
+	@cd ${.CURDIR} && ${MAKE} ${PATCH_SILENT} PATCH_CHECK_ONLY=yes ${_PATCH_DEP} ${_PATCH_REAL_SEQ}
 .endif
 
 # Reinstall
