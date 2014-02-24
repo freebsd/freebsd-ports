@@ -1,6 +1,0 @@
-%%JAVAJARDIR%%/dtd2relax.jar
-%%PORTDOCS%%%%EXAMPLESDIR%%/test01-utf8.rlx
-%%PORTDOCS%%%%EXAMPLESDIR%%/test01.dtd
-%%PORTDOCS%%%%EXAMPLESDIR%%/xmlspec-19990205-utf8.rlx
-%%PORTDOCS%%%%EXAMPLESDIR%%/xmlspec-19990205.dtd
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
