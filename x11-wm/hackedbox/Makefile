@@ -12,6 +12,9 @@ MASTER_SITES=	http://scrudgeware.org/downloads/hackedbox/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hackedbox is a small and fast window manager based on Blackbox
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2014-03-24
+
 MAN1=		hackedbox.1
 DOCS=		AUTHORS ChangeLog INSTALL README TODO
 I10L=		C da_DK de_DE es_ES fr_FR it_IT nl_NL pt_BR ru_RU sl_SI \
