@@ -1,0 +1,29 @@
+bin/venom
+share/applications/venom.desktop
+share/icons/hicolor/128x128/apps/venom.png
+share/icons/hicolor/16x16/apps/venom.png
+share/icons/hicolor/256x256/apps/venom.png
+share/icons/hicolor/32x32/apps/venom.png
+share/icons/hicolor/48x48/apps/venom.png
+share/icons/hicolor/64x64/apps/venom.png
+share/icons/hicolor/scalable/apps/venom.svg
+share/pixmaps/venom.png
+share/venom/theme/default.css
+@dirrmtry share/venom/theme
+@dirrmtry share/venom
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
