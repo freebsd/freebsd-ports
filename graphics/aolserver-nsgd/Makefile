@@ -28,7 +28,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 
 USE_GMAKE=	yes
 
-USE_TCL=	84+
+USES=		tcl
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
