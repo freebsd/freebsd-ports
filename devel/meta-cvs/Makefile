@@ -31,15 +31,11 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 post-patch:
-#	libc.so is now a symlink, see
+#	libc.so is now a symlink, let's find out the real name of the libc
+#	shared library. See:
 #	http://svnweb.freebsd.org/base/head/lib/libc/libc.ldscript?revision=251668&view=markup
-	(if [ -h /usr/lib/libc.so ]; then \
-	    rep=libc.so; \
-	else \
-	    rep=`${SED} -e '1d; s|^.*\(/lib/libc\.so\.[0-9]*\).*$$|\1|' /usr/lib/libc.so`; \
-	fi; \
-	${REINPLACE_CMD} -e "s|libc.so.6|$$rep|" ${WRKSRC}/code/clisp-ffi.lisp)
-
+	rep=$$(${BASENAME} $$(${LDCONFIG} -r | ${AWK} '/libc.so/ { print $$3 }')); \
+	    ${REINPLACE_CMD} -e "s|libc.so.6|$$rep|" ${WRKSRC}/code/clisp-ffi.lisp
 	${REINPLACE_CMD} -e '232s|make|${GMAKE}|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|type -P|which|g;s|$$(prefix)/lib|${DATADIR}|g' ${WRKSRC}/Makefile
 
