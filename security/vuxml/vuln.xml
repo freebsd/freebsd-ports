@@ -51,6 +51,66 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9dd47fa3-9d53-11e3-b20f-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>33.0.1750.117</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>28 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[334897] High CVE-2013-6652: Issue with relative paths in
+	      Windows sandbox named pipe policy. Credit to tyranid.</li>
+	    <li>[331790] High CVE-2013-6653: Use-after-free related to web
+	      contents. Credit to Khalil Zhani.</li>
+	    <li>[333176] High CVE-2013-6654: Bad cast in SVG. Credit to
+	      TheShow3511.</li>
+	    <li>[293534] High CVE-2013-6655: Use-after-free in layout. Credit
+	      to cloudfuzzer.</li>
+	    <li>[331725] High CVE-2013-6656: Information leak in XSS auditor.
+	      Credit to NeexEmil.</li>
+	    <li>[331060] Medium CVE-2013-6657: Information leak in XSS auditor.
+	      Credit to NeexEmil.</li>
+	    <li>[322891] Medium CVE-2013-6658: Use-after-free in layout. Credit
+	      to cloudfuzzer.</li>
+	    <li>[306959] Medium CVE-2013-6659: Issue with certificates
+	      validation in TLS handshake. Credit to Antoine Delignat-Lavaud
+	      and Karthikeyan Bhargavan from Prosecco, Inria Paris.</li>
+	    <li>[332579] Low CVE-2013-6660: Information leak in drag and drop.
+	      Credit to bishopjeffreys.</li>
+	    <li>[344876] Low-High CVE-2013-6661: Various fixes from internal
+	      audits, fuzzing and other initiatives. Of these, seven are fixes
+	      for issues that could have allowed for sandbox escapes from
+	      compromised renderers.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6652</cvename>
+      <cvename>CVE-2013-6653</cvename>
+      <cvename>CVE-2013-6654</cvename>
+      <cvename>CVE-2013-6655</cvename>
+      <cvename>CVE-2013-6656</cvename>
+      <cvename>CVE-2013-6657</cvename>
+      <cvename>CVE-2013-6658</cvename>
+      <cvename>CVE-2013-6659</cvename>
+      <cvename>CVE-2013-6660</cvename>
+      <cvename>CVE-2013-6661</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-02-20</discovery>
+      <entry>2014-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="42d42090-9a4d-11e3-b029-08002798f6ff">
     <topic>PostgreSQL -- multiple privilege issues</topic>
     <affects>
