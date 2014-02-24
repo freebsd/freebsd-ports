@@ -7,7 +7,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++ (development version)
 
 BUILD_DEPENDS=	libtorrent-devel=0.13.3_1:${PORTSDIR}/net-p2p/libtorrent-devel
