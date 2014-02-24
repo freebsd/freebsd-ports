@@ -9,19 +9,14 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A simple TCP port forwarder
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/tcpsg.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/tcpsg.conf ${PREFIX}/etc/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/tcpsg.ctl ${DOCSDIR}/tcpsg.ctl
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/tcpsg.conf ${STAGEDIR}${PREFIX}/etc
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/tcpsg.ctl ${STAGEDIR}${DOCSDIR}/tcpsg.ctl
 
 .include <bsd.port.mk>
