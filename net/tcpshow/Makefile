@@ -5,19 +5,15 @@ PORTNAME=	tcpshow
 PORTVERSION=	1.74
 PORTREVISION=	1
 CATEGORIES=	net security
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	obrien
-#		http://www.cs.berkeley.edu/~daw/mike/
-#		http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/tcpshow/
 DISTFILES=	tcpshow.c tcpshow.1
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Decode tcpdump(1) output
 
 NO_WRKSUBDIR=	yes
-MAN1=		tcpshow.1
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/tcpshow.c ${WRKDIR}
@@ -27,7 +23,7 @@ do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o tcpshow tcpshow.c)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tcpshow ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tcpshow.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/tcpshow ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tcpshow.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

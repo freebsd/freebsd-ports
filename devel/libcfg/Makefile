@@ -12,53 +12,31 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for command line and configuration file parsing
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-INSTALL_TARGET=	install-strip
-
-.if !defined(NO_INSTALL_MANPAGES)
-MAN3=		cfg_add_property.3 cfg_context.3 cfg_option.3 cfg_parse.3 \
-		cfg_print_error.3 cfg_set_context_flag.3 libcfg+.3
-MANCOMPRESSED=	yes
-INSTALL_TARGET+=	install-man
-.endif
+INSTALL_TARGET=	install-strip install-man
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	EXAMPLES DOCS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_SUB+=	EXAMPLES=""
-.else
-PLIST_SUB+=	EXAMPLES="@comment "
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
+CFLAGS_amd64=	-fPIC
+CFLAGS_ia64=	-fPIC
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/examples/example.* ${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/example.* ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for FILE in AUTHORS README TODO
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${DOCSDIR}/html
-	@for FILE in ${WRKSRC}/doc/html/*; do \
-		${INSTALL_DATA} $${FILE} ${DOCSDIR}/html; \
+	for FILE in ${WRKSRC}/doc/html/*; do \
+		${INSTALL_DATA} $${FILE} ${STAGEDIR}${DOCSDIR}/html; \
 	done
-.endif
 
 .include <bsd.port.mk>

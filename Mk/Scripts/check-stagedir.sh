@@ -102,9 +102,9 @@ fi
 for i in $PLIST_SUB
 do
 	echo $i
-done | awk -F= '{print length($2), $1, $2 | "sort -nr" }' | while read l k v
+done | awk -F= '{sub(/^"/, "", $2); sub(/"$/, "", $2); print length($2), $1, $2 | "sort -nr" }' | while read l k v
 do
-	if [ $l -ne 0 ]
+	if [ $l -gt 1 ]
 	then
 		echo "s,${v},%%${k}%%,g;"
 	fi

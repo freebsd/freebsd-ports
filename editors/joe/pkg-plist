@@ -77,6 +77,8 @@ bin/termidx
 %%DATADIR%%/syntax/vhdl.jsf
 %%DATADIR%%/syntax/xml.jsf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/joe.1.gz
+man/ru/man1/joe.1.gz
 @dirrmtry man/ru/man1
 @dirrmtry man/ru
 @dirrmtry %%DATADIR%%/charmaps

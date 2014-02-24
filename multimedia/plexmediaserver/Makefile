@@ -31,7 +31,7 @@ ONLY_FOR_ARCHS=	amd64
 
 .if ${OPSYS} == FreeBSD
 .if ${OSVERSION} < 900000
-IGNORE= supplied binaries compiled for FreeBSD 9
+IGNORE=	supplied binaries compiled for FreeBSD 9
 .endif
 
 .if ${OSVERSION} >= 1000054
