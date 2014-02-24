@@ -9,5 +9,6 @@ include/sxpath.h
 lib/libsablot.a
 lib/libsablot.la
 lib/libsablot.so
-lib/libsablot.so.%%SHLIB_MAJOR%%
+lib/libsablot.so.0
+lib/libsablot.so.0.100.3
 man/man1/sabcmd.1.gz
