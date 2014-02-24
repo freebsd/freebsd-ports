@@ -14,6 +14,11 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:site1\
 MAINTAINER=	takefu@airport.fm
 COMMENT=	HE-AAC+ Codec as Shared Library
 
+LICENSE=	libaacplus
+LICENSE_NAME=	3GPP
+LICENSE_TEXT=	${RESTRICTED}
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
+
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 
 CONFLICTS=	aacplusenc-0*
@@ -21,7 +26,7 @@ CONFLICTS=	aacplusenc-0*
 USE_CSTD=	gnu89
 USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool libtoolize aclocal autoheader automake
+USE_AUTOTOOLS=	libtoolize aclocal autoheader automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -50,5 +55,7 @@ pre-configure:
 		${WRKSRC}/aacplus.pc.in
 	@${REINPLACE_CMD} -e 's,\/aacplus\.h,\/libaacplus\/aacplus\.h,' \
 		${WRKSRC}/aacplus.spec.in
+	@${REINPLACE_CMD} -e 's,INCLUDES,AM_CPPFLAGS,'\
+		${WRKSRC}/frontend/Makefile.am ${WRKSRC}/src/Makefile.am
 
 .include <bsd.port.mk>
