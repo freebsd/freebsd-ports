@@ -17,8 +17,8 @@ BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	lib tests
 MAKE_JOBS_UNSAFE=	yes
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
