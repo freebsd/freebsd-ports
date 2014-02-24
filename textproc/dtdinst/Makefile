@@ -27,22 +27,16 @@ PLIST_FILES=	%%JAVAJARDIR%%/dtdinst.jar share/xsl/dtdinst/dtdinst2rng.xsl
 PLIST_DIRS=	share/xsl/dtdinst
 PLIST_DIRSTRY=	share/xsl
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.jar ${JAVAJARDIR})
-	@${MKDIR} ${PREFIX}/share/xsl/dtdinst
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.xsl ${PREFIX}/share/xsl/dtdinst)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.jar ${STAGEDIR}${JAVAJARDIR})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xsl/dtdinst
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.xsl ${STAGEDIR}${PREFIX}/share/xsl/dtdinst)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in dtdinst.rnc.txt dtdinst.rng index.html teixml.dtd.txt
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/example && ${INSTALL_DATA} * ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/example && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
