@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fox
-PORTVERSION=	1.7.45
+PORTVERSION=	1.7.46
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
    		ftp://ftp.fox-toolkit.org/pub/
@@ -74,5 +74,9 @@ post-patch:
 .if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/^SUBDIRS/s/ doc//' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libFOX-${MAJORVER}.so \
+	    	     ${STAGEDIR}${PREFIX}/lib/libCHART-${MAJORVER}.so
 
 .include <bsd.port.mk>

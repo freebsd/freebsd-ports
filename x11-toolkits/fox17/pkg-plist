@@ -105,7 +105,6 @@ include/fox-%%MAJORVER%%/FXDebugTarget.h
 include/fox-%%MAJORVER%%/FXDelegator.h
 include/fox-%%MAJORVER%%/FXDial.h
 include/fox-%%MAJORVER%%/FXDialogBox.h
-include/fox-%%MAJORVER%%/FXDict.h
 include/fox-%%MAJORVER%%/FXDictionary.h
 include/fox-%%MAJORVER%%/FXDir.h
 include/fox-%%MAJORVER%%/FXDirBox.h
@@ -128,8 +127,8 @@ include/fox-%%MAJORVER%%/FXExpression.h
 include/fox-%%MAJORVER%%/FXExtentd.h
 include/fox-%%MAJORVER%%/FXExtentf.h
 include/fox-%%MAJORVER%%/FXFile.h
+include/fox-%%MAJORVER%%/FXFileAssociations.h
 include/fox-%%MAJORVER%%/FXFileDialog.h
-include/fox-%%MAJORVER%%/FXFileDict.h
 include/fox-%%MAJORVER%%/FXFileList.h
 include/fox-%%MAJORVER%%/FXFileSelector.h
 include/fox-%%MAJORVER%%/FXFileStream.h
@@ -167,7 +166,7 @@ include/fox-%%MAJORVER%%/FXIO.h
 include/fox-%%MAJORVER%%/FXIOBuffer.h
 include/fox-%%MAJORVER%%/FXIODevice.h
 include/fox-%%MAJORVER%%/FXIcon.h
-include/fox-%%MAJORVER%%/FXIconDict.h
+include/fox-%%MAJORVER%%/FXIconCache.h
 include/fox-%%MAJORVER%%/FXIconList.h
 include/fox-%%MAJORVER%%/FXIconSource.h
 include/fox-%%MAJORVER%%/FXId.h
@@ -289,7 +288,6 @@ include/fox-%%MAJORVER%%/FXStatusBar.h
 include/fox-%%MAJORVER%%/FXStatusLine.h
 include/fox-%%MAJORVER%%/FXStream.h
 include/fox-%%MAJORVER%%/FXString.h
-include/fox-%%MAJORVER%%/FXStringDict.h
 include/fox-%%MAJORVER%%/FXStringDictionary.h
 include/fox-%%MAJORVER%%/FXSwitcher.h
 include/fox-%%MAJORVER%%/FXSystem.h
