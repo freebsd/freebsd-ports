@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tth
-PORTVERSION=	3.89
-PORTREVISION=	2
+PORTVERSION=	4.03
 CATEGORIES=	textproc
 MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/ \
 		http://redundancy.redundancy.org/mirror/
@@ -16,29 +15,21 @@ COMMENT=	A TeX to HTML translator
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
 USE_GHOSTSCRIPT_RUN=	yes
-USE_TEX=	latex
+#USE_TEX=	latex
 
-MAN1=		tth.1
-
-PLIST_FILES=	bin/latex2gif bin/ps2gif bin/ps2png bin/tth bin/Xfonts.fix
-PORTDOCS=	license.txt tth_manual.html
-
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} tth.c -o tth -ll
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tth ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/latex2gif ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/ps2gif ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/ps2png ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/Xfonts.fix ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tth.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/tth_manual.html ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/tth ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/latex2gif ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ps2gif ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ps2png ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/Xfonts.fix ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/tth_manual.html ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${SED} -e "s,%%PREFIX%%,${PREFIX}," ${PKGMESSAGE}
 
 .include <bsd.port.mk>
