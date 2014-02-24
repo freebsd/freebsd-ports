@@ -3,7 +3,7 @@
 
 PORTNAME=	wmanager
 PORTVERSION=	0.2.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -11,42 +11,31 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 window manager selector
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+USES=		gmake
 USE_XORG=	x11 xext
 USE_GL=		gl
-USE_GMAKE=	yes
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-OPTIONS_DEFINE=	ADDONS
+OPTIONS_DEFINE=	ADDONS DOCS EXAMPLES
 OPTIONS_DEFAULT=ADDONS
 ADDONS_DESC=	Install the helper scripts and manpages
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MADDONS}
-RUN_DEPENDS+=	wmanager-loop:${PORTSDIR}/x11-wm/wmanager-addons
-.endif
+ADDONS_RUNDEPENDS=	wmanager-loop:${PORTSDIR}/x11-wm/wmanager-addons
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmanager ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${SED} -e "s@%%DOCSDIR%%@${DOCSDIR}@; s@%%EXAMPLESDIR%%@${EXAMPLESDIR}@" ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/wmanager ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in FAQ HISTORY INSTALL NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/.wmanagerrc ${EXAMPLESDIR}/wmanagerrc_sample
-	${INSTALL_DATA} ${WRKSRC}/.xinitrc ${EXAMPLESDIR}/xinitrc_sample
-.else
-	${RM} -f ${PKGMESSAGE}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/.wmanagerrc ${STAGEDIR}${EXAMPLESDIR}/wmanagerrc_sample
+	${INSTALL_DATA} ${WRKSRC}/.xinitrc ${STAGEDIR}${EXAMPLESDIR}/xinitrc_sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
