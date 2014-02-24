@@ -10,7 +10,7 @@ MASTER_SITES=	\
 		LOCAL/portmgr
 
 MAINTAINER=	portmgr@FreeBSD.org
-COMMENT=	New generation package manager
+COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 
