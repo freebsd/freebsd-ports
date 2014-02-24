@@ -13,34 +13,25 @@ COMMENT=	Daemon that monitor network services
 
 GNU_CONFIGURE=	yes
 
-MAN8=		portmon.8
-
 PORTDOCS=	README
-PLIST_FILES=	bin/portmon etc/portmon.hosts.sample
+PLIST_FILES=	bin/portmon etc/portmon.hosts.sample man/man8/portmon.8.gz
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
 		 ${WRKSRC}/extras/${PORTNAME}.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/extras/portmon.8 \
-		${PREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/man/man8
 	${INSTALL_DATA} ${WRKSRC}/extras/portmon.hosts.sample \
-		${PREFIX}/etc
-	@${ECHO} "------------------------------------------------------------"
-	@${ECHO} "Sample of configuration file placed at"
-	@${ECHO} "${PREFIX}/etc/portmon.hosts.sample"
-	@${ECHO} "------------------------------------------------------------"
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+		${STAGEDIR}${PREFIX}/etc
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
