@@ -1,5 +1,5 @@
---- gnu.py.orig	2013-10-30 22:31:40.000000000 +0400
-+++ gnu.py	2014-02-24 15:11:58.000000000 +0400
+--- numpy/distutils/fcompiler/gnu.py.orig	2013-10-30 22:31:40.000000000 +0400
++++ numpy/distutils/fcompiler/gnu.py	2014-02-24 15:11:58.000000000 +0400
 @@ -66,7 +66,7 @@
      # Redhat: GNU Fortran (GCC 3.2.2 20030222 (Red Hat Linux 3.2.2-5)) 3.2.2 20030222 (Red Hat Linux 3.2.2-5)
      # GNU Fortran (GCC) 3.4.2 (mingw-special)
