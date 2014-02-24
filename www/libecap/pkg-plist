@@ -21,12 +21,13 @@ include/libecap/common/registry.h
 include/libecap/common/version.h
 include/libecap/host/host.h
 include/libecap/host/xaction.h
-@dirrm include/libecap/adapter
-@dirrm include/libecap/common
-@dirrm include/libecap/host
-@dirrm include/libecap
 lib/libecap.a
 lib/libecap.la
 lib/libecap.so
 lib/libecap.so.2
+lib/libecap.so.2.0.0
 libdata/pkgconfig/libecap.pc
+@dirrm include/libecap/adapter
+@dirrm include/libecap/common
+@dirrm include/libecap/host
+@dirrm include/libecap
