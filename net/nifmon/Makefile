@@ -9,12 +9,10 @@ MASTER_SITES=	http://www.freebsd-support.de/misc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses based network interface monitoring tool
 
-MAN8=		nifmon.8
-PLIST_FILES=	bin/nifmon
+PLIST_FILES=	bin/nifmon man/man8/nifmon.8.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nifmon ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nifmon.8 ${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/nifmon ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/nifmon.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
