@@ -1,0 +1,12 @@
+include/libodfgen-0.0/libodfgen/OdfDocumentHandler.hxx
+include/libodfgen-0.0/libodfgen/OdgGenerator.hxx
+include/libodfgen-0.0/libodfgen/OdpGenerator.hxx
+include/libodfgen-0.0/libodfgen/OdtGenerator.hxx
+include/libodfgen-0.0/libodfgen/libodfgen.hxx
+lib/libodfgen-0.0.a
+lib/libodfgen-0.0.la
+lib/libodfgen-0.0.so
+lib/libodfgen-0.0.so.0
+libdata/pkgconfig/libodfgen-0.0.pc
+@dirrm include/libodfgen-0.0/libodfgen
+@dirrm include/libodfgen-0.0
