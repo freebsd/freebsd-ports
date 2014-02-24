@@ -1,8 +1,7 @@
-%%X11%%bin/VBoxClient-all
+@comment $FreeBSD: ports/emulators/virtualbox-ose-additions/pkg-plist,v 1.6 2012/11/17 05:57:24 svnexp Exp $
 %%X11%%bin/VBoxClient
+%%X11%%bin/VBoxClient-all
 %%X11%%etc/xdg/autostart/vboxclient.desktop
-sbin/VBoxControl
-sbin/VBoxService
 %%OPENGL%%lib/VBoxOGL.so
 %%OPENGL%%lib/VBoxOGLarrayspu.so
 %%OPENGL%%lib/VBoxOGLcrutil.so
@@ -11,20 +10,18 @@ sbin/VBoxService
 %%OPENGL%%lib/VBoxOGLpackspu.so
 %%OPENGL%%lib/VBoxOGLpassthroughspu.so
 %%OPENGL%%lib/dri/vboxvideo_dri.so
-%%X11%%share/autostart/vboxclient.desktop
 %%X11%%lib/xorg/modules/drivers/vboxvideo_drv.so
 %%X11%%lib/xorg/modules/input/vboxmouse_drv.so
+sbin/VBoxControl
+sbin/VBoxService
+%%X11%%share/autostart/vboxclient.desktop
 %%X11%%@dirrmtry share/autostart
 %%X11%%@dirrmtry lib/xorg/modules/drivers
 %%X11%%@dirrmtry lib/xorg/modules/input
 %%X11%%@dirrmtry lib/xorg/modules
 %%X11%%@dirrmtry lib/xorg
-%%X11%%@dirrmtry etc/xdg/autostart
-%%X11%%@dirrmtry etc/xdg
 %%OPENGL%%@dirrmtry lib/dri
-%%X11%%@dirrmtry lib
 @cwd /
 %%KMODDIR%%/vboxguest.ko
 %%DEBUG%%%%KMODDIR%%/vboxguest.ko.symbols
 %%X11%%%%KMODDIR%%/vboxvideo.ko
-%%DEBUG%%%%X11%%%%KMODDIR%%/vboxvideo.ko
