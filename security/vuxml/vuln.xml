@@ -51,6 +51,148 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9dd47fa3-9d53-11e3-b20f-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>33.0.1750.117</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>28 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[334897] High CVE-2013-6652: Issue with relative paths in
+	      Windows sandbox named pipe policy. Credit to tyranid.</li>
+	    <li>[331790] High CVE-2013-6653: Use-after-free related to web
+	      contents. Credit to Khalil Zhani.</li>
+	    <li>[333176] High CVE-2013-6654: Bad cast in SVG. Credit to
+	      TheShow3511.</li>
+	    <li>[293534] High CVE-2013-6655: Use-after-free in layout. Credit
+	      to cloudfuzzer.</li>
+	    <li>[331725] High CVE-2013-6656: Information leak in XSS auditor.
+	      Credit to NeexEmil.</li>
+	    <li>[331060] Medium CVE-2013-6657: Information leak in XSS auditor.
+	      Credit to NeexEmil.</li>
+	    <li>[322891] Medium CVE-2013-6658: Use-after-free in layout. Credit
+	      to cloudfuzzer.</li>
+	    <li>[306959] Medium CVE-2013-6659: Issue with certificates
+	      validation in TLS handshake. Credit to Antoine Delignat-Lavaud
+	      and Karthikeyan Bhargavan from Prosecco, Inria Paris.</li>
+	    <li>[332579] Low CVE-2013-6660: Information leak in drag and drop.
+	      Credit to bishopjeffreys.</li>
+	    <li>[344876] Low-High CVE-2013-6661: Various fixes from internal
+	      audits, fuzzing and other initiatives. Of these, seven are fixes
+	      for issues that could have allowed for sandbox escapes from
+	      compromised renderers.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6652</cvename>
+      <cvename>CVE-2013-6653</cvename>
+      <cvename>CVE-2013-6654</cvename>
+      <cvename>CVE-2013-6655</cvename>
+      <cvename>CVE-2013-6656</cvename>
+      <cvename>CVE-2013-6657</cvename>
+      <cvename>CVE-2013-6658</cvename>
+      <cvename>CVE-2013-6659</cvename>
+      <cvename>CVE-2013-6660</cvename>
+      <cvename>CVE-2013-6661</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-02-20</discovery>
+      <entry>2014-02-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="42d42090-9a4d-11e3-b029-08002798f6ff">
+    <topic>PostgreSQL -- multiple privilege issues</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><lt>8.4.20</lt></range>
+	<range><ge>9.0.0</ge><lt>9.0.16</lt></range>
+	<range><ge>9.1.0</ge><lt>9.1.12</lt></range>
+	<range><ge>9.2.0</ge><lt>9.2.7</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL Project reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1506/">
+	  <p>This update fixes CVE-2014-0060, in which PostgreSQL did not
+	  properly enforce the WITH ADMIN OPTION permission for ROLE management.
+	  Before this fix, any member of a ROLE was able to grant others access
+	  to the same ROLE regardless if the member was given the WITH ADMIN
+	  OPTION permission. It also fixes multiple privilege escalation issues,
+	  including: CVE-2014-0061, CVE-2014-0062, CVE-2014-0063, CVE-2014-0064,
+	  CVE-2014-0065, and CVE-2014-0066. More information on these issues can
+	  be found on our security page and the security issue detail wiki page.
+	 </p>
+	 <p>
+	  With this release, we are also alerting users to a known security hole
+	  that allows other users on the same machine to gain access to an
+	  operating system account while it is doing "make check":
+	  CVE-2014-0067. "Make check" is normally part of building PostgreSQL
+	  from source code. As it is not possible to fix this issue without
+	  causing significant issues to our testing infrastructure, a patch will
+	  be released separately and publicly. Until then, users are strongly
+	  advised not to run "make check" on machines where untrusted users have
+	  accounts.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0060</cvename>
+      <cvename>CVE-2014-0061</cvename>
+      <cvename>CVE-2014-0062</cvename>
+      <cvename>CVE-2014-0063</cvename>
+      <cvename>CVE-2014-0064</cvename>
+      <cvename>CVE-2014-0065</cvename>
+      <cvename>CVE-2014-0066</cvename>
+      <cvename>CVE-2014-0067</cvename>
+    </references>
+    <dates>
+      <discovery>2014-02-20</discovery>
+      <entry>2014-02-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0871d18b-9638-11e3-a371-6805ca0b3d42">
+    <topic>phpMyAdmin -- Self-XSS due to unescaped HTML output in import.</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>3.3.1</ge><lt>4.1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-1.php">
+	  <p> When importing a file with crafted filename, it is
+	    possible to trigger an XSS.  We consider this vulnerability
+	    to be non critical.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-1.php</url>
+      <cvename>CVE-2014-1879</cvename>
+    </references>
+    <dates>
+      <discovery>2014-02-15</discovery>
+      <entry>2014-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e0507c6-9614-11e3-b3a5-00e0814cab4e">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
