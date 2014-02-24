@@ -15,17 +15,15 @@ LICENSE_NAME=	MIT/X Consortium License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=	pkgconfig ncurses:port
+USES=		pkgconfig ncurses:port
 USE_XORG=	x11 xext xft
-MAN1=	st.1
-PLIST_FILES=	bin/st
+
+PLIST_FILES=	bin/st man/man1/st.1.gz
 
 PORTDOCS=	README
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -49,11 +47,10 @@ post-patch:
 		${WRKSRC}/config.mk
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/st
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

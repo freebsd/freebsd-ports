@@ -17,14 +17,12 @@ NO_BUILD=	yes
 
 DOCS=	ChangeLog README
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/escape.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${RUBY_MODDOCDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/escape.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -9,16 +9,9 @@ MASTER_SITES=	SF/xprobe/${PORTNAME}/Xprobe2%20${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ICMP active OS fingerprint scanner
 
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2
+
 CONFIGURE_ENV=	INSTALL=${INSTALL}
+GNU_CONFIGURE=	yes
 
-MAN1=		xprobe2.1
-
-post-install:	.SILENT
-	if [ ! -f ${ETCDIR}/${PORTNAME}.conf ]; then \
-		${INSTALL_DATA} ${ETCDIR}/${PORTNAME}.conf.sample \
-			${ETCDIR}/${PORTNAME}.conf; \
-	fi
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

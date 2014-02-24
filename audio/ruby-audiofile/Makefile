@@ -17,7 +17,6 @@ COMMENT=	A Ruby binding to the audiofile library
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
 USE_RUBY=	yes
-NO_STAGE=	yes
 USE_RUBY_EXTCONF=	yes
 
 CDDB_DISTNAME=	cddb-0.2
@@ -33,12 +32,10 @@ post-patch:
 		${CDDB_WRKSRC}/wavcddb
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/cddb
-	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_MODEXAMPLESDIR}/
-	${INSTALL_DATA} ${CDDB_WRKSRC}/* ${RUBY_MODEXAMPLESDIR}/cddb/
-	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/cddb
+	${INSTALL_DATA} ${WRKSRC}/test.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${CDDB_WRKSRC}/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/cddb/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 .include <bsd.port.mk>

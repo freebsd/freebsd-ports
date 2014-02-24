@@ -3,6 +3,7 @@
 
 PORTNAME=	libcabinet
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 

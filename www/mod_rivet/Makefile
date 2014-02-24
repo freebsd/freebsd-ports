@@ -11,6 +11,8 @@ DISTNAME=		rivet-${PORTVERSION}
 MAINTAINER=	cowbert@gmail.com
 COMMENT=	Embeds a Tcl interpreter in the Apache server
 
+BROKEN=		Does not configure
+
 LICENSE=	APACHE20
 
 LIB_DEPENDS=	libitcl.so:${PORTSDIR}/lang/itcl

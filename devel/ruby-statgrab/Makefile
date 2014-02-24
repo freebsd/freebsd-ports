@@ -19,11 +19,8 @@ USES=		pkgconfig
 
 INSTALL_TARGET=	site-install
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.mkdn ${RUBY_MODDOCDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.mkdn ${STAGEDIR}${RUBY_MODDOCDIR}
 
 .include <bsd.port.mk>

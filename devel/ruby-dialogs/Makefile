@@ -17,12 +17,11 @@ RUBY_NO_BUILD_DEPENDS=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/dialogs.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${WRKDIR}/dialogs.html ${RUBY_MODDOCDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKDIR}/dialogs.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/dialogs.html ${STAGEDIR}${RUBY_MODDOCDIR}/
+
 
 .include <bsd.port.mk>

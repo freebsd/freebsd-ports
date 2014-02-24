@@ -104,6 +104,11 @@ lib/syslog-ng/libsyslog-ng-crypto.la
 lib/syslog-ng/libsyslog-ng-crypto.so
 lib/syslog-ng/libsyslogformat.la
 lib/syslog-ng/libsyslogformat.so
+man/man1/loggen.1.gz
+man/man1/pdbtool.1.gz
+man/man1/syslog-ng-ctl.1.gz
+man/man5/syslog-ng.conf.5.gz
+man/man8/syslog-ng.8.gz
 share/include/scl/pacct/plugin.conf
 share/include/scl/syslogconf/README
 share/include/scl/syslogconf/convert-syslogconf.awk

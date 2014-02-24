@@ -20,14 +20,11 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/rdict
 
 DOCS=		Changelog README doc/dict.html doc/rdict.html
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rdict ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/rdict ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

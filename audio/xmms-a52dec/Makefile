@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A52 (aka AC3) decoder plugin for XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
 		liba52.so:${PORTSDIR}/audio/liba52
 RUN_DEPENDS=	${LOCALBASE}/lib/xmms/Output/libOSSSurround.so:${PORTSDIR}/audio/xmms-osssurround

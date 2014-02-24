@@ -18,12 +18,14 @@ lib/ocaml/site-lib/findlib/fl_metascanner.mli
 lib/ocaml/site-lib/findlib/fl_metatoken.cmi
 lib/ocaml/site-lib/findlib/fl_package_base.cmi
 lib/ocaml/site-lib/findlib/fl_package_base.mli
-%%TK%%lib/ocaml/site-lib/findlib/make_wizard
-%%TK%%lib/ocaml/site-lib/findlib/make_wizard.pattern
+@mode 755
+%%TOOLBOX%%lib/ocaml/site-lib/findlib/make_wizard
+@mode
+%%TOOLBOX%%lib/ocaml/site-lib/findlib/make_wizard.pattern
 lib/ocaml/site-lib/findlib/topfind.cmi
 lib/ocaml/site-lib/findlib/topfind.mli
 lib/ocaml/site-lib/graphics/META
-%%TK%%lib/ocaml/site-lib/labltk/META
+%%TOOLBOX%%lib/ocaml/site-lib/labltk/META
 lib/ocaml/site-lib/num-top/META
 lib/ocaml/site-lib/num-top/num_top.cma
 lib/ocaml/site-lib/num-top/num_top.cmi
@@ -35,6 +37,10 @@ lib/ocaml/site-lib/str/META
 lib/ocaml/site-lib/threads/META
 lib/ocaml/site-lib/unix/META
 lib/ocaml/topfind
+man/man1/ocamlfind.1.gz
+man/man5/META.5.gz
+man/man5/findlib.conf.5.gz
+man/man5/site-lib.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/DOCINFO
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/QUICKSTART

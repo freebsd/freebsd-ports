@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- Makefile.include.orig
++++ Makefile.include
+@@ -32,5 +32,5 @@
+ DISTCLEANFILES = $(GENERATED_FILES) $(build_datafiles) $(pc_files)
+ 
+ bin_SCRIPTS = $(ASSEMBLY_WRAPPER)
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdir)/../libdata/pkgconfig
+ pkgconfig_DATA = $(pc_files)

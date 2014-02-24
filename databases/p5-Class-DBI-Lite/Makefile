@@ -24,6 +24,7 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
 DEPRECATED=	deprecated by upstream
+EXPIRATION_DATE=2014-03-23
 
 USES=		perl5
 USE_PERL5=	configure

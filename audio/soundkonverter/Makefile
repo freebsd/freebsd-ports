@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	soundkonverter
-DISTVERSION=	2.0.5
-PORTREVISION=	1
+DISTVERSION=	2.0.91
 CATEGORIES=	audio kde
-MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
-DISTNAME=	29024-${PORTNAME}-${DISTVERSION}
+MASTER_SITES=	LOCAL/dbn/${PORTNAME}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Frontend to various audio converters (transcoder)
@@ -16,16 +14,21 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 		libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
 
-USES=		cmake
+GH_ACCOUNT=	HessiJames
+GH_TAGNAME=	v${DISTVERSION}
+GH_COMMIT=	57bc3c8
+USES=		cmake compiler:c++11-lang
+USE_GITHUB=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs libkcddb
 INSTALLS_ICONS=	yes
+WRKSRC_SUBDIR=	src
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-OPTIONS_DEFAULT=	VORBISTOOLS FLAC NORMALIZE VORBISGAIN
+OPTIONS_DEFAULT=	VORBISTOOLS FLAC NORMALIZE VORBISGAIN CDPARANOIA
 OPTIONS_DEFINE=	NLS
+OPTIONS_GROUP=	RIPPER
 OPTIONS_MULTI=	CODEC FILTER REPLAYGAIN
+OPTIONS_GROUP_RIPPER=	CDRKIT CDPARANOIA
 OPTIONS_MULTI_CODEC=	AFTEN FAAC FFMPEG FLAC FLAKE FLUIDSYNTH LAME MAC \
 			MPLAYER MUSEPACK NEROAAC OPUSTOOLS SHORTEN SPEEX  \
 			TIMIDITY TTA TWOLAME VORBIS WAVPACK #LIBAV
@@ -37,12 +40,18 @@ OPTIONS_SUB=	yes
 CODEC_DESC=		Audio codec formats
 FILTER_DESC=		Audio filter tools
 REPLAYGAIN_DESC=	Replaygain tools for codecs
+RIPPER_DESC=		CD ripping tools
 
 AFTEN_DESC=		ATSC A/52 audio encoder
 AFTEN_RUN_DEPENDS=	aften:${PORTSDIR}/audio/aften
 
 AACGAIN_DESC=		AAC audio replaygain
 AACGAIN_RUN_DEPENDS=	aacgain:${PORTSDIR}/audio/aacgain
+
+CDPARANOIA_DESC=	CD ripping support (cdparanoia - implicit)
+
+CDRKIT_DESC=		CD ripping support (cdrkit)
+CDRKIT_RUN_DEPENDS=	icedax:${PORTSDIR}/sysutils/cdrkit
 
 FAAC_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac \
 			faad:${PORTSDIR}/audio/faad
@@ -108,8 +117,5 @@ WAVPACK_RUN_DEPENDS=	wavpack:${PORTSDIR}/audio/wavpack
 
 NLS_USES=	gettext
 NLS_CMAKE_OFF=	-DBUILD_po=FALSE
-
-post-patch:
-	${REINPLACE_CMD} "/-pedantic/d" ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

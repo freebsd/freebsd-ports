@@ -259,12 +259,38 @@ NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 ### convert WITH and WITHOUT found in make.conf or reloaded from old optionsfile
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
+OPTIONS_WARNINGS+= "WITH_${opt}"
+OPTIONS_WARNINGS_SET+=	${opt}
 PORT_OPTIONS+=	${opt}
 .endif
 .if defined(WITHOUT_${opt})
+OPTIONS_WARNINGS+= "WITHOUT_${opt}"
+OPTIONS_WARNINGS_UNSET+=	${opt}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .endif
 .endfor
+
+.if defined(OPTIONS_WARNINGS)
+WARNING+=	"You are using the following deprecated options: ${OPTIONS_WARNINGS}"
+WARNING+=	"If you added them on the command line, you should replace them by"
+WARNING+=	"WITH=\"${OPTIONS_WARNINGS_SET}\" WITHOUT=\"${OPTIONS_WARNINGS_UNSET}\""
+WARNING+=	""
+WARNING+=	"If they are global options set in your make.conf, you should replace them with:"
+.if defined(OPTIONS_WARNINGS_SET)
+WARNING+=	"OPTIONS_SET=${OPTIONS_WARNINGS_SET}"
+.endif
+.if defined(OPTIONS_WARNINGS_UNSET)
+WARNING+=	"OPTIONS_UNSET=${OPTIONS_WARNINGS_UNSET}"
+.endif
+WARNING+=	""
+WARNING+=	"If they are local to this port, you should use:"
+.if defined(OPTIONS_WARNINGS_SET)
+WARNING+=	"${OPTIONS_NAME}_SET=${OPTIONS_WARNINGS_SET}"
+.endif
+.if defined(OPTIONS_WARNINGS_UNSET)
+WARNING+=	"${OPTIONS_NAME}_UNSET=${OPTIONS_WARNINGS_UNSET}"
+.endif
+.endif
 
 ## Finish by using the options set by the port config dialog, if any
 .  for opt in ${OPTIONS_FILE_SET}

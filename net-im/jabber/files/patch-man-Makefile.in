@@ -11,12 +11,3 @@
  edit = sed \
  	-e 's,\@sysconfdir\@,$(sysconfdir),g' \
  	-e 's,\@VERSION\@,$(VERSION),g'
-@@ -387,7 +387,7 @@
- 
- info-am:
- 
--install-data-am: install-man
-+install-data-am:
- 
- install-exec-am:
- 

@@ -125,6 +125,8 @@ fi
 post-patch:
 	@${REINPLACE_CMD} -E 's,($f/daily.cvd"),\1 || test -d "$$f/daily.inc",' \
 		${WRKSRC}/configure
+	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/cdb/conf-cc
+	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/cdb/conf-ld
 
 pre-configure:
 	@${ECHO_MSG} ""

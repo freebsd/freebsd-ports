@@ -11,6 +11,9 @@ DISTNAME=	fishmatic
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS non-static OpenGL stereogram visualization plugin
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 BUILD_DEPENDS=	xmms>0:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms>0:${PORTSDIR}/multimedia/xmms
 

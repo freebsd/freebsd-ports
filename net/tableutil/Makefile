@@ -9,12 +9,10 @@ MASTER_SITES=	http://expiretable.fnord.se/
 MAINTAINER=	jameskamlyn@gmail.com
 COMMENT=	Utility for converting and aggregating lists of IP addresses
 
-PLIST_FILES=	bin/tableutil
-MAN1=		tableutil.1
+PLIST_FILES=	bin/tableutil man/man1/tableutil.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

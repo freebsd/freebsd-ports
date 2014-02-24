@@ -19,7 +19,7 @@
 +	${CC} ${LDFLAGS} ${OBJS} -o ${PROG} ${LIBS}
 +
 +install:
-+	install -g wheel -o root -m 555 ${PROG} ${PREFIX}/sbin
++	install -m 555 ${PROG} ${DESTDIR}${PREFIX}/sbin
 +
 +clean:
 +	rm -rf ${OBJS} ${PROG}

@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ModPlug-based plugin for beep-media-player
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player \
 		libmodplug.so:${PORTSDIR}/audio/libmodplug
 

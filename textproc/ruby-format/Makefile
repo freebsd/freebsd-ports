@@ -16,18 +16,16 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${RUBY} -i.orig -pe 'gsub(/"(format_test\.pl)/, "\"./\\1")' ${WRKSRC}/test_format.rb
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/format.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/test
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/format.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/test
 .for f in test_format.rb format_test.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/test/* ${RUBY_MODEXAMPLESDIR}/test/
-.endif
+	${INSTALL_DATA} ${WRKSRC}/test/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/test/
 
 .include <bsd.port.mk>

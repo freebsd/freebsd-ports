@@ -568,6 +568,7 @@
     SUBDIR += netstiff
     SUBDIR += netsurf
     SUBDIR += newsbeuter
+    SUBDIR += nghttp2
     SUBDIR += nginx
     SUBDIR += nginx-devel
     SUBDIR += nibbleblog

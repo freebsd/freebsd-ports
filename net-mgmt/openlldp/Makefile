@@ -13,18 +13,15 @@ COMMENT=	Link Layer Discovery Protocol daemon
 GNU_CONFIGURE=	yes
 
 USE_RC_SUBR=	lldpd
-PLIST_FILES=	sbin/lldpd bin/lldpneighbors
+PLIST_FILES=	sbin/lldpd bin/lldpneighbors man/man8/lldpd.8.gz
 
-MAN8=	lldpd.8
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^CFLAGS =/CFLAGS +=/g' \
 		${WRKSRC}/src/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/lldpd ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/lldpneighbors ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/lldpd.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/src/lldpd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/lldpneighbors ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/lldpd.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

@@ -12,6 +12,9 @@ DISTNAME=	quix3dn-${PORTVERSION}-freebsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D-sound effect plugin for XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libc.so.4:${PORTSDIR}/misc/compat4x
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 

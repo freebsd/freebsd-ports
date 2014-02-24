@@ -1,0 +1,11 @@
+--- src/findlib-toolbox/Makefile.orig	2013-06-11 09:27:39.000000000 +0200
++++ src/findlib-toolbox/Makefile	2014-02-23 12:02:16.000000000 +0100
+@@ -13,7 +13,7 @@ make_wizard$(EXEC_SUFFIX): make_wizard.m
+ 	 	findlib.cma make_wizard.ml
+ 
+ install:
+-	cp make_wizard$(EXEC_SUFFIX) make_wizard.pattern $(prefix)$(OCAML_SITELIB)/findlib
++	${BSD_INSTALL_DATA}  make_wizard$(EXEC_SUFFIX) make_wizard.pattern $(DESTDIR)$(prefix)$(OCAML_SITELIB)/findlib
+ 
+ # uninstall: Nothing to do, because the removal of the findlib core also
+ # deinstalls the make_wizard

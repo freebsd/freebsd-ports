@@ -3,19 +3,18 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.5.907
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/xine/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An alternative GUI for the Xine media player
+COMMENT=	Alternative GUI for the Xine media player
 
 LICENSE=	GPLv2
 
-BROKEN=		Does not build with recent libxul
-
-LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
-		xine.2:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr \
+		libmozjs185.so:${PORTSDIR}/lang/spidermonkey185 \
+		libxine.so:${PORTSDIR}/multimedia/libxine
 
 OPTIONS_DEFINE=	MOZILLA_PLUGIN GNOME LIRC
 MOZILLA_PLUGIN_DESC=	Mozilla plugin
@@ -23,21 +22,14 @@ MOZILLA_PLUGIN_DESC=	Mozilla plugin
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtk20
-USE_GECKO=	libxul
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
-CONFIGURE_ARGS=	--enable-mozjs --disable-ffjs --disable-seajs \
-		--without-hal --with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--without-hal --with-libintl-prefix=${LOCALBASE}
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MANLANG=	"" de es
-MAN1=		gxine.1 gxine_client.1
-MANCOMPRESSED=	no
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOZILLA_PLUGIN}
@@ -54,7 +46,7 @@ PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 
 .if ${PORT_OPTIONS:MGNOME}
 BUILD_DEPENDS+=	gnome-screensaver:${PORTSDIR}/x11/gnome-screensaver
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS+=	gnome-screensaver:${PORTSDIR}/x11/gnome-screensaver
 CONFIGURE_ARGS+=--with-dbus
 .else
@@ -62,7 +54,7 @@ CONFIGURE_ARGS+=--disable-integration-wizard --without-dbus
 .endif
 
 .if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	liblirc_client.so:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=--enable-lirc
 .else
 CONFIGURE_ARGS+=--disable-lirc

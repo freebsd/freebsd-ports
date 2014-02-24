@@ -8,7 +8,7 @@ $FreeBSD$
      manual_path = os.path.join(os.getenv("HOME"), ".phpsh", manual_file)
      if not os.path.exists(manual_path):
 -        manual_path = os.path.join("/etc/phpsh", manual_file)
-+        manual_path = os.path.join("%%PREFIX%%/etc/phpsh", manual_file)
++        manual_path = os.path.join("%%ETCDIR%%", manual_file)
      conn = sqlite.connect(manual_path)
      cursor = conn.cursor()
  

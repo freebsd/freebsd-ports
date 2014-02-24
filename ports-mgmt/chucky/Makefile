@@ -15,8 +15,8 @@ LICENSE_NAME=	CHUCKY BSD LICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
-LIB_DEPENDS=	pkg:${PORTSDIR}/ports-mgmt/pkg \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libpkg.so:${PORTSDIR}/ports-mgmt/pkg \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman
@@ -24,25 +24,16 @@ GH_PROJECT=	chucky
 GH_TAGNAME=	075defe
 GH_COMMIT=	${GH_TAGNAME}
 
-WRKSRC=		${WRKDIR}/waitman-chucky-075defe
-
-MAN7=		chucky.7
-
 SUB_FILES=	pkg-message
 SUB_LIST=	MAN7PREFIX="${MAN7PREFIX}"
 PORTDOCS=	*
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

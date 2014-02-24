@@ -3,6 +3,7 @@
 
 PORTNAME=	megaglest
 PORTVERSION=	3.9.0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_3.9.0/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
@@ -13,7 +14,7 @@ COMMENT=	Open source 3D real-time strategy game
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
-		libxerces-c.so:${PORTSDIR}/textproc/xerces-c2 \
+		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
 		libftgl.so:${PORTSDIR}/graphics/ftgl \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient \

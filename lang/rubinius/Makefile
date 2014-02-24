@@ -2,74 +2,75 @@
 # $FreeBSD$
 
 PORTNAME=	rubinius
-PORTVERSION=	1.2.4
-PORTREVISION=	2
+PORTVERSION=	2.2.5
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
-		http://asset.rubini.us/prebuilt/:llvm
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LLVMDIST}:llvm
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://releases.rubini.us/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	LLVM based ruby language implementation
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-10
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:${PORTSDIR}/sysutils/rubygem-bundler \
+		${LOCALBASE}/bin/llvm-config34:${PORTSDIR}/devel/llvm34 \
+		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
 HAS_CONFIGURE=	yes
 #execinfo is broken for unknow reason
-CONFIGURE_ARGS=	--without-execinfo \
-		-P "${PREFIX}" \
+CONFIGURE_ARGS=	-P "${PREFIX}" \
 		-I "${PREFIX}/include/rubinius" \
 		-L "${PREFIX}/lib/ruby/rubinius" \
 		-G "${PREFIX}/lib/ruby/gems/rubinius" \
 		-B "${PREFIX}/bin" \
 		-M "${PREFIX}/man" \
+		--cc ${CC} \
+		--cxx ${CXX} \
+		--no-bin-links \
+		--llvm-config ${LOCALBASE}/bin/llvm-config34 \
 		--sitedir "${PREFIX}/lib/ruby/site_ruby/rubinius" \
-		--vendordir "${PREFIX}/lib/ruby/vendor_ruby/rubinius"
+		--vendordir "${PREFIX}/lib/ruby/vendor_ruby/rubinius" \
+		--stagingdir "${STAGEDIR}${PREFIX}"
 
-LLVMDIST=	llvm-2.8.tgz
-USES=		perl5
+USE_BZIP2=	yes
+USES=		perl5 gmake
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_RAKE=	yes
 USE_PERL5=	build
-USE_GMAKE=	yes
-MAKE_JOBS_UNSAFE=	yes
+NO_INSTALL=	yes
+PLIST_SUB+=	FREEBSD_DIR=${FREEBSD_DIR}
 
-OPTIONS_DEFINE=	GDBM
-OPTIONS_DEFAULT=	GDBM
-GDBM_DESC=	Enable GDBM support
+# Hack to prevent rbx from creating $HOME/.rbx during compilation of gems
+MAKE_ENV+=	HOME=${WRKSRC}
 
-NO_STAGE=	yes
+F_OS=		${OPSYS:L}
+F_MAJOR=	${OSREL:C/\..*$//}
+FREEBSD_DIR=	${F_ARCH}-${F_OS}-${F_MAJOR}
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
+.elif ${ARCH} == "amd64"
+F_ARCH=		x86_64
+.elif ${ARCH} == "i386"
+F_ARCH=		x86
 .endif
 
-.if ${PORT_OPTIONS:MGDBM} || exists(${LOCALBASE}/include/gdbm.h)
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
-PLIST_SUB+=	GDBM=""
-.else
-PLIST_SUB+=	GDBM="@comment "
-.endif
+post-patch:
+	@${GREP} -Rl '#!.*ruby$$'  ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -e '/^#!.*ruby$$/s/ruby$$/${RUBY_NAME}/g'
 
-post-extract:
-	@${MKDIR} ${WRKSRC}/vm/external_libs/prebuilt/
-	@${CP} ${DISTDIR}/${LLVMDIST} ${WRKSRC}/vm/external_libs/prebuilt/${LLVMDIST}
+pre-configure:
+	cd ${WRKSRC} && ${MKDIR} gems && ${LOCALBASE}/bin/bundle install --local --path=${WRKSRC}/gems
 
 do-build:
-	@(cd ${WRKSRC}/; ${SETENV} ${MAKE_ENV} ${RAKE_BIN} build)
-
-do-install:
-	@(cd ${WRKSRC}/; ${SETENV} ${MAKE_ENV} ${RAKE_BIN} install)
-
-pre-install:
-	${MKDIR} ${PREFIX}/lib/ruby/site_ruby/rubinius
-	${MKDIR} ${PREFIX}/lib/ruby/vendor_ruby/rubinius
-	@${TOUCH} ${PREFIX}/lib/ruby/site_ruby/rubinius/.keep_me
-	@${TOUCH} ${PREFIX}/lib/ruby/vendor_ruby/rubinius/.keep_me
+	# "build" target here installs into ${STAGEDIR}${PREFIX}
+	@(cd ${WRKSRC}/; ${SETENV} ${MAKE_ENV} ${RAKE_BIN} -j ${MAKE_JOBS_NUMBER} build)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ruby/site_ruby/rubinius
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ruby/vendor_ruby/rubinius
+	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/ruby/site_ruby/rubinius/.keep_me
+	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/ruby/vendor_ruby/rubinius/.keep_me
 
 plist:
 	truncate -s0 pkg-plist
@@ -77,35 +78,42 @@ plist:
 #
 # Includes
 #
-	@${FIND} -ds ${PREFIX}/include/rubinius ! -type d | \
-		${SED} 's,^${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${PREFIX}/include/rubinius -type d | \
-		${SED} 's,^${PREFIX}/*,@dirrm ,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/include/rubinius ! -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/include/rubinius -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
 #
 # Libs
 #
-	@${FIND} -ds ${PREFIX}/lib/ruby/rubinius ! -type d | \
-		${SED} 's,^${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${PREFIX}/lib/ruby/rubinius -type d | \
-		${SED} 's,^${PREFIX}/*,@dirrm ,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/rubinius ! -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/rubinius -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
+#
+# Kernel and Runtime
+#
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/rubinius ! -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/rubinius -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
 #
 # Gems
 #
-	@${FIND} -ds ${PREFIX}/lib/ruby/gems/rubinius ! -type d | \
-		${SED} 's,^${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${PREFIX}/lib/ruby/gems/rubinius -type d | \
-		${SED} 's,^${PREFIX}/*,@dirrm ,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/gems/rubinius ! -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/gems/rubinius -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
 #
 # Site libs and vendor libs
 #
-	@${FIND} -ds ${PREFIX}/lib/ruby/site_ruby/rubinius ! -type d | \
-		${SED} 's,^${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${PREFIX}/lib/ruby/site_ruby/rubinius -type d | \
-		${SED} 's,^${PREFIX}/*,@dirrm ,' >> pkg-plist
-	@${FIND} -ds ${PREFIX}/lib/ruby/vendor_ruby/rubinius ! -type d | \
-		${SED} 's,^${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${PREFIX}/lib/ruby/vendor_ruby/rubinius -type d | \
-		${SED} 's,^${PREFIX}/*,@dirrm ,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/site_ruby/rubinius ! -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/site_ruby/rubinius -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/vendor_ruby/rubinius ! -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/vendor_ruby/rubinius -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
 #
 # Shared dirs
 #

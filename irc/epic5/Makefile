@@ -12,13 +12,10 @@ MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/ \
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-SUB_FILES=	pkg-message
-
 GNU_CONFIGURE=	yes
-MAN1=		epic5.1
 USE_OPENSSL=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 USE_BZIP2=	yes
@@ -31,7 +28,6 @@ TERMCAP_DESC=	Refuse to use terminfo/ncurses
 CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
 USES=		iconv
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MIPV6}
@@ -71,11 +67,10 @@ post-extract:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in BUG_FORM COPYRIGHT KNOWNBUGS README UPDATES VOTES
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>

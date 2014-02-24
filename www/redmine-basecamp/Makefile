@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	basecamp
-PORTVERSION=	20101203
+PORTVERSION=	20130325
 CATEGORIES=	www
-MASTER_SITES=	http://home.bluelife.at/ports/distfiles/ \
-		LOCAL/decke
 PKGNAMEPREFIX=	redmine-
 
 MAINTAINER=	decke@FreeBSD.org
@@ -13,9 +11,14 @@ COMMENT=	Basecamp Theme for Redmine
 
 RUN_DEPENDS=	redmine>=0.9:${PORTSDIR}/www/redmine
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	theill
+GH_PROJECT=	redmine-basecamp-theme
+GH_TAGNAME=     ${GH_COMMIT}
+GH_COMMIT=	6812d61
+
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 WWWDIR?=	${PREFIX}/www/redmine/public/themes/${PORTNAME}
 
 PLIST_FILES=	%%WWWDIR%%/README.md \
@@ -23,9 +26,8 @@ PLIST_FILES=	%%WWWDIR%%/README.md \
 PLIST_DIRS=	%%WWWDIR%%/stylesheets \
 		%%WWWDIR%%
 
-NO_STAGE=	yes
 do-install:
-		${MKDIR} ${WWWDIR}
-		cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR}
+		${MKDIR} ${STAGEDIR}${WWWDIR}
+		cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

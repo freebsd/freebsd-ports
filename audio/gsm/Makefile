@@ -16,7 +16,4 @@ WRKSRC=		${WRKDIR}/gsm-1.0-pl13
 
 USE_LDCONFIG=	yes
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*so*
-
 .include <bsd.port.mk>

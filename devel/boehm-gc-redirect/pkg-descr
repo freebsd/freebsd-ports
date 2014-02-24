@@ -16,4 +16,4 @@ This package only brings Boehm-GC libraries with malloc redirection.
 
 ps: garbage collection is addictive.
 
-WWW: http://www.hpl.hp.com/personal/Hans_Boehm/gc/
+WWW: http://www.hboehm.info/gc/

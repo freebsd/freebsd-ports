@@ -16,6 +16,9 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Native Monkey Audio Codec plugin for the XMMS1 Multimedia Player
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
 		libmac.so:${PORTSDIR}/audio/mac
 

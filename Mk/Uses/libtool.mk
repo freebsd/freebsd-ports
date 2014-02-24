@@ -23,8 +23,7 @@ patch-libtool:
 		-e 's,freebsd\*),freebsd\*|dragonfly\*),g'		\
 		-e '/objformat=/s/echo aout/echo elf/'			\
 		-e "/freebsd-elf\\*)/,/;;/ {				\
-		    /deplibs_check_method=/s/=.*/=pass_all/; }"		\
-		-e "s/shrext_cmds/shared_ext/g"
+		    /deplibs_check_method=/s/=.*/=pass_all/; }"	
 
 .if ! ${libtool_ARGS:Moldver}
 	@${FIND} ${WRKDIR} \( -name configure -or -name ltconfig \)	\

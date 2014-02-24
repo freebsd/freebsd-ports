@@ -17,11 +17,8 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}"
 
 DOCS=		CHANGES README.en
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 .include <bsd.port.mk>

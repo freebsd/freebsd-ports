@@ -14,6 +14,7 @@
     SUBDIR += abills
     SUBDIR += activemq
     SUBDIR += acx100
+    SUBDIR += adasockets
     SUBDIR += afpfs-ng
     SUBDIR += aget
     SUBDIR += aoe
@@ -313,6 +314,7 @@
     SUBDIR += lft
     SUBDIR += libarms
     SUBDIR += libbgpdump
+    SUBDIR += libcapn
     SUBDIR += libcmis
     SUBDIR += libdnet
     SUBDIR += libexosip2
@@ -858,6 +860,7 @@
     SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RPC2
     SUBDIR += pecl-amqp
+    SUBDIR += pecl-apn
     SUBDIR += pecl-cvsclient
     SUBDIR += pecl-geoip
     SUBDIR += pecl-gupnp

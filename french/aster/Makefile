@@ -261,7 +261,7 @@ pre-configure:
 .endif
 	${ECHO_CMD} "CC='${CC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "CXX='${CXX}'"				>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CXXLIB = '-L${LOCALBASE}/lib/${CC} -lstdc++ -lsupc++'"	\
+	${ECHO_CMD} "CXXLIB = '${LDFLAGS} -lstdc++ -lsupc++'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "LD='${FC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "F90='${LOCALBASE}/bin/${FC}'"		>> ${WRKSRC}/setup.cfg

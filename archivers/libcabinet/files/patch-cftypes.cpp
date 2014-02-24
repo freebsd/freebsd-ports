@@ -1,13 +1,14 @@
---- cftypes.cpp.orig	Sun Oct 24 08:13:29 1999
-+++ cftypes.cpp	Wed Sep  3 14:24:13 2003
+--- cftypes.cpp.orig	1999-10-24 02:13:29.000000000 -0400
++++ cftypes.cpp	2014-02-21 16:06:43.971192116 -0500
 @@ -10,11 +10,20 @@
  #ifndef __CFTYPES_CPP__
  #define __CFTYPES_CPP__
  
 -#include <values.h>
+-#include <fstream.h>
 +#include <inttypes.h>
 +#include <limits.h>
- #include <fstream.h>
++#include <fstream>
  #include "zlib.h"
  #include "cftypes.h"
  

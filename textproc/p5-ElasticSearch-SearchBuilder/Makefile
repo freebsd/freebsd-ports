@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ElasticSearch-SearchBuilder
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN/../by-authors/id/D/DR/DRTECH/
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,8 @@ RUN_DEPENDS=	p5-Carp>=0:${PORTSDIR}/devel/p5-Carp \
 TEST_DEPENDS=	p5-Test-Deep>=:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump
+
+DEPRECATED=	Use textproc/p5-Elasticsearch which is the official client
 
 USES=		perl5
 USE_PERL5=	configure

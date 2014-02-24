@@ -1,4 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
 
 PORTNAME=	webkit-sharp
@@ -17,8 +16,7 @@ PLIST_SUB+=	ASSEMBLY_VERSION=1.1.15
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack gtksharp20
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	gtksharp20
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

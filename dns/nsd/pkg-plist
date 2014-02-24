@@ -1,6 +1,16 @@
 %%ETCDIR%%/nsd.conf.sample
+man/man5/nsd.conf.5.gz
+man/man8/nsd-checkconf.8.gz
+man/man8/nsd-control.8.gz
+man/man8/nsd.8.gz
 sbin/nsd
 sbin/nsd-checkconf
 sbin/nsd-control
 sbin/nsd-control-setup
+@exec install -o %%NSDUSER%% -g %%NSDGROUP%% -m 0755 -d %%NSDRUNDIR%%
+@exec install -o %%NSDUSER%% -g %%NSDGROUP%% -m 0755 -d %%NSDDBDIR%%
+@exec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDRUNDIR%%
+@exec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDDBDIR%%
 @dirrmtry %%ETCDIR%%
+@dirrmtry %%NSDRUNDIR%%
+@dirrmtry %%NSDDBDIR%%

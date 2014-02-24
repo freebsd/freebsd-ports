@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.hellion.org.uk/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS control applet for GNOME 2 panel / KDE tray
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms

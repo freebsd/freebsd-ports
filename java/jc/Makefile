@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}vm/JC%20source%20distribution/Release%20${PORTVERSIO
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JVM that converts class files to C source and compiles them with GCC
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 

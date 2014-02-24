@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	epic4
-PORTVERSION=	2.10.2
+PORTVERSION=	2.10.4
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC4-PRODUCTION/ \
@@ -15,12 +15,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
+LICENSE=	BSD3CLAUSE
+
 CONFLICTS=	epic5-0.[0-2]*
 
 GNU_CONFIGURE=	yes
-MAN1=		epic.1
 USE_OPENSSL=	yes
-SUB_FILES=	pkg-message
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 USE_BZIP2=	yes
 CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
@@ -29,7 +29,6 @@ OPTIONS_DEFINE=	IPV6 TCL PERL SSL TERMCAP DOCS
 OPTIONS_DEFAULT=	TCL PERL SSL
 TERMCAP_DESC=	Refuse to use terminfo/ncurses
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MIPV6}
@@ -74,13 +73,12 @@ post-patch:
 	@${RM} ${WRKDIR}/help/Makefile
 
 post-install:
-	@${CP} -R ${WRKDIR}/help/* ${PREFIX}/share/epic/help
+	@${CP} -R ${WRKDIR}/help/* ${STAGEDIR}${PREFIX}/share/epic/help
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in BUG_FORM COPYRIGHT KNOWNBUGS README UPDATES VOTES
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>

@@ -76,7 +76,7 @@ USE_PGSQL=	yes
 MODULES+=	postgres
 PLIST_FILES+=	lib/openser/openserctl/openserctl.pgsql sbin/openser_postgresql.sh
 .else
-MAKE_ENV+=	PGSQL=postgres
+MAKE_ENV+=	POSTGRESQL=postgres
 .endif
 
 .if ${PORT_OPTIONS:MUNIXODBC}

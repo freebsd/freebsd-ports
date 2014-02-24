@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	xmms-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scivi is a visualization plugin for XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes

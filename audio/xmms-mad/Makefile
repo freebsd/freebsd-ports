@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin that uses libmad
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag \
 		libxmms.so:${PORTSDIR}/multimedia/xmms

@@ -8,7 +8,7 @@ $FreeBSD$
  Installing Globally
  ===================
 -_Note that this install currently clobbers any previous /etc/phpsh/rc.php_  
-+_Note that this install currently clobbers any previous %%PREFIX%%/etc/phpsh/rc.php_  
++_Note that this install currently clobbers any previous %%ETCDIR%%/rc.php_  
  * `python setup.py build`  
  * `sudo python setup.py install`  
  * `phpsh`  
@@ -17,7 +17,7 @@ $FreeBSD$
  Autoloading
  -----------
 -* Modify /etc/phpsh/rc.php. Then:
-+* Modify %%PREFIX%%/etc/phpsh/rc.php. Then:
++* Modify %%ETCDIR%%/rc.php. Then:
    * `cd ~/www`  
    * `phpsh`  
  * And for times when you just want vanilla php:

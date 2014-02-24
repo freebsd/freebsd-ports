@@ -12,6 +12,9 @@ DISTNAME=	xmms_sndfile-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin to allow playing libsndfile supported files
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libxmms.so:${PORTSDIR}/multimedia/xmms
 

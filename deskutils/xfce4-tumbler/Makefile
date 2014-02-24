@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tumbler
-PORTVERSION=	0.1.29
-PORTREVISION=	2
+PORTVERSION=	0.1.30
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -12,6 +11,8 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Thumbnail service for Xfce desktop
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib

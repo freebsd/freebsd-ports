@@ -1,7 +1,6 @@
 bin/plcrtest
 bin/pldptest
 bin/plvltest
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Curia.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Depot.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Villa.pm

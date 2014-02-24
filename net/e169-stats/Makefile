@@ -12,8 +12,10 @@ COMMENT=	Curses realtime statistics for the Huawei E169 modem
 
 PLIST_FILES=	bin/e169-stats
 
-NO_STAGE=	yes
+do-build:
+	${CC} ${CFLAGS} -o ${WRKSRC}/e169-stats ${WRKSRC}/e169-stats.c -lcurses
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/e169-stats ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/e169-stats ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

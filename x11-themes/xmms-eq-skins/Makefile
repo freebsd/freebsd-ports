@@ -11,6 +11,9 @@ DISTNAME=	eq-xmms-skins-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional skins for the XMMS EQ plugin
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 RUN_DEPENDS=	${LOCALBASE}/lib/xmms/Effect/libeq.so:${PORTSDIR}/audio/xmms-eq
 
 USE_BZIP2=	yes

@@ -14,7 +14,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library that provides access to Freedb/CDDB servers
 
 USE_RUBY=	yes
-NO_STAGE=	yes
 USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
@@ -26,11 +25,9 @@ post-patch:
 	${REINPLACE_CMD} -E -e "s,RSTRING\(([^)]+)\)->ptr,RSTRING_PTR(\1),g" ${WRKSRC}/freedb_cdrom.c
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,} ${RUBY_MODEXAMPLESDIR}/
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${DOCS}" ${RUBY_MODDOCDIR}/)
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${DOCS}" ${STAGEDIR}${RUBY_MODDOCDIR}/)
 
 .include <bsd.port.mk>

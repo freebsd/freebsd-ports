@@ -3,6 +3,7 @@
 
 PORTNAME=	cclient
 PORTVERSION=	2007f
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -29,6 +30,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
+PKGMESSAGE=	pkg-message-ssl
 .endif
 
 .include <bsd.port.pre.mk>
@@ -55,11 +57,11 @@ PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 
 post-patch:
 .for file in Makefile src/osdep/unix/Makefile src/osdep/unix/Makefile.gss
-	@${REINPLACE_CMD} -e "s|/usr/local|${STAGEDIR}${PREFIX}|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
-	@${REINPLACE_CMD} -e "s:/etc/ssl/certs:${STAGEDIR}${PREFIX}/certs:g; \
-		s:/etc/ssl/private:${STAGEDIR}${PREFIX}/certs:g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s:/etc/c-client.cf:${STAGEDIR}${PREFIX}/etc/c-client.cf:" \
+	@${REINPLACE_CMD} -e "s:/etc/ssl/certs:${PREFIX}/certs:g; \
+		s:/etc/ssl/private:${PREFIX}/certs:g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s:/etc/c-client.cf:${PREFIX}/etc/c-client.cf:" \
 		${WRKSRC}/src/osdep/unix/env_unix.h
 .if ${PORT_OPTIONS:MSSL}
 	@${REINPLACE_CMD} -e " \
@@ -98,23 +100,13 @@ do-install:
 .for f in ${HEADERS}
 	${INSTALL_DATA} ${WRKSRC}/c-client/${f} ${STAGEDIR}${PREFIX}/include/c-client
 .endfor
-	${INSTALL} ${COPY} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
-		${WRKSRC}/c-client/${SHLIBNAME} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/c-client/${SHLIBNAME} ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf ${SHLIBNAME} ${STAGEDIR}${PREFIX}/lib/lib${SHLIBBASE}.so
 	${INSTALL_DATA} ${WRKSRC}/c-client/c-client.a \
 		${STAGEDIR}${PREFIX}/lib/lib${SHLIBBASE}.a
 	${INSTALL_DATA} ${WRKSRC}/c-client/CFLAGS ${STAGEDIR}${PREFIX}/include/c-client
 	${INSTALL_DATA} ${WRKSRC}/c-client/LDFLAGS ${STAGEDIR}${PREFIX}/include/c-client
 	${INSTALL_DATA} ${WRKSRC}/c-client/OSCFLAGS ${STAGEDIR}${PREFIX}/include/c-client
-
-post-install:
 	${INSTALL_DATA} ${PORTREV_H} ${STAGEDIR}${PREFIX}/include/c-client
-.if ${PORT_OPTIONS:MSSL}
-	@${ECHO} "================================================================================"
-	@${ECHO} "Warning: You have chosen to include SSL support. Applications/ports that use"
-	@${ECHO} "the cclient library but do not support SSL may stop working or have problems"
-	@${ECHO} "linking. Linking them explicitly with ssl (-lssl -lcrypto) may or may not help."
-	@${ECHO} "================================================================================"
-.endif
 
 .include <bsd.port.post.mk>

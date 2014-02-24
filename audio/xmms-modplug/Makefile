@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ModPlug-based plugin for XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 BUILD_DEPENDS=	xmms>0:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
 RUN_DEPENDS=	xmms>0:${PORTSDIR}/multimedia/xmms

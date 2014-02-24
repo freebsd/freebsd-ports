@@ -976,7 +976,6 @@ lang/ccscript||2010-01-20|Has expired: has been broken for 4 months
 lang/gnat-glade||2010-01-20|Has expired: has been broken for 3 months
 lang/xsb||2010-01-20|Has expired: has been broken for 6 months
 multimedia/nmm||2010-01-20|Has expired: has been broken for 3 months
-net/adasockets||2010-01-20|Has expired: has been broken for 3 months
 textproc/bidiv||2010-01-20|Has expired: has been broken for 3 months
 textproc/xmlada-gps||2010-01-20|Has expired: has been broken for 3 months
 net/mugshot||2010-01-23|No longer working, Mastersite disappeared
@@ -5537,3 +5536,7 @@ textproc/docbook-500|textproc/docbook-xml|2014-02-19|Merged into textproc/docboo
 textproc/docbook-sk|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
 emulators/ski||2014-02-19|Removed, does not exist on HP's site anymore
 sysutils/liblogging|devel/liblogging|2014-02-20|Already exists as devel/liblogging
+devel/bzr-grep||2014-02-24|Has expired: Broken for more than 4 months
+multimedia/youtube-viewer||2014-02-24|Has expired: Development ceased for 2.5 branch, conflict with gtk-youtube-viewer
+x11-toolkits/flvw||2014-02-24|Abandonware
+textproc/p5-XML-Xerces||2014-02-24|Depend on a non supported version of xerces-c

@@ -10,6 +10,9 @@ MASTER_SITES=	http://download.berlios.de/bmp-plugins/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	WMA input plugin for beep-media-player
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player
 
 PLIST_FILES=	lib/bmp/Input/libwma.so \

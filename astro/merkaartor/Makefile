@@ -11,6 +11,8 @@ MASTER_SITES=	http://merkaartor.be/attachments/download/301/ \
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	Openstreetmap mapping program
 
+BROKEN=		Does not build
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \

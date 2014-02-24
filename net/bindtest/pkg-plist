@@ -1,2 +1,3 @@
 bin/bindtest
 bin/bindtest.sh
+man/man1/bindtest.1.gz

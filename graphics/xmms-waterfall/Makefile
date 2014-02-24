@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	xmms-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another XMMS spectrum analyzer
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12

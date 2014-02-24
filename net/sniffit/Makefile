@@ -18,17 +18,13 @@ COMMENT=	A packet sniffer program. For educational use
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=
-MAN5=		sniffit.5
-MAN8=		sniffit.8
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sniffit ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/sniffit.5 ${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/sniffit.8 ${PREFIX}/man/man8
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/sniffit
-	${INSTALL_MAN} ${WRKSRC}/README.FIRST ${PREFIX}/share/doc/sniffit
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/sniffit ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/sniffit.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/sniffit.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/sniffit
+	${INSTALL_MAN} ${WRKSRC}/README.FIRST \
+		${STAGEDIR}${PREFIX}/share/doc/sniffit
 
 .include <bsd.port.mk>

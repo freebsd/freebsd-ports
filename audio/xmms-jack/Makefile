@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin for jack
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
 		libjack.so:${PORTSDIR}/audio/jack \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate

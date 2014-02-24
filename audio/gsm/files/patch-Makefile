@@ -1,5 +1,5 @@
---- Makefile.orig	2006-04-26 21:14:26.000000000 +0200
-+++ Makefile	2014-02-12 22:46:15.668989348 +0100
+--- ./Makefile.orig	2006-04-26 19:14:26.000000000 +0000
++++ ./Makefile	2014-02-23 10:31:06.000000000 +0000
 @@ -43,8 +43,8 @@
  # CC		= /usr/lang/acc
  # CCFLAGS 	= -c -O
@@ -144,7 +144,7 @@
  
  
  # The local bin and lib directories
-@@ -342,62 +355,67 @@
+@@ -342,62 +355,66 @@
  
  gsmuninstall:
  		-if [ x"$(GSM_INSTALL_ROOT)" != x ] ; then	\
@@ -224,22 +224,20 @@
 -		-rm $@
 -		cp $? $@
 -		chmod 444 $@
--
++		$(RM) $@
++		${BSD_INSTALL_DATA} $? $@
+ 
 -$(GSM_INSTALL_LIB)/libgsm.a:	$(LIBGSM)
 -		-rm $@
 -		cp $? $@
 -		chmod 444 $@
-+		$(RM) $@
-+		${BSD_INSTALL_DATA} $? $@
- 
 +$(GSM_INSTALL_LIB)/$(LIBGSM):	$(LIB)/$(LIBGSM)
 +		$(RM) $@
 +		${BSD_INSTALL_DATA} $? $@
-+		$(RANLIB) $@
-+
+ 
 +$(GSM_INSTALL_LIB)/$(SOLIBGSM):    $(LIB)/$(SOLIBGSM)
 +		$(RM) $@
-+		${BSD_INSTALL_DATA} $? $@
++		${BSD_INSTALL_LIB} $? $@
 +		(cd $(GSM_INSTALL_LIB); $(LN) -sf $(SOLIBGSM) `echo $(SOLIBGSM) | sed 's/\.so.*$$/.so/'`)
  
  # Distribution

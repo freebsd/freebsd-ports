@@ -19,6 +19,7 @@ RUN_DEPENDS=	p5-DBI>=1.614:${PORTSDIR}/databases/p5-DBI
 TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 
 DEPRECATED=	deprecated by upstream
+EXPIRATION_DATE=2014-03-23
 
 USES=		perl5
 USE_PERL5=	configure

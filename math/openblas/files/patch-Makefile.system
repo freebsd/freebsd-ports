@@ -5,8 +5,8 @@
  
  ifeq ($(OSNAME), FreeBSD)
 +EXTRALIB	+= -lm
-+CCOMMON_OPT     += -Wl,-rpath=%%LOCALBASE%%/lib/%%_GCC_BUILD_DEPENDS%%
-+FCOMMON_OPT	+= -Wl,-rpath=%%LOCALBASE%%/lib/%%_GCC_BUILD_DEPENDS%%
++CCOMMON_OPT     += -Wl,-rpath=%%_GCC_RUNTIME%%
++FCOMMON_OPT	+= -Wl,-rpath=%%_GCC_RUNTIME%%
  MD5SUM = md5 -r
  endif
  

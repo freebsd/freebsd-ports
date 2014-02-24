@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	gdnsd
-PORTVERSION=	1.11.0
+PORTVERSION=	1.11.1
 CATEGORIES=	dns
-MASTER_SITES=	http://downloads.gdnsd.net/ \
+MASTER_SITES=	https://github.com/blblack/gdnsd/releases/download/v${PORTVERSION}/ \
 		http://gdnsd.scaleengine.net/gdnsd/
+
+FETCH_ARGS=	-Fpr
 
 MAINTAINER=	ports@scaleengine.com
 COMMENT=	Authoritative-only GeoIP-aware DNS server
@@ -26,7 +28,7 @@ USE_RC_SUBR=	gdnsd
 USERS?=		gdnsd
 GROUPS?=	gdnsd
 
-OPTIONS_DEFINE=	GEOIP URCU
+OPTIONS_DEFINE=	DOCS GEOIP URCU
 
 GEOIP_DESC=		Enable GeoIP Support
 GEOIP_RUN_DEPENDS=	${LOCALBASE}/share/GeoIP/GeoIP.dat:${PORTSDIR}/net/GeoIP

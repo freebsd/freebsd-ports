@@ -1,6 +1,3 @@
-@unexec if [ -d %%MQDB%% ]; then echo "You should remove %%MQDB%% if you don't need it any more."; fi
-@dirrmtry %%MQDB%%
-@exec install -d -o %%MQUSER%% -g %%MQGROUP%% %%MQDB%%
 @exec mkdir -p %D/lib/activemq/webapps/hawtio/app/activemq/js
 @exec mkdir -p %D/lib/activemq/webapps/hawtio/app/apollo/js
 @exec mkdir -p %D/lib/activemq/webapps/hawtio/app/branding/js
@@ -1048,59 +1045,59 @@ lib/activemq/webapps/styles/type-settings.css
 %%PORTDOCS%%%%DOCSDIR%%/user-guide.html
 @owner %%MQUSER%%
 @group %%MQGROUP%%
-@unexec if cmp -s %D/activemq.xml %D/activemq.xml.sample ; then rm -f %D/activemq.xml ; fi
+@unexec if cmp -s %D/%%ETCDIR%%/activemq.xml %D/%%ETCDIR%%/activemq.xml.sample ; then rm -f %D/%%ETCDIR%%/activemq.xml ; fi
 %%ETCDIR%%/activemq.xml.sample
-@exec if [ ! -f %D/activemq.xml ]; then cp -p %D/%F %B/activemq.xml; fi
-@unexec if cmp -s %D/credentials-enc.properties %D/credentials-enc.properties.sample ; then rm -f %D/credentials-enc.properties ; fi
+@exec if [ ! -f %B/activemq.xml ]; then cp -p %D/%F %B/activemq.xml; fi
+@unexec if cmp -s %D/%%ETCDIR%%/credentials-enc.properties %D/%%ETCDIR%%/credentials-enc.properties.sample ; then rm -f %D/%%ETCDIR%%/credentials-enc.properties ; fi
 %%ETCDIR%%/credentials-enc.properties.sample
-@exec if [ ! -f %D/credentials-enc.properties ]; then cp -p %D/%F %B/credentials-enc.properties; fi
-@unexec if cmp -s %D/credentials.properties %D/credentials.properties.sample ; then rm -f %D/credentials.properties ; fi
+@exec if [ ! -f %B/credentials-enc.properties ]; then cp -p %D/%F %B/credentials-enc.properties; fi
+@unexec if cmp -s %D/%%ETCDIR%%/credentials.properties %D/%%ETCDIR%%/credentials.properties.sample ; then rm -f %D/%%ETCDIR%%/credentials.properties ; fi
 %%ETCDIR%%/credentials.properties.sample
-@exec if [ ! -f %D/credentials.properties ]; then cp -p %D/%F %B/credentials.properties; fi
-@unexec if cmp -s %D/jetty-realm.properties.xml %D/jetty-realm.properties.xml.sample ; then rm -f %D/jetty-realm.properties.xml ; fi
+@exec if [ ! -f %B/credentials.properties ]; then cp -p %D/%F %B/credentials.properties; fi
+@unexec if cmp -s %D/%%ETCDIR%%/jetty-realm.properties %D/%%ETCDIR%%/jetty-realm.properties.sample ; then rm -f %D/%%ETCDIR%%/jetty-realm.properties ; fi
 %%ETCDIR%%/jetty-realm.properties.sample
-@exec if [ ! -f %D/jetty-realm.properties ]; then cp -p %D/%F %B/jetty-realm.properties; fi
-@unexec if cmp -s %D/jetty.xml %D/jetty.xml.sample ; then rm -f %D/jetty.xml ; fi
+@exec if [ ! -f %B/jetty-realm.properties ]; then cp -p %D/%F %B/jetty-realm.properties; fi
+@unexec if cmp -s %D/%%ETCDIR%%/jetty.xml %D/%%ETCDIR%%/jetty.xml.sample ; then rm -f %D/%%ETCDIR%%/jetty.xml ; fi
 %%ETCDIR%%/jetty.xml.sample
-@exec if [ ! -f %D/jetty.xml ]; then cp -p %D/%F %B/jetty.xml; fi
-@unexec if cmp -s %D/jmx.access %D/jmx.access.sample ; then rm -f %D/jmx.access ; fi
+@exec if [ ! -f %B/jetty.xml ]; then cp -p %D/%F %B/jetty.xml; fi
+@unexec if cmp -s %D/%%ETCDIR%%/jmx.access %D/%%ETCDIR%%/jmx.access.sample ; then rm -f %D/%%ETCDIR%%/jmx.access ; fi
 %%ETCDIR%%/jmx.access.sample
-@exec if [ ! -f %D/jmx.access ]; then cp -p %D/%F %B/jmx.access; fi
-@unexec if cmp -s %D/jmx.password %D/jmx.password.sample ; then rm -f %D/jmx.password ; fi
+@exec if [ ! -f %B/jmx.access ]; then cp -p %D/%F %B/jmx.access; fi
+@unexec if cmp -s %D/%%ETCDIR%%/jmx.password %D/%%ETCDIR%%/jmx.password.sample ; then rm -f %D/%%ETCDIR%%/jmx.password ; fi
 %%ETCDIR%%/jmx.password.sample
-@exec if [ ! -f %D/jmx.password ]; then cp -p %D/%F %B/jmx.password; fi
-@unexec if cmp -s %D/log4j.properties %D/log4j.properties.sample ; then rm -f %D/log4j.properties ; fi
+@exec if [ ! -f %B/jmx.password ]; then cp -p %D/%F %B/jmx.password; fi
+@unexec if cmp -s %D/%%ETCDIR%%/log4j.properties %D/%%ETCDIR%%/log4j.properties.sample ; then rm -f %D/%%ETCDIR%%/log4j.properties ; fi
 %%ETCDIR%%/log4j.properties.sample
-@exec if [ ! -f %D/log4j.properties ]; then cp -p %D/%F %B/log4j.properties; fi
-@unexec if cmp -s %D/logging.properties %D/logging.properties.sample ; then rm -f %D/logging.properties ; fi
+@exec if [ ! -f %B/log4j.properties ]; then cp -p %D/%F %B/log4j.properties; fi
+@unexec if cmp -s %D/%%ETCDIR%%/logging.properties %D/%%ETCDIR%%/logging.properties.sample ; then rm -f %D/%%ETCDIR%%/logging.properties ; fi
 %%ETCDIR%%/logging.properties.sample
-@exec if [ ! -f %D/logging.properties ]; then cp -p %D/%F %B/logging.properties; fi
-@unexec if cmp -s %D/broker-localhost.cert %D/broker-localhost.cert.sample ; then rm -f %D/broker-localhost.cert ; fi
+@exec if [ ! -f %B/logging.properties ]; then cp -p %D/%F %B/logging.properties; fi
+@unexec if cmp -s %D/%%ETCDIR%%/broker-localhost.cert %D/%%ETCDIR%%/broker-localhost.cert.sample ; then rm -f %D/%%ETCDIR%%/broker-localhost.cert ; fi
 %%ETCDIR%%/broker-localhost.cert.sample
-@exec if [ ! -f %D/broker-localhost.cert ]; then cp -p %D/%F %B/broker-localhost.cert; fi
-@unexec if cmp -s %D/broker.ks %D/broker.ks.sample ; then rm -f %D/broker.ks ; fi
+@exec if [ ! -f %B/broker-localhost.cert ]; then cp -p %D/%F %B/broker-localhost.cert; fi
+@unexec if cmp -s %D/%%ETCDIR%%/broker.ks %D/%%ETCDIR%%/broker.ks.sample ; then rm -f %D/%%ETCDIR%%/broker.ks ; fi
 %%ETCDIR%%/broker.ks.sample
-@exec if [ ! -f %D/broker.ks ]; then cp -p %D/%F %B/broker.ks; fi
-@unexec if cmp -s %D/broker.ts %D/broker.ts.sample ; then rm -f %D/broker.ts ; fi
+@exec if [ ! -f %B/broker.ks ]; then cp -p %D/%F %B/broker.ks; fi
+@unexec if cmp -s %D/%%ETCDIR%%/broker.ts %D/%%ETCDIR%%/broker.ts.sample ; then rm -f %D/%%ETCDIR%%/broker.ts ; fi
 %%ETCDIR%%/broker.ts.sample
-@exec if [ ! -f %D/broker.ts ]; then cp -p %D/%F %B/broker.ts; fi
-@unexec if cmp -s %D/client.ks %D/client.ks.sample ; then rm -f %D/client.ks ; fi
+@exec if [ ! -f %B/broker.ts ]; then cp -p %D/%F %B/broker.ts; fi
+@unexec if cmp -s %D/%%ETCDIR%%/client.ks %D/%%ETCDIR%%/client.ks.sample ; then rm -f %D/%%ETCDIR%%/client.ks ; fi
 %%ETCDIR%%/client.ks.sample
-@exec if [ ! -f %D/client.ks ]; then cp -p %D/%F %B/client.ks; fi
-@unexec if cmp -s %D/client.ts %D/client.ts.sample ; then rm -f %D/client.ts ; fi
+@exec if [ ! -f %B/client.ks ]; then cp -p %D/%F %B/client.ks; fi
+@unexec if cmp -s %D/%%ETCDIR%%/client.ts %D/%%ETCDIR%%/client.ts.sample ; then rm -f %D/%%ETCDIR%%/client.ts ; fi
 %%ETCDIR%%/client.ts.sample
-@exec if [ ! -f %D/client.ts ]; then cp -p %D/%F %B/client.ts; fi
-@unexec if cmp -s %D/groups.properties %D/groups.properties.sample ; then rm -f %D/groups.properties ; fi
+@exec if [ ! -f %B/client.ts ]; then cp -p %D/%F %B/client.ts; fi
+@unexec if cmp -s %D/%%ETCDIR%%/groups.properties %D/%%ETCDIR%%/groups.properties.sample ; then rm -f %D/%%ETCDIR%%/groups.properties ; fi
 %%ETCDIR%%/groups.properties.sample
-@exec if [ ! -f %D/groups.properties ]; then cp -p %D/%F %B/groups.properties; fi
-@unexec if cmp -s %D/login.config %D/login.config.sample ; then rm -f %D/login.config ; fi
+@exec if [ ! -f %B/groups.properties ]; then cp -p %D/%F %B/groups.properties; fi
+@unexec if cmp -s %D/%%ETCDIR%%/login.config %D/%%ETCDIR%%/login.config.sample ; then rm -f %D/%%ETCDIR%%/login.config ; fi
 %%ETCDIR%%/login.config.sample
-@exec if [ ! -f %D/login.config ]; then cp -p %D/%F %B/login.config; fi
-@unexec if cmp -s %D/users.properties %D/users.properties.sample ; then rm -f %D/users.properties ; fi
+@exec if [ ! -f %B/login.config ]; then cp -p %D/%F %B/login.config; fi
+@unexec if cmp -s %D/%%ETCDIR%%/users.properties %D/%%ETCDIR%%/users.properties.sample ; then rm -f %D/%%ETCDIR%%/users.properties ; fi
 %%ETCDIR%%/users.properties.sample
-@exec if [ ! -f %D/users.properties ]; then cp -p %D/%F %B/users.properties; fi
-@owner
-@group
+@exec if [ ! -f %B/users.properties ]; then cp -p %D/%F %B/users.properties; fi
+@owner root
+@group wheel
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/java/pom.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/java/readme.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/java/src/main/java/example/Listener.java

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	listen
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-celluloid>=0.15.2:${PORTSDIR}/devel/rubygem-celluloid \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+PLIST_FILES=	bin/listen
 
 post-patch:
 	@${REINPLACE_CMD} -e '41,68 d' ${WRKSRC}/${GEM_NAME}.gemspec

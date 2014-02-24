@@ -10,24 +10,19 @@ MASTER_SITES=	http://www.netpatch.ru/projects/dhcdrop/
 MAINTAINER=	ffault@gmail.com
 COMMENT=	Tool for searching and suppressing false DHCP servers
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 
-MAN8=		${PORTNAME}.8
-MANLANG=	"" ru
-
-PLIST_FILES=	sbin/dhcdrop
+PLIST_FILES=	sbin/dhcdrop man/man8/dhcdrop.8.gz \
+		man/ru/man8/dhcdrop.8.gz
 PLIST_DIRSTRY=	man/ru/man8 man/ru
 
 OPTIONS_DEFINE=	STATIC
 STATIC_DESC=	Build a static version of dhcdrop
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSTATIC}
-CONFIGURE_ARGS+=--enable-static-build
-.endif
+STATIC_CONFIGURE_ENABLE=	static-build
 
 .include <bsd.port.mk>

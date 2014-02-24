@@ -13,19 +13,16 @@ COMMENT=	A set of enhancements of irb
 DOCS_EN=	README
 
 USE_RUBY=	yes
-
-NO_STAGE=	yes
 do-build:
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/wirble.rb ${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/wirble.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

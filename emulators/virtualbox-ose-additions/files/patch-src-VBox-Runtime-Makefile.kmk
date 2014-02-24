@@ -1,0 +1,14 @@
+--- src/VBox/Runtime/Makefile.kmk.orig	2013-12-18 11:10:31.000000000 -0500
++++ src/VBox/Runtime/Makefile.kmk	2014-02-20 18:14:28.000000000 -0500
+@@ -157,6 +157,11 @@
+ 	IPRT_BLDCFG_TYPE=\"$(KBUILD_TYPE)\"
+ 
+ #
++# Set the defines that utf8-posix.cpp needs. It's used by several targets.
++#
++r3/posix/utf8-posix.cpp_DEFS.freebsd = $(VBOX_ICONV_DEFS)
++
++#
+ # Unicode Specification reader used to regenerate unidata.cpp.
+ #
+ uniread_TEMPLATE = VBOXBLDPROG

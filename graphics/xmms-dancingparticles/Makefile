@@ -13,6 +13,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes particles dance with pretty neon colors
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
 		libxmms.so:${PORTSDIR}/multimedia/xmms
 

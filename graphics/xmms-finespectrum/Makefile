@@ -11,6 +11,9 @@ DISTNAME=	finespectrum-1.0.1alpha
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fine grain Spectrum analyzers for XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 

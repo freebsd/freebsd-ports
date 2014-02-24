@@ -3,6 +3,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	3.2.17
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -12,8 +13,6 @@ MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Authoritative only non-recursive name server
 
 LICENSE=	BSD3CLAUSE
-
-PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 
 CONFLICTS=	nsd-[0-2]* nsd-4*
 
@@ -33,17 +32,12 @@ CONFIGURE_ARGS=	--with-user=${NSDUSER} \
 		--with-dbfile=${NSDDBDIR}/nsd.db \
 		--with-pidfile=${NSDRUNDIR}/nsd.pid
 
-SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST+=	NSDUSER=${NSDUSER} \
+PLIST_SUB=	NSDUSER=${NSDUSER} \
 		NSDGROUP=${NSDGROUP} \
 		NSDDBDIR=${NSDDBDIR} \
 		NSDRUNDIR=${NSDRUNDIR}
 
 USE_OPENSSL=	yes
-
-MAN5=	nsd.conf.5
-MAN8=	nsd.8 nsdc.8 zonec.8 nsd-checkconf.8 nsd-notify.8 nsd-patch.8 \
-	nsd-xfer.8
 
 PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		NSD-FOR-BIND-USERS README README.icc RELNOTES \
@@ -67,88 +61,32 @@ MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 RRL_DESC=		Response Rate Limiting
 EUI_RRTYPES_DESC=	EUI48 and EUI64 RRtypes support
 
+ROOT_SERVER_CONFIGURE_ENABLE=	root-server
+LARGEFILE_CONFIGURE_ENABLE=	largefile
+IPV6_CONFIGURE_ENABLE=		ipv6
+BIND8_STATS_CONFIGURE_ON=	--enable-bind8-stats
+CHECKING_CONFIGURE_ENABLE=	checking
+NSEC3_CONFIGURE_ENABLE=		nsec3
+MINRESPSIZE_CONFIGURE_ENABLE=	minimal-responses
+NSEC3PREHASH_CONFIGURE_ENABLE=	full-prehash
+MMAP_CONFIGURE_ENABLE=		mmap
+MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
+RRL_CONFIGURE_ENABLE=		ratelimit
+EUI_RRTYPES_CONFIGURE_ENABLE=	draft-rrtypes
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MROOT_SERVER}
-CONFIGURE_ARGS+=	--enable-root-server
-.endif
-
-.if empty(PORT_OPTIONS:MLARGEFILE)
-CONFIGURE_ARGS+=	--disable-largefile
-.endif
-
-.if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MBIND8_STATS}
-CONFIGURE_ARGS+=	--enable-bind8-stats
-.endif
-
 .if ${PORT_OPTIONS:MZONE_STATS}
-.	if empty(PORT_OPTIONS:MBIND8_STATS)
+.	if !${PORT_OPTIONS:MBIND8_STATS}
 CONFIGURE_ARGS+=	--enable-bind8-stats
 .	endif
 CONFIGURE_ARGS+=	--enable-zone-stats
 .endif
 
-.if ${PORT_OPTIONS:MCHECKING}
-CONFIGURE_ARGS+=	--enable-checking
-.endif
-
-.if empty(PORT_OPTIONS:MNSEC3)
-CONFIGURE_ARGS+=	--disable-nsec3
-.endif
-
-.if empty(PORT_OPTIONS:MMINRESPSIZE)
-CONFIGURE_ARGS+=	--disable-minimal-responses
-.endif
-
-.if empty(PORT_OPTIONS:MNSEC3PREHASH)
-CONFIGURE_ARGS+=	--disable-full-prehash
-.endif
-
-.if ${PORT_OPTIONS:MMMAP}
-CONFIGURE_ARGS+=	--enable-mmap
-.endif
-
-.if ${PORT_OPTIONS:MMAXIPS}
-CONFIGURE_ARGS+=	--with-max-ips=${NSDMAX_IPS}
-.endif
-
-.if ${PORT_OPTIONS:MRRL}
-CONFIGURE_ARGS+=	--enable-ratelimit
-.endif
-
-.if ${PORT_OPTIONS:MEUI_RRTYPES}
-CONFIGURE_ARGS+=	--enable-draft-rrtypes
-.endif
-
-pre-patch:
-.if defined(NSD_OPTIONS)
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG} "***** ALERT *****"
-	@${ECHO_MSG} "NSD_OPTIONS is no longer supported,"
-	@${ECHO_MSG} "${PORTNAME} uses OPTIONS, consider running"
-	@${ECHO_MSG} "# make config"
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@sleep 10
-.endif
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/nsd/nsd.conf.sample
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}/${f}
-.endfor
-.endif
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

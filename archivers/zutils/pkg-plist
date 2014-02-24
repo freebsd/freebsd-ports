@@ -4,11 +4,12 @@ bin/zdiff
 bin/zegrep
 bin/zfgrep
 bin/zgrep
+bin/zupdate
 bin/ztest
-bin/zutils
 etc/zutilsrc
 man/man1/zcat.1.gz
 man/man1/zcmp.1.gz
 man/man1/zdiff.1.gz
 man/man1/zgrep.1.gz
+man/man1/zupdate.1.gz
 man/man1/ztest.1.gz

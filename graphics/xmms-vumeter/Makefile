@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	xmms-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog VUmeter plugin for XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 

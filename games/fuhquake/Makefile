@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Excellent and feature-rich QuakeWorld client
 
 DEPRECATED=	Upstream disappeared; no more public distfiles; unmaintained
+EXPIRATION_DATE=2014-03-23
 
 MAKEFILE=	${FILESDIR}/Makefile
 WRKSRC=		${WRKDIR}/source

@@ -10,6 +10,9 @@ MASTER_SITES=	BERLIOS/bmp-plugins
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beep Media Player do-this-on-song-change plugin
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player

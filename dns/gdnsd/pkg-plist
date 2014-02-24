@@ -1,4 +1,5 @@
 bin/gdnsd_geoip_test
+etc/rc.d/gdnsd
 include/gdnsd/compiler.h
 include/gdnsd/dmn.h
 include/gdnsd/dname.h
@@ -11,7 +12,6 @@ include/gdnsd/plugapi.h
 include/gdnsd/plugin.h
 include/gdnsd/stats.h
 include/gdnsd/vscf.h
-@dirrm include/gdnsd
 lib/gdnsd/libgdnsd.la
 lib/gdnsd/libgdnsd.so
 lib/gdnsd/plugin_extmon.la
@@ -36,39 +36,7 @@ lib/gdnsd/plugin_tcp_connect.la
 lib/gdnsd/plugin_tcp_connect.so
 lib/gdnsd/plugin_weighted.la
 lib/gdnsd/plugin_weighted.so
-@dirrm lib/gdnsd
 libexec/gdnsd/gdnsd_extmon_helper
-@dirrm libexec/gdnsd
-sbin/gdnsd
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README.md
-%%DOCSDIR%%/gdnsd-plugin-api.pod
-%%DOCSDIR%%/gdnsd-plugin-api.txt
-%%DOCSDIR%%/gdnsd-plugin-extmon.pod
-%%DOCSDIR%%/gdnsd-plugin-extmon.txt
-%%DOCSDIR%%/gdnsd-plugin-geoip.pod
-%%DOCSDIR%%/gdnsd-plugin-geoip.txt
-%%DOCSDIR%%/gdnsd-plugin-metafo.pod
-%%DOCSDIR%%/gdnsd-plugin-metafo.txt
-%%DOCSDIR%%/gdnsd-plugin-multifo.pod
-%%DOCSDIR%%/gdnsd-plugin-multifo.txt
-%%DOCSDIR%%/gdnsd-plugin-simplefo.pod
-%%DOCSDIR%%/gdnsd-plugin-simplefo.txt
-%%DOCSDIR%%/gdnsd-plugin-weighted.pod
-%%DOCSDIR%%/gdnsd-plugin-weighted.txt
-%%DOCSDIR%%/gdnsd.config.pod
-%%DOCSDIR%%/gdnsd.config.txt
-%%DOCSDIR%%/gdnsd.pod
-%%DOCSDIR%%/gdnsd.txt
-%%DOCSDIR%%/gdnsd.zonefile.pod
-%%DOCSDIR%%/gdnsd.zonefile.txt
-%%DOCSDIR%%/gdnsd_geoip_test.pod
-%%DOCSDIR%%/gdnsd_geoip_test.txt
-%%DOCSDIR%%/gdnsd_manual.pod
-%%DOCSDIR%%/gdnsd_manual.txt
 man/man1/gdnsd_geoip_test.1.gz
 man/man3/gdnsd-plugin-api.3.gz
 man/man5/gdnsd.config.5.gz
@@ -80,9 +48,42 @@ man/man8/gdnsd-plugin-multifo.8.gz
 man/man8/gdnsd-plugin-simplefo.8.gz
 man/man8/gdnsd-plugin-weighted.8.gz
 man/man8/gdnsd.8.gz
-@dirrm %%DOCSDIR%%
+sbin/gdnsd
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-api.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-api.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-extmon.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-extmon.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-geoip.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-geoip.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-metafo.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-metafo.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-multifo.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-multifo.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-simplefo.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-simplefo.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-weighted.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd-plugin-weighted.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd.config.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd.config.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd.zonefile.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd.zonefile.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd_geoip_test.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd_geoip_test.txt
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd_manual.pod
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd_manual.txt
 @exec mkdir -p %%ETCDIR%%/zones
 @unexec rmdir >/dev/null 2>&1 /var/run/gdnsd || :
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry libexec/gdnsd
+@dirrmtry lib/gdnsd
+@dirrmtry include/gdnsd
 @dirrmtry etc/gdnsd/zones
 @dirrmtry etc/gdnsd/geoip
 @dirrmtry etc/gdnsd

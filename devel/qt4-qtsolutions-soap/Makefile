@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../qt4-qtsolutions-singleapplication
+BROKEN=		Does not build
 
 .include	"${MASTERDIR}/Makefile"
 

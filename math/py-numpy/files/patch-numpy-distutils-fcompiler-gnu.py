@@ -1,5 +1,5 @@
---- numpy/distutils/fcompiler/gnu.py.orig	2007-11-07 16:05:14.000000000 -0600
-+++ numpy/distutils/fcompiler/gnu.py	2008-04-07 13:54:56.000000000 -0500
+--- numpy/distutils/fcompiler/gnu.py.orig	2013-10-30 22:31:40.000000000 +0400
++++ numpy/distutils/fcompiler/gnu.py	2014-02-24 15:11:58.000000000 +0400
 @@ -66,7 +66,7 @@
      # Redhat: GNU Fortran (GCC 3.2.2 20030222 (Red Hat Linux 3.2.2-5)) 3.2.2 20030222 (Red Hat Linux 3.2.2-5)
      # GNU Fortran (GCC) 3.4.2 (mingw-special)
@@ -18,7 +18,16 @@
  
      suggested_f90_compiler = 'gnu95'
  
-@@ -249,7 +249,7 @@
+@@ -103,6 +103,8 @@
+ 
+     def get_flags_linker_so(self):
+         opt = self.linker_so[1:]
++	if 'FFLAGS' in os.environ:
++		opt.append(os.environ['FFLAGS'])
+         if sys.platform=='darwin':
+             target = os.environ.get('MACOSX_DEPLOYMENT_TARGET', None)
+             # If MACOSX_DEPLOYMENT_TARGET is set, we simply trust the value
+@@ -249,7 +251,7 @@
      #       GNU Fortran 95 (GCC) 4.2.0 20060218 (experimental)
      #       GNU Fortran (GCC) 4.3.0 20070316 (experimental)
  

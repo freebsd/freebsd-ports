@@ -11,7 +11,7 @@ MASTER_SITES=	\
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	portmgr@FreeBSD.org
-COMMENT=	New generation package manager
+COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 

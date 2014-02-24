@@ -1,8 +1,8 @@
-bin/icehelp
+%%NOLITE%%bin/icehelp
 bin/icesh
 bin/icesound
 bin/icewm
-%%GNOMEDESKTOP%%bin/icewm-menu-gnome2
+%%GNOME%%bin/icewm-menu-gnome2
 bin/icewm-session
 bin/icewmbg
 bin/icewmhint

@@ -25,29 +25,25 @@ DOCS_EN=	ChangeLog \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/romkan.rb ${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}/${RUBY_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/romkan.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
 
-post-install: doc-install
-
-doc-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/ja
+post-install:
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja
 .for f in ${EXAMPLES_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja/
 .endfor
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

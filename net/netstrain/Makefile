@@ -9,17 +9,17 @@ MASTER_SITES=	SF
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Tool to measure practical TCP throughput between two machines
 
-DOC_FILES=	README
+PLIST_FILES=	bin/netstrain bin/netstraind
+PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/netstrain ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/netstraind ${PREFIX}/bin
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/netstrain ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/netstraind ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

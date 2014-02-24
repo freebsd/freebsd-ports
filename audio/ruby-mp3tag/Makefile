@@ -12,7 +12,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby module to manipulate ID3v1.1 tags in MP3 files
 
 USE_RUBY=	yes
-NO_STAGE=	yes
 USE_RUBY_RDOC=	yes
 
 RUBY_RD_FILES=	mp3tag.rb
@@ -28,13 +27,11 @@ post-patch:
 		${WRKSRC}/mp3tag_test.rb
 
 do-install:
-	${MKDIR} ${RUBY_SITELIBDIR}/
-	${INSTALL_DATA} ${WRKSRC}/mp3tag.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/mp3tag_test.rb ${RUBY_MODEXAMPLESDIR}/
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/mp3tag.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/mp3tag_test.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 .include <bsd.port.mk>

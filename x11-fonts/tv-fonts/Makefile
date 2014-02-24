@@ -8,7 +8,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://dl.bytesex.org/releases/${PORTNAME}/
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A number of fonts which are useful for TV applications
+COMMENT=	Number of fonts which are useful for TV applications
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
@@ -17,7 +17,7 @@ RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_BZIP2=	yes
 
 FONTSDIR=	${PREFIX}/lib/X11/fonts/misc
@@ -30,14 +30,10 @@ FONTS=		caption.pcf.gz captioni.pcf.gz led-iso10646-1.pcf.gz \
 		teletext2.pcf.gz teletext2i.pcf.gz teletext4.pcf.gz \
 		teletext4i.pcf.gz
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for font in ${FONTS}
-	${INSTALL_DATA} ${WRKSRC}/${font} ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${font} ${STAGEDIR}${FONTSDIR}
 .endfor
-
-post-install:
-	@-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
 
 .include <bsd.port.mk>

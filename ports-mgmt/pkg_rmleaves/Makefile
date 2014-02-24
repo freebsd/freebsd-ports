@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_rmleaves
-PORTVERSION=	20140110
+PORTVERSION=	20140222
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://alex.wittig.name/${PORTNAME}/
 

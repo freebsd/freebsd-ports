@@ -12,15 +12,10 @@ COMMENT=	Measure throughput and other metrics for TCP
 
 LIB_DEPENDS=	libxmlrpc++.so:${PORTSDIR}/net/xmlrpc-c \
 		libgsl.so:${PORTSDIR}/math/gsl \
-		libpcap.so:${PORTSDIR}/net/libpcap
+		libpcap.so.1:${PORTSDIR}/net/libpcap
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-debug
 
-MAN1=		flowgrind-stop.1 \
-		flowgrind.1 \
-		flowgrindd.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

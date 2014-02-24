@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mk-livestatus
-PORTVERSION=	1.2.2p2
+PORTVERSION=	1.2.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mathias-kettner.de/download/ \
 		LOCAL/ohauer
@@ -13,11 +13,21 @@ COMMENT=	Nagios event broker module
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
+OPTIONS_SINGLE=	NAGIOS
+OPTIONS_SINGLE_NAGIOS=	NAGIOS3 NAGIOS4
+OPTIONS_DEFAULT=	NAGIOS3
+
+NAGIOS3_DESC= build for nagios-3.x
+NAGIOS4_DESC= build for nagios-4.x
+
+NAGIOS4_CONFIGURE_ON=	--with-nagios4
+
+.include <bsd.port.options.mk>
+
 PLIST_FILES=	lib/mk-livestatus/unixcat \
-		lib/mk-livestatus/livecheck \
 		lib/mk-livestatus/livestatus.o
 PLIST_DIRS=	lib/${PORTNAME}
 SUB_FILES=	pkg-message
@@ -36,24 +46,19 @@ COMMAND_FILE?=	/var/spool/nagios/rw/live
 # perl api is really outdated, do not install!
 # Actual version can be found on CPAN
 # http://search.cpan.org/~nierlein/Monitoring-Livestatus/
-NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/api/perl
 
 post-patch:
-.for i in ${EXAMPLE_FILES}
-	@${SED} -i '' -e 's|/usr/bin/python|${LOCALBASE}/bin/python|g' \
+	@${SED} -i '' -e 's|/usr/bin/python|${LOCALBASE}/bin/python2.7|g' \
 		-e 's|/var/lib/nagios/rw/live|${COMMAND_FILE}|g' \
-		-e 's|/var/run/nagios/rw/live|${COMMAND_FILE}|g' ${WRKSRC}/$i
-.endfor
+		-e 's|/var/run/nagios/rw/live|${COMMAND_FILE}|g' \
+		${EXAMPLE_FILES:S|^|${WRKSRC}/|}
 	@${SED} -i '' -e 's|/usr/local/nagios/var/rw/live|${COMMAND_FILE}|' \
 		${WRKSRC}/src/livestatus.h
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	( cd ${WRKSRC} && ${COPYTREE_SHARE} api\* ${EXAMPLESDIR}/ )
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	( cd ${WRKSRC} && ${COPYTREE_SHARE} api\* ${STAGEDIR}${EXAMPLESDIR}/ )
 
 .include <bsd.port.mk>

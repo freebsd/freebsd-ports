@@ -167,7 +167,6 @@
     SUBDIR += bzr-externals
     SUBDIR += bzr-fastimport
     SUBDIR += bzr-git
-    SUBDIR += bzr-grep
     SUBDIR += bzr-gtk
     SUBDIR += bzr-loom
     SUBDIR += bzr-pipeline
@@ -2575,6 +2574,7 @@
     SUBDIR += p5-PerlIO-Util
     SUBDIR += p5-PerlIO-eol
     SUBDIR += p5-PerlIO-locale
+    SUBDIR += p5-PerlIO-utf8_strict
     SUBDIR += p5-PerlIO-via-MD5
     SUBDIR += p5-PerlIO-via-dynamic
     SUBDIR += p5-PerlIO-via-symlink
@@ -2800,6 +2800,7 @@
     SUBDIR += p5-Test-BinaryData
     SUBDIR += p5-Test-Bits
     SUBDIR += p5-Test-Block
+    SUBDIR += p5-Test-CPAN-Meta
     SUBDIR += p5-Test-CPAN-Meta-YAML
     SUBDIR += p5-Test-CheckDeps
     SUBDIR += p5-Test-CheckManifest
@@ -3341,6 +3342,7 @@
     SUBDIR += performance
     SUBDIR += perlconsole
     SUBDIR += php-Psr_Log
+    SUBDIR += php-composer
     SUBDIR += php-java-bridge
     SUBDIR += php-libawl
     SUBDIR += php-memoize

@@ -10,20 +10,19 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	GNU libc's sysinfo port for FreeBSD
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
+USES=		uidfix
 USE_LDCONFIG=	yes
 PROJECTHOST=	sysinfo-bsd
 
 LDFLAGS+=	-lkvm
 
 PLIST_FILES=	include/sys/sysinfo.h \
-	lib/libsysinfo.a \
-	lib/libsysinfo.so \
-	lib/libsysinfo.so.0
+		lib/libsysinfo.a \
+		lib/libsysinfo.so \
+		lib/libsysinfo.so.0 \
+		man/man3/sysinfo.3.gz
 PLIST_DIRSTRY=	include/sys
 
-MAN3=		sysinfo.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

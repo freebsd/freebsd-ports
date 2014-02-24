@@ -10,6 +10,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GNOME panel applet for controlling XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-23
+
 USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui
 USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes

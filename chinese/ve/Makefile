@@ -10,5 +10,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gaod@hychen.org
 COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
 
-NO_STAGE=	yes
+LICENSE=	GPLv1 GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+MAKE_ARGS=	CC="${CC}"
+
+PLIST_FILES=	bin/ve \
+		%%DATADIR%%/ve.hlp
+PLIST_DIRS=	%%DATADIR%%
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/ve ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/ve.hlp ${STAGEDIR}${DATADIR}/
+
 .include <bsd.port.mk>
