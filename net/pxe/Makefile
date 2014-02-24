@@ -18,25 +18,22 @@ CONFIGURE_ARGS+=	--with-config=${PREFIX}/etc/pxe.conf \
 			--with-log=/var/log/pxe.log \
 			--with-setuid=nobody
 
-DOCS=	Changes INSTALL LICENCE README THANKS
+PORTDOCS=	Changes INSTALL LICENCE README THANKS
+PLIST_FILES=	sbin/pxe etc/pxe.conf.sample
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/tmp/pxe.pid|/var/run/pxe.pid|' ${WRKSRC}/autoconf.h.in
+	${REINPLACE_CMD} -e 's|/tmp/pxe.pid|/var/run/pxe.pid|' \
+		${WRKSRC}/autoconf.h.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pxe ${PREFIX}/sbin/
-	${INSTALL_DATA} ${WRKSRC}/pxe.conf ${PREFIX}/etc/pxe.conf.sample
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/pxe ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/pxe.conf \
+		${STAGEDIR}${PREFIX}/etc/pxe.conf.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-post-install:
-	${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
