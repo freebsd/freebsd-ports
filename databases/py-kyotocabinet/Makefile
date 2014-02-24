@@ -12,13 +12,12 @@ DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python binding of kyotocabinet
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	libkyotocabinet.so:${PORTSDIR}/databases/kyotocabinet
 
-USE_PYTHON=	3.1+
+PYDISTUTILS_AUTOPLIST=	yes
 USE_PYDISTUTILS=yes
+USE_PYTHON=	3
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PORTNAME}.so
-PYDISTUTILS_EGGINFO=	Kyoto_Cabinet-1.5-py${PYTHON_VER}.egg-info
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
