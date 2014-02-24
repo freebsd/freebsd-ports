@@ -17,22 +17,18 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	rotorouter
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-extract:
 	${MKDIR} ${WRKSRC}/src
 	${CP} ${FILESDIR}/rotorouter.c ${WRKSRC}/src
 
 do-build:
-		${CC} -lpcap -o ${WRKSRC}/src/rotorouter ${WRKSRC}/src/rotorouter.c
+	${CC} ${CFLAGS} -lpcap -o ${WRKSRC}/src/rotorouter ${WRKSRC}/src/rotorouter.c
 
 do-install:
-		@${INSTALL_DATA} -m 640 ${FILESDIR}/rotorouter.conf-example ${PREFIX}/etc
-		@${INSTALL_DATA} -m 640 ${FILESDIR}/rotorouter.conf-example ${PREFIX}/etc/rotorouter.conf
-		@${INSTALL_PROGRAM} ${WRKSRC}/src/rotorouter ${PREFIX}/sbin
+	${INSTALL_DATA} ${FILESDIR}/rotorouter.conf-example \
+		${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${FILESDIR}/rotorouter.conf-example \
+		${STAGEDIR}${PREFIX}/etc/rotorouter.conf
+	${INSTALL_PROGRAM} ${WRKSRC}/src/rotorouter ${STAGEDIR}${PREFIX}/sbin
 
-post-install:
-		@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
