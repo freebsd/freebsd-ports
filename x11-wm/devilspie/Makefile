@@ -8,29 +8,27 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.burtonini.com/computing/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A window manipulation tool
+COMMENT=	Window manipulation tool
+
+OPTIONS_DEFINE=	DOCS
 
 USE_GNOME=	libwnck
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		devilspie.1
 PORTDOCS=	AUTHORS NEWS README TODO
 PLIST_FILES=	bin/devilspie \
+		man/man1/devilspie.1.gz \
 		share/locale/de/LC_MESSAGES/devilspie.mo
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||' \
 		${WRKSRC}/src/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
