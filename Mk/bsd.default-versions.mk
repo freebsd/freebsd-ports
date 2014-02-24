@@ -18,6 +18,7 @@ ${_l:U}_DEFAULT=	${lang:C/.*=//g}
 .endfor
 
 APACHE_DEFAULT?=	2.2
+GCC_DEFAULT?=		4.6
 FPC_DEFAULT?=		2.6.2
 LUA_DEFAULT?=		5.2
 MYSQL_DEFAULT?=		5.5
