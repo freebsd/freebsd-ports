@@ -403,7 +403,6 @@
     SUBDIR += xvid
     SUBDIR += y4mscaler
     SUBDIR += yamdi
-    SUBDIR += youtube-viewer
     SUBDIR += zoneminder
 
 .include <bsd.port.subdir.mk>
