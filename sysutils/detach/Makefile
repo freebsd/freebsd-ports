@@ -9,12 +9,10 @@ MASTER_SITES=	ftp://ftp.ntnu.no/pub/unix/utils/
 MAINTAINER=	arnej@pvv.org
 COMMENT=	Start a process detached from a terminal
 
-MAN1=		detach.1
-PLIST_FILES=	bin/detach
+PLIST_FILES=	bin/detach man/man1/detach.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} -m 0755 ${WRKSRC}/detach ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/detach.1 ${PREFIX}/man/man1/detach.1
+	${INSTALL_PROGRAM} -m 0755 ${WRKSRC}/detach ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/detach.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
