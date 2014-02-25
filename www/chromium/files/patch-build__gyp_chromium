@@ -1,6 +1,6 @@
 --- build/gyp_chromium.orig	2014-02-20 21:28:44.000000000 +0100
-+++ build/gyp_chromium	2014-02-24 17:26:04.000000000 +0100
-@@ -245,8 +245,8 @@
++++ build/gyp_chromium	2014-02-25 21:48:32.000000000 +0100
+@@ -245,8 +245,9 @@
  
    supplemental_includes = GetSupplementalFiles()
  
