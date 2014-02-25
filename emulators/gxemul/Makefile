@@ -22,6 +22,8 @@ MAN1=		gxemul.1
 PORTDOCS=	*
 PLIST_FILES=	bin/gxemul
 
+USE_GCC=	yes
+
 # svgalib installs vga.h, which conflicts with gxemul when building with
 # a virtual VGA adaptor.
 CONFLICTS=	svgalib-[0-9]*
