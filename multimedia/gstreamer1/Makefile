@@ -3,7 +3,7 @@
 #    $MCom: ports/multimedia/gstreamer1/Makefile,v 1.5 2013/01/15 21:43:45 kwm Exp $
 
 PORTNAME=	gstreamer1
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 DISTNAME=	${PORTNAME:S/1//}-${PORTVERSION}
@@ -16,9 +16,9 @@ LICENSE=	LGPL20
 PORTSCOUT=	limitw:1,even
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
-USES=		bison gettext gmake pathfix pkgconfig
+USES=		bison gettext gmake libtool pathfix pkgconfig
 USE_XZ=		yes
-USE_GNOME=	glib20 gnomehier introspection:build ltverhack
+USE_GNOME=	glib20 gnomehier introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
