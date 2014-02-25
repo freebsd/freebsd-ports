@@ -12,21 +12,16 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A script to unstow packages much faster than stow -D
 
 NO_BUILD=	yes
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		${PORTNAME}.1
+
+PLIST_FILES=	bin/unstow man/man1/unstow.1.gz
 PORTDOCS=	README.md
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin/
-.for man in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${man} ${MANPREFIX}/man/man1/
-.endfor
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/unstow.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
