@@ -1,6 +1,6 @@
 --- chrome/browser/chrome_content_browser_client.cc.orig	2014-01-07 21:01:57.000000000 +0100
 +++ chrome/browser/chrome_content_browser_client.cc	2014-01-11 01:50:13.000000000 +0100
-@@ -492,7 +492,7 @@
+@@ -486,7 +486,7 @@
    }
  }
  
@@ -9,16 +9,16 @@
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -548,7 +548,7 @@
+@@ -543,7 +543,7 @@
  
    return -1;
  }
 -#endif  // defined(OS_POSIX) && !defined(OS_MACOSX)
 +#endif  // defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
- 
+ #endif  // !defined(OS_ANDROID)
+
  #if !defined(OS_CHROMEOS)
- GURL GetEffectiveURLForSignin(const GURL& url) {
-@@ -1397,7 +1397,7 @@
+@@ -1389,7 +1389,7 @@
  
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
      CommandLine* command_line, int child_process_id) {
@@ -27,7 +27,7 @@
    if (breakpad::IsCrashReporterEnabled()) {
      std::string enable_crash_reporter;
      GoogleUpdateSettings::GetMetricsId(&enable_crash_reporter);
-@@ -2529,7 +2529,7 @@
+@@ -2525,7 +2525,7 @@
            Profile::FromBrowserContext(browser_context)));
  }
  
@@ -36,7 +36,7 @@
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const CommandLine& command_line,
      int child_process_id,
-@@ -2584,7 +2584,7 @@
+@@ -2580,7 +2580,7 @@
    }
  #endif  // defined(OS_ANDROID)
  }

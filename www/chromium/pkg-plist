@@ -64,6 +64,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/protoc
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/extension/demo/library.js
+%%DATADIR%%/resources/inspector/accelerometer.css
 %%DATADIR%%/resources/inspector/breakpointsList.css
 %%DATADIR%%/resources/inspector/buildSystemOnly.js
 %%DATADIR%%/resources/inspector/flameChart.css
@@ -145,10 +146,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/resourcesTimeGraphIcon.png
 %%DATADIR%%/resources/inspector/Images/searchNext.png
 %%DATADIR%%/resources/inspector/Images/searchPrev.png
-%%DATADIR%%/resources/inspector/Images/searchSmallBlue.png
-%%DATADIR%%/resources/inspector/Images/searchSmallBrightBlue.png
-%%DATADIR%%/resources/inspector/Images/searchSmallGray.png
-%%DATADIR%%/resources/inspector/Images/searchSmallWhite.png
 %%DATADIR%%/resources/inspector/Images/sessionStorage.png
 %%DATADIR%%/resources/inspector/Images/settingsListRemove.png
 %%DATADIR%%/resources/inspector/Images/settingsListRemove_2x.png
