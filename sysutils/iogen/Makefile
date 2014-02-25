@@ -11,18 +11,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Lightweight tool to generate heavily fragmented I/O
 
-MAN8=		iogen.8
-PLIST_FILES=	bin/iogen
+PLIST_FILES=	bin/iogen man/man8/iogen.8.gz
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; \
 	${CC} ${CFLAGS} -DVERSION=\"${PORTVERSION}\" iogen.c -o iogen
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iogen ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/iogen.8 ${MANPREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/iogen ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/iogen.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
