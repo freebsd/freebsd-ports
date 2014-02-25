@@ -14,12 +14,11 @@ COMMENT=	Scans for a limited set of distributed denial of service agents
 
 ALL_TARGET=	dds
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/dds ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${INSTALL_PROGRAM} ${WRKSRC}/dds ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
