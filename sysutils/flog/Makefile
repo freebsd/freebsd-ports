@@ -12,7 +12,8 @@ COMMENT=	A small STDIN-to-file logger with support for log rotation
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e "s@|O_LARGEFILE@@" ${WRKSRC}/flog.c
 
@@ -20,10 +21,8 @@ do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/flog ${WRKSRC}/flog.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/flog ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d -m 0755 ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/flog ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
