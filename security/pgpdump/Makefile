@@ -10,14 +10,13 @@ MAINTAINER=	kaoru@kaisei.org
 COMMENT=	PGP packet visualizer
 
 GNU_CONFIGURE=	yes
+
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
-MAN1=		pgpdump.1
-PLIST_FILES=	bin/pgpdump
+PLIST_FILES=	bin/pgpdump man/man1/pgpdump.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pgpdump.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pgpdump.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
