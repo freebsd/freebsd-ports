@@ -10,19 +10,11 @@ MASTER_SITES=	http://www.ml1.org.uk/tgz/ \
 MAINTAINER=	bob@eager.cx
 COMMENT=	The original general purpose macro processor
 
-MAN1=		ml1.1
-MANCOMPRESSED=	yes
-
-PLIST_FILES=	bin/ml1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/ml1 man/man1/ml1.1.gz
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/ml1 ${PREFIX}/bin
-		${INSTALL_MAN} ${WRKSRC}/ml1.1.gz ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/ml1 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ml1.1.gz \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
-post-install:
-		${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
