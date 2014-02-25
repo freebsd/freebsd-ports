@@ -3,6 +3,7 @@
 
 PORTNAME=	pythonsudoku
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/Python%20Sudoku/${PORTVERSION}/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -19,7 +20,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
 RUN_DEPENDS=	${PYGAME} \
 		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_PKGNAMEPREFIX}reportlab>=0:${PORTSDIR}/print/py-reportlab
+		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:${PORTSDIR}/print/py-reportlab1
 
 USE_BZIP2=	yes
 USES=		desktop-file-utils

@@ -3,6 +3,7 @@
 
 PORTNAME=	griffith
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/87859599/
 
@@ -43,7 +44,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
 .if ${PORT_OPTIONS:MREPORTLAB2}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab2>=2:${PORTSDIR}/print/py-reportlab2
 .else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab>=1.19:${PORTSDIR}/print/py-reportlab
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab1>=1.19:${PORTSDIR}/print/py-reportlab1
 .endif
 
 .if ${PORT_OPTIONS:MCHARDET}

@@ -3,6 +3,7 @@
 
 PORTNAME=	gourmet
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	https://launchpadlibrarian.net/133161899/
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 
 		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}poppler>=0:${PORTSDIR}/graphics/py-poppler \
 		${PYTHON_PKGNAMEPREFIX}rtf>=0:${PORTSDIR}/print/py-rtf \
-		${PYTHON_PKGNAMEPREFIX}reportlab>=0:${PORTSDIR}/print/py-reportlab \
+		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:${PORTSDIR}/print/py-reportlab1 \
 		${PYTHON_PKGNAMEPREFIX}elib.intl>0:${PORTSDIR}/textproc/py-elib.intl
 
 MAN1=		gourmet.1
