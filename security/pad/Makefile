@@ -7,36 +7,23 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
-#		http://www.lammah.com/pad/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	A command-line utility to encrypt files
 
-DOC_FILES=	COPYING README ChangeLog
 GNU_CONFIGURE=	yes
-MAN1=		pad.1
-PLIST=		${WRKDIR}/pkg-plist
 USE_OPENSSL=	yes
 
-NO_STAGE=	yes
-pre-install:
-	${ECHO_CMD} bin/pad > ${PLIST}
-.if !defined(NOPORTDOCS)
-.for i in ${DOC_FILES}
-	${ECHO_CMD} share/doc/pad/$i >> ${PLIST}
-.endfor
-.endif
-	${ECHO_CMD} "@dirrm share/doc/pad" >> ${PLIST}
+PLIST_FILES=	bin/pad man/man1/pad.1.gz
+PORTDOCS=	COPYING README ChangeLog
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pad ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pad.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/pad ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pad.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
