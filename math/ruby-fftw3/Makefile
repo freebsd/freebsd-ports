@@ -27,13 +27,10 @@ USE_RUBY_EXTCONF=	yes
 
 DOCS=		LICENSE.txt doc/*
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
