@@ -26,23 +26,18 @@ RUBY_MODNAME=	rd
 DOCS_EN=	README.rd	doc/rd-draft.rd
 DOCS_JA=	README.rd.ja	doc/rd-draft.rd.ja
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${RUBY_SITELIBDIR}/rd
-	${INSTALL_DATA} ${WRKSRC}/lib/rd/dot.rd2rc ${RUBY_SITELIBDIR}/rd/
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/rd/dot.rd2rc ${RUBY_MODEXAMPLESDIR}/
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/rd
+	${INSTALL_DATA} ${WRKSRC}/lib/rd/dot.rd2rc ${STAGEDIR}${RUBY_SITELIBDIR}/rd/
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/rd/dot.rd2rc ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
