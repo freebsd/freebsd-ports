@@ -17,14 +17,11 @@ MAKE_ARGS=	CC="${CC}" PRF="${CFLAGS}"
 PORTDOCS=	CHANGELOG README
 PLIST_FILES=	bin/replaceit
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/replaceit ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/replaceit ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
