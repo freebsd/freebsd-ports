@@ -13,8 +13,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	sbin/portsopt
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/portsopt ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/portsopt ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

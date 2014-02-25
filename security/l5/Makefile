@@ -11,17 +11,23 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File Integrity Assessment Tool
 
-NO_WRKSUBDIR=	true
+NO_WRKSUBDIR=	yes
 ALL_TARGET=	freebsd
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}
+PLIST_FILES=	bin/l5
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
+
 .if ${ARCH} == 'amd64'
 BROKEN=	incorrect runtime output
 .endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
 .include <bsd.port.post.mk>

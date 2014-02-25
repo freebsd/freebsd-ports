@@ -11,12 +11,10 @@ COMMENT=	Scan_ffs recovers lost disklabel
 
 USE_BZIP2=	yes
 
-MAN8=		scan_ffs.8
-PLIST_FILES=	sbin/scan_ffs
+PLIST_FILES=	sbin/scan_ffs man/man8/scan_ffs.8.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/scan_ffs ${PREFIX}/sbin/.
-	${INSTALL_MAN} ${WRKSRC}/scan_ffs.8 ${MAN8PREFIX}/man/man8/.
+	${INSTALL_PROGRAM} ${WRKSRC}/scan_ffs ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/scan_ffs.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

@@ -2,12 +2,13 @@
 #
 # MAINTAINER:	ports@FreeBSD.org
 #
-# Handle the default versions for users chosable multi versions.
+# Provide default versions for ports with multiple versions selectable
+# by the user.
 #
-# It expects users to define DEFAULT_VERSIONS in their make.conf
-# Syntax is the following:
+# Users who want to override these defaults can easily do so by defining
+# DEFAULT_VERSIONS in their make.conf as follows:
 #
-# DEFAULT_VERSIONS=	perl5=5.18 ruby=2.0
+#   DEFAULT_VERSIONS=	perl5=5.18 ruby=2.0
 
 .if !defined(_INCLUDE_BSD_DEFAULT_VERSIONS_MK)
 _INCLUDE_BSD_DEFAULT_VERSIONS_MK=	yes
@@ -19,6 +20,7 @@ ${_l:U}_DEFAULT=	${lang:C/.*=//g}
 
 APACHE_DEFAULT?=	2.2
 FPC_DEFAULT?=		2.6.2
+GCC_DEFAULT?=		4.6
 LUA_DEFAULT?=		5.2
 MYSQL_DEFAULT?=		5.5
 PERL5_DEFAULT?=		5.16

@@ -360,7 +360,9 @@
     SUBDIR += liblrdf
     SUBDIR += libmrss
     SUBDIR += libmrss-php
+    SUBDIR += libmwaw
     SUBDIR += libnxml
+    SUBDIR += libodfgen
     SUBDIR += libparsifal
     SUBDIR += libroxml
     SUBDIR += libsoldout

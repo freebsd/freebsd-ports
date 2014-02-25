@@ -48,7 +48,6 @@ include/snort/dynamic_output/stream_api.h
 include/snort/dynamic_preproc/bitop.h
 include/snort/dynamic_preproc/cpuclock.h
 include/snort/dynamic_preproc/file_api.h
-include/snort/dynamic_preproc/file_lib.h
 include/snort/dynamic_preproc/idle_processing.h
 include/snort/dynamic_preproc/ipv6_port.h
 include/snort/dynamic_preproc/mempool.h
@@ -177,11 +176,14 @@ man/man8/snort.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.dnp3
 %%PORTDOCS%%%%DOCSDIR%%/README.dns
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
+%%PORTDOCS%%%%DOCSDIR%%/README.file
+%%PORTDOCS%%%%DOCSDIR%%/README.file_ips
 %%PORTDOCS%%%%DOCSDIR%%/README.filters
 %%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.frag3
 %%PORTDOCS%%%%DOCSDIR%%/README.ftptelnet
 %%PORTDOCS%%%%DOCSDIR%%/README.gre
+%%PORTDOCS%%%%DOCSDIR%%/README.ha
 %%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
 %%PORTDOCS%%%%DOCSDIR%%/README.imap
 %%PORTDOCS%%%%DOCSDIR%%/README.ipip
@@ -216,7 +218,6 @@ src/snort_dynamicsrc/Unified2_common.h
 src/snort_dynamicsrc/bitop.h
 src/snort_dynamicsrc/event.h
 src/snort_dynamicsrc/file_api.h
-src/snort_dynamicsrc/file_lib.h
 src/snort_dynamicsrc/idle_processing.h
 src/snort_dynamicsrc/obfuscation.h
 src/snort_dynamicsrc/pcap_pkthdr32.h

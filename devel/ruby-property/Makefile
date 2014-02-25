@@ -13,25 +13,21 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple properties scheme for Ruby
 
 USE_RUBY=	yes
-
 NO_BUILD=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	${RUBY} -i -pe 'gsub /rubyapi\.css/, "../rubyapi.css"' ${WRKSRC}/Properties-ja.html
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/property.rb ${RUBY_SITELIBDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/property.rb ${STAGEDIR}${RUBY_SITELIBDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in property-example.rb test.default property.README Properties.html rubyapi.css
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}
 .endfor
 .for f in property.README.ja Properties-ja.html
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .endfor
-.endif
 
 .include <bsd.port.mk>

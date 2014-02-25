@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iso-codes
-PORTVERSION=	3.49
+PORTVERSION=	3.51
 CATEGORIES=	misc
 MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 

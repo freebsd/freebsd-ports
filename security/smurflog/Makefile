@@ -16,7 +16,8 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	README
 PLIST_FILES=	sbin/smurflog
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CFLAGS=|#CFLAGS=|' ${WRKSRC}/configure
@@ -24,10 +25,8 @@ post-patch:
 		'/strip/d' ${WRKSRC}/Makefile.in
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} smurflog ${PREFIX}/sbin)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${DOCSDIR})
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/smurflog ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -504,6 +504,7 @@
     SUBDIR += libdrm
     SUBDIR += libecwj2
     SUBDIR += libemf
+    SUBDIR += libetonyek
     SUBDIR += libexif
     SUBDIR += libexif-gtk
     SUBDIR += libfpx

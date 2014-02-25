@@ -17,6 +17,7 @@
     SUBDIR += adasockets
     SUBDIR += afpfs-ng
     SUBDIR += aget
+    SUBDIR += anet
     SUBDIR += aoe
     SUBDIR += apinger
     SUBDIR += appkonference

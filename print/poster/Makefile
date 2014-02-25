@@ -15,12 +15,10 @@ MAKEFILE=	/dev/null
 MAKE_ENV=	LDLIBS="-lm"
 NO_WRKSUBDIR=	yes
 
-MAN1=		poster.1
-PLIST_FILES=	bin/poster
+PLIST_FILES=	bin/poster man/man1/poster.1.gz
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.1 ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

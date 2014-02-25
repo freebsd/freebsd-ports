@@ -4,7 +4,7 @@
 PORTNAME=	mkntpwd
 PORTVERSION=	1.0
 CATEGORIES=	sysutils net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ldaputils/Contrib/mkntpwd
 DISTNAME=	${PORTNAME}
 
@@ -17,8 +17,7 @@ PLIST_FILES=	bin/mkntpwd
 LICENSE=	GPLv2 BSD
 LICENSE_COMB=	multi
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mkntpwd ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mkntpwd ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -16,13 +16,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CFLAGS+=	-D_ST_FLAGS_PRESENT_
 
-MAN1=		cpdup.1
-PLIST_FILES=	bin/cpdup
+PLIST_FILES=	bin/cpdup man/man1/cpdup.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cpdup ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cpdup.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/cpdup ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cpdup.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.pre.mk>
 

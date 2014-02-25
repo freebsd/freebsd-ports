@@ -1,0 +1,17 @@
+include/libisocodes.h
+lib/girepository-1.0/libisocodes-1.0.typelib
+lib/libisocodes.a
+lib/libisocodes.la
+lib/libisocodes.so
+lib/libisocodes.so.0
+lib/libisocodes.so.0.0.0
+libdata/pkgconfig/libisocodes.pc
+share/gir-1.0/libisocodes-1.0.gir
+share/locale/de/LC_MESSAGES/libisocodes.mo
+share/locale/en@boldquot/LC_MESSAGES/libisocodes.mo
+share/locale/en@quot/LC_MESSAGES/libisocodes.mo
+share/vala/vapi/libisocodes.vapi
+@dirrmtry share/locale/en@quot/LC_MESSAGES
+@dirrmtry share/locale/en@quot
+@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+@dirrmtry share/locale/en@boldquot

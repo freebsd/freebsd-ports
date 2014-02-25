@@ -9,21 +9,18 @@ MASTER_SITES=	http://bsdhwmon.koitsu.org/dist/
 MAINTAINER=	jdc@koitsu.org
 COMMENT=	Hardware sensor monitoring utility for FreeBSD
 
-PLIST_FILES=	sbin/bsdhwmon
-MAN8=		bsdhwmon.8
+PLIST_FILES=	sbin/bsdhwmon man/man8/bsdhwmon.8.gz
 
 OPTIONS_DEFINE=	DEBUG
-DEBUG_DESC=	Enable debug build
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
 MAKE_ARGS+=	DEBUG=1
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bsdhwmon ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/bsdhwmon.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/bsdhwmon ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/bsdhwmon.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

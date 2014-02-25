@@ -12,19 +12,17 @@ COMMENT=	Remove leaf packages
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/pkg:${PORTSDIR}/ports-mgmt/pkg
-
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	sbin/pkg-rmleaf
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${FILESDIR}/pkg-rmleaf ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pkg-rmleaf ${PREFIX}/sbin/pkg-rmleaf
+	${INSTALL_SCRIPT} ${WRKSRC}/pkg-rmleaf \
+		${STAGEDIR}${PREFIX}/sbin/pkg-rmleaf
 
 .include <bsd.port.mk>

@@ -14,19 +14,14 @@ LICENSE=	MIT
 PLIST_FILES=	bin/tcpsplit
 PORTDOCS=	README
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E '/^(CC|CFLAGS|INC|LD)/d' ${WRKSRC}/Makefile
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tcpsplit ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/tcpsplit ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -16,8 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/dcetest
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dcetest ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dcetest ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

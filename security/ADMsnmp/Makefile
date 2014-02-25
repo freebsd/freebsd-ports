@@ -15,16 +15,16 @@ COMMENT=	SNMP audit scanner
 
 WRKSRC=		${WRKDIR}/ADMsnmp
 
-NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -DPORTSHAREDIR="${PREFIX}/share/ADMsnmp" \
 		-o ${WRKSRC}/ADMsnmp ${WRKSRC}/snmp.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ADMsnmp ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/ADMsnmp
-	${MKDIR} ${PREFIX}/share/doc/ADMsnmp
-	${INSTALL_DATA} ${WRKSRC}/snmp.passwd ${PREFIX}/share/ADMsnmp
-	${INSTALL_DATA} ${WRKSRC}/ADMsnmp.README ${PREFIX}/share/doc/ADMsnmp
+	${INSTALL_PROGRAM} ${WRKSRC}/ADMsnmp ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/ADMsnmp
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ADMsnmp
+	${INSTALL_DATA} ${WRKSRC}/snmp.passwd ${STAGEDIR}${PREFIX}/share/ADMsnmp
+	${INSTALL_DATA} ${WRKSRC}/ADMsnmp.README \
+		${STAGEDIR}${PREFIX}/share/doc/ADMsnmp
 
 .include <bsd.port.mk>

@@ -12,18 +12,16 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remotely kill trino nodes
 
-NO_WRKSUBDIR=	yes
 PLIST_FILES=	sbin/trinokiller
 
-NO_STAGE=	yes
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${DISTNAME} ${DISTNAME}.c)
+	${CC} ${CFLAGS} -o ${WRKSRC}/${DISTNAME} ${WRKSRC}/${DISTNAME}.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${STAGEDIR}/${PREFIX}/sbin
 
 .include <bsd.port.mk>

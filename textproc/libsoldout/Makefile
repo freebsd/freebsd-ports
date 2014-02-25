@@ -15,20 +15,13 @@ MAKEFILE=	BSDmakefile
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libsoldout.so.1 ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/mkd2html ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/mkd2latex ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/mkd2man ${PREFIX}/bin
-	cd ${PREFIX}/lib && ${LN} -s libsoldout.so.1 libsoldout.so
-	${MKDIR} ${PREFIX}/include/soldout
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/soldout
+	${INSTALL_PROGRAM} ${WRKSRC}/libsoldout.so.1 ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/mkd2html ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mkd2latex ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mkd2man ${STAGEDIR}${PREFIX}/bin
+	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s libsoldout.so.1 libsoldout.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/soldout
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/soldout
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

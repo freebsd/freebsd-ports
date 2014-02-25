@@ -32,6 +32,8 @@
 
 GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
 GCCVERSIONS=	040200 040600 040700 040800 040900
@@ -45,14 +47,13 @@ GCCVERSION_040700=	     0       0 4.7
 GCCVERSION_040800=	     0       0 4.8
 GCCVERSION_040900=	     0       0 4.9
 
-GCC_DEFAULT_VERSION=	4.6
-GCC_DEFAULT_V=	${GCC_DEFAULT_VERSION:S/.//}
+GCC_DEFAULT_V=	${GCC_DEFAULT:S/.//}
 
 # No configurable parts below this. ####################################
 #
 
 .if defined(USE_GCC) && ${USE_GCC} == yes
-USE_GCC=	${GCC_DEFAULT_VERSION}+
+USE_GCC=	${GCC_DEFAULT}+
 .endif
 
 # Extract the fields from GCCVERSION_...
@@ -131,8 +132,8 @@ _GCC_FOUND:=	${_GCCVERSION_${v}_V}
 
 . if defined(_GCC_FOUND)
 _USE_GCC:=	${_GCC_FOUND}
-. elif ${_USE_GCC} < ${GCC_DEFAULT_VERSION}
-_USE_GCC:=	${GCC_DEFAULT_VERSION}
+. elif ${_USE_GCC} < ${GCC_DEFAULT}
+_USE_GCC:=	${GCC_DEFAULT}
 . endif
 .endif # defined(_GCC_ORLATER)
 
@@ -148,7 +149,7 @@ _USE_GCC:=	${GCC_DEFAULT_VERSION}
 .  if ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R} || !exists(/usr/bin/gcc)
 V:=			${_GCCVERSION_${v}_V:S/.//}
 _GCC_PORT_DEPENDS:=	gcc${V}
-.   if ${_USE_GCC} == ${GCC_DEFAULT_VERSION}
+.   if ${_USE_GCC} == ${GCC_DEFAULT}
 _GCC_PORT:=		gcc
 .   else
 _GCC_PORT:=		gcc${V}

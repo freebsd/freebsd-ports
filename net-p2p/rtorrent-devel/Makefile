@@ -12,7 +12,7 @@ COMMENT=	BitTorrent Client written in C++ (development version)
 
 BUILD_DEPENDS=	libtorrent-devel=0.13.3_1:${PORTSDIR}/net-p2p/libtorrent-devel
 RUN_DEPENDS=	libtorrent-devel=0.13.3_1:${PORTSDIR}/net-p2p/libtorrent-devel
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	rtorrent-[0-9]*
 
@@ -26,25 +26,24 @@ SUB_FILES=	pkg-message
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	XMLRPC IPV6 DOCS
-OPTIONS_DEFAULT=	XMLRPC IPV6
+OPTIONS_DEFAULT=	XMLRPC
 XMLRPC_DESC=	Compile with xmlrpc-c support
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${ARCH} == "arm"
+.if ${ARCH} == arm
 BROKEN=		Does not configure on arm
 .endif
 
 # Workaround to build and segfault on > 10.x
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 USE_GCC=	yes
 LDFLAGS+=	-lc++
 .endif
 
 .if ${PORT_OPTIONS:MXMLRPC}
 CONFIGURE_ARGS+=	--with-xmlrpc-c
-LIB_DEPENDS+=	xmlrpc:${PORTSDIR}/net/xmlrpc-c-devel
+LIB_DEPENDS+=	libxmlrpc.so:${PORTSDIR}/net/xmlrpc-c-devel
 .else
 CONFIGURE_ARGS+=	--with-xmlrpc-c=no
 .endif
@@ -57,12 +56,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/configure
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc ${EXAMPLESDIR}/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

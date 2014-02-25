@@ -13,40 +13,35 @@ COMMENT=	A document preparation system that allows concurrent publication
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.2:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	libxml2.so.5:${PORTSDIR}/textproc/libxml2 \
+		libxslt.so.2:${PORTSDIR}/textproc/libxslt
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_TEX=	latex
 
-FIND_DIRS=	-type d
-FIND_DATA=	-type f -not \( -name "*.orig" -or -name "*.bak" \)
+OPTIONS_DEFINE=	DOCS
 
-LN_OPTS=	-sf
-RM_OPTS=	-r
+PORTDOCS=	*
 
 ECMDS_CONF=	${WRKSRC}/etc/ecmds.conf
 ECROMEDOC=	${DATADIR}/doc
 ECROMEBIN=	${DATADIR}/bin/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		     -e 's|%%DATADIR%%|${DATADIR}|g' ${ECMDS_CONF}
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${FIND} . ${FIND_DIRS} -exec ${MKDIR} ${DATADIR}/{} \;
-	cd ${WRKSRC} && ${FIND} . ${FIND_DATA} -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${ECROMEBIN}
-	${LN} ${LN_OPTS} ${ECROMEBIN} ${PREFIX}/bin/${PORTNAME}
-	${LN} ${LN_OPTS} ${ECROMEBIN} ${PREFIX}/bin/ecmds
-.if !defined(NOPORTDOCS)
-	${MV} ${ECROMEDOC} ${DOCSDIR}
-	${LN} ${LN_OPTS} ${DOCSDIR} ${ECROMEDOC}
-.else
-	${RM} ${RM_OPTS} ${ECROMEDOC}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} "-not ( -name "*.orig" -or -name "*.bak" )"
+	${RM} -f ${STAGEDIR}${ECROMEBIN}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${ECROMEBIN}
+	${LN} -s ${ECROMEBIN} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${LN} -s ${ECROMEBIN} ${STAGEDIR}${PREFIX}/bin/ecmds
+	${MV} ${STAGEDIR}${DATADIR}/etc/ecmds.conf ${STAGEDIR}${DATADIR}/etc/ecmds.conf.sample
+	${MV} ${STAGEDIR}${DATADIR}/etc/plugins.conf ${STAGEDIR}${DATADIR}/etc/plugins.conf.sample
+	${MV} ${STAGEDIR}${ECROMEDOC} ${STAGEDIR}${DOCSDIR}
+	${LN} -s ${DOCSDIR} ${STAGEDIR}${ECROMEDOC}
 
 .include <bsd.port.mk>

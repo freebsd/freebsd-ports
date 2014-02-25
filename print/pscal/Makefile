@@ -12,8 +12,7 @@ COMMENT=	A utility for generating Postscript calendars
 NO_BUILD=	yes
 PLIST_FILES=	bin/pscal
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pscal ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/pscal ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

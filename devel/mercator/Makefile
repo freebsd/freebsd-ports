@@ -10,7 +10,7 @@ MASTER_SITES=	SF/worldforge/Mercator%20%28terrain%20lib%29/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A procedural terrain library
 
-LIB_DEPENDS=	wfmath-1.0.1:${PORTSDIR}/math/wfmath
+LIB_DEPENDS=	libwfmath-1.0.so:${PORTSDIR}/math/wfmath
 
 USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes

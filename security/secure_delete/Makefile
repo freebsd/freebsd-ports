@@ -19,15 +19,14 @@ MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 
-MLINKS=		srm.1 sdel.1
-MAN1=		srm.1 sfill.1 sswap.1 smem.1
 PORTDOCS=	CHANGES FILES README secure_delete.doc usenix6-gutmann.doc
-PLIST_FILES=	${BIN_PROGRAMS:S,^,bin/,} ${BIN_SCRIPTS:S,^,bin/,} bin/sdel
+PLIST_FILES=	bin/sdel bin/sfill bin/smem bin/srm bin/sswap \
+		bin/the_cleaner.sh man/man1/sfill.1.gz man/man1/smem.1.gz \
+		man/man1/srm.1.gz man/man1/sswap.1.gz
 
 BIN_PROGRAMS=	srm sfill sswap smem
 BIN_SCRIPTS=	the_cleaner.sh
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -38,19 +37,16 @@ post-patch:
 
 do-install:
 .for i in ${BIN_PROGRAMS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${i}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${i}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
 .for i in ${BIN_SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${LN} -sf srm ${PREFIX}/bin/sdel
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${LN} -sf srm ${STAGEDIR}${PREFIX}/bin/sdel
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	daq
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	net
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/

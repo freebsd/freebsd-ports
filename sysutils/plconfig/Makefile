@@ -10,20 +10,15 @@ MASTER_SITES=	http://www.neon1.net/prog/ \
 MAINTAINER=	matt@peterson.org
 COMMENT=	Tool for configuring HomePlug powerline bridges
 
-#WRKSRC=		${WRKDIR}/${PORTNAME}
-
 ALL_TARGET=	plconfig
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/plconfig ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/plconfig ${STAGEDIR}${PREFIX}/bin
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

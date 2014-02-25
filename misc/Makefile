@@ -249,6 +249,7 @@
     SUBDIR += lesspipe
     SUBDIR += libeatmydata
     SUBDIR += libhome
+    SUBDIR += libisocodes
     SUBDIR += libkdeedu
     SUBDIR += libmetalink
     SUBDIR += libpri

@@ -34,15 +34,10 @@ BROKEN=		port requires FreeBSD 8.x
 .endif
 
 do-install:
-	@${MKDIR} ${LOCALBASE}/share/maudio && \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/maudio
 	${INSTALL_DATA} ${WRKSRC}/ma003101.bin ${WRKSRC}/ma004103.bin \
 		${WRKSRC}/ma005101.bin ${WRKSRC}/ma006100.bin \
-		${WRKSRC}/ma008100.bin ${LOCALBASE}/share/maudio
-	@${INSTALL_DATA} ${WRKDIR}/maudio-devd.conf ${LOCALBASE}/etc/devd
-
-post-install:
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
+		${WRKSRC}/ma008100.bin ${STAGEDIR}${PREFIX}/share/maudio
+	${INSTALL_DATA} ${WRKDIR}/maudio-devd.conf ${STAGEDIR}${PREFIX}/etc/devd
 
 .include <bsd.port.post.mk>

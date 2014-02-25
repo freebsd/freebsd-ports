@@ -9,7 +9,6 @@ MASTER_SITES=	http://www.mnogosearch.org/guesser/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for guessing a text's charset and language
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -E \
 		"s/^CC=.+//g; s|^CFLAGS=|CFLAGS+=|g; s|-Wall -g||g; \
@@ -18,8 +17,8 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mguesser ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/mguesser
-	${INSTALL_DATA} ${WRKSRC}/maps/*.lm ${PREFIX}/share/mguesser
+	${INSTALL_PROGRAM} ${WRKSRC}/mguesser ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/maps/*.lm ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

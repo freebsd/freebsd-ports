@@ -1,42 +1,5 @@
 bin/ecmds
 bin/ecromedos
-%%PORTDOCS%%%%DOCSDIR%%/langdef.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/biblio.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/chapter1.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/chapter2.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/chapter3.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/chapter4.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/chapter5.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/m000001.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/next.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/prev.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/style.css
-%%PORTDOCS%%%%DOCSDIR%%/manual/html/toc.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/pdf/manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/manual/src/advanced.xml
-%%PORTDOCS%%%%DOCSDIR%%/manual/src/compiling.xml
-%%PORTDOCS%%%%DOCSDIR%%/manual/src/installation.xml
-%%PORTDOCS%%%%DOCSDIR%%/manual/src/introduction.xml
-%%PORTDOCS%%%%DOCSDIR%%/manual/src/manual.xml
-%%PORTDOCS%%%%DOCSDIR%%/manual/src/writing.xml
-%%PORTDOCS%%%%DOCSDIR%%/reference/html/chapter1.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/html/chapter2.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/html/chapter3.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/html/chapter4.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/html/chapter5.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/html/next.gif
-%%PORTDOCS%%%%DOCSDIR%%/reference/html/prev.gif
-%%PORTDOCS%%%%DOCSDIR%%/reference/html/style.css
-%%PORTDOCS%%%%DOCSDIR%%/reference/html/toc.gif
-%%PORTDOCS%%%%DOCSDIR%%/reference/pdf/reference.pdf
-%%PORTDOCS%%%%DOCSDIR%%/reference/src/AtoC.xml
-%%PORTDOCS%%%%DOCSDIR%%/reference/src/DtoL.xml
-%%PORTDOCS%%%%DOCSDIR%%/reference/src/MtoS.xml
-%%PORTDOCS%%%%DOCSDIR%%/reference/src/TtoZ.xml
-%%PORTDOCS%%%%DOCSDIR%%/reference/src/defs.xml
-%%PORTDOCS%%%%DOCSDIR%%/reference/src/reference.xml
 %%DATADIR%%/bin/configreader.py
 %%DATADIR%%/bin/configreader.pyc
 %%DATADIR%%/bin/ecmdsproc.py
@@ -58,8 +21,12 @@ bin/ecromedos
 %%DATADIR%%/data/toc.gif
 %%DATADIR%%/data/toc.png
 %%PORTDOCS%%%%DATADIR%%/doc
-%%DATADIR%%/etc/ecmds.conf
-%%DATADIR%%/etc/plugins.conf
+@unexec if cmp -s %D/%%DATADIR%%/etc/ecmds.conf.sample %D/%%DATADIR%%/etc/ecmds.conf; then rm -f %D/%%DATADIR%%/etc/ecmds.conf; fi
+%%DATADIR%%/etc/ecmds.conf.sample
+@exec if [ ! -f %D/%%DATADIR%%/etc/ecmds.conf ] ; then cp -p %D/%F %B/ecmds.conf; fi
+@unexec if cmp -s %D/%%DATADIR%%/etc/plugins.conf.sample %D/%%DATADIR%%/etc/plugins.conf; then rm -f %D/%%DATADIR%%/etc/plugins.conf; fi
+%%DATADIR%%/etc/plugins.conf.sample
+@exec if [ ! -f %D/%%DATADIR%%/etc/plugins.conf ] ; then cp -p %D/%F %B/plugins.conf; fi
 %%DATADIR%%/lib/__init__.py
 %%DATADIR%%/lib/hylight/__init__.py
 %%DATADIR%%/lib/hylight/__init__.pyc
@@ -249,15 +216,6 @@ bin/ecromedos
 %%DATADIR%%/transform/xhtml/toc.xsl
 %%DATADIR%%/transform/xhtml/utility.xsl
 %%DATADIR%%/transform/xhtml/xhtml.xsl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/src
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/src
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/etc

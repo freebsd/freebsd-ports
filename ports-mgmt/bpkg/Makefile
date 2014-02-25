@@ -13,13 +13,10 @@ COMMENT=	Simple tool for displaying information about ports
 NO_BUILD=	yes
 SUB_FILES=	bpkg.sh
 
-PLIST_FILES=	bin/bpkg
+PLIST_FILES=	bin/bpkg man/man8/bpkg.8.gz
 
-MAN8=		bpkg.8
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/bpkg.sh ${PREFIX}/bin/bpkg
-	${INSTALL_MAN} ${FILESDIR}/bpkg.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_SCRIPT} ${WRKDIR}/bpkg.sh ${STAGEDIR}${PREFIX}/bin/bpkg
+	${INSTALL_MAN} ${FILESDIR}/bpkg.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

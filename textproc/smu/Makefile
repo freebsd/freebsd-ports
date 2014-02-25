@@ -13,15 +13,13 @@ COMMENT=	A simple interpreter for a simplified markdown dialect
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MAN1=	smu.1
-PLIST_FILES=	bin/smu
+PLIST_FILES=	bin/smu man/man1/smu.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|g' ${WRKSRC}/config.mk
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/smu ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/smu.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/smu ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/smu.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

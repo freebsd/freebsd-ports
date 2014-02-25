@@ -10,12 +10,10 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/pfbtopfa/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PFB files to the PFA format
 
-MAN1=		pfbtopfa.1
-PLIST_FILES=	bin/pfbtopfa
+PLIST_FILES=	bin/pfbtopfa man/man1/pfbtopfa.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pfbtopfa ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pfbtopfa.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/pfbtopfa ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pfbtopfa.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
