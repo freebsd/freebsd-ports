@@ -15,9 +15,9 @@ COMMENT=	The most popular open source Internet Relay Chat bot
 
 LICENSE=	GPLv2
 
-USE_TCL=	85+
+USES=		tcl:85+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
+CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
 		--with-tclinc=${LOCALBASE}/include/tcl${TCL_VER}/tcl.h
 
 MAKE_JOBS_UNSAFE=	yes
