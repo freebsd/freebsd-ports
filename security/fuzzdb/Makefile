@@ -16,21 +16,15 @@ PORTDOCS=	_copyright.txt _readme.txt
 PORTDIRS=	attack-payloads wordlists-misc Discovery \
 		web-backdoors wordlists-user-passwd regex
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-install:
 .for dir in ${PORTDIRS}
-	( cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${DATADIR}/${dir} )
+	( cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${dir} )
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.	for doc in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.	endfor
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
