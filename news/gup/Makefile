@@ -11,15 +11,13 @@ COMMENT=	Allows remote sites to change their newsgroup subscriptions
 
 WRKSRC=		${WRKDIR}/gup
 
-MAN1=		gup.1
-PLIST_FILES=	libexec/gup
+PLIST_FILES=	libexec/gup man/man1/gup.1.gz
 
-NO_STAGE=	yes
 do-configure:
 	@${CP} ${FILESDIR}/freebsd ${WRKSRC}/config
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gup ${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/gup.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/gup ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_MAN} ${WRKSRC}/gup.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
