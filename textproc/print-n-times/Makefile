@@ -12,10 +12,8 @@ COMMENT=	Print a string (n) times
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO} "Installing in ${PREFIX}/share/xsl/string/"
-	@${MKDIR} ${PREFIX}/share/xsl/string
-	@${CP} ${WRKSRC}/*.xsl ${PREFIX}/share/xsl/string/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsl/string
+	${INSTALL_DATA} ${WRKSRC}/*.xsl ${STAGEDIR}${PREFIX}/share/xsl/string
 
 .include <bsd.port.mk>
