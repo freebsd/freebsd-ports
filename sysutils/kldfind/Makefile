@@ -12,14 +12,11 @@ COMMENT=	Find kernel modules by string
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
-MAN8=		kldfind.8
-PLIST_FILES=	sbin/kldfind
+PLIST_FILES=	sbin/kldfind man/man8/kldfind.8.gz
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO_MSG} "===>  Installing kldfind."
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION} ${PREFIX}/sbin/${PORTNAME}
-	@${ECHO_MSG} "===>  Installing man page."
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MAN8PREFIX}/man/man8/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
