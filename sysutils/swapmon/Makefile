@@ -13,18 +13,20 @@ COMMENT=	Add/remove swapspace as needed
 LICENSE=	BSD
 
 NO_BUILD=	yes
-MAN1=		${PORTNAME}.1
 
 USE_RC_SUBR=	${PORTNAME}
 
-PLIST_FILES=	sbin/${PORTNAME}
+PLIST_FILES=	sbin/swapmon man/man1/swapmon.1.gz
 
-NO_STAGE=	yes
-do-install:
+post-extract:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/${PORTNAME}.sh.in \
 		> ${WRKDIR}/${PORTNAME}.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/sbin/${PORTNAME}
-	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${PREFIX}/man/man1
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 post-install:
 	@${ECHO_MSG}	""
