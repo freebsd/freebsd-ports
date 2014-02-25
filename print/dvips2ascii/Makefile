@@ -9,15 +9,13 @@ MASTER_SITES=	SF/srezic/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	slaven@rezic.de
 COMMENT=	PostScript (created by dvips) to ASCII converter
 
-PLIST_FILES=	bin/dvips2ascii
+USES=		shebangfix
+NO_BUILD=	yes
 
-NO_STAGE=	yes
-do-build:
-	${MV} ${WRKSRC}/dvips2ascii ${WRKSRC}/dvips2ascii.orig
-	${SED} -e 's;#!.*perl;#!${PERL};' \
-	    < ${WRKSRC}/dvips2ascii.orig > ${WRKSRC}/dvips2ascii
+PLIST_FILES=	bin/dvips2ascii
+SHEBANG_FILES=	dvips2ascii
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dvips2ascii ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/dvips2ascii ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
