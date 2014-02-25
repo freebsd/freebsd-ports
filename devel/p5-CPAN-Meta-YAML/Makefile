@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CPAN-Meta-YAML
-PORTVERSION=	0.011
+PORTVERSION=	0.012
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,11 +19,4 @@ TEST_DEPENDS=	p5-Test-Simple>=0.99:${PORTSDIR}/devel/p5-Test-Simple \
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501400
-BUILD_DEPENDS+=	p5-JSON-PP>=0:${PORTSDIR}/converters/p5-JSON-PP
-RUN_DEPENDS+=	p5-JSON-PP>=0:${PORTSDIR}/converters/p5-JSON-PP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
