@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	varconf
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28config%20lib%29/${PORTVERSION}
@@ -19,6 +19,7 @@ USE_BZIP2=	yes
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+USE_GCC=	4.7+
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
