@@ -4,22 +4,25 @@
 PORTNAME=	ratproxy
 PORTVERSION=	1.58
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Semi-automated, largely passive web application security audit tool
 
+USES=		shebangfix
 USE_OPENSSL=	YES
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+SHEBANG_FILES=	ratproxy-report.sh
 PLIST_FILES=	bin/ratproxy \
 		bin/ratproxy-report.sh
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#-Wno-pointer-sign##g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ratproxy ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/ratproxy-report.sh ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ratproxy ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ratproxy-report.sh ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
