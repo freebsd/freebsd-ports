@@ -4,18 +4,16 @@
 PORTNAME=	gstopd
 PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	mr
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	GEOM stop daemon
 
-MAN8=		gstopd.8
-PLIST_FILES=	sbin/gstopd
+PLIST_FILES=	sbin/gstopd man/man8/gstopd.8.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gstopd ${LOCALBASE}/sbin
-	${INSTALL_MAN} ${WRKSRC}/gstopd.8 ${LOCALBASE}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/gstopd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/gstopd.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>
