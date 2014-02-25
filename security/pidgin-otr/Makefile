@@ -13,8 +13,11 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Allows deniable private conversations using Pidgin
 
+LICENSE=	GPLv2
+
+# explicitly use libotr.so.5 (see ports/186944)
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	libotr.so:${PORTSDIR}/security/libotr \
+LIB_DEPENDS=	libotr.so.5:${PORTSDIR}/security/libotr \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libpurple.so:${PORTSDIR}/net-im/libpurple
 
