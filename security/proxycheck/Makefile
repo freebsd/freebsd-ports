@@ -12,17 +12,14 @@ COMMENT=	Check for open proxy servers
 
 PORTSCOUT=	skipv:0.49
 
-MAN1=		proxycheck.1
-
 HAS_CONFIGURE=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-		@${INSTALL_PROGRAM} ${WRKSRC}/proxycheck ${PREFIX}/sbin/
-		@${INSTALL_MAN} ${WRKSRC}/proxycheck.1 ${PREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
-		@${MKDIR} ${DOCSDIR}
-		@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/proxycheck ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/proxycheck.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
