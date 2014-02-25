@@ -10,25 +10,20 @@ MASTER_SITES=	http://lockdown.trunet.dk/ \
 MAINTAINER=	db@TruNet.dk
 COMMENT=	Hardening script for FreeBSD
 
-MAN1=		editfile.1 editfstab.1 editkernel.1 editlogin.1 editttys.1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-CFLAGS+=	-fPIC
-.endif
-
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/lockdown
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/cppe/src/libcppe.so ${PREFIX}/lib/libcppe.so
-.for i in editfile editfstab editkernel editlogin editttys
-	${INSTALL_PROGRAM} ${WRKSRC}/edittools/${i}/src/${i} ${PREFIX}/bin/${i}
-	${INSTALL_MAN} ${WRKSRC}/edittools/${i}/doc/${i}.1 ${PREFIX}/man/man1/${i}.1
-.endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/lockdown ${PREFIX}/bin/lockdown
+CFLAGS_amd64+=	-fPIC
 
-.include <bsd.port.post.mk>
+do-install:
+	${INSTALL_LIB} ${WRKSRC}/cppe/src/libcppe.so ${STAGEDIR}${PREFIX}/lib
+.for f in editfile editfstab editkernel editlogin editttys
+	${INSTALL_PROGRAM} ${WRKSRC}/edittools/${f}/src/${f} \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/edittools/${f}/doc/${f}.1 \
+		${STAGEDIR}${PREFIX}/man/man1
+.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/lockdown ${STAGEDIR}${PREFIX}/bin
+
+.include <bsd.port.mk>
