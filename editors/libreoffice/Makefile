@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	3
+PORTREVISION=	0
 
 COMMENT=	Full integrated office productivity suite
 
@@ -10,7 +10,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
+		${LOCALBASE}/libdata/pkgconfig/cppunit.pc:${PORTSDIR}/devel/cppunit \
 		dmake:${PORTSDIR}/devel/dmake \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		mdds>=0.9.0:${PORTSDIR}/devel/mdds \
@@ -34,10 +34,13 @@ LIB_DEPENDS=	libicutu.so:${PORTSDIR}/devel/icu \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
 		liblpsolve55.so:${PORTSDIR}/math/lp_solve \
 		libcmis-0.4.so:${PORTSDIR}/net/libcmis \
+		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libmspub-0.0.so:${PORTSDIR}/print/libmspub \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libclucene-core.so:${PORTSDIR}/textproc/clucene \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libmwaw-0.1.so:${PORTSDIR}/textproc/libmwaw \
+		libodfgen-0.0.so:${PORTSDIR}/textproc/libodfgen \
 		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libhyphen.so:${PORTSDIR}/textproc/hyphen \
 		libexttextcat-2.0.so:${PORTSDIR}/textproc/libexttextcat \
@@ -82,6 +85,7 @@ LODESTDIR=	${WRKDIR}/loinstall
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
 CONFIGURE_ENV=		DMAKE=${LOCALBASE}/bin/dmake \
+			GNUTAR=${TAR} \
 			GPERF=${LOCALBASE}/bin/gperf \
 			PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 			PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
@@ -124,6 +128,7 @@ CONFIGURE_ARGS+=	--disable-epm \
 			--with-system-dicts \
 			--with-system-expat \
 			--with-system-graphite \
+			--with-system-harfbuzz \
 			--with-system-hunspell \
 			--with-system-icu \
 			--with-system-jpeg \
@@ -133,6 +138,8 @@ CONFIGURE_ARGS+=	--disable-epm \
 			--with-system-libexttextcat \
 			--with-system-liblangtag \
 			--with-system-libmspub \
+			--with-system-libmwaw \
+			--with-system-libodfgen \
 			--with-system-libpng \
 			--with-system-libvisio \
 			--with-system-libwpd \
@@ -191,8 +198,6 @@ CONFIGURE_ARGS+=	--enable-release-build
 
 .if ${PORT_OPTIONS:MDEBUG} || ${PORT_OPTIONS:MVERBOSE}
 CONFIGURE_ARGS+=	--enable-verbose
-.else
-CONFIGURE_ARGS+=	--disable-verbose
 .endif
 
 .if ${PORT_OPTIONS:MGNOME}
@@ -230,19 +235,19 @@ CONFLICTS_BUILD=	classpath-[0-9]*
 #additionnal distfiles needed for java
 DISTFILES+=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz:src \
-		2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz:src \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:src \
+		2e482c7567908d334785ce7d69ddfff7-commons-codec-1.6-src.tar.gz:src \
 		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:src \
 		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:src \
-		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:src \
-		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:src \
 		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:src \
+		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:src \
+		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:src \
+		625ff5f2f968dd908bca43c9469d6e6b-commons-lang-2.4-src.tar.gz:src \
 		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:src \
 		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:src \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:src \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:src \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:src \
-		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz:src \
 		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:src \
 		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:src \
 		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:src \

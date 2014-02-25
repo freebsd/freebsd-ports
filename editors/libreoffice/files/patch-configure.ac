@@ -1,6 +1,6 @@
---- configure.ac.orig	2013-08-13 16:11:48.000000000 -0400
-+++ configure.ac	2013-09-13 17:50:41.000000000 -0400
-@@ -3637,7 +3637,7 @@
+--- configure.ac.orig	2014-02-21 20:38:43.000000000 -0500
++++ configure.ac	2014-02-24 12:51:26.000000000 -0500
+@@ -3586,7 +3586,7 @@
          PLATFORMID=freebsd_x86
          OUTPATH=unxfbsdi
          ;;
@@ -9,7 +9,7 @@
          CPU=X
          CPUNAME=X86_64
          RTL_ARCH=X86_64
-@@ -6281,21 +6281,13 @@
+@@ -6541,21 +6541,13 @@
              JAVA_ARCH="i386"
              JAVA_TOOLKIT="client"
              ;;
@@ -26,24 +26,24 @@
 +            JAVA_TOOLKIT="server"
              ;;
          esac
-         SOLARINC="$SOLARINC -I$JAVA_HOME/include"
-         SOLARINC="$SOLARINC -I$JAVA_HOME/include/freebsd"
--        SOLARINC="$SOLARINC -I$JAVA_HOME/include/bsd"
--        SOLARINC="$SOLARINC -I$JAVA_HOME/include/linux"
--        SOLARINC="$SOLARINC -I$JAVA_HOME/include/native_threads/include"
+         JAVAINC="-I$JAVA_HOME/include"
+         JAVAINC="$JAVAINC -I$JAVA_HOME/include/freebsd"
+-        JAVAINC="$JAVAINC -I$JAVA_HOME/include/bsd"
+-        JAVAINC="$JAVAINC -I$JAVA_HOME/include/linux"
+-        test -d "$JAVA_HOME/include/native_thread" && JAVAINC="$JAVAINC -I$JAVA_HOME/include/native_thread"
          ;;
  
      k*bsd*-gnu*)
-@@ -6978,7 +6970,7 @@
- if test "$with_system_libcmis" = "yes"; then
-     AC_MSG_RESULT([external])
-     SYSTEM_LIBCMIS=YES
--    PKG_CHECK_MODULES( CMIS, libcmis-0.3 >= 0.3.1 )
-+    PKG_CHECK_MODULES( CMIS, libcmis-0.4 >= 0.4.1 )
- else
-     AC_MSG_RESULT([internal])
-     SYSTEM_LIBCMIS=NO
-@@ -8298,7 +8290,7 @@
+@@ -7222,7 +7214,7 @@
+ dnl ===================================================================
+ dnl Check for system libcmis
+ dnl ===================================================================
+-libo_CHECK_SYSTEM_MODULE([libcmis],[CMIS],[libcmis-0.3 >= 0.3.1])
++libo_CHECK_SYSTEM_MODULE([libcmis],[CMIS],[libcmis-0.4 >= 0.4.1])
+ 
+ dnl ===================================================================
+ dnl Check for system libwpd
+@@ -8416,7 +8408,7 @@
  dnl ===================================================================
  
  AC_MSG_CHECKING([whether to enable graphite support])
@@ -51,28 +51,17 @@
 +if test "$_os" = "WINNT" -o "$_os" = "Linux" -o "$_os" = "FreeBSD" && test "$enable_graphite" = "" -o "$enable_graphite" != "no"; then
      AC_MSG_RESULT([yes])
      ENABLE_GRAPHITE="TRUE"
-     AC_MSG_CHECKING([which graphite to use])
-@@ -8550,8 +8542,8 @@
-     AC_MSG_RESULT([external])
-     # Mac OS builds should get out without extra stuff is the Mac porters'
-     # wish. And pkg-config is although Xcode ships a .pc for openssl
--    if test "$_os" = "Darwin" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o \
--            "$_os" = "DragonFly"; then
-+    if test "$_os" = "Darwin" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o \
-+            "$_os" = "OpenBSD" -o "$_os" = "DragonFly"; then
-         OPENSSL_CFLAGS=
-         OPENSSL_LIBS="-lssl -lcrypto"
-     else
-@@ -8605,7 +8597,7 @@
- if test "$with_system_orcus" = "yes"; then
-     AC_MSG_RESULT([external])
-     SYSTEM_LIBORCUS=YES
--    PKG_CHECK_MODULES(ORCUS, liborcus-0.4 >= 0.3.0)
-+    PKG_CHECK_MODULES(ORCUS, liborcus-0.6 >= 0.5.0)
- else
-     AC_MSG_RESULT([internal])
-     BUILD_TYPE="$BUILD_TYPE ORCUS"
-@@ -10419,10 +10411,10 @@
+     AC_DEFINE(ENABLE_GRAPHITE)
+@@ -8641,7 +8633,7 @@
+ 
+         with_system_openssl=no
+         libo_CHECK_SYSTEM_MODULE([openssl],[OPENSSL],[openssl])
+-    elif test "$_os" = "Darwin" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o \
++    elif test "$_os" = "Darwin" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o \
+             "$_os" = "DragonFly" && test "$with_system_openssl" != "no"; then
+         # Mac OS builds should get out without extra stuff is the Mac porters'
+         # wish. And pkg-config is although Xcode ships a .pc for openssl
+@@ -10472,10 +10464,10 @@
  
      dnl Check for Meta Object Compiler
  

@@ -1,11 +1,11 @@
---- ./sysui/desktop/share/create_tree.sh.orig	2013-01-31 05:54:53.000000000 -0500
-+++ ./sysui/desktop/share/create_tree.sh	2013-02-18 18:46:30.000000000 -0500
-@@ -60,32 +60,32 @@
+--- sysui/desktop/share/create_tree.sh.orig	2013-12-11 01:11:21.000000000 +0900
++++ sysui/desktop/share/create_tree.sh	2014-01-29 17:16:09.000000000 +0900
+@@ -57,32 +57,32 @@
    chmod 0644 "${DESTDIR}/${GNOMEDIR}/share/application-registry/${PREFIX}".*
  fi
  
 -mkdir -p "${DESTDIR}/usr/bin"
-+mkdir -p "${DESTDIR}/${PREFIXSDIR}/bin"
++mkdir -p "${DESTDIR}/${PREFIXDIR}/bin"
  
  test -n "${OFFICE_PREFIX}" && office_prefix="${OFFICE_PREFIX}" || office_prefix=/opt
  office_root=${office_prefix}/${PREFIX}
@@ -19,7 +19,7 @@
 +cp printeradmin.sh "${DESTDIR}/${PREFIXDIR}/bin/${PREFIX}-printeradmin"
 +chmod 0755 "${DESTDIR}/${PREFIXDIR}/bin/${PREFIX}-printeradmin"
  
- if test "${PREFIX}" != libreoffice${PRODUCTVERSION} -a "${PREFIX}" != lodev${PRODUCTVERSION}  ; then
+ if test "${PREFIX}" != libreoffice${PRODUCTVERSION} -a "${PREFIX}" != libreofficedev${PRODUCTVERSION}  ; then
      # compat symlinks
      mkdir -p "${DESTDIR}${office_prefix}"
      ln -sf libreoffice${PRODUCTVERSION} "${DESTDIR}${office_root}"
@@ -29,7 +29,7 @@
 +    ln -sf /${PREFIXDIR}/bin/${PREFIX}-printeradmin "${DESTDIR}/${PREFIXDIR}/bin/libreoffice${PRODUCTVERSION}-printeradmin"
  fi
  
- test "${PREFIX}" = lodev${PRODUCTVERSION} && mime_def_file="lodev${PRODUCTVERSION}.xml" || mime_def_file="libreoffice${PRODUCTVERSION}.xml"
+ test "${PREFIX}" = libreofficedev${PRODUCTVERSION} && mime_def_file="libreofficedev${PRODUCTVERSION}.xml" || mime_def_file="libreoffice${PRODUCTVERSION}.xml"
 -mkdir -p "${DESTDIR}/usr/share/mime/packages"
 -cp openoffice.org.xml "${DESTDIR}/usr/share/mime/packages/$mime_def_file"
 -chmod 0644 "${DESTDIR}/usr/share/mime/packages/$mime_def_file"

@@ -450,19 +450,8 @@
  
          // temporary params
          for ( ; nTempIndizes--; )
---- sal/inc/rtl/allocator.hxx.orig	2013-08-13 16:11:48.000000000 -0400
-+++ sal/inc/rtl/allocator.hxx	2013-09-12 16:56:43.000000000 -0400
-@@ -125,7 +125,7 @@
-     }
- 
-     //-----------------------------------------
--#if defined HAVE_CXX11_PERFECT_FORWARDING
-+#if defined(HAVE_CXX11_PERFECT_FORWARDING) && !defined(_LIBCPP_VERSION)
-     template< typename... Args >
-     void construct (pointer p, Args &&... value)
-     {
---- sal/inc/sal/log.hxx.orig	2013-08-13 16:11:48.000000000 -0400
-+++ sal/inc/sal/log.hxx	2013-09-13 05:27:31.000000000 -0400
+--- include/sal/log.hxx.orig	2013-08-13 16:11:48.000000000 -0400
++++ include/sal/log.hxx	2013-09-13 05:27:31.000000000 -0400
 @@ -177,9 +177,13 @@
  
      @since LibreOffice 3.5
