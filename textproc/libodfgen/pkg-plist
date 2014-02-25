@@ -7,6 +7,7 @@ lib/libodfgen-0.0.a
 lib/libodfgen-0.0.la
 lib/libodfgen-0.0.so
 lib/libodfgen-0.0.so.0
+lib/libodfgen-0.0.so.0.0.4
 libdata/pkgconfig/libodfgen-0.0.pc
 @dirrm include/libodfgen-0.0/libodfgen
 @dirrm include/libodfgen-0.0

@@ -21,10 +21,10 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_XZ=		yes
-USES=		pkgconfig pathfix
+USES=		libtool pkgconfig pathfix
 
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
