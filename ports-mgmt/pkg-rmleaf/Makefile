@@ -19,12 +19,12 @@ WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	sbin/pkg-rmleaf
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${FILESDIR}/pkg-rmleaf ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pkg-rmleaf ${PREFIX}/sbin/pkg-rmleaf
+	${INSTALL_SCRIPT} ${WRKSRC}/pkg-rmleaf \
+		${STAGEDIR}${PREFIX}/sbin/pkg-rmleaf
 
 .include <bsd.port.mk>
