@@ -9,21 +9,18 @@ MASTER_SITES=	http://80386.nl/projects/${PORTNAME}/distfiles/
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Utility that uses LD_PRELOAD to hide .svn directories
 
-MAKEFILE=	BSDmakefile
-
-PLIST_FILES=	bin/${PORTNAME} lib/lib${PORTNAME}.so
-MAN1=		${PORTNAME}.1
-
+USES=		shebangfix
 USE_LDCONFIG=	yes
 USE_XZ=		yes
 
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' ${WRKSRC}/${PORTNAME}.sh
+PLIST_FILES=	bin/hidesvn lib/libhidesvn.so man/man1/hidesvn.1.gz
+SHEBANG_FILES=	hidesvn.sh
+MAKEFILE=	BSDmakefile
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lib${PORTNAME}.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_LIB} ${WRKSRC}/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
