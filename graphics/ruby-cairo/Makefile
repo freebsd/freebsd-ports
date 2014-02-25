@@ -26,17 +26,13 @@ EXPIRATION_DATE=2014-03-23
 
 NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/agg
-	@${INSTALL_DATA} ${WRKSRC}/samples/*.rb ${RUBY_MODEXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/samples/agg/*.rb ${RUBY_MODEXAMPLESDIR}/agg/
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/agg
+	@${INSTALL_DATA} ${WRKSRC}/samples/*.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/samples/agg/*.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/agg/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.pre.mk>
 
