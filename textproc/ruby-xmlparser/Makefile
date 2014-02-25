@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-perl-enc-map=${SITE_PERL}/${PERL_ARCH}/XML/Parser/Encodings
 INSTALL_TARGET=	site-install
 
-NO_STAGE=	yes
 post-extract:
 	${FIND} ${WRKSRC} -name CVS -type d -exec ${RM} -r {} ';' -prune
 
@@ -33,10 +32,8 @@ post-patch:
 	${RUBY} -i -pe 'gsub /%%PREFIX%%/, "${PREFIX}"' ${WRKSRC}/lib/wget.rb
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/ja/
-	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README.ja ${RUBY_MODDOCDIR}/ja/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.ja ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
 .include <bsd.port.mk>
