@@ -13,25 +13,14 @@ LICENSE=	BSD
 
 NO_BUILD=	yes
 
-MAN8=		${PORTNAME}.8
-
-PLIST_FILES=	sbin/${PORTNAME}                   \
-		share/${PORTNAME}/common.subr      \
-		share/${PORTNAME}/${PORTNAME}.subr \
-		libexec/${PORTNAME}/include/messages.subr
-
-PLIST_DIRS=	share/${PORTNAME}           \
-		libexec/${PORTNAME}/include \
-		libexec/${PORTNAME}
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
-	${MKDIR} ${PREFIX}/share/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/common.subr ${PREFIX}/share/${PORTNAME}/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.subr ${PREFIX}/share/${PORTNAME}/
-	${MKDIR} ${PREFIX}/libexec/${PORTNAME}/include
-	${INSTALL_DATA} ${WRKSRC}/messages.subr ${PREFIX}/libexec/${PORTNAME}/include/
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/common.subr ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.subr ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/include
+	${INSTALL_DATA} ${WRKSRC}/messages.subr \
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/include
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
