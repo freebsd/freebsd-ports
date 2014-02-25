@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	svnup
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	net
 MASTER_SITES=	http://jcm.dsl.visi.com/freebsd/svnup/ \
 		LOCAL/jgh/net/${PORTNAME}/
@@ -9,7 +9,7 @@ MASTER_SITES=	http://jcm.dsl.visi.com/freebsd/svnup/ \
 MAINTAINER=	jcm@visi.com
 COMMENT=	Lightweight program to pull source from an Apache Subversion server
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LDFLAGS+=	-lmd -lssl
 USE_XZ=	yes
