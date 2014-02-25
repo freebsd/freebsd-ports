@@ -13,7 +13,8 @@ COMMENT=	A connection forwarder that converts Unix sockets into TCP sockets
 CFLAGS+=	-DHAVE_CONFIG_H -I.
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -c ${PORTNAME}.c -o ${PORTNAME}.o &&\
@@ -24,11 +25,8 @@ do-build:
 	${CC} ${CFLAGS} -c utelnet.c -o utelnet.o
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
 
 .include <bsd.port.mk>
