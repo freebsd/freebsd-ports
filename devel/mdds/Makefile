@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdds
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.2
 CATEGORIES=	devel
 MASTER_SITES=	http://kohei.us/files/mdds/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
