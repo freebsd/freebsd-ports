@@ -22,10 +22,9 @@ PLIST_DIRSTRY=	%%DATADIR%%
 PLIST_FILES=	bin/closure-compiler \
 		%%DATADIR%%/compiler.jar
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/compiler.jar ${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/closure-compiler ${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/compiler.jar ${STAGEDIR}${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/closure-compiler ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
