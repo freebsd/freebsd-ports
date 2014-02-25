@@ -17,9 +17,6 @@ PLIST_FILES=	${SBIN_PROGRAMS:S,^,sbin/,}
 
 SBIN_PROGRAMS=	read_data replace_data search_data write_data
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|^CC=|CC?=| ; \
@@ -28,13 +25,11 @@ post-patch:
 
 do-install:
 .for i in ${SBIN_PROGRAMS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
