@@ -9,11 +9,10 @@ MASTER_SITES=	http://www.vuxml.org/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VuXML Query Tool
 
-USE_BZIP2=	YES
-GNU_CONFIGURE=	YES
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/object/vxquery ${PREFIX}/bin/vxquery
+	${INSTALL_PROGRAM} ${WRKSRC}/object/vxquery ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
