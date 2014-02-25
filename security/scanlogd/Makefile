@@ -14,22 +14,18 @@ COMMENT=	TCP port scan detection tool
 USE_RC_SUBR=	${PORTNAME}
 
 .if defined(WITH_LIBNIDS)
-BUILD_DEPENDS+= ${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
 ALL_TARGET=	libnids
 .else
 ALL_TARGET=	libpcap
 .endif
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c" LD="${CC}"
 
-MAN8=		scanlogd.8
-PLIST_FILES=	bin/scanlogd
+PLIST_FILES=	bin/scanlogd man/man8/scanlogd.8.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/scanlogd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/scanlogd.8 ${MANPREFIX}/man/man8
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/scanlogd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/scanlogd.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
