@@ -13,12 +13,11 @@ COMMENT=	Security C code scanner for misuse of format strings
 ALL_TARGET=	#empty
 WRKSRC=		${WRKDIR}
 
-PLIST_FILES=	bin/pscan \
-		bin/find_formats
+PLIST_FILES=	bin/pscan bin/find_formats
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pscan ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/find_formats.sh ${PREFIX}/bin/find_formats
+	${INSTALL_PROGRAM} ${WRKSRC}/pscan ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/find_formats.sh \
+		${STAGEDIR}${PREFIX}/bin/find_formats
 
 .include <bsd.port.mk>
