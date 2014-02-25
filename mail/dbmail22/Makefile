@@ -3,6 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.2.18
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 PKGNAMESUFFIX=	22
@@ -12,24 +13,35 @@ COMMENT=	SQL database-based mail system (POP3 and IMAP)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gmime-2.0:${PORTSDIR}/mail/gmime2
+LIB_DEPENDS=	libgmime-2.0.so:${PORTSDIR}/mail/gmime2
 
 CONFLICTS=	dbmail-3.*
 
-OPTIONS_DEFINE=	SIEVE LDAP
+OPTIONS_DEFINE=	DOCS LDAP SIEVE
 OPTIONS_DEFAULT=MYSQL
 OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=MYSQL PGSQL SQLITE
 SIEVE_DESC=	Support for Sieve mail sorting language
 
-LATEST_LINK=	dbmail22
+OPTIONS_SUB=	yes
+
+MYSQL_USE=	MYSQL=yes
+MYSQL_CONFIGURE_WITH=	mysql
+SQLITE_USE=	SQLITE=3
+SQLITE_CONFIGURE_WITH=	sqlite
+PGSQL_USE=	PGSQL=yes
+PGSQL_CONFIGURE_WITH=	pgsql
+SIEVE_CONFIGURE_WITH=	sieve
+SIEVE_LIB_DEPENDS=	libsieve.so:${PORTSDIR}/mail/libsieve
+LDAP_CONFIGURE_WITH=	ldap
+LDAP_USE=		OPENLDAP=yes
+
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
-USES=		pkgconfig
+USES=		gmake pkgconfig
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -45,55 +57,19 @@ PORTDOCS=	AUTHORS BUGS COPYING INSTALL NEWS README \
 SUB_FILES=	pkg-message
 
 PLIST_SUB+=	PORTNAME=${PORTNAME}
-.if empty(PORT_OPTIONS:MDOCS)
-PLIST_SUB+=	PORTDOCS="@comment "
-.else
-PLIST_SUB+=	PORTDOCS=""
-.endif
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=--with-mysql
-USE_MYSQL=	yes
 DATABASE+=	mysql
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-CONFIGURE_ARGS+=--with-pgsql
-USE_PGSQL=	yes
 DATABASE+=	postgresql
-PLIST_SUB+=	PGSQL=""
-.else
-PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-CONFIGURE_ARGS+=--with-sqlite
-USE_SQLITE=	yes
 DATABASE+=	sqlite
-PLIST_SUB+=	SQLITE=""
-.else
-PLIST_SUB+=	SQLITE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSIEVE}
-CONFIGURE_ARGS+=--with-sieve=${LOCALBASE}/include
-LIB_DEPENDS+=	sieve:${PORTSDIR}/mail/libsieve
-PLIST_SUB+=	SIEVE=""
-.else
-PLIST_SUB+=	SIEVE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=--with-auth-ldap=${LOCALBASE}/include
-USE_OPENLDAP=	yes
-PLIST_SUB+=	LDAP=""
-.else
-PLIST_SUB+=	LDAP="@comment "
 .endif
 
 post-patch:
@@ -115,18 +91,12 @@ pre-install:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf-dist
-	@if [ ! -f ${STAGEDIR}${PREFIX}/etc/dbmail.conf ] ; then \
-	  ${CP} -p ${STAGEDIR}${PREFIX}/etc/dbmail.conf-dist ${STAGEDIR}${PREFIX}/etc/dbmail.conf; \
-	fi
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@for f in ${DATABASE}; do \
 	  ${MKDIR} ${STAGEDIR}${DATADIR}/$$f ; \
 	  ${INSTALL_DATA} ${WRKSRC}/sql/$$f/* ${STAGEDIR}${DATADIR}/$$f; \
 	done
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
