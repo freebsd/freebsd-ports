@@ -9,19 +9,19 @@ MASTER_SITES=	http://www.pulia.nu/tss/src/
 MAINTAINER=	peter@pean.org
 COMMENT=	Terminal ScreenSaver that allows you to lock you terminal
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	@ ${REINPLACE_CMD} -e "s|/etc/tss|${PREFIX}/etc/tss|" ${WRKSRC}/src/main.c
+	${REINPLACE_CMD} -e "s|/etc/tss|${PREFIX}/etc/tss|" \
+		${WRKSRC}/src/main.c
 
 do-install:
-	${INSTALL_SCRIPT} -m 4755 ${WRKSRC}/tss ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/etc/tss
-	${INSTALL_DATA} ${WRKSRC}/tss_art/*   ${PREFIX}/etc/tss
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} -m 4755 ${WRKSRC}/tss ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/tss
+	${INSTALL_DATA} ${WRKSRC}/tss_art/* ${STAGEDIR}${PREFIX}/etc/tss
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ART_CREDITS COPYING Changelog INSTALL README
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
