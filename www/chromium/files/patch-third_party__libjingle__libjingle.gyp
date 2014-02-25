@@ -12,9 +12,9 @@
 @@ -772,7 +772,7 @@
                ],
              }],
-             # TODO(mallinath) - Enable SCTP for Android and iOS platforms.
--            ['OS!="android" and OS!="ios"', {
-+            ['OS!="android" and OS!="ios" and os_bsd!=1', {
+             # TODO(mallinath) - Enable SCTP for iOS.
+-            ['OS!="ios"', {
++            ['OS!="ios" and os_bsd!=1', {
                'defines': [
                  ['HAVE_SCTP',
                ],
