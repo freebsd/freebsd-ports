@@ -11,12 +11,10 @@ COMMENT=	Set the local timezone using dialog(1) or Xdialog(1)
 
 NO_BUILD=	yes
 
-PLIST_FILES=	sbin/${PORTNAME}
-MAN8=		${PORTNAME}.8
+PLIST_FILES=	sbin/tzdialog man/man8/tzdialog.8.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
