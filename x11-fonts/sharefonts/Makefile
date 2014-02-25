@@ -18,7 +18,7 @@ FONTDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
 
 do-install:
-	@${MKDIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIR}/sharefont/* ${FONTDIR}
+	@${MKDIR} ${STAGEDIR}${FONTDIR}
+	${INSTALL_DATA} ${WRKDIR}/sharefont/* ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>
