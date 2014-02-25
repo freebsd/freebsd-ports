@@ -16,7 +16,7 @@ fortran_ARGS=	gcc
 .endif
 
 .if ${fortran_ARGS} == gcc
-_GCC_VER=	46
+_GCC_VER=	47
 BUILD_DEPENDS+=	gfortran${_GCC_VER}:${PORTSDIR}/lang/gcc
 RUN_DEPENDS+=	gfortran${_GCC_VER}:${PORTSDIR}/lang/gcc
 USE_BINUTILS=	yes

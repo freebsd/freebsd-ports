@@ -19,7 +19,7 @@
 #
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
-#							# (4.6 as of today, subject to change).
+#							# (4.7 as of today, subject to change).
 #   USE_GCC=	any			# port requires GCC 4.2 or later.
 #   USE_GCC=	4.8+		# port requires GCC 4.8 or later.
 #   USE_GCC=	4.8			# port requires GCC 4.8.
