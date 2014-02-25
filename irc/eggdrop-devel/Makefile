@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	eggdrop
-PORTVERSION=	1.8
+PORTVERSION=	1.8.0.20130730
 CATEGORIES=	irc
-MASTER_SITES=	http://www.freebsdnorth.com/distfiles/ \
-				LOCAL/beech
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}${PORTVERSION}
-DISTFILES=	${PORTNAME}${PORTVERSION}-snapshot.tar.gz
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
@@ -19,6 +15,12 @@ USES=		tcl:85+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
 		--with-tclinc=${LOCALBASE}/include/tcl${TCL_VER}/tcl.h
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	eggheads
+GH_PROJECT=	${PORTNAME}-1.8
+GH_COMMIT=	732a529
+GH_TAGNAME=	${GH_COMMIT}
 
 MAKE_JOBS_UNSAFE=	yes
 
