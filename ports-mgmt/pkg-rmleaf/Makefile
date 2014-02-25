@@ -12,8 +12,6 @@ COMMENT=	Remove leaf packages
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/pkg:${PORTSDIR}/ports-mgmt/pkg
-
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
