@@ -9,23 +9,21 @@ MASTER_SITES=	SF
 MAINTAINER=	alexander.haderer@loescap.de
 COMMENT=	Fetch and convert new messages of a logfile
 
-MAN1=		fetchlog.1
 PORTDOCS=	CHANGES README README.Nagios README.SNMP
 PORTEXAMPLES=	fetchlog.cfg fetchlog_service.cfg notify.cfg.example
 
-PLIST_FILES=	bin/fetchlog
+PLIST_FILES=	bin/fetchlog man/man1/fetchlog.1.gz
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fetchlog ${PREFIX}/bin
-	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/fetchlog ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
