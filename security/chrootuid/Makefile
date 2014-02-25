@@ -11,16 +11,15 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple wrapper that combines chroot(8) and su(1) into  one  program
 
-MAN8=		chrootuid.8
+PLIST_FILES=	sbin/chrootuid man/man8/chrootuid.1.gz
+PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/chrootuid_license ${DOCSDIR}
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/chrootuid ${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/chrootuid.1 ${PREFIX}/man/man8/${MAN8}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/chrootuid ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/chrootuid.1 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>
