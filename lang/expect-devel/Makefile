@@ -19,10 +19,10 @@ USE_AUTOTOOLS=	autoconf
 EXPECT_VER=	${PORTVERSION}
 
 .if !defined(WITHOUT_X11)
-USE_TK=		84+
+USES=		tk
 .else
 PKGNAMESUFFIX=	-nox11
-USE_TCL=	84+
+USES=		tcl
 .endif
 
 WRKSRC=		${WRKDIR}/expect
