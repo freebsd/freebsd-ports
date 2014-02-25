@@ -15,8 +15,7 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	oak
 PLIST_FILES=	bin/oak
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/oak ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/oak ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
