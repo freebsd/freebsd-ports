@@ -5479,3 +5479,8 @@ x11-toolkits/flvw||2014-02-24|Abandonware
 textproc/p5-XML-Xerces||2014-02-24|Depend on a non supported version of xerces-c
 x11-toolkits/fl_editor||2014-02-24|Abandonware, buggy rendering and not stage friendly
 x11-toolkits/gtkunique|x11-toolkits/unique|2014-02-24|Superseeded by x11-toolkits/unique
+japanese/ruby-man||2014-02-25|Has expired: Documents EOLd version of Ruby and unmaintained
+lang/ruby-programmingruby||2014-02-25|Has expired: Documents EOLd version of Ruby and unmaintained
+lang/ruby-man||2014-02-25|Has expired: Documents EOLd version of Ruby and unmaintained
+lang/ruby-usersguide||2014-02-25|Has expired: Documents EOLd version of Ruby and unmaintained
+graphics/wmgrabimage||2014-02-25|Has expired: No more public distfiles
