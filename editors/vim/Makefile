@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	VIM:source \
 		${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|}:patch \
@@ -38,7 +38,7 @@ USE_BZIP2=	yes
 USES=		iconv pkgconfig shebangfix
 WANT_GNOME=	yes
 
-PATCHLEVEL=	182
+PATCHLEVEL=	192
 PATCHFILES!=	/usr/bin/jot -s " " -w "%03d" ${PATCHLEVEL} 1 ${PATCHLEVEL}
 BADPATCHES=	064 087 147 # empty
 .for p in ${BADPATCHES}
@@ -96,6 +96,8 @@ LUA_MAKE_ARGS=		CONF_OPT_LUA=--enable-luainterp=dynamic CONF_OPT_LUA_PREFIX=--wi
 LUA_USES=		lua
 MOTIF_MAKE_ARGS=	CONF_OPT_GUI='--enable-gui=motif --with-motif-lib="${MOTIFLIB}"' MOTIFHOME=${LOCALBASE}
 MOTIF_USES=		motif
+NLS_MAKE_ARGS=		CONF_OPT_NLS=--enable-nls
+NLS_MAKE_ARGS_OFF=	CONF_OPT_NLS=--disable-nls
 NLS_USES=		gettext
 PERL_MAKE_ARGS=		CONF_OPT_PERL=--enable-perlinterp
 PERL_USES=		perl5
@@ -123,12 +125,6 @@ PLIST_SUB+=	GUI=""
 CTAGS_CMD=	exctags -R .
 .else
 CTAGS_CMD=	${FIND} . -type f \\| ${XARGS} ctags
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-MAKE_ARGS+=	CONF_OPT_NLS=--enable-nls
-.else
-MAKE_ARGS+=	CONF_OPT_NLS=--disable-nls
 .endif
 
 .if ${PORT_OPTIONS:MGNOME}
