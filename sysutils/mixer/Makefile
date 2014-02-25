@@ -14,8 +14,7 @@ COMMENT=	A startup/shutdown script to preserve mixer settings across reboots
 NO_BUILD=	yes
 PLIST_FILES=	etc/rc.d/mixer.sh
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/mixer.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${FILESDIR}/mixer.sh ${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
