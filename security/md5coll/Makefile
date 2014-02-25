@@ -13,12 +13,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MD5 collision generator
 
-ONLY_FOR_ARCHS=	i386
-
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 post-extract:
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
@@ -26,9 +23,6 @@ do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/${DISTNAME} -o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
