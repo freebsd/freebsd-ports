@@ -1,5 +1,5 @@
---- chrome/app/chrome_main_delegate.cc.orig	2014-01-07 21:01:39.000000000 +0100
-+++ chrome/app/chrome_main_delegate.cc	2014-01-13 16:53:27.000000000 +0100
+--- chrome/app/chrome_main_delegate.cc.orig	2014-02-20 21:27:29.000000000 +0100
++++ chrome/app/chrome_main_delegate.cc	2014-02-25 01:39:55.000000000 +0100
 @@ -97,7 +97,7 @@
  #include "ui/base/x/x11_util.h"
  #endif
@@ -54,7 +54,7 @@
    breakpad::SetBreakpadClient(g_chrome_breakpad_client.Pointer());
  #endif
  
-@@ -701,7 +701,7 @@
+@@ -703,7 +703,7 @@
  #endif
    }
  
@@ -63,8 +63,8 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -713,7 +713,7 @@
-     breakpad::InitCrashReporter();
+@@ -715,7 +715,7 @@
+     breakpad::InitCrashReporter(process_type);
  #endif  // defined(OS_ANDROID)
    }
 -#endif  // defined(OS_POSIX) && !defined(OS_MACOSX)
@@ -72,12 +72,12 @@
  
    // After all the platform Breakpads have been initialized, store the command
    // line for crash reporting.
-@@ -814,7 +814,7 @@
-     SetUpProfilingShutdownHandler();
-   }
- 
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
-   // Needs to be called after we have chrome::DIR_USER_DATA.  BrowserMain sets
-   // this up for the browser process in a different manner.
-   breakpad::InitCrashReporter();
+@@ -800,7 +800,7 @@
+   return process_type == switches::kNaClLoaderProcess ||
+       process_type == switches::kRelauncherProcess;
+ }
+-#elif defined(OS_POSIX) && !defined(OS_ANDROID)
++#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ content::ZygoteForkDelegate* ChromeMainDelegate::ZygoteStarting() {
+ #if defined(DISABLE_NACL)
+   return NULL;
