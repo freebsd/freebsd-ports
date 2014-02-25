@@ -6,7 +6,6 @@ bin/mwawZip
 include/libmwaw-0.1/libmwaw/MWAWDocument.hxx
 include/libmwaw-0.1/libmwaw/MWAWPropertyHandler.hxx
 include/libmwaw-0.1/libmwaw/libmwaw.hxx
-lib/libmwaw-0.1.a
 lib/libmwaw-0.1.la
 lib/libmwaw-0.1.so
 lib/libmwaw-0.1.so.1
