@@ -11,13 +11,12 @@ COMMENT=	Yaph is a proxy scanner
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/yaph/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/yaph/yaph ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/yaph/yaph.conf ${PREFIX}/etc
+	${INSTALL_PROGRAM} ${WRKSRC}/yaph/yaph ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/yaph/yaph.conf ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
