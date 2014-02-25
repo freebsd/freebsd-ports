@@ -22,7 +22,10 @@ CJK_DESC=	Adobe CMaps
 
 WRKSRC=		${WRKDIR}/reportlab-${PORTVERSION}
 
-CONFLICTS=	py2[0-9]-reportlab-[0-9]*
+CONFLICTS=	py*-reportlab[^2]-[^2].* \
+		py*-reportlab-[^2].*
+
+PORTSCOUT=	limit:^2\.
 
 PFBFER_VERSION=	20070710
 

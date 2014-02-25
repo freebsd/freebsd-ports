@@ -2,48 +2,75 @@
 # $FreeBSD$
 
 PORTNAME=	reportlab
-PORTVERSION=	1.21.2
-PORTREVISION=	3
+PORTVERSION=	3.0
 CATEGORIES=	print python
-MASTER_SITES=	http://www.reportlab.com/ftp/ \
-		${MASTER_SITE_LOCAL:S/$/:accel/} \
-		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/:accel
-MASTER_SITE_SUBDIR=	erwin/:accel
+MASTER_SITES=	CHEESESHOP \
+		http://www.reportlab.com/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	reportlab-${PORTVERSION}.tar.gz \
-		rl_accel-3004.tgz:accel
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PFBFER}
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Library to create PDF documents using the Python language
 
-PORTSCOUT=	ignore:1	# Last version of 1.X branch
+LICENSE=	BSD
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Reportlab
+PYDISTUTILS_AUTOPLIST=	yes
 
-WRKSRC=		${WRKDIR}/reportlab_${PORTVERSION:S/./_/g}/reportlab
+CONFLICTS=	py*-reportlab[^3]-[^3].* \
+		py*-reportlab-[^3].*
+
+PORTSCOUT=	limit:^3\.0\.
+
+PFBFER_VERSION=	20070710
+PFBFER=	pfbfer-${PFBFER_VERSION}.zip
+
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
 
 REPORTLABDIR=	${PYTHONPREFIX_SITELIBDIR}/reportlab
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-DOCS=	RML_UserGuide.pdf RML_UserGuide_1_0.pdf diagradoc.pdf graphguide.pdf \
-	graphics_reference.pdf reference.pdf userguide.pdf
+DOCS=		reportlab-userguide.pdf
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/rl_config.py
-	@${REINPLACE_CMD} -e 's#with#with26#g' ${WRKSRC}/lib/PyFontify.py
+OPTIONS_DEFINE=	CJK FREETYPE DOCS
+OPTIONS_DEFAULT=	CJK FREETYPE
+CJK_DESC=	Adobe CMaps
+
+FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 .include <bsd.port.pre.mk>
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	${CP} ${WRKSRC}/docs/${i} ${DOCSDIR}
+.if ${ARCH} == "sparc64"
+BROKEN=	Does not install on sparc64
+.endif
+
+.if ${PORT_OPTIONS:MCJK}
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/adobe-cmaps/ac15/cid2code.txt:${PORTSDIR}/print/adobe-cmaps
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%DISTDIR%%|${DISTDIR}|' \
+			  -e 's|%%PFBFER%%|${PFBFER}|' \
+				${WRKSRC}/setup.py
+.if ${PORT_OPTIONS:MDOCS}
+.for f in genAll.py userguide/genuserguide.py
+	@${REINPLACE_CMD} -e 's|%%STAGEDIR%%|${STAGEDIR}|' \
+			  -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|' \
+				${WRKSRC}/docs/${f}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@cd ${WRKSRC}/docs && ${PYTHON_CMD} genAll.py
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
