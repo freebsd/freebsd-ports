@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	-- --with-opt-dir="${LOCALBASE}"
 
 DOCS=		AUTHORS ChangeLog THANKS rdoc
 
-NO_STAGE=	yes
 post-extract:
 	${FIND} ${WRKSRC} '(' -name '.DS_Store' -o -name '*~' ')' -delete
 
@@ -40,13 +39,9 @@ post-patch:
 	${WRKSRC}/ext/fft.c
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${RUBY_MODEXAMPLESDIR}/
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DOCS}" ${RUBY_MODDOCDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DOCS}" ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 .include <bsd.port.mk>
