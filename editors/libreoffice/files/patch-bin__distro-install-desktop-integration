@@ -1,13 +1,13 @@
---- ./bin/distro-install-desktop-integration.orig	2013-01-31 05:54:53.000000000 -0500
-+++ ./bin/distro-install-desktop-integration	2013-02-18 18:38:28.000000000 -0500
+--- bin/distro-install-desktop-integration.orig	2013-12-11 01:11:21.000000000 +0900
++++ bin/distro-install-desktop-integration	2014-01-29 16:00:32.000000000 +0900
 @@ -94,13 +94,13 @@
  }
  
  # install desktop integration from plain packages
 -sysui_temp=`mktemp -t -d distro-pack-desktop-integration-XXXXXX`
--cp -a sysui/unxlng*/misc/libreoffice/* "$sysui_temp"
 +sysui_temp=`mktemp -d /tmp/distro-pack-desktop-integration-XXXXXX`
-+cp -a sysui/unx*/misc/libreoffice/* "$sysui_temp"
+-cp -a workdir/unxlng*/CustomTarget/sysui/share/libreoffice/* "$sysui_temp"
++cp -a ../workdir/unx*/CustomTarget/sysui/share/libreoffice/* "$sysui_temp"
  cp -a sysui/desktop/share/create_tree.sh "$sysui_temp"
  builddir=`pwd`
  cd $sysui_temp
@@ -17,7 +17,7 @@
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
      -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
-@@ -114,16 +114,17 @@
+@@ -114,8 +114,9 @@
      export PRODUCTVERSION=
      export KDEMAINDIR=$PREFIXDIR
      export GNOMEDIR=$PREFIXDIR
@@ -28,17 +28,7 @@
  )
  cd -
  rm -rf $sysui_temp
- 
- # we do not want some stuff from the plain packages
- rm -f $DESTDIR/$PREFIXDIR/bin/$INSTALLDIRNAME-printeradmin
--rm -f $DESTDIR$PREFIXDIR/share/applications/libreoffice-javafilter.desktop
--rm -f $DESTDIR$PREFIXDIR/share/applications/libreoffice-printeradmin.desktop
-+rm -f $DESTDIR/$PREFIXDIR/share/applications/libreoffice-javafilter.desktop
-+rm -f $DESTDIR/$PREFIXDIR/share/applications/libreoffice-printeradmin.desktop
- if test -d $DESTDIR/opt ; then
-     rm -f $DESTDIR/opt/$INSTALLDIRNAME
-     rmdir --ignore-fail-on-non-empty $DESTDIR/opt
-@@ -132,7 +133,7 @@
+@@ -131,7 +132,7 @@
  # we want non-versioned desktop files
  cd $DESTDIR/$INSTALLDIR/share/xdg
  # we want non-versioned stuff in the distro packages
@@ -47,7 +37,7 @@
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
      -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
-@@ -147,7 +148,7 @@
+@@ -146,7 +148,7 @@
                 $PREFIXDIR/share/mime/packages \
                 $PREFIXDIR/share/mime-info \
                 $PREFIXDIR/share/icons ; do

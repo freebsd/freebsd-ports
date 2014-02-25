@@ -1,11 +1,11 @@
---- ./solenv/gbuild/platform/unxgcc.mk.orig	2013-02-19 19:39:23.000000000 -0500
-+++ ./solenv/gbuild/platform/unxgcc.mk	2013-02-19 19:35:41.000000000 -0500
-@@ -53,7 +53,7 @@
+--- solenv/gbuild/platform/unxgcc.mk.orig	2013-12-11 01:11:21.000000000 +0900
++++ solenv/gbuild/platform/unxgcc.mk	2014-01-29 17:09:01.000000000 +0900
+@@ -48,7 +48,7 @@
  gb_CXXFLAGS := \
  	$(gb_CXXFLAGS_COMMON) \
  	-fPIC \
 -	-Wshadow \
 +	-Wno-unused-parameter \
- 	-Wsign-promo \
  	-Woverloaded-virtual \
  
+ ifneq ($(COM_GCC_IS_CLANG),TRUE)

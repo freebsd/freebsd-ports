@@ -1,16 +1,17 @@
---- ./sw/Module_sw.mk.orig	2013-03-12 07:00:34.000000000 -0400
-+++ ./sw/Module_sw.mk	2013-03-21 13:32:32.000000000 -0400
-@@ -37,13 +37,7 @@
+--- sw/Module_sw.mk.orig	2013-12-11 01:11:21.000000000 +0900
++++ sw/Module_sw.mk	2014-01-29 17:12:45.000000000 +0900
+@@ -41,14 +41,8 @@
  
  endif
  
 -$(eval $(call gb_Module_add_check_targets,sw,\
--    CppunitTest_sw_swdoc_test \
+-    CppunitTest_sw_uwriter \
 -))
 -
  $(eval $(call gb_Module_add_slowcheck_targets,sw,\
+     CppunitTest_sw_htmlexport \
 -    CppunitTest_sw_macros_test \
--    CppunitTest_sw_subsequent_ooxmlexport \
-     CppunitTest_sw_subsequent_ooxmlimport \
-     CppunitTest_sw_subsequent_ww8export \
-     CppunitTest_sw_subsequent_ww8import \
+-    CppunitTest_sw_ooxmlexport \
+     CppunitTest_sw_ooxmlimport \
+     CppunitTest_sw_ww8export \
+     CppunitTest_sw_ww8import \
