@@ -17,13 +17,11 @@ NO_WRKSUBDIR=	yes
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/lib/X11/fonts/urwfonts-ttf
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${WRKSRC}/fonts.* ${PREFIX}/lib/X11/fonts/urwfonts-ttf
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${WRKSRC}/README ${PREFIX}/lib/X11/fonts/urwfonts-ttf
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/urwfonts-ttf
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${WRKSRC}/fonts.* \
+		${STAGEDIR}${PREFIX}/lib/X11/fonts/urwfonts-ttf
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${WRKSRC}/README \
+		${STAGEDIR}${PREFIX}/lib/X11/fonts/urwfonts-ttf
 
 .include <bsd.port.mk>
