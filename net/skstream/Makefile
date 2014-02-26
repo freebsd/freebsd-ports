@@ -15,8 +15,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	4.7+
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -25,11 +23,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| install-docdataDATA | |g'  ${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in README COPYING AUTHORS NEWS README.FreeSockets
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
