@@ -14,15 +14,13 @@ rcvar=xymon_server_enable
 
 load_rc_config "$name"
 : ${xymon_server_enable:=NO}
+: ${xymon_server_user:=%%XYMONUSER%%}
 
-command="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh'"
+command="%%WWWDIR%%/server/xymon.sh"
+command_args="start"
 start_precmd=xymon_prestart
-start_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh start'"
-stop_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh stop'"
-status_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh status'"
-reload_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh reload'"
-restart_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh restart'"
-pidfile=/var/log/xymon/xymond.pid
+pidfile=/var/log/xymon/xymonlaunch.pid
+procname="%%WWWDIR%%/server/bin/xymonlaunch"
 
 xymon_prestart()
 {
