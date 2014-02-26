@@ -23,7 +23,6 @@ TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
 LDCONFIG_LIB32=	${LDCONFIG} -32
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCH=	i386 amd64
@@ -93,10 +92,10 @@ do-extract:
 .endif
 
 do-install:
-	@${MKDIR} ${TARGET_DIR}
-	${INSTALL_DATA} ${WRKSRC}/* ${TARGET_DIR}/
+	@${MKDIR} ${STAGEDIR}${TARGET_DIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${TARGET_DIR}/
 .for lib in ${FREEBSD4_LIBS}
-	${LN} -sf ${lib}.compat4x ${TARGET_DIR}/${lib}
+	${LN} -sf ${lib}.compat4x ${STAGEDIR}${TARGET_DIR}/${lib}
 .endfor
 
 post-install:
