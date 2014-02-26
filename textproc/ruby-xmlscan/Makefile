@@ -23,19 +23,17 @@ DOCS_EN=	ChangeLog \
 		doc/en/*
 DOCS_JA=	doc/ja/*
 
-NO_STAGE=	yes
 do-install:
-	${CP} -R ${WRKSRC}/lib/xmlscan ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${CP} -R ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${CP} -R ${WRKSRC}/lib/xmlscan ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${CP} -R ${WRKSRC}/samples/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
-.endif
 
 .include <bsd.port.mk>
