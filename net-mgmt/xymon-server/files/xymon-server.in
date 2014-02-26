@@ -17,7 +17,7 @@ load_rc_config "$name"
 : ${xymon_server_user:=%%XYMONUSER%%}
 
 command="%%WWWDIR%%/server/xymon.sh"
-command_args="start"
+command_args=start
 start_precmd=xymon_prestart
 pidfile=/var/log/xymon/xymonlaunch.pid
 procname="%%WWWDIR%%/server/bin/xymonlaunch"
