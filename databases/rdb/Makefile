@@ -19,21 +19,19 @@ BINFILES=	column compute dataent etbl headchg jointbl lst2tbl \
 
 DOCFILES=	RDB.pln.noM.gz RDB.ps.gz rdbi.doc
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	cd ${WRKSRC}; \
 	${PERL} -pi -e 's|^\#\! /usr/bin/perl|\#\!${PERL}|g' ${BINFILES}
 
 do-install:
 .for binfile in ${BINFILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${binfile} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${binfile} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
