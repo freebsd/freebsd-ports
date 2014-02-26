@@ -9,6 +9,7 @@ LDADD=		-lpthread
 SRCS=		utils.c
 SRCS+=		barriers.c
 SRCS+=		conversions.c
+SRCS+=		dep-list.c
 SRCS+=		watch.c
 SRCS+=		worker-sets.c
 SRCS+=		worker-thread.c
