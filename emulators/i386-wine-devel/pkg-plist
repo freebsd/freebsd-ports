@@ -973,7 +973,9 @@ lib32/wine/ctapi32.dll.so
 lib32/wine/ctl3d.dll16.so
 lib32/wine/ctl3d32.dll.so
 lib32/wine/ctl3dv2.dll16.so
+lib32/wine/d2d1.dll.so
 lib32/wine/d3d10.dll.so
+lib32/wine/d3d10_1.dll.so
 lib32/wine/d3d10core.dll.so
 lib32/wine/d3d11.dll.so
 lib32/wine/d3d8.dll.so
@@ -1055,6 +1057,7 @@ lib32/wine/dpnaddr.dll.so
 lib32/wine/dpnet.dll.so
 lib32/wine/dpnhpast.dll.so
 lib32/wine/dpnlobby.dll.so
+lib32/wine/dpnsvr.exe.so
 lib32/wine/dpwsockx.dll.so
 lib32/wine/drmclien.dll.so
 lib32/wine/dsound.dll.so
@@ -1177,7 +1180,9 @@ lib32/wine/fakedlls/ctapi32.dll
 lib32/wine/fakedlls/ctl3d.dll16
 lib32/wine/fakedlls/ctl3d32.dll
 lib32/wine/fakedlls/ctl3dv2.dll16
+lib32/wine/fakedlls/d2d1.dll
 lib32/wine/fakedlls/d3d10.dll
+lib32/wine/fakedlls/d3d10_1.dll
 lib32/wine/fakedlls/d3d10core.dll
 lib32/wine/fakedlls/d3d11.dll
 lib32/wine/fakedlls/d3d8.dll
@@ -1259,6 +1264,7 @@ lib32/wine/fakedlls/dpnaddr.dll
 lib32/wine/fakedlls/dpnet.dll
 lib32/wine/fakedlls/dpnhpast.dll
 lib32/wine/fakedlls/dpnlobby.dll
+lib32/wine/fakedlls/dpnsvr.exe
 lib32/wine/fakedlls/dpwsockx.dll
 lib32/wine/fakedlls/drmclien.dll
 lib32/wine/fakedlls/dsound.dll
@@ -1721,7 +1727,9 @@ lib32/wine/libcryptdll.def
 lib32/wine/libcryptnet.def
 lib32/wine/libcryptui.def
 lib32/wine/libctl3d32.def
+lib32/wine/libd2d1.def
 lib32/wine/libd3d10.def
+lib32/wine/libd3d10_1.def
 lib32/wine/libd3d10core.def
 lib32/wine/libd3d8.def
 lib32/wine/libd3d9.def
@@ -1867,6 +1875,7 @@ lib32/wine/libwsnmp32.def
 lib32/wine/libwsock32.def
 lib32/wine/libwtsapi32.def
 lib32/wine/libxinput.def
+lib32/wine/libxmllite.def
 lib32/wine/loadperf.dll.so
 lib32/wine/localspl.dll.so
 lib32/wine/localui.dll.so
