@@ -28,8 +28,8 @@ TEST_DESC=	Run unit test suite before installation
 IGNORE=		will not build; atomics are not supported on DF i386
 .endif
 
-.if ${PORT_OPTIONS:MTEST}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/gnat/ahven.gpr:${PORTSDIR}/devel/ahven
+.if ${PORT_OPTIONS:MTEST}
 ALL_TARGET+=	tests
 .endif
 
