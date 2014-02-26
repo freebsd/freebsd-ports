@@ -1,7 +1,11 @@
 bin/pkg_checkplist
 bin/pkg_genplist
 bin/pkg_trackinst
+@mode 755
+@owner root
+@group wheel
 lib/insthook.so
+@mode
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/InstallSession.py
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/InstallSession.pyc
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/InstallSession.pyo
@@ -38,4 +42,5 @@ lib/insthook.so
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/main.py
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/main.pyc
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/main.pyo
+%%PYTHON_SITELIBDIR%%/pkg_trackinst-1.2.3-py2.7.egg-info
 @dirrm %%PYTHON_SITELIBDIR%%/PkgTrackInst
