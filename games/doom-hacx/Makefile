@@ -21,7 +21,6 @@ DATADIR=	${DMDIR}/${PORTNAME}
 PLIST_FILES=	%%DATADIR%%/${DISTNAME}
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
@@ -32,7 +31,7 @@ do-extract:
 		${WRKDIR}/${DISTNAME}
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>
