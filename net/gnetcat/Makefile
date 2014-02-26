@@ -16,14 +16,13 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 INFO=		gnetcat
-MAN1=		gnetcat.1
-MANCOMPRESSED=	no
-PLIST_FILES=	bin/gnetcat
+PLIST_FILES=	bin/gnetcat man/man1/gnetcat.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/netcat ${PREFIX}/bin/gnetcat
-	${INSTALL_MAN} ${WRKSRC}/doc/netcat.1 ${PREFIX}/man/man1/gnetcat.1
-	${INSTALL_DATA} ${WRKSRC}/doc/netcat.info ${PREFIX}/info/gnetcat.info
+	${INSTALL_PROGRAM} ${WRKSRC}/src/netcat ${STAGEDIR}${PREFIX}/bin/gnetcat
+	${INSTALL_MAN} ${WRKSRC}/doc/netcat.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1/gnetcat.1
+	${INSTALL_DATA} ${WRKSRC}/doc/netcat.info \
+		${STAGEDIR}${PREFIX}/info/gnetcat.info
 
 .include <bsd.port.mk>
