@@ -1,156 +1,200 @@
-bin/call_xrl
-bin/xorp_profiler
-bin/xorp_rtrmgr
-bin/xorpsh
-bgp/xorp_bgp
-bgp/tools/xorpsh_print_peers
-bgp/tools/xorpsh_print_routes
-cli/tools/send_cli_processor_xrl
-cli/tools/cli_generic
-contrib/olsr/tools/clear_database
-contrib/olsr/tools/print_databases
-contrib/olsr/xorp_olsr4
-etc/templates/bgp.cmds
-etc/templates/bgp.tp
-etc/templates/fea.cmds
-etc/templates/fea.tp
-etc/templates/fib2mrib.tp
-etc/templates/firewall.tp
-etc/templates/host.cmds
-etc/templates/igmp.cmds
-etc/templates/igmp.tp
-etc/templates/interfaces.tp
-etc/templates/mfea.cmds
-etc/templates/mfea4.tp
-etc/templates/mfea6.cmds
-etc/templates/mfea6.tp
-etc/templates/misc.cmds
-etc/templates/mld.cmds
-etc/templates/mld.tp
-etc/templates/olsr4.cmds
-etc/templates/olsr4.tp
-etc/templates/ospfv2.cmds
-etc/templates/ospfv2.tp
-etc/templates/ospfv3.cmds
-etc/templates/ospfv3.tp
-etc/templates/pim.cmds
-etc/templates/pim6.cmds
-etc/templates/rib.tp
-etc/templates/pimsm4.tp
-etc/templates/pimsm6.tp
-etc/templates/plumbing.tp
-etc/templates/policy.tp
-etc/templates/protocols.tp
-etc/templates/rib.cmds
-etc/templates/rip.cmds
-etc/templates/rip.tp
-etc/templates/ripng.cmds
-etc/templates/ripng.tp
-etc/templates/rtrmgr.tp
-etc/templates/snmp.tp
-etc/templates/static_routes.tp
-etc/templates/xorpsh.cmds
-fea/xorp_fea
-fea/xorp_fea_click_config_generator
-fea/xorp_fea_dummy
-fea/tools/show_interfaces
-fib2mrib/xorp_fib2mrib
-libxipc/xorp_finder
-mld6igmp/xorp_igmp
-mld6igmp/xorp_mld
-ospf/xorp_ospfv2
-ospf/xorp_ospfv3
-ospf/tools/clear_database
-ospf/tools/print_lsas
-ospf/tools/print_neighbours
-pim/xorp_pimsm4
-pim/xorp_pimsm6
-policy/xorp_policy
-rib/xorp_rib
-rib/tools/show_distances
-rib/tools/show_routes
-rip/xorp_rip
-rip/xorp_ripng
-rip/tools/show_peer_stats
-rip/tools/show_stats
-static_routes/xorp_static_routes
-vrrp/xorp_vrrp
-xrl/targets/bgp.xrls
-xrl/targets/bgp4_mib.xrls
-xrl/targets/cli.xrls
-xrl/targets/coord.xrls
-xrl/targets/fea.xrls
-xrl/targets/fea_ifmgr_mirror.xrls
-xrl/targets/fib2mrib.xrls
-xrl/targets/finder.xrls
-xrl/targets/finder_client.xrls
-xrl/targets/mfea.xrls
-xrl/targets/mld6igmp.xrls
-xrl/targets/olsr4.xrls
-xrl/targets/ospfv2.xrls
-xrl/targets/ospfv3.xrls
-xrl/targets/pim.xrls
-xrl/targets/policy.xrls
-xrl/targets/profiler.xrls
-xrl/targets/rib.xrls
-xrl/targets/ribclient.xrls
-xrl/targets/rip.xrls
-xrl/targets/ripng.xrls
-xrl/targets/rtrmgr.xrls
-xrl/targets/show_distances.xrls
-xrl/targets/show_routes.xrls
-xrl/targets/static_routes.xrls
-xrl/targets/test.xrls
-xrl/targets/test_fea_ifmgr_mirror.xrls
-xrl/targets/test_fea_rawlink.xrls
-xrl/targets/test_finder_events.xrls
-xrl/targets/test_peer.xrls
-xrl/targets/test_socket4.xrls
-xrl/targets/test_socket6.xrls
-xrl/targets/test_xrls.xrls
-xrl/targets/vrrp.xrls
-xrl/targets/xorp_if_mib.xrls
-xrl/targets/xorpsh.xrls
-%%XORP_SNMP%%mibs/bgp4_mib_1657.la
-%%XORP_SNMP%%mibs/bgp4_mib_1657.so
-%%XORP_SNMP%%mibs/libnetsnmpxorp.la
-%%XORP_SNMP%%mibs/libnetsnmpxorp.so
-%%XORP_SNMP%%mibs/ospf_mib_1850.la
-%%XORP_SNMP%%mibs/ospf_mib_1850.so
-%%XORP_SNMP%%mibs/xorp_if_mib_module.la
-%%XORP_SNMP%%mibs/xorp_if_mib_module.so
-%%XORP_SNMP%%mibs/snmpdscripts/getbgppeertable
-%%XORP_SNMP%%mibs/snmpdscripts/getbgpversion
-%%XORP_SNMP%%mibs/snmpdscripts/startsnmp
-%%XORP_SNMP%%mibs/snmpdscripts/stopsnmp
-@dirrm xrl/targets
-@dirrm xrl
-@dirrm static_routes
-@dirrm rip/tools
-@dirrm rip
-@dirrm rib/tools
-@dirrm rib
-@dirrm policy
-@dirrm pim
-@dirrm ospf/tools
-@dirrm ospf
-@dirrm mld6igmp
-@dirrm vrrp
-%%XORP_SNMP%%@dirrm mibs/snmpdscripts
-%%XORP_SNMP%%@dirrm mibs
-@dirrm libxipc
-%%XORP_SNMP%%@dirrmtry libdata/ldconfig/xorp
-%%XORP_SNMP%%@dirrmtry libdata/ldconfig
-%%XORP_SNMP%%@dirrmtry libdata
-@dirrm fib2mrib
-@dirrmtry fea/tools
-@dirrm fea
-@dirrmtry etc/templates
-@dirrm contrib/olsr/tools
-@dirrm contrib/olsr
-@dirrm contrib
-@dirrm cli/tools
-@dirrm cli
-@dirrmtry bin
-@dirrm bgp/tools
-@dirrm bgp
+etc/xorp.conf.sample
+lib/xorp/bin/bgp_print_peers
+lib/xorp/bin/bgp_print_routes
+lib/xorp/bin/cli_generic
+lib/xorp/bin/cli_send_processor_xrl
+lib/xorp/bin/fea_show_interfaces
+lib/xorp/bin/olsr_print_databases
+lib/xorp/bin/olsr_clear_database
+lib/xorp/bin/ospf_clear_database
+lib/xorp/bin/ospf_print_lsas
+lib/xorp/bin/ospf_print_neighbours
+lib/xorp/bin/rib_show_distances
+lib/xorp/bin/rib_show_routes
+lib/xorp/bin/rip_show_peer_stats
+lib/xorp/bin/rip_show_stats
+%%XORP_SHLIB%%lib/xorp/lib/libxif_bgp.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_cli_manager.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_cli_processor.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_common.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_coord.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_datain.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_fib.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_fib_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_firewall.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_ifmgr.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_ifmgr_mirror.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_ifmgr_replicator.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_rawlink.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_rawlink_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_rawpkt4.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_rawpkt4_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_rawpkt6.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fea_rawpkt6_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fib2mrib.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_finder.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_finder_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_finder_event_notifier.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_finder_event_observer.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_fti.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_mfea.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_mfea_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_mld6igmp.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_mld6igmp_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_ospfv2.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_ospfv3.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_pim.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_policy.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_policy_backend.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_policy_redist4.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_policy_redist6.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_profile.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_profile_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_redist4.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_redist6.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_redist_transaction4.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_redist_transaction6.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_rib.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_rib_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_rip.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_ripng.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_rtrmgr.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_rtrmgr_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_socket4.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_socket4_user.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_socket6.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_socket6_user.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_static_routes.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_vrrp.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_cli.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_comm.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_core.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_fea.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_fea_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_fea_control_socket.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_fea_data_plane_managers.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_fea_fibconfig.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_fea_firewall.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_fea_ifconfig.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_fea_io.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_fib2mrib.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_finder.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_ipc.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_mld6igmp.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_mrt.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_ospf.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_pim.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_policy.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_policy_backend.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_policy_common.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_proto.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_rib.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_rip.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_rip_xrl.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_ripng.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_ripng_xrl.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_static_routes.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_tecla.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_vrrp.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_bgp.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_cli.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_coord.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_fea.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_fea_ifmgr_mirror.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_fib2mrib.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_finder.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_finder_client.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_mfea.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_mld6igmp.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_ospfv2.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_ospfv3.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_pim.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_policy.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_profiler.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_rib.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_ribclient.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_rip.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_ripng.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_rtrmgr.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_show_distances.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_show_routes.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_static_routes.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_vrrp.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_xorpsh.so
+%%XORP_SHLIB%%lib/xorp/lib/libxst_olsr4.so
+%%XORP_SHLIB%%lib/xorp/lib/libolsrxrl.so
+%%XORP_SHLIB%%lib/xorp/lib/libxif_olsr4.so
+%%XORP_SHLIB%%lib/xorp/lib/libxorp_bgp.so
+%%XORP_SHLIB%%lib/xorp/lib/libolsr.so
+lib/xorp/sbin/xorp_bgp
+lib/xorp/sbin/xorp_fea
+lib/xorp/sbin/xorp_fea_dummy
+lib/xorp/sbin/xorp_fib2mrib
+lib/xorp/sbin/xorp_igmp
+lib/xorp/sbin/xorp_mld
+lib/xorp/sbin/xorp_olsr4
+lib/xorp/sbin/xorp_ospfv2
+lib/xorp/sbin/xorp_ospfv3
+lib/xorp/sbin/xorp_pimsm4
+lib/xorp/sbin/xorp_pimsm6
+lib/xorp/sbin/xorp_policy
+lib/xorp/sbin/xorp_rib
+lib/xorp/sbin/xorp_rip
+lib/xorp/sbin/xorp_ripng
+lib/xorp/sbin/xorp_static_routes
+lib/xorp/sbin/xorp_vrrp
+sbin/call_xrl
+sbin/fea_xrl_shell_funcs.sh
+sbin/bgp_xrl_shell_funcs.sh
+sbin/rib_xrl_shell_funcs.sh
+sbin/xorp_profiler
+sbin/xorp_rtrmgr
+sbin/xorpsh
+share/xorp/templates/bgp.cmds
+share/xorp/templates/bgp.tp
+share/xorp/templates/fea.cmds
+share/xorp/templates/fea.tp
+share/xorp/templates/fib2mrib.tp
+share/xorp/templates/firewall.tp
+share/xorp/templates/host.cmds
+share/xorp/templates/igmp.cmds
+share/xorp/templates/igmp.tp
+share/xorp/templates/interfaces.tp
+share/xorp/templates/mfea.cmds
+share/xorp/templates/mfea4.tp
+share/xorp/templates/mfea6.cmds
+share/xorp/templates/mfea6.tp
+share/xorp/templates/misc.cmds
+share/xorp/templates/mld.cmds
+share/xorp/templates/mld.tp
+share/xorp/templates/olsr4.cmds
+share/xorp/templates/olsr4.tp
+share/xorp/templates/ospfv2.cmds
+share/xorp/templates/ospfv2.tp
+share/xorp/templates/ospfv3.cmds
+share/xorp/templates/ospfv3.tp
+share/xorp/templates/pim.cmds
+share/xorp/templates/pim6.cmds
+share/xorp/templates/pimsm4.tp
+share/xorp/templates/pimsm6.tp
+share/xorp/templates/plumbing.tp
+share/xorp/templates/policy.cmds
+share/xorp/templates/policy.tp
+share/xorp/templates/protocols.tp
+share/xorp/templates/rib.cmds
+share/xorp/templates/rib.tp
+share/xorp/templates/rip.cmds
+share/xorp/templates/rip.tp
+share/xorp/templates/ripng.cmds
+share/xorp/templates/ripng.tp
+share/xorp/templates/rtrmgr.tp
+share/xorp/templates/static_routes.tp
+share/xorp/templates/vrrp.cmds
+share/xorp/templates/vrrp.tp
+share/xorp/templates/xorpsh.cmds
+@dirrm share/xorp/templates
+@dirrm share/xorp
+%%XORP_SHLIB%%@dirrm lib/xorp/lib
+@dirrm lib/xorp/bin
+@dirrm lib/xorp/sbin
+@dirrm lib/xorp
