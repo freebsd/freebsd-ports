@@ -22,14 +22,12 @@ PORTEXAMPLES=	example_fibonacci.rb \
 		example_memoize.rb
 EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/lib/memoize.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/memoize.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/examples/${f} ${RUBY_MODEXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
