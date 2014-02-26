@@ -16,13 +16,12 @@ PLIST_FILES=	bin/sendok-check bin/sendok-create
 
 ALL_TARGET=	it
 
-NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} ${CC} ${CFLAGS} >${WRKSRC}/conf-cc
 
 do-install:
 .for f in sendok-check sendok-create
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>
