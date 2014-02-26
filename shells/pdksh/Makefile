@@ -19,23 +19,14 @@ COMMENT=	The Public Domain Korn Shell
 
 LICENSE=	BSD3CLAUSE
 
+OPTIONS_DEFINE=	STATIC
+
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.options.mk>
-
-.if defined(WITH_STATIC)
-CONFIGURE_ENV+=	LDSTATIC=-static
-.endif
+STATIC_CONFIGURE_ENV+=	LDSTATIC=-static
 
 post-patch:
 	@(${ECHO_CMD} ",s/v${PORTVERSION:C/p.*//}/v${PORTVERSION:S/p/./}/"; \
 		${ECHO_CMD} "wq") | ed -s ${WRKSRC}/version.c
-
-post-install:
-	@${ECHO} "Updating /etc/shells"
-	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v "${PREFIX}/bin/ksh$$" /etc/shells.bak; \
-		${ECHO_CMD} ${PREFIX}/bin/ksh) > /etc/shells
-	@${RM} /etc/shells.bak
 
 .include <bsd.port.mk>
