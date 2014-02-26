@@ -33,19 +33,14 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 
-NO_STAGE=	yes
 post-patch:
 	${SED} -e 's#@@DTDDIR@@#${DTDDIR}#' < ${FILESDIR}/catalog.xml > ${WRKSRC}/catalog.xml
 
 pre-su-install:
-	@[ -d ${DTDDIR}	 ] || ${MKDIR} ${DTDDIR}
+	@[ -d ${STAGEDIR}${DTDDIR}	 ] || ${MKDIR} ${STAGEDIR}${DTDDIR}
 
 do-install:
-	@(cd ${WRKSRC}/DTD; ${INSTALL_DATA} ${DTDFILES} ${DTDDIR})
-	${SED} -e 's|SGMLDECL.*||' ${WRKSRC}/DTD/xhtml.soc > ${DTDDIR}/xhtml-dcl.soc
-
-post-install:
-	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DTDDIR}/xhtml-dcl.soc
-	${XMLCATMGR} -c ${CATALOG_PORTS_XML} add nextCatalog ${DTDDIR}/catalog.xml
+	@(cd ${WRKSRC}/DTD; ${INSTALL_DATA} ${DTDFILES} ${STAGEDIR}${DTDDIR})
+	${SED} -e 's|SGMLDECL.*||' ${WRKSRC}/DTD/xhtml.soc > ${STAGEDIR}${DTDDIR}/xhtml-dcl.soc
 
 .include <bsd.port.mk>
