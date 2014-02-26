@@ -109,7 +109,6 @@ SSL_DESC=	Build with OpenSSL support
 OPTIONS_DEFAULT=	NLS XML TZDATA INTDATE SSL
 .endif # !SLAVE_ONLY
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -226,95 +225,6 @@ CONFIGURE_ARGS+=--with-krb5
 
 .endif # !SLAVE_ONLY
 
-.if defined(CLIENT_ONLY)
-MAN1?=		pg_basebackup.1
-MAN1+=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
-		dropdb.1 droplang.1 dropuser.1 ecpg.1 initdb.1	   \
-		pg_config.1 pg_controldata.1 pg_ctl.1		   \
-		pg_dump.1 pg_dumpall.1 pg_resetxlog.1 pg_restore.1 \
-		postgres.1 postmaster.1 psql.1 reindexdb.1 vacuumdb.1
-
-MAN3+=		SPI_connect.3 SPI_copytuple.3 SPI_cursor_close.3 SPI_cursor_fetch.3 \
-		SPI_cursor_find.3 SPI_cursor_move.3 SPI_cursor_open.3 \
-		SPI_cursor_open_with_args.3 SPI_cursor_open_with_paramlist.3 \
-		SPI_exec.3 SPI_execp.3 SPI_execute.3 SPI_execute_plan.3 \
-		SPI_execute_plan_with_paramlist.3 SPI_execute_with_args.3 \
-		SPI_finish.3 SPI_fname.3 SPI_fnumber.3 SPI_freeplan.3 \
-		SPI_freetuple.3 SPI_freetuptable.3 SPI_getargcount.3 \
-		SPI_getargtypeid.3 SPI_getbinval.3 SPI_getnspname.3 \
-		SPI_getrelname.3 SPI_gettype.3 SPI_gettypeid.3 \
-		SPI_getvalue.3 SPI_is_cursor_plan.3 SPI_modifytuple.3 \
-		SPI_palloc.3 SPI_pfree.3 SPI_pop.3 SPI_prepare.3 \
-		SPI_prepare_cursor.3 SPI_prepare_params.3 SPI_push.3 \
-		SPI_repalloc.3 SPI_returntuple.3 SPI_saveplan.3 \
-		SPI_scroll_cursor_fetch.3 SPI_scroll_cursor_move.3 \
-		dblink.3 dblink_build_sql_delete.3 dblink_build_sql_insert.3 \
-		dblink_build_sql_update.3 dblink_cancel_query.3 \
-		dblink_close.3 dblink_connect.3 dblink_connect_u.3 \
-		dblink_disconnect.3 dblink_error_message.3 dblink_exec.3 \
-		dblink_fetch.3 dblink_get_connections.3 dblink_get_notify.3 \
-		dblink_get_pkey.3 dblink_get_result.3 dblink_is_busy.3 \
-		dblink_open.3 dblink_send_query.3
-
-MAN7?=		ALTER_COLLATION.7 ALTER_EXTENSION.7 ALTER_FOREIGN_TABLE.7 \
-		CREATE_COLLATION.7 CREATE_EXTENSION.7 CREATE_FOREIGN_TABLE.7 \
-		DROP_COLLATION.7 DROP_EXTENSION.7 DROP_FOREIGN_TABLE.7 \
-		SECURITY_LABEL.7
-MAN7+=		ABORT.7 ALTER_AGGREGATE.7 ALTER_CONVERSION.7		      \
-		ALTER_DATABASE.7 ALTER_DEFAULT_PRIVILEGES.7		      \
-		ALTER_DOMAIN.7 ALTER_FOREIGN_DATA_WRAPPER.7 ALTER_FUNCTION.7  \
-		ALTER_GROUP.7 ALTER_LARGE_OBJECT.7 ALTER_SERVER.7	      \
-		ALTER_USER_MAPPING.7 ALTER_INDEX.7 ALTER_LANGUAGE.7	      \
-		ALTER_OPERATOR_CLASS.7 ALTER_OPERATOR_FAMILY.7		      \
-		ALTER_ROLE.7						      \
-		ALTER_SCHEMA.7 ALTER_SEQUENCE.7 ALTER_TABLE.7		      \
-		ALTER_TEXT_SEARCH_CONFIGURATION.7			      \
-		ALTER_TEXT_SEARCH_DICTIONARY.7				      \
-		ALTER_TEXT_SEARCH_PARSER.7				      \
-		ALTER_TEXT_SEARCH_TEMPLATE.7				      \
-		ALTER_TRIGGER.7 ALTER_USER.7 ALTER_VIEW.7 ANALYZE.7 BEGIN.7   \
-		CHECKPOINT.7 CLOSE.7 CLUSTER.7 COMMENT.7 COMMIT.7	      \
-		COMMIT_PREPARED.7					      \
-		COPY.7 CREATE_AGGREGATE.7 CREATE_CAST.7			      \
-		CREATE_CONVERSION.7					      \
-		CREATE_DATABASE.7 CREATE_DOMAIN.7			      \
-		CREATE_FOREIGN_DATA_WRAPPER.7 CREATE_FUNCTION.7		      \
-		CREATE_GROUP.7 CREATE_INDEX.7 CREATE_LANGUAGE.7		      \
-		CREATE_OPERATOR.7 CREATE_OPERATOR_CLASS.7		      \
-		CREATE_OPERATOR_FAMILY.7 CREATE_ROLE.7			      \
-		CREATE_RULE.7 CREATE_SCHEMA.7 CREATE_SEQUENCE.7		      \
-		CREATE_SERVER.7 CREATE_TABLE.7 CREATE_TABLE_AS.7	      \
-		CREATE_TEXT_SEARCH_CONFIGURATION.7			      \
-		CREATE_TEXT_SEARCH_DICTIONARY.7				      \
-		CREATE_TEXT_SEARCH_PARSER.7				      \
-		CREATE_TEXT_SEARCH_TEMPLATE.7 CREATE_TRIGGER.7		      \
-		CREATE_TYPE.7 CREATE_USER.7 CREATE_USER_MAPPING.7	      \
-		CREATE_VIEW.7 DEALLOCATE.7 DECLARE.7 DELETE.7 DISCARD.7	      \
-		DO.7 DROP_AGGREGATE.7 DROP_CAST.7 DROP_CONVERSION.7	      \
-		DROP_DATABASE.7 DROP_DOMAIN.7 DROP_FOREIGN_DATA_WRAPPER.7     \
-		DROP_FUNCTION.7 DROP_GROUP.7 DROP_INDEX.7 DROP_LANGUAGE.7     \
-		DROP_OPERATOR.7 DROP_OPERATOR_CLASS.7 DROP_OPERATOR_FAMILY.7  \
-		DROP_OWNED.7 DROP_ROLE.7 DROP_RULE.7			      \
-		DROP_SCHEMA.7 DROP_SEQUENCE.7 DROP_SERVER.7 DROP_TABLE.7      \
-		DROP_TEXT_SEARCH_CONFIGURATION.7			      \
-		DROP_TEXT_SEARCH_DICTIONARY.7				      \
-		DROP_TEXT_SEARCH_PARSER.7				      \
-		DROP_TEXT_SEARCH_TEMPLATE.7 DROP_TRIGGER.7		      \
-		DROP_TYPE.7 DROP_USER.7 DROP_USER_MAPPING.7 DROP_VIEW.7 END.7 \
-		EXECUTE.7 EXPLAIN.7 FETCH.7 GRANT.7 INSERT.7 LISTEN.7 LOAD.7  \
-		LOCK.7 MOVE.7 NOTIFY.7 PREPARE.7 PREPARE_TRANSACTION.7	      \
-		REASSIGN_OWNED.7 REINDEX.7 RESET.7			      \
-		REVOKE.7 ROLLBACK.7 ROLLBACK_PREPARED.7 SELECT.7	      \
-		SELECT_INTO.7 SET.7					      \
-		SET_CONSTRAINTS.7 SET_ROLE.7 SET_TRANSACTION.7 SHOW.7	      \
-		SET_SESSION_AUTHORIZATION.7 START_TRANSACTION.7		      \
-		TABLE.7 TRUNCATE.7 UNLISTEN.7 UPDATE.7 VACUUM.7		      \
-		ALTER_OPERATOR.7 ALTER_TABLESPACE.7 ALTER_TYPE.7	      \
-		CREATE_TABLESPACE.7 DROP_TABLESPACE.7			      \
-		RELEASE_SAVEPOINT.7 ROLLBACK_TO_SAVEPOINT.7		      \
-		SAVEPOINT.7 VALUES.7 WITH.7
-.endif
-
 PLIST_SUB+=	PG_USER=${PG_USER} \
 		PG_GROUP=${PG_GROUP}
 SUB_LIST+=	PG_GROUP=${PG_GROUP} \
@@ -356,22 +266,21 @@ post-patch:
 do-install:
 	@for dir in ${INSTALL_DIRS}; do \
 	    cd ${WRKSRC}/$${dir} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} ${INSTALL_TARGET}; \
 	done
 .  if defined(SERVER_ONLY)
-	@ ${MKDIR} ${PREFIX}/share/postgresql ;\
-	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
+	@ ${MKDIR} ${STAGEDIR}${PREFIX}/share/postgresql ;\
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily ;\
 	${INSTALL_SCRIPT} ${WRKDIR}/502.pgsql \
-			${PREFIX}/etc/periodic/daily
-	${MKDIR} ${PREFIX}/${PG_USER} && ${CHOWN} ${PG_USER}:${PG_GROUP} ${PREFIX}/${PG_USER}
+			${STAGEDIR}${PREFIX}/etc/periodic/daily
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PG_USER}
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)
-	@ cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} install-local
+	@ cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-local
 .  endif
 	@ if [ -r ${PKGMESSAGE} ]; then \
-		${MKDIR} ${DOCSDIR} ;\
-		${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README${COMPONENT} ;\
-		${CAT} ${PKGMESSAGE} ;\
+		${MKDIR} ${STAGEDIR}${DOCSDIR} ;\
+		${INSTALL_DATA} ${PKGMESSAGE} ${STAGEDIR}${DOCSDIR}/README${COMPONENT} ;\
 	fi
 .endif # !NO_BUILD
 

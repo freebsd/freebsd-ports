@@ -3,5 +3,4 @@
 
 WANT_PGSQL_VER=	84
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../postgresql90-plperl/Makefile"
