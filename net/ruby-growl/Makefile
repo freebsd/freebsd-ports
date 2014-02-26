@@ -24,15 +24,13 @@ PLIST_FILES=	bin/growl \
 PORTDOCS=	History.txt README.txt
 DOCSDIR=	${RUBY_MODDOCDIR}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/growl ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/lib/ruby-growl.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/growl ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/lib/ruby-growl.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
