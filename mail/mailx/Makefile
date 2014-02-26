@@ -21,17 +21,17 @@ EXTRACT_ONLY=	mail-2.2.8.tar.gz
 WRKSRC=		${WRKDIR}/mail-2.2.8
 USES=		perl5
 USE_PERL5=	run build patch
-MAN1=		mailx.1
-MANCOMPRESSED=	yes
 
-NO_STAGE=	yes
 post-patch:
-	${PERL5} -pi.bak -e 's/^(\.Nm mail)/$$1x/i; s/^(\.Dt MAIL)/$$1X/' ${WRKSRC}/mail.1
+	${PERL5} -pi.bak -e 's/^(\.Nm mail)/$$1x/i; s/^(\.Dt MAIL)/$$1X/' \
+		${WRKSRC}/mail.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mail ${PREFIX}/bin/mailx
-	${INSTALL_MAN} ${WRKSRC}/mail.1.gz ${PREFIX}/man/man1/mailx.1.gz
-	${MKDIR} ${PREFIX}/share/doc/mailx
-	${INSTALL_DATA} ${DISTDIR}/mailx-memo-2.2.8R ${PREFIX}/share/doc/mailx
+	${INSTALL_PROGRAM} ${WRKSRC}/mail ${STAGEDIR}${PREFIX}/bin/mailx
+	${INSTALL_MAN} ${WRKSRC}/mail.1.gz \
+		${STAGEDIR}${PREFIX}/man/man1/mailx.1.gz
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/mailx
+	${INSTALL_DATA} ${DISTDIR}/mailx-memo-2.2.8R \
+		${STAGEDIR}${PREFIX}/share/doc/mailx
 
 .include <bsd.port.mk>

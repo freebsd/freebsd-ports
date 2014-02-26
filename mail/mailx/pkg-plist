@@ -1,3 +1,4 @@
 bin/mailx
 share/doc/mailx/mailx-memo-2.2.8R
+man/man1/mailx.1.gz
 @dirrm share/doc/mailx
