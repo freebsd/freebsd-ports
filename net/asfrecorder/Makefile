@@ -15,15 +15,15 @@ EXPIRATION_DATE=	2014-03-10
 
 USE_ZIP=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/source/asfrecorder.c -o ${WRKSRC}/asfrecorder
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/asfrecorder ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/asfrecorder
-	${INSTALL_DATA} ${WRKSRC}/README.TXT ${PREFIX}/share/doc/asfrecorder
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/asfrecorder ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/asfrecorder
+	${INSTALL_DATA} ${WRKSRC}/README.TXT \
+		${STAGEDIR}${PREFIX}/share/doc/asfrecorder
 
 .include <bsd.port.mk>
