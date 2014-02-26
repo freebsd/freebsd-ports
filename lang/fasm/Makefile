@@ -19,7 +19,6 @@ PLIST_FILES=	bin/fasm
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
@@ -30,11 +29,8 @@ do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} fasm.o -o fasm
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fasm ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/fasm ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
