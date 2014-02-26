@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	serf
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	www
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://serf.googlecode.com/svn/src_releases/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Serf HTTP client library
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
+LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
 
 USE_SCONS=	yes
 USE_BZIP2=	yes
