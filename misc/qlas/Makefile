@@ -9,15 +9,15 @@ MASTER_SITES=	http://lev.serebryakov.spb.ru/download/qlas/
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Qico FIDO mailer log analyzer and statistic builder
 
+USES=		shebangfix perl5 dos2unix
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USES=		shebangfix perl5
-SHEBANG_FILES=	qlas
-USE_DOS2UNIX=	qlas qlas.conf.default
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/qlas etc/qlas.conf.default
+SHEBANG_FILES=	qlas
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/qlas ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/qlas.conf.default ${PREFIX}/etc/
+	${INSTALL_SCRIPT} ${WRKSRC}/qlas ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/qlas.conf.default ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
