@@ -17,13 +17,11 @@ USES=		pathfix pkgconfig iconv
 USE_XORG=	x11 xft
 LDFLAGS+=	${ICONV_LIB}
 
-MAN1=		bsetbg.1 bsetroot.1
 PORTDOCS=	README.bbtools README.bsetbg
 
 OPTIONS_DEFINE=		TOOLS_ONLY
 TOOLS_ONLY_DESC=	Do not install window manager, only tools
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOOLS_ONLY}
@@ -32,7 +30,6 @@ COMMENT+=	(tools only)
 MAKE_ARGS=	SUBDIRS="doc lib util" bin_PROGRAMS=bsetroot
 INSTALL_TARGET=	-C util install		# XXX dirty hack :(
 .else
-MAN1+=		blackbox.1
 PORTDOCS+=	AUTHORS COMPLIANCE ChangeLog README RELNOTES TODO
 .endif
 
@@ -44,11 +41,9 @@ post-install:
 .if ${PORT_OPTIONS:MTOOLS_ONLY}
 	@${REINPLACE_CMD} -E '/[^s]\/blackbox|bstyleconvert|lib|include/d' \
 		${TMPPLIST}
-	${INSTALL_MAN} ${MAN1:S#^#${WRKSRC}/doc/#} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${MAN1:S#^#${WRKSRC}/doc/#} ${STAGEDIR}${MANPREFIX}/man/man1
 .endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S#^#${WRKSRC}/#} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S#^#${WRKSRC}/#} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
