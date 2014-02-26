@@ -10,13 +10,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A script that converts IRC logfiles into an HTML statistics page
 
 USES=		perl5
-NO_BUILD=	YES
+NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@if [ ! -d ${DATADIR} ]; then \
-		${MKDIR} ${DATADIR}; \
-	fi
-	${CP} -R ${WRKSRC}/* ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
