@@ -28,5 +28,4 @@ regression-test: install
 	${PYTHON_CMD} ${INSTALL_WRKSRC}/test.py
 .endif
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
