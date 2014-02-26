@@ -3,11 +3,14 @@
 
 PORTNAME=	bmpanel2
 DISTVERSION=	2.1pre1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	GOOGLE_CODE
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	danfe
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Nice, lightweight NETWM compliant panel for X11
+COMMENT=	Lightweight NetWM-compliant panel (taskbar) for X11
 
 LICENSE=	MIT
 
@@ -17,16 +20,12 @@ USE_XORG=	x11 xext
 
 LDFLAGS+=	-L${LOCALBASE}/lib		# XXX should not be needed
 
-OPTIONS_DEFINE=	TEMPERATURE
+OPTIONS_DEFINE=	OPACITY TEMPERATURE
+OPACITY_DESC=		Opacity setting with compositing window managers
 TEMPERATURE_DESC=	Build with temperature widget (for CPU, etc.)
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTEMPERATURE}
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	danfe
-PATCHFILES=	${PORTNAME}-temperature-widget.diff
-.endif
+OPACITY_PATCHFILES=	${PORTNAME}-opacity-setting.diff
+TEMPERATURE_PATCHFILES=	${PORTNAME}-temperature-widget.diff
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' ${WRKSRC}/xdg.c
