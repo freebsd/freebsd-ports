@@ -10,13 +10,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	tabmow@freenode.net
 COMMENT=	Prepares logfiles in a sanitised format for pflogsumm and awstats
 
+USES=		perl5 shebangfix
+NO_BUILD=	yes
+
+SHEBANG_FILES=	prepflog.pl
 PLIST_FILES=	bin/prepflog
 
-NO_BUILD=	yes
-USES=		perl5
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
