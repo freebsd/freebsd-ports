@@ -80,6 +80,7 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/import/wsa4.h
 %%DATADIR%%/import/wsa5.h
 %%DATADIR%%/import/wsc.h
+%%DATADIR%%/import/wsc2.h
 %%DATADIR%%/import/wsdd.h
 %%DATADIR%%/import/wsdd10.h
 %%DATADIR%%/import/wsdx.h
@@ -109,6 +110,7 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/plugin/README.txt
 %%DATADIR%%/plugin/cacerts.c
 %%DATADIR%%/plugin/cacerts.h
+%%DATADIR%%/plugin/calcrest.h
 %%DATADIR%%/plugin/httpda.c
 %%DATADIR%%/plugin/httpda.h
 %%DATADIR%%/plugin/httpdatest.c
@@ -133,6 +135,8 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/plugin/md5evp.h
 %%DATADIR%%/plugin/mecevp.c
 %%DATADIR%%/plugin/mecevp.h
+%%DATADIR%%/plugin/mq.c
+%%DATADIR%%/plugin/mq.h
 %%DATADIR%%/plugin/plugin.c
 %%DATADIR%%/plugin/plugin.h
 %%DATADIR%%/plugin/smdevp.c
