@@ -17,16 +17,13 @@ CONFIGURE_ARGS=	--with-berkeleydb-libdir=${BDB_LIB_DIR} \
 		--with-berkeleydb-includedir=${BDB_INCLUDE_DIR} \
 		--localstatedir=/var
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|-ldb|-l${BDB_LIB_NAME}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} 's|$$(localstatedir)/lib|$$(localstatedir)/db|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's|$$(localstatedir)/lib|$$(localstatedir)/db|' \
+		${WRKSRC}/Makefile.in
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/greyfix ${PREFIX}/sbin
-	@${INSTALL} -o nobody -m 700 -d /var/db/greyfix
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/greyfix ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL} -o nobody -m 700 -d ${STAGEDIR}/var/db/greyfix
 
 .include <bsd.port.mk>
