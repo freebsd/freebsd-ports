@@ -31,7 +31,6 @@ PLIST=		${WRKDIR}/.PLIST
 MCUINCPATH=	${MCUTARGET}/include
 MCULIBPATH=	${MCUTARGET}/lib
 
-NO_STAGE=	yes
 pre-install:
 	@cd ${WRKSRC} && ${FIND} upstream include -name '*.h' | ${SORT} | ${SED} -E 's,^[^/]+/,${MCUINCPATH}/,' > ${PLIST}
 	@${ECHO} ${MCULIBPATH}/msp430mcu.spec >> ${PLIST}
@@ -45,6 +44,6 @@ pre-install:
 	@${ECHO} "@dirrmtry ${MCUTARGET}" >> ${PLIST}
 
 do-install:
-	@cd ${WRKSRC} && MSP430MCU_ROOT=${WRKSRC} ${SH} scripts/install.sh ${PREFIX}
+	@cd ${WRKSRC} && MSP430MCU_ROOT=${WRKSRC} ${SH} scripts/install.sh ${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>

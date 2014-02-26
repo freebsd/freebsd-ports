@@ -21,22 +21,18 @@ ONLY_FOR_ARCHS=	amd64 i386 ia64
 
 PATCH_STRIP=	-p1
 
-USE_GMAKE=	yes
+USES=		gmake
+
 MAKE_ENV+=	FREEBSD=1
 LDFLAGS=	-lkvm
 
-PLIST_FILES=	bin/mcelog
-MAN8=		mcelog.8
+PLIST_FILES=	bin/mcelog man/man8/mcelog.8.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${CP} ${FILESDIR}/memstream.c ${WRKSRC}/memstream.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mcelog ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mcelog.8 ${MAN8PREFIX}/man/man8
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/mcelog ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mcelog.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

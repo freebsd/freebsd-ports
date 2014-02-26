@@ -20,14 +20,13 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/adcomplain
 
-NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC}; \
 	${CP} adcomplain.pl adcomplain.pl.old; \
 	${SED} 's=%PERL5%=${PERL}=' < adcomplain.pl.old > adcomplain.pl
 
 do-install:
-	cd ${WRKSRC}; \
-	${INSTALL_SCRIPT} adcomplain.pl ${PREFIX}/bin/adcomplain
+	${INSTALL_SCRIPT} ${WRKSRC}/adcomplain.pl \
+		${STAGEDIR}${PREFIX}/bin/adcomplain
 
 .include <bsd.port.mk>

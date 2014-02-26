@@ -14,13 +14,12 @@ USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=    bin/xporthdmv
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} \
 	&& ${CC} ${CFLAGS} xport.c -o xporthdmv
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xporthdmv ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xporthdmv ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

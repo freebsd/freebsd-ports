@@ -12,15 +12,15 @@ COMMENT=	A project scheduler
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
+
 ALL_TARGET=	build
 
-MAN1=		opensched.1
-PLIST_FILES=	bin/opensched
+PLIST_FILES=	bin/opensched man/man1/opensched.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/opensched ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/opensched.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/opensched ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/opensched.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

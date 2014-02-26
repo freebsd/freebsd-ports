@@ -9,21 +9,16 @@ MASTER_SITES=	http://FreeBSD.czest.pl/~wkoszek/ports/
 MAINTAINER=	wkoszek@FreeBSD.org
 COMMENT=	Firmware download to EZ-USB devices
 
-MAN8=		fxload.8
-USE_GMAKE=	yes
+USES=		gmake
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fxload ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/fxload.8 ${PREFIX}/man/man8
-	${MKDIR} ${DATADIR}
-	${MKDIR} ${PREFIX}/etc/devd
-	${INSTALL_DATA} ${WRKSRC}/a3load.hex ${DATADIR}
-	${INSTALL_DATA} ${FILESDIR}/xilinx.conf ${PREFIX}/etc/devd
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/fxload ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/fxload.8 ${STAGEDIR}${PREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
+	${INSTALL_DATA} ${WRKSRC}/a3load.hex ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/xilinx.conf ${STAGEDIR}${PREFIX}/etc/devd
 
 .include <bsd.port.pre.mk>
 

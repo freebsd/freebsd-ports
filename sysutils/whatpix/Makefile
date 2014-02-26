@@ -17,8 +17,7 @@ PLIST_FILES=	bin/whatpix
 USES=		perl5
 USE_PERL5=	run
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/whatpix ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/whatpix ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

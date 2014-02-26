@@ -41,9 +41,14 @@ SODIUM_LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
 
 NACL_DESC=		Prefer NaCl
 NACL_CONFIGURE_ENABLE=	nacl
-NACL_CONFIGURE_WITH=	nacl-libs=${LOCALBASE}/lib
 NACL_BUILD_DEPENDS=	${LOCALBASE}/lib/libnacl.a:${PORTSDIR}/security/nacl
 NACL_RUN_DEPENDS=	${LOCALBASE}/lib/libnacl.a:${PORTSDIR}/security/nacl
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNACL}
+CONFIGURE_ARGS+=	--with-nacl-libs=${LOCALBASE}/lib
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/configure.ac

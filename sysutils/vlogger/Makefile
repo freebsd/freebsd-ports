@@ -13,19 +13,19 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_BUILD=	yes
 
-MAN1=		${PORTNAME}.1
+SHEBANG_FILES=	vlogger
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-
-post-install:
-	${MKDIR} ${EXAMPLESDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-dbi.conf ${EXAMPLESDIR}/${PORTNAME}-dbi.conf
-	@${INSTALL_DATA} ${WRKSRC}/mysql_create.sql ${DATADIR}/mysql_create.sql
-	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1/${MAN1}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-dbi.conf \
+		${STAGEDIR}${EXAMPLESDIR}/${PORTNAME}-dbi.conf
+	${INSTALL_DATA} ${WRKSRC}/mysql_create.sql ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

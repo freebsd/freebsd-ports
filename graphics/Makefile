@@ -1036,7 +1036,6 @@
     SUBDIR += whirlgif
     SUBDIR += white_dune
     SUBDIR += wings
-    SUBDIR += wmgrabimage
     SUBDIR += wmicons
     SUBDIR += wxsvg
     SUBDIR += xaos

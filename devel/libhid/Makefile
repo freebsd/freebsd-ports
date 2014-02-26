@@ -10,8 +10,6 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/1958/
 MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	User-space HID access library written in C
 
-MAN1=		libhid-detach-device.1
-MANCOMPRESSED=	no
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USES=		gmake
@@ -25,5 +23,4 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} --mandir=${MANPREFIX}/man --without-doxygen -
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

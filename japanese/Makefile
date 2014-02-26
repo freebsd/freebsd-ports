@@ -262,7 +262,6 @@
     SUBDIR += rogue_s
     SUBDIR += rskkserv
     SUBDIR += ruby-eb
-    SUBDIR += ruby-man
     SUBDIR += ruby-mecab
     SUBDIR += ruby-ming
     SUBDIR += ruby-romkan

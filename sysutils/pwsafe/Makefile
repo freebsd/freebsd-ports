@@ -13,13 +13,11 @@ COMMENT=	Cmdline program that manages encrypted password databases
 OPTIONS_DEFINE=	SETUID X11
 SETUID_DESC=	Install setuid pwsafe binary
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
-MAN1=		pwsafe.1
-PLIST_FILES=	bin/pwsafe
+PLIST_FILES=	bin/pwsafe man/man1/pwsafe.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -33,10 +31,10 @@ CONFIGURE_ARGS=	ac_cv_have_x="have_x=no" \
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pwsafe ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/pwsafe.1 ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/pwsafe ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pwsafe.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MSETUID}
-	${CHMOD} u+s ${PREFIX}/bin/pwsafe
+	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/pwsafe
 .endif
 
 .include <bsd.port.mk>

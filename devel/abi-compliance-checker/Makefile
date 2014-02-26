@@ -29,8 +29,6 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}.pl
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -50,9 +48,7 @@ PICFLAG?=	-fpic
 PORTDATA=	*
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -70,15 +66,13 @@ post-patch:
 		${WRKSRC}/modules/Internals/RegTests.pm
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 .ifndef(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \
-	"modules/Internals modules/*.xml modules/Targets/unix" ${DATADIR})
+	"modules/Internals modules/*.xml modules/Targets/unix" ${STAGEDIR}${DATADIR})
 .endif
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)

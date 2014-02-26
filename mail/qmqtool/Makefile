@@ -16,15 +16,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 USES=		perl5
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/qmqtool ${PREFIX}/bin
+OPTIONS_DEFINE=	DOCS
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/qmqtool ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in Artistic ChangeLog FAQ README
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

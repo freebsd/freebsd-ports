@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.12
+PORTVERSION=	1.7.13
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -81,6 +81,6 @@ port-update:
 .endfor
 	${MV} ${.CURDIR}/distinfo~ ${.CURDIR}/distinfo
 	python ${FILESDIR}/mergeplist.py ${.CURDIR}/pkg-plist.* > ${PLIST}
-	${RM} ${.CURDIR}/pkg-plist.*
+#	${RM} ${.CURDIR}/pkg-plist.*
 
 .include <bsd.port.post.mk>

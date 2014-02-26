@@ -20,12 +20,12 @@
  install:	sqlite libsqlite.la sqlite.h
  	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib
 -	$(LTINSTALL) libsqlite.la $(DESTDIR)$(exec_prefix)/lib
-+	$(INSTALL) .libs/libsqlite.a $(exec_prefix)/lib
-+	$(INSTALL) .libs/libsqlite.so $(exec_prefix)/lib
-+	$(INSTALL) .libs/libsqlite.so.2 $(exec_prefix)/lib
++	$(INSTALL) .libs/libsqlite.a $(DESTDIR)$(exec_prefix)/lib
++	$(INSTALL) .libs/libsqlite.so $(DESTDIR)$(exec_prefix)/lib
++	$(INSTALL) .libs/libsqlite.so.2 $(DESTDIR)$(exec_prefix)/lib
  	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/bin
 -	$(LTINSTALL) sqlite $(DESTDIR)$(exec_prefix)/bin
-+	$(INSTALL) .libs/sqlite $(exec_prefix)/bin
++	$(INSTALL) .libs/sqlite $(DESTDIR)$(exec_prefix)/bin
  	$(INSTALL) -d $(DESTDIR)$(prefix)/include
  	$(INSTALL) -m 0644 sqlite.h $(DESTDIR)$(prefix)/include
 -	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
@@ -34,8 +34,8 @@
 +	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)/$(exec_prefix)/libdata/pkgconfig
 +
 +install-tcl:	libtclsqlite.la
-+	$(INSTALL) -d $(prefix)/lib/sqlite
-+	$(INSTALL) .libs/libtclsqlite.so $(prefix)/lib/sqlite
++	$(INSTALL) -d $(DESTDIR)$(prefix)/lib/sqlite
++	$(INSTALL) .libs/libtclsqlite.so $(DESTDIR)$(prefix)/lib/sqlite
  
  clean:	
  	rm -f *.lo *.la *.o sqlite@TARGET_EXEEXT@ libsqlite.la sqlite.h opcodes.*

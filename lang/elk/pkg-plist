@@ -172,6 +172,7 @@ lib/libelk.so.0
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/motif
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+man/man1/elk.1.gz
 @dirrm %%DATADIR%%
 @dirrm lib/elk
 @dirrm include/elk/extensions

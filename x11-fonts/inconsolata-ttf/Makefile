@@ -18,13 +18,12 @@ XORG_CAT=	font
 FONTDIR=	OTF
 PLIST_FILES=	lib/X11/fonts/${FONTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
-NO_STAGE=	yes
 do-configure:
 
 do-build:
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/X11/fonts/${FONTDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${PREFIX}/lib/X11/fonts/${FONTDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/${FONTDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${STAGEDIR}${PREFIX}/lib/X11/fonts/${FONTDIR}
 
 .include <bsd.port.mk>

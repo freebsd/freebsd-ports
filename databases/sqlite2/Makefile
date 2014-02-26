@@ -79,11 +79,9 @@ post-install:
 	@(cd ${WRKSRC} && ${GMAKE} install-tcl)
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/sqlite/
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/example.tcl ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

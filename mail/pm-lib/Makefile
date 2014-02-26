@@ -20,16 +20,17 @@ NO_BUILD=	yes
 PORTDOCS=	*
 PORTDATA=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/pm-*.rc ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/article/index.txt ${DOCSDIR}/README.txt
-	${INSTALL_DATA} ${WRKSRC}/doc/manual/index.txt ${DOCSDIR}/manual.txt
-	cd ${WRKSRC}/doc/examples && ${COPYTREE_SHARE} \* ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/pm-*.rc ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/ChangeLog ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/article/index.txt \
+		${STAGEDIR}${DOCSDIR}/README.txt
+	${INSTALL_DATA} ${WRKSRC}/doc/manual/index.txt \
+		${STAGEDIR}${DOCSDIR}/manual.txt
+	cd ${WRKSRC}/doc/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

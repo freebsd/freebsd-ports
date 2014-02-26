@@ -1,4 +1,5 @@
 bin/maildirsync
+man/man1/maildirsync.1.gz
 %%EXAMPLESDIR%%/sample.sh
 %%EXAMPLESDIR%%/mailbalance/PREPPED.USERS.db
 %%EXAMPLESDIR%%/mailbalance/README

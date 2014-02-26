@@ -17,18 +17,15 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/portell
 PORTDOCS=	README.txt
 
-NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/portell.py
 	${REINPLACE_CMD} -e 's/free/freebsd/' ${WRKSRC}/portell.py
 	${REINPLACE_CMD} -e 's/portell.py/portell/' ${WRKSRC}/README.txt
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/portell.py ${PREFIX}/bin/portell
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/portell.py ${STAGEDIR}${PREFIX}/bin/portell
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 
 post-install:
 .if !defined(BATCH)

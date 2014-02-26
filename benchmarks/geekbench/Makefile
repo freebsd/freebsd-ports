@@ -18,8 +18,8 @@ USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/dist/${DISTNAME}
 PLIST_FILES=	bin/geekbench
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/geekbench_x86_32 ${PREFIX}/bin/geekbench
+	${INSTALL_PROGRAM} ${WRKSRC}/geekbench_x86_32 \
+		${STAGEDIR}${PREFIX}/bin/geekbench
 
 .include <bsd.port.mk>

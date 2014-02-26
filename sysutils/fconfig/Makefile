@@ -10,12 +10,12 @@ MASTER_SITES=	http://downloads.openwrt.org/sources/ \
 MAINTAINER=	thompsa@FreeBSD.org
 COMMENT=	Read and modify RedBoot embedded boot configuration
 
+USES=		gmake
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GMAKE=	yes
 PLIST_FILES=	sbin/fconfig
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fconfig ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/fconfig ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

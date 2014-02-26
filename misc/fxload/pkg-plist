@@ -1,4 +1,5 @@
 etc/devd/xilinx.conf
 sbin/fxload
+man/man8/fxload.8.gz
 %%DATADIR%%/a3load.hex
 @dirrm %%DATADIR%%

@@ -18,9 +18,8 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		dwarfdump.1
+PLIST_FILES=	bin/dwarfdump man/man1/dwarfdump.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64")
@@ -36,7 +35,7 @@ post-patch:
 	${FILES_TO_PATCH:S,^,${WRKSRC}/,}
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/dwarfdump ${PREFIX}/bin
-		${INSTALL_DATA} ${WRKSRC}/dwarfdump.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/dwarfdump ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/dwarfdump.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
