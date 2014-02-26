@@ -13,21 +13,17 @@ COMMENT=	Makefaq is a Python program that creates a (FAQ)
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-MAN1=		makefaq.1
-PLIST_FILES=	bin/makefaq.py
+PLIST_FILES=	bin/makefaq.py man/man1/makefaq.1.gz
 PORTDOCS=	README UPGRADING faq.html
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/makefaq.py ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/makefaq.1  ${MAN1PREFIX}/man/man1
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/makefaq.py ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/makefaq.1  ${STAGEDIR}${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
