@@ -9,15 +9,13 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Decode and diagnose sniffed DHCP packets
 
-MAN8=		dhcpdump.8
-PLIST_FILES=	bin/dhcpdump
+PLIST_FILES=	bin/dhcpdump man/man8/dhcpdump.8.gz
 
 USES=		perl5
 USE_PERL5=	build
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dhcpdump ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dhcpdump.8 ${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/dhcpdump ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dhcpdump.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>
