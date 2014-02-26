@@ -8,7 +8,7 @@ MASTER_SITES=	http://github.com/${PORTNAME}/mysql/archive/v${PORTVERSION}.tar.gz
     		http://mirrors.rit.edu/zi/
 DISTNAME=	v${PORTVERSION}
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	lattera@gmail.com
 COMMENT=	Lightweight and fast MySQL driver for go
 
 USE_GITHUB=	yes
