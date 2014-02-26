@@ -20,7 +20,6 @@ CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}/lib \
 	&& ${MAKE}
@@ -29,6 +28,6 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}/example/.libs \
-	&& ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin
+	&& ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
