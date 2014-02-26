@@ -18,31 +18,26 @@ MAKE_ENV+=	DEFS="-I${LOCALBASE}/include/eps ${CFLAGS}"
 SUB_FILES=	pkg-message
 
 EXAMPLE_FILES=	addr.1 addr.2 addr.3 addr.4 email.1 email.2 virus.email
-INSTALL_FILES=	address b64decode b64encode body fold full headers qpdecode rewrite
+INSTALL_FILES=	address b64decode b64encode body fold full headers qpdecode \
+		rewrite
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC =|CC \?=|' \
-			  -e 's|^DEFS =|DEFS \?=|' \
-			  -e 's|^LIBS = -leps|LIBS = ${LOCALBASE}/lib/libeps.a|' \
-		${WRKSRC}/Makefile
+		-e 's|^DEFS =|DEFS \?=|' \
+		-e 's|^LIBS = -leps|LIBS = ${LOCALBASE}/lib/libeps.a|' \
+			${WRKSRC}/Makefile
 
 do-install:
 .for f in ${INSTALL_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/bin/eps-${f}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/eps-${f}
 .endfor
-
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EXAMPLE_FILES}
-	${INSTALL_DATA} ${WRKSRC}/content/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/content/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
