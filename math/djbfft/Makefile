@@ -20,7 +20,6 @@ HEADER_FILES=	complex4.h complex8.h fftc4.h fftc8.h fftfreq.h \
 		fftr4.h fftr8.h real4.h real8.h
 LIB_FILES=	libdjbfft.a
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec \
 		${REINPLACE_CMD} -E -e 's!(djbfft.a)!lib\1!' {} \;
@@ -41,14 +40,14 @@ do-configure:
 .endif
 
 pre-su-install:
-	@${MKDIR} ${PREFIX}/include/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 
 do-install:
 .for file in ${HEADER_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 .endfor
 .for file in ${LIB_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/lib
 .endfor
 
 .include <bsd.port.pre.mk>
