@@ -19,8 +19,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/bontmia
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bontmia ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bontmia ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
