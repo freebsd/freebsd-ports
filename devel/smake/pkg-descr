@@ -1,5 +1,5 @@
 Smake is a highly portable make program with automake features. It is
-currently mainly targeted to be used with the Makefiles system.
+intended to be used with the "makefiles" system.
 
 The system allows mounting a source tree via NFS and simultaneous
 compilation on all supported platforms.  The system therefore allows the
