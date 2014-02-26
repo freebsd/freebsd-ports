@@ -10,21 +10,18 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Multiplex multiple PostgreSQL databases to one relay
 
-MAN8=		postgresql-relay.8
-PLIST_FILES=	bin/postgresql-relay \
-		etc/postgresql-relay.conf-sample
+PLIST_FILES=	bin/postgresql-relay etc/postgresql-relay.conf-sample \
+		man/man8/postgresql-relay.8.gz
 
 USE_RC_SUBR=	postgresql-relay
 USES=		perl5
 USE_PERL5=	build
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/postgresql-relay ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/postgresql-relay.conf-sample ${PREFIX}/etc/postgresql-relay.conf-sample
-	${INSTALL_MAN} ${WRKSRC}/postgresql-relay.8 ${MAN8PREFIX}/man/man8
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/postgresql-relay ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/postgresql-relay.conf-sample \
+		${STAGEDIR}${PREFIX}/etc/postgresql-relay.conf-sample
+	${INSTALL_MAN} ${WRKSRC}/postgresql-relay.8 \
+		${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
