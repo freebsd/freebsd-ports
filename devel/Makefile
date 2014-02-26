@@ -145,6 +145,7 @@
     SUBDIR += bsdcflow
     SUBDIR += bsdlibdwarf
     SUBDIR += bufferpool
+    SUBDIR += bug-buddy
     SUBDIR += bugzilla40
     SUBDIR += bugzilla42
     SUBDIR += bugzilla44
