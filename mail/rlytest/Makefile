@@ -18,10 +18,8 @@ NO_WRKSUBDIR=	yes
 
 USES=		perl5
 
-MAN1=		rlytest.1
-PLIST_FILES=	bin/rlytest
+PLIST_FILES=	bin/rlytest man/man1/rlytest.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!.*|#!${PERL}|' ${WRKSRC}/${PORTNAME}
 
@@ -29,7 +27,7 @@ do-build:
 	@cd ${WRKSRC} && pod2man ${PORTNAME} > ${PORTNAME}.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
