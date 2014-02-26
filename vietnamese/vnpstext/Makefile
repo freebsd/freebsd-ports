@@ -12,14 +12,12 @@ MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Converts 8-bit VISCII Vietnamese text into PostScript
 
 CFLAGS+=	-I../../include
-MAN1=		vnpstext.1
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/vn-fonts
-	${INSTALL_PROGRAM} ${WRKSRC}/vnpstext ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/vn-fonts
+	${INSTALL_PROGRAM} ${WRKSRC}/vnpstext ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC} ; \
-	${INSTALL_DATA} *.ps prologs/*.pro ${PREFIX}/share/vn-fonts)
-	${INSTALL_MAN} ${WRKSRC}/vnpstext.1V ${PREFIX}/man/man1/vnpstext.1
+	${INSTALL_DATA} *.ps prologs/*.pro ${STAGEDIR}${PREFIX}/share/vn-fonts)
+	${INSTALL_MAN} ${WRKSRC}/vnpstext.1V ${STAGEDIR}${PREFIX}/man/man1/vnpstext.1
 
 .include <bsd.port.mk>
