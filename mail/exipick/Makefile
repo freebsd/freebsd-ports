@@ -16,7 +16,6 @@ PLIST_FILES=	bin/${PORTNAME}
 USES=		perl5
 USE_PERL5=	run
 
-NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKSRC}
@@ -28,7 +27,7 @@ do-build:
 		${WRKSRC}/${DISTNAME} > ${WRKSRC}/${PORTNAME}.pl
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
