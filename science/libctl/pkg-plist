@@ -10,6 +10,7 @@ lib/libctlgeom.a
 lib/libctlgeom.la
 lib/libctlgeom.so
 lib/libctlgeom.so.5
+man/man1/gen-ctl-io.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/advanced-user.html
 %%PORTDOCS%%%%DOCSDIR%%/basic-user.html
 %%PORTDOCS%%%%DOCSDIR%%/developer.html
