@@ -15,15 +15,14 @@ COMMENT=	A full featured floating point expression evaluator
 
 USE_LHA=	yes
 
-PLIST_FILES=		bin/Eval
+PLIST_FILES=	bin/Eval
 
 WRKSRC=		${WRKDIR}/Eval/source
 
-NO_STAGE=	yes
 post-extract:
 	-${LN} -s Makefile.unx ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Eval ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Eval ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
