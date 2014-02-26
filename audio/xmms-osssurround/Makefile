@@ -17,7 +17,6 @@ EXPIRATION_DATE=	2014-03-23
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USE_CSTD=	gnu89
 CFLAGS+=	-fPIC `xmms-config --cflags`
 
@@ -31,7 +30,8 @@ do-build:
 	 ${CC} -shared -olibOSSSurround.so about.o audio.o configure.o convert.o init.o mixer.o OSS.o
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Output/
 	${INSTALL_PROGRAM} ${WRKSRC}/OSSSurround-0.1/libOSSSurround.so \
-		${PREFIX}/lib/xmms/Output/
+		${STAGEDIR}${PREFIX}/lib/xmms/Output/
 
 .include <bsd.port.mk>
