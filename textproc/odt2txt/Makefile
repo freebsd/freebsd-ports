@@ -9,26 +9,23 @@ MASTER_SITES=	http://stosberg.net/odt2txt/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	alexey@renatasystems.org
-COMMENT=	A simple converter from OpenDocument Text to plain text
+COMMENT=	Simple converter from OpenDocument Text to plain text
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv gmake
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/odt2txt
+PLIST_FILES=	bin/odt2txt man/man1/odt2txt.1.gz
 
-MAN1=		odt2txt.1
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
 		-e 's#-liconv#${ICONV_LIB}#' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/odt2txt ${PREFIX}/bin/odt2txt
-	${INSTALL_MAN} ${WRKSRC}/odt2txt.1 ${MANPREFIX}/man/man1/odt2txt.1
+	${INSTALL_PROGRAM} ${WRKSRC}/odt2txt ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/odt2txt.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
