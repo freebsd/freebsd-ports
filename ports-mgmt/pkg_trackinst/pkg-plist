@@ -42,5 +42,5 @@ lib/insthook.so
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/main.py
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/main.pyc
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/main.pyo
-%%PYTHON_SITELIBDIR%%/pkg_trackinst-1.2.3-py2.7.egg-info
+%%PYTHON_SITELIBDIR%%/pkg_trackinst-%%VERSION%%-py%%PYTHON_VER%%.egg-info
 @dirrm %%PYTHON_SITELIBDIR%%/PkgTrackInst
