@@ -2,101 +2,83 @@
 # $FreeBSD$
 
 PORTNAME=	xorp
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.8.5
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	net
-MASTER_SITES=	http://www.xorp.org/releases/${PORTVERSION}/	\
-		http://www2.xorp.org/releases/${PORTVERSION}/	\
-		http://www5.xorp.org/releases/${PORTVERSION}/	\
-		http://www3.xorp.org/releases/${PORTVERSION}/
+MASTER_SITES=	http://www.xorp.org/releases/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The eXtensible Open Router Platform
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	ADVMCAST IPV6 SNMP OPTIMIZED_CFLAGS TEST DEBUG PROFILE
-OPTIONS_DEFAULT=	ADVMCAST IPV6 SNMP OPTIMIZED_CFLAGS TEST PROFILE
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
+		libpcap.so:${PORTSDIR}/net/libpcap
 
-ADVMCAST_DESC=	Build with Advanced Multicast API
+CONFLICTS_INSTALL=	xorp-devel-*
 
-BROKEN=		Does not build
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2014-02-27
-
-USE_GMAKE=	yes
+EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions -s /^xorp/${DISTNAME}/
+GROUPS=		xorp
+USES=		ncurses scons shebangfix
+USE_BZIP2=	yes
 USE_OPENSSL=	yes
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=		--prefix=${PREFIX}/${PORTNAME}			\
-			--with-comment='FreeBSD port: ${PKGNAME}'	\
-			--with-openssl=${OPENSSLBASE}
-
-CXXFLAGS+=	-Wno-uninitialized
-NOMAN=		defined
-
-XORP_GROUP=	xorp
+USE_PYTHON_BUILD=	2
 USE_RC_SUBR=	xorp
+SHEBANG_FILES=	xrl/scripts/clnt-gen xrl/scripts/tgt-gen
+python_OLD_CMD=	.*python
+python_CMD=	${PYTHON_CMD}
+SUB_FILES=	pkg-message
+XORP_SAMPLECONF=	rtrmgr/config/multicast4.boot
 
-NO_STAGE=	yes
+BROKEN_sparc64=		Does not compile on sparc64
+
+OPTIONS_DEFINE=	OPTIMIZE ORIGIN SHARED STRIP TCP_RPC
+OPTIONS_DEFAULT=	OPTIMIZE ORIGIN SHARED STRIP
+OPTIMIZE_DESC=	Build with optimization
+ORIGIN_DESC=	Use ORIGIN with shared libraries
+SHARED_DESC=	Build with shared libraries
+TCP_RPC_DESC=	Use TCP as RPC transport (defaults to AF_LOCAL)
+
+MAKE_ARGS=	prefix=${PREFIX} enable_boost=1
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MADVMCAST}
-CONFIGURE_ARGS+=	--enable-advanced-mcast-api
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
+.if ${PORT_OPTIONS:MOPTIMIZE}
+MAKE_ARGS+=	optimize=highest
 .else
-CONFIGURE_ARGS+=	--disable-ipv6
+MAKE_ARGS+=	optimize=no
 .endif
 
-.if ${PORT_OPTIONS:MSNMP}
-BUILD_DEPENDS+=		${LOCALBASE}/sbin/snmpd:${PORTSDIR}/net-mgmt/net-snmp
-CONFIGURE_ARGS+=	--with-snmp					 \
-	--with-path-to-snmpd=${LOCALBASE}/sbin				 \
-	--with-path-to-net-snmpd-config=${LOCALBASE}/bin/net-snmp-config \
-	--enable-shared
-PLIST_SUB+=		XORP_SNMP=""
-USE_LDCONFIG=		${PREFIX}/mibs
+.if ${PORT_OPTIONS:MSHARED}
+MAKE_ARGS+=	shared=true
+PLIST_SUB+=	XORP_SHLIB=""
+USE_LDCONFIG=	${PREFIX}/lib/xorp/lib
+. if ${PORT_OPTIONS:MORIGIN}
+MAKE_ARGS+=	origin=true
+. else
+MAKE_ARGS+=	origin=false
+. endif
 .else
-PLIST_SUB+=		XORP_SNMP="@comment "
+MAKE_ARGS+=	shared=false
+PLIST_SUB+=	XORP_SHLIB="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CONFIGURE_ARGS+=	--enable-optimize --disable-debug
+.if ${PORT_OPTIONS:MSTRIP}
+MAKE_ARGS+=	strip=true
+.else
+MAKE_ARGS+=	strip=false
 .endif
 
-.if ${PORT_OPTIONS:MTEST}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+.if ${PORT_OPTIONS:MTCP_RPC}
+MAKE_ARGS+=	transport=tcp
+.else
+MAKE_ARGS+=	transport=local
 .endif
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug-msgs --enable-debug-fnames
-.endif
-
-.if ${PORT_OPTIONS:MPROFILE}
-CONFIGURE_ARGS+=	--enable-profile
-.endif
-
-NOT_FOR_ARCH=	sparc64
-
-.include <bsd.port.pre.mk>
-
-pre-everything::
-.if !defined(PREFIX) || ${PREFIX} == "/usr/local"
-	@${ECHO_MSG} "XORP does not currently follow the hier(7) filesystem layout."
-	@${ECHO_MSG} "It will therefore install all its directories relative to ${PREFIX}."
-	@${ECHO_MSG} "If you do not want this, hit ^C now and set PREFIX in the"
-	@${ECHO_MSG} "build environment to something other than ${PREFIX}."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you plan to build with SNMP support, please ensure that"
-	@${ECHO_MSG} "the net-mgmt/net-snmp port is already installed under ${LOCALBASE}"
-	@${ECHO_MSG} "before doing this."
-.endif
+post-patch:
+	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/SConstruct
 
 post-install:
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${CP} -p ${WRKSRC}/${XORP_SAMPLECONF} ${STAGEDIR}${PREFIX}/etc/xorp.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
