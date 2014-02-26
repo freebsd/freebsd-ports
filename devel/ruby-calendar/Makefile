@@ -20,20 +20,17 @@ DOCS_EN=	README.en ext/sdn/README.sdncal20
 DOCS_JA=	README
 EXAMPLES_EN=	ext/calendar/cal*.rb
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 .endfor
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
-.endif
 
 .include <bsd.port.mk>
