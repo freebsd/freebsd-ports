@@ -3,6 +3,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.670
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -34,6 +35,7 @@ post-extract:
 			${TAR} --unlink -xzf ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
 		done; \
 	fi
+	@${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -r
 
 post-patch:
 	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/setup.sh
