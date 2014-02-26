@@ -17,9 +17,7 @@ COMMENT=	Allows formatting/partitioning/analysis/repairing of SCSI disks
 
 LIBSCHILY=	libschily-2.01.01a07.tar.gz
 USE_GMAKE=	yes
-MAN1=		sformat.1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CCOM!=		${BASENAME} ${CC}
@@ -47,10 +45,11 @@ post-patch:
 .endfor
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/sformat/OBJ/${SFMTTARGET}/sformat \
-		${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/sformat/sformat.dat ${DATADIR}
-	@${INSTALL_MAN} ${WRKSRC}/sformat/sformat.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/sformat/OBJ/${SFMTTARGET}/sformat \
+		${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sformat/sformat.dat ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/sformat/sformat.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
