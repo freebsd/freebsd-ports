@@ -12,14 +12,12 @@ EXTRACT_ONLY=
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Generates the Qmail assign and recipients file based on unix groups
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_WRKSUBDIR=	yes
 
-MAN1=		qar-bufo.1
+SHEBANG_FILES=	qar-bufo-1.3.1
+PLIST_FILES=	bin/qar-bufo man/man1/qar-bufo.1.gz
 
-PLIST_FILES=	bin/qar-bufo
-
-NO_STAGE=	yes
 post-extract:
 	@${CP} -v ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
@@ -28,11 +26,14 @@ do-configure:
 	@${ECHO} -n
 
 do-build:
-	@${EXEC} pod2man --section=1 --release=${PORTVERSION} --name=${PORTNAME} --center="${PORTNAME} user guide" ${WRKSRC}/${DISTNAME} ${WRKSRC}/${PORTNAME}.1
+	@${EXEC} pod2man --section=1 --release=${PORTVERSION} \
+		--name=${PORTNAME} --center="${PORTNAME} user guide" \
+		${WRKSRC}/${DISTNAME} ${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	@${CP} -v ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
-	@${CP} -v ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1/${PORTNAME}.1
-	@${CHMOD} +x ${PREFIX}/bin/qar-bufo
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
