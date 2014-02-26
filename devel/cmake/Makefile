@@ -9,7 +9,7 @@ MASTER_SITES=	http://downloads.cmake.org/files/v2.8/
 MAINTAINER=	kde@FreeBSD.org
 COMMENT?=	Cross-platform Makefile generator
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 CONFIGURE_ENV=	MAKE=make
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
