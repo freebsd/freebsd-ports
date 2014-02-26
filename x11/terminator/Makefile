@@ -1,5 +1,5 @@
 # Created by: Thomas Hurst <tom@hur.st>
-# $FreeBSD$
+# $FreeBSD: head/x11/terminator/Makefile 336553 2013-12-15 16:22:17Z wg $
 
 PORTNAME=	terminator
 PORTVERSION=	0.96
@@ -14,7 +14,8 @@ COMMENT=	Multiple GNOME terminals in one window
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:${PORTSDIR}/devel/py-notify \
-		${PYTHON_SITELIBDIR}/keybinder/_keybinder.so:${PORTSDIR}/x11/keybinder
+		${PYTHON_SITELIBDIR}/keybinder/_keybinder.so:${PORTSDIR}/x11/keybinder \
+		${PYTHON_PKGNAMEPREFIX}vte>=0:${PORTSDIR}/x11-toolkits/py-vte
 
 OPTIONS_DEFINE=	NLS GCONF
 GCONF_DESC=	Use GNOME Terminal settings

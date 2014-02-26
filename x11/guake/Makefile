@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/x11/guake/Makefile 339634 2014-01-13 21:00:02Z rene $
 
 PORTNAME=	guake
 PORTVERSION=	0.4.4.0
@@ -15,9 +15,11 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	py${PYTHON_SUFFIX}-dbus>=0.84.0:${PORTSDIR}/devel/py-dbus \
 		py${PYTHON_SUFFIX}-notify>=0.1.1_9:${PORTSDIR}/devel/py-notify \
+		py${PYTHON_SUFFIX}-vte>=0.26.2_1:${PORTSDIR}/x11-toolkits/py-vte \
 		py${PYTHON_SUFFIX}-xdg>=0.19:${PORTSDIR}/devel/py-xdg
 RUN_DEPENDS=	py${PYTHON_SUFFIX}-dbus>=0.84.0:${PORTSDIR}/devel/py-dbus \
 		py${PYTHON_SUFFIX}-notify>=0.1.1_9:${PORTSDIR}/devel/py-notify \
+		py${PYTHON_SUFFIX}-vte>=0.26.2_1:${PORTSDIR}/x11-toolkits/py-vte \
 		py${PYTHON_SUFFIX}-xdg>=0.19:${PORTSDIR}/devel/py-xdg
 
 #GH_ACCOUNT=	Guake

@@ -1,0 +1,19 @@
+--- python/Makefile.in.orig	2009-11-01 13:38:24.000000000 -0500
++++ python/Makefile.in	2009-11-01 13:38:24.000000000 -0500
+@@ -73,7 +73,6 @@ am__installdirs = "$(DESTDIR)$(pythonsit
+ LTLIBRARIES = $(pythonsiteexec_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ @BUILD_PYTHON_MODULES_TRUE@vtemodule_la_DEPENDENCIES =  \
+-@BUILD_PYTHON_MODULES_TRUE@	$(top_builddir)/src/libvte.la \
+ @BUILD_PYTHON_MODULES_TRUE@	$(am__DEPENDENCIES_1) \
+ @BUILD_PYTHON_MODULES_TRUE@	$(am__DEPENDENCIES_1) \
+ @BUILD_PYTHON_MODULES_TRUE@	$(am__DEPENDENCIES_1)
+@@ -320,7 +319,7 @@ EXTRA_DIST = vte.defs pyvte.pc.in vte.ov
+ # we do this to suport building with -Wl,-z,defs which errors on
+ # vtemodule.so as we cannot include $(PYTHON_LIBS) due to bug 410986.
+ @BUILD_PYTHON_MODULES_TRUE@vtemodule_la_LDFLAGS = -module -avoid-version -export-symbols-regex initvte $(PYTHON_LDFLAGS) $(AM_LDFLAGS)
+-@BUILD_PYTHON_MODULES_TRUE@vtemodule_la_LIBADD = $(top_builddir)/src/libvte.la $(LIBS) $(PYGTK_LIBS) $(VTE_LIBS) $(X_LIBS)
++@BUILD_PYTHON_MODULES_TRUE@vtemodule_la_LIBADD = -lvte $(LIBS) $(PYGTK_LIBS) $(VTE_LIBS) $(X_LIBS)
+ @BUILD_PYTHON_MODULES_TRUE@nodist_vtemodule_la_SOURCES = vte.c
+ all: all-am
+ 

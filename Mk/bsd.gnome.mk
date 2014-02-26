@@ -3,7 +3,7 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/trunk/Mk/bsd.gnome.mk 18967 2013-12-26 19:11:54Z kwm $
+#     $MCom: ports/trunk/Mk/bsd.gnome.mk 19008 2014-02-22 13:42:02Z kwm $
 #
 # Please view me with 4 column tabs!
 
@@ -85,8 +85,8 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 gal2 \
 		libgnomecanvas libgnomedb libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt libzvt linc \
-		orbit2 pango pangox-compat pygnome2 pygnomeextras pygobject pygtk2 \
-		pygtksourceview
+		orbit2 pango pangox-compat pygnome2 pygnomedesktop pygnomeextras pygobject pygtk2 \
+		pygtksourceview vte
 
 # GNOME 3 components
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
@@ -370,18 +370,20 @@ gnomedesktop3_USE_GNOME_IMPL=	gnomedocutils gtk30
 gnomedesktopsharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-sharp-2.0.pc
 gnomedesktopsharp20_BUILD_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
 gnomedesktopsharp20_RUN_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
-gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gnomepanel3 gtkhtml3 librsvg2 libgnomeprintui gtksourceview2 libwnck nautiluscdburner
+gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gnomepanel3 gtkhtml3 librsvg2 vte libgnomeprintui gtksourceview2 libwnck nautiluscdburner
 gnomedesktopsharp20_GNOME_DESKTOP_VERSION=2
 
 libwnck_LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck
 libwnck_DETECT=		${LOCALBASE}/libdata/pkgconfig/libwnck-1.0.pc
 libwnck_USE_GNOME_IMPL=	gtk20
-libwnck_GNOME_DESKTOP_VERSION=2
 
 libwnck3_LIB_DEPENDS=	libwnck-3.so:${PORTSDIR}/x11-toolkits/libwnck3
 libwnck3_DETECT=	${LOCALBASE}/libdata/pkgconfig/libwnck-3.0.pc
 libwnck3_USE_GNOME_IMPL=gtk30
-libwnck3_GNOME_DESKTOP_VERSION=3
+
+vte_LIB_DEPENDS=	libvte.so:${PORTSDIR}/x11-toolkits/vte
+vte_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte.pc
+vte_USE_GNOME_IMPL=	gtk20
 
 vte3_LIB_DEPENDS=	libvte2_90.so:${PORTSDIR}/x11-toolkits/vte3
 vte3_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte-2.90.pc
@@ -532,6 +534,12 @@ gnomedocutils_BUILD_DEPENDS=	${gnomedocutils_DETECT}:${PORTSDIR}/textproc/gnome-
 gnomedocutils_RUN_DEPENDS=	${gnomedocutils_DETECT}:${PORTSDIR}/textproc/gnome-doc-utils
 gnomedocutils_USE_GNOME_IMPL=	libxslt
 
+pygnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-desktop-2.0.pc
+pygnomedesktop_BUILD_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
+pygnomedesktop_RUN_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
+pygnomedesktop_USE_GNOME_IMPL=	pygnome2 libgnomeprintui gtksourceview gnomepanel libwnck nautilus2 metacity
+pygnomedesktop_GNOME_DESKTOP_VERSION=2
+
 gtksharp10_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtk-sharp.pc
 gtksharp10_BUILD_DEPENDS=	${gtksharp10_DETECT}:${PORTSDIR}/x11-toolkits/gtk-sharp10
 gtksharp10_RUN_DEPENDS=		${gtksharp10_DETECT}:${PORTSDIR}/x11-toolkits/gtk-sharp10
@@ -545,7 +553,7 @@ gtksharp20_USE_GNOME_IMPL=	gtk20
 gnomesharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-sharp-2.0.pc
 gnomesharp20_BUILD_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
 gnomesharp20_RUN_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
-gnomesharp20_USE_GNOME_IMPL=	gnomepanel3 gtkhtml3 gtksharp20 librsvg2
+gnomesharp20_USE_GNOME_IMPL=	gnomepanel3 gtkhtml3 gtksharp20 librsvg2 vte
 
 libgnomekbd_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
 libgnomekbd_LIB_DEPENDS=	libgnomekbd.so:${PORTSDIR}/x11/libgnomekbd

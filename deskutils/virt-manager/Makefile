@@ -1,5 +1,5 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/deskutils/virt-manager/Makefile 345403 2014-02-21 13:36:03Z ehaupt $
 
 PORTNAME=	virt-manager
 PORTVERSION=	0.9.5
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_PKGNAMEPREFIX}virtinst>=0.600.4:${PORTSDIR}/net-mgmt/virtinst \
+		${PYTHON_PKGNAMEPREFIX}vte>=0.26.2:${PORTSDIR}/x11-toolkits/py-vte \
 		gtk-vnc>=0.3.10:${PORTSDIR}/net/gtk-vnc \
 		librsvg2>=2.32.1:${PORTSDIR}/graphics/librsvg2
 

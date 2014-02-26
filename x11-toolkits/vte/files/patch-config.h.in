@@ -1,0 +1,12 @@
+--- config.h.in.orig	Wed May 17 10:45:57 2006
++++ config.h.in	Wed May 17 10:46:25 2006
+@@ -106,6 +106,9 @@
+ /* Define to 1 if you have the <GL/glx.h> header file. */
+ #undef HAVE_GL_GLX_H
+ 
++/* Define to 1 if you have the `posix_openpt' function. */
++#undef HAVE_POSIX_OPENPT
++
+ /* Define to 1 if you have the `grantpt' function. */
+ #undef HAVE_GRANTPT
+ 
