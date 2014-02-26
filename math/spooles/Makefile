@@ -26,7 +26,7 @@ COMMENT=	SParse Object Oriented Linear Equations Solver
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmpich.a:${PORTSDIR}/net/mpich2
 .endif
 
-USE_GMAKE=	yes	#BSD make gives problems here
+USES=		gmake
 
 .if defined(WITH_MPI)
 PLIST_SUB+=	MPI=""
@@ -38,7 +38,6 @@ PLIST_SUB+=	MPI="@comment "
 CONFLICTS=	spooles-mpich-2*
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -77,35 +76,33 @@ do-build:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/include/spooles
-	${INSTALL_DATA} ${WRKSRC}/spooles.a ${PREFIX}/lib/libspooles.a
-	${INSTALL_DATA} ${WRKSRC}_SHARED/libspooles.so.1 ${PREFIX}/lib
-	${LN} -sf libspooles.so.1 ${PREFIX}/lib/libspooles.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/spooles
+	${INSTALL_DATA} ${WRKSRC}/spooles.a ${STAGEDIR}${PREFIX}/lib/libspooles.a
+	${INSTALL_DATA} ${WRKSRC}_SHARED/libspooles.so.1 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libspooles.so.1 ${STAGEDIR}${PREFIX}/lib/libspooles.so
 
 .if defined(WITH_MPI)
-	${MKDIR} ${PREFIX}/include/spooles/MPI
-	${INSTALL_DATA} ${WRKSRC}/MPI/*.h ${PREFIX}/include/spooles/MPI
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/spooles/MPI
+	${INSTALL_DATA} ${WRKSRC}/MPI/*.h ${STAGEDIR}${PREFIX}/include/spooles/MPI
 .else
-	${MKDIR} ${PREFIX}/include/spooles/MT
-	${INSTALL_DATA} ${WRKSRC}/MT/*.h ${PREFIX}/include/spooles/MT
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/spooles/MT
+	${INSTALL_DATA} ${WRKSRC}/MT/*.h ${STAGEDIR}${PREFIX}/include/spooles/MT
 .endif
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/spooles/
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/spooles/
 .for i in A2 BPG Chv ChvList ChvManager Coords DenseMtx DSTree Drand \
 	DV ETree FrontMtx GPart Graph I2Ohash IIheap IV IVL Ideq InpMtx \
 	Lock MSMD PatchAndGoInfo Pencil SolveMap SubMtx SubMtxList SubMtxManager \
 	SymbFac Tree Utilities ZV misc
-	${MKDIR} ${PREFIX}/include/spooles/${i}
-	${INSTALL_DATA} ${WRKSRC}/${i}/*.h ${PREFIX}/include/spooles/${i}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/spooles/${i}
+	${INSTALL_DATA} ${WRKSRC}/${i}/*.h ${STAGEDIR}${PREFIX}/include/spooles/${i}
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/AllInOne.ps.gz	${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Eigen.ps.gz		${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Install.ps.gz		${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/LinSol.ps.gz		${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Ordering.ps.gz	${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/PP99.ps.gz		${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ReferenceManual.ps.gz	${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/AllInOne.ps.gz	${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Eigen.ps.gz		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Install.ps.gz		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/LinSol.ps.gz		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Ordering.ps.gz	${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/PP99.ps.gz		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ReferenceManual.ps.gz	${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
