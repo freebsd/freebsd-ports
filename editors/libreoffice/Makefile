@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Full integrated office productivity suite
 
@@ -101,7 +101,6 @@ CONFIGURE_ARGS+=	--disable-dependency-tracking \
 			--with-os-version=${OSVERSION} \
 			--with-parallelism=${MAKE_JOBS_NUMBER} \
 			--with-solver-and-workdir-root=${WRKDIR} \
-			--with-unix-wrapper="libreoffice" \
 			--with-vendor="FreeBSD ports ${PKGVERSION}"
 
 CONFIGURE_ARGS+=	--disable-epm \
@@ -111,7 +110,6 @@ CONFIGURE_ARGS+=	--disable-epm \
 			--disable-kdeab \
 			--disable-linkoo \
 			--disable-mergelibs \
-			--disable-zenity \
 			--enable-cairo-canvas \
 			--enable-graphite \
 			--enable-python=system \
@@ -156,14 +154,13 @@ CONFIGURE_ARGS+=	--disable-epm \
 			--with-system-orcus \
 			--with-system-poppler \
 			--with-system-redland \
-			--with-system-stdlibs \
 			--with-system-ucpp \
 			--with-system-vigra \
 			--with-system-zlib \
 			--without-afms \
 			--without-fonts \
 			--without-myspell-dicts \
-			--without-system-mozilla
+			--without-system-npapi-headers
 
 OPTIONS_DEFINE=	CUPS DEBUG GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK \
 		SYSTRAY TEST VERBOSE WEBDAV
@@ -182,7 +179,7 @@ WEBDAV_DESC=	Enable webdav protocol
 
 .if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=		libcups.so:${PORTSDIR}/print/cups-client
-CONFIGURE_ARGS+=	--enable-cups --without-ppds
+CONFIGURE_ARGS+=	--enable-cups
 .else
 CONFIGURE_ARGS+=	--disable-cups
 .endif
@@ -264,8 +261,8 @@ JAVA_VERSION=	1.6
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVAJARDIR}/junit.jar:${PORTSDIR}/java/junit
 
-CONFIGURE_ARGS+=	--enable-ext-report-builder \
-			--enable-ext-wiki-publisher \
+CONFIGURE_ARGS+=	--enable-ext-wiki-publisher \
+			--enable-report-builder \
 			--enable-scripting-beanshell \
 			--enable-scripting-javascript \
 			--with-ant-home=${LOCALBASE}/share/java/apache-ant/ \
