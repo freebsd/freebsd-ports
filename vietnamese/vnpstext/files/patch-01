@@ -6,7 +6,7 @@
  
 -DEFAULT_PSLIBDIR	= "\"/usr/local/lib/ps\""
 +#DEFAULT_PSLIBDIR	= "\"/usr/local/lib/ps\""
-+DEFAULT_PSLIBDIR	= "\"$(PREFIX)/share/vn-fonts\""
++DEFAULT_PSLIBDIR	= "\"$(DESTDIR)$(PREFIX)/share/vn-fonts\""
  
  SHELL	= /bin/sh
  VNLIBDIR= ../lib
