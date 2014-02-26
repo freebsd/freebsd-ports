@@ -47,7 +47,7 @@ CFLAGS+=	-Dtgammaf=tgamma
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
+CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 post-patch:
@@ -55,7 +55,7 @@ post-patch:
 
 pre-configure:
 	echo "HAVE_PKG_FLAPACK=yes" >> ${WRKSRC}/config.options
-	echo "PKG_FLAPACK_LDFLAGS=-L${LOCALBASE}/lib/${CC}" >> ${WRKSRC}/config.options
+	echo "PKG_FLAPACK_LDFLAGS=${LDFLAGS}" >> ${WRKSRC}/config.options
 	echo "HAVE_PKG_PYTHON=yes" >> ${WRKSRC}/config.options
 	echo "PYTHON_LDFLAGS=-L${PYTHON_LIBDIR} -lboost_python -l${PYTHON_VERSION} ${PTHREAD_LIBS}" >> ${WRKSRC}/config.options
 	echo "PYTHON_CPPFLAGS=-I${PYTHON_INCLUDEDIR}" >> ${WRKSRC}/config.options
