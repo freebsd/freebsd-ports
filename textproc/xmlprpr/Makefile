@@ -20,12 +20,11 @@ SHEBANG_FILES=	xmlpp.pl
 
 PLIST_FILES=	bin/xmlprpr
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} -f ${_DISTDIR}/${_DISTFILES} ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/xmlpp.pl ${PREFIX}/bin/xmlprpr
+	${INSTALL_SCRIPT} ${WRKSRC}/xmlpp.pl ${STAGEDIR}${PREFIX}/bin/xmlprpr
 
 .include <bsd.port.mk>
