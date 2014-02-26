@@ -441,9 +441,6 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Asia/Qyzylorda
 %%TZDATA%%share/postgresql/timezone/Asia/Rangoon
 %%TZDATA%%share/postgresql/timezone/Asia/Riyadh
-%%TZDATA%%share/postgresql/timezone/Asia/Riyadh87
-%%TZDATA%%share/postgresql/timezone/Asia/Riyadh88
-%%TZDATA%%share/postgresql/timezone/Asia/Riyadh89
 %%TZDATA%%share/postgresql/timezone/Asia/Saigon
 %%TZDATA%%share/postgresql/timezone/Asia/Sakhalin
 %%TZDATA%%share/postgresql/timezone/Asia/Samarkand

@@ -25,8 +25,7 @@ SLAVE_ONLY=	yes
 COMPONENT=	-contrib
 CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl
 
-NO_STAGE=	yes
 post-install:
-	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/README
+	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${STAGEDIR}${DOCSDIR}/contrib/README
 
 .include "${MASTERDIR}/Makefile"

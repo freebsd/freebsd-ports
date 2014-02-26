@@ -21,11 +21,10 @@ PATCHDIR=	mustnotexist
 
 PGDOCSDIR?=	${DOCSDIR}/release-${PGSQL_VER}
 
-NO_STAGE=	yes
 do-install:
-	@ $(MKDIR) ${PGDOCSDIR}; \
+	@ $(MKDIR) ${STAGEDIR}${PGDOCSDIR}; \
 	${GZIP_CMD} -dc ${WRKSRC}/doc/postgres.tar.gz | \
-	( cd ${PGDOCSDIR} && $(TAR) xf - )
+	( cd ${STAGEDIR}${PGDOCSDIR} && $(TAR) xf - )
 
 post-install:
 	@ ${TAR} ztf ${WRKSRC}/doc/postgres.tar.gz | ${GREP} -v /$$ | \

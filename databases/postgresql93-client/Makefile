@@ -19,5 +19,4 @@ COMPONENT=	-client
 USE_LDCONFIG=	yes
 USES=		pkgconfig
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

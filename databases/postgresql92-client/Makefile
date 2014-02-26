@@ -17,5 +17,4 @@ CLIENT_ONLY=	yes
 COMPONENT=	-client
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
