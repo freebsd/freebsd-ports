@@ -21,8 +21,8 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/htmlrepair.rb ${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/htmlrepair.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
 
 .include <bsd.port.mk>
