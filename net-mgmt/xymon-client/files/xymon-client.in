@@ -5,14 +5,15 @@
 
 # PROVIDE: xymon_client
 # REQUIRE: DAEMON
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
-name="xymon_client"
-rcvar="xymon_client_enable"
+name=xymon_client
+rcvar=xymon_client_enable
 
 load_rc_config "$name"
-: ${xymon_client_enable:="NO"}
+: ${xymon_client_enable:=NO}
 
 command="%%PREFIX%%/www/xymon/client/runclient.sh"
 start_cmd="%%PREFIX%%/www/xymon/client/runclient.sh ${xymon_client_flags} start"
