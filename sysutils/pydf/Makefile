@@ -17,30 +17,22 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/pydf etc/pydfrc.sample
-
+USES=		shebangfix
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-MAN1=		pydf.1
-MANCOMPRESSED=	no
+SHEBANG_FILES=	pydf
+PLIST_FILES=	bin/pydf etc/pydfrc.sample man/man1/pydf.1.gz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}| ; s|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/pydf
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}| ; \
+		s|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/pydf
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pydf ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/pydfrc ${PREFIX}/etc/pydfrc.sample
-	${INSTALL_MAN} ${WRKSRC}/pydf.1 ${PREFIX}/man/man1
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/pydfrc ]; then \
-		${ECHO_MSG} ; \
-		${CAT} ${PKGMESSAGE} ; \
-		${ECHO_MSG} ; \
-	fi
+	${INSTALL_SCRIPT} ${WRKSRC}/pydf ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/pydfrc ${STAGEDIR}${PREFIX}/etc/pydfrc.sample
+	${INSTALL_MAN} ${WRKSRC}/pydf.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
