@@ -11,17 +11,19 @@ DISTFILES=	subtitle-offset-modificator.pl
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Subtitle offset modificator
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
-PLIST_FILES=	bin/subtitle-offset-modificator
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/subtitle-offset-modificator
+SHEBANG_FILES=	subtitle-offset-modificator.pl
+
 do-extract:
-	${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/subtitle-offset-modificator.pl ${WRKDIR}
+	${MKDIR} ${WRKSRC}
+	${CP} ${DISTDIR}/subtitle-offset-modificator.pl ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/subtitle-offset-modificator.pl ${PREFIX}/bin/subtitle-offset-modificator
+	${INSTALL_SCRIPT} ${WRKSRC}/subtitle-offset-modificator.pl \
+		${STAGEDIR}${PREFIX}/bin/subtitle-offset-modificator
 
 .include <bsd.port.mk>
