@@ -15,7 +15,6 @@ USES=		gmake iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
-MAN1=		unrtf.1
 PLIST_FILES=	bin/unrtf \
 		%%DATADIR%%/SYMBOL.charmap \
 		%%DATADIR%%/html.conf \
@@ -23,13 +22,13 @@ PLIST_FILES=	bin/unrtf \
 		%%DATADIR%%/rtf.conf \
 		%%DATADIR%%/text.conf \
 		%%DATADIR%%/troff_mm.conf \
-		%%DATADIR%%/vt.conf
+		%%DATADIR%%/vt.conf \
+		man/man1/unrtf.1.gz
 PLIST_DIRS=	%%DATADIR%%
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} -X ${WRKSRC} -type f -and -name "*.[1h]" | ${XARGS} \
 		${REINPLACE_CMD} -e \
