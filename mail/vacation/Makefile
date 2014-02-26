@@ -12,15 +12,13 @@ MAINTAINER=	mcdouga9@egr.msu.edu
 COMMENT=	A email autoresponder, similar to vacation from sendmail
 
 USE_BDB=	yes
-CFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		vacation.1
+CFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PLIST_FILES=	bin/vacation
+PLIST_FILES=	bin/vacation man/man1/vacation.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g' \
 		${WRKSRC}/Makefile
@@ -30,7 +28,7 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vacation ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/vacation.1 ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/vacation ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/vacation.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
