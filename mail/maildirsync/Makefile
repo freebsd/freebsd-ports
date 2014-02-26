@@ -9,24 +9,26 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Online synchronizer for Maildir-format mailboxes
 
-USES=		perl5
+USES=		perl5 shebangfix
 
-MAN1=		maildirsync.1
+SHEBANG_FILES=	maildirsync.pl
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
 do-build:
-	${PERL} -pi -e 's!/usr/bin/perl!${PERL}!' ${WRKSRC}/maildirsync.pl
 	pod2man ${WRKSRC}/maildirsync.pod > ${WRKSRC}/maildirsync.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/maildirsync.pl ${PREFIX}/bin/maildirsync
-	${INSTALL_MAN}    ${WRKSRC}/maildirsync.1  ${MANPREFIX}/man/man1
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/sample.sh ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/mailbalance
+	${INSTALL_SCRIPT} ${WRKSRC}/maildirsync.pl \
+		${STAGEDIR}${PREFIX}/bin/maildirsync
+	${INSTALL_MAN} ${WRKSRC}/maildirsync.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/sample.sh ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/mailbalance
 .for d in lib log trashbags
 	${RM} -rf ${WRKSRC}/contrib/mailbalance-0.2.0/${d}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/contrib/mailbalance-0.2.0/* ${EXAMPLESDIR}/mailbalance
+	${INSTALL_DATA} ${WRKSRC}/contrib/mailbalance-0.2.0/* \
+		${STAGEDIR}${EXAMPLESDIR}/mailbalance
 
 .include <bsd.port.mk>
