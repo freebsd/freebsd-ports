@@ -31,14 +31,13 @@ JFFILES=	LICENSE Makefile README TODO addresses bodychk dialups \
 
 JFDOMFILES=	general
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${BINDIR}/domains
+	${MKDIR} ${STAGEDIR}${BINDIR}/domains
 .for FILE in ${JFFILES}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${BINDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${BINDIR}
 .endfor
 .for FILE in ${JFDOMFILES}
-	${INSTALL_DATA} ${WRKSRC}/domains/${FILE} ${BINDIR}/domains
+	${INSTALL_DATA} ${WRKSRC}/domains/${FILE} ${STAGEDIR}${BINDIR}/domains
 .endfor
 
 .include <bsd.port.mk>
