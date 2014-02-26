@@ -10,14 +10,14 @@ MASTER_SITES=	SF
 MAINTAINER=	gslin@gslin.org
 COMMENT=	The compressed ROM filesystem
 
+USES=		gmake
+
 MAKEFILE=	GNUmakefile
-USE_GMAKE=	yes
 
 PLIST_FILES=	sbin/cramfsck sbin/mkcramfs
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cramfsck ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/mkcramfs ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/cramfsck ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/mkcramfs ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
