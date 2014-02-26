@@ -12,10 +12,11 @@ COMMENT=	IP Calculator
 
 PLIST_FILES=	bin/ipcalc
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 
-NO_STAGE=	yes
+SHEBANG_FILES=	ipcalc
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
