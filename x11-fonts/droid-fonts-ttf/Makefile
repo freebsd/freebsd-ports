@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	droid-fonts-ttf
-PORTVERSION=	20110324
+PORTVERSION=	20131024
 CATEGORIES=	x11-fonts
-MASTER_SITES=	LOCAL/sunpoet/
+MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	The Droid typeface family
@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 
 FONTDIR=	lib/X11/fonts/Droid
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -31,36 +31,31 @@ do-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf fonts.* ${STAGEDIR}${PREFIX}/${FONTDIR}/
 
 # maintainer section:
-# http://android.git.kernel.org/?p=platform/frameworks/base.git;a=tree;f=data/fonts
+# https://android.googlesource.com/platform/frameworks/base/+/master/data/fonts/
 
-MS_WRKSRC=	${WRKSRC}/${PORTNAME}-${MS_VERSION}
-MS_MASTER_SITE=	http://android.git.kernel.org/?p=platform/frameworks/base.git\;a=blob_plain\;f=data/fonts
-MS_DISTFILES=	DroidSans-Bold.ttf \
-		DroidSans.ttf \
-		DroidSansArabic.ttf \
-		DroidSansFallback.ttf \
-		DroidSansFallbackLegacy.ttf \
-		DroidSansHebrew.ttf \
-		DroidSansJapanese.ttf \
-		DroidSansMono.ttf \
-		DroidSansThai.ttf \
-		DroidSerif-Bold.ttf \
-		DroidSerif-BoldItalic.ttf \
-		DroidSerif-Italic.ttf \
-		DroidSerif-Regular.ttf \
-		NOTICE
+MS_DISTFILES=	fonts.tar.gz
+MS_FONTS=	${WRKSRC}/.ms-fonts
+MS_MASTER_SITE=	https://android.googlesource.com/platform/frameworks/base/+archive/master/data/
+MS_PLIST=	${WRKSRC}/.ms-pkg-plist
+MS_VERSION?=	${PORTVERSION}
+MS_WRKSRC=	${WRKSRC}/tmp
 
-.if defined(MS_VERSION)
 maketar: do-clean extract
-	${MKDIR} ${MS_WRKSRC}
-.for distfile in ${MS_DISTFILES}
-	${FETCH_CMD} -o ${MS_WRKSRC}/${distfile} ${MS_MASTER_SITE}/${distfile}
-.endfor
-	cd ${WRKSRC}/ && ${TAR} -jcf ${PORTNAME}-${MS_VERSION}.tar.bz2 ${PORTNAME}-${MS_VERSION}/
+	${MKDIR} ${MS_WRKSRC}/ ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
+	${FETCH_CMD} -o ${MS_WRKSRC}/${MS_DISTFILES} ${MS_MASTER_SITE}${MS_DISTFILES}
+	${TAR} -x -C ${MS_WRKSRC}/ -f ${MS_WRKSRC}/${MS_DISTFILES}
+	${LS} ${MS_WRKSRC}/Droid*.ttf | ${SED} 's|${MS_WRKSRC}/||' > ${MS_FONTS}
+	${MV} ${MS_WRKSRC}/Droid*.ttf ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
+	${TAR} -Jc -C ${MS_WRKSRC}/ -f ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${PORTNAME}-${MS_VERSION}/
+	sudo ${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/
 	${SED} -i '' -e 's|${PORTVERSION}|${MS_VERSION}|' ${.CURDIR}/Makefile
-	${INSTALL} -m 644 ${WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.bz2 ${DISTDIR}/
 	cd ${.CURDIR}/ && ${MAKE} makesum
 	${ECHO_MSG} '*** Update from ${PORTVERSION} to ${MS_VERSION} ***'
-.endif
+# genplist
+	${SED} 's|^|%%FONTDIR%%/|' ${MS_FONTS} > ${MS_PLIST}
+	${ECHO_CMD} "%%FONTDIR%%/fonts.dir" >> ${MS_PLIST}
+	${ECHO_CMD} "%%FONTDIR%%/fonts.scale" >> ${MS_PLIST}
+	${ECHO_CMD} "@dirrm %%FONTDIR%%" >> ${MS_PLIST}
+	${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 
 .include <bsd.port.mk>
