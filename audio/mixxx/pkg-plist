@@ -1,8 +1,14 @@
 bin/mixxx
+@exec mkdir -p %D/lib/mixxx/plugins/soundsource
 %%FAAD%%lib/mixxx/plugins/soundsource/libsoundsourcem4a.so
 %%WAVPACK%%lib/mixxx/plugins/soundsource/libsoundsourcewv.so
 lib/mixxx/plugins/vamp/libmixxxminimal.so
 share/applications/mixxx.desktop
+%%PORTDOCS%%%%DOCSDIR%%/Mixxx-Manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.macro
+%%PORTDOCS%%%%DOCSDIR%%/doc/HID/HID Packet Parser Documentation.odt
+%%PORTDOCS%%%%DOCSDIR%%/doc/HID/HID Packet Parser Documentation.pdf
 %%DATADIR%%/controllers/Akai MPD24.midi.xml
 %%DATADIR%%/controllers/Akai-LPD8-RK-scripts.js
 %%DATADIR%%/controllers/Akai-LPD8-RK.midi.xml
@@ -9950,7 +9956,10 @@ share/pixmaps/mixxx-icon.png
 @dirrm %%DATADIR%%/keyboard
 @dirrm %%DATADIR%%/controllers
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/HID
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/mixxx/plugins/vamp
-%%FAAD%%@dirrmtry lib/mixxx/plugins/soundsource
+@dirrmtry lib/mixxx/plugins/soundsource
 @dirrm lib/mixxx/plugins
 @dirrm lib/mixxx

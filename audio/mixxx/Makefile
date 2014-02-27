@@ -4,17 +4,17 @@
 PORTNAME=	mixxx
 PORTVERSION=	1.11.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	http://downloads.mixxx.org/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DJ mixing application
 
 LICENSE=	GPLv2 # (or later)
 
-BUILD_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2 \
-		bzr>=0:${PORTSDIR}/devel/bzr
+BUILD_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag \
 		libmad.so:${PORTSDIR}/audio/libmad \
@@ -26,56 +26,38 @@ RUN_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
+USES=		scons iconv
 USE_QT4=	corelib gui network opengl script sql svg xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
 USE_GL=		glu
-USE_SCONS=	yes
-SCONS_BUILDENV=	${SCONS_ENV}
-SCONS_ARGS=	qtdir="${QT_PREFIX}" optimize=0
-USE_LDCONFIG=	yes
+MAKE_ARGS=	qtdir="${QT_PREFIX}" optimize=0
+LATE_INSTALL_ARGS=	--install-sandbox=${STAGEDIR}
 
-PORTDOCS=	*
-
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	Mixxx-Manual.pdf README README.macro
-
-DOCSRCDIR2=	${WRKSRC}/doc/HID
-DOCSDIR2=	${DOCSDIR}/doc/HID
-DOC_FILES2=	*.odt *.pdf
-
-OPTIONS_DEFINE=	DOCS FAAD LAME SHOUTCAST TCMALLOC WAVPACK
-OPTIONS_DEFAULT=	FAAD SHOUTCAST TCMALLOC WAVPACK
-
-OPTIONS_SUB=	yes
-
-TCMALLOC_DESC=	Use Google's TCMalloc
+OPTIONS_DEFINE=		DOCS FAAD GPERFTOOLS LAME SHOUTCAST WAVPACK
+OPTIONS_DEFAULT=	FAAD SHOUTCAST WAVPACK
+OPTIONS_SUB=		yes
 
 FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad \
 			libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
-FAAD_SCONS_ARGS_ON=	faad=1
-FAAD_SCONS_ARGS_OFF=	faad=0
-
+FAAD_MAKE_ARGS=		faad=1
+FAAD_MAKE_ARGS_OFF=	faad=0
+GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
+GPERFTOOLS_MAKE_ARGS=	perftools=1
+GPERFTOOLS_MAKE_ARGS_OFF=	perftools=0
 LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
-
-SHOUTCAST_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
-SHOUTCAST_SCONS_ARGS_ON=	shoutcast=1
-SHOUTCAST_SCONS_ARGS_OFF=	shoutcast=0
-
-TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
-TCMALLOC_SCONS_ARGS_ON=	perftools=1
-TCMALLOC_SCONS_ARGS_OFF=	perftools=0
-
+SHOUTCAST_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2
+SHOUTCAST_MAKE_ARGS=	shoutcast=1
+SHOUTCAST_MAKE_ARGS_OFF=	shoutcast=0
 WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
-WAVPACK_SCONS_ARGS_ON=	wv=1
-WAVPACK_SCONS_ARGS_OFF=	wv=0
-
-.include <bsd.port.options.mk>
+WAVPACK_MAKE_ARGS=	wv=1
+WAVPACK_MAKE_ARGS_OFF=	wv=0
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/build/depends.py
+	@${REINPLACE_CMD} -e "s|bzr |true |g" \
+		${WRKSRC}/build/util.py
 	@${REINPLACE_CMD} -e "/('install', docs)/d" \
 		${WRKSRC}/src/SConscript
 	@${REINPLACE_CMD} -e "s|^Exec=.*|Exec=mixxx| ; \
@@ -86,13 +68,17 @@ post-patch:
 .endfor
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/mixxx
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
-.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mixxx
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mixxx/plugins/soundsource
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in Mixxx-Manual.pdf README README.macro
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR})
+.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/doc/HID
+.for i in *.odt *.pdf
+	(cd ${WRKSRC}/doc/HID && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR}/doc/HID)
+.endfor
 
 .include <bsd.port.mk>
