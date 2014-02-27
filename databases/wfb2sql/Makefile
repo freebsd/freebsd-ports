@@ -13,26 +13,21 @@ COMMENT=	CIA World Fact Book to SQL Conversion Utility
 BUILD_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
-NO_BUILD=	YES
+USES=		perl5 shebangfix
+NO_BUILD=	yes
 
-NO_STAGE=	yes
+OPTION_DEFINE=	DOCS EXAMPLES
+
+PLIST_FILES=	bin/wfb2sql
+PORTDOCS=	wfb2sql.html
+PORTEXAMPLES=	wfb2sqlrc
+SHEBANG_FILES=	wfb2sql
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/wfb2sql ${PREFIX}/bin/wfb2sql
-	@${ECHO} "bin/wfb2sql" >> ${TMPPLIST}
-
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/wfb2sqlrc ${EXAMPLESDIR}/wfb2sqlrc
-	@${ECHO} "share/examples/${PORTNAME}/wfb2sqlrc" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/examples/${PORTNAME}" >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/wfb2sql.html ${DOCSDIR}
-	@${ECHO} "share/doc/${PORTNAME}/wfb2sql.html" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/${PORTNAME}/" >> ${TMPPLIST}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/wfb2sql ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/wfb2sqlrc ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/wfb2sql.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
