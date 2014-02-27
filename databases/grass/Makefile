@@ -2,28 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	grass
-PORTVERSION=	6.4.2
-PORTREVISION=	7
+PORTVERSION=	6.4.3
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
-		http://wgbis.ces.iisc.ernet.in/grass/%SUBDIR%/ \
-		http://grass.bergenheim.net/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
-		http://www.phygeo.uni-hannover.de/grass/%SUBDIR%/ \
 		http://grass.fbk.eu/%SUBDIR%/ \
 		http://grass.gis-lab.info/%SUBDIR%/ \
-		http://mirrors.ibiblio.org/grass/%SUBDIR%/
+		http://grass.meteo.uni.wroc.pl/%SUBDIR%/ \
+		http://grass.polytechnic.edu.na/%SUBDIR%/ \
+		http://grass.unibuc.ro/%SUBDIR%/ \
+		http://mirrors.ibiblio.org/grass/%SUBDIR%/ \
+		http://pinus.gntech.ac.kr/grass/%SUBDIR%/ \
+		http://wgbis.ces.iisc.ernet.in/grass/%SUBDIR%/ \
+		http://wgrass.media.osaka-cu.ac.jp/grassh/%SUBDIR%/
 MASTER_SITE_SUBDIR=	grass64/source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source Geographical Information System (GIS)
 
 LICENSE=	GPLv2
-
-BROKEN=		Does not build
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2014-02-27
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
@@ -35,17 +33,21 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		gettext gmake iconv readline perl5 tk
-USE_XORG=	sm ice xi x11 xt xmu xext
-USE_GL=		glut
-USE_PYTHON=	yes
-USE_WX=		2.8
-WX_COMPS=	wx:build python:run
+USES=		fortran gettext gmake iconv perl5 pkgconfig readline \
+		shebangfix tk
+SHEBANG_FILES=	scripts/i.spectral/i.spectral \
+		scripts/r.tileset/r.tileset
 PATCH_TCL_SCRIPTS=lib/init/init.sh
 PATCH_TK_SCRIPTS=lib/init/init.sh
-
-ALL_TARGET=
+USE_XORG=	sm ice x11 xext xi xmu xt
+USE_GL=		glu
+USE_GNOME=	cairo
+USE_PYTHON=	2
+USE_WX=		2.8
+WX_COMPS=	wx:build python:run
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	PERL="${PERL}"
 CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-libs=${LOCALBASE}/lib \
 		--with-tcltk-includes="${TCL_INCLUDEDIR} ${TK_INCLUDEDIR}" \
@@ -53,27 +55,62 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-opengl-libs=${LOCALBASE}/lib/ \
 		--with-freetype \
 		--with-freetype-includes=${LOCALBASE}/include/freetype2 \
+		--with-blas \
+		--with-lapack \
+		--with-cairo \
 		--with-nls \
 		--with-cxx \
 		--with-readline \
 		--with-curses \
 		--enable-largefile \
-		--with-python=${LOCALBASE}/bin/python-config \
+		--with-python=${PYTHON_CMD}-config \
 		--with-wxwidgets=${WX_CONFIG}
-
-PLIST_SUB=	GRASS_INST_DIR=${GRASS_INST_DIR} \
-		VERSION=${PORTVERSION} \
-		VER=${PORTVERSION:R:C/\.//}
+ALL_TARGET=	default
 USE_LDCONFIG=	${PREFIX}/${GRASS_INST_DIR}/lib
+MAKE_JOBS_UNSAFE=yes
 
+PLIST_SUB=	GRASS_INST_DIR="${GRASS_INST_DIR}" \
+		VERSION="${PORTVERSION}" \
+		VER="${PORTVERSION:R:C/\.//}"
 
-OPTIONS_DEFINE=	MYSQL ODBC PGSQL SQLITE
+OPTIONS_DEFINE=		ATLAS FFMPEG MOTIF MYSQL ODBC PGSQL SQLITE
 OPTIONS_DEFAULT=	PGSQL
+OPTIONS_SUB=		yes
 
-BASH_SCRIPTS=	i.spectral r.tileset
+ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
+ALTAS_LIB_DEPENDS=	libalapack.so:${PORTSDIR}/math/atlas
+ATLAS_LIB_DEPENDS_OFF=	libblas.so:${PORTSDIR}/math/blas \
+			liblapack.so:${PORTSDIR}/math/lapack
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_CONFIGURE_ON=	--with-ffmpeg \
+			--with-ffmpeg-includes="${LOCALBASE}/include/libavcodec \
+			 ${LOCALBASE}/include/libavformat \
+			 ${LOCALBASE}/include/libavutil \
+			 ${LOCALBASE}/include/libswscale" \
+			--with-ffmpeglibs=${LOCALBASE}/lib
+MOTIF_USES=		motif
+MOTIF_USE=		GL=glw
+MOTIF_CONFIGURE_ON=	--with-motif --with-glw
+MYSQL_USE=		MYSQL=yes
+MYSQL_CONFIGURE_ON=	--with-mysql \
+			--with-mysql-includes=${LOCALBASE}/include/mysql \
+			--with-mysql-libs=${LOCALBASE}/lib/mysql
+ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+ODBC_CONFIGURE_ON=	--with-odbc
+PGSQL_USE=		PGSQL=yes
+PGSQL_CONFIGURE_ON=	--with-postgres
+SQLITE_USE=		SQLITE=yes
+SQLITE_CONFIGURE_ON=	--with-sqlite
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MATLAS}
+BLASLIB=	f77blas
+LAPACKLIB=	alapack
+.else
+BLASLIB=	blas
+LAPACKLIB=	lapack
+.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not configure on sparc64
@@ -83,46 +120,23 @@ BROKEN=		Does not configure on sparc64
 GRASS_INST_DIR=	${PORTNAME}-${PORTVERSION}
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql \
-		--with-mysql-includes=${LOCALBASE}/include/mysql \
-		--with-mysql-libs=${LOCALBASE}/lib/mysql
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=--with-odbc
-PLIST_SUB+=	ODBC=""
-.else
-PLIST_SUB+=	ODBC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=--with-postgres
-PLIST_SUB+=	PGSQL=""
-.else
-PLIST_SUB+=	PGSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
-CONFIGURE_ARGS+=--with-sqlite
-PLIST_SUB+=	SQLITE=""
-.else
-PLIST_SUB+=	SQLITE="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e "/^INST_DIR=/s|grass-.*|${GRASS_INST_DIR}|" \
-		${WRKSRC}/Makefile
-.for s in ${BASH_SCRIPTS}
-	@${REINPLACE_CMD} -e "1s|/bin/bash|${LOCALBASE}/bin/bash|" \
-		 ${WRKSRC}/scripts/$s/$s
-.endfor
+	@${REINPLACE_CMD} -e \
+		's|-lblas|-l${BLASLIB}| ; \
+		 s|echo blas|echo ${BLASLIB}| ; \
+		 s|-llapack|-l${LAPACKLIB}| ; \
+		 s|echo lapack|echo ${LAPACKLIB}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|make -C|$$(MAKE) -C| ; \
+		 /^BINDIR/s|=.*|=	$${DESTDIR}$${UNIX_BIN}| ; \
+		 /test /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
+		 /tar /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
+		 /chmod /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
+		 /GISBASE/s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^CC=.*|CC?=cc| ; \
+		 s|^CFLAGS=.*|CFLAGS+=-fno-common|' ${WRKSRC}/gem/Makefile
+	@${REINPLACE_CMD} -e \
+		's|= python|= ${PYTHON_CMD:T}|' ${WRKSRC}/include/Make/Platform.make.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
