@@ -16,21 +16,16 @@ EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}
 
 NO_WRKSUBDIR=	yes
 
-USES=		perl5
+USES=		perl5 shebangfix
 
-MAN1=		pxytest.1
-PLIST_FILES=	bin/pxytest
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's:^#!.*:#!${PERL}:' ${WRKSRC}/${PORTNAME}
+PLIST_FILES=	bin/pxytest man/man1/pxytest.1.gz
+SHEBANG_FILES=	pxytest
 
 do-build:
 	@cd ${WRKSRC} && pod2man ${PORTNAME} > ${PORTNAME}.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
