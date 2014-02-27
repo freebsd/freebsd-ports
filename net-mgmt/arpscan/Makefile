@@ -3,24 +3,28 @@
 
 PORTNAME=	arpscan
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	GH
+DIST_SUBDIR=	repacked
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple arp scanner
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
-
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	dnet:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet
 
-GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	jasonish
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	e59831a
+
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf
+AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ARGS=--with-libdnet=${LOCALBASE}
 
 PLIST_FILES=	bin/arpscan
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
