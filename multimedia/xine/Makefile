@@ -72,6 +72,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|: install-docsDATA|:|' ${WRKSRC}/${file}
 .endfor
+	@${REINPLACE_CMD} -e \
+		's|\(xine_LDADD =\)|\1 \$$(LTLIBICONV)|' \
+		${WRKSRC}/src/xitk/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
