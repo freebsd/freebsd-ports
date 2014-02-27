@@ -17,19 +17,7 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501400
-PLIST_SUB+=	PERL5_12=""
-.else
-PLIST_SUB+=	PERL5_12="@comment "
-.endif
-
 post-patch:
-.if ${PERL_LEVEL} < 501400
-	@${REINPLACE_CMD} -e '/pod2text/d; s/man1pod.*pod2man.*//' ${WRKSRC}/Makefile.PL
-.else
 	@${REINPLACE_CMD} -e "/man1pod (/d; /EXE_FILES/d" ${WRKSRC}/Makefile.PL
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
