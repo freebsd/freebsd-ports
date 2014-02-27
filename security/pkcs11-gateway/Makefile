@@ -21,15 +21,12 @@ PLIST_FILES=	bin/pkcs11-gateway lib/libpkcs11-gateway.so \
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pkcs11-gateway ${PREFIX}/bin/
-	${INSTALL_LIB} ${WRKSRC}/libpkcs11-gateway.so.1 ${PREFIX}/lib/
-	cd ${PREFIX}/lib && ${LN} -sf libpkcs11-gateway.so.1 \
+	${INSTALL_PROGRAM} ${WRKSRC}/pkcs11-gateway ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/libpkcs11-gateway.so.1 ${STAGEDIR}${PREFIX}/lib
+	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libpkcs11-gateway.so.1 \
 		libpkcs11-gateway.so
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
