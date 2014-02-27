@@ -182,6 +182,7 @@ man/man1/makecpt.1.gz
 man/man1/makepattern.1.gz
 man/man1/mapproject.1.gz
 man/man1/mgd77convert.1.gz
+man/man1/mgd77header.1.gz
 man/man1/mgd77info.1.gz
 man/man1/mgd77list.1.gz
 man/man1/mgd77magref.1.gz
@@ -272,6 +273,7 @@ man/man5/gmtcolors.5.gz
 %%DATADIR%%/conf/gmt_cpt.conf
 %%DATADIR%%/conf/gmt_custom_media.conf
 %%DATADIR%%/conf/gmt_custom_symbols.conf
+%%DATADIR%%/conf/gmt_setup.conf
 %%DATADIR%%/conf/gmtdefaults_SI
 %%DATADIR%%/conf/gmtdefaults_US
 %%DATADIR%%/cpt/GMT_cool.cpt
