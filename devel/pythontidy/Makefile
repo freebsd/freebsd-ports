@@ -20,15 +20,16 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/pythontidy
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKDIR}
 
 do-patch:
-	${REINPLACE_CMD} -e 's,#!/usr/bin/python,#!/usr/bin/env python,' ${WRKDIR}/${DISTFILES}
+	${REINPLACE_CMD} -e 's,#!/usr/bin/python,#!/usr/bin/env python,' \
+		${WRKDIR}/${DISTFILES}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTFILES} ${PREFIX}/bin/pythontidy
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTFILES} \
+		${STAGEDIR}${PREFIX}/bin/pythontidy
 
 .include <bsd.port.mk>
