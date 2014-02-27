@@ -19,12 +19,14 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	sbin/zfs-replicate
 
-NO_STAGE=	yes
 do-patch:
-	@${REINPLACE_CMD} -e 's|^#!/bin/ksh|#!${PREFIX}/bin/ksh|g' ${WRKSRC}/zfs-replicate_v${PORTVERSION}
-	@${REINPLACE_CMD} -e 's|/usr/sbin/zfs|/sbin/zfs|g' ${WRKSRC}/zfs-replicate_v${PORTVERSION}
+	@${REINPLACE_CMD} -e 's|^#!/bin/ksh|#!${PREFIX}/bin/ksh|g' \
+		${WRKSRC}/zfs-replicate_v${PORTVERSION}
+	@${REINPLACE_CMD} -e 's|/usr/sbin/zfs|/sbin/zfs|g' \
+		${WRKSRC}/zfs-replicate_v${PORTVERSION}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/zfs-replicate_v${PORTVERSION} ${PREFIX}/sbin/zfs-replicate
+	${INSTALL_SCRIPT} ${WRKSRC}/zfs-replicate_v${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/sbin/zfs-replicate
 
 .include <bsd.port.mk>
