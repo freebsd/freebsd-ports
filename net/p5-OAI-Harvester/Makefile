@@ -22,6 +22,8 @@ BUILD_DEPENDS=	p5-URI>=1.30:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=2.0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+PORTSCOUT=	limit:[^_]*
+
 USE_PERL5=	configure
 USES=		perl5
 
