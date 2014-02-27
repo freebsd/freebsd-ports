@@ -1,4 +1,6 @@
 bin/asmail
+man/man1/asmail.1.gz
+man/man5/asmailrc.5.gz
 %%DATADIR%%/pixmaps/e-no.xpm
 %%DATADIR%%/pixmaps/e0.xpm
 %%DATADIR%%/pixmaps/e1.xpm
@@ -65,8 +67,8 @@ bin/asmail
 %%DATADIR%%/sounds/clink.au
 %%DATADIR%%/sounds/drip.au
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/asmailrc.sample
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asmailrc.sample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/sounds
