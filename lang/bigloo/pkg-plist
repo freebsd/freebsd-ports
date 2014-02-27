@@ -109,10 +109,10 @@ lib/bigloo/%%BIGLOO_VERSION%%/libbigloofthread_s-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloofthread_s-%%BIGLOO_VERSION%%.so
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloofthread_u-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloofthread_u-%%BIGLOO_VERSION%%.so
-lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc-%%BIGLOO_VERSION%%.a
-lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc-%%BIGLOO_VERSION%%.so
-lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc_fth-%%BIGLOO_VERSION%%.a
-lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc_fth-%%BIGLOO_VERSION%%.so
+%%CUSTOMGC%%lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc-%%BIGLOO_VERSION%%.a
+%%CUSTOMGC%%lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc-%%BIGLOO_VERSION%%.so
+%%CUSTOMGC%%lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc_fth-%%BIGLOO_VERSION%%.a
+%%CUSTOMGC%%lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc_fth-%%BIGLOO_VERSION%%.so
 %%GSTREAMER%%lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_es-%%BIGLOO_VERSION%%.a
 %%GSTREAMER%%lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_es-%%BIGLOO_VERSION%%.so
 %%GSTREAMER%%lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_eu-%%BIGLOO_VERSION%%.a
@@ -339,8 +339,8 @@ lib/libbigloofthread_es-%%BIGLOO_VERSION%%.so
 lib/libbigloofthread_eu-%%BIGLOO_VERSION%%.so
 lib/libbigloofthread_s-%%BIGLOO_VERSION%%.so
 lib/libbigloofthread_u-%%BIGLOO_VERSION%%.so
-lib/libbigloogc-%%BIGLOO_VERSION%%.so
-lib/libbigloogc_fth-%%BIGLOO_VERSION%%.so
+%%CUSTOMGC%%lib/libbigloogc-%%BIGLOO_VERSION%%.so
+%%CUSTOMGC%%lib/libbigloogc_fth-%%BIGLOO_VERSION%%.so
 %%GSTREAMER%%lib/libbigloogstreamer_es-%%BIGLOO_VERSION%%.so
 %%GSTREAMER%%lib/libbigloogstreamer_eu-%%BIGLOO_VERSION%%.so
 %%GSTREAMER%%lib/libbigloogstreamer_s-%%BIGLOO_VERSION%%.so
