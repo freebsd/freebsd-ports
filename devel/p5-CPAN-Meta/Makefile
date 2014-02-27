@@ -24,11 +24,6 @@ USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501400
-BUILD_DEPENDS+=	p5-version>=0.88:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS+=	p5-version>=0.88:${PORTSDIR}/devel/p5-version
-.endif
-
 .if ${PERL_LEVEL} < 501600
 BUILD_DEPENDS+=	p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
 RUN_DEPENDS+=	p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
