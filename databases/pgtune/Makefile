@@ -13,10 +13,10 @@ COMMENT=	Postgresql.conf tuning tips based on hardware and load type
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pgtune  ${PREFIX}/bin/pgtune
-	${MKDIR} ${PREFIX}/share/pgtune/settings/
-	${CP} ${WRKSRC}/pg_settings* ${PREFIX}/share/pgtune/settings/
+	${INSTALL_SCRIPT} ${WRKSRC}/pgtune  ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pgtune/settings
+	${INSTALL_DATA} ${WRKSRC}/pg_settings* \
+		${STAGEDIR}${PREFIX}/share/pgtune/settings
 
 .include <bsd.port.mk>
