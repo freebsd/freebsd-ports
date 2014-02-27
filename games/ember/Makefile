@@ -60,6 +60,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bash|/sh|g' ${WRKSRC}/ember.in
 	@${REINPLACE_CMD} -e 's|BOOST_THREAD_LIB =|& -L${_GCC_RUNTIME} -lstdc++ |g' \
 		${WRKSRC}/src/main/Makefile.in
+	@${REINPLACE_CMD} -e 's|reset(0)|reset()|g' \
+		${WRKSRC}/src/components/ogre/SceneManagers/EmberPagingSceneManager/src/OgrePagingLandScapeData2D.cpp
 
 post-install:
 	(cd ${WRKDIR}/ember-media-${PORTVERSION}/media && ${FIND} . -type f -print | \
