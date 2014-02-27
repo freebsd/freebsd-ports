@@ -520,7 +520,7 @@ MASTER_SITE_GENTOO+= \
 .if defined(USE_GITHUB)
 .if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
 IGNORE?=	Using master as GH_TAGNAME is invalid. \
-		Must use a tag or commit hash so the upstream does\
+		Must use a tag or commit hash so the upstream does \
 		not "reroll" as soon as the branch is updated
 .endif
 MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR% \
@@ -790,7 +790,7 @@ MASTER_SITE_MOZILLA_EXTENDED+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_MPLAYERHQ)
-MASTER_SITE_MPLAYERHQ+=	\
+MASTER_SITE_MPLAYERHQ+= \
 	http://www.mplayerhq.hu/MPlayer/%SUBDIR%/ \
 	http://www1.mplayerhq.hu/MPlayer/%SUBDIR%/ \
 	http://www2.mplayerhq.hu/MPlayer/%SUBDIR%/ \
@@ -832,7 +832,7 @@ MASTER_SITE_NETBSD+= \
 	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.plig.net/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.proxad.net/mirrors/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
+	ftp://ftp.proxad.net/mirrors/ftp.netbsd.org/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.unina.it/pub/Unix/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.uninett.no/bsd/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://sunsite.uio.no/bsd/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
@@ -1214,7 +1214,7 @@ MASTER_SITE_SUNSITE+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SUSE)
-MASTER_SITE_SUSE+= 	\
+MASTER_SITE_SUSE+= \
 	http://mirrors.usc.edu/pub/linux/distributions/suse/%SUBDIR%/ \
 	http://mirror.usu.edu/mirrors/suse/%SUBDIR%/ \
 	ftp://mirror.mcs.anl.gov/pub/suse/%SUBDIR%/ \
@@ -1314,7 +1314,7 @@ MASTER_SITE_THEMES+= \
 
 # Derived from: https://www.torproject.org/getinvolved/mirrors.html.en
 .if !defined(IGNORE_MASTER_SITE_TOR)
-MASTER_SITE_TOR+=	\
+MASTER_SITE_TOR+= \
 		https://www.torproject.org/dist/%SUBDIR%/ \
 		https://archive.torproject.org/tor-package-archive/%SUBDIR%/ \
 		ftp://ftp.bit.nl/mirror/tor/%SUBDIR%/ \
@@ -1507,8 +1507,7 @@ MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			SFJP:SOURCEFORGE_JP \
 			RG:RUBYGEMS \
 			RF:RUBYFORGE
-MASTER_SITES_SUBDIRS=	\
-			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
+MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			BERLIOS:${PORTNAME:L} \
 			CENKES:myports \
 			CHEESESHOP:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:C/(.*)-[0-9].*/\1/} \
