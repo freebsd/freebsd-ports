@@ -109,7 +109,7 @@ DEV_WARNING+=	"Please use the new format for LIB_DEPENDS, see handbook for detai
 
 .if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TCL_RUN) || defined(USE_TCL_WRAPPER) || \
    defined(USE_TK)  || defined(USE_TK_BUILD)  || defined(USE_TK_RUN)  || defined(USE_TK_WRAPPER)
-DEV_WARNING+=	"USE_TCL and USE_TK are deprecated, please use USES=tcl or USES=tk"
+DEV_ERROR+=	"USE_TCL and USE_TK are no longer supported, please use USES=tcl or USES=tk"
 .endif
 
 .if defined(USE_SCONS)
