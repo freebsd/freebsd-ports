@@ -4,10 +4,10 @@ lib/libnewt.a
 lib/libnewt.so
 lib/libnewt.so.%%SOVERSION%%
 lib/libnewt.so.%%VERSION%%
-man/man1/whiptail.1.gz
-%%TCLOPT%%lib/whip%%VERSION%%/pkgIndex.tcl
-%%TCLOPT%%lib/whip%%VERSION%%/whiptcl.so
+%%TCL%%lib/whip%%VERSION%%/pkgIndex.tcl
+%%TCL%%lib/whip%%VERSION%%/whiptcl.so
 libdata/pkgconfig/libnewt.pc
+man/man1/whiptail.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/as/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/newt.mo
@@ -97,8 +97,6 @@ libdata/pkgconfig/libnewt.pc
 %%NLS%%@dirrmtry share/locale/mr
 %%NLS%%@dirrmtry share/locale/mg/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/mg
-%%NLS%%@dirrmtry share/locale/lv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lv
 %%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ku
 %%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
@@ -115,4 +113,4 @@ libdata/pkgconfig/libnewt.pc
 %%NLS%%@dirrmtry share/locale/ast
 %%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/as
-%%TCLOPT%%@dirrm lib/whip%%VERSION%%
+%%TCL%%@dirrm lib/whip%%VERSION%%
