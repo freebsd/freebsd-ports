@@ -1,10 +1,11 @@
 bin/slconsole
-bin/slgui
+%%WXGTK%%bin/slgui
 bin/slregister
 bin/sooperlooper
-share/sooperlooper/presets/bcf2000.slb
-share/sooperlooper/presets/edp4.slb
-share/sooperlooper/presets/midiwizard.slb
-share/sooperlooper/presets/oxy8.slb
-@dirrm share/sooperlooper/presets
-@dirrm share/sooperlooper
+%%DATADIR%%/presets/bcf2000.slb
+%%DATADIR%%/presets/edp4.slb
+%%DATADIR%%/presets/midiwizard.slb
+%%DATADIR%%/presets/oxy8.slb
+%%WXGTK%%%%DATADIR%%/sl_logo.xpm
+@dirrm %%DATADIR%%/presets
+@dirrm %%DATADIR%%
