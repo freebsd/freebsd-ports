@@ -1,4 +1,3 @@
-%%BIN_JSON_PP%%bin/json_pp
 bin/p5json_pp
 %%SITE_PERL%%/JSON/PP.pm
 %%SITE_PERL%%/JSON/PP/Boolean.pm
