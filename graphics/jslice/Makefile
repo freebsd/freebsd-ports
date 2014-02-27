@@ -10,12 +10,11 @@ MASTER_SITES=	http://www.pldaniels.com/jslice/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics tool to split up a JPEG image and provide HTML for the slices
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 PLIST_FILES=	bin/jslice
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/jslice ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/jslice ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
