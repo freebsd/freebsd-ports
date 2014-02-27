@@ -33,8 +33,6 @@ DOTQ_CONFIGURE_ON=		--enable-dotQ
 FUSERLIST_CONFIGURE_ON=		--enable-whofile
 ELITEFILTER_CONFIGURE_ON=	--enable-elite
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nakenchat \
 		${STAGEDIR}${PREFIX}/bin/
