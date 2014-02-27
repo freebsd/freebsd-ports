@@ -46,6 +46,11 @@ NACL_RUN_DEPENDS=	${LOCALBASE}/lib/libnacl.a:${PORTSDIR}/security/nacl
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+USE_GCC=	yes
+BROKEN_i386=	`__stack_chk_fail_local' isn't defined
+.endif
+
 .if ${PORT_OPTIONS:MNACL}
 CONFIGURE_ARGS+=	--with-nacl-libs=${LOCALBASE}/lib
 .endif
