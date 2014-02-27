@@ -200,7 +200,6 @@
     SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += oorexx
-    SUBDIR += opa
     SUBDIR += open-cobol
     SUBDIR += opendylan
     SUBDIR += otcl

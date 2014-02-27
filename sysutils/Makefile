@@ -117,7 +117,6 @@
     SUBDIR += chgrep
     SUBDIR += ciso
     SUBDIR += ck4up
-    SUBDIR += ckl
     SUBDIR += clean
     SUBDIR += clockspeed
     SUBDIR += clockspeed-conf
@@ -348,7 +347,6 @@
     SUBDIR += gpte
     SUBDIR += graffer
     SUBDIR += graid5
-    SUBDIR += graphicboot
     SUBDIR += graveman
     SUBDIR += grok
     SUBDIR += grub2
@@ -529,7 +527,6 @@
     SUBDIR += mkfwimage
     SUBDIR += mkntpwd
     SUBDIR += mksunbootcd
-    SUBDIR += mmore
     SUBDIR += modules
     SUBDIR += monit
     SUBDIR += monitord
@@ -871,7 +868,6 @@
     SUBDIR += skill
     SUBDIR += slack
     SUBDIR += sleuthkit
-    SUBDIR += slmon
     SUBDIR += sloth
     SUBDIR += slst
     SUBDIR += slurm-hpc

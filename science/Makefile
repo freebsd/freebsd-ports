@@ -143,7 +143,6 @@
     SUBDIR += p5-Physics-Unit
     SUBDIR += paje
     SUBDIR += paraview
-    SUBDIR += peekabot
     SUBDIR += pnetcdf
     SUBDIR += psi3
     SUBDIR += psychopy
