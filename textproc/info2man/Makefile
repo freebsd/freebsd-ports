@@ -11,19 +11,19 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate GNU info files into man pages
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 PLSCRIPTS=	info2man info2pod
+SHEBANG_FILES=	info2pod
 
-NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/info2pod
 
 do-install:
-	${INSTALL_SCRIPT} ${PLSCRIPTS:S|^|${WRKSRC}/|} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/cs ${DATADIR}
+	${INSTALL_SCRIPT} ${PLSCRIPTS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} cs ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
