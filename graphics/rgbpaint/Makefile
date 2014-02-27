@@ -10,6 +10,8 @@ MASTER_SITES=	SF/mtpaint/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very basic painting program
 
+LICENSE=	GPLv2 # (or later)
+
 USES=		gettext pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
@@ -20,13 +22,19 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
 DESKTOP_ENTRIES="rgbPaint" "" "" "${PORTNAME}" "" true
 
 post-patch:
-	@${REINPLACE_CMD} -e '/if \[/s|==|=|g; s|gcc -Wall|${CC}|' \
+	@${REINPLACE_CMD} '/if \[/s|==|=|g ; \
+		 /gcc/s|^|#| ; \
+		 /GTK_LIB/s| -s||' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} 's|$$(MT_MAN_DEST)|$$(DESTDIR)&|g' \
 		${WRKSRC}/doc/Makefile
 	@${REINPLACE_CMD} 's|$$(MT_LANG_DEST)|$$(DESTDIR)&|g' \
 		${WRKSRC}/po/Makefile
-	@${REINPLACE_CMD} 's|$$(BIN_INSTALL)|$$(DESTDIR)&|g' \
+	@${REINPLACE_CMD} 's|$$(BIN_INSTALL)|$$(DESTDIR)&|g ; \
+		 /^LDFLAGS/s|)$$|) -lm -lintl|' \
 		${WRKSRC}/src/Makefile
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rgbpaint
 
 .include <bsd.port.mk>
