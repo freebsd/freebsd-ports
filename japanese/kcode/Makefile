@@ -18,21 +18,17 @@ NO_BUILD=	yes
 SHEBANG_FILES=	kcode
 perl_OLD_CMD=	/usr/bin/env perl
 
-MANLANG=	ja
-MAN1=		kcode.1
-MANCOMPRESSED=	no
-PLIST_FILES=	bin/kcode
+PLIST_FILES=	bin/kcode man/ja/man1/kcode.1.gz
 
 RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} > ${WRKSRC}/kcode
 	pod2man ${WRKSRC}/kcode ${WRKSRC}/kcode.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/kcode ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/kcode.1 ${MAN1PREFIX}/man/ja/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/kcode ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/kcode.1 ${STAGEDIR}${MANPREFIX}/man/ja/man1
 
 .include <bsd.port.mk>
