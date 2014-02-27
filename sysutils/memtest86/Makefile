@@ -23,21 +23,17 @@ PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${DISTNAME:S,b,s,}.iso.zip -d ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC:S,b,s,}/precomp.bin ${DATADIR}/floppy.bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC:S,b,s,}/precomp.bin ${STAGEDIR}${DATADIR}/floppy.bin
 	${INSTALL_DATA} ${WRKSRC}/Memtest86_${PORTVERSION:S,b,s,}.iso \
-			${DATADIR}/Memtest86_${PORTVERSION:S,b,,}.iso
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+			${STAGEDIR}${DATADIR}/Memtest86_${PORTVERSION:S,b,,}.iso
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC:S,b,s,}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC:S,b,s,}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
