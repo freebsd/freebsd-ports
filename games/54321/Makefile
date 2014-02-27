@@ -3,43 +3,40 @@
 
 PORTNAME=	54321
 PORTVERSION=	1.0.2001.11.16
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
-MASTER_SITES=	http://www.nklein.com/products/54321/${PORTVERSION}/
+MASTER_SITES=	http://old.nklein.com/products/54321/%SUBDIR%/ \
+		http://www.sourcefiles.org/Games/Puzzle/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	54321 is five games in four-, three-, or two-dimensions for one player
+COMMENT=	Five games in four-, three-, or two-dimensions for one player
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-
+USES=		gmake
 USE_SDL=	image sdl
-USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=	all size
 
-NO_STAGE=	yes
 post-extract:
-	@${MKDIR} ${WRKSRC}/archs/FreeBSD
-	@${CP} ${FILESDIR}/variables.GNU ${WRKSRC}/archs/FreeBSD
+	@${MKDIR} ${WRKSRC}/archs/${OPSYS}
+	@${CP} ${FILESDIR}/variables.GNU ${WRKSRC}/archs/${OPSYS}
 
 post-patch:
-	${REINPLACE_CMD} -e "s,ARCH,OPSYS," ${WRKSRC}/GNUmakefile
-
-post-build:
-	@${SED} -e "s;@PREFIX@;${PREFIX};g" \
-		${FILESDIR}/54321.sh > ${WRKSRC}/54321
+	@${REINPLACE_CMD} -e \
+		's|ARCH|OPSYS| ; \
+		 s|:= -O|+=|' ${WRKSRC}/GNUmakefile
+	@${REINPLACE_CMD} -e \
+		's|SDL_main|main| ; \
+		 s|../../data/|${DATADIR}/data/|' ${WRKSRC}/code/*.cpp
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/54321/bin/FreeBSD
-	@${MKDIR} ${PREFIX}/share/54321/data
-	@${CHMOD} -R 755 ${PREFIX}/share/54321
-	@${INSTALL_PROGRAM} ${WRKSRC}/Release/bin/FreeBSD/54321 ${PREFIX}/share/54321/bin/FreeBSD
-	@${INSTALL_DATA} ${WRKSRC}/Release/data/* ${PREFIX}/share/54321/data
-	@${INSTALL_SCRIPT} ${WRKSRC}/54321 ${PREFIX}/bin
+	(cd ${WRKSRC}/Release/bin/${OPSYS} && ${INSTALL_PROGRAM} 54321 \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data
+	(cd ${WRKSRC}/Release/data && ${INSTALL_DATA} * \
+		${STAGEDIR}${DATADIR}/data)
 
 .include <bsd.port.mk>
