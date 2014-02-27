@@ -96,6 +96,19 @@ share/applications/xvile.desktop
 %%PORTDOCS%%%%DOCSDIR%%/config.doc
 %%PORTDOCS%%%%DOCSDIR%%/dir.doc
 %%PORTDOCS%%%%DOCSDIR%%/filters.doc
+%%PORTDOCS%%%%DOCSDIR%%/html/Vileserv.html
+%%PORTDOCS%%%%DOCSDIR%%/html/config.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir.html
+%%PORTDOCS%%%%DOCSDIR%%/html/filters.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macros.html
+%%PORTDOCS%%%%DOCSDIR%%/html/menus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/modes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/oleauto.html
+%%PORTDOCS%%%%DOCSDIR%%/html/perl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/vile-hlp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/vile-man.html
+%%PORTDOCS%%%%DOCSDIR%%/html/vile-toc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/visvile.html
 %%PORTDOCS%%%%DOCSDIR%%/macros.doc
 %%PORTDOCS%%%%DOCSDIR%%/menus.doc
 %%PORTDOCS%%%%DOCSDIR%%/modes.doc
@@ -256,9 +269,11 @@ share/pixmaps/vile.xpm
 %%DATADIR%%/xsl.keywords
 %%DATADIR%%/yacc.keywords
 %%DATADIR%%/zsh.keywords
+share/pixmaps/vile_48x48.png
 %%PERL%%@dirrm %%DATADIR%%/perl/Vile
 %%PERL%%@dirrm %%DATADIR%%/perl
 @dirrm %%DATADIR%%/macros
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/vile
