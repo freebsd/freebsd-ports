@@ -11,28 +11,24 @@ DISTNAME=	${PORTNAME}-0.9.6.update3
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Scheme implementation for real-time applications
 
-USE_GMAKE=	yes
+USES=		gmake
+
 MAKE_ARGS=	DATADIR="${DATADIR}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-MAN1=		ypsilon.1
-
 ONLY_FOR_ARCHS=	i386 amd64
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "sitelib stdlib" ${DATADIR})
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/example/*.scm ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "sitelib stdlib" ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/*.scm ${STAGEDIR}${EXAMPLESDIR}
 
 regression-test: build
 	cd ${WRKSRC} && ${GMAKE} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
