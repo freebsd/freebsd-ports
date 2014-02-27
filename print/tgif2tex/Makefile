@@ -25,15 +25,14 @@ PORTDOCS=	how-to-use.dvi how-to-use.ps how-to-use.tex \
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
 
+SHEBANG_FILES=	tgif2tex
+
 post-patch:
-	${REINPLACE_CMD} \
-		-e "s,%%LOCALBASE%%,${LOCALBASE}," \
-		-e "s,^#!/usr/bin/perl,#!${PERL}," \
-		${WRKSRC}/tgif2tex
+	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/tgif2tex
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tgif2tex ${STAGEDIR}${PREFIX}/bin
