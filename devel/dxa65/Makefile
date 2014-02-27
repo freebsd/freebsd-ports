@@ -12,28 +12,19 @@ COMMENT=	Disassembler for MOS 6502 and compatible CPUs
 
 OPTIONS_DEFINE=	DOCS
 
-USES=	gmake
+USES=		gmake
 
-MAN1=	dxa.1
-MLINKS=	dxa.1 dxa65.1
-
-PLIST_FILES=	bin/dxa65
+PLIST_FILES=	bin/dxa65 man/man1/dxa.1.gz
 PORTDOCS=	INSTALL
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch-script:
 	@${REINPLACE_CMD} 's|CC = |CC ?= |g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|CFLAGS = |CFLAGS ?= |g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dxa ${PREFIX}/bin/dxa65
-	${INSTALL_MAN} ${WRKSRC}/dxa.1 ${MAN1PREFIX}/man/man1
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/dxa ${STAGEDIR}${PREFIX}/bin/dxa65
+	${INSTALL_MAN} ${WRKSRC}/dxa.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
