@@ -11,17 +11,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jhay@FreeBSD.org
 COMMENT=	Compiler for writing programs for the Lego RCX
 
-USES=		gmake
-USE_DOS2UNIX=	yes
+USES=		gmake dos2unix
 NO_WRKSUBDIR=	yes
 
-MAN1=		nqc.1
-PLIST_FILES=	bin/nqc
+PLIST_FILES=	bin/nqc man/man1/nqc.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/nqc ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nqc-man-2.1r1-0.man ${PREFIX}/man/man1/nqc.1
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/nqc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/nqc-man-2.1r1-0.man \
+		${STAGEDIR}${MANPREFIX}/man/man1/nqc.1
 
 .include <bsd.port.pre.mk>
 
