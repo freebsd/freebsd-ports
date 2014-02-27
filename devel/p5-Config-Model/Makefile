@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.047
+PORTVERSION=	2.048
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -16,6 +16,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-AnyEvent-HTTP>=0:${PORTSDIR}/www/p5-AnyEvent-HTTP \
 		p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
+		p5-EV>=0:${PORTSDIR}/devel/p5-EV \
 		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
