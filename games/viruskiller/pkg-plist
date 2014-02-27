@@ -1,6 +1,5 @@
 bin/viruskiller
-%%DATADIR%%/viruskiller.pak
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+share/applications/viruskiller.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/battery.png
 %%PORTDOCS%%%%DOCSDIR%%/bomb.png
@@ -13,14 +12,6 @@ bin/viruskiller
 share/icons/hicolor/16x16/apps/viruskiller.png
 share/icons/hicolor/32x32/apps/viruskiller.png
 share/icons/hicolor/64x64/apps/viruskiller.png
-share/applications/viruskiller.desktop
+%%DATADIR%%/viruskiller.pak
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%DATADIR%%
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
