@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	portshaker-config
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	romain@FreeBSD.org
@@ -16,5 +17,11 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/portshaker.d
+
+post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/etc/portshaker.conf \
+		${STAGEDIR}${PREFIX}/etc/portshaker.conf.sample-config
+
 .include "${MASTERDIR}/Makefile"
