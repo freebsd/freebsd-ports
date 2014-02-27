@@ -3,29 +3,34 @@
 
 PORTNAME=	vils
 PORTVERSION=	20020228
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.secnetix.de/~olli/scripts/
+MASTER_SITES=	http://www.secnetix.de/~olli/scripts/Generic-utilities/
 DISTFILES=	vils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use your favorite editor to rename files
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-10
+LICENSE=	BSD
 
-BUILD_DEPENDS=	zsh:${PORTSDIR}/shells/zsh
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	zsh:${PORTSDIR}/shells/zsh
+
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=	-f
+EXTRACT_AFTER_ARGS=	${WRKDIR}
+
+USES=		shebangfix
+SHEBANG_FILES=	vils
+SHEBANG_LANG=	zsh
+zsh_OLD_CMD=	/bin/zsh
+zsh_CMD=	${LOCALBASE}/bin/zsh
 
 PLIST_FILES=	bin/${PORTNAME}
 
-do-extract:
-	${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/vils ${WRKDIR}/vils
-
-do-build:
-	@${REINPLACE_CMD} -e 's/\/bin\/zsh/\/usr\/local\/bin\/zsh/' ${WRKDIR}/vils
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/vils ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} vils ${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>
