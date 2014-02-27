@@ -12,13 +12,18 @@ MAINTAINER=	valerio.daelli@gmail.com
 COMMENT=	El Torito image extractor
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 
 PLIST_FILES=	bin/${PORTNAME}
+SHEBANG_FILES=	geteltorito.pl
 
-NO_STAGE=	yes
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
+
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
