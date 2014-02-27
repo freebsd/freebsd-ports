@@ -16,6 +16,8 @@ MAKEFILE=	src/Makefile
 DOCFILES=	${FILESDIR}/porting.notes other/soup12.doc other/slnr.doc \
 		LICENSE other/default.dot.slnrrc
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/slnr
 	@cd ${WRKSRC}; \
