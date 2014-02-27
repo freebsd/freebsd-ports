@@ -13,23 +13,20 @@ COMMENT=	Simple ifcico like Fidonet technology mailer
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
 CFLAGS+=	-fno-builtin
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/etc/bforce
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.conf ${PREFIX}/etc/bforce/bforce.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.passwd ${PREFIX}/etc/bforce/bforce.passwd.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.subst ${PREFIX}/etc/bforce/bforce.subst.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/freq.aliases ${PREFIX}/etc/bforce/freq.aliases.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/freq.dirs ${PREFIX}/etc/bforce/freq.dirs.sample
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bforce ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfindex ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfstat ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/nlookup ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bforce
+.for f in bforce.conf bforce.passwd bforce.subst freq.aliases freq.dirs
+	${INSTALL_DATA} ${WRKSRC}/../examples/${f} \
+		${STAGEDIR}${PREFIX}/etc/bforce/${f}.sample
+.endfor
+.for f in bforce bfindex bfstat nlookup
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
+.endfor
 
 .include <bsd.port.mk>
