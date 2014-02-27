@@ -18,7 +18,8 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/cpplint.py
 PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}
@@ -27,10 +28,8 @@ post-patch:
 	@${REINPLACE_CMD} -Ee "s,#!.*,#!${PYTHON_CMD}," ${WRKSRC}/*.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cpplint.py ${PREFIX}/bin
-.ifndef NOPORTDOCS
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/cpplint.py ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
