@@ -11,22 +11,16 @@ COMMENT=	Simplistic reader for SOUP (HDPF) mail and news packets
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-MAN1=		slnr.1
-
 MAKEFILE=	src/Makefile
 
 DOCFILES=	${FILESDIR}/porting.notes other/soup12.doc other/slnr.doc \
 		LICENSE other/default.dot.slnrrc
 
-NO_STAGE=	yes
 do-install:
-.if !defined{NOPORTDOCS}
-	@${ECHO_MSG} "===>  Copying documents to ${PREFIX}/share/doc/slnr"
-	@${MKDIR} ${PREFIX}/share/doc/slnr
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/slnr
 	@cd ${WRKSRC}; \
-		${INSTALL_DATA} ${DOCFILES} ${PREFIX}/share/doc/slnr
-.endif
-	${INSTALL_MAN} ${WRKSRC}/other/slnr.1 ${PREFIX}/man/man1/slnr.1
-	${INSTALL_PROGRAM} ${WRKSRC}/slnr ${PREFIX}/bin
+		${INSTALL_DATA} ${DOCFILES} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/other/slnr.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/slnr ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
