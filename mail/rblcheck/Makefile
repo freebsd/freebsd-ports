@@ -10,24 +10,20 @@ MASTER_SITES=	SF
 MAINTAINER=	moro@remus.dti.ne.jp
 COMMENT=	Command-line interface to Paul Vixie's RBL filter
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
-NO_STAGE=	yes
-do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/rbl ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/rblcheck ${PREFIX}/bin
-	@${INSTALL_DATA} ${FILESDIR}/rblcheckrc.sample ${PREFIX}/etc
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS COPYING ChangeLog INSTALL NEWS README
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/rbl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${FILESDIR}/rblcheckrc.sample ${STAGEDIR}${PREFIX}/etc
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in AUTHORS COPYING ChangeLog INSTALL NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
