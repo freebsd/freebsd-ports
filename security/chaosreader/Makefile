@@ -14,22 +14,18 @@ MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Tool to extract data from tcpdump logs
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 
 PLIST_FILES=	bin/${PORTNAME} bin/sshkeydata
+SHEBANG_FILES=	chaosreader sshkeydata
 
-NO_STAGE=	yes
 post-extract:
-	${CP} ${DISTDIR}/${PORTNAME}${PORTVERSION} ${WRKDIR}/${PORTNAME}
-	${CP} ${DISTDIR}/sshkeydata0.20 ${WRKDIR}/sshkeydata
-
-post-patch:
-	${REINPLACE_CMD} s:/usr/bin/perl:${PERL}: \
-		${WRKDIR}/${PORTNAME} ${WRKDIR}/sshkeydata
+	@${CP} ${DISTDIR}/${PORTNAME}${PORTVERSION} ${WRKDIR}/${PORTNAME}
+	@${CP} ${DISTDIR}/sshkeydata0.20 ${WRKDIR}/sshkeydata
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/sshkeydata ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/sshkeydata ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
