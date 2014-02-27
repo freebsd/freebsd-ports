@@ -5,62 +5,44 @@ PORTNAME=	fmars
 PORTVERSION=	0.0.207
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://users.v-lo.krakow.pl/~michal/
+MASTER_SITES=	http://corewar.co.uk/janeczek/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Memory Array Redcode Simulator
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-
+USES=		gmake
 ALL_TARGET=	x${PORTNAME}
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
+OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIMIZED_CFLAGS_CFLAGS=-fomit-frame-pointer
 
 post-patch:
-# Fix Makefile.
-	@${REINPLACE_CMD} -e 's|\($$(OPT)\)|${CFLAGS} \1| ; \
-		s|gcc|${CC}|g' \
-		${WRKSRC}/${MAKEFILE}
-
-# Enable/disable compilation optimizations.
-.if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e 's|$$(OPT)||' ${WRKSRC}/${MAKEFILE}
-.endif
+	@${REINPLACE_CMD} -e \
+		's|^\(CC\) |#\1 | ; \
+		 s|^\(CFLAGS\) |#\1 | ; \
+		 s|^\(OPTS\) |#\1 | ; \
+		 s|gcc -E|$$(CC) -E|' ${WRKSRC}/Makefile
 
 do-install:
 # Program.
-	${INSTALL_PROGRAM} ${WRKSRC}/x${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} x${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME})
 
 # Data.
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for d in rc rc-test
-	${CP} -R ${WRKSRC}/${d} ${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
 
 # Documentation (optional).
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 
-post-install:
-# Fix permissions.
-	@${CHOWN} -R ${BINOWN}:${BINGRP} ${DATADIR}
-	@${FIND} ${DATADIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644
-	@${FIND} ${DATADIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
