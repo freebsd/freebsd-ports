@@ -23,6 +23,8 @@ PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${DISTNAME:S,b,s,}.iso.zip -d ${WRKSRC}
 
