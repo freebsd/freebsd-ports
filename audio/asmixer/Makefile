@@ -3,28 +3,39 @@
 
 PORTNAME=	asmixer
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio afterstep
-MASTER_SITES=	http://www.tigr.net/afterstep/download/asmixer/
+MASTER_SITES=	AFTERSTEP/apps/asmix/ \
+		http://tigr.net/afterstep/download/asmixer/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixer control for AfterStep window manager
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
-
-MAN1=		${PORTNAME}.1x
-NO_STAGE=	yes
-PLIST_FILES=	bin/asmixer
+LICENSE=	GPLv2
 
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \
-		--with-xpm-includes=${LOCALBASE} \
-		--with-xpm-library=${LOCALBASE}
+		--with-xpm-includes=${LOCALBASE}/include \
+		--with-xpm-library=${LOCALBASE}/lib
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
-		${MAN1PREFIX}/man/man1/${PORTNAME}.1x
+PLIST_FILES=	bin/asmixer man/man1/asmixer.1.gz
+
+post-patch:
+.for i in asmixer.c configure autoconf/config.h.in
+	@${REINPLACE_CMD} -e \
+		's|machine/soundcard.h|sys/soundcard.h| ; \
+		 s|MACHINE_SOUNDCARD_H|SYS_SOUNDCARD_H| ; \
+		 /sys\/syslimits.h/d' ${WRKSRC}/${i}
+.endfor
+
+post-build:
+	@${LN} -sf asmixer.man ${WRKSRC}/asmixer.1
+
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} asmixer \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} asmixer.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>
