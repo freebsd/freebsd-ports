@@ -3,8 +3,8 @@
 
 PORTNAME?=	xmms2
 PORTVERSION=	0.8
-PORTREVISION?=	5
 DISTVERSIONSUFFIX=DrO_o
+PORTREVISION?=	5
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 
@@ -372,6 +372,10 @@ PLIST_SUB+=	ET="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%WRKSRC%%|${WRKSRC}|" ${WRKSRC}/wscript
+.if ${PORT_OPTIONS:MVISUAL} && ${PORT_OPTIONS:MVORBIS}
+	@${REINPLACE_CMD} -e "s|'vorbisenc',|'vorbisenc vorbis ogg',|" \
+		${WRKSRC}/src/clients/vistest/wscript
+.endif
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf ${_MAKE_JOBS} configure \
