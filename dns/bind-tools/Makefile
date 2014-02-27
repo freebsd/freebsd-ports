@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	bind-tools
+PKGNAMESUFFIX=	-tools
 
 COMMENT=	Command line tools from BIND: dig, host, and nslookup
 
