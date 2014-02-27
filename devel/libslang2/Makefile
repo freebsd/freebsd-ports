@@ -2,7 +2,7 @@
 
 PORTNAME=	libslang2
 PORTVERSION=	2.2.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${PORTVERSION:R}/ \
@@ -42,10 +42,15 @@ PCRE_CONFIGURE_WITH=	pcre
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PNG_CONFIGURE_WITH=	png
 PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
-ICONV_CONFIGURE_WITH=	iconv
 ICONV_USES=		iconv
 ONIG_CONFIGURE_WITH=	onig
 ONIG_LIB_DEPENDS=	libonig.so:${PORTSDIR}/devel/oniguruma4
+
+.include <bsd.port.pre.mk>
+
+.if ! ${PORT_OPTIONS:MICONV} || empty(ICONV_LIB)
+CONFIGURE_ARGS+=	--without-iconv
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,doc/slsh,doc/slang/v\@slang_major_version\@,' \
@@ -61,4 +66,4 @@ post-install:
 .endfor
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
