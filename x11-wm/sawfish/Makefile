@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sawfish
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10
 PORTEPOCH=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/%SUBDIR%/
@@ -21,7 +21,7 @@ RUN_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
 USE_XORG=	ice sm x11 xft xinerama xrandr xtst
-USE_GNOME=	cairo gnomehier gtk20 pangox-compat
+USE_GNOME=	cairo gnomehier gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share
@@ -31,8 +31,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		sawfish
-
-PORTSCOUT=	limit:^1\.9\.[0-9]
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -17,6 +17,7 @@ lib/sawfish/gradient.a
 lib/sawfish/gradient.la
 lib/sawfish/gradient.so
 lib/sawfish/gtk-style
+lib/sawfish/sawfish-menu
 lib/sawfish/sawfish/wm/util/gradient.a
 lib/sawfish/sawfish/wm/util/gradient.la
 lib/sawfish/sawfish/wm/util/gradient.so
@@ -26,7 +27,6 @@ lib/sawfish/sawfish/wm/util/selection.so
 lib/sawfish/sawfish/wm/util/x.a
 lib/sawfish/sawfish/wm/util/x.la
 lib/sawfish/sawfish/wm/util/x.so
-lib/sawfish/sawfish-menu
 lib/sawfish/selection.a
 lib/sawfish/selection.la
 lib/sawfish/selection.so
@@ -105,6 +105,8 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/auto-raise.jlc
 %%DATADIR%%/lisp/beos-window-menu.jl
 %%DATADIR%%/lisp/beos-window-menu.jlc
+%%DATADIR%%/lisp/compton.jl
+%%DATADIR%%/lisp/compton.jlc
 %%DATADIR%%/lisp/custom.jl
 %%DATADIR%%/lisp/custom.jlc
 %%DATADIR%%/lisp/customize.jl
@@ -131,8 +133,8 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/edges.jlc
 %%DATADIR%%/lisp/error-handler.jl
 %%DATADIR%%/lisp/error-handler.jlc
-%%DATADIR%%/lisp/expose.jl
-%%DATADIR%%/lisp/expose.jlc
+%%DATADIR%%/lisp/fehlstart.jl
+%%DATADIR%%/lisp/fehlstart.jlc
 %%DATADIR%%/lisp/gnome-int.jl
 %%DATADIR%%/lisp/gnome-int.jlc
 %%DATADIR%%/lisp/group-funs.jl
@@ -169,6 +171,8 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/move-resize.jlc
 %%DATADIR%%/lisp/old-window-menu.jl
 %%DATADIR%%/lisp/old-window-menu.jlc
+%%DATADIR%%/lisp/pancake.jl
+%%DATADIR%%/lisp/pancake.jlc
 %%DATADIR%%/lisp/poweroff.jl
 %%DATADIR%%/lisp/poweroff.jlc
 %%DATADIR%%/lisp/prompt.jl
@@ -229,6 +233,8 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/sawfish/gtk/widgets/scheme-boolean.jlc
 %%DATADIR%%/lisp/sawfish/gtk/widgets/simple-dialog.jl
 %%DATADIR%%/lisp/sawfish/gtk/widgets/simple-dialog.jlc
+%%DATADIR%%/lisp/sawfish/wm.jl
+%%DATADIR%%/lisp/sawfish/wm.jlc
 %%DATADIR%%/lisp/sawfish/wm/animation/main.jl
 %%DATADIR%%/lisp/sawfish/wm/animation/main.jlc
 %%DATADIR%%/lisp/sawfish/wm/animation/modes.jl
@@ -236,6 +242,8 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/sawfish/wm/animation/setup.jl
 %%DATADIR%%/lisp/sawfish/wm/animation/setup.jlc
 %%DATADIR%%/lisp/sawfish/wm/autoload.jl
+%%DATADIR%%/lisp/sawfish/wm/commands.jl
+%%DATADIR%%/lisp/sawfish/wm/commands.jlc
 %%DATADIR%%/lisp/sawfish/wm/commands/cycle.jl
 %%DATADIR%%/lisp/sawfish/wm/commands/cycle.jlc
 %%DATADIR%%/lisp/sawfish/wm/commands/describe.jl
@@ -270,8 +278,6 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/sawfish/wm/commands/viewport-linear.jlc
 %%DATADIR%%/lisp/sawfish/wm/commands/x-cycle.jl
 %%DATADIR%%/lisp/sawfish/wm/commands/x-cycle.jlc
-%%DATADIR%%/lisp/sawfish/wm/commands.jl
-%%DATADIR%%/lisp/sawfish/wm/commands.jlc
 %%DATADIR%%/lisp/sawfish/wm/cursors.jl
 %%DATADIR%%/lisp/sawfish/wm/cursors.jlc
 %%DATADIR%%/lisp/sawfish/wm/custom-defaults.jl
@@ -308,8 +314,6 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/sawfish/wm/ext/cabinet.jlc
 %%DATADIR%%/lisp/sawfish/wm/ext/error-handler.jl
 %%DATADIR%%/lisp/sawfish/wm/ext/error-handler.jlc
-%%DATADIR%%/lisp/sawfish/wm/ext/expose.jl
-%%DATADIR%%/lisp/sawfish/wm/ext/expose.jlc
 %%DATADIR%%/lisp/sawfish/wm/ext/hide-dialogs.jl
 %%DATADIR%%/lisp/sawfish/wm/ext/hide-dialogs.jlc
 %%DATADIR%%/lisp/sawfish/wm/ext/match-window.jl
@@ -355,6 +359,8 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/sawfish/wm/menus.jlc
 %%DATADIR%%/lisp/sawfish/wm/misc.jl
 %%DATADIR%%/lisp/sawfish/wm/misc.jlc
+%%DATADIR%%/lisp/sawfish/wm/placement.jl
+%%DATADIR%%/lisp/sawfish/wm/placement.jlc
 %%DATADIR%%/lisp/sawfish/wm/placement/off-center.jl
 %%DATADIR%%/lisp/sawfish/wm/placement/off-center.jlc
 %%DATADIR%%/lisp/sawfish/wm/placement/smart.jl
@@ -363,8 +369,22 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/sawfish/wm/placement/stagger.jlc
 %%DATADIR%%/lisp/sawfish/wm/placement/top-left.jl
 %%DATADIR%%/lisp/sawfish/wm/placement/top-left.jlc
-%%DATADIR%%/lisp/sawfish/wm/placement.jl
-%%DATADIR%%/lisp/sawfish/wm/placement.jlc
+%%DATADIR%%/lisp/sawfish/wm/prg/compton.jl
+%%DATADIR%%/lisp/sawfish/wm/prg/compton.jlc
+%%DATADIR%%/lisp/sawfish/wm/prg/fehlstart.jl
+%%DATADIR%%/lisp/sawfish/wm/prg/fehlstart.jlc
+%%DATADIR%%/lisp/sawfish/wm/prg/pancake.jl
+%%DATADIR%%/lisp/sawfish/wm/prg/pancake.jlc
+%%DATADIR%%/lisp/sawfish/wm/prg/trayer.jl
+%%DATADIR%%/lisp/sawfish/wm/prg/trayer.jlc
+%%DATADIR%%/lisp/sawfish/wm/prg/xgamma.jl
+%%DATADIR%%/lisp/sawfish/wm/prg/xgamma.jlc
+%%DATADIR%%/lisp/sawfish/wm/prg/xmobar.jl
+%%DATADIR%%/lisp/sawfish/wm/prg/xmobar.jlc
+%%DATADIR%%/lisp/sawfish/wm/prg/xmodmap.jl
+%%DATADIR%%/lisp/sawfish/wm/prg/xmodmap.jlc
+%%DATADIR%%/lisp/sawfish/wm/prg/xsettingsd.jl
+%%DATADIR%%/lisp/sawfish/wm/prg/xsettingsd.jlc
 %%DATADIR%%/lisp/sawfish/wm/server.jl
 %%DATADIR%%/lisp/sawfish/wm/server.jlc
 %%DATADIR%%/lisp/sawfish/wm/session/init.jl
@@ -403,6 +423,16 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/sawfish/wm/theming/make-theme-preview.jlc
 %%DATADIR%%/lisp/sawfish/wm/theming/make-theme.jl
 %%DATADIR%%/lisp/sawfish/wm/theming/make-theme.jlc
+%%DATADIR%%/lisp/sawfish/wm/tile/col.jl
+%%DATADIR%%/lisp/sawfish/wm/tile/col.jlc
+%%DATADIR%%/lisp/sawfish/wm/tile/tall.jl
+%%DATADIR%%/lisp/sawfish/wm/tile/tall.jlc
+%%DATADIR%%/lisp/sawfish/wm/tile/tile.jl
+%%DATADIR%%/lisp/sawfish/wm/tile/tile.jlc
+%%DATADIR%%/lisp/sawfish/wm/tile/tiler.jl
+%%DATADIR%%/lisp/sawfish/wm/tile/tiler.jlc
+%%DATADIR%%/lisp/sawfish/wm/tile/utils.jl
+%%DATADIR%%/lisp/sawfish/wm/tile/utils.jlc
 %%DATADIR%%/lisp/sawfish/wm/user.jl
 %%DATADIR%%/lisp/sawfish/wm/user.jlc
 %%DATADIR%%/lisp/sawfish/wm/util/compat.jl
@@ -457,8 +487,6 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/sawfish/wm/windows.jlc
 %%DATADIR%%/lisp/sawfish/wm/workspace.jl
 %%DATADIR%%/lisp/sawfish/wm/workspace.jlc
-%%DATADIR%%/lisp/sawfish/wm.jl
-%%DATADIR%%/lisp/sawfish/wm.jlc
 %%DATADIR%%/lisp/shade-hover.jl
 %%DATADIR%%/lisp/shade-hover.jlc
 %%DATADIR%%/lisp/shade-stack.jl
@@ -475,6 +503,8 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/tabgroup.jlc
 %%DATADIR%%/lisp/tooltips.jl
 %%DATADIR%%/lisp/tooltips.jlc
+%%DATADIR%%/lisp/trayer.jl
+%%DATADIR%%/lisp/trayer.jlc
 %%DATADIR%%/lisp/viewport-drag.jl
 %%DATADIR%%/lisp/viewport-drag.jlc
 %%DATADIR%%/lisp/viewport-linear.jl
@@ -494,6 +524,14 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/lisp/x-cycle.jlc
 %%DATADIR%%/lisp/xfce-int.jl
 %%DATADIR%%/lisp/xfce-int.jlc
+%%DATADIR%%/lisp/xgamma.jl
+%%DATADIR%%/lisp/xgamma.jlc
+%%DATADIR%%/lisp/xmobar.jl
+%%DATADIR%%/lisp/xmobar.jlc
+%%DATADIR%%/lisp/xmodmap.jl
+%%DATADIR%%/lisp/xmodmap.jlc
+%%DATADIR%%/lisp/xsettingsd.jl
+%%DATADIR%%/lisp/xsettingsd.jlc
 %%DATADIR%%/sawfish.png
 %%DATADIR%%/sounds/focused.wav
 %%DATADIR%%/sounds/iconify.wav
@@ -4120,10 +4158,12 @@ share/xsessions/sawfish.desktop
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/lisp/sawfish/wm/util
+@dirrm %%DATADIR%%/lisp/sawfish/wm/tile
 @dirrm %%DATADIR%%/lisp/sawfish/wm/theming
 @dirrm %%DATADIR%%/lisp/sawfish/wm/tabs
 @dirrm %%DATADIR%%/lisp/sawfish/wm/state
 @dirrm %%DATADIR%%/lisp/sawfish/wm/session
+@dirrm %%DATADIR%%/lisp/sawfish/wm/prg
 @dirrm %%DATADIR%%/lisp/sawfish/wm/placement
 @dirrm %%DATADIR%%/lisp/sawfish/wm/integration
 @dirrm %%DATADIR%%/lisp/sawfish/wm/ext
@@ -4138,14 +4178,16 @@ share/xsessions/sawfish.desktop
 @dirrm %%DATADIR%%/lisp/sawfish
 @dirrm %%DATADIR%%/lisp
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/hi_IN/LC_MESSAGES
 @dirrmtry share/locale/hi_IN
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/ak/LC_MESSAGES
 @dirrmtry share/locale/ak
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm lib/sawfish/sawfish/wm/util
 @dirrm lib/sawfish/sawfish/wm
 @dirrm lib/sawfish/sawfish
