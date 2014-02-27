@@ -287,7 +287,6 @@ PLIST_SUB+=	HTMLDOCS="@comment "
 
 .if ${PORT_OPTIONS:MGUI}
 USES+=		tk
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 MAN1+=		git-citool.1 \
 		git-gui.1 \
 		gitk.1
