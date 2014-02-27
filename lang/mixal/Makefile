@@ -13,17 +13,14 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
-MAN1=		mixal.1
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mixal ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mixal.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for F in MIX.DOC NOTES README opcodes *.mix
-	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/mixal ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mixal.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in MIX.DOC NOTES README opcodes *.mix
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
