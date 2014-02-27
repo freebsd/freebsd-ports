@@ -21,13 +21,4 @@ RUN_DEPENDS=	p5-Mouse>=1.08:${PORTSDIR}/devel/p5-Any-Moose \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		XML::Feed::Deduper.3
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501400
-TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
