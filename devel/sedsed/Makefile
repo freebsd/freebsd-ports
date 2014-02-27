@@ -20,8 +20,7 @@ NO_BUILD=	yes
 
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/sedsed
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/sedsed
 
 .include <bsd.port.mk>
