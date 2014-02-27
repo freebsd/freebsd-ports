@@ -1,4 +1,0 @@
-A command line tool for noting when something was changed on a machine.
-The contents of the message are POST'ed to another server for logging.
-
-WWW: http://github.com/pquerna/ckl

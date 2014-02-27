@@ -214,7 +214,6 @@
     SUBDIR += hinfo
     SUBDIR += hlmaster
     SUBDIR += honeyd
-    SUBDIR += hornetq
     SUBDIR += hostapd
     SUBDIR += howl
     SUBDIR += hping
