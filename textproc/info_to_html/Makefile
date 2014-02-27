@@ -10,14 +10,13 @@ MASTER_SITES=	http://www.mons.net/software/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate GNU info files into HTML pages
 
-PLIST_FILES=	bin/info_to_html
-USES=		perl5
+USES=		perl5 shebangfix
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/info_to_html
+SHEBANG_FILES=	info_to_html
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/info_to_html ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/info_to_html ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
