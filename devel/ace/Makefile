@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.2.3
+PORTVERSION=	6.2.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
@@ -36,7 +36,7 @@ FLTK_DESC=		FLTK GUI toolkit
 FLTK_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 FLTK_MAKE_ENV=		fl=1
 
-QT4_USE=		QT4=corelib gui moc_build
+QT4_USE=		QT4=corelib,gui,moc_build
 QT4_MAKE_ENV=		qt=1 qt4=1 QTDIR="${QT_PREFIX}"
 QT4_CPPFLAGS=		-I${QT_INCDIR}
 QT4_LDFLAGS=		-L${QT_LIBDIR}
