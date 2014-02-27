@@ -22,11 +22,11 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/sa-stats
 
-NO_STAGE=	yes
 post-extract:
-		${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
+	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
 do-install:
-		${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/sa-stats
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} \
+		${STAGEDIR}${PREFIX}/bin/sa-stats
 
 .include <bsd.port.mk>
