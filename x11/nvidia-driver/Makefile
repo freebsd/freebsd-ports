@@ -42,8 +42,6 @@ NVVERSION=	${DISTVERSION:S/.//g}
 NVVERSION=	${DISTVERSION:S/.//g}00
 .endif
 
-.include <bsd.port.options.mk>
-
 .if ${NVVERSION} >= 1952200
 MASTER_SITE_SUBDIR=	XFree86/FreeBSD-x86${ARCH_SUFX}/${DISTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
@@ -53,21 +51,15 @@ ONLY_FOR_ARCHS=	i386
 .endif
 
 .if ${NVVERSION} <= 1904200
-EXTRA_PATCHES=	${FILESDIR}/legacy-patch-nvidia.lib.mk
+EXTRA_PATCHES=	${FILESDIR}/legacy-patch-mk-nvidia.lib.mk
 .else
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-mk__nvidia.lib.mk
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-mk-nvidia.lib.mk
 .endif
 
 .if ${NVVERSION} >= 3312000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x11__driver__Makefile
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x11-driver-Makefile
 .else
-EXTRA_PATCHES+=	${FILESDIR}/legacy-patch-x11__driver__Makefile
-.endif
-
-.if ${OSVERSION} >= 1000000
-.if ${NVVERSION} == 1731435 || ${NVVERSION} == 718615
-BROKEN=	does not compile
-.endif
+EXTRA_PATCHES+=	${FILESDIR}/legacy-patch-x11-driver-Makefile
 .endif
 
 # Fix recent arbitrary memory access vulnerability in legacy drivers
@@ -94,10 +86,15 @@ OPTIONS_DEFINE+=	WBINVD
 WBINVD_DESC=		Flush CPU caches directly with WBINVD
 .endif
 
-.include <bsd.port.pre.mk>
-
 PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 		MODULESDIR=${MODULESDIR}
+
+.include <bsd.port.options.mk>
+
+# FreeBSD src SVN r254138 had broken 71.86.xx legacy series :(
+.if ${OSVERSION} > 1000041 && ${NVVERSION} <= 718615
+BROKEN=		does not compile
+.endif
 
 .if ${PORT_OPTIONS:MLINUX}
 CONFLICTS=	linux[-_]dri-[0-9]* linux-f10-dri-[0-9]*
@@ -175,6 +172,11 @@ post-patch: .SILENT
 		/return SYSCTL_OUT\(req, bus_type/d' \
 			${WRKSRC}/src/nvidia_sysctl.c
 .endif
+# Unbreak the build of 173.14.xx legacy series on recent -CURRENT
+.if ${NVVERSION} < 1952200 && ${NVVERSION} >= 1690400
+	${REINPLACE_CMD} -E 's/os_(alloc|free)_contig_pages/NV_API_CALL &/' \
+		${WRKSRC}/src/nv-freebsd.h
+.endif
 # Process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
@@ -192,7 +194,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/undef (NV_USE_WBINVD)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
-	${REINPLACE_CMD} -e '/exists/s/$$/ \&\& !defined(WITHOUT_LINUX)/' \
+	${REINPLACE_CMD} -e 's/exists(\/.*/& \&\& !defined(WITHOUT_LINUX)/' \
 		${WRKSRC}/lib/Makefile
 # Do not install VDPAU libraries which are provided by `multimedia/libvdpau'
 # port for a while now
@@ -220,19 +222,20 @@ post-patch: .SILENT
 		${WRKSRC}/lib/libGL/Makefile
 # Do not execute afterinstall target (prevent automatic module registration
 # and "smart" installation of conflicting files heuristics)
-	${REINPLACE_CMD} -e 's/afterinstall/dontexecute/' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's/beforeinstall/dontexecute/' \
+	${REINPLACE_CMD} -e 's/afterinstall/&_dontexecute/' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's/beforeinstall/&_dontexecute/' \
 		${WRKSRC}/lib/Makefile ${WRKSRC}/src/Makefile
 
-pre-su-install:
+pre-install:
 # While this port silently assumes PREFIX == LOCALBASE, at least try to
 # pretend we support different paths thereof and make sure these directories
 # exist
-	@cd ${STAGEDIR}${PREFIX} && ${MKDIR} ${MODULESDIR}
-	@cd ${STAGEDIR}${PREFIX}/${MODULESDIR} && ${MKDIR} drivers extensions
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${MODULESDIR}/drivers \
+		${STAGEDIR}${PREFIX}/${MODULESDIR}/extensions
 
 post-install: .SILENT
-	${INSTALL_SCRIPT} ${WRKSRC}/obj/nvidia-bug-report.sh ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/obj/nvidia-bug-report.sh \
+		${STAGEDIR}${PREFIX}/bin
 # pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
 .if ${NVVERSION} < 817400
 	${REINPLACE_CMD} -e '/libnvidia-cfg/d' ${TMPPLIST}
@@ -253,7 +256,8 @@ post-install: .SILENT
 .if ${NVVERSION} >= 3101900
 	${REINPLACE_CMD} -e '/libXvMCNVIDIA/d' ${TMPPLIST}
 .else	# some applications need this symlink (see PR ports/72877)
-	${LN} -sf libXvMCNVIDIA.so.1 ${STAGEDIR}${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
+	${LN} -sf libXvMCNVIDIA.so.1 \
+		${STAGEDIR}${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 .endif
 .if ${NVVERSION} < 3311300 || ${ARCH} == amd64
 	${REINPLACE_CMD} -E '/lib(nvidia-)?(EGL|eglcore|GLESv|glsi)/d' \
@@ -263,4 +267,4 @@ post-install: .SILENT
 	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
