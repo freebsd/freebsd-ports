@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	roxterm
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.3
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK+ 2.0 terminal emulator with tabs
+COMMENT=	GTK+ terminal emulator with tabs
 
 LICENSE=	GPLv3
 
@@ -17,18 +17,27 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>0:${PORTSDIR}/devel/py-lockfile \
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-OPTIONS_DEFINE=	DOCS
-
 USE_BZIP2=	yes
 USES=		gettext pkgconfig
-USE_GNOME=	libglade2 librsvg2 vte
+USE_GNOME=	librsvg2
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtool:env
 INSTALLS_ICONS=	yes
 
-MAITCHFLAGS=	CC=${CC};GCC=${CC};CPP=${CC};CFLAGS=${CFLAGS};PARALLEL=${MAKE_JOBS_NUMBER}
+OPTIONS_DEFINE=		DOCS GTK3
+
+MAITCHFLAGS=	DISABLE_GTK3=${DISABLE_GTK3};DISABLE_GIT=True;DISABLE_PO4A=True;
+MAITCHFLAGS+=	CC=${CC};GCC=${CC};CPP=${CC};CFLAGS=${CFLAGS};
+MAITCHFLAGS+=	PARALLEL=${MAKE_JOBS_NUMBER};PREFIX=${PREFIX};
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=	vte3
+.else
+USE_GNOME+=	vte
+DISABLE_GTK3=	True
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -38,17 +47,16 @@ post-patch:
 
 do-configure:
 	@(cd ${WRKSRC} && ${SETENV} MAITCHFLAGS="${MAITCHFLAGS}" \
-		${PYTHON_CMD} mscript.py configure --prefix=${PREFIX} \
-		--disable-gtk3 --disable-po4a --disable-git)
+		${PYTHON_CMD} mscript.py configure)
 
 do-build:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} mscript.py build)
 
 do-install:
-	(cd ${WRKSRC}/build && ${INSTALL_PROGRAM} roxterm \
+.for i in roxterm roxterm-config
+	(cd ${WRKSRC}/build && ${INSTALL_PROGRAM} ${i} \
 		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/build && ${INSTALL_SCRIPT} roxterm-config \
-		${STAGEDIR}${PREFIX}/bin)
+.endfor
 	(cd ${WRKSRC}/build && ${INSTALL_MAN} *.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1)
 	(cd ${WRKSRC} && ${INSTALL_DATA} roxterm.desktop \
