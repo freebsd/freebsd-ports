@@ -9,20 +9,21 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily create scripts to convert HTML pages to RSS feeds
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_BZIP2=	yes
 USE_PERL5=	run
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e "s,#!/usr/bin/perl,#!${SETENV} perl," ${WRKSRC}/script4rss.pl
+PLIST_FILES=	bin/script4rss
+PORTEXAMPLES=	*
+SHEBANG_FILES=	script4rss.pl
+
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/script4rss.pl ${PREFIX}/bin/script4rss
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/script4rss.pl \
+		${STAGEDIR}${PREFIX}/bin/script4rss
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
