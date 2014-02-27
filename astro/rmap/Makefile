@@ -5,20 +5,23 @@ PORTNAME=	rmap
 PORTVERSION=	1.2
 PORTREVISION=	12
 CATEGORIES=	astro geography
-MASTER_SITES=	http://www.reza.net/rmap/
+MASTER_SITES=	http://reza.net/rmap/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates images of the Earth centered at a particular location
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
+LICENCE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
-GNU_CONFIGURE=	yes
 USES=		gmake
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PLIST_FILES=	bin/rmap man/man1/rmap.1.gz %%DATADIR%%/earth.rez \
+		%%DATADIR%%/rmap.colors
+PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.mk>
