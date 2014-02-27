@@ -1,7 +1,8 @@
 bin/slnr
-share/doc/slnr/LICENSE
-share/doc/slnr/porting.notes
-share/doc/slnr/soup12.doc
-share/doc/slnr/slnr.doc
-share/doc/slnr/default.dot.slnrrc
-@dirrm share/doc/slnr
+man/man1/slnr.1.gz
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/default.dot.slnrrc
+%%DOCSDIR%%/porting.notes
+%%DOCSDIR%%/slnr.doc
+%%DOCSDIR%%/soup12.doc
+@dirrm %%DOCSDIR%%
