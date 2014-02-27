@@ -33,12 +33,10 @@ SUB_FILES=	hpscat.sh pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 USES=		perl5
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/hpscat ${PREFIX}/bin/hpscat.bin
-	@${INSTALL_SCRIPT} ${WRKDIR}/hpscat.sh ${PREFIX}/bin/hpscat
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${README_FILES}" ${FONTDIR}
-	@cd ${WRKDIR}/ked && ${COPYTREE_SHARE} "${FONTFILES}" ${FONTDIR}
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_PROGRAM} ${WRKSRC}/hpscat ${STAGEDIR}${PREFIX}/bin/hpscat.bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/hpscat.sh ${STAGEDIR}${PREFIX}/bin/hpscat
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${README_FILES}" ${STAGEDIR}${FONTDIR}
+	@cd ${WRKDIR}/ked && ${COPYTREE_SHARE} "${FONTFILES}" ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>
