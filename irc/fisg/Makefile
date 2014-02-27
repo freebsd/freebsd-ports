@@ -9,30 +9,28 @@ MASTER_SITES=	http://www.tnsp.org/files/
 MAINTAINER=	psh@iki.fi
 COMMENT=	Fast IRC statistics generator
 
-USE_GMAKE=	yes
+USES=		gmake
+
 BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 PORTDOCS=	README FAQ
-MAN1=		fisg.1
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^PREFIX|PREFIX?|' \
-	-e 's|^CC|CC?|' -e 's|^CFLAGS|CFLAGS?|' ${WRKSRC}/src/Makefile
+		-e 's|^CC|CC?|' -e 's|^CFLAGS|CFLAGS?|' ${WRKSRC}/src/Makefile
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -Rp ${WRKSRC}/data/*.png ${DATADIR}/
-	${CP} -Rp ${WRKSRC}/data/*.css ${DATADIR}/
-	${CP} -Rp ${WRKSRC}/data/*.gif ${DATADIR}/
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example.cfg ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/users.cfg ${EXAMPLESDIR}/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/fisg ${PREFIX}/bin
-	${INSTALL_MAN}	${WRKSRC}/src/fisg.1 ${MANPREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/data/; ${INSTALL_DATA} *.css *.gif *.png \
+		${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example.cfg ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/users.cfg ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/fisg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN}	${WRKSRC}/src/fisg.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
