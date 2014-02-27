@@ -2,97 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	mjpegtools
-PORTVERSION=	2.0.0
-PORTREVISION=	4
+PORTVERSION=	2.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME:S/tools//}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+LICENSE=	GPLv2 # (or later)
 
-OPTIONS_DEFINE=	GTK2 SDL PNG DV QUICKTIME SIMD DOCS
-OPTIONS_DEFAULT=GTK2 SDL PNG
-QUICKTIME_DESC=		Enable libQuickTime support
+BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 CONFLICTS=	mplex-[0-9]*
 
 USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--force
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKEL_ARGS=	--add-missing --foreign
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		ac_cv_lib_Xxf86dga_XF86DGAQueryExtension=no
-CONFIGURE_ARGS=	--without-x
+ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} \
+		-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing --foreign
+CONFIGURE_ARGS=	--without-dga --without-x
 USE_LDCONFIG=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		mjpeg-howto
 
-DOC_FILES=	AUTHORS BUGS CHANGES ChangeLog HINTS NEWS PLANS README \
-		README.DV README.avilib README.glav README.AltiVec \
-		README.lavpipe README.transist TODO
+OPTIONS_DEFINE=		DOCS DV GTK2 PNG QUICKTIME SDL SIMD
+OPTIONS_DEFAULT=	GTK2 PNG SDL
+OPTIONS_SUB=		yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+DV_LIB_DEPENDS=		libdv.so:${PORTSDIR}/multimedia/libdv
+DV_CONFIGURE_WITH=	libdv
+GTK2_USE=		GNOME=gtk20
+GTK2_CONFIGURE_WITH=	gtk
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_WITH=	libpng
+QUICKTIME_LIB_DEPENDS=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
+QUICKTIME_CONFIGURE_WITH=	libquicktime
+SDL_USE=		SDL=gfx,sdl
+SDL_CONFIGURE_OFF=	--without-libsdl --without-sdlgfx
+SIMD_CONFIGURE_ENABLE=	simd-accel
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-
-.if empty(PORT_OPTIONS:MSDL)
-IGNORE=		GTK+2 player needs SDL
-.endif # GTK2/SDL
-
-USE_GNOME+=	gtk20
-PLIST_SUB+=	GTK2:=""
-.else
-PLIST_SUB+=	GTK2:="@comment "
-CONFIGURE_ARGS+=--without-gtk
-.endif # GTK2
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL+=	gfx sdl
-PLIST_SUB+=	SDL:=""
-.else
-CONFIGURE_ENV+=	ac_cv_path_SDL_CONFIG=no
-PLIST_SUB+=	SDL:="@comment "
-CONFIGURE_ARGS+=--without-libsdl
-.endif # SDL
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=--with-libpng
-PLIST_SUB+=	PNG:=""
-.else
-CONFIGURE_ARGS+=--without-libpng
-PLIST_SUB+=	PNG:="@comment "
-.endif # PNG
-
-.if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=	libdv.so:${PORTSDIR}/multimedia/libdv
-CONFIGURE_ARGS+=--with-libdv
-.else
-CONFIGURE_ARGS+=--without-libdv
-.endif # DV
-
-.if ${PORT_OPTIONS:MQUICKTIME}
-PLIST_SUB+=	QUICKTIME=""
-LIB_DEPENDS+=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
-CONFIGURE_ARGS+=--with-libquicktime
-.else
-PLIST_SUB+=	QUICKTIME="@comment "
-CONFIGURE_ARGS+=--without-libquicktime
-.endif # QUICKTIME
-
-.if ${PORT_OPTIONS:MSIMD}
-CONFIGURE_ARGS+=--enable-simd-accel
-.else
-CONFIGURE_ARGS+=--disable-simd-accel
-.endif # SIMD
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -105,14 +59,20 @@ BROKEN=		Does not build on powerpc-9
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/ARCHFLAGS=/s|^|#|g' ${WRKSRC}/configure.ac
+		's| \*-\*-linux\*)| *-*-*)| ; \
+		 /ARCHFLAGS=/s|^|#|g' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e \
 		'/^pkgconfigdir/s|$$(libdir)|$$(prefix)/libdata|g' ${WRKSRC}/Makefile.am
 
+pre-configure:
+	@${RM} -f ${WRKSRC}/missing
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.for i in AUTHORS BUGS CHANGES ChangeLog HINTS NEWS PLANS README README.DV \
+	README.avilib README.glav README.AltiVec README.lavpipe \
+	README.transist TODO
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
 
 .include <bsd.port.post.mk>
