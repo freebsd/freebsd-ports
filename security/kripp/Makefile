@@ -11,16 +11,16 @@ MASTER_SITE_SUBDIR=	sniffers
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight network password sniffer
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 
 NO_BUILD=	yes
-MAN1=		kripp.1
-PLIST_FILES=	bin/kripp
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/kripp man/man1/kripp.1.gz
+SHEBANG_FILES=	kripp
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/kripp ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/kripp.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/kripp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/kripp.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
