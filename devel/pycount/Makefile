@@ -14,18 +14,18 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Initial effort to Python code metrics
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKDIR}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTFILES} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTFILES} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
