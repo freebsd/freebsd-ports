@@ -945,11 +945,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>cvs+ipv6</name>
 	<range><lt>1.11.17</lt></range>
       </package>
-      <package>
-	<name>FreeBSD</name>
-	<range><lt>491101</lt></range>
-	<range><ge>500000</ge><lt>502114</lt></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
