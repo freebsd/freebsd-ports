@@ -368,6 +368,7 @@
     SUBDIR += p5-Log-Procmail
     SUBDIR += p5-MIME-AltWords
     SUBDIR += p5-MIME-Charset
+    SUBDIR += p5-MIME-EcoEncode
     SUBDIR += p5-MIME-EncWords
     SUBDIR += p5-MIME-Explode
     SUBDIR += p5-MIME-Fast
