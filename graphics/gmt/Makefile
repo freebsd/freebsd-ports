@@ -3,16 +3,19 @@
 
 PORTNAME=	gmt
 PORTVERSION=	4.5.11
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.geologi.uio.no/pub/%SUBDIR%/ \
-		ftp://ftp.iag.usp.br/pub/%SUBDIR%/ \
+		ftp://ftp.iag.usp.br/%SUBDIR%/ \
 		ftp://ftp.scc.u-tokai.ac.jp/pub/%SUBDIR%/ \
 		http://gd.tuwien.ac.at/graphics/visual/%SUBDIR%/ \
-		http://gmt.mirror.ac.za/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		http://gmt.mirror.ac.za/%SUBDIR%/ \
+		ftp://ftp.soest.hawaii.edu/gshhg/:gshhg \
+		ftp://ftp.scc.u-tokai.ac.jp/pub/gmt/:gshhg
+MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/legacy
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} \
-		${GSHHG_DISTNAME}.tar.gz
+		${GSHHG_DISTNAME}.tar.gz:gshhg
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Mapping Tools - data processing and display software package
@@ -25,18 +28,13 @@ LICENSE_DISTFILES_LGPL3=	${GSHHG_DISTNAME}${EXTRACT_SUFX}
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf4
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-OPTIONS_DEFINE=	SHARED EPS DEBUG IMPERIAL GDAL OCTAVE X11 DOCS
-OPTIONS_DEFAULT=	SHARED GDAL X11
-OPTIONS_SUB=	yes
-SHARED_DESC=	Build shared (dynamic) libraries
-EPS_DESC=	Set .eps as default output format, otherwise .ps
-IMPERIAL_DESC=	Choose Imperial (inch) units over metric (cm)
-GDAL_DESC=	Compile in experimental GDAL support
-OCTAVE_DESC=	Build GMT-octave interface
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
 USES=		gmake shebangfix
-SHEBANG_FILES=	gmtswitch
+SHEBANG_FILES=	gmtswitch doc/examples/*/*.sh src/GMT.in \
+		src/gmt_shell_functions.sh.in src/gmtget.in \
+		src/gmtlogo.in src/isogmt.in
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-gshhg-dir=${DATADIR}/coast
@@ -45,15 +43,28 @@ MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*
 
+PORTSCOUT=	limitw:0,even
+
+OPTIONS_DEFINE=		DEBUG DOCS EPS GDAL IMPERIAL OCTAVE SHARED X11
+OPTIONS_DEFAULT=	GDAL SHARED X11
+OPTIONS_SUB=		yes
+
 DEBUG_CONFIGURE_ON=	--enable-debug --enable-devdebug
-SHARED_CONFIGURE_ON=	--enable-shared
-IMPERIAL_CONFIGURE_ON=	--enable-US
-EPS_CONFIGURE_ON=	--enable-eps
+EPS_DESC=		Set .eps as default output format, otherwise .ps
+EPS_CONFNIGURE_ON=	--enable-eps
+GDAL_DESC=		Compile in experimental GDAL support
 GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 GDAL_CONFIGURE_ON=	--enable-gdal
+IMPERIAL_DESC=		Choose Imperial (inch) units over metric (cm)
+IMPERIAL_CONFIGURE_ON=	--enable-US
+OCTAVE_DESC=		Build GMT-octave interface
 OCTAVE_RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
 OCTAVE_CONFIGURE_ON=	--enable-octave --enable-mex
 OCTAVE_CONFIGURE_OFF=	--disable-mex
+SHARED_DESC=		Build shared (dynamic) libraries
+SHARED_CONFIGURE_ON=	--enable-shared
+SHARED_USE=		LDCONFIG=yes
+X11_USE=		XORG=x11,xaw,xmu,xt
 X11_CONFIGURE_OFF=	--disable-xgrid
 
 STRIP_FILES=	blockmean blockmedian blockmode filter1d fitcircle \
@@ -70,17 +81,9 @@ STRIP_FILES=	blockmean blockmedian blockmode filter1d fitcircle \
 		psxy psxyz sample1d spectrum1d splitxyz \
 		surface trend1d trend2d triangulate xyz2grd
 
-GSHHG_DISTNAME=	gshhg-gmt-2.3.0
+GSHHG_DISTNAME=	gshhg-gmt-nc4-2.2.4
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSHARED}
-USE_LDCONFIG=	yes
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xaw xmu xt
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/coast
