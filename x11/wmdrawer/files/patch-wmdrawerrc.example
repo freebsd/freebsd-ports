@@ -13,7 +13,7 @@
  [images_paths]
  /usr/share/pixmaps
  /usr/local/share/pixmaps/
-+/usr/X11R6/share/wmdrawer
++%%DATADIR%%
  
  # A first column with 5 buttons
  # Each button must be defined with this syntax:
