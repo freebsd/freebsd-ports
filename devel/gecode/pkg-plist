@@ -1,6 +1,5 @@
+bin/fzn-gecode
 bin/mzn-gecode
-bin/fz
-include/examples/scowl.hpp
 include/gecode/driver.hh
 include/gecode/driver/options.hpp
 include/gecode/driver/script.hpp
@@ -13,6 +12,55 @@ include/gecode/flatzinc/plugin.hh
 include/gecode/flatzinc/registry.hh
 include/gecode/flatzinc/symboltable.hh
 include/gecode/flatzinc/varspec.hh
+include/gecode/float.hh
+include/gecode/float/arithmetic.hh
+include/gecode/float/arithmetic/div.hpp
+include/gecode/float/arithmetic/min-max-channel.hpp
+include/gecode/float/arithmetic/mult.hpp
+include/gecode/float/arithmetic/pow-nroot.hpp
+include/gecode/float/arithmetic/sqr-sqrt-abs.hpp
+include/gecode/float/array-traits.hpp
+include/gecode/float/array.hpp
+include/gecode/float/branch.hh
+include/gecode/float/branch/activity.hpp
+include/gecode/float/branch/afc.hpp
+include/gecode/float/branch/assign.hpp
+include/gecode/float/branch/merit.hpp
+include/gecode/float/branch/traits.hpp
+include/gecode/float/branch/val-commit.hpp
+include/gecode/float/branch/val-sel.hpp
+include/gecode/float/branch/val.hpp
+include/gecode/float/branch/var.hpp
+include/gecode/float/exception.hpp
+include/gecode/float/limits.hpp
+include/gecode/float/linear.hh
+include/gecode/float/linear/nary.hpp
+include/gecode/float/nextafter.hpp
+include/gecode/float/num.hpp
+include/gecode/float/rel.hh
+include/gecode/float/rel/eq.hpp
+include/gecode/float/rel/lq-le.hpp
+include/gecode/float/rel/nq.hpp
+include/gecode/float/rounding.hpp
+include/gecode/float/transcendental.hh
+include/gecode/float/transcendental/exp-log.hpp
+include/gecode/float/trigonometric.hh
+include/gecode/float/trigonometric/asinacos.hpp
+include/gecode/float/trigonometric/sincos.hpp
+include/gecode/float/trigonometric/tanatan.hpp
+include/gecode/float/val.hpp
+include/gecode/float/var-imp.hpp
+include/gecode/float/var-imp/delta.hpp
+include/gecode/float/var-imp/float.hpp
+include/gecode/float/var/float.hpp
+include/gecode/float/var/print.hpp
+include/gecode/float/view.hpp
+include/gecode/float/view/float.hpp
+include/gecode/float/view/minus.hpp
+include/gecode/float/view/offset.hpp
+include/gecode/float/view/print.hpp
+include/gecode/float/view/rel-test.hpp
+include/gecode/float/view/scale.hpp
 include/gecode/gist.hh
 include/gecode/gist/drawingcursor.hh
 include/gecode/gist/drawingcursor.hpp
@@ -45,8 +93,9 @@ include/gecode/int/arithmetic/abs.hpp
 include/gecode/int/arithmetic/divmod.hpp
 include/gecode/int/arithmetic/max.hpp
 include/gecode/int/arithmetic/mult.hpp
-include/gecode/int/arithmetic/sqr.hpp
-include/gecode/int/arithmetic/sqrt.hpp
+include/gecode/int/arithmetic/nroot.hpp
+include/gecode/int/arithmetic/pow-ops.hpp
+include/gecode/int/arithmetic/pow.hpp
 include/gecode/int/array-traits.hpp
 include/gecode/int/array.hpp
 include/gecode/int/bin-packing.hh
@@ -56,14 +105,21 @@ include/gecode/int/bool/base.hpp
 include/gecode/int/bool/clause.hpp
 include/gecode/int/bool/eq.hpp
 include/gecode/int/bool/eqv.hpp
+include/gecode/int/bool/ite.hpp
 include/gecode/int/bool/lq.hpp
 include/gecode/int/bool/or.hpp
 include/gecode/int/branch.hh
-include/gecode/int/branch/post-val-bool.hpp
-include/gecode/int/branch/post-val-int.hpp
-include/gecode/int/branch/select-val.hpp
-include/gecode/int/branch/select-values.hpp
-include/gecode/int/branch/select-view.hpp
+include/gecode/int/branch/activity.hpp
+include/gecode/int/branch/afc.hpp
+include/gecode/int/branch/assign.hpp
+include/gecode/int/branch/merit.hpp
+include/gecode/int/branch/ngl.hpp
+include/gecode/int/branch/traits.hpp
+include/gecode/int/branch/val-commit.hpp
+include/gecode/int/branch/val-sel.hpp
+include/gecode/int/branch/val.hpp
+include/gecode/int/branch/var.hpp
+include/gecode/int/branch/view-values.hpp
 include/gecode/int/channel.hh
 include/gecode/int/channel/base.hpp
 include/gecode/int/channel/dom.hpp
@@ -84,16 +140,17 @@ include/gecode/int/count/view-base.hpp
 include/gecode/int/count/view-eq.hpp
 include/gecode/int/count/view-gq.hpp
 include/gecode/int/count/view-lq.hpp
-include/gecode/int/cumulatives.hh
+include/gecode/int/cumulative.hh
 include/gecode/int/cumulative/basic.hpp
 include/gecode/int/cumulative/edge-finding.hpp
+include/gecode/int/cumulative/limits.hpp
 include/gecode/int/cumulative/man-prop.hpp
 include/gecode/int/cumulative/opt-prop.hpp
 include/gecode/int/cumulative/overload.hpp
 include/gecode/int/cumulative/task-view.hpp
 include/gecode/int/cumulative/task.hpp
 include/gecode/int/cumulative/tree.hpp
-include/gecode/int/cumulative.hh
+include/gecode/int/cumulatives.hh
 include/gecode/int/cumulatives/val.hpp
 include/gecode/int/distinct.hh
 include/gecode/int/distinct/bnd.hpp
@@ -102,9 +159,11 @@ include/gecode/int/distinct/dom.hpp
 include/gecode/int/distinct/graph.hpp
 include/gecode/int/distinct/ter-dom.hpp
 include/gecode/int/distinct/val.hpp
+include/gecode/int/div.hh
+include/gecode/int/div.hpp
 include/gecode/int/dom.hh
 include/gecode/int/dom/range.hpp
-include/gecode/int/dom/spec.hpp
+include/gecode/int/dom/set.hpp
 include/gecode/int/element.hh
 include/gecode/int/element/int.hpp
 include/gecode/int/element/pair.hpp
@@ -129,6 +188,9 @@ include/gecode/int/gcc/val.hpp
 include/gecode/int/gcc/view.hpp
 include/gecode/int/int-set-1.hpp
 include/gecode/int/int-set-2.hpp
+include/gecode/int/ldsb.hh
+include/gecode/int/ldsb/brancher.hpp
+include/gecode/int/ldsb/sym-imp.hpp
 include/gecode/int/limits.hpp
 include/gecode/int/linear.hh
 include/gecode/int/linear/bool-int.hpp
@@ -164,6 +226,7 @@ include/gecode/int/nvalues/sym-bit-matrix.hpp
 include/gecode/int/precede.hh
 include/gecode/int/precede/single.hpp
 include/gecode/int/propagator.hpp
+include/gecode/int/reify.hpp
 include/gecode/int/rel.hh
 include/gecode/int/rel/eq.hpp
 include/gecode/int/rel/lex.hpp
@@ -204,13 +267,21 @@ include/gecode/int/unary/task.hpp
 include/gecode/int/unary/tree.hpp
 include/gecode/int/val-set.hh
 include/gecode/int/val-set.hpp
-include/gecode/int/var/bool.hpp
-include/gecode/int/var/int.hpp
-include/gecode/int/var/print.hpp
 include/gecode/int/var-imp.hpp
 include/gecode/int/var-imp/bool.hpp
 include/gecode/int/var-imp/delta.hpp
 include/gecode/int/var-imp/int.hpp
+include/gecode/int/var/bool.hpp
+include/gecode/int/var/int.hpp
+include/gecode/int/var/print.hpp
+include/gecode/int/view-val-graph.hh
+include/gecode/int/view-val-graph/bi-link.hpp
+include/gecode/int/view-val-graph/comb-ptr-flag.hpp
+include/gecode/int/view-val-graph/edge.hpp
+include/gecode/int/view-val-graph/graph.hpp
+include/gecode/int/view-val-graph/iter-prune-val.hpp
+include/gecode/int/view-val-graph/node.hpp
+include/gecode/int/view.hpp
 include/gecode/int/view/bool-test.hpp
 include/gecode/int/view/bool.hpp
 include/gecode/int/view/cached.hpp
@@ -224,14 +295,6 @@ include/gecode/int/view/print.hpp
 include/gecode/int/view/rel-test.hpp
 include/gecode/int/view/scale.hpp
 include/gecode/int/view/zero.hpp
-include/gecode/int/view-val-graph/bi-link.hpp
-include/gecode/int/view-val-graph/comb-ptr-flag.hpp
-include/gecode/int/view-val-graph/edge.hpp
-include/gecode/int/view-val-graph/graph.hpp
-include/gecode/int/view-val-graph/iter-prune-val.hpp
-include/gecode/int/view-val-graph/node.hpp
-include/gecode/int/view-val-graph.hh
-include/gecode/int/view.hpp
 include/gecode/iter.hh
 include/gecode/iter/ranges-add.hpp
 include/gecode/iter/ranges-append.hpp
@@ -258,6 +321,7 @@ include/gecode/iter/ranges-union.hpp
 include/gecode/iter/ranges-values.hpp
 include/gecode/iter/values-array.hpp
 include/gecode/iter/values-bitset.hpp
+include/gecode/iter/values-bitsetoffset.hpp
 include/gecode/iter/values-inter.hpp
 include/gecode/iter/values-list.hpp
 include/gecode/iter/values-map.hpp
@@ -270,18 +334,26 @@ include/gecode/iter/values-singleton.hpp
 include/gecode/iter/values-union.hpp
 include/gecode/iter/values-unique.hpp
 include/gecode/kernel.hh
+include/gecode/kernel/activity.hpp
 include/gecode/kernel/advisor.hpp
+include/gecode/kernel/afc.hpp
 include/gecode/kernel/allocators.hpp
 include/gecode/kernel/archive.hpp
 include/gecode/kernel/array.hpp
-include/gecode/kernel/branch.hpp
-include/gecode/kernel/brancher-tiebreak.hpp
-include/gecode/kernel/brancher-val.hpp
+include/gecode/kernel/branch-tiebreak.hpp
+include/gecode/kernel/branch-traits.hpp
+include/gecode/kernel/branch-val.hpp
+include/gecode/kernel/branch-var.hpp
+include/gecode/kernel/brancher-merit.hpp
+include/gecode/kernel/brancher-val-commit.hpp
+include/gecode/kernel/brancher-val-sel-commit.hpp
+include/gecode/kernel/brancher-val-sel.hpp
+include/gecode/kernel/brancher-view-sel.hpp
+include/gecode/kernel/brancher-view-val.hpp
 include/gecode/kernel/brancher-view.hpp
-include/gecode/kernel/brancher.hpp
 include/gecode/kernel/core.hpp
 include/gecode/kernel/exception.hpp
-include/gecode/kernel/global-prop-info.hpp
+include/gecode/kernel/global-afc.hpp
 include/gecode/kernel/macros.hpp
 include/gecode/kernel/memory-config.hpp
 include/gecode/kernel/memory-manager.hpp
@@ -289,6 +361,7 @@ include/gecode/kernel/modevent.hpp
 include/gecode/kernel/propagator.hpp
 include/gecode/kernel/range-list.hpp
 include/gecode/kernel/region.hpp
+include/gecode/kernel/rnd.hpp
 include/gecode/kernel/shared-array.hpp
 include/gecode/kernel/var-imp.hpp
 include/gecode/kernel/var-type.hpp
@@ -298,8 +371,9 @@ include/gecode/kernel/wait.hh
 include/gecode/minimodel.hh
 include/gecode/minimodel/bool-expr.hpp
 include/gecode/minimodel/exception.hpp
-include/gecode/minimodel/lin-expr.hpp
-include/gecode/minimodel/lin-rel.hpp
+include/gecode/minimodel/float-rel.hpp
+include/gecode/minimodel/int-rel.hpp
+include/gecode/minimodel/ldsb.hpp
 include/gecode/minimodel/matrix.hpp
 include/gecode/minimodel/optimize.hpp
 include/gecode/minimodel/reg.hpp
@@ -307,18 +381,21 @@ include/gecode/minimodel/set-expr.hpp
 include/gecode/minimodel/set-rel.hpp
 include/gecode/search.hh
 include/gecode/search/bab.hpp
+include/gecode/search/cutoff.hpp
 include/gecode/search/dfs.hpp
+include/gecode/search/engine-base.hpp
+include/gecode/search/exception.hpp
+include/gecode/search/meta/nogoods.hh
+include/gecode/search/meta/rbs.hh
 include/gecode/search/options.hpp
 include/gecode/search/parallel/bab.hh
 include/gecode/search/parallel/dfs.hh
 include/gecode/search/parallel/engine.hh
 include/gecode/search/parallel/path.hh
-include/gecode/search/parallel/restart.hh
-include/gecode/search/restart.hpp
+include/gecode/search/rbs.hpp
 include/gecode/search/sequential/bab.hh
 include/gecode/search/sequential/dfs.hh
 include/gecode/search/sequential/path.hh
-include/gecode/search/sequential/restart.hh
 include/gecode/search/statistics.hpp
 include/gecode/search/stop.hpp
 include/gecode/search/support.hh
@@ -327,9 +404,21 @@ include/gecode/set.hh
 include/gecode/set/array-traits.hpp
 include/gecode/set/array.hpp
 include/gecode/set/branch.hh
-include/gecode/set/branch/post-val.hpp
-include/gecode/set/branch/select-val.hpp
-include/gecode/set/branch/select-view.hpp
+include/gecode/set/branch/activity.hpp
+include/gecode/set/branch/afc.hpp
+include/gecode/set/branch/assign.hpp
+include/gecode/set/branch/merit.hpp
+include/gecode/set/branch/ngl.hpp
+include/gecode/set/branch/traits.hpp
+include/gecode/set/branch/val-commit.hpp
+include/gecode/set/branch/val-sel.hpp
+include/gecode/set/branch/val.hpp
+include/gecode/set/branch/var.hpp
+include/gecode/set/channel.hh
+include/gecode/set/channel/bool.hpp
+include/gecode/set/channel/int.hpp
+include/gecode/set/channel/set.hpp
+include/gecode/set/channel/sorted.hpp
 include/gecode/set/convex.hh
 include/gecode/set/convex/conv.hpp
 include/gecode/set/convex/hull.hpp
@@ -343,14 +432,21 @@ include/gecode/set/element/unionConst.hpp
 include/gecode/set/exception.hpp
 include/gecode/set/int.hh
 include/gecode/set/int/card.hpp
-include/gecode/set/int/channel-bool.hpp
-include/gecode/set/int/channel-int.hpp
-include/gecode/set/int/match.hpp
 include/gecode/set/int/minmax.hpp
 include/gecode/set/int/weights.hpp
+include/gecode/set/ldsb.hh
+include/gecode/set/ldsb/brancher.hpp
 include/gecode/set/limits.hpp
 include/gecode/set/precede.hh
 include/gecode/set/precede/single.hpp
+include/gecode/set/rel-op.hh
+include/gecode/set/rel-op/common.hpp
+include/gecode/set/rel-op/inter.hpp
+include/gecode/set/rel-op/partition.hpp
+include/gecode/set/rel-op/post.hpp
+include/gecode/set/rel-op/subofunion.hpp
+include/gecode/set/rel-op/superofinter.hpp
+include/gecode/set/rel-op/union.hpp
 include/gecode/set/rel.hh
 include/gecode/set/rel/common.hpp
 include/gecode/set/rel/eq.hpp
@@ -361,25 +457,17 @@ include/gecode/set/rel/re-eq.hpp
 include/gecode/set/rel/re-lq.hpp
 include/gecode/set/rel/re-subset.hpp
 include/gecode/set/rel/subset.hpp
-include/gecode/set/rel-op.hh
-include/gecode/set/rel-op/common.hpp
-include/gecode/set/rel-op/inter.hpp
-include/gecode/set/rel-op/partition.hpp
-include/gecode/set/rel-op/post.hpp
-include/gecode/set/rel-op/subofunion.hpp
-include/gecode/set/rel-op/superofinter.hpp
-include/gecode/set/rel-op/union.hpp
 include/gecode/set/sequence.hh
 include/gecode/set/sequence/common.hpp
 include/gecode/set/sequence/seq-u.hpp
 include/gecode/set/sequence/seq.hpp
-include/gecode/set/var/print.hpp
-include/gecode/set/var/set.hpp
 include/gecode/set/var-imp.hpp
 include/gecode/set/var-imp/delta.hpp
 include/gecode/set/var-imp/integerset.hpp
 include/gecode/set/var-imp/iter.hpp
 include/gecode/set/var-imp/set.hpp
+include/gecode/set/var/print.hpp
+include/gecode/set/var/set.hpp
 include/gecode/set/view.hpp
 include/gecode/set/view/cached.hpp
 include/gecode/set/view/complement.hpp
@@ -390,6 +478,7 @@ include/gecode/set/view/singleton.hpp
 include/gecode/support.hh
 include/gecode/support/auto-link.hpp
 include/gecode/support/bitset-base.hpp
+include/gecode/support/bitset-offset.hpp
 include/gecode/support/bitset.hpp
 include/gecode/support/block-allocator.hpp
 include/gecode/support/cast.hpp
@@ -399,6 +488,7 @@ include/gecode/support/dynamic-queue.hpp
 include/gecode/support/dynamic-stack.hpp
 include/gecode/support/exception.hpp
 include/gecode/support/heap.hpp
+include/gecode/support/hw-rnd.hpp
 include/gecode/support/int-type.hpp
 include/gecode/support/macros.hpp
 include/gecode/support/marked-pointer.hpp
@@ -412,32 +502,35 @@ include/gecode/support/thread/thread.hpp
 include/gecode/support/thread/windows.hpp
 include/gecode/support/timer.hpp
 lib/libgecodedriver.so
-lib/libgecodedriver.so.32
-lib/libgecodedriver.so.32.0
+lib/libgecodedriver.so.36
+lib/libgecodedriver.so.36.0
 lib/libgecodeflatzinc.so
-lib/libgecodeflatzinc.so.32
-lib/libgecodeflatzinc.so.32.0
+lib/libgecodeflatzinc.so.36
+lib/libgecodeflatzinc.so.36.0
+lib/libgecodefloat.so
+lib/libgecodefloat.so.36
+lib/libgecodefloat.so.36.0
 %%GIST%%lib/libgecodegist.so
-%%GIST%%lib/libgecodegist.so.32
-%%GIST%%lib/libgecodegist.so.32.0
+%%GIST%%lib/libgecodegist.so.36
+%%GIST%%lib/libgecodegist.so.36.0
 lib/libgecodeint.so
-lib/libgecodeint.so.32
-lib/libgecodeint.so.32.0
+lib/libgecodeint.so.36
+lib/libgecodeint.so.36.0
 lib/libgecodekernel.so
-lib/libgecodekernel.so.32
-lib/libgecodekernel.so.32.0
+lib/libgecodekernel.so.36
+lib/libgecodekernel.so.36.0
 lib/libgecodeminimodel.so
-lib/libgecodeminimodel.so.32
-lib/libgecodeminimodel.so.32.0
+lib/libgecodeminimodel.so.36
+lib/libgecodeminimodel.so.36.0
 lib/libgecodesearch.so
-lib/libgecodesearch.so.32
-lib/libgecodesearch.so.32.0
+lib/libgecodesearch.so.36
+lib/libgecodesearch.so.36.0
 lib/libgecodeset.so
-lib/libgecodeset.so.32
-lib/libgecodeset.so.32.0
+lib/libgecodeset.so.36
+lib/libgecodeset.so.36.0
 lib/libgecodesupport.so
-lib/libgecodesupport.so.32
-lib/libgecodesupport.so.32.0
+lib/libgecodesupport.so.36
+lib/libgecodesupport.so.36.0
 %%DATADIR%%/mznlib/all_different_int.mzn
 %%DATADIR%%/mznlib/all_equal_int.mzn
 %%DATADIR%%/mznlib/among.mzn
@@ -467,7 +560,10 @@ lib/libgecodesupport.so.32.0
 %%DATADIR%%/mznlib/increasing_int.mzn
 %%DATADIR%%/mznlib/int_set_channel.mzn
 %%DATADIR%%/mznlib/inverse.mzn
+%%DATADIR%%/mznlib/inverse_set.mzn
+%%DATADIR%%/mznlib/lex_less_bool.mzn
 %%DATADIR%%/mznlib/lex_less_int.mzn
+%%DATADIR%%/mznlib/lex_lesseq_bool.mzn
 %%DATADIR%%/mznlib/lex_lesseq_int.mzn
 %%DATADIR%%/mznlib/link_set_to_booleans.mzn
 %%DATADIR%%/mznlib/maximum_int.mzn
@@ -476,7 +572,6 @@ lib/libgecodesupport.so.32.0
 %%DATADIR%%/mznlib/minimum_int.mzn
 %%DATADIR%%/mznlib/nvalue.mzn
 %%DATADIR%%/mznlib/partition_set.mzn
-%%DATADIR%%/mznlib/precedence.mzn
 %%DATADIR%%/mznlib/range.mzn
 %%DATADIR%%/mznlib/redefinitions.mzn
 %%DATADIR%%/mznlib/regular.mzn
@@ -485,6 +580,8 @@ lib/libgecodesupport.so.32.0
 %%DATADIR%%/mznlib/sum_pred.mzn
 %%DATADIR%%/mznlib/table_bool.mzn
 %%DATADIR%%/mznlib/table_int.mzn
+%%DATADIR%%/mznlib/value_precede_int.mzn
+%%DATADIR%%/mznlib/value_precede_set.mzn
 @dirrm %%DATADIR%%/mznlib
 @dirrm %%DATADIR%%
 @dirrm include/gecode/support/thread
@@ -496,14 +593,17 @@ lib/libgecodesupport.so.32.0
 @dirrm include/gecode/set/rel-op
 @dirrm include/gecode/set/rel
 @dirrm include/gecode/set/precede
+@dirrm include/gecode/set/ldsb
 @dirrm include/gecode/set/int
 @dirrm include/gecode/set/element
 @dirrm include/gecode/set/distinct
 @dirrm include/gecode/set/convex
+@dirrm include/gecode/set/channel
 @dirrm include/gecode/set/branch
 @dirrm include/gecode/set
 @dirrm include/gecode/search/sequential
 @dirrm include/gecode/search/parallel
+@dirrm include/gecode/search/meta
 @dirrm include/gecode/search
 @dirrm include/gecode/minimodel
 @dirrm include/gecode/kernel
@@ -522,6 +622,7 @@ lib/libgecodesupport.so.32.0
 @dirrm include/gecode/int/no-overlap
 @dirrm include/gecode/int/member
 @dirrm include/gecode/int/linear
+@dirrm include/gecode/int/ldsb
 @dirrm include/gecode/int/gcc
 @dirrm include/gecode/int/extensional
 @dirrm include/gecode/int/exec
@@ -539,7 +640,16 @@ lib/libgecodesupport.so.32.0
 @dirrm include/gecode/int/arithmetic
 @dirrm include/gecode/int
 @dirrm include/gecode/gist
+@dirrm include/gecode/float/view
+@dirrm include/gecode/float/var-imp
+@dirrm include/gecode/float/var
+@dirrm include/gecode/float/trigonometric
+@dirrm include/gecode/float/transcendental
+@dirrm include/gecode/float/rel
+@dirrm include/gecode/float/linear
+@dirrm include/gecode/float/branch
+@dirrm include/gecode/float/arithmetic
+@dirrm include/gecode/float
 @dirrm include/gecode/flatzinc
 @dirrm include/gecode/driver
 @dirrm include/gecode
-@dirrm include/examples
