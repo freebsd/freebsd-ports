@@ -13,15 +13,11 @@ USES=		perl5
 NO_BUILD=	yes
 USE_PERL5=	run
 
-PLIST_FILES=	bin/${PORTNAME}
-
-MAN1=		jx.1
-MANCOMPRESSED=	yes
+PLIST_FILES=	bin/jx man/man1/jx.1.gz
 
 OPTIONS_DEFINE=	CONFIG
 CONFIG_DESC=	Enable custom config (recuire Config::General)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONFIG}
@@ -35,10 +31,12 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${PREFIX}/man/man1/${PORTNAME}.1.gz
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${STAGEDIR}${PREFIX}/man/man1
 .if ${PORT_OPTIONS:MCONFIG}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg.sample ${PREFIX}/etc/${PORTNAME}.cfg.sample
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg.sample \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg.sample
 .endif
 
 .include <bsd.port.mk>
