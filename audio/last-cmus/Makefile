@@ -14,7 +14,6 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Cmus plugin for submitting songs into last.fm
 
 USE_PYTHON=	yes
-NO_STAGE=	yes
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 PLIST_FILES=	bin/${DISTNAME}
@@ -24,8 +23,6 @@ do-extract:
 	@${CP} ${_DISTDIR}/last-cmus.py ${WRKSRC}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/
-	@${CHMOD} +x ${PREFIX}/bin/${DISTNAME}
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
