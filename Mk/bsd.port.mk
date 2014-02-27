@@ -1436,10 +1436,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.ocaml.mk"
 .endif
 
-.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TCL_RUN) || defined(USE_TCL_WRAPPER) || defined(USE_TK) || defined(USE_TK_BUILD) || defined(USE_TK_RUN) || defined(USE_TK_WRAPPER)
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
-.endif
-
 .if defined(USE_APACHE) || defined(USE_APACHE_BUILD) || defined(USE_APACHE_RUN)
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .endif
@@ -1893,10 +1889,6 @@ IGNORE=	Do not define STAGEDIR in command line
 
 .if defined(USE_PYTHON)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
-.endif
-
-.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK) || defined(USE_TK_BUILD)
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 .endif
 
 .if defined(USE_LUA) || defined(USE_LUA_NOT)
