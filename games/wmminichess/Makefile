@@ -5,14 +5,12 @@ PORTNAME=	wmminichess
 PORTVERSION=	0.8
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
+MASTER_SITES=	AFTERSTEP/apps/miniCHESS/ \
+		http://tigr.net/afterstep/download/miniCHESS/
 DISTNAME=	miniCHESS-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker chess dockapp game
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
 
 LICENSE=	GPLv2 # (or later)
 
