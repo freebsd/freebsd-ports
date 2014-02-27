@@ -3,23 +3,30 @@
 
 PORTNAME=	dvorak7min
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.linalco.com/ragnar/
+MASTER_SITES=	DEBIAN
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An ncurses-based Dvorak typing tutor
+COMMENT=	Ncurses-based Dvorak typing tutor
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-10
+LICENSE=	GPLv2 # (or later)
 
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAKE_ARGS=	PROF="${CPPFLAGS} ${CFLAGS}" LDFLAGS="${LDFLAGS}"
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^\(PROF\)|#\1| ; \
+		 /^CFLAGS/s|\([[:space:]]\)=|\1+=| ; \
+		 s|^\(LDFLAGS\)|#\1| ; \
+		 s|-lncurses|-lcurses|' ${WRKSRC}/Makefile
 
 pre-build:
-	@cd ${WRKSRC} ; ${MAKE} clean
+	@${RM} -f ${WRKSRC}/*.o
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dvorak7min ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} dvorak7min \
+		${STAGEDIR}${PREFIX}/bin)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
