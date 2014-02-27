@@ -16,22 +16,20 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 ALL_TARGET=
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
-MAN1=		du2ps.1
-MANLANG=	"" ja
-PLIST_FILES=	bin/du2ps
-.if !defined(NOPORTDOCS)
+PLIST_FILES=	bin/du2ps man/ja/man1/du2ps.1.gz man/man1/du2ps.1.gz
 PORTDOCS=	README.ver1 README.ver2 README.xdu du2ps.pdf du2psj.pdf
-.endif
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+post-build:
+	@nkf -e ${WRKSRC}/du2ps.1j > ${WRKSRC}/du2ps.1.ja
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/du2ps ${PREFIX}/bin/du2ps
-	${INSTALL_MAN} ${WRKSRC}/du2ps.1 ${PREFIX}/man/man1/du2ps.1
-	nkf -e ${WRKSRC}/du2ps.1j > ${WRKSRC}/du2ps.1.ja
-	${INSTALL_MAN} ${WRKSRC}/du2ps.1.ja ${PREFIX}/man/ja/man1/du2ps.1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/du2ps ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/du2ps.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/du2ps.1.ja \
+		${STAGEDIR}${MANPREFIX}/man/ja/man1/du2ps.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
