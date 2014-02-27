@@ -12,35 +12,29 @@ COMMENT=	Padrone's Mud Frontend
 
 WRKSRC=		${WRKDIR}/pmfdir/src
 
-SYSSRC=		${WRKSRC}/../system_dir
-DOCSRC=		${WRKSRC}/../doc
-XMPSRC=		${WRKSRC}/../examples
+USES=		readline
+
 SUB_FILES=	pmfrc.default
-
-CFLAGS+=	-Wno-return-type
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
+post-build:
+	@${LN} -sf .pmfrc ${WRKSRC}/../examples/dot.pmfrc 
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pmf ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${SYSSRC}/NEWS ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/pmfrc.default ${DATADIR}
-	@${MKDIR} ${DATADIR}/helpfiles
-	${INSTALL_DATA} ${SYSSRC}/helpfiles/.pmfrc ${DATADIR}/helpfiles
-	${INSTALL_DATA} ${SYSSRC}/helpfiles/* ${DATADIR}/helpfiles
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${XMPSRC}/.pmfrc ${EXAMPLESDIR}/dot.pmfrc
-	${INSTALL_DATA} ${XMPSRC}/* ${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCSRC}/* ${DOCSDIR}
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} pmf ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/../system_dir && ${INSTALL_DATA} NEWS \
+		${STAGEDIR}${DATADIR})
+	(cd ${WRKDIR} && ${INSTALL_DATA} pmfrc.default \
+		${STAGEDIR}${DATADIR})
+	@(cd ${WRKSRC}/../system_dir && ${COPYTREE_SHARE} helpfiles \
+		${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/../doc && ${INSTALL_DATA} * \
+		${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/../examples && ${INSTALL_DATA} * \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
