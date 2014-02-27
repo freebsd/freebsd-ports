@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Has-Sugar
-PORTVERSION=	0.05070421
+PORTVERSION=	1.000000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sugar Syntax for moose has fields
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Moose>=0.61:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
@@ -20,6 +23,6 @@ BUILD_DEPENDS=	p5-Moose>=0.61:${PORTSDIR}/devel/p5-Moose \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
