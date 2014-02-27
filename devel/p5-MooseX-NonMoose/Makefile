@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-NonMoose
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
-		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose
+		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-InsideOut>=0:${PORTSDIR}/devel/p5-MooseX-InsideOut \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
