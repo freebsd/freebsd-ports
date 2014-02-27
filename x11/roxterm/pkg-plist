@@ -19,15 +19,15 @@ share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/lib/roxterm_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/lib/sprites.png
 share/icons/hicolor/scalable/apps/roxterm.svg
-%%DATADIR%%/Config/Colours/GTK
-%%DATADIR%%/Config/Colours/Tango
-%%DATADIR%%/Config/Shortcuts/Default
-%%DATADIR%%/roxterm-config.ui
 share/locale/es/LC_MESSAGES/roxterm.mo
 share/locale/fr/LC_MESSAGES/roxterm.mo
 share/locale/pt_BR/LC_MESSAGES/roxterm.mo
 share/locale/ru/LC_MESSAGES/roxterm.mo
 share/locale/uk/LC_MESSAGES/roxterm.mo
+%%DATADIR%%/Config/Colours/GTK
+%%DATADIR%%/Config/Colours/Tango
+%%DATADIR%%/Config/Shortcuts/Default
+%%DATADIR%%/roxterm-config.ui
 @dirrm %%DATADIR%%/Config/Shortcuts
 @dirrm %%DATADIR%%/Config/Colours
 @dirrm %%DATADIR%%/Config
