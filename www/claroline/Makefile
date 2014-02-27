@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	claroline
-PORTVERSION=	1.11.8
+PORTVERSION=	1.11.10
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Claroline/Claroline_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source eLearning and eWorking platform
+
+LICENSE=	GPLv2
 
 NO_BUILD=	yes
 USE_PHP=	mysql
@@ -17,7 +19,6 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=		LDAP GD SSL
 OPTIONS_DEFAULT=	GD
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGD}
@@ -33,12 +34,12 @@ USE_PHP+=	ldap
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 755 ${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' >>${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}' >>${TMPPLIST}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
