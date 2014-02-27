@@ -11,13 +11,14 @@ COMMENT=	A heterogeneous set of I2C tools
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 
 PLIST_FILES=	sbin/decode-dimms
+SHEBANG_FILES=	eeprom/decode-dimms
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/eeprom/decode-dimms ${PREFIX}/sbin/decode-dimms
+	${INSTALL_SCRIPT} ${WRKSRC}/eeprom/decode-dimms \
+		${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
