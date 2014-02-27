@@ -12,6 +12,8 @@ COMMENT=	Python library Provides Wide Range Of Capabilities
 
 LICENSE=	GPLv3
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab2>=2.3:${PORTSDIR}/print/py-reportlab2 \
 		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
