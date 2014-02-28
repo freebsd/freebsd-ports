@@ -14,14 +14,12 @@ COMMENT=	Checkpoint FW1 to Firewall Builder ruleset converter
 RUN_DEPENDS=	p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer
 
 PLIST_FILES=	bin/cp2fwbuilder
-USES=		perl5
+USES=		perl5 shebangfix
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+SHEBANG_FILES=	cp2fwbuilder
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cp2fwbuilder ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/cp2fwbuilder ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
