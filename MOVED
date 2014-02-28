@@ -5500,3 +5500,4 @@ japanese/trac||2014-02-27|Has expired: Broken for more than 6 month
 lang/opa||2014-02-27|Has expired: Broken for more than 6 month
 sysutils/mmore||2014-02-27|Has expired: Broken for more than 6 month
 www/trac-announcer||2014-02-27|Has expired: Broken for more than 6 month
+lang/expect-devel||2014-02-28|No longer relevant. Use lang/expect instead
