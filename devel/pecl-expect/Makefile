@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PHP extension for expect library
 
-LIB_DEPENDS=	expect543:${PORTSDIR}/lang/expect
+LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect
 
 LICENSE=	PHP301
 
@@ -20,10 +20,5 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS+=--with-expect=${LOCALBASE}
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-	  's/\(LIBRARY_WITH_PATH(\)expect/\1expect543/' \
-	  ${WRKSRC}/config.m4
 
 .include <bsd.port.mk>
