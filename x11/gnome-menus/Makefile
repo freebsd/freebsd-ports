@@ -15,16 +15,14 @@ COMMENT=	Implementation of the FreeDesktop Desktop Menu Spec
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack glib20 ltverhack
-USES=		pkgconfig gettext
+USE_GNOME=	gnomeprefix intlhack glib20 ltverhack introspection:build
+USES=		pkgconfig gettext gmake pathfix
 USE_AUTOTOOLS=	libtool
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|applications.menu||' \
 		${WRKSRC}/layout/Makefile.in
@@ -42,8 +40,8 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/layout/applications.menu \
-		${PREFIX}/etc/xdg/menus/gnome-applications.menu
+		${STAGEDIR}${PREFIX}/etc/xdg/menus/gnome-applications.menu
 	@${INSTALL_DATA} ${WRKSRC}/KDE.directory \
-		${PREFIX}/share/desktop-directories
+		${STAGEDIR}${PREFIX}/share/desktop-directories
 
 .include <bsd.port.mk>
