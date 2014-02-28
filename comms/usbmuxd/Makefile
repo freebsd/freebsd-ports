@@ -20,7 +20,6 @@ OPTIONS_DEFINE=	INOTIFY
 
 INOTIFY_DESC=	Use inotify instead of polling (saves energy)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MINOTIFY}
@@ -45,11 +44,9 @@ pre-install:
 		${WRKSRC}/python-client/*.py
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/python-client/*.py ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/python-client/*.py ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
