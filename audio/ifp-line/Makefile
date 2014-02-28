@@ -12,33 +12,24 @@ COMMENT=	Command line interface to iRiver music players
 LICENSE=	GPLv2
 
 USES=		iconv
-NO_STAGE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-I m4
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lusb
 
-MAN1=		ifp.1
+PLIST_FILES=	bin/ifp man/man1/ifp.1.gz
 PORTDOCS=	NEWS README TIPS nonroot.sh
-PLIST_FILES+=	bin/ifp
-
-.include <bsd.port.pre.mk>
-
-LDFLAGS+=	-lusb
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/LIBUSB/s|ERROR|WARN|' ${WRKSRC}/configure.ac
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ifp ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} ifp.1 ${MANPREFIX}/man/man1)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/ifp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ifp.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
