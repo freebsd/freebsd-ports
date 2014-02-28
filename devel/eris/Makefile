@@ -10,19 +10,19 @@ MASTER_SITES=	SF/worldforge/Eris%201.4%20%28client%20lib%29/${PORTVERSION}/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	WorldForge client entity library
 
-LIB_DEPENDS=	Atlas-0.6.2:${PORTSDIR}/devel/atlas-devel \
-		skstream-0.3.7:${PORTSDIR}/net/skstream \
-		wfmath-1.0.1:${PORTSDIR}/math/wfmath \
-		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		mercator-0.3.3:${PORTSDIR}/devel/mercator
+LIB_DEPENDS=	libAtlas-0.6.so:${PORTSDIR}/devel/atlas-devel \
+		libskstream-0.3.so:${PORTSDIR}/net/skstream \
+		libwfmath-1.0.so:${PORTSDIR}/math/wfmath \
+		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
+		libmercator-0.3.so:${PORTSDIR}/devel/mercator
 
+CONFIGURE_ARGS= --disable-silent-rules
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig
 USE_GCC=	yes
 
 CXXFLAGS+=	-include wchar.h
-CONFIGURE_ARGS+="CXXFLAGS=${CXXFLAGS}"
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
