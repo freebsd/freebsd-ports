@@ -11,17 +11,16 @@ COMMENT=	Tool to add multiple ssh keys to the authentication agent
 
 USE_PYTHON_RUN=	yes
 NO_BUILD=	yes
-MAN1=		ssh-multiadd.1
-PLIST_FILES=	bin/ssh-multiadd
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/ssh-multiadd man/man1/ssh-multiadd.1.gz
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin/python2|${PYTHON_CMD}| ; \
 		s|#break|break|' ${WRKSRC}/ssh-multiadd
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ssh-multiadd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ssh-multiadd.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/ssh-multiadd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ssh-multiadd.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
