@@ -10,9 +10,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}-0-prod
 MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	UDP-to-HTTP multicast traffic relay daemon
 
+USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-0
 USE_RC_SUBR=	udpxy
-USE_GMAKE=	yes
 RELEASE_MASCOT=	Chipmunk
 
 OPTIONS_SINGLE=	CONF
@@ -25,10 +25,9 @@ OPTIONS_DEFAULT=	RELEASE
 PLIST_FILES=	sbin/udpxy \
 		sbin/udpxrec
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/udpxy ${PREFIX}/sbin/
-	@${LN} -s udpxy ${PREFIX}/sbin/udpxrec
+	${INSTALL_PROGRAM} ${WRKSRC}/udpxy ${STAGEDIR}${PREFIX}/sbin
+	${LN} -s udpxy ${STAGEDIR}${PREFIX}/sbin/udpxrec
 
 .include <bsd.port.options.mk>
 

@@ -22,5 +22,4 @@ INSTALL_DIRS=	src/pl/plperl
 SLAVE_ONLY=	yes
 COMPONENT=	-plperl
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

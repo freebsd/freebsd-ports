@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	YAML-Tiny
-PORTVERSION=	1.56
+PORTVERSION=	1.61
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,8 @@ COMMENT=	Read/Write YAML files with as little code as possible
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+TEST_DEPENDS=	p5-Test-Simple>=0.99:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

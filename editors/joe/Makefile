@@ -3,13 +3,15 @@
 
 PORTNAME=	joe
 PORTVERSION=	3.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	editors
 MASTER_SITES=	SF/joe-editor/JOE%20sources/joe-${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Joe's Own Editor
+
+LICENSE=	GPLv1
 
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
@@ -18,7 +20,6 @@ OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	joe-2.*
 
-LICENSE=	GPLv1
 USES=		gmake iconv ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"

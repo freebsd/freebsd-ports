@@ -5,15 +5,18 @@ PORTNAME=	ldapdns
 PORTVERSION=	2.06
 PORTREVISION=	2
 CATEGORIES=	dns
-MASTER_SITES=	http://www.nimh.org/dl/
+MASTER_SITES=	#http://www.nimh.org/dl/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LDAP-backed DNS server
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
-LICENSE=	GPLv2
+BROKEN=		${MASTER_SITES} is gone - no public distfiles. \
+		port needs upgrade to version 3 (ldapdns.sourceforge.net)
 
 USE_OPENLDAP=	yes
 HAS_CONFIGURE=	yes

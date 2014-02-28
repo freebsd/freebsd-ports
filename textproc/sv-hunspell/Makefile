@@ -1,17 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	1.46
-PORTREVISION=	1
+PORTVERSION=	2.24
 CATEGORIES=	textproc
-MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}
+MASTER_SITES=	http://extensions.libreoffice.org/extension-center/swedish-spelling-dictionary-den-stora-svenska-ordlistan/releases/${PORTVERSION}/ \
+		LOCAL/sunpoet/${PORTNAME}
 PKGNAMEPREFIX=	sv-
-DISTNAME=	sv-${PORTVERSION}
-EXTRACT_SUFX=	.zip
+DISTNAME=	ooo_swedish_dict_${PORTVERSION:R}-${PORTVERSION:E}
+EXTRACT_SUFX=	.oxt
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Swedish hunspell dictionaries
+
+LICENSE=	GPLv3
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -24,8 +26,6 @@ PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/sv_SE.aff ${WRKSRC}/sv_SE.dic ${STAGEDIR}${DATADIR}/
-	${LN} -s sv_SE.aff ${STAGEDIR}${DATADIR}/sv_FI.aff
-	${LN} -s sv_SE.dic ${STAGEDIR}${DATADIR}/sv_FI.dic
+	cd ${WRKSRC}/dictionaries/ && ${INSTALL_DATA} sv_FI.aff sv_FI.dic sv_SE.aff sv_SE.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

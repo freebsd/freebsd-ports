@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seaview
-PORTVERSION=	4.4.2
+PORTVERSION=	4.4.3
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://pbil.univ-lyon1.fr/software/seaview_data/archive/
@@ -13,14 +13,10 @@ COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
-OPTIONS_DEFINE=	PDFLIB
-OPTIONS_DEFAULT=PDFLIB
-PDFLIB_DESC=	PDFlib support
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		gmake
 USE_XORG=	xext xft xinerama
-USE_GMAKE=	yes
 MAKE_ENV=	HELPFILE='-DDEFAULT_HELPFILE=\"${DATADIR}/seaview.html\"' \
 		PHYMLNAME='-DPHYMLNAME=\"phyml\"' \
 		IFLTK='-I${LOCALBASE}/include' \
@@ -29,21 +25,18 @@ MAKE_ENV=	HELPFILE='-DDEFAULT_HELPFILE=\"${DATADIR}/seaview.html\"' \
 		OPT="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
-PLIST_FILES=	bin/seaview %%DATADIR%%/seaview.html
+PLIST_FILES=	bin/seaview man/man1/seaview.1.gz %%DATADIR%%/seaview.html
 PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="SeaView" "${COMMENT}" "" \
 		"${PORTNAME}" "Biology;Science;" "true"
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPDFLIB}
-LIB_DEPENDS+=	libpdf.so:${PORTSDIR}/print/pdflib
-MAKE_ENV+=	LPDF='-L${LOCALBASE}/lib -lpdf'
-.else
-MAKE_ENV+=	PDF_PS_FLAGS='-DNO_PDF'
-.endif
+OPTIONS_DEFINE=		PDFLIB
+OPTIONS_DEFAULT=	PDFLIB
+PDFLIB_DESC=		PDFlib support
+PDFLIB_LIB_DEPENDS=	libpdf.so:${PORTSDIR}/print/pdflib
+PDFLIB_MAKE_ENV=	LPDF='-L${LOCALBASE}/lib -lpdf'
+PDFLIB_MAKE_ENV_OFF=	PDF_PS_FLAGS='-DNO_PDF'
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -56,8 +49,12 @@ post-patch:
 		 s|-lpthread|-pthread|' ${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} seaview ${PREFIX}/bin)
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} seaview.html ${DATADIR})
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} seaview \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} seaview.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} seaview.html \
+		${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

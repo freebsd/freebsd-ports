@@ -15,20 +15,15 @@ GNU_CONFIGURE=	yes
 USES=		perl5
 USE_PERL5=	build
 
-PLIST_FILES=	bin/fcrackzip bin/fcrackzipinfo
-.if !defined(NOPORTDOCS)
-MAN1=		fcrackzip.1
-.endif
+PLIST_FILES=	bin/fcrackzip bin/fcrackzipinfo man/man1/fcrackzip.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/zipinfo/fcrackzipinfo/g' ${WRKSRC}/zipinfo.c
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/fcrackzip ${PREFIX}/bin/
-	@${INSTALL_PROGRAM} ${WRKSRC}/zipinfo ${PREFIX}/bin/fcrackzipinfo
-.if !defined(NOPORTDOCS)
-	@${INSTALL_MAN} ${WRKSRC}/fcrackzip.1 ${PREFIX}/man/man1/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/fcrackzip ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/zipinfo \
+		${STAGEDIR}${PREFIX}/bin/fcrackzipinfo
+	${INSTALL_MAN} ${WRKSRC}/fcrackzip.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

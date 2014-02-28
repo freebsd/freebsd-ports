@@ -3,7 +3,7 @@
 
 PORTNAME=	check_postgres
 PORTVERSION=	2.21.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-mgmt databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/
 PKGNAMEPREFIX=	nagios-
@@ -105,7 +105,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${CACTI_SCRIPTS}
 .for l in ${CACTI_LINKS}
 	${LN} -s ../../../bin/check_postgres.pl \
-		${STAGEDIR}/${CACTI_SCRIPTS}/check_postgres_${l}
+		${STAGEDIR}${CACTI_SCRIPTS}/check_postgres_${l}
 .endfor
 .endif
 

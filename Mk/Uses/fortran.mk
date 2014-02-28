@@ -16,7 +16,8 @@ fortran_ARGS=	gcc
 .endif
 
 .if ${fortran_ARGS} == gcc
-_GCC_VER=	46
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+_GCC_VER=	${GCC_DEFAULT:S/.//}
 BUILD_DEPENDS+=	gfortran${_GCC_VER}:${PORTSDIR}/lang/gcc
 RUN_DEPENDS+=	gfortran${_GCC_VER}:${PORTSDIR}/lang/gcc
 USE_BINUTILS=	yes
@@ -25,7 +26,7 @@ FC=		gfortran${_GCC_VER}
 FFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 FCFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
-		-L${LOCALBASE}/lib/gcc${_GCC_VER}
+		-L${LOCALBASE}/lib/gcc${_GCC_VER} -B${LOCALBASE}/bin
 .elif ${fortran_ARGS} == ifort
 BUILD_DEPENDS+=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
 RUN_DEPENDS+=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc

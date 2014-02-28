@@ -13,15 +13,15 @@ DIST_SUBDIR=	pocketreader
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Siemens PocketReader
 
-USE_LINUX=	YES
-NO_BUILD=	YES
+USE_LINUX=	yes
+NO_BUILD=	yes
 PLIST_FILES=	bin/pocketreader
 
 WRKSRC=		${WRKDIR}/linux
 
-NO_STAGE=	yes
 do-install:
 	${BRANDELF} -t Linux ${WRKSRC}/installfiles/pocketreader_static
-	${CP} ${WRKSRC}/installfiles/pocketreader_static ${PREFIX}/bin/pocketreader
+	${CP} ${WRKSRC}/installfiles/pocketreader_static \
+		${STAGEDIR}${PREFIX}/bin/pocketreader
 
 .include <bsd.port.mk>

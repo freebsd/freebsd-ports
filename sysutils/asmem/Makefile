@@ -5,13 +5,12 @@ PORTNAME=	asmem
 PORTVERSION=	1.12
 PORTREVISION=	1
 CATEGORIES=	sysutils afterstep
-MASTER_SITES=	http://www.tigr.net/afterstep/download/asmem/
+MASTER_SITES=	http://tigr.net/afterstep/download/asmem/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An AfterStep look-n-feel memory utilization monitor
+COMMENT=	AfterStep look-n-feel memory utilization monitor
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
+LICENSE=	GPLv2
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
@@ -19,10 +18,13 @@ CONFIGURE_ARGS=	--with-xpm \
 		--with-xpm-includes=${LOCALBASE}/include \
 		--with-xpm-library=${LOCALBASE}/lib
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+post-build:
+	@${LN} -sf asmem.man ${WRKSRC}/asmem.1
 
 do-install:
-	${INSTALL_PROGRAM} -g kmem -m 2755 ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} asmem \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} asmem.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>

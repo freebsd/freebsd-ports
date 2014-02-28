@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rand@meridian-enviro.com
 COMMENT=	Nagios console monitor
 
-LIB_DEPENDS=	strfunc.9:${PORTSDIR}/devel/libstrfunc
+LIB_DEPENDS=	libstrfunc.so:${PORTSDIR}/devel/libstrfunc
 
 PLIST_FILES=	bin/nagcon
 
@@ -20,7 +20,6 @@ CPPFILES=	utils.cpp br.cpp nc.cpp pl.cpp
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\" -I${LOCALBASE}/include
 LDFLAGS+=	-lncurses -lstdc++ -L${LOCALBASE}/lib -lstrfunc
 
-NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -c -o ${WRKSRC}/${CFILES:C/\.c//}.o ${WRKSRC}/${CFILES}
 .for f in ${CPPFILES}
@@ -30,6 +29,6 @@ do-build:
 		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

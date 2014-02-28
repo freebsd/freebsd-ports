@@ -1,0 +1,18 @@
+diff -ru work/seahaven-1.60/auto.C work.new/seahaven-1.60/auto.C
+--- auto.C	2011-07-10 00:23:59.000000000 -0600
++++ auto.C	2014-02-25 15:10:30.000000000 -0700
+@@ -486,12 +486,10 @@
+ 
+ class MoveCard : public Move {
+     Card& from;
+-    MoveCardToMemberFunction mcmf;
+   public:
+-    MoveCard(Card& f, Dest& d, MoveCardToMemberFunction mf)
+-	: Move(d), from(f), mcmf(mf) { }
++    MoveCard(Card& f, Dest& d)
++	: Move(d), from(f) { }
+     void DoIt() { dest.MoveTo(from); }
+-//  void DoIt() { dest.*mcmf(from); }
+ };
+ 
+ class MoveCardRange : public Move {

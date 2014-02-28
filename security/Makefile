@@ -90,7 +90,6 @@
     SUBDIR += courierpasswd
     SUBDIR += courieruserinfo
     SUBDIR += cp2fwb
-    SUBDIR += crack
     SUBDIR += cracklib
     SUBDIR += crank
     SUBDIR += create-cert

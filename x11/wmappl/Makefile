@@ -3,37 +3,35 @@
 
 PORTNAME=	wmappl
 PORTVERSION=	0.71
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	SF/wmappl/wmappl/wmappl-${PORTVERSION}:main \
-		http://www.upl.cs.wisc.edu/~charkins/wmappl/:icons
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main \
-		16x16xpms.tar.gz:icons icons_16x16.tar.gz:icons smallicons.tar.gz:icons
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application launcher dockapp similar to wmbutton
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-10
+LICENSE=	GPLv2 # (or later)
 
+USE_XORG=	ice sm x11 xext xpm
 GNU_CONFIGURE=	yes
-USE_XORG=	xpm x11 xext sm ice
-MAKE_ENV=	DATADIR="${DATADIR}"
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS IMLIB2
 
-.include <bsd.port.options.mk>
+IMLIB2_USE= 		EFL=imlib2
+IMLIB2_CONFIGURE_ENABLE=Imlib2
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/icons/CVS
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|"/etc|"${PREFIX}/etc| ; \
+		 s|/usr/share/icons/wmappl|${DATADIR}| ; \
+		 s|/usr/share/pixmaps/mini|${LOCALBASE}/share/pixmaps|' \
+		${WRKSRC}/src/wmappl.c
+
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@cd ${WRKDIR} && ${INSTALL_DATA} *.xpm ${STAGEDIR}${DATADIR}
-	@cd ${WRKDIR}/smallicons && ${INSTALL_DATA} *.xpm ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_CMD} "===>   Please read ${DOCSDIR}/README for configuration information"
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

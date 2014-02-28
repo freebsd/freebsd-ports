@@ -4,38 +4,42 @@
 PORTNAME=	dungeoncrawl
 PORTVERSION=	4.0.0.b26
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.dungeoncrawl.org/dev/4.0.x/src/
+MASTER_SITES=	ftp://ftp.dungeoncrawl.org/dev/4.0.x/src/ \
+		http://www.sourcefiles.org/Games/Role_Play/
 DISTNAME=	dc${PORTVERSION:S/.//g}-src
 EXTRACT_SUFX=	.tbz2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An old school roguelike game
+COMMENT=	Old school roguelike game
+
+WRKSRC_SUBDIR=	source
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/source
-MAKEFILE=	${WRKSRC}/makefile.bsd
+USES=		ncurses
+MAKEFILE=	makefile.bsd
 
-PLIST_FILES=	bin/dungeoncrawl
 PORTDOCS=	buglist.txt crawl.txt
-MAN6=		dungeoncrawl.6
+PLIST_FILES=	bin/dungeoncrawl man/man6/dungeoncrawl.6.gz
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e "s|g++|${CXX}|; \
-		s|/tmp/CRAWLTEST/testdev|${PREFIX}/bin|; \
-		s|crawl|dungeoncrawl|; \
-		s|CFLAGS =|CFLAGS=${CXXFLAGS} |;" \
-			${MAKEFILE}
+	@${REINPLACE_CMD} -e \
+		's|^CXX =|CXX ?=| ; \
+		 s|^CFLAGS =|CXXFLAGS +=| ; \
+		 s|^LDFLAGS =|# &| ; \
+		 s|^INSTALLDIR =|# &| ; \
+		 s|^INCLUDES =|# &| ; \
+		 s|$$(CFLAGS)|$$(CXXFLAGS)| ; \
+		 s|$${CFLAGS}|$${CXXFLAGS}|' ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dungeoncrawl ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/crawl.6 ${PREFIX}/man/man6/dungeoncrawl.6
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} crawl \
+		${STAGEDIR}${PREFIX}/bin/dungeoncrawl)
+	(cd ${WRKSRC}/../docs && ${INSTALL_MAN} crawl.6 \
+		${STAGEDIR}${MANPREFIX}/man/man6/dungeoncrawl.6)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/docs/${doc} ${DOCSDIR}
+	(cd ${WRKSRC}/../docs && ${INSTALL_DATA} ${doc} \
+		${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -16,26 +16,20 @@ COMMENT=	Utility script to generate custom margins in PPDs for CUPS
 NO_BUILD=	yes
 USES=		perl5
 
-NO_STAGE=	yes
 do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
 	@${MKDIR} ${WRKSRC}
-	@for distfile in ${EXTRACT_ONLY}; do \
-		if ! (cd ${WRKDIR} && ${CP} ${_DISTDIR}/$$distfile ${WRKSRC});\
-		then \
-			exit 1; \
-		fi \
-	done
+.for f in ${DISTFILES}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSRC}
+.endfor
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 			-e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/alignmargins
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/alignmargins ${LOCALBASE}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/align.ps ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/align.ps ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

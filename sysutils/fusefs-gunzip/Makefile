@@ -16,7 +16,6 @@ PLIST_FILES=	bin/fuse.gunzip
 
 NO_INSTALL_MANPAGES=	yes
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/fuse \
@@ -25,6 +24,6 @@ do-build:
 	-lulockmgr -lz -lfuse ${ICONV_LIB} -lm)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fuse.gunzip ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/fuse.gunzip ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

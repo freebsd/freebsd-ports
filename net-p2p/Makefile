@@ -55,7 +55,6 @@
     SUBDIR += litecoin
     SUBDIR += litecoin-daemon
     SUBDIR += lopster
-    SUBDIR += microdc2
     SUBDIR += minder
     SUBDIR += mktorrent
     SUBDIR += mldonkey

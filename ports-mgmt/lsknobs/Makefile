@@ -17,12 +17,11 @@ SUB_FILES=	pkg-message ${PORTNAME}.sh
 
 PLIST_FILES=	sbin/${PORTNAME}
 
-NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/sbin/${PORTNAME}
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 
 .include <bsd.port.mk>

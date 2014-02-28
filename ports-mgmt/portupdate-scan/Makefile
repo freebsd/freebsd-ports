@@ -11,17 +11,19 @@ MAINTAINER=	alex@stangl.us
 COMMENT=	Display pertinent parts of {PORTSDIR}/UPDATING
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 
-PLIST_FILES=	sbin/portupdate-scan
+PLIST_FILES=	sbin/portupdate-scan man/man8/portupdate-scan.8.gz
+SHEBANG_FILES=	portupdate-scan
 SRC=		${.CURDIR}/src
 
-MAN8=		portupdate-scan.8
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${SRC}/${PORTNAME} ${SRC}/${PORTNAME}.8 ${WRKSRC}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${SRC}/portupdate-scan ${PREFIX}/sbin/portupdate-scan
-	${INSTALL_MAN} ${SRC}/portupdate-scan.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

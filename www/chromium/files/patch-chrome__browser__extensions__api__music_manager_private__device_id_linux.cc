@@ -1,5 +1,5 @@
---- chrome/browser/extensions/api/music_manager_private/device_id_linux.cc.orig	2014-02-20 21:27:39.000000000 +0100
-+++ chrome/browser/extensions/api/music_manager_private/device_id_linux.cc	2014-02-25 00:17:02.000000000 +0100
+--- ./chrome/browser/extensions/api/music_manager_private/device_id_linux.cc.orig	2014-02-20 21:27:39.000000000 +0100
++++ ./chrome/browser/extensions/api/music_manager_private/device_id_linux.cc	2014-02-28 11:05:01.000000000 +0100
 @@ -4,6 +4,10 @@
  
  #include "chrome/browser/extensions/api/music_manager_private/device_id.h"
@@ -39,8 +39,8 @@
 +      }
 +    }
 +
-+    char* mac_address = nullptr;
-+    strncpy(mac_address, (const char*)LLADDR((struct sockaddr_dl*)ifinfo->ifa_addr), 6);
++    char mac_address[6];
++    strncpy(mac_address, (const char*)LLADDR((struct sockaddr_dl*)ifinfo->ifa_addr), sizeof(mac_address));
 +#else
 +    strncpy(ifinfo.ifr_name, ifaddr->ifa_name, sizeof(ifinfo.ifr_name) - 1);
      int sd = socket(AF_INET, SOCK_DGRAM, 0);

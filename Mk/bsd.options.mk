@@ -391,9 +391,9 @@ PLIST_SUB?=
 .  if defined(OPTIONS_SUB)
 .    if ! ${PLIST_SUB:M${opt}=*}
 .      if ${PORT_OPTIONS:M${opt}}
-PLIST_SUB:=	${PLIST_SUB} ${opt}=""
+PLIST_SUB:=	${PLIST_SUB} ${opt}="" NO_${opt}="@comment "
 .      else
-PLIST_SUB:=	${PLIST_SUB} ${opt}="@comment "
+PLIST_SUB:=	${PLIST_SUB} ${opt}="@comment " NO_${opt}=""
 .      endif
 .    endif
 .  endif

@@ -9,18 +9,16 @@ MASTER_SITES=	SF/deltup/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An advanced delta creator, patcher, and library
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
-PLIST_FILES=	bin/bdelta \
-		bin/bpatch \
-		lib/libbdelta.so
+
+PLIST_FILES=	bin/bdelta bin/bpatch lib/libbdelta.so
 
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bdelta ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bpatch ${PREFIX}/bin
-	${INSTALL_DATA}	${WRKSRC}/libbdelta.so ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/bdelta ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bpatch ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/libbdelta.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>

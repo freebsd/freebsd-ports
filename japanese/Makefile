@@ -316,7 +316,6 @@
     SUBDIR += tkhonyaku
     SUBDIR += today
     SUBDIR += tomoe
-    SUBDIR += trac
     SUBDIR += uim-anthy
     SUBDIR += uim-tomoe-gtk
     SUBDIR += vera-fpw

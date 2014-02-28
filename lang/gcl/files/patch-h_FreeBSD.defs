@@ -20,7 +20,7 @@ diff -u -d -r1.2.6.1.4.1 FreeBSD.defs
 -#LIBS    = -lm -L/usr/local/lib
 +#CFLAGS	= @@.CFLAGS@@
 +CFLAGS	= @@CFLAGS@@
-+CFLAGS	+= -fomit-frame-pointer -fsigned-char -DVOL=volatile -I$(GCLDIR)/o -I${prefix}/include -Wall -Werror
++CFLAGS	+= -fomit-frame-pointer -fsigned-char -DVOL=volatile -I$(GCLDIR)/o -Wall
 +CFLAGS += -UDBEGIN -DDBEGIN=0
 +#LIBS = @@.LOCALLIBS@@
 +LIBS = @@LOCALLIBS@@

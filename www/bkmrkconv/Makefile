@@ -12,21 +12,21 @@ COMMENT=	Netscape bookmarks.html converter
 USES=		perl5
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -i '' -e \
 		's|/usr/bin/perl|${PERL}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g'
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bkmrkconv.pl ${PREFIX}/bin/bkmrkconv
-	@${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/* ${DATADIR}
-	@${MKDIR} ${DATADIR}/src
-	${INSTALL_DATA} ${WRKSRC}/src.example/* ${DATADIR}/src
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/bkmrkconv.pl \
+		${STAGEDIR}${PREFIX}/bin/bkmrkconv
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/* ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/src
+	${INSTALL_DATA} ${WRKSRC}/src.example/* ${STAGEDIR}${DATADIR}/src
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

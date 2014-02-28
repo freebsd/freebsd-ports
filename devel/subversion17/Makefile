@@ -94,6 +94,7 @@ USES+=			gettext:build
 .  endif
 .  if ${PORT_OPTIONS:MBDB}
 BDB_BUILD_DEPENDS=	yes
+.else
 .  endif
 OLD_LIB_DEPENDS:=	${LIB_DEPENDS:S!^!${LOCALBASE}/lib/!:C!(\.so|\.[0-9]+)?:!.a:!}
 BUILD_DEPENDS+=		${OLD_LIB_DEPENDS}
@@ -154,6 +155,12 @@ pre-everything::
 	@${ECHO_MSG} "Static binaries will be built."
 .endif # STATIC
 	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}"
+.if ${PORT_OPTIONS:MBDB}
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "!!! Berkeley DB backend is deprecated, please convert your repos to FS backend  !!!"
+	@${ECHO_MSG} "!!! After switching to FS backend subversion can be rebuild without BDB support !!!"
+	@sleep 10
+.endif
 
 pre-configure:
 .if ${PORT_OPTIONS:MBDB}
@@ -266,7 +273,7 @@ _mkrepos:	.USE
 .endif
 
 svn-build-outputs-hack:
-	cd ${WRKSRC} && ./gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc
+	(cd ${WRKSRC} && ./gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
 	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk
 
 .include <bsd.port.post.mk>

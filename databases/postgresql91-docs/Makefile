@@ -29,18 +29,17 @@ BUILD_DEPENDS+=	onsgmls:${PORTSDIR}/textproc/opensp			\
 		${dbdir}/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		${dbdir}/4.2:${PORTSDIR}/textproc/docbook-sgml
 
-NO_STAGE=	yes
 do-build:
 	${GMAKE} -C ${WRKSRC} html
 
 do-install:
-	@ $(MKDIR) ${PGDOCSDIR}
+	@ $(MKDIR) ${STAGEDIR}${PGDOCSDIR}
 	( cd ${WRKSRC}/doc/src/sgml/html && \
-		${COPYTREE_SHARE} \* ${PGDOCSDIR} )
+		${COPYTREE_SHARE} . ${STAGEDIR}${PGDOCSDIR} )
 
 post-install:
-	@(cd ${PREFIX} && ${FIND} ${PGDOCSREL} -type f) >> ${TMPPLIST}
-	@(cd ${PREFIX} && ${FIND} ${PGDOCSREL} -type d) | ${SORT} -r | \
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${PGDOCSREL} -type f) >> ${TMPPLIST}
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${PGDOCSREL} -type d) | ${SORT} -r | \
 	     ${SED} 's,.*,@unexec rmdir %D/& 2>/dev/null || true,' >>${TMPPLIST}
 	
 

@@ -4,7 +4,7 @@
 PORTNAME=	lzip
 PORTVERSION=	1.15
 CATEGORIES=	archivers
-MASTER_SITES=	SAVANNAH/lzip LOCAL/marino
+MASTER_SITES=	SAVANNAH/lzip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lossless data compressor based on the LZMA algorithm

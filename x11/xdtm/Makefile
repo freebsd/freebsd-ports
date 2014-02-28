@@ -16,7 +16,4 @@ USE_XORG=	xaw
 USES=		imake
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		xdtm.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

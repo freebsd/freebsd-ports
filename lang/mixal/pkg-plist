@@ -1,4 +1,5 @@
 bin/mixal
+man/man1/mixal.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/MIX.DOC
 %%PORTDOCS%%%%DOCSDIR%%/NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README

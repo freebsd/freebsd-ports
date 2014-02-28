@@ -37,7 +37,7 @@ BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	libdvdcss.so.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
-USES=		gmake iconv pathfix perl5 pkgconfig
+USES=		gmake iconv pathfix perl5 pkgconfig compiler:features
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
@@ -51,7 +51,7 @@ CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-fno-force-addr -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${LOCALBASE}/include/ffmeg
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${LOCALBASE}/include/ffmeg
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 		--enable-ipv6 \
 		--with-external-libmad \
@@ -79,7 +79,11 @@ DVDCSS_LIBVERSION=	3
 
 PATCH_DIST_ARGS=	-d ${WRKSRC} -p1 --forward --quiet
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} != "clang"
+CFLAGS+= 	-fno-force-addr
+.endif
 
 .if ${ARCH} == "i386"
 CFLAGS+=	-fomit-frame-pointer
@@ -222,6 +226,10 @@ CONFIGURE_ARGS+=	--disable-vidix
 .endif
 
 post-patch:
+.if ${COMPILER_TYPE} == "clang"
+	@${REINPLACE_CMD} -e 's|-fno-rename-registers||' \
+		${WRKSRC}/src/libw32dll/wine/Makefile.in
+.endif
 .if ${PORT_OPTIONS:MVAAPI}
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/src/video_out/Makefile.in
@@ -258,4 +266,4 @@ pre-configure:
 		  s|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

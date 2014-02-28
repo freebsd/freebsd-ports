@@ -1,0 +1,24 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -812,8 +812,8 @@
+ #
+ 
+ 
+-INTEXAMPLEHDR0 =						\
+-	scowl
++# INTEXAMPLEHDR0 =						\
++# 	scowl
+ INTEXAMPLESRC0 =						\
+ 	alpha bacp bibd donald efpa eq20 golomb-ruler		\
+ 	graph-color grocery ind-set magic-sequence magic-square	\
+@@ -939,8 +939,8 @@
+ 	numeric/interval.hpp \
+ 	LICENSE_1_0.txt \
+ 	limits.hpp non_type.hpp type.hpp
+-THIRDHDR = \
+-	$(BOOSTHDR:%=gecode/third-party/boost/%)
++# THIRDHDR = \
++# 	$(BOOSTHDR:%=gecode/third-party/boost/%)
+ 
+ #
+ # COLLECTING ALL

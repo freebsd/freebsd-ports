@@ -3,6 +3,7 @@
 
 PORTNAME=	anet
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libanet-${PORTVERSION}
@@ -15,7 +16,7 @@ LICENSE_COMB=	multi
 
 USES=		ada
 USE_BZIP2=	yes
-ALL_TARGET=	build_all
+ALL_TARGET=	build_lib
 MAKE_ARGS+=	NUM_CPUS=${MAKE_JOBS_NUMBER} \
 		LIBRARY_KIND=static
 

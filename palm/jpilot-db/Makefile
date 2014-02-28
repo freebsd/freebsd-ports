@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop app for pilot-db
 
 BROKEN=		Distfile is unfetchable after MASTER_SITES reorganization
+EXPIRATION_DATE=2014-03-15
+
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty

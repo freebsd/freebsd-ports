@@ -13,7 +13,7 @@ COMMENT=	Converting texts in figure by tgif to LaTeX commands
 LICENSE=	GPLv2
 
 PLIST_FILES=	bin/tgif2tex
-PORTDOCS= 	how-to-use.dvi how-to-use.ps how-to-use.tex \
+PORTDOCS=	how-to-use.dvi how-to-use.ps how-to-use.tex \
 		example.obj example.tex \
 		original.dps original.tps \
 		pythagoras.dps pythagoras.tps \
@@ -25,23 +25,18 @@ PORTDOCS= 	how-to-use.dvi how-to-use.ps how-to-use.tex \
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+NO_BUILD=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+SHEBANG_FILES=	tgif2tex
 
-do-build:
-	${REINPLACE_CMD} \
-		-e "s,%%LOCALBASE%%,${LOCALBASE}," \
-		-e "s,^#!/usr/bin/perl,#!${PERL}," \
-		${WRKSRC}/tgif2tex
+post-patch:
+	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/tgif2tex
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tgif2tex ${PREFIX}/bin/tgif2tex
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/tgif2tex ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

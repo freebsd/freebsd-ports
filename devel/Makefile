@@ -589,7 +589,9 @@
     SUBDIR += gnulibiberty
     SUBDIR += gnustep
     SUBDIR += gnustep-make
+    SUBDIR += go-json-rest
     SUBDIR += go-pretty
+    SUBDIR += go-sql-driver
     SUBDIR += gob2
     SUBDIR += gobject-introspection
     SUBDIR += goffice

@@ -21,13 +21,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501400
-BUILD_DEPENDS+=	p5-Module-Metadata>=0:${PORTSDIR}/devel/p5-Module-Metadata \
-		p5-version>=0.86:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS+=	p5-Module-Metadata>=0:${PORTSDIR}/devel/p5-Module-Metadata \
-		p5-version>=0.86:${PORTSDIR}/devel/p5-version
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

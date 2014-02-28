@@ -13,13 +13,14 @@ COMMENT=	Detects, reconstructs, and analyzes any RTP session
 
 LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
-MAKE_ARGS+=	CFLAGS="-Wall -O3 -I${LOCALBASE}/include/libnet11" \
-		LIBS="-L${LOCALBASE}/lib/libnet11 -lpcap -lnet"
+CFLAGS+=	-I${LOCALBASE}/include/libnet11
+LIBS+=		-L${LOCALBASE}/lib/libnet11 -lpcap -lnet
+
+MAKE_ARGS=	CFLAGS="${CFLAGS}" LIBS="${LIBS}"
 
 PLIST_FILES=	bin/rtpbreak
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/rtpbreak ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/rtpbreak ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	libdockapp
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	xride
@@ -10,31 +11,32 @@ MASTER_SITE_SUBDIR=	xride
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Standard library for Window Maker dock apps
 
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_SUB=	yes
+
+USES=		libtool
 USE_BZIP2=	yes
 USE_XORG=	xext xpm
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-font --without-examples
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${PREFIX}/lib/X11/fonts/dockapp
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/dockapp
 .for file in fonts.alias fonts.dir *.pcf.gz
-	${INSTALL_DATA} ${WRKSRC}/fonts/${file} ${PREFIX}/lib/X11/fonts/dockapp
+	${INSTALL_DATA} ${WRKSRC}/fonts/${file} ${STAGEDIR}${PREFIX}/lib/X11/fonts/dockapp
 .endfor
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for file in README
-	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}/basic
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/basic
 .for file in Imakefile README *.c *.xpm
-	${INSTALL_DATA} ${WRKSRC}/examples/basic/${file} ${EXAMPLESDIR}/basic
+	${INSTALL_DATA} ${WRKSRC}/examples/basic/${file} ${STAGEDIR}${EXAMPLESDIR}/basic
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}/rectangles
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/rectangles
 .for file in Imakefile *.c
-	${INSTALL_DATA} ${WRKSRC}/examples/rectangles/${file} ${EXAMPLESDIR}/rectangles
+	${INSTALL_DATA} ${WRKSRC}/examples/rectangles/${file} ${STAGEDIR}${EXAMPLESDIR}/rectangles
 .endfor
-.endif
 
 .include <bsd.port.mk>

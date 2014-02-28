@@ -16,17 +16,16 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 USE_ZIP=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} -m 755 ${WWWDIR}/speedtest
-	@${INSTALL_DATA} ${WRKDIR}/index-php.html ${WWWDIR}/index.html
-	@${INSTALL_DATA} ${WRKDIR}/speedtest.swf ${WWWDIR}
-	@${INSTALL_DATA} ${WRKDIR}/speedtest/random* ${WWWDIR}/speedtest
-	@${INSTALL_DATA} ${WRKDIR}/speedtest/swfobject.js ${WWWDIR}/speedtest
-	@${INSTALL_DATA} ${WRKDIR}/speedtest/upload.php ${WWWDIR}/speedtest
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} -m 755 ${STAGEDIR}${WWWDIR}/speedtest
+	${INSTALL_DATA} ${WRKDIR}/index-php.html ${STAGEDIR}${WWWDIR}/index.html
+	${INSTALL_DATA} ${WRKDIR}/speedtest.swf ${STAGEDIR}${WWWDIR}
+	${INSTALL_DATA} ${WRKDIR}/speedtest/random* \
+		${STAGEDIR}${WWWDIR}/speedtest
+	${INSTALL_DATA} ${WRKDIR}/speedtest/swfobject.js \
+		${STAGEDIR}${WWWDIR}/speedtest
+	${INSTALL_DATA} ${WRKDIR}/speedtest/upload.php \
+		${STAGEDIR}${WWWDIR}/speedtest
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

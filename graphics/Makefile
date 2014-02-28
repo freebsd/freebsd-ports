@@ -425,7 +425,6 @@
     SUBDIR += kdegraphics4-strigi-analyzer
     SUBDIR += kdegraphics4-svgpart
     SUBDIR += kdegraphics4-thumbnailers
-    SUBDIR += kgraphviewer
     SUBDIR += kiconedit
     SUBDIR += kipi-plugin-acquireimages
     SUBDIR += kipi-plugin-advancedslideshow

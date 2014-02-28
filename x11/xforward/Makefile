@@ -18,8 +18,6 @@ LICENSE_FILE=	${WRKSRC}/NOTICE
 MAKE_ARGS+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 USE_XORG=	x11 xt xaw
 USES=		motif
-MAN1=		xforward.1
-PLIST_FILES=	bin/xforward
+PLIST_FILES=	bin/xforward man/man1/xforward.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

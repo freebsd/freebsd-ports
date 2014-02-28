@@ -15,18 +15,15 @@ BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${PORTSDIR}/sysutils/prips:build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 ALL_TARGET=	ipsc
-PLIST_FILES=	bin/ipsc
-
-MAN8=	ipsc.8
+PLIST_FILES=	bin/ipsc man/man8/ipsc.8.gz
 
 PRIPS_WRKSRC!=	cd ${.CURDIR}/../prips && ${MAKE} -V WRKSRC
 
-NO_STAGE=	yes
 post-extract:
 	${LN} -s ${PRIPS_WRKSRC} ${WRKDIR}/prips
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ipsc ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/ipsc.8 ${MANPREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/ipsc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/ipsc.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

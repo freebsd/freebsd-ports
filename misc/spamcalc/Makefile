@@ -13,7 +13,8 @@ COMMENT=	Calculates "DNS-spam"-values for hostnames
 
 USES=		perl5
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	${REINPLACE_CMD} -e "s,sc.conf,${PREFIX}/etc/spamcalc.conf," \
 		${WRKSRC}/sc.pl
@@ -21,21 +22,21 @@ do-build:
 		${WRKSRC}/sc.conf
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/sc.pl ${PREFIX}/bin/spamcalc
-	${INSTALL_DATA} ${WRKSRC}/sc.conf ${PREFIX}/etc/spamcalc.conf
-	${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/sc.pl ${STAGEDIR}${PREFIX}/bin/spamcalc
+	${INSTALL_DATA} ${WRKSRC}/sc.conf ${STAGEDIR}${PREFIX}/etc/spamcalc.conf
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in words regexps domains
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}
 .endfor
-	${MKDIR} ${DATADIR}/data
-.for i in domains.blacklist domains.whitelist regexps.general regexps.nonspam spam.txt words.de words.it words.negative words.nl words.pl words.swear words.template words.uk
-	${INSTALL_DATA} ${WRKSRC}/data/${i} ${DATADIR}/data
+	${MKDIR} ${STAGEDIR}${DATADIR}/data
+.for i in domains.blacklist domains.whitelist regexps.general regexps.nonspam \
+	spam.txt words.de words.it words.negative words.nl words.pl \
+	words.swear words.template words.uk
+	${INSTALL_DATA} ${WRKSRC}/data/${i} ${STAGEDIR}${DATADIR}/data
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in LICENSE algorithms arguments feedback files introduction todo
-	${INSTALL_MAN} ${WRKSRC}/docs/${i} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	dejagnu
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	misc tcl tk
 MASTER_SITES=	GNU
 
@@ -11,8 +12,7 @@ COMMENT=	Automated program/system tester
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect
-RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
+LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect
 
 USES+=		gmake tcl
 GNU_CONFIGURE=	yes

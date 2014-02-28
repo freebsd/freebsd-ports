@@ -2,45 +2,68 @@
 # $FreeBSD$
 
 PORTNAME=	blat
-PORTVERSION=	34
+PORTVERSION=	35
 CATEGORIES=	biology
-MASTER_SITES=	http://www.soe.ucsc.edu/~kent/src/
+MASTER_SITES=	http://hgwdev.cse.ucsc.edu/~kent/src/ \
+		http://users.soe.ucsc.edu/~kent/src/
 DISTNAME=	${PORTNAME}Src${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast tool for local sequence similarity searches
 
-USES=		gmake
-EXTRACT_SUFX=	.zip
-MAKEFILE=	makefile
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+
+OPTIONS_DEFINE=	DOCS
+
 WRKSRC=		${WRKDIR}/${PORTNAME}Src
-MAKE_ENV+=	HOME="${WRKSRC}/${BINDIR}" MACHTYPE="${ARCH}"
+
+USES=		gmake
+USE_OPENSSL=	yes
+MAKEFILE=	makefile
+MAKE_ENV=	MACHTYPE="${ARCH}" HOME="${WRKSRC}/${BINDIR}" STRIP="${TRUE}"
+
+CPPFLAGS+=	$$(libpng-config --cflags)
+LDFLAGS+=	$$(libpng-config --ldflags)
 
 SUB_FILES=	pkg-message
+
+PORTDOCS=	README
+PLIST_FILES=	${EXECUTABLES:S,^,bin/,} \
+		lib/blat/webBlat/webBlat \
+		lib/blat/webBlat/install.txt
+PLIST_DIRS=	lib/blat/webBlat \
+		lib/blat
 
 EXECUTABLES=	blat faToNib faToTwoBit gfClient gfServer nibFrag \
 		pslPretty pslReps pslSort twoBitInfo twoBitToFa
 
-PLIST_FILES+=	${EXECUTABLES:S,^,bin/,}
-PORTDOCS=	README
-PORTDATA=	*
-
-OPTIONS_DEFINE=	DOCS
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/bin/${ARCH}
 	@${MKDIR} ${WRKSRC}/lib/${ARCH}
-	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS)=,\1 ?=,g;s,-Werror,,g' \
-		${WRKSRC}/inc/common.mk
+	@${FIND} ${WRKSRC} -name "makefile" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|$${DESTDIR}||g'
+	@${REINPLACE_CMD} -e \
+		's|cd |$$(MAKE) -C | ; \
+		 s| &&.*||' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e \
+		's|^CC=|CC?=| ; \
+		 s|^COPT=.*|COPT=$${CPPFLAGS}| ; \
+		 s|^L=.*|L=$${LDFLAGS}|' ${WRKSRC}/inc/common.mk
 
 do-install:
 .for exe in ${EXECUTABLES}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${ARCH}/${exe} ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC}/bin/${ARCH} && ${INSTALL_PROGRAM} ${exe} \
+		${STAGEDIR}${PREFIX}/bin)
 .endfor
-	@${MKDIR} ${STAGEDIR}${DATADIR}/webBlat
-	${INSTALL_PROGRAM} ${WRKSRC}/webBlat/webBlat ${STAGEDIR}${DATADIR}/webBlat
-	${INSTALL_DATA} ${WRKSRC}/webBlat/install.txt ${STAGEDIR}${DATADIR}/webBlat
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/blat/webBlat
+	(cd ${WRKSRC}/webBlat && ${INSTALL_PROGRAM} webBlat \
+		${STAGEDIR}${PREFIX}/lib/blat/webBlat)
+	(cd ${WRKSRC}/webBlat && ${INSTALL_DATA} install.txt \
+		${STAGEDIR}${PREFIX}/lib/blat/webBlat)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

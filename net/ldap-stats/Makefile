@@ -16,8 +16,8 @@ USES=		perl5
 
 PLIST_FILES=	bin/ldap-stats
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ldap-stats.pl ${PREFIX}/bin/ldap-stats
+	${INSTALL_SCRIPT} ${WRKSRC}/ldap-stats.pl \
+		${STAGEDIR}${PREFIX}/bin/ldap-stats
 
 .include <bsd.port.mk>

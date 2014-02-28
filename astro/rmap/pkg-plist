@@ -1,5 +1,0 @@
-bin/rmap
-man/man1/rmap.1.gz
-%%DATADIR%%/earth.rez
-%%DATADIR%%/rmap.colors
-@dirrm %%DATADIR%%

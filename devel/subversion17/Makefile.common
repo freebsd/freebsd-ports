@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.7.14
-PORTREVISION?=	1
+PORTVERSION=	1.7.16
+PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion17
@@ -128,4 +128,6 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e '1s|#\!/bin/b|#\!/usr/local/bin/b|' \
 		-e '1s|#\!/bin/env|#\!/usr/bin/env|' \
 		-e '1s|#\!/usr/bin/p|#\!/usr/local/bin/p|'
+# remove all .bak files to clean the stage
+	${FIND} ${WRKSRC} -name '*.bak' -delete
 

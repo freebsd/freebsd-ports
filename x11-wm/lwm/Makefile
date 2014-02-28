@@ -21,24 +21,13 @@ MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	`pkg-config --cflags sm x11 xext ice` -DSHAPE
 LDFLAGS+=	`pkg-config --libs sm x11 xext ice`
 
-MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
-PLIST_FILES=	bin/${PORTNAME}
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-post-patch:
-	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTSNAME}.1.gz
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTNAME}.1 ${MANPREFIX}/man/man1)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 --- configure.orig
 +++ configure
-@@ -2014,12 +2014,10 @@
+@@ -2125,12 +2125,10 @@
  #*---------------------------------------------------------------------*/
  # find out the C library for mpg123
  if [ "$mpg123 " = " " ]; then
@@ -16,7 +16,7 @@
  fi
  
  #*---------------------------------------------------------------------*/
-@@ -2027,7 +2025,10 @@
+@@ -2138,7 +2136,10 @@
  #*---------------------------------------------------------------------*/
  # find out the C library for flac
  if [ "$flac " = " " ]; then
@@ -28,16 +28,16 @@
  fi
  
  #*---------------------------------------------------------------------*/
-@@ -2040,7 +2041,7 @@
- #*---------------------------------------------------------------------*/
+@@ -2152,7 +2153,7 @@
  if [ "$regexp " = " " ]; then
    # find out the C library for pcre
--  pcrelibs=`$autoconf pcre --cflags="$cflags"` || exit 1;
-+  pcrelibs=`$autoconf pcre --cflags="$cflags" --pcrelib="$pcrelib"` || exit 1;
- 
-   if [ "$pcrelibs " != "no " ]; then
-     featureflags="-srfi enable-pcre $featureflags";
-@@ -2226,7 +2227,7 @@
+   if [ "$enable_configure_pcre " = "yes " ]; then
+-    pcrelibs=`$autoconf pcre --cflags="$cflags"` || exit 1;
++    pcrelibs=`$autoconf pcre --cflags="$cflags" --pcrelib="$pcrelib"` || exit 1;
+   else
+     pcrelibs=no
+   fi
+@@ -2349,7 +2350,7 @@
      featureflags="-srfi enable-gmp $featureflags";
      extralibs="-lbigloogmp-$release $extralibs"
    elif [ "$gmpversion " = " " ]; then
@@ -46,7 +46,7 @@
  
      if [ $gmpversion = "no" ]; then
        havegmp=0;
-@@ -2359,8 +2360,8 @@
+@@ -2506,8 +2507,8 @@
      fi
    fi
  
@@ -57,7 +57,7 @@
  
    long_sign_bit=`$autoconf signbit --type=long --alignment="$alignment"` || exit 1
    elong_sign_bit=`$autoconf signbit --type=long --alignment=0` || exit 1
-@@ -3277,7 +3278,7 @@
+@@ -3454,7 +3455,7 @@
    fi
  
    # MPG123
@@ -66,7 +66,7 @@
      echo "MPG123=$mpg123" >> $makefile_cfg
      echo "MPG123LIBS=$mpg123libs" >> $makefile_cfg
      echo "MPG123CFLAGS=$mpg123cflags" >> $makefile_cfg
-@@ -3302,13 +3303,14 @@
+@@ -3479,13 +3480,14 @@
      apis=$napis;
      echo "MPG123=" >> $makefile_cfg
      echo "MPG123LIBS=" >> $makefile_cfg

@@ -3,7 +3,7 @@
 
 PORTNAME=	viruskiller
 PORTVERSION=	1.03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	FRUGALWARE/games-extra/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -13,40 +13,29 @@ COMMENT=	Arcade game that relies on quick reflexes
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	DOCS
-
-USE_SDL=	mixer image ttf net
-USES=		gmake
-
-BROKEN=		Does not build
-DEPRECATED=	Broken for more then 6 month
-EXPIRATION_DATE=	2014-02-27
-
-INSTALLS_ICONS=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USES=		gmake
+USE_SDL=	mixer image ttf net
 MAKEFILE=	makefile
+INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=	Does not build with new libz
-.endif
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	# Remove non-free restricted files:
-	${RM} -f ${WRKSRC}/music/* ${WRKSRC}/sound/*
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e "s|^.*install.*DOCS.*||g" \
-		-e "s|^.*mkdir.*DOCDIR.*||g" \
-		${WRKSRC}/makefile
-.endif
-	@${REINPLACE_CMD} -e "s|^PREFIX.*|PREFIX=${PREFIX}|g" \
-		-e "s|^BINDIR.*|BINDIR=${PREFIX}/bin/|g" \
-		-e "s|^DATADIR.*|DATADIR=${DATADIR}/|g" \
-		-e "s|^DOCDIR.*|DOCDIR=${DOCSDIR}|g" ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e \
+		'/^DOCS/s|=.*|= doc/README doc/*.*| ; \
+		 /^PREFIX/s|=.*|= ${PREFIX}| ; \
+		 /^BINDIR/s|=.*|= $$(DESTDIR)$$(PREFIX)/bin/| ; \
+		 /^DATADIR/s|=.*|= $$(DESTDIR)$$(PREFIX)/${DATADIR_REL}/| ; \
+		 /^DOCDIR/s|=.*|= $$(DESTDIR)$$(PREFIX)/${DOCSDIR_REL}/| ; \
+		 /^ICONDIR/s|=.*|= $$(DESTDIR)$$(PREFIX)/share/icons/hicolor/| ; \
+		 /^DESKTOPDIR/s|=.*|= $$(DESTDIR)$$(PREFIX)/share/applications/| ; \
+		 s|install .* 755|$${BSD_INSTALL_PROGRAM}| ; \
+		 s|install .* 644|$${BSD_INSTALL_DATA}| ; \
+		 /ICONS/s|cp|$${BSD_INSTALL_DATA}|' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e \
+		's|.png|| ; \
+		 s|/usr/games/||' ${WRKSRC}/icons/viruskiller.desktop
 
 .include <bsd.port.mk>

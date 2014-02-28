@@ -9,14 +9,16 @@ MASTER_SITES=	SF/${PORTNAME}/Bibelot/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Formats and converts text documents into compressed PalmDoc .pdb files
 
-PLIST_FILES=	bin/bibelot
-USES=		perl5
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		perl5 shebangfix
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PLIST_FILES=	bin/bibelot
+SHEBANG_FILES=	bibelot.pl
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

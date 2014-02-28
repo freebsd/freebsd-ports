@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	molden
-PORTVERSION=	5.0.6
-PORTREVISION=	1
+PORTVERSION=	5.0.7
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.ru.nl/pub/molgraph/molden/
@@ -14,25 +13,25 @@ COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
 RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable.
 
-OPTIONS_DEFINE=	DATA DOCS
-OPTIONS_DEFAULT=DATA
-
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 
 USES=		fortran gmake
-USE_XORG=	x11 xproto
+USE_XORG=	x11
 USE_GL=		glu
 MAKEFILE=	makefile
 MAKE_JOBS_UNSAFE=yes
 
 CFLAGS+=	-D${OPSYS:U} -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0 \
-		-I/usr/local/include -Wno-return-type
+		-I${LOCALBASE}/include -Wno-return-type
 
 PORTDOCS=	*
 PORTDATA=	*
 PLIST_FILES=	bin/ambfor bin/gmolden bin/molden bin/surf
 
-.include <bsd.port.options.mk>
+PORTSCOUT=	limit:^5\.0\.
+
+OPTIONS_DEFINE=		DATA DOCS
+OPTIONS_DEFAULT=	DATA
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -50,19 +49,17 @@ post-configure:
 	@${ECHO_MSG} "********************"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/molden ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/gmolden ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ambfor/ambfor ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/surf/surf ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDATA}
-	${MKDIR} ${STAGEDIR}${DATADIR}/test
-	${INSTALL_DATA} ${WRKSRC}/test/* ${STAGEDIR}${DATADIR}/test
-	${MKDIR} ${STAGEDIR}${DATADIR}/utils
-	${INSTALL_DATA} ${WRKSRC}/utils/* ${STAGEDIR}${DATADIR}/utils
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
-.endif
+.for i in molden gmolden
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${i} ${STAGEDIR}${PREFIX}/bin)
+.endfor
+.for i in ambfor surf
+	(cd ${WRKSRC}/${i} && ${INSTALL_PROGRAM} ${i} ${STAGEDIR}/${PREFIX}/bin)
+.endfor
+	@${MKDIR} ${STAGEDIR}${DATADIR}/test
+	(cd ${WRKSRC}/test && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}/test)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/utils
+	(cd ${WRKSRC}/utils &&  ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}/utils)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

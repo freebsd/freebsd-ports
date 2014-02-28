@@ -22,9 +22,10 @@ OPTIONS_DEFAULT=	RSYNC SVN
 RSYNC_DESC=	rsync support
 GIT_DESC=	git support
 HG_DESC=	mercurial support
-MAN5=		portshaker.conf.5 \
-		portshaker.d.5
-MAN8=		portshaker.8
+RSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
+GIT_RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+HG_RUN_DEPENDS=		hg:${PORTSDIR}/devel/mercurial
 .else
 OPTIONS_DEFINE=	BSDSHARP ENLIGHTENMENT GECKO HASKELL MARCUSCOM TEXLIVE XORG
 OPTIONS_DEFAULT=	BSDSHARP
@@ -35,50 +36,13 @@ HASKELL_DESC=		Enable Haskell ports
 MARCUSCOM_DESC=		Enable GNOME development ports
 TEXLIVE_DESC=		Enable TeXLive ports (Experimental)
 XORG_DESC=		Enable Xorg development ports
-.endif
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORTNAME} == "portshaker"
-
-. if ${PORT_OPTIONS:MRSYNC}
-RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
-. endif
-. if ${PORT_OPTIONS:MSVN}
-RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-. endif
-. if ${PORT_OPTIONS:MGIT}
-RUN_DEPENDS+=	git:${PORTSDIR}/devel/git
-. endif
-. if ${PORT_OPTIONS:MHG}
-RUN_DEPENDS+=	hg:${PORTSDIR}/devel/mercurial
-. endif
-
-.else
-
-. if ${PORT_OPTIONS:MBSDSHARP}
-MAKE_ENV+=	WITH_BSDSHARP=1
-. endif
-. if ${PORT_OPTIONS:MENLIGHTENMENT}
-MAKE_ENV+=	WITH_ENLIGHTENMENT=1
-. endif
-. if ${PORT_OPTIONS:MGECKO}
-MAKE_ENV+=	WITH_GECKO=1
-. endif
-. if ${PORT_OPTIONS:MHASKELL}
-MAKE_ENV+=	WITH_HASKELL=1
-. endif
-. if ${PORT_OPTIONS:MMARCUSCOM}
-MAKE_ENV+=	WITH_MARCUSCOM=1
-. endif
-. if ${PORT_OPTIONS:MTEXLIVE}
-MAKE_ENV+=	WITH_TEXLIVE=1
-. endif
-. if ${PORT_OPTIONS:MXORG}
-MAKE_ENV+=	WITH_XORG=1
-. endif
-
+BSDSHARP_MAKE_ENV=	WITH_BSDSHARP=1
+ENLIGHTENMENT_MAKE_ENV=	WITH_ENLIGHTENMENT=1
+GECKO_MAKE_ENV=		WITH_GECKO=1
+HASKELL_MAKE_ENV=	WITH_HASKELL=1
+MARCUSCOM_MAKE_ENV=	WITH_MARCUSCOM=1
+TEXLIVE_MAKE_ENV=	WITH_TEXLIVE=1
+XORG_MAKE_ENV=		WITH_XORG=1
 .endif
 
 .include <bsd.port.mk>

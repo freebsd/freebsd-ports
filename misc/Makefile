@@ -472,7 +472,6 @@
     SUBDIR += wmweather+
     SUBDIR += wmwork
     SUBDIR += wotsap
-    SUBDIR += xbiso
     SUBDIR += xd
     SUBDIR += xdelta
     SUBDIR += xdelta3

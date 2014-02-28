@@ -34,26 +34,26 @@
  
  ######################################################################
  
-@@ -104,7 +105,8 @@
- READLINE_LIB = $(READLINE_DIR)/libreadline.a
+@@ -101,7 +102,7 @@
+ 
+ READLINE_DIR = readline
+ C_PACKAGES_DIR = c_packages
+-READLINE_LIB = $(READLINE_DIR)/libreadline.a
++#READLINE_LIB = $(READLINE_DIR)/libreadline.a
  C_PACKAGES_LIB = $(C_PACKAGES_DIR)/libc_packs.a
  
--LIBS = $(READLINE_LIB) $(C_PACKAGES_LIB)
-+#LIBS = $(READLINE_LIB) $(C_PACKAGES_LIB)
-+LIBS = $(C_PACKAGES_LIB) -lreadline -lcompat
- 
- INCLUDEDIRS = -I$(C_PACKAGES_DIR)/safe_malloc \
- 	-I$(C_PACKAGES_DIR)/generic_list \
-@@ -123,7 +125,7 @@
+ LIBS = $(READLINE_LIB) $(C_PACKAGES_LIB)
+@@ -123,8 +124,7 @@
  
  pmf: $(OBJECTS) $(LIBS)
  	rm -f compile_time.c
 -	$(CC) -o pmf $(CFLAGS) $(OBJECTS) $(LIBS) -ltermcap -lresolv
-+	$(CC) -o pmf $(CFLAGS) $(OBJECTS) $(LIBS) -ltermcap
- 	strip pmf
+-	strip pmf
++	$(CC) -o pmf $(CFLAGS) $(OBJECTS) $(LIBS) -ltermcap -lreadline -lcompat
  	rm -f compile_time.o
  
-@@ -133,10 +135,10 @@
+ compile_time.c:
+@@ -133,10 +133,10 @@
  ######################################################################
  
  $(READLINE_LIB):

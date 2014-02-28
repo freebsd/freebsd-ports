@@ -30,5 +30,4 @@ INSTALL_DIRS=	src/pl/tcl
 SLAVE_ONLY=	yes
 COMPONENT=	-pltcl
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

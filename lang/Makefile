@@ -66,7 +66,6 @@
     SUBDIR += erlang-runtime16
     SUBDIR += execline
     SUBDIR += expect
-    SUBDIR += expect-devel
     SUBDIR += ezm3
     SUBDIR += f2c
     SUBDIR += f77
@@ -201,7 +200,6 @@
     SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += oorexx
-    SUBDIR += opa
     SUBDIR += open-cobol
     SUBDIR += opendylan
     SUBDIR += otcl

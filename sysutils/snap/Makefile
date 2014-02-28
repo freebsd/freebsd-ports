@@ -11,18 +11,15 @@ MAINTAINER=	wchunhao@cs.nctu.edu.tw
 COMMENT=	Tools for periodic and manual management of UFS2 snapshots
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 
-MAN8=		snap.8
+PLIST_FILES=	sbin/snap etc/snap.conf man/man8/snap.8.gz
+SHEBANG_FILES=	snap
 
-PLIST_FILES=	sbin/snap \
-		etc/snap.conf
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/snap ${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/snap.8 ${PREFIX}/man/man8/
-	${INSTALL_DATA} ${WRKSRC}/snap.conf ${PREFIX}/etc/
+	${INSTALL_SCRIPT} ${WRKSRC}/snap ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/snap.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_DATA} ${WRKSRC}/snap.conf ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

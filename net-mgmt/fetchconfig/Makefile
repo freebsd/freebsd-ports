@@ -26,22 +26,20 @@ MODULES=	model/Abstract.pm model/CiscoCAT.pm model/CiscoIOS.pm \
 		model/CiscoPIX.pm model/JunOS.pm model/TellabsMSR.pm
 PORTDOCS=	CHANGES README device_table.example
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '1s|.*|#!${PERL} -w|' ${WRKSRC}/${PORTNAME}.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/model
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/model
 .for f in ${MODULES}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${f} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/${f}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${f} \
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/${f}
 .endfor
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
  
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ix01.html
@@ -7,6 +8,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-corealumni.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-derived.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-develalumni.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-develinmemoriam.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-portmgralumni.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/staff-committers.html
@@ -285,7 +288,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-portsnap.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/userppp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-groups.html

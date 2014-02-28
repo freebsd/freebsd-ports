@@ -34,7 +34,6 @@ CFLAGS+=	-DLATIN1=1
 
 .if ${PORT_OPTIONS:MWORDVIEW}
 USES+=			tk
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-wish=${WISH}
 .else
 CONFIGURE_ARGS+=	--disable-wordview

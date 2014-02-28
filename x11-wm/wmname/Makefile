@@ -13,5 +13,4 @@ USE_XORG=	x11 xproto
 
 PLIST_FILES=	bin/wmname
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

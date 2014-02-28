@@ -2,26 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	asfsm
-PORTVERSION=	1.0.p15
+DISTVERSION=	1.0pre15
 PORTREVISION=	2
 CATEGORIES=	sysutils afterstep
-MASTER_SITES=	http://www.tigr.net/afterstep/download/asfsm/
-DISTNAME=	asfsm-1.0pre15
+MASTER_SITES=	AFTERSTEP/apps/asfsm/ \
+		http://tigr.net/afterstep/download/asfsm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File-system monitor for the AfterStep window manager
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
+LICENSE=	GPLv2
 
-USE_XORG=	xpm x11 sm ice xext xaw xt
+USE_XORG=	ice sm x11 xaw xext xpm xt
 GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+
+PLIST_FILES=	bin/asfsm man/man1/asfsm.1.gz
+
+post-build:
+	@${LN} -sf asfsm.man ${WRKSRC}/asfsm.1
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/asfsm.man ${STAGEDIR}${PREFIX}/man/man1/asfsm.1
-	${INSTALL_PROGRAM} ${WRKSRC}/asfsm ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} asfsm \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} asfsm.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>

@@ -13,12 +13,11 @@ NO_BUILD=	yes
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/sprinkle-dist
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/sprinkle.py ${PREFIX}/sbin
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/*.* ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/sprinkle.py ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -12,18 +12,16 @@ COMMENT=	ISP programmer tool for flashing NXP & Analog Devices ARM7 CPUs
 
 LICENSE=	LGPL3 # (or later)
 
+USES=		gmake
 NO_WRKSUBDIR=	yes
-
-USE_GMAKE=	yes
 
 PLIST_FILES=	bin/lpc21isp
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CC .*=|CC ?=|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

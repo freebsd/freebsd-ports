@@ -3,16 +3,15 @@
 
 PORTNAME=	rancid
 PORTVERSION=	2.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Really Awesome New Cisco confIg Differ
 
-BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect-devel
-RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect-devel \
-		p5-LockFile-Simple>=0:${PORTSDIR}/devel/p5-LockFile-Simple
+LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect
+RUN_DEPENDS=	p5-LockFile-Simple>=0:${PORTSDIR}/devel/p5-LockFile-Simple
 
 USES=		gmake perl5 shebangfix
 perl_OLD_CMD=	@PERLV_PATH@

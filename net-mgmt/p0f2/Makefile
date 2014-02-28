@@ -14,18 +14,13 @@ COMMENT=	Passive OS fingerprinting tool
 
 CONFLICTS=	p0f-3.*
 
+USES=		gmake
 USE_RC_SUBR=	p0f2
-USE_GMAKE=	yes
 ALL_TARGET=	all p0fq tools
 PORTDOCS=	COPYING CREDITS ChangeLog KNOWN_BUGS README TODO win-memleak.txt
-MAN1=		p0f.1
 WRKSRC=		${WRKDIR}/p0f
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 .for f in config.h doc/README
@@ -34,20 +29,17 @@ post-patch:
 
 do-install:
 .for ii in p0f test/p0fq test/sendack test/sendack2 test/sendsyn
-	${INSTALL_PROGRAM} ${WRKSRC}/${ii} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${ii} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/p0frep ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/etc/p0f
+	${INSTALL_SCRIPT} ${WRKSRC}/p0frep ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/p0f
 .for ii in . a. o. r.
-	${INSTALL_DATA} ${WRKSRC}/p0f${ii}fp ${PREFIX}/etc/p0f
+	${INSTALL_DATA} ${WRKSRC}/p0f${ii}fp ${STAGEDIR}${PREFIX}/etc/p0f
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/p0f.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ii in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${ii} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${ii} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

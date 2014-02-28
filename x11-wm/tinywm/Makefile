@@ -11,19 +11,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Ridiculously tiny window manager
 
+OPTIONS_DEFINE=	DOCS
+
 PLIST_FILES=	bin/tinywm
 USE_XORG=	x11
 PORTDOCS=	README
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC)|CC) ${CFLAGS}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tinywm ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/tinywm ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

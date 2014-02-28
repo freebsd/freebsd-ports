@@ -14,7 +14,6 @@ SUB_FILES=	pkg-message
 
 STRCMD=		/usr/games/strfile
 
-NO_STAGE=	yes
 pre-build:
 .if !exists(${STRCMD})
 	@${ECHO_MSG} "Please install the games distribution"
@@ -25,8 +24,8 @@ do-build:
 	@cd ${WRKSRC} && ${STRCMD} zarathoustra
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/zarathoustra* ${PREFIX}/share/games/fortune
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/zarathoustra* ${STAGEDIR}${PREFIX}/share/games/fortune
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

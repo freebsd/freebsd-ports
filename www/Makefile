@@ -588,7 +588,6 @@
     SUBDIR += openacs
     SUBDIR += openacs-dotlrn
     SUBDIR += opencart
-    SUBDIR += openvrml
     SUBDIR += openx
     SUBDIR += openxmldir
     SUBDIR += opera
@@ -1971,7 +1970,6 @@
     SUBDIR += trac-accountmanager
     SUBDIR += trac-addcomment
     SUBDIR += trac-advancedticketworkflow
-    SUBDIR += trac-announcer
     SUBDIR += trac-attachmentpolicy
     SUBDIR += trac-autocomplete
     SUBDIR += trac-batchmodify
@@ -1994,7 +1992,6 @@
     SUBDIR += trac-fullblognotification
     SUBDIR += trac-gantt
     SUBDIR += trac-graphviz
-    SUBDIR += trac-hierwiki
     SUBDIR += trac-iniadmin
     SUBDIR += trac-keywords
     SUBDIR += trac-keywordsecretticket
@@ -2012,7 +2009,6 @@
     SUBDIR += trac-privatetickets
     SUBDIR += trac-pydotorgtheme
     SUBDIR += trac-remind
-    SUBDIR += trac-revtree
     SUBDIR += trac-robotstxt
     SUBDIR += trac-scrumburndown
     SUBDIR += trac-simpleticket

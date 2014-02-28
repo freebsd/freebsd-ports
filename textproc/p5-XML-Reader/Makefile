@@ -13,28 +13,18 @@ COMMENT=	Reading XML and providing path information based on a pull-parser
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-XML-Parser>=1:${PORTSDIR}/textproc/p5-XML-Parser
+TEST_DEPENDS=	p5-XML-Parser>=1:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-XML-Parsepp>=0.04:${PORTSDIR}/textproc/p5-XML-Parsepp
 
 OPTIONS_DEFINE=	PP
-PP_DESC=	Use XML::Parsepp (Perl 5.14+ required)
+PP_DESC=	Use XML::Parsepp
 
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.options.mk>
+PP_BUILD_DEPENDS=	p5-XML-Parsepp>=0.04:${PORTSDIR}/textproc/p5-XML-Parsepp
+PP_BUILD_DEPENDS_OFF=	p5-XML-Parser>=1:${PORTSDIR}/textproc/p5-XML-Parser
+PP_RUN_DEPENDS=		p5-XML-Parsepp>=0.04:${PORTSDIR}/textproc/p5-XML-Parsepp
+PP_RUN_DEPENDS_OFF=	p5-XML-Parser>=1:${PORTSDIR}/textproc/p5-XML-Parser
 
-.if ${PORT_OPTIONS:MPP}
-BUILD_DEPENDS+=	p5-XML-Parsepp>=0.04:${PORTSDIR}/textproc/p5-XML-Parsepp
-RUN_DEPENDS+=	p5-XML-Parsepp>=0.04:${PORTSDIR}/textproc/p5-XML-Parsepp
-.else
-BUILD_DEPENDS+=	p5-XML-Parser>=1:${PORTSDIR}/textproc/p5-XML-Parser
-RUN_DEPENDS+=	p5-XML-Parser>=1:${PORTSDIR}/textproc/p5-XML-Parser
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 501400
-TEST_DEPENDS+=	p5-XML-Parsepp>=0.04:${PORTSDIR}/textproc/p5-XML-Parsepp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

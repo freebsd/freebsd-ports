@@ -52,7 +52,7 @@
  
          if build.platform_is_windows and build.static_dependencies:
              build.env.Append(CPPDEFINES = 'TAGLIB_STATIC')
-@@ -782,10 +783,8 @@
+@@ -782,14 +783,9 @@
          if build.toolchain_is_gnu:
              # Default GNU Options
              # TODO(XXX) always generate debugging info?
@@ -61,9 +61,13 @@
              build.env.Append(CCFLAGS = '-Wextra')
 -            build.env.Append(CCFLAGS = '-g')
  
-             # Check that g++ is present (yeah, SCONS is a bit dumb here)
-             if os.system("which g++ > /dev/null"): #Checks for non-zero return code
-@@ -851,16 +850,19 @@
+-            # Check that g++ is present (yeah, SCONS is a bit dumb here)
+-            if os.system("which g++ > /dev/null"): #Checks for non-zero return code
+-                raise Exception("Did not find g++.")
+         elif build.toolchain_is_msvs:
+             # Validate the specified winlib directory exists
+             mixxx_lib_path = SCons.ARGUMENTS.get('winlib', '..\\..\\..\\mixxx-win32lib-msvc100-release')
+@@ -851,16 +847,19 @@
  
          elif build.platform_is_bsd:
              build.env.Append(CPPDEFINES='__BSD__')
@@ -91,7 +95,7 @@
  
          # Define for things that would like to special case UNIX (Linux or BSD)
          if build.platform_is_bsd or build.platform_is_linux:
-@@ -897,14 +899,14 @@
+@@ -897,14 +896,14 @@
          # Say where to find resources on Unix. TODO(XXX) replace this with a
          # RESOURCE_PATH that covers Win and OSX too:
          if build.platform_is_linux or build.platform_is_bsd:

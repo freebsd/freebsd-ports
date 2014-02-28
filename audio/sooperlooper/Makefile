@@ -2,40 +2,60 @@
 # $FreeBSD$
 
 PORTNAME=	sooperlooper
-PORTVERSION=	1.6.18
-PORTREVISION=	2
+PORTVERSION=	1.7.0
 CATEGORIES=	audio
 MASTER_SITES=	http://essej.net/sooperlooper/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Vamp audio analysis plugin SDK
+COMMENT=	Live audio looping sampler
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libjack.so:${PORTSDIR}/audio/jack \
+BUILD_DEPENDS=	ladspa>0:${PORTSDIR}/audio/ladspa
+LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		liblo.so:${PORTSDIR}/audio/liblo \
-		librubberband.so:${PORTSDIR}/audio/rubberband \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12 \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libvamp-sdk.so:${PORTSDIR}/audio/vamp-plugin-sdk
-RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+		librubberband.so:${PORTSDIR}/audio/rubberband \
+		libvamp-sdk.so:${PORTSDIR}/audio/vamp-plugin-sdk \
+		libfftw3.so:${PORTSDIR}/math/fftw3
+RUN_DEPENDS=	ladspa>0:${PORTSDIR}/audio/ladspa
 
+USES=		compiler:c++0x gmake ncurses pkgconfig
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-NO_STAGE=	yes
-USE_WX=		2.6+
-WX_UNICODE=	yes
-CONFIGURE_ARGS=	-with-wxconfig-path=${WX_CONFIG}
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_GNOME=	libxml2
+OPTIONS_DEFINE=		ALSA WXGTK
+OPTIONS_DEFAULT=	WXGTK
+OPTIONS_SUB=		yes
+
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CONFIGURE_ENV_OFF=	ac_cv_header_alsa_asoundlib_h=no
+WXGTK_USE=		WX=2.6+
+WXGTK_CONFIGURE_ON=	--with-wxconfig-path=${WX_CONFIG}
+WXGTK_CONFIGURE_OFF=	--without-gui
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MWXGTK}
+WX_UNICODE=	yes
+DESKTOP_ENTRIES="SooperLooper" "" "${DATADIR}/sl_logo.xpm" "slgui" \
+		"AudioVideo;Audio;Player;GTK;" ""
+.endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|$$OPT_FLAGS||'
+
+post-install:
+.if ${PORT_OPTIONS:MWXGTK}
+	(cd ${WRKSRC}/src/gui/pixmaps && ${INSTALL_DATA} sl_logo.xpm \
+		${STAGEDIR}${DATADIR})
+.endif
 
 .include <bsd.port.mk>

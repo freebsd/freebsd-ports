@@ -16,28 +16,23 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/XnView-${PORTVERSION}-x86-unknown-FreeBSD5.x-static
 INSTALL_SLIB=	yes
 
-MAN1=		xnview.1 nview.1
-MLINKS=		nview.1 nv.1 \
-		nview.1	nconvert.1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 DISTFILES+=	NConvert-x86-unknown-FreeBSD6.x.tgz
 WRKSRC_NC=	${WRKDIR}/NConvert
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/xnview ${PREFIX}/bin/xnview
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/nview ${PREFIX}/bin/nv
-	${INSTALL_PROGRAM} ${WRKSRC_NC}/nconvert ${PREFIX}/bin/nconvert
-	${INSTALL_DATA} ${WRKSRC}/app-defaults/XnView.ad ${PREFIX}/lib/X11/app-defaults/XnView
-	cd ${WRKSRC}/man && ${INSTALL_MAN} xnview.1 nview.1 ${PREFIX}/man/man1
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/xnview ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/nview ${STAGEDIR}${PREFIX}/bin/nv
+	${INSTALL_PROGRAM} ${WRKSRC_NC}/nconvert ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/app-defaults/XnView.ad \
+		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XnView
+	cd ${WRKSRC}/man && ${INSTALL_MAN} xnview.1 nview.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC_NC} && \
-		${INSTALL_DATA} Formats.txt ReadMe.txt Usage.txt WhatsNew.txt ${DOCSDIR}
-.endif
+		${INSTALL_DATA} Formats.txt ReadMe.txt Usage.txt WhatsNew.txt \
+		${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

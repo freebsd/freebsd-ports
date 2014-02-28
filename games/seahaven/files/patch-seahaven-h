@@ -1,0 +1,12 @@
+diff -ru work/seahaven-1.60/seahaven.h work.new/seahaven-1.60/seahaven.h
+--- seahaven.h	2011-07-10 18:42:44.000000000 -0600
++++ seahaven.h	2014-02-25 15:07:22.000000000 -0700
+@@ -117,7 +117,7 @@
+     const char *message;
+ };
+ 
+-typedef struct ScoreRec *Score;
++typedef class ScoreRec *Score;
+ 
+ class UndoListRec {
+   public:

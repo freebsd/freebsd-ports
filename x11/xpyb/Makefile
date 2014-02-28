@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Python bindings to access X Window System protocol via libxcb
 
+OPTIONS_DEFINE=	DOCS
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto \
 		xcb-proto>=1.7.1:${PORTSDIR}/x11/xcb-proto
 
@@ -24,13 +26,4 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if defined(NOPORTDOCS)
-post-patch:
-	@${REINPLACE_CMD} -e 's/^\(install-data-am:.*\)install-dist_docDATA\(.*\)$$/\1\2/' \
-		-e 's/^\(SUBDIRS =.*\)doc\(.*\)$$/\1\2/' ${WRKSRC}/Makefile.in
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -4,20 +4,19 @@
 PORTNAME=	sunclock
 PORTVERSION=	3.57
 CATEGORIES=	astro x11-clocks
-MASTER_SITES=	http://www.arvernes.com/files/jpd/ \
+MASTER_SITES=	DEBIAN
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_XORG=	xpm
 
 CPPFLAGS+=	$$(libpng-config --I_opts) \
@@ -26,8 +25,6 @@ CPPFLAGS+=	$$(libpng-config --I_opts) \
 		-DDOCDIR=\\\"${PREFIX}/lib/X11/doc\\\"
 LDFLAGS+=	$$(libpng-config --L_opts) \
 		-L${LOCALBASE}/lib
-
-MAN1=		sunclock.1
 
 post-patch:
 	@cd ${WRKSRC} && ${SED} -e \
@@ -52,19 +49,24 @@ post-patch:
 		's|gzFile \* fd;|gzFile fd;|' ${WRKSRC}/readvmf.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sunclock ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sunclock.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} sunclock \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} sunclock.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/Sunclockrc ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} Sunclockrc \
+		${STAGEDIR}${DATADIR})
 	@${MKDIR} ${STAGEDIR}${DATADIR}/earthmaps/vmf
-	${INSTALL_DATA} ${WRKSRC}/vmf/*.vmf ${STAGEDIR}${DATADIR}/earthmaps/vmf
+	(cd ${WRKSRC}/vmf && ${INSTALL_DATA} *.vmf \
+		${STAGEDIR}${DATADIR}/earthmaps/vmf)
 	@${GZIP_CMD} ${STAGEDIR}${DATADIR}/earthmaps/vmf/*.vmf
 	@${MKDIR} ${STAGEDIR}${DATADIR}/i18n
-	${INSTALL_DATA} ${WRKSRC}/i18n/Sunclock.?? ${STAGEDIR}${DATADIR}/i18n
-	${INSTALL_PROGRAM} ${WRKSRC}/editkit/emx ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC}/i18n && ${INSTALL_DATA} Sunclock.?? \
+		${STAGEDIR}${DATADIR}/i18n)
+	(cd ${WRKSRC}/editkit && ${INSTALL_PROGRAM} emx \
+		${STAGEDIR}${PREFIX}/bin)
 	@${MKDIR} ${STAGEDIR}${DATADIR}/editkit
-	${INSTALL_DATA} ${WRKSRC}/editkit/MANUAL.emacs ${STAGEDIR}${DATADIR}/editkit
-	${INSTALL_DATA} ${WRKSRC}/editkit/README ${STAGEDIR}${DATADIR}/editkit
-	${INSTALL_DATA} ${WRKSRC}/editkit/emxrc ${STAGEDIR}${DATADIR}/editkit
+	(cd ${WRKSRC}/editkit && ${INSTALL_DATA} MANUAL.emacs README emxrc \
+		${STAGEDIR}${DATADIR}/editkit)
 
 .include <bsd.port.mk>

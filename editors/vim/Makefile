@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	VIM:source \
 		${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|}:patch \
@@ -16,7 +16,7 @@ PATCH_SITES=	${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|} \
 		LOCAL/sunpoet/${PORTNAME}
 
 MAINTAINER?=	sunpoet@FreeBSD.org
-COMMENT?=	Vi "workalike", with many additional features
+COMMENT?=	Improved version of the vi editor
 
 OPTIONS_DEFINE=	CSCOPE EXUBERANT_CTAGS LUA NLS PERL PYTHON RUBY TCL XTERM_SAVE
 OPTIONS_SINGLE=	UI
@@ -125,10 +125,6 @@ PLIST_SUB+=	GUI=""
 CTAGS_CMD=	exctags -R .
 .else
 CTAGS_CMD=	${FIND} . -type f \\| ${XARGS} ctags
-.endif
-
-.if ${PORT_OPTIONS:MGNOME}
-PKGNAMESUFFIX+=	-gnome2
 .endif
 
 .include <bsd.port.pre.mk>
