@@ -1,5 +1,5 @@
 #!/bin/sh
-# Created by: Created by: KalleDK <plexmaintainer@k-moeller.dk>
+# Created by: KalleDK <plexmaintainer@k-moeller.dk>
 #
 # $FreeBSD$
 #
@@ -48,7 +48,6 @@ plex_precmd()
 	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=${plexmediaserver_maxplugins}
 	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${plexmediaserver_support_path}
 	export PLEX_MEDIA_SERVER_PIDFILE=${pidfile}
-	if ${plexmediaserver_tmp}; then export PLEX_MEDIA_SERVER_TMPDIR=${plexmediaserver_tmp}; fi
 	export PATH="${SCRIPTPATH}/Resources/Python/bin:${PATH}"
 	export LC_ALL="C"
 	export LANG="C"
@@ -60,6 +59,11 @@ plex_precmd()
 	
 	if [ ! -d "${plexmediaserver_support_path}/Plex Media Server" ]; then
 		install -d -g ${plexmediaserver_group} -o ${plexmediaserver_user} "${plexmediaserver_support_path}/Plex Media Server";
+	fi
+	
+	if [ ${plexmediaserver_tmp} ]; then 
+		export TMPDIR=${plexmediaserver_tmp};
+		install -d -g ${plexmediaserver_group} -o ${plexmediaserver_user} "${plexmediaserver_tmp}";
 	fi
 }
 
