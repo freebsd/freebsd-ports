@@ -1,4 +1,5 @@
 bin/ascd
+man/man1/ascd.1.gz
 share/ascd/themes-manual.ps.gz
 share/ascd/Default/back.xpm
 share/ascd/Default/back_bar.xpm
