@@ -22,11 +22,10 @@ PLIST_SUB+=	D${_i}p=${WWWDIR_REL}/fonts/cm${_i}10/plain
 PLIST_SUB+=	Dcma=${WWWDIR_REL}/fonts/cm-fonts/alpha
 PLIST_SUB+=	Dcmp=${WWWDIR_REL}/fonts/cm-fonts/plain
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL} -d ${WWWDIR}/fonts
-	@${CP} -Rp ${WRKSRC}/fonts/ ${WWWDIR}/fonts/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WWWDIR}/fonts/
-	@${CHMOD} -R go-w ${WWWDIR}/fonts/
+	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/fonts
+	@${CP} -Rp ${WRKSRC}/fonts/ ${STAGEDIR}${WWWDIR}/fonts/
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${WWWDIR}/fonts/
+	@${CHMOD} -R go-w ${STAGEDIR}${WWWDIR}/fonts/
 
 .include <bsd.port.mk>
