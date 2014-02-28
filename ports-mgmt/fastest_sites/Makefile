@@ -10,20 +10,19 @@ EXTRACT_SUFX=	# nada
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Sort MASTER_SITE_* based upon TCP handshake times
 
+USES=		shebangfix
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/fastest_sites
+SHEBANG_FILES=	fastest_sites-${PORTVERSION}.py
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/local/bin/python#${PYTHON_CMD}#' ${WRKSRC}/fastest_sites-${PORTVERSION}.py
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/fastest_sites-${PORTVERSION}.py ${PREFIX}/bin/fastest_sites
+	${INSTALL_SCRIPT} ${WRKSRC}/fastest_sites-${PORTVERSION}.py \
+		${STAGEDIR}${PREFIX}/bin/fastest_sites
 
 .include <bsd.port.mk>
