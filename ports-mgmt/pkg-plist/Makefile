@@ -12,13 +12,12 @@ COMMENT=	Generate a pkg-plist for a port
 LICENSE=	MIT
 
 USE_PYTHON=	yes
-MAN1=		pkg-plist.1
-PLIST_FILES=	bin/pkg-plist
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/pkg-plist man/man1/pkg-plist.1.gz
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pkg-plist ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/pkg-plist.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/pkg-plist ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pkg-plist.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
