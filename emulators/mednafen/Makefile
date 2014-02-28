@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mednafen
-PORTVERSION=	0.8.B
-PORTREVISION=	8
+PORTVERSION=	0.8.D.3
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	SF/${PORTNAME}/Mednafen/${PORTVERSION}
@@ -10,54 +9,71 @@ MASTER_SITES=	SF/${PORTNAME}/Mednafen/${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable multi-system emulator
 
-LIB_DEPENDS=	cdio.13:${PORTSDIR}/sysutils/libcdio \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+LICENSE=	GPLv2
 
-BROKEN=		Does not build
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2014-02-27
+LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-MAKE_JOBS_UNSAFE=	yes
-USES=		gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net
-USE_XORG=	x11
-USE_GL=		glut
+USE_GL=		gl glu
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
+LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=	${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	NLS DOCS
+CONFIGURE_ARGS+=--disable-alsa --disable-alsatest \
+		--with-sdl-prefix=${LOCALBASE}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+USES=		iconv pkgconfig:build
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=	NLS=""
-FLAG_NLS=	true
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_DEFINE=	NLS DOCS JACK
+OPTIONS_MULTI=	EMU
+OPTIONS_MULTI_EMU=	GB GBA LINX NES NGP PCE PCFX SMS SWAN
+OPTIONS_DEFAULT=	GB GBA LINX NES NGP PCE PCFX SMS SWAN
 
-.if ${ARCH}==sparc64
-BROKEN=		does not compile on ${ARCH} due to internal compiler error
-.endif
+GB_DESC=	build with GameBoy emulation
+GBA_DESC=	build with GameBoy Advance emulation
+LINX_DESC=	build with Atari Lynx emulation
+NES_DESC=	build with Nintendo Entertainment System emulation
+NGP_DESC=	build with Neo Geo Pocket emulation
+PCE_DESC=	build with PC Engine (TurboGrafx 16) emulation
+PCFX_DESC=	build with PC-FX emulation
+SMS_DESC=	build with SMS+GG emulation
+SWAN_DESC=	build with WonderSWan emulation
+JACK_DESC=	support the JACK audio API
+
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=nls
+
+JACK_LIB_DEPENDS=libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_ENABLE=jack
+
+GB_CONFIGURE_ENABLE=gb
+GBA_CONFIGURE_ENABLE=gba
+LINX_CONFIGURE_ENABLE=lynx
+NES_CONFIGURE_ENABLE=nes
+NGP_CONFIGURE_ENABLE=ngp
+PCE_CONFIGURE_ENABLE=pce
+PCFX_CONFIGURE_ENABLE=pcfx
+SMS_CONFIGURE_ENABLE=sms
+SWAN_CONFIGURE_ENABLE=wswan
+
+BROKEN_sparc64=	does not compile due to internal compiler error
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' -e \
-		's|/usr/local|${LOCALBASE}|g' -e 's|/usr/X11R6|${LOCALBASE}|g' \
-			${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's|/usr/X11R6|${LOCALBASE}|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|NetBSD|FreeBSD|' \
+		${WRKSRC}/include/trio/triodef.h
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Documentation/mednafen.html ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Documentation/mednafen.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
