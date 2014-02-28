@@ -19,6 +19,7 @@ USES=	pathfix compiler:c++11-lang
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
+USE_GCC=	4.7+
 MAKE_ARGS=	docdir=${DOCSDIR}
 CONFIGURE_ARGS+=--program-transform-name=
 
