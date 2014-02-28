@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www-users.cs.umn.edu/~wburdick/ftp/
 
-MAINTAINER=	delphus@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another mp3 player
 
 GNU_CONFIGURE=	yes
