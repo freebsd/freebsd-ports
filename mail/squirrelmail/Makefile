@@ -3,6 +3,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	20131229
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw/squirrelmail
@@ -38,7 +39,9 @@ USERS=		${SMUSER}
 GROUPS=		${SMGROUP}
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
-		SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}" \
+			SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}" \
+			SMUSER=${SMUSER} \
+			SMGROUP=${SMGROUP}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR} SMUSER=${SMUSER} SMGROUP=${SMGROUP}
@@ -99,7 +102,6 @@ do-install:
 	cd ${WRKSRC} && \
 		${FIND} attach class config data functions help images include locale plugins po scripts src themes \
 		| ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR}
-	${CHOWN} ${SMUSER}:${SMGROUP} ${STAGEDIR}${SQUIRRELDIR}/data ${STAGEDIR}${SQUIRRELDIR}/attach
 	${CHMOD} 730 ${STAGEDIR}${SQUIRRELDIR}/attach
 	${CHMOD} 750 ${STAGEDIR}${SQUIRRELDIR}/data
 
