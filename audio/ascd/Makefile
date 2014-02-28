@@ -16,15 +16,12 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	libworkman.so:${PORTSDIR}/audio/libworkman
 
-NO_STAGE=	yes
 USES=		imake
 
 USE_XORG=	xpm
 
 DATAFILES=	ascd-0.13pr6-themes.tgz
 THEMESDIR=	ascd-0.13pr6-themes
-
-MAN1=		ascd.1
 
 post-patch:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
@@ -33,11 +30,16 @@ post-patch:
 		${WRKSRC}/misc/dirs.h.default > ${WRKSRC}/dirs.h
 	@${CAT} ${WRKSRC}/version.h >> ${WRKSRC}/config.h
 
+post-configure:
+	@${REINPLACE_CMD} -E '/@(cp|cd)/ s,\(THEMESDIR\),\(DESTDIR\)$$&,g' \
+		${WRKSRC}/Makefile
+
 post-install:
 	@${ECHO_CMD} "AScd additional themes installation"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Untarring"
-	@${TAR} xf ${WRKDIR}/${THEMESDIR}/themes.tar -C ${PREFIX}/share/ascd/Themes
+	@${TAR} xf ${WRKDIR}/${THEMESDIR}/themes.tar -C \
+		${STAGEDIR}${PREFIX}/share/ascd/Themes
 	@${ECHO_CMD} "Done."
 
 .include <bsd.port.mk>
