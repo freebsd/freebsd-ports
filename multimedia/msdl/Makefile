@@ -10,8 +10,7 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Streaming multimedia files downloader
 
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/msdl
-MAN1=		msdl.1
+PLIST_FILES=	bin/msdl \
+		man/man1/msdl.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
