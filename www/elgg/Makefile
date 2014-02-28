@@ -19,24 +19,22 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 ELGGDATADIR=	${WWWDIR}data
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 755 ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
 
 post-install:
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
-		>> ${TMPPLIST}
-
-	@${INSTALL} -d ${ELGGDATADIR}
-	@${CHMOD} 777 ${ELGGDATADIR}
-	@${ECHO_CMD} '@exec ${CHMOD} 777 ${ELGGDATADIR}' \
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}' \
 		>> ${TMPPLIST}
 
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL} -d${STAGEDIR} ${ELGGDATADIR}
+	@${CHMOD} 777 ${STAGEDIR}${ELGGDATADIR}
+	@${ECHO_CMD} '@exec ${CHMOD} 777 ${STAGEDIR}${ELGGDATADIR}' \
+		>> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
