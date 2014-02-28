@@ -12,18 +12,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X utility to translate rgb values into X color names
 
-LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	rgb>=1.0.3:${PORTSDIR}/x11/rgb
 
 WRKSRC=		${WRKDIR}/xcolorsel
 USES=		imake
 USE_XORG=	xpm
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		xcolorsel.1
-.endif
-
-NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} "*.file: ${LOCALBASE}/lib/X11/rgb.txt" >> ${WRKSRC}/Xcolorsel.ad
 	@${REINPLACE_CMD} -e 's|#include <malloc.h>||g' \
