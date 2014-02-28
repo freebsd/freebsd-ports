@@ -3,6 +3,7 @@
 
 PORTNAME=	Reflex
 PORTVERSION=	0.099
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -19,10 +20,12 @@ BUILD_DEPENDS=	p5-POE>=1.294:${PORTSDIR}/devel/p5-POE \
 		p5-MooseX-Role-Parameterized>=0.23:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+SHEBANG_FILES=	eg/*.pl
 
 post-extract:
 	@${RM} ${WRKSRC}/bench.pl
