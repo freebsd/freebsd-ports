@@ -18,28 +18,23 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SSLEAY="${OPENSSLBASE}/bin" OPENSSLLIB="${OPENSSLLIB}" \
 		OPENSSLINC="${OPENSSLINC}"
 
-MAN1=		keynote.1
-MAN3=		keynote.3
-MAN5=		keynote.5
-PLIST_FILES=	bin/keynote include/keynote.h lib/libkeynote.a
+PLIST_FILES=	bin/keynote include/keynote.h lib/libkeynote.a \
+		man/man1/keynote.1.gz man/man3/keynote.3.gz \
+		man/man5/keynote.5.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/keynote ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/keynote.h ${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/libkeynote.a ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/man/keynote.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/keynote.3 ${MANPREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/man/keynote.4 ${MANPREFIX}/man/man5/keynote.5
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/keynote ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/keynote.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_LIB} ${WRKSRC}/libkeynote.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_MAN} ${WRKSRC}/man/keynote.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/keynote.3 ${STAGEDIR}${MANPREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/man/keynote.4 \
+		${STAGEDIR}${MANPREFIX}/man/man5/keynote.5
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/HOWTO.add.crypto ${WRKSRC}/TODO \
-		${WRKSRC}/doc/rfc*.txt ${DOCSDIR}
-.endif
+		${WRKSRC}/doc/rfc*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
