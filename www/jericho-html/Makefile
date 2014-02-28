@@ -19,7 +19,6 @@ INTERFACES:=	"compile-time-dependencies/slf4j-api-1.6.1.jar:\
 PORTDOCS=	*
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} &&  ${RM} -rf classes/* && ${JAVAC}         \
 		-classpath ${INTERFACES:S, ,,g}                   \
@@ -30,10 +29,9 @@ do-build:
 		 -C ${WRKSRC}/classes .
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}.jar ${JAVAJARDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
