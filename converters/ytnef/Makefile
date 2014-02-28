@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	converters mail
 MASTER_SITES=	SF
 
-MAINTAINER=	delphus@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unpack data in MS Outlook TNEF format
 
 LIB_DEPENDS=	libytnef.so:${PORTSDIR}/devel/libytnef
