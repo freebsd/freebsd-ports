@@ -16,24 +16,17 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGES LICENSE README
 PORTEXAMPLES=	mtailrc
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '1s|/.*|${PYTHON_CMD}|' ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${INSTALL} -d ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/mtailrc.sample ${EXAMPLESDIR}/mtailrc
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} $ ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/mtailrc.sample \
+		${STAGEDIR}${EXAMPLESDIR}/mtailrc
 
 .include <bsd.port.mk>
