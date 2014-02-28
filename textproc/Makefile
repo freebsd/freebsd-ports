@@ -1157,7 +1157,6 @@
     SUBDIR += py-libxml2
     SUBDIR += py-libxslt
     SUBDIR += py-ltxml
-    SUBDIR += py-lucene
     SUBDIR += py-mako
     SUBDIR += py-markdown
     SUBDIR += py-markdown2
