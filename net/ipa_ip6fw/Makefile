@@ -17,11 +17,9 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700017
 IGNORE=		not supported on your system, as it does not have IPv6 ipfw firewall
-.endif
+DEPRECATED=	Depends on IPv6 ipfw firewall
+EXPIRATION_DATE=	2014-03-14
 
 LOCALINCLUDE?=	${LOCALBASE}/include
 MAKE_ENV+=	DEBUG_FLAGS="" PREFIX=${PREFIX} LOCALINCLUDE=${LOCALINCLUDE}
@@ -38,4 +36,4 @@ do-install:
 	cd ${WRKSRC} && ${MAKE} install
 	cd ${WRKSRC}/man && ${MAKE} LANG_DIR_SRC=ru.KOI8-R clean all install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

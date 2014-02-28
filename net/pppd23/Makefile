@@ -17,10 +17,8 @@ MAN8=		pppd.8 pppstats.8 chat.8
 MANCOMPRESSED=	yes
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800045
 IGNORE=		depends on PPPDISC, which is no longer available
-.endif
+DEPRECATED=	Depends on PPPDISC
+EXPIRATION_DATE=	2014-03-14
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

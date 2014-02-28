@@ -25,10 +25,8 @@ CONFIGURE_ARGS+=--with-hal-addon-dir=${PREFIX}/libexec \
 			--disable-bluetooth-support
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800074
 IGNORE=		requires pppd
-.endif
+DEPRECATED=	Requires pppd
+EXPIRATION_DATE=	2014-03-14
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
