@@ -3,6 +3,7 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://waf.googlecode.com/files/:1
