@@ -1368,40 +1368,26 @@ MASTER_SITE_TUCOWS+= \
 .endif
 
 # List:		http://www.vim.org/mirrors.php
-# Updated:	2013-08-19
+# Updated:	2014-02-28
 .if !defined(IGNORE_MASTER_SITE_VIM)
 MASTER_SITE_VIM+= \
 	http://ftp.vim.org/pub/vim/unix/ \
-	http://artfiles.org/vim.org/unix/ \
-	http://ftp.gr.vim.org/pub/vim/unix/ \
-	http://ftp.stu.edu.tw/vim/unix/ \
+	http://vim.mirrors.hostinginnederland.nl/unix/ \
 	http://ftp.tw.vim.org/pub/vim/unix/ \
+	http://ftp2.tw.vim.org/pub/vim/unix/ \
+	http://artfiles.org/vim.org/unix/ \
+	http://vim.cybermirror.org/unix/ \
 	http://ftp.vim.ossmirror.de/pub/vim/unix/ \
+	http://tweedo.com/mirror/ftp.vim.org/unix/ \
+	http://vim.mirror.fr/unix/ \
+	http://ftp.gr.vim.org/pub/vim/unix/ \
+	http://mirror.netinch.com/pub/vim/unix/ \
+	http://servingzone.com/mirrors/vim/unix/ \
+	http://ftp2.uk.vim.org/pub/vim/unix/ \
 	http://ftp2.jp.vim.org/pub/vim/unix/ \
 	http://ftp2.kr.vim.org/pub/vim/unix/ \
-	http://ftp2.tw.vim.org/pub/vim/unix/ \
-	http://ftp2.uk.vim.org/pub/vim/unix/ \
-	http://servingzone.com/mirrors/vim/unix/ \
-	http://tweedo.com/mirror/ftp.vim.org/unix/ \
-	http://vim.cybermirror.org/unix/ \
-	http://vim.mirror.fr/unix/ \
-	ftp://ftp.home.vim.org/pub/vim/unix/ \
-	ftp://artfiles.org/vim.org/unix/ \
-	ftp://ftp.ar.vim.org/pub/vim/unix/ \
-	ftp://ftp.ca.vim.org/pub/vim/unix/ \
-	ftp://ftp.de.vim.org/unix/ \
-	ftp://ftp.gr.vim.org/pub/vim/unix/ \
-	ftp://ftp.is.vim.org/pub/vim/unix/ \
-	ftp://ftp.jp.vim.org/pub/vim/unix/ \
-	ftp://ftp.pl.vim.org/pub/vim/unix/ \
-	ftp://ftp.uk.vim.org/pub/vim/unix/ \
-	ftp://ftp.stu.edu.tw/pub/vim/unix/ \
-	ftp://ftp.za.vim.org/mirrors/ftp.vim.org/unix/ \
-	ftp://ftp2.kr.vim.org/pub/vim/unix/ \
-	ftp://ftp2.tw.vim.org/pub/vim/unix/ \
-	ftp://ftp2.uk.vim.org/pub/vim/unix/ \
-	ftp://ftp3.de.vim.org/pub/vim/unix/ \
-	ftp://vim.tsu.ru/pub/vim/unix/
+	http://mirrors-usa.go-parts.com/pub/vim/unix/ \
+	ftp://ftp.home.vim.org/pub/vim/unix/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_WINDOWMAKER)
