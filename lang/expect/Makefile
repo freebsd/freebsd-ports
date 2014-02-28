@@ -3,14 +3,13 @@
 
 PORTNAME=	expect
 PORTVERSION=	5.45
+PORTREVISION=	1
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	SF/expect/Expect/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Sophisticated scripter based on Tcl/Tk
-
-CONFLICTS=	weather-[0-9]*
 
 LIBEXPECT_VER=	${PORTVERSION:S/.//}
 
@@ -21,6 +20,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--exec-prefix=${PREFIX} \
+		--datadir=${DATADIR} \
 		--with-tclconfig=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR}
 PLIST_SUB+=	EXPECT_VER=${PORTVERSION} \
