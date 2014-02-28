@@ -25,7 +25,6 @@ USE_MYSQL=	yes
 USE_APACHE=	22
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DBI) || exists(${LOCALBASE}/include/dbi/dbi.h)
@@ -39,6 +38,6 @@ SSL_PLIST=	"@comment "
 .endif
 
 post-install:
-	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/${MODULENAME}.so"
+	@${APXS} -e -a -n "${SHORTMODNAME}" "${STAGEDIR}${APACHEMODDIR}/${MODULENAME}.so"
 
 .include <bsd.port.post.mk>
