@@ -16,25 +16,21 @@ RUN_DEPENDS=	p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	sbin/sshblock
-USES=		perl5
+USES=		perl5 shebangfix
 USE_RC_SUBR=	sshblock
 SUB_LIST=	PERL=${PERL}
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
 SUB_FILES+=	pkg-message
-#SUB_FILES=	sshblock.sh
+SHEBANG_FILES=	${WRKSRC}/sshblock-${PORTVERSION}.pl
 
-NO_STAGE=	yes
 do-patch:
 	@${REINPLACE_CMD} -e "s@/usr/bin/perl@${PERL}@" \
 		${WRKSRC}/sshblock-${PORTVERSION}.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sshblock-${PORTVERSION}.pl \
-		${PREFIX}/sbin/sshblock
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/sbin/sshblock
 
 .include <bsd.port.mk>
