@@ -85,10 +85,6 @@ RELTYPE=		Release
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 .if ${PORT_OPTIONS:MASSERTS}
 pre-fetch:
 	@if [ "`llvm-config${LLVM_SUFFIX} --build-mode`" != ${RELTYPE} ]; then \

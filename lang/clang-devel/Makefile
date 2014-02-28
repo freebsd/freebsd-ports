@@ -86,9 +86,6 @@ RELTYPE=		Release
 
 .include "${.CURDIR}/../../devel/llvm-devel/Makefile.svn_rev"
 
-# NB: I don't test arches I don't use so this may be out of date.
-BROKEN_sparc64=	YES
-
 .if ${PORT_OPTIONS:MASSERTS}
 pre-fetch:
 	@if [ "`llvm-config${LLVM_SUFFIX} --build-mode`" != ${RELTYPE} ]; then \
