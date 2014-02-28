@@ -10,27 +10,20 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show a scrolling 'Matrix' like screen
 
-MAN1=		cmatrix.1
-
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
-PORTDOCS=	ChangeLog README TODO
-PLIST_FILES=	bin/cmatrix
 
-NO_STAGE=	yes
+PORTDOCS=	ChangeLog README TODO
+PLIST_FILES=	bin/cmatrix man/man1/cmatrix.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cmatrix ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cmatrix.1 ${PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/cmatrix ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cmatrix.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
