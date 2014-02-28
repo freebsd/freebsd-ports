@@ -10,7 +10,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to provide file system type information
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 MAKE_ENV=	E=${ECHO_MSG} RANLIB=${RANLIB} AR=${AR} Q=@ \
 		prefix=${PREFIX}
@@ -21,15 +21,12 @@ PLIST_FILES=	include/libvolume_id.h \
 		lib/libvolume_id.so.0 \
 		libdata/pkgconfig/libvolume_id.pc
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
-	${MKDIR} ${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/libvolume_id.pc ${PREFIX}/libdata/pkgconfig/libvolume_id.pc
-	${INSTALL_DATA} ${WRKSRC}/libvolume_id.h ${PREFIX}/include/libvolume_id.h
-	${INSTALL_DATA} ${WRKSRC}/libvolume_id.a ${PREFIX}/lib/libvolume_id.a
-	${INSTALL_PROGRAM} ${WRKSRC}/libvolume_id.so.0 ${PREFIX}/lib/libvolume_id.so.0
-	${LN} -sf ${PREFIX}/lib/libvolume_id.so.0 ${PREFIX}/lib/libvolume_id.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/libvolume_id.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libvolume_id.pc
+	${INSTALL_DATA} ${WRKSRC}/libvolume_id.h ${STAGEDIR}${PREFIX}/include/libvolume_id.h
+	${INSTALL_DATA} ${WRKSRC}/libvolume_id.a ${STAGEDIR}${PREFIX}/lib/libvolume_id.a
+	${INSTALL_PROGRAM} ${WRKSRC}/libvolume_id.so.0 ${STAGEDIR}${PREFIX}/lib/libvolume_id.so.0
+	${LN} -sf ${PREFIX}/lib/libvolume_id.so.0 ${STAGEDIR}${PREFIX}/lib/libvolume_id.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
