@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/cair
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cair ${STAGEDIR}${PREFIX}/bin
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cair
+	${INSTALL_PROGRAM} ${WRKSRC}/cair ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
