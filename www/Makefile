@@ -350,6 +350,7 @@
     SUBDIR += http_get
     SUBDIR += http_load
     SUBDIR += http_post
+    SUBDIR += httpasyncclient
     SUBDIR += httpclient
     SUBDIR += httpcore
     SUBDIR += httpsqs
