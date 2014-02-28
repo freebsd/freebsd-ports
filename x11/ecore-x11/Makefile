@@ -21,6 +21,7 @@ USES=		gmake pkgconfig
 USE_EFL=	ecore libtool_hack
 USE_EFL_ECORE=	input
 USE_LDCONFIG=	yes
+USE_XORG+=	xcomposite xprintapputil
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_x
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 XEXTDIR=	${LOCALBASE}/include/X11/extensions
