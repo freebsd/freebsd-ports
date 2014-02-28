@@ -23,9 +23,8 @@ EXTRACT_AFTER_ARGS=	> cgi-lib.pl
 INSTALL_BASE=	${SITE_PERL_REL}
 INSTALL_DIR=	${PREFIX}/${INSTALL_BASE}
 
-NO_STAGE=	yes
 do-install:
-	-${MKDIR} ${INSTALL_DIR}
-	${INSTALL_DATA} ${WRKDIR}/cgi-lib.pl ${INSTALL_DIR}
+	-${MKDIR} ${STAGEDIR}${INSTALL_DIR}
+	${INSTALL_DATA} ${WRKDIR}/cgi-lib.pl ${STAGEDIR}${INSTALL_DIR}
 
 .include <bsd.port.mk>
