@@ -5501,3 +5501,5 @@ lang/opa||2014-02-27|Has expired: Broken for more than 6 month
 sysutils/mmore||2014-02-27|Has expired: Broken for more than 6 month
 www/trac-announcer||2014-02-27|Has expired: Broken for more than 6 month
 lang/expect-devel||2014-02-28|No longer relevant. Use lang/expect instead
+x11-drivers/xf86-video-radeonhd|x11-drivers/xf86-video-ati|2014-02-28|Has expired: Abandoned upstream since 2010
+net/asterisk10||2014-02-28|Has expired: asterisk 10 reached EOL on 2013-12-15
