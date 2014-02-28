@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moreutils
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,11 +18,9 @@ OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
-ALL_TARGET=	bins
-USES=		perl5
+ALL_TARGET=	errnos.h ${CANNED_MANPAGES:R}
+USES=		perl5 shebangfix
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-MANPAGES_ALL_TARGET=	mans
 
 CANNED_MANPAGES=errno.1 \
 		ifne.1 \
@@ -31,25 +29,35 @@ CANNED_MANPAGES=errno.1 \
 		mispipe.1 \
 		pee.1 \
 		sponge.1
-MANPAGES=	chronic.1 \
+PERL_MANPAGES=	chronic.1 \
 		combine.1 \
 		ts.1 \
 		vidir.1 \
 		vipe.1 \
-		zrun.1 \
-		${CANNED_MANPAGES}
+		zrun.1
 
-.include <bsd.port.options.mk>
+SHEBANG_FILES=	${PERL_MANPAGES:R}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/xml/docbook/schema/dtd/|local/share/xml/docbook/|' ${WRKSRC}/*.docbook
-.if ${PORT_OPTIONS:MMANPAGES}
 	@cd ${FILESDIR}/ && ${CP} ${CANNED_MANPAGES} ${WRKSRC}/
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MMANPAGES}
-	cd ${WRKSRC}/ && ${INSTALL_MAN} ${MANPAGES} ${STAGEDIR}${PREFIX}/man/man1/
-.endif
+post-build:
+.for man in ${PERL_MANPAGES:R}
+	${LOCALBASE}/bin/pod2man --center=" " --release="${PORTNAME}" ${WRKSRC}/${man} > ${WRKSRC}/${man}.1
+.endfor
+
+do-install:
+	cd ${WRKSRC}/ && ${INSTALL_PROGRAM} ${CANNED_MANPAGES:R} ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/ && ${INSTALL_SCRIPT} ${PERL_MANPAGES:R} ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/ && ${INSTALL_MAN} ${CANNED_MANPAGES} ${PERL_MANPAGES} ${STAGEDIR}${PREFIX}/man/man1/
+
+# maintainer section:
+# require: docbook-xsl, libxml2, libxslt
+
+updateman: do-clean extract
+.for man in ${CANNED_MANPAGES:R}
+	${LOCALBASE}/bin/xmllint --noout --valid ${WRKSRC}/${man}.docbook && \
+	${LOCALBASE}/bin/xsltproc --output ${FILESDIR}/${man}.1 --param man.authors.section.enabled 0 ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl ${WRKSRC}/${man}.docbook
+.endfor
 
 .include <bsd.port.mk>

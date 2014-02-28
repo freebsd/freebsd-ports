@@ -1,35 +1,51 @@
-.\" -*- coding: us-ascii -*-
-.if \n(.g .ds T< \\FC
-.if \n(.g .ds T> \\F[\n[.fam]]
-.de URL
-\\$2 \(la\\$1\(ra\\$3
-..
-.if \n(.g .mso www.tmac
-.TH pee 1 2006-03-14 "" ""
-.SH NAME
-pee \- tee standard input to pipes
-.SH SYNOPSIS
-'nh
-.fi
+'\" t
+.\"     Title: pee
+.\"    Author: Joey Hess
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 2006-03-14
+.\"    Manual: moreutils
+.\"    Source: moreutils
+.\"  Language: English
+.\"
+.TH "PEE" "1" "2006\-03\-14" "moreutils" "moreutils"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
 .ad l
-\fBpee\fR \kx
-.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
-'in \n(.iu+\nxu
-[\fI"command"\fR\&...]
-'in \n(.iu-\nxu
-.ad b
-'hy
-.SH DESCRIPTION
-\fBpee\fR is like \fBtee\fR
-but for pipes. Each command is run and fed a copy of the
-standard input. The output of all commands is sent to
-stdout.
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+pee \- tee standard input to pipes
+.SH "SYNOPSIS"
+.HP \w'\fBpee\fR\ 'u
+\fBpee\fR [[\fI"command"\fR...]]
+.SH "DESCRIPTION"
+.PP
+\fBpee\fR
+is like
+\fBtee\fR
+but for pipes\&. Each command is run and fed a copy of the standard input\&. The output of all commands is sent to stdout\&.
 .PP
 Note that while this is similar to
-\fBtee\fR, a copy of the input is not sent
-to stdout, like tee does. If that is desired, use 
-\fBpee cat ...\fR
+\fBtee\fR, a copy of the input is not sent to stdout, like tee does\&. If that is desired, use
+\fBpee cat \&.\&.\&.\fR
 .SH "SEE ALSO"
+.PP
+
 \fBtee\fR(1)
-.SH AUTHOR
+.SH "AUTHOR"
+.PP
 Miek Gieben
