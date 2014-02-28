@@ -11,6 +11,8 @@ COMMENT=	Visualization techniques, data sets for categorical data
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not find WRKSRC
+
 RUN_DEPENDS=	R-cran-colorspace>0:${PORTSDIR}/graphics/R-cran-colorspace
 
 USE_R_MOD=	yes

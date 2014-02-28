@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Fluent event collector
 
+BROKEN=		Requires http_parser version 0.5.1 while version 0.6 is installed
+
 RUN_DEPENDS=	\
 	rubygem-msgpack>=0.5.4:${PORTSDIR}/devel/rubygem-msgpack \
 	rubygem-json>=1.4.3:${PORTSDIR}/devel/rubygem-json \
