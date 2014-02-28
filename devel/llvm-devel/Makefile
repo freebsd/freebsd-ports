@@ -139,9 +139,6 @@ SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d
 .endif
 .endif
 
-# NB: I don't re-test arches I don't use so this may be dated
-BROKEN_sparc64=	YES
-
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CONFIGURE_ARGS+=	--enable-pic --with-pic
 .endif
