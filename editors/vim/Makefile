@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	VIM:source \
 		${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|}:patch \
@@ -125,10 +125,6 @@ PLIST_SUB+=	GUI=""
 CTAGS_CMD=	exctags -R .
 .else
 CTAGS_CMD=	${FIND} . -type f \\| ${XARGS} ctags
-.endif
-
-.if ${PORT_OPTIONS:MGNOME}
-PKGNAMESUFFIX+=	-gnome2
 .endif
 
 .include <bsd.port.pre.mk>
