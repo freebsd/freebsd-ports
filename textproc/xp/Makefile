@@ -18,26 +18,22 @@ NO_WORKSUBDIR=	yes
 NO_BUILD=	yes
 USE_ZIP=	yes
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	api copying.txt index.html
-.endif
+
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILE}
 
-NO_STAGE=	yes
 do-install:
 	@${ECHO_CMD} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKDIR}/${JARFILE} ${JAVAJARDIR}/
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKDIR}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/
 	@${ECHO_CMD} " [ DONE ]"
-.if !defined(NOPORTDOCS)
 	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for DOCFILE in ${PORTDOCS}
-	@${CP} -r ${WRKDIR}/docs/${DOCFILE} ${DOCSDIR}/
+	@${CP} -r ${WRKDIR}/docs/${DOCFILE} ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_CMD} -n " ${DOCFILE}"
 .endfor
 	@${ECHO_CMD} " [ DONE ]"
-.endif
 
 .include <bsd.port.mk>
