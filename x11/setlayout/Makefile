@@ -16,17 +16,14 @@ USE_XORG=	x11
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} `pkg-config --cflags --libs x11` ${DISTFILES}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
