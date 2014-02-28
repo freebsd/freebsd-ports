@@ -6,6 +6,7 @@
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
 DISTVERSION=	33.0.1750.117
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/:testdata \
 		http://download.goodking.org/downloads/:browser \
@@ -45,7 +46,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
-USES=		bison compiler:c++11-lang desktop-file-utils pkgconfig \
+USES=		bison compiler:c++11-lib desktop-file-utils pkgconfig \
 		perl5 shebangfix ninja
 USE_PERL5=	build
 USE_PYTHON_BUILD=	2.6-2.7
