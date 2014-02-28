@@ -12,14 +12,15 @@ COMMENT=	Content Aware Image Resizer is an implementation of seam carving
 
 USE_ZIP=	yes
 USES=		gmake
+
 MAKE_ARGS+=	CC="${CXX}"
 
 WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/cair
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cair ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cair ${STAGEDIR}${PREFIX}/bin
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cair
 
 .include <bsd.port.mk>
