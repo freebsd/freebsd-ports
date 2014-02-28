@@ -10,15 +10,11 @@ MASTER_SITES=	http://www.wormulon.net/smap/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	SIP scanner and identifier
 
-PLIST_FILES=	bin/smap share/smap/fingerprint.db
-PLIST_DIRS=	share/smap
+USES=		gmake
 
-USE_GMAKE=	yes
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/smap ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/smap
-	${INSTALL_DATA} ${WRKSRC}/fingerprint.db ${PREFIX}/share/smap
+	${INSTALL_PROGRAM} ${WRKSRC}/smap ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/fingerprint.db ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
