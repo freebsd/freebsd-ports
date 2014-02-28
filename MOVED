@@ -5504,3 +5504,4 @@ lang/expect-devel||2014-02-28|No longer relevant. Use lang/expect instead
 x11-drivers/xf86-video-radeonhd|x11-drivers/xf86-video-ati|2014-02-28|Has expired: Abandoned upstream since 2010
 net/asterisk10||2014-02-28|Has expired: asterisk 10 reached EOL on 2013-12-15
 textproc/py-lucene||2014-02-28|Has expired: Broken for more than 6 month
+lang/gcc44|lang/gcc|2014-02-28|Superseded by GCC 4.6 or later
