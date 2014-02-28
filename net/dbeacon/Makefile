@@ -9,16 +9,13 @@ MASTER_SITES=	http://fivebits.net/files/dbeacon/
 MAINTAINER=	tony@lava.net
 COMMENT=	Distributed multicast beacon server
 
-PLIST_FILES=	bin/dbeacon
+USES=		gmake
 
-USE_GMAKE=	yes
-MAN1=		dbeacon.1
-
+PLIST_FILES=	bin/dbeacon man/man1/dbeacon.1.gz
 USE_RC_SUBR=	dbeacon
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docs/dbeacon.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docs/dbeacon.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
