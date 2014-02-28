@@ -12,6 +12,8 @@ COMMENT=	Visualization techniques, data sets for categorical data
 LICENSE=	GPLv2
 
 BROKEN=		Does not find WRKSRC
+DEPRECATED=	New port without proper maintainer
+EXPIRATION_DATE=	2014-03-28
 
 RUN_DEPENDS=	R-cran-colorspace>0:${PORTSDIR}/graphics/R-cran-colorspace
 
