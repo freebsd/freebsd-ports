@@ -11,17 +11,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Tail for the nagios status.dat file
 
-USE_GMAKE=	yes
+USES=		gmake
 
-MAN1=		nagtail.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/nagtail
+PLIST_FILES=	bin/nagtail man/man1/nagtail.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/nagtail ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/nagtail.1.gz ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/nagtail ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/nagtail.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
