@@ -4,7 +4,7 @@
 PORTREVISION=	0
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Vi "workalike", with many additional features (Lite package)
+COMMENT=	Improved version of the vi editor (lite package)
 
 LITE=		yes
 MASTERDIR=	${.CURDIR}/../vim

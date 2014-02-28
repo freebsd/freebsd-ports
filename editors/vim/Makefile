@@ -16,7 +16,7 @@ PATCH_SITES=	${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|} \
 		LOCAL/sunpoet/${PORTNAME}
 
 MAINTAINER?=	sunpoet@FreeBSD.org
-COMMENT?=	Vi "workalike", with many additional features
+COMMENT?=	Improved version of the vi editor
 
 OPTIONS_DEFINE=	CSCOPE EXUBERANT_CTAGS LUA NLS PERL PYTHON RUBY TCL XTERM_SAVE
 OPTIONS_SINGLE=	UI
