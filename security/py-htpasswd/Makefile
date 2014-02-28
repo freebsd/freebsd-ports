@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Replacement for htpasswd
 
+USES=		shebangfix
 USE_PYTHON=	yes
 USE_XZ=		yes
 
@@ -19,11 +20,9 @@ PLIST_FILES=	bin/${PORTNAME}.py
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
-post-patch:
-	${SED} -I.orig -e 's|^#!/usr/bin/python|#!/usr/bin/env python|' ${WRKDIR}/${PORTNAME}.py
+SHEBANG_FILES=	${PORTNAME}.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.py ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
