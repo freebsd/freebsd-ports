@@ -17,15 +17,13 @@ COMMENT=	Tool to generate random passwords
 
 LICENSE=	GPLv2 # (or later)
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		ranpwd.1
-PLIST_FILES=	bin/ranpwd
+PLIST_FILES=	bin/ranpwd man/man1/ranpwd.1.gz
 
-NO_STAGE=	yes
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ranpwd ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} ranpwd.1 ${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/ranpwd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ranpwd.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
