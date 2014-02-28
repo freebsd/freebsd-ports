@@ -11,16 +11,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A simple STUN (RFC 3489) server and client
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	stund
+
 MAKE_ENV=	"CXX=${CXX}"
 
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/server ${PREFIX}/sbin/stund
-	${INSTALL_PROGRAM} ${WRKSRC}/client ${PREFIX}/bin/stun_client
+	${INSTALL_PROGRAM} ${WRKSRC}/server ${STAGEDIR}${PREFIX}/sbin/stund
+	${INSTALL_PROGRAM} ${WRKSRC}/client ${STAGEDIR}${PREFIX}/bin/stun_client
 
 .include <bsd.port.mk>
