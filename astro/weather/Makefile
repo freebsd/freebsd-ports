@@ -13,8 +13,6 @@ COMMENT=	Utility to provide current weather conditions and forecasts
 
 LICENSE=	ISCL
 
-CONFLICTS_INSTALL=	expect-[0-9]* expect-nox11-[0-9]*
-
 USE_PYTHON=	yes
 USE_XZ=		yes
 USES=		shebangfix
