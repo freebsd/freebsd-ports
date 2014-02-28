@@ -4,7 +4,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.24.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -38,6 +38,8 @@ PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	CAIRO OPENJPEG
 OPTIONS_DEFAULT=CAIRO OPENJPEG
+
+USES+=		iconv
 .endif
 
 .include <bsd.port.options.mk>
