@@ -65,7 +65,6 @@
     SUBDIR += erlang-runtime16
     SUBDIR += execline
     SUBDIR += expect
-    SUBDIR += expect-devel
     SUBDIR += ezm3
     SUBDIR += f2c
     SUBDIR += f77
