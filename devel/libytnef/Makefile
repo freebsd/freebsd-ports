@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel mail
 MASTER_SITES=	SF/ytnef/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	delphus@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unpack data in MS Outlook TNEF format
 
 OPTIONS_DEFINE=	DOCS
