@@ -10,30 +10,25 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	PostScript printer filter supporting a bidirectional serial channel
 
-LIB_DEPENDS=	paper:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
 
 PORTDOCS=	INSTALL
-MAN1=		psrev.1 textps.1
-MAN8=		lprps.8 psif.8 psof.8
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} textps psrev ${PREFIX}/bin && \
-		${INSTALL_PROGRAM} psif lprps psof ${PREFIX}/libexec && \
-		${INSTALL_SCRIPT} psif-text psif-ps ${PREFIX}/libexec && \
-		${INSTALL_DATA} banner.ps ${DATADIR} && \
-		${INSTALL_MAN} textps.n ${PREFIX}/man/man1/textps.1 && \
-		${INSTALL_MAN} psrev.n ${PREFIX}/man/man1/psrev.1 && \
-		${INSTALL_MAN} lprps.n ${PREFIX}/man/man8/lprps.8 && \
-		${INSTALL_MAN} psif.n ${PREFIX}/man/man8/psif.8 && \
-		${INSTALL_MAN} psof.n ${PREFIX}/man/man8/psof.8
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+		${INSTALL_PROGRAM} textps psrev ${STAGEDIR}${PREFIX}/bin && \
+		${INSTALL_PROGRAM} psif lprps psof ${STAGEDIR}${PREFIX}/libexec && \
+		${INSTALL_SCRIPT} psif-text psif-ps ${STAGEDIR}${PREFIX}/libexec && \
+		${INSTALL_DATA} banner.ps ${STAGEDIR}${DATADIR} && \
+		${INSTALL_MAN} textps.n ${STAGEDIR}${PREFIX}/man/man1/textps.1 && \
+		${INSTALL_MAN} psrev.n ${STAGEDIR}${PREFIX}/man/man1/psrev.1 && \
+		${INSTALL_MAN} lprps.n ${STAGEDIR}${PREFIX}/man/man8/lprps.8 && \
+		${INSTALL_MAN} psif.n ${STAGEDIR}${PREFIX}/man/man8/psif.8 && \
+		${INSTALL_MAN} psof.n ${STAGEDIR}${PREFIX}/man/man8/psof.8
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
