@@ -16,6 +16,8 @@ COMMENT=	Robot Operating System - GUI related tools
 
 #LICENSE=	BSD LGPL* CreativeCommons WxWindows
 
+DEPRECATED=	Depends on expiring devel/ros_comm
+EXPIRATION_DATE=	2014-03-28
 STACKNAME=	${PORTNAME:S/ros-//}
 WRKSRC=		${WRKDIR}/${STACKNAME}-${PORTVERSION}
 

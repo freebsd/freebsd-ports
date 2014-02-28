@@ -13,6 +13,9 @@ COMMENT=	Robot Operating System - tutorials
 
 LICENSE=	BSD
 
+DEPRECATED=	Depends on expiring devel/ros_comm
+EXPIRATION_DATE=	2014-03-28
+
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
 		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
