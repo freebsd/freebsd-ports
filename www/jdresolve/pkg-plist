@@ -1,5 +1,7 @@
 bin/jdresolve
 bin/rhost
+man/man1/jdresolve.1.gz
+man/man1/rhost.1.gz
 %%PORTDOCS%%share/doc/jdresolve/AUTHORS
 %%PORTDOCS%%share/doc/jdresolve/BUGS
 %%PORTDOCS%%share/doc/jdresolve/CHANGELOG
