@@ -14,11 +14,8 @@ RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m
 
 NO_BUILD=	yes
 
-MAN1=		rfc.1
-PLIST_FILES=	bin/rfc \
-		"@unexec rm -f %%PREFIX%%/etc/rfc-index"
+PLIST_FILES=	bin/rfc man/man1/rfc.1.gz
 
-NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local/etc/rfc|${PREFIX}/etc/rfc| ; \
 		s|/usr/local/etc/nmap|${PREFIX}/share/misc/nmap| ; \
@@ -29,7 +26,7 @@ do-configure:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION} \
-		${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
