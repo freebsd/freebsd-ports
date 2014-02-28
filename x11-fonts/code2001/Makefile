@@ -24,18 +24,17 @@ MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
 
-NO_STAGE=	yes
 post-extract:
-	@${MKDIR} ${WRKSRC}/
+	@${MKDIR} ${STAGEDIR}${WRKSRC}/
 	@${MV} ${WRKDIR}/CODE2001.TTF ${WRKSRC}/${FONTNAME}.ttf
 
 do-build:
 	@cd ${WRKSRC}/ && ${MKFONTSCL_CMD} && ${MKFONTDIR_CMD}
 
 do-install:
-	@${INSTALL} -d ${FONTSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/* ${FONTSDIR}/
+	@${INSTALL} -d ${STAGEDIR}${FONTSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${FONTSDIR}/
 	@${ECHO_MSG} "===> Running fc-cache"
-	-${FCCACHE_CMD} ${FONTSDIR}
+	-${FCCACHE_CMD} ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
