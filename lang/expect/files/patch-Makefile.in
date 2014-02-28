@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2014-02-21 14:51:15.000000000 +0100
++++ Makefile.in	2014-02-21 14:55:44.000000000 +0100
+@@ -239,7 +239,7 @@
+ 	@mkdir -p $(DESTDIR)$(prefix)/bin
+ 	-for i in $(SCRIPT_LIST) ; do \
+ 	  if [ -f $$i ] ; then \
+-	    $(INSTALL_PROGRAM) $$i $(DESTDIR)$(prefix)/bin/$$i ; \
++	    $(INSTALL_SCRIPT) $$i $(DESTDIR)$(prefix)/bin/$$i ; \
+ 	    rm -f $$i ; \
+ 	  else true; fi ; \
+ 	done
