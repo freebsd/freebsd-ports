@@ -25,8 +25,8 @@ NXPREFIX?=	${PREFIX}/NX
 NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e "s|/usr/local/|${PREFIX}/|" \
-		-e "s|!/bin/bash|!${PREFIX}/bin/bash|" \
-		-e "s|/usr/bin/expect|${PREFIX}/bin/expect|" \
+		-e "s|!/bin/bash|!${LOCALBASE}/bin/bash|" \
+		-e "s|/usr/bin/expect|${LOCALBASE}/bin/expect|" \
 		-e "s|/usr/NX|${NXPREFIX}|" \
 		node.conf.sample nxclient nxkeygen nxloadconfig nxnode \
 		nxnode-login nxprint nxserver nxsetup
