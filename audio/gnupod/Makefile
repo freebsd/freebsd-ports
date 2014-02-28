@@ -3,6 +3,7 @@
 
 PORTNAME=	gnupod
 PORTVERSION=	0.99.8
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://www.blinkenlights.ch/gnupod-dist/stable/
@@ -21,13 +22,8 @@ BUILD_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 INFO=		gnupod
-MAN1=		gnupod_addsong.pl.1 gnupod_check.pl.1 gnupod_INIT.pl.1 \
-		gnupod_otgsync.pl.1 gnupod_search.pl.1 mktunes.pl.1 \
-		tunes2pod.pl.1
-MANCOMPRESSED=	yes
 
 USES=		perl5
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 
@@ -36,29 +32,16 @@ CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 
 OPTIONS_DEFINE=	FLAC VORBIS DOCS
 
-.include <bsd.port.options.mk>
+FLAC_BUILD_DEPENDS=	p5-Audio-FLAC-Header>=0:${PORTSDIR}/audio/p5-Audio-FLAC-Header
+VORBIS_BUILD_DEPENDS=	p5-Ogg-Vorbis-Header-PurePerl>=0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl \
+			oggdec:${PORTSDIR}/audio/vorbis-tools
 
-.if ${PORT_OPTIONS:MFLAC} || exists(${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm)
-BUILD_DEPENDS+=	p5-Audio-FLAC-Header>=0:${PORTSDIR}/audio/p5-Audio-FLAC-Header
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS} || exists(${SITE_PERL}/Ogg/Vorbis/Header/PurePerl.pm)
-BUILD_DEPENDS+=	p5-Ogg-Vorbis-Header-PurePerl>=0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl
-BUILD_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/gnupodrc.example ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/gnutunesdb.example ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/gnupod.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/mkspl.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/gnupod.texi ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/fdl.texi ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/version.texi ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/ipod.svg ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
+.for file in gnupodrc.example gnutunesdb.example gnupod.html mkspl.html \
+gnupod.texi fdl.texi version.texi ipod.svg
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
