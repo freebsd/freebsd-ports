@@ -28,7 +28,6 @@ DEFAULT_PHP_VER=	5
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTIDY}
@@ -39,11 +38,8 @@ post-patch:
 	@${RM}  ${WRKSRC}/install/dist/conf/config.xml.orig
 
 do-install:
-	@${MKDIR} ${INSTALLDIR}
-	@${CP} -R ${WRKSRC}/* ${INSTALLDIR}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${INSTALLDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
+	@${CP} -R ${WRKSRC}/*  ${STAGEDIR}${INSTALLDIR}
+	@${CHOWN} ${WWWOWN}:${WWWGRP}  ${STAGEDIR}${INSTALLDIR}
 
 .include <bsd.port.post.mk>
