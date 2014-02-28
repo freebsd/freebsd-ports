@@ -3,12 +3,15 @@
 
 PORTNAME=	bbpager
 DISTVERSION=	0.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	A.J.Caines@halplant.com
-COMMENT=	A pager for the Blackbox window manager
+COMMENT=	Pager for the Blackbox window manager
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIOSN_SUB=	yes
 
 BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
@@ -22,14 +25,11 @@ DOCS=		AUTHORS BUGS COPYING ChangeLog INSTALL NEWS \
 		README TODO
 EXAMPLES=	bbpager.rc README.bbpager
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/bbpager ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/data/,} ${EXAMPLESDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/src/bbpager ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/data/,} ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
