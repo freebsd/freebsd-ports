@@ -18,7 +18,6 @@ PLIST_FILES=	bin/arprelease
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} && \
 		${CC} ${CFLAGS} `${LIBNET_CONFIG} --defines` \
@@ -26,6 +25,6 @@ do-build:
 		`${LIBNET_CONFIG} --libs`)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/arprelease ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/arprelease ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
