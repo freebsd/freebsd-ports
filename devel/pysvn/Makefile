@@ -29,8 +29,6 @@ PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Source
 
-NO_STAGE=	yes
-
 post-patch:
 	${REINPLACE_CMD} -e "s,gcc,${CC},g" -e "s,g++,${CXX},g" ${WRKSRC}/setup_configure.py
 
@@ -38,13 +36,13 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE}
 
 pre-install:
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/${PORTNAME}/*.py \
 		${WRKSRC}/${PORTNAME}/*.so \
-		${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
