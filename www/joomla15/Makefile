@@ -24,21 +24,17 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTVERSION="${PORTVERSION}"
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${TAR} -yxf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && \
-		${FIND} . -type d -exec ${MKDIR} ${WWWDIR}/{} \; \
-			-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
+		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${WWWDIR}/{} \; \
+			-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/{} \;
 	@cd ${WRKSRC} && \
-		${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${WWWDIR}/{} \; \
-			-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${STAGEDIR}${WWWDIR}/{} \; \
+			-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/{} \;
 
 .include <bsd.port.mk>
