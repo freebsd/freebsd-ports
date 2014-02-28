@@ -12,16 +12,12 @@ COMMENT=	IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator
 LICENSE=	GPLv2 BSD
 LICENSE_COMB=	dual
 
-USE_GMAKE=	yes
+USES=		gmake
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
-MAN1=		hostapd_cli.1
-MAN8=		hostapd.8
+PLIST_FILES=	sbin/hostapd sbin/hostapd_cli man/man1/hostapd_cli.1.gz \
+		man/man8/hostapd.8.gz
 
-PLIST_FILES=	sbin/hostapd \
-		sbin/hostapd_cli
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
@@ -36,9 +32,12 @@ do-configure:
 	${CP} ${FILESDIR}/config ${WRKSRC}/hostapd/.config
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hostapd/hostapd ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/hostapd/hostapd_cli ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/hostapd/${MAN1} ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/hostapd/${MAN8} ${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/hostapd/hostapd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/hostapd/hostapd_cli \
+		${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/hostapd/hostapd_cli.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/hostapd/hostapd.8 \
+		${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.post.mk>
