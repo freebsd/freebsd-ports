@@ -1,5 +1,6 @@
 bin/calcurse
 bin/calcurse-upgrade
+man/man1/calcurse.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/submitting-patches.html
 %%NLS%%share/locale/de/LC_MESSAGES/calcurse.mo
