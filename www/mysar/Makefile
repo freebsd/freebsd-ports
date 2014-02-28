@@ -30,7 +30,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	MYSARDIR=${MYSARDIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
 post-extract:
 	${CHMOD} +x ${WRKSRC}/config/*
 
@@ -55,13 +54,11 @@ post-patch:
 
 do-install:
 	${MV} ${WRKSRC} ${WRKROOT}
-	${MKDIR} ${MYSARDIR}
-	${CP} -R `find ${WRKROOT} -mindepth 1 -maxdepth 1 ! -name mysar-binary-importer` ${MYSARDIR}
-	${INSTALL_PROGRAM} ${WRKROOT}/mysar-binary-importer/src/mysar ${MYSARDIR}/bin
-	${INSTALL_DATA} ${WRKROOT}/mysar-binary-importer/mysar.conf ${MYSARDIR}/etc
-	${CHOWN} -R ${WWWOWN} ${MYSARDIR}/www-templates
-	${CHOWN} -R ${WWWOWN} ${MYSARDIR}/smarty-tmp
-
-	${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${MYSARDIR}
+	${CP} -R `find ${WRKROOT} -mindepth 1 -maxdepth 1 ! -name mysar-binary-importer` ${STAGEDIR}${MYSARDIR}
+	${INSTALL_PROGRAM} ${WRKROOT}/mysar-binary-importer/src/mysar ${STAGEDIR}${MYSARDIR}/bin
+	${INSTALL_DATA} ${WRKROOT}/mysar-binary-importer/mysar.conf ${STAGEDIR}${MYSARDIR}/etc
+	${CHOWN} -R ${WWWOWN} ${STAGEDIR}${MYSARDIR}/www-templates
+	${CHOWN} -R ${WWWOWN} ${STAGEDIR}${MYSARDIR}/smarty-tmp
 
 .include <bsd.port.mk>
