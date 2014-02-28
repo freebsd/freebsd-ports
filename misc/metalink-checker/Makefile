@@ -13,34 +13,23 @@ COMMENT=	Python script to check metalink files and complete a basic download
 
 LICENSE=	GPLv2
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-# Documents to install
-DOC_FILES=	\
-		README
-
-.ifndef(NOPORTDOCS)
-PORTDOCS=	*
-.endif
-
+PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}.py
 
-NO_STAGE=	yes
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s|#!/usr/bin/env[[:space:]]python|#!${PYTHON_CMD}|" \
 		${WRKSRC}/${PORTNAME}.py
 
 do-install:
-# docs
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
