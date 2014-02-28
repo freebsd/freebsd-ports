@@ -3,23 +3,21 @@
 
 PORTNAME=	calcurse
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://calcurse.org/files/
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Text-based calendar and scheduling application
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 OPTIONS_DEFINE=	DOCS NLS
 
-CONFIGURE_ARGS=	--without-asciidoc
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+CONFIGURE_ARGS=	--without-asciidoc
 
-MAN1=		calcurse.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDOCS)
@@ -40,8 +38,6 @@ post-patch:
 .endif
 
 post-install:
-.if empty(PORT_OPTIONS:MDOCS)
-	cd ${WRKSRC}/doc/ && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1/
-.endif
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>
