@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.84.5
-PORTREVISION=	3
+PORTVERSION=	4.84.6
+#PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -38,9 +38,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
-PATCHLEVEL=	2
+PATCHLEVEL=	1
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bin/[^c]* bin/clean* \
+		lib/[^M]* lib/${PORTNAME}/[^C]* lib/${PORTNAME}/*.p[ml] \
+		lib/${PORTNAME}.pm lib/${PORTNAME}/CustomFunctions/*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-install-${PORTVERSION}
 SUB_FILES=	MailScanner.8 pkg-message pkg-install pkg-deinstall
@@ -51,9 +54,6 @@ SUB_LIST=	DATADIR=${DATADIR} \
 		ETC_FILES="${ETC_FILES}" \
 		MCP_FILES="${MCP_FILES}"
 
-MAN8=		MailScanner.8
-MLINKS=		MailScanner.8 mailscanner.8
-
 OPTIONS_DEFINE=		SPAMASSASSIN CLAMAV CLAMAVMODULE BDC
 SPAMASSASSIN_DESC=	Install SpamAssassin
 CLAMAV_DESC=		Install ClamAV
@@ -62,7 +62,6 @@ BDC_DESC=		Install BitDefender
 
 OPTIONS_DEFAULT=	SPAMASSASSIN CLAMAV
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSPAMASSASSIN}
@@ -202,16 +201,16 @@ do-build:
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing files in ${PREFIX}/sbin..."
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/MailScanner ${PREFIX}/sbin/mailscanner
-	@${LN} -s ${PREFIX}/sbin/mailscanner ${PREFIX}/sbin/MailScanner
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/MailScanner ${STAGEDIR}${PREFIX}/sbin/mailscanner
+	${LN} -sf ${PREFIX}/sbin/mailscanner ${STAGEDIR}${PREFIX}/sbin/MailScanner
 	@${ECHO_MSG} " [DONE]"
 	@${ECHO_MSG} -n \
 		">> Installing files in ${PREFIX}/libexec/MailScanner..."
-	@${MKDIR} -m ${BINMODE} ${PREFIX}/libexec/MailScanner
-	@cd ${WRKSRC}/lib && ${FIND} * -name "*-wrapper" -exec \
-		${INSTALL_SCRIPT} {} ${PREFIX}/libexec/MailScanner/{}.sample \;
-	@cd ${WRKSRC}/lib && ${FIND} * -name "*-autoupdate" -exec \
-		${INSTALL_SCRIPT} {} ${PREFIX}/libexec/MailScanner/{}.sample \;
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/MailScanner
+	cd ${WRKSRC}/lib && ${FIND} * -name "*-wrapper" -exec \
+		${INSTALL_SCRIPT} {} ${STAGEDIR}${PREFIX}/libexec/MailScanner/{}.sample \;
+	cd ${WRKSRC}/lib && ${FIND} * -name "*-autoupdate" -exec \
+		${INSTALL_SCRIPT} {} ${STAGEDIR}${PREFIX}/libexec/MailScanner/{}.sample \;
 .for FILE in analyse_SpamAssassin_cache clean.SA.cache clean.quarantine \
 		mailscanner_create_locks processing_messages_alert Quick.Peek \
 		update_bad_phishing_emails update_phishing_sites \
@@ -219,74 +218,72 @@ do-install:
 		cron/update_bad_phishing_sites.cron update_virus_scanners \
 		cron/update_virus_scanners.cron update_spamassassin \
 		cron/update_spamassassin.cron
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${FILE} \
-		${PREFIX}/libexec/MailScanner/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${FILE} \
+		${STAGEDIR}${PREFIX}/libexec/MailScanner/
 .endfor
 	@${ECHO_MSG} " [DONE]"
 	@${ECHO_MSG} -n ">> Installing files in ${PREFIX}/etc/MailScanner..."
-	@${MKDIR} -m ${BINMODE} ${PREFIX}/etc/MailScanner
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/MailScanner
 .for FILE in ${ETC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/etc/${FILE} \
-		${PREFIX}/etc/MailScanner/${FILE}.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} \
+		${STAGEDIR}${PREFIX}/etc/MailScanner/${FILE}.sample
 .endfor
-	@${MKDIR} ${PREFIX}/etc/MailScanner/rules
-	@cd ${WRKSRC}/etc/rules \
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/MailScanner/rules
+	cd ${WRKSRC}/etc/rules \
 		&& ${INSTALL_DATA} EXAMPLES README \
-			${PREFIX}/etc/MailScanner/rules
+			${STAGEDIR}${PREFIX}/etc/MailScanner/rules
 .for RULES in spam.whitelist.rules bounce.rules max.message.size.rules
-	@${INSTALL_DATA} ${WRKSRC}/etc/rules/${RULES} \
-		${PREFIX}/etc/MailScanner/rules/${RULES}.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/rules/${RULES} \
+		${STAGEDIR}${PREFIX}/etc/MailScanner/rules/${RULES}.sample
 .endfor
-	@${MKDIR} -m ${BINMODE} ${PREFIX}/etc/MailScanner/mcp
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/MailScanner/mcp
 .for FILE in ${MCP_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/etc/mcp/${FILE} \
-		${PREFIX}/etc/MailScanner/mcp/${FILE}.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/mcp/${FILE} \
+		${STAGEDIR}${PREFIX}/etc/MailScanner/mcp/${FILE}.sample
 .endfor
-	@${MKDIR} ${PREFIX}/etc/MailScanner/conf.d
-	@${INSTALL_DATA} ${WRKSRC}/etc/conf.d/README \
-		${PREFIX}/etc/MailScanner/conf.d/README
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/MailScanner/conf.d
+	${INSTALL_DATA} ${WRKSRC}/etc/conf.d/README \
+		${STAGEDIR}${PREFIX}/etc/MailScanner/conf.d/README
 	@${ECHO_MSG} " [DONE]"
 	@${ECHO_MSG} -n ">> Installing files in ${DATADIR}..."
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC}/etc && ${FIND} reports -type d ! -name "*.old" -exec \
-		${MKDIR} -m ${BINMODE} ${DATADIR}/{} \;
-	@cd ${WRKSRC}/etc \
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/etc && ${FIND} reports -type d ! -name "*.old" -exec \
+		${MKDIR} ${STAGEDIR}${DATADIR}/{} \;
+	cd ${WRKSRC}/etc \
 	    && ${FIND} reports \( -type d -name "*.old" -prune \) \
 	    -o \( -type f ! \( -name "*.orig" -o -name "*.bak" \) \
-		-exec ${INSTALL_DATA} {} ${DATADIR}/{}.sample \; \)
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/upgrade_MailScanner_conf ${DATADIR}
-	@${LN} -s ${DATADIR}/upgrade_MailScanner_conf \
-		${DATADIR}/upgrade_languages_conf
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{}.sample \; \)
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/upgrade_MailScanner_conf \
+		${STAGEDIR}${DATADIR}
+	${LN} -sf ${DATADIR}/upgrade_MailScanner_conf \
+		${STAGEDIR}${DATADIR}/upgrade_languages_conf
 	@${ECHO_MSG} " [DONE]"
 	@${ECHO_MSG} -n ">> Installing files in ${PREFIX}/lib..."
-	@${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner/CustomFunctions
-	@${INSTALL_SCRIPT} ${WRKSRC}/lib/MailScanner.pm \
-		${PREFIX}/lib/MailScanner/MailScanner.pm
-	@cd ${WRKSRC}/lib/MailScanner \
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/MailScanner/MailScanner/CustomFunctions
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/MailScanner.pm \
+		${STAGEDIR}${PREFIX}/lib/MailScanner/MailScanner.pm
+	cd ${WRKSRC}/lib/MailScanner \
 		&& ${FIND} * -type f ! -name "*.orig" -exec \
-		${INSTALL_SCRIPT} {} ${PREFIX}/lib/MailScanner/MailScanner/{} \;
+		${INSTALL_SCRIPT} {} ${STAGEDIR}${PREFIX}/lib/MailScanner/MailScanner/{} \;
 	@${ECHO_MSG} " [DONE]"
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing docs and manpage..."
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${DOCSDIR}
-	@${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${STAGEDIR}${DOCSDIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${STAGEDIR}${DOCSDIR}
 	@${REINPLACE_CMD} \
 		-e 's,%%LOCALBASE%%,${LOCALBASE},'	\
 		-e 's,%%PREFIX%%,${PREFIX},'		\
-		${DOCSDIR}/Sophos.install.freebsd
-	@${RM} -f ${DOCSDIR}/Sophos.install.freebsd.bak
+		${STAGEDIR}${DOCSDIR}/Sophos.install.freebsd
+	@${RM} -f ${STAGEDIR}${DOCSDIR}/Sophos.install.freebsd.bak
 .else
 	@${ECHO_MSG} -n ">> Installing manpage..."
 .endif
-	@cd ${WRKDIR} && \
-		${INSTALL_MAN} ${MAN8} ${MAN5PREFIX}/man/man8
+	cd ${WRKDIR} && \
+		${INSTALL_MAN} ${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
+	${LN} -sf ${PREFIX}/man/man8/${PORTNAME}.8 \
+		${STAGEDIR}${PREFIX}/man/man8/${PORTNAME:L}.8
 	@${ECHO_MSG} " [DONE]"
-
-post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

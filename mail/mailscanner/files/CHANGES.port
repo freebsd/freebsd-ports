@@ -1,3 +1,17 @@
+Version 4.84.6
+==============
+- Upgrade to 4.84.6
+- Added some patches for tmp file bugs
+  reported/provided by brad@comstyle.com
+  from the OpenBSD port and GitHub repository.
+
+Version 4.84.6
+==============
+- Upgrade to 4.84.6
+- Added some patches for tmp file bugs
+  reported/provided by brad@comstyle.com
+  from the OpenBSD port and GitHub repository.
+
 Version 4.84.5_3 (not bumped)
 ================
 - Use OptionsNG

@@ -134,6 +134,8 @@ libexec/MailScanner/vba32-autoupdate.sample
 libexec/MailScanner/vba32-wrapper.sample
 libexec/MailScanner/vexira-autoupdate.sample
 libexec/MailScanner/vexira-wrapper.sample
+man/man8/MailScanner.8.gz
+man/man8/mailscanner.8.gz
 sbin/mailscanner
 sbin/MailScanner
 %%DATADIR%%/reports/ca/rejection.report.txt.sample
