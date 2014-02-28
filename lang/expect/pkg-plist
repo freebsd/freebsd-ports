@@ -4,7 +4,6 @@ bin/cryptdir
 bin/decryptdir
 bin/dislocate
 bin/expect
-%%XFILES%%bin/expectk
 bin/ftp-rfc
 bin/kibitz
 bin/lpunlock
@@ -25,9 +24,21 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
+man/man1/autoexpect.1.gz
+man/man1/cryptdir.1.gz
+man/man1/decryptdir.1.gz
+man/man1/dislocate.1.gz
+man/man1/expect.1.gz
+man/man1/kibitz.1.gz
+man/man1/mkpasswd.1.gz
+man/man1/multixterm.1.gz
+man/man1/passmass.1.gz
+man/man1/tknewsbiff.1.gz
+man/man1/unbuffer.1.gz
+man/man1/xkibitz.1.gz
+man/man3/libexpect.3.gz
 lib/expect%%EXPECT_VER%%/pkgIndex.tcl
-lib/expect%%EXPECT_VER%%/libexpect%%LIBEXPECT_VER%%.a
-lib/libexpect%%LIBEXPECT_VER%%.a
-lib/libexpect%%LIBEXPECT_VER%%.so
-lib/libexpect%%LIBEXPECT_VER%%.so.1
+lib/expect%%EXPECT_VER%%/libexpect%%LIBEXPECT_VER%%.so
+lib/libexpect.so.1
+lib/libexpect.so
 @dirrm lib/expect%%EXPECT_VER%%
