@@ -10,24 +10,23 @@ DISTNAME=	vnc_reflector-${PORTVERSION}
 MAINTAINER=	paul@it.ca
 COMMENT=	Multi-client VNC proxy server
 
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_RC_SUBR=	vncreflector
 
 ALL_TARGET=	default
 WRKSRC=		${WRKDIR}/vnc_reflector
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} -m0750 ${PREFIX}/etc/${PORTNAME}
-	@${CHOWN} root:wheel ${PREFIX}/etc/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} -m0750 ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	@${CHOWN} root:wheel ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
