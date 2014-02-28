@@ -19,19 +19,21 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1/
 
 PLIST_FILES=	bin/dhcperf \
 		share/doc/dhcperf/dcsevaltutorial.pdf \
-		share/doc/dhcperf/dhcperf.pdf
+		share/doc/dhcperf/dhcperf.pdf man/man1/dhcperf.1.gz
 PLIST_DIRS=	share/doc/dhcperf
-MAN1=		dhcperf.1
 
-NO_STAGE=	yes
 post-extract:
 	${TAR} -C ${WRKSRC} -zxvf ${WRKSRC}/${PORTNAME}-${PORTVERSION}_1.tgz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/usr/local/nom/bin/dhcperf ${PREFIX}/bin/dhcperf
-	${INSTALL_DATA} ${WRKSRC}/usr/local/nom/man/man1/dhcperf.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/doc/dhcperf
-	${INSTALL_DATA} ${WRKSRC}/usr/local/nom/doc/dhcperf/dcsevaltutorial.pdf ${PREFIX}/share/doc/dhcperf/dcsevaltutorial.pdf
-	${INSTALL_DATA} ${WRKSRC}/usr/local/nom/doc/dhcperf/dhcperf.pdf ${PREFIX}/share/doc/dhcperf/dhcperf.pdf
+	${INSTALL_PROGRAM} ${WRKSRC}/usr/local/nom/bin/dhcperf \
+		${STAGEDIR}${PREFIX}/bin/dhcperf
+	${INSTALL_DATA} ${WRKSRC}/usr/local/nom/man/man1/dhcperf.1 \
+		${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/dhcperf
+	${INSTALL_DATA} ${WRKSRC}/usr/local/nom/doc/dhcperf/dcsevaltutorial.pdf \
+		 ${STAGEDIR}${PREFIX}/share/doc/dhcperf/dcsevaltutorial.pdf
+	${INSTALL_DATA} ${WRKSRC}/usr/local/nom/doc/dhcperf/dhcperf.pdf \
+		${STAGEDIR}${PREFIX}/share/doc/dhcperf/dhcperf.pdf
 
 .include <bsd.port.mk>
