@@ -10,21 +10,19 @@ MAINTAINER=	jakub_lach@mailplus.pl
 COMMENT=	Small window manager inspired by CTWM, evilwm, and tinywm
 
 LICENSE=	ISCL
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	xcb-util:${PORTSDIR}/x11/xcb-util \
-		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
-		xcb-icccm:${PORTSDIR}/x11/xcb-util-wm
+OPTIONS_DEFINE=	DOCS
 
+LIB_DEPENDS=	libxcb-util.so:${PORTSDIR}/x11/xcb-util \
+		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms \
+		libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm
 
 USE_XORG=	x11 xrandr
 USE_BZIP2=	yes
 
-MAN1=		mcwm.1 hidden.1
-PLIST_FILES=	bin/mcwm bin/hidden
+PLIST_FILES=	bin/mcwm bin/hidden man/man1/mcwm.1.gz man/man1/hidden.1.gz
 PORTDOCS=	README NEWS
 
-NO_STAGE=	yes
 pre-everything::
 		@${ECHO_MSG} "You can build mcwm with your own config.h using the MCWM_CONF knob:"
 		@${ECHO_MSG} "make MCWM_CONF=/path/to/mcwm/config.h install clean"
@@ -38,24 +36,13 @@ post-extract:
 	    ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
-		${MAN1PREFIX}/man/man1/${PORTNAME}.1
-	${INSTALL_PROGRAM} ${WRKSRC}/hidden ${PREFIX}/bin
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_PROGRAM} ${WRKSRC}/hidden ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/hidden.man \
-		${MAN1PREFIX}/man/man1/hidden.1
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${MAN1PREFIX}/man/man1/hidden.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
