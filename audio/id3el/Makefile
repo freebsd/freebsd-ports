@@ -11,7 +11,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add-on to edit ID3 tags for mpg123-mode (mpg123.el) on Emacsen
 
 RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/site-lisp/mpg123.el:${PORTSDIR}/audio/mpg123.el
-NO_STAGE=	yes
 
 ALL_TARGET=	id3put
 
@@ -19,11 +18,11 @@ ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-install:
-	@${MKDIR} ${ELISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/id3.el ${ELISPDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/id3put ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${ELISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/id3.el ${STAGEDIR}${ELISPDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/id3put ${STAGEDIR}${PREFIX}/bin
 # For XEmacs
-	@${MKDIR} ${XELISPDIR}
-	${LN} -sf ${ELISPDIR}/id3.el ${XELISPDIR}
+	@${MKDIR} ${STAGEDIR}${XELISPDIR}
+	(cd ${STAGEDIR}${XELISPDIR} && ${LN} -sf ${ELISPDIR}/id3.el .)
 
 .include <bsd.port.mk>
