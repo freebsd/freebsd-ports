@@ -21,6 +21,7 @@ MAKE_ARGS+=	VDRDIR=${VDRDIR}
 MAKE_ARGS+=	VDR_USER=${VDR_USER}
 MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 MAKE_ARGS+=	OSTYPE=FreeBSD
+MAKE_ARGS+=	PREFIX=${PREFIX}
 PLUGIN?=	${PORTNAME:S/^vdr-plugin-//}
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 MAKE_ENV+=	LOCALBASE=${LOCALBASE}
@@ -53,5 +54,5 @@ post-patch-plugin:
 
 post-install-pluginlocales:
 .if ${PORT_OPTIONS:MNLS}
-	@(cd ${WRKDIR} && ${COPYTREE_SHARE} locale ${PREFIX}/share/)
+	@(cd ${WRKDIR} && ${COPYTREE_SHARE} locale ${STAGEDIR}${PREFIX}/share/)
 .endif

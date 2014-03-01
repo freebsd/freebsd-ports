@@ -11,7 +11,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - development version
 
 BUILD_DEPENDS=  v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=    jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=    libjpeg.so:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 
@@ -26,9 +26,6 @@ USES=		pkgconfig gettext iconv gmake
 DIST_SUBDIR=	vdr
 USE_BZIP2=	yes
 PORTDOCS=	COPYING INSTALL MANUAL README HISTORY
-MAN1=		vdr.1
-MAN5=		vdr.5
-MANCOMPRESSED=	yes
 CONFDIR=	$(ETCDIR)
 USE_CSTD=	gnu89
 MAKE_ARGS+=	CC=${CC}
@@ -40,6 +37,7 @@ MAKE_ARGS+=	LIRC_DEVICE=/var/run/lirc/lircd
 MAKE_ARGS+=	LIBDIR=../../lib
 MAKE_ARGS+=	VDRDIR=${WRKSRC}
 MAKE_ARGS+=	TMPDIR=/tmp
+MAKE_ARGS+=	PREFIX=${PREFIX}
 ALL_TARGET=	all plugins
 
 VIDEODIR=	/video
@@ -53,7 +51,6 @@ GROUPS=		${VDR_GROUP}
 PLIST_SUB=	VDR_USER=${VDR_USER}
 PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_ca_updates.patch
@@ -80,7 +77,6 @@ ALL_TARGET=	vdr plugins
 post-patch:
 # clang doesn't know -MG:
 	@${REINPLACE_CMD} -e '/^MAKEDEP.*-MM/s/-MG[[:space:]]*$$/# -MG/' \
-			-e '/^LIBS/s/-liconv/${ICONVLIB}/' \
 		${WRKSRC}/Makefile ${WRKSRC}/libsi/Makefile \
 		${WRKSRC}/PLUGINS/src/*/Makefile
 	@[ ! -f ${WRKSRC}/s2apiwrapper.c ] || \
@@ -94,7 +90,9 @@ post-patch:
 # (like TT S2-36?0.)
 	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/stb0899-signalstrength.patch
 .endif
-	@${SED} 's|^\(VIDEODIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*|\1\2${VIDEODIR}|' \
+	@${SED} \
+		-e '/^PREFIX/d' \
+		-e 's|^\(VIDEODIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*|\1\2${VIDEODIR}|' \
 		${WRKSRC}/Make.config.template >${WRKSRC}/Make.config
 	@${REINPLACE_CMD} -e 's|%%CONFDIR%%|${CONFDIR}|' ${WRKSRC}/vdr.1
 # We don't support this yet:
@@ -102,24 +100,17 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MNLS}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} locale ${PREFIX}/share/)
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} locale ${STAGEDIR}${PREFIX}/share/)
 .endif
-	${MKDIR} ${CONFDIR}/plugins
-	${CHOWN} ${VDR_USER}:${VDR_GROUP} ${CONFDIR} ${CONFDIR}/plugins
-	${INSTALL_DATA} ${FILESDIR}/remote.conf ${CONFDIR}/remote.conf.sample
-	@if [ ! -f ${CONFDIR}/remote.conf ]; then \
-	    ${INSTALL_DATA} -o ${VDR_USER} -g ${VDR_GROUP} ${FILESDIR}/remote.conf ${CONFDIR}; \
-	fi
+	${MKDIR} ${STAGEDIR}${CONFDIR}/plugins
+	${INSTALL_DATA} ${FILESDIR}/remote.conf ${STAGEDIR}${CONFDIR}/remote.conf.sample
 	for i in $$(cd ${WRKSRC} && ls *.conf); do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${CONFDIR}/$$i.sample; \
-		if [ ! -f ${CONFDIR}/$$i ]; then \
-			${INSTALL_DATA} -o ${VDR_USER} -g ${VDR_GROUP} ${WRKSRC}/$$i ${CONFDIR}/$$i; \
-		fi; \
+		${INSTALL_DATA} ${WRKSRC}/$$i ${STAGEDIR}${CONFDIR}/$$i.sample; \
 	done
-	${INSTALL_SCRIPT} ${WRKDIR}/vdr-waitdvb ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/vdr-waitdvb ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
