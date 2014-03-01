@@ -4,6 +4,7 @@
 
 PORTNAME=	xdg
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://people.freedesktop.org/~lanius/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +15,8 @@ COMMENT=	A python library to access freedesktop.org standards
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	pyxdg
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|g' \
