@@ -19,7 +19,6 @@ LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
 
 ALL_TARGET=	gramofile
 USES=		gmake perl5
-NO_STAGE=	yes
 USE_CSTD=	gnu89
 MAKE_ARGS+=	CC=${CC}
 MAKE_ARGS+=	CXX=${CXX}
@@ -42,9 +41,10 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gramofile ${WRKSRC}/bplay_gramo ${PREFIX}/bin
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${LN} -s bplay_gramo ${PREFIX}/bin/brec_gramo
+	${INSTALL_PROGRAM} ${WRKSRC}/gramofile ${WRKSRC}/bplay_gramo \
+		${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${LN} -s bplay_gramo ${STAGEDIR}${PREFIX}/bin/brec_gramo
 
 .include <bsd.port.mk>
