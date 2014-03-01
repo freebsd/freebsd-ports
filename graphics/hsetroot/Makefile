@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_EFL=	imlib2
+USE_XORG=	x11
+LDFLAGS=	-lX11
 
 PLIST_FILES=	bin/hsetroot
 
