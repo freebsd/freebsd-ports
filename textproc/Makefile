@@ -1092,15 +1092,6 @@
     SUBDIR += php5-xmlreader
     SUBDIR += php5-xmlwriter
     SUBDIR += php5-xsl
-    SUBDIR += php52-ctype
-    SUBDIR += php52-dom
-    SUBDIR += php52-pspell
-    SUBDIR += php52-simplexml
-    SUBDIR += php52-wddx
-    SUBDIR += php52-xml
-    SUBDIR += php52-xmlreader
-    SUBDIR += php52-xmlwriter
-    SUBDIR += php52-xsl
     SUBDIR += php53-ctype
     SUBDIR += php53-dom
     SUBDIR += php53-pspell

@@ -54,9 +54,7 @@ PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBA
 DEFAULT_PHP_VER?=	${PHP_DEFAULT:S/.//}
 
 PHP_VER?=	${DEFAULT_PHP_VER}
-.if ${PHP_VER}  == 52
-PHP_EXT_DIR=	20060613
-.elif ${PHP_VER}  == 53
+.if ${PHP_VER}  == 53
 PHP_EXT_DIR=	20090626
 PHP_EXT_INC=	pcre spl
 .elif ${PHP_VER}  == 55
@@ -281,7 +279,6 @@ _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
 		tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
 _USE_PHP_VER5=	${_USE_PHP_ALL} phar sqlite3
-_USE_PHP_VER52=	${_USE_PHP_ALL} dbase mhash ming ncurses oci8 sqlite
 _USE_PHP_VER53=	${_USE_PHP_ALL} phar sqlite sqlite3
 _USE_PHP_VER55=	${_USE_PHP_ALL} phar sqlite3
 
@@ -296,11 +293,7 @@ dba_DEPENDS=	databases/php${PHP_VER}-dba
 dbase_DEPENDS=	databases/php${PHP_VER}-dbase
 dom_DEPENDS=	textproc/php${PHP_VER}-dom
 exif_DEPENDS=	graphics/php${PHP_VER}-exif
-.if ${PHP_VER} == 52
-fileinfo_DEPENDS=	sysutils/pecl-fileinfo
-.else
 fileinfo_DEPENDS=	sysutils/php${PHP_VER}-fileinfo
-.endif
 filter_DEPENDS=	security/php${PHP_VER}-filter
 ftp_DEPENDS=	ftp/php${PHP_VER}-ftp
 gd_DEPENDS=	graphics/php${PHP_VER}-gd

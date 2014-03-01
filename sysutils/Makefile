@@ -678,7 +678,6 @@
     SUBDIR += pear-I18Nv2
     SUBDIR += pear-Log
     SUBDIR += pear-Translation2
-    SUBDIR += pecl-fileinfo
     SUBDIR += pecl-mogilefs
     SUBDIR += pecl-proctitle
     SUBDIR += pefs-kmod
@@ -692,7 +691,6 @@
     SUBDIR += philesight
     SUBDIR += php5-fileinfo
     SUBDIR += php5-posix
-    SUBDIR += php52-posix
     SUBDIR += php53-fileinfo
     SUBDIR += php53-posix
     SUBDIR += php55-fileinfo
