@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ProjectTox-Core
-PORTVERSION=	0.140222
+PORTVERSION=	0.140301
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	ProjectTox-Core
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	f219fb4
+GH_COMMIT=	16b93e8
 
 USE_AUTOTOOLS=	automake autoconf libtoolize
 USES=		pkgconfig
@@ -31,7 +31,7 @@ OPTIONS_DEFAULT=	PHONE SODIUM
 
 PHONE_DESC=		Enable phone test
 PHONE_CONFIGURE_ENABLE=	phone
-PHONE_LIB_DEPENDS=	libopenal.so:${PORTSDIR}/audio/openal		\
+PHONE_LIB_DEPENDS=	libopenal.so.1:${PORTSDIR}/audio/openal-soft	\
 			libv4l2.so:${PORTSDIR}/multimedia/libv4l	\
 			libswscale.so:${PORTSDIR}/multimedia/ffmpeg
 PHONE_USE=		SDL=sdl

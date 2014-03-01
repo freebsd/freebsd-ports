@@ -9,5 +9,6 @@ lib/libtoxcore.a
 lib/libtoxcore.la
 lib/libtoxcore.so
 lib/libtoxcore.so.0
+libdata/pkgconfig/libtoxav.pc
 libdata/pkgconfig/libtoxcore.pc
 @dirrm include/tox
