@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MP3 player
 
-LIB_DEPENDS=	libid3-3.8.so:${PORTSDIR}/audio/id3lib \
+LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libgdbm.so:${PORTSDIR}/databases/gdbm
 
 USES=		pathfix pkgconfig gettext gmake perl5
