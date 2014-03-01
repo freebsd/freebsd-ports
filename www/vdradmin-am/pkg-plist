@@ -1,8 +1,10 @@
 bin/vdradmind
-@exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d %%ETCDIR%%
+@exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d %D/%%ETCDIR%%
 @unexec if cmp -s %D/etc/vdradmin-am/vdradmind.conf.sample %D/etc/vdradmin-am/vdradmind.conf; then rm -f %D/etc/vdradmin-am/vdradmind.conf; fi
 %%ETCDIR%%/vdradmind.conf.sample
 @exec if [ ! -f %D/etc/vdradmin-am/vdradmind.conf ] ; then cp -p %D/%F %B/vdradmind.conf; chown %%VDR_USER%%:%%VDR_GROUP%% %B/vdradmind.conf; fi
+@exec chown -R %%VDR_USER%%:%%VDR_GROUP%% %D/%%ETCDIR%%
+man/man8/vdradmind.8.gz
 share/vdradmin-am/lib/MIME/Base64.pm
 share/vdradmin-am/lib/Template/Plugin/Date.pm
 share/vdradmin-am/lib/Template/Plugin/HTML.pm
@@ -177,3 +179,8 @@ share/locale/ru/LC_MESSAGES/vdradmin.mo
 @dirrm share/vdradmin-am
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd /
+@dirrmtry var/cache/vdradmin-am
+@dirrmtry var/log/vdradmin-am
+@dirrmtry var/run/vdradmin-am
+@cwd %%PREFIX%%
