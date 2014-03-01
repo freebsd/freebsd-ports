@@ -1427,8 +1427,6 @@
     SUBDIR += php-templates
     SUBDIR += php5-session
     SUBDIR += php5-tidy
-    SUBDIR += php52-session
-    SUBDIR += php52-tidy
     SUBDIR += php53-session
     SUBDIR += php53-tidy
     SUBDIR += php55-opcache

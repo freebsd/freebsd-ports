@@ -244,8 +244,6 @@
     SUBDIR += php-mode.el
     SUBDIR += php5
     SUBDIR += php5-extensions
-    SUBDIR += php52
-    SUBDIR += php52-extensions
     SUBDIR += php53
     SUBDIR += php53-extensions
     SUBDIR += php55
