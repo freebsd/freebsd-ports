@@ -13,6 +13,8 @@ lib/vdr/libvdr-svdrpdemo.so.1.7.29
 lib/vdr/libvdr-epgtableid0.so.1.7.29
 lib/vdr/libvdr-rcu.so.1.7.29
 libdata/pkgconfig/vdr.pc
+man/man1/vdr.1.gz
+man/man5/vdr.5.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/vdr.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/vdr.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/vdr-hello.mo
