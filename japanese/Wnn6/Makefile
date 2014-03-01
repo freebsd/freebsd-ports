@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese input method (this is not free)
 
+DEPRECATED=	Unmaintained, interactive and restricted
+EXPIRATION_DATE=	2014-04-01
 IGNOREFILES=	${DISTFILES}
 NO_WRKSUBDIR=	yes
 LIBDIR=		${PREFIX}/OMRONWnn6

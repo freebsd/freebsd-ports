@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commercial nntp server with enhancements over inn and cnews
 
+DEPRECATED=	Unmaintained, interactive and restricted
+EXPIRATION_DATE=	2014-04-01
 WRKSRC=		${WRKDIR}/dtemp
 RESTRICTED=	only free for non-profit organisations
 IS_INTERACTIVE=	yes
