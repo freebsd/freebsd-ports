@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	readline
-PORTVERSION=	6.3.${PATCHLEVEL}
+PORTVERSION=	6.3${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU \
 		ftp://ftp.cwru.edu/pub/bash/
@@ -30,7 +31,7 @@ PATCHES=
 .for p in ${PATCHES:S/^/00/}
 PATCH_FILES+=	${PORTNAME}${PORTVERSION:R:S/.//}-${p:C/.*(...)$/\1/}
 .endfor
-PATCHLEVEL=	${PATCHES:Q:S/ /./g:E}
+PATCHLEVEL=	${PATCHES:M1:S/1/./}${PATCHES:Q:S/^/./:S/ /./g:E}
 
 .include <bsd.port.options.mk>
 
