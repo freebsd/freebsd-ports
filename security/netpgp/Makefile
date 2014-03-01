@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 
 CFLAGS+=	-Wno-error
 .if !exists(/usr/include/openssl/idea.h)
-CFLAGS+=-	-DOPENSSL_NO_IDEA
+CFLAGS+=	-DOPENSSL_NO_IDEA
 .endif
 
 .include <bsd.port.mk>
