@@ -14,6 +14,8 @@ COMMENT=	An encyclopedia  "Mypaedia" (EPWING V1 format)
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
 		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
+DEPRECATED=	Unmaintained, interactive and restricted
+EXPIRATION_DATE=	2014-04-01
 IS_INTERACTIVE= YES
 RESTRICTED=	The original dictionary is not free
 USES=		perl5
