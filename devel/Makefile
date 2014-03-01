@@ -1017,6 +1017,7 @@
     SUBDIR += libglade2-reference
     SUBDIR += libglademm24
     SUBDIR += libgpc
+    SUBDIR += libgpkg
     SUBDIR += libgsf
     SUBDIR += libgta
     SUBDIR += libgtop
