@@ -6,5 +6,5 @@
  	$(MAKE) -C ./server clean
 +
 +install:
-+	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN)-client.so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN)-client.so.$(APIVERSION)
-+	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN)-server.so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN)-server.so.$(APIVERSION)
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN)-client.so.$(APIVERSION) ${DESTDIR}$(PREFIX)/lib/vdr/libvdr-$(PLUGIN)-client.so.$(APIVERSION)
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN)-server.so.$(APIVERSION) ${DESTDIR}$(PREFIX)/lib/vdr/libvdr-$(PLUGIN)-server.so.$(APIVERSION)

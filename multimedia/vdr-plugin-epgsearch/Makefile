@@ -12,8 +12,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - EPG search plugin
 
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
-		tre:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libtre.so:${PORTSDIR}/textproc/libtre
 
 USES=		pkgconfig
 USE_BZIP2=	yes
@@ -22,7 +22,6 @@ PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
 MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I$(LOCALBASE)/include/vdr -I${WRKSRC}"
 
-NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
@@ -30,10 +29,11 @@ post-patch: post-patch-plugin
 		-e 's/^#\(HAVE_LIBTRE=\)/\1/;' \
 		${WRKSRC}/Makefile
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+
 post-install: post-install-pluginlocales
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
