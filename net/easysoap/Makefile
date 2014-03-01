@@ -22,10 +22,6 @@ USE_LDCONFIG=	yes
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
-USE_GCC=	4.2+
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	    ${WRKSRC}/configure
