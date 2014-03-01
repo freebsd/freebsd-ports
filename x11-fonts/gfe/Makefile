@@ -13,8 +13,8 @@ COMMENT=	GTK+-based .bdf font editor for X
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/gfe
+
 USE_GNOME=	gtk12
 USE_XORG=	xpm
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
