@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A simple network library built upon Glib-2
 
-USES=		pkgconfig
+USES=		pkgconfig pathfix
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack glib20
 USE_LDCONFIG=	yes
@@ -23,7 +23,6 @@ CONFIGURE_ARGS+=	--with-html-dir=${DOCSDIR}
 CONFIGURE_ARGS+=	--without-html-dir
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|GNET_INTERFACE_AGE=0|GNET_INTERFACE_AGE=8|g' \
 		${WRKSRC}/configure
