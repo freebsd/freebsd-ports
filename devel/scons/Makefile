@@ -9,16 +9,13 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	gavin@16degrees.com.au
 COMMENT=	Build tool alternative to make
 
-RUN_DEPENDS+=	python2:${PORTSDIR}/lang/python2
+LICENSE=	MIT
 
-USE_PYTHON=	yes
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 PLIST_SUB+=	SCONS_VER=${PORTVERSION}
-
-USE_PYTHON=	2
-
 
 post-patch:
 	@${REINPLACE_CMD} \
