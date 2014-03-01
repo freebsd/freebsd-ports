@@ -5,8 +5,7 @@ PORTNAME=	yfklog
 PORTVERSION=	0.3.5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/yfklog/ \
-		${MASTER_SITE_LOCAL} \
-		http://www.db.net/downloads/
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz yfk.png
 DIST_SUBDIR=	${PORTNAME}
@@ -14,6 +13,8 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
@@ -23,13 +24,6 @@ RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 
 USES=		perl5
 NO_BUILD=	yes
-MAN1=		yfklog.1
-
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
@@ -37,31 +31,27 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|prefix="/usr"|prefix="${PREFIX}"|' \
 	     ${WRKSRC}/yfk ${WRKSRC}/yfksubs.pl
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/yfk ${PREFIX}/bin/yfklog
-	@${INSTALL_DATA} ${FILESDIR}/yfklog.1 ${MANPREFIX}/man/man1
-	@${INSTALL_SCRIPT} ${WRKSRC}/yfksubs.pl ${PREFIX}/libexec/yfksubs.pl
-	@${INSTALL_DATA} ${_DISTDIR}/yfk.png ${PREFIX}/share/pixmaps/yfklog.png
-	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/yfk ${STAGEDIR}${PREFIX}/bin/yfklog
+	${INSTALL_DATA} ${FILESDIR}/yfklog.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/yfksubs.pl ${STAGEDIR}${PREFIX}/libexec/yfksubs.pl
+	${INSTALL_DATA} ${_DISTDIR}/yfk.png ${STAGEDIR}${PREFIX}/share/pixmaps/yfklog.png
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for	f in cty.dat db_calls.sql db_clubs.sql \
 	db_config.sql db_log.sql db_log.sqlite \
 	zweckform3421.lab zweckform3475.lab zweckform3657.lab config
-	@${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DATADIR}
 .endfor
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}/onlinelog
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/onlinelog
 .for 	f in README  search.php test.txt
-	@${INSTALL_DATA} ${WRKSRC}/onlinelog/$f ${EXAMPLESDIR}/onlinelog
+	${INSTALL_DATA} ${WRKSRC}/onlinelog/$f ${STAGEDIR}${EXAMPLESDIR}/onlinelog
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}/clubs
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/clubs
 .for	f in README hsc2sql.awk hscmember.txt
-	@${INSTALL_DATA} ${WRKSRC}/clubs/$f ${EXAMPLESDIR}/clubs
+	${INSTALL_DATA} ${WRKSRC}/clubs/$f ${STAGEDIR}${EXAMPLESDIR}/clubs
 .endfor
-.endif
-.if 	${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for	f in AUTHORS CHANGELOG COPYING INSTALL MANUAL README RELEASENOTES
-	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

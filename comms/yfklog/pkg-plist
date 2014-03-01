@@ -1,5 +1,6 @@
 bin/yfklog
 libexec/yfksubs.pl
+man/man1/yfklog.1.gz
 share/pixmaps/yfklog.png
 %%DATADIR%%/config
 %%DATADIR%%/cty.dat
