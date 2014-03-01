@@ -14,5 +14,4 @@ USES=		bison
 CFLAGS+=	-fPIC
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
