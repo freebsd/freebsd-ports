@@ -3,6 +3,7 @@
 
 PORTNAME=	libtre
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://laurikari.net/tre/ \
 		LOCAL/bf
@@ -19,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	tre
+PYDISTUTILS_AUTOPLIST=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
@@ -32,7 +33,4 @@ CFLAGS+=	-Wuninitialized -ffast-math -finline-functions \
 		-fforce-mem -fforce-addr -O3
 .endif
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/tre.so
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
