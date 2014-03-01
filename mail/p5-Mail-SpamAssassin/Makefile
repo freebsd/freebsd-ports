@@ -11,7 +11,7 @@ PKGNAMEPREFIX?=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 
 MAINTAINER?=	perl@FreeBSD.org
-COMMENT?=	A highly efficient mail filter for identifying spam
+COMMENT?=	Highly efficient mail filter for identifying spam
 
 LICENSE=	APACHE20
 
@@ -105,24 +105,12 @@ RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .if ${PORT_OPTIONS:MRAZOR}
 RUN_DEPENDS+=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
 .else
-.if   ${PERL_LEVEL} < 501000
-.if ! ${PORT_OPTIONS:MDKIM}
-RUN_DEPENDS+=	p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
-.endif
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MDKIM}
 RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
-. if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
-. endif
 RUN_DEPENDS+=	p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM
-. if ${PERL_LEVEL} < 501400
-RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.24:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
-. else
 RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.26_1:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
-. endif
 .endif
 
 .if ${PORT_OPTIONS:MSACOMPILE}
