@@ -1,26 +1,13 @@
---- gr-audio/lib/CMakeLists.txt.orig	2013-05-01 18:57:50.000000000 -0500
-+++ gr-audio/lib/CMakeLists.txt	2013-06-07 15:29:10.000000000 -0500
-@@ -120,8 +120,8 @@
- find_package(Portaudio)
+--- gr-audio/lib/CMakeLists.txt.orig	2014-01-06 18:25:13.000000000 -0500
++++ gr-audio/lib/CMakeLists.txt	2014-01-08 17:25:40.000000000 -0500
+@@ -127,8 +127,8 @@
  
  if(PORTAUDIO_FOUND)
--
--    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/portaudio ${PORTAUDIO_INCLUDE_DIRS})
+ 
+-    include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR}/portaudio)
+-    include_directories(${PORTAUDIO_INCLUDE_DIRS})
 +    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/portaudio)
 +    include_directories(BEFORE ${PORTAUDIO_INCLUDE_DIRS})
      list(APPEND gr_audio_libs ${PORTAUDIO_LIBRARIES})
      add_definitions(${PORTAUDIO_DEFINITIONS})
      list(APPEND gr_audio_sources
-@@ -169,3 +169,12 @@
- GR_LIBRARY_FOO(gnuradio-audio RUNTIME_COMPONENT "audio_runtime" DEVEL_COMPONENT "audio_devel")
- 
- install(FILES ${gr_audio_confs} DESTINATION ${GR_PREFSDIR} COMPONENT "audio_runtime")
-+# Install an original copy for FreeBSD
-+if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+foreach(conf_file ${gr_audio_confs})
-+  get_filename_component(nconf_file ${conf_file} NAME)
-+  install(FILES ${conf_file} DESTINATION ${GR_PREFSDIR} RENAME ${nconf_file}.sample COMPONENT "audio_run_time")
-+endforeach(conf_file)
-+elseif()
-+  install(FILES ${gr_audio_confs} DESTINATION ${GR_PREFSDIR} COMPONENT "audio_runtime")
-+endif()
