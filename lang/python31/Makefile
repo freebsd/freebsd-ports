@@ -27,6 +27,7 @@ MAKE_ENV=		VPATH="${PYTHON_WRKSRC}"
 
 INSTALL_TARGET=	altinstall
 
+USES=		readline
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
