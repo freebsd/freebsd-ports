@@ -13,12 +13,12 @@ MASTER_SITES=	http://launchpad.net/ikarus/0.0/${PORTVERSION}/+download/ \
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Optimizing incremental native-code compiler for R6RS Scheme
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 # Both install bin/scheme-script
 CONFLICTS=	petite-chez-*
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=\
 		CFLAGS="-I${LOCALBASE}/include" \
@@ -35,10 +35,6 @@ NO_STAGE=	yes
 .if !${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in \
 		${FILESDIR}/extra-patch-doc__Makefile.in
-.endif
-
-.if ${OSVERSION} < 700042
-USE_GCC=	4.2+
 .endif
 
 .include <bsd.port.post.mk>
