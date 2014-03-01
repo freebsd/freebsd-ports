@@ -3,6 +3,7 @@
 
 PORTNAME=	django-keyedcache
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.caomhin.org/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,11 +17,7 @@ LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/bkroeze-django-keyedcache-4be18235b372
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_NOEGGINFO=	yes
-PYEASYINSTALL_EGG=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PORTVERSION:C/([[:digit:]]\.[[:digit:]])\./\1_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
-PYEASYINSTALL_UNINSTALLARGS=	-q -m -S ${PYTHON_SITELIBDIR} \
-				${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION:C/([[:digit:]]\.[[:digit:]])\./\1_/g}
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
