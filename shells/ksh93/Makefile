@@ -12,7 +12,7 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${KSHVERSION:S/-//g}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTFILES=	INIT.${INITVERSION}.tgz ast-ksh.${KSHVERSION}.tgz
@@ -33,11 +33,7 @@ NO_WRKSUBDIR=	yes
 INITVERSION=	2013-05-24
 KSHVERSION=	2012-08-01
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSTATIC}
-MAKE_ENV+=	LDFLAGS+=-static
-.endif
+STATIC_MAKE_ENV=	LDFLAGS+=-static
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|' \
