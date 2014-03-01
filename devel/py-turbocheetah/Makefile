@@ -3,7 +3,7 @@
 
 PORTNAME=	TurboCheetah
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://files.turbogears.org/eggs/ \
@@ -16,9 +16,9 @@ COMMENT=	TurboGears plugin to support use of Cheetah templates
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
