@@ -3,6 +3,7 @@
 
 PORTNAME=	urljr
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.openidenabled.com/resources/downloads/python-openid/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,6 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/curl:${PORTSDIR}/ftp/py-curl
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	python-urljr
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
