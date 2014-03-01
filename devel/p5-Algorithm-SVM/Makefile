@@ -12,6 +12,6 @@ COMMENT=	Perl bindings for the libsvm Support Vector Machine library
 
 USES=		perl5
 USE_PERL5=	configure
-CC=		c++
+CC=		${CXX}
 
 .include <bsd.port.mk>
