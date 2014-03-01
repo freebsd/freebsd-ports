@@ -34,7 +34,6 @@ WRKSRC=		${WRKDIR}/GPL/GtkRadiant
 SUB_FILES=	${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-ldl//' ${WRKSRC}/SConscript
 	@${GREP} -Rl 'defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e \
 		's/\(defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)\)/\1 || defined (__FreeBSD__)/'
