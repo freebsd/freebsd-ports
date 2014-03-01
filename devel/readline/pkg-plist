@@ -16,8 +16,11 @@ man/man3/readline.3.gz
 man/man3/history.3.gz
 %%DATADIR%%/excallback.c
 %%DATADIR%%/fileman.c
+%%DATADIR%%/hist_erasedups.c
+%%DATADIR%%/hist_purgecmd.c
 %%DATADIR%%/histexamp.c
 %%DATADIR%%/manexamp.c
+%%DATADIR%%/rl-callbacktest.c
 %%DATADIR%%/rl-fgets.c
 %%DATADIR%%/rl.c
 %%DATADIR%%/rlcat.c
@@ -25,5 +28,9 @@ man/man3/history.3.gz
 %%DATADIR%%/rlptytest.c
 %%DATADIR%%/rltest.c
 %%DATADIR%%/rlversion.c
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm include/readline
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

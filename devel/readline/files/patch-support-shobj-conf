@@ -32,8 +32,7 @@
  	;;
  
  # FreeBSD-4.x and later have only ELF
--freebsd[4-9]*|freebsdelf*|dragonfly*)
-+freebsd[4-9].*|freebsd1[0-9].*|freebsdelf*|dragonfly*)
+ freebsd[4-9]*|freebsd1[0-9]*|freebsdelf*|dragonfly*)
  	SHOBJ_CFLAGS=-fPIC
  	SHOBJ_LD='${CC}'
  

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	readline
-PORTVERSION=	6.2.${PATCHLEVEL}
+PORTVERSION=	6.3.${PATCHLEVEL}
 CATEGORIES=	devel
 MASTER_SITES=	GNU \
 		ftp://ftp.cwru.edu/pub/bash/
@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 
 INFO=		readline rluserman history
 
-PATCHES=	1 2 3 4 5
+PATCHES=
 .for p in ${PATCHES:S/^/00/}
 PATCH_FILES+=	${PORTNAME}${PORTVERSION:R:S/.//}-${p:C/.*(...)$/\1/}
 .endfor
