@@ -8,11 +8,11 @@ MASTER_SITES=	http://libuv.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A multi-platform support library with a focus on asynchronous I/O
+COMMENT=	Multi-platform support library with a focus on asynchronous I/O
 
 LICENSE=	NODE
 LICENSE_NAME=	NODE
-LICENSE_FILE	=${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 TEST_DEPENDS=	gyp:${PORTSDIR}/devel/py-gyp-devel	\
