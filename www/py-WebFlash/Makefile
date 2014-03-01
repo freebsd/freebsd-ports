@@ -3,6 +3,7 @@
 
 PORTNAME=	WebFlash
 PORTVERSION=	0.1a9
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,13 +12,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Library to display flash messages in python web applications
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 260
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
