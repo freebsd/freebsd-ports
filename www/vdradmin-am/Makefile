@@ -30,7 +30,6 @@ PATCH_STRIP=	-p1
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/}-${DISTVERSION}
 NO_BUILD=	yes
-MAN8=		vdradmind.8
 USE_RC_SUBR=	vdradmind
 
 VIDEODIR=	/video
@@ -54,20 +53,18 @@ USERS=		${VDR_USER}
 GROUPS=		${VDR_GROUP}
 PLIST_SUB=	VDR_USER=${VDR_USER}
 PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
+PLIST_SUB+=	PREFIX=${PREFIX}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 1s-^#!/bin/bash-#!${LOCALBASE}/bin/bash- \
 		${WRKSRC}/install.sh ${WRKSRC}/make.sh
 
 do-install:
-	@${INSTALL} -o ${VDR_USER} -g ${VDR_GROUP} -d ${ETCDIR}
-	@${INSTALL_DATA} -m 644 ${FILESDIR}/vdradmind.conf ${ETCDIR}/vdradmind.conf.sample
-	@if [ ! -f ${ETCDIR}/vdradmind.conf ]; then \
-	    ${INSTALL_DATA} -o ${VDR_USER} -g ${VDR_GROUP} -m 644 ${FILESDIR}/vdradmind.conf ${ETCDIR}; \
-	fi
-	@${INSTALL} -o ${VDR_USER} -g ${VDR_GROUP} -d /var/cache/${PORTNAME} \
-		/var/log/${PORTNAME} /var/run/${PORTNAME}
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./install.sh)
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} -m 644 ${FILESDIR}/vdradmind.conf ${STAGEDIR}${ETCDIR}/vdradmind.conf.sample
+	${MKDIR}  ${STAGEDIR}/var/cache/${PORTNAME} \
+		${STAGEDIR}/var/log/${PORTNAME} ${STAGEDIR}/var/run/${PORTNAME}
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} \
+		./install.sh)
 
 .include <bsd.port.mk>
