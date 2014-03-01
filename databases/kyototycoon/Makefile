@@ -25,13 +25,8 @@ REINPLACE_ARGS=	-i ''
 USE_LDCONFIG=	yes
 USES=		gmake pkgconfig
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g; s|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/DOCDIR/d' ${WRKSRC}/Makefile.in
-.endif
 
 post-build:
 	@cd ${WRKSRC}/ && ${STRIP_CMD} ktplugdbvoid.so ktplugservmemc.so \
@@ -39,12 +34,10 @@ post-build:
 		ktutilmgr ktutilserv ktutiltest
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${FIND} ${STAGEDIR}${DOCSDIR}/ -type d -exec ${CHMOD} 755 '{}' \;
-	${FIND} ${STAGEDIR}${DOCSDIR}/ -type f -exec ${CHMOD} 444 '{}' \;
-.endif
+	${FIND} ${STAGEDIR}${DOCSDIR}/ -type d -exec ${CHMOD} ${BINMODE} '{}' \;
+	${FIND} ${STAGEDIR}${DOCSDIR}/ -type f -exec ${CHMOD} ${DOCMODE} '{}' \;
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
