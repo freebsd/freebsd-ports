@@ -12,13 +12,10 @@ COMMENT=	Multi-purpose desktop calculator (backend library)
 
 LIB_DEPENDS=	cln:${PORTSDIR}/math/cln
 
-USES=		pkgconfig
-USE_GNOME=	glib20 gnomehack intlhack libxml2
-USE_GMAKE=	yes
+USES=		pkgconfig pathfix gmake
+USE_GNOME=	glib20 intlhack libxml2
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	NLS
 
