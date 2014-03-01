@@ -11,6 +11,9 @@ COMMENT=	Framework for hardware logic analyzers, protocol decoders library
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Depends on expiring lang/python31
+EXPIRATION_DATE=	2014-06-01
+
 USE_PYTHON=	3.1
 GNU_CONFIGURE=	yes
 USES=	gmake pkgconfig pathfix
