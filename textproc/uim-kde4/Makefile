@@ -9,7 +9,7 @@ BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	uim:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	uim-pref-qt4:${PORTSDIR}/textproc/uim-qt4
 
-USE_GCC=	4.2+
+USE_GCC=	any
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT4=	qmake_build moc_build qt3support uic rcc
 USE_AUTOTOOLS=	libtool

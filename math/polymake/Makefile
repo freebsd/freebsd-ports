@@ -23,7 +23,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 
 USES=		gmake perl5
 USE_BZIP2=	yes
-USE_GCC=	4.2+
+USE_GCC=	any
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 JAVA_RUN=	yes

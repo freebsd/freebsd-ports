@@ -19,7 +19,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME:L}
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
 USES=		cmake
-USE_GCC=	4.2+
+USE_GCC=	any
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	corelib gui xml qtestlib dbus uic_build moc_build \
