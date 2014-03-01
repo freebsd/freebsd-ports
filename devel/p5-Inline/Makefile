@@ -16,17 +16,10 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Parse-RecDescent>=1.800:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Inline-Files>=0:${PORTSDIR}/devel/p5-Inline-Files
+TEST_DEPENDS=	p5-Inline-Files>=0:${PORTSDIR}/devel/p5-Inline-Files \
+		p5-Test-Warn>=0.23:${PORTSDIR}/devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 501400
-TEST_DEPENDS+=	p5-Test-Warn>=0.23:${PORTSDIR}/devel/p5-Test-Warn
-.else
-TEST_DEPENDS+=	p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
