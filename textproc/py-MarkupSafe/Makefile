@@ -3,6 +3,7 @@
 
 PORTNAME=		MarkupSafe
 PORTVERSION=		0.18
+PORTREVISION=		1
 CATEGORIES=		textproc python
 MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +14,9 @@ COMMENT=		Implements a XML/HTML/XHTML Markup safe string for Python
 LICENSE=		BSD
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_ARCHDEP=	no
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_VERSION} == python3.2
@@ -25,10 +25,6 @@ PY2TO3_ARGS=	--no-diffs --fix=all --nobackups --verbose --write
 
 pre-build:
 	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/markupsafe
-.endif
-
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
 .endif
 
 .include <bsd.port.post.mk>
