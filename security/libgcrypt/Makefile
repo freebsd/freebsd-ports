@@ -34,7 +34,7 @@ PORTDOCS=	*
 CONFIGURE_ARGS+=	--disable-asm
 
 .elif ${ARCH} == "armv6"
-USE_GCC=4.2+
+USE_GCC=	any
 
 .elif ${ARCH} == "i386"
 .if (${OSVERSION} < 900033)

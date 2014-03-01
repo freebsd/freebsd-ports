@@ -15,7 +15,7 @@ FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${_MYSQL_SERVER}:build
 USES=		gmake perl5
 USE_AUTOTOOLS=	libtool
 USE_MYSQL=	server
-USE_GCC=	4.2+
+USE_GCC=	any
 USE_PERL5=	run
 
 GNU_CONFIGURE=	yes

@@ -33,7 +33,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-USE_GCC=	4.2+
+USE_GCC=	any
 .endif
 
 .include <bsd.port.post.mk>

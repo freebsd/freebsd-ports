@@ -26,7 +26,7 @@ RUN_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
 
 USES=		pkgconfig scons
 USE_BZIP2=	yes
-USE_GCC=	4.2+
+USE_GCC=	any
 INSTALLS_ICONS=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include
