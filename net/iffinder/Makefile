@@ -20,6 +20,8 @@ PORTDOCS=	README
 
 MAKE_ARGS+=	CC="${CC}"
 
+MAKE_JOBS_UNSAFE= yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iffinder ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
