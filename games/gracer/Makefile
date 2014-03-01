@@ -11,9 +11,9 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	3D motor sport simulator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
-		png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_GL=		glut
 USES=		gmake perl5 tcl:84
@@ -22,11 +22,8 @@ USE_AUTOTOOLS=	autoconf213
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${TCL_INCLUDEDIR}
-NO_STAGE=	yes
 # for plib (sound):
 CONFIGURE_ARGS+=	--with-plib=${LOCALBASE}/plib
-
-MAN6=		gracer.6
 
 .include <bsd.port.pre.mk>
 
