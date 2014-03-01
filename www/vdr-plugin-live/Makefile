@@ -23,8 +23,6 @@ MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I${WRKSRC}"
 MAKE_ARGS+=	PREFIX="${PREFIX}"
 USES=		compiler:features
 
-NO_STAGE=	yes
-
 .include	"${.CURDIR}/../../multimedia/vdr/Makefile.plugins"
 
 .include <bsd.port.pre.mk>
@@ -37,16 +35,15 @@ EXTRA_PATCH_STRIP=	-p1
 post-patch: post-patch-plugin
 	${CP} ${FILESDIR}/gen_version_suffix.h ${WRKSRC}
 
-pre-su-install:
-	${MKDIR} ${PREFIX}/lib/vdr
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
 
 post-install: post-install-pluginlocales
-	(cd ${WRKSRC}/${PLUGIN} && \
-		${COPYTREE_SHARE} \* ${PREFIX}/etc/vdr/plugins/${PLUGIN} )
-	${CHOWN} -R ${VDR_USER}:${VDR_GROUP} ${PREFIX}/etc/vdr/plugins/${PLUGIN}
+	(cd ${WRKSRC}/${PLUGIN} && ${COPYTREE_SHARE} \* \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN} )
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>

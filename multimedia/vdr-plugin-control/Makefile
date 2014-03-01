@@ -22,7 +22,6 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION:S/a45/a/}
 
-NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
@@ -31,10 +30,11 @@ post-patch: post-patch-plugin
 		${PATCH} -d ${WRKSRC} `${SED} -n '/^#PATCHOPTIONS:/{s///;p;q;}' $$i` --forward --quiet <$$i ;\
 	done
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

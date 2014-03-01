@@ -18,18 +18,18 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/b1.7.15//}
 
-NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+
 post-install: post-install-pluginlocales
-	${MKDIR} ${PREFIX}/etc/vdr/plugins/transponders
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/transponders
 	${INSTALL_DATA} ${WRKDIR}/debian/transponders/*.tpl \
-		${PREFIX}/etc/vdr/plugins/transponders
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/transponders
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

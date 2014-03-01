@@ -14,17 +14,18 @@ COMMENT=	Video Disk Recorder - VDR-Manager server plugin
 PATCH_STRIP=	-p1
 PORTDOCS=	COPYING README HISTORY
 
-NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+
 post-install:
-	@${MKDIR} ${PREFIX}/etc/vdr/plugins
-	@${INSTALL_DATA} ${WRKSRC}/examples/plugin.vdrmanager.conf ${PREFIX}/etc/vdr/plugins/plugin.vdrmanager.conf.sample
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins
+	@${INSTALL_DATA} ${WRKSRC}/examples/plugin.vdrmanager.conf \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/plugin.vdrmanager.conf.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

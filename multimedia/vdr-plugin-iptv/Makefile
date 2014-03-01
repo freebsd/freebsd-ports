@@ -19,7 +19,6 @@ PORTEXAMPLES=	channels.conf.iptv
 MAKE_ARGS+=	IPTV_EXTSHELL=/bin/sh
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
 
-NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
@@ -27,45 +26,29 @@ post-patch: post-patch-plugin
 		-e 's|^\(CHANNEL_SETTINGS_DIR[[:space:]]*\)[?]*\(=[[:space:]]*\)/etc|\1\2${PREFIX}/etc|;' \
 		${WRKSRC}/iptv/vlc2iptv
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+
 post-install: post-install-pluginlocales
-	@${MKDIR} ${PREFIX}/etc/vdr/plugins/${PLUGIN}
-	@${MKDIR} ${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlcinput
-	@${INSTALL_DATA} ${FILESDIR}/vlcinput/*.conf ${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlcinput
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/image.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}/image.sh.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/image.sh ]; then \
-	    ${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/image.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}; \
-	fi
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/internetradio.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}/internetradio.sh.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/internetradio.sh ]; then \
-	    ${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/internetradio.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}; \
-	fi
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/iptvstream-notrap.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}/iptvstream-notrap.sh.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/iptvstream-notrap.sh ]; then \
-	    ${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/iptvstream-notrap.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}; \
-	fi
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/iptvstream.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}/iptvstream.sh.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/iptvstream.sh ]; then \
-	    ${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/iptvstream.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}; \
-	fi
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/linein.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}/linein.sh.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/linein.sh ]; then \
-	    ${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/linein.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}; \
-	fi
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/vlc2iptv ${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlc2iptv.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlc2iptv ]; then \
-	    ${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/vlc2iptv ${PREFIX}/etc/vdr/plugins/${PLUGIN}; \
-	fi
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/webcam.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}/webcam.sh.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/webcam.sh ]; then \
-	    ${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/webcam.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}; \
-	fi
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/channels.conf.iptv ${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlcinput
+	@${INSTALL_DATA} ${FILESDIR}/vlcinput/*.conf ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlcinput
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/image.sh \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/image.sh.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/internetradio.sh \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/internetradio.sh.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/iptvstream-notrap.sh \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/iptvstream-notrap.sh.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/iptvstream.sh \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/iptvstream.sh.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/linein.sh \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/linein.sh.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/vlc2iptv \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlc2iptv.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/webcam.sh \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/webcam.sh.sample
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/channels.conf.iptv ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

@@ -18,4 +18,4 @@
  	uncrustify -c ../../../../clean_code/config --replace --no-backup $(UNCRUSTIFY_FILES)
 +
 +install:
-+	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) ${DESTDIR}$(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
