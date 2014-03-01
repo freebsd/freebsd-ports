@@ -3,6 +3,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	4.15
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -26,15 +27,15 @@ CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
 MAKE_ENV:=	${CONFIGURE_ENV}
 
 #
-NO_STAGE=	yes
 # options available:
 #
 # WITH_SYSLOG_FACILITY:         The syslogfacility to use
 #
 
-OPTIONS_DEFINE=	FAM TRASHQUOTA GDBM IPV6
+OPTIONS_DEFINE=	FAM TRASHQUOTA GDBM IPV6 GNUTLS
 FAM_DESC=	Fam support for IDLE command
 TRASHQUOTA_DESC=	Include deleted mails in the quota
+GNUTLS_DESC=	Use GnuTLS instead of OpenSSL (Enables SNI)
 FAM_USES=	fam
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
@@ -57,6 +58,14 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		--with-locking-method=fcntl \
 		COURIERAUTHCONFIG=${PREFIX}/bin/courierauthconfig
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNUTLS}
+CONFIGURE_ARGS+=--with-gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+USES+=		pkgconfig
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
@@ -70,7 +79,7 @@ CONFIGURE_ARGS+=--with-syslog=${WITH_SYSLOG_FACILITY}
 .if ${PORT_OPTIONS:MAUTH_USERDB}
 .if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=--with-db=gdbm --with-userdb=${USERDB}
-LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=--with-db=db  --with-userdb=${USERDB}
 .endif
@@ -88,11 +97,6 @@ CONFIGURE_ARGS+=--with-trashquota
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
-
-MAN1=		couriertcpd.1 maildiracl.1 maildirkw.1 \
-		maildirmake.1
-
-MAN8=		deliverquota.8 imapd.8 mkimapdcert.8 mkpop3dcert.8 mkdhparams.8
 
 EXTRA_DOCS=	AUTHORS INSTALL NEWS \
 		libs/imap/ChangeLog \
@@ -121,16 +125,15 @@ post-patch:
 
 post-install:
 .for i in imapd pop3d
-	${INSTALL_DATA} ${WRKSRC}/libs/imap/${i}.cnf ${CONFDIR}/${i}.cnf.dist
+	${INSTALL_DATA} ${WRKSRC}/libs/imap/${i}.cnf ${STAGEDIR}${CONFDIR}/${i}.cnf.dist
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for a in ${EXTRA_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${a} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${a} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-	cd ${WRKSRC} && ( ${GMAKE} install-configure ; cd - )
+	cd ${WRKSRC} && ( ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} \
+		install-configure ; cd - )
 
 	@${ECHO_MSG} "In case you use authpam, you should put the following lines"
 	@${ECHO_MSG} "in your /etc/pam.d/imap"
