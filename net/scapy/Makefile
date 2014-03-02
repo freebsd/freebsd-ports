@@ -12,11 +12,9 @@ COMMENT=	Powerful interactive packet manipulation program in python
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dnet.so:${PORTSDIR}/net/py-libdnet \
 		${PYTHON_SITELIBDIR}/pcap.py:${PORTSDIR}/net/py-pcap
 
-MAN1=		scapy.1
-MANCOMPRESSED=	yes
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	PYX PYCRYPTO PYGNUPLOT GRAPH P0F_BASE QUESO_BASE MMAP MANUF
 PYX_DESC=	PostScript and PDF graphs drawing
@@ -29,45 +27,16 @@ NMAP_DESC=	nmap OS signatures database
 MANUF_DESC=	wireshark's MANUF MAC database
 SOX_DESC=	Support for VoIP
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYX}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pyx/__init__.py:${PORTSDIR}/graphics/py-PyX
-.endif
-
-.if ${PORT_OPTIONS:MPYCRYPTO}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
-.endif
-
-.if ${PORT_OPTIONS:MPYGNUPLOT}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:${PORTSDIR}/math/py-gnuplot
-.endif
-
-.if ${PORT_OPTIONS:MGRAPH}
-RUN_DEPENDS+=	${LOCALBASE}/bin/MagickCore-config:${PORTSDIR}/graphics/ImageMagick
-RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
-.endif
-
-.if ${PORT_OPTIONS:MP0F_BASE}
-RUN_DEPENDS+=	${LOCALBASE}/etc/p0f/p0f.fp:${PORTSDIR}/net-mgmt/p0f
-.endif
-
-.if ${PORT_OPTIONS:MQUESO_BASE}
-RUN_DEPENDS+=	${LOCALBASE}/etc/queso.conf.sample:${PORTSDIR}/net/queso
-.endif
-
-.if ${PORT_OPTIONS:MNMAP}
-RUN_DEPENDS+=	${LOCALBASE}/share/nmap/nmap-os-db:${PORTSDIR}/security/nmap
-.endif
-
-.if ${PORT_OPTIONS:MMANUF}
-RUN_DEPENDS+=	${LOCALBASE}/share/wireshark/manuf:${PORTSDIR}/net/wireshark
-.endif
-
-.if ${PORT_OPTIONS:MSOX}
-RUN_DEPENDS+=	${LOCALBASE}/bin/sox:${PORTSDIR}/audio/sox
-.endif
+PYX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyx/__init__.py:${PORTSDIR}/graphics/py-PyX
+PYCRYPTO_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
+PYGNUPLOT_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:${PORTSDIR}/math/py-gnuplot
+GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:${PORTSDIR}/graphics/ImageMagick \
+			${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
+P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f/p0f.fp:${PORTSDIR}/net-mgmt/p0f
+QUESO_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/queso.conf.sample:${PORTSDIR}/net/queso
+NMAP_RUN_DEPENDS=	${LOCALBASE}/share/nmap/nmap-os-db:${PORTSDIR}/security/nmap
+MANUF_RUN_DEPENDS+=	${LOCALBASE}/share/wireshark/manuf:${PORTSDIR}/net/wireshark
+SOX_RUN_DEPENDS=	${LOCALBASE}/bin/sox:${PORTSDIR}/audio/sox
 
 post-patch:
 	@${REINPLACE_CMD} "s,share/man/man1,man/man1," ${WRKSRC}/setup.py
