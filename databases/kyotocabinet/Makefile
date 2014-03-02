@@ -25,13 +25,8 @@ USES=		gmake
 NOT_FOR_ARCHS=	powerpc
 NOT_FOR_ARCHS_REASON=	does not link
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile ${WRKSRC}/lab/kcdict/Makefile
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/DOCDIR/d' ${WRKSRC}/Makefile.in
-.endif
 
 post-build:
 	@cd ${WRKSRC}/ && ${STRIP_CMD} libkyotocabinet.so.16.13.0 kccachetest \
@@ -41,10 +36,7 @@ post-build:
 		kcutiltest
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${FIND} ${STAGEDIR}${DOCSDIR}/ -type d -exec ${CHMOD} 755 '{}' \;
-	${FIND} ${STAGEDIR}${DOCSDIR}/ -type f -exec ${CHMOD} 444 '{}' \;
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}/
-.endif
+	${FIND} ${STAGEDIR}${DOCSDIR}/ -type d -exec ${CHMOD} ${BINMODE} '{}' \;
+	${FIND} ${STAGEDIR}${DOCSDIR}/ -type f -exec ${CHMOD} ${DOCMODE} '{}' \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
