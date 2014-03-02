@@ -421,6 +421,7 @@ SVG_DESC?=		SVG vector image format support
 SVGALIB_DESC?=		SVGA graphics support
 SVN_DESC?=		Subversion support
 SWFDEC_DESC?=		Flash support via Swfdec
+SWIG_DESC?=		SWIG binding/wrapper support
 SYSLOG_DESC?=		Syslog support
 SZIP_DESC?=		Szip compression support
 TCL_DESC?=		Tcl scripting language support
