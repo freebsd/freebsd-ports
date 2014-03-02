@@ -1,4 +1,3 @@
-# Created by: Diane Bruce <db@db.net>
 # $FreeBSD$
 
 PORTNAME=	kb
@@ -17,8 +16,6 @@ USE_GNOME=	libgnome gtk20 libbonobo
 NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${FILESDIR}/pkg_message
 
-MAN1=		kb.1
-
 DESKTOP_ENTRIES="KB" \
 		"Kick Butt logger" \
 		"${PREFIX}/share/pixmaps/kb/icons/kb-icon.png" \
@@ -26,42 +23,28 @@ DESKTOP_ENTRIES="KB" \
 		"" \
 		true
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
 pre-configure:
 	@${CP}	${FILESDIR}/Makefile ${WRKSRC}
-.if !exists(/usr/include/dev/speaker/speaker.h)
-	@${REINPLACE_CMD} -e 's|-DSPKR|-DOLDSPKR|' ${WRKSRC}/Makefile
-.endif
 
 do-install:
-	${INSTALL_SCRIPT}	${FILESDIR}/kb ${LOCALBASE}/bin
-	${INSTALL_PROGRAM}	${WRKSRC}/kb ${LOCALBASE}/bin/kb_bin
-	${INSTALL_PROGRAM}	${WRKSRC}/kb_server ${LOCALBASE}/bin
-	${INSTALL_DATA}		${FILESDIR}/kb.1 ${MANPREFIX}/man/man1
-	${MKDIR}		${DATADIR}
+	${INSTALL_SCRIPT}	${FILESDIR}/kb ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM}	${WRKSRC}/kb ${STAGEDIR}${PREFIX}/bin/kb_bin
+	${INSTALL_PROGRAM}	${WRKSRC}/kb_server ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA}		${FILESDIR}/kb.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${MKDIR}		${STAGEDIR}${DATADIR}
 .for f in COUNTY.CQP DEFAULT.INI CALL_LIB.LST CALL_SS.LST \
 	CALL_FD.LST  HELP.LST COUNTRY.LST HELPFD.LST \
 	SECTION.LST STATE.LST
-	${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DATADIR}
 .endfor
-	${MKDIR} ${PREFIX}/share/pixmaps/kb/icons
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps/kb/icons
 	${INSTALL_DATA} ${FILESDIR}/kb-icon.png \
-		${PREFIX}/share/pixmaps/kb/icons/kb-icon.png
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA}	${FILESDIR}/README_TIPS ${DOCSDIR}
-	${INSTALL_DATA}	${WRKSRC}/kb_bsd/README_BSD ${DOCSDIR}
+		${STAGEDIR}${PREFIX}/share/pixmaps/kb/icons/kb-icon.png
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA}	${FILESDIR}/README_TIPS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/kb_bsd/README_BSD ${STAGEDIR}${DOCSDIR}
 .for f in LICENSE README README_KINKS README_SRC
-	${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${ECHO} ""
-	@${ECHO} "Docs are in ${DOCSDIR} pay particular attention to README_BSD"
-	@${ECHO} ""
 
 .include <bsd.port.mk>

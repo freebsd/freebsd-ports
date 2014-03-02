@@ -1,18 +1,6 @@
---- support.c.orig	2008-03-30 09:31:55.000000000 -0400
-+++ support.c	2008-05-14 08:05:30.000000000 -0400
-@@ -4,7 +4,11 @@
- #include <signal.h>
- 
- #ifdef BSD
-+#ifdef OLDSPKR
-+#include <machine/speaker.h>
-+#else
- #include <dev/speaker/speaker.h>
-+#endif
- #include "bsd_bells.c"
- #endif
- 
-@@ -1199,31 +1203,21 @@
+--- support.c.orig	2008-03-30 08:31:55.000000000 -0500
++++ support.c	2014-03-01 21:19:48.000000000 -0500
+@@ -1199,31 +1199,21 @@
  static gint get_running_pid(const gchar *filnam)
  {
    FILE *fp;
