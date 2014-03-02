@@ -22,17 +22,14 @@ NO_BUILD=	yes
 PORTDOCS=	INSTALL.txt gpl-2.0.txt
 PLIST_FILES=	bin/duply
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e "s,/etc/duply,${ETCDIR},g" ${WRKSRC}/duply
+	${REINPLACE_CMD} -e "s,/etc/duply,${ETCDIR},g" ${WRKSRC}/duply
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/duply ${PREFIX}/bin/duply
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/duply ${STAGEDIR}${PREFIX}/bin/duply
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for i in ${PORTDOCS}
-	  @${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	  ${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .	endfor
-.endif
 
 .include <bsd.port.mk>
