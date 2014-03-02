@@ -8,7 +8,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper script for the various installations of Maven
 
 NO_BUILD=	yes

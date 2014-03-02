@@ -8,7 +8,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight XML encoding library for Java
 
 USE_JAVA=	yes

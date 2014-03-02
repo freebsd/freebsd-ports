@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://dsd.lbl.gov/nux-download/releases/
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small open-source XQuery extension of the XOM library
 
 RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom \
