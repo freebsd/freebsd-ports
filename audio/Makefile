@@ -560,6 +560,7 @@
     SUBDIR += p5-MP3-ID3v1Tag
     SUBDIR += p5-MP3-Info
     SUBDIR += p5-MP3-Tag
+    SUBDIR += p5-MP3-Tag-Utils
     SUBDIR += p5-MPEG-ID3v2Tag
     SUBDIR += p5-Music-Audioscrobbler-MPD
     SUBDIR += p5-Music-Audioscrobbler-Submit
