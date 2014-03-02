@@ -12,12 +12,9 @@ COMMENT=	GTK+ front end for various archiving tools
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-NO_STAGE=	yes
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-
-MAN1=		${PORTNAME}.1
 
 OPTIONS_DEFINE=	7ZIP ARJ ACE DEB RAR RPM ZIP
 
@@ -29,37 +26,15 @@ RAR_DESC=	RAR archive support
 RPM_DESC=	RPM archive support
 ZIP_DESC=	ZIP archive support
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:M7ZIP}
-RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
-.endif
-
-.if ${PORT_OPTIONS:MARJ}
-RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
-.endif
-
-.if ${PORT_OPTIONS:MACE}
-RUN_DEPENDS+=	unace:${PORTSDIR}/archivers/unace
-.endif
-
-.if ${PORT_OPTIONS:MDEB}
-RUN_DEPENDS+=	dpkg-deb:${PORTSDIR}/archivers/dpkg
-.endif
-
-.if ${PORT_OPTIONS:MRAR}
-RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar \
+7ZIP_RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
+ARJ_RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
+ACE_RUN_DEPENDS+=	unace:${PORTSDIR}/archivers/unace
+DEB_RUN_DEPENDS+=	dpkg-deb:${PORTSDIR}/archivers/dpkg
+RAR_RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar \
 		unrar:${PORTSDIR}/archivers/unrar
-.endif
-
-.if ${PORT_OPTIONS:MRPM}
-RUN_DEPENDS+=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
+RPM_RUN_DEPENDS+=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
 		rpm:${PORTSDIR}/archivers/rpm
-.endif
-
-.if ${PORT_OPTIONS:MZIP}
-RUN_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
+ZIP_RUN_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
-.endif
 
 .include <bsd.port.mk>
