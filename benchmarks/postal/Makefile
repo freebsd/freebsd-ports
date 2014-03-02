@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=	SSL
 
 USES=		gmake
-USE_GCC=	any
+USE_GCC=	4.7+	# Uses GCC-specific C++ namespaces.
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gnutls
 
