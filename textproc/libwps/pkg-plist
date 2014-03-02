@@ -7,6 +7,7 @@ lib/libwps-0.2.a
 lib/libwps-0.2.la
 lib/libwps-0.2.so
 lib/libwps-0.2.so.2
+lib/libwps-0.2.so.2.0.9
 libdata/pkgconfig/libwps-0.2.pc
 @dirrm include/libwps-0.2/libwps
 @dirrm include/libwps-0.2

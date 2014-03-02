@@ -3,11 +3,12 @@
 
 PORTNAME=	libwps
 PORTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	A Microsoft file word processor format import filter library
+COMMENT=	Microsoft file word processor format import filter library
 
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
@@ -19,9 +20,8 @@ OPTIONS_DEFINE=	DOCS
 
 CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
-USE_AUTOTOOLS=	libtool
-USES=		pkgconfig pathfix
-USE_GNOME=	gnomeprefix ltverhack
+GNU_CONFIGURE=	yes
+USES=		libtool pkgconfig pathfix
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
