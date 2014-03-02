@@ -10,12 +10,10 @@ MASTER_SITES=	http://liboil.freedesktop.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	BSD2CLAUSE
 
-USES=		pkgconfig
-USE_GNOME=	ltverhack
-USE_AUTOTOOLS=	libtool
+USES=		libtool pkgconfig
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-glib

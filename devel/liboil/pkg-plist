@@ -20,6 +20,7 @@ lib/liboil-0.3.a
 lib/liboil-0.3.la
 lib/liboil-0.3.so
 lib/liboil-0.3.so.0
+lib/liboil-0.3.so.0.3.0
 libdata/pkgconfig/liboil-0.3.pc
 share/gtk-doc/html/liboil/ch01.html
 share/gtk-doc/html/liboil/ch02.html
