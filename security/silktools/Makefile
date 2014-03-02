@@ -18,20 +18,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools --with-python \
 				--prefix=${STAGEDIR}/${PREFIX}
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" GCC_FLAGS="" CFLAGS_RELEASE=""
 USE_LDCONFIG=	yes
-USES=		perl5
+USES=		gmake perl5 pkgconfig
 USE_PERL5=	build
 
 OPTIONS_DEFINE=	LOCALTIME
 LOCALTIME_DESC=	Use localtime instead of UTC
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLOCALTIME}
-CONFIGURE_ARGS+=--enable-localtime
-.endif
+LOCALTIME_CONFIGURE_ON=--enable-localtime
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
