@@ -51,6 +51,55 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8e5e6d42-a0fa-11e3-b09a-080027f2d077">
+    <topic>Python -- buffer overflow in socket.recvfrom_into()</topic>
+    <affects>
+      <package>
+	<name>python27</name>
+	<range><le>2.7.6_3</le></range>
+      </package>
+      <package>
+	<name>python31</name>
+	<range><le>3.1.5_10</le></range>
+      </package>
+      <package>
+	<name>python32</name>
+	<range><le>3.2.5_7</le></range>
+      </package>
+      <package>
+	<name>python33</name>
+	<range><le>3.3.3_3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Vincent Danen via Red Hat Issue Tracker reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=1062370">
+	  <p>A vulnerability was reported in Python's socket module, due to a
+	   boundary error within the sock_recvfrom_into() function, which could be
+	   exploited to cause a buffer overflow.  This could be used to crash a
+	   Python application that uses the socket.recvfrom_info() function or,
+	   possibly, execute arbitrary code with the permissions of the user
+	   running vulnerable Python code.</p>
+
+	  <p>This vulnerable function, socket.recvfrom_into(), was introduced in
+	   Python 2.5.  Earlier versions are not affected by this flaw.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1912</cvename>
+      <bid>65379</bid>
+      <mlist>https://mail.python.org/pipermail/python-dev/2014-February/132758.html</mlist>
+      <url>http://bugs.python.org/issue20246</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1062370</url>
+    </references>
+    <dates>
+      <discovery>2014-01-14</discovery>
+      <entry>2014-03-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1839f78c-9f2b-11e3-980f-20cf30e32f6d">
     <topic>subversion -- mod_dav_svn vulnerability</topic>
     <affects>
