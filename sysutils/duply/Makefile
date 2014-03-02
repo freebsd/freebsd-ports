@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	duply
-PORTVERSION=	1.5.9
+PORTVERSION=	1.6.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/1.5.x/
+MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/1.6.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -14,8 +14,12 @@ COMMENT=	Shell front end for the duplicity backup tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		duplicity:${PORTSDIR}/sysutils/duplicity
+RUN_DEPENDS=	duplicity:${PORTSDIR}/sysutils/duplicity
+
+OPTIONS_DEFINE=	BASH_DEVEL
+BASH_DEVEL_DESC=	Use shells/bash-devel instead of shells/bash
+BASH_DEVEL_RUN_DEPENDS_OFF=	bash:${PORTSDIR}/shells/bash
+BASH_DEVEL_RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash-devel
 
 NO_BUILD=	yes
 
