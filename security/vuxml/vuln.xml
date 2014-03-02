@@ -88,8 +88,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CVE-2014-1912</cvename>
       <bid>65379</bid>
+      <cvename>CVE-2014-1912</cvename>
       <mlist>https://mail.python.org/pipermail/python-dev/2014-February/132758.html</mlist>
       <url>http://bugs.python.org/issue20246</url>
       <url>https://bugzilla.redhat.com/show_bug.cgi?id=1062370</url>
