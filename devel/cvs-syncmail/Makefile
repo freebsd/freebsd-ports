@@ -21,7 +21,7 @@ PLIST_FILES=	bin/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OPSYS} > 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
 RUN_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
 .endif
 
