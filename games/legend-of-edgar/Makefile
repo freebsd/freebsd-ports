@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	edgar
-DISTVERSION=	1.14-1
+DISTVERSION=	1.15-1
 CATEGORIES=	games
 MASTER_SITES=	SF/legendof${PORTNAME}/${PORTVERSION:R}/
 PKGNAMEPREFIX=	legend-of-
@@ -59,6 +59,7 @@ post-patch:
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
