@@ -33,10 +33,12 @@ lib/libobrender.a
 lib/libobrender.la
 lib/libobrender.so
 lib/libobrender.so.29
+lib/libobrender.so.29.0.1
 lib/libobt.a
 lib/libobt.la
 lib/libobt.so
 lib/libobt.so.2
+lib/libobt.so.2.0.1
 libdata/pkgconfig/obrender-%%VERSION%%.pc
 libdata/pkgconfig/obt-%%VERSION%%.pc
 libexec/openbox-autostart
@@ -163,6 +165,8 @@ share/xsessions/openbox.desktop
 %%NLS%%@dirrmtry share/locale/en@boldquot
 %%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/xsessions
 @dirrm share/themes/Syscrash/openbox-3
 @dirrm share/themes/Syscrash
