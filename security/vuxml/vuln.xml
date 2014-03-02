@@ -68,7 +68,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>python33</name>
-	<range><le>3.3.3_3</le></range>
+	<range><le>3.3.3_2</le></range>
       </package>
     </affects>
     <description>
