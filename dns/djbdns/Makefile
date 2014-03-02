@@ -3,7 +3,7 @@
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
-PORTREVISION?=	17
+PORTREVISION?=	18
 PORTEPOCH?=	1
 CATEGORIES?=	dns
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
@@ -117,7 +117,7 @@ BUILD_DEPENDS+=	nacl-sha256:${PORTSDIR}/security/nacl
 DJBDNS_VER=	1.05
 DJBDNS_V6_VER=	test23
 
-ALL_TARGET=	it
+ALL_TARGET=	prog
 INSTALL_TARGET=	setup check
 
 .if ${PORT_OPTIONS:MIP6}
