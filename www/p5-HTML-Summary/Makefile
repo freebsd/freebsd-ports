@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Summary
-PORTVERSION=	0.018
+PORTVERSION=	0.019
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Produces summaries from the textual content of web pages
 
-BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree
+BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		ja-p5-Jcode>=2.06:${PORTSDIR}/japanese/p5-Jcode
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
