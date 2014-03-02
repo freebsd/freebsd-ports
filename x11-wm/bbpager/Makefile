@@ -11,7 +11,7 @@ MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	Pager for the Blackbox window manager
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-OPTIOSN_SUB=	yes
+OPTIONS_SUB=	yes
 
 BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
