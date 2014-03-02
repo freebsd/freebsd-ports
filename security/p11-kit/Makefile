@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.20.1
+PORTVERSION=	0.20.2
 CATEGORIES=	security devel
 MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
 
@@ -11,19 +11,17 @@ COMMENT=	Library for loading and enumerating of PKCS\#11 modules
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-LIB_DEPENDS=	tasn1:${PORTSDIR}/security/libtasn1 \
-		ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libtasn1.so:${PORTSDIR}/security/libtasn1 \
+		libffi.so:${PORTSDIR}/devel/libffi
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-debug=no \
 		--with-trust-paths=${LOCALBASE}/share/certs/ca-root-nss.crt
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 MAKE_ENV=	exampledir=${STAGEDIR}${EXAMPLESDIR}
 
-USES=		pkgconfig
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	ltverhack gnomehack
+USES=		gmake pkgconfig pathfix libtool
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 
 pre-configure:
 	@${REINPLACE_CMD} -e \
