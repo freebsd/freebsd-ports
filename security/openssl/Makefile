@@ -78,6 +78,10 @@ FIX_POD=apps/cms.pod \
 
 .include <bsd.port.pre.mk>
 
+.if ${PREFIX} == /usr
+IGNORE=	OpenSSL can not be installed over the base version
+.endif
+
 OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
 OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
