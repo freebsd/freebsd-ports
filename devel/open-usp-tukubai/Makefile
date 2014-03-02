@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	open-usp-tukubai
-PORTVERSION=	20140302
+PORTVERSION=	2014030202
 CATEGORIES=	devel
 MASTER_SITES=	https://uec.usp-lab.com/TUKUBAI/DOWNLOAD/
 
