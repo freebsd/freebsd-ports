@@ -1,3 +1,4 @@
 include/dombey.h
 lib/libdombey.so
 lib/libdombey.so.%%PORTVERSION%%
+man/man8/libdombey.8.gz
