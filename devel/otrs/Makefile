@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	3.3.4
+PORTVERSION=	3.3.5
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -56,7 +56,7 @@ USE_BZIP2=	yes
 
 OTRSDIR=	${PREFIX}/otrs
 USERS=		${PORTNAME}
-GROUPS=		${USERS}
+GROUPS=		${USERS} www
 
 SUB_FILES=	pkg-install pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
