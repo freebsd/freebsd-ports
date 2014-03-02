@@ -2,14 +2,12 @@ bin/mpg123
 bin/mpg123-id3dump
 bin/mpg123-strip
 include/mpg123.h
-lib/libmpg123.a
 lib/libmpg123.la
 lib/libmpg123.so
 lib/libmpg123.so.0
-lib/mpg123/output_dummy.a
+lib/libmpg123.so.0.38.4
 lib/mpg123/output_dummy.la
 lib/mpg123/output_dummy.so
-lib/mpg123/output_oss.a
 lib/mpg123/output_oss.la
 lib/mpg123/output_oss.so
 libdata/pkgconfig/libmpg123.pc
