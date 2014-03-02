@@ -16,10 +16,10 @@ CONFLICTS=	ikarus-*
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-NO_PACKAGE=	user must accept license terms before installation
+NO_PACKAGE=	User must accept license terms before installation
 
 .if defined(PACKAGE_BUILDING)
-IGNORE=		user must accept license terms before installation
+IGNORE=		User must accept license terms before installation
 .endif
 
 OPTIONS_DEFINE=	THREADS
