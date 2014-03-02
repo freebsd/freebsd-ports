@@ -3,16 +3,15 @@
 
 PORTNAME=	libmpeg2
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free library for decoding mpeg-2 and mpeg-1 video streams
 
-USES=		pathfix
-USE_GNOME=	ltverhack
-USE_AUTOTOOLS=	libtool
+USES=		libtool pathfix
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared
@@ -38,7 +37,7 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/libmpeg2.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/libvo/libvo.a ${STAGEDIR}${PREFIX}/lib
