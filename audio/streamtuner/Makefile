@@ -15,7 +15,6 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
-NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtk20 gnomeprefix
 INSTALLS_OMF=	yes
@@ -23,7 +22,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	SHOUTCAST LIVE365 XIPH LOCAL LOCAL_METADATA
+OPTIONS_DEFINE=	SHOUTCAST LIVE365 XIPH LOCAL LOCAL_METADATA PYTHON
 OPTIONS_DEFAULT=	SHOUTCAST LIVE365 XIPH LOCAL LOCAL_METADATA
 SHOUTCAST_DESC=	SHOUTcast plugin
 LIVE365_DESC=	Live365 plugin
@@ -31,29 +30,14 @@ LOCAL_DESC=	Local plugin
 LOCAL_METADATA_DESC=	Metadata support for the Local plugin
 XIPH_DESC=	Xiph plugin
 
+OPTIONS_SUB=	yes
+SHOUTCAST_CONFIGURE_ENABLE=	shoutcast
+LIB365_CONFIGURE_ENABLE=	libve365
+XIPH_CONFIGURE_ENABLE=	xiph
+PYTHON_USE=	python=yes gnome=pygtk2
+PYTHON_CONFIGURE_ENABLE=	python
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSHOUTCAST}
-PLIST_SUB+=	SHOUTCAST=""
-.else
-CONFIGURE_ARGS+=	--disable-shoutcast
-PLIST_SUB+=	SHOUTCAST="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLIVE365}
-PLIST_SUB+=	LIVE365=""
-.else
-CONFIGURE_ARGS+=	--disable-live365
-PLIST_SUB+=	LIVE365="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MXIPH}
-PLIST_SUB+=	XIPH=""
-USE_GNOME+=	libxml2
-.else
-CONFIGURE_ARGS+=	--disable-xiph
-PLIST_SUB+=	XIPH="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MLOCAL}
 PLIST_SUB+=	LOCAL=""
@@ -65,18 +49,6 @@ CONFIGURE_ARGS+=	--disable-local-metadata
 .else
 CONFIGURE_ARGS+=	--disable-local
 PLIST_SUB+=	LOCAL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-PLIST_SUB+=	PYTHON=""
-USE_PYTHON=	yes
-# we need to manually include this, because USE_PYTHON is defined
-# after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-USE_GNOME+=	pygtk2
-.else
-CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 post-patch:
