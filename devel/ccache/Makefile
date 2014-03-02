@@ -3,7 +3,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.1.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
 		CRITICAL
@@ -41,7 +41,7 @@ STATIC_LDFLAGS=	-static
 .if ${PORT_OPTIONS:MCOLORS}
 .  if ${COMPILER_TYPE} == clang
 CPPFLAGS+=	-DCC_IS_CLANG
-.  elif ${COMPILER_TYPE} = gcc
+.  elif ${COMPILER_TYPE} == gcc
 CPPFLAGS+=	-DCC_IS_GCC
 .  endif
 .endif
