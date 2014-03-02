@@ -6,6 +6,7 @@ lib/libflickcurl.a
 lib/libflickcurl.la
 lib/libflickcurl.so
 lib/libflickcurl.so.0
+lib/libflickcurl.so.0.0.0
 libdata/pkgconfig/flickcurl.pc
 man/man1/flickcurl.1.gz
 man/man1/flickcurl-config.1.gz
