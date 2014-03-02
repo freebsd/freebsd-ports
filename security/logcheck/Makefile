@@ -33,7 +33,7 @@ OPTIONS_DEFAULT=CRON
 .endif
 
 # Enable Perl dependency for logtail script
-USES=		perl5
+USES=		perl5 shebangfix
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S!_!-!}
 BINMODE=	755
@@ -45,6 +45,7 @@ SUB_LIST+=	LOGCHECK_USER=${LOGCHECK_USER} \
 		PW=${PW} CRON=${PORT_OPTIONS:MCRON}
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 PLIST_SUB+=	DBDIR=${DBDIR} RUNDIR=${RUNDIR}
+SHEBANG_FILES=	src/logtail src/logtail2
 CONFIG_DIRS=	cracking.d ignore.d.paranoid ignore.d.server \
 		ignore.d.workstation violations.d violations.ignore.d
 DOCS=		AUTHORS CHANGES CREDITS LICENSE TODO docs/README*
@@ -72,8 +73,6 @@ post-patch:
 do-build:
 	@${REINPLACE_CMD} -e 's!/var/log/syslog!/var/log/messages!' \
 		${WRKSRC}/etc/logcheck.logfiles
-	@${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|" \
-		${WRKSRC}/src/logtail
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${PREFIX}/sbin
