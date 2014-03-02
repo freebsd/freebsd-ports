@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="70b72a52-9e54-11e3-babe-60a44c524f57">
+    <topic>otrs -- XSS Issue</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.1.20</lt></range>
+	<range><gt>3.2.*</gt><lt>3.2.15</lt></range>
+	<range><gt>3.3.*</gt><lt>3.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS Project reports:</p>
+	<blockquote cite="https://www.otrs.com/security-advisory-2014-03-xss-issue/">
+	  <p>An attacker could send a specially prepared HTML email to OTRS. If
+he can then trick an agent into following a special link to display this email,
+JavaScript code would be executed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.otrs.com/security-advisory-2014-03-xss-issue/</url>
+      <cvename>CVE-2014-1695</cvename>
+    </references>
+    <dates>
+      <discovery>2014-02-25</discovery>
+      <entry>2014-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9dd47fa3-9d53-11e3-b20f-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
