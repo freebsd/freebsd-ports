@@ -22,7 +22,7 @@ CFLAGS+=	`pkg-config --cflags sm x11 xext ice` -DSHAPE
 LDFLAGS+=	`pkg-config --libs sm x11 xext ice`
 
 PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTSNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
