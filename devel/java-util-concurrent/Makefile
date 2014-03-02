@@ -9,7 +9,7 @@ MASTER_SITES=	http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/current/
 PKGNAMEPREFIX=	java-
 DISTNAME=	concurrent
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility classes for concurrent Java programming
 
 USE_JAVA=	yes

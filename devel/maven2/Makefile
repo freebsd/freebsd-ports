@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	maven/binaries
 DISTNAME=	apache-maven-${DISTVERSION}-bin
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java project management tool, 2.0 branch
 
 RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven-wrapper

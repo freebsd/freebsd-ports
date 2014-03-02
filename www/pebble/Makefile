@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	SF
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, open source, Java EE blogging tool
 
 PATCH_DEPENDS=	zip:${PORTSDIR}/archivers/zip \

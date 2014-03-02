@@ -10,7 +10,7 @@ DISTNAME=	all-${PORTNAME}
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Community initiative extensions to XSLT
 
 NO_WRKSUBDIR=	yes

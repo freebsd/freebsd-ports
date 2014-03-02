@@ -8,7 +8,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:U}-${DISTVERSION}
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java package to parse command-line arguments
 
 USE_JAVA=	yes

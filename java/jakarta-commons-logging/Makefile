@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic logging wrapper library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
