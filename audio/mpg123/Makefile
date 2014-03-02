@@ -3,6 +3,7 @@
 
 PORTNAME=	mpg123
 PORTVERSION=	1.18.1
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
@@ -12,10 +13,9 @@ COMMENT=	Command-line player for MPEG Layer 1, 2, and 3 audio files
 
 LICENSE=	LGPL21
 
-USES=		gmake pathfix
+USES=		libtool gmake pathfix
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool libltdl
-USE_GNOME=	ltverhack
+USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
