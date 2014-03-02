@@ -16,13 +16,18 @@ COMMENT=	Perl script to turn ``cvs log'' output into HTML
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
-
 PLIST_FILES=	bin/cvs2html
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD
+# DragonFly has CVS in base and devel/cvs doesn't build there
+RUN_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
+.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -31,4 +36,4 @@ do-extract:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
