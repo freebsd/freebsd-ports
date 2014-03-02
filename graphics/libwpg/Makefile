@@ -2,6 +2,7 @@
 
 PORTNAME=	libwpg
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,23 +14,15 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libwpd-0.9.so:${PORTSDIR}/textproc/libwpd
 
-USE_AUTOTOOLS=	libtool
-USES=		pkgconfig perl5 pathfix
-USE_GNOME=	gnomeprefix ltverhack
+USES=		libtool pkgconfig perl5 pathfix
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-werror
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 PORTDOCS=	*
-.else
-post-patch:
-	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/docs//g' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
