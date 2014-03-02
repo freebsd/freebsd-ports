@@ -12,30 +12,23 @@ MASTER_SITE_SUBDIR=	alpha/gnutls/opencdk
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Open Crypto Development Kit
 
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+OPTIONS_DEFINE=	DOCS
+
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GNOME=	ltverhack
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
 
 DOCS=		AUTHORS NEWS README THANKS doc/opencdk-api.html
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' \
-		${WRKSRC}/src/Makefile.in
-
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/tests/*.c ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/tests/*.gpg ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/tests/*.c ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/tests/*.gpg ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
