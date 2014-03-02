@@ -9,19 +9,18 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A TrueType font server for X11
+COMMENT=	TrueType font server for X11
+
+OPTIONS_DEFINE=	DOCS
 
 USE_XORG=	fontsproto xproto
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-nls
 
-MAN1=		xfstt.1x
-
 TTFONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 post-patch:
 .for file in INSTALL doc/xfstt.1x src/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%TTFONTDIR%%|${TTFONTDIR}|g' ${WRKSRC}/${file}
@@ -30,14 +29,11 @@ post-patch:
 		> ${WRKSRC}/xfstt.sh
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/xfstt.sh ${PREFIX}/etc/rc.d
-	@${MKDIR} ${TTFONTDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/xfstt.sh ${STAGEDIR}${PREFIX}/etc/rc.d
+	@${MKDIR} ${STAGEDIR}${TTFONTDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for _file in CHANGES INSTALL THANKS
-	${INSTALL_DATA} ${WRKSRC}/${_file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${_file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
