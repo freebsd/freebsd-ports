@@ -3,7 +3,6 @@ bin/wps2raw
 bin/wps2text
 include/libwps-0.2/libwps/WPSDocument.h
 include/libwps-0.2/libwps/libwps.h
-lib/libwps-0.2.a
 lib/libwps-0.2.la
 lib/libwps-0.2.so
 lib/libwps-0.2.so.2
