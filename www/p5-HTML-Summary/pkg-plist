@@ -1,6 +1,5 @@
 %%SITE_PERL%%/HTML/Summary.pm
 %%SITE_PERL%%/Text/Sentence.pm
-%%SITE_PERL%%/Lingua/JA/Jcode.pm
 %%SITE_PERL%%/Lingua/JA/Jtruncate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Summary/.packlist
 %%PERL5_MAN3%%/HTML::Summary.3.gz
