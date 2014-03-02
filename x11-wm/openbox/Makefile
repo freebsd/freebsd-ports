@@ -3,7 +3,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/
 
@@ -13,10 +13,9 @@ COMMENT=	Small, fast, standards compliant, extensible window manager
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	glib20 libxml2 gnomehack ltverhack
+USES=		libtool gmake pathfix pkgconfig
+USE_GNOME=	glib20 libxml2
 USE_XORG=	xft
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -37,13 +36,8 @@ PANG_CONFIGURE_OFF=	--disable-pango
 NOTIFY_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 NOTIFY_CONFIGURE_OFF=	--disable-startup-notification
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIMLIB}
-USE_EFL=	imlib2
-.else
-CONFIGURE_ARGS+=	--disable-imlib2
-.endif
+IMLIB_CONFIGURE_ENABLE=	imlib2
+IMLIB_USE=	EFL=imlib2
 
 post-configure:
 	@${CHMOD} +x ${WRKSRC}/install-sh
