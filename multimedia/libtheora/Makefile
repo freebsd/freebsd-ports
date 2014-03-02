@@ -3,7 +3,7 @@
 
 PORTNAME=	libtheora
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 		http://distfiles.master.finkmirrors.net/
@@ -13,10 +13,10 @@ COMMENT=	Theora video codec for the Ogg multimedia streaming system
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
+USES=		libtool
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	ltverhack
 CONFIGURE_ENV=	LIBS="${PTHEAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include 
 LDFLAGS+=	-L${LOCALBASE}/lib
