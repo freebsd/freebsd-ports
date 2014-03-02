@@ -3,6 +3,7 @@
 
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.2.76
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/ \
 		LOCAL/sunpoet
@@ -18,7 +19,6 @@ CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	PCDIR=${PREFIX}/libdata/pkgconfig
 REINPLACE_ARGS=	-i ''
-USE_GCC=	any
 USE_LDCONFIG=	yes
 USES=		gmake
 
@@ -28,6 +28,7 @@ NOT_FOR_ARCHS_REASON=	does not link
 .include <bsd.port.pre.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile ${WRKSRC}/lab/kcdict/Makefile
 .if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/DOCDIR/d' ${WRKSRC}/Makefile.in
 .endif
