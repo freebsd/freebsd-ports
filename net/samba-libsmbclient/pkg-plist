@@ -2,6 +2,7 @@ include/libsmbclient.h
 lib/libsmbclient.a
 lib/libsmbclient.so
 lib/libsmbclient.so.0
+libdata/pkgconfig/smbclient.pc
 %%EXAMPLESDIR%%/Makefile
 %%EXAMPLESDIR%%/Makefile.internal
 %%EXAMPLESDIR%%/Makefile.internal.in
