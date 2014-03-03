@@ -112,7 +112,7 @@
 # ${opt}_${variable}_OFF will add its content to the actual variable when the
 # option is disabled.
 #
-# For each of the depends target PKG EXTRACT PATCH FETCH BUILD LIB RUN,
+# For each of the depends target PKG FETCH EXTRACT PATCH BUILD LIB RUN,
 # defining ${opt}_${deptype}_DEPENDS will add its content to the actual
 # dependency when the option is enabled.  Defining
 # ${opt}_${deptype}_DEPENDS_OFF will add its content to the actual dependency
@@ -134,7 +134,7 @@ _OPTIONS_FLAGS= ALL_TARGET CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS \
 				EXTRA_PATCHES INSTALL_TARGET LDFLAGS MAKE_ARGS MAKE_ENV \
 				PATCHFILES PATCH_SITES PLIST_DIRS PLIST_DIRSTRY PLIST_FILES \
 				USES
-_OPTIONS_DEPENDS=	PKG EXTRACT PATCH FETCH BUILD LIB RUN
+_OPTIONS_DEPENDS=	PKG FETCH EXTRACT PATCH BUILD LIB RUN
 
 # Set the default values for the global options, as defined by portmgr
 .if !defined(NOPORTDOCS)
