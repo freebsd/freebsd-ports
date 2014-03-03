@@ -79,11 +79,11 @@ AWKMANPAGE=		'{if ($$0 ~ /^man\/man[1-9]\/.+[1-9]$$/) print $$0 ".gz"; else prin
 
 # If we find gnatmake and friends in a standard location, then we'll use this
 # compiler instead of downloading the bootstrap.
-.if exists (${PREFIX}/${PORTNAME}/bin/ada)
-.if exists (${PREFIX}/${PORTNAME}/bin/gnatbind)
-.if exists (${PREFIX}/${PORTNAME}/bin/gnatlink)
-.if exists (${PREFIX}/${PORTNAME}/bin/gnatmake)
-FULL_GNATGCC=${PREFIX}/${PORTNAME}/bin/ada
+.if exists (${LOCALBASE}/${PORTNAME}/bin/ada)
+.if exists (${LOCALBASE}/${PORTNAME}/bin/gnatbind)
+.if exists (${LOCALBASE}/${PORTNAME}/bin/gnatlink)
+.if exists (${LOCALBASE}/${PORTNAME}/bin/gnatmake)
+FULL_GNATGCC=${LOCALBASE}/${PORTNAME}/bin/ada
 FULL_PATH=/sbin:/bin:/usr/sbin:/usr/bin:${PREFIX}/${PORTNAME}/bin:${PREFIX}/bin
 .endif
 .endif
