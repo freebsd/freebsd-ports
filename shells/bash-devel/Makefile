@@ -28,23 +28,24 @@ COLONBREAKSWORDS_DESC=	Colons break words
 HELP_DESC=		Enable builtin help
 
 USES=			bison
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
-IMPLICITCD_EXTRA_PATCHES=		${PATCHDIR}/extrapatch-implicitcd
+IMPLICITCD_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-implicitcd
 COLONBREAKSWORDS_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-colonbreakswords
 
 HELP_CONFIGURE_ENABLE=	help-builtin
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=				gettext iconv
+NLS_USES=		gettext iconv
 
 INFO=	bash
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
 
-PORTDOCS=	FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH README bash.html bashref.html
+PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH README \
+			bash.html bashref.html
 
-CONFIGURE_ARGS+=		--without-bash-malloc \
+CONFIGURE_ARGS+=	--without-bash-malloc \
 			--disable-rpath \
 			--enable-disabled-builtins
 
@@ -75,7 +76,8 @@ post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|"
 .if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e "s|#define HAVE_ICONV 1|#undef HAVE_ICONV|g" ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e "s|#define HAVE_ICONV 1|#undef HAVE_ICONV|g" \
+		${WRKSRC}/config.h
 .endif
 
 pre-build:
