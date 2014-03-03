@@ -42,7 +42,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 .include <bsd.port.pre.mk>
 
 # Without this workaround, qdbus crashes.
-.if ${OSVERSION} > 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
 CXXFLAGS+=	-fno-use-cxa-atexit
 .endif
 
