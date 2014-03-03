@@ -2,6 +2,7 @@
 
 PORTNAME=	postgresql
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP \
 		http://python.projects.postgresql.org/files/
@@ -12,19 +13,12 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	c.kworr@gmail.com
 COMMENT=	Python 3 compatible PostgreSQL database driver and tools
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_ZIP=	yes
-USE_PGSQL=	yes
-USE_PYTHON=	3.1+
+USE_ZIP=		yes
+USE_PGSQL=		yes
+USE_PYTHON=		3
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	py_${PORTNAME}
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 320
-.include "${FILESDIR}/py3k-fix-pkg-plist.inc"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
