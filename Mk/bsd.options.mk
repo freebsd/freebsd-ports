@@ -103,12 +103,14 @@
 #							If you need more than one option, you can do
 #							FOO=bar,baz and you'll get USE_FOO=bar baz
 #
-# For each of CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS MAKE_ENV
-# ALL_TARGET INSTALL_TARGET USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY
-# EXTRA_PATCHES PATCHFILES PATCH_SITES CATEGORIES, defining ${opt}_${variable}
-# will add its content to the actual variable when the option is enabled.
-# Defining ${opt}_${variable}_OFF will add its content to the actual variable
-# when the option is disabled.
+# For each of:
+# ALL_TARGET CATEGORIES CONFIGURE_ENV CONFLICTS CONFLICTS_BUILD
+# CONFLICTS_INSTALL CPPFLAGS CXXFLAGS DISTFILES EXTRA_PATCHES FLAGS
+# INSTALL_TARGET LDFLAGS MAKE_ARGS MAKE_ENV PATCHFILES PATCH_SITES PLIST_DIRS
+# PLIST_DIRSTRY PLIST_FILES USES, defining ${opt}_${variable} will add its
+# content to the actual variable when the option is enabled.  Defining
+# ${opt}_${variable}_OFF will add its content to the actual variable when the
+# option is disabled.
 #
 # For each of the depends target PKG EXTRACT PATCH FETCH BUILD LIB RUN,
 # defining ${opt}_${deptype}_DEPENDS will add its content to the actual
@@ -126,6 +128,13 @@ OPTIONSMKINCLUDED=	bsd.options.mk
 OPTIONS_NAME?=	${PKGORIGIN:S/\//_/}
 OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 OPTIONS_FILE?=	${PORT_DBDIR}/${OPTIONS_NAME}/options
+
+_OPTIONS_FLAGS= ALL_TARGET CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS \
+				CONFLICTS_BUILD CONFLICTS_INSTALL CPPFLAGS CXXFLAGS DISTFILES \
+				EXTRA_PATCHES INSTALL_TARGET LDFLAGS MAKE_ARGS MAKE_ENV \
+				PATCHFILES PATCH_SITES PLIST_DIRS PLIST_DIRSTRY PLIST_FILES \
+				USES
+_OPTIONS_DEPENDS=	PKG EXTRACT PATCH FETCH BUILD LIB RUN
 
 # Set the default values for the global options, as defined by portmgr
 .if !defined(NOPORTDOCS)
@@ -421,14 +430,12 @@ CONFIGURE_ARGS+=	--with-${iopt}
 ${configure}_ARGS+=	${${opt}_${configure}_ON}
 .      endif
 .    endfor
-.    for flags in CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS \
-         MAKE_ENV ALL_TARGET INSTALL_TARGET USES DISTFILES PLIST_FILES \
-         PLIST_DIRS PLIST_DIRSTRY EXTRA_PATCHES PATCHFILES PATCH_SITES CATEGORIES
+.    for flags in ${_OPTIONS_FLAGS}
 .      if defined(${opt}_${flags})
 ${flags}+=	${${opt}_${flags}}
 .      endif
 .    endfor
-.    for deptype in PKG EXTRACT PATCH FETCH BUILD LIB RUN
+.    for deptype in ${_OPTIONS_DEPENDS}
 .      if defined(${opt}_${deptype}_DEPENDS)
 ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .      endif
@@ -449,14 +456,12 @@ CONFIGURE_ARGS+=	--without-${iopt}
 ${configure}_ARGS+=	${${opt}_${configure}_OFF}
 .      endif
 .    endfor
-.    for flags in CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS \
-         MAKE_ENV ALL_TARGET INSTALL_TARGET USES DISTFILES PLIST_FILES \
-         PLIST_DIRS PLIST_DIRSTRY EXTRA_PATCHES PATCHFILES PATCH_SITES CATEGORIES
+.    for flags in ${_OPTIONS_FLAGS}
 .      if defined(${opt}_${flags}_OFF)
 ${flags}+=	${${opt}_${flags}_OFF}
 .      endif
 .    endfor
-.    for deptype in PKG EXTRACT PATCH FETCH BUILD LIB RUN
+.    for deptype in ${_OPTIONS_DEPENDS}
 .      if defined(${opt}_${deptype}_DEPENDS_OFF)
 ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS_OFF}
 .      endif
