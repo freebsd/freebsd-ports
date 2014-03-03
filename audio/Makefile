@@ -342,6 +342,7 @@
     SUBDIR += kexis
     SUBDIR += kid3-kde4
     SUBDIR += kid3-qt4
+    SUBDIR += kid3-qt5
     SUBDIR += kio-audiocd
     SUBDIR += kmix
     SUBDIR += kscd
