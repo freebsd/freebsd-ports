@@ -5579,3 +5579,5 @@ www/php52-session||2014-03-01|PHP 5.2 is end-of-life
 www/php52-tidy||2014-03-01|PHP 5.2 is end-of-life
 lang/clang31||2014-03-01|Has expired: No remaining dependencies
 devel/llvm31||2014-03-01|Has expired: No remaining dependencies (except clang31)
+shells/bash-devel|shells/bash|2014-03-03|Maintainer reset, main port now properly maintained
+shells/bash-static-devel|shells/bash-static|2014-03-03|Maintainer reset, main port now properly maintained

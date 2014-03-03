@@ -1,10 +1,10 @@
---- config-top.h.orig	Wed Dec 28 19:52:23 2005
-+++ config-top.h	Wed Dec 28 19:54:12 2005
-@@ -52,18 +52,18 @@
+--- config-top.h.orig	2014-03-02 13:36:24.000000000 -0500
++++ config-top.h	2014-03-02 13:38:13.000000000 -0500
+@@ -59,18 +59,18 @@
  /* The default value of the PATH variable. */
  #ifndef DEFAULT_PATH_VALUE
  #define DEFAULT_PATH_VALUE \
--  "/usr/gnu/bin:/usr/local/bin:/bin:/usr/bin:."
+-  "/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:."
 +  "/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin"
  #endif
  

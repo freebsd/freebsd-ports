@@ -1,98 +1,64 @@
-# Created by: Oliver Eikemeier
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=		bash
-PATCHLEVEL=		45
-PORTVERSION=		4.2.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
+PATCHLEVEL=		0
+PORTVERSION=		4.3.${PATCHLEVEL:S/^0//g}
+PORTREVISION?=		0
 CATEGORIES=		shells
-MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
-			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
-MASTER_SITE_SUBDIR=	${PORTNAME}/:bash,faq
-DISTNAME=		${PORTNAME}-${PORTVERSION:R}
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:bash
+MASTER_SITES=		GNU
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=			${PORTNAME}-${PORTVERSION:R}
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=		${MASTER_SITE_GNU} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/
 PATCH_SITE_SUBDIR=	${PORTNAME}/${DISTNAME}-patches/
-PATCHFILES!=		/usr/bin/jot -s " " -w \
-			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
-			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
-MAINTAINER=		obrien@FreeBSD.org
+MAINTAINER=		ehaupt@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
 
-IGNOREFILES=		FAQ
+LICENSE=		GPLv3
 
-OPTIONS_DEFINE=	IMPLICITCD COLONBREAKSWORDS HELP NLS STATIC SYSLOG
-OPTIONS_DEFAULT=	IMPLICITCD COLONBREAKSWORDS HELP
-IMPLICITCD_DESC=	Use directory name alone to cd into it
+OPTIONS_DEFINE=	IMPLICITCD COLONBREAKSWORDS HELP NLS STATIC SYSLOG DOCS
+OPTIONS_DEFAULT=IMPLICITCD COLONBREAKSWORDS HELP NLS
+IMPLICITCD_DESC=Use directory name alone to cd into it
 COLONBREAKSWORDS_DESC=	Colons break words
-HELP_DESC=		Install the help files
+HELP_DESC=		Enable builtin help
 
-USES+=			bison
+USES=			bison
+OPTIONS_SUB=		yes
 
-.include <bsd.port.options.mk>
+IMPLICITCD_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-implicitcd
+COLONBREAKSWORDS_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-colonbreakswords
 
-.if ${PORT_OPTIONS:MIMPLICITCD}
-EXTRA_PATCHES+=		${PATCHDIR}/xpatch-implicitcd
-.endif
+HELP_CONFIGURE_ENABLE=	help-builtin
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext iconv
 
-.if ${PORT_OPTIONS:MCOLONBREAKSWORDS}
-EXTRA_PATCHES+=		${PATCHDIR}/xpatch-colonbreakswords
-.endif
-
-INFO=			bash
+INFO=	bash
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
 
-.if ${PORT_OPTIONS:MDOCS}
-.if !defined(WITH_INCLUDED_FAQ)
-DISTFILES+=		FAQ:faq
-.endif
-PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH
-.endif
+PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH README \
+			bash.html bashref.html
 
-CONFIGURE_ARGS=		--without-bash-malloc \
+CONFIGURE_ARGS+=	--without-bash-malloc \
 			--disable-rpath \
 			--enable-disabled-builtins
 
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:L} != "no")
 CONFIGURE_ARGS+=	--enable-static-link
-PKGNAMESUFFIX=	-static
-CONFLICTS+=	bash-[0-9]* bash-devel-[0-9]* bash-static-devel-[0-9]*
+PKGNAMESUFFIX=		-static
+CONFLICTS+=		bash-[0-9]*
 .else
-CONFIGURE_ARGS+=	--enable-static-link=no
-CONFLICTS+=	bash-static-[0-9]* bash-devel-[0-9]* bash-static-devel-[0-9]*
+CONFIGURE_ARGS+=	--disable-static-link
+CONFLICTS+=		bash-static-[0-9]*
 .endif
-
-.if ! ${PORT_OPTIONS:MHELP}
-CONFIGURE_ARGS+=	--disable-help-builtin
-PLIST_SUB+=		HELP="@comment "
-.elif defined(WITH_INTEGRATED_HELPFILES)
-PLIST_SUB+=		HELP="@comment "
-.else
-CONFIGURE_ARGS+=	--enable-separate-helpfiles
-PLIST_SUB+=		HELP=""
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=			gettext iconv
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
-
-CPPFLAGS+=		${PTHREAD_CFLAGS} \
-			-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-
-CONFIGURE_ENV=		YACC="bison -y" \
-			bash_cv_dev_fd=absent
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
@@ -101,39 +67,29 @@ post-patch:
 	    -e "s|/\*.*#define SYSLOG_HISTORY .*\*/|#define SYSLOG_HISTORY|g" \
 	    ${WRKSRC}/config-top.h
 .endif
-.if ! ${PORT_OPTIONS:MNLS}
+.if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e "s|@LIBICONV@||g" ${WRKSRC}/Makefile.in
 .endif
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|"
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e "s|#define HAVE_ICONV 1|#undef HAVE_ICONV|g" ${WRKSRC}/config.h
+.if empty(PORT_OPTIONS:MNLS)
+	@${REINPLACE_CMD} -e "s|#define HAVE_ICONV 1|#undef HAVE_ICONV|g" \
+		${WRKSRC}/config.h
 .endif
 
 pre-build:
 	@${ECHO_CMD} $$((${PORTREVISION}-1)) > ${WRKSRC}/.build
 
-pre-install:
-	@${SETENV} PKG_PREFIX="${STAGEDIR}${PREFIX}" \
-		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
-	@cd ${STAGEDIR}${PREFIX}/bin ; ${LN} -sf bash rbash
-.if ${PORT_OPTIONS:MDOCS}
+	${LN} -sf bash ${STAGEDIR}${PREFIX}/bin/rbash
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.if !defined(WITH_INCLUDED_FAQ)
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/FAQ \
+	${INSTALL_DATA} ${WRKSRC}/doc/FAQ \
 		${WRKSRC}/doc/INTRO ${STAGEDIR}${DOCSDIR}
-.else
-	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ \
-		${WRKSRC}/doc/INTRO ${STAGEDIR}${DOCSDIR}
-.endif
-	@for d in ${PORTDOCS:NFAQ:NINTRO}; do \
+	for d in ${PORTDOCS:NFAQ:NINTRO:N*html}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${d} ${STAGEDIR}${DOCSDIR}; \
 	done
-.endif
 
 regress: build
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
@@ -141,6 +97,7 @@ regress: build
 ckp:
 	${MAKE} -DPATCH_DEBUG clean patch
 
+# requires ftp/ncftp3
 cklatest:
 	@${ECHO} -n "Currently at: "
 	@${MAKE} -V PATCHLEVEL
