@@ -2,31 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	byobu
-PORTVERSION=	3.29
-PORTREVISION=	1
+PORTVERSION=	5.73
 CATEGORIES=	sysutils
-MASTER_SITES=	http://launchpadlibrarian.net/65243016/
+MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Profile and configuration utilities for GNU Screen
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/screen:${PORTSDIR}/sysutils/screen
+RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+OPTIONS_DEFINE=	BASH_DEVEL
+BASH_DEVEL_DESC=Use bash-devel instead of bash
+BASH_DEVEL_RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash-devel
+BASH_DEVEL_RUN_DEPENDS_OFF=	bash:${PORTSDIR}/shells/bash
+
 post-patch:
-	${REINPLACE_CMD} \
-		-e "s@/bin/bash@${LOCALBASE}/bin/bash@" \
-		-e "s@/usr/bin/python@${PYTHON_CMD}@" \
-		${WRKSRC}/usr/bin/*
-.if defined(NOPORTDOCS)
-	${REINPLACE_CMD} \
-		-e "s@^install:.*@install:@" \
-		${WRKSRC}/usr/share/doc/byobu/Makefile.in
-.endif
+	${FIND} ${WRKSRC} -type f | ${XARGS} \
+		${REINPLACE_CMD} \
+			-e "s@/bin/bash@${LOCALBASE}/bin/bash@" \
+			-e "s@/usr/bin/python@${PYTHON_CMD}@"
 
 .include <bsd.port.mk>
