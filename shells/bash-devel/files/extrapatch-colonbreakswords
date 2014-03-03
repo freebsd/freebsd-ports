@@ -1,6 +1,6 @@
---- bashline.c.orig	2009-01-08 06:29:24.000000000 -0800
-+++ bashline.c	2012-07-30 15:07:10.000000000 -0500
-@@ -235,6 +235,11 @@ int bash_readline_initialized = 0;
+--- bashline.c.orig	2014-03-02 13:26:23.000000000 -0500
++++ bashline.c	2014-03-02 13:30:09.000000000 -0500
+@@ -255,6 +255,11 @@
     host list. */
  int perform_hostname_completion = 1;
  
@@ -12,7 +12,7 @@
  /* If non-zero, we don't do command completion on an empty line. */
  int no_empty_command_completion;
  
-@@ -252,7 +257,8 @@ int dircomplete_expand_relpath = 0;
+@@ -284,7 +289,8 @@
  
  static char *bash_completer_word_break_characters = " \t\n\"'@><=;|&(:";
  static char *bash_nohostname_word_break_characters = " \t\n\"'><=;|&(:";
@@ -22,7 +22,7 @@
  
  static const char *default_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{~";	/*}*/
  static char *custom_filename_quote_characters = 0;
-@@ -370,6 +376,80 @@ enable_hostname_completion (on_or_off)
+@@ -403,6 +409,80 @@
    return (old_value);
  }
  
@@ -45,7 +45,7 @@
 +  else
 +    {
 +      colon_is_wordbreak = 0;
-+      rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!{~";	/*}*/
++      rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!{~";   /*}*/
 +    }
 +
 +  /* Now we need to figure out how to appropriately modify and assign
@@ -57,13 +57,13 @@
 +     allocate new memory for rl_completer_word_break_characters. */
 +
 +  if (bash_readline_initialized == 0 &&
-+      (rl_completer_word_break_characters == 0 || 
++      (rl_completer_word_break_characters == 0 ||
 +       rl_completer_word_break_characters == rl_basic_word_break_characters))
 +    {
 +      if (on_or_off)
-+	rl_completer_word_break_characters = savestring (bash_completer_word_break_characters);
++       rl_completer_word_break_characters = savestring (bash_completer_word_break_characters);
 +      else
-+	rl_completer_word_break_characters = savestring (bash_nocolon_word_break_characters);
++       rl_completer_word_break_characters = savestring (bash_nocolon_word_break_characters);
 +    }
 +  else
 +    {
@@ -76,21 +76,21 @@
 +      nval = (char *)xmalloc (strlen (rl_completer_word_break_characters) + 1 + on_or_off);
 +
 +      if (on_or_off == 0)
-+	{
-+	  /* Turn it off -- just remove `:' from word break chars.  We want
-+	     to remove all occurrences of `:' from the char list, so we loop
-+	     rather than just copy the rest of the list over AT. */
-+	  for (nv = nval, at = rl_completer_word_break_characters; *at; )
-+	    if (*at != ':')
-+	      *nv++ = *at++;
-+	    else
-+	      at++;
-+	  *nv = '\0';
-+	}
++       {
++         /* Turn it off -- just remove `:' from word break chars.  We want
++            to remove all occurrences of `:' from the char list, so we loop
++            rather than just copy the rest of the list over AT. */
++         for (nv = nval, at = rl_completer_word_break_characters; *at; )
++           if (*at != ':')
++             *nv++ = *at++;
++           else
++             at++;
++         *nv = '\0';
++       }
 +      else
-+	{
-+	  nval[0] = ':';
-+	  strcpy (nval + 1, rl_completer_word_break_characters);
++       {
++         nval[0] = ':';
++         strcpy (nval + 1, rl_completer_word_break_characters);
 +        }
 +
 +      free (rl_completer_word_break_characters);
@@ -103,7 +103,7 @@
  /* Called once from parse.y if we are going to use readline. */
  void
  initialize_readline ()
-@@ -538,8 +618,13 @@ initialize_readline ()
+@@ -573,8 +653,13 @@
       completion is enabled. */
    enable_hostname_completion (perform_hostname_completion);
  
@@ -115,13 +115,13 @@
    /* characters that need to be quoted when appearing in filenames. */
 -  rl_filename_quote_characters = default_filename_quote_characters;
 +//  rl_filename_quote_characters = default_filename_quote_characters;
+   set_filename_bstab (rl_filename_quote_characters);
  
    rl_filename_quoting_function = bash_quote_filename;
-   rl_filename_dequoting_function = bash_dequote_filename;
---- builtins/shopt.def.orig	2009-01-13 05:43:16.000000000 -0800
-+++ builtins/shopt.def	2009-03-08 01:03:39.000000000 -0800
-@@ -96,6 +97,8 @@ extern int force_fignore;
- extern int dircomplete_spelling;
+--- builtins/shopt.def.orig	2014-03-02 13:30:44.000000000 -0500
++++ builtins/shopt.def	2014-03-02 13:31:38.000000000 -0500
+@@ -103,6 +103,8 @@
+ extern int complete_fullquote;
  
  extern int enable_hostname_completion __P((int));
 +extern int colon_is_wordbreak;
@@ -129,8 +129,8 @@
  #endif
  
  #if defined (PROGRAMMABLE_COMPLETION)
-@@ -147,6 +150,9 @@ static struct {
- #if defined (READLINE)
+@@ -166,6 +168,9 @@
+   { "direxpand", &dircomplete_expand, shopt_set_complete_direxpand },
    { "dirspell", &dircomplete_spelling, (shopt_set_func_t *)NULL },
  #endif
 +#if defined (READLINE)
@@ -139,9 +139,9 @@
    { "dotglob", &glob_dot_filenames, (shopt_set_func_t *)NULL },
    { "execfail", &no_exit_on_failed_exec, (shopt_set_func_t *)NULL },
    { "expand_aliases", &expand_aliases, (shopt_set_func_t *)NULL },
---- doc/bash.1.orig	2009-03-08 00:53:01.000000000 -0800
-+++ doc/bash.1	2009-03-08 01:05:32.000000000 -0800
-@@ -8473,6 +8473,18 @@ attempts to save all lines of a multiple
+--- doc/bash.1.orig	2014-03-02 13:32:14.000000000 -0500
++++ doc/bash.1	2014-03-02 13:32:40.000000000 -0500
+@@ -9252,6 +9252,18 @@
  command in the same history entry.  This allows
  easy re-editing of multi-line commands.
  .TP 8
@@ -160,9 +160,9 @@
  .B compat31
  If set,
  .B bash
---- doc/bashref.texi.orig	2009-03-08 00:53:01.000000000 -0800
-+++ doc/bashref.texi	2009-03-08 01:07:00.000000000 -0800
-@@ -4321,6 +4321,11 @@ attempts to save all lines of a multiple
+--- doc/bashref.texi.orig	2014-03-02 13:33:17.000000000 -0500
++++ doc/bashref.texi	2014-03-02 13:33:44.000000000 -0500
+@@ -4937,6 +4937,11 @@
  command in the same history entry.  This allows
  easy re-editing of multi-line commands.
  
@@ -171,3 +171,6 @@
 +separating word being completed (@pxref{Commands For Completion}).
 +This option is enabled by default.
 +
+ @item compat31
+ If set, Bash
+ changes its behavior to that of version 3.1 with respect to quoted
