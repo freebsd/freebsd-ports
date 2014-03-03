@@ -14,21 +14,19 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-MAN1=		istatd.1
-MAN5=		istat.conf.5
+PLIST_FILES=	bin/istatd etc/istat.conf-dist man/man1/istatd.1.gz \
+		man/man5/istat.conf.5.gz
 
-PLIST_FILES=	bin/istatd etc/istat.conf-dist
 SUB_FILES+=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/istatd ${PREFIX}/bin
-		${INSTALL_SCRIPT} ${WRKDIR}/istatd ${PREFIX}/etc/rc.d
-		${INSTALL_DATA} ${WRKSRC}/resource/istat.conf ${PREFIX}/etc/istat.conf-dist
-		${INSTALL_MAN} ${WRKSRC}/resource/istatd.1 ${MAN1PREFIX}/man/man1
-		${INSTALL_MAN} ${WRKSRC}/resource/istat.conf.5 ${MAN5PREFIX}/man/man5
-
-post-install:
-		@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/istatd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/istatd ${STAGEDIR}${PREFIX}/etc/rc.d
+	${INSTALL_DATA} ${WRKSRC}/resource/istat.conf \
+		${STAGEDIR}${PREFIX}/etc/istat.conf-dist
+	${INSTALL_MAN} ${WRKSRC}/resource/istatd.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/resource/istat.conf.5 \
+		${STAGEDIR}${MANPREFIX}/man/man5
 
 .include <bsd.port.mk>
