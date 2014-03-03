@@ -1,14 +1,14 @@
---- doc/bashref.texi.orig	Wed Dec 28 19:44:28 2005
-+++ doc/bashref.texi	Wed Dec 28 20:09:16 2005
+--- doc/bashref.texi.orig	2014-03-02 13:40:51.000000000 -0500
++++ doc/bashref.texi	2014-03-02 13:42:04.000000000 -0500
 @@ -1,6 +1,6 @@
  \input texinfo.tex @c -*- texinfo -*-
  @c %**start of header
 -@setfilename bashref.info
 +@setfilename bash.info
  @settitle Bash Reference Manual
- @c %**end of header
  
-@@ -10,7 +10,7 @@
+ @include version.texi
+@@ -8,7 +8,7 @@
  
  @copying
  This text is a brief description of the features that are present in
@@ -17,12 +17,12 @@
  
  This is Edition @value{EDITION}, last updated @value{UPDATED},
  of @cite{The GNU Bash Reference Manual},
-@@ -4277,7 +4277,7 @@
+@@ -5299,7 +5299,7 @@
  
  
  @item PS1
 -The primary prompt string.  The default value is @samp{\s-\v\$ }.
 +The primary prompt string.  The default value is @samp{[\u@@\h \w]\$ }.
- @xref{Printing a Prompt}, for the complete list of escape
+ @xref{Controlling the Prompt}, for the complete list of escape
  sequences that are expanded before @env{PS1} is displayed.
  
