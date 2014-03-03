@@ -3,6 +3,7 @@
 
 PORTNAME=	moreutils-parallel
 PORTVERSION=	0.51
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 MASTER_SITE_SUBDIR=	pool/main/m/moreutils
