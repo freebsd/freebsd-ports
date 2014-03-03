@@ -3,6 +3,7 @@
 
 PORTNAME=	duply
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/1.6.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,12 +15,8 @@ COMMENT=	Shell front end for the duplicity backup tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
-RUN_DEPENDS=	duplicity:${PORTSDIR}/sysutils/duplicity
-
-OPTIONS_DEFINE=	BASH_DEVEL
-BASH_DEVEL_DESC=	Use shells/bash-devel instead of shells/bash
-BASH_DEVEL_RUN_DEPENDS_OFF=	bash:${PORTSDIR}/shells/bash
-BASH_DEVEL_RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash-devel
+RUN_DEPENDS=	duplicity:${PORTSDIR}/sysutils/duplicity \
+				bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 
