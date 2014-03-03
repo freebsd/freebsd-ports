@@ -21,19 +21,13 @@ EXAMPLESDIR=	share/examples/gm4
 
 OPTIONS_DEFINE=		LIBSIGSEGV
 LIBSIGSEGV_DESC=	Use libsigsegv for better diagnostics
+LIBSIGSEGV_LIB_DEPENDS=		libsigsegv.so:${PORTSDIR}/devel/libsigsegv
+LIBSIGSEGV_CONFIGURE_ON=	--with-libsigsegv-prefix=${LOCALBASE}
+LIBSIGSEGV_CONFIGURE_OFF=	--without-libsigsegv-prefix
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 \
 		${STAGEDIR}${PREFIX}/${EXAMPLESDIR}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBSIGSEGV}
-LIB_DEPENDS+=		libsigsegv.so:${PORTSDIR}/devel/libsigsegv
-CONFIGURE_ARGS+=	--with-libsigsegv-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-libsigsegv-prefix
-.endif
 
 .include <bsd.port.mk>
