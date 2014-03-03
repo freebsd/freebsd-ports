@@ -3,7 +3,7 @@
 
 PORTNAME=	raptor2
 PORTVERSION=	2.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/ \
 		SF/librdf/${PORTNAME}/${PORTVERSION}
@@ -23,11 +23,10 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 CONFLICTS=	raptor-1.4.1[0-9]* raptor-1.4.21
 
 USE_GNOME=	libxml2 libxslt
-USES=		pathfix
+USES=		pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
-		--with-pkg-config=${LOCALBASE}/bin/pkg-config \
 		--with-icu-config=${LOCALBASE}/bin/icu-config \
 		--with-www=curl
 
