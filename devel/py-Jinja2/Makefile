@@ -3,7 +3,7 @@
 
 PORTNAME=	Jinja2
 PORTVERSION=	2.7.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +12,14 @@ PKGNAMESUFFIX?=
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT?=	Fast and easy to use stand-alone template engine
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:${PORTSDIR}/textproc/py-MarkupSafe
 
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 .if empty(PKGNAMESUFFIX)
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 .endif
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
@@ -29,10 +30,12 @@ OPTIONS_DEFAULT?=	BABEL SPEEDUPS
 SPEEDUPS_DESC=	Enable speedups
 BABEL_DESC=	Enable Babel extension
 
+BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:${PORTSDIR}/devel/py-babel
+SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:${PORTSDIR}/textproc/py-MarkupSafe
+
 PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
 PY2TO3_ARGS=	--fix=all --no-diffs --nobackups --verbose --write
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
@@ -40,19 +43,12 @@ NO_STAGE=	yes
 .if ${PKGNAMESUFFIX} == "-doc"
 BUILD_DEPENDS+=	${PKGNAMEPREFIX}sphinx>=1.1.3:${PORTSDIR}/textproc/py-sphinx
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+PORTDOCS=	*
 PORT_OPTIONS:=	${PORT_OPTIONS:NEXAMPLES}
 .endif
 
-.if ${PORT_OPTIONS:MBABEL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:${PORTSDIR}/devel/py-babel
-.endif
-
-.if ${PORT_OPTIONS:MSPEEDUPS}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:${PORTSDIR}/textproc/py-MarkupSafe
-.endif
-
 # no problem with Python > 3.2
-.if ${PYTHON_VERSION} == python3.2
+.if ${PYTHON_REL} >= 320
 pre-build:
 	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/jinja2
 .endif
@@ -62,14 +58,15 @@ do-build:
 .	if ${PYTHON_REL} >= 300
 	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/docs
 .	endif
-	@cd ${WRKSRC}/docs && ${MAKE} html
+	(cd ${WRKSRC}/docs && ${MAKE} html)
 
 do-install:
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs/_build/html && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs/_build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
+PORTEXAMPLES=	*
 post-build:
 .	if ${PYTHON_REL} >= 300
 	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
@@ -78,8 +75,8 @@ post-build:
 	${PYTHON_CMD} -O -m compileall ${WRKSRC}/examples
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 check regression-test test: build
@@ -87,10 +84,6 @@ check regression-test test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 .else
 	@${DO_NADA}
-.endif
-
-.if ${PYTHON_REL} >= 320
-.include "${.CURDIR}/../py-virtualenv/files/py3k-fix-pkg-plist.inc"
 .endif
 
 .include <bsd.port.post.mk>
