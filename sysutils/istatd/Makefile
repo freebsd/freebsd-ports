@@ -9,7 +9,7 @@ MASTER_SITES=	http://cloud.github.com/downloads/tiwilliam/${PORTNAME}/
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Daemon for iStat iPhone application
 
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
