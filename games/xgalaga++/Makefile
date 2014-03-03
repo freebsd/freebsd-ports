@@ -36,8 +36,8 @@ DESKTOP_ENTRIES="XGalaga++" "" "${PORTNAME}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXX =|CXX ?=|; \
-		s|HIGH_SCORES_FILE=/|#HIGH_SCORES_FILE=/|; \
-		s|#HIGH_SCORES_FILE=.|HIGH_SCORES_FILE=.|; \
+		s|HIGH_SCORES_FILE=/var|#HIGH_SCORES_FILE=/var|; \
+		s|#HIGH_SCORES_FILE=.xgalaga++|HIGH_SCORES_FILE=.xgalaga++|; \
 		s|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/Makefile
 
