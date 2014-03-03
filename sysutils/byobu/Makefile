@@ -3,6 +3,7 @@
 
 PORTNAME=	byobu
 PORTVERSION=	5.73
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -10,16 +11,12 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Profile and configuration utilities for GNU Screen
 
-RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
+RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen \
+				bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-OPTIONS_DEFINE=	BASH_DEVEL
-BASH_DEVEL_DESC=Use bash-devel instead of bash
-BASH_DEVEL_RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash-devel
-BASH_DEVEL_RUN_DEPENDS_OFF=	bash:${PORTSDIR}/shells/bash
 
 post-patch:
 	${FIND} ${WRKSRC} -type f | ${XARGS} \
