@@ -46,7 +46,7 @@ asWedit-*		www/aswedit		Commercial software
 atari800/*		emulators/atari800	xf25 contains copyright ROMs and cannot be distributed
 bamg*			math/bamg		Contact author personally regarding commercial use
 baudline_*		audio/baudline		No redistribution allowed
-BCWipe-*		security/Bcwipe		Non-commercial distribution and use only
+BCWipe-*		security/bcwipe		Non-commercial distribution and use only
 bdc*			security/bdc		License does not allow redistribution
 bicom*			archivers/bicom		Contact author personally regarding commercial use
 blast*.freebsd-*	biology/blast		Must be downloaded from vendor site
