@@ -15,18 +15,17 @@ COMMENT=	Dynamic, small, fast and simple window manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
+LIB_DEPENDS=   libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 
 OPTIONS_DEFINE=	XINERAMA XFT DOCS
 OPTIONS_DEFAULT=XINERAMA
 
 USE_XORG=	x11 xau xcb xdmcp xext
 
-MAN1=		dwm.1
-PLIST_FILES=	bin/dwm
+PLIST_FILES=	bin/dwm \
+		man/man1/dwm.1.gz
 PORTDOCS=	README
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXINERAMA}
@@ -34,9 +33,9 @@ USE_XORG+=	xinerama
 .endif
 
 .if ${PORT_OPTIONS:MXFT}
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 USE_XORG+=	xft xrender
 PATCHFILES+=	${PORTNAME}-${PORTVERSION}-xft.diff
 .endif
@@ -67,11 +66,7 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
