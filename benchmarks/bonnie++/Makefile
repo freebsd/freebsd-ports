@@ -14,7 +14,6 @@ COMMENT=	Performance Test of Filesystem I/O
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GCC=	any
 
 USES=	shebangfix
 SHEBANG_FILES=	bon_csv2txt.in
@@ -25,8 +24,6 @@ PORTDOCS=	readme.html
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} \
 		's|/usr/share/|${PREFIX}/share/|g' ${WRKSRC}/bonnie++.8
@@ -34,9 +31,7 @@ post-patch:
 		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.html ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
