@@ -16,14 +16,6 @@ COMMENT=	Simple but powerful config file reader and writer
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-NO_STAGE=	yes
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} && \
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
