@@ -14,7 +14,7 @@ COMMENT=	DNS relay for ad blocking
 
 LICENSE=	BSD
 
-LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent \
+LIB_DEPENDS+=	libevent-1.4.so:${PORTSDIR}/devel/libevent \
 		ldns:${PORTSDIR}/dns/ldns
 
 USE_RC_SUBR=	adsuck
@@ -24,17 +24,12 @@ GROUPS=	_adsuck
 
 SUB_FILES+=	pkg-message
 
-MAN8=	adsuck.8
-MANCOMPRESSED=	yes
+OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/adsuck ${PREFIX}/sbin/
-	@${INSTALL_MAN} ${WRKSRC}/${MAN8}.gz ${MANPREFIX}/man/man8/
-
-post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/files/* ${EXAMPLESDIR}
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/adsuck ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8.gz ${STAGEDIR}${MANPREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/files/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
