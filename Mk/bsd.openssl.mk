@@ -8,7 +8,6 @@
 #
 # WITH_OPENSSL_BASE=yes	- Use the version in the base system.
 # WITH_OPENSSL_PORT=yes	- Use the port, even if base is up to date
-# WITH_OPENSSL_HACK7=yes - Use not the version in the base system on FreeBSD 7.x
 #
 # USE_OPENSSL_RPATH=yes	- Pass RFLAGS options in CFLAGS,
 #			  needed for ports who don't use LDFLAGS
@@ -38,13 +37,6 @@ WITH_OPENSSL_BASE=yes
 .endif
 .if defined(USE_OPENSSL_PORT) && !defined(WITH_OPENSSL_PORT)
 WITH_OPENSSL_PORT=yes
-.endif
-
-.if defined(WITH_OPENSSL_HACK7)
-.if ${OSVERSION} < 800000
-# the openssl in base of FreeBSD 7.x is too old
-WITH_OPENSSL_PORT?=	yes
-.endif
 .endif
 
 #	if no preference was set, check for an installed base version
@@ -153,7 +145,7 @@ OPENSSLINC=		${OPENSSLBASE}/include
 .if defined(USE_OPENSSL_RPATH)
 CFLAGS+=		-Wl,-rpath,${OPENSSLRPATH}
 .endif
-OPENSSL_LDFLAGS+=	-Wl,-rpath=${OPENSSLRPATH}
+OPENSSL_LDFLAGS+=	-Wl,-rpath,${OPENSSLRPATH}
 
 LDFLAGS+=${OPENSSL_LDFLAGS}
 
