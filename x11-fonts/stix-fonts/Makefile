@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	stixfonts
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	STIXv${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Current%20Release/
+DISTNAME=	STIXv${PORTVERSION}-webfonts
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A comprehensive set of fonts for scientific and engineering purposes
+COMMENT=	OpenType Unicode fonts for Scientific, Technical, and Math texts
 
 LICENSE=	OFL11
 
@@ -36,33 +36,24 @@ MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 FCCACHE=	${LOCALBASE}/bin/fc-cache -f -v
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	STIXv${PORTVERSION}.pdf
+PORTDOCS=	"STIX Font ${PORTVERSION}-webfonts Release Documentation.pdf"
 .endif
 
-NO_STAGE=	yes
 do-build:
 	${MKDIR} ${WRKDIR}/build
-.for group in STIX-General STIX-Word
-	${CP} ${WRKSRC}/Fonts/${group}/*.otf ${WRKDIR}/build
+.for group in stix-web STIX-MathJax/woff
+	${CP} ${WRKSRC}/${group}/*.woff ${WRKDIR}/build/
 .endfor
 	cd ${WRKDIR}/build && ${MKFONTSCL_CMD}
 	${REINPLACE_CMD} -e 's|-misc-|-stix-|' ${WRKDIR}/build/fonts.scale
 	cd ${WRKDIR}/build && ${MKFONTDIR_CMD}
 
 do-install:
-	${MKDIR} ${FONTDIR}
-	cd ${WRKDIR}/build && ${INSTALL_DATA} fonts.dir fonts.scale *.otf ${FONTDIR}
-	cd ${FONTDIR} && ${MKFONTDIR_CMD}
+	${MKDIR} ${STAGEDIR}${FONTDIR}
+	cd ${WRKDIR}/build && ${INSTALL_DATA} fonts.dir fonts.scale *.woff ${STAGEDIR}${FONTDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-
-post-install:
-	@${ECHO_MSG} "===> Running fc-cache"
-	-${FCCACHE} ${FONTDIR}
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
