@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	homebank
-PORTVERSION=	4.5.5
+PORTVERSION=	4.5.6
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -26,8 +26,8 @@ OPTIONS_DEFINE=	DOCS OFX
 OFX_DESC=	OFX file format support
 OPTIONS_DEFAULT=OFX
 
+OFX_CONFIGURE_WITH=	ofx
 OFX_LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx
-OFX_CONFIGURE_OFF=	--without-ofx
 
 post-extract:
 	@${CHMOD} ${BINMODE} ${WRKSRC}/install-sh
