@@ -15,7 +15,7 @@
 # svscan_enable		Set to "YES" to run svscan.
 # svscan_servicedir	The directory containing the various service.
 #			directories to be monitored.  Professor Daniel J.
-#			Bernstein recomments "/service", but the FreeBSD
+#			Bernstein recommends "/service", but the FreeBSD
 #			port has a default of "/var/service" instead, which
 #			is consistent with the FreeBSD filesystem hierarchy
 #			guidelines as described in the hier(7) manual page.
