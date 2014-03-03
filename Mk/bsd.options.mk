@@ -257,7 +257,8 @@ NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  sinclude "${OPTIONS_FILE}.local"
 
 ### convert WITH and WITHOUT found in make.conf or reloaded from old optionsfile
-.for opt in ${ALL_OPTIONS}
+# XXX once WITH_DEBUG is not magic any more, do remove the :NDEBUG from here.
+.for opt in ${ALL_OPTIONS:NDEBUG}
 .if defined(WITH_${opt})
 OPTIONS_WARNINGS+= "WITH_${opt}"
 OPTIONS_WARNINGS_SET+=	${opt}
