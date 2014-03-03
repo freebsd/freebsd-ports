@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A Two-Dimensional Quality Mesh Generator and Delaunay Triangulator
 
-NO_CDROM=	Triangle must not be sold for profit
+NO_CDROM=	No commercial use without prior arrangement with the author
 
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
