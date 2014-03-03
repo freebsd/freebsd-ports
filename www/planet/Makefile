@@ -12,6 +12,9 @@ COMMENT=	Planet is a flexible feed aggregator - and more!
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/Tidy/Tidy.py:${PORTSDIR}/devel/py-mx-experimental \
 		${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
 
+DEPRECATED=	distfiles no longer fetchable
+EXPIRATION_DATE=	2014-04-01
+
 USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_PYTHON=	yes
