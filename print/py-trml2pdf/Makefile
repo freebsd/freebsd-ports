@@ -22,20 +22,15 @@ USE_PYTHON=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PYTHON_SITELIBDIR}/trml2pdf
-	@${INSTALL_SCRIPT} ${WRKSRC}/trml2pdf/* ${PYTHON_SITELIBDIR}/trml2pdf
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/trml2pdf
+	@${INSTALL_SCRIPT} ${WRKSRC}/trml2pdf/* ${STAGEDIR}${PYTHON_SITELIBDIR}/trml2pdf
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/rmls/ ${EXAMPLESDIR}/rmls
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/rmls/ ${STAGEDIR}${EXAMPLESDIR}/rmls
 
 .include <bsd.port.mk>
