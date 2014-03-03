@@ -1,6 +1,10 @@
 =====================================================================
 
-LDAP and nslcd daemon parameters should be set in %%CONFIG_FILE%%. When upgrading review %%CONFIG_FILE%%.sample for additional or changed parameters.
+LDAP and nslcd daemon parameters should be set in:
+%%CONFIG_FILE%%.
+
+When upgrading review %%CONFIG_FILE%%.sample for
+additional or changed parameters.
 
 %%NSS_MESSAGE%%
 
