@@ -153,7 +153,7 @@ LANGS+=		objc
 #########################
 
 .if ${PORT_OPTIONS:MTESTSUITE}
-BUILD_DEPENDS=	dejagnu>=1.4:${PORTSDIR}/misc/dejagnu
+BUILD_DEPENDS+=	dejagnu>=1.4:${PORTSDIR}/misc/dejagnu
 APPLY_DIFFS+=	ada-testsuite
 APPLY_DIFFS+=	fortran-testsuite
 APPLY_DIFFS+=	cxx-testsuite
