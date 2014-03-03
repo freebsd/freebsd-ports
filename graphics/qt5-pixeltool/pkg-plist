@@ -1,0 +1,3 @@
+%%QT_BINDIR%%/pixeltool
+@dirrmtry %%QT_BINDIR%%
+@dirrmtry %%QT_ARCHDIR%%

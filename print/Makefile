@@ -259,6 +259,7 @@
     SUBDIR += py-trml2pdf
     SUBDIR += qpdf
     SUBDIR += qpdfview
+    SUBDIR += qt5-printsupport
     SUBDIR += rlpr
     SUBDIR += rprint
     SUBDIR += rtf2latex

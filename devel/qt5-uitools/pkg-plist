@@ -1,0 +1,25 @@
+%%QT_INCDIR%%/QtUiTools/%%FULLVER%%/QtUiTools/private/quiloader_p.h
+%%QT_INCDIR%%/QtUiTools/QUiLoader
+%%QT_INCDIR%%/QtUiTools/QtUiTools
+%%QT_INCDIR%%/QtUiTools/QtUiToolsDepends
+%%QT_INCDIR%%/QtUiTools/QtUiToolsVersion
+%%QT_INCDIR%%/QtUiTools/qtuitoolsversion.h
+%%QT_INCDIR%%/QtUiTools/quiloader.h
+%%QT_LIBDIR%%/cmake/Qt5UiTools/Qt5UiToolsConfig.cmake
+%%QT_LIBDIR%%/cmake/Qt5UiTools/Qt5UiToolsConfigVersion.cmake
+%%QT_LIBDIR%%/libQt5UiTools.a
+%%QT_LIBDIR%%/libQt5UiTools.la
+%%QT_LIBDIR%%/libQt5UiTools.prl
+%%QT_MKSPECDIR%%/modules/qt_lib_uitools.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_uitools_private.pri
+libdata/pkgconfig/Qt5UiTools.pc
+@dirrmtry %%QT_MKSPECDIR%%/modules
+@dirrmtry %%QT_MKSPECDIR%%
+@dirrmtry %%QT_ARCHDIR%%
+@dirrm %%QT_LIBDIR%%/cmake/Qt5UiTools
+@dirrmtry %%QT_LIBDIR%%/cmake
+@dirrm %%QT_INCDIR%%/QtUiTools/%%FULLVER%%/QtUiTools/private
+@dirrm %%QT_INCDIR%%/QtUiTools/%%FULLVER%%/QtUiTools
+@dirrm %%QT_INCDIR%%/QtUiTools/%%FULLVER%%
+@dirrm %%QT_INCDIR%%/QtUiTools
+@dirrmtry %%QT_INCDIR%%
