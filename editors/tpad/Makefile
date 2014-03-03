@@ -10,7 +10,7 @@ MASTER_SITES=	SF/tclpad/tclpad/${PORTVERSION} \
 		http://queen.rett.polimi.it/~ant/tcl/script/ \
 		http://sarovar.org/download.php/382/
 
-MAINTAINER=	ant@monitor.deis.unical.it
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows XP (TM) enhanced Notepad clone written in Tcl/Tk
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
