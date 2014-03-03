@@ -5581,3 +5581,4 @@ lang/clang31||2014-03-01|Has expired: No remaining dependencies
 devel/llvm31||2014-03-01|Has expired: No remaining dependencies (except clang31)
 shells/bash-devel|shells/bash|2014-03-03|Maintainer reset, main port now properly maintained
 shells/bash-static-devel|shells/bash-static|2014-03-03|Maintainer reset, main port now properly maintained
+x11/mgapdesk||2014-03-03|Has expired: Needs an old (pre 7.2) XFree86/X.org header file to build

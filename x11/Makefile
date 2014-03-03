@@ -209,7 +209,6 @@
     SUBDIR += menu-cache
     SUBDIR += metalock
     SUBDIR += metisse
-    SUBDIR += mgapdesk
     SUBDIR += mkcomposecache
     SUBDIR += mlterm
     SUBDIR += mrxvt
