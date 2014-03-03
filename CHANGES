@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140303:
+AUTHOR: kde@FreeBSD.org
+
+  Add support for Qt 5 via USE_QT5. USE_QT5 is analogous to USE_QT4,
+  the only difference is the list of available components
+  (see Mk/bsd.qt.mk for details). USES=qmake supports Qt 5 as well.
+
 20140127:
 AUTHOR: mat@FreeBSD.org
 

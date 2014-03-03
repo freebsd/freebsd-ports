@@ -73,6 +73,7 @@
     SUBDIR += clit
     SUBDIR += clucene
     SUBDIR += clucene-qt4
+    SUBDIR += clucene-qt5
     SUBDIR += coccigrep
     SUBDIR += coco
     SUBDIR += code2html
@@ -1211,6 +1212,8 @@
     SUBDIR += qt4-xml
     SUBDIR += qt4-xmlpatterns
     SUBDIR += qt4-xmlpatterns-tool
+    SUBDIR += qt5-xml
+    SUBDIR += qt5-xmlpatterns
     SUBDIR += qu-aspell
     SUBDIR += queequeg
     SUBDIR += rand

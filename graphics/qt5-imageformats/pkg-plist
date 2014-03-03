@@ -1,0 +1,17 @@
+%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QMngPlugin.cmake
+%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake
+%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake
+%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake
+%%QT_PLUGINDIR%%/imageformats/libqmng.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqmng.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqtga.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqtga.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqtiff.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqtiff.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqwbmp.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqwbmp.so.debug
+@dirrmtry %%QT_PLUGINDIR%%/imageformats
+@dirrmtry %%QT_PLUGINDIR%%
+@dirrmtry %%QT_ARCHDIR%%
+@dirrmtry %%QT_LIBDIR%%/cmake/Qt5Gui
+@dirrmtry %%QT_LIBDIR%%/cmake

@@ -1,0 +1,25 @@
+--- ./configure.orig	2013-10-22 01:49:15.000000000 -0700
++++ ./configure	2013-11-04 07:40:28.945418565 -0800
+@@ -4194,11 +4194,11 @@
+         fi
+         echo "QMAKESPEC = $adjqmakespec" >> "$mkfile"
+         echo "QT_VERSION = $QT_VERSION" >> "$mkfile"
+-        echo "EXTRA_CFLAGS = $EXTRA_CFLAGS" >> "$mkfile"
+-        echo "EXTRA_CXXFLAGS = $EXTRA_CXXFLAGS" >> "$mkfile"
++        echo "EXTRA_CFLAGS = $EXTRA_CFLAGS $CFLAGS" >> "$mkfile"
++        echo "EXTRA_CXXFLAGS = $EXTRA_CXXFLAGS $CXXFLAGS" >> "$mkfile"
+         echo "QTOBJS =" $EXTRA_OBJS >> "$mkfile"
+         echo "QTSRCS =" $EXTRA_SRCS >> "$mkfile"
+-        echo "LFLAGS = $EXTRA_LFLAGS" >> "$mkfile"
++        echo "LFLAGS = $EXTRA_LFLAGS $LDFLAGS" >> "$mkfile"
+         echo "EXEEXT = $EXEEXT" >> "$mkfile"
+         echo "RM_F = rm -f" >> "$mkfile"
+         echo "RM_RF = rm -rf" >> "$mkfile"
+@@ -4214,6 +4214,7 @@
+ 	    rm "$mkfile.tmp"
+         fi
+     done
++    exit 0
+ 
+     (cd "$outpath/qmake"; "$MAKE") || exit 2
+ fi # Build qmake

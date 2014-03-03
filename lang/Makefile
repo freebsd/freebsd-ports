@@ -276,6 +276,7 @@
     SUBDIR += python33
     SUBDIR += qore
     SUBDIR += qscheme
+    SUBDIR += qt5-qml
     SUBDIR += racket
     SUBDIR += racket-minimal
     SUBDIR += rakudo

@@ -1,0 +1,11 @@
+--- ./configure.orig	2013-10-22 01:49:15.000000000 -0700
++++ ./configure	2013-11-04 07:23:05.115448412 -0800
+@@ -4073,7 +4073,7 @@
+ }
+ 
+ # build qmake
+-if true; then ###[ '!' -f "$outpath/bin/qmake" ];
++if [ '!' -e "$outpath/bin/qmake" ]; then
+     echo "Creating qmake..."
+ 
+     mkdir -p "$outpath/qmake" || exit
