@@ -11,6 +11,7 @@ COMMENT=	General (or GNU) template generation tools
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+USES=		shebangfix
 NO_BUILD=	yes
 
 PORTDOCS=	autoconf.html automake.html \
@@ -19,24 +20,17 @@ PORTDOCS=	autoconf.html automake.html \
 		index.html libtool.html
 PLIST_FILES=	${SCRIPTS:S/^/bin\//}
 
-SCRIPTS=	gcng gptg gscg
+SHEBANG_FILES=	scripts/gcng scripts/gptg scripts/gscg
 
-NO_STAGE=	yes
-post-patch:
-.for file in ${SCRIPTS}
-	@${REINPLACE_CMD} -e \
-		's|^#!.*|#!${LOCALBASE}/bin/bash|g' ${WRKSRC}/scripts/${file}
-.endfor
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-.for file in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${file} ${PREFIX}/bin
+.for f in ${SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
