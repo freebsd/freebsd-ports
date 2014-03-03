@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.elmar.co.il/Portable/fonts/
 DISTNAME=	H.fonts
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	sterling@camdensoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of Hebrew fonts from El-Mar software Ltd
 
 NO_WRKSUBDIR=	yes

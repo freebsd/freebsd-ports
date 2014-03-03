@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://chipstips.com/download/
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	sterling@camdensoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based Sudoku games
 
 USE_BZIP2=	yes

@@ -6,7 +6,7 @@ PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://chipstips.com/download/
 
-MAINTAINER=	sterling@camdensoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Per-CPU usage statistics
 
 LICENSE=	OWL
