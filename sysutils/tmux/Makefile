@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	tmux
-PORTVERSION=	1.8
-PORTREVISION=	1
+DISTVERSION=	1.9a
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A Terminal Multiplexer
+COMMENT=	Terminal Multiplexer
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig shebangfix
@@ -25,7 +24,7 @@ PLIST_DIRSTRY=	etc/bash_completion.d
 PORTDOCS=	CHANGES FAQ README TODO
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	LIBEVENT2 LIBEVENT_STATIC BACKSPACE
+OPTIONS_DEFINE=	DOCS LIBEVENT2 LIBEVENT_STATIC BACKSPACE
 
 LIBEVENT2_DESC=	Use libevent version 2
 LIBEVENT_STATIC_DESC=	Build with static libevent
@@ -33,55 +32,40 @@ BACKSPACE_DESC=	Build with tty/keys patch
 
 CFLAGS+=	-Wno-pointer-sign
 
+BACKSPACE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tty-keys.c
+LIBEVENT2_CONFIGURE_ENV=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include/event2/compat" \
+				LIBEVENT_LIBS="-L${LOCALBASE}/lib/event2 -levent"
+LIBEVENT2_CONFIGURE_ENV_OFF=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include" \
+				LIBEVENT_LIBS="-L${LOCALBASE}/lib -levent"
+LIBEVENT2_LIB_DEPENDS=		libevent-2.0.so:${PORTSDIR}/devel/libevent2
+LIBEVENT2_LIB_DEPENDS_OFF=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBEVENT2}
-CONFIGURE_ENV+=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include/event2/compat" \
-		LIBEVENT_LIBS="-L${LOCALBASE}/lib/event2 -levent"
-. if ${PORT_OPTIONS:MLIBEVENT_STATIC}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/event2/libevent.a:${PORTSDIR}/devel/libevent2
-LESTATIC=	${LOCALBASE}/lib/event2/libevent.a
-. else
-LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
-. endif
-.else
-CONFIGURE_ENV+=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include" \
-		LIBEVENT_LIBS="-L${LOCALBASE}/lib -levent"
-. if ${PORT_OPTIONS:MLIBEVENT_STATIC}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
-LESTATIC=	${LOCALBASE}/lib/libevent.a
-. else
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
-. endif
-.endif
-
-.if ${PORT_OPTIONS:MBACKSPACE}
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tty-keys.c
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/tmux.conf|${PREFIX}/etc/tmux.conf|g' \
 		${WRKSRC}/tmux.1 ${WRKSRC}/tmux.h ${WRKSRC}/CHANGES
 	@${REINPLACE_CMD} -e '/LIBS=/s/-lrt//' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
+.if ${PORT_OPTIONS:MLIBEVENT_STATIC}
+.if ${PORT_OPTIONS:MLIBEVENT2}
+LESTATIC=	${LOCALBASE}/lib/event2/libevent.a
+.else
+LESTATIC=	${LOCALBASE}/lib/libevent.a
+.endif
 post-configure:
-.if defined(WITH_LIBEVENT_STATIC)
 	${REINPLACE_CMD} -e '/LIBS/s|-levent[^[:blank:]]*|${LESTATIC}|' \
 		${WRKSRC}/${MAKEFILE}
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/tmux ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/tmux.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/tmux ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tmux.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	@${INSTALL_DATA} ${WRKSRC}/examples/bash_completion_tmux.sh ${STAGEDIR}${PREFIX}/etc/bash_completion.d/tmux
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_DATA} ${WRKSRC}/examples/bash_completion_tmux.sh ${STAGEDIR}${PREFIX}/etc/bash_completion.d/tmux
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
