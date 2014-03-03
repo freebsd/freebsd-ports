@@ -3,7 +3,7 @@
 
 PORTNAME=		bash-completion
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=		1
 CATEGORIES=		shells
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -11,8 +11,6 @@ MASTER_SITE_SUBDIR=	adamw
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
-
-CONFLICTS=	bash-completion-classic-[0-9]*
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
