@@ -3,7 +3,7 @@
 
 PORTNAME=	django-signals-ahoy
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://cdn.bitbucket.org/bkroeze/django-signals-ahoy/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +17,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
+
+post-extract:
+	${RM} -r ${WRKSRC}/tests
 
 .include <bsd.port.mk>
