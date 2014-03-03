@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b30
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
@@ -41,8 +41,9 @@ TZUPDATE_DESC=	Update the time zone data
 
 .if !defined(BUILD_JRE)
 OPTIONS_DEFINE+=TEST
-OPTIONS_RADIO=	Debugging
-OPTIONS_RADIO_Debugging=	DEBUG FASTDEBUG
+OPTIONS_RADIO=	DEVEL
+DEVEL_DESC=	Build for OpenJDK development
+OPTIONS_RADIO_DEVEL=	DEBUG FASTDEBUG
 DEBUG_DESC=	Enable legacy debugging support
 FASTDEBUG_DESC=	Include fastdebug build
 TEST_DESC=	Add support for running regression test
@@ -193,10 +194,7 @@ ICONV_LIBS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 ZLIB_LIBS?=	-lz
 
 .if ${COMPILER_TYPE} == "clang"
-MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false DEBUG_CFLAGS/i486=-g
-.if empty(PORT_OPTIONS:MDEBUG) && empty(PORT_OPTIONS:MFASTDEBUG)
-MAKE_ENV+=	WARNINGS_ARE_ERRORS=-w
-.endif
+MAKE_ENV+=	USE_CLANG=true
 .endif
 
 post-extract:
