@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	audio
-MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://www.musicpd.org/download/ncmpc/0/
 
 MAINTAINER=	henrik@affekt.org
 COMMENT=	Ncurses client for the musicpd
@@ -13,7 +13,6 @@ LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-NO_STAGE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -23,8 +22,10 @@ LYRICS_DESC=	Compile with lyrics screen
 
 .include <bsd.port.options.mk>
 
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig shebangfix
+SHEBANG_FILES=	lyrics/15-leoslyrics.sh
 PLIST_FILES=	bin/ncmpc \
+		man/man1/ncmpc.1.gz \
 		%%EXAMPLESDIR%%/config \
 		%%EXAMPLESDIR%%/keys \
 		%%EXAMPLESDIR%%/ncmpc.lirc
@@ -52,31 +53,27 @@ PLIST_DIRS+=	lib/ncmpc/lyrics \
 CONFIGURE_ARGS+=--disable-lyrics-screen
 .endif
 
-MAN1=		ncmpc.1
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
 	    ${WRKSRC}/lyrics/30-leoslyrics.py
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpc ${PREFIX}/bin/
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/config.sample ${EXAMPLESDIR}/config
-	${INSTALL_DATA} ${WRKSRC}/doc/keys.sample ${EXAMPLESDIR}/keys
-	${INSTALL_DATA} ${WRKSRC}/doc/ncmpc.lirc ${EXAMPLESDIR}/
-	${INSTALL_MAN} ${WRKSRC}/doc/ncmpc.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpc ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/config.sample ${STAGEDIR}${EXAMPLESDIR}/config
+	${INSTALL_DATA} ${WRKSRC}/doc/keys.sample ${STAGEDIR}${EXAMPLESDIR}/keys
+	${INSTALL_DATA} ${WRKSRC}/doc/ncmpc.lirc ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/ncmpc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MNLS}
 .for language in ${LANGUAGES}
-	${MKDIR} ${LOCALBASE}/share/locale/${language}/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/po/${language}.gmo ${PREFIX}/share/locale/${language}/LC_MESSAGES/ncmpc.mo
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${language}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/po/${language}.gmo \
+		${STAGEDIR}${PREFIX}/share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
 .endif
-.if ${PORT_OPTIONS:MLYRICS}
-	${MKDIR} ${PREFIX}/lib/ncmpc/lyrics
-	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/10-hd.sh ${PREFIX}/lib/ncmpc/lyrics/10-hd.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/15-leoslyrics.sh ${PREFIX}/lib/ncmpc/lyrics/15-leoslyrics.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/20-lyricwiki.rb ${PREFIX}/lib/ncmpc/lyrics/20-lyricwiki.rb
-	${INSTALL_SCRIPT} ${WRKSRC}/lyrics/30-leoslyrics.py ${PREFIX}/lib/ncmpc/lyrics/30-leoslyrics.py
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ncmpc/lyrics
+	(cd ${WRKSRC}/lyrics && ${INSTALL_SCRIPT} \
+		10-hd.sh 15-leoslyrics.sh 20-lyricwiki.rb 30-leoslyrics.py \
+		${STAGEDIR}${PREFIX}/lib/ncmpc/lyrics)
 
 .include <bsd.port.mk>
