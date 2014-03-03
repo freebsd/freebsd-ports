@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
-NLS_CONFIGURE_ARGS=	--disable-nls
+NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|_LDADD =|_LDADD = $$(LIB_GGZCORE)|' \
