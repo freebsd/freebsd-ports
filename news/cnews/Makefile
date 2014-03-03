@@ -33,13 +33,11 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An news server
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE=	BSD4CLAUSE
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_GCC=	any
-
+CFLAGS+=	-Wno-return-type
 DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
