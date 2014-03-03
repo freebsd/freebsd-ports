@@ -10,7 +10,7 @@ MAINTAINER=	dgerow@afflictions.org
 COMMENT=	Command-line utility for creating BitTorrent metainfo files
 
 .if defined(.PARSEDIR)
-USE_GMAKE=	yes
+USES=		gmake
 .else
 MAKEFILE=	BSDmakefile
 .endif
@@ -24,7 +24,6 @@ THREADS_DESC=	Enable support for pthreads
 OPENSSL_DESC=	Use OpenSSL for hashing
 HASHCHECK_DESC=	Verify file hashes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -44,6 +43,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/BSDmakefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
