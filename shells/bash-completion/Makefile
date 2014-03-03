@@ -6,8 +6,7 @@ PORTVERSION=	2.1
 PORTREVISION=	3
 PORTEPOCH=		1
 CATEGORIES=		shells
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	adamw
+MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
