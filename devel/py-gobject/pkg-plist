@@ -1,9 +1,9 @@
 bin/pygobject-codegen-2.0
 include/pygtk-2.0/pyglib.h
 include/pygtk-2.0/pygobject.h
-lib/libpyglib-2.0-python%%PYTHON_VER%%.la
-lib/libpyglib-2.0-python%%PYTHON_VER%%.so
-lib/libpyglib-2.0-python%%PYTHON_VER%%.so.0
+lib/libpyglib-2.0-%%PYTHON_VERSION%%.la
+lib/libpyglib-2.0-%%PYTHON_VERSION%%.so
+lib/libpyglib-2.0-%%PYTHON_VERSION%%.so.0
 %%PYTHON_SITELIBDIR%%/glib/__init__.py
 %%PYTHON_SITELIBDIR%%/glib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glib/__init__.pyo
@@ -23,6 +23,9 @@ lib/libpyglib-2.0-python%%PYTHON_VER%%.so.0
 %%PYTHON_SITELIBDIR%%/gobject/propertyhelper.py
 %%PYTHON_SITELIBDIR%%/gobject/propertyhelper.pyc
 %%PYTHON_SITELIBDIR%%/gobject/propertyhelper.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.pyo
@@ -30,9 +33,6 @@ lib/libpyglib-2.0-python%%PYTHON_VER%%.so.0
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/_gio.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/unix.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/unix.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyo
 %%PYTHON_SITELIBDIR%%/pygtk.pth
 %%PYTHON_SITELIBDIR%%/pygtk.py
 %%PYTHON_SITELIBDIR%%/pygtk.pyc
