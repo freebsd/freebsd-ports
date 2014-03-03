@@ -14,6 +14,7 @@ COMMENT=	Performance Test of Filesystem I/O
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+USE_GCC=	any
 
 USES=	shebangfix
 SHEBANG_FILES=	bon_csv2txt.in
