@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 
 ONLY_FOR_ARCHS=	amd64
 SSP_UNSAFE=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grehan-freebsd
 GH_COMMIT=	aa0717f
