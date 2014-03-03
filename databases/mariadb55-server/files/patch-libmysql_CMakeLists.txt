@@ -1,6 +1,6 @@
---- libmysql/CMakeLists.txt.orig	2013-03-15 22:24:20.000000000 +0200
-+++ libmysql/CMakeLists.txt	2013-03-15 22:24:34.000000000 +0200
-@@ -329,13 +329,14 @@
+--- libmysql/CMakeLists.txt.orig	2014-02-11 20:20:18.571491184 -0600
++++ libmysql/CMakeLists.txt	2014-02-11 20:23:27.474449535 -0600
+@@ -329,7 +329,7 @@
  
  # Merge several convenience libraries into one big mysqlclient
  # and link them together into shared library.
@@ -8,15 +8,16 @@
 +MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development NOINSTALL)
  
  # Visual Studio users need debug  static library for debug projects
- IF(MSVC)
-  INSTALL_DEBUG_TARGET(mysqlclient DESTINATION ${INSTALL_LIBDIR}/debug)
+ INSTALL_DEBUG_SYMBOLS(clientlib)
+@@ -338,6 +338,7 @@
+  INSTALL_DEBUG_TARGET(clientlib DESTINATION ${INSTALL_LIBDIR}/debug)
  ENDIF()
  
 +IF(FALSE)
  IF(UNIX)
    MACRO(GET_VERSIONED_LIBNAME LIBNAME EXTENSION VERSION OUTNAME)
      SET(DOT_VERSION ".${VERSION}")
-@@ -350,9 +351,11 @@
+@@ -352,9 +353,11 @@
    ENDMACRO()
    INSTALL_SYMLINK(${CMAKE_STATIC_LIBRARY_PREFIX}mysqlclient_r.a mysqlclient ${INSTALL_LIBDIR} Development)
  ENDIF()
@@ -29,7 +30,7 @@
    IF(UNIX)
      # libtool compatability
      IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
-@@ -399,3 +402,4 @@
+@@ -401,3 +404,4 @@
      ENDFOREACH()
    ENDIF()
  ENDIF()
