@@ -1,4 +1,4 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
+# Created by: Oliver Eikemeier
 # $FreeBSD$
 
 PORTNAME=		bash
