@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/MANIFEST
 %%WWWDIR%%/README.html
@@ -8601,3 +8603,5 @@
 @dirrm %%WWWDIR%%/install
 @dirrm %%WWWDIR%%/images
 @dirrmtry %%WWWDIR%%
+@owner
+@group
