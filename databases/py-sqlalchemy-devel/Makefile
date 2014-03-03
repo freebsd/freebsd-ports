@@ -3,6 +3,7 @@
 
 PORTNAME=	sqlalchemy
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,56 +18,42 @@ LICENSE=	MIT
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
 
-# Python3 ready
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
 PY2TO3_CMD=		${LOCALBASE}/bin/2to3-${PYTHON_VER}
 PY2TO3_ARGS=		--no-diffs --nobackups --verbose --write
-PYDISTUTILS_INSTALLARGS=	--always-unzip \
-				--install-dir ${PYEASYINSTALL_SITELIBDIR} \
-				--no-deps \
-				--optimize 2 \
-				--quiet \
-				--script-dir ${PYEASYINSTALL_BINDIR} \
-				--site-dir ${PYEASYINSTALL_SITELIBDIR} \
-				${WRKSRC}/dist/${PYEASYINSTALL_EGG}
-PYDISTUTILS_PKGNAME=	SQLAlchemy
-PYDISTUTILS_PKGVERSION=	${DISTVERSION}
-PYDISTUTILS_NOEGGINFO=	yes
-PYEASYINSTALL_ARCHDEP=	yes
 
 OPTIONS_DEFINE=		DOCS EXAMPLES TESTS
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	FIREBIRD MSSQL MYSQL PGSQL SQLITE SYBASE
 OPTIONS_DEFAULT=	SQLITE
 
-FIREBIRD_DESC=	Firebird backend
-MSSQL_DESC=	MS SQL Server backend
 SYBASE_DESC=	Sybase backend
 TESTS_DESC=	Include nose for unit tests
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+FIREBIRD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kinterbasdb>0:${PORTSDIR}/databases/kinterbasdb
+MSSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mssql>0:${PORTSDIR}/databases/py-mssql
+PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-psycopg2
+SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+SYBASE_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Sybase.py:${PORTSDIR}/databases/py-sybase
+TESTS_BUILD_DEPENDS:=	${TEST_DEPENDS}
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-AL_PORTDOCS=	*.html *.js
+AL_PORTDOCS=		*.html *.js
 AL_PORTDOCS_SUBDIR=	core dialects orm
-.endif
-
-.if ${PORT_OPTIONS:MFIREBIRD}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/kinterbasdb/__init__.py:${PORTSDIR}/databases/kinterbasdb
-.endif
-
-.if ${PORT_OPTIONS:MMSSQL}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -79,24 +66,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MyS
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-psycopg2
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
-.endif
-
-.if ${PORT_OPTIONS:MSYBASE}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Sybase.py:${PORTSDIR}/databases/py-sybase
-.endif
-
-.if ${PORT_OPTIONS:MTESTS}
-BUILD_DEPENDS:=		${TEST_DEPENDS}
-.endif
-
 .if ${PYTHON_REL} < 330
-TEST_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:${PORTSDIR}/devel/py-mock
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:${PORTSDIR}/devel/py-mock
 .endif
 
 .if ${PYTHON_REL} >= 300
@@ -105,42 +76,24 @@ pre-build:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .if ${PYTHON_REL} >= 300
-	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/doc
+	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/doc
 .endif
+
 .for i in ${AL_PORTDOCS}
-	    ${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for i in ${AL_PORTDOCS_SUBDIR}
-	    @${MKDIR} ${DOCSDIR}/${i}
-	    cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${DOCSDIR}/${i}
+	@${MKDIR} ${DOCSDIR}/${i}
+	(cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${i})
 .endfor
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .if ${PYTHON_REL} >= 300
-	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
+	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
 .endif
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-.endif
-
-.if ${PYTHON_REL} < 300
-PLIST_SUB+=	SPEEDUPS=""
-.else
-# C extensions are not supported in py3k
-PLIST_SUB+=	SPEEDUPS="@comment "
-PYEASYINSTALL_OSARCH=
-
-easyinstall-setopt:
-	${DO_NADA}
-.endif
-
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
-.endif
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 regression-test: build
 .if ${PYTHON_REL} >= 300
