@@ -216,6 +216,7 @@
     SUBDIR += p5-Nagios-Plugins-Memcached
     SUBDIR += p5-Net-ACL
     SUBDIR += p5-Net-Abuse-Utils
+    SUBDIR += p5-Net-Abuse-Utils-Spamhaus
     SUBDIR += p5-Net-CIDR
     SUBDIR += p5-Net-ILO
     SUBDIR += p5-Net-IP
