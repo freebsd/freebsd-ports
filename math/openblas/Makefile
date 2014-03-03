@@ -25,7 +25,7 @@ LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 
 USES=		fortran gmake perl5
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 

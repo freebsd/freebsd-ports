@@ -18,7 +18,7 @@ RUN_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
 OPTIONS_DEFINE=	DEBUG DOCS
 
 USES=		gmake pkgconfig
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_CXXSTD=	gnu++0x
 USE_GNOME=	gtk20 libxml2
 USE_WX=		2.8+

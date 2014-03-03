@@ -24,7 +24,7 @@ MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
 
 MAKEFILE=	GNUmakefile
 USES=		gmake tcl
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_GL=		glew
 USE_SDL=	sdl ttf
 USE_PYTHON=	yes

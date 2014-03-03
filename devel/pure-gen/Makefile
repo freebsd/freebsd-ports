@@ -20,7 +20,7 @@ NO_STAGE=	yes
 CC=		gcc
 
 USES=		pure:ffi
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 MAN1=		${PORTNAME}.1
 
