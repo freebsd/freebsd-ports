@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dataplot
-PORTVERSION=	20090821
-PORTREVISION=	3
+PORTVERSION=	20132012
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		LOCAL/beech:source \
