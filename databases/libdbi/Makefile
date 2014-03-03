@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdbi
-PORTVERSION=	0.8.4
+PORTVERSION=	0.9.0
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,21 +13,17 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-O20|${CFLAGS}|g" -e "s|-std=gnu99||g" \
 		 ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/driver-guide
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/driver-guide
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/programmers-guide
+	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/driver-guide/*.html \
-		${DOCSDIR}/driver-guide
-	@${MKDIR} ${DOCSDIR}/programmers-guide
+		${STAGEDIR}${DOCSDIR}/driver-guide
 	${INSTALL_DATA} ${WRKSRC}/doc/programmers-guide/*.html \
-		${DOCSDIR}/programmers-guide
-.endif
+		${STAGEDIR}${DOCSDIR}/programmers-guide
 
 .include <bsd.port.mk>
