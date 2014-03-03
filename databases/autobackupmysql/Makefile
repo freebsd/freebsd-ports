@@ -16,16 +16,17 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 NO_BUILD=	yes
 PLIST_FILES=	sbin/autobackupmysql.sh
 
-NO_STAGE=	yes
 do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/autobackupmysql.sh
-	@${REINPLACE_CMD} -e 's|${LOCALBASE}/etc|${PREFIX}/etc|g' ${WRKSRC}/autobackupmysql.sh
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/autobackupmysql.sh
+	@${REINPLACE_CMD} -e 's|${LOCALBASE}/etc|${PREFIX}/etc|g' \
+		${WRKSRC}/autobackupmysql.sh
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
