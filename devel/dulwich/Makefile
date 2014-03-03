@@ -1,21 +1,21 @@
-# Created by: Marco Broeder <marco.broeder@gmx.eu>
+# Created by: Marco Broeder <marco.broeder@posteo.eu>
 # $FreeBSD$
 
 PORTNAME=	dulwich
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	marco.broeder@gmx.eu
-COMMENT=	Pure-Python implementation of the Git file formats and protocols
+MAINTAINER=	marco.broeder@posteo.eu
+COMMENT=	Python implementation of the Git file formats and protocols
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-PORTDOCS=	NEWS README introduction.txt object-store.txt protocol.txt \
-		remote.txt repo.txt tag.txt
-PORTEXAMPLES=	clone.py config.py diff.py
+PORTDOCS=	NEWS README file-format.txt introduction.txt object-store.txt \
+		protocol.txt remote.txt repo.txt tag.txt
+PORTEXAMPLES=	clone.py config.py diff.py latest_change.py
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
