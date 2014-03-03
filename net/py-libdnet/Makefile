@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python module for libdnet
 
-LIB_DEPENDS=	dnet:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet
 
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON_ia64=	fails to build with internal compiler error
@@ -14,13 +14,14 @@ NOT_FOR_ARCHS_REASON_ia64=	fails to build with internal compiler error
 MASTERDIR=	${.CURDIR}/../libdnet
 INSTALL_WRKSRC=	${WRKSRC}/python
 DESCR=		${.CURDIR}/pkg-descr
-PLIST=		${.CURDIR}/pkg-plist
+PLIST=		${NONEXISTENT}
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dnet.so \
+		%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_EGGINFO}
 
 LIBDNET_SLAVE=	yes
 
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}
-INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGNAME=	dnet
 
 .if defined(MAINTAINER_MODE)
