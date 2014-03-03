@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		0
 PKGNAMESUFFIX=		-libsmbclient
 
@@ -32,6 +32,7 @@ do-install:
 .endfor
 			-@${MKDIR} ${PREFIX}/include
 			${INSTALL_DATA} ${WRKSRC}/include/libsmbclient.h ${PREFIX}/include
+			${INSTALL_DATA} ${WRKSRC}/pkgconfig/smbclient.pc ${PREFIX}/libdata/pkgconfig/
 			-@${MKDIR} ${PREFIX}/lib
 .for lib in ${SAMBA_INSTALL_LIBS}
 			${INSTALL_SCRIPT} ${WRKSRC}/bin/${lib}.a ${PREFIX}/lib
