@@ -9,7 +9,7 @@ MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/ \
 		ftp://ftp.coin3d.org/pub/coin/src/all/
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	cristianorolim@hotmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 toolkit library for Coin
 
 LIB_DEPENDS=	Coin.61:${PORTSDIR}/graphics/Coin
