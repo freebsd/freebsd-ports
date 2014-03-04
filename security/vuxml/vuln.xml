@@ -51,6 +51,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f645aa90-a3e8-11e3-a422-3c970e169bc2">
+    <topic>gnutls -- multiple certificate verification issues</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<name>gnutls-devel</name>
+	<name>gnutls3</name>
+	<range><lt>3.1.22</lt></range>
+	<range><gt>3.2.0</gt><lt>3.2.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GnuTLS project reports:</p>
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2014-2">
+	  <p>A vulnerability was discovered that affects the
+	    certificate verification functions of all gnutls
+	    versions. A specially crafted certificate could
+	    bypass certificate validation checks.  The
+	    vulnerability was discovered during an audit of
+	    GnuTLS for Red Hat.</p>
+	</blockquote>
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2014-1">
+	  <p>Suman Jana reported a vulnerability that affects
+	    the certificate verification functions of
+	    gnutls 2.11.5 and later versions. A version 1
+	    intermediate certificate will be considered as
+	    a CA certificate by default (something that
+	    deviates from the documented behavior).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0092</cvename>
+      <cvename>CVE-2014-1959</cvename>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2014-1</url>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2014-2</url>
+    </references>
+    <dates>
+      <discovery>2014-03-03</discovery>
+      <entry>2014-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="815dbcf9-a2d6-11e3-8088-002590860428">
     <topic>file -- denial of service</topic>
     <affects>
