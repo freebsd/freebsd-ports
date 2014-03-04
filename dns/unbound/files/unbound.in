@@ -7,6 +7,9 @@
 # copy this to /etc/rc.d/unbound
 # and put unbound_enable="YES" into rc.conf
 #
+# unbound_anchorflags can be used to allow you to pass a custom flags to
+# unbound-anchor.  Examples include a custom resolv.conf (-f) or a custom
+# root.hints (-r).  Useful for when /etc/resolv.conf only contains 127.0.0.1
 
 # PROVIDE: unbound
 # REQUIRE: SERVERS cleanvar
@@ -26,12 +29,13 @@ load_rc_config $name
 
 pidfile=${unbound_pidfile:-"%%PREFIX%%/etc/unbound/unbound.pid"}
 unbound_enable=${unbound_enable:-"NO"}
+unbound_anchorflags=${unbound_anchorflags:-""}
 
 start_precmd()
 {
 	%%PREFIX%%/sbin/unbound-checkconf > /dev/null && \
 	echo -n "Obtaining a trust anchor:" && \
-	su -m unbound -c %%PREFIX%%/sbin/unbound-anchor && \
+	su -m unbound -c %%PREFIX%%/sbin/unbound-anchor ${unbound_anchorflags} && \
 	echo .
 }
 
