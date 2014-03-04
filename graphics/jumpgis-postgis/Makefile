@@ -11,6 +11,9 @@ DISTNAME=	postgisdriver-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JUMP support for reading and writing a PostGIS database
 
+DEPRECATED=	Depends on expiring graphics/jumpgis
+EXPIRATION_DATE=	2014-03-10
+
 RUN_DEPENDS=	jumpgis:${PORTSDIR}/graphics/jumpgis
 
 TARGET_DIR=	${PREFIX}/jumpgis
