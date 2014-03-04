@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgmp
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.3
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://ftp.gmplib.org/pub/gmp-${PORTVERSION}/
 PKGNAMEPREFIX=	mingw32-
@@ -32,11 +32,7 @@ CONFIGURE_TARGET=
 INFO=		gmp
 INFO_PATH=	${GMP_TARG}/info
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/gmp.info*
-
-pre-install:
-	${MKDIR} ${PREFIX}/${GMP_TARG}/info
 
 .include <bsd.port.mk>
