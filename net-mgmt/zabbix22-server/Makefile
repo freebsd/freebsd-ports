@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix22
-PORTVERSION=	2.2.1
-PORTREVISION?=	2
+PORTVERSION=	2.2.2
+PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 CONFLICTS=	${PKGBASE}-1.[0-8]*
 
 IGNORE_WITH_PHP=	52
-IGNORE_WITH_MYSQL=      41
+IGNORE_WITH_MYSQL=	41
 
 .if ${PKGNAMESUFFIX} != "-agent"
 CONFLICTS+=	${PORTNAME}-1.[0-8]*
@@ -108,14 +108,14 @@ CONFIGURE_ARGS+=	--with-postgresql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-ZABBIX_REQUIRE= " sqlite"
+ZABBIX_REQUIRE=	" sqlite"
 USE_SQLITE=	3
 CONFIGURE_ARGS+=	--with-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MORACLE}
 ZABBIX_REQUIRE=
-CONFIGURE_ARGS+=        --with-oracle
+CONFIGURE_ARGS+=	--with-oracle
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
@@ -177,7 +177,7 @@ PLIST_SUB+=	JAVAGW="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBXML2}
-LIB_DEPENDS+=   xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
 CONFIGURE_ARGS+=	--with-libxml2
 .endif
 
