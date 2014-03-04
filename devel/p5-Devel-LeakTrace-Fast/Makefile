@@ -14,5 +14,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 BROKEN=		does not compile under perl >= 5.12, see https://rt.cpan.org/Public/Bug/Display.html?id=56079
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-04-04
 
 .include <bsd.port.mk>
