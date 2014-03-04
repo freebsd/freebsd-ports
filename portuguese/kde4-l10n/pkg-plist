@@ -34,9 +34,6 @@ man/pt/man1/kmplot.1.gz
 man/pt/man1/kross.1.gz
 man/pt/man1/ktouch.1.gz
 man/pt/man1/makekdewidgets.1.gz
-man/pt/man1/plasmaengineexplorer.1.gz
-man/pt/man1/plasmapkg.1.gz
-man/pt/man1/plasmoidviewer.1.gz
 man/pt/man1/po2xml.1.gz
 man/pt/man1/preparetips.1.gz
 man/pt/man1/pruneemptydirs.1.gz
@@ -955,9 +952,9 @@ share/doc/HTML/pt/kubrick/index.docbook
 share/doc/HTML/pt/kuser/common
 share/doc/HTML/pt/kuser/index.cache.bz2
 share/doc/HTML/pt/kuser/index.docbook
-share/doc/HTML/pt/kwallet/common
-share/doc/HTML/pt/kwallet/index.cache.bz2
-share/doc/HTML/pt/kwallet/index.docbook
+share/doc/HTML/pt/kwalletmanager/common
+share/doc/HTML/pt/kwalletmanager/index.cache.bz2
+share/doc/HTML/pt/kwalletmanager/index.docbook
 share/doc/HTML/pt/kwatchgnupg/common
 share/doc/HTML/pt/kwatchgnupg/index.cache.bz2
 share/doc/HTML/pt/kwatchgnupg/index.docbook
@@ -1828,7 +1825,7 @@ share/locale/pt/entry.desktop
 @dirrm share/doc/HTML/pt/kwrite
 @dirrm share/doc/HTML/pt/kwordquiz
 @dirrm share/doc/HTML/pt/kwatchgnupg
-@dirrm share/doc/HTML/pt/kwallet
+@dirrm share/doc/HTML/pt/kwalletmanager
 @dirrm share/doc/HTML/pt/kuser
 @dirrm share/doc/HTML/pt/kubrick
 @dirrm share/doc/HTML/pt/kturtle

@@ -317,6 +317,7 @@ share/locale/ja/LC_MESSAGES/kio_nfs.mo
 share/locale/ja/LC_MESSAGES/kio_nntp.mo
 share/locale/ja/LC_MESSAGES/kio_perldoc.mo
 share/locale/ja/LC_MESSAGES/kio_pop3.mo
+share/locale/ja/LC_MESSAGES/kio_recentdocuments.mo
 share/locale/ja/LC_MESSAGES/kio_remote.mo
 share/locale/ja/LC_MESSAGES/kio_sftp.mo
 share/locale/ja/LC_MESSAGES/kio_sieve.mo

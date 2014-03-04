@@ -17,7 +17,8 @@ LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
 		libgrantlee_gui.so:${PORTSDIR}/devel/grantlee \
 		libclucene-core.so:${PORTSDIR}/textproc/clucene \
 		liblink-grammar.so:${PORTSDIR}/textproc/link-grammar
-RUN_DEPENDS=	${KDE4_PREFIX}/bin/accountwizard:${PORTSDIR}/deskutils/kdepim4-runtime
+RUN_DEPENDS=	${KDE4_PREFIX}/bin/accountwizard:${PORTSDIR}/deskutils/kdepim4-runtime \
+		${LOCALBASE}/bin/gmd5sum:${PORTSDIR}/sysutils/coreutils
 
 CONFLICTS_INSTALL=	kdepim44-4.*
 

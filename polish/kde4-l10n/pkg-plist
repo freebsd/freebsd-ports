@@ -7,7 +7,6 @@ man/pl/man1/kfind.1.gz
 man/pl/man1/kig.1.gz
 man/pl/man1/kmplot.1.gz
 man/pl/man1/ktouch.1.gz
-man/pl/man1/plasmaengineexplorer.1.gz
 man/pl/man6/amor.6.gz
 man/pl/man6/khangman.6.gz
 man/pl/man8/nepomukserver.8.gz
@@ -795,15 +794,15 @@ share/doc/HTML/pl/ktuberling/common
 share/doc/HTML/pl/ktuberling/index.cache.bz2
 share/doc/HTML/pl/ktuberling/index.docbook
 share/doc/HTML/pl/ktuberling/technical-reference.docbook
-share/doc/HTML/pl/kwallet/common
-share/doc/HTML/pl/kwallet/edit1.png
-share/doc/HTML/pl/kwallet/edit2.png
-share/doc/HTML/pl/kwallet/first-open-request.png
-share/doc/HTML/pl/kwallet/index.cache.bz2
-share/doc/HTML/pl/kwallet/index.docbook
-share/doc/HTML/pl/kwallet/kwalletmanager.png
-share/doc/HTML/pl/kwallet/openwallet-request.png
-share/doc/HTML/pl/kwallet/save-login-information.png
+share/doc/HTML/pl/kwalletmanager/common
+share/doc/HTML/pl/kwalletmanager/edit1.png
+share/doc/HTML/pl/kwalletmanager/edit2.png
+share/doc/HTML/pl/kwalletmanager/first-open-request.png
+share/doc/HTML/pl/kwalletmanager/index.cache.bz2
+share/doc/HTML/pl/kwalletmanager/index.docbook
+share/doc/HTML/pl/kwalletmanager/kwalletmanager.png
+share/doc/HTML/pl/kwalletmanager/openwallet-request.png
+share/doc/HTML/pl/kwalletmanager/save-login-information.png
 share/doc/HTML/pl/kwordquiz/common
 share/doc/HTML/pl/kwordquiz/index.cache.bz2
 share/doc/HTML/pl/kwordquiz/index.docbook
@@ -852,6 +851,8 @@ share/locale/pl/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/pl/LC_MESSAGES/akonadi_folderarchive_agent.mo
+share/locale/pl/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/pl/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_ical_resource.mo
@@ -872,6 +873,7 @@ share/locale/pl/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/pl/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_microblog_resource.mo
+share/locale/pl/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/pl/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/pl/LC_MESSAGES/akonadi_nepomuktag_resource.mo
@@ -925,6 +927,7 @@ share/locale/pl/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/pl/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/pl/LC_MESSAGES/freespacenotifier.mo
 share/locale/pl/LC_MESSAGES/fsview.mo
+share/locale/pl/LC_MESSAGES/gid-migrator.mo
 share/locale/pl/LC_MESSAGES/granatier.mo
 share/locale/pl/LC_MESSAGES/gwenview.mo
 share/locale/pl/LC_MESSAGES/headerthemeeditor.mo
@@ -954,6 +957,8 @@ share/locale/pl/LC_MESSAGES/kajongg.mo
 share/locale/pl/LC_MESSAGES/kalarm.mo
 share/locale/pl/LC_MESSAGES/kalgebra.mo
 share/locale/pl/LC_MESSAGES/kalzium.mo
+share/locale/pl/LC_MESSAGES/kanagram-active.mo
+share/locale/pl/LC_MESSAGES/kanagram-engine.mo
 share/locale/pl/LC_MESSAGES/kanagram-harmattan.mo
 share/locale/pl/LC_MESSAGES/kanagram.mo
 share/locale/pl/LC_MESSAGES/kapman.mo
@@ -1210,6 +1215,7 @@ share/locale/pl/LC_MESSAGES/konsoleprofiles.mo
 share/locale/pl/LC_MESSAGES/kontact.mo
 share/locale/pl/LC_MESSAGES/kontactinterfaces.mo
 share/locale/pl/LC_MESSAGES/kopete.mo
+share/locale/pl/LC_MESSAGES/korgac.mo
 share/locale/pl/LC_MESSAGES/korganizer-mobile.mo
 share/locale/pl/LC_MESSAGES/korganizer.mo
 share/locale/pl/LC_MESSAGES/kpartloader.mo
@@ -1296,10 +1302,14 @@ share/locale/pl/LC_MESSAGES/kxsconfig.mo
 share/locale/pl/LC_MESSAGES/lancelot.mo
 share/locale/pl/LC_MESSAGES/libakonadi-calendar.mo
 share/locale/pl/LC_MESSAGES/libakonadi-kmime.mo
+share/locale/pl/LC_MESSAGES/libakonadi-xml.mo
 share/locale/pl/LC_MESSAGES/libakonadi.mo
 share/locale/pl/LC_MESSAGES/libcomposereditorng.mo
 share/locale/pl/LC_MESSAGES/libeventviews.mo
+share/locale/pl/LC_MESSAGES/libgrantleetheme.mo
+share/locale/pl/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/pl/LC_MESSAGES/libincidenceeditors.mo
+share/locale/pl/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/pl/LC_MESSAGES/libkalarmcal.mo
 share/locale/pl/LC_MESSAGES/libkasten.mo
 share/locale/pl/LC_MESSAGES/libkblog.mo
@@ -1364,6 +1374,7 @@ share/locale/pl/LC_MESSAGES/mailreader.mo
 share/locale/pl/LC_MESSAGES/marble.mo
 share/locale/pl/LC_MESSAGES/marble_qt.mo
 share/locale/pl/LC_MESSAGES/marble_xml_mimetypes.mo
+share/locale/pl/LC_MESSAGES/mboximporter.mo
 share/locale/pl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -1375,6 +1386,7 @@ share/locale/pl/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/pl/LC_MESSAGES/nepomukbackup.mo
 share/locale/pl/LC_MESSAGES/nepomukcleaner.mo
 share/locale/pl/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/pl/LC_MESSAGES/nepomukfilewatch.mo
 share/locale/pl/LC_MESSAGES/nepomukmigrator.mo
 share/locale/pl/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/pl/LC_MESSAGES/nepomukserver.mo
@@ -1401,6 +1413,7 @@ share/locale/pl/LC_MESSAGES/okular_ooo.mo
 share/locale/pl/LC_MESSAGES/okular_plucker.mo
 share/locale/pl/LC_MESSAGES/okular_poppler.mo
 share/locale/pl/LC_MESSAGES/okular_tiff.mo
+share/locale/pl/LC_MESSAGES/okular_txt.mo
 share/locale/pl/LC_MESSAGES/okular_xps.mo
 share/locale/pl/LC_MESSAGES/org.kde.active.documentviewer.mo
 share/locale/pl/LC_MESSAGES/pairs.mo
@@ -1614,7 +1627,7 @@ share/locale/pl/entry.desktop
 @dirrm share/doc/HTML/pl/okular
 @dirrm share/doc/HTML/pl/kwrite
 @dirrm share/doc/HTML/pl/kwordquiz
-@dirrm share/doc/HTML/pl/kwallet
+@dirrm share/doc/HTML/pl/kwalletmanager
 @dirrm share/doc/HTML/pl/ktuberling
 @dirrm share/doc/HTML/pl/ktouch
 @dirrm share/doc/HTML/pl/kteatime

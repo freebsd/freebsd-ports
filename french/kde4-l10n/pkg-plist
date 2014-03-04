@@ -33,7 +33,6 @@ man/fr/man1/kmplot.1.gz
 man/fr/man1/ktouch.1.gz
 man/fr/man1/makekdewidgets.1.gz
 man/fr/man1/okular.1.gz
-man/fr/man1/plasmaengineexplorer.1.gz
 man/fr/man1/plasmapkg.1.gz
 man/fr/man1/po2xml.1.gz
 man/fr/man1/preparetips.1.gz
@@ -195,6 +194,40 @@ share/doc/HTML/fr/fundamentals/tasks.docbook
 share/doc/HTML/fr/fundamentals/toolbars-configure.png
 share/doc/HTML/fr/fundamentals/toolbars-toolbar.png
 share/doc/HTML/fr/fundamentals/ui.docbook
+share/doc/HTML/fr/fundamentals/visualdict-breadcrumb.png
+share/doc/HTML/fr/fundamentals/visualdict-button.png
+share/doc/HTML/fr/fundamentals/visualdict-central-widget.png
+share/doc/HTML/fr/fundamentals/visualdict-check-box.png
+share/doc/HTML/fr/fundamentals/visualdict-color-selector.png
+share/doc/HTML/fr/fundamentals/visualdict-combo-box.png
+share/doc/HTML/fr/fundamentals/visualdict-context-menu.png
+share/doc/HTML/fr/fundamentals/visualdict-dialog-box.png
+share/doc/HTML/fr/fundamentals/visualdict-drop-down-box.png
+share/doc/HTML/fr/fundamentals/visualdict-gui1.png
+share/doc/HTML/fr/fundamentals/visualdict-gui2.png
+share/doc/HTML/fr/fundamentals/visualdict-gui3.png
+share/doc/HTML/fr/fundamentals/visualdict-gui4.png
+share/doc/HTML/fr/fundamentals/visualdict-icon-list.png
+share/doc/HTML/fr/fundamentals/visualdict-icon.png
+share/doc/HTML/fr/fundamentals/visualdict-list-box.png
+share/doc/HTML/fr/fundamentals/visualdict-menu-button.png
+share/doc/HTML/fr/fundamentals/visualdict-menu.png
+share/doc/HTML/fr/fundamentals/visualdict-menubar.png
+share/doc/HTML/fr/fundamentals/visualdict-panel.png
+share/doc/HTML/fr/fundamentals/visualdict-progress-bar.png
+share/doc/HTML/fr/fundamentals/visualdict-radio-button.png
+share/doc/HTML/fr/fundamentals/visualdict-scrollbar.png
+share/doc/HTML/fr/fundamentals/visualdict-slider.png
+share/doc/HTML/fr/fundamentals/visualdict-spin-box.png
+share/doc/HTML/fr/fundamentals/visualdict-statusbar.png
+share/doc/HTML/fr/fundamentals/visualdict-tab.png
+share/doc/HTML/fr/fundamentals/visualdict-text-area.png
+share/doc/HTML/fr/fundamentals/visualdict-text-box.png
+share/doc/HTML/fr/fundamentals/visualdict-titlebar.png
+share/doc/HTML/fr/fundamentals/visualdict-toolbar.png
+share/doc/HTML/fr/fundamentals/visualdict-tree-view.png
+share/doc/HTML/fr/fundamentals/visualdict-window.png
+share/doc/HTML/fr/fundamentals/visualdict-window2.png
 share/doc/HTML/fr/granatier/common
 share/doc/HTML/fr/granatier/config_arena.png
 share/doc/HTML/fr/granatier/config_general.png
@@ -1279,9 +1312,9 @@ share/doc/HTML/fr/kuser/common
 share/doc/HTML/fr/kuser/index.cache.bz2
 share/doc/HTML/fr/kuser/index.docbook
 share/doc/HTML/fr/kuser/kuser.png
-share/doc/HTML/fr/kwallet/common
-share/doc/HTML/fr/kwallet/index.cache.bz2
-share/doc/HTML/fr/kwallet/index.docbook
+share/doc/HTML/fr/kwalletmanager/common
+share/doc/HTML/fr/kwalletmanager/index.cache.bz2
+share/doc/HTML/fr/kwalletmanager/index.docbook
 share/doc/HTML/fr/kwordquiz/common
 share/doc/HTML/fr/kwordquiz/index.cache.bz2
 share/doc/HTML/fr/kwordquiz/index.docbook
@@ -2242,7 +2275,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/lskat
 @dirrm share/doc/HTML/fr/lokalize
 @dirrm share/doc/HTML/fr/kwordquiz
-@dirrm share/doc/HTML/fr/kwallet
+@dirrm share/doc/HTML/fr/kwalletmanager
 @dirrm share/doc/HTML/fr/kuser
 @dirrm share/doc/HTML/fr/kubrick
 @dirrm share/doc/HTML/fr/kturtle

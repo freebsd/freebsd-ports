@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140304:
+  AFFECTS: users of security/kwallet
+  AUTHOR: kde@FreeBSD.org
+
+  KDE SC ports have been updated to 4.12.3. kwallet package has been renamed
+  to match upstream naming. pkgng users need to update package origin
+  manually:
+
+  # pkg set -o security/kwallet:security/kwalletmanager
+
 20140302:
   AFFECTS: users of sysutils/ansible
   AUTHOR: rm@FreeBSD.org

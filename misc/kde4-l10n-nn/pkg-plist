@@ -23,6 +23,7 @@ share/locale/nn/LC_MESSAGES/adblock.mo
 share/locale/nn/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/nn/LC_MESSAGES/akonadi_folderarchive_agent.mo
 share/locale/nn/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_invitations_agent.mo

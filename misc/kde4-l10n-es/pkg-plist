@@ -479,6 +479,9 @@ share/doc/HTML/es/kcontrol/cursortheme/index.docbook
 share/doc/HTML/es/kcontrol/desktop/common
 share/doc/HTML/es/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/es/kcontrol/desktop/index.docbook
+share/doc/HTML/es/kcontrol/desktopthemedetails/common
+share/doc/HTML/es/kcontrol/desktopthemedetails/index.cache.bz2
+share/doc/HTML/es/kcontrol/desktopthemedetails/index.docbook
 share/doc/HTML/es/kcontrol/ebrowsing/common
 share/doc/HTML/es/kcontrol/ebrowsing/index.cache.bz2
 share/doc/HTML/es/kcontrol/ebrowsing/index.docbook
@@ -675,6 +678,9 @@ share/doc/HTML/es/kfind/man-kfind.1.docbook
 share/doc/HTML/es/kfloppy/common
 share/doc/HTML/es/kfloppy/index.cache.bz2
 share/doc/HTML/es/kfloppy/index.docbook
+share/doc/HTML/es/kfontview/common
+share/doc/HTML/es/kfontview/index.cache.bz2
+share/doc/HTML/es/kfontview/index.docbook
 share/doc/HTML/es/kfourinline/common
 share/doc/HTML/es/kfourinline/index.cache.bz2
 share/doc/HTML/es/kfourinline/index.docbook
@@ -916,6 +922,19 @@ share/doc/HTML/es/kmag/screenshot.png
 share/doc/HTML/es/kmahjongg/common
 share/doc/HTML/es/kmahjongg/index.cache.bz2
 share/doc/HTML/es/kmahjongg/index.docbook
+share/doc/HTML/es/kmail/common
+share/doc/HTML/es/kmail/configure.docbook
+share/doc/HTML/es/kmail/credits-and-licenses.docbook
+share/doc/HTML/es/kmail/exporting.docbook
+share/doc/HTML/es/kmail/faq.docbook
+share/doc/HTML/es/kmail/getting-started.docbook
+share/doc/HTML/es/kmail/importing.docbook
+share/doc/HTML/es/kmail/index.cache.bz2
+share/doc/HTML/es/kmail/index.docbook
+share/doc/HTML/es/kmail/intro.docbook
+share/doc/HTML/es/kmail/menus.docbook
+share/doc/HTML/es/kmail/troubleshooting.docbook
+share/doc/HTML/es/kmail/using-kmail.docbook
 share/doc/HTML/es/kmailcvt/common
 share/doc/HTML/es/kmailcvt/index.cache.bz2
 share/doc/HTML/es/kmailcvt/index.docbook
@@ -1388,9 +1407,9 @@ share/doc/HTML/es/kuser/common
 share/doc/HTML/es/kuser/index.cache.bz2
 share/doc/HTML/es/kuser/index.docbook
 share/doc/HTML/es/kuser/kuser.png
-share/doc/HTML/es/kwallet/common
-share/doc/HTML/es/kwallet/index.cache.bz2
-share/doc/HTML/es/kwallet/index.docbook
+share/doc/HTML/es/kwalletmanager/common
+share/doc/HTML/es/kwalletmanager/index.cache.bz2
+share/doc/HTML/es/kwalletmanager/index.docbook
 share/doc/HTML/es/kwatchgnupg/common
 share/doc/HTML/es/kwatchgnupg/index.cache.bz2
 share/doc/HTML/es/kwatchgnupg/index.docbook
@@ -2313,7 +2332,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kwrite
 @dirrm share/doc/HTML/es/kwordquiz
 @dirrm share/doc/HTML/es/kwatchgnupg
-@dirrm share/doc/HTML/es/kwallet
+@dirrm share/doc/HTML/es/kwalletmanager
 @dirrm share/doc/HTML/es/kuser
 @dirrm share/doc/HTML/es/kubrick
 @dirrm share/doc/HTML/es/kturtle
@@ -2365,6 +2384,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kmines
 @dirrm share/doc/HTML/es/kmenuedit
 @dirrm share/doc/HTML/es/kmailcvt
+@dirrm share/doc/HTML/es/kmail
 @dirrm share/doc/HTML/es/kmahjongg
 @dirrm share/doc/HTML/es/kmag
 @dirrm share/doc/HTML/es/klipper
@@ -2427,6 +2447,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kget
 @dirrm share/doc/HTML/es/kgeography
 @dirrm share/doc/HTML/es/kfourinline
+@dirrm share/doc/HTML/es/kfontview
 @dirrm share/doc/HTML/es/kfloppy
 @dirrm share/doc/HTML/es/kfind
 @dirrm share/doc/HTML/es/kfilereplace
@@ -2489,6 +2510,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kcontrol/filemanager
 @dirrm share/doc/HTML/es/kcontrol/emoticons
 @dirrm share/doc/HTML/es/kcontrol/ebrowsing
+@dirrm share/doc/HTML/es/kcontrol/desktopthemedetails
 @dirrm share/doc/HTML/es/kcontrol/desktop
 @dirrm share/doc/HTML/es/kcontrol/cursortheme
 @dirrm share/doc/HTML/es/kcontrol/cookies
