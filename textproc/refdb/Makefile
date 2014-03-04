@@ -3,7 +3,7 @@
 
 PORTNAME=	refdb
 PORTVERSION=	0.9.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-${PORTVERSION}-1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Bibliographic reference database
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		btparse.0:${PORTSDIR}/textproc/btparse \
-		dbi.1:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libbtparse.so:${PORTSDIR}/textproc/btparse \
+		libdbi.so:${PORTSDIR}/databases/libdbi
 
 USES=		gmake iconv perl5
 HAS_CONFIGURE=	yes
