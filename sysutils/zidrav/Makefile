@@ -18,7 +18,7 @@ PLIST_FILES=	bin/zidrav man/man1/zidrav.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zidrav ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/zidrav.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/zidrav.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.options.mk>
 

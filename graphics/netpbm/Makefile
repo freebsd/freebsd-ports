@@ -130,11 +130,11 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/util/pm_c_util.h ${STAGEDIR}${PREFIX}/include/
-	${INSTALL_MAN} ${WRKSRC}/doc/netpbm.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/netpbm.1 ${STAGEDIR}${PREFIX}/man/man1/
 .if ${PORT_OPTIONS:MMANPAGES}
-	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN1} ${STAGEDIR}${MANPREFIX}/man/man1/
-	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN3} ${STAGEDIR}${MANPREFIX}/man/man3/
-	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN5} ${STAGEDIR}${MANPREFIX}/man/man5/
+	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN1} ${STAGEDIR}${PREFIX}/man/man1/
+	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN3} ${STAGEDIR}${PREFIX}/man/man3/
+	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN5} ${STAGEDIR}${PREFIX}/man/man5/
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

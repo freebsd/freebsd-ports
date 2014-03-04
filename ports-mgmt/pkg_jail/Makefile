@@ -24,7 +24,7 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/pkg_jail ${FILESDIR}/pkg_update \
 		${STAGEDIR}${PREFIX}/bin/
 .for i in ${MAN1}
-	${INSTALL_MAN} ${FILESDIR}/${i} ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${FILESDIR}/${i} ${STAGEDIR}${PREFIX}/man/man1/
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -107,7 +107,7 @@ post-extract:
 	@${MV} ${WRKSRC}/share/man ${WRKSRC}/man
 
 do-install:
-	@${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1.gz ${MANPREFIX}/man/man1/
+	@${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1.gz ${PREFIX}/man/man1/
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/install
 	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/install
 	@(cd ${WRKSRC} && ./install --text --system --unattended)
