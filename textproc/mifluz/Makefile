@@ -19,23 +19,14 @@ USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
 
-MAN1=		htdb_dump.1 htdb_stat.1 htdb_load.1 mifluz-config.1 \
-		mifluzdump.1 mifluzload.1 mifluzsearch.1 mifluzdict.1
-MAN3=		WordContext.3 WordList.3 WordDict.3 WordListOne.3 \
-		WordKey.3 WordKeyInfo.3 WordType.3 WordDBInfo.3 \
-		WordRecordInfo.3 WordRecord.3 WordReference.3 WordCursor.3 \
-		WordCursorOne.3 WordMonitor.3 Configuration.3 mifluz.3
 INFO=		mifluz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE -pthread|${PTHREAD_CFLAGS}|g' \
 		${WRKSRC}/configure
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
