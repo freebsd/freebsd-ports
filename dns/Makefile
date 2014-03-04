@@ -53,6 +53,7 @@
     SUBDIR += fpdns
     SUBDIR += gdnsd
     SUBDIR += geta
+    SUBDIR += getdns
     SUBDIR += ghtool
     SUBDIR += hesiod
     SUBDIR += hostdb
