@@ -2,22 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	CalculiX
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.7
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${DIST_HTM} ${DIST_PS} ${DIST_PDF}
-.endif
 .ifdef WITH_EXAMPLES
 DISTFILES+=	${DIST_EXAMPLES}
 .endif
 DIST_SUBDIR=	calculix
 EXTRACT_ONLY=	${DIST_SOURCES}
-.if !defined(NOPORTDOCS)
-EXTRACT_ONLY+=	${DIST_HTM} ccx_${PORTVERSION}.ps${EXTRACT_SUFX}
-.endif
 .ifdef WITH_EXAMPLES
 EXTRACT_ONLY+=	${DIST_EXAMPLES}
 .endif
@@ -43,6 +36,9 @@ DIST_EXAMPLES=	ccx_${PORTVERSION}.test${EXTRACT_SUFX}	\
 		cgx_${PORTVERSION}.exa${EXTRACT_SUFX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+CCX_VER=	ccx_${PORTVERSION}
+CGX_VER=	cgx_${PORTVERSION}
+
 USES=		fortran gmake
 USE_GCC=	yes
 USE_XORG=	xmu
@@ -51,14 +47,15 @@ USE_GL=	glut
 BROWSER?=	firefox
 PSVIEWER?=	gv
 
-CCX_VER=	ccx_${PORTVERSION}
-CGX_VER=	cgx_2.6
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 OPTIONS_DEFINE= METIS METIS_EDF
 OPTIONS_DEFAULT=METIS
+
+.include <bsd.port.options.mk>
+
+.if $(PORT_OPTIONS:MDOCS)
+DISTFILES+=	${DIST_HTM} ${DIST_PS} ${DIST_PDF}
+EXTRACT_ONLY+=	${DIST_HTM} ccx_${PORTVERSION}.ps${EXTRACT_SUFX}
+.endif
 
 .if ${PORT_OPTIONS:MMETIS}
 LIB_DEPENDS+= 	libmetis.so:${PORTSDIR}/math/metis4
@@ -71,14 +68,14 @@ LIB_DEPENDS+= 	libmetis.so:${PORTSDIR}/math/metis-edf
 WITH_ATLAS=             yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=		libatlas.so:${PORTSDIR}/math/atlas
-BLAS_LIBS=		-lf77blas
-LAPACK_LIBS=		-lalapack -lcblas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+BLAS_LIBS=	-lf77blas
+LAPACK_LIBS=	-lalapack -lcblas
 .else
-LIB_DEPENDS+=		libblas.so:${PORTSDIR}/math/blas
-LIB_DEPENDS+=		liblapack.so:${PORTSDIR}/math/lapack
-BLAS_LIBS=		-lblas
-LAPACK_LIBS=		-llapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+BLAS_LIBS=	-lblas
+LAPACK_LIBS=	-llapack
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -120,29 +117,28 @@ do-build:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${CCX_VER}/src/${CCX_VER} \
-	  ${PREFIX}/bin/ccx
+	  ${STAGEDIR}${PREFIX}/bin/ccx
 	@${INSTALL_PROGRAM} ${WRKSRC}/${CGX_VER}/src/cgx \
-	  ${PREFIX}/bin/cgx
+	  ${STAGEDIR}${PREFIX}/bin/cgx
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/ccx
-	@${INSTALL_DATA} ${WRKSRC}/${CCX_VER}/doc/ccx/* \
-	  ${DOCSDIR}/ccx
-	@${MKDIR} ${DOCSDIR}/cgx
-	@${INSTALL_DATA} ${WRKSRC}/${CGX_VER}/doc/cgx/* \
-	  ${DOCSDIR}/cgx
-	@${INSTALL_DATA} ${WRKSRC}/${CCX_VER}/doc/*.ps ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ccx
+	@(cd ${WRKSRC}/${CCX_VER}/doc/ccx && ${COPYTREE_SHARE} . \
+	  ${STAGEDIR}${DOCSDIR}/ccx)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/cgx
+	@(cd ${WRKSRC}/${CGX_VER}/doc/cgx && ${COPYTREE_SHARE} . \
+	  ${STAGEDIR}${DOCSDIR}/cgx)
+	@${INSTALL_DATA} ${WRKSRC}/${CCX_VER}/doc/${CCX_VER}.ps ${STAGEDIR}${DOCSDIR}
+	@${GZIP_CMD} ${STAGEDIR}${DOCSDIR}/${CCX_VER}.ps
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cgx_${PORTVERSION}.pdf \
-	  ${DOCSDIR}
-	@${GZIP_CMD} ${DOCSDIR}/*.ps
+	  ${STAGEDIR}${DOCSDIR}
 .endif
 .ifdef WITH_EXAMPLES
-	@${MKDIR} ${EXAMPLESDIR}
-	@${TAR} cf - -C ${WRKSRC}/${CGX_VER}/examples . | ${TAR} xf - -C ${EXAMPLESDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/test
-	@${TAR} cf - -C ${WRKSRC}/${CCX_VER}/test . | ${TAR} xf - -C ${EXAMPLESDIR}/test
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/${CGX_VER}/examples && ${COPYTREE_SHARE} . \
+	  ${STAGEDIR}${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/test
+	@(cd ${WRKSRC}/${CCX_VER}/test && ${COPYTREE_SHARE} . \
+	  ${STAGEDIR}${EXAMPLESDIR}/test)
 .endif
 
 .include <bsd.port.mk>
