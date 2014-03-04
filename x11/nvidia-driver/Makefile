@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	331.20
+DISTVERSION?=	331.49
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
@@ -121,9 +121,9 @@ post-patch: .SILENT
 		s/int nprot/&, vm_memattr_t *memattr/' \
 			${WRKSRC}/src/nvidia_dev.c
 .endif
-# In the legacy drivers: remove paqe queue locking and add page locking
+# In the legacy drivers: remove page queue locking and add page locking
 # around vm_page_(un)wire() after FreeBSD src SVN r207410, r207617, and
-# r207644; also remove paqe queue locking around vm_page_wakeup() after
+# r207644; also remove page queue locking around vm_page_wakeup() after
 # FreeBSD src SVN r163622
 .if ${OSVERSION} > 900011 && ${NVVERSION} < 3046400
 	${REINPLACE_CMD} -E '/vm_page_(un)?lock_queues\(\);/d ; \
@@ -227,9 +227,6 @@ post-patch: .SILENT
 		${WRKSRC}/lib/Makefile ${WRKSRC}/src/Makefile
 
 pre-install:
-# While this port silently assumes PREFIX == LOCALBASE, at least try to
-# pretend we support different paths thereof and make sure these directories
-# exist
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${MODULESDIR}/drivers \
 		${STAGEDIR}${PREFIX}/${MODULESDIR}/extensions
 
@@ -266,5 +263,21 @@ post-install: .SILENT
 .if ${NVVERSION} >= 1952200
 	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}
 .endif
+
+# Target below can be used instead of standard `makesum' to correctly
+# update distinfo (i.e., keeping other driver version entries intact)
+.if ${.TARGETS:Mupdate-distinfo}
+DISTINFO_FILE=	${MASTERDIR}/distinfo.new
+JOIN?=		/usr/bin/join
+.endif
+
+update-distinfo: makesum .SILENT
+	${REINPLACE_CMD} -i '' -e '/${DISTNAME:R:R}/s/^/~/' \
+		${MASTERDIR}/distinfo ${DISTINFO_FILE}
+	${SED} -e '/^~/s/(.*//' ${MASTERDIR}/distinfo | ${JOIN} -a 1 \
+		- ${DISTINFO_FILE} | ${SED} -e 's/^~//' \
+		> ${MASTERDIR}/distinfo.tmp
+	${MV} ${MASTERDIR}/distinfo.tmp ${MASTERDIR}/distinfo
+	${RM} ${DISTINFO_FILE}
 
 .include <bsd.port.mk>
