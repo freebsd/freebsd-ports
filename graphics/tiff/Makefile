@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
@@ -104,7 +104,7 @@ pre-configure:
 		-e 's|man html|man|' ${WRKSRC}/Makefile.in
 
 post-install:
-	( cd ${STAGEDIR}${MANPREFIX}/man/man3 && ${__pmlinks3} )
+	( cd ${STAGEDIR}${PREFIX}/man/man3 && ${__pmlinks3} )
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/images ${STAGEDIR}${DOCSDIR}/man
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${STAGEDIR}${DOCSDIR}/
