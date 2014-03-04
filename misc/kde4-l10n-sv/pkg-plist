@@ -35,9 +35,7 @@ man/sv/man1/kross.1.gz
 man/sv/man1/ktouch.1.gz
 man/sv/man1/makekdewidgets.1.gz
 man/sv/man1/okular.1.gz
-man/sv/man1/plasmaengineexplorer.1.gz
 man/sv/man1/plasmapkg.1.gz
-man/sv/man1/plasmoidviewer.1.gz
 man/sv/man1/po2xml.1.gz
 man/sv/man1/preparetips.1.gz
 man/sv/man1/pruneemptydirs.1.gz
@@ -1359,12 +1357,12 @@ share/doc/HTML/sv/kuser/common
 share/doc/HTML/sv/kuser/index.cache.bz2
 share/doc/HTML/sv/kuser/index.docbook
 share/doc/HTML/sv/kuser/kuser.png
-share/doc/HTML/sv/kwallet/common
-share/doc/HTML/sv/kwallet/edit1.png
-share/doc/HTML/sv/kwallet/edit2.png
-share/doc/HTML/sv/kwallet/index.cache.bz2
-share/doc/HTML/sv/kwallet/index.docbook
-share/doc/HTML/sv/kwallet/kwalletmanager.png
+share/doc/HTML/sv/kwalletmanager/common
+share/doc/HTML/sv/kwalletmanager/edit1.png
+share/doc/HTML/sv/kwalletmanager/edit2.png
+share/doc/HTML/sv/kwalletmanager/index.cache.bz2
+share/doc/HTML/sv/kwalletmanager/index.docbook
+share/doc/HTML/sv/kwalletmanager/kwalletmanager.png
 share/doc/HTML/sv/kwatchgnupg/common
 share/doc/HTML/sv/kwatchgnupg/index.cache.bz2
 share/doc/HTML/sv/kwatchgnupg/index.docbook
@@ -2318,7 +2316,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kwrite
 @dirrm share/doc/HTML/sv/kwordquiz
 @dirrm share/doc/HTML/sv/kwatchgnupg
-@dirrm share/doc/HTML/sv/kwallet
+@dirrm share/doc/HTML/sv/kwalletmanager
 @dirrm share/doc/HTML/sv/kuser
 @dirrm share/doc/HTML/sv/kubrick
 @dirrm share/doc/HTML/sv/kturtle

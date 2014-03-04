@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	kwallet
+PORTNAME=	kwalletmanager
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	security kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src

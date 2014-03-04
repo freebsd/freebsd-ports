@@ -89,12 +89,6 @@ post-patch:
 # Fix rgb named colors database path.
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/kdeui/colors/kcolordialog.cpp
-# Ports fails to locate pimlibs and workspace when PREFIX!=KDE4_PREFIX.
-# More search paths resolve the problem.
-.for module in KdepimLibs KDE4Workspace
-	${REINPLACE_CMD} -e '/find_package/s,PATHS,PATHS ${KDE4_PREFIX}/lib/cmake/${module},' \
-		${PATCH_WRKSRC}/cmake/modules/Find${module}.cmake
-.endfor
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \

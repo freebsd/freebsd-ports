@@ -1408,13 +1408,13 @@ share/doc/HTML/pt_BR/kuser/common
 share/doc/HTML/pt_BR/kuser/index.cache.bz2
 share/doc/HTML/pt_BR/kuser/index.docbook
 share/doc/HTML/pt_BR/kuser/kuser.png
-share/doc/HTML/pt_BR/kwallet/common
-share/doc/HTML/pt_BR/kwallet/index.cache.bz2
-share/doc/HTML/pt_BR/kwallet/index.docbook
-share/doc/HTML/pt_BR/kwallet/kwalletmanager.png
-share/doc/HTML/pt_BR/kwallet/openwallet-request.png
-share/doc/HTML/pt_BR/kwallet/oxygen48-status-wallet-closed.png
-share/doc/HTML/pt_BR/kwallet/oxygen48-status-wallet-open.png
+share/doc/HTML/pt_BR/kwalletmanager/common
+share/doc/HTML/pt_BR/kwalletmanager/index.cache.bz2
+share/doc/HTML/pt_BR/kwalletmanager/index.docbook
+share/doc/HTML/pt_BR/kwalletmanager/kwalletmanager.png
+share/doc/HTML/pt_BR/kwalletmanager/openwallet-request.png
+share/doc/HTML/pt_BR/kwalletmanager/oxygen48-status-wallet-closed.png
+share/doc/HTML/pt_BR/kwalletmanager/oxygen48-status-wallet-open.png
 share/doc/HTML/pt_BR/kwatchgnupg/common
 share/doc/HTML/pt_BR/kwatchgnupg/index.cache.bz2
 share/doc/HTML/pt_BR/kwatchgnupg/index.docbook
@@ -2340,7 +2340,7 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/kwrite
 @dirrm share/doc/HTML/pt_BR/kwordquiz
 @dirrm share/doc/HTML/pt_BR/kwatchgnupg
-@dirrm share/doc/HTML/pt_BR/kwallet
+@dirrm share/doc/HTML/pt_BR/kwalletmanager
 @dirrm share/doc/HTML/pt_BR/kuser
 @dirrm share/doc/HTML/pt_BR/kubrick
 @dirrm share/doc/HTML/pt_BR/kturtle

@@ -260,6 +260,8 @@ include/kasten2/okteta1/checksumtool.h
 include/kasten2/okteta1/checksumtoolfactory.h
 include/kasten2/okteta1/checksumtoolview.h
 include/kasten2/okteta1/checksumtoolviewfactory.h
+include/kasten2/okteta1/config-qca2.h
+include/kasten2/okteta1/containedstring.h
 include/kasten2/okteta1/documentinfotool.h
 include/kasten2/okteta1/documentinfotoolview.h
 include/kasten2/okteta1/filtertool.h
@@ -279,6 +281,7 @@ include/kasten2/okteta1/oktetakastencore_export.h
 include/kasten2/okteta1/oktetakastengui_export.h
 include/kasten2/okteta1/overwritemodecontroller.h
 include/kasten2/okteta1/overwriteonlycontroller.h
+include/kasten2/okteta1/poddata.h
 include/kasten2/okteta1/poddecodertool.h
 include/kasten2/okteta1/poddecodertoolfactory.h
 include/kasten2/okteta1/poddecodertoolview.h
@@ -293,7 +296,6 @@ include/kasten2/okteta1/stringsextracttool.h
 include/kasten2/okteta1/stringsextracttoolfactory.h
 include/kasten2/okteta1/stringsextracttoolview.h
 include/kasten2/okteta1/stringsextracttoolviewfactory.h
-include/kasten2/okteta1/structtool.h
 include/kasten2/okteta1/structtoolview.h
 include/kasten2/okteta1/structurestoolfactory.h
 include/kasten2/okteta1/structurestoolviewfactory.h
@@ -365,6 +367,9 @@ include/okteta1/character.h
 include/okteta1/charbytearraycolumnrenderer.h
 include/okteta1/charcodec.h
 include/okteta1/columnsview.h
+include/okteta1/coord.h
+include/okteta1/coordrange.h
+include/okteta1/coordrangelist.h
 include/okteta1/kadds.h
 include/okteta1/line.h
 include/okteta1/lineposition.h
@@ -379,6 +384,7 @@ include/okteta1/oktetagui.h
 include/okteta1/oktetagui_export.h
 include/okteta1/piecetablebytearraymodel.h
 include/okteta1/range.h
+include/okteta1/selection.h
 include/okteta1/size.h
 include/okteta1/valuebytearraycolumnrenderer.h
 include/okteta1/valuecodec.h

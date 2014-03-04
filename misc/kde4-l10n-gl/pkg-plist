@@ -442,9 +442,9 @@ share/doc/HTML/gl/ktouch/common
 share/doc/HTML/gl/ktouch/index.cache.bz2
 share/doc/HTML/gl/ktouch/index.docbook
 share/doc/HTML/gl/ktouch/man-ktouch.1.docbook
-share/doc/HTML/gl/kwallet/common
-share/doc/HTML/gl/kwallet/index.cache.bz2
-share/doc/HTML/gl/kwallet/index.docbook
+share/doc/HTML/gl/kwalletmanager/common
+share/doc/HTML/gl/kwalletmanager/index.cache.bz2
+share/doc/HTML/gl/kwalletmanager/index.docbook
 share/doc/HTML/gl/kwordquiz/common
 share/doc/HTML/gl/kwordquiz/index.cache.bz2
 share/doc/HTML/gl/kwordquiz/index.docbook
@@ -1272,7 +1272,7 @@ share/locale/gl/entry.desktop
 @dirrm share/doc/HTML/gl/marble
 @dirrm share/doc/HTML/gl/lokalize
 @dirrm share/doc/HTML/gl/kwordquiz
-@dirrm share/doc/HTML/gl/kwallet
+@dirrm share/doc/HTML/gl/kwalletmanager
 @dirrm share/doc/HTML/gl/ktouch
 @dirrm share/doc/HTML/gl/ktimer
 @dirrm share/doc/HTML/gl/ksudoku
