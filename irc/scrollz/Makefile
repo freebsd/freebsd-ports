@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.netraam.net/scrollz/download/ \
 		http://www.scrollz.com/download/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
-MAINTAINER=	mdv@unsavoury.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
 USES=		gmake iconv ncurses
