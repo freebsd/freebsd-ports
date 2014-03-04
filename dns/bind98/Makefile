@@ -2,6 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	9.8.7
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -99,7 +100,12 @@ DLZ_FILESYSTEM_CONFIGURE_ON=	--with-dlz-filesystem=yes
 
 DLZ_STUB_CONFIGURE_ON=	--with-dlz-stub=yes
 
+.if defined(HEIMDAL_HOME)
+GSSAPI_CONFIGURE_ON=	--with-gssapi=${HEIMDAL_HOME}
+GSSAPI_CONFIGURE_OFF=	--without-gssapi
+.else
 GSSAPI_CONFIGURE_WITH=	gssapi
+.endif
 
 .include <bsd.port.options.mk>
 
@@ -115,14 +121,6 @@ PKGINSTALL=${NONEXISTENT}
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
-.endif
-
-.if ${PORT_OPTIONS:MGSSAPI}
-.if defined(HEIMDAL_HOME)
-LDFLAGS+=		-L${LIBDIR} -lgssapi -lkrb5
-.else
-LDFLAGS+=		-L${LIBDIR} -lgssapi_krb5
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MREPLACE_BASE}
