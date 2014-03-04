@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.benzedrine.cx/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter plugin to sendmail for regular expression filtering
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
 USE_RC_SUBR=	milterregex
@@ -39,6 +39,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/milter-regex ${STAGEDIR}${PREFIX}/libexec/
-	${INSTALL_MAN} ${WRKSRC}/milter-regex.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/milter-regex.8 ${STAGEDIR}${PREFIX}/man/man8/
 
 .include <bsd.port.post.mk>

@@ -180,7 +180,7 @@ pre-install:
 .endif
 
 post-install:
-	( cd ${STAGEDIR}${MANPREFIX}/man/man1 && ${__pmlinks1} )
+	( cd ${STAGEDIR}${PREFIX}/man/man1 && ${__pmlinks1} )
 .if ${PORT_OPTIONS:MDOCS}
 	${LN} -sf vice_toc.html ${STAGEDIR}${DOCSDIR}/index.html
 .endif

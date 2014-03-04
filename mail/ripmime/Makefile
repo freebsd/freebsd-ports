@@ -23,7 +23,7 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ripmime ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/ripmime.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/ripmime.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
