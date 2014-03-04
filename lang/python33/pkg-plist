@@ -1687,6 +1687,49 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/idlelib/dynOptionMenuWidget.py
 %%PYTHON_LIBDIR%%/idlelib/extend.txt
 %%PYTHON_LIBDIR%%/idlelib/help.txt
+%%PYTHON_LIBDIR%%/idlelib/idle_test/README.txt
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__init__.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/__init__.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/__init__.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/mock_idle.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/mock_idle.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/mock_tk.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/mock_tk.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_calltips.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_calltips.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_config_name.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_config_name.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_delegator.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_delegator.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_formatparagraph.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_formatparagraph.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_grep.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_grep.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_idlehistory.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_idlehistory.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_pathbrowser.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_pathbrowser.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_rstrip.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_rstrip.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_searchengine.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_searchengine.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_text.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_text.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_warning.cpython-33.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_warning.cpython-33.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/mock_idle.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/mock_tk.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_calltips.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_config_name.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_delegator.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_formatparagraph.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_grep.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_idlehistory.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_pathbrowser.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_rstrip.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_searchengine.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_text.py
+%%PYTHON_LIBDIR%%/idlelib/idle_test/test_warning.py
 %%PYTHON_LIBDIR%%/idlelib/idle.bat
 %%PYTHON_LIBDIR%%/idlelib/idle.py
 %%PYTHON_LIBDIR%%/idlelib/idle.pyw
@@ -2612,6 +2655,8 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/test/__pycache__/test_getargs2.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_getopt.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_getopt.cpython-33.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_getpass.cpython-33.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/test_getpass.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_gettext.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_gettext.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_glob.cpython-33.pyc
@@ -3684,6 +3729,7 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/test/test_genexps.py
 %%PYTHON_LIBDIR%%/test/test_getargs2.py
 %%PYTHON_LIBDIR%%/test/test_getopt.py
+%%PYTHON_LIBDIR%%/test/test_getpass.py
 %%PYTHON_LIBDIR%%/test/test_gettext.py
 %%PYTHON_LIBDIR%%/test/test_glob.py
 %%PYTHON_LIBDIR%%/test/test_global.py
@@ -4176,8 +4222,11 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/tkinter/test/__pycache__/runtktests.cpython-33.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/__pycache__/support.cpython-33.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/__pycache__/support.cpython-33.pyo
+%%PYTHON_LIBDIR%%/tkinter/test/__pycache__/widget_tests.cpython-33.pyc
+%%PYTHON_LIBDIR%%/tkinter/test/__pycache__/widget_tests.cpython-33.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/runtktests.py
 %%PYTHON_LIBDIR%%/tkinter/test/support.py
+%%PYTHON_LIBDIR%%/tkinter/test/widget_tests.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__init__.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/__init__.cpython-33.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/__init__.cpython-33.pyo
@@ -4191,11 +4240,14 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_text.cpython-33.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-33.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-33.pyo
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-33.pyc
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-33.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_font.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_loadtk.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_misc.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_text.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_variables.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_widgets.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_ttk/__init__.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_ttk/__pycache__/__init__.cpython-33.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_ttk/__pycache__/__init__.cpython-33.pyo
@@ -4552,6 +4604,8 @@ man/man1/python3.3.1.gz
 @dirrm %%PYTHON_LIBDIR%%/html
 @dirrm %%PYTHON_LIBDIR%%/http/__pycache__
 @dirrm %%PYTHON_LIBDIR%%/http
+@dirrm %%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__
+@dirrm %%PYTHON_LIBDIR%%/idlelib/idle_test
 @dirrm %%PYTHON_LIBDIR%%/idlelib/Icons
 @dirrm %%PYTHON_LIBDIR%%/idlelib/__pycache__
 @dirrm %%PYTHON_LIBDIR%%/idlelib
@@ -4743,7 +4797,6 @@ man/man1/python3.3.1.gz
 %%PORTDATA%%%%DATADIR%%/Tools/freeze/winmakemakefile.py
 %%PORTDATA%%%%DATADIR%%/Tools/gdb/libpython.py
 %%PORTDATA%%%%DATADIR%%/Tools/hg/hgtouch.py
-%%PORTDATA%%%%DATADIR%%/Tools/hg/hgtouch.pyc
 %%PORTDATA%%%%DATADIR%%/Tools/i18n/makelocalealias.py
 %%PORTDATA%%%%DATADIR%%/Tools/i18n/msgfmt.py
 %%PORTDATA%%%%DATADIR%%/Tools/i18n/pygettext.py
