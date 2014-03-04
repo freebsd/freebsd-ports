@@ -6,7 +6,7 @@ PORTVERSION=	1.2.0.8
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
-MAINTAINER=	hannes@stressinduktion.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webcontent capturing and managing extension
 
 XPI_ID=		{53A03D43-5363-4669-8190-99061B2DEBA5}
