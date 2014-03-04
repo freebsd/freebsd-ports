@@ -15,10 +15,7 @@ share/icons/hicolor/48x48/apps/evilvte.png
 share/icons/hicolor/64x64/apps/evilvte.png
 share/icons/hicolor/72x72/apps/evilvte.png
 share/icons/hicolor/96x96/apps/evilvte.png
-share/icons/hicolor/scalable/apps/evilvte.svg
 share/pixmaps/evilvte.png
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/96x96/apps
 @dirrmtry share/icons/hicolor/96x96
 @dirrmtry share/icons/hicolor/72x72/apps
