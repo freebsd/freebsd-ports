@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	gogolok+freebsd@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A grep replacement in pure Ruby
 
 RUN_DEPENDS=	rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe

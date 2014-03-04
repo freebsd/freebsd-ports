@@ -6,7 +6,7 @@ PORTVERSION=	0.13.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	gogolok+freebsd@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A fast profiler for Ruby
 
 USE_RUBY=	yes

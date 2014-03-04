@@ -6,7 +6,7 @@ PORTVERSION=	1.3.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	gogolok+freebsd@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A tool that manages gem dependencies for ruby applications
 
 USE_RUBY=	yes
