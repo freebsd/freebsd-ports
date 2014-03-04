@@ -3,6 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.4.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
@@ -116,7 +117,7 @@ CONFIGURE_ARGS+=	--disable-smtp
 .endif
 
 .if ${PORT_OPTIONS:MSQL}
-LIB_DEPENDS+=		dbi.1:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=		dbi.2:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
 PLIST_FILES+=		lib/syslog-ng/libafsql.la lib/syslog-ng/libafsql.so
