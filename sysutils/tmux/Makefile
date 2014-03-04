@@ -40,8 +40,9 @@ LIBEVENT2_CONFIGURE_ENV_OFF=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include" \
 LIBEVENT2_LIB_DEPENDS=		libevent-2.0.so:${PORTSDIR}/devel/libevent2
 LIBEVENT2_LIB_DEPENDS_OFF=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
-PORTSCOUT=	ignore:1.9	# 1.9a was released as an errata to 1.9;
-				# this port was never updated to 1.9.
+# 1.9a was released as an errata to 1.9
+# this port was never updated to 1.9
+PORTSCOUT=	ignore:1.9
 
 .include <bsd.port.options.mk>
 
