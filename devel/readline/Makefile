@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	readline
-PORTVERSION=	6.2.${PATCHLEVEL}
+PORTVERSION=	6.3${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU \
 		ftp://ftp.cwru.edu/pub/bash/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/^([0-9].[0-9]).*/\1/}
 
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-patches
@@ -26,11 +27,11 @@ USE_LDCONFIG=	yes
 
 INFO=		readline rluserman history
 
-PATCHES=	1 2 3 4 5
+PATCHES=
 .for p in ${PATCHES:S/^/00/}
 PATCH_FILES+=	${PORTNAME}${PORTVERSION:R:S/.//}-${p:C/.*(...)$/\1/}
 .endfor
-PATCHLEVEL=	${PATCHES:Q:S/ /./g:E}
+PATCHLEVEL=	${PATCHES:M1:S/1/./}${PATCHES:Q:S/^/./:S/ /./g:E}
 
 .include <bsd.port.options.mk>
 

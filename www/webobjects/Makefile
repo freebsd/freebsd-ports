@@ -13,6 +13,8 @@ COMMENT=	WebObjects Application Server Runtime
 
 IS_INTERACTIVE=	yes
 RESTRICTED=	License doesn't allow redistribution
+DEPRECATED=	Unmaintained, interactive and restricted
+EXPIRATION_DATE=	2014-04-04
 
 WOBINURL=	http://www.apple.com/support/downloads/webobjects533.html
 WOPKGBUNDLE=	WebObjects5.3.3Update.dmg

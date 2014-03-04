@@ -3,7 +3,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.4.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -16,27 +16,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE} --with-libexpat=${LOCALBASE}
 USE_LDCONFIG=	yes
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
 USE_RC_SUBR=	unbound
-
-MAN1=		unbound-host.1
-MAN3=		libunbound.3 ub_cancel.3 ub_ctx.3 ub_ctx_add_ta.3 \
-		ub_ctx_add_ta_file.3 ub_ctx_async.3 ub_ctx_config.3 \
-		ub_ctx_create.3 ub_ctx_data_add.3 ub_ctx_data_remove.3 \
-		ub_ctx_debuglevel.3 ub_ctx_debugout.3 ub_ctx_delete.3 \
-		ub_ctx_get_option.3 ub_ctx_hosts.3 ub_ctx_print_local_zones.3 \
-		ub_ctx_resolvconf.3 ub_ctx_set_fwd.3 ub_ctx_set_option.3 \
-		ub_ctx_trustedkeys.3 ub_ctx_zone_add.3 ub_ctx_zone_remove.3 \
-		ub_fd.3 ub_poll.3 ub_process.3 ub_resolve.3 ub_resolve_async.3 \
-		ub_resolve_free.3 ub_result.3 ub_strerror.3 ub_wait.3
-MAN5=		unbound.conf.5
-MAN8=		unbound.8 unbound-anchor.8 unbound-control.8 \
-		unbound-checkconf.8 unbound-control-setup.8
 
 PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		README.tests TODO control_proto_spec.txt ietf67-design-02.odp \
@@ -56,7 +42,6 @@ GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
 ECDSA_DESC=	Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
 MUNIN_DESC=	Install Munin plugin
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2 \
@@ -119,13 +104,13 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MMUNIN}
-	@${MKDIR} ${PREFIX}/share/munin/plugins
-	@${MKDIR} ${PREFIX}/etc/munin/plugins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/munin/plugins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/munin/plugins
 	@${INSTALL_SCRIPT} ${WRKDIR}/unbound-${PORTVERSION}/contrib/unbound_munin_\
-		${PREFIX}/share/munin/plugins/
+		${STAGEDIR}${PREFIX}/share/munin/plugins/
 	@for i in ${MUNIN_ALL}; do\
 		${LN} -fs ${PREFIX}/share/munin/plugins/unbound_munin_\
-			${PREFIX}/etc/munin/plugins/unbound_munin_$$i ;\
+			${STAGEDIR}${PREFIX}/etc/munin/plugins/unbound_munin_$$i ;\
 	done
 	@${ECHO_MSG}
 	@${ECHO_MSG} "============================================================="
@@ -133,9 +118,9 @@ post-install:
 	@${ECHO_MSG} "============================================================="
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}; \
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}; \
 	for f in ${PORTDOCS}; do \
-		cd ${WRKSRC}/doc && ${INSTALL_DATA} $${f} ${DOCSDIR}/; \
+		cd ${WRKSRC}/doc && ${INSTALL_DATA} $${f} ${STAGEDIR}${DOCSDIR}/; \
 	done
 .endif
 

@@ -22,7 +22,7 @@ CONFLICTS=	xorp-1*
 NOMAN=		defined
 
 USE_BZIP2=	yes
-USE_GCC=	4.2+
+USE_GCC=	any
 USE_PYTHON_BUILD=	2
 USES=		scons
 NO_STAGE=	yes

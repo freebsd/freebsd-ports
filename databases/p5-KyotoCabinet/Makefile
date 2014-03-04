@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	KyotoCabinet
-PORTVERSION=	1.18
-PORTREVISION=	5
+PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://fallabs.com/kyotocabinet/perlpkg/
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,13 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libkyotocabinet.so:${PORTSDIR}/databases/kyotocabinet
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+
+SHEBANG_FILES=	*.pl
+
+post-patch:
+# do not run misc tests which seem to be endless
+	@${REINPLACE_CMD} -e '/kctest.pl misc/d' ${WRKSRC}/test.pl
 
 .include <bsd.port.mk>

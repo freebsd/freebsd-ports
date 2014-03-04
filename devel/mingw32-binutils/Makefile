@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	mingw32-
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	GNU Binutils for Windows cross-development
 
-BINUTILVERSION=	2.23.1
+BINUTILVERSION=	2.24
 
 USE_BZIP2=	yes
 USES=		gmake iconv
@@ -24,17 +24,6 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--disable-shared --disable-werror
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
-MAN1=	${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1    \
-	${PKGNAMEPREFIX}as.1 ${PKGNAMEPREFIX}c++filt.1      \
-	${PKGNAMEPREFIX}dlltool.1 ${PKGNAMEPREFIX}elfedit.1 \
-	${PKGNAMEPREFIX}gprof.1 ${PKGNAMEPREFIX}ld.1        \
-	${PKGNAMEPREFIX}nlmconv.1 ${PKGNAMEPREFIX}nm.1      \
-	${PKGNAMEPREFIX}objcopy.1 ${PKGNAMEPREFIX}objdump.1 \
-	${PKGNAMEPREFIX}ranlib.1 ${PKGNAMEPREFIX}readelf.1  \
-	${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1    \
-	${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}windmc.1    \
-	${PKGNAMEPREFIX}windres.1
-
 INFO=		as bfd binutils ld configure gprof standards
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
@@ -43,14 +32,10 @@ PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 BINARIES=	addr2line ar as c++filt gprof ld nm objcopy objdump ranlib \
 		readelf size strings strip dlltool dllwrap windmc windres
 
-NO_STAGE=	yes
-pre-configure:
-	${CHMOD} 755 ${WRKSRC}/configure
-
 post-install:
 .for F in ${BINARIES}
-	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
-		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
+	@${LN} -f ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}$F \
+		${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
 
 #

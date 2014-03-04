@@ -1,0 +1,10 @@
+include/uv-bsd.h
+include/uv-errno.h
+include/uv-unix.h
+include/uv-version.h
+include/uv.h
+lib/libuv.a
+lib/libuv.la
+lib/libuv.so
+lib/libuv.so.11
+libdata/pkgconfig/libuv.pc

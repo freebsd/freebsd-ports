@@ -17,21 +17,18 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GITHASH}
 
-NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+
 post-install:
-	@${INSTALL} -o ${VDR_USER} -g ${VDR_GROUP} -d ${PREFIX}/etc/vdr/plugins/${PLUGIN}
-	@${INSTALL_DATA} ${WRKSRC}/eepg.equiv.IT ${PREFIX}/etc/vdr/plugins/${PLUGIN}
-	@${INSTALL_DATA} ${WRKSRC}/eepg.equiv.IT ${PREFIX}/etc/vdr/plugins/${PLUGIN}/eepg.equiv.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/eepg.equiv ]; then \
-	    ${INSTALL_DATA} -o ${VDR_USER} -g ${VDR_GROUP} ${WRKSRC}/eepg.equiv.IT ${PREFIX}/etc/vdr/plugins/${PLUGIN}/eepg.equiv; \
-	fi
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}
+	${INSTALL_DATA} ${WRKSRC}/eepg.equiv.IT ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}
+	${INSTALL_DATA} ${WRKSRC}/eepg.equiv.IT ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/eepg.equiv.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

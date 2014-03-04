@@ -3,7 +3,7 @@
 
 PORTNAME=	cowsay
 PORTVERSION=	3.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.nog.net/~tony/warez/
 
@@ -22,8 +22,12 @@ verify: fetch
 	@${ECHO_MSG} "Done"
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's,usethisperl=.*,usethisperl=${PERL},' ${WRKSRC}/install.sh
+
 do-install:
 	cd ${WRKSRC}; ${SH} install.sh ${STAGEDIR}${PREFIX}
+	@${SED} -i '' 's,${STAGEDIR},,' ${STAGEDIR}${PREFIX}/bin/cowsay
 	@${INSTALL_DATA} ${FILESDIR}/box.cow ${STAGEDIR}${PREFIX}/share/cows
 	@${INSTALL_DATA} ${FILESDIR}/jkh.cow ${STAGEDIR}${PREFIX}/share/cows
 	@${INSTALL_DATA} ${FILESDIR}/tux-stab.cow ${STAGEDIR}${PREFIX}/share/cows

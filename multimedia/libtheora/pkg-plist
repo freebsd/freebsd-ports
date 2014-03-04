@@ -6,14 +6,17 @@ lib/libtheora.a
 lib/libtheora.la
 lib/libtheora.so
 lib/libtheora.so.0
+lib/libtheora.so.0.3.10
 lib/libtheoraenc.a
 lib/libtheoraenc.la
 lib/libtheoraenc.so
 lib/libtheoraenc.so.1
+lib/libtheoradec.so.1.1.4
 lib/libtheoradec.a
 lib/libtheoradec.la
 lib/libtheoradec.so
 lib/libtheoradec.so.1
+lib/libtheoraenc.so.1.1.2
 libdata/pkgconfig/theora.pc
 libdata/pkgconfig/theoraenc.pc
 libdata/pkgconfig/theoradec.pc

@@ -13,9 +13,9 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - softhddevice plugin
 
 LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		vdpau:${PORTSDIR}/multimedia/libvdpau \
-		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
-		asound:${PORTSDIR}/audio/alsa-lib
+		libvdpau.so:${PORTSDIR}/multimedia/libvdpau \
+		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms \
+		libasound.so:${PORTSDIR}/audio/alsa-lib
 
 USES=		pkgconfig
 USE_XORG+=	xv x11 xcb xinerama
@@ -29,7 +29,6 @@ CONFIG+=	-DUSE_OSS
 MAKE_ARGS+=	CONFIG="${CONFIG}"
 WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 
-NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 OPTIONS_DEFINE=	VAAPI
@@ -38,7 +37,7 @@ VAAPI_DESC=	Enable vaapi support (experimental)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVAAPI}
-LIB_DEPENDS+=	va:${PORTSDIR}/multimedia/libva
+LIB_DEPENDS+=	libva.so:${PORTSDIR}/multimedia/libva
 CONFIG+= 	-DUSE_VAAPI
 .endif
 
@@ -47,10 +46,13 @@ post-patch: post-patch-plugin
 		-e 's,libavcodec,libavcodec0,g' \
 		${WRKSRC}/Makefile
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+
 post-install: post-install-pluginlocales
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

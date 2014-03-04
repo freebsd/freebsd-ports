@@ -2,54 +2,48 @@
 # $FreeBSD$
 
 PORTNAME=	libmetalink
-PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTVERSION=	0.1.2
 CATEGORIES=	misc
-MASTER_SITES=	http://launchpad.net/libmetalink/trunk/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpadlibrarian.net/113836499/ \
+		LOCAL/sunpoet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Metalink library written in C language
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
-
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_BZIP2=	yes
-USE_GCC=	yes
+OPTIONS_DEFINE=	EXAMPLES TEST
+OPTIONS_SINGLE=	XML
+OPTIONS_SINGLE_XML=	EXPAT LIBXML2
+OPTIONS_DEFAULT=EXPAT
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	\
-		--with-libexpat-prefix="${LOCALBASE}" \
-		--with-libxml2="no"
+LDFLAGS+=	-L${LOCALBASE}/lib
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+USES=		pathfix
 
-# Examples to install
-EXAMPLES_FILES=	\
-	doc/sample.c \
-	doc/ubuntu-7_10-server-i386_iso.metalink
+PORTEXAMPLES=	LibO_3.5.4_Win_x86_install_multi.msi.meta4 \
+		metalinkcat.c \
+		ubuntu-12.04-server-amd64.metalink
 
-.ifndef(NOPORTEXAMPLES)
-PORTEXAMPLES=	*
-.endif
+EXPAT_CONFIGURE_WITH=	libexpat
+EXPAT_CPPFLAGS=		-I${LOCALBASE}/include
+EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIBXML2_CONFIGURE_WITH=	libxml2
+LIBXML2_CPPFLAGS=	-I${LOCALBASE}/include/libxml2
+LIBXML2_USE=		GNOME=libxml2
+TEST_BUILD_DEPENDS=	cunit>=2.1:${PORTSDIR}/devel/cunit
+TEST_CONFIGURE_ENV=	CUNIT_CFLAGS=-I${LOCALBASE}/include CUNIT_LIBS="-L${LOCALBASE}/lib -lcunit -L${LIBDIR} -lncurses"
 
-NO_STAGE=	yes
-post-patch:
-# do not automagically install either documents or examples
-	@${REINPLACE_CMD} -E \
-		-e 's|^(install:).*|\1|' \
-		${WRKSRC}/doc/Makefile.in
-# fix pkgconfig install destination
-	@${REINPLACE_CMD} -E \
-		-e 's|^(pkgconfigdir[[:space:]]*=).*$$|\1${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/lib/Makefile.in
+post-build:
+	@${STRIP_CMD} ${WRKSRC}/lib/.libs/libmetalink.so.3
 
 post-install:
-# examples
-.ifndef(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-.for file in ${EXAMPLES_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
-.endfor
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/doc/examples/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
+
+regression-test test: build
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>

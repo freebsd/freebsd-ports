@@ -1,15 +1,15 @@
---- rijndael.cpp.orig	2012-01-09 14:46:08.000000000 +0100
-+++ rijndael.cpp	2012-04-05 23:36:23.000000000 +0200
+--- rijndael.cpp.orig	2013-12-01 16:10:14.000000000 +0800
++++ rijndael.cpp	2014-02-04 08:42:17.943981810 +0800
 @@ -7,6 +7,8 @@
-  **************************************************************************/
+  ***************************************************************************/
  #include "rar.hpp"
  
 +#ifndef OPENSSL_AES
 +
- const int uKeyLenInBytes=16, m_uRounds=10;
- 
  static byte S[256],S5[256],rcon[30];
-@@ -54,6 +56,7 @@ inline void Copy128(byte *dest,const byt
+ static byte T1[256][4],T2[256][4],T3[256][4],T4[256][4];
+ static byte T5[256][4],T6[256][4],T7[256][4],T8[256][4];
+@@ -52,6 +54,7 @@
  #endif
  }
  
@@ -17,37 +17,50 @@
  
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  // API
-@@ -61,13 +64,21 @@ inline void Copy128(byte *dest,const byt
+@@ -59,13 +62,34 @@
  
  Rijndael::Rijndael()
  {
 +#ifndef OPENSSL_AES
    if (S[0]==0)
      GenerateTables();
-+#endif
++#endif // OPENSSL_AES
  }
  
  
- void Rijndael::init(Direction dir,const byte * key,byte * initVector)
+ void Rijndael::Init(bool Encrypt,const byte *key,uint keyLen,const byte * initVector)
  {
 +#ifdef OPENSSL_AES
++  const EVP_CIPHER *cipher;
++  switch(keyLen)
++  {
++    case 128:
++      cipher = EVP_aes_128_cbc();
++      break;
++    case 192:
++      cipher = EVP_aes_192_cbc();
++      break;
++    case 256:
++      cipher = EVP_aes_256_cbc();
++      break;
++  }
++
 +  EVP_CIPHER_CTX_init(&ctx);
-+  EVP_CipherInit_ex(&ctx, EVP_aes_128_cbc(), NULL, key, initVector,
-+    dir == Decrypt ? 0 : 1);
++  EVP_CipherInit_ex(&ctx, cipher, NULL, key, initVector, Encrypt);
 +  EVP_CIPHER_CTX_set_padding(&ctx, 0);
-+#else
-   m_direction = dir;
++#else // OPENSSL_AES
+   uint uKeyLenInBytes;
+   switch(keyLen)
+   {
+@@ -95,6 +119,7 @@
  
-   byte keyMatrix[_MAX_KEY_COLUMNS][4];
-@@ -82,6 +93,7 @@ void Rijndael::init(Direction dir,const 
- 
-   if(m_direction == Decrypt)
+   if(!Encrypt)
      keyEncToDec();
 +#endif // OPENSSL_AES
  }
  
  
-@@ -91,6 +103,11 @@ size_t Rijndael::blockDecrypt(const byte
+@@ -104,6 +129,11 @@
    if (input == 0 || inputLen <= 0)
      return 0;
  
@@ -55,11 +68,11 @@
 +  int outLen;
 +  EVP_CipherUpdate(&ctx, outBuffer, &outLen, input, inputLen);
 +  return outLen;
-+#else
++#else // OPENSSL_AES
    byte block[16], iv[4][4];
    memcpy(iv,m_initVector,16); 
  
-@@ -113,9 +130,11 @@ size_t Rijndael::blockDecrypt(const byte
+@@ -126,9 +156,11 @@
    memcpy(m_initVector,iv,16);
    
    return 16*numBlocks;
@@ -71,9 +84,11 @@
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  // ALGORITHM
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@@ -296,3 +315,5 @@ void Rijndael::GenerateTables()
+@@ -309,6 +341,7 @@
      U1[b][0]=U2[b][1]=U3[b][2]=U4[b][3]=T5[i][0]=T6[i][1]=T7[i][2]=T8[i][3]=FFmul0e(b);
    }
  }
-+
 +#endif // OPENSSL_AES
+ 
+ 
+ #if 0

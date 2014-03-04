@@ -17,10 +17,10 @@ man/man3/iconv_open.3.gz
 man/man3/iconv_open_into.3.gz
 man/man3/iconv_close.3.gz
 man/man3/iconvctl.3.gz
-%%DOCSDIR%%/iconv.1.html
-%%DOCSDIR%%/iconv.3.html
-%%DOCSDIR%%/iconv_close.3.html
-%%DOCSDIR%%/iconv_open.3.html
-%%DOCSDIR%%/iconv_open_into.3.html
-%%DOCSDIR%%/iconvctl.3.html
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/iconv.1.html
+%%PORTDOCS%%%%DOCSDIR%%/iconv.3.html
+%%PORTDOCS%%%%DOCSDIR%%/iconv_close.3.html
+%%PORTDOCS%%%%DOCSDIR%%/iconv_open.3.html
+%%PORTDOCS%%%%DOCSDIR%%/iconv_open_into.3.html
+%%PORTDOCS%%%%DOCSDIR%%/iconvctl.3.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

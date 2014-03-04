@@ -17,9 +17,5 @@ bin/eyeD3
 %%PYTHON_SITELIBDIR%%/eyeD3/utils.py
 %%PYTHON_SITELIBDIR%%/eyeD3/utils.pyc
 %%PYTHON_SITELIBDIR%%/eyeD3/utils.pyo
+man/man1/eyeD3.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/eyeD3
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.gz
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.gz
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

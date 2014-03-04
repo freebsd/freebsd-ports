@@ -26,9 +26,9 @@ WRKSRC=		${WRKDIR}/truecrypt-${PORTVERSION}-source
 USES=		fuse iconv pkgconfig
 USE_GCC=	any
 USE_GMAKE=	yes
-RESTRICTED=	Downloading requires acceptance of license agreement
-NO_CDROM=	Distribution requires acceptance of license agreement
-NO_PACKAGE=	Distribution requires acceptance of license agreement
+RESTRICTED=	May not be redistributed.  Must accept license to download.
+NO_CDROM=	May not be redistributed.  Must accept license to download.
+NO_PACKAGE=	May not be redistributed.  Must accept license to download.
 NO_STAGE=	yes
 
 TC_SRCFILE=	TrueCrypt_${PORTVERSION}_Source.tar.gz

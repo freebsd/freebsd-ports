@@ -1,0 +1,19 @@
+%%QT_BINDIR%%/linguist
+share/pixmaps/linguist-qt5.png
+%%QT_DATADIR%%/phrasebooks/danish.qph
+%%QT_DATADIR%%/phrasebooks/dutch.qph
+%%QT_DATADIR%%/phrasebooks/finnish.qph
+%%QT_DATADIR%%/phrasebooks/french.qph
+%%QT_DATADIR%%/phrasebooks/german.qph
+%%QT_DATADIR%%/phrasebooks/hungarian.qph
+%%QT_DATADIR%%/phrasebooks/italian.qph
+%%QT_DATADIR%%/phrasebooks/japanese.qph
+%%QT_DATADIR%%/phrasebooks/norwegian.qph
+%%QT_DATADIR%%/phrasebooks/polish.qph
+%%QT_DATADIR%%/phrasebooks/russian.qph
+%%QT_DATADIR%%/phrasebooks/spanish.qph
+%%QT_DATADIR%%/phrasebooks/swedish.qph
+@dirrm %%QT_DATADIR%%/phrasebooks
+@dirrmtry %%QT_DATADIR%%
+@dirrmtry %%QT_BINDIR%%
+@dirrmtry %%QT_ARCHDIR%%

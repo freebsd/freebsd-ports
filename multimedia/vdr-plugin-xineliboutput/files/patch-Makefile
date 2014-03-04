@@ -24,15 +24,51 @@
  
  
  ###
-@@ -410,7 +408,7 @@ ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
- 	@echo Installing $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN)
- 	@mkdir -p $(DESTDIR)$(LIBDIR)
- 	@-rm -rf $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN)
+@@ -410,10 +410,10 @@ ifeq ($(XINELIBOUTPUT_XINEPLUGIN), yes)
+ endif
+ ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
+   ifeq ($(VDR_TREE), no)
+-	@echo Installing $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN)
+-	@mkdir -p $(DESTDIR)$(LIBDIR)
+-	@-rm -rf $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN)
 -	@$(INSTALL) -D -m 0755 $(VDRPLUGIN) $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN)
-+	@$(INSTALL) -m 0755 $(VDRPLUGIN) $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN)
++	@echo Installing $(LIBDIR)/$(VDRPLUGIN)
++	@mkdir -p $(LIBDIR)
++	@-rm -rf $(LIBDIR)/$(VDRPLUGIN)
++	@$(INSTALL) -m 0755 $(VDRPLUGIN) $(LIBDIR)/$(VDRPLUGIN)
    endif
  endif
  ifeq ($(XINELIBOUTPUT_FB), yes)
+@@ -423,10 +423,10 @@ ifeq ($(XINELIBOUTPUT_FB), yes)
+ 	@$(INSTALL) -m 0755 vdr-fbfe $(DESTDIR)/$(BINDIR)/vdr-fbfe
+   ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
+     ifeq ($(VDR_TREE), no)
+-	@echo Installing $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN_FBFE)
+-	@mkdir -p $(DESTDIR)$(LIBDIR)
+-	@-rm -rf $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN_FBFE)
+-	@$(INSTALL) -m 0755 $(VDRPLUGIN_FBFE) $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN_FBFE)
++	@echo Installing $(LIBDIR)/$(VDRPLUGIN_FBFE)
++	@mkdir -p $(LIBDIR)
++	@-rm -rf $(LIBDIR)/$(VDRPLUGIN_FBFE)
++	@$(INSTALL) -m 0755 $(VDRPLUGIN_FBFE) $(LIBDIR)/$(VDRPLUGIN_FBFE)
+     endif
+   endif
+ endif
+@@ -437,10 +437,10 @@ ifeq ($(XINELIBOUTPUT_X11), yes)
+ 	@$(INSTALL) -m 0755 vdr-sxfe $(DESTDIR)/$(BINDIR)/vdr-sxfe
+   ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
+     ifeq ($(VDR_TREE), no)
+-	@echo Installing $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN_SXFE)
+-	@mkdir -p $(DESTDIR)$(LIBDIR)
+-	@-rm -rf $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN_SXFE)
+-	@$(INSTALL) -m 0755 $(VDRPLUGIN_SXFE) $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN_SXFE)
++	@echo Installing $(LIBDIR)/$(VDRPLUGIN_SXFE)
++	@mkdir -p $(LIBDIR)
++	@-rm -rf $(LIBDIR)/$(VDRPLUGIN_SXFE)
++	@$(INSTALL) -m 0755 $(VDRPLUGIN_SXFE) $(LIBDIR)/$(VDRPLUGIN_SXFE)
+     endif
+   endif
+ endif
 @@ -441,6 +439,11 @@ ifeq ($(XINELIBOUTPUT_X11), yes)
      endif
    endif

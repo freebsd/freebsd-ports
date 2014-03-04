@@ -3,7 +3,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	2.0.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 USE_BZIP2=	yes
-USES=		cmake shared-mime-info
+USES=		cmake shared-mime-info pkgconfig
 CMAKE_ARGS=	-DK3B_BUILD_K3BSETUP:BOOL=OFF \
 		-DK3B_ENABLE_MUSICBRAINZ:BOOL=OFF
 USE_KDE4=	automoc4 kdeprefix kdelibs libkcddb
@@ -58,7 +58,7 @@ MAD_CMAKE_OFF=		-DK3B_BUILD_MAD_DECODER_PLUGIN:BOOL=OFF
 
 MUSEPACK_DESC=		Decoder: Musepack (audio/musepack)
 MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack
-MUSEPACK_CMAKE_ON=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
+MUSEPACK_CMAKE_ON=	-DMUSE_INCLUDE_DIR:STRING="${LOCALBASE}/include"
 MUSEPACK_CMAKE_OFF=	-DK3B_BUILD_MUSE_DECODER_PLUGIN:BOOL=OFF
 
 SNDFILE_DESC=		Decoder: various (audio/libsndfile)

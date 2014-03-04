@@ -6,7 +6,7 @@ PORTVERSION=	1.15
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Lossless data compressor based on the LZMA algorithm
 
 LICENSE=	GPLv3

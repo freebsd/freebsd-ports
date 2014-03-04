@@ -77,7 +77,7 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/contrib/xmindpath/xmindpath.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL} ${WRKSRC}/contrib/xmindpath/xmindpath \
 		${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}

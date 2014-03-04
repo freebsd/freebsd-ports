@@ -12,6 +12,8 @@ COMMENT=	Cocaine Application Engine
 
 LICENSE=	GPLv3
 
+BROKEN=		Does not build
+
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs \
 		libev.so:${PORTSDIR}/devel/libev \
 		libltdl.so:${PORTSDIR}/devel/libltdl \

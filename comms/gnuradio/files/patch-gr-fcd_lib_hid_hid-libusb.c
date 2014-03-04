@@ -1,42 +1,24 @@
---- gr-fcd/lib/hid/hid-libusb.c.orig	2012-09-27 14:50:40.000000000 -0500
-+++ gr-fcd/lib/hid/hid-libusb.c	2012-09-27 15:45:03.000000000 -0500
-@@ -48,6 +48,12 @@
+--- gr-fcd/lib/hid/hid-libusb.c.orig	2013-08-28 13:27:03.000000000 -0500
++++ gr-fcd/lib/hid/hid-libusb.c	2014-01-16 20:59:56.000000000 -0500
+@@ -250,7 +250,7 @@
+ }
+ #endif /* INVASIVE_GET_USAGE */
  
- #include "hidapi.h"
+-#ifdef __FreeBSD__
++#ifndef HAVE_LIBUSB_GET_STRING_DESCRIPTOR
+ /* The FreeBSD version of libusb doesn't have this funciton. In mainline
+    libusb, it's inlined in libusb.h. This function will bear a striking
+    resemblence to that one, because there's about one way to code it.
+@@ -756,8 +756,12 @@
+ 	   if no transfers are pending, but that's OK. */
+ 	libusb_cancel_transfer(dev->transfer);
  
-+#ifdef __FreeBSD__
-+#define LIBUSB_GET_STRING_DESCRIPTOR(h,i,l,d,n)	libusb_get_string_descriptor_ascii(h,i,d,n)
-+#else
-+#define LIBUSB_GET_STRING_DESCRIPTOR(h,i,l,d,n)	libusb_get_string_descriptor(h,i,l,d,n)
++#if 0
+ 	while (!dev->cancelled)
+ 		libusb_handle_events_completed(usb_context, &dev->cancelled);
 +#endif
-+
- #ifdef __cplusplus
- extern "C" {
- #endif
-@@ -264,7 +270,7 @@
- 	int len;
++	while (!dev->cancelled)
++		libusb_handle_events(NULL);
  
- 	/* Get the string from libusb. */
--	len = libusb_get_string_descriptor(dev,
-+	len = LIBUSB_GET_STRING_DESCRIPTOR(dev,
- 			0x0, /* String ID */
- 			0x0, /* Language */
- 			(unsigned char*)buf,
-@@ -282,7 +288,7 @@
- 	int i;
- 
- 	/* Get the string from libusb. */
--	len = libusb_get_string_descriptor(dev,
-+	len = LIBUSB_GET_STRING_DESCRIPTOR(dev,
- 			0x0, /* String ID */
- 			0x0, /* Language */
- 			(unsigned char*)buf,
-@@ -327,7 +333,7 @@
- 		lang = get_first_language(dev);
- 
- 	/* Get the string from libusb. */
--	len = libusb_get_string_descriptor(dev,
-+	len = LIBUSB_GET_STRING_DESCRIPTOR(dev,
- 			idx,
- 			lang,
- 			(unsigned char*)buf,
+ 	/* Now that the read thread is stopping, Wake any threads which are
+ 	   waiting on data (in hid_read_timeout()). Do this under a mutex to

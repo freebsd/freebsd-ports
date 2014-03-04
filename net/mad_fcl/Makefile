@@ -13,7 +13,7 @@ COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_OPENSSL=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS}
@@ -22,6 +22,8 @@ DOC_FILES=	fdt-example.xml flute-sdp-example.sdp
 
 PORTDOCS=	${DOC_FILES} README.TXT
 PLIST_FILES=	bin/flute
+
+MAKE_JOBS_UNSAFE= yes
 
 NO_STAGE=	yes
 pre-patch:

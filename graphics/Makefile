@@ -769,9 +769,6 @@
     SUBDIR += php5-ffmpeg
     SUBDIR += php5-gd
     SUBDIR += php5-swfed
-    SUBDIR += php52-exif
-    SUBDIR += php52-gd
-    SUBDIR += php52-ming
     SUBDIR += php53-exif
     SUBDIR += php53-gd
     SUBDIR += php55-exif
@@ -892,6 +889,11 @@
     SUBDIR += qt4-opengl
     SUBDIR += qt4-pixeltool
     SUBDIR += qt4-svg
+    SUBDIR += qt5-graphicaleffects
+    SUBDIR += qt5-imageformats
+    SUBDIR += qt5-opengl
+    SUBDIR += qt5-pixeltool
+    SUBDIR += qt5-svg
     SUBDIR += qtgtl
     SUBDIR += quat
     SUBDIR += quat-gui

@@ -334,6 +334,7 @@
 %%WWWDIR%%/include/classes/items/CHelpItems.php
 %%WWWDIR%%/include/classes/macros/CMacrosResolver.php
 %%WWWDIR%%/include/classes/macros/CMacrosResolverHelper.php
+%%WWWDIR%%/include/classes/macros/CMacrosResolverGeneral.php
 %%WWWDIR%%/include/classes/class.cfavorite.php
 %%WWWDIR%%/include/classes/class.cmultiselect.php
 %%WWWDIR%%/include/classes/class.cseverity.php

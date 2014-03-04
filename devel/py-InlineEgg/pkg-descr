@@ -5,4 +5,4 @@ to remember how to use complex tools like assemblers and linkers, everything
 is done the easy way: in Python. InlineEgg is oriented - but not limited -
 to developing shellcode (sometimes called eggs) for use in exploits.
 
-WWW:	http://oss.corest.com/projects/inlineegg.html
+WWW: http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=InlineEgg

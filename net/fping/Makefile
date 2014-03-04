@@ -2,14 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	fping
-PORTVERSION=	3.5
+PORTVERSION=	3.8
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://fping.org/dist/
+MASTER_SITES=	http://fping.org/dist/ \
+		http://bitrote.org/distfiles/
 
 MAINTAINER=	jharris@widomaker.com
-COMMENT=	Quickly ping N hosts w/o flooding the network
+COMMENT=	Quickly ping multiple hosts without flooding the network
 
-LICENSE=	GFDL
+LICENSE=	PreviousBSD
+LICENSE_GROUPS=	FSF
+LICENSE_NAME=	Previous BSD License
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_MULTI=		NET
 OPTIONS_MULTI_NET=	IPV4 IPV6

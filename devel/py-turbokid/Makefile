@@ -3,7 +3,7 @@
 
 PORTNAME=	TurboKid
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -15,7 +15,7 @@ COMMENT=	Python template plugin that supports Kid templates
 RUN_DEPENDS=	kid:${PORTSDIR}/devel/py-kid
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

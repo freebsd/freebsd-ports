@@ -1,4 +1,4 @@
-# Created by: Marco Broeder <marco.broeder@gmx.eu>
+# Created by: Marco Broeder <marco.broeder@posteo.eu>
 # $FreeBSD$
 
 PORTNAME=	hg-git
@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	marco.broeder@gmx.eu
+MAINTAINER=	marco.broeder@posteo.eu
 COMMENT=	Mercurial extension to pull from or push to a Git repository
 
 LICENSE=	GPLv2

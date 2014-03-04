@@ -47,7 +47,7 @@ NO_STAGE=	yes
 DIST_SUBDIR=		squeak
 ONLY_FOR_ARCHS=		i386 amd64
 MAN1=			squeak.1
-USE_GCC=		4.2+
+USE_GCC=		any
 USE_GL=			gl
 HAS_CONFIGURE=		yes
 

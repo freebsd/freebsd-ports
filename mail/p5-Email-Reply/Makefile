@@ -8,7 +8,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kay.abendroth@raxion.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email::Reply - Reply to a Message
 
 RUN_DEPENDS=	p5-Email-Abstract>=2.01:${PORTSDIR}/mail/p5-Email-Abstract \

@@ -62,6 +62,7 @@ nslcd_status()
 		echo "${name} is running with PID ${mypid}.";
 	else
 		echo "${name} not running?";
+		return 1
 	fi
 }
 

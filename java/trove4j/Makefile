@@ -8,7 +8,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/trove/trove-${PORTVERSION}
 DISTNAME=	trove-${PORTVERSION}
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance collections API for Java
 
 USE_JAVA=	yes

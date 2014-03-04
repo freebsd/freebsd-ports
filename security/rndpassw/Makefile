@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	rndpassw
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	melanhit@gmail.com
 COMMENT=	CLI password generator
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_BZIP2=	yes
 

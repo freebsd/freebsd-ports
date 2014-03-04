@@ -14,6 +14,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		lynx:${PORTSDIR}/www/lynx
 
+DEPRECATED=	distfiles no longer fetchable
+EXPIRATION_DATE=	2014-04-01
+
 MAN3=		epylog.3
 MAN5=		epylog-modules.5 epylog.conf.5
 MAN8=		epylog.8

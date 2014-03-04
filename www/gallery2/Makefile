@@ -12,77 +12,35 @@ DIST_SUBDIR=	gallery2
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Web based photo album organizer written in PHP
 
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	DCRAW FFMPEG GD GRAPHMAGICK IMAGEMAGICK JHEAD NETPBM NLS UNZIP
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL
+OPTIONS_DEFAULT=IMAGEMAGICK JHEAD MYSQL UNZIP
+
+NO_BUILD=	yes
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
-NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		DCRAW FFMPEG GD GRAPHMAGICK IMAGEMAGICK JHEAD \
-			NETPBM NLS PGSQL UNZIP
-OPTIONS_DEFAULT=	IMAGEMAGICK JHEAD UNZIP
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.else
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-USE_PHP+=	gd
-RUN_DEPENDS+=	pngtogd:${PORTSDIR}/graphics/gd
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USE_PHP+=	gettext
-USES+=		gettext
-.endif
-
-.if ${PORT_OPTIONS:MNETPBM}
-RUN_DEPENDS+=	giftopnm:${PORTSDIR}/graphics/netpbm
-.endif
-
-.if ${PORT_OPTIONS:MGRAPHMAGICK}
-RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
-.endif
-
-.if ${PORT_OPTIONS:MIMAGEMAGICK}
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
-.endif
-
-.if ${PORT_OPTIONS:MJHEAD}
-RUN_DEPENDS+=	jhead:${PORTSDIR}/graphics/jhead
-.endif
-
-.if ${PORT_OPTIONS:MUNZIP}
-RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-.endif
-
-.if ${PORT_OPTIONS:MDCRAW}
-RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
-.endif
-
-.if defined(GALLERY2DIR)
-# Continue to support legacy GALLERY2DIR variable
-WWWDIR=	${GALLERY2DIR}
-.endif
+DCRAW_RUN_DEPENDS=	${LOCALBASE}/bin/dcraw:${PORTSDIR}/graphics/dcraw
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+GD_RUN_DEPENDS=		${LOCALBASE}/bin/pngtogd:${PORTSDIR}/graphics/gd
+GD_USE=			PHP=gd
+GRAPHMAGICK_RUN_DEPENDS=${LOCALBASE}/bin/gm:${PORTSDIR}/graphics/GraphicsMagick
+IMAGEMAGICK_RUN_DEPENDS=${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+JHEAD_RUN_DEPENDS=	${LOCALBASE}/bin/jhead:${PORTSDIR}/graphics/jhead
+MYSQL_USE=		PHP=mysql
+NETPBM_RUN_DEPENDS=	${LOCALBASE}/bin/giftopnm:${PORTSDIR}/graphics/netpbm
+NLS_USE=		PHP=gettext
+NLS_USES=		gettext
+PGSQL_USE=		PHP=pgsql
+UNZIP_RUN_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
 do-install:
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} . ${WWWDIR}/
-	@ ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
-
-.if !defined(BATCH)
-	@ ${CAT} ${PKGMESSAGE}
-.endif
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>

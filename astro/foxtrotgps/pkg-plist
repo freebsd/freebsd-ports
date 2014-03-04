@@ -4,18 +4,18 @@ bin/foxtrotgps
 bin/georss2foxtrotgps-poi
 bin/osb2foxtrot
 bin/poi2osm
-lib/locale/bg/LC_MESSAGES/foxtrotgps.mo
-lib/locale/cs/LC_MESSAGES/foxtrotgps.mo
-lib/locale/de/LC_MESSAGES/foxtrotgps.mo
-lib/locale/es/LC_MESSAGES/foxtrotgps.mo
-lib/locale/fi/LC_MESSAGES/foxtrotgps.mo
-lib/locale/fr/LC_MESSAGES/foxtrotgps.mo
-lib/locale/hu/LC_MESSAGES/foxtrotgps.mo
-lib/locale/nl/LC_MESSAGES/foxtrotgps.mo
-lib/locale/ru/LC_MESSAGES/foxtrotgps.mo
-lib/locale/sk/LC_MESSAGES/foxtrotgps.mo
-lib/locale/ja/LC_MESSAGES/foxtrotgps.mo
-lib/locale/sr/LC_MESSAGES/foxtrotgps.mo
+share/locale/bg/LC_MESSAGES/foxtrotgps.mo
+share/locale/cs/LC_MESSAGES/foxtrotgps.mo
+share/locale/de/LC_MESSAGES/foxtrotgps.mo
+share/locale/es/LC_MESSAGES/foxtrotgps.mo
+share/locale/fi/LC_MESSAGES/foxtrotgps.mo
+share/locale/fr/LC_MESSAGES/foxtrotgps.mo
+share/locale/hu/LC_MESSAGES/foxtrotgps.mo
+share/locale/nl/LC_MESSAGES/foxtrotgps.mo
+share/locale/ru/LC_MESSAGES/foxtrotgps.mo
+share/locale/sk/LC_MESSAGES/foxtrotgps.mo
+share/locale/ja/LC_MESSAGES/foxtrotgps.mo
+share/locale/sr/LC_MESSAGES/foxtrotgps.mo
 man/man1/convert2gpx.1.gz
 man/man1/convert2osm.1.gz
 man/man1/foxtrotgps.1.gz
@@ -38,28 +38,28 @@ share/pixmaps/foxtrotgps-wp.png
 share/pixmaps/foxtrotgps.png
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@dirrmtry lib/locale/sk/LC_MESSAGES
-@dirrmtry lib/locale/sk
-@dirrmtry lib/locale/ru/LC_MESSAGES
-@dirrmtry lib/locale/ru
-@dirrmtry lib/locale/nl/LC_MESSAGES
-@dirrmtry lib/locale/nl
-@dirrmtry lib/locale/hu/LC_MESSAGES
-@dirrmtry lib/locale/hu
-@dirrmtry lib/locale/fr/LC_MESSAGES
-@dirrmtry lib/locale/fr
-@dirrmtry lib/locale/fi/LC_MESSAGES
-@dirrmtry lib/locale/fi
-@dirrmtry lib/locale/es/LC_MESSAGES
-@dirrmtry lib/locale/es
-@dirrmtry lib/locale/de/LC_MESSAGES
-@dirrmtry lib/locale/de
-@dirrmtry lib/locale/cs/LC_MESSAGES
-@dirrmtry lib/locale/cs
-@dirrmtry lib/locale/bg/LC_MESSAGES
-@dirrmtry lib/locale/bg
-@dirrmtry lib/locale/ja/LC_MESSAGES
-@dirrmtry lib/locale/ja
-@dirrmtry lib/locale/sr/LC_MESSAGES
-@dirrmtry lib/locale/sr
-@dirrmtry lib/locale
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/hu/LC_MESSAGES
+@dirrmtry share/locale/hu
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/bg/LC_MESSAGES
+@dirrmtry share/locale/bg
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/ja
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale

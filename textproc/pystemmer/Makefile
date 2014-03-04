@@ -3,6 +3,7 @@
 
 PORTNAME=	pystemmer
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP \
 		http://snowball.tartarus.org/wrappers/
@@ -13,7 +14,6 @@ COMMENT=	Snowball Stemming Algorithms for Information Retrieval
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	PyStemmer
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

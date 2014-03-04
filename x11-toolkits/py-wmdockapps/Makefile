@@ -3,7 +3,7 @@
 
 PORTNAME=	wmdockapps
 PORTVERSION=	1.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits python windowmaker
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,10 @@ COMMENT=	Tools for making dockapps in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pywmdockapps
+PYDISTUTILS_AUTOPLIST=	yes
+
 USE_XORG=	x11 xpm xau xext xfixes xi
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/setup.py
 

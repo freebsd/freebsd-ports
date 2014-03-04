@@ -150,6 +150,7 @@ etc/vdr/plugins/live/themes/veltliner/img/logo.png
 etc/vdr/plugins/live/themes/veltliner/img/logo_login.png
 etc/vdr/plugins/live/themes/veltliner/img/menu_line_bg.png
 etc/vdr/plugins/live/themes/veltliner/img/zap.png
+@exec chown -R %%VDR_USER%%:%%VDR_GROUP%% %D/etc/vdr/plugins/live
 @dirrm etc/vdr/plugins/live/css
 @dirrm etc/vdr/plugins/live/img
 @dirrm etc/vdr/plugins/live/js/live

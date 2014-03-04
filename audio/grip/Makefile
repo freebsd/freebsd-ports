@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GTK front-end to external cd rippers and audio encoders
 
-LIB_DEPENDS=	libid3-3.8.so:${PORTSDIR}/audio/id3lib \
+LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_XORG=	x11

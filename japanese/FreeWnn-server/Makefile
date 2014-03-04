@@ -3,7 +3,7 @@
 
 PORTNAME=	FreeWnn
 PORTVERSION=	1.1.1.a021
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES?=	japanese
 MASTER_SITES=	ftp://ftp.freewnn.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_SOURCEFORGE_JP}
@@ -13,11 +13,13 @@ PKGNAMESUFFIX=	-server
 DISTNAME=	${PORTNAME}-1.1.1-a021
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT?=	A Japanese/Chinese/Korean input method (Japanese server)
+COMMENT?=	Japanese/Chinese/Korean input method (Japanese server)
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf libtool
+USES=		libtool
+USE_AUTOTOOLS=	aclocal autoheader autoconf libtoolize
+LIBTOOLIZE_ARGS=-i -c -f
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	# defined below
 MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}" \

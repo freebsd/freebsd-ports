@@ -17,7 +17,7 @@ RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 USE_BZIP2=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 USES=	shebangfix
 SHEBANG_FILES=	${WRKSRC}/scripts/*.sh \

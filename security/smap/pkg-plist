@@ -1,0 +1,3 @@
+bin/smap
+%%DATADIR%%/fingerprint.db
+@dirrm %%DATADIR%%

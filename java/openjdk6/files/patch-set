@@ -146,17 +146,6 @@
  override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
  override SUN_CMM_SUBDIR          =
  override THREADS_FLAG            = native
---- corba/make/common/Defs-linux.gmk
-+++ corba/make/common/Defs-linux.gmk
-@@ -290,7 +290,7 @@
- override LIBTHREAD               =
- override MOOT_PRIORITIES         = true
- override NO_INTERRUPTIBLE_IO     = true
--override OPENWIN_HOME            = /usr/X11R6
-+override OPENWIN_HOME            = $(X11_PATH)
- ifeq ($(ARCH), amd64)
- override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
- else
 --- corba/make/common/Defs.gmk
 +++ corba/make/common/Defs.gmk
 @@ -53,6 +53,24 @@
@@ -566,6 +555,33 @@
                      // Whether the caller can read /proc/<pid> file?
                      sm.checkRead("/proc/" + pid);
                  }
+--- hotspot/make/bsd/makefiles/adlc.make
++++ hotspot/make/bsd/makefiles/adlc.make
+@@ -69,7 +69,7 @@
+ # CFLAGS_WARN holds compiler options to suppress/enable warnings.
+ # Compiler warnings are treated as errors
+ ifneq ($(COMPILER_WARNINGS_FATAL),false)
+-  CFLAGS_WARN = -Werror
++  CFLAGS_WARN = $(WARNINGS_ARE_ERRORS)
+ endif
+ CFLAGS += $(CFLAGS_WARN)
+ 
+--- hotspot/make/bsd/makefiles/build_vm_def.sh
++++ hotspot/make/bsd/makefiles/build_vm_def.sh
+@@ -7,6 +7,10 @@
+ NM=nm
+ fi
+ 
+-$NM --defined-only $* | awk '
+-   { if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 ";" }
+-   '
++$NM --defined-only $* \
++    | awk '{
++              if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 ";"
++              if ($3 ~ /^UseSharedSpaces$/) print "\t" $3 ";"
++              if ($3 ~ /^_ZN9Arguments17SharedArchivePathE$/) print "\t" $3 ";"
++          }' \
++    | sort -u
 --- hotspot/make/bsd/makefiles/gcc.make
 +++ hotspot/make/bsd/makefiles/gcc.make
 @@ -35,8 +35,8 @@
@@ -579,6 +595,287 @@
   HOSTCXX = $(CXX)
   HOSTCC  = $(CC)
  endif
+@@ -110,12 +110,16 @@
+ CFLAGS += $(VM_PICFLAG)
+ CFLAGS += -fno-rtti
+ CFLAGS += -fno-exceptions
+-CFLAGS += -pthread
+-CFLAGS += -fcheck-new
+-# version 4 and above support fvisibility=hidden (matches jni_x86.h file)
+-# except 4.1.2 gives pointless warnings that can't be disabled (afaik)
+-ifneq "$(shell expr \( $(CC_VER_MAJOR) \> 4 \) \| \( \( $(CC_VER_MAJOR) = 4 \) \& \( $(CC_VER_MINOR) \>= 3 \) \))" "0"
+-CFLAGS += -fvisibility=hidden
++CFLAGS += -D_REENTRANT
++ifeq ($(USE_CLANG),)
++ CFLAGS += -fcheck-new
++ # version 4 and above support fvisibility=hidden (matches jni_x86.h file)
++ # except 4.1.2 gives pointless warnings that can't be disabled (afaik)
++ ifneq "$(shell expr \( $(CC_VER_MAJOR) \> 4 \) \| \( \( $(CC_VER_MAJOR) = 4 \) \& \( $(CC_VER_MINOR) \>= 3 \) \))" "0"
++  CFLAGS += -fvisibility=hidden
++ endif
++else
++ CFLAGS += -fvisibility=hidden
+ endif
+ 
+ ARCHFLAG = $(ARCHFLAG/$(BUILDARCH))
+@@ -163,14 +167,24 @@
+   WARNINGS_ARE_ERRORS = -Werror
+ endif
+ 
+-# Except for a few acceptable ones
+-# Since GCC 4.3, -Wconversion has changed its meanings to warn these implicit
+-# conversions which might affect the values. To avoid that, we need to turn
+-# it off explicitly. 
+-ifneq "$(shell expr \( $(CC_VER_MAJOR) \> 4 \) \| \( \( $(CC_VER_MAJOR) = 4 \) \& \( $(CC_VER_MINOR) \>= 3 \) \))" "0"
++ifeq ($(USE_CLANG), true)
++  # However we need to clean the code up before we can unrestrictedly enable this option with Clang
++  WARNINGS_ARE_ERRORS += -Wno-logical-op-parentheses -Wno-parentheses-equality -Wno-parentheses
++  WARNINGS_ARE_ERRORS += -Wno-switch -Wno-tautological-compare
++# Not yet supported by clang in Xcode 4.6.2
++# WARNINGS_ARE_ERRORS += -Wno-tautological-constant-out-of-range-compare
++  WARNINGS_ARE_ERRORS += -Wno-delete-non-virtual-dtor -Wno-deprecated -Wno-format -Wno-dynamic-class-memaccess
++  WARNINGS_ARE_ERRORS += -Wno-return-type -Wno-empty-body
++endif 
++
+ ACCEPTABLE_WARNINGS = -Wpointer-arith -Wsign-compare
+-else
+-ACCEPTABLE_WARNINGS = -Wpointer-arith -Wconversion -Wsign-compare
++
++ifeq "$(shell expr \( $(CC_VER_MAJOR) \> 4 \) \| \( \( $(CC_VER_MAJOR) = 4 \) \& \( $(CC_VER_MINOR) \>= 3 \) \))" "0"
++  # Since GCC 4.3, -Wconversion has changed its meanings to warn these implicit
++  # conversions which might affect the values. Only enable it in earlier versions.
++  ifeq ($(USE_CLANG),)
++    ACCEPTABLE_WARNINGS += -Wconversion
++  endif
+ endif
+ 
+ CFLAGS_WARN/DEFAULT = $(WARNINGS_ARE_ERRORS) $(ACCEPTABLE_WARNINGS)
+@@ -282,7 +296,11 @@
+ DEBUG_CFLAGS/ppc   = -g
+ DEBUG_CFLAGS += $(DEBUG_CFLAGS/$(BUILDARCH))
+ ifeq ($(DEBUG_CFLAGS/$(BUILDARCH)),)
+-DEBUG_CFLAGS += -gstabs
++  ifeq ($(USE_CLANG), true)
++    DEBUG_CFLAGS += -g
++  else
++    DEBUG_CFLAGS += -gstabs
++  endif
+ endif
+ 
+ # DEBUG_BINARIES overrides everything, use full -g debug information
+--- hotspot/make/bsd/makefiles/jsig.make
++++ hotspot/make/bsd/makefiles/jsig.make
+@@ -47,7 +47,7 @@
+ # cause problems with interposing. See CR: 6466665
+ # LFLAGS_JSIG += $(MAPFLAG:FILENAME=$(LIBJSIG_MAPFILE))
+ 
+-LFLAGS_JSIG += -D_GNU_SOURCE -pthread $(LDFLAGS_HASH_STYLE)
++LFLAGS_JSIG += -D_GNU_SOURCE -D_REENTRANT $(LDFLAGS_HASH_STYLE)
+ 
+ # DEBUG_BINARIES overrides everything, use full -g debug information
+ ifeq ($(DEBUG_BINARIES), true)
+--- hotspot/make/bsd/makefiles/mapfile-vers-debug
++++ hotspot/make/bsd/makefiles/mapfile-vers-debug
+@@ -1,8 +1,4 @@
+ #
+-# @(#)mapfile-vers-debug	1.18 07/10/25 16:47:35
+-#
+-
+-#
+ # Copyright (c) 2002, 2011, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+@@ -221,6 +217,7 @@
+                 JVM_SetArrayElement;
+                 JVM_SetClassSigners;
+                 JVM_SetLength;
++                JVM_SetNativeThreadName;
+                 JVM_SetPrimitiveArrayElement;
+                 JVM_SetProtectionDomain;
+                 JVM_SetSockOpt;
+@@ -244,24 +241,6 @@
+                 JVM_Yield;
+                 JVM_handle_bsd_signal;
+ 
+-                # Old reflection routines
+-                # These do not need to be present in the product build in JDK 1.4
+-                # but their code has not been removed yet because there will not
+-                # be a substantial code savings until JVM_InvokeMethod and
+-                # JVM_NewInstanceFromConstructor can also be removed; see
+-                # reflectionCompat.hpp.
+-                JVM_GetClassConstructor;
+-                JVM_GetClassConstructors;
+-                JVM_GetClassField;
+-                JVM_GetClassFields;
+-                JVM_GetClassMethod;
+-                JVM_GetClassMethods;
+-                JVM_GetField;
+-                JVM_GetPrimitiveField;
+-                JVM_NewInstance;
+-                JVM_SetField;
+-                JVM_SetPrimitiveField;
+-
+                 # debug JVM
+                 JVM_AccessVMBooleanFlag;
+                 JVM_AccessVMIntFlag;
+--- hotspot/make/bsd/makefiles/mapfile-vers-product
++++ hotspot/make/bsd/makefiles/mapfile-vers-product
+@@ -1,8 +1,4 @@
+ #
+-# @(#)mapfile-vers-product	1.19 08/02/12 10:56:37
+-#
+-
+-#
+ # Copyright (c) 2002, 2011, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+@@ -221,6 +217,7 @@
+                 JVM_SetArrayElement;
+                 JVM_SetClassSigners;
+                 JVM_SetLength;
++                JVM_SetNativeThreadName;
+                 JVM_SetPrimitiveArrayElement;
+                 JVM_SetProtectionDomain;
+                 JVM_SetSockOpt;
+@@ -244,24 +241,6 @@
+                 JVM_Yield;
+                 JVM_handle_bsd_signal;
+ 
+-                # Old reflection routines
+-                # These do not need to be present in the product build in JDK 1.4
+-                # but their code has not been removed yet because there will not
+-                # be a substantial code savings until JVM_InvokeMethod and
+-                # JVM_NewInstanceFromConstructor can also be removed; see
+-                # reflectionCompat.hpp.
+-                JVM_GetClassConstructor;
+-                JVM_GetClassConstructors;
+-                JVM_GetClassField;
+-                JVM_GetClassFields;
+-                JVM_GetClassMethod;
+-                JVM_GetClassMethods;
+-                JVM_GetField;
+-                JVM_GetPrimitiveField;
+-                JVM_NewInstance;
+-                JVM_SetField;
+-                JVM_SetPrimitiveField;
+-
+                 # miscellaneous functions
+                 jio_fprintf;
+                 jio_printf;
+--- hotspot/make/bsd/makefiles/rules.make
++++ hotspot/make/bsd/makefiles/rules.make
+@@ -126,8 +126,8 @@
+ RUN.JAR$(MAKE_VERBOSE) += >/dev/null
+ 
+ # Settings for javac
+-BOOT_SOURCE_LANGUAGE_VERSION = 6
+-BOOT_TARGET_CLASS_VERSION = 6
++BOOT_SOURCE_LANGUAGE_VERSION = 5
++BOOT_TARGET_CLASS_VERSION = 5
+ JAVAC_FLAGS = -g -encoding ascii
+ BOOTSTRAP_JAVAC_FLAGS = $(JAVAC_FLAGS) -source $(BOOT_SOURCE_LANGUAGE_VERSION) -target $(BOOT_TARGET_CLASS_VERSION)
+ 
+--- hotspot/src/cpu/x86/vm/assembler_x86.cpp
++++ hotspot/src/cpu/x86/vm/assembler_x86.cpp
+@@ -4087,7 +4087,7 @@
+ }
+ 
+ void Assembler::adcq(Register dst, Register src) {
+-  (int) prefixq_and_encode(dst->encoding(), src->encoding());
++  (void) prefixq_and_encode(dst->encoding(), src->encoding());
+   emit_arith(0x13, 0xC0, dst, src);
+ }
+ 
+@@ -4142,7 +4142,7 @@
+ }
+ 
+ void Assembler::andq(Register dst, Register src) {
+-  (int) prefixq_and_encode(dst->encoding(), src->encoding());
++  (void) prefixq_and_encode(dst->encoding(), src->encoding());
+   emit_arith(0x23, 0xC0, dst, src);
+ }
+ 
+--- hotspot/src/cpu/x86/vm/globals_x86.hpp
++++ hotspot/src/cpu/x86/vm/globals_x86.hpp
+@@ -70,11 +70,7 @@
+ define_pd_global(bool, RewriteBytecodes,     true);
+ define_pd_global(bool, RewriteFrequentPairs, true);
+ 
+-#ifdef _ALLBSD_SOURCE
+-define_pd_global(bool, UseMembar,            true);
+-#else
+ define_pd_global(bool, UseMembar,            false);
+-#endif
+ 
+ // GC Ergo Flags
+ define_pd_global(intx, CMSYoungGenPerWorker, 64*M);  // default max size of CMS young gen, per GC worker thread
+--- hotspot/src/cpu/x86/vm/jni_x86.h
++++ hotspot/src/cpu/x86/vm/jni_x86.h
+@@ -28,7 +28,7 @@
+ 
+ #if defined(SOLARIS) || defined(LINUX) || defined(_ALLBSD_SOURCE)
+ 
+-#if defined(__GNUC__) && (__GNUC__ > 4) || (__GNUC__ == 4) && (__GNUC_MINOR__ > 2)
++#if defined(__clang__) || (defined(__GNUC__) && (__GNUC__ > 4) || (__GNUC__ == 4) && (__GNUC_MINOR__ > 2))
+   #define JNIEXPORT     __attribute__((visibility("default")))
+   #define JNIIMPORT     __attribute__((visibility("default")))
+ #else
+--- hotspot/src/cpu/x86/vm/stubGenerator_x86_32.cpp
++++ hotspot/src/cpu/x86/vm/stubGenerator_x86_32.cpp
+@@ -94,7 +94,7 @@
+  private:
+ 
+ #ifdef PRODUCT
+-#define inc_counter_np(counter) (0)
++#define inc_counter_np(counter) ((void)0)
+ #else
+   void inc_counter_np_(int& counter) {
+     __ incrementl(ExternalAddress((address)&counter));
+--- hotspot/src/cpu/x86/vm/stubGenerator_x86_64.cpp
++++ hotspot/src/cpu/x86/vm/stubGenerator_x86_64.cpp
+@@ -92,7 +92,7 @@
+  private:
+ 
+ #ifdef PRODUCT
+-#define inc_counter_np(counter) (0)
++#define inc_counter_np(counter) ((void)0)
+ #else
+   void inc_counter_np_(int& counter) {
+     // This can destroy rscratch1 if counter is far from the code cache
+--- hotspot/src/os/bsd/vm/globals_bsd.hpp
++++ hotspot/src/os/bsd/vm/globals_bsd.hpp
+@@ -26,25 +26,19 @@
+ #define OS_BSD_VM_GLOBALS_BSD_HPP
+ 
+ //
+-// Defines Bsd specific flags. They are not available on other platforms.
++// Defines BSD specific flags. They are not available on other platforms.
+ //
+ #define RUNTIME_OS_FLAGS(develop, develop_pd, product, product_pd, diagnostic, notproduct) \
+   product(bool, UseOprofile, false,                                     \
+         "enable support for Oprofile profiler")                         \
+                                                                         \
+-  product(bool, UseBsdPosixThreadCPUClocks, true,                     \
+-          "enable fast Bsd Posix clocks where available")             \
+-/*  NB: The default value of UseBsdPosixThreadCPUClocks may be        \
+-    overridden in Arguments::parse_each_vm_init_arg.  */                \
+-                                                                        \
+-  product(bool, UseHugeTLBFS, false,                                    \
+-          "Use MAP_HUGETLB for large pages")                            \
+-                                                                        \
+-  product(bool, UseSHM, false,                                          \
+-          "Use SYSV shared memory for large pages")
++  product(bool, UseBsdPosixThreadCPUClocks, true,                       \
++          "enable fast BSD Posix clocks where available")
++/*  NB: The default value of UseBsdPosixThreadCPUClocks may be
++    overridden in Arguments::parse_each_vm_init_arg.  */
+ 
+ //
+-// Defines Bsd-specific default values. The flags are available on all
++// Defines BSD-specific default values. The flags are available on all
+ // platforms, but they may have different default values on other platforms.
+ //
+ define_pd_global(bool, UseLargePages, false);
 --- hotspot/src/os/bsd/vm/jsig.c
 +++ hotspot/src/os/bsd/vm/jsig.c
 @@ -140,9 +140,13 @@
@@ -701,12 +998,35 @@
 +  char signame[8];
 +  const char *s = sys_signame[signo];
 +  uint i;
-+  for (i = 0; i < strlen(s); i++)
++  for (i = 0; i < sizeof(signame) - 1 && s[i] != '\0'; i++)
 +    signame[i] = toupper(s[i]);
 +  signame[i] = '\0';
 +  jio_snprintf(buf, len, "SIG%s", signame);
 +  return true;
  }
+--- hotspot/src/os/bsd/vm/jvm_bsd.h
++++ hotspot/src/os/bsd/vm/jvm_bsd.h
+@@ -112,20 +112,6 @@
+ #define SHUTDOWN2_SIGNAL SIGINT
+ #define SHUTDOWN3_SIGNAL SIGTERM
+ 
+-#ifndef SIGRTMIN
+-#ifdef __OpenBSD__
+-#define SIGRTMIN        1
+-#else
+-#define SIGRTMIN        33
+-#endif
+-#endif
+-#ifndef SIGRTMAX
+-#ifdef __OpenBSD__
+-#define SIGRTMAX        31
+-#else
+-#define SIGRTMAX        63
+-#endif
+-#endif
+ #endif /* JVM_MD_H */
+ 
+ #endif // OS_BSD_VM_JVM_BSD_H
 --- hotspot/src/os/bsd/vm/osThread_bsd.cpp
 +++ hotspot/src/os/bsd/vm/osThread_bsd.cpp
 @@ -49,7 +49,7 @@
@@ -1122,6 +1442,15 @@
  
          // Add the appropriate client or server subdir
          len = strlen(buf);
+@@ -2817,7 +2941,7 @@
+ }
+ 
+ void os::free_memory(char *addr, size_t bytes, size_t alignment_hint) {
+-  ::madvise(addr, bytes, MADV_DONTNEED);
++  commit_memory(addr, bytes, false);
+ }
+ 
+ void os::numa_make_global(char *addr, size_t bytes) {
 @@ -2997,9 +3121,10 @@
      flags |= MAP_FIXED;
    }
@@ -1136,18 +1465,39 @@
                         flags, -1, 0);
  
    if (addr != MAP_FAILED) {
-@@ -3156,7 +3281,9 @@
- static size_t _large_page_size = 0;
+@@ -3244,9 +3369,11 @@
+ #endif
  
- void os::large_page_init() {
--#ifndef _ALLBSD_SOURCE
+ char* os::reserve_memory_special(size_t bytes, char* req_addr, bool exec) {
++#ifndef _ALLBSD_SOURCE
+   // "exec" is passed in but not used.  Creating the shared image for
+   // the code cache doesn't have an SHM_X executable permission to check.
+   assert(UseLargePages && UseSHM, "only for SHM large pages");
++#endif
+ 
+   key_t key = IPC_PRIVATE;
+   char *addr;
+@@ -3321,11 +3448,19 @@
+ // with SysV SHM the entire memory region must be allocated as shared
+ // memory.
+ bool os::can_commit_large_page_memory() {
 +#ifdef _ALLBSD_SOURCE
-+  UseLargePages = UseHugeTLBFS = UseSHM = false;
++  return false;
 +#else
-   if (!UseLargePages) {
-     UseHugeTLBFS = false;
-     UseSHM = false;
-@@ -3654,8 +3781,8 @@
+   return UseHugeTLBFS;
++#endif
+ }
+ 
+ bool os::can_execute_large_page_memory() {
++#ifdef _ALLBSD_SOURCE
++  return false;
++#else
+   return UseHugeTLBFS;
++#endif
+ }
+ 
+ // Reserve memory at an arbitrary address, only if that area is
+@@ -3654,8 +3789,8 @@
    return OS_OK;
  #else
    int ret = setpriority(PRIO_PROCESS, thread->osthread()->thread_id(), newpri);
@@ -1157,7 +1507,7 @@
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -4171,7 +4298,7 @@
+@@ -4171,7 +4306,7 @@
    }
  }
  
@@ -1166,7 +1516,71 @@
  // This is the fastest way to get thread cpu time on Bsd.
  // Returns cpu time (user+sys) for any thread, not only for current.
  // POSIX compliant clocks are implemented in the kernels 2.6.16+.
-@@ -4450,7 +4577,7 @@
+@@ -4188,6 +4323,7 @@
+ }
+ #endif
+ 
++#ifndef _ALLBSD_SOURCE
+ /////
+ // glibc on Bsd platform uses non-documented flag
+ // to indicate, that some special sort of signal
+@@ -4198,6 +4334,7 @@
+ #undef SIGNIFICANT_SIGNAL_MASK
+ #endif
+ #define SIGNIFICANT_SIGNAL_MASK (~0x04000000)
++#endif
+ 
+ static const char* get_signal_handler_name(address handler,
+                                            char* buf, int buflen) {
+@@ -4222,8 +4359,10 @@
+ 
+   sigaction(sig, NULL, &sa);
+ 
++#ifndef _ALLBSD_SOURCE
+   // See comment for SIGNIFICANT_SIGNAL_MASK define
+   sa.sa_flags &= SIGNIFICANT_SIGNAL_MASK;
++#endif
+ 
+   st->print("%s: ", os::exception_name(sig, buf, buflen));
+ 
+@@ -4245,7 +4384,11 @@
+   // May be, handler was resetted by VMError?
+   if(rh != NULL) {
+     handler = rh;
++#ifdef _ALLBSD_SOURCE
++    sa.sa_flags = VMError::get_resetted_sigflags(sig);
++#else
+     sa.sa_flags = VMError::get_resetted_sigflags(sig) & SIGNIFICANT_SIGNAL_MASK;
++#endif
+   }
+ 
+   st->print(", sa_flags="   PTR32_FORMAT, sa.sa_flags);
+@@ -4320,7 +4463,9 @@
+   os_sigaction(sig, (struct sigaction*)NULL, &act);
+ 
+ 
++#ifndef _ALLBSD_SOURCE
+   act.sa_flags &= SIGNIFICANT_SIGNAL_MASK;
++#endif
+ 
+   address thisHandler = (act.sa_flags & SA_SIGINFO)
+     ? CAST_FROM_FN_PTR(address, act.sa_sigaction)
+@@ -4381,6 +4526,14 @@
+ 
+ extern bool signal_name(int signo, char* buf, size_t len);
+ 
++#ifndef SIGRTMAX
++#ifdef __OpenBSD__
++#define SIGRTMAX        31
++#else
++#define SIGRTMAX        63
++#endif
++#endif
++
+ const char* os::exception_name(int exception_code, char* buf, size_t size) {
+   if (0 < exception_code && exception_code <= SIGRTMAX) {
+     // signal
+@@ -4450,7 +4603,7 @@
  // this is called _after_ the global arguments have been parsed
  jint os::init_2(void)
  {
@@ -1175,7 +1589,7 @@
    Bsd::fast_thread_clock_init();
  #endif
  
-@@ -4634,6 +4761,20 @@
+@@ -4634,6 +4787,20 @@
  
  int os::active_processor_count() {
  #ifdef _ALLBSD_SOURCE
@@ -1196,7 +1610,7 @@
    return _processor_count;
  #else
    // Bsd doesn't yet have a (official) notion of processor sets,
-@@ -5033,7 +5174,7 @@
+@@ -5033,7 +5200,7 @@
    return munmap(addr, bytes) == 0;
  }
  
@@ -1205,7 +1619,7 @@
  static jlong slow_thread_cpu_time(Thread *thread, bool user_sys_cpu_time);
  
  static clockid_t thread_cpu_clockid(Thread* thread) {
-@@ -5057,7 +5198,7 @@
+@@ -5057,7 +5224,7 @@
  jlong os::current_thread_cpu_time() {
  #ifdef __APPLE__
    return os::thread_cpu_time(Thread::current(), true /* user + sys */);
@@ -1214,7 +1628,7 @@
    if (os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(CLOCK_THREAD_CPUTIME_ID);
    } else {
-@@ -5068,7 +5209,7 @@
+@@ -5068,7 +5235,7 @@
  }
  
  jlong os::thread_cpu_time(Thread* thread) {
@@ -1223,7 +1637,7 @@
    // consistent with what current_thread_cpu_time() returns
    if (os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(thread_cpu_clockid(thread));
-@@ -5081,7 +5222,7 @@
+@@ -5081,7 +5248,7 @@
  jlong os::current_thread_cpu_time(bool user_sys_cpu_time) {
  #ifdef __APPLE__
    return os::thread_cpu_time(Thread::current(), user_sys_cpu_time);
@@ -1232,7 +1646,7 @@
    if (user_sys_cpu_time && os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(CLOCK_THREAD_CPUTIME_ID);
    } else {
-@@ -5110,7 +5251,7 @@
+@@ -5110,7 +5277,7 @@
    } else {
      return ((jlong)tinfo.user_time.seconds * 1000000000) + ((jlong)tinfo.user_time.microseconds * (jlong)1000);
    }
@@ -1241,7 +1655,7 @@
    if (user_sys_cpu_time && os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(thread_cpu_clockid(thread));
    } else {
-@@ -5119,12 +5260,15 @@
+@@ -5119,12 +5286,15 @@
  #endif
  }
  
@@ -1258,7 +1672,7 @@
    static bool proc_pid_cpu_avail = true;
    static bool proc_task_unchecked = true;
    static const char *proc_stat_path = "/proc/%d/stat";
-@@ -5208,6 +5352,7 @@
+@@ -5208,6 +5378,7 @@
    } else {
      return (jlong)user_time * (1000000000 / clock_tics_per_sec);
    }
@@ -1266,7 +1680,7 @@
  }
  #endif
  
-@@ -5226,7 +5371,7 @@
+@@ -5226,7 +5397,7 @@
  }
  
  bool os::is_thread_cpu_time_supported() {
@@ -1731,6 +2145,35 @@
      return arena->Amalloc(size);
    }
    void  operator delete(void* p) {} // nothing to do
+--- hotspot/src/share/vm/c1/c1_IR.cpp
++++ hotspot/src/share/vm/c1/c1_IR.cpp
+@@ -499,7 +499,7 @@
+   _loop_map(0, 0),          // initialized later with correct size
+   _compilation(c)
+ {
+-  TRACE_LINEAR_SCAN(2, "***** computing linear-scan block order");
++  TRACE_LINEAR_SCAN(2, tty->print_cr("***** computing linear-scan block order"));
+ 
+   init_visited();
+   count_edges(start_block, NULL);
+@@ -665,7 +665,7 @@
+ }
+ 
+ void ComputeLinearScanOrder::assign_loop_depth(BlockBegin* start_block) {
+-  TRACE_LINEAR_SCAN(3, "----- computing loop-depth and weight");
++  TRACE_LINEAR_SCAN(3, tty->print_cr("----- computing loop-depth and weight"));
+   init_visited();
+ 
+   assert(_work_list.is_empty(), "work list must be empty before processing");
+@@ -839,7 +839,7 @@
+ }
+ 
+ void ComputeLinearScanOrder::compute_order(BlockBegin* start_block) {
+-  TRACE_LINEAR_SCAN(3, "----- computing final block order");
++  TRACE_LINEAR_SCAN(3, tty->print_cr("----- computing final block order"));
+ 
+   // the start block is always the first block in the linear scan order
+   _linear_scan_order = new BlockList(_num_blocks);
 --- hotspot/src/share/vm/c1/c1_Instruction.hpp
 +++ hotspot/src/share/vm/c1/c1_Instruction.hpp
 @@ -311,7 +311,7 @@
@@ -1751,6 +2194,40 @@
      Compilation* c = Compilation::current();
      void* res = c->arena()->Amalloc(size);
      ((BlockBegin*)res)->_id = c->get_next_id();
+--- hotspot/src/share/vm/ci/ciUtilities.hpp
++++ hotspot/src/share/vm/ci/ciUtilities.hpp
+@@ -93,7 +93,7 @@
+     CLEAR_PENDING_EXCEPTION;                     \
+     return (result);                             \
+   }                                              \
+-  (0
++  (void)(0
+ 
+ #define KILL_COMPILE_ON_ANY                      \
+   THREAD);                                       \
+@@ -101,7 +101,7 @@
+     fatal("unhandled ci exception");             \
+     CLEAR_PENDING_EXCEPTION;                     \
+   }                                              \
+-(0
++(void)(0
+ 
+ 
+ inline const char* bool_to_str(bool b) {
+--- hotspot/src/share/vm/classfile/verifier.hpp
++++ hotspot/src/share/vm/classfile/verifier.hpp
+@@ -84,9 +84,9 @@
+ // These macros are used similarly to CHECK macros but also check
+ // the status of the verifier and return if that has an error.
+ #define CHECK_VERIFY(verifier) \
+-  CHECK); if ((verifier)->has_error()) return; (0
++  CHECK); if ((verifier)->has_error()) return; ((void)0
+ #define CHECK_VERIFY_(verifier, result) \
+-  CHECK_(result)); if ((verifier)->has_error()) return (result); (0
++  CHECK_(result)); if ((verifier)->has_error()) return (result); ((void)0
+ 
+ // A new instance of this class is created for each class being verified
+ class ClassVerifier : public StackObj {
 --- hotspot/src/share/vm/code/codeBlob.cpp
 +++ hotspot/src/share/vm/code/codeBlob.cpp
 @@ -242,7 +242,7 @@
@@ -1819,6 +2296,17 @@
      assert(ignore == sizeof(DIR_Chunk), "");
      if (dir->_next_chunk >= dir->_next_chunk_limit) {
        const int CHUNK = 100;
+--- hotspot/src/share/vm/code/dependencies.cpp
++++ hotspot/src/share/vm/code/dependencies.cpp
+@@ -932,7 +932,7 @@
+   assert(changes.involves_context(context_type), "irrelevant dependency");
+   klassOop new_type = changes.new_type();
+ 
+-  count_find_witness_calls();
++  (void)count_find_witness_calls();
+   NOT_PRODUCT(deps_find_witness_singles++);
+ 
+   // Current thread must be in VM (not native mode, as in CI):
 --- hotspot/src/share/vm/code/nmethod.cpp
 +++ hotspot/src/share/vm/code/nmethod.cpp
 @@ -784,7 +784,7 @@
@@ -1830,6 +2318,16 @@
    // Always leave some room in the CodeCache for I2C/C2I adapters
    if (CodeCache::largest_free_block() < CodeCacheMinimumFreeSpace) return NULL;
    return CodeCache::allocate(nmethod_size);
+@@ -2488,7 +2488,8 @@
+                       relocation_begin()-1+ip[1]);
+       for (; ip < index_end; ip++)
+         tty->print_cr("  (%d ?)", ip[0]);
+-      tty->print_cr("          @" INTPTR_FORMAT ": index_size=%d", ip, *ip++);
++      tty->print_cr("          @" INTPTR_FORMAT ": index_size=%d", ip, *ip);
++      ip++;
+       tty->print_cr("reloc_end @" INTPTR_FORMAT ":", ip);
+     }
+   }
 --- hotspot/src/share/vm/code/nmethod.hpp
 +++ hotspot/src/share/vm/code/nmethod.hpp
 @@ -263,7 +263,7 @@
@@ -1843,6 +2341,24 @@
    // Returns true if this thread changed the state of the nmethod or
 --- hotspot/src/share/vm/code/relocInfo.hpp
 +++ hotspot/src/share/vm/code/relocInfo.hpp
+@@ -371,7 +371,7 @@
+   // "immediate" in the prefix header word itself.  This optimization
+   // is invisible outside this module.)
+ 
+-  inline friend relocInfo prefix_relocInfo(int datalen = 0);
++  inline friend relocInfo prefix_relocInfo(int datalen);
+ 
+  protected:
+   // an immediate relocInfo optimizes a prefix with one 10-bit unsigned value
+@@ -466,7 +466,7 @@
+   return relocInfo(relocInfo::none, relocInfo::offset_limit() - relocInfo::offset_unit);
+ }
+ 
+-inline relocInfo prefix_relocInfo(int datalen) {
++inline relocInfo prefix_relocInfo(int datalen = 0) {
+   assert(relocInfo::fits_into_immediate(datalen), "datalen in limits");
+   return relocInfo(relocInfo::data_prefix_tag, relocInfo::RAW_BITS, relocInfo::datalen_tag | datalen);
+ }
 @@ -686,7 +686,7 @@
    }
  
@@ -1874,6 +2390,20 @@
  
    VtableStub(bool is_vtable_stub, int index)
          : _next(NULL), _is_vtable_stub(is_vtable_stub),
+--- hotspot/src/share/vm/gc_implementation/g1/g1CollectedHeap.hpp
++++ hotspot/src/share/vm/gc_implementation/g1/g1CollectedHeap.hpp
+@@ -1858,8 +1858,9 @@
+       _cm->grayRegionIfNecessary(MemRegion(_real_start_word, _real_end_word));
+ 
+ #ifndef PRODUCT
+-      if (use_local_bitmaps && verify_local_bitmaps)
+-        verify();
++#if (use_local_bitmaps && verify_local_bitmaps)
++      verify();
++#endif
+ #endif // PRODUCT
+     } else {
+       assert(_real_start_word == NULL && _real_end_word == NULL, "invariant");
 --- hotspot/src/share/vm/gc_implementation/shared/gcUtil.hpp
 +++ hotspot/src/share/vm/gc_implementation/shared/gcUtil.hpp
 @@ -144,9 +144,9 @@
@@ -2013,6 +2543,17 @@
      address res = (address)resource_allocate_bytes(size, AllocFailStrategy::RETURN_NULL);
      DEBUG_ONLY(if (res != NULL) set_allocation_type(res, RESOURCE_AREA);)
      return res;
+--- hotspot/src/share/vm/memory/cardTableModRefBS.cpp
++++ hotspot/src/share/vm/memory/cardTableModRefBS.cpp
+@@ -389,7 +389,7 @@
+   }
+   // Touch the last card of the covered region to show that it
+   // is committed (or SEGV).
+-  debug_only(*byte_for(_covered[ind].last());)
++  debug_only((void) (*byte_for(_covered[ind].last()));)
+   debug_only(verify_guard();)
+ }
+ 
 --- hotspot/src/share/vm/memory/memRegion.hpp
 +++ hotspot/src/share/vm/memory/memRegion.hpp
 @@ -99,13 +99,13 @@
@@ -2032,6 +2573,19 @@
          return ResourceObj::operator new(size);
    }
  
+--- hotspot/src/share/vm/memory/universe.cpp
++++ hotspot/src/share/vm/memory/universe.cpp
+@@ -657,7 +657,9 @@
+   if (vt) vt->initialize_vtable(false, CHECK);
+   if (ko->oop_is_instance()) {
+     instanceKlass* ik = (instanceKlass*)ko;
+-    for (KlassHandle s_h(THREAD, ik->subklass()); s_h() != NULL; s_h = (THREAD, s_h()->klass_part()->next_sibling())) {
++    for (KlassHandle s_h(THREAD, ik->subklass());
++         s_h() != NULL;
++         s_h = KlassHandle(THREAD, s_h()->klass_part()->next_sibling())) {
+       reinitialize_vtable_of(s_h, CHECK);
+     }
+   }
 --- hotspot/src/share/vm/oops/klass.cpp
 +++ hotspot/src/share/vm/oops/klass.cpp
 @@ -181,7 +181,7 @@
@@ -2109,6 +2663,53 @@
  
    // Opcode
    virtual uint opcode() const = 0;
+--- hotspot/src/share/vm/opto/memnode.cpp
++++ hotspot/src/share/vm/opto/memnode.cpp
+@@ -1933,6 +1933,11 @@
+       if (t != NULL) {
+         // constant oop => constant klass
+         if (offset == java_lang_Class::array_klass_offset_in_bytes()) {
++          if (t->is_void()) {
++            // We cannot create a void array. Since void is a primitive type return null
++            // klass. Users of this result need to do a null check on the returned klass.
++            return TypePtr::NULL_PTR;
++          }
+           return TypeKlassPtr::make(ciArrayKlass::make(t));
+         }
+         if (!t->is_klass()) {
+@@ -4164,7 +4169,7 @@
+   }
+ }
+ #else // !ASSERT
+-#define verify_memory_slice(m,i,n) (0)  // PRODUCT version is no-op
++#define verify_memory_slice(m,i,n) (void)(0)  // PRODUCT version is no-op
+ #endif
+ 
+ 
+--- hotspot/src/share/vm/opto/node.cpp
++++ hotspot/src/share/vm/opto/node.cpp
+@@ -284,6 +284,10 @@
+ #ifdef _MSC_VER // the IDX_INIT hack falls foul of warning C4355
+ #pragma warning( disable:4355 ) // 'this' : used in base member initializer list
+ #endif
++#ifdef __clang__
++#pragma clang diagnostic push
++#pragma GCC diagnostic ignored "-Wuninitialized"
++#endif
+ 
+ // Out-of-line code from node constructors.
+ // Executed only when extra debug info. is being passed around.
+@@ -459,6 +463,10 @@
+   _in[6] = n6; if (n6 != NULL) n6->add_out((Node *)this);
+ }
+ 
++#ifdef __clang__
++#pragma clang diagnostic pop
++#endif
++
+ 
+ //------------------------------clone------------------------------------------
+ // Clone a Node.
 --- hotspot/src/share/vm/opto/node.hpp
 +++ hotspot/src/share/vm/opto/node.hpp
 @@ -207,7 +207,7 @@
@@ -2129,6 +2730,18 @@
      Node* n = (Node*)C->node_arena()->Amalloc_D(x + y*sizeof(void*));
      n->_in = (Node**)(((char*)n) + x);
  #ifdef ASSERT
+--- hotspot/src/share/vm/opto/parse3.cpp
++++ hotspot/src/share/vm/opto/parse3.cpp
+@@ -487,7 +487,8 @@
+                           fun, NULL, TypeRawPtr::BOTTOM,
+                           makecon(TypeKlassPtr::make(array_klass)),
+                           length[0], length[1], length[2],
+-                          length[3], length[4]);
++                          (ndimensions > 2) ? length[3] : NULL,
++                          (ndimensions > 3) ? length[4] : NULL);
+   } else {
+     // Create a java array for dimension sizes
+     Node* dims = NULL;
 --- hotspot/src/share/vm/opto/type.hpp
 +++ hotspot/src/share/vm/opto/type.hpp
 @@ -144,7 +144,7 @@
@@ -2140,6 +2753,40 @@
      Compile* compile = Compile::current();
      compile->set_type_last_size(x);
      void *temp = compile->type_arena()->Amalloc_D(x);
+--- hotspot/src/share/vm/prims/forte.cpp
++++ hotspot/src/share/vm/prims/forte.cpp
+@@ -635,7 +635,7 @@
+                             void* null_argument_3);
+ #pragma weak collector_func_load
+ #define collector_func_load(x0,x1,x2,x3,x4,x5,x6) \
+-        ( collector_func_load ? collector_func_load(x0,x1,x2,x3,x4,x5,x6),0 : 0 )
++        ( collector_func_load ? collector_func_load(x0,x1,x2,x3,x4,x5,x6),(void)0 : (void)0 )
+ #endif // __APPLE__
+ #endif // !_WINDOWS
+ 
+--- hotspot/src/share/vm/runtime/arguments.cpp
++++ hotspot/src/share/vm/runtime/arguments.cpp
+@@ -2499,7 +2499,9 @@
+          FLAG_SET_CMDLINE(uintx, MaxNewSize, NewSize);
+       }
+ 
++#ifndef _ALLBSD_SOURCE  // UseLargePages is not yet supported on BSD.
+       FLAG_SET_DEFAULT(UseLargePages, true);
++#endif
+ 
+       // Increase some data structure sizes for efficiency
+       FLAG_SET_CMDLINE(uintx, BaseFootPrintEstimate, MaxHeapSize);
+@@ -3046,6 +3048,10 @@
+   UNSUPPORTED_OPTION(UseG1GC, "G1 GC");
+ #endif
+ 
++#ifdef _ALLBSD_SOURCE  // UseLargePages is not yet supported on BSD.
++  UNSUPPORTED_OPTION(UseLargePages, "-XX:+UseLargePages");
++#endif
++
+ #ifndef PRODUCT
+   if (TraceBytecodesAt != 0) {
+     TraceBytecodes = true;
 --- hotspot/src/share/vm/runtime/fprofiler.cpp
 +++ hotspot/src/share/vm/runtime/fprofiler.cpp
 @@ -264,7 +264,7 @@
@@ -2204,6 +2851,17 @@
      void operator delete (void * a) ;
  
    public:
+--- hotspot/src/share/vm/runtime/sharedRuntime.cpp
++++ hotspot/src/share/vm/runtime/sharedRuntime.cpp
+@@ -2778,7 +2778,7 @@
+   // ResourceObject, so do not put any ResourceMarks in here.
+   char *s = sig->as_C_string();
+   int len = (int)strlen(s);
+-  *s++; len--;                  // Skip opening paren
++  s++; len--;                   // Skip opening paren
+   char *t = s+len;
+   while( *(--t) != ')' ) ;      // Find close paren
+ 
 --- hotspot/src/share/vm/runtime/thread.cpp
 +++ hotspot/src/share/vm/runtime/thread.cpp
 @@ -170,7 +170,7 @@
@@ -2226,6 +2884,70 @@
    void  operator delete(void* p);
   private:
  
+--- hotspot/src/share/vm/services/diagnosticArgument.cpp
++++ hotspot/src/share/vm/services/diagnosticArgument.cpp
+@@ -191,7 +191,7 @@
+   } else {
+     _value._time = 0;
+     _value._nanotime = 0;
+-    strcmp(_value._unit, "ns");
++    strcpy(_value._unit, "ns");
+   }
+ }
+ 
+--- hotspot/src/share/vm/utilities/exceptions.hpp
++++ hotspot/src/share/vm/utilities/exceptions.hpp
+@@ -182,15 +182,15 @@
+ #define HAS_PENDING_EXCEPTION                    (((ThreadShadow*)THREAD)->has_pending_exception())
+ #define CLEAR_PENDING_EXCEPTION                  (((ThreadShadow*)THREAD)->clear_pending_exception())
+ 
+-#define CHECK                                    THREAD); if (HAS_PENDING_EXCEPTION) return       ; (0
+-#define CHECK_(result)                           THREAD); if (HAS_PENDING_EXCEPTION) return result; (0
++#define CHECK                                    THREAD); if (HAS_PENDING_EXCEPTION) return       ; (void)(0
++#define CHECK_(result)                           THREAD); if (HAS_PENDING_EXCEPTION) return result; (void)(0
+ #define CHECK_0                                  CHECK_(0)
+ #define CHECK_NH                                 CHECK_(Handle())
+ #define CHECK_NULL                               CHECK_(NULL)
+ #define CHECK_false                              CHECK_(false)
+ 
+-#define CHECK_AND_CLEAR                         THREAD); if (HAS_PENDING_EXCEPTION) { CLEAR_PENDING_EXCEPTION; return;        } (0
+-#define CHECK_AND_CLEAR_(result)                THREAD); if (HAS_PENDING_EXCEPTION) { CLEAR_PENDING_EXCEPTION; return result; } (0
++#define CHECK_AND_CLEAR                         THREAD); if (HAS_PENDING_EXCEPTION) { CLEAR_PENDING_EXCEPTION; return;        } (void)(0
++#define CHECK_AND_CLEAR_(result)                THREAD); if (HAS_PENDING_EXCEPTION) { CLEAR_PENDING_EXCEPTION; return result; } (void)(0
+ #define CHECK_AND_CLEAR_0                       CHECK_AND_CLEAR_(0)
+ #define CHECK_AND_CLEAR_NH                      CHECK_AND_CLEAR_(Handle())
+ #define CHECK_AND_CLEAR_NULL                    CHECK_AND_CLEAR_(NULL)
+@@ -263,7 +263,7 @@
+     CLEAR_PENDING_EXCEPTION;               \
+     ex->print();                           \
+     ShouldNotReachHere();                  \
+-  } (0
++  } (void)(0
+ 
+ // ExceptionMark is a stack-allocated helper class for local exception handling.
+ // It is used with the EXCEPTION_MARK macro.
+--- hotspot/src/share/vm/utilities/globalDefinitions.hpp
++++ hotspot/src/share/vm/utilities/globalDefinitions.hpp
+@@ -421,7 +421,7 @@
+ // Utility macros for compilers
+ // used to silence compiler warnings
+ 
+-#define Unused_Variable(var) var
++#define Unused_Variable(var) (void)(var)
+ 
+ 
+ //----------------------------------------------------------------------------------------------------
+--- hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp
++++ hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp
+@@ -260,7 +260,7 @@
+ #endif
+ 
+ // GCC 4.3 does not allow 0.0/0.0 to produce a NAN value
+-#if (__GNUC__ == 4) && (__GNUC_MINOR__ > 2)
++#if defined(__clang__) || ((__GNUC__ == 4) && (__GNUC_MINOR__ > 2))
+ #define CAN_USE_NAN_DEFINE 1
+ #endif
+ 
 --- hotspot/src/share/vm/utilities/macros.hpp
 +++ hotspot/src/share/vm/utilities/macros.hpp
 @@ -177,6 +177,14 @@
@@ -2243,6 +2965,96 @@
  #if defined(IA32) || defined(AMD64)
  #define X86
  #define X86_ONLY(code) code
+--- hotspot/src/share/vm/utilities/taskqueue.hpp
++++ hotspot/src/share/vm/utilities/taskqueue.hpp
+@@ -334,8 +334,12 @@ bool GenericTaskQueue<E, N>::push_slow(E
+   if (dirty_n_elems == N - 1) {
+     // Actually means 0, so do the push.
+     uint localBot = _bottom;
+-    // g++ complains if the volatile result of the assignment is unused.
+-    const_cast<E&>(_elems[localBot] = t);
++    // g++ complains if the volatile result of the assignment is
++    // unused, so we cast the volatile away.  We cannot cast directly
++    // to void, because gcc treats that as not using the result of the
++    // assignment.  However, casting to E& means that we trigger an
++    // unused-value warning.  So, we cast the E& to void.
++    (void)const_cast<E&>(_elems[localBot] = t);
+     OrderAccess::release_store(&_bottom, increment_index(localBot));
+     TASKQUEUE_STATS_ONLY(stats.record_push());
+     return true;
+@@ -385,13 +389,24 @@ bool GenericTaskQueue<E, N>::pop_local_s
+ template<class E, unsigned int N>
+ bool GenericTaskQueue<E, N>::pop_global(E& t) {
+   Age oldAge = _age.get();
+-  uint localBot = _bottom;
++  // Architectures with weak memory model require a barrier here
++  // to guarantee that bottom is not older than age,
++  // which is crucial for the correctness of the algorithm.
++#if !(defined SPARC || defined IA32 || defined AMD64)
++  OrderAccess::fence();
++#endif
++  uint localBot = OrderAccess::load_acquire((volatile juint*)&_bottom); 
+   uint n_elems = size(localBot, oldAge.top());
+   if (n_elems == 0) {
+     return false;
+   }
+ 
+-  const_cast<E&>(t = _elems[oldAge.top()]);
++  // g++ complains if the volatile result of the assignment is
++  // unused, so we cast the volatile away.  We cannot cast directly
++  // to void, because gcc treats that as not using the result of the
++  // assignment.  However, casting to E& means that we trigger an
++  // unused-value warning.  So, we cast the E& to void.
++  (void) const_cast<E&>(t = _elems[oldAge.top()]);
+   Age newAge(oldAge);
+   newAge.increment();
+   Age resAge = _age.cmpxchg(newAge, oldAge);
+@@ -668,13 +683,17 @@ public:
+ template<class E, unsigned int N> inline bool
+ GenericTaskQueue<E, N>::push(E t) {
+   uint localBot = _bottom;
+-  assert((localBot >= 0) && (localBot < N), "_bottom out of range.");
++  assert(localBot < N, "_bottom out of range.");
+   idx_t top = _age.top();
+   uint dirty_n_elems = dirty_size(localBot, top);
+   assert(dirty_n_elems < N, "n_elems out of range.");
+   if (dirty_n_elems < max_elems()) {
+-    // g++ complains if the volatile result of the assignment is unused.
+-    const_cast<E&>(_elems[localBot] = t);
++    // g++ complains if the volatile result of the assignment is
++    // unused, so we cast the volatile away.  We cannot cast directly
++    // to void, because gcc treats that as not using the result of the
++    // assignment.  However, casting to E& means that we trigger an
++    // unused-value warning.  So, we cast the E& to void.
++    (void) const_cast<E&>(_elems[localBot] = t);
+     OrderAccess::release_store(&_bottom, increment_index(localBot));
+     TASKQUEUE_STATS_ONLY(stats.record_push());
+     return true;
+@@ -698,7 +717,12 @@ GenericTaskQueue<E, N>::pop_local(E& t) 
+   // This is necessary to prevent any read below from being reordered
+   // before the store just above.
+   OrderAccess::fence();
+-  const_cast<E&>(t = _elems[localBot]);
++  // g++ complains if the volatile result of the assignment is
++  // unused, so we cast the volatile away.  We cannot cast directly
++  // to void, because gcc treats that as not using the result of the
++  // assignment.  However, casting to E& means that we trigger an
++  // unused-value warning.  So, we cast the E& to void.
++  (void) const_cast<E&>(t = _elems[localBot]);
+   // This is a second read of "age"; the "size()" above is the first.
+   // If there's still at least one element in the queue, based on the
+   // "_bottom" and "age" we've read, then there can be no interference with
+--- hotspot/src/share/vm/utilities/vmError.cpp
++++ hotspot/src/share/vm/utilities/vmError.cpp
+@@ -1043,7 +1043,7 @@
+   const char* ptr = OnOutOfMemoryError;
+   while ((cmd = next_OnError_command(buffer, sizeof(buffer), &ptr)) != NULL){
+     tty->print("#   Executing ");
+-#if defined(LINUX)
++#if defined(LINUX) || defined(_ALLBSD_SOURCE)
+     tty->print  ("/bin/sh -c ");
+ #elif defined(SOLARIS)
+     tty->print  ("/usr/bin/sh -c ");
 --- jdk/make/com/sun/java/pack/Makefile
 +++ jdk/make/com/sun/java/pack/Makefile
 @@ -61,6 +61,7 @@
@@ -2530,17 +3342,6 @@
  #
  # Japanese manpages
  #
---- jdk/make/common/Defs-linux.gmk
-+++ jdk/make/common/Defs-linux.gmk
-@@ -318,7 +318,7 @@
- override LIBTHREAD               =
- override MOOT_PRIORITIES         = true
- override NO_INTERRUPTIBLE_IO     = true
--override OPENWIN_HOME            = /usr/X11R6
-+override OPENWIN_HOME            = $(X11_PATH)
- ifeq ($(ARCH), amd64)
- override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
- else
 --- jdk/make/common/Defs.gmk
 +++ jdk/make/common/Defs.gmk
 @@ -117,6 +117,24 @@

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		python33
-PORTVERSION=		3.3.3
-PORTREVISION=		2
+PORTVERSION=		3.3.4
 CATEGORIES=		lang python ipv6
 MASTER_SITES=		PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -21,7 +20,7 @@ MAKE_ENV=		VPATH="${PYTHON_WRKSRC}"
 
 INSTALL_TARGET=		altinstall
 
-USES=		gmake
+USES=		gmake readline
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
@@ -212,5 +211,8 @@ post-install:
 .endif
 
 	@${CAT} ${PKGMESSAGE}
+
+regression-test: build
+	@cd ${WRKSRC} && ${GMAKE} TESTOPTS=-j${MAKE_JOBS_NUMBER} test
 
 .include <bsd.port.post.mk>

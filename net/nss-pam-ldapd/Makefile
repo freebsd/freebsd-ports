@@ -3,7 +3,7 @@
 
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.8.13
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
     			http://mirrors.rit.edu/zi/
@@ -49,7 +49,6 @@ CONFLICTS+=		nss-pam-ldapd-sasl-[0-9]*
 USERS=			nslcd
 GROUPS=			nslcd
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CPPFLAGS+=		-I${LOCALBASE}/include
@@ -78,7 +77,6 @@ CONFIGURE_ARGS+=	--disable-sasl
 CONFIGURE_ARGS+=	--enable-pam \
 			--with-pam-seclib-dir=${PREFIX}/lib \
 			--with-pam-ldap-soname=pam_ldap.so.${PAM_LDAP_SHMAJOR}
-MAN8+=			pam_ldap.8
 CONFLICTS+=		pam_ldap-1.*
 PLIST_SUB+=		PAM=""
 .else
@@ -106,8 +104,6 @@ PLIST_SUB+=		NSLCD="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-nslcd
 PLIST_SUB+=		NSLCD=""
-MAN5+=			nslcd.conf.5
-MAN8+=			nslcd.8
 .endif
 
 post-extract:
@@ -122,12 +118,12 @@ show-pkgmessage::
 # We take care of the sample file, upstream install target installs the actual
 # file if it does not exist yet.
 post-install: show-pkgmessage
-	@${INSTALL_DATA} ${WRKSRC}/nslcd.conf ${PREFIX}/etc/nslcd.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/nslcd.conf ${STAGEDIR}${PREFIX}/etc/nslcd.conf.sample
 .if ${PORT_OPTIONS:MNSS}
-	@${LN} -fs nss_ldap.so.${NSS_LDAP_SHMAJOR} ${PREFIX}/lib/nss_ldap.so
+	@${LN} -fs nss_ldap.so.${NSS_LDAP_SHMAJOR} ${STAGEDIR}${PREFIX}/lib/nss_ldap.so
 .endif
 .if ${PORT_OPTIONS:MPAM}
-	@${LN} -fs pam_ldap.so.${PAM_LDAP_SHMAJOR} ${PREFIX}/lib/pam_ldap.so
+	@${LN} -fs pam_ldap.so.${PAM_LDAP_SHMAJOR} ${STAGEDIR}${PREFIX}/lib/pam_ldap.so
 .endif
 
 .include <bsd.port.mk>

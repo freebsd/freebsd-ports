@@ -26,7 +26,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENV=	ac_cv_func_gettext=yes
 NLS_CONFIGURE_OFF=	--without-gettext
 
-.include <bsd.port.options.mk> 
+DOCS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile.in
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -40,10 +40,6 @@ post-patch:
 		 /pthread_create/d ; \
 		 s|ncurses curses|curses| ; \
 		 s|ncurses.h||' ${WRKSRC}/configure.ac
-
-.if ! ${PORT_OPTIONS:MDOCS}
-EXTRA_PATCHES+=${FILESDIR}/extra-patch-Makefile.in
-.endif
 
 post-install:
 .for i in fish fish_indent fish_pager fishd mimedb

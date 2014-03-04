@@ -9,12 +9,11 @@ MASTER_SITES=	SF/gkrellmoon/gkrellmoon/${PORTVERSION}
 DISTNAME=	gkrellmoon-${PORTVERSION}
 
 MAINTAINER=	w@wrzask.pl
-COMMENT=	A moon clock plugin for Gkrellm2
+COMMENT=	Moon clock plugin for Gkrellm2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-NO_STAGE=	yes
 USES=		pkgconfig
 USE_GNOME=	gtk20
 
@@ -22,15 +21,11 @@ ALL_TARGET=	gkrellmoon.so
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 	${INSTALL_DATA} ${WRKSRC}/gkrellmoon.so \
-		${PREFIX}/libexec/gkrellm2/plugins
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
-		${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}
-.endif #NOPORTDOCS
+		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The JDBC drivers for Oracle 9i
 
-RESTRICTED=	Must be downloaded direct from Oracle via www interface
+RESTRICTED=	This software is under license and export controls
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -27,7 +27,6 @@ OCRS_FILE=	ocrs12.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${CLASSES}	\
 		%%JAVAJARDIR%%/${OCRS_FILE}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${CLASSES:S|^|${_DISTDIR}/|}})	\
@@ -36,6 +35,6 @@ IGNORE=Please manually download ${DISTFILES} from http://www.oracle.com/technetw
 .endif
 
 do-install:
-	${INSTALL_DATA} ${DISTFILES:S|^|${_DISTDIR}/|} ${JAVAJARDIR}
+	${INSTALL_DATA} ${DISTFILES:S|^|${_DISTDIR}/|} ${STAGEDIR}${JAVAJARDIR}
 
 .include <bsd.port.post.mk>

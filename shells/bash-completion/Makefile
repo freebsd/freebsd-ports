@@ -3,19 +3,15 @@
 
 PORTNAME=		bash-completion
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=		1
 CATEGORIES=		shells
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	adamw
+MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
 
-OPTIONS_DEFINE=		BASH_DEVEL
-BASH_DEVEL_DESC=	Use shells/bash-devel instead of shells/bash
-
-CONFLICTS=	bash-completion-classic-[0-9]*
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=		yes
 USE_AUTOTOOLS=	aclocal automake
@@ -24,9 +20,6 @@ USES=			gmake
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh
-
-BASH_DEVEL_RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash-devel
-BASH_DEVEL_RUN_DEPENDS_OFF=	bash:${PORTSDIR}/shells/bash
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|FLAC|&\|flv\|FLV|;' ${WRKSRC}/bash_completion

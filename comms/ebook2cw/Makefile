@@ -21,13 +21,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|'g \
 	     ${WRKSRC}/Makefile
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/ebook2cw ${STAGEDIR}${PREFIX}/bin/ebook2cw
-	@${INSTALL_DATA} ${WRKSRC}/ebook2cw.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/ebook2cw ${STAGEDIR}${PREFIX}/bin/ebook2cw
+	${INSTALL_DATA} ${WRKSRC}/ebook2cw.1 ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for 	f in ebook2cw.conf isomap.txt utf8map.txt
-	@${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${EXAMPLESDIR}/$f
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${EXAMPLESDIR}/$f
 .endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

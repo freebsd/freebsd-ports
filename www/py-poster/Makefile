@@ -3,7 +3,7 @@
 
 PORTNAME=	poster
 PORTVERSION=	0.8.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://atlee.ca/software/poster/dist/${PORTVERSION}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -13,7 +13,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Streaming HTTP uploads and multipart/form-data encoding
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,13 +11,13 @@ MASTER_SITES=	http://cairographics.org/snapshots/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	X11 SVG viewer
 
-LIB_DEPENDS=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
+LIB_DEPENDS=	libsvg-cairo.so:${PORTSDIR}/graphics/libsvg-cairo
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lXrender
+USE_XORG=	x11 xrender
 
-PLIST_FILES=	bin/xsvg
-MAN1=		xsvg.1
+PLIST_FILES=	bin/xsvg man/man1/xsvg.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

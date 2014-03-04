@@ -12,13 +12,14 @@ COMMENT=	PAM module for two-step authentication from Google
 
 LICENSE=	APACHE20
 
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/google-authenticator lib/pam_google_authenticator.so
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/google-authenticator ${PREFIX}/bin/google-authenticator
-	${INSTALL_LIB} ${WRKSRC}/pam_google_authenticator.so ${PREFIX}/lib/pam_google_authenticator.so
+	${INSTALL_PROGRAM} ${WRKSRC}/google-authenticator \
+		${STAGEDIR}${PREFIX}/bin/google-authenticator
+	${INSTALL_LIB} ${WRKSRC}/pam_google_authenticator.so \
+		${STAGEDIR}${PREFIX}/lib/pam_google_authenticator.so
 
 .include <bsd.port.mk>

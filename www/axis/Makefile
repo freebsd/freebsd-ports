@@ -9,7 +9,7 @@ MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	ws/axis/${PORTVERSION:S,.,_,g}
 DISTNAME=		axis-bin-${PORTVERSION:S,.,_,g}
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java SOAP implementation by Apache
 
 OPTIONS_SINGLE=	AS

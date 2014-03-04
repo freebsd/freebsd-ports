@@ -167,6 +167,6 @@ etc/asound.conf.sample
 @dirrm share/alsa
 @dirrm lib/alsa-lib/smixer
 @dirrm lib/alsa-lib
-@dirrm include/sys
+@dirrmtry include/sys
 @dirrm include/alsa/sound
 @dirrm include/alsa

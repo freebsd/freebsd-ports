@@ -21,6 +21,8 @@ USE_EMACS=	yes
 
 SNAPDATE=	20120306
 
+MAKE_JOBS_UNSAFE=	yes
+
 CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
 			--with-lispdir=${PREFIX}/${LISPDIR} \
 			--with-icondir=${PREFIX}/${ICONDIR}

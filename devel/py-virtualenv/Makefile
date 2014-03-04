@@ -27,11 +27,12 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 .if ${PORT_OPTIONS:MDOCS}
 DOCSDIR=			${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+PORTDOCS=			*
 PYDISTUTILS_BUILD_TARGET+=	build_sphinx
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/build/sphinx/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/build/sphinx/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 regression-test: build

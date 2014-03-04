@@ -5,6 +5,7 @@ lib/libraptor2.a
 lib/libraptor2.la
 lib/libraptor2.so
 lib/libraptor2.so.0
+lib/libraptor2.so.0.0.0
 libdata/pkgconfig/raptor2.pc
 man/man1/rapper.1.gz
 man/man3/libraptor2.3.gz

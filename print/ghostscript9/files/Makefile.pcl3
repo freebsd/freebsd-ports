@@ -4,8 +4,6 @@ PORTDOCS+=	pcl3
 PORTDOC_FILES+= pcl3/NEWS pcl3/BUGS pcl3/README pcl3/gs-pcl3.html	\
 	pcl3/how-to-report.txt pcl3/pcl3opts.html
 
-MAN1+=	gs-pcl3.1 pcl3opts.1
-
 post-build-pcl3:
 	cd ${WRKSRC} && \
 		${CC} ${CFLAGS} -I./obj -I./soobj -I./base \
@@ -14,8 +12,8 @@ post-build-pcl3:
 		contrib/pcl3/eprn/mediasize.c contrib/pcl3/src/pclsize.c
 
 post-install-pcl3:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/pcl3opts ${PREFIX}/bin
-	${MKDIR} ${DATADIR}/${PORTVERSION}/pcl3
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pcl3opts ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}/${PORTVERSION}/pcl3
 	cd ${WRKSRC}/contrib/pcl3 && \
 		${INSTALL_DATA} lib/example.mcf lib/if-pcl3		\
 			ps/calign.ps ps/dumppdd.ps ps/levels-test.ps	\
@@ -24,9 +22,9 @@ post-install-pcl3:
 			ps/margins-EnvDLRotated.ps			\
 			ps/margins-Letter.ps				\
 			ps/margins-LetterRotated.ps			\
-			${DATADIR}/${PORTVERSION}/pcl3
+			${STAGEDIR}${DATADIR}/${PORTVERSION}/pcl3
 	cd ${WRKSRC}/contrib/pcl3/doc && \
-		${INSTALL_MAN} gs-pcl3.1 pcl3opts.1 ${MANPREFIX}/man/man1
+	    ${INSTALL_MAN} gs-pcl3.1 pcl3opts.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 post-install-docs-pcl3:
 	${MKDIR} ${WRKSRC}/contrib/pcl3

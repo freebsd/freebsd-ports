@@ -52,6 +52,9 @@ SUB_LIST+=	PGSQL=
 .	endif
 .endif
 
+post-extract:
+	@${RM} -f ${WRKSRC}/config.cache
+
 post-patch:
 	${REINPLACE_CMD} -e 's|\(@CC@\ \)-O2|\1${CFLAGS}|' \
 		${WRKSRC}/Makefile.in

@@ -1,4 +1,5 @@
-Tagutil is a pure C BSDL tool to manage tag information on music
-files. It can work with every format supported by taglib.
+Tagutil is a CLI tool to edit music file's tag. It aim to provide both an
+easy-to-script interface and ease of use interactively and fully support Vorbis
+Comments (unlimited set of tags).
 
-WWW: http://hg.kaworu.ch/tagutil/
+WWW: https://github.com/kAworu/tagutil

@@ -1,0 +1,20 @@
+--- SConscript.orig	2006-02-11 06:01:20.000000000 +0800
++++ SConscript
+@@ -359,8 +359,6 @@ module_env = g_env.Copy()
+ module_env['CPPPATH'].append('include')
+ if ( OS == 'Darwin' ):
+   module_env['LINKFLAGS'] += '-dynamiclib -ldl '
+-else:
+-  module_env['LINKFLAGS'] += '-ldl '
+ module_env['LIBPREFIX'] = ''
+ 
+ 
+@@ -485,7 +483,7 @@ module_env.Install(INSTALL + '/modules',
+ 
+ radiant_env = g_env.Copy()
+ radiant_env['CPPPATH'].append('include')
+-radiant_env['LINKFLAGS'] += '-ldl -lGL '
++radiant_env['LINKFLAGS'] += '-lX11 -lGL '
+ if ( OS == 'Darwin' ):
+   radiant_env['CXXFLAGS'] += '-fno-common '
+   radiant_env['CCFLAGS'] += '-fno-common '

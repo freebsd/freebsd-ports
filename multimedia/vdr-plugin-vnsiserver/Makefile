@@ -28,21 +28,18 @@ MAKE_ARGS+=	LIBDIR=${WRKDIR}/lib \
 		VDRSRC=${LOCALBASE}/include/vdr \
 		INCLUDES=-I${LOCALBASE}/include
 
-NO_STAGE=	yes
-
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+
 post-install:
-	@${MKDIR} ${PREFIX}/etc/vdr/plugins/${PLUGIN}5
-	@${INSTALL_DATA} ${WRKSRC}/${PLUGIN}/allowed_hosts.conf ${PREFIX}/etc/vdr/plugins/${PLUGIN}5/allowed_hosts.conf.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}5/allowed_hosts.conf ]; then \
-	    ${INSTALL_DATA} -o ${VDR_USER} -g ${VDR_GROUP} ${WRKSRC}/${PLUGIN}/allowed_hosts.conf ${PREFIX}/etc/vdr/plugins/${PLUGIN}5; \
-	fi
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}5
+	${INSTALL_DATA} ${WRKSRC}/${PLUGIN}/allowed_hosts.conf \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}5/allowed_hosts.conf.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

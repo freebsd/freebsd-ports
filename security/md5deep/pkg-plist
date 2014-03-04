@@ -1,0 +1,12 @@
+bin/hashdeep
+bin/md5deep
+bin/sha1deep
+bin/sha256deep
+bin/tigerdeep
+bin/whirlpooldeep
+man/man1/hashdeep.1.gz
+man/man1/md5deep.1.gz
+man/man1/sha1deep.1.gz
+man/man1/sha256deep.1.gz
+man/man1/tigerdeep.1.gz
+man/man1/whirlpooldeep.1.gz

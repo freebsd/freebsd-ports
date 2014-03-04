@@ -19,7 +19,8 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 USE_XZ=		yes
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info readline
+USES=		desktop-file-utils gmake pkgconfig shared-mime-info readline \
+		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vdr-keys \
 		--disable-nvtvsimple
@@ -72,9 +73,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|: install-docsDATA|:|' ${WRKSRC}/${file}
 .endfor
-	@${REINPLACE_CMD} -e \
-		's|\(xine_LDADD =\)|\1 \$$(LTLIBICONV)|' \
-		${WRKSRC}/src/xitk/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

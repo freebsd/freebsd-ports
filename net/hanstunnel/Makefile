@@ -34,7 +34,7 @@ CC=		clang33
 CXX=		clang++33
 .endif
 .else
-USE_GCC=4.2+
+USE_GCC=	any
 .endif
 
 do-install:

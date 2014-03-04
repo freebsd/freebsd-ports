@@ -73,6 +73,7 @@
     SUBDIR += clit
     SUBDIR += clucene
     SUBDIR += clucene-qt4
+    SUBDIR += clucene-qt5
     SUBDIR += coccigrep
     SUBDIR += coco
     SUBDIR += code2html
@@ -1092,15 +1093,6 @@
     SUBDIR += php5-xmlreader
     SUBDIR += php5-xmlwriter
     SUBDIR += php5-xsl
-    SUBDIR += php52-ctype
-    SUBDIR += php52-dom
-    SUBDIR += php52-pspell
-    SUBDIR += php52-simplexml
-    SUBDIR += php52-wddx
-    SUBDIR += php52-xml
-    SUBDIR += php52-xmlreader
-    SUBDIR += php52-xmlwriter
-    SUBDIR += php52-xsl
     SUBDIR += php53-ctype
     SUBDIR += php53-dom
     SUBDIR += php53-pspell
@@ -1157,7 +1149,6 @@
     SUBDIR += py-libxml2
     SUBDIR += py-libxslt
     SUBDIR += py-ltxml
-    SUBDIR += py-lucene
     SUBDIR += py-mako
     SUBDIR += py-markdown
     SUBDIR += py-markdown2
@@ -1221,6 +1212,8 @@
     SUBDIR += qt4-xml
     SUBDIR += qt4-xmlpatterns
     SUBDIR += qt4-xmlpatterns-tool
+    SUBDIR += qt5-xml
+    SUBDIR += qt5-xmlpatterns
     SUBDIR += qu-aspell
     SUBDIR += queequeg
     SUBDIR += rand

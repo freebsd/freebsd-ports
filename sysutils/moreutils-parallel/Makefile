@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	moreutils-parallel
-PORTVERSION=	0.50
+PORTVERSION=	0.51
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 MASTER_SITE_SUBDIR=	pool/main/m/moreutils
@@ -17,6 +18,8 @@ CONFLICTS=	parallel-[0-9]*
 
 WRKSRC=		${WRKDIR}/moreutils
 
+MAKE_ARGS=	BINS=parallel  MANS=parallel.1
+
 PLIST_FILES=	bin/parallel man/man1/parallel.1.gz
 
 post-patch:
@@ -25,6 +28,5 @@ post-patch:
 do-install:
 	${CP} ${WRKSRC}/parallel ${STAGEDIR}${PREFIX}/bin/parallel
 	cd ${WRKSRC} && ${INSTALL_MAN} parallel.1 ${STAGEDIR}${MANPREFIX}/man/man1/
-
 
 .include <bsd.port.mk>

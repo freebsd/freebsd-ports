@@ -3,6 +3,7 @@
 
 PORTNAME=	munger
 PORTVERSION=	5.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -16,11 +17,10 @@ DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 OPTIONS_DEFINE=	SQLITE
 OPTIONS_DEFAULT=	SQLITE
 
-.include <bsd.port.options.mk>
+SQLITE_USE=	SQLITE=3
+SQLITE_MAKE_ARGS=	-DWITH_SQL
 
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	3
-MAKE_ARGS+=	-DWITH_SQL
-.endif
+post-patch:
+	@${REINPLACE_CMD} 's,MUNGERPATH|$${DEST},/MUNGERPATH|$${PREFIX}/bin,' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

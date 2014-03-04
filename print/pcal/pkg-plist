@@ -1,6 +1,7 @@
 bin/pcal
 libexec/pcal.cgi
 libexec/pcal.pl
+man/man1/pcal.1.gz
 %%EXAMPLESDIR%%/calendar_au.txt
 %%EXAMPLESDIR%%/calendar_de.txt
 %%EXAMPLESDIR%%/calendar_ee.txt

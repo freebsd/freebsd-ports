@@ -14,10 +14,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - xineliboutput plugin/viewer
 
-LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine \
-		avutil:${PORTSDIR}/multimedia/ffmpeg \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		vdpau:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine \
+		libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1
@@ -32,7 +32,6 @@ XINE_PLUGINSDIR=	lib/xine/plugins/2.3
 OPTIONS_DEFINE=	LIBBLURAY LIBEXTRACTOR
 
 HAS_CONFIGURE=	yes
-NO_STAGE=	yes
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
@@ -43,13 +42,13 @@ PLIST_SUB+=	XINE_PLUGINSDIR=${XINE_PLUGINSDIR}
 CONFIGURE_ARGS+=	--cc="${CC}" --cxx="${CXX}" --add-cflags=-I${VDRDIR}
 
 .if ${PORT_OPTIONS:MLIBEXTRACTOR}
-LIB_DEPENDS+=	extractor:${PORTSDIR}/textproc/libextractor
+LIB_DEPENDS+=	libextractor.so:${PORTSDIR}/textproc/libextractor
 .else
 CONFIGURE_ARGS+=	--disable-libextractor
 .endif
 
 .if ${PORT_OPTIONS:MLIBBLURAY}
-LIB_DEPENDS+=	bluray:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	libbluray.so:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_ARGS+=	--disable-libbluray
 .endif
@@ -59,19 +58,20 @@ post-patch: post-patch-plugin
 	${TOUCH} -t 200001010000 ${WRKSRC}/nosignal_720x576.c \
 		${WRKSRC}/black_720x576.c ${WRKSRC}/vdrlogo_720x576.c
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+
 post-install: post-install-pluginlocales
-	@${INSTALL} -o ${VDR_USER} -g ${VDR_GROUP} -d ${PREFIX}/etc/vdr/plugins/${PLUGIN}
-	@${INSTALL_DATA} ${WRKSRC}/examples/allowed_hosts.conf ${PREFIX}/etc/vdr/plugins/${PLUGIN}/allowed_hosts.conf.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/allowed_hosts.conf ]; then \
-	    ${INSTALL_DATA} ${WRKSRC}/examples/allowed_hosts.conf ${PREFIX}/etc/vdr/plugins/${PLUGIN}; \
-	fi
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}
+	${INSTALL_DATA} ${WRKSRC}/examples/allowed_hosts.conf \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/allowed_hosts.conf.sample
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/xine
-	${INSTALL_DATA} ${FILESDIR}/keymap ${EXAMPLESDIR}/xine
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/xine
+	${INSTALL_DATA} ${FILESDIR}/keymap ${STAGEDIR}${EXAMPLESDIR}/xine
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>

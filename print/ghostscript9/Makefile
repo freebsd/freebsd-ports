@@ -2,7 +2,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	9.06
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -20,14 +20,14 @@ COMMENT=	Ghostscript 9.x PostScript interpreter
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		idn:${PORTSDIR}/dns/libidn \
-		jbig2dec:${PORTSDIR}/graphics/jbig2dec \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		lcms2:${PORTSDIR}/graphics/lcms2 \
-		paper:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libidn.so:${PORTSDIR}/dns/libidn \
+		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libpaper.so:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS_INSTALL= \
@@ -47,7 +47,6 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
-		EXTRALIBS="${EXTRALIBS}" \
 		SOC_LOADER="dxmainc.c"
 CONFIGURE_ENV=	${MAKE_ENV}
 CONFIGURE_ARGS=	--disable-compile-inits \
@@ -78,51 +77,23 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS_DEFINE=	X11 DOCS CUPS FONTCONFIG ICONV GTK2
 OPTIONS_DEFAULT=X11 DOCS CUPS FONTCONFIG ICONV
+OPTIONS_SUB=	yes
 FONTCONFIG_DESC=Enable fontconfig support
 NO_OPTIONS_SORT=yes
 
-MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 \
-		pdf2dsc.1 pdf2ps.1 pdfopt.1 pf2afm.1 pfbtopfa.1 printafm.1 \
-		ps2ascii.1 ps2epsi.1 ps2pdf.1 ps2pdfwr.1 ps2ps.1 \
-		wftopfa.1
-MLINKS=		gslp.1 gsbj.1 \
-		gslp.1 gsdj.1 \
-		gslp.1 gsdj500.1 \
-		gslp.1 gslj.1 \
-		ps2pdf.1 ps2pdf12.1 \
-		ps2pdf.1 ps2pdf13.1 \
-		ps2pdf.1 ps2pdf14.1 \
-		ps2ps.1 eps2eps.1
-
 EXCLUDE_DIRS=	freetype jbig2dec jpeg expat jasper lcms lcms2 libpng tiff zlib
 
-NO_STAGE=	yes
 .include "Makefile.drivers"
 .include <bsd.port.options.mk>
 
 MASTERDIR?=	${.CURDIR}
 .include "${MASTERDIR}/files/Makefile.drivers_post"
 
-.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//} \
-	${OPTIONS_MULTI_X11:MGS_*:S/^GS_//} \
-	${OPTIONS_GROUP_ICONV:MGS_*:S/^GS_//} \
-	${OPTIONS_GROUP_SVGALIB:MGS_*:S/^GS_//}
-.if ${PORT_OPTIONS:MGS_${D}}
-PLIST_SUB+=	GS_${D}=""
-.else
-PLIST_SUB+=	GS_${D}="@comment "
-.endif
-.endfor
-
-.if ${PORT_OPTIONS:MFONTCONFIG}
-LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-CONFIGURE_ARGS+=	--enable-fontconfig
-.else
-CONFIGURE_ARGS+=	--disable-fontconfig
-.endif
+FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+FONTCONFIG_CONFIGURE_ENABLE=	fontconfig
 
 # FT_BRIDGE=1 by default
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 MAKE_ENV+=	FT_BRIDGE=1
 
 ALL_TARGET=	so
@@ -147,8 +118,8 @@ PORTDOC_FILES=	japanese/Gdevlips.htm japanese/README.gs550j		\
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g ; \
-		 s|%%GS_VERSION%%|${PORTVERSION}|g' \
-			${WRKSRC}/contrib/japanese/dmp_site.ps
+	    s|%%GS_VERSION%%|${PORTVERSION}|g' \
+	    ${WRKSRC}/contrib/japanese/dmp_site.ps
 
 pre-build-drivers.mak:
 	@${ECHO_CMD} '# automatically generated' > ${WRKSRC}/base/drivers.mak
@@ -180,25 +151,22 @@ pre-install:
 		gs_statd.ps.orig gs_ttf.ps.orig pdf_font.ps.orig
 
 pre-su-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 
 post-install-docs:
 	${MKDIR} ${WRKSRC}/contrib/japanese
 	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/doc/* ${WRKSRC}/contrib/japanese
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/contrib && \
 		${TAR} -cf - ${PORTDOC_FILES} | \
-		( cd ${DOCSDIR} && ${TAR} -xof - )
+		( cd ${STAGEDIR}${DOCSDIR} && ${TAR} -xof - )
 
 post-install:
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/${PORTVERSION}
-	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
-	${LN} -sf gsc ${PREFIX}/bin/gs
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/${PORTVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gsc ${STAGEDIR}${PREFIX}/bin/gsx
+	${LN} -sf gsc ${STAGEDIR}${PREFIX}/bin/gs
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont \
-		${DATADIR}/${PORTVERSION}/Resource/CIDFont/fonts
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+		${STAGEDIR}${DATADIR}/${PORTVERSION}/Resource/CIDFont/fonts
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install: post-install-docs

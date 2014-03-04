@@ -12,25 +12,19 @@ COMMENT=	Protect process from killing when the swap space is exhausted
 NO_PACKAGE=	Needs to be compiled for specific kernel
 SSP_UNSAFE=	kernel module does not support ssp
 
-KMODDIR?=	/boot/modules
+USES=		kmod
 
-PLIST_SUB=	KMODDIR=${KMODDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAKE_ENV+=	KMODDIR=${KMODDIR}
-CFLAGS+=-DWITH_SCPROTECT_LIST
+CFLAGS+=	-DWITH_SCPROTECT_LIST
 
-#MAN4=		scprotect.4
-#MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel sources
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+post-extract:
+	@cd ${WRKSRC}/kmod && ${RM} -f machine
 
 .include <bsd.port.post.mk>

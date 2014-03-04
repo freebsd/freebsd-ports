@@ -17,7 +17,9 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 OPTIONS_DEFINE=	DOCS
 
 USE_PYTHON=	yes
-USE_WX=		2.6+
+# This can be set back to 2.6+ once this port moves to version 0.6.9,
+# cf. PR185230.
+USE_WX=		2.8+
 WX_COMPS=	python
 
 MAN1=		wxglade.1

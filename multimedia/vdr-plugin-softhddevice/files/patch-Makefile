@@ -69,7 +69,7 @@
 +
  install:	libvdr-$(PLUGIN).so
 +ifdef FREEBSD
-+	${INSTALL_PROGRAM} libvdr-$(PLUGIN).so $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
++	${INSTALL_PROGRAM} libvdr-$(PLUGIN).so ${DESTDIR}$(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
 +else
  	cp --remove-destination libvdr-$(PLUGIN).so \
  		/usr/lib/vdr/plugins/libvdr-$(PLUGIN).so.$(APIVERSION)

@@ -14,6 +14,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep interface to the GUILE scheme interpreter
 
+BROKEN=		Does not build
+
 LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
 
 LICENSE=	GPLv2

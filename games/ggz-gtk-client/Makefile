@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
-NLS_CONFIGURE_ARGS=	--disable-nls
+NLS_CONFIGURE_OFF=	--disable-nls
 
 .include "${.CURDIR}/../libggz/bsd.ggz.mk"
 .include <bsd.port.mk>

@@ -23,7 +23,6 @@ WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 VDR_PLUGIN_MAKEFILES=	${WRKSRC}/client/Makefile \
 		${WRKSRC}/server/Makefile
 
-NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
@@ -31,19 +30,16 @@ post-patch: post-patch-plugin
 	@${REINPLACE_CMD} '1s-^#!/bin/sh-#!${LOCALBASE}/bin/bash-' \
 		${WRKSRC}/${PLUGIN}-server/externremux.sh
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+
 post-install: post-install-pluginlocales
-	@${MKDIR} ${PREFIX}/etc/vdr/plugins/${PLUGIN}-server
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}-server/externremux.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}-server/externremux.sh.sample
-	@${INSTALL_DATA} ${WRKSRC}/${PLUGIN}-server/streamdevhosts.conf ${PREFIX}/etc/vdr/plugins/${PLUGIN}-server/streamdevhosts.conf.sample
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}-server/externremux.sh ]; then \
-	    ${INSTALL_SCRIPT} -o ${VDR_USER} -g ${VDR_GROUP} ${WRKSRC}/${PLUGIN}-server/externremux.sh ${PREFIX}/etc/vdr/plugins/${PLUGIN}-server; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}-server/streamdevhosts.conf ]; then \
-	    ${INSTALL_DATA} -o ${VDR_USER} -g ${VDR_GROUP} ${WRKSRC}/${PLUGIN}-server/streamdevhosts.conf ${PREFIX}/etc/vdr/plugins/${PLUGIN}-server; \
-	fi
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}-server
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}-server/externremux.sh \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}-server/externremux.sh.sample
+	@${INSTALL_DATA} ${WRKSRC}/${PLUGIN}-server/streamdevhosts.conf \
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}-server/streamdevhosts.conf.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

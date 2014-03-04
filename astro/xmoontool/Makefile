@@ -8,50 +8,28 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.senax.net/xmoontool/
 
 MAINTAINER=	frank@dynamical-systems.org
-COMMENT=	A version of John Walker's classical moontool for X11/Motif
+COMMENT=	Version of John Walker's classical moontool for X11/Motif
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS LIBNOVA MONOCHROME
+OPTIONS_DEFAULT=	LIBNOVA
+LIBNOVA_DESC=	libnova support
+MONOCHROME_DESC=	Use monochrome display
+
 USES=		motif
 
-MAN1=		xmoontool.1
 PORTDOCS=	NOTES
-PLIST_FILES=	bin/xmoontool
+PLIST_FILES=	bin/xmoontool man/man1/xmoontool.1.gz
 
-.if defined(WITHOUT_LIBNOVA)
-MAKE_ENV+=	WITHOUT_LIBNOVA=yes
-.else
-LIB_DEPENDS+=	libnova.so:${PORTSDIR}/astro/libnova
-.endif
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-pre-everything::
-.if !defined(WITHOUT_LIBNOVA)
-	@${ECHO_MSG} "You can disable libnova support by defining WITHOUT_LIBNOVA"
-.endif
-
-pre-configure:
-.if !defined(WITHOUT_DEFAULT_COLOR)
-	@${ECHO_MSG} "For use with monochrome displays try to set WITHOUT_DEFAULT_COLOR"
-.endif
-
-do-configure:
-.if defined(WITHOUT_DEFAULT_COLOR)
-	@${REINPLACE_CMD} -e 's|-DDEFAULT_COLOR||g' ${WRKSRC}/Makefile
-.endif
+LIBNOVA_MAKE_ENV_OFF=	WITHOUT_LIBNOVA=yes
+LIBNOVA_LIB_DEPENDS=	libnova.so:${PORTSDIR}/astro/libnova
+MONOCHROME_MAKE_ENV=	DEFINES=""
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xmoontool ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xmoontool.1 ${PREFIX}/man/man1
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/xmoontool ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xmoontool.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

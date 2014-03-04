@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140302:
+  AFFECTS: users of sysutils/ansible
+  AUTHOR: rm@FreeBSD.org
+
+  This is an major update and changes were introduced in ansible 1.5, that
+  are not backward compatible. Please refer changelog there before update:
+  https://raw.github.com/ansible/ansible/v1.5.0/CHANGELOG.md
+
 20140223:
   AFFECTS: users of net-mgmt/mk-livestatus
   AUTHOR: ohauer@FreeBSD.org

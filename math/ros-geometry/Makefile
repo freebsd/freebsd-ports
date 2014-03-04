@@ -20,6 +20,8 @@ COMMENT=	Robot Operating System - geometric and math libraries
 #LICENSE_COMB=	multi
 #LICENSE=	BSD LGPL* Zlib # which LGPL and Zlib not defined yet
 
+DEPRECATED=	Depends on expiring devel/ros_comm
+EXPIRATION_DATE=	2014-03-28
 STACKNAME=	${PORTNAME:S/ros-//}
 WRKSRC=		${WRKDIR}/${STACKNAME}-${PORTVERSION}
 

@@ -19,8 +19,8 @@ USE_AUTOTOOLS=	libtool autoheader autoconf automake aclocal
 ACLOCAL_ARGS=	# empty
 AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ARGS=	--with-msgpack=${LOCALBASE} --with-tokyocabinet=${LOCALBASE}
-USE_GCC=	4.2+
-USE_GMAKE=	yes
+USES=		gmake
+USE_GCC=	any
 USE_RUBY=	yes
 USE_RC_SUBR=	kumofs-manager kumofs-server kumofs-gateway
 PIDDIR?=	/var/run/kumofs

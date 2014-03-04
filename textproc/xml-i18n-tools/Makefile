@@ -10,11 +10,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Xml internationalization support for GNOME, and others
 
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	intltool-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

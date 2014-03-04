@@ -1,6 +1,6 @@
---- Makefile.orig	2011-01-01 15:25:04.000000000 -0500
-+++ Makefile	2011-01-02 15:28:29.000000000 -0500
-@@ -33,7 +33,7 @@
+--- Makefile.orig	2014-02-15 12:14:49.000000000 -0500
++++ Makefile	2014-03-03 16:00:53.000000000 -0500
+@@ -36,12 +36,12 @@
  ###
  # installation options
  #
@@ -9,7 +9,13 @@
  LOCALEDIR = $(prefix)/share/locale
  PROG = di
  MPROG = mi
-@@ -55,7 +55,7 @@
+ #
+-INSTALL_DIR = $(prefix)
++INSTALL_DIR = $(DESTDIR)$(prefix)
+ INSTALL_BIN_DIR = $(INSTALL_DIR)/bin
+ INST_LOCALEDIR = $(INSTALL_DIR)/share/locale
+ TARGET = $(INSTALL_BIN_DIR)/$(PROG)$(EXE_EXT)
+@@ -58,7 +58,7 @@
  #
  # simple man page installation
  #

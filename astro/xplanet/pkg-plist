@@ -1,2 +1,61 @@
 bin/xplanet
+man/man1/xplanet.1.gz
 @unexec if cmp -s %D/share/xplanet/config/default %D/share/xplanet/config/default.sample; then rm -f %D/share/xplanet/config/default;fi
+%%DATADIR%%/arcs/README
+%%DATADIR%%/arcs/constellations
+%%DATADIR%%/config/README
+%%DATADIR%%/config/default.sample
+%%DATADIR%%/config/earth_markers
+%%DATADIR%%/config/moon_orbit
+%%DATADIR%%/config/overlay_clouds
+%%DATADIR%%/ephemeris/README
+%%DATADIR%%/fonts/FreeMonoBold.ttf
+%%DATADIR%%/fonts/README
+%%DATADIR%%/images/README
+%%DATADIR%%/images/earth.jpg
+%%DATADIR%%/images/hubble.png
+%%DATADIR%%/images/iss.png
+%%DATADIR%%/images/mgs.png
+%%DATADIR%%/images/night.jpg
+%%DATADIR%%/images/odyssey.png
+%%DATADIR%%/images/shuttle.png
+%%DATADIR%%/images/smile.png
+%%DATADIR%%/images/sublunar.png
+%%DATADIR%%/images/subsolar.png
+%%DATADIR%%/images/sun.jpg
+%%DATADIR%%/markers/README
+%%DATADIR%%/markers/brightStars
+%%DATADIR%%/markers/earth
+%%DATADIR%%/markers/mars
+%%DATADIR%%/markers/moon
+%%DATADIR%%/origin/README
+%%DATADIR%%/origin/cassini
+%%DATADIR%%/origin/galileo
+%%DATADIR%%/rgb.txt
+%%DATADIR%%/satellites/README
+%%DATADIR%%/satellites/iss
+%%DATADIR%%/satellites/iss.tle
+%%DATADIR%%/scattering/README
+%%DATADIR%%/scattering/earthRayleigh
+%%DATADIR%%/spice/README
+%%DATADIR%%/spice/asteroids
+%%DATADIR%%/spice/asteroids.krn
+%%DATADIR%%/spice/cassini
+%%DATADIR%%/spice/cassini.krn
+%%DATADIR%%/spice/mgs
+%%DATADIR%%/spice/mgs.krn
+%%DATADIR%%/spice/voyager
+%%DATADIR%%/spice/voyager.krn
+%%DATADIR%%/stars/BSC
+@dirrmtry %%DATADIR%%/stars
+@dirrmtry %%DATADIR%%/spice
+@dirrmtry %%DATADIR%%/scattering
+@dirrmtry %%DATADIR%%/satellites
+@dirrmtry %%DATADIR%%/origin
+@dirrmtry %%DATADIR%%/markers
+@dirrmtry %%DATADIR%%/images
+@dirrmtry %%DATADIR%%/fonts
+@dirrmtry %%DATADIR%%/ephemeris
+@dirrmtry %%DATADIR%%/config
+@dirrmtry %%DATADIR%%/arcs
+@dirrmtry %%DATADIR%%

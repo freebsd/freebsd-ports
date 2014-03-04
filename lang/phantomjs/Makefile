@@ -17,8 +17,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 PROJECTHOST=	phantomjs
-USE_GCC=	4.2+
 USES=		gmake dos2unix pkgconfig
+USE_GCC=	any
 USE_ZIP=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

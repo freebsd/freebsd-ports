@@ -135,12 +135,6 @@ PLIST_FILES+=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "arm"
-BROKEN=		Does not compile on arm
-.elif ${ARCH} == "sparc64"
-BROKEN=		does not compile on sparc64
-.endif
-
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CONFIGURE_ARGS+=	--enable-pic --with-pic
 .endif

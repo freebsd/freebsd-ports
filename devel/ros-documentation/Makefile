@@ -14,6 +14,8 @@ COMMENT=	Robot Operating System - documentation utilities
 
 LICENSE=	BSD
 
+DEPRECATED=	Depends on expiring devel/ros_comm
+EXPIRATION_DATE=	2014-03-28
 STACKNAME=	${PORTNAME:S/ros-//}
 
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros

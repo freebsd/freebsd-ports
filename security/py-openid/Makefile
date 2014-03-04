@@ -3,6 +3,7 @@
 
 PORTNAME=	openid
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	LOCAL/clsung
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,6 @@ COMMENT=	Python OpenID version
 WRKSRC=		${WRKDIR}/openid-python-openid-b666238
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	python-openid
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

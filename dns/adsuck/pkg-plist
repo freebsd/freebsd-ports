@@ -1,4 +1,5 @@
 sbin/adsuck
+man/man8/adsuck.8.gz
 %%EXAMPLESDIR%%/Hosts.blc
 %%EXAMPLESDIR%%/Hosts.pub
 %%EXAMPLESDIR%%/Hosts.rsk

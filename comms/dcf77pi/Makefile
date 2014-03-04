@@ -25,8 +25,5 @@ post-install:
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	if [ ! -f ${ETCDIR}/config.txt ] ; then \
-		${CP} -p ${STAGEDIR}${ETCDIR}/config.txt.sample ${STAGEDIR}${ETCDIR}/config.txt ; \
-	fi
 
 .include <bsd.port.mk>

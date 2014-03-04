@@ -5,7 +5,7 @@ PORTNAME=	texcm-ttf
 PORTVERSION=	20010117
 PORTREVISION=	3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.mozilla.org/projects/mathml/fonts/bakoma/
+MASTER_SITES=	http://www-archive.mozilla.org/projects/mathml/fonts/bakoma/
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX} license.txt
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
@@ -16,7 +16,9 @@ COMMENT=	TeX's Computer Modern Fonts
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-NO_CDROM=	cannot be sold or distributed with any commercial product
+DEPRECATED=	Should be replaced by x11-fonts/stix-fonts
+EXPIRATION_DATE=2014-05-03
+NO_CDROM=	Cannot be sold or distributed with any commercial product
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -34,7 +36,6 @@ FONTSDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} &&	${MKFONTSCL_CMD}
 	cd ${WRKSRC} &&	${MKFONTDIR_CMD}
@@ -43,13 +44,8 @@ do-build:
 .endfor
 
 do-install:
-	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/* ${FONTSDIR}
-	${INSTALL_DATA} ${_DISTDIR}/license.txt ${FONTSDIR} # Required by the license
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/license.txt ${STAGEDIR}${FONTSDIR} # Required by the license
 
 .include <bsd.port.mk>

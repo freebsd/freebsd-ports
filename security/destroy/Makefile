@@ -14,6 +14,9 @@ LICENSE=	BSD4CLAUSE
 
 PLIST_FILES=	bin/destroy man/man1/destroy.1.gz
 
+do-build:
+	(cd ${WRKSRC} ; ${CC} ${CFLAGS} ${LDFLAGS} -o ${PORTNAME} destroy.c)
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/destroy ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/destroy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1

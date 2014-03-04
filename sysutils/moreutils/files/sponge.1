@@ -1,39 +1,45 @@
-.\" -*- coding: us-ascii -*-
-.if \n(.g .ds T< \\FC
-.if \n(.g .ds T> \\F[\n[.fam]]
-.de URL
-\\$2 \(la\\$1\(ra\\$3
-..
-.if \n(.g .mso www.tmac
-.TH sponge 1 2006-02-19 "" ""
-.SH NAME
-sponge \- soak up standard input and write to a file
-.SH SYNOPSIS
-'nh
-.fi
+'\" t
+.\"     Title: sponge
+.\"    Author: Joey Hess
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 2006-02-19
+.\"    Manual: moreutils
+.\"    Source: moreutils
+.\"  Language: English
+.\"
+.TH "SPONGE" "1" "2006\-02\-19" "moreutils" "moreutils"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
 .ad l
-\fBsed '...' file | grep '...' | sponge file\fR \kx
-.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
-'in \n(.iu+\nxu
-'in \n(.iu-\nxu
-.ad b
-'hy
-.SH DESCRIPTION
-\fBsponge\fR reads standard input and
-writes it out to the specified file. Unlike a shell
-redirect, sponge soaks up all its input before
-opening the output file. This allows constructing
-pipelines that read from and write to
-the same file.
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+sponge \- soak up standard input and write to a file
+.SH "SYNOPSIS"
+.HP \w'\fBsed\ \*(Aq\&.\&.\&.\*(Aq\ file\ |\ grep\ \*(Aq\&.\&.\&.\*(Aq\ |\ sponge\ file\fR\ 'u
+\fBsed \*(Aq\&.\&.\&.\*(Aq file | grep \*(Aq\&.\&.\&.\*(Aq | sponge file\fR
+.SH "DESCRIPTION"
 .PP
-It also creates the output file
-atomically by renaming a temp file into place,
-and preserves the permissions of the output file
-if it already exists.
-If the output file is a special file or symlink,
-the data will be written to it.
+\fBsponge\fR
+reads standard input and writes it out to the specified file\&. Unlike a shell redirect, sponge soaks up all its input before opening the output file\&. This allows constructing pipelines that read from and write to the same file\&.
 .PP
-If no output file is specified, sponge outputs to
-stdout.
-.SH AUTHOR
+It also creates the output file atomically by renaming a temp file into place, and preserves the permissions of the output file if it already exists\&. If the output file is a special file or symlink, the data will be written to it\&.
+.PP
+If no output file is specified, sponge outputs to stdout\&.
+.SH "AUTHOR"
+.PP
 Colin Watson and Tollef Fog Heen

@@ -9,10 +9,11 @@ include/bitcollider/cache.h
 lib/bitcollider/plugins/image.bcp
 lib/bitcollider/plugins/video.bcp
 lib/bitcollider/plugins/wav.bcp
-lib/libbitcollider.so.1
-lib/libbitcollider.so
 lib/libbitcollider.a
 lib/libbitcollider.la
+lib/libbitcollider.so
+lib/libbitcollider.so.1
+lib/libbitcollider.so.1.0.0
 @dirrm include/bitcollider
 @dirrm lib/bitcollider/plugins
 @dirrm lib/bitcollider

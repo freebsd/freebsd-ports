@@ -25,6 +25,7 @@ etc/cyphesis/mason.d/food.xml
 etc/cyphesis/mason.d/mason.xml
 etc/cyphesis/mason.d/operations.xml
 etc/cyphesis/mason.d/plants.xml
+etc/cyphesis/mason.d/properties.xml
 etc/cyphesis/mason.d/tasks.xml
 etc/cyphesis/mason.d/terrain.xml
 etc/cyphesis/mason.d/tools.xml
@@ -72,7 +73,6 @@ etc/cyphesis/minimal.d/terrain.xml
 %%DATADIR%%/rulesets/mars/world/statistics/__init__.py
 %%DATADIR%%/rulesets/mason/benchmarks.py
 %%DATADIR%%/rulesets/mason/define_world.py
-%%DATADIR%%/rulesets/mason/define_world_aglanor.py
 %%DATADIR%%/rulesets/mason/regression.py
 %%DATADIR%%/rulesets/mason/terrain.py
 %%DATADIR%%/rulesets/mason/tests.py

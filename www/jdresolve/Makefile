@@ -18,24 +18,18 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 NO_BUILD=	yes
 
-MANCOMPRESSED=	no
-MAN1=	rhost.1 jdresolve.1
-
 DOC1=	AUTHORS BUGS CHANGELOG COPYING CREDITS INSTALL README TODO
 
-NO_STAGE=	yes
 do-install:
 .for file in jdresolve rhost
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${file}.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${file}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jdresolve
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/jdresolve
 .for i in ${DOC1}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/jdresolve
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/share/doc/jdresolve
 .endfor
-.endif
 
 .include <bsd.port.mk>

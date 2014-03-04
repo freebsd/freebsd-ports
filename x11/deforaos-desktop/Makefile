@@ -26,8 +26,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/keyboard:${PORTSDIR}/x11/deforaos-keyboard \
 		${LOCALBASE}/bin/phone:${PORTSDIR}/comms/deforaos-phone
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 
-NO_STAGE=	yes
 do-install:
 
 pre-everything::

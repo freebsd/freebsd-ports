@@ -15,10 +15,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		texi2db.1
 PLIST_FILES=	bin/texi2db \
-		${SITE_PERL_REL}/${PERL_ARCH}/auto/texi2db/.packlist
+		${SITE_PERL_REL}/${PERL_ARCH}/auto/texi2db/.packlist \
+		man/man1/${PORTNAME}.1.gz
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/texi2db
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -9,13 +9,17 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to listen to your own MP3's away from home
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		ample.1
-MAN5=		ample.conf.5 ample.html.5
-PLIST_FILES=	bin/ample
+PLIST_FILES=	bin/ample man/man1/ample.1.gz man/man5/ample.conf.5.gz \
+		man/man5/ample.html.5.gz
 PLIST_DIRSTRY=	var/log var
+
+post-configure:
+	@${REINPLACE_CMD} -E '/INSTALL/ s,\((bin|log)dir\),\(DESTDIR\)$$&,g' \
+		${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -E '/INSTALL/ s,\(MAN(1|5)PATH\),\(DESTDIR\)$$&,g' \
+		${WRKSRC}/docs/Makefile
 
 post-install:
 	@${ECHO_CMD} "@exec mkdir -p %D/var/log" >> ${TMPPLIST}

@@ -3,17 +3,16 @@
 
 PORTNAME=	libcaca
 DISTVERSION=	0.99.beta18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphics library that outputs text instead of pixels
 
-USES=		pathfix pkgconfig
-USE_GNOME=	ltverhack
+USES=		libtool pathfix pkgconfig
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-doc \
 		--enable-ncurses \
 		--disable-java \
@@ -54,7 +53,7 @@ post-patch:
 			${WRKSRC}/Makefile.in
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcaca++.so.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcaca.so.0

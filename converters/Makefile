@@ -130,9 +130,6 @@
     SUBDIR += php5-iconv
     SUBDIR += php5-mbstring
     SUBDIR += php5-recode
-    SUBDIR += php52-iconv
-    SUBDIR += php52-mbstring
-    SUBDIR += php52-recode
     SUBDIR += php53-iconv
     SUBDIR += php53-mbstring
     SUBDIR += php53-recode

@@ -1,7 +1,4 @@
 share/xml/docbook/jrefentry/catalog
 share/xml/docbook/jrefentry/jrefentry.dtd
 @dirrm share/xml/docbook/jrefentry
-share/examples/jrefentry/jtest.xml
-@dirrm share/examples/jrefentry
-share/doc/jrefentry/README.html
-@dirrm share/doc/jrefentry
+@dirrmtry share/xml/docbook

@@ -28,21 +28,8 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}/
-.endif
 
-.include <bsd.port.pre.mk>
-
-# Regarding JSON format, Devel::Cover will try JSON and JSON:PP.
-# Thus, users of Perl 5.14 and above use JSON:PP (core module).
-.if ${PERL_LEVEL} < 501400
-BUILD_DEPENDS+=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
-RUN_DEPENDS+=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

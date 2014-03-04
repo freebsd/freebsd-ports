@@ -9,7 +9,7 @@ MASTER_SITES=	SF/saxon/Saxon-HE/9.3
 DISTNAME=	saxonhe${PORTVERSION:S,.,-,g}j.zip \
 		saxon-resources9-3
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 
 LICENSE=	MPL

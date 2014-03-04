@@ -1,16 +1,16 @@
---- arcread.cpp.orig	2011-01-04 20:28:47.000000000 +0800
-+++ arcread.cpp	2011-01-21 22:59:22.000000000 +0800
-@@ -629,6 +629,7 @@
+--- arcread.cpp.orig	2013-12-01 16:10:14.000000000 +0800
++++ arcread.cpp	2014-02-04 09:23:21.669710373 +0800
+@@ -1272,6 +1272,7 @@
  
- void Archive::ConvertUnknownHeader()
+ void Archive::ConvertFileHeader(FileHeader *hd)
  {
 +  int big5=0;
-   if (NewLhd.UnpVer<20 && (NewLhd.FileAttr & 0x10))
-     NewLhd.Flags|=LHD_DIRECTORY;
-   if (NewLhd.HostOS>=HOST_MAX)
-@@ -640,6 +641,16 @@
-   }
-   for (char *s=NewLhd.FileName;*s!=0;s=charnext(s))
+   if (Format==RARFMT15 && hd->UnpVer<20 && (hd->FileAttr & 0x10))
+     hd->Dir=true;
+   if (hd->HSType==HSYS_UNKNOWN)
+@@ -1282,6 +1283,16 @@
+ 
+   for (wchar *s=hd->FileName;*s!=0;s++)
    {
 +    if (big5==1) /* skip Big5 second byte */
 +    {
@@ -22,6 +22,6 @@
 +      big5=1;
 +      continue;
 +    }
-     if (*s=='/' || *s=='\\')
-       *s=CPATHDIVIDER;
- #if defined(_APPLE) && !defined(UNICODE_SUPPORTED)
+ #ifdef _UNIX
+     // Backslash is the invalid character for Windows file headers,
+     // but it can present in Unix file names extracted in Unix.

@@ -3,7 +3,7 @@
 
 PORTNAME=	wikitools
 PORTVERSION=	1.1.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,9 @@ COMMENT=	Python package for interacting with a MediaWiki wiki
 PROJECTHOST=	python-${PORTNAME}
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easyinstall
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 260

@@ -14,7 +14,7 @@ COMMENT=	File system security and verification program
 
 MAN5=		tw.config.5
 MAN8=		siggen.8 tripwire.8
-NO_CDROM=	cannot be redistributed for more than the cost of duplication
+NO_CDROM=	Cannot be redistributed for more than the cost of duplication
 NO_PACKAGE=	requires local database to be built
 WRKSRC=		${WRKDIR}/tw_ASR_1.3.1_src
 MAKE_JOBS_UNSAFE=	yes

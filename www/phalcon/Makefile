@@ -12,7 +12,8 @@ COMMENT=	Phalcon PHP Framework written in C-language
 
 LICENSE=	BSD3CLAUSE
 
-WRKSRC=		${WRKDIR}/c${PORTNAME}-${PORTVERSION}/build/${ARCH:S/amd64/64/:S/i386/32/}bits
+PBITS=		${ARCH:S/amd64/64/:S/i386/32/:S/x86_64/64/}
+WRKSRC=		${WRKDIR}/c${PORTNAME}-${PORTVERSION}/build/${PBITS}bits
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-phalcon --prefix=${PREFIX} \

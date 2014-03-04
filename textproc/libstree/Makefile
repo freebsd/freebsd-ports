@@ -11,10 +11,9 @@ COMMENT=	A Generic Suffix Tree Library
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^\(SUBDIRS = src test\) docs,\1,' \
 		${WRKSRC}/Makefile.in

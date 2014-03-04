@@ -3,6 +3,7 @@
 
 PORTNAME=	wsgiauth
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/w/wsgiauth
@@ -12,7 +13,7 @@ MAINTAINER=	bamby@sippysoft.com
 COMMENT=	A WSGI authentication middleware
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

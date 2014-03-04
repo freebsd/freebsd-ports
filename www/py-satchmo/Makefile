@@ -30,8 +30,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.2.3:${PORTSDIR}/www/py-django \
 
 USES=		gettext
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_EGG=	Satchmo-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	SOUTH FEDEX AKISMET
 OPTIONS_DEFAULT=FEDEX
@@ -40,7 +40,6 @@ SOUTH_DESC=		Use South database migration tool for upgrades
 FEDEX_DESC=		Use Fedex web services for shipping
 AKISMET_DESC=	Use Akismet for spam filtering on product reviews
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOUTH}

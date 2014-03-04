@@ -13,6 +13,10 @@ COMMENT=	Robot Operating System - communication-related utilities
 
 LICENSE=	BSD
 
+BROKEN=		Does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-03-28
+
 STACKNAME=	${PORTNAME}
 
 CFLAGS+=	-I${LOCALBASE}/include

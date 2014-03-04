@@ -1,0 +1,70 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: samplicator
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable samplicator:
+#
+#  samplicator_enable="YES"
+#  # optional
+#  samplicator_flags="-S -p 2055 -c %%PREFIX%%/etc/samplicator.conf"
+#  samplicator_user="nobody"
+#
+# The default is to run samplicator as nobody, which will prevent you from
+# using the -S flag (maintain (spoof) source addresses).
+# If you want to maintain (spoof) source addresses, you will need to run as
+# root.
+# This can be accomplished by adding samplicator_user="root" to /etc/rc.conf
+
+. /etc/rc.subr
+
+name=samplicator
+rcvar=samplicator_enable
+load_rc_config $name
+
+# Set defaults
+samplicator_enable=${samplicator_enable:-"NO"}
+samplicator_flags=${samplicator_flags:-"-p 2055 -c %%PREFIX%%/etc/samplicator.conf"}
+samplicator_user=${samplicator_user:-"nobody"}
+
+pidfile=/var/run/samplicator.pid
+command=%%PREFIX%%/bin/samplicate
+required_files=%%PREFIX%%/etc/samplicator.conf
+
+start_precmd=samplicator_precmd
+start_cmd=samplicator_start
+stop_postcmd=samplicator_cleanup
+
+samplicator_precmd()
+{
+    # since we are using daemon(1) to drop privs, we cannot let samplicator fork
+    %%ECHO%% "${samplicator_flags}" | %%EGREP%% -q "(^\-f| \-f)" 2>&1 > /dev/null
+    if [ $? -eq 0 ]; then
+        %%ECHO%% "Please remove parameter -f from samplicator_flags"
+        %%ECHO%%
+        return 1
+    fi
+
+    # root is required for -S, do a pre-launch sanity check
+    %%ECHO%% "${samplicator_flags}" | %%EGREP%% -q "(^\-S| \-S)" 2>&1 > /dev/null
+    if [ $? -eq 0 && ${samplicator_user} -ne "root" ]; then
+        %%ECHO%% "-S requires that samplicator_user be set to root."
+        %%ECHO%%
+        return 1
+    fi
+}
+
+samplicator_start() {
+    echo "Starting samplicator."
+    %%TOUCH%% ${pidfile} && %%CHOWN%% ${samplicator_user} ${pidfile}
+    /usr/sbin/daemon -cf -p ${pidfile} -u ${samplicator_user} ${command} ${samplicator_flags}
+}
+
+samplicator_cleanup() {
+    [ -f ${pidfile} ] && %%RM%% ${pidfile}
+}
+
+run_rc_command "$1"

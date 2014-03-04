@@ -12,13 +12,15 @@ COMMENT=	aquarium/sea animation in ASCII art
 
 RUN_DEPENDS=	p5-Term-Animation>=0:${PORTSDIR}/devel/p5-Term-Animation
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-NO_BUILD=	yes
 USES=		perl5
+NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
 PLIST_FILES=	bin/asciiquarium
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -20,9 +20,9 @@ USE_ANT=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-NO_STAGE=	yes
 do-install:
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar \
-		${JAVAJARDIR}/${PORTNAME}.jar
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
 .include <bsd.port.mk>

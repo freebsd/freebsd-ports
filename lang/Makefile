@@ -33,7 +33,6 @@
     SUBDIR += cint
     SUBDIR += cjs
     SUBDIR += clang-devel
-    SUBDIR += clang31
     SUBDIR += clang32
     SUBDIR += clang33
     SUBDIR += clang34
@@ -88,7 +87,6 @@
     SUBDIR += gcc
     SUBDIR += gcc-aux
     SUBDIR += gcc-ecj45
-    SUBDIR += gcc44
     SUBDIR += gcc46
     SUBDIR += gcc47
     SUBDIR += gcc48
@@ -246,8 +244,6 @@
     SUBDIR += php-mode.el
     SUBDIR += php5
     SUBDIR += php5-extensions
-    SUBDIR += php52
-    SUBDIR += php52-extensions
     SUBDIR += php53
     SUBDIR += php53-extensions
     SUBDIR += php55
@@ -281,6 +277,7 @@
     SUBDIR += python33
     SUBDIR += qore
     SUBDIR += qscheme
+    SUBDIR += qt5-qml
     SUBDIR += racket
     SUBDIR += racket-minimal
     SUBDIR += rakudo

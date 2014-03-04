@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	soundkonverter
-DISTVERSION=	2.0.91
+DISTVERSION=	2.1.0
 CATEGORIES=	audio kde
-MASTER_SITES=	LOCAL/dbn/${PORTNAME}
+MASTER_SITES=	GH LOCAL/dbn/${PORTNAME}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Frontend to various audio converters (transcoder)
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 
 GH_ACCOUNT=	HessiJames
 GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	57bc3c8
+GH_COMMIT=	6e77f54
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build

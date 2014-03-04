@@ -22,10 +22,9 @@ LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
 ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
-USES=		ncurses gmake pkgconfig desktop-file-utils
+USES=		ncurses gmake pkgconfig desktop-file-utils compiler:nestedfct
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GCC=	any
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -1,7 +1,5 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/analog
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/audio
-@dirrm %%PYTHON_SITELIBDIR%%/gnuradio/blks2
-@dirrm %%PYTHON_SITELIBDIR%%/gnuradio/blks2impl
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/blocks
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/digital/utils
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/digital
@@ -14,7 +12,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/grc/python
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/grc
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/gru
-@dirrm %%PYTHON_SITELIBDIR%%/gnuradio/gruimpl
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/noaa
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/pager
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/qtgui
@@ -29,8 +26,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/grc_gnuradio/blks2
 @dirrm %%PYTHON_SITELIBDIR%%/grc_gnuradio/wxgui
 @dirrm %%PYTHON_SITELIBDIR%%/grc_gnuradio
-@dirrm %%PYTHON_SITELIBDIR%%/gruel/pmt
-@dirrm %%PYTHON_SITELIBDIR%%/gruel
 @dirrmtry etc/gnuradio/conf.d
 @dirrmtry etc/gnuradio
 @dirrm include/gnuradio/analog
@@ -40,8 +35,6 @@
 @dirrm include/gnuradio/filter
 @dirrm include/gnuradio/swig
 @dirrm include/gnuradio
-@dirrm include/gruel/swig
-@dirrm include/gruel
 @dirrm include/volk
 @dirrm lib/cmake/gnuradio
 @dirrmtry lib/cmake
@@ -60,11 +53,9 @@
 @dirrm share/gnuradio/examples/grc
 %%UHD%%@dirrm share/gnuradio/examples/hf_radio
 @dirrm share/gnuradio/examples/metadata
-@dirrm share/gnuradio/examples/msg_passing
 @dirrm share/gnuradio/examples/mp-sched
 @dirrm share/gnuradio/examples/network
 @dirrm share/gnuradio/examples/noaa
-@dirrm share/gnuradio/examples/pfb
 @dirrm share/gnuradio/examples/qt-gui
 @dirrm share/gnuradio/examples/tags
 @dirrm share/gnuradio/examples/trellis/fsm_files

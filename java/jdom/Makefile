@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	java textproc
 MASTER_SITES=	http://www.jdom.org/dist/source/
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library for accessing and manipulating XML documents
 
 RUN_DEPENDS=	${JAVALIBDIR}/jaxen-jdom.jar:${PORTSDIR}/java/jaxen

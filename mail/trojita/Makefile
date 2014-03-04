@@ -1,4 +1,4 @@
-# Created by: Marco Broeder <marco.broeder@gmx.eu>
+# Created by: Marco Broeder <marco.broeder@posteo.eu>
 # $FreeBSD$
 
 PORTNAME=	trojita
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/src/
 
-MAINTAINER=	marco.broeder@gmx.eu
+MAINTAINER=	marco.broeder@posteo.eu
 COMMENT=	Fast cross-platform Qt IMAP e-mail client
 
 LICENSE=	GPLv2 GPLv3

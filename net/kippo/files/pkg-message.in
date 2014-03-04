@@ -29,5 +29,5 @@ Before starting kippo you need to perform the following steps:
 
 Then you can start kippo by issuing the following command:
 
-	%%PREFIX%%/etc/rc.d/kippo start
+	service kippo start
 ========================================================================

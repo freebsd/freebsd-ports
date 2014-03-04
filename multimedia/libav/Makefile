@@ -160,7 +160,7 @@ CONFIGURE_ARGS+=	--extra-cflags=-m32
 .endif
 
 .if ${OSVERSION} < 900000
-USE_GCC=	4.6+
+USE_GCC=	yes
 .endif
 
 .if ${HAVE_SDL:Msdl}

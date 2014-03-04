@@ -1,5 +1,6 @@
 bin/xfstt
 etc/rc.d/xfstt.sh
+man/man1/xfstt.1x.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/THANKS

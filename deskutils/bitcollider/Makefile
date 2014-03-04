@@ -3,19 +3,17 @@
 
 PORTNAME=	bitcollider
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	deskutils multimedia
 MASTER_SITES=	SF/${PORTNAME}/Bitcollider/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Bitzi metadata generator
+COMMENT=	Bitzi metadata generator
 
-HAS_CONFIGURE=	yes
-CFLAGS+=	-lm
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+GNU_CONFIGURE=	yes
+USES=		libtool
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|g' ${WRKSRC}/configure
+CFLAGS+=	-lm
 
 .include <bsd.port.mk>

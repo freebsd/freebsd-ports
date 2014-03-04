@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $FreeBSD: jkim/emulators/virtualbox-ose/files/vboxwebsrv.in 20556 2013-12-14 00:02:29Z jkim $
+# $FreeBSD: head/emulators/virtualbox-ose/files/vboxwebsrv.in 340872 2014-01-24 00:14:07Z mat $
 #
 # PROVIDE: vboxwebsrv
 # REQUIRE: LOGIN

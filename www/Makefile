@@ -351,6 +351,7 @@
     SUBDIR += http_get
     SUBDIR += http_load
     SUBDIR += http_post
+    SUBDIR += httpasyncclient
     SUBDIR += httpclient
     SUBDIR += httpcore
     SUBDIR += httpsqs
@@ -595,6 +596,7 @@
     SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
     SUBDIR += oscommerce
+    SUBDIR += otter-browser
     SUBDIR += owncloud
     SUBDIR += p5-AMF-Perl
     SUBDIR += p5-Acme-Monta
@@ -1428,8 +1430,6 @@
     SUBDIR += php-templates
     SUBDIR += php5-session
     SUBDIR += php5-tidy
-    SUBDIR += php52-session
-    SUBDIR += php52-tidy
     SUBDIR += php53-session
     SUBDIR += php53-tidy
     SUBDIR += php55-opcache
@@ -2118,6 +2118,7 @@
     SUBDIR += webkit-gtk2
     SUBDIR += webkit-gtk3
     SUBDIR += webkit-qt4
+    SUBDIR += webkit-qt5
     SUBDIR += webkit-sharp
     SUBDIR += weblint
     SUBDIR += weblint++

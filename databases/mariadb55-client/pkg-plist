@@ -15,6 +15,7 @@ include/mysql/auth_dialog_client.h
 include/mysql/client_plugin.h
 include/mysql/decimal.h
 include/mysql/errmsg.h
+include/mysql/handler_ername.h
 include/mysql/handler_state.h
 include/mysql/keycache.h
 include/mysql/m_ctype.h

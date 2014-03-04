@@ -28,6 +28,7 @@ lib/libmq4cpp.a
 lib/libmq4cpp.la
 lib/libmq4cpp.so
 lib/libmq4cpp.so.1
+lib/libmq4cpp.so.1.16.0
 libdata/pkgconfig/mq4cpp.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

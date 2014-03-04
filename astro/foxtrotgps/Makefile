@@ -3,7 +3,7 @@
 
 PORTNAME=	foxtrotgps
 PORTVERSION=	1.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.foxtrotgps.org/releases/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libgps.so:${PORTSDIR}/astro/gpsd
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	DATADIRNAME=share
 CONFIGURE_ARGS=	--disable-schemas-install
 USES=		gettext gmake pkgconfig shebangfix
 SHEBANG_FILES=	contrib/convert2gpx \

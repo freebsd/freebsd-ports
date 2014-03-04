@@ -14,11 +14,10 @@ COMMENT=	ZeroMQ2 wrapper for Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 BUILD_DEPENDS=	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
-LIB_DEPENDS=	zmq.1:${PORTSDIR}/net/libzmq2 \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
-
+RUN_DEPENDS=	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
+LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq2 \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-TCP>=1.08:${PORTSDIR}/devel/p5-Test-TCP \
@@ -29,13 +28,7 @@ USES=		pkgconfig perl5
 MAKE_JOBS_UNSAFE=	yes
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501400
-TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s/lib => 'zmq',//" ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

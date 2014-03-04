@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fet
-PORTVERSION=	5.20.1
+PORTVERSION=	5.21.0
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \
@@ -32,8 +32,6 @@ DESKTOP_ENTRIES="FET" \
 OPTIONS_DEFINE=	EXAMPLES NLS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/share/fet|${DATADIR}|g' \
 		${WRKSRC}/src/interface/fet.cpp
@@ -42,13 +40,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fet ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/fet-cl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/fet.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \. ${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MNLS}
-	${MKDIR} ${STAGEDIR}${DATADIR}/translations
+	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
 	cd ${WRKSRC}/translations && ${INSTALL_DATA} *.qm ${STAGEDIR}${DATADIR}/translations
-.endif
 
 .include <bsd.port.mk>

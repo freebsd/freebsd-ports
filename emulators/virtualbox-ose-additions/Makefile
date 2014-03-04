@@ -2,7 +2,7 @@
 # $FreeBSD: jkim/emulators/virtualbox-ose-additions/Makefile 23406 2014-02-21 19:10:07Z jkim $
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.6
+DISTVERSION=	4.3.8
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \

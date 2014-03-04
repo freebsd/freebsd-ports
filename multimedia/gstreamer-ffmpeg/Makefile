@@ -22,7 +22,7 @@ LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
 
 LIBAV_VERSION=	0.7.7
 WRKSRC=		${WRKDIR}/gst-ffmpeg-${PORTVERSION}
-USES=		gmake pkgconfig
+USES=		compiler:features gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
@@ -30,7 +30,6 @@ FFMPEG_CONFIG=	--cc=${CC} \
 		--enable-runtime-cpudetect \
 		--enable-pic
 LDFLAGS+=	-Wl,-Bsymbolic
-CFLAGS+=	-fno-force-addr
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
 
 PLIST_SUB=	VERSION="${GST_VERSION}"
@@ -61,10 +60,16 @@ CONFIGURE_ARGS+=	--with-ffmpeg-extra-configure="${FFMPEG_CONFIG}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900033
-
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
+.endif
 
+.if ${ARCH} == powerpc64
+FFMPEG_CONFIG+=	--arch=ppc64
+.endif
+
+.if ${COMPILER_TYPE} == "gcc"
+CFLAGS+= -fno-force-addr
 .endif
 
 post-patch:

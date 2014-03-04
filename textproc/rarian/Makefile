@@ -24,8 +24,8 @@ DOCBOOK_VERSION=4.2
 CONFLICTS=	scrollkeeper-[0-9]*
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehier gnomehack libxslt
+USES=		gmake pathfix
+USE_GNOME=	gnomehier libxslt
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -35,7 +35,6 @@ CONFIGURE_ARGS=	--with-convert-dir=${LOCALBASE}/share/omf \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/rarian|/db/rarian|' \
 		${WRKSRC}/util/Makefile.in

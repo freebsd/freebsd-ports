@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	delphus@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical disk map Utility
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser

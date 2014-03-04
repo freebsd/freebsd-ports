@@ -21,12 +21,11 @@ USE_XZ=		yes
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		compiler:features gmake pkgconfig
 LIBAV_CONFIG=	--cc=${CC} \
 		--enable-runtime-cpudetect \
 		--enable-pic
 LDFLAGS+=	-Wl,-Bsymbolic
-CFLAGS+=	-fno-force-addr
 
 PLIST_SUB=	VERSION="1.0"
 
@@ -55,6 +54,14 @@ CONFIGURE_ARGS+=	--with-libav-extra-configure="${LIBAV_CONFIG}"
 .if ${OSVERSION} < 900033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
+.endif
+
+.if ${ARCH} == powerpc64
+FFMPEG_CONFIG+=	--arch=ppc64
+.endif
+ 
+.if ${COMPILER_TYPE} == "gcc"
+CFLAGS+=	-fno-force-addr
 .endif
 
 post-install:

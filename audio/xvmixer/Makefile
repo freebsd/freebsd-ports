@@ -12,12 +12,11 @@ COMMENT=	Open Look-based audio mixer
 
 LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
-NO_STAGE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DUSE_XBM_ICON" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBRARIES="-lxview -lolgx -lX11"
 PLIST_FILES=	bin/xvmixer
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xvmixer ${LOCALBASE}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xvmixer ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

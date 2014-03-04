@@ -27,7 +27,7 @@ Qt_Pre_Include=	bsd.qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=	4 5
 QT4_VERSION?=	4.8.5
-QT5_VERSION?=	5.2.0-beta1
+QT5_VERSION?=	5.2.1
 
 QT_PREFIX?=		${LOCALBASE}
 
@@ -60,7 +60,6 @@ MASTER_SITES=	${MASTER_SITE_QT}
 # Useless, as it must be defined before including bsd.port.pre.mk (at least
 # because of bsd.options.mk).
 #PKGNAMEPREFIX?=	${_QT_RELNAME}-
-DIST_SUBDIR=	KDE
 DISTINFO_FILE=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/distinfo
 
 # Can go after a while.
@@ -78,6 +77,7 @@ DESTDIRNAME=	INSTALL_ROOT
 . if ${_QT_VERSION:M4*}
 MASTER_SITE_SUBDIR=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/
 DISTNAME=		qt-everywhere-opensource-src-${_QT_VERSION}
+DIST_SUBDIR=		KDE
 . else
 .  if ${_QT_VERSION:M*-*}
 # Pre-releases.
@@ -87,6 +87,7 @@ MASTER_SITE_SUBDIR=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/submodu
 .  endif
 DISTNAME=		${QT_DIST:S,^,qt,:S,$,-opensource-src-${_QT_VERSION},}
 DISTFILES=		${DISTNAME:S,$,${EXTRACT_SUFX},}
+DIST_SUBDIR=		KDE/Qt/${_QT_VERSION}
 USE_XZ=			yes
 
 .  if ${.TARGETS:Mmakesum} || ${.TARGETS:Mfetch} && \
@@ -551,8 +552,9 @@ _QT_TOOLS+=		${UIC}
 pre-configure: qtbase-pre-configure
 qtbase-pre-configure:
 .  if ${PORTNAME} != "qmake"
-	@${RM} -rf ${CONFIGURE_WRKSRC}/mkspecs
-	@${MKDIR} ${CONFIGURE_WRKSRC}/mkspecs
+	@(cd ${WRKSRC} && ${SETENV} ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS})
+# 	@${RM} -rf ${CONFIGURE_WRKSRC}/mkspecs
+# 	@${MKDIR} ${CONFIGURE_WRKSRC}/mkspecs
 .  endif
 .  for tool in ${_QT_TOOLS}
 	@${TEST} -e ${QT_BINDIR}/${tool:T} && \

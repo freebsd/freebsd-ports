@@ -11,7 +11,7 @@ DISTFILES=	# none
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A default paper size configuration file for libpaper
 
-LIB_DEPENDS=	paper:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
 
 NO_BUILD=	yes
 
@@ -24,8 +24,8 @@ CONFLICTS+=	papersize-default-${P}-[0-9]*
 
 PLIST_FILES=	etc/papersize
 
-NO_STAGE=	yes
 do-install:
-	${LN} -s -f papersize.${DEFAULTPAPERSIZE:L} ${PREFIX}/etc/papersize
+	${LN} -s -f papersize.${DEFAULTPAPERSIZE:L} \
+		${STAGEDIR}${PREFIX}/etc/papersize
 
 .include <bsd.port.mk>

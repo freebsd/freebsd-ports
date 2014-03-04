@@ -1,0 +1,3 @@
+%%QT_BINDIR%%/qev
+@dirrmtry %%QT_BINDIR%%
+@dirrmtry %%QT_ARCHDIR%%

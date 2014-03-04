@@ -11,6 +11,8 @@ DISTNAME=	backbone-6343263e17c5cd771770dabc2559ac07ffedcf29
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic text editor for GNUstep
 
+BROKEN=		Does not link
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

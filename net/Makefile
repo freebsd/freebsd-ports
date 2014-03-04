@@ -874,10 +874,6 @@
     SUBDIR += php5-soap
     SUBDIR += php5-sockets
     SUBDIR += php5-xmlrpc
-    SUBDIR += php52-ldap
-    SUBDIR += php52-soap
-    SUBDIR += php52-sockets
-    SUBDIR += php52-xmlrpc
     SUBDIR += php53-ldap
     SUBDIR += php53-soap
     SUBDIR += php53-sockets
@@ -983,6 +979,7 @@
     SUBDIR += qadsl
     SUBDIR += qoauth
     SUBDIR += qt4-network
+    SUBDIR += qt5-network
     SUBDIR += qtweetlib
     SUBDIR += quagga
     SUBDIR += quagga-re

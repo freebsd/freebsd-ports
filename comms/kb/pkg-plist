@@ -1,6 +1,7 @@
 bin/kb
 bin/kb_bin
 bin/kb_server
+man/man1/kb.1.gz
 %%DATADIR%%/CALL_FD.LST
 %%DATADIR%%/CALL_LIB.LST
 %%DATADIR%%/CALL_SS.LST

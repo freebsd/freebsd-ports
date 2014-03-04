@@ -64,7 +64,7 @@ cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
 CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
-dansguardian-2.[678]*	www/dansguardian	Not free for installation by 3rd parties charging for installation or support; not free for commercial use
+dansguardian-2.[678]*	www/dansguardian	Redistribution and commercial download is restricted.  Check http://dansguardian.org/index.php?page=copyright2 for more info
 darwinia-demo*		games/linux-darwinia-demo	Redistribution is limited, see license
 datamodeler		databases/datamodeler	Packaging prohibited by Oracle license
 dbvis			java/dbvis		Redistribution is not permitted
@@ -126,7 +126,7 @@ hcwPVRP2.sys		multimedia/pvr250	Driver is part of the CD-ROM distribution coming
 hcwPVRP2.sys		multimedia/pvrxxx	Driver is part of the CD-ROM distribution coming with the TV card
 hdb_demo*		games/linux-hdb-demo	Redistribution is limited, see license
 HeroesOfMightAndMagic-*	games/HeroesOfMightAndMagic	Software is commercial
-homard-*		french/homard		Only free for use in conjunction with french/aster.  For any other purpose, you have to acquire a license
+homard-*		french/homard		The free downloading of HOMARD software is only allowed for coupling with Code_Aster. For any other use, a license agreement is requested. Please contact HOMARD project: <homard@edf.fr>.
 hplip-*-plugin.run	print/hplip-plugin	License agreement is required
 httprint_freebsd_*.zip	security/httprint	No cost for personal, education and non-commercial use
 huludesktop-i386.rpm	multimedia/linux-huludesktop No redistribution allowed, not for commercial use, export controlled
@@ -205,7 +205,7 @@ oracle/*		databases/jdbc-oracle8i	This software is under license and export cont
 oracle/*		databases/jdbc-oracle9i	This software is under license and export controls
 oracle/sqldeveloper*	databases/sqldeveloper	This software is under license and export controls
 palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
-pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
+pcsv*fb.tar.gz		lang/petite-chez	User must accept license terms before installation
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
 platon*			biology/platon		$5000 USD for commercial users, free for academic
 poseidonCE-*		java/poseidon		Redistribution is not permitted
@@ -266,8 +266,8 @@ twelf-*			lang/twelf		License is currently indeterminate
 tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
 uDrawGraph-*		graphics/uDrawGraph	Binary under GNU LGPL without accompanying source
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
-unifi-2*/UniFi.unix.zip	net-mgmt/unifi2		Redistribution limited
-unifi-3*/UniFi.unix.zip	net-mgmt/unifi3		Redistribution limited
+unifi-2*/UniFi.unix.zip	net-mgmt/unifi2		Redistribution of bundled firmware images is not permitted
+unifi-3*/UniFi.unix.zip	net-mgmt/unifi3		Redistribution of bundled firmware images is not permitted
 uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
 uppaal-*.zip		devel/uppaal		Downloading requires completion of a license agreement
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
@@ -281,7 +281,7 @@ vst_sdk2_3.zip		audio/ardour		Redistribution of the VST PlugIns SDK is not allow
 vtkmpeg2encode.tar.gz	multimedia/vtkmpeg2encode	The MPEG2 format and all software that uses it is subject to patent restrictions
 vwnc7.3.1/*		lang/visualworks	Do not redistribute
 waeijiro-fpw-*		japanese/waeijiro-fpw	The original dictionary is not free
-webcopy-*		www/webcopy		Do not sell for profit
+webcopy-*		www/webcopy		This program cannot be distributed if modified in any way.  Don't sell for profit without written permission
 webfonts/*		x11-fonts/webfonts	Restrictive copyright
 win32/*			multimedia/win32-codecs	Licensing status of the codecs is unknown
 WowzaMediaServerPro	net/wowzamediaserverpro	Redistribution not allowed

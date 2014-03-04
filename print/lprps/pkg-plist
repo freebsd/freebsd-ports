@@ -1,3 +1,8 @@
+man/man1/psrev.1.gz
+man/man1/textps.1.gz
+man/man8/lprps.8.gz
+man/man8/psif.8.gz
+man/man8/psof.8.gz
 libexec/psif
 libexec/lprps
 libexec/psof

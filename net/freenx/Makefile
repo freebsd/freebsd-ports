@@ -10,6 +10,9 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	freenx@deweyonline.com
 COMMENT=	Frontend (auth/session management) for nxserver libraries
 
+DEPRECATED=	Depends on expiring net/nxserver
+EXPIRATION_DATE=	2014-03-10
+
 RUN_DEPENDS=	${NXPREFIX}/bin/nxagent:${PORTSDIR}/net/nxserver \
 		bash:${PORTSDIR}/shells/bash \
 		expect:${PORTSDIR}/lang/expect \

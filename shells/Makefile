@@ -7,9 +7,7 @@
     SUBDIR += ambit
     SUBDIR += bash
     SUBDIR += bash-completion
-    SUBDIR += bash-devel
     SUBDIR += bash-static
-    SUBDIR += bash-static-devel
     SUBDIR += bashc
     SUBDIR += ch
     SUBDIR += dash

@@ -303,6 +303,7 @@
     SUBDIR += qmmp-plugin-pack
     SUBDIR += qt-faststart
     SUBDIR += qt4-multimedia
+    SUBDIR += qt5-multimedia
     SUBDIR += quark
     SUBDIR += quodlibet
     SUBDIR += quvi

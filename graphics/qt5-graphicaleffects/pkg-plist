@@ -1,0 +1,38 @@
+%%QT_QMLDIR%%/QtGraphicalEffects/Blend.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/BrightnessContrast.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/ColorOverlay.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/Colorize.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/ConicalGradient.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/Desaturate.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/DirectionalBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/Displace.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/DropShadow.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/FastBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/GammaAdjust.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/GaussianBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/Glow.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/HueSaturation.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/InnerShadow.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/LevelAdjust.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/LinearGradient.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/MaskedBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/OpacityMask.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/RadialBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/RadialGradient.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/RectangularGlow.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/RecursiveBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/ThresholdMask.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/ZoomBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/private/FastGlow.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/private/FastInnerShadow.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/private/FastMaskedBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/private/GaussianDirectionalBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/private/GaussianGlow.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/private/GaussianInnerShadow.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/private/GaussianMaskedBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/private/SourceProxy.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/qmldir
+@dirrm %%QT_QMLDIR%%/QtGraphicalEffects/private
+@dirrm %%QT_QMLDIR%%/QtGraphicalEffects
+@dirrmtry %%QT_QMLDIR%%
+@dirrmtry %%QT_ARCHDIR%%

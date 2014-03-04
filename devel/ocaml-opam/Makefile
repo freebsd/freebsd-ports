@@ -13,6 +13,8 @@ COMMENT=	Source-based package manager for OCaml
 
 LICENSE=	GPLv3
 
+BROKEN=		Does not build
+
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USES=		gmake

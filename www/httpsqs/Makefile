@@ -12,19 +12,18 @@ COMMENT=	Simple Queue Service based on HTTP GET/POST protocol
 LICENSE=	BSD
 
 LIB_DEPENDS+=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet \
-	event-2.0:${PORTSDIR}/devel/libevent2
+		event-2.0:${PORTSDIR}/devel/libevent2
 
 USES=		pkgconfig
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	${CP} ${PATCHDIR}/Makefile ${WRKSRC}
 	@${REINPLACE_CMD} -e 's|{ 0 }|"${PREFIX}/bin/${PORTNAME}"|' \
 		${WRKSRC}/httpsqs.c
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

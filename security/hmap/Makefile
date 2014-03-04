@@ -20,19 +20,18 @@ USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's|DATADIR|${DATADIR}|' ${WRKSRC}/hmap.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/hmap.py ${PREFIX}/bin/
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/known.servers/ && ${COPYTREE_SHARE} \* ${DATADIR})
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/hmap.py ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/known.servers/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README BUGS FAQS HIDING_GUIDE KNOWN_TESTS
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

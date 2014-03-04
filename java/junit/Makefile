@@ -7,7 +7,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://cloud.github.com/downloads/KentBeck/junit/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A regression testing utility for use with the Java(TM) Language
 
 USE_ZIP=	yes

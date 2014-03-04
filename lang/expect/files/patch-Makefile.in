@@ -1,11 +1,15 @@
---- Makefile.in.orig	2014-02-21 14:51:15.000000000 +0100
-+++ Makefile.in	2014-02-21 14:55:44.000000000 +0100
-@@ -239,7 +239,7 @@
- 	@mkdir -p $(DESTDIR)$(prefix)/bin
+--- Makefile.in.orig	2010-09-30 19:14:07.000000000 +0200
++++ Makefile.in	2014-02-28 12:00:40.000000000 +0100
+@@ -236,10 +236,10 @@
+ 	    $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(includedir) ; \
+ 	done;
+ # install standalone scripts and their man pages, if requested
+-	@mkdir -p $(DESTDIR)$(prefix)/bin
++	@mkdir -p $(DESTDIR)$(datadir)
  	-for i in $(SCRIPT_LIST) ; do \
  	  if [ -f $$i ] ; then \
 -	    $(INSTALL_PROGRAM) $$i $(DESTDIR)$(prefix)/bin/$$i ; \
-+	    $(INSTALL_SCRIPT) $$i $(DESTDIR)$(prefix)/bin/$$i ; \
++	    $(INSTALL_SCRIPT) $$i $(DESTDIR)$(datadir)/$$i ; \
  	    rm -f $$i ; \
  	  else true; fi ; \
  	done

@@ -11,7 +11,7 @@
  ### Includes and Defines (add further entries here):
  
  PKG-LIBS += libavcodec libavutil
-@@ -86,17 +90,29 @@ markad: $(OBJS)
+@@ -86,17 +90,34 @@ markad: $(OBJS)
  	$(CXX) $(CXXFLAGS) $(OBJS) $(LIBS) -o $@
  
  
@@ -21,16 +21,21 @@
  MANDIR	= $(DESTDIR)/usr/share/man
 +endif
  install-doc:
++ifdef FREEBSD
++	@mkdir -p ${DESTDIR}$(MANDIR)/man1
++	@gzip -c markad.1 > ${DESTDIR}$(MANDIR)/man1/markad.1.gz
++else
  	@mkdir -p $(MANDIR)/man1
  	@gzip -c markad.1 > $(MANDIR)/man1/markad.1.gz
++endif
  
  install: install-doc markad $(I18Nmsgs)
 +ifdef FREEBSD
-+	@mkdir -p $(PREFIX)/bin
-+	@cp -f markad $(PREFIX)/bin/markad
-+	@$(STRIP) $(PREFIX)/bin/markad
-+	@mkdir -p $(DATADIR)/logos
-+	@cp logos/* $(DATADIR)/logos
++	@mkdir -p ${DESTDIR}$(PREFIX)/bin
++	@cp -f markad ${DESTDIR}$(PREFIX)/bin/markad
++	@$(STRIP) ${DESTDIR}$(PREFIX)/bin/markad
++	@mkdir -p ${DESTDIR}$(DATADIR)/logos
++	@cp logos/* ${DESTDIR}$(DATADIR)/logos
 +else
  	@mkdir -p $(DESTDIR)/usr/bin
  	@cp --remove-destination markad $(DESTDIR)/usr/bin/markad

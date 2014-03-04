@@ -3,7 +3,7 @@
 
 PORTNAME=	bglibs
 PORTVERSION=	1.106
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
@@ -27,8 +27,6 @@ DOCS=		NEWS README TODO doc/html/*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} '/main/s/^void/int/' ${WRKSRC}/sys/try*.c
 
@@ -44,6 +42,9 @@ do-configure:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	@${SED} -i '' 's|${STAGEDIR}||' \
+		${STAGEDIR}${PREFIX}/lib/bglibs/libbg-sysdeps.la \
+		${STAGEDIR}${PREFIX}/lib/bglibs/libbg.la
 
 selftest: build
 	cd ${WRKSRC} && ${SH} selftests.sh

@@ -14,7 +14,7 @@ COMMENT?=	${PLUGIN_DESC} plugin for the VerliHub - a Direct Connect protocol ser
 BUILD_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 RUN_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 
-USE_GCC=	4.2+
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
 

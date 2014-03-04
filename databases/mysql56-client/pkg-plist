@@ -19,6 +19,7 @@ include/mysql/byte_order_generic_x86.h
 include/mysql/byte_order_generic_x86_64.h
 include/mysql/decimal.h
 include/mysql/errmsg.h
+include/mysql/hash.h
 include/mysql/keycache.h
 include/mysql/little_endian.h
 include/mysql/m_ctype.h
