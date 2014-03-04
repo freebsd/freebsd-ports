@@ -3,7 +3,7 @@
 
 PORTNAME=	kphotoalbum
 PORTVERSION=	4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
@@ -18,7 +18,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix libkdcraw libkipi automoc4
 USE_QT4=	phonon sql \
 		qmake_build moc_build rcc_build uic_build
 USE_BZIP2=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 
 OPTIONS_DEFINE=	MARBLE NLS
 OPTIONS_DEFAULT=	MARBLE
