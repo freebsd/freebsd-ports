@@ -18,8 +18,11 @@ MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}"
-PLIST_FILES=	bin/dnsperf bin/resperf	bin/resperf-report
-MAN1=		dnsperf.1 resperf.1
+PLIST_FILES=	bin/dnsperf \
+		bin/resperf \
+		bin/resperf-report \
+		man/man1/dnsperf.1.gz \
+		man/man1/resperf.1.gz
 PORTDOCS=	caching-dns-performance.pdf \
 		dnsperf.pdf \
 		resperf.pdf
@@ -28,7 +31,6 @@ CFLAGS+=	-I.
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # This is a workaround for broken isc/stat.h.
@@ -39,8 +41,8 @@ pre-build:
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
