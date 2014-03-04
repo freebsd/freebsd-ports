@@ -112,7 +112,8 @@ DLZ_FILESYSTEM_CONFIGURE_ON=	--with-dlz-filesystem=yes
 DLZ_STUB_CONFIGURE_ON=	--with-dlz-stub=yes
 
 .if defined(HEIMDAL_HOME)
-GSSAPI_CONFIGURE_WITH=	gssapi=${HEIMDAL_HOME}
+GSSAPI_CONFIGURE_ON=	--with-gssapi=${HEIMDAL_HOME}
+GSSAPI_CONFIGURE_OFF=	--without-gssapi
 .else
 GSSAPI_CONFIGURE_WITH=	gssapi
 .endif
