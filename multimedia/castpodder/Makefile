@@ -11,6 +11,9 @@ DISTNAME=	CastPodder-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A podcast receiver written in Python
 
+DEPRECATED=	Depends on deprecated multimedia/beep-media-player
+EXPIRATION_DATE=	2014-03-06
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmms/__init__.py:${PORTSDIR}/audio/py-xmms \
 		${PYTHON_SITELIBDIR}/bmp/__init__.py:${PORTSDIR}/multimedia/py-pybmp \
 		${PYTHON_SITELIBDIR}/${WX_PYTHON_DIR}/wxPython/_wx.py:${PORTSDIR}/x11-toolkits/py-wxPython26-unicode \
