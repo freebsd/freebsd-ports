@@ -2,26 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	evilvte
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.5.2~pre1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://www.calno.com/${PORTNAME}/ \
-		LOCAL/glarkin
+MASTER_SITES=	http://www.calno.com/${PORTNAME}/
 
 MAINTAINER=	aragon@phat.za.net
-COMMENT=	A VTE based, super lightweight terminal emulator
+COMMENT=	VTE based, super lightweight terminal emulator
 
 USES=		pkgconfig gmake
 USE_XZ=		yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=	evilvte
+INSTALLS_ICONS=	yes
 USE_GNOME=	vte
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
 
 pre-everything::
 .if !defined(EVILVTE_CONF)
@@ -46,4 +39,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/misc/evilvte.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/misc/showvte.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
