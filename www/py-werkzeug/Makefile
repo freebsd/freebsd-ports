@@ -14,6 +14,8 @@ COMMENT=	Python utilities collection for building WSGI applications
 
 LICENSE=	BSD3CLAUSE
 
+OPTIONS_DEFINE=	EXAMPLES
+
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
