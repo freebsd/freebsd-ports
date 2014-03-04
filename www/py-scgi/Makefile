@@ -3,6 +3,7 @@
 
 PORTNAME=	scgi
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://python.ca/scgi/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
