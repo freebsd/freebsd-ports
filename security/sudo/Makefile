@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 OPTIONS_DEFINE=	LDAP INSULTS DISABLE_ROOT_SUDO DISABLE_AUTH NOARGS_SHELL \
 		AUDIT OPIE NLS
 OPTIONS_DEFAULT=	AUDIT
+OPTIONS_SUB=	yes
 
 INSULTS_DESC=	Enable insults on failures
 DISABLE_ROOT_SUDO_DESC=	Do not allow root to run sudo
@@ -46,57 +47,30 @@ CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
 CONFIGURE_ARGS+=	--with-secure-path="${SUDO_SECURE_PATH}"
 .endif
 
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+NLS_LDFLAGS=	-L${LOCALBASE}/lib -lintl
+NLS_CFLAGS=	-I${LOCALBASE}/include
+
+INSULTS_CONFIGURE_ON=	--with-insults
+INSULTS_CONFIGURE_ON+=	--with-all-insults
+
+LDAP_USE=	OPENLDAP=yes
+LDAP_CONFIGURE_ON=	--with-ldap=${PREFIX}
+SUDO_LDAP_CONF?=	ldap.conf
+LDAP_CONFIGURE_ON+=	--with-ldap-conf-file=${PREFIX}/etc/${SUDO_LDAP_CONF}
+
+DISABLE_ROOT_SUDO_CONFIGURE_ON=	--disable-root-sudo
+DISABLE_AUTH_CONFIGURE_ON=	--disable-authentication
+NOARGS_SHELL_CONFIGURE_ENABLE=	noargs-shell
+AUDIT_CONFIGURE_WITH=	bsm-audit
+OPIE_CONFIGURE_ON=	--with-opie
+OPIE_CONFIGURE_OFF=	--with-pam
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "arm"
 CONFIGURE_ARGS+=	--disable-pie
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-CFLAGS+=	-I${LOCALBASE}/include
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MINSULTS}
-CONFIGURE_ARGS+=	--with-insults
-CONFIGURE_ARGS+=	--with-all-insults
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=	--with-ldap=${PREFIX}
-SUDO_LDAP_CONF?=	ldap.conf
-CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/${SUDO_LDAP_CONF}
-PLIST_SUB+=	LDAP=""
-.else
-PLIST_SUB+=	LDAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDISABLE_ROOT_SUDO}
-CONFIGURE_ARGS+=--disable-root-sudo
-.endif
-
-.if ${PORT_OPTIONS:MDISABLE_AUTH}
-CONFIGURE_ARGS+=	--disable-authentication
-.endif
-
-.if ${PORT_OPTIONS:MNOARGS_SHELL}
-CONFIGURE_ARGS+=	--enable-noargs-shell
-.endif
-
-.if ${PORT_OPTIONS:MAUDIT}
-CONFIGURE_ARGS+=	--with-bsm-audit
-.endif
-
-.if ${PORT_OPTIONS:MOPIE}
-CONFIGURE_ARGS+=	--with-opie
-.else
-CONFIGURE_ARGS+=	--with-pam
 .endif
 
 post-patch:
@@ -104,7 +78,7 @@ post-patch:
 		s/\$$\(INSTALL\)/& ${STRIP}/;s/-b\~/-b ~/' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's,$$(srcdir)/sudoers2ldif $$(DESTDIR)$$(docdir),$$(srcdir)/sudoers2ldif $$(DESTDIR)$$(bindir),' ${WRKSRC}/plugins/sudoers/Makefile.in
-.if ! ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's/mkinstalldirs $$(DESTDIR)$$(docdir)/mkinstalldirs/' \
 		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e '/for f in $$(OTHER_DOCS); do/d;/@LDAP@for f in $$(OTHER_DOCS_LDAP); do/d' ${WRKSRC}/doc/Makefile.in
