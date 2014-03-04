@@ -1,26 +1,42 @@
 # $FreeBSD$
 
 PORTNAME=	tagutil
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	audio
-MASTER_SITES=	http://files.kaworu.ch/
+MASTER_SITES=	GH
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Tool to manage tags in music files
+MAINTAINER=	alex@kaworu.ch
+COMMENT=	Command line interface tool to manage tags in music files
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-10
+LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
 
-USES=		pkgconfig
-NO_STAGE=	yes
-MAKE_ENV=	DESTDIR="${PREFIX}"
+USE_GITHUB=	yes
+GH_ACCOUNT=	kAworu
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	8e40bab
 
-MAN1=		tagutil.1
-PLIST_FILES=	bin/tagutil
+USES=		pkgconfig cmake iconv
+PLIST_FILES=	bin/tagutil \
+		man/man1/tagutil.1.gz
 
-MANCOMPRESSED=	yes
+CMAKE_ARGS=	-DMAN_PATH=${PREFIX}/man
+
+OPTIONS_DEFINE=	JSON
+OPTIONS_MULTI=	MEDIA
+OPTIONS_MULTI_MEDIA=	FLAC OGG TAGLIB
+OPTIONS_DEFAULT=	FLAC OGG TAGLIB
+TAGLIB_DESC=	Multiple file format but limited tags support
+JSON_DESC=	JSON output format support
+
+JSON_LIB_DEPENDS+=	libjansson.so:${PORTSDIR}/devel/jansson
+JSON_CMAKE_OFF+=	-DWITHOUT_JSON=yes
+FLAC_LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_CMAKE_OFF+=	-DWITHOUT_FLAC=yes
+OGG_LIB_DEPENDS+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+OGG_CMAKE_OFF+=	-DWITHOUT_OGGVORBIS=yes
+TAGLIB_LIB_DEPENDS+=	libtag_c.so:${PORTSDIR}/audio/taglib
+TAGLIB_CMAKE_OFF+=	-DWITHOUT_TAGLIB=yes
 
 .include <bsd.port.mk>
