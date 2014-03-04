@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	istatd
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/tiwilliam/${PORTNAME}/
 
