@@ -1,0 +1,19 @@
+--- ./configure.orig	2014-01-27 19:59:48.000000000 +0100
++++ ./configure	2014-03-04 17:46:51.000000000 +0100
+@@ -13936,6 +13936,7 @@
+ 		    "-lgssapi" \
+ 		    "-lgssapi -lkrb5 -ldes -lcrypt -lasn1 -lroken -lcom_err" \
+ 		    "-lgssapi -lkrb5 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
++		    "-lgssapi -lkrb5 -lgssapi_krb5 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
+ 		    "-lgssapi -lkrb5 -lhx509 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
+ 		    "-lgss -lkrb5"
+ 		do
+@@ -13958,7 +13959,7 @@
+ int
+ main ()
+ {
+-gss_acquire_cred();krb5_init_context()
++gss_acquire_cred();krb5_init_context();gsskrb5_register_acceptor_identity();
+   ;
+   return 0;
+ }
