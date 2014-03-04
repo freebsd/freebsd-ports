@@ -16,5 +16,4 @@ RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 GNU_CONFIGURE=	yes
 INFO=		guile-www
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
