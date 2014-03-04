@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/tgz%20source/${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Simple frontend for the xmame
 
+DEPRECATED=	Depends on deprecated emulators/xmame
+EXPIRATION_DATE=	2014-03-07
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		xmame:${PORTSDIR}/emulators/xmame
 
