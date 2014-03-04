@@ -37,12 +37,119 @@ bin/grub-fstest
 bin/grub-kbdcomp
 bin/grub-menulst2cfg
 bin/grub-mkimage
+bin/grub-mknetdir
 bin/grub-mklayout
 bin/grub-mkpasswd-pbkdf2
 bin/grub-mkrelpath
 bin/grub-mkstandalone
 bin/grub-mkrescue
 bin/grub-script-check
+bin/grub-file
+bin/grub-glue-efi
+bin/grub-render-label
+bin/grub-syslinux2cfg
+sbin/grub-macbless
+info/dir
+lib/charset.alias
+lib/grub/i386-pc/archelp.mod
+lib/grub/i386-pc/archelp.module
+lib/grub/i386-pc/boot_hybrid.image
+lib/grub/i386-pc/boot_hybrid.img
+lib/grub/i386-pc/cbfs.mod
+lib/grub/i386-pc/cbfs.module
+lib/grub/i386-pc/cbls.mod
+lib/grub/i386-pc/cbls.module
+lib/grub/i386-pc/cbmemc.mod
+lib/grub/i386-pc/cbmemc.module
+lib/grub/i386-pc/cbtable.mod
+lib/grub/i386-pc/cbtable.module
+lib/grub/i386-pc/cbtime.mod
+lib/grub/i386-pc/cbtime.module
+lib/grub/i386-pc/cmdline_cat_test.mod
+lib/grub/i386-pc/cmdline_cat_test.module
+lib/grub/i386-pc/cmosdump.mod
+lib/grub/i386-pc/cmosdump.module
+lib/grub/i386-pc/disk.mod
+lib/grub/i386-pc/disk.module
+lib/grub/i386-pc/div_test.mod
+lib/grub/i386-pc/div_test.module
+lib/grub/i386-pc/eval.mod
+lib/grub/i386-pc/eval.module
+lib/grub/i386-pc/file.mod
+lib/grub/i386-pc/file.module
+lib/grub/i386-pc/gcry_dsa.mod
+lib/grub/i386-pc/gcry_dsa.module
+lib/grub/i386-pc/gcry_idea.mod
+lib/grub/i386-pc/gcry_idea.module
+lib/grub/i386-pc/gcry_rsa.mod
+lib/grub/i386-pc/gcry_rsa.module
+lib/grub/i386-pc/gfxterm_background.mod
+lib/grub/i386-pc/gfxterm_background.module
+lib/grub/i386-pc/gfxterm_menu.mod
+lib/grub/i386-pc/gfxterm_menu.module
+lib/grub/i386-pc/hfspluscomp.mod
+lib/grub/i386-pc/hfspluscomp.module
+lib/grub/i386-pc/legacy_password_test.mod
+lib/grub/i386-pc/legacy_password_test.module
+lib/grub/i386-pc/macbless.mod
+lib/grub/i386-pc/macbless.module
+lib/grub/i386-pc/macho.mod
+lib/grub/i386-pc/macho.module
+lib/grub/i386-pc/mda_text.mod
+lib/grub/i386-pc/mda_text.module
+lib/grub/i386-pc/morse.mod
+lib/grub/i386-pc/morse.module
+lib/grub/i386-pc/mpi.mod
+lib/grub/i386-pc/mpi.module
+lib/grub/i386-pc/nativedisk.mod
+lib/grub/i386-pc/nativedisk.module
+lib/grub/i386-pc/offsetio.mod
+lib/grub/i386-pc/offsetio.module
+lib/grub/i386-pc/part_dfly.mod
+lib/grub/i386-pc/part_dfly.module
+lib/grub/i386-pc/pbkdf2_test.mod
+lib/grub/i386-pc/pbkdf2_test.module
+lib/grub/i386-pc/pcidump.mod
+lib/grub/i386-pc/pcidump.module
+lib/grub/i386-pc/procfs.mod
+lib/grub/i386-pc/procfs.module
+lib/grub/i386-pc/progress.mod
+lib/grub/i386-pc/progress.module
+lib/grub/i386-pc/setjmp_test.mod
+lib/grub/i386-pc/setjmp_test.module
+lib/grub/i386-pc/signature_test.mod
+lib/grub/i386-pc/signature_test.module
+lib/grub/i386-pc/sleep_test.mod
+lib/grub/i386-pc/sleep_test.module
+lib/grub/i386-pc/spkmodem.mod
+lib/grub/i386-pc/spkmodem.module
+lib/grub/i386-pc/syslinuxcfg.mod
+lib/grub/i386-pc/syslinuxcfg.module
+lib/grub/i386-pc/testspeed.mod
+lib/grub/i386-pc/testspeed.module
+lib/grub/i386-pc/tr.mod
+lib/grub/i386-pc/tr.module
+lib/grub/i386-pc/truecrypt.mod
+lib/grub/i386-pc/truecrypt.module
+lib/grub/i386-pc/ufs1_be.mod
+lib/grub/i386-pc/ufs1_be.module
+lib/grub/i386-pc/usbserial_usbdebug.mod
+lib/grub/i386-pc/usbserial_usbdebug.module
+lib/grub/i386-pc/verify.mod
+lib/grub/i386-pc/verify.module
+lib/grub/i386-pc/video_colors.mod
+lib/grub/i386-pc/video_colors.module
+lib/grub/i386-pc/videotest_checksum.mod
+lib/grub/i386-pc/videotest_checksum.module
+lib/grub/i386-pc/xnu_uuid_test.mod
+lib/grub/i386-pc/xnu_uuid_test.module
+man/man1/grub-file.1.gz
+man/man1/grub-glue-efi.1.gz
+man/man1/grub-mkfont.1.gz
+man/man1/grub-mknetdir.1.gz
+man/man1/grub-render-label.1.gz
+man/man1/grub-syslinux2cfg.1.gz
+man/man8/grub-macbless.8.gz
 etc/grub.d/00_header
 etc/grub.d/30_os-prober
 etc/grub.d/40_custom
@@ -504,40 +611,11 @@ sbin/grub-bios-setup
 sbin/grub-probe
 sbin/grub-install
 sbin/grub-mkconfig
-sbin/grub-mknetdir
 sbin/grub-ofpathname
 sbin/grub-set-default
 sbin/grub-sparc64-setup
 sbin/grub-reboot
 share/grub/grub-mkconfig_lib
-share/locale/ast/LC_MESSAGES/grub.mo
-share/locale/ca/LC_MESSAGES/grub.mo
-share/locale/da/LC_MESSAGES/grub.mo
-share/locale/de/LC_MESSAGES/grub.mo
-share/locale/de@hebrew/LC_MESSAGES/grub.mo
-share/locale/de_CH/LC_MESSAGES/grub.mo
-share/locale/en@arabic/LC_MESSAGES/grub.mo
-share/locale/en@cyrillic/LC_MESSAGES/grub.mo
-share/locale/en@greek/LC_MESSAGES/grub.mo
-share/locale/en@hebrew/LC_MESSAGES/grub.mo
-share/locale/en@piglatin/LC_MESSAGES/grub.mo
-share/locale/en@quot/LC_MESSAGES/grub.mo
-share/locale/eo/LC_MESSAGES/grub.mo
-share/locale/fi/LC_MESSAGES/grub.mo
-share/locale/fr/LC_MESSAGES/grub.mo
-share/locale/hu/LC_MESSAGES/grub.mo
-share/locale/id/LC_MESSAGES/grub.mo
-share/locale/it/LC_MESSAGES/grub.mo
-share/locale/ja/LC_MESSAGES/grub.mo
-share/locale/nl/LC_MESSAGES/grub.mo
-share/locale/pa/LC_MESSAGES/grub.mo
-share/locale/pl/LC_MESSAGES/grub.mo
-share/locale/ru/LC_MESSAGES/grub.mo
-share/locale/sv/LC_MESSAGES/grub.mo
-share/locale/uk/LC_MESSAGES/grub.mo
-share/locale/vi/LC_MESSAGES/grub.mo
-share/locale/zh_CN/LC_MESSAGES/grub.mo
-share/locale/zh_TW/LC_MESSAGES/grub.mo
 man/man1/grub-editenv.1.gz
 man/man1/grub-fstest.1.gz
 man/man1/grub-kbdcomp.1.gz
@@ -552,28 +630,11 @@ man/man1/grub-script-check.1.gz
 man/man8/grub-bios-setup.8.gz
 man/man8/grub-install.8.gz
 man/man8/grub-mkconfig.8.gz
-man/man8/grub-mknetdir.8.gz
 man/man8/grub-ofpathname.8.gz
 man/man8/grub-probe.8.gz
 man/man8/grub-reboot.8.gz
 man/man8/grub-set-default.8.gz
 man/man8/grub-sparc64-setup.8.gz
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/de@hebrew/LC_MESSAGES
-@dirrmtry share/locale/de@hebrew
-@dirrmtry share/locale/de_CH/LC_MESSAGES
-@dirrmtry share/locale/de_CH
-@dirrmtry share/locale/en@arabic/LC_MESSAGES
-@dirrmtry share/locale/en@arabic
-@dirrmtry share/locale/en@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/en@cyrillic
-@dirrmtry share/locale/en@greek/LC_MESSAGES
-@dirrmtry share/locale/en@greek
-@dirrmtry share/locale/en@hebrew/LC_MESSAGES
-@dirrmtry share/locale/en@hebrew
-@dirrmtry share/locale/en@piglatin/LC_MESSAGES
-@dirrmtry share/locale/en@piglatin
 %%MKFONT%%@dirrm share/grub/themes/starfield
 %%MKFONT%%@dirrm share/grub/themes
 @dirrm share/grub

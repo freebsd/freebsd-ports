@@ -1,11 +1,11 @@
 # Created by: sem@FreeBSD.org
-# $FreeBSD$
+# $FreeBSD: head/sysutils/grub2/Makefile 343743 2014-02-11 14:12:39Z miwi $
 
 PORTNAME=	grub2
-PORTVERSION=	2.00
-PORTREVISION=	2
+PORTVERSION=	2.02
 CATEGORIES=	sysutils
-MASTER_SITES=	GNU/grub
+MASTER_SITES=   http://www.pcbsd.org/~kris/software/ \
+		ftp://ftp.pcbsd.org/pub/software/
 DISTNAME=	grub-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -67,6 +67,9 @@ PLIST_SUB+=	FUSE=${FUSE}
 post-patch:
 	@${LN} -s ${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
 	@${TOUCH} -t 200001010000 ${WRKSRC}/Makefile.util.def
+
+pre-configure:
+	cd ${WRKSRC} && ./autogen.sh
 
 post-configure:
 	@${LN} -sfh /usr/include/machine /usr/include/sys /usr/include/x86 ${WRKSRC}/grub-core
