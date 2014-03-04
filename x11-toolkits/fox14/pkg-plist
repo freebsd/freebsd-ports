@@ -235,12 +235,12 @@ lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.la
 lib/libCHART-%%MAJORVER%%.so
 lib/libCHART-%%MAJORVER%%.so.0
-lib/libCHART-%%MAJORVER%%.so.0.%%SHVER%%.0
+lib/libCHART-%%MAJORVER%%.so.0.0.%%SHVER%%
 lib/libFOX-%%MAJORVER%%.a
 lib/libFOX-%%MAJORVER%%.la
 lib/libFOX-%%MAJORVER%%.so
 lib/libFOX-%%MAJORVER%%.so.0
-lib/libFOX-%%MAJORVER%%.so.0.%%SHVER%%.0
+lib/libFOX-%%MAJORVER%%.so.0.0.%%SHVER%%
 man/man1/shutterbug-14.1.gz
 man/man1/reswrap-14.1.gz
 %%APPS%%man/man1/PathFinder-14.1.gz
