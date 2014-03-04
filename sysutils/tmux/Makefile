@@ -24,7 +24,7 @@ PLIST_DIRSTRY=	etc/bash_completion.d
 PORTDOCS=	CHANGES FAQ README TODO
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS LIBEVENT2 LIBEVENT_STATIC BACKSPACE
+OPTIONS_DEFINE=	DOCS EXAMPLES LIBEVENT2 LIBEVENT_STATIC BACKSPACE
 
 LIBEVENT2_DESC=	Use libevent version 2
 LIBEVENT_STATIC_DESC=	Build with static libevent
@@ -39,6 +39,9 @@ LIBEVENT2_CONFIGURE_ENV_OFF=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include" \
 				LIBEVENT_LIBS="-L${LOCALBASE}/lib -levent"
 LIBEVENT2_LIB_DEPENDS=		libevent-2.0.so:${PORTSDIR}/devel/libevent2
 LIBEVENT2_LIB_DEPENDS_OFF=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+
+PORTSCOUT=	ignore:1.9	# 1.9a was released as an errata to 1.9;
+				# this port was never updated to 1.9.
 
 .include <bsd.port.options.mk>
 
