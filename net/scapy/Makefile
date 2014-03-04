@@ -3,6 +3,7 @@
 
 PORTNAME=	scapy
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://secdev.org/projects/scapy/files/
 
@@ -35,7 +36,7 @@ GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:${PORTSDIR}/graphics/Image
 P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f/p0f.fp:${PORTSDIR}/net-mgmt/p0f
 QUESO_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/queso.conf.sample:${PORTSDIR}/net/queso
 NMAP_RUN_DEPENDS=	${LOCALBASE}/share/nmap/nmap-os-db:${PORTSDIR}/security/nmap
-MANUF_RUN_DEPENDS+=	${LOCALBASE}/share/wireshark/manuf:${PORTSDIR}/net/wireshark
+MANUF_RUN_DEPENDS=	${LOCALBASE}/share/wireshark/manuf:${PORTSDIR}/net/wireshark
 SOX_RUN_DEPENDS=	${LOCALBASE}/bin/sox:${PORTSDIR}/audio/sox
 
 post-patch:
