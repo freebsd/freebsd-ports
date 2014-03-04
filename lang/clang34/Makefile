@@ -2,7 +2,7 @@
 
 PORTNAME=	clang
 DISTVERSION=	3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -109,6 +109,8 @@ post-patch:
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' \
 	    ${WRKSRC}/tools/clang/lib/Frontend/InitHeaderSearch.cpp
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}/|g' \
+	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build
 
 pre-build:
 	${LN} -sf ${LLVM_PREFIX}/include/llvm/IR/Intrinsics.gen \
