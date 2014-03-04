@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.6
+DISTVERSION=	4.3.8
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	${KMODDIR}/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod \
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:${PORTSDIR}/emulators/virtualbox-ose-kmod \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
@@ -54,7 +54,7 @@ VBOX_GUEST_VER=	${PORTVERSION}
 
 OPTIONS_DEFINE=	QT4 DEBUG GUESTADDITIONS DBUS PULSEAUDIO UDPTUNNEL VDE VNC WEBSERVICE NLS X11 VPX PYTHON
 OPTIONS_DEFAULT=	QT4 DBUS X11 UDPTUNNEL VNC WEBSERVICE PYTHON
-OPTIONS_SUB=	X11 QT4 GUESTADDITIONS VNC NLS WEBSERVICE PYTHON
+OPTIONS_SUB=	yes
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 QT4_DESC=	Build with QT4 Frontend
 GUESTADDITIONS_DESC=	Build with Guest Additions
@@ -87,14 +87,12 @@ ENV=
 .SHELL:		path="/bin/sh" unsetenv=true
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-KMODDIR=	/boot/modules
-
-PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} \
+PLIST_SUB+=	GUEST_VER=${VBOX_GUEST_VER} \
+		PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/} \
-		GUEST_VER=${VBOX_GUEST_VER}
+		VBOXGROUP=${VBOXGROUP}
 
 SUB_LIST+=	VBOXUSER=${VBOXUSER} \
 		VBOXWSUSER=${VBOXWSUSER}
@@ -102,7 +100,7 @@ USE_RC_SUBR+=	vboxheadless vboxwatchdog
 
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
-KMK_FLAGS=	-j 1
+KMK_FLAGS=	-j${MAKE_JOBS_NUMBER}
 
 .if empty(PORT_OPTIONS:MQT4) && !empty(PORT_OPTIONS:MNLS)
 BROKEN=		NLS support requires QT4 frontend. Run 'make config' again!
@@ -170,8 +168,8 @@ PLIST_SUB+=	ARCH="${KMK_ARCH}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Main-src-server-generic-NetIf-generic.cpp \
-		${FILESDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl \
+		${PATCHDIR}/extrapatch-src-VBox-Main-src-server-generic-NetIf-generic.cpp
 .endif
 
 pre-everything::
@@ -225,83 +223,63 @@ post-patch:
 .endif
 
 pre-build:
-	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' \
-		${WRKSRC}/env.sh
+	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/env.sh
 
 do-build:
-	cd ${WRKSRC} && ${SH} env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
+	cd ${WRKSRC} && ${SH} env.sh && \
+	    ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
 
 do-install:
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom && ${COPYTREE_SHARE} "idl samples" ${DATADIR})
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom && ${COPYTREE_SHARE} "idl samples" ${STAGEDIR}${DATADIR}
 
-	${MKDIR} ${PREFIX}/include/virtualbox
-	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/include && ${COPYTREE_SHARE} "*" ${PREFIX}/include/virtualbox)
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/virtualbox
+	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/include && ${COPYTREE_SHARE} "*" ${STAGEDIR}${PREFIX}/include/virtualbox
 
-	${MKDIR} ${PREFIX}/lib/virtualbox
-	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 *.fd components VBoxExtPackHelperApp" ${PREFIX}/lib/virtualbox)
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/virtualbox
+	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 *.fd components VBoxExtPackHelperApp" ${STAGEDIR}${PREFIX}/lib/virtualbox
 
 .if ${PORT_OPTIONS:MNLS}
-	${MKDIR} ${DATADIR}/nls
-	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/obj/VirtualBox/qtnls && ${COPYTREE_SHARE} "*.qm" ${DATADIR}/nls)
+	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/obj/VirtualBox/qtnls && ${COPYTREE_SHARE} "*.qm" ${STAGEDIR}${DATADIR}/nls
 .endif
 
-	${MKDIR} ${PREFIX}/bin
 .for f in VBoxManage VBoxNetAdpCtl VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxBalloonCtrl ${VBOX_FRONTENDS} ${VBOX_WEB}
-	${INSTALL_PROGRAM} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/${f} ${PREFIX}/lib/virtualbox/
-	${LN} -sf ${PREFIX}/lib/virtualbox/${f} ${PREFIX}/bin/
-.endfor
-
-.for f in VBoxNetAdpCtl VBoxNetDHCP ${VBOX_FRONTENDS}
-	${CHMOD} 4511 ${PREFIX}/lib/virtualbox/${f}
-.endfor
-
-.for f in VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp VBoxBalloonCtrl
-	${CHMOD} 0711 ${PREFIX}/lib/virtualbox/${f}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/${f} ${STAGEDIR}${PREFIX}/lib/virtualbox/
+	${LN} -sf ${PREFIX}/lib/virtualbox/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 
 .if ${PORT_OPTIONS:MVNC}
-	${MKDIR} ${PREFIX}/lib/virtualbox/ExtensionPacks
-	${CP} -a ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/ExtensionPacks/VNC ${PREFIX}/lib/virtualbox/ExtensionPacks
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/virtualbox/ExtensionPacks/VNC/${KMK_ARCH}
+	${INSTALL_DATA} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/ExtensionPacks/VNC/ExtPack* ${STAGEDIR}${PREFIX}/lib/virtualbox/ExtensionPacks/VNC/
+	${INSTALL_LIB} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/ExtensionPacks/VNC/${KMK_ARCH}/* ${STAGEDIR}${PREFIX}/lib/virtualbox/ExtensionPacks/VNC/${KMK_ARCH}/
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
-	${MKDIR} ${DATADIR}/sdk/bindings/webservice
+	${MKDIR} ${STAGEDIR}${DATADIR}/sdk/bindings/webservice
 .for f in vboxweb.wsdl
-	${INSTALL_DATA} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/obj/webservice/${f} ${DATADIR}/sdk/bindings/webservice/
+	${INSTALL_DATA} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/obj/webservice/${f} ${STAGEDIR}${DATADIR}/sdk/bindings/webservice/
 .endfor
 .endif
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
-	${MKDIR} ${PREFIX}/lib/virtualbox/additions
-	${INSTALL_DATA} ${DISTDIR}/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/additions/
-	${LN} -sf ${PREFIX}/lib/virtualbox/additions/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/additions/VBoxGuestAdditions.iso
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/virtualbox/additions
+	${INSTALL_DATA} ${DISTDIR}/${GUESTADDITIONS} ${STAGEDIR}${PREFIX}/lib/virtualbox/additions/
+	${LN} -sf ${PREFIX}/lib/virtualbox/additions/${GUESTADDITIONS} ${STAGEDIR}${PREFIX}/lib/virtualbox/additions/VBoxGuestAdditions.iso
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
 	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/installer && \
-	VBOX_INSTALL_PATH="${PREFIX}/lib/virtualbox" ${PYTHON_CMD} vboxapisetup.py install
+	    ${SETENV} VBOX_INSTALL_PATH="${PREFIX}/lib/virtualbox" \
+	    ${PYTHON_CMD} vboxapisetup.py install --root=${STAGEDIR}
 
-	@${MKDIR} ${PYTHON_SITELIBDIR}
-	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/python && ${COPYTREE_SHARE} "*" ${PYTHON_SITELIBDIR})
-	${PYTHON_CMD} -mcompileall ${PYTHON_SITELIBDIR}/xpcom/
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/python && ${COPYTREE_SHARE} "*" ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${PYTHON_CMD} -mcompileall ${STAGEDIR}${PYTHON_SITELIBDIR}/xpcom/
 .endif
-
-post-install:
-.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp VBoxBalloonCtrl ${VBOX_FRONTENDS}
-	${CHOWN} root:${VBOXGROUP} ${PREFIX}/lib/virtualbox/${f}
-.endfor
-
-	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${FIND} ${PREFIX}/include/virtualbox -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${FIND} ${PREFIX}/lib/virtualbox -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 .if ${PORT_OPTIONS:MQT4}
-	${MKDIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png ${PREFIX}/share/pixmaps/VBox.png
-	${MKDIR} ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/src/VBox/Installer/freebsd/virtualbox.desktop ${PREFIX}/share/applications/virtualbox.desktop
+	${INSTALL_DATA} ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png ${STAGEDIR}${PREFIX}/share/pixmaps/VBox.png
+	${INSTALL_DATA} ${WRKSRC}/src/VBox/Installer/freebsd/virtualbox.desktop ${STAGEDIR}${PREFIX}/share/applications/virtualbox.desktop
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
