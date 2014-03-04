@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.6
+DISTVERSION=	4.3.8
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 
 USES=		kmod
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
+PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxnet
 ONLY_FOR_ARCHS=	i386 amd64
@@ -37,27 +38,29 @@ CONFLICTS=	bcc-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-4* virtualbox-ose-kmod-legacy-4*
 
 OPTIONS_DEFINE=	DEBUG VIMAGE
+OPTIONS_SUB=	yes
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 VIMAGE_DESC=	VIMAGE virtual networking support
 
 .include <bsd.port.options.mk>
 
 VBOX_BIN=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/src
+VBOX_KMODS=	vboxdrv \
+		vboxnetadp \
+		vboxnetflt
+
+BUILD_WRKSRC=	${VBOX_BIN}
 
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 KMK_FLAGS=	HostDrivers-scripts vboxdrv-mod VBoxNetFlt-src VBoxNetAdp-src
 
-MAKE_FLAGS=	SYSDIR=${SRC_BASE}/sys
-
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-Config.kmk ${FILESDIR}/extrapatch-src-VBox-HostDrivers-Support-freebsd-Makefile
-MAKE_FLAGS+=	DEBUG_FLAGS="-O1 -g"
-PLIST_SUB+=	WITH_DEBUG=""
-.else
-PLIST_SUB+=	WITH_DEBUG="@comment "
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \
+		${PATCHDIR}/extrapatch-src-VBox-HostDrivers-Support-freebsd-Makefile
+MAKE_ARGS+=	DEBUG_FLAGS="-O1 -g"
 .endif
 
 .if ${ARCH} == i386
@@ -84,19 +87,16 @@ post-patch:
 pre-build:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' \
 		${WRKSRC}/env.sh
-
-do-build:
-	cd ${WRKSRC} && ${SH} env.sh && cd ${WRKSRC}/src/VBox/HostDrivers && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
-	cd ${VBOX_BIN} && make ${MAKE_FLAGS}
+	cd ${WRKSRC} && ${SH} env.sh && cd ${WRKSRC}/src/VBox/HostDrivers && \
+	    ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
 
 do-install:
-	${INSTALL_KLD} ${VBOX_BIN}/vboxdrv/vboxdrv.ko ${STAGEDIR}${KMODDIR}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko ${STAGEDIR}${KMODDIR}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko ${STAGEDIR}${KMODDIR}
+	${MKDIR} ${STAGEDIR}${KMODDIR}
+.for i in ${VBOX_KMODS}
+	${INSTALL_KLD} ${VBOX_BIN}/${i}/${i}.ko ${STAGEDIR}${KMODDIR}
 .if ${PORT_OPTIONS:MDEBUG}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxdrv/vboxdrv.ko.symbols ${STAGEDIR}${KMODDIR}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko.symbols ${STAGEDIR}${KMODDIR}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko.symbols ${STAGEDIR}${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/${i}/${i}.ko.symbols ${STAGEDIR}${KMODDIR}
 .endif
+.endfor
 
 .include <bsd.port.post.mk>
