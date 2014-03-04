@@ -12,8 +12,7 @@ COMMENT=	Visual binary diff, visually compare binary files
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/vbindiff
-MAN1=		vbindiff.1
+PLIST_FILES=	bin/vbindiff \
+		man/man1/vbindiff.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
