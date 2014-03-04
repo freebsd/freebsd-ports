@@ -3,7 +3,7 @@
 
 PORTNAME=	akonadi
 PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=	KDE
@@ -34,8 +34,7 @@ OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_SUB=	yes # SQLITE
 
 MYSQL_DESC=	Install MySQL Qt plugin and server
-MYSQL_USE=	MYSQL=server
-MYSQL_USE=	QT4=sql-mysql_run
+MYSQL_USE=	MYSQL=server QT4=sql-mysql_run
 
 PGSQL_DESC=	Install PostgreSQL Qt plugin
 # Do not add a dependency on PostgreSQL server as someone preferring
