@@ -21,45 +21,45 @@ share/aclocal/cmake.m4
 %%DATADIR%%/editors/vim/cmake-indent.vim
 %%DATADIR%%/editors/vim/cmake-syntax.vim
 %%DATADIR%%/include/cmCPluginAPI.h
-%%DOCSDIR%%/Copyright.txt
-%%DOCSDIR%%/ccmake.docbook
-%%DOCSDIR%%/ccmake.html
-%%DOCSDIR%%/ccmake.txt
-%%DOCSDIR%%/cmake-commands.html
-%%DOCSDIR%%/cmake-commands.txt
-%%DOCSDIR%%/cmake-compatcommands.html
-%%DOCSDIR%%/cmake-compatcommands.txt
-%%DOCSDIR%%/cmake-modules.html
-%%DOCSDIR%%/cmake-modules.txt
-%%DOCSDIR%%/cmake-policies.html
-%%DOCSDIR%%/cmake-policies.txt
-%%DOCSDIR%%/cmake-properties.html
-%%DOCSDIR%%/cmake-properties.txt
-%%DOCSDIR%%/cmake-variables.html
-%%DOCSDIR%%/cmake-variables.txt
-%%DOCSDIR%%/cmake.docbook
-%%DOCSDIR%%/cmake.html
-%%DOCSDIR%%/cmake.txt
-%%DOCSDIR%%/cmcompress/Copyright.txt
-%%DOCSDIR%%/cmcurl/COPYING
-%%DOCSDIR%%/cmexpat/COPYING
-%%DOCSDIR%%/cmlibarchive/COPYING
-%%DOCSDIR%%/cmsys/Copyright.txt
-%%DOCSDIR%%/cmzlib/Copyright.txt
-%%DOCSDIR%%/cpack.docbook
-%%DOCSDIR%%/cpack.html
-%%DOCSDIR%%/cpack.txt
-%%DOCSDIR%%/ctest.docbook
-%%DOCSDIR%%/ctest.html
-%%DOCSDIR%%/ctest.txt
+%%PORTDOCS%%%%DOCSDIR%%/Copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/ccmake.docbook
+%%PORTDOCS%%%%DOCSDIR%%/ccmake.html
+%%PORTDOCS%%%%DOCSDIR%%/ccmake.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmake-commands.html
+%%PORTDOCS%%%%DOCSDIR%%/cmake-commands.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmake-compatcommands.html
+%%PORTDOCS%%%%DOCSDIR%%/cmake-compatcommands.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmake-modules.html
+%%PORTDOCS%%%%DOCSDIR%%/cmake-modules.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmake-policies.html
+%%PORTDOCS%%%%DOCSDIR%%/cmake-policies.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmake-properties.html
+%%PORTDOCS%%%%DOCSDIR%%/cmake-properties.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmake-variables.html
+%%PORTDOCS%%%%DOCSDIR%%/cmake-variables.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmake.docbook
+%%PORTDOCS%%%%DOCSDIR%%/cmake.html
+%%PORTDOCS%%%%DOCSDIR%%/cmake.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmcompress/Copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmcurl/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/cmexpat/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/cmlibarchive/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/cmsys/Copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmzlib/Copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/cpack.docbook
+%%PORTDOCS%%%%DOCSDIR%%/cpack.html
+%%PORTDOCS%%%%DOCSDIR%%/cpack.txt
+%%PORTDOCS%%%%DOCSDIR%%/ctest.docbook
+%%PORTDOCS%%%%DOCSDIR%%/ctest.html
+%%PORTDOCS%%%%DOCSDIR%%/ctest.txt
 share/emacs/site-lisp/cmake-mode.el
-@dirrm %%DOCSDIR%%/cmzlib
-@dirrm %%DOCSDIR%%/cmsys
-@dirrm %%DOCSDIR%%/cmlibarchive
-@dirrm %%DOCSDIR%%/cmexpat
-@dirrm %%DOCSDIR%%/cmcurl
-@dirrm %%DOCSDIR%%/cmcompress
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmzlib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmsys
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmlibarchive
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmexpat
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmcurl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmcompress
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%/editors/vim
 @dirrm %%DATADIR%%/editors/emacs
