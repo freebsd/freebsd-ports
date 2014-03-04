@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuls
-PORTVERSION=	8.20
+PORTVERSION=	8.22
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	coreutils
@@ -11,30 +11,36 @@ DISTNAME=	coreutils-${PORTVERSION}
 MAINTAINER=	bmc@clapper.org
 COMMENT=	GNU colorized 'ls'
 
+OPTIONS_DEFINE=		NLS
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" FORCE_UNSAFE_CONFIGURE=1
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-USE_XZ=		yes
-USE_GMAKE=	yes
+USES=		gmake perl5
 USE_LDCONFIG=	yes
-USES=		perl5
 USE_PERL5=	build
-
-MAN1=		gnuls.1 dircolors.1 dir.1 vdir.1
+USE_XZ=		yes
 
 PLIST_FILES=	bin/dir \
 		bin/dircolors \
 		bin/gnuls \
-		bin/vdir
+		bin/vdir \
+		man/man1/dir.1.gz \
+		man/man1/dircolors.1.gz \
+		man/man1/gnuls.1.gz \
+		man/man1/vdir.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/dir ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/dircolors ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ls ${PREFIX}/bin/gnuls
-	${INSTALL_PROGRAM} ${WRKSRC}/src/vdir ${PREFIX}/bin
-	${CP} ${WRKSRC}/man/ls.1 ${WRKSRC}/man/gnuls.1
-	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man/,} ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/dir ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/dircolors ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ls ${STAGEDIR}${PREFIX}/bin/gnuls
+	${INSTALL_PROGRAM} ${WRKSRC}/src/vdir ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/dir.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/dircolors.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/ls.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/gnuls.1
+	${INSTALL_MAN} ${WRKSRC}/man/vdir.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
