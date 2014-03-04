@@ -13,11 +13,11 @@
 -	@install -d $(PREFIX)/bin
 -	@install -d $(PREFIX)/man/man1
 -	install -c $(PROG) $(PREFIX)/bin/$(PROG)
--	install -c $(PROG).1 $(PREFIX)/man/man1/$(PROG).1
+-	install -c doc/man/$(PROG).1 $(PREFIX)/man/man1/$(PROG).1
 +	@install -d $(DESTDIR)$(PREFIX)/bin
 +	@install -d $(DESTDIR)$(PREFIX)/man/man1
 +	install -c $(PROG) $(DESTDIR)$(PREFIX)/bin/$(PROG)
-+	install -c $(PROG).1 $(DESTDIR)$(PREFIX)/man/man1/$(PROG).1
++	install -c doc/man/$(PROG).1 $(DESTDIR)$(PREFIX)/man/man1/$(PROG).1
  
  uninstall:
 -	rm -f $(PREFIX)/bin/$(PROG)
