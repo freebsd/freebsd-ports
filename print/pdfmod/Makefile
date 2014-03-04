@@ -13,6 +13,9 @@ COMMENT=	A tool for modifying PDF documents
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/hyena.pc:${PORTSDIR}/devel/hyena
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/hyena.pc:${PORTSDIR}/devel/hyena
 
+DEPRECATED=	Depends on expired devel/hyena, unstaged, uses old standards
+EXPIRATION_DATE=2014-04-01
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
