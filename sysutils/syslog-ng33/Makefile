@@ -90,7 +90,7 @@ CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
 .if ${PORT_OPTIONS:MSQL}
-LIB_DEPENDS+=		dbi.2:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
 PLIST_FILES+=		lib/syslog-ng/libafsql.la lib/syslog-ng/libafsql.so
