@@ -3,6 +3,7 @@
 
 PORTNAME=	gstfs
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bobcopeland.com/gstfs/releases/ \
 		http://mirror.mcx2.org/
@@ -10,6 +11,8 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	On-demand, transcoding filesystem (using GStreamer pipeline)
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		fuse pkgconfig
 USE_GSTREAMER=	yes
@@ -19,17 +22,14 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 PORTEXAMPLES=	ogg2mp3.sh mp32wav.sh
 
-NO_STAGE=	yes
-do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+post-patch:
+	@${REINPLACE_CMD} 's/gcc/$$(CC)/' ${WRKSRC}/Makefile
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}/
-.endif
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
