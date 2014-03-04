@@ -12,7 +12,4 @@ COMMENT=	Perl scripts to assist in the generation and application of patches
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		makepatch.1 applypatch.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
