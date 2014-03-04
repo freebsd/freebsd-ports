@@ -3,6 +3,7 @@
 
 PORTNAME=	rar2fs
 PORTVERSION=	1.15.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:rar2fs http://www.rarlab.com/rar/:unrarsrc
 PKGNAMEPREFIX=	fusefs-
@@ -13,7 +14,8 @@ COMMENT=	Mount rar archives as filesystem
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	unrar:${PORTSDIR}/archivers/libunrar4 \
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libunrar.so:${PORTSDIR}/archivers/libunrar4
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fuse-lib=${LOCALBASE}/lib \
@@ -21,14 +23,14 @@ CONFIGURE_ARGS=	--with-fuse-lib=${LOCALBASE}/lib \
 	--with-unrar=${WRKDIR}/unrar \
 	--with-unrar-lib=${LOCALBASE}/lib
 
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		rar2fs.1
-USES=		fuse
-USE_GMAKE=	yes
+PLIST_FILES=	bin/${PORTNAME} man/man1/rar2fs.1.gz
+USES=		fuse gmake
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} 's/-lstdc++/-lexecinfo/' ${WRKSRC}/Makefile.in
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/rar2fs.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
