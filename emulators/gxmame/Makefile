@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GXmame is a GTK frontend for xmame
 
+DEPRECATED=	Depends on deprecated emulators/xmame
+EXPIRATION_DATE=	2014-03-07
+
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
