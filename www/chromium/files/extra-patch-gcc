@@ -50,3 +50,15 @@
  #if HAVE_SCHED_GETAFFINITY
  #ifndef _GNU_SOURCE
  # define _GNU_SOURCE
+--- content/browser/browser_shutdown_profile_dumper.cc.orig    2014-02-20 15:28:24.000000000 -0500
++++ content/browser/browser_shutdown_profile_dumper.cc 2014-03-03 15:36:33.000000000 -0500
+@@ -2,6 +2,8 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
++#include <stdio.h>
++
+ #include "content/browser/browser_shutdown_profile_dumper.h"
+ 
+ #include "base/base_switches.h"
+
