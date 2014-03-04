@@ -5,7 +5,8 @@ PORTNAME=	pydot
 PORTVERSION=	1.0.28
 #PORTREVISION=	0
 CATEGORIES=	graphics python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	stefan@FreeBSD.org
@@ -15,16 +16,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
 		dot:${PORTSDIR}/graphics/graphviz
 
-PROJECTHOST=	${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dot_parser.py \
-		%%PYTHON_SITELIBDIR%%/dot_parser.pyc \
-		%%PYTHON_SITELIBDIR%%/dot_parser.pyo \
-		%%PYTHON_SITELIBDIR%%/pydot.py \
-		%%PYTHON_SITELIBDIR%%/pydot.pyc \
-		%%PYTHON_SITELIBDIR%%/pydot.pyo
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
