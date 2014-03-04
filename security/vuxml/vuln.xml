@@ -56,6 +56,9 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gnutls</name>
+	<range><lt>2.12.23_4</lt></range>
+      </package>
+      <package>
 	<name>gnutls-devel</name>
 	<name>gnutls3</name>
 	<range><lt>3.1.22</lt></range>
@@ -92,6 +95,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-03-03</discovery>
       <entry>2014-03-04</entry>
+      <modified>2014-03-04</modified>
     </dates>
   </vuln>
 
