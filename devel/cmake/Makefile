@@ -3,7 +3,7 @@
 
 PORTNAME=	cmake
 PORTVERSION=	2.8.12.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.cmake.org/files/v2.8/
 
@@ -12,6 +12,7 @@ COMMENT?=	Cross-platform Makefile generator
 
 LICENSE=	BSD3CLAUSE
 
+USE_KDE4=	# env
 CONFIGURE_ENV=	MAKE=make
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir="/${DATADIR_REL}" \
@@ -23,6 +24,8 @@ INSTALL_TARGET=	install/strip
 .endif
 
 .if !defined(CMAKE_MODULES)
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
 HAS_CONFIGURE=	yes
 RUN_DEPENDS=	${LOCALBASE}/share/cmake/Modules/CMake.cmake:${PORTSDIR}/devel/cmake-modules
 .endif
@@ -36,7 +39,7 @@ post-patch:
 		${WRKSRC}/Source/cmLocalGenerator.cxx \
 		${WRKSRC}/Source/CPack/cmCPackGenerator.cxx \
 		${WRKSRC}/bootstrap
-	@${REINPLACE_CMD} -e 's,/opt/kde4,${LOCALBASE}/kde4,g' \
+	@${REINPLACE_CMD} -e 's,/opt/kde4,${KDE4_PREFIX},g' \
 		${WRKSRC}/Modules/FindKDE4.cmake
 	@${REINPLACE_CMD} -e 's,/usr/include,${LOCALBASE}/include,' \
 	   	${WRKSRC}/Modules/FindDCMTK.cmake
