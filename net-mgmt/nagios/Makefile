@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
+PORTSCOUT=	limit:^3.
+
 USES=		iconv perl5 uidfix
 USE_PERL5=	build
 USE_AUTOTOOLS=	autoconf libltdl
