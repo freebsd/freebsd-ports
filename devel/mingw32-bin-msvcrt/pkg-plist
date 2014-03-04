@@ -8,8 +8,6 @@ mingw32/include/aclapi.h
 mingw32/include/aclui.h
 mingw32/include/adsprop.h
 mingw32/include/afxres.h
-mingw32/include/amaudio.h
-mingw32/include/amvideo.h
 mingw32/include/assert.h
 mingw32/include/audevcod.h
 mingw32/include/aviriff.h
@@ -173,7 +171,7 @@ mingw32/include/gdiplus/gdipluspixelformats.h
 mingw32/include/gdiplus/gdiplusstringformat.h
 mingw32/include/gdiplus/gdiplustypes.h
 mingw32/include/getopt.h
-mingw32/include/gmon.h
+mingw32/include/glob.h
 mingw32/include/httpext.h
 mingw32/include/icm.h
 mingw32/include/idispids.h
@@ -308,6 +306,7 @@ mingw32/include/schannel.h
 mingw32/include/schnlsp.h
 mingw32/include/scrnsave.h
 mingw32/include/sddl.h
+mingw32/include/sdkddkver.h
 mingw32/include/search.h
 mingw32/include/secext.h
 mingw32/include/security.h
@@ -320,6 +319,7 @@ mingw32/include/shldisp.h
 mingw32/include/shlguid.h
 mingw32/include/shlobj.h
 mingw32/include/shlwapi.h
+mingw32/include/shobjidl.h
 mingw32/include/signal.h
 mingw32/include/snmp.h
 mingw32/include/specstrings.h
@@ -406,13 +406,10 @@ mingw32/lib/CRT_fp10.o
 mingw32/lib/CRT_fp8.o
 mingw32/lib/CRT_noglob.o
 mingw32/lib/binmode.o
-mingw32/lib/crt1.o
 mingw32/lib/crt2.o
 mingw32/lib/crtmt.o
 mingw32/lib/crtst.o
-mingw32/lib/dllcrt1.o
 mingw32/lib/dllcrt2.o
-mingw32/lib/gcrt1.o
 mingw32/lib/gcrt2.o
 mingw32/lib/libaclui.a
 mingw32/lib/libadvapi32.a
@@ -422,10 +419,8 @@ mingw32/lib/libavifil32.a
 mingw32/lib/libbthprops.a
 mingw32/lib/libcap.a
 mingw32/lib/libcfgmgr32.a
-mingw32/lib/libcoldname.a
 mingw32/lib/libcomctl32.a
 mingw32/lib/libcomdlg32.a
-mingw32/lib/libcrtdll.a
 mingw32/lib/libcrypt32.a
 mingw32/lib/libctl3d32.a
 mingw32/lib/libd3d8.a

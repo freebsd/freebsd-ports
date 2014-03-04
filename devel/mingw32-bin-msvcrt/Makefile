@@ -2,23 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	bin-msvcrt
-PORTVERSION=	r${RUNTIMEVERSION}.a${APIVERSION:S/-/./}
+PORTVERSION=	r${RUNTIMEVERSION:S/-/./}.a${APIVERSION:S/-/./}
 CATEGORIES=	devel
-MASTER_SITES=	SF/mingw/MinGW/Base/mingw-rt/mingwrt-${RUNTIMEVERSION}:runtime \
+MASTER_SITES=	SF/mingw/MinGW/Base/mingw-rt/mingwrt-${RUNTIMEVERSION:C/-.*$//}:runtime \
 		SF/mingw/MinGW/Base/w32api/w32api-${APIVERSION:C/-.*$//}:api
 PKGNAMEPREFIX=	mingw32-
-DISTFILES=	mingwrt-${RUNTIMEVERSION}-mingw32-dev${EXTRACT_SUFX}:runtime \
-		mingwrt-${RUNTIMEVERSION}-mingw32-dll${EXTRACT_SUFX}:runtime \
-		w32api-${APIVERSION}-mingw32-dev${EXTRACT_SUFX:S/.gz$/.lzma/}:api
+DISTFILES=	mingwrt-${RUNTIMEVERSION}-mingw32-dev.tar.lzma:runtime \
+		mingwrt-${RUNTIMEVERSION}-mingw32-dll.tar.lzma:runtime \
+		w32api-${APIVERSION}-mingw32-dev.tar.lzma:api
 DIST_SUBDIR=	mingw
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Headers and Libraries for Windows cross-development
 
-CONFLICTS=	mingw-bin-msvcrt-*
+CONFLICTS=	mingw-bin-msvcrt-[0-9]*
 
-RUNTIMEVERSION=	3.20
-APIVERSION=	3.17-2
+USE_XZ=		yes
+
+RUNTIMEVERSION=	4.0.3-1
+APIVERSION=	4.0.3-1
 
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
@@ -26,8 +28,6 @@ NO_WRKSUBDIR=	yes
 .if defined(INSTALL_AS_USER)
 MAKE_ARGS+=	INSTALL_AS_USER=yes
 .endif
-
-NO_STAGE=	yes
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
