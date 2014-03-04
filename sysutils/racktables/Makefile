@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racktables
-DISTVERSION=	0.20.6
+DISTVERSION=	0.20.7
 CATEGORIES?=	sysutils www
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	RackTables-${DISTVERSION}
@@ -59,10 +59,10 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -type f -delete
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/wwwroot ${STAGEDIR}${WWWDIR}/gateways
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/wwwroot ${STAGEDIR}${WWWDIR}/gateways
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} wwwroot ${STAGEDIR}${WWWDIR})
 	(cd ${WRKSRC} && ${COPYTREE_BIN} gateways ${STAGEDIR}${WWWDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
