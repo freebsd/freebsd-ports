@@ -3,6 +3,7 @@
 
 PORTNAME=	django-photologue
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,14 +17,14 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-
 	${LOCALBASE}/bin/pildriver.py:${PORTSDIR}/graphics/py-imaging
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 USE_ZIP=	yes
 
 OPTIONSFILE= ${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=		TAGGING
 OPTIONS_DEFAULT=	TAGGING
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTAGGING}
