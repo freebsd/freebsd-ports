@@ -6,7 +6,7 @@ PORTVERSION=	4.0.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	gogolok+freebsd@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Markup language to describe HTML
 
 LICENSE=	MIT
