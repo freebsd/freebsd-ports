@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to use your computer beeper in fancy ways
 
+DEPRECATED=	Depends on expiring audio/beep
+EXPIRATION_DATE=	2014-03-07
+
 BUILD_DEPENDS=	beep:${PORTSDIR}/audio/beep
 RUN_DEPENDS=	beep:${PORTSDIR}/audio/beep
 
