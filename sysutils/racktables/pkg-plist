@@ -6,6 +6,7 @@
 %%WWWDIR_REL%%/wwwroot/css/jquery-ui-1.8.22.redmond.css
 %%WWWDIR_REL%%/wwwroot/css/jquery.contextmenu.css
 %%WWWDIR_REL%%/wwwroot/css/pi.css
+%%WWWDIR_REL%%/wwwroot/css/tagit.css
 %%WWWDIR_REL%%/wwwroot/inc/ajax-interface.php
 %%WWWDIR_REL%%/wwwroot/inc/auth.php
 %%WWWDIR_REL%%/wwwroot/inc/caching.php
@@ -55,6 +56,8 @@
 %%WWWDIR_REL%%/wwwroot/js/racktables.js
 %%WWWDIR_REL%%/wwwroot/js/slb_editor.js
 %%WWWDIR_REL%%/wwwroot/js/tag-cb.js
+%%WWWDIR_REL%%/wwwroot/js/tag-it-local.js
+%%WWWDIR_REL%%/wwwroot/js/tag-it.js
 %%WWWDIR_REL%%/wwwroot/js/vst_editor.js
 %%WWWDIR_REL%%/wwwroot/pix/1x1t.gif
 %%WWWDIR_REL%%/wwwroot/pix/8021q.png
@@ -164,6 +167,7 @@
 %%WWWDIR_REL%%/wwwroot/pix/tango-user-trash-32x32-gray.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-user-trash-32x32.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-view-fullscreen-22x22.png
+%%WWWDIR_REL%%/wwwroot/pix/tango-view-refresh-16x16.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-view-refresh-32x32.png
 %%WWWDIR_REL%%/wwwroot/pix/unchecked.png
 %%WWWDIR_REL%%/wwwroot/pix/virtualresources.png
