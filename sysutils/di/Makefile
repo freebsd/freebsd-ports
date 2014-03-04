@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	di
-PORTVERSION=	4.34
+PORTVERSION=	4.35
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.gentoo.com/di/
+MASTER_SITES=	http://www.gentoo.com/di/ \
+		http://www.cyberbotx.com/di/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Disk Information Utility
 
 MAKE_ENV+=	prefix="${PREFIX}"
 
-MAN1=		di.1
-
 OPTIONS_DEFINE=	NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
