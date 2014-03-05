@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scintilla
-PORTVERSION=	3.3.5
+PORTVERSION=	3.3.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
@@ -20,7 +20,6 @@ USE_GNOME=	gtk20
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	-DPIC ${PICFLAG}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -43,11 +42,11 @@ post-patch:
 		${WRKSRC}/makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/include/scintilla
-	${INSTALL_DATA} ${WRKSRC}/../include/*.h ${PREFIX}/include/scintilla
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/libscintilla.so.2 ${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libscintilla.so.2 ${PREFIX}/lib/libscintilla.so
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/libscintilla_lexers.so.2 ${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libscintilla_lexers.so.2 ${PREFIX}/lib/libscintilla_lexers.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/scintilla
+	${INSTALL_DATA} ${WRKSRC}/../include/*.h ${STAGEDIR}${PREFIX}/include/scintilla
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/libscintilla.so.2 ${STAGEDIR}${PREFIX}/lib
+	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libscintilla.so.2 libscintilla.so)
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/libscintilla_lexers.so.2 ${STAGEDIR}${PREFIX}/lib
+	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libscintilla_lexers.so.2 libscintilla_lexers.so)
 
 .include <bsd.port.post.mk>

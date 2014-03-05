@@ -1,4 +1,5 @@
 bin/SciTE
+man/man1/scite.1.gz
 share/applications/SciTE.desktop
 share/pixmaps/Sci48M.png
 %%DATADIR%%/Embedded.properties
@@ -7,6 +8,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/abaqus.properties
 %%DATADIR%%/abbrev.properties
 %%DATADIR%%/ada.properties
+%%DATADIR%%/asl.properties
 %%DATADIR%%/asm.properties
 %%DATADIR%%/asn1.properties
 %%DATADIR%%/au3.properties
@@ -62,6 +64,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/r.properties
 %%DATADIR%%/rebol.properties
 %%DATADIR%%/ruby.properties
+%%DATADIR%%/rust.properties
 %%DATADIR%%/scriptol.properties
 %%DATADIR%%/smalltalk.properties
 %%DATADIR%%/sorcins.properties
