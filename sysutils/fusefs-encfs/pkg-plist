@@ -1,10 +1,12 @@
 bin/encfs
 bin/encfsctl
 bin/encfssh
-%%LIB32DIR%%/libencfs.a
-%%LIB32DIR%%/libencfs.la
-%%LIB32DIR%%/libencfs.so
-%%LIB32DIR%%/libencfs.so.6
+lib/libencfs.la
+lib/libencfs.so
+lib/libencfs.so.6
+lib/libencfs.so.6.0.1
+man/man1/encfs.1.gz
+man/man1/encfsctl.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/be/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/encfs.mo
@@ -63,6 +65,8 @@ bin/encfssh
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/encfs.mo
+%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_HK
 %%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/te
 %%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
