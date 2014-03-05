@@ -3,12 +3,12 @@
 
 PORTNAME=	bind10
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	freebsd@ISC.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Development version of ISC BIND 10 DNS Suite
 
 LICENSE=	ISC
@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/interprocess/sync/interprocess_upgradable_mutex.hpp:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/include/log4cplus/logger.h:${PORTSDIR}/devel/log4cplus \
 		sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3
-LIB_DEPENDS=	libbotan.so:${PORTSDIR}/security/botan \
+LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110 \
 		liblog4cplus.so:${PORTSDIR}/devel/log4cplus \
 		libicuuc.so:${PORTSDIR}/devel/icu \
 		libgmp.so:${PORTSDIR}/math/gmp \
