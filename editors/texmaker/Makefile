@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texmaker
-PORTVERSION=	4.1
-PORTREVISION=	1
+PORTVERSION=	4.1.1
 PORTEPOCH=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
@@ -26,14 +25,9 @@ QMAKE_ARGS=	ICONDIR=${PREFIX}/share/pixmaps \
 OPTIONS_DEFINE=	GV XDVI
 
 GV_DESC=	View ps files with gv
-GV_RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv
+GV_RUN_DEPENDS=	gv:${PORTSDIR}/print/gv
 
 XDVI_DESC=	View dvi files with xdvi
-XDVI_RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
-
-STRIP_FILES=	bin/texmaker
-
-post-install:
-	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
+XDVI_RUN_DEPENDS=	xdvi:${PORTSDIR}/print/xdvik
 
 .include <bsd.port.mk>
