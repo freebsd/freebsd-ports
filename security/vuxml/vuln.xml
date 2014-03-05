@@ -51,6 +51,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b4023753-a4ba-11e3-bec2-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>33.0.1750.146</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>19 vulnerabilities fixed in this release, including:</p>
+	  <ul>
+	    <li>[344492] High CVE-2013-6663: Use-after-free in svg images.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[326854] High CVE-2013-6664: Use-after-free in speech
+	      recognition. Credit to Khalil Zhani.</li>
+	    <li>[337882] High CVE-2013-6665: Heap buffer overflow in software
+	      rendering. Credit to cloudfuzzer.</li>
+	    <li>[332023] Medium CVE-2013-6666: Chrome allows requests in flash
+	      header request. Credit to netfuzzerr.</li>
+	    <li>[348175] CVE-2013-6667: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[343964, 344186, 347909] CVE-2013-6668: Multiple
+	      vulnerabilities in V8 fixed in version 3.24.35.10.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6663</cvename>
+      <cvename>CVE-2013-6664</cvename>
+      <cvename>CVE-2013-6665</cvename>
+      <cvename>CVE-2013-6666</cvename>
+      <cvename>CVE-2013-6667</cvename>
+      <cvename>CVE-2013-6668</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-03-03</discovery>
+      <entry>2014-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f645aa90-a3e8-11e3-a422-3c970e169bc2">
     <topic>gnutls -- multiple certificate verification issues</topic>
     <affects>
