@@ -2,44 +2,43 @@
 
 PORTNAME=	grok
 PORTVERSION=	1.20110708.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	wxs@FreeBSD.org
-COMMENT=	An expert system for real-time log analysis
+COMMENT=	Expert system for real-time log analysis
 
-BUILD_DEPENDS=	gperf>=3.0.3:${PORTSDIR}/devel/gperf \
-		libevent>=1.3:${PORTSDIR}/devel/libevent \
-		pcre>=7.6:${PORTSDIR}/devel/pcre \
-		tokyocabinet>=1.4.9:${PORTSDIR}/databases/tokyocabinet
+OPTIONS_DEFINE=	DOCS
+
+BUILD_DEPENDS=	gperf>=3.0.3:${PORTSDIR}/devel/gperf
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libevent-2.0.so:${PORTSDIR}/devel/libevent2 \
+		libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_ENV+=	GPERF=${LOCALBASE}/bin/gperf \
 		EXTRA_CFLAGS=-I${LOCALBASE}/include \
 		EXTRA_LDFLAGS=-L${LOCALBASE}/lib
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
+LDFLAGS+=	`pkgconf --libs libevent`
+CFLAGS+=	`pkgconf --cflags libevent`
 
 SUB_FILES=	pkg-message
 
 PROJECTHOST=	semicomplete
 PORTDOCS=	CHANGELIST INSTALL
-MAN1=		grok.1
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} 's|PREFIX=|PREFIX?=|; s|-g root|-g wheel|' \
+	@${REINPLACE_CMD} 's|PREFIX=|PREFIX?=|; s|-g root|-g wheel|; s|-levent||g' \
 		${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/grok.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_MAN} ${WRKSRC}/grok.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

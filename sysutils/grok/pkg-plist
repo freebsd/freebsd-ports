@@ -9,6 +9,7 @@ include/grok_match.h
 include/grok_pattern.h
 include/grok_version.h
 lib/libgrok.so
+man/man1/grok.1.gz
 %%DATADIR%%/patterns/base
 @dirrm %%DATADIR%%/patterns
 @dirrm %%DATADIR%%
