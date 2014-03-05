@@ -14,11 +14,9 @@ COMMENT=	Tool to download Microsoft Media streams
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-MAN1=		mmsclient.1
-PLIST_FILES=	bin/mmsclient
+PLIST_FILES=	bin/mmsclient man/man1/mmsclient.1.gz
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/mmsclient.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/mmsclient.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
