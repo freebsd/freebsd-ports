@@ -37,6 +37,14 @@
 %%XPI_XPIDIR%%/chrome/locale/ar/sendReport.dtd
 %%XPI_XPIDIR%%/chrome/locale/ar/sidebar.dtd
 %%XPI_XPIDIR%%/chrome/locale/ar/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/ast/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/ast/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/ast/firstRun.properties
+%%XPI_XPIDIR%%/chrome/locale/ast/global.properties
+%%XPI_XPIDIR%%/chrome/locale/ast/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ast/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/ast/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/ast/subscriptionSelection.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg/composer.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg/filters.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg/firstRun.properties
@@ -509,6 +517,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/content/ui
 @dirrm %%XPI_XPIDIR%%/chrome/content
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ar
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ast
 @dirrm %%XPI_XPIDIR%%/chrome/locale/bg
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ca
 @dirrm %%XPI_XPIDIR%%/chrome/locale/cs
