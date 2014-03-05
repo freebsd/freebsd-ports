@@ -1,0 +1,11 @@
+--- src/slonik/Makefile.orig	2014-01-23 14:14:12.352062131 -0500
++++ src/slonik/Makefile	2014-01-23 14:14:12.352750379 -0500
+@@ -18,7 +18,7 @@
+ 
+ CFLAGS += -I$(slony_top_builddir) -DPGSHARE="\"$(pgsharedir)\"" -DPG_VERSION_MAJOR=$(PG_VERSION_MAJOR)
+ ifneq ($(PG_VERSION_MAJOR), 7)
+-LDFLAGS += -lpgport
++LDFLAGS += `$(pgbindir)/pg_config --libs`
+ endif
+ 
+ PROG		= slonik
