@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldraw
-PORTVERSION=	201301
+PORTVERSION=	201302
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.ldraw.org/library/updates/
@@ -50,7 +50,8 @@ do-install:
 .endfor
 
 	${INSTALL_SCRIPT} ${WRKSRC}/mklist/mklist ${STAGEDIR}${DATADIR}
-	@(cd ${STAGEDIR}${DATADIR} ; ./mklist -n)
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/mklist
+	@(cd ${STAGEDIR}${DATADIR} ; ./mklist -d)
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
