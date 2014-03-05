@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION:R}/
 DISTNAME=	${ORIGNAME}-${DISTVERSION}
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	ReviewBoard Toolset
 
 LICENSE=	MIT
