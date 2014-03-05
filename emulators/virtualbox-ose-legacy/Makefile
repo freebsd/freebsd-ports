@@ -19,7 +19,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		as86:${PORTSDIR}/devel/dev86 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		kmk:${PORTSDIR}/devel/kBuild \
 		gtar:${PORTSDIR}/archivers/gtar \
@@ -47,7 +46,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
-CONFLICTS=	bcc-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-4* virtualbox-ose-devel-4* virtualbox-ose-additions-4* virtualbox-ose-additions-devel-4*
 
 VBOXUSER?=	vboxusers
