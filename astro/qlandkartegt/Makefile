@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qlandkartegt
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 CATEGORIES=	astro
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarteGT%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarte%20GT%20${PORTVERSION}
 
 MAINTAINER=	i@levsha.me
 COMMENT=	The ultimate outdoor aficionado's tool
