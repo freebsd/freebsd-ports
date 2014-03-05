@@ -3,6 +3,7 @@
 
 PORTNAME=	bpython
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://bpython-interpreter.org/releases/
@@ -19,9 +20,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments
 OPTIONS_DEFINE=	EXAMPLES NLS
 OPTIONS_SUB=	yes
 
+PYDISTUTILS_AUTOPLIST=	yes
+USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-PYDISTUTILS_BUILD_TARGET=	build bdist_egg
 
 PORTEXAMPLES=	light.theme sample-config sample.theme
 
