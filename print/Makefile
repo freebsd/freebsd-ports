@@ -27,6 +27,7 @@
     SUBDIR += c2ps
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
+    SUBDIR += cloudprint
     SUBDIR += cm-super
     SUBDIR += cpp2latex
     SUBDIR += cups
