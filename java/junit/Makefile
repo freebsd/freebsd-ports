@@ -2,41 +2,43 @@
 # $FreeBSD$
 
 PORTNAME=	junit
-PORTVERSION=	4.10
+PORTVERSION=	4.11
 CATEGORIES=	java devel
-MASTER_SITES=	http://cloud.github.com/downloads/KentBeck/junit/
+MASTER_SITES=	GH
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A regression testing utility for use with the Java(TM) Language
+MAINTAINER=	danilo@FreeBSD.org
+COMMENT=	Regression testing utility for use with the Java(TM) Language
 
-USE_ZIP=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	junit-team
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	r${PORTVERSION}
+
+USES=		perl5
 USE_JAVA=	yes
-NO_BUILD=	yes
+USE_ANT=	yes
 
-.if !defined(NOPORTDOCS)
+WRKSRC=		${WRKDIR}/junit-team-junit-c62e2df
+
 PORTDOCS=	README.html cpl-v10.html doc javadoc
-.endif
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
-.endif
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PLIST_FILES=	%%JAVAJARDIR%%/junit.jar %%DATADIR%%/src.jar
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit-${PORTVERSION}.jar ${JAVAJARDIR}/junit.jar
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit-${PORTVERSION}-src.jar ${DATADIR}/src.jar
-.if !defined(NOPORTEXAMPLES)
-	cd ${INSTALL_WRKSRC}/junit/samples \
-	  && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
-.endif
-.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit${PORTVERSION}-SNAPSHOT/junit-${PORTVERSION}-SNAPSHOT.jar \
+		 ${STAGEDIR}${JAVAJARDIR}/junit.jar
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit${PORTVERSION}-SNAPSHOT/junit-${PORTVERSION}-SNAPSHOT-src.jar \
+		${STAGEDIR}${DATADIR}/src.jar
+	cd ${INSTALL_WRKSRC}/junit${PORTVERSION}-SNAPSHOT/junit/samples \
+		&& ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${INSTALL_WRKSRC} \
-	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
-	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
-.endif
+		&& ${FIND} ${PORTDOCS:Njavadoc} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \
+		&& ${FIND} ${PORTDOCS:Njavadoc} -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${DOCSDIR}/\{} \;
+	cd ${INSTALL_WRKSRC}/junit${PORTVERSION}-SNAPSHOT \
+		&& ${FIND} javadoc -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \
 
 .include <bsd.port.mk>
