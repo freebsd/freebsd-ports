@@ -344,6 +344,25 @@ lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libvio.a
 libexec/mysqld
+man/man1/innochecksum.1.gz
+man/man1/my_print_defaults.1.gz
+man/man1/myisam_ftdump.1.gz
+man/man1/myisamchk.1.gz
+man/man1/myisamlog.1.gz
+man/man1/myisampack.1.gz
+man/man1/mysql.server.1.gz
+man/man1/mysql_client_test_embedded.1.gz
+man/man1/mysql_install_db.1.gz
+man/man1/mysql_tzinfo_to_sql.1.gz
+man/man1/mysql_waitpid.1.gz
+man/man1/mysqld_safe.1.gz
+man/man1/mysqltest_embedded.1.gz
+man/man1/perror.1.gz
+man/man1/replace.1.gz
+man/man1/resolve_stack_dump.1.gz
+man/man1/resolveip.1.gz
+man/man8/mysqld.8.gz
+man/man8/mysqlmanager.8.gz
 @dirrm %%DATADIR%%/ukrainian
 @dirrm %%DATADIR%%/swedish
 @dirrm %%DATADIR%%/spanish
