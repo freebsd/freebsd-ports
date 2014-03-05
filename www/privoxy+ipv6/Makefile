@@ -11,6 +11,9 @@ DISTNAME=	privoxy_CVS_${PORTVERSION}_ipv6_5
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
 
+DEPRECATED=	www/privoxy natively supports ipv6
+EXPIRATION_DATE=	2014-04-05
+
 WRKSRC=		${WRKDIR}/privoxy
 
 ETCDIR=		${PREFIX}/etc/privoxy
