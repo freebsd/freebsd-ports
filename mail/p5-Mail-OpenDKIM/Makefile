@@ -31,7 +31,7 @@ PLIST_FILES=	%%SITE_PERL%%/%%PERL_ARCH%%/Mail/OpenDKIM.pm \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/OpenDKIM/OpenDKIM.so \
 		%%PERL5_MAN3%%/Mail::OpenDKIM.3.gz \
 		%%PERL5_MAN3%%/Mail::OpenDKIM::DKIM.3.gz \
-		%%PERL5_MAN3%%/Mail::OpenDKIM::PrivateKey.3 \
+		%%PERL5_MAN3%%/Mail::OpenDKIM::PrivateKey.3.gz \
 		%%PERL5_MAN3%%/Mail::OpenDKIM::Signature.3.gz \
 		%%PERL5_MAN3%%/Mail::OpenDKIM::Signer.3.gz
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/OpenDKIM \
