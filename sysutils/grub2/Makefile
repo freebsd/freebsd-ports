@@ -14,13 +14,14 @@ COMMENT=	Multiboot boot loader
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		bash:${PORTSDIR}/shells/bash \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		help2man:${PORTSDIR}/misc/help2man
 
 CONFLICTS=	grub-0*
 SSP_UNSAFE=	yes
 USE_XZ=		yes
 USE_GCC=	yes
+USE_PYTHON=	yes
 USE_AUTOTOOLS=	automake aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
