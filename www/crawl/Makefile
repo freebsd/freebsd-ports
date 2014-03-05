@@ -3,32 +3,30 @@
 
 PORTNAME=	crawl
 PORTVERSION=	0.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small, efficient web crawler with advanced features
+COMMENT=	Small, efficient web crawler with advanced features
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+OPTIONS_DEFINE=	EXAMPLES
+
+LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
+
+USES=		pkgconfig
 
 USE_BDB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --program-transform-name=''
-
-MAN1=	crawl.1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--with-libevent --program-transform-name=''
+CONFIGURE_ENV=	EVENTINC="`pkgconf --cflags libevent`" EVENTLIB="`pkgconf --libs libevent`"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/include/db2,${BDB_INCLUDE_DIR},g' \
 		-e 's,db2,${BDB_LIB_NAME},g' ${WRKSRC}/configure.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/crawl.conf ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/crawl.conf ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
