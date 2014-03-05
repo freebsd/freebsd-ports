@@ -14,6 +14,8 @@ DISTNAME=	fftw-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
+LICENSE=	GPLv2
+
 #current flavors: default, float, long, and quad
 FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
@@ -28,12 +30,10 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if ${FFTW3_FLAVOR} == "default"
-MAN1=	fftw-wisdom-to-conf.1 fftw-wisdom.1
 INFO=	fftw3
 .else
 #For non-default flavors, build and install the flavor-dependent components
 #only, so that these flavors may coexist with the default flavor
-MAN1=	fftw${FFTW3_SUFX}-wisdom.1
 INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
 
@@ -44,30 +44,19 @@ OPENMP_DESC=		Build OpenMP multithreaded libraries
 
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}
 CONFIGURE_ARGS+=	--enable-openmp
 PLIST_SUB+=	OPENMP=""
-USE_GCC=	any
+USES+=		compiler:openmp
 .else
 CONFIGURE_ARGS+=	--disable-openmp
 PLIST_SUB+=	OPENMP="@comment "
+USES+=		compiler:env
 .endif
 
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -ffast-math -fstrict-aliasing
-.  if !defined(WITH_DEBUG)
-CFLAGS+=	-fomit-frame-pointer
-.  endif
-.  if ${ARCH} == "i386"
-CFLAGS+=	-malign-double
-.  endif
-WITHOUT_NO_STRICT_ALIASING=	yes
-.endif # end OPTIMIZED_CFLAGS
-
-#Users must add altivec and avx to MACHINE_CPU when desired:
+#Users must add altivec to MACHINE_CPU when desired:
 #this is not currently done in bsd.cpu.mk
 .if ${FFTW3_FLAVOR} == "default"
 .  if !empty(MACHINE_CPU:Mavx)
@@ -87,10 +76,6 @@ CONFIGURE_ARGS+=--enable-sse
 CONFIGURE_ARGS+=--enable-altivec
 .  endif
 .elif ${FFTW3_FLAVOR} == "long"
-.  if ${OSVERSION} < 800000
-ONLY_FOR_ARCHS =	i386 sparc64
-LIB_DEPENDS+=	ml:${PORTSDIR}/math/ldouble
-.  endif
 FFTW3_SUFX=	l
 FFTW3_PKGNAMESUFFIX=	-long
 CONFIGURE_ARGS+=--enable-long-double
@@ -103,12 +88,25 @@ USE_GCC=	yes
 .endif
 
 .if ${FFTW3_FLAVOR} == "default"
-PLIST_SUB+=	DEF=""
+PLIST_SUB+=	DEF="" NONDEF="@comment "
 .else
-PLIST_SUB+=	DEF="@comment "
+PLIST_SUB+=	DEF="@comment " NONDEF=""
 .endif
 
 PLIST_SUB+=	FFTW3_SUFX="${FFTW3_SUFX}"
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+CFLAGS+=	-O3 -ffast-math -fstrict-aliasing
+.  if !defined(WITH_DEBUG)
+CFLAGS+=	-fomit-frame-pointer
+.  endif
+.  if ${ARCH} == "i386" && (${COMPILER_TYPE} == "gcc" || !empty(USE_GCC))
+CFLAGS+=	-malign-double
+.  endif
+WITHOUT_NO_STRICT_ALIASING=	yes
+.endif # end OPTIMIZED_CFLAGS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/fftw|${PREFIX}/etc/fftw|' \
@@ -125,10 +123,6 @@ post-patch:
 	-e '/(DIST_COMMON|bin_SCRIPTS|BUILT_SOURCES|EXTRA_DIST) =/,\
 	/[^\]$$/s/[^[:blank:]]*fftw-wisdom-to-conf[^[:blank:]]*//' \
 		${WRKSRC}/tools/Makefile.in
-.  if ${FFTW3_FLAVOR} == "long" && ${OSVERSION} < 800000
-	@${REINPLACE_CMD} -e 's|-lm |-L${LOCALBASE}/lib -lml &|' \
-		${WRKSRC}/configure
-.  endif
 .endif
 
 post-patch-script:
@@ -149,14 +143,14 @@ post-configure:
 
 .if ${FFTW3_FLAVOR} != "default"
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/tools/fftw${FFTW3_SUFX}-wisdom.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/tools/fftw${FFTW3_SUFX}-wisdom.1 ${STAGEDIR}${PREFIX}/man/man1
 .endif
 
 regression-test test: smallcheck
 
 .for t in bigcheck check exhaustive-check paranoid-check smallcheck
 ${t}: build
-	@cd ${WRKSRC}/tests; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+	@cd ${WRKSRC}/tests; ${SETENV} ${MAKE_ENV} ${MAKE} \
 	${MAKE_ARGS} ${t}
 
 .endfor
