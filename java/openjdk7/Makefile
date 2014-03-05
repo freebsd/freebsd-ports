@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
@@ -138,6 +138,12 @@ PATCH_DEPENDS+=	gpatch:${PORTSDIR}/devel/patch
 PATCH=		gpatch
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+MAKE_ENV+=	EXTRA_CFLAGS=-DLIBICONV_PLUG
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
 		${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp
@@ -180,4 +186,4 @@ post-install:
 	# Register the VM
 	"${LOCALBASE}/bin/registervm" "${INSTALLDIR}/bin/java # OpenJDK${JDK_MAJOR_VERSION}"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
