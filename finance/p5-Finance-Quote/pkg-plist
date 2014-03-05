@@ -7,11 +7,13 @@
 %%SITE_PERL%%/Finance/Quote/BSERO.pm
 %%SITE_PERL%%/Finance/Quote/Bourso.pm
 %%SITE_PERL%%/Finance/Quote/Cdnfundlibrary.pm
+%%SITE_PERL%%/Finance/Quote/Citywire.pm
 %%SITE_PERL%%/Finance/Quote/Cominvest.pm
 %%SITE_PERL%%/Finance/Quote/Currencies.pm
 %%SITE_PERL%%/Finance/Quote/DWS.pm
 %%SITE_PERL%%/Finance/Quote/Deka.pm
 %%SITE_PERL%%/Finance/Quote/FTPortfolios.pm
+%%SITE_PERL%%/Finance/Quote/FTfunds.pm
 %%SITE_PERL%%/Finance/Quote/Fidelity.pm
 %%SITE_PERL%%/Finance/Quote/FinanceCanada.pm
 %%SITE_PERL%%/Finance/Quote/Finanzpartner.pm
@@ -21,6 +23,7 @@
 %%SITE_PERL%%/Finance/Quote/HU.pm
 %%SITE_PERL%%/Finance/Quote/IndiaMutual.pm
 %%SITE_PERL%%/Finance/Quote/LeRevenu.pm
+%%SITE_PERL%%/Finance/Quote/MStaruk.pm
 %%SITE_PERL%%/Finance/Quote/ManInvestments.pm
 %%SITE_PERL%%/Finance/Quote/Morningstar.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarJP.pm
@@ -31,6 +34,7 @@
 %%SITE_PERL%%/Finance/Quote/SIXfunds.pm
 %%SITE_PERL%%/Finance/Quote/SIXshares.pm
 %%SITE_PERL%%/Finance/Quote/StockHouseCanada.pm
+%%SITE_PERL%%/Finance/Quote/TNetuk.pm
 %%SITE_PERL%%/Finance/Quote/TSP.pm
 %%SITE_PERL%%/Finance/Quote/TSX.pm
 %%SITE_PERL%%/Finance/Quote/Tdefunds.pm
@@ -60,11 +64,13 @@
 %%PERL5_MAN3%%/Finance::Quote::BSERO.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Bourso.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Cdnfundlibrary.3.gz
+%%PERL5_MAN3%%/Finance::Quote::Citywire.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Cominvest.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Currencies.3.gz
 %%PERL5_MAN3%%/Finance::Quote::DWS.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Deka.3.gz
 %%PERL5_MAN3%%/Finance::Quote::FTPortfolios.3.gz
+%%PERL5_MAN3%%/Finance::Quote::FTfunds.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Fidelity.3.gz
 %%PERL5_MAN3%%/Finance::Quote::FinanceCanada.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Finanzpartner.3.gz
@@ -74,6 +80,7 @@
 %%PERL5_MAN3%%/Finance::Quote::HU.3.gz
 %%PERL5_MAN3%%/Finance::Quote::IndiaMutual.3.gz
 %%PERL5_MAN3%%/Finance::Quote::LeRevenu.3.gz
+%%PERL5_MAN3%%/Finance::Quote::MStaruk.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ManInvestments.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Morningstar.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarJP.3.gz
@@ -81,6 +88,7 @@
 %%PERL5_MAN3%%/Finance::Quote::NZX.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Platinum.3.gz
 %%PERL5_MAN3%%/Finance::Quote::SEB.3.gz
+%%PERL5_MAN3%%/Finance::Quote::TNetuk.3.gz
 %%PERL5_MAN3%%/Finance::Quote::TSP.3.gz
 %%PERL5_MAN3%%/Finance::Quote::TSX.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Tdefunds.3.gz
