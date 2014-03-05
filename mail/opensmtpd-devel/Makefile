@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	201401241552
+PORTVERSION=	201403051040
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
 
 OPENSMTPD_SNAPSHOT_VER=	p1
 
-OPTIONS_DEFINE=	CA_BUNDLE PAM SQLITE MYSQL PGSQL LDAP
+OPTIONS_DEFINE=	CA_BUNDLE PAM SQLITE MYSQL PGSQL LDAP REDIS
 
 OPTIONS_DEFAULT=	CA_BUNDLE PAM
 
@@ -41,7 +41,7 @@ MAN5=		smtpd.conf.5 aliases.5 forward.5
 USERS=		_smtpd _smtpq
 GROUPS=		_smtpd
 
-OPTIONS_SUB=		MYSQL SQLITE PGSQL LDAP
+OPTIONS_SUB=		MYSQL SQLITE PGSQL LDAP REDIS
 
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
@@ -62,6 +62,9 @@ PGSQL_CONFIGURE_ON=	--with-experimental-postgres
 LDAP_CONFIGURE_ON=	--with-experimental-ldap
 
 PAM_CONFIGURE_ON=	--with-pam --with-pam-service=smtpd
+
+REDIS_LIB_DEPENDS=	hiredis:${PORTSDIR}/databases/hiredis
+REDIS_CONFIGURE_ON=	--with-experimental-redis
 
 .include <bsd.port.options.mk>
 
