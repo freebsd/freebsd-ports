@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtrlock
-PORTVERSION=	2.3
+PORTVERSION=	2.6
 CATEGORIES=	x11
 MASTER_SITES=	DEBIAN \
 		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
@@ -21,7 +21,6 @@ USE_XORG=	x11
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lcrypt
 
-MAN1=		xtrlock.1
 PLIST_FILES=	bin/xtrlock man/man1/${PORTNAME}.1.gz
 BINMODE=	4555
 
