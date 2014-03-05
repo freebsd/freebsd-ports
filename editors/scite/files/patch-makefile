@@ -1,5 +1,5 @@
---- makefile.orig	2013-06-22 15:49:44.000000000 -0400
-+++ makefile	2013-06-22 15:53:14.000000000 -0400
+--- makefile.orig	2013-10-13 23:38:06.000000000 +0200
++++ makefile	2014-01-27 15:50:05.858185668 +0100
 @@ -5,13 +5,6 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -23,10 +23,10 @@
  ifndef prefix
  ifdef gnomeprefix
    prefix=$(gnomeprefix)
-@@ -113,8 +106,9 @@
+@@ -116,8 +109,9 @@
  $(PROG): SciTEGTK.o GUIGTK.o Widget.o \
  FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o StringHelpers.o \
- PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleWriter.o Utf8_16.o \
+ PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
 -	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
 -	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
 +	JobQueue.o GTKMutex.o IFaceTable.o $(LUA_OBJS)

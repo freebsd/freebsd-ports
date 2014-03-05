@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scite
-PORTVERSION=	3.3.5
+PORTVERSION=	3.3.9
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -19,14 +19,12 @@ FULL_BUFFER_MENU_DESC=	Show all files in buffer menu
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
-USES=		gmake pkgconfig
+USES=		desktop-file-utils gmake pkgconfig
 USE_GNOME=	gtk20
 MAKEFILE=	makefile
 
-MAN1=		scite.1
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -39,17 +37,17 @@ post-patch:
 		${WRKSRC}/../src/SciTEGlobal.properties
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/SciTE ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/../doc/scite.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/SciTE.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/Sci48M.png ${PREFIX}/share/pixmaps
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/../src/*.properties ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/SciTE ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/../doc/scite.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/SciTE.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/Sci48M.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../src/*.properties ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.jpg ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/*.jpg ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
