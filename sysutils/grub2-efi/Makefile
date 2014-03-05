@@ -16,6 +16,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${LOCALBASE}/bin/mformat:${PORTSDIR}/emulators/mtools \
 		${LOCALBASE}/bin/grub-mkrescue:${PORTSDIR}/sysutils/grub2
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		bash:${PORTSDIR}/shells/bash \
 		help2man:${PORTSDIR}/misc/help2man
 
 SSP_UNSAFE=	yes

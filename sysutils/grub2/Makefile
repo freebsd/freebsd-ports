@@ -14,6 +14,7 @@ COMMENT=	Multiboot boot loader
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		bash:${PORTSDIR}/shells/bash \
 		help2man:${PORTSDIR}/misc/help2man
 
 CONFLICTS=	grub-0*
