@@ -3,6 +3,7 @@
 
 PORTNAME=	tmux
 DISTVERSION=	1.9a
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -11,10 +12,11 @@ COMMENT=	Terminal Multiplexer
 
 LICENSE=	BSD2CLAUSE
 
-GNU_CONFIGURE=	yes
 USES=		pkgconfig shebangfix
-
 SHEBANG_FILES=	examples/tmux_backup.sh
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
 
 PLIST_FILES=	bin/tmux \
 		man/man1/tmux.1.gz \
@@ -47,9 +49,7 @@ PORTSCOUT=	ignore:1.9
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/tmux.conf|${PREFIX}/etc/tmux.conf|g' \
-		${WRKSRC}/tmux.1 ${WRKSRC}/tmux.h ${WRKSRC}/CHANGES
-	@${REINPLACE_CMD} -e '/LIBS=/s/-lrt//' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|/etc/tmux.conf|${PREFIX}/etc/tmux.conf|g' ${WRKSRC}/CHANGES
 
 .if ${PORT_OPTIONS:MLIBEVENT_STATIC}
 .if ${PORT_OPTIONS:MLIBEVENT2}
