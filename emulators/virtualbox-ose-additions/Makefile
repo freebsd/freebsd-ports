@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		as86:${PORTSDIR}/devel/dev86 \
 		kmk:${PORTSDIR}/devel/kBuild
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
@@ -36,7 +35,6 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--disable-xpcom --disable-sdl-ttf --disable-pulse \
 		--disable-alsa --disable-dbus --disable-python
 
-CONFLICTS=	bcc-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-additions-devel-[3,4]* virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]*
 
 OPTIONS_DEFINE=	DEBUG X11 OPENGL
