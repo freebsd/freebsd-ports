@@ -6,7 +6,7 @@ PORTVERSION=	2.0.6
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc-webplugins/${PORTVERSION}/
 
-MAINTAINER=	mi@aldan.algber.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeds vlc-player in web-browsers
 
 LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc
