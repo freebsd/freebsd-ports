@@ -81,7 +81,7 @@
 +       if test ${ICONVROOT}o != "o"; then
 +	       ICONVROOT=/usr/local
 +       fi
-+       transcodingLibs="-L${ICONVROOT} -L${ICONVROOT}/lib -liconv" ;;
++       transcodingLibs="-L${ICONVROOT} -L${ICONVROOT}/lib ${ICONV_LIB}" ;;
     IconvGNU)
         TRANSCODER=IconvGNU ;
         transcodingDefines="-DXML_USE_GNU_TRANSCODER -I/usr/local/include" ;;
