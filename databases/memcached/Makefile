@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
 
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
 TEST_DEPENDS=	prove:${PORTSDIR}/lang/${PERL_PORT} \
 		git:${PORTSDIR}/devel/git
@@ -19,7 +19,7 @@ TEST_DEPENDS=	prove:${PORTSDIR}/lang/${PERL_PORT} \
 CONFLICTS=	memcached-1.2*
 
 # Dtrace option disabled until it is fixed upstream
-OPTIONS_DEFINE=	SASL
+OPTIONS_DEFINE=	SASL DOCS
 DTRACE_DESC=	Enable dtrace probes
 SASL_DESC=	Enable SASL Authentication
 
@@ -28,24 +28,30 @@ SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
 USE_CSTD=	c99
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --program-prefix= \
+CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}/lib/event2 --program-prefix= \
 		--disable-coverage
-
-MAN1=		memcached.1
 
 PLIST_FILES=	bin/memcached \
 		bin/memcached-tool \
-		include/memcached/protocol_binary.h
+		include/memcached/protocol_binary.h \
+		man/man1/memcached.1.gz
 PLIST_DIRS=	include/memcached
 
 PORTDOCS=	protocol.txt readme.txt
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+CFLAGS+=	-fstack-protector \
+		-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/event2/compat
 
-.if ${OSVERSION} >= 800000
-CFLAGS+=	-fstack-protector
-.endif
+DTRACE_COFNIGURE_ENABLE=	dtrace
+
+SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_CONFIGURE_ENABLE=	sasl
+SASL_CFLAGS=		-I${LOCALBASE}/include
+SASL_CPPFLAGS+=		${CFLAGS}
+SASL_LDFLAGS=		-L${LOCALBASE}/lib
+
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--enable-64bit
@@ -53,34 +59,21 @@ CONFIGURE_ARGS+=	--enable-64bit
 
 .if ${PORT_OPTIONS:MDTRACE}
 BROKEN=			DTRACE broken with gcc/clang - reported upstream
-CONFIGURE_ARGS+=	--enable-dtrace
-.else
-CONFIGURE_ARGS+=	--disable-dtrace
 .endif
 
-.if ${PORT_OPTIONS:MSASL} && !defined(WITHOUT_SASL)
-LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--enable-sasl
-CFLAGS+=		-I${LOCALBASE}/include
-CPPFLAGS+=		${CFLAGS}
-LDFLAGS+=		-L${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--disable-sasl
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e "s,-levent,-levent-2.0,g" ${WRKSRC}/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e 's#doc/memcached.1##' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/memcached-tool ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/memcached-tool ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 regression-test: test
 test: build
