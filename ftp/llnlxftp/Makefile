@@ -12,7 +12,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif FTP client
 
-PLIST_FILES=	bin/xftp lib/X11/app-defaults/XFtp
+PLIST_FILES=	bin/xftp lib/X11/app-defaults/XFtp \
+		man/man1/xftp.1.gz
 WRKSRC=		${WRKDIR}/llnlxftp2.1/sources
 USES=		imake motif
 USE_XORG=	ice sm x11 xext xp xt
@@ -21,7 +22,4 @@ CFLAGS+=	-Wno-implicit-int \
 		-Wno-implicit-function-declaration \
 		-Wno-return-type
 
-MAN1=		xftp.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
