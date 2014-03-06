@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bip
-PORTVERSION=	0.8.8
-PORTREVISION=	2
+PORTVERSION=	0.8.9
 CATEGORIES=	irc
-MASTER_SITES=	https://projects.duckcorp.org/attachments/download/39/
+MASTER_SITES=	https://projects.duckcorp.org/attachments/download/61/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A simple IRC proxy with SSL support
@@ -14,39 +13,36 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GMAKE=	yes
+CFLAGS+=	-Wno-sign-compare -Wno-error
+USES=	gmake
 INSTALL_TARGET=	SUBDIR=src install-exec
 
 USE_OPENSSL=	yes
 
 PATCH_STRIP=	-p1
-PLIST_FILES=	bin/bip bin/bipmkpw
 SUB_FILES=	pkg-message
-MAN1=		bip.1 bipmkpw.1
-MAN5=		bip.conf.5
 
 PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
+EXAMPLEFILES=	bip.conf bip.vim
 
-PORTEXAMPLES=	bip.conf bip.vim
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:
-	@cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
-	@cd ${WRKSRC} && ${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5
+	@cd ${WRKSRC} && ${INSTALL} bip.1 ${STAGEDIR}${PREFIX}/man/man1
+	@cd ${WRKSRC} && ${INSTALL} bipmkpw.1 ${STAGEDIR}${PREFIX}/man/man1
+	@cd ${WRKSRC} && ${INSTALL} bip.conf.5 ${STAGEDIR}${PREFIX}/man/man5
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-.for examples in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/samples/${examples} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR}  ${STAGEDIR}${EXAMPLESDIR}
+.for i in ${EXAMPLEFILES}
+	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
