@@ -1,4 +1,5 @@
 bin/scrollz
 bin/scrollz-%%SCROLLZ_VER%%
 bin/wservz
+man/man1/scrollz.1.gz
 @exec mkdir -p %D/%%DATADIR%%/script
