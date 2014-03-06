@@ -4,7 +4,7 @@
 
 PORTNAME=	glom
 PORTVERSION=	1.12.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -29,7 +29,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext pathfix shared-mime-info gmake pkgconfig
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		shared-mime-info
 USE_GNOME=	gnomedocutils gnomeprefix pygnomeextras
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
@@ -43,5 +44,8 @@ INSTALLS_ICONS=	yes
 BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libglom-1.12.so.0.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/glom_1_12.so 
+
 .include <bsd.port.mk>
