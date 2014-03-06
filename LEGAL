@@ -195,6 +195,7 @@ NetComponents-*		java/netcomponents	No redistribution except as part of a substa
 ningpo_demo*		games/linux-ningpo-demo	Redistribution is limited, see license
 nntpcache-*		news/nntpcache		Commercial or government use requires license
 nttcp-*			benchmarks/nttcp	No commercial use
+nwresources*.tar.gz	games/nwndata		Distribution not allowed
 ofb06trial.tgz		editors/softmaker-office  distribution with other products of any kind forbiden
 OMRONWnn6.tgz		japanese/Wnn6		You should buy from Omron Software Co., Ltd.
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from CARDCAPTOR SAKURA
