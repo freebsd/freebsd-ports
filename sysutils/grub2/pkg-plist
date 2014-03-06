@@ -144,7 +144,6 @@ lib/grub/i386-pc/xnu_uuid_test.mod
 lib/grub/i386-pc/xnu_uuid_test.module
 man/man1/grub-file.1.gz
 man/man1/grub-glue-efi.1.gz
-man/man1/grub-mkfont.1.gz
 man/man1/grub-mknetdir.1.gz
 man/man1/grub-render-label.1.gz
 man/man1/grub-syslinux2cfg.1.gz
