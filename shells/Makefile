@@ -40,7 +40,6 @@
     SUBDIR += v7sh
     SUBDIR += viewglob
     SUBDIR += vshnu
-    SUBDIR += wapsh
     SUBDIR += zoidberg
     SUBDIR += zsh
 
