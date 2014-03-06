@@ -14,8 +14,8 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 PORTSCOUT=	limitw:1,even
 
-USE_GNOME=	libxml2 ltverhack
-USES=		gmake pathfix
+USE_GNOME=	libxml2
+USES=		gmake libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--localstatedir=/var \
