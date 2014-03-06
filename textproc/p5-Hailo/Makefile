@@ -49,7 +49,6 @@ USE_PERL5=	configure
 OPTIONS_DEFINE=	SQLITE PGSQL MYSQL
 OPTIONS_DEFAULT=	SQLITE
 
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
@@ -63,10 +62,4 @@ RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
-.if ${PERL_LEVEL} < 501400
-BUILD_DEPENDS+=	p5-autodie>=2.08:${PORTSDIR}/devel/p5-autodie
-RUN_DEPENDS+=	p5-autodie>=2.08:${PORTSDIR}/devel/p5-autodie
-TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
