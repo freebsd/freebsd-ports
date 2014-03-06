@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/upower/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/sysutils/upower/Makefile 19009 2014-03-02 22:41:42Z kwm $
 
 PORTNAME=	upower
 PORTVERSION=	0.9.21
@@ -32,8 +32,8 @@ CONFIGURE_ENV=	GTKDOC="false"
 CONFIGURE_ARGS+=--disable-man-pages
 PLIST_SUB+=	MAN="@comment "
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-sgml \
-    		${LOCALBASE}/share/xml/docbook/4.1.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
+BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml \
+		${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 USE_GNOME+=	libxslt:build
 PLIST_SUB+=	MAN=""

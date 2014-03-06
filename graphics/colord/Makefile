@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/colord/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#    $MCom: ports/trunk/graphics/colord/Makefile 19009 2014-03-02 22:41:42Z kwm $
 
 PORTNAME=	colord
 PORTVERSION=	1.0.1
@@ -46,7 +46,7 @@ OPTIONS_DEFINE=	MANPAGES
 
 .if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
-		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-sgml
+		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml
 PLIST_SUB+=	MAN=""
 .else
 PLIST_SUB+=	MAN="@comment "

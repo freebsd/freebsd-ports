@@ -1,6 +1,6 @@
 # Created by: Koop Mast<kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/polkit/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/sysutils/polkit/Makefile 19009 2014-03-02 22:41:42Z kwm $
 
 PORTNAME=	polkit
 PORTVERSION=	0.105
@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	MANPAGES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-sgml \
+BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 USE_GNOME+=	libxslt:build

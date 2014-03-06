@@ -1,6 +1,6 @@
 # Created by: Anders F Bjorklund <afb@users.sourceforge.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 19010 2014-03-03 08:19:42Z kwm $
 
 PORTNAME=	packagekit
 PORTVERSION=	0.8.9
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
 USE_XZ=		yes
-USES=		gettext gmake iconv pathfix shared-mime-info
+USES=		gettext gmake iconv pathfix pkgconfig shared-mime-info
 USE_GNOME=	glib20 intltool introspection
 USE_LDCONFIG=	yes
 USE_SQLITE=	3
@@ -40,7 +40,7 @@ OPTIONS_DEFINE=	MANPAGES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES} || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-sgml \
+BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 USE_GNOME+=	libxslt:build
 PLIST_SUB+=	MAN=""

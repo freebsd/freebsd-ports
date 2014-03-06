@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	MANPAGES
 
 .if ${PORT_OPTIONS:MMANPAGES} || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
-		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-sgml
+		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml
 PLIST_SUB+=	MAN=""
 .else
 PLIST_SUB+=	MAN="@comment "
