@@ -165,8 +165,8 @@ share/xsessions/openbox.desktop
 %%NLS%%@dirrmtry share/locale/en@boldquot
 %%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
 @dirrmtry share/xsessions
 @dirrm share/themes/Syscrash/openbox-3
 @dirrm share/themes/Syscrash
