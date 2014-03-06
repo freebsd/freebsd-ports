@@ -3,6 +3,7 @@
 
 PORTNAME=	cdent
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	CHEESESHOP
 
@@ -12,7 +13,7 @@ COMMENT=	A Portable Module Programming Language
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
