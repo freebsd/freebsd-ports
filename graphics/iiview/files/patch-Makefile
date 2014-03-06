@@ -1,0 +1,30 @@
+--- ./Makefile.orig	2012-01-19 16:01:21.000000000 +0100
++++ ./Makefile	2014-03-06 08:55:15.940151118 +0100
+@@ -52,13 +52,9 @@
+ LIBSFB  =       $(LIBS) -lncurses
+ LIBSFBONLY  =   $(IMGLIBS) -lm -lncurses
+ 
+-.if !defined(PREFIX)
+-PREFIX = /usr/local
+-.endif
++PREFIX ?= /usr/local
+ 
+-.if !defined(X11BASE)
+-X11BASE = /usr/X11R6
+-.endif
++X11BASE = ${LOCALBASE}
+ 
+ # Please adjust this, if You get errors while compiling iiview
+ INCPATH =       -I$(PREFIX)/include -I$(X11BASE)/include \
+@@ -110,8 +106,9 @@
+ 	rm -f $(OBJS) $(OBJSFB) main.fbo *~
+ 
+ install:
+-	install -m 755 $(EXECNAME) $(PREFIX)/bin
+-	install -m 755 ./man/man1/iiview.1.gz $(PREFIX)/man/man1
++	strip $(EXECNAME)
++	install -m 755 $(EXECNAME) $(DESTDIR)$(PREFIX)/bin
++	install -m 755 ./man/man1/iiview.1.gz $(DESTDIR)$(MANPREFIX)/man/man1
+ 
+ main.o: common.h filelist.h modules.h xsupport.h fbsupport.h main.c
+ 	$(CC) $(DEFS) $(OPTS) $(WARN) -c -o main.o $(INCPATH) main.c
