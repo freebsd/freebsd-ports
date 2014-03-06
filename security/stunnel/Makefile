@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stunnel
-PORTVERSION=	4.56
+PORTVERSION=	5.00
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
@@ -17,7 +17,6 @@ MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
 		http://stunnel.cybermirror.org/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
 		http://mirrors.rit.edu/zi/
-MASTER_SITE_SUBDIR=	. obsolete/4.x
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
@@ -31,20 +30,26 @@ USE_RC_SUBR=	stunnel
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/tmp \
-		--enable-static --disable-fips
+CONFIGURE_ARGS=	--localstatedir=/var/tmp --enable-static
 
-OPTIONS_DEFINE=		IPV6 LIBWRAP SSL_PORT
-OPTIONS_SINGLE=		THREAD
-OPTIONS_SINGLE_THREAD=	FORK PTHREAD UCONTEXT
-OPTIONS_DEFAULT=	PTHREAD
+OPTIONS_DEFINE=			IPV6 LIBWRAP SSL_PORT FIPS
+OPTIONS_SINGLE=			THREAD
+OPTIONS_SINGLE_THREAD=		FORK PTHREAD UCONTEXT
+OPTIONS_DEFAULT=		PTHREAD
 
-SSL_PORT_DESC=	Use OpenSSL from the ports collection
-FORK_DESC=	Use the fork(3) threading model
-PTHREAD_DESC=	Use the pthread(3) threading model
-UCONTEXT_DESC=	Use the ucontext(3) threading model
+IPV6_CONFIGURE_ENABLE=		ipv6
+LIBWRAP_CONFIGURE_ENABLE=	libwrap
+SSL_PORT_CONFIGURE_ON=		--with-ssl="${OPENSSLBASE}"
+SSL_PORT_CONFIGURE_OFF=		--with-ssl=/usr
+SSL_PORT_USE=			OPENSSL=yes
+FIPS_CONFIGURE_ENABLE=		fips
 
-NO_STAGE=	yes
+SSL_PORT_DESC=			Use OpenSSL from the ports collection
+FORK_DESC=			Use the fork(3) threading model
+PTHREAD_DESC=			Use the pthread(3) threading model
+UCONTEXT_DESC=			Use the ucontext(3) threading model
+FIPS_DESC=			Enable OpenSSL FIPS mode
+
 .include <bsd.port.options.mk>
 
 STUNNEL_USER?=	stunnel
@@ -53,29 +58,14 @@ STUNNEL_GROUP?=	stunnel
 USERS=		${STUNNEL_USER}
 GROUPS=		${STUNNEL_GROUP}
 
-MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8
-
 .if ${PORT_OPTIONS:MSSL_PORT}
-USE_OPENSSL=		YES
 WITH_OPENSSL_PORT=	yes
-CONFIGURE_ARGS+=	--with-ssl="${OPENSSLBASE}"
-.else
-CONFIGURE_ARGS+=	--with-ssl=/usr
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
 .if ${PORT_OPTIONS:MLIBWRAP}
-CONFIGURE_ARGS+=	--enable-libwrap
 LDFLAGS+=		-lwrap
-.else
-CONFIGURE_ARGS+=	--disable-libwrap
 .endif
 
 .if ${PORT_OPTIONS:MUCONTEXT}
@@ -111,15 +101,6 @@ post-patch:
 .else
 	@${REINPLACE_CMD} -E -e 's|\$$\(docdir\)/examples|${EXAMPLESDIR}|g' ${WRKSRC}/tools/Makefile.in
 .endif
-
-post-install:
-	@${ECHO} ""
-	@${ECHO} "**************************************************************************"
-	@${ECHO} "To create and install a new certificate, type \"make cert\""
-	@${ECHO} ""
-	@${ECHO} "And don't forget to check out the FAQ at http://www.stunnel.org/"
-	@${ECHO} "**************************************************************************"
-	@${ECHO} ""
 
 cert:
 	@${ECHO} ""
