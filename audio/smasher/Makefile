@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross platform audio loop slicer
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
