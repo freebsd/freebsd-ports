@@ -19,7 +19,6 @@ OPTIONS_DEFAULT=		GHC
 NHC98_DESC=	Build with NHC98
 GHC_DESC=	Build with GHC
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGHC}
@@ -38,7 +37,7 @@ BROKEN=		Does not build
 CONFIGURE_ARGS+=	--with-hc=nhc98
 .endif
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 INFO=	drift
