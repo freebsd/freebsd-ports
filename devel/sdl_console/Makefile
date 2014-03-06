@@ -22,7 +22,4 @@ SDL_IMAGE_DESC=	SDL Image support
 
 SDL_IMAGE_USE=	sdl=image
 
-post-patch:
-	@${REINPLACE_CMD} -e '/objformat/s/aout/elf/' ${WRKSRC}/${CONFIGURE_SCRIPT}
-
 .include <bsd.port.mk>
