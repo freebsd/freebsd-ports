@@ -3,7 +3,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	22.84.16
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	SF/hoge
 #/xdvi/${PORTNAME}/${PORTVERSION}
@@ -12,9 +12,9 @@ PKGNAMESUFFIX=	-tetex
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
 
-LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib
 
-USES=		gmake motif
+USES=		gmake iconv motif
 USE_TEX=	base texmf
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
@@ -25,7 +25,8 @@ CONFIGURE_ARGS=	--with-system-t1lib \
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_WRKSRC=	${WRKSRC}/texk/xdvik
 
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} TEXMFCONFIGDIR=${TEXMFDIR}-config
@@ -45,7 +46,7 @@ TEXMFLOCAL_LSR?=${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
 TEXCONFIGBIN=	${LOCALBASE}/bin/texconfig-sys
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 LIBT1_PREFIX?=	${LOCALBASE}
-DOC_FILES=	BUGS CHANGES INSTALL \
+PORTDOCS=	BUGS CHANGES INSTALL \
 		README README.CVS README_maintainer TODO
 
 .if defined(WITH_LETTERSIZE)
@@ -55,9 +56,10 @@ PAPERSIZE=	letter
 PAPERSIZE=	a4
 .endif
 
-PKGINSTALL=	${WRKDIR}/pkg-install.sh
-PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
-PKGINSTALL_SUB=	MKTEXLSR=${MKTEXLSR} \
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-install
+SUB_FILES=	pkg-install
+SUB_LIST=	MKTEXLSR=${MKTEXLSR} \
 		XDVIDIR=${PREFIX}/${TEXMFDIR}/xdvi \
 		XDVICONFDIR=${PREFIX}/${TEXMFDIR}-config/xdvi \
 		PAPERSIZE=${PAPERSIZE} \
@@ -65,15 +67,15 @@ PKGINSTALL_SUB=	MKTEXLSR=${MKTEXLSR} \
 		LOCALBASE=${LOCALBASE}
 
 NO_STAGE=	yes
-pre-install:
-	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	${CHMOD} 0755 ${PKGINSTALL}
+post-patch:
+	@${REINPLACE_CMD} 's/@iconv_libs@/${ICONV_LIB}/' \
+	    ${WRKSRC}/texk/xdvik/Makefile.in \
+	    ${WRKSRC}/texk/xdvik/tests/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
