@@ -20,7 +20,7 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL
 LICENSE_COMB=	multi
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-CFLAGS+=	-fno-stack-protector -Wno-unknown-warning-option
+CFLAGS+=	-fno-stack-protector
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
@@ -148,12 +148,6 @@ CONFIGURE_ENV+=	CC=${CC} \
 		CXX=${CXX} \
 		GYP_GENERATORS=ninja \
 		GYP_DEFINES="${GYP_DEFINES}"
-# according to portlint the below is passed via bsd.port.mk,
-# but 'make -V CONFIGURE_ENV' does not show it:
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}" \
-		CXXFLAGS="${CXXFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF=${LOCALBASE}/bin/gperf
 MAKE_ARGS+=	-C out/${BUILDTYPE}
@@ -162,12 +156,21 @@ MAKE_ARGS+=	-C out/${BUILDTYPE}
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
+CFLAGS+=	-Wno-unknown-warning
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 .else
 GYP_DEFINES+=	clang=1
+CFLAGS+=	-Wno-unknown-warning-option
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 CONFIGURE_ENV+=	AR=/usr/bin/ar
 .endif
+
+# according to portlint the below is passed via bsd.port.mk,
+# but 'make -V CONFIGURE_ENV' does not show it:
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 pre-everything::
 	@${ECHO_MSG}
