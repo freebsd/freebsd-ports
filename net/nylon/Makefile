@@ -3,27 +3,26 @@
 
 PORTNAME=	nylon
 PORTVERSION=	1.21
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/nylon/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Unix SOCKS 4 and 5 proxy server
+COMMENT=	Unix SOCKS 4 and 5 proxy server
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
 USE_RC_SUBR=	nylon
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 # Necessary for $PREFIX to work:
-CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libevent=yes
+CONFIGURE_ENV=	EVENTLIB="`pkgconf --libs libevent`" EVENTINC="`pkgconf --cflags libevent`"
 
-MAN1=		nylon.1
-
-PLIST_FILES=	bin/nylon etc/nylon.conf.sample
+PLIST_FILES=	bin/nylon etc/nylon.conf.sample man/man1/nylon.1.gz
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/nylon.conf ${PREFIX}/etc/nylon.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/nylon.conf ${STAGEDIR}${PREFIX}/etc/nylon.conf.sample
 
 .include <bsd.port.mk>
