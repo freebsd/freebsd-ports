@@ -17,8 +17,7 @@ LIB_DEPENDS=		libnspr4.so:${PORTSDIR}/devel/nspr
 CONFLICTS=		njs-[0-9]*
 
 GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-USES=			pathfix perl5
+USES=			gmake pathfix perl5
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_PYTHON_BUILD=	2
@@ -30,74 +29,27 @@ CONFIGURE_ARGS=		--with-pthreads \
 
 OPTIONS_DEFINE=		DEBUG GCZEAL JEMALLOC METHODJIT OPTIMIZE READLINE \
 			THREADSAFE TRACEJIT UTF8 \
-
 OPTIONS_DEFAULT=	METHODJIT OPTIMIZE READLINE THREADSAFE TRACEJIT
 
 DEBUG_DESC=		Enable Debug build
+DEBUG_CONFIGURE_ENABLE=	debug debug-symbols
+DEBUG_CONFIGURE_DISABLE=debug
 GCZEAL_DESC=		Enable Zealous garbage collecting
+GCZEAL_CONFIGURE_ENABLE=gczeal
 JEMALLOC_DESC=		Use jemalloc as memory allocator
+JEMALLOC_CONFIGURE_ENABLE=	jemalloc
 METHODJIT_DESC=		Enable method JIT support
+METHODJIT_CONFIGURE_ENABLE=	methodjit
 OPTIMIZE_DESC=		Enable compiler optimizations
+OPTIMIZE_CONFIGURE_ENABLE=	optimize
 READLINE_DESC=		Link js shell to system readline library
+READLINE_CONFIGURE_ENABLE=	readline
 THREADSAFE_DESC=	Enable multiple thread support
+THREADSAFE_CONFIGURE_ENABLE=	threadsafe
 TRACEJIT_DESC=		Enable tracing JIT support
+TRACEJIT_CONFIGURE_ENABLE=	tracejit
 UTF8_DESC=		Treat strings as UTF8 instead of ISO-8859-1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug \
-			--enable-debug-symbols
-.else
-CONFIGURE_ARGS+=	--disable-debug
-.endif
-
-.if ${PORT_OPTIONS:MGCZEAL}
-CONFIGURE_ARGS+=	--enable-gczeal
-.else
-CONFIGURE_ARGS+=	--disable-gczeal
-.endif
-
-.if ${PORT_OPTIONS:MJEMALLOC}
-CONFIGURE_ARGS+=	--enable-jemalloc
-.else
-CONFIGURE_ARGS+=	--disable-jemalloc
-.endif
-
-.if ${PORT_OPTIONS:MMETHODJIT}
-CONFIGURE_ARGS+=	--enable-methodjit
-.else
-CONFIGURE_ARGS+=	--disable-methodjit
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZE}
-CONFIGURE_ARGS+=	--enable-optimize
-.else
-CONFIGURE_ARGS+=	--disable-optimize
-.endif
-
-.if ${PORT_OPTIONS:MREADLINE}
-CONFIGURE_ARGS+=	--enable-readline
-.else
-CONFIGURE_ARGS+=	--disable-readline
-.endif
-
-.if ${PORT_OPTIONS:MTHREADSAFE}
-CONFIGURE_ARGS+=	--enable-threadsafe
-.else
-CONFIGURE_ARGS+=	--disable-threadsafe
-.endif
-
-.if ${PORT_OPTIONS:MTRACEJIT}
-CONFIGURE_ARGS+=	--enable-tracejit
-.else
-CONFIGURE_ARGS+=	--disable-tracejit
-.endif
-
-.if ${PORT_OPTIONS:MUTF8}
-CFLAGS+=		-DJS_C_STRINGS_ARE_UTF8
-.endif
+UTF8_CFLAGS=		-DJS_C_STRINGS_ARE_UTF8
 
 .include <bsd.port.pre.mk>
 
@@ -116,6 +68,8 @@ regression-test: build
 .endif
 
 post-install:
-	${LN} -s libmozjs-17.0.so ${PREFIX}/lib/libmozjs-17.0.so.1
+	${LN} -s libmozjs-17.0.so ${STAGEDIR}${PREFIX}/lib/libmozjs-17.0.so.1
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/js17
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmozjs-17.0.*
 
 .include <bsd.port.post.mk>
