@@ -16,13 +16,11 @@ COMMENT=	Python bindings for ORBit2
 
 CONFLICTS=	py*-omniorb-[0-9]*
 
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack orbit2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 ORBIT_CONFIG=	${LOCALBASE}/bin/orbit2-config
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
