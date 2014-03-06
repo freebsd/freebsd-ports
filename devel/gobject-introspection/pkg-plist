@@ -193,6 +193,9 @@ share/gobject-introspection-1.0/tests/utility.c
 share/gobject-introspection-1.0/tests/utility.h
 share/gobject-introspection-1.0/tests/warnlib.c
 share/gobject-introspection-1.0/tests/warnlib.h
+man/man1/g-ir-compiler.1.gz
+man/man1/g-ir-generate.1.gz
+man/man1/g-ir-scanner.1.gz
 @dirrm share/gobject-introspection-1.0/tests
 @dirrm share/gobject-introspection-1.0
 @dirrm lib/gobject-introspection/giscanner/doctemplates/Python
