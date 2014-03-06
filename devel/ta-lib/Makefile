@@ -18,7 +18,6 @@ USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^LIBTOOL[ ]*=.*|LIBTOOL=${LIBTOOL}|g'
