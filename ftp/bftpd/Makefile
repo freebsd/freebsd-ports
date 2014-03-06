@@ -16,11 +16,11 @@ CONFIGURE_ARGS+=	--enable-pam
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample
+PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample \
+		man/man8/bftpd.8.gz
 MAN8=		bftpd.8
 PORTDOCS=	en pl sk
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000
@@ -34,11 +34,9 @@ post-patch:
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MAN8PREFIX}/man/man8/
-	${INSTALL_DATA} ${WRKSRC}/bftpd.conf ${PREFIX}/etc/bftpd.conf.sample
-.if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_DATA} ${WRKSRC}/bftpd.conf ${STAGEDIR}${PREFIX}/etc/bftpd.conf.sample
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
