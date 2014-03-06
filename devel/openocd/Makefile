@@ -48,12 +48,10 @@ SYSFSGPIO=	Support Programming via sysfs GPIOs
 RMTBITBANG_DESC=Support Remote-Bitbang Driver
 MINIDRIVER_DESC=Dummy minidriver only (will exclude others!)
 
-MAN1=		${PORTNAME}.1
-USE_GMAKE=	yes
+USES=		gmake
 USE_BZIP2=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 # IMPORTANT INFORMATION FOR DEVELOPERS:
 # Some Interfaces and Options are not on the list because they break a build.
 # If you need them working on FreeeBSD, code, patches are welcome :-)
@@ -279,8 +277,5 @@ LIB_DEPENDS+=		ftdi:${PORTSDIR}/devel/libftdi
 .if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
