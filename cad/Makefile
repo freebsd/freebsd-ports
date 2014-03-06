@@ -10,6 +10,7 @@
     SUBDIR += astk-serveur
     SUBDIR += atlc
     SUBDIR += basicdsp
+    SUBDIR += brickutils
     SUBDIR += brlcad
     SUBDIR += calculix
     SUBDIR += cascade
