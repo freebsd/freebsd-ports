@@ -24,6 +24,9 @@ CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
 
 DOCS=		AUTHORS NEWS README THANKS doc/opencdk-api.html
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^LDADD/ s/$$/ $$(LIBGCRYPT_LIBS)/' ${WRKSRC}/tests/Makefile.in
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tests/*.c ${STAGEDIR}${EXAMPLESDIR}
