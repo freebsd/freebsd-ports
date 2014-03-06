@@ -14,10 +14,4 @@ GNU_CONFIGURE=	yes
 USES=		perl5 gmake
 SUB_FILES=	pkg-message
 
-MAN1=	asn1c.1 enber.1 unber.1
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
