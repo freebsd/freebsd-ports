@@ -51,6 +51,16 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/SearchCommand$Match.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/SearchCommand.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/UserSettingsCommand.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/AutoCoverDemo$AlbumComponent.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/AutoCoverDemo.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/CoverArtController$1.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/CoverArtController$AlbumCoverArtRequest.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/CoverArtController$ArtistCoverArtRequest.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/CoverArtController$AutoCover.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/CoverArtController$CoverArtRequest.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/CoverArtController$MediaFileCoverArtRequest.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/DLNASettingsController.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/RESTController$BookmarkKey.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/AbstractChartController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/AdvancedSettingsController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/AllmusicController.class
@@ -121,6 +131,8 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/VideoPlayerController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/WapController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/default_cover.jpg
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/MediaFileDao$GenreMapper.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/schema/Schema49.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/AbstractDao.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/AlbumDao$1.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/AlbumDao$AlbumMapper.class
@@ -234,6 +246,8 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/schema/Uptight.png
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/schema/Vinyl.png
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/schema/Windows-Zealot.png
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Genre.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Genres.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Album.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Artist.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Avatar.class
@@ -252,7 +266,6 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/MusicIndex$SortableArtistWithArtist.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/MusicIndex$SortableArtistWithMediaFiles.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/MusicIndex.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/NATPMPRouter.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/PlayQueue$1.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/PlayQueue$2.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/PlayQueue$SortOrder.class
@@ -265,8 +278,6 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/PodcastEpisode.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/PodcastStatus.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/RandomSearchCriteria.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Router.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/SBBIRouter.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/SearchCriteria.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/SearchResult.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Share.class
@@ -281,7 +292,6 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/UserSettings.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Version.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/VideoTranscodingSettings.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/WeUPnPRouter.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/filter/BootstrapVerificationFilter.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/filter/ParameterDecodingFilter$DecodingServletRequestWrapper.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/filter/ParameterDecodingFilter.class
@@ -327,13 +337,16 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/ldap/SubsonicLdapBindAuthenticator.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/ldap/UserDetailsServiceBasedAuthoritiesPopulator.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/security/RESTRequestParameterProcessingFilter.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/UPnPService$1.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/UPnPService$2.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/UPnPService$3.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/UPnPService$4.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/AdService.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/AudioScrobblerService$1.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/AudioScrobblerService$RegistrationData.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/AudioScrobblerService$RegistrationThread.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/AudioScrobblerService.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/JukeboxService.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/MSMediaReceiverRegistrarService.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/MediaFileService.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/MediaScannerService$1.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/MediaScannerService$2.class
@@ -396,8 +409,17 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/metadata/MetaData.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/metadata/MetaDataParser.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/metadata/MetaDataParserFactory.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/scratch.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/subsonic-512.png
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp/ApacheUpnpServiceConfiguration.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp/ClingRouter$1.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp/ClingRouter$1ConnectionServiceDiscoverer.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp/ClingRouter$2.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp/ClingRouter.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp/FolderBasedContentDirectory.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp/MSMediaReceiverRegistrarService.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp/NATPMPRouter.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp/Router.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp/SubsonicContentDirectory.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/taglib/EscapeJavaScriptTag.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/taglib/FormatBytesTag.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/taglib/ParamTag.class
@@ -405,6 +427,8 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/taglib/UrlTag$Parameter.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/taglib/UrlTag.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/taglib/WikiTag.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/theme/default_dark.properties
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/theme/default_light.properties
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/theme/2010.properties
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/theme/SubsonicThemeResolver.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/theme/SubsonicThemeSource.class
@@ -478,6 +502,9 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/org/json/XMLTokener.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/version.txt
 %%WEBAPPS%%/subsonic/WEB-INF/dwr.xml
+%%WEBAPPS%%/subsonic/WEB-INF/jsp/dlnaSettings.jsp
+%%WEBAPPS%%/subsonic/WEB-INF/jsp/homePager.jsp
+%%WEBAPPS%%/subsonic/WEB-INF/jsp/playButtons.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/accessDenied.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/advancedSettings.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/allmusic.jsp
@@ -510,7 +537,6 @@
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/notFound.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/passwordSettings.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/personalSettings.jsp
-%%WEBAPPS%%/subsonic/WEB-INF/jsp/playAddDownload.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/playQueue.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/playerSettings.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/playlist.jsp
@@ -542,7 +568,15 @@
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/wap/search.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/wap/searchResult.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/wap/settings.jsp
-%%WEBAPPS%%/subsonic/WEB-INF/jsp/xspfPlaylist.jsp
+%%WEBAPPS%%/subsonic/WEB-INF/lib/cling-core-2.0-alpha2.jar
+%%WEBAPPS%%/subsonic/WEB-INF/lib/cling-support-2.0-alpha2.jar
+%%WEBAPPS%%/subsonic/WEB-INF/lib/httpclient-4.2.4.jar
+%%WEBAPPS%%/subsonic/WEB-INF/lib/httpcore-4.2.4.jar
+%%WEBAPPS%%/subsonic/WEB-INF/lib/recaptcha4j-0.0.7.jar
+%%WEBAPPS%%/subsonic/WEB-INF/lib/seamless-http-1.0-alpha2.jar
+%%WEBAPPS%%/subsonic/WEB-INF/lib/seamless-swing-1.0-alpha2.jar
+%%WEBAPPS%%/subsonic/WEB-INF/lib/seamless-util-1.0-alpha2.jar
+%%WEBAPPS%%/subsonic/WEB-INF/lib/seamless-xml-1.0-alpha2.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/acegi-security-1.0.5.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/ant-optional-1.5.1.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/ant-zip-1.6.2.jar
@@ -559,8 +593,6 @@
 %%WEBAPPS%%/subsonic/WEB-INF/lib/dwr-3.0.rc1.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/ehcache-core-2.5.0.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/hsqldb-1.8.0.7.jar
-%%WEBAPPS%%/subsonic/WEB-INF/lib/httpclient-4.0.1.jar
-%%WEBAPPS%%/subsonic/WEB-INF/lib/httpcore-4.0.1.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/jaudiotagger-2.0.2.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/jcommon-1.0.14.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/jdom-1.0.jar
@@ -571,14 +603,12 @@
 %%WEBAPPS%%/subsonic/WEB-INF/lib/natpmp-0.1.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/oro-2.0.8.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/radeox-1.0-b2.jar
-%%WEBAPPS%%/subsonic/WEB-INF/lib/sbbi-upnplib-1.0.4.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/slf4j-api-1.6.1.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/slf4j-log4j12-1.6.1.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/spring-2.5.6.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/spring-webmvc-2.5.6.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/standard-1.1.2.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/string-1.1.0.jar
-%%WEBAPPS%%/subsonic/WEB-INF/lib/weupnp-2009-10-16.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/xml-apis-1.0.b2.jar
 %%WEBAPPS%%/subsonic/WEB-INF/lib/yuicompressor-2.3.6.jar
 %%WEBAPPS%%/subsonic/WEB-INF/sub.tld
@@ -589,10 +619,102 @@
 %%WEBAPPS%%/subsonic/error.jsp
 %%WEBAPPS%%/subsonic/flash/jw-player-5.10.swf
 %%WEBAPPS%%/subsonic/flash/whotube.zip
-%%WEBAPPS%%/subsonic/icons/add.gif
-%%WEBAPPS%%/subsonic/icons/android.png
-%%WEBAPPS%%/subsonic/icons/apps.png
-%%WEBAPPS%%/subsonic/icons/back.gif
+%%WEBAPPS%%/subsonic/icons/default_light/add.gif
+%%WEBAPPS%%/subsonic/icons/default_light/add_next.gif
+%%WEBAPPS%%/subsonic/icons/default_light/android.png
+%%WEBAPPS%%/subsonic/icons/default_light/apps.png
+%%WEBAPPS%%/subsonic/icons/default_light/back.gif
+%%WEBAPPS%%/subsonic/icons/default_light/clearRating.png
+%%WEBAPPS%%/subsonic/icons/default_light/current.png
+%%WEBAPPS%%/subsonic/icons/default_light/donate.png
+%%WEBAPPS%%/subsonic/icons/default_light/donate_small.png
+%%WEBAPPS%%/subsonic/icons/default_light/down.gif
+%%WEBAPPS%%/subsonic/icons/default_light/download.gif
+%%WEBAPPS%%/subsonic/icons/default_light/error.png
+%%WEBAPPS%%/subsonic/icons/default_light/favicon.ico
+%%WEBAPPS%%/subsonic/icons/default_light/forward.gif
+%%WEBAPPS%%/subsonic/icons/default_light/gpl.png
+%%WEBAPPS%%/subsonic/icons/default_light/help.png
+%%WEBAPPS%%/subsonic/icons/default_light/help_small.png
+%%WEBAPPS%%/subsonic/icons/default_light/home.png
+%%WEBAPPS%%/subsonic/icons/default_light/html5.png
+%%WEBAPPS%%/subsonic/icons/default_light/log.png
+%%WEBAPPS%%/subsonic/icons/default_light/minisub.png
+%%WEBAPPS%%/subsonic/icons/default_light/more.png
+%%WEBAPPS%%/subsonic/icons/default_light/now_playing.png
+%%WEBAPPS%%/subsonic/icons/default_light/play.gif
+%%WEBAPPS%%/subsonic/icons/default_light/podcast.png
+%%WEBAPPS%%/subsonic/icons/default_light/podcast_large.png
+%%WEBAPPS%%/subsonic/icons/default_light/progress.png
+%%WEBAPPS%%/subsonic/icons/default_light/random.png
+%%WEBAPPS%%/subsonic/icons/default_light/ratingHalf.png
+%%WEBAPPS%%/subsonic/icons/default_light/ratingOff.png
+%%WEBAPPS%%/subsonic/icons/default_light/ratingOn.png
+%%WEBAPPS%%/subsonic/icons/default_light/remove.gif
+%%WEBAPPS%%/subsonic/icons/default_light/search.png
+%%WEBAPPS%%/subsonic/icons/default_light/settings.png
+%%WEBAPPS%%/subsonic/icons/default_light/share.png
+%%WEBAPPS%%/subsonic/icons/default_light/share_facebook.png
+%%WEBAPPS%%/subsonic/icons/default_light/share_googleplus.png
+%%WEBAPPS%%/subsonic/icons/default_light/share_small.png
+%%WEBAPPS%%/subsonic/icons/default_light/share_twitter.png
+%%WEBAPPS%%/subsonic/icons/default_light/spinner.gif
+%%WEBAPPS%%/subsonic/icons/default_light/star_off.png
+%%WEBAPPS%%/subsonic/icons/default_light/starred.png
+%%WEBAPPS%%/subsonic/icons/default_light/status.png
+%%WEBAPPS%%/subsonic/icons/default_light/subsonic_logo.png
+%%WEBAPPS%%/subsonic/icons/default_light/up.gif
+%%WEBAPPS%%/subsonic/icons/default_light/upload.png
+%%WEBAPPS%%/subsonic/icons/default_light/volume.png
+%%WEBAPPS%%/subsonic/icons/default_dark/add.gif
+%%WEBAPPS%%/subsonic/icons/default_dark/add_next.gif
+%%WEBAPPS%%/subsonic/icons/default_dark/android.png
+%%WEBAPPS%%/subsonic/icons/default_dark/apps.png
+%%WEBAPPS%%/subsonic/icons/default_dark/back.gif
+%%WEBAPPS%%/subsonic/icons/default_dark/back.png
+%%WEBAPPS%%/subsonic/icons/default_dark/clearRating.png
+%%WEBAPPS%%/subsonic/icons/default_dark/current.png
+%%WEBAPPS%%/subsonic/icons/default_dark/donate.png
+%%WEBAPPS%%/subsonic/icons/default_dark/donate_small.png
+%%WEBAPPS%%/subsonic/icons/default_dark/down.gif
+%%WEBAPPS%%/subsonic/icons/default_dark/download.gif
+%%WEBAPPS%%/subsonic/icons/default_dark/error.png
+%%WEBAPPS%%/subsonic/icons/default_dark/favicon.ico
+%%WEBAPPS%%/subsonic/icons/default_dark/forward.gif
+%%WEBAPPS%%/subsonic/icons/default_dark/forward.png
+%%WEBAPPS%%/subsonic/icons/default_dark/gpl.png
+%%WEBAPPS%%/subsonic/icons/default_dark/help.png
+%%WEBAPPS%%/subsonic/icons/default_dark/help_small.png
+%%WEBAPPS%%/subsonic/icons/default_dark/home.png
+%%WEBAPPS%%/subsonic/icons/default_dark/html5.png
+%%WEBAPPS%%/subsonic/icons/default_dark/log.png
+%%WEBAPPS%%/subsonic/icons/default_dark/minisub.png
+%%WEBAPPS%%/subsonic/icons/default_dark/more.png
+%%WEBAPPS%%/subsonic/icons/default_dark/now_playing.png
+%%WEBAPPS%%/subsonic/icons/default_dark/play.gif
+%%WEBAPPS%%/subsonic/icons/default_dark/podcast.png
+%%WEBAPPS%%/subsonic/icons/default_dark/podcast_large.png
+%%WEBAPPS%%/subsonic/icons/default_dark/progress.png
+%%WEBAPPS%%/subsonic/icons/default_dark/random.png
+%%WEBAPPS%%/subsonic/icons/default_dark/ratingHalf.png
+%%WEBAPPS%%/subsonic/icons/default_dark/ratingOff.png
+%%WEBAPPS%%/subsonic/icons/default_dark/ratingOn.png
+%%WEBAPPS%%/subsonic/icons/default_dark/remove.gif
+%%WEBAPPS%%/subsonic/icons/default_dark/search.png
+%%WEBAPPS%%/subsonic/icons/default_dark/settings.png
+%%WEBAPPS%%/subsonic/icons/default_dark/share.png
+%%WEBAPPS%%/subsonic/icons/default_dark/share_facebook.png
+%%WEBAPPS%%/subsonic/icons/default_dark/share_googleplus.png
+%%WEBAPPS%%/subsonic/icons/default_dark/share_small.png
+%%WEBAPPS%%/subsonic/icons/default_dark/share_twitter.png
+%%WEBAPPS%%/subsonic/icons/default_dark/spinner.gif
+%%WEBAPPS%%/subsonic/icons/default_dark/star_off.png
+%%WEBAPPS%%/subsonic/icons/default_dark/starred.png
+%%WEBAPPS%%/subsonic/icons/default_dark/status.png
+%%WEBAPPS%%/subsonic/icons/default_dark/subsonic_logo.png
+%%WEBAPPS%%/subsonic/icons/default_dark/up.gif
+%%WEBAPPS%%/subsonic/icons/default_dark/upload.png
+%%WEBAPPS%%/subsonic/icons/default_dark/volume.png
 %%WEBAPPS%%/subsonic/icons/buuftheme/add.png
 %%WEBAPPS%%/subsonic/icons/buuftheme/android.png
 %%WEBAPPS%%/subsonic/icons/buuftheme/back.png
@@ -634,7 +756,6 @@
 %%WEBAPPS%%/subsonic/icons/buuftheme/up.png
 %%WEBAPPS%%/subsonic/icons/buuftheme/upload.png
 %%WEBAPPS%%/subsonic/icons/buuftheme/wap.png
-%%WEBAPPS%%/subsonic/icons/clearRating.png
 %%WEBAPPS%%/subsonic/icons/coolandclean/add.png
 %%WEBAPPS%%/subsonic/icons/coolandclean/back.png
 %%WEBAPPS%%/subsonic/icons/coolandclean/background.png
@@ -673,7 +794,6 @@
 %%WEBAPPS%%/subsonic/icons/coolandclean/status.png
 %%WEBAPPS%%/subsonic/icons/coolandclean/up.png
 %%WEBAPPS%%/subsonic/icons/coolandclean/upload.png
-%%WEBAPPS%%/subsonic/icons/current.gif
 %%WEBAPPS%%/subsonic/icons/denim/add.png
 %%WEBAPPS%%/subsonic/icons/denim/back.png
 %%WEBAPPS%%/subsonic/icons/denim/clear_rating.png
@@ -707,14 +827,6 @@
 %%WEBAPPS%%/subsonic/icons/denim/status.png
 %%WEBAPPS%%/subsonic/icons/denim/up.png
 %%WEBAPPS%%/subsonic/icons/denim/upload.png
-%%WEBAPPS%%/subsonic/icons/donate.png
-%%WEBAPPS%%/subsonic/icons/donate_small.png
-%%WEBAPPS%%/subsonic/icons/down.gif
-%%WEBAPPS%%/subsonic/icons/download.gif
-%%WEBAPPS%%/subsonic/icons/error.png
-%%WEBAPPS%%/subsonic/icons/favicon.ico
-%%WEBAPPS%%/subsonic/icons/forward.gif
-%%WEBAPPS%%/subsonic/icons/gpl.png
 %%WEBAPPS%%/subsonic/icons/groove/add.png
 %%WEBAPPS%%/subsonic/icons/groove/back.png
 %%WEBAPPS%%/subsonic/icons/groove/background_main.png
@@ -751,8 +863,6 @@
 %%WEBAPPS%%/subsonic/icons/groove/up.png
 %%WEBAPPS%%/subsonic/icons/groove/upload.png
 %%WEBAPPS%%/subsonic/icons/hd/background.png
-%%WEBAPPS%%/subsonic/icons/help.png
-%%WEBAPPS%%/subsonic/icons/help_small.png
 %%WEBAPPS%%/subsonic/icons/hicon/favicon.ico
 %%WEBAPPS%%/subsonic/icons/hicon/help.png
 %%WEBAPPS%%/subsonic/icons/hicon/home.png
@@ -782,10 +892,6 @@
 %%WEBAPPS%%/subsonic/icons/hitech/settings.png
 %%WEBAPPS%%/subsonic/icons/hitech/status.png
 %%WEBAPPS%%/subsonic/icons/hitech/subsonic.png
-%%WEBAPPS%%/subsonic/icons/home.png
-%%WEBAPPS%%/subsonic/icons/log.png
-%%WEBAPPS%%/subsonic/icons/midnight/back.png
-%%WEBAPPS%%/subsonic/icons/midnight/forward.png
 %%WEBAPPS%%/subsonic/icons/midnightfun/error.png
 %%WEBAPPS%%/subsonic/icons/midnightfun/favicon.ico
 %%WEBAPPS%%/subsonic/icons/midnightfun/midnightfun_Now_Playing.png
@@ -826,11 +932,7 @@
 %%WEBAPPS%%/subsonic/icons/midnightfun/ratingHalf.png
 %%WEBAPPS%%/subsonic/icons/midnightfun/ratingOff.png
 %%WEBAPPS%%/subsonic/icons/midnightfun/ratingOn.png
-%%WEBAPPS%%/subsonic/icons/minisub.png
 %%WEBAPPS%%/subsonic/icons/monochrome/subdot.png
-%%WEBAPPS%%/subsonic/icons/more.png
-%%WEBAPPS%%/subsonic/icons/now_playing.png
-%%WEBAPPS%%/subsonic/icons/paypal.gif
 %%WEBAPPS%%/subsonic/icons/pinkpanther/add.png
 %%WEBAPPS%%/subsonic/icons/pinkpanther/back.png
 %%WEBAPPS%%/subsonic/icons/pinkpanther/clear_rating.png
@@ -864,15 +966,6 @@
 %%WEBAPPS%%/subsonic/icons/pinkpanther/status.png
 %%WEBAPPS%%/subsonic/icons/pinkpanther/up.png
 %%WEBAPPS%%/subsonic/icons/pinkpanther/upload.png
-%%WEBAPPS%%/subsonic/icons/play.gif
-%%WEBAPPS%%/subsonic/icons/podcast.png
-%%WEBAPPS%%/subsonic/icons/podcast_large.png
-%%WEBAPPS%%/subsonic/icons/progress.png
-%%WEBAPPS%%/subsonic/icons/random.png
-%%WEBAPPS%%/subsonic/icons/ratingHalf.png
-%%WEBAPPS%%/subsonic/icons/ratingOff.png
-%%WEBAPPS%%/subsonic/icons/ratingOn.png
-%%WEBAPPS%%/subsonic/icons/remove.gif
 %%WEBAPPS%%/subsonic/icons/ripserver/add.gif
 %%WEBAPPS%%/subsonic/icons/ripserver/back.gif
 %%WEBAPPS%%/subsonic/icons/ripserver/background.png
@@ -908,11 +1001,6 @@
 %%WEBAPPS%%/subsonic/icons/ripserver/up.gif
 %%WEBAPPS%%/subsonic/icons/ripserver/upload.gif
 %%WEBAPPS%%/subsonic/icons/ripserver/wap.png
-%%WEBAPPS%%/subsonic/icons/search.png
-%%WEBAPPS%%/subsonic/icons/settings.png
-%%WEBAPPS%%/subsonic/icons/share_facebook.png
-%%WEBAPPS%%/subsonic/icons/share_googleplus.png
-%%WEBAPPS%%/subsonic/icons/share_twitter.png
 %%WEBAPPS%%/subsonic/icons/simplify/add.png
 %%WEBAPPS%%/subsonic/icons/simplify/back.png
 %%WEBAPPS%%/subsonic/icons/simplify/clear_rating.png
@@ -1055,10 +1143,6 @@
 %%WEBAPPS%%/subsonic/icons/sonic_white/status.png
 %%WEBAPPS%%/subsonic/icons/sonic_white/up.png
 %%WEBAPPS%%/subsonic/icons/sonic_white/upload.png
-%%WEBAPPS%%/subsonic/icons/spinner.gif
-%%WEBAPPS%%/subsonic/icons/star_off.png
-%%WEBAPPS%%/subsonic/icons/starred.png
-%%WEBAPPS%%/subsonic/icons/status.png
 %%WEBAPPS%%/subsonic/icons/subStandard/add.png
 %%WEBAPPS%%/subsonic/icons/subStandard/android.png
 %%WEBAPPS%%/subsonic/icons/subStandard/back.png
@@ -1099,12 +1183,6 @@
 %%WEBAPPS%%/subsonic/icons/subStandard/twitter.png
 %%WEBAPPS%%/subsonic/icons/subStandard/up.png
 %%WEBAPPS%%/subsonic/icons/subStandard/upload.png
-%%WEBAPPS%%/subsonic/icons/subair.png
-%%WEBAPPS%%/subsonic/icons/subsonic_black.png
-%%WEBAPPS%%/subsonic/icons/subsonic_white.png
-%%WEBAPPS%%/subsonic/icons/up.gif
-%%WEBAPPS%%/subsonic/icons/upload.gif
-%%WEBAPPS%%/subsonic/icons/wap.png
 %%WEBAPPS%%/subsonic/index.html
 %%WEBAPPS%%/subsonic/index.jsp
 %%WEBAPPS%%/subsonic/mini/MIT-license.txt
@@ -1219,6 +1297,7 @@
 %%WEBAPPS%%/subsonic/mini/js/ui-ready.js
 %%WEBAPPS%%/subsonic/mini/style/Style.css
 %%WEBAPPS%%/subsonic/script/AC_OETags.js
+%%WEBAPPS%%/subsonic/script/jquery.contextMenu.js
 %%WEBAPPS%%/subsonic/script/builder.js
 %%WEBAPPS%%/subsonic/script/controls.js
 %%WEBAPPS%%/subsonic/script/effects.js
@@ -1261,7 +1340,6 @@
 %%WEBAPPS%%/subsonic/script/pngfix.js
 %%WEBAPPS%%/subsonic/script/prototype.js
 %%WEBAPPS%%/subsonic/script/scripts.js
-%%WEBAPPS%%/subsonic/script/smooth-scroll.js
 %%WEBAPPS%%/subsonic/script/swfobject.js
 %%WEBAPPS%%/subsonic/script/tip_balloon.js
 %%WEBAPPS%%/subsonic/script/tip_balloon/b.gif
@@ -1285,6 +1363,7 @@
 %%WEBAPPS%%/subsonic/script/webfx/slider.js
 %%WEBAPPS%%/subsonic/script/webfx/timer.js
 %%WEBAPPS%%/subsonic/script/wz_tooltip.js
+%%WEBAPPS%%/subsonic/style/jquery.contextMenu.css
 %%WEBAPPS%%/subsonic/style/barents.css
 %%WEBAPPS%%/subsonic/style/black.css
 %%WEBAPPS%%/subsonic/style/buuftheme.css
@@ -1330,50 +1409,15 @@
 %%WEBAPPS%%/subsonic/style/sonic_white.css
 %%WEBAPPS%%/subsonic/style/subStandard.css
 %%WEBAPPS%%/subsonic/style/upperrightfade.png
-%%WEBAPPS%%/subsonic/xsd/albumList2_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/albumList_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/album_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/artist_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/artists_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/bookmarks_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/chatMessages_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/directory_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/directory_example_2.xml
-%%WEBAPPS%%/subsonic/xsd/error_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/genres_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/indexes_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/internetRadioStations_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/jukeboxPlaylist_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/jukeboxStatus_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/license_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/lyrics_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/musicFolders_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/nowPlaying_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/ping_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/playlist_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/playlists_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/podcasts_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/randomSongs_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/searchResult2_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/searchResult3_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/searchResult_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/shares_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/song_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/songsByGenre_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/starred2_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/starred_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/subsonic-rest-api.xsd
-%%WEBAPPS%%/subsonic/xsd/user_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/users_example_1.xml
-%%WEBAPPS%%/subsonic/xsd/videos_example_1.xml
 @unexec if [ -d %%WEBAPPS%%/subsonic ]; then rm -Rf %%WEBAPPS%%/subsonic; fi
 @unexec test -d %%SUBSONIC_HOME%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %%SUBSONIC_HOME%% and its contents manually.")
-@exec mkdir -p %%SUBSONIC_HOME%%
+@exec chown %%WWWOWN%%:%%WWWGRP%% %%PREFIX%%/%%WEBAPPS%%/subsonic
+@exec install -d -o %%USER%% -g %%GROUP%% %%SUBSONIC_HOME%%
+%%TRANSCODING%%@exec install -d %%SUBSONIC_HOME%%/transcode
 %%TRANSCODING%%@exec ln -sf %%PREFIX%%/bin/ffmpeg %%SUBSONIC_HOME%%/transcode/ffmpeg
 %%TRANSCODING%%@exec ln -sf %%PREFIX%%/bin/lame %%SUBSONIC_HOME%%/transcode/lame
 %%TRANSCODING%%@unexec rm -f %%SUBSONIC_HOME%%/transcode/ffmpeg
 %%TRANSCODING%%@unexec rm -f %%SUBSONIC_HOME%%/transcode/lame
-@dirrm %%WEBAPPS%%/subsonic/xsd
 @dirrm %%WEBAPPS%%/subsonic/style/smoothness/images
 @dirrm %%WEBAPPS%%/subsonic/style/smoothness
 @dirrm %%WEBAPPS%%/subsonic/style
@@ -1394,6 +1438,8 @@
 @dirrm %%WEBAPPS%%/subsonic/mini/js
 @dirrm %%WEBAPPS%%/subsonic/mini/images
 @dirrm %%WEBAPPS%%/subsonic/mini
+@dirrm %%WEBAPPS%%/subsonic/icons/default_light
+@dirrm %%WEBAPPS%%/subsonic/icons/default_dark
 @dirrm %%WEBAPPS%%/subsonic/icons/subStandard
 @dirrm %%WEBAPPS%%/subsonic/icons/sonic_white
 @dirrm %%WEBAPPS%%/subsonic/icons/sonic_blue
@@ -1404,7 +1450,6 @@
 @dirrm %%WEBAPPS%%/subsonic/icons/pinkpanther
 @dirrm %%WEBAPPS%%/subsonic/icons/monochrome
 @dirrm %%WEBAPPS%%/subsonic/icons/midnightfun
-@dirrm %%WEBAPPS%%/subsonic/icons/midnight
 @dirrm %%WEBAPPS%%/subsonic/icons/hitech
 @dirrm %%WEBAPPS%%/subsonic/icons/hiconi
 @dirrm %%WEBAPPS%%/subsonic/icons/hicon
@@ -1428,6 +1473,7 @@
 @dirrm %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/theme
 @dirrm %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/taglib
 @dirrm %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/metadata
+@dirrm %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/upnp
 @dirrm %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/jukebox
 @dirrm %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service
 @dirrm %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/security
