@@ -5583,3 +5583,18 @@ shells/bash-devel|shells/bash|2014-03-03|Maintainer reset, main port now properl
 shells/bash-static-devel|shells/bash-static|2014-03-03|Maintainer reset, main port now properly maintained
 x11/mgapdesk||2014-03-03|Has expired: Needs an old (pre 7.2) XFree86/X.org header file to build
 security/kwallet|security/kwalletmanager|2014-03-04|Renamed to match upstream naming
+databases/mysqlard||2014-03-06|Has expired: Abandonware
+print/acrobatviewer||2014-03-06|Has expired: Abandoned, outdated (no updates since 1999)
+multimedia/castpodder||2014-03-06|Has expired: Depends on deprecated multimedia/beep-media-player
+audio/bmp-modplug|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/bmp-fc|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/bmp-rootvis|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+deskutils/bmp-docklet|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/bmp-festalon|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/bmp-faad|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/bmp-flac|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/bmp-wma|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+multimedia/py-pybmp|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/bmp-mac|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/bmp-songchange|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/bmp-htmlplaylist|multimedia/audacious|2014-03-06|Has expired: Abandonware, please consider using multimedia/audacious instead

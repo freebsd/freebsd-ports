@@ -26,7 +26,6 @@
     SUBDIR += bombono
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
-    SUBDIR += castpodder
     SUBDIR += cclive
     SUBDIR += cheese
     SUBDIR += clipgrab
@@ -291,7 +290,6 @@
     SUBDIR += py-mlt
     SUBDIR += py-openlp
     SUBDIR += py-periscope
-    SUBDIR += py-pybmp
     SUBDIR += py-qt4-multimedia
     SUBDIR += py-qt4-phonon
     SUBDIR += py-subliminal

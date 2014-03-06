@@ -54,16 +54,7 @@
     SUBDIR += beets
     SUBDIR += blop
     SUBDIR += bmp-crossfade
-    SUBDIR += bmp-faad
-    SUBDIR += bmp-fc
-    SUBDIR += bmp-festalon
-    SUBDIR += bmp-flac
-    SUBDIR += bmp-htmlplaylist
-    SUBDIR += bmp-mac
-    SUBDIR += bmp-modplug
     SUBDIR += bmp-scrobbler
-    SUBDIR += bmp-songchange
-    SUBDIR += bmp-wma
     SUBDIR += bonk
     SUBDIR += boodler
     SUBDIR += bristol

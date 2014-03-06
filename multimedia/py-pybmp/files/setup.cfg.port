@@ -1,6 +1,0 @@
-#
-# $FreeBSD$
-#
-[build_ext]
-include-dirs=%%LOCALBASE%%/include
-library-dirs=%%LOCALBASE%%/lib
