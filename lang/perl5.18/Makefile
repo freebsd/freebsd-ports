@@ -54,7 +54,10 @@ THREADS_CONFIGURE_OFF=	-Dusethreads=n
 PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 
+# For the latest Perl port, this should be:
 PORTSCOUT=	limitw:1,even
+# For the older Perl ports, this should be:
+#PORTSCOUT=	limit:^${PERL_VER}.
 
 PERL_VERSION=	5.18.2
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
