@@ -12,5 +12,4 @@ COMMENT=	Simple and efficient text editor
 
 PLIST_FILES=	bin/puff etc/puff.conf.sample
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
