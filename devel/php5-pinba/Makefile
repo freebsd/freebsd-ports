@@ -22,5 +22,4 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	pinba
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
