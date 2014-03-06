@@ -16,6 +16,7 @@ COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 LICENSE=	GPLv2
 
 DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+FORBIDDEN=	Vulnerable: CVE-2007-0653 CVE-2007-0654
 
 CONFLICTS?=	ru-xmms-[0-9]* zh-xmms-[0-9]*
 GNU_CONFIGURE=	yes
