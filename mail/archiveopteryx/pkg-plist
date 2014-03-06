@@ -1,7 +1,7 @@
 bin/aox
+bin/aoxdeliver
 bin/aoxexport
 bin/aoximport
-bin/deliver
 libdata/aox/downgrades
 libdata/aox/field-names
 libdata/aox/flag-names
@@ -9,6 +9,15 @@ libdata/aox/fts.pg
 libdata/aox/schema.pg
 libexec/aox/contrib/rrdglue
 libexec/aox/installer
+man/man5/aoxsuper.conf.5.gz
+man/man5/archiveopteryx.conf.5.gz
+man/man8/aox.8.gz
+man/man8/aoxdeliver.8.gz
+man/man8/aoximport.8.gz
+man/man8/archiveopteryx.8.gz
+man/man8/installer.8.gz
+man/man8/logd.8.gz
+man/man8/recorder.8.gz
 sbin/archiveopteryx
 sbin/logd
 sbin/recorder
@@ -16,12 +25,3 @@ sbin/recorder
 @dirrm libexec/aox
 @dirrm libdata/aox
 @dirrm %%ETCDIR%%
-@dirrmtry /var/db/aox/jail/messages
-@dirrmtry /var/db/aox/jail/var/run
-@dirrmtry /var/db/aox/jail/var
-@dirrmtry /var/db/aox/jail
-@dirrmtry /var/db/aox/messages
-@dirrmtry /var/db/aox
-@dirrmtry /var/run/aox
-@exec install -d -o root -g wheel -m 700 /var/db/aox/jail
-@exec install -d -o %%USERS%% -g %%GROUPS%% /var/db/aox/messages
