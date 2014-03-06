@@ -12,10 +12,9 @@ COMMENT=	Repository of useful code written in Guile Scheme
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 INFO=	guile-library
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
