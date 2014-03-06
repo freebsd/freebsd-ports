@@ -15,12 +15,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png \
 		${LOCALBASE}/lib/libjpeg.a:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xpm x11
-PLIST_FILES=	bin/iiview
-MAKE_JOBS_UNSAFE=	yes
-
-MAN1=		iiview.1
-MANCOMPRESSED=	yes
 USE_BZIP2=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/iiview man/man1/iiview.1.gz
+
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
