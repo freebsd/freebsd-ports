@@ -13,14 +13,6 @@ COMMENT=	Simple tool for doing everyday things with PDF documents
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgcj.so:${PORTSDIR}/lang/${_GCC_PORT} \
-		libstdc++.so:${PORTSDIR}/lang/${_GCC_PORT} \
-		libgcc_s.so:${PORTSDIR}/lang/${_GCC_PORT}
-
-BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/${_GCC_PORT} \
-		gcjh${CSUFF}:${PORTSDIR}/lang/${_GCC_PORT} \
-		cpp${CSUFF}:${PORTSDIR}/lang/${_GCC_PORT}
-
 USE_ZIP=	yes
 
 # Get GCC version suffix without the dot in USE_GCC
@@ -42,11 +34,20 @@ MAKE_ENV=	GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF} GCPP=cpp${CSUFF} \
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
+pre-configure:
+	@if [ ! -e ${LOCALBASE}/bin/gcj${CSUFF} ]; then \
+		${ECHO_MSG} ""; \
+		${ECHO_MSG} "Can not find gcj${CSUFF}"; \
+		${ECHO_MSG} "Please rebuild ${_GCC_PORT} with java support"; \
+		${ECHO_MSG} ""; \
+		exit 1; \
+	fi
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|TOOLPATH=|TOOLPATH=${LOCALBASE}/bin/|g" ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e "s|VERSUFF=|VERSUFF=${CSUFF}|g" ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e "s|GCJFLAGS=|GCJFLAGS= -L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib/gcc${CSUFF} -w|g" ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e "s|LDLIBS= -lgcj|LDLIBS= -lgcj ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} ${ICONV_LIB} -lz -L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib/gcc${CSUFF} -w|g" \
+	@${REINPLACE_CMD} -e "s|GCJFLAGS=|GCJFLAGS= -L${LOCALBASE}/lib ${LDFLAGS} -w|g" ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e "s|LDLIBS= -lgcj|LDLIBS= -lgcj ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} ${ICONV_LIB} -lz -L${LOCALBASE}/lib ${LDFLAGS} -w|g" \
 			${WRKSRC}/${MAKEFILE}
 
 do-install:
