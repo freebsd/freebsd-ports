@@ -23,7 +23,6 @@ SHEBANG_FILES=	generator.py sanitytest.py setup.py
 USE_PYTHON_BUILD=	yes
 USE_PYTHON_RUN=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_NOEGGINFO=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 post-patch-script:
