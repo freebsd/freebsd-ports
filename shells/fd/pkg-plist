@@ -10,6 +10,10 @@ etc/fd2rc.dist
 @unexec if cmp -s %D/etc/fd2rc %D/etc/fd2rc.sample; then rm -f %D/etc/fd2rc; fi
 etc/fd2rc.sample
 @exec [ ! -f %B/fd2rc ] && cp %B/%f %B/fd2rc
+man/ja/man1/fd.1.gz
+man/ja/man1/fdsh.1.gz
+man/man1/fd.1.gz
+man/man1/fdsh.1.gz
 %%PORTDOCS%%share/doc/ja/fd/FAQ
 %%PORTDOCS%%share/doc/ja/fd/HISTORY
 %%PORTDOCS%%share/doc/ja/fd/LICENSES
