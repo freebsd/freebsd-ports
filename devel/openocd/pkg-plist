@@ -468,6 +468,7 @@ share/openocd/scripts/target/tmpa910.cfg
 share/openocd/scripts/target/u8500.cfg
 share/openocd/scripts/test/selftest.cfg
 share/openocd/scripts/test/syntax1.cfg
+man/man1/openocd.1.gz
 @dirrm share/openocd/scripts/test
 @dirrm share/openocd/scripts/target
 @dirrm share/openocd/scripts/interface/ftdi
