@@ -23,7 +23,8 @@ USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
-NO_STAGE=	yes
+PORTDOCS=	*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
 		${WRKSRC}/doc/Makefile.in
