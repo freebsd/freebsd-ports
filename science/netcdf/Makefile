@@ -3,7 +3,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	3.6.3
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -19,17 +19,15 @@ PORTSCOUT=	limit:^3\.
 CONFIGURE_ARGS=	--enable-shared
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes
+USES=		libtool
 USE_LDCONFIG=	yes
 
 INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
 		netcdf-install netcdf-tutorial
-MAN1=		ncdump.1 ncgen.1
-MAN3=		netcdf.3
 
 OPTIONS_DEFINE=	FORTRAN DOCS
 FORTRAN_DESC=	Build library for Fortran
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -41,7 +39,6 @@ CONFIGURE_ARGS+=--disable-docs-install
 .if ${PORT_OPTIONS:MFORTRAN}
 CPPFLAGS+=	-DpgiFortran
 CONFLICTS+=	netcdf-3.*
-MAN3+=		netcdf_f77.3 netcdf_f90.3
 PLIST_SUB+=	FORTRAN=""
 USES+=		fortran
 .else
