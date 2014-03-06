@@ -23,7 +23,6 @@ WAF_TOOL=		buildtools/bin/waf
 CONFIGURE_SCRIPT=	${WAF_TOOL} configure
 CONFIGURE_LOG=		bin/config.log
 
-
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
@@ -34,19 +33,17 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-MAN3=			talloc.3
 
 PLIST_FILES=		include/talloc.h \
 			lib/libtalloc.so \
 			lib/libtalloc.so.2 \
-			%%PKGCONFIGDIR%%/talloc.pc
+			%%PKGCONFIGDIR%%/talloc.pc \
+			man/man3/talloc.3.gz
 
 CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
 CONFIGURE_ENV+=		NOCOLOR=yes
-MAKE_ENV+=		NOCOLOR=yes
+MAKE_ENV+=		NOCOLOR=yes ${DESTDIRNAME}=${STAGEDIR}
 
 .if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
 CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
@@ -88,14 +85,12 @@ pre-configure:
 			fi
 
 pre-build:
-.for man in ${MAN3}
 			@${MKDIR} ${BUILD_WRKSRC}/bin/default
-			@${INSTALL_MAN} ${FILESDIR}/${man} ${BUILD_WRKSRC}/bin/default
-.endfor
+			@${INSTALL_MAN} ${FILESDIR}/talloc.3 ${BUILD_WRKSRC}/bin/default
 
 do-build:
 			@(cd ${BUILD_WRKSRC}; \
-			if ! ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
+			if ! ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${ALL_TARGET}; then \
 				if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
 					${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 					(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
@@ -104,6 +99,6 @@ do-build:
 			fi)
 
 do-install:
-			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} ${INSTALL_TARGET})
+			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${INSTALL_TARGET})
 
 .include <bsd.port.post.mk>
