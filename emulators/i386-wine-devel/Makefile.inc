@@ -81,6 +81,6 @@ port-update:
 .endfor
 	${MV} ${.CURDIR}/distinfo~ ${.CURDIR}/distinfo
 	python ${FILESDIR}/mergeplist.py ${.CURDIR}/pkg-plist.* > ${PLIST}
-#	${RM} ${.CURDIR}/pkg-plist.*
+	${RM} ${.CURDIR}/pkg-plist.*
 
 .include <bsd.port.post.mk>
