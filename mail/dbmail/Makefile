@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbmail
-PORTVERSION=	3.1.11
+PORTVERSION=	3.1.12
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/3.1/ \
 		http://git.dbmail.eu/paul/dbmail/snapshot/
@@ -73,5 +73,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dbmail/libauth_sql.so.0 \
+		${STAGEDIR}${PREFIX}/lib/dbmail/libdbmail.so.0
 
 .include <bsd.port.mk>
