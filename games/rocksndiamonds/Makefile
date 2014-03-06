@@ -25,7 +25,7 @@ COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 USES=		gmake iconv
@@ -41,8 +41,9 @@ LEVELS_ARTSOFT=	Sokoban-1.0.0 Contributions-1.2.0
 
 LEVELS_BD_FANS=	Bug_Hunter Classic_Boulderdash Classic_Sokoban Classic_Supaplex \
 		Colourful_World Love_Pac Maniac_Mines Negundo_Dash Pipemania \
-		Rockfighter Step_Puzzles Super_Jetset_Willy_Bros_3 Through_the_Ages \
-		Trucky_Cargos_v0.1 Walpurgis_Collection rnd_the_h_world
+		Rockfighter Step_Puzzles Super_Jetset_Willy_Bros_3 \
+		Through_the_Ages Trucky_Cargos_v0.1 Walpurgis_Collection \
+		rnd_the_h_world
 
 PORTDOCS=	*
 
@@ -56,29 +57,34 @@ DOC_FILES2=	*.txt
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
-DESKTOP_ENTRIES="Rocks'n'Diamonds" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES="Rocks'n'Diamonds" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 OPTIONS_DEFINE=	DOCS
 
 post-extract-script:
 	@${MKDIR} ${WRKDIR}/${PORTNAME}
 	@(cd ${WRKDIR}/rnd_jue*/levels/rnd_jue && ${RM} -fr jue_sobigo)
-	@(cd ${WRKDIR}/rnd_jue*/levels && ${COPYTREE_SHARE} rnd_jue ${WRKDIR}/${PORTNAME})
+	@(cd ${WRKDIR}/rnd_jue*/levels && ${COPYTREE_SHARE} rnd_jue \
+		${WRKDIR}/${PORTNAME})
 .for l in ${LEVELS_ARTSOFT:S/$/.zip/} ${LEVELS_BD_FANS:S/$/.zip/}
 	@${UNZIP_CMD} -qo -d ${WRKDIR}/${PORTNAME} ${_DISTDIR}/${l}
 .endfor
-	@${UNZIP_CMD} -qo -d ${WRKDIR}/${PORTNAME}/Tutorials ${_DISTDIR}/Tutorial_Alpha.zip
-	@(cd ${WRKDIR}/${PORTNAME}/Tutorials && ${MV} "Tutorial Alpha" rnd_tutorial_alpha)
+	@${UNZIP_CMD} -qo -d ${WRKDIR}/${PORTNAME}/Tutorials \
+		${_DISTDIR}/Tutorial_Alpha.zip
+	@(cd ${WRKDIR}/${PORTNAME}/Tutorials && \
+		${MV} "Tutorial Alpha" rnd_tutorial_alpha)
 	@${RM} -f ${WRKDIR}/${PORTNAME}/Readme.txt
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|sdl-config|$${SDL_CONFIG}|g' ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} \
-		-e 's|machine/soundcard.h|sys/soundcard.h|' ${WRKSRC}/src/libgame/sound.c
+		-e 's|machine/soundcard.h|sys/soundcard.h|' \
+		${WRKSRC}/src/libgame/sound.c
 	@${REINPLACE_CMD} \
-		-e 's|machine/joystick.h|sys/joystick.h|' ${WRKSRC}/src/libgame/joystick.c
+		-e 's|machine/joystick.h|sys/joystick.h|' \
+		${WRKSRC}/src/libgame/joystick.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
@@ -87,7 +93,8 @@ do-install:
 .for dir in graphics levels music sounds
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR})
 .endfor
-	@cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/levels/
+	@cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DATADIR}/levels/
 
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
