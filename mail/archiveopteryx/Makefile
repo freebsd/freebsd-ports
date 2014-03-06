@@ -2,27 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	archiveopteryx
-PORTVERSION=	3.1.3
-PORTREVISION=	3
+PORTVERSION=	3.2.0
 CATEGORIES=	mail
-MASTER_SITES=	http://archiveopteryx.org/download/
+MASTER_SITES=	GH
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Advanced PostgreSQL-based IMAP/POP server
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/bsd.txt
+LICENSE=	MIT
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
 USES=	perl5
-USE_BZIP2=	yes
 USE_PERL5=	build
 USE_PGSQL=	yes
+WANT_PGSQL_VER=	91+
 
-MAN5=	aoxsuper.conf.5 archiveopteryx.conf.5
-MAN8=	aox.8 aoximport.8 archiveopteryx.8 deliver.8 installer.8 logd.8 \
-	recorder.8 tlsproxy.8
+USE_GITHUB=	yes
+GH_ACCOUNT=	aox
+GH_PROJECT=	aox
+GH_TAGNAME=	v3.2.0
+GH_COMMIT=	2a5d127e
+
+WRKSRC=	${WRKDIR}/aox-aox-a55036e
 
 PORTDOCS=	COPYING README bsd.txt
 
@@ -32,25 +34,30 @@ USE_RC_SUBR=	${PORTNAME}
 
 USERS=		aox
 GROUPS=		aox
+PLIST_SUB+=	USERS="${USERS}"
+PLIST_SUB+=	GROUPS="${GROUPS}"
 
 JAM?=		${LOCALBASE}/bin/jam
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+
+# force Clang when on FreeBSD 10+
+.if ${OSVERSION} >= 1000000
+JAMARG=	"-sCLANG=1"
+.endif
 
 post-patch:
 	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's,%%PREFIX%%,${PREFIX},g'
+	${REINPLACE_CMD} "s|INSTALLROOT ?= \"\" ;|INSTALLROOT = \"${STAGEDIR}\" ;|" ${WRKSRC}/Jamsettings
 
 do-build:
-	@cd ${WRKSRC} && ${JAM}
+	@cd ${WRKSRC} && ${JAM} ${JAMARG}
 
 do-install:
-	@cd ${WRKSRC} && ${JAM} install
+	@cd ${WRKSRC} && ${JAM} ${JAMARG} install
 
 post-install:
-	${INSTALL} -d -o root -g wheel -m 700 /var/db/aox/jail
-	${INSTALL} -d -o ${USERS} -g ${GROUPS} /var/db/aox/messages
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,8 +1,8 @@
 ********************************************************************************
 
 Please install PostgreSQL client/server (databases/postgresqlXX-client
-and databases/postgresqlXX-server) separately. The latest 8.x version
-is recommended but any version newer than 8.1.0 should work.
+and databases/postgresqlXX-server) separately. The latest 9.x version
+is recommended but any version newer than 9.1.0 should work.
 
 To set up the database and generate a configuration file, run
 %%PREFIX%%/libexec/aox/installer as root. The new configuration file will be in
