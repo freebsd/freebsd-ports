@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.14.2
+PORTVERSION=	0.14.7
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION:R}
@@ -13,9 +13,9 @@ COMMENT=	C++ classes and Gtk3 widgets related to chemistry
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
-LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		openbabel:${PORTSDIR}/science/openbabel \
-		goffice-0.10:${PORTSDIR}/devel/goffice010
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
+		libopenbabel.so:${PORTSDIR}/science/openbabel \
+		libgoffice-0.10.so:${PORTSDIR}/devel/goffice010
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 
@@ -24,7 +24,8 @@ PORTSCOUT=	limitw:1,even
 USE_XZ=		yes
 USE_XORG=	x11
 USE_GNOME=	gnomedocutils gtk30 intlhack libgsf libxml2
-USES=		desktop-file-utils gettext pathfix shared-mime-info gmake pkgconfig
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		shared-mime-info
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -37,15 +38,13 @@ GLIB_SCHEMAS=	org.gnome.gchemutils.crystal.gschema.xml \
 		org.gnome.gchemutils.paint.gschema.xml \
 		org.gnome.gchemutils.paint.plugins.arrows.gschema.xml
 
-MAN1=		gchem3d.1 gchemcalc.1 gchempaint.1 gchemtable.1 gcrystal.1 \
-		gspectrum.1
+VER=		${PORTVERSION:R}
+PLIST_SUB=	VER=${VER} GOFFICE=0.10 VERSION=${PORTVERSION}
 
-PLIST_SUB=	VER=0.14 GOFFICE=0.10
-
-OPTIONS_DEFINE=	XUL
+OPTIONS_DEFINE=	GNUMERIC XUL
+GNUMERIC_DESC=	Build gnumeric plugin
 XUL_DESC=	Build browser plugin (requires libxul)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXUL}
@@ -58,7 +57,18 @@ CONFIGURE_ARGS+=--disable-mozilla-plugin
 PLIST_SUB+=	XUL="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MGNUMERIC} || exists(${LOCALBASE}/lib/libspreadsheet.so)
+LIB_DEPENDS+=	libspreadsheet.so:${PORTSDIR}/math/gnumeric
+PLIST_SUB+=	GNUMERIC=""
+.else
+PLIST_SUB+=	GNUMERIC="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/libs/gcp/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*/*/*/*/*.so
 
 .include <bsd.port.mk>
