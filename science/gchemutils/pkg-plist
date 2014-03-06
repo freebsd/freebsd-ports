@@ -44,25 +44,39 @@ lib/gchemutils/%%VER%%/plugins/paint/text.so
 lib/goffice/%%GOFFICE%%/plugins/gchemutils/gchemutils.la
 lib/goffice/%%GOFFICE%%/plugins/gchemutils/gchemutils.so
 lib/goffice/%%GOFFICE%%/plugins/gchemutils/plugin.xml
+%%GNUMERIC%%lib/gnumeric/1.12/plugins/gchemutils/plugin.la
+%%GNUMERIC%%lib/gnumeric/1.12/plugins/gchemutils/plugin.so
+%%GNUMERIC%%lib/gnumeric/1.12/plugins/gchemutils/plugin.xml
 lib/libgccv-%%VER%%.la
 lib/libgccv-%%VER%%.so
-lib/libgccv-%%VER%%.so.14
+lib/libgccv-%%VER%%.so.0
+lib/libgccv-%%VER%%.so.%%VERSION%%
 lib/libgcugtk-%%VER%%.la
 lib/libgcugtk-%%VER%%.so
-lib/libgcugtk-%%VER%%.so.14
+lib/libgcugtk-%%VER%%.so.0
+lib/libgcugtk-%%VER%%.so.%%VERSION%%
 lib/libgcp-%%VER%%.la
 lib/libgcp-%%VER%%.so
-lib/libgcp-%%VER%%.so.14
+lib/libgcp-%%VER%%.so.0
+lib/libgcp-%%VER%%.so.%%VERSION%%
 lib/libgcrystal-%%VER%%.la
 lib/libgcrystal-%%VER%%.so
-lib/libgcrystal-%%VER%%.so.14
+lib/libgcrystal-%%VER%%.so.0
+lib/libgcrystal-%%VER%%.so.%%VERSION%%
 lib/libgcu-%%VER%%.la
 lib/libgcu-%%VER%%.so
-lib/libgcu-%%VER%%.so.14
+lib/libgcu-%%VER%%.so.0
+lib/libgcu-%%VER%%.so.%%VERSION%%
 %%XUL%%lib/xulrunner/plugins/libmozgcu.la
 %%XUL%%lib/xulrunner/plugins/libmozgcu.so
 %%XUL%%libexec/chem-viewer
 libexec/babelserver
+man/man1/gchem3d.1.gz
+man/man1/gchemcalc.1.gz
+man/man1/gchempaint.1.gz
+man/man1/gchemtable.1.gz
+man/man1/gcrystal.1.gz
+man/man1/gspectrum.1.gz
 share/applications/gchem3d-%%VER%%.desktop
 share/applications/gchemcalc-%%VER%%.desktop
 share/applications/gcrystal-%%VER%%.desktop
@@ -355,7 +369,6 @@ share/mime/packages/gchemutils.xml
 @dirrm share/gnome/help/gchem3d-%%VER%%/C/figures
 @dirrm share/gnome/help/gchem3d-%%VER%%/C
 @dirrm share/gnome/help/gchem3d-%%VER%%
-@dirrmtry share/mime/chemical
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
 %%XUL%%@dirrmtry lib/xulrunner/plugins
