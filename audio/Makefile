@@ -53,7 +53,6 @@
     SUBDIR += beep
     SUBDIR += beets
     SUBDIR += blop
-    SUBDIR += bmp-scrobbler
     SUBDIR += bonk
     SUBDIR += boodler
     SUBDIR += bristol
