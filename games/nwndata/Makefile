@@ -35,7 +35,7 @@ PLIST_SUB+=	DIAMOND="@comment " ORIGINAL=""
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/nwn
-NO_PACKAGE=	Compressed package is in excess of 1 GB
+RESTRICTED=	Distribution not allowed
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
