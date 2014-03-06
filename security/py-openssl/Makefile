@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,26 +12,25 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python interface to the OpenSSL library
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.2.1:${PORTSDIR}/security/py-cryptography \
+		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:${PORTSDIR}/devel/py-six
+
+OPTIONS_DEFINE=	EXAMPLES
 
 USE_PYTHON=	yes
 USE_PYTHON_PREFIX=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_OPENSSL=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	EXAMPLES
-
-pre-configure:
-	@${ECHO_CMD} "[build_ext]" >> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "include-dirs = ${OPENSSLINC}" >> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "library-dirs = ${OPENSSLLIB}" >> ${WRKSRC}/setup.cfg
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+
+regression-test: build
+	@(cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test)
 
 .include <bsd.port.mk>
