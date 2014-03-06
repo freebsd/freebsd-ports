@@ -9,13 +9,15 @@ MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An X11 program for uu/xx/Base64/BinHex/yEnc de-/encoding
+COMMENT=	X11 program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	DOCS
+
 LIB_DEPENDS=	libuu.so:${PORTSDIR}/converters/uulib
 
-USES+=		tk
+USES+=		tk desthack
 GNU_CONFIGURE=	yes
 # Explicitly disable Tcl otherwise the configure script picks-up
 # crud from the $PATH like /usr/opt/Simili/tcl/.
@@ -30,22 +32,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib \
 		-lX11 -ltcl${TCL_VER:S/.//} \
 		-ltk${TCL_VER:S/.//} -lm
 
-MAN1=		xdeview.1
 PORTDOCS=	porting.notes
-PLIST_FILES=	bin/uuwish bin/xdeview
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/uuwish bin/xdeview man/man1/xdeview.1.gz
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/uuwish
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "===>  Installing documents to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uuwish
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${FILESDIR}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${FILESDIR}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	${INSTALL_MAN} ${WRKSRC}/man/xdeview.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/xdeview.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
