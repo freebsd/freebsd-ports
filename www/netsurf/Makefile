@@ -46,6 +46,8 @@ LIB_DEPENDS+=	libssl.so:${PORTSDIR}/security/openssl
 BUILD_DEPENDS+=	gperf:${PORTSDIR}/devel/gperf
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} '/^NSFB_LINUX_AVAILABLE/ s|yes|no| ; s| -g||' \
 		${WRKSRC}/src/libnsfb-${NSFB_VERSION}/Makefile
@@ -53,7 +55,7 @@ post-patch:
 		${WRKSRC}/src/libnsfb-${NSFB_VERSION}/src/plot/*bpp*.c
 	@${REINPLACE_CMD} 's| -O2||' \
 		${WRKSRC}/src/netsurf-${PORTVERSION}/gtk/Makefile.defaults
-	@${REINPLACE_CMD} '/OpenSSL/d ; s| -g||' \
+	@${REINPLACE_CMD} '/OpenSSL/d ; s| -g|| ; s|-DG_DISABLE_DEPRECATED||' \
 		${WRKSRC}/src/netsurf-${PORTVERSION}/gtk/Makefile.target
 	@${REINPLACE_CMD} -e '/ifeq.*clang/s/word 1/filter clang/' \
 		${WRKSRC}/src/buildsystem-1.0/makefiles/Makefile.tools
@@ -62,6 +64,10 @@ post-patch:
 
 do-configure:
 	@${CP} ${FILESDIR}/Makefile.config  ${WRKSRC}/src/netsurf-${PORTVERSION}
+.if empty(ICONV_LIB)
+	@${REINPLACE_CMD} '/NETSURF_USE_LIBICONV_PLUG/ s|NO|YES|' \
+		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config	
+.endif
 .if ${PORT_OPTIONS:MGSTREAMER}
 	@${REINPLACE_CMD} '/NETSURF_USE_VIDEO/ s|NO|YES|' \
 		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config
@@ -71,4 +77,4 @@ do-configure:
 		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
