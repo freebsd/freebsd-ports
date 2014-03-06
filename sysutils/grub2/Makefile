@@ -71,6 +71,7 @@ post-patch:
 	@${TOUCH} -t 200001010000 ${WRKSRC}/Makefile.util.def
 
 pre-configure:
+	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' ${WRKSRC}/autogen.sh
 	cd ${WRKSRC} && ./autogen.sh
 
 post-configure:
