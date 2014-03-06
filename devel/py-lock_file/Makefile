@@ -3,7 +3,7 @@
 
 PORTNAME=	lock_file
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://martin.horcicka.eu/python/lock_file/ \
 		http://pypi.python.org/packages/source/l/lock_file/
@@ -14,6 +14,6 @@ COMMENT=	Lock file manipulation
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
