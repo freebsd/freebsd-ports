@@ -3,6 +3,7 @@
 
 PORTNAME=	foolscap
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://foolscap.lothar.com/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
