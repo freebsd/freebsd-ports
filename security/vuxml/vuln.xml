@@ -51,6 +51,127 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b4023753-a4ba-11e3-bec2-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>33.0.1750.146</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>19 vulnerabilities fixed in this release, including:</p>
+	  <ul>
+	    <li>[344492] High CVE-2013-6663: Use-after-free in svg images.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[326854] High CVE-2013-6664: Use-after-free in speech
+	      recognition. Credit to Khalil Zhani.</li>
+	    <li>[337882] High CVE-2013-6665: Heap buffer overflow in software
+	      rendering. Credit to cloudfuzzer.</li>
+	    <li>[332023] Medium CVE-2013-6666: Chrome allows requests in flash
+	      header request. Credit to netfuzzerr.</li>
+	    <li>[348175] CVE-2013-6667: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[343964, 344186, 347909] CVE-2013-6668: Multiple
+	      vulnerabilities in V8 fixed in version 3.24.35.10.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6663</cvename>
+      <cvename>CVE-2013-6664</cvename>
+      <cvename>CVE-2013-6665</cvename>
+      <cvename>CVE-2013-6666</cvename>
+      <cvename>CVE-2013-6667</cvename>
+      <cvename>CVE-2013-6668</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-03-03</discovery>
+      <entry>2014-03-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f645aa90-a3e8-11e3-a422-3c970e169bc2">
+    <topic>gnutls -- multiple certificate verification issues</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>2.12.23_4</lt></range>
+      </package>
+      <package>
+	<name>gnutls-devel</name>
+	<name>gnutls3</name>
+	<range><lt>3.1.22</lt></range>
+	<range><gt>3.2.0</gt><lt>3.2.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GnuTLS project reports:</p>
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2014-2">
+	  <p>A vulnerability was discovered that affects the
+	    certificate verification functions of all gnutls
+	    versions. A specially crafted certificate could
+	    bypass certificate validation checks.  The
+	    vulnerability was discovered during an audit of
+	    GnuTLS for Red Hat.</p>
+	</blockquote>
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2014-1">
+	  <p>Suman Jana reported a vulnerability that affects
+	    the certificate verification functions of
+	    gnutls 2.11.5 and later versions. A version 1
+	    intermediate certificate will be considered as
+	    a CA certificate by default (something that
+	    deviates from the documented behavior).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0092</cvename>
+      <cvename>CVE-2014-1959</cvename>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2014-1</url>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2014-2</url>
+    </references>
+    <dates>
+      <discovery>2014-03-03</discovery>
+      <entry>2014-03-04</entry>
+      <modified>2014-03-04</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="815dbcf9-a2d6-11e3-8088-002590860428">
+    <topic>file -- denial of service</topic>
+    <affects>
+      <package>
+	<name>file</name>
+	<range><lt>5.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Fine Free file project reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1943">
+	  <p>... file before 5.17 allows context-dependent attackers to
+	  cause a denial of service (infinite recursion, CPU consumption, and
+	  crash) via a crafted indirect offset value in the magic of a file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1943</cvename>
+      <mlist>http://mx.gw.com/pipermail/file/2014/001327.html</mlist>
+    </references>
+    <dates>
+      <discovery>2014-02-16</discovery>
+      <entry>2014-03-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e5e6d42-a0fa-11e3-b09a-080027f2d077">
     <topic>Python -- buffer overflow in socket.recvfrom_into()</topic>
     <affects>
