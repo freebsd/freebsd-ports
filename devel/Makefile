@@ -3801,6 +3801,9 @@
     SUBDIR += py-serpent
     SUBDIR += py-setproctitle
     SUBDIR += py-setuptools
+    SUBDIR += py-setuptools27
+    SUBDIR += py-setuptools32
+    SUBDIR += py-setuptools33
     SUBDIR += py-setuptools-git
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
