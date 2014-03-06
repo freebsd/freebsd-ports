@@ -7,16 +7,15 @@ CATEGORIES=	shells
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of configuration scripts for the TCSH shell
+COMMENT=	Set of configuration scripts for the TCSH shell
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 
 INSTALL_TARGET=	systeminstall
-MAKE_ARGS=	BIN=${LOCALBASE}/bin SHARETCSHRC=${DATADIR}
+MAKE_ARGS=	BIN=${STAGEDIR}${PREFIX}/bin SHARETCSHRC=${STAGEDIR}${DATADIR}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/share#${PREFIX}/share#g' \
 		${WRKSRC}/tcshrc_config
