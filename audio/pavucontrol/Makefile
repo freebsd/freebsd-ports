@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pavucontrol
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 

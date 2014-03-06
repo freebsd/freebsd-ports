@@ -1,6 +1,6 @@
---- src/pulsecore/pstream.c.orig	2007-10-28 15:13:53.000000000 -0400
-+++ src/pulsecore/pstream.c	2008-01-01 16:14:18.000000000 -0500
-@@ -183,14 +183,17 @@ static void do_something(pa_pstream *p) 
+--- src/pulsecore/pstream.c.orig	2014-01-23 13:57:55.000000000 -0500
++++ src/pulsecore/pstream.c	2014-03-06 09:42:44.754769964 -0500
+@@ -182,15 +182,18 @@
      p->mainloop->defer_enable(p->defer_event, 0);
  
      if (!p->dead && pa_iochannel_is_readable(p->io)) {
@@ -13,11 +13,12 @@
          goto fail;
 +    }
  
-     if (!p->dead && pa_iochannel_is_writable(p->io)) {
--        if (do_write(p) < 0)
-+        if (do_write(p) < 0) {
+     while (!p->dead && pa_iochannel_is_writable(p->io)) {
+         int r = do_write(p);
+-        if (r < 0)
++        if (r < 0) {
              goto fail;
 +	}
+         if (r == 0)
+             break;
      }
- 
-     pa_pstream_unref(p);

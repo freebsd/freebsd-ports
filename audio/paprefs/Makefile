@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paprefs
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
