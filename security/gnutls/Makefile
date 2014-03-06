@@ -3,7 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.12.23
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security net
 MASTER_SITES=	\
 	ftp://ftp.gnutls.org/gcrypt/gnutls/v${PORTVERSION:C/.[0-9]+$//}/ \
