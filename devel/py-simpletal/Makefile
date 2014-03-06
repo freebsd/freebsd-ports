@@ -3,6 +3,7 @@
 
 PORTNAME=	simpletal
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	devel textproc www python
 MASTER_SITES=	http://www.owlfish.com/software/simpleTAL/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	SimpleTAL
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
