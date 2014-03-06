@@ -53,7 +53,6 @@
     SUBDIR += beep
     SUBDIR += beets
     SUBDIR += blop
-    SUBDIR += bmp-crossfade
     SUBDIR += bmp-scrobbler
     SUBDIR += bonk
     SUBDIR += boodler
