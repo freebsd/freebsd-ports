@@ -1,4 +1,3 @@
-%%APACHEMODDIR%%/mod_rivet.so
 lib/rivet/init.tcl
 lib/rivet/librivetlib.so
 lib/rivet/librivetparser.so
@@ -6,12 +5,15 @@ lib/rivet/packages/README
 lib/rivet/packages/calendar/calendar.tcl
 lib/rivet/packages/commserver/commserver.tcl
 lib/rivet/packages/commserver/server.tcl
+lib/rivet/packages/dio/aida.tcl
 lib/rivet/packages/dio/dio.tcl
 lib/rivet/packages/dio/dio_Mysql.tcl
 lib/rivet/packages/dio/dio_Oracle.tcl
 lib/rivet/packages/dio/dio_Postgresql.tcl
 lib/rivet/packages/dio/dio_Sqlite.tcl
+lib/rivet/packages/dio/dio_Tdbc.tcl
 lib/rivet/packages/dio/diodisplay.tcl
+lib/rivet/packages/dio/sql.tcl
 lib/rivet/packages/dtcl/dtcl.tcl
 lib/rivet/packages/entities/entities.tcl
 lib/rivet/packages/form/form.tcl
@@ -54,6 +56,8 @@ lib/rivet/rivet-tcl/rivet_command_document.tcl
 lib/rivet/rivet-tcl/tclIndex
 lib/rivet/rivet-tcl/wrap.tcl
 lib/rivet/rivet-tcl/xml.tcl
+%%APACHEMODDIR%%/mod_rivet.so
+@dirrm lib/rivet/rivet-tcl
 @dirrm lib/rivet/packages/tclrivet
 @dirrm lib/rivet/packages/simpledb
 @dirrm lib/rivet/packages/session
@@ -65,5 +69,4 @@ lib/rivet/rivet-tcl/xml.tcl
 @dirrm lib/rivet/packages/commserver
 @dirrm lib/rivet/packages/calendar
 @dirrm lib/rivet/packages
-@dirrm lib/rivet/rivet-tcl
 @dirrm lib/rivet
