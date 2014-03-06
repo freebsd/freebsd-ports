@@ -3,6 +3,7 @@
 
 PORTNAME=	rkhunter
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -56,6 +57,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
 	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
 		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc; \
+	fi
+	${INSTALL_DATA} -m 640 ${WRKSRC}/files/programs_bad.dat ${PREFIX}/var/lib/${PORTNAME}/db/programs_bad.dat.sample
+	${INSTALL_DATA} -m 640 ${WRKSRC}/files/mirrors.dat ${PREFIX}/var/lib/${PORTNAME}/db/mirrors.dat.sample
+	@if [ ! -f ${PREFIX}/var/lib/${PORTNAME}/db/mirrors.dat ]; then \
+		${INSTALL_DATA} -m 640 ${WRKSRC}/files/mirrors.dat ${PREFIX}/var/lib/${PORTNAME}/db/mirrors.dat; \
+	fi
+	@if [ ! -f ${PREFIX}/var/lib/${PORTNAME}/db/programs_bad.dat ]; then \
+		${INSTALL_DATA} -m 640 ${WRKSRC}/files/programs_bad.dat ${PREFIX}/var/lib/${PORTNAME}/db/programs_bad.dat; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
