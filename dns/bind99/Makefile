@@ -2,7 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	9.9.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -19,20 +19,23 @@ ISCVERSION=	9.9.5
 
 MAKE_JOBS_UNSAFE=	yes
 
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random \
+		--with-libxml2=${LOCALBASE} \
 		--without-python
 ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind-tools-9.*
 
-OPTIONS_DEFAULT=	IPV6 SSL XML THREADS GSSAPI
+OPTIONS_DEFAULT=	IPV6 SSL THREADS GSSAPI
 OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE \
 			FIXED_RRSET SIGCHASE IPV6 THREADS GSSAPI FILTER_AAAA
 .if !defined(BIND_TOOLS_SLAVE)
-OPTIONS_DEFINE+=	LINKS XML RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH
+OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH NEWSTATS
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
@@ -46,7 +49,7 @@ SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
 FILTER_AAAA_DESC=	Enable filtering of AAAA records
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
-XML_DESC=		Support for xml statistics output
+NEWSTATS_DESC=		Enable alternate xml statistics channel format
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
 RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
 RPZ_PATCH_DESC=		RPZ improvements
@@ -67,9 +70,7 @@ SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_USE=		openssl=yes
 SSL_CONFIGURE_OFF=	--disable-openssl-version-check --without-openssl
 
-XML_CONFIGURE_ON=	--with-libxml2=${LOCALBASE}
-XML_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
-XML_CONFIGURE_OFF=	--without-libxml2
+NEWSTATS_CONFIGURE_ENABLE=     newstats
 
 IDN_USES=		iconv
 IDN_CONFIGURE_ON=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
