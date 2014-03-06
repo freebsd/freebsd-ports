@@ -3,7 +3,7 @@
 
 PORTNAME=	phpserialize
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang www python
 MASTER_SITES=	http://www.hurring.com/scott/code/python/serialize/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +17,8 @@ WRKSRC=		${WRKDIR}/v${PORTVERSION}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	PHPSerialize
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 post-extract:
 	${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${FILESDIR}/setup.py \
 		> ${WRKSRC}/setup.py
