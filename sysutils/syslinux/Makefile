@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslinux
-PORTVERSION=	6.01
+PORTVERSION=	6.02
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/boot/syslinux
 
