@@ -64,6 +64,7 @@
     SUBDIR += gtk-aqualightblue-theme
     SUBDIR += gtk-aurora-engine
     SUBDIR += gtk-bluecurve-theme
+    SUBDIR += gtk-blueprint-engine
     SUBDIR += gtk-cleanice-engine
     SUBDIR += gtk-digital-cream-theme
     SUBDIR += gtk-digital-harmony-theme
