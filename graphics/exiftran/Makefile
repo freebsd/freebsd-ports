@@ -19,10 +19,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_ARGS+=	WRKSRC=${WRKSRC} BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man
 
-PLIST_FILES=	bin/exiftran bin/thumbnail.cgi
-MAN1=		exiftran.1
+PLIST_FILES=	bin/exiftran bin/thumbnail.cgi \
+		man/man1/exiftran.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${MKDIR} ${WRKSRC}/build/exiftran ${WRKSRC}/build/thumbnail.cgi
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
@@ -33,6 +32,6 @@ post-patch:
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/exiftran.man \
-		${MANPREFIX}/man/man1/exiftran.1
+		${STAGEDIR}${PREFIX}/man/man1/exiftran.1
 
 .include <bsd.port.mk>
