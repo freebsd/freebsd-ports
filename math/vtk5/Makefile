@@ -19,6 +19,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
+BROKEN=		Violates stage and fails to package
 WRKSRC=		${WRKDIR}/VTK${PORTVERSION}
 
 CONFLICTS=	vtk-4*
