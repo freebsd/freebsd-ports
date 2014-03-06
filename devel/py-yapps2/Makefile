@@ -3,6 +3,7 @@
 
 PORTNAME=	yapps2
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://theory.stanford.edu/~amitp/yapps/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,6 @@ PORTSCOUT=	skipv:2-2.1.1-17.1
 WRKSRC=		${WRKDIR}/Yapps-${PORTVERSION}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	Yapps
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
