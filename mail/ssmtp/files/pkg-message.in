@@ -3,10 +3,10 @@ sSMTP has been installed successfully.
 To replace sendmail with ssmtp type "make replace" or change 
 your /etc/mail/mailer.conf to:
 
-sendmail	/usr/local/sbin/ssmtp
-send-mail	/usr/local/sbin/ssmtp
-mailq		/usr/local/sbin/ssmtp
-newaliases	/usr/local/sbin/ssmtp
+sendmail	%%PREFIX%%/sbin/ssmtp
+send-mail	%%PREFIX%%/sbin/ssmtp
+mailq		%%PREFIX%%/sbin/ssmtp
+newaliases	%%PREFIX%%/sbin/ssmtp
 hoststat	/usr/bin/true
 purgestat	/usr/bin/true
 
