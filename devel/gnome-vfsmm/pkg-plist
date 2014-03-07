@@ -48,10 +48,10 @@ include/gnome-vfsmm-%%API_VERSION%%/libgnomevfsmm/wrap_init.h
 lib/gnome-vfsmm-%%API_VERSION%%/include/libgnomevfsmmconfig.h
 lib/gnome-vfsmm-%%API_VERSION%%/proc/m4/convert.m4
 lib/gnome-vfsmm-%%API_VERSION%%/proc/m4/convert_gnome_vfsmm.m4
-lib/libgnomevfsmm-%%VERSION%%.a
 lib/libgnomevfsmm-%%VERSION%%.la
 lib/libgnomevfsmm-%%VERSION%%.so
 lib/libgnomevfsmm-%%VERSION%%.so.1
+lib/libgnomevfsmm-%%VERSION%%.so.1.0.9
 libdata/pkgconfig/gnome-vfsmm-%%API_VERSION%%.pc
 @dirrm lib/gnome-vfsmm-%%API_VERSION%%/proc/m4
 @dirrm lib/gnome-vfsmm-%%API_VERSION%%/proc
