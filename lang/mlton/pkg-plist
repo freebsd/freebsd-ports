@@ -18,6 +18,8 @@ lib/mlton/include/c-chunk.h
 lib/mlton/include/c-common.h
 lib/mlton/include/c-main.h
 lib/mlton/include/cenv.h
+lib/mlton/include/common-main.h
+lib/mlton/include/export.h
 lib/mlton/include/gc.h
 lib/mlton/include/gc/align.h
 lib/mlton/include/gc/array-allocate.h
@@ -70,8 +72,8 @@ lib/mlton/include/gc/translate.h
 lib/mlton/include/gc/weak.h
 lib/mlton/include/gc/world.h
 lib/mlton/include/interpret.h
-lib/mlton/include/main.h
 lib/mlton/include/ml-types.h
+lib/mlton/include/mlton-main.h
 lib/mlton/include/platform.h
 lib/mlton/include/platform/aix.h
 lib/mlton/include/platform/alpha.h
@@ -79,11 +81,11 @@ lib/mlton/include/platform/amd64.h
 lib/mlton/include/platform/arm.h
 lib/mlton/include/platform/cygwin.h
 lib/mlton/include/platform/darwin.h
-lib/mlton/include/platform/feround.h
 lib/mlton/include/platform/float-math.h
 lib/mlton/include/platform/freebsd.h
 lib/mlton/include/platform/hppa.h
 lib/mlton/include/platform/hpux.h
+lib/mlton/include/platform/hurd.h
 lib/mlton/include/platform/ia64.h
 lib/mlton/include/platform/linux.h
 lib/mlton/include/platform/m68k.h
@@ -92,6 +94,7 @@ lib/mlton/include/platform/mips.h
 lib/mlton/include/platform/netbsd.h
 lib/mlton/include/platform/openbsd.h
 lib/mlton/include/platform/powerpc.h
+lib/mlton/include/platform/powerpc64.h
 lib/mlton/include/platform/s390.h
 lib/mlton/include/platform/setenv.h
 lib/mlton/include/platform/solaris.h
@@ -110,20 +113,7 @@ lib/mlton/mlb-path-map
 lib/mlton/mlton-compile
 lib/mlton/opcodes
 lib/mlton/platform
-lib/mlton/self/constants
-lib/mlton/self/include/c-types.h
-lib/mlton/self/libgdtoa.a
-lib/mlton/self/libmlton-gdb.a
-lib/mlton/self/libmlton.a
-lib/mlton/self/sizes
-%%MINGW32CROSS%%lib/mlton/mingw32/constants
-%%MINGW32CROSS%%lib/mlton/mingw32/include/c-types.h
-%%MINGW32CROSS%%lib/mlton/mingw32/libgdtoa.a
-%%MINGW32CROSS%%lib/mlton/mingw32/libmlton-gdb.a
-%%MINGW32CROSS%%lib/mlton/mingw32/libmlton.a
-%%MINGW32CROSS%%lib/mlton/mingw32/sizes
 lib/mlton/sml/basis/Makefile
-lib/mlton/sml/basis/README
 lib/mlton/sml/basis/arrays-and-vectors/array-slice.sig
 lib/mlton/sml/basis/arrays-and-vectors/array.sig
 lib/mlton/sml/basis/arrays-and-vectors/array.sml
@@ -150,6 +140,8 @@ lib/mlton/sml/basis/basis-none.mlb
 lib/mlton/sml/basis/basis.mlb
 lib/mlton/sml/basis/build/sources.mlb
 lib/mlton/sml/basis/c-types.mlb
+lib/mlton/sml/basis/c/pointer.sig
+lib/mlton/sml/basis/c/pointer.sml
 lib/mlton/sml/basis/config/bind/char-prim.sml
 lib/mlton/sml/basis/config/bind/int-inf-prim.sml
 lib/mlton/sml/basis/config/bind/int-inf-top.sml
@@ -167,8 +159,6 @@ lib/mlton/sml/basis/config/c/position.sml
 lib/mlton/sml/basis/config/c/sys-types.sml
 lib/mlton/sml/basis/config/c/sys-word.sml
 lib/mlton/sml/basis/config/c/word-to-bool.sml
-lib/mlton/sml/basis/config/c/x86-freebsd/c-types.sml
-%%MINGW32CROSS%%lib/mlton/sml/basis/config/c/x86-mingw/c-types.sml
 lib/mlton/sml/basis/config/choose-char.sml
 lib/mlton/sml/basis/config/choose-int.sml
 lib/mlton/sml/basis/config/choose-real.sml
@@ -330,11 +320,6 @@ lib/mlton/sml/basis/list/list-pair.sig
 lib/mlton/sml/basis/list/list-pair.sml
 lib/mlton/sml/basis/list/list.sig
 lib/mlton/sml/basis/list/list.sml
-lib/mlton/sml/basis/maps/c-types.amd64-linux.map
-lib/mlton/sml/basis/maps/c-types.test-amd64-m32-linux.map
-lib/mlton/sml/basis/maps/c-types.test-amd64-m64-linux.map
-lib/mlton/sml/basis/maps/c-types.test-weird-weird.map
-lib/mlton/sml/basis/maps/c-types.x86-linux.map
 lib/mlton/sml/basis/maps/header-word32.map
 lib/mlton/sml/basis/maps/header-word64.map
 lib/mlton/sml/basis/maps/objptr-rep32.map
@@ -434,6 +419,7 @@ lib/mlton/sml/basis/posix/io.sig
 lib/mlton/sml/basis/posix/io.sml
 lib/mlton/sml/basis/posix/posix.sig
 lib/mlton/sml/basis/posix/posix.sml
+lib/mlton/sml/basis/posix/pre-posix.sml
 lib/mlton/sml/basis/posix/proc-env.sig
 lib/mlton/sml/basis/posix/proc-env.sml
 lib/mlton/sml/basis/posix/process.sig
@@ -524,6 +510,8 @@ lib/mlton/sml/basis/top-level/infixes.sml
 lib/mlton/sml/basis/unsafe.mlb
 lib/mlton/sml/basis/util/CUtil.sig
 lib/mlton/sml/basis/util/CUtil.sml
+lib/mlton/sml/basis/util/abs-rep.fun
+lib/mlton/sml/basis/util/abs-rep.sig
 lib/mlton/sml/basis/util/cleaner.sig
 lib/mlton/sml/basis/util/cleaner.sml
 lib/mlton/sml/basis/util/dynamic-wind.sig
@@ -540,14 +528,8 @@ lib/mlton/sml/basis/util/unique-id.fun
 lib/mlton/sml/basis/util/unique-id.sig
 lib/mlton/sml/ckit-lib/BUGS
 lib/mlton/sml/ckit-lib/HISTORY
-lib/mlton/sml/ckit-lib/README
-lib/mlton/sml/ckit-lib/README.mlton
-lib/mlton/sml/ckit-lib/README.mlton.orig
 lib/mlton/sml/ckit-lib/ckit-lib.mlb
 lib/mlton/sml/ckit-lib/ckit-lib.mlb.orig
-lib/mlton/sml/ckit-lib/doc/overview
-lib/mlton/sml/ckit-lib/doc/overview.html
-lib/mlton/sml/ckit-lib/doc/todo
 lib/mlton/sml/ckit-lib/regression/README
 lib/mlton/sml/ckit-lib/regression/invalid-programs/a208.c
 lib/mlton/sml/ckit-lib/regression/invalid-programs/a37.c
@@ -1053,11 +1035,11 @@ lib/mlton/sml/cml/util/local-debug.fun
 lib/mlton/sml/cml/util/timeit.sig
 lib/mlton/sml/cml/util/timeit.sml
 lib/mlton/sml/cml/util/util.mlb
-lib/mlton/sml/mlnlffi-lib/README
-lib/mlton/sml/mlnlffi-lib/README.mlton
+lib/mlton/sml/mlnlffi-lib/Makefile
 lib/mlton/sml/mlnlffi-lib/c-debug.sig
 lib/mlton/sml/mlnlffi-lib/c.mlb
 lib/mlton/sml/mlnlffi-lib/c.sig
+lib/mlton/sml/mlnlffi-lib/gen-rtld-flags.c
 lib/mlton/sml/mlnlffi-lib/internals/c-debug.sml
 lib/mlton/sml/mlnlffi-lib/internals/c-int.mlb
 lib/mlton/sml/mlnlffi-lib/internals/c-int.sig
@@ -1083,128 +1065,15 @@ lib/mlton/sml/mlnlffi-lib/memory/platform/memory.cygwin.mlb
 lib/mlton/sml/mlnlffi-lib/memory/platform/memory.darwin.mlb
 lib/mlton/sml/mlnlffi-lib/memory/platform/memory.freebsd.mlb
 lib/mlton/sml/mlnlffi-lib/memory/platform/memory.hpux.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.hurd.mlb
 lib/mlton/sml/mlnlffi-lib/memory/platform/memory.linux.mlb
 lib/mlton/sml/mlnlffi-lib/memory/platform/memory.mingw.mlb
 lib/mlton/sml/mlnlffi-lib/memory/platform/memory.netbsd.mlb
 lib/mlton/sml/mlnlffi-lib/memory/platform/memory.openbsd.mlb
 lib/mlton/sml/mlnlffi-lib/memory/platform/memory.solaris.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/rtld-flags.freebsd.sml
 lib/mlton/sml/mlnlffi-lib/mlnlffi-lib.mlb
 lib/mlton/sml/mlnlffi-lib/zstring.sig
-lib/mlton/sml/mlrisc-lib/Doc/Makefile
-lib/mlton/sml/mlrisc-lib/Doc/README
-lib/mlton/sml/mlrisc-lib/Doc/graphics/fun-ssa-value-graph.gif
-lib/mlton/sml/mlrisc-lib/Doc/graphics/mandelbrot-cdg-survey.gif
-lib/mlton/sml/mlrisc-lib/Doc/graphics/mandelbrot-cfg-survey.gif
-lib/mlton/sml/mlrisc-lib/Doc/graphics/mandelbrot-ddg.gif
-lib/mlton/sml/mlrisc-lib/Doc/graphics/mandelbrot-dom-survey.gif
-lib/mlton/sml/mlrisc-lib/Doc/graphics/mandelbrot-loop-nesting.gif
-lib/mlton/sml/mlrisc-lib/Doc/graphics/mandelbrot-opt.gif
-lib/mlton/sml/mlrisc-lib/Doc/graphics/mandelbrot-region-survey.gif
-lib/mlton/sml/mlrisc-lib/Doc/graphics/mandelbrot-ssa.gif
-lib/mlton/sml/mlrisc-lib/Doc/graphics/smlnj.jpg
-lib/mlton/sml/mlrisc-lib/Doc/graphics/vh32.png
-lib/mlton/sml/mlrisc-lib/Doc/graphics/vh401.gif
-lib/mlton/sml/mlrisc-lib/Doc/html/Makefile
-lib/mlton/sml/mlrisc-lib/Doc/html/mltex.thm
-lib/mlton/sml/mlrisc-lib/Doc/html/mltex2html
-lib/mlton/sml/mlrisc-lib/Doc/html/mltex2html.orig
-lib/mlton/sml/mlrisc-lib/Doc/latex/C6.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/ILP.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/INTRO.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/Makefile
-lib/mlton/sml/mlrisc-lib/Doc/latex/SSA.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/VLIW.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/alpha.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/annotations.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/asm.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/availability.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/backend-opt.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/cells.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/cluster.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/compiler-graphs.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/constants.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/contributions.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/contributors.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/delayslots.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/freq.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/future-work.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/gc.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/graphics.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/graphs.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/hppa.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/instrsel.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/instructions.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/labelexp.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/labels.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/line-counts.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mc.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/md.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mips.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mlrisc-arch.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mlrisc-compiler.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mlrisc-gen.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mlrisc-graphics.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mlrisc-ir-rep.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mlrisc-ir.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mlrisc-md.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mlrisc-ra.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mlrisc.bib
-lib/mlton/sml/mlrisc-lib/Doc/latex/mlrisc.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mltex.sty
-lib/mlton/sml/mlrisc-lib/Doc/latex/mltex.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mltexdoc.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mltree-ext.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mltree-util.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/mltree.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/optimizations.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/ppc.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/problem.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/pseudo-ops.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/ra.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/regions.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/regmap.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/requirements.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/sml.sty
-lib/mlton/sml/mlrisc-lib/Doc/latex/sml.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/span-dep.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/sparc.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/streams.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/sys-integration.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/systems.tex
-lib/mlton/sml/mlrisc-lib/Doc/latex/x86.tex
-lib/mlton/sml/mlrisc-lib/Doc/pictures/Makefile
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/big-pict.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/big-pict2.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/cdg.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/cfg-rev.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/cfg.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/compiler-1.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/compiler-2.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/compiler.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/compiler2.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/dom.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/hof-1.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/hof-2.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/hyperblock-formation.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/if-conversion.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/layers.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/mlrisc-IR.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/mlrisc-ir-archive.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/optimization.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/pdom.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/phg.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/region-builder.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/sharing1.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/sharing2.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/sharing3.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/subgraph.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/tail-dupl.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/tail-duplication.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/trace.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/uncol.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/uncol1.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/uncol2.fig
-lib/mlton/sml/mlrisc-lib/Doc/pictures/fig/viewer.fig
 lib/mlton/sml/mlrisc-lib/Glue/mlrisc-glue.sig
 lib/mlton/sml/mlrisc-lib/Glue/mlrisc-glue.sml
 lib/mlton/sml/mlrisc-lib/Glue/mlrisc-ssa-optimizer.sig
@@ -1238,8 +1107,6 @@ lib/mlton/sml/mlrisc-lib/IR/mlrisc-reshape-branches.sml
 lib/mlton/sml/mlrisc-lib/IR/sources.cm
 lib/mlton/sml/mlrisc-lib/IR/static-branch-prediction.sig
 lib/mlton/sml/mlrisc-lib/IR/static-branch-prediction.sml
-lib/mlton/sml/mlrisc-lib/README.mlton
-lib/mlton/sml/mlrisc-lib/README.mlton.orig
 lib/mlton/sml/mlrisc-lib/SSA/SSA.cm
 lib/mlton/sml/mlrisc-lib/SSA/bitmap.sml
 lib/mlton/sml/mlrisc-lib/SSA/cfg2ssa.sig
@@ -1416,10 +1283,14 @@ lib/mlton/sml/mlrisc-lib/amd64/amd64.mdl
 lib/mlton/sml/mlrisc-lib/amd64/amd64.mdl.orig
 lib/mlton/sml/mlrisc-lib/amd64/amd64MC.sml
 lib/mlton/sml/mlrisc-lib/amd64/amd64MC.sml.orig
+lib/mlton/sml/mlrisc-lib/amd64/amd64MCFn.sml
+lib/mlton/sml/mlrisc-lib/amd64/amd64MCFn.sml.orig
 lib/mlton/sml/mlrisc-lib/amd64/backpatch/amd64Jumps.sml
 lib/mlton/sml/mlrisc-lib/amd64/backpatch/amd64Jumps.sml.orig
 lib/mlton/sml/mlrisc-lib/amd64/emit/amd64Asm.sml
 lib/mlton/sml/mlrisc-lib/amd64/emit/amd64Asm.sml.orig
+lib/mlton/sml/mlrisc-lib/amd64/flowgraph/amd64-darwin-pseudo-ops.sml
+lib/mlton/sml/mlrisc-lib/amd64/flowgraph/amd64-darwin-pseudo-ops.sml.orig
 lib/mlton/sml/mlrisc-lib/amd64/flowgraph/amd64GasPseudoOps.sml
 lib/mlton/sml/mlrisc-lib/amd64/flowgraph/amd64GasPseudoOps.sml.orig
 lib/mlton/sml/mlrisc-lib/amd64/instructions/amd64Cells.sml
@@ -1442,9 +1313,6 @@ lib/mlton/sml/mlrisc-lib/amd64/ra/amd64RegAlloc.sml
 lib/mlton/sml/mlrisc-lib/amd64/ra/amd64RegAlloc.sml.orig
 lib/mlton/sml/mlrisc-lib/amd64/ra/amd64SpillInstr.sml
 lib/mlton/sml/mlrisc-lib/amd64/ra/amd64SpillInstr.sml.orig
-lib/mlton/sml/mlrisc-lib/amd64/staged-allocation/amd64-svid.sml
-lib/mlton/sml/mlrisc-lib/amd64/staged-allocation/amd64-svid.sml.orig
-lib/mlton/sml/mlrisc-lib/amd64/staged-allocation/c-sizes.sml
 lib/mlton/sml/mlrisc-lib/autoload.sml
 lib/mlton/sml/mlrisc-lib/backpatch/backpatch.sml
 lib/mlton/sml/mlrisc-lib/backpatch/backpatch.sml.orig
@@ -1467,8 +1335,60 @@ lib/mlton/sml/mlrisc-lib/block-placement/jump-chain-elim-fn.sml
 lib/mlton/sml/mlrisc-lib/block-placement/jump-chain-elim-fn.sml.orig
 lib/mlton/sml/mlrisc-lib/block-placement/weighted-block-placement-fn.sml
 lib/mlton/sml/mlrisc-lib/block-placement/weighted-block-placement-fn.sml.orig
+lib/mlton/sml/mlrisc-lib/c-call/README
+lib/mlton/sml/mlrisc-lib/c-call/archs/sources.cm
+lib/mlton/sml/mlrisc-lib/c-call/archs/sparc-c-call-fn.sml
+lib/mlton/sml/mlrisc-lib/c-call/archs/sparc-c-call-fn.sml.orig
+lib/mlton/sml/mlrisc-lib/c-call/archs/sparc-c-sizes.sml
+lib/mlton/sml/mlrisc-lib/c-call/archs/sparc-c-sizes.sml.orig
+lib/mlton/sml/mlrisc-lib/c-call/archs/x86-64-c-sizes.sml
+lib/mlton/sml/mlrisc-lib/c-call/archs/x86-64-svid-fn.sml
+lib/mlton/sml/mlrisc-lib/c-call/archs/x86-64-svid-fn.sml.orig
+lib/mlton/sml/mlrisc-lib/c-call/archs/x86-c-sizes.sml
+lib/mlton/sml/mlrisc-lib/c-call/archs/x86-svid-fn.sml
+lib/mlton/sml/mlrisc-lib/c-call/archs/x86-svid-fn.sml.orig
+lib/mlton/sml/mlrisc-lib/c-call/gen/c-call-gen-fn.sml
+lib/mlton/sml/mlrisc-lib/c-call/gen/c-call-gen-fn.sml.orig
+lib/mlton/sml/mlrisc-lib/c-call/gen/c-call-gen-sig.sml
+lib/mlton/sml/mlrisc-lib/c-call/gen/c-call-sig.sml
+lib/mlton/sml/mlrisc-lib/c-call/gen/c-call-sig.sml.orig
+lib/mlton/sml/mlrisc-lib/c-call/gen/c-type.sml
+lib/mlton/sml/mlrisc-lib/c-call/gen/c-type.sml.orig
+lib/mlton/sml/mlrisc-lib/c-call/test/Makefile
+lib/mlton/sml/mlrisc-lib/c-call/test/c-sparc-test.sml
+lib/mlton/sml/mlrisc-lib/c-call/test/c-test-gen.sml
+lib/mlton/sml/mlrisc-lib/c-call/test/c-x86-64-test.sml
+lib/mlton/sml/mlrisc-lib/c-call/test/c-x86-test.sml
+lib/mlton/sml/mlrisc-lib/c-call/test/group.cm
+lib/mlton/sml/mlrisc-lib/c-call/test/sources.cm
+lib/mlton/sml/mlrisc-lib/c-call/test/spill-table.sml
+lib/mlton/sml/mlrisc-lib/c-call/test/test-varargs.sml
+lib/mlton/sml/mlrisc-lib/c-call/test/wrapper.cm
+lib/mlton/sml/mlrisc-lib/c-call/test/x86-64-elf.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/call/located-arg-fn.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/call/marshal.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/call/smlnj-prim-c-call.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/call/sources.cm
+lib/mlton/sml/mlrisc-lib/c-call/varargs/call/vararg-call-fn.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/call/vararg-call.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/call/vararg-constants.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/call/vararg.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/Makefile
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/gen-fn.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/located-arg.h
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/mlrisc-gen-sig.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/sparc-gen-fn.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/test-interp.c
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/test.c
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/util.c
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/vararg-interp-sparc.s
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/vararg-interp-x86-darwin.s
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/vararg-interp-x86-linux.s
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/x86-64-gen-fn.sml
+lib/mlton/sml/mlrisc-lib/c-call/varargs/interp/x86-gen-fn.sml
 lib/mlton/sml/mlrisc-lib/c-calls/c-calls.sig
 lib/mlton/sml/mlrisc-lib/c-calls/c-types.sml
+lib/mlton/sml/mlrisc-lib/c-calls/c-types.sml.orig
 lib/mlton/sml/mlrisc-lib/c-calls/unimplemented-c-calls.sml
 lib/mlton/sml/mlrisc-lib/c-calls/unimplemented-c-calls.sml.orig
 lib/mlton/sml/mlrisc-lib/cluster/clusterGraph.sig
@@ -1488,6 +1408,13 @@ lib/mlton/sml/mlrisc-lib/cm/AMD64-RTL.cm
 lib/mlton/sml/mlrisc-lib/cm/AMD64-SSA.cm
 lib/mlton/sml/mlrisc-lib/cm/AMD64-Sched.cm
 lib/mlton/sml/mlrisc-lib/cm/AMD64.cm
+lib/mlton/sml/mlrisc-lib/cm/CCall-Vararg.cm
+lib/mlton/sml/mlrisc-lib/cm/CCall-VarargCall.cm
+lib/mlton/sml/mlrisc-lib/cm/CCall-VarargInterp.cm
+lib/mlton/sml/mlrisc-lib/cm/CCall-sparc.cm
+lib/mlton/sml/mlrisc-lib/cm/CCall-x86-64.cm
+lib/mlton/sml/mlrisc-lib/cm/CCall-x86.cm
+lib/mlton/sml/mlrisc-lib/cm/CCall.cm
 lib/mlton/sml/mlrisc-lib/cm/Control.cm
 lib/mlton/sml/mlrisc-lib/cm/GC.cm
 lib/mlton/sml/mlrisc-lib/cm/Graphs.cm
@@ -1515,7 +1442,6 @@ lib/mlton/sml/mlrisc-lib/cm/Peephole.cm
 lib/mlton/sml/mlrisc-lib/cm/RA.cm
 lib/mlton/sml/mlrisc-lib/cm/RTL.cm
 lib/mlton/sml/mlrisc-lib/cm/Region.cm
-lib/mlton/sml/mlrisc-lib/cm/SA.cm
 lib/mlton/sml/mlrisc-lib/cm/SPARC-GC.cm
 lib/mlton/sml/mlrisc-lib/cm/SPARC-Peephole.cm
 lib/mlton/sml/mlrisc-lib/cm/SPARC-RTL.cm
@@ -1524,6 +1450,7 @@ lib/mlton/sml/mlrisc-lib/cm/SPARC-Sched.cm
 lib/mlton/sml/mlrisc-lib/cm/SPARC.cm
 lib/mlton/sml/mlrisc-lib/cm/SSA.cm
 lib/mlton/sml/mlrisc-lib/cm/Sched.cm
+lib/mlton/sml/mlrisc-lib/cm/StagedAlloc.cm
 lib/mlton/sml/mlrisc-lib/cm/VLIW.cm
 lib/mlton/sml/mlrisc-lib/cm/Visual.cm
 lib/mlton/sml/mlrisc-lib/cm/ir-archive.cm
@@ -1539,13 +1466,18 @@ lib/mlton/sml/mlrisc-lib/demo/build-110.0.6.sml
 lib/mlton/sml/mlrisc-lib/demo/build-110.25.sml
 lib/mlton/sml/mlrisc-lib/demo/build-110.29.sml
 lib/mlton/sml/mlrisc-lib/demo/demo-alpha.sml
+lib/mlton/sml/mlrisc-lib/demo/demo-amd64.sml
 lib/mlton/sml/mlrisc-lib/demo/demo-backend.sml
 lib/mlton/sml/mlrisc-lib/demo/demo-sparc.sml
 lib/mlton/sml/mlrisc-lib/demo/demo-types.sml
 lib/mlton/sml/mlrisc-lib/demo/eg-alpha.sml
+lib/mlton/sml/mlrisc-lib/demo/eg-amd64.sml
 lib/mlton/sml/mlrisc-lib/demo/eg-sparc.sml
+lib/mlton/sml/mlrisc-lib/demo/group.cm
+lib/mlton/sml/mlrisc-lib/demo/sources-amd64.cm
 lib/mlton/sml/mlrisc-lib/demo/sources.cm
 lib/mlton/sml/mlrisc-lib/demo/spill-table.sml
+lib/mlton/sml/mlrisc-lib/demo/wrapper.cm
 lib/mlton/sml/mlrisc-lib/emit/asm-flags.sml
 lib/mlton/sml/mlrisc-lib/emit/asmEmit.sig
 lib/mlton/sml/mlrisc-lib/emit/asmStream.sml
@@ -1870,6 +1802,14 @@ lib/mlton/sml/mlrisc-lib/mlb/AMD64-Peephole.mlb
 lib/mlton/sml/mlrisc-lib/mlb/AMD64-Peephole.mlb.orig
 lib/mlton/sml/mlrisc-lib/mlb/AMD64.mlb
 lib/mlton/sml/mlrisc-lib/mlb/AMD64.mlb.orig
+lib/mlton/sml/mlrisc-lib/mlb/CCall-sparc.mlb
+lib/mlton/sml/mlrisc-lib/mlb/CCall-sparc.mlb.orig
+lib/mlton/sml/mlrisc-lib/mlb/CCall-x86-64.mlb
+lib/mlton/sml/mlrisc-lib/mlb/CCall-x86-64.mlb.orig
+lib/mlton/sml/mlrisc-lib/mlb/CCall-x86.mlb
+lib/mlton/sml/mlrisc-lib/mlb/CCall-x86.mlb.orig
+lib/mlton/sml/mlrisc-lib/mlb/CCall.mlb
+lib/mlton/sml/mlrisc-lib/mlb/CCall.mlb.orig
 lib/mlton/sml/mlrisc-lib/mlb/Control.mlb
 lib/mlton/sml/mlrisc-lib/mlb/Control.mlb.orig
 lib/mlton/sml/mlrisc-lib/mlb/Graphs.mlb
@@ -1892,10 +1832,10 @@ lib/mlton/sml/mlrisc-lib/mlb/Peephole.mlb
 lib/mlton/sml/mlrisc-lib/mlb/Peephole.mlb.orig
 lib/mlton/sml/mlrisc-lib/mlb/RA.mlb
 lib/mlton/sml/mlrisc-lib/mlb/RA.mlb.orig
-lib/mlton/sml/mlrisc-lib/mlb/SA.mlb
-lib/mlton/sml/mlrisc-lib/mlb/SA.mlb.orig
 lib/mlton/sml/mlrisc-lib/mlb/SPARC.mlb
 lib/mlton/sml/mlrisc-lib/mlb/SPARC.mlb.orig
+lib/mlton/sml/mlrisc-lib/mlb/StagedAlloc.mlb
+lib/mlton/sml/mlrisc-lib/mlb/StagedAlloc.mlb.orig
 lib/mlton/sml/mlrisc-lib/mlb/Visual.mlb
 lib/mlton/sml/mlrisc-lib/mlb/Visual.mlb.orig
 lib/mlton/sml/mlrisc-lib/mlrisc-lib.mlb
@@ -1910,6 +1850,8 @@ lib/mlton/sml/mlrisc-lib/mltree/machine-int.sig
 lib/mlton/sml/mlrisc-lib/mltree/machine-int.sml
 lib/mlton/sml/mlrisc-lib/mltree/mltree-basis.sig
 lib/mlton/sml/mlrisc-lib/mltree/mltree-basis.sml
+lib/mlton/sml/mlrisc-lib/mltree/mltree-check-ty.sml
+lib/mlton/sml/mlrisc-lib/mltree/mltree-check-ty.sml.orig
 lib/mlton/sml/mlrisc-lib/mltree/mltree-eval.sig
 lib/mlton/sml/mlrisc-lib/mltree/mltree-eval.sml
 lib/mlton/sml/mlrisc-lib/mltree/mltree-extension.sig
@@ -2113,11 +2055,14 @@ lib/mlton/sml/mlrisc-lib/sparc/ra/sparcRegAlloc.sml
 lib/mlton/sml/mlrisc-lib/sparc/ra/sparcRewrite.sml
 lib/mlton/sml/mlrisc-lib/sparc/ra/sparcSpillInstr.sml
 lib/mlton/sml/mlrisc-lib/sparc/sparc.mdl
-lib/mlton/sml/mlrisc-lib/staged-allocation/c-call-sig.sml
-lib/mlton/sml/mlrisc-lib/staged-allocation/call-conv-sig.sml
-lib/mlton/sml/mlrisc-lib/staged-allocation/staged-allocation-fn.sml
-lib/mlton/sml/mlrisc-lib/staged-allocation/staged-allocation-fn.sml.orig
-lib/mlton/sml/mlrisc-lib/staged-allocation/staged-allocation-sig.sml
+lib/mlton/sml/mlrisc-lib/staged-alloc/README
+lib/mlton/sml/mlrisc-lib/staged-alloc/allocator/staged-allocation-fn.sml
+lib/mlton/sml/mlrisc-lib/staged-alloc/allocator/staged-allocation-sig.sml
+lib/mlton/sml/mlrisc-lib/staged-alloc/conventions/c-loc-kind.sml
+lib/mlton/sml/mlrisc-lib/staged-alloc/conventions/power-pc-fn.sml
+lib/mlton/sml/mlrisc-lib/staged-alloc/conventions/sparc-c-fn.sml
+lib/mlton/sml/mlrisc-lib/staged-alloc/conventions/x86-64-c-fn.sml
+lib/mlton/sml/mlrisc-lib/staged-alloc/conventions/x86-c-fn.sml
 lib/mlton/sml/mlrisc-lib/visualization/allDisplays.sml
 lib/mlton/sml/mlrisc-lib/visualization/cfgViewer.sml
 lib/mlton/sml/mlrisc-lib/visualization/cfgViewer.sml.orig
@@ -2183,10 +2128,10 @@ lib/mlton/sml/mlrisc-lib/x86/x86MC.sml.orig
 lib/mlton/sml/mlyacc-lib/base.sig
 lib/mlton/sml/mlyacc-lib/join.sml
 lib/mlton/sml/mlyacc-lib/lrtable.sml
+lib/mlton/sml/mlyacc-lib/ml-yacc-lib.cm
 lib/mlton/sml/mlyacc-lib/mlyacc-lib.mlb
 lib/mlton/sml/mlyacc-lib/parser1.sml
 lib/mlton/sml/mlyacc-lib/parser2.sml
-lib/mlton/sml/mlyacc-lib/sources.cm
 lib/mlton/sml/mlyacc-lib/stream.sml
 lib/mlton/sml/smlnj-lib/CHANGES
 lib/mlton/sml/smlnj-lib/CPP/README
@@ -2203,66 +2148,6 @@ lib/mlton/sml/smlnj-lib/Controls/controls-sig.sml
 lib/mlton/sml/smlnj-lib/Controls/controls.sml
 lib/mlton/sml/smlnj-lib/Controls/registry-sig.sml
 lib/mlton/sml/smlnj-lib/Controls/registry.sml
-lib/mlton/sml/smlnj-lib/Doc/BasisInfo/HTML.info
-lib/mlton/sml/smlnj-lib/Doc/CATALOG
-lib/mlton/sml/smlnj-lib/Doc/Config.cfg
-lib/mlton/sml/smlnj-lib/Doc/Entities.sgml
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Controls/control-registry.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Controls/control-set.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Controls/control-util.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Controls/controls-lib-part.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Controls/controls.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/HashCons/hash-cons.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/engine-sig.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/match-tree.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/parser-sig.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/regexp-fn.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/regexp-intro.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/regexp-lib-part.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/regexp-sig.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/syntax.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Unix/unix-env.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Unix/unix-lib-part.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Unix/unix-path.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/array-qsort-fn.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/array-qsort.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/array-sort.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/atom.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/binary-map-fn.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/binary-set-fn.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/bit-array.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/bit-vector.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/bsearch.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/char-map.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/dynamic-array.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/fifo.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/iterate.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/lib-base.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/list-format.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/list-map-fn.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/list-set-fn.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/list-xprod.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/listsort.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/mono-array-sort.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/mono-dynamic-array.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/ord-key.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/ord-map.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/ord-set.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/queue.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/rand.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/random.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/splay-map-fn.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/splay-set-fn.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/splaytree.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/uref.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/util-lib-part.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/intro-part.mldoc
-lib/mlton/sml/smlnj-lib/Doc/ML-Doc/smlnj-lib.mldoc
-lib/mlton/sml/smlnj-lib/Doc/config.sh
-lib/mlton/sml/smlnj-lib/Doc/index.template
-lib/mlton/sml/smlnj-lib/Doc/input
-lib/mlton/sml/smlnj-lib/Doc/page.template
-lib/mlton/sml/smlnj-lib/Doc/toc.template
 lib/mlton/sml/smlnj-lib/HTML/HTML32.dtd
 lib/mlton/sml/smlnj-lib/HTML/README
 lib/mlton/sml/smlnj-lib/HTML/check-html-fn.sml
@@ -2270,8 +2155,6 @@ lib/mlton/sml/smlnj-lib/HTML/html-attr-vals.sml
 lib/mlton/sml/smlnj-lib/HTML/html-attrs-fn.sml
 lib/mlton/sml/smlnj-lib/HTML/html-attrs-fn.sml.orig
 lib/mlton/sml/smlnj-lib/HTML/html-attrs-sig.sml
-lib/mlton/sml/smlnj-lib/HTML/html-cons-lib.mlb
-lib/mlton/sml/smlnj-lib/HTML/html-cons-lib.mlb.orig
 lib/mlton/sml/smlnj-lib/HTML/html-defaults.sml
 lib/mlton/sml/smlnj-lib/HTML/html-elements-fn.sml
 lib/mlton/sml/smlnj-lib/HTML/html-elements-fn.sml.orig
@@ -2314,6 +2197,18 @@ lib/mlton/sml/smlnj-lib/INet/inet-lib.mlb.orig
 lib/mlton/sml/smlnj-lib/INet/sock-util-sig.sml
 lib/mlton/sml/smlnj-lib/INet/sock-util.sml
 lib/mlton/sml/smlnj-lib/INet/unix-sock-util.sml
+lib/mlton/sml/smlnj-lib/JSON/README
+lib/mlton/sml/smlnj-lib/JSON/json-lib.cm
+lib/mlton/sml/smlnj-lib/JSON/json-lib.mlb
+lib/mlton/sml/smlnj-lib/JSON/json-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/JSON/json-parser.sml
+lib/mlton/sml/smlnj-lib/JSON/json-printer.sml
+lib/mlton/sml/smlnj-lib/JSON/json-stream-parser.sml
+lib/mlton/sml/smlnj-lib/JSON/json-stream-printer.sml
+lib/mlton/sml/smlnj-lib/JSON/json-tokens.sml
+lib/mlton/sml/smlnj-lib/JSON/json.lex
+lib/mlton/sml/smlnj-lib/JSON/json.lex.sml
+lib/mlton/sml/smlnj-lib/JSON/json.sml
 lib/mlton/sml/smlnj-lib/PORTING
 lib/mlton/sml/smlnj-lib/PP/README
 lib/mlton/sml/smlnj-lib/PP/devices/ansi-term-dev.sml
@@ -2342,9 +2237,6 @@ lib/mlton/sml/smlnj-lib/PP/tests/sources.cm
 lib/mlton/sml/smlnj-lib/PP/tests/test-html.sml
 lib/mlton/sml/smlnj-lib/PP/tests/test.sml
 lib/mlton/sml/smlnj-lib/PP/tests/typp.sml
-lib/mlton/sml/smlnj-lib/README
-lib/mlton/sml/smlnj-lib/README.mlton
-lib/mlton/sml/smlnj-lib/README.mlton.orig
 lib/mlton/sml/smlnj-lib/Reactive/README
 lib/mlton/sml/smlnj-lib/Reactive/instruction.sml
 lib/mlton/sml/smlnj-lib/Reactive/machine.sml
@@ -2357,6 +2249,7 @@ lib/mlton/sml/smlnj-lib/RegExp/BackEnd/bt-engine.sml
 lib/mlton/sml/smlnj-lib/RegExp/BackEnd/dfa-engine.sml
 lib/mlton/sml/smlnj-lib/RegExp/BackEnd/engine-sig.sml
 lib/mlton/sml/smlnj-lib/RegExp/BackEnd/fsm.sml
+lib/mlton/sml/smlnj-lib/RegExp/BackEnd/thompson-engine.sml
 lib/mlton/sml/smlnj-lib/RegExp/FrontEnd/awk-syntax.sml
 lib/mlton/sml/smlnj-lib/RegExp/FrontEnd/parser-sig.sml
 lib/mlton/sml/smlnj-lib/RegExp/FrontEnd/syntax-sig.sml
@@ -2365,6 +2258,10 @@ lib/mlton/sml/smlnj-lib/RegExp/Glue/match-tree.sml
 lib/mlton/sml/smlnj-lib/RegExp/Glue/regexp-fn.sml
 lib/mlton/sml/smlnj-lib/RegExp/Glue/regexp-sig.sml
 lib/mlton/sml/smlnj-lib/RegExp/README
+lib/mlton/sml/smlnj-lib/RegExp/Tests/engines.sml
+lib/mlton/sml/smlnj-lib/RegExp/Tests/run.sh
+lib/mlton/sml/smlnj-lib/RegExp/Tests/sources.cm
+lib/mlton/sml/smlnj-lib/RegExp/Tests/test-fn.sml
 lib/mlton/sml/smlnj-lib/RegExp/regexp-lib.cm
 lib/mlton/sml/smlnj-lib/RegExp/regexp-lib.mlb
 lib/mlton/sml/smlnj-lib/RegExp/regexp-lib.mlb.orig
@@ -2479,6 +2376,7 @@ lib/mlton/sml/smlnj-lib/Util/random-sig.sml
 lib/mlton/sml/smlnj-lib/Util/random.sml
 lib/mlton/sml/smlnj-lib/Util/real-format.sml
 lib/mlton/sml/smlnj-lib/Util/real-order-stats.sml
+lib/mlton/sml/smlnj-lib/Util/real-order-stats.sml.orig
 lib/mlton/sml/smlnj-lib/Util/redblack-map-fn.sml
 lib/mlton/sml/smlnj-lib/Util/redblack-map-fn.sml.orig
 lib/mlton/sml/smlnj-lib/Util/redblack-set-fn.sml
@@ -2506,16 +2404,55 @@ lib/mlton/sml/smlnj-lib/Util/utf8.sml
 lib/mlton/sml/smlnj-lib/Util/word-hash-table.sml
 lib/mlton/sml/smlnj-lib/Util/word-redblack-map.sml
 lib/mlton/sml/smlnj-lib/Util/word-redblack-set.sml
+lib/mlton/sml/smlnj-lib/XML/README
+lib/mlton/sml/smlnj-lib/XML/xml-lib.cm
+lib/mlton/sml/smlnj-lib/XML/xml-sig.sml
 lib/mlton/sml/smlnj-lib/smlnj-lib.mlb
 lib/mlton/sml/smlnj-lib/smlnj-lib.mlb.orig
-lib/mlton/target-map
-lib/mlton/world.mlton
+lib/mlton/static-library
+lib/mlton/targets/self/arch
+lib/mlton/targets/self/constants
+lib/mlton/targets/self/include/c-types.h
+lib/mlton/targets/self/libgdtoa-gdb.a
+lib/mlton/targets/self/libgdtoa-pic.a
+lib/mlton/targets/self/libgdtoa.a
+lib/mlton/targets/self/libmlton-gdb.a
+lib/mlton/targets/self/libmlton-pic.a
+lib/mlton/targets/self/libmlton.a
+lib/mlton/targets/self/os
+lib/mlton/targets/self/sizes
+lib/mlton/targets/self/sml/c-types.sml
+man/man1/mllex.1.gz
+man/man1/mlprof.1.gz
+man/man1/mlton.1.gz
+man/man1/mlyacc.1.gz
+man/man1/mlnlffigen.1.gz
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/arch
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/constants
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/include/c-types.h
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/libgdtoa-gdb.a
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/libgdtoa-pic.a
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/libmlton-gdb.a
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/libgdtoa.a
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/libmlton-pic.a
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/libmlton.a
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/os
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/sizes
+%%MINGW32CROSS%%lib/mlton/targets/mingw32/sml/c-types.sml
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/basis/README
 %%PORTDOCS%%%%DOCSDIR%%/changelog
+%%PORTDOCS%%%%DOCSDIR%%/ckit-lib/README
+%%PORTDOCS%%%%DOCSDIR%%/ckit-lib/README.mlton
+%%PORTDOCS%%%%DOCSDIR%%/ckit-lib/README.mlton.orig
+%%PORTDOCS%%%%DOCSDIR%%/ckit-lib/doc/overview
+%%PORTDOCS%%%%DOCSDIR%%/ckit-lib/doc/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/ckit-lib/doc/todo
+%%PORTDOCS%%%%DOCSDIR%%/cm2mlb/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/cm2mlb/cm2mlb-map
+%%PORTDOCS%%%%DOCSDIR%%/cm2mlb/cm2mlb.cm
 %%PORTDOCS%%%%DOCSDIR%%/cm2mlb/cm2mlb.sml
 %%PORTDOCS%%%%DOCSDIR%%/cm2mlb/gen-mlb.sml
-%%PORTDOCS%%%%DOCSDIR%%/cm2mlb/sources.cm
 %%PORTDOCS%%%%DOCSDIR%%/cmcat/cmcat.sml
 %%PORTDOCS%%%%DOCSDIR%%/cmcat/sources.cm
 %%PORTDOCS%%%%DOCSDIR%%/examples/Makefile
@@ -2561,6 +2498,7 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/Bugs20041109
 %%PORTDOCS%%%%DOCSDIR%%/guide/Bugs20051202
 %%PORTDOCS%%%%DOCSDIR%%/guide/Bugs20070826
+%%PORTDOCS%%%%DOCSDIR%%/guide/Bugs20100608
 %%PORTDOCS%%%%DOCSDIR%%/guide/CKitLibrary
 %%PORTDOCS%%%%DOCSDIR%%/guide/CMinusMinus
 %%PORTDOCS%%%%DOCSDIR%%/guide/CallGraph
@@ -2572,6 +2510,7 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/Chunkify
 %%PORTDOCS%%%%DOCSDIR%%/guide/Closure
 %%PORTDOCS%%%%DOCSDIR%%/guide/ClosureConvert
+%%PORTDOCS%%%%DOCSDIR%%/guide/CombineConversions
 %%PORTDOCS%%%%DOCSDIR%%/guide/CommonArg
 %%PORTDOCS%%%%DOCSDIR%%/guide/CommonBlock
 %%PORTDOCS%%%%DOCSDIR%%/guide/CommonSubexp
@@ -2610,6 +2549,7 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/EqualityTypeVariable
 %%PORTDOCS%%%%DOCSDIR%%/guide/EtaExpansion
 %%PORTDOCS%%%%DOCSDIR%%/guide/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/guide/FSharp
 %%PORTDOCS%%%%DOCSDIR%%/guide/Features
 %%PORTDOCS%%%%DOCSDIR%%/guide/FirstClassPolymorphism
 %%PORTDOCS%%%%DOCSDIR%%/guide/Fixpoints
@@ -2658,6 +2598,7 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/LanguageChanges
 %%PORTDOCS%%%%DOCSDIR%%/guide/Lazy
 %%PORTDOCS%%%%DOCSDIR%%/guide/Libraries
+%%PORTDOCS%%%%DOCSDIR%%/guide/LibrarySupport
 %%PORTDOCS%%%%DOCSDIR%%/guide/License
 %%PORTDOCS%%%%DOCSDIR%%/guide/LineDirective
 %%PORTDOCS%%%%DOCSDIR%%/guide/LocalFlatten
@@ -2672,15 +2613,19 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLBasisPathMap
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLBasisSyntaxAndSemantics
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLKit
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLLex
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLNLFFI
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLNLFFIGen
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLNLFFIImplementation
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLRISCLibrary
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLTONWIKIVERSION
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLYacc
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLj
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLmon
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLtonArray
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLtonBinIO
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLtonCont
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonContIsolateImplementation
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLtonExn
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLtonFinalizable
 %%PORTDOCS%%%%DOCSDIR%%/guide/MLtonGC
@@ -2720,6 +2665,7 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/MoscowML
 %%PORTDOCS%%%%DOCSDIR%%/guide/Multi
 %%PORTDOCS%%%%DOCSDIR%%/guide/Mutable
+%%PORTDOCS%%%%DOCSDIR%%/guide/NeedsReview
 %%PORTDOCS%%%%DOCSDIR%%/guide/NumericLiteral
 %%PORTDOCS%%%%DOCSDIR%%/guide/OCaml
 %%PORTDOCS%%%%DOCSDIR%%/guide/ObjectOrientedProgramming
@@ -2736,6 +2682,7 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/PhantomType
 %%PORTDOCS%%%%DOCSDIR%%/guide/PlatformSpecificNotes
 %%PORTDOCS%%%%DOCSDIR%%/guide/PolyEqual
+%%PORTDOCS%%%%DOCSDIR%%/guide/PolyHash
 %%PORTDOCS%%%%DOCSDIR%%/guide/PolyML
 %%PORTDOCS%%%%DOCSDIR%%/guide/PolymorphicEquality
 %%PORTDOCS%%%%DOCSDIR%%/guide/Polyvariance
@@ -2766,6 +2713,7 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/Release20041109
 %%PORTDOCS%%%%DOCSDIR%%/guide/Release20051202
 %%PORTDOCS%%%%DOCSDIR%%/guide/Release20070826
+%%PORTDOCS%%%%DOCSDIR%%/guide/Release20100608
 %%PORTDOCS%%%%DOCSDIR%%/guide/ReleaseChecklist
 %%PORTDOCS%%%%DOCSDIR%%/guide/RemoveUnused
 %%PORTDOCS%%%%DOCSDIR%%/guide/Restore
@@ -2773,16 +2721,21 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunTimeOptions
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnAIX
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnAMD64
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnARM
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnAlpha
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnCygwin
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnDarwin
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnFreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnHPPA
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnHPUX
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnIA64
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnLinux
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnMinGW
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnNetBSD
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnOpenBSD
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnPowerPC
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnPowerPC64
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnS390
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnSolaris
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnSparc
 %%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnX86
@@ -2816,13 +2769,12 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/StandardMLImplementations
 %%PORTDOCS%%%%DOCSDIR%%/guide/StandardMLPortability
 %%PORTDOCS%%%%DOCSDIR%%/guide/StandardMLTutorials
+%%PORTDOCS%%%%DOCSDIR%%/guide/StaticSum
 %%PORTDOCS%%%%DOCSDIR%%/guide/StephenWeeks
 %%PORTDOCS%%%%DOCSDIR%%/guide/StyleGuide
 %%PORTDOCS%%%%DOCSDIR%%/guide/Subversion
 %%PORTDOCS%%%%DOCSDIR%%/guide/SuccessorML
 %%PORTDOCS%%%%DOCSDIR%%/guide/SureshJagannathan
-%%PORTDOCS%%%%DOCSDIR%%/guide/Survey
-%%PORTDOCS%%%%DOCSDIR%%/guide/SurveyDone
 %%PORTDOCS%%%%DOCSDIR%%/guide/Swerve
 %%PORTDOCS%%%%DOCSDIR%%/guide/SyntacticConventions
 %%PORTDOCS%%%%DOCSDIR%%/guide/SystemInfo
@@ -2841,6 +2793,7 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/TalkTemplate
 %%PORTDOCS%%%%DOCSDIR%%/guide/TalkWholeProgram
 %%PORTDOCS%%%%DOCSDIR%%/guide/TipsForWritingConciseSML
+%%PORTDOCS%%%%DOCSDIR%%/guide/TitleIndex
 %%PORTDOCS%%%%DOCSDIR%%/guide/ToMachine
 %%PORTDOCS%%%%DOCSDIR%%/guide/ToRSSA
 %%PORTDOCS%%%%DOCSDIR%%/guide/ToSSA2
@@ -2862,6 +2815,7 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/Variant
 %%PORTDOCS%%%%DOCSDIR%%/guide/VesaKarvonen
 %%PORTDOCS%%%%DOCSDIR%%/guide/WantedPages
+%%PORTDOCS%%%%DOCSDIR%%/guide/WarnUnusedAnomalies
 %%PORTDOCS%%%%DOCSDIR%%/guide/WebSite
 %%PORTDOCS%%%%DOCSDIR%%/guide/WesleyTerpstra
 %%PORTDOCS%%%%DOCSDIR%%/guide/WholeProgramOptimization
@@ -2880,6 +2834,7 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/guide/fxp
 %%PORTDOCS%%%%DOCSDIR%%/guide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/mGTK
+%%PORTDOCS%%%%DOCSDIR%%/guide/mlton-guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/guide/moin-bottom.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/moin-email.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/moin-ftp.png
@@ -2897,32 +2852,247 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/license/gdtoa-LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/license/gmp-LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/mllex.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mlnlffi-lib/README
+%%PORTDOCS%%%%DOCSDIR%%/mlnlffi-lib/README.mlton
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/README
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/fun-ssa-value-graph.gif
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/mandelbrot-cdg-survey.gif
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/mandelbrot-cfg-survey.gif
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/mandelbrot-ddg.gif
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/mandelbrot-dom-survey.gif
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/mandelbrot-loop-nesting.gif
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/mandelbrot-opt.gif
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/mandelbrot-region-survey.gif
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/mandelbrot-ssa.gif
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/smlnj.jpg
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/vh32.png
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/graphics/vh401.gif
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/html/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/html/mltex.thm
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/html/mltex2html
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/html/mltex2html.orig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/C6.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/ILP.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/INTRO.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/SSA.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/VLIW.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/alpha.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/annotations.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/asm.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/availability.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/backend-opt.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/cells.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/cluster.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/compiler-graphs.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/constants.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/contributions.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/contributors.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/delayslots.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/freq.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/future-work.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/gc.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/graphics.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/graphs.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/hppa.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/instrsel.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/instructions.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/labelexp.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/labels.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/line-counts.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mc.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/md.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mips.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mlrisc-arch.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mlrisc-compiler.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mlrisc-gen.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mlrisc-graphics.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mlrisc-ir-rep.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mlrisc-ir.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mlrisc-md.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mlrisc-ra.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mlrisc.bib
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mlrisc.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mltex.sty
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mltex.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mltexdoc.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mltree-ext.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mltree-util.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/mltree.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/optimizations.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/ppc.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/problem.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/pseudo-ops.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/ra.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/regions.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/regmap.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/requirements.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/sml.sty
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/sml.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/span-dep.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/sparc.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/streams.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/sys-integration.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/systems.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/latex/x86.tex
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/big-pict.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/big-pict2.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/cdg.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/cfg-rev.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/cfg.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/compiler-1.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/compiler-2.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/compiler.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/compiler2.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/dom.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/hof-1.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/hof-2.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/hyperblock-formation.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/if-conversion.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/layers.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/mlrisc-IR.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/mlrisc-ir-archive.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/optimization.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/pdom.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/phg.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/region-builder.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/sharing1.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/sharing2.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/sharing3.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/subgraph.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/tail-dupl.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/tail-duplication.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/trace.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/uncol.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/uncol1.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/uncol2.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig/viewer.fig
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/README.mlton
+%%PORTDOCS%%%%DOCSDIR%%/mlrisc-lib/README.mlton.orig
 %%PORTDOCS%%%%DOCSDIR%%/mlton-guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/mlyacc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/BasisInfo/HTML.info
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/CATALOG
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/Config.cfg
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/Entities.sgml
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Controls/control-registry.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Controls/control-set.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Controls/control-util.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Controls/controls-lib-part.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Controls/controls.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/HashCons/hash-cons.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/RegExp/engine-sig.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/RegExp/match-tree.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/RegExp/parser-sig.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/RegExp/regexp-fn.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/RegExp/regexp-intro.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/RegExp/regexp-lib-part.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/RegExp/regexp-sig.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/RegExp/syntax.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Unix/unix-env.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Unix/unix-lib-part.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Unix/unix-path.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/array-qsort-fn.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/array-qsort.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/array-sort.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/atom.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/binary-map-fn.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/binary-set-fn.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/bit-array.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/bit-vector.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/bsearch.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/char-map.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/dynamic-array.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/fifo.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/iterate.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/lib-base.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/list-format.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/list-map-fn.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/list-set-fn.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/list-xprod.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/listsort.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/mono-array-sort.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/mono-dynamic-array.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/ord-key.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/ord-map.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/ord-set.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/queue.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/rand.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/random.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/splay-map-fn.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/splay-set-fn.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/splaytree.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/uref.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util/util-lib-part.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/intro-part.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/smlnj-lib.mldoc
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/config.sh
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/index.template
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/input
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/page.template
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/Doc/toc.template
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/README
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/README.mlton
+%%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/README.mlton.orig
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Util
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Unix
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/RegExp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/HashCons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smlnj-lib/Doc/ML-Doc/Controls
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smlnj-lib/Doc/ML-Doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smlnj-lib/Doc/BasisInfo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smlnj-lib/Doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smlnj-lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mlyacc-lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mlrisc-lib/Doc/pictures/fig
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mlrisc-lib/Doc/pictures
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mlrisc-lib/Doc/latex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mlrisc-lib/Doc/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mlrisc-lib/Doc/graphics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mlrisc-lib/Doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mlrisc-lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mlnlffi-lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/license
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/save-world
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/profiling
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/finalizable
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/ffi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmcat
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cm2mlb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ckit-lib/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ckit-lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/basis
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/mlton/targets/self/sml
+@dirrm lib/mlton/targets/self/include
+@dirrm lib/mlton/targets/self
+%%MINGW32CROSS%%@dirrm lib/mlton/targets/mingw32/sml
+%%MINGW32CROSS%%@dirrm lib/mlton/targets/mingw32/include
+%%MINGW32CROSS%%@dirrm lib/mlton/targets/mingw32
+@dirrm lib/mlton/targets
+@dirrm lib/mlton/sml/smlnj-lib/XML
 @dirrm lib/mlton/sml/smlnj-lib/Util
 @dirrm lib/mlton/sml/smlnj-lib/Unix
+@dirrm lib/mlton/sml/smlnj-lib/RegExp/Tests
 @dirrm lib/mlton/sml/smlnj-lib/RegExp/Glue
 @dirrm lib/mlton/sml/smlnj-lib/RegExp/FrontEnd
 @dirrm lib/mlton/sml/smlnj-lib/RegExp/BackEnd
 @dirrm lib/mlton/sml/smlnj-lib/RegExp
-@dirrm lib/mlton/sml/smlnj-lib/Reactive/OLD
 @dirrm lib/mlton/sml/smlnj-lib/Reactive
 @dirrm lib/mlton/sml/smlnj-lib/PP/tests
 @dirrm lib/mlton/sml/smlnj-lib/PP/src
 @dirrm lib/mlton/sml/smlnj-lib/PP/examples
 @dirrm lib/mlton/sml/smlnj-lib/PP/devices
 @dirrm lib/mlton/sml/smlnj-lib/PP
+@dirrm lib/mlton/sml/smlnj-lib/JSON
 @dirrm lib/mlton/sml/smlnj-lib/INet
 @dirrm lib/mlton/sml/smlnj-lib/HashCons
 @dirrm lib/mlton/sml/smlnj-lib/HTML
-@dirrm lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util
-@dirrm lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Unix
-@dirrm lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp
-@dirrm lib/mlton/sml/smlnj-lib/Doc/ML-Doc/HashCons
-@dirrm lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Controls
-@dirrm lib/mlton/sml/smlnj-lib/Doc/ML-Doc
-@dirrm lib/mlton/sml/smlnj-lib/Doc/BasisInfo
-@dirrm lib/mlton/sml/smlnj-lib/Doc
 @dirrm lib/mlton/sml/smlnj-lib/Controls
 @dirrm lib/mlton/sml/smlnj-lib/CPP
 @dirrm lib/mlton/sml/smlnj-lib
@@ -2938,7 +3108,9 @@ lib/mlton/world.mlton
 @dirrm lib/mlton/sml/mlrisc-lib/x86
 @dirrm lib/mlton/sml/mlrisc-lib/visualization
 @dirrm lib/mlton/sml/mlrisc-lib/util
-@dirrm lib/mlton/sml/mlrisc-lib/staged-allocation
+@dirrm lib/mlton/sml/mlrisc-lib/staged-alloc/conventions
+@dirrm lib/mlton/sml/mlrisc-lib/staged-alloc/allocator
+@dirrm lib/mlton/sml/mlrisc-lib/staged-alloc
 @dirrm lib/mlton/sml/mlrisc-lib/sparc/ra
 @dirrm lib/mlton/sml/mlrisc-lib/sparc/mltree
 @dirrm lib/mlton/sml/mlrisc-lib/sparc/instructions
@@ -2987,9 +3159,15 @@ lib/mlton/world.mlton
 @dirrm lib/mlton/sml/mlrisc-lib/cm
 @dirrm lib/mlton/sml/mlrisc-lib/cluster
 @dirrm lib/mlton/sml/mlrisc-lib/c-calls
+@dirrm lib/mlton/sml/mlrisc-lib/c-call/varargs/interp
+@dirrm lib/mlton/sml/mlrisc-lib/c-call/varargs/call
+@dirrm lib/mlton/sml/mlrisc-lib/c-call/varargs
+@dirrm lib/mlton/sml/mlrisc-lib/c-call/test
+@dirrm lib/mlton/sml/mlrisc-lib/c-call/gen
+@dirrm lib/mlton/sml/mlrisc-lib/c-call/archs
+@dirrm lib/mlton/sml/mlrisc-lib/c-call
 @dirrm lib/mlton/sml/mlrisc-lib/block-placement
 @dirrm lib/mlton/sml/mlrisc-lib/backpatch
-@dirrm lib/mlton/sml/mlrisc-lib/amd64/staged-allocation
 @dirrm lib/mlton/sml/mlrisc-lib/amd64/ra
 @dirrm lib/mlton/sml/mlrisc-lib/amd64/mltree
 @dirrm lib/mlton/sml/mlrisc-lib/amd64/instructions
@@ -3025,12 +3203,6 @@ lib/mlton/world.mlton
 @dirrm lib/mlton/sml/mlrisc-lib/SSA
 @dirrm lib/mlton/sml/mlrisc-lib/IR
 @dirrm lib/mlton/sml/mlrisc-lib/Glue
-@dirrm lib/mlton/sml/mlrisc-lib/Doc/pictures/fig
-@dirrm lib/mlton/sml/mlrisc-lib/Doc/pictures
-@dirrm lib/mlton/sml/mlrisc-lib/Doc/latex
-@dirrm lib/mlton/sml/mlrisc-lib/Doc/html
-@dirrm lib/mlton/sml/mlrisc-lib/Doc/graphics
-@dirrm lib/mlton/sml/mlrisc-lib/Doc
 @dirrm lib/mlton/sml/mlrisc-lib
 @dirrm lib/mlton/sml/mlnlffi-lib/memory/platform
 @dirrm lib/mlton/sml/mlnlffi-lib/memory
@@ -3068,7 +3240,6 @@ lib/mlton/world.mlton
 @dirrm lib/mlton/sml/ckit-lib/regression/output
 @dirrm lib/mlton/sml/ckit-lib/regression/invalid-programs
 @dirrm lib/mlton/sml/ckit-lib/regression
-@dirrm lib/mlton/sml/ckit-lib/doc
 @dirrm lib/mlton/sml/ckit-lib
 @dirrm lib/mlton/sml/basis/util
 @dirrm lib/mlton/sml/basis/top-level
@@ -3108,19 +3279,14 @@ lib/mlton/world.mlton
 @dirrm lib/mlton/sml/basis/config/objptr
 @dirrm lib/mlton/sml/basis/config/header
 @dirrm lib/mlton/sml/basis/config/default
-@dirrm lib/mlton/sml/basis/config/c/x86-freebsd
-%%MINGW32CROSS%%@dirrm lib/mlton/sml/basis/config/c/x86-mingw
 @dirrm lib/mlton/sml/basis/config/c
 @dirrm lib/mlton/sml/basis/config/bind
 @dirrm lib/mlton/sml/basis/config
+@dirrm lib/mlton/sml/basis/c
 @dirrm lib/mlton/sml/basis/build
 @dirrm lib/mlton/sml/basis/arrays-and-vectors
 @dirrm lib/mlton/sml/basis
 @dirrm lib/mlton/sml
-@dirrm lib/mlton/self/include
-@dirrm lib/mlton/self
-%%MINGW32CROSS%%@dirrm lib/mlton/mingw32/include
-%%MINGW32CROSS%%@dirrm lib/mlton/mingw32
 @dirrm lib/mlton/include/util
 @dirrm lib/mlton/include/platform
 @dirrm lib/mlton/include/gc
@@ -3129,13 +3295,12 @@ lib/mlton/world.mlton
 @dirrm lib/mlton/include/basis
 @dirrm lib/mlton/include
 @dirrm lib/mlton
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/license
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/save-world
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/profiling
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/finalizable
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/ffi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmcat
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cm2mlb
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/mlyacc-lib
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/cml
+@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/util
+@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/extensions
+@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/alpha32/ra
+@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/alpha32/mltree
+@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/alpha32/instructions
+@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/alpha32/emit
+@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/alpha32/backpatch
