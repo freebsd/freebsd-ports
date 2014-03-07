@@ -10,8 +10,8 @@ MASTER_SITES=	SF/sharp3d/SharpConstruct/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D modeller for organic shapes
 
-LIB_DEPENDS=	gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm \
-		glademm-2.4:${PORTSDIR}/devel/libglademm24
+LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm \
+		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24
 
 USES=		gmake pkgconfig
 USE_BZIP2=	yes
@@ -21,9 +21,10 @@ GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE
 
-MAN1=		sharpconstruct.1
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
+PORTDATA=	*
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/include/Align.hh
 	@${REINPLACE_CMD} -e 's|"/sharpconstruct|"|' ${WRKSRC}/src/MainWindow.cc
