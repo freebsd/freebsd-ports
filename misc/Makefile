@@ -259,7 +259,7 @@
     SUBDIR += lingoteach
     SUBDIR += linm
     SUBDIR += localedata
-    SUBDIR += logsurfer+
+    SUBDIR += logsurfer
     SUBDIR += loop
     SUBDIR += lr
     SUBDIR += lv
