@@ -7,14 +7,13 @@ CATEGORIES=	audio multimedia linux
 MASTER_SITES=	ftp://ftp6.nero.com/tools/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	NeroAACCodec-${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
 COMMENT=	Nero AAC reference quality MPEG-4 and 3GPP audio codec
 
-USE_ZIP=	yes
-NO_STAGE=	yes
+USES=		dos2unix
 USE_LINUX=	yes
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.txt
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
@@ -32,18 +31,13 @@ PORTDOCS=	NeroAAC_tut.pdf \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 .for f in ${PLIST_FILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/linux/${f:T} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/linux/${f:T} ${STAGEDIR}${PREFIX}/bin
 .endfor
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
