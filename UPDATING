@@ -5,6 +5,40 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140307:
+  AFFECTS: users of devel/py-setuptools dependent ports
+  AUTHOR: sunpoet@FreeBSD.org
+
+  devel/py-setuptools is being used for every python ports (if USE_PYDISTUTILS
+  defined) since r336553. Due to PKGORIGIN limitation, we cannot build one
+  python port with python27 and the other with python33 since they require
+  different setuptools versions which have same PKGORIGIN. With the addition
+  of py-setuptools{27,32,33}, we could now have py27-foo and py33-bar coexist
+  in one system.
+
+  Note that this is only a short-term solution. It does not help if you need
+  coexistence of one port with different python versions, e.g. py27-foo and
+  py33-foo.
+
+  Please rebuild all ports that depend on devel/py-setuptools and use
+  devel/py-setuptools{27,32,33} instead.
+  
+  XX represents python version (27, 32 or 33) in the following steps.
+
+  pkgng users:
+
+  # pkg set -o devel/py-setuptools:devel/py-setuptoolsXX
+
+  portmaster users:
+
+  # portmaster -o devel/py-setuptoolsXX devel/py-setuptools
+  # portmaster -r devel/py-setuptools
+
+  portupgrade users:
+
+  # portupgrade -o devel/py-setuptoolsXX -f devel/py-setuptools
+  # portupgrade -fr devel/py-setuptools
+
 20140304:
   AFFECTS: users of security/kwallet
   AUTHOR: kde@FreeBSD.org
