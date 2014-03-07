@@ -171,3 +171,7 @@ DEV_ERROR+=	"USE_FAM is unsupported, please use USES=fam"
 .if defined(USE_MAKESELF)
 DEV_ERROR+=	"USE_MAKESELF is unsupported, please use USES=makeself"
 .endif
+
+.if defined(USE_ZIP)
+DEV_WARNING+=	'USE_ZIP is deprecated, please use USES=zip'
+.endif
