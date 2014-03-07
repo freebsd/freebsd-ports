@@ -6,14 +6,13 @@ PORTVERSION=	0.91
 CATEGORIES=	audio devel
 MASTER_SITES=	http://www.hawksoft.com/download/files/
 DISTNAME=	HawkVoiceDI091src
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable sound and speech compression library
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake dos2unix
+USES=		gmake dos2unix zip
 MAKEFILE=	makefile.linux
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes

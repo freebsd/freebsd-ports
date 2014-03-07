@@ -6,14 +6,13 @@ PORTVERSION=	1.2.8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.rarewares.org/files/others/
 DISTNAME=	${PORTNAME}-${PORTVERSION}srcs${EXTRACT_SUFFIX}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	Program that applies ReplayGain to wave files
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-USES=		gmake dos2unix
+USES=		gmake dos2unix zip
 DOS2UNIX_FILES=	audio.c wavegain.c
 
 PLIST_FILES=	bin/wavegain

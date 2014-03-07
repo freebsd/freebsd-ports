@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates three-dimensional coherent noise
 
-USES=		gmake
+USES=		gmake zip
 USE_AUTOTOOLS=	libtool:env
 USE_LDCONFIG=	yes
 CXXFLAGS+=	-O3 -fomit-frame-pointer

@@ -15,7 +15,7 @@ COMMENT=	Squeezebox Server plugin for performing lazy searches
 
 RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
 
-USE_ZIP=	yes
+USES=		zip
 NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -12,10 +12,8 @@ COMMENT=	Tool to normalize the gain of MP3 files
 
 LICENSE=	LGPL21
 
-USES=		uidfix
+USES=		uidfix dos2unix zip
 
-USE_ZIP=	yes
-USES=		dos2unix
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/mp3gain
 

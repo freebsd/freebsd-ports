@@ -14,8 +14,8 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 NO_CDROM=	No commercial use
 NO_BUILD=	yes
+USES=		zip
 USE_LINUX=	yes
-USE_ZIP=	yes
 PLIST_FILES=	bin/off bin/ofr bin/ofs
 
 do-install:
