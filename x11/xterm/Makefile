@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	302
+PORTVERSION=	303
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/:src1 \
 		CRITICAL:src1 CRITICAL:src2
@@ -50,7 +50,7 @@ GNOME_USES=			desktop-file-utils
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 900004
-LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
+LIB_DEPENDS+=	libutempter.so:${PORTSDIR}/sysutils/libutempter
 .endif
 
 post-extract:
