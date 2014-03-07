@@ -6,14 +6,13 @@ PORTVERSION=	1.2
 CATEGORIES=	converters mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ismail.yenigul@surgate.com
 COMMENT=	Library of ANSI C routines for fast encoding/decoding data
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
-USES=		gmake
+USES=		gmake zip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 BROKEN_powerpc=	Does not compile on powerpc

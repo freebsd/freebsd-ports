@@ -11,7 +11,7 @@ DISTNAME=	comm${PORTVERSION}
 MAINTAINER=	ari.suutari@syncrontech.com
 COMMENT=	Sun's Java Communications API
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

@@ -14,10 +14,9 @@ COMMENT=	IC/MEMS layout editor
 
 LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 
-USES=		qmake
+USES=		qmake zip
 USE_QT4=	corelib gui network moc_build sql uic_build \
 		rcc_build qt3support xml
-USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/layout
 PLIST_FILES=	bin/layout
 

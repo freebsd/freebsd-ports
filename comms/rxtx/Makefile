@@ -12,8 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 MAINTAINER=	mirror176@cox.net
 COMMENT=	Native interface to serial ports in Java
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native

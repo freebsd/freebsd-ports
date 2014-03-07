@@ -6,12 +6,11 @@ PORTVERSION=	4.3
 CATEGORIES=	converters devel
 MASTER_SITES=	http://www.devoresoftware.com/nomyso/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert MASM/TASM files to NASM compatible sources
 
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	run
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
