@@ -9,15 +9,13 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 MAINTAINER=	lua@FreeBSD.org
 COMMENT=	Lua bindings to libraries using GObject-Introspection
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavouk
 GH_COMMIT=	efa920a
 GH_TAGNAME=	0.7.2
 
 USES=		gmake lua pkgconfig
+USE_GNOME=	introspection:build,run
 MAKE_ARGS+=	PREFIX=${PREFIX} LUA_LIBDIR=${LUA_MODLIBDIR} \
 		LUA_INCDIR=${LUA_INCDIR} LUA_VERSION=${LUA_VER} \
 		CORE=corelgilua${LUA_VER_STR}.so
