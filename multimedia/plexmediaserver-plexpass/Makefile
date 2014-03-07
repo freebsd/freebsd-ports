@@ -3,7 +3,7 @@
 
 PORTNAME=	plexmediaserver
 PORTVERSION=	0.9.9.5.411
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://plex.r.worldssl.net/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
 PKGNAMESUFFIX=	-plexpass
