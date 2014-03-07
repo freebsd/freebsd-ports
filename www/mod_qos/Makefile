@@ -8,8 +8,8 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	mod-qos
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	andrea@cervesato.it
-COMMENT=	Qos for Apache
+MAINTAINER=	fax@nohik.ee
+COMMENT=	QoS for Apache
 
 LICENSE=	GPLv2
 
