@@ -1,5 +1,5 @@
---- Makefile.orig	2007-08-27 07:04:14.000000000 +1000
-+++ Makefile	2008-04-28 10:23:28.000000000 +1000
+--- Makefile.orig	2010-06-11 06:35:30.000000000 -0700
++++ Makefile	2013-03-25 20:23:46.000000000 -0700
 @@ -34,7 +34,11 @@
  PATH := $(BIN):$(SRC)/bin:$(shell echo $$PATH)
  CP := /bin/cp -fpR
@@ -12,11 +12,14 @@
  
  # If we're compiling with another version of MLton, then we want to do
  # another round of compilation so that we get a MLton built without
-@@ -410,6 +414,7 @@
- install-no-docs:
- 	mkdir -p "$(TLIB)" "$(TBIN)" "$(TMAN)"
- 	$(CP) "$(LIB)/." "$(TLIB)/"
-+	-rm "$(TLIB)/mlton.x86-bsd"
- 	sed "/^lib=/s;.*;lib='$(prefix)/$(ULIB)';" 			\
- 		<"$(BIN)/mlton" >"$(TBIN)/mlton"
- 	chmod a+x "$(TBIN)/mlton"
+@@ -401,6 +405,10 @@
+ 	cd "$(TLIB)/sml"; for i in */[Dd]oc; do mv "$$i" "$(TDOC)/$$i"; done
+ 	cd "$(TLIB)/sml"; for i in */README*; do mv "$$i" "$(TDOC)/$$i"; done
+ 
++remove-docs:
++	cd "$(TLIB)/sml"; for i in */[Dd]oc; do rm -rf "$$i"; done
++	cd "$(TLIB)/sml"; for i in */README*; do rm -rf "$$i"; done
++
+ .PHONY: release
+ release: version
+ 	tar cvzf ../mlton-$(VERSION).tar.gz \
