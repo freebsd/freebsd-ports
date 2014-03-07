@@ -3,7 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
@@ -93,12 +93,6 @@ LIBWMF_PORT=	libwmf-nox11
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1000024
-.if ${PORT_OPTIONS:MFPX} && ${PORT_OPTIONS:MOPENMP}
-IGNORE=		Cause C++ ABI conflict between clang/libc++ and gcc/libstdc++
-.endif
-.endif
-
 .if !defined(WINDOWS_FONT_DIR)
 # Use fonts installed by x11-fonts/webfonts by default
 WINDOWS_FONT_DIR=${LOCALBASE}/lib/X11/fonts/webfonts
@@ -124,3 +118,6 @@ regression-test: do-build
 		${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>
+# The OPENMP option may select gcc as compiler but on architectures
+# that have switched to libc++ clang should be used for C++ code.
+CXX=		c++
