@@ -13,17 +13,16 @@ PKGNAMESUFFIX=	-legacy
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgda4 library
 
-LIB_DEPENDS=	libglibmm-2.4.so:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack libgda4
+USES=		gmake libtool pathfix pkgconfig
+USE_GNOME=	glibmm libgda4
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-static --disable-documentation
+CONFIGURE_ARGS=	--disable-documentation
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdamm-4.0.so.12.0.0
+
 .include <bsd.port.mk>
