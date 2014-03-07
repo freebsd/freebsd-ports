@@ -14,10 +14,10 @@ COMMENT=	Minizip and miniunz programs from Zlib contributions
 
 LICENSE=	ZLIB
 
+USES=		zip
 PLIST_FILES=	bin/minizip bin/miniunz \
 		man/man1/miniunzip.1.gz man/man1/minizip.1.gz
 MAKE_ARGS=	CFLAGS="${CPPFLAGS} ${CFLAGS} -include sys/stat.h -include stdint.h"
-USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/zlib-${PORTVERSION}/contrib/minizip
 
 .include <bsd.port.pre.mk>
