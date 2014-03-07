@@ -8,6 +8,15 @@ libexec/xpdf/pdftotext
 %%X11%%libexec/xpdf/xpdf
 %%X11%%bin/xpdf
 etc/xpdfrc
+%%DATADIR%%/man/man1/pdfdetach.1.gz
+%%DATADIR%%/man/man1/pdffonts.1.gz
+%%DATADIR%%/man/man1/pdfimages.1.gz
+%%DATADIR%%/man/man1/pdfinfo.1.gz
+%%DATADIR%%/man/man1/pdftoppm.1.gz
+%%DATADIR%%/man/man1/pdftops.1.gz
+%%DATADIR%%/man/man1/pdftotext.1.gz
+%%X11%%%%DATADIR%%/man/man1/xpdf.1.gz
+%%DATADIR%%/man/man5/xpdfrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
