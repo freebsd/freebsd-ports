@@ -1,41 +1,48 @@
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/groupdb.conf.sample %D/etc/nagios/%%PORTNAME%%/groupdb.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/groupdb.conf; fi
-etc/nagios/%%PORTNAME%%/groupdb.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/groupdb.conf ] ; then cp -p %D/%F %B/groupdb.conf; fi
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/hostdb.conf.sample %D/etc/nagios/%%PORTNAME%%/hostdb.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/hostdb.conf; fi
-etc/nagios/%%PORTNAME%%/hostdb.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/hostdb.conf ] ; then cp -p %D/%F %B/hostdb.conf; fi
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/map.sample %D/etc/nagios/%%PORTNAME%%/map; then rm -f %D/etc/nagios/%%PORTNAME%%/map; fi
-etc/nagios/%%PORTNAME%%/map.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/map ] ; then cp -p %D/%F %B/map; fi
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/nagiosgraph.conf.sample %D/etc/nagios/%%PORTNAME%%/nagiosgraph.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/nagiosgraph.conf; fi
-etc/nagios/%%PORTNAME%%/nagiosgraph.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/nagiosgraph.conf ] ; then cp -p %D/%F %B/nagiosgraph.conf; fi
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/nagiosgraph_de.conf.sample %D/etc/nagios/%%PORTNAME%%/nagiosgraph_de.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/nagiosgraph_de.conf; fi
-etc/nagios/%%PORTNAME%%/nagiosgraph_de.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/nagiosgraph_de.conf ] ; then cp -p %D/%F %B/nagiosgraph_de.conf; fi
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/nagiosgraph_es.conf.sample %D/etc/nagios/%%PORTNAME%%/nagiosgraph_es.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/nagiosgraph_es.conf; fi
-etc/nagios/%%PORTNAME%%/nagiosgraph_es.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/nagiosgraph_es.conf ] ; then cp -p %D/%F %B/nagiosgraph_es.conf; fi
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/nagiosgraph_fr.conf.sample %D/etc/nagios/%%PORTNAME%%/nagiosgraph_fr.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/nagiosgraph_fr.conf; fi
-etc/nagios/%%PORTNAME%%/nagiosgraph_fr.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/nagiosgraph_fr.conf ] ; then cp -p %D/%F %B/nagiosgraph_fr.conf; fi
-etc/nagios/%%PORTNAME%%/ngshared.pm
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/servdb.conf.sample %D/etc/nagios/%%PORTNAME%%/servdb.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/servdb.conf; fi
-etc/nagios/%%PORTNAME%%/servdb.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/servdb.conf ] ; then cp -p %D/%F %B/servdb.conf; fi
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/datasetdb.conf.sample %D/etc/nagios/%%PORTNAME%%/datasetdb.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/datasetdb.conf; fi
-etc/nagios/%%PORTNAME%%/datasetdb.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/datasetdb.conf ] ; then cp -p %D/%F %B/datasetdb.conf; fi
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/access.conf.sample %D/etc/nagios/%%PORTNAME%%/access.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/access.conf; fi
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/access.conf.sample %D/etc/nagios/%%PORTNAME%%/access.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/access.conf ; fi
 etc/nagios/%%PORTNAME%%/access.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/access.conf ] ; then cp -p %D/%F %B/access.conf; fi
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/labels.conf.sample %D/etc/nagios/%%PORTNAME%%/labels.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/labels.conf; fi
+@exec [ ! -f %B/access.conf ] && cp -p %D/%F %B/access.conf || true
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/datasetdb.conf.sample %D/etc/nagios/%%PORTNAME%%/datasetdb.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/datasetdb.conf ; fi
+etc/nagios/%%PORTNAME%%/datasetdb.conf.sample
+@exec [ ! -f %B/datasetdb.conf ] && cp -p %D/%F %B/datasetdb.conf || true
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/groupdb.conf.sample %D/etc/nagios/%%PORTNAME%%/groupdb.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/groupdb.conf ; fi
+etc/nagios/%%PORTNAME%%/groupdb.conf.sample
+@exec [ ! -f %B/groupdb.conf ] && cp -p %D/%F %B/groupdb.conf || true
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/hostdb.conf.sample %D/etc/nagios/%%PORTNAME%%/hostdb.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/hostdb.conf ; fi
+etc/nagios/%%PORTNAME%%/hostdb.conf.sample
+@exec [ ! -f %B/hostdb.conf ] && cp -p %D/%F %B/hostdb.conf || true
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/labels.conf.sample %D/etc/nagios/%%PORTNAME%%/labels.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/labels.conf ; fi
 etc/nagios/%%PORTNAME%%/labels.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/labels.conf ] ; then cp -p %D/%F %B/labels.conf; fi
-@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/rrdopts.conf.sample %D/etc/nagios/%%PORTNAME%%/rrdopts.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/rrdopts.conf; fi
+@exec [ ! -f %B/labels.conf ] && cp -p %D/%F %B/labels.conf || true
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/map.sample %D/etc/nagios/%%PORTNAME%%/map ; then rm -f %D/etc/nagios/%%PORTNAME%%/map ; fi
+etc/nagios/%%PORTNAME%%/map.sample
+@exec [ ! -f %B/map ] && cp -p %D/%F %B/map || true
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%.conf.sample %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%.conf ; fi
+etc/nagios/%%PORTNAME%%/%%PORTNAME%%.conf.sample
+@exec [ ! -f %B/%%PORTNAME%%.conf ] && cp -p %D/%F %B/%%PORTNAME%%.conf || true
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%_de.conf.sample %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%_de.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%_de.conf ; fi
+etc/nagios/%%PORTNAME%%/%%PORTNAME%%_de.conf.sample
+@exec [ ! -f %B/%%PORTNAME%%_de.conf ] && cp -p %D/%F %B/%%PORTNAME%%_de.conf || true
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%_es.conf.sample %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%_es.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%_es.conf ; fi
+etc/nagios/%%PORTNAME%%/%%PORTNAME%%_es.conf.sample
+@exec [ ! -f %B/%%PORTNAME%%_es.conf ] && cp -p %D/%F %B/%%PORTNAME%%_es.conf || true
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%_fr.conf.sample %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%_fr.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/%%PORTNAME%%_fr.conf ; fi
+etc/nagios/%%PORTNAME%%/%%PORTNAME%%_fr.conf.sample
+@exec [ ! -f %B/%%PORTNAME%%_fr.conf ] && cp -p %D/%F %B/%%PORTNAME%%_fr.conf || true
+etc/nagios/%%PORTNAME%%/ngshared.pm
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/rrdopts.conf.sample %D/etc/nagios/%%PORTNAME%%/rrdopts.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/rrdopts.conf ; fi
 etc/nagios/%%PORTNAME%%/rrdopts.conf.sample
-@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/rrdopts.conf ] ; then cp -p %D/%F %B/rrdopts.conf; fi
+@exec [ ! -f %B/rrdopts.conf ] && cp -p %D/%F %B/rrdopts.conf || true
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/servdb.conf.sample %D/etc/nagios/%%PORTNAME%%/servdb.conf ; then rm -f %D/etc/nagios/%%PORTNAME%%/servdb.conf ; fi
+etc/nagios/%%PORTNAME%%/servdb.conf.sample
+@exec [ ! -f %B/servdb.conf ] && cp -p %D/%F %B/servdb.conf || true
 libexec/%%PORTNAME%%/insert.pl
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testentry.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade.pl
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/show.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showconfig.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showgraph.cgi
@@ -43,13 +50,12 @@ libexec/%%PORTNAME%%/insert.pl
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showhost.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showservice.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/testcolor.cgi
-%%NAGIOSWWWDIR%%/images/action-nagiosgraph.gif
+%%NAGIOSWWWDIR%%/images/action-%%PORTNAME%%.gif
 %%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.css
 %%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.js
 %%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.ssi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testentry.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade.pl
-@dirrm libexec/%%PORTNAME%%
 @dirrmtry %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry libexec/%%PORTNAME%%
 @dirrmtry etc/nagios/%%PORTNAME%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
