@@ -9,10 +9,10 @@ MASTER_SITES=	http://home.wtal.de/petig/Gtk/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 
 MAINTAINER=	bland@FreeBSD.org
-COMMENT=	A C++ code generator backend for glade and glade2
+COMMENT=	C++ code generator backend for glade and glade2
 
-USES=		gmake pkgconfig
-USE_GNOME=	gnomeprefix gnomehack
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	gnomeprefix
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/glade-- bin/glademm-embed
