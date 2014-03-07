@@ -13,9 +13,9 @@ MAINTAINER=	arundel@h3c.de
 COMMENT=	The only GP32 emulator for i386
 
 ONLY_FOR_ARCHS=	i386
+USES=		zip
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12 xorglibs
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=

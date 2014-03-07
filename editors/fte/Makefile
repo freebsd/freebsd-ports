@@ -16,8 +16,7 @@ COMMENT=		A full-featured text editor for X11
 WRKSRC=			${WRKDIR}/fte
 
 USE_XORG=	x11 xpm
-USE_ZIP=		yes
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	build
 
 NO_STAGE=	yes

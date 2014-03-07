@@ -11,8 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IA64 simulator (Intel(R) Architecture 64)
 
-USE_ZIP=	yes
-USES=		gmake
+USES=		gmake zip
 MAKEFILE=	makefile.unx
 MAKE_ARGS=	CC="${CC}"
 
