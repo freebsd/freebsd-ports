@@ -19,8 +19,8 @@ RUN_DEPENDS=	VBoxManage:${PORTSDIR}/emulators/virtualbox-ose\
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+USES=		zip
 GROUPS=		vboxusers
-USE_ZIP=	yes
 
 SAMPLESDIR=	${PREFIX}/share/${PORTNAME}
 

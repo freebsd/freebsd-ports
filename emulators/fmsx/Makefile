@@ -17,8 +17,7 @@ MAINTAINER=	dk@farm.org
 COMMENT=	Portable MSX/MSX2/MSX2+ Emulator
 
 USE_XORG=	xi x11
-USE_ZIP=	yes
-USES=		gmake dos2unix
+USES=		gmake dos2unix zip
 DOS2UNIX_FILES=	EMULib/Unix/LibUnix.c EMULib/Unix/NetUnix.c EMULib/Rules.gcc \
 		EMULib/Rules.Unix
 RESTRICTED=	Legal status of distributed ROM images unclear

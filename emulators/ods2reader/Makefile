@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.ZIP
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Copies files from VMS Files-11 (ODS2) file systems
 
-USE_ZIP=	yes
+USES=		zip:infozip
 EXTRACT_BEFORE_ARGS=	-qoa
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ods2reader

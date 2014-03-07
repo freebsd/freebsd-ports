@@ -18,8 +18,7 @@ LIB_DEPENDS=	libelf.so:${PORTSDIR}/devel/libelf \
 
 CONFLICTS=	dynamips-[0-9]* dynamips-devel-[0-9]*
 
-USES=		gmake
-USE_ZIP=	yes
+USES=		gmake zip
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS UNSTABLE

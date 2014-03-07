@@ -10,7 +10,7 @@ DISTNAME=	TreeForm_1_0_3
 MAINTAINER=	buganini@gmail.com
 COMMENT=	A Linguistic Syntax/Semantics tree drawing editor
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
