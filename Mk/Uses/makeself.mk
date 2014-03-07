@@ -10,8 +10,8 @@
 .if !defined(_INCLUDE_USES_MAKESELF_Mk)
 _INCLUDE_USES_MAKESELF_MK=	yes
 
-.if defined(gmake_ARGS)
-IGNORE=	Incorrect 'USES+= gmake:${gmake_ARGS}' gmake takes no arguments
+.if defined(makeself_ARGS)
+IGNORE=	Incorrect 'USES+= makeself:${makeself_ARGS}' makeself takes no arguments
 .endif
 
 EXTRACT_DEPENDS=	${UNMAKESELF_CMD}:${PORTSDIR}/archivers/unmakeself
