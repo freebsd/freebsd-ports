@@ -743,60 +743,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/_weakrefset.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/_weakrefset.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/_weakrefset.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/__init__.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/__init__.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/__init__.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/events.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/events.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/events.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/job.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/job.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/job.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/__init__.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/__init__.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/__init__.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/base.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/base.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/base.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/mongodb_store.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/mongodb_store.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/mongodb_store.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/ram_store.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/ram_store.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/ram_store.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/shelve_store.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/shelve_store.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/shelve_store.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/sqlalchemy_store.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/sqlalchemy_store.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/sqlalchemy_store.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/scheduler.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/scheduler.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/scheduler.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/threadpool.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/threadpool.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/threadpool.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/__init__.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/__init__.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/__init__.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/__init__.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/expressions.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/expressions.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/expressions.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/fields.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/fields.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/fields.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/interval.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/interval.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/interval.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/simple.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/simple.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/simple.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/util.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/util.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/util.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/__init__.pyo
@@ -1520,10 +1466,6 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/chardet
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/speak
