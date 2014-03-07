@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	support/xpdf
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display PDF files and convert them to other formats
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -26,62 +26,35 @@ CONFIGURE_ARGS=	--enable-opi \
 
 MANPREFIX=	${PREFIX}/share/xpdf
 
-OPTIONS_DEFINE=	LIBPAPER TYPE1 X11
+OPTIONS_DEFINE=	LIBPAPER TYPE1 X11 DOCS
 LIBPAPER_DESC=	Enable libpaper
 TYPE1_DESC=	Ghostscript type1 fonts
 OPTIONS_DEFAULT=	TYPE1 X11
+OPTIONS_SUB=		yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+TYPE1_RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n021003l.pfb:${PORTSDIR}/print/gsfonts
 
-.if ${PORT_OPTIONS:MTYPE1}
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n021003l.pfb:${PORTSDIR}/print/gsfonts
-.endif
-
-.if ${PORT_OPTIONS:MLIBPAPER}
-LIB_DEPENDS+=	paper.2:${PORTSDIR}/print/libpaper
-CONFIGURE_ARGS+=--with-libpaper-library="${LOCALBASE}/lib" \
+LIBPAPER_LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
+LIBPAPER_CONFIGURE_ON=--with-libpaper-library="${LOCALBASE}/lib" \
 		--with-libpaper-includes="${LOCALBASE}/include"
-.else
-CONFIGURE_ARGS+=--without-libpaper-library
-.endif
+LIBPAPER_CONFIGURE_OFF=--without-libpaper-library
 
 .if defined(A4)
 CONFIGURE_ARGS+=	--enable-a4-paper
 .endif
 
-MAN1=		pdffonts.1 \
-		pdfimages.1 \
-		pdfinfo.1 \
-		pdfdetach.1 \
-		pdftoppm.1 \
-		pdftops.1 \
-		pdftotext.1
-MAN5=		xpdfrc.5
-
-.if ${PORT_OPTIONS:MX11}
-CONFIGURE_ARGS+=	--with-x
-USES+=			motif
-MAN1+=			xpdf.1
-PLIST_SUB+=		X11=""
-.else
-CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=		X11="@comment "
-.endif
+X11_CONFIGURE_WITH=	x
+X11_USES=		motif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|undef USE_COMBO_BOX|define USE_COMBO_BOX 1|' \
 		${WRKSRC}/xpdf/XPDFViewer.h
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ANNOUNCE CHANGES README misc/hello.pdf
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MX11}
-	${LN} -sf ${PREFIX}/libexec/xpdf/xpdf ${PREFIX}/bin/xpdf
-.endif
+	${LN} -sf ${PREFIX}/libexec/xpdf/xpdf ${STAGEDIR}${PREFIX}/bin/xpdf
 
 .include <bsd.port.mk>
