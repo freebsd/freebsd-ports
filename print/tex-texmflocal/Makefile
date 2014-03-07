@@ -26,7 +26,6 @@ TEXMFCONFIGDIR=	share/texmf-config
 TEXMFCONFIG_LSR=${PREFIX}/${TEXMFCONFIGDIR}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DIRS!=		${CAT} ${FILESDIR}/dirlist
@@ -65,11 +64,11 @@ pre-install:
 	) > ${PLIST}
 
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/tetex-modesw.in ${PREFIX}/bin/tetex-modesw
+	${INSTALL_SCRIPT} ${FILESDIR}/tetex-modesw.in ${STAGEDIR}${PREFIX}/bin/tetex-modesw
 .for D in TEXMF TEXMFLOCAL TEXMFVAR TEXMFCONFIG
-	${MKDIR} ${DIRS:S,^,${PREFIX}/${${D}DIR}/,}
-	${LSRMAGIC} > ${${D}_LSR}
-	${CHMOD} 0644 ${${D}_LSR}
+	${MKDIR} ${DIRS:S,^,${STAGEDIR}${PREFIX}/${${D}DIR}/,}
+	${LSRMAGIC} > ${STAGEDIR}${${D}_LSR}
+	${CHMOD} 0644 ${STAGEDIR}${${D}_LSR}
 .endfor
 
 post-install:
