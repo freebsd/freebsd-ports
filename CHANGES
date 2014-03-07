@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140307:
+AUTHOR: rene@FreeBSD.org
+
+  Two new USES were added by bapt@FreeBSD.org :
+
+  USES=zip handles distribution files in Zip format. InfoZip files
+  need USES=zip:infozip
+
+  USES=makeself handles distribution files in makeself format.
+
 20140303:
 AUTHOR: kde@FreeBSD.org
 
