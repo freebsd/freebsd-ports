@@ -8,11 +8,12 @@ MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
 MASTER_SITE_SUBDIR=	wolf/linux
 PKGNAMEPREFIX=	linux-
 DISTNAME=	wolf-linux-${DISTVERSION}.x86
+EXTRACT_SUFX=	.run
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein (Linux version)
 
-USE_MAKESELF=	yes
+USES=		makeself
 USE_LINUX=	yes
 USE_LINUX_APPS=	dri xorglibs
 NO_WRKSUBDIR=	yes
