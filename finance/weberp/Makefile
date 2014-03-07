@@ -12,7 +12,7 @@ COMMENT=	An Open-Source Web-Based ERP System
 
 PORTSCOUT=	skipv:3.12
 
-USE_ZIP=	yes
+USES=		zip
 USE_PHP=	mysql gettext
 USES=		gettext
 WRKSRC=		${WRKDIR}/webERP${PORTVERSION}

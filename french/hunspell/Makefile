@@ -6,12 +6,12 @@ CATEGORIES=	french textproc
 MASTER_SITES=	http://www.dicollecte.org/download/fr/ \
 		LOCAL/sunpoet/${PORTNAME}
 DISTNAME=	hunspell-french-dictionaries-v${PORTVERSION}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Modern French hunspell dictionaries
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
