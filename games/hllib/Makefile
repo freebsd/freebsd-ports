@@ -6,14 +6,14 @@ PORTVERSION=	2.4.4
 CATEGORIES=	games devel
 MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Library to work with various Half-Life file formats
 
 LICENSE=	LGPL21
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/HLLib
 CFLAGS+=	-fpic -DUSE_ZLIB
