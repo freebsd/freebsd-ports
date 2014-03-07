@@ -167,3 +167,7 @@ DEV_ERROR+=	"USE_OPENAL is unsupported, please use USES=openal"
 .if defined(USE_FAM)
 DEV_ERROR+=	"USE_FAM is unsupported, please use USES=fam"
 .endif
+
+.if defined(USE_MAKESELF)
+DEV_ERROR+=	"USE_MAKESELF is unsupported, please use USES=makeself"
+.endif
