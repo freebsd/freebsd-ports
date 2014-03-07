@@ -2,27 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	NetApp
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	500.002
 CATEGORIES=	net-mgmt perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	NetApp
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Perl interface to manage NetApp NAS devices
 
-RUN_DEPENDS=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd \
-		p5-Class-Std>=0:${PORTSDIR}/devel/p5-Class-Std \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Class-Std>=0:${PORTSDIR}/devel/p5-Class-Std \
+		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+		p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd \
 		p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
