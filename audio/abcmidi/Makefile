@@ -6,7 +6,6 @@ PORTVERSION=	2011.04.29
 CATEGORIES=	audio
 MASTER_SITES=	http://ifdo.ca/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Convert abc music files to MIDI and PostScript
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake
+USES=		gmake zip
 MAKEFILE=	makefiles/unix.mak
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DANSILIBS -c" LNK="${CC}"
 

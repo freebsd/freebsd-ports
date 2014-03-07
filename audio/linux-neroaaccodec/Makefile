@@ -7,12 +7,11 @@ CATEGORIES=	audio multimedia linux
 MASTER_SITES=	ftp://ftp6.nero.com/tools/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	NeroAACCodec-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
 COMMENT=	Nero AAC reference quality MPEG-4 and 3GPP audio codec
 
-USES=		dos2unix
+USES=		dos2unix zip
 USE_LINUX=	yes
 DOS2UNIX_REGEX=	.*\.txt
 ONLY_FOR_ARCHS=	i386 amd64

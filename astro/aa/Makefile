@@ -6,13 +6,12 @@ PORTVERSION=	56
 PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://moshier.net/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	Self-contained ephemeris calculator
 
 MAKEFILE=	makefile
-USES=		dos2unix
+USES=		dos2unix zip
 ALL_TARGET=	aa
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall"
 NO_WRKSUBDIR=	yes
