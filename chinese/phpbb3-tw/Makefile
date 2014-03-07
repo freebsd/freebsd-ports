@@ -16,7 +16,7 @@ CONFLICTS=	phpbb-tw-[0-2]* phpbb-devel-[0-3]* phpbb-[0-3]*
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
 
-USE_ZIP=	yes
+USES=		zip
 
 # The phpBB3 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.

@@ -11,7 +11,6 @@ MASTER_SITES=	ftp://iut-tice.ujf-grenoble.fr/cao/	\
 DISTFILES=	${SFNAME}-stable${EXTRACT_SUFX}	\
 		${DFNAME}.tgz
 EXTRACT_ONLY=	${SFNAME}-stable${EXTRACT_SUFX}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
@@ -23,7 +22,7 @@ CONFLICTS=	kicad-devel*
 
 WRKSRC=		${WRKDIR}/kicad
 
-USES=		cmake dos2unix desktop-file-utils shared-mime-info
+USES=		cmake dos2unix desktop-file-utils shared-mime-info zip
 DOS2UNIX_GLOB=	*.cmake
 USE_GL=		yes
 USE_WX=		2.8

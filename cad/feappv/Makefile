@@ -13,8 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
 MAINTAINER=	mexas@bris.ac.uk
 COMMENT=	Finite element analysis program (personal version)
 
-USES=		fortran gmake
-USE_ZIP=	yes
+USES=		fortran gmake zip
 USE_XORG=	x11
 MAKEFILE=	makefile
 MAKE_ENV=	FEAPPVHOME3_1="${WRKSRC}"

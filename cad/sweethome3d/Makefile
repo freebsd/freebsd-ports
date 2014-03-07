@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	java3d>=0:${PORTSDIR}/java/java3d
 RUN_DEPENDS=	java3d>=0:${PORTSDIR}/java/java3d
 
-USE_ZIP=	yes
+USES=		zip
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
