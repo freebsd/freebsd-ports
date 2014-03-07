@@ -33,8 +33,8 @@ JSREPO=		${JS}-repo
 JSUPDATE=	5.0.0-${PORTVERSION}
 
 NO_WRKSUBDIR=	yes
+USES=		zip
 USE_JAVA=	yes
-USE_ZIP=	yes
 
 # use own DOS2UNIX in pre-patch, not the one from bsd.port.mk!
 DOS2UNIX_REGEX=	.*(css|dtd|java|js|txt|wsdd|xml|xsl)$$

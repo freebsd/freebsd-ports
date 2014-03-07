@@ -13,7 +13,7 @@ COMMENT=	NET configuration library
 
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Nini

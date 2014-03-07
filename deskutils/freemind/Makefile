@@ -18,7 +18,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-USE_ZIP=	yes
+USES=		zip:infozip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

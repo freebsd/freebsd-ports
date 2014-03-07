@@ -12,7 +12,7 @@ COMMENT=	Adobe Flex SDK
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 CONFLICTS=	ja-flex-sdk-2.* flex-sdk2-2.* flex-sdk3-3.*
-USE_ZIP=	YES
+USES=		zip
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}

@@ -13,10 +13,8 @@ DISTNAME=	${PORTNAME}.v${PORTVERSION}
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Dynamic DNS update client
 
+USES=		dos2unix gmake zip
 USE_RC_SUBR=	inadyn
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
 MAKEFILE=	makefile
 
 PORTDOCS=	readme.html

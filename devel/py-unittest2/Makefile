@@ -12,9 +12,9 @@ COMMENT=	Unittest features for Python 2.7 backported to Python 2.3+
 
 LICENSE=	BSD
 
+USES=		zip
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=		yes
 
 .include <bsd.port.mk>

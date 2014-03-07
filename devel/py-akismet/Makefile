@@ -11,11 +11,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jacob@whotookspaz.org
 COMMENT=	A Python interface to the Akismet API
 
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	akismet
-
-USE_ZIP=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

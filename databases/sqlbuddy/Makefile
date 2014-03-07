@@ -12,7 +12,7 @@ COMMENT=	Web based MySQL administration with a set of PHP scripts
 
 BROKEN=		Fails to check-sanity
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

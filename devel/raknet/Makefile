@@ -24,13 +24,12 @@ LICENSE_FILE_SpecialAuth=	${FILESDIR}/SpecialAuth.mbox
 LICENSE_PERMS_SpecialAuth=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LEGAL_TEXT=	FreeBSD granted special license to distribute 3.x under GPLv3
 
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
 USE_LDCONFIG=	yes
 USE_GCC=	any
 
-USES=		dos2unix cmake gmake
+USES=		dos2unix cmake gmake zip
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
 # XXX Do not provide Samples for the following reason :

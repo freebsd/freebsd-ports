@@ -17,7 +17,7 @@ COMMENT=	Template Numerical Toolkit
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 PORTDOCS=	*

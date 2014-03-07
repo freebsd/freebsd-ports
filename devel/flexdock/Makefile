@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	otacilio.neto@bsd.com.br
 COMMENT=	Swing windowing and docking framework
 
-USE_ZIP=	yes
+USES=		zip
 USE_ANT=	yes
 USE_JAVA=	yes
 

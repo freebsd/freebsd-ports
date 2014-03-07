@@ -12,7 +12,7 @@ COMMENT=	Python Knowledge Engine
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=2.3:${PORTSDIR}/devel/py-ply
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

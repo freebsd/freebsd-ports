@@ -14,7 +14,7 @@ CONFLICTS=	antlr*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_ZIP=	yes
+USES=		zip
 MAKE_ENV=	COPT="${CFLAGS}"
 MAKEFILE=	makefile
 ALL_TARGET=	# empty

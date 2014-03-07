@@ -14,7 +14,7 @@ DISTNAME=	djcrx203
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	Headers and Libraries for DJGPP cross-development
 
-USE_ZIP=	yes
+USES=		zip
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
 

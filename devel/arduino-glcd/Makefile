@@ -16,8 +16,7 @@ LICENSE=	LGPL21
 RUN_DEPENDS=	arduino:${PORTSDIR}/devel/arduino
 
 WRKSRC=		${WRKDIR}/glcd
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USES=		zip dos2unix
 
 NO_BUILD=	yes
 NO_STAGE=	yes

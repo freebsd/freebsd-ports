@@ -8,15 +8,14 @@ CATEGORIES=	devel lang www python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/3_4
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A python implementation of a JSON (http//:json.org) reader/writer
 
 NO_WRKSUBDIR=	yes
 
+USES=		zip
 USE_PYTHON=	yes
-USE_ZIP=	yes
 
 NO_STAGE=	yes
 do-build:

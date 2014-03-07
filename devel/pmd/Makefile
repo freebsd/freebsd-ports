@@ -13,7 +13,7 @@ COMMENT=	Static analysis tool for Java source code
 LICENSE=	APACHE20 BSD4CLAUSE
 LICENSE_COMB=	dual
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

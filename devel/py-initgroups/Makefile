@@ -13,9 +13,9 @@ COMMENT=	Convenience uid/gid helper function used in Zope2
 
 LICENSE=	ZPL21
 
+USES=		zip
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=		yes
 
 .include <bsd.port.mk>

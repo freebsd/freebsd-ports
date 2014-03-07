@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	scala>=2.9.0:${PORTSDIR}/lang/scala
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes
 

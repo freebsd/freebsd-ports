@@ -12,8 +12,8 @@ COMMENT=	JLine is a Java library for handling console input
 LICENSE=	BSD
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+USES=		zip
 USE_JAVA=	yes
-USE_ZIP=	yes
 OPTIONS_DEFINE=	JLINEPATCH
 JLINEPATCH_DESC=	Allow ConsoleRunner customized completion
 JLINEJAR=	${WRKSRC}/jline-${PORTVERSION}.jar

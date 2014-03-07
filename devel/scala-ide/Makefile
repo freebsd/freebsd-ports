@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	WTP
 OPTIONS_DEFAULT=WTP
 WTP_DESC=	Install Eclipse Web Tools Platform (required for Play2 plug-in)
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/site
 

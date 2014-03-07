@@ -16,9 +16,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
-USES=	gmake
+USES=	dos2unix gmake zip
 MAKEFILE=	GccUnix.mak
 
 PORTDOCS=	*

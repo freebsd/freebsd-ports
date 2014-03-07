@@ -13,7 +13,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
 PLUGIN_PATHS=	features plugins
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}

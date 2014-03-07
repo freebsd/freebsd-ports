@@ -13,9 +13,8 @@ COMMENT=	PL/v8js procedural language for PostgreSQL database
 
 LIB_DEPENDS+=	libv8.so:${PORTSDIR}/lang/v8
 
-USES=		gmake perl5
+USES=		gmake perl5 zip
 USE_PERL5=	build
-USE_ZIP=	yes
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	91+
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"

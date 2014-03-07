@@ -15,9 +15,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:${PORTSDIR}/www/py-turbo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja>=0.9:${PORTSDIR}/devel/py-Jinja
 
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-USE_ZIP=	yes
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,10 +11,10 @@ COMMENT=	An embeddable SQL database written in Java
 
 LICENSE=	BSD
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
-USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/build
 ALL_TARGET=	hsqldb hsqljdbc

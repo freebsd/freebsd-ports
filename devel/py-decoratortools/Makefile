@@ -7,7 +7,6 @@ PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class, function, and metaclass decorators
@@ -18,5 +17,6 @@ LICENSE_COMB=	dual
 PYDISTUTILS_AUTOPLIST=	yes
 USE_PYDISTUTILS=yes
 USE_PYTHON=	2
+USES=		zip
 
 .include <bsd.port.mk>

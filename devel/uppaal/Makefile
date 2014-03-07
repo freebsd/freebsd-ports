@@ -10,7 +10,7 @@ DISTNAME=	uppaal-${PORTVERSION}-aca
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool environment for modeling and verifying timed automata
 
-USE_ZIP=	yes
+USES=		zip
 USE_LINUX=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -7,7 +7,6 @@ CATEGORIES=	devel multimedia java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sabre-library
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Simple API for Binary REpresentations and an UDF Library
@@ -15,6 +14,7 @@ COMMENT=	Simple API for Binary REpresentations and an UDF Library
 LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/Simple\ API\ for\ Binary\ REpresentations\ \(SABRE\)
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes

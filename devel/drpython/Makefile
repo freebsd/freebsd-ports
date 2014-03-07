@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/DrPython
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_AUTOPLIST=	yes

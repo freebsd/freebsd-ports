@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.jgoodies.com/download/libraries/${PORTNAME}/
 DISTNAME=	jgoodies-${PORTNAME}-${PORTVERSION:S|.|_|g}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JGoodies Looks improve the appearance of your Java applications
@@ -16,6 +15,7 @@ OPTIONS_DEFINE=	DOCS
 
 LICENSE=	BSD3CLAUSE
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

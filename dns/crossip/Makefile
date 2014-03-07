@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CrossIP%20${PORTVERSION}
 MAINTAINER=	dan@algenta.com
 COMMENT=	Java DNS update client for the ThatIP protocol
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_ZIP=	yes
 
 NO_BUILD=	yes
 

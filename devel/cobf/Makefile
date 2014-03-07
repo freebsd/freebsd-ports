@@ -6,13 +6,13 @@ PORTVERSION=	1.06
 CATEGORIES=	devel
 MASTER_SITES=	http://home.arcor.de/bernhard.baier/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	C and C++ code obfuscator
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		zip
 WRKSRC=		${WRKDIR}
 PORTDOCS=	COPYING README cobf.pdf
 PLIST_FILES=	bin/cobf

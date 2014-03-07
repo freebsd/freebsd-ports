@@ -7,14 +7,13 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://cdn.bitbucket.org/decalage/olefileio_pl/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	OleFileIO_PL-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python module to read MS OLE2 files
 
 LICENSE=	MIT
 
-USES=		dos2unix
+USES=		dos2unix zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

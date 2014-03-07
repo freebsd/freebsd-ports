@@ -11,9 +11,8 @@ MASTER_SITES=	http://api.pgxn.org/dist/hashtypes/${PORTVERSION}/ \
 MAINTAINER=	oss-contrib@dreamindustries.co
 COMMENT=	Hash data types for PostgreSQL
 
+USES=		gmake zip
 USE_PGSQL=	yes
-USE_GMAKE=	yes
-USE_ZIP=	yes
 
 MAKE_ARGS=	USE_PGXS=1 MODULEDIR=extension
 MODULEDIR=	${PREFIX}/share/postgresql/extension
