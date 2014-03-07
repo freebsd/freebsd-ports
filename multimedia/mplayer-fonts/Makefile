@@ -19,19 +19,18 @@ FONTDIRS=	cyrillic koi8r-font iso-8859-1/arial-14 \
 		iso-8859-2/arial-18 iso-8859-2/arial-24 \
 		iso-8859-2/arial-28
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/mplayer/fonts
-	@${CHMOD} 0555 ${PREFIX}/share/mplayer/fonts
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mplayer/fonts
+	@${CHMOD} 0555 ${STAGEDIR}${PREFIX}/share/mplayer/fonts
 .for dir in iso-8859-1 iso-8859-2
-	@${MKDIR} ${PREFIX}/share/mplayer/fonts/${dir}
-	@${CHMOD} 0555 ${PREFIX}/share/mplayer/fonts/${dir}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mplayer/fonts/${dir}
+	@${CHMOD} 0555 ${STAGEDIR}${PREFIX}/share/mplayer/fonts/${dir}
 .endfor
 .for dir in ${FONTDIRS}
-	@${MKDIR} ${PREFIX}/share/mplayer/fonts/${dir}
-	@${CHMOD} 0555 ${PREFIX}/share/mplayer/fonts/${dir}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mplayer/fonts/${dir}
+	@${CHMOD} 0555 ${STAGEDIR}${PREFIX}/share/mplayer/fonts/${dir}
 	@${INSTALL_DATA} ${WRKDIR}/${dir}/* \
-		${PREFIX}/share/mplayer/fonts/${dir}
+		${STAGEDIR}${PREFIX}/share/mplayer/fonts/${dir}
 .endfor
 
 .include <bsd.port.mk>
