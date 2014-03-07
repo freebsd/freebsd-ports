@@ -21,17 +21,19 @@ PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		gettext gmake pathfix pkgconfig perl5
-USE_GNOME=	glib20 ltverhack libsigc++20
-USE_AUTOTOOLS=	libtool
+USES=		gettext gmake libtool pathfix perl5 pkgconfig
+USE_GNOME=	glib20 libsigc++20
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-static --disable-documentation
+CONFIGURE_ARGS=	--disable-documentation
 
-NO_STAGE=	yes
 post-patch:
 .for d in docs examples tests
 	@${REINPLACE_CMD} -e '/^SUBDIRS = /s/${d}//' ${WRKSRC}/Makefile.in
 .endfor
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
 .include <bsd.port.mk>
 
