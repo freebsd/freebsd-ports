@@ -1,4 +1,4 @@
-SHA256 (chromium-courgette-redacted-33.0.1750.146.tar.xz) = 8030316421e197de8ce7a0fa7dcb3809e3abff5c87dbd599531cc254ec527e6f
-SIZE (chromium-courgette-redacted-33.0.1750.146.tar.xz) = 197160536
+SHA256 (chromium-33.0.1750.146.tar.xz) = d5b0e7a0f086aac200493fe4e5849ca84e9e21f7770c5d5830060da9fc2c4a74
+SIZE (chromium-33.0.1750.146.tar.xz) = 185394896
 SHA256 (chromium-33.0.1750.146-testdata.tar.xz) = 918ccc080788ea9b8eba2e479b521c22b37b14c62d4bc0906d7f15a88f12c84c
 SIZE (chromium-33.0.1750.146-testdata.tar.xz) = 112429020
