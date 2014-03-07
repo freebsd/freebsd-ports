@@ -48,6 +48,9 @@ CONFIGURE_ARGS+=	--enable-i386-hacks
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc | |' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^LINK/s|$$(CCLD)|& -Wc,-B${LOCALBASE}/bin|' \
+		${WRKSRC}/fftw/Makefile.in ${WRKSRC}/mpi/Makefile.in \
+		${WRKSRC}/rfftw/Makefile.in ${WRKSRC}/threads/Makefile.in
 
 post-build:
 .if ${FFTW_FLAVOR}=="default"
