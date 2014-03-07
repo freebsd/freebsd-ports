@@ -10,11 +10,11 @@ PKGNAMESUFFIX=	-java
 DISTNAME=	${PORTNAME}src
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A Java benchmark for scientific and numerical computing
+COMMENT=	Java benchmark for scientific and numerical computing
 
 WRKSRC=		${WRKDIR}
-USE_ZIP=	yes
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NEED_JAVAC=	yes

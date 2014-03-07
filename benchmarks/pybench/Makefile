@@ -5,13 +5,13 @@ PORTNAME=	pybench
 PORTVERSION=	2.0
 CATEGORIES=	benchmarks python
 MASTER_SITES=	http://downloads.egenix.com/python/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	An extensible benchmark suite for Python
+COMMENT=	Extensible benchmark suite for Python
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		zip
 USE_PYTHON=	yes
 
 PORTDOCS=	README
