@@ -11,9 +11,8 @@ COMMENT=	Zopfli Compression Algorithm
 
 LICENSE=	APACHE20
 
+USES=		zip
 PLIST_FILES=	bin/zopfli
-
-USE_ZIP=	yes
 
 do-build:
 	${CC} -O2 -W -Wall -Wextra -ansi -pedantic -lm \

@@ -13,8 +13,8 @@ COMMENT=	WinZip like program written in Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+USES=		zip
 PLIST_FILES=	%%JAVAJARDIR%%/jzip.org.jar bin/${PORTNAME}
-USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}.src
