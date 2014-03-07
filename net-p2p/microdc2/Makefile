@@ -24,7 +24,4 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,-ge 2616,\\> 2616,' ${WRKSRC}/configure
-
 .include <bsd.port.mk>
