@@ -18,7 +18,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake uses
+USES=		gmake zip
 USE_GL=		gl
 USE_SDL=	image sdl
 MAKEFILE=	MakefileKyra
