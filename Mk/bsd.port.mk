@@ -94,8 +94,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # EXTRACT_SUFX	- Suffix for archive names
 #				  You never have to set both DISTFILES and EXTRACT_SUFX.
 #				  Default: .tar.bz2 if USE_BZIP2 is set, .lzh if USE_LHA is set,
-#				  .zip if USE_ZIP is set, .tar.xz if USE_XZ is set, .run if
-#				  USE_MAKESELF is set, .tar.gz otherwise).
+#				  .zip if USE_ZIP is set, .tar.xz if USE_XZ is set, .tar.gz
+#				  otherwise).
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.  See bsd.sites.mk for common choices for
 #				  MASTER_SITES.
@@ -333,8 +333,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_XZ		- If set, this port tarballs use xz (or lzma)
 #				  for compression
 # USE_ZIP		- If set, this port distfile uses zip, not tar w/[bg]zip
-#				  for compression.
-# USE_MAKESELF		- If set, this port distfile uses makeself, not tar w/[bg]zip
 #				  for compression.
 # USE_GCC		- If set, this port requires this version of gcc, either in
 #				  the system or installed from a port.
@@ -814,8 +812,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # For extract:
 #
 # EXTRACT_CMD	- Command for extracting archive: "bzip2" if USE_BZIP2
-#				  is set, "unzip" if USE_ZIP is set, "unmakeself" if
-#				  USE_MAKESELF if set, "gzip" otherwise.
+#				  is set, "unzip" if USE_ZIP is set, "gzip" otherwise.
 # EXTRACT_BEFORE_ARGS
 #				- Arguments to ${EXTRACT_CMD} before filename.
 #				  Default: "-dc"
@@ -1533,8 +1530,6 @@ EXTRACT_SUFX?=			.lzh
 EXTRACT_SUFX?=			.zip
 .elif defined(USE_XZ)
 EXTRACT_SUFX?=			.tar.xz
-.elif defined(USE_MAKESELF)
-EXTRACT_SUFX?=			.run
 .else
 EXTRACT_SUFX?=			.tar.gz
 .endif
@@ -1708,9 +1703,6 @@ EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 .endif
 .if defined(USE_ZIP)
 EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
-.endif
-.if defined(USE_MAKESELF)
-EXTRACT_DEPENDS+=	unmakeself:${PORTSDIR}/archivers/unmakeself
 .endif
 
 .if defined(USE_GCC)
@@ -2184,11 +2176,6 @@ EXTRACT_AFTER_ARGS?=
 EXTRACT_CMD?=		${UNZIP_CMD}
 EXTRACT_BEFORE_ARGS?=	-qo
 EXTRACT_AFTER_ARGS?=	-d ${WRKDIR}
-.elif defined(USE_MAKESELF)
-EXTRACT_CMD?=		${UNMAKESELF_CMD}
-EXTRACT_BEFORE_ARGS?=
-EXTRACT_AFTER_ARGS?=
-.else
 EXTRACT_CMD?=	${TAR}
 EXTRACT_BEFORE_ARGS?=	-xf
 .if defined(EXTRACT_PRESERVE_OWNERSHIP)
