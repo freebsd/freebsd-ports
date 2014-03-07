@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 
 ECLIPSE=	${PREFIX}/lib/eclipse
 SUBCLIPSE=	org.tigris.subversion.subclipse

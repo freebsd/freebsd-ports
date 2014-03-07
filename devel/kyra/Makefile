@@ -18,10 +18,9 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_ZIP=	yes
+USES=		gmake uses
 USE_GL=		gl
 USE_SDL=	image sdl
-USE_GMAKE=	yes
 MAKEFILE=	MakefileKyra
 MAKE_ENV=	MAKE_KYRA=RELEASE KYRA_OPENGL=YES
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD="${CXX}" \

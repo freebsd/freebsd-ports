@@ -13,7 +13,7 @@ COMMENT=	Python module for easily building good multi-command scripts
 
 LICENSE=	MIT
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 

@@ -14,8 +14,7 @@ COMMENT=	Small and handy timeline application
 LINCENSE=	GPLv3
 PROJECTHOST=	gepoch
 
-USES=		qmake
-USE_ZIP=	yes
+USES=		qmake zip
 USE_QT4=	gui moc_build rcc_build
 
 PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.png

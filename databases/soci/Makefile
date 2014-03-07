@@ -14,8 +14,7 @@ COMMENT=	The C++ Database Access Library
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-USE_ZIP=	yes
-USES=		cmake
+USES=		cmake zip
 CMAKE_ARGS+=	-DWITH_ORACLE:BOOL=OFF
 USE_LDCONFIG=	yes
 

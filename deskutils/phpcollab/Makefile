@@ -10,7 +10,7 @@ DISTNAME=	phpcollab-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHPcollab is project management and collaboration over the internet
 
-USE_ZIP=	yes
+USES=		zip
 USE_PHP+=	mysql
 USE_MYSQL=	yes
 NO_BUILD=	yes

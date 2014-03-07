@@ -6,7 +6,6 @@ PORTVERSION=	4.3
 CATEGORIES=	devel
 MASTER_SITES=	SF/premake/Premake/${PORTVERSION}
 DISTNAME=	premake-${PORTVERSION}-src
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Writes build scripts
@@ -16,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 WRKSRC=		${WRKDIR}/premake-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/build/gmake.unix
 
-USES=		gmake
+USES=		gmake zip
 MAKE_ARGS=	ARCH=""
 
 PLIST_FILES=	bin/premake4

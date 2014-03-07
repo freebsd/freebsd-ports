@@ -10,7 +10,7 @@ DISTNAME=	KickAssembler${PORTVERSION}
 MAINTAINER=	uffe@uffe.org
 COMMENT=	Advanced MOS 65xx assembler with embedded script language
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

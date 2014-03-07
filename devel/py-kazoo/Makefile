@@ -17,10 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.
 		${PYTHON_PKGNAMEPREFIX}gevent>=0.13.8:${PORTSDIR}/devel/py-gevent
 
 USE_PYTHON=	yes
-USE_ZIP=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USES=		gmake
+USES=		gmake zip
 
 
 .include <bsd.port.mk>

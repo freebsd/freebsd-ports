@@ -13,7 +13,7 @@ COMMENT=	A MySQL DataStore implementation for GeoServer
 
 RUN_DEPENDS=	${LOCALBASE}/geoserver/start.jar:${PORTSDIR}/graphics/geoserver
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 GSLIBDIR=	geoserver/webapps/geoserver/WEB-INF/lib

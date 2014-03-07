@@ -19,8 +19,8 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
 CONNECTORS=	Subversive-connectors-allplatforms-3.0.5.I20140122-1700.zip
 
+USES=		zip
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
 
 .include "${.CURDIR}/../../java/eclipse/Makefile.plugins"
 

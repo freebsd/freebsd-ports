@@ -5,12 +5,11 @@ PORTNAME=	checkheaders
 PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Checks headers in C/C++ programs
 
-USES=		gmake
+USES=		gmake zip
 MAKE_ARGS=	CXX="${CXX}"
 
 PLIST_FILES=	bin/${PORTNAME}

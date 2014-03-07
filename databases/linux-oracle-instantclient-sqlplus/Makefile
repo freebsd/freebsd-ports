@@ -22,7 +22,7 @@ DISTINFO_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 RESTRICTED=		Packaging prohibited by Oracle license
 
-USE_ZIP=		yes
+USES=			zip
 USE_LINUX_PREFIX=	yes
 
 ORACLEVERSION=		10.2.0.3

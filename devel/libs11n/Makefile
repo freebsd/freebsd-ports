@@ -6,12 +6,11 @@ PORTVERSION=	1.2.10
 CATEGORIES=	devel
 MASTER_SITES=	SF/s11n/s11n/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-nobuildfiles
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for easily serializing a wide variety of objects
 
-USES=		uidfix
+USES=		uidfix zip
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_LDCONFIG=	yes
 

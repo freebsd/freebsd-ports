@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 USES=		shebangfix
 SHEBANG_FILES=	ganttproject
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

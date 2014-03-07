@@ -11,7 +11,7 @@ COMMENT=	Full-featured database management tool written in PHP
 
 LICENSE=	APACHE20
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 USE_PHP=	mssql mysql odbc pgsql session pdo_sqlite
 SUB_FILES=	pkg-message

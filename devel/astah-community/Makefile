@@ -18,7 +18,7 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-acc
 
 RESTRICTED=	License restrictions -- See http://astah.net/faq/community/enduser-license-agreement
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 REVISION=	d254c5

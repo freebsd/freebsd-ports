@@ -11,8 +11,7 @@ DISTNAME=	NaturalDocs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible, multi-language source code documentation generator
 
-USES=		perl5
-USE_ZIP=	yes
+USES=		perl5 zip
 USE_PERL5=	run
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

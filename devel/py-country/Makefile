@@ -12,7 +12,7 @@ DISTNAME=	pycountry-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Python API for ISO country, subdivision, language and currency
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

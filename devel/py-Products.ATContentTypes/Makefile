@@ -41,7 +41,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}archetypes.referencebrowserwidget>=0:${PORTS
 
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
-USE_ZIP=		yes
-USES=			zope
+USES=			zope zip
 
 .include <bsd.port.mk>

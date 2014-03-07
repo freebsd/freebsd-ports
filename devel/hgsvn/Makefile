@@ -15,9 +15,9 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion \
 		hg:${PORTSDIR}/devel/mercurial
 
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_ZIP=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
 

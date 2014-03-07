@@ -20,9 +20,8 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386
 
-USES=		gmake perl5
+USES=		gmake perl5 zip
 USE_PERL5=	build
-USE_ZIP=	yes
 
 GCC_VER=	2.7.2
 GCC_DIR=	${WRKDIR}/gcc-${GCC_VER}

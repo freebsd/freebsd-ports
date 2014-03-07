@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Premake/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Writes build scripts
@@ -16,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/Premake-${PORTVERSION}
 
-USES=		gmake dos2unix
+USES=		gmake dos2unix zip
 
 PLIST_FILES=	bin/premake
 

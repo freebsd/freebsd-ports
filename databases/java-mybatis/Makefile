@@ -17,7 +17,7 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	SQL Mapping Framework
 
 USE_JAVA=	yes
-USE_ZIP=	yes
+USES=		zip
 LICENSE=	APACHE20
 NO_BUILD=	yes
 
