@@ -6,6 +6,7 @@ PORTVERSION=	2.4.4
 CATEGORIES=	archivers games
 MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
 DISTNAME=	hllib${PORTVERSION:S/.//g}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Utility to extract data from various Half-Life file formats
@@ -14,8 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libhl.so:${PORTSDIR}/games/hllib
 
-USE_DOS2UNIX=	yes
-USE_ZIP=	yes
+USES=		dos2unix
 WRKSRC=		${WRKDIR}/HLExtract
 
 PATCH_WRKSRC=	${WRKDIR}
