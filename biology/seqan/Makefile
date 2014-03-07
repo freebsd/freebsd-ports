@@ -16,9 +16,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD=${WRKSRC}/seqan/LICENSE
 LICENSE_FILE_GPLv3=${WRKSRC}/apps/LICENSE
 
-USE_ZIP=	yes
-
-USES=		cmake:outsource
+USES=		cmake:outsource zip
 CMAKE_SOURCE_PATH=${WRKSRC}/cmake
 USE_PYTHON_BUILD=yes
 MAKE_JOB_SAFE=	yes

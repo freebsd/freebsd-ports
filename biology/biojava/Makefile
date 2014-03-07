@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Open-source Java tools for processing biological data
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes

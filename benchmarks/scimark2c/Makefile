@@ -6,10 +6,11 @@ DISTVERSION=	2_1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://math.nist.gov/scimark2/
 DISTNAME=	${PORTNAME:S/2/${DISTVERSION}/}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	ANSI C version of the SciMark2 benchmark
+
+USES=		zip
 
 PLIST_FILES=	bin/scimark2
 WRKSRC=		${WRKDIR}
