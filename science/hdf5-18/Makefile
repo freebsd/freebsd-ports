@@ -3,6 +3,7 @@
 
 PORTNAME=	hdf5
 PORTVERSION=	1.8.10
+PORTREVISION=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/current/src/ \
@@ -18,6 +19,7 @@ OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
 
 CONFLICTS_INSTALL=	hdf-4.[0-9]* hdf5-1.6.[0-9]*
 
+USES=		libtool
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
