@@ -17,6 +17,8 @@ LICENSE=	ISCL
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
 ISCVERSION=	9.8.7
 
+PORTSCOUT=	limit:^9.8.
+
 MAKE_JOBS_UNSAFE=	yes
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
