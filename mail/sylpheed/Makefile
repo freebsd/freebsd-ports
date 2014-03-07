@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	sylpheed
-PORTVERSION=	3.3.0
-PORTREVISION=	3
+PORTVERSION=	3.3.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Lightweight, featureful, and fast GTK+ based e-mail client
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
