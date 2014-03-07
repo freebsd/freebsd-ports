@@ -13,12 +13,8 @@ COMMENT=	Text-based TCP stream sniffer
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 
-MANLANG=	"" it
-MAN8=		tcpick.8
-
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${PREFIX}/man/it/man8
-	${MV} ${PREFIX}/man/man8/tcpick_italian.8 ${PREFIX}/man/it/man8/tcpick.8
+	${MKDIR} ${STAGEDIR}${PREFIX}/man/it/man8
+	${MV} ${STAGEDIR}${PREFIX}/man/man8/tcpick_italian.8 ${STAGEDIR}${PREFIX}/man/it/man8/tcpick.8
 
 .include <bsd.port.mk>
