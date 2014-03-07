@@ -3,7 +3,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.4.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -41,8 +41,8 @@ PLIST_DIRS=	include/memcached
 PORTDOCS=	protocol.txt readme.txt
 
 CFLAGS+=	-fstack-protector \
-		-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/event2/compat
+		-I${LOCALBASE}/include/event2/compat \
+		-I${LOCALBASE}/include
 
 DTRACE_COFNIGURE_ENABLE=	dtrace
 
@@ -65,16 +65,13 @@ BROKEN=			DTRACE broken with gcc/clang - reported upstream
 post-patch:
 	@${REINPLACE_CMD} -e "s,-levent,-levent-2.0,g" ${WRKSRC}/configure
 
-post-configure:
-	@${REINPLACE_CMD} -e 's#doc/memcached.1##' ${WRKSRC}/Makefile
-
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/memcached-tool ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
+
 
 regression-test: test
 test: build
