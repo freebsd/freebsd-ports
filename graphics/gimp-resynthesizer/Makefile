@@ -20,10 +20,9 @@ GH_COMMIT=	28cade5
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig compiler:nestedfct
 USE_AUTOTOOLS=	aclocal automake
 AUTOMAKE_ARGS=	--add-missing
-USE_GCC=	any # uses nested functions (gcc ext.)
 
 OPTIONS_DEFINE=	THREADS
 THREADS_DESC=	Threading support (produces nondeterministic results)
