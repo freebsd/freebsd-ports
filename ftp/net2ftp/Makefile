@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	avk@vl.ru
 COMMENT=	PHP scripts to work with ftp
 
-USE_ZIP=	YES
+USES=		zip
 NO_BUILD=	YES
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ftp mysql pcre session zlib
