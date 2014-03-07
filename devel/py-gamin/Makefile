@@ -21,9 +21,8 @@ USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} \
 		--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc
 
-NO_STAGE=	yes
 post-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${STAGEDIR}${PYTHON_SITELIBDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include "${MASTERDIR}/Makefile"
