@@ -3,6 +3,8 @@ bin/centerim
 bin/cimconv
 bin/cimextracthistory.pl
 bin/cimformathistory
+man/man1/cimconv.1.gz
+man/man1/centerim.1.gz
 %%DATADIR%%/email.wav
 %%DATADIR%%/msg.wav
 %%DATADIR%%/offline.wav
