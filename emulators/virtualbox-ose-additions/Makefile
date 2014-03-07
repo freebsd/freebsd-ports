@@ -1,5 +1,5 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: jkim/emulators/virtualbox-ose-additions/Makefile 23406 2014-02-21 19:10:07Z jkim $
+# $FreeBSD: jkim/emulators/virtualbox-ose-additions/Makefile 23858 2014-03-05 18:45:55Z jkim $
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.3.8
@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		as86:${PORTSDIR}/devel/dev86 \
 		kmk:${PORTSDIR}/devel/kBuild
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
@@ -35,7 +34,6 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--disable-xpcom --disable-sdl-ttf --disable-pulse \
 		--disable-alsa --disable-dbus --disable-python
 
-CONFLICTS=	bcc-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-additions-devel-[3,4]* virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]*
 
 OPTIONS_DEFINE=	DEBUG X11 OPENGL
@@ -116,7 +114,8 @@ post-patch:
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS = ${VBOX_WITH_X11}' >> ${WRKSRC}/LocalConfig.kmk
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
-	    -e 's| -fno-merge-constants||' ${WRKSRC}/Config.kmk
+	    -e 's| -fno-merge-constants||' \
+	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
 	@${ECHO} 'VBOX_GCC_Wno-unused-parameter = -Wno-unused-parameter' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \

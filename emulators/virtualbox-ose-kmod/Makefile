@@ -1,5 +1,5 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: jkim/emulators/virtualbox-ose-kmod/Makefile 22246 2014-01-25 01:20:03Z jkim $
+# $FreeBSD: jkim/emulators/virtualbox-ose-kmod/Makefile 23858 2014-03-05 18:45:55Z jkim $
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.3.8
@@ -16,9 +16,7 @@ COMMENT=	VirtualBox kernel module for FreeBSD
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		as86:${PORTSDIR}/devel/dev86 \
-		kmk:${PORTSDIR}/devel/kBuild
+BUILD_DEPENDS=	kmk:${PORTSDIR}/devel/kBuild
 
 USES=		kmod
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
@@ -34,7 +32,6 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--disable-alsa --disable-dbus --disable-python \
 		--build-headless
 
-CONFLICTS=	bcc-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-4* virtualbox-ose-kmod-legacy-4*
 
 OPTIONS_DEFINE=	DEBUG VIMAGE

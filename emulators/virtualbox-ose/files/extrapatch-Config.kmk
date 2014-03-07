@@ -1,6 +1,22 @@
---- Config.kmk.orig	2012-05-24 01:15:53.393052000 +0200
-+++ Config.kmk	2012-05-24 01:16:15.883067161 +0200
-@@ -3188,7 +3188,7 @@
+--- Config.kmk.orig	2013-11-29 14:20:04.000000000 -0500
++++ Config.kmk	2013-12-18 18:40:34.000000000 -0500
+@@ -3036,6 +3036,7 @@
+  ifeq ($(VBOX_LDR_FMT32),elf)
+  TEMPLATE_VBoxRc_TOOL                = $(VBOX_GCC32_TOOL)
+  TEMPLATE_VBoxRc_CXXFLAGS            = -nostdinc -g $(VBOX_GCC_pipe) $(VBOX_GCC_WERR) $(VBOX_GCC_PEDANTIC_CXX) $(VBOX_GCC32_Wno-variadic-macros) -fno-exceptions $(VBOX_GCC_GC_OPT) $(VBOX_GCC_GC_FP) -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-strict-aliasing $(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_fvisibility-hidden) $(VBOX_GCC_fvisibility-inlines-hidden) -fno-rtti
++ TEMPLATE_VBoxRc_CXXFLAGS.freebsd    = -fno-builtin
+  TEMPLATE_VBoxRc_CFLAGS              = -nostdinc -g $(VBOX_GCC_pipe) $(VBOX_GCC_WERR) $(VBOX_GCC_PEDANTIC_C)   $(VBOX_GCC32_Wno-variadic-macros) -fno-exceptions $(VBOX_GCC_GC_OPT) $(VBOX_GCC_GC_FP) -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-strict-aliasing $(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_fvisibility-hidden)
+   ifeq ($(KBUILD_TARGET),solaris)
+    TEMPLATE_VBoxRc_LDFLAGS           = -r
+@@ -3167,6 +3168,7 @@
+ TEMPLATE_VBoxR0_TOOL                = $(VBOX_GCC_TOOL)
+ TEMPLATE_VBoxR0_CFLAGS              = -nostdinc -g $(VBOX_GCC_pipe) $(VBOX_GCC_WERR) $(VBOX_GCC_PEDANTIC_C)   $(VBOX_GCC_Wno-variadic-macros) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) -fno-strict-aliasing -fno-exceptions $(VBOX_GCC_fno-stack-protector) -fno-common $(VBOX_GCC_fvisibility-hidden) -std=gnu99
+ TEMPLATE_VBoxR0_CXXFLAGS            = -nostdinc -g $(VBOX_GCC_pipe) $(VBOX_GCC_WERR) $(VBOX_GCC_PEDANTIC_CXX) $(VBOX_GCC_Wno-variadic-macros) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) -fno-strict-aliasing -fno-exceptions $(VBOX_GCC_fno-stack-protector) -fno-common $(VBOX_GCC_fvisibility-inlines-hidden) $(VBOX_GCC_fvisibility-hidden) -fno-rtti
++TEMPLATE_VBoxR0_CXXFLAGS.freebsd    = -fno-builtin
+ TEMPLATE_VBoxR0_CFLAGS.amd64        = -m64 -mno-red-zone -mcmodel=kernel -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-asynchronous-unwind-tables -ffreestanding
+ TEMPLATE_VBoxR0_CXXFLAGS.amd64      = -m64 -mno-red-zone -mcmodel=kernel -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-asynchronous-unwind-tables
+ ifeq ($(KBUILD_TARGET),solaris)
+@@ -3188,7 +3190,7 @@
  		| xargs -J% objcopy % $(out)
  
  ## Strip debug info (comment out if debugging or something).
