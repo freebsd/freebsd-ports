@@ -1,0 +1,12 @@
+@group netmon
+@mode 0550
+%%GD%%sbin/ifgraph
+sbin/netmond
+sbin/netmond_watchdog
+@mode u+s
+sbin/netmondctl
+@mode
+@group wheel
+etc/netmond.conf.sample
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/ru
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en

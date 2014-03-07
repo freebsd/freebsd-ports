@@ -3,78 +3,51 @@
 
 PORTNAME=	netmond
 PORTVERSION=	2.2b6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		ftp://ftp.risp.ru/pub/RinetSoftware/
-DISTNAME=	netmond-2.2-b6
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/:daemon \
+		ftp://ftp.risp.ru/pub/RinetSoftware/:daemon \
+		http://vfom.narod.ru/download/:docs
 EXTRACT_SUFX=	.tgz
-
-PATCH_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		http://vfom.narod.ru/download/
-PATCH_VERSION=	1
-PATCHFILES=	${DISTNAME}.patch${PATCH_VERSION}${EXTRACT_SUFX}  ${DISTNAME}.docs${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-2.2-b6${EXTRACT_SUFX}:daemon
+EXTRACT_ONLY=	${PORTNAME}-2.2-b6${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netmond - IP network monitoring daemon
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.2-b6
+
 USERS=	netmon
 GROUPS=	${USERS}
 
-BROKEN=		Does not patch
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2014-02-27
-
-#MK_IFGRAPH=	yes
-PATCHDIR=	${WRKDIR}/patches
-
 GNU_CONFIGURE=	yes
+DISABLE_MAKE_JOBS=yes
 USES=		bison
 CFLAGS+=	-Wno-return-type
 
-BINOWN=		root
-BINGRP=		netmon
-BINMODE=	0550
-
-PLIST_FILES=	sbin/netmond sbin/netmond_watchdog sbin/netmondctl \
-		etc/netmond.conf.sample
 USE_RC_SUBR=	netmond
 SUB_FILES+=	pkg-message netmond_watchdog netmondctl
-PORTDOCS=	README README.ru CHANGES README.port.eng README.port.ru index.html netmond.css en/ ru/
+PORTDOCS=	README README.ru CHANGES README.port.eng README.port.ru index.html netmond.css en/* ru/*
 
 OPTIONS_DEFINE=	DOCS GD
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+GD_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+GD_CONFIGURE_OFF=	--without-ifgraph
+
+DOCS_DISTFILES= ${PORTNAME}-2.2-b6.docs${EXTRACT_SUFX}:docs
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGD}
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
-PLIST_FILES+=	sbin/ifgraph
-.else
-CONFIGURE_ARGS=	--without-ifgraph
-.endif
-
-post-extract:
-	${MKDIR} ${PATCHDIR}
-	${TAR} -zxf ${DISTDIR}/${DISTNAME}.patch${PATCH_VERSION}${EXTRACT_SUFX} -C ${PATCHDIR}
-	${CP} ${PATCHDIR}/pipe.c ${WRKSRC}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/netmond      ${PREFIX}/sbin/netmond
-.if defined(MK_IFGRAPH)
-	${INSTALL_PROGRAM} ${WRKSRC}/ifgraph      ${PREFIX}/sbin/ifgraph
+	${INSTALL_PROGRAM} ${WRKSRC}/netmond ${STAGEDIR}${PREFIX}/sbin/netmond
+.if ${PORT_OPTIONS:MGD}
+	${INSTALL_PROGRAM} ${WRKSRC}/ifgraph ${STAGEDIR}${PREFIX}/sbin/ifgraph
 .endif
-	${INSTALL_SCRIPT}   ${WRKDIR}/netmond_watchdog ${PREFIX}/sbin/netmond_watchdog
-	${INSTALL_SCRIPT}   ${WRKDIR}/netmondctl ${PREFIX}/sbin/netmondctl
-	${INSTALL_DATA} ${WRKSRC}/netmon.conf.sample ${PREFIX}/etc/netmond.conf.sample
-	${CHMOD} u+s ${PREFIX}/sbin/netmond
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR}  ${DOCSDIR}
-	${CHMOD} 755 ${DOCSDIR}
-	${TAR}  -zxf ${DISTDIR}/${DISTNAME}.docs${EXTRACT_SUFX} -C ${DOCSDIR}
-.endif
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKDIR}/netmond_watchdog ${STAGEDIR}${PREFIX}/sbin/netmond_watchdog
+	${INSTALL_SCRIPT} ${WRKDIR}/netmondctl ${STAGEDIR}${PREFIX}/sbin/netmondctl
+	${INSTALL_DATA} ${WRKSRC}/netmon.conf.sample ${STAGEDIR}${PREFIX}/etc/netmond.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${TAR} -zxf ${DISTDIR}/${PORTNAME}-2.2-b6.docs${EXTRACT_SUFX} -C ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
