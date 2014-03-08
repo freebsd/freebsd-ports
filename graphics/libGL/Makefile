@@ -30,4 +30,12 @@ LIBGLREVISION=	4
 CONFIGURE_ARGS+=--disable-gallium-intel
 .endif
 
+.if !defined(WITH_NEW_XORG)
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/include/GL/glu.h
+	${RM} ${STAGEDIR}${PREFIX}/include/GL/glu_mangle.h
+	${RM} ${STAGEDIR}${PREFIX}/include/GL/internal/dri_interface.h
+	${RM} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/dri.pc
+.endif
+
 .include <bsd.port.mk>
