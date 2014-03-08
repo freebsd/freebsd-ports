@@ -1,5 +1,9 @@
 %%JAVASHAREDIR%%/unifi/readme.txt
 %%JAVASHAREDIR%%/unifi/bin/mongod
+%%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.1.10.2519/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U2S48/3.1.10.2519/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.1.10.2519/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.1.10.2519/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/bundles.json
 %%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.1.10.2519/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/U2S48/3.1.10.2519/firmware.bin
@@ -54,6 +58,229 @@
 %%JAVASHAREDIR%%/unifi/lib/tomcat-juli.jar
 %%JAVASHAREDIR%%/unifi/lib/tomcat-util.jar
 %%JAVASHAREDIR%%/unifi/webapps/ROOT.war
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/BasicSCPD.xml
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/WEB-INF/web.xml
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/gsmap_iframe.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/head_include.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/hotspot.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/iframe.html
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/iframe_uploaded.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/controls/refresh-control.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/controls/welcome.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/dialogs/access-point-dialog-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/dialogs/conn-dropped.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/dialogs/gmap-dialog.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/dialogs/sta-dialog-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/panels/quick-info-panel-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/settings/settings-admins-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/settings/settings-controller-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/settings/settings-guest-control-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/settings/settings-system-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/settings/settings-usergroups-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/settings/settings-wireless-networks-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs/access-points-tab-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs/admin-tab-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs/alerts-tab-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs/guests-tab-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs/insight-tab-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs/map-tab-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs/recent-events-tab-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs/settings-tab-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs/statistics-tab-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs/users-tab-content.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/index.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/cli/edge.css
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/cli/usercss-0.css
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/cli/usercss-1.css
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/cli/usercss-2.css
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/cli/usercss-3.css
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/unifi.3.1.10.css
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/flex/expressInstall.swf
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-hotspot.3.1.10.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-lib.3.1.10.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-manage.3.1.10.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-msg_en_US.3.1.10.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-msg_zh_TW.3.1.10.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-shell.3.1.10.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-waiting.3.1.10.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-wizard.3.1.10.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi.3.1.10.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/swf/MapApplet.swf
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/login.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/manage.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/alerts/blinking-alarm-icon.gif
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/alerts/blinking-alert-icon-active.gif
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/alerts/blinking-alert-icon.gif
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/alerts/small-alarm-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/data-table/active-slider.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/data-table/arrow.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/data-table/inactive-slider.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/data-table/page-number-background.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/data-table/slider-handle.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/data-table/table-footer-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/data-table/table-header-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2HSR/connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2HSR/disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2HSR/icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2HSR/icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2L48/connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2L48/disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2L48/icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2L48/icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2M/connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2M/disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2M/icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2M/icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2O/connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2O/disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2O/icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2O/icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2S48/connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2S48/disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2S48/icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2S48/icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U5O/connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U5O/disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U5O/icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U5O/icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7E/connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7E/disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7E/icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7E/icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7O/connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7O/disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7O/icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7O/icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7P/connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7P/disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7P/icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7P/icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/ap-connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/ap-disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/ap-icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/ap-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/blue-status-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/green-status-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/orange-status-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/p2N/connected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/p2N/disconnected-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/p2N/icon-16.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/p2N/icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/red-status-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/sta-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/tab-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/a-pwr.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/a-pwrsave.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/ac-pwr.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/ac-pwrsave.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/b-pwr.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/b-pwrsave.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/button-bg-hover.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/button-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/connected-ap-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/dark-panel-header-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/disconnected-ap-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/favicon.ico
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/g-pwr.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/g-pwrsave.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/hide-button.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/loader-black.gif
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/na-pwr.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/na-pwrsave.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/ng-pwr.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/ng-pwrsave.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/page-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/panel-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/pending-ap-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/quick-info-panel-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/quick-info-panel-drop-down-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/selected-tab-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/selected-tab-white-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/ubntui-alpha-sprites.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/ui-icons_222222_256x240.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/unifi-logo-shadow-small.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/unifi-logo-shadow.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/unifi-logo.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global/unselected-tab-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/add-guest-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/add-secured-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/admins-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/blocked-devices-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/bread-crumbs-decoration.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/controller-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/fieldset-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/guest-control-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/guest-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/policies-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/secured-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/system-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings/wireless-networks-icon.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/bg_fallback.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/button-spinner-circle.gif
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/button-spinner.gif
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/fallback-states.jpg
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/icon_sprite.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/progress_bar.gif
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/slider_handles.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/ui-icons-colors.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/ui-icons_256x240-alternate-hover.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/ui-icons_256x240-alternate.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/ui-icons_256x240-color.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/ui-icons_256x240-dark-hover.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/ui-icons_256x240-dark.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/ui-icons_256x240-default.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/ui-icons_256x240-disabled.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/ui-icons_256x240-hover.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/ui-icons_256x240-muted.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui/working-indicator.gif
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/wizard/header-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/wizard/header-error-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/wizard/nav-arrow-short.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/wizard/navigation-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/media/wizard/window-gradient-bg.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/pages/voucher.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/shell.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/super.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/temp/map.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/upnp.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/waiting.jsp
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/wizard.jsp
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/temp
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/pages
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/wizard
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/ubntui
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/p2N
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7P
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7O
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7E
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U5O
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2S48
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2O
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2M
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2L48
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2HSR
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/data-table
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/alerts
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/swf
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/flex
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/cli
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/settings
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/panels
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/dialogs
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/controls
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/WEB-INF
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/META-INF
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT
 @dirrmtry %%JAVASHAREDIR%%/unifi/webapps
 @dirrmtry %%JAVASHAREDIR%%/unifi/lib
 @dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.1.10.2519
@@ -69,5 +296,5 @@
 @dirrmtry %%JAVASHAREDIR%%/unifi/conf
 @dirrmtry %%JAVASHAREDIR%%/unifi/bin
 @dirrmtry %%JAVASHAREDIR%%/unifi
-@exec chown -R %%USERS%%:%%GROUPS%% %D/%%JAVASHAREDIR%%/unifi
+@exec chown -R unifi:unifi %D/%%JAVASHAREDIR%%/unifi
 @exec ln -sf %D/bin/mongod %D/%%JAVASHAREDIR%%/unifi/bin/mongod
