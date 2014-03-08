@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	posix_ipc
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.8
 CATEGORIES=	devel python
-MASTER_SITES=	http://semanchuk.com/philip/posix_ipc/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
