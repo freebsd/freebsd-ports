@@ -3,6 +3,7 @@
 
 PORTNAME=	qpy
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/qpy/ \
 		LOCAL/sunpoet
@@ -14,12 +15,14 @@ COMMENT=	Generating safely-quoted html text from python code
 OPTIONS_DEFINE=	DOCS
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-MAKE_ENV=	USE_DISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 USE_PYDISTUTILS=yes
 USE_PYTHON=	2
 
 PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
+
+post-build:
+	@${STRIP_CMD} ${WRKSRC}/build/lib.*/qpy/quoted.so
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
