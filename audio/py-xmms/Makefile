@@ -2,26 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	xmms
-PORTVERSION=	2.02
-PORTREVISION=	4
+PORTVERSION=	2.07
 CATEGORIES=	audio python
-MASTER_SITES=	http://people.via.ecp.fr/~flo/2002/PyXMMS/dist/
+MASTER_SITES=	http://people.via.ecp.fr/~flo/projects/PyXMMS/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyxmms-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS Remote Control Library for Python
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
-
 BUILD_DEPENDS=	${XMMS_CONFIG}:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
-USE_PYTHON=		2
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	pyxmms
 USE_BZIP2=	yes
 USE_GNOME=	glib12
 XMMS_CONFIG?=	${LOCALBASE}/bin/xmms-config
