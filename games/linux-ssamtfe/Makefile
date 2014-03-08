@@ -24,6 +24,10 @@ RESTRICTED=	Redistribution is limited, see license
 PORTDOCS=	README.liflg ShellSymbols.txt changes.txt notes.txt
 SUB_FILES=	pkg-message
 
+.if !defined(CDROM_MOUNT)
+IGNORE=		${PKGNAME} requires CDROM_MOUNT set to mount point of CD
+.endif
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
@@ -57,10 +61,6 @@ post-patch:
 		-e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/${PORTNAME}
 
 do-install:
-.if !defined(CDROM_MOUNT)
-	@${ECHO_CMD} "${PKGNAME} requires CDROM_MOUNT set to mount point of CD"
-	@${FALSE}
-.endif
 .if !exists(${CDROM_MOUNT}/Install/Mods/SeriousSamTbn.tex)
 	@${ECHO_CMD} "${PKGNAME} requires a retail First Encounter disc"
 	@${FALSE}
