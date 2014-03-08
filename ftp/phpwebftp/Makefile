@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A set of PHP-scripts to manage FTP over the web
 
-USZS=		zip
+USES=		zip
 NO_BUILD=	yes
 USE_PHP=	ftp
 PHPWEBFTPDIR?=	www/${PORTNAME}
