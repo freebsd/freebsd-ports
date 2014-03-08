@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.2:${PORTSDIR}/www/py-django \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		Does not install
 CONFLICTS=	${PYTHON_PKGNAMEPREFIX}django-profiles-[0-9]* \
 		${PYTHON_PKGNAMEPREFIX}django-registration-[0-9]*
 
