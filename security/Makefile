@@ -276,6 +276,7 @@
     SUBDIR += libp11
     SUBDIR += libprelude
     SUBDIR += libpreludedb
+    SUBDIR += libpwquality
     SUBDIR += libpwstor
     SUBDIR += libscrypt
     SUBDIR += libsecret
