@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
-USES=		dos2unix zip
+USES=		dos2unix zip:infozip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
