@@ -13,7 +13,6 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Native XML Database
 
-USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_RC_SUBR=	eXist
