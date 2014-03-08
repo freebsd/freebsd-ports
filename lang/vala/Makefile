@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/lang/vala/Makefile 18634 2013-07-26 10:42:35Z kwm $
+#   $MCom: ports/trunk/lang/vala/Makefile 19019 2014-03-08 14:51:46Z kwm $
 
 PORTNAME=	vala
 PORTVERSION=	0.20.1
@@ -12,30 +12,27 @@ COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21
 
-USES=		bison gettext gmake pathfix pkgconfig
+USES=		bison gettext gmake libtool pathfix pkgconfig
 USE_XZ=		yes
-USE_GNOME=	glib20 gnomeprefix libxslt
+USE_GNOME=	glib20 gnomeprefix libxslt introspection:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
-MAN1?=		valac.1 valac-${VALA_VER}.1
 VALA_VER=	${PORTVERSION:R}
 
 PLIST_SUB=	VERSION=${VALA_VER}
 
 .if defined(VALA_SLAVE)
-LIB_DEPENDS+=	vala-${VALA_VER}.0:${PORTSDIR}/lang/vala
+LIB_DEPENDS+=	libvala-${VALA_VER}.so:${PORTSDIR}/lang/vala
 CONFIGURE_ARGS+=--enable-vapigen
 BUILD_DEPENDS+=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS+=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
-MAN1=		vala-gen-introspect.1 vapigen.1
 .else
 CONFIGURE_ARGS+=--disable-vapigen
 .endif
 
-NO_STAGE=	yes
 post-patch:
 # We cheat here, because vala records vapigen related stuff in its .pc file
 # This makes vapigen work again, although it might get weird when
@@ -50,17 +47,19 @@ post-patch:
 .if defined(VALA_SLAVE)
 pre-build:
 	@cd ${WRKSRC} && ${GMAKE} version.h
-	@cd ${WRKSRC}/gobject-introspection && ${GMAKE} libgidl.la && \
-		${GMAKE} gen-introspect
+	@cd ${WRKSRC}/gobject-introspection && ${MAKE_CMD} libgidl.la && \
+		${MAKE_CMD} gen-introspect
+	@cd ${WRKSRC}/vapigen && ${MAKE_CMD} all
 
 post-install:
-	@cd ${WRKSRC}/gobject-introspection && ${GMAKE} install
-	@${INSTALL_MAN} ${WRKSRC}/doc/vapigen.1 ${WRKSRC}/doc/vala-gen-introspect.1 \
-		 ${PREFIX}/man/man1/
+	@cd ${WRKSRC}/gobject-introspection && DESTDIR=${STAGEDIR} ${GMAKE} install
+	${INSTALL_MAN} ${WRKSRC}/doc/vapigen.1 ${WRKSRC}/doc/vala-gen-introspect.1 \
+		 ${STAGEDIR}${PREFIX}/man/man1/
 .else
 post-install:
 	${LN} -fs ${PREFIX}/libdata/pkgconfig/libvala-${VALA_VER}.pc \
-		${PREFIX}/libdata/pkgconfig/vala-1.0.pc
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/vala-1.0.pc
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 .endif
 
 .include <bsd.port.mk>

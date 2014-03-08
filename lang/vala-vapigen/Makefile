@@ -17,5 +17,4 @@ PLIST=		${.CURDIR}/pkg-plist
 
 VALA_SLAVE=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
