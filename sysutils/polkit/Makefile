@@ -1,27 +1,22 @@
 # Created by: Koop Mast<kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/polkit/Makefile,v 1.23 2012/12/18 13:01:54 kwm Exp $
+#   $MCom: ports/trunk/sysutils/polkit/Makefile 19013 2014-03-08 07:50:57Z kwm $
 
 PORTNAME=	polkit
 PORTVERSION=	0.105
 PORTREVISION=	2
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/ \
-		http://miwibox.org/distfiles/
+MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for controlling access to system-wide components
 
-BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
-RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection \
-		dbus-launch:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+RUN_DEPENDS=	dbus-launch:${PORTSDIR}/devel/dbus
 
-USE_GNOME=	gnomehack glib20 intlhack gnomehier
-USE_GMAKE=	yes
-MAKE_JOBS_UNSAFE=	yes
+USE_GNOME=	glib20 intlhack gnomehier introspection
+USES=		gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gettext
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-authfw=pam \
@@ -36,18 +31,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	MANPAGES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml \
-    		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
-MAN1=		pkaction.1 pkcheck.1 pkexec.1 pkttyagent.1
-MAN8=		pklocalauthority.8 polkit.8 polkitd.8
+USE_GNOME+=	libxslt:build
+PLIST_SUB+=	MANPAGES=""
 .else
 CONFIGURE_ARGS+=--disable-man-pages
+PLIST_SUB+=	MANPAGES="@comment "
 .endif
 
 post-patch:
@@ -56,15 +50,11 @@ post-patch:
 		${WRKSRC}/src/examples/org.freedesktop.policykit.examples.pkexec.policy.in
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/dbus-1/system.d/
-	if [ ! -f ${PREFIX}/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf ]; then \
-		${INSTALL_DATA} ${WRKSRC}/data/org.freedesktop.PolicyKit1.conf \
-			${PREFIX}/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf ; \
-	fi
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dbus-1/system.d/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/polkit-1/rules.d/
 	${INSTALL_DATA} ${WRKSRC}/data/org.freedesktop.PolicyKit1.conf \
-		${PREFIX}/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.dist
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
+		${STAGEDIR}${PREFIX}/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.dist
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/polkit-1/extensions/lib*.so
 
 .include <bsd.port.mk>
