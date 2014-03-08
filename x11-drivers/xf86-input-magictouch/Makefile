@@ -8,6 +8,8 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org magictouch input driver
 
+BROKEN=		Does not compile
+
 .include <bsd.port.options.mk>
 
 .if defined(WITH_NEW_XORG)
