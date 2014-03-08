@@ -28,7 +28,6 @@ GNU_CONFIGURE=	yes
 INFO=		kpathsea web2c
 MAKE_FLAGS=	fmts= all_mems=
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
