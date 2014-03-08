@@ -32,7 +32,7 @@ you update your ports collection, before attempting any port upgrades.
   portmaster users:
 
   # portmaster -o devel/py-setuptoolsXX devel/py-setuptools
-  # portmaster -r devel/py-setuptools
+  # portmaster -r py\*setuptools
 
   portupgrade users:
 
