@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libsoup/Makefile 18456 2013-05-12 14:40:21Z kwm $
+#   $MCom: ports/trunk/devel/libsoup/Makefile 19016 2014-03-08 09:05:27Z kwm $
 
 PORTNAME=	libsoup
 PORTVERSION=	2.40.3
@@ -10,64 +10,66 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
+COMMENT=	SOAP (Simple Object Access Protocol) implementation in C
 
-BUILD_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking \
-		python2:${PORTSDIR}/lang/python2
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+BUILD_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
 
 USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gettext pathfix gmake pkgconfig
-USE_GNOME=	gnomehier glib20 libxml2 ltverhack referencehack intltool
+USES=		gettext gmake libtool pathfix pkgconfig
+USE_GNOME=	gnomehier glib20 libxml2 referencehack intltool
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_PYTHON_BUILD=	2
 CONFIGURE_ARGS=	--disable-more-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_SUB=	VERSION="2.4"
+LIBVERSION=	1.5.0
+PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
 
 .if defined(SOUP_SLAVE)
-USE_SQLITE=	yes
-LIB_DEPENDS+=	soup-2.4:${PORTSDIR}/devel/libsoup \
-		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+USE_SQLITE=	3
+LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 CONFIGURE_ARGS+=--with-gnome
 .else
-BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+USE_GNOME+=	introspection:build
 CONFIGURE_ARGS+=--without-gnome
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
+	 @${REINPLACE_CMD} -e 's|env python|env ${PYTHON_VERSION}|g' \
+		${WRKSRC}/libsoup/tld-parser.py
 
 .if defined(SOUP_SLAVE)
 do-build:
 	cd ${WRKSRC}/libsoup && ${GMAKE} libsoup-gnome-2.4.la
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.a ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.la ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.1 ${PREFIX}/lib/
-	cd ${WRKSRC}/libsoup && ${GMAKE} install-libsoupgnomeincludeHEADERS
+	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.la ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.1 ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.${LIBVERSION} ${STAGEDIR}${PREFIX}/lib/
+	cd ${WRKSRC}/libsoup && DESTDIR=${STAGEDIR} ${GMAKE} install-libsoupgnomeincludeHEADERS
 .endif
 
 post-install:
 .if defined(SOUP_SLAVE)
-	@${MKDIR} ${PREFIX}/libdata/pkgconfig
-	@${INSTALL_DATA} ${WRKSRC}/libsoup-gnome-2.4.pc \
-		${PREFIX}/libdata/pkgconfig/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/libsoup-gnome-2.4.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 .else
-	@${INSTALL_DATA} ${WRKSRC}/libsoup/soup-connection.h \
-	    	${PREFIX}/include/libsoup-2.4/libsoup/soup-connection.h
+	${INSTALL_DATA} ${WRKSRC}/libsoup/soup-connection.h \
+		${STAGEDIR}${PREFIX}/include/libsoup-2.4/libsoup/soup-connection.h
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsoup*.so*
 .endif
 
 .include <bsd.port.mk>
