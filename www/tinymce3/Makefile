@@ -8,7 +8,6 @@ MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/ \
 		LOCAL/sunpoet
 PKGNAMESUFFIX=	3
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
@@ -19,6 +18,7 @@ CONFLICTS_INSTALL=	tinymce-[0-24-9]*
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		zip
 
 post-extract:
 	@cd ${WRKSRC}/ && ${FIND} -s * -type d -empty | ${XARGS} -I % ${TOUCH} %/.keepme
