@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Broken 4 months already, will not build with either lisp compiler
-DEPRECATED=	Broken since more than 4 months
+DEPRECATED=	Broken for more than 4 months
 EXPIRATION_DATE=	2014-05-01
 
 GNU_CONFIGURE=	yes
