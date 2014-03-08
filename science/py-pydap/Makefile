@@ -13,8 +13,7 @@ COMMENT=	Implementation of the Opendap/DODS protocol
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:${PORTSDIR}/devel/py-setuptools \
-		paver:${PORTSDIR}/devel/py-paver \
+BUILD_DEPENDS=	paver:${PORTSDIR}/devel/py-paver \
 		${PYNUMPY}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>0:${PORTSDIR}/www/py-httplib2 \
 		${PYTHON_PKGNAMEPREFIX}Genshi>0:${PORTSDIR}/textproc/py-genshi \
