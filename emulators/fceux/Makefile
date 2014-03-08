@@ -2,30 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	fceux
-PORTVERSION=	2.2.1.1
-PORTREVISION=	2
+PORTVERSION=	2.2.2
 CATEGORIES=	emulators
-MASTER_SITES=	SF/fceultra/Source%20Code/${PORTVERSION:R}%20src/
+MASTER_SITES=	SF/fceultra/Source%20Code/${PORTVERSION}%20src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable NES/Famicom emulator based on Bero's original FCE
 
-USES=		pkgconfig
-USE_SCONS=	yes
+LICENSE=	GPLv2
+
+USES=		dos2unix pkgconfig scons
 SCONS_BUILDENV=	CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-SCONS_ARGS+=	--prefix="${PREFIX}"
-USE_SDL=	sdl
-USE_DOS2UNIX=	yes
+SCONS_ARGS+=	--prefix="${STAGEDIR}${PREFIX}"
+USE_SDL=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 RUN_DEPENDS+=	zenity:${PORTSDIR}/x11/zenity
-
-MAN6=		fceux.6 fceux-net-server.6
 
 OPTIONS_DEFINE=	FRAMESKIP OPENGL DEBUG LUA CREATE_AVI LOGO
 OPTIONS_SINGLE=	GUI
@@ -39,7 +36,6 @@ LOGO_DESC=		Enable a logoscreen when creating avis (SDL)
 GTK2_DESC=		Enable GTK2 GUI (SDL)
 GTK3_DESC=		Enable GTK3 GUI (SDL)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFRAMESKIP}
@@ -95,8 +91,6 @@ SCONS_ARGS+=	DEBUG=1
 SCONS_ARGS+=	DEBUG=0
 .endif
 
-.include <bsd.port.pre.mk>
-
 # Go find a better compiler, base cc does not support mm3dnow.h,
 # breaking the build:
 #
@@ -115,23 +109,39 @@ USE_GCC=	yes
 .endif
 .endif
 
+post-extract:
+	@${RM} ${WRKSRC}/output/*.dll ${WRKSRC}/output/*.chm
+
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PKGCONFIG%%|${LOCALBASE}/bin/pkg-config|g' \
+	${REINPLACE_CMD} -e 's|pkg-config|%%PKGCONFIG%%|g' \
+		${WRKSRC}/SConstruct
+	${REINPLACE_CMD} -e 's|sdl-config|%%SDLCONFIG%%|g' \
+		${WRKSRC}/SConstruct
+	${REINPLACE_CMD} -e 's|%%PKGCONFIG%%|${LOCALBASE}/bin/pkgconf|g' \
 		-e 's|%%SDLCONFIG%%|${LOCALBASE}/bin/sdl-config|g' \
 		${WRKSRC}/SConstruct
 	${REINPLACE_CMD} -e 's|usr|usr/local|g' ${WRKSRC}/fceux.desktop
+	${REINPLACE_CMD} -e '107 s|Exit(1)|#Exit(1)|g' \
+		${WRKSRC}/SConstruct
+	${REINPLACE_CMD} -e '194 s|/usr/local|${STAGEDIR}${PREFIX}|g' \
+		${WRKSRC}/SConstruct
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in TODO-PROJECT Videolog.txt cheat.html faq fcs.txt fm2.txt protocol.txt snes9x-lua.html
-	@${CP} ${WRKSRC}/documentation/${file} ${DOCSDIR}
+	@${CP} ${WRKSRC}/documentation/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MV} ${WRKSRC}/documentation/tech ${DOCSDIR}
+	@${MV} ${WRKSRC}/documentation/tech ${STAGEDIR}${DOCSDIR}
 .endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/fceux.desktop \
-		${PREFIX}/share/applications/fceux.desktop
+		${STAGEDIR}${PREFIX}/share/applications/fceux.desktop
 	@${INSTALL_DATA} ${WRKSRC}/fceux.png \
-		${PREFIX}/share/pixmaps/fceux.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/fceux.png
+	@${INSTALL_MAN} ${WRKSRC}/documentation/fceux-net-server.6 \
+		${STAGEDIR}${MAN6PREFIX}/man/man6
+	@${INSTALL_MAN} ${WRKSRC}/documentation/fceux.6 \
+		${STAGEDIR}${MAN6PREFIX}/man/man6
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

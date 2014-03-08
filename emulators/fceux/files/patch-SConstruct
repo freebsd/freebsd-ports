@@ -1,51 +1,6 @@
---- SConstruct.bak	2013-03-24 08:54:38.000000000 +0000
-+++ SConstruct	2013-03-24 09:04:53.000000000 +0000
-@@ -17,7 +17,7 @@
-   BoolVariable('FRAMESKIP', 'Enable frameskipping', 1),
-   BoolVariable('OPENGL',    'Enable OpenGL support', 1),
-   BoolVariable('LSB_FIRST', 'Least signficant byte first (non-PPC)', 1),
--  BoolVariable('DEBUG',     'Build with debugging symbols', 1),
-+  BoolVariable('DEBUG',     'Build with debugging symbols', 0),
-   BoolVariable('LUA',       'Enable Lua support', 1),
-   BoolVariable('SYSTEM_LUA','Use system lua instead of static lua provided with fceux', 1),
-   BoolVariable('SYSTEM_MINIZIP', 'Use system minizip instead of static minizip provided with fceux', 0),
-@@ -35,8 +35,8 @@
- env = Environment(options = opts)
- 
- #### Uncomment this for a public release ###
--env.Append(CPPDEFINES=["PUBLIC_RELEASE"])
--env['DEBUG'] = 0
-+#env.Append(CPPDEFINES=["PUBLIC_RELEASE"])
-+#env['DEBUG'] = 0
- ############################################
- 
- # LSB_FIRST must be off for PPC to compile
-@@ -101,13 +101,13 @@
-     if not conf.CheckLib('SDL'):
-       print 'Did not find libSDL or SDL.lib, exiting!'
-       Exit(1)
--    env.ParseConfig('sdl-config --cflags --libs')
-+    env.ParseConfig('%%SDLCONFIG%% --cflags --libs')
-   if env['GTK']:
-     if not conf.CheckLib('gtk-x11-2.0'):
-       print 'Could not find libgtk-2.0, exiting!'
-       Exit(1)
-     # Add compiler and linker flags from pkg-config
--    config_string = 'pkg-config --cflags --libs gtk+-2.0'
-+    config_string = '%%PKGCONFIG%% --cflags --libs gtk+-2.0'
-     if env['PLATFORM'] == 'darwin':
-       config_string = 'PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig/ ' + config_string
-     env.ParseConfig(config_string)
-@@ -115,7 +115,7 @@
-     env.Append(CCFLAGS = ["-D_GTK"])
-   if env['GTK3']:
-     # Add compiler and linker flags from pkg-config
--    config_string = 'pkg-config --cflags --libs gtk+-3.0'
-+    config_string = '%%PKGCONFIG%% --cflags --libs gtk+-3.0'
-     if env['PLATFORM'] == 'darwin':
-       config_string = 'PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig/ ' + config_string
-     env.ParseConfig(config_string)
-@@ -134,11 +134,11 @@
+--- SConstruct.bak	2013-12-28 05:22:18.356797171 -0600
++++ SConstruct	2013-12-28 05:23:52.750132324 -0600
+@@ -138,8 +138,8 @@
        # Should work on any *nix
        env.Append(CCFLAGS = ["-DLUA_USE_LINUX"])
      lua_available = False
@@ -53,37 +8,16 @@
 -      env.Append(LINKFLAGS = ["-ldl", "-llua5.1"])
 +    if conf.CheckLib('lua-5.1'):
 +      env.Append(LINKFLAGS = ["-llua-5.1"])
+       env.Append(CCFLAGS = ["-I/usr/include/lua5.1"])
        lua_available = True
      elif conf.CheckLib('lua'):
--      env.Append(LINKFLAGS = ["-ldl", "-llua"])
-+      env.Append(LINKFLAGS = ["-llua"])
-       lua_available = True
-     if lua_available == False:
-       print 'Could not find liblua, exiting!'
-@@ -156,6 +156,7 @@
-    
-   if env['OPENGL'] and conf.CheckLibWithHeader('GL', 'GL/gl.h', 'c', autoadd=1):
-     conf.env.Append(CCFLAGS = "-DOPENGL")
-+    env.ParseConfig('%%PKGCONFIG%% --cflags --libs gl')
-   conf.env.Append(CPPDEFINES = ['PSS_STYLE=1'])
-   
-   env = conf.Finish()
-@@ -173,7 +174,7 @@
-   env.Append(CPPDEFINES=["_DEBUG"], CCFLAGS = ['-g'])
- else:
-   env.Append(CCFLAGS = ['-O2'])
--
-+  env.Append(CPPDEFINES=["PUBLIC_RELEASE"])
- if env['PLATFORM'] != 'win32' and env['PLATFORM'] != 'cygwin' and env['CREATE_AVI']:
-   env.Append(CPPDEFINES=["CREATE_AVI"])
- else:
-@@ -200,18 +201,18 @@
+@@ -207,18 +207,18 @@
  auxlib_dst = 'bin/auxlib.lua'
  auxlib_inst_dst = prefix + '/share/fceux/auxlib.lua'
  
--fceux_h_src = 'src/drivers/win/help/fceux.chm'
+-fceux_h_src = 'output/fceux.chm'
 -fceux_h_dst = 'bin/fceux.chm'
-+#fceux_h_src = 'src/drivers/win/help/fceux.chm'
++#fceux_h_src = 'output/fceux.chm'
 +#fceux_h_dst = 'bin/fceux.chm'
  
 -env.Command(fceux_h_dst, fceux_h_src, [Copy(fceux_h_dst, fceux_h_src)])
