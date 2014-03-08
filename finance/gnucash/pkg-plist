@@ -10,7 +10,6 @@ etc/gnucash/config
 etc/gnucash/environment
 include/gnucash/Account.h
 include/gnucash/FreqSpec.h
-include/gnucash/GNCId.h
 include/gnucash/Query.h
 include/gnucash/QuickFill.h
 include/gnucash/Recurrence.h
@@ -714,7 +713,6 @@ share/gnucash/accounts/sk/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/sk/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/sk/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/sv_SE/bas_2012.gnucash-xea
-share/gnucash/accounts/sv_SE/swedish_small_business.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_TEKDUZ.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_carloan.gnucash-xea
