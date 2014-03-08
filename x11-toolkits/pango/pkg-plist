@@ -1,6 +1,6 @@
+@unexec /bin/rm %D/etc/pango/pango.modules
 bin/pango-querymodules
 bin/pango-view
-etc/pango/pango.modules
 include/pango-1.0/pango/pango-attributes.h
 include/pango-1.0/pango/pango-bidi-type.h
 include/pango-1.0/pango/pango-break.h
@@ -38,35 +38,34 @@ lib/girepository-1.0/Pango-1.0.typelib
 lib/girepository-1.0/PangoCairo-1.0.typelib
 lib/girepository-1.0/PangoFT2-1.0.typelib
 %%X11%%lib/girepository-1.0/PangoXft-1.0.typelib
-lib/libpango-1.0.a
 lib/libpango-1.0.la
 lib/libpango-1.0.so
 lib/libpango-1.0.so.0
-lib/libpangocairo-1.0.a
+lib/libpango-1.0.so.0.3400.1
 lib/libpangocairo-1.0.la
 lib/libpangocairo-1.0.so
 lib/libpangocairo-1.0.so.0
-lib/libpangoft2-1.0.a
+lib/libpangocairo-1.0.so.0.3400.1
 lib/libpangoft2-1.0.la
 lib/libpangoft2-1.0.so
 lib/libpangoft2-1.0.so.0
-%%X11%%lib/libpangoxft-1.0.a
+lib/libpangoft2-1.0.so.0.3400.1
 %%X11%%lib/libpangoxft-1.0.la
 %%X11%%lib/libpangoxft-1.0.so
 %%X11%%lib/libpangoxft-1.0.so.0
-lib/pango/%%VERSION%%/modules/pango-arabic-lang.a
+%%X11%%lib/libpangoxft-1.0.so.0.3400.1
 lib/pango/%%VERSION%%/modules/pango-arabic-lang.la
 lib/pango/%%VERSION%%/modules/pango-arabic-lang.so
-lib/pango/%%VERSION%%/modules/pango-basic-fc.a
 lib/pango/%%VERSION%%/modules/pango-basic-fc.la
 lib/pango/%%VERSION%%/modules/pango-basic-fc.so
-lib/pango/%%VERSION%%/modules/pango-indic-lang.a
 lib/pango/%%VERSION%%/modules/pango-indic-lang.la
 lib/pango/%%VERSION%%/modules/pango-indic-lang.so
 libdata/pkgconfig/pango.pc
 libdata/pkgconfig/pangocairo.pc
 libdata/pkgconfig/pangoft2.pc
 %%X11%%libdata/pkgconfig/pangoxft.pc
+man/man1/pango-querymodules.1.gz
+man/man1/pango-view.1.gz
 share/gir-1.0/Pango-1.0.gir
 share/gir-1.0/PangoCairo-1.0.gir
 share/gir-1.0/PangoFT2-1.0.gir
@@ -142,3 +141,4 @@ share/gtk-doc/html/pango/up.png
 @dirrm include/pango-1.0/pango
 @dirrm include/pango-1.0
 @dirrm etc/pango
+@exec %%LOCALBASE%%/bin/pango-querymodules > %D/etc/pango/pango.modules
