@@ -12,7 +12,7 @@ _INCLUDE_USES_ZIP_MK=	yes
 
 zip_ARGS?=	none
 
-EXTRACT_SUFX=	.zip
+EXTRACT_SUFX?=	.zip
 
 .if ${zip_ARGS} == infozip
 EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
