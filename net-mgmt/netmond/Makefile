@@ -47,7 +47,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/netmond_watchdog ${STAGEDIR}${PREFIX}/sbin/netmond_watchdog
 	${INSTALL_SCRIPT} ${WRKDIR}/netmondctl ${STAGEDIR}${PREFIX}/sbin/netmondctl
 	${INSTALL_DATA} ${WRKSRC}/netmon.conf.sample ${STAGEDIR}${PREFIX}/etc/netmond.conf.sample
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${TAR} -zxf ${DISTDIR}/${PORTNAME}-2.2-b6.docs${EXTRACT_SUFX} -C ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
