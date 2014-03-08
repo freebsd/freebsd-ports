@@ -10,7 +10,7 @@ DISTNAME=	t-blackjack-beta
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Simple Blackjack game in Java
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 PLIST_FILES=	bin/${PORTNAME} \
