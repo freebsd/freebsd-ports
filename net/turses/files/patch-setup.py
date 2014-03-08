@@ -1,5 +1,5 @@
---- ./setup.py.orig	2013-03-01 06:30:47.000000000 +1100
-+++ ./setup.py	2013-06-21 22:07:23.588789531 +1000
+--- ./setup.py.orig	2013-12-03 05:34:39.000000000 +1100
++++ ./setup.py	2014-03-08 14:28:44.204623431 +1100
 @@ -47,7 +47,7 @@
      REQUIREMENTS.append("argparse")
  
@@ -9,13 +9,10 @@
  
  try:
      long_description = open("README.rst").read() + "\n\n" + open("HISTORY.rst").read()
-@@ -80,5 +80,8 @@
+@@ -80,5 +80,6 @@
            "Programming Language :: Python :: 2.7",
            "Topic :: Communications",
        ],
-+      zip_safe=False,
 +      test_suite = 'nose.collector',
        install_requires=REQUIREMENTS,
--      tests_require=TEST_REQUIREMENTS)
-+      tests_require=TEST_REQUIREMENTS),
-+
+       tests_require=TEST_REQUIREMENTS)
