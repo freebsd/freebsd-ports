@@ -14,6 +14,8 @@ COMMENT=	Optical character recognition (OCR) utility
 
 RUN_DEPENDS=	pnmenlarge:${PORTSDIR}/graphics/netpbm
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USES=		shebangfix perl5
 USE_XORG=	x11
 MAKE_ENV=	MKDIR="${MKDIR}"

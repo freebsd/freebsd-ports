@@ -14,7 +14,8 @@ RESTRICTED=	apple.rom copyright is owned by Apple and cannot be distributed.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
-
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 PORTDOCS=	README
 PLIST_FILES=	bin/prodos share/apple2/prodos-2e.rom
 PLIST_DIRS=	share/apple2

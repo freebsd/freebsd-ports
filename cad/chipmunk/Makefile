@@ -19,6 +19,8 @@ COMMENT=	An electronic CAD system
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained since 1999
+EXPIRATION_DATE=	2014-04-10
 NO_WRKSUBDIR=	yes
 
 USE_XORG=	x11

@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small C++ tools library based on STL
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USES=		gettext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

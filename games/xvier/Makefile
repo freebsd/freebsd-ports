@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Throw stones into free columns
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		imake
 USE_XORG=	x11 xext

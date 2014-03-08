@@ -16,6 +16,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/gtkportscan bin/portscan
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 

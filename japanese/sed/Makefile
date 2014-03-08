@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU sed + multi-byte extension
 
+DEPRECATED=	Unmaintained since 1999
+EXPIRATION_DATE=	2014-04-10
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

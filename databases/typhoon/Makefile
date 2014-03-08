@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Relational database library
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes

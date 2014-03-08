@@ -11,6 +11,8 @@ DISTNAME=	gnome-breakout-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic breakout game
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes

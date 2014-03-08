@@ -13,6 +13,8 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast action arcade-style game for X Window
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USES=		imake
 USE_XORG=	x11 xext
 MAN6=		xkoules.6

@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Mailbox checker with sound and animation for X Window System
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USES=		imake
 USE_XORG=	xaw
 MAN1=		xmailbox.1

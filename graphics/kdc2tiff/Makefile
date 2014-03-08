@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

@@ -12,6 +12,8 @@ COMMENT=	A quick and easy implementation of the p5-Penguin module
 
 BUILD_DEPENDS=	p5-Penguin>=0:${PORTSDIR}/devel/p5-Penguin
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USES=		perl5
 USE_PERL5=	configure
 

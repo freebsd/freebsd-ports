@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun PC NFS authentication and printing server
 
+DEPRECATED=	Unmaintained since 1997
+EXPIRATION_DATE=	2014-04-09
 MAN8=		pcnfsd.8
 MANCOMPRESSED=	maybe
 PLIST_FILES=	libexec/rpc.pcnfsd

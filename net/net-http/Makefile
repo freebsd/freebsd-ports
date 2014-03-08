@@ -13,6 +13,8 @@ COMMENT=	A library for doing HTTP client-side programming in Guile
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

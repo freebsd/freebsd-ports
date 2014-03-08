@@ -12,6 +12,8 @@ MASTER_SITES=	SF/ods/ods/${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access Flashpoint Digita-based cameras, download images, and more
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 GNU_CONFIGURE=	yes
 
 NO_STAGE=	yes

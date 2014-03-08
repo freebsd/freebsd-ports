@@ -12,6 +12,8 @@ COMMENT=	The X File Manager
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
+DEPRECATED=	Unmaintained since 1999
+EXPIRATION_DATE=	2014-04-10
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xfm.1 xfmtype.1

@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Commercial Spreadsheet
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs

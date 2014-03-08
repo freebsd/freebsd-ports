@@ -15,6 +15,8 @@ COMMENT=	Graphical Resource Organizer Kit
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USES=		motif
 USE_XORG=	x11 xt
 MAKE_ENV=	MYCC="${CC}" DEBUG="${CFLAGS}" YO="" INCDIR="" \

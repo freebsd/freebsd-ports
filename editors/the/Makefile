@@ -15,6 +15,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"The Hessling Editor", an implementation of the xedit editor
 
+DEPRECATED=	Unmaintained since 1999
+EXPIRATION_DATE=	2014-04-10
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses \
 		--with-rexxincdir=${LOCALBASE}/include \

@@ -20,6 +20,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USES=		perl5
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 USE_SQLITE=	3

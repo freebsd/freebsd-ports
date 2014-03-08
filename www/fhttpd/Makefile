@@ -15,6 +15,8 @@ PLIST_SUB+=	LOGFILE=${LOGFILE}
 
 CXXFLAGS+=	-Wno-deprecated -Wno-write-strings
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/fhttpd.sh ${WRKSRC}

@@ -10,6 +10,8 @@ DISTFILES=	# none for now
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compatibility framework necessary for SVR4 emulation
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 PREFIX=		/	# distfile tared as "/compat/svr4"
 NO_MTREE=	yes
 NO_BUILD=	yes
