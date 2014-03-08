@@ -41,7 +41,7 @@ PLIST_SUB+=	SPEC_ROOT=${SPEC_ROOT}
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTFILES}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE?=You must purchase ${DISTFILES} from SPEC (${DOWNLOAD_URL}), place it in ${DISTDIR} and then run make again
 .endif
 
