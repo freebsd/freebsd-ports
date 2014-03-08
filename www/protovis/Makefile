@@ -5,7 +5,6 @@ PORTNAME=	protovis
 PORTVERSION=	3.2
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JavaScript graphical toolkit for data visualization
@@ -15,6 +14,7 @@ LICENSE=	BSD3CLAUSE
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_BUILD=	yes
+USES=		zip
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
