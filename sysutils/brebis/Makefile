@@ -12,6 +12,7 @@ COMMENT=	Fully automated backup checker
 
 LICENSE=	GPLv3
 
+BROKEN=		Fails to configure
 USE_PYTHON=	3.3+
 USE_PYDISTUTILS=	yes
 
