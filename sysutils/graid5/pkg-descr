@@ -1,5 +1,8 @@
 FreeBSD GEOM class for RAID5.
 
-This is RAID5 geom class, originally written by Arne Worner <arne_woerner@yahoo.com>
+  This is RAID5 geom class, originally written by
+Arne Worner <arne_woerner@yahoo.com>.
+
+  Now maintained by Lev Serebryakov <lev@FreeBSD.org>
 
 WWW: http://lev.serebryakov.spb.ru/download/graid5/
