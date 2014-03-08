@@ -9,8 +9,11 @@ include/vala-%%VERSION%%/valagee.h
 lib/libvala-%%VERSION%%.la
 lib/libvala-%%VERSION%%.so
 lib/libvala-%%VERSION%%.so.0
+lib/libvala-%%VERSION%%.so.0.0.0
 libdata/pkgconfig/libvala-%%VERSION%%.pc
 libdata/pkgconfig/vala-1.0.pc
+man/man1/valac-%%VERSION%%.1.gz
+man/man1/valac.1.gz
 share/aclocal/vala.m4
 share/devhelp/books/vala-%%VERSION%%/attributes.html
 share/devhelp/books/vala-%%VERSION%%/classes.html
