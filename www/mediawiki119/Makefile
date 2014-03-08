@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.19.11
+PORTVERSION=	1.19.12
 CATEGORIES=	www
-MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
+MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	119
 
 MAINTAINER=	wen@FreeBSD.org
@@ -12,7 +12,7 @@ COMMENT=	The wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki-1.2[0-9].*
+CONFLICTS=	mediawiki-1.2[0-9].* mediawiki12[0-9]-*
 
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 WANT_PHP_WEB=	yes
