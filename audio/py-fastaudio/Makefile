@@ -23,7 +23,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/fastaudio.so
 PLIST_DIRS=
 EXAMPLESDIR=	${LOCALBASE}/share/examples/py-${PORTNAME}
 
-USES=		zip
+USES=		zip:infozip
 NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
