@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Unittest features for Python 2.7 backported to Python 2.3+
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		zip
 USE_PYTHON=		2
