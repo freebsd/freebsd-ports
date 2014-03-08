@@ -6,19 +6,17 @@ PORTVERSION=	1.2.6
 CATEGORIES=	devel math
 MASTER_SITES=	http://math.nist.gov/tnt/
 DISTNAME=	${PORTNAME}_126
-.ifndef NOPORTDOCS
-DISTFILES=${DISTNAME}${EXTRACT_SUFX} tnt120doc.zip
-.endif
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tnt120doc.zip
 DIST_SUBDIR=	tnt
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Template Numerical Toolkit
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-USES=		zip
+USES=		zip:infozip
 NO_BUILD=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
