@@ -49,14 +49,17 @@ lib/libpolkit-agent-1.a
 lib/libpolkit-agent-1.la
 lib/libpolkit-agent-1.so
 lib/libpolkit-agent-1.so.0
+lib/libpolkit-agent-1.so.0.0.0
 lib/libpolkit-backend-1.a
 lib/libpolkit-backend-1.la
 lib/libpolkit-backend-1.so
 lib/libpolkit-backend-1.so.0
+lib/libpolkit-backend-1.so.0.0.0
 lib/libpolkit-gobject-1.a
 lib/libpolkit-gobject-1.la
 lib/libpolkit-gobject-1.so
 lib/libpolkit-gobject-1.so.0
+lib/libpolkit-gobject-1.so.0.0.0
 lib/polkit-1/extensions/libnullbackend.a
 lib/polkit-1/extensions/libnullbackend.la
 lib/polkit-1/extensions/libnullbackend.so
@@ -65,12 +68,20 @@ libdata/pkgconfig/polkit-backend-1.pc
 libdata/pkgconfig/polkit-gobject-1.pc
 libexec/polkit-agent-helper-1
 libexec/polkitd
+%%MANPAGES%%man/man1/pkaction.1.gz
+%%MANPAGES%%man/man1/pkcheck.1.gz
+%%MANPAGES%%man/man1/pkexec.1.gz
+%%MANPAGES%%man/man1/pkttyagent.1.gz
+%%MANPAGES%%man/man8/pklocalauthority.8.gz
+%%MANPAGES%%man/man8/polkit.8.gz
+%%MANPAGES%%man/man8/polkitd.8.gz
 share/dbus-1/system-services/org.freedesktop.PolicyKit1.service
 share/gir-1.0/Polkit-1.0.gir
 share/gir-1.0/PolkitAgent-1.0.gir
 share/locale/da/LC_MESSAGES/polkit-1.mo
 share/polkit-1/actions/org.freedesktop.policykit.examples.pkexec.policy
 share/polkit-1/actions/org.freedesktop.policykit.policy
+@dirrmtry share/polkit-1/rules.d
 @dirrmtry share/polkit-1/actions
 @dirrmtry share/polkit-1
 @dirrm lib/polkit-1/extensions
@@ -97,3 +108,4 @@ share/polkit-1/actions/org.freedesktop.policykit.policy
 @dirrmtry var/lib/polkit-1/localauthority
 @dirrmtry var/lib/polkit-1
 @dirrmtry var/lib
+@cwd
