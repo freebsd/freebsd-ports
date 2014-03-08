@@ -13,6 +13,8 @@ COMMENT=	GTK-based MUD client with triggers, aliases, colors, etc
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USE_BZIP2=	yes
 USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gconf2 gnomeprefix intlhack libglade2 vte

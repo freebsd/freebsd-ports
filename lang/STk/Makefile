@@ -12,6 +12,8 @@ MASTER_SITE_SUBDIR=	devel/lang/lisp
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scheme interpreter with full access to the Tk graphical package
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USE_XORG=	x11 ice sm xt
 GNU_CONFIGURE=	yes
 CFLAGS=		-I${LOCALBASE}/include

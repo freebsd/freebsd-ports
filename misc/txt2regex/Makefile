@@ -13,6 +13,8 @@ COMMENT=	Regular Expression "wizard"
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 NO_BUILD=	yes
 
 MAN1=		txt2regex.1

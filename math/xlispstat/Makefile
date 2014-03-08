@@ -13,6 +13,8 @@ COMMENT=	Statistics/X11 based lisp interpreter
 
 LICENSE=	BSD
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	UCFLAGS="${CFLAGS}"

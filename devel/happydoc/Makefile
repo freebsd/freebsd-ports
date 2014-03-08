@@ -17,6 +17,8 @@ LICENSE_FILE_HPND=	${WRKSRC}/LICENSE.txt
 LICENSE_GROUPS_HPND=	OSI
 LICENSE_PERMS_HPND=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 WRKSRC=		${WRKDIR}/HappyDoc3-r${PORTVERSION:S/./_/g}
 
 USE_PYTHON=	yes

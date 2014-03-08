@@ -12,6 +12,8 @@ DISTNAME=	freeWAIS-sf-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Wide Area Information Server
 
+DEPRECATED=	Unmaintained since 1999
+EXPIRATION_DATE=	2014-04-10
 USES=		perl5
 HAS_CONFIGURE=	yes
 USE_PERL5=	build

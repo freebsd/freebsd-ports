@@ -14,6 +14,8 @@ RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 		p5-Curses-Widgets>=0:${PORTSDIR}/devel/p5-Curses-Widgets \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USES=		perl5
 NO_BUILD=	yes
 

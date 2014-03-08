@@ -13,6 +13,8 @@ COMMENT=	Convert PNM images to PPA for some HP printers
 OPTIONS_DEFINE=	A4SIZE
 A4SIZE_DESC=	Set A4 (not Letter) as a default paper size
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

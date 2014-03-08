@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/tcpip/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network messaging system
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 WRKSRC=		${WRKDIR}/rmsg
 MAN1=		rmsg.1
 MAN8=		rmsgd.8

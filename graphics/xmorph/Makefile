@@ -17,6 +17,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 
 CONFLICTS=	libmorph*
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 WANT_GNOME=	yes
 USE_XORG=	xbitmaps x11 xaw xext
 USE_AUTOTOOLS=	libtool

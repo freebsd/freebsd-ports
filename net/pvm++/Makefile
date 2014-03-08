@@ -12,6 +12,8 @@ COMMENT=	A C++-Library for PVM
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USES=		gmake
 USE_AUTOTOOLS=	libtool
 USE_GCC=	yes

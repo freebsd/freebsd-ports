@@ -13,6 +13,8 @@ COMMENT=	Fast Molecular Visualization Program
 
 WRKSRC=		${WRKDIR}/RasMol_${PORTVERSION}/src
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USES=		imake
 USE_XORG=	x11 xext xi
 MANCOMPRESSED=	no

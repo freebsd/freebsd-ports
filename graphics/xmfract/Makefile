@@ -13,6 +13,8 @@ COMMENT=	Popular DOS fractal drawing program with X11/Motif frontend
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USES=		motif
 USE_AUTOTOOLS=	aclocal autoconf
 ACLOCAL_ARGS=	# none

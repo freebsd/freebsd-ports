@@ -13,6 +13,8 @@ COMMENT=	Small, Lisp-like interpreted language
 
 WRKSRC=		${WRKDIR}/Klone
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 MAKE_JOBS_UNSAFE=	yes
 
 NO_STAGE=	yes
