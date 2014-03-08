@@ -17,12 +17,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/JaasAuthBean.UPCallbackHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/JaasAuthBean.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/LdapAuthBean.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/LdapAuthBeanTester.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/class-use/AuthBeanMultiplexer.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/class-use/AuthFunctionBean.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/class-use/HsqldbSlaveAuthBean.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/class-use/JaasAuthBean.UPCallbackHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/class-use/JaasAuthBean.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/class-use/LdapAuthBean.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/class-use/LdapAuthBeanTester.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/auth/package-tree.html
@@ -109,7 +111,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/lib/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/lib/package-use.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/lib/tar/DbBackup.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/lib/tar/DbBackupMain.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/lib/tar/class-use/DbBackup.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/lib/tar/class-use/DbBackupMain.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/lib/tar/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/lib/tar/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/lib/tar/package-tree.html
@@ -189,45 +193,31 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/db/blank.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/1.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/1.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/10.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/10.png
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/10.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/11.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/11.png
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/11.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/12.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/12.png
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/12.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/13.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/13.png
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/13.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/14.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/14.png
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/14.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/15.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/15.png
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/2.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/2.png
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/3.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/3.png
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/4.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/4.png
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/5.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/5.png
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/6.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/6.png
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/7.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/7.png
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/8.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/8.png
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/9.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/9.png
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/1.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/10.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/11.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/12.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/13.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/14.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/15.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/16.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/17.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/18.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/19.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/2.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/2.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/2.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/20.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/21.svg
@@ -239,20 +229,42 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/27.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/28.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/29.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/3.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/3.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/3.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/30.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/4.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/4.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/4.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/5.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/5.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/5.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/6.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/6.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/6.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/7.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/7.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/7.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/8.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/8.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/8.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/9.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/9.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/callouts/9.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/caution.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/db/caution.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/caution.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/caution.tif
+%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/caution.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/home.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/important.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/next.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/note.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/prev.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/tip.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/up.svg
+%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/warning.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/draft.png
-%%PORTDOCS%%%%DOCSDIR%%/images/db/draft.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/home.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/db/home.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/home.svg
@@ -284,15 +296,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/db/warning.png
 %%PORTDOCS%%%%DOCSDIR%%/images/db/warning.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/db/warning.tif
-%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/caution.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/home.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/important.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/next.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/note.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/prev.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/tip.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/up.svg
-%%PORTDOCS%%%%DOCSDIR%%/images/db/colorsvg/warning.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/hypersql_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/images/hypersql_logo2.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -302,9 +305,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/util-guide/book-pref.html
 %%PORTDOCS%%%%DOCSDIR%%/util-guide/dbm-chapt.html
 %%PORTDOCS%%%%DOCSDIR%%/util-guide/dummy.html
-%%PORTDOCS%%%%DOCSDIR%%/util-guide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/util-guide/filelinks-app.html
 %%PORTDOCS%%%%DOCSDIR%%/util-guide/html-report.png
+%%PORTDOCS%%%%DOCSDIR%%/util-guide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/util-guide/rejreport-sample.png
 %%PORTDOCS%%%%DOCSDIR%%/util-guide/sqltool-chapt.html
 %%PORTDOCS%%%%DOCSDIR%%/util-guide/systempls-app.html
@@ -336,41 +339,41 @@
 %%PORTDOCS%%%%DOCSDIR%%/verbatim/src/org/hsqldb/test/TestBase.java
 %%PORTDOCS%%%%DOCSDIR%%/verbatim/testrun/sqltool/sqljrt.sql
 %%PORTDOCS%%%%DOCSDIR%%/verbatim/testrun/sqltool/sqlpsm.sql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/auth/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/auth
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/cmdline/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/cmdline
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/jdbc/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/jdbc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/lib/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/lib/tar/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/lib/tar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/lib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/sample/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/sample
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/server/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/server
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/util/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/util
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/db/callouts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/db/colorsvg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/db
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/util-guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/testrun/sqltool
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/testrun
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/src/org/hsqldb/sample
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/src/org/hsqldb/server
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/src/org/hsqldb/test
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/src/org/hsqldb/server
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/src/org/hsqldb/sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/src/org/hsqldb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/src/org
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/src
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim/sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/verbatim
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/util-guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/db/colorsvg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/db/callouts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/db
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/util/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/util
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/server/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/server
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/sample/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/sample
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/lib/tar/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/lib/tar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/lib/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/jdbc/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/jdbc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/cmdline/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/cmdline
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/auth/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb/auth
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org/hsqldb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
