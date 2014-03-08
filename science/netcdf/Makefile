@@ -19,7 +19,7 @@ PORTSCOUT=	limit:^3\.
 CONFIGURE_ARGS=	--enable-shared
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes
-USES=		libtool
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 
 INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
