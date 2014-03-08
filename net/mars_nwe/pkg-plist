@@ -1,8 +1,0 @@
-etc/nwserv.conf
-etc/nwserv.conf.example
-etc/rc.d/nwserv.sh
-sbin/nwserv
-sbin/ncpserv
-sbin/nwbind
-sbin/nwclient
-sbin/nwconn

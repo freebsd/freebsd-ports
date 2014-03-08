@@ -1,8 +1,0 @@
-bin/fmio
-etc/rc.d/bktrctl.sh
-man/man1/fmio.1.gz
-%%DOCSDIR%%/Changelog
-%%DOCSDIR%%/FAQ
-%%DOCSDIR%%/FAQ.ru
-%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%

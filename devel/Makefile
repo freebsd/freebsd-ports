@@ -314,7 +314,6 @@
     SUBDIR += cvsps
     SUBDIR += cvsps-devel
     SUBDIR += cvsspam
-    SUBDIR += cvsstat
     SUBDIR += cvstrac
     SUBDIR += cvsutils
     SUBDIR += cvsweb
@@ -3392,7 +3391,6 @@
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += physfs-devel
-    SUBDIR += picasm
     SUBDIR += picp
     SUBDIR += picprog
     SUBDIR += piklab
@@ -3628,7 +3626,6 @@
     SUBDIR += py-gflags
     SUBDIR += py-gitdb
     SUBDIR += py-gitosis
-    SUBDIR += py-gitpython
     SUBDIR += py-glob2
     SUBDIR += py-gobject
     SUBDIR += py-gobject3

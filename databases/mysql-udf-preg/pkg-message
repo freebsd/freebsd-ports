@@ -1,5 +1,0 @@
-== Install the SQL functions == 
-make installdb
-
-== Uninstall the SQL functions ==
-make uninstalldb

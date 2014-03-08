@@ -160,7 +160,6 @@
     SUBDIR += samba-nsupdate
     SUBDIR += scavenge
     SUBDIR += sheerdns
-    SUBDIR += skadns
     SUBDIR += sleuth
     SUBDIR += sshfp
     SUBDIR += tinystats

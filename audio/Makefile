@@ -162,7 +162,6 @@
     SUBDIR += flite
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
-    SUBDIR += fmio
     SUBDIR += fmit
     SUBDIR += fpc-a52
     SUBDIR += fpc-mad
@@ -515,7 +514,6 @@
     SUBDIR += nspmod
     SUBDIR += ocp
     SUBDIR += ogg2mp3
-    SUBDIR += oggsplit
     SUBDIR += openal
     SUBDIR += openal-soft
     SUBDIR += opencore-amr
@@ -827,7 +825,6 @@
     SUBDIR += xmms-midi
     SUBDIR += xmms-modplug
     SUBDIR += xmms-mp3cue
-    SUBDIR += xmms-musepack
     SUBDIR += xmms-nas
     SUBDIR += xmms-nsf
     SUBDIR += xmms-openspc

@@ -219,7 +219,6 @@
     SUBDIR += mysql-proxy
     SUBDIR += mysql-q4m
     SUBDIR += mysql-udf
-    SUBDIR += mysql-udf-preg
     SUBDIR += mysql-udf-sys
     SUBDIR += mysql-workbench51
     SUBDIR += mysql-workbench52

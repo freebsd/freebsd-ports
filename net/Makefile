@@ -378,7 +378,6 @@
     SUBDIR += lvwimax
     SUBDIR += mDNSResponder
     SUBDIR += mad_fcl
-    SUBDIR += mars_nwe
     SUBDIR += mcast-tools
     SUBDIR += mediaproxy
     SUBDIR += mediatomb
