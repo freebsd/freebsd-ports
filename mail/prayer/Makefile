@@ -2,6 +2,7 @@
 
 PORTNAME=	prayer
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 
@@ -32,7 +33,7 @@ SESSIONCACHE_DESC=	Activate Session Cache
 USERS=		_prayer
 GROUPS=		prayer
 
-SESSIONCACHE_USE=	BDB=yes
+SESSIONCACHE_USE=	BDB=5+
 LDAP_USE=		OPENLDAP=yes
 TIDY_LIB_DEPENDS=	libtidy-0.99.so:${PORTSDIR}/www/tidy-lib
 
@@ -75,7 +76,7 @@ MAKE_ARGS+=	CCLIENT_SSL_ENABLE=false \
 		SSL_ENABLE=false
 .endif
 
-.if ${PORT_OPTIONS:MSESSION_CACHE}
+.if ${PORT_OPTIONS:MSESSIONCACHE}
 MAKE_ARGS+=	SESSION_CACHE_ENABLE=true \
 		DB_INCLUDE=-I${BDB_INCLUDE_DIR} \
 		DB_LIBS="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}"
