@@ -17,7 +17,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 OPTIONS_DEFINE=	DOCS
 
 USES=		dos2unix zip
-DOS2UNIX_FILES=	Makefile.freebsd.txt
+DOS2UNIX_FILES=	c/src/Makefile.freebsd.txt
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
