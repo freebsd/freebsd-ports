@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	3.3.2012.04.03
+PORTVERSION=	2013.09.05
 CATEGORIES=	textproc
-MASTER_SITES=	http://sourceforge.net/projects/aoo-extensions/files/1204/11/
+MASTER_SITES=	http://sourceforge.net/projects/aoo-extensions/files/1204/13/
 PKGNAMEPREFIX=	it-
 DISTFILES=	dict-it.oxt
 DIST_SUBDIR=	${PORTNAME}
