@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	rosegarden
-PORTVERSION=	13.10
+PORTVERSION=	14.02
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose music editor and sequencer suite
 
 LICENSE=	GPLv2
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 RUN_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		lilypond:${PORTSDIR}/print/lilypond
 
-USES=		gmake pkgconfig
+USES=		desktop-file-utils gmake pkgconfig shared-mime-info
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR}
@@ -30,5 +30,8 @@ INSTALLS_ICONS=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

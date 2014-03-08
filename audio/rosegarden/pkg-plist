@@ -15,9 +15,6 @@ share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-composition.png
 share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-device.png
 share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-project.png
 share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-template.png
-share/mime/packages/rosegarden.xml
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
 @dirrmtry share/icons/hicolor/64x64/mimetypes
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
