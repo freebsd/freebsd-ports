@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A fork of pymsn to support the telepathy MSN connection manager
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
+BUILD_DEPENDS=	py*-openssl>0:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:${PORTSDIR}/security/py-pycrypto \
 		${LOCALBASE}/lib/gstreamer-0.10/libgstpython.so:${PORTSDIR}/multimedia/py-gstreamer \
 		${PYTHON_SITELIBDIR}/farsight.so:${PORTSDIR}/net-im/farsight2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
+RUN_DEPENDS=	py*-openssl>0:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:${PORTSDIR}/security/py-pycrypto \
 		${LOCALBASE}/lib/gstreamer-0.10/libgstpython.so:${PORTSDIR}/multimedia/py-gstreamer \
 		${PYTHON_SITELIBDIR}/farsight.so:${PORTSDIR}/net-im/farsight2
