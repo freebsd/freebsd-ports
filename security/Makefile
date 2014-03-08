@@ -278,6 +278,7 @@
     SUBDIR += libpreludedb
     SUBDIR += libpwstor
     SUBDIR += libscrypt
+    SUBDIR += libsecret
     SUBDIR += libsectok
     SUBDIR += libsodium
     SUBDIR += libsparkcrypto
