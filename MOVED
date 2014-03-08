@@ -5603,3 +5603,4 @@ shells/wapsh||2014-03-06|Broken and abandonware
 shells/zoidberg||2014-03-06|Broken and abandonware
 x11-toolkits/py31-tkinter|x11-toolkits/py-tkinter|2014-03-06|Has expired: Depends on expiring lang/python31
 misc/logsurfer+|misc/logsurfer|2014-03-07|Renamed upstream
+net-p2p/i2p|security/i2p|2014-03-07|Category change
