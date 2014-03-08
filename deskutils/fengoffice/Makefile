@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	An open source web-based collaboration software
 
-USES=		zip
+USES=		zip:infozip
 NO_BUILD=	yes
 USE_PHP=	mysql gd simplexml
 DEFAULT_PHP_VER=5
