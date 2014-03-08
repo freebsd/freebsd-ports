@@ -32,6 +32,7 @@ include/qgis/qgsatlascomposition.h
 include/qgis/qgsattributeaction.h
 include/qgis/qgsattributedialog.h
 include/qgis/qgsattributeeditor.h
+include/qgis/qgsattributeeditorcontext.h
 include/qgis/qgsattributetabledelegate.h
 include/qgis/qgsattributetablefiltermodel.h
 include/qgis/qgsattributetablemodel.h
@@ -69,6 +70,7 @@ include/qgis/qgscomposerlegend.h
 include/qgis/qgscomposerlegenditem.h
 include/qgis/qgscomposerlegendstyle.h
 include/qgis/qgscomposermap.h
+include/qgis/qgscomposermousehandles.h
 include/qgis/qgscomposermultiframe.h
 include/qgis/qgscomposermultiframecommand.h
 include/qgis/qgscomposerpicture.h
@@ -100,6 +102,7 @@ include/qgis/qgsdatadefinedsymboldialog.h
 include/qgis/qgsdataitem.h
 include/qgis/qgsdataprovider.h
 include/qgis/qgsdatasourceuri.h
+include/qgis/qgsdatumtransformdialog.h
 include/qgis/qgsdbfilterproxymodel.h
 include/qgis/qgsderivativefilter.h
 include/qgis/qgsdetaileditemdata.h
@@ -112,6 +115,11 @@ include/qgis/qgsdistancearcproperter.h
 include/qgis/qgsdistancearea.h
 include/qgis/qgsdoubleboxscalebarstyle.h
 include/qgis/qgsdualview.h
+include/qgis/qgseditorconfigwidget.h
+include/qgis/qgseditorwidgetconfig.h
+include/qgis/qgseditorwidgetfactory.h
+include/qgis/qgseditorwidgetregistry.h
+include/qgis/qgseditorwidgetwrapper.h
 include/qgis/qgsellipsesymbollayerv2.h
 include/qgis/qgsellipsesymbollayerv2widget.h
 include/qgis/qgsencodingfiledialog.h
@@ -130,6 +138,7 @@ include/qgis/qgsfeaturelistview.h
 include/qgis/qgsfeaturelistviewdelegate.h
 include/qgis/qgsfeaturemodel.h
 include/qgis/qgsfeaturerequest.h
+include/qgis/qgsfeatureselectiondlg.h
 include/qgis/qgsfeatureselectionmodel.h
 include/qgis/qgsfeaturestore.h
 include/qgis/qgsfield.h
@@ -139,6 +148,7 @@ include/qgis/qgsfillsymbollayerv2.h
 include/qgis/qgsfilterlineedit.h
 include/qgis/qgsfontutils.h
 include/qgis/qgsformannotationitem.h
+include/qgis/qgsgenericfeatureselectionmanager.h
 include/qgis/qgsgenericprojectionselector.h
 include/qgis/qgsgeometry.h
 include/qgis/qgsgeometryanalyzer.h
@@ -164,6 +174,7 @@ include/qgis/qgshtmlannotationitem.h
 include/qgis/qgshttptransaction.h
 include/qgis/qgshuesaturationfilter.h
 include/qgis/qgsidwinterpolator.h
+include/qgis/qgsifeatureselectionmanager.h
 include/qgis/qgsinterpolator.h
 include/qgis/qgslabel.h
 include/qgis/qgslabelattributes.h
@@ -184,6 +195,7 @@ include/qgis/qgsmapcanvasitem.h
 include/qgis/qgsmapcanvasmap.h
 include/qgis/qgsmapcanvassnapper.h
 include/qgis/qgsmaplayer.h
+include/qgis/qgsmaplayeractionregistry.h
 include/qgis/qgsmaplayerregistry.h
 include/qgis/qgsmapoverviewcanvas.h
 include/qgis/qgsmaprenderer.h
@@ -282,7 +294,15 @@ include/qgis/qgsrastershaderfunction.h
 include/qgis/qgsrastertransparency.h
 include/qgis/qgsrasterviewport.h
 include/qgis/qgsrectangle.h
+include/qgis/qgsrelation.h
+include/qgis/qgsrelationadddlg.h
+include/qgis/qgsrelationeditor.h
+include/qgis/qgsrelationmanager.h
+include/qgis/qgsrelationmanagerdialog.h
+include/qgis/qgsrelationreferencefactory.h
+include/qgis/qgsrelationreferencewidget.h
 include/qgis/qgsrelief.h
+include/qgis/qgsrelreferenceconfigdlg.h
 include/qgis/qgsrenderchecker.h
 include/qgis/qgsrendercontext.h
 include/qgis/qgsrendererv2.h
@@ -299,6 +319,7 @@ include/qgis/qgsscalecalculator.h
 include/qgis/qgsscalecombobox.h
 include/qgis/qgsscaleutils.h
 include/qgis/qgssearchquerybuilder.h
+include/qgis/qgssimplifymethod.h
 include/qgis/qgssinglebandcolordatarenderer.h
 include/qgis/qgssinglebandgrayrenderer.h
 include/qgis/qgssinglebandgrayrendererwidget.h
@@ -347,8 +368,11 @@ include/qgis/qgsvectorlayereditutils.h
 include/qgis/qgsvectorlayerfeatureiterator.h
 include/qgis/qgsvectorlayerimport.h
 include/qgis/qgsvectorlayerjoinbuffer.h
+include/qgis/qgsvectorlayerselectionmanager.h
+include/qgis/qgsvectorlayertools.h
 include/qgis/qgsvectorlayerundocommand.h
 include/qgis/qgsvectorrandomcolorrampv2dialog.h
+include/qgis/qgsvectorsimplifymethod.h
 include/qgis/qgsvertexmarker.h
 include/qgis/qgszonalstatistics.h
 include/qgis/ui_qgscredentialdialog.h
@@ -401,12 +425,12 @@ lib/qgis/plugins/libofflineeditingplugin.so
 lib/qgis/plugins/libogrprovider.so
 lib/qgis/plugins/liboracleplugin.so
 lib/qgis/plugins/libowsprovider.so
-lib/qgis/plugins/libpostgresprovider.so
+%%PGSQL%%lib/qgis/plugins/libpostgresprovider.so
 lib/qgis/plugins/librasterterrainplugin.so
 lib/qgis/plugins/libroadgraphplugin.so
 lib/qgis/plugins/libspatialiteprovider.so
 lib/qgis/plugins/libspatialqueryplugin.so
-lib/qgis/plugins/libspitplugin.so
+%%PGSQL%%lib/qgis/plugins/libspitplugin.so
 lib/qgis/plugins/libsqlanywhereplugin.so
 lib/qgis/plugins/libsqlanywhereprovider.so
 lib/qgis/plugins/libtopolplugin.so
@@ -420,15 +444,18 @@ man/man1/qgis.1.gz
 %%DATADIR%%/FindQGIS.cmake
 %%DATADIR%%/doc/AUTHORS
 %%DATADIR%%/doc/CODING
+%%DATADIR%%/doc/CODING.html
 %%DATADIR%%/doc/CONTRIBUTORS
 %%DATADIR%%/doc/DONORS
 %%DATADIR%%/doc/INSTALL
+%%DATADIR%%/doc/INSTALL.html
 %%DATADIR%%/doc/LICENSE
 %%DATADIR%%/doc/SPONSORS
 %%DATADIR%%/doc/TRANSLATORS
 %%DATADIR%%/doc/favicon.ico
 %%DATADIR%%/doc/images/qgis_new_80pct.png
 %%DATADIR%%/doc/index.html
+%%DATADIR%%/doc/news
 %%DATADIR%%/doc/news.html
 %%DATADIR%%/doc/style.css
 %%GRASS%%%%DATADIR%%/grass/config/default.qgc
@@ -1322,35 +1349,62 @@ man/man1/qgis.1.gz
 %%GRASS%%%%DATADIR%%/grass/scripts/qgis.v.kernel.rast.py
 %%GRASS%%%%DATADIR%%/grass/scripts/r.external.all.py
 %%GRASS%%%%DATADIR%%/grass/scripts/v.out.ogr.pg.py
+%%DATADIR%%/i18n/qgis_af.qm
+%%DATADIR%%/i18n/qgis_ar.qm
+%%DATADIR%%/i18n/qgis_bg.qm
+%%DATADIR%%/i18n/qgis_bn.qm
+%%DATADIR%%/i18n/qgis_bs.qm
+%%DATADIR%%/i18n/qgis_ca.qm
+%%DATADIR%%/i18n/qgis_cs.qm
+%%DATADIR%%/i18n/qgis_da.qm
 %%DATADIR%%/i18n/qgis_de.qm
+%%DATADIR%%/i18n/qgis_el.qm
 %%DATADIR%%/i18n/qgis_en.qm
 %%DATADIR%%/i18n/qgis_es.qm
+%%DATADIR%%/i18n/qgis_et.qm
 %%DATADIR%%/i18n/qgis_eu.qm
 %%DATADIR%%/i18n/qgis_fa.qm
 %%DATADIR%%/i18n/qgis_fi.qm
 %%DATADIR%%/i18n/qgis_fr.qm
 %%DATADIR%%/i18n/qgis_gl.qm
+%%DATADIR%%/i18n/qgis_he.qm
+%%DATADIR%%/i18n/qgis_hi.qm
+%%DATADIR%%/i18n/qgis_hr.qm
 %%DATADIR%%/i18n/qgis_hu.qm
 %%DATADIR%%/i18n/qgis_id.qm
 %%DATADIR%%/i18n/qgis_is.qm
 %%DATADIR%%/i18n/qgis_it.qm
 %%DATADIR%%/i18n/qgis_ja.qm
+%%DATADIR%%/i18n/qgis_ka.qm
 %%DATADIR%%/i18n/qgis_km.qm
+%%DATADIR%%/i18n/qgis_ko.qm
+%%DATADIR%%/i18n/qgis_lo.qm
+%%DATADIR%%/i18n/qgis_lt.qm
 %%DATADIR%%/i18n/qgis_lv.qm
+%%DATADIR%%/i18n/qgis_ml.qm
 %%DATADIR%%/i18n/qgis_mn.qm
+%%DATADIR%%/i18n/qgis_mr.qm
+%%DATADIR%%/i18n/qgis_nb.qm
 %%DATADIR%%/i18n/qgis_nl.qm
+%%DATADIR%%/i18n/qgis_pl.qm
 %%DATADIR%%/i18n/qgis_pt_BR.qm
 %%DATADIR%%/i18n/qgis_pt_PT.qm
 %%DATADIR%%/i18n/qgis_ro.qm
 %%DATADIR%%/i18n/qgis_ru.qm
 %%DATADIR%%/i18n/qgis_sk.qm
+%%DATADIR%%/i18n/qgis_sl.qm
+%%DATADIR%%/i18n/qgis_sq.qm
 %%DATADIR%%/i18n/qgis_sr_Cyrl.qm
 %%DATADIR%%/i18n/qgis_sr_Latn.qm
 %%DATADIR%%/i18n/qgis_sv.qm
+%%DATADIR%%/i18n/qgis_sw.qm
+%%DATADIR%%/i18n/qgis_ta.qm
+%%DATADIR%%/i18n/qgis_te.qm
 %%DATADIR%%/i18n/qgis_th.qm
 %%DATADIR%%/i18n/qgis_tr.qm
 %%DATADIR%%/i18n/qgis_uk.qm
 %%DATADIR%%/i18n/qgis_vi.qm
+%%DATADIR%%/i18n/qgis_xh.qm
 %%DATADIR%%/i18n/qgis_zh_CN.qm
 %%DATADIR%%/i18n/qgis_zh_TW.qm
 %%DATADIR%%/images/icons/qgis-icon-1.8-60x60.png
@@ -1479,6 +1533,7 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/db_plugins/postgis/plugins/qgis_topoview/templates/edge.qml
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/db_plugins/postgis/plugins/qgis_topoview/templates/edge_label.qml
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/db_plugins/postgis/plugins/qgis_topoview/templates/face.qml
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/db_plugins/postgis/plugins/qgis_topoview/templates/face_mbr.qml
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/db_plugins/postgis/plugins/qgis_topoview/templates/face_left.qml
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/db_plugins/postgis/plugins/qgis_topoview/templates/face_right.qml
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/db_plugins/postgis/plugins/qgis_topoview/templates/face_seed.qml
@@ -1539,6 +1594,7 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/metadata.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/resources_rc.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/sql_dictionary.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/sqledit.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/table_viewer.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/ui/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/db_manager/ui/ui_DlgAddGeometryColumn.py
@@ -1690,6 +1746,9 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/FieldsCalculator.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/JoinAttributes.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/MeanAndStdDevPlot.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/PointsDisplacement.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/PointsFromLines.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/PointsFromPolygons.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/PointsLayerFromTable.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/PolarPlot.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/Polygonize.py
@@ -1700,6 +1759,7 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/StatisticsByCategories.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/VectorLayerHistogram.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/VectorLayerScatterplot.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ZonalStatistics.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/BasicStatisticsNumbers.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/BasicStatisticsStrings.py
@@ -1712,8 +1772,10 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/DensifyGeometriesInterval.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/Difference.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/Dissolve.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/Eliminate.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/ExportGeometryInfo.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/ExtentFromLayer.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/ExtractByLocation.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/ExtractNodes.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/FixedDistanceBuffer.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/Intersection.py
@@ -1727,6 +1789,8 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/PointsInPolygonUnique.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/PointsInPolygonWeighted.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/PolygonsToLines.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/RandomExtract.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/RandomExtractWithinSubsets.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/RandomSelection.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/RandomSelectionWithinSubsets.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ftools/ReprojectLayer.py
@@ -1744,6 +1808,9 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/mmqgisx/MMQGISXAlgorithms.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/mmqgisx/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/mmqgisx/copyright.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ui/FieldsCalculatorDialog.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ui/__init__.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/algs/ui/ui_DlgFieldsCalculator.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/commander/CommanderWindow.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/commander/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/core/AlgorithmProvider.py
@@ -1765,12 +1832,25 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/exampleprovider/ProcessingExampleProviderPlugin.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/exampleprovider/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/exampleprovider/metadata.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/ClipByExtent.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/ClipByMask.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/ColorRelief.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/GdalAlgorithm.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/GdalOgrAlgorithmProvider.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/GdalUtils.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/GridAverage.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/GridDataMetrics.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/GridInvDist.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/GridNearest.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/OgrAlgorithm.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/__init__.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/aspect.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/gdaladdo.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/contour.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/extractprojection.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/fillnodata.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/gdal2xyz.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/hillshade.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/icons/24-to-8-bits.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/icons/8-to-24-bits.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/icons/contour.png
@@ -1780,6 +1860,7 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/icons/nearblack.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/icons/polygonize.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/icons/projection-add.png
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/icons/projection-export.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/icons/proximity.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/icons/raster-clip.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/icons/raster-info.png
@@ -1797,12 +1878,19 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/ogrsql.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/pct2rgb.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/polygonize.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/proximity.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/pyogr/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/pyogr/ogr2ogr.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/pyogr/ogrds.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/pyogr/ogrvrt.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/rasterize.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/rgb2pct.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/roughness.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/sieve.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/slope.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/tpi.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/translate.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/tri.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gdal/warp.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/GrassAlgorithm.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/GrassAlgorithmProvider.py
@@ -1814,6 +1902,7 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/i.ifft.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/i.rgb.his.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/i.zc.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/m.cogo.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/nviz.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/r.aspect.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/r.average.txt
@@ -1841,6 +1930,7 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/r.gwflow.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/r.his.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/r.horizon.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/r.horizon.height.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/r.info.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/r.kappa.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/r.lake.coords.txt
@@ -1947,9 +2037,12 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.report.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.sample.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.segment.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.select.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.split.length.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.split.vert.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.surf.bspline.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.surf.bspline.lambda.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.surf.bspline.sparse.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.surf.idw.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.surf.rst.cvdev.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/grass/description/v.surf.rst.txt
@@ -1985,9 +2078,12 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/ConfigDialog.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/ContextAction.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/CouldNotLoadResultsDialog.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/CreateNewScriptAction.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/CrsSelectionDialog.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/CrsSelectionPanel.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/DeleteScriptAction.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/EditRenderingStylesDialog.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/EditScriptAction.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/ExtentSelectionPanel.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/FileSelectionPanel.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/FixedTableDialog.py
@@ -1996,6 +2092,8 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/HelpEditionDialog.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/HistoryDialog.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/InputLayerSelectorPanel.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/LexerR.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/MessageBarProgress.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/MissingDependencyDialog.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/MultipleInputDialog.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/MultipleInputPanel.py
@@ -2011,6 +2109,8 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/RenderingStyleFilePanel.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/RenderingStyles.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/ResultsDialog.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/ScriptEdit.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/ScriptEditorDialog.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/TestTools.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/ToolboxAction.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/gui/UnthreadedAlgorithmExecutor.py
@@ -2023,6 +2123,7 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/database.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/delete.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/edit.png
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/edithelp.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/geoserver.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/grass.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/input.png
@@ -2036,10 +2137,12 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/qgis.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/r.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/results.png
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/runalgorithm.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/saga.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/script.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/taudem.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/images/tool.png
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/interface.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/LidarToolsAlgorithmProvider.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/fusion/CanopyMaxima.py
@@ -2058,18 +2161,42 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/fusion/OpenViewerAction.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/fusion/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/__init__.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/LAStoolsAlgorithm.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/LAStoolsUtils.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/blast2dem.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/blast2iso.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/las2dem.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/las2iso.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/las2las.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/las2las_filter.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/las2las_transform.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/las2shp.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/las2txt.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasboundary.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lascanopy.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasclassify.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasclip.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lascontrol.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasduplicate.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasgrid.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasground.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasheight.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasindex.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasinfo.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasmerge.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasnoise.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasoverage.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasoverlap.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasprecision.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lassort.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lassplit.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasthin.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lastile.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasvalidate.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/lasview.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/laszip.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/shp2las.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/lidar/lastools/txt2las.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/metadata.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/modeler/CalculatorModelerAlgorithm.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/modeler/CalculatorModelerParametersDialog.py
@@ -2093,6 +2220,8 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/modeler/VectorLayerBoundsAlgorithm.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/modeler/WrongModelException.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/modeler/__init__.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/modeler/models/Extract_raster_to_CSV.model
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/modeler/models/Extract_raster_to_shape.model
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/modeler/models/contours.model
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/modeler/models/emptystring.model
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/modeler/models/fieldautoextent.model
@@ -2278,8 +2407,26 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/RAlgorithmProvider.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/RUtils.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/__init__.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Advanced_raster_histogram.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Characteristic_hull_method.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Dotplot.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/F_function.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Frequency_table.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/G_function.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Histogram.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Kernel_h_ref.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Kolmogrov-Smirnov_test.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Minimum_convex_polygon.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Monte-Carlo_spatial_randomness.rsx
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Quadrat_analysis.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Random_sampling_grid.rsx
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Raster_histogram.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Regular_sampling_grid.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Relative_distribution_(distance_covariate).rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Relative_distribution_(raster_covariate).rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Ripley_-_Rasson_spatial_domain.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Single-linkage_cluster_analysis.rsx
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/r/scripts/Summary_statistics.rsx
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/resources_rc.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/SagaAlgorithm.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/SagaAlgorithmProvider.py
@@ -2290,9 +2437,12 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/SplitRGBBands.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.0.8_InverseDistanceWeighted.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.0.8_OrdinaryKriging.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.0.8_PolygonDissolve.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.0.8_ShapesBuffer.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.1_InverseDistanceWeighted.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.1_OrdinaryKriging.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.1_PointStatisticsforPolygons.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.1_PolygonDifference.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.1_PolygonDissolve.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.1_PolygonDissolveAllPolygs.txt
@@ -2302,6 +2452,7 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.1_PolygonUnion.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.1_PolygonUpdate.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.1_ShapesBuffer.txt
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/2.1_ShapesBufferFixed.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/AccumulatedCost(Anisotropic).txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/AccumulatedCost(Isotropic).txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/saga/description/AddCoordinatestopoints.txt
@@ -2549,9 +2700,12 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/A_script_that_returns_a_number.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/Create_tiling_from_vector_layer.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/Extract_raster_values_to_CSV.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/Extract_raster_values_to_shapefile.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/Hex_grid_from_layer_bounds.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/Load_test_data.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/Number_of_unique_values_in_classes.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/Points_from_vector.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/Save_selected_features.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/Split_vector_layer_by_attribute.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/script/scripts/Summarize.py
@@ -2635,17 +2789,25 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/tests/test.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/tests/utilities_test.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/tools/__init__.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/tools/dataobjects.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/tools/general.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/tools/help.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/tools/raster.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/tools/system.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/tools/vector.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/__init__.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_DlgAutofill.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_DlgConfig.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_DlgHelpEdition.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_DlgHistory.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_DlgModeler.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_DlgMultipleSelection.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_DlgNumberInput.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_DlgRenderingStyles.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_DlgResults.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_DlgScriptEditor.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_ProcessingToolbox.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/processing/ui/ui_widgetNumberInput.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/pyplugin_installer/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/pyplugin_installer/installer.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/pyplugin_installer/installer_data.py
@@ -2670,6 +2832,7 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/qsci_apis/OSGeo_GEOS-3.4.2.api
 %%QGIS_PYTHON%%%%DATADIR%%/python/qsci_apis/PyQGIS-1.7.api
 %%QGIS_PYTHON%%%%DATADIR%%/python/qsci_apis/PyQGIS-1.8.api
+%%QGIS_PYTHON%%%%DATADIR%%/python/qsci_apis/PyQGIS-2.0.api
 %%QGIS_PYTHON%%%%DATADIR%%/python/qsci_apis/PyQGIS.api
 %%QGIS_PYTHON%%%%DATADIR%%/python/qsci_apis/PyQt4-4.7.4.api
 %%QGIS_PYTHON%%%%DATADIR%%/python/qsci_apis/Python-2.5.api
@@ -4090,6 +4253,7 @@ man/man1/qgis.1.gz
 %%DATADIR%%/svg/sport/sport_swimming_outdoor.svg
 %%DATADIR%%/svg/sport/sport_tennis.svg
 %%DATADIR%%/svg/sport/sport_windsurfing.svg
+%%DATADIR%%/svg/symbol/blue-marker.svg
 %%DATADIR%%/svg/symbol/education_nursery.svg
 %%DATADIR%%/svg/symbol/education_school.svg
 %%DATADIR%%/svg/symbol/education_university.svg
@@ -4117,6 +4281,7 @@ man/man1/qgis.1.gz
 %%DATADIR%%/svg/symbol/poi_tower_communications.svg
 %%DATADIR%%/svg/symbol/poi_tower_power.svg
 %%DATADIR%%/svg/symbol/poi_tower_water.svg
+%%DATADIR%%/svg/symbol/red-marker.svg
 %%DATADIR%%/svg/symbol/water_tower.svg
 %%DATADIR%%/svg/tourist/tourist_archaeological.svg
 %%DATADIR%%/svg/tourist/tourist_archaeological2.svg
@@ -4187,113 +4352,113 @@ man/man1/qgis.1.gz
 %%DATADIR%%/svg/transport/transport_tram_stop.svg
 %%DATADIR%%/svg/wind_roses/WindRose_01.svg
 %%DATADIR%%/svg/wind_roses/WindRose_02.svg
-@dirrmtry %%DATADIR%%/svg/wind_roses
-@dirrmtry %%DATADIR%%/svg/transport
-@dirrmtry %%DATADIR%%/svg/tourist
-@dirrmtry %%DATADIR%%/svg/symbol
-@dirrmtry %%DATADIR%%/svg/sport
-@dirrmtry %%DATADIR%%/svg/shopping
-@dirrmtry %%DATADIR%%/svg/services
-@dirrmtry %%DATADIR%%/svg/religion
-@dirrmtry %%DATADIR%%/svg/money
-@dirrmtry %%DATADIR%%/svg/landmark
-@dirrmtry %%DATADIR%%/svg/health
-@dirrmtry %%DATADIR%%/svg/gpsicons
-@dirrmtry %%DATADIR%%/svg/food
-@dirrmtry %%DATADIR%%/svg/entertainment
-@dirrmtry %%DATADIR%%/svg/emergency
-@dirrmtry %%DATADIR%%/svg/crosses
-@dirrmtry %%DATADIR%%/svg/components
-@dirrmtry %%DATADIR%%/svg/backgrounds
-@dirrmtry %%DATADIR%%/svg/arrows
-@dirrmtry %%DATADIR%%/svg/amenity
-@dirrmtry %%DATADIR%%/svg/accommodation
-@dirrmtry %%DATADIR%%/svg
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/tubs
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/template
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/shadowxfox
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/schwarzwald
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/precip
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/plumbago
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/lilleskut
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/knutux
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/jarke
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/ice
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/encyclopedia
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp/country
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/wkp
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/ukmo/wow
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/ukmo
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/tp
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/selections
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/saga
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/rf
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/pd/food
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/pd
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/os
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/ocal
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/ngdc
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/nd/vermillion
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/nd/turanj
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/nd/strips
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/nd/red
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/nd/other
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/nd/atmospheric
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/nd
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/ncl
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/mby
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/km
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jm/wt
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jm/ws
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jm/tv
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jm/sd
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jm/o2
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jm/db
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jm/cd
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jm/ao
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jm/ad
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jm
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jjg/polarity
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jjg/physics
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jjg/misc
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jjg/dem
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jjg/cbcont/div
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jjg/cbcont
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jjg/cbac/div
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jjg/cbac
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/jjg
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/h5
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/grass
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/gps
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/go2/webtwo
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/go2
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/gmt
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/gist
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/ggr
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/gery
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/fme/metres
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/fme/feet
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/fme
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/es/skywalker
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/es/sea_dreams
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/es/rosa
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/es/platinum
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/es/landscape
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/es/emerald_dragon
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/es
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/ds9
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/ds/rgi
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/ds
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/dg
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/cb/seq
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/cb/qual
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/cb/div
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/cb
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/bhw/bhw2
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/bhw/bhw1
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min/bhw
-@dirrmtry %%DATADIR%%/resources/cpt-city-qgis-min
-@dirrmtry %%DATADIR%%/resources
+@dirrm %%DATADIR%%/svg/wind_roses
+@dirrm %%DATADIR%%/svg/transport
+@dirrm %%DATADIR%%/svg/tourist
+@dirrm %%DATADIR%%/svg/symbol
+@dirrm %%DATADIR%%/svg/sport
+@dirrm %%DATADIR%%/svg/shopping
+@dirrm %%DATADIR%%/svg/services
+@dirrm %%DATADIR%%/svg/religion
+@dirrm %%DATADIR%%/svg/money
+@dirrm %%DATADIR%%/svg/landmark
+@dirrm %%DATADIR%%/svg/health
+@dirrm %%DATADIR%%/svg/gpsicons
+@dirrm %%DATADIR%%/svg/food
+@dirrm %%DATADIR%%/svg/entertainment
+@dirrm %%DATADIR%%/svg/emergency
+@dirrm %%DATADIR%%/svg/crosses
+@dirrm %%DATADIR%%/svg/components
+@dirrm %%DATADIR%%/svg/backgrounds
+@dirrm %%DATADIR%%/svg/arrows
+@dirrm %%DATADIR%%/svg/amenity
+@dirrm %%DATADIR%%/svg/accommodation
+@dirrm %%DATADIR%%/svg
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/tubs
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/template
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/shadowxfox
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/schwarzwald
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/precip
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/plumbago
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/lilleskut
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/knutux
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/jarke
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/ice
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/encyclopedia
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp/country
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/wkp
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/ukmo/wow
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/ukmo
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/tp
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/selections
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/saga
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/rf
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/pd/food
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/pd
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/os
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/ocal
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/ngdc
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/nd/vermillion
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/nd/turanj
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/nd/strips
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/nd/red
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/nd/other
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/nd/atmospheric
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/nd
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/ncl
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/mby
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/km
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jm/wt
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jm/ws
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jm/tv
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jm/sd
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jm/o2
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jm/db
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jm/cd
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jm/ao
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jm/ad
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jm
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jjg/polarity
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jjg/physics
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jjg/misc
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jjg/dem
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jjg/cbcont/div
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jjg/cbcont
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jjg/cbac/div
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jjg/cbac
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/jjg
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/h5
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/grass
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/gps
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/go2/webtwo
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/go2
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/gmt
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/gist
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/ggr
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/gery
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/fme/metres
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/fme/feet
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/fme
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/es/skywalker
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/es/sea_dreams
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/es/rosa
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/es/platinum
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/es/landscape
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/es/emerald_dragon
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/es
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/ds9
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/ds/rgi
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/ds
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/dg
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/cb/seq
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/cb/qual
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/cb/div
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/cb
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/bhw/bhw2
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/bhw/bhw1
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min/bhw
+@dirrm %%DATADIR%%/resources/cpt-city-qgis-min
+@dirrm %%DATADIR%%/resources
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/qsci_apis
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/qgis
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/pyplugin_installer
@@ -4362,19 +4527,19 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/console
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python
-@dirrmtry %%DATADIR%%/images/icons
-@dirrmtry %%DATADIR%%/images
-@dirrmtry %%DATADIR%%/i18n
+@dirrm %%DATADIR%%/images/icons
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/i18n
 %%GRASS%%@dirrm %%DATADIR%%/grass/scripts
 %%GRASS%%@dirrm %%DATADIR%%/grass/modules
 %%GRASS%%@dirrm %%DATADIR%%/grass/config
 %%GRASS%%@dirrm %%DATADIR%%/grass
-@dirrmtry %%DATADIR%%/doc/images
-@dirrmtry %%DATADIR%%/doc
-@dirrmtry %%DATADIR%%
-@dirrmtry lib/qgis/plugins
+@dirrm %%DATADIR%%/doc/images
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%
+@dirrm lib/qgis/plugins
 %%GRASS%%@dirrm lib/qgis/grass/modules
 %%GRASS%%@dirrm lib/qgis/grass/bin
 %%GRASS%%@dirrm lib/qgis/grass
-@dirrmtry lib/qgis
-@dirrmtry include/qgis
+@dirrm lib/qgis
+@dirrm include/qgis
