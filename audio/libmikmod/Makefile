@@ -2,22 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	libmikmod
-PORTVERSION=	3.1.12
-PORTREVISION=	2
+PORTVERSION=	3.1.16
 CATEGORIES=	audio
-MASTER_SITES=	SF/mikmod/libmikmod%20%28source%29/${PORTVERSION}/
+MASTER_SITES=	SF/mikmod/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	neuroworker@gmail.com
 COMMENT=	MikMod Sound Library
 
+LICENSE=	LGPL21
+
+USE_AUTOTOOLS=	libtool
 WANT_GNOME=	yes
-USES=		gmake libtool
+USE_GNOME=	lthack
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS=	--disable-esd
 USE_LDCONFIG=	yes
 
 INFO=		mikmod
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
+CONFIGURE_ARGS+=	--enable-esd
+.else
+CONFIGURE_ARGS+=	--disable-esd
+.endif
 
 post-extract:
 	@${RM} -f ${WRKSRC}/docs/mikmod.info-*
@@ -31,4 +42,4 @@ post-patch:
 		-e 's|-lc_r|${PTHREAD_LIBS:S/"//g}|g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
