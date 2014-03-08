@@ -1,7 +1,0 @@
-lib/opensync/plugins/synce_plugin.so
-lib/opensync/plugins/synce_plugin.la
-share/opensync/defaults/synce-plugin
-@dirrmtry lib/opensync/plugins
-@dirrmtry lib/opensync
-@dirrmtry share/opensync/defaults
-@dirrmtry share/opensync

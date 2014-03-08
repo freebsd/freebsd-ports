@@ -144,7 +144,6 @@
     SUBDIR += enblend
     SUBDIR += ender
     SUBDIR += enesim
-    SUBDIR += enfle
     SUBDIR += entangle
     SUBDIR += eog
     SUBDIR += eog-plugins

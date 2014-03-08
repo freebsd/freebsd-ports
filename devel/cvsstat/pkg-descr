@@ -1,9 +1,0 @@
-cvsstat is a perl program which transforms the 'cvs status' output
-to an ASCII table sorted after the status of files.  If you have
-used CVS, then you know that it is hard to get a good overview the
-CVS-status of the files in you directories. Any new files? Any files
-changed? Any files which other people have changed in the repository?
-cvsstat will help the programmer get the overview.  The program can
-be used for any type of CVS archive, local as well as remote.
-
-WWW: http://cvs.sslug.dk/cvs2html/

@@ -122,7 +122,6 @@
     SUBDIR += libopensync-plugin-python
     SUBDIR += libopensync-plugin-sunbird
     SUBDIR += libopensync-plugin-synce
-    SUBDIR += libopensync-plugin-synce-legacy
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += libstreamanalyzer
     SUBDIR += libstreams
@@ -171,7 +170,6 @@
     SUBDIR += parcellite
     SUBDIR += phpcollab
     SUBDIR += phpicalendar
-    SUBDIR += phprojekt
     SUBDIR += pinot
     SUBDIR += plan
     SUBDIR += planner

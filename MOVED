@@ -5604,3 +5604,17 @@ shells/zoidberg||2014-03-06|Broken and abandonware
 x11-toolkits/py31-tkinter|x11-toolkits/py-tkinter|2014-03-06|Has expired: Depends on expiring lang/python31
 misc/logsurfer+|misc/logsurfer|2014-03-07|Renamed upstream
 net-p2p/i2p|security/i2p|2014-03-07|Category change
+deskutils/phprojekt||2014-03-08|Has expired: No more public distfiles
+deskutils/libopensync-plugin-synce-legacy||2014-03-08|Has expired: No more public distfiles
+dns/skadns||2014-03-08|Has expired: No more public distfiles
+sysutils/gkrellmwho2||2014-03-08|Has expired: No more public distfiles
+audio/xmms-musepack||2014-03-08|Has expired: No more public distfiles
+archivers/bzip||2014-03-08|Has expired: No more public distfiles
+devel/cvsstat||2014-03-08|Has expired: No more public distfiles
+graphics/enfle||2014-03-08|Has expired: No more public distfiles
+audio/oggsplit||2014-03-08|Has expired: No more public distfiles
+devel/picasm||2014-03-08|Has expired: No more public distfiles
+databases/mysql-udf-preg||2014-03-08|Has expired: No more public distfiles
+devel/py-gitpython||2014-03-08|Has expired: No more public distfiles
+net/mars_nwe||2014-03-08|Has expired: No more public distfiles
+audio/fmio||2014-03-08|Has expired: No more public distfiles

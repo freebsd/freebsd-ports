@@ -326,7 +326,6 @@
     SUBDIR += gkrellm
     SUBDIR += gkrellm-trayicons
     SUBDIR += gkrellm2
-    SUBDIR += gkrellmwho2
     SUBDIR += gkrelltop
     SUBDIR += gksu
     SUBDIR += gnome-control-center

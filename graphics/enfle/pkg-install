@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if [ "$2" = "POST-INSTALL" ]; then
-  ENFLE_PLUGINDIR=${PKG_PREFIX}/lib/enfle/plugins ${PKG_PREFIX}/bin/enfle -N
-elif [ "$2" = "DEINSTALL" ]; then
-  rm -f ${PKG_PREFIX}/lib/enfle/plugins/.cache
-fi
