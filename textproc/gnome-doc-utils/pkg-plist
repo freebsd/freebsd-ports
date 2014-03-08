@@ -27,6 +27,7 @@ libdata/pkgconfig/xml2po.pc
 %%PYTHON_SITELIBDIR%%/xml2po/modes/xhtml.py
 %%PYTHON_SITELIBDIR%%/xml2po/modes/xhtml.pyc
 %%PYTHON_SITELIBDIR%%/xml2po/modes/xhtml.pyo
+man/man1/xml2po.1.gz
 share/aclocal/gnome-doc-utils.m4
 %%DATADIR%%/gnome-doc-utils.make
 %%DATADIR%%/icons/hicolor/48x48/status/admon-bug.png
