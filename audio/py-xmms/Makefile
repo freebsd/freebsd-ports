@@ -14,6 +14,8 @@ COMMENT=	XMMS Remote Control Library for Python
 BUILD_DEPENDS=	${XMMS_CONFIG}:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
+DEPRECATED=	Depends on deprecated on forbidden xmms
+EXPIRATION_DATE=	2014-04-08
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
