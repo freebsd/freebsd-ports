@@ -20,7 +20,7 @@ LICENSE_PERMS_CCbyNCSA2=dist-mirror pkg-mirror auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		dos2unix gmake zip
+USES=		dos2unix gmake zip:infozip
 DOS2UNIX_GLOB=	*.h makefile mklist.c *.txt *.dat
 
 PORTDOCS=	Readme.txt
