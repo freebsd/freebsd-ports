@@ -15,5 +15,4 @@ PLIST=		${.CURDIR}/pkg-plist
 
 SOUP_SLAVE=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
