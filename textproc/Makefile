@@ -1540,6 +1540,8 @@
     SUBDIR += yamcha
     SUBDIR += yaml-mode.el
     SUBDIR += yaml-mode.el-emacs21
+    SUBDIR += yelp-tools
+    SUBDIR += yelp-xsl
     SUBDIR += yi-aspell
     SUBDIR += yi-hunspell
     SUBDIR += yodl

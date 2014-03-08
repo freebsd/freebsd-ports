@@ -1,0 +1,6 @@
+yelp-tools is a collection of scripts and build utilities to help create,
+manage, and publish documentation for Yelp and the web. Most of the heavy
+lifting is done by packages like yelp-xsl and itstool. This package just
+wraps things up in a developer-friendly way.
+
+WWW: https://wiki.gnome.org/Apps/Yelp/Tools
