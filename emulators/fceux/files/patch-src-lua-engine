@@ -1,0 +1,15 @@
+--- src/lua-engine.cpp.bak	2013-12-28 06:09:01.096799825 -0600
++++ src/lua-engine.cpp	2013-12-28 06:10:59.276805867 -0600
+@@ -83,9 +83,9 @@
+ 
+ extern "C"
+ {
+-#include <lua.h>
+-#include <lauxlib.h>
+-#include <lualib.h>
++#include <lua51/lua.h>
++#include <lua51/lauxlib.h>
++#include <lua51/lualib.h>
+ #ifdef WIN32
+ #include <lstate.h>
+ 	int iuplua_open(lua_State * L);
