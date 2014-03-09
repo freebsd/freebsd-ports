@@ -2,54 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	pnetcdf
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	science parallel
-MASTER_SITES=	http://ftp.mcs.anl.gov/pub/parallel-netcdf/ \
+MASTER_SITES=	http://cucis.ece.northwestern.edu/projects/PnetCDF/Release/ \
 		LOCAL/sunpoet
 DISTNAME=	parallel-netcdf-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library providing high-performance I/O
 
-OPTIONS_DEFINE=	DOCS OPENMPI
-OPENMPI_DESC=	Use openmpi instead of mpich2
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SINGLE=	MPI
+OPTIONS_SINGLE_MPI=	OPENMPI MPICH2
+OPTIONS_DEFAULT=OPENMPI
 
 CONFLICTS=	hdf-4.*
 
 CFLAGS+=	-fPIC -DPIC
 CONFIGURE_ENV=	M4FLAGS=""
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
 USES=		fortran gmake
 
-MAN1=		ncmpidiff.1 ncmpidump.1 ncmpigen.1
-MAN3=		pnetcdf.3
 PORTDOCS=	COPYRIGHT INSTALL README
-PLIST_FILES=	bin/ncmpidiff bin/ncmpidump bin/ncmpigen bin/ncvalid \
-		include/pnetcdf.h include/pnetcdf.inc include/pnetcdf.mod \
-		lib/libpnetcdf.a
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENMPI}
-BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
-CONFIGURE_ARGS+=--with-mpi=${LOCALBASE}/mpi/openmpi
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/lib/libmpich.so:${PORTSDIR}/net/mpich2
-CONFIGURE_ARGS+=--with-mpi=${LOCALBASE}
-.endif
+#FORTRAN_CONFIGURE_OFF=	--disable-fortran
+#FORTRAN_CONFIGURE_ON=	--enable-fortran
+#FORTRAN_USES=		fortran
+MPICH2_CONFIGURE_ON=	--with-mpi=${LOCALBASE}
+MPICH2_LIB_DEPENDS=	libmpich.so:${PORTSDIR}/net/mpich2
+OPENMPI_CONFIGURE_ON=	--with-mpi=${LOCALBASE}/mpi/openmpi
+OPENMPI_LIB_DEPENDS=	libmpi.so:${PORTSDIR}/net/openmpi
 
 post-install:
-.for file in ncmpidiff ncmpidump ncmpigen ncvalid
-	${STRIP_CMD} ${PREFIX}/bin/${file}
+.for file in ncmpidiff ncmpidump ncmpigen ncmpivalid
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
