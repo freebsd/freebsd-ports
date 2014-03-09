@@ -63,11 +63,12 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Mateusz Jurczyk reports:</p>
 	<blockquote cite="http://savannah.nongnu.org/bugs/?41697">
-	  <p>Out of bounds stack-based read/write in cf2_hintmap_build.
-             This is a critical vulnerability in the CFF Rasterizer code
-             recently contributed by Adobe, leading to potential arbitrary
-             code execution in the context of the FreeType2 library client.
-             </p>
+	  <p>Out of bounds stack-based read/write in
+	    cf2_hintmap_build.</p>
+	  <p>This is a critical vulnerability in the CFF Rasterizer
+	    code recently contributed by Adobe, leading to potential
+	    arbitrary code execution in the context of the FreeType2
+	    library client.</p>
 	</blockquote>
       </body>
     </description>
