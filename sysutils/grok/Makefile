@@ -22,7 +22,7 @@ MAKE_ENV+=	GPERF=${LOCALBASE}/bin/gperf \
 		EXTRA_CFLAGS=-I${LOCALBASE}/include \
 		EXTRA_LDFLAGS=-L${LOCALBASE}/lib
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 LDFLAGS+=	`pkgconf --libs libevent`
 CFLAGS+=	`pkgconf --cflags libevent`
