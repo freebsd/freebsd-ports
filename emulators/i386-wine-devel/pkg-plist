@@ -1284,6 +1284,8 @@ lib32/wine/fakedlls/extrac32.exe
 lib32/wine/fakedlls/faultrep.dll
 lib32/wine/fakedlls/findstr.exe
 lib32/wine/fakedlls/fltlib.dll
+lib32/wine/fakedlls/fntcache.dll
+lib32/wine/fakedlls/fontsub.dll
 lib32/wine/fakedlls/fusion.dll
 lib32/wine/fakedlls/fwpuclnt.dll
 lib32/wine/fakedlls/gameux.dll
@@ -1579,6 +1581,7 @@ lib32/wine/fakedlls/wbemprox.dll
 lib32/wine/fakedlls/webservices.dll
 lib32/wine/fakedlls/wer.dll
 lib32/wine/fakedlls/wevtapi.dll
+lib32/wine/fakedlls/wevtutil.exe
 lib32/wine/fakedlls/wiaservc.dll
 lib32/wine/fakedlls/win32s16.dll16
 lib32/wine/fakedlls/win87em.dll16
@@ -1656,6 +1659,8 @@ lib32/wine/fakedlls/xpssvcs.dll
 lib32/wine/faultrep.dll.so
 lib32/wine/findstr.exe.so
 lib32/wine/fltlib.dll.so
+lib32/wine/fntcache.dll.so
+lib32/wine/fontsub.dll.so
 lib32/wine/fusion.dll.so
 lib32/wine/fwpuclnt.dll.so
 lib32/wine/gameux.dll.so
@@ -2127,6 +2132,7 @@ lib32/wine/wbemprox.dll.so
 lib32/wine/webservices.dll.so
 lib32/wine/wer.dll.so
 lib32/wine/wevtapi.dll.so
+lib32/wine/wevtutil.exe.so
 lib32/wine/wiaservc.dll.so
 lib32/wine/win32s16.dll16.so
 lib32/wine/win87em.dll16.so
