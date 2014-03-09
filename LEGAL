@@ -287,8 +287,8 @@ win32/*			multimedia/win32-codecs	Licensing status of the codecs is unknown
 WowzaMediaServerPro	net/wowzamediaserverpro	Redistribution not allowed
 xanim-*			multimedia/xanim	Must be redistributed without fee
 xchada01.lzh		games/xchadance		Contains commercial character data
-xds-c-*			lang/xds-c		Redistribution is forbidden
-xds-[0-9]*		lang/xds		Redistribution is forbidden
+xds-c-*			lang/xds-c		Excelsior forbids any redistribution
+xds-[0-9]*		lang/xds		Excelsior forbids any redistribution
 xephem-*		astro/xephem		Personal use only
 XFrisk-*		games/xfrisk		Copyright/trademark violation?
 XFrisk-*.tar.gz		games/xfrisk		Possible trademark infringement
