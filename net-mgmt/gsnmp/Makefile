@@ -19,7 +19,4 @@ USE_GNOME=	gnomehack glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		gsnmp-get.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
