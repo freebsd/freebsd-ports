@@ -3,7 +3,7 @@
 
 PORTNAME=	cmake
 PORTVERSION=	2.8.12.1
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.cmake.org/files/v2.8/
 
