@@ -12,8 +12,7 @@ COMMENT=	Send DHCP request to DHCP server for monitoring purposes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-MAN8=		dhcping.8
-PLIST_FILES=	bin/dhcping
+PLIST_FILES=	bin/dhcping \
+		man/man8/dhcping.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
