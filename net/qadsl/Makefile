@@ -15,18 +15,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_RC_SUBR=	qadsl
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-global-cfg=${PREFIX}/etc/qadsl.conf \
 		--with-pidfile=/var/run/qadsl.pid
 
-MAN8=		qadsl.8
-MAN5=		qadsl.conf.5
 INFO=		qadsl
-PLIST_FILES=	sbin/qadsl etc/qadsl.conf.sample
+PLIST_FILES=	sbin/qadsl etc/qadsl.conf.sample \
+		man/man5/qadsl.conf.5.gz \
+		man/man8/qadsl.8.gz
 
-NO_STAGE=	yes
 post-extract:
 	@${CP} ${WRKSRC}/etc/qadsl.conf ${WRKSRC}/etc/qadsl.conf.sample
 
@@ -36,7 +34,5 @@ post-patch:
 		 /echo $${CXXFLAGS}/s|^|#| ; \
 		 s|$$OPTIMIZER_CFLAGS||' ${WRKSRC}/configure
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
