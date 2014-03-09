@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 CPPFLAGS+=	$$(libpng-config --I_opts) -I${LOCALBASE}/include -I.
 LDFLAGS+=	$$(libpng-config --L_opts) -L${LOCALBASE}/lib
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		metapixel.1
 PLIST_FILES=	bin/metapixel \
