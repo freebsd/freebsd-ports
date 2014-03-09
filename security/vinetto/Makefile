@@ -19,7 +19,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGVERSION=	0.06alpha
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGING}
