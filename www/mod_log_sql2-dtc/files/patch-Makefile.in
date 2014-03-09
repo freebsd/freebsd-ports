@@ -1,0 +1,47 @@
+--- ./Makefile.in.orig	2006-11-05 04:47:23.000000000 +0100
++++ ./Makefile.in	2014-03-09 15:26:45.000000000 +0100
+@@ -12,6 +12,7 @@
+ 		winconfig.h
+ 
+ CFLAGS = -Wc,-Wall -Wc,-fno-strict-aliasing
++APX_STAGE=	@APXS_STAGE@
+ 
+ ifeq (@OOO_MAINTAIN@,1)
+ CFLAGS += -Wc,-Werror
+@@ -153,19 +154,19 @@
+ install: $(TARGETS) install-subdirs
+ 	@@APXS_BIN@ -n $(coreNAME) -i $(coreTARGET); \
+ 	if test @WANT_MYSQL_MOD@ -eq 1; then \
+-	    @APXS_BIN@ -n $(mysqlNAME) -i $(mysqlTARGET); \
++	    @APXS_BIN@ @APXS_STAGE@ -n $(mysqlNAME) -i $(mysqlTARGET); \
+     fi; \
+ 	if test @WANT_PGSQL_MOD@ -eq 1; then \
+-	    @APXS_BIN@ -n $(pgsqlNAME) -i $(pgsqlTARGET); \
++	    @APXS_BIN@ @APXS_STAGE@ -n $(pgsqlNAME) -i $(pgsqlTARGET); \
+     fi; \
+ 	if test @WANT_DBI_MOD@ -eq 1; then \
+-	    @APXS_BIN@ -n $(dbiNAME) -i $(dbiTARGET); \
++	    @APXS_BIN@ @APXS_STAGE@ -n $(dbiNAME) -i $(dbiTARGET); \
+     fi; \
+ 	if test @WANT_SSL_MOD@ -eq 1; then \
+-		@APXS_BIN@ -n $(sslNAME) -i $(sslTARGET); \
++		@APXS_BIN@ @APXS_STAGE@ -n $(sslNAME) -i $(sslTARGET); \
+ 	fi; \
+ 	if test @WANT_LOGIO_MOD@ -eq 1; then \
+-	    @APXS_BIN@ -n $(logioNAME) -i $(logioTARGET); \
++	    @APXS_BIN@ @APXS_STAGE@ -n $(logioNAME) -i $(logioTARGET); \
+     fi; \
+ 	echo "*************************************************************************"; \
+ 	echo "*** The mod_log_sql modules have been installed."; \
+@@ -183,9 +184,9 @@
+ 	echo "*************************************************************************";
+ 
+ activate: activate-subdirs
+-	@@APXS_BIN@ -n $(coreNAME) -i -a $(coreTARGET); \
++	@@APXS_BIN@ @APXS_STAGE@ -n $(coreNAME) -i $(coreTARGET); \
+ 	if test @WANT_SSL_MOD@ -eq 1; then \
+-		@APXS_BIN@ -n $(sslNAME) -i -a $(sslTARGET); \
++		@APXS_BIN@ @APXS_STAGE@ -n $(sslNAME) -i $(sslTARGET); \
+ 	fi
+ 
+ clean: clean-subdirs
