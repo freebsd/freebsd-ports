@@ -44,7 +44,9 @@ post-install:
 add-plist-post:
 	@${ECHO_CMD} "@unexec ${RMDIR} -p %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} -p %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
-.if (defined(PREFIX) && ${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
+.if (defined(PREFIX) && defined(LOCALBASE) && defined(LINUXBASE) \
+	&& ${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} \
+	&& ${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec ${RMDIR} %D 2> /dev/null || true" >> ${TMPPLIST}
 .else
 	@${DO_NADA}
