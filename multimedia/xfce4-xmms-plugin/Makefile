@@ -18,19 +18,14 @@ USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 intltool intlhack pango
 USE_XFCE=	configenv libgui libutil panel
 
-OPTIONS_DEFINE=	XMMS BEEP AUDACIOUS
+OPTIONS_DEFINE=	XMMS AUDACIOUS
 OPTIONS_DEFAULT=	XMMS
 XMMS_DESC=	xmms support
-BEEP_DESC=	beep-media-player support
 AUDACIOUS_DESC=	audacious support
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MBEEP}
-RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
-.endif
-
-.if ${PORT_OPTIONS:MXMSS}
+.if ${PORT_OPTIONS:MXMMS}
 RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 .endif
 
