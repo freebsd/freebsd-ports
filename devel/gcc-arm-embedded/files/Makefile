@@ -11,8 +11,8 @@ DOC_PREFIX=	${INTERIM_PREFIX}/${DOCS_SUFFIX}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
-CFLAGS+=	-Wno-string-plus-int -Wno-empty-body -Wno-self-assign -Wno-shadow
-CXXFLAGS+=	-Wno-string-plus-int -Wno-empty-body -Wno-self-assign -Wno-shadow
+CFLAGS+=	-Wno-error
+CXXFLAGS+=	-Wno-error
 .endif
 
 MISC_DOCS=	license.txt readme.txt release.txt
