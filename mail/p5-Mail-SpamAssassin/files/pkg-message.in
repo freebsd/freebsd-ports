@@ -11,11 +11,7 @@ You should complete the following post-installation tasks:
 	   You may get lots of annoying (but harmless) error messages
 	   if you skip this step.
 	
-	3) Run 'sa-update' to obtain the latest rules.
-	   Then, run 'sa-compile' for a big speed boost (if you
-	   enabled SA_COMPILE)
-	
-	4) To run spamd, add the following to /etc/rc.conf:
+	3) To run spamd, add the following to /etc/rc.conf:
 	   spamd_enable="YES"
 	
 SECURITY NOTE:

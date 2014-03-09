@@ -3,7 +3,7 @@
 
 PORTNAME=		Mail-SpamAssassin
 PORTVERSION=	3.4.0
-PORTREVISION?=	0		# committer: please bump PORTREVISION on Slaves
+PORTREVISION?=	1		# committer: please bump PORTREVISION on Slaves
 CATEGORIES?=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 				p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 				p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
 				p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+				re2c>=.12.0:${PORTSDIR}/devel/re2c
 
 CONFLICTS?=	ja-p5-Mail-SpamAssassin-[0-9]* p5-Mail-SpamAssassin-devel-[0-9]* p5-Mail-SpamAssassin-Alt-[0-9]*
 
@@ -42,23 +43,26 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 				LOCALSTATEDIR="${DBDIR}/spamassassin" \
 				BUILD_SPAMC=yes
 
-OPTIONS_DEFINE=		AS_ROOT SACOMPILE DKIM SSL GNUPG MYSQL PGSQL RAZOR \
-					SPF_QUERY RELAY_COUNTRY DCC IPV6
-OPTIONS_DEFAULT=	AS_ROOT DKIM SSL GNUPG RAZOR
+OPTIONS_DEFINE=	AS_ROOT GNUPG IPV6 MYSQL PGSQL SSL UPDATE_AND_COMPILE
+OPTIONS_GROUP=	PLUGINS
+OPTIONS_GROUP_PLUGINS=	DCC DKIM PYZOR RAZOR RELAY_COUNTRY SPF_QUERY
+OPTIONS_DEFAULT=AS_ROOT DKIM GNUPG RAZOR SSL UPDATE_AND_COMPILE
 
 AS_ROOT_DESC=		Run spamd as root (recommended)
-DCC_DESC=			Add DCC support (see LICENSE)
-DKIM_DESC=			DKIM/DomainKeys Identified Mail
 GNUPG_DESC=			Install GnuPG (for sa-update, optional)
 IPV6_DESC=			IPv6 sockets support
-RAZOR_DESC=			Add Vipul's Razor support
-RELAY_COUNTRY_DESC=	Relay country support
-SACOMPILE_DESC=		Compile rulesets (improves speed)
-SPF_QUERY_DESC=		Add SPF query support
 SSL_DESC=			Build spamd/spamc with SSL support
+UPDATE_AND_COMPILE_DESC=	Download and compile rulesets (recommended)
 
-SUB_FILES=	pkg-install pkg-message
-SUB_LIST=	USER=${USERS} GROUP=${GROUPS} INSTALL="${INSTALL}"
+PLUGINS_DESC=		Select SpamAssassin plugins
+DCC_DESC=			Add DCC support (mail/dcc-dccd)
+DKIM_DESC=			DKIM/DomainKeys Identified Mail (mail/p5-Mail-DKIM)
+PYZOR_DESC=			Add Pyzor support (mail/pyzor)
+RAZOR_DESC=			Add Vipul's Razor support (mail/razor-agents)
+RELAY_COUNTRY_DESC=	Relay country support (net/p5-IP-Country)
+SPF_QUERY_DESC=		Add SPF query support (mail/p5-Mail-SPF)
+
+SUB_FILES=	pkg-message
 PLIST_SUB+=	USER=${USERS} GROUP=${GROUPS}
 OPTIONS_SUB=yes
 
@@ -70,9 +74,9 @@ GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:${PORTSDIR}/security/gnupg1
 IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+PYZOR_RUN_DEPENDS=	pyzor:${PORTSDIR}/mail/pyzor
 RAZOR_RUN_DEPENDS=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
 RELAY_COUNTRY_RUN_DEPENDS=	p5-IP-Country>=0:${PORTSDIR}/net/p5-IP-Country
-SACOMPILE_RUN_DEPENDS=	re2c>=.12.0:${PORTSDIR}/devel/re2c
 SPF_QUERY_RUN_DEPENDS=	p5-Mail-SPF>=0:${PORTSDIR}/mail/p5-Mail-SPF
 
 SSL_USE=			OPENSSL=yes
@@ -87,11 +91,14 @@ PORTDOCS=	${DOCS} sql ldap
 
 USE_RC_SUBR=	sa-spamd
 
+ALL_TARGET=	all spamc/libspamc.so
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSSL}
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+ALL_TARGET+=	spamc/libsslspamc.so
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL}
@@ -104,6 +111,12 @@ SUB_LIST+=	SQL_FLAG=""
 SUB_LIST+=	RUN_AS_USER="-u ${USERS} -H /var/spool/spamd"
 .else
 SUB_LIST+=	RUN_AS_USER=""
+.endif
+
+.if ${PORT_OPTIONS:MUPDATE_AND_COMPILE} && empty(PACKAGE_BUILDING) && empty(BATCH)
+PLIST_SUB+=	UPDATE_ON_INSTALL="yes"
+.else
+PLIST_SUB+=	UPDATE_ON_INSTALL="no"
 .endif
 
 post-patch::
@@ -120,35 +133,32 @@ post-patch::
 	@${REINPLACE_CMD} -e '/^CC =/d; \
 		s|@SSLCFLAGS@|& $${CFLAGS}|g' ${WRKSRC}/spamc/Makefile.in
 
+.if ${PORT_OPTIONS:MDCC}
+	${REINPLACE_CMD} -e '/DCC/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
+.endif
+.if empty(PORT_OPTIONS:MDKIM)
+	${REINPLACE_CMD} -e '/DKIM/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/v312.pre
+.endif
+.if empty(PORT_OPTIONS:MPYZOR)
+	${REINPLACE_CMD} -e '/Pyzor/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/v310.pre
+.endif
 .if ${PORT_OPTIONS:MRAZOR}
 	${REINPLACE_CMD} -e '/Razor2/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v312.pre
 .endif
 .if ${PORT_OPTIONS:MRELAY_COUNTRY}
 	${REINPLACE_CMD} -e '/RelayCountry/s/^# ?loadplugin/loadplugin/' ${WRKSRC}/rules/init.pre
 .endif
-.if empty(PORT_OPTIONS:MDKIM)
-	${REINPLACE_CMD} -e '/DKIM/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/v312.pre
-.endif
 .if empty(PORT_OPTIONS:MSPF_QUERY)
 	${REINPLACE_CMD} -e '/SPF/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/init.pre
-.endif
-.if ${PORT_OPTIONS:MDCC}
-	${REINPLACE_CMD} -e '/DCC/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
 .endif
 .if ${PORT_OPTIONS:MSACOMPILE}
 	${REINPLACE_CMD} -e '/Rule2XSBody/s/^# loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
 .endif
 
-post-build:
-	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libspamc.so)
-.if ${PORT_OPTIONS:MSSL}
-	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libsslspamc.so)
-.endif
-
 pre-su-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_LIB} ${WRKSRC}/spamc/libspamc.so ${STAGEDIR}${PREFIX}/lib/libspamc.so.0
-	@${LN} -sf libspamc.so.0 ${STAGEDIR}${PREFIX}/lib/libspamc.so
+	${LN} -sf libspamc.so.0 ${STAGEDIR}${PREFIX}/lib/libspamc.so
 .if ${PORT_OPTIONS:MSSL}
 	${INSTALL_LIB} ${WRKSRC}/spamc/libsslspamc.so ${STAGEDIR}${PREFIX}/lib/libsslspamc.so.0
 	${LN} -sf libsslspamc.so.0 ${STAGEDIR}${PREFIX}/lib/libsslspamc.so
