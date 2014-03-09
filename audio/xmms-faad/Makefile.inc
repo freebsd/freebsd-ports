@@ -18,14 +18,6 @@ WANT_GNOME=	yes
 DESCR=		${PORTSDIR}/audio/faad/pkg-descr
 PLIST_FILES=	${PLUGINS_DIR:S,^${PREFIX}/,,}/libmp4.so
 
-.if ${PKGNAMEPREFIX} == "bmp-"
-LIB_DEPENDS+=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player
-USE_GNOME+=	gtk20
-PLUGINS_DIR=	${PREFIX}/lib/bmp/Input
-EXTRA_CFLAGS=	`pkg-config --cflags bmp` -DHAVE_BMP
-EXTRA_LDFLAGS=	`pkg-config --libs bmp`
-.endif
-
 .if ${PKGNAMEPREFIX} == "xmms-"
 LIB_DEPENDS+=	libxmms.so:${PORTSDIR}/multimedia/xmms
 USE_GNOME+=	gtk12
