@@ -10,7 +10,7 @@ COMMENT=	SpamAssassin with patches to handle multibyte character
 
 LICENSE=	APACHE20
 
-MASTERDIR=	${.CURDIR}/../p5-Mail-SpamAssassin
+MASTERDIR=	${.CURDIR}/../../mail/p5-Mail-SpamAssassin
 
 BUILD_DEPENDS=	ja-p5-MeCab>=0.98:${PORTSDIR}/japanese/p5-MeCab
 
