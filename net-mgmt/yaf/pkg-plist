@@ -51,6 +51,12 @@ lib/libyaf.la
 lib/libyaf.so
 libdata/pkgconfig/libairframe.pc
 libdata/pkgconfig/libyaf.pc
+man/man1/airdaemon.1.gz
+man/man1/applabel.1.gz
+man/man1/filedaemon.1.gz
+man/man1/yaf.1.gz
+man/man1/yafdpi.1.gz
+man/man1/yafscii.1.gz
 @dirrm include/yaf
 @dirrm include/libltdl
 @dirrm include/airframe
