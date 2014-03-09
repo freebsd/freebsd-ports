@@ -5,7 +5,6 @@ include/ossp/uuid++.hh
 lib/libuuid.a
 lib/libuuid++.a
 lib/libuuid++.la
-%%WITH_PERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod.gz
 libdata/pkgconfig/uuid.pc
 %%WITH_PERL%%%%PERL5_MAN3%%/OSSP::uuid.3.gz
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/OSSP/uuid.pm
@@ -16,15 +15,6 @@ libdata/pkgconfig/uuid.pc
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP/uuid
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OSSP
-%%WITH_PERL%%@dirrmtry %%PERL5_MAN3%%
-%%WITH_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-%%WITH_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-%%WITH_PERL%%@dirrmtry %%SITE_PERL%%
-%%WITH_PERL%%@dirrmtry lib/perl5/%%PERL_VER%%/man
-%%WITH_PERL%%@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%
-%%WITH_PERL%%@dirrmtry lib/perl5/%%PERL_VER%%
-%%WITH_PERL%%@dirrmtry lib/perl5/site_perl
-%%WITH_PERL%%@dirrmtry lib/perl5
 man/man1/uuid-config.1.gz
 man/man1/uuid.1.gz
 man/man3/uuid++.3.gz
