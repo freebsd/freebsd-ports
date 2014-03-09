@@ -1,0 +1,18 @@
+--- src/utils/ncmpidiff/Makefile.in.orig	2013-11-03 03:15:49.000000000 +0800
++++ src/utils/ncmpidiff/Makefile.in	2014-03-09 22:42:45.301478900 +0800
+@@ -37,11 +37,11 @@
+ 	set -e ; cd $(BUILDDIR)/src && $(MAKE) $(MFLAGS) all
+ 
+ install:	
+-	$(INSTALL) -d -m 755 $(MANDIR)/man1
+-	$(INSTALL_DATA) $(srcdir)/$(MANUAL) $(MANDIR)/man1/$(MANUAL)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(MANDIR)/man1
++	$(INSTALL_DATA) $(srcdir)/$(MANUAL) $(DESTDIR)$(MANDIR)/man1/$(MANUAL)
+ 
+-	$(INSTALL) -d $(BINDIR)
+-	$(INSTALL) -m 755 $(PROGRAM) $(BINDIR)/$(PROGRAM)
++	$(INSTALL) -d $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 755 $(PROGRAM) $(DESTDIR)$(BINDIR)/$(PROGRAM)
+ 
+ uninstall:
+ 	$(RM) -f $(BINDIR)/$(PROGRAM)
