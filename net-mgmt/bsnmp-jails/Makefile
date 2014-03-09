@@ -8,7 +8,7 @@ MASTER_SITES=	http://thewalter.net/stef/software/bsnmp-jails/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A bsnmpd module to measure statistics about jails
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

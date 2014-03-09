@@ -14,7 +14,7 @@ COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 
 LIB_DEPENDS=	libgnutls-openssl.so:${PORTSDIR}/security/gnutls
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 USE_RC_SUBR=	sixxs-aiccu
