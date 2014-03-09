@@ -19,13 +19,12 @@ COMMENT=	Sun PC NFS authentication and printing server
 
 DEPRECATED=	Unmaintained since 1997
 EXPIRATION_DATE=	2014-04-09
-MAN8=		pcnfsd.8
-MANCOMPRESSED=	maybe
-PLIST_FILES=	libexec/rpc.pcnfsd
+
+PLIST_FILES=	libexec/rpc.pcnfsd \
+		man/man8/pcnfsd.8.gz
 
 NO_WRKSUBDIR=
 
-NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/Makefile.inc ${WRKSRC}
 
