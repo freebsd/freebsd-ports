@@ -18,7 +18,6 @@ OPTIONS_DEFAULT=SCRIPTS
 
 SCRIPTS_DESC=	Install scripts to manage virtual IP
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
