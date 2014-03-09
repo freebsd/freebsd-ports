@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A helper library for multiple PKCS\#11 providers
 
+OPTIONS_DEFINE=	DOCS
+
 LICENSE=	BSD GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -27,11 +29,8 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 CONFIGURE_ARGS=	--disable-crypto-engine-gnutls \
 		--disable-crypto-engine-nss
 
-MAN8=		pkcs11-helper-1.8
-
 PORTDOCS=	*
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/configure
