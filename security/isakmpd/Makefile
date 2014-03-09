@@ -24,13 +24,8 @@ BUILD_DEPENDS+=	keynote:${PORTSDIR}/security/keynote
 USE_RC_SUBR=	isakmpd
 MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man LC_ALL=C
 
-MAN5=		isakmpd.conf.5 isakmpd.policy.5
-MAN8=		certpatch.8 isakmpd.8
-MANCOMPRESSED=	yes
-
 USE_OPENSSL=	yes
 
-NO_STAGE=	yes
 MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.pre.mk>
 
