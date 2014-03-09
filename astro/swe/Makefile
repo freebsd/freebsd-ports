@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swe
-PORTVERSION=	1.80.00
+PORTVERSION=	2.00.00
 CATEGORIES=	astro devel
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/
 DISTNAME=	${PORTNAME}_unix_src_${PORTVERSION}
@@ -15,17 +15,13 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/src
 USES=		gmake
 ALL_TARGET=	#
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-pedantic||' \
-		-e 's|CFLAGS =|CFLAGS ?=|' \
-		${WRKSRC}/Makefile
-
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libswe.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libswe.a ${STAGEDIR}${PREFIX}/lib
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/swe
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/swe
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
