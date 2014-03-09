@@ -174,6 +174,7 @@
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
+    SUBDIR += libmtp
     SUBDIR += libquicktime
     SUBDIR += libquicktime-lame
     SUBDIR += libquvi
