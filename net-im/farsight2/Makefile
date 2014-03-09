@@ -15,8 +15,7 @@ LIB_DEPENDS=	nice:${PORTSDIR}/net-im/libnice
 
 CONFLICTS=	farstream-[0-9]*
 
-USES=		pkgconfig gettext
-USE_GMAKE=	yes
+USES=		pkgconfig gettext gmake
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
@@ -25,5 +24,4 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
