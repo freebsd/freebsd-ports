@@ -17,9 +17,8 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	libxml2
 
-MAN1=		scli.1
 INFO=		scli
-PLIST_FILES=	bin/scli
+PLIST_FILES=	bin/scli man/man1/scli.1.gz
 
-NO_STAGE=	yes
+
 .include <bsd.port.mk>
