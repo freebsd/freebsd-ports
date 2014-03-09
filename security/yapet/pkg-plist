@@ -1,12 +1,17 @@
+%%CONVERTERS%%bin/csv2yapet
 bin/yapet
-%%CSV2YAPET%%bin/csv2yapet
+%%CONVERTERS%%bin/yapet2csv
+%%CONVERTERS%%man/man1/csv2yapet.1.gz
+man/man1/yapet.1.gz
+%%CONVERTERS%%man/man1/yapet2csv.1.gz
+man/man5/yapet_colors.5.gz
+man/man5/yapet_config.5.gz
 share/applications/yapet.desktop
-%%NOPORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%NOPORTDOCS%%%%DOCSDIR%%/DESIGN
-%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
-%%NOPORTDOCS%%%%DOCSDIR%%/README
-%%NOPORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/DESIGN
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%NLS%%share/locale/de/LC_MESSAGES/libyacurs.mo
 %%NLS%%share/locale/de/LC_MESSAGES/yapet.mo
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-%%NOPORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
