@@ -9,17 +9,20 @@
 # KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable spamd:
+# Add the following line to /etc/rc.conf to enable spamd:
 #
-#spamd_enable="YES"
+#   spamd_enable="YES"
 #
-# See spamd(8) for flags
+# You can pass flags to spamd with spamd_flags="..."
+# To change the user that spamd runs as, use
+#
+#    spamd_flags="-u USER [-H /path/to/home... we suggest /var/spool/spamd]"
 #
 
 . /etc/rc.subr
 
 name=spamd
-rcvar=spamd_enable
+rcvar=${name}_enable
 
 extra_commands="reload"
 load_rc_config $name
@@ -28,16 +31,9 @@ load_rc_config $name
 : ${spamd_enable:="NO"}
 : ${spamd_flags="-c %%SQL_FLAG%% %%RUN_AS_USER%%"}
 
-pidfile=${spamd_pidfile:-"/var/run/spamd/spamd.pid"}
-command=%%PREFIX%%/bin/spamd
+pidfile=${spamd_pidfile:-"/var/run/${name}/${name}.pid"}
+command=%%PREFIX%%/bin/${name}
 command_args="-d -r ${pidfile}"
 required_dirs=%%PREFIX%%/share/spamassassin
-
-stop_postcmd=stop_postcmd
-
-stop_postcmd()
-{
-  rm -f $pidfile
-}
 
 run_rc_command "$1"

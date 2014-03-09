@@ -13,7 +13,7 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 MAINTAINER?=	adamw@FreeBSD.org
 COMMENT?=		Highly efficient mail filter for identifying spam
 
-LICENSE=	APACHE20
+LICENSE=		APACHE20
 
 BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 				p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
@@ -43,8 +43,9 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 				LOCALSTATEDIR="${DBDIR}/spamassassin" \
 				BUILD_SPAMC=yes
 
-OPTIONS_DEFINE=	AS_ROOT GNUPG IPV6 MYSQL PGSQL SSL UPDATE_AND_COMPILE
-OPTIONS_GROUP=	PLUGINS
+OPTIONS_DEFINE=	AS_ROOT GNUPG IPV6 SSL UPDATE_AND_COMPILE
+OPTIONS_GROUP=	DATABASE PLUGINS
+OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
 OPTIONS_GROUP_PLUGINS=	DCC DKIM PYZOR RAZOR RELAY_COUNTRY SPF_QUERY
 OPTIONS_DEFAULT=AS_ROOT DKIM GNUPG RAZOR SSL UPDATE_AND_COMPILE
 
@@ -54,7 +55,9 @@ IPV6_DESC=			IPv6 sockets support
 SSL_DESC=			Build spamd/spamc with SSL support
 UPDATE_AND_COMPILE_DESC=	Download and compile rulesets (recommended)
 
-PLUGINS_DESC=		Select SpamAssassin plugins
+DATABASE_DESC=		Optional user-config database backends
+
+PLUGINS_DESC=		Optional SpamAssassin plugins
 DCC_DESC=			Add DCC support (mail/dcc-dccd)
 DKIM_DESC=			DKIM/DomainKeys Identified Mail (mail/p5-Mail-DKIM)
 PYZOR_DESC=			Add Pyzor support (mail/pyzor)
@@ -83,6 +86,14 @@ SSL_USE=			OPENSSL=yes
 SSL_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 SSL_CONFIGURE_ON=	ENABLE_SSL=yes
 SSL_CONFIGURE_OFF=	ENABLE_SSL=no
+
+# plugin names in rules/*.pre, for enabling/disabling
+DCC_INITVAR=			DCC
+DKIM_INITVAR=			DKIM
+PYZOR_INITVAR=			Pyzor
+RAZOR_INITVAR=			Razor2
+RELAY_COUNTRY_INITVAR=	RelayCountry
+SPF_QUERY_INITVAR=		SPF
 
 DOCS=		CREDITS Changes INSTALL NOTICE PACKAGING README TRADEMARK UPGRADE USAGE procmailrc.example
 DOCSSQL=	README README.awl README.bayes awl_mysql.sql awl_pg.sql bayes_mysql.sql bayes_pg.sql userpref_mysql.sql userpref_pg.sql
@@ -120,40 +131,29 @@ PLIST_SUB+=	UPDATE_ON_INSTALL="no"
 .endif
 
 post-patch::
-	@${FIND} ${WRKSRC} -name \*.orig -delete
-	@${REINPLACE_CMD} -e 's#B_CONFDIR)/local.cf#B_CONFDIR)/local.cf.sample#g' \
-		-e 's#B_CONFDIR)/init.pre#B_CONFDIR)/init.pre.sample#g' \
-		-e 's#B_CONFDIR)/v310.pre#B_CONFDIR)/v310.pre.sample#g' \
-		-e 's#B_CONFDIR)/v312.pre#B_CONFDIR)/v312.pre.sample#g' \
-		-e 's#B_CONFDIR)/v320.pre#B_CONFDIR)/v320.pre.sample#g' \
-		-e 's#B_CONFDIR)/v330.pre#B_CONFDIR)/v330.pre.sample#g' \
-		-e 's#B_CONFDIR)/v340.pre#B_CONFDIR)/v340.pre.sample#g' \
+	${FIND} ${WRKSRC} -name \*.orig -delete
+	${REINPLACE_CMD} -e 's,B_CONFDIR)/local.cf,B_CONFDIR)/local.cf.sample,g' \
+		-e 's,B_CONFDIR)/init.pre,B_CONFDIR)/init.pre.sample,g' \
+		-e 's,B_CONFDIR)/v310.pre,B_CONFDIR)/v310.pre.sample,g' \
+		-e 's,B_CONFDIR)/v312.pre,B_CONFDIR)/v312.pre.sample,g' \
+		-e 's,B_CONFDIR)/v320.pre,B_CONFDIR)/v320.pre.sample,g' \
+		-e 's,B_CONFDIR)/v330.pre,B_CONFDIR)/v330.pre.sample,g' \
+		-e 's,B_CONFDIR)/v340.pre,B_CONFDIR)/v340.pre.sample,g' \
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
-	@${REINPLACE_CMD} -e '/^CC =/d; \
+	${REINPLACE_CMD} -e '/^CC =/d; \
 		s|@SSLCFLAGS@|& $${CFLAGS}|g' ${WRKSRC}/spamc/Makefile.in
 
-.if ${PORT_OPTIONS:MDCC}
-	${REINPLACE_CMD} -e '/DCC/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
-.endif
-.if empty(PORT_OPTIONS:MDKIM)
-	${REINPLACE_CMD} -e '/DKIM/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/v312.pre
-.endif
-.if empty(PORT_OPTIONS:MPYZOR)
-	${REINPLACE_CMD} -e '/Pyzor/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/v310.pre
-.endif
-.if ${PORT_OPTIONS:MRAZOR}
-	${REINPLACE_CMD} -e '/Razor2/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v312.pre
-.endif
-.if ${PORT_OPTIONS:MRELAY_COUNTRY}
-	${REINPLACE_CMD} -e '/RelayCountry/s/^# ?loadplugin/loadplugin/' ${WRKSRC}/rules/init.pre
-.endif
-.if empty(PORT_OPTIONS:MSPF_QUERY)
-	${REINPLACE_CMD} -e '/SPF/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/init.pre
-.endif
-.if ${PORT_OPTIONS:MSACOMPILE}
-	${REINPLACE_CMD} -e '/Rule2XSBody/s/^# loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
-.endif
+.for var in ${OPTIONS_GROUP_PLUGINS}
+.  if ${PORT_OPTIONS:M${var}}
+	${REINPLACE_CMD} -e '/${${var}_INITVAR}/s/^\#.*loadplugin/loadplugin/' ${WRKSRC}/rules/*.pre
+.  else
+	${REINPLACE_CMD} -e '/${${var}_INITVAR}/s/^loadplugin/\# loadplugin/' ${WRKSRC}/rules/*.pre
+.  endif
+.endfor
+
+	# load pre-compiled rules
+	${REINPLACE_CMD} -e '/Rule2XSBody/s/^\# loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
 
 pre-su-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
