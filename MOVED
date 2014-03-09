@@ -5619,3 +5619,4 @@ devel/py-gitpython||2014-03-08|Has expired: No more public distfiles
 net/mars_nwe||2014-03-08|Has expired: No more public distfiles
 audio/fmio||2014-03-08|Has expired: No more public distfiles
 audio/libmtp|multimedia/libmtp|2014-03-09|Moved from audio to multimedia
+mail/p5-Mail-SpamAssassin-Alt|mail/p5-Mail-SpamAssassin|2014-03-09|Retired; please use mail/p5-Mail-SpamAssassin
