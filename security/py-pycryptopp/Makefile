@@ -16,10 +16,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_GCC=	yes
-USE_PYDISTUTILS=easy_install
-PYEASYINSTALL_ARCHDEP=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#g' \
 		${WRKSRC}/embeddedcryptopp/rijndael.cpp \
