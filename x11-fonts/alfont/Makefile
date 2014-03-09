@@ -30,7 +30,7 @@ USES=		dos2unix gmake iconv
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-Iinclude -I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/freetype2 $$(freetype-config --cflags) -w
+		-I${LOCALBASE}/include/freetype2 $$(freetype-config --cflags)
 LDFLAGS+=	-L${LOCALBASE}/lib -lalleg $$(freetype-config --libs)
 
 PLIST_FILES=	include/alfont.h \
