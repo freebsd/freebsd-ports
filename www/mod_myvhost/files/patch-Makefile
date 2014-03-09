@@ -1,6 +1,6 @@
---- ./Makefile.orig	2012-04-06 15:11:08.000000000 +0200
-+++ ./Makefile	2012-04-06 15:11:27.000000000 +0200
-@@ -16,8 +16,12 @@
+--- ./Makefile.orig	2014-03-09 18:49:26.000000000 +0100
++++ ./Makefile	2014-03-09 18:51:04.000000000 +0100
+@@ -16,10 +16,15 @@
  CP = /bin/cp -f
  
  CFLAGS = -Wc,-W -Wc,-Wall
@@ -12,15 +12,18 @@
 +.endif
  #CFLAGS+= -DWITH_PHP -DWITH_UID_GID -DWITH_CACHE
  LDFLAGS = 
++APXS_STAGE=	@APXS_STAGE@
  
-@@ -28,8 +32,8 @@
+ default: all
+ 
+@@ -28,8 +33,8 @@
  $(APACHE_MODULE): $(SRCS)
  	$(APXS) -c $(CFLAGS) $(LDFLAGS) $(SRCS)
  
 -install: all
 -	$(APXS) -i -a -n $(NAME) $(MODULE_LA)
 +install: $(MODULE_LA)
-+	$(APXS) -i -A -n $(NAME) $(MODULE_LA)
++	$(APXS) $(APXS_STAGE) -i -n $(NAME) $(MODULE_LA)
  
  clean:
  	$(RM) $(OBJS) $(APACHE_MODULE) *.slo *.lo mod_myvhost.la .libs
