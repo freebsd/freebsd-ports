@@ -27,9 +27,6 @@ USES=		fortran gmake
 
 PORTDOCS=	COPYRIGHT INSTALL README
 
-#FORTRAN_CONFIGURE_OFF=	--disable-fortran
-#FORTRAN_CONFIGURE_ON=	--enable-fortran
-#FORTRAN_USES=		fortran
 MPICH2_CONFIGURE_ON=	--with-mpi=${LOCALBASE}
 MPICH2_LIB_DEPENDS=	libmpich.so:${PORTSDIR}/net/mpich2
 OPENMPI_CONFIGURE_ON=	--with-mpi=${LOCALBASE}/mpi/openmpi
