@@ -12,9 +12,8 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for authenticating users with Kerberos v5
 
-NO_STAGE=	yes
 USE_APACHE=	22
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 PORTSCOUT=	limit:^5.4
@@ -36,5 +35,12 @@ CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr --without-krb4
 LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE} --without-krb4
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
+		${WRKSRC}/Makefile.in
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 
 .include <bsd.port.mk>
