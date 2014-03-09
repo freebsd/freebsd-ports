@@ -1,0 +1,15 @@
+# $FreeBSD$
+
+.include "${.CURDIR}/Makefile.version"
+
+LIB_DEPENDS=		libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=		libmpfr.so:${PORTSDIR}/math/mpfr
+LIB_DEPENDS+=		libmpc.so:${PORTSDIR}/math/mpc
+
+ONLY_FOR_ARCHS= 	i386 amd64
+
+GNU_CONFIGURE=		yes
+USE_BZIP2=		yes
+USES=			iconv gmake perl5
+USE_PERL5=		build
+ALL_TARGET=		default
