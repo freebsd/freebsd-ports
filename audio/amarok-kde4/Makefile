@@ -56,7 +56,7 @@ MP3TUNES_LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth \
 MP3TUNES_USE=		GNOME=glib20,libxml2
 MP3TUNES_CMAKE_OFF=	-DWITH_MP3tunes:BOOL=Off
 
-MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/audio/libmtp
+MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp
 MTP_CMAKE_OFF=		-DWITH_Mtp:BOOL=Off
 
 NLS_USES=		gettext

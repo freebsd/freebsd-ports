@@ -12,7 +12,7 @@ COMMENT=	Media Transfer Protocol (MTP) GUI client
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	libmtp.so:${PORTSDIR}/audio/libmtp \
+LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
