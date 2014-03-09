@@ -6,22 +6,24 @@
 #
 # Feature:      ada
 # Usage:        USES=ada
-# Valid ARGS:   does not require args
+# Valid ARGS:   47
 
 .if !defined(_INCLUDE_USES_ADA_MK)
 _INCLUDE_USES_ADA_MK=    yes
 
-.if defined(ada_ARGS)
-IGNORE= USES=ada does not require args
-.endif
+CC= ada
 
-CC=		ada
+. if defined(ada_ARGS) && ${ada_ARGS} == 47
+BUILD_DEPENDS+=	${LOCALBASE}/gcc47-aux/bin/ada:${PORTSDIR}/lang/gcc47-aux
+MAKE_ENV+=	PATH=${LOCALBASE}/gcc47-aux/bin:${PATH}
+CONFIGURE_ENV+=	PATH=${LOCALBASE}/gcc47-aux/bin:${PATH}
+. else
 BUILD_DEPENDS+=	${LOCALBASE}/gcc-aux/bin/ada:${PORTSDIR}/lang/gcc-aux
-
 MAKE_ENV+=	PATH=${LOCALBASE}/gcc-aux/bin:${PATH}
-MAKE_ENV+=	ADA_PROJECT_PATH=${LOCALBASE}/lib/gnat
-
 CONFIGURE_ENV+=	PATH=${LOCALBASE}/gcc-aux/bin:${PATH}
+. endif
+
+MAKE_ENV+=	ADA_PROJECT_PATH=${LOCALBASE}/lib/gnat
 CONFIGURE_ENV+=	ADA_PROJECT_PATH=${LOCALBASE}/lib/gnat
 
 .endif
