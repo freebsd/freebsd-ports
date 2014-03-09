@@ -19,10 +19,6 @@ CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include \
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	rrdbot
 
-MAN1=		rrdbot-get.1
-MAN5=		rrdbot.conf.5
-MAN8=		rrdbot-create.8 rrdbotd.8
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
@@ -30,9 +26,5 @@ CONFIGURE_ARGS+=	--enable-debug
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
