@@ -66,7 +66,6 @@ ALL_TARGET=nothing
 INSTALL_TARGET=	install${PKGNAMESUFFIX}
 
 # Change "cd foo; make" into "$(MAKE) -C foo" to unbreak parallel builds
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name Makefile -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -E 's,cd(.+) (;|&&) make,$$(MAKE) -C\1,'
