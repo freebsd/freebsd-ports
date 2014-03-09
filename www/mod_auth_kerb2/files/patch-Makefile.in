@@ -1,19 +1,20 @@
---- ./Makefile.in.orig	2008-12-02 09:07:10.000000000 -0500
-+++ ./Makefile.in	2012-11-28 09:50:58.000000000 -0500
-@@ -1,6 +1,6 @@
+--- ./Makefile.in.orig	2008-12-02 15:07:10.000000000 +0100
++++ ./Makefile.in	2014-03-09 17:54:19.000000000 +0100
+@@ -1,6 +1,7 @@
  APXS = @APXS@
++APXS_STAGE=	@APXS_STAGE@
  KRB5_CPPFLAGS = @KRB5_CPPFLAGS@
 -KRB5_LDFLAGS = @KRB5_LDFLAGS@
 +KRB5_LDFLAGS = @KRB5_LDFLAGS@ -lgssapi_krb5
  KRB4_CPPFLAGS = @KRB4_CPPFLAGS@
  KRB4_LDFLAGS = @KRB4_LDFLAGS@
  LIB_resolv = @LIB_resolv@
-@@ -16,7 +16,7 @@
+@@ -16,7 +17,7 @@
  	./apxs.sh "${CPPFLAGS}" "${LDFLAGS}" "${SPNEGO_SRCS}" "${APXS}" "-c" "src/mod_auth_kerb.c"
  
  install:
 -	./apxs.sh "${CPPFLAGS}" "${LDFLAGS}" "${SPNEGO_SRCS}" "${APXS}" "-c -i" "src/mod_auth_kerb.c"
-+	./apxs.sh "${CPPFLAGS}" "${LDFLAGS}" "${SPNEGO_SRCS}" "${APXS}" "-c -i -a" "src/mod_auth_kerb.c"
++	${APXS} $(APXS_STAGE) -i -n auth_kerb src/mod_auth_kerb.la
  
  clean:
  	for i in . src spnegokrb5; do \
