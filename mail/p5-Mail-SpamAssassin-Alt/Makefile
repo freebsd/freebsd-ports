@@ -1,13 +1,12 @@
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-Alt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Provides optional SpamAssassin tuning
 
 CONFLICTS=	p5-Mail-SpamAssassin-[0-9]* ja-p5-Mail-SpamAssassin-[0-9]* p5-Mail-SpamAssassin-devel-[0-9]*
-LATEST_LINK=	p5-Mail-SpamAssassin-Alt
 
 OPTIONS_DEFINE=	AWL FREEMAIL
 AWL_DESC=	Auto WhiteList support
