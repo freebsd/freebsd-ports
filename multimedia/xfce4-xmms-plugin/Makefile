@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-xmms-plugin
 PORTVERSION=	0.5.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -19,7 +19,6 @@ USE_GNOME=	gtk20 intltool intlhack pango
 USE_XFCE=	configenv libgui libutil panel
 
 OPTIONS_DEFINE=	XMMS AUDACIOUS
-OPTIONS_DEFAULT=	XMMS
 XMMS_DESC=	xmms support
 AUDACIOUS_DESC=	audacious support
 
