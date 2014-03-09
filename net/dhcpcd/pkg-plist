@@ -9,4 +9,7 @@ libexec/dhcpcd-hooks/30-hostname
 libexec/dhcpcd-hooks/01-test
 libexec/dhcpcd-hooks/29-lookup-hostname
 libexec/dhcpcd-run-hooks
+man/man5/dhcpcd.conf.5.gz
+man/man8/dhcpcd-run-hooks.8.gz
+man/man8/dhcpcd.8.gz
 @dirrmtry libexec/dhcpcd-hooks
