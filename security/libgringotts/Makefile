@@ -13,6 +13,8 @@ COMMENT=	Library for encapsulating/safekeeping data in encrypted/compressed form
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash
 
+OPTIONS_DEFINE=		DOCS
+
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -21,7 +23,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-pkg-config-files=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|md5sum|md5|g" ${WRKSRC}/Makefile.in
 
