@@ -11,19 +11,12 @@ DISTNAME=	python-gflags-${PORTVERSION}
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Commandline flags module for Python
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	python_gflags
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/gflags \
-		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
 PROJECTHOST=	python-gflags
-
-NO_STAGE=	yes
-post-install:
-	${TOUCH} ${PYEASYINSTALL_SITELIBDIR}/gflags
 
 .include <bsd.port.mk>
