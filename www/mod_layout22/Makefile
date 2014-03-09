@@ -11,7 +11,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache2.2 module to wrap served pages with a header and/or footer
 
-
 CONFLICTS=	mod_layout-3.* mod_layout-4.*
 
 PORTSCOUT=	limit:^5
@@ -21,11 +20,15 @@ LATEST_LINK=	mod_layout22
 
 MAKE_ARGS+=	builddir=${WRKSRC}
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
+		${WRKSRC}/Makefile
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
 
 .include <bsd.port.mk>
