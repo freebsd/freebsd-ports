@@ -18,11 +18,10 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png\
 		expat.6:${PORTSDIR}/textproc/expat2\
 		mspack.1:${PORTSDIR}/archivers/libmspack
 
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig gmake
 USE_BZIP2=	yes
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 pangox-compat
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libpng=sys\
@@ -39,7 +38,6 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		X11BASE="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-NO_STAGE=	yes
 NO_LATEST_LINK=	yes
 PLIST=		${.CURDIR}/pkg-plist
 
