@@ -16,11 +16,10 @@ LIB_DEPENDS=	json-glib-1.0:${PORTSDIR}/devel/json-glib
 
 LICENSE=	LGPL21
 
-USES=		pkgconfig gettext
-USE_GMAKE=	yes
+USES=		pkgconfig gettext gmake
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gdkpixbuf2 gnomehack ltverhack gnomeprefix atk pango
+USE_GNOME=	gdkpixbuf2 gnomehack ltverhack gnomeprefix atk pango introspection:build
 USE_GL=		gl
 USE_XORG=	glproto x11 xfixes xdamage xcomposite xi
 USE_LDCONFIG=	yes
@@ -29,7 +28,6 @@ CONFIGURE_ARGS=	--with-x --enable-conformance=no
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|G_CONST_RETURN|const|g' \
 		${WRKSRC}/clutter/cally/*.c \
