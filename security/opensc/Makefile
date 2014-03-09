@@ -24,9 +24,8 @@ OPENCT_DESC=	Use OpenCT backend
 CTAPI_DESC=	Use CT-API backend
 SM_DESC=	Enable secure messaging support
 
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -39,15 +38,6 @@ CONFIGURE_ARGS=	--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
 
 PORTDOCS=	*
 
-MANCOMPRESSED=	no
-MAN1=		cardos-tool.1 cryptoflex-tool.1 eidenv.1 iasecc-tool.1 \
-		netkey-tool.1 openpgp-tool.1 \
-		opensc-explorer.1 opensc-tool.1 piv-tool.1 \
-		pkcs11-tool.1 pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1 \
-		sc-hsm-tool.1 westcos-tool.1
-MAN5=		pkcs15-profile.5
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENCT}
