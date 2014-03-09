@@ -214,6 +214,7 @@ bin/arm
 %%PYTHON_SITELIBDIR%%/arm/util/uiTools.py
 %%PYTHON_SITELIBDIR%%/arm/util/uiTools.pyc
 %%PYTHON_SITELIBDIR%%/arm/util/uiTools.pyo
+man/man1/arm.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/arm/TorCtl
 @dirrm %%PYTHON_SITELIBDIR%%/arm/cli/connections
 @dirrm %%PYTHON_SITELIBDIR%%/arm/cli/graphing
