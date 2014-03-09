@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1a0de610-a761-11e3-95fe-bcaec565249c">
+    <topic>freetype2 -- Out of bounds read/write</topic>
+    <affects>
+      <package>
+	<name>freetype2</name>
+	<range><lt>2.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mateusz Jurczyk reports:</p>
+	<blockquote cite="http://savannah.nongnu.org/bugs/?41697">
+	  <p>Out of bounds stack-based read/write in cf2_hintmap_build.<br> 
+             This is a critical vulnerability in the CFF Rasterizer code
+             recently contributed by Adobe, leading to potential arbitrary
+             code execution in the context of the FreeType2 library client.
+             </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://savannah.nongnu.org/bugs/?41697</url>
+    </references>
+    <dates>
+      <discovery>2014-02-25</discovery>
+      <entry>2014-03-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="20e23b65-a52e-11e3-ae3a-00224d7c32a2">
     <topic>xmms -- Integer Overflow And Underflow Vulnerabilities</topic>
     <affects>
