@@ -1,0 +1,36 @@
+cmcurl: Include the local curl directories before all others.
+
+In some cases, it was possible for the include directory of the system-wide
+libcurl to be added to the include path before cmcurl's, which would result
+in them being picked up and causing the build to fail if the curl versions
+differ too much.
+
+One way to trigger this is to have OpenSSL installed into a non-default
+location together with libcurl (/usr/local, for example). If cmcurl is built
+with CMAKE_USE_OPENSSL on, -I/usr/local/include would end up being added
+before -I${PATH_TO_CMCURL}.
+
+Sent upstream: http://public.kitware.com/pipermail/cmake-developers/2014-March/010000.html
+--- Utilities/cmcurl/CMakeLists.txt
++++ Utilities/cmcurl/CMakeLists.txt
+@@ -172,6 +172,11 @@ IF(NOT CURL_SPECIAL_LIBZ)
+   CHECK_LIBRARY_EXISTS_CONCAT("z"      inflateEnd   HAVE_LIBZ)
+ ENDIF(NOT CURL_SPECIAL_LIBZ)
+ 
++# Include the local directories before any others so that we do not end up
++# including system curl's include directory first by mistake.
++INCLUDE_DIRECTORIES(${LIBCURL_SOURCE_DIR})
++INCLUDE_DIRECTORIES(${LIBCURL_BINARY_DIR})
++
+ OPTION(CMAKE_USE_OPENSSL "Use OpenSSL code with curl." OFF)
+ MARK_AS_ADVANCED(CMAKE_USE_OPENSSL)
+ IF(CMAKE_USE_OPENSSL)
+@@ -679,8 +684,6 @@ INCLUDE(CMake/OtherTests.cmake)
+ 
+ # The rest of the build
+ 
+-INCLUDE_DIRECTORIES(${LIBCURL_SOURCE_DIR})
+-INCLUDE_DIRECTORIES(${LIBCURL_BINARY_DIR})
+ OPTION(CMAKE_BUILD_CURL_SHARED "Should curl be built shared" TRUE)
+ IF(CMAKE_BUILD_CURL_SHARED)
+   SET(LIBRARY_TYPE SHARED)
