@@ -25,14 +25,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 
-MAN1=		zenity.1
-
 CONFLICTS=	gtkada-1.2.*
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_NOTIFY)

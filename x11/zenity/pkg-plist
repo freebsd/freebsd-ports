@@ -1,5 +1,6 @@
 bin/gdialog
 bin/zenity
+man/man1/zenity.1.gz
 share/gnome/help/zenity/C/figures/zenity-calendar-screenshot.png
 share/gnome/help/zenity/C/figures/zenity-entry-screenshot.png
 share/gnome/help/zenity/C/figures/zenity-error-screenshot.png
