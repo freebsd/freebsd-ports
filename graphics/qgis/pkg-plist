@@ -4500,6 +4500,7 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins/processing/commander
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins/processing/algs/mmqgisx
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins/processing/algs/ftools
+%%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins/processing/algs/ui
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins/processing/algs
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins/processing/admintools/httplib2
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins/processing/admintools/geoserver
