@@ -16,9 +16,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lz
 
-MAN1=		gmanedit.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/<argz\.h>/d' ${WRKSRC}/src/callbacks.c
 
