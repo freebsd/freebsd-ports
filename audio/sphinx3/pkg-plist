@@ -128,8 +128,8 @@ libdata/pkgconfig/sphinx3.pc
 %%DATADIR%%/model/ep/variances
 %%DATADIR%%/model/hmm/RM1_cd_semi/feat.params
 %%DATADIR%%/model/hmm/RM1_cd_semi/kdtrees
-%%DATADIR%%/model/hmm/RM1_cd_semi/means
 %%DATADIR%%/model/hmm/RM1_cd_semi/mdef
+%%DATADIR%%/model/hmm/RM1_cd_semi/means
 %%DATADIR%%/model/hmm/RM1_cd_semi/mixture_weights
 %%DATADIR%%/model/hmm/RM1_cd_semi/transition_matrices
 %%DATADIR%%/model/hmm/RM1_cd_semi/variances
