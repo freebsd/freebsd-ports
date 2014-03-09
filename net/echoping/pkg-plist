@@ -19,4 +19,9 @@ lib/echoping/whois.a
 lib/echoping/whois.la
 lib/echoping/whois.so
 lib/echoping/whois.so.0
+man/man1/echoping.1.gz
+man/man1/echoping_dns.1.gz
+man/man1/echoping_ldap.1.gz
+man/man1/echoping_random.1.gz
+man/man1/echoping_whois.1.gz
 @dirrm lib/echoping
