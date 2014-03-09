@@ -15,29 +15,30 @@ USE_GHOSTSCRIPT_RUN=	yes
 MAKE_ENV=	GSPATH="${LOCALBASE}/bin/gs" GZPATH="/usr/bin/gzip" \
 		ETC="${PREFIX}/etc"
 
-MAN1=		peps.1
-PORTDOCS=	peps.pdf
 PLIST_FILES=	bin/peps \
-		etc/peps.mime
+		etc/peps.mime \
+		man/man1/peps.1.gz
+PORTDOCS=	peps.pdf
 
+OPTIONS_DEFINE=	DOCS X11
+OPTIONS_DEFAULT=	X11
 
-.if defined(WITHOUT_X11)
+X11_PLIST_FILES=	bin/xpeps
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MX11}
 ALL_TARGET=	peps
-.else
-PLIST_FILES+=	bin/xpeps
 .endif
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/peps ${PREFIX}/bin
-.if !defined(WITHOUT_X11)
-	${INSTALL_PROGRAM} ${WRKSRC}/xpeps ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/peps ${STAGEDIR}${PREFIX}/bin
+.if ${PORT_OPTIONS:MX11}
+	${INSTALL_PROGRAM} ${WRKSRC}/xpeps ${STAGEDIR}${PREFIX}/bin
 .endif
-	${INSTALL_MAN} ${WRKSRC}/peps.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/peps.mime ${PREFIX}/etc
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/peps.pdf ${DOCSDIR}
-.endif
+	${INSTALL_MAN} ${WRKSRC}/peps.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/peps.mime ${STAGEDIR}${PREFIX}/etc
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/peps.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
