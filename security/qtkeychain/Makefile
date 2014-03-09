@@ -15,10 +15,10 @@ GH_ACCOUNT=	frankosterfeld
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	bb32e45
 
+CONFIGURE_ENV=	HOME=${WRKDIR}/.home
+
 USES=	cmake
 USE_QT4=	corelib dbus moc_build qmake_build rcc_build
 USE_LDCONFIG=	yes
 
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
