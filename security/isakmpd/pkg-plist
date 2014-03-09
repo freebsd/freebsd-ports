@@ -9,4 +9,8 @@ share/examples/isakmpd/singlehost-east.gdb
 share/examples/isakmpd/singlehost-setup.sh
 share/examples/isakmpd/singlehost-west.conf
 share/examples/isakmpd/singlehost-west.gdb
+man/man5/isakmpd.conf.5.gz
+man/man5/isakmpd.policy.5.gz
+man/man8/certpatch.8.gz
+man/man8/isakmpd.8.gz
 @dirrm share/examples/isakmpd
