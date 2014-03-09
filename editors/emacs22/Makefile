@@ -53,7 +53,6 @@ CONFIGURE_ARGS=		--with-gtk
 CONFIGURE_ARGS+=	--without-xim
 .endif
 
-MAN1=		ctags.1 emacs.1 emacsclient.1 etags.1
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 
 MAKE_ENV=	LC_ALL=C
@@ -64,7 +63,6 @@ INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
 		org pcl-cvs pgg rcirc reftex sc ses sieve smtpmail speedbar \
 		tramp url vip viper widget woman
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
