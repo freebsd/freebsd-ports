@@ -23,7 +23,6 @@ INSTALLS_ICONS=	yes
 
 WRKSRC=	${WRKDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
