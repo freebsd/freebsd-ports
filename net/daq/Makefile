@@ -18,9 +18,8 @@ LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet \
 BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		bison
+USES=		bison gmake
 USE_AUTOTOOLS=	libtool
 MAKE_JOBS_UNSAFE=	yes
 
