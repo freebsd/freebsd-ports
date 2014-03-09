@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_log_sql
 PORTVERSION=	1.101
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -12,24 +12,31 @@ PKGNAMESUFFIX=	-dtc
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
+OPTIONS_DEFINE=	DBI
+DBI_DESC=	depend on databases/libdbi
+
+OPTIONS_SUB=		yes
+DBI_CONFIGURE_ON=	--with-dbi=${LOCALBASE}
+DBI_CONFIGURE_OFF=	--without-dbi
+DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
 
 LATEST_LINK=	mod_log_sql2-dtc
 GNU_CONFIGURE=	yes
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_APACHE=	22
-CONFIGURE_ARGS+=	--with-apxs=${APXS}
-SSL_PLIST=	""
-PLIST_SUB+=	SSL=${SSL_PLIST}
-
 USE_MYSQL=	yes
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-.if defined(WITH_DBI) || exists(${LOCALBASE}/include/dbi/dbi.h)
-CONFIGURE_ARGS+=	--with-dbi=${LOCALBASE}
-LIB_DEPENDS+=		dbi.1:${PORTSDIR}/databases/libdbi
-.endif
+
+CONFIGURE_ARGS+=	--with-apxs=${APXS}
+CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
+
+post-patch:
+	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
+		${WRKSRC}/Makefile.in
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 
 .include <bsd.port.post.mk>
