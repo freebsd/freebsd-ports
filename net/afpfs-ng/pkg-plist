@@ -13,4 +13,6 @@ include/afpfs-ng/libafpclient.h
 include/afpfs-ng/uams_def.h
 include/afpfs-ng/afp.h
 include/afpfs-ng/utils.h
+man/man1/afpcmd.1.gz
+man/man1/afpgetstatus.1.gz
 @dirrm include/afpfs-ng

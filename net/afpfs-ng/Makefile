@@ -22,8 +22,6 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-D_FILE_OFFSET_BITS=64 -I${LOCALBASE}/include -Wno-return-type
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		afpcmd.1 afpgetstatus.1
-
 OPTIONS_DEFINE=	FUSE GCRYPT
 
 FUSE_LIB_DEPENDS=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
@@ -32,12 +30,12 @@ FUSE_CONFIGURE_ENABLE=	fuse
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 GCRYPT_CONFIGURE_ENABLE=gcrypt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFUSE}
-MAN1+=		afp_client.1 afpfsd.1 mount_afp.1
-PLIST_FILES+=	bin/afp_client bin/afpfs bin/afpfsd bin/mount_afp
+PLIST_FILES+=	bin/afp_client bin/afpfs bin/afpfsd bin/mount_afp \
+		man/man1/afp_client.1.gz man/man1/afpfsd.1.gz \
+		man/man1/mount_afp.1.gz
 .endif
 
 post-configure:
