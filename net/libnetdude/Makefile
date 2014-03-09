@@ -19,7 +19,6 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|netinet/if_fddi.h|net/fddi.h|g" \
 	${WRKSRC}/protocols/fddi/libnd_fddi.h
