@@ -4,6 +4,7 @@
 
 PORTNAME=	freetype2
 PORTVERSION=	2.5.0.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \

@@ -1,0 +1,113 @@
+From 0eae6eb0645264c98812f0095e0f5df4541830e6 Mon Sep 17 00:00:00 2001
+From: Dave Arnold <darnold@adobe.com>
+Date: Fri, 28 Feb 2014 06:40:01 +0000
+Subject: Fix Savannah bug #41697, part 1.
+
+* src/cff/cf2hints.c (cf2_hintmap_build): Return when `hintMask' is
+invalid.  In this case, it is not safe to use the length of
+`hStemHintArray'; the exception has already been recorded in
+`hintMask'.
+---
+diff --git a/ChangeLog b/ChangeLog
+index 2010fda..1f48e24 100644
+--- ChangeLog
++++ ChangeLog
+@@ -1,3 +1,12 @@
++2014-02-28  Dave Arnold  <darnold@adobe.com>
++
++	[cff] Fix Savannah bug #41697, part 1.
++
++	* src/cff/cf2hints.c (cf2_hintmap_build): Return when `hintMask' is
++	invalid.  In this case, it is not safe to use the length of
++	`hStemHintArray'; the exception has already been recorded in
++	`hintMask'.
++
+ 2014-02-26  Werner Lemberg  <wl@gnu.org>
+ 
+ 	[sfnt] Fix Savannah bug #41696.
+diff --git a/src/cff/cf2hints.c b/src/cff/cf2hints.c
+index 5f44161..79f84fc 100644
+--- src/cff/cf2hints.c
++++ src/cff/cf2hints.c
+@@ -781,6 +781,8 @@
+       cf2_hintmask_setAll( hintMask,
+                            cf2_arrstack_size( hStemHintArray ) +
+                              cf2_arrstack_size( vStemHintArray ) );
++      if ( !cf2_hintmask_isValid( hintMask ) )
++          return;                   /* too many stem hints */
+     }
+ 
+     /* begin by clearing the map */
+--
+cgit v0.9.0.2
+From 135c3faebb96f8f550bd4f318716f2e1e095a969 Mon Sep 17 00:00:00 2001
+From: Dave Arnold <darnold@adobe.com>
+Date: Fri, 28 Feb 2014 06:42:42 +0000
+Subject: Fix Savannah bug #41697, part 2.
+
+* src/cff/cf2ft.c (cf2_initLocalRegionBuffer,
+cf2_initGlobalRegionBuffer): It is possible for a charstring to call
+a subroutine if no subroutines exist.  This is an error but should
+not trigger an assert.  Split the assert to account for this.
+---
+diff --git a/ChangeLog b/ChangeLog
+index 1f48e24..164aa6b 100644
+--- ChangeLog
++++ ChangeLog
+@@ -1,5 +1,14 @@
+ 2014-02-28  Dave Arnold  <darnold@adobe.com>
+ 
++	[cff] Fix Savannah bug #41697, part 2.
++
++	* src/cff/cf2ft.c (cf2_initLocalRegionBuffer,
++	cf2_initGlobalRegionBuffer): It is possible for a charstring to call
++	a subroutine if no subroutines exist.  This is an error but should
++	not trigger an assert.  Split the assert to account for this.
++
++2014-02-28  Dave Arnold  <darnold@adobe.com>
++
+ 	[cff] Fix Savannah bug #41697, part 1.
+ 
+ 	* src/cff/cf2hints.c (cf2_hintmap_build): Return when `hintMask' is
+diff --git a/src/cff/cf2ft.c b/src/cff/cf2ft.c
+index df5f8fb..82bac75 100644
+--- src/cff/cf2ft.c
++++ src/cff/cf2ft.c
+@@ -521,7 +521,7 @@
+                               CF2_UInt      idx,
+                               CF2_Buffer    buf )
+   {
+-    FT_ASSERT( decoder && decoder->globals );
++    FT_ASSERT( decoder );
+ 
+     FT_ZERO( buf );
+ 
+@@ -529,6 +529,8 @@
+     if ( idx >= decoder->num_globals )
+       return TRUE;     /* error */
+ 
++    FT_ASSERT( decoder->globals );
++
+     buf->start =
+     buf->ptr   = decoder->globals[idx];
+     buf->end   = decoder->globals[idx + 1];
+@@ -594,7 +596,7 @@
+                              CF2_UInt      idx,
+                              CF2_Buffer    buf )
+   {
+-    FT_ASSERT( decoder && decoder->locals );
++    FT_ASSERT( decoder );
+ 
+     FT_ZERO( buf );
+ 
+@@ -602,6 +604,8 @@
+     if ( idx >= decoder->num_locals )
+       return TRUE;     /* error */
+ 
++    FT_ASSERT( decoder->locals );
++
+     buf->start =
+     buf->ptr   = decoder->locals[idx];
+     buf->end   = decoder->locals[idx + 1];
+--
+cgit v0.9.0.2
