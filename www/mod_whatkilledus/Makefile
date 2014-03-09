@@ -12,6 +12,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	fw@moov.de
 COMMENT=	Logs a report when a child process crashes
 
+LICENSE=	APACHE20
+
 MANUAL_PACKAGE_BUILD=	yes
 
 USE_APACHE=	22
@@ -21,9 +23,8 @@ SHORTMODNAME=	whatkilledus
 
 WRKSRC=		${WRKDIR}
 
-NO_STAGE=	yes
 do-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/mod_whatkilledus.c ${WRKSRC}
 	${CP} ${DISTDIR}/test_char.h ${WRKSRC}
 

@@ -14,7 +14,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	fw@moov.de
 COMMENT=	Collects backtraces when a child process crashes
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LICENSE=	APACHE20
+
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 MANUAL_PACKAGE_BUILD=	yes
 
@@ -27,7 +29,6 @@ SHORTMODNAME=	backtrace
 
 WRKSRC=		${WRKDIR}
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "*********************** PLEASE NOTE! ***********************"
 	@${ECHO_MSG} "Apache httpd must be built with the --enable-exception-hook"
@@ -35,7 +36,7 @@ pre-everything::
 	@${ECHO_MSG} "*********************** PLEASE NOTE! ***********************"
 
 do-extract:
-	${MKDIR} ${WRKSRC}/
-	${CP} ${DISTDIR}/${PORTNAME}.c ${WRKSRC}/
+	@${MKDIR} ${WRKSRC}
+	${CP} ${DISTDIR}/${PORTNAME}.c ${WRKSRC}
 
 .include <bsd.port.mk>
