@@ -24,14 +24,10 @@ CONFIOGURE_ARGS+=	--disable-doxygen
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-MAN1=		airdaemon.1 applabel.1 \
-		filedaemon.1 yaf.1 yafdpi.1 yafscii.1
-
 .if defined(WITH_DAG)
 CONFIGURE_ARGS+=	--with-dag=${LOCALBASE}
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
