@@ -14,7 +14,6 @@ LICENSE=	APACHE20
 
 MANUAL_PACKAGE_BUILD=	needs apr and apache with DBD options enabled
 
-
 USE_APACHE=	22+
 UNIQUENAME=	${PORTNAME}
 
@@ -28,7 +27,6 @@ OPTIONS_DEFAULT=	PHP_MODULE
 PHP_MODULE_DESC=	Enable PHP
 DEBUG_MODULE_DESC=	Enable debugging
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG_MODULE}
@@ -39,24 +37,26 @@ STRIP=		# keep debug information
 .if ${PORT_OPTIONS:MPHP_MODULE}
 MAKE_ENV+=	WITH_PHP=true
 USE_PHP=	yes
-USE_PHP_MOD=	yes
+WANT_PHP_MOD=	yes
 .endif
-
-.include <bsd.port.pre.mk>
 
 pre-patch:
 	@${REINPLACE_CMD} -e "s|= apxs|= ${APXS}|" \
 		-e "s|= rm|= ${RM}|" -e "s|= ln|= ${LN}|" \
 		-e "s|= cp|= ${CP}|" ${WRKSRC}/Makefile
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
+		${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>
