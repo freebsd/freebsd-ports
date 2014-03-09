@@ -10,6 +10,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Mass virtual hosting using mod_ldap or mod_dbd with Apache 2.2.x
 
+LICENSE=	APACHE11
+
 MANUAL_PACKAGE_BUILD=	needs apr with LDAP and DBD options enabled
 
 USE_APACHE=	22+
@@ -20,7 +22,6 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	*.c
 
-
 AP_INC+=	${LOCALBASE}/include/home \
 		   	-I ${LOCALBASE}/include/php \
 			-I ${LOCALBASE}/include/php/Zend \
@@ -28,7 +29,7 @@ AP_INC+=	${LOCALBASE}/include/home \
 			-I ${LOCALBASE}/include/php/main
 AP_EXTRAS+=	-DHAVE_MOD_PHP_SUPPORT
 
-PORTDOCS=	ChangeLog AUTHORS README README.logs README.mod_suphp WARNING \
+PORTDOCS=	ChangeLog AUTHORS README README.logs README.mod_suphp \
 		README.phpopt THANKS WARNING WARNING.THREADS README.LDAP
 
 OPTIONS_DEFINE=	LDAP DBD ITK VDEBUG DOCS
@@ -38,7 +39,6 @@ DBD_DESC=	mod_dbd support
 ITK_DESC=	mpm-itk support (needs a specific apache)
 VDEBUG_DESC=	debug version (very verbose !)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ### mod_vhs options
@@ -67,12 +67,8 @@ AP_EXTRAS+=	-DVH_DEBUG
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/
-.for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 # TODO :
 #   Add suphp support
