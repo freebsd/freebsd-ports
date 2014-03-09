@@ -12,9 +12,8 @@ DISTNAME=	${PORTNAME}-ng-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Client library and basic utilities for RADIUS AAA
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
