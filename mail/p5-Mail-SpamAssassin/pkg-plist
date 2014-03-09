@@ -7,23 +7,26 @@ bin/sa-update
 bin/spamassassin
 bin/spamc
 bin/spamd
-@unexec rm -rf %D/etc/mail/spamassassin/sa-update-keys
-etc/mail/spamassassin/local.cf.sample
+@unexec rm -rf %D/%%ETCDIR%%/sa-update-keys
+%%ETCDIR%%/local.cf.sample
 @unexec if cmp -s %B/init.pre.sample %B/init.pre; then rm -f %B/init.pre; fi
-etc/mail/spamassassin/init.pre.sample
+%%ETCDIR%%/init.pre.sample
 @exec [ -f %B/init.pre ] || cp %B/%f %B/init.pre
 @unexec if cmp -s %B/v310.pre.sample %B/v310.pre; then rm -f %B/v310.pre; fi
-etc/mail/spamassassin/v310.pre.sample
+%%ETCDIR%%/v310.pre.sample
 @exec [ -f %B/v310.pre ] || cp %B/%f %B/v310.pre
 @unexec if cmp -s %B/v312.pre.sample %B/v312.pre; then rm -f %B/v312.pre; fi
-etc/mail/spamassassin/v312.pre.sample
+%%ETCDIR%%/v312.pre.sample
 @exec [ -f %B/v312.pre ] || cp %B/%f %B/v312.pre
 @unexec if cmp -s %B/v320.pre.sample %B/v320.pre; then rm -f %B/v320.pre; fi
-etc/mail/spamassassin/v320.pre.sample
+%%ETCDIR%%/v320.pre.sample
 @exec [ -f %B/v320.pre ] || cp %B/%f %B/v320.pre
 @unexec if cmp -s %B/v330.pre.sample %B/v330.pre; then rm -f %B/v330.pre;fi
-etc/mail/spamassassin/v330.pre.sample
+%%ETCDIR%%/v330.pre.sample
 @exec [ -f %B/v330.pre ] || cp %B/%f %B/v330.pre
+@unexec if cmp -s %B/v340.pre.sample %B/v340.pre; then rm -f %B/v340.pre;fi
+%%ETCDIR%%/v340.pre.sample
+@exec [ -f %B/v340.pre ] || cp %B/%f %B/v340.pre
 include/libspamc.h
 lib/libspamc.so
 lib/libspamc.so.0
@@ -39,6 +42,7 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::BDB.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::MySQL.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::PgSQL.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::Redis.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::SQL.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Client.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Conf.3.gz
@@ -61,12 +65,14 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AWL.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AccessDB.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AntiVirus.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AskDNS.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AutoLearnThreshold.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Bayes.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::BodyRuleBaseExtractor.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Check.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DCC.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DKIM.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DNSEval.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Hashcash.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::MIMEHeader.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3.gz
@@ -116,6 +122,7 @@ man/man1/spamd.1.gz
 %%SITE_PERL%%/Mail/SpamAssassin/BayesStore/DBM.pm
 %%SITE_PERL%%/Mail/SpamAssassin/BayesStore/MySQL.pm
 %%SITE_PERL%%/Mail/SpamAssassin/BayesStore/PgSQL.pm
+%%SITE_PERL%%/Mail/SpamAssassin/BayesStore/Redis.pm
 %%SITE_PERL%%/Mail/SpamAssassin/BayesStore/SDBM.pm
 %%SITE_PERL%%/Mail/SpamAssassin/BayesStore/SQL.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Client.pm
@@ -151,6 +158,7 @@ man/man1/spamd.1.gz
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/AWL.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/AccessDB.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/AntiVirus.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/AskDNS.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/AutoLearnThreshold.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Bayes.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/BodyEval.pm
@@ -199,15 +207,12 @@ man/man1/spamd.1.gz
 %%SITE_PERL%%/Mail/SpamAssassin/Util/RegistrarBoundaries.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/ScopedTimer.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/TieOneStringHash.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Util/TinyRedis.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
 %%SITE_PERL%%/spamassassin-run.pod
 %%DATADIR%%/languages
 %%DATADIR%%/sa-update-pubkey.txt
 %%DATADIR%%/user_prefs.template
-@unexec rm -rf /var/lib/spamassassin/2*
-@unexec rmdir /var/lib/spamassassin 2>/dev/null  || true
-@unexec rmdir /var/lib 2>/dev/null || true
-@unexec rmdir /var/db/spamassassin 2>/dev/null || true
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
@@ -222,7 +227,13 @@ man/man1/spamd.1.gz
 @dirrm %%SITE_PERL%%/Mail/SpamAssassin/Bayes
 @dirrm %%SITE_PERL%%/Mail/SpamAssassin
 @dirrmtry %%SITE_PERL%%/Mail
-@dirrmtry etc/mail/spamassassin
+@dirrmtry %%ETCDIR%%
 @dirrmtry etc/mail
 @unexec rm -rf /var/run/spamd
-@unexec rm -rf /var/spool/spamd
+@unexec rm -rf /var/lib/spamassassin/2*
+@dirrmtry /var/lib/spamassassin
+@dirrmtry /var/lib
+@dirrmtry /var/db/spamassassin
+@unexec [ -d /var/db/spamassassin ] && echo "If you are no longer using SpamAssassin, remove /var/db/spamassassin"
+@unexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && echo "To delete %%USER%% permanently, 'rmuser %%USER%%'"
+@unexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && [ -d /var/spool/spamd ] && echo "    Note that this will remove /var/spool/spamd"
