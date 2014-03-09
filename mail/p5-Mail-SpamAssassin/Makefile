@@ -24,7 +24,7 @@ BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 				re2c>=.12.0:${PORTSDIR}/devel/re2c
 
-CONFLICTS?=	ja-p5-Mail-SpamAssassin-[0-9]* p5-Mail-SpamAssassin-devel-[0-9]* p5-Mail-SpamAssassin-Alt-[0-9]*
+CONFLICTS?=	ja-p5-Mail-SpamAssassin-[0-9]*
 
 USES=		perl5
 USE_PERL5=	configure
