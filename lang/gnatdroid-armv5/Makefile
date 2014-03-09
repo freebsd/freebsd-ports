@@ -23,17 +23,17 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_LICENSES_INSTALL= yes
 
-.include "${.CURDIR}/../gcc-aux/Makefile.common"
+.include "${.CURDIR}/../gcc47-aux/Makefile.common"
 
 # DELETE NEXT LINE AFTER NEXT UPDATE TO GCC-AUX 4.7 TO AVOID PORTEPOCH
 # Without it, this port version regresses by a day
 SNAPSHOT:=	20130413 	# last portversion + 1
 
-USES+=		ada gmake
+USES+=		ada:47 gmake
 LANGS=		c ada
 APPLY_DIFFS=	core ada ada-testsuite gcc-testsuite
 NO_MTREE=	YES
-DISTINFO_FILE=	${.CURDIR}/../gcc-aux/distinfo
+DISTINFO_FILE=	${.CURDIR}/../gcc47-aux/distinfo
 
 # Disable C++ until arm.cc/no-rtti issue resolved for libsupc++
 
@@ -50,7 +50,7 @@ ARMVERSION=		ARMv5
 FPU=			vfp
 WRKSRC=			${WRKDIR}/gcc-${GCC_VERSION}
 BUILD_WRKSRC=		${WRKDIR}/build
-PATCHDIR=		${.CURDIR}/../gcc-aux/files
+PATCHDIR=		${.CURDIR}/../gcc47-aux/files
 CFG_SCRIPT=		${WRKSRC}/configure
 REVFILE=		${WRKSRC}/gcc/REVISION
 SRPREFIX=		${LOCALBASE}/android9
