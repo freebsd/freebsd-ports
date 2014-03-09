@@ -1,4 +1,3 @@
-lib/libswe.a
 include/swe/swedate.h
 include/swe/swedll.h
 include/swe/swehouse.h
@@ -9,11 +8,12 @@ include/swe/swepcalc.h
 include/swe/sweph.h
 include/swe/swephexp.h
 include/swe/swephlib.h
+lib/libswe.a
 %%PORTDOCS%%%%DOCSDIR%%/sweph.gif
 %%PORTDOCS%%%%DOCSDIR%%/swephin.gif
 %%PORTDOCS%%%%DOCSDIR%%/swephprg.htm
 %%PORTDOCS%%%%DOCSDIR%%/swephprg.pdf
 %%PORTDOCS%%%%DOCSDIR%%/swisseph.htm
 %%PORTDOCS%%%%DOCSDIR%%/swisseph.pdf
-@dirrm include/swe
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/swe
