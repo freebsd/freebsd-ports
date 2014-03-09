@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:${PORTSDIR}/security/py-pycryp
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Pwman3
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
