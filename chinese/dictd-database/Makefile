@@ -10,7 +10,9 @@ MASTER_SITES=	LOCAL/rafan/chinese/ \
 DISTNAME=	dict-zh-${PORTVERSION}
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A Chinese <-> English dictd words database
+COMMENT=	Chinese <-> English dictd words database
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd
 
