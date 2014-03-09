@@ -13,7 +13,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 ALL_TARGET=	${PORTNAME}
 
-MAN8=		arpalert.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
