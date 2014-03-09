@@ -3,6 +3,7 @@
 
 PORTNAME=	pyptlib
 PORTVERSION=	0.0.5
+PORTREVISION=	1
 CATEGORIES=	security net python
 MASTER_SITES=	http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +14,7 @@ COMMENT=	Pluggable transport library
 LICENSE=	BSD
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
