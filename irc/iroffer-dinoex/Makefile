@@ -58,8 +58,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-de ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-it ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-fr ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${STAGEDIR}${MANPREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/xdcc.7 ${STAGEDIR}${MANPREFIX}/man/man7/
+	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/xdcc.7 ${STAGEDIR}${PREFIX}/man/man7/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${IROFFER_DOCS}
