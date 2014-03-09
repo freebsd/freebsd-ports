@@ -158,7 +158,7 @@ jta-*.zip		java/jta		See the license
 KASH3-*			math/kash3		Not for commercial distribution or use
 komodo-*		editors/komodo-edit	Distribution not permitted
 kye-data_nuke_levels.20121101.tar.gz games/kye	kye-data_nuke_levels is charityware
-kzip-*			archivers/kzip		No redistribution allowed
+kzip-*			archivers/kzip		License does not allow redistribution
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
 ladder.tar		games/ladder		Possible copyright problems
 lame*			audio/lame		patent issues, see http://www.mp3licensing.com/
