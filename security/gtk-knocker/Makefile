@@ -15,10 +15,6 @@ COMMENT=	Simple and easy to use TCP only port scanner (GTK+ version)
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm
 USE_GNOME=	gtk12
-
-MAN1=		gtk-knocker.1
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -32,6 +28,6 @@ post-patch:
 .endfor
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/docs/gtk-knocker.1 ${MANPREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/docs/gtk-knocker.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
