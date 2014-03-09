@@ -21,11 +21,6 @@ CONFIGURE_ARGS+=--without-client
 PLIST_SUB+=	WITHOUT_X11="@comment "
 .endif
 
-MAN1=	finger.1 pfinger.1
-MAN5=	fingerconf.5
-MAN8=	in.fingerd.8
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
