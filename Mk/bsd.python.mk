@@ -340,7 +340,7 @@ PYTHON_PORTSDIR=	${PORTSDIR}/lang/python33
 PYTHON_REL=		334
 PYTHON_SUFFIX=		33
 PYTHON_VER=		3.3
-.if exists(${PYTHON_CMD}-config) && ${PORTNAME} != python33
+.if exists(${PYTHON_CMD}-config) && defined(PORTNAME) && ${PORTNAME} != python33
 PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
 .endif
 
@@ -351,7 +351,7 @@ PYTHON_PORTSDIR=	${PORTSDIR}/lang/python32
 PYTHON_REL=		325
 PYTHON_SUFFIX=		32
 PYTHON_VER=		3.2
-.if exists(${PYTHON_CMD}-config) && ${PORTNAME} != python32
+.if exists(${PYTHON_CMD}-config) && defined(PORTNAME) && ${PORTNAME} != python32
 PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
 .endif
 
