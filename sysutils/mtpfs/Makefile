@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.adebenham.com/files/mtp/
 MAINTAINER=	john@pcbsd.org
 COMMENT=	MTP device filesystem
 
-LIB_DEPENDS=	mtp:${PORTSDIR}/audio/libmtp \
+LIB_DEPENDS=	mtp:${PORTSDIR}/multimedia/libmtp \
 		id3-3.8:${PORTSDIR}/audio/id3lib \
 		id3tag:${PORTSDIR}/audio/libid3tag \
 		mad:${PORTSDIR}/audio/libmad

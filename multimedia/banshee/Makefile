@@ -93,7 +93,7 @@ PLIST_SUB+=	APPLEDEV="@comment "
 
 .if ${PORT_OPTIONS:MMTP}
 CONFIGURE_ARGS+=--enable-mtp
-LIB_PC_DEPENDS+=${LOCALBASE}/libdata/pkgconfig/libmtp.pc:${PORTSDIR}/audio/libmtp
+LIB_PC_DEPENDS+=${LOCALBASE}/libdata/pkgconfig/libmtp.pc:${PORTSDIR}/multimedia/libmtp
 PLIST_SUB+=	OPT_MTP=""
 .else
 CONFIGURE_ARGS+=--disable-mtp
