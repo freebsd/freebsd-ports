@@ -24,7 +24,6 @@ CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} \
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
 		${WRKSRC}/doc/Makefile.in
