@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Date-ISO
-PORTVERSION=	1.30
-PORTREVISION=	1
+PORTVERSION=	1.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Converts dates between ISO and Gregorian formats
 
 BUILD_DEPENDS=	p5-Date-ICal>=1.54:${PORTSDIR}/devel/p5-Date-ICal \
