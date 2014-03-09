@@ -9,12 +9,11 @@ MASTER_SITES=	http://portal-to-web.de/pam_mkhomedir/
 MAINTAINER=	gremlin@portal-to-web.de
 COMMENT=	Create HOME with a PAM module on demand
 
-MANCOMPRESSED=	yes
-MAN8=		pam_mkhomedir.8
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	lib/pam_mkhomedir.so \
-		lib/pam_mkhomedir.so.2
+		lib/pam_mkhomedir.so.2 \
+		man/man8/pam_mkhomedir.8.gz
 
 .if defined(WITH_PROFILE)
 PLIST_FILES+=	lib/libpam_mkhomedir_p.a
@@ -30,7 +29,6 @@ PLIST_FILES+=	lib/libpam_mkhomedir.a
 MAKE_ARGS+=	NO_INSTALLLIB=yes
 .endif
 
-NO_STAGE=	yes
 pre-everything::
 
 .if !defined(WITH_PROFILE) || !defined(WITH_STATIC)
@@ -42,8 +40,5 @@ pre-everything::
 	@${ECHO_CMD} "WITH_STATIC=yes           Build with static lib"
 	@${ECHO_CMD} ""
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
