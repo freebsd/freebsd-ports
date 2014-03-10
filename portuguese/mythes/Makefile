@@ -13,7 +13,7 @@ COMMENT=	Portuguese thesaurus
 
 LICENSE=	GPLv2
 
-EXTRACT_SUFX=	.zip
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

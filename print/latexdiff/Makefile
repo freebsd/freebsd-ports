@@ -14,9 +14,8 @@ COMMENT=	Determine and mark up significant differences between latex files
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	run
-USE_ZIP=	yes
 NO_BUILD=	yes
 
 MAN1=		latexdiff.1 \

@@ -16,7 +16,7 @@ DIST_SUBDIR=	latex
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Combines the features of both the tabularx and longtable packages
 
-USE_ZIP=	YES
+USES=		zip
 USE_TEX=	latex
 NO_BUILD=	YES
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \

@@ -13,7 +13,7 @@ COMMENT=	A 100% Java PDF renderer and viewer
 
 LICENSE=	LGPL21
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

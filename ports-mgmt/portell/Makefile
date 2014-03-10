@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Quick display of FreeBSD port descriptions
 
-USE_ZIP=	yes
+USEs=		zip
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

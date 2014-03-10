@@ -14,7 +14,7 @@ COMMENT=	Support for automation of the LaTeX workflow
 
 RUN_DEPENDS=	${LOCALBASE}/${TEXMFLOCAL}/tex/latex/etoolbox/etoolbox.sty:${PORTSDIR}/print/latex-etoolbox
 
-USE_ZIP=	YES
+USES=		zip
 USE_TEX=	latex
 NO_BUILD=	YES
 PLIST=		${WRKDIR}/pkg-plist
