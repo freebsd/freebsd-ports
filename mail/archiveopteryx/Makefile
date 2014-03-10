@@ -3,9 +3,9 @@
 
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	GH
+MASTER_SITES=	http://archiveopteryx.org/download/
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Advanced PostgreSQL-based IMAP/POP server
@@ -14,18 +14,11 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
+USE_BZIP2=	yes
 USES=	perl5
 USE_PERL5=	build
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	91+
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	aox
-GH_PROJECT=	aox
-GH_TAGNAME=	v3.2.0
-GH_COMMIT=	2a5d127e
-
-WRKSRC=	${WRKDIR}/aox-aox-a55036e
 
 PORTDOCS=	COPYING README bsd.txt
 
