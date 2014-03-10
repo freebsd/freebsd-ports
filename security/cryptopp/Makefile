@@ -20,9 +20,8 @@ GCC_DESC=		Build with current GCC
 .include <bsd.port.options.mk>
 
 NO_WRKSUBDIR=		yes
-USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-aq
-USES=			gmake
+USES=			gmake zip
 MAKEFILE=		GNUmakefile
 
 LIBVERSION=		0

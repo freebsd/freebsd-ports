@@ -15,7 +15,7 @@ COMMENT=	Extracts or converts .pdi file sets to .iso
 LICENSE=	GPLv2
 
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
+USES=		zip
 
 PLIST_FILES=	bin/pdixtract
 

@@ -16,8 +16,7 @@ PROJECTHOST=	rsync-backup
 CONFIGSRC=	${WRKSRC}/config
 CONFIGFILES=	backupset.conf config.conf destinations.conf sources.conf
 
-USE_ZIP=	yes
-USES=		perl5
+USES=		perl5 zip
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

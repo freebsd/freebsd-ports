@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Convert PowerISO DAA files to ISO9660
 
-USE_ZIP=	yes
+USES=		zip
 
 WRKSRC=		${WRKDIR}/src
 

@@ -23,8 +23,7 @@ RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
 		xterm:${PORTSDIR}/x11/xterm	\
 		cs_preprocess:${PORTSDIR}/science/ecs
 
-USE_ZIP=	yes
-USES=		fortran gettext gmake iconv
+USES=		fortran gettext gmake iconv zip
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

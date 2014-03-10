@@ -14,7 +14,7 @@ COMMENT=	BDD-based satisfiability and reachability solver
 LIB_DEPENDS+=	libbdd.so:${PORTSDIR}/science/buddy \
 		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 
 NO_STAGE=	yes

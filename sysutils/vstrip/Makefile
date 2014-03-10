@@ -19,7 +19,7 @@ LDFLAGS+=	-lm
 
 PLIST_FILES=	bin/${PORTNAME}
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:

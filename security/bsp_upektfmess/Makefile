@@ -17,9 +17,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext
 
 PLIST_FILES=	lib/libtfmessbsp.so
 
-USE_ZIP=	yes
 USE_LDCONFIG=	yes
-USES=		gettext iconv
+USES=		gettext iconv zip
 # Maintainer note
 # Both the gui and the non-gui object are linked to libX11
 USE_XORG=	x11 xext

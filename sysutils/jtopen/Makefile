@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 MAINTAINER=	saper@saper.info
 COMMENT=	JTOpen is a Java library to access OS/400 or i5/OS system
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 USE_JAVA=	1.4+
 

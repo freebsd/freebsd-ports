@@ -10,7 +10,7 @@ DISTNAME=	DirBuster-1.0-RC1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DirBuster allows file and directory brute forcing on web servers
 
-USE_ZIP=	YES
+USES=		zip
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

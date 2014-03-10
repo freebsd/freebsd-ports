@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full vt220 compatible Java SSH-1 client (not only for websites)
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_CDROM=	Do not sell for profit

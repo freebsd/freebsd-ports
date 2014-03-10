@@ -27,9 +27,8 @@ COMPAT_DESC=	Build API v1 compatibility libraries
 TOOL_DESC=	Build EasyQuantis application
 GUI_DESC=	Build QT4 GUI for EasyQuantis application
 
-USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aqo
-USES=		cmake
+USES=		cmake zip:infozip
 USE_QT4=	# empty but required
 USE_LDCONFIG=	yes
 
