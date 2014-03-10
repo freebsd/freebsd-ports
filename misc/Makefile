@@ -287,6 +287,7 @@
     SUBDIR += openr2
     SUBDIR += orville-write
     SUBDIR += ossp-uuid
+    SUBDIR += ossp-uuid-perl
     SUBDIR += otter
     SUBDIR += p5-Acme-ButFirst
     SUBDIR += p5-Array-Compare

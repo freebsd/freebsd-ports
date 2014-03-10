@@ -3,7 +3,7 @@
 
 PORTNAME=	uuid
 PORTVERSION=	1.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -20,6 +20,8 @@ CONFIGURE_ARGS=	--disable-shared --enable-static --with-cxx \
 		--includedir=${PREFIX}/include/ossp
 
 .if defined(WITH_PERL)
+PKGNAMESUFFIX=	-perl
+CONFLICTS=	ossp-uuid-[0-9]*
 MAKE_JOBS_UNSAFE=	yes
 USES+=		perl5
 CONFIGURE_ENV+=	PERL=${PERL5}
@@ -30,6 +32,7 @@ CONFIGURE_ARGS+=--with-perl
 MAKE_ARGS+=	WITH_PERL=yes
 PLIST_SUB+=	WITH_PERL=''
 .else
+CONFLICTS=	ossp-uuid-perl-[0-9]*
 PLIST_SUB+=	WITH_PERL='@comment '
 .endif
 
