@@ -13,7 +13,7 @@ DISTNAME=	uhoaiw21
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Unicode TrueType Font with UHoai Vietnamese encoding
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	taken care of in do-install target
 

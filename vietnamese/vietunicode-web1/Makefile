@@ -11,7 +11,7 @@ DISTNAME=	VietFontsWeb1_ttf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	100% Viet Unicode & Viet Phan/Pali-Sanskrit compatible
 
-USE_ZIP=	yes
+USES=		zip
 DIST_SUBDIR=	VietUnicode
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
