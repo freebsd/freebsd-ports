@@ -3,7 +3,7 @@
 
 PORTNAME=	narray_miss
 PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/narray_miss/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/narray_miss/ \

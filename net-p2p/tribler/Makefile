@@ -3,7 +3,7 @@
 
 PORTNAME=	tribler
 PORTVERSION=	6.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 #MASTER_SITES=	http://dl.tribler.org/
 MASTER_SITES=	GENTOO/distfiles \

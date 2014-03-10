@@ -3,7 +3,7 @@
 
 PORTNAME=	graphtool
 PORTVERSION=	2.2.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math python
 MASTER_SITES=	http://downloads.skewed.de/graph-tool/
 DISTNAME=	graph-tool-${PORTVERSION}

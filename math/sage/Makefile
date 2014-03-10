@@ -3,6 +3,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	6.1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \

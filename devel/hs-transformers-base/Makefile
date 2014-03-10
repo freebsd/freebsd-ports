@@ -2,7 +2,7 @@
 
 PORTNAME=	transformers-base
 PORTVERSION=	0.4.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -2,7 +2,7 @@
 
 PORTNAME=	cmdargs
 PORTVERSION=	0.10.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

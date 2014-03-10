@@ -3,7 +3,7 @@
 
 PORTNAME=	numru_misc
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/numru-misc/release/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/numru-misc/release/ \

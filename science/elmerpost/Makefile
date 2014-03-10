@@ -3,7 +3,7 @@
 
 PORTNAME=	elmerpost
 PORTVERSION=	5.4.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 

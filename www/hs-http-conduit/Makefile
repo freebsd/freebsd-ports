@@ -2,7 +2,7 @@
 
 PORTNAME=	http-conduit
 PORTVERSION=	1.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

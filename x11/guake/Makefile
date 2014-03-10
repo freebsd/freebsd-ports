@@ -2,7 +2,7 @@
 
 PORTNAME=	guake
 PORTVERSION=	0.4.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://distfiles.gentoo.org/distfiles/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/

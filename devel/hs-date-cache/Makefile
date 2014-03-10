@@ -2,7 +2,7 @@
 
 PORTNAME=	date-cache
 PORTVERSION=	0.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -3,6 +3,7 @@
 
 PORTNAME=	super_mario_bros_python
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	SF/supermariobrosp/ \
 		SF/nemysisfreebsdp/games/:icons

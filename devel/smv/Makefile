@@ -3,6 +3,7 @@
 
 PORTNAME=	smv
 PORTVERSION=	2.5.4.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.cmu.edu/~modelcheck/smv/
 DISTNAME=	${PORTNAME}.r${PORTVERSION}

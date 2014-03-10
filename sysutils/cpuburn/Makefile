@@ -3,6 +3,7 @@
 
 PORTNAME=	cpuburn
 DISTVERSION=	1_4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
 		http://atarininja.org/distfiles/ \

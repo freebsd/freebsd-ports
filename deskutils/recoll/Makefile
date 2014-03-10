@@ -3,6 +3,7 @@
 
 PORTNAME=	recoll
 PORTVERSION=	1.19.10
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 

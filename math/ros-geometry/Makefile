@@ -3,7 +3,7 @@
 
 PORTNAME=	ros-geometry
 PORTVERSION=	1.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/:rel \
 		http://pr.willowgarage.com/downloads/:pr \
