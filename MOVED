@@ -2251,7 +2251,6 @@ devel/colorer||2011-07-21|Has expired: Depends on deprecated Java 1.4
 security/jce_policy14||2011-07-21|Has expired: Only for Java 1.4, which is deprecated
 java/linux-blackdown-jdk14||2011-07-21|Has expired: ancient version of Java
 java/linux-sun-jdk14|java/linux-sun-jdk15|2011-07-21|Has expired: ancient version of Java
-misc/logsurfer|misc/logsurfer+|2011-07-25|Renamed
 dns/dhid||2011-07-28|Has expired: Unmaintained, distfile has changed with no explanation
 math/librandlib|math/randlib|2011-07-28|Move to a location that matches the name
 science/bblimage|science/pyvox|2011-07-28|Track the upstream name change
@@ -5602,7 +5601,6 @@ audio/bmp-scrobbler|multimedia/audacious|2014-03-06|Has expired: Abandonware, pl
 shells/wapsh||2014-03-06|Broken and abandonware
 shells/zoidberg||2014-03-06|Broken and abandonware
 x11-toolkits/py31-tkinter|x11-toolkits/py-tkinter|2014-03-06|Has expired: Depends on expiring lang/python31
-misc/logsurfer+|misc/logsurfer|2014-03-07|Renamed upstream
 net-p2p/i2p|security/i2p|2014-03-07|Category change
 deskutils/phprojekt||2014-03-08|Has expired: No more public distfiles
 deskutils/libopensync-plugin-synce-legacy||2014-03-08|Has expired: No more public distfiles
