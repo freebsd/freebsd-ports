@@ -100,7 +100,7 @@ post-install:
 	expat exquat exrgbhsv exrotscl exsample exscale exscn3d exscroll exshade \
 	exspline exsprite exstars exstream exswitch exsyscur extimer extrans \
 	extrans2 extruec exunicod exupdate exxfade exzbuf
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/examples/allegro/${l}
+	${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/${l}
 .endfor
 
 .if ${PORT_OPTIONS:MDEMOS} && ${PORT_OPTIONS:MEXAMPLES}
@@ -111,8 +111,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/skater* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${_DISTDIR}/skater.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	@(cd ${STAGEDIR}${EXAMPLESDIR}/demos/skater && ${CHMOD} 755 skater*)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/examples/allegro/demos/shooter/shooter
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/examples/allegro/demos/skater/skater*
+	${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/demos/shooter/shooter
+	${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/demos/skater/skater*
 .endif
 
 .include <bsd.port.mk>
