@@ -18,7 +18,7 @@ COMMENT=	Eternal Lands data, sound, and music files
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		dos2unix zip
+USES=		dos2unix zip:infozip
 DOS2UNIX_GLOB=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
