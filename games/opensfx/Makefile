@@ -18,7 +18,7 @@ LICENSE_NAME=	Creative Commons Public License
 LICENSE_FILE=	${WRKDIR}/opensfx-${PORTVERSION}/license.txt
 LICENSE_PERMS=	auto-accept
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 LATEST_LINK=	openttd-${PORTNAME}
 

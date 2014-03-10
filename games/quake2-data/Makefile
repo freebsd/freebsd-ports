@@ -16,7 +16,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II data files
 
 # XXX we need info-unzip for q2-314-demo-x86.exe
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	MANUAL OPTIMIZED_CFLAGS SHAREWARE

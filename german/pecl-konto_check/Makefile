@@ -6,12 +6,11 @@ PORTVERSION=	2.98
 CATEGORIES=	german
 MASTER_SITES=	SF/kontocheck/konto_check-de/${PORTVERSION}
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP module to check German and Austrian Bank Account Numbers
 
-USE_ZIP=	yes
+USES=		zip:infozip
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes

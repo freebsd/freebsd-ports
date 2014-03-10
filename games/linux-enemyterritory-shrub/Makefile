@@ -15,7 +15,7 @@ COMMENT=	Shrub - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
-USE_ZIP=	yes
+USES=		zip
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 

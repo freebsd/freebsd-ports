@@ -16,9 +16,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	sets the FPU rounding mode and precision (not available in fenv.h)
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
+USES=		dos2unix gmake zip
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/binaries
 ALL_TARGET=	#

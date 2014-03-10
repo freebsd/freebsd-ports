@@ -15,9 +15,7 @@ COMMENT=	Enhanced OpenGL-only Quake II engine
 
 LICENSE=	GPLv2
 
-USES=		gmake
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USES=		dos2unix gmake zip
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 

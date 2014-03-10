@@ -14,9 +14,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D arcade-puzzle game like KDiamonds
 
-USE_ZIP=	yes
+USES=		dos2unix zip
 USE_SDL=	sdl mixer
-USE_DOS2UNIX=	Game.pro
+DOS2UNIX_FILES=	Game.pro
 USE_XORG=	x11
 
 USES=		qmake

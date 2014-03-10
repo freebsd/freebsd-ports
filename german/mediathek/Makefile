@@ -13,7 +13,7 @@ COMMENT=	Filme der oeff. rechtlichen Sender herunterladen und ansehen
 RUN_DEPENDS=	flvstreamer:${PORTSDIR}/multimedia/flvstreamer
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 SUB_FILES=	mediathek

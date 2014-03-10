@@ -10,13 +10,13 @@ MASTER_SITES=	http://hu.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVE
 		http://cz.binaries.openttd.org/openttd/binaries/extra/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 PKGNAMEPREFIX=	openttd-
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Free alternative music for OpenTTD game engine
 
 LICENSE=	GPLv2
 
+USES=		zip
 NO_BUILD=	yes
 
 do-install:

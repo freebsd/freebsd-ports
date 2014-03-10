@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}src
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Open source 2D real time strategy god game
 
-USE_ZIP=	yes
+USES=		zip
 USE_SDL=	image mixer sdl
 
 PORTDOCS=	readme.html

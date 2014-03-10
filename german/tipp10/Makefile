@@ -14,9 +14,8 @@ COMMENT=	10-finger touch typing learning program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license_en.txt
 
-USES=		qmake dos2unix
+USES=		qmake dos2unix zip
 DOS2UNIX_GLOB=	*.pro *.cpp
-USE_ZIP=	yes
 USE_QT4=	gui sql corelib network script qtestlib \
 		rcc_build uic_build moc_build \
 		sql-sqlite2_run sql-sqlite3_run

@@ -17,8 +17,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hell Revealed is a megawad, a 32-level replacement for DooM II
 
-USE_ZIP=	yes
-USE_CRLF=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

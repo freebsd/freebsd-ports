@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/flightgear/version:${PORTSDIR}/games/flightgear-
 RESTRICTED=	Redistribution prohibited
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=	${WRKDIR}/${PORTNAME}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 DATADIR=	${PREFIX}/share/flightgear/Aircraft

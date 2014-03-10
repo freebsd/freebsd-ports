@@ -20,9 +20,8 @@ EXTRACT_AFTER_ARGS=	# empty
 
 PLIST_SUB=	LOCALBASE=${LOCALBASE}
 
+USES=		gmake zip:infozip
 USE_PYTHON=	yes
-USE_GMAKE=	yes
-USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/kawari-${PORTVERSION:S/.//g}
 CFLAGS+=	${PTHREAD_CFLAGS} -fPIC

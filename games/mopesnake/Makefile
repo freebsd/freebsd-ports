@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-pc-${DISTVERSION}
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 
 PORTDOCS=	TODO.txt index.html

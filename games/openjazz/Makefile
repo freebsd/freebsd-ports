@@ -14,11 +14,10 @@ COMMENT=	Free re-implementation of the Jazz Jackrabbit(tm) game engine
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USES=	dos2unix gmake
+USES=	dos2unix gmake zip
 DOS2UNIX_REGEX=	.*\.(h|cpp)
 ALL_TARGET=	OpenJazz
 USE_XORG=	x11 xext xrandr xrender xau xdmcp

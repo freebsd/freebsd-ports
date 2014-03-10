@@ -12,9 +12,9 @@ COMMENT=	Free open-source version of the Dual N-Back mental exercise
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyglet/__init__.py:${PORTSDIR}/graphics/py-pyglet
 
-USE_ZIP=	yes
+USES=		dos2unix zip
 NO_BUILD=	yes
-USE_DOS2UNIX=	brainworkshop.pyw
+DOS2UNIX_FILES=	brainworkshop.pyw
 
 USE_PYTHON=	yes
 

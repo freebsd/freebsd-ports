@@ -20,8 +20,8 @@ WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
 RUN_DEPENDS+=	${WWWDIR}/include/language:${PORTSDIR}/www/vtiger
 
+USES=		zip
 NO_BUILD=	YES
-USE_ZIP=	YES
 
 SUB_FILES=	pkg-message
 

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
+USES=		zip:infozip
 MAKEFILE=	${FILESDIR}/Makefile.inform
 
 post-install:

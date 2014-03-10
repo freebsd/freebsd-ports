@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/Super-Mario-Bros-Python-v${DISTVERSION}release
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	2
 
 PORTDOCS=	changelog.txt readme.txt

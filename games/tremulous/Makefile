@@ -12,8 +12,7 @@ COMMENT=	Free FPS game featuring two opposing teams: humans and aliens
 
 LICENSE=	GPLv2
 
-USES=		gmake
-USE_ZIP=	yes
+USES=		gmake zip
 MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -16,8 +16,7 @@ EXTRACT_ONLY=	${DISTFILES:C/:[[:alpha:]]+$//:N*.pl:N*.c}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Accessory programs for pMARS (Core War simulator)
 
-USES=		perl5
-USE_ZIP=	yes
+USES=		perl5 zip
 USE_PERL5=	run
 MAKEFILE=	makefile.ptools
 ALL_TARGET=	mopt mts pname

@@ -15,11 +15,10 @@ COMMENT=	Remake of classic F1 Spirit racing game
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_ZIP=	yes
-USES=		gmake
+USES=		dos2unix gmake zip
 USE_SDL=	sdl net image mixer sound
 USE_GL=		gl glu
-USE_DOS2UNIX=	*.h *.cpp
+DOS2UNIX_GLOB=	*.h *.cpp
 
 WRKSRC=		"${WRKDIR}/F-1 Spirit"
 BUILD_WRKSRC=	${WRKSRC}/sources

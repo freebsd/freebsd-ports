@@ -19,7 +19,7 @@ NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-USE_ZIP=	yes
+USES=		zip:infozip
 
 ETQWDIR=	${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 

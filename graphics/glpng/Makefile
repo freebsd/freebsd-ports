@@ -15,9 +15,9 @@ COMMENT=	Library to easily load PNG files as an OpenGL textures
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USE_GL=		gl
-USE_ZIP=	yes
+USES=		dos2unix zip
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	glpng.c
+DOS2UNIX_FILES=	glpng.c
 
 AR?=		/usr/bin/ar
 

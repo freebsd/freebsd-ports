@@ -13,8 +13,8 @@ COMMENT=	Automatic Flic to animated GIF converter
 
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	fli2gif.cpp FLI2GIF.TXT
+USES=		dos2unix zip:infozip
+DOS2UNIX_FILES=	fli2gif.cpp FLI2GIF.TXT
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	fli2gif.txt

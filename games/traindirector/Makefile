@@ -14,9 +14,8 @@ LICENSE=	GPLv2
 
 NO_WRKSUBDIR=	yes
 
-USES=		gmake
+USES=		gmake zip
 USE_GNOME=	gtk20
-USE_ZIP=	yes
 
 USE_WX=		2.8
 WX_COMPS=	wx:lib

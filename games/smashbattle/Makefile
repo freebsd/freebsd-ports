@@ -13,9 +13,8 @@ COMMENT=	8-bit style platform battle game
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/battle/Battle
 
-USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
-USES=		dos2unix gmake
+USES=		dos2unix gmake zip:infozip
 DOS2UNIX_FILES=	*.cpp *.h Makefile
 USE_SDL=	sdl image mixer
 ALL_TARGET=	battle

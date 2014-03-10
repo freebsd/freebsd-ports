@@ -7,12 +7,11 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 DISTNAME=	tiff
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to merge TIFF files into multi-page TIFF files
 
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_GLOB=	*.[ch]
 USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes

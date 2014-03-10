@@ -15,7 +15,7 @@ COMMENT=	The pysycache lang support
 
 RUN_DEPENDS=	pysycache.py:${PORTSDIR}/games/pysycache
 
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/${DIST_SUBDIR}

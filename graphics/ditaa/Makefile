@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION}
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Convert ASCII art diagrams into proper bitmap graphics
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

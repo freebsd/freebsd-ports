@@ -13,7 +13,7 @@ COMMENT=	Advanced QuakeC compiler/decompiler
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
+USES=		zip
 
 MAKEFILE=	${FILESDIR}/Makefile
 

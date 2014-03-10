@@ -13,8 +13,8 @@ COMMENT=	Very fast optimizing QuakeC compiler
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	pr_comp.cpp qcc.cpp ${PORTDOCS}
+USES=		dos2unix zip
+DOS2UNIX_FILES=	pr_comp.cpp qcc.cpp ${PORTDOCS}
 MAKEFILE=	${FILESDIR}/Makefile
 
 NO_WRKSUBDIR=	yes

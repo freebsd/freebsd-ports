@@ -11,7 +11,6 @@ MASTER_SITES=	https://s3.amazonaws.com/stockfish/:src \
 DISTNAME=	stockfish-${PORTVERSION:S/.//g}-win
 DISTFILES=	stockfish-${PORTVERSION:S/.//g}-win.zip:src \
 		stockfish-231-book.zip:book
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	execve@gmail.com
 COMMENT=	Open source chess engine
@@ -19,7 +18,7 @@ COMMENT=	Open source chess engine
 LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-USES=		gmake compiler
+USES=		gmake compiler zip
 MYARCH=		${ARCH}
 BOOKDIR=	.
 PORTDOCS=	Readme.md polyglot.ini

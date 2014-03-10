@@ -15,8 +15,8 @@ DIST_SUBDIR=	quake2lnx
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II CTF (Capture The Flag) mod
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	../../../ctf/readme.txt ../../../ctf/server.cfg
+USES=		dos2unix zip
+DOS2UNIX_FILES=	../../../ctf/readme.txt ../../../ctf/server.cfg
 WRKSRC=		${WRKDIR}/${CTF_SRC:S/.tar.gz//}/src/ctf
 
 DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}

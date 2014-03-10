@@ -16,7 +16,7 @@ COMMENT=	Game for learning Java[tm] programming language
 
 LICENSE=	EPL
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_EXTRACT=	yes

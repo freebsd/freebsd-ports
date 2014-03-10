@@ -14,7 +14,7 @@ COMMENT=	Free alternative graphics for OpenTTD game engine
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 LATEST_LINK=	openttd-${PORTNAME}
 

@@ -13,7 +13,7 @@ COMMENT=	PNG palette optimizer
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/pngrewrite

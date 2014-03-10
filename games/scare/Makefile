@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	XGLK
 XGLK_DESC=	Use the xglk graphics library
 
-USE_ZIP=	yes
+USES=		zip
 
 PLIST_FILES=	bin/scare
 

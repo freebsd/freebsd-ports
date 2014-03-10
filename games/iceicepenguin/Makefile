@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/"ice ice penguin"
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

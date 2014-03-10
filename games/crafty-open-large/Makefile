@@ -16,7 +16,7 @@ BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 DIST_SUBDIR=	crafty
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 CONFLICTS=	crafty-open-enormous-* crafty-open-medium-* crafty-open-default-*
 

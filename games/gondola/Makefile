@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rabbyt>=0.8.1:${PORTSDIR}/graphics/py-rabbyt
 		${PYTHON_PKGNAMEPREFIX}pyglet>=1.1:${PORTSDIR}/graphics/py-pyglet \
 		avbin>=7:${PORTSDIR}/multimedia/avbin
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
