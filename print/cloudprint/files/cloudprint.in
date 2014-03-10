@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: cloudprint
+# REQUIRE: LOGIN cupsd
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable cloudprint
+#
+# cloudprint_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable cloudprint.
+# cloudprint_user (str):	User account to run with.
+# cloudprint_group (str):	Group to run with.
+# cloudprint_flags (str):	Custom flags for cloudprint.
+
+. /etc/rc.subr
+
+: ${cloudprint_enable="NO"}
+: ${cloudprint_user="%%CPUSER%%"}
+: ${cloudprint_group="%%CPGROUP%%"}
+
+name=cloudprint
+rcvar=cloudprint_enable
+piddir="/var/run/${name}"
+pidfile="${piddir}/${name}.pid"
+confdir="%%PREFIX%%/etc/cloudprint"
+command="%%PREFIX%%/bin/cloudprint"
+command_args="-d -p ${pidfile} -a ${confdir}/cloudprintauth"
+command_interpreter="%%PYTHON_CMD%%"
+sig_stop="QUIT"
+start_precmd="${name}_prestart"
+
+cloudprint_prestart()
+{
+	if [ ! -d "${piddir}" ]; then
+		/usr/bin/install -d -o ${cloudprint_user} -g ${cloudprint_group} -m 0755 ${piddir}
+	fi
+	if [ ! -d "${confdir}" ]; then
+		/usr/bin/install -d -o ${cloudprint_user} -g ${cloudprint_group} -m 0755 ${confdir}
+	fi
+}
+
+load_rc_config $name
+
+run_rc_command "$1"
