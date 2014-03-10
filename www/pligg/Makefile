@@ -13,7 +13,7 @@ COMMENT=	An Open Source Web2.0 CMS
 
 PORTSCOUT=	ignore:1
 
-USE_ZIP=	yes
+USES=		zip
 USE_PHP=	mysql
 WRKSRC=		${WRKDIR}/pligg
 

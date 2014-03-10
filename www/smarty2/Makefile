@@ -11,7 +11,7 @@ DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The PHP compiling template engine
 
-USE_ZIP=	yes
+USES=		zip
 
 DOCSVERSION=	2.6
 

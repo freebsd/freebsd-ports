@@ -15,7 +15,7 @@ RUN_DEPENDS=	google-appengine>=1.1.0:${PORTSDIR}/www/google-appengine \
 
 PROJECTHOST=	google-app-engine-oil
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 

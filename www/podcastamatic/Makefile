@@ -15,8 +15,7 @@ COMMENT=	Automates creation of webpage and RSS feed for a podcast
 RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
 		p5-MP4-Info>=0:${PORTSDIR}/multimedia/p5-MP4-Info
 
-USE_ZIP=	yes
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	run
 
 NO_BUILD=	yes

@@ -26,7 +26,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.configuration>=0:${PORTSDIR}/devel/py-z
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=		yes
-USES=			zope
+USES=			zope zip
 
 .include <bsd.port.mk>

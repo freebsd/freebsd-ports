@@ -14,7 +14,7 @@ LICENSE=	BSD
 
 RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 
-USE_ZIP=	yes
+USES=		zip
 
 WRKSRC=		${WRKDIR}/childticketsplugin/0.12
 

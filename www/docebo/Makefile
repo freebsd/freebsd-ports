@@ -10,7 +10,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open Source e-Learning platform (LMS and LCMS)
 
 USE_PHP=	mysql
-USE_ZIP=	yes
+USES=		zip
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -16,9 +16,8 @@ USE_JAVA=	yes
 JAVA_RUN=	yes
 JAVA_VERSION=	1.6
 
-USE_ZIP=	yes
 NO_BUILD=	yes
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_FILES=	release.txt
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

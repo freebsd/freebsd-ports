@@ -10,7 +10,7 @@ DISTNAME=	gallery-${PORTVERSION}
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	Web based photo album organizer written in PHP
 
-USE_ZIP=	yes
+USES=		zip
 
 USE_PHP=	ctype filter iconv json mysql mbstring pcre \
 		simplexml session spl tokenizer xml

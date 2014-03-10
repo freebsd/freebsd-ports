@@ -16,7 +16,7 @@ RUN_DEPENDS=	pear:${PORTSDIR}/devel/pear
 OPTIONS_DEFINE=	APACHE LIGHTTPD
 OPTIONS_DEFAULT=	APACHE
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 USE_PHP=	session filter xml simplexml gd
 PKGMESSAGE=	${MASTERDIR}/pkg-message

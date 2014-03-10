@@ -18,8 +18,7 @@ LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 
 NO_PACKAGE=	complicated (de)installation paradigm
-USES=		perl5
-USE_ZIP=	yes
+USES=		perl5 zip
 USE_PERL5=	run
 NO_BUILD=	yes
 WWWDOCROOT?=	www

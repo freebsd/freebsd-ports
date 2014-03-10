@@ -15,7 +15,7 @@ COMMENT=	A themes collection for eyeOS
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
+USES=		zip
 
 EYEDIR?=	${PREFIX}/www/eyeOS
 THEMESDIR=	${EYEDIR}/system/themes

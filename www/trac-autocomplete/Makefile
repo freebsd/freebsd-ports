@@ -15,7 +15,7 @@ COMMENT=	Plugin for autocompletion of user names in ticket fields
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
 USE_PYTHON=	2
-USE_ZIP=	yes
+USES=		zip
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	AutocompleteUsers
 PYDISTUTILS_NOEGGINFO=	yes

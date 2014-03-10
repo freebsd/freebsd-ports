@@ -18,7 +18,7 @@ EXPIRATION_DATE=	2014-03-10
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	2
 
 PLIST_FILES=	bin/tracremind.py etc/tracremind.conf

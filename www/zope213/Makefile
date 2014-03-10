@@ -79,10 +79,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=2.13.2:${PORTSDIR}/security/p
 		${PYTHON_PKGNAMEPREFIX}Products.StandardCacheManagers>=0:${PORTSDIR}/devel/py-Products.StandardCacheManagers \
 		${PYTHON_PKGNAMEPREFIX}manuel>=0:${PORTSDIR}/devel/py-manuel
 
+USES=		zip
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=		yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	instance-message package-pkg-message pkg-message

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opensource CSS parser and optimiser
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/csstidy

@@ -17,7 +17,7 @@ COMMENT=	The Yahoo! User Interface (YUI) Library
 
 LICENSE=	BSD
 
-USE_ZIP=	yes
+USES=		zip
 
 WRKSRC=		${WRKDIR}/yui
 NO_BUILD=	yes

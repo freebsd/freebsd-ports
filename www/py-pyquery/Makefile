@@ -24,9 +24,9 @@ MAKE_ENV=	PYTHONUSERBASE=${STAGEDIR}${PYTHONBASE}
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-USE_ZIP=	yes
 
 # required by stage: target
 stage-dir: stage-python-dirs

@@ -9,9 +9,7 @@ MASTER_SITES=	http://download.java.net/glassfish/${PORTVERSION}/release/
 MAINTAINER=	cjr@cruwe.de
 COMMENT=	Reference implementation of the Java EE application server
 
-FETCH_ARGS=	-pRr
-
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

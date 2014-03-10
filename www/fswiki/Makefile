@@ -14,8 +14,7 @@ COMMENT=	FreeStyle Wiki (perl based wiki clone)
 RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
 	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 
-USE_ZIP=	yes
-USES=		perl5
+USES=		perl5 zip
 NO_BUILD=	yes
 
 NO_STAGE=	yes

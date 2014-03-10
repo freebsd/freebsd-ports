@@ -19,7 +19,7 @@ SVN_REV=	12775
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 

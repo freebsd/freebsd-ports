@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_build8242
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Elearning and Human Capital Development platform
 
-USE_ZIP=	YES
+USES=		zip
 USE_PHP=	mbstring zip iconv zlib spl ldap
 EFRONT_FILES=	CHANGELOG.txt index.php INSTALL.txt \
 		LICENSE.txt  README.txt

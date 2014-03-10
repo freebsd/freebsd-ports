@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-USE_ZIP=	yes
+USES=		zip
 
 do-install:
 	@${MKDIR} -m 755 ${STAGEDIR}${WWWDIR}/speedtest

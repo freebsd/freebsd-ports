@@ -34,13 +34,14 @@ CHROME_DESC=	Use Chrome as default browser
 FIREFOX_DESC=	Use Firefox as default browser
 OPERA_DESC=	Use Opera as default browser
 
+USES=		zip
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 SAHI_BUILD=	2011.07.19
 
 USE_JAVA=	yes
-USE_ZIP=	yes
 
 WRKSRC=	${WRKDIR}/sahi
 
