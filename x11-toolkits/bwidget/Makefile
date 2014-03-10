@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		tk:run
-USE_ZIP=	yes
+USES=		tk:run zip
 NO_BUILD=	yes
 PORTDOCS=	*
 

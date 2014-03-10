@@ -10,9 +10,9 @@ COMMENT=	Versatile OpenType font for screen, print, and Web
 
 LICENSE=	APACHE20
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
 
 FONTDIR=	${STAGEDIR}${PREFIX}/lib/X11/fonts/${PORTNAME}
 

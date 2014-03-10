@@ -18,7 +18,7 @@ LICENSE=	MIT
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 INSTALLDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 

@@ -20,7 +20,7 @@ LICENSE_PERMS=	auto-accept
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"

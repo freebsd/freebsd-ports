@@ -12,9 +12,8 @@ COMMENT=	High performance realtime 3D engine
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	Makefile *.cpp *.h *.txt
-USES=		gmake
+DOS2UNIX_GLOB=	Makefile *.cpp *.h *.txt
+USES=		dos2unix gmake zip
 USE_GL=		yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libpng15

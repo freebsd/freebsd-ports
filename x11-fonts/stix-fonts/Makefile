@@ -18,7 +18,7 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
+USES=		zip
 USE_XORG=	x11
 
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"	\

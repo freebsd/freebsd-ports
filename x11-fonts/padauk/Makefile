@@ -14,7 +14,7 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 
 FONTSDIR=	lib/X11/fonts/Myanmar
 PLIST_SUB=	FONTSDIR=${FONTSDIR}

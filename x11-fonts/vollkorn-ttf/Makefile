@@ -13,7 +13,7 @@ LICENSE=	OFL11
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
+USES=		zip
 
 FONTDIR=	${STAGEDIR}${PREFIX}/lib/X11/fonts/${PORTNAME}
 

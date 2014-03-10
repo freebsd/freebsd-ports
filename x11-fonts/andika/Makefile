@@ -10,7 +10,7 @@ COMMENT=	Andika TrueType fonts
 
 LICENSE=	OFL11
 
-USE_ZIP=	yes
+USES=		zip
 XORG_CAT=	font
 
 FONTLIBPATH=	lib/X11/fonts

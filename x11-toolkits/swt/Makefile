@@ -22,9 +22,8 @@ CONFLICTS=	swt-3.1*
 SWT_VERSION=	3557
 OUTPUT_JAR=	swt.jar
 
-USE_ZIP=	yes
 USE_GL=		yes
-USES=		pkgconfig
+USES=		pkgconfig zip
 USE_GNOME=	gtk20
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
