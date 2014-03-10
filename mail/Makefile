@@ -148,7 +148,6 @@
     SUBDIR += faces
     SUBDIR += fdm
     SUBDIR += fetchmail
-    SUBDIR += fetchyahoo
     SUBDIR += filtermail
     SUBDIR += findmaildirs
     SUBDIR += firemime

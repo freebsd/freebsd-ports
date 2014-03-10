@@ -21,7 +21,6 @@
     SUBDIR += avinfo
     SUBDIR += bangarang
     SUBDIR += banshee
-    SUBDIR += beep-media-player
     SUBDIR += bino
     SUBDIR += bombono
     SUBDIR += bsdbktr_tvtune
