@@ -11,7 +11,7 @@ DISTNAME=	vntex
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	teTeX Vietnamese language + font support
 
-USE_ZIP=	yes
+USES=		zip
 USE_TEX=	tex
 NO_BUILD=	yes
 
