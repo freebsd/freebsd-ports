@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaBeansTM Activation Framework
 
-USE_ZIP=	YES
+USES=		zip
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 

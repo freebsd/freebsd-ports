@@ -8,7 +8,6 @@ CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20eclipse%20plugin/1.3.2
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	edu.umd.cs.findbugs.plugin.eclipse_${DISTVERSION}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,6 +15,7 @@ COMMENT=	Eclipse plug-in that provides FindBugs support
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
+USES=		zip
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

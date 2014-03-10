@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	COMPILE DOCS
 
 COMPILE_DESC=	Compile from source instead of using prebuilt binaries
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

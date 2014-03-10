@@ -10,7 +10,7 @@ DISTNAME=	ib12
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Enables dynamic exchange of data between JavaBeans(TM)
 
-USE_ZIP=	YES
+USES=		zip
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 

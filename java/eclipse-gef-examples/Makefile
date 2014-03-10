@@ -9,7 +9,6 @@ MASTER_SITES=	http://download.eclipse.org/tools/gef/downloads/drops/R-3.0-200406
 PKGNAMEPREFIX=	eclipse-
 PKGNAMESUFFIX=	-examples
 DISTNAME=	GEF-examples-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
@@ -17,6 +16,7 @@ COMMENT=	Graphical Editing Framework for the Eclipse IDE (examples)
 
 RUN_DEPENDS=    ${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

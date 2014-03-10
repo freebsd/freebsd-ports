@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Human-oriented programming language for writing/using Java classes
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 
 NO_STAGE=	yes

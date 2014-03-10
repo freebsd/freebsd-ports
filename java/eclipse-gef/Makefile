@@ -16,7 +16,7 @@ COMMENT=	Graphical Editing Framework for the Eclipse IDE
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
 WRKSRC=		${WRKDIR}/eclipse
-USE_ZIP=	yes
+USES=		zip
 
 .include "${.CURDIR}/../eclipse/Makefile.plugins"
 

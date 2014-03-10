@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/JGraphT/Version%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java package for mathematical graph-theory objects and algorithms
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

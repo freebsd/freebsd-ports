@@ -16,7 +16,7 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 CONFLICTS=	ja-font-mplus-ipa-1.0.20060520.p1 \
 		ja-ipa-ttfonts-[0-9]*
 
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

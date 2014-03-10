@@ -19,8 +19,8 @@ COMMENT=	Eclipse Language Pack Feature
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
+USES=		zip
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
 NO_STAGE=	yes

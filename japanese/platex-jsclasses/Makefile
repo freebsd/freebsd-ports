@@ -13,7 +13,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/^1.0.20//}${EXTRACT_SUFX}:0 \
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	New document class files for pLaTeX
 
-USE_ZIP=	YES
+USES=		zip
 USE_TEX=	tetex latex ptex
 NO_BUILD=	YES
 PLIST_SUB=	CLASSDIR=${CLASSDIR} TFMDIR=${TFMDIR} \

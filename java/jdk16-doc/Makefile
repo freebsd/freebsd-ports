@@ -26,7 +26,7 @@ JDK_UPDATE_VER=	30
 DOWNLOAD_URL=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 PORTDOCS=	*
 
 NO_STAGE=	yes

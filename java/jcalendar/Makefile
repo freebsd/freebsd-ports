@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.toedter.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Date Chooser
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes

@@ -6,11 +6,11 @@ PORTVERSION=	1.5.8c
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.varaneckas.com/sites/default/files/jad/
 DISTNAME=	jad158c.freebsd
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java Decompiler
 
+USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

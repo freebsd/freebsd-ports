@@ -12,6 +12,7 @@ MASTER_SITES=	http://maven.artenum.com/content/groups/public/com/artenum/${PORTN
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for building a graphical console in Swing
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
@@ -30,7 +31,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-sources.jar:source
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven3
 JAVA_BUILD=	yes
-USE_ZIP=	yes
 
 MANUAL_PACKAGE_BUILD=	maven fetches files during build target
 

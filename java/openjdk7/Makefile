@@ -26,8 +26,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_ZIP=	yes
-USES=		iconv gmake
+USES=		iconv gmake zip
 USE_XORG+=	x11 xext xi xrender xt xtst
 MAKE_ARGS=	CC=${CC} CXX=${CXX} HOST_CC=${CC}
 MAKE_JOBS_UNSAFE=	yes

@@ -7,7 +7,6 @@ PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}%20for%20eclipse%203.1M6%20and%20up
 DISTNAME=	net.sf.commonclipse_${PORTVERSION}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	zhoushuqun@gmail.com
@@ -15,6 +14,7 @@ COMMENT=	Commonclipse is an eclipse plugin for jakarta commons-lang users
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes

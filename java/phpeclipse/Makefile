@@ -17,9 +17,9 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 PLUGIN_PATHS=	features plugins
 PATCH_TASKS=	eclipse.versionReplacer eclipse.idReplacer
 
+USES=		zip
 USE_JAVA=	yes
 USE_ANT=	yes
-USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/dist
 ECLIPSE=	lib/eclipse

@@ -7,11 +7,11 @@ PORTREVISION=	1
 CATEGORIES=	java graphics
 MASTER_SITES=	http://download.java.net/media/${PORTNAME}/builds/release/${PORTVERSION:S/./_/g}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-lib
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	High performance image processing libraries for Java
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./_/g}

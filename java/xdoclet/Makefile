@@ -8,7 +8,6 @@ PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 DISTFILES=	${DISTNAME}.zip xjavadoc-${XJAVADOC_VER}.zip
 
 MAINTAINER=	lxv@omut.org
@@ -16,6 +15,7 @@ COMMENT=	Java attribute-oriented code generation engine
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_WRKSUBDIR=	yes

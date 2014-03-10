@@ -15,7 +15,7 @@ COMMENT=	EPIC adds Perl support to the Eclipse IDE Framework
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip:infozip
 WRKSRC=		${WRKDIR}/${EPIC}
 
 EPIC=		org.epic.updatesite

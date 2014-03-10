@@ -12,7 +12,7 @@ COMMENT=	Yasou picture book (EPWING V1 format) by SAS
 
 NO_CDROM=	No commercial use, and no redistribution allowed with fee except media and/or shipping cost
 
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/yasou
 EXTRACT_BEFORE_ARGS=	-qL

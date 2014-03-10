@@ -16,9 +16,9 @@ COMMENT=	Sysdeo Tomcat Launcher plugin for Eclipse
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
 
 NO_STAGE=	yes
 do-install:
