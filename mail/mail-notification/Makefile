@@ -3,7 +3,7 @@
 
 PORTNAME=	mail-notification
 DISTVERSION=	5.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
@@ -11,9 +11,9 @@ MASTER_SITE_SUBDIR=	mailnotify
 MAINTAINER=	mwisnicki+freebsd@gmail.com
 COMMENT=	A mail notification for freedesktop.org-compliant system trays
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		gnome-keyring:${PORTSDIR}/security/gnome-keyring \
-		notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libgnome-keyring.so:${PORTSDIR}/security/gnome-keyring \
+		libnotify.so:${PORTSDIR}/devel/libnotify
 
 USE_BZIP2=	yes
 USES=		gettext
@@ -21,16 +21,16 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gconf2 gnomeprefix gnomevfs2 libglade2 libgnomeui libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-JB_CONF_ARGS=	cc="${CC}" cflags="${CFLAGS}" cppflags="${CPPFLAGS}" ldflags="${LDFLAGS}" prefix="${PREFIX}"
+JB_CONF_ARGS=	cc="${CC}" cflags="${CFLAGS}" cppflags="${CPPFLAGS}" ldflags="${LDFLAGS}" prefix="${STAGEDIR}${PREFIX}"
 JB_CONF_ENV=	jb_cppflags="${CPPFLAGS}" jb_ldflags="${LDFLAGS}"
 GCONF_SCHEMAS=	mail-notification.schemas
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	EVOLUTION GMAIL HOTMAIL IMAP MAILDIR MBOX MH MOZILLA \
-		POP3 SASL SSL SYLPHEED YAHOO
+		POP3 SASL SSL SYLPHEED
 OPTIONS_DEFAULT=	GMAIL HOTMAIL IMAP MAILDIR MBOX MH MOZILLA \
-			POP3 SASL SSL SYLPHEED YAHOO
+			POP3 SASL SSL SYLPHEED
 EVOLUTION_DESC=	Evolution support
 GMAIL_DESC=	Gmail support
 HOTMAIL_DESC=	Windows Live Hotmail support
@@ -41,9 +41,7 @@ MH_DESC=	MH support
 MOZILLA_DESC=	Mozilla products support
 POP3_DESC=	POP3 support
 SYLPHEED_DESC=	Sylpheed support
-YAHOO_DESC=	Yahoo! Mail support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MMBOX}
@@ -79,13 +77,7 @@ PLIST_SUB+=	HOTMAIL="@comment "
 RUN_DEPENDS+=	getlive:${PORTSDIR}/mail/getlive
 PLIST_SUB+=	HOTMAIL=""
 .endif
-.if ! ${PORT_OPTIONS:MYAHOO}
 JB_CONF_ARGS+=	yahoo=no
-PLIST_SUB+=	YAHOO="@comment "
-.else
-RUN_DEPENDS+=	fetchyahoo:${PORTSDIR}/mail/fetchyahoo
-PLIST_SUB+=	YAHOO=""
-.endif
 .if ! ${PORT_OPTIONS:MEVOLUTION}
 JB_CONF_ARGS+=	evolution=no
 PLIST_SUB+=	EVOLUTION="@comment "
@@ -109,9 +101,8 @@ JB_CONF_ARGS+=	sylpheed=no
 	|| ${PORT_OPTIONS:MIMAP} \
 	|| ${PORT_OPTIONS:MMOZILLA} \
 	|| ${PORT_OPTIONS:MSYLPHEED} \
-	|| ${PORT_OPTIONS:MHOTMAIL} \
-	|| ${PORT_OPTIONS:MYAHOO}
-LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
+	|| ${PORT_OPTIONS:MHOTMAIL}
+LIB_DEPENDS+=	libgmime-2.0.so:${PORTSDIR}/mail/gmime2
 .endif
 .if ! ${PORT_OPTIONS:MSSL}
 JB_CONF_ARGS+=	ssl=no
@@ -121,14 +112,11 @@ USE_OPENSSL=	yes
 .if ! ${PORT_OPTIONS:MSASL}
 JB_CONF_ARGS+=	sasl=no
 .else
-LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/jb ${WRKSRC}/jbsrc/jb.c
-.if ${OSVERSION} < 700042
-	@${REINPLACE_CMD} -e "s,-Wno-pointer-sign,," ${WRKSRC}/jb
-.endif
 
 do-configure:
 	cd ${WRKSRC} && ${JB_CONF_ENV} ./jb configure ${JB_CONF_ARGS}
