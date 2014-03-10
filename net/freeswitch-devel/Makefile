@@ -19,7 +19,7 @@ CONFLICTS=	freeswitch-core-[0-9]*
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	VANILLA SBC INSIDEOUT CURL SOUNDS MUSIC PIZZADEMO SCRIPTS	
+OPTIONS_DEFINE=	VANILLA SBC INSIDEOUT CURL SOUNDS MUSIC SCRIPTS	
 
 VANILLA_DESC=		Vanilla Dialplan Configs
 SBC_DESC=		Session Border Conroller configs
@@ -27,7 +27,6 @@ INSIDEOUT_DESC=		Inside Out Basic Dialplan Configs
 CURL_DESC=		Curl dialplan configs
 SOUNDS_DESC=		Sound files for use with FreeSwitch PBX
 MUSIC_DESC=		Music on hold for use with FreeSwitch PBX
-PIZZADEMO_DESC=		Install Pizza Shop voice demo
 SCRIPTS_DESC=		Install Freeswitch various scripts
 
 OPTIONS_DEFAULT=	VANILLA SOUNDS MUSIC
@@ -54,10 +53,6 @@ RUN_DEPENDS+=	${LOCALBASE}/share/freeswitch/sounds/.freeswitch-sounds:${PORTSDIR
 
 .if ${PORT_OPTIONS:MMUSIC}
 RUN_DEPENDS+=	${LOCALBASE}/share/freeswitch/sounds/.freeswitch-music:${PORTSDIR}/audio/freeswitch-music
-.endif
-
-.if ${PORT_OPTIONS:MPIZZADEMO}
-RUN_DEPENDS+=	${LOCALBASE}/share/freeswitch/sounds/.pizza:${PORTSDIR}/misc/freeswitch-pizzademo-devel
 .endif
 
 .if ${PORT_OPTIONS:MSCRIPTS}
