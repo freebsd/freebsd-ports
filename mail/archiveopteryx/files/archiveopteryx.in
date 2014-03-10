@@ -27,7 +27,7 @@ required_files=$config_file
 
 command=%%PREFIX%%/bin/aox
 extra_commands=status
-status_cmd=${command} show status
+status_cmd="${command} show status"
 start_cmd=do_start
 start_precmd=do_prestart
 stop_cmd=do_stop
@@ -36,7 +36,7 @@ restart_cmd=do_restart
 do_prestart()
 {
 	if [ ! -d /var/db/aox/jail ] ; then
-		install -d -o root -g wheel -m 700 /var/db/aox/jail
+		install -d -o root -g wheel -m 001 /var/db/aox/jail
 	fi
 
 	for i in /var/run/aox /var/db/aox/messages /var/db/aox/jail/var/run /var/db/aox/jail/messages ; do
