@@ -8,7 +8,6 @@ CATEGORIES=	math java
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/dist/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}.sourceforge.net/
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\./_/g}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Propositional Logic sentence shell/interpreter
@@ -17,8 +16,8 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 NO_BUILD=	yes
 
+USES=		zip
 USE_JAVA=	yes
-USE_ZIP=	yes
 
 JAVA_VERSION=	1.6+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

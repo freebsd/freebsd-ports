@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt \
 		unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt
 
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 
 do-install:

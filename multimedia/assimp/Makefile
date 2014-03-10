@@ -16,8 +16,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
-USE_ZIP=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig zip
 USE_GCC=	yes	# GCC 4.2 causes compiler warnings
 USE_LDCONFIG=	yes
 

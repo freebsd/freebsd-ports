@@ -10,7 +10,7 @@ DISTNAME=	xport
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	The xport Transport Stream Demuxer
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/xporthdmv
 

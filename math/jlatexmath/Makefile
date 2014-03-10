@@ -13,7 +13,7 @@ COMMENT=	Java API to display mathematical formulas written in LaTeX
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_BUILD=	yes

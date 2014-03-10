@@ -10,9 +10,8 @@ DISTFILES=	nist_spblas_${DISTVERSION}.zip:1
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	NIST Sparse Basic Linear Algebra Subprograms (BLAS)
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix zip
 USE_LDCONFIG=	yes
-USE_ZIP=	yes
 
 HEADERS=	blas_enum.h blas_sparse.h blas_sparse_proto.h
 HDIR =		include/spblas

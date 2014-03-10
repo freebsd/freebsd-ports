@@ -12,7 +12,7 @@ COMMENT=	Mathematical expressions parser library written in C++
 
 LICENSE=	MIT
 
-USES=	pathfix
+USES=	pathfix gmake zip
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared=no
 .if defined(NOPORTEXAMPLES)
@@ -21,8 +21,6 @@ CONFIGURE_ARGS+=	--enable-samples=no
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 .endif
-USE_GMAKE=	yes
-USE_ZIP=	yes
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

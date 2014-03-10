@@ -13,7 +13,7 @@ COMMENT=	Python Extension that Wraps the GMP Library
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

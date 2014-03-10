@@ -21,7 +21,7 @@ LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 		liblas.so:${PORTSDIR}/devel/liblas \
 		libopencv_core.so:${PORTSDIR}/graphics/opencv-core
 
-USE_ZIP=	yes
+USES=		zip
 USE_WX=		2.9
 WX_UNICODE=	yes
 USE_LDCONFIG=	yes
