@@ -15,7 +15,7 @@ BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
 
 LICENSE=	GPLv3
 
-USE_ZIP=	yes
+USES=		zip
 
 WRKSRC=		${WRKDIR}/freefont-${PORTVERSION}
 INSTALLDIR=	${STAGEDIR}${PREFIX}/lib/X11/fonts/${PORTNAME}

@@ -12,7 +12,7 @@ COMMENT=	Mondulkiri Khmer fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 FONTSDIR=	lib/X11/fonts/Khmer/

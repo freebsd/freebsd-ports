@@ -15,7 +15,7 @@ LICENSE=	OFL11
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USE_ZIP=	yes
+USES=		zip
 
 FONTDIR=	lib/X11/fonts/Comfortaa
 PKGMESSAGE=	${WRKDIR}/pkg-message

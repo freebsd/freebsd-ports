@@ -17,7 +17,7 @@ COMMENT=	Bitstream Cyberbit is a TrueType font covers Unicode 2.0
 
 RESTRICTED=	Redistribution not permitted; single user license only.
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 FONTSDIR=	lib/X11/fonts/TrueType

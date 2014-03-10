@@ -18,7 +18,7 @@ INSTALLS_TTF=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_TGZ=	yes
-USE_ZIP=	yes
+USES=		zip
 XORG_CAT=	font
 
 FONTDIR=	ParaType

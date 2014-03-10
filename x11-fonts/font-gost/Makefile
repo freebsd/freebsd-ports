@@ -14,7 +14,7 @@ COMMENT=	GOST TrueType fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 FONTSDIR=	${PREFIX}/lib/X11/fonts/gost
