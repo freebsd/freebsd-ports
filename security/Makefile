@@ -1016,7 +1016,6 @@
     SUBDIR += xmlsec1
     SUBDIR += xorsearch
     SUBDIR += xspy
-    SUBDIR += xyssl
     SUBDIR += yafic
     SUBDIR += yapet
     SUBDIR += yara
