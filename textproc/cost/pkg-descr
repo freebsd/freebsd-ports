@@ -1,5 +1,0 @@
-Cost is a structure-controlled SGML/XML application programming tool.  
-It is implemented as a Tcl extension, and works in conjunction 
-with James Clark's nsgmls, sgmls, and/or expat parsers.
-
-WWW: http://www.flightlab.com/cost/

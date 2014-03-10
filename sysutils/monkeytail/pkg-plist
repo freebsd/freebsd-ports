@@ -1,6 +1,0 @@
-bin/mtail
-man/man1/mtail.1.gz
-man/man5/mtailrc.5.gz
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

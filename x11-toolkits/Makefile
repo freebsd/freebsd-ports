@@ -286,7 +286,6 @@
     SUBDIR += xbae
     SUBDIR += xforms
     SUBDIR += xmhtml
-    SUBDIR += xscoop
     SUBDIR += xview
     SUBDIR += xview-clients
 

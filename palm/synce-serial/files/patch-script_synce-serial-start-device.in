@@ -1,8 +1,0 @@
---- script/synce-serial-start-device.in.orig	2008-06-21 07:53:36.000000000 +1000
-+++ script/synce-serial-start-device.in	2008-06-21 07:53:45.000000000 +1000
-@@ -23,4 +23,4 @@
- synce-serial-abort-device >/dev/null 2>&1
- 
- # Now bring up the connection
--${SYNCE_PPP:-$PPPD} ${SYNCE_DEV} ${SYNCE_DEVSPEED:-115200} connect ${SYNCE_PPP_CONNECT:-@SYNCE_SERIAL_CHAT@} ${SYNCE_IPADDR:-$DEFAULT_IPS} ms-dns ${SYNCE_DNS:-$DEFAULT_LOCAL_IP} linkname ${SYNCE_DEVNAME:-$PEER} $pppopts $SYNCE_PPP_OPTIONS
-+${SYNCE_PPP:-$PPPD} ${SYNCE_DEV} ${SYNCE_DEVSPEED:-115200} connect ${SYNCE_PPP_CONNECT:-@SYNCE_SERIAL_CHAT@} ${SYNCE_IPADDR:-$DEFAULT_IPS} ms-dns ${SYNCE_DNS:-$DEFAULT_LOCAL_IP} $pppopts $SYNCE_PPP_OPTIONS

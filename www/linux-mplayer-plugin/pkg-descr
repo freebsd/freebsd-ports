@@ -1,9 +1,0 @@
-mplayerplug-in is a browser plugin that uses mplayer to play digital
-media from websites.
-
-This plug-in gives Mozilla the ability to play media from a website
-the net without reading the source html and getting the url manually.
-Media is played embedded in the page or in a separate window depending
-on how the author of the webpage intended the media to be seen.
-
-WWW: http://mplayerplug-in.sourceforge.net/

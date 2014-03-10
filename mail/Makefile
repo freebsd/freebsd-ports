@@ -45,7 +45,6 @@
     SUBDIR += c-sig-emacs21
     SUBDIR += cclient
     SUBDIR += chk4mail
-    SUBDIR += clamfilter
     SUBDIR += claws-mail
     SUBDIR += claws-mail-address_keeper
     SUBDIR += claws-mail-archiver
@@ -300,7 +299,6 @@
     SUBDIR += mutt_vc_query
     SUBDIR += muttils
     SUBDIR += nbsmtp
-    SUBDIR += newmail
     SUBDIR += nmh
     SUBDIR += nmzmail
     SUBDIR += noattach
@@ -633,7 +631,6 @@
     SUBDIR += sgwi
     SUBDIR += sid-milter
     SUBDIR += sieve-connect
-    SUBDIR += sigit
     SUBDIR += sigrot
     SUBDIR += simscan
     SUBDIR += slapd-cyrus
@@ -711,7 +708,6 @@
     SUBDIR += sympa
     SUBDIR += synonym
     SUBDIR += t-prot
-    SUBDIR += teapop
     SUBDIR += textmail
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries

@@ -266,7 +266,6 @@
     SUBDIR += scrnsaverproto
     SUBDIR += sessreg
     SUBDIR += setlayout
-    SUBDIR += settitle
     SUBDIR += setxkbmap
     SUBDIR += simdock
     SUBDIR += sisctrl

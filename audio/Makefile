@@ -838,7 +838,6 @@
     SUBDIR += xmms-timidity
     SUBDIR += xmms-volnorm
     SUBDIR += xmms-wavpack
-    SUBDIR += xmms-wma
     SUBDIR += xmms-xf86audio
     SUBDIR += xmms-xymms
     SUBDIR += xmms2

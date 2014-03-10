@@ -59,7 +59,6 @@
     SUBDIR += cs
     SUBDIR += cstream
     SUBDIR += cuecat
-    SUBDIR += cwish
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
     SUBDIR += dahdi-kmod26
@@ -120,8 +119,6 @@
     SUBDIR += freebsd-doc-zh_tw
     SUBDIR += freecode-submit
     SUBDIR += freeguide
-    SUBDIR += freeswitch-pizzademo-devel
-    SUBDIR += freeswitch-scripts-devel
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
     SUBDIR += gcstar
@@ -370,7 +367,6 @@
     SUBDIR += pipe
     SUBDIR += podsleuth
     SUBDIR += posixtestsuite
-    SUBDIR += projectionlib
     SUBDIR += proxyper
     SUBDIR += pspresent
     SUBDIR += py-YABT
@@ -420,7 +416,6 @@
     SUBDIR += spamcalc
     SUBDIR += sshbuddy
     SUBDIR += sssnips
-    SUBDIR += stan
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += sword

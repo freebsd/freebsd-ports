@@ -15,7 +15,6 @@
     SUBDIR += cos
     SUBDIR += cryptix-jce
     SUBDIR += dbvis
-    SUBDIR += drexelsnmp
     SUBDIR += eclipse
     SUBDIR += eclipse-EPIC
     SUBDIR += eclipse-RDT
