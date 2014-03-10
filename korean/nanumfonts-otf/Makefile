@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 DISTINFO_FILE=	${PKGDIR}/distinfo.${FONTTYPE}
 
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
+USES=		zip
 
 FONTTYPE?=	otf
 FONTFORMAT?=	OpenType

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
+USES=		zip
 FONTSDIR=	lib/X11/fonts/nanum-coding${PKGNAMESUFFIX}
 FONTLIST=	NanumGothicCoding \
 		NanumGothicCoding-Bold
