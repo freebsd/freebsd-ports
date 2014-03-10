@@ -5,13 +5,12 @@ share/gnome/help/mail-notification/C/documentation-license.xml
 share/gnome/help/mail-notification/C/figures/mail.png
 share/gnome/help/mail-notification/C/mail-notification.xml
 share/gnome/help/mail-notification/C/software-license.xml
-%%GMAIL%%share/mail-notification/gmail.png
-%%HOTMAIL%%share/mail-notification/hotmail.png
-share/mail-notification/logo.png
-share/mail-notification/new-mail.wav
-%%YAHOO%%share/mail-notification/yahoo.png
-share/mail-notification/mailbox-properties-dialog.glade
-share/mail-notification/properties-dialog.glade
+%%GMAIL%%%%DATADIR%%/gmail.png
+%%HOTMAIL%%%%DATADIR%%/hotmail.png
+%%DATADIR%%/logo.png
+%%DATADIR%%/new-mail.wav
+%%DATADIR%%/mailbox-properties-dialog.glade
+%%DATADIR%%/properties-dialog.glade
 share/omf/mail-notification/mail-notification-C.omf
 share/icons/hicolor/16x16/apps/mail-notification.png
 share/icons/hicolor/22x22/apps/mail-notification.png
@@ -37,7 +36,7 @@ share/locale/sv/LC_MESSAGES/mail-notification.mo
 %%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-jylefort-mail-notification.so
 %%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/org-jylefort-mail-notification.eplug
 @dirrm share/omf/mail-notification
-@dirrm share/mail-notification
+@dirrm %%DATADIR%%
 @dirrm share/gnome/help/mail-notification/C/figures
 @dirrm share/gnome/help/mail-notification/C
 @dirrm share/gnome/help/mail-notification
