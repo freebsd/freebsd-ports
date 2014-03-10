@@ -10,5 +10,4 @@ MASTERDIR=	${.CURDIR}/../gtk-aluminumalloy-volcanic-theme
 DISTINFO_FILE=	${.CURDIR}/../gtk-aluminumalloy-cryogenic-theme/distinfo
 PLIST=		${.CURDIR}/../gtk-aluminumalloy-cryogenic-theme/pkg-plist
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
