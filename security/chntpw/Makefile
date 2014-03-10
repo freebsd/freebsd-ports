@@ -15,9 +15,8 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 
-USE_ZIP=	yes
 USE_OPENSSL=	yes
-USES=		gmake
+USES=		gmake zip
 
 ONLY_FOR_ARCHS=	i386 amd64
 

@@ -13,12 +13,11 @@ COMMENT=	PKCS\#11 Java wrapper
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_ZIP=	yes
+USES=		dos2unix gmake zip
 USE_JAVA=	yes
-USE_DOS2UNIX=	Makefile
+DOS2UNIX_FILES=	Makefile
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
-USE_GMAKE=	yes
 ALL_TARGET=	release
 
 PLIST_FILES=	lib/libpkcs11wrapper.so %%JAVAJARDIR%%/iaikPkcs11Wrapper.jar

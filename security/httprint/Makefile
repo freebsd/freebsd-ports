@@ -11,7 +11,7 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	Web server fingerprinting tool
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/freebsd/
-USE_ZIP=	yes
+USES=		zip
 
 RESTRICTED=	No cost for personal, education and non-commercial use.
 NO_BUILD=	yes

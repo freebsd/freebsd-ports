@@ -20,7 +20,7 @@ LIB_DEPENDS=	med.5:${PORTSDIR}/french/med		\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_ZIP=	yes
+USES=		zip
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bft=${LOCALBASE}	\

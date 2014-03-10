@@ -10,8 +10,7 @@ DISTNAME=	${PORTNAME}-source-${DISTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Advanced shutdown utility for KDE
 
-USE_ZIP=	yes
-USES=		cmake
+USES=		cmake zip
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdehier kdeprefix workspace
 

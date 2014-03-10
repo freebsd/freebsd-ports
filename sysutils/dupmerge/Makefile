@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Searches for files with equal content
 
-USE_ZIP=	yes
+USES=		zip
 MAKE_FLAGS=
 MAKEFILE=
 LDFLAGS+=	-lroken -lcrypt

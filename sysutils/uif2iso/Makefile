@@ -10,8 +10,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Convert MagicISO UIF files to ISO9660
 
-USE_ZIP=	yes
-
+USES=		zip
 WRKSRC=		${WRKDIR}/src
 
 PLIST_FILES=	bin/uif2iso

@@ -19,7 +19,7 @@ DESKTOP_ENTRIES="hfsexplorer" "reader Mac-formatted harddisk" \
 		"${DATADIR}/res/icon.png" "${PORTNAME}" \
 		"System;Utility;Java;" false
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
 

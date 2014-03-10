@@ -20,7 +20,7 @@ LIB_DEPENDS=	med.5:${PORTSDIR}/french/med		\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_ZIP=	yes
+USES=		gmake zip
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bft=${LOCALBASE}		\
 		--with-hdf5=${LOCALBASE}	\
@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--with-bft=${LOCALBASE}		\
 		--with-metis=${LOCALBASE}	\
 		--with-metis-include=${LOCALBASE}/include/metis
 CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
-USE_GMAKE=	yes
 
 .if defined(WITH_CCMIO)
 LIB_DEPENDS+=	adf.5:${PORTSDIR}/science/libccmio	\

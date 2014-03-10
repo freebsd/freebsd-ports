@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/chinsan
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP environment security auditing tool
 
-USE_ZIP=	yes
+USES=		zip
 USE_PHP=	pcre
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
