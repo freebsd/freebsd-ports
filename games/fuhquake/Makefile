@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.fuhquake.net/files/releases/v${PORTVERSION}/ \
 		http://www.fuhquake.net/files/misc/:misc
 DISTNAME=	${PORTNAME}-source-v${PORTVERSION}
-EXTRACT_SUFX=	zip
+EXTRACT_SUFX=	.zip
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-linux-v${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
