@@ -13,7 +13,7 @@ COMMENT=	An implementation of IBM's RexxUtil function library for Regina
 
 BUILD_DEPENDS=	${LOCALBASE}/include/rexxsaa.h:${PORTSDIR}/lang/rexx-regina
 
-USE_ZIP=	yes
+USES=		zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_LDCONFIG=	yes

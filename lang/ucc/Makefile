@@ -10,8 +10,7 @@ DISTNAME=	ucc160
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	C Compiler Which Implements the ANSI C89 Standard
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USES=		dos2unix zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_LDCONFIG=	yes

@@ -6,7 +6,6 @@ PORTVERSION=	0.9.2
 CATEGORIES=	lang
 MASTER_SITES=	http://nimrod-code.org/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	The Nimrod programming language
@@ -16,7 +15,7 @@ LICENSE=	MIT
 OPTIONS_DEFINE=	DOCS
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		compiler
+USES=		compiler zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
