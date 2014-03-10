@@ -752,7 +752,6 @@
     SUBDIR += xf-spf
     SUBDIR += xfaces
     SUBDIR += xfce4-mailwatch-plugin
-    SUBDIR += xfmail
     SUBDIR += xlbiff
     SUBDIR += xmail
     SUBDIR += xmailbox
