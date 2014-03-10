@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	20140211
+PORTVERSION=	20140309
 CATEGORIES=	portuguese textproc
 MASTER_SITES=	http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/ \
 		http://www.broffice.org/files/:BR \
@@ -9,6 +9,11 @@ MASTER_SITES=	http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/
 DISTFILES=	hunspell-pt_PT-${PORTVERSION}.tar.gz \
 		pt_BR-2012-06-09AOC.zip:BR
 DIST_SUBDIR=	${PORTNAME}
+
+# We pick the common one among:
+# - pt_PT is licensed under GPLv2, LGPL21 and MPL.
+# - pt_BR is licensed under LGPL3 and MPL.
+LICENSE=	MPL
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese hunspell dictionaries
