@@ -45,12 +45,17 @@ LIB_DEPENDS+=	qwt:${PORTSDIR}/x11-toolkits/qwt5
 CONFIGURE_ARGS+=	--disable-graph
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -E '/#include <byteswap\.h>/d ; \
+		/#include/s,"bswap\.h",<machine/endian.h>, ; \
+		s,bswap_([[:digit:]]+),bswap\1, ' \
+			${WRKSRC}/src/samdump2/bkhive.c \
+			${WRKSRC}/src/samdump2/hive.c \
+			${WRKSRC}/src/samdump2/samdump2.c \
+			${WRKSRC}/src/misc.h
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
 
 .include <bsd.port.mk>
