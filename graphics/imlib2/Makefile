@@ -14,7 +14,7 @@ COMMENT=	The next generation graphics library for Enlightenment
 LICENSE=	imlib2
 LICENSE_NAME=	imlib2 license
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
