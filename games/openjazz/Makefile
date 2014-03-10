@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 WRKSRC=	${WRKDIR}/${PORTNAME}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USES=	dos2unix gmake zip
+USES=	dos2unix gmake zip:infozip
 DOS2UNIX_REGEX=	.*\.(h|cpp)
 ALL_TARGET=	OpenJazz
 USE_XORG=	x11 xext xrandr xrender xau xdmcp
