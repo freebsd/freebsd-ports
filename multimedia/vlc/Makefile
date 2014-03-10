@@ -159,7 +159,7 @@ MODPLUG_CONFIGURE_ENABLE=	mod
 MPEG2_LIB_DEPENDS=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
 MPEG2_CONFIGURE_ENABLE=	libmpeg2
 
-MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/audio/libmtp
+MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp
 MTP_CONFIGURE_ENABLE=	mtp
 
 MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack
