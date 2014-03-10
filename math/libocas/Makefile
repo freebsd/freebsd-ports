@@ -12,9 +12,8 @@ COMMENT=	Efficient training of SVM classifiers
 
 LICENSE=	GPLv3
 
-USE_GMAKE=	yes
+USES=		gmake zip
 USE_LDCONFIG=	yes
-USE_ZIP=	yes
 
 ALL_TARGET=	clean libocas.so.1 svmocas msvmocas linclassif
 CLIBS=		-lm ${PTHREAD_LIBS}

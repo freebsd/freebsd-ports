@@ -24,7 +24,7 @@ LICENSE_PERMS_COMMERCIAL=	dist-mirror dist-sell pkg-mirror pkg-sell no-auto-acce
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_ZIP=	yes
+USES=		zip
 USE_LDCONFIG=	yes
 
 EXTRACT_BEFORE_ARGS=	-j -aa -L -q

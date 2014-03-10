@@ -13,7 +13,7 @@ COMMENT=	A Project X addon to read Siemens Gigaset M740AV video recordings
 BUILD_DEPENDS=	projectx>=0.90.4.00:${PORTSDIR}/multimedia/projectx
 RUN_DEPENDS=	projectx>=0.90.4.00:${PORTSDIR}/multimedia/projectx
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

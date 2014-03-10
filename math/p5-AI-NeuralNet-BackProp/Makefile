@@ -10,9 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module implementing a back-propagation feed-forward neural network
 
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

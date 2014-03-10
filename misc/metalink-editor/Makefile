@@ -15,8 +15,7 @@ COMMENT=	GUI editor to create and edit metalinks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/license.txt
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USES=		dos2unix zip
 DOS2UNIX_REGEX=	.*\.txt
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes

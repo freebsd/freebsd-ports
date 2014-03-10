@@ -33,8 +33,7 @@ MECABU_DESC=	\
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USES=		perl5
-USE_ZIP=	yes
+USES=		perl5 zip
 USE_PERL5=	run
 
 PLIST_SUB=	VERSION="${PORTVERSION}"

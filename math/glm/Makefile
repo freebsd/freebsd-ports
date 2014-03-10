@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	ogl-math/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	C++ mathematics library for software based on the OpenGL GLSL
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

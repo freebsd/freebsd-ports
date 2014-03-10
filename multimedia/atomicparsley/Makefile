@@ -12,7 +12,7 @@ COMMENT=	Command line program for reading parsing and setting MP4/M4A metadata
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
+USES=		zip
 
 PLIST_FILES=	bin/AtomicParsley
 

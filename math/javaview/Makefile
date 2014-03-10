@@ -17,7 +17,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

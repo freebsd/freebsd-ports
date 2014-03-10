@@ -16,7 +16,7 @@ RUN_DEPENDS=	roundcube>=0.3:${PORTSDIR}/mail/roundcube
 THEME_VERSION?=	3.1.0
 THEME_BUILD?=	030110A
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/MobileCubeBeta\#${THEME_BUILD}

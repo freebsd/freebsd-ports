@@ -13,7 +13,7 @@ COMMENT=	DVB (mpeg) cutting/demux tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

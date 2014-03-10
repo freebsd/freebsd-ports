@@ -14,9 +14,7 @@ RUN_DEPENDS=	scm:${PORTSDIR}/lang/scm \
 
 WRKSRC=		${WRKDIR}/jacal
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
-USES=		perl5
+USES=		gmake perl5 zip
 NO_BUILD=	yes
 
 MAN1=		jacal.1

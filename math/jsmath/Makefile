@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	JavaScript tool for including mathematics in web pages
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	IMAGE_FONTS SPRITE_FONTS

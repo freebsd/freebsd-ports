@@ -11,7 +11,7 @@ DISTNAME=	pipe25_rc5
 MAINTAINER=	stefan@fh-mainz.de
 COMMENT=	A tool for creating and analysing Petri nets
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

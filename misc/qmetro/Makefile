@@ -11,8 +11,7 @@ COMMENT=	Map of the transport system for many city subways
 
 LICENSE=	GPLv2
 
-USES=		dos2unix qmake
-USE_ZIP=	yes
+USES=		dos2unix qmake zip
 INSTALLS_ICONS=	yes
 USE_QT4=	gui xml uic_build moc_build multimedia \
 		rcc_build

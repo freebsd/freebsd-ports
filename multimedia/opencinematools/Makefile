@@ -13,8 +13,7 @@ LIB_DEPENDS=	openjpeg.2:${PORTSDIR}/graphics/openjpeg \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		asdcp.0:${PORTSDIR}/multimedia/asdcplib
 
-USE_DOS2UNIX=	yes
-USE_ZIP=	yes
+USES=		dos2unix zip
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
