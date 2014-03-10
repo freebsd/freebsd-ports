@@ -19,10 +19,9 @@ CONFLICTS=	freeswitch-core-[0-9]*
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	VANILLA SBC INSIDEOUT CURL SOUNDS MUSIC SCRIPTS	
+OPTIONS_DEFINE=	VANILLA INSIDEOUT CURL SOUNDS MUSIC SCRIPTS	
 
 VANILLA_DESC=		Vanilla Dialplan Configs
-SBC_DESC=		Session Border Conroller configs
 INSIDEOUT_DESC=		Inside Out Basic Dialplan Configs
 CURL_DESC=		Curl dialplan configs
 SOUNDS_DESC=		Sound files for use with FreeSwitch PBX
