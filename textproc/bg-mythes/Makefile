@@ -15,7 +15,7 @@ COMMENT=	Bulgarian thesaurus
 LICENSE=	GPLv2 LGPL21 MPL
 LICENSE_COMB=	dual
 
-EXTRACT_SUFX=	.zip
+USES=		zip
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/th_bg_BG.dat \

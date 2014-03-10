@@ -7,7 +7,6 @@ PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://archives.nd.edu/whitaker/
 DISTNAME=	${PORTNAME}all
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Latin-English Dictionary Program
@@ -19,7 +18,7 @@ LICENSE_TEXT=	All parts of the WORDS system, source code and data files, \
 		for whatever purpose.
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		ada
+USES=		ada zip
 NO_WRKSUBDIR=	yes
 GNATMAKE=	env ${MAKE_ENV} gnatmake
 

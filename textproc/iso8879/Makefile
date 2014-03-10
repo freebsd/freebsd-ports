@@ -14,7 +14,7 @@ COMMENT=	Character entity sets from ISO 8879:1986 (SGML)
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	DTD_NAME=${PORTNAME} XMLCATMGR=${XMLCATMGR}

@@ -13,7 +13,7 @@ COMMENT=	A tool to take notes, annotate documents (including PDF), and more
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

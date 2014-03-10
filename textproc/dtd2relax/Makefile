@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}-src${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DTD to RELAX converter for Java
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes
 

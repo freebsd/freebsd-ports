@@ -12,8 +12,7 @@ COMMENT=	XSL(T) stylesheet checker
 
 RUN_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 
-USES=		shebangfix perl5
-USE_ZIP=	yes
+USES=		shebangfix perl5 zip
 USE_PERL5=	run
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.05

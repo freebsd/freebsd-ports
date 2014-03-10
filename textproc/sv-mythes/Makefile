@@ -14,7 +14,7 @@ COMMENT=	Swedish thesaurus
 
 LICENSE=	MIT
 
-EXTRACT_SUFX=	.zip
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Norwegian (Nynorsk and Bokmaal) hunspell dictionaries
 
-EXTRACT_SUFX=	.zip
+USES=		zip
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/nb_NO.aff \

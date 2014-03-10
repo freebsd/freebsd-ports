@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Multi-format schema converter based on RELAX NG
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

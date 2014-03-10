@@ -19,7 +19,7 @@ JAR_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom \
 		${JAVALIBDIR}/jaxen-full.jar:${PORTSDIR}/java/jaxen \
 		${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_JAVA=	yes

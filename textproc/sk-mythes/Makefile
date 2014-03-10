@@ -6,7 +6,6 @@ CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	sk-
 DISTNAME=	OOo-Thesaurus2-sk_SK-${PORTVERSION:C/\.//g}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
@@ -14,6 +13,7 @@ COMMENT=	Slovak thesaurus
 
 LICENSE=	MIT
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
