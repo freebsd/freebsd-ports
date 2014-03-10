@@ -17,7 +17,7 @@ LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
 
 USES=		gmake cmake pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
-USE_GL=		gl glu
+USE_GL=		glu
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
@@ -94,6 +94,14 @@ post-patch:
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/docs/man/*.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+.for l in ex12bit ex3buf ex3d exaccel exalpha exbitmap exblend excamera excolmap \
+	exconfig excustom exdata exdbuf exexedat exfixed exflame exflip exfont \
+	exgui exhello exjoy exkeys exlights exmem exmidi exmouse expackf expal \
+	expat exquat exrgbhsv exrotscl exsample exscale exscn3d exscroll exshade \
+	exspline exsprite exstars exstream exswitch exsyscur extimer extrans \
+	extrans2 extruec exunicod exupdate exxfade exzbuf
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/examples/allegro/${l}
+.endfor
 
 .if ${PORT_OPTIONS:MDEMOS} && ${PORT_OPTIONS:MEXAMPLES}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} demos ${STAGEDIR}${EXAMPLESDIR})
@@ -103,6 +111,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/skater* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${_DISTDIR}/skater.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	@(cd ${STAGEDIR}${EXAMPLESDIR}/demos/skater && ${CHMOD} 755 skater*)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/examples/allegro/demos/shooter/shooter
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/examples/allegro/demos/skater/skater*
 .endif
 
 .include <bsd.port.mk>
