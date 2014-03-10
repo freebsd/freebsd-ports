@@ -11,7 +11,7 @@ DISTNAME=	vera-${VERA_VER}-fpw${VERAFPW_VER}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Entity of Relevant Aconyms (EPWING V1 format)
 
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/vera
 EXTRACT_BEFORE_ARGS=	-qL

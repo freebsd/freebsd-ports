@@ -9,12 +9,12 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://www.servlets.com/cos/ \
 		http://www.oreilly.com.tw/bookcode/
 DISTNAME=	${PORTNAME}-05Nov2002
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	The O'Reilly package of utility classes for servlet developers
 
 NO_WRKSUBDIR=	yes
+USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes
 RESTRICTED=	Special conditions apply for commercial use, see licence

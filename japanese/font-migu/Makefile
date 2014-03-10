@@ -16,7 +16,7 @@ COMMENT=	Another Japanese font set based on MigMix
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

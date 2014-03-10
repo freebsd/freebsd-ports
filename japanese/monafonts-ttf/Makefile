@@ -11,7 +11,7 @@ DISTNAME=	monafont-ttf-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	X11 TrueType Kanji fonts
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 FONTSDIR=	lib/X11/fonts/TrueType

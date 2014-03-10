@@ -14,8 +14,8 @@ COMMENT=	Java library with common network protocol implementations
 RESTRICTED=	May not redistribute except as part of a new software product
 
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
+USES=		zip
 USE_JAVA=	yes
-USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/NetComponents-1.3.8a
 NO_BUILD=	yes
 

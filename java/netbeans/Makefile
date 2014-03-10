@@ -14,7 +14,7 @@ COMMENT=	A full-featured integrated environment for Java
 LICENSE=	CDDL GPLv2
 LICENSE_COMB=	multi
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 NO_BUILD=	yes

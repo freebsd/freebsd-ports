@@ -8,7 +8,6 @@ CATEGORIES=	java devel
 MASTER_SITES=	SF/eclipse-cs/Eclipse%20Checkstyle%20Plug-in/v3.4.1
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	com.atlassw.tools.eclipse.checkstyle_${PORTVERSION}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
@@ -16,6 +15,7 @@ COMMENT=	Integrates the Checkstyle Java code auditor into Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
+USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes

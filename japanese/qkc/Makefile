@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}c100
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Quick Kanji Code Converter (C version)
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
 PLIST_FILES=	bin/qkc man/ja/man1/qkc.1.gz

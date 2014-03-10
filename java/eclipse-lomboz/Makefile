@@ -19,9 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 CONFLICTS=	eclipse-webtools-0.7*
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native

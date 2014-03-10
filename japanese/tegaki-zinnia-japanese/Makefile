@@ -1,10 +1,5 @@
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
-
-# Date created:				15 Aug 2010
-# Whom:					Timothy Beyer <beyert@cs.ucr.edu>
-#
-# $FreeBSD$
-#
 
 PORTNAME=	tegaki
 PORTVERSION=	0.3
@@ -19,7 +14,7 @@ COMMENT=	Handwriting Recognition Models for Tegaki
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_ZIP=	yes
+USES=		zip
 
 NO_STAGE=	yes
 do-build:

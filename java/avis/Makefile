@@ -12,7 +12,7 @@ MAINTAINER=	benjsc@FreeBSD.org
 COMMENT=	Elvin Publish/Subscribe Message Bus server based on the Elvin protocol
 
 USE_RC_SUBR=	yes
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

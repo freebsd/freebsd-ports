@@ -9,7 +9,6 @@ MASTER_SITES=	http://nivi.interfree.it/distfiles/eclipse-aptana2/
 PKGNAMEPREFIX=	eclipse-
 PKGNAMESUFFIX=	2
 DISTNAME=	com.aptana.ide.feature.studio-${PORTVERSION}-5-7857HJ97CFF61HN1HZHtem5tN7
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Aptana Studio 2 Web Development Tools (Eclipse plugin)
@@ -18,6 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 CONFLICTS_INSTALL=	eclipse-aptana-1*
 
+USES=		zip
 JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes

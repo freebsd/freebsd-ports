@@ -14,9 +14,8 @@ DIST_SUBDIR=	latex
 MAINTAINER=	yokota@res.otaru-uc.ac.jp
 COMMENT=	pLaTeX package that literally provides Japanese option to babel
 
-USE_ZIP=	yes
 USE_TEX=	latex ptex
-USES=		iconv:build
+USES=		iconv:build zip
 
 TEXMFDIR=	share/texmf
 STYDIR=		tex/generic/babel

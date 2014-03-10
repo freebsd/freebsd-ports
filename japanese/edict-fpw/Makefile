@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese <-> English Dictionary (EPWING V1 format)
 
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/edict
 EXTRACT_BEFORE_ARGS=	-qL

@@ -16,12 +16,12 @@ COMMENT=	Database access and SQL editor for the Eclipse IDE
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
                 ${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
 
+USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_EXTRACT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_ZIP=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 NO_STAGE=	yes

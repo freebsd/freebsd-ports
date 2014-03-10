@@ -21,6 +21,8 @@ NO_WRKSUBDIR=	yes
 OPTIONS_DEFINE=	JYTHON
 JYTHON_DESC=	Use Jython as Python interpreter
 
+USES=		zip
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
@@ -29,7 +31,6 @@ RUN_DEPENDS+=	jython:${PORTSDIR}/lang/jython
 .endif
 
 USE_PYTHON=	yes
-USE_ZIP=	yes
 
 DISTDATE=	2013072611
 

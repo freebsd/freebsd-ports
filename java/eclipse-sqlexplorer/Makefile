@@ -8,7 +8,6 @@ CATEGORIES=	java
 MASTER_SITES=	SF/eclipsesql/SQL%20Explorer%20Plugin/${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
@@ -17,9 +16,9 @@ COMMENT=	A visual database query tool for Eclipse
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
 
 NO_STAGE=	yes
 do-install:

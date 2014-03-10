@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-spec${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Transaction API (JTA)
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
