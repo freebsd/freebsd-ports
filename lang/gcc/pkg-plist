@@ -2,11 +2,17 @@ bin/%%GNU_HOST%%-c++%%SUFFIX%%
 bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VERSION%%
+bin/%%GNU_HOST%%-gcc-ar%%SUFFIX%%
+bin/%%GNU_HOST%%-gcc-nm%%SUFFIX%%
+bin/%%GNU_HOST%%-gcc-ranlib%%SUFFIX%%
 bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 bin/c++%%SUFFIX%%
 bin/cpp%%SUFFIX%%
 bin/g++%%SUFFIX%%
 bin/gcc%%SUFFIX%%
+bin/gcc-ar%%SUFFIX%%
+bin/gcc-nm%%SUFFIX%%
+bin/gcc-ranlib%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
@@ -47,7 +53,7 @@ share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/printers.py
 %%JAVA%%bin/jcf-dump%%SUFFIX%%
 %%JAVA%%bin/jv-convert%%SUFFIX%%
 %%JAVA%%bin/rebuild-gcj-db%%SUFFIX%%
-%%JAVA%%libdata/pkgconfig/libgcj-4.6.pc
+%%JAVA%%libdata/pkgconfig/libgcj-4.7.pc
 %%JAVA%%man/man1/aot-compile%%SUFFIX%%.1.gz
 %%JAVA%%man/man1/gappletviewer%%SUFFIX%%.1.gz
 %%JAVA%%man/man1/gc-analyze%%SUFFIX%%.1.gz
