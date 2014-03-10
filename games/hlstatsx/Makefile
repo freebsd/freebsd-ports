@@ -13,7 +13,7 @@ COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
 NO_BUILD=	yes
 USE_APACHE_RUN=	22+
 USE_PHP=	gd mysql
-USES=		perl5 zip
+USES=		perl5 zip:infozip
 USE_PERL5=	run
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
