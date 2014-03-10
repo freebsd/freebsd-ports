@@ -1,6 +1,0 @@
-check_pf is a plugin intended for use with the Nagios network
-monitoring system.  This plugin checks the status of PF, the OpenBSD
-packet filter, and compares the current state count to given or default
-thresholds, returning the result.  It is written in C.
-
-WWW: http://www.zampanosbits.com/check_pf/
