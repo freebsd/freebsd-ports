@@ -1,3 +1,0 @@
-Anteater is a MTA1 loganalyser written 100% in C++. A filter for sendmail
-logfiles in the default syslog format exists already. It's very easy to add
-new modules for reporting, analysis or filtering.

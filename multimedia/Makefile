@@ -136,7 +136,6 @@
     SUBDIR += gstreamermm
     SUBDIR += gtk-recordmydesktop
     SUBDIR += gtk-youtube-viewer
-    SUBDIR += gxanim
     SUBDIR += gxine
     SUBDIR += gxmms
     SUBDIR += handbrake

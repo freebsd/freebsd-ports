@@ -26,7 +26,6 @@
     SUBDIR += arpdig
     SUBDIR += arping
     SUBDIR += arprelease
-    SUBDIR += asfrecorder
     SUBDIR += asio
     SUBDIR += aslookup
     SUBDIR += asterisk
@@ -150,11 +149,7 @@
     SUBDIR += freeradius3
     SUBDIR += freerdp
     SUBDIR += freeswitch-core-devel
-    SUBDIR += freeswitch-curl-devel
     SUBDIR += freeswitch-devel
-    SUBDIR += freeswitch-insideout-devel
-    SUBDIR += freeswitch-sbc-devel
-    SUBDIR += freeswitch-vanilla-devel
     SUBDIR += freevrrpd
     SUBDIR += freewais-sf
     SUBDIR += frickin
@@ -273,7 +268,6 @@
     SUBDIR += jgroups
     SUBDIR += jicmp
     SUBDIR += jicmp6
-    SUBDIR += jpcap
     SUBDIR += jrdesktop
     SUBDIR += jsch
     SUBDIR += jumpgate
@@ -409,7 +403,6 @@
     SUBDIR += nast
     SUBDIR += nbd-server
     SUBDIR += nc
-    SUBDIR += nc6
     SUBDIR += ncp
     SUBDIR += ncplib
     SUBDIR += ndisc6
@@ -457,7 +450,6 @@
     SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nxproxy
-    SUBDIR += nxserver
     SUBDIR += nyancat
     SUBDIR += nylon
     SUBDIR += ohphone

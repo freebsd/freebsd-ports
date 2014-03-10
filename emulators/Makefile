@@ -19,7 +19,6 @@
     SUBDIR += cpmemu
     SUBDIR += cpmtools
     SUBDIR += cpmtools2
-    SUBDIR += cygne-sdl
     SUBDIR += darcnes
     SUBDIR += dboxfe
     SUBDIR += desmume

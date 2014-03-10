@@ -27,7 +27,6 @@
     SUBDIR += anacron
     SUBDIR += and
     SUBDIR += ansible
-    SUBDIR += anteater
     SUBDIR += apachetop
     SUBDIR += apcpwr
     SUBDIR += apcupsd
@@ -51,7 +50,6 @@
     SUBDIR += automounter
     SUBDIR += autopsy
     SUBDIR += b43-fwcutter
-    SUBDIR += backupme
     SUBDIR += backuppc
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
@@ -72,7 +70,6 @@
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
-    SUBDIR += blimitd
     SUBDIR += bontmia
     SUBDIR += boxbackup
     SUBDIR += boxbackup-devel
@@ -278,7 +275,6 @@
     SUBDIR += fusefs-exfat
     SUBDIR += fusefs-ext4fuse
     SUBDIR += fusefs-funionfs
-    SUBDIR += fusefs-fur
     SUBDIR += fusefs-fusepak
     SUBDIR += fusefs-fusexmp_fh
     SUBDIR += fusefs-gnome-vfs
@@ -367,7 +363,6 @@
     SUBDIR += hardlink
     SUBDIR += hatop
     SUBDIR += hdrecover
-    SUBDIR += hdup
     SUBDIR += healthd
     SUBDIR += heartbeat
     SUBDIR += heirloom
@@ -411,11 +406,9 @@
     SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jaildaemon
-    SUBDIR += jailer
     SUBDIR += jailme
     SUBDIR += jailrc
     SUBDIR += jailuser
-    SUBDIR += jailutils
     SUBDIR += javaservicewrapper
     SUBDIR += jdiskreport
     SUBDIR += jfbterm
@@ -530,7 +523,6 @@
     SUBDIR += monit
     SUBDIR += monitord
     SUBDIR += monitorix
-    SUBDIR += monkeytail
     SUBDIR += mono-kmod
     SUBDIR += moosefs-chunkserver
     SUBDIR += moosefs-client
@@ -752,7 +744,6 @@
     SUBDIR += py-zdaemon
     SUBDIR += py-zfs
     SUBDIR += pydf
-    SUBDIR += pyrenamer
     SUBDIR += qjail
     SUBDIR += qjail2
     SUBDIR += qlogtools
@@ -919,7 +910,6 @@
     SUBDIR += tentakel
     SUBDIR += testdisk
     SUBDIR += thefish
-    SUBDIR += throttle
     SUBDIR += timelimit
     SUBDIR += timemon
     SUBDIR += titlefix
@@ -991,7 +981,6 @@
     SUBDIR += vpnc-scripts
     SUBDIR += vstrip
     SUBDIR += vttest
-    SUBDIR += wait_on
     SUBDIR += watchdog
     SUBDIR += watchfolder
     SUBDIR += watchmen

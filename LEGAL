@@ -235,7 +235,6 @@ shorten-*		audio/shorten		May not be sold.  May not be distributed if modified
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Not for redistribution
-SnowIsh-*		x11-themes/gnome-icons-snowish Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 speedmgmt*		net/pppoa		Not for redistribution -- see http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
@@ -304,6 +303,5 @@ xtris-*.tar.gz		games/xtris		Possible trademark infringement
 xzx-pro-*.tar.gz	emulators/xzx		Redistribution forbidden by license
 yasou-fpw*		japanese/yasou-fpw	No commercial use, and no redistribution allowed with fee except media and/or shipping cost
 yEd*			graphics/yed		Must acknowledge license
-zangband/*		japanese/zangband	Possible copyright infringement
 zh-moettf/*		chinese/moettf		Contact Taiwan's Ministry of Education for commercial use
 UrbanTerror*.zip	games/urbanterror-data	The mod files may not be sold or distributed on physical media unless with permission from id Software.

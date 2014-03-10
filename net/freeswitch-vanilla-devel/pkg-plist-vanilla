@@ -1,6 +1,0 @@
-%%ETCDIR%%/conf/README_IMPORTANT.txt
-%%ETCDIR%%/conf/dialplan/default/tollfreegateway.com.noload
-%%ETCDIR%%/conf/dialplan/default/ideasip.com.noload
-%%ETCDIR%%/conf/dialplan/default/sipphone.com.noload
-%%ETCDIR%%/conf/dialplan/default/pulver.com.noload
-%%ETCDIR%%/conf/dialplan/default/sipbroker.com.noload

@@ -121,7 +121,6 @@
     SUBDIR += libopensync-plugin-file
     SUBDIR += libopensync-plugin-python
     SUBDIR += libopensync-plugin-sunbird
-    SUBDIR += libopensync-plugin-synce
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += libstreamanalyzer
     SUBDIR += libstreams

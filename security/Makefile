@@ -105,7 +105,6 @@
     SUBDIR += ddos_scan
     SUBDIR += denyhosts
     SUBDIR += destroy
-    SUBDIR += didentd
     SUBDIR += digest
     SUBDIR += dirbuster
     SUBDIR += dirmngr

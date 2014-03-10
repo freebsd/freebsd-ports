@@ -1,8 +1,0 @@
---- migrate_pending_attrib_to_status.py.orig	2009-01-18 14:32:29.000000000 +0100
-+++ migrate_pending_attrib_to_status.py	2009-01-18 18:23:36.000000000 +0100
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!%%PYTHON%%
- import sys
- import re
- 

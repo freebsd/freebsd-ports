@@ -1,6 +1,0 @@
-phpScheduleIt is a web-based resource scheduling system that allows
-administered management of reservations on any number of resources.
-Typical applications are conference room or machine reservation
-management. Written in PHP and tested on MySQL.
-
-WWW: http://sourceforge.net/projects/phpscheduleit/

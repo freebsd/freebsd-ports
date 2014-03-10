@@ -1,8 +1,0 @@
---- close_old_pending.py.orig	Fri May 18 19:25:29 2007
-+++ close_old_pending.py	Fri May 18 20:59:01 2007
-@@ -1,4 +1,4 @@
--#!/usr/bin/env python
-+#!%%PYTHON%%
- 
- # Script to close old tickets that are in Pending status.
- # Copyright 2007 Daniel A. Atallah <datallah@pidgin.im>

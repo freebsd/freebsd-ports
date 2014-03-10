@@ -7,7 +7,6 @@
     SUBDIR += TkTopNetFlows
     SUBDIR += aggregate
     SUBDIR += aircrack-ng
-    SUBDIR += airport
     SUBDIR += angst
     SUBDIR += ap-utils
     SUBDIR += argus-monitor

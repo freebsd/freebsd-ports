@@ -21,7 +21,6 @@
     SUBDIR += another-htmllint
     SUBDIR += anthy
     SUBDIR += asterisk-sounds
-    SUBDIR += aterm
     SUBDIR += awffull
     SUBDIR += bible_names-fpw
     SUBDIR += bookview
@@ -103,7 +102,6 @@
     SUBDIR += groff
     SUBDIR += gskk
     SUBDIR += gsuica
-    SUBDIR += gtkicq
     SUBDIR += guesswork-classic
     SUBDIR += hns
     SUBDIR += ibus-anthy
@@ -153,7 +151,6 @@
     SUBDIR += latex2html
     SUBDIR += leafrogue
     SUBDIR += less
-    SUBDIR += libjcode
     SUBDIR += libreoffice
     SUBDIR += libskk
     SUBDIR += libslang
@@ -343,7 +340,6 @@
     SUBDIR += xyaku
     SUBDIR += yasou-fpw
     SUBDIR += yc.el
-    SUBDIR += zangband
     SUBDIR += zinnia
     SUBDIR += zinnia-tomoe
     SUBDIR += zipcodes
