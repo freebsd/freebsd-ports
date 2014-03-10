@@ -14,9 +14,8 @@ LICENSE=	ZLIB
 
 MAKEFILE=	makefile
 MAKE_ARGS=	LOCAL=${PREFIX}
-USE_GMAKE=	yes
+USES=		gmake zip
 USE_LDCONFIG=	yes
-USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/sdk/angelscript/projects/gnuc/
 

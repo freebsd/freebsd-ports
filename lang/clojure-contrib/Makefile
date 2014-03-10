@@ -12,7 +12,7 @@ LICENSE=	EPL
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/clojure:${PORTSDIR}/lang/clojure
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.6+

@@ -12,7 +12,7 @@ MAINTAINER=	ninjin@kth.se
 COMMENT=	The nesasm assembler is a 6502 assembler with specific NES support
 
 WRKSRC=	${WRKDIR}/nbasic_2004_03_14/source/${PORTNAME}/source/
-USE_ZIP=	yes
+USES=		zip
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/^CC/s/=/?=/' \

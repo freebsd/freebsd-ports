@@ -18,8 +18,7 @@ EXTRACT_ONLY=	${PORTNAME}src${EXTRACT_SUFX}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	High Level Assembly
 
-USE_ZIP=	yes
-USES=		bison
+USES=		bison zip:infozip
 
 WRKSRC=		${WRKDIR}/hlasrc/trunk/trunk
 MAKEFILE=	makefile.bsd
