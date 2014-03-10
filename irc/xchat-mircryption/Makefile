@@ -16,8 +16,7 @@ COMMENT=	A free encryption add-on for the popular XChat irc client
 
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
-USE_ZIP=	yes
-USES=		dos2unix
+USES=		dos2unix zip
 ALL_TARGET=	freebsd
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes

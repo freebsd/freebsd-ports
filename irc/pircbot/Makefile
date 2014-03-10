@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.jibble.org/files/ \
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	PircBot Java IRC Bot Framework
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 USE_JAVA=	yes
