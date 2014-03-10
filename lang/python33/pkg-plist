@@ -1519,6 +1519,13 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/idlelib/IOBinding.py
 %%PYTHON_LIBDIR%%/idlelib/Icons/folder.gif
 %%PYTHON_LIBDIR%%/idlelib/Icons/idle.icns
+%%PYTHON_LIBDIR%%/idlelib/Icons/idle.ico
+%%PYTHON_LIBDIR%%/idlelib/Icons/idle_16.gif
+%%PYTHON_LIBDIR%%/idlelib/Icons/idle_16.png
+%%PYTHON_LIBDIR%%/idlelib/Icons/idle_32.gif
+%%PYTHON_LIBDIR%%/idlelib/Icons/idle_32.png
+%%PYTHON_LIBDIR%%/idlelib/Icons/idle_48.gif
+%%PYTHON_LIBDIR%%/idlelib/Icons/idle_48.png
 %%PYTHON_LIBDIR%%/idlelib/Icons/minusnode.gif
 %%PYTHON_LIBDIR%%/idlelib/Icons/openfolder.gif
 %%PYTHON_LIBDIR%%/idlelib/Icons/plusnode.gif
@@ -2313,6 +2320,8 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/test/__pycache__/autotest.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/buffer_tests.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/buffer_tests.cpython-33.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/coding20731.cpython-33.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/coding20731.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/curses_tests.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/curses_tests.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/datetimetester.cpython-33.pyc
@@ -2693,6 +2702,8 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/test/__pycache__/test_idle.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_imaplib.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_imaplib.cpython-33.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_imghdr.cpython-33.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/test_imghdr.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_imp.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_imp.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_import.cpython-33.pyc
@@ -3217,6 +3228,7 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213-utf8.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213.txt
 %%PYTHON_LIBDIR%%/test/cmath_testcases.txt
+%%PYTHON_LIBDIR%%/test/coding20731.py
 %%PYTHON_LIBDIR%%/test/curses_tests.py
 %%PYTHON_LIBDIR%%/test/data/README
 %%PYTHON_LIBDIR%%/test/datetimetester.py
@@ -3386,6 +3398,17 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/test/gdb_sample.py
 %%PYTHON_LIBDIR%%/test/https_svn_python_org_root.pem
 %%PYTHON_LIBDIR%%/test/ieee754.txt
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.bmp
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.gif
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.jpg
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.pbm
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.pgm
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.png
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.ppm
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.ras
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.sgi
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.tiff
+%%PYTHON_LIBDIR%%/test/imghdrdata/python.xbm
 %%PYTHON_LIBDIR%%/test/inspect_fodder.py
 %%PYTHON_LIBDIR%%/test/inspect_fodder2.py
 %%PYTHON_LIBDIR%%/test/keycert.passwd.pem
@@ -3748,6 +3771,7 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/test/test_httpservers.py
 %%PYTHON_LIBDIR%%/test/test_idle.py
 %%PYTHON_LIBDIR%%/test/test_imaplib.py
+%%PYTHON_LIBDIR%%/test/test_imghdr.py
 %%PYTHON_LIBDIR%%/test/test_imp.py
 %%PYTHON_LIBDIR%%/test/test_import.py
 %%PYTHON_LIBDIR%%/test/test_importhooks.py
@@ -4662,6 +4686,7 @@ man/man1/python3.3.1.gz
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
 @dirrm %%PYTHON_LIBDIR%%/test/encoded_modules/__pycache__
 @dirrm %%PYTHON_LIBDIR%%/test/encoded_modules
+@dirrm %%PYTHON_LIBDIR%%/test/imghdrdata
 @dirrm %%PYTHON_LIBDIR%%/test/namespace_pkgs/project3/parent/child/__pycache__
 @dirrm %%PYTHON_LIBDIR%%/test/namespace_pkgs/project3/parent/child
 @dirrm %%PYTHON_LIBDIR%%/test/namespace_pkgs/project3/parent
