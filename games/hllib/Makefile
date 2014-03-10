@@ -12,7 +12,7 @@ COMMENT=	Library to work with various Half-Life file formats
 
 LICENSE=	LGPL21
 
-USES=		dos2unix zop
+USES=		dos2unix zip
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/HLLib
 CFLAGS+=	-fpic -DUSE_ZLIB
