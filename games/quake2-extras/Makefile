@@ -16,7 +16,7 @@ EXTRACT_ONLY=	#
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II extras (high quality textures and skins)
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	RETEXTURE RETEXTURE_FULL SKINS
@@ -29,7 +29,7 @@ SKINS_DESC=		Install high quality skins
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
 RETEX_PAKS=	10 11 12 13 14 16 17 19
-RETEX_FULL=	all_q2_textures_07_17_2006.zip
+RETEX_FULL=	all_q2_textures_07_17_2006zip
 SKINS=		models.zip
 
 NO_STAGE=	yes

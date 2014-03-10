@@ -18,7 +18,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	avbin>=0:${PORTSDIR}/multimedia/avbin
 
-USE_ZIP=	yes
+USES=		zip
 USE_GNOME=	pygtk2 librsvg2
 USE_PYTHON=	yes
 

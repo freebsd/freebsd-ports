@@ -12,7 +12,7 @@ COMMENT=	Background music for Secret Maryo Chronicles
 
 RUN_DEPENDS=	smc:${PORTSDIR}/games/secretmaryochronicles
 
-USE_ZIP=	yes
+USES=		zip
 
 WRKSRC=		${WRKDIR}
 DATADIR=	${PREFIX}/share/smc

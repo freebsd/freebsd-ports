@@ -27,8 +27,7 @@ CONFIGURE_ARGS+=	--with-qt=no
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 REINPLACE_FILES=	configure
 
-USE_GMAKE=	yes
-USE_ZIP=	yes
+USES=		gmake zip
 
 NO_STAGE=	yes
 post-patch:

@@ -12,9 +12,8 @@ MAINTAINER=	rossiya@gmail.com
 COMMENT=	Fast Mandelbrot fractal generator
 
 USE_XORG=	x11 xmu xext
-USE_DOS2UNIX=	yes
 USE_GL=		gl glut
-USE_ZIP=	yes
+USES=		dos2unix zip
 
 SOURCE=		FFFF3 FragmentProgram FragmentProgramARB10 GPUProgram \
 		PixelBuffer VertexProgram VertexProgramATI VertexProgramNV \

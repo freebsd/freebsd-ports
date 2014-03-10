@@ -12,10 +12,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Command line assembler/disassembler of flash actionscript bytecode
 
 PLIST_FILES=	bin/flasm
-USE_ZIP=	YES
-USE_GMAKE=	YES
-USE_DOS2UNIX=	YES
-USES=		bison
+USES=		bison dos2unix gmake zip
 NO_WRKSUBDIR=	YES
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 

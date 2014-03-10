@@ -12,7 +12,7 @@ COMMENT=	A library for handling 3DS (3D Studio) files
 
 LICENSE=	LGPL21 # (or later)
 
-USE_ZIP=	yes
+USES=		zip
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

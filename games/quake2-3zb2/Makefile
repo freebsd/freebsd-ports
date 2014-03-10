@@ -16,8 +16,8 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3rd Zigock II bots for Quake II
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	*.[ch]
+USES=		dos2unix zip
+DOS2UNIX_FILES=	*.[ch]
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 

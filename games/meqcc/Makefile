@@ -13,8 +13,7 @@ COMMENT=	MrElusive's QuakeC compiler with precompiler support
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USES=		dos2unix zip
 MAKEFILE=	linux.mak
 NO_WRKSUBDIR=	yes
 

@@ -1,0 +1,13 @@
+bin/jumpgis
+jumpgis/lib/bsh-2.0b1.jar
+jumpgis/lib/Jama-1.0.1.jar
+jumpgis/lib/jdom.jar
+jumpgis/lib/jts-1.4.1-RC1.jar
+jumpgis/lib/jump-1.1.2.jar
+jumpgis/lib/junit.jar
+jumpgis/lib/xercesImpl.jar
+jumpgis/lib/xml-apis.jar
+@exec mkdir -p %D/jumpgis/lib/ext
+@dirrm jumpgis/lib/ext
+@dirrm jumpgis/lib
+@dirrm jumpgis

@@ -14,8 +14,7 @@ COMMENT=	Quake III engine with Cell Shading capabilities
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	does not run properly; try games/ioquake3 with option
 
-USES=		gmake dos2unix
-USE_ZIP=	yes
+USES=		gmake dos2unix zip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/code/unix
 

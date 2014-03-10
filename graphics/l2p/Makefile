@@ -23,8 +23,7 @@ SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
 
 USE_PERL5=	run
 USE_TEX=	latex dvipsk
-USE_ZIP=	yes
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

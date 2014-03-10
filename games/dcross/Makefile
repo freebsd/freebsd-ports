@@ -20,8 +20,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/
 
-USE_ZIP=	yes
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
 DOS2UNIX_FILES=	*.pyw
 USE_PYTHON=	yes

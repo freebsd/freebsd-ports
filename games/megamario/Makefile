@@ -14,9 +14,8 @@ LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-USES=		dos2unix gmake
+USES=		dos2unix gmake zip:infozip
 DOS2UNIX_FILES=	src/*.cpp src/*.h *.ini Makefile* *.txt *.desktop
 USE_SDL=	sdl image mixer ttf
 USE_GL=		glu

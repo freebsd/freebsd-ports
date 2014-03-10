@@ -17,9 +17,8 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands data, sound, and music files
 
 NO_ARCH=	yes
-USE_ZIP=	yes
 NO_BUILD=	yes
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_GLOB=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}

@@ -7,12 +7,11 @@ PORTREVISION?=	13
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 # Using zip this way enables slaves to override it.
-EXTRACT_SUFX?=	.zip
 
 MAINTAINER?=	kamikaze@bsdforen.de
 COMMENT?=	Cleaned-up and enhanced version of Quake 3
 
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake zip
 
 NO_STAGE=	yes
 # Port configuration flags:

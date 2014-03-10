@@ -15,8 +15,7 @@ LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-USE_ZIP=	yes
-USES=		gmake
+USES=		gmake zip
 
 SUB_FILES=	${PORTNAME}-sh
 

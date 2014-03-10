@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-USE_ZIP=	yes
+USES=		zip:infozip
 EXTRACT_BEFORE_ARGS=	-a -q
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

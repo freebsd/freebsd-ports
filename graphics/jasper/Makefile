@@ -17,7 +17,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 LICENSE=	MIT
 
 USE_AUTOTOOLS=	libtool
-USE_ZIP=	yes
+USES=		zip
 USE_GNOME=	lthack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

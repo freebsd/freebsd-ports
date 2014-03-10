@@ -20,7 +20,7 @@ RUN_DEPENDS=	vavoom:${PORTSDIR}/games/vavoom
 
 DATADIR=	${PREFIX}/share/vavoom
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_PACKAGE=	package could be up to 655MB; set FORCE_PACKAGE if you really want it

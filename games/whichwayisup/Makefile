@@ -21,8 +21,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_ZIP=	yes
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_REGEX=	.*.[^pt][^nt][^gf]
 USE_PYTHON=	yes
 INSTALLS_ICONS=	yes

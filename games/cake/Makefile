@@ -15,10 +15,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-USES=		gmake
+USES=		gmake zip
 USE_GL=		glut
 USE_XORG=	x11 xext xmu xt xi sm ice
-USE_ZIP=	yes
 
 # Need to pass `-l', but PATCH_ARGS+= won't work because of PATCH_ARGS?=
 # in bsd.port.mk

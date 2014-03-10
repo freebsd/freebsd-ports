@@ -11,7 +11,7 @@ COMMENT=	Music pack for endgame-singularity
 
 PROJECTHOST=	endgame-singularity
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 DATADIR=	${PREFIX}/share/singularity
 
 NO_STAGE=	yes

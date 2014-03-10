@@ -11,8 +11,7 @@ DISTNAME=	hr2final
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hell Revealed II is a megawad, a 32-level replacement for DooM II
 
-USE_ZIP=	yes
-USE_CRLF=	yes
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

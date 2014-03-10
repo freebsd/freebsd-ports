@@ -16,7 +16,7 @@ LICENSE_TEXT=	Description of the license can be obtained from the following URL:
 		http://www.yworks.com/products/yed/license.html
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

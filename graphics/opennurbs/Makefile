@@ -12,9 +12,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Tools to accurately transfer 3-D geometry between applications
 
-USE_DOS2UNIX=	yes
-USE_ZIP=	yes
-USES=		iconv:build gmake
+USES=		iconv:build dos2unix gmake zip
 MAKE_ARGS=	CC=${CC} CCC=${CXX}
 
 MAKEFILE=	makefile

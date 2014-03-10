@@ -20,7 +20,7 @@ LICENSE_NAME_CCbySA=	Creative Commons Attribution-ShareAlike
 LICENSE_PERMS_CCbySA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE_CCbySA=	${WRKSRC}/doc/cc-by-sa.txt
 
-USE_ZIP=	yes
+USES=		zip
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	Makefile.lnx
 MAKE_JOBS_UNSAFE=	yes

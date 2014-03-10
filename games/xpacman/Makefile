@@ -12,8 +12,7 @@ MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Old action game
 
 NO_WRKSUBDIR=	Does not unpack into subdir.
-USE_ZIP=	yes
-USES=		imake
+USES=		imake zip
 USE_XORG=	x11 xext
 MAN1=		pacman.1
 PLIST_FILES=	bin/pacman

@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 
 MANUAL_PACKAGE_BUILD=   huge
 
-USE_ZIP=	yes
+SUES=		zip
 WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
 MAKEFILE=	BSDmakefile
 MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" CC="${CC}" \

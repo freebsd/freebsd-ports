@@ -13,13 +13,12 @@ COMMENT=	NetHack derivative
 
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
-USES=		perl5
+USES=		perl5 zip
 NHDIR=		"${PREFIX}/share/falconseyedir"
 MAKE_ENV=	NHDIR="${NHDIR}" NETHACKCONFIG="${NETHACKCONFIG}"
 NETHACKCONFIG=	${FILESDIR}/x-config
 USE_SDL=	sdl
 USE_PERL5=	build
-USE_ZIP=	yes
 USE_XORG=	x11 xpm xaw
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I${LOCALBASE}/include/SDL11 \
 		-Wno-return-type

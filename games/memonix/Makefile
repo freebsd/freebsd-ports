@@ -23,8 +23,7 @@ LICENSE_DISTFILE_unknown=	memx16.tar.gz
 LICENSE_DISTFILE_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 LICENSE_FILE_GPLv2=	${WRKSRC}/License.txt
 
-USES=		cmake
-USE_ZIP=	yes
+USES=		cmake zip
 USE_SDL=	sdl mixer image
 USE_GL=		yes
 

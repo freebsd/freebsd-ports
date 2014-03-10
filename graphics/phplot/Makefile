@@ -15,7 +15,7 @@ COMMENT=	PHP class for creating scientific and business charts
 
 LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 
-USE_ZIP=	yes
+USES=		zip
 USE_PHP=	yes
 DEFAULT_PHP_VER=	5
 NO_BUILD=	YES

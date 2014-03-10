@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USES=		pkgconfig
-USE_ZIP=	yes
+USES=		pkgconfig zip
 USE_GL=		glut
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}

@@ -1,0 +1,4 @@
+The JUMP PostGIS driver plugin allows reading from and writing to a
+PostGIS database.
+
+WWW: http://www.jump-project.org/

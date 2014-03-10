@@ -10,7 +10,7 @@ DISTNAME=	GeoAPI-2_1_1
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Java interface API based upon OGC Standards
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 USE_JAVA=	yes
 NO_WRKSUBDIR=	yes

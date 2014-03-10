@@ -18,8 +18,7 @@ OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=yes
 
-USES=		dos2unix
-USE_ZIP=	yes
+USES=		dos2unix zip
 USE_XORG=	xpm
 DOS2UNIX_GLOB=	*.cpp *.h config.mk makefile
 MAKEFILE=	makefile

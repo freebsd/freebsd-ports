@@ -35,10 +35,10 @@ ALL_TARGET+=	javadoc
 # jogl/make/build.xml
 ONLY_FOR_ARCHS=	i386 amd64
 
+USES=		zip
 USE_XORG=	x11 xau xdamage xdmcp xext xf86vidmodeproto xfixes xproto xt \
 		xxf86vm
 USE_GL=		gl
-USE_ZIP=	yes
 USE_ANT=	yes
 USE_LDCONFIG=	yes
 USE_JAVA=	yes

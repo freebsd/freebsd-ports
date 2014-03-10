@@ -11,8 +11,7 @@ DISTNAME=	osp-Quake3-${PORTVERSION}_full
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake III Arena mod: OSP Tourney DM/CA/CTF
 
-USE_ZIP=	yes
-USE_CRLF=	yes
+USES=		zip
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

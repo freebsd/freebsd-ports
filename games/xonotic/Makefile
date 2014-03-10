@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 MANUAL_PACKAGE_BUILD=	huge
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/Xonotic/source/darkplaces
 MAKEFILE=	BSDmakefile
 MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" \

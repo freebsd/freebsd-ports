@@ -33,9 +33,8 @@ MAKE_ARGS=	BACKEND=mixer_sdl \
 		FLAGS="-DUSE_C -DREVISION=${SIMUTRANS_REVISION}" \
 		VERBOSE=1
 NO_WRKSUBDIR=	yes
-USES=		gmake
+USES=		gmake zip
 USE_SDL=	sdl mixer
-USE_ZIP=	yes
 
 DESKTOP_ENTRIES=Simutrans "" "" simutrans "Game;Simulation;" "false"
 PLIST_FILES=	bin/simutrans bin/simutrans-bin

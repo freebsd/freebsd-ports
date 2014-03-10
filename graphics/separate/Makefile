@@ -21,8 +21,7 @@ BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep
 LIB_DEPENDS=	liblcms.so.1:${PORTSDIR}/graphics/lcms \
 		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 
-USE_ZIP=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig zip
 
 BIN_TARGETS=	separate separate_import icc_colorspace
 L10N_TARGETS=	cs es fr ja ko pl ru

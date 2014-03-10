@@ -16,8 +16,7 @@ LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 
-USE_ZIP=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig zip
 USE_GNOME=	gtkmm24
 MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 

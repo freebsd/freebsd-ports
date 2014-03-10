@@ -12,7 +12,7 @@ COMMENT=	Flight of the Amazon Queen: a classic graphical adventure
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

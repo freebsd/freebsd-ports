@@ -19,8 +19,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/"one is enough"
 
-USE_ZIP=	yes
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_FILES=	README.txt bin/*.py
 DOS2UNIX_REGEX= .*.[^pt][^nt][^gf]
 USE_PYTHON=	2

@@ -19,7 +19,7 @@ DISTFILES=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Duke Nukem 3D Data
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

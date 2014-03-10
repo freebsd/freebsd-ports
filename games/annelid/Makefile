@@ -14,8 +14,7 @@ COMMENT=	Remake of the ubiquitous "Snake" and "Worm" games
 
 RESTRICTED=	No redistribution allowed
 
-USES=	gmake
-USE_ZIP=	yes
+USES=	gmake zip
 USE_SDL=	sdl
 USE_GL=		gl
 NO_WRKSUBDIR=	yes
