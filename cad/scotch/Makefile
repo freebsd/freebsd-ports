@@ -3,7 +3,7 @@
 
 PORTNAME=	scotch
 DISTVERSION=	5.1.12b_esmumps
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad science
 MASTER_SITES=	https://gforge.inria.fr/frs/download.php/28978/
 DISTNAME=	${PORTNAME}_${DISTVERSION}

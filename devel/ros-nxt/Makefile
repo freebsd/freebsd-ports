@@ -3,7 +3,7 @@
 
 PORTNAME=	ros-nxt
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/:rel \
 		${MASTER_SITE_GOOGLE_CODE}:gc \

@@ -3,7 +3,7 @@
 
 PORTNAME=	gmfsk
 PORTVERSION=	0.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://gmfsk.connect.fi/ \
 		${MASTER_SITE_LOCAL}

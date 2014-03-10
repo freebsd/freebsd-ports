@@ -3,7 +3,7 @@
 
 PORTNAME=	mypaint
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/mypaint/ \
 		http://mirror.amdmi3.ru/distfiles/

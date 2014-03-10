@@ -3,7 +3,7 @@
 
 PORTNAME=	childsplay_plugins
 PORTVERSION=	0.90
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/childsplay/childsplay-plugins/${PORTVERSION}
 EXTRACT_SUFX=	.tgz

@@ -2,7 +2,7 @@
 
 PORTNAME=	snap-core
 PORTVERSION=	0.9.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

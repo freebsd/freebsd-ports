@@ -3,7 +3,7 @@
 
 PORTNAME=	ghc-paths
 PORTVERSION=	0.1.0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

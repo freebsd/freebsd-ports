@@ -3,6 +3,7 @@
 
 PORTNAME=	shaperprobe
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cc.gatech.edu/~partha/diffprobe/
 DISTNAME=	${PORTNAME}

@@ -4,7 +4,7 @@ PORTNAME=	yesod-platform
 PORTVERSION=	1.2.0.1
 # Please note that the port *strictly depends* on certain versions of other
 # ports, so revisit the USE_CABAL line on bumping the portrevision.  Thanks!
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

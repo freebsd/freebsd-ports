@@ -2,7 +2,7 @@
 
 PORTNAME=	categories
 PORTVERSION=	1.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

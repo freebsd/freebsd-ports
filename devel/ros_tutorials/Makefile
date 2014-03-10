@@ -3,7 +3,7 @@
 
 PORTNAME=	ros_tutorials
 PORTVERSION=	0.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 DIST_SUBDIR=	ros

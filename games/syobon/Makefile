@@ -3,7 +3,7 @@
 
 PORTNAME=	syobon
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://download.zapek.com/software/${PORTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

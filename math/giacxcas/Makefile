@@ -3,7 +3,7 @@
 
 PORTNAME=	giacxcas
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/ \
 		http://www.math.jussieu.fr/~han/xcas/sources/

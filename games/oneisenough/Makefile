@@ -3,6 +3,7 @@
 
 PORTNAME=	oneisenough
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://hectigo.net/games/oneisenough/ \
 		SF/nemysisfreebsdp/games/:icons

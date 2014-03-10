@@ -3,7 +3,7 @@
 
 PORTNAME=	pvm++
 PORTVERSION=	0.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net parallel
 MASTER_SITES=	SF/pvm-plus-plus/pvm-plus-plus/${PORTVERSION}
 

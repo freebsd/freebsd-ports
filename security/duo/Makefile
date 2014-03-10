@@ -3,7 +3,7 @@
 
 PORTNAME=	duo
 PORTVERSION=	1.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://dl.duosecurity.com/ \
 		http://mirrors.rit.edu/zi/
