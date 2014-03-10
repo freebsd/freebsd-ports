@@ -17,6 +17,8 @@ LOCALBASE?=	/usr/local
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
+FT2_PORTDIR!=	${REALPATH} ${PORTSDIR}/print/freetype2
+FT2_IMAGEDIR?=	${FT2_PORTDIR}/work/stage/usr/local
 JDK_PORTDIR!=	${REALPATH} ${PORTSDIR}/java/${JDK_PORT}
 JDK_IMAGEDIR?=	${JDK_PORTDIR}/work/stage/usr/local/${JDK_PORT}
 
@@ -32,21 +34,26 @@ PORTREVISION!=	${GET_REVISION} 2>/dev/null || ${TRUE}
 DISTDIR?=	${.CURDIR}
 DISTFILE=	${JDK_PORT}-${ARCH}-r${PORTREVISION}.tar.xz
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
-EXTRA_PATCHES=	${.CURDIR}/files/bootstrap.patch
 MAKEFILE=	${.CURDIR}/Makefile
 PLIST?=		${.CURDIR}/pkg-plist
 PLIST_SUB=	ARCH="${ARCH}" JDK_ROOT="."
 
-BUILD_ARGS=	BATCH=yes
-BUILD_ARGS+=	EXTRA_PATCHES="${EXTRA_PATCHES}"
-BUILD_ARGS+=	PORT_DBDIR=/var/empty
-BUILD_ARGS+=	WITHOUT_ICEDTEA=yes
+BUILD_ARGS=	BATCH=yes PORT_DBDIR=/var/empty
+BUILD_ENV=	__MAKE_CONF=/dev/null PATH="${PATH}"
+FT2_BUILD_ARGS=	${BUILD_ARGS}
+FT2_BUILD_ARGS+=CONFIGURE_ARGS="--without-bzip2 --without-png --without-zlib"
+JDK_BUILD_ARGS=	${BUILD_ARGS}
+JDK_BUILD_ARGS+=java_openjdk6_UNSET=ICEDTEA
+JDK_BUILD_ARGS+=ALT_FREETYPE_HEADERS_PATH="${FT2_IMAGEDIR}/include"
+JDK_BUILD_ARGS+=ALT_FREETYPE_LIB_PATH="${FT2_IMAGEDIR}/lib"
+JDK_BUILD_ARGS+=SYSTEM_ZLIB=false ZLIB_LIBS=""
 
 .if ${ARCH} == "i386"
 PLIST_SUB+=	CLIENTVM=""
 .else
 PLIST_SUB+=	CLIENTVM="@comment "
 .endif
+PLIST_SUB+=	LIBSTDCXX=""
 
 all:
 	@${ECHO} ""
@@ -66,8 +73,11 @@ all:
 	@${ECHO} "=============================================================="
 	@${ECHO} ""
 .if !defined(NO_BUILD)
-	@${SETENV} -i PATH="${PATH}" __MAKE_CONF=/dev/null \
-	    ${MAKE} -C "${JDK_PORTDIR}" ${BUILD_ARGS} stage
+	@${SETENV} -i ${BUILD_ENV} \
+	    ${MAKE} -C "${FT2_PORTDIR}" ${FT2_BUILD_ARGS} stage
+	@${SETENV} -i ${BUILD_ENV} \
+	    ${MAKE} -C "${JDK_PORTDIR}" ${JDK_BUILD_ARGS} stage
+	@${CP} -p /usr/lib/libstdc++.so.6 "${JDK_IMAGEDIR}/jre/lib/${ARCH}"
 	@${FIND} "${JDK_IMAGEDIR}" -type f \
 	    -exec ${STRIP_CMD} -s {} \; 2> /dev/null
 .endif
@@ -88,7 +98,7 @@ all:
 	@${ECHO} "Finished at "`${SETENV} LANG=C date -u`"."
 	@${ECHO} ""
 	@${ECHO} "You may clean up the build directory if everything looks okay,"
-	@${ECHO} "e.g., 'rm -fr ${JDK_PORTDIR}/work'."
+	@${ECHO} "e.g., 'rm -fr ${FT2_PORTDIR}/work ${JDK_PORTDIR}/work'."
 	@${ECHO} ""
 	@${ECHO} "=============================================================="
 	@${ECHO} ""

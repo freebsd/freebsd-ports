@@ -18,8 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 ONLY_FOR_ARCH=	amd64 i386
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
-DISTVERSION_amd64=	r333271
-DISTVERSION_i386=	r333271
+DISTVERSION_amd64=	r347418
+DISTVERSION_i386=	r347418
 
 JDK_NAME=	openjdk
 JDK_PORT=	openjdk6
@@ -32,11 +32,14 @@ WRKSRC=		${WRKDIR}/${JDK_ROOT}
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900010
-RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libz.so.5:${PORTSDIR}/misc/compat8x
+.if !exists(/usr/lib/libstdc++.so.6)
+PLIST_SUB+=	LIBSTDCXX=""
+.else
+EXCLUDE_EXP=	-not -name libstdc++.so.6
+PLIST_SUB+=	LIBSTDCXX="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 PLIST_SUB+=	CLIENTVM=""
@@ -45,7 +48,7 @@ PLIST_SUB+=	CLIENTVM="@comment "
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${INSTALLDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${INSTALLDIR} "${EXCLUDE_EXP}"
 	@cd ${WRKSRC} && ${COPYTREE_BIN} "bin jre/bin" ${INSTALLDIR}
 
 update:
