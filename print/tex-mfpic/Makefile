@@ -13,7 +13,7 @@ DIST_SUBDIR=	teTeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A TeX package that supports drawing pictures
 
-USE_ZIP=	yes
+USES=		zip
 USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFDIR=${TEXMFDIR}

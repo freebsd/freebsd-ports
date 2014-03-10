@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
 USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
 # The .tar.gz sucks!
-USE_ZIP=	yes
+USES=		zip
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

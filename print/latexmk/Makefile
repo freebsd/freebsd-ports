@@ -16,8 +16,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USES=		perl5
-USE_ZIP=	yes
+USES=		perl5 zip
 USE_PERL5=	run
 USE_TEX=	latex
 

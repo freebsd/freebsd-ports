@@ -12,7 +12,7 @@ COMMENT=	Converts documents from text/html files or URLs to iSilo format
 
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386

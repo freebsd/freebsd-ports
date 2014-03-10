@@ -11,7 +11,7 @@ DISTFILES=	mathabx${EXTRACT_SUFX} abxtype1${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Math series, aka mathabx MetaFont fontset for TeX/LaTeX
 
-USE_ZIP=	YES
+USES=		zip
 USE_TEX=	latex
 NO_BUILD=	YES
 PLIST_SUB=	TEXMFLOCALDIR=${TEXMFLOCALDIR} \

@@ -12,7 +12,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for TeX Portable Graphic Format
 
 NO_BUILD=	YES
-USE_ZIP=	YES
+USES=		zip
 USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR} \

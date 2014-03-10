@@ -12,7 +12,7 @@ DISTFILES=	acm-small-v1-1.zip \
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	LaTeX styles for ACM journals
 
-USE_ZIP=	yes
+USES=		zip
 USE_TEX=	latex
 NO_BUILD=	yes
 

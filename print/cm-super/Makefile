@@ -18,7 +18,7 @@ COMMENT=	Computer Modern Font Families in Type 1 Fonts
 BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 .endif
 
-USE_ZIP=	yes
+USES=		zip
 USE_TEX=	base texmf tetex
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
