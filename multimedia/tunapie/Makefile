@@ -19,14 +19,13 @@ USE_PYTHON=	yes
 USE_WX=	2.6+
 WX_COMPS=	python:run
 
-OPTIONS_DEFINE=	ADULT AMAROK TOTEM VLC XINE AUDACIOUS BEEP_MEDIA_PLAYER
+OPTIONS_DEFINE=	ADULT AMAROK TOTEM VLC XINE AUDACIOUS
 ADULT_DESC=	non-censored TV listings
 AMAROK_DESC=	use amarok instead of mplayer
 TOTEM_DESC=	use totem instead of mplayer
 VLC_DESC=	use vlc instead of mplayer
 XINE_DESC=	use xine instead of mplayer
 AUDACIOUS_DESC=	use audacious instead of xmms
-BEEP_MEDIA_PLAYER_DESC=	use beep-media-player instead of xmms
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	tunapie.1
@@ -77,8 +76,6 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 # default AUDIOPLAYER
 .if ${PORT_OPTIONS:MAUDACIOUS}
 RUN_DEPENDS+=	audacious:${PORTSDIR}/multimedia/audacious
-.elif ${PORT_OPTIONS:MBEEP_MEDIA_PLAYER}
-RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 .else
 RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 .endif
