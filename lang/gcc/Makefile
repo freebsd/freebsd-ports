@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.4
+PORTVERSION=	4.7.3
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 4.6
+COMMENT=	GNU Compiler Collection 4.7
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
@@ -23,14 +23,14 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
-CONFLICTS=	gcc46*
+CONFLICTS=	gcc47*
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.
 DISTVERSION=	${PORTVERSION}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
-ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USES=		gmake iconv perl5
 USE_BINUTILS=	yes
 USE_BZIP2=	yes
@@ -55,6 +55,10 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:L}${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:L}${OSREL}
 .endif
 
+.if ${ARCH} == powerpc64
+CONFIGURE_ENV+=	UNAME_m="powerpc64"
+.endif
+
 LANGUAGES:=	c,c++,objc,fortran
 SRCDIR=		${WRKDIR}/gcc-${DISTVERSION}
 WRKSRC=		${WRKDIR}/build
@@ -67,6 +71,7 @@ CONFIGURE_ARGS+=--disable-bootstrap
 ALL_TARGET=	bootstrap-lean
 .endif
 CONFIGURE_ARGS+=--disable-nls \
+		--enable-gnu-indirect-function \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
@@ -91,7 +96,8 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/libgomp
 # Release tarballs (as opposed to snapshots) always carry this.
 #.if ${ARCH} != "ia64" && ${ARCH} != "powerpc" && ${ARCH} != "sparc64"
-INFO+=		gcc${SUFFIX}/libquadmath
+INFO+=		gcc${SUFFIX}/libquadmath \
+		gcc${SUFFIX}/libitm
 #.endif
 
 .if ${PORT_OPTIONS:MJAVA}
