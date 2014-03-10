@@ -37,6 +37,7 @@
     SUBDIR += fceux
     SUBDIR += fmsx
     SUBDIR += frodo
+    SUBDIR += fs-uae
     SUBDIR += fuse
     SUBDIR += fuse-roms
     SUBDIR += fuse-utils

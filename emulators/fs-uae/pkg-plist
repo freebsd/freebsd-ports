@@ -1,0 +1,266 @@
+bin/fs-uae
+bin/fs-uae-device-helper
+share/applications/fs-uae.desktop
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/example.conf
+%%DATADIR%%/2x_1920_1080/theme.conf
+%%DATADIR%%/2x_1920_1080_bezel/overlay.png
+%%DATADIR%%/2x_1920_1080_bezel/theme.conf
+%%DATADIR%%/aspect.png
+%%DATADIR%%/close.png
+%%DATADIR%%/floppy_sounds/drive_click.wav
+%%DATADIR%%/floppy_sounds/drive_snatch.wav
+%%DATADIR%%/floppy_sounds/drive_spin.wav
+%%DATADIR%%/floppy_sounds/drive_spinnd.wav
+%%DATADIR%%/floppy_sounds/drive_startup.wav
+%%DATADIR%%/gloss.png
+%%DATADIR%%/glow_left.png
+%%DATADIR%%/glow_top.png
+%%DATADIR%%/glow_top_left.png
+%%DATADIR%%/heading_strip.png
+%%DATADIR%%/input/03000000300f00001201000010010000/jess_tech_dual_analog_pad_12_4_1_0_linux.conf
+%%DATADIR%%/input/03000000300f00001201000010010000/names.txt
+%%DATADIR%%/input/030000004c0500006802000011010000/names.txt
+%%DATADIR%%/input/030000004c0500006802000011010000/sony_playstation_r_3_controller_19_27_0_0_linux.conf
+%%DATADIR%%/input/030000004f04000020b3000010010000/names.txt
+%%DATADIR%%/input/030000004f04000020b3000010010000/thrustmaster_2_in_1_dt_12_4_1_0_linux.conf
+%%DATADIR%%/input/030000005e0400001907000000010000/names.txt
+%%DATADIR%%/input/030000005e0400001907000000010000/xbox_360_wireless_receiver_15_6_0_0_linux.conf
+%%DATADIR%%/input/030000005e0400008e02000014010000/microsoft_x_box_360_pad_11_6_1_0_linux.conf
+%%DATADIR%%/input/030000005e0400008e02000014010000/names.txt
+%%DATADIR%%/input/030000006d04000019c2000011010000/logitech_logitech_cordless_rumblepad_2_12_4_1_0_linux.conf
+%%DATADIR%%/input/030000006d04000019c2000011010000/names.txt
+%%DATADIR%%/input/030000006d0400001dc2000014400000/generic_x_box_pad_11_6_1_0_linux.conf
+%%DATADIR%%/input/030000006d0400001dc2000014400000/names.txt
+%%DATADIR%%/input/030000006d0400001ec2000020200000/generic_x_box_pad_11_6_1_0_linux.conf
+%%DATADIR%%/input/030000006d0400001ec2000020200000/names.txt
+%%DATADIR%%/input/030000006d0400001fc2000005030000/generic_x_box_pad_11_6_1_0_linux.conf
+%%DATADIR%%/input/030000006d0400001fc2000005030000/names.txt
+%%DATADIR%%/input/030000006d040000d2ca000011010000/names.txt
+%%DATADIR%%/input/030000006d040000d2ca000011010000/ps3_usb_cordless_gamepad_13_4_1_0_linux.conf
+%%DATADIR%%/input/03000000a30600000901000000010000/names.txt
+%%DATADIR%%/input/03000000a30600000901000000010000/saitek_p880_12_4_1_0_linux.conf
+%%DATADIR%%/input/2_in_1_dt_12_4_1_0_macosx.conf
+%%DATADIR%%/input/2_in_1_dt_12_4_1_0_windows.conf
+%%DATADIR%%/input/common/gamepad.ini
+%%DATADIR%%/input/common/xarcade.ini
+%%DATADIR%%/input/common/xinput_gamepad.ini
+%%DATADIR%%/input/controller_gamepad_f310_10_5_1_0_windows.conf
+%%DATADIR%%/input/controller_rumble_gamepad_f510_10_5_1_0_windows.conf
+%%DATADIR%%/input/controller_wireless_gamepad_f710_10_5_1_0_windows.conf
+%%DATADIR%%/input/controller_xbox_360_for_windows_10_5_1_0_windows.conf
+%%DATADIR%%/input/controller_xbox_360_wireless_receiver_for_windows_10_5_1_0_windows.conf
+%%DATADIR%%/input/custom/custom_x_arcade.ini
+%%DATADIR%%/input/custom/custom_x_arcade_right.ini
+%%DATADIR%%/input/dual_analog_pad_12_4_1_0_macosx.conf
+%%DATADIR%%/input/dual_analog_pad_12_4_1_0_windows.conf
+%%DATADIR%%/input/gamtec_ltd/smartjoy_plus_adapter.ini
+%%DATADIR%%/input/generic/keyboard.ini
+%%DATADIR%%/input/generic/mouse.ini
+%%DATADIR%%/input/linux/saitek_dual_analog_pad_12_4_1_0_linux.conf
+%%DATADIR%%/input/logitech/controller_rumble_gamepad_f510.ini
+%%DATADIR%%/input/logitech/controller_wireless_gamepad_f710.ini
+%%DATADIR%%/input/logitech/g27_racing_wheel.ini
+%%DATADIR%%/input/logitech/gamepad_f310_controller.ini
+%%DATADIR%%/input/logitech/logitech_cordless_rumblepad_2.ini
+%%DATADIR%%/input/logitech/logitech_dual_action.ini
+%%DATADIR%%/input/logitech/logitech_extreme_3d.ini
+%%DATADIR%%/input/logitech/logitech_extreme_3d_pro.ini
+%%DATADIR%%/input/logitech/logitech_rumblepad_2.ini
+%%DATADIR%%/input/logitech/ps3_usb_cordless_gamepad.ini
+%%DATADIR%%/input/logitech_cordless_rumblepad_2_usb_12_4_1_0_windows.conf
+%%DATADIR%%/input/logitech_dual_action_12_4_1_0_macosx.conf
+%%DATADIR%%/input/logitech_dual_action_usb_12_4_1_0_windows.conf
+%%DATADIR%%/input/logitech_r_precision_tm_gamepad_10_2_0_0_windows.conf
+%%DATADIR%%/input/logitech_rumblepad_2_usb_12_4_1_0_macosx.conf
+%%DATADIR%%/input/logitech_rumblepad_2_usb_12_4_1_0_windows.conf
+%%DATADIR%%/input/mad_catz/wired_xbox_360_controller_sfiv.ini
+%%DATADIR%%/input/microsoft/controller.ini
+%%DATADIR%%/input/microsoft/controller_xbox_360_for_windows.ini
+%%DATADIR%%/input/microsoft/controller_xbox_360_wireless_receiver_for_windows.ini
+%%DATADIR%%/input/microsoft/wireless_360_controller.ini
+%%DATADIR%%/input/microsoft/x_box_360_pad.ini
+%%DATADIR%%/input/microsoft/xbox_360_for_windows_controller.ini
+%%DATADIR%%/input/microsoft/xbox_360_wireless_receiver.ini
+%%DATADIR%%/input/microsoft/xbox_360_wireless_receiver_for_windows_controller.ini
+%%DATADIR%%/input/mosic/a_speed_link_competition_pro.ini
+%%DATADIR%%/input/mosic/speed_link_competition_pro.ini
+%%DATADIR%%/input/mosic/usb_2a4k_gamepad.ini
+%%DATADIR%%/input/other/retro_joystick_interface_v1_2.ini
+%%DATADIR%%/input/other/usb_2_axis_8_button_gamepad.ini
+%%DATADIR%%/input/p880_12_4_1_0_macosx.conf
+%%DATADIR%%/input/p880_12_4_1_0_windows.conf
+%%DATADIR%%/input/playstation_r_3_controller_19_4_0_0_macosx.conf
+%%DATADIR%%/input/ps3_usb_cordless_gamepad_13_4_1_0_macosx.conf
+%%DATADIR%%/input/ps3_usb_cordless_gamepad_13_4_1_0_windows.conf
+%%DATADIR%%/input/saitek/dual_analog_gamepad.ini
+%%DATADIR%%/input/saitek/p880.ini
+%%DATADIR%%/input/sony/computer_entertainment_wireless_inputdevice.ini
+%%DATADIR%%/input/sony/playstation_r_3_controller.ini
+%%DATADIR%%/input/sony/playstation_r_3_inputdevice.ini
+%%DATADIR%%/input/speed_link_competition_pro_4_2_0_0_windows.conf
+%%DATADIR%%/input/thrustmaster/2_in_1_dt.ini
+%%DATADIR%%/input/thrustmaster/t_mini_wireless.ini
+%%DATADIR%%/input/universal_gamepad.ini
+%%DATADIR%%/input/unknown.ini
+%%DATADIR%%/input/wisegroup_ltd/mp_8866_dual_usb_joypad.ini
+%%DATADIR%%/input/wisegroup_ltd/tigergame_ps_ps2_game_controller_adapter.ini
+%%DATADIR%%/input/xgaming/x_arcade.ini
+%%DATADIR%%/input/xgaming/x_arcade_right.ini
+%%DATADIR%%/item_background.png
+%%DATADIR%%/led-bars-edge/audio_led_1.png
+%%DATADIR%%/led-bars-edge/audio_led_2.png
+%%DATADIR%%/led-bars-edge/audio_led_3.png
+%%DATADIR%%/led-bars-edge/cd_led_1.png
+%%DATADIR%%/led-bars-edge/cd_led_2.png
+%%DATADIR%%/led-bars-edge/df0_led_1.png
+%%DATADIR%%/led-bars-edge/df0_led_2.png
+%%DATADIR%%/led-bars-edge/df1_led_1.png
+%%DATADIR%%/led-bars-edge/df1_led_2.png
+%%DATADIR%%/led-bars-edge/df2_led_1.png
+%%DATADIR%%/led-bars-edge/df2_led_2.png
+%%DATADIR%%/led-bars-edge/df3_led_1.png
+%%DATADIR%%/led-bars-edge/df3_led_2.png
+%%DATADIR%%/led-bars-edge/digit_0.png
+%%DATADIR%%/led-bars-edge/digit_1.png
+%%DATADIR%%/led-bars-edge/digit_10.png
+%%DATADIR%%/led-bars-edge/digit_2.png
+%%DATADIR%%/led-bars-edge/digit_3.png
+%%DATADIR%%/led-bars-edge/digit_4.png
+%%DATADIR%%/led-bars-edge/digit_5.png
+%%DATADIR%%/led-bars-edge/digit_6.png
+%%DATADIR%%/led-bars-edge/digit_7.png
+%%DATADIR%%/led-bars-edge/digit_8.png
+%%DATADIR%%/led-bars-edge/digit_9.png
+%%DATADIR%%/led-bars-edge/fps_led_1.png
+%%DATADIR%%/led-bars-edge/fps_led_2.png
+%%DATADIR%%/led-bars-edge/fps_led_3.png
+%%DATADIR%%/led-bars-edge/hd_led_1.png
+%%DATADIR%%/led-bars-edge/hd_led_2.png
+%%DATADIR%%/led-bars-edge/md_led_1.png
+%%DATADIR%%/led-bars-edge/md_led_2.png
+%%DATADIR%%/led-bars-edge/power_led_0.png
+%%DATADIR%%/led-bars-edge/power_led_1.png
+%%DATADIR%%/led-bars-edge/theme.conf
+%%DATADIR%%/led-bars-edge/top_left_overlay.png
+%%DATADIR%%/led-bars-edge/top_right_overlay.png
+%%DATADIR%%/led-bars-edge/vsync_led_1.png
+%%DATADIR%%/led-bars-edge/vsync_led_2.png
+%%DATADIR%%/led-bars-edge/vsync_led_3.png
+%%DATADIR%%/menu_arrow.png
+%%DATADIR%%/menu_fade_item.png
+%%DATADIR%%/menu_fade_selected_item.png
+%%DATADIR%%/menu_font.png
+%%DATADIR%%/pause_indicator.png
+%%DATADIR%%/shaders/atari-color-fix.shader
+%%DATADIR%%/shaders/crt.shader
+%%DATADIR%%/shaders/curvature.shader
+%%DATADIR%%/shaders/edge-detection.shader
+%%DATADIR%%/shaders/hard-light-bloom-gamma.shader
+%%DATADIR%%/shaders/hard-light-bloom.shader
+%%DATADIR%%/shaders/hard-light.shader
+%%DATADIR%%/shaders/heavybloom.shader
+%%DATADIR%%/shaders/horizontal-blur.shader
+%%DATADIR%%/shaders/hq2x.shader
+%%DATADIR%%/shaders/lanczos-6tap.shader
+%%DATADIR%%/shaders/scale2x.shader
+%%DATADIR%%/shaders/scale4xhq.shader
+%%DATADIR%%/shaders/scanline-3x.shader
+%%DATADIR%%/shaders/scanline-4x.shader
+%%DATADIR%%/shaders/scanlines-classic.shader
+%%DATADIR%%/shaders/scanlines-nonlinear-blur.shader
+%%DATADIR%%/shaders/scanlines-nonlinear.shader
+%%DATADIR%%/shaders/screenlines-nonlinear-blur-hsl-thick.shader
+%%DATADIR%%/shaders/screenlines-nonlinear-blur-hsl.shader
+%%DATADIR%%/shaders/screenlines-nonlinear-blur-thick.shader
+%%DATADIR%%/shaders/screenlines-nonlinear-blur.shader
+%%DATADIR%%/shaders/screenlines-nonlinear.shader
+%%DATADIR%%/shaders/simplebloom.shader
+%%DATADIR%%/shaders/test-gamma-screenlines.shader
+%%DATADIR%%/shaders/test-gamma.shader
+%%DATADIR%%/shaders/test.shader
+%%DATADIR%%/shaders/testbloom-2.shader
+%%DATADIR%%/shaders/testbloom.shader
+%%DATADIR%%/share-dir
+%%DATADIR%%/sidebar.png
+%%DATADIR%%/sidebar_edge.png
+%%DATADIR%%/stretch.png
+%%DATADIR%%/theme.conf
+%%DATADIR%%/title_font.png
+%%DATADIR%%/top_item_background.png
+%%DATADIR%%/ubuntu_12_04/heading_strip.png
+%%DATADIR%%/ubuntu_12_04/item_background.png
+%%DATADIR%%/ubuntu_12_04/sidebar.png
+%%DATADIR%%/ubuntu_12_04/sidebar_edge.png
+%%DATADIR%%/ubuntu_12_04/theme.conf
+%%DATADIR%%/ubuntu_12_04/top_item_background.png
+%%DATADIR%%/volume.png
+%%DATADIR%%/volume_muted.png
+share/icons/hicolor/128x128/apps/fs-uae.png
+share/icons/hicolor/16x16/apps/fs-uae.png
+share/icons/hicolor/256x256/apps/fs-uae.png
+share/icons/hicolor/32x32/apps/fs-uae.png
+share/icons/hicolor/48x48/apps/fs-uae.png
+share/icons/hicolor/64x64/apps/fs-uae.png
+share/locale/cs/LC_MESSAGES/fs-uae.mo
+share/locale/da/LC_MESSAGES/fs-uae.mo
+share/locale/de/LC_MESSAGES/fs-uae.mo
+share/locale/es/LC_MESSAGES/fs-uae.mo
+share/locale/fi/LC_MESSAGES/fs-uae.mo
+share/locale/fr/LC_MESSAGES/fs-uae.mo
+share/locale/it/LC_MESSAGES/fs-uae.mo
+share/locale/nb/LC_MESSAGES/fs-uae.mo
+share/locale/pl/LC_MESSAGES/fs-uae.mo
+share/locale/pt/LC_MESSAGES/fs-uae.mo
+share/locale/sr/LC_MESSAGES/fs-uae.mo
+share/locale/tr/LC_MESSAGES/fs-uae.mo
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry %%DATADIR%%/ubuntu_12_04
+@dirrmtry %%DATADIR%%/shaders
+@dirrmtry %%DATADIR%%/led-bars-edge
+@dirrmtry %%DATADIR%%/input/xgaming
+@dirrmtry %%DATADIR%%/input/wisegroup_ltd
+@dirrmtry %%DATADIR%%/input/thrustmaster
+@dirrmtry %%DATADIR%%/input/sony
+@dirrmtry %%DATADIR%%/input/saitek
+@dirrmtry %%DATADIR%%/input/other
+@dirrmtry %%DATADIR%%/input/mosic
+@dirrmtry %%DATADIR%%/input/microsoft
+@dirrmtry %%DATADIR%%/input/mad_catz
+@dirrmtry %%DATADIR%%/input/logitech
+@dirrmtry %%DATADIR%%/input/linux
+@dirrmtry %%DATADIR%%/input/generic
+@dirrmtry %%DATADIR%%/input/gamtec_ltd
+@dirrmtry %%DATADIR%%/input/custom
+@dirrmtry %%DATADIR%%/input/common
+@dirrmtry %%DATADIR%%/input/03000000a30600000901000000010000
+@dirrmtry %%DATADIR%%/input/030000006d040000d2ca000011010000
+@dirrmtry %%DATADIR%%/input/030000006d0400001fc2000005030000
+@dirrmtry %%DATADIR%%/input/030000006d0400001ec2000020200000
+@dirrmtry %%DATADIR%%/input/030000006d0400001dc2000014400000
+@dirrmtry %%DATADIR%%/input/030000006d04000019c2000011010000
+@dirrmtry %%DATADIR%%/input/030000005e0400008e02000014010000
+@dirrmtry %%DATADIR%%/input/030000005e0400001907000000010000
+@dirrmtry %%DATADIR%%/input/030000004f04000020b3000010010000
+@dirrmtry %%DATADIR%%/input/030000004c0500006802000011010000
+@dirrmtry %%DATADIR%%/input/03000000300f00001201000010010000
+@dirrmtry %%DATADIR%%/input
+@dirrmtry %%DATADIR%%/floppy_sounds
+@dirrmtry %%DATADIR%%/2x_1920_1080_bezel
+@dirrmtry %%DATADIR%%/2x_1920_1080
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
