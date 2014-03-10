@@ -12,8 +12,7 @@ COMMENT=	Blogging and social networking platform
 LICENSE=	GPLv2
 
 USE_PHP=	mysql gd json soap dom xml
-USES=		gettext
-USE_ZIP=	yes
+USES=		gettext zip
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

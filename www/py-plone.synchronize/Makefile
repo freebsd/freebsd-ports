@@ -13,9 +13,9 @@ COMMENT=	Simple decorators to support synchronized methods
 
 LICENSE=	BSD3CLAUSE
 
+USES=		zip
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=		yes
 
 .include <bsd.port.mk>

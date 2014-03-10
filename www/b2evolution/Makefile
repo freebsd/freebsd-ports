@@ -12,8 +12,7 @@ COMMENT=	A multilingual, multiuser, multi-blog engine
 
 PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-USE_ZIP=	YES
-USE_DOS2UNIX=	YES
+USES=		dos2unix zip
 
 B2EVO_DATE?=	stable-2011-03-23
 USE_PHP=	mysql pcre session xml

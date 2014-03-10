@@ -45,7 +45,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.alterego>0:${PORTSDIR}/www/py-plone.al
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=		yes
-USES=			zope
+USES=			zope zip
 
 .include <bsd.port.mk>

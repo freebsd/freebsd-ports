@@ -14,7 +14,7 @@ COMMENT=	PHP-based user-friendly, open source shopping cart
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
-USE_ZIP=	yes
+USES=		zip
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
 USE_DOS2UNIX=	yes

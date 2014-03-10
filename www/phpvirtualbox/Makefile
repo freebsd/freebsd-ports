@@ -13,10 +13,9 @@ COMMENT=	AJAX Web Interface for VirtualBox
 
 LICENSE=	GPLv3
 
-USE_ZIP=	yes
+USES=		dos2unix zip
 USE_PHP=	json session soap simplexml xml
 NO_BUILD=	yes
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
 
 do-install:

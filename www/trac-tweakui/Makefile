@@ -15,8 +15,7 @@ COMMENT=	Easily tweak Trac pages with JavaScript expressions
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-USE_ZIP=	yes
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_REGEX=	.*\.(css|html|js|py|txt)$
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}

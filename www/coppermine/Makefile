@@ -15,7 +15,7 @@ IMAGEMAGICK_DESC=	Use ImageMagick instead of PHP GD extension
 IMAGEMAGICK_RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_PHP=	mysql pcre ctype
-USE_ZIP=	yes
+USES=		zip
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cpg${PORTVERSION:R:R}${PORTVERSION:R:E}x

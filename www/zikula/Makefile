@@ -12,7 +12,7 @@ MAINTAINER=	amir.husaini@bsdit.com
 COMMENT=	MVC web application framework (PHP/MySQL)
 
 WRKSRC=		${WRKDIR}/Zikula_Core-${PORTVERSION}
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	ctype tokenizer pdo mysql filter mbstring session json pdo_mysql hash

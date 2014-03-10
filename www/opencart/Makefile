@@ -13,7 +13,7 @@ COMMENT=	An open source PHP-based online shopping cart system
 #PROJECTHOST=	open-cart
 USE_GITHUB=	yes
 GH_ACCOUNT=	opencart
-USE_ZIP=	yes
+USES=		zip
 USE_PHP=	mysql gd session pcre
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION}/upload
 

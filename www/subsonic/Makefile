@@ -21,6 +21,8 @@ OPTIONS_SUB=		yes
 TRANSCODING_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 				lame:${PORTSDIR}/audio/lame
 
+USES=		zip
+
 .include <bsd.port.options.mk>
 
 #Subsonic does not currently run on Tomcat 7
@@ -33,7 +35,6 @@ SUB_LIST=	TOMCATOPTS="tomcat60_java_opts"
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_ZIP=	yes
 USER=		www
 GROUP=		www
 SUBSONIC_HOME=	/var/subsonic

@@ -26,8 +26,7 @@ OPTIONS_DEFAULT=	MYSQL
 PROJECTHOST=	googleappengine
 
 USE_PYTHON=	2
-USE_ZIP=	yes
-USES=		gettext
+USES=		gettext zip
 
 WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}
 

@@ -22,7 +22,7 @@ PLIST=		${WRKDIR}/pkg-plist
 PLOGDIR?=	${WWWDOCROOT}/${PLOGURL}
 PLOGURL?=	lifetype
 USE_PHP=	ctype mysql pcre session xml tokenizer
-USE_ZIP=	YES
+USES=		zip
 WANT_PHP_WEB=	YES
 WWWDOCROOT?=	www
 

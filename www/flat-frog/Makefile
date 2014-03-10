@@ -11,7 +11,7 @@ COMMENT=	A templating engine working in php
 
 NO_BUILD=	yes
 USE_PHP=	yes
-USE_ZIP=	yes
+USES=		zip
 
 NO_STAGE=	yes
 do-install:

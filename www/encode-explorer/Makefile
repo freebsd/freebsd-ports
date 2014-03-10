@@ -14,7 +14,7 @@ COMMENT=	A PHP script to browse, create folders, upload files etc
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	EXPERIMENTAL

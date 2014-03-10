@@ -25,8 +25,8 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
+USES=		zip
 USE_PYTHON=	yes
-USE_ZIP=	yes
 
 NO_STAGE=	yes
 do-install:

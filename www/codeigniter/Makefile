@@ -11,7 +11,7 @@ DISTNAME=	CodeIgniter_${PORTVERSION}
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	Framework for developing PHP web applications
 
-USE_ZIP=	yes
+USES=		zip
 
 CONFLICTS=	codeigniter-1.[0-9]*
 

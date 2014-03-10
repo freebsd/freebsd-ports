@@ -15,7 +15,7 @@ COMMENT=	Enables users to modify several tickets together at once
 
 RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 
-USE_ZIP=	yes
+USES=		zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12/trunk
 USE_PYTHON=	2

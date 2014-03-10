@@ -14,10 +14,10 @@ COMMENT=	Plugin for making ticket templates
 
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
+USES=		zip
 USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracTicketTemplate
-USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin/0.11
 REL=		10605
