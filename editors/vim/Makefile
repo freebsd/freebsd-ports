@@ -38,7 +38,7 @@ USE_BZIP2=	yes
 USES=		iconv pkgconfig shebangfix
 WANT_GNOME=	yes
 
-PATCHLEVEL=	192
+PATCHLEVEL=	193
 PATCHFILES!=	/usr/bin/jot -s " " -w "%03d" ${PATCHLEVEL} 1 ${PATCHLEVEL}
 BADPATCHES=	064 087 147 # empty
 .for p in ${BADPATCHES}
