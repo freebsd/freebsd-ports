@@ -5622,3 +5622,5 @@ mail/fetchyahoo||2014-03-10|Has expired: Yahoo classic mail interface is discont
 audio/beep||2014-03-10|Has expired: No more public distfiles
 audio/p5-Audio-Beep||2014-03-10|Has expired: Depends on expiring audio/beep
 multimedia/beep-media-player|multimedia/audacious|2014-03-10|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/jumpgis-postgis||2014-03-10|Has expired: Depends on expiring graphics/jumpgis
+graphics/jumpgis||2014-03-10|Has expired: No more public distfiles
