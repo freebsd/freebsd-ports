@@ -1,0 +1,11 @@
+bin/get-cert
+bin/isync
+bin/mbsync
+bin/mdconvert
+man/man1/isync.1.gz
+man/man1/mbsync.1.gz
+man/man1/mdconvert.1.gz
+%%DOCSDIR%%/examples/isyncrc.sample
+%%DOCSDIR%%/examples/mbsyncrc.sample
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
