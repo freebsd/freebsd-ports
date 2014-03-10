@@ -407,8 +407,6 @@
     SUBDIR += jpgraph2
     SUBDIR += jpgtn
     SUBDIR += jslice
-    SUBDIR += jumpgis
-    SUBDIR += jumpgis-postgis
     SUBDIR += k3d
     SUBDIR += kamera-kde4
     SUBDIR += kcolorchooser
