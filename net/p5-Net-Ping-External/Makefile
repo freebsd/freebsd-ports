@@ -13,8 +13,7 @@ COMMENT=	Perl cross-platform interface to ICMP "ping" utilities
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USE_ZIP=	yes
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -13,8 +13,7 @@ COMMENT=	Python API for interaction with the vSphere Web Services SDK
 
 LICENSE=	BSD
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USES=		dos2unix zip
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

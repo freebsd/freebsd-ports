@@ -17,9 +17,8 @@ RUN_DEPENDS=	transmission-daemon:${PORTSDIR}/net-p2p/transmission-daemon
 
 PROJECTHOST=	transmisson-remote-gui
 
-USE_ZIP=	yes
 USE_FPC=	fcl-net
-USES=		iconv
+USES=		iconv zip
 USE_GNOME=	#
 
 WRKSRC=		${WRKDIR}/TransGUI

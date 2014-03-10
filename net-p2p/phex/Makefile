@@ -10,9 +10,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	A Java multi platform and spyware free gnutella client
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_ZIP=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	${PORTNAME}.sh

@@ -16,9 +16,9 @@ LICENSE=	ZPL21
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:${PORTSDIR}/devel/py-zope.interface
 
+USES=		zip
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=		yes
 
 .include <bsd.port.mk>

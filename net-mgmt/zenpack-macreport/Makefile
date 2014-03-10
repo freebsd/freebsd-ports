@@ -14,7 +14,7 @@ PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
 USES=		zenoss
 
-USE_ZIP=	yes
+USES=		zip
 ZPACKGROUP=	community
 WRKSRC=	${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 TAG=	b345f53

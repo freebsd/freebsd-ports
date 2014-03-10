@@ -21,7 +21,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 
 RCVER=		rc8a
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
