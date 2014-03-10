@@ -18,6 +18,9 @@ MASTER_SITES=	ftp://ftp.gplhost.sg/pub/dtc/bsd/ \
 MAINTAINER=	thomas@goirand.fr
 COMMENT=	A hosting web GUI for admin and accounting all hosting services
 
+DEPRECATED=	Depends on expired www/sbox-dtc
+EXPIRATION_DATE=2014-04-10
+
 RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_log_sql.so:${PORTSDIR}/www/mod_log_sql2-dtc \
 		${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC \
 		${LOCALBASE}/share/pear/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer \
