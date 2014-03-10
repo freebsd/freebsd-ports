@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USES=		dos2unix zip
+USES=		dos2unix zip:infozip
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 DOS2UNIX_REGEX=	.*.[^j][^a][^r]$
