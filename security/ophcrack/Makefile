@@ -12,18 +12,18 @@ COMMENT=	Windows password cracker based on rainbow tables
 LICENSE=	APACHE20 GPLv2
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
+USES=		gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/ophcrack
-PORTDOCS=	*
+PORTDOCS=	ChangeLog README
 
 OPTIONS_DEFINE=	X11 GRAPH DOCS
 OPTIONS_DEFAULT=	X11 GRAPH
@@ -31,7 +31,6 @@ OPTIONS_DEFAULT=	X11 GRAPH
 X11_DESC=	Build Qt 4 GUI frontend
 GRAPH_DESC=	Enable graph rendering via Qwt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11} || ${PORT_OPTIONS:MGRAPH}
@@ -47,11 +46,8 @@ CONFIGURE_ARGS+=	--disable-graph
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${DOCSDIR}
-.endif
-	@${ECHO_MSG} ; ${CAT} ${PKGMESSAGE} ; ${ECHO_MSG}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
