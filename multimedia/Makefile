@@ -314,7 +314,6 @@
     SUBDIR += sabbu
     SUBDIR += schroedinger
     SUBDIR += shell-fm
-    SUBDIR += smile
     SUBDIR += smpeg
     SUBDIR += smpeg2
     SUBDIR += smplayer
