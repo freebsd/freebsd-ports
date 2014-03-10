@@ -18,4 +18,8 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	FREERDP
+FREERDP_DESC=	Remote Desktop support via FreeRDP
+FREERDP_RUN_DEPENDS=	xfreerdp:${PORTSDIR}/net/freerdp
+
 .include <bsd.port.mk>
