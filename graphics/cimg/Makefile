@@ -34,7 +34,7 @@ CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -Wl,--verbose
 
 .if !defined(NOPORTDOCS)
-USES=		gmake
+USES+=		gmake
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	libboard.so:${PORTSDIR}/graphics/libboard
 
