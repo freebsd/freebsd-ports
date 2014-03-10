@@ -5618,3 +5618,7 @@ net/mars_nwe||2014-03-08|Has expired: No more public distfiles
 audio/fmio||2014-03-08|Has expired: No more public distfiles
 audio/libmtp|multimedia/libmtp|2014-03-09|Moved from audio to multimedia
 mail/p5-Mail-SpamAssassin-Alt|mail/p5-Mail-SpamAssassin|2014-03-09|Retired; please use mail/p5-Mail-SpamAssassin
+mail/fetchyahoo||2014-03-10|Has expired: Yahoo classic mail interface is discontinued, so this port is permanently broken
+audio/beep||2014-03-10|Has expired: No more public distfiles
+audio/p5-Audio-Beep||2014-03-10|Has expired: Depends on expiring audio/beep
+multimedia/beep-media-player|multimedia/audacious|2014-03-10|Has expired: Abandonware, please consider using multimedia/audacious instead

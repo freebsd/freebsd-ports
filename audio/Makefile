@@ -50,7 +50,6 @@
     SUBDIR += baresip
     SUBDIR += baudline
     SUBDIR += beast
-    SUBDIR += beep
     SUBDIR += beets
     SUBDIR += blop
     SUBDIR += bonk
@@ -526,7 +525,6 @@
     SUBDIR += osdmixer
     SUBDIR += oss
     SUBDIR += p5-Audio
-    SUBDIR += p5-Audio-Beep
     SUBDIR += p5-Audio-CD
     SUBDIR += p5-Audio-Ecasound
     SUBDIR += p5-Audio-FLAC-Header
