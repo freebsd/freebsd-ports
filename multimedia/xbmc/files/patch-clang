@@ -1,6 +1,8 @@
---- ./lib/cpluff/configure.ac.orig	2014-01-01 02:26:03.000000000 +0000
-+++ ./lib/cpluff/configure.ac	2014-01-10 23:59:59.000000000 +0000
-@@ -109,12 +109,12 @@
+diff --git lib/cpluff/configure.ac lib/cpluff/configure.ac
+index bb69d19a..4316766 100644
+--- lib/cpluff/configure.ac
++++ lib/cpluff/configure.ac
+@@ -109,12 +109,12 @@ if test "$enable_threads" != no; then
      AC_LINK_IFELSE(
  [AC_LANG_SOURCE([#include <pthread.h>
  
@@ -15,7 +17,7 @@
  ])], [AC_MSG_RESULT([yes])
  cp_threads=Posix], AC_MSG_RESULT([no]))
    fi
-@@ -126,10 +126,10 @@
+@@ -126,10 +126,10 @@ cp_threads=Posix], AC_MSG_RESULT([no]))
      AC_LINK_IFELSE(
  [AC_LANG_SOURCE([#include <windows.h>
  

@@ -29,22 +29,3 @@
  
  # Checks for boost headers using CXX instead of CC
  AC_LANG_PUSH([C++])
-@@ -1614,7 +1620,8 @@
- if test "x$use_airtunes" != "xno"; then
-   AC_CHECK_HEADERS([shairplay/raop.h],,
-    [if test "x$use_airtunes" = "xyes"; then
--      AC_MSG_ERROR($libshairplay_not_found)
-+      AC_MSG_NOTICE($libshairplay_not_found)
-+      use_airtunes="no"
-     elif test "x$use_airtunes" != "xno"; then
-       AC_MSG_NOTICE($libshairplay_not_found)
-       use_airtunes="no"
-@@ -1632,7 +1639,7 @@
- 
-   #libshairport - as a fallback for AirTunes
-   if test "x$USE_AIRTUNES" == "x0"; then
--    AC_CHECK_HEADERS([shairport/shairport.h],,
-+    AC_CHECK_HEADERS([shairport/shairport.h],[use_airtunes="yes"],
-      [if test "x$use_airtunes" = "xyes"; then
-         AC_MSG_ERROR($libshairport_not_found)
-       elif test "x$use_airtunes" != "xno"; then
