@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xbmc
-DISTVERSION=	13.0.alpha11
-PORTREVISION=	4
+DISTVERSION=	13.0.beta1
 CATEGORIES=	multimedia
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -54,8 +53,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
-GH_COMMIT=	8eb49b3
-GH_TAGNAME=	Gotham_alpha11
+GH_COMMIT=	128426f
+GH_TAGNAME=	Gotham-beta1
 
 USES=		gmake iconv:wchar_t pkgconfig
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
@@ -183,8 +182,6 @@ post-patch:
 		${WRKSRC}/xbmc/cores/dvdplayer/DVDCodecs/Video/VAAPI.cpp
 
 run-autotools:
-	cd ${WRKSRC}/lib/cpluff && ${SH} ./autogen.sh
-	${REINPLACE_CMD} '/lib\/cpluff/d' ${WRKSRC}/bootstrap.mk
 	cd ${WRKSRC} && ${SH} ./bootstrap
 	${REINPLACE_CMD} "s;'' iconv;iconv;" ${WRKSRC}/configure
 

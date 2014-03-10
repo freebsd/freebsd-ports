@@ -398,10 +398,13 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Czech/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Danish/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Dutch/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English (Australia)/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English (New Zealand)/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English (US)/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Estonian/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Finnish/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/French (Canada)/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/French/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Galician/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/German/strings.po
@@ -426,6 +429,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Slovenian/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish (Argentina)/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish (Mexico)/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish (Venezuela)/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Swedish/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Tajik/strings.po
@@ -647,6 +651,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/language/Czech/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Danish/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Dutch/strings.po
+%%DATADIR%%/addons/skin.confluence/language/English (Australia)/strings.po
+%%DATADIR%%/addons/skin.confluence/language/English (New Zealand)/strings.po
 %%DATADIR%%/addons/skin.confluence/language/English (US)/strings.po
 %%DATADIR%%/addons/skin.confluence/language/English/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Esperanto/strings.po
@@ -654,6 +660,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/language/Faroese/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Filipino/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Finnish/strings.po
+%%DATADIR%%/addons/skin.confluence/language/French (Canada)/strings.po
 %%DATADIR%%/addons/skin.confluence/language/French/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Galician/strings.po
 %%DATADIR%%/addons/skin.confluence/language/German/strings.po
@@ -672,6 +679,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/language/Malay/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Malayalam/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Maltese/strings.po
+%%DATADIR%%/addons/skin.confluence/language/Maori/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Norwegian/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Ossetic/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Persian (Iran)/strings.po
@@ -688,6 +696,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/language/Slovenian/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Spanish (Argentina)/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Spanish (Mexico)/strings.po
+%%DATADIR%%/addons/skin.confluence/language/Spanish (Venezuela)/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Spanish/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Swedish/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Tajik/strings.po
@@ -786,7 +795,6 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/Fanart_Fallback_Music_Small.jpg
 %%DATADIR%%/addons/skin.confluence/media/Fanart_Fallback_Small.jpg
 %%DATADIR%%/addons/skin.confluence/media/GlassOverlay.png
-%%DATADIR%%/addons/skin.confluence/media/GlassTitleBar.png
 %%DATADIR%%/addons/skin.confluence/media/GoFullscreen.png
 %%DATADIR%%/addons/skin.confluence/media/HasSub.png
 %%DATADIR%%/addons/skin.confluence/media/HomeBack.png
@@ -1055,6 +1063,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/lists/1080.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/lists/3D.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/lists/480.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/lists/4K.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/lists/540.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/lists/576.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/lists/720.png
@@ -1147,7 +1156,73 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.fishbmc/addon.xml
 %%DATADIR%%/addons/visualization.fishbmc/changelog.txt
 %%DATADIR%%/addons/visualization.fishbmc/icon.png
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/English/strings.xml
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Afrikaans/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Albanian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Amharic/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Arabic/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Azerbaijani/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Basque/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Belarusian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Bosnian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Bulgarian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Burmese/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Catalan/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Chinese (Simple)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Chinese (Traditional)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Croatian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Czech/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Danish/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Dutch/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/English (Australia)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/English (New Zealand)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/English (US)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/English/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Esperanto/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Estonian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Faroese/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Finnish/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/French (Canada)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/French/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Galician/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/German/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Greek/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Hebrew/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Hindi (Devanagiri)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Hungarian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Icelandic/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Indonesian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Italian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Japanese/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Korean/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Latvian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Lithuanian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Macedonian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Maltese/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Maori/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Norwegian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Persian (Iran)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Persian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Polish/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Portuguese (Brazil)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Portuguese/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Romanian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Russian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Serbian (Cyrillic)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Serbian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Slovak/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Slovenian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish (Argentina)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish (Mexico)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Swedish/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Tajik/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Tamil (India)/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Thai/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Turkish/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Ukrainian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Uzbek/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Vietnamese/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Welsh/strings.po
 %%DATADIR%%/addons/visualization.fishbmc/resources/settings.xml
 %%DATADIR%%/addons/visualization.glspectrum/addon.xml
 %%DATADIR%%/addons/visualization.glspectrum/icon.png
@@ -1168,12 +1243,15 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Czech/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Danish/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Dutch/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/English (Australia)/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/English (New Zealand)/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/English (US)/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/English/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Esperanto/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Estonian/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Faroese/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Finnish/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/French (Canada)/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/French/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Galician/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/German/strings.po
@@ -1192,6 +1270,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Macedonian/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Malay/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Maltese/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/Maori/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Norwegian/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Persian (Iran)/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Persian/strings.po
@@ -1236,12 +1315,15 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.projectm/resources/language/Czech/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Danish/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Dutch/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/English (Australia)/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/English (New Zealand)/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/English (US)/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/English/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Esperanto/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Estonian/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Faroese/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Finnish/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/French (Canada)/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/French/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Galician/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/German/strings.po
@@ -1258,6 +1340,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.projectm/resources/language/Lithuanian/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Macedonian/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Maltese/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/Maori/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Norwegian/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Persian (Iran)/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Polish/strings.po
@@ -1357,7 +1440,60 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.vortex/resources/Textures/trail2.dds
 %%DATADIR%%/addons/visualization.vortex/resources/Textures/vortex-v.jpg
 %%DATADIR%%/addons/visualization.vortex/resources/Textures/xbmc_icon.png
+%%DATADIR%%/addons/visualization.vortex/resources/language/Afrikaans/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Albanian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Amharic/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Arabic/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Belarusian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Bulgarian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Burmese/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Catalan/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Chinese (Simple)/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Chinese (Traditional)/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Croatian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Czech/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Danish/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Dutch/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/English (Australia)/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/English (New Zealand)/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/English (US)/strings.po
 %%DATADIR%%/addons/visualization.vortex/resources/language/English/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Estonian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Finnish/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/French (Canada)/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/French/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Galician/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/German/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Greek/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Hebrew/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Hungarian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Icelandic/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Indonesian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Italian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Japanese/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Korean/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Latvian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Lithuanian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Macedonian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Norwegian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Polish/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Portuguese (Brazil)/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Portuguese/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Romanian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Russian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Slovak/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Slovenian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Spanish (Argentina)/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Spanish (Mexico)/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Spanish/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Swedish/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Tajik/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Tamil (India)/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Thai/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Turkish/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Ukrainian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Vietnamese/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Welsh/strings.po
 %%DATADIR%%/addons/visualization.vortex/resources/settings.xml
 %%DATADIR%%/addons/visualization.waveform/addon.xml
 %%DATADIR%%/addons/visualization.waveform/icon.png
@@ -1396,9 +1532,12 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/xbmc.debug/resources/language/Czech/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Danish/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Dutch/strings.po
+%%DATADIR%%/addons/xbmc.debug/resources/language/English (Australia)/strings.po
+%%DATADIR%%/addons/xbmc.debug/resources/language/English (New Zealand)/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/English (US)/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/English/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Estonian/strings.po
+%%DATADIR%%/addons/xbmc.debug/resources/language/French (Canada)/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/French/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Galician/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/German/strings.po
@@ -1418,6 +1557,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/xbmc.debug/resources/language/Portuguese/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Russian/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Slovak/strings.po
+%%DATADIR%%/addons/xbmc.debug/resources/language/Slovenian/strings.po
+%%DATADIR%%/addons/xbmc.debug/resources/language/Spanish (Argentina)/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Spanish (Mexico)/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Spanish/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Swedish/strings.po
@@ -1470,7 +1611,10 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/language/Danish/strings.po
 %%DATADIR%%/language/Dutch/langinfo.xml
 %%DATADIR%%/language/Dutch/strings.po
+%%DATADIR%%/language/English (Australia)/langinfo.xml
 %%DATADIR%%/language/English (Australia)/strings.po
+%%DATADIR%%/language/English (New Zealand)/langinfo.xml
+%%DATADIR%%/language/English (New Zealand)/strings.po
 %%DATADIR%%/language/English (US)/langinfo.xml
 %%DATADIR%%/language/English (US)/strings.po
 %%DATADIR%%/language/English/langinfo.xml
@@ -1483,6 +1627,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/language/Faroese/strings.po
 %%DATADIR%%/language/Finnish/langinfo.xml
 %%DATADIR%%/language/Finnish/strings.po
+%%DATADIR%%/language/French (Canada)/langinfo.xml
+%%DATADIR%%/language/French (Canada)/strings.po
 %%DATADIR%%/language/French/langinfo.xml
 %%DATADIR%%/language/French/strings.po
 %%DATADIR%%/language/Galician/langinfo.xml
@@ -1520,6 +1666,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/language/Malayalam/strings.po
 %%DATADIR%%/language/Maltese/langinfo.xml
 %%DATADIR%%/language/Maltese/strings.po
+%%DATADIR%%/language/Maori/langinfo.xml
+%%DATADIR%%/language/Maori/strings.po
 %%DATADIR%%/language/Norwegian/langinfo.xml
 %%DATADIR%%/language/Norwegian/strings.po
 %%DATADIR%%/language/Ossetic/langinfo.xml
@@ -1558,6 +1706,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/language/Tajik/strings.po
 %%DATADIR%%/language/Tamil (India)/langinfo.xml
 %%DATADIR%%/language/Tamil (India)/strings.po
+%%DATADIR%%/language/Telugu/langinfo.xml
+%%DATADIR%%/language/Telugu/strings.po
 %%DATADIR%%/language/Thai/langinfo.xml
 %%DATADIR%%/language/Thai/strings.po
 %%DATADIR%%/language/Turkish/langinfo.xml
@@ -1774,6 +1924,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/language/Ukrainian
 @dirrmtry %%DATADIR%%/language/Turkish
 @dirrmtry %%DATADIR%%/language/Thai
+@dirrmtry %%DATADIR%%/language/Telugu
 @dirrmtry %%DATADIR%%/language/Tamil (India)
 @dirrmtry %%DATADIR%%/language/Tajik
 @dirrmtry %%DATADIR%%/language/Swedish
@@ -1793,6 +1944,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/language/Persian
 @dirrmtry %%DATADIR%%/language/Ossetic
 @dirrmtry %%DATADIR%%/language/Norwegian
+@dirrmtry %%DATADIR%%/language/Maori
 @dirrmtry %%DATADIR%%/language/Maltese
 @dirrmtry %%DATADIR%%/language/Malayalam
 @dirrmtry %%DATADIR%%/language/Malay
@@ -1810,12 +1962,14 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/language/Greek
 @dirrmtry %%DATADIR%%/language/German
 @dirrmtry %%DATADIR%%/language/Galician
+@dirrmtry %%DATADIR%%/language/French (Canada)
 @dirrmtry %%DATADIR%%/language/French
 @dirrmtry %%DATADIR%%/language/Finnish
 @dirrmtry %%DATADIR%%/language/Faroese
 @dirrmtry %%DATADIR%%/language/Estonian
 @dirrmtry %%DATADIR%%/language/Esperanto
 @dirrmtry %%DATADIR%%/language/English (US)
+@dirrmtry %%DATADIR%%/language/English (New Zealand)
 @dirrmtry %%DATADIR%%/language/English (Australia)
 @dirrmtry %%DATADIR%%/language/English
 @dirrmtry %%DATADIR%%/language/Dutch
@@ -1848,7 +2002,9 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Tajik
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Swedish
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Spanish (Mexico)
+@dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Spanish (Argentina)
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Spanish
+@dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Slovenian
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Slovak
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Russian
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Portuguese (Brazil)
@@ -1867,9 +2023,12 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Greek
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/German
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Galician
+@dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/French (Canada)
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/French
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Estonian
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/English (US)
+@dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/English (New Zealand)
+@dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/English (Australia)
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/English
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Dutch
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Danish
@@ -1891,7 +2050,60 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/webinterface.default/css
 @dirrmtry %%DATADIR%%/addons/webinterface.default
 @dirrmtry %%DATADIR%%/addons/visualization.waveform
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Welsh
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Vietnamese
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Ukrainian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Turkish
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Thai
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Tamil (India)
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Tajik
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Swedish
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Spanish (Mexico)
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Spanish (Argentina)
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Spanish
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Slovenian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Slovak
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Russian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Romanian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Portuguese (Brazil)
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Portuguese
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Polish
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Norwegian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Macedonian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Lithuanian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Latvian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Korean
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Japanese
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Italian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Indonesian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Icelandic
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Hungarian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Hebrew
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Greek
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/German
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Galician
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/French (Canada)
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/French
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Finnish
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Estonian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/English (US)
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/English (New Zealand)
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/English (Australia)
 @dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/English
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Dutch
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Danish
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Czech
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Croatian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Chinese (Traditional)
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Chinese (Simple)
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Catalan
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Burmese
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Bulgarian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Belarusian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Arabic
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Amharic
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Albanian
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Afrikaans
 @dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language
 @dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/Textures
 @dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/Presets
@@ -1920,6 +2132,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Polish
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Persian (Iran)
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Norwegian
+@dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Maori
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Maltese
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Macedonian
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Lithuanian
@@ -1935,12 +2148,15 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Greek
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/German
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Galician
+@dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/French (Canada)
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/French
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Finnish
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Faroese
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Estonian
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Esperanto
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/English (US)
+@dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/English (New Zealand)
+@dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/English (Australia)
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/English
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Dutch
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Danish
@@ -1986,6 +2202,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Persian (Iran)
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Persian
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Norwegian
+@dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Maori
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Maltese
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Malay
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Macedonian
@@ -2003,12 +2220,15 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Greek
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/German
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Galician
+@dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/French (Canada)
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/French
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Finnish
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Faroese
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Estonian
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Esperanto
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/English (US)
+@dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/English (New Zealand)
+@dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/English (Australia)
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/English
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Dutch
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Danish
@@ -2030,7 +2250,73 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Welsh
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Vietnamese
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Uzbek
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Ukrainian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Turkish
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Thai
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Tamil (India)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Tajik
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Swedish
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish (Mexico)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish (Argentina)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Slovenian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Slovak
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Serbian (Cyrillic)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Serbian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Russian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Romanian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Portuguese (Brazil)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Portuguese
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Polish
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Persian (Iran)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Persian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Norwegian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Maori
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Maltese
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Macedonian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Lithuanian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Latvian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Korean
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Japanese
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Italian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Indonesian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Icelandic
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Hungarian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Hindi (Devanagiri)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Hebrew
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Greek
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/German
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Galician
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/French (Canada)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/French
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Finnish
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Faroese
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Estonian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Esperanto
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/English (US)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/English (New Zealand)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/English (Australia)
 @dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/English
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Dutch
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Danish
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Czech
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Croatian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Chinese (Traditional)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Chinese (Simple)
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Catalan
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Burmese
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Bulgarian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Bosnian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Belarusian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Basque
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Azerbaijani
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Arabic
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Amharic
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Albanian
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Afrikaans
 @dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language
 @dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources
 @dirrmtry %%DATADIR%%/addons/visualization.fishbmc
@@ -2058,6 +2344,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Tamil (India)
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Tajik
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Swedish
+@dirrmtry %%DATADIR%%/addons/skin.confluence/language/Spanish (Venezuela)
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Spanish (Mexico)
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Spanish (Argentina)
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Spanish
@@ -2075,6 +2362,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Persian
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Ossetic
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Norwegian
+@dirrmtry %%DATADIR%%/addons/skin.confluence/language/Maori
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Maltese
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Malayalam
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Malay
@@ -2092,6 +2380,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Greek
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/German
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Galician
+@dirrmtry %%DATADIR%%/addons/skin.confluence/language/French (Canada)
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/French
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Finnish
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Filipino
@@ -2099,6 +2388,8 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Estonian
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Esperanto
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/English (US)
+@dirrmtry %%DATADIR%%/addons/skin.confluence/language/English (New Zealand)
+@dirrmtry %%DATADIR%%/addons/skin.confluence/language/English (Australia)
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/English
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Dutch
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Danish
@@ -2196,6 +2487,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Tamil (India)
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Tajik
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Swedish
+@dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish (Venezuela)
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish (Mexico)
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish (Argentina)
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish
@@ -2220,10 +2512,13 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Greek
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/German
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Galician
+@dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/French (Canada)
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/French
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Finnish
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Estonian
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English (US)
+@dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English (New Zealand)
+@dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English (Australia)
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Dutch
 @dirrmtry %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Danish
