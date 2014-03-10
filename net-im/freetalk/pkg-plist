@@ -32,6 +32,7 @@ man/man1/freetalk.1.gz
 @dirrmtry share/locale/en@boldquot
 @dirrmtry share/locale/en@quot/LC_MESSAGES
 @dirrmtry share/locale/en@quot
+@dirrmtry info
 @dirrm %%DATADIR%%/extensions
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/examples
