@@ -15,9 +15,9 @@ COMMENT=	KMFL Malayalam keyboard according to the Mozhi scheme
 
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
-USE_DOS2UNIX=	mozhi_1.1.0.kmn
+USES=		dos2unix zip
+DOS2UNIX_FILES=	mozhi_1.1.0.kmn
 NO_BUILD=	yes
-USE_ZIP=	yes
 
 KMFL_DIR=	share/kmfl
 KMFL_ICONS_DIR=	share/kmfl/icons

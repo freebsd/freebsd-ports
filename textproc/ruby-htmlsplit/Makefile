@@ -12,7 +12,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library to split an HTML document into tags and contents
 
-USE_ZIP=	yes
+USES=		zip
 USE_RUBY=	yes
 
 NO_BUILD=	yes

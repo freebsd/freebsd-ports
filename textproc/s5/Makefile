@@ -7,14 +7,13 @@ PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://meyerweb.com/eric/tools/s5/v/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple HTML-based presentation system
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_REGEX=	.*\.(css|htc|html|js|txt)
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes

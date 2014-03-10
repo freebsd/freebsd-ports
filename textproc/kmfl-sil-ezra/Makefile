@@ -19,9 +19,9 @@ COMMENT=	KMFL keyboard for Unicode Biblical Hebrew
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
 WRKSRC=		${WRKDIR}/EzraSIL2.51
-USE_DOS2UNIX=	Keyman/EZRAUNI24.KMN
+USES=		dos2unix zip
+DOS2UNIX_FILES=	Keyman/EZRAUNI24.KMN
 NO_BUILD=	yes
-USE_ZIP=	yes
 
 DOCSDIR_REL=	share/doc/kmfl/${PORTNAME}
 DOCSDIR=	${PREFIX}/${DOCSDIR_REL}

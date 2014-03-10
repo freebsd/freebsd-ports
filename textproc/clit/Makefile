@@ -22,8 +22,7 @@ MIN_VER=	8
 
 PLIST_FILES=	bin/clit
 
-USES=	dos2unix gmake
-USE_ZIP=	yes
+USES=	dos2unix gmake zip
 
 post-extract:
 	cd ${WRKDIR} && ${BZIP2_CMD} -dc "${DISTDIR}/ltm-0.33.tar.bz2" | \

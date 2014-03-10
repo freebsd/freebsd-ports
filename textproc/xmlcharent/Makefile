@@ -12,7 +12,7 @@ COMMENT=	XML character entities
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \

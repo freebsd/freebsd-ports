@@ -17,10 +17,10 @@ COMMENT=	IPA Unicode 5.1 mnemonic keyboard for KMFL IMEngine
 
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
+USES=		dos2unix zip
 WRKSRC=		${WRKDIR}/IPA12
-USE_DOS2UNIX=	IPAUni12.kmn
+DOS2UNIX_FILES=	IPAUni12.kmn
 NO_BUILD=	yes
-USE_ZIP=	yes
 
 DOCSDIR_REL=	share/doc/kmfl/${PORTNAME}
 DOCSDIR=	${PREFIX}/${DOCSDIR_REL}

@@ -16,9 +16,9 @@ COMMENT=	KMFL Unicode keyboard for standardized Yi script
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
 WRKSRC=		${WRKDIR}
-USE_DOS2UNIX=	SourceFiles/Yi7.kmn
+USES=		dos2unix zip
+DOS2UNIX_FILES=	SourceFiles/Yi7.kmn
 NO_BUILD=	yes
-USE_ZIP=	yes
 
 KMFL_DIR=	share/kmfl
 KMFL_ICONS_DIR=	share/kmfl/icons

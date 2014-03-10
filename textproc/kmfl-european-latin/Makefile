@@ -16,8 +16,8 @@ BUILD_DEPENDS=	base64:${PORTSDIR}/converters/base64
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
 WRKSRC=		${WRKDIR}/EuroLatin\ Source\ Files
-USE_DOS2UNIX=	european.kmn
-USE_ZIP=	yes
+USEs=		dos2unix zip
+DOS2UNIX_FILES=	european.kmn
 
 DOCSDIR_REL=	share/doc/kmfl/${PORTNAME}
 DOCSDIR=	${PREFIX}/${DOCSDIR_REL}

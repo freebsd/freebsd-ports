@@ -6,11 +6,11 @@ PORTVERSION=	2.0.17
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/tdg/en/
 DISTNAME=	tdg-en-html-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Norman Walsh's book "DocBook: The Definitive Guide"
 
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/tdg/en
 

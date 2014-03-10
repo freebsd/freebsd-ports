@@ -5,11 +5,11 @@ PORTNAME=	docbook-xsd
 DISTVERSION=	1.0b1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/xmlschema/${DISTVERSION}/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	DocBook W3C XML Schema
 
+USES=		zip
 NO_BUILD=	yes
 
 do-install:

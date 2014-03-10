@@ -7,12 +7,12 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.exslt.org/
 DISTNAME=	all-${PORTNAME}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Community initiative extensions to XSLT
 
+USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

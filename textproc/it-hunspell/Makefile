@@ -13,7 +13,7 @@ COMMENT=	Italian hunspell dictionaries
 
 LICENSE=	GPLv3
 
-EXTRACT_SUFX=	.zip
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

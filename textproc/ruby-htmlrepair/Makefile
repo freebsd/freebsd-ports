@@ -15,7 +15,7 @@ COMMENT=	A Ruby library to repair unclosed tags in an HTML document
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit
 
 PLIST_FILES=	%%RUBY_SITELIBDIR%%/htmlrepair.rb
-USE_ZIP=	yes
+USES=		zip
 USE_RUBY=	yes
 
 NO_BUILD=	yes

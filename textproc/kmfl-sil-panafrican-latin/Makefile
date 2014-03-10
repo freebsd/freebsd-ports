@@ -17,10 +17,10 @@ COMMENT=	KMFL keyboard for African Latin writing systems
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
 WRKSRC=		${WRKDIR}
-USE_DOS2UNIX=	PanAfricaMnemonic/AfricaDeadKey.kmn \
+USES=		dos2unix zip
+DOS2UNIX_FILES=	PanAfricaMnemonic/AfricaDeadKey.kmn \
 		PanAfricaUSlayout/AfricaUS.kmn
 NO_BUILD=	yes
-USE_ZIP=	yes
 
 DOCSDIR_REL=	share/doc/kmfl/${PORTNAME}
 DOCSDIR=	${PREFIX}/${DOCSDIR_REL}

@@ -12,7 +12,7 @@ DISTNAME=	pyexcelerator-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library for generating Excel 97/2000/XP/2003 files
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

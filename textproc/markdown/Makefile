@@ -14,9 +14,8 @@ COMMENT=	A text-to-HTML conversion tool for web writers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.text
 
-USE_ZIP=	yes
 NO_BUILD=	yes
-USES=		shebangfix perl5
+USES=		shebangfix perl5 zip
 SHEBANG_FILES=	Markdown.pl
 
 OPTIONS_DEFINE=	DOCS

@@ -6,7 +6,6 @@ CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	sl-
 DISTNAME=	thes_sl_SI_v2-${PORTVERSION:C/\.//g}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
@@ -14,6 +13,7 @@ COMMENT=	Slovenian thesaurus
 
 LICENSE=	LGPL21
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

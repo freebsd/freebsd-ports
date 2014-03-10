@@ -15,8 +15,7 @@ COMMENT=	Perl module for LaTeX statistics
 
 NO_BUILD=	yes
 
-USE_ZIP=	YES
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	run
 
 PLIST_FILES+=	bin/texcount

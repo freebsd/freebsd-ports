@@ -18,8 +18,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_ZIP=	yes
-USES=		cmake desktop-file-utils pkgconfig
+USES=		cmake desktop-file-utils pkgconfig zip
 NO_WRKSUBDIR=	yes
 USE_QT4=	qmake gui svg webkit xml moc uic rcc imageformats linguist
 

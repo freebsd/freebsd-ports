@@ -11,7 +11,7 @@ DISTFILES=	iso-schematron-xslt1.zip \
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	The Leading Implementation of ISO Schematron
 
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 
 do-extract:
