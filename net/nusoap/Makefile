@@ -9,10 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	SOAP Toolkit for PHP
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PHP=	curl zlib xml
-USE_ZIP=	yes
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

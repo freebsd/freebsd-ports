@@ -14,9 +14,7 @@ COMMENT=	Portable networking library (devel)
 
 CONFLICTS=	hawknl-[0-9]*
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
+USES=		dos2unix gmake zip
 MAKEFILE=	makefile.linux
 USE_LDCONFIG=	yes
 

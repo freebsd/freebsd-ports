@@ -13,7 +13,7 @@ COMMENT=	Open source IM and VoIP application
 
 MAN1=		jitsi.1
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 USE_ANT=	yes
 MAKE_ARGS=	rebuild

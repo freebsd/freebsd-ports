@@ -22,8 +22,7 @@ OPTIONS_DEFAULT=	WXGTK
 
 WRKSRC=		${WRKDIR}/src
 
-USES=		gmake dos2unix
-USE_ZIP=	yes
+USES=		gmake dos2unix zip
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
 USE_BDB=	yes

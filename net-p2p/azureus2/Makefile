@@ -24,8 +24,8 @@ JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_ANT=	yes
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
+USES=		dos2unix zip
+DOS2UNIX_FILES=	org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
 		org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java
 
 NO_WRKSUBDIR=	yes

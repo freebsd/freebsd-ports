@@ -20,9 +20,8 @@ OPTIONS_DEFINE=	DOCS PLUGINS
 OPTIONS_DEFAULT=PLUGINS
 PLUGINS_DESC=	Install bundled plugins
 
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_FILES=	src/java/org/jivesoftware/openfire/server/ServerDialback.java
-USE_ZIP=	yes
 USE_LDCONFIG=	yes
 USE_ANT=	yes
 USE_JAVA=	yes

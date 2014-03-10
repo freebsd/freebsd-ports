@@ -15,8 +15,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	linux
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake zip
 
 NO_STAGE=	yes
 post-patch:

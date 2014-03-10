@@ -30,8 +30,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libxslt.so:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	pinentry-qt4:${PORTSDIR}/security/pinentry-qt4
 
-USES=		qmake
-USE_ZIP=	yes
+USES=		qmake zip
 USE_GNOME=	glib20
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 USE_QT4=	corelib gui network xml script designer_build uic_build \

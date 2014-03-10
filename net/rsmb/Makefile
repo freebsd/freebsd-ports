@@ -12,7 +12,7 @@ COMMENT=	Really Small Message Broker, an MQTT supporting server
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
+USES=		zip
 USE_LINUX=	yes
 LINUX_OSRELEASE=2.6.16
 IA32_BINARY_PORT=	yes

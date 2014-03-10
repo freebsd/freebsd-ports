@@ -17,6 +17,6 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 USE_PYDISTUTILS=	easy_install
 USE_PYTHON=	2
-USE_ZIP=	yes
+USES=		zip
 
 .include <bsd.port.mk>

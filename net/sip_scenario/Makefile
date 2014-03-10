@@ -12,8 +12,7 @@ COMMENT=	SIP call flow creator (HTML format)
 
 LICENSE=	APACHE20
 
-USE_ZIP=	yes
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	run
 
 WRKSRC=		${WRKDIR}

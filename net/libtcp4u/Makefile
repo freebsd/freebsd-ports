@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/tcp4u.331/src
 PATCH_WRKSRC=	${WRKDIR}/tcp4u.331
 
-USE_ZIP=	yes
+USES=		zip
 
 PLIST_FILES=	include/udp4u.h include/tcp4u.h \
 		include/smtp4u.h include/http4u.h \

@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A pure Java implementation of SSH2
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes

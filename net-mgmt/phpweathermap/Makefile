@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Getopt.php:${PORTSDIR}/devel/pear \
 		rrdtool:${PORTSDIR}/databases/rrdtool
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 USE_PHP=	gd
 
 LICENSE=	GPLv2

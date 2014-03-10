@@ -11,8 +11,7 @@ DISTNAME=	herqq-${PORTVERSION}
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library for building UPnP devices and control points
 
-USES=		gmake qmake
-USE_ZIP=	yes
+USES=		gmake qmake zip
 USE_QT4=	corelib network xml dbus gui \
 		moc_build rcc_build uic_build
 

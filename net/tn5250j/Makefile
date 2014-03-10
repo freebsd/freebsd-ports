@@ -22,7 +22,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail \
 		${JAVAJARDIR}/itext.jar:${PORTSDIR}/devel/itext \
 		${JAVAJARDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 
-USE_ZIP=	yes
+USES=		zip
 USE_ANT=	yes
 USE_JAVA=	1.3+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
