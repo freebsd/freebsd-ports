@@ -8,7 +8,7 @@ CATEGORIES=	math python
 MASTER_SITES=	SF/mdp-toolkit/mdp-toolkit/2.3
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Symmetrical eigenvalue routines for NumPy
 
 BUILD_DEPENDS+=	${PYNUMPY}

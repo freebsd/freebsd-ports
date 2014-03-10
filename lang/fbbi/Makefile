@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www3.telus.net/public/cpressey/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interpreter for the Befunge-98 language
 
 PLIST_FILES=	bin/fbbi

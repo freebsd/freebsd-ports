@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}:noegnud	\
 		nethack-343-src.tgz:nethack
 EXTRACT_ONLY=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The noeGNUd UI for the vanilla Nethack
 
 RUN_DEPENDS=	${LOCALBASE}/share/${NOEGNUDVERSION}/data/gui:${PORTSDIR}/games/noegnud-data

@@ -7,7 +7,7 @@ PORTREVISION=	12
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zeograd.com/download/
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	portsw@FreeBSD.org
 COMMENT=	A PC Engine (TurboGrafx 16) emulator
 
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone

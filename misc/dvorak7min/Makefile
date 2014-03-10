@@ -6,7 +6,7 @@ PORTVERSION=	1.6.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.linalco.com/ragnar/
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ncurses-based Dvorak typing tutor
 
 NO_STAGE=	yes

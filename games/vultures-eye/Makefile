@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/attachment/wiki/downlo
 PKGNAMESUFFIX=	-eye
 DISTFILES=	${DISTNAME}-full${EXTRACT_SUFX}?format=raw
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical interface for NetHack 3.4.3 forked from Falcon's Eye
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png

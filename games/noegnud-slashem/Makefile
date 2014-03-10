@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}:noegnud \
 		se006e4f8.tar.gz:slashem
 EXTRACT_ONLY=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The noeGNUd UI for the SLASH'EM variant of Nethack
 
 RUN_DEPENDS=	${LOCALBASE}/share/${NOEGNUDVERSION}/data/gui:${PORTSDIR}/games/noegnud-data
