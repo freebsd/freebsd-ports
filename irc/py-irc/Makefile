@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hgtools>0:${PORTSDIR}/devel/py-hgtools \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=	yes
+USES=		zip
 
 PORTEXAMPLES=	irccat.py irccat2.py servermap.py testbot.py \
 		dccreceive.py dccsend.py
