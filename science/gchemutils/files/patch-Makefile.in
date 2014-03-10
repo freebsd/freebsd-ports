@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2014-03-10 23:12:16.000000000 +0100
++++ Makefile.in	2014-03-10 23:14:08.000000000 +0100
+@@ -927,7 +927,6 @@
+ 
+ install-data-am: install-mimeDATA
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-recursive
+ 
+ install-dvi-am:
