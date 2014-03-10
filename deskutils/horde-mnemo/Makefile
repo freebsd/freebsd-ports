@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mnemo
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 

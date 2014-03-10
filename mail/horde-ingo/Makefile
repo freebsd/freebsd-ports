@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ingo
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
