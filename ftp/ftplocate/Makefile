@@ -9,6 +9,9 @@ MASTER_SITES=	http://turtle.ee.ncku.edu.tw/ftplocate/download/
 MAINTAINER=	tung@turtle.ee.ncku.edu.tw
 COMMENT=	A ftp search engine supporting filename and description search
 
+DEPRECATED=	Depends on expired textproc/glimpse
+EXPIRATION_DATE=2014-04-10
+
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse \
 		unzip:${PORTSDIR}/archivers/unzip
 
