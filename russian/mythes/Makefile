@@ -13,7 +13,7 @@ COMMENT=	Russian thesaurus
 
 LICENSE=	LGPL21
 
-EXTRACT_SUFX=	.zip
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
