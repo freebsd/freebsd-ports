@@ -3,7 +3,7 @@
 
 PORTNAME=	unifi3
 PORTVERSION=	3.1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
 DISTNAME=	UniFi.unix
