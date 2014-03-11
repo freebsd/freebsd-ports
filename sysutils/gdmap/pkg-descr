@@ -1,12 +1,5 @@
-GdMap is a tool which allows to visualize disk space.
-Ever wondered why your hard disk is full or what directory and 
-files take up most of the space? With GdMap these questions can
-be answered quickly. To display directory structures cushion 
-treemaps are used which visualize a complete folder or even the 
-whole hard drive with one picture.
-
-Cushion treemaps display directories and files in rectangular areas.
-The larger a file is the larger is the rectangle which represents it.
-All files in one directory are painted within the rectangle of that directory.
+GdMap is a tool to inspect the used space of folders. Files are
+displayed in a cushioned tree map. Useful if you wonder where all your
+free space went to.
 
 WWW: http://gdmap.sourceforge.net/ 
