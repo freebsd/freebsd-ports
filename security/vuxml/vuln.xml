@@ -51,6 +51,58 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="03e48bf5-a96d-11e3-a556-3c970e169bc2">
+    <topic>samba -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba34</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>samba35</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>samba36</name>
+	<range><gt>3.6.*</gt><lt>3.6.23</lt></range>
+      </package>
+      <package>
+	<name>samba4</name>
+	<range><gt>4.0.*</gt><lt>4.0.16</lt></range>
+      </package>
+      <package>
+	<name>samba41</name>
+	<range><gt>4.1.*</gt><lt>4.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba project reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2013-4496">
+	  <p>In Samba's SAMR server we neglect to ensure that attempted
+	    password changes will update the bad password count, nor set
+	    the lockout flags.  This would allow a user unlimited attempts
+	    against the password by simply calling ChangePasswordUser2
+	    repeatedly.</p>
+	  <p>This is available without any other authentication.</p>
+	</blockquote>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2013-6442">
+	  <p>smbcacls can remove a file or directory ACL by mistake.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4496</cvename>
+      <cvename>CVE-2013-6442</cvename>
+      <url>http://www.samba.org/samba/security/CVE-2013-4496</url>
+      <url>http://www.samba.org/samba/security/CVE-2013-6442</url>
+    </references>
+    <dates>
+      <discovery>2014-03-11</discovery>
+      <entry>2014-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="03159886-a8a3-11e3-8f36-0025905a4771">
     <topic>asterisk -- multiple vulnerabilities</topic>
     <affects>
