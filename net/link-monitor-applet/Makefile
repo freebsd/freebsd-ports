@@ -11,6 +11,8 @@ COMMENT=	A GNOME applet displaying the round-trip time to one or more hosts
 
 LICENSE=	GPLv3
 
+DEPRECATED=	gnome-panel 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
 BROKEN=		Does not build
 
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2

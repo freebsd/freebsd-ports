@@ -13,6 +13,9 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome panel applet for easy Evolution contact book access
 
+DEPRECATED=	gnome-panel will be updated to the 3.x version which is not compatible with 2.x 
+EXPIRATION_DATE=2014-04-10
+
 USES=        pathfix gettext gmake pkgconfig
 USE_GNOME=	evolutiondataserver gnomepanel gnomeprefix \
 		libgnomeui

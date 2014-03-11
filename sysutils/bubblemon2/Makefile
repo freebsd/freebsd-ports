@@ -11,6 +11,9 @@ DISTNAME=	bubblemon-${PORTVERSION}
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A system CPU and memory load monitor for GNOME2
 
+DEPRECATED=	gnome-panel 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
+
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 
 USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui

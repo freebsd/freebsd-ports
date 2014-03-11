@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.hadess.net/files/software/uf-view/
 MAINTAINER=	mcgee@wam.umd.edu
 COMMENT=	A gTK+ viewer for the User Friendly and several other popular comics
 
+DEPRECATED=	gnome-desktop 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
+
 USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack gnomehier gnomevfs2 gnomedesktop libgnomeui
 GNU_CONFIGURE=	yes

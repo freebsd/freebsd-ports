@@ -10,6 +10,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Big Board sidebar is an experimental panel for the GNOME Desktop
 
+DEPRECATED=	gnome-panel will be updated to the 3.x version which is not compatible with 2.x 
+EXPIRATION_DATE=2014-04-10
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus \
 		${LOCALBASE}/libdata/pkgconfig/gnome-keyring-1.pc:${PORTSDIR}/security/gnome-keyring \
 		${LOCALBASE}/libdata/pkgconfig/libsoup-2.4.pc:${PORTSDIR}/devel/libsoup \
