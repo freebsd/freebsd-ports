@@ -1,0 +1,8 @@
+%%SITE_PERL%%/DBIx/Admin/TableInfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Admin/TableInfo/.packlist
+%%PERL5_MAN3%%/DBIx::Admin::TableInfo.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Admin/TableInfo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Admin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Admin
+@dirrmtry %%SITE_PERL%%/DBIx
