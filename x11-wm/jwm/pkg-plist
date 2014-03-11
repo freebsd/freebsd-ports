@@ -3,3 +3,13 @@ man/man1/jwm.1.gz
 @unexec if cmp -s %D/etc/system.jwmrc %D/etc/system.jwmrc.sample; then rm -f %D/etc/system.jwmrc; fi
 etc/system.jwmrc.sample
 @exec if [ ! -f %D/etc/system.jwmrc ]; then cp -p %D/etc/system.jwmrc.sample %D/etc/system.jwmrc; fi
+%%NLS%%share/locale/de/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/es/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/it/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/pt-PT/LC_MESSAGES/jwm.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/jwm.mo
+%%NLS%%@dirrmtry share/locale/pt-PT/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt-PT

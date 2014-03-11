@@ -3,25 +3,25 @@ $FreeBSD$
 
 --- example.jwmrc.orig
 +++ example.jwmrc
-@@ -5,7 +5,8 @@
-    <!-- The root menu, if this is undefined you will not get a menu. -->
-    <!-- Additional RootMenu attributes: onroot, labeled, label -->
-    <RootMenu height="32" onroot="12">
--      <Program icon="terminal.png" label="Terminal">xterm</Program>
-+      <Program icon="rxvt.png" label="rxvt">rxvt</Program>
-+      <Program icon="xterm.png" label="xterm">xterm</Program>
+@@ -4,7 +4,8 @@
  
-       <Menu icon="folder.png" label="Applications">
-          <Program icon="editor.png" label="Dia">dia</Program>
-@@ -150,7 +151,10 @@
-    </PopupStyle>
+     <!-- The root menu. -->
+     <RootMenu onroot="12">
+-        <Program icon="terminal.png" label="Terminal">xterm</Program>
++        <Program icon="rxvt.png" label="Terminal">rxvt</Program>
++        <Program icon="xterm.png" label="Terminal">xterm</Program>
+         <Menu icon="folder.png" label="Applications">
+             <Program icon="music.png" label="Audacious">audacious</Program>
+             <Program icon="calculator.png" label="Calculator">xcalc</Program>
+@@ -120,7 +121,10 @@
+          for icons in multiple paths.
+       -->
+     <IconPath>
+-        /usr/share/icons/wm-icons/32x32-gant
++        $HOME/.icons
++        %%PREFIX%%/share/icons
++        %%PREFIX%%/share/pixmaps
++        %%PREFIX%%/lib/X11/icons
+     </IconPath>
  
-    <IconPath>
--      /usr/share/icons/wm-icons/32x32-gant
-+      $HOME/.icons
-+      %%PREFIX%%/share/icons
-+      %%PREFIX%%/share/pixmaps
-+      %%PREFIX%%/lib/X11/icons
-    </IconPath>
- 
-    <!-- Virtual Desktops -->
+     <!-- Virtual Desktops -->
