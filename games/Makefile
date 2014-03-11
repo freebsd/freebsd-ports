@@ -684,6 +684,7 @@
     SUBDIR += opensfx
     SUBDIR += opensonic
     SUBDIR += openssn
+    SUBDIR += opensurge
     SUBDIR += openttd
     SUBDIR += openxcom
     SUBDIR += openyahtzee
