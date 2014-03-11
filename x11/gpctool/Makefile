@@ -14,7 +14,7 @@ COMMENT=	Evaluation tool for the Generic Polygon Clipper library
 LIB_DEPENDS=	libgpc.so:${PORTSDIR}/devel/libgpc	\
 		libformsGL.so:${PORTSDIR}/x11-toolkits/xforms
 
-USES=		zip
+USES=		zip:infozip
 USE_GL=		yes
 PLIST_FILES=	bin/gpctool
 USE_LDCONFIG=	yes
