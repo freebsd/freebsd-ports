@@ -1,0 +1,8 @@
+%%SITE_PERL%%/DBIx/Admin/CreateTable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Admin/CreateTable/.packlist
+%%PERL5_MAN3%%/DBIx::Admin::CreateTable.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Admin/CreateTable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Admin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Admin
+@dirrmtry %%SITE_PERL%%/DBIx

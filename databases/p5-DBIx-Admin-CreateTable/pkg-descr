@@ -1,0 +1,19 @@
+DBIx::Admin::CreateTable is a pure Perl module.
+
+Database vendors supported: MySQL, Oracle, Postgres, SQLite.
+
+Assumptions:
+- Every table has a primary key
+- The primary key is a unique, non-null, integer
+- The primary key is a single column
+- The primary key column is called 'id'
+- If a primary key has a corresponding auto-created index, the index is called
+  't_pkey': This is true for Postgres, where declaring a column as a primary
+  key automatically results in the creation of an associated index for that
+  column. The index is named after the table, not after the column.
+- If a table 't' (with primary key 'id') has an associated sequence, the
+  sequence is called 't_id_seq': This is true for both Oracle and Postgres,
+  which use sequences to populate primary key columns. The sequences are named
+  after both the table and the column.
+
+WWW: http://search.cpan.org/dist/DBIx-Admin-CreateTable/
