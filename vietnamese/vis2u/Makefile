@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	VISCII->Unicode conversion
 
-USES=		zip
+USES=		zip:infozip
 NO_WRKSUBDIR=	yes
 
 do-build:
