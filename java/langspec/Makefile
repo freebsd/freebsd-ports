@@ -10,7 +10,6 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	The Java Language Specification
 
 USES=		zip
-USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 PORTDOCS=	*
