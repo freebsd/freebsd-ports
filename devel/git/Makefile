@@ -32,7 +32,7 @@ MAKE_ENV+=	V=1
 USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
 
-CONFIGURE_ARGS=	--enable-pthreads=-pthread
+CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
 OPTIONS_DEFINE=	GUI SVN GITWEB CONTRIB P4 CVS HTMLDOCS PERL ICONV CURL \
 		ETCSHELLS NLS
