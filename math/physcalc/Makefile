@@ -15,7 +15,7 @@ EXTRACT_BEFORE_ARGS=	-aq
 EXTRACT_AFTER_ARGS=	-x physcalc -d ${WRKDIR}
 
 NO_WRKSUBDIR=	yes
-USES=		zip
+USES=		zip:infozip
 
 DEFS=		-DSHAREDIR="\"${PREFIX}/share/physcalc/\""
 SRCS=		physconv.c physmain.c physmlib.c physnode.c physoper.c \
