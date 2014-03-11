@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils-qt4
-PORTVERSION=	1390905942
+PORTVERSION=	1394538598
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libQtSolutions_SingleApplication-head.so:${PORTSDIR}/devel/qt4-qtso
 		curl:${PORTSDIR}/ftp/curl
 
 MAKE_JOBS_UNSAFE=yes
+ONLY_FOR_ARCHS=	amd64
 USE_CDRTOOLS=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

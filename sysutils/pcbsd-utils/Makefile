@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils
-PORTVERSION=	1390905942
+PORTVERSION=	1394538598
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -22,6 +22,7 @@ RUN_DEPENDS=	pkg-static:${PORTSDIR}/ports-mgmt/pkg \
 
 WRKSRC=		${WRKDIR}/src-sh
 CONFLICTS?=	pbi-manager-[0-9]*
+USES=		pkgconfig fuse
 NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
