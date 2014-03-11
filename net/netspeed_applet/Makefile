@@ -11,6 +11,9 @@ MASTER_SITES=	http://launchpadlibrarian.net/49741506/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applet that shows how much network traffic occurs on an interface
 
+DEPRECATED=	gnome-panel 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
+
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 
 INSTALLS_OMF=	yes

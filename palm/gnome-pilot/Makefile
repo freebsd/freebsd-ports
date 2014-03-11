@@ -11,6 +11,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	PalmPilot conduit system for GNOME 2
 
+DEPRECATED=	gnome-panel 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
+
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
 LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 

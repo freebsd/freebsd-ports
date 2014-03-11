@@ -16,6 +16,9 @@ RUN_DEPENDS=	remmina:${PORTSDIR}/net/remmina
 
 OPTIONS_DEFINE=	AVAHI
 
+DEPRECATED=	gnome-panel 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
+
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	gnomehack glib20 gtk20 gnomepanel

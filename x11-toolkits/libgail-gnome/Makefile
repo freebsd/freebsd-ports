@@ -12,11 +12,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An implementation of the ATK interfaces for GNOME widgets
 
+DEPRECATED=	gnome-panel 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
+
 USE_BZIP2=	yes
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gnomepanel libgnomeui atspi
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

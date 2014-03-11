@@ -11,6 +11,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME applet that displays the current phase of the Moon
 
+DEPRECATED=	gnome-panel will be updated to the 3.x version which is not compatible with 2.x
+EXPIRATION_DATE=2014-04-10
+
 LIB_DEPENDS=	libxklavier.so:${PORTSDIR}/x11/libxklavier
 
 NO_STAGE=	yes
