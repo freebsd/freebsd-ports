@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-QRCode
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,6 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
 
-MAKE_ARGS=	PKG_CONFIG_PATH=${LOCALBASE}/bin
 USES=		perl5 pkgconfig
 USE_PERL5=	configure
 
