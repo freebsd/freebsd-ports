@@ -13,7 +13,7 @@ COMMENT=	Zope.sendmail integration for Zope 2
 
 LICENSE=	ZPL21
 
-USEs=		zip
+USES=			zip
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
