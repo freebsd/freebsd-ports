@@ -1,4 +1,9 @@
 bin/qsampler
 share/applications/qsampler.desktop
+share/icons/hicolor/32x32/apps/qsampler.png
+share/icons/hicolor/32x32/mimetypes/application-x-qsampler-session.png
+share/icons/hicolor/scalable/apps/qsampler.svg
+share/icons/hicolor/scalable/mimetypes/application-x-qsampler-session.svg
+share/locale/qsampler_cs.qm
 share/locale/qsampler_ru.qm
-share/pixmaps/qsampler.png
+share/mime/packages/qsampler.xml
