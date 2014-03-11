@@ -51,6 +51,59 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="03159886-a8a3-11e3-8f36-0025905a4771">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.8.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>1.8.26.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>Stack Overflow in HTTP Processing of Cookie Headers. Sending a HTTP
+	    request that is handled by Asterisk with a large number of Cookie
+	    headers could overflow the stack. You could even exhaust memory if you
+	    sent an unlimited number of headers in the request.</p>
+	  <p>Denial of Service Through File Descriptor Exhaustion with chan_sip
+	    Session-Timers. An attacker can use all available file descriptors
+	    using SIP INVITE requests. Asterisk will respond with code 400, 420,
+	    or 422 for INVITEs meeting this criteria.
+	    Each INVITE meeting these conditions will leak a channel and several
+	    file descriptors. The file descriptors cannot be released without
+	    restarting Asterisk which may allow intrusion detection systems to be
+	    bypassed by sending the requests slowly.</p>
+	  <p>Remote Crash Vulnerability in PJSIP channel driver. A remotely
+	    exploitable crash vulnerability exists in the PJSIP channel driver if
+	    the "qualify_frequency" configuration option is enabled on an AOR and
+	    the remote SIP server challenges for authentication of the resulting
+	    OPTIONS request. The response handling code wrongly assumes that a
+	    PJSIP endpoint will always be associated with an outgoing request which
+	    is incorrect.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-2286</cvename>
+      <cvename>CVE-2014-2287</cvename>
+      <cvename>CVE-2014-2288</cvename>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-001.pdf</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-002.pdf</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-003.pdf</url>
+      <url>https://www.asterisk.org/security</url>
+    </references>
+    <dates>
+      <discovery>2014-03-10</discovery>
+      <entry>2014-03-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24cefa4b-a940-11e3-91f2-00262d5ed8ee">
     <topic>www/chromium --multiple vulnerabilities</topic>
     <affects>
