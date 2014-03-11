@@ -23,7 +23,7 @@
 #
 # Dist			Port			Why
 # ------------------------------------------------------------------------------
-*-for-1.4.tgz	net/dgd-lpmud			No commercial use
+*-for-1.4.tgz	net/dgd-lpmud			May not be used for monetary gain
 *_FreeBSD_MegaCLI.zip	sysutils/megacli	Reproduction or redistribution prohibited
 ASpath-tree-*.tar.gz	net-mgmt/aspathtree	No commercial us
 26410-800.zip		audio/libaacplus	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
