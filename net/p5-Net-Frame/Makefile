@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Frame
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base framework for frame crafting
+
+LICENSE=	ART10
 
 BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
     		p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor \
