@@ -13,7 +13,7 @@ COMMENT=	PHP based web proxy
 
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-USES=		zip
+USES=		zip:infozip
 USE_PHP=	ctype pcre
 EXTRACT_AFTER_ARGS+=	-d ${WRKSRC}
 
