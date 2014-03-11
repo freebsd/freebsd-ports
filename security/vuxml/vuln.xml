@@ -51,6 +51,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="24cefa4b-a940-11e3-91f2-00262d5ed8ee">
+    <topic>www/chromium --multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>33.0.1750.149</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>7 vulnerabilities fixed in this release, including:</p>
+	  <ul>
+	    <li>[344881] High CVE-2014-1700: Use-after-free in speech. Credit
+	      to Chamal de Silva.</li>
+	    <li>[342618] High CVE-2014-1701: UXSS in events. Credit to
+	      aidanhs.</li>
+	    <li>[333058] High CVE-2014-1702: Use-after-free in web database.
+	      Credit to Collin Payne.</li>
+	    <li>[338354] High CVE-2014-1703: Potential sandbox escape due to a
+	      use-after-free in web sockets.</li>
+	    <li>[328202, 349079, 345715] CVE-2014-1704: Multiple
+	      vulnerabilities in V8 fixed in version 3.23.17.18.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1700</cvename>
+      <cvename>CVE-2014-1701</cvename>
+      <cvename>CVE-2014-1702</cvename>
+      <cvename>CVE-2014-1703</cvename>
+      <cvename>CVE-2014-1704</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-03-11</discovery>
+      <entry>2014-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a0de610-a761-11e3-95fe-bcaec565249c">
     <topic>freetype2 -- Out of bounds read/write</topic>
     <affects>
