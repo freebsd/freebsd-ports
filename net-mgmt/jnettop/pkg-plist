@@ -1,3 +1,4 @@
 bin/jnettop
 %%DATADIR%%/jnettop-lookup-nmb
+man/man8/jnettop.8.gz
 @dirrmtry %%DATADIR%%
