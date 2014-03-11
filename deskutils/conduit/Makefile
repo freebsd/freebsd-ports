@@ -4,7 +4,7 @@
 
 PORTNAME=	conduit
 PORTVERSION=	0.3.17
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -26,25 +26,19 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goo
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	pygnome2 gnomeprefix
+CONFIGURE_ARGS=	--disable-nautilus-extension
 
-OPTIONS_DEFINE=	NAUTILUS EOG
-OPTIONS_DEFAULT=NAUTILUS EOG
-NAUTILUS_DESC=	Build Nautilus Plugin
+OPTIONS_DEFINE=	EOG
+OPTIONS_DEFAULT=EOG
 EOG_DESC=	Build Eye-Of-Gnome Plugin
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNAUTILUS}
-USE_GNOME+=	nautilus2
-CONFIGURE_ARGS+=	--enable-nautilus-extension
-.endif
 
 .if ${PORT_OPTIONS:MEOG}
 BUILD_DEPENDS+=	eog:${PORTSDIR}/graphics/eog
@@ -53,8 +47,6 @@ CONFIGURE_ARGS+=	--enable-eog-plugin
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/data/Makefile.in
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
 		-e 's|/usr/bin/python|${LOCALBASE}/bin/python|' \
 		-e 's|/usr/lib/firefox*|${LOCALBASE}/lib/firefox|'
