@@ -1,6 +1,8 @@
 bin/btcflash
 %%CDDA2MP3%%bin/cdda2mp3
+%%CDDA2MP3%%man/man1/cdda2mp3.1.gz
 %%CDDA2OGG%%bin/cdda2ogg
+%%CDDA2OGG%%man/man1/cdda2ogg.1.gz
 bin/cdda2wav
 bin/cdrecord
 bin/devdump
@@ -61,6 +63,13 @@ lib/siconv/iso8859-8
 lib/siconv/iso8859-9
 lib/siconv/koi8-r
 lib/siconv/koi8-u
+man/man1/btcflash.1.gz
+man/man1/cdda2wav.1.gz
+man/man1/cdrecord.1.gz
+man/man1/readcd.1.gz
+man/man1/scgcheck.1.gz
+man/man8/isoinfo.8.gz
+man/man8/mkisofs.8.gz
 @dirrm lib/siconv
 %%RSCSI%%sbin/rscsi
 %%RSCSI%%@exec chmod u+s %B/%f
@@ -72,6 +81,7 @@ etc/cdrecord.sample
 %%RSCSI%%@exec [ -f %B/rscsi ] || cp %B/%f %B/rscsi
 %%RSCSI%%@unexec if pw usershow rscsi >/dev/null 2>&1; then echo "If permanently deleting this package, user \"rscsi\" and its homedirectory must be removed manually."; fi
 %%RSCSI%%@unexec if pw groupshow rscsi >/dev/null 2>&1; then echo "If permanently deleting this package, group \"rscsi\" must be removed manually."; fi
+%%RSCSI%%man/man1/rscsi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/README.mkisofs
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/FAQ
