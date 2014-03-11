@@ -1,6 +1,20 @@
 bin/gdmap
+man/man1/gdmap.1.gz
 share/applications/gdmap.desktop
-share/gdmap/pixmaps/gdmap_icon.png
+%%DATADIR%%/pixmaps/gdmap_icon.png
+share/locale/bg/LC_MESSAGES/GdMap.mo
+share/locale/de/LC_MESSAGES/GdMap.mo
+share/locale/dk/LC_MESSAGES/GdMap.mo
+share/locale/es/LC_MESSAGES/GdMap.mo
+share/locale/fr/LC_MESSAGES/GdMap.mo
+share/locale/he/LC_MESSAGES/GdMap.mo
+share/locale/hr/LC_MESSAGES/GdMap.mo
+share/locale/it/LC_MESSAGES/GdMap.mo
+share/locale/nb/LC_MESSAGES/GdMap.mo
+share/locale/no/LC_MESSAGES/GdMap.mo
+share/locale/ru/LC_MESSAGES/GdMap.mo
+share/locale/sv/LC_MESSAGES/GdMap.mo
+share/locale/tr/LC_MESSAGES/GdMap.mo
 share/pixmaps/gdmap_icon.png
-@dirrm share/gdmap/pixmaps
-@dirrm share/gdmap
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
