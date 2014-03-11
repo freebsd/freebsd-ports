@@ -13,6 +13,8 @@ COMMENT=	Program computes with real and complex numbers and matrices
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

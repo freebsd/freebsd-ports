@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.malgil.com/sxm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another implementation of Scheme
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USE_GMAKE=	yes
 ALL_TARGET=	all image Formlist
 

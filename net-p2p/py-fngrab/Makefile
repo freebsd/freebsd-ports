@@ -13,6 +13,8 @@ COMMENT=	A replacement for the official Freenet Project's freenet_request
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	FreenetGrab

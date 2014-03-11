@@ -13,6 +13,8 @@ COMMENT=	Convert a yacc grammar to syntax diagrams
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spark.py:${PORTSDIR}/devel/py-spark
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 PLIST_FILES=	bin/showgrammar
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

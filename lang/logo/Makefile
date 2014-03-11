@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Harvey's logo language interpreter
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 .if defined(EMACS_LOGO_MODE)
 USE_EMACS=	yes
 .endif

@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper for fam from SGI
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USES=		fam:fam

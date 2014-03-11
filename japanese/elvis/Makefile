@@ -17,6 +17,8 @@ COMMENT=	A clone of vi/ex, the standard UNIX editor, with Japanese patch
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/canna-lib
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 NO_WRKSUBDIR=	yes
 PATCH_DIST_STRIP=	-p1
 MAN1=		elvis.1 ctags.1 ref.1 elvrec.1 elvprsv.1

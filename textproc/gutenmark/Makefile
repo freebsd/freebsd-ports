@@ -13,6 +13,8 @@ COMMENT=	Attractively formatting Project Gutenberg texts
 
 WRKSRC=		${WRKDIR}/GutenMark-source
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USE_WX=		2.8
 USE_GMAKE=	yes
 ALL_TARGET=	default
