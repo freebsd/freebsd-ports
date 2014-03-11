@@ -2068,6 +2068,7 @@
     SUBDIR += typo347
     SUBDIR += typolight
     SUBDIR += udmsearch
+    SUBDIR += uglifyjs
     SUBDIR += ump
     SUBDIR += usermanager
     SUBDIR += uwsgi
