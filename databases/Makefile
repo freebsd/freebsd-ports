@@ -335,6 +335,7 @@
     SUBDIR += p5-DBICx-TxnInsert
     SUBDIR += p5-DBIWrapper
     SUBDIR += p5-DBIx-Abstract
+    SUBDIR += p5-DBIx-Admin-CreateTable
     SUBDIR += p5-DBIx-AnyDBD
     SUBDIR += p5-DBIx-Browse
     SUBDIR += p5-DBIx-Class
