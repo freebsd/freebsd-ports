@@ -21,7 +21,7 @@ GCC_DESC=		Build with current GCC
 
 NO_WRKSUBDIR=		yes
 EXTRACT_BEFORE_ARGS=	-aq
-USES=			gmake zip
+USES=			gmake zip:infozip
 MAKEFILE=		GNUmakefile
 
 LIBVERSION=		0
