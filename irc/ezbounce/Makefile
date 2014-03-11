@@ -6,7 +6,7 @@ PORTVERSION=	1.99.15
 CATEGORIES=	irc
 MASTER_SITES=	http://www.linuxftw.com/ezbounce/files/
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A highly configurable IRC Proxy
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs

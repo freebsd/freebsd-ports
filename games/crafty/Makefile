@@ -15,7 +15,7 @@ DISTFILES=	crafty-${PORTVERSION}.zip:src \
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess program for playing and analyzing games
 
 USES=		gmake zip
