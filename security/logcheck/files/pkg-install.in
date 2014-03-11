@@ -1,29 +1,10 @@
 #!/bin/sh
 
 user="%%LOGCHECK_USER%%"
-uid="%%LOGCHECK_UID%%"
 group="%%LOGCHECK_GROUP%%"
-gid="%%LOGCHECK_GID%%"
-descr="Logcheck system account"
-homedir="/var/db/logcheck"
-shell="%%LOCALBASE%%/bin/bash"
 configfiles="logcheck.conf logcheck.logfiles"
 
 case $2 in
-PRE-INSTALL)
-	if %%PW%% group show ${group} > /dev/null 2>&1; then
-		echo "---> You already have a group \"${group}\", so I will use it."
-	else
-		%%PW%% group add "${group}" -g "${gid}"
-		echo "---> Created group \"${group}\"."
-	fi
-	if %%PW%% user show ${user} > /dev/null 2>&1; then
-		echo "---> You already have a user \"${user}\", so I will use it."
-	else
-		%%PW%% user add -n ${user} -c "${descr}" -d "${homedir}" -s "${shell}" -g ${group} -u "${uid}"
-		echo "---> Created user \"${user}\"."
-	fi
-;;
 POST-INSTALL)
     if [ "%%CRON%%" = "CRON" ]; then
 	if [ -f %%EXAMPLESDIR%%/crontab.in ] ; then
