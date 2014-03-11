@@ -173,5 +173,5 @@ DEV_ERROR+=	"USE_MAKESELF is unsupported, please use USES=makeself"
 .endif
 
 .if defined(USE_ZIP)
-DEV_WARNING+=	'USE_ZIP is deprecated, please use USES=zip'
+DEV_ERROR+=	'USE_ZIP is unsupported, please use USES=zip'
 .endif
