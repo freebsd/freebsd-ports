@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=IBus
+GenericName=Input Method Framework
+Comment=Start IBus Input Method Framework
+Exec=ibus-daemon --xim
+Icon=ibus
+Terminal=false
+Type=Application
+Categories=System;Utility;
+X-GNOME-Autostart-Phase=Applications
+X-GNOME-AutoRestart=false
+X-GNOME-Autostart-Notify=true
+X-KDE-autostart-after=panel
