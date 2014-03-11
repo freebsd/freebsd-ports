@@ -2,7 +2,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	0.2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	http://python-otr.pentabarf.de/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,9 +18,8 @@ LIB_DEPENDS=	otr.4:${PORTSDIR}/security/libotr3
 USES=		pkgconfig
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	python-otr
+PYDISTUTILS_AUTOPLIST=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
