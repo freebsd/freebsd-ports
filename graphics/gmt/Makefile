@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmt
-PORTVERSION=	4.5.11
-PORTREVISION=	1
+PORTVERSION=	4.5.12
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.geologi.uio.no/pub/%SUBDIR%/ \
@@ -81,7 +80,8 @@ STRIP_FILES=	blockmean blockmedian blockmode filter1d fitcircle \
 		psxy psxyz sample1d spectrum1d splitxyz \
 		surface trend1d trend2d triangulate xyz2grd
 
-GSHHG_DISTNAME=	gshhg-gmt-nc4-2.2.4
+# http://www.soest.hawaii.edu/pwessel/gshhg/
+GSHHG_DISTNAME=	gshhg-gmt-2.3.0
 
 .include <bsd.port.options.mk>
 
