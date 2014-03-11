@@ -1,5 +1,5 @@
---- tools/Makefile.orig	1999-02-03 18:43:27.000000000 -0600
-+++ tools/Makefile	2009-07-12 11:08:00.000000000 -0500
+--- tools/Makefile.orig
++++ tools/Makefile
 @@ -39,7 +39,7 @@
  # rule to create .o files from .c files 
  .c.o:
@@ -34,39 +34,44 @@
  
  #
  # All Targets
-@@ -76,29 +76,29 @@
+@@ -76,33 +76,33 @@
  
  reptype::  GetRepTypes.o
  	$(RM) $@ \ 
 -	$(CC) -o $@ $(LDFLAGS) GetRepTypes.o $(LOADLIBES)
-+	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) GetRepTypes.o $(LOADLIBES)
++	$(LIBTOOL) --mode=compile $(CC) -o $@ $(LDFLAGS) GetRepTypes.o $(LOADLIBES)
  
  wsize::  WidgetSize.o
  	$(RM) $@ \ 
 -	$(CC) -o $@ $(LDFLAGS) WidgetSize.o
-+	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) WidgetSize.o
++	$(LIBTOOL) --mode=compile $(CC) -o $@ $(LDFLAGS) WidgetSize.o
  
  gifinfo::  gifinfo.o ImBuffer.o
  	$(RM) $@ \ 
 -	$(CC) -o $@ $(LDFLAGS) gifinfo.o ImBuffer.o
-+	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) gifinfo.o ImBuffer.o
++	$(LIBTOOL) --mode=compile $(CC) -o $@ $(LDFLAGS) gifinfo.o ImBuffer.o
  
  httpget::  httpget.o
  	$(RM) $@ \ 
 -	$(CC) -o $@ $(LDFLAGS) httpget.o -L../http -lhttp $(DMALLOCLIB)
-+	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) httpget.o ../http/libhttp.la $(DMALLOCLIB)
++	$(LIBTOOL) --mode=compile $(CC) -o $@ $(LDFLAGS) httpget.o ../http/libhttp.la $(DMALLOCLIB)
+ 
+ mkStrings::  mkStrings.o
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) mkStrings.o
++	$(LIBTOOL) --mode=compile $(CC) -o $@ $(LDFLAGS) mkStrings.o
  
  # gif to gzf converter
  gif2gzf:: gif2gzf.o LZWStream.o ImBuffer.o
  	$(RM) $@ \ 
 -	$(CC) -o $@ $(LDFLAGS) gif2gzf.o LZWStream.o ImBuffer.o $(ZLIBLIB)
-+	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) gif2gzf.o LZWStream.o ImBuffer.o $(ZLIBLIB)
++	$(LIBTOOL) --mode=compile $(CC) -o $@ $(LDFLAGS) gif2gzf.o LZWStream.o ImBuffer.o $(ZLIBLIB)
  
  # stand alone parser
  HTMLparse:: parse.o miniparse.o
  	$(RM) $@
 -	$(CC) -o $@ $(LDFLAGS) parse.o miniparse.o
-+	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) parse.o miniparse.o
++	$(LIBTOOL) --mode=compile $(CC) -o $@ $(LDFLAGS) parse.o miniparse.o
  
  depend:: $(SRCS) 
  	$(MAKEDEPEND) $(INCLUDES) $(CPPFLAGS) -DMINIPARSE -DNO_XmHTML $(SRCS)

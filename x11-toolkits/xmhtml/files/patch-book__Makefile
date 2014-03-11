@@ -1,5 +1,5 @@
---- book/Makefile.orig	1999-02-03 18:43:27.000000000 -0600
-+++ book/Makefile	2009-07-12 11:11:05.000000000 -0500
+--- book/Makefile.orig
++++ book/Makefile
 @@ -12,13 +12,13 @@
  
  # The library
