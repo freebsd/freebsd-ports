@@ -15,7 +15,7 @@ COMMENT=	Dictionaries for Mozilla Thunderbird
 
 RUN_DEPENDS=	thunderbird>=6.0:${PORTSDIR}/mail/thunderbird
 
-USES=		zip
+USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 
