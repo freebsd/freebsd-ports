@@ -27,6 +27,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 USE_GNOME=	libxslt
 USE_LDCONFIG=	${PREFIX}/lib/ardour2 ${PREFIX}/lib/ardour2/surfaces
 
+RESTRICTED=	Redistribution of the VST PlugIns SDK is not allowed
+
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS VST
