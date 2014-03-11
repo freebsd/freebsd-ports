@@ -16,7 +16,7 @@ BUILD_DEPENDS=	\
 	p5-MIME-Tools>=5.417:${PORTSDIR}/mail/p5-MIME-Tools \
 	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
 	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-	p5-Mail-SpamAssassin>=3.0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+	spamassassin>=3.0:${PORTSDIR}/mail/spamassassin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	CLAMAV EXAMPLES DOCS

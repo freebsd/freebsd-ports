@@ -220,7 +220,6 @@
     SUBDIR += p5-Lingua-JA-Numbers
     SUBDIR += p5-Lingua-JA-Regular-Unicode
     SUBDIR += p5-Lingua-JA-Summarize-Extract
-    SUBDIR += p5-Mail-SpamAssassin
     SUBDIR += p5-MeCab
     SUBDIR += p5-Number-Phone-JP
     SUBDIR += p5-PDFJ
@@ -293,6 +292,7 @@
     SUBDIR += skkserv
     SUBDIR += slimeforest
     SUBDIR += slrn
+    SUBDIR += spamassassin
     SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
     SUBDIR += suicavalue

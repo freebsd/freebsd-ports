@@ -98,7 +98,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/sasl2/libcrammd5.so:${PORTSDIR}/security/cyrus-sa
 .endif
 
 .if defined(WITH_SPAMASSASSIN)
-RUN_DEPENDS+=	${LOCALBASE}/bin/spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS+=	${LOCALBASE}/bin/spamd:${PORTSDIR}/mail/spamassassin
 .endif
 
 .if defined(WITH_CLAMAV)

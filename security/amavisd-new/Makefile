@@ -49,7 +49,7 @@ MYSQL_DESC=		Use MySQL for lookups/logging/quarantine
 PGSQL_DESC=		Use PgSQL for lookups/logging/quarantine
 LDAP_DESC=		Use LDAP for lookups
 SASL_DESC=		Use SASL authentication
-SPAMASSASSIN_DESC=	Use mail/p5-Mail-SpamAssassin
+SPAMASSASSIN_DESC=	Use mail/spamassassin
 P0F_DESC=		Passive operating system fingerprinting
 ALTERMIME_DESC=		Use AlterMime for defanging/disclaimers
 FILE_DESC=		Use newer file(1) utility from ports
@@ -120,7 +120,7 @@ RUN_DEPENDS+=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 .endif
 
 .if ${PORT_OPTIONS:MSPAMASSASSIN}
-RUN_DEPENDS+=	p5-Mail-SpamAssassin>=0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS+=	spamassassin>=0:${PORTSDIR}/mail/spamassassin
 .endif
 
 .if ${PORT_OPTIONS:MP0F}

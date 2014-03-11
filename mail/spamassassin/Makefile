@@ -1,13 +1,13 @@
 # Created by: Anthony Kim
 # $FreeBSD$
 
-PORTNAME=		Mail-SpamAssassin
+PORTNAME=		spamassassin
 PORTVERSION=	3.4.0
-PORTREVISION?=	2		# committer: please bump PORTREVISION on Slaves
+PORTREVISION?=	3		# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
-PKGNAMEPREFIX?=	p5-
+DISTNAME=		Mail-SpamAssassin-${PORTVERSION}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 
 MAINTAINER?=	adamw@FreeBSD.org
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 				re2c>=.12.0:${PORTSDIR}/devel/re2c
 
-CONFLICTS?=	ja-p5-Mail-SpamAssassin-[0-9]*
+CONFLICTS?=	ja-spamassassin-[0-9]*
 
 USES=		perl5
 USE_PERL5=	configure

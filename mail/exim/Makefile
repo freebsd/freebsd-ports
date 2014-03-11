@@ -449,7 +449,7 @@ SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,,' \
 .endif
 
 .if ${PORT_OPTIONS:MSA_EXIM}
-RUN_DEPENDS+=	${LOCALBASE}/bin/spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS+=	${LOCALBASE}/bin/spamc:${PORTSDIR}/mail/spamassassin
 PLIST_SUB+=	SA_EXIM=""
 .else
 PLIST_SUB+=	SA_EXIM="@comment "

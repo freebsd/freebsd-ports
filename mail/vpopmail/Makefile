@@ -173,8 +173,8 @@ MAILDROP_BUILD_DEPENDS=		maildrop:${PORTSDIR}/${MAILDROP_PORT}
 SPAMASSASSIN_CONFIGURE_ON=	--enable-spamassassin \
 				--enable-spamc-prog=${LOCALBASE}/bin/spamc \
 				--enable-spam-threshold=${SPAM_THRESHOLD}
-SPAMASSASSIN_BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-SPAMASSASSIN_RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+SPAMASSASSIN_BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin
+SPAMASSASSIN_RUN_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin
 SPAMFOLDER_CONFIGURE_ON=	--enable-spam-junkfolder
 
 .include <bsd.port.options.mk>

@@ -415,7 +415,6 @@
     SUBDIR += p5-Mail-SendEasy
     SUBDIR += p5-Mail-Sender
     SUBDIR += p5-Mail-Sendmail
-    SUBDIR += p5-Mail-SpamAssassin
     SUBDIR += p5-Mail-Spool
     SUBDIR += p5-Mail-Tools
     SUBDIR += p5-Mail-Transport-Dbx
@@ -648,6 +647,7 @@
     SUBDIR += spamass-ixhash
     SUBDIR += spamass-milter
     SUBDIR += spamass-rules
+    SUBDIR += spamassassin
     SUBDIR += spambnc
     SUBDIR += spamcup
     SUBDIR += spamd

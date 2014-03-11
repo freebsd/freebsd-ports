@@ -295,7 +295,7 @@ BUILD_DEPENDS+=	p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 .endif
 
 .if ${PORT_OPTIONS:MFILSPAMASSN}
-BUILD_DEPENDS+=	p5-Mail-SpamAssassin>=0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+BUILD_DEPENDS+=	spamassassin>=0:${PORTSDIR}/mail/spamassassin
 .endif
 
 .if ${PORT_OPTIONS:MPROFANITY}
