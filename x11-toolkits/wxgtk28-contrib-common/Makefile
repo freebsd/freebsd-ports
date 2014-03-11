@@ -7,5 +7,4 @@ COMMENT=	The wxWidgets GUI toolkit contributed libraries (common files)
 WXGTK_FLAVOR=	gtk2-contrib-common
 MASTERDIR=	${.CURDIR}/../wxgtk28
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
