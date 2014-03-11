@@ -2,18 +2,10 @@
 
 Open Surge has been installed.
 
-
 When you have problems to build Source please reinstall
 
 audio/alure
 x11-fonts/alfont
-
-
-After deinstallation, some files may stay in %%DATADIR%%,
-you can delete them with
-
-    /bin/rm -fr %%DATADIR%%
-
 
 Have fun!
 
