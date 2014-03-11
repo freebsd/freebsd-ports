@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 OPTIONS_DEFINE=		DOCS
 
-USES=		zip
+USES=			zip:infozip
 EXTRACT_BEFORE_ARGS=	-aq
 NO_WRKSUBDIR=		yes
 MAKEFILE=		makefile
