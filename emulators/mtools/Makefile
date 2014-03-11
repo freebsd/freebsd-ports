@@ -9,12 +9,14 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mtools
 
 MAINTAINER=	skreuzer@FreeBSD.org
-COMMENT=	A collection of tools for manipulating MSDOS files
+COMMENT=	A collection of tools for manipulating MS-DOS files
+
+LICENSE=	GPLv3
 
 CONFLICTS_INSTALL=	multimarkdown-*
 
+USES=	gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_malloc_h=no
 CONFIGURE_ARGS=	--enable-xdf
