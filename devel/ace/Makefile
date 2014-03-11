@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.2.4
+PORTVERSION=	6.2.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
@@ -35,26 +35,21 @@ OPTIONS_SUB=		yes
 FLTK_DESC=		FLTK GUI toolkit
 FLTK_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 FLTK_MAKE_ENV=		fl=1
-
 QT4_USE=		QT4=corelib,gui,moc_build
 QT4_MAKE_ENV=		qt=1 qt4=1 QTDIR="${QT_PREFIX}"
 QT4_CPPFLAGS=		-I${QT_INCDIR}
 QT4_LDFLAGS=		-L${QT_LIBDIR}
-
 SSL_USE=		OPENSSL=yes
 SSL_MAKE_ENV=		ssl=1
-
 TK_USES=		tk
 TK_MAKE_ENV=		tk=1
-
 TRIO_DESC=		Trio portable string functions
 TRIO_BUILD_DEPENDS=	trio>=0:${PORTSDIR}/devel/trio
 TRIO_MAKE_ENV=		trio=1
-
 X11_USE=		XORG=xt
 X11_MAKE_ENV=		xt=1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
@@ -66,6 +61,10 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|bin/moc)|bin/moc-qt4)|g ; \
 		 s|bin/moc,|bin/moc-qt4,|g' ${WRKSRC}/ace/QtReactor/GNUmakefile.ACE_Qt4Reactor_moc
+	@${REINPLACE_CMD} -i "" -e \
+		'/^C[CX]/s|\([[:space:]]\)=|\1?=| ; \
+		 s|/usr/local|${LOCALBASE}| ; \
+		 s|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/include/makeinclude/platform_freebsd.GNU
 
 do-configure:
 	@cd ${WRKSRC}/ace \
@@ -94,4 +93,4 @@ post-install:
 		${LN} -sf $${n}.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/$${n}.6; \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
