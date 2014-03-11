@@ -19,10 +19,8 @@ WRKSRC=		${WRKDIR}/SudokuSenseiSources
 
 USES=		qmake
 USE_QT4=	moc_build uic_build corelib gui iconengines_run imageformats_run
-CFLAGS+=	-w
 
-SUB_FILES=	${PORTNAME} \
-		pkg-message
+SUB_FILES=	${PORTNAME} pkg-deinstall pkg-message
 
 DESKTOP_ENTRIES="Sudoku Sensei" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;LogicGame;" ""
