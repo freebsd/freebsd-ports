@@ -10,6 +10,8 @@ MASTER_SITES=	http://web.novalis.org/programs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that shows fireworks in action
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 PLIST_FILES=	bin/wmfirew
 WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
 USE_GMAKE=	yes

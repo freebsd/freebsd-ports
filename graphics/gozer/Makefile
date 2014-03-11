@@ -12,6 +12,8 @@ COMMENT=	Commandline text rendering utility - creates images from text
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-giblib-prefix=${LOCALBASE}
 

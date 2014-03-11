@@ -9,6 +9,8 @@ MASTER_SITES=	http://silmarill.org/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Project Gutenberg e-texts reader
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

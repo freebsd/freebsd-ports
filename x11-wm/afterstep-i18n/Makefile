@@ -25,6 +25,8 @@ COMMENT=	The NeXTstep clone window manager with Fontset support
 
 RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 DIST_SUBDIR=	afterstep
 USE_XORG=	xpm
 USES=		imake

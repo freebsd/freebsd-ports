@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBIOS domain logon PAM module
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USES=		perl5
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes

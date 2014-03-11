@@ -13,6 +13,8 @@ DISTNAME=	nat10
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBIOS Auditing Tool / Security Kit
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 WRKSRC=		${WRKDIR}/${DISTNAME}
 MAN1=		nat.1 nbaudit.1
 

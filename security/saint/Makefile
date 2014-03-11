@@ -17,6 +17,8 @@ BUILD_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 
 SAMBA_PORT?=	net/samba36
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USES=		perl5
 MANCOMPRESSED=	no
 MAN1=		saint.1
