@@ -12,6 +12,9 @@ MASTER_SITE_SUBDIR=	pav
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus plugin that allows you to encrypt the contents of a folder
 
+DEPRECATED=	nautilus will be updated to the 3.x version which is not compatible with 2.x
+EXPIRATION_DATE=2014-04-10
+
 USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

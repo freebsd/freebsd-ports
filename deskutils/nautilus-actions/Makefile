@@ -11,6 +11,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Extension for Nautilus to configure programs to launch on files
 
+DEPRECATED=	nautilus will be updated to the 3.x version which is not compatible with 2.x
+EXPIRATION_DATE=2014-04-10
+
 LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique

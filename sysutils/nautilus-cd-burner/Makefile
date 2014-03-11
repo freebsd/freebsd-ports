@@ -12,6 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD burner view for Nautilus
 
+DEPRECATED=	nautilus will be updated to the 3.x version which is not compatible with 2.x
+EXPIRATION_DATE=2014-04-10
+
 BUILD_DEPENDS=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount
 RUN_DEPENDS=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
