@@ -16,7 +16,7 @@ NO_BUILD=	yes
 
 SUB_FILES+=	pkg-message pkg-deinstall
 USE_PHP=	mysql session xml zlib
-USES=		zip
+USES=		zip:infozip
 
 OPTIONS_DEFINE=	APACHE MYSQLS GD
 
