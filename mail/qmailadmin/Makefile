@@ -53,11 +53,11 @@ NOCACHE_DESC=		Prohibit caching via http headers
 
 CONFIGURE_ARGS+=	\
 	--enable-qmaildir=${QMAIL_PREFIX} \
-	--enable-htmldir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
-	--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR}/images \
+	--enable-htmldir=${WEBPREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
+	--enable-imagedir=${WEBPREFIX}/${WEBDATADIR}/${WEBDATASUBDIR}/images \
 	--enable-imageurl=${WEBDATAURL}/${WEBDATASUBDIR}/images \
 	--enable-htmllibdir=${DATADIR} \
-	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
+	--enable-cgibindir=${WEBPREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 	--enable-cgipath=${CGIBINURL}/${CGIBINSUBDIR}/qmailadmin \
 	--enable-vpopmaildir=${VPOPMAIL_DIR} \
 	--enable-autoresponder-path=${LOCALBASE}/bin \
@@ -117,9 +117,11 @@ WEBDATASUBDIR?=	qmailadmin
 WEBDATAURL?=
 MAXUSERSPERPAGE?=	15
 MAXALIASESPERPAGE?=	25
+WEBPREFIX?=	${PREFIX}
 
 PLIST_SUB+=	CGIBINDIR="${CGIBINDIR}" CGIBINSUBDIR="${CGIBINSUBDIR}" \
-		WEBDATADIR="${WEBDATADIR}" WEBDATASUBDIR="${WEBDATASUBDIR}"
+		WEBDATADIR="${WEBDATADIR}" WEBDATASUBDIR="${WEBDATASUBDIR}" \
+		REAL_PREFIX="${PREFIX}" WEBPREFIX="${WEBPREFIX}"
 
 # End of user-configurable variables
 
