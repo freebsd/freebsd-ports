@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKDIR}/Quantis-${DISTVERSION}/License.txt
 
-USES=		zip:infozip
+USES=		kmod uidfix zip:infozip
 EXTRACT_BEFORE_ARGS=	-aqo
 
 WRKSRC=		${WRKDIR}/Quantis-${DISTVERSION}/Drivers/Unix/QuantisPci
@@ -25,7 +25,5 @@ WRKSRC=		${WRKDIR}/Quantis-${DISTVERSION}/Drivers/Unix/QuantisPci
 PLIST_FILES=	"@cwd ${KMODDIR}" \
 		"quantis.ko" \
 		"@cwd ${PREFIX}"
-
-USES=		kmod uidfix
 
 .include <bsd.port.mk>
