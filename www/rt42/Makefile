@@ -2,6 +2,7 @@
 
 PORTNAME=	rt
 DISTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	42
@@ -71,10 +72,12 @@ AP_MODFASTCGI_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDI
 				${FASTCGI_DEPS}
 
 LIGHTTPD_DESC=			Deploy with lighttpd and mod_fastcgi
-LIGHTTPD_RUN_DEPENDS=		${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+LIGHTTPD_RUN_DEPENDS=		${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd \
+				${FASTCGI_DEPS}
 
 SPAWN_FCGI_DESC=		Deploy with spawn_fcgi
-SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
+SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi \
+				${FASTCGI_DEPS}
 
 MYSQL_USE=			MYSQL=yes
 MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
