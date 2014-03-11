@@ -102,7 +102,6 @@
 %%ETCDIR%%/ignore.d.server/pptpd
 %%ETCDIR%%/ignore.d.server/procmail
 %%ETCDIR%%/ignore.d.server/proftpd
-%%ETCDIR%%/ignore.d.server/puppetd
 %%ETCDIR%%/ignore.d.server/pure-ftpd
 %%ETCDIR%%/ignore.d.server/pureftp
 %%ETCDIR%%/ignore.d.server/qpopper
@@ -192,6 +191,9 @@
 %%DATADIR%%/detectrotate/10-savelog.dtr
 %%DATADIR%%/detectrotate/20-logrotate.dtr
 %%DATADIR%%/detectrotate/30-logrotate-dateext.dtr
+man/man8/logcheck.8.gz
+man/man8/logtail.8.gz
+man/man8/logtail2.8.gz
 sbin/logcheck
 sbin/logtail
 sbin/logtail2
@@ -208,7 +210,9 @@ sbin/logtail2
 @dirrm %%DATADIR%%
 @cwd /
 @exec mkdir -p %%DBDIR%%
+@exec chown %%LOGCHECK_USER%%:%%LOGCHECK_GROUP%% %%DBDIR%%
 @dirrmtry %%DBDIR%%
 @exec mkdir -p %%RUNDIR%%
+@exec chown %%LOGCHECK_USER%%:%%LOGCHECK_GROUP%% %%RUNDIR%%
 @dirrmtry %%RUNDIR%%
 @cwd

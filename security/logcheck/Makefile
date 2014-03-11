@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	logcheck
-PORTVERSION=	1.3.15
-PORTREVISION=	2
+PORTVERSION=	1.3.16
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Auditing tool for system logs on Unix boxes
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	mime-construct:${PORTSDIR}/mail/mime-construct \
 		lockfile:${PORTSDIR}/mail/procmail \
 		bash:${PORTSDIR}/shells/bash
 
-PORTSCOUT=	limit:^1\.2\.
-
 LOGCHECK_USER=	logcheck
-LOGCHECK_UID=	915
 LOGCHECK_GROUP=	${LOGCHECK_USER}
-LOGCHECK_GID=	${LOGCHECK_UID}
+USERS=		${LOGCHECK_USER}
+GROUPS=		${LOGCHECK_GROUP}
 
 BASEDIR?=	# None. portlint compliance
 DBDIR=		${BASEDIR}/var/db/${PORTNAME}
@@ -34,23 +33,24 @@ OPTIONS_DEFAULT=CRON
 
 # Enable Perl dependency for logtail script
 USES=		perl5 shebangfix
+USE_XZ=		yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S!_!-!}
 BINMODE=	755
 SHAREMODE=	640
 SUB_LIST+=	LOGCHECK_USER=${LOGCHECK_USER} \
-		LOGCHECK_UID=${LOGCHECK_UID} \
 		LOGCHECK_GROUP=${LOGCHECK_GROUP} \
-		LOGCHECK_GID=${LOGCHECK_GID} \
-		PW=${PW} CRON=${PORT_OPTIONS:MCRON}
+		CRON=${PORT_OPTIONS:MCRON}
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
-PLIST_SUB+=	DBDIR=${DBDIR} RUNDIR=${RUNDIR}
-SHEBANG_FILES=	src/logtail src/logtail2
+PLIST_SUB+=	LOGCHECK_USER=${LOGCHECK_USER} \
+		LOGCHECK_GROUP=${LOGCHECK_GROUP} \
+		DBDIR=${DBDIR} RUNDIR=${RUNDIR}
+SHEBANG_FILES=	src/logcheck src/logtail src/logtail2
 CONFIG_DIRS=	cracking.d ignore.d.paranoid ignore.d.server \
 		ignore.d.workstation violations.d violations.ignore.d
 DOCS=		AUTHORS CHANGES CREDITS LICENSE TODO docs/README*
 PORTDOCS=	${DOCS:T}
-MAN8=		logcheck.8 logtail.8 logtail2.8
+MAN_FILES=	logcheck.8 logtail.8 logtail2.8
 
 PATCH_LIST=	extra-patch-debian__logcheck.cron.d \
 		extra-patch-docs__logcheck.8 \
@@ -59,7 +59,6 @@ PATCH_LIST=	extra-patch-debian__logcheck.cron.d \
 		extra-patch-src__logtail2
 EXTRA_PATCHES=	${PATCH_LIST:C|^|${WRKDIR}/|g}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:
@@ -75,43 +74,34 @@ do-build:
 		${WRKSRC}/etc/logcheck.logfiles
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail2 ${PREFIX}/sbin
-	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${INSTALL} -d -o ${LOGCHECK_USER} -g ${LOGCHECK_GROUP} \
-		${DBDIR} ${RUNDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${LOGCHECK_USER}:${LOGCHECK_GROUP} \
-		${DBDIR} ${RUNDIR}' >> ${TMPPLIST}
-	@${INSTALL} -d -g ${LOGCHECK_GROUP} ${ETCDIR}
-	@${INSTALL_DATA} -g ${LOGCHECK_GROUP} ${WRKSRC}/etc/logcheck.conf \
-		${ETCDIR}/logcheck.conf.sample
-	@${INSTALL_DATA} -g ${LOGCHECK_GROUP} ${WRKSRC}/etc/logcheck.logfiles \
-		${ETCDIR}/logcheck.logfiles.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail2 ${STAGEDIR}${PREFIX}/sbin
+	@${INSTALL} -d ${STAGEDIR}${DBDIR} ${STAGEDIR}${RUNDIR}
+	@${INSTALL} -d ${STAGEDIR}${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.conf \
+		${STAGEDIR}${ETCDIR}/logcheck.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.logfiles \
+		${STAGEDIR}${ETCDIR}/logcheck.logfiles.sample
 .for i in ${CONFIG_DIRS}
-	@${INSTALL} -d -g ${LOGCHECK_GROUP} ${ETCDIR}/${i}
-	@${INSTALL_DATA} -g ${LOGCHECK_GROUP} ${WRKSRC}/rulefiles/linux/${i}/* \
-		${ETCDIR}/${i}
+	@${INSTALL} -d ${STAGEDIR}${ETCDIR}/${i}
+	@${INSTALL_DATA} ${WRKSRC}/rulefiles/linux/${i}/* \
+		${STAGEDIR}${ETCDIR}/${i}
 .endfor
-	@${INSTALL} -d -g ${LOGCHECK_GROUP} ${DATADIR}/detectrotate
-	@${INSTALL_DATA} -g ${LOGCHECK_GROUP} ${WRKSRC}/src/detectrotate/*.dtr \
-		${DATADIR}/detectrotate
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${INSTALL} -d ${EXAMPLESDIR}
+	@${INSTALL} -d ${STAGEDIR}${DATADIR}/detectrotate
+	@${INSTALL_DATA} ${WRKSRC}/src/detectrotate/*.dtr \
+		${STAGEDIR}${DATADIR}/detectrotate
+	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} -m 0644 ${WRKSRC}/debian/logcheck.cron.d \
-		${EXAMPLESDIR}/crontab.in
-.endif
+		${STAGEDIR}${EXAMPLESDIR}/crontab.in
 	@${ECHO_CMD} '@exec ${CHGRP} -R ${LOGCHECK_GROUP} \
 		${ETCDIR:S|^${PREFIX}/|%D/|} \
 		${DATADIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${INSTALL_MAN} ${WRKSRC}/docs/*.8 ${MAN8PREFIX}/man/man8
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} -m 0644 ${DOCS} ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+.for i in ${MAN_FILES}
+	@${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${MAN8PREFIX}/man/man8
+	@${GZIP_CMD} ${STAGEDIR}${MAN8PREFIX}/man/man8/$i
+.endfor
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} -m 0644 ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

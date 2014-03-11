@@ -21,13 +21,5 @@ POST-DEINSTALL)
 		rm -f /var/cron/tabs/${user}
 		echo "---> Removed crontab for \"${user}\"."
 	fi
-
-	if %%PW%% user show ${user} > /dev/null 2>&1; then
-		%%PW%% user del ${user}
-		echo "---> Removed user \"${user}\" and group \"${group}\"."
-	fi
-	if %%PW%% group show ${group} > /dev/null 2>&1; then
-		%%PW%% group del ${group}
-	fi
 ;;
 esac
