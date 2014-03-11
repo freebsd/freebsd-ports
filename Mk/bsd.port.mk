@@ -94,8 +94,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # EXTRACT_SUFX	- Suffix for archive names
 #				  You never have to set both DISTFILES and EXTRACT_SUFX.
 #				  Default: .tar.bz2 if USE_BZIP2 is set, .lzh if USE_LHA is set,
-#				  .zip if USE_ZIP is set, .tar.xz if USE_XZ is set, .tar.gz
-#				  otherwise).
+#				  .tar.xz if USE_XZ is set, .tar.gz otherwise).
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.  See bsd.sites.mk for common choices for
 #				  MASTER_SITES.
@@ -332,8 +331,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_LHA		- If set, this port distfile uses lha for compression
 # USE_XZ		- If set, this port tarballs use xz (or lzma)
 #				  for compression
-# USE_ZIP		- If set, this port distfile uses zip, not tar w/[bg]zip
-#				  for compression.
 # USE_GCC		- If set, this port requires this version of gcc, either in
 #				  the system or installed from a port.
 # USE_CSTD		- Override the default C language standard (gnu89, gnu99)
@@ -812,7 +809,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # For extract:
 #
 # EXTRACT_CMD	- Command for extracting archive: "bzip2" if USE_BZIP2
-#				  is set, "unzip" if USE_ZIP is set, "gzip" otherwise.
+#				  is set, "gzip" otherwise.
 # EXTRACT_BEFORE_ARGS
 #				- Arguments to ${EXTRACT_CMD} before filename.
 #				  Default: "-dc"
@@ -1526,8 +1523,6 @@ ${_f}_ARGS:=	${f:C/^[^\:]*\://g}
 EXTRACT_SUFX?=			.tar.bz2
 .elif defined(USE_LHA)
 EXTRACT_SUFX?=			.lzh
-.elif defined(USE_ZIP)
-EXTRACT_SUFX?=			.zip
 .elif defined(USE_XZ)
 EXTRACT_SUFX?=			.tar.xz
 .else
@@ -1700,9 +1695,6 @@ PKG_DEPENDS+=		${LOCALBASE}/sbin/pkg:${PORTSDIR}/${PKGNG_ORIGIN}
 
 .if defined(USE_LHA)
 EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
-.endif
-.if defined(USE_ZIP)
-EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 .endif
 
 .if defined(USE_GCC)
@@ -2172,10 +2164,6 @@ TAR?=	/usr/bin/tar
 EXTRACT_CMD?=		${LHA_CMD}
 EXTRACT_BEFORE_ARGS?=	xfqw=${WRKDIR}
 EXTRACT_AFTER_ARGS?=
-.elif defined(USE_ZIP)
-EXTRACT_CMD?=		${UNZIP_CMD}
-EXTRACT_BEFORE_ARGS?=	-qo
-EXTRACT_AFTER_ARGS?=	-d ${WRKDIR}
 .else
 EXTRACT_CMD?=	${TAR}
 EXTRACT_BEFORE_ARGS?=	-xf
