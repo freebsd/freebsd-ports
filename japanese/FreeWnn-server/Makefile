@@ -15,70 +15,25 @@ DISTNAME=	${PORTNAME}-1.1.1-a021
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	Japanese/Chinese/Korean input method (Japanese server)
 
-GNU_CONFIGURE=	yes
-USES=		libtool
-USE_AUTOTOOLS=	aclocal autoheader autoconf libtoolize
-LIBTOOLIZE_ARGS=-i -c -f
-USE_BZIP2=	yes
-USE_LDCONFIG=	yes
-USE_RC_SUBR=	# defined below
-MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}" \
-		LIBRARY_WNNMANDIR="" \
-		SERVER_WNNMANDIR="2.env 4.cmd 6.jutil"
-ALL_TARGET=	includes all
-INSTALL_TARGET=	install install.man
-SUB_FILES=	pkg-install
-PKGINSTALL=	${WRKDIR}/pkg-install
-MAKE_JOBS_UNSAFE=	yes
-USERS=		wnn
+OPTIONS_DEFAULT?=	WNN SERVER
+MANLANG?=		ja
+USERS=			wnn
 
-WNNTYPE?=	WNN
-CONFIGURE_ARGS=	--enable-libraries=no \
-		${CONFIGURE_ARGS.${WNNTYPE}}
-.if !defined(WITHOUT_INET6)
-CONFIGURE_ARGS+=--enable-ipv6
-.endif
+.include "${.CURDIR}/../../japanese/FreeWnn-lib/Makefile.common"
 
-# Wnn
-LIB_DEPENDS.WNN=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
-CONFIGURE_ARGS.WNN= 	--enable-cWnn=no --enable-kWnn=no \
-			--with-libwnn=-lwnn \
+WNN_LIB_DEPENDS+=	libwnn.so:${PORTSDIR}/japanese/FreeWnn-lib
+WNN_CONFIGURE_ON+=	--with-libwnn=-lwnn \
 			--with-wnn-libraries="${PREFIX}/lib"
-MAN1.WNN=	atod.1 atof.1 dtoa.1 jserver.1 oldatonewa.1 uum.1 wddel.1 \
-		wdreg.1 wnnkill.1 wnnstat.1 wnntouch.1
-MAN4.WNN=	2a_ctrl.4 2b_romkana.4 cvt_key_tbl.4 fzk.data.4 fzk.u.4	\
-		hinsi_data.4 jserverrc.4 mode.4 serverdefs.4 ujis_dic.4	\
-		uumkey.4 uumrc.4 wnnenvrc.4
-MAN5.WNN=	pubdic.5 usr_dic.5
-MANLANG.WNN=	ja
-USE_RC_SUBR.WNN=	wnn
+WNN_USE=	RC_SUBR=wnn
 
-# CWnn
-CONFIGURE_ARGS.CWNN+=	--enable-Wnn=no --enable-kWnn=no		\
-			--with-libcwnn=-lcwnn \
+CWNN_LIB_DEPENDS+=	libcwnn.so:${PORTSDIR}/chinese/FreeWnn-lib
+CWNN_CONFIGURE_ON+=	--with-libcwnn=-lcwnn \
 			--with-cwnn-libraries="${PREFIX}/lib"
-LIB_DEPENDS.CWNN=	cwnn.0:${PORTSDIR}/chinese/FreeWnn-lib
-MAN1.CWNN=	cserver.1 cuum.1 cwnnkill.1 cwnnstat.1 catod.1 catof.1	\
-		cdicsort.1 cdtoa.1 cwddel.1 cwdreg.1 cwnntouch.1
-MAN4.CWNN=	cst_end.4 cwnn.4 cenv.4 ckey.4
-USE_RC_SUBR.CWNN=	cwnn twnn
+CWNN_USE=	RC_SUBR=cwnn RC_SUBR=twnn
 
-# KWnn
-CONFIGURE_ARGS.KWNN+=	--enable-Wnn=no --enable-cWnn=no \
-			--with-libkwnn=-lkwnn \
+KWNN_LIB_DEPENDS+=	libkwnn.so:${PORTSDIR}/korean/FreeWnn-lib
+KWNN_CONFIGURE_ON+=	--with-libkwnn=-lkwnn \
 			--with-kwnn-libraries="${PREFIX}/lib"
-LIB_DEPENDS.KWNN=	kwnn.0:${PORTSDIR}/korean/FreeWnn-lib
-USE_RC_SUBR.KWNN=	kwnn
-
-.for M in LIB_DEPENDS MAN1 MAN4 MAN5 MLINKS MANLANG USE_RC_SUBR
-. if defined(${M}.${WNNTYPE})
-${M}+=		${${M}.${WNNTYPE}}
-. endif
-.endfor
-
-NO_STAGE=	yes
-post-install:
-	${SETENV} PKG_PREFIX=${PREFIX} \
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+KWNN_USE=	RC_SUBR=kwnn
 
 .include <bsd.port.mk>

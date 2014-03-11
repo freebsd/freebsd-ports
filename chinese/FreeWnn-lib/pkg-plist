@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/cwnn/commonhd.h
 include/cwnn/cplib.h
 include/cwnn/jllib.h
@@ -6,14 +7,6 @@ include/cwnn/msg.h
 include/cwnn/rk_spclval.h
 include/cwnn/wnnerror.h
 @dirrm include/cwnn
-lib/wnn/cvt_key_empty
-lib/wnn/cvt_key_tbl
-lib/wnn/cvt_key_tbl.ST
-lib/wnn/cvt_key_tbl.gm
-lib/wnn/cvt_key_tbl.kt
-lib/wnn/cvt_key_tbl.mv
-lib/wnn/cvt_key_tbl.vt
-lib/wnn/serverdefs
 lib/wnn/zh_CN/cixing.data
 lib/wnn/zh_CN/cserverrc
 lib/wnn/zh_CN/libwnn.msg
@@ -107,6 +100,7 @@ lib/libcwnn.a
 lib/libcwnn.la
 lib/libcwnn.so
 lib/libcwnn.so.0
+lib/libcwnn.so.0.0.0
 @dirrm lib/wnn/zh_TW/rk_z
 @dirrm lib/wnn/zh_TW/rk_p
 @dirrm lib/wnn/zh_TW/rk
@@ -115,4 +109,3 @@ lib/libcwnn.so.0
 @dirrm lib/wnn/zh_CN/rk_p
 @dirrm lib/wnn/zh_CN/rk
 @dirrm lib/wnn/zh_CN
-@dirrmtry lib/wnn

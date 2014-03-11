@@ -1,0 +1,28 @@
+# $FreeBSD$
+
+GNU_CONFIGURE=	yes
+USES=		libtool
+USE_AUTOTOOLS=	aclocal autoheader autoconf libtoolize
+LIBTOOLIZE_ARGS=-i -c -f
+USE_BZIP2=	yes
+USE_LDCONFIG=	yes
+MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}" \
+		LIBRARY_WNNMANDIR="3.libwnn" \
+		SERVER_WNNMANDIR=""
+ALL_TARGET=	includes all
+INSTALL_TARGET=	install install.man
+MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS_SINGLE=		TYPE LANG
+OPTIONS_SINGLE_TYPE=	SERVER LIB
+OPTIONS_SINGLE_LANG=	WNN KWNN CWNN
+OPTIONS_DEFAULT?=	SERVER WNN
+
+IPV6_CONFIGURE_ON=	--enable-ipv6
+WNN_CONFIGURE_ON=	--enable-cWnn=no --enable-kWnn=no
+CWNN_CONFIGURE_ON=	--enable-Wnn=no --enable-kWnn=no
+CWNN_LIB_DEPENDS=	libwnn.so:${PORTSDIR}/japanese/FreeWnn-lib
+KWNN_CONFIGURE_ON=	--enable-Wnn=no --enable-cWnn=no
+KWNN_LIB_DEPENDS=	libwnn.so:${PORTSDIR}/japanese/FreeWnn-lib
+SERVER_CONFIGURE_ON=	--enable-server=yes --enable-libraries=no
+LIB_CONFIGURE_ON=	--enable-server=no  --enable-libraries=yes
