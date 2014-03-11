@@ -251,6 +251,12 @@ share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/ports-list
 share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/pkg-desc
 share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/pkg-icon.png
 share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/post-install.sh
+share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/pkg-desc
+share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/pkg-icon.png
+share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/pkg-parent
+share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/ports-list
+share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/post-install.sh
+share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/post-remove.sh
 share/pcbsd/metaset/pcbsd/I3/pkg-icon.png
 share/pcbsd/metaset/pcbsd/I3/pkg-desc
 share/pcbsd/metaset/pcbsd/I3/pkg-parent
@@ -533,12 +539,14 @@ share/pcbsd/de-profiles/cinnamon.profile
 share/pcbsd/de-profiles/xfce.profile
 share/pcbsd/pc-updatemanager/conf/sysupdate.conf
 share/pcbsd/pc-updatemanager/conf/security.key
+share/pcbsd/pc-updatemanager/etcmerge
 share/pcbsd/scripts/functions.sh
 share/pcbsd/scripts/mkzfsdir.sh
 share/pcbsd/scripts/reset-firewall
 share/pcbsd/scripts/rmzfsdir.sh
 share/pcbsd/scripts/sys-init.sh
-etc/warden.conf
+share/pcbsd/version
+etc/warden.conf.dist
 etc/pc-activedirectory.conf
 etc/pc-ldap.conf
 etc/rc.activedirectory
@@ -581,7 +589,7 @@ share/pbi-manager/.pbimount
 share/pbi-manager/.pbisyscmd
 share/pbi-manager/.pbisyslisten
 share/pbi-manager/.ldconfig
-share/pbi-manager/.mount_nullfs
+share/pbi-manager/.pbifs
 share/pbi-manager/.pbiwrapper-i386
 share/pbi-manager/.pbiwrapper-amd64
 share/pbi-manager/module-examples/gimp/xdg-menu/gimp.desktop
@@ -730,6 +738,7 @@ man/man8/pc-sysinstall.8.gz
 @dirrm share/pcbsd/metaset/pcbsd/KDE-SDK
 @dirrm share/pcbsd/metaset/pcbsd/KDE-Graphics
 @dirrm share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-96
+@dirrm share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304
 @dirrm share/pcbsd/metaset/pcbsd/KDE-Toys
 @dirrm share/pcbsd/metaset/pcbsd/Ratpoison
 @dirrm share/pcbsd/metaset/pcbsd/Development-VCS

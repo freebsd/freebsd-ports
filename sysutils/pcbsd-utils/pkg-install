@@ -34,7 +34,13 @@ if [ -e "${PREFIX}/share/pbi-manager/.pbime" ] ; then
    install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.ldconfig /usr/pbi/.ldconfig
    install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.pbisyscmd /usr/pbi/.pbisyscmd
    install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.pbisyslisten /usr/pbi/.pbisyslisten
-   install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.mount_nullfs /usr/pbi/.mount_nullfs
+   install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.pbifs /usr/pbi/.pbifs
+fi
+
+# Check if we have our warden.conf file
+if [ ! -e "/usr/local/etc/warden.conf" ] ; then
+   cp /usr/local/etc/warden.conf.dist /usr/local/etc/warden.conf
+   chmod 644 /usr/local/etc/warden.conf
 fi
 
 exit 0
