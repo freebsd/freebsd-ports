@@ -137,29 +137,36 @@ you update your ports collection, before attempting any port upgrades.
 
   Perl 5.12 has been removed.  The default Perl is lang/perl5.16.
 
+  pkg(8) users:
+    1) Update the origin to point to 5.16:
+       pkg set -o lang/perl5.12:lang/perl5.16
+
+    2) Upgrade perl and all dependencies:
+       pkg install -Rf lang/perl5.16
+
   Portupgrade users:
     0) Fix pkgdb.db (for safety):
-	pkgdb -Ff
+       pkgdb -Ff
 
     1) Reinstall new version of Perl (5.16):
-	portupgrade -o lang/perl5.16 -f lang/perl5.12
+       portupgrade -o lang/perl5.16 -f lang/perl5.12
 
     2) Reinstall everything that depends on Perl:
-	portupgrade -fr lang/perl5.16
+       portupgrade -fr lang/perl5.16
 
   Portmaster users:
-	portmaster -o lang/perl5.16 lang/perl5.12
+    portmaster -o lang/perl5.16 lang/perl5.12
 
-	Conservative:
-	portmaster p5-
+    Conservative:
+      portmaster p5-
 
-	Comprehensive (but perhaps overkill):
-	portmaster -r perl-
+    Comprehensive (but perhaps overkill):
+      portmaster -r perl-
 
-  Note: If the "perl-" glob matches more than one port you will need to specify
-	the name of the Perl directory in /var/db/pkg explicitly.  Also,
-	depending on when you've upgraded perl 5.12 last, the prefix may be
-	perl5- or perl5.12-.
+    Note: If the "perl-" glob matches more than one port specify the name of
+      the Perl directory in /var/db/pkg explicitly.  Also, depending on when
+      perl 5.12 was installed last, the prefix may be perl-, perl5- or
+      perl5.12-.
 
 20140211:
   AFFECTS: users of lang/php* database/postgresql* database/mysql* www/apache*
