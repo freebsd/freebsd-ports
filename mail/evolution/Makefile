@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=--with-openldap=no
 .endif
 
 .if ${PORT_OPTIONS:MSPAMASSASSIN}
-RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/spamassassin
 .endif
 
 .if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL) || defined(NO_KERBEROS)

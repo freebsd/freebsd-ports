@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Scan an IMAP inbox for spam using SpamAssassin
 
-RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/spamassassin
 
 DISTDATE=	20100303
 NO_BUILD=	yes

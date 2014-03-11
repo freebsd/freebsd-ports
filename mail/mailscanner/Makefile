@@ -65,7 +65,7 @@ OPTIONS_DEFAULT=	SPAMASSASSIN CLAMAV
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSPAMASSASSIN}
-RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/spamassassin
 PLIST_SUB+=	SPAMASSASSIN=""
 .else
 PLIST_SUB+=	SPAMASSASSIN="@comment "

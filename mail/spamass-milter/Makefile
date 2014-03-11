@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	spamass-milt
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Sendmail Milter (mail filter) plugin for SpamAssassin
 
-BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2

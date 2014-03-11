@@ -170,7 +170,7 @@ RUN_DEPENDS+=	clamd:${PORTSDIR}/security/clamav
 .endif
 
 .if ${PORT_OPTIONS:MSPAMASSASSIN}
-RUN_DEPENDS+=	p5-Mail-SpamAssassin>=0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS+=	spamassassin>=0:${PORTSDIR}/mail/spamassassin
 .endif
 
 .if ${PORT_OPTIONS:MGRAPHICS}

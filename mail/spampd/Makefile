@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.worlddesign.com/Content/rd/mta/spampd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spamassassin SMTP Proxy
 
-RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
+RUN_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin \
 		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server
 
 NO_BUILD=	yes
