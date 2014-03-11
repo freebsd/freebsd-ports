@@ -30,13 +30,11 @@ INSTALLS_ICONS=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
-MAN1=		rkward.1
 
 OPTIONS_DEFINE=	RECDEP
 RECDEP_DESC=	Recommended runtime dependencies
 OPTIONS_DEFAULT=RECDEP
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -74,6 +72,9 @@ pre-configure:
 	@(if [ ! -e ${LOCALBASE}/lib/R/lib/libR.so ] ; then \
 	${ECHO_MSG} "==> ${PKGNAME} requires math/R to be built WITH_LIBR" ; \
 	exit 1; fi)
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/share/apps/katepart/syntax/r.xml # Conflicts with kate
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install

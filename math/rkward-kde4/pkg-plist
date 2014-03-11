@@ -1,6 +1,7 @@
 bin/rkward
 lib/kde4/libexec/rkward.frontend
 lib/kde4/libexec/rkward.rbackend
+man/man1/rkward.1.gz
 share/applications/kde4/rkward.desktop
 share/apps/katepart/syntax/rkward.xml
 share/apps/rkward/00saveload/import/import_csv.js
