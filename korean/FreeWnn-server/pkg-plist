@@ -1,7 +1,10 @@
+@comment $FreeBSD$
 bin/kWnn4/katod
 bin/kWnn4/katof
 bin/kWnn4/kdtoa
+@owner wnn
 bin/kWnn4/kserver
+@owner root
 bin/kWnn4/kwddel
 bin/kWnn4/kwdreg
 bin/kWnn4/kwnnkill
@@ -13,3 +16,4 @@ lib/wnn/ko_KR/dic/sys/hword.dic
 lib/wnn/ko_KR/dic/sys/single.dic
 @dirrm lib/wnn/ko_KR/dic/sys
 @dirrm lib/wnn/ko_KR/dic
+@dirrm lib/wnn/ko_KR

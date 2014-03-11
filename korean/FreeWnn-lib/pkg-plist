@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/kwnn/commonhd.h
 include/kwnn/cplib.h
 include/kwnn/jllib.h
@@ -6,13 +7,6 @@ include/kwnn/msg.h
 include/kwnn/rk_spclval.h
 include/kwnn/wnnerror.h
 @dirrm include/kwnn
-lib/wnn/cvt_key_empty
-lib/wnn/cvt_key_tbl
-lib/wnn/cvt_key_tbl.ST
-lib/wnn/cvt_key_tbl.gm
-lib/wnn/cvt_key_tbl.kt
-lib/wnn/cvt_key_tbl.mv
-lib/wnn/cvt_key_tbl.vt
 lib/wnn/ko_KR/hinsi.data
 lib/wnn/ko_KR/kserverrc
 lib/wnn/ko_KR/libwnn.msg
@@ -31,11 +25,10 @@ lib/wnn/ko_KR/uumrc
 lib/wnn/ko_KR/wnnenvrc
 lib/wnn/ko_KR/wnnenvrc_R
 lib/wnn/ko_KR/wnnstat.msg
-lib/wnn/serverdefs
 lib/libkwnn.a
 lib/libkwnn.la
 lib/libkwnn.so
 lib/libkwnn.so.0
+lib/libkwnn.so.0.0.0
 @dirrm lib/wnn/ko_KR/rk
 @dirrm lib/wnn/ko_KR
-@dirrmtry lib/wnn

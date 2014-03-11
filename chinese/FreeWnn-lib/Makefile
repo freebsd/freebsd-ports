@@ -9,7 +9,6 @@ COMMENT=	A Japanese/Chinese/Korean input method (Chinese client libraries)
 MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
 PKGDIR=		${.CURDIR}
 
-WNNTYPE=	CWNN
+OPTIONS_DEFAULT=CWNN LIB
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
