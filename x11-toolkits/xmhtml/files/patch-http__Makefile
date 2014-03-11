@@ -1,31 +1,32 @@
---- http/Makefile.orig	1999-02-03 18:43:27.000000000 -0600
-+++ http/Makefile	2009-07-12 11:03:51.000000000 -0500
+--- http/Makefile.orig
++++ http/Makefile
 @@ -2,7 +2,7 @@
  # lint configuration. I use lclint.
  #
  
 -LIBRARY=libhttp.a
 +LIBRARY=libhttp.la
+ SHAREDLIB=libhttp.so.0
+ SONAME=libhttp.so.0
  
- # List of source, object and header files 
- SRCS=HTTP.c cookie.c
-@@ -20,16 +20,15 @@
+@@ -23,16 +23,15 @@
  # rule to create .o files from .c files 
  .c.o:
  	$(RM) $@
 -	$(CC) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) -c $<
 +	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) -c $<
  
- all: $(TARGET)
+-all: $(TARGET_STATIC) $(TARGET_SHARED)
++all: $(TARGET_STATIC)
  
  # targets to build
  
- $(TARGET):: $(OBJS)  
+ $(TARGET_STATIC):: $(OBJS)  
 -	$(RM) $@ \ 
 -	$(AR) $@ $(OBJS)  
 -	$(RANLIB) $@
 +	$(RM) $@
 +	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS:.o=.lo) -rpath ${PREFIX}/lib -version-info 0:2
  
- stamp-includes:
- 	@if [ -d ../include ]; then set +x; \
+ $(TARGET_SHARED):: $(OBJS)  
+ 	$(RM) $@ ; \

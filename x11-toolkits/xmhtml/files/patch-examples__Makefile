@@ -1,5 +1,5 @@
---- examples/Makefile.orig	1999-02-03 18:43:27.000000000 -0600
-+++ examples/Makefile	2009-07-12 11:02:35.000000000 -0500
+--- examples/Makefile.orig
++++ examples/Makefile
 @@ -11,10 +11,10 @@
  EXAMPLES=example_1 example_2 example_4
  

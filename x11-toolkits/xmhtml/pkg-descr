@@ -1,12 +1,13 @@
 XmHTML is a Motif widget capable of displaying HTML 3.2 documents.
 Features include a very good HTML parser (which is as also available
-as a Widget) with excellent document verification and repair capabilities.
+as a Widget) with excellent document verification and repair
+capabilities.
 
 Features built in support for X11 bitmaps, pixmaps, GIF87a & GIF89a
-(using a patent free LZW decoding method), animated gifs, JPEG (baseline and
-progressive) and PNG (all features supported), anchor highlighting, text
-justification, full HTML <FRAME> support, HTML frames and many more. It also
-comes with four examples demonstrating possible use of the XmHTML widget.
+(using a patent free LZW decoding method), animated gifs, JPEG
+(baseline and progressive) and PNG (all features supported), anchor
+highlighting, text justification, full HTML <FRAME> support, HTML
+frames and many more. It also comes with four examples demonstrating
+possible use of the XmHTML widget.
 
-XmHTML is currently in Beta stage and publically available.
-Mailing list:  Majordomo@simplicity.net
+WWW: http://sourceforge.net/projects/xmhtml/
