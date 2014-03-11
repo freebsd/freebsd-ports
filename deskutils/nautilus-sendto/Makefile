@@ -11,6 +11,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integration between nautilus, evolution, and pidgin
 
+DEPRECATED=	nautilus will be updated to the 3.x version which is not compatible with 2.x
+EXPIRATION_DATE=2014-04-10
+
 MAN1=		nautilus-sendto.1
 GLIB_SCHEMAS=	org.gnome.Nautilus.Sendto.gschema.xml
 USE_BZIP2=	yes

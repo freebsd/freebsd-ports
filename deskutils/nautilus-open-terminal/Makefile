@@ -11,6 +11,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus extension which allows you to open a terminal
 
+DEPRECATED=	nautilus will be updated to the 3.x version which is not compatible with 2.x
+EXPIRATION_DATE=2014-04-10
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	nautilus2 gnomeprefix intlhack gnomehack
