@@ -10,8 +10,8 @@
 +    OTHER_LDLIBS += -liconv
 +  else
 +    ifneq ($(OS_NAME), netbsd)
-+      CPPFLAGS += %%ICONV_INC%%
-+      OTHER_LDLIBS += %%ICONV_LIB%%
++      CPPFLAGS += %%ICONV_CPPFLAGS%%
++      OTHER_LDLIBS += %%ICONV_LDFLAGS%%
 +    endif
 +  endif
 +endif
@@ -128,7 +128,7 @@
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
  else
 -override LIBCXX                  = -lstdc++
-+override LIBCXX                  = %%CXX_LIBS%%
++override LIBCXX                  = %%CXX_LDFLAGS%%
  endif
  override LIBPOSIX4               =
  override LIBSOCKET               =
@@ -3070,7 +3070,7 @@
    OTHER_CXXFLAGS += $(ZINCLUDE)
    LDDFLAGS += $(ZIPOBJS)
 + else
-+  LDDFLAGS += %%ZLIB_LIBS%%
++  LDDFLAGS += %%ZLIB_LDFLAGS%%
 +  OTHER_CXXFLAGS += -DSYSTEM_ZLIB
 + endif
  else
@@ -3309,7 +3309,7 @@
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
  else
 -override LIBCXX                  = -lstdc++
-+override LIBCXX                  = %%CXX_LIBS%%
++override LIBCXX                  = %%CXX_LDFLAGS%%
  endif
  override LIBPOSIX4               =
  override LIBSOCKET               =
@@ -3413,7 +3413,7 @@
 +    LDFLAGS += -Wl,--export-dynamic
 +  endif
 +  ifeq ($(SYSTEM_ZLIB),true)
-+      OTHER_LDLIBS += %%ZLIB_LIBS%%
++      OTHER_LDLIBS += %%ZLIB_LDFLAGS%%
 +  endif
 +endif
  ifneq (,$(findstring $(PLATFORM), linux solaris))	# UNIX systems
@@ -3862,8 +3862,8 @@
 +    LDFLAGS += -Wl,--no-whole-archive
 +  endif
 +# Use CPPFLAGS instead of OTHER_INCLUDES to force this last
-+  CPPFLAGS += %%ICONV_INC%%
-+  OTHER_LDLIBS += %%ICONV_LIB%%
++  CPPFLAGS += %%ICONV_CPPFLAGS%%
++  OTHER_LDLIBS += %%ICONV_LDFLAGS%%
 +else
    LDFLAGS += -L $(LIBDIR)/$(LIBARCH)/jli
    OTHER_LDLIBS += -ljli
@@ -4014,7 +4014,7 @@
 +ifneq ($(SYSTEM_ZLIB),true)
 +  OTHER_INCLUDES += -I$(ZIP_SRC)
 +else
-+  LDLIBS += %%ZLIB_LIBS%%
++  LDLIBS += %%ZLIB_LDFLAGS%%
 +endif
  
  #
@@ -4175,8 +4175,8 @@
 +    OTHER_LDLIBS += -liconv
 +  else
 +    ifneq ($(OS_NAME), netbsd)
-+      CPPFLAGS += %%ICONV_INC%%
-+      OTHER_LDLIBS += %%ICONV_LIB%%
++      CPPFLAGS += %%ICONV_CPPFLAGS%%
++      OTHER_LDLIBS += %%ICONV_LDFLAGS%%
 +    endif
 +  endif
 +endif
@@ -4283,7 +4283,7 @@
  # Link to JVM library for JVM_Zip* functions
  #
 +ifeq ($(SYSTEM_ZLIB),true)
-+OTHER_LDLIBS = %%ZLIB_LIBS%%
++OTHER_LDLIBS = %%ZLIB_LDFLAGS%%
 +else
  OTHER_LDLIBS = $(JVMLIB)
 +endif
@@ -4665,8 +4665,8 @@
 +    CFLAGS += -DPNG_NO_MMX_CODE
 +    CPPFLAGS += -I$(OPENWIN_HOME)/include \
 +                -I$(OPENWIN_HOME)/include/X11/extensions
-+    CPPFLAGS += %%ICONV_INC%%
-+    OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext %%ICONV_LIB%% $(LIBM) -pthread
++    CPPFLAGS += %%ICONV_CPPFLAGS%%
++    OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext %%ICONV_LDFLAGS%% $(LIBM) -pthread
 +  else
 +    CPPFLAGS += -I$(OPENWIN_HOME)/include -I$(OPENWIN_HOME)/include/X11/extensions
 +    OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext $(LIBM) -lpthread
@@ -4767,7 +4767,7 @@
 -      FT_OPTIONS += -Wl,-rpath -Wl,$(FT_LIB) -lfreetype
 +  else 
 +    ifeq ($(PLATFORM), bsd)
-+      FT_OPTIONS += -lfreetype %%ZLIB_LIBS%%
++      FT_OPTIONS += -lfreetype %%ZLIB_LDFLAGS%%
 +    else # linux
 +        FT_OPTIONS += -Wl,-rpath -Wl,$(FREETYPE_LIB_PATH) -lfreetype
 +    endif
