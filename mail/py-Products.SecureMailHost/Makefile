@@ -13,7 +13,7 @@ COMMENT=	Reimplementation of the standard Zope2 MailHost
 
 LICENSE=	ZPL21
 
-USZS=		zip
+USES=		zip
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
