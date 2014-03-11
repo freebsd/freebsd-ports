@@ -11,7 +11,7 @@ DISTNAME=	jargon-fpw${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The famous jargon file (EPWING V1 format)
 
-USES=		zip
+USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/jargon
 EXTRACT_BEFORE_ARGS=	-qL
