@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.cis.uab.edu/hyatt/crafty/pgn/ \
 DISTFILES=	enormous.zip
 EXTRACT_ONLY=	${DISTFILES}
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enormous opening book (about 270 MByte) for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty

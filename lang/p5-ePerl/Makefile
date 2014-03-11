@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Modules of ePerl package: Parse::ePerl, Apache::ePerl
 
 MAKE_JOBS_UNSAFE=	yes
