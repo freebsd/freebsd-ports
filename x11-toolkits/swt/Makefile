@@ -23,7 +23,7 @@ SWT_VERSION=	3557
 OUTPUT_JAR=	swt.jar
 
 USE_GL=		yes
-USES=		pkgconfig zip
+USES=		pkgconfig zip:infozip
 USE_GNOME=	gtk20
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
