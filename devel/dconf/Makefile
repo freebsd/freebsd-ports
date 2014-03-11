@@ -54,7 +54,7 @@ post-patch:
 		${WRKSRC}/editor/Makefile.in
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/dconf/db
-	@${MKDIR} ${PREFIX}/etc/dconf/profile
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/db
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/profile
 
 .include <bsd.port.mk>
