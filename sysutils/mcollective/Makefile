@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mcollective
-PORTVERSION=	2.2.4
+PORTVERSION=	2.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A modern scalable datacenter orchestration framework
@@ -25,7 +24,6 @@ SCRIPTS=	mco mc-call-agent
 
 SUB_LIST+=	RUBY=${RUBY}
 
-NO_STAGE=	yes
 do-patch:
 	@${REINPLACE_CMD} -e "s|/etc/mcollective|${ETCDIR}|" \
 	    ${WRKSRC}/bin/mcollectived \
@@ -39,22 +37,22 @@ do-patch:
 	    ${WRKSRC}/etc/client.cfg.dist
 
 do-install:
-	@(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${RUBY_SITELIBDIR})
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/plugins/mcollective && ${COPYTREE_SHARE} \* ${DATADIR})
+	@(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_SITELIBDIR})
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	@(cd ${WRKSRC}/plugins/mcollective && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
 
 .for script in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${script} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${script} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/mcollectived ${PREFIX}/sbin/mcollectived
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/mcollectived ${STAGEDIR}${PREFIX}/sbin/mcollectived
 
-	${MKDIR} ${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/client.cfg.dist ${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/server.cfg.dist ${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/client.cfg.dist ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/server.cfg.dist ${STAGEDIR}${ETCDIR}
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
