@@ -17,7 +17,6 @@ RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool glib20 gtk20 libglade2
-NO_STAGE=	yes
 USES=		gettext gmake pkgconfig
 
 .include <bsd.port.mk>

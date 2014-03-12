@@ -747,6 +747,9 @@ share/locale/th/LC_MESSAGES/gmpc.mo
 share/locale/tr/LC_MESSAGES/gmpc.mo
 share/locale/zh_CN/LC_MESSAGES/gmpc.mo
 share/locale/zh_TW/LC_MESSAGES/gmpc.mo
+man/man1/gmpc-remote.1.gz
+man/man1/gmpc.1.gz
+man/man1/gmpc-remote-stream.1.gz
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/jv/LC_MESSAGES
