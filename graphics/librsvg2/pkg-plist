@@ -48,6 +48,7 @@ share/themes/bubble/gtk-2.0/gtkrc
 share/themes/bubble/gtk-2.0/orange.svg
 share/themes/bubble/gtk-2.0/purple.svg
 share/themes/bubble/gtk-2.0/red.svg
+man/man1/rsvg-convert.1.gz
 @dirrm share/doc/rsvg-2.0
 @dirrm include/librsvg-2.0/librsvg
 @dirrm include/librsvg-2.0
