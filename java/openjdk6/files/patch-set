@@ -5601,6 +5601,17 @@
              /* There can't be more than 64K labels because of the limit
               * on per-method byte code length.
               */
+--- jdk/src/share/native/common/jdk_util.c
++++ jdk/src/share/native/common/jdk_util.c
+@@ -76,7 +76,7 @@
+     }
+ 
+ 
+-    memset(info, 0, sizeof(info_size));
++    memset(info, 0, info_size);
+     info->jdk_version = ((jdk_major_version & 0xFF) << 24) |
+                         ((jdk_minor_version & 0xFF) << 16) |
+                         ((jdk_micro_version & 0xFF) << 8)  |
 --- jdk/src/share/native/java/io/io_util.h
 +++ jdk/src/share/native/java/io/io_util.h
 @@ -29,7 +29,15 @@
