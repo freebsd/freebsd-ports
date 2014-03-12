@@ -7,7 +7,6 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper for AT&T Graphviz
@@ -48,20 +47,16 @@ TEST_DEPENDS=	p5-Test-Pod>=1.45:${PORTSDIR}/devel/p5-Test-Pod \
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USE_PERL5=	5.14.2+ configure
-USES=		perl5 shebangfix
+USE_PERL5=	configure
+USES=		perl5 shebangfix tar:tgz
 
 PORTEXAMPLES=	*
 
 SHEBANG_FILES=	scripts/generate.png.sh scripts/generate.svg.sh scripts/pod2html.sh
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.pre.mk>
 
