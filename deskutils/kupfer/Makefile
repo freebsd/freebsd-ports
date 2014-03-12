@@ -39,7 +39,7 @@ DOCSRCDIR2=	${WRKSRC}/Documentation
 DOCSDIR2=	${DOCSDIR}/Documentation
 DOC_FILES2=	Contributing.rst GTKTheming.rst PluginAPI.rst VersionHistory.rst
 
-OPTIONS_DEFINE=	NLS NAUTILUS RHYTHMBOX
+OPTIONS_DEFINE=	DOCS NAUTILUS NLS RHYTHMBOX
 
 OPTIONS_SUB=	yes
 
@@ -55,8 +55,8 @@ RHYTHMBOX_RUN_DEPENDS=	rhythmbox:${PORTSDIR}/audio/rhythmbox
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|--quiet||' ${WRKSRC}/bin/kupfer.in
-	@${REINPLACE_CMD} -e 's|locale.bindtextdomain|gettext.bindtextdomain|' \
-		-e 's|locale.bind_textdomain_codeset|gettext.bind_textdomain_codeset|' \
+	@${REINPLACE_CMD} -e 's|locale.bindtextdomain|gettext.bindtextdomain|; \
+		s|locale.bind_textdomain_codeset|gettext.bind_textdomain_codeset|' \
 		${WRKSRC}/kupfer/main.py
 
 .if ! ${PORT_OPTIONS:MNLS}
@@ -64,7 +64,8 @@ post-patch:
 .endif
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf configure --prefix=${STAGEDIR}${PREFIX} --mandir=${STAGEDIR}${PREFIX}/man
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf configure \
+		--prefix=${STAGEDIR}${PREFIX} --mandir=${STAGEDIR}${PREFIX}/man
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf build
