@@ -4247,6 +4247,7 @@
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
+    SUBDIR += rubygem-librarian
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little_plugger
     SUBDIR += rubygem-locale
