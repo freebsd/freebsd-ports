@@ -177,7 +177,7 @@ DEV_ERROR+=	'USE_ZIP is unsupported, please use USES=zip'
 .endif
 
 .if defined(USE_LHA)
-DEV_WARNING+=	'USE_LHA is deprecated, please use USES=lha'
+DEV_ERROR+=	'USE_LHA is deprecated, please use USES=lha'
 .endif
 
 .if defined(USE_XZ)
