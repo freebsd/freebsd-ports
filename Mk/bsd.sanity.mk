@@ -185,5 +185,5 @@ DEV_WARNING+=	'USE_XZ is deprecated, please use USES=tar:xz'
 .endif
 
 .if defined(USE_BZIP2)
-DEV_WARNING+=	'USE_XZ is deprecated, please use USES=tar:bzip2'
+DEV_WARNING+=	'USE_BZIP2 is deprecated, please use USES=tar:bzip2'
 .endif
