@@ -46,13 +46,6 @@ lib/libdiacanvas2.a
 lib/libdiacanvas2.la
 lib/libdiacanvas2.so
 lib/libdiacanvas2.so.0
-libdata/pkgconfig/diacanvas2.pc
-share/locale/nl/LC_MESSAGES/diacanvas.mo
-share/pygtk/2.0/defs/dia-boxed.defs
-share/pygtk/2.0/defs/diacanvas.defs
-share/pygtk/2.0/defs/diageometry.defs
-share/pygtk/2.0/defs/diashape.defs
-share/pygtk/2.0/defs/diaview.defs
 %%PYTHON_SITELIBDIR%%/diacanvas/__init__.py
 %%PYTHON_SITELIBDIR%%/diacanvas/__init__.pyc
 %%PYTHON_SITELIBDIR%%/diacanvas/__init__.pyo
@@ -71,5 +64,12 @@ share/pygtk/2.0/defs/diaview.defs
 %%PYTHON_SITELIBDIR%%/diacanvas/viewmodule.a
 %%PYTHON_SITELIBDIR%%/diacanvas/viewmodule.la
 %%PYTHON_SITELIBDIR%%/diacanvas/viewmodule.so
+libdata/pkgconfig/diacanvas2.pc
+%%NLS%%share/locale/nl/LC_MESSAGES/diacanvas.mo
+share/pygtk/2.0/defs/dia-boxed.defs
+share/pygtk/2.0/defs/diacanvas.defs
+share/pygtk/2.0/defs/diageometry.defs
+share/pygtk/2.0/defs/diashape.defs
+share/pygtk/2.0/defs/diaview.defs
 @dirrm %%PYTHON_SITELIBDIR%%/diacanvas
 @dirrm include/diacanvas
