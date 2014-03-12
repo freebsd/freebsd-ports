@@ -100,8 +100,9 @@ post-install:
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@(cd ${DOCSRCDIR2} && ${COPYTREE_SHARE} "src html" ${STAGEDIR}${DOCSDIR2})
 
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-.for l in ex_acodec ex_acodec_multi ex_audio_chain ex_audio_props ex_audio_simple \
+. for l in ex_acodec ex_acodec_multi ex_audio_chain ex_audio_props ex_audio_simple \
 	ex_bitmap ex_bitmap_flip ex_bitmap_target ex_blend ex_blend2 \
 	ex_blend_bench ex_blend_test ex_blit ex_clip ex_color ex_config ex_convert \
 	ex_dir ex_disable_screensaver ex_display_events ex_display_options \
@@ -118,7 +119,8 @@ post-install:
 	ex_synth ex_threads ex_threads2 ex_timedwait ex_timer ex_transform ex_ttf \
 	ex_user_events ex_utf8 ex_vsync ex_warp_mouse ex_windows ex_winfull
 	${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/${l}
-.endfor
+. endfor
+.endif
 
 
 .if ${PORT_OPTIONS:MDEMOS} && ${PORT_OPTIONS:MEXAMPLES}
