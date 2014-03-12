@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	porttools
-PORTVERSION=	1.00.2014.03.03
+PORTVERSION=	1.00.2014.03.11
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	xmj@chaot.net
@@ -17,7 +17,7 @@ RUN_DEPENDS=	portlint:${PORTSDIR}/ports-mgmt/portlint \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xmj
-GH_COMMIT=	d80bd60
+GH_COMMIT=	c3af7f0
 GH_TAGNAME=	${GH_COMMIT}
 
 # Make the version information of porttools itself
@@ -36,9 +36,5 @@ NEWFILE_RUN_DEPENDS=	newfile:${PORTSDIR}/devel/newfile
 .if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install install-docs
 .endif
-
-do-build:
-	@${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} pre-build
-	@${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} all
 
 .include <bsd.port.mk>
