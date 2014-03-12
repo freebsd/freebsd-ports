@@ -3,23 +3,43 @@ bin/vncconfig
 bin/vncpasswd
 bin/vncserver
 %%VIEWER%%bin/vncviewer
-%%VIEWER%%share/icons/hicolor/scalable/apps/tigervnc.svg
 bin/x0vncserver
 lib/xorg/modules/extensions/libvnc.la
 lib/xorg/modules/extensions/libvnc.so
+man/man1/vncpasswd.1.gz
+man/man1/x0vncserver.1.gz
+man/man1/vncserver.1.gz
+man/man1/vncconfig.1.gz
+man/man1/Xvnc.1.gz
+%%VIEWER%%man/man1/vncviewer.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tigervnc.mo
-%%DOCSDIR%%/README.txt
-%%DOCSDIR%%/LICENCE.TXT
-@dirrm %%DOCSDIR%%
-@unexec %D/%%DOCSDIR%% 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE.TXT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry lib/xorg/modules/extensions
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg
+%%VIEWER%%share/icons/hicolor/16x16/apps/tigervnc.png
+%%VIEWER%%share/icons/hicolor/22x22/apps/tigervnc.png
+%%VIEWER%%share/icons/hicolor/24x24/apps/tigervnc.png
+%%VIEWER%%share/icons/hicolor/32x32/apps/tigervnc.png
+%%VIEWER%%share/icons/hicolor/48x48/apps/tigervnc.png
+%%VIEWER%%share/icons/hicolor/scalable/apps/tigervnc.svg
+%%VIEWER%%@dirrmtry share/icons/hicolor/48x48/apps
+%%VIEWER%%@dirrmtry share/icons/hicolor/48x48
+%%VIEWER%%@dirrmtry share/icons/hicolor/32x32/apps
+%%VIEWER%%@dirrmtry share/icons/hicolor/32x32
+%%VIEWER%%@dirrmtry share/icons/hicolor/24x24/apps
+%%VIEWER%%@dirrmtry share/icons/hicolor/24x24
+%%VIEWER%%@dirrmtry share/icons/hicolor/22x22/apps
+%%VIEWER%%@dirrmtry share/icons/hicolor/22x22
+%%VIEWER%%@dirrmtry share/icons/hicolor/16x16/apps
+%%VIEWER%%@dirrmtry share/icons/hicolor/16x16
 %%VIEWER%%@dirrmtry share/icons/hicolor/scalable/apps
 %%VIEWER%%@dirrmtry share/icons/hicolor/scalable
 %%VIEWER%%@dirrmtry share/icons/hicolor

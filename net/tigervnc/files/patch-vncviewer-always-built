@@ -1,0 +1,19 @@
+Index: CMakeLists.txt
+===================================================================
+--- CMakeLists.txt	(revision 5159)
++++ CMakeLists.txt	(working copy)
+@@ -390,9 +390,12 @@
+   add_subdirectory(po)
+ endif()
+ 
+-add_subdirectory(vncviewer)
++option(BUILD_VIEWER "Build TigerVNC viewer" ON)
++if(BUILD_VIEWER)
++  add_subdirectory(vncviewer)
++  add_subdirectory(media)
++endif()
+ 
+-add_subdirectory(media)
+ 
+ include(cmake/BuildPackages.cmake)
+ 
