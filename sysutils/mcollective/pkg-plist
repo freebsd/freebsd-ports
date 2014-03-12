@@ -5,8 +5,11 @@ sbin/mcollectived
 %%DATADIR%%/agent/rpcutil.ddl
 %%DATADIR%%/agent/rpcutil.rb
 %%DATADIR%%/aggregate/average.rb
+%%DATADIR%%/aggregate/average.ddl
 %%DATADIR%%/aggregate/sum.rb
+%%DATADIR%%/aggregate/sum.ddl
 %%DATADIR%%/aggregate/summary.rb
+%%DATADIR%%/aggregate/summary.ddl
 %%DATADIR%%/application/completion.rb
 %%DATADIR%%/application/facts.rb
 %%DATADIR%%/application/find.rb
@@ -17,7 +20,6 @@ sbin/mcollectived
 %%DATADIR%%/application/rpc.rb
 %%DATADIR%%/audit/logfile.rb
 %%DATADIR%%/connector/activemq.rb
-%%DATADIR%%/connector/stomp.rb
 %%DATADIR%%/connector/rabbitmq.rb
 %%DATADIR%%/data/agent_data.ddl
 %%DATADIR%%/data/agent_data.rb
@@ -27,9 +29,12 @@ sbin/mcollectived
 %%DATADIR%%/discovery/flatfile.rb
 %%DATADIR%%/discovery/mc.ddl
 %%DATADIR%%/discovery/mc.rb
+%%DATADIR%%/discovery/stdin.ddl
+%%DATADIR%%/discovery/stdin.rb
 %%DATADIR%%/facts/yaml_facts.rb
 %%DATADIR%%/pluginpackager/debpackage_packager.rb
 %%DATADIR%%/pluginpackager/ospackage_packager.rb
+%%DATADIR%%/pluginpackager/modulepackage_packager.rb
 %%DATADIR%%/pluginpackager/rpmpackage_packager.rb
 %%DATADIR%%/pluginpackager/templates/debian/Makefile.erb
 %%DATADIR%%/pluginpackager/templates/debian/changelog.erb
@@ -38,6 +43,9 @@ sbin/mcollectived
 %%DATADIR%%/pluginpackager/templates/debian/copyright.erb
 %%DATADIR%%/pluginpackager/templates/debian/rules.erb
 %%DATADIR%%/pluginpackager/templates/redhat/rpm_spec.erb
+%%DATADIR%%/pluginpackager/templates/module/_manifest.pp.erb
+%%DATADIR%%/pluginpackager/templates/module/Modulefile.erb
+%%DATADIR%%/pluginpackager/templates/module/README.md.erb
 %%DATADIR%%/registration/agentlist.rb
 %%DATADIR%%/security/aes_security.rb
 %%DATADIR%%/security/psk.rb
@@ -47,12 +55,10 @@ sbin/mcollectived
 %%DATADIR%%/validator/ipv4address_validator.ddl
 %%DATADIR%%/validator/shellsafe_validator.rb
 %%DATADIR%%/validator/ipv6address_validator.ddl
-%%DATADIR%%/validator/any_validator.ddl
 %%DATADIR%%/validator/shellsafe_validator.ddl
 %%DATADIR%%/validator/length_validator.rb
 %%DATADIR%%/validator/ipv4address_validator.rb
 %%DATADIR%%/validator/ipv6address_validator.rb
-%%DATADIR%%/validator/any_validator.rb
 %%DATADIR%%/validator/length_validator.ddl
 %%DATADIR%%/validator/regex_validator.rb
 %%DATADIR%%/validator/regex_validator.ddl
@@ -152,9 +158,14 @@ sbin/mcollectived
 %%PORTDOCS%%%%DOCSDIR%%/String.html
 %%PORTDOCS%%%%DOCSDIR%%/Symbol.html
 %%PORTDOCS%%%%DOCSDIR%%/created.rid
+%%PORTDOCS%%%%DOCSDIR%%/doc/created_rid.html
 %%PORTDOCS%%%%DOCSDIR%%/etc/ssl/PLACEHOLDER.html
 %%PORTDOCS%%%%DOCSDIR%%/etc/ssl/clients/PLACEHOLDER.html
+%%PORTDOCS%%%%DOCSDIR%%/etc/client_cfg_dist.html
+%%PORTDOCS%%%%DOCSDIR%%/etc/server_cfg_dist.html
+%%PORTDOCS%%%%DOCSDIR%%/etc/facts_yaml_dist.html
 %%PORTDOCS%%%%DOCSDIR%%/images/add.png
+%%PORTDOCS%%%%DOCSDIR%%/images/arrow_up.png
 %%PORTDOCS%%%%DOCSDIR%%/images/brick.png
 %%PORTDOCS%%%%DOCSDIR%%/images/brick_link.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bug.png
@@ -187,6 +198,8 @@ sbin/mcollectived
 %%PORTDOCS%%%%DOCSDIR%%/js/searcher.js
 %%PORTDOCS%%%%DOCSDIR%%/rdoc.css
 %%PORTDOCS%%%%DOCSDIR%%/table_of_contents.html
+%%PORTDOCS%%%%DOCSDIR%%/mcollective_init.html
+%%PORTDOCS%%%%DOCSDIR%%/GetoptLong.html
 %%RUBY_SITELIBDIR%%/mcollective.rb
 %%RUBY_SITELIBDIR%%/mcollective/agent.rb
 %%RUBY_SITELIBDIR%%/mcollective/agents.rb
@@ -262,8 +275,6 @@ sbin/mcollectived
 %%RUBY_SITELIBDIR%%/mcollective/util.rb
 %%RUBY_SITELIBDIR%%/mcollective/validator.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor.rb
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/.gitignore
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/.travis.yml
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/CHANGES
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/COPYING
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/COPYING-json-jruby
@@ -274,51 +285,11 @@ sbin/mcollectived
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/Rakefile
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/TODO
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/VERSION
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/.keep
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkComparison.log
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_fast-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_fast.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_pretty-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_pretty.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_safe-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_safe.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt.log
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_fast-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_fast.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_pretty-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_pretty.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_safe-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_safe.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure.log
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkRails#generator-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkRails#generator.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkRails.log
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkComparison.log
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkExt#parser-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkExt#parser.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkExt.log
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkPure#parser-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkPure#parser.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkPure.log
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkRails#parser-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkRails#parser.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkRails.log
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkYAML#parser-autocorrelation.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkYAML#parser.dat
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkYAML.log
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data/.keep
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/generator2_benchmark.rb
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/generator_benchmark.rb
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/ohai.json
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/ohai.ruby
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/parser2_benchmark.rb
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/parser_benchmark.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/bin/edit_json.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/bin/prettify_json.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/data/example.json
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/data/index.html
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/data/prototype.js
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/diagrams/.keep
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/generator/extconf.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/generator/generator.c
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/generator/generator.h
@@ -360,7 +331,6 @@ sbin/mcollectived
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/common.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/editor.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/ext.rb
-%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/ext/.keep
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/json.xpm
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/pure.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/pure/generator.rb
@@ -432,6 +402,7 @@ sbin/mcollectived
 @dirrm %%DATADIR%%/discovery
 @dirrm %%DATADIR%%/facts
 @dirrm %%DATADIR%%/pluginpackager/templates/redhat
+@dirrm %%DATADIR%%/pluginpackager/templates/module
 @dirrm %%DATADIR%%/pluginpackager/templates/debian
 @dirrm %%DATADIR%%/pluginpackager/templates
 @dirrm %%DATADIR%%/pluginpackager
@@ -453,9 +424,6 @@ sbin/mcollectived
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/registration
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/rpc
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/security
-@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data
-@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18
-@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/bin
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/data
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/diagrams
@@ -499,6 +467,7 @@ sbin/mcollectived
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/etc/ssl/clients
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/etc/ssl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/etc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/js
