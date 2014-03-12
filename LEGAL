@@ -215,7 +215,7 @@ qtools-*		mail/qtools		Possibly restricted binary distribution of modified versi
 quake4-linux-*		games/linux-quake4	Redistribution is limited; see the license
 quake4-linux-*		games/linux-quake4-demo	Redistribution is limited; see the license
 Radiator/*		net/radiator		Commercial software
-raknet-*		devel/raknet		Original license is Indy license, special authorization granted to provide RakNet under GPL v3
+RakNet-*		devel/raknet		Special authorization granted to distribute version 3.x under GPLv3
 rapid-*			math/rapid		No commercial use
 raproxy*.tar.gz		audio/raproxy		License allows only use in a firewall, or with RA products
 rarbsd-*		archivers/rar		Only unmodified, original package can be distributed
