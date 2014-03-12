@@ -36,11 +36,9 @@ PLIST_SUB=	XMLCATALOG="${LOCALBASE}/bin/xmlcatalog" \
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-
 USE_PYTHON=	2
 PLIST_SUB+=	PYTHON=""
 .else
@@ -52,7 +50,7 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/libglade/2.0
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/libglade/2.0
 
 .include <bsd.port.mk>
 
