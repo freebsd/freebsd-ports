@@ -149,4 +149,3 @@ DEV_WARNING+=	"${a} is deprecated, please use ${${a}_ALT}"
 DEV_ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
 .endif
 .endfor
-.endif
