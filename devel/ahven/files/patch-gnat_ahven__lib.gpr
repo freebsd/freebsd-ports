@@ -1,0 +1,10 @@
+--- gnat/ahven_lib.gpr.orig	2014-02-08 21:21:51.000000000 +0000
++++ gnat/ahven_lib.gpr
+@@ -43,6 +43,6 @@ project Ahven_Lib is
+                                        "-gnatwl",
+                                        "-gnatE",
+                                        "-gnatwF", -- unreferenced formal off
+-                                       "-gnatyd3ibmhex", "-gnat95");
++                                       "-gnat95");
+   end Builder;
+ end Ahven_Lib;
