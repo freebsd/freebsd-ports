@@ -259,4 +259,17 @@ do-install:
 post-stage::
 	-@[ -d ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
 .endif
+
+.if !target(regression-test)
+TEST_ARGS+=	${MAKE_ARGS}
+TEST_ENV+=	${MAKE_ENV}
+TEST_TARGET?=	test
+TEST_WRKSRC?=	${BUILD_WRKSRC}
+regression-test test: build
+.if ${USE_PERL5:Mmodbuild*}
+	-cd ${TEST_WRKSRC}/ && ${SETENV} ${TEST_ENV} ${PERL5} ${PL_BUILD} ${TEST_TARGET} ${TEST_ARGS}
+.elif ${USE_PERL5:Mconfigure}
+	-cd ${TEST_WRKSRC}/ && ${SETENV} ${TEST_ENV} ${MAKE_CMD} ${TEST_ARGS} ${TEST_TARGET}
+.endif # USE_PERL5:Mmodbuild*
+.endif # regression-test
 .endif # defined(_POSTMKINCLUDED)
