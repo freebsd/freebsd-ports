@@ -23,8 +23,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 
 USE_AUTOTOOLS=	automake:env autoconf:env
-USE_GMAKE=	yes
-# We need a newer version of makinfo for this.
+USES=		gmake
+# We need a newer version of makeinfo for this.
 # Remove this line when we remove texinfo from the base system.
 CONFIGURE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
 
@@ -39,11 +39,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		enfuse enblend
-MAN1=		enblend.1 enfuse.1
-PLIST_FILES=	bin/enblend bin/enfuse
+PLIST_FILES=	bin/enblend bin/enfuse man/man1/enblend.1.gz man/man1/enfuse.1.gz
 
-NO_STAGE=	yes
 post-install:
-		${INSTALL_DATA} ${WRKSRC}/doc/*.info ${PREFIX}/${INFO_PATH}
+		${INSTALL_DATA} ${WRKSRC}/doc/*.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.mk>
