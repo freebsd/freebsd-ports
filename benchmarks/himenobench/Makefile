@@ -15,8 +15,8 @@ DIST_SUBDIR=	himeno
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Himeno bench benchmark, solves Poisson eq. with Jacobi's method
 
+USES=		lha
 NO_WRKSUBDIR=	yes
-USE_LHA=	yes
 
 .if defined(WITH_ICC)
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc

@@ -13,9 +13,8 @@ COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 NO_WRKSUBDIR=	yes
-USE_LHA=	yes
 
-USES=		perl5
+USES=		perl5 lha
 USE_PERL5=	build
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" SCRIPTDIR=${SCRIPTDIR} PERL=${PERL} STAGEDIR=${STAGEDIR}
 PORTVERSION_K?=	${PORTVERSION}

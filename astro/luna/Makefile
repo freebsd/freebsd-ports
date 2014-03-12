@@ -10,8 +10,7 @@ DISTNAME=	luna19s
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the moon's phase
 
-USES=		dos2unix
-USE_LHA=	yes
+USES=		dos2unix lha
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/luna
 MAKEFILE=	makefile

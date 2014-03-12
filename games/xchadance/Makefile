@@ -11,7 +11,7 @@ DISTFILES=	xchada01.lzh
 MAINTAINER=	motoyuki@FreeBSD.org
 COMMENT=	Display a dancing girl "ChaCha."
 
-USE_LHA=	yes
+USES=		lha
 USE_XORG=	x11
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes

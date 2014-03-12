@@ -17,8 +17,7 @@ MAN1=		jstrings.1
 MANLANG=	ja
 PLIST_FILES=	bin/jstrings
 
-USE_GMAKE=	yes
-USE_LHA=	yes
+USES=		gmake lha
 MAKEFILE=	makefile.gcc
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" BINDIR="${PREFIX}/bin"
 ALL_TARGET=	jstrings

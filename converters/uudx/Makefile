@@ -12,7 +12,7 @@ COMMENT=	Extractor from uuencoded files
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
-USE_LHA=	yes
+USES=		lha
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/uudx \
 		man/ja/man1/uudx.1.gz
