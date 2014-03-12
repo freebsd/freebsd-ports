@@ -26,21 +26,17 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 
 USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomehier orbit2 gtk20 libxml2 ltverhack \
-		referencehack intlhack dconf
+		referencehack intlhack dconf introspection:build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
-#		--enable-gconf-source=${PREFIX}/etc/gconf/schemas \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAN1=		gconftool-2.1 gsettings-data-convert.1 \
-		gsettings-schema-convert.1
 
 OPTIONS_DEFINE=	LDAP
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}
@@ -53,7 +49,7 @@ PLIST_SUB+=	LDAP="@comment "
 .endif
 
 post-install:
-	-${LOCALBASE}/bin/gio-querymodules ${PREFIX}/lib/gio/modules
+	-${LOCALBASE}/bin/gio-querymodules ${STAGEDIR}${PREFIX}/lib/gio/modules
 
 .include <bsd.port.mk>
 

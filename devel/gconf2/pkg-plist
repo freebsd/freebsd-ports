@@ -126,6 +126,9 @@ share/locale/zh_HK/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
 share/polkit-1/actions/org.gnome.gconf.defaults.policy
 share/sgml/gconf/gconf-1.0.dtd
+man/man1/gconftool-2.1.gz
+man/man1/gsettings-data-convert.1.gz
+man/man1/gsettings-schema-convert.1.gz
 @dirrm share/sgml/gconf
 %%LDAP%%@dirrm share/GConf/schema
 %%LDAP%%@dirrm share/GConf
