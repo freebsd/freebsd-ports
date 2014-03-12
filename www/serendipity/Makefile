@@ -23,7 +23,6 @@ USE_BZIP2=	YES
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE MAGICK
 OPTIONS_DEFAULT=	MYSQL MAGICK
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -43,12 +42,9 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 do-install:
-	@-${MKDIR} ${PREFIX}/${SERENDIPITY}
-	@${CHMOD} 755 ${PREFIX}/${SERENDIPITY}
-	@(cd ${WRKSRC} && ${CP} -R * ${PREFIX}/${SERENDIPITY}/ )
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${SERENDIPITY}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@-${MKDIR} ${STAGEDIR}${PREFIX}/${SERENDIPITY}
+	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/${SERENDIPITY}
+	@(cd ${WRKSRC} && ${CP} -R * ${STAGEDIR}${PREFIX}/${SERENDIPITY}/ )
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${SERENDIPITY}
 
 .include <bsd.port.mk>
