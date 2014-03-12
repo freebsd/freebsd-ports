@@ -5,7 +5,7 @@
 # MAINTAINER: portmgr@FreeBSD.org
 #
 # Feature:	tar
-# Usage:	USES=tar[:[xz|Z|bzip2|tgz]]
+# Usage:	USES=tar[:[xz|lzma|Z|bzip2|tgz]]
 #
 .if !defined(_INCLUDE_USES_TAR_Mk)
 _INCLUDE_USES_TAR_MK=	yes
@@ -14,6 +14,8 @@ tar_ARGS?=	none
 
 .if ${tar_ARGS} == xz
 EXTRACT_SUFX?=	.tar.xz
+.elif ${tar_ARGS} == lzma
+EXTRACT_SUFX?=	.tar.lzma
 .elif ${tar_ARGS} == bzip2
 EXTRACT_SUFX?=	.tar.bz2
 .elif ${tar_ARGS} == tgz
