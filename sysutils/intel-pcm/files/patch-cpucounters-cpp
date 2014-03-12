@@ -1,0 +1,12 @@
+diff -ru cpucounters.cpp cpucounters.cpp
+--- cpucounters.cpp	2013-11-04 05:43:31.000000000 -0700
++++ cpucounters.cpp	2014-03-07 05:47:24.000000000 -0700
+@@ -681,7 +681,7 @@
+     else
+         apic_ids_per_core = 1;
+ 
+-    for (i = 0; i < num_cores; i++)
++    for (int i = 0; i < num_cores; i++)
+     {
+         char cpuctl_name[64];
+         int apic_id;
