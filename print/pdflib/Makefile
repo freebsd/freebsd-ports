@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	--with-py=no --with-ruby=no --with-tcl=no
 
 PORTDOCS=	*
 
+PERL_USES=	perl5
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
@@ -31,7 +33,6 @@ CONFIGURE_ARGS+=--enable-64bit
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
 PLIST_SUB=	PERL=""
 CONFIGURE_ARGS+=--with-perl=${PERL}
 .else
