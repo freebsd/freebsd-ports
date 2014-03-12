@@ -1,0 +1,32 @@
+--- configure.orig	2013-03-28 18:51:54.000000000 +0100
++++ configure	2014-03-07 20:03:28.000000000 +0100
+@@ -13,21 +13,17 @@
+ # tclsh program with a version number in the file name is found, the
+ # default program to execute is just tclsh.
+ # The backslashes at the end of these lines are needed: \
+-# tclsh=tclsh8.5;
+-
+-# This shell script code did not work for me in Linux so it is
+-# commented out for now; the configure script will just run in
+-# tclsh even if there is a more recent version.
+-## for tclver in 80 8.0 81 8.1 82 8.2 83 8.3 84 8.4 85 8.5; do \
+-##   IFS=:; \
+-##  for dir in $PATH; do \
+-##    if [ -x $dir/tclsh$tclver ]; then tclsh=$dir/tclsh$tclver; fi; \
+-##  done; \
+-## done
++tclsh=tclsh8.6; \
++for tclver in 80 8.0 81 8.1 82 8.2 83 8.3 84 8.4 85 8.5 86 8.6; do \
++  IFS=:; \
++  for dir in $PATH; do \
++    if [ -x $dir/tclsh$tclver ]; then tclsh=$dir/tclsh$tclver; fi; \
++  done; \
++done
+ 
+ # Now execute this script using the best tclsh version found:
+ # The backslash at the end of this line is needed: \
+-exec tclsh "$0" ${1+"$@"}
++exec $tclsh "$0" ${1+"$@"}
+ 
+ # Default values for Makefile settings:
+ #

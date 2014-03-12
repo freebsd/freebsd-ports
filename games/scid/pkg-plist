@@ -16,6 +16,7 @@ bin/spf2spi
 bin/spliteco
 bin/tcscid
 bin/tkscid
+%%DATADIR%%/scid.gif
 %%DATADIR%%/books/Elo2400.bin
 %%DATADIR%%/books/Performance.bin
 %%DATADIR%%/books/gm2600.bin
