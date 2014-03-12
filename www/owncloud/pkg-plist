@@ -1,5 +1,5 @@
-@owner www
-@group www
+@owner %%OWNCLOUD_USERNAME%%
+@group %%OWNCLOUD_GROUPNAME%%
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/3rdparty/Archive/Tar.php
 %%WWWDIR%%/3rdparty/Console/Getopt.php
