@@ -28,9 +28,6 @@ CONFIGURE_ARGS=	--with-svgz \
 		--with-croco \
 		--disable-Bsymbolic \
 		--enable-gtk-theme
-MAN1=		rsvg-convert.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|GTK3_REQUIRED=3.0.0|GTK3_REQUIRED=9.90.0|g' \
 		${WRKSRC}/configure
