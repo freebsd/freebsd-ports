@@ -93,15 +93,18 @@ post-patch:
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/docs/man/*.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-.for l in ex12bit ex3buf ex3d exaccel exalpha exbitmap exblend excamera excolmap \
+. for l in ex12bit ex3buf ex3d exaccel exalpha exbitmap exblend excamera excolmap \
 	exconfig excustom exdata exdbuf exexedat exfixed exflame exflip exfont \
 	exgui exhello exjoy exkeys exlights exmem exmidi exmouse expackf expal \
 	expat exquat exrgbhsv exrotscl exsample exscale exscn3d exscroll exshade \
 	exspline exsprite exstars exstream exswitch exsyscur extimer extrans \
 	extrans2 extruec exunicod exupdate exxfade exzbuf
 	${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/${l}
-.endfor
+. endfor
+.endif
 
 .if ${PORT_OPTIONS:MDEMOS} && ${PORT_OPTIONS:MEXAMPLES}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} demos ${STAGEDIR}${EXAMPLESDIR})
