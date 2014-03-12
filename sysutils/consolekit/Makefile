@@ -16,8 +16,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 WRKSRC=		${WRKDIR}/ConsoleKit-${PORTVERSION}
 USE_BZIP2=	yes
 USE_XORG=	x11
-USES=	pathfix gettext pkgconfig
-USE_GMAKE=	yes
+USES=		pathfix gettext pkgconfig gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -25,13 +24,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pid-file=/var/run/${PORTNAME}.pid \
 		--localstatedir=/var
 
-NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/ck-get-x11-display-device \
-	    	${PREFIX}/libexec/ck-get-x11-display-device
+		${STAGEDIR}${PREFIX}/libexec/ck-get-x11-display-device
 	${INSTALL_SCRIPT} ${FILESDIR}/ck-get-x11-server-pid \
-	    	${PREFIX}/libexec/ck-get-x11-server-pid
-	${MKDIR} /var/log/ConsoleKit
-	${TOUCH} /var/log/ConsoleKit/history
+	    	${STAGEDIR}${PREFIX}/libexec/ck-get-x11-server-pid
+	${MKDIR} ${STAGEDIR}/var/log/ConsoleKit
+	${TOUCH} ${STAGEDIR}/var/log/ConsoleKit/history
 
 .include <bsd.port.mk>
