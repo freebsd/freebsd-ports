@@ -1,0 +1,115 @@
+'\" t
+.\"     Title: ntdb
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 03/12/2014
+.\"    Manual: System Administration tools
+.\"    Source: Samba 4.1
+.\"  Language: English
+.\"
+.TH "NTDB" "3" "03/12/2014" "Samba 4\&.1" "System Administration tools"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+ntdb \- A not\-so trivial keyword/data database system
+.SH "SYNOPSIS"
+.sp
+.nf
+#include <ntdb\&.h>
+.fi
+.SH "DESCRIPTION"
+.PP
+If you have previously used the tdb library from Samba, much of this will seem familiar, but there are some API changes which a compiler will warn you about if you simply replace \*(Aqtdb\*(Aq with \*(Aqntdb\*(Aq in your code! The on\-disk format for ntdb is incompatible with tdb\&.
+.PP
+tdb\*(Aqs API was based on gdbm, and ntdb continues this tradition, with enhancements\&. A differences guide is available in the text file
+lib/ntdb/doc/TDB_porting\&.txt
+in the SAMBA source tree\&.
+.SH "NTDB API OVERVIEW"
+.PP
+The complete API is documented in the ntdb\&.h header, which is kept up\-to\-date and recommended reading\&.
+.PP
+Normal usage is to call ntdb_open() to create or open an ntdb file\&. ntdb_store() is used to add records, ntdb_fetch() is used to fetch them\&. Traversals are supported via callback (ntdb_traverse()) or iteration (ntdb_firstkey() and ntdb_nextkey())\&. Transactions are supported for batching updates or reads atomically, using ntdb_transaction_start() and ntdb_transaction_commit()\&.
+.SS "Use With Talloc"
+.PP
+ntdb_open() takes an optional linked list of attributes: in particular you can specify an alternate allocator (such as talloc):
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+#include <talloc\&.h>
+#include <ntdb\&.h>
+
+static void *my_alloc(const void *owner, size_t len, void *priv)
+{
+    return talloc_size(owner, len);
+}
+
+static void *my_expand(void *old, size_t newlen, void *priv)
+{
+    return talloc_realloc_size(NULL, old, newlen);
+}
+
+static void my_free(void *old, void *priv)
+{
+    talloc_free(old);
+}
+
+/* This opens an ntdb file as a talloc object with given parent\&. */
+struct ntdb_context *ntdb_open_talloc(const void *parent,
+                                      const char *filename)
+{
+     struct ntdb_context *ntdb;
+     union ntdb_attribute alloc;
+
+     alloc\&.base\&.attr = NTDB_ATTRIBUTE_ALLOCATOR;
+     alloc\&.base\&.next = NULL;
+     alloc\&.alloc\&.alloc = my_alloc;
+     alloc\&.alloc\&.expand = my_expand;
+     alloc\&.alloc\&.free = my_free;
+
+     ntdb = ntdb_open(filename, NTDB_DEFAULT, O_RDWR|O_CREAT, 0600,
+                      &alloc);
+     if (ntdb) {
+         talloc_steal(parent, ntdb);
+         talloc_set_name(ntdb, "%s", filename);
+     }
+     return ntdb;
+}
+.fi
+.if n \{\
+.RE
+.\}
+.SH "SEE ALSO"
+.PP
+
+\m[blue]\fB\%http://tdb.samba.org/\fR\m[]
+.SH "AUTHOR"
+.PP
+The original tdb software was created by Andrew Tridgell, and is now developed by the Samba Team as an Open Source project similar to the way the Linux kernel is developed\&. ntdb was derived from tdb, but mostly rewritten by Rusty Russell\&.
+.SH "COPYRIGHT/LICENSE"
+.PP
+Copyright (C) Rusty Russell 2013, IBM Corporation
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version\&.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU General Public License for more details\&.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, see http://www\&.gnu\&.org/licenses/\&.

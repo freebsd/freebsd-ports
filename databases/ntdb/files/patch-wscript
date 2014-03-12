@@ -1,0 +1,11 @@
+--- ./wscript.orig	2013-11-15 21:37:13.000000000 +0000
++++ ./wscript	2014-03-12 12:53:25.482302689 +0000
+@@ -133,7 +133,7 @@
+     bld.RECURSE('lib/ccan')
+ 
+     if bld.env.standalone_ntdb:
+-        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
++        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
+         private_library = False
+     else:
+         private_library = True
