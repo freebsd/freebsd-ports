@@ -17,7 +17,6 @@ RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	glib20 gtk20 libglade2 libxml2
 
 PLIST_FILES=	lib/gmpc/plugins/libextraplaylist.la \
