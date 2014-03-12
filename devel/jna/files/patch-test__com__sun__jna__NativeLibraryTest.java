@@ -5,7 +5,7 @@
      	List path = Arrays.asList(new String[] { dir.getAbsolutePath() });
      	assertEquals("Latest versioned library not found when unversioned requested",
 -                     lib1_1.getAbsolutePath(),	
-+                     lib1_1.getCanonicalPath(),	
++                     lib1_1.getCanonicalPath(),
                       NativeLibrary.matchLibrary(name, path));
      }
      
@@ -14,7 +14,7 @@
      	List path = Arrays.asList(new String[] { dir.getAbsolutePath() });
      	assertEquals("Library with similar prefix should be ignored",
 -                     lib0.getAbsolutePath(),	
-+                     lib0.getCanonicalPath(),	
++                     lib0.getCanonicalPath(),
                       NativeLibrary.matchLibrary(name, path));
      }
  
