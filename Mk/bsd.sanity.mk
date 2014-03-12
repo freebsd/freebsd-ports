@@ -175,3 +175,15 @@ DEV_ERROR+=	"USE_MAKESELF is unsupported, please use USES=makeself"
 .if defined(USE_ZIP)
 DEV_ERROR+=	'USE_ZIP is unsupported, please use USES=zip'
 .endif
+
+.if defined(USE_LHA)
+DEV_WARNING+=	'USE_LHA is deprecated, please use USES=lha'
+.endif
+
+.if defined(USE_XZ)
+DEV_WARNING+=	'USE_XZ is deprecated, please use USES=tar:xz'
+.endif
+
+.if defined(USE_BZIP2)
+DEV_WARNING+=	'USE_XZ is deprecated, please use USES=tar:bzip2'
+.endif

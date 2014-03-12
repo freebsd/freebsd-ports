@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140312:
+AUTHOR: bapt@FreeBSD.org
+
+  Two new USES were added to finish handling distfiles formats a consistent way:
+
+  USES=tar[:[xz|bzip2|Z|tgz]] handles distributions files in format:
+  - plain tar
+  - tar.xz
+  - tar.bz2
+  - tar.Z
+  - tgz
+
+  USES=lha handles distributions files info LHA format
+
 20140307:
 AUTHOR: rene@FreeBSD.org
 
