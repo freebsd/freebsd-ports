@@ -6,7 +6,6 @@ PORTVERSION=	7.35.0
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
-EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT?=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
@@ -34,8 +33,7 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
 USE_PERL5=	build
-USE_XZ=		yes
-USES=		pathfix perl5
+USES=		pathfix perl5 tar:lzma
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
