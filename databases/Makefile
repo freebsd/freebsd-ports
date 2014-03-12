@@ -521,7 +521,6 @@
     SUBDIR += pear-MDB2_Driver_mysql
     SUBDIR += pear-MDB2_Driver_mysqli
     SUBDIR += pear-MDB2_Driver_pgsql
-    SUBDIR += pear-MDB2_Driver_sqlite
     SUBDIR += pear-MDB2_Schema
     SUBDIR += pear-MDB_QueryTool
     SUBDIR += pear-Structures_DataGrid_DataSource_Array
