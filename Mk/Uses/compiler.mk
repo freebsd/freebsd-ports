@@ -20,8 +20,8 @@
 #
 # COMPILER_TYPE:	can be gcc or clang
 # ALT_COMPILER_TYPE:	can be gcc or clang depending on COMPILER_TYPE, only set if the base system has 2 compilers
-# COMPILER_VERSION:	first 2 digits of the version: 33 for clang 3.3.*, 46 for gcc 4.6.*
-# ALT_COMPILER_VERSION:	first 2 digits of the version: 33 for clang 3.3.*, 46 for gcc 4.6.* of the ALT_COMPILER_TYPE
+# COMPILER_VERSION:	first 2 digits of the version: 33 for clang 3.3.*, 47 for gcc 4.7.*
+# ALT_COMPILER_VERSION:	first 2 digits of the version: 33 for clang 3.3.*, 47 for gcc 4.7.* of the ALT_COMPILER_TYPE
 #
 # COMPILER_FEATURES:	the list of features supported by the compiler includes the standard C++ library.
 # CHOSEN_COMPILER_TYPE:	can be gcc or clang (type of compiler chosen by the framework)
@@ -125,10 +125,10 @@ COMPILER_FEATURES+=	${std}
 
 .if ${_COMPILER_ARGS:Mc++11-lib}
 .if !${COMPILER_FEATURES:Mc++11}
-USE_GCC=	4.7+
+USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .elif ${COMPILER_TYPE} == clang && ${COMPILER_FEATURES:Mlibstdc++}
-USE_GCC=	4.7+
+USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .endif
 .endif
@@ -136,7 +136,7 @@ CHOSEN_COMPILER_TYPE=	gcc
 .if ${_COMPILER_ARGS:Mc++11-lang}
 .if !${COMPILER_FEATURES:Mc++11}
 .if defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc
-USE_GCC=	4.7+
+USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .elif (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 33) || ${COMPILER_TYPE} == gcc
 .if ${ALT_COMPILER_TYPE} == clang && ${ALT_COMPILER_VERSION} >= 33
@@ -188,7 +188,7 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 .if ${_COMPILER_ARGS:Mc11}
 .if !${COMPILER_FEATURES:Mc11}
 .if defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc
-USE_GCC=	4.7+
+USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .elif (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 33) || ${COMPILER_TYPE} == gcc
 .if ${ALT_COMPILER_TYPE} == clang && ${ALT_COMPILER_VERSION} >= 33
