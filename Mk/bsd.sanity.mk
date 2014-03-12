@@ -3,10 +3,6 @@
 # MAINTAINER: portmgr@FreeBSD.org
 #
 
-.if defined(USE_GMAKE)
-DEV_WARNING+=	"USE_GMAKE is deprecated, consider using USES=gmake"
-.endif
-
 .if defined(WITHOUT_NLS)
 WARNING+=	"WITHOUT_NLS is deprecated use OPTIONS_UNSET=NLS instead"
 .endif
@@ -21,22 +17,6 @@ WARNING+=	"WITHOUT_NLS is deprecated use OPTIONS_UNSET=NLS instead"
 
 .if defined(USE_PERL5) && ${USE_PERL5} == yes
 DEV_ERROR+=	"USE_PERL5=yes is unsupported, please use USES=perl5 instead"
-.endif
-
-.if defined(PERL_CONFIGURE)
-DEV_ERROR+=	"PERL_CONFIGURE is unsupported, please use USES=perl5 along with USE_PERL5=configure"
-.endif
-
-.if defined(PERL_MODBUILD)
-DEV_ERROR+=	"PERL_MODBUILD is unsupported, please use USES=perl5 along with USE_PERL5=modbuild"
-.endif
-
-.if defined(USE_PERL5_BUILD)
-DEV_ERROR+=	"USE_PERL5_BUILD is unsupported, please use USES=perl5 along with USE_PERL5=build"
-.endif
-
-.if defined(USE_PERL5_RUN)
-DEV_ERROR+=	"USE_PERL5_RUN is unsupported, please use USES=perl5 along with USE_PERL5=run"
 .endif
 
 .if defined(USE_KDEBASE_VER)
@@ -57,30 +37,6 @@ DEV_ERROR+=	"LIB_DEPENDS contains unsupported relative path to dependency"
 
 .if !empty(RUN_DEPENDS:M*/../*)
 DEV_ERROR+=	"RUN_DEPENDS contains unsupported relative path to dependency"
-.endif
-
-.if defined(USE_DISPLAY)
-DEV_WARNING+=	"USE_DISPLAY is deprecated, please use USES=display"
-.endif
-
-.if defined(USE_ICONV)
-DEV_ERROR+=	"USE_ICONV is unsupported, please use USES=iconv"
-.endif
-
-.if defined(USE_CMAKE)
-DEV_ERROR+=	"USE_CMAKE is unsupported, please use USES=cmake"
-.endif
-
-.if defined(USE_READLINE)
-DEV_ERROR+=	"USE_READLINE is unsupported, please use USES=readline"
-.endif
-
-.if defined(USE_FUSE)
-DEV_ERROR+=	"USE_FUSE is unupported, please use USES=fuse"
-.endif
-
-.if defined(USE_GETTEXT)
-DEV_ERROR+=	"USE_GETTEXT is unsupported, replaced by USES=gettext"
 .endif
 
 .if defined(USE_GNOME) && ${USE_GNOME:Mpkgconfig}
@@ -110,10 +66,6 @@ DEV_WARNING+=	"Please use the new format for LIB_DEPENDS, see handbook for detai
 .if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TCL_RUN) || defined(USE_TCL_WRAPPER) || \
    defined(USE_TK)  || defined(USE_TK_BUILD)  || defined(USE_TK_RUN)  || defined(USE_TK_WRAPPER)
 DEV_ERROR+=	"USE_TCL and USE_TK are no longer supported, please use USES=tcl or USES=tk"
-.endif
-
-.if defined(USE_SCONS)
-DEV_WARNING+=	"USE_SCONS=yes is deprecated, please use USES=scons"
 .endif
 
 # print warning if no reason given for NO_STAGE
@@ -160,30 +112,41 @@ DEV_WARNING+=	"USE_PYDISTUTILS=easy_install is deprecated, please use USE_PYDIST
 DEV_WARNING+=	"PYDISTUTILS_PKGNAME has no effect for USE_PYDISTUTILS=yes and PYDISTUTILS_AUTOPLIST=yes"
 .endif
 
-.if defined(USE_OPENAL)
-DEV_ERROR+=	"USE_OPENAL is unsupported, please use USES=openal"
-.endif
+UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
+		USE_READLINE USE_ICONV PERL_CONFIGURE PERL_MODBUILD \
+		USE_PERL5_BUILD USE_PERL5_RUN USE_DISPLAY USE_FUSE \
+		USE_GETTEXT
+DEPRECATED=	USE_XZ USE_BZIP2 USE_GMAKE USE_SCONS
 
-.if defined(USE_FAM)
-DEV_ERROR+=	"USE_FAM is unsupported, please use USES=fam"
-.endif
+USE_OPENAL_ALT=		USES=openal
+USE_FAM_ALT=		USES=fam
+USE_MAKESELF_ALT=	USES=makeself
+USE_ZIP_ALT=		USES=zip
+USE_LHA_ALT=		USES=lha
+USE_BZIP2_ALT=		USES=tar:bzip2
+USE_XZ_ALT=		USES=tar.xz
+USE_CMAKE_ALT=		USES=cmake
+USE_READLINE_ALT=	USES=readline
+USE_ICONV_ALT=		USES=iconv
+USE_GMAKE_ALT=		USES=gmake
+PERL_CONFIGURE_ALT=	USES=perl5 along with USE_PERL5=configure
+PERL_MODBUILD_ALT=	USES=perl5 along with USE_PERL5=modbuild
+USE_PERL5_BUILD_ALT=	USES=perl5 along with USE_PERL5=build
+USE_PERL5_RUN_ALT=	USES=perl5 along with USE_PERL5=run
+USE_DISPLAY_ALT=	USES=display
+USE_FUSE_ALT=		USES=fuse
+USE_GETTEXT_ALT=	USES=gettext
+USE_SCONS_ALT=		USES=scons
 
-.if defined(USE_MAKESELF)
-DEV_ERROR+=	"USE_MAKESELF is unsupported, please use USES=makeself"
+.for a in ${DEPRECATED}
+.if defined(${a})
+DEV_WARNING+=	"${a} is deprecated, please use ${${a}_ALT}"
 .endif
+.endfor
 
-.if defined(USE_ZIP)
-DEV_ERROR+=	'USE_ZIP is unsupported, please use USES=zip'
+.for a in ${UNSUPPORTED}
+.if defined(${a})
+DEV_ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
 .endif
-
-.if defined(USE_LHA)
-DEV_ERROR+=	'USE_LHA is unsupported, please use USES=lha'
-.endif
-
-.if defined(USE_XZ)
-DEV_WARNING+=	'USE_XZ is deprecated, please use USES=tar:xz'
-.endif
-
-.if defined(USE_BZIP2)
-DEV_WARNING+=	'USE_BZIP2 is deprecated, please use USES=tar:bzip2'
+.endfor
 .endif
