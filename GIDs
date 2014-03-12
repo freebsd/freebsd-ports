@@ -101,6 +101,7 @@ icinga:*:183:
 dnscache:*:184:
 tinydns:*:185:
 dnslog:*:186:
+swift:*:187:
 moinmoin:*:192:
 cups:*:193:
 saned:*:194:

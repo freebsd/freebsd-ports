@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	swift
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	databases python
-MASTER_SITES=	http://launchpadlibrarian.net/163953035/
+MASTER_SITES=	http://launchpadlibrarian.net/168204360/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gslin@gslin.org
@@ -24,12 +24,15 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:${PORTSDIR}/www/py-pastedeplo
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}webob>=0.9.8:${PORTSDIR}/www/py-webob \
 		${PYTHON_PKGNAMEPREFIX}xattr>=0:${PORTSDIR}/devel/py-xattr \
+		memcached>=0:${PORTSDIR}/databases/memcached \
 		rsync>=3.0:${PORTSDIR}/net/rsync
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 USE_RC_SUBR=	swift
+USERS=		swift
+GROUPS=		swift
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/swift|${PREFIX}/etc/${PORTNAME}|" \
