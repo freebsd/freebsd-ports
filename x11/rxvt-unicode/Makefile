@@ -3,7 +3,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -18,14 +18,13 @@ BUILD_DEPENDS=	tic:${PORTSDIR}/devel/ncurses	\
 RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig	\
 		${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 
-USES=			pkgconfig shebangfix
+USES=			pkgconfig shebangfix tar:bzip2
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ENV=		LIBS="-lstdc++ -lutil" TIC=${LOCALBASE}/bin/tic
 CONFIGURE_ARGS=		--enable-everything --with-term=rxvt	\
 			--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
-USE_BZIP2=		yes
 
 OPTIONS_DEFINE=	PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
 		NEXT_SCROLLBAR XTERM_SCROLLBAR BACKSPACE_KEY DELETE_KEY	\
@@ -129,8 +128,6 @@ CONFIGURE_ARGS+=	--disable-delete-key
 # enable scrolling via mouse wheel or buttons 4 & 5
 .if !${PORT_OPTIONS:MMOUSEWHEEL}
 CONFIGURE_ARGS+=	--disable-mousewheel
-.else
-USE_GCC=		yes # segfaults when trying to scroll with the mouse wheel if clang
 .endif
 
 # enable smart resize
@@ -153,7 +150,7 @@ CONFIGURE_ARGS+=	--enable-pixbuf
 CONFIGURE_ARGS+=	--disable-startup-notification
 .else
 CONFIGURE_ARGS+=	--enable-startup-notification
-LIB_DEPENDS+=		startup-notification-1:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 .endif
 
 # enable support for 256 colors
