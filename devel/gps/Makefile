@@ -3,7 +3,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	gps-5.2.1-1-src
@@ -31,6 +31,7 @@ WRKSRC=			${WRKDIR}/gps-release-ide-${PORTVERSION}-src
 
 CONFIGURE_ENV+=		AWK=/usr/bin/awk
 MAKE_ENV+=		PROCESSORS=${MAKE_JOBS_NUMBER}
+MAKE_ARGS+=		Build=Production
 
 OPTIONS_DEFINE=		SYSLOG SQLITE PGSQL PYTHON READLINE
 OPTIONS_DEFAULT=	SYSLOG SQLITE PYTHON READLINE
@@ -103,7 +104,7 @@ post-patch:
 	    ${WRKSRC}/gnatlib/src/gnatcoll_readline.gpr.in
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} default
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} default
 
 pre-install:
 .if ${PORT_OPTIONS:MPYTHON}
@@ -116,7 +117,7 @@ post-install:
 	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/gps/html/tutorial/_sources
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d -empty -print | ${XARGS} ${RMDIR}
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${TMPPLIST}
+	   ${SORT} >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
 	   ${SED} -e '/share\/doc$$/d' -e '/share\/gps$$/d' \
 	   -e '/share\/gps\/plug-ins$$/d' -e '/share\/examples$$/d' \
