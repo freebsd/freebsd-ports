@@ -2,44 +2,53 @@
 # $FreeBSD$
 
 PORTNAME=	libnfc
-PORTVERSION=	1.4.2
+PORTVERSION=	1.7.1
 CATEGORIES=	devel
-MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
+MASTER_SITES=	http://dl.bintray.com/nfc-tools/sources/ \
 		http://romain.blogreen.org/distfiles/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Near Field Communication (NFC) library
 
-OPTIONS_DEFINE=	ACR122 ARYGON PN531USB PN532UART PN533USB SERIALPROBE
-OPTIONS_DEFAULT=	ACR122 PN531USB PN532UART PN533USB
-ACR122_DESC=	ACR122 driver
+#OPTIONS_DEFINE=	ACR122_PCSC ACR122_USB ACR122S ARYGON PN532_I2C PN532_SPI PN532_UART PN53X_USB
+#OPTIONS_DEFAULT=ACR122_USB ACR122S ARYGON PN532_I2C PN532_SPI PN532_UART PN53X_USB
+OPTIONS_DEFINE=	ACR122_PCSC ACR122_USB ACR122S ARYGON PN532_UART PN53X_USB
+OPTIONS_DEFAULT=ACR122_USB ACR122S ARYGON PN532_UART PN53X_USB
+ACR122_PCSC_DESC=ACR122 driver (PC/SC)
+ACR122_USB_DESC=ACR122 driver (USB)
+ACR122S_DESC=	ACR122 driver ()
 ARYGON_DESC=	Arygon driver
-PN531USB_DESC=	PN531 USB driver
-PN532UART_DESC=	PN532 UART driver
-PN533USB_DESC=	PN533 USB driver
-SERIALPROBE_DESC=	serial auto-probe
+#PN532_I2C_DESC=PN532 I2C driver
+#PN532_SPI_DESC=PN532 SPI driver
+PN532_UART_DESC=PN532 UART driver
+PN53X_USB_DESC=	PN53X USB driver
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix pkgconfig
-
-MAN1=		nfc-anticol.1 nfc-dep-initiator.1 nfc-dep-target.1 \
-		nfc-emulate-forum-tag4.1 nfc-emulate-tag.1 nfc-emulate-uid.1 \
-		nfc-mfclassic.1 nfc-list.1 nfc-mfultralight.1 nfc-poll.1 \
-		nfc-relay.1 nfc-relay-picc.1 pn53x-diagnose.1 pn53x-sam.1 \
-		pn53x-tamashell.1
+USES=		gmake pathfix pkgconfig tar:bzip2
+MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MACR122}
-ACR122_DRIVER=	acr122,
+.if ${PORT_OPTIONS:MACR122_PCSC}
+ACR122_PCSC_DRIVER=	acr122_pcsc,
 .else
-ACR122_DRIVER=
+ACR122_PCSC_DRIVER=
+.endif
+
+.if ${PORT_OPTIONS:MACR122_USB}
+ACR122_USB_DRIVER=	acr122_usb,
+.else
+ACR122_USB_DRIVER=
+.endif
+
+.if ${PORT_OPTIONS:MACR122S}
+ACR122S_DRIVER=	acr122s,
+.else
+ACR122S_DRIVER=
 .endif
 
 .if ${PORT_OPTIONS:MARYGON}
@@ -48,41 +57,41 @@ ARYGON_DRIVER=	arygon,
 ARYGON_DRIVER=
 .endif
 
-.if ${PORT_OPTIONS:MPN531USB}
-PN531USB_DRIVER=pn531_usb,
+#.if ${PORT_OPTIONS:MPN532_I2C}
+#PN532_I2C_DRIVER=pn532_i2c,
+#.else
+#PN532_I2C_DRIVER=
+#.endif
+
+#.if ${PORT_OPTIONS:MPN532_SPI}
+#PN532_SPI_DRIVER=pn532_spi,
+#.else
+#PN532_SPI_DRIVER=
+#.endif
+
+.if ${PORT_OPTIONS:MPN532_UART}
+PN532_UART_DRIVER=pn532_uart,
 .else
-PN531USB_DRIVER=
+PN532_UART_DRIVER=
 .endif
 
-.if ${PORT_OPTIONS:MPN532UART}
-PN532UART_DRIVER=pn532_uart,
+.if ${PORT_OPTIONS:MPN53X_USB}
+PN53X_USB_DRIVER=pn53x_usb,
 .else
-PN532UART_DRIVER=
+PN53X_USB_DRIVER=
 .endif
 
-.if ${PORT_OPTIONS:MPN533USB}
-PN533USB_DRIVER=pn533_usb,
-.else
-PN533USB_DRIVER=
-.endif
+CONFIGURE_ARGS+=--with-drivers="${ACR122_PCSC_DRIVER}${ACR122_USB_DRIVER}${ACR122S_DRIVER}${ARYGON_DRIVER}${PN532_I2C_DRIVER}${PN532_SPI_DRIVER}${PN532_UART_DRIVER}${PN53X_USB_DRIVER}"
 
-CONFIGURE_ARGS+=--with-drivers="${ACR122_DRIVER}${ARYGON_DRIVER}${PN531USB_DRIVER}${PN532UART_DRIVER}${PN533USB_DRIVER}"
-
-.if ${PORT_OPTIONS:MSERIALPROBE}
-CONFIGURE_ARGS+=--enable-serial-autoprobe
-.else
-CONFIGURE_ARGS+=--disable-serial-autoprobe
-.endif
-
-.if ${PORT_OPTIONS:MACR122}
-LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+.if ${PORT_OPTIONS:MACR122_PCSC}
+LIB_DEPENDS+=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 RUN_DEPENDS+=	${LOCALBASE}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so:${PORTSDIR}/devel/libccid
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/pn53x.conf ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/devd/pn53x.conf ${STAGEDIR}/${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
