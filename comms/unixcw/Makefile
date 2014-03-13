@@ -26,7 +26,7 @@ PLIST_SUB+=	XCWCP="@comment "
 CONFIGURE_ARGS+=	--disable-xcwcp
 .endif
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_CSTD=	gnu99
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

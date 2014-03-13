@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	whiptail:${PORTSDIR}/devel/newt
 
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX} --sysconfdir=${STAGEDIR}${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
