@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140312:
+  AFFECTS: users of net/openistgt
+  AUTHOR: jpaetzel@FreeBSD.org
+
+  Between istgt supporting target reload, and iscsid using CTL there is no
+  point to this port.  As such it has been deleted without warning, since
+  the support for it is as best questionable.
+
+  pkgng users:
+  
+  # pkg set -o net/openistgt:net/istgt
+
+  portmaster users:
+
+  # portmaster -o net/istgt net/openistgt
+  # portmaster -r istgt
+
+  portupgrade users:
+
+  # portupgrade -o net/istgt -f net/openistgt
+  # portupgrade -fr net/istgt
+
 20140307:
   AFFECTS: users of devel/py-setuptools dependent ports
   AUTHOR: sunpoet@FreeBSD.org

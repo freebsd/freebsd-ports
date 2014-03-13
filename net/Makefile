@@ -465,7 +465,6 @@
     SUBDIR += openbgpd
     SUBDIR += opendpi
     SUBDIR += openh323
-    SUBDIR += openistgt
     SUBDIR += openldap24-client
     SUBDIR += openldap24-sasl-client
     SUBDIR += openldap24-server
