@@ -24,4 +24,16 @@ lib/libpano13.la
 lib/libpano13.so
 lib/libpano13.so.2
 libdata/pkgconfig/libpano13.pc
+man/man1/PTAInterpolate.1.gz
+man/man1/PTblender.1.gz
+man/man1/PTcrop.1.gz
+man/man1/PTinfo.1.gz
+man/man1/PTmasker.1.gz
+man/man1/PTmender.1.gz
+man/man1/PToptimizer.1.gz
+man/man1/PTroller.1.gz
+man/man1/PTtiff2psd.1.gz
+man/man1/PTtiffdump.1.gz
+man/man1/PTuncrop.1.gz
+man/man1/panoinfo.1.gz
 @dirrm include/pano13
