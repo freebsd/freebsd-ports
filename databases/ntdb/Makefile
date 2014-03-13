@@ -131,4 +131,4 @@ do-build:
 do-install:
 			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} ${INSTALL_TARGET})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
