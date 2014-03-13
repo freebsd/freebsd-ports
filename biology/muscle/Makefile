@@ -22,7 +22,7 @@ COMMENT=	Multiple Sequence Comparison by Log-Expectation
 
 FETCH_ARGS=	-A
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_DOS2UNIX=	*.cpp
 
 PLIST_FILES=	bin/muscle

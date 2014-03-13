@@ -19,7 +19,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
 
 USE_XORG=	x11 xaw xt
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	Makefile.unx
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUNX" \
 		DFLAGS="${CFLAGS} -DX -I${LOCALBASE}/include" \
