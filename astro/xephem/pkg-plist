@@ -41,6 +41,41 @@ lib/X11/xephem/fifos/Makefile
 lib/X11/xephem/fifos/README
 lib/X11/xephem/fits/Abell426.fts
 lib/X11/xephem/fits/horsehead.fts
+lib/X11/xephem/gallery/1999-41-a-web_print.jpg
+lib/X11/xephem/gallery/I0059-1.jpg
+lib/X11/xephem/gallery/I1613-1.jpg
+lib/X11/xephem/gallery/I1848-1.jpg
+lib/X11/xephem/gallery/I2118-2.jpg
+lib/X11/xephem/gallery/M013-2.jpg
+lib/X11/xephem/gallery/M034-1.jpg
+lib/X11/xephem/gallery/M053-1.jpg
+lib/X11/xephem/gallery/N2174-1.jpg
+lib/X11/xephem/gallery/N6633-1.jpg
+lib/X11/xephem/gallery/N6791-1.jpg
+lib/X11/xephem/gallery/N6820-2.jpg
+lib/X11/xephem/gallery/N6946-1.jpg
+lib/X11/xephem/gallery/N7023-2.jpg
+lib/X11/xephem/gallery/N7129-2.jpg
+lib/X11/xephem/gallery/S115-1.jpg
+lib/X11/xephem/gallery/abell1656-1.jpg
+lib/X11/xephem/gallery/abell2151-1.jpg
+lib/X11/xephem/gallery/arp295_kelly_c1.jpg
+lib/X11/xephem/gallery/gallery.gly
+lib/X11/xephem/gallery/hickson68-1.jpg
+lib/X11/xephem/gallery/ic5146-2002sep12-hall.jpg
+lib/X11/xephem/gallery/m103-2002sep13-lrgb.jpg
+lib/X11/xephem/gallery/m29-2002sep05.jpg
+lib/X11/xephem/gallery/m3-2003may07-ddp.jpg
+lib/X11/xephem/gallery/m35-11dec01-grgb.jpg
+lib/X11/xephem/gallery/m76-07dec01-lrgb-nr.jpg
+lib/X11/xephem/gallery/m82-03apr02-rgb.jpg
+lib/X11/xephem/gallery/m92-01jun02.jpg
+lib/X11/xephem/gallery/m97-03apr02-lrgb.jpg
+lib/X11/xephem/gallery/ngc457-2002sep13-lrgb.jpg
+lib/X11/xephem/gallery/ngc6819-25aug01-lrgb.jpg
+lib/X11/xephem/gallery/ngc6888-27jul02-ha.jpg
+lib/X11/xephem/gallery/ngc869-2002oct06-lrgb.jpg
+lib/X11/xephem/gallery/pui-17-virgo-anno1000.jpg
 lib/X11/xephem/help/png/aavso.png
 lib/X11/xephem/help/png/annotation.png
 lib/X11/xephem/help/png/close-pairs.png
@@ -79,8 +114,8 @@ lib/X11/xephem/help/png/moon.png
 lib/X11/xephem/help/png/movie.png
 lib/X11/xephem/help/png/naag.png
 lib/X11/xephem/help/png/network-setup.png
-lib/X11/xephem/help/png/obslog.png
 lib/X11/xephem/help/png/obslog-list.png
+lib/X11/xephem/help/png/obslog.png
 lib/X11/xephem/help/png/plot-sample.png
 lib/X11/xephem/help/png/plot.png
 lib/X11/xephem/help/png/print.png
@@ -130,100 +165,12 @@ lib/X11/xephem/help/png/uranus.png
 lib/X11/xephem/help/png/valid-html401.png
 lib/X11/xephem/help/png/wcssolver.png
 lib/X11/xephem/help/xephem.html
-lib/X11/xephem/gallery/1999-41-a-web_print.jpg
-lib/X11/xephem/gallery/I0059-1.jpg
-lib/X11/xephem/gallery/I1613-1.jpg
-lib/X11/xephem/gallery/I1848-1.jpg
-lib/X11/xephem/gallery/I2118-2.jpg
-lib/X11/xephem/gallery/M013-2.jpg
-lib/X11/xephem/gallery/M034-1.jpg
-lib/X11/xephem/gallery/M053-1.jpg
-lib/X11/xephem/gallery/N2174-1.jpg
-lib/X11/xephem/gallery/N6633-1.jpg
-lib/X11/xephem/gallery/N6791-1.jpg
-lib/X11/xephem/gallery/N6820-2.jpg
-lib/X11/xephem/gallery/N6946-1.jpg
-lib/X11/xephem/gallery/N7023-2.jpg
-lib/X11/xephem/gallery/N7129-2.jpg
-lib/X11/xephem/gallery/S115-1.jpg
-lib/X11/xephem/gallery/abell1656-1.jpg
-lib/X11/xephem/gallery/abell2151-1.jpg
-lib/X11/xephem/gallery/arp295_kelly_c1.jpg
-lib/X11/xephem/gallery/gallery.gly
-lib/X11/xephem/gallery/hickson68-1.jpg
-lib/X11/xephem/gallery/ic5146-2002sep12-hall.jpg
-lib/X11/xephem/gallery/m103-2002sep13-lrgb.jpg
-lib/X11/xephem/gallery/m29-2002sep05.jpg
-lib/X11/xephem/gallery/m3-2003may07-ddp.jpg
-lib/X11/xephem/gallery/m35-11dec01-grgb.jpg
-lib/X11/xephem/gallery/m76-07dec01-lrgb-nr.jpg
-lib/X11/xephem/gallery/m82-03apr02-rgb.jpg
-lib/X11/xephem/gallery/m92-01jun02.jpg
-lib/X11/xephem/gallery/m97-03apr02-lrgb.jpg
-lib/X11/xephem/gallery/ngc457-2002sep13-lrgb.jpg
-lib/X11/xephem/gallery/ngc6819-25aug01-lrgb.jpg
-lib/X11/xephem/gallery/ngc6888-27jul02-ha.jpg
-lib/X11/xephem/gallery/ngc869-2002oct06-lrgb.jpg
-lib/X11/xephem/gallery/pui-17-virgo-anno1000.jpg
 lib/X11/xephem/lo/lodb.xml
-lib/X11/xephem/tools/indi/Makefile
-lib/X11/xephem/tools/indi/README
-lib/X11/xephem/tools/indi/cam.c
-lib/X11/xephem/tools/indi/camtest.fts
-lib/X11/xephem/tools/indi/camtest2.fts
-lib/X11/xephem/tools/indi/compiler.c
-lib/X11/xephem/tools/indi/evalINDI.c
-lib/X11/xephem/tools/indi/evalINDI.man
-lib/X11/xephem/tools/indi/eventloop.c
-lib/X11/xephem/tools/indi/eventloop.h
-lib/X11/xephem/tools/indi/fq.c
-lib/X11/xephem/tools/indi/fq.h
-lib/X11/xephem/tools/indi/getINDI.c
-lib/X11/xephem/tools/indi/getINDI.man
-lib/X11/xephem/tools/indi/indiapi.h
-lib/X11/xephem/tools/indi/indidevapi.h
-lib/X11/xephem/tools/indi/indidevapi.man
-lib/X11/xephem/tools/indi/indidrivermain.c
-lib/X11/xephem/tools/indi/indiserver.c
-lib/X11/xephem/tools/indi/indiserver.man
-lib/X11/xephem/tools/indi/ota.c
-lib/X11/xephem/tools/indi/security.c
-lib/X11/xephem/tools/indi/setINDI.c
-lib/X11/xephem/tools/indi/setINDI.man
-lib/X11/xephem/tools/indi/tmount.c
-lib/X11/xephem/tools/indi/wx.c
-lib/X11/xephem/tools/lx200xed/LICENSE
-lib/X11/xephem/tools/lx200xed/Makefile
-lib/X11/xephem/tools/lx200xed/README
-lib/X11/xephem/tools/lx200xed/liblx200.c
-lib/X11/xephem/tools/lx200xed/liblx200.h
-lib/X11/xephem/tools/lx200xed/lx200xed.c
-lib/X11/xephem/tools/xedb/Makefile
-lib/X11/xephem/tools/xedb/README
-lib/X11/xephem/tools/xedb/print.c
-lib/X11/xephem/tools/xedb/sample.res
-lib/X11/xephem/tools/xedb/xedb.c
-lib/X11/xephem/tools/xephemdbd/INSTALL
-lib/X11/xephem/tools/xephemdbd/Makefile
-lib/X11/xephem/tools/xephemdbd/README
-lib/X11/xephem/tools/xephemdbd/cgi-lib.pl
-lib/X11/xephem/tools/xephemdbd/db.c
-lib/X11/xephem/tools/xephemdbd/fsfetch.c
-lib/X11/xephem/tools/xephemdbd/request.c
-lib/X11/xephem/tools/xephemdbd/start-xephemdbd.pl
-lib/X11/xephem/tools/xephemdbd/stubs.c
-lib/X11/xephem/tools/xephemdbd/xephemdbd.c
-lib/X11/xephem/tools/xephemdbd/xephemdbd.html
-lib/X11/xephem/tools/xephemdbd/xephemdbd.pl
-@dirrm lib/X11/xephem/tools/xephemdbd
-@dirrm lib/X11/xephem/tools/xedb
-@dirrm lib/X11/xephem/tools/lx200xed
-@dirrm lib/X11/xephem/tools/indi
-@dirrm lib/X11/xephem/tools
+man/man1/xephem.1.gz
+@dirrm lib/X11/xephem/lo
 @dirrm lib/X11/xephem/help/png
 @dirrm lib/X11/xephem/help
 @dirrm lib/X11/xephem/gallery
-@dirrm lib/X11/xephem/lo
 @dirrm lib/X11/xephem/fits
 @dirrm lib/X11/xephem/fifos
 @dirrm lib/X11/xephem/catalogs
