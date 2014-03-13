@@ -17,19 +17,15 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		gif.5:${PORTSDIR}/graphics/giflib
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
 USE_XORG=	sm xext x11
-USE_GMAKE=	yes
-USE_GNOME=	gtk12 gnomehack
+USES=		gmake tar:bzip2 pathfix
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib --disable-modules
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 
-MAN1=		imlib-config.1 imlib_config.1
-
-NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e "s|10:15:9|5:0:0|" ${WRKSRC}/*/Makefile.in
 	@${REINPLACE_CMD} -e "s|glib-config|${GLIB_CONFIG}|" ${WRKSRC}/configure
