@@ -12,7 +12,7 @@ COMMENT=	3ware storage controllers management CLI
 
 EXTRACT_SUFX=	.zip
 
-RESTRICTED=	Redistribution is not allowed
+RESTRICTED=	Redistribution forbidden by license
 # i386 binary should work on ia64, but not tested
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 
