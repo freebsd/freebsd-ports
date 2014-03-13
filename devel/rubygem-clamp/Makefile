@@ -1,3 +1,6 @@
+# Created by: Michael Moll <kvedulv@kvedulv.de>
+# $FreeBSD$
+
 PORTNAME=	clamp
 PORTVERSION=	0.6.3
 CATEGORIES=	devel ruby
