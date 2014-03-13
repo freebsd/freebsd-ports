@@ -10,17 +10,23 @@ DISTFILES=	# none
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	Utility to uninstall packages
 
+USES=		shebangfix
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+SHEBANG_FILES=	pkg_remove
 PLIST_FILES=	bin/pkg_remove
+
 SRC=		${.CURDIR}/src
 
-NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${SRC}/pkg_remove.txt ${WRKSRC}/pkg_remove
+
 do-install:
-	${INSTALL_SCRIPT} ${SRC}/pkg_remove.txt ${PREFIX}/bin/pkg_remove
+	${INSTALL_SCRIPT} ${WRKSRC}/pkg_remove ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
