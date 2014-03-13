@@ -16,6 +16,10 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
+BROKEN=		Does not compile on 10 or higher
+DEPRECATED=	Does not compile on 10 or higher
+EXPIRATION_DATE=2014-04-30
+
 USE_GCC=	yes
 USES=		cmake
 CMAKE_ARGS=	-DBUILD_TUTORIALS:BOOL=OFF
