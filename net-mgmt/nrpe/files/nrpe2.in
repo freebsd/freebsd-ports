@@ -37,7 +37,7 @@ find_pidfile()
 	[ -n "$nrpe2_pidfile" ] &&
 	    warn "No longer necessary to set nrpe2_pidfile in rc.conf[.local]"
 
-	if get_pidfile_from_conf pid_file %%PREFIX%%/etc/nrpe.cfg; then
+	if get_pidfile_from_conf pid_file ${nrpe2_configfile}; then
 		pidfile="$_pidfile_from_conf"
 	else
 		pidfile='%%PIDDIR%%/nrpe2.pid'
