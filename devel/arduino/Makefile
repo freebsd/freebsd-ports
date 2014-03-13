@@ -3,7 +3,7 @@
 
 PORTNAME=	arduino
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:${PORTSDIR}/comms/rxtx \
 		${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 DOS2UNIX_REGEX=	.*\(\.\(c|cpp|h|hex|html|ino|lst|txt\)|Makefile\)
 
 USE_JAVA=	1.6+
@@ -40,7 +40,6 @@ DOCS_DESC=		Install the reference documents
 
 INSLIST=	arduino hardware lib libraries logo.png revisions.txt tools
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATMEGA644P}
@@ -93,12 +92,9 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/reference/img/
 
 do-install:
-	${MKDIR} ${PREFIX}/${PORTNAME}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${INSLIST}" ${PREFIX}/${PORTNAME} ${FIND_EXPR})
-	${CHMOD} +x ${PREFIX}/${PORTNAME}/arduino
-	${INSTALL_SCRIPT} ${WRKDIR}/arduino ${PREFIX}/bin/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${INSLIST}" ${STAGEDIR}${PREFIX}/${PORTNAME} ${FIND_EXPR})
+	${CHMOD} +x ${STAGEDIR}${PREFIX}/${PORTNAME}/arduino
+	${INSTALL_SCRIPT} ${WRKDIR}/arduino ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
