@@ -3,6 +3,7 @@
 
 PORTNAME=	JSON-Path
 PORTVERSION=	0.205
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +13,7 @@ COMMENT=	Search nested hashref/arrayref structures using JSONPath
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
+BUILD_DEPENDS=	p5-Exporter-Tiny>=0:${PORTSDIR}/devel/p5-Exporter-Tiny \
     		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-LV>=0:${PORTSDIR}/devel/p5-LV
 RUN_DEPENDS:=	${BUILD_DEPENDS}
