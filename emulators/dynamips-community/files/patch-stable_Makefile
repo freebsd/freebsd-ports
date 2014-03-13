@@ -1,0 +1,20 @@
+--- stable/Makefile.orig	2014-02-10 17:50:38.000000000 +0400
++++ stable/Makefile	2014-03-03 12:35:51.000000000 +0400
+@@ -2,6 +2,8 @@
+ # Copyright (c) 2005-2006 Christophe Fillot.
+ # Copyright (c) 2013 Daniel Lintott.
+ 
++$(warning stable DYNAMIPS_ARCH="${DYNAMIPS_ARCH}")
++
+ # Get include files from the current directory and from the common directory
+ INCLUDE+=-I. -I../common
+ 
+@@ -244,7 +246,7 @@
+ 
+ nvram_export$(BIN_EXT): nvram_export.o fs_nvram.o
+ 	@echo "Linking $@"
+-	@$(CC) -Wall $(CFLAGS) $(INCLUDE) $(LDFLAGS) -o $@ nvram_export.o fs_nvram.o
++	@$(CC) -Wall $(CFLAGS) $(INCLUDE) $(LDFLAGS) -o $@ nvram_export.o fs_nvram.o $(LIBS)
+ 
+ .PHONY: clean
+ clean:
