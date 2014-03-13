@@ -1,13 +1,22 @@
 '\" t
 .\"     Title: talloc
-.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
-.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
-.\"      Date: 10/06/2011
-.\"    Manual: [FIXME: manual]
-.\"    Source: [FIXME: source]
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 03/13/2014
+.\"    Manual: System Administration tools
+.\"    Source: Samba 4.0
 .\"  Language: English
 .\"
-.TH "TALLOC" "3" "10/06/2011" "[FIXME: source]" "[FIXME: manual]"
+.TH "TALLOC" "3" "03/13/2014" "Samba 4\&.0" "System Administration tools"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
 .\" -----------------------------------------------------------------
 .\" * set default formatting
 .\" -----------------------------------------------------------------
@@ -95,7 +104,7 @@ The
 argument to talloc() can be NULL, in which case a new top level context is created\&.
 .SS "void *talloc_size(const void *ctx, size_t size);"
 .PP
-The function talloc_size() should be used when you don\'t have a convenient type to pass to talloc()\&. Unlike talloc(), it is not type safe (as it returns a void *), so you are on your own for type checking\&.
+The function talloc_size() should be used when you don\*(Aqt have a convenient type to pass to talloc()\&. Unlike talloc(), it is not type safe (as it returns a void *), so you are on your own for type checking\&.
 .SS "(typeof(ptr)) talloc_ptrtype(const void *ctx, ptr);"
 .PP
 The talloc_ptrtype() macro should be used when you have a pointer and want to allocate memory to point at with this pointer\&. When compiling with gcc >= 3 it is typesafe\&. Note this is a wrapper of talloc_size() and talloc_get_name() will return the current location in the source file\&. and not the type\&.
@@ -129,8 +138,8 @@ To help you find problems in your code caused by this behaviour, if you do try a
 .\}
 .nf
 	    ERROR: talloc_free with references at some_dir/source/foo\&.c:123
-  	  	reference at some_dir/source/other\&.c:325
-  	  	reference at some_dir/source/third\&.c:121
+		reference at some_dir/source/other\&.c:325
+		reference at some_dir/source/third\&.c:121
 	  
 .fi
 .if n \{\
@@ -176,8 +185,6 @@ you can talloc_free() any parent of the original pointer\&. That will reduce the
 .IP \(bu 2.3
 .\}
 you can talloc_free() the pointer itself\&. That will destroy the most recently established parent to the pointer and leave the pointer as a child of its current parent\&.
-.RE
-.sp
 .RE
 .PP
 For more control on which parent to remove, see
@@ -365,8 +372,8 @@ Note that if you try and call talloc_steal() on a pointer that has more than one
 .\}
 .nf
 	  WARNING: talloc_steal with references at some_dir/source/foo\&.c:123
-  	  	reference at some_dir/source/other\&.c:325
-  	  	reference at some_dir/source/third\&.c:121
+		reference at some_dir/source/other\&.c:325
+		reference at some_dir/source/third\&.c:121
 	  
 .fi
 .if n \{\
@@ -426,7 +433,7 @@ This provides a more flexible reports than talloc_report()\&. It will let you sp
 .PP
 This enables calling of talloc_report(NULL, stderr) when the program exits\&. In Samba4 this is enabled by using the \-\-leak\-report command line option\&.
 .PP
-For it to be useful, this function must be called before any other talloc function as it establishes a "null context" that acts as the top of the tree\&. If you don\'t call this function first then passing NULL to talloc_report() or talloc_report_full() won\'t give you the full tree printout\&.
+For it to be useful, this function must be called before any other talloc function as it establishes a "null context" that acts as the top of the tree\&. If you don\*(Aqt call this function first then passing NULL to talloc_report() or talloc_report_full() won\*(Aqt give you the full tree printout\&.
 .PP
 Here is a typical talloc report:
 .sp
@@ -434,7 +441,7 @@ Here is a typical talloc report:
 .RS 4
 .\}
 .nf
-talloc report on \'null_context\' (total 267 bytes in 15 blocks)
+talloc report on \*(Aqnull_context\*(Aq (total 267 bytes in 15 blocks)
 libcli/auth/spnego_parse\&.c:55  contains   31 bytes in   2 blocks
 libcli/auth/spnego_parse\&.c:55  contains   31 bytes in   2 blocks
 iconv(UTF8,CP850)              contains   42 bytes in   2 blocks
@@ -451,7 +458,7 @@ iconv(UTF\-16LE,UTF8)           contains   45 bytes in   2 blocks
 .PP
 This enables calling of talloc_report_full(NULL, stderr) when the program exits\&. In Samba4 this is enabled by using the \-\-leak\-report\-full command line option\&.
 .PP
-For it to be useful, this function must be called before any other talloc function as it establishes a "null context" that acts as the top of the tree\&. If you don\'t call this function first then passing NULL to talloc_report() or talloc_report_full() won\'t give you the full tree printout\&.
+For it to be useful, this function must be called before any other talloc function as it establishes a "null context" that acts as the top of the tree\&. If you don\*(Aqt call this function first then passing NULL to talloc_report() or talloc_report_full() won\*(Aqt give you the full tree printout\&.
 .PP
 Here is a typical full report:
 .sp
@@ -459,7 +466,7 @@ Here is a typical full report:
 .RS 4
 .\}
 .nf
-full talloc report on \'root\' (total 18 bytes in 8 blocks)
+full talloc report on \*(Aqroot\*(Aq (total 18 bytes in 8 blocks)
 p1               contains     18 bytes in   7 blocks (ref 0)
     r1               contains     13 bytes in   2 blocks (ref 0)
         reference to: p2
@@ -488,7 +495,7 @@ if (ptr) memset(ptr, 0, sizeof(type));
 .\}
 .SS "void *talloc_zero_size(const void *\fIctx\fR, size_t \fIsize\fR)"
 .PP
-The talloc_zero_size() function is useful when you don\'t have a known type\&.
+The talloc_zero_size() function is useful when you don\*(Aqt have a known type\&.
 .SS "void *talloc_memdup(const void *\fIctx\fR, const void *\fIp\fR, size_t size);"
 .PP
 The talloc_memdup() function is equivalent to:
@@ -619,7 +626,7 @@ This is a handy utility function that returns a talloc context which will be aut
 .SS "void *talloc_check_name(const void *ptr, const char *name);"
 .PP
 This function checks if a pointer has the specified
-\fIname\fR\&. If it does then the pointer is returned\&. It it doesn\'t then NULL is returned\&.
+\fIname\fR\&. If it does then the pointer is returned\&. It it doesn\*(Aqt then NULL is returned\&.
 .SS "(type *)talloc_get_type(const void *ptr, type);"
 .PP
 This macro allows you to do type checking on talloc pointers\&. It is particularly useful for void* private pointers\&. It is equivalent to this:
@@ -662,6 +669,9 @@ All the additional features of talloc(3) over malloc(3) do come at a price\&. We
 .PP
 malloc(3), strndup(3), vasprintf(3), asprintf(3),
 \m[blue]\fB\%http://talloc.samba.org/\fR\m[]
+.SH "AUTHOR"
+.PP
+The original Samba software and related utilities were created by Andrew Tridgell\&. Samba is now developed by the Samba Team as an Open Source project similar to the way the Linux kernel is developed\&.
 .SH "COPYRIGHT/LICENSE"
 .PP
 Copyright (C) Andrew Tridgell 2004
