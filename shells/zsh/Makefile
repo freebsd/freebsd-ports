@@ -20,8 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 ZSH_VER=	${PORTVERSION}
 
-USE_BZIP2=	yes
-USES=		iconv ncurses
+USES=		iconv ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -66,12 +65,6 @@ DEBUG_CONFIGURE_ENABLE=	zsh-debug
 MULTIBYTE_CONFIGURE_ENABLE=	multibyte
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSTATIC}
-PLIST_SUB+=		SHARED="@comment "
-.else
-PLIST_SUB+=		SHARED=""
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 INFO=	zsh
