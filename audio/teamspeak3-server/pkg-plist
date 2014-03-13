@@ -1,5 +1,3 @@
-@stopdaemon teamspeak
-@comment basic files
 lib/teamspeak/server/libts3db_mysql.so
 lib/teamspeak/server/libts3db_sqlite3.so
 @dirrm lib/teamspeak/server
@@ -7,7 +5,6 @@ lib/teamspeak/server/libts3db_sqlite3.so
 libexec/teamspeak_server
 share/teamspeak/server/CHANGELOG
 share/teamspeak/server/LICENSE
-@comment serverquerydocs files
 share/teamspeak/server/serverquerydocs/banadd.txt
 share/teamspeak/server/serverquerydocs/banclient.txt
 share/teamspeak/server/serverquerydocs/bandel.txt
@@ -140,7 +137,6 @@ share/teamspeak/server/serverquerydocs/use.txt
 share/teamspeak/server/serverquerydocs/version.txt
 share/teamspeak/server/serverquerydocs/whoami.txt
 @dirrm share/teamspeak/server/serverquerydocs
-@comment sql files
 share/teamspeak/server/sql/ban_delete.sql
 share/teamspeak/server/sql/ban_insert.sql
 share/teamspeak/server/sql/ban_list.sql
@@ -249,15 +245,15 @@ share/teamspeak/server/sql/update_20.sql
 share/teamspeak/server/sql/update_21.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_permissions_12.sql
+@dirrm share/teamspeak/server/sql
 @dirrm share/teamspeak/server/sql/create_mysql
 @dirrm share/teamspeak/server/sql/create_sqlite
-@dirrm share/teamspeak/server/sql
-@comment directories
 @dirrm share/teamspeak/server
 @dirrmtry share/teamspeak
 @dirrmtry %%ETCDIR%%
-@comment these three exec lines are needed for pkg_add
+@dirrmtry %%DBDIR%%
+@dirrmtry %%LOGDIR%%
+@comment installation with correct permissions
 @exec install -d -o %%USERS%% -g %%GROUPS%% %%DBDIR%%
 @exec install -d -o %%USERS%% -g %%BINGRP%% %%LOGDIR%%
 @exec mkdir -p %D/%%ETCDIR%%
-@unexec rmdir %%DBDIR%% %%LOGDIR%% 2>/dev/null || true
