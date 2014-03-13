@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libscrypt
-PORTVERSION=	1.14
-PORTREVISION=	1
+PORTVERSION=	1.18
 CATEGORIES=	security
 
 MAINTAINER=	horia@racoviceanu.com
@@ -16,22 +15,24 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	technion
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	8e6966e
+GH_COMMIT=	35b6894
 
 PLIST_FILES=	include/libscrypt.h \
-		lib/libscrypt.a \
 		lib/libscrypt.so \
 		lib/libscrypt.so.0
 
 PORTDOCS=	README.md
-
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC=gcc/d' -e '/CFLAGS=/s|$$| ${CFLAGS}|' \
-		-e 's|/usr/local|${PREFIX}| ; \
-		s|install: library|& install-static| ; \
-		s|$$(LDFLAGS)||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|CC?=gcc|CC?=${CC}|; s|CFLAGS?=|CFLAGS+=|; \
+		s|LIBDIR       ?|LIBDIR        |' ${WRKSRC}/Makefile
+
+.if ${ARCH} == i386 && ${COMPILER_TYPE} == gcc
+	@${REINPLACE_CMD} -e 's|stack-protector|no-&|' ${WRKSRC}/Makefile
+.endif
 
 regression-test: build
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check)
@@ -40,10 +41,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386 && ${COMPILER_TYPE} == gcc
-CFLAGS+=	-fno-stack-protector
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.0
 
 .include <bsd.port.post.mk>
