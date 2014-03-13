@@ -8,6 +8,7 @@ The %%DATABASE%% schema and default security credentials have been copied to:
 
 - %%JSHOME%%/js-create.ddl
 - %%JSHOME%%/quartz.ddl 
+- %%JSHOME%%/upgrade-%%DATABASE%%-5.1.0-5.2.0-ce.sql
 - %%JSHOME%%/upgrade-%%DATABASE%%-%%JSUPDATE%%-ce.sql
 and 
 - %%JSHOME%%/jasperserverCreateDefaultSecurity-%%DATABASE%%.sql 

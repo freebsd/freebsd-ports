@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	jasperserver
-PORTVERSION=	5.1.0
+PORTVERSION=	5.5.0
 CATEGORIES=	databases print java
-MASTER_SITES=	http://community.jaspersoft.com/sites/default/files/releases/:source1 \
+MASTER_SITES=	http://downloads.sourceforge.net/project/jasperserver/JasperServer/JasperReports%20Server%20Community%20Edition%205.5.0/:source1 \
 		SF/bsdsrc/:source2 \
 		http://dev.quadras.co.id/archiva/repository/internal/org/codehaus/mojo/cobertura-maven-plugin/2.5-Jaspersoft/:source3
 DISTFILES=	jasperreports-server-cp-${PORTVERSION}-src.zip:source1 \
@@ -30,7 +30,7 @@ WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 SQLSRC=		${WRKSRC}/install_resources/sql
 JS=		${SRCDIR}/${PORTNAME}
 JSREPO=		${JS}-repo
-JSUPDATE=	5.0.0-${PORTVERSION}
+JSUPDATE=	5.2.0-${PORTVERSION}
 
 NO_WRKSUBDIR=	yes
 USES=		zip
@@ -78,6 +78,8 @@ JAVA_VERSION=	1.6
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
+BROKEN=	org.springframework.jdbc.UncategorizedSQLException \
+	http://community.jaspersoft.com//questions/823526/jasperserver-src-distribution-550
 WANT_MYSQL_VER=	55
 DBUSER?=	root
 DBPASS?=
@@ -99,22 +101,17 @@ PLIST_SUB+=	JDBC=${JDBC}
 .endif
 
 .if ${PORT_OPTIONS:MTOMCAT6}
-APPHOME?=	${LOCALBASE}/apache-tomcat-6.0
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-APPTYPE=	tomcat6
-PLIST_SUB+=	APP_VERSION="apache-tomcat-6.0"
-JDBCLOC=	lib
+VER=	6
+.else
+VER=	7
 .endif
 
-.if ${PORT_OPTIONS:MTOMCAT7}
-APPHOME?=	${LOCALBASE}/apache-tomcat-7.0
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
-APPTYPE=	tomcat7
-PLIST_SUB+=	APP_VERSION="apache-tomcat-7.0"
+APPHOME?=	${LOCALBASE}/apache-tomcat-${VER}.0
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat${VER}
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat${VER}
+APPTYPE=	tomcat${VER}
+PLIST_SUB+=	APP_VERSION="apache-tomcat-${VER}.0"
 JDBCLOC=	lib
-.endif
 
 DBHOST?=	localhost
 
@@ -183,6 +180,7 @@ pre-build: extract patch
 	@${ECHO} "maven.build.type = repo" >> ${APP_PROPERTIES}
 	@${ECHO} "repo-path = ${JSREPO}" >> ${APP_PROPERTIES}
 	@${ECHO} "maven-localrepo-path = ${WRKDIR}/repository" >> ${APP_PROPERTIES}
+	@${ECHO} "SKIP_TEST_ARG=skipTests" >> ${APP_PROPERTIES}
 
 .if ${PORT_OPTIONS:MMYSQL}
 	@( if [ -f ${JAVAJARDIR}/mysql-connector-java.jar ] ; then \
@@ -222,6 +220,7 @@ do-install:
 	@${INSTALL_DATA} ${FILESDIR}/jasperserverCreateDefaultSecurity-${DATABASE}.sql ${JSHOME}
 	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/js-create.ddl ${JSHOME} )
 	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/quartz.ddl ${JSHOME} )
+	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/upgrade-${DATABASE}-5.1.0-5.2.0-ce.sql ${JSHOME} )
 	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/upgrade-${DATABASE}-${JSUPDATE}-ce.sql ${JSHOME} )
 	@${INSTALL} -m 440 ${QTZ_PROPERTIES} ${JSHOME}/WEB-INF/
 

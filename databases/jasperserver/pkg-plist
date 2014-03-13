@@ -1,3 +1,11 @@
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+%%APP_VERSION%%/lib/db2jcc-9.7.jar
+%%APP_VERSION%%/lib/ingres-jdbc-9.2.0.jar
+%%APP_VERSION%%/lib/ojdbc6-11.2.0.2.jar
+%%APP_VERSION%%/lib/mariadb-java-client-1.1.2.jar
+%%APP_VERSION%%/lib/sqljdbc-1.6-2206.100.jar
+%%APP_VERSION%%/lib/vertica_4.1.19_jdk_5.jar
 %%APP_VERSION%%/webapps/jasperserver/META-INF/MANIFEST.MF
 %%APP_VERSION%%/webapps/jasperserver/META-INF/context.xml
 %%APP_VERSION%%/webapps/jasperserver/META-INF/foodmartDS-jdbc.xml
@@ -17,8 +25,10 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-diagnostic.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-events-logging.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-export-import-web.xml
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-heartbeat.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-hive-datasource.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-logging.xml
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-maintenance-scheduler.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-mongodb-datasource.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-olap-connection.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-propertySettings.xml
@@ -35,12 +45,23 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext-webapp.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/applicationContext.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/attachments/readme.txt
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/CommonBundle.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/CommonBundle_fr.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ScalableInputControlsBundle.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ScalableInputControlsBundle_de.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ScalableInputControlsBundle_es.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ScalableInputControlsBundle_fr.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ScalableInputControlsBundle_it.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ScalableInputControlsBundle_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ScalableInputControlsBundle_pt_BR.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ScalableInputControlsBundle_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/calendar.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/calendar_de.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/calendar_es.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/calendar_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/calendar_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/calendar_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/calendar_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/calendar_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja-pro_messages.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja-pro_messages_de.properties
@@ -48,6 +69,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja-pro_messages_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja-pro_messages_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja-pro_messages_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja-pro_messages_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja-pro_messages_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja_mondrian_messages.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja_mondrian_messages_de.properties
@@ -55,6 +77,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja_mondrian_messages_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja_mondrian_messages_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja_mondrian_messages_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja_mondrian_messages_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/ja_mondrian_messages_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperreports_messages.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperreports_messages_de.properties
@@ -62,6 +85,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperreports_messages_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperreports_messages_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperreports_messages_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperreports_messages_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperreports_messages_ro.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperreports_messages_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_config.properties
@@ -70,6 +94,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_config_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_config_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_config_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_config_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_config_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_messages.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_messages_de.properties
@@ -77,6 +102,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_messages_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_messages_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_messages_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_messages_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jasperserver_messages_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jpivot_messages.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jpivot_messages_de.properties
@@ -84,6 +110,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jpivot_messages_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jpivot_messages_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jpivot_messages_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jpivot_messages_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jpivot_messages_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jsexceptions_messages.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jsexceptions_messages_de.properties
@@ -91,6 +118,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jsexceptions_messages_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jsexceptions_messages_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jsexceptions_messages_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jsexceptions_messages_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/jsexceptions_messages_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/logger_descriptions.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/logger_descriptions_de.properties
@@ -105,6 +133,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/mondrian_exception_messages_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/mondrian_exception_messages_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/mondrian_exception_messages_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/mondrian_exception_messages_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/mondrian_exception_messages_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/scheduling_ws.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/scheduling_ws_de.properties
@@ -112,6 +141,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/scheduling_ws_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/scheduling_ws_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/scheduling_ws_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/scheduling_ws_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/scheduling_ws_zh_CN.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/security.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/security_de.properties
@@ -119,6 +149,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/security_fr.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/security_it.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/security_ja.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/security_pt_BR.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/bundles/security_zh.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/classes/ehcache_hibernate.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/classes/esapi/ESAPI.properties
@@ -151,6 +182,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/ehcache_hibernate.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/esapi/Owasp.CsrfGuard.js
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/esapi/Owasp.CsrfGuard.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/esapi/Websphere.Owasp.CsrfGuard.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/faces-config.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/flows/addDataSourceFlow.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/flows/addFileResourceFlow.xml
@@ -264,6 +296,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jpivot/toolbar/htoolbar.xsl
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jpivot/toolbar/vtoolbar.xsl
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/js.aws.datasource.properties
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/js.config.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/js.diagnostic.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/js.jdbc.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/js.quartz.base.properties
@@ -344,6 +377,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/administer/templateList.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/common/dnd.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/common/download.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/common/jrsConfigs.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/common/jsEdition.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/common/jsEnvType.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/common/tooltip.jsp
@@ -360,6 +394,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/heartbeat/heartbeatState.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/home.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/inputControls/DefaultParametersForm.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/inputControls/InputControlConstants.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/inputControls/InputControlLabel.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/inputControls/InputControlTemplates.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/inputControls/Label.jsp
@@ -376,9 +411,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/manage/users.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/manage/usersState.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/messages/messageDetail.jsp
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/messages/messageDetailState.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/messages/messageList.jsp
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/messages/messageListState.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/olap/busy.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/olap/empty.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/olap/error.jsp
@@ -400,14 +433,13 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportDataSourceFlow/customPropsForm.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportDataSourceFlow/jdbcPropsForm.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportDataSourceFlow/jndiPropsForm.jsp
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/jobCommonState.jsp
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/jobList.jsp
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/jobOutput.jsp
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/jobParameters.jsp
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/jobParametersState.jsp
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/jobSetUp.jsp
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/jobSetUpState.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/main.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/tab.notifications.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/tab.output.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/tab.parameters.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportScheduling/tab.schedule.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/reportUnitFlow/listResources.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/requirejs.config.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/sample/buttons.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/sample/calendarSample.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/sample/columnsOne.jsp
@@ -418,6 +450,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/sample/dnd-min.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/sample/dnd.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/sample/flow.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/sample/i18n.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/sample/ipad-scroll.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/sample/lists.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/sample/menus.jsp
@@ -449,6 +482,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/webHelp/webHelp.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/aboutBox.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/addFolder.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/addJasperReportResourcesAndControls.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/addOrganization.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/addRole.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/addUser.jsp
@@ -468,6 +502,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/exportDialog.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/exportTemplates.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/generateResource.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/generatorSelect.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/heartbeatOptin.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/importControls.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/importTemplates.jsp
@@ -481,6 +516,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/page.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/permissions.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/propertiesResource.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/reportGeneratorProperties.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/repositorySelection.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/saveAs.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/templates/saveValues.jsp
@@ -505,7 +541,6 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.CDDI.mimepull.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MIT.jcryption.js.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MIT.jquery.js.txt
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MIT.nwmatcher.js.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MIT.prototype.js.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MIT.scriptaculous.js.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MPL-1.0.txt
@@ -565,7 +600,6 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.xalan.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.xerces.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.xml-api.txt
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/Owasp.CsrfGuard-3.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/activation-1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/ant-1.7.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/ant-launcher-1.7.1.jar
@@ -575,8 +609,8 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/aspectjrt-1.5.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/avalon-framework-api-4.3.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/avalon-framework-impl-4.3.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/aws-java-sdk-1.3.30-RC1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/axis-1.3.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/aws-java-sdk-1.5.8.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/axis-1.3-5784-jaspersoft.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/axis-jaxrpc-1.3.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/axis-saaj-1.3.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/backport-util-concurrent-3.1.jar
@@ -585,15 +619,21 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-anim-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-awt-util-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-bridge-1.7.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-codec-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-css-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-dom-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-ext-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-extension-1.7.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-gui-util-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-gvt-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-parser-1.7.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-rasterizer-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-script-1.7.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-squiggle-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-svg-dom-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-svggen-1.7.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-svgpp-1.7.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-swing-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-transcoder-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-util-1.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/batik-xml-1.7.jar
@@ -618,6 +658,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-lang-2.5.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-lang3-3.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-logging-1.0.4.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-logging-api-1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-math-1.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-net-3.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-pool-1.2.jar
@@ -625,6 +666,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-vfs-1.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/connector-api-1.5.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/connector-file-8.2.0.Final-lib.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/csrfguard-3.0.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/dom4j-1.6.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/dwr-2.0.3.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/ehcache-core-2.6.0.jar
@@ -634,52 +676,53 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/esapi-2.0GA.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/fop-0.95.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/groovy-all-2.0.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hadoop-core-1.0.1.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hadoop-core-1.2.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hibernate-core-3.3.2.GA-HHH-2763.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hibernate-jmx-3.3.2.GA.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-common-0.8.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-exec-0.8.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-jdbc-0.8.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-metastore-0.8.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-service-0.8.1.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-common-0.11.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-exec-0.11.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-jdbc-0.11.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-metastore-0.11.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-service-0.11.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/httpclient-4.2.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/httpcore-4.2.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/httpmime-4.1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/iReport-utils-2.0.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/infinispan-core-5.1.2.FINAL.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/itext-2.1.7.js2.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-annotations-2.0.5.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-core-2.0.5.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-annotations-2.1.4.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-core-2.1.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-core-asl-1.9.2.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-databind-2.0.5.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-databind-2.1.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-jaxrs-1.9.2.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-mapper-asl-1.9.2.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-xc-1.9.2.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jai_codec-1.1_mr.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jai_core-1.1_mr.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jakarta-regexp-1.4.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-chart-themes-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-chart-themes-5.5.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-fonts-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-common-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-common-impl-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-engine-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-engine-impl-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-externalAuth-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-externalAuth-impl-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-metadata-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-metadata-impl-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-common-ws-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-core-util-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-dto-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-export-tool-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-jax-rs-rest-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-remote-services-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-repository-hibernate-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-rest-server-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-search-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-war-jar-5.1.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-ws-server-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-functions-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-common-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-common-impl-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-engine-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-engine-impl-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-externalAuth-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-externalAuth-impl-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-metadata-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-metadata-impl-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-common-ws-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-core-util-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-dto-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-export-tool-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-jax-rs-rest-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-remote-services-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-repository-hibernate-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-rest-server-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-search-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-war-jar-5.5.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-ws-server-5.5.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/javacup-0.10k.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/javassist-3.7.ga.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jaxb-api-2.1.jar
@@ -710,23 +753,24 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jgroups-3.0.8.Final.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/ji-jpivot-5.1.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/ji-wcf-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jline-0.9.94.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jmx-logger-log4j-0.3.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jmx-logger-tools-0.3.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/joda-convert-1.3.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/joda-time-2.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/js-hive-datasource-1.0.3.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/js-mongodb-datasource-1.0.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/js-crypto-1.0.2.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/js-hive-datasource-1.0.4.1.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/js-mongodb-datasource-1.0.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jsf-api-1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/json-simple-1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jsr311-api-1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jstl-1.1.2.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jta-1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jxl-2.6.10.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/libfb303-0.7.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/libfb303-0.9.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/log4j-1.2.12.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mail-1.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mimepull-1.6.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mockito-all-1.9.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mondrian-3.2.0-13661-JS-3.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mondrian.dtd
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mongo-java-driver-2.7.3.jar
@@ -784,6 +828,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/tiles-core-2.1.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/tiles-jsp-2.1.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/tiles-servlet-2.1.4.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/tomcat-dbcp-7.0.42.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/translator-file-8.2.0.Final.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/translator-jdbc-8.2.0.Final.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/translator-olap-8.2.0.Final.jar
@@ -1039,15 +1084,74 @@
 %%APP_VERSION%%/webapps/jasperserver/quartz.ddl
 %%APP_VERSION%%/webapps/jasperserver/scripts/actionModel.modelGenerator.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/actionModel.primaryNavigation.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addDataSource.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addDataSource.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addDataType.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addDataType.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addFileResource.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addFileResource.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addInputControl.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addInputControl.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addInputControlQueryInformation.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addInputControlQueryInformation.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addJasperReport.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addJasperReport.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addJasperReportLocateControl.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addJasperReportLocateControl.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addJasperReportResourceNaming.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addJasperReportResourceNaming.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addJasperReportResourcesAndControls.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addJasperReportResourcesAndControls.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addListOfValues.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addListOfValues.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addMondrianXML.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addMondrianXML.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addOLAPView.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addOLAPView.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addQuery.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/addQuery.page.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/addinputcontrol.queryextra.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/addlistofvalues.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/adhoc.start.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/adhoc.start.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.adhoc.cache.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.adhoc.cache.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.adhoc.options.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.adhoc.options.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.export.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.export.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.import.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.import.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.logging.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.logging.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.options.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.options.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.orgs.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.orgs.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.roles.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.roles.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.users.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/admin.users.page.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/administer.base.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/administer.logging.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/administer.options.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/attributes.model.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/attributes.view.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/backbone.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/calendar/calendar2.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/calendar/template/calendar2Template.htm
 %%APP_VERSION%%/webapps/jasperserver/scripts/cascade.cascade.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/common/lib/backbone-0.9.2-patched.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/common/lib/backbone-validation-amd-0.8.1.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/common/lib/lodash-1.1.1.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/common/lib/moment-2.1.0-patched.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/common/lib/requirejs-domReady-2.0.1.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/common/lib/requirejs-text-plugin-2.0.3.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/common/lib/underscore.string-2.3.0.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/common/plugin/bundle.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/common/plugin/properties.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/commons.bare.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/commons.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/commons.minimal.main.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.LinkButton.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.ListBox.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.about.js
@@ -1055,6 +1159,7 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.ajaxuploader.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.authoritymodel.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.authoritypickerview.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components.calendarInput.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.checkbox-utils.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.customTooltip.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.dependent.dialog.js
@@ -1081,11 +1186,52 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.utils.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.validator.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.webHelp.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/list/ListWithNavigation.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/list/ListWithNavigationModel.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/list/ListWithSelection.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/list/ListWithSelectionModel.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/list/ScalableList.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/list/ScalableListModel.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/list/templates/itemsTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/list/templates/viewPortChunksTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/AvailableItemsList.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/AvailableItemsListWithTrueAll.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/ListViewForSelectedItemsList.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/MultiSelect.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/MultiSelectWithTrueAll.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/SelectedItemsDataProvider.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/SelectedItemsList.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/templates/availableItemsListDropdownTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/templates/availableItemsListDropdownWithTrueAllTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/templates/availableItemsListTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/templates/availableItemsTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/templates/listTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/templates/multiSelectTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/templates/selectedItemsListTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/templates/selectedItemsTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/CacheableDataProvider.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/DropDownManager.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/KeyboardManager.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/SearcheableDataProvider.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/SingleSelect.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/SingleSelectList.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/SingleSelectListModel.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/templates/dropDownTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/templates/itemsTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/templates/listTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/templates/singleSelectTemplate.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/config/backboneSyncSettings.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/config/backboneSyncSettings2.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/config/lodashTemplateSettings.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/config/requestSettings.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/connectionType.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/connectionType.page.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/controls.base.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/controls.basecontrol.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/controls.components.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/controls.controller.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/controls.core.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/controls.dataconverter.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/controls.datatransfer.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/controls.logging.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/controls.report.js
@@ -1100,10 +1246,17 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/core.layout.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/core.touch.events.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/create.report.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/dataTypeLocate.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/dataTypeLocate.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/datetime/RelativeDate.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/datetime/RelativeTime.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/datetime/RelativeTimestamp.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/datetime/Time.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/encrypt.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/encryption.utils.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/error.error.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/error.system.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/example/i18nPluginsUsage.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/export.app.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/export.extendedformview.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/export.formmodel.js
@@ -1118,23 +1271,18 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.unittests.yui.test.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.backbone.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.builder.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.controls.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.dragdrop.extra.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.dragdrop.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.dragdrop.touch.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.effects.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.iscroll.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.nwmatcher.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.prototype.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.prototype.touch.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.scriptaculous.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.slider.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.sound.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.touch.controller.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.underscore.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.underscore.string.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.unittest.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.xregexp.unicode.min.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/heartbeat.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/home.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/home.manage.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/home.page.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/import.app.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/import.extendedformview.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/import.formmodel.js
@@ -1142,7 +1290,7 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/jasperreports-reportViewerToolbar.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jpivot.jaPro.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/ext.jquery.jcryption.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery-1.7.1.min.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery-1.7.2.min.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery-ui-1.8.16.custom.min.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery-ui-1.8.20.custom.min.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery-ui-timepicker-addon.js
@@ -1155,6 +1303,7 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.ui.datepicker-fr.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.ui.datepicker-it.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.ui.datepicker-ja.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.ui.datepicker-pt-BR.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.ui.datepicker-ro.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.ui.datepicker-zh-CN.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.ui.datepicker-zh-TW.js
@@ -1195,16 +1344,56 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/theme/redmond/images/ui-icons_f9bd01_256x240.png
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/theme/redmond/jquery-ui-1.8.20.custom.css
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/ui/jquery.ui.mouse.touch.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/jquery/ui/jquery.ui.touch-punch.min.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/jrs.configs.amd.build.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/jrs.configs.amd.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/jrs.configs.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/jrs.runtime.shim.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/json2.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/json3.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/amd-jquery-1.10.2.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/amd-jqueryui-1.10.3-timepicker.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/amd-jqueryui-1.10.3.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/async.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17/cors/index.html
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17/easyXDM.Widgets.debug.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17/easyXDM.Widgets.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17/easyXDM.Widgets.min.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17/easyXDM.debug.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17/easyXDM.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17/easyXDM.min.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17/easyxdm.swf
+%%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17/name.html
 %%APP_VERSION%%/webapps/jasperserver/scripts/list.base.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/listOfValuesLocate.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/listOfValuesLocate.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/localContext.amd.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/localContext.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/locateDataSource.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/locateDataSource.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/locateMondrianConnectionSource.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/locateMondrianConnectionSource.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/locateQuery.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/locateQuery.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/locateXmlConnectionSource.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/locateXmlConnectionSource.page.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/login.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/messages.messageDetail.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/messages.messageList.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/login.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/login.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/messages/details/messageDetails.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/messages/details/messageDetails.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/messages/details/messageDetails.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/messages/list/messageList.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/messages/list/messageList.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/messages/list/messageList.page.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/mng.common.actions.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/mng.common.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/mng.main.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/mustache.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/ns.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/namespace.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/noext.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/olap.view.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/olap.view.page.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/old.report.view-report.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/org.role.mng.actions.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/org.role.mng.components.js
@@ -1213,18 +1402,24 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/org.user.mng.actions.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/org.user.mng.components.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/org.user.mng.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/pages/schedule.jobList.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/pages/schedule.jobOutput.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/pages/schedule.jobParameters.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/pages/schedule.jobSetup.page.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/pubsub.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/report.schedule.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/report.schedule.list.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/report.schedule.output.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/report.schedule.params.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/report.schedule.setup.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/report.view.base.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/report.view.runtime.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/report.viewer.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/report.viewer.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/report/jasperreports-loader.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/report/viewer.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/repository.main.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/repository.search.actions.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/repository.search.components.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/repository.search.globalSearchBoxInit.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/repository.search.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/require-jquery.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/require.config.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.add.files.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.add.mondrianxmla.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.analysisConnection.dataSource.locate.js
@@ -1251,6 +1446,27 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.query.locate.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.report.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.reportResourceNaming.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/results.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/samples/controls.main.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/samples/controls.page.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/collection/holidayCals.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/collection/jobs.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/model/holidayCal.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/model/job.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/router/app.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/template/job.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/template/parameters.htm
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/util/jobUtil.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view/app.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view/editor.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view/editor/holidayCal.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view/editor/notifications.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view/editor/output.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view/editor/parameters.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view/editor/schedule.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view/job.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view/jobs.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/text.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/tools.drag.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/tools.infiniteScroll.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/tools.truncator.js
@@ -1260,6 +1476,11 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/tree.treesupport.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/tree.utils.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/underscore.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/util/date.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/util/featureDetection.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/util/jrUtil.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/util/number.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/util/time.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/utils.animation.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/utils.common.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/utils.dateFormatter.js
@@ -1277,6 +1498,7 @@
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/banner_bkgd.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/bar_thumb.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/button_action_primary_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/default/images/button_action_simple_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/button_action_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/button_action_square_icons_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/button_capsule_sprite.png
@@ -1292,6 +1514,7 @@
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/favicon.ico
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/floatingMenu_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/grid_20x20_bkgd.png
+%%APP_VERSION%%/webapps/jasperserver/themes/default/images/homePages_icons_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/home_bkgd.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/home_icons_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/inner_pagination_sprite.png
@@ -1308,6 +1531,7 @@
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/message_icons_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/panel_inset_inset_bkgd.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/panel_sizer_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/default/images/panels_icons_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/percent_area_thumb.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/percent_bar_thumb.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/percent_column_thumb.png
@@ -1336,6 +1560,7 @@
 %%APP_VERSION%%/webapps/jasperserver/themes/default/overrides_ie8.css
 %%APP_VERSION%%/webapps/jasperserver/themes/default/pageSpecific.css
 %%APP_VERSION%%/webapps/jasperserver/themes/default/pages.css
+%%APP_VERSION%%/webapps/jasperserver/themes/default/reset.css
 %%APP_VERSION%%/webapps/jasperserver/themes/default/samples.css
 %%APP_VERSION%%/webapps/jasperserver/themes/default/theme.css
 %%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/adhoc_datatree_icons_sprite.png
@@ -1345,6 +1570,7 @@
 %%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/dialog_button_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/disclosure_indicators_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/footer_bkgd.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/homePages_icons_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/home_bkgd.png
 %%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/home_icons_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/list_node_animation.gif
@@ -1435,12 +1661,8 @@
 %%APP_VERSION%%/webapps/jasperserver/wcf/tree/xtree.css
 %%APP_VERSION%%/webapps/jasperserver/wcf/wcf.css
 %%APP_VERSION%%/webapps/jasperserver/upgrade-%%DATABASE%%-%%JSUPDATE%%-ce.sql
+%%APP_VERSION%%/webapps/jasperserver/upgrade-%%DATABASE%%-5.1.0-5.2.0-ce.sql
 %%APP_VERSION%%/webapps/jasperserver/jasperserverCreateDefaultSecurity-%%DATABASE%%.sql
-%%APP_VERSION%%/%%JDBCLOC%%/db2jcc-9.7.jar
-%%APP_VERSION%%/%%JDBCLOC%%/ingres-jdbc-9.2.0.jar
-%%APP_VERSION%%/%%JDBCLOC%%/ojdbc6-11.2.0.2.jar
-%%APP_VERSION%%/%%JDBCLOC%%/sqljdbc-1.6-2206.100.jar
-%%APP_VERSION%%/%%JDBCLOC%%/vertica_4.1.19_jdk_5.jar
 %%APP_VERSION%%/%%JDBCLOC%%/%%JDBC%%
 @exec if [ -f %D/%%APP_VERSION%%/%%JDBCLOC%%/%%JDBC%% ]; then /bin/chmod a+r %D/%%APP_VERSION%%/%%JDBCLOC%%/%%JDBC%%; else exit 1; fi
 @dirrm %%APP_VERSION%%/webapps/jasperserver/wcf/tree
@@ -1462,6 +1684,24 @@
 @dirrm %%APP_VERSION%%/webapps/jasperserver/themes/default/images
 @dirrm %%APP_VERSION%%/webapps/jasperserver/themes/default
 @dirrm %%APP_VERSION%%/webapps/jasperserver/themes
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/util
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view/editor
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/view
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/util
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/template
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/router
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/model
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/scheduler/collection
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/scheduler
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/samples
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/report
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/pages
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/messages/list
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/messages/details
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/messages
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17/cors
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/lib/easyXDM-2.4.17
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/lib
 @dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/ui
 @dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/theme/redmond/images
 @dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/theme/redmond
@@ -1469,6 +1709,21 @@
 @dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/theme
 @dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js
 @dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/jquery
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/example
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/datetime
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/config
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect/templates
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/components/singleSelect
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect/templates
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/components/multiSelect
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/components/list/templates
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/components/list
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/components
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/common/plugin
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/common/lib
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/common
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/calendar/template
+@dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/calendar
 @dirrm %%APP_VERSION%%/webapps/jasperserver/scripts
 @dirrm %%APP_VERSION%%/webapps/jasperserver/jpivot/toolbar
 @dirrm %%APP_VERSION%%/webapps/jasperserver/jpivot/table
@@ -1537,3 +1792,5 @@
 @dirrm %%APP_VERSION%%/webapps/jasperserver/WEB-INF
 @dirrm %%APP_VERSION%%/webapps/jasperserver/META-INF
 @dirrm %%APP_VERSION%%/webapps/jasperserver
+@dirrm %%APP_VERSION%%/webapps
+@dirrm %%APP_VERSION%%
