@@ -10,7 +10,7 @@ COMMENT=	Kbdscan shows the scancodes of keys pressed
 
 LICENSE=	ISCL
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 PLIST_FILES=	bin/${PORTNAME}
 

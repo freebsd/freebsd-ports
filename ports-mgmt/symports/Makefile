@@ -12,7 +12,7 @@ COMMENT=	Automatically generate symlinks for virtual categories
 
 LICENSE=	BSD2CLAUSE
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes
 

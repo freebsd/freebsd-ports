@@ -12,7 +12,7 @@ COMMENT=	Tool for generating number sequences and arithmetic evaluation
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 # ./base.h:620:14: error: invalid output constraint '=ir' in asm
 USE_GCC=	yes
