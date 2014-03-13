@@ -4150,6 +4150,7 @@
     SUBDIR += rubygem-celluloid-io
     SUBDIR += rubygem-childprocess
     SUBDIR += rubygem-chronic
+    SUBDIR += rubygem-clamp
     SUBDIR += rubygem-classifier
     SUBDIR += rubygem-climate_control
     SUBDIR += rubygem-clio
