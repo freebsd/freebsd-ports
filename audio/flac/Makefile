@@ -12,10 +12,9 @@ COMMENT=	Free lossless audio codec
 
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig tar:xz
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sse \
 		--with-ogg="${LOCALBASE}" \

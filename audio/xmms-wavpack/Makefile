@@ -12,8 +12,7 @@ COMMENT=	XMMS input plugin to play WavPack files
 LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack \
 		libxmms.so:${PORTSDIR}/multimedia/xmms
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -8,8 +8,7 @@ MASTER_SITES=	SF
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GTK-based scientific calculator
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
