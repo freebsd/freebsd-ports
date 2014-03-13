@@ -27,6 +27,7 @@ THEMES=		atlantis.conf \
 
 post-patch:
 	@${REINPLACE_CMD} -e '35,36d;89d;92,94d' \
+		-e "s/\([^-]pthread'\)/\1, 'X11'/" \
 		${WRKSRC}/SConstruct
 
 pre-build:
