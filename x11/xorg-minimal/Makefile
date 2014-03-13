@@ -29,6 +29,10 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/intel_drv.so:${PORTSDIR}/x11
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/${VIDEO_DRIVER}_drv.so:${PORTSDIR}/x11-drivers/xf86-video-${VIDEO_DRIVER}
 .endif
 
+.if ${VIDEO_DRIVER} == intel && defined(WITH_NEW_XORG)
+RUN_DEPENDS+=	${LOCALBASE}/lib/va/i965_drv_video.so:${PORTSDIR}/multimedia/libva-intel-driver
+.endif
+
 do-install:
 
 pre-everything::
