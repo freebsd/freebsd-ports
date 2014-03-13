@@ -1,0 +1,4 @@
+This gem contains Foreman API bindings for the Ruby language.
+The bindings are generated from API documentation using Apidoc tool.
+
+WWW: https://github.com/theforeman/foreman_api
