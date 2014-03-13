@@ -265,7 +265,10 @@ TEST_ARGS+=	${MAKE_ARGS}
 TEST_ENV+=	${MAKE_ENV}
 TEST_TARGET?=	test
 TEST_WRKSRC?=	${BUILD_WRKSRC}
-regression-test test: build
+.if !target(test)
+test: regression-test
+.endif # test
+regression-test: build
 .if ${USE_PERL5:Mmodbuild*}
 	-cd ${TEST_WRKSRC}/ && ${SETENV} ${TEST_ENV} ${PERL5} ${PL_BUILD} ${TEST_TARGET} ${TEST_ARGS}
 .elif ${USE_PERL5:Mconfigure}
