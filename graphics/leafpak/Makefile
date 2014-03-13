@@ -11,13 +11,13 @@ COMMENT=	Graphic file cutter for LEAF/AQUAPLUS PAK format archives
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/leafpak ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/leafpak2 ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ja/leafpak
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/leafpak
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/leafpak ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/leafpak2 ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/leafpak
+	${INSTALL_DATA} ${WRKSRC}/README \
+		${STAGEDIR}${PREFIX}/share/doc/ja/leafpak
 
 .include <bsd.port.mk>
