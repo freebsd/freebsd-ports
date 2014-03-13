@@ -1,4 +1,4 @@
---- src/xitk/network.c.orig	2011-11-08 20:49:07.000000000 +0000
+--- src/xitk/network.c.orig
 +++ src/xitk/network.c
 @@ -24,7 +24,7 @@
  /* required for getsubopt(); the __sun test avoids compilation problems on 
@@ -20,3 +20,12 @@
  
  #include "common.h"
  
+@@ -1255,7 +1255,7 @@ int main(int argc, char **argv) {
+   rl_readline_name = PROGNAME;
+   rl_set_prompt(session.prompt);
+   rl_initialize();
+-  rl_attempted_completion_function = (CPPFunction *)completion_function;
++  rl_attempted_completion_function = (rl_completion_func_t *)completion_function;
+   
+   signal(SIGPIPE, SIG_IGN);
+   
