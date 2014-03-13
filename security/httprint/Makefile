@@ -16,10 +16,9 @@ USES=		zip
 RESTRICTED=	No cost for personal, education and non-commercial use.
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -Rp ${WRKSRC} ${DATADIR}
-	${LN} -s ${DATADIR}/httprint ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	${LN} -s httprint ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
