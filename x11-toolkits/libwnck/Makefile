@@ -12,16 +12,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library used for writing pagers and taskslists
 
-USE_BZIP2=	yes
-
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-
 USE_XORG=	xres
-USES=		bison pathfix gettext gmake pkgconfig
-USE_GNOME=	gtk20 ltverhack referencehack intlhack
+USES=		bison pathfix gettext gmake pkgconfig tar:bzip2
+USE_GNOME=	gtk20 ltverhack referencehack intlhack introspection:build,run
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
@@ -32,7 +27,6 @@ OPTIONS_DEFINE=	STARTUP
 OPTIONS_DEFAULT=STARTUP
 STARTUP_DESC=	Startup notification support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTARTUP}
