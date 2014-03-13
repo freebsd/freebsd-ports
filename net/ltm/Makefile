@@ -11,15 +11,14 @@ COMMENT=	Statseeker Real Time LAN Analyser
 
 NO_BUILD=	yes
 
-MAN1=		ltm.1 ltm-client.1 ltm-mkprotodb.1
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-s: .IGNORE
-
 do-install:
-	@(tar -cf - -C ${WRKSRC} . | tar -xf - -C ${PREFIX})
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/ltm-client ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/ltm-mkprotodb ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/etc/protocols.cfg ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/etc/protocols.db ${STAGEDIR}${PREFIX}/etc
+.for f in ltm-client ltm-mkprotodb ltm
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${f}.1.gz \
+		${STAGEDIR}${MANPREFIX}/man/man1
+.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
