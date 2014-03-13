@@ -33,14 +33,17 @@ lib/libpolkit-dbus.a
 lib/libpolkit-dbus.la
 lib/libpolkit-dbus.so
 lib/libpolkit-dbus.so.2
+lib/libpolkit-dbus.so.2.0.0
 lib/libpolkit-grant.a
 lib/libpolkit-grant.la
 lib/libpolkit-grant.so
 lib/libpolkit-grant.so.2
+lib/libpolkit-grant.so.2.0.0
 lib/libpolkit.a
 lib/libpolkit.la
 lib/libpolkit.so
 lib/libpolkit.so.2
+lib/libpolkit.so.2.0.0
 libdata/pkgconfig/polkit-dbus.pc
 libdata/pkgconfig/polkit-grant.pc
 libdata/pkgconfig/polkit.pc
@@ -52,6 +55,12 @@ libexec/polkit-resolve-exe-helper
 libexec/polkit-revoke-helper
 libexec/polkit-set-default-helper
 libexec/polkitd-old
+%%MANPAGES%%man/man1/polkit-action.1.gz
+%%MANPAGES%%man/man1/polkit-auth.1.gz
+%%MANPAGES%%man/man1/polkit-config-file-validate.1.gz
+%%MANPAGES%%man/man1/polkit-policy-file-validate.1.gz
+%%MANPAGES%%man/man5/PolicyKit.conf.5.gz
+%%MANPAGES%%man/man8/PolicyKit.8.gz
 share/PolicyKit/config.dtd
 share/PolicyKit/policy/org.freedesktop.policykit.policy
 share/dbus-1/interfaces/org.freedesktop.PolicyKit.AuthenticationAgent.xml
@@ -67,6 +76,8 @@ share/dbus-1/system-services/org.freedesktop.PolicyKit.service
 @unexec rm -rf /var/run/PolicyKit 2>/dev/null || true
 @unexec rmdir /var/lib/PolicyKit 2>/dev/null || true
 @unexec rmdir /var/lib/PolicyKit-public 2>/dev/null || true
+@exec mkdir -p /var/lib/misc/
+@exec touch /var/lib/misc/PolicyKit.reload
 @unexec rm -f /var/lib/misc/PolicyKit.reload 2>/dev/null || true
 @unexec rmdir /var/lib/misc 2>/dev/null || true
 @cwd /
