@@ -4370,6 +4370,7 @@
     SUBDIR += rubygem-sundawg_country_codes
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-systemu
+    SUBDIR += rubygem-table_print
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-temple
     SUBDIR += rubygem-term-ansicolor
