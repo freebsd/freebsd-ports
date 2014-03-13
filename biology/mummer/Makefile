@@ -10,7 +10,7 @@ DISTNAME=	MUMmer${PORTVERSION}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A modular system for rapid whole genome alignment
 
-USE_GMAKE=	yes
+USES=		gmake
 
 PROGRAMS=	annotate combineMUMs delta-filter gaps \
 		mgaps mummer repeat-match show-aligns \

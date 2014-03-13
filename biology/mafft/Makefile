@@ -18,7 +18,7 @@ RUN_DEPENDS=	lav2ps:${PORTSDIR}/biology/fasta3
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-without-extensions
 BUILD_WRKSRC=	${WRKSRC}/core
 
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		mafft.1 mafft-homologs.1
 

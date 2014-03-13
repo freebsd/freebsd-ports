@@ -14,7 +14,7 @@ COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
 
 LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --copy
