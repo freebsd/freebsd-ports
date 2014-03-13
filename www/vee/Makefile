@@ -14,11 +14,11 @@ COMMENT=	Tiny CLI blogging tool
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -Ee 's|^function ([[:graph:]]+)|\1 ()|' ${WRKSRC}/bin/${PORTNAME}
+	@${REINPLACE_CMD} -Ee 's|^function ([[:graph:]]+)|\1 ()|' \
+		${WRKSRC}/bin/${PORTNAME}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
