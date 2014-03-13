@@ -21,6 +21,7 @@ PLISTF?=	${WRKDIR}/plist_files
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+USES=		zip:infozip
 USE_THUNDERBIRD=	yes
 USE_XPI=	thunderbird linux-thunderbird
 USE_SUBMAKE=	yes
