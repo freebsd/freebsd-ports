@@ -18,7 +18,7 @@ BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		zip
+USES=		zip:infozip
 WRKSRC=		${WRKDIR}/Roboto_v${PORTVERSION}
 
 FONTDIR=	lib/X11/fonts/Roboto
