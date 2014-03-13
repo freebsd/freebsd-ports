@@ -14,7 +14,7 @@ COMMENT=	Utility to flash ROM images to the EMS USB 64mb flash cart
 
 LICENSE=	MIT
 
-USE_GMAKE=	yes
+USES=		gmake
 CFLAGS+=	-g -Wall
 LDFLAGS+=	-lusb
 USE_GCC=	yes
