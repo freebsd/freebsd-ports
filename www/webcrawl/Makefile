@@ -14,12 +14,10 @@ COMMENT=	Download web sites without user interaction by following links
 
 ALL_TARGET=
 
-MAN1=		webcrawl.1
-PLIST_FILES=	bin/webcrawl
+PLIST_FILES=	bin/webcrawl man/man1/webcrawl.1.gz
 
-NO_STAGE=	yes
 do-install:
-		@ ${INSTALL_PROGRAM} ${WRKSRC}/webcrawl ${PREFIX}/bin/
-		@ ${INSTALL_MAN} ${WRKSRC}/webcrawl.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/webcrawl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/webcrawl.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
