@@ -498,6 +498,7 @@
     SUBDIR += mbgtools
     SUBDIR += mcelog
     SUBDIR += mcollective
+    SUBDIR += mcollective-nrpe-agent
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdcp
