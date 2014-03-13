@@ -21,6 +21,7 @@ man/man1/gunshar.1.gz
 %%NLS%%share/locale/ja/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sharutils.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sharutils.mo
