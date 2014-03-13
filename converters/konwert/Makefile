@@ -24,8 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PATCH_WRKSRC=	${WRKDIR}
 
 REINPLACE_ARGS=	-i ""
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 
 MAN1=		konwert.1 trs.1 filterm.1
 MANLANG=	"" pl
