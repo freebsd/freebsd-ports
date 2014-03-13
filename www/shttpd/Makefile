@@ -5,21 +5,18 @@ PORTNAME=	shttpd
 PORTVERSION=	1.42
 CATEGORIES=	www
 MASTER_SITES=	SF
-DISTNAME=	shttpd-${PORTVERSION}
 
 MAINTAINER=	valenok@gmail.com
 COMMENT=	Small, fast, embeddable web server with CGI, SSL, Authorization
 
-MAN1=		shttpd.1
 ALL_TARGET=	unix
 MAKE_ENV=	LIBS=-lpthread
 BUILD_WRKSRC=	${WRKSRC}/src
 
-PLIST_FILES=	bin/shttpd
+PLIST_FILES=	bin/shttpd man/man1/shttpd.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/shttpd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/src/shttpd.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/shttpd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/src/shttpd.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
