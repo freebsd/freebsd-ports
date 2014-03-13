@@ -14,14 +14,15 @@ COMMENT=	Brian Kernighan's pattern scanning and processing language
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	a.out
-MAN1=		nawk.1
 CFLAGS+=	-DHAS_ISBLANK
-PLIST_FILES=	bin/nawk
+PLIST_FILES=	bin/nawk man/man1/nawk.1.gz
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e 's|awk|nawk|g' ${WRKSRC}/awk.1
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/a.out ${PREFIX}/bin/nawk
-	${SED} -e 's|awk|nawk|g' ${WRKSRC}/awk.1 > ${WRKSRC}/nawk.1
-	${INSTALL_MAN} ${WRKSRC}/nawk.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/a.out ${STAGEDIR}${PREFIX}/bin/nawk
+	${INSTALL_MAN} ${WRKSRC}/awk.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1/nawk.1.gz
 
 .include <bsd.port.mk>
