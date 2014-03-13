@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wemux
-PORTVERSION=	2.2.0
+PORTVERSION=	3.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.c-s.li/ports/
 
@@ -17,8 +17,8 @@ RUN_DEPENDS=	tmux:${PORTSDIR}/sysutils/tmux \
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	zolrath
-GH_TAGNAME=	dfd964792a859ebc24b4210c53c9a0ceb9bb29e6
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-dfd9647
+GH_TAGNAME=	971f8c375263f9dd8853f676e3331782c4fbdfdc
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-971f8c3
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${PORTNAME}
