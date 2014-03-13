@@ -1,6 +1,6 @@
---- base/Makefile.in.orig	2013-12-05 12:51:35.000000000 +0100
-+++ base/Makefile.in	2013-12-06 17:20:50.030138556 +0100
-@@ -215,8 +215,8 @@ install-unstripped:
+--- base/Makefile.in.orig	2014-03-13 11:46:50.000000000 +0100
++++ base/Makefile.in	2014-03-13 21:46:18.324313068 +0100
+@@ -191,8 +191,8 @@ install-unstripped:
  	$(MAKE) install-basic
  
  install-basic:

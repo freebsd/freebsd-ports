@@ -1,6 +1,6 @@
---- Makefile.in.orig	2013-12-05 12:51:35.000000000 +0100
-+++ Makefile.in	2013-12-19 17:32:03.300358603 +0100
-@@ -141,16 +141,16 @@ none:
+--- Makefile.in.orig	2014-03-13 11:46:50.000000000 +0100
++++ Makefile.in	2014-03-13 21:46:18.322311413 +0100
+@@ -140,16 +140,16 @@ none:
  ###############################
  
  all:
@@ -22,7 +22,7 @@
  	fi
  
  	@echo ""
-@@ -218,7 +218,7 @@ all:
+@@ -217,7 +217,7 @@ all:
  	@echo ""
  
  icinga:
@@ -31,7 +31,7 @@
  
  config:
  	@echo "Sample config files are automatically generated once you run the"
-@@ -226,11 +226,11 @@ config:
+@@ -225,11 +225,11 @@ config:
  	@echo "system by using the 'make install-config' command."
  
  cgis:
@@ -45,7 +45,7 @@
          else \
                  echo "" ;\
                  echo "Sorry, IDOUtils not enabled!" ;\
-@@ -239,13 +239,13 @@ idoutils:
+@@ -238,13 +238,13 @@ idoutils:
          fi
  
  html:
@@ -62,7 +62,7 @@
  
  classicui-standalone: cgis
  
-@@ -259,35 +259,35 @@ classicui-standalone: cgis
+@@ -258,35 +258,35 @@ classicui-standalone: cgis
  ###############################
  
  clean:
@@ -122,7 +122,7 @@
  
  	rm -f sample-config/*.cfg sample-config/*.conf sample-config/template-object/*.cfg
  	rm -f daemon-init pkginfo rc.ido2db ido2db-systemd icinga-systemd sysconfig-env
-@@ -308,13 +308,13 @@ test:
+@@ -307,13 +307,13 @@ test:
  	$(MAKE) test-tap
  
  test-tap: tools/libtap/tap.o icinga cgis
@@ -139,7 +139,7 @@
  
  ###############################
  # Package
-@@ -328,8 +328,8 @@ create-docs: copy-docs-style
+@@ -327,8 +327,8 @@ create-docs: copy-docs-style
  	#${MAKE} submodule-init
  	#${MAKE} submodule-update
  	#${MAKE} submodule-update-latest
@@ -150,7 +150,7 @@
  	cp ${SRC_DOCBOOK_IMAGES}/*.png ${SRC_DOCS_IMAGES}/
  	@echo "updated docs :)"
  
-@@ -366,37 +366,33 @@ submodule-update-latest:
+@@ -365,37 +365,33 @@ submodule-update-latest:
  
  
  install-html:
@@ -198,7 +198,7 @@
  	if [ $(INSTALLPERLSTUFF) = yes ]; then \
  		$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(P1FILELOC); \
  		$(INSTALL) -m 664 $(INSTALL_OPTS) p1.pl $(DESTDIR)$(P1FILELOC); \
-@@ -439,8 +435,8 @@ install-basic:
+@@ -438,8 +434,8 @@ install-basic:
  
  install-cgiconf:
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
@@ -209,7 +209,7 @@
  
  
  install-config: install-cgiconf
-@@ -448,17 +444,17 @@ install-config: install-cgiconf
+@@ -447,17 +443,17 @@ install-config: install-cgiconf
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/objects
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/conf.d
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/modules
@@ -238,7 +238,7 @@
  
  	@echo ""
  	@echo "*** Config files installed ***"
-@@ -476,7 +472,7 @@ install-testconfig:
+@@ -475,7 +471,7 @@ install-testconfig:
  
  install-webconf:
  	$(MKDIR) -p -m 775 $(DESTDIR)$(HTTPD_CONF)
@@ -247,7 +247,7 @@
  	@if [ x$(APACHE24_DEBIAN) = xyes ]; then \
  		echo " Debian Apache 2.4 detected. " ;\
  		echo " Run 'a2enconf icinga' and 'service apache2 reload'" ;\
-@@ -489,7 +485,7 @@ install-webconf:
+@@ -488,7 +484,7 @@ install-webconf:
  install-webconf-auth:
  
  	$(MKDIR) -p -m 775 $(DESTDIR)$(HTTPD_CONF)
@@ -256,7 +256,7 @@
  
  	@echo ""
  	@echo "*** Icinga http auth file installed ***"
-@@ -498,7 +494,7 @@ install-webconf-auth:
+@@ -497,7 +493,7 @@ install-webconf-auth:
  
  install-idoutils:
  	@if [ x$(USE_IDOUTILS) = xyes ]; then \

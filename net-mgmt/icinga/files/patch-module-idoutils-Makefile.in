@@ -1,6 +1,6 @@
---- module/idoutils/Makefile.in.orig	2013-12-20 16:25:54.111654088 +0100
-+++ module/idoutils/Makefile.in	2013-12-20 16:26:06.033654590 +0100
-@@ -60,5 +60,5 @@
+--- module/idoutils/Makefile.in.orig	2014-03-13 11:46:50.000000000 +0100
++++ module/idoutils/Makefile.in	2014-03-13 21:48:34.176304857 +0100
+@@ -60,5 +60,5 @@ install: 
  	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/ido2db.cfg-sample $(DESTDIR)$(CFGDIR)
  	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idomod.cfg-sample $(DESTDIR)$(CFGDIR)
  	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idoutils.cfg-sample $(DESTDIR)$(CFGDIR)/modules
