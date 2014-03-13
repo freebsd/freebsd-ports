@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Z3950-ZOOM
-PORTVERSION=	1.28
-PORTREVISION=	1
+PORTVERSION=	1.30
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl interface to the Z39.50 Object-Orientation Model (ZOOM)
 
-LIB_DEPENDS=	yaz:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	libyaz.so:${PORTSDIR}/net/yaz
 BUILD_DEPENDS=	p5-MARC-Record>=1.38:${PORTSDIR}/textproc/p5-MARC-Record
 RUN_DEPENDS=	p5-MARC-Record>=1.38:${PORTSDIR}/textproc/p5-MARC-Record
 
