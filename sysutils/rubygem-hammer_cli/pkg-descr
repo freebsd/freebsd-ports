@@ -1,0 +1,5 @@
+Hammer is a generic clamp-based CLI framework. Hammer-cli provides just
+the core functionality. The core is extensible using plugins that contain
+application-specific commands.
+
+WWW: https://github.com/theforeman/hammer-cli

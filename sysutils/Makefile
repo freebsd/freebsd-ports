@@ -805,6 +805,7 @@
     SUBDIR += rubygem-guard-livereload
     SUBDIR += rubygem-guard-minitest
     SUBDIR += rubygem-guard-rspec
+    SUBDIR += rubygem-hammer_cli
     SUBDIR += rubygem-hiera
     SUBDIR += rubygem-hiera-json
     SUBDIR += rubygem-hiera-puppet
