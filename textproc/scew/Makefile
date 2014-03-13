@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scew
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH/${PORTNAME}/
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix
+USES=		gmake pathfix pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -26,8 +26,11 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/${PORTNAME}_${ex}/${PORTNAME}_${ex} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
+.ifdef MAINTAINER_MODE
+LIB_DEPENDS+=	libcheck.so:${PORTSDIR}/devel/libcheck
 regression-test: build
 	cd ${WRKSRC}/tests && ${GMAKE} check
+.endif
 
 .include <bsd.port.pre.mk>
 
