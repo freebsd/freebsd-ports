@@ -1,8 +1,0 @@
-*************************************************************************
-
-To run openistgt at startup, add openistgt_enable="YES" to /etc/rc.conf.
-Create configuration files manually.
-Sample configuration files can be found in %%PREFIX%%/etc/istgt.
-QUICKSTART in %%DOCSDIR%% shows you how to configure.
-
-*************************************************************************
