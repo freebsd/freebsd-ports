@@ -1,0 +1,10 @@
+
+========================================================
+To activate SLIME put the following code into ~/.emacs:
+(setq inferior-lisp-program "PATH_TO_YOUR_LISP_BINARY")
+(add-to-list 'load-path "%%SLIME_LISPDIR%%"
+        "%%SLIME_LISPDIR%%/contrib")
+(require 'slime)
+(slime-setup '(slime-repl))
+========================================================
+
