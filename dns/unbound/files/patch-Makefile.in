@@ -1,11 +1,11 @@
---- Makefile.in.orig	2013-03-22 16:41:13.000000000 +0400
-+++ Makefile.in	2013-09-23 06:08:58.535408755 +0400
-@@ -488,7 +488,7 @@
- 		echo ".so man3/libunbound.3" > $(DESTDIR)$(mandir)/man3/$$mpage.3 ; \
- 	done
+--- Makefile.in.orig	2014-01-31 14:19:01.000000000 +0400
++++ Makefile.in	2014-03-13 14:27:03.613703943 +0400
+@@ -497,7 +497,7 @@
+ 	$(INSTALL) -c -m 644 doc/unbound.conf.5 $(DESTDIR)$(mandir)/man5
+ 	$(INSTALL) -c -m 644 $(srcdir)/doc/unbound-host.1 $(DESTDIR)$(mandir)/man1
  	$(INSTALL) -c -m 755 unbound-control-setup $(DESTDIR)$(sbindir)/unbound-control-setup
 -	if test ! -e $(DESTDIR)$(configfile); then $(INSTALL) -d `dirname $(DESTDIR)$(configfile)`; $(INSTALL) -c -m 644 doc/example.conf $(DESTDIR)$(configfile); fi
 +	$(INSTALL) -d `dirname $(DESTDIR)$(configfile)`; $(INSTALL) -c -m 644 doc/example.conf $(DESTDIR)$(configfile).sample
- 	$(LIBTOOL) --mode=install cp unbound.h $(DESTDIR)$(includedir)/unbound.h
- 	$(LIBTOOL) --mode=install cp libunbound.la $(DESTDIR)$(libdir)
- 	$(LIBTOOL) --mode=finish $(DESTDIR)$(libdir)
+ 
+ pythonmod-uninstall:
+ 	rm -f -- $(DESTDIR)$(PYTHON_SITE_PKG)/unboundmodule.py
