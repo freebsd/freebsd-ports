@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hostapd
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	net
 MASTER_SITES=	http://hostap.epitest.fi/releases/
 
