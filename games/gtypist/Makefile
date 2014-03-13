@@ -9,8 +9,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Interactive typing tutor
 
-USES=		iconv
-USE_XZ=		yes
+USES=		iconv tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EMACS=no
 CPPFLAGS+=	-I${WRKDIR}/include
