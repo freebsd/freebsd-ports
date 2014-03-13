@@ -12,16 +12,16 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Correct moronic and gratuitously incompatible HTML from MS applications
 
-USES=		zip
+USES=		zip shebangfix
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-MAN1=		demoroniser.1
-PLIST_FILES=	bin/demoroniser
+PLIST_FILES=	bin/demoroniser man/man1/demoroniser.1.gz
+SHEBANG_FILES=	demoroniser.pl
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/demoroniser.pl ${PREFIX}/bin/demoroniser
-	${INSTALL_MAN} ${WRKDIR}/demoroniser.1 ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKDIR}/demoroniser.pl \
+		${STAGEDIR}${PREFIX}/bin/demoroniser
+	${INSTALL_MAN} ${WRKDIR}/demoroniser.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
