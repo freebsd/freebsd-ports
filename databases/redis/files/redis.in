@@ -21,14 +21,15 @@ rcvar=redis_enable
 extra_commands="reload"
 
 command="%%PREFIX%%/bin/redis-server"
-config_file="%%PREFIX%%/etc/$name.conf"
-command_args="${config_file}"
 pidfile="%%REDIS_RUNDIR%%/$name.pid"
-required_files="${config_file}"
 
 # read configuration and set defaults
 load_rc_config "$name"
 : ${redis_enable="NO"}
 : ${redis_user="%%REDIS_USER%%"}
+: ${redis_config="%%PREFIX%%/etc/$name.conf"}
+
+command_args="${redis_config}"
+required_files="${redis_config}"
 
 run_rc_command "$1"
