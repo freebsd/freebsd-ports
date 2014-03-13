@@ -1,0 +1,26 @@
+bin/cjpeg
+bin/djpeg
+bin/jpegtran
+bin/rdjpgcom
+%%TURBOJPEG%%bin/tjbench
+bin/wrjpgcom
+include/%%PORTNAME%%/jconfig.h
+include/%%PORTNAME%%/jerror.h
+include/%%PORTNAME%%/jmorecfg.h
+include/%%PORTNAME%%/jpeglib.h
+%%TURBOJPEG%%include/%%PORTNAME%%/turbojpeg.h
+%%STATIC%%lib/%%PORTNAME%%/libjpeg.a
+lib/%%PORTNAME%%/libjpeg.la
+%%SHARED%%lib/%%PORTNAME%%/libjpeg.so
+%%SHARED%%lib/%%PORTNAME%%/libjpeg.so.%%SOMAJORVERSION%%
+%%STATIC%%%%TURBOJPEG%%lib/%%PORTNAME%%/libturbojpeg.a
+%%TURBOJPEG%%lib/%%PORTNAME%%/libturbojpeg.la
+%%SHARED%%%%TURBOJPEG%%lib/%%PORTNAME%%/libturbojpeg.so
+%%SHARED%%%%TURBOJPEG%%lib/%%PORTNAME%%/libturbojpeg.so.1
+man/man1/cjpeg.1.gz
+man/man1/djpeg.1.gz
+man/man1/jpegtran.1.gz
+man/man1/rdjpgcom.1.gz
+man/man1/wrjpgcom.1.gz
+@dirrm lib/%%PORTNAME%%
+@dirrm include/%%PORTNAME%%
