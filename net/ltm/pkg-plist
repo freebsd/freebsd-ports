@@ -2,3 +2,6 @@ bin/ltm-client
 bin/ltm-mkprotodb
 etc/protocols.cfg
 etc/protocols.db
+man/man1/ltm-client.1.gz
+man/man1/ltm-mkprotodb.1.gz
+man/man1/ltm.1.gz
