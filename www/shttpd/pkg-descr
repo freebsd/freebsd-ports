@@ -4,4 +4,4 @@ embed it into existing C/C++ applications. Embedded API is very clean
 and simple. SHTTPD has small memory footprint. Use it when other
 web servers like Apache are too heavy for your tasks.
 
-WWW:    http://shttpd.sourceforge.net
+WWW: http://shttpd.sourceforge.net
