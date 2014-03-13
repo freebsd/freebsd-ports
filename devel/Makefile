@@ -4274,6 +4274,7 @@
     SUBDIR += rubygem-mkrf
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-moneta
+    SUBDIR += rubygem-moneta06
     SUBDIR += rubygem-mongo
     SUBDIR += rubygem-msgpack
     SUBDIR += rubygem-mspec
