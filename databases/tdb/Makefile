@@ -15,13 +15,11 @@ LICENSE=		GPLv3
 
 CONFLICTS=		*samba3[0-4]-3.*
 
+USES=			compiler pkgconfig
 USE_PYTHON_BUILD=	2
 USE_LDCONFIG=		yes
-HAS_CONFIGURE=		yes
 WAF_TOOL=		buildtools/bin/waf
-CONFIGURE_SCRIPT=	${WAF_TOOL} configure
-USES=			pkgconfig
-
+CONFIGURE_LOG=		bin/config.log
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
@@ -29,17 +27,19 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--mandir=${MANPREFIX}/man \
 			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}
+# Support staging
+DESTDIRNAME=		--destdir
 
-OPTIONS_DEFINE=		PYTHON
-OPTIONS_DEFAULT=	PYTHON
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-MAN8=			tdbbackup.8 \
-			tdbdump.8 \
-			tdbrestore.8 \
-			tdbtool.8
+.include <bsd.port.pre.mk>
+
+.if ! ${PORT_OPTIONS:MMANPAGES}
+CONFIGURE_ENV+=		XSLTPROC="true"
+.else
+BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+			xsltproc:${PORTSDIR}/textproc/libxslt
+.endif
 
 PLIST_FILES=		bin/tdbbackup \
 			bin/tdbdump \
@@ -50,31 +50,37 @@ PLIST_FILES=		bin/tdbbackup \
 			lib/libtdb.so.1 \
 			%%PKGCONFIGDIR%%/tdb.pc
 
-CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
+# No fancy color error messages
+.if ${COMPILER_TYPE} == "clang"
+CFLAGS+=		-fno-color-diagnostics
+.endif
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
 
 .if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
 CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
-_MAKE_JOBS=		--jobs=${MAKE_JOBS_NUMBER}
+_MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
 .endif
 
-.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON_RUN=		yes
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so
 PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
 			%%PYTHON_LIBDIR%%
-.else
-CONFIGURE_ARGS+=	--disable-python
-.endif
 
+TDB_MAN8=		man/man8/tdbbackup.8.gz \
+			man/man8/tdbdump.8.gz \
+			man/man8/tdbrestore.8.gz \
+			man/man8/tdbtool.8.gz
+
+PLIST_FILES+=		${TDB_MAN8}
+
+CONFIGURE_TARGET=	configure
 ALL_TARGET=		build
 INSTALL_TARGET=		install
 
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 post-patch:
-			@${REINPLACE_CMD} -e 's|python|python${PYTHON_VER}|' ${BUILD_WRKSRC}/${WAF_TOOL}
 			@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
 				${BUILD_WRKSRC}/wscript
 
@@ -87,11 +93,30 @@ pre-configure:
 				${FALSE}; \
 			fi
 
+do-configure:
+			@(cd ${CONFIGURE_WRKSRC} && \
+			    ${SET_LATE_CONFIGURE_ARGS} \
+				if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+					CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+					LDFLAGS="${LDFLAGS}" \
+					INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+					INSTALL_DATA="${INSTALL_DATA}" \
+					INSTALL_LIB="${INSTALL_LIB}" \
+					INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+					INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+					${CONFIGURE_ENV} ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/${WAF_TOOL} ${CONFIGURE_ARGS} ${CONFIGURE_TARGET}; then \
+						${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
+						(${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+						${FALSE}; \
+				fi)
+
 pre-build:
-.for man in ${MAN8}
-			@${MKDIR} ${BUILD_WRKSRC}/bin/default/man
-			@${INSTALL_MAN} ${FILESDIR}/${man} ${BUILD_WRKSRC}/bin/default/man
-.endfor
+.if ! ${PORT_OPTIONS:MMANPAGES}
+			-${MKDIR} ${BUILD_WRKSRC}/bin/default/man
+.	for man in ${TDB_MAN8}
+			${INSTALL_MAN} ${FILESDIR}/`basename ${man} .gz` ${BUILD_WRKSRC}/bin/default/man
+.	endfor
+.endif
 
 do-build:
 			@(cd ${BUILD_WRKSRC}; \
