@@ -51,6 +51,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="777d7b9e-ab02-11e3-841e-60a44c524f57">
+    <topic>wemux -- read-only can be bypassed</topic>
+    <affects>
+      <package>
+	<name>wemux</name>
+	<range><lt>3.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>JonApps reports:</p>
+	<blockquote cite="https://github.com/zolrath/wemux/issues/36">
+	  <p>The read-only mode can be bypassed and any command sent to bash session</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zolrath/wemux/issues/36</url>
+    </references>
+    <dates>
+      <discovery>2013-12-24</discovery>
+      <entry>2014-03-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="03e48bf5-a96d-11e3-a556-3c970e169bc2">
     <topic>samba -- multiple vulnerabilities</topic>
     <affects>
