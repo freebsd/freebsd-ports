@@ -3,7 +3,7 @@
 
 PORTNAME=	asis
 PORTVERSION=	2011
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
@@ -15,11 +15,14 @@ COMMENT=	GNAT implementation of Ada Semantic Interface Specification
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gnat_util>=2013:${PORTSDIR}/lang/gnat_util \
-		xmlada>=3.2:${PORTSDIR}/textproc/xmlada
+		xmlada>=3.2:${PORTSDIR}/textproc/xmlada \
+		${GUSTATIC}:${PORTSDIR}/lang/gnat_util
+RUN_DEPENDS=	${GUSTATIC}:${PORTSDIR}/lang/gnat_util
 
 USES=		ada gmake
 NO_MTREE=	yes
 MAKE_ENV=	PROCESSORS=${MAKE_JOBS_NUMBER}
+GUSTATIC=	${LOCALBASE}/lib/gnat_util/libgnat_util.a
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|OPSYS|ASISOPSYS|g' \

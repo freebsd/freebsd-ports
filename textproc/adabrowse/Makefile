@@ -13,8 +13,7 @@ COMMENT=	HTML generator for Ada 95 library unit specifications
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	asis>=2011:${PORTSDIR}/lang/asis \
-		gnat_util>=2013:${PORTSDIR}/lang/gnat_util
+BUILD_DEPENDS=	asis>=2011:${PORTSDIR}/lang/asis
 
 USES=		ada
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
