@@ -15,8 +15,7 @@ COMMENT=	Tool for detecting use or non-use of specific Ada constructs
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	asis>=2011:${PORTSDIR}/lang/asis \
-		gnat_util>=2013:${PORTSDIR}/lang/gnat_util
+BUILD_DEPENDS=	asis>=2011:${PORTSDIR}/lang/asis
 
 USES=		ada gmake
 WRKSRC=		${WRKDIR}/adactl-${PORTVERSION}

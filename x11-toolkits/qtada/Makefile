@@ -14,7 +14,6 @@ COMMENT=	Ada2005 language bindings to Qt4 framework
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
-		gnat_util>=2013:${PORTSDIR}/lang/gnat_util \
 		asis>=2011:${PORTSDIR}/lang/asis
 
 USES=		ada gmake pkgconfig
@@ -28,7 +27,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share
 	${MV} ${STAGEDIR}${PREFIX}/examples ${STAGEDIR}${PREFIX}/share/
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${TMPPLIST}
+	   ${SORT} >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | \
 	   ${SORT} -r | ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' \
 	   -e '/share\/gps$$/d' -e '/share\/gps\/plug-ins$$/d' \
