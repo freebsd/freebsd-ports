@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra
-PORTVERSION=	1.1.12
+PORTVERSION=	1.2.15
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
@@ -33,7 +33,8 @@ SCRIPTS=	cassandra \
 		sstable2json \
 		sstablekeys \
 		sstableloader \
-		sstablescrub
+		sstablescrub \
+		cassandra-shuffle
 
 OPTIONS_DEFINE=	MX4J JNA CQL DOCS
 MX4J_DESC=	Enable HTTP interface for JMX
@@ -43,7 +44,6 @@ DOCS_DESC=	Install javadoc documentation
 
 SUB_FILES=	repaircluster
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 RUN_DEPENDS+=	${JAVALIBDIR}/snappy-java.jar:${PORTSDIR}/archivers/snappy-java
@@ -74,7 +74,8 @@ PLIST_SUB+=	CQL="@comment "
 
 post-extract:
 	@${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/stop-server \
-		${WRKSRC}/tools/bin/*.bat ${WRKSRC}/lib/snappy-java-*.jar
+		${WRKSRC}/tools/bin/*.bat ${WRKSRC}/lib/snappy-java-*.jar \
+		${WRKSRC}/lib/licenses/snappy-java*.txt
 .for i in ${CONFIGS}
 	@${MV} ${WRKSRC}/conf/${i} ${WRKSRC}/conf/${i}.sample
 .endfor
@@ -91,8 +92,9 @@ post-patch:
 		${WRKSRC}/bin/sstableloader \
 		${WRKSRC}/bin/sstable2json \
 		${WRKSRC}/bin/json2sstable \
-		${WRKSRC}/bin/sstablekeys
-	@${REINPLACE_CMD} -e 's|\`dirname \$$\0\`/..|${DATADIR}|' \
+		${WRKSRC}/bin/sstablekeys \
+		${WRKSRC}/bin/cassandra-shuffle
+	@${REINPLACE_CMD} -e 's|\`dirname "\$$\0"\`/..|${DATADIR}|' \
 		${WRKSRC}/bin/cassandra.in.sh
 	@${RM} -f ${WRKSRC}/conf/*.orig
 .if ${PORT_OPTIONS:MCQL}
@@ -106,39 +108,37 @@ do-build:
 .endif
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${DATADIR}
-	@${LN} -s ${JAVAJARDIR}/snappy-java.jar ${DATADIR}/lib/snappy-java.jar
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	@${LN} -s ${JAVAJARDIR}/snappy-java.jar ${STAGEDIR}${DATADIR}/lib/snappy-java.jar
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${MV} ${DATADIR}/javadoc ${DOCSDIR}
-	@${MV} ${DATADIR}/*.txt ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MV} ${STAGEDIR}${DATADIR}/javadoc ${STAGEDIR}${DOCSDIR}
+	@${MV} ${STAGEDIR}${DATADIR}/*.txt ${STAGEDIR}${DOCSDIR}
 .else
-	${RM} -r ${DATADIR}/javadoc ${DATADIR}/*.txt
+	@${RM} -rf ${STAGEDIR}${DATADIR}/javadoc ${STAGEDIR}${DATADIR}/*.txt
 .endif
-	@cd ${DATADIR}/bin/ && ${CHMOD} ${BINMODE} ${SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKDIR}/repaircluster ${DATADIR}/bin
-	@${LN} -s ${DATADIR}/bin/cassandra-cli ${PREFIX}/bin/cassandra-cli
-	@${LN} -s ${DATADIR}/bin/nodetool ${PREFIX}/bin/nodetool
-	@${LN} -s ${DATADIR}/bin/sstableloader ${PREFIX}/bin/sstableloader
-	@${LN} -s ${DATADIR}/bin/repaircluster ${PREFIX}/bin/repaircluster
-	@${LN} -s ${DATADIR}/bin/json2sstable ${PREFIX}/bin/json2sstable
-	@${LN} -s ${DATADIR}/bin/sstable2json ${PREFIX}/bin/sstable2json
-	@${LN} -s ${DATADIR}/bin/sstablekeys ${PREFIX}/bin/sstablekeys
-	@${LN} -s ${DATADIR}/bin/sstablescrub ${PREFIX}/bin/sstablescrub
+	@cd ${STAGEDIR}${DATADIR}/bin/ && ${CHMOD} ${BINMODE} ${SCRIPTS}
+	@${INSTALL_SCRIPT} ${WRKDIR}/repaircluster ${STAGEDIR}${DATADIR}/bin
+	@${LN} -s ${DATADIR}/bin/cassandra-cli ${STAGEDIR}${PREFIX}/bin/cassandra-cli
+	@${LN} -s ${DATADIR}/bin/nodetool ${STAGEDIR}${PREFIX}/bin/nodetool
+	@${LN} -s ${DATADIR}/bin/sstableloader ${STAGEDIR}${PREFIX}/bin/sstableloader
+	@${LN} -s ${DATADIR}/bin/repaircluster ${STAGEDIR}${PREFIX}/bin/repaircluster
+	@${LN} -s ${DATADIR}/bin/json2sstable ${STAGEDIR}${PREFIX}/bin/json2sstable
+	@${LN} -s ${DATADIR}/bin/sstable2json ${STAGEDIR}${PREFIX}/bin/sstable2json
+	@${LN} -s ${DATADIR}/bin/sstablekeys ${STAGEDIR}${PREFIX}/bin/sstablekeys
+	@${LN} -s ${DATADIR}/bin/sstablescrub ${STAGEDIR}${PREFIX}/bin/sstablescrub
+	@${LN} -s ${DATADIR}/bin/cassandra-shuffle ${STAGEDIR}${PREFIX}/bin/cassandra-shuffle
 
 .if ${PORT_OPTIONS:MCQL}
-	@${LN} -s ${DATADIR}/bin/cqlsh ${PREFIX}/bin/cqlsh
+	@${LN} -s ${DATADIR}/bin/cqlsh ${STAGEDIR}${PREFIX}/bin/cqlsh
 .endif
 .if ${PORT_OPTIONS:MMX4J}
-	@${LN} -s ${LOCALBASE}/share/java/classes/mx4j-tools.jar ${DATADIR}/lib/mx4j-tools.jar
+	@${LN} -s ${LOCALBASE}/share/java/classes/mx4j-tools.jar ${STAGEDIR}${DATADIR}/lib/mx4j-tools.jar
 .endif
 .if ${PORT_OPTIONS:MJNA}
-	@${LN} -s ${LOCALBASE}/share/java/classes/jna.jar ${DATADIR}/lib/jna.jar
-	@${LN} -s ${LOCALBASE}/share/java/classes/jna-platform.jar ${DATADIR}/lib/jna-platform.jar
+	@${LN} -s ${LOCALBASE}/share/java/classes/jna.jar ${STAGEDIR}${DATADIR}/lib/jna.jar
+	@${LN} -s ${LOCALBASE}/share/java/classes/jna-platform.jar ${STAGEDIR}${DATADIR}/lib/jna-platform.jar
 .endif
-
-post-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
