@@ -14,9 +14,8 @@ COMMENT=	Python bindings for the D-BUS messaging system
 
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
-USES=		gettext pathfix pkgconfig
+USES=		gettext pathfix pkgconfig gmake
 USE_PYTHON=	2
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
@@ -28,7 +27,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 OPTIONS_DEFINE=HTMLDOCS
 HTMLDOCS_DESC=	build html documentation
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTMLDOCS}
@@ -47,9 +45,7 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR} && \
-		${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} && \
+		${INSTALL_DATA} ${WRKSRC}/examples/*.py ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
