@@ -1,5 +1,5 @@
---- configure.in.orig	2013-12-05 12:51:35.000000000 +0100
-+++ configure.in	2013-12-06 17:22:07.285134852 +0100
+--- configure.in.orig	2014-03-13 11:46:50.000000000 +0100
++++ configure.in	2014-03-13 21:46:18.329313645 +0100
 @@ -6,7 +6,6 @@ define([AC_CACHE_SAVE],)
  
  AC_INIT(base/icinga.c)
@@ -7,7 +7,7 @@
 -AC_PREFIX_DEFAULT(/usr/local/icinga)
  
  PKG_NAME=icinga-core
- PKG_VERSION="1.10.2"
+ PKG_VERSION="1.11.0"
 @@ -144,6 +143,15 @@ AC_TRY_COMPILE([#include <stdlib.h>
  dnl Test for pthreads support - taken from ICU FreeBSD Port configure script
  THREADLIBS=""
@@ -40,7 +40,7 @@
  AC_SUBST(INSTALL_OPTS)
  
  AC_ARG_WITH(command_user,AC_HELP_STRING([--with-command-user=<user>],[sets user name for command access]),command_user=$withval,command_user=$icinga_user)
-@@ -443,7 +451,7 @@ dnl Location of the embedded perl p1.pl
+@@ -495,7 +503,7 @@ dnl Location of the embedded perl p1.pl
  P1FILELOC=no
  AC_ARG_WITH(p1-file-dir,AC_HELP_STRING([--with-p1-file-dir=<path>],[sets path to embedded perl p1.pl directory]),P1FILELOC=$withval,P1FILELOC=no)
  if test x$P1FILELOC = xno; then
@@ -49,7 +49,7 @@
  fi
  AC_SUBST(P1FILELOC)
  
-@@ -1097,6 +1105,9 @@ if test x$USEPERL = xyes; then
+@@ -1126,6 +1134,9 @@ if test x$USEPERL = xyes; then
  
  	AC_DEFINE_UNQUOTED(EMBEDDEDPERL,,[Is embedded Perl being compiled in?])
  	PERLLIBS="`perl -MExtUtils::Embed -e ldopts`"

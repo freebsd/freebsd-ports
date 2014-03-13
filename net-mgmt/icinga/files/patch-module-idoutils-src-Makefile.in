@@ -1,9 +1,9 @@
---- module/idoutils/src/Makefile.in.orig	2013-12-05 12:51:35.000000000 +0100
-+++ module/idoutils/src/Makefile.in	2013-12-06 17:20:50.031138208 +0100
-@@ -116,8 +116,8 @@ install:
- 	@echo "Going to uninstall old idomod.o in $(DESTDIR)$(BINDIR)/idomod.o ..."
- 	rm -f $(DESTDIR)$(BINDIR)/idomod.o
- 	@echo "Resuming with install..."
+--- module/idoutils/src/Makefile.in.orig	2014-03-13 11:46:50.000000000 +0100
++++ module/idoutils/src/Makefile.in	2014-03-13 21:49:22.738303979 +0100
+@@ -113,8 +113,8 @@ distclean: clean
+ devclean: distclean
+ 
+ install:
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)

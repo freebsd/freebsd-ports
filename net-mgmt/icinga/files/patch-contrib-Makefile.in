@@ -1,26 +1,13 @@
---- contrib/Makefile.in.orig	2013-12-05 12:51:35.000000000 +0100
-+++ contrib/Makefile.in	2013-12-06 17:20:50.028144909 +0100
-@@ -63,10 +63,10 @@ distclean: clean
+--- contrib/Makefile.in.orig	2014-03-13 11:46:50.000000000 +0100
++++ contrib/Makefile.in	2014-03-13 21:48:06.674569292 +0100
+@@ -56,8 +56,8 @@ distclean: clean
  devclean: distclean
  
  install:
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CGIDIR)
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
--	for f in $(CGIS); do $(INSTALL) -m 775 $(INSTALL_OPTS) $$f $(DESTDIR)$(CGIDIR); done
 -	for f in $(UTILS); do $(INSTALL) -m 775 $(INSTALL_OPTS) $$f $(DESTDIR)$(BINDIR); done
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CGIDIR)
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
-+	for f in $(CGIS); do $(INSTALL) -m 755 $(INSTALL_OPTS) $$f $(DESTDIR)$(CGIDIR); done
 +	for f in $(UTILS); do $(INSTALL) -m 755 $(INSTALL_OPTS) $$f $(DESTDIR)$(BINDIR); done
  
  ##############################################################################
  # rules and dependencies for actual target programs
-@@ -96,7 +96,7 @@ dst: dst.c
- # dependencies
- 
- $(CGI_O): $(CGI_C)
--	cd $(SRC_CGI) && make $(CGI_O)
-+	$(MAKE) -C $(SRC_CGI) $(CGI_O)
- 
- ##############################################################################
- # implicit rules
