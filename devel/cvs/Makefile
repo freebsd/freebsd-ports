@@ -10,9 +10,8 @@ COMMENT=	Version control system
 
 LICENSE=	GPLv2
 
-USES=		uidfix
+USES=		uidfix tar:xz
 WRKSRC=		${WRKDIR}/call/cvs-build
-USE_XZ=		yes
 INFO=		cvs cvsclient
 
 # bsd.stage.makes sets the wrong value for DESTDIR
