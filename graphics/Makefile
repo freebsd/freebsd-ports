@@ -583,6 +583,7 @@
     SUBDIR += mingplot
     SUBDIR += mirage
     SUBDIR += mmrecover
+    SUBDIR += mozjpeg
     SUBDIR += mscgen
     SUBDIR += mtpaint
     SUBDIR += multican
