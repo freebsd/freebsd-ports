@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver
 LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi \
 		libcdb.so:${PORTSDIR}/databases/tinycdb
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_RC_SUBR=	cblog
 
