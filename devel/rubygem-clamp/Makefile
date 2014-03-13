@@ -4,7 +4,7 @@ CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A command-line utility framework for Ruby
+COMMENT=	Command-line utility framework for Ruby
 
 LICENSE=	MIT
 
