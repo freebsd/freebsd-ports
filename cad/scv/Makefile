@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/systemc/lib-freebsd/libsystemc.a:${PORTSDIR}/cad/syste
 
 RESTRICTED=	You have to register at http://www.systemc.org/account/register.php first
 
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/scv-1.0p2-sysc2.2

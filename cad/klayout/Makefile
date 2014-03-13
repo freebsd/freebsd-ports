@@ -11,7 +11,7 @@ COMMENT=	A Qt-based GDS2 Viewer
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_QT4=	corelib gui network moc_build sql uic_build \
 		rcc_build qt3support xml
 PLIST_FILES=	bin/klayout \

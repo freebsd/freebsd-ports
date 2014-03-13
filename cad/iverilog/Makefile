@@ -14,8 +14,7 @@ COMMENT=	A Verilog simulation and synthesis tool
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake
 
 CONFIGURE_ARGS=	--disable-suffix
 
