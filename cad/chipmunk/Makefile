@@ -24,7 +24,7 @@ EXPIRATION_DATE=	2014-04-10
 NO_WRKSUBDIR=	yes
 
 USE_XORG=	x11
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
