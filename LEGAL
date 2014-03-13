@@ -254,7 +254,7 @@ tcetest_*		games/linux-enemyterritory-tce	Redistribution limited
 teamspeak*		audio/teamspeak3-server	No redistribution
 texcm-ttf-20010117/*	x11-fonts/texcm-ttf	Cannot be sold or distributed with any commercial product
 TFMESS_BSP_FreeBSD_*	security/bsp_upektfmess	License prohibits redistribution
-thundercache		www/thundercache	Shareware license for 50 threads.  Requires license key to run more than 50 threads, which can be obtained from their website.
+thundercache		www/thundercache	Commercial software with shareware license to 50 threads
 tinker*			biology/tinker		Distribution is prohibited
 triangle-*/*		math/triangle		No commercial use without prior arrangement with the author
 Tripwire-*-1.tar.gz	security/tripwire-131	Cannot be redistributed for more than the cost of duplication
