@@ -23,8 +23,7 @@ DESKTOP_ENTRIES="ToME 4" "${COMMENT}" "${PORTNAME}" \
 
 WRKSRC=		${WRKDIR}/t-engine4-src-${PORTVERSION}
 MAKE_ARGS+=	config=release verbose=yes ARCH=""
-USES=		gmake openal:al
-USE_BZIP2=	yes
+USES=		gmake openal:al tar:bzip2
 USE_SDL=	image2 sdl2 ttf2
 USE_GL=		gl
 SUB_FILES=	tome4
