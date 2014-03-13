@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	openldap-plugins
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://tools.ltb-project.org/attachments/download/152/ \
+MASTER_SITES=	http://tools.ltb-project.org/attachments/download/629/ \
 		http://mirrors.rit.edu/zi/
 PKGNAMEPREFIX=	nagios-
 DISTNAME=	ltb-project-nagios-plugins-${PORTVERSION}
@@ -24,8 +24,10 @@ NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
-PLIST_FILES=	libexec/nagios/check_ldap_dn.pl \
+PLIST_FILES=	libexec/nagios/check_berkeleydb_locks.pl \
+		libexec/nagios/check_ldap_dn.pl \
 		libexec/nagios/check_ldap_query.pl \
+		libexec/nagios/check_ldap_monitor.pl \
 		libexec/nagios/check_ldap_slurpd_status.pl \
 		libexec/nagios/check_ldap_syncrepl_status.pl \
 		libexec/nagios/check_ldap_time.pl \
@@ -34,7 +36,6 @@ PLIST_DIRSTRY=	libexec/nagios
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/init.d/|${LOCALBASE}/etc/rc.d/|g' \
 		-e 's|/var/run/slapd|/var/run/openldap|g' \
@@ -44,11 +45,6 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${PREFIX}/libexec/nagios
-	${INSTALL_SCRIPT} ${WRKSRC}/check_ldap_dn.pl ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_ldap_query.pl ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_ldap_slurpd_status.pl ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_ldap_syncrepl_status.pl ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_ldap_time.pl ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/restart_slapd.sh ${PREFIX}/libexec/nagios/
+	@(cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/libexec/nagios/)
 
 .include <bsd.port.mk>
