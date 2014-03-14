@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slim
-PORTVERSION=	1.3.5
-PORTREVISION=	3
+PORTVERSION=	1.3.6
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
@@ -19,18 +18,22 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USES=		cmake pkgconfig
-USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xorg-server xrender xt
+USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xorg-server xrandr \
+	xrender xt
 USE_RC_SUBR=	slim
 SUB_FILES=	pkg-message
 
-CMAKE_ARGS=	-DUSE_CONSOLEKIT=yes
+CMAKE_ARGS=	-DUSE_CONSOLEKIT=yes \
+	-DBUILD_SLIMLOCK=no \
+	-DBUILD_SHARED_LIBS=yes
 
 OPTIONS_DEFINE=		PAM
 OPTIONS_DEFAULT=	PAM
+
+PLIST_SUB+=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.options.mk>
 
@@ -46,12 +49,6 @@ post-patch:
 	@${CP} ${WRKSRC}/slim.conf ${WRKSRC}/slim.conf.sample
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/slim.conf.sample
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
-		-e 's|/etc|${PREFIX}/etc|' \
-		-e 's|share/man|man|' \
-		-e 's|slim.conf|slim.conf.sample|' \
-		-e '/systemd/d' \
-		${WRKSRC}/CMakeLists.txt
 
 post-install:
 .	if ${PORT_OPTIONS:MPAM}
