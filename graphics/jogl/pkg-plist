@@ -92,16 +92,16 @@ lib/libjogl_awt.so
 %%PORTDOCS%%%%DATADIR%%/overview-summary.html
 %%PORTDOCS%%%%DATADIR%%/help-doc.html
 %%PORTDOCS%%%%DATADIR%%/stylesheet.css
-@dirrm %%DATADIR%%/com/sun/opengl/util/j2d
-@dirrm %%DATADIR%%/com/sun/opengl/util/texture/spi
-@dirrm %%DATADIR%%/com/sun/opengl/util/texture
-@dirrm %%DATADIR%%/com/sun/opengl/util
-@dirrm %%DATADIR%%/com/sun/opengl
-@dirrm %%DATADIR%%/com/sun
-@dirrm %%DATADIR%%/com
-@dirrm %%DATADIR%%/javax/media/opengl/glu
-@dirrm %%DATADIR%%/javax/media/opengl
-@dirrm %%DATADIR%%/javax/media
-@dirrm %%DATADIR%%/javax
-@dirrm %%DATADIR%%/resources
-@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun/opengl/util/j2d
+%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun/opengl/util/texture/spi
+%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun/opengl/util/texture
+%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun/opengl/util
+%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun/opengl
+%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun
+%%PORTDOCS%%@dirrm %%DATADIR%%/com
+%%PORTDOCS%%@dirrm %%DATADIR%%/javax/media/opengl/glu
+%%PORTDOCS%%@dirrm %%DATADIR%%/javax/media/opengl
+%%PORTDOCS%%@dirrm %%DATADIR%%/javax/media
+%%PORTDOCS%%@dirrm %%DATADIR%%/javax
+%%PORTDOCS%%@dirrm %%DATADIR%%/resources
+%%PORTDOCS%%@dirrm %%DATADIR%%
