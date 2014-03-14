@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ProjectTox-Core
-PORTVERSION=	0.140301
+PORTVERSION=	0.140314
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	ProjectTox-Core
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	16b93e8
+GH_COMMIT=	3acf43b
 
 USE_AUTOTOOLS=	automake autoconf libtoolize
 USES=		pkgconfig
