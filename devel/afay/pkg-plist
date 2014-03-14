@@ -9,20 +9,20 @@ man/man1/ayacc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/aflex_user_man.tex
 %%PORTDOCS%%%%DOCSDIR%%/ayacc.html
 %%PORTDOCS%%%%DOCSDIR%%/ayacc_user_man.tex
-%%EXAMPLESDIR%%/ada_parser/COMPILE
-%%EXAMPLESDIR%%/ada_parser/READ.ME
-%%EXAMPLESDIR%%/ada_parser/ada.y
-%%EXAMPLESDIR%%/ada_parser/ada_lex.l
-%%EXAMPLESDIR%%/ada_parser/driver.a
-%%EXAMPLESDIR%%/calc/COMPILE
-%%EXAMPLESDIR%%/calc/READ.ME
-%%EXAMPLESDIR%%/calc/calc.input
-%%EXAMPLESDIR%%/calc/calc.y
-%%EXAMPLESDIR%%/calc/calc_lex.l
-%%EXAMPLESDIR%%/calc/driver.a
-%%EXAMPLESDIR%%/example.l
-%%EXAMPLESDIR%%/test95.l
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ada_parser/COMPILE
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ada_parser/READ.ME
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ada_parser/ada.y
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ada_parser/ada_lex.l
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ada_parser/driver.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc/COMPILE
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc/READ.ME
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc/calc.input
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc/calc.y
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc/calc_lex.l
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc/driver.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.l
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test95.l
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%/ada_parser
-@dirrm %%EXAMPLESDIR%%/calc
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ada_parser
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
