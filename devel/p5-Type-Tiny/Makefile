@@ -32,6 +32,8 @@ TEST_DEPENDS=	p5-Class-InsideOut>=0:${PORTSDIR}/devel/p5-Class-InsideOut \
 		p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace \
 		p5-Validation-Class>=0:${PORTSDIR}/devel/p5-Validation-Class
 
+PORTSCOUT=	limit:[^_]*
+
 USE_PERL5=	configure
 USES=		perl5
 
