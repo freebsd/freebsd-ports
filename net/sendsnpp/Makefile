@@ -12,16 +12,13 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Tool for sending messages through a RFC1861 compliant SNPP server
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 
 PLIST_FILES=	bin/sendSNPP.pl
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/${PORTNAME}.pl
+SHEBANG_FILES=	sendSNPP.pl
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTNAME}.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
