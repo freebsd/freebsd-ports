@@ -17,16 +17,14 @@ USE_PYTHON=	yes
 LDFLAGS+=	-lssl -lcrypto
 CFLAGS+=	-DWITH_SSL
 
-MAN1=		gwee.1
-PLIST_FILES=	bin/gwee
+PLIST_FILES=	bin/gwee man/man1/gwee.1.gz
 
-NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c \
 		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
