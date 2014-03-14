@@ -14,9 +14,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	hangul:${PORTSDIR}/korean/libhangul
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 
 OPTIONS_DEFINE=	GTK3 NLS
 
