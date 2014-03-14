@@ -4,7 +4,8 @@
 PORTNAME=	spdylay
 PORTVERSION=	1.2.3
 CATEGORIES=	www net
-MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SPDY protocol version 2, 3 and 3.1 implementation in C
@@ -24,8 +25,7 @@ USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_XZ=		yes
-USES=		compiler:c++11-lang pathfix pkgconfig
+USES=		compiler:c++11-lang pathfix pkgconfig tar:xz
 
 PORTDOCS=	*
 
