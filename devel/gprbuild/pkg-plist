@@ -1,124 +1,11 @@
 bin/gprbuild
 bin/gprclean
 bin/gprconfig
+bin/gprinstall
+bin/gprslave
 libexec/gprbuild/gprbind
 libexec/gprbuild/gprlib
-%%DOCSDIR%%/html/gnat_style.css
-%%DOCSDIR%%/html/gprbuild.css
-%%DOCSDIR%%/html/gprbuild_ug.html
-%%DOCSDIR%%/html/gps_index.xml
-%%DOCSDIR%%/html/important.png
-%%DOCSDIR%%/html/note.png
-%%DOCSDIR%%/html/tip.png
-%%DOCSDIR%%/info/gprbuild_ug.info
-%%DOCSDIR%%/pdf/gprbuild_ug.pdf
-%%DOCSDIR%%/txt/gprbuild_ug.txt
-%%EXAMPLESDIR%%/Makefile
-%%EXAMPLESDIR%%/ada_cpp/Makefile
-%%EXAMPLESDIR%%/ada_cpp/animals.gpr
-%%EXAMPLESDIR%%/ada_cpp/except.gpr
-%%EXAMPLESDIR%%/ada_cpp/src1/ada_main.adb
-%%EXAMPLESDIR%%/ada_cpp/src1/call_cpp.adb
-%%EXAMPLESDIR%%/ada_cpp/src1/call_cpp.ads
-%%EXAMPLESDIR%%/ada_cpp/src1/cpp_main.cpp
-%%EXAMPLESDIR%%/ada_cpp/src1/cpp_routine.cpp
-%%EXAMPLESDIR%%/ada_cpp/src1/cpp_routine.h
-%%EXAMPLESDIR%%/ada_cpp/src2/animals.adb
-%%EXAMPLESDIR%%/ada_cpp/src2/animals.ads
-%%EXAMPLESDIR%%/ada_cpp/src2/animals.h
-%%EXAMPLESDIR%%/ada_cpp/src2/animals_c.cc
-%%EXAMPLESDIR%%/ada_cpp/src2/animals_interfaces.ads
-%%EXAMPLESDIR%%/ada_cpp/src2/main.adb
-%%EXAMPLESDIR%%/ada_f77/Makefile
-%%EXAMPLESDIR%%/ada_f77/ess.f
-%%EXAMPLESDIR%%/ada_f77/fm.gpr
-%%EXAMPLESDIR%%/ada_f77/ft.gpr
-%%EXAMPLESDIR%%/ada_f77/src/fm-interfac.adb
-%%EXAMPLESDIR%%/ada_f77/src/fm-interfac.ads
-%%EXAMPLESDIR%%/ada_f77/src/fm-locks.adb
-%%EXAMPLESDIR%%/ada_f77/src/fm-locks.ads
-%%EXAMPLESDIR%%/ada_f77/src/fm-protected_queue.adb
-%%EXAMPLESDIR%%/ada_f77/src/fm-protected_queue.ads
-%%EXAMPLESDIR%%/ada_f77/src/fm-system_dependant.adb
-%%EXAMPLESDIR%%/ada_f77/src/fm-system_dependant.ads
-%%EXAMPLESDIR%%/ada_f77/src/fm-tuple_manager.adb
-%%EXAMPLESDIR%%/ada_f77/src/fm-tuple_manager.ads
-%%EXAMPLESDIR%%/ada_f77/src/fm-types.ads
-%%EXAMPLESDIR%%/ada_f77/src/fm.adb
-%%EXAMPLESDIR%%/ada_f77/src/fm.ads
-%%EXAMPLESDIR%%/extended_projects/Makefile
-%%EXAMPLESDIR%%/extended_projects/new_ada_main.gpr
-%%EXAMPLESDIR%%/extended_projects/new_ada_src/ada_main.adb
-%%EXAMPLESDIR%%/extended_projects/new_common_subsystem.gpr
-%%EXAMPLESDIR%%/extended_projects/new_util_src/c_lib.ads
-%%EXAMPLESDIR%%/extended_projects/new_util_src/lib2.c
-%%EXAMPLESDIR%%/first_steps/Makefile
-%%EXAMPLESDIR%%/first_steps/ada_main.gpr
-%%EXAMPLESDIR%%/first_steps/ada_src/ada_main.adb
-%%EXAMPLESDIR%%/first_steps/c_main.gpr
-%%EXAMPLESDIR%%/first_steps/c_src/c_main.c
-%%EXAMPLESDIR%%/first_steps/util_src/ada_lib.adb
-%%EXAMPLESDIR%%/first_steps/util_src/ada_lib.ads
-%%EXAMPLESDIR%%/first_steps/util_src/c_lib.ads
-%%EXAMPLESDIR%%/first_steps/util_src/lib.c
-%%EXAMPLESDIR%%/first_steps/util_src/lib.h
-%%EXAMPLESDIR%%/libraries/Makefile
-%%EXAMPLESDIR%%/libraries/Makefile2
-%%EXAMPLESDIR%%/libraries/ada_main.adb
-%%EXAMPLESDIR%%/libraries/c_main.c
-%%EXAMPLESDIR%%/libraries/dynamic_lib.gpr
-%%EXAMPLESDIR%%/libraries/extern_lib.gpr
-%%EXAMPLESDIR%%/libraries/lib_src/ada_lib.adb
-%%EXAMPLESDIR%%/libraries/lib_src/ada_lib.ads
-%%EXAMPLESDIR%%/libraries/lib_src/c_lib.ads
-%%EXAMPLESDIR%%/libraries/lib_src/lib.c
-%%EXAMPLESDIR%%/libraries/lib_src/lib.h
-%%EXAMPLESDIR%%/libraries/main0.gpr
-%%EXAMPLESDIR%%/libraries/main1.gpr
-%%EXAMPLESDIR%%/libraries/main2.gpr
-%%EXAMPLESDIR%%/libraries/main3.gpr
-%%EXAMPLESDIR%%/libraries/main4.gpr
-%%EXAMPLESDIR%%/libraries/sa_lib.gpr
-%%EXAMPLESDIR%%/libraries/static_lib.gpr
-%%EXAMPLESDIR%%/matrix/Makefile
-%%EXAMPLESDIR%%/matrix/matrix.gpr
-%%EXAMPLESDIR%%/matrix/src/initmat.c
-%%EXAMPLESDIR%%/matrix/src/main.adb
-%%EXAMPLESDIR%%/matrix/src/multmat.f
-%%EXAMPLESDIR%%/namings/Makefile
-%%EXAMPLESDIR%%/namings/_print2.ada
-%%EXAMPLESDIR%%/namings/_print3.adb
-%%EXAMPLESDIR%%/namings/main.adb
-%%EXAMPLESDIR%%/namings/my_routine.c1
-%%EXAMPLESDIR%%/namings/my_routine2.c1
-%%EXAMPLESDIR%%/namings/namings.gpr
-%%EXAMPLESDIR%%/namings/src1/main.adb
-%%EXAMPLESDIR%%/namings/util-case1.ada
-%%EXAMPLESDIR%%/namings/util-case2.ada
-%%EXAMPLESDIR%%/namings/util.ads
-%%EXAMPLESDIR%%/ppc-elf/Makefile
-%%EXAMPLESDIR%%/ppc-elf/gdb.run
-%%EXAMPLESDIR%%/ppc-elf/hello.gpr
-%%EXAMPLESDIR%%/ppc-elf/srcs/c_io.c
-%%EXAMPLESDIR%%/ppc-elf/srcs/hello.adb
-%%EXAMPLESDIR%%/ppc-elf/srcs/ppc_start.s
-%%EXAMPLESDIR%%/ppc-elf/srcs/textio.adb
-%%EXAMPLESDIR%%/ppc-elf/srcs/textio.ads
-%%EXAMPLESDIR%%/scenarios/Makefile
-%%EXAMPLESDIR%%/scenarios/general_lib.gpr
-%%EXAMPLESDIR%%/scenarios/main.gpr
-%%EXAMPLESDIR%%/subsystems/Makefile
-%%EXAMPLESDIR%%/subsystems/ada_main.gpr
-%%EXAMPLESDIR%%/subsystems/ada_src/ada_main.adb
-%%EXAMPLESDIR%%/subsystems/attribute_sharing.gpr
-%%EXAMPLESDIR%%/subsystems/c_main.gpr
-%%EXAMPLESDIR%%/subsystems/c_src/c_main.c
-%%EXAMPLESDIR%%/subsystems/common_subsystem.gpr
-%%EXAMPLESDIR%%/subsystems/util_src/ada_lib.adb
-%%EXAMPLESDIR%%/subsystems/util_src/ada_lib.ads
-%%EXAMPLESDIR%%/subsystems/util_src/c_lib.ads
-%%EXAMPLESDIR%%/subsystems/util_src/lib.c
-%%EXAMPLESDIR%%/subsystems/util_src/lib.h
+share/gpr/_default.gpr
 share/gprconfig/asm.xml
 share/gprconfig/c.xml
 share/gprconfig/compilers.xml
@@ -130,36 +17,7 @@ share/gprconfig/gprconfig.xsd
 share/gprconfig/linker.xml
 share/gprconfig/nocompiler.xml
 share/gprconfig/targetset.xml
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%/info
-@dirrm %%DOCSDIR%%/pdf
-@dirrm %%DOCSDIR%%/txt
-@dirrm %%DOCSDIR%%
-@dirrmtry %%EXAMPLESDIR%%/ada_cpp/src1
-@dirrmtry %%EXAMPLESDIR%%/ada_cpp/src2
-@dirrmtry %%EXAMPLESDIR%%/ada_cpp
-@dirrmtry %%EXAMPLESDIR%%/ada_f77/src
-@dirrmtry %%EXAMPLESDIR%%/ada_f77
-@dirrmtry %%EXAMPLESDIR%%/extended_projects/new_ada_src
-@dirrmtry %%EXAMPLESDIR%%/extended_projects/new_util_src
-@dirrmtry %%EXAMPLESDIR%%/extended_projects
-@dirrmtry %%EXAMPLESDIR%%/first_steps/ada_src
-@dirrmtry %%EXAMPLESDIR%%/first_steps/c_src
-@dirrmtry %%EXAMPLESDIR%%/first_steps/util_src
-@dirrmtry %%EXAMPLESDIR%%/first_steps
-@dirrmtry %%EXAMPLESDIR%%/libraries/lib_src
-@dirrmtry %%EXAMPLESDIR%%/libraries
-@dirrmtry %%EXAMPLESDIR%%/matrix/src
-@dirrmtry %%EXAMPLESDIR%%/matrix
-@dirrmtry %%EXAMPLESDIR%%/namings/src1
-@dirrmtry %%EXAMPLESDIR%%/namings
-@dirrmtry %%EXAMPLESDIR%%/ppc-elf/srcs
-@dirrmtry %%EXAMPLESDIR%%/ppc-elf
-@dirrmtry %%EXAMPLESDIR%%/scenarios
-@dirrmtry %%EXAMPLESDIR%%/subsystems/ada_src
-@dirrmtry %%EXAMPLESDIR%%/subsystems/c_src
-@dirrmtry %%EXAMPLESDIR%%/subsystems/util_src
-@dirrmtry %%EXAMPLESDIR%%/subsystems
-@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry libexec/gprbuild
+share/gprconfig/windres.xml
+@dirrm libexec/gprbuild
+@dirrmtry share/gpr
 @dirrmtry share/gprconfig

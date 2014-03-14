@@ -5,7 +5,7 @@ PORTNAME=	gprbuild
 PORTVERSION=	${SNAPSHOT}
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
-DISTNAME=	gprbuild-gpl-2012-src
+DISTNAME=	gprbuild-gpl-${YEAR}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	marino@FreeBSD.org
@@ -13,27 +13,41 @@ COMMENT=	Adacore multi-language software build tool
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS+=	xmlada>=3.2:${PORTSDIR}/textproc/xmlada
+BUILD_DEPENDS+=	xmlada>=3.2:${PORTSDIR}/textproc/xmlada \
+		gnat_util>=2013:${PORTSDIR}/lang/gnat_util
 
-EXAMPLESDIR=	share/examples/gprbuild
-DOCSDIR=	share/doc/gprbuild
-WRKSRC=		${WRKDIR}/gprbuild-2012-src
-SNAPSHOT=	20120510
+WRKSRC=		${WRKDIR}/gprbuild-${YEAR}-src
+YEAR=		2013
+SNAPSHOT=	20130416
 GNU_CONFIGURE=	yes
 USES=		ada gmake
+CONFIGURE_ARGS+=BUILD=production
+CONFIGURE_ARGS+=PROCESSORS=${MAKE_JOBS_NUMBER}
+PORTDOCS=	html txt pdf info
+PORTEXAMPLES=	.
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.if ${OPSYS} == "FreeBSD"
-CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:L}${OSREL}
-.endif
+.include <bsd.port.options.mk>
+
+do-build:
+#	Recreate the do-build target without -j parameter
+#	It interferes with PROCESSORS configure argument
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,@AUXPREFIX@,${PREFIX}/gcc-aux," \
 	  ${WRKSRC}/share/gprconfig/compilers.xml
 
 post-install:
-	cd ${STAGEDIR}${PREFIX}; ${FIND} share -type d -empty | \
+.if !${PORT_OPTIONS:MDOCS}
+	${RM} -rf ${STAGEDIR}${DOCSDIR}
+.endif
+.if !${PORT_OPTIONS:MEXAMPLES}
+	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}
+.endif
+	cd ${STAGEDIR}${PREFIX}; ${FIND} share/examples -type d -empty | \
 	  ${SORT} -dr | ${XARGS} ${RMDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
