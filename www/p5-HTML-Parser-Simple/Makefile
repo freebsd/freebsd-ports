@@ -6,7 +6,6 @@ PORTVERSION=	2.01
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse nice HTML files without needing a compiler
@@ -19,6 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
 USE_PERL5=	configure
-USES=		perl5
+USES=		perl5 tar:tgz
 
 .include <bsd.port.mk>
