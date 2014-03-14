@@ -70,7 +70,7 @@
     counti=0
 @@ -233,10 +249,13 @@
        if [ $? -eq 0 ]; then
-          extraflags="$extraflags -gnat95"
+          extraflags="$extraflags -fstack-check"
        fi
 +      inform $countdown $i
 +      countdown=`expr $countdown - 1`

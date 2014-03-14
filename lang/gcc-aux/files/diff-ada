@@ -1,6 +1,6 @@
 --- gcc/ada/a-exetim-posix.adb.orig
 +++ gcc/ada/a-exetim-posix.adb
-@@ -106,11 +106,11 @@
+@@ -105,11 +105,11 @@
        --  Time is equal to Duration (although it is a private type) and
        --  CPU_Time is equal to Time.
  
@@ -14,7 +14,7 @@
        --  Function from the POSIX.1b Realtime Extensions library
  
     begin
-@@ -118,7 +118,7 @@
+@@ -117,7 +117,7 @@
           raise Program_Error;
        end if;
  
@@ -445,7 +445,7 @@
 +end Ada.Interrupts.Names;
 --- gcc/ada/adaint.c.orig
 +++ gcc/ada/adaint.c
-@@ -1077,6 +1077,7 @@
+@@ -1144,6 +1144,7 @@
    strcpy (path, "GNAT-XXXXXX");
  
  #if (defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) \
@@ -453,7 +453,7 @@
    || defined (linux) || defined(__GLIBC__)) && !defined (__vxworks)
    return mkstemp (path);
  #elif defined (__Lynx__)
-@@ -1227,7 +1228,49 @@
+@@ -1310,7 +1311,49 @@
      free (pname);
    }
  
@@ -503,16 +503,18 @@
    || defined (__OpenBSD__) || defined(__GLIBC__)
  #define MAX_SAFE_PATH 1000
    char *tmpdir = getenv ("TMPDIR");
-@@ -2468,6 +2511,8 @@
+@@ -2562,7 +2605,9 @@
+ {
    int cores = 1;
  
- #if defined (linux) || defined (sun) || defined (AIX) \
-+    || defined (__FreeBSD__) || defined (__DragonFly__) \
-+    || defined (__OpenBSD__) || defined (__NetBSD__) \
-     || (defined (__alpha__)  && defined (_osf_)) || defined (__APPLE__)
+-#if defined (linux) || defined (sun) || defined (AIX) || defined (__APPLE__)
++#if defined (linux) || defined (sun) || defined (AIX) \
++ || defined (__APPLE__) || defined (__FreeBSD__) || defined (__OpenBSD__) \
++ || defined (__DragonFly__) || defined (__NetBSD__)
    cores = (int) sysconf (_SC_NPROCESSORS_ONLN);
  
-@@ -3530,37 +3575,6 @@
+ #elif defined (__hpux__)
+@@ -3608,35 +3653,6 @@
  }
  #endif
  
@@ -527,10 +529,8 @@
 -      && ! defined (__hpux__) \
 -      && ! defined (__APPLE__) \
 -      && ! defined (_AIX) \
--      && ! (defined (__alpha__)  && defined (__osf__)) \
 -      && ! defined (VMS) \
--      && ! defined (__MINGW32__) \
--      && ! (defined (__mips) && defined (__sgi)))
+-      && ! defined (__MINGW32__))
 -
 -/* Dummy function to satisfy g-trasym.o. See the preprocessor conditional
 -   just above for a list of native platforms that provide a non-dummy
@@ -550,50 +550,9 @@
  #if defined (_WIN32)
  int __gnat_argument_needs_quote = 1;
  #else
-@@ -3864,6 +3878,17 @@
-   CPU_SET (cpu - 1, set);
- }
- #endif
-+
-+#ifdef __ANDROID__
-+/* No-op, Android doesn't support pthread_rwlockattr_setkind_np, but we want
-+   to use the s-taprop-linux.ads without modification */
-+int __gnat_set_threadlock_kind (pthread_rwlockattr_t *attr ATTRIBUTE_UNUSED,
-+    int pref ATTRIBUTE_UNUSED)
-+{
-+  return 0;
-+}
-+#endif
-+
- #endif
- 
- #ifdef __cplusplus
---- gcc/ada/adaint.h.orig
-+++ gcc/ada/adaint.h
-@@ -257,6 +257,20 @@
- 
- #include <sched.h>
- 
-+#ifdef __ANDROID__
-+struct pthread_rwlockattr;
-+typedef struct	pthread_rwlockattr	*pthread_rwlockattr_t;
-+typedef struct {
-+	unsigned long int  __bits[ 1 ];
-+} cpu_set_t;
-+#  define __CPU_MASK(x)		((unsigned long int)1 << ((x) & 31))
-+#  define CPU_ZERO(set_)	do { (set_)->__bits[0] = 0; } while(0)
-+#  define CPU_SET(cpu_,set_) \
-+	do { size_t __cpu = (cpu_); \
-+	if (__cpu < 32) (set_)->__bits[0] |= __CPU_MASK(__cpu); } while (0)
-+int __gnat_set_threadlock_kind (pthread_rwlockattr_t *, int);
-+#endif
-+
- extern cpu_set_t *__gnat_cpu_alloc                 (size_t);
- extern size_t __gnat_cpu_alloc_size                (size_t);
- extern void   __gnat_cpu_free                  (cpu_set_t *);
 --- gcc/ada/cio.c.orig
 +++ gcc/ada/cio.c
-@@ -46,7 +46,8 @@
+@@ -49,7 +49,8 @@
  
  /* Don't use macros on GNU/Linux since they cause incompatible changes between
     glibc 2.0 and 2.1 */
@@ -617,21 +576,20 @@
  
  #ifdef stderr
  #  undef stderr
-@@ -187,7 +188,10 @@
+@@ -187,7 +188,9 @@
  	  *p = '\\';
      }
  
--#elif defined (sgi) || defined (__FreeBSD__)
-+#elif defined (sgi) \
-+  || defined (__FreeBSD__) \
-+  || defined (__DragonFly__) \
-+  || defined (__OpenBSD__)
+-#elif defined (__FreeBSD__)
++#elif defined (__FreeBSD__) \
++   || defined (__DragonFly__) \
++   || defined (__OpenBSD__)
  
    /* Use realpath function which resolves links and references to . and ..
       on those Unix systems that support it. Note that GNU/Linux provides it but
 --- gcc/ada/env.c.orig
 +++ gcc/ada/env.c
-@@ -188,7 +188,9 @@
+@@ -180,7 +180,9 @@
        LIB$SIGNAL (status);
    }
  
@@ -642,7 +600,7 @@
    setenv (name, value, 1);
  
  #else
-@@ -310,6 +312,7 @@
+@@ -301,6 +303,7 @@
    }
  #elif defined (__MINGW32__) || defined (__FreeBSD__) || defined (__APPLE__) \
     || (defined (__vxworks) && defined (__RTP__)) || defined (__CYGWIN__) \
@@ -650,48 +608,9 @@
     || defined (__NetBSD__) || defined (__OpenBSD__) || defined (__rtems__)
    /* On Windows, FreeBSD and MacOS there is no function to clean all the
       environment but there is a "clean" way to unset a variable. So go
---- gcc/ada/errno.c.orig
-+++ gcc/ada/errno.c
-@@ -39,6 +39,7 @@
- #define _REENTRANT
- #define _THREAD_SAFE
- #define _SGI_MP_SOURCE
-+#define GNAT_SET_ERRNO
- 
- #ifdef MaRTE
- 
-@@ -52,6 +53,17 @@
- 
- #endif
- 
-+#ifdef __ANDROID__
-+
-+/* The ANDROID errno.h file also defines __set_errno as an external variable
-+   for use with syscalls.  It should not be referenced directly, but we are
-+   going to do it anyway because the alternative solution is to rename all 
-+   uses of __set_errno in GNAT. */
-+
-+#undef GNAT_SET_ERRNO   
-+#endif
-+
-+
- #include <errno.h>
- int
- __get_errno(void)
-@@ -59,8 +71,10 @@
-   return errno;
- }
- 
-+#ifdef GNAT_SET_ERRNO
- void
- __set_errno(int err)
- {
-   errno = err;
- }
-+#endif
 --- gcc/ada/g-comlin.adb.orig
 +++ gcc/ada/g-comlin.adb
-@@ -514,6 +514,7 @@
+@@ -525,6 +525,7 @@
     begin
        Index_In_Switches := 0;
        Switch_Length     := 0;
@@ -701,7 +620,7 @@
        --  at the start of the first switch.
 --- gcc/ada/g-expect.adb.orig
 +++ gcc/ada/g-expect.adb
-@@ -1332,15 +1332,20 @@
+@@ -1335,15 +1335,20 @@
  
        --  The following commands are not executed on Unix systems, and are only
        --  required for Windows systems. We are now in the parent process.
@@ -731,7 +650,7 @@
     ---------------------------
 --- /dev/null
 +++ gcc/ada/g-socthi-bsd.adb
-@@ -0,0 +1,376 @@
+@@ -0,0 +1,356 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                         GNAT COMPILER COMPONENTS                         --
@@ -740,7 +659,7 @@
 +--                                                                          --
 +--                                 B o d y                                  --
 +--                                                                          --
-+--                     Copyright (C) 2001-2010, AdaCore                     --
++--                     Copyright (C) 2001-2013, AdaCore                     --
 +--                                                                          --
 +-- GNAT is free software;  you can  redistribute it  and/or modify it under --
 +-- terms of the  GNU General Public License as published  by the Free Soft- --
@@ -777,9 +696,6 @@
 +with Interfaces.C; use Interfaces.C;
 +
 +package body GNAT.Sockets.Thin is
-+
-+   Unknown_System_Error : constant C.Strings.chars_ptr :=
-+                            C.Strings.New_String ("Unknown system error");
 +
 +   function Syscall_Accept
 +     (S       : C.int;
@@ -895,12 +811,11 @@
 +      Addr    : System.Address;
 +      Addrlen : not null access C.int) return C.int
 +   is
-+      Res : constant C.int := Syscall_Accept (S, Addr, Addrlen);
++      R : constant C.int := Syscall_Accept (S, Addr, Addrlen);
 +   begin
 +
-+      Disable_SIGPIPE (Res);
-+      return Res;
-+
++      Disable_SIGPIPE (R);
++      return R;
 +   end C_Accept;
 +
 +   ---------------
@@ -913,9 +828,7 @@
 +      Namelen : C.int) return C.int
 +   is
 +   begin
-+
 +      return Syscall_Connect (S, Name, Namelen);
-+
 +   end C_Connect;
 +
 +   ------------------
@@ -924,29 +837,29 @@
 +
 +   function Socket_Ioctl
 +     (S   : C.int;
-+      Req : C.int;
++      Req : SOSC.IOCTL_Req_T;
 +      Arg : access C.int) return C.int
 +   is
-+      --  Currently all requests are of the FIONBIO type, so always calc flags
-+      use Interfaces;
-+      flags    : constant Unsigned_32 :=
-+                          Unsigned_32 (C_Fcntl (S, SOSC.F_GETFL, 0));
-+      nonblock : constant Unsigned_32 := Unsigned_32 (SOSC.FNDELAY);
-+      enabled  : constant Boolean := Arg.all = 1;
-+      newval   : C.int;
 +   begin
 +      if Req = SOSC.FIONBIO then
-+         if enabled then
-+            newval := C.int (flags or nonblock);
-+         elsif (flags and nonblock) > 0 then
-+            newval := C.int (flags - nonblock);
-+         else
-+            newval := C.int (flags);
-+         end if;
-+         return C_Fcntl (Fd => S, Cmd => SOSC.F_SETFL, Val => newval);
-+      else
-+         return C_Ioctl (Fd => S, Req => Req, Arg => Arg);
++         declare
++            use Interfaces;
++            flags    : constant Unsigned_32 :=
++                                Unsigned_32 (C_Fcntl (S, SOSC.F_GETFL, 0));
++            nonblock : constant Unsigned_32 := Unsigned_32 (SOSC.FNDELAY);
++            enabled  : constant Boolean := Arg.all = 1;
++            newval   : C.int := C.int (flags);
++         begin
++            if enabled then
++               newval := C.int (flags or nonblock);
++            elsif (flags and nonblock) > 0 then
++               newval := C.int (flags - nonblock);
++            end if;
++            return C_Fcntl (Fd => S, Cmd => SOSC.F_SETFL, Val => newval);
++         end;
 +      end if;
++
++      return C_Ioctl (S, Req, Arg);
 +   end Socket_Ioctl;
 +
 +   ------------
@@ -960,9 +873,7 @@
 +      Flags : C.int) return C.int
 +   is
 +   begin
-+
 +      return Syscall_Recv (S, Msg, Len, Flags);
-+
 +   end C_Recv;
 +
 +   ----------------
@@ -978,9 +889,7 @@
 +      Fromlen : not null access C.int) return C.int
 +   is
 +   begin
-+
 +      return Syscall_Recvfrom (S, Msg, Len, Flags, From, Fromlen);
-+
 +   end C_Recvfrom;
 +
 +   ---------------
@@ -993,9 +902,7 @@
 +      Flags : C.int) return System.CRTL.ssize_t
 +   is
 +   begin
-+
 +      return  Syscall_Recvmsg (S, Msg, Flags);
-+
 +   end C_Recvmsg;
 +
 +   ---------------
@@ -1008,9 +915,7 @@
 +      Flags : C.int) return System.CRTL.ssize_t
 +   is
 +   begin
-+
 +      return Syscall_Sendmsg (S, Msg, Flags);
-+
 +   end C_Sendmsg;
 +
 +   --------------
@@ -1026,9 +931,7 @@
 +      Tolen : C.int) return C.int
 +   is
 +   begin
-+
 +      return Syscall_Sendto (S, Msg, Len, Flags, To, Tolen);
-+
 +   end C_Sendto;
 +
 +   --------------
@@ -1040,12 +943,10 @@
 +      Typ      : C.int;
 +      Protocol : C.int) return C.int
 +   is
-+      Res : constant C.int := Syscall_Socket (Domain, Typ, Protocol);
++      R : constant C.int := Syscall_Socket (Domain, Typ, Protocol);
 +   begin
-+
-+      Disable_SIGPIPE (Res);
-+      return Res;
-+
++      Disable_SIGPIPE (R);
++      return R;
 +   end C_Socket;
 +
 +   --------------
@@ -1103,14 +1004,12 @@
 +   -- Socket_Error_Message --
 +   --------------------------
 +
-+   function Socket_Error_Message
-+     (Errno : Integer) return C.Strings.chars_ptr
-+   is separate;
++   function Socket_Error_Message (Errno : Integer) return String is separate;
 +
 +end GNAT.Sockets.Thin;
 --- /dev/null
 +++ gcc/ada/g-socthi-netbsd.adb
-@@ -0,0 +1,378 @@
+@@ -0,0 +1,358 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                         GNAT COMPILER COMPONENTS                         --
@@ -1119,7 +1018,7 @@
 +--                                                                          --
 +--                                 B o d y                                  --
 +--                                                                          --
-+--                     Copyright (C) 2001-2010, AdaCore                     --
++--                     Copyright (C) 2001-2013, AdaCore                     --
 +--                                                                          --
 +-- GNAT is free software;  you can  redistribute it  and/or modify it under --
 +-- terms of the  GNU General Public License as published  by the Free Soft- --
@@ -1158,9 +1057,6 @@
 +with Interfaces.C; use Interfaces.C;
 +
 +package body GNAT.Sockets.Thin is
-+
-+   Unknown_System_Error : constant C.Strings.chars_ptr :=
-+                            C.Strings.New_String ("Unknown system error");
 +
 +   function Syscall_Accept
 +     (S       : C.int;
@@ -1276,12 +1172,11 @@
 +      Addr    : System.Address;
 +      Addrlen : not null access C.int) return C.int
 +   is
-+      Res : constant C.int := Syscall_Accept (S, Addr, Addrlen);
++      R : constant C.int := Syscall_Accept (S, Addr, Addrlen);
 +   begin
 +
-+      Disable_SIGPIPE (Res);
-+      return Res;
-+
++      Disable_SIGPIPE (R);
++      return R;
 +   end C_Accept;
 +
 +   ---------------
@@ -1294,9 +1189,7 @@
 +      Namelen : C.int) return C.int
 +   is
 +   begin
-+
 +      return Syscall_Connect (S, Name, Namelen);
-+
 +   end C_Connect;
 +
 +   ------------------
@@ -1305,29 +1198,29 @@
 +
 +   function Socket_Ioctl
 +     (S   : C.int;
-+      Req : C.int;
++      Req : SOSC.IOCTL_Req_T;
 +      Arg : access C.int) return C.int
 +   is
-+      --  Currently all requests are of the FIONBIO type, so always calc flags
-+      use Interfaces;
-+      flags    : constant Unsigned_32 :=
-+                          Unsigned_32 (C_Fcntl (S, SOSC.F_GETFL, 0));
-+      nonblock : constant Unsigned_32 := Unsigned_32 (SOSC.FNDELAY);
-+      enabled  : constant Boolean := Arg.all = 1;
-+      newval   : C.int;
 +   begin
 +      if Req = SOSC.FIONBIO then
-+         if enabled then
-+            newval := C.int (flags or nonblock);
-+         elsif (flags and nonblock) > 0 then
-+            newval := C.int (flags - nonblock);
-+         else
-+            newval := C.int (flags);
-+         end if;
-+         return C_Fcntl (Fd => S, Cmd => SOSC.F_SETFL, Val => newval);
-+      else
-+         return C_Ioctl (Fd => S, Req => Req, Arg => Arg);
++         declare
++            use Interfaces;
++            flags    : constant Unsigned_32 :=
++                                Unsigned_32 (C_Fcntl (S, SOSC.F_GETFL, 0));
++            nonblock : constant Unsigned_32 := Unsigned_32 (SOSC.FNDELAY);
++            enabled  : constant Boolean := Arg.all = 1;
++            newval   : C.int := C.int (flags);
++         begin
++            if enabled then
++               newval := C.int (flags or nonblock);
++            elsif (flags and nonblock) > 0 then
++               newval := C.int (flags - nonblock);
++            end if;
++            return C_Fcntl (Fd => S, Cmd => SOSC.F_SETFL, Val => newval);
++         end;
 +      end if;
++
++      return C_Ioctl (S, Req, Arg);
 +   end Socket_Ioctl;
 +
 +   ------------
@@ -1341,9 +1234,7 @@
 +      Flags : C.int) return C.int
 +   is
 +   begin
-+
 +      return Syscall_Recv (S, Msg, Len, Flags);
-+
 +   end C_Recv;
 +
 +   ----------------
@@ -1359,9 +1250,7 @@
 +      Fromlen : not null access C.int) return C.int
 +   is
 +   begin
-+
 +      return Syscall_Recvfrom (S, Msg, Len, Flags, From, Fromlen);
-+
 +   end C_Recvfrom;
 +
 +   ---------------
@@ -1374,9 +1263,7 @@
 +      Flags : C.int) return System.CRTL.ssize_t
 +   is
 +   begin
-+
 +      return  Syscall_Recvmsg (S, Msg, Flags);
-+
 +   end C_Recvmsg;
 +
 +   ---------------
@@ -1389,9 +1276,7 @@
 +      Flags : C.int) return System.CRTL.ssize_t
 +   is
 +   begin
-+
 +      return Syscall_Sendmsg (S, Msg, Flags);
-+
 +   end C_Sendmsg;
 +
 +   --------------
@@ -1407,9 +1292,7 @@
 +      Tolen : C.int) return C.int
 +   is
 +   begin
-+
 +      return Syscall_Sendto (S, Msg, Len, Flags, To, Tolen);
-+
 +   end C_Sendto;
 +
 +   --------------
@@ -1421,12 +1304,10 @@
 +      Typ      : C.int;
 +      Protocol : C.int) return C.int
 +   is
-+      Res : constant C.int := Syscall_Socket (Domain, Typ, Protocol);
++      R : constant C.int := Syscall_Socket (Domain, Typ, Protocol);
 +   begin
-+
-+      Disable_SIGPIPE (Res);
-+      return Res;
-+
++      Disable_SIGPIPE (R);
++      return R;
 +   end C_Socket;
 +
 +   --------------
@@ -1484,14 +1365,12 @@
 +   -- Socket_Error_Message --
 +   --------------------------
 +
-+   function Socket_Error_Message
-+     (Errno : Integer) return C.Strings.chars_ptr
-+   is separate;
++   function Socket_Error_Message (Errno : Integer) return String is separate;
 +
 +end GNAT.Sockets.Thin;
 --- /dev/null
 +++ gcc/ada/g-socthi-netbsd6.ads
-@@ -0,0 +1,260 @@
+@@ -0,0 +1,259 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                         GNAT COMPILER COMPONENTS                         --
@@ -1500,7 +1379,7 @@
 +--                                                                          --
 +--                                 S p e c                                  --
 +--                                                                          --
-+--                     Copyright (C) 2001-2010, AdaCore                     --
++--                     Copyright (C) 2001-2013, AdaCore                     --
 +--                                                                          --
 +-- GNAT is free software;  you can  redistribute it  and/or modify it under --
 +-- terms of the  GNU General Public License as published  by the Free Soft- --
@@ -1529,7 +1408,7 @@
 +
 +--  This is the NetBSD 6+ version
 +
-+with Interfaces.C.Strings;
++with Interfaces.C;
 +
 +with GNAT.OS_Lib;
 +with GNAT.Sockets.Thin_Common;
@@ -1552,7 +1431,7 @@
 +   function Socket_Errno return Integer renames GNAT.OS_Lib.Errno;
 +   --  Returns last socket error number
 +
-+   function Socket_Error_Message (Errno : Integer) return C.Strings.chars_ptr;
++   function Socket_Error_Message (Errno : Integer) return String;
 +   --  Returns the error message string for the error number Errno. If Errno is
 +   --  not known, returns "Unknown system error".
 +
@@ -1562,8 +1441,7 @@
 +
 +   package Host_Error_Messages is
 +
-+      function Host_Error_Message
-+        (H_Errno : Integer) return C.Strings.chars_ptr;
++      function Host_Error_Message (H_Errno : Integer) return String;
 +      --  Returns the error message string for the host error number H_Errno.
 +      --  If H_Errno is not known, returns "Unknown system error".
 +
@@ -1614,7 +1492,7 @@
 +
 +   function Socket_Ioctl
 +     (S   : C.int;
-+      Req : C.int;
++      Req : SOSC.IOCTL_Req_T;
 +      Arg : access C.int) return C.int;
 +
 +   function C_Listen
@@ -1929,12 +1807,21 @@
  
 --- gcc/ada/gsocket.h.orig
 +++ gcc/ada/gsocket.h
-@@ -203,8 +203,19 @@
+@@ -29,7 +29,7 @@
+  *                                                                          *
+  ****************************************************************************/
+ 
+-#if defined(__nucleus__) || defined(VTHREADS) || defined(__ANDROID__)
++#if defined(__nucleus__) || defined(VTHREADS)
+ 
+ #warning Sockets not supported on these platforms
+ #undef HAVE_SOCKETS
+@@ -198,8 +198,18 @@
  #include <netdb.h>
  #endif
  
 -#if defined (_AIX) || defined (__FreeBSD__) || defined (__hpux__) || \
--    defined (__osf__) || defined (_WIN32) || defined (__APPLE__)
+-    defined (_WIN32) || defined (__APPLE__)
 +#if defined(__ANDROID__)
 +#include <sys/select.h>
 +#endif
@@ -1945,13 +1832,12 @@
 + || defined (__NetBSD__) \
 + || defined (__OpenBSD__) \
 + || defined (__hpux__) \
-+ || defined (__osf__) \
 + || defined (_WIN32) \
 + || defined (__APPLE__)
  # define HAVE_THREAD_SAFE_GETxxxBYyyy 1
  
- #elif defined (sgi) || defined (linux) || defined (__GLIBC__) || \
-@@ -236,7 +247,13 @@
+ #elif defined (linux) || defined (__GLIBC__) || \
+@@ -231,7 +241,13 @@
  # endif
  #endif
  
@@ -1968,25 +1854,16 @@
  # define Has_Sockaddr_Len 0
 --- gcc/ada/init.c.orig
 +++ gcc/ada/init.c
-@@ -536,7 +536,7 @@
- /* GNU/Linux Section */
- /*********************/
- 
--#elif defined (linux)
-+#elif defined (linux) && !defined(__ANDROID__)
- 
- #include <signal.h>
- 
-@@ -1787,7 +1787,7 @@
+@@ -1623,7 +1623,7 @@
  /* FreeBSD Section */
  /*******************/
  
 -#elif defined (__FreeBSD__)
-+#elif defined (__FreeBSD__)  || defined (__DragonFly__)
++#elif defined (__FreeBSD__) || defined (__DragonFly__)
  
  #include <signal.h>
  #include <sys/ucontext.h>
-@@ -1832,7 +1832,7 @@
+@@ -1668,7 +1668,7 @@
  }
  
  void
@@ -1995,85 +1872,7 @@
  {
    struct sigaction act;
  
-@@ -1854,6 +1854,77 @@
- }
- 
- /*******************/
-+/* Android Section */
-+/*******************/
-+
-+#elif defined(__ANDROID__)
-+
-+#include <signal.h>
-+
-+static void
-+__gnat_error_handler (int             sig,
-+		      struct siginfo *si          ATTRIBUTE_UNUSED,
-+		      void           *ucontext    ATTRIBUTE_UNUSED)
-+{
-+  struct Exception_Data *exception;
-+  const char *msg;
-+
-+  switch (sig)
-+    {
-+    case SIGFPE:
-+      exception = &constraint_error;
-+      msg = "SIGFPE";
-+      break;
-+
-+    case SIGILL:
-+      exception = &constraint_error;
-+      msg = "SIGILL";
-+      break;
-+      
-+    case SIGSEGV:
-+      exception = &storage_error;
-+      msg = "stack overflow or erroneous memory access";
-+      break;
-+
-+    case SIGBUS:
-+      exception = &constraint_error;
-+      msg = "SIGBUS";
-+      break;
-+
-+    default:
-+      exception = &program_error;
-+      msg = "unhandled signal";
-+    }
-+
-+  Raise_From_Signal_Handler (exception, msg);
-+}
-+
-+void
-+__gnat_install_handler (void)
-+{
-+  struct sigaction act;
-+
-+  act.sa_sigaction = __gnat_error_handler;
-+  act.sa_flags = SA_NODEFER | SA_RESTART | SA_SIGINFO;
-+  sigemptyset (&act.sa_mask);
-+
-+  /* Do not install handlers if interrupt state is "System".  */
-+  if (__gnat_get_interrupt_state (SIGABRT) != 's') 
-+    sigaction (SIGABRT, &act, NULL);
-+  if (__gnat_get_interrupt_state (SIGFPE)  != 's')
-+    sigaction (SIGFPE,  &act, NULL);
-+  if (__gnat_get_interrupt_state (SIGILL)  != 's')
-+    sigaction (SIGILL,  &act, NULL);
-+  if (__gnat_get_interrupt_state (SIGBUS)  != 's')
-+    sigaction (SIGBUS,  &act, NULL);
-+  if (__gnat_get_interrupt_state (SIGSEGV) != 's')
-+    sigaction (SIGSEGV, &act, NULL);
-+
-+  __gnat_handler_installed = 1;
-+}
-+
-+
-+/*******************/
- /* VxWorks Section */
- /*******************/
- 
-@@ -2450,9 +2521,13 @@
+@@ -2461,9 +2461,13 @@
     initialization of the FP processor.  This version is used under INTERIX
     and WIN32.  */
  
@@ -2092,7 +1891,7 @@
  
 --- gcc/ada/initialize.c.orig
 +++ gcc/ada/initialize.c
-@@ -257,8 +257,11 @@
+@@ -258,8 +258,11 @@
  /* __gnat_initialize (init_float version) */
  /******************************************/
  
@@ -2108,7 +1907,7 @@
  
 --- gcc/ada/link.c.orig
 +++ gcc/ada/link.c
-@@ -133,7 +133,10 @@
+@@ -103,7 +103,10 @@
  unsigned char __gnat_separate_run_path_options = 0;
  const char *__gnat_default_libgcc_subdir = "lib";
  
@@ -2122,7 +1921,7 @@
  char __gnat_shared_libgnat_default = STATIC;
 --- gcc/ada/make.adb.orig
 +++ gcc/ada/make.adb
-@@ -669,7 +669,7 @@
+@@ -670,7 +670,7 @@
     -- Compiler, Binder & Linker Data and Subprograms --
     ----------------------------------------------------
  
@@ -2173,7 +1972,7 @@
                    Current := Element.Next;
 --- gcc/ada/mlib-utl.adb.orig
 +++ gcc/ada/mlib-utl.adb
-@@ -433,7 +433,7 @@
+@@ -440,7 +440,7 @@
        if Driver_Name = No_Name then
           if Gcc_Exec = null then
              if Gcc_Name = null then
@@ -2184,7 +1983,7 @@
              Gcc_Exec := Locate_Exec_On_Path (Gcc_Name.all);
 --- gcc/ada/prj-makr.adb.orig
 +++ gcc/ada/prj-makr.adb
-@@ -114,7 +114,7 @@
+@@ -116,7 +116,7 @@
  
     procedure Dup2 (Old_Fd, New_Fd : File_Descriptor);
  
@@ -2193,667 +1992,6 @@
     Gcc_Path : String_Access := null;
  
     Non_Empty_Node : constant Project_Node_Id := 1;
---- gcc/ada/s-fileio.adb.orig
-+++ gcc/ada/s-fileio.adb
-@@ -231,7 +231,7 @@
-       Close_Status : int := 0;
-       Dup_Strm     : Boolean := False;
-       File         : AFCB_Ptr renames File_Ptr.all;
--      Errno        : Integer;
-+      Errno        : Integer := 0;
- 
-    begin
-       --  Take a task lock, to protect the global data value Open_Files
---- /dev/null
-+++ gcc/ada/s-osinte-android.ads
-@@ -0,0 +1,647 @@
-+------------------------------------------------------------------------------
-+--                                                                          --
-+--                 GNAT RUN-TIME LIBRARY (GNARL) COMPONENTS                 --
-+--                                                                          --
-+--                   S Y S T E M . O S _ I N T E R F A C E                  --
-+--                                                                          --
-+--                                  S p e c                                 --
-+--                                                                          --
-+--             Copyright (C) 1991-1994, Florida State University            --
-+--          Copyright (C) 1995-2011, Free Software Foundation, Inc.         --
-+--                                                                          --
-+-- GNAT is free software;  you can  redistribute it  and/or modify it under --
-+-- terms of the  GNU General Public License as published  by the Free Soft- --
-+-- ware  Foundation;  either version 3,  or (at your option) any later ver- --
-+-- sion.  GNAT is distributed in the hope that it will be useful, but WITH- --
-+-- OUT ANY WARRANTY;  without even the  implied warranty of MERCHANTABILITY --
-+-- or FITNESS FOR A PARTICULAR PURPOSE.                                     --
-+--                                                                          --
-+-- As a special exception under Section 7 of GPL version 3, you are granted --
-+-- additional permissions described in the GCC Runtime Library Exception,   --
-+-- version 3.1, as published by the Free Software Foundation.               --
-+--                                                                          --
-+-- You should have received a copy of the GNU General Public License and    --
-+-- a copy of the GCC Runtime Library Exception along with this program;     --
-+-- see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see    --
-+-- <http://www.gnu.org/licenses/>.                                          --
-+--                                                                          --
-+-- GNARL was developed by the GNARL team at Florida State University.       --
-+-- Extensive contributions were provided by Ada Core Technologies, Inc.     --
-+--                                                                          --
-+------------------------------------------------------------------------------
-+
-+--  This is a GNU/Linux (GNU/LinuxThreads) version of this package
-+
-+--  This package encapsulates all direct interfaces to OS services
-+--  that are needed by the tasking run-time (libgnarl).
-+
-+--  PLEASE DO NOT add any with-clauses to this package or remove the pragma
-+--  Preelaborate. This package is designed to be a bottom-level (leaf) package.
-+
-+with Ada.Unchecked_Conversion;
-+with Interfaces.C;
-+with System.Linux;
-+with System.OS_Constants;
-+
-+package System.OS_Interface is
-+   pragma Preelaborate;
-+
-+   subtype int            is Interfaces.C.int;
-+   subtype char           is Interfaces.C.char;
-+   subtype short          is Interfaces.C.short;
-+   subtype long           is Interfaces.C.long;
-+   subtype unsigned       is Interfaces.C.unsigned;
-+   subtype unsigned_short is Interfaces.C.unsigned_short;
-+   subtype unsigned_long  is Interfaces.C.unsigned_long;
-+   subtype unsigned_char  is Interfaces.C.unsigned_char;
-+   subtype plain_char     is Interfaces.C.plain_char;
-+   subtype size_t         is Interfaces.C.size_t;
-+
-+   -----------
-+   -- Errno --
-+   -----------
-+
-+   function errno return int;
-+   pragma Import (C, errno, "__get_errno");
-+
-+   EAGAIN    : constant := System.Linux.EAGAIN;
-+   EINTR     : constant := System.Linux.EINTR;
-+   EINVAL    : constant := System.Linux.EINVAL;
-+   ENOMEM    : constant := System.Linux.ENOMEM;
-+   EPERM     : constant := System.Linux.EPERM;
-+   ETIMEDOUT : constant := System.Linux.ETIMEDOUT;
-+
-+   -------------
-+   -- Signals --
-+   -------------
-+
-+   Max_Interrupt : constant := 63;
-+   type Signal is new int range 0 .. Max_Interrupt;
-+   for Signal'Size use int'Size;
-+
-+   SIGHUP     : constant := System.Linux.SIGHUP;
-+   SIGINT     : constant := System.Linux.SIGINT;
-+   SIGQUIT    : constant := System.Linux.SIGQUIT;
-+   SIGILL     : constant := System.Linux.SIGILL;
-+   SIGTRAP    : constant := System.Linux.SIGTRAP;
-+   SIGIOT     : constant := System.Linux.SIGIOT;
-+   SIGABRT    : constant := System.Linux.SIGABRT;
-+   SIGFPE     : constant := System.Linux.SIGFPE;
-+   SIGKILL    : constant := System.Linux.SIGKILL;
-+   SIGBUS     : constant := System.Linux.SIGBUS;
-+   SIGSEGV    : constant := System.Linux.SIGSEGV;
-+   SIGPIPE    : constant := System.Linux.SIGPIPE;
-+   SIGALRM    : constant := System.Linux.SIGALRM;
-+   SIGTERM    : constant := System.Linux.SIGTERM;
-+   SIGUSR1    : constant := System.Linux.SIGUSR1;
-+   SIGUSR2    : constant := System.Linux.SIGUSR2;
-+   SIGCLD     : constant := System.Linux.SIGCLD;
-+   SIGCHLD    : constant := System.Linux.SIGCHLD;
-+   SIGPWR     : constant := System.Linux.SIGPWR;
-+   SIGWINCH   : constant := System.Linux.SIGWINCH;
-+   SIGURG     : constant := System.Linux.SIGURG;
-+   SIGPOLL    : constant := System.Linux.SIGPOLL;
-+   SIGIO      : constant := System.Linux.SIGIO;
-+   SIGLOST    : constant := System.Linux.SIGLOST;
-+   SIGSTOP    : constant := System.Linux.SIGSTOP;
-+   SIGTSTP    : constant := System.Linux.SIGTSTP;
-+   SIGCONT    : constant := System.Linux.SIGCONT;
-+   SIGTTIN    : constant := System.Linux.SIGTTIN;
-+   SIGTTOU    : constant := System.Linux.SIGTTOU;
-+   SIGVTALRM  : constant := System.Linux.SIGVTALRM;
-+   SIGPROF    : constant := System.Linux.SIGPROF;
-+   SIGXCPU    : constant := System.Linux.SIGXCPU;
-+   SIGXFSZ    : constant := System.Linux.SIGXFSZ;
-+   SIGUNUSED  : constant := System.Linux.SIGUNUSED;
-+   SIGSTKFLT  : constant := System.Linux.SIGSTKFLT;
-+   SIGLTHRRES : constant := System.Linux.SIGLTHRRES;
-+   SIGLTHRCAN : constant := System.Linux.SIGLTHRCAN;
-+   SIGLTHRDBG : constant := System.Linux.SIGLTHRDBG;
-+
-+   SIGADAABORT : constant := SIGABRT;
-+   --  Change this to use another signal for task abort. SIGTERM might be a
-+   --  good one.
-+
-+   type Signal_Set is array (Natural range <>) of Signal;
-+
-+   Unmasked : constant Signal_Set := (
-+      SIGTRAP,
-+      --  To enable debugging on multithreaded applications, mark SIGTRAP to
-+      --  be kept unmasked.
-+
-+      SIGBUS,
-+
-+      SIGTTIN, SIGTTOU, SIGTSTP,
-+      --  Keep these three signals unmasked so that background processes and IO
-+      --  behaves as normal "C" applications
-+
-+      SIGPROF,
-+      --  To avoid confusing the profiler
-+
-+      SIGKILL, SIGSTOP,
-+      --  These two signals actually can't be masked (POSIX won't allow it)
-+
-+      SIGLTHRRES, SIGLTHRCAN, SIGLTHRDBG);
-+      --  These three signals are used by GNU/LinuxThreads starting from glibc
-+      --  2.1 (future 2.2).
-+
-+   Reserved : constant Signal_Set := (SIGVTALRM, SIGUNUSED);
-+   --  Not clear why these two signals are reserved. Perhaps they are not
-+   --  supported by this version of GNU/Linux ???
-+
-+   type sigset_t is private;
-+
-+   function sigaddset (set : access sigset_t; sig : Signal) return int;
-+   pragma Import (C, sigaddset, "sigaddset");
-+
-+   function sigdelset (set : access sigset_t; sig : Signal) return int;
-+   pragma Import (C, sigdelset, "sigdelset");
-+
-+   function sigfillset (set : access sigset_t) return int;
-+   pragma Import (C, sigfillset, "sigfillset");
-+
-+   function sigismember (set : access sigset_t; sig : Signal) return int;
-+   pragma Import (C, sigismember, "sigismember");
-+
-+   function sigemptyset (set : access sigset_t) return int;
-+   pragma Import (C, sigemptyset, "sigemptyset");
-+
-+   type union_type_3 is new String (1 .. 116);
-+   type siginfo_t is record
-+      si_signo : int;
-+      si_code  : int;
-+      si_errno : int;
-+      X_data   : union_type_3;
-+   end record;
-+   pragma Convention (C, siginfo_t);
-+
-+   type struct_sigaction is record
-+      sa_handler  : System.Address;
-+      sa_mask     : sigset_t;
-+      sa_flags    : Interfaces.C.unsigned_long;
-+      sa_restorer : System.Address;
-+   end record;
-+   pragma Convention (C, struct_sigaction);
-+
-+   type struct_sigaction_ptr is access all struct_sigaction;
-+
-+   type Machine_State is record
-+      eip : unsigned_long;
-+      ebx : unsigned_long;
-+      esp : unsigned_long;
-+      ebp : unsigned_long;
-+      esi : unsigned_long;
-+      edi : unsigned_long;
-+   end record;
-+   type Machine_State_Ptr is access all Machine_State;
-+
-+   SA_SIGINFO : constant := System.Linux.SA_SIGINFO;
-+   SA_ONSTACK : constant := System.Linux.SA_ONSTACK;
-+
-+   SIG_BLOCK   : constant := 0;
-+   SIG_UNBLOCK : constant := 1;
-+   SIG_SETMASK : constant := 2;
-+
-+   SIG_DFL : constant := 0;
-+   SIG_IGN : constant := 1;
-+
-+   function sigaction
-+     (sig  : Signal;
-+      act  : struct_sigaction_ptr;
-+      oact : struct_sigaction_ptr) return int;
-+   pragma Import (C, sigaction, "sigaction");
-+
-+   ----------
-+   -- Time --
-+   ----------
-+
-+   type timespec is private;
-+
-+   function To_Duration (TS : timespec) return Duration;
-+   pragma Inline (To_Duration);
-+
-+   function To_Timespec (D : Duration) return timespec;
-+   pragma Inline (To_Timespec);
-+
-+   function sysconf (name : int) return long;
-+   pragma Import (C, sysconf);
-+
-+   SC_CLK_TCK          : constant := 2;
-+   SC_NPROCESSORS_ONLN : constant := 84;
-+
-+   -------------------------
-+   -- Priority Scheduling --
-+   -------------------------
-+
-+   SCHED_OTHER : constant := 0;
-+   SCHED_FIFO  : constant := 1;
-+   SCHED_RR    : constant := 2;
-+
-+   function To_Target_Priority
-+     (Prio : System.Any_Priority) return Interfaces.C.int;
-+   --  Maps System.Any_Priority to a POSIX priority
-+
-+   -------------
-+   -- Process --
-+   -------------
-+
-+   type pid_t is private;
-+
-+   function kill (pid : pid_t; sig : Signal) return int;
-+   pragma Import (C, kill, "kill");
-+
-+   function getpid return pid_t;
-+   pragma Import (C, getpid, "getpid");
-+
-+   -------------
-+   -- Threads --
-+   -------------
-+
-+   type Thread_Body is access
-+     function (arg : System.Address) return System.Address;
-+   pragma Convention (C, Thread_Body);
-+
-+   function Thread_Body_Access is new
-+     Ada.Unchecked_Conversion (System.Address, Thread_Body);
-+
-+   type pthread_t is new unsigned_long;
-+   subtype Thread_Id is pthread_t;
-+
-+   function To_pthread_t is
-+     new Ada.Unchecked_Conversion (unsigned_long, pthread_t);
-+
-+   type pthread_mutex_t      is limited private;
-+   type pthread_rwlock_t     is limited private;
-+   type pthread_cond_t       is limited private;
-+   type pthread_attr_t       is limited private;
-+   type pthread_mutexattr_t  is limited private;
-+   type pthread_rwlockattr_t is limited private;
-+   type pthread_condattr_t   is limited private;
-+   type pthread_key_t        is private;
-+
-+   PTHREAD_CREATE_DETACHED : constant := 1;
-+
-+   -----------
-+   -- Stack --
-+   -----------
-+
-+   type stack_t is record
-+      ss_sp    : System.Address;
-+      ss_flags : int;
-+      ss_size  : size_t;
-+   end record;
-+   pragma Convention (C, stack_t);
-+
-+   function sigaltstack
-+     (ss  : not null access stack_t;
-+      oss : access stack_t) return int;
-+   pragma Import (C, sigaltstack, "sigaltstack");
-+
-+   Alternate_Stack : aliased System.Address;
-+   pragma Import (C, Alternate_Stack, "__gnat_alternate_stack");
-+   --  The alternate signal stack for stack overflows
-+
-+   Alternate_Stack_Size : constant := 16 * 1024;
-+   --  This must be in keeping with init.c:__gnat_alternate_stack
-+
-+   function Get_Stack_Base (thread : pthread_t) return Address;
-+   pragma Inline (Get_Stack_Base);
-+   --  This is a dummy procedure to share some GNULLI files
-+
-+   ---------------------------------------
-+   -- Nonstandard Thread Initialization --
-+   ---------------------------------------
-+
-+   procedure pthread_init;
-+   pragma Inline (pthread_init);
-+   --  This is a dummy procedure to share some GNULLI files
-+
-+   -------------------------
-+   -- POSIX.1c  Section 3 --
-+   -------------------------
-+
-+   function sigwait (set : access sigset_t; sig : access Signal) return int;
-+   pragma Import (C, sigwait, "sigwait");
-+
-+   function pthread_kill (thread : pthread_t; sig : Signal) return int;
-+   pragma Import (C, pthread_kill, "pthread_kill");
-+
-+   function pthread_sigmask
-+     (how  : int;
-+      set  : access sigset_t;
-+      oset : access sigset_t) return int;
-+   pragma Import (C, pthread_sigmask, "pthread_sigmask");
-+
-+   --------------------------
-+   -- POSIX.1c  Section 11 --
-+   --------------------------
-+
-+   function pthread_mutexattr_init
-+     (attr : access pthread_mutexattr_t) return int;
-+   pragma Import (C, pthread_mutexattr_init, "pthread_mutexattr_init");
-+
-+   function pthread_mutexattr_destroy
-+     (attr : access pthread_mutexattr_t) return int;
-+   pragma Import (C, pthread_mutexattr_destroy, "pthread_mutexattr_destroy");
-+
-+   function pthread_mutex_init
-+     (mutex : access pthread_mutex_t;
-+      attr  : access pthread_mutexattr_t) return int;
-+   pragma Import (C, pthread_mutex_init, "pthread_mutex_init");
-+
-+   function pthread_mutex_destroy (mutex : access pthread_mutex_t) return int;
-+   pragma Import (C, pthread_mutex_destroy, "pthread_mutex_destroy");
-+
-+   function pthread_mutex_lock (mutex : access pthread_mutex_t) return int;
-+   pragma Import (C, pthread_mutex_lock, "pthread_mutex_lock");
-+
-+   function pthread_mutex_unlock (mutex : access pthread_mutex_t) return int;
-+   pragma Import (C, pthread_mutex_unlock, "pthread_mutex_unlock");
-+
-+   function pthread_rwlockattr_init
-+     (attr : access pthread_rwlockattr_t) return int;
-+   pragma Import (C, pthread_rwlockattr_init, "pthread_rwlockattr_init");
-+
-+   function pthread_rwlockattr_destroy
-+     (attr : access pthread_rwlockattr_t) return int;
-+   pragma Import (C, pthread_rwlockattr_destroy, "pthread_rwlockattr_destroy");
-+
-+   PTHREAD_RWLOCK_PREFER_READER_NP              : constant := 0;
-+   PTHREAD_RWLOCK_PREFER_WRITER_NP              : constant := 1;
-+   PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP : constant := 2;
-+
-+   function pthread_rwlockattr_setkind_np
-+     (attr : access pthread_rwlockattr_t;
-+      pref : int) return int;
-+   pragma Import
-+     (C, pthread_rwlockattr_setkind_np, "__gnat_set_threadlock_kind");
-+
-+   function pthread_rwlock_init
-+     (mutex : access pthread_rwlock_t;
-+      attr  : access pthread_rwlockattr_t) return int;
-+   pragma Import (C, pthread_rwlock_init, "pthread_rwlock_init");
-+
-+   function pthread_rwlock_destroy
-+     (mutex : access pthread_rwlock_t) return int;
-+   pragma Import (C, pthread_rwlock_destroy, "pthread_rwlock_destroy");
-+
-+   function pthread_rwlock_rdlock (mutex : access pthread_rwlock_t) return int;
-+   pragma Import (C, pthread_rwlock_rdlock, "pthread_rwlock_rdlock");
-+
-+   function pthread_rwlock_wrlock (mutex : access pthread_rwlock_t) return int;
-+   pragma Import (C, pthread_rwlock_wrlock, "pthread_rwlock_wrlock");
-+
-+   function pthread_rwlock_unlock (mutex : access pthread_rwlock_t) return int;
-+   pragma Import (C, pthread_rwlock_unlock, "pthread_rwlock_unlock");
-+
-+   function pthread_condattr_init
-+     (attr : access pthread_condattr_t) return int;
-+   pragma Import (C, pthread_condattr_init, "pthread_condattr_init");
-+
-+   function pthread_condattr_destroy
-+     (attr : access pthread_condattr_t) return int;
-+   pragma Import (C, pthread_condattr_destroy, "pthread_condattr_destroy");
-+
-+   function pthread_cond_init
-+     (cond : access pthread_cond_t;
-+      attr : access pthread_condattr_t) return int;
-+   pragma Import (C, pthread_cond_init, "pthread_cond_init");
-+
-+   function pthread_cond_destroy (cond : access pthread_cond_t) return int;
-+   pragma Import (C, pthread_cond_destroy, "pthread_cond_destroy");
-+
-+   function pthread_cond_signal (cond : access pthread_cond_t) return int;
-+   pragma Import (C, pthread_cond_signal, "pthread_cond_signal");
-+
-+   function pthread_cond_wait
-+     (cond  : access pthread_cond_t;
-+      mutex : access pthread_mutex_t) return int;
-+   pragma Import (C, pthread_cond_wait, "pthread_cond_wait");
-+
-+   function pthread_cond_timedwait
-+     (cond    : access pthread_cond_t;
-+      mutex   : access pthread_mutex_t;
-+      abstime : access timespec) return int;
-+   pragma Import (C, pthread_cond_timedwait, "pthread_cond_timedwait");
-+
-+   --------------------------
-+   -- POSIX.1c  Section 13 --
-+   --------------------------
-+
-+   type struct_sched_param is record
-+      sched_priority : int;  --  scheduling priority
-+   end record;
-+   pragma Convention (C, struct_sched_param);
-+
-+   function pthread_setschedparam
-+     (thread : pthread_t;
-+      policy : int;
-+      param  : access struct_sched_param) return int;
-+   pragma Import (C, pthread_setschedparam, "pthread_setschedparam");
-+
-+   function pthread_attr_setschedpolicy
-+     (attr   : access pthread_attr_t;
-+      policy : int) return int;
-+   pragma Import
-+     (C, pthread_attr_setschedpolicy, "pthread_attr_setschedpolicy");
-+
-+   function sched_yield return int;
-+   pragma Import (C, sched_yield, "sched_yield");
-+
-+   ---------------------------
-+   -- P1003.1c - Section 16 --
-+   ---------------------------
-+
-+   function pthread_attr_init
-+     (attributes : access pthread_attr_t) return int;
-+   pragma Import (C, pthread_attr_init, "pthread_attr_init");
-+
-+   function pthread_attr_destroy
-+     (attributes : access pthread_attr_t) return int;
-+   pragma Import (C, pthread_attr_destroy, "pthread_attr_destroy");
-+
-+   function pthread_attr_setdetachstate
-+     (attr        : access pthread_attr_t;
-+      detachstate : int) return int;
-+   pragma Import
-+     (C, pthread_attr_setdetachstate, "pthread_attr_setdetachstate");
-+
-+   function pthread_attr_setstacksize
-+     (attr      : access pthread_attr_t;
-+      stacksize : size_t) return int;
-+   pragma Import (C, pthread_attr_setstacksize, "pthread_attr_setstacksize");
-+
-+   function pthread_create
-+     (thread        : access pthread_t;
-+      attributes    : access pthread_attr_t;
-+      start_routine : Thread_Body;
-+      arg           : System.Address) return int;
-+   pragma Import (C, pthread_create, "pthread_create");
-+
-+   procedure pthread_exit (status : System.Address);
-+   pragma Import (C, pthread_exit, "pthread_exit");
-+
-+   function pthread_self return pthread_t;
-+   pragma Import (C, pthread_self, "pthread_self");
-+
-+   function lwp_self return System.Address;
-+   pragma Import (C, lwp_self, "__gnat_lwp_self");
-+
-+   --------------------------
-+   -- POSIX.1c  Section 17 --
-+   --------------------------
-+
-+   function pthread_setspecific
-+     (key   : pthread_key_t;
-+      value : System.Address) return int;
-+   pragma Import (C, pthread_setspecific, "pthread_setspecific");
-+
-+   function pthread_getspecific (key : pthread_key_t) return System.Address;
-+   pragma Import (C, pthread_getspecific, "pthread_getspecific");
-+
-+   type destructor_pointer is access procedure (arg : System.Address);
-+   pragma Convention (C, destructor_pointer);
-+
-+   function pthread_key_create
-+     (key        : access pthread_key_t;
-+      destructor : destructor_pointer) return int;
-+   pragma Import (C, pthread_key_create, "pthread_key_create");
-+
-+   CPU_SETSIZE : constant := 1_024;
-+   --  Size of the cpu_set_t mask on most linux systems (SUSE 11 uses 4_096).
-+   --  This is kept for backward compatibility (System.Task_Info uses it), but
-+   --  the run-time library does no longer rely on static masks, using
-+   --  dynamically allocated masks instead.
-+
-+   type bit_field is array (1 .. CPU_SETSIZE) of Boolean;
-+   for bit_field'Size use CPU_SETSIZE;
-+   pragma Pack (bit_field);
-+   pragma Convention (C, bit_field);
-+
-+   type cpu_set_t is record
-+      bits : bit_field;
-+   end record;
-+   pragma Convention (C, cpu_set_t);
-+
-+   type cpu_set_t_ptr is access all cpu_set_t;
-+   --  In the run-time library we use this pointer because the size of type
-+   --  cpu_set_t varies depending on the glibc version. Hence, objects of type
-+   --  cpu_set_t are allocated dynamically using the number of processors
-+   --  available in the target machine (value obtained at execution time).
-+
-+   function CPU_ALLOC (count : size_t) return cpu_set_t_ptr;
-+   pragma Import (C, CPU_ALLOC, "__gnat_cpu_alloc");
-+   --  Wrapper around the CPU_ALLOC C macro
-+
-+   function CPU_ALLOC_SIZE (count : size_t) return size_t;
-+   pragma Import (C, CPU_ALLOC_SIZE, "__gnat_cpu_alloc_size");
-+   --  Wrapper around the CPU_ALLOC_SIZE C macro
-+
-+   procedure CPU_FREE (cpuset : cpu_set_t_ptr);
-+   pragma Import (C, CPU_FREE, "__gnat_cpu_free");
-+   --  Wrapper around the CPU_FREE C macro
-+
-+   procedure CPU_ZERO (count : size_t; cpuset : cpu_set_t_ptr);
-+   pragma Import (C, CPU_ZERO, "__gnat_cpu_zero");
-+   --  Wrapper around the CPU_ZERO_S C macro
-+
-+   procedure CPU_SET (cpu : int; count : size_t; cpuset : cpu_set_t_ptr);
-+   pragma Import (C, CPU_SET, "__gnat_cpu_set");
-+   --  Wrapper around the CPU_SET_S C macro
-+
-+   function pthread_setaffinity_np
-+     (thread     : pthread_t;
-+      cpusetsize : size_t;
-+      cpuset     : cpu_set_t_ptr) return int;
-+   pragma Import (C, pthread_setaffinity_np, "pthread_setaffinity_np");
-+   pragma Weak_External (pthread_setaffinity_np);
-+   --  Use a weak symbol because this function may be available or not,
-+   --  depending on the version of the system.
-+
-+   function pthread_attr_setaffinity_np
-+     (attr       : access pthread_attr_t;
-+      cpusetsize : size_t;
-+      cpuset     : cpu_set_t_ptr) return int;
-+   pragma Import (C, pthread_attr_setaffinity_np,
-+                    "pthread_attr_setaffinity_np");
-+   pragma Weak_External (pthread_attr_setaffinity_np);
-+   --  Use a weak symbol because this function may be available or not,
-+   --  depending on the version of the system.
-+
-+private
-+
-+   type sigset_t is
-+     array (0 .. OS_Constants.SIZEOF_sigset - 1) of unsigned_char;
-+   pragma Convention (C, sigset_t);
-+   for sigset_t'Alignment use Interfaces.C.unsigned_long'Alignment;
-+
-+   pragma Warnings (Off);
-+   for struct_sigaction use record
-+      sa_handler at Linux.sa_handler_pos range 0 .. Standard'Address_Size - 1;
-+      sa_mask    at Linux.sa_mask_pos    range 0 .. 1023;
-+      sa_flags   at Linux.sa_flags_pos   range 0 .. Standard'Address_Size - 1;
-+   end record;
-+   --  We intentionally leave sa_restorer unspecified and let the compiler
-+   --  append it after the last field, so disable corresponding warning.
-+   pragma Warnings (On);
-+
-+   type pid_t is new int;
-+
-+   type time_t is new long;
-+
-+   type timespec is record
-+      tv_sec  : time_t;
-+      tv_nsec : long;
-+   end record;
-+   pragma Convention (C, timespec);
-+
-+   type unsigned_long_long_t is mod 2 ** 64;
-+   --  Local type only used to get the alignment of this type below
-+
-+   subtype char_array is Interfaces.C.char_array;
-+
-+   type pthread_attr_t is record
-+      Data : char_array (1 .. OS_Constants.PTHREAD_ATTR_SIZE);
-+   end record;
-+   pragma Convention (C, pthread_attr_t);
-+   for pthread_attr_t'Alignment use Interfaces.C.unsigned_long'Alignment;
-+
-+   type pthread_condattr_t is record
-+      Data : char_array (1 .. OS_Constants.PTHREAD_CONDATTR_SIZE);
-+   end record;
-+   pragma Convention (C, pthread_condattr_t);
-+   for pthread_condattr_t'Alignment use Interfaces.C.int'Alignment;
-+
-+   type pthread_mutexattr_t is record
-+      Data : char_array (1 .. OS_Constants.PTHREAD_MUTEXATTR_SIZE);
-+   end  record;
-+   pragma Convention (C, pthread_mutexattr_t);
-+   for pthread_mutexattr_t'Alignment use Interfaces.C.int'Alignment;
-+
-+   type pthread_mutex_t is record
-+      Data : char_array (1 .. OS_Constants.PTHREAD_MUTEX_SIZE);
-+   end record;
-+   pragma Convention (C, pthread_mutex_t);
-+   for pthread_mutex_t'Alignment use Interfaces.C.unsigned_long'Alignment;
-+
-+   type pthread_rwlockattr_t is record
-+      Data : char_array (1 .. OS_Constants.PTHREAD_RWLOCKATTR_SIZE);
-+   end record;
-+   pragma Convention (C, pthread_rwlockattr_t);
-+   for pthread_rwlockattr_t'Alignment use Interfaces.C.unsigned_long'Alignment;
-+
-+   type pthread_rwlock_t is record
-+      Data : char_array (1 .. OS_Constants.PTHREAD_RWLOCK_SIZE);
-+   end record;
-+   pragma Convention (C, pthread_rwlock_t);
-+   for pthread_rwlock_t'Alignment use Interfaces.C.unsigned_long'Alignment;
-+
-+   type pthread_cond_t is record
-+      Data : char_array (1 .. OS_Constants.PTHREAD_COND_SIZE);
-+   end record;
-+   pragma Convention (C, pthread_cond_t);
-+   for pthread_cond_t'Alignment use unsigned_long_long_t'Alignment;
-+
-+   type pthread_key_t is new unsigned;
-+
-+end System.OS_Interface;
 --- /dev/null
 +++ gcc/ada/s-osinte-dragonfly.adb
 @@ -0,0 +1,116 @@
@@ -7815,204 +6953,17 @@
 +   end Initialize;
 +
 +end System.OS_Primitives;
---- gcc/ada/s-rannum.adb.orig
-+++ gcc/ada/s-rannum.adb
-@@ -290,7 +290,7 @@
-             X      : Real;            --  Scaled mantissa
-             R      : Unsigned_32;     --  Supply of random bits
-             R_Bits : Natural;         --  Number of bits left in R
--            K      : Bit_Count;       --  Next decrement to exponent
-+            K      : Bit_Count := 0;  --  Next decrement to exponent
- 
-          begin
-             Mantissa := Random (Gen) / 2**Extra_Bits;
---- gcc/ada/sem_aggr.adb.orig
-+++ gcc/ada/sem_aggr.adb
-@@ -1726,6 +1726,9 @@
-       Discard : Node_Id;
-       pragma Warnings (Off, Discard);
- 
-+      Delete_Choice : Boolean;
-+      --  Used when replacing a subtype choice with predicate by a list
-+
-       Aggr_Low  : Node_Id := Empty;
-       Aggr_High : Node_Id := Empty;
-       --  The actual low and high bounds of this sub-aggregate
-@@ -1766,6 +1769,8 @@
-          Assoc := First (Component_Associations (N));
-          while Present (Assoc) loop
-             Choice := First (Choices (Assoc));
-+            Delete_Choice := False;
-+
-             while Present (Choice) loop
-                if Nkind (Choice) = N_Others_Choice then
-                   Others_Present := True;
-@@ -1792,10 +1797,56 @@
-                      Error_Msg_N
-                        ("(Ada 83) illegal context for OTHERS choice", N);
-                   end if;
-+
-+               elsif Is_Entity_Name (Choice) then
-+                  Analyze (Choice);
-+
-+                  declare
-+                     E      : constant Entity_Id := Entity (Choice);
-+                     New_Cs : List_Id;
-+                     P      : Node_Id;
-+                     C      : Node_Id;
-+
-+                  begin
-+                     if Is_Type (E) and then Has_Predicates (E) then
-+                        Freeze_Before (N, E);
-+
-+                        --  If the subtype has a static predicate, replace the
-+                        --  original choice with the list of individual values
-+                        --  covered by the predicate.
-+
-+                        if Present (Static_Predicate (E)) then
-+                           Delete_Choice := True;
-+
-+                           New_Cs := New_List;
-+                           P := First (Static_Predicate (E));
-+                           while Present (P) loop
-+                              C := New_Copy (P);
-+                              Set_Sloc (C, Sloc (Choice));
-+                              Append_To (New_Cs, C);
-+                              Next (P);
-+                           end loop;
-+
-+                           Insert_List_After (Choice, New_Cs);
-+                        end if;
-+                     end if;
-+                  end;
-                end if;
- 
-                Nb_Choices := Nb_Choices + 1;
--               Next (Choice);
-+
-+               declare
-+                  C : constant Node_Id := Choice;
-+
-+               begin
-+                  Next (Choice);
-+
-+                  if Delete_Choice then
-+                     Remove (C);
-+                     Nb_Choices := Nb_Choices - 1;
-+                     Delete_Choice := False;
-+                  end if;
-+               end;
-             end loop;
- 
-             Next (Assoc);
-@@ -1998,6 +2049,7 @@
-                   Nb_Discrete_Choices := Nb_Discrete_Choices + 1;
-                   Table (Nb_Discrete_Choices).Choice_Lo := Low;
-                   Table (Nb_Discrete_Choices).Choice_Hi := High;
-+                  Table (Nb_Discrete_Choices).Choice_Node := Choice;
- 
-                   Next (Choice);
- 
-@@ -2115,7 +2167,7 @@
-                   then
-                      Error_Msg_N
-                        ("duplicate choice values in array aggregate",
--                        Table (J).Choice_Hi);
-+                        Table (J).Choice_Node);
-                      return Failure;
- 
-                   elsif not Others_Present then
---- /dev/null
-+++ gcc/ada/signal_android.c
-@@ -0,0 +1,77 @@
-+/*
-+ * Copyright (C) 2008 The Android Open Source Project
-+ * All rights reserved.
-+ *
-+ * Redistribution and use in source and binary forms, with or without
-+ * modification, are permitted provided that the following conditions
-+ * are met:
-+ *  * Redistributions of source code must retain the above copyright
-+ *    notice, this list of conditions and the following disclaimer.
-+ *  * Redistributions in binary form must reproduce the above copyright
-+ *    notice, this list of conditions and the following disclaimer in
-+ *    the documentation and/or other materials provided with the
-+ *    distribution.
-+ *
-+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
-+ * OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
-+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
-+ * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-+ * SUCH DAMAGE.
-+ */
-+#include <limits.h>		/* For LONG_BIT */
-+#include <string.h>		/* For memset() */
-+
-+typedef unsigned long sigset_t;
-+
-+
-+int
-+sigismember(sigset_t *set, int signum)
-+{
-+    unsigned long *local_set = (unsigned long *)set;
-+    signum--;
-+    return (int)((local_set[signum/LONG_BIT] >> (signum%LONG_BIT)) & 1);
-+}
-+
-+
-+int
-+sigaddset(sigset_t *set, int signum)
-+{
-+    unsigned long *local_set = (unsigned long *)set;
-+    signum--;
-+    local_set[signum/LONG_BIT] |= 1UL << (signum%LONG_BIT);
-+    return 0;
-+}
-+
-+
-+int
-+sigdelset(sigset_t *set, int signum)
-+{
-+    unsigned long *local_set = (unsigned long *)set;
-+    signum--;
-+    local_set[signum/LONG_BIT] &= ~(1UL << (signum%LONG_BIT));
-+    return 0;
-+}
-+
-+
-+int
-+sigemptyset(sigset_t *set)
-+{
-+    memset(set, 0, sizeof *set);
-+    return 0;
-+}
-+
-+
-+int
-+sigfillset(sigset_t *set)
-+{
-+    memset(set, ~0, sizeof *set);
-+    return 0;
-+}
-+
 --- gcc/ada/sysdep.c.orig
 +++ gcc/ada/sysdep.c
-@@ -256,6 +256,7 @@
+@@ -263,6 +263,7 @@
    || defined (__MACHTEN__) || defined (__hpux__) || defined (_AIX) \
    || (defined (__svr4__) && defined (i386)) || defined (__Lynx__) \
    || defined (__CYGWIN__) || defined (__FreeBSD__) || defined (__OpenBSD__) \
 +  || defined (__DragonFly__) \
    || defined (__GLIBC__) || defined (__APPLE__)
  
- #ifdef __MINGW32__
-@@ -314,6 +315,7 @@
+ # ifdef __MINGW32__
+@@ -320,6 +321,7 @@
      || defined (__CYGWIN32__) || defined (__MACHTEN__) || defined (__hpux__) \
      || defined (_AIX) || (defined (__svr4__) && defined (i386)) \
      || defined (__Lynx__) || defined (__FreeBSD__) || defined (__OpenBSD__) \
@@ -8020,26 +6971,25 @@
      || defined (__GLIBC__) || defined (__APPLE__)
    char c;
    int nread;
-@@ -334,6 +336,7 @@
-     || defined (__osf__) || defined (__MACHTEN__) || defined (__hpux__) \
+@@ -340,6 +342,7 @@
+     || defined (__MACHTEN__) || defined (__hpux__) \
      || defined (_AIX) || (defined (__svr4__) && defined (i386)) \
      || defined (__Lynx__) || defined (__FreeBSD__) || defined (__OpenBSD__) \
 +    || defined (__DragonFly__) \
      || defined (__GLIBC__) || defined (__APPLE__)
        eof_ch = termios_rec.c_cc[VEOF];
  
-@@ -845,8 +848,12 @@
- /* Darwin, Free BSD, Linux, Tru64, where component tm_gmtoff is present in
+@@ -853,8 +856,11 @@
+ /* Darwin, Free BSD, Linux, where component tm_gmtoff is present in
     struct tm */
  
 -#elif defined (__APPLE__) || defined (__FreeBSD__) || defined (linux) ||\
--     (defined (__alpha__) && defined (__osf__)) || defined (__GLIBC__)
+-     defined (__GLIBC__)
 +#elif defined (__APPLE__) \
-+   || defined (__FreeBSD__) \
-+   || defined (__DragonFly__) \
-+   || defined (linux) \
-+   || (defined (__alpha__) && defined (__osf__)) \
-+   || defined (__GLIBC__)
++  || defined (__DragonFly__) \
++  || defined (__FreeBSD__) \
++  || defined (linux) \
++  || defined (__GLIBC__)
  {
    localtime_r (timer, &tp);
    *off = tp.tm_gmtoff;
@@ -8921,7 +7871,17 @@
 +end System;
 --- gcc/ada/terminals.c.orig
 +++ gcc/ada/terminals.c
-@@ -1015,7 +1015,11 @@
+@@ -31,8 +31,7 @@
+ 
+ /* First all usupported platforms. Add stubs for exported routines. */
+ 
+-#if defined (VMS) || defined (__vxworks) || defined (__Lynx__) || \
+-    defined (__ANDROID__)
++#if defined (VMS) || defined (__vxworks) || defined (__Lynx__)
+ 
+ void * __gnat_new_tty (void) { return (void*)0; }
+ char * __gnat_tty_name (void* t) { return (char*)0; }
+@@ -1010,7 +1009,11 @@
  #   include <sys/stropts.h>
  #endif
  
@@ -9139,7 +8099,7 @@
 +#endif
 --- gcc/ada/tracebak.c.orig
 +++ gcc/ada/tracebak.c
-@@ -217,6 +217,23 @@
+@@ -288,6 +288,23 @@
  #error Unhandled darwin architecture.
  #endif
  
@@ -9150,7 +8110,7 @@
 +   || defined (__FreeBSD__)   \
 +   || defined (__OpenBSD__)   \
 +   || defined (__DragonFly__) )
-+  
++
 +#define USE_GCC_UNWINDER
 +/* The generic unwinder is not used for this target because the default
 +   implementation doesn't unwind on the BSD platforms.  AMD64 targets use the
@@ -9160,20 +8120,54 @@
 +#define PC_ADJUST -2
 +/* The minimum size of call instructions on this architecture is 2 bytes */
 +
- /*------------------------ PPC AIX/Older Darwin -------------------------*/
+ /*---------------------- PPC AIX/PPC Lynx 178/Older Darwin ------------------*/
  #elif ((defined (_POWER) && defined (_AIX)) || \
- (defined (__ppc__) && defined (__APPLE__)))
+        (defined (__powerpc__) && defined (__Lynx__) && !defined(__ELF__)) || \
+--- gcc/ada/gcc-interface/Make-lang.in.orig
++++ gcc/ada/gcc-interface/Make-lang.in
+@@ -584,7 +584,7 @@
+  ada/widechar.o
+ 
+ # Language-independent object files.
+-ADA_BACKEND = $(BACKEND) attribs.o
++ADA_BACKEND = $(BACKEND2) attribs.o
+ 
+ # List of target dependent sources, overridden below as necessary
+ TARGET_ADA_SRCS =
 --- gcc/ada/gcc-interface/Makefile.in.orig
 +++ gcc/ada/gcc-interface/Makefile.in
-@@ -1037,6 +1037,7 @@
- ifeq ($(strip $(filter-out %86 %x86_64 solaris2%,$(arch) $(osys))),)
+@@ -1043,9 +1043,11 @@
+ ifeq ($(strip $(filter-out arm% linux-androideabi,$(target_cpu) $(target_os))),)
+   LIBGNAT_TARGET_PAIRS = \
+   a-intnam.ads<a-intnam-linux.ads \
++  g-socthi.adb<g-socthi-bsd.adb \
+   s-inmaop.adb<s-inmaop-posix.adb \
+   s-intman.adb<s-intman-posix.adb \
+   s-linux.ads<s-linux.ads \
++  s-mudido.adb<s-mudido-affinity.adb \
+   s-osinte.adb<s-osinte-android.adb \
+   s-osinte.ads<s-osinte-android.ads \
+   s-osprim.adb<s-osprim-posix.adb \
+@@ -1055,10 +1057,6 @@
+   system.ads<system-linux-armel.ads \
+   $(DUMMY_SOCKETS_TARGET_PAIRS)
+ 
+-  TOOLS_TARGET_PAIRS =  \
+-    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
+-    indepsw.adb<indepsw-gnu.adb
+-
+   GNATRTL_SOCKETS_OBJS =
+   EXTRA_GNATRTL_TASKING_OBJS=s-linux.o
+   EH_MECHANISM=
+@@ -1071,6 +1069,7 @@
+ ifeq ($(strip $(filter-out sparc% sun solaris%,$(target_cpu) $(target_vendor) $(target_os))),)
    LIBGNAT_TARGET_PAIRS_COMMON = \
    a-intnam.ads<a-intnam-solaris.ads \
 +  g-trasym.adb<g-trasym-bsd.adb \
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-solaris.adb \
    s-mudido.adb<s-mudido-affinity.adb \
-@@ -1080,6 +1081,8 @@
+@@ -1113,6 +1112,8 @@
    TOOLS_TARGET_PAIRS=mlib-tgt-specific.adb<mlib-tgt-specific-solaris.adb
  
    EH_MECHANISM=-gcc
@@ -9182,13 +8176,9 @@
    THREADSLIB = -lposix4 -lthread
    MISCLIB = -lposix4 -lnsl -lsocket
    SO_OPTS = -Wl,-h,
-@@ -1205,14 +1208,21 @@
-   LIBRARY_VERSION := $(LIB_VERSION)
- endif
- 
-+
-+# FREEBSD i386
- ifeq ($(strip $(filter-out %86 freebsd%,$(arch) $(osys))),)
+@@ -1324,12 +1325,17 @@
+ # x86 FreeBSD
+ ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
 +  a-exetim.adb<a-exetim-posix.adb \
 +  a-exetim.ads<a-exetim-default.ads \
@@ -9206,7 +8196,7 @@
    s-taprop.adb<s-taprop-posix.adb \
    s-taspri.ads<s-taspri-posix.ads \
    s-tpopsp.adb<s-tpopsp-posix.adb \
-@@ -1220,10 +1230,13 @@
+@@ -1337,11 +1343,12 @@
    $(X86_TARGET_PAIRS) \
    system.ads<system-freebsd-x86.ads
  
@@ -9216,19 +8206,14 @@
  
 +  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
 +  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
-+  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
+   EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
-+
+ 
    EH_MECHANISM=-gcc
    THREADSLIB= -lpthread
-   GMEM_LIB = gmemlib
-@@ -1231,14 +1244,21 @@
-   MISCLIB = -lutil
- endif
- 
-+
-+# FREEBSD AMD64
- ifeq ($(strip $(filter-out %86_64 freebsd%,$(arch) $(osys))),)
+@@ -1353,12 +1360,17 @@
+ # x86-64 FreeBSD
+ ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
 +  a-exetim.adb<a-exetim-posix.adb \
 +  a-exetim.ads<a-exetim-default.ads \
@@ -9246,7 +8231,7 @@
    s-taprop.adb<s-taprop-posix.adb \
    s-taspri.ads<s-taspri-posix.ads \
    s-tpopsp.adb<s-tpopsp-posix.adb \
-@@ -1246,10 +1266,13 @@
+@@ -1366,11 +1378,240 @@
    $(X86_64_TARGET_PAIRS) \
    system.ads<system-freebsd-x86_64.ads
  
@@ -9259,16 +8244,15 @@
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
-   EH_MECHANISM=-gcc
-   THREADSLIB= -lpthread
-   GMEM_LIB = gmemlib
-@@ -1257,6 +1280,278 @@
-   MISCLIB = -lutil
- endif
- 
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
 +
-+# DRAGONFLY i386
-+ifeq ($(strip $(filter-out %86 dragonfly%,$(arch) $(osys))),)
++# x86 DragonFly
++ifeq ($(strip $(filter-out %86 dragonfly%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-exetim.adb<a-exetim-posix.adb \
 +  a-exetim.ads<a-exetim-default.ads \
@@ -9302,9 +8286,8 @@
 +  MISCLIB = -lutil
 +endif
 +
-+
-+# DRAGONFLY AMD64
-+ifeq ($(strip $(filter-out x86_64 dragonfly%,$(arch) $(osys))),)
++# x86_64 DragonFly
++ifeq ($(strip $(filter-out x86_64 dragonfly%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-exetim.adb<a-exetim-posix.adb \
 +  a-exetim.ads<a-exetim-default.ads \
@@ -9338,9 +8321,8 @@
 +  MISCLIB = -lutil
 +endif
 +
-+
-+# OPENBSD i386
-+ifeq ($(strip $(filter-out %86 openbsd%,$(arch) $(osys))),)
++# x86 OpenBSD
++ifeq ($(strip $(filter-out %86 openbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-exetim.adb<a-exetim-posix.adb \
 +  a-exetim.ads<a-exetim-default.ads \
@@ -9374,9 +8356,8 @@
 +  MISCLIB = -lutil
 +endif
 +
-+
-+# OPENBSD AMD64
-+ifeq ($(strip $(filter-out x86_64 openbsd%,$(arch) $(osys))),)
++# x86_64 OpenBSD
++ifeq ($(strip $(filter-out x86_64 openbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-exetim.adb<a-exetim-posix.adb \
 +  a-exetim.ads<a-exetim-default.ads \
@@ -9410,9 +8391,8 @@
 +  MISCLIB = -lutil
 +endif
 +
-+
-+# NETBSD i386 (5+ only)
-+ifeq ($(strip $(filter-out %86 netbsd%,$(arch) $(osys))),)
++# x86 NetBSD (5+ only)
++ifeq ($(strip $(filter-out %86 netbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-exetim.adb<a-exetim-posix.adb \
 +  a-exetim.ads<a-exetim-default.ads \
@@ -9430,7 +8410,7 @@
 +  $(X86_TARGET_PAIRS) \
 +  system.ads<system-netbsd-x86.ads
 +
-+  ifeq ($(strip $(filter-out %86 netbsdelf5%,$(arch) $(osys))),)
++  ifeq ($(strip $(filter-out %86 netbsdelf5%,$(target_cpu) $(target_os))),)
 +    LIBGNAT_TARGET_PAIRS+= \
 +    s-osinte.ads<s-osinte-netbsd.ads \
 +    s-osprim.adb<s-osprim-bsd32.adb
@@ -9455,9 +8435,8 @@
 +  MISCLIB = -lutil
 +endif
 +
-+
-+# NETBSD AMD64 (5+ only)
-+ifeq ($(strip $(filter-out x86_64 netbsd%,$(arch) $(osys))),)
++# x86_64 NetBSD (5+ only)
++ifeq ($(strip $(filter-out x86_64 netbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-exetim.adb<a-exetim-posix.adb \
 +  a-exetim.ads<a-exetim-default.ads \
@@ -9475,7 +8454,7 @@
 +  $(X86_64_TARGET_PAIRS) \
 +  system.ads<system-netbsd-x86_64.ads
 +
-+  ifeq ($(strip $(filter-out x86_64 netbsd5%,$(arch) $(osys))),)
++  ifeq ($(strip $(filter-out x86_64 netbsd5%,$(target_cpu) $(target_os))),)
 +    LIBGNAT_TARGET_PAIRS+= \
 +    s-osinte.ads<s-osinte-netbsd.ads \
 +    s-osprim.adb<s-osprim-bsd32.adb
@@ -9490,131 +8469,68 @@
 +
 +  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
 +  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
-+  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
+   EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
-+
-+  EH_MECHANISM=-gcc
-+  THREADSLIB= -lpthread
-+  GMEM_LIB = gmemlib
-+  LIBRARY_VERSION := $(LIB_VERSION)
-+  MISCLIB = -lutil
-+endif
-+
-+
-+# ANDROID (ARM)
-+ifeq ($(strip $(filter-out arm% android eabi,$(targ))),)
-+  LIBGNAT_TARGET_PAIRS = \
-+  a-intnam.ads<a-intnam-linux.ads \
-+  s-inmaop.adb<s-inmaop-posix.adb \
-+  s-intman.adb<s-intman-posix.adb \
-+  s-linux.ads<s-linux.ads \
-+  s-osinte.adb<s-osinte-posix.adb \
-+  s-mudido.adb<s-mudido-affinity.adb \
-+  s-osinte.ads<s-osinte-android.ads \
-+  s-osprim.adb<s-osprim-posix.adb \
-+  s-taprop.adb<s-taprop-linux.adb \
-+  s-tasinf.ads<s-tasinf-linux.ads \
-+  s-tasinf.adb<s-tasinf-linux.adb \
-+  s-taspri.ads<s-taspri-posix-noaltstack.ads \
-+  s-tpopsp.adb<s-tpopsp-posix-foreign.adb
-+
-+  ifeq ($(strip $(filter-out arm%b,$(arch))),)
-+    LIBGNAT_TARGET_PAIRS += \
-+    system.ads<system-linux-armeb.ads
-+  else
-+    LIBGNAT_TARGET_PAIRS += \
-+    system.ads<system-linux-armel.ads
-+  endif
-+
-+  EXTRA_LIBGNAT_SRCS+=		signal_android.c
-+  EXTRA_LIBGNAT_OBJS+=		signal_android.o
-+  EXTRA_GNATRTL_TASKING_OBJS=	s-linux.o
-+  EH_MECHANISM=
-+  THREADSLIB=
-+  MISCLIB=
-+  GNATLIB_SHARED=		gnatlib-shared-dual
-+  GMEM_LIB=			gmemlib
-+  LIBRARY_VERSION:=		$(LIB_VERSION)
-+endif
-+
-+
- ifeq ($(strip $(filter-out s390% linux%,$(arch) $(osys))),)
-   LIBGNAT_TARGET_PAIRS_COMMON = \
-   a-intnam.ads<a-intnam-linux.ads \
---- gnattools/configure.orig
-+++ gnattools/configure
-@@ -2058,7 +2058,27 @@
-   s390*-*-linux*)
-     TOOLS_TARGET_PAIRS="mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb"
-     ;;
--  *86-*-freebsd*)
-+  *86-*-freebsd* | x86_64-*-freebsd*)
-+    TOOLS_TARGET_PAIRS="\
-+    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
-+    indepsw.adb<indepsw-gnu.adb"
-+    ;;
-+  *86-*-dragonfly* | x86_64-*-dragonfly*)
-+    TOOLS_TARGET_PAIRS="\
-+    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
-+    indepsw.adb<indepsw-gnu.adb"
-+    ;;
-+  *86-*-openbsd* | x86_64-*-openbsd*)
-+    TOOLS_TARGET_PAIRS="\
-+    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
-+    indepsw.adb<indepsw-gnu.adb"
-+    ;;
-+  *86-*-netbsdelf* | x86_64-*-netbsd*)
-+    TOOLS_TARGET_PAIRS="\
-+    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
-+    indepsw.adb<indepsw-gnu.adb"
-+    ;;
-+  arm*-android-eabi)
-     TOOLS_TARGET_PAIRS="\
-     mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
-     indepsw.adb<indepsw-gnu.adb"
+ 
+   EH_MECHANISM=-gcc
+   THREADSLIB= -lpthread
 --- gnattools/configure.ac.orig
 +++ gnattools/configure.ac
-@@ -98,11 +98,31 @@
-   s390*-*-linux*)
-     TOOLS_TARGET_PAIRS="mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb"
+@@ -79,11 +79,27 @@
+     mlib-tgt-specific.adb<mlib-tgt-specific-darwin.adb \
+     indepsw.adb<indepsw-darwin.adb"
      ;;
--  *86-*-freebsd*)
-+  *86-*-freebsd* | x86_64-*-freebsd*)
++  *-*-dragonfly*)
++    TOOLS_TARGET_PAIRS="\
++    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
++    indepsw.adb<indepsw-gnu.adb"
++    ;;
+   *-*-freebsd*)
      TOOLS_TARGET_PAIRS="\
      mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
      indepsw.adb<indepsw-gnu.adb"
      ;;
-+  *86-*-dragonfly* | x86_64-*-dragonfly*)
++  *-*-netbsd*)
 +    TOOLS_TARGET_PAIRS="\
 +    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
 +    indepsw.adb<indepsw-gnu.adb"
 +    ;;
-+  *86-*-openbsd* | x86_64-*-openbsd*)
++  *-*-openbsd*)
 +    TOOLS_TARGET_PAIRS="\
 +    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
 +    indepsw.adb<indepsw-gnu.adb"
 +    ;;
-+  *86-*-netbsdelf* | x86_64-*-netbsd*)
-+    TOOLS_TARGET_PAIRS="\
-+    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
-+    indepsw.adb<indepsw-gnu.adb"
-+    ;;
-+  arm*-android-eabi)
-+     TOOLS_TARGET_PAIRS="\
-+     mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
-+     indepsw.adb<indepsw-gnu.adb"
-+    ;;
-   mips-sgi-irix*)
-     TOOLS_TARGET_PAIRS="mlib-tgt-specific.adb<mlib-tgt-specific-irix.adb"
++  # Next line covers arm*-*-linux-androideabi
+   *-*-linux*)
+     TOOLS_TARGET_PAIRS="\
+     mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
+--- gnattools/configure.orig
++++ gnattools/configure
+@@ -2039,11 +2039,27 @@
+     mlib-tgt-specific.adb<mlib-tgt-specific-darwin.adb \
+     indepsw.adb<indepsw-darwin.adb"
      ;;
---- gcc/ada/gcc-interface/Make-lang.in.orig
-+++ gcc/ada/gcc-interface/Make-lang.in
-@@ -541,7 +541,7 @@
-  ada/widechar.o
- 
- # Language-independent object files.
--ADA_BACKEND = $(BACKEND) attribs.o
-+ADA_BACKEND = $(BACKEND2) attribs.o
- 
- # List of target dependent sources, overridden below as necessary
- TARGET_ADA_SRCS =
++  *-*-dragonfly*)
++    TOOLS_TARGET_PAIRS="\
++    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
++    indepsw.adb<indepsw-gnu.adb"
++    ;;
+   *-*-freebsd*)
+     TOOLS_TARGET_PAIRS="\
+     mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
+     indepsw.adb<indepsw-gnu.adb"
+     ;;
++  *-*-netbsd*)
++    TOOLS_TARGET_PAIRS="\
++    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
++    indepsw.adb<indepsw-gnu.adb"
++    ;;
++  *-*-openbsd*)
++    TOOLS_TARGET_PAIRS="\
++    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
++    indepsw.adb<indepsw-gnu.adb"
++    ;;
++  # Next line covers arm*-*-linux-androideabi
+   *-*-linux*)
+     TOOLS_TARGET_PAIRS="\
+     mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \

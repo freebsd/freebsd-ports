@@ -1,14 +1,3 @@
---- gcc/testsuite/gcc.dg/pch/pch.exp.orig
-+++ gcc/testsuite/gcc.dg/pch/pch.exp
-@@ -44,6 +44,8 @@
- set test "largefile.c"
- set testh "largefile.hs"
- set f [open $test w]
-+puts $f "/* { dg-do run { target *-*-solaris* } } */"
-+puts $f "/* { dg-error \"dummy\" \"fool dejagnu\" { target { ! *-*-solaris* } 20 } } */"
- puts $f "/* { dg-timeout-factor 4.0 } */"
- set v 0
- for { set v 0 } { $v < 10000 } { incr v } {
 --- gcc/testsuite/gcc.dg/format/ext-1.c.orig
 +++ gcc/testsuite/gcc.dg/format/ext-1.c
 @@ -8,7 +8,7 @@
@@ -44,3 +33,14 @@
  
  __extension__ typedef __INTMAX_TYPE__ intmax_t;
  __extension__ typedef __UINTMAX_TYPE__ uintmax_t;
+--- gcc/testsuite/gcc.dg/pch/pch.exp.orig
++++ gcc/testsuite/gcc.dg/pch/pch.exp
+@@ -44,6 +44,8 @@
+ set test "largefile.c"
+ set testh "largefile.hs"
+ set f [open $test w]
++puts $f "/* { dg-do run { target *-*-solaris* } } */"
++puts $f "/* { dg-error \"dummy\" \"fool dejagnu\" { target { ! *-*-solaris* } 20 } } */"
+ puts $f "/* { dg-timeout-factor 4.0 } */"
+ set v 0
+ for { set v 0 } { $v < 10000 } { incr v } {
