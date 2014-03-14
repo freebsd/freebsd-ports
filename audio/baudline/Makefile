@@ -13,7 +13,6 @@ DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_linux_i686
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Real-time signal analysis and time-frequency browser
 
-NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i686/x86/}
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
@@ -30,6 +29,7 @@ OPTIONS_DEFAULT=	MPG123
 MMPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 .include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		may not be automatically fetched due to licensing\
@@ -43,11 +43,11 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/baudline
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/baudline ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/baudline ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 	@[ -f /compat/linux/proc/stat ] || ${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
