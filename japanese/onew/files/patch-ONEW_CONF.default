@@ -1,0 +1,17 @@
+--- ONEW_CONF.default.orig	2013-11-03 22:07:32.000000000 +0900
++++ ONEW_CONF.default	2013-11-03 22:08:20.000000000 +0900
+@@ -136,12 +136,12 @@
+ ##SYSDEPEND 	= $(SYSTYPE) $(SELECT)
+ 
+ #★ compiler コンパイラの選択
+-CC		= cc
++CC		?= cc
+ #CC		= gcc
+ #CC		= /usr/ucb/cc
+ #CC		= /usr/5bin/cc
+ 
+-CFLAGS		= -O
++CFLAGS		?= -O
+ 
+ #★ ranlib が必要な場合に定義してね
+ RANLIB		= ranlib
