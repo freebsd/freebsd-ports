@@ -1,4 +1,5 @@
 bin/ipfmeta
-share/ipfmeta/ipf.metarules
-share/ipfmeta/ipf.objs
-@dirrm share/ipfmeta
+man/man1/ipfmeta.1.gz
+%%DATADIR%%/ipf.metarules
+%%DATADIR%%/ipf.objs
+@dirrm %%DATADIR%%
