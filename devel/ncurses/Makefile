@@ -17,7 +17,6 @@ LICENSE=	MIT
 
 RELEASE=	5.9
 
-USES=		tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
@@ -40,7 +39,7 @@ TRACE_DESC=	Add trace() function to all models of ncurses
 CONFIGURE_ENV=	gnat_exists="no"
 
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 
 WIDEC_WRKSRC=	${WRKSRC}/build.widec
 NOWIDEC_WRKSRC=	${WRKSRC}/build.nowidec
