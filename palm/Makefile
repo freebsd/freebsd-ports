@@ -25,7 +25,6 @@
     SUBDIR += ppmtoTbmp
     SUBDIR += py-synce-librapi2
     SUBDIR += py-synce-librra
-    SUBDIR += synce-hal
     SUBDIR += synce-librapi2
     SUBDIR += synce-librra
     SUBDIR += synce-libsynce
