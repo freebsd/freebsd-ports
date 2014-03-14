@@ -1,6 +1,6 @@
---- src/makjunix.mak.orig	2013-05-04 03:51:13.000000000 +0900
-+++ src/makjunix.mak	2013-05-04 03:52:09.000000000 +0900
-@@ -72,16 +72,17 @@
+--- src/makjunix.mak.orig	2014-03-14 23:13:33.000000000 +0900
++++ src/makjunix.mak	2014-03-14 23:20:30.000000000 +0900
+@@ -72,19 +72,20 @@
  
  
  ### Prefix for location of files
@@ -8,7 +8,8 @@
 +PREFIX?= /usr/local
  
  ### Location of binary
- BINLOC = $(PREFIX)/bin
+-BINLOC = $(PREFIX)/bin
++BINLOC = $(DESTDIR)$(PREFIX)/bin
  
  ### Name of target
 -TARGET = vim
@@ -17,10 +18,14 @@
  ### Location of man page
 -MANLOC = $(PREFIX)/man/man1
 +MAN1PREFIX?=	${PREFIX}
-+MANLOC = $(MAN1PREFIX)/man/man1
++MANLOC = $(DESTDIR)$(MAN1PREFIX)/man/man1
  
  ### Location of help file
- HELPLOC = $(PREFIX)/lib
+-HELPLOC = $(PREFIX)/lib
++HELPLOC = $(DESTDIR)$(PREFIX)/lib
+ 
+ ### Program to run on installed binary
+ STRIP = strip
 @@ -100,7 +101,7 @@
  
  MANFILE = ../doc/vim.1
