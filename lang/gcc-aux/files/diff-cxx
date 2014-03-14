@@ -1,104 +1,3 @@
---- libstdc++-v3/acinclude.m4.orig
-+++ libstdc++-v3/acinclude.m4
-@@ -1903,7 +1903,7 @@
- AC_DEFUN([GLIBCXX_ENABLE_CLOCALE], [
-   GLIBCXX_ENABLE(clocale,auto,[[[=MODEL]]],
-     [use MODEL for target locale package],
--    [permit generic|gnu|ieee_1003.1-2001|newlib|yes|no|auto])
-+    [permit generic|gnu|ieee_1003.1-2001|newlib|darwin|dragonfly|yes|no|auto])
- 
-   # Deal with gettext issues.  Default to not using it (=no) until we detect
-   # support for it later.  Let the user turn it off via --e/d, but let that
-@@ -1930,6 +1930,9 @@
-       darwin* | freebsd*)
- 	enable_clocale_flag=darwin
- 	;;
-+      dragonfly*)
-+	enable_clocale_flag=dragonfly
-+	;;
-       *)
- 	if test x"$with_newlib" = x"yes"; then
- 	  enable_clocale_flag=newlib
-@@ -2018,7 +2021,22 @@
-       CTIME_CC=config/locale/generic/time_members.cc
-       CLOCALE_INTERNAL_H=config/locale/generic/c++locale_internal.h
-       ;;
-+    dragonfly)
-+      AC_MSG_RESULT(dragonfly)
- 
-+      CLOCALE_H=config/locale/generic/c_locale.h
-+      CLOCALE_CC=config/locale/dragonfly/c_locale.cc
-+      CCODECVT_CC=config/locale/generic/codecvt_members.cc
-+      CCOLLATE_CC=config/locale/generic/collate_members.cc
-+      CCTYPE_CC=config/locale/dragonfly/ctype_members.cc
-+      CMESSAGES_H=config/locale/generic/messages_members.h
-+      CMESSAGES_CC=config/locale/generic/messages_members.cc
-+      CMONEY_CC=config/locale/generic/monetary_members.cc
-+      CNUMERIC_CC=config/locale/generic/numeric_members.cc
-+      CTIME_H=config/locale/generic/time_members.h
-+      CTIME_CC=config/locale/generic/time_members.cc
-+      CLOCALE_INTERNAL_H=config/locale/generic/c++locale_internal.h
-+      ;;
-     gnu)
-       AC_MSG_RESULT(gnu)
- 
---- libstdc++-v3/configure.orig
-+++ libstdc++-v3/configure
-@@ -15738,7 +15738,7 @@
- if test "${enable_clocale+set}" = set; then :
-   enableval=$enable_clocale;
-       case "$enableval" in
--       generic|gnu|ieee_1003.1-2001|newlib|yes|no|auto) ;;
-+       generic|gnu|ieee_1003.1-2001|newlib|darwin|dragonfly|yes|no|auto) ;;
-        *) as_fn_error "Unknown argument to enable/disable clocale" "$LINENO" 5 ;;
- 	  	        esac
- 
-@@ -15776,6 +15776,9 @@
-       darwin* | freebsd*)
- 	enable_clocale_flag=darwin
- 	;;
-+      dragonfly*)
-+	enable_clocale_flag=dragonfly
-+	;;
-       *)
- 	if test x"$with_newlib" = x"yes"; then
- 	  enable_clocale_flag=newlib
-@@ -15917,7 +15920,23 @@
-       CTIME_CC=config/locale/generic/time_members.cc
-       CLOCALE_INTERNAL_H=config/locale/generic/c++locale_internal.h
-       ;;
-+    dragonfly)
-+      { $as_echo "$as_me:${as_lineno-$LINENO}: result: dragonfly" >&5
-+$as_echo "dragonfly" >&6; }
- 
-+      CLOCALE_H=config/locale/generic/c_locale.h
-+      CLOCALE_CC=config/locale/dragonfly/c_locale.cc
-+      CCODECVT_CC=config/locale/generic/codecvt_members.cc
-+      CCOLLATE_CC=config/locale/generic/collate_members.cc
-+      CCTYPE_CC=config/locale/dragonfly/ctype_members.cc
-+      CMESSAGES_H=config/locale/generic/messages_members.h
-+      CMESSAGES_CC=config/locale/generic/messages_members.cc
-+      CMONEY_CC=config/locale/generic/monetary_members.cc
-+      CNUMERIC_CC=config/locale/generic/numeric_members.cc
-+      CTIME_H=config/locale/generic/time_members.h
-+      CTIME_CC=config/locale/generic/time_members.cc
-+      CLOCALE_INTERNAL_H=config/locale/generic/c++locale_internal.h
-+      ;;
-     gnu)
-       { $as_echo "$as_me:${as_lineno-$LINENO}: result: gnu" >&5
- $as_echo "gnu" >&6; }
---- libstdc++-v3/configure.host.orig
-+++ libstdc++-v3/configure.host
-@@ -239,6 +239,9 @@
-     os_include_dir="os/djgpp"
-     error_constants_dir="os/djgpp"
-     ;;
-+  dragonfly*)
-+    os_include_dir="os/bsd/dragonfly"
-+    ;;
-   freebsd*)
-     os_include_dir="os/bsd/freebsd"
-     ;;
 --- /dev/null
 +++ libstdc++-v3/config/locale/dragonfly/c_locale.cc
 @@ -0,0 +1,300 @@
@@ -640,7 +539,7 @@
 +    static const mask alnum 	= _CTYPE_A | _CTYPE_D;
 +#else
 +    // DragonFly 3.4 and older
-+    typedef uint16_t		mask;
++    typedef unsigned short	mask;
 +    static const mask upper	= _CTYPEMASK_U;
 +    static const mask lower	= _CTYPEMASK_L;
 +    static const mask alpha	= _CTYPEMASK_A;
@@ -995,6 +894,14 @@
 +#endif
 --- libstdc++-v3/config/os/bsd/netbsd/ctype_base.h.orig
 +++ libstdc++-v3/config/os/bsd/netbsd/ctype_base.h
+@@ -1,6 +1,6 @@
+ // Locale support -*- C++ -*-
+ 
+-// Copyright (C) 2000-2014 Free Software Foundation, Inc.
++// Copyright (C) 2000, 2009, 2011, 2012 Free Software Foundation, Inc.
+ //
+ // This file is part of the GNU ISO C++ Library.  This library is free
+ // software; you can redistribute it and/or modify it under the
 @@ -30,7 +30,7 @@
  // Full details can be found from the CVS files at:
  //   anoncvs@anoncvs.netbsd.org:/cvsroot/basesrc/include/ctype.h
@@ -1063,6 +970,14 @@
  
 --- libstdc++-v3/config/os/bsd/netbsd/ctype_configure_char.cc.orig
 +++ libstdc++-v3/config/os/bsd/netbsd/ctype_configure_char.cc
+@@ -1,6 +1,6 @@
+ // Locale support -*- C++ -*-
+ 
+-// Copyright (C) 2011-2014 Free Software Foundation, Inc.
++// Copyright (C) 2011 Free Software Foundation, Inc.
+ //
+ // This file is part of the GNU ISO C++ Library.  This library is free
+ // software; you can redistribute it and/or modify it under the
 @@ -38,11 +38,17 @@
  
  // Information as gleaned from /usr/include/ctype.h
@@ -1117,6 +1032,14 @@
      return __high;
 --- libstdc++-v3/config/os/bsd/netbsd/ctype_inline.h.orig
 +++ libstdc++-v3/config/os/bsd/netbsd/ctype_inline.h
+@@ -1,6 +1,6 @@
+ // Locale support -*- C++ -*-
+ 
+-// Copyright (C) 2000-2014 Free Software Foundation, Inc.
++// Copyright (C) 2000, 2009, 2010 Free Software Foundation, Inc.
+ //
+ // This file is part of the GNU ISO C++ Library.  This library is free
+ // software; you can redistribute it and/or modify it under the
 @@ -48,7 +48,7 @@
    is(const char* __low, const char* __high, mask* __vec) const
    {
@@ -1126,3 +1049,88 @@
      return __high;
    }
  
+--- libstdc++-v3/acinclude.m4.orig
++++ libstdc++-v3/acinclude.m4
+@@ -1989,6 +1989,9 @@
+       darwin* | freebsd*)
+ 	enable_clocale_flag=darwin
+ 	;;
++      dragonfly*)
++	enable_clocale_flag=dragonfly
++	;;
+       openbsd*)
+ 	enable_clocale_flag=newlib
+ 	;;
+@@ -2075,6 +2078,23 @@
+       CMESSAGES_H=config/locale/generic/messages_members.h
+       CMESSAGES_CC=config/locale/generic/messages_members.cc
+       CMONEY_CC=config/locale/generic/monetary_members.cc
++      CNUMERIC_CC=config/locale/generic/numeric_members.cc
++      CTIME_H=config/locale/generic/time_members.h
++      CTIME_CC=config/locale/generic/time_members.cc
++      CLOCALE_INTERNAL_H=config/locale/generic/c++locale_internal.h
++      ;;
++
++    dragonfly)
++      AC_MSG_RESULT(dragonfly)
++
++      CLOCALE_H=config/locale/generic/c_locale.h
++      CLOCALE_CC=config/locale/dragonfly/c_locale.cc
++      CCODECVT_CC=config/locale/generic/codecvt_members.cc
++      CCOLLATE_CC=config/locale/generic/collate_members.cc
++      CCTYPE_CC=config/locale/dragonfly/ctype_members.cc
++      CMESSAGES_H=config/locale/generic/messages_members.h
++      CMESSAGES_CC=config/locale/generic/messages_members.cc
++      CMONEY_CC=config/locale/generic/monetary_members.cc
+       CNUMERIC_CC=config/locale/generic/numeric_members.cc
+       CTIME_H=config/locale/generic/time_members.h
+       CTIME_CC=config/locale/generic/time_members.cc
+--- libstdc++-v3/configure.orig
++++ libstdc++-v3/configure
+@@ -15849,6 +15849,9 @@
+       darwin* | freebsd*)
+ 	enable_clocale_flag=darwin
+ 	;;
++      dragonfly*)
++	enable_clocale_flag=dragonfly
++	;;
+       openbsd*)
+ 	enable_clocale_flag=newlib
+ 	;;
+@@ -15988,6 +15991,24 @@
+       CMESSAGES_H=config/locale/generic/messages_members.h
+       CMESSAGES_CC=config/locale/generic/messages_members.cc
+       CMONEY_CC=config/locale/generic/monetary_members.cc
++      CNUMERIC_CC=config/locale/generic/numeric_members.cc
++      CTIME_H=config/locale/generic/time_members.h
++      CTIME_CC=config/locale/generic/time_members.cc
++      CLOCALE_INTERNAL_H=config/locale/generic/c++locale_internal.h
++      ;;
++
++    dragonfly)
++      { $as_echo "$as_me:${as_lineno-$LINENO}: result: dragonfly" >&5
++$as_echo "dragonfly" >&6; }
++
++      CLOCALE_H=config/locale/generic/c_locale.h
++      CLOCALE_CC=config/locale/dragonfly/c_locale.cc
++      CCODECVT_CC=config/locale/generic/codecvt_members.cc
++      CCOLLATE_CC=config/locale/generic/collate_members.cc
++      CCTYPE_CC=config/locale/dragonfly/ctype_members.cc
++      CMESSAGES_H=config/locale/generic/messages_members.h
++      CMESSAGES_CC=config/locale/generic/messages_members.cc
++      CMONEY_CC=config/locale/generic/monetary_members.cc
+       CNUMERIC_CC=config/locale/generic/numeric_members.cc
+       CTIME_H=config/locale/generic/time_members.h
+       CTIME_CC=config/locale/generic/time_members.cc
+--- libstdc++-v3/configure.host.orig
++++ libstdc++-v3/configure.host
+@@ -230,6 +230,9 @@
+     os_include_dir="os/generic"
+     atomicity_dir="cpu/generic"
+     ;;
++  dragonfly*)
++    os_include_dir="os/bsd/dragonfly"
++    ;;
+   bsd*)
+     # Plain BSD attempts to share FreeBSD files.
+     os_include_dir="os/bsd/freebsd"

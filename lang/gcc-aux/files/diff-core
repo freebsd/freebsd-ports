@@ -1,146 +1,8 @@
 --- gcc/DEV-PHASE.orig
 +++ gcc/DEV-PHASE
-@@ -0,0 +1 @@
-+release
---- gcc/config.gcc.orig
-+++ gcc/config.gcc
-@@ -581,6 +581,9 @@
-     "" | yes | posix)
-       thread_file='posix'
-       ;;
-+    gnat | single)
-+      # Let these non-posix thread selections fall through if requested
-+      ;;
-     *)
-       echo 'Unknown thread configuration for FreeBSD'
-       exit 1
-@@ -597,6 +600,26 @@
-   # need_64bit_hwint=yes # system compiler has this for all arch!
-   use_gcc_stdint=wrap
-   ;;
-+*-*-dragonfly*)
-+  gas=yes
-+  gnu_ld=yes
-+  tmake_file="t-slibgcc"
-+  case ${enable_threads} in
-+    "" | yes | posix)
-+      thread_file='posix'
-+      ;;
-+    no | gnat | single)
-+      # Let these non-posix thread selections fall through if requested
-+      ;;
-+    *)
-+      echo 'Unknown thread configuration for DragonFly BSD'
-+      exit 1
-+      ;;
-+  esac
-+  extra_options="$extra_options rpath.opt dragonfly.opt"
-+  default_use_cxa_atexit=yes
-+  use_gcc_stdint=wrap
-+  ;;
- *-*-linux* | frv-*-*linux* | *-*-kfreebsd*-gnu | *-*-knetbsd*-gnu | *-*-gnu* | *-*-kopensolaris*-gnu)
-   extra_options="$extra_options gnu-user.opt"
-   gas=yes
-@@ -652,6 +675,7 @@
-   esac
-   ;;
- *-*-netbsd*)
-+  use_gcc_stdint=wrap
-   tmake_file="t-slibgcc"
-   gas=yes
-   gnu_ld=yes
-@@ -903,7 +927,35 @@
- 	tm_file="dbxelf.h elfos.h arm/unknown-elf.h arm/elf.h arm/aout.h arm/arm.h arm/rtems-elf.h rtems.h newlib-stdint.h"
- 	tmake_file="arm/t-arm arm/t-arm-elf t-rtems arm/t-rtems"
- 	;;
--arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems*)
-+arm*-android-eabi*)
-+	gas=yes
-+	gnu_ld=yes
-+	case ${enable_threads} in
-+	  "" | yes | posix) thread_file='posix' ;;
-+	esac
-+	tm_file="dbxelf.h elfos.h gnu-user.h linux.h linux-android.h glibc-stdint.h"
-+	tm_file="$tm_file arm/elf.h arm/linux-gas.h arm/linux-elf.h"
-+	tm_file="$tm_file arm/bpabi.h arm/linux-eabi.h arm/aout.h arm/arm.h"
-+
-+	tmake_file="${tmake_file} arm/t-arm arm/t-arm-elf"
-+	tmake_file="$tmake_file arm/t-bpabi arm/t-linux-eabi"
-+
-+	tm_defines="$tm_defines DEFAULT_LIBC=LIBC_BIONIC ANDROID_DEFAULT=1"
-+	case $target in
-+	arm*b-*)
-+	    tm_defines="$tm_defines TARGET_BIG_ENDIAN_DEFAULT=1"
-+	    ;;
-+	esac
-+	extra_options="$extra_options linux.opt linux-android.opt"
-+	default_use_cxa_atexit=yes
-+	use_gcc_tgmath=no
-+	use_gcc_stdint=wrap
-+
-+	# The BPABI long long divmod functions return a 128-bit value in registers r0-r3.
-+	# Correctly modeling that requires the use of TImode.
-+	need_64bit_hwint=yes
-+	;;
-+arm*-*-symbianelf* | arm*-*-rtems*)
- 	# The BPABI long long divmod functions return a 128-bit value in
- 	# registers r0-r3.  Correctly modeling that requires the use of
- 	# TImode.
-@@ -912,11 +964,6 @@
- 	tm_file="dbxelf.h elfos.h arm/unknown-elf.h arm/elf.h arm/bpabi.h"
- 	tmake_file="arm/t-arm arm/t-arm-elf"
- 	case ${target} in
--	arm*-*-eabi*)
--	  tm_file="$tm_file newlib-stdint.h"
--	  tmake_file="${tmake_file} arm/t-bpabi"
--	  use_gcc_stdint=wrap
--	  ;;
- 	arm*-*-rtems*)
- 	  tm_file="${tm_file} rtems.h arm/rtems-eabi.h newlib-stdint.h"
- 	  tmake_file="${tmake_file} arm/t-bpabi t-rtems arm/t-rtems-eabi"
-@@ -1216,19 +1263,31 @@
- x86_64-*-elf*)
- 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h newlib-stdint.h i386/i386elf.h i386/x86-64.h"
- 	;;
-+i[34567]86-*-dragonfly*)
-+	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h dragonfly.h dragonfly-stdint.h i386/dragonfly.h"
-+	tmake_file="${tmake_file} i386/t-crtstuff"
-+	;;
-+x86_64-*-dragonfly*)
-+	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h dragonfly.h dragonfly-stdint.h i386/x86-64.h i386/dragonfly.h"
-+	tmake_file="${tmake_file} i386/t-crtstuff"
-+	;;
- i[34567]86-*-freebsd*)
- 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h ${fbsd_tm_file} i386/freebsd.h"
-+	tmake_file="${tmake_file} i386/t-crtstuff"
- 	;;
- x86_64-*-freebsd*)
- 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h ${fbsd_tm_file} i386/x86-64.h i386/freebsd.h i386/freebsd64.h"
-+	tmake_file="${tmake_file} i386/t-crtstuff"
- 	;;
- i[34567]86-*-netbsdelf*)
--	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/netbsd-elf.h"
-+	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/netbsd-elf.h netbsd-stdint.h"
- 	extra_options="${extra_options} netbsd.opt netbsd-elf.opt"
-+	tmake_file="${tmake_file} i386/t-crtstuff"
- 	;;
- x86_64-*-netbsd*)
--	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/x86-64.h i386/netbsd64.h"
-+	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/x86-64.h i386/netbsd64.h netbsd-stdint.h"
- 	extra_options="${extra_options} netbsd.opt netbsd-elf.opt"
-+	tmake_file="${tmake_file} i386/t-crtstuff"
- 	;;
- i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
- 	tm_file="i386/i386.h i386/unix.h i386/bsd.h i386/gas.h i386/gstabs.h openbsd-oldgas.h openbsd.h i386/openbsd.h"
-@@ -3577,6 +3636,8 @@
- 		;;
- 	i[34567]86-*-cygwin* | i[34567]86-*-mingw* | x86_64-*-mingw*)
- 		;;
-+	i[34567]86-*-dragonfly* | x86_64-*-dragonfly*)
-+		;;
- 	i[34567]86-*-freebsd* | x86_64-*-freebsd*)
- 		;;
- 	ia64*-*-linux*)
+@@ -1 +1 @@
+-experimental
++prerelease
 --- /dev/null
 +++ gcc/config/dragonfly-stdint.h
 @@ -0,0 +1,56 @@
@@ -291,7 +153,7 @@
 +   } \
 +   %{static:-Bstatic} \
 +  } \
-+  %{!static:--hash-style=both -rpath @PREFIX@/gcc-aux/lib} \
++  %{!static:--hash-style=gnu -rpath @PREFIX@/gcc-aux/lib} \
 +  %{symbolic:-Bsymbolic}"
 +
 +#undef  LINK_SPEC
@@ -576,20 +438,22 @@
 +
 --- gcc/config/i386/freebsd.h.orig
 +++ gcc/config/i386/freebsd.h
-@@ -91,6 +91,12 @@
+@@ -90,6 +90,14 @@
     When the -shared link option is used a final link is not being
     done.  */
  
 +#if FBSD_MAJOR < 9
 +#define ELF_HASH_STYLE ""
-+#else
++#elif FBSD_MAJOR < 10
 +#define ELF_HASH_STYLE "--hash-style=both "
++#else
++#define ELF_HASH_STYLE "--hash-style=gnu "
 +#endif
 +
  #undef	LINK_SPEC
  #define LINK_SPEC "\
    %{p:%nconsider using '-pg' instead of '-p' with gprof(1)} \
-@@ -102,6 +108,7 @@
+@@ -101,6 +109,7 @@
          %{rdynamic:-export-dynamic} \
          -dynamic-linker %(fbsd_dynamic_linker) } \
      %{static:-Bstatic}} \
@@ -597,7 +461,7 @@
    %{symbolic:-Bsymbolic}"
  
  /* A C statement to output to the stdio stream FILE an assembler
-@@ -148,3 +155,5 @@
+@@ -147,3 +156,5 @@
  
  #define TARGET_ASM_FILE_END file_end_indicate_exec_stack
  
@@ -648,7 +512,7 @@
 +#endif
 --- gcc/ginclude/stddef.h.orig
 +++ gcc/ginclude/stddef.h
-@@ -53,12 +53,21 @@
+@@ -50,12 +50,21 @@
     one less case to deal with in the following.  */
  #if defined (__BSD_NET2__) || defined (____386BSD____) || (defined (__FreeBSD__) && (__FreeBSD__ < 5)) || defined(__NetBSD__)
  #include <machine/ansi.h>
@@ -670,7 +534,7 @@
  /* In 4.3bsd-net2, machine/ansi.h defines these symbols, which are
     defined if the corresponding type is *not* defined.
     FreeBSD-2.1 defines _MACHINE_ANSI_H_ instead of _ANSI_H_.
-@@ -136,6 +145,7 @@
+@@ -133,6 +142,7 @@
  #ifndef _BSD_PTRDIFF_T_
  #ifndef ___int_ptrdiff_t_h
  #ifndef _GCC_PTRDIFF_T
@@ -678,7 +542,7 @@
  #define _PTRDIFF_T
  #define _T_PTRDIFF_
  #define _T_PTRDIFF
-@@ -144,10 +154,12 @@
+@@ -141,10 +151,12 @@
  #define _BSD_PTRDIFF_T_
  #define ___int_ptrdiff_t_h
  #define _GCC_PTRDIFF_T
@@ -691,15 +555,15 @@
  #endif /* _GCC_PTRDIFF_T */
  #endif /* ___int_ptrdiff_t_h */
  #endif /* _BSD_PTRDIFF_T_ */
-@@ -201,6 +213,7 @@
+@@ -198,6 +210,7 @@
  #define _GCC_SIZE_T
  #define _SIZET_
  #if (defined (__FreeBSD__) && (__FreeBSD__ >= 5)) \
 +  || defined(__DragonFly__) \
    || defined(__FreeBSD_kernel__)
  /* __size_t is a typedef on FreeBSD 5, must not trash it. */
- #else
-@@ -307,7 +320,7 @@
+ #elif defined (__VMS__)
+@@ -306,7 +319,7 @@
  /* FreeBSD 5 can't be handled well using "traditional" logic above
     since it no longer defines _BSD_RUNE_T_ yet still desires to export
     rune_t in some cases... */
@@ -725,119 +589,12 @@
 + || defined (__CYGWIN32__) \
 + || defined (__MINGW32__) \
 + || defined (HAVE_DECL_BASENAME)
- extern char *basename (const char *);
+ extern char *basename (const char *) ATTRIBUTE_RETURNS_NONNULL ATTRIBUTE_NONNULL(1);
  #else
  /* Do not allow basename to be used if there is no prototype seen.  We
---- libgcc/config.host.orig
-+++ libgcc/config.host
-@@ -174,6 +174,11 @@
-   tmake_file="$tmake_file t-darwin ${cpu_type}/t-darwin t-libgcc-pic t-slibgcc-darwin"
-   extra_parts="crt3.o crttms.o crttme.o"
-   ;;
-+*-*-dragonfly*)
-+  tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-eh-dw2-dip"
-+  tmake_file="$tmake_file t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
-+  extra_parts="crtbegin.o crtend.o crtbeginS.o crtendS.o"
-+  ;;
- *-*-freebsd*)
-   # This is the generic ELF configuration of FreeBSD.  Later
-   # machine-specific sections may refine and add to this
-@@ -202,7 +207,8 @@
-   extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
-   ;;
- *-*-netbsd*)
--  tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
-+  tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-eh-dw2-dip"
-+  tmake_file="$tmake_file t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
-   # NetBSD 1.7 and later are set up to use GCC's crtstuff for
-   # ELF configurations.  We will clear extra_parts in the
-   # a.out configurations.
-@@ -266,8 +272,10 @@
- esac
- 
- case ${host} in
--*-*-darwin* | *-*-freebsd* | *-*-netbsd* | *-*-openbsd* | *-*-solaris2* | \
--  alpha*-dec-osf5.1*)
-+*-*-freebsd* | *-*-dragonfly* | *-*-netbsd* | *-*-openbsd*)
-+  enable_execute_stack=enable-execute-stack-freebsd.c
-+  ;;
-+*-*-darwin* | *-*-solaris2* | alpha*-dec-osf5.1*)
-   enable_execute_stack=enable-execute-stack-mprotect.c
-   ;;
- i[34567]86-*-mingw* | x86_64-*-mingw*)
-@@ -318,6 +326,17 @@
- 	tmake_file="$tmake_file arm/t-arm arm/t-vxworks t-fdpbit"
- 	extra_parts="$extra_parts crti.o crtn.o"
- 	;;
-+arm*-android-eabi*)
-+	extra_parts="crtbegin.o crtbeginS.o crtbeginT.o crtend.o crtendS.o"
-+
-+	tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-eh-dw2-dip t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
-+	tmake_file="$tmake_file arm/t-arm t-fixedpoint-gnu-prefix"
-+	tmake_file="$tmake_file arm/t-elf arm/t-bpabi arm/t-linux-eabi t-slibgcc-libgcc"
-+	tmake_file="$tmake_file t-softfp-sfdf t-softfp-excl arm/t-softfp t-softfp"
-+
-+	tm_file="$tm_file arm/bpabi-lib.h"
-+	unwind_header=config/arm/unwind-arm.h
-+	;;
- arm*-*-freebsd*)
- 	tmake_file="$tmake_file arm/t-arm arm/t-strongarm-elf t-fdpbit"
- 	;;
-@@ -358,11 +377,11 @@
- 	tmake_file="$tmake_file arm/t-arm arm/t-elf t-softfp-sfdf t-softfp-excl arm/t-softfp t-softfp"
- 	extra_parts="$extra_parts crti.o crtn.o"
- 	;;
--arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems*)
-+arm*-*-symbianelf* | arm*-*-rtems*)
- 	tmake_file="${tmake_file} arm/t-arm arm/t-elf t-fixedpoint-gnu-prefix"
- 	tm_file="$tm_file arm/bpabi-lib.h"
- 	case ${host} in
--	arm*-*-eabi* | arm*-*-rtems*)
-+	arm*-*-rtems*)
- 	  tmake_file="${tmake_file} arm/t-bpabi"
- 	  extra_parts="crtbegin.o crtend.o crti.o crtn.o"
- 	  ;;
-@@ -526,16 +545,29 @@
- x86_64-*-elf*)
- 	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
- 	;;
-+i[34567]86-*-dragonfly*)
-+	tmake_file="${tmake_file} i386/t-dragonfly i386/t-crtstuff"
-+	md_unwind_header=i386/dragonfly-unwind.h
-+	;;
-+x86_64-*-dragonfly*)
-+	tmake_file="${tmake_file} i386/t-dragonfly i386/t-crtstuff"
-+	md_unwind_header=i386/dragonfly-unwind.h
-+	;;
- i[34567]86-*-freebsd*)
- 	tmake_file="${tmake_file} i386/t-freebsd i386/t-crtstuff"
-+	md_unwind_header=i386/freebsd-unwind.h
- 	;;
- x86_64-*-freebsd*)
- 	tmake_file="${tmake_file} i386/t-freebsd i386/t-crtstuff"
-+	md_unwind_header=i386/freebsd-unwind.h
- 	;;
- i[34567]86-*-netbsdelf*)
-+	tmake_file="${tmake_file} i386/t-crtstuff"
-+	md_unwind_header=i386/netbsd-unwind.h
- 	;;
- x86_64-*-netbsd*)
- 	tmake_file="${tmake_file} i386/t-crtstuff"
-+	md_unwind_header=i386/netbsd-unwind.h
- 	;;
- i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
- 	;;
-@@ -1167,6 +1199,7 @@
-   i[34567]86-*-gnu* | \
-   i[34567]86-*-solaris2* | x86_64-*-solaris2.1[0-9]* | \
-   i[34567]86-*-cygwin* | i[34567]86-*-mingw* | x86_64-*-mingw* | \
-+  i[34567]86-*-dragonfly* | x86_64-*-dragonfly* | \
-   i[34567]86-*-freebsd* | x86_64-*-freebsd*)
-   	tmake_file="${tmake_file} t-softfp-tf"
- 	if test "${host_address}" = 32; then
 --- libgcc/crtstuff.c.orig
 +++ libgcc/crtstuff.c
-@@ -81,11 +81,19 @@
+@@ -79,11 +79,19 @@
  }
  #endif
  
@@ -921,7 +678,7 @@
 +}
 --- libgcc/unwind-dw2-fde-dip.c.orig
 +++ libgcc/unwind-dw2-fde-dip.c
-@@ -54,11 +54,19 @@
+@@ -58,11 +58,19 @@
  #endif
  
  #if !defined(inhibit_libc) && defined(HAVE_LD_EH_FRAME_HDR) \
@@ -1105,12 +862,13 @@
 +#endif /* ifdef __x86_64__  */
 --- /dev/null
 +++ libgcc/config/i386/freebsd-unwind.h
-@@ -0,0 +1,179 @@
+@@ -0,0 +1,198 @@
 +/* DWARF2 EH unwinding support for FreeBSD: AMD x86-64 and x86.
-+   Copyright (C) 2010, 2012 John Marino <draco@marino.st>
-+
-+/* Do code reading to identify a signal frame, and set the frame
-+   state data appropriately.  See unwind-dw2.c for the structs. */
++ *  Copyright (C) 2010, 2012, 2014 John Marino <draco@marino.st>
++ *
++ *  Do code reading to identify a signal frame, and set the frame
++ *  state data appropriately.  See unwind-dw2.c for the structs.
++ */
 +
 +#include <sys/types.h>
 +#include <signal.h>
@@ -1146,12 +904,13 @@
 +x86_64_freebsd_fallback_frame_state
 +(struct _Unwind_Context *context, _Unwind_FrameState *fs)
 +{
-+  unsigned char *pc = context->ra;
-+  unsigned char *sigtramp_start, *sigtramp_end;
 +  struct sigframe *sf;
 +  long new_cfa;
 +
 +#if (__FreeBSD__ < 9)
++  unsigned char *pc = context->ra;
++  unsigned char *sigtramp_start, *sigtramp_end;
++
 +  x86_64_sigtramp_range(&sigtramp_start, &sigtramp_end);
 +  if (pc >= sigtramp_end || pc < sigtramp_start)
 +    return _URC_END_OF_STACK;
@@ -1225,6 +984,12 @@
 +
 +#define MD_FALLBACK_FRAME_STATE_FOR x86_freebsd_fallback_frame_state
 +
++/*
++ * We can't use KERN_PS_STRINGS anymore if we want to support FreeBSD32
++ * compat on AMD64.  The sigtramp is in a shared page in that case so the
++ * x86_sigtramp_range only works on a true i386 system.  We have to
++ * search for the sigtramp frame if we want it working everywhere.
++
 +#include <sys/sysctl.h>
 +static void
 +x86_sigtramp_range (unsigned char **start, unsigned char **end)
@@ -1241,20 +1006,31 @@
 +  *start = (unsigned char *)ps_strings - 128;
 +  *end   = (unsigned char *)ps_strings;
 +}
++*/
 +
 +
 +static _Unwind_Reason_Code
 +x86_freebsd_fallback_frame_state
 +(struct _Unwind_Context *context, _Unwind_FrameState *fs)
 +{
-+  unsigned char *pc = context->ra;
-+  unsigned char *sigtramp_start, *sigtramp_end;
 +  struct sigframe *sf;
 +  long new_cfa;
 +
-+  x86_sigtramp_range(&sigtramp_start, &sigtramp_end);
++/*
++ * i386 sigtramp frame we are looking for follows.
++ * Apparently PSL_VM is variable, so we can't look past context->ra + 4
++ * <sigcode>:
++ *   0:	ff 54 24 10          	call   *0x10(%esp)          *SIGF_HANDLER
++ *   4:	8d 44 24 20          	lea    0x20(%esp),%eax       SIGF_UC
++ *   8:	50                   	push   %eax
++ *   9:	f7 40 54 00 00 02 00 	testl  $0x20000,0x54(%eax)  $PSL_VM
++ *  10:	75 03                	jne    15 <sigcode+0x15>
++ *  12:	8e 68 14             	mov    0x14(%eax),%gs        UC_GS
++ *  15:	b8 a1 01 00 00       	mov    0x1a1,%eax           $SYS_sigreturn
++ */
 +
-+  if (pc >= sigtramp_end || pc < sigtramp_start)
++  if (!(   *(unsigned int *)(context->ra - 4) == 0x102454ff
++        && *(unsigned int *)(context->ra)     == 0x2024448d ))
 +    return _URC_END_OF_STACK;
 +
 +  sf = (struct sigframe *) context->cfa;
@@ -1486,9 +1262,87 @@
  #endif
 +#endif
  }
+--- gcc/config.gcc.orig
++++ gcc/config.gcc
+@@ -687,6 +687,26 @@
+   # need_64bit_hwint=yes # system compiler has this for all arch!
+   use_gcc_stdint=wrap
+   ;;
++*-*-dragonfly*)
++  gas=yes
++  gnu_ld=yes
++  tmake_file="t-slibgcc"
++  case ${enable_threads} in
++    "" | yes | posix)
++      thread_file='posix'
++      ;;
++    no | gnat | single)
++      # Let these non-posix thread selections fall through if requested
++      ;;
++    *)
++      echo 'Unknown thread configuration for DragonFly BSD'
++      exit 1
++      ;;
++  esac
++  extra_options="$extra_options rpath.opt dragonfly.opt"
++  default_use_cxa_atexit=yes
++  use_gcc_stdint=wrap
++  ;;
+ *-*-linux* | frv-*-*linux* | *-*-kfreebsd*-gnu | *-*-knetbsd*-gnu | *-*-gnu* | *-*-kopensolaris*-gnu)
+   extra_options="$extra_options gnu-user.opt"
+   gas=yes
+@@ -743,6 +763,7 @@
+   target_has_targetcm=yes
+   ;;
+ *-*-netbsd*)
++  use_gcc_stdint=wrap
+   tmake_file="t-slibgcc"
+   gas=yes
+   gnu_ld=yes
+@@ -1352,6 +1373,14 @@
+     tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h newlib-stdint.h i386/i386elf.h i386/x86-64.h i386/rdos.h i386/rdos64.h"
+     tmake_file="i386/t-i386elf t-svr4"
+     ;;
++i[34567]86-*-dragonfly*)
++	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h dragonfly.h dragonfly-stdint.h i386/dragonfly.h"
++	tmake_file="${tmake_file} i386/t-crtstuff"
++	;;
++x86_64-*-dragonfly*)
++	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h dragonfly.h dragonfly-stdint.h i386/x86-64.h i386/dragonfly.h"
++	tmake_file="${tmake_file} i386/t-crtstuff"
++	;;
+ i[34567]86-*-freebsd*)
+ 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h ${fbsd_tm_file} i386/freebsd.h"
+ 	;;
+@@ -1359,12 +1388,14 @@
+ 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h ${fbsd_tm_file} i386/x86-64.h i386/freebsd.h i386/freebsd64.h"
+ 	;;
+ i[34567]86-*-netbsdelf*)
+-	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/netbsd-elf.h"
++	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/netbsd-elf.h netbsd-stdint.h"
+ 	extra_options="${extra_options} netbsd.opt netbsd-elf.opt"
++	tmake_file="${tmake_file} i386/t-crtstuff"
+ 	;;
+ x86_64-*-netbsd*)
+-	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/x86-64.h i386/netbsd64.h"
++	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/x86-64.h i386/netbsd64.h netbsd-stdint.h"
+ 	extra_options="${extra_options} netbsd.opt netbsd-elf.opt"
++	tmake_file="${tmake_file} i386/t-crtstuff"
+ 	;;
+ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
+ 	tm_file="i386/i386.h i386/unix.h i386/bsd.h i386/gas.h i386/gstabs.h openbsd-oldgas.h openbsd.h i386/openbsd.h"
+@@ -4106,6 +4137,8 @@
+ 		;;
+ 	i[34567]86-*-mingw* | x86_64-*-mingw*)
+ 		;;
++	i[34567]86-*-dragonfly* | x86_64-*-dragonfly*)
++		;;
+ 	i[34567]86-*-freebsd* | x86_64-*-freebsd*)
+ 		;;
+ 	ia64*-*-linux*)
 --- gcc/configure.orig
 +++ gcc/configure
-@@ -26902,6 +26902,20 @@
+@@ -27347,6 +27347,20 @@
        gcc_cv_target_dl_iterate_phdr=no
      fi
      ;;
@@ -1499,57 +1353,47 @@
 +      gcc_cv_target_dl_iterate_phdr=no
 +    fi
 +  ;;
-+  *-*-netbsd*)
-+  if grep dl_iterate_phdr $target_header_dir/link_elf.h > /dev/null 2>&1; then
-+      gcc_cv_target_dl_iterate_phdr=yes
-+    else
-+      gcc_cv_target_dl_iterate_phdr=no
-+    fi
-+  ;;
++# *-*-netbsd* | *-*-openbsd*)
++# if grep dl_iterate_phdr $target_header_dir/link_elf.h > /dev/null 2>&1; then
++#     gcc_cv_target_dl_iterate_phdr=yes
++#   else
++#     gcc_cv_target_dl_iterate_phdr=no
++#   fi
++# ;;
  esac
  
  if test x$gcc_cv_target_dl_iterate_phdr = xyes; then
 --- gcc/Makefile.in.orig
 +++ gcc/Makefile.in
-@@ -1165,7 +1165,6 @@
- 	insn-automata.o \
+@@ -1152,7 +1152,6 @@
  	insn-emit.o \
  	insn-extract.o \
+ 	insn-latencytab.o \
 -	insn-modes.o \
  	insn-opinit.o \
  	insn-output.o \
  	insn-peep.o \
-@@ -1484,13 +1483,18 @@
+@@ -1487,13 +1486,18 @@
  ALL_HOST_BACKEND_OBJS = $(GCC_OBJS) $(OBJS) $(OBJS-libcommon) \
-   $(OBJS-libcommon-target) @TREEBROWSER@ main.o gccspec.o cppspec.o \
-   $(COLLECT2_OBJS) $(EXTRA_GCC_OBJS) mips-tfile.o mips-tdump.o \
--  $(GCOV_OBJS) $(GCOV_DUMP_OBJS)
-+  $(GCOV_OBJS) $(GCOV_DUMP_OBJS) insn-modes.o insn-modes-ada.o
+   $(OBJS-libcommon-target) @TREEBROWSER@ main.o c-family/cppspec.o \
+   $(COLLECT2_OBJS) $(EXTRA_GCC_OBJS) $(GCOV_OBJS) $(GCOV_DUMP_OBJS) \
+-  lto-wrapper.o
++  insn-modes.o insn-modes-ada.o lto-wrapper.o
  
  # This lists all host object files, whether they are included in this
  # compilation or not.
  ALL_HOST_OBJS = $(ALL_HOST_FRONTEND_OBJS) $(ALL_HOST_BACKEND_OBJS)
  
--BACKEND = main.o @TREEBROWSER@ libbackend.a libcommon-target.a libcommon.a \
-+BACKEND = main.o @TREEBROWSER@ insn-modes.o libbackend.a \
-+	libcommon-target.a libcommon.a \
+ BACKEND = libbackend.a main.o @TREEBROWSER@ libcommon-target.a libcommon.a \
++	insn-modes.o \
 +	$(CPPLIB) $(LIBDECNUMBER)
 +
-+BACKEND2 = main.o @TREEBROWSER@ insn-modes-ada.o libbackend.a \
-+	libcommon-target.a libcommon.a \
++BACKEND2 = libbackend.a main.o @TREEBROWSER@ libcommon-target.a libcommon.a \
++	insn-modes-ada.o \
  	$(CPPLIB) $(LIBDECNUMBER)
  
- MOSTLYCLEANFILES = insn-flags.h insn-config.h insn-codes.h \
-@@ -3522,6 +3526,8 @@
-   $(TM_H) $(RTL_H) $(DIAGNOSTIC_CORE_H) insn-config.h $(RECOG_H)
- insn-modes.o : insn-modes.c $(CONFIG_H) $(SYSTEM_H) coretypes.h	$(TM_H) \
-   $(MACHMODE_H)
-+insn-modes-ada.o : insn-modes-ada.c $(CONFIG_H) $(SYSTEM_H) coretypes.h \
-+  $(TM_H) $(MACHMODE_H)
- insn-opinit.o : insn-opinit.c $(CONFIG_H) $(SYSTEM_H) coretypes.h	\
-   $(TM_H) $(RTL_H) $(TM_P_H) insn-config.h $(FLAGS_H) $(RECOG_H)	\
-   $(EXPR_H) $(OPTABS_H) reload.h
-@@ -3615,6 +3621,7 @@
+ # This is defined to "yes" if Tree checking is enabled, which roughly means
+@@ -2124,6 +2128,7 @@
  
  insn-modes.c: s-modes; @true
  insn-modes.h: s-modes-h; @true
@@ -1557,7 +1401,7 @@
  min-insn-modes.c: s-modes-m; @true
  
  s-modes: build/genmodes$(build_exeext)
-@@ -3632,6 +3639,12 @@
+@@ -2141,6 +2146,12 @@
  	$(SHELL) $(srcdir)/../move-if-change tmp-min-modes.c min-insn-modes.c
  	$(STAMP) s-modes-m
  
@@ -1570,54 +1414,126 @@
  insn-preds.c: s-preds; @true
  tm-preds.h: s-preds-h; @true
  tm-constrs.h: s-constrs-h; @true
-@@ -4394,7 +4407,7 @@
- 	DESTDIR=$(@D) \
- 	$(SHELL) $(srcdir)/doc/install.texi2html
- 
--MANFILES = doc/gcov.1 doc/cpp.1 doc/gcc.1 doc/gfdl.7 doc/gpl.7 doc/fsf-funding.7
-+MANFILES = doc/gcov.1 doc/cpp.1 doc/gcc.1
- 
- generated-manpages: man
- 
-@@ -4546,7 +4559,7 @@
- # Install the driver last so that the window when things are
- # broken is small.
- install: install-common $(INSTALL_HEADERS) \
--    install-cpp install-man install-info install-@POSUB@ \
-+    install-cpp install-man install-@POSUB@ \
-     install-driver install-lto-wrapper install-gcc-ar
- 
- ifeq ($(enable_plugin),yes)
-@@ -4671,6 +4684,9 @@
+@@ -3207,6 +3218,9 @@
  	-rm -f $(DESTDIR)$(bindir)/$(target_noncanonical)-gcc-$(version)$(exeext)
  	-( cd $(DESTDIR)$(bindir) && \
  	   $(LN) $(GCC_INSTALL_NAME)$(exeext) $(target_noncanonical)-gcc-$(version)$(exeext) )
 +	-if [ -f gnat1$(exeext) ] ; then \
 +	  ( cd $(DESTDIR)$(bindir) && $(LN) $(GCC_INSTALL_NAME)$(exeext) ada$(exeext) ) \
 +	fi
- 	-if [ -f gcc-cross$(exeext) ] ; then \
- 	  if [ -d $(DESTDIR)$(gcc_tooldir)/bin/. ] ; then \
- 	    rm -f $(DESTDIR)$(gcc_tooldir)/bin/gcc$(exeext); \
-@@ -4744,10 +4760,7 @@
- install-man: lang.install-man \
- 	$(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext) \
- 	$(DESTDIR)$(man1dir)/$(CPP_INSTALL_NAME)$(man1ext) \
--	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext) \
--	$(DESTDIR)$(man7dir)/fsf-funding$(man7ext) \
--	$(DESTDIR)$(man7dir)/gfdl$(man7ext) \
--	$(DESTDIR)$(man7dir)/gpl$(man7ext)
-+	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
+ 	-if [ ! -f gcc-cross$(exeext) ] ; then \
+ 	  rm -f $(DESTDIR)$(bindir)/$(target_noncanonical)-gcc-tmp$(exeext); \
+ 	  ( cd $(DESTDIR)$(bindir) && \
+--- libgcc/config.host.orig
++++ libgcc/config.host
+@@ -207,6 +207,11 @@
+   tmake_file="$tmake_file t-darwin ${cpu_type}/t-darwin t-libgcc-pic t-slibgcc-darwin"
+   extra_parts="crt3.o crttms.o crttme.o"
+   ;;
++*-*-dragonfly*)
++  tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-eh-dw2-dip"
++  tmake_file="$tmake_file t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
++  extra_parts="crtbegin.o crtend.o crtbeginS.o crtendS.o"
++  ;;
+ *-*-freebsd*)
+   # This is the generic ELF configuration of FreeBSD.  Later
+   # machine-specific sections may refine and add to this
+@@ -235,7 +240,8 @@
+   extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
+   ;;
+ *-*-netbsd*)
+-  tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
++  tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-eh-dw2-dip"
++  tmake_file="$tmake_file t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
+   # NetBSD 1.7 and later are set up to use GCC's crtstuff for
+   # ELF configurations.  We will clear extra_parts in the
+   # a.out configurations.
+@@ -299,7 +305,10 @@
+ esac
  
- $(DESTDIR)$(man7dir)/%$(man7ext): doc/%.7 installdirs
- 	-rm -f $@
---- configure.orig
-+++ configure
-@@ -14419,7 +14419,7 @@
- _ACEOF
- if ac_fn_c_try_compile "$LINENO"; then :
-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
--$as_echo "yes" >&6; }; stage1_cflags="$stage1_cflags -fkeep-inline-functions"
-+$as_echo "yes" >&6; };
- else
-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
- $as_echo "no" >&6; }
+ case ${host} in
+-*-*-darwin* | *-*-freebsd* | *-*-netbsd* | *-*-openbsd* | *-*-solaris2*)
++*-*-dragonfly* | *-*-freebsd* | *-*-netbsd* | *-*-openbsd*)
++  enable_execute_stack=enable-execute-stack-freebsd.c
++  ;;
++*-*-darwin* | *-*-solaris2*)
+   enable_execute_stack=enable-execute-stack-mprotect.c
+   ;;
+ i[34567]86-*-mingw* | x86_64-*-mingw*)
+@@ -542,16 +551,29 @@
+ x86_64-*-elf*)
+ 	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
+ 	;;
++i[34567]86-*-dragonfly*)
++	tmake_file="${tmake_file} i386/t-dragonfly i386/t-crtstuff"
++	md_unwind_header=i386/dragonfly-unwind.h
++	;;
++x86_64-*-dragonfly*)
++	tmake_file="${tmake_file} i386/t-dragonfly i386/t-crtstuff"
++	md_unwind_header=i386/dragonfly-unwind.h
++	;;
+ i[34567]86-*-freebsd*)
+ 	tmake_file="${tmake_file} i386/t-freebsd i386/t-crtstuff"
++	md_unwind_header=i386/freebsd-unwind.h
+ 	;;
+ x86_64-*-freebsd*)
+ 	tmake_file="${tmake_file} i386/t-freebsd i386/t-crtstuff"
++	md_unwind_header=i386/freebsd-unwind.h
+ 	;;
+ i[34567]86-*-netbsdelf*)
++	tmake_file="${tmake_file} i386/t-crtstuff"
++	md_unwind_header=i386/netbsd-unwind.h
+ 	;;
+ x86_64-*-netbsd*)
+ 	tmake_file="${tmake_file} i386/t-crtstuff"
++	md_unwind_header=i386/netbsd-unwind.h
+ 	;;
+ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
+ 	;;
+@@ -1256,6 +1278,7 @@
+   i[34567]86-*-solaris2* | x86_64-*-solaris2.1[0-9]* | \
+   i[34567]86-*-cygwin* | x86_64-*-cygwin* | \
+   i[34567]86-*-mingw* | x86_64-*-mingw* | \
++  i[34567]86-*-dragonfly* | x86_64-*-dragonfly* | \
+   i[34567]86-*-freebsd* | x86_64-*-freebsd* | \
+   i[34567]86-*-openbsd* | x86_64-*-openbsd*)
+   	tmake_file="${tmake_file} t-softfp-tf"
+--- libcilkrts/runtime/os-unix.c.orig
++++ libcilkrts/runtime/os-unix.c
+@@ -56,6 +56,8 @@
+     // Uses sysconf(_SC_NPROCESSORS_ONLN) in verbose output
+ #elif defined  __FreeBSD__
+ // No additional include files
++#elif defined __DragonFly__
++// No additional include files
+ #elif defined __CYGWIN__
+ // Cygwin on Windows - no additional include files
+ #elif defined  __VXWORKS__
+@@ -374,7 +376,7 @@
+     assert((unsigned)count == count);
+ 
+     return count;
+-#elif defined  __FreeBSD__ || defined __CYGWIN__
++#elif defined  __FreeBSD__ || defined __CYGWIN__ || defined __DragonFly__
+     int ncores = sysconf(_SC_NPROCESSORS_ONLN);
+ 
+     return ncores;
+@@ -402,6 +404,8 @@
+     // On MacOS, call sched_yield to yield quantum.  I'm not sure why we
+     // don't do this on Linux also.
+     sched_yield();
++#elif defined(__DragonFly__)
++    sched_yield();
+ #elif defined(__MIC__)
+     // On MIC, pthread_yield() really trashes things.  Arch's measurements
+     // showed that calling _mm_delay_32() (or doing nothing) was a better
+--- libitm/configure.tgt.orig
++++ libitm/configure.tgt
+@@ -138,6 +138,7 @@
+ 	;;
+ 
+   *-*-gnu* | *-*-k*bsd*-gnu \
++  | *-*-dragonfly* \
+   | *-*-netbsd* | *-*-freebsd* | *-*-openbsd* \
+   | *-*-solaris2* | *-*-sysv4* | *-*-hpux11* \
+   | *-*-darwin* | *-*-aix*)
