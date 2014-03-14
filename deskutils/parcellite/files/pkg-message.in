@@ -1,0 +1,21 @@
+################################################################################
+
+Parcellite has been installed.
+
+This program will attempt to obtain some system information by accessing files
+in procfs and linprocfs. You must mount procfs and linprocfs filesystem for this
+to work correctly.
+This can be accomplished by adding the following line to your /etc/fstab file:
+
+# Device                Mountpoint              FStype        Options Dump Pass
+proc                    /proc                  procfs         rw      0    0
+linprocfs               /compat/linux/proc      linprocfs     rw      0    0
+
+and then, as root, executing the command:
+
+mount /proc
+
+kldload linprocfs
+mount /compat/linux/proc
+
+################################################################################

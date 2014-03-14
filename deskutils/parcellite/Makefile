@@ -18,13 +18,15 @@ USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
-PORTDOCS=	AUTHORS ChangeLog README TODO
+PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE= DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
+
+SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
