@@ -16,13 +16,12 @@ USE_PYTHON_RUN=	yes
 
 PLIST_FILES=	bin/ljdump etc/ljdump.config.sample
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE}, ; \
 		s,%%PREFIX%%,${PREFIX},' ${WRKSRC}/ljdump.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ljdump.py ${PREFIX}/bin/ljdump
-	${INSTALL_DATA} ${WRKSRC}/ljdump.config.sample ${PREFIX}/etc
+	${INSTALL_SCRIPT} ${WRKSRC}/ljdump.py ${STAGEDIR}${PREFIX}/bin/ljdump
+	${INSTALL_DATA} ${WRKSRC}/ljdump.config.sample ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
