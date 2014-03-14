@@ -3,6 +3,7 @@
 
 PORTNAME=	ganttproject
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	deskutils java
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-r1544
@@ -12,9 +13,8 @@ COMMENT=	Gantt chart based project scheduling and management tool
 
 LICENSE=	GPLv3
 
-USES=		shebangfix
+USES=		shebangfix zip
 SHEBANG_FILES=	ganttproject
-USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

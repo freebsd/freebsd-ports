@@ -3,6 +3,7 @@
 
 PORTNAME=	slony1
 PORTVERSION=	1.2.23
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/1.2/source/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -32,7 +33,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERLTOOLS}
-USES=		perl5
+USES+=		perl5
 CONFIGURE_ARGS+=	--with-perltools=${LOCALBASE}/sbin
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 BUILD_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg

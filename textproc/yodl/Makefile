@@ -3,6 +3,7 @@
 
 PORTNAME=	yodl
 PORTVERSION=	3.03.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,25 +18,8 @@ BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	build
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	*
-
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	latex:build dvipsk:build
-.endif
-
-USES=		shebangfix
 
 SHEBANG_LANG=	icmake
 icmake_OLD_CMD=	/usr/bin/icmake
@@ -56,6 +40,21 @@ SHEBANG_FILES=	${WRKSRC}/macros/rawmacros/create \
 		${WRKSRC}/scripts/stdmacros \
 		${WRKSRC}/scripts/yodl2whatever.in \
 		${WRKSRC}/build
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	*
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+USE_TEX=	latex:build dvipsk:build
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
