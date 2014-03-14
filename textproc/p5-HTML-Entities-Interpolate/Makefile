@@ -6,7 +6,6 @@ PORTVERSION=	1.05
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Call HTML::Entities::encode_entities, via a hash, within a string
@@ -19,6 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.45:${PORTSDIR}/devel/p5-Test-Pod
 
 USE_PERL5=	configure
-USES=		perl5
+USES=		perl5 tar:tgz
 
 .include <bsd.port.mk>
