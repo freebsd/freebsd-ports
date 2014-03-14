@@ -6,3 +6,6 @@ bin/vxcd
 bin/vxpwd
 bin/vxidump
 bin/vxcat
+man/man1/vxmount.1.gz
+man/man1/vxumount.1.gz
+man/man8/prtvtoc.8.gz
