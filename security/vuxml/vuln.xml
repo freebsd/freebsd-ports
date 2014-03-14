@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="eb426e82-ab68-11e3-9d09-000c2980a9f3">
+    <topic>mutt -- denial of service, potential remote code execution</topic>
+    <affects>
+      <package>
+	<name>mutt</name>
+	<range><lt>1.5.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Beatrice Torracca and Evgeni Golov report:</p>
+	<blockquote cite="http://www.securityfocus.com/archive/1/531431">
+	  <p>A buffer overflow has been discovered that could result in
+	    denial of service or potential execution of arbitrary code.</p>
+	  <p>This condition can be triggered by malformed RFC2047 header
+	    lines</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://packetstormsecurity.com/files/cve/CVE-2014-0467</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0467</url>
+      <cvename>CVE-2014-0467</cvename>
+    </references>
+    <dates>
+      <discovery>2014-03-12</discovery>
+      <entry>2014-03-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="777d7b9e-ab02-11e3-841e-60a44c524f57">
     <topic>wemux -- read-only can be bypassed</topic>
     <affects>
