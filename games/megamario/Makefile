@@ -16,22 +16,20 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 USES=		dos2unix gmake zip:infozip
-DOS2UNIX_FILES=	src/*.cpp src/*.h *.ini Makefile* *.txt *.desktop
+DOS2UNIX_GLOB=	*.cpp *.h *.ini Makefile* *.txt *.desktop
 USE_SDL=	sdl image mixer ttf
 USE_GL=		glu
 ALL_TARGET=	${PORTNAME}
-MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 pre-extract:
-		${MKDIR} ${WRKDIR}/${DISTNAME}
+		@${MKDIR} ${WRKDIR}/${DISTNAME}
 
-PORTDOCS=	CONTROLS.txt linux.txt readme.txt
-
+PORTDOCS=	CONTROLS.txt readme.txt
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/pixmaps/megamario.png|${PORTNAME}|' \
-		-e 's|Name=megamario|Name=Mega Mario|' \
+	@${REINPLACE_CMD} -e 's|/usr/share/pixmaps/megamario.png|${PORTNAME}|; \
+		s|Name=megamario|Name=Mega Mario|' \
 		${WRKSRC}/${PORTNAME}.desktop
 	@${REINPLACE_CMD} -e 's|slidebar.PNG|slidebar.png|' \
 		${WRKSRC}/data/levels/Edit2/main ${WRKSRC}/data/levels/3_2/main
@@ -40,6 +38,7 @@ post-patch:
 		${MV} $$i `echo $$i | ${SED} -e 's/PNG/png/;s/JPG/jpg/'`; done
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for d in help mp3music screens
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor

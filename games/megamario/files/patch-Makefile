@@ -1,5 +1,5 @@
---- ./Makefile.orig	2014-01-13 00:20:07.000000000 +0100
-+++ ./Makefile	2014-01-13 00:30:43.000000000 +0100
+--- ./Makefile.orig	2014-03-14 18:14:24.974932178 +0000
++++ ./Makefile	2014-03-14 18:19:52.624925473 +0000
 @@ -1,8 +1,7 @@
 -PREFIX  = /home/opt
  DATADIR = $(PREFIX)/share/$(TARGET)
@@ -11,3 +11,29 @@
  DEFINES = -DDATADIR=\"$(DATADIR)/\"
  OBJS    = src/bonus.o src/gamepad.o src/killerblume.o src/player.o \
    src/bowser.o      src/global.o    src/levels.o      src/spiny.o  \
+@@ -22,17 +21,17 @@
+ 	$(CXX) $(CXXFLAGS) $(DEFINES) -o $@ -c $<
+ 
+ install: $(TARGET)
+-	rm -fr $(DATADIR)
+-	mkdir -p $(PREFIX)/bin
+-	mkdir -p $(PREFIX)/share
+-	install -p -m 755 $(TARGET) $(PREFIX)/bin
+-	cp -a data $(DATADIR)
++#	rm -fr $(DATADIR)
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
++	mkdir -p $(DESTDIR)$(PREFIX)/share
++	install -p -m 755 $(TARGET) $(DESTDIR)$(PREFIX)/bin
++	cp -a data $(DESTDIR)$(DATADIR)
+ 	# fix broken permission <sigh>
+-	chmod 755 $(DATADIR)/gfx/tiles/pipes/left
+-	for i in `find $(DATADIR) -name "*.PNG"`; do \
++	chmod 755 $(DESTDIR)$(DATADIR)/gfx/tiles/pipes/left
++	for i in `find $(DESTDIR)$(DATADIR) -name "*.PNG"`; do \
+ 		mv $$i `echo $$i|sed s/PNG/png/`; \
+ 	done
+-	for i in `find $(DATADIR) -name "*.JPG"`; do \
++	for i in `find $(DESTDIR)$(DATADIR) -name "*.JPG"`; do \
+ 		mv $$i `echo $$i|sed s/JPG/jpg/`; \
+ 	done
+ 	
