@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asis
-PORTVERSION=	2011
-PORTREVISION=	3
+PORTVERSION=	2013
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
@@ -14,7 +13,7 @@ COMMENT=	GNAT implementation of Ada Semantic Interface Specification
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gnat_util>=2013:${PORTSDIR}/lang/gnat_util \
+BUILD_DEPENDS=	gprbuild>=20130416:${PORTSDIR}/devel/gprbuild \
 		xmlada>=3.2:${PORTSDIR}/textproc/xmlada \
 		${GUSTATIC}:${PORTSDIR}/lang/gnat_util
 RUN_DEPENDS=	${GUSTATIC}:${PORTSDIR}/lang/gnat_util
@@ -26,6 +25,7 @@ GUSTATIC=	${LOCALBASE}/lib/gnat_util/libgnat_util.a
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|OPSYS|ASISOPSYS|g' \
+		-e 's|(prefix)|(DESTDIR)$$(prefix)|g' \
 		${WRKSRC}/Makefile \
 		${WRKSRC}/Makefile.stub \
 		${WRKSRC}/common.gpr
