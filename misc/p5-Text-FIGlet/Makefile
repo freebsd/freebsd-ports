@@ -6,7 +6,6 @@ PORTVERSION=	2.19.3
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module to provide FIGlet abilities, akin to banner
@@ -19,6 +18,6 @@ TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
 USE_PERL5=	configure
-USES=		perl5
+USES=		perl5 tar:tgz
 
 .include <bsd.port.mk>
