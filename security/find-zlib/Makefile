@@ -16,13 +16,17 @@ LICENSE=	GPLv2
 
 NO_BUILD=	none
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 
 PLIST_FILES=	bin/find-zlib
+SHEBANG_FILES=	find-zlib
 
-NO_STAGE=	yes
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
+
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
