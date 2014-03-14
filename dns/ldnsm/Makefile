@@ -11,25 +11,13 @@ MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Manages LDAP enteries for the BIND9 SDB LDAP patch
 
 USES=		perl5
+NO_BUILD=	yes
 
-PLIST_FILES=	bin/ldnsm
-
-MAN1=		ldnsm.1
-
-MAN5=		dotldnsm.5
+PLIST_FILES=	bin/ldnsm man/man1/ldnsm.1.gz man/man5/dotldnsm.5.gz
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-#nothing to configure
-NO_STAGE=	yes
-do-configure:
-	@${ECHO} -n
-
-#nothing to build
-do-build:
-	@${ECHO} -n
-
 do-install:
-	@${EXEC} cd ${WRKSRC} ; ${WRKSRC}/install ${PREFIX}
+	@${EXEC} cd ${WRKSRC} ; ${WRKSRC}/install ${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
