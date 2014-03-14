@@ -22,8 +22,7 @@ RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	librsvg2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil libgui

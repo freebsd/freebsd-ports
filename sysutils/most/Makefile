@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-mmap
 MAKE_JOBS_UNSAFE=	yes
