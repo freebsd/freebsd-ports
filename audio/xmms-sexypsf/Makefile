@@ -15,7 +15,7 @@ COMMENT=	XMMS plugin for playing .psf files
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 

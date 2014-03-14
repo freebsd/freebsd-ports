@@ -16,9 +16,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

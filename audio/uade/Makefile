@@ -15,9 +15,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/uade2
 DATADIR=	${PREFIX}/share/uade2
