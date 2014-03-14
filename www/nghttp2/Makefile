@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	www net
-MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/2.0 C Library
@@ -29,8 +30,7 @@ USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_XZ=		yes
-USES=		compiler:c++11-lang pathfix pkgconfig
+USES=		compiler:c++11-lang pathfix pkgconfig tar:xz
 
 PORTDOCS=	*
 
