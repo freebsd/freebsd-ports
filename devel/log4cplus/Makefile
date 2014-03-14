@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	log4cplus
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
-DISTFILES=	log4cplus-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	reed@reedmedia.net
-COMMENT=	logging library for C++
+COMMENT=	Logging library for C++
 
 OPTIONS_DEFINE=	DOCS
 
-USE_GCC=	any
-USE_AUTOTOOLS=	libtool
+USES=		libtool pathfix
+USE_XZ=		yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-threads=yes
+CONFIGURE_ARGS=	--enable-threads=yes
 MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*
