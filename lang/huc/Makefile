@@ -15,23 +15,20 @@ OPTIONS_DEFINE=	DOCS
 NO_WRKSUBDIR=	yes
 
 USES=		gmake zip
+
 MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 .for file in huc isolink nesasm pceas pcxtool
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${PREFIX}/include/${PORTNAME}
-	@(cd ${WRKSRC}/include \
-		&& ${COPYTREE_SHARE} . ${PREFIX}/include/${PORTNAME})
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc \
-		&& ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	(cd ${WRKSRC}/include \
+		&& ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/${PORTNAME})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc \
+		&& ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
