@@ -241,7 +241,6 @@
     SUBDIR += imapproxy
     SUBDIR += iodine
     SUBDIR += ip6_int
-    SUBDIR += ipa_ip6fw
     SUBDIR += ipa_ipfw
     SUBDIR += ipfw-graph
     SUBDIR += ipgrab
@@ -876,8 +875,6 @@
     SUBDIR += polyorb
     SUBDIR += poptop
     SUBDIR += portfwd
-    SUBDIR += pppd23
-    SUBDIR += pppoa
     SUBDIR += pptpclient
     SUBDIR += proftpd-mod_ldap
     SUBDIR += prosearch

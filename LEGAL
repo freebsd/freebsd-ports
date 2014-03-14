@@ -236,7 +236,6 @@ sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible p
 simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Not for redistribution
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
-speedmgmt*		net/pppoa		Not for redistribution -- see http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
 srd-fpw*		japanese/srd-fpw	The original dictionary is not free
 stat.tar.Z		math/unixstat		License does not allow redistribution of binaries

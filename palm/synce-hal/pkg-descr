@@ -1,5 +1,0 @@
-SynCE is a project for connecting to devices running Windows CE or Pocket PC.
-synce-hal manages device connection process and advertises device info 
-to other programs through HAL interface.
-
-WWW: http://synce.sourceforge.net/
