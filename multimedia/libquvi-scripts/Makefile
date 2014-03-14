@@ -20,8 +20,7 @@ OPTIONS_SUB=	yes
 NSFW_DESC=	Enable adult website support
 
 GNU_CONFIGURE=	yes
-USE_XZ=		yes
-USES=		pathfix
+USES=		pathfix tar:xz
 
 PROJECTHOST=	quvi
 
