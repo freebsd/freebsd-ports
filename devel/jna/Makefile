@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jna
-PORTVERSION=	4.0
-PORTREVISION=	1
+PORTVERSION=	4.1.0
 CATEGORIES=	devel java
 MASTER_SITES=	GH
 
@@ -19,7 +18,7 @@ MAKE_ENV+=      ANT_OPTS=-Drelease -DARCH=${ANT_ARCH}
 USE_GITHUB=	yes
 GH_ACCOUNT=	twall
 GH_TAG=		${PORTVERSION}
-GH_COMMIT=	9b7ba38
+GH_COMMIT=	c490fc9
 
 PLIST_FILES=	%%JAVAJARDIR%%/jna-platform.jar \
 		%%JAVAJARDIR%%/jna.jar
@@ -29,7 +28,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	javadoc platform-${PORTVERSION:L}.0-javadoc.jar
+PORTDOCS=	javadoc platform-${PORTVERSION}-javadoc.jar
 .endif
 
 .if ${ARCH} == "i386"
@@ -39,8 +38,8 @@ ANT_ARCH=	x86-64
 .endif
 
 post-patch:
-	@${CHMOD} 755 ${WRKSRC}/native/libffi/configure
-	@${CHMOD} 755 ${WRKSRC}/native/libffi/install-sh
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	    ${WRKSRC}/native/Makefile
 
 post-build-script:
 .if ${PORT_OPTIONS:MDOCS}
@@ -56,7 +55,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && \
 	    ${COPYTREE_SHARE} javadoc ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/dist/platform-${PORTVERSION:L}.0-javadoc.jar \
+	${INSTALL_DATA} ${WRKSRC}/dist/platform-${PORTVERSION}-javadoc.jar \
 	    ${STAGEDIR}${DOCSDIR}
 .endif
 
