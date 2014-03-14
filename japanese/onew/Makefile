@@ -67,7 +67,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/libonew-${I}.a \
 	    ${STAGEDIR}${PREFIX}/lib/libonew-${I}.a
 .endfor
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.ONEW ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
