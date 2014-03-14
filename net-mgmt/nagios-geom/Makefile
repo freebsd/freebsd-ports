@@ -12,14 +12,16 @@ DISTNAME=	check_geom-${PORTVERSION}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Nagios plug-in to get geom(8) components status
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PATCH_STRIP=	-p1
 
-NO_STAGE=	yes
+SHEBANG_FILES=	check_geom
+
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/nagios
-	${INSTALL_SCRIPT} ${WRKSRC}/check_geom ${PREFIX}/libexec/nagios
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${WRKSRC}/check_geom \
+		${STAGEDIR}${PREFIX}/libexec/nagios
 
 .include <bsd.port.mk>
