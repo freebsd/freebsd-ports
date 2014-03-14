@@ -1,5 +1,16 @@
 --- src/Makefile.in.orig	2010-09-08 12:09:22.000000000 +0800
 +++ src/Makefile.in	2010-09-07 22:23:40.000000000 +0800
+@@ -9,8 +9,8 @@
+ libnvcontrol=./nvcontrol/libnvcontrol.a
+ 
+ prefix=$(DESTDIR)@prefix@
+-exec_prefix=$(DESTDIR)@exec_prefix@
+-bindir=$(DESTDIR)@bindir@
++exec_prefix=@exec_prefix@
++bindir=@bindir@
+ 
+ ifeq ($(HAVE_NVCONTROL), yes)
+     DEPS=$(libbackend) $(libnvcontrol)
 @@ -27,7 +27,7 @@
  	distclean install install-app install-recursive
  
@@ -18,3 +29,14 @@
  
  clean: clean-recursive clean-app
  clean-app:
+@@ -50,8 +52,8 @@
+ install: install-recursive install-app
+ install-app:
+ 	mkdir -p $(bindir)
+-	$(INSTALL) -c nvclock $(DESTDIR)$(bindir)/nvclock
+-	$(INSTALL) -c smartdimmer $(DESTDIR)$(bindir)/smartdimmer
++	$(INSTALL) -c nvclock $(bindir)/nvclock
++	$(INSTALL) -c smartdimmer $(bindir)/smartdimmer
+ 
+ 
+ uninstall: uninstall-recursive uninstall-app
