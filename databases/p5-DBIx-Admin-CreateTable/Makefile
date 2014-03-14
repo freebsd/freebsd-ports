@@ -6,7 +6,6 @@ PORTVERSION=	2.10
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create and drop tables, primary indexes, and sequences
@@ -19,6 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Version>=1.002.003:${PORTSDIR}/devel/p5-Test-Version
 
 USE_PERL5=	configure
-USES=		perl5
+USES=		perl5 tar:tgz
 
 .include <bsd.port.mk>
