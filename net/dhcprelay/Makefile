@@ -10,13 +10,12 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Lightweight DHCP Relay Agent with GIF tunnel support
 
-LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet
 
-PLIST_FILES=	bin/dhcprelay 
+PLIST_FILES=	bin/dhcprelay
 USE_RC_SUBR=	${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dhcprelay ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dhcprelay ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
