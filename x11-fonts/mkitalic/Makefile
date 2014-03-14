@@ -18,15 +18,13 @@ EXTRACT_CMD=	${BZCAT}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mkitalic
 NO_WRKSUBDIR=	yes
-USE_BZIP2=	yes
-USES=		shebangfix perl5
+USES=		shebangfix perl5 tar:bzip2
 SHEBANG_FILES=	mkitalic
 
-NO_STAGE=	yes
 do-build:
 	@${DO_NADA}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mkitalic ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/mkitalic ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
