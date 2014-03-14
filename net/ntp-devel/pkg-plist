@@ -1,3 +1,11 @@
+man/man5/ntp.conf.5.gz
+man/man5/ntp.keys.5.gz
+man/man8/ntp-keygen.8.gz
+man/man8/ntpd.8.gz
+man/man8/ntpdc.8.gz
+man/man8/ntpq.8.gz
+%%NTPSNMPD%%man/man8/ntpsnmpd.8.gz
+man/man8/sntp.8.gz
 %%SSL%%sbin/ntp-keygen
 sbin/ntp-wait
 sbin/ntpd
