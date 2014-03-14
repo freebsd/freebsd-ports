@@ -6,7 +6,6 @@ PORTVERSION=	2.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read/Write .ini style files with as little code as possible
@@ -14,7 +13,7 @@ COMMENT=	Read/Write .ini style files with as little code as possible
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
