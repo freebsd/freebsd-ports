@@ -24,11 +24,11 @@
 %%SITE_PERL%%/Type/Tiny/Manual/Coercions.pod
 %%SITE_PERL%%/Type/Tiny/Manual/Libraries.pod
 %%SITE_PERL%%/Type/Tiny/Manual/Params.pod
+%%SITE_PERL%%/Type/Tiny/Manual/Policies.pod
 %%SITE_PERL%%/Type/Tiny/Manual/UsingWithMoo.pod
 %%SITE_PERL%%/Type/Tiny/Manual/UsingWithMoose.pod
 %%SITE_PERL%%/Type/Tiny/Manual/UsingWithMouse.pod
 %%SITE_PERL%%/Type/Tiny/Manual/UsingWithOther.pod
-%%SITE_PERL%%/Type/Tiny/Manual/Policies.pod
 %%SITE_PERL%%/Type/Tiny/Role.pm
 %%SITE_PERL%%/Type/Tiny/Union.pm
 %%SITE_PERL%%/Type/Utils.pm
@@ -46,7 +46,6 @@
 %%PERL5_MAN3%%/Devel::TypeTiny::Perl56Compat.3.gz
 %%PERL5_MAN3%%/Devel::TypeTiny::Perl58Compat.3.gz
 %%PERL5_MAN3%%/Error::TypeTiny.3.gz
-%%PERL5_MAN3%%/Type::Tiny::Manual::Policies.3.gz
 %%PERL5_MAN3%%/Error::TypeTiny::Assertion.3.gz
 %%PERL5_MAN3%%/Error::TypeTiny::Compilation.3.gz
 %%PERL5_MAN3%%/Error::TypeTiny::WrongNumberOfParameters.3.gz
@@ -69,6 +68,7 @@
 %%PERL5_MAN3%%/Type::Tiny::Manual::Coercions.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::Libraries.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::Params.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual::Policies.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMoo.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMoose.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMouse.3.gz
