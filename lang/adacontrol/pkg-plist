@@ -1,10 +1,6 @@
 bin/adactl
 bin/pfni
 bin/ptree
-%%DOCSDIR%%/adacontrol_pm.html
-%%DOCSDIR%%/adacontrol_pm.pdf
-%%DOCSDIR%%/adacontrol_ug.html
-%%DOCSDIR%%/adacontrol_ug.pdf
 share/doc/gps/html/adacontrol_pm.html
 share/doc/gps/html/adacontrol_ug.html
 share/gprconfig/adacontrol.xml
@@ -14,7 +10,6 @@ share/gps/plug-ins/adactl_ask.gif
 share/gps/plug-ins/pfni.py
 share/gps/plug-ins/pfni.xml
 share/gps/plug-ins/zadactl.xml
-@dirrm %%DOCSDIR%%
 @dirrmtry share/doc/gps/html
 @dirrmtry share/doc/gps
 @dirrmtry share/doc
