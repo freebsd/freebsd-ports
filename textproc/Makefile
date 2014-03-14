@@ -458,6 +458,7 @@
     SUBDIR += openjade
     SUBDIR += opensched
     SUBDIR += opensp
+    SUBDIR += opentoken
     SUBDIR += openvanilla-framework
     SUBDIR += openvanilla-modules
     SUBDIR += or-aspell

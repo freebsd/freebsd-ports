@@ -1,0 +1,11 @@
+--- build/common.gpr.orig	2014-02-21 20:14:57.000000000 +0000
++++ build/common.gpr
+@@ -41,7 +41,7 @@ project Common is
+          "-O2",
+          "-gnat2012",
+          "-gnatfnoqQ",
+-         "-gnatwaeL",
++         "-gnatwaL",
+          "-fstack-check");
+ 
+       --  The project file syntax does not let us set a variable in a

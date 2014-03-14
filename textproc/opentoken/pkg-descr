@@ -1,0 +1,9 @@
+OpenToken is a facility for performing token analysis and parsing within
+the Ada language. It is designed to provide all the functionality of a
+traditional lexical analyzer/parser generator, such as lex/yacc. But due
+to the magic of inheritance and runtime polymorphism it is implemented
+entirely in Ada as withed-in code. No precompilation step is required, and
+no messy tool-generated source code is created. The tradeoff is that the
+grammar is generated at runtime.
+
+WWW: http://stephe-leake.org/ada/opentoken.html
