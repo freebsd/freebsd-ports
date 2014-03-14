@@ -4,7 +4,7 @@ bin/muttbug
 @group mail
 @mode 2755
 bin/mutt_dotlock
-@group
+@group wheel
 @mode
 bin/pgpewrap
 bin/pgpring

@@ -2,10 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-PORTVERSION=	1.5.22
+PORTVERSION=	1.5.23
 CATEGORIES+=	mail ipv6
-MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
+MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
+		ftp://ftp.mutt.org/mutt/devel/ \
+		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/ \
+		ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
 		http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
