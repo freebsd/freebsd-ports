@@ -34,11 +34,10 @@ MAKE_ARGS+=	CC=${CC} CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP=${STRIP_
 MAKE_JOBS_UNSAFE=	yes
 PATCH_DIST_ARGS=--batch --directory ${WRKSRC} --forward --quiet --remove-empty-files ${PATCH_DIST_STRIP}
 REINPLACE_ARGS=	-i ''
-USE_BZIP2=	yes
-USES=		iconv pkgconfig shebangfix
+USES=		iconv pkgconfig shebangfix tar:bzip2
 WANT_GNOME=	yes
 
-PATCHLEVEL=	193
+PATCHLEVEL=	205
 PATCHFILES!=	/usr/bin/jot -s " " -w "%03d" ${PATCHLEVEL} 1 ${PATCHLEVEL}
 BADPATCHES=	064 087 147 # empty
 .for p in ${BADPATCHES}
