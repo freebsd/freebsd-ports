@@ -42,6 +42,7 @@ ONLY_FOR_ARCHS=	i386 amd64 powerpc
 # Base GCC used to cause problems, so compile using clang which is usualy in
 # base. However, the clang version shipped with some older FreeBSD version will
 # not compile Mono, in such a case, compile using a clang port.
+.if ${OPSYS} == FreeBSD
 .if ${OSVERSION} >= 902001 && exists(/usr/bin/clang)
 CC=	/usr/bin/clang
 CXX=	/usr/bin/clang++
@@ -51,6 +52,7 @@ BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
 CC=	clang33
 CXX=	clang33
 CPP=	clang-cpp33
+.endif
 .endif
 
 pre-everything::
