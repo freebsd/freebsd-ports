@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,6 +21,7 @@ CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include/gpgme
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PHP=	yes
 USE_PHPEXT=	yes
+USES=		tar:tgz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$GNUPG_DIR/lib|${LOCALBASE}/lib|; s| -ldl||g' ${WRKSRC}/config.m4
