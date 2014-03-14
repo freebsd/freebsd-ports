@@ -3,6 +3,7 @@
 
 PORTNAME=	aoi
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/${PORTNAME}/ArtOfIllusion/${PORTVERSION} \
 		SF/${PORTNAME}/ArtOfIllusion-manual/${PORTVERSION}:docs
