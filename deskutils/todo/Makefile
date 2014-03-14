@@ -17,32 +17,20 @@ CONFLICTS=	devtodo-[0-9]*
 OPTIONS_DEFINE=	BASH
 BASH_DESC=	Install programmable completions for Bash
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 NO_BUILD=	yes
+USES=		shebangfix
 
 PLIST_FILES=	bin/todo etc/todo.cfg
 
-.if ${PORT_OPTIONS:MBASH}
-PLIST_FILES+=	etc/bash_completion.d/todo
-PLIST_DIRSTRY+=	etc/bash_completion.d
-.endif
+SHEBANG_FILES=	todo.sh todo_completion
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,/bin/bash,${LOCALBASE}/bin/bash," ${WRKSRC}/todo.sh
-.if ${PORT_OPTIONS:MBASH}
-	@${REINPLACE_CMD} -e "s,/bin/bash,${LOCALBASE}/bin/bash," ${WRKSRC}/todo_completion
-.endif
+BASH_PLIST_FILES=	etc/bash_completion.d/todo
+BAHS_PLIST_DIRSTRY=	etc/bash_completion.d
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/todo.sh ${PREFIX}/bin/todo
-	@${INSTALL_DATA} ${WRKSRC}/todo.cfg ${PREFIX}/etc/todo.cfg
-
-post-install:
-.if ${PORT_OPTIONS:MBASH}
-	${MKDIR} ${PREFIX}/etc/bash_completion.d
-	${INSTALL_DATA} ${WRKSRC}/todo_completion ${PREFIX}/etc/bash_completion.d/todo
-.endif
+	@${INSTALL_SCRIPT} ${WRKSRC}/todo.sh ${STAGEDIR}${PREFIX}/bin/todo
+	@${INSTALL_DATA} ${WRKSRC}/todo.cfg ${STAGEDIR}${PREFIX}/etc/todo.cfg
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/todo_completion ${STAGEDIR}${PREFIX}/etc/bash_completion.d/todo
 
 .include <bsd.port.mk>
