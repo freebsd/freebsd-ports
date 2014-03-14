@@ -22,8 +22,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USE_XZ=		yes
-USES=		cmake
+USES=		cmake tar:xz
 
 post-patch:
 	@${REINPLACE_CMD} \
