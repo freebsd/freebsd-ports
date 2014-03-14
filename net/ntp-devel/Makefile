@@ -17,13 +17,9 @@ COMMENT=	The Network Time Protocol Distribution
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
 AUTOMAKE_ARGS=	--add-missing
-USES=	pathfix
-LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
+USES=		pathfix
+LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
-MAN5=		ntp.conf.5 ntp.keys.5
-MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8
-
-NO_STAGE=	yes
 .include "Makefile.inc"
 
 .include <bsd.port.options.mk>
@@ -48,12 +44,13 @@ CONFIGURE_ARGS+=	--enable-ntp-signd
 
 .if ${PORT_OPTIONS:MNTPSNMPD}
 PLIST_FILES+=		sbin/ntpsnmpd
-MAN8+=			ntpsnmpd.8
+PLIST_SUB+=		NTPSNMPD=""
 BUILD_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
-LIB_DEPENDS=		netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 RUN_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
 .else
 CONFIGURE_ARGS+=	--without-ntpsnmpd
+PLIST_SUB+=		NTPSNMPD="@comment "
 .endif
 
 .for D in ${NTP_DRIVERS}
@@ -84,13 +81,13 @@ post-patch:
 			  ${WRKSRC}/aclocal.m4
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/conf/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${EXAMPLESDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${FIND} ${WRKSRC}/html -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@cd ${WRKSRC}/html && ${FIND} . -print | \
-		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${DOCSDIR}
+		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

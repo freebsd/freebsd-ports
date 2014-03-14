@@ -19,14 +19,6 @@ IGNORE=		RC branch not currently active
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
 
-MAN1=		sntp.1 \
-		ntpd.1 \
-		ntpdc.1 \
-		ntpq.1 \
-		ntpsnmpd.1 \
-		ntp-keygen.1 \
-
-NO_STAGE=	yes
 .include "Makefile.inc"
 
 .include <bsd.port.options.mk>
@@ -64,13 +56,13 @@ CONFIGURE_ARGS+=	--enable-${D}
 .endfor
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/conf/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${EXAMPLESDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${FIND} ${WRKSRC}/html -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@cd ${WRKSRC}/html && ${FIND} . -print | \
-		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${DOCSDIR}
+		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
