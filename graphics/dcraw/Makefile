@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dcraw
-PORTVERSION=	9.19
+PORTVERSION=	9.20
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -11,11 +11,11 @@ COMMENT=	Decoder for RAW files from digital cameras
 
 LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		liblcms.so:${PORTSDIR}/graphics/lcms
+		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/jasper
-LDFLAGS+=	-L${LOCALBASE}/lib -lm -ljasper -ljpeg -llcms
-USE_XZ=		yes
+LDFLAGS+=	-L${LOCALBASE}/lib -lm -ljasper -ljpeg -llcms2
+USES=		tar:xz
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
