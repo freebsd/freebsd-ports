@@ -24,8 +24,7 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-USE_XZ=		yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig tar:xz
 
 GTK3_CONFIGURE_WITH=	gtk
 GTK3_USE=		GNOME=gtk30
