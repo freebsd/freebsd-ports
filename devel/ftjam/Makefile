@@ -6,16 +6,14 @@ PORTVERSION=	2.5.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/freetype/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Small build tool that can be used as a replacement for make(1)
 
-CONFLICTS=	jam-[0-9]*
+OPTIONS_DEFINE=	DOCS
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 
-PORTDOCS=	\
-		Jam.html \
+PORTDOCS=	Jam.html \
 		Jambase.html \
 		Jamfile.html \
 		Porting \
@@ -26,18 +24,14 @@ PORTDOCS=	\
 PLIST_FILES=	bin/${PORTNAME}
 
 do-configure:
-	@${REINPLACE_CMD} -E \
-		-e 's|^(CC[[:space:]]*=).*$$|\1${CC}|' \
-		-e 's|^(CFLAGS[[:space:]]*=).*$$|\1${CFLAGS}|' \
-		${BUILD_WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e '/^CC/s|=|?=|; /^CFLAGS/s|=|?=|' \
+	    ${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+. for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 . endfor
-# INSTALL_WRKSRC changes depending on ARCH
-	@${INSTALL_PROGRAM} `${FIND} ${WRKSRC} -name "bin.unix*"`/jam \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin.unix/jam ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
