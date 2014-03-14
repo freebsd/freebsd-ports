@@ -13,17 +13,16 @@ EXTRACT_SUFX=	.cpp
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Converts text into the Doc format used by PalmPilots
 
-NO_WRKSUBDIR=	YES
+NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/pilot_makedoc
 ALL_TARGET=	pilot_makedoc
 
-NO_STAGE=	yes
 do-extract:
-		@${MKDIR} ${WRKDIR}
-		@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
-		@${CP} ${FILESDIR}/Makefile ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 
 do-install:
-		@${INSTALL_PROGRAM} ${WRKDIR}/pilot_makedoc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/pilot_makedoc ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
