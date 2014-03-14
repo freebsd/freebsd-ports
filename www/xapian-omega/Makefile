@@ -28,8 +28,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USE_XZ=		yes
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:xz
 
 MORE_PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PORTDOCS=	${MORE_PORTDOCS} cgiparams.html index.html omegascript.html \
