@@ -25,8 +25,7 @@ PORTSCOUT=	limit:0.4.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_XZ=		yes
-USES=		iconv lua pathfix pkgconfig
+USES=		iconv lua pathfix pkgconfig tar:xz
 
 PROJECTHOST=	quvi
 
