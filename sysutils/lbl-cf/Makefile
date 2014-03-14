@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cf
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ee.lbl.gov/ \
 		http://www.tux.org//pub/net/ftp.ee.lbl.gov/ \
@@ -13,14 +13,16 @@ PKGNAMEPREFIX=	lbl-
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Unix time to formated time and date filter
 
-PLIST_FILES=	bin/cf
+LICENSE=	BSD3CLAUSE
 
-MAN1=		cf.1
+INSTALL_TARGET=	install install-man
+
+PLIST_FILES=	bin/cf \
+		man/man1/cf.1.gz
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
-post-install:
-	(cd ${WRKSRC} && make install-man)
+pre-install:
+	@${STRIP_CMD} ${WRKSRC}/cf
 
 .include <bsd.port.mk>
