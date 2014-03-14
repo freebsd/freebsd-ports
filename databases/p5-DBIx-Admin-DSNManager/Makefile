@@ -6,7 +6,6 @@ PORTVERSION=	2.01
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manage a file of DSNs, for both testing and production
@@ -22,6 +21,6 @@ TEST_DEPENDS=	p5-Test-Version>=1.002.003:${PORTSDIR}/devel/p5-Test-Version \
 		p5-Try-Tiny>=0.06:${PORTSDIR}/lang/p5-Try-Tiny
 
 USE_PERL5=	configure
-USES=		perl5
+USES=		perl5 tar:tgz
 
 .include <bsd.port.mk>
