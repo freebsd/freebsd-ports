@@ -191,7 +191,6 @@
     SUBDIR += libxspf
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f10-libv4l
-    SUBDIR += linux-huludesktop
     SUBDIR += linux-realplayer
     SUBDIR += linux-tsmuxer
     SUBDIR += linux-xmovie
