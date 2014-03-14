@@ -11,30 +11,33 @@
    </targetset>
  
    <!-- x86-windows (mingw) -->
-@@ -144,10 +144,29 @@
+@@ -144,10 +144,32 @@
  
    <!-- Freebsd -->
    <targetset>
 -    <target>x86-freebsd</target>
      <target>i.86-.*freebsd.*</target>
++    <target>amd64-.*-freebsd.*</target>
 +    <target>x86_64-.*-freebsd.*</target>
    </targetset>
  
-+ <!-- DragonFlyBSD -->
++  <!-- DragonFlyBSD -->
 +  <targetset>
 +    <target>i.86-.*-dragonfly.*</target>
 +    <target>x86_64-.*-dragonfly.*</target>
 +  </targetset>
 +
-+ <!-- NetBSD -->
++  <!-- NetBSD -->
 +  <targetset>
 +    <target>i.86-.*-netbsd.*</target>
++    <target>amd64-.*-netbsd.*</target>
 +    <target>x86_64-.*-netbsd.*</target>
 +  </targetset>
 +
-+ <!-- OpenBSD -->
++  <!-- OpenBSD -->
 +  <targetset>
 +    <target>i.86-.*-openbsd.*</target>
++    <target>amd64-.*-openbsd.*</target>
 +    <target>x86_64-.*-openbsd.*</target>
 +  </targetset>
 +
