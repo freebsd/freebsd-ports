@@ -1,0 +1,13 @@
+--- src/libf/Makefile.in.orig	2013-10-27 00:53:18.000000000 +0800
++++ src/libf/Makefile.in	2014-03-09 22:42:45.296474221 +0800
+@@ -351,8 +351,8 @@
+ 	$(SED) -e "s%/\*%!%g" -e "s%\*/%%g" $< > $@
+ 
+ install: pnetcdf.inc
+-	$(INSTALL) -d -m 755 $(INCDIR)
+-	$(INSTALL_DATA) pnetcdf.inc $(INCDIR)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(INCDIR)
++	$(INSTALL_DATA) pnetcdf.inc $(DESTDIR)$(INCDIR)
+ 
+ uninstall:
+ 	$(RM) -f $(INCDIR)/pnetcdf.inc

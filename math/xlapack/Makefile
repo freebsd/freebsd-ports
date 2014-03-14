@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlapack
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Extended Precision LAPACK

@@ -1,0 +1,19 @@
+MozJPEG is a fork of libjpeg-turbo with 'jpgcrush' functionality built in.
+
+The goal is to provide a production-quality JPEG encoder that improves
+compression while maintaining compatibility with the vast majority of deployed
+decoders.
+
+The 'jpgcrush' feature finds the progressive coding configuration which uses the
+fewest bits. This most frequently reduces file size by 2-10%, but those are not
+hard limits. Significantly greater reductions have been observed.
+
+Library configuration defaults are the same as for libjpeg-turbo, in order to
+make transitions as painless as possible. There are new configuration options
+for new features, but they are not enabled by default.
+
+The 'cjpeg' program defaults are not the same as for the equivalent program in
+libjpeg-turbo. The 'cjpeg' defaults for mozjpeg are set to aggressively optimize
+for smaller file sizes.
+
+WWW: https://github.com/mozilla/mozjpeg/

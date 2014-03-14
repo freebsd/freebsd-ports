@@ -9,7 +9,6 @@ COMMENT=	A Japanese/Chinese/Korean input method (Korean server)
 MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-server
 PKGDIR=		${.CURDIR}
 
-WNNTYPE=	KWNN
+OPTIONS_DEFAULT=KWNN SERVER
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

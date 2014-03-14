@@ -3,7 +3,7 @@
 
 PORTNAME=	psi3
 PORTVERSION=	3.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	SF/psicode/psi/${PORTVERSION} \
 		http://www.psicode.org/doc/:doc \

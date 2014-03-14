@@ -4,11 +4,10 @@
 PORTNAME=	nauty
 PORTVERSION=	2.4r2
 CATEGORIES=	math
-MASTER_SITES=	http://cs.anu.edu.au/~bdm/nauty/ \
-		http://www.c-s.li/ports/
+MASTER_SITES=	http://cs.anu.edu.au/~bdm/nauty/
 DISTNAME=	${PORTNAME}24r2
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brendan McKay's graph isomorphism tester
 
 WRKSRC=		${WRKDIR}/${PORTNAME}24r2

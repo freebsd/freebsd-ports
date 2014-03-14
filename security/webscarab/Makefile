@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	niels
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for analysing HTTP and HTTPS web application traffic
 
-USE_ZIP=	YES
+USES=		zip
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

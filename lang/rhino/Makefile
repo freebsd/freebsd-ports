@@ -33,6 +33,8 @@ LINEDIT_DESC=	Enable line editing in the Rhino shell
 
 OPTIONS_DEFAULT=	LINEDIT
 
+USES=		zip
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
@@ -43,7 +45,6 @@ SUB_LIST=	RHINOJAR=${RHINOJAR} JLINEJAR="${JLINEJAR}"
 
 USE_ANT=	yes
 USE_JAVA=	yes
-USE_ZIP=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}${DISTVERSION}
 

@@ -38,6 +38,7 @@ include/marble/GeoDataItemIcon.h
 include/marble/GeoDataLabelStyle.h
 include/marble/GeoDataLatLonAltBox.h
 include/marble/GeoDataLatLonBox.h
+include/marble/GeoDataLatLonQuad.h
 include/marble/GeoDataLineString.h
 include/marble/GeoDataLineStyle.h
 include/marble/GeoDataLinearRing.h

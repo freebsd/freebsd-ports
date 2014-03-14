@@ -10,12 +10,14 @@ libexec/opensmtpd/table-passwd
 %%SQLITE%%libexec/opensmtpd/table-sqlite
 %%LDAP%%libexec/opensmtpd/table-ldap
 %%PGSQL%%libexec/opensmtpd/table-postgres
+%%REDIS%%libexec/opensmtpd/table-redis
 libexec/opensmtpd/scheduler-ram
 libexec/opensmtpd/scheduler-stub
 libexec/opensmtpd/filter-dnsbl
 libexec/opensmtpd/filter-monkey
 libexec/opensmtpd/filter-stub
 libexec/opensmtpd/filter-trace
+libexec/opensmtpd/filter-void
 libexec/opensmtpd/encrypt
 sbin/smtpctl
 sbin/smtpd

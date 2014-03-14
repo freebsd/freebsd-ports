@@ -12,6 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Applet to originize your preferred applications on the GNOME Panel
 
+DEPRECATED=	gnome-panel 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
+
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

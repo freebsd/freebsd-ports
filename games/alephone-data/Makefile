@@ -15,7 +15,7 @@ COMMENT=	Released Marathon data files for the Aleph One port
 
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_CDROM=	Bungie/Microsoft do not allow charging for Marathon data files

@@ -32,38 +32,20 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.SILENT:
-
 post-patch:
 	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
-
-#
-# Install
-#
 
 do-install: install-fonts install-docs
 
 install-fonts:
-	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.TXT ${FONTSDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.TXT ${STAGEDIR}${FONTSDIR}
 
 install-docs:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/RELEASENOTES.TXT ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.TXT ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/RELEASENOTES.TXT ${STAGEDIR}${DOCSDIR}
 
-post-install:
-	${ECHO_MSG} "===> Running fc-cache"
-	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
-	${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
-	${ECHO_MSG}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

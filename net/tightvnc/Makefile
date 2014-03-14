@@ -14,7 +14,7 @@ COMMENT=	Enhanced version of VNC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
 		xauth:${PORTSDIR}/x11/xauth \
 		xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts
@@ -28,14 +28,10 @@ CFLAGS+=	-Wno-return-type
 USE_BZIP2=	yes
 USE_XORG=	xaw
 ALL_TARGET=	World
-NO_INSTALL_MANPAGES=	yes
-
-MAN1=		Xvnc.1 vncviewer.1 vncpasswd.1 vncconnect.1 vncserver.1
 
 OPTIONS_DEFINE=	JVNC_VIEWER
 JVNC_VIEWER_DESC=	Install Java-based vnc viewer
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJVNC_VIEWER}
@@ -58,7 +54,7 @@ IGNORE=		vnc has already been installed, please uninstall it first
 
 post-patch:
 .for file in vncviewer/Imakefile Xvnc/config/cf/vnclibs.def
-	@${REINPLACE_CMD} -i '' -e "s|%%LOCALBASE%%|${PREFIX}|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -i '' -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -i '' -e "s|/usr/local/vnc/classes|${DATADIR}/classes|g" \
 		${WRKSRC}/vncserver
@@ -66,15 +62,15 @@ post-patch:
 		s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/Xvnc/config/cf/FreeBSD.cf
 
 do-install:
-	@(cd ${WRKSRC}; ./vncinstall ${PREFIX}/bin ${PREFIX}/man)
+	@(cd ${WRKSRC}; ./vncinstall ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/man)
 .if defined(STRIP) && ${STRIP} != ""
 .for FILE in Xvnc vncviewer vncpasswd vncconnect
-	@${STRIP_CMD} ${PREFIX}/bin/${FILE}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${FILE}
 .endfor
 .endif
 .if ${PORT_OPTIONS:MJVNC_VIEWER}
-	@${MKDIR} ${DATADIR}/classes
-	${INSTALL_DATA} ${WRKSRC}/classes/*.* ${DATADIR}/classes
+	@${MKDIR} ${STAGEDIR}${DATADIR}/classes
+	${INSTALL_DATA} ${WRKSRC}/classes/*.* ${STAGEDIR}${DATADIR}/classes
 .endif
 
 .include <bsd.port.post.mk>

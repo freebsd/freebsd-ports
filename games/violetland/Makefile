@@ -14,10 +14,9 @@ COMMENT=	Top-down survival shoot 'em up
 
 LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
-USE_ZIP=	yes
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
-USES=		cmake gettext
+USES=		cmake gettext zip
 USE_DOS2UNIX=	CMakeLists.txt src/system/utility/FileUtility.cpp
 CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
 

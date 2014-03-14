@@ -2,7 +2,7 @@
 
 PORTNAME=	rtorrent-devel
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++ (development version)
 
-BUILD_DEPENDS=	libtorrent-devel=0.13.3_1:${PORTSDIR}/net-p2p/libtorrent-devel
-RUN_DEPENDS=	libtorrent-devel=0.13.3_1:${PORTSDIR}/net-p2p/libtorrent-devel
+BUILD_DEPENDS=	libtorrent-devel=0.13.3_2:${PORTSDIR}/net-p2p/libtorrent-devel
+RUN_DEPENDS=	libtorrent-devel=0.13.3_2:${PORTSDIR}/net-p2p/libtorrent-devel
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	rtorrent-[0-9]*

@@ -1,6 +1,0 @@
-Free source code for a the complete DICE C compiler core. Will compile easily
-on the Amiga, FreeBSD, Linux and other Unix systems. Able to create both
-relocatable and fixed address (ROM) based code. Quite suitable for embedded
-68K development on chips such as the 68000 / 68302 / 68306. 
-
-WWW: http://www.obviously.com/dice/

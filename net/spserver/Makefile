@@ -20,8 +20,7 @@ ALL_TARGET=	all build_openssl
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	GNUTLS
-#		MATRIXSSL	"Enable matrixssl support" off \
-#		XYSSL		"Enable xyssl support" off
+#		MATRIXSSL	"Enable matrixssl support" off
 
 .include <bsd.port.options.mk>
 
@@ -39,14 +38,6 @@ ALL_TARGET+=	build_gnutls
 PLIST_SUB+=	WITH_GNUTLS=""
 .else
 PLIST_SUB+=	WITH_GNUTLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MXYSSL}
-BUILD_DEPENDS=	${LOCALBASE}/lib/libxyssl.a:${PORTSDIR}/security/xyssl
-ALL_TARGET+=	build_xyssl
-PLIST_SUB+=	WITH_XYSSL=""
-.else
-PLIST_SUB+=	WITH_XYSSL="@comment "
 .endif
 
 post-patch:
@@ -75,12 +66,6 @@ do-install:
 	@${INSTALL} ${WRKSRC}/matrixssl/spmatrixssl.hpp ${STAGEDIR}/${PREFIX}/include/spserver
 	@${INSTALL} ${WRKSRC}/matrixssl/libspmatrixssl.so ${STAGEDIR}/${PREFIX}/lib/libspmatrixssl.so.1
 	@${LN} -s ${PREFIX}/lib/libspmatrixssl.so.1 ${STAGEDIR}/${PREFIX}/lib/libspmatrixssl.so
-.endif
-
-.if ${PORT_OPTIONS:MXYSSL}
-	@${INSTALL} ${WRKSRC}/xyssl/spxyssl.hpp ${STAGEDIR}/${PREFIX}/include/spserver
-	@${INSTALL} ${WRKSRC}/xyssl/libspxyssl.so ${STAGEDIR}/${PREFIX}/lib/libspxyssl.so.1
-	@${LN} -s ${PREFIX}/lib/libspxyssl.so.1 ${STAGEDIR}/${PREFIX}/lib/libspxyssl.so
 .endif
 
 .include <bsd.port.mk>

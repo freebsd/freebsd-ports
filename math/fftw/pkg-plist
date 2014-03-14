@@ -4,9 +4,11 @@ lib/lib%%FFTW_SUFX%%fftw.a
 lib/lib%%FFTW_SUFX%%fftw.la
 lib/lib%%FFTW_SUFX%%fftw.so
 lib/lib%%FFTW_SUFX%%fftw.so.2
+lib/lib%%FFTW_SUFX%%fftw.so.2.0.7
 lib/lib%%FFTW_SUFX%%rfftw.a
 lib/lib%%FFTW_SUFX%%rfftw.la
 lib/lib%%FFTW_SUFX%%rfftw.so
 lib/lib%%FFTW_SUFX%%rfftw.so.2
-%%DEF%%%%PORTDOCS%%%%DOCSDIR%%/fftw.ps
-%%DEF%%%%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/lib%%FFTW_SUFX%%rfftw.so.2.0.7
+%%PORTDOCS%%%%DOCSDIR%%/fftw.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

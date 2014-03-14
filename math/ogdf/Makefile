@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	COIN ABACUS
 COIN_DESC=	Use the Coin Open Solver Interface (Osi)
 ABACUS_DESC=	Use the ABACUS branch-and-cut library
 
-USE_ZIP=	yes
+USES=		zip
 USE_LDCONFIG=	yes
 USE_PYTHON=	build
 

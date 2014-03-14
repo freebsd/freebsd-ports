@@ -12,8 +12,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Network benchmark
 
 WRKSRC=		${WRKDIR}
-USE_ZIP=	yes
-USES=		gmake
+USES=		gmake zip
 PLIST_FILES=	bin/netio
 
 CFLAGS+=	-DUNIX ${PTHREAD_CFLAGS}

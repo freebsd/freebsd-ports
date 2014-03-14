@@ -22,7 +22,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	PYTHON=${LOCALBASE}/bin/python2 \
 		PREFIX=${PREFIX}
 
-NO_STAGE=	yes
 python_OLD_CMD?=	/usr/bin/env python
 python_CMD?=		${LOCALBASE}/bin/python2
 SHEBANG_FILES=		examples/*.py examples/*/*.py waf test/*.py
@@ -34,6 +33,6 @@ do-build:
 	@cd ${WRKSRC} && ./waf
 
 do-install:
-	@cd ${WRKSRC} && ./waf install
+	cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ./waf install
 
 .include <bsd.port.mk>

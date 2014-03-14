@@ -17,7 +17,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		import:${PORTSDIR}/graphics/ImageMagick			\
 		gocr:${PORTSDIR}/graphics/gocr				\
 		gifasm:${PORTSDIR}/graphics/giflib			\
-		spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin	\
+		spamassassin:${PORTSDIR}/mail/spamassassin	\
 		p5-String-Approx>=0:${PORTSDIR}/devel/p5-String-Approx
 
 CONFLICTS=	p5-FuzzyOcr-devel-[0-9]*

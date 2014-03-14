@@ -58,7 +58,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/share/flightgear/version:${PORTSDIR}/games/flightgear-data
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip:infozip
 WRKSRC=	${WRKDIR}/fgaircraft
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 DATADIR=	${PREFIX}/share/flightgear/Aircraft

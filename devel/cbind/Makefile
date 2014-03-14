@@ -7,13 +7,13 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.kuleuven.ac.be/pub/Ada-Belgium/cdrom/ase02_02/tools/cbind/ \
 			   ftp://ftp.cnam.fr/pub2/Ada/PAL/swtools/cbind/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator for "thin" Ada bindings to C
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		zip
 MAKE_JOBS_UNSAFE=	yes
 
 ${WRKSRC}=	${WRKDIR}/${PORTNAME}

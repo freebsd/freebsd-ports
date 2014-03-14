@@ -11,6 +11,8 @@ DISTFILES=		${PORTNAME}-src${EXTRACT_SUFX}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Logical game: problems with packets in cave
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 WRKSRC=			${WRKDIR}/sokoban
 ALL_TARGET=
 

@@ -1,6 +1,6 @@
---- cgi/Makefile.in.orig	2013-12-05 12:51:35.000000000 +0100
-+++ cgi/Makefile.in	2013-12-06 17:20:50.024138129 +0100
-@@ -204,10 +204,10 @@ install-unstripped:
+--- cgi/Makefile.in.orig	2014-03-13 11:46:50.000000000 +0100
++++ cgi/Makefile.in	2014-03-13 21:46:18.326312559 +0100
+@@ -192,10 +192,10 @@ install-unstripped:
  	$(MAKE) install-basic
  
  install-basic:

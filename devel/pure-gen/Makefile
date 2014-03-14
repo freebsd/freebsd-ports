@@ -3,6 +3,7 @@
 
 PORTNAME=	pure-gen
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure

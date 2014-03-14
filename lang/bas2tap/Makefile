@@ -12,7 +12,7 @@ COMMENT=	Convert 48k/128k ZX Spectrum BASIC text files to TAP files
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
+USES=		zip
 
 NO_WRKSUBDIR=	yes
 PORTDOCS=	${PORTNAME}.doc

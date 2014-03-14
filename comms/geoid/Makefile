@@ -16,7 +16,7 @@ COMMENT=	Geodetic computer for amateur radio use
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	makefile
 
 post-patch:

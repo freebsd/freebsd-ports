@@ -7,3 +7,4 @@ share/locale/ja/LC_MESSAGES/gmanedit.mo
 share/locale/sv/LC_MESSAGES/gmanedit.mo
 share/pixmaps/gmanedit.png
 share/pixmaps/gmanedit_icon.png
+man/man1/gmanedit.1.gz

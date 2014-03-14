@@ -7,11 +7,11 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://www.voidspace.org.uk/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pythonutils-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	daniel@netwalk.org
 COMMENT=	General utility modules that simplify common programming in Python
 
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

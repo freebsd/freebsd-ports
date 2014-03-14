@@ -1,7 +1,0 @@
-The purpose of the SynCE project is to provide a means of communication with
-a Windows Mobile device from a computer using USB or Bluetooth.
-Synce-serial is a set of wrappers around pppd to initiate communications
-with a Windows Mobile device. Once a connection is established, synce-vdccm is
-able to accept connections.
-
-WWW: http://www.synce.org/moin/

@@ -2,6 +2,7 @@
 
 PORTNAME=	meliae
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://launchpadlibrarian.net/74803944/ \
 		LOCAL/${MAINTAINER:C/([^@]*)@.*/\1/}
@@ -16,10 +17,9 @@ BUILD_DEPENDS=	cython>0:${PORTSDIR}/lang/cython
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGVERSION=	${PORTVERSION}.final.0
+PYDISTUTILS_AUTOPLIST=	yes
 
 regression-test: extract
 	(cd ${WRKSRC}; ${MAKE} check)
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,0 @@
-pppd is PPP protocol client/server which uses ppp line discipline
-(i.e. kernel mode PPP driver) on a serial link or another terminal.
-
-WWW: http://samba.anu.edu.au/ftp/ppp/

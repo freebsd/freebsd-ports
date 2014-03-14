@@ -8,7 +8,6 @@ CATEGORIES=	java devel databases
 MASTER_SITES=	SF/jboss/JBossTools/JBossTools%202.1.2.GA
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	HibernateTools-${DISTVERSION}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,6 +22,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef \
 		${LOCALBASE}/share/eclipse/dropins/webtools:${PORTSDIR}/java/eclipse-webtools
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes

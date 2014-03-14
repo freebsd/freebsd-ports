@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_final
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Community Developed Content Management System
 
+USES=		zip
 USE_PHP=	mysql pcre session iconv xml gd
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

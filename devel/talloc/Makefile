@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		talloc
-PORTVERSION=		2.0.8
+PORTVERSION=		2.1.0
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
@@ -15,14 +15,11 @@ LICENSE=		LGPL3
 
 CONFLICTS=		samba33-3.*
 
-USES=			pkgconfig
+USES=			compiler pkgconfig
 USE_PYTHON_BUILD=	2
 USE_LDCONFIG=		yes
-HAS_CONFIGURE=		yes
 WAF_TOOL=		buildtools/bin/waf
-CONFIGURE_SCRIPT=	${WAF_TOOL} configure
 CONFIGURE_LOG=		bin/config.log
-
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
@@ -30,30 +27,37 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--mandir=${MANPREFIX}/man \
 			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}
+# Support staging
+DESTDIRNAME=		--destdir
 
-OPTIONS_DEFINE=		PYTHON
-OPTIONS_DEFAULT=	PYTHON
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-MAN3=			talloc.3
+.include <bsd.port.pre.mk>
+
+.if ! ${PORT_OPTIONS:MMANPAGES}
+CONFIGURE_ENV+=		XSLTPROC="true"
+.else
+BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+			xsltproc:${PORTSDIR}/textproc/libxslt
+.endif
 
 PLIST_FILES=		include/talloc.h \
 			lib/libtalloc.so \
 			lib/libtalloc.so.2 \
 			%%PKGCONFIGDIR%%/talloc.pc
 
-CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
+# No fancy color error messages
+.if ${COMPILER_TYPE} == "clang"
+CFLAGS+=		-fno-color-diagnostics
+.endif
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
 
 .if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
 CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
-_MAKE_JOBS=		--jobs=${MAKE_JOBS_NUMBER}
+_MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
 .endif
 
-.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON_RUN=		yes
 PLIST_FILES+=		include/pytalloc.h \
 			lib/libpytalloc-util.so \
@@ -62,19 +66,18 @@ PLIST_FILES+=		include/pytalloc.h \
 			%%PKGCONFIGDIR%%/pytalloc-util.pc
 PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
 			%%PYTHON_LIBDIR%%
-.else
-CONFIGURE_ARGS+=	--disable-python
-.endif
 
+TALLOC_MAN3=		man/man3/talloc.3.gz
+
+PLIST_FILES+=		${TALLOC_MAN3}
+
+CONFIGURE_TARGET=	configure
 ALL_TARGET=		build
 INSTALL_TARGET=		install
-
-.include <bsd.port.pre.mk>
 
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 post-patch:
-			@${REINPLACE_CMD} -e 's|python|python${PYTHON_VER}|' ${BUILD_WRKSRC}/${WAF_TOOL}
 			@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
 				${BUILD_WRKSRC}/wscript
 
@@ -87,11 +90,30 @@ pre-configure:
 				${FALSE}; \
 			fi
 
+do-configure:
+			@(cd ${CONFIGURE_WRKSRC} && \
+			    ${SET_LATE_CONFIGURE_ARGS} \
+				if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+					CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+					LDFLAGS="${LDFLAGS}" \
+					INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+					INSTALL_DATA="${INSTALL_DATA}" \
+					INSTALL_LIB="${INSTALL_LIB}" \
+					INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+					INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+					${CONFIGURE_ENV} ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/${WAF_TOOL} ${CONFIGURE_ARGS} ${CONFIGURE_TARGET}; then \
+						${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
+						(${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+						${FALSE}; \
+				fi)
+
 pre-build:
-.for man in ${MAN3}
-			@${MKDIR} ${BUILD_WRKSRC}/bin/default
-			@${INSTALL_MAN} ${FILESDIR}/${man} ${BUILD_WRKSRC}/bin/default
-.endfor
+.if ! ${PORT_OPTIONS:MMANPAGES}
+			-${MKDIR} ${BUILD_WRKSRC}/bin/default/man
+.	for man in ${TALLOC_MAN3}
+			${INSTALL_MAN} ${FILESDIR}/`basename ${man} .gz` ${BUILD_WRKSRC}/bin/default/man
+.	endfor
+.endif
 
 do-build:
 			@(cd ${BUILD_WRKSRC}; \

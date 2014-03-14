@@ -1,6 +1,0 @@
-C++ wrapper for the USGS GCTP projection library.
-
-This library is delivered as part of the USGS dlgv32 application used
-for viewing Digital Line Graph products.
-
-WWW: http://mcmcweb.er.usgs.gov/drc/dlgv32pro/

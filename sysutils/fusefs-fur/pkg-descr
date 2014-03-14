@@ -1,6 +1,0 @@
-FUR is an application that let the user mount a Windows CE based device on your
-file system: it uses the brilliant FUSE and the librapi2 of the Synce Project
-to give you the illusion that the storage of your Pocket PC is mounted on
-a directory on your local filesystem.
-
-WWW: http://www.infis.univ.ts.it/~riccardo/FUR.html

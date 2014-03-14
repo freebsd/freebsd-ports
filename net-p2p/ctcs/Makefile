@@ -9,19 +9,18 @@ MASTER_SITES=	SF/dtorrent/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	CTorrent monitoring and managing interface
 
-NO_BUILD=	#
 USES=		perl5
 USE_PERL5=	run
-PLIST_FILES=	bin/ctcs share/doc/ctcs/readme.txt
-PLIST_DIRS=	share/doc/ctcs
-WRKSRC=		${WRKDIR}/ctcs-${PORTVERSION}
+NO_BUILD=	#
 
-NO_STAGE=	yes
+PORTDOCS=	readme.txt
+PLIST_FILES=	bin/ctcs
+
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 0755 \
-	${WRKSRC}/ctcs ${PREFIX}/bin/ctcs
-	${MKDIR} ${PREFIX}/share/doc/ctcs
-	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 0644 \
-	${WRKSRC}/readme.txt ${PREFIX}/share/doc/ctcs/readme.txt
+	${INSTALL_DATA} ${WRKSRC}/ctcs ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

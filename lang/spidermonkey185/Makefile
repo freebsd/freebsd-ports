@@ -13,7 +13,7 @@ MAINTAINER=		koobs@FreeBSD.org
 COMMENT=		Standalone JavaScript (1.8.5) interpreter from Mozilla
 
 BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=		nspr4:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=		libnspr4.so:${PORTSDIR}/devel/nspr
 
 CONFLICTS=		njs-[0-9]*
 
@@ -30,7 +30,6 @@ CONFIGURE_ARGS=		--with-pthreads \
 			--with-system-nspr
 
 # This comes from bsd.gecko.mk, fixes linking issues on 9.0 and higher.
-NO_STAGE=	yes
 post-configure:
 	${ECHO_CMD} "fenv.h" >> ${WRKSRC}/config/system-headers
 	${ECHO_CMD} "pthread_np.h" >> ${WRKSRC}/config/system-headers
@@ -165,6 +164,9 @@ regression-test: build
 .endif
 
 post-install:
-	${LN} -s libmozjs185.so.1.0 ${PREFIX}/lib/libmozjs185.so.1
+	${LN} -sf libmozjs185.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libmozjs185.so
+	${LN} -sf libmozjs185.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libmozjs185.so.1
+	${LN} -sf libmozjs185.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libmozjs185.so.1.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmozjs185.so.1.0.0
 
 .include <bsd.port.post.mk>

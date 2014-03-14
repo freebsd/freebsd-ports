@@ -13,7 +13,7 @@ RUN_DEPENDS=	twopi:${PORTSDIR}/graphics/graphviz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
-USE_ZIP=	yes
+USES=		zip
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

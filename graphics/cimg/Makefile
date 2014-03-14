@@ -3,7 +3,7 @@
 
 PORTNAME=	cimg
 PORTVERSION=	1.5.7
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -26,7 +26,7 @@ LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"invokes i386 asm"
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
 BUILD_WRKSRC=	${WRKSRC}/examples
 MAKE_ENV=	X11PATH=${LOCALBASE} LOCALBASE=${LOCALBASE}
@@ -34,7 +34,7 @@ CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -Wl,--verbose
 
 .if !defined(NOPORTDOCS)
-USES=		gmake
+USES+=		gmake
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	libboard.so:${PORTSDIR}/graphics/libboard
 

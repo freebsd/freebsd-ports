@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music for daimonin client
 
 NO_BUILD=	true
-USE_ZIP=	true
+USES=		zip:infozip
 
 MYDATADIR=	${PREFIX}/share/daimonin
 

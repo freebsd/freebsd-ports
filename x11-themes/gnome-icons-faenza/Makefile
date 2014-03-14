@@ -14,7 +14,7 @@ COMMENT=	Faenza GNOME 2 icon themes
 
 LICENSE=	GPLv3
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 INSTALLS_ICONS=	yes
 

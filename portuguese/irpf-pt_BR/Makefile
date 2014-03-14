@@ -12,7 +12,7 @@ DISTNAME=	irpf2010-v1.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2010 versao Java
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}2010
 
 USE_JAVA=	yes

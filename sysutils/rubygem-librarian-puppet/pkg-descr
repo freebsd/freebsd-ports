@@ -1,0 +1,5 @@
+Librarian-puppet is a bundler for your puppet infrastructure.
+You can use it to manage the puppet modules your infrastructure
+depends on. It is based on Librarian framework.
+
+WWW: https://github.com/rodjek/librarian-puppet

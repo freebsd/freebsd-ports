@@ -1,0 +1,11 @@
+--- configure.orig	2014-03-02 17:52:26.000000000 +0200
++++ configure	2014-03-02 17:53:07.000000000 +0200
+@@ -93,6 +93,8 @@
+   LIBS_VTE_L=`pkg-config --libs-only-L vte-2.90 2> /dev/null`
+ fi
+ 
++LIBS_VTE="${LIBS_VTE} -lintl"
++
+ if [ "$real_gtk" = "2+3" ] || [ "$real_gtk" = "3+2" ]; then
+   real_gtk="all"
+   LIBS_VTE="-ldl"

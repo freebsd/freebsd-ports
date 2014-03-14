@@ -12,9 +12,8 @@ COMMENT=	Lists MAC address and the Device and Interface associated info
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
-USES=		zenoss
 
-USE_ZIP=	yes
+USES=		zenoss zip
 ZPACKGROUP=	community
 WRKSRC=	${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 TAG=	b345f53

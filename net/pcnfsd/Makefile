@@ -17,13 +17,14 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun PC NFS authentication and printing server
 
-MAN8=		pcnfsd.8
-MANCOMPRESSED=	maybe
-PLIST_FILES=	libexec/rpc.pcnfsd
+DEPRECATED=	Unmaintained since 1997
+EXPIRATION_DATE=	2014-04-09
+
+PLIST_FILES=	libexec/rpc.pcnfsd \
+		man/man8/pcnfsd.8.gz
 
 NO_WRKSUBDIR=
 
-NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/Makefile.inc ${WRKSRC}
 

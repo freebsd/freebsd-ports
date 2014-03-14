@@ -1,0 +1,29 @@
+--- ui/gtk3/keybindingmanager.vala.orig 2014-02-03 14:11:48.000000000 -0500
++++ ui/gtk3/keybindingmanager.vala      2014-02-03 14:12:18.000000000 -0500
+@@ -35,6 +35,8 @@
+         Gdk.ModifierType.HYPER_MASK |
+         Gdk.ModifierType.META_MASK);
+
++    public static const int META_CORE_KEYBOARD_ID = 3;
++
+     /**
+      * Helper class to store keybinding
+      */
+@@ -254,7 +256,7 @@
+         XI.set_mask(evmask.mask, XI.EventType.KeyRelease);
+
+         int retval = XI.grab_keycode (xdisplay,
+-                                      XI.AllMasterDevices,
++                                      META_CORE_KEYBOARD_ID,
+                                       keycode,
+                                       xdisplay.default_root_window(),
+                                       X.GrabMode.Async,
+@@ -275,7 +277,7 @@
+         }
+
+         int retval = XI.ungrab_keycode (xdisplay,
+-                                        XI.AllMasterDevices,
++                                        META_CORE_KEYBOARD_ID,
+                                         keycode,
+                                         xdisplay.default_root_window(),
+                                         get_grab_modifiers(modifiers));

@@ -13,7 +13,7 @@ COMMENT=		PHP Simple HTML DOM Parser
 
 WRKSRC=			${WRKDIR}
 
-USE_ZIP=		YES
+USES=		zip
 NO_BUILD=		YES
 
 USE_PHP=		pcre

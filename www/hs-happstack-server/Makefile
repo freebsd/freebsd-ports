@@ -2,7 +2,7 @@
 
 PORTNAME=	happstack-server
 PORTVERSION=	7.1.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

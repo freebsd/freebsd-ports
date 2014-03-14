@@ -2,61 +2,49 @@
 # $FreeBSD$
 
 PORTNAME=	slime
-PORTVERSION=	20110714
-PORTREVISION=	8
-PORTEPOCH=	1
+PORTVERSION=	2.4
+PORTEPOCH=	2
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
+MASTER_SITES=	https://codeload.github.com/slime/slime/legacy.tar.gz/v2.4?dummy=/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Superior Lisp Interaction Mode for Emacs
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_EMACS=	yes
 
 SLIME_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/slime
+WRKSRC=		${WRKDIR}/slime-slime-e676480
 
-.if !defined(NOPORTDOCS)
+SUB_FILES=	pkg-message
+SUB_LIST=	SLIME_LISPDIR="${SLIME_LISPDIR}"
+
 INFO=		slime
-PORTDOCS=	ChangeLog HACKING NEWS PROBLEMS README
-.endif
+PORTDOCS=	CONTRIBUTING.md ChangeLog NEWS PROBLEMS README.md
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-build:
-	cd ${WRKSRC}/doc && ${GMAKE} slime.info
+	cd ${WRKSRC}/doc && ${MAKE_CMD} slime.info
 	cd ${WRKSRC} && ${EMACS_CMD} -batch \
 		-eval '(setq load-path (cons nil load-path))' \
 		-f batch-byte-compile *.el
 
 do-install:
-	@${MKDIR} ${SLIME_LISPDIR}
-	@${MKDIR} ${SLIME_LISPDIR}/contrib
-
-	cd ${WRKSRC}/ && ${INSTALL_DATA} *.elc *.el *.lisp ${SLIME_LISPDIR}/
+	@${MKDIR} ${STAGEDIR}${SLIME_LISPDIR}/contrib
+	@${MKDIR} ${STAGEDIR}${SLIME_LISPDIR}/lib
+	cd ${WRKSRC} && ${INSTALL_DATA} *.elc *.el *.lisp ${STAGEDIR}${SLIME_LISPDIR}
+	cd ${WRKSRC}/lib && ${INSTALL_DATA} *.el ${STAGEDIR}${SLIME_LISPDIR}/lib
 	cd ${WRKSRC}/contrib && ${INSTALL_DATA} *.el *.lisp \
-		${SLIME_LISPDIR}/contrib
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${SLIME_LISPDIR}/
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/slime.info ${PREFIX}/${INFO_PATH}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/contrib/README ${DOCSDIR}/README-contrib
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/slime-refcard.pdf ${DOCSDIR}/
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/slime-small.pdf ${DOCSDIR}/
-.endif
-
-	@${ECHO_MSG}
-	@${ECHO_MSG} "========================================================"
-	@${ECHO_MSG} "To activate SLIME put the following code into ~/.emacs:"
-	@${ECHO_MSG} '(setq inferior-lisp-program "PATH_TO_YOUR_LISP_BINARY")'
-	@${ECHO_MSG} "(add-to-list 'load-path \"${SLIME_LISPDIR}\""
-	@${ECHO_MSG} '	"${SLIME_LISPDIR}/contrib")'
-	@${ECHO_MSG} "(require 'slime)"
-	@${ECHO_MSG} "(slime-setup '(slime-repl))"
-	@${ECHO_MSG} "========================================================"
-	@${ECHO_MSG}
+		${STAGEDIR}${SLIME_LISPDIR}/contrib
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}${SLIME_LISPDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/slime.info \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/contrib/README.md \
+		${STAGEDIR}${DOCSDIR}/README-contrib.md
+	(cd ${INSTALL_WRKSRC}/doc && ${INSTALL_DATA} slime-refcard.pdf \
+		slime-small.pdf ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

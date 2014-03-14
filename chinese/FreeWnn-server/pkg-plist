@@ -1,13 +1,16 @@
+@comment $FreeBSD$
 bin/cWnn4/catod
 bin/cWnn4/catof
 bin/cWnn4/cdtoa
+@owner wnn
 bin/cWnn4/cserver
+bin/cWnn4/tserver
+@owner root
 bin/cWnn4/cwddel
 bin/cWnn4/cwdreg
 bin/cWnn4/cwnnkill
 bin/cWnn4/cwnnstat
 bin/cWnn4/cwnntouch
-bin/cWnn4/tserver
 @dirrm bin/cWnn4
 lib/wnn/zh_CN/dic/sys/QianMa.dic
 lib/wnn/zh_CN/dic/sys/WuBi.dic

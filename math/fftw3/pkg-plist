@@ -18,3 +18,6 @@ lib/libfftw3%%FFTW3_SUFX%%_threads.la
 lib/libfftw3%%FFTW3_SUFX%%_threads.so
 lib/libfftw3%%FFTW3_SUFX%%_threads.so.6
 libdata/pkgconfig/fftw3%%FFTW3_SUFX%%.pc
+%%DEF%%man/man1/fftw-wisdom.1.gz
+%%DEF%%man/man1/fftw-wisdom-to-conf.1.gz
+%%NONDEF%%man/man1/fftw%%FFTW3_SUFX%%-wisdom.1.gz

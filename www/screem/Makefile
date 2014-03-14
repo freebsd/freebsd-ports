@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice GNOME/GTK-based HTML editor
 
+DEPRECATED=	gnome-menus 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
+
 LIB_DEPENDS=	croco-0.6.3:${PORTSDIR}/textproc/libcroco
 
 USES=		pathfix pkgconfig gettext

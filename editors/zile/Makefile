@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	zile
-PORTVERSION=	2.4.9
+PORTVERSION=	2.4.11
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Small emacs-like text editor
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man

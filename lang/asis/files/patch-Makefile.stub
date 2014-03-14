@@ -1,4 +1,4 @@
---- Makefile.stub.orig	2013-07-16 23:01:45.000000000 +0000
+--- Makefile.stub.orig	2014-03-09 22:02:56.822564000 +0000
 +++ Makefile.stub
 @@ -3,8 +3,7 @@ host := $(shell gcc -dumpmachine)
  

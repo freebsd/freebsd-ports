@@ -372,9 +372,9 @@ share/doc/HTML/sr/krfb/index.docbook
 share/doc/HTML/sr/ktimer/common
 share/doc/HTML/sr/ktimer/index.cache.bz2
 share/doc/HTML/sr/ktimer/index.docbook
-share/doc/HTML/sr/kwallet/common
-share/doc/HTML/sr/kwallet/index.cache.bz2
-share/doc/HTML/sr/kwallet/index.docbook
+share/doc/HTML/sr/kwalletmanager/common
+share/doc/HTML/sr/kwalletmanager/index.cache.bz2
+share/doc/HTML/sr/kwalletmanager/index.docbook
 share/doc/HTML/sr/lokalize/common
 share/doc/HTML/sr/lokalize/glossary.png
 share/doc/HTML/sr/lokalize/index.cache.bz2
@@ -3775,7 +3775,7 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr/onlinehelp
 @dirrm share/doc/HTML/sr/okteta
 @dirrm share/doc/HTML/sr/lokalize
-@dirrm share/doc/HTML/sr/kwallet
+@dirrm share/doc/HTML/sr/kwalletmanager
 @dirrm share/doc/HTML/sr/ktimer
 @dirrm share/doc/HTML/sr/krfb
 @dirrm share/doc/HTML/sr/krdc

@@ -10,10 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic zoomable user environment
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		perl5 pkgconfig
 USE_BZIP2=	yes
@@ -28,16 +28,19 @@ BUILD_ARGS+=	${lib}-inc-dir="${LOCALBASE}/include" \
 		${lib}-lib-dir="${LOCALBASE}/lib"
 .endfor
 
+DATADIR=	${PREFIX}/lib/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 OPTIONS_DEFINE=	XINE RSVG PDF
 OPTIONS_DEFAULT=RSVG PDF
 RSVG_DESC=	SVG support through librsvg
 PDF_DESC=	PDF support through poppler-glib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXINE}
-LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
 BUILD_ARGS+=	xine-inc-dir="${LOCALBASE}/include" \
 		xine-lib-dir="${LOCALBASE}/lib"
 PLIST_SUB+=	EMAV=""
@@ -78,8 +81,8 @@ do-build:
 	cd ${WRKSRC} && ${PERL} make.pl build ${BUILD_ARGS}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/eaglemode
-	cd ${WRKSRC} && ${PERL} make.pl install dir=${PREFIX}/lib/eaglemode
-	${INSTALL_SCRIPT} ${WRKDIR}/eaglemode.sh ${PREFIX}/bin/eaglemode
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${PERL} make.pl install dir=${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/eaglemode.sh ${STAGEDIR}${PREFIX}/bin/eaglemode
 
 .include <bsd.port.mk>

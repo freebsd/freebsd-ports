@@ -11,10 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Character encoding converter generator
 
 LIBDIR=		${PREFIX}/lib/trans
-MAN1=		transhtm.1 transiso.1 transce8.1 transtab.1 checkiso.1 \
+MANS=		transhtm.1 transiso.1 transce8.1 transtab.1 checkiso.1 \
 		checkuni.1
 
-NO_STAGE=	yes
 post-patch:
 # Fix the build against arbitrary make(1) implementation
 	@${REINPLACE_CMD} -e 's/cd src ; make/$$(MAKE) -C src/' \
@@ -24,24 +23,25 @@ post-patch:
 		${WRKSRC}/src/Makefile
 
 do-install:
-	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} ${MAN1:R} ${PREFIX}/bin
-.for m in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/src/${m:R}.man ${MANPREFIX}/man/man1/${m}
+	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} ${MANS:R} ${STAGEDIR}${PREFIX}/bin
+.for m in ${MANS}
+	${INSTALL_MAN} ${WRKSRC}/src/${m:R}.man ${STAGEDIR}${MANPREFIX}/man/man1/${m}
 .endfor
-	@${MKDIR} ${LIBDIR}/cedf ${LIBDIR}/xlt ${LIBDIR}/doc ${LIBDIR}/bin \
-		${LIBDIR}/src
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/cedf ${STAGEDIR}${LIBDIR}/xlt \
+		${STAGEDIR}${LIBDIR}/doc ${STAGEDIR}${LIBDIR}/bin \
+		${STAGEDIR}${LIBDIR}/src
 	cd ${WRKSRC}/src && \
 		${INSTALL_SCRIPT} checkall chkuni mkhtml mklist mkxlt \
-		${LIBDIR}/src
+		${STAGEDIR}${LIBDIR}/src
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} README encoding.lis ${LIBDIR}
+		${INSTALL_DATA} README encoding.lis ${STAGEDIR}${LIBDIR}
 	cd ${WRKSRC}/src && \
-		${INSTALL_DATA} datatype.h ${LIBDIR}/src
+		${INSTALL_DATA} datatype.h ${STAGEDIR}${LIBDIR}/src
 	cd ${WRKSRC}/bin && \
 		${INSTALL_DATA} one trans.[ch] trans.man utimbuf.h utf.[ch] \
-		${LIBDIR}/bin
-	${INSTALL_DATA} ${WRKSRC}/cedf/* ${LIBDIR}/cedf
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${LIBDIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/xlt/* ${LIBDIR}/xlt
+		${STAGEDIR}${LIBDIR}/bin
+	${INSTALL_DATA} ${WRKSRC}/cedf/* ${STAGEDIR}${LIBDIR}/cedf
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${LIBDIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/xlt/* ${STAGEDIR}${LIBDIR}/xlt
 
 .include <bsd.port.mk>

@@ -15,8 +15,7 @@ RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 PLIST_FILES=	bin/t2ps
 WRKSRC=		${WRKDIR}/t2ps-dir
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/t2ps ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/t2ps ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

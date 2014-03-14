@@ -3,7 +3,7 @@
 
 PORTNAME=	covtool
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/rel_2.0
 
@@ -11,9 +11,8 @@ MAINTAINER=	novator24@gmail.com
 COMMENT=	C++ test coverage analyzer
 
 WRKSRC=	        ${WRKDIR}
-USE_ZIP=	yes
+USES=		gmake zip
 USE_GCC=	yes
-USE_GMAKE=	yes
 MAKEFILE=	makefile
 
 MAN1=		cov++.1 \

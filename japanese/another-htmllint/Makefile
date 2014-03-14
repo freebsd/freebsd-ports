@@ -11,8 +11,7 @@ COMMENT=	Another HTML-lint (all messages are written in Japanese)
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
-USES=		perl5
-USE_ZIP=	YES
+USES=		perl5 zip:infozip
 WRKSRC=		${WRKDIR}
 EXTRACT_BEFORE_ARGS=	-a -q
 

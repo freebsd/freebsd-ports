@@ -15,6 +15,8 @@ COMMENT=	A program used for receiving and delivering mail
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 CONFLICTS=	bsmtp-1.* courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* zmailer-2.*
 
 .if !defined(NO_INSTALL_MANPAGES)

@@ -3,7 +3,7 @@
 
 PORTNAME=	xonotic
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://nl.dl.xonotic.org/ \
 		http://mirror.bitmissile.com/xonotic/releases/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 MANUAL_PACKAGE_BUILD=	huge
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/Xonotic/source/darkplaces
 MAKEFILE=	BSDmakefile
 MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" \

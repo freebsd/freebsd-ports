@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -159,7 +159,7 @@ MODPLUG_CONFIGURE_ENABLE=	mod
 MPEG2_LIB_DEPENDS=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
 MPEG2_CONFIGURE_ENABLE=	libmpeg2
 
-MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/audio/libmtp
+MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp
 MTP_CONFIGURE_ENABLE=	mtp
 
 MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack

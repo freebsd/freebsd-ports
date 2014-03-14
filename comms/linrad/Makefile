@@ -21,8 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GMAKE=	yes
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 ALL_TARGET=	xlinrad
 USE_XORG=	x11
 ONLY_FOR_ARCHS=	i386

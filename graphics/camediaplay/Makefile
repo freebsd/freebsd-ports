@@ -13,6 +13,8 @@ COMMENT=	Digital camera downloading tool for Epson/Sanyo/Olympus/Agfa camera
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG=""
 MAN1=		camediaplay.1

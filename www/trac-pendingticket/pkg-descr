@@ -1,8 +1,0 @@
-The intent of this is to allow an administrator to mark a Ticket as "Pending"
-to indicate that information has been requested from the reporter. If the
-reporter doesn't reply with in the allotted timeframe, the ticket will
-automatically be closed.
-
-This works well when combined with the SimpleTicketPlugin
-
-WWW: http://trac-hacks.org/wiki/PendingTicketPlugin

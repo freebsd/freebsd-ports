@@ -10,12 +10,14 @@ MASTER_SITES=	http://www.freebsdcluster.org/~lasse/software/
 MAINTAINER=	lasse@freebsdcluster.org
 COMMENT=	ImapProxy is a caching IMAP proxy daemon to be used with Horde/IMP
 
-GNU_CONFIGURE=	yes
 HAS_CONFIGURE=	yes
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e 's|= -O3|+= |' ${WRKSRC}/Makefile.in
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/example.conf ${PREFIX}/etc/imapproxy.conf.dist
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/example.conf \
+		${STAGEDIR}${PREFIX}/etc/imapproxy.conf.dist
 
 .include <bsd.port.mk>

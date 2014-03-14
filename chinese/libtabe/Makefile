@@ -12,7 +12,7 @@ COMMENT=	Unified library for Chinese text processing
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_BDB=	yes
 OBSOLETE_BDB_VAR=	USE_DB2
 DATADIR=	${PREFIX}/share/tabe

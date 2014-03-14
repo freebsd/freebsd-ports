@@ -12,7 +12,7 @@ COMMENT=	C++ library to manipulate matrices and vectors
 
 WRKSRC=		${WRKDIR}/matrix
 
-USE_ZIP=	yes
+USES=		zip
 USE_LDCONFIG=	yes
 PLIST_SUB=	LIBVERSION=1
 

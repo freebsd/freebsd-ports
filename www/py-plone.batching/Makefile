@@ -13,9 +13,9 @@ COMMENT=	Batching facilities used in Plone
 
 LICENSE=	GPLv2
 
+USES=		zip
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=		yes
 
 .include <bsd.port.mk>

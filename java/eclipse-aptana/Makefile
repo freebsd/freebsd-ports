@@ -9,7 +9,6 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://update1.aptana.org/studio/3.2/024747/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	aptana_update_${PORTVERSION:E}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Aptana Web Development Tools (Eclipse plugin)
@@ -18,6 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 CONFLICTS_INSTALL=	eclipse-aptana-[2-9]*
 
+USES=		zip
 JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes

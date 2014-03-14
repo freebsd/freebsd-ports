@@ -16,7 +16,7 @@ COMMENT=	A Two-Dimensional Quality Mesh Generator and Delaunay Triangulator
 NO_CDROM=	No commercial use without prior arrangement with the author
 
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
+USES=		zip
 USE_XORG=	x11
 MAKEFILE=	makefile
 

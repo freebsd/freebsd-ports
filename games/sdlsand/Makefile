@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simulation of falling sand and other materials
 
-USE_ZIP=	yes
+USES=		zip
 USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/SDL\ Sand/SDL\ Sand

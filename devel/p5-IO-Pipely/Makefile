@@ -23,10 +23,6 @@ USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501400
-TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
 .if ${PERL_LEVEL} < 501600
 BUILD_DEPENDS+=	p5-base>=2.18:${PORTSDIR}/devel/p5-base
 RUN_DEPENDS+=	p5-base>=2.18:${PORTSDIR}/devel/p5-base

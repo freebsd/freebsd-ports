@@ -7,7 +7,6 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://download:download@download.hugelaser.com/aeons.poweredbylasers.com/${PORTNAME}/ \
 		http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Advanced HTML statistics generator for various games
@@ -16,6 +15,7 @@ NO_CDROM=	Commercial use is prohibited
 
 ONLY_FOR_ARCHS=	i386
 
+USES=		zip
 WRKSRC=		${WRKDIR}/${DISTNAME}/Linux-o
 LINUXBINDIR=	${WRKSRC}/../Linux-Bin
 MAKEFILE=	makefile

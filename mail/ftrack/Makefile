@@ -17,12 +17,10 @@ BROKEN=		Does not compile
 
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		perl5 gmake zip:infozip
 ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-USES=		perl5
 
 PORTDOCS=	ftrack.faq readme report.err
 

@@ -19,7 +19,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/share/eclipse/dropins/datatools:${PORTSDIR}/java/eclipse-datatools
 
 WRKSRC=		${WRKDIR}/eclipse
-USE_ZIP=	yes
+USES=		zip
 
 NO_STAGE=	yes
 .include "${.CURDIR}/../eclipse/Makefile.plugins"

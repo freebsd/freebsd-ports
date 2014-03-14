@@ -29,7 +29,6 @@ include/spserver/sputils.hpp
 include/spserver/spwin32buffer.hpp
 include/spserver/spwin32iocp.hpp
 include/spserver/spwin32port.hpp
-%%WITH_XYSSL%%include/spserver/spxyssl.hpp
 %%WITH_GNUTLS%%lib/libspgnutls.so
 %%WITH_GNUTLS%%lib/libspgnutls.so.1
 %%WITH_MATRIXSSL%%lib/libspmatrixssl.so
@@ -38,6 +37,4 @@ lib/libspopenssl.so
 lib/libspopenssl.so.1
 lib/libspserver.so
 lib/libspserver.so.1
-%%WITH_XYSSL%%lib/libspxyssl.so
-%%WITH_XYSSL%%lib/libspxyssl.so.1
 @dirrm include/spserver

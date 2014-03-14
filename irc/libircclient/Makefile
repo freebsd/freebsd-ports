@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	libircclient
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	irc devel
 MASTER_SITES=	SF
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	An IRC library to create IRC clients
 
-OPTIONS_DEFINE=	OPENSSL IPV6 DOCS EXAMPLES
+LICENSE=	LGPL20
+
+OPTIONS_DEFINE=	OPENSSL IPV6 EXAMPLES
 OPTIONS_DEFAULT=	OPENSSL
 
 BUILD_WRKSRC=	${WRKSRC}/src
@@ -35,9 +37,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/libircclient.a ${STAGEDIR}${PREFIX}/lib
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-.endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 .endif

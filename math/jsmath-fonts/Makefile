@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.math.union.edu/~dpvc/jsMath/download/ \
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A raster fonts pack for jsmath
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/jsMath
 WWWDIR?=	${PREFIX}/www/jsMath

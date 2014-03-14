@@ -3,7 +3,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -37,7 +37,7 @@ USE_LUA=	5.1
 LUA_COMPS=	toluaxx
 USES=		openal:al,alut pathfix pkgconfig
 USE_BZIP2=	YES
-CPPFLAGS+=	-DBR_NO_MACROS
+CPPFLAGS+=	-DBR_NO_MACROS -std=c++11
 USE_GCC=	4.7+
 
 NO_STAGE=	yes

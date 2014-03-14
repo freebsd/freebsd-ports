@@ -3,6 +3,7 @@
 
 PORTNAME=	thunderbird-i18n
 PORTVERSION=	24.3.0
+PORTREVISION=	1
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -20,6 +21,7 @@ PLISTF?=	${WRKDIR}/plist_files
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+USES=		zip:infozip
 USE_THUNDERBIRD=	yes
 USE_XPI=	thunderbird linux-thunderbird
 USE_SUBMAKE=	yes

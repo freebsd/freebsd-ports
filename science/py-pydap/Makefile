@@ -3,6 +3,7 @@
 
 PORTNAME=	pydap
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +14,7 @@ COMMENT=	Implementation of the Opendap/DODS protocol
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:${PORTSDIR}/devel/py-setuptools \
-		paver:${PORTSDIR}/devel/py-paver \
+BUILD_DEPENDS=	paver:${PORTSDIR}/devel/py-paver \
 		${PYNUMPY}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>0:${PORTSDIR}/www/py-httplib2 \
 		${PYTHON_PKGNAMEPREFIX}Genshi>0:${PORTSDIR}/textproc/py-genshi \

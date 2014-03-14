@@ -26,7 +26,6 @@
     SUBDIR += arpdig
     SUBDIR += arping
     SUBDIR += arprelease
-    SUBDIR += asfrecorder
     SUBDIR += asio
     SUBDIR += aslookup
     SUBDIR += asterisk
@@ -145,17 +144,12 @@
     SUBDIR += freebsd-uucp
     SUBDIR += freedbd
     SUBDIR += freenet6
-    SUBDIR += freenx
     SUBDIR += freeradius-client
     SUBDIR += freeradius2
     SUBDIR += freeradius3
     SUBDIR += freerdp
     SUBDIR += freeswitch-core-devel
-    SUBDIR += freeswitch-curl-devel
     SUBDIR += freeswitch-devel
-    SUBDIR += freeswitch-insideout-devel
-    SUBDIR += freeswitch-sbc-devel
-    SUBDIR += freeswitch-vanilla-devel
     SUBDIR += freevrrpd
     SUBDIR += freewais-sf
     SUBDIR += frickin
@@ -251,7 +245,6 @@
     SUBDIR += imapproxy
     SUBDIR += iodine
     SUBDIR += ip6_int
-    SUBDIR += ipa_ip6fw
     SUBDIR += ipa_ipfw
     SUBDIR += ipfw-graph
     SUBDIR += ipgrab
@@ -278,7 +271,6 @@
     SUBDIR += jgroups
     SUBDIR += jicmp
     SUBDIR += jicmp6
-    SUBDIR += jpcap
     SUBDIR += jrdesktop
     SUBDIR += jsch
     SUBDIR += jumpgate
@@ -383,7 +375,6 @@
     SUBDIR += lvwimax
     SUBDIR += mDNSResponder
     SUBDIR += mad_fcl
-    SUBDIR += mars_nwe
     SUBDIR += mcast-tools
     SUBDIR += mediaproxy
     SUBDIR += mediatomb
@@ -416,7 +407,6 @@
     SUBDIR += nast
     SUBDIR += nbd-server
     SUBDIR += nc
-    SUBDIR += nc6
     SUBDIR += ncp
     SUBDIR += ncplib
     SUBDIR += ndisc6
@@ -464,7 +454,6 @@
     SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nxproxy
-    SUBDIR += nxserver
     SUBDIR += nyancat
     SUBDIR += nylon
     SUBDIR += ohphone
@@ -480,7 +469,6 @@
     SUBDIR += openbgpd
     SUBDIR += opendpi
     SUBDIR += openh323
-    SUBDIR += openistgt
     SUBDIR += openldap24-client
     SUBDIR += openldap24-sasl-client
     SUBDIR += openldap24-server
@@ -892,8 +880,6 @@
     SUBDIR += polyorb
     SUBDIR += poptop
     SUBDIR += portfwd
-    SUBDIR += pppd23
-    SUBDIR += pppoa
     SUBDIR += pptpclient
     SUBDIR += proftpd-mod_ldap
     SUBDIR += prosearch

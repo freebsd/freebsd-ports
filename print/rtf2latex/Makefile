@@ -11,6 +11,8 @@ DISTNAME=	rtf2LaTeX.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A filter that converts RTF (MS Rich Text Format) into LaTeX
 
+DEPRECATED=	Unmaintained since 1999
+EXPIRATION_DATE=	2014-04-10
 WRKSRC=		${WRKDIR}/rtf2LaTeX
 
 MAN1=		rtf2LaTeX.1

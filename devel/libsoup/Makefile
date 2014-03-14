@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libsoup/Makefile 18998 2014-02-03 22:31:21Z kwm $
+#   $MCom: ports/trunk/devel/libsoup/Makefile 19016 2014-03-08 09:05:27Z kwm $
 
 PORTNAME=	libsoup
 PORTVERSION=	2.42.3.1
@@ -25,7 +25,7 @@ USE_GNOME=	gnomehier glib20 libxml2 referencehack intltool
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_PYTHON_BUILD=	-2.7
+USE_PYTHON_BUILD=	2
 CONFIGURE_ARGS=	--disable-more-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -34,7 +34,7 @@ LIBVERSION=	1.6.0
 PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
 
 .if defined(SOUP_SLAVE)
-USE_SQLITE=	yes
+USE_SQLITE=	3
 LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 CONFIGURE_ARGS+=--with-gnome

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
-USE_ZIP=	yes
+USES=		zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add estimation and time tracking functionality to Trac

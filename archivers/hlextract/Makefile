@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libhl.so:${PORTSDIR}/games/hllib
 
-USE_DOS2UNIX=	yes
-USE_ZIP=	yes
+USES=		dos2unix zip
 WRKSRC=		${WRKDIR}/HLExtract
 
 PATCH_WRKSRC=	${WRKDIR}

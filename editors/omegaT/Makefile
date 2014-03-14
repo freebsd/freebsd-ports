@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-USE_ZIP=	yes
+USES=		zip
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VENDOR=openjdk

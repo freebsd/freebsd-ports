@@ -57,5 +57,21 @@ lib/pkcs11/pkcs11-spy.so
 %%DATADIR%%/setcos.profile
 %%DATADIR%%/starcos.profile
 %%DATADIR%%/westcos.profile
+man/man1/cardos-tool.1.gz
+man/man1/cryptoflex-tool.1.gz
+man/man1/eidenv.1.gz
+man/man1/iasecc-tool.1.gz
+man/man1/netkey-tool.1.gz
+man/man1/openpgp-tool.1.gz
+man/man1/opensc-explorer.1.gz
+man/man1/opensc-tool.1.gz
+man/man1/piv-tool.1.gz
+man/man1/pkcs11-tool.1.gz
+man/man1/pkcs15-crypt.1.gz
+man/man1/pkcs15-init.1.gz
+man/man1/pkcs15-tool.1.gz
+man/man1/sc-hsm-tool.1.gz
+man/man1/westcos-tool.1.gz
+man/man5/pkcs15-profile.5.gz
 @dirrm lib/pkcs11
 @dirrm %%DATADIR%%

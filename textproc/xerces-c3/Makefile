@@ -12,7 +12,7 @@ DISTNAME=	xerces-c-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project
 
-CONFLICTS=	xerces_c-[0-9]* xerces-c2-[0-9]*
+CONFLICTS=	xerces-c2-[0-9]* xerces-c2-devel-[0-9]*
 
 USES=		gmake pathfix
 USE_LDCONFIG=	yes

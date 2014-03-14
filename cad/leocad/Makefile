@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	leocad
-PORTVERSION=	0.80.1
+PORTVERSION=	0.80.2
 CATEGORIES=	cad
-MASTER_SITES=	GOOGLE_CODE
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz \
-		${LEOCAD_PIECES}
+MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src.tgz
 
@@ -15,18 +14,14 @@ COMMENT=	CAD program that uses bricks similar to those found in many toys
 
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:${PORTSDIR}/cad/ldraw
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-LEOCAD_PIECES=	pieces-7439.zip
 
 USES=		desktop-file-utils gmake pkgconfig qmake shared-mime-info
 USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
 		corelib gui network opengl
-
 USE_GL=		glut
 USE_GNOME=	gtk20
 
@@ -34,18 +29,35 @@ PORTDOCS=	CREDITS.txt README.txt TODO.txt
 
 OPTIONS_DEFINE=	DOCS
 
+OPTIONS_SINGLE=	LIBRARY
+OPTIONS_SINGLE_LIBRARY=	LDRAW LEOCAD
+OPTIONS_DEFAULT=	LEOCAD
+
+LDRAW_DESC=	Library from LDraw symlink, mostly fewer pieces
+LEOCAD_DESC=	Library from LeoCad file, mostly more pieces
+
 INSTALLS_ICONS=	yes
 ICON_SIZES=	16x16 24x24 32x32 48x48 128x128 256x256
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLDRAW}
+RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:${PORTSDIR}/cad/ldraw
+.endif
+
+.if ${PORT_OPTIONS:MLEOCAD}
+LEOCAD_PIECES=	Library-Linux-7931.zip
+DISTFILES+=	${LEOCAD_PIECES}
+EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 post-extract:
 	@${UNZIP_CMD} -q -o ${_DISTDIR}/${LEOCAD_PIECES} -d ${WRKDIR}/pieces
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
-		-e 's|share/man/man1|man/man1|' \
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|; \
+		s|share/man/man1|man/man1|; \
+		s|docs.files = docs/README.txt docs/CREDITS.txt docs/COPYING.txt|docs.files = |' \
 		${WRKSRC}/${PORTNAME}.pro
-	@${REINPLACE_CMD} -e 's|docs.files = docs/README.txt docs/CREDITS.txt docs/COPYING.txt|docs.files = |' \
-			 ${WRKSRC}/${PORTNAME}.pro
 
 .for s in 16 24 32 48 128 256
 	@cd ${WRKSRC}/tools/icon && \
@@ -56,7 +68,13 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
+
+.if ${PORT_OPTIONS:MLDRAW}
+	${LN} -s ${PREFIX}/share/ldraw ${STAGEDIR}${DATADIR}/library.bin
+.endif
+.if ${PORT_OPTIONS:MLEOCAD}
 	${INSTALL_DATA} ${WRKDIR}/pieces/* ${STAGEDIR}${DATADIR}
+.endif
 
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps

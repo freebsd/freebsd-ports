@@ -10,6 +10,9 @@ MASTER_SITES=	http://tuntun.googlecode.com/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome applet gui for OpenVPN
 
+DEPRECATED=	gnome-panel 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
+
 LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify
 
 USES=		gmake pkgconfig pathfix

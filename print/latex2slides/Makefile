@@ -14,6 +14,8 @@ COMMENT=	Produces a set of HTML/JPEG slides from a TeX or LaTeX source
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USE_PYTHON=	yes
 USE_TEX=	dvipsk:run
 NO_BUILD=	yes

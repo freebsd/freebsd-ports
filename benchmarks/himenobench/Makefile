@@ -3,7 +3,7 @@
 
 PORTNAME=	himenobench
 PORTVERSION=	2004.08.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://accc.riken.jp/secure/4502/:C http://accc.riken.jp/secure/4503/:C \
 		http://accc.riken.jp/secure/4504/:F90 http://accc.riken.jp/secure/4505/:F77
@@ -15,8 +15,8 @@ DIST_SUBDIR=	himeno
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Himeno bench benchmark, solves Poisson eq. with Jacobi's method
 
+USES=		lha
 NO_WRKSUBDIR=	yes
-USE_LHA=	yes
 
 .if defined(WITH_ICC)
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc

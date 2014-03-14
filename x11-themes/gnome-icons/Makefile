@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-icons
 PORTVERSION=	20060914
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -26,7 +26,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/AquaFusion/index.theme:${PORTSDIR}/x11-the
 		${LOCALBASE}/share/icons/gnome-rh8/index.theme:${PORTSDIR}/x11-themes/gnome-icons-refined \
 		${LOCALBASE}/share/icons/Slick/index.theme:${PORTSDIR}/x11-themes/gnome-icons-slick \
 		${LOCALBASE}/share/icons/Snow-Apple/index.theme:${PORTSDIR}/x11-themes/gnome-icons-snow-apple \
-		${LOCALBASE}/share/icons/SnowIsh-1.0_PNG/index.theme:${PORTSDIR}/x11-themes/gnome-icons-snowish \
 		${LOCALBASE}/share/icons/stylish/index.theme:${PORTSDIR}/x11-themes/gnome-icons-stylish \
 		${LOCALBASE}/share/icons/ximian-south/index.theme:${PORTSDIR}/x11-themes/gnome-icons-ximian-south \
 		${LOCALBASE}/share/icons/Lila/index.theme:${PORTSDIR}/x11-themes/gnome-icons-lila

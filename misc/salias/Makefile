@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/C%20${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI tool to alias arguments of other programs
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	glib20

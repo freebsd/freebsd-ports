@@ -13,7 +13,7 @@ COMMENT=	Java program to graphically display disk usage statistics
 
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper
 
-USE_ZIP=	YES
+USES=		zip
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 

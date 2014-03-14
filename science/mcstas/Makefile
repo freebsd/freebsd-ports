@@ -3,7 +3,7 @@
 
 PORTNAME=	mcstas
 PORTVERSION=	1.12c
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.mcstas.org/download/ \
 		http://www.c-s.li/ports/

@@ -13,7 +13,7 @@ COMMENT=	Far West themed 2D shooter featuring bullet time
 
 RUN_DEPENDS=	love07:${PORTSDIR}/devel/love07
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 SUB_FILES=	gunfudeadlands

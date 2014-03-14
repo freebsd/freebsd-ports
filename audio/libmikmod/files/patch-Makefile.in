@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2013-12-30 19:37:12.000000000 +0100
++++ Makefile.in	2014-03-01 19:49:25.164244987 +0100
+@@ -348,7 +348,7 @@
+ 
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = libmikmod.m4
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libmikmod.pc
+ ACLOCAL_AMFLAGS = -I m4
+ 

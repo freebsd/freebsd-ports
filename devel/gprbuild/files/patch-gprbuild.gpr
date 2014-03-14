@@ -1,13 +1,26 @@
-$NetBSD: patch-gprbuild.gpr,v 1.1 2012/07/08 20:08:42 marino Exp $
-
---- gprbuild.gpr.orig	2012-05-10 13:59:06.000000000 +0000
+--- gprbuild.gpr.orig	2013-04-16 14:36:04.000000000 +0000
 +++ gprbuild.gpr
-@@ -80,7 +80,7 @@ project Gprbuild is
-               ("-pg", "-g");
-          when "production" =>
-             for Default_Switches ("Ada") use common_switches &
--              ("-O2", "-gnatpn", "-gnatws");
-+              ("-g", "-O2", "-gnatpn", "-gnatws");
-       end case;
-    end Compiler;
+@@ -1,4 +1,5 @@
+ with "xmlada";
++with "gnat_util";
  
+ project Gprbuild is
+    type OS_Type is ("unix", "avms", "ivms", "Windows_NT");
+@@ -24,7 +25,7 @@ project Gprbuild is
+         "gprinstall-main.adb",
+         "gprslave.adb");
+ 
+-   for Source_Dirs use ("src", "gnat");
++   for Source_Dirs use ("src");
+ 
+    case Build_Tool is
+       when "gprbuild" =>
+@@ -173,8 +174,6 @@ project Gprbuild is
+          when "unix" | "Windows_NT" =>
+             for Body ("gprlib.build_shared_lib")
+               use "gprlib-build_shared_lib-nosymbols.adb";
+-            for Body ("mlib.tgt.specific")
+-              use "mlib-tgt-specific.adb";
+          when "avms" =>
+             for Body ("gprlib.build_shared_lib")
+               use "gprlib-build_shared_lib-vms.adb";

@@ -1,5 +1,5 @@
-%%DEMOS%%bin/cosmic_protector
-%%DEMOS%%bin/speed
+%%DEMOS%%%%EXAMPLES%%bin/cosmic_protector
+%%DEMOS%%%%EXAMPLES%%bin/speed
 include/allegro5/alcompat.h
 include/allegro5/alinline.h
 include/allegro5/allegro.h
@@ -921,8 +921,8 @@ man/man3/al_wait_for_event.3.gz
 man/man3/al_wait_for_event_timed.3.gz
 man/man3/al_wait_for_event_until.3.gz
 man/man3/al_wait_for_vsync.3.gz
-%%DEMOS%%share/pixmaps/cosmic_protector.png
-%%DEMOS%%share/pixmaps/speed.png
+%%DEMOS%%%%EXAMPLES%%share/pixmaps/cosmic_protector.png
+%%DEMOS%%%%EXAMPLES%%share/pixmaps/speed.png
 @dirrm include/allegro5/platform
 @dirrm include/allegro5/opengl/GLext
 @dirrm include/allegro5/opengl

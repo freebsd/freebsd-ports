@@ -12,8 +12,7 @@ COMMENT=	A tiny version of Chinput
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv gmake
 USE_XORG=	x11 xt
 USE_LDCONFIG=	yes
 ALL_TARGET=	all data

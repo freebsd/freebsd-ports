@@ -50,20 +50,8 @@
     SUBDIR += baresip
     SUBDIR += baudline
     SUBDIR += beast
-    SUBDIR += beep
     SUBDIR += beets
     SUBDIR += blop
-    SUBDIR += bmp-crossfade
-    SUBDIR += bmp-faad
-    SUBDIR += bmp-fc
-    SUBDIR += bmp-festalon
-    SUBDIR += bmp-flac
-    SUBDIR += bmp-htmlplaylist
-    SUBDIR += bmp-mac
-    SUBDIR += bmp-modplug
-    SUBDIR += bmp-scrobbler
-    SUBDIR += bmp-songchange
-    SUBDIR += bmp-wma
     SUBDIR += bonk
     SUBDIR += boodler
     SUBDIR += bristol
@@ -173,7 +161,6 @@
     SUBDIR += flite
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
-    SUBDIR += fmio
     SUBDIR += fmit
     SUBDIR += fpc-a52
     SUBDIR += fpc-mad
@@ -391,7 +378,6 @@
     SUBDIR += libmp3splt
     SUBDIR += libmpd
     SUBDIR += libmpdclient
-    SUBDIR += libmtp
     SUBDIR += libmusicbrainz3
     SUBDIR += libmusicbrainz4
     SUBDIR += libmusicbrainz5
@@ -526,7 +512,6 @@
     SUBDIR += nspmod
     SUBDIR += ocp
     SUBDIR += ogg2mp3
-    SUBDIR += oggsplit
     SUBDIR += openal
     SUBDIR += openal-soft
     SUBDIR += opencore-amr
@@ -540,7 +525,6 @@
     SUBDIR += osdmixer
     SUBDIR += oss
     SUBDIR += p5-Audio
-    SUBDIR += p5-Audio-Beep
     SUBDIR += p5-Audio-CD
     SUBDIR += p5-Audio-Ecasound
     SUBDIR += p5-Audio-FLAC-Header
@@ -838,7 +822,6 @@
     SUBDIR += xmms-midi
     SUBDIR += xmms-modplug
     SUBDIR += xmms-mp3cue
-    SUBDIR += xmms-musepack
     SUBDIR += xmms-nas
     SUBDIR += xmms-nsf
     SUBDIR += xmms-openspc
@@ -855,7 +838,6 @@
     SUBDIR += xmms-timidity
     SUBDIR += xmms-volnorm
     SUBDIR += xmms-wavpack
-    SUBDIR += xmms-wma
     SUBDIR += xmms-xf86audio
     SUBDIR += xmms-xymms
     SUBDIR += xmms2

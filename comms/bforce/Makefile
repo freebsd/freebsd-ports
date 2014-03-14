@@ -10,8 +10,7 @@ MASTER_SITES=	ftp://fido.kuzbass.ru/pub/fileecho/DALLAS.SOFT/
 MAINTAINER=	vk@vk.pp.ru
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	-fno-builtin

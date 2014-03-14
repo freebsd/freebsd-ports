@@ -18,9 +18,8 @@ COMMENT=	Improved and extended version of Doom
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
+USES=		gmake zip
 USE_GL=		glu
-USE_GMAKE=	yes
 USE_SDL=	mixer sdl
 
 CFLAGS+=	-DSVN_REV=\\\"${SVN_REV}\\\"

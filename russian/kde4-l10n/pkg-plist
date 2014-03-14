@@ -935,9 +935,9 @@ share/doc/HTML/ru/kturtle/using-kturtle.docbook
 share/doc/HTML/ru/kuser/common
 share/doc/HTML/ru/kuser/index.cache.bz2
 share/doc/HTML/ru/kuser/index.docbook
-share/doc/HTML/ru/kwallet/common
-share/doc/HTML/ru/kwallet/index.cache.bz2
-share/doc/HTML/ru/kwallet/index.docbook
+share/doc/HTML/ru/kwalletmanager/common
+share/doc/HTML/ru/kwalletmanager/index.cache.bz2
+share/doc/HTML/ru/kwalletmanager/index.docbook
 share/doc/HTML/ru/kwatchgnupg/common
 share/doc/HTML/ru/kwatchgnupg/index.cache.bz2
 share/doc/HTML/ru/kwatchgnupg/index.docbook
@@ -1772,7 +1772,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kwrite
 @dirrm share/doc/HTML/ru/kwordquiz
 @dirrm share/doc/HTML/ru/kwatchgnupg
-@dirrm share/doc/HTML/ru/kwallet
+@dirrm share/doc/HTML/ru/kwalletmanager
 @dirrm share/doc/HTML/ru/kuser
 @dirrm share/doc/HTML/ru/kturtle
 @dirrm share/doc/HTML/ru/ktuberling

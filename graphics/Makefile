@@ -62,7 +62,6 @@
     SUBDIR += blender
     SUBDIR += blender-doc
     SUBDIR += bmeps
-    SUBDIR += bmp-rootvis
     SUBDIR += bmp2html
     SUBDIR += box
     SUBDIR += boxer
@@ -147,7 +146,6 @@
     SUBDIR += enblend
     SUBDIR += ender
     SUBDIR += enesim
-    SUBDIR += enfle
     SUBDIR += entangle
     SUBDIR += eog
     SUBDIR += eog-plugins
@@ -321,7 +319,6 @@
     SUBDIR += grx
     SUBDIR += gscan2pdf
     SUBDIR += gsculpt
-    SUBDIR += gsnapshot
     SUBDIR += gstreamer-plugins-aalib
     SUBDIR += gstreamer-plugins-cairo
     SUBDIR += gstreamer-plugins-gdkpixbuf
@@ -413,8 +410,6 @@
     SUBDIR += jpgraph2
     SUBDIR += jpgtn
     SUBDIR += jslice
-    SUBDIR += jumpgis
-    SUBDIR += jumpgis-postgis
     SUBDIR += k3d
     SUBDIR += kamera-kde4
     SUBDIR += kcolorchooser
@@ -593,6 +588,7 @@
     SUBDIR += mingplot
     SUBDIR += mirage
     SUBDIR += mmrecover
+    SUBDIR += mozjpeg
     SUBDIR += mscgen
     SUBDIR += mtpaint
     SUBDIR += multican

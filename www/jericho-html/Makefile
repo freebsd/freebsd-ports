@@ -9,7 +9,7 @@ MASTER_SITES=	SF/jerichohtml/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	saper@saper.info
 COMMENT=	Java library to analyse and manipulate HTML
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	1.5+
 
 INTERFACES:=	"compile-time-dependencies/slf4j-api-1.6.1.jar:\

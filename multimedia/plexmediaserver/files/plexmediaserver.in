@@ -93,7 +93,6 @@ plex_stopcmd()
 		main_pid=$(cat ${pidfile});
 		child_pids=$(pgrep -P ${main_pid});
 		all_pids="${main_pid} ${child_pids}"
-		sig_stop=-QUIT;
 		kill ${sig_stop} ${all_pids};
 		wait_for_pids ${all_pids};
 		rm ${pidfile}

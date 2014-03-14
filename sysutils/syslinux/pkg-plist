@@ -31,6 +31,7 @@ man/man1/syslinux.1.gz
 %%DATADIR%%/bios/com32/modules/cptime.c32
 %%DATADIR%%/bios/com32/modules/cpuid.c32
 %%DATADIR%%/bios/com32/modules/cpuidtest.c32
+%%DATADIR%%/bios/com32/modules/debug.c32
 %%DATADIR%%/bios/com32/modules/disk.c32
 %%DATADIR%%/bios/com32/modules/dmitest.c32
 %%DATADIR%%/bios/com32/modules/elf.c32
@@ -172,6 +173,7 @@ man/man1/syslinux.1.gz
 %%DATADIR%%/efi32/com32/modules/cptime.c32
 %%DATADIR%%/efi32/com32/modules/cpuid.c32
 %%DATADIR%%/efi32/com32/modules/cpuidtest.c32
+%%DATADIR%%/efi32/com32/modules/debug.c32
 %%DATADIR%%/efi32/com32/modules/disk.c32
 %%DATADIR%%/efi32/com32/modules/dmitest.c32
 %%DATADIR%%/efi32/com32/modules/elf.c32
@@ -264,6 +266,7 @@ man/man1/syslinux.1.gz
 %%DATADIR%%/efi64/com32/modules/cptime.c32
 %%DATADIR%%/efi64/com32/modules/cpuid.c32
 %%DATADIR%%/efi64/com32/modules/cpuidtest.c32
+%%DATADIR%%/efi64/com32/modules/debug.c32
 %%DATADIR%%/efi64/com32/modules/disk.c32
 %%DATADIR%%/efi64/com32/modules/dmitest.c32
 %%DATADIR%%/efi64/com32/modules/elf.c32

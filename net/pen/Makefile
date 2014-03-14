@@ -18,7 +18,9 @@ CONFIGURE_ARGS=		--with-daemon --with-docdir=${DOCSDIR} \
 
 PORTDOCS=		penstats HOWTO AUTHORS README ChangeLog COPYING
 PLIST_FILES=		bin/mergelogs bin/pen bin/penctl bin/penlog \
-			bin/penlogd
+			bin/penlogd man/man1/mergelogs.1.gz \
+			man/man1/pen.1.gz man/man1/penctl.1.gz \
+			man/man1/penlog.1.gz man/man1/penlogd.1.gz
 
 .if defined(WITH_FDSETSIZE)
 CONFIGURE_ARGS+=	--with-fd_setsize=${WITH_FDSETSIZE}
@@ -34,7 +36,4 @@ CONFIGURE_ARGS+=	--with-kqueue
 MAKE_ARGS+=	-DNOPORTDOCS
 .endif
 
-MAN1=		mergelogs.1 pen.1 penctl.1 penlog.1 penlogd.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

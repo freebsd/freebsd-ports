@@ -18,6 +18,7 @@ lib/libsecret-1.a
 lib/libsecret-1.la
 lib/libsecret-1.so
 lib/libsecret-1.so.0
+lib/libsecret-1.so.0.0.0
 libdata/pkgconfig/libsecret-1.pc
 libdata/pkgconfig/libsecret-unstable.pc
 man/man1/secret-tool.1.gz

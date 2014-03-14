@@ -16,7 +16,7 @@ JAVA_VERSION=	1.6+
 
 NO_WORKSUBDIR=	yes
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 
 PORTDOCS=	api copying.txt index.html
 

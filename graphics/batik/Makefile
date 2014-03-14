@@ -13,7 +13,7 @@ COMMENT=	Java based SVG toolkit
 
 LICENSE=	APACHE20
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	jars all-jar

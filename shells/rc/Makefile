@@ -8,24 +8,16 @@ MASTER_SITES=	ftp://rc.quanstro.net/pub/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	quanstro@quanstro.net
-COMMENT=	A unix incarnation of the plan9 shell
+COMMENT=	Unix incarnation of the plan9 shell
 
 USE_BZIP2=	YES
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-history
-MAN1=		history.1 rc.1
-
 
 OPTIONS_DEFINE=	READLINE
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=		readline
-CONFIGURE_ARGS+=	--with-readline
-.else
-MAKE_ARGS+=	CFLAGS="$(CFLAGS) -static"
-.endif
+READLINE_USES+=		readline
+READLINE_CONFIGURE_WITH+=	--with-readline
+READLINE_MAKE_ARGS_OFF+=	CFLAGS="$(CFLAGS) -static"
 
 .include <bsd.port.mk>

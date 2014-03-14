@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 OPTIONS_DEFINE=	EXAMPLES
 

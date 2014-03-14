@@ -12,7 +12,10 @@ COMMENT=	The wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki-1.1[0-9].* mediawiki-1.21.*
+CONFLICTS=	mediawiki-1.1[0-9].* mediawiki-1.21.* mediawiki-1.22.*
+
+DEPRECATED=	Not maintained upstream
+EXPIRATION_DATE=	2014-06-08
 
 USE_PHP=	ctype hash iconv mbstring pcre session xml zlib readline dom
 WANT_PHP_WEB=	yes

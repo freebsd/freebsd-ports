@@ -11,8 +11,7 @@ DISTNAME=	dmd.${PORTVERSION}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake zip
 MAKEFILE=	posix.mak
 EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
 DOCSDIR=	${PREFIX}/share/doc/dmd2

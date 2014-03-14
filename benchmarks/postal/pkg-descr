@@ -1,7 +1,7 @@
 Postal is a SMTP benchmark.
 
-Postal-list will list all the possible expansions for an account name (used
-for creating a list of accounts to create on your test server).
+Postal-list will list all the possible expansions for an account name
+(used for creating a list of accounts to create on your test server).
 
 Rabid is the mad Biff, it is a POP benchmark.
 

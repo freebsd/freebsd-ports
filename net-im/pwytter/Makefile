@@ -19,8 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkin
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_ZIP=	yes
-USES=		gettext
+USES=		gettext zip
 USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

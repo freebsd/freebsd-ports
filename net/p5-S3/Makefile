@@ -17,9 +17,8 @@ RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	run
-USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/s3-example-libraries/perl
 
 do-install:

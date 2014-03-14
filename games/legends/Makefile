@@ -11,13 +11,16 @@ DISTNAME=	${PORTNAME}_linux_gui-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:game \
 		${MAP_PACK}:maps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_SUFX=	.run
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast-paced first-person-perspective online multiplayer game
 
+OPTIONS_DEFINE=	DOCS
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_MAKESELF=	yes
+USES=		makeself
 USE_LINUX=	yes
 USE_LINUX_APPS+=dri
 NO_BUILD=	yes
@@ -28,7 +31,6 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 MAP_PACK=	BTMappack-1.05.unf
 PLIST_SUB=	MAP_PACK="${MAP_PACK}"
 
-NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR} && ${TAR} xf legends.tar
 
@@ -38,19 +40,17 @@ post-patch:
 	    ${WRKSRC}/bin/runlegends
 
 do-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} LinLegends lindedicated *.so* ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/runlegends ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/legends.ico ${PREFIX}/share/pixmaps
-	${LN} -sf ${DATADIR}/runlegends ${PREFIX}/bin/${PORTNAME}
+		${INSTALL_PROGRAM} LinLegends lindedicated *.so* ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/runlegends ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/legends.ico ${STAGEDIR}${PREFIX}/share/pixmaps
+	${LN} -sf ${DATADIR}/runlegends ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for f in common legends main.cs show
-	${CP} -r ${WRKSRC}/${f} ${DATADIR}
+	${CP} -r ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-	${INSTALL_DATA} ${DISTDIR}/${MAP_PACK} ${DATADIR}/legends
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${DISTDIR}/${MAP_PACK} ${STAGEDIR}${DATADIR}/legends
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

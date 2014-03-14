@@ -11,10 +11,10 @@ DISTNAME=	${PORTNAME}-2.0
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Specialized version of the Logo programming language written in Java
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 

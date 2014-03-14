@@ -22,14 +22,11 @@ LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 libglade2
-NO_STAGE=	yes
 INSTALLS_ICONS=	yes
 USES=		gettext gmake pathfix pkgconfig
 CONFIGURE_ARGS=	--enable-system-libsexy
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		gmpc-remote.1 gmpc.1 gmpc-remote-stream.1
 
 OPTIONS_DEFINE=	MMKEYS XSPF
 OPTIONS_DEFAULT=	MMKEYS

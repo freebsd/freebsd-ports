@@ -13,7 +13,7 @@ MAINTAINER=	shurd@sasktel.net
 COMMENT=	ANSI-BBS terminal which supports telnet, rlogin, and SSH
 
 WRKSRC=		${WRKDIR}/syncterm-${PORTVER}
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	GNUmakefile
 PORTVER=	20110320
 MAN1=		syncterm.1

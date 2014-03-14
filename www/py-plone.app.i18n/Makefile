@@ -13,9 +13,9 @@ COMMENT=	Plone specific i18n extensions
 
 LICENSE=	GPLv2
 
+USES=		zip
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=		yes
 
 .include <bsd.port.mk>

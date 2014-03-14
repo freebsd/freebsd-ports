@@ -12,7 +12,7 @@ COMMENT=	Morse telegraphy trainer similar to the classic DOS version by DL4MM
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' \

@@ -13,7 +13,7 @@ COMMENT=	Action adventure in space
 
 LICENSE=	GPLv3
 
-USE_ZIP=	yes
+USES=		zip:infozip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

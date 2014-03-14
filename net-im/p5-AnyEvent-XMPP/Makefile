@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	AnyEvent-XMPP
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	net-im perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implementation of the XMPP Protocol
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN \

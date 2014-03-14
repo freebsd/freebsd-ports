@@ -12,9 +12,9 @@ EXTRACT_SUFX=		.tar
 MAINTAINER=		bsam@FreeBSD.org
 COMMENT=		Seagate's SeaTools for Linux
 
-DOWNLOAD_URL=		http://download.seagate.com/seatools/registration.nsf/linux_cli?openform
+DOWNLOAD_URL=		http://www.seagate.com/files/www-content/support-content/downloads/seatools/_shared/downloads/seatools_cli.tar
 NO_WRKSUBDIR=		yes
-RESTRICTED=		The distfile should be downloaded by hand
+RESTRICTED=		Redistribution is not permitted
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX=		yes
 
@@ -23,24 +23,18 @@ PORTDOCS=		sthelp.txt
 
 OPTIONS_DEFINE=		DOCS
 
-NO_STAGE=	yes
 do-build:
 	@${BRANDELF} -t Linux ${WRKSRC}/st
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/st ${PREFIX}/sbin/st
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/sthelp.txt ${DOCSDIR}/sthelp.txt
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/st ${STAGEDIR}${PREFIX}/sbin/st
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/sthelp.txt ${STAGEDIR}${DOCSDIR}/sthelp.txt
 
 .include <bsd.port.pre.mk>
 
 .if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
-IGNORE=	please access ${DOWNLOAD_URL} with a web browser, fill the web form.\
-Please place the downloaded ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}
+IGNORE=	please fetch the distfile: ${DOWNLOAD_URL} by hand and place it in ${DISTDIR}
 .endif
 
 .include <bsd.port.post.mk>

@@ -14,6 +14,7 @@ include/gwyddion/app/gwymoduleutils-file.h
 include/gwyddion/app/gwymoduleutils.h
 include/gwyddion/app/gwyplaintool.h
 include/gwyddion/app/gwytool.h
+include/gwyddion/app/log.h
 include/gwyddion/app/menu.h
 include/gwyddion/app/meta.h
 include/gwyddion/app/resource-editor.h
@@ -143,6 +144,8 @@ include/gwyddion/libprocess/stats_uncertainty.h
 include/gwyddion/libprocess/tip.h
 include/gwyddion/libprocess/triangulation.h
 lib/gwyddion/include/gwyconfig.h
+lib/gwyddion/modules/file/accurexii-txt.la
+lib/gwyddion/modules/file/accurexii-txt.so
 lib/gwyddion/modules/file/aistfile.la
 lib/gwyddion/modules/file/aistfile.so
 lib/gwyddion/modules/file/alicona.la
@@ -251,6 +254,8 @@ lib/gwyddion/modules/file/oldmda.la
 lib/gwyddion/modules/file/oldmda.so
 lib/gwyddion/modules/file/ols.la
 lib/gwyddion/modules/file/ols.so
+lib/gwyddion/modules/file/ometiff.la
+lib/gwyddion/modules/file/ometiff.so
 lib/gwyddion/modules/file/omicron.la
 lib/gwyddion/modules/file/omicron.so
 lib/gwyddion/modules/file/omicronflat.la
@@ -499,6 +504,8 @@ lib/gwyddion/modules/process/polylevel.la
 lib/gwyddion/modules/process/polylevel.so
 lib/gwyddion/modules/process/presentationops.la
 lib/gwyddion/modules/process/presentationops.so
+lib/gwyddion/modules/process/rank.la
+lib/gwyddion/modules/process/rank.so
 lib/gwyddion/modules/process/rotate.la
 lib/gwyddion/modules/process/rotate.so
 lib/gwyddion/modules/process/scale.la
@@ -585,10 +592,10 @@ lib/gwyddion/modules/volume/volume_invert.so
 %%RUBY%%lib/gwyddion/ruby/gwyddion/dump.rb
 lib/libgwyapp2.la
 lib/libgwyapp2.so
-lib/libgwyapp2.so.9
+lib/libgwyapp2.so.10
 lib/libgwyddion2.la
 lib/libgwyddion2.so
-lib/libgwyddion2.so.10
+lib/libgwyddion2.so.11
 lib/libgwydgets2.la
 lib/libgwydgets2.so
 lib/libgwydgets2.so.14
@@ -600,7 +607,7 @@ lib/libgwymodule2.so
 lib/libgwymodule2.so.6
 lib/libgwyprocess2.la
 lib/libgwyprocess2.so
-lib/libgwyprocess2.so.18
+lib/libgwyprocess2.so.19
 libdata/pkgconfig/gwyddion.pc
 libexec/gwyddion/plugins/file/dump
 %%RUBY%%libexec/gwyddion/plugins/process/invert_narray.rb

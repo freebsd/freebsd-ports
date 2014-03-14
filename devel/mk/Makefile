@@ -10,12 +10,10 @@ MASTER_SITES=	http://www.cminusminus.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Andrew Hume's mk by way of Research Unix, Plan 9, & Inferno
 
-MAN1=		mk.1
-PLIST_FILES=	bin/mk
+PLIST_FILES=	bin/mk man/man1/mk.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mk ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mk.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/mk ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mk.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

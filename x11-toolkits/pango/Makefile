@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 18936 2013-12-03 23:02:32Z kwm $
+#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 19012 2014-03-08 07:21:34Z kwm $
 
 PORTNAME=	pango
 PORTVERSION=	1.36.1
@@ -16,18 +16,18 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	fontconfig>=2.10.91:${PORTSDIR}/x11-fonts/fontconfig
+BUILD_DEPENDS=	fontconfig>=2.10.91:${PORTSDIR}/x11-fonts/fontconfig \
+		cairo>=1.12:${PORTSDIR}/graphics/cairo
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	cairo glib20 introspection:build ltverhack referencehack
-CONFIGURE_ARGS=	--disable-static
+USE_GNOME=	cairo glib20 introspection:build referencehack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

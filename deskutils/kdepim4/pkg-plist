@@ -659,6 +659,7 @@ share/doc/HTML/en/kmail/credits-and-licenses.docbook
 share/doc/HTML/en/kmail/faq.docbook
 share/doc/HTML/en/kmail/folder-example.png
 share/doc/HTML/en/kmail/folder-properties.png
+share/doc/HTML/en/kmail/folderarchiveagent.png
 share/doc/HTML/en/kmail/getting-started.docbook
 share/doc/HTML/en/kmail/identitiesadvanced.png
 share/doc/HTML/en/kmail/identity.png
@@ -671,6 +672,7 @@ share/doc/HTML/en/kmail/index.cache.bz2
 share/doc/HTML/en/kmail/index.docbook
 share/doc/HTML/en/kmail/intro.docbook
 share/doc/HTML/en/kmail/kmailwelcome.png
+share/doc/HTML/en/kmail/layout.png
 share/doc/HTML/en/kmail/mail-mark-important.png
 share/doc/HTML/en/kmail/mail-mark-read.png
 share/doc/HTML/en/kmail/mail-mark-task.png

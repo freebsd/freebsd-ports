@@ -16,7 +16,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 

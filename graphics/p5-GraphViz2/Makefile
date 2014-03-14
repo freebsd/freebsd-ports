@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	GraphViz2
-PORTVERSION=	2.27
+PORTVERSION=	2.28
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper for AT&T Graphviz
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-Class-Load>=0.17:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Config-Tiny>=2.16:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-DBI>=1.616:${PORTSDIR}/databases/p5-DBI \
+		p5-DBIx-Admin-TableInfo>=2.11:${PORTSDIR}/databases/p5-DBIx-Admin-TableInfo \
 		p5-Data-Section-Simple>=0.02:${PORTSDIR}/devel/p5-Data-Section-Simple \
 		p5-Date-Simple>=3.03:${PORTSDIR}/devel/p5-Date-Simple \
 		p5-File-HomeDir>=0.99:${PORTSDIR}/devel/p5-File-HomeDir \
@@ -47,20 +47,16 @@ TEST_DEPENDS=	p5-Test-Pod>=1.45:${PORTSDIR}/devel/p5-Test-Pod \
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USE_PERL5=	5.14.2+ configure
-USES=		perl5 shebangfix
+USE_PERL5=	configure
+USES=		perl5 shebangfix tar:tgz
 
 PORTEXAMPLES=	*
 
 SHEBANG_FILES=	scripts/generate.png.sh scripts/generate.svg.sh scripts/pod2html.sh
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.pre.mk>
 

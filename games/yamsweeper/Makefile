@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.taz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Mine Sweeper
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USES=		imake
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 MAN1=		yamsweeper.1

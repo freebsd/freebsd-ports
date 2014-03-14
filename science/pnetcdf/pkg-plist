@@ -1,0 +1,15 @@
+bin/ncmpidiff
+bin/ncmpidump
+bin/ncmpigen
+bin/ncmpivalid
+include/pnetcdf.h
+include/pnetcdf.inc
+include/pnetcdf.mod
+lib/libpnetcdf.a
+man/man1/ncmpidiff.1.gz
+man/man1/ncmpidump.1.gz
+man/man1/ncmpigen.1.gz
+man/man1/ncmpivalid.1.gz
+man/man3/pnetcdf.3.gz
+man/man3/pnetcdf_f77.3.gz
+man/man3/pnetcdf_f90.3.gz

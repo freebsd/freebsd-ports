@@ -11,14 +11,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Sequence assembler for very short reads
 
-USE_GMAKE=	yes
 ALL_TARGET=	default
 
 MAXKMERLENGTH?=	31
 VELVET_CATEGORIES?=	2
 MAKE_ENV+=	MAXKMERLENGTH=${MAXKMERLENGTH} CATEGORIES=${VELVET_CATEGORIES}
 
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	run
 
 BINARIES=	velvetg velveth

@@ -14,5 +14,4 @@ CONFLICTS?=	libnids-[0-9]*
 
 DISTINFO_FILE=	${MASTERDIR}/distinfo
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

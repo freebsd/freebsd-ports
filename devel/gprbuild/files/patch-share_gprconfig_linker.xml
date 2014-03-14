@@ -1,8 +1,6 @@
-$NetBSD: patch-share_gprconfig_linker.xml,v 1.1 2012/07/08 20:08:42 marino Exp $
-
---- share/gprconfig/linker.xml.orig	2012-04-11 21:09:08.000000000 +0000
+--- share/gprconfig/linker.xml.orig	2013-01-25 17:01:24.000000000 +0000
 +++ share/gprconfig/linker.xml
-@@ -437,11 +437,14 @@
+@@ -519,11 +519,14 @@
      </config>
    </configuration>
  
@@ -18,7 +16,7 @@ $NetBSD: patch-share_gprconfig_linker.xml,v 1.1 2012/07/08 20:08:42 marino Exp $
         <target name="^.*irix.*$" />
      </targets>
      <config>
-@@ -487,10 +490,13 @@
+@@ -557,10 +560,13 @@
      </config>
    </configuration>
  
@@ -33,7 +31,7 @@ $NetBSD: patch-share_gprconfig_linker.xml,v 1.1 2012/07/08 20:08:42 marino Exp $
      </targets>
      <config>
     for Run_Path_Option  use ("-Wl,-rpath,");
-@@ -781,6 +787,9 @@
+@@ -888,6 +894,9 @@
         <target name="^.*mingw.*$" />
         <target name="^.*linux.*$" />
         <target name="^.*freebsd.*$" />
@@ -43,7 +41,7 @@ $NetBSD: patch-share_gprconfig_linker.xml,v 1.1 2012/07/08 20:08:42 marino Exp $
       </targets>
      <compilers negate="true">
         <compiler language="C++" />
-@@ -820,6 +829,9 @@
+@@ -929,6 +938,9 @@
         <target name="^.*mingw.*$" />
         <target name="^.*linux.*$" />
         <target name="^.*freebsd.*$" />
@@ -53,7 +51,7 @@ $NetBSD: patch-share_gprconfig_linker.xml,v 1.1 2012/07/08 20:08:42 marino Exp $
       </targets>
      <compilers negate="true">
         <compiler language="C++" />
-@@ -859,6 +871,9 @@
+@@ -970,6 +982,9 @@
         <target name="^.*mingw.*$" />
         <target name="^.*linux.*$" />
         <target name="^.*freebsd.*$" />

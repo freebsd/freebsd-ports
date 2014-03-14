@@ -10,9 +10,9 @@ MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Cross-platform library behind Panorama Tools and other photo stitchers
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USE_GNOME=	gtk20 glib20 pango atk
 
@@ -29,20 +29,6 @@ CONFIGURE_ARGS=	--with-png=${LOCALBASE} \
 
 USE_LDCONFIG=	yes
 
-MAN1=		\
-		PTAInterpolate.1 \
-		PTblender.1 \
-		PTcrop.1 \
-		PTinfo.1 \
-		PTmasker.1 \
-		PTmender.1 \
-		PToptimizer.1 \
-		PTroller.1 \
-		PTtiff2psd.1 \
-		PTtiffdump.1 \
-		PTuncrop.1 \
-		panoinfo.1
-
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -54,8 +40,10 @@ CONFIGURE_ARGS+=	--without-java
 PLIST_SUB=	JAVA="@comment "
 .endif
 
-NO_STAGE=	yes
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpano13.so.2
 
 .include <bsd.port.mk>

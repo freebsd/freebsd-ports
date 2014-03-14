@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	glib20 gtk20 libxml2
-NO_STAGE=	yes
 USES=		gettext gmake pathfix pkgconfig
 
 .include <bsd.port.mk>

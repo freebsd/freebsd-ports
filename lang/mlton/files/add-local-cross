@@ -101,24 +101,19 @@ $MAKE -C runtime COMPILE_FAST=yes OMIT_BYTECODE=yes TARGET=$crossTarget    \
 echo "* Running make dirs runtime in $tmp."
 $MAKE TARGET=$crossTarget TARGET_ARCH=$crossArch TARGET_OS=$crossOS dirs runtime
 
-echo "* Copy from tmp to build (build/lib/$crossTarget)."
+echo "* Copy from tmp to build (build/lib/targets/$crossTarget)."
 # ssh $machine "cd $tmp/build/lib/self && tar cf - ." | 
 #         ( cd "$lib/$crossTarget" && tar xf - )
-cp -pfR "$tmp/build/lib/$crossTarget" "$lib/"
+mkdir -p "$lib/targets"
+cp -pfR "$tmp/build/lib/targets/$crossTarget" "$lib/targets/"
 
-echo "* Copy from $crossArch-$crossOS (basis-library/config/c/$crossArch-crossOS)."
-#ssh $machine "cd $tmp/basis-library/config/c && tar cf - $crossArch-$crossOS" | 
-#        ( cd "$lib/sml/basis/config/c" && tar xf - )
-cp -pfR "$tmp/basis-library/config/c/$crossArch-$crossOS" \
-	"$lib/sml/basis/config/c/"
-
-echo "* Running make mlbpathmap targetmap in $src."
+echo "* Running make mlbpathmap in $src."
 #( cd "$src" &&
 #        mmake TARGET=$crossTarget TARGET_ARCH=$crossArch TARGET_OS=$crossOS \
 #                mlbpathmap targetmap )
 cd "$src"
 $MAKE TARGET=$crossTarget TARGET_ARCH=$crossArch TARGET_OS=$crossOS  \
-      mlbpathmap targetmap
+      mlbpathmap
 
 case "$crossOS" in
 mingw)
@@ -191,7 +186,6 @@ cd "$tmp/runtime/"
 $GCC $archOpts $osOpts -I. -o $exe $exe.c libmlton.a libgdtoa.a -lgmp -lm $libs
 
 #ssh $machine "$tmp/runtime/$exe$suf" >"$lib/$crossTarget/constants"
-$RUN "$tmp/runtime/$exe$suf" > "$lib/$crossTarget/constants"
+$RUN "$tmp/runtime/$exe$suf" > "$lib/targets/$crossTarget/constants"
 #ssh $machine "rm -rf $tmp"
 # rm -rf "$tmp"
-

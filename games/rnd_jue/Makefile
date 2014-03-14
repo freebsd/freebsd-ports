@@ -49,8 +49,8 @@ DOC_FILES2=	*.txt
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
-DESKTOP_ENTRIES="R'n'D jue" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES="R'n'D jue" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 .include <bsd.port.options.mk>
 
@@ -59,8 +59,10 @@ post-extract-script:
 .for l in ${LEVELS_BD_FANS:S/$/.zip/}
 	@${UNZIP_CMD} -qo -d ${WRKSRC}/levels ${_DISTDIR}/${l}
 .endfor
-	@${UNZIP_CMD} -qo -d ${WRKSRC}/levels/Tutorials ${_DISTDIR}/Tutorial_Alpha.zip
-	@(cd ${WRKSRC}/levels/Tutorials && ${MV} "Tutorial Alpha" rnd_tutorial_alpha)
+	@${UNZIP_CMD} -qo -d ${WRKSRC}/levels/Tutorials \
+		${_DISTDIR}/Tutorial_Alpha.zip
+	@(cd ${WRKSRC}/levels/Tutorials && ${MV} \
+		"Tutorial Alpha" rnd_tutorial_alpha)
 
 	@(cd ${WRKSRC}/levels/"Walpurgis Collection" && \
 		${RM} -fr "Walpurgis Gardens" "Walpurgis World")
@@ -72,9 +74,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|sdl-config|$${SDL_CONFIG}|g' ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} \
-		-e 's|machine/soundcard.h|sys/soundcard.h|' ${WRKSRC}/src/libgame/sound.c
+		-e 's|machine/soundcard.h|sys/soundcard.h|' \
+		${WRKSRC}/src/libgame/sound.c
 	@${REINPLACE_CMD} \
-		-e 's|machine/joystick.h|sys/joystick.h|' ${WRKSRC}/src/libgame/joystick.c
+		-e 's|machine/joystick.h|sys/joystick.h|' \
+		${WRKSRC}/src/libgame/joystick.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

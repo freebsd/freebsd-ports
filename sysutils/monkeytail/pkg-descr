@@ -1,9 +1,0 @@
-tail variant designed for web developers monitoring logfiles
-MonkeyTail allows a user to tail multiple files on both local and remote hosts
-and clearly marks inactivity by putting 5 newlines in the output whenever a
-pause in output over 3 seconds is detected.
-
-MonkeyTail is implemented a fairly simple wrapper script around standard tail,
-ssh, and sudo.
-
-WWW: http://dollyfish.net.nz/projects/monkeytail

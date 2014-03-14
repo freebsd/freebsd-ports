@@ -14,7 +14,7 @@ NO_CDROM=	Resale allowed for media cost only
 
 NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
+USES=		zip:infozip
 EXTRACT_BEFORE_ARGS=	-Laq
 
 post-patch:

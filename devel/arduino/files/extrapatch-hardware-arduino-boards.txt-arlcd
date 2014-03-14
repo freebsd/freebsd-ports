@@ -1,0 +1,23 @@
+--- hardware/arduino/boards.txt.orig	2013-07-14 10:31:43.000000000 -0700
++++ hardware/arduino/boards.txt	2013-07-21 12:43:56.000000000 -0700
+@@ -601,3 +601,20 @@
+ robotMotor.build.core=robot
+ robotMotor.build.variant=robot_motor
+ 
++##############################################################
++
++arlcd.name=EarthLCD arLCD
++arlcd.upload.protocol=arduino
++arlcd.upload.maximum_size=32256
++arlcd.upload.speed=115200
++arlcd.bootloader.low_fuses=0xff
++arlcd.bootloader.high_fuses=0xde
++arlcd.bootloader.extended_fuses=0x05
++arlcd.bootloader.path=optiboot
++arlcd.bootloader.file=optiboot_atmega328.hex
++arlcd.bootloader.unlock_bits=0x3F
++arlcd.bootloader.lock_bits=0x0F
++arlcd.build.mcu=atmega328
++arlcd.build.f_cpu=16000000L
++arlcd.build.core=arduino
++arlcd.build.variant=standard

@@ -3,7 +3,7 @@
 
 PORTNAME=	ems-flasher
 PORTVERSION=	0.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://lacklustre.net/redmine/attachments/download/10/ \
 	http://update.cooltrainer.org/freebsd-ports/comms/ems-flasher/
@@ -14,7 +14,7 @@ COMMENT=	Utility to flash ROM images to the EMS USB 64mb flash cart
 
 LICENSE=	MIT
 
-USE_GMAKE=	yes
+USES=		gmake
 CFLAGS+=	-g -Wall
 LDFLAGS+=	-lusb
 USE_GCC=	yes

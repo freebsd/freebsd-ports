@@ -4,7 +4,7 @@
 PORTNAME=	vnconvert
 PORTVERSION=	1.0
 CATEGORIES=	vietnamese
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	convert
 EXTRACT_SUFX=	.tar
@@ -15,11 +15,11 @@ COMMENT=	Converts Vietnamese text files between popular formats
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=
-MAN1=		vnconvert.1
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/vnconvert man/man1/vnconvert.1.gz
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/vnconvert ${PREFIX}/bin
-	@${INSTALL_MAN} ${FILESDIR}/vnconvert.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/vnconvert ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/vnconvert.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

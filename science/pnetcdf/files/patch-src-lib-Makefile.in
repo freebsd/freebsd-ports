@@ -1,0 +1,17 @@
+--- src/lib/Makefile.in.orig	2013-11-17 02:02:38.000000000 +0800
++++ src/lib/Makefile.in	2014-03-09 22:42:45.293477277 +0800
+@@ -97,10 +97,10 @@
+ 	$(RANLIB) $@
+ 
+ install:
+-	$(INSTALL) -d -m 755 $(LIBDIR)
+-	$(INSTALL_DATA) $(LIBRARY) $(LIBDIR)/$(LIBRARY)
+-	$(INSTALL) -d -m 755 $(INCDIR)
+-	$(INSTALL_DATA) $(HEADER) $(INCDIR)/$(HEADER)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)
++	$(INSTALL_DATA) $(LIBRARY) $(DESTDIR)$(LIBDIR)/$(LIBRARY)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(INCDIR)
++	$(INSTALL_DATA) $(HEADER) $(DESTDIR)$(INCDIR)/$(HEADER)
+ 
+ uninstall:
+ 	$(RM) -f $(LIBDIR)/$(LIBRARY)

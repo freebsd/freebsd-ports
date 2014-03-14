@@ -27,6 +27,10 @@ EXTRACT_FILES=	libopenal-0.0.so libSDL-1.1.so.0 README.105 README.106 base/pak2.
 PORTDOCS=	README README.105 README.106
 SUB_FILES=	pkg-message
 
+.if !defined(CDROM_MOUNT)
+IGNORE=		${PKGNAME} requires CDROM_MOUNT set to mount point of CD
+.endif
+
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
@@ -34,10 +38,6 @@ do-extract:
 	@${MKDIR} ${WRKSRC}/data ${WRKSRC}/patch
 	@cd ${WRKSRC}/patch && ${SED} -e '1,/END_OF_STUB/d' ${_DISTDIR}/${DISTFILES} | \
 		${GUNZIP_CMD} -q | ${TAR} xf -
-.if !defined(CDROM_MOUNT)
-	@${ECHO_CMD} "${PKGNAME} requires CDROM_MOUNT set to mount point of CD"
-	@${FALSE}
-.endif
 .if !exists(${CDROM_MOUNT}/bin/x86/glibc-2.1/${PORTNAME})
 	@${ECHO_CMD} "${PKGNAME} requires CD with Soldier of Fortune for Linux"
 	@${FALSE}

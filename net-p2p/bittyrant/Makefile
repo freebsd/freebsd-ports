@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/${SWT}.jar:${PORTSDIR}/x11-toolkits/${SWT}
 RUN_DEPENDS=	${JAVALIBDIR}/${SWT}.jar:${PORTSDIR}/x11-toolkits/${SWT}
 
-USES=		dos2unix
-USE_ZIP=	yes
+USES=		dos2unix zip
 DOS2UNIX_FILES=	build.xml \
 		org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
 		org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java

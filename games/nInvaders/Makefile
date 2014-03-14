@@ -10,18 +10,15 @@ DISTNAME=	ninvaders-${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	The nIvaders game is a Space Invaders clone for ncurses
 
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \
-	-e "s|^CFLAGS|#CFLAGS|g" ${WRKSRC}/Makefile
+		-e "s|^CFLAGS|#CFLAGS|g" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

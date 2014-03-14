@@ -13,6 +13,8 @@ COMMENT=	A Multi-Player FreeForm adventure Program
 
 WRKSRC=		${WRKDIR}/mux2.6/src
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

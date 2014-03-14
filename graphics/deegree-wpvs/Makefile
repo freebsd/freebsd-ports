@@ -12,7 +12,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Deegree Web Terrain Service(WTS)/Web Perspective View Service(WPVS)
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	1.5+
 
 NO_BUILD=	yes

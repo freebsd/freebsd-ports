@@ -3,7 +3,7 @@
 
 PORTNAME=	traingame
 PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/:game \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

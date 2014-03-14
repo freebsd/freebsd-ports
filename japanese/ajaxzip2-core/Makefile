@@ -12,11 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	ajaxzip2 (Japanese ZIP code utility) core scripts
 
-USES=		shebangfix
+USES=		dos2unix shebangfix zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_ZIP=	YES
 NO_BUILD=	YES
-USE_DOS2UNIX=	YES
 SHEBANG_FILES=	work/csv2jsonzip.pl
 
 NO_STAGE=	yes

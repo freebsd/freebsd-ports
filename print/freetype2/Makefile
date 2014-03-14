@@ -3,9 +3,10 @@
 #   $MCom: ports/print/freetype2/Makefile,v 1.28 2011/10/25 18:31:21 kwm Exp $
 
 PORTNAME=	freetype2
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 CATEGORIES=	print
-MASTER_SITES=	SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
+MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
+		SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \
 		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/ \
 		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/ \
@@ -23,6 +24,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	ltverhack:9
 ltverhack_PATCH_FILES=	builds/unix/ltmain.sh
+CONFIGURE_ARGS=	--without-harfbuzz
 CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
 
 OPTIONS_DEFINE=		LCD_FILTERING PNG
@@ -50,6 +52,6 @@ post-configure:
 		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} setup)
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreetype.so.9
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreetype.so.*
 
 .include <bsd.port.mk>

@@ -11,8 +11,8 @@ DISTNAME=	xcodesrc
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	A program for converting Russian encodings with care to letter YO
 
+USES=		zip
 PLIST_FILES=	bin/xcode
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	xcode

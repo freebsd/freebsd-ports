@@ -1,6 +1,0 @@
-gsnapshot is a GTK2 application. It provides for capturing a screen snapshot of
-the entire screen, a window or a region, with a simple user The package also
-provides the gdisplay program, a simple image viewer with built-in directory
-file browser.
-
-WWW: http://www.softcraft.org/gsnapshot/

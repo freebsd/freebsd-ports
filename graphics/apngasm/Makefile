@@ -16,8 +16,7 @@ OPTIONS_DEFINE=	DOCS STATIC
 
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
-USES=		dos2unix gmake
+USES=		dos2unix gmake zip
 
 LDFLAGS+=	-lz
 

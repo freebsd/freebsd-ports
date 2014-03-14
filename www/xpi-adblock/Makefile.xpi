@@ -74,7 +74,7 @@ DIST_SUBDIR?=	xpi
 LATEST_LINK?=	${PKGBASE:S/_//g}
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES+=		zip:infozip
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 XPI_DISTNAME?=	${PORTNAME}

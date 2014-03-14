@@ -1,6 +1,0 @@
-GXAnim is a graphical interface to XAnim written with the GTK+ toolkit for UNIX
-platforms.  You can quickly find a movie file, play it, and do the usual 
-VCR-like stuff (rewind, fast forward, pause, stop set volume, etc.), as 
-well as set general play preferences.
-
-WWW: http://www.rswarren.com/code/

@@ -8,7 +8,6 @@ MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/datatools/downl
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	dtp-sdk_${PORTVERSION}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,6 +20,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 LICENSE=	EPL
 
 WRKSRC=		${WRKDIR}/eclipse
+USES=		zip
 
 .include "${.CURDIR}/../eclipse/Makefile.plugins"
 

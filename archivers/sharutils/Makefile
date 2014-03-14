@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sharutils
-PORTVERSION=	4.13.5
-PORTREVISION=	1
+PORTVERSION=	4.14
 CATEGORIES=	archivers
 MASTER_SITES=	GNU
 
@@ -14,12 +13,11 @@ LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	NLS
 
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
 INFO=		sharutils
-USES=		charsetfix perl5
+USES=		charsetfix perl5 tar:xz
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
@@ -27,6 +25,8 @@ NLS_CONFIGURE_ON=	--with-libintl-prefix="${LOCALBASE}"
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
+	@${REINPLACE_CMD} -e '/Please include config.h first./ s,^.*$$,#include <config.h>,' \
+		${WRKSRC}/lib/unistd.in.h
 .for man in shar.1 unshar.1
 	@${REINPLACE_CMD} \
 		-e 's, SHAR , GSHAR ,' \

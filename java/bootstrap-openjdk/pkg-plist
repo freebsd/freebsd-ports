@@ -33,6 +33,7 @@
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/liblcms.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libnet.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libnio.so
+%%LIBSTDCXX%%%%JDK_ROOT%%/jre/lib/%%ARCH%%/libstdc++.so.6
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libverify.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libzip.so
 %%CLIENTVM%%%%JDK_ROOT%%/jre/lib/%%ARCH%%/client/libjvm.so

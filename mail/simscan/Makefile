@@ -63,7 +63,7 @@ BUILD_DEPENDS+=	ripmime:${PORTSDIR}/mail/ripmime
 .endif
 
 .if ${PORT_OPTIONS:MSPAMD}
-BUILD_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+BUILD_DEPENDS+=	spamassassin:${PORTSDIR}/mail/spamassassin
 CONFIGURE_ARGS+=--enable-spam=y
 CONFIGURE_ARGS+=--enable-spamassassin-path=${LOCALBASE}/bin/spamassassin
 .endif

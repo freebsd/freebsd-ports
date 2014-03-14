@@ -3,7 +3,7 @@
 
 PORTNAME=	gqrx
 PORTVERSION=	20130504
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac

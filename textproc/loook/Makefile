@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkint
 
 WRKSRC=		${WRKDIR}
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	2
 NO_BUILD=	yes
 

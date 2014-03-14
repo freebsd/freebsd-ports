@@ -25,13 +25,12 @@ NO_CDROM=	Must be distributed only through the Internet and free of charge
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses x86 assembly code
 
-USE_ZIP=	yes
 USE_GL=		gl
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
 USE_GCC=	any
 
-USES=	dos2unix gmake
+USES=	dos2unix gmake zip
 DOS2UNIX_REGEX=	.*(\.(c|h)|Makefile)(\.deps)?
 
 NO_WRKSUBDIR=	yes

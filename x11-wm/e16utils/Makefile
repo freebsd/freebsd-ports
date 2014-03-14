@@ -15,6 +15,8 @@ COMMENT=	Standalone menu and keybinding editors for enlightenment 0.16
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USE_GNOME=	imlib gtk20
 USES=		pkgconfig
 

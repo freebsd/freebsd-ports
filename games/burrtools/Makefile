@@ -2,50 +2,69 @@
 # $FreeBSD$
 
 PORTNAME=	burrtools
-PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTVERSION=	0.6.3
 CATEGORIES=	games
-MASTER_SITES=	SF \
-		http://www.c-s.li/ports/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle solver
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+BUILD_DEPENDS=	netpbm>0:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libpng15.so:${PORTSDIR}/graphics/png \
 		libxmlwrapp.so:${PORTSDIR}/textproc/xmlwrapp \
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs
+		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
+USES=		gmake
 USE_XORG=	x11 xt xext xmu xi
 USE_GL=		glu
-USES=		gmake
+USE_GCC=	yes # clang generates incorrect binaries: cause SIGILL
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	`fltk-config --cxxflags`
-LDFLAGS+=	`fltk-config --ldflags`
+CONFIGURE_ARGS=	--disable-silent-rules
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/burrTxt bin/burrTxt2 bin/burrGui
+PLIST_FILES=	bin/burrTxt bin/burrTxt2 bin/burrGui \
+		share/pixmaps/burricons.png
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+DESKTOP_ENTRIES="BurrGui" "" "${PREFIX}/pixmaps/burricons.png" "burrGui" "" ""
+
+OPTIONS_DEFINE=		DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} >= 1000024
+LDFLAGS+=	-lc++
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|g++|$$(CXX)|; \
-		/burrTxt2_LDADD =/ s|$$| -lboost_system|; \
-		/burrGui_LDADD =/ s|$$| -lboost_system|' \
-		${WRKSRC}/src/Makefile.am ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|g++ |$$(CXX) | ; \
+		 s|-O2 |$$(CXXFLAGS) |' ${WRKSRC}/src/Makefile.in
+
+post-build:
+	(cd ${WRKSRC} && ${CAT} burricons.ico | winicontoppm -bestqual | \
+		pnmtopng -transparent=black > burricons.png)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt2 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gui/burrGui ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} burrTxt burrTxt2 \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/src/gui && ${INSTALL_PROGRAM} burrGui \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_DATA} burricons.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in burricons.ico AUTHORS ChangeLog NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+.for i in AUTHORS ChangeLog NEWS README
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR})
 .endfor
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

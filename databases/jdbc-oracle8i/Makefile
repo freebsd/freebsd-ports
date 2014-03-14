@@ -19,8 +19,8 @@ PATCH_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip
 
 RESTRICTED=	Must be downloaded direct from Oracle via www interface
 
-USE_ZIP=	yes
-USE_JAVA=	yes
+USES=		zip
+SE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes

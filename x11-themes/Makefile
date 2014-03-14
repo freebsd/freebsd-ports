@@ -50,7 +50,6 @@
     SUBDIR += gnome-icons-refined
     SUBDIR += gnome-icons-slick
     SUBDIR += gnome-icons-snow-apple
-    SUBDIR += gnome-icons-snowish
     SUBDIR += gnome-icons-stylish
     SUBDIR += gnome-icons-ximian-south
     SUBDIR += gnome-themes
@@ -64,6 +63,7 @@
     SUBDIR += gtk-aqualightblue-theme
     SUBDIR += gtk-aurora-engine
     SUBDIR += gtk-bluecurve-theme
+    SUBDIR += gtk-blueprint-engine
     SUBDIR += gtk-cleanice-engine
     SUBDIR += gtk-digital-cream-theme
     SUBDIR += gtk-digital-harmony-theme

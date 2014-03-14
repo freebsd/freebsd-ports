@@ -13,8 +13,8 @@ COMMENT=	Seaside: squeak based WWW application framework with Japanized patch
 
 RUN_DEPENDS=	squeak:${PORTSDIR}/lang/squeak
 
+USES=		zip
 NO_BUILD=	yes
-USE_ZIP=	yes
 
 DIST_SUBDIR=	squeak
 

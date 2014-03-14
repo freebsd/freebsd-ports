@@ -11,10 +11,9 @@ DISTNAME=	${PORTNAME}engine${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Quake engine modification
 
-USES=		gmake
-USE_ZIP=	yes
+USES=		dos2unix gmake zip:infozip
 USE_XORG=	xxf86dga xpm
-USE_DOS2UNIX=	darkplaces.txt
+DOS2UNIX_FILES=	darkplaces.txt
 MAKE_ENV=	DP_FS_BASEDIR="${Q1DIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

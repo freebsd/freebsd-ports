@@ -17,7 +17,6 @@ USES=		pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^gtkimageview-marshal.[ch]:/s|$$[(]GLIB_GENMARSHAL[)]||'\
 		${WRKSRC}/src/Makefile.in

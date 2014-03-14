@@ -26,7 +26,6 @@ SUB_LIST=	"APACHEMODDIR=${APACHEMODDIR}"
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's,-Werror,,' ${WRKSRC}/configure.in
 
@@ -34,10 +33,11 @@ pre-configure:
 	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --force --copy)
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/${APACHEINCLUDEDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/libmod_cplusplus.so ${PREFIX}/${APACHEMODDIR}/mod_cplusplus.so
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libmod_cplusplus.so \
+		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_cplusplus.so
 
 .include <bsd.port.mk>

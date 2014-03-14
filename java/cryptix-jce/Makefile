@@ -6,11 +6,11 @@ PORTREVISION=	2
 CATEGORIES=	java security
 MASTER_SITES=	http://www.cryptix.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-snap
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JCE (Java Cryptography Extension) by Cryptix
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

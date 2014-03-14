@@ -15,9 +15,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-DBI>=1.48:${PORTSDIR}/databases/p5-DBI
 
-USE_ZIP=	yes
 USE_MYSQL=	yes
-USES=		perl5
+USES=		perl5 zip
 USE_PHP=	session mysql zlib ftp
 
 NO_BUILD=	yes

@@ -30,7 +30,7 @@ USES=		dos2unix gmake iconv
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-Iinclude -I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/freetype2 $$(freetype-config --cflags) -w
+		-I${LOCALBASE}/include/freetype2 $$(freetype-config --cflags)
 LDFLAGS+=	-L${LOCALBASE}/lib -lalleg $$(freetype-config --libs)
 
 PLIST_FILES=	include/alfont.h \
@@ -59,9 +59,10 @@ do-extract:
 post-patch:
 	@${CP} -af ${_DISTDIR}/alfont.c ${WRKSRC}/src
 
-	@${REINPLACE_CMD} \
-		-e 's|#define ALFONT_WINDOWS|//#define ALFONT_WINDOWS|' \
-		-e 's|//#define ALFONT_LINUX|#define ALFONT_LINUX|' \
+	@${REINPLACE_CMD} -e \
+		's|#define ALFONT_WINDOWS|//#define ALFONT_WINDOWS|; \
+		 s|//#define ALFONT_LINUX|#define ALFONT_LINUX|; \
+		 s|^ALFONT_DLL_DECLSPEC void alfont_get_string.*||' \
 		${WRKSRC}/include/alfont.h
 
 do-build:

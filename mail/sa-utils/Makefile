@@ -11,7 +11,7 @@ DISTFILES=	# none
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	SpamAssassin nightly periodic maintenance
 
-RUN_DEPENDS=	sa-update:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS=	sa-update:${PORTSDIR}/mail/spamassassin
 
 OPTIONS_DEFINE=	SACOMPILE
 SACOMPILE_DESC=	Enable sa-compile support

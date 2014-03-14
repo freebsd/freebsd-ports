@@ -15,9 +15,9 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libebml.so:${PORTSDIR}/textproc/libebml
 
-USES=	gmake
+USES=	gmake dos2unix
 USE_BZIP2=	yes
-USE_DOS2UNIX=	make/linux/Makefile
+DOS2UNIX_FILES=	make/linux/Makefile
 BUILD_WRKSRC=	${WRKSRC}/make/linux
 INSTALL_WRKSRC=	${WRKSRC}/make/linux
 USE_LDCONFIG=	yes

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-jar-21
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JBroFuzz is a web application fuzzer
 
-USE_ZIP=	YES
+USES=		zip
 USE_JAVA=	YES
 NO_BUILD=	YES
 JAVA_VERSION=	1.6+

@@ -1,8 +1,7 @@
-# Created by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libpwquality
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/libpwquality/
 
@@ -11,7 +10,7 @@ COMMENT=	Library for generating random passwords and quality checking
 
 LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
 
-USES=		gettext gmake pathfix
+USES=		gettext gmake libtool pathfix
 USE_BZIP2=	yes
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
@@ -43,6 +42,7 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpwquality.so.1
+	@${CHMOD} 755 ${STAGEDIR}${PYTHON_SITELIBDIR}/pwquality.so
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pwquality.so
 
 .include <bsd.port.mk>

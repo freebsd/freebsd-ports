@@ -12,10 +12,8 @@ COMMENT=	Traffic visualizer, similar to nettop
 MAN8=		jnettop.8
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_GNOME=	glib20
-USE_GMAKE=	yes
-NO_STAGE=	yes
 
 LICENSE=	GPLv2
 

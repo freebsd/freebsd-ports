@@ -545,7 +545,6 @@ lib/asterisk/modules/chan_agent.so
 %%WITH_JABBER%%lib/asterisk/modules/chan_gtalk.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
-lib/asterisk/modules/chan_mgcp.so
 lib/asterisk/modules/chan_multicast_rtp.so
 %%WITH_OOH323%%lib/asterisk/modules/chan_ooh323.so
 lib/asterisk/modules/chan_oss.so
@@ -654,9 +653,9 @@ share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
 share/asterisk/phoneprov/snom-mac.xml
-share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.24
-share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.24
-share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.24
+share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.25
+share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.25
+share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.25
 share/asterisk/sounds/en/ascending-2tone.gsm
 share/asterisk/sounds/en/conf-adminmenu-18.gsm
 share/asterisk/sounds/en/conf-adminmenu-162.gsm
@@ -966,6 +965,7 @@ share/asterisk/sounds/en/letters/x.gsm
 share/asterisk/sounds/en/letters/y.gsm
 share/asterisk/sounds/en/letters/z.gsm
 share/asterisk/sounds/en/letters/zed.gsm
+share/asterisk/sounds/en/lowercase.gsm
 share/asterisk/sounds/en/minutes.gsm
 share/asterisk/sounds/en/pbx-invalid.gsm
 share/asterisk/sounds/en/pbx-invalidpark.gsm
@@ -1054,6 +1054,7 @@ share/asterisk/sounds/en/tt-monkeys.gsm
 share/asterisk/sounds/en/tt-monkeysintro.gsm
 share/asterisk/sounds/en/tt-somethingwrong.gsm
 share/asterisk/sounds/en/tt-weasels.gsm
+share/asterisk/sounds/en/uppercase.gsm
 share/asterisk/sounds/en/vm-Cust1.gsm
 share/asterisk/sounds/en/vm-Cust2.gsm
 share/asterisk/sounds/en/vm-Cust3.gsm
@@ -1096,6 +1097,7 @@ share/asterisk/sounds/en/vm-login.gsm
 share/asterisk/sounds/en/vm-mailboxfull.gsm
 share/asterisk/sounds/en/vm-message.gsm
 share/asterisk/sounds/en/vm-messages.gsm
+share/asterisk/sounds/en/vm-msgforwarded.gsm
 share/asterisk/sounds/en/vm-minutes.gsm
 share/asterisk/sounds/en/vm-mismatch.gsm
 share/asterisk/sounds/en/vm-msginstruct.gsm
@@ -1158,7 +1160,7 @@ share/asterisk/sounds/en/vm-undeleted.gsm
 share/asterisk/sounds/en/vm-unknown-caller.gsm
 share/asterisk/sounds/en/vm-whichbox.gsm
 share/asterisk/sounds/en/vm-youhave.gsm
-share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.24
+share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.25
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
 share/asterisk/static-http/astman.js

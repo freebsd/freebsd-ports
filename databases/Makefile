@@ -219,7 +219,6 @@
     SUBDIR += mysql-proxy
     SUBDIR += mysql-q4m
     SUBDIR += mysql-udf
-    SUBDIR += mysql-udf-preg
     SUBDIR += mysql-udf-sys
     SUBDIR += mysql-workbench51
     SUBDIR += mysql-workbench52
@@ -233,7 +232,6 @@
     SUBDIR += mysql55-server
     SUBDIR += mysql56-client
     SUBDIR += mysql56-server
-    SUBDIR += mysqlard
     SUBDIR += mysqlbackup
     SUBDIR += mysqlcppapi
     SUBDIR += mysqldumper
@@ -248,6 +246,7 @@
     SUBDIR += nagios-check_postgres_replication
     SUBDIR += nagios-check_redis
     SUBDIR += namazu2
+    SUBDIR += ntdb
     SUBDIR += ocaml-mysql
     SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
@@ -337,6 +336,9 @@
     SUBDIR += p5-DBICx-TxnInsert
     SUBDIR += p5-DBIWrapper
     SUBDIR += p5-DBIx-Abstract
+    SUBDIR += p5-DBIx-Admin-CreateTable
+    SUBDIR += p5-DBIx-Admin-DSNManager
+    SUBDIR += p5-DBIx-Admin-TableInfo
     SUBDIR += p5-DBIx-AnyDBD
     SUBDIR += p5-DBIx-Browse
     SUBDIR += p5-DBIx-Class
@@ -520,7 +522,6 @@
     SUBDIR += pear-MDB2_Driver_mysql
     SUBDIR += pear-MDB2_Driver_mysqli
     SUBDIR += pear-MDB2_Driver_pgsql
-    SUBDIR += pear-MDB2_Driver_sqlite
     SUBDIR += pear-MDB2_Schema
     SUBDIR += pear-MDB_QueryTool
     SUBDIR += pear-Structures_DataGrid_DataSource_Array

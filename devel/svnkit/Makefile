@@ -6,7 +6,6 @@ PORTVERSION=	1.3.0
 CATEGORIES=	devel java
 MASTER_SITES=	http://svnkit.com/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The only pure Java Subversion client library in the world
@@ -15,6 +14,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		zip
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

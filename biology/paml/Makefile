@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
 
-USE_GMAKE=	YES
+USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}44/src
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

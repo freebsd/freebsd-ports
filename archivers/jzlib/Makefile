@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.jcraft.com/jzlib/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Reimplementation of zlib in pure Java
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

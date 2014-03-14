@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.31
+PORTVERSION=	1.4.32
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -34,7 +34,8 @@ CONFIGURE_ARGS+=	--with-ssl=gnutls
 .elif ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl=openssl
-CONFIGURE_ENV+=		libssl_CFLAGS="-I${OPENSSLINC}" libssl_LIBS="-L${OPENSSLLIB} -lssl"
+CONFIGURE_ENV+=		libssl_CFLAGS="-I${OPENSSLINC}" \
+			libssl_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 .else
 CONFIGURE_ARGS+=	--with-ssl=no
 .endif

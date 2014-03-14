@@ -10,7 +10,7 @@ DISTNAME=	XORSearch_V1_2_0
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Search for a given string in an XOR or ROL encoded binary file
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/xorsearch

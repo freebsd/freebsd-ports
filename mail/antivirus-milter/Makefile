@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Sendmail milter wich uses McAfee Virus Scan or clamav
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		-lmilter ${PTHREAD_LIBS}

@@ -12,8 +12,7 @@ COMMENT=	Free open source neural network library
 
 WRKSRC=		${WRKDIR}/FANN-2.2.0-Source
 
-USES=		cmake
-USE_ZIP=	yes
+USES=		cmake zip
 USE_LDCONFIG=	yes
 
 post-patch:

@@ -26,8 +26,7 @@ DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 PORTDOCS=	README_j.txt
 .endif
 
-USE_ZIP=	yes
-USES+=		iconv gmake
+USES+=		iconv gmake zip
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

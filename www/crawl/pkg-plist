@@ -1,3 +1,4 @@
 bin/crawl
-%%PORTDOCS%%share/examples/crawl/crawl.conf
-%%PORTDOCS%%@dirrm share/examples/crawl
+man/man1/crawl.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crawl.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

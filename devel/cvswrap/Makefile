@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alfred
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper for multiple CVS repositories
 
 USES=		desthack

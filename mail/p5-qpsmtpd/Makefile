@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Flexible SMTP daemon written in Perl and featuring a plugin API
 
-BUILD_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
+BUILD_DEPENDS=	spamd:${PORTSDIR}/mail/spamassassin \
 		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
 		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \

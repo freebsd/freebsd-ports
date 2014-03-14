@@ -7,15 +7,13 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.bluedj.com/download/src/
 DISTNAME=	source-${PORTVERSION}
-#EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	bluedj contains many popular online games
 
 NO_BUILD=	yes
-USE_ZIP=	yes
 USE_QT4=	gui qt3support qmake_build uic_build rcc_build moc_build svg
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_FILES=	Base/src/DJGraphicsChessTimerItem.cpp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

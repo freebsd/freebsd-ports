@@ -8,13 +8,12 @@ CATEGORIES=	graphics java
 MASTER_SITES=	http://www.jave.de/developer/\
 		http://ikaria.informatik.uni-rostock.de/public_bsd/FreeBSD/
 DISTNAME=	jave_6.0_i20060105
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ad001@uni-rostock.de
 COMMENT=	Java ASCII-Art-Generator
 
+USES=		zip
 USE_JAVA=	YES
-USE_ZIP=	YES
 JAVA_VERSION=	1.6+
 NO_BUILD=	YES
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

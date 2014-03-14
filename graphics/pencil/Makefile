@@ -21,8 +21,7 @@ LIB_DEPENDS+=	libming.so:${PORTSDIR}/graphics/ming \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libdrm.so:${PORTSDIR}/graphics/libdrm
 
-USE_ZIP=	yes
-USES=		gettext iconv qmake
+USES=		gettext iconv qmake zip
 USE_GNOME=	glib20
 USE_QT4=	gui moc_build rcc_build xml_build opengl_build
 USE_XORG=	xi xrender xrandr xfixes xcursor xinerama xext x11 xau xdmcp \

@@ -13,12 +13,11 @@ COMMENT=	Morse code training program
 
 LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf automake libtool
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 
 PLIST_FILES=	bin/aldo
 MAN1=	aldo.1

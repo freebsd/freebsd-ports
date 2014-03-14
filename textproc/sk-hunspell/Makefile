@@ -15,7 +15,7 @@ COMMENT=	Slovak hunspell dictionaries
 LICENSE=	LGPL21 GPLv2 MPL
 LICENSE_COMB=	dual
 
-EXTRACT_SUFX=	.zip
+USES=		zip
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/sk_SK.aff \

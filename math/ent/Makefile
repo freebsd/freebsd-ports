@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Entropy calculation and analysis of putative random sequences
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	ent
 PLIST_FILES=	bin/ent

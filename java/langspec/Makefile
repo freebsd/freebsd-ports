@@ -9,7 +9,7 @@ MASTER_SITES=	http://java.sun.com/docs/books/jls/download/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	The Java Language Specification
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 PORTDOCS=	*

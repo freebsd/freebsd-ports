@@ -10,7 +10,7 @@ DISTNAME=	repeater${PORTVERSION:C/\.//}
 MAINTAINER=	rick@sloservers.com
 COMMENT=	UltraVNC repeater
 
-USE_ZIP=	yes
+USES=		zip
 USE_RC_SUBR=	repeater
 WRKSRC=		${WRKDIR}/Ver${PORTVERSION:C/\.//}
 ALL_TARGET=	repeater

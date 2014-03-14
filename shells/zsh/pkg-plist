@@ -5,45 +5,45 @@ bin/rzsh
 @exec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
 @unexec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 bin/zsh-%%ZSH_VER%%
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/cap.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/clone.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/compctl.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/complete.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/complist.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/computil.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/curses.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/datetime.so
-%%GDBM%%%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/db/gdbm.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/deltochar.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/example.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/files.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/langinfo.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/mapfile.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/mathfunc.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/net/socket.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/net/tcp.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/newuser.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/parameter.so
-%%PCRE%%%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/pcre.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/regex.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/rlimits.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/sched.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/stat.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/system.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/termcap.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/terminfo.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/zftp.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/zle.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/zleparameter.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/zprof.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/zpty.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/zselect.so
-%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/zutil.so
-%%GDBM%%%%SHARED%%@dirrm lib/zsh/%%ZSH_VER%%/zsh/db
-%%SHARED%%@dirrm lib/zsh/%%ZSH_VER%%/zsh/net
-%%SHARED%%@dirrm lib/zsh/%%ZSH_VER%%/zsh
-%%SHARED%%@dirrm lib/zsh/%%ZSH_VER%%
-%%SHARED%%@dirrm lib/zsh
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/cap.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/clone.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/compctl.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/complete.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/complist.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/computil.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/curses.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/datetime.so
+%%GDBM%%%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/db/gdbm.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/deltochar.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/example.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/files.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/langinfo.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/mapfile.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/mathfunc.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/net/socket.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/net/tcp.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/newuser.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/parameter.so
+%%PCRE%%%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/pcre.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/regex.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/rlimits.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/sched.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/stat.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/system.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/termcap.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/terminfo.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zftp.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zle.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zleparameter.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zprof.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zpty.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zselect.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zutil.so
+%%GDBM%%%%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%/zsh/db
+%%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%/zsh/net
+%%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%/zsh
+%%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%
+%%NO_STATIC%%@dirrm lib/zsh
 @exec mkdir -p %D/%%DATADIR%%/site-functions 2> /dev/null || true
 @dirrmtry %%DATADIR%%/site-functions
 %%DATADIR%%/%%ZSH_VER%%/functions/Calendar.zwc

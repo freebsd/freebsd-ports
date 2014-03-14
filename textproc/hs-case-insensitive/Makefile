@@ -2,7 +2,7 @@
 
 PORTNAME=	case-insensitive
 PORTVERSION=	1.0.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

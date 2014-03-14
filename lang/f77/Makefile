@@ -18,6 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/fpp:${PORTSDIR}/devel/fpp \
 		${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
 .endif
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 # Set F77NAME to the name of the Fortran 77 wrapper.
 F77NAME=	ftn77
 

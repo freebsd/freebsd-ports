@@ -21,8 +21,7 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
 		libpng15.so:${PORTSDIR}/graphics/png
 
 SSP_UNSAFE=	yes
-USES=		pkgconfig
-USE_ZIP=	yes
+USES=		pkgconfig zip
 USE_GNOME=	gtk20 libxml2
 USE_PYTHON_BUILD=	yes
 USE_SCONS=	yes

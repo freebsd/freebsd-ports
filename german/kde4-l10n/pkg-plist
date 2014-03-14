@@ -1736,15 +1736,15 @@ share/doc/HTML/de/kuser/common
 share/doc/HTML/de/kuser/index.cache.bz2
 share/doc/HTML/de/kuser/index.docbook
 share/doc/HTML/de/kuser/kuser.png
-share/doc/HTML/de/kwallet/common
-share/doc/HTML/de/kwallet/edit1.png
-share/doc/HTML/de/kwallet/edit2.png
-share/doc/HTML/de/kwallet/first-open-request.png
-share/doc/HTML/de/kwallet/index.cache.bz2
-share/doc/HTML/de/kwallet/index.docbook
-share/doc/HTML/de/kwallet/kwalletmanager.png
-share/doc/HTML/de/kwallet/openwallet-request.png
-share/doc/HTML/de/kwallet/save-login-information.png
+share/doc/HTML/de/kwalletmanager/common
+share/doc/HTML/de/kwalletmanager/edit1.png
+share/doc/HTML/de/kwalletmanager/edit2.png
+share/doc/HTML/de/kwalletmanager/first-open-request.png
+share/doc/HTML/de/kwalletmanager/index.cache.bz2
+share/doc/HTML/de/kwalletmanager/index.docbook
+share/doc/HTML/de/kwalletmanager/kwalletmanager.png
+share/doc/HTML/de/kwalletmanager/openwallet-request.png
+share/doc/HTML/de/kwalletmanager/save-login-information.png
 share/doc/HTML/de/kwatchgnupg/common
 share/doc/HTML/de/kwatchgnupg/index.cache.bz2
 share/doc/HTML/de/kwatchgnupg/index.docbook
@@ -2762,7 +2762,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kwrite
 @dirrm share/doc/HTML/de/kwordquiz
 @dirrm share/doc/HTML/de/kwatchgnupg
-@dirrm share/doc/HTML/de/kwallet
+@dirrm share/doc/HTML/de/kwalletmanager
 @dirrm share/doc/HTML/de/kuser
 @dirrm share/doc/HTML/de/kubrick
 @dirrm share/doc/HTML/de/kturtle

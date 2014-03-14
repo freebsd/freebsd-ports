@@ -1,0 +1,37 @@
+--- release/basewsw/ui/porkui/template.rml.orig	2012-07-19 18:39:24.000000000 +0400
++++ release/basewsw/ui/porkui/template.rml	2014-02-06 07:52:43.000000000 +0400
+@@ -135,32 +135,9 @@
+ 			}
+ 		}
+ 
+-		String menuloc;
+-		void animOpenMenu( String menu ) // This function automatically animates the content away and opens a new menu after that.
++		void animOpenMenu( String menu ) // Don't animate on FreeBSD, as the program will crash for some reason...
+ 		{
+-			if( menu.length() <= 0 )
+-				return;				
+-				
+-			URL currentURL( window.document.URL );
+-			String currentDocFilename = currentURL.getFileName() + '.' + currentURL.getFileExtension();
+-			if( currentDocFilename == menu ) {
+-				// FIXME: not sure this works correct in all cases of valid input URL
+-				return;
+-			}
+-
+-			menuloc = menu;
+-			
+-			Element @body = @window.document.body;
+-			Element @content = @body.getElementById( "leftside" );
+-			if( @content == null )
+-				return;
+-				
+-			MoveAnimation anim( content, ANIMATION_DURATION_FAST, ANIM_ORIGIN, ANIM_LEFT, EASE_IN, animOpenMenuCallback );
+-		}
+-
+-		void animOpenMenuCallback()
+-		{
+-			window.location = menuloc;
++			window.location = menu;
+ 		}
+ 
+ 		void quitGame( Element @self, Event @ev )

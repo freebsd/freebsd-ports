@@ -13,13 +13,12 @@ COMMENT=	A simple, easy-to-use web based bug tracking system
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
 
 USE_PHP=	pcre session zlib xml gd
-USE_ZIP=	yes
+USES=		dos2unix zip
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.php
 
 OPTIONS_DEFINE=	GRAPHVIZ MYSQL MYSQLI POSTGRES

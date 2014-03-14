@@ -13,8 +13,7 @@ COMMENT=	Search using regexes for file names and text
 
 LICENSE=	GPLv3 # (or later)
 
-USES=		qmake dos2unix
-USE_ZIP=	yes
+USES=		qmake dos2unix zip
 DOS2UNIX_GLOB=	*.cpp *.h
 USE_QT4=	corelib gui moc_build rcc_build uic_build
 

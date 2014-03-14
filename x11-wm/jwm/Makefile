@@ -2,24 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	jwm
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF \
-		http://joewing.net/programs/jwm/releases/
+MASTER_SITES=	http://joewing.net/programs/jwm/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Joe's Window Manager
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	FRIBIDI XEXT XFT XINERAMA XMU XPM XRENDER JPEG PNG DEBUG
-OPTIONS_DEFAULT=FRIBIDI XEXT XFT XINERAMA XMU XPM XRENDER JPEG PNG
-FRIBIDI_DESC=	Unicode Bidirectional Algorithm support
-XEXT_DESC=	X11 Shape Extension support
-XMU_DESC=	X11 Miscellaneous Utilities support
-XRENDER_DESC=	X11 Render Extension support
-
-USE_BZIP2=	yes
+USE_XZ=		yes
 USES=		pkgconfig
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
@@ -27,86 +19,63 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=		CAIRO DEBUG FRIBIDI JPEG NLS PNG SVG XEXT XFT \
+			XINERAMA XMU XPM XRENDER
+OPTIONS_DEFAULT=	JPEG NLS PNG FRIBIDI XEXT XFT XINERAMA XMU XPM XRENDER
+OPTIONS_SUB=		yes
+
+CAIRO_USE=		GNOME=cairo
+CAIRO_CONFIGURE_ENABLE=	cairo
+DEBUG_CONFIGURE_ENABLE=	debug
+FRIBIDI_DESC=		Unicode Bidirectional Algorithm support
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_CONFIGURE_ENABLE=fribidi
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_CONFIGURE_ENABLE=	jpeg
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_ENABLE=	png
+SVG_USE=		GNOME=librsvg2
+SVG_CONFIGURE_ENABLE=	rsvg
+XEXT_DESC=		X11 Shape Extension support
+XEXT_USE=		XORG=xext
+XEXT_CONFIGURE_ENABLE=	shape
+XFT_USE=		XORG=xft
+XFT_CONFIGURE_ENABLE=	xft
+XINERAMA_USE=		XORG=xinerama
+XINERAMA_CONFIGURE_ENABLE=xinerama
+XMU_DESC=		X11 Miscellaneous Utilities support
+XMU_USE=		XORG=xmu
+XMU_CONFIGURE_ENABLE=	xmu
+XPM_USE=		XORG=xpm
+XPM_CONFIGURE_ENABLE=	xpm
+XRENDER_DESC=		X11 Render Extension support
+XRENDER_USE=		XORG=xrender
+XRENDER_CONFIGURE_ENABLE=xrender
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=	libfribidi.so:${PORTSDIR}/converters/fribidi
-.else
-CONFIGURE_ARGS+=	--disable-fribidi
+.if ${PORT_OPTIONS:MXFT} && empty(PORT_OPTIONS:MXRENDER)
+IGNORE=		XFT support requires XRENDER
 .endif
 
-.if ${PORT_OPTIONS:MXEXT}
-USE_XORG+=	xext
-.else
-CONFIGURE_ARGS+=	--disable-shape
+.if ${PORT_OPTIONS:MXMU} && empty(PORT_OPTIONS:MXEXT)
+IGNORE=		XMU support requires XEXT
 .endif
 
-.if ${PORT_OPTIONS:MXFT}
-.if empty(PORT_OPTIONS:MXRENDER)
-IGNORE=	XFT support requires XRENDER
-.endif
-USE_XORG+=	xft
-.else
-CONFIGURE_ARGS+=	--disable-xft
-.endif
-
-.if ${PORT_OPTIONS:MXINERAMA}
-USE_XORG+=	xinerama
-.else
-CONFIGURE_ARGS+=	--disable-xinerama
-.endif
-
-.if ${PORT_OPTIONS:MXMU}
-.if empty(PORT_OPTIONS:MXEXT)
-IGNORE=	XMU support requires XEXT
-.endif
-USE_XORG+=	xmu
-.else
-CONFIGURE_ARGS+=	--disable-xmu
-.endif
-
-.if ${PORT_OPTIONS:MXPM}
-.if empty(PORT_OPTIONS:MXEXT)
-IGNORE=	XPM support requires XEXT
-.endif
-USE_XORG+=	xpm
-.else
-CONFIGURE_ARGS+=	--disable-xpm
-.endif
-
-.if ${PORT_OPTIONS:MXRENDER}
-USE_XORG+=	xrender
-.else
-CONFIGURE_ARGS+=	--disable-xrender
-.endif
-
-.if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=   libjpeg.so:${PORTSDIR}/graphics/jpeg
-.else
-CONFIGURE_ARGS+=        --disable-jpeg
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
-.else
-CONFIGURE_ARGS+=        --disable-png
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=        --enable-debug
+.if ${PORT_OPTIONS:MXPM} && empty(PORT_OPTIONS:MXEXT)
+IGNORE=		XPM support requires XEXT
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/example.jwmrc
-	@${REINPLACE_CMD} -e 's|fribidi_char_sets_utf8.h|fribidi-char-sets.h|' ${WRKSRC}/src/jwm.h
-
-do-install:
-	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} jwm \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} jwm.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
-	(cd ${WRKSRC} && ${INSTALL_DATA} example.jwmrc \
-		${STAGEDIR}${PREFIX}/etc/system.jwmrc.sample)
+	@${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/example.jwmrc
+	@${REINPLACE_CMD} -e \
+		's|install -m 644|@INSTALL_DATA@| ; \
+		 s|jwmrc$$|jwmrc.sample|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/EXE/s|install|@INSTALL_PROGRAM@| ; \
+		 /strip/s|^|#|' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

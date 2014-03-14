@@ -11,7 +11,7 @@ COMMENT=	A modeling platform for system-level C++ models
 
 RESTRICTED=	You have to register at http://www.systemc.org/kmembership_info/individual_signup first
 
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 
 CONFIGURE_SCRIPT=	../configure

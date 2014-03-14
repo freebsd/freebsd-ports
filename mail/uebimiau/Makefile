@@ -12,7 +12,7 @@ COMMENT=	UebiMiau is a simple yet efficient WebMail written in PHP
 
 WRKSRC=		${WRKDIR}/webmail
 
-USE_ZIP=	yes
+USES=		zip
 USE_PHP=	pcre
 WANT_PHP_MOD=	yes
 NO_BUILD=	yes

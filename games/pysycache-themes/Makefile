@@ -3,7 +3,7 @@
 
 PORTNAME=	themes
 PORTVERSION=	2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games python
 MASTER_SITES=	http://themes.pysycache.free.fr/
 PKGNAMEPREFIX=	pysycache-
@@ -15,7 +15,7 @@ COMMENT=	Pysycache themes support
 
 RUN_DEPENDS=	pysycache.py:${PORTSDIR}/games/pysycache
 
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/${DIST_SUBDIR}

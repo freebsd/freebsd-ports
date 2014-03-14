@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldraw
-PORTVERSION=	201301
+PORTVERSION=	201302
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.ldraw.org/library/updates/
@@ -20,8 +20,7 @@ LICENSE_PERMS_CCbyNCSA2=dist-mirror pkg-mirror auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_ZIP=	yes
-USES=		dos2unix gmake
+USES=		dos2unix gmake zip:infozip
 DOS2UNIX_GLOB=	*.h makefile mklist.c *.txt *.dat
 
 PORTDOCS=	Readme.txt
@@ -49,8 +48,8 @@ do-install:
 	@(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${f} ${STAGEDIR}${DATADIR})
 .endfor
 
-	${INSTALL_SCRIPT} ${WRKSRC}/mklist/mklist ${STAGEDIR}${DATADIR}
-	@(cd ${STAGEDIR}${DATADIR} ; ./mklist -n)
+	${INSTALL_PROGRAM} ${WRKSRC}/mklist/mklist ${STAGEDIR}${DATADIR}
+	@(cd ${STAGEDIR}${DATADIR} ; ./mklist -d)
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

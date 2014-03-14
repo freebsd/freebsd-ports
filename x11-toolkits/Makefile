@@ -210,7 +210,6 @@
     SUBDIR += py-wxPython28-common
     SUBDIR += py-wxPython28-unicode
     SUBDIR += py-xlib
-    SUBDIR += py31-tkinter
     SUBDIR += qt4-declarative
     SUBDIR += qt4-gui
     SUBDIR += qt4pas
@@ -288,7 +287,6 @@
     SUBDIR += xbae
     SUBDIR += xforms
     SUBDIR += xmhtml
-    SUBDIR += xscoop
     SUBDIR += xview
     SUBDIR += xview-clients
 

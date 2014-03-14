@@ -2,10 +2,11 @@
 
 PORTNAME=	prayer
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koue@chaosophia.net
 COMMENT=	Prayer Webmail System
 
 LICENSE=	GPLv2
@@ -32,7 +33,7 @@ SESSIONCACHE_DESC=	Activate Session Cache
 USERS=		_prayer
 GROUPS=		prayer
 
-SESSIONCACHE_USE=	BDB=yes
+SESSIONCACHE_USE=	BDB=5+
 LDAP_USE=		OPENLDAP=yes
 TIDY_LIB_DEPENDS=	libtidy-0.99.so:${PORTSDIR}/www/tidy-lib
 
@@ -42,7 +43,8 @@ MAKE_ARGS+=	RW_USER="${UID}" RW_GROUP="${GID}" RO_GROUP="${GID}" RO_USER="${UID}
 		CCLIENT_INCLUDE="-I${LOCALBASE}/include/c-client" \
 		CCLIENT_LIBS="-L${LOCALBASE}/lib -lc-client4" \
 		CC="${CC}" \
-		CPPFLAGS="${CFLAGS}" \
+		CPPFLAGS="${CFLAGS} -I${ICONV_PREFIX}/include" \
+		LDFLAGS="-L${ICONV_PREFIX}/lib" \
 		PREFIX="${PREFIX}/prayer" \
 		BIN_DIR="${PREFIX}/sbin" \
 		PRAYER_CONFIG_FILE="${ETCDIR}/prayer.cf" \
@@ -74,7 +76,7 @@ MAKE_ARGS+=	CCLIENT_SSL_ENABLE=false \
 		SSL_ENABLE=false
 .endif
 
-.if ${PORT_OPTIONS:MSESSION_CACHE}
+.if ${PORT_OPTIONS:MSESSIONCACHE}
 MAKE_ARGS+=	SESSION_CACHE_ENABLE=true \
 		DB_INCLUDE=-I${BDB_INCLUDE_DIR} \
 		DB_LIBS="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}"
@@ -91,7 +93,7 @@ post-patch:
 # change the user in the default config and cylog util
 	@${REINPLACE_CMD} "s#prayer_user           = \"prayer\"#prayer_user           = \"_prayer\"#" ${WRKSRC}/files/etc/prayer.cf.SRC
 	@${REINPLACE_CMD} "s#\"prayer\" \"prayer\"#\"_prayer\" \"prayer\"#" ${WRKSRC}/utils/prayer-cyclog.SRC
-	@${REINPLACE_CMD} "s,-liconv,${ICONV_LIB}," ${WRKSRC}/Config
+	@${REINPLACE_CMD} "s,-lutil,-lutil ${ICONV_LIB}," ${WRKSRC}/Config
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/prayer \

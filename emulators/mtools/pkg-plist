@@ -29,8 +29,8 @@ bin/mtoolstest
 bin/mtype
 bin/mxtar
 bin/mzip
-man/man1/floppyd.1.gz
-man/man1/floppyd_installtest.1.gz
+%%X11%%man/man1/floppyd.1.gz
+%%X11%%man/man1/floppyd_installtest.1.gz
 man/man1/mattrib.1.gz
 man/man1/mbadblocks.1.gz
 man/man1/mcat.1.gz

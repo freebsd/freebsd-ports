@@ -3,4 +3,5 @@
 @unexec /usr/bin/sed -i '' '/LoadModule %%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
 %%APACHEMODDIR%%/mod_log_sql_mysql.so
 %%APACHEMODDIR%%/mod_log_sql_logio.so
-%%SSL%%%%APACHEMODDIR%%/mod_log_sql_ssl.so
+%%APACHEMODDIR%%/mod_log_sql_ssl.so
+%%DBI%%%%APACHEMODDIR%%/mod_log_sql_dbi.so

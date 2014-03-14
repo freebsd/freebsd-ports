@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A LaTeX package for typesetting circuit diagrams
 
-USE_ZIP=	yes
+USES=		zip
 USE_TEX=	latex
 
 # We need to install in the global texmf-local directory

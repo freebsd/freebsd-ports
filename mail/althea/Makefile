@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another GTK-based mail reader for X. Supports IMAP
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USES=		gettext
 USE_OPENSSL=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"

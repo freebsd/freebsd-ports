@@ -3,7 +3,7 @@
 
 PORTNAME=	haskeline
 PORTVERSION=	0.7.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

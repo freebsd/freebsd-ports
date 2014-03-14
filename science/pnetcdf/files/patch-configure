@@ -1,0 +1,29 @@
+--- configure.orig	2013-12-24 06:35:50.000000000 +0800
++++ configure	2014-03-09 22:42:45.285478789 +0800
+@@ -2886,10 +2886,11 @@
+ ac_configure="$SHELL $ac_aux_dir/configure"  # Please don't use this var.
+ 
+ 
++PNETCDF_VERSION_MAJOR=`echo ${PACKAGE_VERSION} | cut -d. -f1`
++PNETCDF_VERSION_MINOR=`echo ${PACKAGE_VERSION} | cut -d. -f2`
++PNETCDF_VERSION_SUB=`echo ${PACKAGE_VERSION} | cut -d. -f3`
++PNETCDF_VERSION_PRE=`echo ${PACKAGE_VERSION} | cut -d. -f4`
+ 
+-saved_IFS=${IFS}
+-IFS=. read PNETCDF_VERSION_MAJOR PNETCDF_VERSION_MINOR PNETCDF_VERSION_SUB PNETCDF_VERSION_PRE <<< "$PACKAGE_VERSION"
+-IFS=${saved_IFS}
+ 
+ PNETCDF_VERSION="${PNETCDF_VERSION_MAJOR}.${PNETCDF_VERSION_MINOR}"
+ if test x${PNETCDF_VERSION_SUB} != x ; then
+@@ -2899,11 +2900,6 @@
+    fi
+ fi
+ 
+-SVN_DATE="$LastChangedDate: 2013-12-23 16:32:11 -0600 (Mon, 23 Dec 2013) $"
+-saved_IFS=${IFS}
+-IFS="\ " read t_key PNETCDF_RELEASE_DATE2 t_time t_zone t_string <<< ${SVN_DATE}
+-IFS="() $," read t_day PNETCDF_RELEASE_DATE <<< $t_string
+-IFS=${saved_IFS}
+ 
+ _DEBUG=no
+ 

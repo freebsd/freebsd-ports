@@ -11,7 +11,7 @@ DISTNAME=	hannom
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNICODE Han Nom Font Set
 
-USE_ZIP=	yes
+USES=		zip
 DIST_SUBDIR=	VietUnicode
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

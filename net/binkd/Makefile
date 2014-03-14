@@ -12,7 +12,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Fidonet TCP/IP mailer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_ZIP=	yes
+USES=		zip
 USE_RC_SUBR=	binkd
 GNU_CONFIGURE=	yes
 

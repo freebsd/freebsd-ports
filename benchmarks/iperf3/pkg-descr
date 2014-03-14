@@ -9,4 +9,4 @@ that can be used in other programs.  iperf3 also a number of features
 found in other tools such as nuttcp and netperf, but were missing from
 iperf 2.x.  iperf3 is not backwards compatible with iperf 2.x.
 
-WWW: https://code.google.com/p/iperf/
+WWW: https://github.com/esnet/iperf

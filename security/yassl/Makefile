@@ -10,7 +10,7 @@ COMMENT=	Embedded SSL C-Library
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
+USES=		zip
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \

@@ -1,0 +1,24 @@
+--- rc.d/fscd.orig	2014-03-11 14:19:18.576173326 +0900
++++ rc.d/fscd	2014-03-11 14:20:09.206171150 +0900
+@@ -13,8 +13,19 @@
+ . /etc/rc.subr
+ 
+ name="fscd"
+-command="/usr/sbin/${name}"
++rcvar="fscd_enable"
++load_rc_config $name
++: ${fscd_enable="NO"}
++
++command="/usr/local/sbin/${name}"
+ pidfile="/var/run/${name}.pid"
++required_files="/usr/local/etc/$name.conf"
++
++start_cmd=fscd_start
++
++fscd_start()
++{
++	/usr/sbin/daemon -cf ${command}
++}
+ 
+-load_rc_config $name
+ run_rc_command "$1"

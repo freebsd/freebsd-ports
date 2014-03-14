@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	isync
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1.0
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -13,22 +13,16 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_BDB=	42+
-
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
-PLIST_FILES=	bin/get-cert bin/isync bin/mbsync bin/mdconvert \
-		man/man1/isync.1.gz man/man1/mbsync.1.gz man/man1/mdconvert.1.gz
+USE_BDB=	46+
 
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${OPENSSLINC}
 LDFLAGS+=	-L${BDB_LIB_DIR} -L${OPENSSLLIB} -lssl -lcrypto
 
 OPTIONS_DEFINE=	DOCS
 
-# does not compile
-PORTSCOUT=	skipv:1.1.0
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-ansi||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

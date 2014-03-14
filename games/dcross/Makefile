@@ -3,6 +3,7 @@
 
 PORTNAME=	dcross
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	GOOGLE_CODE \
 		SF/nemysisfreebsdp/games/:icons
@@ -20,8 +21,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/
 
-USE_ZIP=	yes
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
 DOS2UNIX_FILES=	*.pyw
 USE_PYTHON=	yes

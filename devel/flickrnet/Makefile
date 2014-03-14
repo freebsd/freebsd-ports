@@ -14,8 +14,7 @@ COMMENT=	Flickr .Net API Library
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake zip
 WRKSRC=		${WRKDIR}/FlickrNet
 
 NO_STAGE=	yes

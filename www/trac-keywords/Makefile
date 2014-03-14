@@ -15,7 +15,7 @@ COMMENT=	Plugin for using pre-configured keywords
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
 USE_PYTHON=	2
-USE_ZIP=	yes
+USES=		zip
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracKeywordsPlugin
 WRKSRC=			${WRKDIR}/trackeywordsplugin/0.11

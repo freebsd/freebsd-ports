@@ -1,6 +1,0 @@
-irchat-pj is an IRC client which runs under Emacsen.
-
-Put the following line in your ~/.emacs:
-(autoload 'irchat "irchat" nil t)
-
-WWW: http://gouketsu.net/irchat-pj/

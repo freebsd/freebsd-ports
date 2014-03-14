@@ -12,10 +12,6 @@ COMMENT=	Transparent application input fuzzer
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=	zzuf.1 zzcat.1
-MAN3=	libzzuf.3
-
-NO_STAGE=	yes
 post-install:
 	@${RM} -f ${PREFIX}/lib/zzuf/libzzuf.la
 

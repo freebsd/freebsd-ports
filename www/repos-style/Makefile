@@ -13,7 +13,7 @@ COMMENT=	Stylesheet for the Subversion index web page
 
 RUN_DEPENDS=	subversion>=0:${PORTSDIR}/devel/subversion
 
-USE_ZIP=	YES
+USES=		zip
 NO_BUILD=	YES
 
 USE_PHP=	xml

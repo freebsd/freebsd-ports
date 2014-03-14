@@ -11,6 +11,8 @@ DISTNAME=	M2Crypto-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Crypto and SSL toolkit for Python
 
+LICENSE=	MIT
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 
 PYDISTUTILS_AUTOPLIST=	yes

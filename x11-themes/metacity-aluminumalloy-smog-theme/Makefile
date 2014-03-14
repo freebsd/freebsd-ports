@@ -4,5 +4,4 @@
 TYPE=		metacity
 MASTERDIR=	${.CURDIR}/../gtk-aluminumalloy-smog-theme
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -21,8 +21,8 @@ PLIST_FILES=	bin/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS=	flex>0:${PORTSDIR}/textproc/flex
-MAKE_ENV=	LEX="${LOCALBASE}/bin/flex"
+BUILD_DEPENDS+=	flex>0:${PORTSDIR}/textproc/flex
+MAKE_ENV+=	LEX="${LOCALBASE}/bin/flex"
 .endif
 
 post-patch:
@@ -39,4 +39,4 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

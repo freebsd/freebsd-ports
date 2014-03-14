@@ -7,7 +7,6 @@ CATEGORIES=	biology
 MASTER_SITES=	http://hgwdev.cse.ucsc.edu/~kent/src/ \
 		http://users.soe.ucsc.edu/~kent/src/
 DISTNAME=	${PORTNAME}Src${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast tool for local sequence similarity searches
@@ -18,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}Src
 
-USES=		gmake
+USES=		gmake zip
 USE_OPENSSL=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	MACHTYPE="${ARCH}" HOME="${WRKSRC}/${BINDIR}" STRIP="${TRUE}"

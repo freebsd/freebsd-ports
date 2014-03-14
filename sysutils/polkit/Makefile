@@ -1,6 +1,6 @@
 # Created by: Koop Mast<kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/polkit/Makefile 19009 2014-03-02 22:41:42Z kwm $
+#   $MCom: ports/trunk/sysutils/polkit/Makefile 19013 2014-03-08 07:50:57Z kwm $
 
 PORTNAME=	polkit
 PORTVERSION=	0.105
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	dbus-launch:${PORTSDIR}/devel/dbus
 
 USE_GNOME=	glib20 intlhack gnomehier introspection
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
@@ -38,10 +38,10 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 USE_GNOME+=	libxslt:build
-MAN1=		pkaction.1 pkcheck.1 pkexec.1 pkttyagent.1
-MAN8=		pklocalauthority.8 polkit.8 polkitd.8
+PLIST_SUB+=	MANPAGES=""
 .else
 CONFIGURE_ARGS+=--disable-man-pages
+PLIST_SUB+=	MANPAGES="@comment "
 .endif
 
 post-patch:

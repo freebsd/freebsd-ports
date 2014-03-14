@@ -4,4 +4,5 @@ etc/arpalert/maclist.deny
 etc/arpalert/oui.txt
 include/arpalert.h
 sbin/arpalert
+man/man8/arpalert.8.gz
 @dirrmtry etc/arpalert

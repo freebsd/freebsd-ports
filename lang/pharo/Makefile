@@ -19,7 +19,7 @@ RUN_DEPENDS=	squeak:${PORTSDIR}/lang/squeak
 SVNVERSION=	14438
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 
 SHAREMODE=	644
 

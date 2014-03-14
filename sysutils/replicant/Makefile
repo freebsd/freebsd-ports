@@ -3,7 +3,7 @@
 
 PORTNAME=	replicant
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hyperdex.org/src/
 

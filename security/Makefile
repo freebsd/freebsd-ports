@@ -13,7 +13,6 @@
     SUBDIR += aide
     SUBDIR += aimsniff
     SUBDIR += amap
-    SUBDIR += amavis-stats
     SUBDIR += amavisd-milter
     SUBDIR += amavisd-new
     SUBDIR += aolserver-nsencrypt
@@ -105,7 +104,6 @@
     SUBDIR += ddos_scan
     SUBDIR += denyhosts
     SUBDIR += destroy
-    SUBDIR += didentd
     SUBDIR += digest
     SUBDIR += dirbuster
     SUBDIR += dirmngr
@@ -216,6 +214,7 @@
     SUBDIR += httprint
     SUBDIR += hunch
     SUBDIR += hydra
+    SUBDIR += i2p
     SUBDIR += iaikpkcs11wrapper
     SUBDIR += idea
     SUBDIR += identify
@@ -250,7 +249,7 @@
     SUBDIR += krb5-appl
     SUBDIR += krb5-maint
     SUBDIR += kripp
-    SUBDIR += kwallet
+    SUBDIR += kwalletmanager
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
     SUBDIR += l5
@@ -1019,7 +1018,6 @@
     SUBDIR += xmlsec1
     SUBDIR += xorsearch
     SUBDIR += xspy
-    SUBDIR += xyssl
     SUBDIR += yafic
     SUBDIR += yapet
     SUBDIR += yara

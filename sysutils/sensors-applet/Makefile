@@ -13,6 +13,9 @@ COMMENT=	A GNOME applet displaying hardware sensor values
 RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/xmbmon \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
+DEPRECATED=	gnome-panel 2.x will be updated in the GNOME 3 import 
+EXPIRATION_DATE=2014-04-10
+
 USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomepanel libgnomeui
 GNU_CONFIGURE=	yes

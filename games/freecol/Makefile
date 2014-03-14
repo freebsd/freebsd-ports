@@ -12,7 +12,7 @@ COMMENT=	An open source version of Colonization
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 SUB_FILES=	freecol
 USE_JAVA=	yes

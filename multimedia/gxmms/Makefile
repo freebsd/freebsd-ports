@@ -3,6 +3,7 @@
 
 PORTNAME=	gxmms
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,21 +14,19 @@ COMMENT=	Simple GNOME panel applet for controlling XMMS
 DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
 EXPIRATION_DATE=	2014-03-23
 
-USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui
-USES=		gettext gmake pkgconfig
+USE_GNOME=	gnomepanel gnomeprefix intlhack libgnomeui
+USES=		gettext gmake pkgconfig pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_SINGLE=			FRONTEND
-OPTIONS_SINGLE_FRONTEND=	XMMS BMP
 OPTIONS_DEFAULT=		XMMS
+OPTIONS_SINGLE_FRONTEND=	XMMS
 
 XMMS_DESC=	Use xmms as frontend
-BMP_DESC=	Use BMP as frontend
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMMS}
@@ -40,14 +39,6 @@ CONFIGURE_ARGS+=--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MBMP}
-CONFIGURE_ARGS+=--with-bmp
-BUILD_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
-RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
-PLIST_SUB+=	BMP=""
-.else
 CONFIGURE_ARGS+=--disable-bmp
-PLIST_SUB+=	BMP="@comment "
-.endif
 
 .include <bsd.port.mk>

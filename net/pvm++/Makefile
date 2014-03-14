@@ -3,7 +3,7 @@
 
 PORTNAME=	pvm++
 PORTVERSION=	0.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net parallel
 MASTER_SITES=	SF/pvm-plus-plus/pvm-plus-plus/${PORTVERSION}
 
@@ -12,6 +12,8 @@ COMMENT=	A C++-Library for PVM
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USES=		gmake
 USE_AUTOTOOLS=	libtool
 USE_GCC=	yes

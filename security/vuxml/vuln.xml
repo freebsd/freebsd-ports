@@ -51,6 +51,375 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="777d7b9e-ab02-11e3-841e-60a44c524f57">
+    <topic>wemux -- read-only can be bypassed</topic>
+    <affects>
+      <package>
+	<name>wemux</name>
+	<range><lt>3.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>JonApps reports:</p>
+	<blockquote cite="https://github.com/zolrath/wemux/issues/36">
+	  <p>The read-only mode can be bypassed and any command sent to bash session</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zolrath/wemux/issues/36</url>
+    </references>
+    <dates>
+      <discovery>2013-12-24</discovery>
+      <entry>2014-03-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="03e48bf5-a96d-11e3-a556-3c970e169bc2">
+    <topic>samba -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba34</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>samba35</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>samba36</name>
+	<range><gt>3.6.*</gt><lt>3.6.23</lt></range>
+      </package>
+      <package>
+	<name>samba4</name>
+	<range><gt>4.0.*</gt><lt>4.0.16</lt></range>
+      </package>
+      <package>
+	<name>samba41</name>
+	<range><gt>4.1.*</gt><lt>4.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba project reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2013-4496">
+	  <p>In Samba's SAMR server we neglect to ensure that attempted
+	    password changes will update the bad password count, nor set
+	    the lockout flags.  This would allow a user unlimited attempts
+	    against the password by simply calling ChangePasswordUser2
+	    repeatedly.</p>
+	  <p>This is available without any other authentication.</p>
+	</blockquote>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2013-6442">
+	  <p>smbcacls can remove a file or directory ACL by mistake.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4496</cvename>
+      <cvename>CVE-2013-6442</cvename>
+      <url>http://www.samba.org/samba/security/CVE-2013-4496</url>
+      <url>http://www.samba.org/samba/security/CVE-2013-6442</url>
+    </references>
+    <dates>
+      <discovery>2014-03-11</discovery>
+      <entry>2014-03-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="03159886-a8a3-11e3-8f36-0025905a4771">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.8.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>1.8.26.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>Stack Overflow in HTTP Processing of Cookie Headers. Sending a HTTP
+	    request that is handled by Asterisk with a large number of Cookie
+	    headers could overflow the stack. You could even exhaust memory if you
+	    sent an unlimited number of headers in the request.</p>
+	  <p>Denial of Service Through File Descriptor Exhaustion with chan_sip
+	    Session-Timers. An attacker can use all available file descriptors
+	    using SIP INVITE requests. Asterisk will respond with code 400, 420,
+	    or 422 for INVITEs meeting this criteria.
+	    Each INVITE meeting these conditions will leak a channel and several
+	    file descriptors. The file descriptors cannot be released without
+	    restarting Asterisk which may allow intrusion detection systems to be
+	    bypassed by sending the requests slowly.</p>
+	  <p>Remote Crash Vulnerability in PJSIP channel driver. A remotely
+	    exploitable crash vulnerability exists in the PJSIP channel driver if
+	    the "qualify_frequency" configuration option is enabled on an AOR and
+	    the remote SIP server challenges for authentication of the resulting
+	    OPTIONS request. The response handling code wrongly assumes that a
+	    PJSIP endpoint will always be associated with an outgoing request which
+	    is incorrect.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-2286</cvename>
+      <cvename>CVE-2014-2287</cvename>
+      <cvename>CVE-2014-2288</cvename>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-001.pdf</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-002.pdf</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-003.pdf</url>
+      <url>https://www.asterisk.org/security</url>
+    </references>
+    <dates>
+      <discovery>2014-03-10</discovery>
+      <entry>2014-03-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="24cefa4b-a940-11e3-91f2-00262d5ed8ee">
+    <topic>www/chromium --multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>33.0.1750.149</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>7 vulnerabilities fixed in this release, including:</p>
+	  <ul>
+	    <li>[344881] High CVE-2014-1700: Use-after-free in speech. Credit
+	      to Chamal de Silva.</li>
+	    <li>[342618] High CVE-2014-1701: UXSS in events. Credit to
+	      aidanhs.</li>
+	    <li>[333058] High CVE-2014-1702: Use-after-free in web database.
+	      Credit to Collin Payne.</li>
+	    <li>[338354] High CVE-2014-1703: Potential sandbox escape due to a
+	      use-after-free in web sockets.</li>
+	    <li>[328202, 349079, 345715] CVE-2014-1704: Multiple
+	      vulnerabilities in V8 fixed in version 3.23.17.18.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1700</cvename>
+      <cvename>CVE-2014-1701</cvename>
+      <cvename>CVE-2014-1702</cvename>
+      <cvename>CVE-2014-1703</cvename>
+      <cvename>CVE-2014-1704</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-03-11</discovery>
+      <entry>2014-03-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1a0de610-a761-11e3-95fe-bcaec565249c">
+    <topic>freetype2 -- Out of bounds read/write</topic>
+    <affects>
+      <package>
+	<name>freetype2</name>
+	<range><lt>2.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mateusz Jurczyk reports:</p>
+	<blockquote cite="http://savannah.nongnu.org/bugs/?41697">
+	  <p>Out of bounds stack-based read/write in
+	    cf2_hintmap_build.</p>
+	  <p>This is a critical vulnerability in the CFF Rasterizer
+	    code recently contributed by Adobe, leading to potential
+	    arbitrary code execution in the context of the FreeType2
+	    library client.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://savannah.nongnu.org/bugs/?41697</url>
+    </references>
+    <dates>
+      <discovery>2014-02-25</discovery>
+      <entry>2014-03-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="20e23b65-a52e-11e3-ae3a-00224d7c32a2">
+    <topic>xmms -- Integer Overflow And Underflow Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xmms</name>
+	<range><le>1.2.11_20</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/secunia_research/2007-47/advisory/">
+	  <p>Secunia Research has discovered two vulnerabilities in XMMS, which can
+	    be exploited by malicious people to compromise a user's system.</p>
+
+	  <p>1) An integer underflow error exists in the processing of skin bitmap
+	    images. This can be exploited to cause a stack-based buffer overflow
+	    via specially crafted skin images containing manipulated header
+	    information.</p>
+
+	  <p>Successful exploitation allows execution of arbitrary code.</p>
+
+	  <p>2) An integer overflow error exists in the processing of skin bitmap
+	    images. This can be exploited to cause memory corruption via specially
+	    crafted skin images containing manipulated header information.</p>
+
+	  <p>Successful exploitation may allow the execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-0653</cvename>
+      <cvename>CVE-2007-0654</cvename>
+    </references>
+    <dates>
+      <discovery>2007-02-06</discovery>
+      <entry>2014-03-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="89db3b31-a4c3-11e3-978f-f0def16c5c1b">
+    <topic>nginx -- SPDY memory corruption</topic>
+    <affects>
+      <package>
+	<name>nginx-devel</name>
+	<range><eq>1.5.10</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx project reports:</p>
+	<blockquote cite="http://mailman.nginx.org/pipermail/nginx-announce/2014/000132.html">
+	  <p>A bug in the experimental SPDY implementation in nginx 1.5.10 was found,
+	   which might allow an attacker to corrupt worker process memory by using
+	   a specially crafted request, potentially resulting in arbitrary code
+	   execution (CVE-2014-0088).</p>
+
+	   <p>The problem only affects nginx 1.5.10 on 32-bit platforms, compiled with
+	   the ngx_http_spdy_module module (which is not compiled by default), if
+	   the "spdy" option of the "listen" directive is used in a configuration
+	   file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0088</cvename>
+      <url>http://mailman.nginx.org/pipermail/nginx-announce/2014/000132.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-04</discovery>
+      <entry>2014-03-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b4023753-a4ba-11e3-bec2-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>33.0.1750.146</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>19 vulnerabilities fixed in this release, including:</p>
+	  <ul>
+	    <li>[344492] High CVE-2013-6663: Use-after-free in svg images.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[326854] High CVE-2013-6664: Use-after-free in speech
+	      recognition. Credit to Khalil Zhani.</li>
+	    <li>[337882] High CVE-2013-6665: Heap buffer overflow in software
+	      rendering. Credit to cloudfuzzer.</li>
+	    <li>[332023] Medium CVE-2013-6666: Chrome allows requests in flash
+	      header request. Credit to netfuzzerr.</li>
+	    <li>[348175] CVE-2013-6667: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[343964, 344186, 347909] CVE-2013-6668: Multiple
+	      vulnerabilities in V8 fixed in version 3.24.35.10.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6663</cvename>
+      <cvename>CVE-2013-6664</cvename>
+      <cvename>CVE-2013-6665</cvename>
+      <cvename>CVE-2013-6666</cvename>
+      <cvename>CVE-2013-6667</cvename>
+      <cvename>CVE-2013-6668</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-03-03</discovery>
+      <entry>2014-03-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f645aa90-a3e8-11e3-a422-3c970e169bc2">
+    <topic>gnutls -- multiple certificate verification issues</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>2.12.23_4</lt></range>
+      </package>
+      <package>
+	<name>gnutls-devel</name>
+	<name>gnutls3</name>
+	<range><lt>3.1.22</lt></range>
+	<range><gt>3.2.0</gt><lt>3.2.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GnuTLS project reports:</p>
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2014-2">
+	  <p>A vulnerability was discovered that affects the
+	    certificate verification functions of all gnutls
+	    versions. A specially crafted certificate could
+	    bypass certificate validation checks.  The
+	    vulnerability was discovered during an audit of
+	    GnuTLS for Red Hat.</p>
+	</blockquote>
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2014-1">
+	  <p>Suman Jana reported a vulnerability that affects
+	    the certificate verification functions of
+	    gnutls 2.11.5 and later versions. A version 1
+	    intermediate certificate will be considered as
+	    a CA certificate by default (something that
+	    deviates from the documented behavior).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0092</cvename>
+      <cvename>CVE-2014-1959</cvename>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2014-1</url>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2014-2</url>
+    </references>
+    <dates>
+      <discovery>2014-03-03</discovery>
+      <entry>2014-03-04</entry>
+      <modified>2014-03-04</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="815dbcf9-a2d6-11e3-8088-002590860428">
     <topic>file -- denial of service</topic>
     <affects>

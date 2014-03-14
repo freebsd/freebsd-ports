@@ -3,13 +3,12 @@
 
 PORTNAME=	fftw
 PORTVERSION=	2.1.5
-PORTREVISION?=	7
+PORTREVISION?=	9
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 		ftp://ftp.fftw.org/pub/fftw/old/ 	\
 		ftp://theory.lcs.mit.edu/pub/fftw/	\
 		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
-PKGNAMESUFFIX=	${FFTW_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
@@ -20,15 +19,13 @@ OPTIONS_DEFINE=	DOCS
 
 # current flavors: default, float
 FFTW_FLAVOR?=	default
-FFTW_SUFIX=
 
-USES=		fortran gmake
-USE_AUTOTOOLS=	aclocal automake autoconf libtool
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
+USES=		fortran gmake libtool
 USE_LDCONFIG=	yes
+
+BROKEN_sparc64=	does not build
 
 PLIST_SUB=	FFTW_SUFX="${FFTW_SUFX}"
 
@@ -37,11 +34,10 @@ PORTSCOUT=	limit:^2\.
 .if ${FFTW_FLAVOR}=="float"
 CONFIGURE_ARGS+=	--enable-float --enable-type-prefix
 FFTW_SUFX=		s
-FFTW_PKGNAMESUFFIX=	-float
-PLIST_SUB+=	DEF="@comment "
+PKGNAMESUFFIX=		-float
 .else
+FFTW_SUFIX=
 INFO=			fftw
-PLIST_SUB+=	DEF=""
 .endif
 
 .include <bsd.port.options.mk>
@@ -50,12 +46,11 @@ PLIST_SUB+=	DEF=""
 CONFIGURE_ARGS+=	--enable-i386-hacks
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		does not build
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc | |' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc | |' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^LINK/s|$$(CCLD)|& -Wc,-B${LOCALBASE}/bin|' \
+		${WRKSRC}/fftw/Makefile.in ${WRKSRC}/mpi/Makefile.in \
+		${WRKSRC}/rfftw/Makefile.in ${WRKSRC}/threads/Makefile.in
 
 post-build:
 .if ${FFTW_FLAVOR}=="default"

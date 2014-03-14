@@ -15,7 +15,7 @@ LICENSE=	BSD
 
 CONFLICTS=	adodb-4.*
 
-USE_ZIP=	yes
+USES=		zip
 USE_PHP=	pcre
 DEFAULT_PHP_VER=5
 

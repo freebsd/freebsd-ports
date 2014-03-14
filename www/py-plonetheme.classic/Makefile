@@ -13,9 +13,9 @@ COMMENT=	Classic Plone 3 default theme
 
 LICENSE=	GPLv2
 
+USES=		zip
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=		yes
 
 .include <bsd.port.mk>

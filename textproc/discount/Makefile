@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	discount
-DISTVERSION=	2.1.5a
+DISTVERSION=	2.1.6
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/discount/ \
 		LOCAL/jlaffaye
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/discount/ \
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A C implementation of the Markdown markup language
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USE_BZIP2=	yes

@@ -3,7 +3,7 @@
 
 PORTNAME=	sedumi
 PORTVERSION=    1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/sedumi|}
 # http://sedumi.mcmaster.ca/
@@ -15,7 +15,7 @@ COMMENT=	SeDuMi is an semidefinite programming solver on Matlab
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
 BUILD_DEPENDS=	octave:${PORTSDIR}/math/octave
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/SeDuMi_1_1
 
 NO_STAGE=	yes

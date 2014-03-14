@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert an array into array of arrayrefs of uniform size N
 
-USE_ZIP=	yes
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

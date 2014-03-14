@@ -14,7 +14,7 @@ COMMENT=	Paragraph Grep Utility
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grizzled>=0.8.1:${PORTSDIR}/devel/py-grizzled
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 

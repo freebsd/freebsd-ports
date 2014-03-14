@@ -1,0 +1,28 @@
+--- configure.orig	2006-12-25 02:45:07 +0800
++++ configure
+@@ -21508,7 +21508,7 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+   fi
+-  if test $LIBXML2_VERSION -ge 2616; then
++  if test $LIBXML2_VERSION \> 2615; then
+     cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBXML2 1
+ _ACEOF
+@@ -22197,7 +22197,7 @@ fi
+ # Checks for library functions
+ 
+ # Output generation
+-ac_config_files="$ac_config_files Makefile po/Makefile.in lib/Makefile src/Makefile src/common/Makefile src/bzip2/Makefile src/tth/Makefile rpm/microdc.spec"
++ac_config_files="$ac_config_files Makefile po/Makefile.in lib/Makefile src/Makefile src/common/Makefile src/tth/Makefile rpm/microdc.spec"
+ 
+ ac_config_files="$ac_config_files slackware/microdc.SlackBuild"
+ 
+@@ -22793,7 +22793,6 @@ do
+     "lib/Makefile") CONFIG_FILES="$CONFIG_FILES lib/Makefile" ;;
+     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+     "src/common/Makefile") CONFIG_FILES="$CONFIG_FILES src/common/Makefile" ;;
+-    "src/bzip2/Makefile") CONFIG_FILES="$CONFIG_FILES src/bzip2/Makefile" ;;
+     "src/tth/Makefile") CONFIG_FILES="$CONFIG_FILES src/tth/Makefile" ;;
+     "rpm/microdc.spec") CONFIG_FILES="$CONFIG_FILES rpm/microdc.spec" ;;
+     "slackware/microdc.SlackBuild") CONFIG_FILES="$CONFIG_FILES slackware/microdc.SlackBuild" ;;

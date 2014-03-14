@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTVERSION=	3.5.1
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
-DISTNAME=	${PORTNAME}-${PORTVERSION}-optional
+DISTNAME=	squirrelsql-plainzip-${PORTVERSION}-optional
 
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	Universal SQL Client
@@ -14,6 +13,7 @@ COMMENT=	Universal SQL Client
 LICENSE=	GPLv2
 
 NO_BUILD=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -29,14 +29,12 @@ DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		"Development;Database;Java;" \
 		false
 
-NO_STAGE=	yes
 post-extract:
 	cd "${WRKSRC}" && ${RM} -rf Uninstaller *.bat *.sh .installationinformation
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd "${WRKSRC}" && ${FIND} . | ${CPIO} -pdum -R root:wheel ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/squirrel-sql ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd "${WRKSRC}" && ${FIND} . | ${CPIO} -pdum -R root:wheel ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/squirrel-sql ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

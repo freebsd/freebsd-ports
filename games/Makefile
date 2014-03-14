@@ -696,6 +696,7 @@
     SUBDIR += opensfx
     SUBDIR += opensonic
     SUBDIR += openssn
+    SUBDIR += opensurge
     SUBDIR += openttd
     SUBDIR += openxcom
     SUBDIR += openyahtzee
@@ -806,7 +807,6 @@
     SUBDIR += quadrapassel
     SUBDIR += quake-data
     SUBDIR += quake-dpmod
-    SUBDIR += quake-extras
     SUBDIR += quake-reaper
     SUBDIR += quake-source
     SUBDIR += quake2-3zb2

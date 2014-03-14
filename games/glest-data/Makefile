@@ -12,8 +12,8 @@ DIST_SUBDIR=	glest
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Glest data files
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	*.log *.ini *.html *.txt *.lng
+USES=		dos2unix zip
+DOS2UNIX_GLOB=	*.log *.ini *.html *.txt *.lng
 NO_BUILD=	yes
 
 PLIST=		${WRKDIR}/pkg-plist

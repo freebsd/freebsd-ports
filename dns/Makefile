@@ -26,7 +26,6 @@
     SUBDIR += dnrd
     SUBDIR += dns2tcp
     SUBDIR += dns_balance
-    SUBDIR += dns_mre
     SUBDIR += dnscap
     SUBDIR += dnscheck
     SUBDIR += dnscheckengine
@@ -160,7 +159,6 @@
     SUBDIR += samba-nsupdate
     SUBDIR += scavenge
     SUBDIR += sheerdns
-    SUBDIR += skadns
     SUBDIR += sleuth
     SUBDIR += sshfp
     SUBDIR += tinystats

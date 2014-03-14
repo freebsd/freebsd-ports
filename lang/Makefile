@@ -47,7 +47,6 @@
     SUBDIR += cparser
     SUBDIR += csharp-mode.el
     SUBDIR += cython
-    SUBDIR += dice
     SUBDIR += diveintopython
     SUBDIR += dlv
     SUBDIR += dmd
@@ -69,7 +68,6 @@
     SUBDIR += f2c
     SUBDIR += f77
     SUBDIR += fasm
-    SUBDIR += fbbi
     SUBDIR += ferite
     SUBDIR += ficl
     SUBDIR += fpc
@@ -89,6 +87,7 @@
     SUBDIR += gcc-ecj45
     SUBDIR += gcc46
     SUBDIR += gcc47
+    SUBDIR += gcc47-aux
     SUBDIR += gcc48
     SUBDIR += gcc49
     SUBDIR += gcl

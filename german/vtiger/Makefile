@@ -12,13 +12,16 @@ DISTNAME=	de_de.lang
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	German messages for vtiger
 
+DEPRECATED=	Depends on expiring www/vtiger
+EXPIRATION_DATE=	2014-03-10
+
 WRKSRC=		${WRKDIR}/German_de_de
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
 RUN_DEPENDS+=	${WWWDIR}/include/language:${PORTSDIR}/www/vtiger
 
+USES=		zip
 NO_BUILD=	YES
-USE_ZIP=	YES
 
 SUB_FILES=	pkg-message
 

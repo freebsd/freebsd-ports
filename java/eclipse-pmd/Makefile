@@ -15,9 +15,9 @@ COMMENT=	Scan Java source code and look for potential problems
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_EXTRACT=	jre
 

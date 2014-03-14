@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	jsi@jules.de
 COMMENT=	Web-based requirement, test, and bugtracking system
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 USE_PHP=	mysql gd
 

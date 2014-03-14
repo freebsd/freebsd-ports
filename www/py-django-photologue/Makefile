@@ -16,10 +16,10 @@ LICENSE=	BSD
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django \
 	${LOCALBASE}/bin/pildriver.py:${PORTSDIR}/graphics/py-imaging
 
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_ZIP=	yes
 
 OPTIONSFILE= ${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=		TAGGING

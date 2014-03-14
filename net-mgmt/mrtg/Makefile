@@ -42,7 +42,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	PERL=${PERL}
 
-MAN1=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
+MANPAGE=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
 		mrtg-ipv6.1 mrtg-logfile.1 mrtg-mibhelp.1 mrtg-nt-guide.1 \
 		mrtg-nw-guide.1 mrtg-reference.1 mrtg-rrd.1 mrtg-squid.1 \
 		mrtg-unix-guide.1 mrtg-webserver.1 mrtg.1 mrtglib.1
@@ -68,7 +68,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 SNMPV3
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -86,22 +85,18 @@ post-patch:
 	@${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}/doc ${EXAMPLESDIR}/images
-	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/doc/,} ${EXAMPLESDIR}/doc/
-	@${INSTALL_DATA} ${IMAGES:S,^,${WRKSRC}/images/,} ${EXAMPLESDIR}/images/
-.endif
-	@${MKDIR} ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg ${ETCDIR}/mrtg.cfg.sample
-	@${INSTALL_DATA} ${MAN1:S,^,${WRKSRC}/doc/,} ${MAN1PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}
-	@${CP} -p ${WRKSRC}/lib/mrtg2/*.pm ${PREFIX}/${SITE_PERL_REL}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/bin/,} ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/doc ${STAGEDIR}${EXAMPLESDIR}/images
+	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${EXAMPLESDIR}/doc/
+	@${INSTALL_DATA} ${IMAGES:S,^,${WRKSRC}/images/,} ${STAGEDIR}${EXAMPLESDIR}/images/
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg ${STAGEDIR}${ETCDIR}/mrtg.cfg.sample
+	@${INSTALL_DATA} ${MANPAGE:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	@${CP} -p ${WRKSRC}/lib/mrtg2/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/bin/,} ${STAGEDIR}${PREFIX}/bin
 
 post-install:
 	@${SETENV} @PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

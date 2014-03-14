@@ -14,7 +14,7 @@ BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_ZIP=	yes
+USES=		zip
 
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
 

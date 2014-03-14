@@ -8,11 +8,11 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/javadesktop/javahelp/ \
 		http://www.predatorlabs.net/dl/
 DISTNAME=	${PORTNAME}2_0_05
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system to add online help to Java applications
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_RUN=	yes

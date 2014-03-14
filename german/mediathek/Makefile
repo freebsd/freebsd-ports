@@ -3,6 +3,7 @@
 
 PORTNAME=	mediathek
 PORTVERSION=	4
+PORTREVISION=	1
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
 DISTNAME=	MediathekView_${PORTVERSION}
@@ -13,7 +14,7 @@ COMMENT=	Filme der oeff. rechtlichen Sender herunterladen und ansehen
 RUN_DEPENDS=	flvstreamer:${PORTSDIR}/multimedia/flvstreamer
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip:infozip
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 SUB_FILES=	mediathek

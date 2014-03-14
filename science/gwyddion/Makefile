@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.34
+PORTVERSION=	2.35
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -14,11 +14,6 @@ LICENSE=	GPLv2 # (or later)
 LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
-
-OPTIONS_DEFINE=	PERL PYTHON RUBY UNIQUE
-OPTIONS_DEFAULT=PERL PYTHON UNIQUE
-OPTIONS_SUB=	yes
-UNIQUE_DESC=	Remote controle backend support
 
 USE_XZ=		yes
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
@@ -37,12 +32,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gwyddion-thumbnailer.schemas
 
+OPTIONS_DEFINE=		PERL PYTHON RUBY UNIQUE
+OPTIONS_DEFAULT=	PERL PYTHON UNIQUE
+OPTIONS_SUB=		yes
+
 PERL_CONFIGURE_WITH=	perl
 PERL_USES=		perl5
 PYTHON_CONFIGURE_WITH=	python
 PYTHON_USE=		PYTHON=yes
 RUBY_CONFIGURE_WITH=	ruby
 RUBY_USE=		RUBY=yes
+UNIQUE_DESC=		Remote controle backend support
 UNIQUE_CONFIGURE_WITH=	unique
 UNIQUE_LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 

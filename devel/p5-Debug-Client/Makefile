@@ -25,10 +25,6 @@ USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501400
-RUN_DEPENDS+=	p5-Carp>=1.20:${PORTSDIR}/devel/p5-Carp
-.endif
-
 .if ${PERL_LEVEL} < 501600
 TEST_DEPENDS+=	p5-Time-HiRes>=1.9725:${PORTSDIR}/devel/p5-Time-HiRes
 .endif

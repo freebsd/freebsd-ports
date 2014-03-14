@@ -13,16 +13,15 @@ EXTRACT_SUFX=	.ZIP
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Copies files from VMS Files-11 (ODS2) file systems
 
-USE_ZIP=	yes
+USES=		zip:infozip
 EXTRACT_BEFORE_ARGS=	-qoa
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ods2reader
 
-NO_STAGE=	yes
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ods2reader ods-2-reader.c
+	${CC} ${CFLAGS} -o ${WRKSRC}/ods2reader ${WRKSRC}/ods-2-reader.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ods2reader ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ods2reader ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

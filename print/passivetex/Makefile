@@ -13,7 +13,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XSL FO processor, written in TeX
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 USE_TEX=	tetex xmltex texhash
 TEXHASHDIRS=	${TEXMFDIR}
 WRKSRC=		${WRKDIR}/passivetex

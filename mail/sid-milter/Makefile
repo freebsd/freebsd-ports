@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/SenderID%20Milter/${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An sid and spf milter for Sendmail
 
-RESTRICTED=	may incorporate intellectual property, possible patent issues
+RESTRICTED=	May incorporate intellectual property, possible patent issues
 
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		sid-filter.8
@@ -62,13 +62,13 @@ pre-configure:
 
 post-install:
 .for i in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${PREFIX}/man/man8/
 .endfor
 .if ${PORT_OPTIONS:MLIBAR}
 	${INSTALL_LIB} ${WRKSRC}/*/libar/libar.a ${STAGEDIR}${PREFIX}/lib/libar.a
 	${INSTALL_DATA} ${WRKSRC}/libar/ar.h ${STAGEDIR}${PREFIX}/include/libar.h
 .for i in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man3/
+	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${PREFIX}/man/man3/
 .endfor
 .endif
 .if ${PORT_OPTIONS:MDOCS}

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/-fpw//}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese dictionary for PC terms in '98 ASCII Dates Book (EPWING V1 format)
 
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ascdates
 EXTRACT_BEFORE_ARGS=	-qL

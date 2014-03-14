@@ -15,7 +15,6 @@
     SUBDIR += basket
     SUBDIR += bigyear
     SUBDIR += bitcollider
-    SUBDIR += bmp-docklet
     SUBDIR += cairo-dock
     SUBDIR += cairo-dock-plugins
     SUBDIR += cal
@@ -131,8 +130,6 @@
     SUBDIR += libopensync-plugin-file
     SUBDIR += libopensync-plugin-python
     SUBDIR += libopensync-plugin-sunbird
-    SUBDIR += libopensync-plugin-synce
-    SUBDIR += libopensync-plugin-synce-legacy
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += libstreamanalyzer
     SUBDIR += libstreams
@@ -182,7 +179,6 @@
     SUBDIR += parcellite
     SUBDIR += phpcollab
     SUBDIR += phpicalendar
-    SUBDIR += phprojekt
     SUBDIR += pinot
     SUBDIR += plan
     SUBDIR += planner

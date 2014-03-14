@@ -15,7 +15,7 @@ BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir	\
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_ZIP=	yes
+USES=		zip
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
@@ -25,16 +25,14 @@ MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
 
 post-extract:
-	@${MKDIR} ${STAGEDIR}${WRKSRC}/
+	@${MKDIR} ${WRKSRC}
 	@${MV} ${WRKDIR}/CODE2001.TTF ${WRKSRC}/${FONTNAME}.ttf
 
 do-build:
-	@cd ${WRKSRC}/ && ${MKFONTSCL_CMD} && ${MKFONTDIR_CMD}
+	@cd ${WRKSRC} && ${MKFONTSCL_CMD} && ${MKFONTDIR_CMD}
 
 do-install:
-	@${INSTALL} -d ${STAGEDIR}${FONTSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${FONTSDIR}/
-	@${ECHO_MSG} "===> Running fc-cache"
-	-${FCCACHE_CMD} ${STAGEDIR}${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

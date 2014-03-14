@@ -3,6 +3,7 @@
 
 PORTNAME=	firefox-i18n
 PORTVERSION=	27.0.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -14,6 +15,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
+USES=		zip:infozip
 USE_FIREFOX=	27
 USE_XPI=	firefox linux-firefox
 

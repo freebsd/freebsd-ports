@@ -11,7 +11,7 @@ DISTNAME=	Ryaku-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An abbreviation (alphabet-->Japanese) dictionary (EPWING V1 format)
 
-USE_ZIP=	yes
+USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ryaku
 EXTRACT_BEFORE_ARGS=	-qL

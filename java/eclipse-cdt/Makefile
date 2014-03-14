@@ -9,13 +9,13 @@ MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=tools/${PLUGIN}/releases/${ECLIPSE_CODENAME}/dist
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	${PLUGIN}-master-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ plugin for Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
+USES=		zip
 USE_JAVA=	YES
 JAVA_OS=	native
 JAVA_RUN=	YES

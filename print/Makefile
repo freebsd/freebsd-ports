@@ -7,8 +7,6 @@
     SUBDIR += a2ps
     SUBDIR += abc2mtex
     SUBDIR += abcm2ps
-    SUBDIR += abntex
-    SUBDIR += acrobatviewer
     SUBDIR += acroread8
     SUBDIR += acroread9
     SUBDIR += acroreadwrapper
@@ -27,6 +25,7 @@
     SUBDIR += c2ps
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
+    SUBDIR += cloudprint
     SUBDIR += cm-super
     SUBDIR += cpp2latex
     SUBDIR += cups
@@ -39,7 +38,6 @@
     SUBDIR += cups-pk-helper
     SUBDIR += cups-pstoraster
     SUBDIR += cups-samba
-    SUBDIR += cups-smb-backend
     SUBDIR += deforaos-pdfviewer
     SUBDIR += detex
     SUBDIR += dk-acroread8

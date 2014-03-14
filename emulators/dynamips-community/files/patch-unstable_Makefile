@@ -1,0 +1,11 @@
+--- unstable/Makefile.orig	2014-03-03 12:37:26.000000000 +0400
++++ unstable/Makefile	2014-03-03 12:37:56.000000000 +0400
+@@ -249,7 +249,7 @@
+ 
+ nvram_export$(BIN_EXT): nvram_export.o fs_nvram.o
+ 	@echo "Linking $@"
+-	@$(CC) -Wall $(CFLAGS) $(INCLUDE) $(LDFLAGS) -o $@ nvram_export.o fs_nvram.o
++	@$(CC) -Wall $(CFLAGS) $(INCLUDE) $(LDFLAGS) -o $@ nvram_export.o fs_nvram.o $(LIBS)
+ 
+ .PHONY: clean
+ clean:

@@ -2628,6 +2628,10 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/xt-mouse.elc
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el
 %%DATADIR%%/site-lisp/subdirs.el
+man/man1/ctags.1.gz
+man/man1/emacs.1.gz
+man/man1/emacsclient.1.gz
+man/man1/etags.1.gz
 var/games/emacs/snake-scores
 var/games/emacs/tetris-scores
 @dirrmtry var/games/emacs

@@ -15,8 +15,4 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 GNU_CONFIGURE=	yes
 CONFIGUR_ARGS=	--libdir=${PREFIX}
 
-MAN1=		imgvinfo.1 imgvtopnm.1 imgvview.1 pbmtoimgv.1 \
-		pgmtoimgv.1 ppmimgvquant.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

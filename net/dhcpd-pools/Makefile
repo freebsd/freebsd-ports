@@ -22,12 +22,10 @@ CONFIGURE_ARGS=	--with-dhcpd-conf=${LOCALBASE}/etc/dhcpd.conf \
 		--with-uthash=${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/dhcpd-pools
+PLIST_FILES=	bin/dhcpd-pools \
+		man/man1/dhcpd-pools.1.gz
 PORTDATA=	dhcpd-pools.cgi snmptest.pl
 
-MAN1=		dhcpd-pools.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/features.h/d' ${WRKSRC}/src/getdata.c
 

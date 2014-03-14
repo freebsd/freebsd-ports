@@ -18,8 +18,7 @@ COMMENT=	Open source FPS game inspired by the Padman comic strip
 
 NO_PACKAGE=	package will be ~600MB; set FORCE_PACKAGE if you really want it
 
-USES=		gmake
-USE_MAKESELF=	yes
+USES=		gmake makeself
 MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	release
 

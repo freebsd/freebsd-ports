@@ -16,9 +16,8 @@ JSPACKER=	jsPacker.pl
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-USES=		perl5
+USES=		perl5 zip
 USE_PERL5=	run
-USE_ZIP=	yes
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	JSPACKER=${JSPACKER} \

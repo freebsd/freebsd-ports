@@ -3,4 +3,4 @@ manage, and publish documentation for Yelp and the web. Most of the heavy
 lifting is done by packages like yelp-xsl and itstool. This package just
 wraps things up in a developer-friendly way.
 
-WWW: http://www.gnome.org/
+WWW: https://wiki.gnome.org/Apps/Yelp/Tools

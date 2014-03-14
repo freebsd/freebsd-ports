@@ -11,8 +11,8 @@ DISTNAME=	OpenBaseJDBC_${OBVERSION}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	The Java JDBC implementation for OpenBase
 
+USES=		zip
 USE_JAVA=	yes
-USE_ZIP=	yes
 JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes

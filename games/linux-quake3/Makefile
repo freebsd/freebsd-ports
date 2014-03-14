@@ -14,7 +14,7 @@ DIST_SUBDIR=	${Q3PKGNAMEPREFIX}data
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena for Linux
 
-USE_ZIP=	yes
+USES=		zip:infozip
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 

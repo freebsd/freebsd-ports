@@ -13,7 +13,7 @@ DIST_SUBDIR=	latex
 MAINTAINER=	yokota@res.otaru-uc.ac.jp
 COMMENT=	Improved reference formatting for LaTeX2e
 
-USE_ZIP=	yes
+USES=		zip
 USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
 

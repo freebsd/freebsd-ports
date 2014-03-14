@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 PERIODICSCRIPT=	407.status-areca-raid
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 CLI_VER=	1.9.0

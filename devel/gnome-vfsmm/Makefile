@@ -12,19 +12,16 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for gnomevfs2 library
 
-LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack gnomevfs2
+USES=		gmake libtool pathfix pkgconfig
+USE_GNOME=	glibmm gnomevfs2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-static
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples// ; \
 	    	/^SUBDIRS =/s/docs//' \
@@ -32,4 +29,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
 		${WRKSRC}/tools/extra_defs_gen/Makefile.in
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnomevfsmm-2.6.so.1.0.9
 .include <bsd.port.mk>

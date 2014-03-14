@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xpaint
-PORTVERSION=	2.9.9.4
-PORTREVISION=	3
+PORTVERSION=	2.9.10
 CATEGORIES=	graphics
-MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
+MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Simple paint program
@@ -47,5 +46,8 @@ post-patch:
 		${WRKSRC}/rw/Makefile.in
 	@${REINPLACE_CMD} -e '/if (!image)/s/return;/return -1;/' \
 		${WRKSRC}/rw/readWriteTGA.c
+
+post-configure:
+	${MAKE} -C ${WRKSRC} clean
 
 .include <bsd.port.mk>

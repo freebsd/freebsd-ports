@@ -13,7 +13,7 @@ COMMENT?=	Enhanced QuakeWorld server with multi-view demos capability
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
+USES=	zip
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${OPSYS} ${ARCH:C/.*(64)/\1/}

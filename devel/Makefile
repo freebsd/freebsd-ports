@@ -314,7 +314,6 @@
     SUBDIR += cvsps
     SUBDIR += cvsps-devel
     SUBDIR += cvsspam
-    SUBDIR += cvsstat
     SUBDIR += cvstrac
     SUBDIR += cvsutils
     SUBDIR += cvsweb
@@ -3393,7 +3392,6 @@
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += physfs-devel
-    SUBDIR += picasm
     SUBDIR += picp
     SUBDIR += picprog
     SUBDIR += piklab
@@ -3630,7 +3628,6 @@
     SUBDIR += py-gflags
     SUBDIR += py-gitdb
     SUBDIR += py-gitosis
-    SUBDIR += py-gitpython
     SUBDIR += py-glob2
     SUBDIR += py-gobject
     SUBDIR += py-gobject3
@@ -3804,6 +3801,9 @@
     SUBDIR += py-setproctitle
     SUBDIR += py-setuptools
     SUBDIR += py-setuptools-git
+    SUBDIR += py-setuptools27
+    SUBDIR += py-setuptools32
+    SUBDIR += py-setuptools33
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
     SUBDIR += py-shapely
@@ -4152,6 +4152,7 @@
     SUBDIR += rubygem-celluloid-io
     SUBDIR += rubygem-childprocess
     SUBDIR += rubygem-chronic
+    SUBDIR += rubygem-clamp
     SUBDIR += rubygem-classifier
     SUBDIR += rubygem-climate_control
     SUBDIR += rubygem-clio
@@ -4206,6 +4207,7 @@
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-font-awesome-rails
     SUBDIR += rubygem-foreman
+    SUBDIR += rubygem-foreman_api
     SUBDIR += rubygem-formatador
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
@@ -4249,6 +4251,7 @@
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
+    SUBDIR += rubygem-librarian
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little_plugger
     SUBDIR += rubygem-locale
@@ -4273,6 +4276,7 @@
     SUBDIR += rubygem-mkrf
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-moneta
+    SUBDIR += rubygem-moneta06
     SUBDIR += rubygem-mongo
     SUBDIR += rubygem-msgpack
     SUBDIR += rubygem-mspec
@@ -4284,6 +4288,7 @@
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-notify
+    SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-orm_adapter
     SUBDIR += rubygem-paint
@@ -4369,6 +4374,7 @@
     SUBDIR += rubygem-sundawg_country_codes
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-systemu
+    SUBDIR += rubygem-table_print
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-temple
     SUBDIR += rubygem-term-ansicolor

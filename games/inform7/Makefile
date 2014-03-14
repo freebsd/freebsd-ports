@@ -19,7 +19,7 @@ RUN_DEPENDS=	frotz:${PORTSDIR}/games/frotz
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_ZIP=	yes
+USES=		zip
 SUB_FILES=	i7.sh
 
 MAN6=		i7.6

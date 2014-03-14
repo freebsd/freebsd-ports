@@ -1,10 +1,10 @@
-WebService::GData is a blueprint that you should inherit and extend.
-It offers a basic hashed based object creation via the word new.
+WebService::GData is a blueprint that you should inherit and extend. It offers a
+basic hashed based object creation via the word new.
 
-All sub classes should be hash based. If you want to pock into the
-instance, it's easy but everything that is not documented should be
-considered private. If you play around with undocumented properties/methods
-and that it changes,upgrading to the new version with all the extra
-new killer features will be very hard to do.
+All sub classes should be hash based. If you want to pock into the instance,
+it's easy but everything that is not documented should be considered private. If
+you play around with undocumented properties/methods and that it changes,
+upgrading to the new version with all the extra new killer features will be very
+hard to do.
 
 WWW: http://search.cpan.org/dist/WebService-GData/

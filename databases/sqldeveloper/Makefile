@@ -13,7 +13,7 @@ COMMENT=	Graphical tool for database development
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 
 JAVA_VERSION=	1.7+

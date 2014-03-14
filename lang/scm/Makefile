@@ -18,10 +18,8 @@ OPTIONS_DEFINE=	X11
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_ZIP=	yes
-USES=		readline
+USES=		gmake readline zip
 USE_GCC=	any
-USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	require.scm

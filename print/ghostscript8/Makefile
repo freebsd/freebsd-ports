@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	8.71
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -21,13 +21,13 @@ COMMENT=	Ghostscript 8.x PostScript interpreter
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		jasper:${PORTSDIR}/graphics/jasper \
-		jbig2dec:${PORTSDIR}/graphics/jbig2dec \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		paper:${PORTSDIR}/print/libpaper \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libjasper.so:${PORTSDIR}/graphics/jasper \
+		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libpaper.so:${PORTSDIR}/print/libpaper \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS_INSTALL= \
@@ -47,7 +47,6 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
-		EXTRALIBS="${EXTRALIBS}" \
 		SOC_LOADER="dxmainc.c"
 CONFIGURE_ENV=	${MAKE_ENV}
 CONFIGURE_ARGS=	--disable-compile-inits \
@@ -72,59 +71,28 @@ SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR} PORTVERSION=${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS_DEFINE=	X11 DOCS CAIRO CUPS FONTCONFIG FT_BRIDGE GTK2 ICONV
-OPTIONS_DEFAULT=X11 DOCS CAIRO CUPS FONTCONFIG                ICONV
+OPTIONS_DEFINE=	X11 DOCS CAIRO CUPS FONTCONFIG GTK2 ICONV
+OPTIONS_DEFAULT=X11 DOCS CAIRO CUPS FONTCONFIG      ICONV
+OPTIONS_SUB=	yes
 FONTCONFIG_DESC=Enable fontconfig support
-FT_BRIDGE_DESC=	Enable FreeType Bridge support
 NO_OPTIONS_SORT=yes
-
-MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 \
-		pdf2dsc.1 pdf2ps.1 pdfopt.1 pf2afm.1 pfbtopfa.1 printafm.1 \
-		ps2ascii.1 ps2epsi.1 ps2pdf.1 ps2pdfwr.1 ps2ps.1 wftopfa.1
-MLINKS=		gslp.1 gsbj.1 \
-		gslp.1 gsdj.1 \
-		gslp.1 gsdj500.1 \
-		gslp.1 gslj.1 \
-		ps2pdf.1 ps2pdf12.1 \
-		ps2pdf.1 ps2pdf13.1 \
-		ps2ps.1 eps2eps.1
 
 CIDFONTDIR=	${DATADIR}/${PORTVERSION}/Resource
 EXCLUDE_DIRS=	jbig2dec jpeg expat jasper libpng tiff zlib
 
-NO_STAGE=	yes
 .include "Makefile.drivers"
 .include <bsd.port.options.mk>
 
 MASTERDIR?=	${.CURDIR}
 .include "${MASTERDIR}/files/Makefile.drivers_post"
 
-.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//} \
-	${OPTIONS_MULTI_X11:MGS_*:S/^GS_//} \
-	${OPTIONS_GROUP_ICONV:MGS_*:S/^GS_//} \
-	${OPTIONS_GROUP_SVGALIB:MGS_*:S/^GS_//}
-.if ${PORT_OPTIONS:MGS_${D}}
-PLIST_SUB+=	GS_${D}=""
-.else
-PLIST_SUB+=	GS_${D}="@comment "
-.endif
-.endfor
+FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+FONTCONFIG_CONFIGURE_ENABLE=	fontconfig
 
-.if ${PORT_OPTIONS:MFONTCONFIG}
-LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-CONFIGURE_ARGS+=	--enable-fontconfig
-.else
-CONFIGURE_ARGS+=	--disable-fontconfig
-.endif
-
-.if ${PORT_OPTIONS:MFT_BRIDGE}
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
+# FT_BRIDGE=1 by default
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".so"
 CPPFLAGS+=	-I${LOCALBASE}/include/freetype2
-PLIST_SUB+=	FAPI=""
-.else
-PLIST_SUB+=	FAPI="@comment "
-.endif
 
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
@@ -148,8 +116,8 @@ PORTDOC_FILES=	japanese/Gdevlips.htm japanese/README.gs550j		\
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g ; \
-		 s|%%GS_VERSION%%|${PORTVERSION}|g' \
-			${WRKSRC}/contrib/japanese/dmp_site.ps
+	    s|%%GS_VERSION%%|${PORTVERSION}|g' \
+	    ${WRKSRC}/contrib/japanese/dmp_site.ps
 
 pre-build-drivers.mak:
 	@${ECHO_CMD} '# automatically generated' > ${WRKSRC}/base/drivers.mak
@@ -174,7 +142,6 @@ pre-build-drivers.mak:
 pre-build: pre-build-drivers.mak
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
-.if ${PORT_OPTIONS:MFT_BRIDGE}
 	${MKDIR} ${WRKSRC}/freetype/include
 	${LN} -s -f ${LOCALBASE}/include/ft2build.h \
 		${WRKSRC}/freetype/include/ft2build.h
@@ -183,36 +150,27 @@ pre-build: pre-build-drivers.mak
 	${MKDIR} ${WRKSRC}/freetype/objs
 	${LN} -s -f ${LOCALBASE}/lib/libfreetype.so \
 		${WRKSRC}/freetype/objs/freetype214MT_D.so
-.endif
 
 pre-su-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 
 post-install-docs:
 	${MKDIR} ${WRKSRC}/contrib/japanese
 	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/doc/* ${WRKSRC}/contrib/japanese
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/contrib && \
 		${TAR} -cf - ${PORTDOC_FILES} | \
-		( cd ${DOCSDIR} && ${TAR} -xof - )
-
-.if ${PORT_OPTIONS:MFT_BRIDGE}
-post-install-fapi:
-	${INSTALL_DATA} ${WRKSRC}/lib/FAPIcidfmap			\
-		${WRKSRC}/lib/FAPIconfig ${WRKSRC}/lib/FAPIfontmap	\
-		${DATADIR}/${PORTVERSION}/Resource/Init
-
-post-install: post-install-fapi
-.endif
+		( cd ${STAGEDIR}${DOCSDIR} && ${TAR} -xof - )
 
 post-install:
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/${PORTVERSION}
-	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
-	${LN} -sf gsc ${PREFIX}/bin/gs
-	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${INSTALL_DATA} ${WRKSRC}/lib/FAPIcidfmap			\
+		${WRKSRC}/lib/FAPIconfig ${WRKSRC}/lib/FAPIfontmap	\
+		${STAGEDIR}${DATADIR}/${PORTVERSION}/Resource/Init
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/${PORTVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gsc ${STAGEDIR}${PREFIX}/bin/gsx
+	${LN} -sf gsc ${STAGEDIR}${PREFIX}/bin/gs
+	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont \
+	    ${STAGEDIR}${CIDFONTDIR}/CIDFont
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install: post-install-docs

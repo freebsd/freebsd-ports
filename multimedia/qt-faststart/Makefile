@@ -12,18 +12,14 @@ COMMENT=	Convert QuickTime movie files to streamable format
 
 PLIST_FILES=	bin/qt-faststart
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-extract:
-		${MKDIR} ${WRKSRC}
-		${CP} ${FILESDIR}/${PORTNAME}.c ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${FILESDIR}/${PORTNAME}.c ${WRKSRC}
 
 do-build:
-		cd ${WRKSRC} && \
-		${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME}
+	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

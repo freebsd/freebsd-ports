@@ -2,7 +2,7 @@
 
 PORTNAME=	tar
 PORTVERSION=	0.4.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org

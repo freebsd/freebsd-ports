@@ -12,6 +12,8 @@ COMMENT?=	A modular web application platform for communities
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on expiring www/aolserver
+EXPIRATION_DATE=	2014-04-03
 DIST_REV_ID?=	3646409
 
 AOLSERVERBASE?=	${LOCALBASE}/aolserver

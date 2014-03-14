@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Concurrent multi-player battle strategy game
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USES=		imake
 USE_XORG=	x11 xext
 MAN1=		xbattle.1

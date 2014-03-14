@@ -16,7 +16,7 @@ COMMENT=	Web interface to administer Trac ticket custom fields
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-USE_ZIP=	yes
+USES=		zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 USE_PYTHON=	2

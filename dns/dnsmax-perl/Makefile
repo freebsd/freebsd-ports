@@ -14,9 +14,8 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USE_ZIP=	yes
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 zip
 
 PLIST_FILES=	bin/dnsmax-perl
 PORTDOCS=	LICENSE INSTALL README

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwik
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.0
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
@@ -13,24 +13,17 @@ LICENSE=	GPLv3
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-USE_PHP=	dom gd iconv json session xml zlib ctype hash
+USE_PHP=	ctype dom gd filter hash iconv json session xml zlib
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	PHPPDOMYSQL PHPMYSQLI
-PHPPDOMYSQL_DESC=	Use pdo_mysql php module
-PHPMYSQLI_DESC=	Use mysqli php module
-
 OPTIONS_DEFAULT=	PHPPDOMYSQL
+PHPPDOMYSQL_DESC=	Use pdo_mysql php module
+PHPPDOMYSQL_USE=	PHP=pdo_mysql
+PHPMYSQLI_DESC=	Use mysqli php module
+PHPMYSQLI_USE=	PHP=mysqli
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPHPMYSQLI}
-USE_PHP+=	mysqli
-.endif
-.if ${PORT_OPTIONS:MPHPPDOMYSQL}
-USE_PHP+=	pdo_mysql
-.endif
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${LOCALBASE}/bin/python|' \
@@ -47,15 +40,6 @@ pre-install:
 	fi
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 755 ${WWWDIR}
-
-post-install:
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${CAT} ${PKGMESSAGE}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>

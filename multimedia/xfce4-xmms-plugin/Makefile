@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-xmms-plugin
 PORTVERSION=	0.5.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -18,19 +18,13 @@ USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 intltool intlhack pango
 USE_XFCE=	configenv libgui libutil panel
 
-OPTIONS_DEFINE=	XMMS BEEP AUDACIOUS
-OPTIONS_DEFAULT=	XMMS
+OPTIONS_DEFINE=	XMMS AUDACIOUS
 XMMS_DESC=	xmms support
-BEEP_DESC=	beep-media-player support
 AUDACIOUS_DESC=	audacious support
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MBEEP}
-RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
-.endif
-
-.if ${PORT_OPTIONS:MXMSS}
+.if ${PORT_OPTIONS:MXMMS}
 RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 .endif
 

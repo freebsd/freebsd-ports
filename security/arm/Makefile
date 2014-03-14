@@ -13,9 +13,6 @@ COMMENT=	Terminal status monitor for Tor
 
 LICENSE=	GPLv3
 
-MAN1=		arm.1
-MANCOMPRESSED=	yes
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_BZIP2=	yes
@@ -31,7 +28,6 @@ OPTIONS_DEFAULT=TOR DOCS
 
 TOR_DESC=	Enable local tor support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOR}

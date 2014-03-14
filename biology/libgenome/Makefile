@@ -13,6 +13,8 @@ COMMENT=	Toolkit for developing bioinformatic related software in C++
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 MAKE_JOBS_UNSAFE=yes
 
 USE_AUTOTOOLS=	libtool

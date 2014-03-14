@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	2010-05-05-BZR2356
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://iut-tice.ujf-grenoble.fr/cao/	\
@@ -22,9 +22,8 @@ CONFLICTS=	kicad-devel*
 
 WRKSRC=		${WRKDIR}/kicad
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	*.cmake
-USES=		cmake
+USES=		cmake dos2unix desktop-file-utils shared-mime-info zip
+DOS2UNIX_GLOB=	*.cmake
 USE_GL=		yes
 USE_WX=		2.8
 WX_UNICODE=	yes
@@ -38,18 +37,10 @@ WRKSRC=		${WRKDIR}/${SFNAME}
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=		gettext
 
 SFNAME=		${PORTNAME}-sources-${DISTVERSION}
 DFNAME=		doc_components-${DISTVERSION}-stable
@@ -57,16 +48,10 @@ BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 
-.if exists(${LOCALBASE}/bin/konqueror)
-RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kdebase3
-.else
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
-.endif
 
-.if ${PORT_OPTIONS:MDOCS}
 post-extract:
 	cd ${WRKSRC} && ${TAR} -xf ${DISTDIR}/${DFNAME}.tgz
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/share/kicad|${DATADIR}|'		\
@@ -76,18 +61,11 @@ pre-configure:
 		${WRKSRC}/common/gestfich.cpp
 
 post-install:
-.if ${PORT_OPTIONS:MNLS}
-	${MKDIR} ${DATADIR}/internat
+	@${MKDIR} ${STAGEDIR}${DATADIR}/internat
 	(cd ${WRKSRC}/internat &&	\
-		${COPYTREE_SHARE} \* ${DATADIR}/internat)
-	${RM} ${DATADIR}/internat/CMakeLists.txt
-	${FIND} ${DATADIR}/internat -name kicad.po -delete
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/internat)
+	${RM} -f ${STAGEDIR}${DATADIR}/internat/CMakeLists.txt
+	${FIND} ${STAGEDIR}${DATADIR}/internat -name kicad.po -delete
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ COMMENT=	Post processor for PDF presentations made with (La)TeX
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-USE_ZIP=	yes
+USES=		zip
 USE_TEX=	latex
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

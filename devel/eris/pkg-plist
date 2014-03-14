@@ -1,6 +1,6 @@
 lib/liberis-1.3.la
 lib/liberis-1.3.so
-lib/liberis-1.3.so.20
+lib/liberis-1.3.so.21
 include/Eris-1.3/Eris/Account.h
 include/Eris-1.3/Eris/Alarm.h
 include/Eris-1.3/Eris/Avatar.h
@@ -8,6 +8,7 @@ include/Eris-1.3/Eris/BaseConnection.h
 include/Eris-1.3/Eris/Calendar.h
 include/Eris-1.3/Eris/CharacterType.h
 include/Eris-1.3/Eris/Connection.h
+include/Eris-1.3/Eris/CustomEntities.h
 include/Eris-1.3/Eris/DeleteLater.h
 include/Eris-1.3/Eris/Entity.h
 include/Eris-1.3/Eris/EntityRef.h

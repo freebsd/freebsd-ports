@@ -14,19 +14,3 @@
 %%XMMS%%share/locale/es/LC_MESSAGES/gxmms.mo
 %%XMMS%%share/locale/fr/LC_MESSAGES/gxmms.mo
 %%XMMS%%@dirrm share/gxmms
-%%BMP%%libdata/bonobo/servers/GNOME_gxmms_bmpApplet.server
-%%BMP%%libexec/gxmms_bmp_applet
-%%BMP%%share/gnome-2.0/ui/GNOME_gxmms_bmpApplet.xml
-%%BMP%%share/gxmms-bmp/gxmms_bmp.png
-%%BMP%%share/gxmms-bmp/gxmms_eject.png
-%%BMP%%share/gxmms-bmp/gxmms_next.png
-%%BMP%%share/gxmms-bmp/gxmms_play_pause.png
-%%BMP%%share/gxmms-bmp/gxmms_prev.png
-%%BMP%%share/gxmms-bmp/gxmms_stop.png
-%%BMP%%share/gxmms-bmp/gxmms_bmp_mini.png
-%%BMP%%share/pixmaps/gxmms_bmp_mini.png
-%%BMP%%share/pixmaps/gxmms_bmp.png
-%%BMP%%share/locale/ca/LC_MESSAGES/gxmms.mo
-%%BMP%%share/locale/es/LC_MESSAGES/gxmms.mo
-%%BMP%%share/locale/fr/LC_MESSAGES/gxmms.mo
-%%BMP%%@dirrm share/gxmms-bmp

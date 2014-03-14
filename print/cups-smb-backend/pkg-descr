@@ -1,5 +1,0 @@
-CUPS smb backend allows *nix users to print
-to Windows-attached printers via smbspool
-program, which comes with Samba.
-
-WWW: http://www.cups.org/articles.php?L294

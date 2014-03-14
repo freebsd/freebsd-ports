@@ -18,8 +18,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/src
 
-USE_GMAKE=	yes
-USE_ZIP=	yes
+USES=		gmake zip
 USE_CSTD=	gnu89
 
 MAKEFILE=	Makefile.linux

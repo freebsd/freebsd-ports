@@ -3,6 +3,7 @@
 
 PORTNAME=	super_mario_bros_python
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	SF/supermariobrosp/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/Super-Mario-Bros-Python-v${DISTVERSION}release
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	2
 
 PORTDOCS=	changelog.txt readme.txt

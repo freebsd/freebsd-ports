@@ -1,11 +1,5 @@
 --- src/logcheck.orig	2010-07-07 15:59:57.000000000 -0400
 +++ src/logcheck	2010-07-07 16:19:33.000000000 -0400
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!%%LOCALBASE%%/bin/bash
- #
- # Copyright (C) 2004-2010 Debian Logcheck Team
- #                         <logcheck-devel@alioth.lists.debian.org>
 @@ -24,17 +24,10 @@
  
  if [ `id -u` = 0 ]; then

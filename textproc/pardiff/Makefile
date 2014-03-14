@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallelizing diff Filter, converts diff output to paralleled format
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 GNU_CONFIGURE=	yes
 
 MAN1=	pardiff.1 diffp.1

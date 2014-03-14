@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iperf
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	http://stats.es.net/software/
 PKGNAMESUFFIX=	3
@@ -13,6 +13,8 @@ COMMENT=	Improved tool to measure TCP and UDP bandwidth
 LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USES=		libtool
 
 # Set ${DOCSDIR} to avoid conflict with benchmarks/iperf ${DOCSDIR}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
@@ -20,6 +22,10 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 PLIST_FILES=	bin/iperf3 \
 		include/iperf_api.h \
 		lib/libiperf.a \
+		lib/libiperf.la \
+		lib/libiperf.so \
+		lib/libiperf.so.0 \
+		lib/libiperf.so.0.0.0 \
 		man/man1/iperf3.1.gz \
 		man/man3/libiperf.3.gz
 PORTDOCS=	*
@@ -39,6 +45,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS README RELEASE_NOTES TODO ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS README.md RELEASE_NOTES TODO ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

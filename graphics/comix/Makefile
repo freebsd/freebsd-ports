@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 comic book viewer for .cbz, .cbr, and .cbt files
 
+DEPRECATED=	Insists on installing in /usr/local, and uses nautilus2 which is deprecated.
+EXPIRATION_DATE=2014-04-10
+
 RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3

@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read from a Reiser file system
 
 PLIST_FILES=	bin/rfstool
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/rfstool-0.14/RFSTOOL
 MAKEFILE=	makefile.gcc3x
 

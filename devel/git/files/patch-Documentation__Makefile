@@ -1,6 +1,6 @@
 --- ./Documentation/Makefile.orig	2013-08-27 12:08:25.000000000 -0400
 +++ ./Documentation/Makefile	2013-08-27 12:09:18.000000000 -0400
-@@ -78,11 +78,11 @@
+@@ -83,11 +83,11 @@
  DOC_MAN5 = $(patsubst %.txt,%.5,$(MAN5_TXT))
  DOC_MAN7 = $(patsubst %.txt,%.7,$(MAN7_TXT))
  
@@ -15,7 +15,7 @@
  mandir ?= $(prefix)/share/man
  man1dir = $(mandir)/man1
  man5dir = $(mandir)/man5
-@@ -196,7 +196,7 @@
+@@ -202,7 +202,7 @@
  endif
  endif
  

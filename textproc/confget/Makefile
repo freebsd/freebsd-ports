@@ -24,17 +24,7 @@ PORTEXAMPLES=	t1.ini t2.ini
 
 EXAMPLES_MAKE_ENV=	EXAMPLESDIR=${EXAMPLESDIR}
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MPCRE}
-MAKE_ENV+=	PCRE_CFLAGS="" PCRE_LIBS=""
-.endif
-
-post-patch:
-.if !${PORT_OPTIONS:MEXAMPLES}
-	@${REINPLACE_CMD} -e '/^install:/ s| install-examples||' ${WRKSRC}/Makefile
-.endif
+PCRE_MAKE_ENV_OFF=	PCRE_CFLAGS="" PCRE_LIBS=""
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/confget

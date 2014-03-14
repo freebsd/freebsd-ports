@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	5.4.1
+PORTVERSION=	5.4.2
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
@@ -17,9 +16,11 @@ LICENSE=	ISCL
 
 LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
 
-OPTIONS_DEFINE=	PAM SQLITE MYSQL PGSQL LDAP
+OPTIONS_DEFINE=	CA_BUNDLE PAM SQLITE MYSQL PGSQL LDAP REDIS
 
-OPTIONS_DEFAULT=	PAM
+OPTIONS_DEFAULT=	CA_BUNDLE PAM
+
+CA_BUNDLE_DESC=	Install CA bundle for OpenSSL
 
 USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 GNU_CONFIGURE=	yes
@@ -31,51 +32,37 @@ SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
 CONFLICTS_INSTALL=	postfix-[0-9]* sendmail-[0-9]* opensmtpd-devel-[0-9]*
 
-USERS=		_smtpd _smtpq _smtpf
+USERS=		_smtpd _smtpq
 GROUPS=		_smtpd
+
+OPTIONS_SUB=		MYSQL SQLITE PGSQL LDAP REDIS
+
+CA_BUNDLE_CONFIGURE_ON=	--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+
+MYSQL_USE=		MYSQL=yes
+MYSQL_CFLAGS=		-I${LOCALBASE}/include/mysql
+MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql
+MYSQL_CONFIGURE_ON=	--with-experimental-mysql
+
+SQLITE_USE=		SQLITE=3
+SQLITE_CFLAGS=		-I${LOCALBASE}/include
+SQLITE_LDFLAGS=		-L${LOCALBASE}/lib
+SQLITE_CONFIGURE_ON=	--with-experimental-sqlite
+
+PGSQL_USE=		PGSQL=yes
+PGSQL_CONFIGURE_ON=	--with-experimental-postgres
+
+LDAP_CONFIGURE_ON=	--with-experimental-ldap
+
+PAM_CONFIGURE_ON=	--with-pam --with-pam-service=smtpd
+
+REDIS_LIB_DEPENDS=	hiredis:${PORTSDIR}/databases/hiredis
+REDIS_CONFIGURE_ON=	--with-experimental-redis
 
 .include <bsd.port.options.mk>
 
 USE_OPENSSL=	yes
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
-CFLAGS+=	-I${LOCALBASE}/include/mysql
-LDFLAGS+=	-L${LOCALBASE}/lib/mysql
-CONFIGURE_ARGS+=	--with-experimental-mysql
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=		3
-CONFIGURE_ARGS+=	--with-experimental-sqlite
-PLIST_SUB+=	SQLITE=""
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-PLIST_SUB+=	SQLITE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-experimental-postgres
-PLIST_SUB+=	PGSQL=""
-.else
-PLIST_SUB+=	PGSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=	--with-experimental-ldap
-PLIST_SUB+=	LDAP=""
-.else
-PLIST_SUB+=	LDAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPAM}
-CONFIGURE_ARGS+=	--with-pam
-.endif
 
 # FreeBSD 7.3 and earlier need to use OpenSSL from ports
 .if ${OSVERSION} < 704000

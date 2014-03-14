@@ -47,7 +47,7 @@ KTIMER_DESC=		Countdown launcher KTimer
 KTIMER_RUN_DEPENDS=	${KDE4_PREFIX}/bin/ktimer:${PORTSDIR}/x11-clocks/ktimer
 
 KWALLET_DESC=		Password manager KWallet
-KWALLET_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kwalletmanager:${PORTSDIR}/security/kwallet
+KWALLET_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kwalletmanager:${PORTSDIR}/security/kwalletmanager
 
 PRINTMANAGER_DESC=	Print manager
 PRINTMANAGER_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kcm_printer_manager.so:${PORTSDIR}/print/kde4-print-manager

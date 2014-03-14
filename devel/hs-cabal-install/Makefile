@@ -2,7 +2,7 @@
 
 PORTNAME=	cabal-install
 PORTVERSION=	1.16.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

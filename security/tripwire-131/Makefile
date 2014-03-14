@@ -12,6 +12,7 @@ PKGNAMESUFFIX=	-131
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File system security and verification program
 
+BROKEN=		Does not build
 MAN5=		tw.config.5
 MAN8=		siggen.8 tripwire.8
 NO_CDROM=	Cannot be redistributed for more than the cost of duplication

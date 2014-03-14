@@ -1,7 +1,0 @@
-XySSL is a lite-weight SSL and TLS implementation library in C.
-It currently supports SSLv2, SSLv3, and TLSv1 using the AES, ARC4, 
-and 3DES ciphers, and the MD2, MD4, MD5, SHA1, and SHA256 hashes.
-Support is also included for X.509 certificate structures, 
-as well as an internal PRNG.  
-
-WWW: http://polarssl.org/

@@ -10,6 +10,8 @@ MASTER_SITES=	http://aig.cs.man.ac.uk/maverik/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Publicly available virtual reality (VR) system
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 USE_SUBMAKE=	yes
 USE_GL=		yes
 WANT_GNOME=	yes

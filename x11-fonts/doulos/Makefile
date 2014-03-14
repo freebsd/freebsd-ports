@@ -13,7 +13,7 @@ COMMENT=	Doulos SIL TrueType font collection
 
 LICENSE=	OFL11
 
-USE_ZIP=	yes
+USES=		zip
 XORG_CAT=	font
 
 FONTROOTDIR=	${PREFIX}/lib/X11/fonts

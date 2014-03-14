@@ -12,7 +12,7 @@ COMMENT=	Web framework built on Groovy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:U}
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

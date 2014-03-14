@@ -14,8 +14,7 @@ COMMENT=	A sequel to Transball and Transball 2 THRUST-type games
 
 LIB_DEPENDS=	libSGE.so:${PORTSDIR}/devel/sdl_sge
 
-USE_ZIP=	yes
-USES=		gmake dos2unix
+USES=		gmake dos2unix zip
 DOS2UNIX_FILES=	sources/main.cpp
 USE_SDL=	sdl image mixer sound
 

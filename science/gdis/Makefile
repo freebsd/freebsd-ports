@@ -15,6 +15,8 @@ LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USE_GL=		glu
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig

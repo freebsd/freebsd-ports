@@ -11,7 +11,7 @@ COMMENT=	Web client for browsing Subversion repositories
 
 LICENSE=	GPLv3
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

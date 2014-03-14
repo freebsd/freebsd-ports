@@ -1,0 +1,13 @@
+--- src/libf90/Makefile.in.orig	2013-12-15 01:17:42.000000000 +0800
++++ src/libf90/Makefile.in	2014-03-09 22:42:45.298473932 +0800
+@@ -71,8 +71,8 @@
+ 	$(RANLIB) $(LIBRARY)
+ 
+ install: $(PNETCDF_MOD)
+-	$(INSTALL) -d -m 755 $(INCDIR)
+-	$(INSTALL_DATA) $(PNETCDF_MOD) $(INCDIR)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(INCDIR)
++	$(INSTALL_DATA) $(PNETCDF_MOD) $(DESTDIR)$(INCDIR)
+ 
+ uninstall:
+ 	$(RM) -f $(INCDIR)/$(PNETCDF_MOD)

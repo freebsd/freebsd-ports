@@ -21,12 +21,10 @@
     SUBDIR += avinfo
     SUBDIR += bangarang
     SUBDIR += banshee
-    SUBDIR += beep-media-player
     SUBDIR += bino
     SUBDIR += bombono
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
-    SUBDIR += castpodder
     SUBDIR += cclive
     SUBDIR += cheese
     SUBDIR += clipgrab
@@ -138,7 +136,6 @@
     SUBDIR += gstreamermm
     SUBDIR += gtk-recordmydesktop
     SUBDIR += gtk-youtube-viewer
-    SUBDIR += gxanim
     SUBDIR += gxine
     SUBDIR += gxmms
     SUBDIR += handbrake
@@ -176,6 +173,7 @@
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
+    SUBDIR += libmtp
     SUBDIR += libquicktime
     SUBDIR += libquicktime-lame
     SUBDIR += libquvi
@@ -292,7 +290,6 @@
     SUBDIR += py-mlt
     SUBDIR += py-openlp
     SUBDIR += py-periscope
-    SUBDIR += py-pybmp
     SUBDIR += py-qt4-multimedia
     SUBDIR += py-qt4-phonon
     SUBDIR += py-subliminal
@@ -318,7 +315,6 @@
     SUBDIR += sabbu
     SUBDIR += schroedinger
     SUBDIR += shell-fm
-    SUBDIR += smile
     SUBDIR += smpeg
     SUBDIR += smpeg2
     SUBDIR += smplayer

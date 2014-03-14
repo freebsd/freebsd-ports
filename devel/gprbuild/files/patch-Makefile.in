@@ -1,17 +1,15 @@
-$NetBSD: patch-Makefile.in,v 1.1 2012/07/08 20:08:42 marino Exp $
-
---- Makefile.in.orig	2012-01-04 15:36:14.000000000 +0000
+--- Makefile.in.orig	2013-03-04 17:43:09.000000000 +0000
 +++ Makefile.in
-@@ -19,7 +19,7 @@ EXEXT=
- endif
- CP=cp -p
- MKDIR=mkdir -p
--BUILD=debug
-+BUILD=production
+@@ -64,7 +64,7 @@ ADA_GEN_SUBDIR=gnat
  
- prefix=@prefix@
- srcdir=@srcdir@
-@@ -124,37 +124,35 @@ bootstrap-clean:
+ .PHONY: all distall gprbuild gprconfig gprclean gprinstall \
+ 	copy_gnat_src complete bootstrap
+-all: $(xmlada_build_target) $(ADA_GEN_SUBDIR)/stamp-snames
++all: $(xmlada_build_target)
+ 	${GNATMAKE} $(xmlada_prj_flags) -Pgprbuild -XBUILD=${BUILD}
+ 
+ distall:
+@@ -124,45 +124,35 @@ bootstrap-clean:
  	  -XBUILD_TOOL=gprbuild
  
  install: install.data install.bin
@@ -21,10 +19,10 @@ $NetBSD: patch-Makefile.in,v 1.1 2012/07/08 20:08:42 marino Exp $
 -	${CP} -r examples/* ${datadir}/examples/gprbuild
 -	${RM} -r ${datadir}/doc/gprbuild
 -	-${MKDIR} ${datadir}/doc/gprbuild
-+	-${MKDIR} ${DESTDIR}${datadir}/gpr
-+	-${MKDIR} ${DESTDIR}${datadir}/examples/gprbuild
++	-${MKDIR} ${DESTDIR}${datadir}/gpr \
++		${DESTDIR}${datadir}/examples/gprbuild \
++		${DESTDIR}${datadir}/doc/gprbuild
 +	${CP} -r examples/* ${DESTDIR}${datadir}/examples/gprbuild
-+	-${MKDIR} ${DESTDIR}${datadir}/doc/gprbuild
  	for format in html txt pdf info; do \
  	  if [ -d doc/$$format ] ; then \
 -	     ${MKDIR} ${datadir}/doc/gprbuild/$$format; \
@@ -45,25 +43,33 @@ $NetBSD: patch-Makefile.in,v 1.1 2012/07/08 20:08:42 marino Exp $
 -	-${MKDIR} ${datadir}/gprconfig
 -	${CP} share/gprconfig/*.xml ${datadir}/gprconfig
 -	${CP} share/gprconfig/gprconfig.xsd ${datadir}/gprconfig
-+	-${MKDIR} ${DESTDIR}${datadir}/gprconfig
-+	${INSTALL_DATA} share/gprconfig/*.xml ${DESTDIR}${datadir}/gprconfig
-+	${INSTALL_DATA} share/gprconfig/gprconfig.xsd ${DESTDIR}${datadir}/gprconfig
+-	-${MKDIR} ${datadir}/gpr
+-	${CP} share/_default.gpr ${datadir}/gpr
++	-${MKDIR} ${DESTDIR}${datadir}/gprconfig ${DESTDIR}${datadir}/gpr
++	${BSD_INSTALL_DATA} share/gprconfig/*.xml \
++		share/gprconfig/gprconfig.xsd ${DESTDIR}${datadir}/gprconfig
++	${BSD_INSTALL_DATA} share/_default.gpr ${DESTDIR}${datadir}/gpr
  
  install.bin: force
 -	-${MKDIR} ${bindir}
 -	${INSTALL_PROGRAM} gprconfig${EXEXT} ${bindir}
 -	${INSTALL_PROGRAM} gprbuild${EXEXT} ${bindir}
 -	${INSTALL_PROGRAM} gprclean${EXEXT} ${bindir}
+-	${INSTALL_PROGRAM} gprinstall${EXEXT} ${bindir}
+-ifeq ($(IS_WINDOWS),true)
+-	${CP} src/gprinstall.exe.manifest ${bindir}
+-	chmod +x ${bindir}/gprinstall.exe.manifest
+-endif
+-	${INSTALL_PROGRAM} gprslave${EXEXT} ${bindir}
 -	-${MKDIR} ${libexecdir}/gprbuild
 -	${INSTALL_PROGRAM} gprbind${EXEXT} ${libexecdir}/gprbuild/
 -	${INSTALL_PROGRAM} gprlib${EXEXT} ${libexecdir}/gprbuild/
-+	-${MKDIR} ${DESTDIR}${bindir}
-+	${INSTALL_PROGRAM} gprconfig${EXEXT} ${DESTDIR}${bindir}
-+	${INSTALL_PROGRAM} gprbuild${EXEXT} ${DESTDIR}${bindir}
-+	${INSTALL_PROGRAM} gprclean${EXEXT} ${DESTDIR}${bindir}
-+	-${MKDIR} ${DESTDIR}${libexecdir}/gprbuild
-+	${INSTALL_PROGRAM} gprbind${EXEXT} ${DESTDIR}${libexecdir}/gprbuild/
-+	${INSTALL_PROGRAM} gprlib${EXEXT} ${DESTDIR}${libexecdir}/gprbuild/
++	${MKDIR} ${DESTDIR}${libexecdir}/gprbuild
++	${BSD_INSTALL_PROGRAM} gprconfig${EXEXT} gprbuild${EXEXT} \
++		gprclean${EXEXT} gprinstall${EXEXT} gprslave${EXEXT} \
++		${DESTDIR}${bindir}
++	${BSD_INSTALL_PROGRAM} gprbind${EXEXT} gprlib${EXEXT} \
++		${DESTDIR}${libexecdir}/gprbuild
  
  $(objdir)/gprbuild_dummies.o: src/gprbuild_dummies.c
  	gcc -c -o $@ $<

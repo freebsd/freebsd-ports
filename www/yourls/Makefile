@@ -14,7 +14,7 @@ LICENSE=		GPLv3
 WRKSRC=			${WRKDIR}/${PORTNAME}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USE_ZIP=		YES
+USES=		zip:infozip
 NO_BUILD=		YES
 
 USE_PHP=		bcmath curl json mysql pcre xml

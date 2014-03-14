@@ -10,8 +10,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redcode simulator easy to embed into applications
 
-USE_ZIP=	yes
-USES=		gmake dos2unix
+USES=		gmake dos2unix zip
 
 NO_WRKSUBDIR=	yes
 

@@ -14,9 +14,9 @@ COMMENT=	KMFL Unicode keyboard for typesetting Ancient Greek
 
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
-USE_DOS2UNIX=	GrkPolyCompv${PORTVERSION:S|.||}.KMN
+USES=		dos2unix zip
+DOS2UNIX_FILES=	GrkPolyCompv${PORTVERSION:S|.||}.KMN
 NO_BUILD=	yes
-USE_ZIP=	yes
 
 DOCSDIR_REL=	share/doc/kmfl/${PORTNAME}
 DOCSDIR=	${PREFIX}/${DOCSDIR_REL}

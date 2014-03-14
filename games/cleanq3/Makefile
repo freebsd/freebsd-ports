@@ -11,9 +11,7 @@ DISTNAME=	CleanQ3_v${PORTVERSION}-srcbin
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cleaned up copy of the original Quake III Arena source code
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
+USES=		dos2unix gmake zip
 WRKSRC=		${WRKDIR}/CleanQ3
 BUILD_WRKSRC=	${WRKSRC}/code/unix
 MAKE_JOBS_UNSAFE=	yes

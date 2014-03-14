@@ -22,29 +22,15 @@ MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	TLS NLS DOCS EXAMPLES
 OPTIONS_DEFAULT=	TLS
+OPTIONS_SUB=	yes
 
-MAN1=		wdel.1 wput.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTLS}
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-ssl
-.else
-CONFIGURE_ARGS+=	--without-ssl
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext iconv
-CONFIGURE_ARGS+=	--enable-nls \
+TLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+TLS_CONFIGURE_WITH=	ssl
+NLS_USES+=		gettext iconv
+NLS_CONFIGURE_ON=	--enable-nls \
 			--with-libintl-prefix=${LOCALBASE} \
 			${ICONV_CONFIGURE_ARG}
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls --without-libiconv-prefix
-PLIST_SUB=	NLS="@comment "
-.endif
+NLS_CONFIGURE_OFF=	--disable-nls --without-libiconv-prefix
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
@@ -52,16 +38,10 @@ pre-configure:
 		${WRKSRC}/src/socketlib.c
 
 post-install:
-	@${INSTALL_MAN}	${MAN1:S,^,${WRKSRC}/doc/,} ${MANPREFIX}/man/man1/
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${INSTALL} -d ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/doc/,} ${EXAMPLESDIR}
-.endif
+	${INSTALL_MAN}	${WRKSRC}/doc/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

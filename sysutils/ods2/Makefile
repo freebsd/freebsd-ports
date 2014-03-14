@@ -10,7 +10,7 @@ DISTNAME=	ods2
 MAINTAINER=	dussuett@wigwam.ethz.ch
 COMMENT=	An utility for manipulating ODS-2 filesystems
 
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.unix
 MAKE_ARGS=	CCFLAGS="${CFLAGS}"

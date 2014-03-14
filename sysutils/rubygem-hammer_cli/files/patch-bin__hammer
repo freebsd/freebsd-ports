@@ -1,0 +1,11 @@
+--- bin/hammer.orig	2014-03-12 11:07:16.000000000 +0100
++++ bin/hammer	2014-03-12 11:07:33.000000000 +0100
+@@ -20,7 +20,7 @@
+ # load user's settings
+ require 'hammer_cli/settings'
+ 
+-CFG_PATH = ['./config/cli_config.yml', '~/.foreman/cli_config.yml', '/etc/foreman/cli_config.yml']
++CFG_PATH = ['./config/cli_config.yml', '~/.foreman/cli_config.yml', '/etc/foreman/cli_config.yml', "#{::RbConfig::CONFIG['sysconfdir']}/foreman/cli_config.yml"].uniq
+ 
+ if preparser.config
+   CFG_PATH.unshift preparser.config

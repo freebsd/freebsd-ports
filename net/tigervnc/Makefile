@@ -3,7 +3,7 @@
 
 PORTNAME=	tigervnc
 PORTVERSION=	1.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net x11-servers
 MASTER_SITES=	SF:tigervnc
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}/:tigervnc
@@ -38,11 +38,6 @@ USE_XORG+=	bigreqsproto compositeproto damageproto fixesproto fontsproto glproto
 		scrnsaverproto videoproto xau xdmcp xext xkbfile xcmiscproto xextproto \
 		xfont xproto xrandr xtrans xtst xorg-macros
 
-MAN1+=		vncpasswd.1 \
-		x0vncserver.1 \
-		vncserver.1 \
-		vncconfig.1 \
-		Xvnc.1
 CFLAGS+=	-fPIC
 
 OPTIONS_DEFINE=		GNUTLS NLS PAM VIEWER HPJPG
@@ -50,10 +45,9 @@ OPTIONS_DEFAULT=	GNUTLS NLS PAM VIEWER
 VIEWER_DESC=		Build vncviewer
 HPJPG_DESC=		Build with High-Performance JPEG support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-CMAKE_ARGS=	-G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=${PREFIX}
+CMAKE_ARGS=	-G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=${STAGE}${PREFIX}
 
 .if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	libtasn1.so:${PORTSDIR}/security/libtasn1 \
@@ -82,17 +76,18 @@ CMAKE_ARGS+=	-DENABLE_PAM=0
 .endif
 
 .if ${PORT_OPTIONS:MVIEWER}
-CMAKE_ARGS+=	-DENABLE_VIEWER=1
+CMAKE_ARGS+=	-DBUILD_VIEWER=1
 LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+# ImageMagick is required to generate icons during build process
+BUILD_DEPENDS+= ${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
 USE_XORG+=	xcursor xfixes xft xinerama
-MAN1+=		vncviewer.1
 PLIST_SUB+=	VIEWER=""
 INSTALLS_ICONS=	yes
 DESKTOP_ENTRIES=	"TigerVNC viewer" "Connect to VNC server and display remote desktop" \
-			"${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}.svg" \
-			"vncviewer" "Network;" false
+			"${PORTNAME}" "vncviewer" "Network;" false
 .else
+CMAKE_ARGS+=	-DBUILD_VIEWER=0
 PLIST_SUB+=	VIEWER="@comment "
 .endif
 
@@ -111,16 +106,15 @@ CONFIGURE_ARGS+=	\
 		--disable-dmx --disable-xwin --disable-xephyr --disable-kdrive \
 		--disable-config-dbus --disable-config-hal \
 		--disable-dri2 --enable-install-libxf86config --enable-glx \
-		--with-default-font-path="catalogue:${PREFIX}/share/fonts,built-ins" \
-		--with-xkb-path=${PREFIX}/share/X11/xkb \
-		--with-xkb-output=/var/lib/xkb \
-		--with-xkb-bin-directory=${PREFIX}/bin \
-		--with-serverconfig-path=${PREFIX}/lib/X11 \
+		--with-default-font-path="catalogue:${LOCALBASE}/share/fonts,built-ins" \
+		--with-xkb-path=${LOCALBASE}/share/X11/xkb \
+		--with-xkb-bin-directory=${LOCALBASE}/bin \
+		--with-serverconfig-path=${LOCALBASE}/lib/X11 \
 		--disable-selective-werror
 .ifdef WITH_NEW_XORG
-CONFIGURE_ARGS+=	--with-fontrootdir=${PREFIX}/share/fonts
+CONFIGURE_ARGS+=	--with-fontrootdir=${LOCALBASE}/share/fonts
 .else
-CONFIGURE_ARGS+=	--with-fontdir=${PREFIX}/share/fonts
+CONFIGURE_ARGS+=	--with-fontdir=${LOCALBASE}/share/fonts
 .endif
 
 .include <bsd.port.pre.mk>
@@ -156,9 +150,5 @@ post-build:
 
 post-install:
 	@cd ${WRKSRC}/unix/xserver/hw/vnc/ && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install
-.if ${PORT_OPTIONS:MVIEWER}
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps/
-	@cd ${WRKSRC}/media/ && ${INSTALL_DATA} icons/tigervnc.svg ${PREFIX}/share/icons/hicolor/scalable/apps/
-.endif
 
 .include <bsd.port.post.mk>

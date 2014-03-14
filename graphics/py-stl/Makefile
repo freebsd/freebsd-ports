@@ -16,7 +16,7 @@ LICENSE=		BSD
 # bypass infrastructure bug
 OPTIONSFILE=		${PORT_DBDIR}/py-${PORTNAME}/options
 
-USE_ZIP=		YES
+USES=		zip
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	YES
 PYDISTUTILS_EGGINFO=	py_stl-${PORTVERSION}-py${PYTHON_VER}.egg-info

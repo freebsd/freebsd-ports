@@ -21,7 +21,7 @@ JDOM_DESC=	Jdom support
 DOM4J_DESC=	dom4j support
 XOM_DESC=	XOM support
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_WRKSUBDIR=	yes

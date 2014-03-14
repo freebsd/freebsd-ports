@@ -25,7 +25,6 @@ EXTRACT_AFTER_ARGS=	--exclude CVS
 
 OPTIONS_DEFINE=	TCL THREADS DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCL}
@@ -76,8 +75,8 @@ post-build:
 
 post-install:
 .if ${PORT_OPTIONS:MTCL}
-	@(cd ${WRKSRC} && ${GMAKE} install-tcl)
-	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/sqlite/
+	@(cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} install-tcl)
+	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/sqlite
 .endif
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}

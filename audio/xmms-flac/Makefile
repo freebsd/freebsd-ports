@@ -14,11 +14,10 @@ LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
 		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libogg.so:${PORTSDIR}/audio/libogg
 
-USES=		gettext iconv
+USES=		gettext iconv tar:xz
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk12
 USE_XORG=	x11 xau xcb xdmcp xext xi
-USE_XZ=		yes
 
 CONFIGURE_ARGS=	--disable-silent-rules
 CPPFLAGS+=	-I${LOCALBASE}/include

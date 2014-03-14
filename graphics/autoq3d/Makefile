@@ -14,8 +14,7 @@ COMMENT=	Qt 4 quick 3D model editor
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USE_ZIP=	yes
-USES=		dos2unix qmake
+USES=		dos2unix qmake zip
 DOS2UNIX_FILES=	*.pro src/cmds/*.cpp src/fgui/*.cpp docs/*.txt
 DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
 USE_GL=		glu

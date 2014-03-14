@@ -12,7 +12,7 @@ COMMENT=	Text-mode Infocom game interpreter
 
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
+USES=		zip
 
 CPPFLAGS+=	-DPOSIX -DHAVE_GETOPT
 

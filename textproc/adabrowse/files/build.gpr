@@ -1,0 +1,16 @@
+with "asis";
+with "gnat_util";
+project Build is
+
+   for Languages   use ("Ada", "C");
+   for Source_Dirs use (".");
+   for Object_dir  use "obj";
+   for Exec_Dir    use ".";
+   for Main use ("adabrowse");
+
+   package Compiler is
+      for Default_Switches ("C") use ("-O2");
+      for Default_Switches ("ada") use ("-O2", "-gnatwa");
+   end Compiler;
+
+end Build;

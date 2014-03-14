@@ -20,6 +20,7 @@ CONFLICTS=	ptlib-2.*
 WRKSRC=		${WRKDIR}/ptlib_v${PORTVERSION:S/./_/g}
 
 USES=		bison gmake
+USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
 WANT_GNOME=	yes
 WANT_SDL=	yes

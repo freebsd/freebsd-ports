@@ -19,17 +19,13 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--libdir=/usr/lib
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/CHANGELOG ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

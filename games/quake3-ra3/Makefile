@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: Rocket Arena 3
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/arena

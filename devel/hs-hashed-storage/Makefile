@@ -2,7 +2,7 @@
 
 PORTNAME=	hashed-storage
 PORTVERSION=	0.5.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -15,7 +15,7 @@ COMMENT=	Tells you what day today is
 EXTRACT_DEPENDS=nkf:${PORTSDIR}/japanese/nkf
 
 NO_WRKSUBDIR=	yes
-USE_LHA=	yes
+USES=		lha
 
 MAKEFILE=	${FILESDIR}/Makefile
 

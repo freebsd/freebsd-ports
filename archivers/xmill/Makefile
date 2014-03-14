@@ -5,7 +5,6 @@ PORTNAME=	xmill
 DISTVERSION=	0.8
 CATEGORIES=	archivers
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Efficient compressor for XML
@@ -13,7 +12,7 @@ COMMENT=	Efficient compressor for XML
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 
-USES=		dos2unix
+USES=		dos2unix zip
 DOS2UNIX_FILES=	${MAKEFILE} XMill/BZlib.cpp
 
 PLIST_FILES=	bin/xcmill bin/xdemill bin/xmilltest bin/xmillexample \

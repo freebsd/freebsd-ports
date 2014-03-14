@@ -15,8 +15,7 @@ COMMENT=	Family of archivers with extremely high compression ratios
 LICENSE=	GPLv3 MIT
 LICENSE_COMB=	multi
 
-USE_ZIP=	yes
-USES=		dos2unix
+USES=		dos2unix zip:infozip
 
 EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt -d ${WRKDIR}
 NO_WRKSUBDIR=	yes

@@ -11,11 +11,10 @@ MASTER_SITES=	http://www.centerim.org/download/releases/ \
 MAINTAINER=	frank@altpeter.de
 COMMENT=	Text mode menu- and window-driven IM interface
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		iconv
+USES=		iconv gmake pkgconfig
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -24,6 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFLICTS=	centericq-[0-9]* centerim-devel-[0-9]*
 
 OPTIONS_DEFINE=	NLS MULTIBYTE FRIBIDI MSN YAHOO AIM IRC JABBER GPGME RSS LJ GG
+
 FRIBIDI_DESC=	Fribidi Support
 MSN_DESC=	MSN Protocol
 YAHOO_DESC=	Yahoo! Messenger Protocol
@@ -34,82 +34,35 @@ RSS_DESC=	RSS Support
 LJ_DESC=	LiveJournal Support
 GG_DESC=	Gadu-Gadu Protocol Support
 
-MAN1=	cimconv.1 centerim.1
+OPTIONS_DEFAULT=        MULTIBYTE FRIBIDI MSN YAHOO AIM IRC JABBER GPGME RSS LJ GG
+
+OPTIONS_SUB=	yes
 
 PORTDOCS=	FAQ README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=			gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMULTIBYTE}
-CONFIGURE_ARGS+=	--enable-locales-fix
-.endif
-
-.if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
-CONFIGURE_ARGS+=	--with-fribidi
-.endif
-
-.if ! ${PORT_OPTIONS:MMSN}
-CONFIGURE_ARGS+=	--disable-msn
-.endif
-
-.if ! ${PORT_OPTIONS:MYAHOO}
-CONFIGURE_ARGS+=	--disable-yahoo
-.endif
-
-.if ! ${PORT_OPTIONS:MAIM}
-CONFIGURE_ARGS+=	--disable-aim
-.endif
-
-.if ! ${PORT_OPTIONS:MIRC}
-CONFIGURE_ARGS+=	--disable-irc
-.endif
-
-.if ! ${PORT_OPTIONS:MJABBER}
-CONFIGURE_ARGS+=	--disable-jabber
-.else
-.endif
-
-.if ${PORT_OPTIONS:MGPGME}
-LIB_DEPENDS+=		gpgme.19:${PORTSDIR}/security/gpgme
-#CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}
-CONFIGURE_ARGS+=	--with-ssl
-.else
-CONFIGURE_ARGS+=	--without-gpgme
-.endif
-
-.if ! ${PORT_OPTIONS:MRSS}
-CONFIGURE_ARGS+=	--disable-rss
-.endif
-
-.if ! ${PORT_OPTIONS:MLJ}
-CONFIGURE_ARGS+=	--disable-lj
-.endif
-
-.if ! ${PORT_OPTIONS:MGG}
-CONFIGURE_ARGS+=	--disable-gg
-.else
-LIB_DEPENDS+=		gadu.3:${PORTSDIR}/polish/ekg
-LIBGADU=		-lgadu
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+MULTIBYTE_CONFIGURE_ENABLE=locales-fix
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_CONFIGURE_WITH=	fribidi
+MSN_CONFIGURE_ENABLE=	msn
+YAHOO_CONFIGURE_ENABLE=	yahoo
+AIM_CONFIGURE_ENABLE=	aim
+IRC_CONFIGURE_ENABLE=	irc
+JABBER_CONFIGURE_ENABLE=jabber
+RSS_CONFIGURE_ENABLE=	rss
+LJ_CONFIGURE_ENABLE=	lj
+GG_LIB_DEPENDS=		libgadu.so:${PORTSDIR}/polish/ekg
+GG_CONFIGURE_ENABLE=	gg
+GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_CONFIGURE_OFF=	--with-gpgme-prefix=/nonexistent
 
 post-patch:
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/python|/usr/bin/env python|' \
 		${WRKSRC}/misc/CenterIMLog2HTML.py
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/)
 
 .include <bsd.port.mk>

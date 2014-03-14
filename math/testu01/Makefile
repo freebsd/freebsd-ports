@@ -15,10 +15,9 @@ COMMENT=	Utilities for statistical testing of uniform random number generators
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
-USE_ZIP=	yes
+USES=		gmake zip
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${PREFIX}/include/${PORTNAME}"
-USE_GMAKE=	yes
 MAKE_ARGS=	docdir="${DOCSDIR}" exdir="${EXAMPLESDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

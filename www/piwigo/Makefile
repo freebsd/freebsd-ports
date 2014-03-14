@@ -14,7 +14,7 @@ NO_BUILD=	yes
 USE_PHP=	calendar ctype dom exif filter gd gettext hash iconv json \
 		mbstring mcrypt mhash mysql mysqli openssl pcre pdf pdo posix session \
 		simplexml sockets spl tokenizer xml xmlreader xmlwriter zlib
-USE_ZIP=	yes
+USES=		zip
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

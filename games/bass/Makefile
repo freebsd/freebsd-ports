@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

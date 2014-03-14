@@ -16,7 +16,6 @@ LICENSE=	BSL
 WRKSRC=		${WRKDIR}/cpp
 
 USE_LDCONFIG=	yes
-USE_ZIP=	yes
-USES=		cmake
+USES=		cmake zip
 
 .include <bsd.port.mk>

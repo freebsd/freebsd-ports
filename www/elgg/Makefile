@@ -12,8 +12,7 @@ COMMENT=	Blogging and social networking platform
 LICENSE=	GPLv2
 
 USE_PHP=	mysql gd json soap dom xml
-USES=		gettext
-USE_ZIP=	yes
+USES=		gettext zip
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
@@ -32,7 +31,7 @@ post-install:
 	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}' \
 		>> ${TMPPLIST}
 
-	@${INSTALL} -d${STAGEDIR} ${ELGGDATADIR}
+	@${INSTALL} -d ${STAGEDIR}${ELGGDATADIR}
 	@${CHMOD} 777 ${STAGEDIR}${ELGGDATADIR}
 	@${ECHO_CMD} '@exec ${CHMOD} 777 ${STAGEDIR}${ELGGDATADIR}' \
 		>> ${TMPPLIST}

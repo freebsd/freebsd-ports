@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Maintain information about the state of links
 
+DEPRECATED=	Depends on expired www/p5-CGI-modules
+EXPIRATION_DATE=2014-04-10
+
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-Stream>=0:${PORTSDIR}/www/p5-HTML-Stream \
 		p5-CGI-modules>=0:${PORTSDIR}/www/p5-CGI-modules \

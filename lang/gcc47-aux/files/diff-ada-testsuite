@@ -1,0 +1,169 @@
+--- gcc/testsuite/ada/acats/run_acats.orig
++++ gcc/testsuite/ada/acats/run_acats
+@@ -5,20 +5,6 @@
+    exit 1
+ fi
+ 
+-# Provide which replacement.
+-#
+-# type -p is missing from Solaris 2 /bin/sh and /bin/ksh (ksh88), but both
+-# ksh93 and bash have it.
+-# type output format differs between ksh88 and ksh93, so avoid it if
+-# type -p is present.  Unfortunately, HP-UX /bin/sh ignores -p with type.
+-# Fall back to whence which ksh88 and ksh93 provide, but bash does not.
+-
+-which () {
+-    path=`type -p $* 2>/dev/null` && { echo $path | awk '{print $NF}'; return 0; }
+-    path=`type $* 2>/dev/null` && { echo $path | awk '{print $NF}'; return 0; }
+-    path=`whence $* 2>/dev/null` && { echo $path; return 0; }
+-    return 1
+-}
+ 
+ # Set up environment to use the Ada compiler from the object tree
+ 
+--- gcc/testsuite/ada/acats/run_all.sh.orig
++++ gcc/testsuite/ada/acats/run_all.sh
+@@ -35,6 +35,14 @@
+   echo "$@" >> $dir/acats.log
+ }
+ 
++inform () {
++  printf "%04d    %7s" $1 $2
++}
++
++disinform () {
++  printf "\r"
++}
++
+ dir=`${PWDCMD-pwd}`
+ 
+ if [ "$testdir" = "" ]; then
+@@ -197,6 +205,18 @@
+ glob_countn=0
+ glob_countok=0
+ glob_countu=0
++countdown=0
++
++for chapter in $chapters; do
++   if [ -d $dir/tests/$chapter ]; then
++      cd $dir/tests/$chapter
++      ls *.a *.ada *.adt *.am *.dep 2> /dev/null | sed -e 's/\(.*\)\..*/\1/g' | \
++      cut -c1-7 | sort | uniq | comm -23 - $dir/support/norun.lst \
++        > $dir/tests/$chapter/${chapter}.lst
++      countn=`wc -l < $dir/tests/$chapter/${chapter}.lst`
++      countdown=`expr $countdown + $countn`
++   fi
++done
+ 
+ for chapter in $chapters; do
+    display Running chapter $chapter ...
+@@ -207,10 +227,6 @@
+       continue
+    fi
+ 
+-   cd $dir/tests/$chapter
+-   ls *.a *.ada *.adt *.am *.dep 2> /dev/null | sed -e 's/\(.*\)\..*/\1/g' | \
+-   cut -c1-7 | sort | uniq | comm -23 - $dir/support/norun.lst \
+-     > $dir/tests/$chapter/${chapter}.lst 
+    countn=`wc -l < $dir/tests/$chapter/${chapter}.lst`
+    glob_countn=`expr $glob_countn + $countn`
+    counti=0
+@@ -233,10 +249,13 @@
+       if [ $? -eq 0 ]; then
+          extraflags="$extraflags -gnat95"
+       fi
++      inform $countdown $i
++      countdown=`expr $countdown - 1`
+       test=$dir/tests/$chapter/$i
+       mkdir $test && cd $test >> $dir/acats.log 2>&1
+ 
+       if [ $? -ne 0 ]; then
++         disinform
+          display "FAIL:	$i"
+          failed="${failed}${i} "
+          clean_dir
+@@ -257,8 +276,10 @@
+         cxb30*) EXTERNAL_OBJECTS="$dir/support/cxb30040.o $dir/support/cxb30060.o $dir/support/cxb30130.o $dir/support/cxb30131.o";;
+         ca1020e) rm -f ca1020e_func1.adb ca1020e_func2.adb ca1020e_proc1.adb ca1020e_proc2.adb > /dev/null 2>&1;;
+         ca14028) rm -f ca14028_func2.ads ca14028_func3.ads ca14028_proc1.ads ca14028_proc3.ads > /dev/null 2>&1;;
++        cxh1001) extraflags="-a -f"; echo "pragma Normalize_Scalars;" > gnat.adc
+       esac
+       if [ "$main" = "" ]; then
++         disinform
+          display "FAIL:	$i"
+          failed="${failed}${i} "
+          clean_dir
+@@ -267,6 +288,7 @@
+ 
+       target_gnatmake $extraflags -I$dir/support $main >> $dir/acats.log 2>&1
+       if [ $? -ne 0 ]; then
++         disinform
+          display "FAIL:	$i"
+          failed="${failed}${i} "
+          clean_dir
+@@ -281,6 +303,7 @@
+       target_run $dir/tests/$chapter/$i/$binmain > $dir/tests/$chapter/$i/${i}.log 2>&1
+       cd $dir/tests/$chapter/$i
+       cat ${i}.log >> $dir/acats.log
++      disinform
+       egrep -e '(==== |\+\+\+\+ |\!\!\!\! )' ${i}.log > /dev/null 2>&1
+       if [ $? -ne 0 ]; then
+          grep 'tasking not implemented' ${i}.log > /dev/null 2>&1
+--- gcc/testsuite/gnat.dg/test_raise_from_pure.adb.orig
++++ gcc/testsuite/gnat.dg/test_raise_from_pure.adb
+@@ -1,4 +1,4 @@
+--- { dg-do run { xfail arm*-*-* } }
++-- { dg-do run { xfail arm*-*-* *-*-openbsd* } }
+ -- { dg-options "-O2" }
+ 
+ -- This is an optimization test and its failure is only a missed optimization.
+--- gcc/testsuite/gnat.dg/unchecked_convert5.adb.orig
++++ gcc/testsuite/gnat.dg/unchecked_convert5.adb
+@@ -1,22 +0,0 @@
+--- { dg-do run { target hppa*-*-* sparc*-*-* powerpc*-*-* } }
+-
+-with Unchecked_Conversion;
+-
+-procedure Unchecked_Convert5 is
+-
+-  subtype c_1 is string(1..1);
+-
+-  function int2c1 is  -- { dg-warning "different sizes" }
+-    new unchecked_conversion (source => integer, target => c_1);
+-
+-  c1 : c_1;
+-
+-begin
+-
+-  c1 := int2c1(16#12#);
+-
+-  if c1 (1) /= ASCII.Nul then
+-    raise Program_Error;
+-  end if;
+-
+-end;
+--- gcc/testsuite/gnat.dg/unchecked_convert6.adb.orig
++++ gcc/testsuite/gnat.dg/unchecked_convert6.adb
+@@ -1,22 +0,0 @@
+--- { dg-do run { target hppa*-*-* sparc*-*-* powerpc*-*-* } }
+-
+-with Unchecked_Conversion;
+-
+-procedure Unchecked_Convert6 is
+-
+-  subtype c_5 is string(1..5);
+-
+-  function int2c5 is  -- { dg-warning "different sizes" }
+-    new unchecked_conversion (source => integer, target => c_5);
+-
+-  c5 : c_5;
+-
+-begin
+-
+-  c5 := int2c5(16#12#);
+-
+-  if c5 (4) /= ASCII.DC2 then
+-    raise Program_Error;
+-  end if;
+-
+-end;

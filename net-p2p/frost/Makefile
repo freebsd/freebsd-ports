@@ -12,10 +12,10 @@ DISTNAME=	${PORTNAME}-14-Mar-2009
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Freenet client that provides messenger and file services
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
-USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}

@@ -8,13 +8,13 @@ CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/3.%20DrJava%20Eclipse%20Plug-in/${PORTNAME}-eclipse-${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	drjava-eclipse-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	DrJava plugin for Eclipse
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes

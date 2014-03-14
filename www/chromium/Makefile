@@ -4,16 +4,10 @@
 #TODO eadler: s/python/python2/g on a number of files, chromium does not build with python3
 
 PORTNAME=	chromium
-DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	33.0.1750.117
-PORTREVISION=	1
+PORTVERSION=	33.0.1750.149
 CATEGORIES=	www
-MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/:testdata \
-		http://download.goodking.org/downloads/:browser \
-		ftp://rene-ladan.nl/pub/distfiles/:browser \
-		LOCAL/rene:browser \
-		http://files.etoilebsd.net/goodking/:browser
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:browser
+MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Mostly BSD-licensed web browser based on WebKit and Gtk+
@@ -21,8 +15,7 @@ COMMENT=	Mostly BSD-licensed web browser based on WebKit and Gtk+
 LICENSE=	BSD3CLAUSE LGPL21 MPL
 LICENSE_COMB=	multi
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-CFLAGS+=	-fno-stack-protector -Wno-unknown-warning-option
+CFLAGS+=	-fno-stack-protector
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
@@ -100,6 +93,8 @@ OPTIONS_DEFAULT=	CODECS GCONF
 GCONF_USE=	GNOME=gconf2
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
+TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCODECS}
@@ -134,7 +129,6 @@ LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .if ${PORT_OPTIONS:MTEST}
 .include "Makefile.tests"
 ALL_TARGET+=	${TEST_TARGETS}
-DISTFILES+=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:testdata
 .endif
 
 DEBUG_MAKE_ENV=	V=1
@@ -150,12 +144,6 @@ CONFIGURE_ENV+=	CC=${CC} \
 		CXX=${CXX} \
 		GYP_GENERATORS=ninja \
 		GYP_DEFINES="${GYP_DEFINES}"
-# according to portlint the below is passed via bsd.port.mk,
-# but 'make -V CONFIGURE_ENV' does not show it:
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}" \
-		CXXFLAGS="${CXXFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF=${LOCALBASE}/bin/gperf
 MAKE_ARGS+=	-C out/${BUILDTYPE}
@@ -164,12 +152,21 @@ MAKE_ARGS+=	-C out/${BUILDTYPE}
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
+CFLAGS+=	-Wno-unknown-warning
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 .else
 GYP_DEFINES+=	clang=1
+CFLAGS+=	-Wno-unknown-warning-option
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 CONFIGURE_ENV+=	AR=/usr/bin/ar
 .endif
+
+# according to portlint the below is passed via bsd.port.mk,
+# but 'make -V CONFIGURE_ENV' does not show it:
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 pre-everything::
 	@${ECHO_MSG}
@@ -195,8 +192,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/bin/gcc|${CC}|" \
 		${WRKSRC}/third_party/WebKit/Source/build/scripts/preprocessor.pm \
 		${WRKSRC}/third_party/WebKit/Source/build/scripts/scripts.gypi
-	@${REINPLACE_CMD} -e "s|'../courgette/courgette.gyp:courgette_lib',||" \
-		${WRKSRC}/chrome/chrome_tests_unit.gypi
 	@${REINPLACE_CMD} -e "s|is_linux|(is_linux or is_bsd)|" \
 		${WRKSRC}/chrome/browser/browser_resources.grd \
 		${WRKSRC}/chrome/app/theme/theme_resources.grd \

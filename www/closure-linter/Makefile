@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	closure-linter
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.13
 CATEGORIES=	www devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	closure_linter-${PORTVERSION}
@@ -12,14 +12,9 @@ COMMENT=	JavaScript linter
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gflags:${PORTSDIR}/devel/py-gflags
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gflags.py:${PORTSDIR}/devel/py-gflags
 
 USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
 
-PLIST_FILES=	bin/fixjsstyle \
-		bin/gjslint \
-		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

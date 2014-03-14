@@ -81,13 +81,11 @@
     SUBDIR += colordiff
     SUBDIR += confetti
     SUBDIR += confget
-    SUBDIR += cost
     SUBDIR += crimson
     SUBDIR += cs-aspell
     SUBDIR += cs-mythes
     SUBDIR += csb-aspell
     SUBDIR += csv2latex
-    SUBDIR += csv2xml
     SUBDIR += csvdiff
     SUBDIR += ctpl
     SUBDIR += ctpp2
@@ -410,7 +408,6 @@
     SUBDIR += makefaq
     SUBDIR += makepatch
     SUBDIR += man2html
-    SUBDIR += manued.el
     SUBDIR += markdown
     SUBDIR += markdown-mode.el
     SUBDIR += mate-doc-utils

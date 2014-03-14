@@ -12,6 +12,8 @@ COMMENT=	Data compression library with low memory usage
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	DOCS
+
 USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

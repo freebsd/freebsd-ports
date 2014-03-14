@@ -16,9 +16,8 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libmozjs185.so:${PORTSDIR}/lang/spidermonkey185 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_ZIP=	yes
 USE_OPENSSL=	yes
-USES=		readline
+USES=		readline zip
 
 OPTIONS_DEFINE=	DOCS
 

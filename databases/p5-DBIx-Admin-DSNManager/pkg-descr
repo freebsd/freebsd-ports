@@ -1,0 +1,24 @@
+DBIx::Admin::DSNManager manages a file of DSNs, for both testing and production.
+
+The INI-style format was selected, rather than, say, using an SQLite database,
+so that casual users could edit the file without needing to know SQL and without
+having to install the command line program sqlite3.
+
+Each DSN is normally for something requiring manual preparation, such as
+creating the database named in the DSN.
+
+In the case of SQLite, etc, where manual intervention is not required, you can
+still put the DSN in dsn.ini.
+
+One major use of this module is to avoid environment variable overload, since it
+is common to test Perl modules by setting the env vars $DBI_DSN, $DBI_USER and
+$DBI_PASS.
+
+But then the problem becomes: What do you do when you want to run tests against
+a set of databases servers? Some modules define sets of env vars, one set per
+database server, with awkward and hard-to-guess names. This is messy and
+obscure.
+
+DBIx::Admin::DSNManager is a solution to this problem.
+
+WWW: http://search.cpan.org/dist/DBIx-Admin-DSNManager/

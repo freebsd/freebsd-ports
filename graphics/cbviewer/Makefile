@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		unzip:${PORTSDIR}/archivers/unzip
 
-USE_ZIP=	yes
+USES=		zip:infozip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

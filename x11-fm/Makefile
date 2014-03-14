@@ -6,7 +6,6 @@
     SUBDIR += asfiles
     SUBDIR += catseye-fm
     SUBDIR += deforaos-browser
-    SUBDIR += dfm
     SUBDIR += doublecmd
     SUBDIR += emelfm2
     SUBDIR += ezfm

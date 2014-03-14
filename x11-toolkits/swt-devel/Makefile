@@ -21,9 +21,8 @@ ONLY_FOR_ARCHS=	i386 amd64 powerpc
 SWT_VERSION=	3738
 OUTPUT_JAR=	${PORTNAME}${PKGNAMESUFFIX}.jar
 
-USE_ZIP=	yes
 USE_GL=		yes
-USES=		pkgconfig
+USES=		pkgconfig zip
 USE_GNOME=	gtk20
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

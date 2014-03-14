@@ -6,12 +6,11 @@ DISTVERSION=	20070221
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.advsys.net/ken/util/
 DISTNAME=	${PORTNAME}_src
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce a .ZIP file from 2 other ones with the best compressed files
 
-USES=		dos2unix
+USES=		dos2unix zip
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/${PORTNAME}

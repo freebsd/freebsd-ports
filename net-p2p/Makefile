@@ -39,7 +39,6 @@
     SUBDIR += gtk-gnutella
     SUBDIR += gtkhx
     SUBDIR += gtorrentviewer
-    SUBDIR += i2p
     SUBDIR += jigdo
     SUBDIR += ktorrent
     SUBDIR += libbt
@@ -55,6 +54,7 @@
     SUBDIR += litecoin
     SUBDIR += litecoin-daemon
     SUBDIR += lopster
+    SUBDIR += microdc2
     SUBDIR += minder
     SUBDIR += mktorrent
     SUBDIR += mldonkey

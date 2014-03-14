@@ -11,7 +11,6 @@
     SUBDIR += arj
     SUBDIR += ark
     SUBDIR += bicom
-    SUBDIR += bzip
     SUBDIR += bzip2
     SUBDIR += cabextract
     SUBDIR += dact

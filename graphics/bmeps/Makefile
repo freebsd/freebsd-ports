@@ -6,7 +6,6 @@ PORTVERSION=	2.2.26
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert bitmap images (PNG/JPEG/NetPBM) to EPS
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		perl5
+USES=		perl5 zip
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_sys_termios_h=no
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/dktools\

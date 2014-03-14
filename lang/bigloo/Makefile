@@ -16,6 +16,7 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgmp.so:${PORTSDIR}/math/gmp
 
+BROKEN=		Checksum and size mismatch
 USES=		compiler:c++0x gmake
 USE_EMACS=	yes
 HAS_CONFIGURE=	yes

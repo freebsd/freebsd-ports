@@ -17,7 +17,7 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 SUB_FILES=	log4net.pc

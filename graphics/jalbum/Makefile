@@ -14,7 +14,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/jAlbum
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 USE_JAVA=	yes

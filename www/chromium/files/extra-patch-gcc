@@ -50,3 +50,39 @@
  #if HAVE_SCHED_GETAFFINITY
  #ifndef _GNU_SOURCE
  # define _GNU_SOURCE
+--- content/browser/browser_shutdown_profile_dumper.cc.orig    2014-02-20 15:28:24.000000000 -0500
++++ content/browser/browser_shutdown_profile_dumper.cc 2014-03-03 15:36:33.000000000 -0500
+@@ -2,6 +2,8 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
++#include <stdio.h>
++
+ #include "content/browser/browser_shutdown_profile_dumper.h"
+ 
+ #include "base/base_switches.h"
+--- testing/perf/perf_test.cc	2014-03-03 12:59:30.000000000 -0500
++++ testing/perf/perf_test.cc.orig	2014-02-20 15:28:27.000000000 -0500
+@@ -2,10 +2,10 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
++#include <stdio.h>
++
+ #include "testing/perf/perf_test.h"
+ 
+-#include <stdio.h>
+-
+ #include "base/logging.h"
+ #include "base/strings/string_number_conversions.h"
+ #include "base/strings/stringprintf.h"
+--- ui/gfx/codec/jpeg_codec.cc.orig	2014-02-20 15:27:56.000000000 -0500
++++ ui/gfx/codec/jpeg_codec.cc	2014-03-03 14:33:42.000000000 -0500
+@@ -15,6 +15,7 @@
+ #if defined(USE_SYSTEM_LIBJPEG)
+ #include <jpeglib.h>
+ #elif defined(USE_LIBJPEG_TURBO)
++#include <stdio.h>
+ #include "third_party/libjpeg_turbo/jpeglib.h"
+ #else
+ #include "third_party/libjpeg/jpeglib.h"

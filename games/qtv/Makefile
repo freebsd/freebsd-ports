@@ -14,12 +14,13 @@ ALL_TARGET=	${PORTNAME}
 MAKE_ARGS=	CC=${CC}
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.bin ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.bin \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${FIND} ${WRKSRC} -type d -name .svn -print0 | ${XARGS} -0 ${RM} -r
 	@${RM} -f "${WRKSRC}/example-configs/PLACE YOUR QTV.BIN HERE"
-	cd ${WRKSRC}/example-configs && ${COPYTREE_SHARE} . ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} metaqtv ${DATADIR}
+	cd ${WRKSRC}/example-configs && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} metaqtv ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

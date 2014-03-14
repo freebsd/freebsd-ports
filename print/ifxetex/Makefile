@@ -13,7 +13,7 @@ MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	The file ifxetex.sty tests whether XeTeX is being used
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_ZIP=	yes
+USES=		zip
 USE_TEX=	latex
 
 PLIST=		${WRKDIR}/pkg-plist

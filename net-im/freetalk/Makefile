@@ -11,10 +11,9 @@ MASTER_SITES=	SAVANNAH/freetalk \
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	GNU console based Jabber client
 
-OPTIONS_DEFINE=	BEEP NLS
-BEEP_DESC=	Use beep program
+OPTIONS_DEFINE=	NLS
 
-LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
+LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
 BUILD_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile
 
@@ -24,19 +23,10 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=     NLS=""
-USES+=		gettext
-CONFIGURE_ARGS= --with-libintl-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=     NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MBEEP}
-RUN_DEPENDS+=	${LOCALBASE}/bin/beep:${PORTSDIR}/audio/beep
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_WITH=libintl-prefix=${LOCALBASE}
+NLS_CONFIGURE_OFF= --disable-nls
 
 .include <bsd.port.mk>

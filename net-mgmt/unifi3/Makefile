@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	unifi3
-PORTVERSION=	3.1.9
+PORTVERSION=	3.1.10
+PORTREVISION=	2
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
 DISTNAME=	UniFi.unix
@@ -15,7 +16,7 @@ RUN_DEPENDS=	mongodb>0:${PORTSDIR}/databases/mongodb
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR}
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
@@ -29,12 +30,14 @@ USE_RC_SUBR=	unifi
 USERS=	unifi
 GROUPS=	unifi
 
-PLIST_SUB+=	USERS="${USERS}"
-PLIST_SUB+=	GROUPS="${GROUPS}"
 WRKSRC=	${WRKDIR}/UniFi
 
 RESTRICTED=	Redistribution of bundled firmware images is not permitted
 CONFLICTS=	unifi2-*
+
+post-extract:
+	${MKDIR} ${WRKSRC}/webapps/ROOT
+	@${TAR} xf ${WRKSRC}/webapps/ROOT.war -C ${WRKSRC}/webapps/ROOT
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi

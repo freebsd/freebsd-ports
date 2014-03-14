@@ -35,7 +35,7 @@ MULTIPLICITY_DESC=	Use multiplicity
 SITECUSTOMIZE_DESC=	Run-time customization of @INC
 USE_PERL_DESC=		Rewrite links in /usr/bin
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limit:^${PERL_VER}.
 
 PERL_VERSION=	5.14.4
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}

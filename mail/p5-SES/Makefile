@@ -20,10 +20,9 @@ RUN_DEPENDS=	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix zip
 NO_BUILD=	yes
 USE_PERL5=	run
-USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/bin
 

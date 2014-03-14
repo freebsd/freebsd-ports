@@ -19,7 +19,7 @@ COMMENT=	ET Pro - Enemy Territory Competition Mod
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
-USE_ZIP=	yes
+USES=		zip
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 

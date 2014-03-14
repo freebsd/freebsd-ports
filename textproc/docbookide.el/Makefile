@@ -10,7 +10,7 @@ DISTNAME=	docbookide01
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp modules for editing DocBook documents
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/docbookide
 NO_BUILD=	yes
 

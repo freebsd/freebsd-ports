@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A popular UML CASE tool
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_VENDOR=	openjdk	# the port is broken with Sun JDKs

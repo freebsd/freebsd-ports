@@ -12,7 +12,7 @@ COMMENT=	Calculate atom weight and percent of each element for a given formula
 
 OPTIONS_DEFINE=	DOCS GTK2
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	Makefile.gtk
 ALL_TARGET=	gmolwt
 

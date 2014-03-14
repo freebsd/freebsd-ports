@@ -13,7 +13,7 @@ COMMENT=	A simple library to serialize Java objects to XML
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes
 

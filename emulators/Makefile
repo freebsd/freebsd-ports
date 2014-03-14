@@ -19,7 +19,6 @@
     SUBDIR += cpmemu
     SUBDIR += cpmtools
     SUBDIR += cpmtools2
-    SUBDIR += cygne-sdl
     SUBDIR += darcnes
     SUBDIR += dboxfe
     SUBDIR += desmume
@@ -38,6 +37,7 @@
     SUBDIR += fceux
     SUBDIR += fmsx
     SUBDIR += frodo
+    SUBDIR += fs-uae
     SUBDIR += fuse
     SUBDIR += fuse-roms
     SUBDIR += fuse-utils

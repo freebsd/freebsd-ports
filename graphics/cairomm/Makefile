@@ -11,15 +11,13 @@ MASTER_SITES=	http://cairographics.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interface to cairo
 
-LIB_DEPENDS=	xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26 \
-		cairo.2:${PORTSDIR}/graphics/cairo
-
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
-USE_AUTOTOOLS=	libtool
+
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack ltverhack
+USES=		gmake libtool pathfix pkgconfig
+USE_GNOME=	cairo libxml++26
 CONFIGURE_ENV=	AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -31,5 +29,8 @@ CONFIGURE_ARGS+=	--disable-documentation
 post-configure:
 	@${TOUCH} -f ${WRKSRC}/docs/reference/html/index.html
 .endif
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcairomm-1.0.so.1.4.0
 
 .include <bsd.port.mk>

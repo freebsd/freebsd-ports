@@ -20,7 +20,7 @@ DEPRECATED=	Should be replaced by x11-fonts/stix-fonts
 EXPIRATION_DATE=2014-05-03
 NO_CDROM=	Cannot be sold or distributed with any commercial product
 
-USE_ZIP=	yes
+USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	pkg-message

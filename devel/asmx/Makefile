@@ -6,7 +6,6 @@ PORTVERSION=	1.8.2
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://xi6.com/files/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-CPU macro assembler for many major 8-bit and 16-bit CPUs
@@ -25,6 +24,7 @@ OPTIONS_DEFAULT=	1802 6502 6809 68HC11 68HC16 8051 8085 F8 Z80
 F8_DESC=	Fairchild F8
 Z80_DESC=	Zilog Z-80 and Nintendo Gameboy Z-80 variant
 
+USES=		zip
 NO_WRKSUBDIR=	yes
 
 PORTDOCS=	README.txt

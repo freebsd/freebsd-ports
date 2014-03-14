@@ -10,6 +10,8 @@ DISTNAME=	Sharity-Light.1.3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userland smbfs --- SMB to NFS protocols converter
 
+DEPRECATED=	Unmaintained since 2001
+EXPIRATION_DATE=	2014-04-12
 MAN8=		smbmount.8
 
 PLIST_FILES=	sbin/shlight sbin/unshlight

@@ -6,12 +6,11 @@ PORTVERSION=	2.1.b
 CATEGORIES=	devel
 MASTER_SITES=	http://www.bdsoft.com/dist/
 DISTNAME=	${PORTNAME}2
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	STL Container Initialization Library
 
-USES=		dos2unix
+USES=		dos2unix zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

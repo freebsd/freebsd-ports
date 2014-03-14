@@ -3,7 +3,7 @@
 
 PORTNAME=	probability
 PORTVERSION=	0.2.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

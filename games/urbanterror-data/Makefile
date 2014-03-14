@@ -9,12 +9,12 @@ MASTER_SITES=	http://cdn.urbanterror.info/urt/42/zips/ \
 		http://mirror.urtstats.net/urbanterror/
 PKGNAMEPREFIX=	urbanterror-
 DISTNAME=	UrbanTerror${URT_VER}_full${URT_REV}
-EXTRACT_SUFX=	.zip
 EXTRACT_ONLY=
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Standalone realism based mod originally for Quake III Arena
 
+USES=		zip
 NO_BUILD=	yes
 NO_CDROM=	The mod files may not be sold or distributed on physical media unless with permission from id Software.
 

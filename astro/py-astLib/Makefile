@@ -3,6 +3,7 @@
 
 PORTNAME=	astLib
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	astro python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +19,8 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PKGNAMEPREFIX}pyfits>=1.1:${PORTSDIR}/astro/py-pyfits \
 		${PKGNAMEPREFIX}matplotlib>=0.98:${PORTSDIR}/math/py-matplotlib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PORTSCOUT=	skipv:0.15,0.17,0.17.1 # incorrect versioning upstream
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

@@ -19,9 +19,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PYDISTUTILS_PKGNAME=	Scriptaculous
 
 # Use the same version of www/py-turbogears
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-USE_ZIP=	yes
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

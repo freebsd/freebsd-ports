@@ -3,7 +3,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-netcdf/release/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/ruby-netcdf/release/ \

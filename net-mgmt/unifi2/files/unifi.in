@@ -23,10 +23,11 @@ load_rc_config ${name}
 : ${unifi_user:=%%USERS%%}
 : ${unifi_group:=%%GROUPS%%}
 : ${unifi_chdir=%%JAVASHAREDIR%%/unifi}
+: ${unifi_javaflags:="-Djava.awt.headless=true -Xmx1024M"}
 
 command_interpreter=.
 command="%%PREFIX%%/bin/java"
-command_args="-Djava.awt.headless=true -Xmx1024M -jar lib/ace.jar"
+command_args="${unifi_javaflags} -jar lib/ace.jar"
 start_cmd=start_cmd
 start_precmd=start_precmd
 stop_cmd=stop_cmd

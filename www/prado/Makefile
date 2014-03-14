@@ -15,7 +15,7 @@ COMMENT=	A framework for developing PHP web applications
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRCDOCS=	${WRKDIR}/${PORTNAME}-docs-${PORTVERSION:C|.r|-r|}
 
-USE_ZIP=	yes
+USES=		zip
 
 USE_APACHE_RUN=	22+
 

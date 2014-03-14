@@ -9,14 +9,14 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd/crafty
 DISTFILES=	large1.zip large2.zip large3.zip large4.zip
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The large opening book for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 DIST_SUBDIR=	crafty
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 CONFLICTS=	crafty-open-enormous-* crafty-open-medium-* crafty-open-default-*
 

@@ -2,4 +2,8 @@ bin/zzcat
 bin/zzuf
 lib/zzuf/libzzuf.so
 lib/zzuf/libzzuf.a
+lib/zzuf/libzzuf.la
+man/man1/zzcat.1.gz
+man/man1/zzuf.1.gz
+man/man3/libzzuf.3.gz
 @dirrm lib/zzuf

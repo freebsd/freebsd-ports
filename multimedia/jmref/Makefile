@@ -10,14 +10,13 @@ DISTNAME=	jm${PORTVERSION}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	JM Reference Software
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		dos2unix gmake zip
 WRKSRC=		${WRKDIR}/JM
 
 PLIST_FILES=	bin/ldecod bin/lencod \
 		bin/rtp_loss bin/rtpdump
 
-USE_DOS2UNIX=	Makefile
+DOS2UNIX_FILES=	Makefile
 
 NO_STAGE=	yes
 do-install:

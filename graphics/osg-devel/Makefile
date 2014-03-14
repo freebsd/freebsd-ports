@@ -23,8 +23,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	osg-[0-9]*
 
-USE_ZIP=	yes
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig zip
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes

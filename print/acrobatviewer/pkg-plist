@@ -1,7 +1,0 @@
-bin/AcrobatViewer
-%%JAVAJARDIR%%/acrobatviewer/acrobat.jar
-%%JAVAJARDIR%%/acrobatviewer/MRJToolkitStubs.jar
-%%PORTDOCS%%%%DOCSDIR%%/License.pdf
-%%PORTDOCS%%%%DOCSDIR%%/help.pdf
-@dirrm %%JAVAJARDIR%%/acrobatviewer
-@dirrm %%DOCSDIR%%

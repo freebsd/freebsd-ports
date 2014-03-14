@@ -14,6 +14,7 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:${PORTSDIR}/devel/mono-addins
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		Does not build
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gtksharp20 desktopfileutils
 INSTALLS_ICONS=	yes

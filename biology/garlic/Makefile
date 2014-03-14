@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Molecular viewer, editor, and visualization program
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	x11
 ALL_TARGET=	# empty
 

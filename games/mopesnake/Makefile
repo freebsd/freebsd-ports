@@ -3,7 +3,7 @@
 
 PORTNAME=	mopesnake
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/nemysisfreebsdp/games/:icons
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-pc-${DISTVERSION}
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 
 PORTDOCS=	TODO.txt index.html

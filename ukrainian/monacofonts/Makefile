@@ -17,7 +17,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USE_ZIP=	yes
+USES=		zip
 
 WRKSRC=		${WRKDIR}/Monaco.bdf
 

@@ -1,0 +1,8 @@
+DBIx::Admin::TableInfo is a pure Perl module. It is a convenient wrapper around
+all of these DBI methods:
+- table_info()
+- column_info()
+- primary_key_info()
+- foreign_key_info()
+
+WWW: http://search.cpan.org/dist/DBIx-Admin-TableInfo/

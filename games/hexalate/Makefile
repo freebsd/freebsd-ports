@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hexalate
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/

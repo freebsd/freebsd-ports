@@ -13,7 +13,7 @@ COMMENT=	Feature-rich and extensible Wiki engine built around J2EE
 
 LICENSE=	APACHE20
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	1.6+
 NO_BUILD=	yes
 

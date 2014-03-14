@@ -12,8 +12,8 @@ COMMENT=	ISO 8601 date/time/duration parser and formater
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
+USE_PYDISTUTILS=yes
+USE_PYTHON=	yes
 
 .include <bsd.port.mk>

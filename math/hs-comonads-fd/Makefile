@@ -2,7 +2,7 @@
 
 PORTNAME=	comonads-fd
 PORTVERSION=	3.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

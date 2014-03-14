@@ -18,7 +18,7 @@ USE_GNOME=	glib12
 CONFLICTS=	nocatauth-server-*
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 CONFIGURE_ARGS+=	--disable-dependency-tracking
 CONFIGURE_ARGS+=	--disable-glibtest
@@ -31,5 +31,4 @@ CONFIGURE_ARGS+=	--with-mode=${AUTHMODE}
 CONFIGURE_ARGS+=	--with-docroot=${DOCROOT}
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

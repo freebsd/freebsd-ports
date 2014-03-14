@@ -1,4 +1,5 @@
 bin/gnome-mplayer
+man/man1/gnome-mplayer.1.gz
 share/applications/gnome-mplayer.desktop
 share/gnome-control-center/default-apps/gnome-mplayer.xml
 share/icons/hicolor/16x16/apps/gnome-mplayer.png
@@ -7,51 +8,62 @@ share/icons/hicolor/24x24/apps/gnome-mplayer.png
 share/icons/hicolor/32x32/apps/gnome-mplayer.png
 share/icons/hicolor/48x48/apps/gnome-mplayer.png
 share/icons/hicolor/scalable/apps/gnome-mplayer.svg
-%%NLS%%share/locale/ar/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/da/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/de/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/el/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/es/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/et/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/fo/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/fy/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/gl/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/he/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/id/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/kk/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/si/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/sr/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/sr@latin/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/th/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/ug/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/vi/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/zh_HK/LC_MESSAGES/gnome-mplayer.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/gnome-mplayer.mo
-%%PLUGIN%%lib/nautilus/extensions-2.0/libgnome-mplayer-properties-page.so
+share/locale/ar/LC_MESSAGES/gnome-mplayer.mo
+share/locale/bg/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ca/LC_MESSAGES/gnome-mplayer.mo
+share/locale/cs/LC_MESSAGES/gnome-mplayer.mo
+share/locale/da/LC_MESSAGES/gnome-mplayer.mo
+share/locale/de/LC_MESSAGES/gnome-mplayer.mo
+share/locale/el/LC_MESSAGES/gnome-mplayer.mo
+share/locale/en_GB/LC_MESSAGES/gnome-mplayer.mo
+share/locale/es/LC_MESSAGES/gnome-mplayer.mo
+share/locale/et/LC_MESSAGES/gnome-mplayer.mo
+share/locale/eu/LC_MESSAGES/gnome-mplayer.mo
+share/locale/fi/LC_MESSAGES/gnome-mplayer.mo
+share/locale/fo/LC_MESSAGES/gnome-mplayer.mo
+share/locale/fr/LC_MESSAGES/gnome-mplayer.mo
+share/locale/fy/LC_MESSAGES/gnome-mplayer.mo
+share/locale/gl/LC_MESSAGES/gnome-mplayer.mo
+share/locale/he/LC_MESSAGES/gnome-mplayer.mo
+share/locale/hr/LC_MESSAGES/gnome-mplayer.mo
+share/locale/hu/LC_MESSAGES/gnome-mplayer.mo
+share/locale/id/LC_MESSAGES/gnome-mplayer.mo
+share/locale/it/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ja/LC_MESSAGES/gnome-mplayer.mo
+share/locale/kk/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ko/LC_MESSAGES/gnome-mplayer.mo
+share/locale/lt/LC_MESSAGES/gnome-mplayer.mo
+share/locale/nl/LC_MESSAGES/gnome-mplayer.mo
+share/locale/pl/LC_MESSAGES/gnome-mplayer.mo
+share/locale/pt/LC_MESSAGES/gnome-mplayer.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ro/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ru/LC_MESSAGES/gnome-mplayer.mo
+share/locale/si/LC_MESSAGES/gnome-mplayer.mo
+share/locale/sr/LC_MESSAGES/gnome-mplayer.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-mplayer.mo
+share/locale/sv/LC_MESSAGES/gnome-mplayer.mo
+share/locale/th/LC_MESSAGES/gnome-mplayer.mo
+share/locale/tr/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ug/LC_MESSAGES/gnome-mplayer.mo
+share/locale/uk/LC_MESSAGES/gnome-mplayer.mo
+share/locale/vi/LC_MESSAGES/gnome-mplayer.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-mplayer.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-mplayer.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-mplayer.mo
 @dirrmtry share/gnome-control-center/default-apps
 @dirrmtry share/gnome-control-center
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/fy/LC_MESSAGES
+@dirrmtry share/locale/fy
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo

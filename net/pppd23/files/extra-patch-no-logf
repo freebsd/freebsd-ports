@@ -1,9 +1,0 @@
---- chat/Makefile.bsd.orig	Thu Apr 22 15:16:08 2004
-+++ chat/Makefile.bsd	Thu Apr 22 15:16:35 2004
-@@ -5,4 +5,6 @@
- MAN8=	chat.8
- BINDIR=	/usr/sbin
- 
-+CFLAGS+=	-fno-builtin-logf
-+
- .include <bsd.prog.mk>

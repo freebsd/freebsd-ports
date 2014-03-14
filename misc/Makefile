@@ -60,7 +60,6 @@
     SUBDIR += cs
     SUBDIR += cstream
     SUBDIR += cuecat
-    SUBDIR += cwish
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
     SUBDIR += dahdi-kmod26
@@ -121,8 +120,6 @@
     SUBDIR += freebsd-doc-zh_tw
     SUBDIR += freecode-submit
     SUBDIR += freeguide
-    SUBDIR += freeswitch-pizzademo-devel
-    SUBDIR += freeswitch-scripts-devel
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
     SUBDIR += gcstar
@@ -259,7 +256,7 @@
     SUBDIR += lingoteach
     SUBDIR += linm
     SUBDIR += localedata
-    SUBDIR += logsurfer+
+    SUBDIR += logsurfer
     SUBDIR += loop
     SUBDIR += lr
     SUBDIR += lv
@@ -290,6 +287,7 @@
     SUBDIR += openr2
     SUBDIR += orville-write
     SUBDIR += ossp-uuid
+    SUBDIR += ossp-uuid-perl
     SUBDIR += otter
     SUBDIR += p5-Acme-ButFirst
     SUBDIR += p5-Array-Compare
@@ -370,7 +368,6 @@
     SUBDIR += pipe
     SUBDIR += podsleuth
     SUBDIR += posixtestsuite
-    SUBDIR += projectionlib
     SUBDIR += proxyper
     SUBDIR += pspresent
     SUBDIR += py-YABT
@@ -420,7 +417,6 @@
     SUBDIR += spamcalc
     SUBDIR += sshbuddy
     SUBDIR += sssnips
-    SUBDIR += stan
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += sword

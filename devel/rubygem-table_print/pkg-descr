@@ -1,0 +1,5 @@
+TablePrint turns objects into nicely formatted columns for easy reading.
+Works great in rails console, works on pure ruby objects, autodetects
+columns and lets you traverse ActiveRecord associations.
+
+WWW: http://tableprintgem.com/

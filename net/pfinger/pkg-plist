@@ -1,4 +1,8 @@
 bin/finger
 %%WITHOUT_X11%%bin/pfinger
+man/man1/finger.1.gz
+man/man1/pfinger.1.gz
+man/man5/fingerconf.5.gz
+man/man8/in.fingerd.8.gz
 sbin/fingerd
 sbin/in.fingerd

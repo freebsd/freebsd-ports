@@ -21,9 +21,6 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	automake autoheader libtool
 AUTOMAKE_ARGS=	--add-missing
 
-MAN1=	cal3d_converter.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|^\(pkgconfigdir\ =\).*|\1 $$(prefix)/libdata/pkgconfig|' \
@@ -41,6 +38,6 @@ pre-configure:
 
 # XXX: handle slight differences between 6.x and 5.x/4.x
 post-install:
-	@${RM} -f ${PREFIX}/lib/libcal3d.a
+	@${RM} -f ${STAGEDIR}${PREFIX}/lib/libcal3d.a
 
 .include <bsd.port.mk>

@@ -19,6 +19,9 @@
 %%PYTHON_SITELIBDIR%%/urllib3/_collections.py
 %%PYTHON_SITELIBDIR%%/urllib3/_collections.pyc
 %%PYTHON_SITELIBDIR%%/urllib3/_collections.pyo
+%%PYTHON_SITELIBDIR%%/urllib3/connection.py
+%%PYTHON_SITELIBDIR%%/urllib3/connection.pyc
+%%PYTHON_SITELIBDIR%%/urllib3/connection.pyo
 %%PYTHON_SITELIBDIR%%/urllib3/connectionpool.py
 %%PYTHON_SITELIBDIR%%/urllib3/connectionpool.pyc
 %%PYTHON_SITELIBDIR%%/urllib3/connectionpool.pyo
@@ -52,6 +55,9 @@
 %%PYTHON_SITELIBDIR%%/urllib3/packages/ssl_match_hostname/__init__.py
 %%PYTHON_SITELIBDIR%%/urllib3/packages/ssl_match_hostname/__init__.pyc
 %%PYTHON_SITELIBDIR%%/urllib3/packages/ssl_match_hostname/__init__.pyo
+%%PYTHON_SITELIBDIR%%/urllib3/packages/ssl_match_hostname/_implementation.py
+%%PYTHON_SITELIBDIR%%/urllib3/packages/ssl_match_hostname/_implementation.pyc
+%%PYTHON_SITELIBDIR%%/urllib3/packages/ssl_match_hostname/_implementation.pyo
 %%PYTHON_SITELIBDIR%%/urllib3/poolmanager.py
 %%PYTHON_SITELIBDIR%%/urllib3/poolmanager.pyc
 %%PYTHON_SITELIBDIR%%/urllib3/poolmanager.pyo

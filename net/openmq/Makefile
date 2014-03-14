@@ -23,7 +23,7 @@ BOOTJARS=	javaee-api-6.0.jar:2 \
 		grizzly-nio-framework-1.9.18a.jar:3 \
 		jhall-2.0.jar:4
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
 JAVA_VENDOR=	openjdk

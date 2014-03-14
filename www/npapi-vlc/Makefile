@@ -3,20 +3,24 @@
 
 PORTNAME=	npapi-vlc
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc-webplugins/${PORTVERSION}/
 
-MAINTAINER=	mi@aldan.algber.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeds vlc-player in web-browsers
 
-LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc
+LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc \
+		libxul.so:${PORTSDIR}/www/libxul
 
-USES=	webplugin:native
+USES=	webplugin:native pkgconfig
 USE_XZ=	yes
+USE_GNOME=	gtk20
 WEBPLUGIN_NAME=	#
 WEBPLUGIN_FILES=libvlcplugin.so
 GNU_CONFIGURE=	yes
 PLIST_FILES=	${WEBPLUGIN_DIR:S,^${PREFIX}/,,}${WEBPLUGIN_FILES}
+PATCH_STRIP=	-p1
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}

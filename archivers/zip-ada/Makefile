@@ -12,10 +12,8 @@ COMMENT=	Zip compressed archive file format library written in Ada
 
 LICENSE=	MIT
 
-USES=		ada perl5
+USES=		ada perl5 dos2unix zip
 USE_PERL5=	build
-USE_DOS2UNIX=	yes
-EXTRACT_SUFX=	.zip
 WRKSRC=		${WRKDIR}/zip-ada
 MAKE_ENV+=	Build_Mode=Optimize
 ZTOOLS=		zipada comp_zip find_zip rezip bunzip lz

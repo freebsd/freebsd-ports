@@ -32,7 +32,6 @@ LIBINOTIFY_DESC=Use libinotify as the FAM backend
 RUN_AS_EUID_DESC=Drop privileges to effective user
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(GAMIN_SLAVE)
@@ -43,7 +42,7 @@ CPPFLAGS+=	-DUSE_GAMIN_POLLER=1
 .if ${PORT_OPTIONS:MLIBINOTIFY}
 CONFIGURE_ARGS+=--enable-inotify
 LDFLAGS+=	-L${LOCALBASE}/lib -linotify
-LIB_DEPENDS+=	inotify:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS+=	libinotify.so:${PORTSDIR}/devel/libinotify
 .else
 CONFIGURE_ARGS+=--disable-inotify
 .endif

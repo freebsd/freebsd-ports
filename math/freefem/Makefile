@@ -10,6 +10,8 @@ MASTER_SITES=	SF/kfem/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A language for the Finite Element Method
 
+DEPRECATED=	Unmaintained since 2000
+EXPIRATION_DATE=	2014-04-11
 USE_XORG=	ice sm x11 xt
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

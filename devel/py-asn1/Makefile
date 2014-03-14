@@ -14,7 +14,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	ASN.1 toolkit for Python
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 # Python3 ready
 USE_PYTHON=		yes

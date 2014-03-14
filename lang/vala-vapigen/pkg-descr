@@ -1,16 +1,4 @@
-Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
+vapigen is a utility which generates Vala API (vapi) from 
+gobject-introspection (GI) files.
 
-It provides a queued asynchronous callback-based mechanism for sending and
-servicing SOAP requests, and a WSDL (Web Service Definition Language) for C
-compilers which generates client stubs and server skeletons for easily
-calling and implementing SOAP methods.  It uses GLib and is designed to work
-well with GTK applications.
-
-Features:
-  * Completely Asynchronous
-  * Connection cache
-  * HTTP chunked transfer and persistent connections
-  * Authenticated HTTP, SOCKS4, and SOCKS5 proxy support
-  * SSL Support using OpenSSL
-  * Apache module server support
-  * Client digest authentication
+WWW: https://wiki.gnome.org/Projects/Vala

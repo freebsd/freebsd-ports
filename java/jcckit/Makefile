@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Chart Construction Kit
 
-USE_ZIP=	yes
+USES=		zip
 USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/JCCKit
 NO_BUILD=	yes

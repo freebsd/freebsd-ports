@@ -15,8 +15,7 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 OPTIONS_DEFINE=	PYTHON RUBY
 
-USE_GMAKE=	yes
-USE_ZIP=	yes
+USES=		gmake zip
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -10,7 +10,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	The geekest content helper management system
 
 NO_BUILD=	yes
-USE_ZIP=	yes
+USES=		zip
 USE_PHP=	xml iconv gd
 SUB_FILES=	pkg-message
 WWWDIR?=	${PREFIX}/www/${PORTNAME}

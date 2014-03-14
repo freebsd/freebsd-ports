@@ -18,19 +18,17 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	WEBSVNDIR="${WEBSVNDIR}"
 PLIST_SUB+=	WEBSVNDIR="${WEBSVNDIR}"
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/${WEBSVNDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${WEBSVNDIR}
 	(cd ${WRKSRC} \
-	    && ${COPYTREE_SHARE} \* ${PREFIX}/${WEBSVNDIR})
-	${CHOWN} -R www:www ${PREFIX}/${WEBSVNDIR}
-	${FIND} ${PREFIX}/${WEBSVNDIR} -type f -exec ${CHMOD} 644 '{}' +
+	    && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/${WEBSVNDIR})
+	${CHOWN} -R www:www ${STAGEDIR}${PREFIX}/${WEBSVNDIR}
+	${FIND} ${STAGEDIR}${PREFIX}/${WEBSVNDIR} -type f -exec ${CHMOD} 644 '{}' +
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
-	@[ -f ${PREFIX}/${WEBSVNDIR}/include/config.php ] \
+	@[ -f ${STAGEDIR}${PREFIX}/${WEBSVNDIR}/include/config.php ] \
 	    || ${INSTALL_DATA} \
-	    ${PREFIX}/${WEBSVNDIR}/include/distconfig.php \
-	    ${PREFIX}/${WEBSVNDIR}/include/config.php
+	    ${STAGEDIR}${PREFIX}/${WEBSVNDIR}/include/distconfig.php \
+	    ${STAGEDIR}${PREFIX}/${WEBSVNDIR}/include/config.php
 
 .include <bsd.port.mk>

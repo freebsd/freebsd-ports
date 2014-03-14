@@ -1,6 +1,9 @@
 # $FreeBSD$
 
-PORTNAME?=	${DB:tl}
+# tell bmake we use the old :L :U modifiers
+.MAKE.FreeBSD_UL= yes
+
+PORTNAME?=	${DB:L}
 DISTVERSION?=	${QT5_VERSION}
 CATEGORIES?=	databases
 PKGNAMEPREFIX?=	qt5-sqldrivers-
@@ -13,12 +16,12 @@ QT_DIST?=	base
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=-no-gui -no-xcb
 
-BUILD_WRKSRC?=	${WRKSRC}/src/plugins/sqldrivers/${DB:tl}
+BUILD_WRKSRC?=	${WRKSRC}/src/plugins/sqldrivers/${DB:L}
 INSTALL_WRKSRC?=${BUILD_WRKSRC}
 
 PLIST_FILES+=	${QT_LIBDIR_REL}/cmake/Qt5Sql/Qt5Sql_Q${DB}DriverPlugin.cmake \
-		${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:tl:C/^sql//}.so \
-		%%DEBUG%%${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:tl:C/^sql//}.so.debug
+		${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:L:C/^sql//}.so \
+		%%DEBUG%%${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:L:C/^sql//}.so.debug
 PLIST_DIRSTRY+=	${QT_PLUGINDIR_REL}/sqldrivers \
 		${QT_PLUGINDIR_REL} \
 		${QT_ARCHDIR_REL} \

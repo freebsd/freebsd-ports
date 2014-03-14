@@ -13,7 +13,7 @@ COMMENT=	Forms validation and rendering library for python web development
 
 LICENSE=	BSD
 
-USE_ZIP=	yes
+USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

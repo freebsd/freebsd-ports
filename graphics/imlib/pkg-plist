@@ -45,4 +45,6 @@ lib/libimlib-xpm.so
 libdata/pkgconfig/imlib.pc
 libdata/pkgconfig/imlibgdk.pc
 share/aclocal/imlib.m4
+man/man1/imlib-config.1.gz
+man/man1/imlib_config.1.gz
 @dirrm etc/imlib

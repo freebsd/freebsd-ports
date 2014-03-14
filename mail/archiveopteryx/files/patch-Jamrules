@@ -1,0 +1,11 @@
+--- ./Jamrules.orig	2014-03-06 13:45:47.495401383 -0600
++++ ./Jamrules	2014-03-06 13:46:02.417400626 -0600
+@@ -35,7 +35,7 @@
+ }
+ else {
+     C++ = g++ ;
+-    C++FLAGS += -W -Wall -Wno-unused-result ;
++    C++FLAGS += -W -Wall ;
+     BUILD = build/gcc ;
+     if $(OPTIM) {
+         BUILD = build/gcc$(OPTIM) ;

@@ -21,7 +21,7 @@ COMMENT=	Free scenarios for the Aleph One engine
 
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

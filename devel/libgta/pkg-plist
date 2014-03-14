@@ -5,6 +5,7 @@ lib/libgta.a
 lib/libgta.so
 lib/libgta.so.0
 libdata/pkgconfig/gta.pc
+%%PORTDOCS%%%%DOCSDIR%%/FindGTA.cmake
 %%PORTDOCS%%%%DOCSDIR%%/example-basic.c
 %%PORTDOCS%%%%DOCSDIR%%/example-basic.cpp
 %%PORTDOCS%%%%DOCSDIR%%/example-block-io.c
@@ -13,5 +14,5 @@ libdata/pkgconfig/gta.pc
 %%PORTDOCS%%%%DOCSDIR%%/example-stream-io.cpp
 %%PORTDOCS%%%%DOCSDIR%%/example-tags.c
 %%PORTDOCS%%%%DOCSDIR%%/example-tags.cpp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/gta
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry include/gta

@@ -12,7 +12,7 @@ MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	LaTeX style files for typesetting verbatim source code listings
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_ZIP=	yes
+USES=		zip
 USE_TEX=	latex
 
 PLIST=		${WRKDIR}/pkg-plist

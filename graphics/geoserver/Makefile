@@ -13,7 +13,7 @@ COMMENT=	An Open Source GIS Server
 LICENSE=	GPLv2
 
 USE_JAVA=	yes
-USE_ZIP=	yes
+USES=		zip
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 

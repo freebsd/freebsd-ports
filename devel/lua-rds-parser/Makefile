@@ -12,6 +12,8 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Resty-DBD-Stream (RDS) parser for Lua written in C
 
 BROKEN=		Unfetchable due to checksum mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-04-10
 USE_LUA?=	5.1
 GITVERSION=	0-gb46bbd8
 WRKSRC=		${WRKDIR}/agentzh-lua-rds-parser-${GITVERSION:S/^0-g//}

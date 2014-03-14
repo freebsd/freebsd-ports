@@ -18,7 +18,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		gocr:${PORTSDIR}/graphics/gocr				\
 		ocrad:${PORTSDIR}/graphics/ocrad			\
 		gifasm:${PORTSDIR}/graphics/giflib			\
-		spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin	\
+		spamassassin:${PORTSDIR}/mail/spamassassin	\
 		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM	\
 		p5-MLDBM-Sync>=0:${PORTSDIR}/databases/p5-MLDBM-Sync \
 		p5-String-Approx>=0:${PORTSDIR}/devel/p5-String-Approx

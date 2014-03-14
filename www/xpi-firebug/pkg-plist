@@ -104,6 +104,7 @@
 %%XPI_XPIDIR%%/content/firebug/firebug.js
 %%XPI_XPIDIR%%/content/firebug/firebugOverlay.xul
 %%XPI_XPIDIR%%/content/firebug/firebugui/blank.gif
+%%XPI_XPIDIR%%/content/firebug/firebugui/orion/orion.js
 %%XPI_XPIDIR%%/content/firebug/firebugui/panel.html
 %%XPI_XPIDIR%%/content/firebug/firefox/bindings.xml
 %%XPI_XPIDIR%%/content/firebug/firefox/browserCommands.js
@@ -232,6 +233,7 @@
 %%XPI_XPIDIR%%/locale/en-US/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/en-US/firebug.properties
 %%XPI_XPIDIR%%/locale/en-US/selectors.properties
+%%XPI_XPIDIR%%/locale/en-US/sourceeditor.properties
 %%XPI_XPIDIR%%/locale/es/cookies.properties
 %%XPI_XPIDIR%%/locale/es/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/es/firebug-tracing.properties
@@ -424,6 +426,7 @@
 %%XPI_XPIDIR%%/skin/classic/jsonViewer.css
 %%XPI_XPIDIR%%/skin/classic/layout.css
 %%XPI_XPIDIR%%/skin/classic/linux/firebug.css
+%%XPI_XPIDIR%%/skin/classic/linux/orion-container.css
 %%XPI_XPIDIR%%/skin/classic/loading.png
 %%XPI_XPIDIR%%/skin/classic/mac/breakpointConditionEditor.png
 %%XPI_XPIDIR%%/skin/classic/mac/breakpointConditionEditorDown.png
@@ -435,6 +438,7 @@
 %%XPI_XPIDIR%%/skin/classic/mac/minimize.png
 %%XPI_XPIDIR%%/skin/classic/mac/optionsMenuTarget.png
 %%XPI_XPIDIR%%/skin/classic/mac/optionsMenuTargetHover.png
+%%XPI_XPIDIR%%/skin/classic/mac/orion-container.css
 %%XPI_XPIDIR%%/skin/classic/mac/panel.css
 %%XPI_XPIDIR%%/skin/classic/mac/pin.png
 %%XPI_XPIDIR%%/skin/classic/mac/pinned.png
@@ -454,6 +458,7 @@
 %%XPI_XPIDIR%%/skin/classic/noteCornersUps.png
 %%XPI_XPIDIR%%/skin/classic/notificationClose.png
 %%XPI_XPIDIR%%/skin/classic/orion-firebug.css
+%%XPI_XPIDIR%%/skin/classic/orion.css
 %%XPI_XPIDIR%%/skin/classic/panel.css
 %%XPI_XPIDIR%%/skin/classic/panelbase.css
 %%XPI_XPIDIR%%/skin/classic/performanceTiming.css
@@ -487,6 +492,7 @@
 %%XPI_XPIDIR%%/skin/classic/win/minimize.png
 %%XPI_XPIDIR%%/skin/classic/win/optionsMenuTarget.png
 %%XPI_XPIDIR%%/skin/classic/win/optionsMenuTargetHover.png
+%%XPI_XPIDIR%%/skin/classic/win/orion-container.css
 %%XPI_XPIDIR%%/skin/classic/win/panel.css
 %%XPI_XPIDIR%%/skin/classic/win/pin.png
 %%XPI_XPIDIR%%/skin/classic/win/pinned.png
@@ -508,6 +514,7 @@
 @dirrm %%XPI_XPIDIR%%/content/firebug/debugger
 @dirrm %%XPI_XPIDIR%%/content/firebug/dom
 @dirrm %%XPI_XPIDIR%%/content/firebug/editor
+@dirrm %%XPI_XPIDIR%%/content/firebug/firebugui/orion
 @dirrm %%XPI_XPIDIR%%/content/firebug/firebugui
 @dirrm %%XPI_XPIDIR%%/content/firebug/firefox/external-editors
 @dirrm %%XPI_XPIDIR%%/content/firebug/firefox/start-button

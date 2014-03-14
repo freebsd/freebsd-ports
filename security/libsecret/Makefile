@@ -15,10 +15,10 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 USE_XZ=		yes
 USE_GNOME=	gnomehier glib20 libxslt:build intltool introspection:build
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-introspection
+CONFIGURE_ARGS+=--enable-introspection --disable-vala
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsecret-1.so.0

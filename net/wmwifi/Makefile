@@ -15,11 +15,10 @@ COMMENT=	Dockapp displaying the signal strength of WiFi connection
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm
-USE_GMAKE=	yes
+USES=		gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/wmwifi
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

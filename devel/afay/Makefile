@@ -10,14 +10,16 @@ DISTNAME=	${PORTNAME}_thiberlog_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	john_m_cooper@yahoo.com
-COMMENT=	Improved aflex and ayacc Ada 95 native scanner and parser generators
+COMMENT=	Improved aflex and ayacc Ada 95 scanner and parser generators
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		ada
+USES=		ada:47
 NO_WRKSUBDIR=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
 
 do-build:
 	@cd ${WRKSRC}/afay/aflex/src/gnat_unix && \

@@ -6,7 +6,6 @@ PORTVERSION=	B50
 CATEGORIES=	games
 MASTER_SITES=	http://files.poulsander.com/~poul19/public_files/eliminationSource/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	OpenArena Mod: OpenArena Xpanded
@@ -14,6 +13,7 @@ COMMENT=	OpenArena Mod: OpenArena Xpanded
 PLIST_SUB+=	DISTNAME="${DISTNAME}" \
 		PORTNAME="${PORTNAME}"
 
+USES=		zip
 NO_BUILD=	yes
 
 OABASE=		${DISTNAME}

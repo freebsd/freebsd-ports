@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bgdc:${PORTSDIR}/devel/bennugd-core \
 RUN_DEPENDS=	bgdi:${PORTSDIR}/devel/bennugd-core \
 		${LOCALBASE}/lib/bennugd/libmod_grproc.so:${PORTSDIR}/devel/bennugd-modules
 
-USE_ZIP=	yes
+USES=		zip
 
 WRKSRC=		${WRKDIR}/RailroadRampage_Linux
 SUB_FILES=	${PORTNAME}

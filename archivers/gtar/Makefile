@@ -15,8 +15,7 @@ LICENSE=	GPLv3
 
 INFO=		tar
 
-USES=		iconv:${STATIC_ARGS}
-USE_XZ=		yes
+USES=		iconv:${STATIC_ARGS} tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--disable-silent-rules

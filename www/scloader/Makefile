@@ -10,10 +10,9 @@ DISTNAME=	loader${PORTVERSION:C/\.//}
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Configurable web graber/spider
 
-USE_ZIP=	yes
+USES=		dos2unix zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_DOS2UNIX=	yes
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

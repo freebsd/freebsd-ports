@@ -12,7 +12,6 @@
     SUBDIR += WebMagick
     SUBDIR += abyssws
     SUBDIR += ach
-    SUBDIR += admuser
     SUBDIR += adzap
     SUBDIR += ajaxplorer
     SUBDIR += amphetadesk
@@ -181,7 +180,6 @@
     SUBDIR += edbrowse
     SUBDIR += efront
     SUBDIR += egueb
-    SUBDIR += eldav.el
     SUBDIR += elgg
     SUBDIR += elinks
     SUBDIR += elog
@@ -198,7 +196,6 @@
     SUBDIR += eventum
     SUBDIR += evolution-webcal
     SUBDIR += extjs
-    SUBDIR += extsm
     SUBDIR += eyeos
     SUBDIR += eyeos-themes
     SUBDIR += fancybox
@@ -287,7 +284,6 @@
     SUBDIR += horde3-meta
     SUBDIR += horde3-passwd
     SUBDIR += horde3-trean
-    SUBDIR += horde3-wicked
     SUBDIR += hotcrp
     SUBDIR += hs-HTTP
     SUBDIR += hs-activehs
@@ -414,7 +410,6 @@
     SUBDIR += linux-f10-flashplugin11
     SUBDIR += linux-firefox
     SUBDIR += linux-libgtkembedmoz
-    SUBDIR += linux-mplayer-plugin
     SUBDIR += linux-opera
     SUBDIR += linux-opera-devel
     SUBDIR += linux-seamonkey
@@ -437,7 +432,6 @@
     SUBDIR += mediawiki120
     SUBDIR += mediawiki121
     SUBDIR += mergelog
-    SUBDIR += metacafe_dl
     SUBDIR += mgstat
     SUBDIR += mhonarc
     SUBDIR += micro_httpd
@@ -562,7 +556,6 @@
     SUBDIR += mythplugin-mythweb
     SUBDIR += nanoblogger
     SUBDIR += nanoblogger-extra
-    SUBDIR += nd
     SUBDIR += neon29
     SUBDIR += netoffice
     SUBDIR += netrik
@@ -1445,7 +1438,6 @@
     SUBDIR += phpmyfaq
     SUBDIR += phprecipebook
     SUBDIR += phproxy
-    SUBDIR += phpscheduleit
     SUBDIR += phpsysinfo
     SUBDIR += phpsysinfo-dev
     SUBDIR += phpvirtualbox
@@ -1524,6 +1516,7 @@
     SUBDIR += py-django-photologue
     SUBDIR += py-django-picklefield
     SUBDIR += py-django-pipeline
+    SUBDIR += py-django-pipeline12
     SUBDIR += py-django-piston
     SUBDIR += py-django-profiles
     SUBDIR += py-django-registration
@@ -1830,6 +1823,8 @@
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-ntlm-http
     SUBDIR += rubygem-passenger
+    SUBDIR += rubygem-puma
+    SUBDIR += rubygem-puma16
     SUBDIR += rubygem-rabbirack
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rack-accept
@@ -1974,7 +1969,6 @@
     SUBDIR += trac-autocomplete
     SUBDIR += trac-batchmodify
     SUBDIR += trac-bzr
-    SUBDIR += trac-calendar
     SUBDIR += trac-ccselector
     SUBDIR += trac-childtickets
     SUBDIR += trac-codetags
@@ -2004,7 +1998,6 @@
     SUBDIR += trac-navadd
     SUBDIR += trac-pagelist
     SUBDIR += trac-pagetopdf
-    SUBDIR += trac-pendingticket
     SUBDIR += trac-permredirect
     SUBDIR += trac-privatetickets
     SUBDIR += trac-pydotorgtheme
@@ -2080,6 +2073,7 @@
     SUBDIR += typo347
     SUBDIR += typolight
     SUBDIR += udmsearch
+    SUBDIR += uglifyjs
     SUBDIR += ump
     SUBDIR += usermanager
     SUBDIR += uwsgi
@@ -2097,7 +2091,6 @@
     SUBDIR += visitors
     SUBDIR += volta
     SUBDIR += vtiger
-    SUBDIR += vtiger-customerportal
     SUBDIR += w3m
     SUBDIR += w3m-img
     SUBDIR += w3mir

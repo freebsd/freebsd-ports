@@ -32,7 +32,7 @@ ALREADY_UNZIP=	${DISTDIR}/Opti.pcf.gz ${DISTDIR}/OptiSmall.pcf.gz \
 	        ${DISTDIR}/PixelCarnageMono.pcf.gz
 
 USE_XORG=	x11
-USE_ZIP=	yes
+USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 XFONTDIR=	${PREFIX}/lib/X11/fonts/local

@@ -1,5 +1,0 @@
-*******************************************************************
-Sample configurations are located in %%ETCDIR%%/
-
-Select an appropriate file and copy it to %%ETCDIR%%/logsurfer.conf
-*******************************************************************

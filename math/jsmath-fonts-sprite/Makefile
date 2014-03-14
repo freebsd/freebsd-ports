@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.math.union.edu/~dpvc/jsMath/download/ \
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A sprite fonts pack for jsMath
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 WWWDIR?=	${PREFIX}/www/jsMath

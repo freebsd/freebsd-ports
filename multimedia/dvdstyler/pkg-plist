@@ -129,8 +129,11 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/rc/files.png
 %%DATADIR%%/rc/help.png
 %%DATADIR%%/rc/justifyCenter.png
+%%DATADIR%%/rc/justifyCenterSelected.png
 %%DATADIR%%/rc/justifyLeft.png
+%%DATADIR%%/rc/justifyLeftSelected.png
 %%DATADIR%%/rc/justifyRight.png
+%%DATADIR%%/rc/justifyRightSelected.png
 %%DATADIR%%/rc/logo.png
 %%DATADIR%%/rc/logoSmall.png
 %%DATADIR%%/rc/minus.png
@@ -159,6 +162,8 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/templates/Basic/oceanWS.png
 %%DATADIR%%/templates/Basic/turbulence.dvdt
 %%DATADIR%%/templates/Basic/turbulence.png
+%%DATADIR%%/templates/Basic/turbulenceWS.dvdt
+%%DATADIR%%/templates/Basic/turbulenceWS.png
 %%DATADIR%%/templates/Travel/travel.dvdt
 %%DATADIR%%/templates/Travel/travel.png
 %%DATADIR%%/templates/Travel/travelWS.dvdt

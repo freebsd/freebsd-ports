@@ -3,7 +3,7 @@
 
 PORTNAME=	matc
 PORTVERSION=	5.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-

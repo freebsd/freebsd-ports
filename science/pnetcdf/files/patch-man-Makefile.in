@@ -1,0 +1,17 @@
+--- man/Makefile.in.orig	2013-11-17 13:18:16.000000000 +0800
++++ man/Makefile.in	2014-03-09 22:42:45.288471552 +0800
+@@ -43,12 +43,12 @@
+ test:
+ 
+ install: $(MANUAL)
+-	$(INSTALL) -d -m 755 $(MANDIR)/man3
++	$(INSTALL) -d -m 755 $(DESTDIR)$(MANDIR)/man3
+ 	@for i in $(MANUAL) ; do ( \
+ 	    if test -f $(srcdir)/$$i; then file=$(srcdir)/$$i; \
+ 	    else file=$$i; fi; \
+ 	    fn=`basename $$i` ; \
+-	    $(INSTALL_DATA) $$file $(MANDIR)/man3/$$fn \
++	    $(INSTALL_DATA) $$file $(DESTDIR)$(MANDIR)/man3/$$fn \
+ 	; ) ; done
+ 
+ uninstall:

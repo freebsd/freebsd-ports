@@ -11,7 +11,7 @@ COMMENT=	Java-based RPG character generator and maintenance program
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-USE_ZIP=	YES
+USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}0
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+

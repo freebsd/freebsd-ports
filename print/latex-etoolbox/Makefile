@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 MAINTAINER=	idolum@users.sourceforge.net
 COMMENT=	A toolbox providing programming facilities for LaTeX
 
-USE_ZIP=	YES
+USES=		zip
 USE_TEX=	latex
 NO_BUILD=	YES
 PLIST=		${WRKDIR}/pkg-plist

@@ -11,9 +11,8 @@ COMMENT=	JSON (JavaScript Object Notation) implementation in C
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig zip
 USE_GITHUB=	yes
-USE_ZIP=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 GH_ACCOUNT=	${PORTNAME}

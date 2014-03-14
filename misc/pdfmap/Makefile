@@ -15,6 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaxml>=3.01:${PORTSDIR}/textproc/py-jaxml \
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/pdfgen/canvas.py:${PORTSDIR}/print/py-reportlab1 \
 		${PYTHON_SITELIBDIR}/PIL/Image.py:${PORTSDIR}/graphics/py-imaging
 
+DEPRECATED=	Unmaintained since 2002
+EXPIRATION_DATE=	2014-04-17
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

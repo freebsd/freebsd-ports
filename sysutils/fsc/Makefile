@@ -3,7 +3,7 @@
 
 PORTNAME=	fsc
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	trhodes
@@ -17,8 +17,6 @@ PLIST_FILES=	bin/fscadm sbin/fscd etc/rc.d/fscd man/man5/fscd.conf.5.gz \
 		man/man8/fscadm.8.gz man/man8/fscd.8.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
-		${WRKSRC}/rc.d/fscd
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
 		${WRKSRC}/fscd/fscd.8 ${WRKSRC}/fscd/fscd.c \
 		${WRKSRC}/fscd/fscd.conf.5 ${WRKSRC}/fscadm/fscadm.c

@@ -11,11 +11,11 @@ MASTER_SITE_SUBDIR=	db
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	db@FreeBSD.org
-COMMENT=	A program for experimenting with simple audio DSP algorithms
+COMMENT=	Program for experimenting with simple audio DSP algorithms
 
 LICENSE=	GPLv2
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_WX=		2.6+
 WX_UNICODE=	yes
 WX_COMPS=	wx wx:build wx:run

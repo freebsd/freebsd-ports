@@ -11,8 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert TTF/OTF fonts to WOFF web embeddable format and back
 
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake zip
 
 PLIST_FILES=	bin/sfnt2woff bin/woff2sfnt
 

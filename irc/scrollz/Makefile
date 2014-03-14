@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.netraam.net/scrollz/download/ \
 		http://www.scrollz.com/download/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
-MAINTAINER=	mdv@unsavoury.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
 USES=		gmake iconv ncurses
@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 --enable-regexp --enable-utf8
 MAKE_ENV=	IRCLIB="${PREFIX}/share/scrollz"
 
-MAN1=		scrollz.1
 PORTDATA=	*
 
 PLIST_SUB+=	SCROLLZ_VER="${PORTVERSION}"
@@ -26,7 +25,6 @@ OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_RADIO=		SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}

@@ -14,8 +14,7 @@ COMMENT=	C++ library to read and write MPQ archives
 PROJECTHOST=	ghostplusplus
 PROJECTVERSION=	17.1
 
-USE_ZIP=	yes
-USES=		dos2unix gmake
+USES=		dos2unix gmake zip
 
 WRKSRC=		${WRKDIR}/ghost/StormLib/stormlib
 

@@ -18,9 +18,8 @@ CONFLICTS=	proj4-[0-9]*
 DATUM_GRID_FILES=	proj-datumgrid-1.5.zip
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake zip:infozip
 USE_LDCONFIG=	yes
-USE_ZIP=	yes
 
 post-extract:
 	@${UNZIP_CMD} -q ${DISTDIR}/${DATUM_GRID_FILES} -d ${WRKSRC}/nad

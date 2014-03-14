@@ -1,6 +1,0 @@
-This is an implementation of a gvfs backend for SynCE. Gvfs is a
-replacement for gnome-vfs, allowing applications to access a
-variety of filesystems in userspace, in this case a Windows
-Mobile device via SynCE.
-
-WWW: http://www.synce.org/moin/

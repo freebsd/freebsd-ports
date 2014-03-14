@@ -20,9 +20,8 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386
 
-USES=		gmake perl5
+USES=		gmake perl5 zip
 USE_PERL5=	build
-USE_ZIP=	yes
 
 GCC_VER=	2.7.2
 GCC_DIR=	${WRKDIR}/gcc-${GCC_VER}
@@ -31,7 +30,7 @@ WRKSRC=		${WRKDIR}/saturn
 ALL_TARGET=	default
 INSTALL_TARGET=	build-lib
 MAKE_ARGS=	GCC_SRC="${GCC_DIR}" GCC_VERSION="${GCC_VER}" \
-		CFLAGS="${CFLAGS}" CLIB="" ROOT="${PREFIX}" \
+		CFLAGS="${CFLAGS}" CLIB="" ROOT="${STAGEDIR}${PREFIX}" \
 		INSTALL_PROG="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}" LDXX="${CXX}"
 
@@ -50,7 +49,6 @@ post-extract: .SILENT
 # Do not install extra copies of GPL (we use license framework instead)
 	${REINPLACE_CMD} -e '/COPYING/d' ${WRKSRC}/make.pubfiles
 
-NO_STAGE=	yes
 do-configure:
 	cd ${GCC_DIR} && ./configure --target=saturn-local-hp48 \
 		--prefix=${PREFIX}

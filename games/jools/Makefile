@@ -3,7 +3,7 @@
 
 PORTNAME=	jools
 PORTVERSION=	0.20
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://pessimization.com/software/jools/
 

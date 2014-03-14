@@ -14,7 +14,7 @@ LICENSE=	OFL11
 
 NO_ARCH=	yes
 
-USE_ZIP=	yes
+USES=		zip
 XORG_CAT=	font
 
 FONTLIBPATH=	lib/X11/fonts

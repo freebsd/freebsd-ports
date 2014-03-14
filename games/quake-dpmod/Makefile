@@ -14,7 +14,7 @@ COMMENT=	Quake 1 modification (for DarkPlaces)
 
 RUN_DEPENDS=	${LOCALBASE}/share/darkplaces/dummy:${PORTSDIR}/games/darkplaces
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The Danger from the Deep data files
 
-USE_ZIP=	yes
+USES=		zip
 NO_BUILD=	yes
 
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}

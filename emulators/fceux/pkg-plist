@@ -71,7 +71,6 @@ share/pixmaps/fceux.png
 %%DATADIR%%/palettes/FCEUX.pal
 %%DATADIR%%/palettes/nestopia_rgb.pal
 %%DATADIR%%/palettes/nestopia_yuv.pal
-%%DATADIR%%/taseditor.chm
 %%DATADIR%%/tools/taseditor_patterns.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO-PROJECT
 %%PORTDOCS%%%%DOCSDIR%%/Videolog.txt
@@ -96,6 +95,8 @@ share/pixmaps/fceux.png
 %%PORTDOCS%%%%DOCSDIR%%/tech/ppu/loopy2.txt
 %%PORTDOCS%%%%DOCSDIR%%/tech/readme.now
 %%PORTDOCS%%%%DOCSDIR%%/tech/readme.sound
+man/man6/fceux-net-server.6.gz
+man/man6/fceux.6.gz
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/palettes
 @dirrm %%DATADIR%%/luaScripts/taseditor

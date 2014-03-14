@@ -1,8 +1,0 @@
-This port installs various optional add-ons for games of Quake/QuakeWorld
-and their spin-offs, collected all over the Internet.
-
-To load a skybox, type "loadsky <skybox>", where "<skybox>" can be one of
-"dmcw", "frozendust", and "snow2".
-
-Note that the lits are only for FuhQuake and JoeQuake based clients.  Low
-quality textures require a client with JPEG support.

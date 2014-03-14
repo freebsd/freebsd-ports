@@ -3,7 +3,7 @@
 
 PORTNAME=	rubyripper
 DISTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio sysutils ruby
 MASTER_SITES=	GOOGLE_CODE
 
@@ -18,12 +18,11 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	rxgettext:${PORTSDIR}/devel/rubygem-gettext \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
+		rubygem-gtk2>=0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		cd-discid:${PORTSDIR}/audio/cd-discid
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USES=		gettext
 USE_RUBY=	yes
 INSTALLS_ICONS=	yes
@@ -36,19 +35,22 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,cdparanioa,cdparanoia,' \
 		${WRKSRC}/locale/po/bg/rubyripper.po \
 		${WRKSRC}/locale/po/ru/rubyripper.po
+	@${REINPLACE_CMD} 's,/usr/local/lib/ruby/site_ruby/1.8,${RUBY_SITELIBDIR},' \
+		${WRKSRC}/rubyripper_cli.rb ${WRKSRC}/rubyripper_gtk2.rb
 
 do-build:
 	cd ${WRKSRC} && ${RUBY} configure --update-lang
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/rr_lib.rb ${RUBY_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/rr_lib.rb ${STAGEDIR}${RUBY_SITELIBDIR}
 .for frontend in cli gtk2
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}_${frontend}.rb \
-		${PREFIX}/bin/rrip_${frontend}
+		${STAGEDIR}${PREFIX}/bin/rrip_${frontend}
 .endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png \
-		${PREFIX}/share/icons/hicolor/128x128/apps
-	cd ${WRKSRC} && ${FIND} . -type f -name \*.mo | ${XARGS} ${TAR} \
-		cf - | ${TAR} xf - -C ${PREFIX}/share
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share "-name *.mo"
 
 .include <bsd.port.mk>

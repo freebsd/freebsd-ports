@@ -6,6 +6,7 @@ lib/libpwquality.a
 lib/libpwquality.la
 lib/libpwquality.so
 lib/libpwquality.so.1
+lib/libpwquality.so.1.0.2
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality.so
 libdata/pkgconfig/pwquality.pc
 man/man1/pwmake.1.gz
@@ -35,6 +36,7 @@ share/locale/kn/LC_MESSAGES/libpwquality.mo
 share/locale/ko/LC_MESSAGES/libpwquality.mo
 share/locale/ml/LC_MESSAGES/libpwquality.mo
 share/locale/mr/LC_MESSAGES/libpwquality.mo
+share/locale/mr_IN/LC_MESSAGES/libpwquality.mo
 share/locale/ms/LC_MESSAGES/libpwquality.mo
 share/locale/nb/LC_MESSAGES/libpwquality.mo
 share/locale/nl/LC_MESSAGES/libpwquality.mo
@@ -65,6 +67,8 @@ share/locale/zu/LC_MESSAGES/libpwquality.mo
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
+@dirrmtry share/locale/mr_IN/LC_MESSAGES
+@dirrmtry share/locale/mr_IN
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/km/LC_MESSAGES

@@ -14,6 +14,8 @@ LICENSE=	ART10
 
 EXTRACT_AFTER_ARGS=	--exclude guiwin32
 
+DEPRECATED=	Unmaintained since 1999
+EXPIRATION_DATE=	2014-04-10
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}"
 ALL_TARGET=	all doc/elvtags.man

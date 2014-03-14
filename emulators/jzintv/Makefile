@@ -16,10 +16,9 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/jzintv-1.0-beta4
 BUILD_WRKSRC=	${WRKSRC}/src
-USES=	gmake
+USES=	gmake zip
 USE_XORG=	x11 xau xdmcp
 USE_SDL=	sdl
-USE_ZIP=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags`
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`
 
