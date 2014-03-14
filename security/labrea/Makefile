@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nick@rogness.net
 COMMENT=	Security tarpit defense tool
 
+DEPRECATED=	Unmaintained since 2003
+EXPIRATION_DATE=	2014-04-14
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
