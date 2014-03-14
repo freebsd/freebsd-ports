@@ -1,11 +1,11 @@
---- man/Makefile.in.orig	2013-01-11 03:00:35.000000000 +0800
-+++ man/Makefile.in	2013-02-02 03:18:42.250624916 +0800
-@@ -896,7 +896,7 @@
+--- man/Makefile.in.orig	2014-03-04 03:36:13.000000000 +0800
++++ man/Makefile.in	2014-03-06 04:17:01.801977380 +0800
+@@ -885,7 +885,7 @@
  
  
  $(MANS_CPP): $(MANS_CPP:%=%.pre)
--	$(CPP) -w -C -P -I$(top_srcdir)/man $@.pre  $@
-+	$(CPP) -w -C -I$(top_srcdir)/man $@.pre | grep -v '^#' > $@
+-	$(CPP) -nostdinc -w -C -P -I$(top_srcdir)/man $@.pre  $@
++	$(CPP) -nostdinc -w -C -I$(top_srcdir)/man $@.pre | grep -v '^#' > $@
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.

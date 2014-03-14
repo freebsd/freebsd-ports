@@ -1,9 +1,9 @@
 %%ETCDIR%%/freeipmi.conf.sample
-%%ETCDIR%%/ipmiseld.conf
 %%ETCDIR%%/freeipmi_interpret_sel.conf
 %%ETCDIR%%/freeipmi_interpret_sensor.conf
 %%ETCDIR%%/ipmidetect.conf
 %%ETCDIR%%/ipmidetectd.conf
+%%ETCDIR%%/ipmiseld.conf
 %%ETCDIR%%/libipmiconsole.conf
 include/freeipmi/api/ipmi-api.h
 include/freeipmi/api/ipmi-chassis-cmds-api.h
@@ -42,6 +42,7 @@ include/freeipmi/cmds/ipmi-serial-modem-cmds.h
 include/freeipmi/cmds/ipmi-sol-cmds.h
 include/freeipmi/cmds/rmcp-cmds.h
 include/freeipmi/debug/ipmi-debug.h
+include/freeipmi/driver/ipmi-inteldcmi-driver.h
 include/freeipmi/driver/ipmi-kcs-driver.h
 include/freeipmi/driver/ipmi-openipmi-driver.h
 include/freeipmi/driver/ipmi-ssif-driver.h
@@ -65,6 +66,7 @@ include/freeipmi/record-format/ipmi-fru-oem-record-format.h
 include/freeipmi/record-format/ipmi-platform-event-trap-record-format.h
 include/freeipmi/record-format/ipmi-sdr-oem-record-format.h
 include/freeipmi/record-format/ipmi-sdr-record-format.h
+include/freeipmi/record-format/ipmi-sel-oem-record-format.h
 include/freeipmi/record-format/ipmi-sel-record-format.h
 include/freeipmi/sdr/ipmi-sdr-oem.h
 include/freeipmi/sdr/ipmi-sdr.h
@@ -172,7 +174,7 @@ include/ipmidetect.h
 lib/libfreeipmi.a
 lib/libfreeipmi.la
 lib/libfreeipmi.so
-lib/libfreeipmi.so.15
+lib/libfreeipmi.so.16
 lib/libipmiconsole.a
 lib/libipmiconsole.la
 lib/libipmiconsole.so
@@ -197,6 +199,7 @@ man/man5/bmc-config.conf.5.gz
 man/man5/freeipmi.conf.5.gz
 man/man5/freeipmi_interpret_sel.conf.5.gz
 man/man5/freeipmi_interpret_sensor.conf.5.gz
+man/man5/ipmi-config.conf.5.gz
 man/man5/ipmi_monitoring_sensors.conf.5.gz
 man/man5/ipmiconsole.conf.5.gz
 man/man5/ipmidetect.conf.5.gz
@@ -212,8 +215,9 @@ man/man8/bmc-config.8.gz
 man/man8/bmc-device.8.gz
 man/man8/bmc-info.8.gz
 man/man8/bmc-watchdog.8.gz
-man/man8/ipmi-chassis.8.gz
 man/man8/ipmi-chassis-config.8.gz
+man/man8/ipmi-chassis.8.gz
+man/man8/ipmi-config.8.gz
 man/man8/ipmi-console.8.gz
 man/man8/ipmi-dcmi.8.gz
 man/man8/ipmi-detect.8.gz
@@ -226,8 +230,8 @@ man/man8/ipmi-ping.8.gz
 man/man8/ipmi-power.8.gz
 man/man8/ipmi-raw.8.gz
 man/man8/ipmi-sel.8.gz
-man/man8/ipmi-sensors.8.gz
 man/man8/ipmi-sensors-config.8.gz
+man/man8/ipmi-sensors.8.gz
 man/man8/ipmiconsole.8.gz
 man/man8/ipmidetect.8.gz
 man/man8/ipmidetectd.8.gz
@@ -244,6 +248,7 @@ sbin/bmc-info
 sbin/bmc-watchdog
 sbin/ipmi-chassis
 sbin/ipmi-chassis-config
+sbin/ipmi-config
 sbin/ipmi-console
 sbin/ipmi-dcmi
 sbin/ipmi-detect
@@ -268,74 +273,10 @@ sbin/ipmiseld
 sbin/pef-config
 sbin/rmcp-ping
 sbin/rmcpping
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.ZRESEARCH
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.bmc-watchdog
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmi-dcmi
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmi-fru
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmiconsole
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmidetect
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmimonitoring
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmiping
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmipower
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmiseld
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.pstdout
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.sunbmc
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.0
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.bmc-watchdog
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.bmc-watchdog.UC
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmi-dcmi
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmi-fru
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmi-fru.UC
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiconsole
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiconsole.UC
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmidetect
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmidetect.UC
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmimonitoring
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmimonitoring.UC
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiping
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiping.UC
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmipower
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmipower.UC
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiseld
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.pstdout
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.pstdout.UC
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.argp
-%%PORTDOCS%%%%DOCSDIR%%/README.build
-%%PORTDOCS%%%%DOCSDIR%%/README.openipmi
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/contrib/ganglia/README
-%%PORTDOCS%%%%DOCSDIR%%/contrib/ganglia/ganglia_ipmi_sensors.pl
-%%PORTDOCS%%%%DOCSDIR%%/contrib/libipmimonitoring/ipmimonitoring-sel.c
-%%PORTDOCS%%%%DOCSDIR%%/contrib/libipmimonitoring/ipmimonitoring-sensors.c
-%%PORTDOCS%%%%DOCSDIR%%/contrib/nagios/README
-%%PORTDOCS%%%%DOCSDIR%%/contrib/nagios/nagios_ipmi_sensors.pl
-%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/README
-%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/check_rmcpping
-%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/ipminodes.cfg
-%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/petalert.pl
-%%PORTDOCS%%%%DOCSDIR%%/freeipmi-bugs-issues-and-workarounds.txt
-%%PORTDOCS%%%%DOCSDIR%%/freeipmi-coding.txt
-%%PORTDOCS%%%%DOCSDIR%%/freeipmi-design.txt
-%%PORTDOCS%%%%DOCSDIR%%/freeipmi-hostrange.txt
-%%PORTDOCS%%%%DOCSDIR%%/freeipmi-libraries.txt
-%%PORTDOCS%%%%DOCSDIR%%/freeipmi-oem-documentation-requirements.txt
-%%PORTDOCS%%%%DOCSDIR%%/freeipmi-testing.txt
 @exec mkdir -m 0700 -p %%CACHE_DIR%%/ipmimonitoringsdrcache %%LOG_DIR%% %%RUN_DIR%%
 @exec touch %%RUN_DIR%%/ipckey
 @unexec rm -f %%RUN_DIR%%/ipckey
 @unexec rmdir %%CACHE_DIR%%/ipmimonitoringsdrcache %%CACHE_DIR%% %%LOG_DIR%% %%RUN_DIR%% 2>/dev/null || true
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/pet
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/nagios
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/libipmimonitoring
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/ganglia
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/freeipmi/util
 @dirrm include/freeipmi/templates
 @dirrm include/freeipmi/spec
