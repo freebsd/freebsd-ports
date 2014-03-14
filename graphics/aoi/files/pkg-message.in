@@ -18,9 +18,4 @@ and other Sites and put it in:
     %%DATADIR%%/Plugins
     %%DATADIR%%/Scripts/...
 
-After deinstallation, some files may stay in %%DATADIR%%,
-you can delete them with
-
-    rm -fr %%DATADIR%%
-
 ===============================================================================

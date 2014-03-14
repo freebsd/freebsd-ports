@@ -14,6 +14,7 @@ COMMENT=	Open source Java written 3D modelling and rendering studio
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libjogl.so:${PORTSDIR}/graphics/jogl
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USES=		zip:infozip
@@ -36,8 +37,7 @@ DOC_FILES2=	*
 
 OPTIONS_DEFINE= DOCS
 
-SUB_FILES=	${PORTNAME} \
-		pkg-message
+SUB_FILES=	${PORTNAME} pkg-deinstall pkg-message
 
 DESKTOP_ENTRIES="Art of Illusion" "3D modelling and rendering studio" \
 		"${PORTNAME}" "${PORTNAME}" "Graphics;3DGraphics;" ""
