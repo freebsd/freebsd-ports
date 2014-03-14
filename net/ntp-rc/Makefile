@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/:S/.b/-beta/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 IGNORE=		RC branch not currently active
+FORBIDDEN=	CVE-2013-5211 / VU#348126
+BROKEN=		Does not configure
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
