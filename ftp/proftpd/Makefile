@@ -3,15 +3,13 @@
 
 PORTNAME?=	proftpd
 PORTVERSION?=	1.3.4d
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
 		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
 		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/ \
-		http://labratsoftware.com/mod_sql_tds/:sql_tds \
-		LOCAL/beech:sql_tds
-#		https://secure.thrallingpenguin.com/redmine/attachments/download/1/:clam
+		https://codeload.github.com/jbenden/mod_clamav/legacy.tar.gz/v0.13rc2?dummy=/:clamav
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTNAME=	proftpd-${PORTVERSION}
 .endif
@@ -81,10 +79,10 @@ PLIST_FILES+=	libexec/proftpd/${m}.a \
 .endfor
 PLIST_DIRSTRY+=	libexec/proftpd
 .else
-OPTIONS_DEFINE=	HTMLDOCS IPV6 NLS MEMCACHE PCRE
+OPTIONS_DEFINE=	HTMLDOCS IPV6 NLS MEMCACHE PCRE CLAMAV
 OPTIONS_DEFAULT=	IPV6 NLS PCRE
 
-#CLAMAV_DESC=		Include mod_clamav
+CLAMAV_DESC=		Include mod_clamav
 HTMLDOCS_DESC=		Include HTML documentation
 MEMCACHE_DESC=		Memcache support using libmemcached
 
@@ -169,22 +167,16 @@ CONFIGURE_ARGS+=	--enable-pcre
 CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
-.if make(makesum) || defined(FETCH_ALL)
+.if ${PORT_OPTIONS:MCLAMAV} || make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		mod_sql_tds-4.13${EXTRACT_SUFX}:sql_tds
+		mod_clamav-v0.13rc2${EXTRACT_SUFX}:clamav
+USE_CLAMAV=	yes
+MODULES+=	mod_clamav
+RUN_DEPENDS+=	clamd:${PORTSDIR}/security/clamav
+PLIST_SUB+=	CLAMAV=""
+.else
+PLIST_SUB+=	CLAMAV="@comment " 
 .endif
-
-#.if ${PORT_OPTIONS:MCLAMAV} || make(makesum) || defined(FETCH_ALL)
-#DISTFILES+=	mod_clamav-0.11rc.tar.gz:clam
-#EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_mod_xfer.c
-#USE_CLAMAV=	yes
-#MODULES+=	mod_clamav
-#LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
-#PLIST_SUB+=	CLAMAV=""
-#PROFTPD_LIBS+=	-lclamav
-#.else
-PLIST_SUB+=	CLAMAV="@comment "
-#.endif
 
 .if ${PORT_OPTIONS:MMEMCACHE}
 MODULES+=		mod_memcache \
@@ -213,11 +205,6 @@ CONFIGURE_ARGS+=	--with-includes=${INCLUDEDIRS}
 CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
-#post-extract:
-#.if ${PORT_OPTIONS:MCLAMAV}
-#	(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mod_clamav-0.11rc.tar.gz ${EXTRACT_AFTER_ARGS})
-#	@${CP} ${WRKDIR}/mod_clamav-0.11rc/mod_clamav.* ${WRKSRC}/contrib
-#.endif
 
 post-patch:
 .if ${PORT_OPTIONS:MNLS}
@@ -226,6 +213,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|proftpd\.conf|proftpd.conf.sample|g' ${WRKSRC}/Makefile.in
 
 pre-configure:
+.if ${PORT_OPTIONS:MCLAMAV}
+	@${CP} ${WRKDIR}/jbenden-mod_clamav-0b524e3/mod_clamav.* ${WRKSRC}/contrib
+.endif
 	@${ECHO_MSG} "==> Configuring with following modules:"
 	@${ECHO_MSG} "${MODULES:C/^://g}"
 
