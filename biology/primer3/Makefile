@@ -16,7 +16,6 @@ MAKE_ARGS=	CC=${CC} CPP=${CXX}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PLIST_FILES=	bin/primer3
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's#^CFLAGS.*#CFLAGS  += \$$\(CC_OPTS\)#;' \
@@ -26,6 +25,7 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/primer3_core ${PREFIX}/bin/primer3
+	${INSTALL_PROGRAM} ${WRKSRC}/primer3_core \
+		${STAGEDIR}${PREFIX}/bin/primer3
 
 .include <bsd.port.mk>
