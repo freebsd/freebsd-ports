@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smtube
-PORTVERSION=	1.8
+PORTVERSION=	2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smplayer/SMTube/${PORTVERSION}/
 
@@ -11,8 +11,7 @@ COMMENT=	SMPlayer YouTube browser
 
 RUN_DEPENDS=	${LOCALBASE}/bin/smplayer:${PORTSDIR}/multimedia/smplayer
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 ALL_TARGET=	#empty
 USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build
 QMAKE_ARGS+=	QMAKE_CXXFLAGS_RELEASE=""
@@ -30,5 +29,7 @@ post-patch:
 		-e 's|$$(PREFIX)/share/doc/smtube|${DOCSDIR}|' \
 		-e 's| make| ${GMAKE}|' \
 		${WRKSRC}/Makefile
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}	
 
 .include <bsd.port.mk>
