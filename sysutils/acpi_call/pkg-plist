@@ -1,5 +1,3 @@
-sbin/%%PORTNAME%%
-@cwd /
-%%KMODDIR%%/%%PORTNAME%%.ko
-@exec /usr/sbin/kldxref /%%KMODDIR%%
-@unexec /usr/sbin/kldxref /%%KMODDIR%%
+sbin/acpi_call
+@cwd /%%KMODDIR%%
+acpi_call.ko
