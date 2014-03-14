@@ -14,17 +14,15 @@ COMMENT=	Perl script to make BDF font bold
 CONFLICTS=	mkbold-mkitalic-[0-9]*
 
 PLIST_FILES=	bin/mkbold
-USES=		shebangfix perl5
+USES=		shebangfix perl5 tar:bzip2
 SHEBANG_FILES=	mkbold
 EXTRACT_CMD=	${BZCAT}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mkbold
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_BZIP2=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mkbold ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/mkbold ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
