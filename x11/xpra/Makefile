@@ -29,7 +29,6 @@ USES=		pkgconfig
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_XORG=	x11 xtst xfixes xcomposite xdamage xrandr
-USES=		pkgconfig
 
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	xpra_all

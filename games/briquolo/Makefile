@@ -3,7 +3,7 @@
 
 PORTNAME=	briquolo
 PORTVERSION=	0.5.7
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://briquolo.free.fr/download/
 
@@ -14,11 +14,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
+USES=		desktop-file-utils gmake iconv
 USE_BZIP2=	yes
-USES=		iconv
 USE_GL=		gl
 USE_SDL=	mixer sdl ttf
-USES=	gmake desktop-file-utils
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
