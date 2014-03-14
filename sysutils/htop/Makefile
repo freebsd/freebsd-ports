@@ -7,12 +7,12 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	gaod@hychen.org
-COMMENT=	A better top(1) - interactive process viewer
+COMMENT=	Better top(1) - interactive process viewer
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 OPTIONS_DEFINE=	LSOF
-OPTIONS_DEFAULT=	LSOF
+OPTIONS_DEFAULT=LSOF
 
 NOT_FOR_ARCHS=	ia64 powerpc sparc64
 
@@ -27,16 +27,9 @@ USES=		ncurses
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
 ACLOCAL_ARGS=	-I ${ACLOCAL_DIR}
 
-USE_PYTHON_BUILD=	2
+USE_PYTHON_BUILD=	yes
 
-MAN1=	htop.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLSOF}
-RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
-.endif
+LSOF_RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:/usr/bin/python:${PYTHON_CMD}:' ${WRKSRC}/scripts/MakeHeader.py
