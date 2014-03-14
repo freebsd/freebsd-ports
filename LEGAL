@@ -128,7 +128,6 @@ HeroesOfMightAndMagic-*	games/HeroesOfMightAndMagic	Software is commercial
 homard-*		french/homard		The free downloading of HOMARD software is only allowed for coupling with Code_Aster. For any other use, a license agreement is requested. Please contact HOMARD project: <homard@edf.fr>.
 hplip-*-plugin.run	print/hplip-plugin	License agreement is required
 httprint_freebsd_*.zip	security/httprint	No cost for personal, education and non-commercial use
-huludesktop-i386.rpm	multimedia/linux-huludesktop No redistribution allowed, not for commercial use, export controlled
 HyperSpec-*		devel/clisp-hyperspec	Commercial redistribution prohibited
 HyperSpec-*.tar.gz	devel/clisp-hyperspec	Commercial redistribution prohibited
 ICON-AquaFusion.*	x11-themes/gnome-icons-aqua-fusion Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.

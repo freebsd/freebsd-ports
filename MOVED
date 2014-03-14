@@ -5710,3 +5710,4 @@ net/pppd23||2014-03-14|Has expired: Depends on PPPDISC
 net/ipa_ip6fw||2014-03-14|Has expired: Depends on IPv6 ipfw firewall
 palm/synce-hal||2014-03-14|Has expired: Requires pppd
 net/pppoa||2014-03-14|Has expired: Broken on FreeBSD 8 and later since june 2009
+multimedia/linux-huludesktop||2014-03-14|Removed
