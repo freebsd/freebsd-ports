@@ -51,6 +51,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a70966a1-ac22-11e3-8d04-00262d5ed8ee">
+    <topic>www/chromium -- multiple vulnerabities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>33.0.1750.152</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>New vulnerabilites after the Pwn2Own competition:</p>
+	  <ul>
+	    <li>[352369] Code execution outside sandbox. Credit to VUPEN.
+	      <ul>
+		<li>[352374] High CVE-2014-1713: Use-after-free in Blink
+		  bindings</li>
+		<li>[352395] High CVE-2014-1714: Windows clipboard
+		  vulnerability</li>
+	      </ul>
+	    </li>
+	    <li> [352420] Code execution outside sandbox. Credit to Anonymous.
+	      <ul>
+		<li>[351787] High CVE-2014-1705: Memory corruption in V8</li>
+		<li>[352429] High CVE-2014-1715: Directory traversal issue</li>
+	      </ul>
+	    </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1705</cvename>
+      <cvename>CVE-2014-1713</cvename>
+      <cvename>CVE-2014-1714</cvename>
+      <cvename>CVE-2014-1715</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-03-14</discovery>
+      <entry>2014-03-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eb426e82-ab68-11e3-9d09-000c2980a9f3">
     <topic>mutt -- denial of service, potential remote code execution</topic>
     <affects>
