@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	stb@lassitu.de
 COMMENT=	Convert TTF font file to EOT web embeddable file
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	ttf2eot
 
 PLIST_FILES=	bin/ttf2eot

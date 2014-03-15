@@ -13,7 +13,7 @@ COMMENT=	Access counter, clock and date for WWW pages
 
 GNU_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAN1=		mkstrip.1
 
 NO_STAGE=	yes

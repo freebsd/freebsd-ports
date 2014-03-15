@@ -11,7 +11,7 @@ COMMENT=	Text web browser, ambitious, in active development
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/netrik \

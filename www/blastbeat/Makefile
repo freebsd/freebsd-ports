@@ -19,7 +19,7 @@ LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		zmq:${PORTSDIR}/net/libzmq2
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	zloidemon
 GH_COMMIT=	cdac9a9

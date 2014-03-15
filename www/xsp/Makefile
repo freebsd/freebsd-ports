@@ -15,10 +15,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono
 MAKE_JOBS_UNSAFE=	yes
 
 USE_SQLITE=	3
-USE_BZIP2=	yes
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig gmake tar:bzip2
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 MAN1=		asp-state.1 dbsessmgr.1 mod-mono-server.1 xsp.1 \
 		fastcgi-mono-server.1

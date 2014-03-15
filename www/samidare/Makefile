@@ -14,7 +14,7 @@ COMMENT=	A web page update checker written in Ruby
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/htree.rb:${PORTSDIR}/textproc/ruby-htree \
 		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_RUBY=	yes
 
 RUBY_REQUIRE=	Ruby >= 181

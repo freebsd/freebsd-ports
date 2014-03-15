@@ -30,9 +30,8 @@ NO_STAGE=	yes
 USE_APACHE=	22+
 .endif
 
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_PHP=	ctype curl gettext hash iconv json mysql \
 		pcre pdo pdo_sqlite posix session \
 		simplexml spl sqlite tokenizer \

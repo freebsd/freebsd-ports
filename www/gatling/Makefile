@@ -12,7 +12,7 @@ COMMENT=	A high performance webserver with scalability benchmark tools
 BUILD_DEPENDS=	libowfat>=0.29:${PORTSDIR}/devel/libowfat
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_OPENSSL=	yes
 USE_RC_SUBR=	gatling
 

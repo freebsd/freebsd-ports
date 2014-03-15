@@ -14,8 +14,7 @@ BUILD_DEPENDS=	pike76:${PORTSDIR}/lang/pike76
 LIB_DEPENDS=	sablot:${PORTSDIR}/textproc/sablotron
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 
 PIKEVERSION=	7.6.112
 SUB_LIST+=	PIKEVERSION="${PIKEVERSION}"

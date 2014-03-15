@@ -23,9 +23,7 @@ RUN_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
 		p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
-USE_BZIP2=	yes
-USES=		gettext perl5
-USE_GMAKE=	yes
+USES=		gettext perl5 gmake tar:bzip2
 
 MAN1=		llgal.1
 MAN5=		llgalrc.5

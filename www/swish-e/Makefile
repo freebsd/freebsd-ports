@@ -12,7 +12,7 @@ COMMENT=	Simple web indexing for humans - enhanced
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		pkgdatadir="${DATADIR}"
