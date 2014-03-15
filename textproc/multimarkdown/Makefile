@@ -34,13 +34,11 @@ HELPERS_DESC=	Helper scripts (conflicts with emulators/mtools)
 CHEAT_SHEET_DISTFILES=	human-markdown-reference-${CHEAT_COMMIT}${EXTRACT_SUFX}:cheat
 EXTRAS_DISTFILES=	MMD-Support-${SUPPORT_COMMIT}${EXTRACT_SUFX}:support
 
+HELPERS_CONFLICTS_INSTALL=	mtools-*
+
 OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MHELPERS}
-CONFLICTS_INSTALL=	mtools-*
-.endif
 
 post-extract:
 	@${MV} ${WRKDIR}/nddrylliog-greg-${GREG_COMMIT}/* ${WRKSRC}/greg
