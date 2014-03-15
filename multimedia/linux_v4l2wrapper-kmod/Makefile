@@ -8,7 +8,6 @@ CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox \
 		http://people.freebsd.org/~ae/
 DISTNAME=	linux_v4l2_kld
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Linux compatibility layer - V4L2 ioctl handler
@@ -21,7 +20,7 @@ WRKSRC=		${WRKDIR}/linux_v4l2
 DEPRECATED=	Included now in all supported FreeBSD versions
 EXPIRATION_DATE=	2014-03-15
 
-USES=		kmod
+USES=		kmod tar:tgz
 
 .include <bsd.port.pre.mk>
 

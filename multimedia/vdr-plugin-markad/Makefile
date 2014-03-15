@@ -6,7 +6,6 @@ PORTVERSION=	0.1.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1041/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - MarkAd plugin
@@ -14,7 +13,7 @@ COMMENT=	Video Disk Recorder - MarkAd plugin
 LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY

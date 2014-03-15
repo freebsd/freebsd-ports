@@ -9,8 +9,7 @@ MASTER_SITES=	http://spice-space.org/download/usbredir/
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	protocol for redirection of USB traffic
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}

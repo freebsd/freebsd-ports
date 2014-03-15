@@ -37,8 +37,7 @@ BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	libdvdcss.so.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
-USES=		gmake iconv pathfix perl5 pkgconfig compiler:features
-USE_XZ=		yes
+USES=		gmake iconv pathfix perl5 pkgconfig compiler:features tar:xz
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_XORG=	sm x11 xv xinerama
