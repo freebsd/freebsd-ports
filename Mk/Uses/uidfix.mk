@@ -2,12 +2,12 @@
 #
 # Changes some default behaviour of build systems to allow installing as user.
 #
-# MAINTAINER:	bapt@FreeBSD.org
-#
 # Feature:	uidfix
 # Usage:	USES=uidfix
 # Valid ARGS:	none
 #
+# MAINTAINER:	bapt@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_UIDFIX_MK)
 _INCLUDE_USES_UIDFIX_MK=	yes
 .if ${UID} != 0

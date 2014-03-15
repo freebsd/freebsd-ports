@@ -2,13 +2,12 @@
 #
 # handle dependency on the gettext (libintl) port
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	gettext
 # Usage:	USES=gettext or USES=gettext:ARGS
 # Valid ARGS:	build, run, lib (default, implicit)
 #
-#
+# MAINTAINER: portmgr@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_GETTEXT_MK)
 _INCLUDE_USES_GETTEXT_MK=	yes
 

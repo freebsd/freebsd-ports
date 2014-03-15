@@ -5,8 +5,6 @@
 # Standard templates for bash, perl, python,... are included out of
 # the box, others can easily be added per port.
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	shebangfix
 # Usage:	USES=shebangfix
 #
@@ -26,6 +24,7 @@
 #
 #   perl_CMD=	${SETENV} perl
 #
+# MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_SHEBANGFIX_Mk)
 _INCLUDE_USES_SHEBANGFIX_MK=	yes

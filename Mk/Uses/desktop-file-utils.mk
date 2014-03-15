@@ -2,13 +2,12 @@
 #
 # handle dependency depends on desktop-file-utils and package regen
 #
-# MAINTAINER: gnome@FreeBSD.org
-#
 # Feature:	desktop-file-utils
 # Usage:	USES=desktop-file-utils
 # Valid ARGS:	does not require args
 #
-#
+# MAINTAINER: gnome@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_DESKTOP_FILE_UTILS_MK)
 _INCLUDE_USES_DESKTOP_FILE_UTILS_MK=	yes
 

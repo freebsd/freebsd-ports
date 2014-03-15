@@ -2,13 +2,12 @@
 #
 # Provide support for imake based projects
 #
-# MAINTAINER: x11@FreeBSD.org
-#
 # Feature:		imake
 # Usage:		USES=imake
 # Valid ARGS:		env: do not define any target
 #			notall: do not pass -a to xmkmf
 #
+# MAINTAINER: x11@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_IMAKE_MK)
 _INCLUDE_USES_IMAKE_MK=	yes

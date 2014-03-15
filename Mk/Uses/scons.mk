@@ -2,11 +2,10 @@
 #
 # Provide support to use the scons
 #
-# MAINTAINER: python@FreeBSD.org
-#
 # Feature:		scons
 # Usage:		USES=scons
 #
+# MAINTAINER: python@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_SCONS_MK)
 _INCLUDE_USES_SCONS_MK=	yes

@@ -2,14 +2,13 @@
 #
 # Provide support to use Ninja
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:		ninja
 # Usage:		USES=ninja
 #
 # User defined variables:
 # NINJA_VERBOSE		- Enable verbose output.
 #
+# MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_NINJA_MK)
 _INCLUDE_USES_NINJA_MK=	yes

@@ -2,11 +2,11 @@
 #
 # Fortran support
 #
-# MAINTAINER:	fortran@FreeBSD.org
-#
 # Feature:	fortran
 # Usage:	USES=fortran
 # Valid ARGS:	gcc (default), ifort
+#
+# MAINTAINER:	fortran@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_FORTRAN_MK)
 _INCLUDE_USES_FORTRAN_MK=	yes

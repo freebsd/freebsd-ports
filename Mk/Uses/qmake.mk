@@ -2,8 +2,6 @@
 #
 # Provide support for qmake-based projects
 #
-# MAINTAINER: kde@FreeBSD.org
-#
 # Feature:		qmake
 # Usage:		USES=qmake or USES=qmake:ARGS
 #			Must be used along with	'USE_QT*=#'
@@ -25,6 +23,7 @@
 # User defined variables:
 # QMAKE_VERBOSE		- Enable verbose configure output.
 #
+# MAINTAINER: kde@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_QMAKE_MK)
 _INCLUDE_USES_QMAKE_MK=	yes

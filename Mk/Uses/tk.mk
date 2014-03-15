@@ -2,7 +2,6 @@
 #
 # vim: ts=8 noexpandtab
 #
-#
 
 .if defined(tk_ARGS)
 tcl_ARGS:=	${tk_ARGS}

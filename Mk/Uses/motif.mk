@@ -2,13 +2,13 @@
 #
 # handle dependency on motif
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	motif
 # Usage:	USES=motif
 #
 # If WANT_LESSTIF is defined in user make.conf then lesstif will be used
 # instead of open-motif
+#
+# MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_MOTIF_MK)
 _INCLUDE_USES_MOTIF_MK=	yes

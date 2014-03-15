@@ -2,8 +2,6 @@
 #
 # Provide support for CMake based projects
 #
-# MAINTAINER: kde@FreeBSD.org
-#
 # Feature:		cmake
 # Usage:		USES=cmake or USES=cmake:ARGS
 # Valid ARGS:		outsource
@@ -36,6 +34,8 @@
 #			Debug otherwise
 # CMAKE_SOURCE_PATH	- Path to the source directory
 #			Default: ${WRKSRC}
+#
+# MAINTAINER: kde@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_CMAKE_MK)
 _INCLUDE_USES_CMAKE_MK=	yes

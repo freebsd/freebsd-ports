@@ -2,11 +2,11 @@
 #
 # handle makeself archives
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	makeself
 # Usage:	USES=makeself
 #
+# MAINTAINER: portmgr@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_MAKESELF_Mk)
 _INCLUDE_USES_MAKESELF_MK=	yes
 
