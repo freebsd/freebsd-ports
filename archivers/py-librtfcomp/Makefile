@@ -11,7 +11,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${LOCALBASE}/bin/pyrexc:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	librtfcomp.so:${PORTSDIR}/archivers/librtfcomp
 
-USE_PYTHON=	yes
+USE_PYTHON=	2
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
