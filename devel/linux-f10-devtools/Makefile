@@ -3,6 +3,7 @@
 
 PORTNAME=	devtools
 PORTVERSION=	10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://archives.fedoraproject.org/pub/archive/fedora/linux/updates/${PORTVERSION}/${LINUX_RPM_ARCH}/ \
 		http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/${PORTVERSION}/Fedora/${LINUX_RPM_ARCH}/os/Packages/
@@ -41,5 +42,10 @@ LINUX_DIST_VER=	10
 USE_LDCONFIG=	yes
 
 PLIST_SUB+=	NLS=""
+
+# Replace link to absolute path /lib/libgcc_s.so.1, which is a FreeBSD lib
+post-install:
+	${RM} ${STAGEDIR}/compat/linux/usr/lib/gcc/i386-redhat-linux/4.3.2/libgcc_s.so
+	${LN} -s ../../../../../lib/libgcc_s.so.1 ${STAGEDIR}/compat/linux/usr/lib/gcc/i386-redhat-linux/4.3.2/libgcc_s.so
 
 .include <bsd.port.mk>
