@@ -1,0 +1,20 @@
+include/xml_ez_out/mckae-xml-ez_out-generic_medium.adb
+include/xml_ez_out/mckae-xml-ez_out-generic_medium.ads
+include/xml_ez_out/mckae-xml-ez_out-string_stream.adb
+include/xml_ez_out/mckae-xml-ez_out-string_stream.ads
+include/xml_ez_out/mckae-xml-ez_out-text_file.ads
+include/xml_ez_out/mckae-xml-ez_out.ads
+include/xml_ez_out/mckae-xml.ads
+include/xml_ez_out/mckae.ads
+lib/gnat/xml_ez_out.gpr
+lib/xml_ez_out/libxml_ez_out.a
+lib/xml_ez_out/mckae-xml-ez_out-generic_medium.ali
+lib/xml_ez_out/mckae-xml-ez_out-string_stream.ali
+lib/xml_ez_out/mckae-xml-ez_out-text_file.ali
+lib/xml_ez_out/mckae-xml-ez_out.ali
+lib/xml_ez_out/mckae-xml.ali
+lib/xml_ez_out/mckae.ali
+lib/xml_ez_out/tmeztf.ali
+@dirrm lib/xml_ez_out
+@dirrmtry lib/gnat
+@dirrm include/xml_ez_out
