@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File_MARC
-PORTVERSION=	0.7.1
+PORTVERSION=	1.1.1
 CATEGORIES=	textproc pear
 
 MAINTAINER=	miwi@FreeBSD.org
