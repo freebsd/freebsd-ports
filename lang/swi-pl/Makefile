@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swi-pl
-PORTVERSION=	6.6.1
-PORTREVISION=	1
+PORTVERSION=	6.6.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	pl-${PORTVERSION}
