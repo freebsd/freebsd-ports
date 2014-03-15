@@ -86,7 +86,7 @@ dtiquery-*		science/dtiquery	License agreement is required
 eagle-lin-*.run		cad/linux-eagle5	Usage permitted for non-commercial purposes only
 eawpats*		audio/eawpats		Some of the patches are not for commercial use
 eClient-linux-i686.run	games/atitd		Redistribution not allowed
-ecw_jpeg_2000_*.zip	graphics/libecwj2	Must be downloaded manually from Ermapper site
+ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources, but sources no longer available on ERDAS website
 edith*			editors/edith		Redistribution not allowed
 eijiro*			japanese/eijiro-fpw	The original dictionary is not free
 emc2*			math/emc2		No resale, contact author for commercial usage
