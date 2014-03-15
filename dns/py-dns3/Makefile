@@ -4,7 +4,7 @@
 PORTNAME=	dns
 PORTVERSION=	3.0.4
 CATEGORIES=	dns python
-MASTER_SITES=	https://launchpadlibrarian.net/146975379/ \
+MASTER_SITES=	https://launchpad.net/${DISTNAME}/trunk/${PORTVERSION}/+download/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	3
