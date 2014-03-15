@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -77,7 +77,7 @@ PKGDEINSTALL=	${WRKDIR}/use.perl
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 # if this port is default due PERL5_DEFAULT
-# change PKGNAME to reflect this 
+# change PKGNAME to reflect this
 .if ${PERL_VER} == ${PERL5_DEFAULT}
 PKGNAMESUFFIX=	${PERL_VERSION:C/\.[0-9]+\.[0-9]+$//}
 .else
