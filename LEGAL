@@ -164,8 +164,8 @@ lame*			audio/lame		patent issues, see http://www.mp3licensing.com/
 lgrind/*		print/lgrind		Contains non-free code written by Van Jacobson
 lha-1.14i-ac*		archivers/lha-ac	No redistribution allowed
 libaacplus-*		audio/libaacplus	Unclear legal status
-libamrnb		audio/libamrnb		No redistribution allowed
-libamrwb		audio/libamrwb		No redistribution allowed
+libamrnb/26104-*.zip	audio/libamrnb		unclear legal status, probably need licenses from 3GPP and more
+libamrwb/26204-*.zip	audio/libamrwb		unclear legal status, probably need licenses from 3GPP and more
 libdvdcss-*.tar.bz2	multimedia/libdvdcss	CSS code may violate the DMCA
 linux-unrealgold*	games/linux-unrealgold	Redistribution limited
 linux-ut/*		games/linux-ut		Redistribution limited
