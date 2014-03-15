@@ -1,4 +1,3 @@
-@unexec /bin/rm %D/etc/pango/pango.modules
 bin/pango-querymodules
 bin/pango-view
 include/pango-1.0/pango/pango-attributes.h
@@ -135,10 +134,10 @@ share/gtk-doc/html/pango/up.png
 @dirrm share/gtk-doc/html/pango
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+@unexec /bin/rm %D/lib/pango/%%VERSION%%/modules.cache
 @dirrm lib/pango/%%VERSION%%/modules
 @dirrm lib/pango/%%VERSION%%
 @dirrm lib/pango
 @dirrm include/pango-1.0/pango
 @dirrm include/pango-1.0
-@dirrm etc/pango
-@exec %%LOCALBASE%%/bin/pango-querymodules > %D/etc/pango/pango.modules
+@exec %%LOCALBASE%%/bin/pango-querymodules --update-cache
