@@ -1,6 +1,6 @@
---- ./html/Makefile.in.orig	2014-01-24 22:44:21.000000000 +0000
-+++ ./html/Makefile.in	2014-01-24 22:44:31.000000000 +0000
-@@ -35,55 +35,55 @@
+--- ./html/Makefile.in.orig	2014-03-14 18:24:57.000000000 +0100
++++ ./html/Makefile.in	2014-03-15 20:44:57.000000000 +0100
+@@ -35,56 +35,56 @@
  devclean: distclean
  
  install:
@@ -38,6 +38,8 @@
  	rm -f $(DESTDIR)$(HTMLDIR)/index.html
  	rm -f $(DESTDIR)$(HTMLDIR)/main.html
  	rm -f $(DESTDIR)$(HTMLDIR)/side.html
+-	$(INSTALL) -m 664 $(INSTALL_OPTS) jsonquery.html $(DESTDIR)$(HTMLDIR)
++	$(INSTALL) -m 644 $(INSTALL_OPTS) jsonquery.html $(DESTDIR)$(HTMLDIR)
  	for file in *.php; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
