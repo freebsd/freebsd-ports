@@ -597,6 +597,7 @@
     SUBDIR += p5-Fuse-Simple
     SUBDIR += p5-Iterator-File
     SUBDIR += p5-Lchown
+    SUBDIR += p5-Linux-Cpuinfo
     SUBDIR += p5-MogileFS-Client
     SUBDIR += p5-MogileFS-Network
     SUBDIR += p5-MogileFS-Server
