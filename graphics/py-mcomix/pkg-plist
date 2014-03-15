@@ -1,3 +1,4 @@
+@comment $FreeBSD: ports/graphics/py-mcomix/pkg-plist,v 1.1 2012/08/06 16:45:19 ashish Exp $
 bin/mcomix
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
@@ -242,6 +243,12 @@ bin/mcomix
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/uk/LC_MESSAGES/mcomix.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/zh_CN/LC_MESSAGES/mcomix.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/zh_TW/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/openwith.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/openwith.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/openwith.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/openwith_menu.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/openwith_menu.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/openwith_menu.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/osd.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/osd.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/osd.pyo
