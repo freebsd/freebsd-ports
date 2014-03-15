@@ -12,10 +12,9 @@ COMMENT=	Utility used to retrieve large files over the Internet
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 WITH_BDB_VER?=	43
 
 CPPFLAGS+=	-I${LOCALBASE}/include

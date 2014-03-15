@@ -10,9 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ version of Hx, a UNIX Hotline Client
 
-USES=	pathfix
-USE_GNOME=	gdkpixbuf gnomehack
-USE_GMAKE=	yes
+USES=		pathfix gmake
+USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

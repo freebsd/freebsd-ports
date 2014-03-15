@@ -12,8 +12,7 @@ SNAPSHOT=	20060727
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A C++ BitTorrent Tracker
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_DOS2UNIX=	yes
 
 SUB_FILES=	pkg-message
