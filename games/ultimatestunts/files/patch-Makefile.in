@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2012-08-25 12:07:02.000000000 +0200
++++ ./Makefile.in	2014-03-15 14:03:25.632262259 +0100
+@@ -697,7 +697,7 @@
+ 
+ 
+ ultimatestunts.conf: ultimatestunts.conf.in Makefile
+-	sed 's,@usdatadir\@,$(usdatadir),;s,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),' < $< > $@
++#	sed 's,@usdatadir\@,$(usdatadir),;s,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),' < $< > $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
