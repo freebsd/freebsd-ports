@@ -1509,6 +1509,7 @@
     SUBDIR += xml-i18n-tools
     SUBDIR += xml-lite.el
     SUBDIR += xml-parse.el
+    SUBDIR += xml_ez_out
     SUBDIR += xml2
     SUBDIR += xml2rfc
     SUBDIR += xmlada

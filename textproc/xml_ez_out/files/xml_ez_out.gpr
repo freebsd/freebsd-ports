@@ -1,0 +1,7 @@
+project XML_EZ_Out is
+   for Languages use ("ada");
+   for Source_Dirs use ("../../include/xml_ez_out");
+   for Library_Name use "xml_ez_out";
+   for Library_Dir use  "../../lib/xml_ez_out";
+   for Externally_Built use "true";
+end XML_EZ_Out;
