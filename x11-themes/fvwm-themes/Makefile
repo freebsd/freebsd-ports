@@ -18,8 +18,7 @@ RUN_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2
 
 USE_BZIP2=	yes
 USE_XORG=	xpm
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 MAN1=		fvwm-themes-config.1 fvwm-themes-menuapp.1 fvwm-themes-com.1 \
