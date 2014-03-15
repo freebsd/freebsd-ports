@@ -1,13 +1,15 @@
-Nitpicker is a free IP Flow Accounter.
-It started because the commercial accounting software was just not fast,
-precise and reliable enough to fit a today's ISP / MSP requirements. 
+Nitpicker is a free IP flow accounter.  It started because the commercial
+accounting software was just not fast, precise and reliable enough to fit
+today's ISP/MSP requirements.
 
-Here are some of the large benefits of nitpicker: 
- - It is 100% free
- - It is Public Domain.
- - It is designed for speed
- - It is designed to run reliable under djb's daemontools
- - It consumes minimal processor power
- - It also runs with little memory
- 
+Here are some of the large benefits of nitpicker:
+
+  - 100% free, in public domain
+  - Designed for speed
+  - Designed to run reliably under djb's daemontools
+  - Consumes minimal processor power
+  - Runs within little memory
+  - Does not banally summarize the traffic
+  - Stores all relevant traffic data for comprehensible interaction
+
 WWW: http://www.nitpicker.de/
