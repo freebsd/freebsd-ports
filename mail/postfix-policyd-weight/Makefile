@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS \
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample \
 		man/man5/policyd-weight.conf.5.gz \
-		man/man8/policyd-weight.8.gz \
+		man/man8/policyd-weight.8.gz
 
 USERS=		polw
 GROUPS=		polw
