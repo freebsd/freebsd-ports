@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bundler
-PORTVERSION=	1.3.5
+PORTVERSION=	1.5.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/bundle
+PLIST_FILES=	bin/bundle bin/bundler
 
 .include <bsd.port.mk>
