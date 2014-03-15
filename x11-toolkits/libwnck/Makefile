@@ -12,10 +12,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library used for writing pagers and taskslists
 
+USES=		tar:bzip2
+
 .if !defined(REFERENCE_PORT)
 
 USE_XORG=	xres
-USES=		bison pathfix gettext gmake pkgconfig tar:bzip2
+USES+=		bison pathfix gettext gmake pkgconfig
 USE_GNOME=	gtk20 ltverhack referencehack intlhack introspection:build,run
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
