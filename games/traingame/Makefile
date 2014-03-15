@@ -5,10 +5,9 @@ PORTNAME=	traingame
 PORTVERSION=	0.2.2
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://www.nickg.me.uk/files/:game \
-		SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	TrainGame-${DISTVERSION}${EXTRACT_SUFX}:game \
-		${PORTNAME}_icons.tar.gz:icons
+MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nemysis@FreeBSD.org
@@ -16,35 +15,37 @@ COMMENT=	Game about Trains
 
 LICENSE=	GPLv3
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	nickg
+GH_PROJECT=	traingame
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	83abcc9
+
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
-WRKSRC=		${WRKDIR}/TrainGame-${PORTVERSION}
+CXXFLAGS+=	-std=c++11
 
-USES=		cmake pkgconfig
+USES=		cmake compiler:c++11-lib pkgconfig
+USE_CXXSTD=	gnu++11
 USE_SDL=	sdl image
 USE_GL=		glew
-USE_GCC=	yes
+
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-Wno-return-type
 
 PORTDOCS=	model_notes.txt models.gnuplot
+OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
-SUB_FILES=	${PORTNAME} \
-		${PORTNAME}-map \
-		pkg-message
-
-OPTIONS_DEFINE=	DOCS
-
-post-patch:
-		@${REINPLACE_CMD} -e 's|shared_ptr|std::shared_ptr|' \
-			${WRKSRC}/src/Mesh.cpp
+SUB_FILES=	${PORTNAME} ${PORTNAME}-map pkg-message
 
 do-install:
-.for d in ${PORTNAME} ${PORTNAME}-map
-	${INSTALL_SCRIPT} ${WRKDIR}/${d} ${STAGEDIR}${PREFIX}/bin/
+.for f in ${PORTNAME} ${PORTNAME}-map
+	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 .for d in buildings engines fonts images layouts maps schemas trees waggons
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
