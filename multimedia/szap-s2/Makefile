@@ -12,8 +12,7 @@ COMMENT=	Simple zapping tool for the Linux DVB S2 API
 
 BUILD_DEPENDS=  ${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 PATCH_STRIP=	-p1
 USE_CSTD=	gnu89
 MAKE_ARGS=	INCLUDE=-I"${LOCALBASE}/include"

@@ -19,9 +19,8 @@ LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 
-USE_BZIP2=	yes
 PATCH_STRIP=	-p1
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_XORG+=	xrandr xrender
 USE_GL=		gl glu glut
 PORTDOCS=	COPYING README HISTORY

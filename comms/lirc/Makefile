@@ -15,9 +15,8 @@ COMMENT=	Linux Infrared Remote Control
 BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
 USE_AUTOTOOLS=	libtool automake autoheader aclocal autoconf
-USES=		gmake
+USES=		gmake tar:bzip2
 ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
-USE_BZIP2=	yes
 USE_XORG=	sm x11
 USE_PYTHON=	yes
 USE_CSTD=	gnu89

@@ -15,8 +15,7 @@ COMMENT=	Video Disk Recorder - EPG search plugin
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libtre.so:${PORTSDIR}/textproc/libtre
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 PATCH_STRIP=	-p1
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}

@@ -15,8 +15,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
 
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gmake pkgconfig bison perl5
+USES=		gmake pkgconfig bison perl5 tar:bzip2
 USE_PERL5=	build
 USE_PYTHON_BUILD=	2
 USE_XORG=	pixman

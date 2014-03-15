@@ -16,8 +16,7 @@ LIB_DEPENDS=	v4l2.0:${PORTSDIR}/multimedia/libv4l \
 
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DPREFIX=\\\"${PREFIX}\\\"" \
 		LIBDIR="${PREFIX}/lib" LDFLAGS="-L${LOCALBASE}/lib -largp"
-USE_BZIP2=	yes
-USES=	gmake
+USES=		gmake tar:bzip2
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/utils

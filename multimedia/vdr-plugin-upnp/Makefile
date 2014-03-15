@@ -7,7 +7,6 @@ PORTREVISION=	23
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/177/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION:S/a/-alpha/}${DISTVERSIONSUFFIX}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - UPnP/DLNA plugin (alpha!)
@@ -17,6 +16,7 @@ LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
 		libupnp.so:${PORTSDIR}/devel/upnp \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
+USES=		tar:tgz
 DIST_SUBDIR=	vdr
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
