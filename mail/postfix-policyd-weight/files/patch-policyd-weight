@@ -1,0 +1,144 @@
+--- ./policyd-weight.orig	2011-09-03 15:55:02.000000000 +0200
++++ ./policyd-weight	2014-03-15 17:15:33.000000000 +0100
+@@ -320,7 +320,7 @@
+ 
+ my $DEBUG        = 0;               # 1 or 0 - don't comment
+ 
+-my $REJECTMSG    = "550 Mail appeared to be SPAM or forged. Ask your Mail/DNS-Administrator to correct HELO and DNS MX settings or to get removed from DNSBLs";
++my $REJECTMSG	 = "550 Mail appeared to be SPAM or forged. Ask your Mail/DNS-Administrator to correct HELO and DNS MX settings or to get removed from DNSBLs";
+ 
+ my $REJECTLEVEL  = 1;               # Mails with scores which exceed this
+                                     # REJECTLEVEL will be rejected
+@@ -374,9 +374,7 @@
+     'pbl.spamhaus.org',       3.25,          0,        'DYN_PBL_SPAMHAUS',
+     'sbl-xbl.spamhaus.org',   4.35,       -1.5,        'SBL_XBL_SPAMHAUS',
+     'bl.spamcop.net',         3.75,       -1.5,        'SPAMCOP',
+-    'dnsbl.njabl.org',        4.25,       -1.5,        'BL_NJABL',
+     'ix.dnsbl.manitu.net',    4.35,          0,        'IX_MANITU'
+-    #'rbl.ipv6-world.net',     4.25,          0,        'IPv6_RBL'  #don't use, kept for testing failures!
+ );
+ 
+ my $MAXDNSBLHITS  = 2;  # If Client IP is listed in MORE
+@@ -392,10 +390,7 @@
+ ## RHSBL settings
+ my @rhsbl_score = (
+     'multi.surbl.org',             4,        0,        'SURBL',
+-    'rhsbl.ahbl.org',              4,        0,        'AHBL',
+-    'dsn.rfc-ignorant.org',        3.5,      0,        'DSN_RFCI',
+-    'postmaster.rfc-ignorant.org', 0.1,      0,        'PM_RFCI',
+-    'abuse.rfc-ignorant.org',      0.1,      0,        'ABUSE_RFCI'
++    'rhsbl.ahbl.org',              4,        0,        'AHBL'
+ );
+ 
+ my $BL_ERROR_SKIP     = 2;  # skip a RBL if this RBL had this many continuous
+@@ -404,7 +399,7 @@
+ my $BL_SKIP_RELEASE   = 10; # skip a RBL for that many times
+ 
+ ## cache stuff
+-my $LOCKPATH          = '/tmp/.policyd-weight/';    # must be a directory (add
++my $LOCKPATH          = '/var/run/policyd-weight/';    # must be a directory (add
+                                                     # trailing slash)
+ 
+ my $SPATH             = $LOCKPATH.'/polw.sock';     # socket path for the cache
+@@ -426,7 +421,7 @@
+ 
+ my $CACHEMAXSIZE    = 4000; # at this number of entries cleanup takes place
+ 
+-my $CACHEREJECTMSG  = '550 temporarily blocked because of previous errors';
++my $CACHEREJECTMSG  = $REJECTMSG . " [cached]";
+ 
+ my $NTTL            = 1;    # after NTTL retries the cache entry is deleted
+ 
+@@ -582,7 +577,7 @@
+ my $my_PTIME;
+ my $my_TEMP_PTIME;
+ 
+-if(!($conf))
++if(not defined $conf)
+ {
+     if( -f "/etc/policyd-weight.conf")
+     {
+@@ -605,7 +600,7 @@
+ my $conf_err;
+ my $conf_str;
+ our $old_mtime;
+-if($conf ne "")
++if(defined $conf)
+ {
+     if(sprintf("%04o",(stat($conf))[2]) !~ /(7|6|3|2)$/)
+     {
+@@ -652,8 +647,12 @@
+ if($CMD_DEBUG == 1)
+ {
+     $DEBUG = 1;
+-    $conf_str =~ s/\#.*?(\n)/$1/gs;
+-    $conf_str =~ s/\n+/\n/g;
++    if (defined $conf_str) {
++       $conf_str =~ s/\#.*?(\n)/$1/gs;
++       $conf_str =~ s/\n+/\n/g;
++    }
++    else { $conf_str = "" }
++
+     print "config: $conf\n".$conf_str."\n"; 
+     $SPATH   .= ".debug";
+     
+@@ -673,7 +672,7 @@
+     print "debug: USER:  $USER\n";
+     print "debug: GROUP: $GROUP\n";
+     print "debug: issuing user:  ".getpwuid($<)."\n";
+-    print "debug: issuing group: ".getpwuid($()."\n";
++    print "debug: issuing group: ".getgrgid($()."\n";
+ }
+ 
+ $conf_str = "";
+@@ -893,12 +892,12 @@
+ 
+ 
+ # watch the version string, I'm afraid that they change to x.x.x notation
+-if(Net::DNS->version() >= 0.50)
++if(Net::DNS->version() >= 0.50 && Net::DNS->version() <= 0.53)
+ {
+     $res->force_v4(1);  # force ipv4 usage, autodetection is broken till
+                         # Net::DNS 0.53
+ }
+-else
++if(Net::DNS->version() < 0.50)
+ {
+     $res->igntc(1);    # ignore truncated packets if Net-DNS version is
+                        # lower than 0.50
+@@ -2282,7 +2281,7 @@
+ 
+ 
+ ## HELO numeric check #########################################################
+-    my $glob_numeric_score;
++    my $glob_numeric_score = 0;
+     # check /1.2.3.4/ and /[1.2.3.4]/
+     if($helo =~ /^[\d|\[][\d\.]+[\d|\]]$/)
+     {
+@@ -2844,7 +2843,7 @@
+     my $sender = shift(@_) || '';
+     my $domain = shift(@_) || '';
+ 
+-    $! = '';
++    $! = undef;
+     $@ = ();
+     if( (!($csock)) || ($csock && (!($csock->connected))) )
+     {
+@@ -2972,7 +2971,7 @@
+         die $!;
+     }
+ 
+-    if(!( $( = getpwnam($USER) ))
++    if(!( $( = getgrnam($GROUP) ))
+     {
+         mylog(warning=>"cache: couldn't change GID to user $GROUP: $!");
+     }
+@@ -3842,7 +3841,7 @@
+     my $helo = shift;
+     my $ip   = shift;
+ 
+-    if($$helo !~ /^\[(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\]$/ ) { return }
++    if($$helo !~ /^\[(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\]$/ ) { return 0 }
+     my $tmp_helo_ip = $1;
+ 
+     my $tmpip = inet_aton( $tmp_helo_ip );
