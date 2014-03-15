@@ -4,23 +4,24 @@
 PORTNAME=	libksba
 PORTVERSION=	1.3.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNUPG}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNUPG/${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	KSBA is an X.509 Library
 
-BUILD_DEPENDS+=	libgpg-error>=1.10:${PORTSDIR}/security/libgpg-error
-LIB_DEPENDS+=	gpg-error:${PORTSDIR}/security/libgpg-error
+LICENSE=	GPLv2 GPLv3 LGPL3
+LICENSE_COMB=	dual
 
-USE_BZIP2=	yes
+BUILD_DEPENDS=	libgpg-error>=1.10:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error
+
+CONFIGURE_ARGS=	--enable-static
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-static
 USE_LDCONFIG=	yes
-USES=		perl5
 USE_PERL5=	build
+USES=		perl5 tar:bzip2
 
 INFO=		ksba
 

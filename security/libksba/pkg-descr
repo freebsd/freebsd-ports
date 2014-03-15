@@ -4,5 +4,4 @@ KSBA is a library to make X.509 certificates as
 well as the CMS easily accessible by other applications.  Both
 specifications are building blocks of S/MIME and TLS.
 
-Author: g10 Code GmbH
-WWW:	http://www.gnupg.org/aegypten2
+WWW: http://www.gnupg.org/aegypten2/
