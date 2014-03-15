@@ -17,4 +17,7 @@ USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
+post-extract:
+	${RM} -r ${WRKSRC}/tests
+
 .include <bsd.port.mk>
