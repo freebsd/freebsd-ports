@@ -1,0 +1,5 @@
+Windows Directory Monitor (WDM) is a library which can be used to monitor
+directories for changes. It's mostly implemented in C and uses the Win32 API
+for a better performance.
+
+WWW: https://github.com/Maher4Ever/wdm

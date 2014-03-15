@@ -4399,6 +4399,7 @@
     SUBDIR += rubygem-virtus
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
+    SUBDIR += rubygem-wdm
     SUBDIR += rubygem-webby
     SUBDIR += rubygem-xpath
     SUBDIR += rubygem-yajl-ruby
