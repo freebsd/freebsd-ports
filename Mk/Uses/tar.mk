@@ -2,11 +2,11 @@
 #
 # handle tar archives
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	tar
 # Usage:	USES=tar[:[xz|lzma|Z|bzip2|tgz]]
 #
+# MAINTAINER: portmgr@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_TAR_Mk)
 _INCLUDE_USES_TAR_MK=	yes
 

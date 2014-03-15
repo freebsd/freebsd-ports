@@ -6,11 +6,11 @@
 # Please send all suggested changes to the maintainer instead of committing
 # them yourself.
 #
-# MAINTAINER: zenoss@experts-exchange.com
-#
 # Feature:      zenoss
 # Usage:        USES=zenoss
 # Valid ARGS:   does not require args
+#
+# MAINTAINER: zenoss@experts-exchange.com
 
 .if !defined(_INCLUDE_ZENOSS_MK)
 _INCLUDE_ZENOSS_MK=    yes

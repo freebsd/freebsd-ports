@@ -2,13 +2,13 @@
 #
 # handle dependency on the iconv port
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	iconv
 # Usage:	USES=iconv or USES=iconv:ARGS
 # Valid ARGS:	lib (default, implicit), build, patch,
 #		wchar_t (port uses "WCHAR_T" extension),
 #		translit (port uses "//TRANSLIT" extension)
+#
+# MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_ICONV_MK)
 _INCLUDE_USES_ICONV_MK=	yes

@@ -5,8 +5,6 @@
 #
 # Make files or directories 'unique', by adding a prefix or suffix.
 #
-# MAINTAINER:	portmgr@FreeBSD.org
-#
 # Feature:		uniquefiles
 # Usage:		USES=uniquefiles or USES=uniquefiles:ARGS
 # Valid ARGS:	dirs
@@ -64,6 +62,7 @@
 # NOTE:	multiple logical instances are not supported by pkg and the original
 # pkg_tools at the moment.
 #
+# MAINTAINER:	portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_UNIQUEFILES_MK)
 _INCLUDE_USES_UNIQUEFILES_MK=	yes

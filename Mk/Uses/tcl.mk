@@ -4,9 +4,6 @@
 #
 # Provide support to use Tcl/Tk
 #
-# MAINTAINER: tcltk@FreeBSD.org
-#
-#
 # Variables set by this file:
 #
 # TCL_VER		- Major.Minor version of Tcl
@@ -56,6 +53,7 @@
 #
 # Build-time / Run-time only dependencies can be specified with build or run.
 #
+# MAINTAINER: tcltk@FreeBSD.org
 
 .if ${USES:Mtk} || ${USES:Mtk\:*}
 .if !defined(_TCLTK_PORT)

@@ -2,13 +2,12 @@
 #
 # handle dependency on the fuse port
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	fuse
 # Usage:	USES=fuse
 # Valid ARGS:	does not require args
 #
-#
+# MAINTAINER: portmgr@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_FUSE_MK)
 _INCLUDE_USES_FUSE_MK=	yes
 

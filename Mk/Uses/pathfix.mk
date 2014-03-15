@@ -3,13 +3,12 @@
 # Lookup in Makefile.in and configure for common incorrect paths and set them
 # to respect FreeBSD hier
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	pathfix
 # Usage:	USES=pathfix
 # Valid ARGS:	does not require args
 #
-#
+# MAINTAINER: portmgr@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_PATHFIX_MK)
 _INCLUDE_USES_PATHFIX_MK=	yes
 

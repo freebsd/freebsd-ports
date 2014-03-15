@@ -2,10 +2,10 @@
 #
 # Bring libtool scripts up to date.
 #
-# MAINTAINER:	autotools@FreeBSD.org
-#
 # Feature:	libtool
 # Usage:	USES=libtool
+#
+# MAINTAINER:	autotools@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_LIBTOOL_MK)
 _INCLUDE_USES_LIBTOOL_MK=	yes

@@ -3,14 +3,13 @@
 #
 # Provide support for Pure Programming Language based projects
 #
-# MAINTAINER= nemysis@FreeBSD.org
-#
 # Feature:		pure
 # Usage:		USES=pure or USES=pure:ARGS
 # Valid ARGS:		ffi
 # ARGS description:
 # ffi			makes the port depends on pure-ffi at runtime
 #
+# MAINTAINER= nemysis@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_PURE_MK)
 _INCLUDE_USES_PURE_MK=	yes
