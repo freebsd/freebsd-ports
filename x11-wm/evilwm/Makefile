@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.6809.org.uk/evilwm/
 MAINTAINER=	lasg@lasg.dk
 COMMENT=	Minimalist window manager based on 9wm
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	x11 xpm xext xrandr xrender
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 

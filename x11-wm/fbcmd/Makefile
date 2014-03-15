@@ -12,8 +12,7 @@ COMMENT=	A commandline utility for controlling fluxbox
 
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 ALL_TARGET=	first
 CFLAGS+=	"-I${LOCALBASE}/include"
 
