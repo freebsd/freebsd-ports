@@ -7,10 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://apollo.backplane.com/FreeSrc/ \
 		http://utenti.gufi.org/~gmarco/files/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gmarco@gufi.org
-COMMENT=	A comprehensive filesystem mirroring and backup program
+COMMENT=	Comprehensive filesystem mirroring and backup program
+
+USES=		tar:tgz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -22,10 +23,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cpdup ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cpdup.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
