@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME?=	proftpd
-PORTVERSION?=	1.3.4d
+.if !defined(DISTVERSION)
+PORTVERSION?=	${PROFTPD_VERSION}
+.endif
 PORTREVISION?=	3
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
@@ -10,7 +12,7 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
 		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/
 .if defined(_BUILDING_PROFTPD_MODULE)
-DISTNAME=	proftpd-${PORTVERSION}
+DISTNAME=	proftpd-${PROFTPD_VERSION}
 .endif
 
 MAINTAINER?=	mm@FreeBSD.org
@@ -24,10 +26,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 .endif
 
+PROFTPD_VERSION=	1.3.4d
+
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY+=	${DISTNAME}${EXTRACT_SUFX}
-WRKSRC=		${WRKDIR}/proftpd-${PORTVERSION}
+WRKSRC=		${WRKDIR}/proftpd-${PROFTPD_VERSION}
 . if defined(_PROFTPD_MODULE_EXTRACT_ONLY)
 EXTRACT_ONLY+=	${_PROFTPD_MODULE_EXTRACT_ONLY}
 . endif
