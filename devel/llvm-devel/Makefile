@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	3.4.r${SVN_REV}
+DISTVERSION=	3.5.r${SVN_REV}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -30,6 +30,7 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 CONFIGURE_ARGS+=	--enable-shared
 MAKE_ARGS+=		REQUIRES_RTTI=1
 LIBNAME=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}svn.so
+LIBNAME_REAL=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}.0svn.so
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 CONFIGURE_ARGS+=	--enable-optimized
@@ -64,6 +65,7 @@ COMMANDS=	bugpoint \
 		llvm-mcmarkup \
 		llvm-nm \
 		llvm-objdump \
+		llvm-profdata \
 		llvm-ranlib \
 		llvm-readobj \
 		llvm-rtdyld \
@@ -77,7 +79,7 @@ FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
 STRIP_LIBS=	BugpointPasses.so \
 		LLVMHello.so \
-		${LIBNAME}.0 \
+		${LIBNAME_REAL}.0 \
 		libLTO.so
 
 .include <bsd.port.options.mk>
@@ -124,7 +126,8 @@ PLIST_FILES+=		llvm${LLVM_SUFFIX}/lib/LLVMgold.so
 MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-link.1 llvm-nm.1 \
-		llvm-prof.1 llvm-stress.1 opt.1 tblgen.1
+		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
+		opt.1 tblgen.1
 PLIST_FILES+=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 .endif
 
@@ -190,9 +193,11 @@ post-build:
 .endif
 
 post-install:
-	${MV} ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME} \
-	    ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}.0
-	${LN} -sf ${LIBNAME}.0 ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}
+	ln -sf ${LIBNAME_REAL} ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME_REAL} \
+	    ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME_REAL}.0
+	${LN} -sf ${LIBNAME_REAL}.0 \
+	    ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME_REAL}
 	${STRIP_CMD} ${STRIP_LIBS:S|^|${STAGEDIR}${LLVM_PREFIX}/lib/|}
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
 	    ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
@@ -206,6 +211,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/cmake/modules/*.cmake \
 	    ${WRKDIR}/cmake/share/llvm/cmake/*.cmake \
 	    ${STAGEDIR}${DATADIR}/cmake/
+	${REINPLACE_CMD} -e 's|${STAGEDIR}||' \
+	    ${STAGEDIR}${DATADIR}/cmake/LLVMConfig.cmake
+	${RM} -f ${STAGEDIR}${DATADIR}/cmake/LLVMConfig.cmake.bak
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/html

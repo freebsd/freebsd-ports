@@ -20,7 +20,9 @@ llvm-devel/bin/clang-format
 llvm-devel/bin/clang-tblgen
 llvm-devel/bin/scan-build
 llvm-devel/bin/scan-view
+llvm-devel/include/clang-c/BuildSystem.h
 llvm-devel/include/clang-c/CXCompilationDatabase.h
+llvm-devel/include/clang-c/CXErrorCode.h
 llvm-devel/include/clang-c/CXString.h
 llvm-devel/include/clang-c/Index.h
 llvm-devel/include/clang-c/Platform.h
@@ -43,6 +45,7 @@ llvm-devel/include/clang/AST/Attr.h
 llvm-devel/include/clang/AST/AttrDump.inc
 llvm-devel/include/clang/AST/AttrImpl.inc
 llvm-devel/include/clang/AST/AttrIterator.h
+llvm-devel/include/clang/AST/AttrVisitor.inc
 llvm-devel/include/clang/AST/Attrs.inc
 llvm-devel/include/clang/AST/BaseSubobject.h
 llvm-devel/include/clang/AST/BuiltinTypes.def
@@ -63,6 +66,7 @@ llvm-devel/include/clang/AST/CommentNodes.inc
 llvm-devel/include/clang/AST/CommentParser.h
 llvm-devel/include/clang/AST/CommentSema.h
 llvm-devel/include/clang/AST/CommentVisitor.h
+llvm-devel/include/clang/AST/DataRecursiveASTVisitor.h
 llvm-devel/include/clang/AST/Decl.h
 llvm-devel/include/clang/AST/DeclAccessPair.h
 llvm-devel/include/clang/AST/DeclBase.h
@@ -88,6 +92,7 @@ llvm-devel/include/clang/AST/Mangle.h
 llvm-devel/include/clang/AST/MangleNumberingContext.h
 llvm-devel/include/clang/AST/NSAPI.h
 llvm-devel/include/clang/AST/NestedNameSpecifier.h
+llvm-devel/include/clang/AST/OpenMPClause.h
 llvm-devel/include/clang/AST/OperationKinds.h
 llvm-devel/include/clang/AST/ParentMap.h
 llvm-devel/include/clang/AST/PrettyPrinter.h
@@ -195,7 +200,6 @@ llvm-devel/include/clang/Basic/MacroBuilder.h
 llvm-devel/include/clang/Basic/Module.h
 llvm-devel/include/clang/Basic/ObjCRuntime.h
 llvm-devel/include/clang/Basic/OnDiskHashTable.h
-llvm-devel/include/clang/Basic/OpenCL.h
 llvm-devel/include/clang/Basic/OpenCLExtensions.def
 llvm-devel/include/clang/Basic/OpenMPKinds.def
 llvm-devel/include/clang/Basic/OpenMPKinds.h
@@ -203,6 +207,7 @@ llvm-devel/include/clang/Basic/OperatorKinds.def
 llvm-devel/include/clang/Basic/OperatorKinds.h
 llvm-devel/include/clang/Basic/OperatorPrecedence.h
 llvm-devel/include/clang/Basic/PartialDiagnostic.h
+llvm-devel/include/clang/Basic/PlistSupport.h
 llvm-devel/include/clang/Basic/PrettyStackTrace.h
 llvm-devel/include/clang/Basic/Sanitizers.def
 llvm-devel/include/clang/Basic/SourceLocation.h
@@ -220,6 +225,7 @@ llvm-devel/include/clang/Basic/TypeTraits.h
 llvm-devel/include/clang/Basic/Version.h
 llvm-devel/include/clang/Basic/Version.inc
 llvm-devel/include/clang/Basic/VersionTuple.h
+llvm-devel/include/clang/Basic/VirtualFileSystem.h
 llvm-devel/include/clang/Basic/Visibility.h
 llvm-devel/include/clang/Basic/arm_neon.inc
 llvm-devel/include/clang/CodeGen/BackendUtil.h
@@ -231,11 +237,11 @@ llvm-devel/include/clang/Config/config.h
 llvm-devel/include/clang/Driver/Action.h
 llvm-devel/include/clang/Driver/CC1AsOptions.h
 llvm-devel/include/clang/Driver/CC1AsOptions.inc
-llvm-devel/include/clang/Driver/CC1Options.h
 llvm-devel/include/clang/Driver/Compilation.h
 llvm-devel/include/clang/Driver/Driver.h
 llvm-devel/include/clang/Driver/DriverDiagnostic.h
 llvm-devel/include/clang/Driver/Job.h
+llvm-devel/include/clang/Driver/Multilib.h
 llvm-devel/include/clang/Driver/Options.h
 llvm-devel/include/clang/Driver/Options.inc
 llvm-devel/include/clang/Driver/Phases.h
@@ -281,6 +287,7 @@ llvm-devel/include/clang/Frontend/TextDiagnosticPrinter.h
 llvm-devel/include/clang/Frontend/Utils.h
 llvm-devel/include/clang/Frontend/VerifyDiagnosticConsumer.h
 llvm-devel/include/clang/FrontendTool/Utils.h
+llvm-devel/include/clang/Index/CommentToXML.h
 llvm-devel/include/clang/Index/USRGeneration.h
 llvm-devel/include/clang/Lex/AttrSpellings.inc
 llvm-devel/include/clang/Lex/CodeCompletionHandler.h
@@ -310,8 +317,7 @@ llvm-devel/include/clang/Lex/ScratchBuffer.h
 llvm-devel/include/clang/Lex/Token.h
 llvm-devel/include/clang/Lex/TokenConcatenation.h
 llvm-devel/include/clang/Lex/TokenLexer.h
-llvm-devel/include/clang/Parse/AttrIdentifierArg.inc
-llvm-devel/include/clang/Parse/AttrLateParsed.inc
+llvm-devel/include/clang/Parse/AttrParserStringSwitches.inc
 llvm-devel/include/clang/Parse/ParseAST.h
 llvm-devel/include/clang/Parse/ParseDiagnostic.h
 llvm-devel/include/clang/Parse/Parser.h
@@ -355,6 +361,7 @@ llvm-devel/include/clang/Sema/SemaConsumer.h
 llvm-devel/include/clang/Sema/SemaDiagnostic.h
 llvm-devel/include/clang/Sema/SemaFixItUtils.h
 llvm-devel/include/clang/Sema/SemaInternal.h
+llvm-devel/include/clang/Sema/SemaLambda.h
 llvm-devel/include/clang/Sema/Template.h
 llvm-devel/include/clang/Sema/TemplateDeduction.h
 llvm-devel/include/clang/Sema/TypoCorrection.h
@@ -413,6 +420,7 @@ llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/SymbolManager.h
 llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/TaintManager.h
 llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/TaintTag.h
 llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/WorkList.h
+llvm-devel/include/clang/StaticAnalyzer/Frontend/AnalysisConsumer.h
 llvm-devel/include/clang/StaticAnalyzer/Frontend/CheckerRegistration.h
 llvm-devel/include/clang/StaticAnalyzer/Frontend/FrontendActions.h
 llvm-devel/include/clang/Tooling/ArgumentsAdjusters.h
@@ -425,40 +433,41 @@ llvm-devel/include/clang/Tooling/Refactoring.h
 llvm-devel/include/clang/Tooling/RefactoringCallbacks.h
 llvm-devel/include/clang/Tooling/ReplacementsYaml.h
 llvm-devel/include/clang/Tooling/Tooling.h
-llvm-devel/lib/clang/3.4/include/__wmmintrin_aes.h
-llvm-devel/lib/clang/3.4/include/__wmmintrin_pclmul.h
-llvm-devel/lib/clang/3.4/include/altivec.h
-llvm-devel/lib/clang/3.4/include/ammintrin.h
-llvm-devel/lib/clang/3.4/include/arm_neon.h
-llvm-devel/lib/clang/3.4/include/avx2intrin.h
-llvm-devel/lib/clang/3.4/include/avxintrin.h
-llvm-devel/lib/clang/3.4/include/bmi2intrin.h
-llvm-devel/lib/clang/3.4/include/bmiintrin.h
-llvm-devel/lib/clang/3.4/include/cpuid.h
-llvm-devel/lib/clang/3.4/include/emmintrin.h
-llvm-devel/lib/clang/3.4/include/f16cintrin.h
-llvm-devel/lib/clang/3.4/include/fma4intrin.h
-llvm-devel/lib/clang/3.4/include/fmaintrin.h
-llvm-devel/lib/clang/3.4/include/immintrin.h
-llvm-devel/lib/clang/3.4/include/lzcntintrin.h
-llvm-devel/lib/clang/3.4/include/mm3dnow.h
-llvm-devel/lib/clang/3.4/include/mm_malloc.h
-llvm-devel/lib/clang/3.4/include/mmintrin.h
-llvm-devel/lib/clang/3.4/include/module.map
-llvm-devel/lib/clang/3.4/include/nmmintrin.h
-llvm-devel/lib/clang/3.4/include/pmmintrin.h
-llvm-devel/lib/clang/3.4/include/popcntintrin.h
-llvm-devel/lib/clang/3.4/include/prfchwintrin.h
-llvm-devel/lib/clang/3.4/include/rdseedintrin.h
-llvm-devel/lib/clang/3.4/include/rtmintrin.h
-llvm-devel/lib/clang/3.4/include/shaintrin.h
-llvm-devel/lib/clang/3.4/include/smmintrin.h
-llvm-devel/lib/clang/3.4/include/tbmintrin.h
-llvm-devel/lib/clang/3.4/include/tmmintrin.h
-llvm-devel/lib/clang/3.4/include/wmmintrin.h
-llvm-devel/lib/clang/3.4/include/x86intrin.h
-llvm-devel/lib/clang/3.4/include/xmmintrin.h
-llvm-devel/lib/clang/3.4/include/xopintrin.h
+llvm-devel/lib/clang/3.5.0/include/__wmmintrin_aes.h
+llvm-devel/lib/clang/3.5.0/include/__wmmintrin_pclmul.h
+llvm-devel/lib/clang/3.5.0/include/altivec.h
+llvm-devel/lib/clang/3.5.0/include/ammintrin.h
+llvm-devel/lib/clang/3.5.0/include/arm_neon.h
+llvm-devel/lib/clang/3.5.0/include/avx2intrin.h
+llvm-devel/lib/clang/3.5.0/include/avxintrin.h
+llvm-devel/lib/clang/3.5.0/include/bmi2intrin.h
+llvm-devel/lib/clang/3.5.0/include/bmiintrin.h
+llvm-devel/lib/clang/3.5.0/include/cpuid.h
+llvm-devel/lib/clang/3.5.0/include/emmintrin.h
+llvm-devel/lib/clang/3.5.0/include/f16cintrin.h
+llvm-devel/lib/clang/3.5.0/include/fma4intrin.h
+llvm-devel/lib/clang/3.5.0/include/fmaintrin.h
+llvm-devel/lib/clang/3.5.0/include/ia32intrin.h
+llvm-devel/lib/clang/3.5.0/include/immintrin.h
+llvm-devel/lib/clang/3.5.0/include/lzcntintrin.h
+llvm-devel/lib/clang/3.5.0/include/mm3dnow.h
+llvm-devel/lib/clang/3.5.0/include/mm_malloc.h
+llvm-devel/lib/clang/3.5.0/include/mmintrin.h
+llvm-devel/lib/clang/3.5.0/include/module.map
+llvm-devel/lib/clang/3.5.0/include/nmmintrin.h
+llvm-devel/lib/clang/3.5.0/include/pmmintrin.h
+llvm-devel/lib/clang/3.5.0/include/popcntintrin.h
+llvm-devel/lib/clang/3.5.0/include/prfchwintrin.h
+llvm-devel/lib/clang/3.5.0/include/rdseedintrin.h
+llvm-devel/lib/clang/3.5.0/include/rtmintrin.h
+llvm-devel/lib/clang/3.5.0/include/shaintrin.h
+llvm-devel/lib/clang/3.5.0/include/smmintrin.h
+llvm-devel/lib/clang/3.5.0/include/tbmintrin.h
+llvm-devel/lib/clang/3.5.0/include/tmmintrin.h
+llvm-devel/lib/clang/3.5.0/include/wmmintrin.h
+llvm-devel/lib/clang/3.5.0/include/x86intrin.h
+llvm-devel/lib/clang/3.5.0/include/xmmintrin.h
+llvm-devel/lib/clang/3.5.0/include/xopintrin.h
 llvm-devel/lib/libclang.a
 llvm-devel/lib/libclang.so
 llvm-devel/lib/libclangARCMigrate.a
@@ -488,8 +497,8 @@ man/man1/clang-devel.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/ps/clang.ps
-@dirrm llvm-devel/lib/clang/3.4/include
-@dirrm llvm-devel/lib/clang/3.4
+@dirrm llvm-devel/lib/clang/3.5.0/include
+@dirrm llvm-devel/lib/clang/3.5.0
 @dirrm llvm-devel/lib/clang
 @dirrm llvm-devel/include/clang/Tooling
 @dirrm llvm-devel/include/clang/StaticAnalyzer/Frontend
