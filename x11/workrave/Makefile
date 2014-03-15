@@ -23,8 +23,7 @@ DESKTOP_ENTRIES=	"Workrave" "RSI prevention tool" \
 					false
 
 USE_XORG=	x11 xmu recordproto xtst xext
-USES=		pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		pathfix pkgconfig  gmake
 USE_GNOME=	gnomeprefix intlhack gconf2 intltool
 USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
@@ -32,7 +31,6 @@ CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-gconf --disable-pulse
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 LIB_DEPENDS+=	gdome.8:${PORTSDIR}/textproc/gdome2
 
