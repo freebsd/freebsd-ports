@@ -731,7 +731,7 @@
     SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
     SUBDIR += py-glances
-    SUBDIR += py-halite 
+    SUBDIR += py-halite
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
     SUBDIR += py-plumbum

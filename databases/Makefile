@@ -624,7 +624,7 @@
     SUBDIR += php55-mssql
     SUBDIR += php55-mysql
     SUBDIR += php55-mysqli
-    SUBDIR += php55-odbc   
+    SUBDIR += php55-odbc
     SUBDIR += php55-pdo
     SUBDIR += php55-pdo_dblib
     SUBDIR += php55-pdo_firebird

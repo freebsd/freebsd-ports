@@ -861,10 +861,10 @@
     SUBDIR += php53-soap
     SUBDIR += php53-sockets
     SUBDIR += php53-xmlrpc
-    SUBDIR += php55-ldap 
+    SUBDIR += php55-ldap
     SUBDIR += php55-soap
     SUBDIR += php55-sockets
-    SUBDIR += php55-xmlrpc  
+    SUBDIR += php55-xmlrpc
     SUBDIR += phpldapadmin
     SUBDIR += pimdd
     SUBDIR += pipsecd

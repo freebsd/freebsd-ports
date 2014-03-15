@@ -1104,11 +1104,11 @@
     SUBDIR += php55-dom
     SUBDIR += php55-pspell
     SUBDIR += php55-simplexml
-    SUBDIR += php55-wddx 
+    SUBDIR += php55-wddx
     SUBDIR += php55-xml
     SUBDIR += php55-xmlreader
     SUBDIR += php55-xmlwriter
-    SUBDIR += php55-xsl 
+    SUBDIR += php55-xsl
     SUBDIR += plover
     SUBDIR += po4a
     SUBDIR += pocketreader
