@@ -986,6 +986,7 @@
     SUBDIR += vpnc-scripts
     SUBDIR += vstrip
     SUBDIR += vttest
+    SUBDIR += wait_on
     SUBDIR += watchdog
     SUBDIR += watchfolder
     SUBDIR += watchmen
