@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	miniupnpd
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.8.20140310
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
@@ -26,10 +25,7 @@ USE_RC_SUBR=	miniupnpd
 OPTIONS_DEFINE=	PF_ENABLE_FILTER_RULES
 PF_ENABLE_FILTER_RULES_DESC=	Enable pf generation of filter rules
 
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MPF_ENABLE_FILTER_RULES}
-EXTRA_PATCHES=	${PATCHDIR}/pf_enable_filter_rules.patch
-.endif
+PF_ENABLE_FILTER_RULES_EXTRA_PATCHES=	${PATCHDIR}/pf_enable_filter_rules.patch
 
 post-patch-script:
 	@${REINPLACE_CMD} 's|CFLAGS ?= -pipe -Os|CFLAGS ?= -pipe|' \
