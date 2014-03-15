@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	c-icap
-PORTVERSION=	0.2.5
+PORTVERSION=	0.3.3
 PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.2.x/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.3.x/
 DISTNAME=	c_icap-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
@@ -25,7 +25,9 @@ LARGE_FILES_DESC=	Enable large files support
 POSIXSEM_DESC=		Use POSIX Semaphores instead of SYSV IPC
 
 CICAP_USER=	c_icap
+CICAP_UID=	959
 CICAP_GROUP=	c_icap
+CICAP_GID=	959
 
 USERS=		${CICAP_USER}
 GROUPS=		${CICAP_GROUP}
@@ -38,9 +40,9 @@ MAN8=		c-icap-client.8 \
 		c-icap.8
 
 CONFIGURE_ARGS+=	--enable-static \
-			--sysconfdir="${PREFIX}/etc/c-icap"
+			--sysconfdir="${PREFIX}/etc/c-icap" \
+			--localstatedir=/var
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}
@@ -118,10 +120,9 @@ post-patch:
 .endif
 
 post-install:
-	@${CP} -np ${PREFIX}/etc/c-icap/c-icap.conf.default \
-		${PREFIX}/etc/c-icap/c-icap.conf || ${TRUE}
-	@${CP} -np ${PREFIX}/etc/c-icap/c-icap.magic.default \
-		${PREFIX}/etc/c-icap/c-icap.magic || ${TRUE}
-	@${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
+	@${CP} -np ${STAGEDIR}${PREFIX}/etc/c-icap/c-icap.conf.default \
+		${STAGEDIR}${PREFIX}/etc/c-icap/c-icap.conf || ${TRUE}
+	@${CP} -np ${STAGEDIR}${PREFIX}/etc/c-icap/c-icap.magic.default \
+		${STAGEDIR}${PREFIX}/etc/c-icap/c-icap.magic || ${TRUE}
 
 .include <bsd.port.post.mk>
