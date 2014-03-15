@@ -1,0 +1,3 @@
+The wait_on command allows shell scripts to access the facilities provided by
+kqueue(3). This allows scripts to detect files being added to directories, data
+appended to files and many other things - all without polling.
