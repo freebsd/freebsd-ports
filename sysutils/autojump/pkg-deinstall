@@ -5,11 +5,11 @@ POST-DEINSTALL)
 	rm -f /etc/profile.autojump
 	rm -f /etc/zshrc.autojump
 	# delete the source (.) line from the /etc/profile and /etc/zshrc
-	if [ -f /etc/profile ] ; then 
-            sed -i '' -e '/profile.autojump/d' /etc/profile
-        fi
-        if [ -f /etc/zshrc ] ; then
-	    sed -i '' -e '/zshrc.autojump/d' /etc/zshrc
-        fi
+	if [ -f /etc/profile ] ; then
+		sed -i '' -e '/profile.autojump/d' /etc/profile
+	fi
+	if [ -f /etc/zshrc ] ; then
+		sed -i '' -e '/zshrc.autojump/d' /etc/zshrc
+	fi
 	;;
 esac
