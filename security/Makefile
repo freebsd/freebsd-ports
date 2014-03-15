@@ -726,6 +726,7 @@
     SUBDIR += prelude-lml
     SUBDIR += prelude-manager
     SUBDIR += prelude-pflogger
+    SUBDIR += proftpd-mod_clamav
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pscan
