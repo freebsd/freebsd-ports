@@ -9,9 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/Open%20DC%20Hub/${PORTVERSION}
 MAINTAINER=	yashin.dm@gmail.com
 COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 
-USES=		perl5
+USES=		perl5 gmake
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README configfiles general scriptdoc
