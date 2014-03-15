@@ -1,33 +1,30 @@
 # Created by: Alfred Perlstein <alfred@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	insub
+PORTNAME=		insub
 PORTVERSION=	15.1
-CATEGORIES=	irc
+CATEGORIES=		irc
 MASTER_SITES=	http://cloud.github.com/downloads/cjones/insub/
 
-MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	Some scripts for expressing how you feel on IRC and the web
+MAINTAINER=		adamw@FreeBSD.org
+COMMENT=		Some scripts for expressing how you feel on IRC and the web
 
 RUN_DEPENDS=	cowsay:${PORTSDIR}/games/cowsay \
-		figlet:${PORTSDIR}/misc/figlet
+				figlet:${PORTSDIR}/misc/figlet
 
-USES=	perl5
+USES=		perl5 tar:bzip2
 USE_PERL5=	run
 
-USE_BZIP2=	yes
-
 NO_BUILD=	yes
-
-SCRIPT=	${PORTNAME}.pl
+SCRIPT=		${PORTNAME}.pl
+DATADIR=	${PREFIX}/share/cows
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPT} ${STAGEDIR}${PREFIX}/bin/${SCRIPT:R}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/irssi/scripts/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/irssi/scripts/
 	${INSTALL_DATA} ${WRKSRC}/${SCRIPT} \
 		${STAGEDIR}${PREFIX}/share/irssi/scripts/${SCRIPT}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/cows/
-	cd ${WRKSRC} && \
-		${FIND} cows | ${CPIO} -pdmu ${STAGEDIR}${PREFIX}/share/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/cows && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
