@@ -1,16 +1,16 @@
 # Created by: Anton Yudin <toha@toha.org.ua>
 # $FreeBSD$
 
-PORTNAME=	jakarta-struts
-PORTVERSION=	1.2.4
-PORTREVISION=	2
+PORTNAME=	struts
+PORTVERSION=	1.2.9
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=struts/binaries
-DIST_SUBDIR=	jakarta
+PKGNAMEPREFIX=	apache-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Struts framework
+COMMENT=	Apache Struts framework
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -21,9 +21,8 @@ JAVASHAREDIR=	share/java
 TDIR=		${JAVASHAREDIR}/${PKGNAME}
 PLIST_SUB+=	T=${TDIR}
 
-NO_STAGE=	yes
 do-install:
-	cd ${WRKSRC} && ${FIND} . -type d -exec ${INSTALL} -d ${PREFIX}/${TDIR}/'{}' \; && \
-	${FIND} . -type f -exec ${INSTALL_DATA} '{}' ${PREFIX}/${TDIR}/'{}' \;
+	cd ${WRKSRC} && ${FIND} . -type d -exec ${INSTALL} -d ${STAGEDIR}${PREFIX}/${TDIR}/'{}' \; && \
+	${FIND} . -type f -exec ${INSTALL_DATA} '{}' ${STAGEDIR}${PREFIX}/${TDIR}/'{}' \;
 
 .include <bsd.port.mk>
