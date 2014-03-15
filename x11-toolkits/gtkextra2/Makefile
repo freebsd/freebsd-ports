@@ -11,9 +11,8 @@ DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A useful widget set complementary to GTK+ 2.0
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gmake
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes

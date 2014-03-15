@@ -13,14 +13,11 @@ COMMENT=	C++ wrapper for GtkGLExt
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USE_BZIP2=	yes
-USES=		pathfix pkgconfig gettext
+USES=		pathfix pkgconfig gettext gmake tar:bzip2
 USE_GNOME=	gnomeprefix gtk20
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DGDK_DISABLE_DEPRECATED||g' \
 		-e 's|-DGDK_PIXBUF_DISABLE_DEPRECATED||g' \
