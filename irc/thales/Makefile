@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Thales -- An IRC to MySQL gateway
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_MYSQL=	yes
 USE_RC_SUBR=	thales
 

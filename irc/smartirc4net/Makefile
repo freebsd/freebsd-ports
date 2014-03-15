@@ -13,8 +13,6 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=	pathfix pkgconfig
+USES=	pathfix pkgconfig gmake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
