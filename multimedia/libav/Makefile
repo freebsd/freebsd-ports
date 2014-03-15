@@ -137,7 +137,7 @@ VORBIS_CONFIGURE_ENABLE=	libvorbis
 VPX_LIB_DEPENDS=		libvpx.so:${PORTSDIR}/multimedia/libvpx
 VPX_CONFIGURE_ENABLE=		libvpx
 
-X11GRAB_USE=			XORG=x11 xext xfixes
+X11GRAB_USE=			XORG=x11,xext,xfixes
 
 X264_LIB_DEPENDS=		libx264.so:${PORTSDIR}/multimedia/x264
 X264_CONFIGURE_ENABLE=		libx264
