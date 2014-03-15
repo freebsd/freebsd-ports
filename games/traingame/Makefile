@@ -25,10 +25,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
-CXXFLAGS+=	-std=c++11
-
 USES=		cmake compiler:c++11-lib pkgconfig
-USE_CXXSTD=	gnu++11
+USE_CXXSTD=	c++11
 USE_SDL=	sdl image
 USE_GL=		glew
 
