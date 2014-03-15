@@ -23,7 +23,6 @@ STYLES=		artwiz bluebox cthulhain deep flux frobozz frobust nyz \
 			nyzclone operation outcomes shade steelblue \
 			steelblue2 the_orange trisb twice
 PLIST=		${WRKDIR}/pkg-plist
-#USE_GMAKE=	yes
 USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bg-utils

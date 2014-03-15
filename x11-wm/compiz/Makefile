@@ -17,10 +17,7 @@ RUN_DEPENDS=	glxinfo:${PORTSDIR}/graphics/mesa-demos \
 
 XORG_CAT=	app
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-#USE_TGZ=	yes
-USE_GMAKE=	yes
-USES=		gettext pathfix
+USES=		gettext pathfix gmake tar:bzip2
 USE_GL=		glu
 USE_GNOME=	gconf2 libxslt
 USE_XORG=	xcomposite xfixes xdamage xrandr xrender ice sm xinerama glproto

@@ -13,7 +13,7 @@ MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	A lightweight window manager with emphasis on usability
 
 USE_XORG=	x11
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV=	X11_PREFIX="${LOCALBASE}" HAS_SYSTEM_ASPRINTF=1
 
 MAN1=		pwm.1x
