@@ -53,8 +53,7 @@ PLIST_SUB+=	WBARCONFIG="@comment "
 .endif
 
 USE_EFL=	imlib2
-USES+=		gettext
-USE_GMAKE=	yes
+USES+=		gettext gmake
 USE_GNOME+=	desktopfileutils intltool
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

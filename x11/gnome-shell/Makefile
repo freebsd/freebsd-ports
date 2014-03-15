@@ -21,10 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 
 BROKEN=		Doesn't build
 
-USE_BZIP2=	yes
 USE_XORG=	x11 xfixes sm
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake tar:bzip2
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 gnomemenus \
 		gnomedesktop ltverhack libgnomeui librsvg2
