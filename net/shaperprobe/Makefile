@@ -7,17 +7,23 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cc.gatech.edu/~partha/diffprobe/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	josh.carroll@gmail.com
 COMMENT=	Utility to check for traffic shapers
 
 LICENSE=	GPLv2
 
-USE_GCC=	yes
+USES=		tar:tgz
 
 MAKEFILE=	Makefile.osx
+ALL_TARGET=	prober
+
 PLIST_FILES=	bin/prober
+
+post-patch:
+# Unbreak the build against Clang
+	@${REINPLACE_CMD} -E '/getLevelShift|smoothFilterRate/s,^inline ,,' \
+		${WRKSRC}/tbdetect.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/prober ${STAGEDIR}${PREFIX}/bin
