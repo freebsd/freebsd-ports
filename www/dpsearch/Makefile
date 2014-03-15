@@ -12,8 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source search engine for Internet and Intranet sites
 
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/dataparksearch

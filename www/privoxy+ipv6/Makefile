@@ -21,8 +21,7 @@ USER=		nobody
 GROUP=		nobody
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/+ipv6//}
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_AUTOTOOLS=	autoheader213
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

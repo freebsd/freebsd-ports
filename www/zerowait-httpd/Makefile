@@ -12,7 +12,7 @@ DISTNAME=	0W-httpd-${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Lightweight and fast http server
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_OPENSSL=	yes
 USE_RC_SUBR=	0W-httpd
 ALL_TARGET=	#none

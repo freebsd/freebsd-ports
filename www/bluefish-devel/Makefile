@@ -21,8 +21,7 @@ INSTALLS_ICONS=	yes
 
 DATADIR=	share/${PORTNAME}-unstable
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_GNOME=	gnomeprefix gtk20 gnomevfs2 gnomemimedata desktopfileutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes

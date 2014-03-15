@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 
 USE_RC_SUBR=	${PORTNAME}d
 

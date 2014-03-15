@@ -24,11 +24,10 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		bash:${PORTSDIR}/shells/bash
 
 ONLY_FOR_ARCHS=	amd64 i386
-USE_XZ=		yes
 USE_OPENSSL=	yes
 USE_APACHE=	22
 USE_PYTHON=	2
-USE_GMAKE=	yes
+USES=		gmake tar:xz
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}/mod_spdy/src

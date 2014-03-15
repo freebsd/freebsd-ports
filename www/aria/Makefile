@@ -14,10 +14,9 @@ LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	NLS DOCS
 
-USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 NO_PACKAGE=	hangs on pointyhat

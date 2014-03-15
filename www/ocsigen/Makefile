@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	SQLITE CAMLZIP
 OPTIONS_DEFAULT=	CAMLZIP
 CAMLZIP_DESC=	Use camlzip for compression
 
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--name ${PORTNAME} \
 		--disable-nativecode \

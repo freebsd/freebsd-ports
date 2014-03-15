@@ -14,9 +14,8 @@ COMMENT=	The W3C Reference Library
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static --with-zlib --with-ssl=${OPENSSLBASE}
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
