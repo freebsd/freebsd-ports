@@ -372,6 +372,7 @@
     SUBDIR += imageindex
     SUBDIR += imagesort
     SUBDIR += imageviewer
+    SUBDIR += imageworsener
     SUBDIR += imc
     SUBDIR += imgtops
     SUBDIR += imgv
