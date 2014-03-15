@@ -3,6 +3,7 @@
 
 PORTNAME=	i3
 DISTVERSION=	4.7.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3wm.org/downloads/
 
@@ -20,14 +21,13 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango \
 		libpcre.so:${PORTSDIR}/devel/pcre \
-		libxcb-cursor.so.0:${PORTSDIR}/x11/xcb-util-cursor
+		libxcb-cursor.so:${PORTSDIR}/x11/xcb-util-cursor
 RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
 
 USE_XORG=	x11 xcb
-USES=		pkgconfig iconv gmake perl5
-USE_BZIP2=	yes
+USES=		pkgconfig iconv gmake perl5 tar:bzip2
 USE_PERL5=	run
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_JOBS_UNSAFE=	yes
@@ -54,6 +54,5 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/i3-input \
 		${STAGEDIR}${PREFIX}/bin/i3-nagbar \
 		${STAGEDIR}${PREFIX}/bin/i3-dump-log
-
 
 .include <bsd.port.mk>
