@@ -2,6 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mod_sql_tds
+DISTVERSION=	4.13
+PORTREVISION=	0
 CATEGORIES=	databases ftp
 PKGNAMEPREFIX=	proftpd-
 
