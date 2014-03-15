@@ -25,38 +25,15 @@ PLIST_FILES=	arduino/libraries/IRremote/IRremote.cpp \
 		arduino/libraries/IRremote/IRremoteInt.h \
 		arduino/libraries/IRremote/keywords.txt
 PLIST_DIRS=	arduino/libraries/IRremote
-
-NO_STAGE=	yes
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_FILES+=	${EXAMPLESDIR_REL}/IRrecord/IRrecord.pde \
-		${EXAMPLESDIR_REL}/IRrecvDemo/IRrecvDemo.pde \
-		${EXAMPLESDIR_REL}/IRrecvDump/IRrecvDump.pde \
-		${EXAMPLESDIR_REL}/IRrelay/IRrelay.pde \
-		${EXAMPLESDIR_REL}/IRsendDemo/IRsendDemo.pde \
-		${EXAMPLESDIR_REL}/IRtest/IRtest.pde
-PLIST_DIRS+=	${EXAMPLESDIR_REL}/IRrecord \
-		${EXAMPLESDIR_REL}/IRrecvDemo \
-		${EXAMPLESDIR_REL}/IRrecvDump \
-		${EXAMPLESDIR_REL}/IRrelay \
-		${EXAMPLESDIR_REL}/IRsendDemo \
-		${EXAMPLESDIR_REL}/IRtest \
-		${EXAMPLESDIR_REL}
-.endif
-
 do-install:
-	${MKDIR} ${PREFIX}/arduino/libraries/IRremote
-	${INSTALL_DATA} ${WRKSRC}/IRremote.cpp ${PREFIX}/arduino/libraries/IRremote
-	${INSTALL_DATA} ${WRKSRC}/IRremote.h ${PREFIX}/arduino/libraries/IRremote
-	${INSTALL_DATA} ${WRKSRC}/IRremoteInt.h ${PREFIX}/arduino/libraries/IRremote
-	${INSTALL_DATA} ${WRKSRC}/keywords.txt ${PREFIX}/arduino/libraries/IRremote
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/arduino/libraries/IRremote
+	(cd ${WRKSRC} && ${INSTALL_DATA} IRremote.cpp IRremote.h IRremoteInt.h \
+		keywords.txt ${STAGEDIR}${PREFIX}/arduino/libraries/IRremote)
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
