@@ -4,34 +4,28 @@
 PORTNAME=	afio
 PORTVERSION=	2.5
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/backup
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SUNSITE/system/backup
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Archiver & backup program w/ builtin compression
+COMMENT=	Archiver and backup program with builtin compression
+
+USES=		tar:tgz
 
 ALL_TARGET=	${PORTNAME}
+
+PLIST_FILES=	bin/afio man/man1/afio.1.gz
+PORTDOCS=	HISTORY README SCRIPTS
+PORTEXAMPLES=	*
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^CC=.*$$|CC=${CC}|' \
-		${WRKSRC}/Makefile
-
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${WRKSRC}/SCRIPTS ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${FILESDIR}/afiodump.example ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/script1/DONTDUMP ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/script2/* ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/script3/* ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/script4/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
+	${INSTALL_SCRIPT} ${FILESDIR}/afiodump.example \
+		${WRKSRC}/script2/* ${WRKSRC}/script3/* \
+		${WRKSRC}/script4/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
