@@ -5,6 +5,7 @@ lib/scim-1.0/1.4.0/IMEngine/table.so
 lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.a
 lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.la
 lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.so
+man/man1/scim-make-table.1.gz
 share/scim/icons/table.png
 share/locale/zh_CN/LC_MESSAGES/scim-tables.mo
 share/locale/zh_TW/LC_MESSAGES/scim-tables.mo
@@ -15,26 +16,3 @@ share/locale/fr/LC_MESSAGES/scim-tables.mo
 share/locale/it/LC_MESSAGES/scim-tables.mo
 share/locale/pa/LC_MESSAGES/scim-tables.mo
 share/locale/nl/LC_MESSAGES/scim-tables.mo
-%%SKIM%%@cwd %%LOCALBASE%%
-%%SKIM%%lib/kde3/kcm_skimplugin_scim_tables.a
-%%SKIM%%lib/kde3/kcm_skimplugin_scim_tables.la
-%%SKIM%%lib/kde3/kcm_skimplugin_scim_tables.so
-%%SKIM%%share/services/skimconfiguredialog/skimplugin_scim_table_config.desktop
-%%SKIM%%share/config.kcfg/generictable.kcfg
-%%SKIM%%share/locale/zh_CN/LC_MESSAGES/skim-scim-tables.mo
-%%SKIM%%share/locale/zh_TW/LC_MESSAGES/skim-scim-tables.mo
-%%SKIM%%share/locale/de/LC_MESSAGES/skim-scim-tables.mo
-%%SKIM%%share/locale/fr/LC_MESSAGES/skim-scim-tables.mo
-%%SKIM%%share/locale/ja/LC_MESSAGES/skim-scim-tables.mo
-%%SKIM%%share/locale/it/LC_MESSAGES/skim-scim-tables.mo
-%%SKIM%%share/locale/ko/LC_MESSAGES/skim-scim-tables.mo
-%%SKIM%%share/locale/pa/LC_MESSAGES/skim-scim-tables.mo
-%%SKIM%%share/locale/nl/LC_MESSAGES/skim-scim-tables.mo
-%%SKIM%%share/apps/skim/pics/scim-tables.png
-%%SKIM%%@dirrmtry share/apps/skim/pics
-%%SKIM%%@dirrmtry share/apps/skim
-%%SKIM%%@dirrmtry share/config.kcfg
-%%SKIM%%@dirrmtry share/services/skimconfiguredialog
-@dirrmtry lib/scim-1.0/1.4.0/SetupUI
-@dirrmtry lib/scim-1.0/1.4.0/IMEngine
-@dirrmtry lib/scim-1.0
