@@ -38,7 +38,7 @@ LUA_COMPS=	toluaxx
 USES=		openal:al,alut pathfix pkgconfig
 USE_BZIP2=	YES
 CPPFLAGS+=	-DBR_NO_MACROS -std=c++11
-USE_GCC=	4.7+
+USE_GCC=	yes
 
 NO_STAGE=	yes
 

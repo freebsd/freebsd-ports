@@ -20,7 +20,7 @@ CONFIGURE_ARGS= --disable-silent-rules
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		pathfix pkgconfig
-USE_GCC=	4.7+
+USE_GCC=	yes
 
 CXXFLAGS+=	-include wchar.h
 

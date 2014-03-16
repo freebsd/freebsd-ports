@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		qmake
 USE_QT4=	gui moc_build network rcc_build \
 		sql-sqlite3_run svg uic_build xml designer
-USE_GCC=	4.7+
+USE_GCC=	yes
 INSTALLS_ICONS=	yes
 
 CXXFLAGS+=	"-fno-ipa-sra"

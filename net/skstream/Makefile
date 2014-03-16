@@ -13,7 +13,7 @@ USE_GMAKE=	yes
 USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	4.7+
+USE_GCC=	yes
 
 OPTIONS_DEFINE=	DOCS
 
