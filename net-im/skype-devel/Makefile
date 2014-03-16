@@ -49,13 +49,9 @@ USE_LINUX_APPS+=dri
 .endif
 
 .if ${PORT_OPTIONS:MVIDEO}
-. include "${PORTSDIR}/multimedia/linux_v4l2wrapper-kmod/Makefile.sub"
 RUN_DEPENDS+=	webcamd>0:${PORTSDIR}/multimedia/webcamd
 USE_LINUX_APPS+=libv4l
 SUB_LIST+=	VIDEO="LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so "
-. if ${LINUX_V4L2_AVAILABLE} != "1"
-RUN_DEPENDS+=	linux_v4l2wrapper-kmod>=1.0:${PORTSDIR}/multimedia/linux_v4l2wrapper-kmod
-. endif
 .else
 SUB_LIST+=	VIDEO=""
 .endif
