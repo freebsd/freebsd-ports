@@ -3,7 +3,7 @@
 
 PORTNAME=		spamassassin
 PORTVERSION=	3.4.0
-PORTREVISION?=	4		# also bump japanese/spamassassin
+PORTREVISION?=	5		# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -15,12 +15,11 @@ COMMENT?=		Highly efficient mail filter for identifying spam
 
 LICENSE=		APACHE20
 
-ALL_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-				p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
+ALL_DEPENDS=	p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
 				p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
-				p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-				p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
-				p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
+				p5-IO-Socket-IP>=0:${PORTSDIR}/net/p5-IO-Socket-IP \
+				p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
+				p5-NetAddr-IP>=4.010:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
 BUILD_DEPENDS=	${ALL_DEPENDS}
 RUN_DEPENDS=	${ALL_DEPENDS} \
 				re2c>=.12.0:${PORTSDIR}/devel/re2c
@@ -40,30 +39,29 @@ SPAMASSASSIN_CONTACT_ADDRESS?=	The administrator of that system
 USERS?=		spamd
 GROUPS?=	spamd
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
-				CONTACT_ADDRESS="${CONTACT_ADDRESS}" \
+				CONTACT_ADDRESS="${SPAMASSASSIN_CONTACT_ADDRESS}" \
 				LOCALSTATEDIR="${DBDIR}/spamassassin" \
 				BUILD_SPAMC=yes
 
-OPTIONS_DEFINE=	AS_ROOT GNUPG IPV6 SSL UPDATE_AND_COMPILE
+OPTIONS_DEFINE=	AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
 OPTIONS_GROUP=	DATABASE PLUGINS
 OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
 OPTIONS_GROUP_PLUGINS=	DCC DKIM PYZOR RAZOR RELAY_COUNTRY SPF_QUERY
-OPTIONS_DEFAULT=AS_ROOT DKIM GNUPG RAZOR SSL UPDATE_AND_COMPILE
+OPTIONS_DEFAULT=AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
 
 AS_ROOT_DESC=		Run spamd as root (recommended)
 GNUPG_DESC=			Install GnuPG (for sa-update, optional)
-IPV6_DESC=			IPv6 sockets support
 SSL_DESC=			Build spamd/spamc with SSL support
 UPDATE_AND_COMPILE_DESC=	Download and compile rulesets (recommended)
 
-DATABASE_DESC=		Optional user-config database backends
+DATABASE_DESC=		Optional user-config/bayes database backends
 
 PLUGINS_DESC=		Optional SpamAssassin plugins
 DCC_DESC=			Add DCC support (mail/dcc-dccd)
 DKIM_DESC=			DKIM/DomainKeys Identified Mail (mail/p5-Mail-DKIM)
 PYZOR_DESC=			Add Pyzor support (mail/pyzor)
 RAZOR_DESC=			Add Vipul's Razor support (mail/razor-agents)
-RELAY_COUNTRY_DESC=	Relay country support (net/p5-IP-Country)
+RELAY_COUNTRY_DESC=	Relay country support (net/p5-Geo-IP)
 SPF_QUERY_DESC=		Add SPF query support (mail/p5-Mail-SPF)
 
 SUB_FILES=	pkg-message
@@ -75,12 +73,11 @@ DKIM_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 					p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM \
 					p5-Crypt-OpenSSL-RSA>=0.26_1:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
 GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:${PORTSDIR}/security/gnupg1
-IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 PYZOR_RUN_DEPENDS=	pyzor:${PORTSDIR}/mail/pyzor
 RAZOR_RUN_DEPENDS=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
-RELAY_COUNTRY_RUN_DEPENDS=	p5-IP-Country>=0:${PORTSDIR}/net/p5-IP-Country
+RELAY_COUNTRY_RUN_DEPENDS=	p5-Geo-IP>=0:${PORTSDIR}/net/p5-Geo-IP
 SPF_QUERY_RUN_DEPENDS=	p5-Mail-SPF>=0:${PORTSDIR}/mail/p5-Mail-SPF
 
 SSL_USE=			OPENSSL=yes
