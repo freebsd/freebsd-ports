@@ -22,8 +22,7 @@ DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
 
 LATEST_LINK=	mod_log_sql2-dtc
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_APACHE=	22
 USE_MYSQL=	yes
 
