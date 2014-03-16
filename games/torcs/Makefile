@@ -18,14 +18,13 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		gmake openal:al,alut shebangfix
+USES=		gmake openal:al,alut shebangfix tar:bzip2
 SHEBANG_FILES=	src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in \
 		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in \
 		src/tools/trackgen/trackgen.in \
 		src/modules/telemetry/telemetry.sh robotgen
 USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr
 USE_GL=		glut
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/lib
