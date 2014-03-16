@@ -7,7 +7,7 @@
 #
 # To request the use of a current version of GCC, specify USE_GCC=yes in
 # your port/system configuration.  This is the preferred use of USE_GCC.
-# It defines a canonical, default version of GCC.
+# It uses the canonical version of GCC defined in bsd.default-versions.mk.
 #
 # USE_GCC=any is similar, except that it also accepts the old GCC 4.2-
 # based system compiler in older versions of FreeBSD.
@@ -19,7 +19,7 @@
 #
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
-#							# (4.7 as of today, subject to change).
+#							# as defined in bsd.default-versions.mk.
 #   USE_GCC=	any			# port requires GCC 4.2 or later.
 #   USE_GCC=	4.8+		# port requires GCC 4.8 or later.
 #   USE_GCC=	4.8			# port requires GCC 4.8.
@@ -28,7 +28,6 @@
 # to see some debugging.
 #
 # $FreeBSD$
-#
 
 GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
