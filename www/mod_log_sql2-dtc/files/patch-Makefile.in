@@ -1,5 +1,5 @@
 --- ./Makefile.in.orig	2006-11-05 04:47:23.000000000 +0100
-+++ ./Makefile.in	2014-03-09 15:26:45.000000000 +0100
++++ ./Makefile.in	2014-03-16 15:16:25.000000000 +0100
 @@ -12,6 +12,7 @@
  		winconfig.h
  
@@ -8,9 +8,12 @@
  
  ifeq (@OOO_MAINTAIN@,1)
  CFLAGS += -Wc,-Werror
-@@ -153,19 +154,19 @@
+@@ -151,21 +152,21 @@
+ 		@DEFS@ @AP_DEFS@ $(dbiLDADD) $(dbiSOURCES)
+ 
  install: $(TARGETS) install-subdirs
- 	@@APXS_BIN@ -n $(coreNAME) -i $(coreTARGET); \
+-	@@APXS_BIN@ -n $(coreNAME) -i $(coreTARGET); \
++	@@APXS_BIN@ @APXS_STAGE@ -n $(coreNAME) -i $(coreTARGET); \
  	if test @WANT_MYSQL_MOD@ -eq 1; then \
 -	    @APXS_BIN@ -n $(mysqlNAME) -i $(mysqlTARGET); \
 +	    @APXS_BIN@ @APXS_STAGE@ -n $(mysqlNAME) -i $(mysqlTARGET); \
