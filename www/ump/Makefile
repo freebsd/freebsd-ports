@@ -29,8 +29,7 @@ ZDIST=		unix-sdk-3.0b5.tar.Z:plugin ump_with_volume.tar.Z:ump timdiffs.tar.Z:ump
 
 TIMIDITY_VERSION=	2.13.2
 
-USES=		gmake webplugin:native
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake webplugin:native
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ump --with-default-path=${LOCALBASE}/share/timidity
 LDFLAGS+=	-export-dynamic

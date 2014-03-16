@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
 
 USE_SCONS=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 

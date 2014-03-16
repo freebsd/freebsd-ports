@@ -26,9 +26,8 @@ RUN_DEPENDS=	\
 	p5-XML-Handler-YAWriter>=0:${PORTSDIR}/textproc/p5-XML-Handler-YAWriter \
 	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml
 
-USES=		perl5
+USES=		tar:bzip2 perl5
 USE_PERL5=	run
-USE_BZIP2=	yes
 NO_BUILD=	yes
 NO_STAGE=	yes
 
