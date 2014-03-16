@@ -9,62 +9,52 @@ MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
 
-.if !defined(WITHOUT_NCFTP_IPV6) && !defined(WITHOUT_IPV6)
-#PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-#PATCHFILES=	ncftp-323-v6-20091109.diff.gz
-#PATCH_DIST_STRIP=	-p1
-.endif
-
 MAINTAINER=	obrien@FreeBSD.org
-COMMENT=	ftp replacement with advanced user interface
+COMMENT=	FTP client with advanced user interface
 
-USE_BZIP2=	yes
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USES=	tar:bzip2
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ncurses
-CONFIGURE_ENV=	TAR=/usr/bin/tar
-PLIST_SUB=	NCFTP=${LATEST_LINK}
-MAN1=		${LATEST_LINK}.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 \
-		ncftpspooler.1
-MAN3=		Strn.3
+
+OPTIONS_DEFINE=	LIBS DOCS
+OPTIONS_DEFAULT=LIBS
+LIBS_DESC=		Install optional libraries
+OPTIONS_SUB=	yes
+
+PORTDOCS=	*
 
 LIBNCFTP=	libncftp.so.3
 LIBSIO=		libsio.so.5
 LIBSTRN=	libStrn.so.1
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "Use INSTALL_AS_NCFTP3=yes to install ncftp v3 as ${PREFIX}/bin/ncftp3"
-	@${ECHO} ""
+.include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MLIBS}
 pre-build:
-	cd ${WRKSRC}/Strn ; make so
-	cd ${WRKSRC}/libncftp ; make so
-	cd ${WRKSRC}/sio; make so
+.for dir in Strn libncftp sio
+	${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -C ${WRKSRC}/${dir} so
+.endfor
+.endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/ncftp ${PREFIX}/bin/${LATEST_LINK}
-	@cd ${WRKSRC}/bin ; ${INSTALL_PROGRAM} \
-		ncftpbatch ncftpbookmarks ncftpget ncftpls ncftpput \
-		${PREFIX}/bin
-	@cd ${PREFIX}/bin && ${LN} -f ncftpbatch ncftpspooler
-	@cd ${WRKSRC} && ${INSTALL_DATA} \
-		Strn/${LIBSTRN} libncftp/${LIBNCFTP} sio/${LIBSIO} \
-		${PREFIX}/lib
-	@cd ${PREFIX}/lib \
-		&& ${LN} -sf ${LIBSTRN} libStrn.so \
-		&& ${LN} -sf ${LIBNCFTP} libncftp.so \
-		&& ${LN} -sf ${LIBSIO} libsio.so
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/ncftp.1 \
-		${PREFIX}/man/man1/${LATEST_LINK}.1
-	@cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} \
-		ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 ncftpspooler.1 \
-		${PREFIX}/man/man1
-	@${INSTALL_MAN} ${WRKSRC}/Strn/Strn.3 ${PREFIX}/man/man3
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf ncftpbatch ${STAGEDIR}${PREFIX}/bin/ncftpspooler
+	${INSTALL_MAN} ${WRKSRC}/doc/man/* ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Strn/Strn.3 ${STAGEDIR}${MANPREFIX}/man/man3
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	-${RM} -r ${STAGEDIR}${DOCSDIR}/man
 
-.include <bsd.port.post.mk>
+.if ${PORT_OPTIONS:MLIBS}
+	${INSTALL_LIB} ${WRKSRC}/Strn/${LIBSTRN} ${STAGEDIR}${PREFIX}/lib
+.for lib in libncftp/${LIBNCFTP} sio/${LIBSIO} Strn/${LIBSTRN}
+	${INSTALL_LIB} ${WRKSRC}/${lib} ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf ${lib:T} ${STAGEDIR}${PREFIX}/lib/${lib:T:R}
+.endfor
+.endif
+
+.include <bsd.port.mk>
