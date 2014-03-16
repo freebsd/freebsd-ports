@@ -13,12 +13,14 @@ COMMENT=	Speech synthesizer
 LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm	\
 		libaudio.so:${PORTSDIR}/audio/nas
 
-NO_STAGE=	yes
-
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 
 pre-configure:
 	@${CP} ${FILESDIR}/freebsdplay.c ${WRKSRC}/config/freebsdplay.c
+
+post-configure:
+	@${REINPLACE_CMD} -E 's,(BIN|LIB)_DIR\),DESTDIR\)$$\(&,g' \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
