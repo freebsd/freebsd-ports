@@ -18,7 +18,6 @@ USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	yes
-USE_GCC=	4.7+
 
 CXXFLAGS+=	-include wchar.h
 

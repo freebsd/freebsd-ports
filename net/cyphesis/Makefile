@@ -26,7 +26,7 @@ USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
 USE_PYTHON=	2
-USE_GCC=	4.7+
+USE_GCC=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 

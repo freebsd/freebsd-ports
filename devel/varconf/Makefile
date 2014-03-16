@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-USE_GCC=	4.7+
+USE_GCC=	yes
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
