@@ -3,6 +3,7 @@
 
 PORTNAME=	mk-livestatus
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mathias-kettner.de/download/ \
 		LOCAL/ohauer
