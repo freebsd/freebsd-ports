@@ -1,5 +1,5 @@
-bin/k4dirstat
-bin/kdirstat
+%%QT_BINDIR%%/k4dirstat
+%%QT_BINDIR%%/kdirstat
 share/applications/kde4/k4dirstat.desktop
 share/apps/k4dirstat/k4dirstatui.rc
 share/config.kcfg/k4dirstat.kcfg
@@ -19,5 +19,20 @@ share/locale/fr/LC_MESSAGES/k4dirstat.mo
 share/locale/hu/LC_MESSAGES/k4dirstat.mo
 share/locale/it/LC_MESSAGES/k4dirstat.mo
 share/locale/ja/LC_MESSAGES/k4dirstat.mo
-@dirrm share/doc/HTML/en/k4dirstat
-@dirrm share/apps/k4dirstat
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/doc/HTML/en/k4dirstat
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
+@dirrmtry share/config.kcfg
+@dirrmtry share/apps/k4dirstat
+@dirrmtry share/apps
+@dirrmtry share/applications/kde4
