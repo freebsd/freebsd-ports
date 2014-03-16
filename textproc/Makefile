@@ -208,6 +208,7 @@
     SUBDIR += gsed
     SUBDIR += gtk-doc
     SUBDIR += gtkspell
+    SUBDIR += gtkspell3
     SUBDIR += gtkspell-reference
     SUBDIR += gu-aspell
     SUBDIR += gutenmark
