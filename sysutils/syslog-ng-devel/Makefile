@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.5.3
-PORTREVISION=	2
+PORTVERSION=	3.5.4.1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
@@ -46,7 +45,8 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking \
-		--enable-debug
+		--enable-debug \
+		--datadir=${PREFIX}/share/syslog-ng/
 
 .include <bsd.port.options.mk>
 
@@ -165,5 +165,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/scl/syslog-ng.conf.dist ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/scl/scl.conf.dist ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/lib/ivykis/src/include/iv*.h ${STAGEDIR}${PREFIX}/include/syslog-ng/
+	${RMDIR} ${STAGEDIR}${PREFIX}/tests
 
 .include <bsd.port.post.mk>
