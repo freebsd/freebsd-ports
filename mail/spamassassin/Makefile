@@ -3,7 +3,7 @@
 
 PORTNAME=		spamassassin
 PORTVERSION=	3.4.0
-PORTREVISION?=	5		# also bump japanese/spamassassin
+PORTREVISION?=	6		# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -17,6 +17,7 @@ LICENSE=		APACHE20
 
 ALL_DEPENDS=	p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
 				p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
+				p5-HTTP-Date>=0:${PORTSDIR}/www/p5-HTTP-Date \
 				p5-IO-Socket-IP>=0:${PORTSDIR}/net/p5-IO-Socket-IP \
 				p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
 				p5-NetAddr-IP>=4.010:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
