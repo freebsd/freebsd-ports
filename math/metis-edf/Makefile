@@ -6,7 +6,7 @@ DISTVERSION=	4.1-2
 PORTREVISION=	5
 CATEGORIES=	math
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Meshes partitioning tool used by Code_Aster
 
 CONFLICTS=	metis-[0-9]* metis4-4*
