@@ -3,7 +3,7 @@
 
 PORTNAME=		spamassassin
 PORTVERSION=	3.4.0
-PORTREVISION?=	3		# also bump japanese/spamassassin
+PORTREVISION?=	4		# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -15,13 +15,14 @@ COMMENT?=		Highly efficient mail filter for identifying spam
 
 LICENSE=		APACHE20
 
-BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+ALL_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 				p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
 				p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
 				p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 				p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
 				p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+BUILD_DEPENDS=	${ALL_DEPENDS}
+RUN_DEPENDS=	${ALL_DEPENDS} \
 				re2c>=.12.0:${PORTSDIR}/devel/re2c
 
 CONFLICTS?=	ja-spamassassin-[0-9]*
@@ -35,7 +36,7 @@ DBDIR?=		/var/db
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 ETCDIR?=	${PREFIX}/etc/mail/spamassassin
 
-CONTACT_ADDRESS?=	The administrator of that system
+SPAMASSASSIN_CONTACT_ADDRESS?=	The administrator of that system
 USERS?=		spamd
 GROUPS?=	spamd
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
@@ -95,7 +96,7 @@ RAZOR_INITVAR=			Razor2
 RELAY_COUNTRY_INITVAR=	RelayCountry
 SPF_QUERY_INITVAR=		SPF
 
-DOCS=		CREDITS Changes INSTALL NOTICE PACKAGING README TRADEMARK UPGRADE USAGE procmailrc.example
+DOCS=		CREDITS Changes INSTALL NOTICE PACKAGING README TRADEMARK UPGRADE USAGE procmailrc.example 3.4.0-RELEASE-NOTES.txt
 DOCSSQL=	README README.awl README.bayes awl_mysql.sql awl_pg.sql bayes_mysql.sql bayes_pg.sql userpref_mysql.sql userpref_pg.sql
 DOCSLDAP=	README README.testing sa_test.ldif
 PORTDOCS=	${DOCS} sql ldap
@@ -131,7 +132,10 @@ PLIST_SUB+=	UPDATE_ON_INSTALL="no"
 .endif
 
 post-patch::
-	${FIND} ${WRKSRC} -name \*.orig -delete
+	# The 3.4.0 release notes never made it into the tarball
+	${INSTALL_DATA} ${FILESDIR}/3.4.0-RELEASE-NOTES.txt ${WRKSRC}
+	${REINPLACE_CMD} -e 's,%%DOCSDIR%%,${DOCSDIR},' ${WRKSRC}/UPGRADE
+
 	${REINPLACE_CMD} -e 's,B_CONFDIR)/local.cf,B_CONFDIR)/local.cf.sample,g' \
 		-e 's,B_CONFDIR)/init.pre,B_CONFDIR)/init.pre.sample,g' \
 		-e 's,B_CONFDIR)/v310.pre,B_CONFDIR)/v310.pre.sample,g' \
@@ -154,6 +158,8 @@ post-patch::
 
 	# load pre-compiled rules
 	${REINPLACE_CMD} -e '/Rule2XSBody/s/^\# loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
+
+	${FIND} ${WRKSRC} -name '*.orig' -or -name '*.bak' | ${XARGS} ${RM}
 
 pre-su-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
