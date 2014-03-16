@@ -14,7 +14,7 @@ you update your ports collection, before attempting any port upgrades.
   the support for it is as best questionable.
 
   pkgng users:
-  
+
   # pkg set -o net/openistgt:net/istgt
 
   portmaster users:
@@ -26,6 +26,24 @@ you update your ports collection, before attempting any port upgrades.
 
   # portupgrade -o net/istgt -f net/openistgt
   # portupgrade -fr net/istgt
+
+20140310:
+  AFFECTS: users of mail/p5-Mail-SpamAssassin and japanese/p5-Mail-SpamAssassin
+  AUTHOR: ohauer@FreeBSD.org
+
+  The port mail/p5-Mail-SpamAssassin was renamed to mail/spamassassin and
+  the port japanese/p5-Mail-SpamAssassin was renamed to japanese/spamassassin.
+  To ease upgrading run the following set of commands:
+
+  pkgng users:
+
+  # pkg set -o mail/p5-Mail-SpamAssassin:mail/spamassassin
+  # pkg set -o japanese/p5-Mail-SpamAssassin:japanese/spamassassin
+
+  portmaster users:
+
+  # portmaster -o mail/spamassassin mail/p5-Mail-SpamAssassin
+  # portmaster -o japanese/spamassassin japanese/p5-Mail-SpamAssassin
 
 20140307:
   AFFECTS: users of devel/py-setuptools dependent ports
@@ -44,7 +62,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Please rebuild all ports that depend on devel/py-setuptools and use
   devel/py-setuptools{27,32,33} instead.
-  
+
   XX represents python version (27, 32 or 33) in the following steps.
 
   pkgng users:
@@ -84,7 +102,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: ohauer@FreeBSD.org
 
   livecheck was removed in 1.2.3.i5. It never was really stable, Nagios4
-  has something similar built in. 
+  has something similar built in.
   Please remove the "livecheck=..." directive from etc/nagios/nagios.cfg.
 
 20140222:
