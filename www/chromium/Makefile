@@ -4,7 +4,7 @@
 #TODO eadler: s/python/python2/g on a number of files, chromium does not build with python3
 
 PORTNAME=	chromium
-PORTVERSION=	33.0.1750.149
+PORTVERSION=	33.0.1750.152
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -39,9 +39,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_XZ=		yes
 USES=		bison compiler:c++11-lib desktop-file-utils pkgconfig \
-		perl5 shebangfix ninja
+		perl5 shebangfix ninja tar:xz
 USE_PERL5=	build
 USE_PYTHON_BUILD=	2.6-2.7
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
