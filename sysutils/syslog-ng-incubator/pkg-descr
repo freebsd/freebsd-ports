@@ -1,0 +1,8 @@
+The syslog-ng module incubator (Incubator henceforth) is a collection of
+tools and modules for syslog-ng that for one reason or the other, are not
+part of the official repository. This serves both as a staging ground for
+experimental modules, and as a repository of plugins that are not aimed at
+upstream inclusion. It's also an example of a third party syslog-ng module.
+
+The official home page of syslog-ng-incubator is:
+https://github.com/balabit/syslog-ng-incubator

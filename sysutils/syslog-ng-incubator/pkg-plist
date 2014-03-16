@@ -1,0 +1,25 @@
+lib/syslog-ng/liblua.a
+lib/syslog-ng/liblua.la
+lib/syslog-ng/liblua.so
+lib/syslog-ng/libmonitor-source.a
+lib/syslog-ng/libmonitor-source.la
+lib/syslog-ng/libmonitor-source.so
+lib/syslog-ng/libbasicfuncs-plus.a
+lib/syslog-ng/libbasicfuncs-plus.la
+lib/syslog-ng/libbasicfuncs-plus.so
+lib/syslog-ng/libgraphite.a
+lib/syslog-ng/libgraphite.la
+lib/syslog-ng/libgraphite.so
+lib/syslog-ng/librss.a
+lib/syslog-ng/librss.la
+lib/syslog-ng/librss.so
+lib/syslog-ng/libtrigger-source.a
+lib/syslog-ng/libtrigger-source.la
+lib/syslog-ng/libtrigger-source.so
+share/syslog-ng/include/scl/elasticsearch/es-bridge
+share/syslog-ng/include/scl/elasticsearch/plugin.conf
+@dirrm share/syslog-ng/include/scl/elasticsearch
+@dirrmtry share/syslog-ng/include/scl
+@dirrmtry share/syslog-ng/include
+@dirrmtry share/syslog-ng
+@dirrmtry lib/syslog-ng
