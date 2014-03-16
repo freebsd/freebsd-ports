@@ -10,11 +10,11 @@ DISTNAME=	${PYDISTUTILS_PKGNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to simplify distributing and deploying themes and styles
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracThemeEngine

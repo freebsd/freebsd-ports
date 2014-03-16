@@ -9,8 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily create scripts to convert HTML pages to RSS feeds
 
-USES=		perl5 shebangfix
-USE_BZIP2=	yes
+USES=		tar:bzip2 perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
 

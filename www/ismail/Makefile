@@ -10,11 +10,10 @@ MASTER_SITES=	http://az.semmy.ru/ISMail/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based webmail client
 
-USE_BZIP2=	yes
-
 WRKSRC=		${WRKDIR}
 
 NO_BUILD=	yes
+USES=		tar:bzip2
 USE_PHP=	imap
 WANT_PHP_WEB=	yes
 

@@ -10,7 +10,7 @@ PORTVERSION?=	0.0.${SVNREV}
 .if ${PORTNAME} == twiki
 PNAME=	core
 .else
-USE_BZIP2=	yes
+USES+=			tar:bzip2
 PKGNAMEPREFIX?=	twiki-
 PNAME=	${PORTNAME}
 FILESDIR?=	${.CURDIR}/../twiki/files

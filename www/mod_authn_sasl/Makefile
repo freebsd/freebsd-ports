@@ -21,7 +21,7 @@ SASLAUTHD_DESC=	cyrus-sasl2-saslauthd support
 SASLAUTHD_RUN_DEPENDS=	saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 .include <bsd.port.options.mk>
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
