@@ -7,7 +7,7 @@ bin/sa-update
 bin/spamassassin
 bin/spamc
 bin/spamd
-@unexec rm -rf %D/%%ETCDIR%%/sa-update-keys
+@unexec rm -rf %D/%%ETCDIR%%/sa-update-keys 2>&1 >/dev/null || true
 %%ETCDIR%%/local.cf.sample
 @unexec if cmp -s %B/init.pre.sample %B/init.pre; then rm -f %B/init.pre; fi
 %%ETCDIR%%/init.pre.sample
@@ -229,17 +229,17 @@ man/man1/spamd.1.gz
 @dirrmtry %%SITE_PERL%%/Mail
 @dirrmtry %%ETCDIR%%
 @dirrmtry etc/mail
-@unexec rm -rf /var/lib/spamassassin/2*
-@dirrmtry /var/lib/spamassassin
-@dirrmtry /var/lib
-@dirrmtry /var/db/spamassassin
+@unexec rm -rf /var/lib/spamassassin/2* 2>&1 >/dev/null || true
+@unexec rmdir /var/lib/spamassassin 2>&1 >/dev/null || true
+@unexec rmdir /var/lib 2>&1 >/dev/null || true
+@unexec rmdir /var/db/spamassassin 2>&1 >/dev/null || true
 
 @unexec [ -d /var/db/spamassassin ] && echo "If you are no longer using SpamAssassin, remove /var/db/spamassassin"
 @unexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && echo "To delete %%USER%% permanently, 'rmuser %%USER%%'"
 @unexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && [ -d /var/spool/spamd ] && echo "    Note that this will remove /var/spool/spamd"
 
 @exec install -d -o %%USER%% -g %%GROUP%% /var/run/spamd
-@unexec rm -rf /var/run/spamd
+@unexec rm -rf /var/run/spamd 2>&1 >/dev/null || true
 
 @exec if [ "%%UPDATE_ON_INSTALL%%" = "yes" ]; then echo "====> Downloading SpamAssassin rulesets"; %%PREFIX%%/bin/spamassassin -x -L --lint; %%PREFIX%%/bin/sa-update || true; fi
 @exec if [ "%%UPDATE_ON_INSTALL%%" = "yes" ]; then echo "====> Compiling SpamAssassin rulesets"; %%PREFIX%%/bin/spamassassin -x -L --lint; %%PREFIX%%/bin/sa-compile || true; fi
