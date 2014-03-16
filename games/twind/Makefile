@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	twind
@@ -14,12 +14,11 @@ LICENSE=	GPLv2
 
 USE_SDL=	sdl image mixer
 
-PORTDOCS=	AUTHORS CREDITS ChangeLog NEWS README TODO
+PORTDOCS=	AUTHORS CREDITS ChangeLog NEWS README
+OPTIONS_DEFINE=	DOCS
 
-DESKTOP_ENTRIES="Twin Distress" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="Twin Distress" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 do-build:
 	cd ${WRKSRC} && ${CC} -o ${PORTNAME} ${CFLAGS} \
