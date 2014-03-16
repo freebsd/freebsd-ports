@@ -4437,7 +4437,6 @@
     SUBDIR += sfslite-dbg
     SUBDIR += sfslite-noopt
     SUBDIR += sgb
-    SUBDIR += sgl
     SUBDIR += shapelib
     SUBDIR += shflags
     SUBDIR += shiboken

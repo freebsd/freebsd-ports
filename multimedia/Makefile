@@ -195,7 +195,6 @@
     SUBDIR += linux-tsmuxer
     SUBDIR += linux-xmovie
     SUBDIR += linux_dvbwrapper-kmod
-    SUBDIR += linux_v4l2wrapper-kmod
     SUBDIR += lives
     SUBDIR += livestreamer
     SUBDIR += lsdvd

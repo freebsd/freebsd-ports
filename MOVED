@@ -5710,3 +5710,6 @@ net/ipa_ip6fw||2014-03-14|Has expired: Depends on IPv6 ipfw firewall
 palm/synce-hal||2014-03-14|Has expired: Requires pppd
 net/pppoa||2014-03-14|Has expired: Broken on FreeBSD 8 and later since june 2009
 multimedia/linux-huludesktop||2014-03-14|Removed
+multimedia/linux_v4l2wrapper-kmod||2014-03-16|Has expired: Included now in all supported FreeBSD versions
+devel/sgl||2014-03-16|Has expired: S/W never progressed beyond incomplete graduate project; library was never properly built - not worth fixing
+palm/jpilot-db||2014-03-16|Has expired

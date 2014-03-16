@@ -9,7 +9,6 @@
     SUBDIR += iSiloXC
     SUBDIR += imgvtopgm
     SUBDIR += jpilot
-    SUBDIR += jpilot-db
     SUBDIR += jpilot-picsnvideos
     SUBDIR += libmal
     SUBDIR += makeztxt
