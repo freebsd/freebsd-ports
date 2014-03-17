@@ -1,0 +1,47 @@
+%%PERL5_MAN3%%/Iodef::Pb::Format.3.gz
+%%PERL5_MAN3%%/Iodef::Pb::Simple.3.gz
+%%SITE_PERL%%/Iodef/Pb.pm
+%%SITE_PERL%%/Iodef/Pb/Format.pm
+%%SITE_PERL%%/Iodef/Pb/Format/Bindzone.pm
+%%SITE_PERL%%/Iodef/Pb/Format/Bro.pm
+%%SITE_PERL%%/Iodef/Pb/Format/Csv.pm
+%%SITE_PERL%%/Iodef/Pb/Format/Html.pm
+%%SITE_PERL%%/Iodef/Pb/Format/Iptables.pm
+%%SITE_PERL%%/Iodef/Pb/Format/Json.pm
+%%SITE_PERL%%/Iodef/Pb/Format/Pcapfilter.pm
+%%SITE_PERL%%/Iodef/Pb/Format/Raw.pm
+%%SITE_PERL%%/Iodef/Pb/Format/Snort.pm
+%%SITE_PERL%%/Iodef/Pb/Format/Table.pm
+%%SITE_PERL%%/Iodef/Pb/Simple.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/AdditionalData.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Alternativeid.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Assessment.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Bgp.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Carboncopy.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Contact.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Detecttime.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Domain.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Email.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Eventdata.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Guid.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Hash.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Incidentid.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Ipv4.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Malware.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Method.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Purpose.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Relatedactivity.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Reporttime.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Restriction.pm
+%%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Url.pm
+%%SITE_PERL%%/Iodef/Pb/t1.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Iodef/Pb/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iodef/Pb/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iodef/Pb
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iodef
+@dirrmtry %%SITE_PERL%%/Iodef/Pb/Simple/Plugin
+@dirrmtry %%SITE_PERL%%/Iodef/Pb/Simple
+@dirrmtry %%SITE_PERL%%/Iodef/Pb/Format
+@dirrmtry %%SITE_PERL%%/Iodef/Pb
+@dirrmtry %%SITE_PERL%%/Iodef

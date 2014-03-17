@@ -1,0 +1,5 @@
+Iodef::Pb::Simple is a Perl extension providing high level API access to
+Iodef::Pb, which is useful to an array of IODEF protocol buffer objects
+into things like tab-delimited tables, csv, and snort rules.
+
+WWW: http://search.cpan.org/dist/Iodef-Pb-Simple/
