@@ -11,29 +11,25 @@ DISTNAME=	LambdaMOO-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The most commonly used program to run MOOs
 
-WRKSRC=		${WRKDIR}/MOO-${PORTVERSION}
-GNU_CONFIGURE=	yes
-ALL_TARGET=
-CONFIGURE_ENV=	YACC=${YACC}
 USES=		bison
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ENV=	YACC=${YACC}
+
+WRKSRC=		${WRKDIR}/MOO-${PORTVERSION}
 
 PLIST_FILES=	sbin/moo
-
 PORTDOCS=	*
 
-NO_STAGE=	yes
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/moo ${PREFIX}/sbin
+ALL_TARGET=
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC};\
-	${INSTALL_MAN} Minimal.db README README.Minimal \
-		${DOCSDIR}; \
-	)
-	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD \
-		${DOCSDIR}
-.endif
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/moo ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}; ${INSTALL_MAN} Minimal.db README README.Minimal \
+		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
