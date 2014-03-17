@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140317:
+  AFFECTS: users of misc/ossp-uuid-perl
+  AUTHOR: culot@FreeBSD.org
+
+  misc/ossp-uuid-perl was replaced by misc/p5-OSSP-uuid. Please do the
+  following according to package manager used.
+
+  # portmaster -o misc/p5-OSSP-uuid misc/ossp-uuid-perl
+    or
+  # portupgrade -fo misc/p5-OSSP-uuid misc/ossp-uuid-perl
+    or
+  # pkg set -o misc/p5-OSSP-uuid:misc/ossp-uuid-perl
+
 20140312:
   AFFECTS: users of net/openistgt
   AUTHOR: jpaetzel@FreeBSD.org

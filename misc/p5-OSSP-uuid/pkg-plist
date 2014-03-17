@@ -1,0 +1,9 @@
+%%PERL5_MAN3%%/OSSP::uuid.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/OSSP/uuid.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OSSP/uuid.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP/uuid/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP/uuid/uuid.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP/uuid/uuid.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP/uuid
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OSSP
