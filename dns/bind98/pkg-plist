@@ -337,7 +337,6 @@ sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
 %%BASE%%@unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
-%%NOBASE%%etc/rc.d/named
 %%NOBASE%%@unexec if cmp -s %D/%%ETCDIR%%/rndc.conf.sample %D/%%ETCDIR%%/rndc.conf; then rm -f %D/%%ETCDIR%%/rndc.conf; fi
 %%NOBASE%%%%ETCDIR%%/rndc.conf.sample
 %%NOBASE%%@exec if [ ! -f %D/%%ETCDIR%%/rndc.conf ] ; then cp -p %D/%F %B/rndc.conf; fi
@@ -348,16 +347,16 @@ sbin/rndc-confgen
 %%NOBASE%%%%ETCDIR%%/master/empty.db
 %%NOBASE%%%%ETCDIR%%/master/localhost-forward.db
 %%NOBASE%%%%ETCDIR%%/master/localhost-reverse.db
-%%NOBASE%%@exec mkdir %D/%%ETCDIR%%/dynamic
+%%NOBASE%%@exec mkdir -p %D/%%ETCDIR%%/dynamic
 %%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/dynamic
 %%NOBASE%%@dirrmtry %%ETCDIR%%/dynamic
-%%NOBASE%%@exec mkdir %D/%%ETCDIR%%/master
+%%NOBASE%%@exec mkdir -p %D/%%ETCDIR%%/master
 %%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/master
 %%NOBASE%%@dirrmtry %%ETCDIR%%/master
-%%NOBASE%%@exec mkdir %D/%%ETCDIR%%/slave
+%%NOBASE%%@exec mkdir -p %D/%%ETCDIR%%/slave
 %%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/slave
 %%NOBASE%%@dirrmtry %%ETCDIR%%/slave
-%%NOBASE%%@exec mkdir %D/%%ETCDIR%%/working
+%%NOBASE%%@exec mkdir -p %D/%%ETCDIR%%/working
 %%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/working
 %%NOBASE%%@dirrmtry %%ETCDIR%%/working
 %%NOBASE%%@dirrmtry %%ETCDIR%%
