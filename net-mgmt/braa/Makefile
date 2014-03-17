@@ -11,13 +11,15 @@ COMMENT=	Tool for making SNMP queries
 
 LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 
-USE_GMAKE=	yes
+USES=		gmake
+
 LDFLAGS+=	-lcompat
 
 PORTDOCS=	README
 PLIST_FILES=	bin/braa
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 .for file in Makefile
 	@${REINPLACE_CMD} -e \
@@ -27,12 +29,8 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
