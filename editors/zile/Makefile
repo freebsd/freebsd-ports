@@ -3,6 +3,7 @@
 
 PORTNAME=	zile
 PORTVERSION=	2.4.11
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -14,7 +15,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man
 
-USES=		gmake perl5
+USES=		gmake perl5 pkgconfig
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-regex
