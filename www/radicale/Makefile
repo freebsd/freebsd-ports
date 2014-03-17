@@ -16,7 +16,6 @@ LICENSE=		GPLv3
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-NO_STAGE=		yes
 PYDISTUTILS_PKGNAME=	Radicale
 
 USERS=			radicale
@@ -44,9 +43,8 @@ post-patch:
 	${REINPLACE_CMD} 's,~/.config/radicale,${DATADIR},g' ${WRKSRC}/config
 
 post-install:
-	${MKDIR} ${ETCDIR}
-	${INSTALL} -d -o ${USERS} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/config ${ETCDIR}/config.sample
-	${INSTALL_DATA} ${WRKSRC}/logging ${ETCDIR}/logging.sample
+	${MKDIR} ${STAGEDIR}/${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/config ${STAGEDIR}/${ETCDIR}/config.sample
+	${INSTALL_DATA} ${WRKSRC}/logging ${STAGEDIR}/${ETCDIR}/logging.sample
 
 .include <bsd.port.mk>

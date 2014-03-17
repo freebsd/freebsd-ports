@@ -61,7 +61,6 @@ bin/radicale
 %%PYTHON_LIBDIR%%/site-packages/radicale/xmlutils.py
 %%PYTHON_LIBDIR%%/site-packages/radicale/xmlutils.pyc
 %%PYTHON_LIBDIR%%/site-packages/radicale/xmlutils.pyo
-@dirrmtry %%DATADIR%%
 @dirrmtry %%ETCDIR%%
 @dirrm %%PYTHON_LIBDIR%%/site-packages/radicale
 @dirrm %%PYTHON_LIBDIR%%/site-packages/radicale/auth
@@ -69,3 +68,4 @@ bin/radicale
 @dirrm %%PYTHON_LIBDIR%%/site-packages/radicale/storage
 @dirrmtry %%PYTHON_LIBDIR%%/site-packages
 @dirrmtry %%PYTHON_LIBDIR%%
+@exec /usr/bin/install -d -o radicale %%DATADIR%%
