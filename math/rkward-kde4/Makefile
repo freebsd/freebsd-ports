@@ -24,7 +24,7 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build phonon
 USE_KDE4=	kdehier kdeprefix automoc4 kdelibs
 USE_PHP=	yes
 WANT_PHP_CLI=	yes
-USES=		cmake gettext
+USES=		cmake gettext fortran
 INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
