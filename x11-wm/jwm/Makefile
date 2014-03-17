@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jwm
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/programs/jwm/releases/
 
@@ -11,8 +11,7 @@ COMMENT=	Joe's Window Manager
 
 LICENSE=	GPLv2
 
-USE_XZ=		yes
-USES=		pkgconfig
+USES=		pkgconfig tar:xz
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
@@ -57,15 +56,15 @@ XRENDER_CONFIGURE_ENABLE=xrender
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFT} && empty(PORT_OPTIONS:MXRENDER)
-IGNORE=		XFT support requires XRENDER
+IGNORE=		the XFT support requires XRENDER
 .endif
 
 .if ${PORT_OPTIONS:MXMU} && empty(PORT_OPTIONS:MXEXT)
-IGNORE=		XMU support requires XEXT
+IGNORE=		the XMU support requires XEXT
 .endif
 
 .if ${PORT_OPTIONS:MXPM} && empty(PORT_OPTIONS:MXEXT)
-IGNORE=		XPM support requires XEXT
+IGNORE=		the XPM support requires XEXT
 .endif
 
 post-patch:
