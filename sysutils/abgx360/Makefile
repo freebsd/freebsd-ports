@@ -16,9 +16,8 @@ PLIST_FILES=	bin/abgx360
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/abgx360 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/abgx360 ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.pre.mk>
 
