@@ -4,8 +4,7 @@
 PORTNAME=	qcc
 PORTVERSION=	1.01
 CATEGORIES=	games devel
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
-MASTER_SITE_SUBDIR=	source
+MASTER_SITES=	IDSOFTWARE/source
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -21,7 +20,6 @@ PORTDOCS=	readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:
@@ -29,11 +27,9 @@ post-extract:
 		${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../quake-source/Makefile.include"
 .include <bsd.port.mk>
