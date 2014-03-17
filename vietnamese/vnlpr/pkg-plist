@@ -15,4 +15,7 @@ share/vn-fonts/mq_11.gsf
 share/vn-fonts/pt_11.gsf
 share/vn-fonts/th_11.gsf
 share/vn-fonts/uh_11.gsf
+share/vn-fonts/initcour.ps
+share/vn-fonts/initcourb.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/vn-fonts
