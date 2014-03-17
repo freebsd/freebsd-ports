@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
 USE_AUTOTOOLS=	automake autoconf
-AUTOMAKE_ARGS=	--add-missing
+AUTOMAKE_ARGS=	--add-missing --foreign
 USE_OPENSSL=	yes
 
 .if defined (MUTT_LITE)
@@ -267,18 +267,18 @@ CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
 .elif exists(${KRB5_HOME}/bin/krb5-config)
 LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${KRB5_HOME}
-LDFLAGS+=		-L${KRB5_HOME}/lib -rpath=${KRB5_HOME}/lib -ltinfow
+LDFLAGS+=		-L${KRB5_HOME}/lib -Wl,-rpath=${KRB5_HOME}/lib -ltinfow
 .elif exists(${HEIMDAL_HOME}/bin/krb5-config)
 LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${HEIMDAL_HOME}
-LDFLAGS+=		-L${HEIMDAL_HOME}/lib -rpath=${HEIMDAL_HOME}/lib -ltinfow
+LDFLAGS+=		-L${HEIMDAL_HOME}/lib -Wl,-rpath=${HEIMDAL_HOME}/lib -ltinfow
 .elif (defined(MAKE_KERBEROS5)) || exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-gss
 WITH_KRB5_SYS=YES
 .endif
 .endif
 
-LDFLAGS+=		-L${LOCALBASE}/lib -rpath=${LOCALBASE}/lib:/usr/lib -ltinfow
+LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib:/usr/lib -ltinfow
 CFLAGS+=		${CFLAGS_ADD}
 LDFLAGS+=		${LDFLAGS_ADD}
 
@@ -371,6 +371,7 @@ post-patch::
 
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
+	@${RM} -f ${WRKSRC}/missing
 .if defined(WITH_KRB5_SYS)
 	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} -e 's|<gssapi/gssapi\.h>|<gssapi.h>|' \
