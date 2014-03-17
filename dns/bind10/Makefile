@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bind10
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -30,13 +29,18 @@ RUN_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-s
 USE_PYTHON=	3.3
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=	pkgconfig
+USES=	compiler:c++11-lang pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var	\
-		--disable-install-configurations
+		--without-werror \
+		--enable-install-configurations
 
 PLIST_SUB+=	PORTNAME=${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	*
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
@@ -44,6 +48,5 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/cmdctl-certfile.pem.sample
 	${INSTALL_DATA} -m 640 ${WRKSRC}/src/bin/cmdctl/cmdctl-keyfile.pem \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/cmdctl-keyfile.pem.sample
-	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/* ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>

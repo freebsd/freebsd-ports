@@ -4,6 +4,12 @@ bin/b10-certgen
 bin/bindctl
 bin/isc-sysinfo
 bin/perfdhcp
+@unexec if cmp -s %D/etc/%%PORTNAME%%/cmdctl-certfile.pem.sample %D/etc/%%PORTNAME%%/cmdctl-certfile.pem; then rm -f %D/etc/%%PORTNAME%%/cmdctl-certfile.pem; fi
+etc/%%PORTNAME%%/cmdctl-certfile.pem.sample
+@exec if [ ! -f %D/etc/%%PORTNAME%%/cmdctl-certfile.pem ] ; then cp -p %D/%F %B/cmdctl-certfile.pem; fi
+@unexec if cmp -s %D/etc/%%PORTNAME%%/cmdctl-keyfile.pem.sample %D/etc/%%PORTNAME%%/cmdctl-keyfile.pem; then rm -f %D/etc/%%PORTNAME%%/cmdctl-keyfile.pem; fi
+etc/%%PORTNAME%%/cmdctl-keyfile.pem.sample
+@exec if [ ! -f %D/etc/%%PORTNAME%%/cmdctl-keyfile.pem ] ; then cp -p %D/%F %B/cmdctl-keyfile.pem; fi
 include/%%PORTNAME%%/dns/dns_fwd.h
 include/%%PORTNAME%%/dns/edns.h
 include/%%PORTNAME%%/dns/exceptions.h
@@ -166,21 +172,6 @@ man/man8/bind10.8.gz
 %%PYTHON_SITELIBDIR%%/bindctl/mycollections.py
 %%PYTHON_SITELIBDIR%%/bindctl/mycollections.pyc
 %%PYTHON_SITELIBDIR%%/bindctl/mycollections.pyo
-%%PYTHON_SITELIBDIR%%/isc/__init__.py
-%%PYTHON_SITELIBDIR%%/isc/__init__.pyc
-%%PYTHON_SITELIBDIR%%/isc/__init__.pyo
-%%PYTHON_SITELIBDIR%%/isc/acl/__init__.py
-%%PYTHON_SITELIBDIR%%/isc/acl/__init__.pyc
-%%PYTHON_SITELIBDIR%%/isc/acl/__init__.pyo
-%%PYTHON_SITELIBDIR%%/isc/acl/_dns.a
-%%PYTHON_SITELIBDIR%%/isc/acl/_dns.la
-%%PYTHON_SITELIBDIR%%/isc/acl/_dns.so
-%%PYTHON_SITELIBDIR%%/isc/acl/acl.a
-%%PYTHON_SITELIBDIR%%/isc/acl/acl.la
-%%PYTHON_SITELIBDIR%%/isc/acl/acl.so
-%%PYTHON_SITELIBDIR%%/isc/acl/dns.py
-%%PYTHON_SITELIBDIR%%/isc/acl/dns.pyc
-%%PYTHON_SITELIBDIR%%/isc/acl/dns.pyo
 %%PYTHON_SITELIBDIR%%/isc/%%PORTNAME%%/__init__.py
 %%PYTHON_SITELIBDIR%%/isc/%%PORTNAME%%/__init__.pyc
 %%PYTHON_SITELIBDIR%%/isc/%%PORTNAME%%/__init__.pyo
@@ -196,6 +187,21 @@ man/man8/bind10.8.gz
 %%PYTHON_SITELIBDIR%%/isc/%%PORTNAME%%/special_component.py
 %%PYTHON_SITELIBDIR%%/isc/%%PORTNAME%%/special_component.pyc
 %%PYTHON_SITELIBDIR%%/isc/%%PORTNAME%%/special_component.pyo
+%%PYTHON_SITELIBDIR%%/isc/__init__.py
+%%PYTHON_SITELIBDIR%%/isc/__init__.pyc
+%%PYTHON_SITELIBDIR%%/isc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/isc/acl/__init__.py
+%%PYTHON_SITELIBDIR%%/isc/acl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/isc/acl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/isc/acl/_dns.a
+%%PYTHON_SITELIBDIR%%/isc/acl/_dns.la
+%%PYTHON_SITELIBDIR%%/isc/acl/_dns.so
+%%PYTHON_SITELIBDIR%%/isc/acl/acl.a
+%%PYTHON_SITELIBDIR%%/isc/acl/acl.la
+%%PYTHON_SITELIBDIR%%/isc/acl/acl.so
+%%PYTHON_SITELIBDIR%%/isc/acl/dns.py
+%%PYTHON_SITELIBDIR%%/isc/acl/dns.pyc
+%%PYTHON_SITELIBDIR%%/isc/acl/dns.pyo
 %%PYTHON_SITELIBDIR%%/isc/cc/__init__.py
 %%PYTHON_SITELIBDIR%%/isc/cc/__init__.pyc
 %%PYTHON_SITELIBDIR%%/isc/cc/__init__.pyo
@@ -208,6 +214,9 @@ man/man8/bind10.8.gz
 %%PYTHON_SITELIBDIR%%/isc/cc/message.py
 %%PYTHON_SITELIBDIR%%/isc/cc/message.pyc
 %%PYTHON_SITELIBDIR%%/isc/cc/message.pyo
+%%PYTHON_SITELIBDIR%%/isc/cc/proto_defs.py
+%%PYTHON_SITELIBDIR%%/isc/cc/proto_defs.pyc
+%%PYTHON_SITELIBDIR%%/isc/cc/proto_defs.pyo
 %%PYTHON_SITELIBDIR%%/isc/cc/session.py
 %%PYTHON_SITELIBDIR%%/isc/cc/session.pyc
 %%PYTHON_SITELIBDIR%%/isc/cc/session.pyo
@@ -355,6 +364,9 @@ man/man8/bind10.8.gz
 %%PYTHON_SITELIBDIR%%/isc/util/__init__.py
 %%PYTHON_SITELIBDIR%%/isc/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/isc/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/isc/util/address_formatter.py
+%%PYTHON_SITELIBDIR%%/isc/util/address_formatter.pyc
+%%PYTHON_SITELIBDIR%%/isc/util/address_formatter.pyo
 %%PYTHON_SITELIBDIR%%/isc/util/cio/__init__.py
 %%PYTHON_SITELIBDIR%%/isc/util/cio/__init__.pyc
 %%PYTHON_SITELIBDIR%%/isc/util/cio/__init__.pyo
@@ -397,15 +409,9 @@ libexec/%%PORTNAME%%/b10-stats-httpd
 libexec/%%PORTNAME%%/b10-xfrin
 libexec/%%PORTNAME%%/b10-xfrout
 libexec/%%PORTNAME%%/b10-zonemgr
-libexec/%%PORTNAME%%/backends/memory_ds.a
-libexec/%%PORTNAME%%/backends/memory_ds.la
-libexec/%%PORTNAME%%/backends/memory_ds.so
 libexec/%%PORTNAME%%/backends/sqlite3_ds.a
 libexec/%%PORTNAME%%/backends/sqlite3_ds.la
 libexec/%%PORTNAME%%/backends/sqlite3_ds.so
-libexec/%%PORTNAME%%/backends/static_ds.a
-libexec/%%PORTNAME%%/backends/static_ds.la
-libexec/%%PORTNAME%%/backends/static_ds.so
 sbin/b10-cmdctl-usermgr
 sbin/bind10
 share/%%PORTNAME%%/auth.spec
@@ -438,15 +444,6 @@ share/%%PORTNAME%%/stats.spec
 share/%%PORTNAME%%/xfrin.spec
 share/%%PORTNAME%%/xfrout.spec
 share/%%PORTNAME%%/zonemgr.spec
-share/doc/%%PORTNAME%%/bind10-guide.txt
-share/doc/%%PORTNAME%%/bind10-guide.css
-share/doc/%%PORTNAME%%/bind10-guide.html
-share/doc/%%PORTNAME%%/bind10-messages.html
-share/doc/%%PORTNAME%%/AUTHORS
-share/doc/%%PORTNAME%%/COPYING
-share/doc/%%PORTNAME%%/ChangeLog
-share/doc/%%PORTNAME%%/README
-@dirrm share/doc/%%PORTNAME%%
 @dirrm share/%%PORTNAME%%/config_plugins
 @dirrm share/%%PORTNAME%%
 @dirrm libexec/%%PORTNAME%%/backends
@@ -474,10 +471,3 @@ share/doc/%%PORTNAME%%/README
 @dirrm include/%%PORTNAME%%/dns
 @dirrm include/%%PORTNAME%%
 @dirrmtry etc/%%PORTNAME%%
-@exec mkdir -p %D/etc/%%PORTNAME%%
-@unexec if cmp -s %D/etc/%%PORTNAME%%/cmdctl-certfile.pem.sample %D/etc/%%PORTNAME%%/cmdctl-certfile.pem; then rm -f %D/etc/%%PORTNAME%%/cmdctl-certfile.pem; fi
-etc/%%PORTNAME%%/cmdctl-certfile.pem.sample
-@exec if [ ! -f %D/etc/%%PORTNAME%%/cmdctl-certfile.pem ] ; then cp -p %D/%F %B/cmdctl-certfile.pem; fi
-@unexec if cmp -s %D/etc/%%PORTNAME%%/cmdctl-keyfile.pem.sample %D/etc/%%PORTNAME%%/cmdctl-keyfile.pem; then rm -f %D/etc/%%PORTNAME%%/cmdctl-keyfile.pem; fi
-etc/%%PORTNAME%%/cmdctl-keyfile.pem.sample
-@exec if [ ! -f %D/etc/%%PORTNAME%%/cmdctl-keyfile.pem ] ; then cp -p %D/%F %B/cmdctl-keyfile.pem; fi
