@@ -2188,6 +2188,7 @@
     SUBDIR += p5-InlineX-C2XS
     SUBDIR += p5-InlineX-CPP2XS
     SUBDIR += p5-Ioctl
+    SUBDIR += p5-Iodef-Pb-Simple
     SUBDIR += p5-Iterator
     SUBDIR += p5-Iterator-IO
     SUBDIR += p5-Iterator-Misc
