@@ -175,6 +175,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Interface/Shell/Bash.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Csh.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Default.pm
+%%SITE_PERL%%/Rex/Interface/Shell/Ksh.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Sh.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Tcsh.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Zsh.pm
