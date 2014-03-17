@@ -29,7 +29,7 @@ man/man1/aseqdump.1.gz
 man/man1/aseqnet.1.gz
 man/man1/iecset.1.gz
 man/man1/speaker-test.1.gz
-man/man7/alsactl_init.7.gz
+%%XMLTO%%man/man7/alsactl_init.7.gz
 man/man8/alsaconf.8.gz
 sbin/alsaconf
 sbin/alsactl
