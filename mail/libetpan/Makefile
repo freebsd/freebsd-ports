@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Mail framework for C language
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \

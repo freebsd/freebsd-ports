@@ -9,7 +9,7 @@ MASTER_SITES=	SF/smplayer/SMPlayer-skins/${PORTVERSION}
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Skins for SMPlayer (Skinnable GUI)
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/smplayer
