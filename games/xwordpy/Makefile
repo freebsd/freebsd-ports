@@ -9,30 +9,28 @@ MASTER_SITES=	http://x-word.org/
 DISTNAME=	xword-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	An application for solving crossword puzzles in the Across Lite format
+COMMENT=	Application for solving crossword puzzles in the Across Lite format
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PLIST_DIRS=	%%DATADIR%%
 PLIST_FILES=	bin/xwordpy \
 		%%DATADIR%%/crossword-check-all.png \
 		%%DATADIR%%/crossword-check.png \
 		%%DATADIR%%/crossword-clock.png \
 		%%DATADIR%%/crossword-solve.png \
 		%%DATADIR%%/layout-rtb.png
+PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%DATADIR%%|\'${DATADIR}\'|g" \
 		-e "s|/usr/bin/python|${PYTHON_CMD}|g" \
 		${WRKSRC}/xword
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/xword ${PREFIX}/bin/xwordpy
-	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && for f in *.png ; do ${INSTALL_DATA} ${WRKSRC}/$$f ${DATADIR} ; \
-	done)
+	${INSTALL_SCRIPT} ${WRKSRC}/xword ${STAGEDIR}${PREFIX}/bin/xwordpy
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.png ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
