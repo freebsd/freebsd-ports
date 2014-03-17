@@ -5,17 +5,15 @@ PORTNAME=	xinfocom
 PORTVERSION=	1.8m
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://ftp.giga.or.at/pub/ifarchive/interpreters-infocom-zcode/old/itf/
-MASTER_SITE_SUBDIR=	mph
+MASTER_SITES=	LOCAL/mph
 DISTNAME=	unix8m
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An Infocom game interpreter for X11
+COMMENT=	Infocom game interpreter for X11
 
-USES=		imake
+USES=		imake tar:tgz
 USE_XORG=	xt sm ice xext x11
+
 WRKSRC=		${WRKDIR}/xinfocom
 PLIST_FILES=	bin/xinfocom
 
