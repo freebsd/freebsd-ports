@@ -13,11 +13,8 @@ COMMENT=	Fetches configuration from Cisco routers and stores them under RCS
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 ALL_TARGET=	depend all
-MAN8=		ciscoconfd.8 ciscoconfr.8
 
-NO_STAGE=	yes
 post-patch:
-
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.old
 	${CAT} ${WRKSRC}/Makefile.old | \
 	${SED} -e 's#/usr/local#${PREFIX}#g' | \
@@ -25,12 +22,12 @@ post-patch:
 	>> ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ciscoconfd ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/ciscoconfr ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ciscoconfd.man ${PREFIX}/man/man8/ciscoconfd.8
-	${INSTALL_MAN} ${WRKSRC}/ciscoconfr.man ${PREFIX}/man/man8/ciscoconfr.8
-
-post-install:
-	${MKDIR} ${PREFIX}/share/cisco/RCS
+	${INSTALL_PROGRAM} ${WRKSRC}/ciscoconfd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ciscoconfr ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ciscoconfd.man \
+		${STAGEDIR}${MANPREFIX}/man/man8/ciscoconfd.8
+	${INSTALL_MAN} ${WRKSRC}/ciscoconfr.man \
+		${STAGEDIR}${MANPREFIX}/man/man8/ciscoconfr.8
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/cisco/RCS
 
 .include <bsd.port.mk>
