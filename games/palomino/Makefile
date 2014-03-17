@@ -16,10 +16,9 @@ COMMENT=	Action flight simulation computer program using OSG
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	osg:${PORTSDIR}/graphics/osg
+LIB_DEPENDS=	libosg.so:${PORTSDIR}/graphics/osg
 
-USE_XZ=		yes
-USES=		cmake
+USES=		cmake tar:xz
 USE_GL=		gl
 USE_LUA=	5.1
 LUA_COMPS=	lua:build
