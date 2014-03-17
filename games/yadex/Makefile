@@ -19,8 +19,7 @@ CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" PREFIX="${PREFIX}"
 USE_PERL5=	build
 USE_XORG=	x11
 MAKEFILE=	GNUmakefile
-
-MAN6=		yadex.6
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	WHITE_BG 3D_RENDER SEARCH EXTRA_TOOLS LAPTOP_KEYS DOCS
 
@@ -30,7 +29,6 @@ SEARCH_DESC=		Thing, linedef, or sector search by type
 EXTRA_TOOLS_DESC=	Add a few extra tools to Yadex' repertoire
 LAPTOP_KEYS_DESC=	Key bindings for easier editing on laptops
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PATCH_SITES=	http://glbsp.sourceforge.net/%SUBDIR%/
@@ -63,9 +61,8 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.[^6]* ${WRKSRC}/doc/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.[^6]* ${WRKSRC}/doc/README \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
