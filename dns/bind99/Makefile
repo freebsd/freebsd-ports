@@ -2,7 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	9.9.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -159,9 +159,12 @@ PKGDEINSTALL=	${PKGINSTALL}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${BIND_DESTETC}
 PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
+SUB_LIST+=	BIND_DESTETC="${BIND_DESTETC}"
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 PLIST_SUB+=	NOBASE="" BASE="@comment "
+USE_RC_SUBR+=	named
+SUB_FILES+=	named.conf
 .else
 PLIST_SUB+=	NOBASE="@comment " BASE=""
 .endif
@@ -198,12 +201,6 @@ post-install:
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
-.for FILE in named named.conf
-	${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
-		-e 's#%%BIND_DESTETC%%#${BIND_DESTETC}#g' \
-		${FILESDIR}/${FILE} > ${WRKDIR}/${FILE}
-.endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/named ${STAGEDIR}${PREFIX}/etc/rc.d
 	${MKDIR} ${STAGEDIR}${BIND_DESTETC}
 .for i in dynamic master slave working
 	@${MKDIR} ${STAGEDIR}${BIND_DESTETC}/$i
