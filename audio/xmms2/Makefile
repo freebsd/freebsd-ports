@@ -11,9 +11,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 MAINTAINER?=	madpilot@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
 
-USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
-USES+=		pkgconfig
+USES+=		pkgconfig tar:bzip2
 
 .if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20

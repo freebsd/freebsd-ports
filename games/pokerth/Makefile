@@ -23,8 +23,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libprotobuf.so:${PORTSDIR}/devel/protobuf
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
 
-USES=		iconv gmake qmake
-USE_BZIP2=	yes
+USES=		iconv gmake qmake tar:bzip2
 USE_QT4=	gui corelib network sql sql-sqlite3 \
 		moc_build rcc_build uic_build
 USE_SDL=	mixer
