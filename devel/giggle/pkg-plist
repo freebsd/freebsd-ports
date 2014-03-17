@@ -1,27 +1,93 @@
 bin/giggle
-include/giggle/libgiggle-git/giggle-git-add-ref.h
-include/giggle/libgiggle-git/giggle-git-add.h
+share/help/sl/giggle/browse-view.page
+share/help/sl/giggle/license.page
+share/help/sl/giggle/index.page
+share/help/sl/giggle/opening-repositories.page
+share/help/sl/giggle/tagging-commits.page
+share/help/sl/giggle/history-view.page
+share/help/sl/giggle/introduction.page
+share/help/ro/giggle/opening-repositories.page
+share/help/ro/giggle/introduction.page
+share/help/ro/giggle/license.page
+share/help/ro/giggle/browse-view.page
+share/help/ro/giggle/tagging-commits.page
+share/help/ro/giggle/index.page
+share/help/ro/giggle/history-view.page
+share/help/ro/giggle/figures/giggle-history_view_sections.png
+share/help/ro/giggle/figures/giggle-browse_view_sections.png
+share/help/C/giggle/history-view.page
+share/help/C/giggle/index.page
+share/help/C/giggle/browse-view.page
+share/help/C/giggle/license.page
+share/help/C/giggle/tagging-commits.page
+share/help/C/giggle/introduction.page
+share/help/C/giggle/opening-repositories.page
+share/help/C/giggle/figures/giggle-browse_view_sections.png
+share/help/C/giggle/figures/giggle-history_view_sections.png
+share/help/de/giggle/index.page
+share/help/de/giggle/figures/giggle-history_view_sections.png
+share/help/de/giggle/figures/giggle-browse_view_sections.png
+share/help/de/giggle/browse-view.page
+share/help/de/giggle/history-view.page
+share/help/de/giggle/license.page
+share/help/de/giggle/opening-repositories.page
+share/help/de/giggle/tagging-commits.page
+share/help/de/giggle/introduction.page
+share/help/cs/giggle/browse-view.page
+share/help/cs/giggle/history-view.page
+share/help/cs/giggle/opening-repositories.page
+share/help/cs/giggle/tagging-commits.page
+share/help/cs/giggle/index.page
+share/help/cs/giggle/figures/giggle-history_view_sections.png
+share/help/cs/giggle/figures/giggle-browse_view_sections.png
+share/help/cs/giggle/introduction.page
+share/help/cs/giggle/license.page
+share/help/fr/giggle/introduction.page
+share/help/fr/giggle/tagging-commits.page
+share/help/fr/giggle/browse-view.page
+share/help/fr/giggle/history-view.page
+share/help/fr/giggle/index.page
+share/help/fr/giggle/opening-repositories.page
+share/help/fr/giggle/license.page
+share/help/fr/giggle/figures/giggle-history_view_sections.png
+share/help/fr/giggle/figures/giggle-browse_view_sections.png
+share/help/pl/giggle/opening-repositories.page
+share/help/pl/giggle/tagging-commits.page
+share/help/pl/giggle/introduction.page
+share/help/pl/giggle/browse-view.page
+share/help/pl/giggle/license.page
+share/help/pl/giggle/index.page
+share/help/pl/giggle/history-view.page
+share/help/es/giggle/history-view.page
+share/help/es/giggle/browse-view.page
+share/help/es/giggle/introduction.page
+share/help/es/giggle/license.page
+share/help/es/giggle/opening-repositories.page
+share/help/es/giggle/tagging-commits.page
+share/help/es/giggle/index.page
+include/giggle/libgiggle-git/giggle-git-list-tree.h
+include/giggle/libgiggle-git/giggle-git-revisions.h
 include/giggle/libgiggle-git/giggle-git-authors.h
-include/giggle/libgiggle-git/giggle-git-blame.h
-include/giggle/libgiggle-git/giggle-git-cat-file.h
-include/giggle/libgiggle-git/giggle-git-commit.h
-include/giggle/libgiggle-git/giggle-git-config-read.h
-include/giggle/libgiggle-git/giggle-git-config-write.h
-include/giggle/libgiggle-git/giggle-git-config.h
-include/giggle/libgiggle-git/giggle-git-delete-ref.h
-include/giggle/libgiggle-git/giggle-git-diff-tree.h
+include/giggle/libgiggle-git/giggle-git-refs.h
+include/giggle/libgiggle-git/giggle-git-ignore.h
+include/giggle/libgiggle-git/giggle-git-add-ref.h
 include/giggle/libgiggle-git/giggle-git-diff.h
 include/giggle/libgiggle-git/giggle-git-enums.h
-include/giggle/libgiggle-git/giggle-git-ignore.h
-include/giggle/libgiggle-git/giggle-git-list-files.h
-include/giggle/libgiggle-git/giggle-git-list-tree.h
-include/giggle/libgiggle-git/giggle-git-log.h
-include/giggle/libgiggle-git/giggle-git-refs.h
-include/giggle/libgiggle-git/giggle-git-remote-list.h
-include/giggle/libgiggle-git/giggle-git-revisions.h
+include/giggle/libgiggle-git/giggle-git-commit.h
+include/giggle/libgiggle-git/giggle-git-clone.h
+include/giggle/libgiggle-git/giggle-git-blame.h
 include/giggle/libgiggle-git/giggle-git.h
+include/giggle/libgiggle-git/giggle-git-remote-list.h
+include/giggle/libgiggle-git/giggle-git-diff-tree.h
+include/giggle/libgiggle-git/giggle-git-log.h
+include/giggle/libgiggle-git/giggle-git-delete-ref.h
+include/giggle/libgiggle-git/giggle-git-add.h
+include/giggle/libgiggle-git/giggle-git-config.h
+include/giggle/libgiggle-git/giggle-git-list-files.h
+include/giggle/libgiggle-git/giggle-git-cat-file.h
+include/giggle/libgiggle-git/giggle-git-config-write.h
+include/giggle/libgiggle-git/giggle-git-config-read.h
 include/giggle/libgiggle/giggle-enums.h
-include/giggle/libgiggle/giggle-marshal.h
 lib/giggle/plugins/%%GIGGLE_VER%%/libpersonal-details.la
 lib/giggle/plugins/%%GIGGLE_VER%%/libpersonal-details.so
 %%VTE%%lib/giggle/plugins/%%GIGGLE_VER%%/libterminal-view.la
@@ -36,40 +102,46 @@ lib/libgiggle.so
 lib/libgiggle.so.0
 share/applications/giggle.desktop
 %%DATADIR%%/glade/main-window.ui
-share/icons/hicolor/16x16/apps/giggle-branch.png
-share/icons/hicolor/16x16/apps/giggle-history-view.png
-share/icons/hicolor/16x16/apps/giggle-remote.png
-share/icons/hicolor/16x16/apps/giggle-scm-git.png
-share/icons/hicolor/16x16/apps/giggle-scm-svn.png
 share/icons/hicolor/16x16/apps/giggle-tag.png
+share/icons/hicolor/16x16/apps/giggle-scm-git.png
 share/icons/hicolor/16x16/apps/giggle.png
+share/icons/hicolor/16x16/apps/giggle-scm-svn.png
+share/icons/hicolor/16x16/apps/giggle-remote.png
+share/icons/hicolor/16x16/apps/giggle-history-view.png
+share/icons/hicolor/16x16/apps/giggle-branch.png
+share/icons/hicolor/32x32/apps/giggle.png
+share/icons/hicolor/32x32/apps/giggle-history-view.png
 share/icons/hicolor/22x22/apps/giggle-history-view.png
 share/icons/hicolor/22x22/apps/giggle.png
+share/icons/hicolor/scalable/apps/giggle.svg
 share/icons/hicolor/24x24/apps/giggle-diff-view.png
 share/icons/hicolor/24x24/apps/giggle-history-view.png
 share/icons/hicolor/24x24/apps/giggle.png
-share/icons/hicolor/32x32/apps/giggle-history-view.png
-share/icons/hicolor/32x32/apps/giggle.png
 share/icons/hicolor/48x48/apps/giggle-scm-svn.png
 share/icons/hicolor/48x48/apps/giggle.png
-share/icons/hicolor/scalable/apps/giggle.svg
-share/locale/ca/LC_MESSAGES/giggle.mo
-share/locale/cs/LC_MESSAGES/giggle.mo
-share/locale/de/LC_MESSAGES/giggle.mo
+share/locale/pl/LC_MESSAGES/giggle.mo
 share/locale/en_GB/LC_MESSAGES/giggle.mo
 share/locale/es/LC_MESSAGES/giggle.mo
-share/locale/fr/LC_MESSAGES/giggle.mo
-share/locale/gl/LC_MESSAGES/giggle.mo
 share/locale/hu/LC_MESSAGES/giggle.mo
-share/locale/ja/LC_MESSAGES/giggle.mo
+share/locale/gl/LC_MESSAGES/giggle.mo
 share/locale/nb/LC_MESSAGES/giggle.mo
 share/locale/pa/LC_MESSAGES/giggle.mo
-share/locale/pl/LC_MESSAGES/giggle.mo
-share/locale/ru/LC_MESSAGES/giggle.mo
-share/locale/sl/LC_MESSAGES/giggle.mo
+share/locale/fr/LC_MESSAGES/giggle.mo
+share/locale/pt_BR/LC_MESSAGES/giggle.mo
+share/locale/ca@valencia/LC_MESSAGES/giggle.mo
+share/locale/cs/LC_MESSAGES/giggle.mo
 share/locale/sv/LC_MESSAGES/giggle.mo
+share/locale/ru/LC_MESSAGES/giggle.mo
+share/locale/id/LC_MESSAGES/giggle.mo
 share/locale/vi/LC_MESSAGES/giggle.mo
+share/locale/de/LC_MESSAGES/giggle.mo
+share/locale/ja/LC_MESSAGES/giggle.mo
+share/locale/uk/LC_MESSAGES/giggle.mo
+share/locale/da/LC_MESSAGES/giggle.mo
+share/locale/ca/LC_MESSAGES/giggle.mo
+share/locale/ro/LC_MESSAGES/giggle.mo
 share/locale/zh_CN/LC_MESSAGES/giggle.mo
+share/locale/sl/LC_MESSAGES/giggle.mo
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrm lib/giggle/plugins/%%GIGGLE_VER%%
@@ -78,3 +150,25 @@ share/locale/zh_CN/LC_MESSAGES/giggle.mo
 @dirrm include/giggle/libgiggle-git
 @dirrm include/giggle/libgiggle
 @dirrm include/giggle
+@dirrm share/help/sl/giggle
+@dirrm share/help/sl
+@dirrm share/help/ro/giggle/figures
+@dirrm share/help/ro/giggle
+@dirrm share/help/ro
+@dirrm share/help/pl/giggle
+@dirrm share/help/pl
+@dirrm share/help/fr/giggle/figures
+@dirrm share/help/fr/giggle
+@dirrm share/help/fr
+@dirrm share/help/es/giggle
+@dirrm share/help/es
+@dirrm share/help/de/giggle/figures
+@dirrm share/help/de/giggle
+@dirrm share/help/de
+@dirrm share/help/cs/giggle/figures
+@dirrm share/help/cs/giggle
+@dirrm share/help/cs
+@dirrm share/help/C/giggle/figures
+@dirrm share/help/C/giggle
+@dirrm share/help/C
+@dirrm share/help
