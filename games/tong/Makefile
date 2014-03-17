@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tong
@@ -16,13 +16,12 @@ USES=		gmake
 USE_SDL=	image mixer sdl
 
 PORTDOCS=	CHANGELOG README making-of.txt notes.txt
+OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-DESKTOP_ENTRIES="TONG!" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
-OPTIONS_DEFINE=	DOCS
+DESKTOP_ENTRIES="TONG!" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GAME_DATA_DIR := .|GAME_DATA_DIR := ${DATADIR}|' \
@@ -34,9 +33,8 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "*.png" ${STAGEDIR}${DATADIR}
 
 	@${MKDIR} ${STAGEDIR}${DATADIR}/media/
-
-.for d in *.png *.xcf *.ogg *.ico
-	@(cd ${WRKSRC}/media ; ${COPYTREE_SHARE} "${d}" ${STAGEDIR}${DATADIR}/media/)
+.for f in *.png *.xcf *.ogg *.ico
+	@(cd ${WRKSRC}/media && ${COPYTREE_SHARE} "${f}" ${STAGEDIR}${DATADIR}/media/)
 .endfor
 
 	${LN} -sf ${DATADIR}/media/icon.png \
