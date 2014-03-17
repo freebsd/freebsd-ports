@@ -14,12 +14,10 @@ BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
 GNU_CONFIGURE=	yes
+
 CONFIGURE_ARGS=	--with-aspell=${LOCALBASE}/bin/aspell
 ALL_TARGET=	gate gate.1
 
-MAN1=		gate.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${res_datadir}|${DATADIR}|g' ${WRKSRC}/configure
@@ -27,9 +25,9 @@ post-patch:
 		's|^char \*malloc();||g' ${WRKSRC}/term.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gate ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gate.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/gate.help ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/gate ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/gate.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gate.help ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
