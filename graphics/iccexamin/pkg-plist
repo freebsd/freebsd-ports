@@ -1,4 +1,5 @@
 bin/iccexamin
+man/man1/iccexamin.1.gz
 share/applications/iccexamin.desktop
 share/fonts/FreeSans.ttf
 share/icons/hicolor/128x128/apps/iccexamin.png
@@ -9,7 +10,15 @@ share/locale/eu/LC_MESSAGES/icc_examin.mo
 share/locale/fr/LC_MESSAGES/icc_examin.mo
 share/pixmaps/hicolor/scalable/iccexamin.svg
 share/pixmaps/iccexamin.png
-man/man1/iccexamin.1.gz
 @dirrmtry share/pixmaps/hicolor/scalable
 @dirrmtry share/pixmaps/hicolor
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @dirrmtry share/fonts
+@dirrmtry share/applications
