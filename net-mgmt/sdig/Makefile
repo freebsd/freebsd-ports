@@ -12,23 +12,21 @@ COMMENT=	Translate IP/DNS/WINS/MAC address into port description
 
 LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN5=		sdig.conf.5
-MAN8=		sdig.8
-PLIST_FILES=	bin/sdig etc/sdig.conf etc/mactable
+PLIST_FILES=	bin/sdig etc/sdig.conf etc/mactable man/man5/sdig.conf.5.gz \
+		man/man8/sdig.8.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/sdig.conf
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/sdig.conf.5
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/sdig ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/sdig.conf ${PREFIX}/etc
-	${INSTALL_DATA} ${WRKSRC}/mactable ${PREFIX}/etc
-	${INSTALL_MAN} ${WRKSRC}/sdig.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/sdig.conf.5 ${PREFIX}/man/man5
+	${INSTALL_PROGRAM} ${WRKSRC}/src/sdig ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/sdig.conf ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/mactable ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/sdig.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/sdig.conf.5 ${STAGEDIR}${PREFIX}/man/man5
 
 .include <bsd.port.mk>
