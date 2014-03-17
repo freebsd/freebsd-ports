@@ -12,9 +12,8 @@ COMMENT=	Fast and simple image viewer
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
+USES=		gettext tar:bzip2
 USE_GNOME=	gtk20 pygtk2
-USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Mirage

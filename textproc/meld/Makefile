@@ -11,9 +11,8 @@ COMMENT=	GNOME 2 visual diff and merge tool
 
 LICENSE=	GPLv2
 
-USE_XZ=		yes
 USE_GNOME=	pygnome2
-USES=		desktop-file-utils gmake shared-mime-info shebangfix
+USES=		desktop-file-utils gmake shared-mime-info shebangfix tar:xz
 python_OLD_CMD=	${SETENV} python
 python_CMD=	${PYTHON_CMD}
 SHEBANG_FILES=	bin/meld

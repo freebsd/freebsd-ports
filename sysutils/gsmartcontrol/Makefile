@@ -14,9 +14,8 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS=	--disable-libglade

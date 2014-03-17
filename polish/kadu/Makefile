@@ -35,8 +35,7 @@ RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
-USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig tar:bzip2
 USE_XORG=	xscrnsaver
 CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 # Setting KADU_VERSION disables git invocation
