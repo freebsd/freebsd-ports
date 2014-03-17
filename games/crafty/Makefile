@@ -23,13 +23,6 @@ USES=		gmake zip
 BOOKS=		books.bin
 DISTFILES+=	${BOOKS:S/$/:books/}
 
-.if !defined(NOPORTDOCS)
-DOCFILES=	crafty.doc.ascii crafty.doc.ps
-DISTFILES+=	${DOCFILES:S/$/:doc/}
-UTILS=		bitmaps.tgz sound.zip
-DISTFILES+=	${UTILS:S/$/:utils/}
-.endif
-
 ALL_TARGET=	freebsd
 
 WITH_BOOKDIR?=	${PREFIX}/lib/crafty
@@ -44,8 +37,16 @@ OPT=		-DCPUS=4 -DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 		-DTBDIR=\\\"${WITH_TBDIR}\\\" \
 		-DPERSDIR=\\\"${WITH_PERSDIR}\\\" -DSKILL
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DOCFILES=	crafty.doc.ascii crafty.doc.ps
+DISTFILES+=	${DOCFILES:S/$/:doc/}
+UTILS=		bitmaps.tgz sound.zip
+DISTFILES+=	${UTILS:S/$/:utils/}
+.endif
 
 .if ${ARCH} == "i386"
 OPT+=		-DINLINE32
@@ -76,26 +77,21 @@ post-build:
 	(cd ${WRKSRC}; ./crafty bookpath=. <${FILESDIR}/books-building)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/crafty ${PREFIX}/bin/crafty
-	${CHOWN} root:nogroup ${PREFIX}/bin/crafty
-	${CHMOD} 2555 ${PREFIX}/bin/crafty
-	${MKDIR} ${PREFIX}/lib/crafty/cpf
-	${CHOWN} -R root:nogroup ${PREFIX}/lib/crafty
-	${CHMOD} 775 ${PREFIX}/lib/crafty ${PREFIX}/lib/crafty/cpf
+	${INSTALL_PROGRAM} ${WRKSRC}/crafty ${STAGEDIR}${PREFIX}/bin/crafty
+	${CHOWN} root:nogroup ${STAGEDIR}${PREFIX}/bin/crafty
+	${CHMOD} 2555 ${STAGEDIR}${PREFIX}/bin/crafty
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/crafty/cpf
+	${CHOWN} -R root:nogroup ${STAGEDIR}${PREFIX}/lib/crafty
+	${CHMOD} 775 ${STAGEDIR}${PREFIX}/lib/crafty ${STAGEDIR}${PREFIX}/lib/crafty/cpf
 .if defined(WITH_BOOK)
-	${INSTALL_DATA} ${WRKSRC}/book.bin ${PREFIX}/lib/crafty/book.bin
+	${INSTALL_DATA} ${WRKSRC}/book.bin ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
 .endif
-	${INSTALL_DATA} ${WRKSRC}/books.bin ${PREFIX}/lib/crafty/books.bin
-	${INSTALL_DATA} ${WRKSRC}/crafty.hlp ${PREFIX}/lib/crafty/crafty.hlp
-	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/book*
-	${CHMOD} 664 ${PREFIX}/lib/crafty/book*
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${UTILS} ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/books.bin ${STAGEDIR}${PREFIX}/lib/crafty/books.bin
+	${INSTALL_DATA} ${WRKSRC}/crafty.hlp ${STAGEDIR}${PREFIX}/lib/crafty/crafty.hlp
+	${CHOWN} root:nogroup ${STAGEDIR}${PREFIX}/lib/crafty/book*
+	${CHMOD} 664 ${STAGEDIR}${PREFIX}/lib/crafty/book*
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DOCFILES} ${STAGEDIR}${DOCSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${UTILS} ${STAGEDIR}${DOCSDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
