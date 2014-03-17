@@ -3,7 +3,7 @@
 # handle tar archives
 #
 # Feature:	tar
-# Usage:	USES=tar[:[xz|lzma|Z|bzip2|tgz]]
+# Usage:	USES=tar[:[xz|lzma|Z|bzip2|tgz|tbz]]
 #
 # MAINTAINER: portmgr@FreeBSD.org
 
@@ -20,6 +20,8 @@ EXTRACT_SUFX?=	.tar.lzma
 EXTRACT_SUFX?=	.tar.bz2
 .elif ${tar_ARGS} == tgz
 EXTRACT_SUFX?=	.tgz
+.elif ${tar_ARGS} == tbz
+EXTRACT_SUFX?=	.tbz
 .elif ${tar_ARGS} == Z
 EXTRACT_SUFX?=	.tar.Z
 .elif ${tar_ARGS} == none
