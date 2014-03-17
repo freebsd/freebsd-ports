@@ -11,18 +11,15 @@ COMMENT=	A fast file copy tool for LANs
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 
-USE_BZIP2=	yes
-MANCOMPRESSED=	no
+USES=		tar:bzip2
 
-MAN1=		ncp.1 npush.1
-PLIST_FILES=	bin/ncp bin/npush bin/npoll
+PLIST_FILES=	bin/ncp bin/npush bin/npoll man/man1/ncp.1.gz man/man1/npush.1.gz
 
 CFLAGS+=	-I${LOCALBASE}/include/libowfat -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC=gcc|CC=${CC}|' \
 		${WRKSRC}/Makefile
@@ -32,9 +29,10 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	cd ${WRKSRC}; ${INSTALL_PROGRAM} ncp ${PREFIX}/bin
-	cd ${WRKSRC}; ${INSTALL_MAN} ncp.1 npush.1 ${PREFIX}/man/man1
-	${LN} -s ${PREFIX}/bin/ncp ${PREFIX}/bin/npush
-	${LN} -s ${PREFIX}/bin/ncp ${PREFIX}/bin/npoll
+	${INSTALL_PROGRAM} ${WRKSRC}/ncp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ncp.1 ${WRKSRC}/npush.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${LN} -s ncp ${STAGEDIR}${PREFIX}/bin/npush
+	${LN} -s ncp ${STAGEDIR}${PREFIX}/bin/npoll
 
 .include <bsd.port.mk>
