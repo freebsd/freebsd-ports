@@ -1,5 +1,6 @@
 bin/yadex
 etc/yadex.cfg
+man/man6/yadex.6.gz
 %%DATADIR%%/doom.ygd
 %%DATADIR%%/doom02.ygd
 %%DATADIR%%/doom04.ygd
