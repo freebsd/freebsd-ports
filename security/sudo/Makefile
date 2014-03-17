@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.9p5
+DISTVERSION=	1.8.10p2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUDO}
 
@@ -88,5 +88,10 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/sudo.default
 	${TOUCH} ${STAGEDIR}${PREFIX}/etc/sudoers.d/.keep-me
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sudoreplay
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/visudo
+.for f in group_file.so sudoers.so system_group.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/sudo/${f}
+.endfor
 
 .include <bsd.port.mk>
