@@ -1,0 +1,9 @@
+This is a rather simplistic lexer and tokenizer for the RPSL language.
+
+It currently does not validate the object in any way, it just tries
+(rather hard) to grab the biggest ammount of information it can from the
+text presented and place it in a Parse Tree (that can be passed to other
+objects from the RPSL namespace for validation and more RFC2622 related
+functionality).
+
+WWW: http://search.cpan.org/dist/RPSL-Parser/
