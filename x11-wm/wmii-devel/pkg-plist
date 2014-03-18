@@ -28,6 +28,12 @@ bin/wmiir
 %%ETCDIR%%/ruby/wmiirc
 %%ETCDIR%%/welcome
 %%ETCDIR%%/wmiirc
+@dirrm %%ETCDIR%%/ruby
+@dirrm %%ETCDIR%%/python/pyxp
+@dirrm %%ETCDIR%%/python/pygmi
+@dirrm %%ETCDIR%%/python
+@dirrm %%ETCDIR%%/plan9port
+@dirrm %%ETCDIR%%
 lib/libwmii_hack.so
 man/man1/wimenu.1.gz
 man/man1/wmii.1.gz
@@ -47,9 +53,3 @@ man/man1/wmiir.1.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/alternative_wmiircs/plan9port
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/alternative_wmiircs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%ETCDIR%%/ruby
-@dirrm %%ETCDIR%%/python/pyxp
-@dirrm %%ETCDIR%%/python/pygmi
-@dirrm %%ETCDIR%%/python
-@dirrm %%ETCDIR%%/plan9port
-@dirrm %%ETCDIR%%
