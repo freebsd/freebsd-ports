@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/RedisDB.3.gz
+%%PERL5_MAN3%%/RedisDB::Error.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RedisDB/.packlist
+%%SITE_PERL%%/RedisDB.pm
+%%SITE_PERL%%/RedisDB/Error.pm
+@dirrmtry %%SITE_PERL%%/RedisDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RedisDB
