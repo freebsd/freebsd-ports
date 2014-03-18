@@ -14,24 +14,24 @@ BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 
 PLIST_FILES=	bin/rbllookup bin/getmoensted etc/rbllookup.conf-sample
 PORTDOCS=	CHANGELOG INSTALL NOTES README TODO gpg.asc
+SHEBANG_FILES=	rbllookup.pl
 
 CONFLICTS=	rbllookup-0.*
 
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/rbllookup.pl
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rbllookup.pl ${PREFIX}/bin/rbllookup
-	${INSTALL_SCRIPT} ${WRKSRC}/getmoensted.pl ${PREFIX}/bin/getmoensted
-	${INSTALL_DATA} ${WRKSRC}/rbllookup.conf ${PREFIX}/etc/rbllookup.conf-sample
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/rbllookup.pl \
+		${STAGEDIR}${PREFIX}/bin/rbllookup
+	${INSTALL_SCRIPT} ${WRKSRC}/getmoensted.pl \
+		${STAGEDIR}${PREFIX}/bin/getmoensted
+	${INSTALL_DATA} ${WRKSRC}/rbllookup.conf \
+		${STAGEDIR}${PREFIX}/etc/rbllookup.conf-sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
