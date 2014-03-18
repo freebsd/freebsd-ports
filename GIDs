@@ -169,6 +169,7 @@ slurm:*:468:
 _bbstored:*:505:
 radmind:*:506:
 skkserv:*:507:
+pwhois:*:512:
 nullmail:*:522:
 dkimproxy:*:525:
 pgbouncer:*:534:
