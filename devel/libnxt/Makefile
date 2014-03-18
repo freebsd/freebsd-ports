@@ -16,21 +16,17 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 SUB_FILES=	pkg-message
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}; scons)
 
 do-install:
-	${MKDIR} ${PREFIX}/include/libnxt
-	${INSTALL_PROGRAM} ${WRKSRC}/fwflash ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/fwexec ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libnxt.a ${PREFIX}/lib
-	${MKDIR} ${PREFIX}/include/libnxt
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libnxt
+	${INSTALL_PROGRAM} ${WRKSRC}/fwflash ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/fwexec ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libnxt.a ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libnxt
 .for file in ${WRKSRC}/*.h
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/libnxt
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/include/libnxt
 .endfor
-
-post-install:
-	@${CAT} ${WRKDIR}/pkg-message
 
 .include <bsd.port.mk>
