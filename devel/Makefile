@@ -2607,6 +2607,7 @@
     SUBDIR += p5-Project-Gantt
     SUBDIR += p5-Project-Libs
     SUBDIR += p5-Qudo
+    SUBDIR += p5-RPSL-Parser
     SUBDIR += p5-RRDTool-OO
     SUBDIR += p5-Range-String
     SUBDIR += p5-Rcs

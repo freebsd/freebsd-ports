@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%PERL5_MAN3%%/RPSL::Parser.3.gz
+%%SITE_PERL%%/RPSL/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPSL/Parser/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPSL/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPSL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/RPSL
