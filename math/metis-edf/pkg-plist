@@ -1,10 +1,14 @@
 bin/kmetis
+bin/mesh2dual
+bin/mesh2nodal
+bin/oemetis
 bin/onmetis
-bin/onmetis.exe
+bin/partdmesh
+bin/partnmesh
 bin/pmetis
 lib/libmetis.a
-%%SHLIB%%lib/libmetis.so
-%%SHLIB%%lib/libmetis.so.1
+lib/libmetis.so
+lib/libmetis.so.0
 include/metis/defs.h
 include/metis/macros.h
 include/metis/metis.h
@@ -13,8 +17,12 @@ include/metis/rename.h
 include/metis/struct.h
 @dirrm include/metis
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/README_Code_Aster
 %%PORTDOCS%%%%DOCSDIR%%/manual.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fort.81
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/0README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4elt.graph
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4elt.graph.part.10
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/metis.mesh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtest
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.mgraph
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

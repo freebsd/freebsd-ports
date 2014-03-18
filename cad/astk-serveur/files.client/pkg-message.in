@@ -1,18 +1,18 @@
-Des fichiers de configuration standards ont été préparés dans le répertoire
+Des fichiers de configuration standards ont Ã©tÃ© prÃ©parÃ©s dans le rÃ©pertoire
 %%inst_dir%%/ASTK_CLIENT/etc/astkrc/.
-Veuillez les vérifier, et n'oubliez pas d'installer la partie serveur
-sur la machine où Code_Aster a été installé.
+Veuillez les vÃ©rifier, et n'oubliez pas d'installer la partie serveur
+sur la machine oÃ¹ Code_Aster a Ã©tÃ© installÃ©.
 
-Pour lancer ASTK, entrez :
+Pour lancer ASTK, entrezÂ :
 %%tools_dir%%/astk
-une fois Code_Aster installé sur cette machine, sinon :
+une fois Code_Aster installÃ© sur cette machine, sinonÂ :
 %%inst_dir%%/ASTK_CLIENT/bin/astk
 
 ASTK utilise le protocole rcp/rsh, il faut donc l'activer (/etc/inetd.conf
-et ~/.rhosts) ; le paramètre --check passé à astk permet de vérifier votre
+et ~/.rhosts)Â ; le paramÃ¨tre --check passÃ© Ã  astk permet de vÃ©rifier votre
 configuration.
 
-ASTK lance xterm avec -display : il ne faut donc pas lancer Xorg avec
+ASTK lance xterm avec -displayÂ : il ne faut donc pas lancer Xorg avec
 -nolisten tcp
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

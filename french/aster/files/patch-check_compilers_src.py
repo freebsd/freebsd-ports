@@ -1,6 +1,6 @@
---- check_compilers_src.py.orig	2013-01-28 13:35:55.000000000 +0100
-+++ check_compilers_src.py	2013-03-17 21:11:35.000000000 +0100
-@@ -109,12 +109,15 @@
+--- check_compilers_src.py.orig	2013-12-19 15:44:50.000000000 +0100
++++ check_compilers_src.py	2013-12-28 15:09:39.000000000 +0100
+@@ -109,6 +109,9 @@
  You must choose another compiler or change the optimization level.
  You can cancel now or make the changes later in the config.txt file of
  Code_Aster and rebuild it.
@@ -10,10 +10,3 @@
  -------------------------------------------------------------------------------
  
  """,
-    'main.f' : r"""
-       program testloc
--      volatile ius
-+C     volatile ius
-       integer*8 ius(1)
-       integer*8 i,iad,n,loc
-       common /jvcomm/ ius
