@@ -512,6 +512,7 @@
     SUBDIR += mod_perl2
     SUBDIR += mod_proctitle
     SUBDIR += mod_proxy_html
+    SUBDIR += mod_proxy_uwsgi
     SUBDIR += mod_proxy_xml
     SUBDIR += mod_python3
     SUBDIR += mod_qos
