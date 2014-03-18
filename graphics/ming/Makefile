@@ -41,8 +41,6 @@ SHEBANG_FILES=	util/cws2fws
 
 SLAVEDIRS=	graphics/p5-ming graphics/py-ming
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|ungif|gif|g' ${WRKSRC}/configure ${WRKSRC}/docs/man/Makefile \
 		${WRKSRC}/perl_ext/Makefile.PL ${WRKSRC}/py_ext/setup.py.in
@@ -59,25 +57,25 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/py_ext/setup.py.in
 	@${LN} -sf ${LOCALBASE}/include/ming ${WRKSRC}/src
 
-.if !target(post-build)
-post-build:
-.if !defined(SLAVEPORT)
-	@${STRIP_CMD} ${WRKSRC}/src/.libs/libming.so.5
-.endif
-.endif
-
-.if !target(post-install)
 post-install:
+.if !defined(SLAVEPORT)
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/ming/ ${STAGEDIR}${PREFIX}/include/ming/blocks/ ${STAGEDIR}${PREFIX}/include/ming/util/
 	cd ${WRKSRC}/ && ${INSTALL_SCRIPT} util/cws2fws util/ming-config ${STAGEDIR}${PREFIX}/bin/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} *.h src/*.h ${STAGEDIR}${PREFIX}/include/ming/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} src/blocks/*.h ${STAGEDIR}${PREFIX}/include/ming/blocks/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} util/png2dbl.c util/*.h ${STAGEDIR}${PREFIX}/include/ming/util/
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${DOCSDIR}/util/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/util/ && ${INSTALL_DATA} ${DOCS_UTIL} ${STAGEDIR}${DOCSDIR}/util/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libming.so.5
 .endif
+.if defined(SLAVEPORT) && ${SLAVEPORT} == "p5"
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${INSTALL_WRKSRC}/examples/ && ${INSTALL_DATA} *.cgi ${STAGEDIR}${EXAMPLESDIR}/
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/SWF/SWF.so
+.endif
+.if defined(SLAVEPORT) && ${SLAVEPORT} == "py"
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_mingc.so
 .endif
 
 .include <bsd.port.mk>
