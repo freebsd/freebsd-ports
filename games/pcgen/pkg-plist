@@ -740,7 +740,7 @@ bin/pcgen
 %%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensspecialability.html
 %%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensspell.html
 %%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensweapon.html
-%%PORTDOCS%%%%DOCSDIR%%/pcgen-release-notes-60200.html
+%%PORTDOCS%%%%DOCSDIR%%/pcgen-release-notes-6021.html
 %%PORTDOCS%%%%DOCSDIR%%/pcgen.css
 %%PORTDOCS%%%%DOCSDIR%%/sourcehelp/4e_docs/4e_doc_sectionheading.html
 %%PORTDOCS%%%%DOCSDIR%%/sourcehelp/fantasy/fantasy_header.html
@@ -1113,6 +1113,7 @@ bin/pcgen
 %%DATADIR%%/data/35e/distant_horizons_games/eclipse_d20_classless/srd_support/eclipse_srd_abilities_skills.lst
 %%DATADIR%%/data/35e/distant_horizons_games/eclipse_d20_classless/srd_support/eclipse_srd_ability_categories.lst
 %%DATADIR%%/data/35e/distant_horizons_games/eclipse_d20_classless/srd_support/eclipse_srd_profs_weapons.lst
+%%DATADIR%%/data/35e/distant_horizons_games/eclipse_d20_classless/srd_support/eclipse_srd_races_companions.lst
 %%DATADIR%%/data/35e/distant_horizons_games/eclipse_d20_classless/srd_support/eclipse_srd_skills.lst
 %%DATADIR%%/data/35e/distant_horizons_games/eclipse_d20_classless/~ eclipse_master issues and work around file.txt
 %%DATADIR%%/data/35e/distant_horizons_games/the_practical_enchanter/OGL.txt
@@ -3191,6 +3192,16 @@ bin/pcgen
 %%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_rogue/quintroguefeats.lst
 %%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_rogue/quintrogueskills.lst
 %%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_rogue/quintrogueweapprofs.lst
+%%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai/OGL.txt
+%%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai/mpgqs_abilities.lst
+%%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai/mpgqs_abilitycategories.lst
+%%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai/mpgqs_classes.lst
+%%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai/mpgqs_equip.lst
+%%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai/mpgqs_equipmods.lst
+%%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai/mpgqs_feats.lst
+%%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai/mpgqs_profs_armor.lst
+%%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai/mpgqs_profs_weapon.lst
+%%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai/quintessential_samurai.pcc
 %%DATADIR%%/data/3e/mongoose_publishing/encyclopaedia_arcane/chaos_magic/OGL.txt
 %%DATADIR%%/data/3e/mongoose_publishing/encyclopaedia_arcane/chaos_magic/chaosmagic.jpg
 %%DATADIR%%/data/3e/mongoose_publishing/encyclopaedia_arcane/chaos_magic/chaosmagic.pcc
@@ -4597,6 +4608,7 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/ap11/ap11_equip_arms_armor.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/ap11/ap11_equip_magic_items.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/ap11/ap11_kits.lst
+%%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/ap11/ap11_kits_race.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/ap11/ap11_races.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/ap12/OGL.txt
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/ap12/ap12.jpg
@@ -4650,10 +4662,10 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/cotctpg_equip_arms_armor.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/cotctpg_equip_general.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/cotctpg_feats.lst
-%%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/cotctpg_kits.lst
+%%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/cotctpg_kits_companion.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/cotctpg_profs_armor.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/cotctpg_profs_weapon.lst
-%%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/cotctpg_races.lst
+%%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/cotctpg_races_companion.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/curse_of_the_crimson_throne_players_guide.jpg
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/curse_of_the_crimson_throne/players_guide/curse_of_the_crimson_throne_players_guide.pcc
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/jade_regent/players_guide/OGL.txt
@@ -4667,6 +4679,7 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/kingmaker/players_guide/kmpg_abilities_companion.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/kingmaker/players_guide/kmpg_abilitycategories.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/kingmaker/players_guide/kmpg_kits.lst
+%%DATADIR%%/data/pathfinder/paizo/adventure_path/kingmaker/players_guide/kmpg_kits_companion.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/kingmaker/players_guide/kmpg_races_companion.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/kingmaker/players_guide/kmpg_skills.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/legacy_of_fire/players_guide/OGL.txt
@@ -4677,6 +4690,7 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/legacy_of_fire/players_guide/lofpg_deities.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/legacy_of_fire/players_guide/lofpg_equip_general.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/legacy_of_fire/players_guide/lofpg_feats.lst
+%%DATADIR%%/data/pathfinder/paizo/adventure_path/legacy_of_fire/players_guide/lofpg_kits_companion.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/legacy_of_fire/players_guide/lofpg_prof_shield.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/legacy_of_fire/players_guide/lofpg_prof_weapon.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/legacy_of_fire/players_guide/lofpg_races.lst
@@ -4869,13 +4883,16 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/ap55/OGL.txt
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/ap55/ap55.jpeg
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/ap55/ap55.pcc
-%%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/ap55/ap55_abilities_class.lst
+%%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/ap55/ap55_abilities_race.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/ap55/ap55_companionmods.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/ap55/ap55_kits_companions.lst
+%%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/ap55/ap55_kits_races.lst
+%%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/ap55/ap55_races.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/ap55/ap55_races_companions.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/players_guide/OGL.txt
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/players_guide/saspg_abilities.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/players_guide/saspg_kits.lst
+%%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/players_guide/saspg_languages.lst
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/players_guide/skull_and_shackles_players_guide.jpg
 %%DATADIR%%/data/pathfinder/paizo/adventure_path/skull_and_shackles/players_guide/skull_and_shackles_players_guide.pcc
 %%DATADIR%%/data/pathfinder/paizo/campaign_setting/book_of_the_damned_volume_1/OGL.txt
@@ -4914,7 +4931,6 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/campaign_setting/dragon_empires_gazetteer/deg_biosettings.lst
 %%DATADIR%%/data/pathfinder/paizo/campaign_setting/dragon_empires_gazetteer/deg_deities.lst
 %%DATADIR%%/data/pathfinder/paizo/campaign_setting/dragon_empires_gazetteer/deg_domains.lst
-%%DATADIR%%/data/pathfinder/paizo/campaign_setting/dragon_empires_gazetteer/deg_kits_race.lst
 %%DATADIR%%/data/pathfinder/paizo/campaign_setting/dragon_empires_gazetteer/deg_languages.lst
 %%DATADIR%%/data/pathfinder/paizo/campaign_setting/dragon_empires_gazetteer/deg_races.lst
 %%DATADIR%%/data/pathfinder/paizo/campaign_setting/dragon_empires_gazetteer/deg_spells.lst
@@ -4998,25 +5014,78 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/gamemastery_cards/critical_fumble_deck/cfd_spells.lst
 %%DATADIR%%/data/pathfinder/paizo/gamemastery_cards/critical_fumble_deck/critical_fumble_deck.jpg
 %%DATADIR%%/data/pathfinder/paizo/gamemastery_cards/critical_fumble_deck/critical_fumble_deck.pcc
-%%DATADIR%%/data/pathfinder/paizo/organized_play/OGL.txt
-%%DATADIR%%/data/pathfinder/paizo/organized_play/gtpsop_abilities.lst
-%%DATADIR%%/data/pathfinder/paizo/organized_play/gtpsop_abilitycategories.lst
-%%DATADIR%%/data/pathfinder/paizo/organized_play/gtpsop_classes.lst
-%%DATADIR%%/data/pathfinder/paizo/organized_play/gtpsop_equip_magic_items.lst
-%%DATADIR%%/data/pathfinder/paizo/organized_play/gtpsop_feats.lst
-%%DATADIR%%/data/pathfinder/paizo/organized_play/gtpsop_feats_heropoints.lst
-%%DATADIR%%/data/pathfinder/paizo/organized_play/gtpsop_kits.lst
-%%DATADIR%%/data/pathfinder/paizo/organized_play/gtpsop_skills.lst
-%%DATADIR%%/data/pathfinder/paizo/organized_play/gtpsop_spells.lst
-%%DATADIR%%/data/pathfinder/paizo/organized_play/gtpsop_spells_heropoints.lst
-%%DATADIR%%/data/pathfinder/paizo/organized_play/guide_to_pathfinder_society_organized_play.jpg
-%%DATADIR%%/data/pathfinder/paizo/organized_play/guide_to_pathfinder_society_organized_play.pcc
 %%DATADIR%%/data/pathfinder/paizo/pathfinder_for_gms.pcc
 %%DATADIR%%/data/pathfinder/paizo/pathfinder_for_players.pcc
 %%DATADIR%%/data/pathfinder/paizo/pathfinder_rpg_core.pcc
 %%DATADIR%%/data/pathfinder/paizo/pathfinder_rpg_logo.jpeg
-%%DATADIR%%/data/pathfinder/paizo/pathfinder_society.pcc
-%%DATADIR%%/data/pathfinder/paizo/pathfinder_society_logo.jpeg
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/OGL.txt
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/gtpsop_abilities.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/gtpsop_abilitycategories.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/gtpsop_classes.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/gtpsop_equip_magic_items.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/gtpsop_feats.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/gtpsop_feats_heropoints.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/gtpsop_kits.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/gtpsop_skills.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/gtpsop_spells.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/gtpsop_spells_heropoints.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/guide_to_pathfinder_society_organized_play.jpg
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play/guide_to_pathfinder_society_organized_play.pcc
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pathfinder_society.pcc
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pathfinder_society_logo.jpeg
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_abilities.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_abilities_class.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_abilities_race.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_abilitycategories.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_classes.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_classes_race.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_companionmods.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_deities.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_domains.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_equip_arms_armor.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_equip_general.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_equip_magic_items.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_equipmods.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_feats.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_kits_race.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_languages.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_profs_armor.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_profs_weapon.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_races.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_skills.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_spells.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/pfs_iswg_templates.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/uc_mods_feats.lst
+%%DATADIR%%/data/pathfinder/paizo/pathfinder_society/uc_mods_profs_weapon.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/LST Editors Notes.txt
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/OGL.txt
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/andoran_spirit_of_liberty.jpg
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/andoran_spirit_of_liberty.pcc
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_abilities.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_abilities_class.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_abilities_traits.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_abilitycategories.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_classes.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_equip.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_feats.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_kits.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_races.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_skills.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_spells.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty/asol_templates.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/OGL.txt
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/blood_of_angels.jpeg
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/blood_of_angels.pcc
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/boa_abilities.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/boa_abilities_variant.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/boa_abilitycategories.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/boa_classes.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/boa_domains.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/boa_feats.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/boa_races.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/boa_skills.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/boa_spells.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels/boa_templates.lst
 %%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_fiends/OGL.txt
 %%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_fiends/blood_of_fiends.jpg
 %%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_fiends/blood_of_fiends.pcc
@@ -5106,6 +5175,7 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/player_companion/faiths_of_purity/fop_spells.lst
 %%DATADIR%%/data/pathfinder/paizo/player_companion/gnomes_of_golarion/OGL.txt
 %%DATADIR%%/data/pathfinder/paizo/player_companion/gnomes_of_golarion/gnog_abilities.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/gnomes_of_golarion/gnog_abilities_pfs.lst
 %%DATADIR%%/data/pathfinder/paizo/player_companion/gnomes_of_golarion/gnog_deities.lst
 %%DATADIR%%/data/pathfinder/paizo/player_companion/gnomes_of_golarion/gnog_equip_arms_armor.lst
 %%DATADIR%%/data/pathfinder/paizo/player_companion/gnomes_of_golarion/gnog_feats.lst
@@ -5185,6 +5255,7 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/player_companion/qadira_gateway_to_the_east/qgtte_kits_race.lst
 %%DATADIR%%/data/pathfinder/paizo/player_companion/qadira_gateway_to_the_east/qgtte_languages.lst
 %%DATADIR%%/data/pathfinder/paizo/player_companion/qadira_gateway_to_the_east/qgtte_races.lst
+%%DATADIR%%/data/pathfinder/paizo/player_companion/qadira_gateway_to_the_east/qgtte_skills.lst
 %%DATADIR%%/data/pathfinder/paizo/player_companion/qadira_gateway_to_the_east/qgtte_templates.lst
 %%DATADIR%%/data/pathfinder/paizo/player_companion/sargava_the_lost_colony/OGL.txt
 %%DATADIR%%/data/pathfinder/paizo/player_companion/sargava_the_lost_colony/sargava_the_lost_colony.jpg
@@ -5222,7 +5293,6 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/advanced_players_guide/apg_feats_heropoints.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/advanced_players_guide/apg_kits.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/advanced_players_guide/apg_kits_companion.lst
-%%DATADIR%%/data/pathfinder/paizo/roleplaying_game/advanced_players_guide/apg_kits_race.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/advanced_players_guide/apg_profs_armor.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/advanced_players_guide/apg_profs_shield.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/advanced_players_guide/apg_profs_weapon.lst
@@ -5260,8 +5330,8 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bestiary/b1_equip_arms_armor.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bestiary/b1_equip_general.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bestiary/b1_equip_magic_items.lst
+%%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bestiary/b1_kits_companion.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bestiary/b1_kits_race.lst
-%%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bestiary/b1_kits_races_companion.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bestiary/b1_profs_weapon.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bestiary/b1_races.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bestiary/b1_races_companion.lst
@@ -5303,6 +5373,7 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bonus_bestiary/bb_races.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bonus_bestiary/bonus_bestiary.jpg
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/bonus_bestiary/bonus_bestiary.pcc
+%%DATADIR%%/data/pathfinder/paizo/roleplaying_game/core_essentials/ce_abilities.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/core_essentials/ce_abilities_race.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/core_essentials/ce_abilitycategories.lst
 %%DATADIR%%/data/pathfinder/paizo/roleplaying_game/core_essentials/ce_classes_race.lst
@@ -5415,6 +5486,9 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/super_genius_games/adventurers_handbook/sggah.jpg
 %%DATADIR%%/data/pathfinder/super_genius_games/adventurers_handbook/sggah.pcc
 %%DATADIR%%/data/pathfinder/super_genius_games/adventurers_handbook/sggah_abilities_class.lst
+%%DATADIR%%/data/pathfinder/super_genius_games/adventurers_handbook/sggah_abilities_class_apg.lst
+%%DATADIR%%/data/pathfinder/super_genius_games/adventurers_handbook/sggah_abilities_class_arg.lst
+%%DATADIR%%/data/pathfinder/super_genius_games/adventurers_handbook/sggah_abilities_class_um.lst
 %%DATADIR%%/data/pathfinder/super_genius_games/adventurers_handbook/sggah_abilities_feats.lst
 %%DATADIR%%/data/pathfinder/super_genius_games/adventurers_handbook/sggah_abilities_racial.lst
 %%DATADIR%%/data/pathfinder/super_genius_games/adventurers_handbook/sggah_abilitycategories.lst
@@ -5453,12 +5527,20 @@ bin/pcgen
 %%DATADIR%%/data/pathfinder/super_genius_games/krazy_kragnars_alchemical_surplus_shop/kkass_equip.lst
 %%DATADIR%%/data/pathfinder/super_genius_games/krazy_kragnars_alchemical_surplus_shop/kkass_equipmods.lst
 %%DATADIR%%/data/pathfinder/super_genius_games/krazy_kragnars_alchemical_surplus_shop/super_genius_games_logo.png
+%%DATADIR%%/data/pathfinder/super_genius_games/the_talented_rogue/OWC5217E_180.jpeg
+%%DATADIR%%/data/pathfinder/super_genius_games/the_talented_rogue/ogl.txt
+%%DATADIR%%/data/pathfinder/super_genius_games/the_talented_rogue/the_talented_rogue.jpeg
+%%DATADIR%%/data/pathfinder/super_genius_games/the_talented_rogue/the_talented_rogue.pcc
+%%DATADIR%%/data/pathfinder/super_genius_games/the_talented_rogue/ttr_abilities_class.lst
+%%DATADIR%%/data/pathfinder/super_genius_games/the_talented_rogue/ttr_abilitycategories.lst
+%%DATADIR%%/data/pathfinder/super_genius_games/the_talented_rogue/ttr_classes.lst
 %%DATADIR%%/data/publisher_logos/12_to_Midnight.png
 %%DATADIR%%/data/publisher_logos/Alderac_Entertainment_Group.png
 %%DATADIR%%/data/publisher_logos/Bad_Axe_Games.png
 %%DATADIR%%/data/publisher_logos/Battlefield_Press.png
 %%DATADIR%%/data/publisher_logos/Big_Finger_Games.png
 %%DATADIR%%/data/publisher_logos/Blue_Devil_Games.png
+%%DATADIR%%/data/publisher_logos/Crafty-Games-Logo-web.png
 %%DATADIR%%/data/publisher_logos/Crafty_Games.png
 %%DATADIR%%/data/publisher_logos/DHG_Logo_Border.bmp
 %%DATADIR%%/data/publisher_logos/DHG_OGL_Logo.jpg
@@ -5585,6 +5667,9 @@ bin/pcgen
 %%DATADIR%%/data/xcrawl/pandahead/xcrawl/xcrawl_skills.lst
 %%DATADIR%%/data/xcrawl/pandahead/xcrawl/xcrawl_spells.lst
 %%DATADIR%%/data/xcrawl/pandahead/xcrawl/xcrawl_weapprofs.lst
+%%DATADIR%%/data/zen_test/pcgen_test_advanced/pcgen_broken_tests/pbt_equip.lst
+%%DATADIR%%/data/zen_test/pcgen_test_advanced/pcgen_broken_tests/pbt_equipmods.lst
+%%DATADIR%%/data/zen_test/pcgen_test_advanced/pcgen_broken_tests/pbt_spells.lst
 %%DATADIR%%/data/zen_test/pcgen_test_advanced/pcgen_broken_tests/pcgen_test_advanced_broken_abilities.lst
 %%DATADIR%%/data/zen_test/pcgen_test_advanced/pcgen_broken_tests/pcgen_test_advanced_broken_items.pcc
 %%DATADIR%%/data/zen_test/pcgen_test_advanced/pcgen_test_adv_abilities.lst
@@ -7461,6 +7546,7 @@ bin/pcgen
 @dirrmtry %%DATADIR%%/data/sidewinder/doghouse_rules
 @dirrmtry %%DATADIR%%/data/sidewinder
 @dirrmtry %%DATADIR%%/data/publisher_logos
+@dirrmtry %%DATADIR%%/data/pathfinder/super_genius_games/the_talented_rogue
 @dirrmtry %%DATADIR%%/data/pathfinder/super_genius_games/krazy_kragnars_alchemical_surplus_shop
 @dirrmtry %%DATADIR%%/data/pathfinder/super_genius_games/air_magic
 @dirrmtry %%DATADIR%%/data/pathfinder/super_genius_games/adventurers_handbook
@@ -7495,8 +7581,11 @@ bin/pcgen
 @dirrmtry %%DATADIR%%/data/pathfinder/paizo/player_companion/dragon_empires_primer
 @dirrmtry %%DATADIR%%/data/pathfinder/paizo/player_companion/cheliax_empire_of_devils
 @dirrmtry %%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_fiends
+@dirrmtry %%DATADIR%%/data/pathfinder/paizo/player_companion/blood_of_angels
+@dirrmtry %%DATADIR%%/data/pathfinder/paizo/player_companion/andoran_spirit_of_liberty
 @dirrmtry %%DATADIR%%/data/pathfinder/paizo/player_companion
-@dirrmtry %%DATADIR%%/data/pathfinder/paizo/organized_play
+@dirrmtry %%DATADIR%%/data/pathfinder/paizo/pathfinder_society/organized_play
+@dirrmtry %%DATADIR%%/data/pathfinder/paizo/pathfinder_society
 @dirrmtry %%DATADIR%%/data/pathfinder/paizo/gamemastery_cards/critical_fumble_deck
 @dirrmtry %%DATADIR%%/data/pathfinder/paizo/gamemastery_cards
 @dirrmtry %%DATADIR%%/data/pathfinder/paizo/campaign_setting/seekers_of_secrets
@@ -7719,6 +7808,7 @@ bin/pcgen
 @dirrmtry %%DATADIR%%/data/3e/mongoose_publishing/encyclopaedia_arcane/demonology
 @dirrmtry %%DATADIR%%/data/3e/mongoose_publishing/encyclopaedia_arcane/chaos_magic
 @dirrmtry %%DATADIR%%/data/3e/mongoose_publishing/encyclopaedia_arcane
+@dirrmtry %%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_samurai
 @dirrmtry %%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_rogue
 @dirrmtry %%DATADIR%%/data/3e/mongoose_publishing/collectors_series/quintessential_fighter
 @dirrmtry %%DATADIR%%/data/3e/mongoose_publishing/collectors_series
