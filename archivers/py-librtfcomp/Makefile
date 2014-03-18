@@ -1,6 +1,7 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,7 +16,7 @@ USE_PYTHON=	2
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
-PLIST=		# empty
+PLIST=		${NONEXISTENT}
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pyrtfcomp.a \
 		%%PYTHON_SITELIBDIR%%/pyrtfcomp.la \
