@@ -1,20 +1,20 @@
---- Lib/Makefile.orig	2008-12-03 05:08:03.000000000 -0500
-+++ Lib/Makefile	2013-08-13 00:53:40.000000000 -0400
+--- Lib/Makefile.orig	2012-10-02 18:12:21.000000000 +0200
++++ Lib/Makefile	2013-08-13 22:16:53.000000000 +0200
 @@ -2,7 +2,7 @@
  
  INCLUDES = -I.
  
--CFLAGS = $(COPTIONS) $(INCLUDES)
-+CFLAGS = $(COPTIONS) $(INCLUDES) $(PICFLAG)
+-CFLAGS = $(COPTIONS) $(OPTFLAGS) $(INCLUDES)
++CFLAGS = $(COPTIONS) $(OPTFLAGS) $(INCLUDES) $(PICFLAG)
  LD = $(CC) -L. 
  
  
-@@ -22,6 +22,8 @@
- 
+@@ -23,6 +23,8 @@
  ../libmetis.a: $(OBJS)
  	$(AR) $@ $(OBJS)
-+	%%SHLIB%%$(CC) -shared $(CFLAGS) $(LDFLAGS) -o ../libmetis.so.1 $(OBJS) -lm
-+	%%SHLIB%%(cd .. && ln -sf libmetis.so.1 libmetis.so)
+ 	$(RANLIB) $@
++	$(CC) -shared $(CFLAGS) $(LDFLAGS) -o ../libmetis.so.0 $(OBJS) -lm
++	(cd .. && ln -sf libmetis.so.0 libmetis.so)
  
  clean:
  	rm -f *.o

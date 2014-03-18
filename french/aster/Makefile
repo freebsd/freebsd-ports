@@ -3,14 +3,14 @@
 
 PORTNAME=		aster
 DISTVERSION=		${ASTER_DISTVERSION}
-PORTREVISION=	2
 CATEGORIES=		french cad
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
 
+LICENSE=	GPLv2
+
 #-----------------------------------------------------------------------
-NO_STAGE=	yes
 # You may define these options:
 #
 # - FFLAGS: fortan compiler's flags (-O2 by default);
@@ -33,19 +33,22 @@ NO_STAGE=	yes
 
 BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
+		${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch		\
 		${PYNUMPY}
-LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18				\
-		med.5:${PORTSDIR}/french/med
+LIB_DEPENDS+=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18			\
+		libmed.so:${PORTSDIR}/french/med				\
+		libmetis.so.0:${PORTSDIR}/math/metis-edf
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
-		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
+		${LOCALBASE}/bin/onmetis:${PORTSDIR}/math/metis-edf		\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
-LICENSE=	GPLv2
+BROKEN=		WIP - to be fixed
 
 USES=		bison fortran tk
-USE_PYTHON=	2	# >2.5 and <3.0
+USE_PYTHON=	2       # >2.5 and <3.0
 HAS_CONFIGURE=	yes
+MAKE_ENV=	INCLUDES="${LOCALBASE}/include ${LOCALBASE}/include/metis"
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-full-src-${PORTVERSION:R}
@@ -70,10 +73,11 @@ FLAGARCH=	-DLINUX64
 FFLAGARCH=	-fdefault-integer-8 -fdefault-real-8
 .endif
 
-.if ${ARCH} == "amd64"
+#.if ${ARCH} == "amd64"
 # python 2.7 causes process runaway
-PYTHON_VERSION=	2.6
-.endif
+#PYTHON_VERSION=	2.6
+#.endif
+
 # Avoid renaming .f into .F
 #F90FLAGS=	-x f77-cpp-input ${FFLAGS}
 
@@ -81,10 +85,10 @@ PYTHON_VERSION=	2.6
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 .endif
 
 .if !defined(WITHOUT_ASTK_CLI)
@@ -114,28 +118,19 @@ PLIST_SUB+=	GRACE="@comment "
 .if !defined(WITHOUT_MACR_RECAL)
 RUN_DEPENDS+=	${PYNUMPY}
 .endif
-.if !defined(WITHOUT_SCOTCH)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch
-.endif
 
-.if exists(${LOCALBASE}/lib/libcmumps.a)
-WITH_MUMPS=	yes
-.endif
-.if defined(WITH_MUMPS)
-WITH_MPI=	yes	# For the FETI solver
-. if exists(${LOCALBASE}/lib/libmpiseq.a)
+.if !defined(WITH_MPI)
 MUMPS_PORT=	mumps
-. else
+.else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs	\
 		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
 MUMPS_PORT=	mumps-mpich
 MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lmumps_common -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/lib -lmpich -lmpl
-. endif
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/${MUMPS_PORT}
 .endif
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/${MUMPS_PORT}
 
 .if defined(WITH_MPI)
-LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
 HOME_MPI=	${LOCALBASE}
 .endif
 
@@ -195,9 +190,11 @@ hdf_dir=	${LOCALBASE}
 .if defined(WITH_ATLAS)
 lib_blas=	ptf77blas
 lib_atlas=	atlas
+lib_math=	"-lptf77blas -latlas"
 .else
 lib_blas=	blas
 lib_atlas=	# empty
+lib_math=	"-lblas -llapack"
 .endif
 
 LASTKDIR?=	${PORTNAME}/ASTK/ASTK_CLIENT
@@ -213,12 +210,15 @@ pre-everything::
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|PREFER_SHARED_LIBS=False|PREFER_SHARED_LIBS=True|' ${WRKSRC}/setup.cfg
+	${REINPLACE_CMD} -e 's|PREFER_SHARED_LIBS=False|PREFER_SHARED_LIBS=True|'	\
+		${WRKSRC}/setup.cfg
 	${REINPLACE_CMD} -e 's|/opt/aster|${WRKSRC}/instdir|'		\
 		${WRKSRC}/setup.cfg
 	${REINPLACE_CMD} -e 's|?ASTER_ROOT?|${WRKSRC}/instdir|'		\
 		${WRKSRC}/products.py
-	${REINPLACE_CMD} -e "s|'gfortran'|'${FC}'|g" ${WRKSRC}/check_compilers.py
+	# -O2 causes failure in compilation of the elements -see GCC Bug 51267
+	${REINPLACE_CMD} -e "s|'gfortran'|'${FC}'|g;s|-O2|-O0|;s|'gcc'|'${CC}'|g"	\
+		-e "s|'g++'|'${CXX}'|g" ${WRKSRC}/check_compilers.py
 .for sh in ${BASH2RC}
 	${REINPLACE_CMD} -e 's|/bin/bash|${SHELL_INSTALL_ASTER}|' ${WRKSRC}/${sh}
 .endfor
@@ -252,26 +252,29 @@ pre-configure:
 	${ECHO_CMD} "OPT_ENV = 'verbose=True'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_SCOTCH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_METIS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
-.if defined(WITH_MUMPS)
+	${ECHO_CMD} "INCLUDEDIR = ['${LOCALBASE}/include/metis', ]"			\
+			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_MUMPS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
-. if ${MUMPS_PORT} == "mumps-mpich"
-	# else libmpiseq.a used instead of libmpich, default is OK
+.if ${MUMPS_PORT} == "mumps-mpich"
 	${ECHO_CMD} "MUMPSLIB = '${MUMPSLIB}'"			>> ${WRKSRC}/setup.cfg
-. endif
 .endif
 	${ECHO_CMD} "CC='${CC}'"				>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "gcc='${CC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "CXX='${CXX}'"				>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CXXLIB = '${LDFLAGS} -lstdc++ -lsupc++'"	\
-		>> ${WRKSRC}/setup.cfg
+	#${ECHO_CMD} "CXXLIB = '-L${LOCALBASE}/lib/${CC} -lstdc++ -lsupc++'"	\
+	#	>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "LD='${FC}'"				>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90='${LOCALBASE}/bin/${FC}'"		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "OTHERLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lgfortran ${PTHREAD_LIBS} -lz'"	\
+	${ECHO_CMD} "F90='${FC}'"				>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "MATHLIB='${lib_math} ${LDFLAGS} -lgfortran -lm'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "OTHERLIB='-Xlinker -export-dynamic -lutil ${PTHREAD_LIBS} -lz'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "SYSLIB='${PTHREAD_LIBS} -lz'"		>> ${WRKSRC}/setup.cfg
 .if defined(WITH_MPI)
 	${ECHO_CMD} "HOME_MPI = '${HOME_MPI}'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "MPIRUN = 'mpirun'"				>> ${WRKSRC}/setup.cfg
 .else
 	${ECHO_CMD} "HOME_MPI = ''"				>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "MPIRUN = ''"				>> ${WRKSRC}/setup.cfg
 .endif
 	${ECHO_CMD} "HOME_ZMAT = ''"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_HDF='${hdf_dir}'"			>> ${WRKSRC}/setup.cfg
@@ -288,26 +291,28 @@ pre-configure:
 	${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
 	# -O2 causes failure in compilation of the elements -see GCC Bug 51267
-	${ECHO_CMD} "FFLAGS='-c ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "FFLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-.if defined(WITH_MPI)
-	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "FFLAGS='-c ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} ${FFLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "FFLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH}'"	\
+		>> ${WRKSRC}/setup.cfg
+.if defined(WITH_MPI)
+	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${HOME_MPI}/include'"	\
+		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 	# -O2 causes failure in compilation of the elements -see GCC Bug 51267
-	${ECHO_CMD} "CFLAGS='-c ${CFLAGS:C|O2|O0|} -fno-tree-dse ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS:C|O2|O0|} ${PTHREAD_CFLAGS} ${FLAGARCH} -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-tree-dse ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} ${FLAGARCH} -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 .else
-	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} ${FFLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS='-c ${CFLAGS:C|O2|O0|} -fno-tree-dse ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS:C|O2|O0|} ${PTHREAD_CFLAGS} ${FLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-tree-dse ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} ${FLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
 .endif
 .for is in ${INTERACTIVE_SCRIPTS}
@@ -342,7 +347,7 @@ post-configure:
 
 do-build:
 	(cd ${BUILD_WRKSRC} &&	\
-	${PYTHON_CMD} setup.pyo ${DEBUG_FLAGS} install aster	\
+	${MAKE_ENV} ${PYTHON_CMD} setup.pyo ${DEBUG_FLAGS} install aster	\
 		| tee ${BUILD_WRKSRC}/build.log)
 	${CHMOD} go-x ${WRKSRC}/instdir/${vaster}/materiau/A42_REF_A.NOMI
 

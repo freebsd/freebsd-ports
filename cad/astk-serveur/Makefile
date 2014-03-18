@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	astk
-PORTVERSION=	1.11.0
+DISTVERSION=	1.13.3-2
 CATEGORIES=	cad
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -13,8 +13,9 @@ PKGNAMESUFFIX=	-client
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
 
+LICENSE=	GPLv2
+
 #-----------------------------------------------------------------------
-NO_STAGE=	yes
 # You may define these options:
 #
 # - WITH_ZSH or WITH_BASH or WITH_KSH: select a shell among
@@ -29,11 +30,9 @@ NO_STAGE=	yes
 
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
 
-LICENSE=	GPLv2
-
 .if !defined(CLIENT_SEUL)
 USE_PYTHON=	yes
-USES+=		tk:build
+USES+=		tk:build gettext
 .else
 USES+=		tk
 .endif
@@ -42,6 +41,8 @@ REINPLACE_ARGS=	-i ""
 
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION:S/-/./:R}/SRC
 
+SUB_FILES=	pkg-message
+SUB_LIST=	inst_dir=${inst_dir} tools_dir=${tools_dir}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 LINSTDIR=	aster/ASTK
 inst_dir=	${PREFIX}/${LINSTDIR}
@@ -59,7 +60,7 @@ conf_dir=	${WRKSRC}/etc/astkrc
 .include <bsd.port.pre.mk>
 
 .if !defined(CLIENT_SEUL)
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ASTK_SERV
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_SERV
 PATCHDIR=	${MASTERDIR}/files
 PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_SERV SERV="" CLIENT="@comment "		\
 		vaster=${vaster}
@@ -87,7 +88,7 @@ RUN_DEPENDS+=	xterm:${PORTSDIR}/x11/xterm						\
 		${LOCALBASE}/lib/${TKPNG}/pkgIndex.tcl:${PORTSDIR}/graphics/tkpng
 TKPNG_VER=	0.9
 TKPNG=		tkpng${TKPNG_VER}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ASTK_CLIENT
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_CLIENT
 PATCHDIR=	${MASTERDIR}/files.client
 PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_CLIENT SERV="@comment " CLIENT="" vaster=""	\
 		BWidget_DIR=${LINSTDIR}/ASTK_CLIENT/lib/BWidget-${BWidget_VER}
@@ -140,7 +141,7 @@ WITH_ED=	gedit
 RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:${PORTSDIR}/editors/gedit
 . elif exists(${LOCALBASE}/bin/kwrite)
 WITH_ED=	kwrite
-RUN_DEPENDS+=	${LOCALBASE}/bin/kwrite:${PORTSDIR}/x11/kdebase3
+RUN_DEPENDS+=	${LOCALBASE}/bin/kwrite:${PORTSDIR}/editors/kate
 . elif exists(${LOCALBASE}/bin/xedit)
 WITH_ED=	xedit
 RUN_DEPENDS+=	${LOCALBASE}/bin/xedit:${PORTSDIR}/x11/xedit
@@ -265,31 +266,22 @@ do-configure:
 .endif
 
 do-install:
-	${MKDIR} ${inst_dir}
-	${CP} -R ${WRKSRC} ${inst_dir}
+	${MKDIR} ${STAGEDIR}${inst_dir}
+	${CP} -R ${WRKSRC} ${STAGEDIR}${inst_dir}
 .if !defined(CLIENT_SEUL)
-	${MKDIR} ${ETCDIR}
-	${CP} -R ${WRKSRC}/etc/* ${ETCDIR}
-	${RM} -rf ${inst_dir}/ASTK_SERV/etc
-. for rep in asrun share/codeaster/asrun/examples unittest
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/ASTK_SERV/${rep}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/ASTK_SERV/${rep}
-. endfor
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${ETCDIR}/plugins
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${ETCDIR}/plugins
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${CP} -R ${WRKSRC}/etc/* ${STAGEDIR}${ETCDIR}
+	${RM} -rf ${STAGEDIR}${inst_dir}/ASTK_SERV/etc
+	(cd ${STAGEDIR}${PREFIX} \
+		 && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		 -d ${PREFIX} -f aster)
+	(cd ${STAGEDIR}${PREFIX} \
+		 && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		 -d ${PREFIX} -f aster)
 . if defined(WITH_MPI)
-	${ECHO_CMD} "localhost" > ${PREFIX}/aster/aster-mpihosts
+	${ECHO_CMD} "localhost" > ${STAGEDIR}${PREFIX}/aster/aster-mpihosts
 . endif
 .endif
-
-post-install:
-	@${ECHO_MSG}
-	@${SED} -e "s|%%ETCDIR%%|${ETCDIR}|"		\
-		-e "s|%%inst_dir%%|${inst_dir}|"	\
-		-e "s|%%tools_dir%%|${tools_dir}|"	\
-		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 .include <bsd.port.post.mk>

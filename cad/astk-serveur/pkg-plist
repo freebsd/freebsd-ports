@@ -439,6 +439,7 @@
 %%SERV%%%%ASTKDIR%%/i18n/locale/fr/LC_MESSAGES/asrun.mo
 %%SERV%%%%ASTKDIR%%/i18n/messages.pot
 %%SERV%%%%ASTKDIR%%/share/codeaster/GPL.txt
+%%SERV%%%%ASTKDIR%%/share/codeaster/asrun/data/as_rex_prof
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/data/convbase.comm
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/data/meshtool.comm
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/data/mpirun_template
@@ -476,9 +477,6 @@
 %%SERV%%%%ASTKDIR%%/unittest/065_system.py
 %%SERV%%%%ASTKDIR%%/unittest/065_system.pyc
 %%SERV%%%%ASTKDIR%%/unittest/065_system.pyo
-%%SERV%%%%ASTKDIR%%/unittest/080_agla.py
-%%SERV%%%%ASTKDIR%%/unittest/080_agla.pyc
-%%SERV%%%%ASTKDIR%%/unittest/080_agla.pyo
 %%SERV%%%%ASTKDIR%%/unittest/090_devel.py
 %%SERV%%%%ASTKDIR%%/unittest/090_devel.pyc
 %%SERV%%%%ASTKDIR%%/unittest/090_devel.pyo
@@ -551,6 +549,12 @@
 %%SERV%%%%ETCDIR%%/plugins/__init__.py
 %%SERV%%%%ETCDIR%%/plugins/__init__.pyc
 %%SERV%%%%ETCDIR%%/plugins/__init__.pyo
+%%SERV%%%%ETCDIR%%/plugins/aster4_calcul.py
+%%SERV%%%%ETCDIR%%/plugins/aster4_calcul.pyc
+%%SERV%%%%ETCDIR%%/plugins/aster4_calcul.pyo
+%%SERV%%%%ETCDIR%%/plugins/ivanoe.py
+%%SERV%%%%ETCDIR%%/plugins/ivanoe.pyc
+%%SERV%%%%ETCDIR%%/plugins/ivanoe.pyo
 %%SERV%%%%ETCDIR%%/plugins/sge_pe.py
 %%SERV%%%%ETCDIR%%/plugins/sge_pe.pyc
 %%SERV%%%%ETCDIR%%/plugins/sge_pe.pyo
@@ -558,7 +562,7 @@
 %%SERV%%%%ETCDIR%%/profile.sh
 %%SERV%%@dirrm %%ETCDIR%%/plugins
 %%SERV%%@dirrm %%ETCDIR%%
-@dirrmtry aster/etc
+%%SERV%%@dirrmtry aster/etc
 %%CLIENT%%@dirrm %%BWidget_DIR%%/images
 %%CLIENT%%@dirrm %%BWidget_DIR%%/lang
 %%CLIENT%%@dirrm %%BWidget_DIR%%

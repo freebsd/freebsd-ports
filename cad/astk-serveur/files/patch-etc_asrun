@@ -1,5 +1,5 @@
---- etc/asrun.orig	2011-12-20 13:33:00.000000000 +0100
-+++ etc/asrun	2012-01-02 22:07:53.000000000 +0100
+--- etc/asrun.orig	2014-03-05 09:28:59.000000000 +0100
++++ etc/asrun	2014-03-17 15:46:25.000000000 +0100
 @@ -110,6 +110,10 @@
  # shared folders = for which remote copy is never necessary (comma separated)
  shared_folders :
@@ -11,26 +11,7 @@
  # choose True to create symbolic links instead of copying executable and catalogs
  symlink : True
  
-@@ -176,12 +180,12 @@
- # batch_kil : to delete jobs
- 
- # --- batch configuration (see examples below)
--batch_nom : SunGE
--batch_ini : /opt/SunGE6.0/default/common/settings.sh
--batch_sub : /opt/SunGE6.0/bin/lx24-x86/qsub
--batch_jid : JOB_ID
--batch_job : /opt/SunGE6.0/bin/lx24-x86/qstat
--batch_kil : /opt/SunGE6.0/bin/lx24-x86/qdel
-+#batch_nom : SunGE
-+#batch_ini : /opt/SunGE6.0/default/common/settings.sh
-+#batch_sub : /opt/SunGE6.0/bin/lx24-x86/qsub
-+#batch_jid : JOB_ID
-+#batch_job : /opt/SunGE6.0/bin/lx24-x86/qstat
-+#batch_kil : /opt/SunGE6.0/bin/lx24-x86/qdel
- 
- # --- Sun Grid Engine example
- #batch_nom : SunGE
-@@ -200,28 +204,28 @@
+@@ -195,28 +199,28 @@
  #batch_kil : /usr/share/lsf/6.2/linux2.6-glibc2.3-ia64/bin/bkill
  
  # --- PBS example
@@ -67,7 +48,7 @@
  
  # shell command to get processor id
  # LAM/MPI : echo $LAMRANK
-@@ -250,8 +254,11 @@
+@@ -245,8 +249,11 @@
  # ps commands : uncomment lines corresponding to your platform
  #ps_cpu : /bin/ps -e --width=512 -ocputime -ocommand
  #ps_pid : /bin/ps -e --width=512 -opid -ocommand
