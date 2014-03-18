@@ -13,6 +13,8 @@ COMMENT=		Not so Trivial DataBase
 
 LICENSE=		GPLv3
 
+CONFLICTS=
+
 USES=			compiler pkgconfig
 USE_PYTHON_BUILD=	2
 USE_LDCONFIG=		yes
@@ -24,7 +26,8 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--mandir=${MANPREFIX}/man \
-			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}
+			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
+			--without-gettext
 # Support staging
 DESTDIRNAME=		--destdir
 
