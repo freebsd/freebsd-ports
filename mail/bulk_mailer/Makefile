@@ -3,6 +3,7 @@
 
 PORTNAME=	bulk_mailer
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.utk.edu/pub/moore/bulk_mailer/ \
 		LOCAL/mat
@@ -16,7 +17,7 @@ LICENSE=	GPLv3
 
 ALL_TARGET=	bulk_mailer
 
-.include <bsd.port.options.mk>
+PORTDOCS=	*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bulk_mailer ${STAGEDIR}${PREFIX}/bin
