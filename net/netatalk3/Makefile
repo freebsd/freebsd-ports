@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	netatalk
-PORTVERSION=	3.1.0
-PORTREVISION=	4
+PORTVERSION=	3.1.1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/3.1
+#MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/3.1
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
     		libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
 USE_AUTOTOOLS=	libtool
-USE_BDB=	46+
+USE_BDB=	5+
 USE_BZIP2=	yes
 USES=		iconv gmake pkgconfig perl5
 GNU_CONFIGURE=	yes
@@ -46,8 +45,8 @@ OPTIONS_DEFAULT+=AVAHI
 NOZEROCONF_DESC=Disable Zeroconf(Bonjour) support
 KRB5_DESC=	Enable Kerberos V UAM
 DTRACE_DESC=	Enable DTrace support
-SENDFILE_DESC=	Enable Sendfile support
 MYSQL_DESC=	Enable MySQL CNID backend support
+SENDFILE_DESC=	Enable Sendfile support
 ACL_DESC=	Enable ACL support
 
 .include <bsd.port.options.mk>
@@ -89,14 +88,14 @@ SUB_LIST+=		ZEROCONF=""
 .if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
 SUB_LIST+=		ZEROCONF="avahi_daemon"
 .endif
 
 .if ${PORT_OPTIONS:MMDNSRESPONDER}
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/mDNSResponder
+LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 SUB_LIST+=		ZEROCONF="mdnsd"
 .endif
 
@@ -115,7 +114,7 @@ CONFIGURE_ARGS+=	--disable-sendfile
 .endif
 
 .if ${PORT_OPTIONS:MDBUS} || exists(${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc)
-LIB_DEPENDS+=		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
 PLIST_SUB+=		DBUS=""
 .else
@@ -129,7 +128,7 @@ CONFIGURE_ARGS+=--with-mysql-config=/nonexistent
 .endif
 
 .if ${PORT_OPTIONS:MACL}
-LIB_DEPENDS+=	sunacl:${PORTSDIR}/sysutils/libsunacl
+LIB_DEPENDS+=	libsunacl.so:${PORTSDIR}/sysutils/libsunacl
 CONFIGURE_ARGS+=--with-acls
 .else
 CONFIGURE_ARGS+=--without-acls
