@@ -24,7 +24,7 @@ do-build:
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/manl/idea.l ${STAGEDIR}${PREFIX}/man/manl
 	${INSTALL_PROGRAM} -m 0555 ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	@@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Examples ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/byte_ord.ps ${WRKSRC}/idea_cmd.txt \
