@@ -24,16 +24,17 @@ USES=		perl5
 USE_PERL5=	run
 DOC_FILES=	check_mysql_slave.html check_mysql_slave.pod
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/nagios
-	${INSTALL_SCRIPT} ${WRKSRC}/check_mysql_slave ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_mysql_slave_epn ${PREFIX}/libexec/nagios/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${WRKSRC}/check_mysql_slave \
+		${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${WRKSRC}/check_mysql_slave_epn \
+		${STAGEDIR}${PREFIX}/libexec/nagios
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
