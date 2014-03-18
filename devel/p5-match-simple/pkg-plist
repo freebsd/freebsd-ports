@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/match/simple/.packlist
+%%SITE_PERL%%/match/simple.pm
+%%SITE_PERL%%/match/smart.pm
+%%PERL5_MAN3%%/match::simple.3.gz
+%%PERL5_MAN3%%/match::smart.3.gz
+@dirrmtry %%SITE_PERL%%/match
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/match/simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/match
