@@ -3,6 +3,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 
 #
 # TODO
-# * Python wrap
+# * PYTHON wrap
 # * VTK Groups
 
 UNIQUENAME=	${PKGBASE}
@@ -41,17 +42,17 @@ DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
 
 #VTK_GROUPS=	Imaging MPI Qt Rendering StandAlone Views
 VTK_GROUPS=	MPI
-VTK_WRAPS=	Java TclTk # Python
+VTK_WRAPS=	JAVA TCLTK # PYTHON
 OPTIONS_GROUP=	Groups Wrapping
 OPTIONS_GROUP_Groups=${VTK_GROUPS}
 OPTIONS_GROUP_Wrapping=${VTK_WRAPS}
-OPTIONS_DEFINE=	Designer DOCS
+OPTIONS_DEFINE=	DESIGNER DOCS
 OPTIONS_RADIO=	Qt
-OPTIONS_RADIO_Qt=	Qt4 Qt5
+OPTIONS_RADIO_Qt=	QT4 QT5
 Qt_DESC=	Qt GUI support
-Qt4_DESC=	Qt 4 toolkit support
-Qt5_DESC=	Qt 5 toolkit support
-#OPTIONS_DEFAULT=MPI Qt Java Python TclTk Designer
+QT4_DESC=	Qt 4 toolkit support
+QT5_DESC=	Qt 5 toolkit support
+#OPTIONS_DEFAULT=MPI Qt JAVA PYTHON TCLTK DESIGNER
 
 .for g in ${VTK_GROUPS}
 $g_DESC=	Build the $g group
@@ -60,7 +61,7 @@ $g_DESC=	Build the $g group
 $w_DESC=	$w wrapping
 .endfor
 
-Designer_DESC=	Build the Qt Designer plugin
+DESIGNER_DESC=	Build the Qt Designer plugin
 
 CMAKE_ARGS+=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_ARCHIVE_DIR=lib/vtk-${VTK_SHORT_VER} \
@@ -102,21 +103,21 @@ PLIST_SUB+=	MPI=""
 PLIST_SUB+=	MPI="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MQt4}
+.if ${PORT_OPTIONS:MQT4}
 USE_QT4=	gui_build gui_run network_build network_run sql_build sql_run \
 		moc_build uic_build qmake_build rcc_build opengl webkit_build \
 		webkit_run
 CMAKE_ARGS+=	-DVTK_QT_VERSION:STRING="4"
 .endif
 
-.if ${PORT_OPTIONS:MQt5}
+.if ${PORT_OPTIONS:MQT5}
 USE_QT5=	gui_build gui_run network_build network_run sql_build sql_run \
 		qmake_build opengl webkit_build buildtools webkit_run
 CMAKE_ARGS+=	-DVTK_QT_VERSION:STRING="5" \
 		-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5
 .endif
 
-.if ${PORT_OPTIONS:MQt4} || ${PORT_OPTIONS:MQt5}
+.if ${PORT_OPTIONS:MQT4} || ${PORT_OPTIONS:MQT5}
 CMAKE_ARGS+=	-DVTK_Group_Qt:BOOL=ON
 PLIST_SUB+=	QT=""
 .else
@@ -124,13 +125,13 @@ PLIST_SUB+=	QT="@comment "
 CMAKE_ARGS+=	-DVTK_Group_Qt:BOOL=OFF
 .endif
 
-.if ${PORT_OPTIONS:MDesigner}
-.if ${PORT_OPTIONS:MQt5}
+.if ${PORT_OPTIONS:MDESIGNER}
+.if ${PORT_OPTIONS:MQT5}
 USE_QT5+=	designer
-.elif ${PORT_OPTIONS:MQt4}
+.elif ${PORT_OPTIONS:MQT4}
 USE_QT4+=	designer
 .else
-IGNORE=	designer requires either Qt4 or Qt5
+IGNORE=	designer requires either QT4 or QT5
 .endif
 PLIST_SUB+=	DESIGNER=""
 CMAKE_ARGS+=	-DQT_DESIGNER_PLUGIN:BOOL=ON
@@ -140,7 +141,7 @@ CMAKE_ARGS+=	-DQT_DESIGNER_PLUGIN:BOOL=OFF
 .endif
 
 # Wrapping
-.if ${PORT_OPTIONS:MJava}
+.if ${PORT_OPTIONS:MJAVA}
 CATEGORIES+=	java
 USE_JAVA=	yes
 CMAKE_ARGS+=	-DVTK_WRAP_JAVA:BOOL=ON \
@@ -154,7 +155,7 @@ CMAKE_ARGS+=	-DVTK_WRAP_JAVA:BOOL=OFF \
 PLIST_SUB+=	JAVA="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MPython}
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=ON
 PLIST_SUB+=	PYTHON=""
@@ -163,7 +164,7 @@ CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=OFF
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTclTk}
+.if ${PORT_OPTIONS:MTCLTK}
 USES+=		tk
 CMAKE_ARGS+=	-DVTK_WRAP_TCL:BOOL=ON \
     		-DVTK_Group_Tk:BOOL=ON \
@@ -177,7 +178,7 @@ CMAKE_ARGS+=	-DVTK_WRAP_TCL:BOOL=OFF \
 PLIST_SUB+=	TCLTK="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MJava} || ${PORT_OPTIONS:MPython} || ${PORT_OPTIONS:MTclTk}
+.if ${PORT_OPTIONS:MJAVA} || ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MTCLTK}
 PLIST_SUB+=	WRAP=""
 .else
 PLIST_SUB+=	WRAP="@comment "
