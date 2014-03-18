@@ -25,15 +25,17 @@ PLIST_FILES=	bin/xnview-mp lib/xnview-mp/libQtCore.so.4 \
 		lib/xnview-mp/libQtGui.so.4 lib/xnview-mp/xnview
 PLIST_DIRS=	lib/xnview-mp
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|\.|${PREFIX}/lib/xnview-mp|" ${WRKSRC}/xnview.sh
 
 do-install:
-	${MKDIR}	${PREFIX}/lib/xnview-mp
-	${INSTALL_SCRIPT} ${WRKSRC}/xnview.sh	${PREFIX}/bin/xnview-mp
-	${INSTALL_PROGRAM}	${WRKSRC}/libQtCore.so.4	${PREFIX}/lib/xnview-mp/
-	${INSTALL_PROGRAM} ${WRKSRC}/libQtGui.so.4		${PREFIX}/lib/xnview-mp/
-	${INSTALL_PROGRAM} 	${WRKSRC}/xnview	${PREFIX}/lib/xnview-mp/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xnview-mp
+	${INSTALL_SCRIPT} ${WRKSRC}/xnview.sh \
+		${STAGEDIR}${PREFIX}/bin/xnview-mp
+	${INSTALL_LIB} ${WRKSRC}/libQtCore.so.4 \
+		${STAGEDIR}${PREFIX}/lib/xnview-mp
+	${INSTALL_LIB} ${WRKSRC}/libQtGui.so.4 \
+		${STAGEDIR}${PREFIX}/lib/xnview-mp
+	${INSTALL_PROGRAM} ${WRKSRC}/xnview ${STAGEDIR}${PREFIX}/lib/xnview-mp
 
 .include <bsd.port.mk>
