@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ming
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 PKGNAMEPREFIX=	p5-
 
@@ -24,14 +24,5 @@ USES=		perl5
 
 MASTERDIR=	${.CURDIR}/../../graphics/ming
 SLAVEPORT=	p5
-
-.include <bsd.port.options.mk>
-
-post-install:
-	${SED} -i '' 's|^${STAGEDIR}||' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/SWF/.packlist
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${INSTALL_WRKSRC}/examples/ && ${INSTALL_DATA} *.cgi ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include "${MASTERDIR}/Makefile"
