@@ -34,11 +34,11 @@ post-patch:
 		${WRKSRC}/update.sh
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/redirector.pl ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/update.sh \
 		${STAGEDIR}${PREFIX}/bin/update-bannerfilter-rules
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for f in ${CONFIG_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${ETCDIR}/${f}.default
 .if !exists(${STAGEDIR}${ETCDIR}/${f})

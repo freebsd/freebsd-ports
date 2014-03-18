@@ -74,7 +74,7 @@ do-install:
 	${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${STAGEDIR}${PREFIX}/etc
 .endif
 	${INSTALL_MAN} ${WRKSRC}/${MANPAGE8} ${STAGEDIR}${MANPREFIX}/man/man8
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

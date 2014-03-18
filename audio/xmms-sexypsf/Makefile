@@ -39,10 +39,10 @@ do-build:
 		-o ${WRKSRC}/libsexypsf.so -shared -lz
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
 	${INSTALL_PROGRAM} ${WRKSRC}/libsexypsf.so \
 		${STAGEDIR}${PREFIX}/lib/xmms/Input/libsexypsf.so
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/Docs/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

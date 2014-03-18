@@ -38,7 +38,7 @@ gbsplay-post-patch:
 		 /^default:/ s|$$(mans)||' ${WRKSRC}/Makefile
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
 	${INSTALL_PROGRAM} ${WRKSRC}/gbsxmms.so \
 		${STAGEDIR}${PREFIX}/lib/xmms/Input
 

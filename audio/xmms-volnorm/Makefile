@@ -25,7 +25,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Effect
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Effect
 	${INSTALL_DATA} ${WRKSRC}/src/.libs/libnormvol.so \
 		${STAGEDIR}${PREFIX}/lib/xmms/Effect
 
