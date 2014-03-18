@@ -11,13 +11,14 @@ DISTNAME=	flasm16src
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Command line assembler/disassembler of flash actionscript bytecode
 
-PLIST_FILES=	bin/flasm
 USES=		bison dos2unix gmake zip
-NO_WRKSUBDIR=	YES
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	bin/flasm
+
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/flasm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/flasm ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
