@@ -18,7 +18,8 @@ PLIST_FILES=	bin/r2e %%DATADIR%%/${PORTNAME}.py
 PLIST_DIRS=	%%DATADIR%%
 PORTEXAMPLES=	config.py.example
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PYTHONCMD@|${PYTHON_CMD}|;s|@DATADIR@|${DATADIR}|'\
 		${WRKSRC}/r2e
@@ -26,12 +27,10 @@ post-patch:
 		${WRKSRC}/rss2email.py
 
 do-install:
-	@${INSTALL} -d ${DATADIR}/
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${DATADIR}/
-	@${INSTALL_SCRIPT} ${WRKSRC}/r2e ${PREFIX}/bin/
-.ifndef NOPORTEXAMPLES
-	@${INSTALL} -d ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/config.py.example ${EXAMPLESDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/r2e ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/config.py.example ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
