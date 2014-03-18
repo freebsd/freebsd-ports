@@ -1,0 +1,6 @@
+This module provides interface to access redis key-value store, it
+transparently handles disconnects and forks, supports transactions,
+pipelining, and subscription mode.  Module includes XS and pure Perl
+versions of the parser.
+
+WWW: http://search.cpan.org/dist/RedisDB/

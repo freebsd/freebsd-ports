@@ -456,6 +456,7 @@
     SUBDIR += p5-RRD-Simple
     SUBDIR += p5-Redis
     SUBDIR += p5-Redis-hiredis
+    SUBDIR += p5-RedisDB
     SUBDIR += p5-RedisDB-Parser
     SUBDIR += p5-Relations
     SUBDIR += p5-Relations-Query
