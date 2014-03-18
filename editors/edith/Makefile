@@ -19,22 +19,17 @@ USE_LINUX_APPS=	xorglibs
 RESTRICTED=	Redistribution not allowed
 NO_BUILD=	yes
 
-MAN1=		edith.1
-MANCOMPRESSED=	no
-
 WRKSRC=		${WRKDIR}/edith
 EDITHDIR=	${PREFIX}/lib/edith
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/linux/edith ${PREFIX}/bin
-	${MKDIR} ${EDITHDIR}
-	${MKDIR} ${EDITHDIR}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/edi* ${EDITHDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/linux/edith ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EDITHDIR}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/edi* ${STAGEDIR}${EDITHDIR}/bin
 .for i in defaults help
-	${MKDIR} ${EDITHDIR}/${i}
-	${INSTALL_DATA} ${WRKSRC}/${i}/* ${EDITHDIR}/${i}
+	@${MKDIR} ${STAGEDIR}${EDITHDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/${i}/* ${STAGEDIR}${EDITHDIR}/${i}
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/edith.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/edith.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
