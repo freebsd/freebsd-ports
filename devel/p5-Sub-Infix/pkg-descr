@@ -1,0 +1,5 @@
+Sub::Infix creates fake infix operators using overloading. It doesn't use source
+filters, or Devel::Declare, or any of that magic. It's pure Perl, has no
+non-core dependencies, and runs on Perl 5.8.
+
+WWW: http://search.cpan.org/dist/Sub-Infix/
