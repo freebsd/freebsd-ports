@@ -13,6 +13,7 @@ lib/libolecf.a
 lib/libolecf.la
 lib/libolecf.so
 lib/libolecf.so.1
+lib/libolecf.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyolecf.a
 %%PYTHON_SITELIBDIR%%/pyolecf.la
 %%PYTHON_SITELIBDIR%%/pyolecf.so
