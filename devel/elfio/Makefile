@@ -3,13 +3,15 @@
 
 PORTNAME=	elfio
 PORTVERSION=	1.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/ELFIO-sources/ELFIO-${PORTVERSION}
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for reading and generating files in the ELF binary format
+
+LICENSE=	LGPL21
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
@@ -22,10 +24,6 @@ ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 OPTIONE_DEFINE=	EXAMPLES DOCS
 
 PORTDOCS=	*
-
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
@@ -45,18 +43,18 @@ pre-configure:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for f in elf11g.zip tutorial.docbook tutorial.pdf
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${FIND} ${WRKSRC}/Examples/ -name "*.cpp" -exec ${INSTALL_DATA} {} \
-		${EXAMPLESDIR}/ \;
+		${STAGEDIR}${EXAMPLESDIR}/ \;
 .endif
 
 .include <bsd.port.mk>
