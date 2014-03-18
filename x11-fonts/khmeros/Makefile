@@ -18,16 +18,11 @@ NO_BUILD=	yes
 FONTSDIR=	lib/X11/fonts/Khmer/
 PLIST_SUB+=	FONTSDIR=${FONTSDIR}
 
-NO_STAGE=	yes
 post-patch:
 	${MV} "${WRKSRC}/KhmerOS .ttf" ${WRKSRC}/KhmerOS.ttf
 
 do-install:
-	${MKDIR} ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${PREFIX}/${FONTSDIR}
-
-post-install:
-	@${ECHO_MSG} "==> Running fc-cache"
-	@-${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}
 
 .include <bsd.port.mk>
