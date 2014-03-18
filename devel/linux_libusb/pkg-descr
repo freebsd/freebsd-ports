@@ -1,0 +1,12 @@
+linux-libusb takes advantage of FreeBSD libusb(8) library, which got
+prepared to work correctly within linux(4) emulation layer. It lets
+you to take Linux binary linked with libusb.so and use it on
+FreeBSD.
+
+Additional information: This port has been prepared under FreeBSD
+with kern.osreldate = 1000510. It relies on the fact the libusb(8)
+API seems to be stable and no changes have been made to internal API
+for a long time. If this assumption isn't true, port won't work.
+Please submit bug report to the port maintainter in that case.
+
+WWW: http://lists.freebsd.org/pipermail/freebsd-usb/2014-March/012854.html

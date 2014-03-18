@@ -1163,6 +1163,7 @@
     SUBDIR += linux-f10-sdl12
     SUBDIR += linux-kmod-compat
     SUBDIR += linux_kdump
+    SUBDIR += linux_libusb
     SUBDIR += lion
     SUBDIR += llnextgen
     SUBDIR += llvm-devel
