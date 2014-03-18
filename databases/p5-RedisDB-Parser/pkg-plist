@@ -1,0 +1,17 @@
+%%PERL5_MAN3%%/RedisDB::Parser.3.gz
+%%PERL5_MAN3%%/RedisDB::Parser::Error.3.gz
+%%PERL5_MAN3%%/RedisDB::Parser::PP.3.gz
+%%PERL5_MAN3%%/RedisDB::Parser::XS.3.gz
+%%PERL5_MAN3%%/RedisDB::README.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RedisDB/Parser/Parser.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RedisDB/Parser/Parser.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RedisDB/Parser/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/RedisDB/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RedisDB/Parser/Error.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RedisDB/Parser/PP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RedisDB/Parser/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RedisDB/README.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RedisDB/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RedisDB
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RedisDB/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RedisDB
