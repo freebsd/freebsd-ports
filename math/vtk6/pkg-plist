@@ -2561,7 +2561,7 @@ lib/cmake/vtk-%%VER2%%/Modules/vtkzlib.cmake
 lib/cmake/vtk-%%VER2%%/UseVTK.cmake
 lib/cmake/vtk-%%VER2%%/VTKConfig.cmake
 lib/cmake/vtk-%%VER2%%/VTKConfigVersion.cmake
-lib/cmake/vtk-%%VER2%%/VTKTargets-release.cmake
+lib/cmake/vtk-%%VER2%%/VTKTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/vtk-%%VER2%%/VTKTargets.cmake
 lib/cmake/vtk-%%VER2%%/exportheader.cmake.in
 lib/cmake/vtk-%%VER2%%/pythonmodules.h.in
