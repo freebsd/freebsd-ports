@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	viking
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -22,8 +21,7 @@ LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
-USE_BZIP2=	yes
-USES=		gmake iconv desktop-file-utils perl5 pkgconfig
+USES=		gmake iconv desktop-file-utils perl5 pkgconfig tar:bzip2
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	cairo gnomedocutils gtk20
@@ -35,14 +33,23 @@ INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-OPTIONS_DEFINE=		DOCS NLS GEOTAG GPSD
-OPTIONS_DEFAULT=	GEOTAG GPSD
+OPTIONS_DEFINE=		DOCS GEOCACHES NLS GEOTAG GPSD
+OPTIONS_DEFAULT=	GEOTAG GPSD MERKAATOR
+
+OPTIONS_MULTI=		OpenStreetMap-Editor
+OPTIONS_MULTI_OpenStreetMap-Editor=	JOSM MERKAATOR
+
+GEOCACHES_DESC=	GeoCaches Acquire support
 GEOTAG_DESC=	Geotag support
 GPSD_DESC=	Realtime GPS tracking
+JOSM_DESC=	Edit OpenStreetMap via JOSM
+MERKAATOR_DESC=	Edit OpenStreetMap via Merkaartor
 
 OPTIONS_SUB=	yes
+
+GEOCACHES_CONFIGURE_ENABLE=	geocaches
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
@@ -53,9 +60,19 @@ GEOTAG_CONFIGURE_ENABLE=geotag
 GPSD_LIB_DEPENDS=	libgpsd.so:${PORTSDIR}/astro/gpsd
 GPSD_CONFIGURE_ENABLE=	realtime-gps-tracking
 
+JOSM_RUN_DEPENDS=	josm:${PORTSDIR}/astro/josm
+MERKAATOR_RUN_DEPENDS=	merkaartor:${PORTSDIR}/astro/merkaartor
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGEOCACHES}
+SUB_FILES+=	pkg-message
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s| -g | |' ${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|Science;|Education;Science;|' ${WRKSRC}/src/viking.desktop.in
+	@${REINPLACE_CMD} -e 's|Science;|Education;Science;|' \
+		${WRKSRC}/src/viking.desktop.in
 
 post-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
