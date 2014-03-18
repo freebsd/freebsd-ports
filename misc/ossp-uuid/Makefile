@@ -12,8 +12,6 @@ PKGNAMEPREFIX=	ossp-
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	ISO-C API and CLI for generating Universally Unique Identifiers
 
-#CONFLICTS=	e2fsprogs-libuuid-[0-9]*
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-shared --enable-static --with-cxx \
@@ -21,6 +19,8 @@ CONFIGURE_ARGS=	--disable-shared --enable-static --with-cxx \
 
 .if defined(SLAVEPORT) && ${SLAVEPORT}=="perl"
 PKGNAMEPREFIX=	p5-OSSP-
+.else
+CONFLICTS=	e2fsprogs-libuuid-[0-9]*
 .endif
 
 .include <bsd.port.pre.mk>
