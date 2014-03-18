@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exabgp
-PORTVERSION=	3.2.18
-PORTREVISION=	2
+PORTVERSION=	3.3.1
 CATEGORIES=	net
 MASTER_SITES=	GH GHC \
 		http://mirrors.rit.edu/zi/
@@ -17,7 +16,7 @@ LICENSE=	BSD
 USE_GITHUB=	yes
 GH_ACCOUNT=	Exa-Networks
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	51d6b56
+GH_COMMIT=	2224194
 USE_PYTHON=	yes
 SUB_FILES=	pkg-message exabgp.sh
 SUB_LIST=	PYTHON_LIBDIR=${PYTHON_LIBDIR} PYTHON_CMD=${PYTHON_CMD} \
@@ -26,9 +25,6 @@ USE_RC_SUBR=	${PORTNAME}
 
 USERS=		_bgpd
 GROUPS=		_bgpd
-
-MAN1=		${PORTNAME}.1
-
 
 OPTIONS_DEFINE=	EXAMPLES
 
@@ -49,9 +45,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
-	@if [ ! -f ${ETCDIR}/exabgp.env ]; then \
-	    	${CP} ${FILESDIR}/exabgp.env ${STAGEDIR}${ETCDIR} ; \
-	fi
+	${CP} ${FILESDIR}/exabgp.env ${STAGEDIR}${ETCDIR}/exabgp.env.sample
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
