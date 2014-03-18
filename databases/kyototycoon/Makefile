@@ -28,16 +28,12 @@ USES=		gmake pkgconfig
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g; s|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile
 
-post-build:
-	@cd ${WRKSRC}/ && ${STRIP_CMD} ktplugdbvoid.so ktplugservmemc.so \
-		ktremotemgr ktremotetest ktserver kttimedmgr kttimedtest \
-		ktutilmgr ktutilserv ktutiltest
-
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libkyototycoon.so.2.19.0 ${STAGEDIR}${PREFIX}/libexec/*.so
 	${FIND} ${STAGEDIR}${DOCSDIR}/ -type d -exec ${CHMOD} ${BINMODE} '{}' \;
 	${FIND} ${STAGEDIR}${DOCSDIR}/ -type f -exec ${CHMOD} ${DOCMODE} '{}' \;
 
 regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check
 
 .include <bsd.port.mk>
