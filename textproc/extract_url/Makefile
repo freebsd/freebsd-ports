@@ -10,7 +10,7 @@ PROJECTHOST=	extracturl
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Perl script that extracts URLs from email in MIME or plain text format
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
