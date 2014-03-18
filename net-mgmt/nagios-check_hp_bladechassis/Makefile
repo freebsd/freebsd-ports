@@ -16,19 +16,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
-MAN8=		check_hp_bladechassis.8
-PLIST_FILES=	libexec/nagios/check_hp_bladechassis
-PLIST_DIRSTRY=	libexec/nagios/
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_FILES=	libexec/nagios/check_hp_bladechassis man/man8/check_hp_bladechassis.8.gz
+PLIST_DIRSTRY=	libexec/nagios
+SHEBANG_FILES=	check_hp_bladechassis
 
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/nagios
-	${INSTALL_SCRIPT} ${WRKSRC}/check_hp_bladechassis ${PREFIX}/libexec/nagios/
-	${INSTALL_MAN} ${WRKSRC}/check_hp_bladechassis.8 ${PREFIX}/man/man8/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${WRKSRC}/check_hp_bladechassis \
+		${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_MAN} ${WRKSRC}/check_hp_bladechassis.8 \
+		${STAGEDIR}${MANPREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
