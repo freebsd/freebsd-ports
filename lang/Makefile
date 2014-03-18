@@ -300,7 +300,6 @@
     SUBDIR += scala
     SUBDIR += scala-docs
     SUBDIR += scheme48
-    SUBDIR += schemetoc
     SUBDIR += scm
     SUBDIR += scsh
     SUBDIR += sdcc
