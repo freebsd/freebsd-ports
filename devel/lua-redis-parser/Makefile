@@ -12,6 +12,8 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Redis reply parser and request constructor library for Lua
 
 BROKEN=		fails checksum because uses moving master branch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-04-18
 
 USE_LUA?=	5.1
 GITVERSION=	0-g32cee57
