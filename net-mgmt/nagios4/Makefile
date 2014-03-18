@@ -3,6 +3,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	4.0.4
+PORTREVISION=	1
 PKGNAMESUFFIX=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x/${PORTNAME}-${PORTVERSION}
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 USES=		gmake iconv perl5 uidfix
 USE_PERL5=	build
 USE_AUTOTOOLS=	autoconf libltdl
-USE_PHP=	yes
+USE_PHP=	xml
 USE_RC_SUBR=	nagios
 
 CONFLICTS=	nagios-[12].* nagios-devel-*
