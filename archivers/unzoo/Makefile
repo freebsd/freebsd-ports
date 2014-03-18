@@ -22,7 +22,7 @@ PLIST_FILES=	bin/unzoo man/man1/unzoo.1.gz
 CFLAGS+=	-trigraphs
 
 post-extract:
-	@@${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 	@${MV} ${WRKDIR}/${PORTNAME}.c ${WRKSRC}
 
 do-build:
