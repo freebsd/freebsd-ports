@@ -17,6 +17,7 @@ LICENSE=	GPLv3
 
 ALL_TARGET=	bulk_mailer
 
+PLIST_FILES=	bin/bulk_mailer man/man1/bulk_mailer.1.gz
 PORTDOCS=	*
 
 do-install:
