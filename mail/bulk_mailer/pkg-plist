@@ -1,5 +1,0 @@
-bin/bulk_mailer
-man/man1/bulk_mailer.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/bulk_mailer.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
