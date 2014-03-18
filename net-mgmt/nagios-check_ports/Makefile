@@ -2,24 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	check_ports
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://code.adminlife.net/check_ports/files/
 PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	ryanrfrederick@gmail.com
-COMMENT=	Nagios Plugin to monitor your FreeBSD Ports
+COMMENT=	monitor FreeBSD ports for updates or vulnerabilities
 
-RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
+USE_GITHUB=	yes
+GH_ACCOUNT=	rfrederick
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	7cee15a
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 1000000
+RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
+.endif
+
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/nagios
-	${INSTALL_SCRIPT} ${WRKSRC}/check_ports ${PREFIX}/libexec/nagios/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${WRKSRC}/check_ports ${STAGEDIR}${PREFIX}/libexec/nagios/
 
 .include <bsd.port.post.mk>
