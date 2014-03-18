@@ -10,17 +10,15 @@ POST-DEINSTALL)
 	echo "     Note:"
 	echo "     Prosody related user accounts and groups were not removed."
 	echo ""
-	echo "     To remove the 'prosody' user and the 'prosody' group which were"
-	echo "     created by a default installation of this package, run:"
+	echo "     To remove the user and group which were created by "
+	echo "     the installation of this package, run:"
 	echo ""
-	echo "     pw userdel -n prosody"
-	echo "     pw groupdel -n prosody"
+	echo "     pw userdel -n %%USERS%%"
+	echo "     pw groupdel -n %%GROUPS%%"
 	echo ""
-    echo "     and to remove all server data:"
-    echo "     rm -rf  /usr/local/var/lib/prosody"
-    echo ""
-	;;
-*)
+	echo "     and to remove all server data:"
+	echo "     rm -rf  /usr/local/var/lib/prosody"
+	echo ""
 	;;
 esac
 exit 0
