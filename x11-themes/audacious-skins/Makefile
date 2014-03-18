@@ -17,7 +17,7 @@ NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/audacious
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/Skins
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Skins
 	${INSTALL_DATA} ${WRKSRC}/Skins/*/*.wsz ${STAGEDIR}${DATADIR}/Skins
 
 .include <bsd.port.mk>

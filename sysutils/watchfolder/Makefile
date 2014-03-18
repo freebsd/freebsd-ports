@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/watchd.conf ${STAGEDIR}${PREFIX}/etc/watchd.conf.sample
 	[ -f ${PREFIX}/etc/watchd.conf ] || \
 		${INSTALL_DATA} ${WRKSRC}/watchd.conf ${STAGEDIR}${PREFIX}/etc
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/doc/watchfolder.pdf \
 		${STAGEDIR}${DOCSDIR}
 

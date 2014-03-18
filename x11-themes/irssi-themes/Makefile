@@ -28,13 +28,13 @@ PLIST_FILES+=	${THEMESDIR_REL}/${f}
 PLIST_DIRSTRY=	share/irssi/themes share/irssi
 
 do-extract:
-	@${MKDIR} ${WRKSRC}
+	@@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSRC}
 .endfor
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${THEMESDIR_REL}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${THEMESDIR_REL}
 .for f in ${DISTFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${THEMESDIR_REL}
 .endfor

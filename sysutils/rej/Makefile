@@ -29,7 +29,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${f}
 .endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

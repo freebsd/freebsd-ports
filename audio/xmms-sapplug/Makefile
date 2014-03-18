@@ -51,7 +51,7 @@ post-patch:
 		${WRKSRC}/saplib/Makefile
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
 	${INSTALL_DATA} ${WRKSRC}/libsap.so \
 		${STAGEDIR}${PREFIX}/lib/xmms/Input/libsap.so
 

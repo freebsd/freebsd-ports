@@ -46,7 +46,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
 		${STAGEDIR}${PREFIX}/etc/mail/${PORTNAME}.conf.sample
 

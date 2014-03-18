@@ -14,7 +14,7 @@ COMMENT=	Extracts .lzx archives from Amiga systems
 PLIST_FILES=	bin/unlzx
 
 do-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 	${GZCAT} ${DISTDIR}/${DISTFILES} > ${WRKSRC}/${DISTNAME}
 
 do-build:
