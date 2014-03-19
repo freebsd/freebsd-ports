@@ -21,7 +21,7 @@ WANT_PHP_WEB=	yes
 USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter
 IGNORE_WITH_PHP=52
 
-OPTIONS_DEFINE=	SSL LDAP GD PSPELL NSC
+OPTIONS_DEFINE=	SSL LDAP GD PSPELL NSC DOCS
 OPTIONS_SINGLE=	DB
 OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=MYSQL
@@ -82,15 +82,15 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -type f -delete
 
 do-install:
-	-${MKDIR} ${STAGEDIR}/${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_BIN} bin ${STAGEDIR}/${WWWDIR}
+	-${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_BIN} bin ${STAGEDIR}${WWWDIR}
 .for i in ${RCUBECOMP}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}/${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}/${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
 	@(cd ${WRKSRC}; ${FIND} bin ${RCUBECOMP} -not -type d) | ${SORT} | \
