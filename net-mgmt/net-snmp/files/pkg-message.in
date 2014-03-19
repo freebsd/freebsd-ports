@@ -1,7 +1,7 @@
-**** This port installs snmp daemon, header files and libraries but don't
-     invokes snmpd by default.
-     If you want to invoke snmpd and/or snmptrapd at startup, put these
-     lines into /etc/rc.conf.
+**** This port installs snmpd, header files and libraries but does not
+     start snmpd by default.
+     If you want to auto-start snmpd and snmptrapd:, add the following to
+     /etc/rc.conf:
 
 	snmpd_enable="YES"
 	snmpd_flags="-a"
@@ -9,7 +9,7 @@
 	snmptrapd_enable="YES"
 	snmptrapd_flags="-a -p /var/run/snmptrapd.pid"
 
-**** You may specify the following make variables:
+**** You may also specify the following make variables:
 
 	NET_SNMP_SYS_CONTACT="zi@FreeBSD.org"
 	NET_SNMP_SYS_LOCATION="USA"
@@ -18,10 +18,10 @@
 	NET_SNMP_LOGFILE=/var/log/snmpd.log
 	NET_SNMP_PERSISTENTDIR=/var/net-snmp
 
-     to define default values (or overwriting defaults).  At least
-     setting first two variables, you will not be prompted during
-     configuration process.  You may also set
+     to define default values (or to override the defaults).  To avoid being
+     prompted during the configuration process, you should (minimally) define
+     the first two variables. (NET_SNMP_SYS_*)
+
+     You may also define the following to avoid all interactive configuration:
 
 	BATCH="yes"
-
-     to avoid interactive configuration.
