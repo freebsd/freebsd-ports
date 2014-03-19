@@ -3,6 +3,7 @@
 
 PORTNAME=	tumbler
 PORTVERSION=	0.1.30
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -28,7 +29,7 @@ CONFIGURE_ARGS=	--enable-xdg-cache \
 		--disable-gtk-doc-html
 
 OPTIONS_DEFINE=	DOCS NLS PIXBUF FONTS JPEG FFMPEG POPPLER \
-	GSTREAMER ODF RAW COVER
+		GSTREAMER ODF OPENRAW COVER
 OPTIONS_DEFAULT=	PIXBUF FONTS JPEG POPPLER ODF
 FONTS_DESC=	Fonts thumbnailer plugin
 COVER_DESC=	Open Movie Database thumbnailer plugin
@@ -150,7 +151,7 @@ CONFIGURE_ARGS+=--disable-odf-thumbnailer
 PLIST_SUB+=	ODF="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MRAW}
+.if ${PORT_OPTIONS:MOPENRAW}
 .if ! ${PORT_OPTIONS:MPIXBUF}
 USE_GNOME+=	gdkpixbuf2
 CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer

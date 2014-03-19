@@ -3,7 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.2/
 
@@ -125,7 +125,7 @@ PLIST_SUB+=	OPENEXR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENRAW}
-LIB_DEPENDS+=	openraw:${PORTSDIR}/graphics/libopenraw
+LIB_DEPENDS+=	libopenraw.so:${PORTSDIR}/graphics/libopenraw
 PLIST_SUB+=	OPENRAW=""
 .else
 CONFIGURE_ARGS+=--without-libopenraw
