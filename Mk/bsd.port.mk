@@ -3764,7 +3764,7 @@ do-package: ${TMPPLIST}
 		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -D ${PKGMESSAGE}"; \
 	fi; \
 	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${WRKDIR}/${PKGNAME}${PKG_SUFX}; then \
-		if [ -d ${PACKAGES} -a -w ${PACKAGES} ]; then \
+		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
 			${LN} -f ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null || \
 			    ${CP} -af ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
 			cd ${.CURDIR} && eval ${MAKE} package-links; \
