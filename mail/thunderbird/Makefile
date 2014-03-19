@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	24.3.0
-PORTREVISION=	2
+DISTVERSION=	24.4.0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
@@ -12,17 +11,21 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
-BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.10.2:${PORTSDIR}/devel/nspr \
 		nss>=3.15.4:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.17:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
+		harfbuzz>=0.9.16:${PORTSDIR}/print/harfbuzz \
+		libvorbis>=1.3.4:${PORTSDIR}/audio/libvorbis \
+		opus>=1.1:${PORTSDIR}/audio/opus \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
+		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 EM_VERSION=	1.6
-L_VERSION=	2.6.4
+L_VERSION=	2.6.5
 
 SSP_UNSAFE=	yes
 USE_AUTOTOOLS=	autoconf213:env

@@ -1,0 +1,63 @@
+diff --git configure.in configure.in
+index 0d9236a..0447104 100644
+--- configure.in
++++ configure.in
+@@ -8670,6 +8670,20 @@ fi
+ AC_SUBST(MOZ_EM_DEBUG)
+ 
+ if test -n "$COMPILE_ENVIRONMENT"; then
++AC_MSG_CHECKING([for posix_fadvise])
++AC_TRY_LINK([#define _XOPEN_SOURCE 600
++  #include <fcntl.h>],
++                 [posix_fadvise(0, 0, 0, 0);],
++                 [ac_cv___posix_fadvise=true],
++                 [ac_cv___posix_fadvise=false])
++
++if test "$ac_cv___posix_fadvise" = true ; then
++  AC_DEFINE(HAVE_POSIX_FADVISE)
++  AC_MSG_RESULT(yes)
++else
++  AC_MSG_RESULT(no)
++fi
++
+ AC_MSG_CHECKING([for posix_fallocate])
+ AC_TRY_LINK([#define _XOPEN_SOURCE 600
+   #include <fcntl.h>],
+diff --git js/src/configure.in js/src/configure.in
+index da9767c..352ba14 100644
+--- js/src/configure.in
++++ js/src/configure.in
+@@ -4025,6 +4025,20 @@ AC_SUBST(CXX_VERSION)
+ AC_SUBST(MSMANIFEST_TOOL)
+ AC_SUBST(MOZ_LINKER)
+ 
++AC_MSG_CHECKING([for posix_fadvise])
++AC_TRY_LINK([#define _XOPEN_SOURCE 600
++  #include <fcntl.h>],
++                 [posix_fadvise(0, 0, 0, 0);],
++                 [ac_cv___posix_fadvise=true],
++                 [ac_cv___posix_fadvise=false])
++
++if test "$ac_cv___posix_fadvise" = true ; then
++  AC_DEFINE(HAVE_POSIX_FADVISE)
++  AC_MSG_RESULT(yes)
++else
++  AC_MSG_RESULT(no)
++fi
++
+ AC_MSG_CHECKING([for posix_fallocate])
+ AC_TRY_LINK([#define _XOPEN_SOURCE 600
+   #include <fcntl.h>],
+diff --git xpcom/io/nsLocalFileUnix.cpp xpcom/io/nsLocalFileUnix.cpp
+index bacf06c..0e46e4a 100644
+--- xpcom/io/nsLocalFileUnix.cpp
++++ xpcom/io/nsLocalFileUnix.cpp
+@@ -382,7 +382,7 @@ nsLocalFile::OpenNSPRFileDesc(int32_t flags, int32_t mode, PRFileDesc **_retval)
+         PR_Delete(mPath.get());
+     }
+ 
+-#if defined(LINUX) && !defined(ANDROID)
++#if defined(HAVE_POSIX_FADVISE)
+     if (flags & OS_READAHEAD) {
+         posix_fadvise(PR_FileDesc2NativeHandle(*_retval), 0, 0,
+                       POSIX_FADV_SEQUENTIAL);

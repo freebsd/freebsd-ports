@@ -1,0 +1,48 @@
+diff --git config/system-headers config/system-headers
+index 8803150..ae38d68 100644
+--- mozilla/config/system-headers
++++ mozilla/config/system-headers
+@@ -1158,3 +1158,4 @@ unicode/unum.h
+ unicode/ustring.h
+ #endif
+ libutil.h
++unwind.h
+diff --git configure.in configure.in
+index f452a5e..a1ebbcc 100644
+--- mozilla/configure.in
++++ mozilla/configure.in
+@@ -7455,7 +7455,10 @@ dnl ========================================================
+ dnl = Support for gcc stack unwinding (from gcc 3.3)
+ dnl ========================================================
+ if test -z "$SKIP_LIBRARY_CHECKS"; then
++    AC_LANG_SAVE
++    AC_LANG_CPLUSPLUS
+     MOZ_CHECK_HEADER(unwind.h, AC_CHECK_FUNCS(_Unwind_Backtrace))
++    AC_LANG_RESTORE
+ fi
+ 
+ dnl ========================================================
+diff --git config/system-headers config/system-headers
+index 8803150..ae38d68 100644
+--- mozilla/js/src/config/system-headers
++++ mozilla/js/src/config/system-headers
+@@ -1158,3 +1158,4 @@ unicode/unum.h
+ unicode/ustring.h
+ #endif
+ libutil.h
++unwind.h
+diff --git configure.in configure.in
+index f452a5e..a1ebbcc 100644
+--- mozilla/js/src/configure.in
++++ mozilla/js/src/configure.in
+@@ -7455,7 +7455,10 @@ dnl ========================================================
+ dnl = Support for gcc stack unwinding (from gcc 3.3)
+ dnl ========================================================
+ if test -z "$SKIP_LIBRARY_CHECKS"; then
++    AC_LANG_SAVE
++    AC_LANG_CPLUSPLUS
+     MOZ_CHECK_HEADER(unwind.h, AC_CHECK_FUNCS(_Unwind_Backtrace))
++    AC_LANG_RESTORE
+ fi
+ 
+ dnl ========================================================

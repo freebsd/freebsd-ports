@@ -1,0 +1,10 @@
+--- mozilla/memory/jemalloc/Makefile.in~
++++ mozilla/memory/jemalloc/Makefile.in
+@@ -12,3 +12,7 @@ include $(topsrcdir)/config/rules.mk
+ ifdef GNU_CC
+ CFLAGS += -std=gnu99
+ endif
++
++# XXX startup crash workaround for gcc47 on amd64
++jemalloc.$(OBJ_SUFFIX): OS_CFLAGS := $(filter-out -O3 -Ofast,$(OS_CFLAGS))
++jemalloc.$(OBJ_SUFFIX): MOZ_OPTIMIZE_FLAGS=
