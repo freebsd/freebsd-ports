@@ -14,4 +14,6 @@ COMMENT=		Router Policy Specification Language (RFC2622) Parser
 USES=			perl5
 USE_PERL5=		configure
 
+PORTSCOUT=		skipv:0.39,0.039
+
 .include <bsd.port.mk>
