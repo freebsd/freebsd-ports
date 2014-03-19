@@ -1,4 +1,4 @@
-Python bindinds for Apache Qpid, which speak AMQP and support many languages
+Python bindings for Apache Qpid, which speak AMQP and support many languages
 and platforms.
 
 AMQP is an open internet protocol for reliably sending and receiving messages.
