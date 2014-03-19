@@ -16,8 +16,17 @@ The SSH server on remote_host must allow pub key authentication.
 
 Firefox and HTML5
 
-Certain functions used to display HTML5 elements need the sem module
-only on 8.x releases.
+H.264 or MP3 playback may fail due to ffmpeg/libav bug with one of
+the following messages on the terminal
+
+  (gst-plugin-scanner:13877): GStreamer-WARNING **: Failed to load plugin '/usr/local/lib/gstreamer-0.10/libgstffmpeg.so': /usr/local/lib/gstreamer-0.10/libgstffmpeg.so: Undefined symbol "ff_mlp_init_x86"
+  (gst-plugin-scanner:42518): GStreamer-WARNING **: Failed to load plugin '/usr/local/lib/gstreamer-0.10/libgstffmpeg.so': /usr/local/lib/gstreamer-0.10/libgstffmpeg.so: Undefined symbol "ff_deinterlace_line_mmx"
+
+If you happen to be affected please apply the fix in ports/181964 and
+rebuild the ports.
+
+Also, certain functions used to display HTML5 elements need the sem(4)
+module but only on 8.x releases (or before r201546).
 
 If your Firefox crashes with the following message while viewing a
 HTML5 page:

@@ -176,7 +176,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 24+ 27+ 24 27
+#                         Available values: yes 24+ 28+ 24 28
 #                         NOTE:
 #                         default value 24 is used in case of USE_FIREFOX=yes
 #
@@ -218,11 +218,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	24
-_FIREFOX_VERSIONS=			24 27
-_FIREFOX_RANGE_VERSIONS=	24+ 27+
+_FIREFOX_VERSIONS=			24 28
+_FIREFOX_RANGE_VERSIONS=	24+ 28+
 
 # For specifying [24, ..]+
-_FIREFOX_27P=	27 ${_FIREFOX_24P}
+_FIREFOX_28P=	28 ${_FIREFOX_24P}
 _FIREFOX_24P=	24
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -269,7 +269,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 24_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-27_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+28_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -436,12 +436,11 @@ Gecko_Pre_Include=	bsd.gecko.mk
 #
 # Ports can use the following:
 #
-# USE_MOZILLA			By default, it enables the denendencies: cairo,
-# 						event, ffi, hunspell, jpeg, nspr, nss, png, sqlite,
-# 						vpx and zip. Search for '_ALL_DEPENDS' below to see
-# 						the list. If your port doesn't need one of list then
-# 						you can use '-' like 'USE_MOZILLA= -png -zip' to
-# 						subtract the dependencies.
+# USE_MOZILLA			By default, it enables every system dependency
+# 						listed in '_ALL_DEPENDS'. If your port doesn't
+# 						need one of those then you can use '-' like
+# 						'USE_MOZILLA= -png -vpx' to subtract the
+# 						dependencies.
 #
 # GECKO_PLIST_PRE_FILES	Manual add files in the plist if it needs.
 #
@@ -501,11 +500,10 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
-USE_GNOME+=	libidl desktopfileutils
-USES+=		gmake iconv perl5 pkgconfig
+USE_GNOME+=	desktopfileutils
+USES+=		compiler:c++11-lib gmake iconv perl5 pkgconfig
 USE_PERL5=	build
-USE_XORG=	printproto sm xt xi xext x11 xinerama \
-		ice xproto
+USE_XORG=	xext xrender xt
 
 NO_STAGE=	yes
 
@@ -540,25 +538,7 @@ MOZ_EXPORT+=	${CONFIGURE_ENV} \
 MOZ_OPTIONS+=	--prefix="${FAKEDIR}"
 
 CPPFLAGS+=		-isystem${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-R,${PREFIX}/lib/${MOZILLA}
-
-# prefer base clang, for lang/clang{,-devel} see ports/177224
-.if ${CC} == "cc" && (exists(/usr/bin/clang) && ${OSVERSION} >= 900014)
-CC=				/usr/bin/clang
-.endif
-.if ${CXX} == "c++" && (exists(/usr/bin/clang++) && ${OSVERSION} >= 900014)
-CXX=			/usr/bin/clang++
-.endif
-.if ${CPP} == "cpp" && (exists(/usr/bin/clang-cpp) && ${OSVERSION} >= 900045)
-CPP=			/usr/bin/clang-cpp
-.endif
-.if ${CC} != "cc" && ${CPP} == "cpp"
-CPP=			${CC} -E
-.endif
-# fallback to gcc otherwise
-.if ${CC} == "cc" || ${CXX} == "c++"
-USE_GCC?=		yes
-.endif
+LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
 
 # use jemalloc 3.0.0 API for stats/tuning
 MOZ_EXPORT+=	MOZ_JEMALLOC3=1
@@ -567,57 +547,78 @@ MOZ_OPTIONS+=	--enable-jemalloc
 .endif
 
 # Standard depends
-_ALL_DEPENDS=	cairo event ffi hunspell icu jpeg nspr nss png sqlite vpx zip
+_ALL_DEPENDS=	cairo event ffi harfbuzz hunspell icu jpeg nspr nss opus png pixman sqlite vorbis vpx
 
-cairo_LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
-cairo_MOZ_OPTIONS=	--enable-system-cairo --enable-system-pixman
-cairo_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/cairo
+cairo_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+cairo_MOZ_OPTIONS=	--enable-system-cairo
+cairo_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/cairo/cairo
 
-event_LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
+event_LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
 event_MOZ_OPTIONS=	--with-system-libevent
 event_EXTRACT_AFTER_ARGS=	--exclude mozilla*/ipc/chromium/src/third_party/libevent
 
-ffi_LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+ffi_LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 ffi_MOZ_OPTIONS=	--enable-system-ffi
 ffi_EXTRACT_AFTER_ARGS=	--exclude mozilla*/js/src/ctypes/libffi
 
-hunspell_LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
+.if exists(${FILESDIR}/patch-bug847568) || exists(${FILESDIR}/patch-z-bug847568)
+harfbuzz_LIB_DEPENDS=	libharfbuzz.so:${PORTSDIR}/print/harfbuzz
+harfbuzz_MOZ_OPTIONS=	--with-system-harfbuzz --with-system-graphite2
+harfbuzz_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/harfbuzz \
+								--exclude mozilla*/gfx/graphite2
+.endif
+
+hunspell_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
 hunspell_MOZ_OPTIONS=	--enable-system-hunspell
 
-icu_LIB_DEPENDS=		icui18n:${PORTSDIR}/devel/icu
+icu_LIB_DEPENDS=		libicui18n.so:${PORTSDIR}/devel/icu
 icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api --enable-intl-api
 
 -jpeg_BUILD_DEPENDS=yasm:${PORTSDIR}/devel/yasm
-# XXX: depends on pkgng package flavor support
-#jpeg_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/libjpeg-turbo
-jpeg_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+# XXX depends on ports/180159 or package flavor support
+#jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/libjpeg-turbo
+jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
 jpeg_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libjpeg
 
-nspr_LIB_DEPENDS=	nspr4:${PORTSDIR}/devel/nspr
+nspr_LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
 nspr_MOZ_OPTIONS=	--with-system-nspr
 
-nss_LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
+nss_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 nss_MOZ_OPTIONS=	--with-system-nss
 nss_EXTRACT_AFTER_ARGS=	--exclude mozilla*/dbm \
 						--exclude mozilla*/security/coreconf \
 						--exclude mozilla*/security/nss
 
-png_LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+.if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
+opus_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
+opus_MOZ_OPTIONS=	--with-system-opus
+opus_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libopus
+.endif
+
+pixman_LIB_DEPENDS=	libpixman-1.so:${PORTSDIR}/x11/pixman
+pixman_MOZ_OPTIONS=	--enable-system-pixman
+pixman_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/cairo/libpixman
+
+png_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
 png_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libpng
 
-sqlite_LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+sqlite_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite
 sqlite_EXTRACT_AFTER_ARGS=	--exclude mozilla*/db/sqlite3
 
+.if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
+vorbis_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+vorbis_MOZ_OPTIONS=	--with-system-vorbis --with-system-ogg
+vorbis_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libvorbis \
+							--exclude mozilla*/media/libogg
+.endif
+
 -vpx_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
-vpx_LIB_DEPENDS=	vpx:${PORTSDIR}/multimedia/libvpx
+vpx_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
 vpx_MOZ_OPTIONS=	--with-system-libvpx
 vpx_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libvpx
-
-zip_BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip
-zip_RUN_DEPENDS=		${zip_BUILD_DEPENDS}
 
 .for use in ${USE_MOZILLA}
 ${use:S/-/_WITHOUT_/}=	${TRUE}
@@ -656,6 +657,7 @@ MOZ_OPTIONS+=	--enable-necko-protocols=${MOZ_PROTOCOLS}
 # others
 MOZ_OPTIONS+=	--with-system-zlib		\
 		--with-system-bz2		\
+		--enable-unified-compilation	\
 		--disable-debug-symbols		\
 		--disable-glibtest		\
 		--disable-gtktest		\
@@ -676,7 +678,11 @@ MOZ_TOOLKIT=	cairo-gtk3
 USE_MOZILLA+=	-cairo # ports/169343
 USE_DISPLAY=yes # install
 USE_GNOME+=	pango
+. if ${MOZILLA_VER:R:R} >= 30
+USE_QT5+=	qmake_build buildtools_build gui network quick printsupport
+. else
 USE_QT4+=	qmake_build moc_build rcc_build gui network opengl
+. endif
 MOZ_EXPORT+=	HOST_QMAKE="${QMAKE}" HOST_MOC="${MOC}" HOST_RCC="${RCC}"
 .elif ${MOZ_TOOLKIT:Mcairo-gtk3}
 USE_GNOME+=	gtk30
@@ -693,9 +699,9 @@ MOZ_OPTIONS+=	--disable-optimize
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-				notify.4:${PORTSDIR}/devel/libnotify \
-				startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+BUILD_DEPENDS+=	libnotify>0:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+				libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 MOZ_OPTIONS+=	--enable-startup-notification
 .else
 MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
@@ -714,7 +720,8 @@ MOZ_OPTIONS+=	--disable-gstreamer
 .endif
 
 .if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=		gconf2
+BUILD_DEPENDS+=	${gconf2_DETECT}:${gconf2_LIB_DEPENDS:C/.*://}
+USE_GNOME+=		gconf2:build
 MOZ_OPTIONS+=	--enable-gconf
 .else
 MOZ_OPTIONS+=	--disable-gconf
@@ -727,14 +734,16 @@ MOZ_OPTIONS+=	--disable-gio
 .endif
 
 .if ${PORT_OPTIONS:MGNOMEUI}
-USE_GNOME+=		libgnomeui
+BUILD_DEPENDS+=	${libgnomeui_DETECT}:${libgnomeui_LIB_DEPENDS:C/.*://}
+USE_GNOME+=		libgnomeui:build
 MOZ_OPTIONS+=	--enable-gnomeui
 .else
 MOZ_OPTIONS+=	--disable-gnomeui
 .endif
 
 .if ${PORT_OPTIONS:MGNOMEVFS2}
-USE_GNOME+=		gnomevfs2
+BUILD_DEPENDS+=	${gnomevfs2_DETECT}:${gnomevfs2_LIB_DEPENDS:C/.*://}
+USE_GNOME+=		gnomevfs2:build
 MOZ_OPTIONS+=	--enable-gnomevfs
 MOZ_OPTIONS:=	${MOZ_OPTIONS:C/(extensions)=(.*)/\1=\2,gnomevfs/}
 .else
@@ -742,7 +751,7 @@ MOZ_OPTIONS+=	--disable-gnomevfs
 .endif
 
 .if ${PORT_OPTIONS:MLIBPROXY}
-LIB_DEPENDS+=	proxy:${PORTSDIR}/net/libproxy
+LIB_DEPENDS+=	libproxy.so:${PORTSDIR}/net/libproxy
 MOZ_OPTIONS+=	--enable-libproxy
 .else
 MOZ_OPTIONS+=	--disable-libproxy
@@ -755,16 +764,17 @@ USE_DISPLAY=yes
 .undef GNU_CONFIGURE
 MAKEFILE=	${WRKSRC}/client.mk
 ALL_TARGET=	profiledbuild
+MOZ_EXPORT+=MOZ_OPTIMIZE_FLAGS="-Os" MOZ_PGO_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 MOZ_OPTIONS+=	--enable-alsa
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+BUILD_DEPENDS+=	pulseaudio>0:${PORTSDIR}/audio/pulseaudio
 MOZ_OPTIONS+=	--enable-pulseaudio
 .else
 MOZ_OPTIONS+=	--disable-pulseaudio
@@ -772,6 +782,7 @@ MOZ_OPTIONS+=	--disable-pulseaudio
 
 .if ${PORT_OPTIONS:MDEBUG}
 MOZ_OPTIONS+=	--enable-debug --disable-release
+STRIP=	# ports/184285
 .else
 MOZ_OPTIONS+=	--disable-debug --enable-release
 .endif
@@ -790,6 +801,7 @@ MOZ_OPTIONS+=	--disable-profiling
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
+USE_XORG+=		xscrnsaver
 MOZ_OPTIONS+=	--enable-tests
 .else
 MOZ_OPTIONS+=	--disable-tests
@@ -915,21 +927,6 @@ gecko-post-patch:
 		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/security/nss < $$i; \
 	done
 .endif
-.for subdir in "" nsprpub js/src
-	@if [ -f ${MOZSRC}/${subdir}/config/system-headers ] ; then \
-	for f in \
-			cairo-qt.h \
-			kvm.h \
-			malloc_np.h \
-			ostream \
-			spawn.h \
-			sys/thr.h \
-			sys/user.h \
-			unwind.h; do \
-		${ECHO_CMD} "$$f" >> ${MOZSRC}/${subdir}/config/system-headers ; \
-	done; \
-	fi
-.endfor
 	@for f in \
 			${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 			${WRKSRC}/directory/c-sdk/configure \

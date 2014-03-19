@@ -1,5 +1,5 @@
-SHA256 (firefox-27.0.1.tar.bz2) = c6734cf5cfaad395970d88c3c8f91ec633cd9301cf19620e70238c31443a0910
-SIZE (firefox-27.0.1.tar.bz2) = 30617660
+SHA256 (firefox-28.0.tar.bz2) = 10bc55b70e0e298ceb3613431c5a6cf36aaf1e6ace1a43616e452a7b232e7d38
+SIZE (firefox-28.0.tar.bz2) = 31203078
 SHA256 (glib2-2.22.2-2.fc12.i686.rpm) = e3b459c245ec14e7248e9de4b506963a4773407f3e58835db5070d0ed02ecc99
 SIZE (glib2-2.22.2-2.fc12.i686.rpm) = 1162908
 SHA256 (gtk2-2.18.3-19.fc12.i686.rpm) = aea9cf7ffe9c8dae0faa2bf3d2aa1b2117c55dce03da72dcce8c268279ec0a4b

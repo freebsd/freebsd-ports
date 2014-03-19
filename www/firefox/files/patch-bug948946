@@ -1,12 +1,45 @@
-diff --git browser/themes/moz.build browser/themes/moz.build
-index d82bda3..86d343d 100644
---- browser/themes/moz.build
-+++ browser/themes/moz.build
-@@ -9,6 +9,7 @@ toolkit = CONFIG['MOZ_WIDGET_TOOLKIT']
- if toolkit == 'cocoa':
-     DIRS += ['osx']
- elif toolkit in ('gtk2', 'gtk3', 'qt'):
-+    DEFINES['XP_LINUX'] = 1
-     DIRS += ['linux']
- else:
-     DIRS += ['windows']
+diff --git browser/themes/shared/devtools/common.css browser/themes/shared/devtools/common.css
+index a8208dc..df70486 100644
+--- browser/themes/shared/devtools/common.css
++++ browser/themes/shared/devtools/common.css
+@@ -11,13 +11,13 @@
+ .devtools-monospace {
+ %ifdef XP_MACOSX
+   font-family: Menlo, monospace;
+-%endif
+-%ifdef XP_LINUX
++%elifdef XP_WIN
++  font-family: Consolas, monospace;
++%else
+   font-family: monospace;
+-  font-size: 80%;
+ %endif
+-%ifdef XP_WIN
+-  font-family: Consolas, monospace;
++%if defined(MOZ_WIDGET_GTK) || defined(MOZ_WIDGET_QT)
++  font-size: 80%;
+ %endif
+ }
+ 
+@@ -62,7 +62,7 @@
+   background-image: linear-gradient(to bottom, hsla(209,18%,18%,0.9), hsl(210,11%,16%));
+   border-radius: 3px;
+   overflow-x: hidden;
+-%ifdef XP_LINUX
++%if defined(MOZ_WIDGET_GTK) || defined(MOZ_WIDGET_QT)
+   max-height: 32rem;
+ %else
+   max-height: 40rem;
+diff --git browser/themes/shared/devtools/highlighter.inc.css browser/themes/shared/devtools/highlighter.inc.css
+index 5b881b5..050f78b 100644
+--- browser/themes/shared/devtools/highlighter.inc.css
++++ browser/themes/shared/devtools/highlighter.inc.css
+@@ -54,7 +54,7 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
+   padding: 0;
+   width: 26px;
+   min-height: 26px;
+-%ifndef XP_LINUX
++%if !defined(MOZ_WIDGET_GTK) && !defined(MOZ_WIDGET_QT)
+   background-color: transparent;
+ %endif
+ }
