@@ -497,13 +497,6 @@ share/icons/hicolor/scalable/apps/grisbi.svg
 share/mime-info/grisbi.keys
 share/mime-info/grisbi.mime
 share/mime/packages/grisbi.xml
-@dirrm share/mime/packages
-@dirrm share/mime-info
-@dirrm share/mime
-@dirrm share/icons/hicolor/scalable/apps
-@dirrm share/icons/hicolor/scalable
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps/flags
 @dirrm %%DATADIR%%/pixmaps
