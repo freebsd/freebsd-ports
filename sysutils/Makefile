@@ -736,6 +736,7 @@
     SUBDIR += py-nagiosplugin
     SUBDIR += py-plumbum
     SUBDIR += py-psutil
+    SUBDIR += py-psutil121
     SUBDIR += py-pytsk
     SUBDIR += py-ranger
     SUBDIR += py-salt
