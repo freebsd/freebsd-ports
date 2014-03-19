@@ -4,8 +4,8 @@
 #
 
 # PROVIDE: slapd
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: securelevel
+# REQUIRE: FILESYSTEMS ldconfig
+# BEFORE: SERVERS
 # KEYWORD: shutdown
 
 #
