@@ -3,7 +3,7 @@
 
 PORTNAME=	libconvolve
 PORTVERSION=	0.0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/heaven/Audio%20Applications/Jack%20Related/jack_convolve/
 EXTRACT_SUFX=	.tgz
@@ -20,7 +20,13 @@ LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/cp / s|PREFIX|DESTDIR)$$(&|g' \
+		-e '/ln / s|PREFIX|DESTDIR)$$(&|2' \
+		${WRKSRC}/Makefile
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.0.0.8
 
 .include <bsd.port.mk>
