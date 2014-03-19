@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket \
 		${LUA_MODLIBDIR}/lxp.so:${PORTSDIR}/textproc/luaexpat \
 		${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem \
 
-LIB_DEPENDS=	libidn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 
 USERS=		prosody
 GROUPS=		${USERS}
@@ -37,7 +37,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--ostype=freebsd --c-compiler="${CC}" --linker="${LD}"
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" PREFIX="${PREFIX}" LUA_SUFFIX="-${LUA_VER}" LUA_LIBDIR="${LUA_LIBDIR}" LUA_INCDIR="${LUA_INCDIR}"
 
-SUB_FILES=	deinstall
+SUB_FILES=	pkg-deinstall
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
 PLIST_SUB=	PROSODY_USER=${USERS} PROSODY_GROUP=${GROUPS}
 
