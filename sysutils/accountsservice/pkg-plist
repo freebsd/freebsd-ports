@@ -8,12 +8,26 @@ lib/libaccountsservice.a
 lib/libaccountsservice.la
 lib/libaccountsservice.so
 lib/libaccountsservice.so.0
+lib/libaccountsservice.so.0.0.0
 libdata/pkgconfig/accountsservice.pc
 libexec/accounts-daemon
 share/dbus-1/interfaces/org.freedesktop.Accounts.User.xml
 share/dbus-1/interfaces/org.freedesktop.Accounts.xml
 share/dbus-1/system-services/org.freedesktop.Accounts.service
 share/gir-1.0/AccountsService-1.0.gir
+share/gtk-doc/html/libaccountsservice/ActUser.html
+share/gtk-doc/html/libaccountsservice/ActUserManager.html
+share/gtk-doc/html/libaccountsservice/annotation-glossary.html
+share/gtk-doc/html/libaccountsservice/api-index-full.html
+share/gtk-doc/html/libaccountsservice/ch01.html
+share/gtk-doc/html/libaccountsservice/home.png
+share/gtk-doc/html/libaccountsservice/index.html
+share/gtk-doc/html/libaccountsservice/index.sgml
+share/gtk-doc/html/libaccountsservice/left.png
+share/gtk-doc/html/libaccountsservice/libaccountsservice.devhelp2
+share/gtk-doc/html/libaccountsservice/right.png
+share/gtk-doc/html/libaccountsservice/style.css
+share/gtk-doc/html/libaccountsservice/up.png
 share/locale/ar/LC_MESSAGES/accounts-service.mo
 share/locale/bg_BG/LC_MESSAGES/accounts-service.mo
 share/locale/bn_IN/LC_MESSAGES/accounts-service.mo
@@ -34,9 +48,11 @@ share/locale/gl/LC_MESSAGES/accounts-service.mo
 share/locale/he/LC_MESSAGES/accounts-service.mo
 share/locale/hi/LC_MESSAGES/accounts-service.mo
 share/locale/hu/LC_MESSAGES/accounts-service.mo
+share/locale/ia/LC_MESSAGES/accounts-service.mo
 share/locale/id/LC_MESSAGES/accounts-service.mo
 share/locale/it/LC_MESSAGES/accounts-service.mo
 share/locale/ja/LC_MESSAGES/accounts-service.mo
+share/locale/ka/LC_MESSAGES/accounts-service.mo
 share/locale/kk/LC_MESSAGES/accounts-service.mo
 share/locale/ko/LC_MESSAGES/accounts-service.mo
 share/locale/lt/LC_MESSAGES/accounts-service.mo
@@ -66,12 +82,17 @@ share/polkit-1/actions/org.freedesktop.accounts.policy
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/ia/LC_MESSAGES
+@dirrmtry share/locale/ia
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/bg_BG/LC_MESSAGES
 @dirrmtry share/locale/bg_BG
+@dirrmtry share/gtk-doc/html/libaccountsservice
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 @dirrm include/accountsservice-1.0/act
 @dirrm include/accountsservice-1.0
 @cwd /

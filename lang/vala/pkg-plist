@@ -62,6 +62,8 @@ share/devhelp/books/vala-%%VERSION%%/vala-%%VERSION%%.devhelp2
 %%DATADIR%%-%%VERSION%%/vapi/enchant.vapi
 %%DATADIR%%-%%VERSION%%/vapi/fuse.deps
 %%DATADIR%%-%%VERSION%%/vapi/fuse.vapi
+%%DATADIR%%-%%VERSION%%/vapi/geocode-glib-1.0.deps
+%%DATADIR%%-%%VERSION%%/vapi/geocode-glib-1.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gconf-2.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gdk-2.0.deps
 %%DATADIR%%-%%VERSION%%/vapi/gdk-2.0.vapi

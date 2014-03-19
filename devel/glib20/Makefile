@@ -1,10 +1,10 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-# $FreeBSD$
-#   $MCom: ports/trunk/devel/glib20/Makefile 18994 2014-02-03 21:20:14Z kwm $
+# $FreeBSD: head/devel/glib20/Makefile 344586 2014-02-16 15:40:34Z kwm $
+#   $MCom: ports/trunk/devel/glib20/Makefile 19135 2014-03-15 13:51:43Z kwm $
 
 PORTNAME=	glib
 PORTVERSION=	2.38.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,7 +24,10 @@ LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gettext gmake iconv libtool pathfix perl5 pkgconfig shebangfix
+# iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
+# (wchar_t is used by glibmm, rawtherapee triggered this)
+USES=		gettext gmake iconv:wchar_t libtool pathfix perl5 pkgconfig \
+		shebangfix
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
@@ -33,6 +36,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
 
@@ -94,6 +98,8 @@ PLIST_SUB+=	GDB="@comment "
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug=yes \
 			--disable-silent-rules
+.else
+CONFIGURE_ARGS+=	--disable-modular-tests
 .endif
 
 post-patch:
@@ -106,13 +112,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|inotify_support=yes|inotify_support=no| ; \
 		s|-Werror|| ; \
 		s|#define HAVE_SYS_INOTIFY_H 1||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-2.0.so.0.$$(LT_CURRENT).$$(LT_REVISION)-gdb.py|-2.0.so.0-gdb.py|g' \
-		${WRKSRC}/glib/Makefile.in \
-		${WRKSRC}/gobject/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.${LIBVERSION}
 
 .include <bsd.port.post.mk>
 

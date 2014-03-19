@@ -1,6 +1,6 @@
---- src/user.c.orig	2012-08-16 19:03:51.000000000 +0000
-+++ src/user.c	2012-10-08 19:13:02.000000000 +0000
-@@ -546,11 +546,11 @@
+--- src/user.c.orig	2014-03-15 15:16:49.000000000 +0100
++++ src/user.c	2014-03-15 15:31:57.000000000 +0100
+@@ -873,11 +873,11 @@
                           "change real name of user '%s' (%d) to '%s'",
                           user->user_name, user->uid, name);
  
@@ -17,7 +17,7 @@
                  argv[5] = NULL;
  
                  error = NULL;
-@@ -620,11 +620,11 @@
+@@ -947,11 +947,11 @@
                           "change name of user '%s' (%d) to '%s'",
                           old_name, user->uid, name);
  
@@ -34,7 +34,27 @@
                  argv[5] = NULL;
  
                  error = NULL;
-@@ -964,11 +964,11 @@
+@@ -1229,13 +1229,12 @@
+                          "change home directory of user '%s' (%d) to '%s'",
+                          user->user_name, user->uid, home_dir);
+ 
+-                argv[0] = "/usr/sbin/usermod";
+-                argv[1] = "-m";
+-                argv[2] = "-d";
+-                argv[3] = home_dir;
+-                argv[4] = "--";
+-                argv[5] = user->user_name;
+-                argv[6] = NULL;
++                argv[0] = "/usr/sbin/pw";
++                argv[1] = "-d";
++                argv[2] = home_dir;
++                argv[3] = "-n";
++                argv[4] = user->user_name;
++                argv[5] = NULL;
+ 
+                 error = NULL;
+                 if (!spawn_with_login_uid (context, argv, &error)) {
+@@ -1291,11 +1290,11 @@
                           "change shell of user '%s' (%d) to '%s'",
                           user->user_name, user->uid, shell);
  
@@ -51,7 +71,7 @@
                  argv[5] = NULL;
  
                  error = NULL;
-@@ -1224,11 +1224,10 @@
+@@ -1551,11 +1550,10 @@
                  sys_log (context,
                           "%s account of user '%s' (%d)",
                           locked ? "locking" : "unlocking", user->user_name, user->uid);
@@ -67,7 +87,7 @@
  
                  error = NULL;
                  if (!spawn_with_login_uid (context, argv, &error)) {
-@@ -1315,11 +1314,11 @@
+@@ -1664,11 +1662,11 @@
  
                  g_free (groups);
  
@@ -84,7 +104,7 @@
                  argv[5] = NULL;
  
                  g_string_free (str, FALSE);
-@@ -1386,10 +1385,8 @@
+@@ -1735,10 +1733,8 @@
                      mode == PASSWORD_MODE_NONE) {
  
                          argv[0] = "/usr/bin/passwd";
@@ -97,7 +117,7 @@
  
                          error = NULL;
                          if (!spawn_with_login_uid (context, argv, &error)) {
-@@ -1399,12 +1396,11 @@
+@@ -1748,12 +1744,11 @@
                          }
  
                          if (mode == PASSWORD_MODE_SET_AT_LOGIN) {
@@ -114,7 +134,7 @@
  
                                  error = NULL;
                                  if (!spawn_with_login_uid (context, argv, &error)) {
-@@ -1428,11 +1424,10 @@
+@@ -1777,11 +1772,10 @@
                          }
                  }
                  else if (user->locked) {
@@ -130,7 +150,7 @@
  
                          error = NULL;
                          if (!spawn_with_login_uid (context, argv, &error)) {
-@@ -1503,12 +1498,11 @@
+@@ -1852,12 +1846,11 @@
  
          g_object_freeze_notify (G_OBJECT (user));
  

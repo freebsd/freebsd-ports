@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19011 2014-03-06 11:32:09Z gusi $
+#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19191 2014-03-18 17:34:38Z kwm $
 
 PORTNAME=	webkit
 PORTVERSION=	2.0.3
@@ -118,7 +118,7 @@ PLIST_SUB+=	WEBKIT2=""
 CXXFLAGS+=	-stdlib=libc++
 LDFLAGS+=	-stdlib=libc++
 . if ${OSVERSION}<1000019
-BUILD_DEPENDS+=	clang>=3.3_1:${PORTSDIR}/lang/clang33 \
+BUILD_DEPENDS+=	clang33>=3.3_1:${PORTSDIR}/lang/clang33 \
 		libc++>=0:${PORTSDIR}/devel/libc++
 RUN_DEPENDS+=	libc++>=0:${PORTSDIR}/devel/libc++
 CC=		clang33
@@ -129,7 +129,7 @@ CONFIGURE_ENV+=	CC=${CC} CXX=${CXX} CPP=${CPP}
 .else
 # we need clang also for !Webkit2 builds
 . if ${OSVERSION}<1000019
-BUILD_DEPENDS+=	clang>=3.3_1:${PORTSDIR}/lang/clang33
+BUILD_DEPENDS+=	clang33>=3.3_1:${PORTSDIR}/lang/clang33
 CC=		clang33
 CXX=		clang++33
 CPP=		clang-cpp33
