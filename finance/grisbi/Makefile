@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	grisbi
-PORTVERSION=	0.8.9
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	finance
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:R}.x/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:C|0$|x|}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Personal accounting application
@@ -14,20 +13,17 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx
 
-USE_BZIP2=	yes
-USES=		gmake iconv pkgconfig
+USES=		tar:bzip2 desktop-file-utils gmake iconv pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 libxml2
 USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
 INSTALLS_ICONS=	yes
-
-MAN1=		grisbi.1
+CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS NLS
 
 OPTIONS_DEFINE=	DOCS NLS
 
@@ -42,8 +38,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"	\
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e "s|pixmaps help|pixmaps|" ${WRKSRC}/Makefile.in
 .endif

@@ -1,10 +1,5 @@
 bin/grisbi
-lib/grisbi/gnucash.la
-lib/grisbi/gnucash.so
-lib/grisbi/ofx.la
-lib/grisbi/ofx.so
-lib/grisbi/openssl.la
-lib/grisbi/openssl.so
+man/man1/grisbi.1.gz
 share/applications/grisbi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/C/contents_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/C/grisbi-manuel.html
@@ -28,29 +23,185 @@ share/applications/grisbi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/topic.dat
 %%PORTDOCS%%%%DOCSDIR%%/en/translation.html
 %%PORTDOCS%%%%DOCSDIR%%/fr/contents_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel.css
 %%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel001.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel002.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel003.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel004.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel005.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel006.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel007.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel008.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel009.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel010.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel011.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel012.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel013.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel014.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel015.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel016.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel017.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel018.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel019.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel020.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel021.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel022.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel023.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel024.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/grisbi-manuel025.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/comments.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/contents_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/display_1line.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/display_2lines.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/display_3lines.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/display_4lines.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/display_large.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/display_medium.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/display_small.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/form_close.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/form_open.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/grisbi.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/next_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/previous_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/properties.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/rec_mask.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/rec_show.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/transactions.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/tree_1branch.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/tree_2branch.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/tree_3branch.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/icon/tree_close.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/manuel-logo.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/QIF_export.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/QIF_import_files.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/QIF_import_files_setup.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/account_new_creation.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/account_new_name.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/account_new_properties.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_account_creation.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_accounts_closing.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_accounts_reopening.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_afterOpening.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_analyticExpenses.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_balanceSheet.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_chargesProducts.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_chargesProductsClosing.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_drink_expense.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_ink_expense.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/asso_renew.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/bankcard_defferedAccount.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budget_amortization.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budget_estimate.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budget_estimate_context.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budget_historical_data.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budget_insert_line.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budgetarylines_delete.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budgetarylines_infos.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budgetarylines_list.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budgetarylines_management.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budgetarylines_new.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/budgetarylines_transfer.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/categories_delete.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/categories_infos.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/categories_list.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/categories_management.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/categories_new.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/categories_transfer.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/credit_amortization.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/credit_simulation.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/datamanagement_history_create.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/datamanagement_history_line.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/home.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/planned_transactions_calendar.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/planned_transactions_context.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/planned_transactions_delete.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/planned_transactions_display.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/planned_transactions_display_custom.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/planned_transactions_form.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/planned_transactions_frequency_custom.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/planned_transactions_list.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/planned_transactions_list_comments.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reconciliation_infos.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reconciliation_list.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_accounts.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_amounts.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_budgetlines.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_categories.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_dates.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_financialyear.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_misc.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_modes.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_multiplesAmounts.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_multiplesText.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_text.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_thirdparts.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_datas_transfers.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_display_currencies.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_display_main.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_display_titles.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_display_transactions.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_new.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_organisation_grouping.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reportcreation_organisation_separation.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/reports_display.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_adresses.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_bank.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_budget_data1.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_budget_dataBank.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_budget_dataCash.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_budget_dataLiability.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_budget_general.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_currencies.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_enterHelp.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_exchangerate.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_files.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_financialyear.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_fonts_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_formBehaviour.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_history.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_home.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_import.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_importLinks.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_listBehaviour.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_listCells.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_messagesDelete.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_messages_alerts.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_modes.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_plannedtransactions.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_programs.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_reconciliation.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_reconciliation_sort.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_sections.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_thirdCategories.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_toolbar.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/setup_transactions_form.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/start_account_choice.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/start_file_create.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/thirdparties_delete.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/thirdparties_infos.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/thirdparties_list.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/thirdparties_new.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_breakdown.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_breakdown_complete.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_breakdown_confirm.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_breakdown_end.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_breakdown_oneLine.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_breakdown_sub1.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_breakdown_sub2.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_breakdown_sub3.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_calendar.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_changeRate.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_contextMenu.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_form.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/image/screenshot/transactions_list.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/index.html
 %%PORTDOCS%%%%DOCSDIR%%/fr/next_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/fr/previous_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/fr/quickstart.html
 %%PORTDOCS%%%%DOCSDIR%%/fr/topic.dat
 %%PORTDOCS%%%%DOCSDIR%%/fr/translation.html
-%%NLS%%share/locale/cs/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/da/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/de/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/el/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/es/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/fa/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/he/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/it/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/lv/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/grisbi.mo
 %%DATADIR%%/categories/C/00_general.cgsb
 %%DATADIR%%/categories/C/empty.cgsb
 %%DATADIR%%/categories/de_AT/keine.cgsb
@@ -63,7 +214,10 @@ share/applications/grisbi.desktop
 %%DATADIR%%/categories/fr/00_general.cgsb
 %%DATADIR%%/categories/fr/empty.cgsb
 %%DATADIR%%/categories/fr/liberal.cgsb
+%%DATADIR%%/categories/fr_FR/plan-associatif-simplifie.cgsb
 %%DATADIR%%/categories/fr_FR/plan-comptable.cgsb
+%%DATADIR%%/categories/it/00_general.cgsb
+%%DATADIR%%/categories/it/empty.cgsb
 %%DATADIR%%/categories/ru/00_general.cgsb
 %%DATADIR%%/categories/ru/empty.cgsb
 %%DATADIR%%/pixmaps/ac_asset.png
@@ -76,6 +230,7 @@ share/applications/grisbi.desktop
 %%DATADIR%%/pixmaps/addresses.png
 %%DATADIR%%/pixmaps/amount.png
 %%DATADIR%%/pixmaps/archive.png
+%%DATADIR%%/pixmaps/archive_24.png
 %%DATADIR%%/pixmaps/archives.png
 %%DATADIR%%/pixmaps/balance_estimate.png
 %%DATADIR%%/pixmaps/banks.png
@@ -281,8 +436,13 @@ share/applications/grisbi.desktop
 %%DATADIR%%/pixmaps/fonts.png
 %%DATADIR%%/pixmaps/form.png
 %%DATADIR%%/pixmaps/generalities.png
+%%DATADIR%%/pixmaps/graph-histo.png
+%%DATADIR%%/pixmaps/graph-line.png
+%%DATADIR%%/pixmaps/graph-sectors.png
+%%DATADIR%%/pixmaps/grille.png
 %%DATADIR%%/pixmaps/grisbi-logo.png
 %%DATADIR%%/pixmaps/grisbi.png
+%%DATADIR%%/pixmaps/grisbi.svg
 %%DATADIR%%/pixmaps/hide_r.png
 %%DATADIR%%/pixmaps/impexp.png
 %%DATADIR%%/pixmaps/import.png
@@ -314,12 +474,41 @@ share/applications/grisbi.desktop
 %%DATADIR%%/pixmaps/transdisplay.png
 %%DATADIR%%/pixmaps/transfer.png
 %%DATADIR%%/pixmaps/warnings.png
-share/icons/hicolor/48x48/apps/grisbi.png
+%%DATADIR%%/ui/bet_graph.ui
+share/icons/hicolor/scalable/apps/grisbi.svg
+%%NLS%%share/locale/cs/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/da/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/de/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/el/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/es/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/he/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/it/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/grisbi.mo
 share/mime-info/grisbi.keys
 share/mime-info/grisbi.mime
+share/mime/packages/grisbi.xml
+@dirrm share/mime/packages
+@dirrm share/mime-info
+@dirrm share/mime
+@dirrm share/icons/hicolor/scalable/apps
+@dirrm share/icons/hicolor/scalable
+@dirrm share/icons/hicolor
+@dirrm share/icons
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps/flags
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/categories/ru
+@dirrm %%DATADIR%%/categories/it
 @dirrm %%DATADIR%%/categories/fr_FR
 @dirrm %%DATADIR%%/categories/fr
 @dirrm %%DATADIR%%/categories/de_DE
@@ -327,9 +516,11 @@ share/mime-info/grisbi.mime
 @dirrm %%DATADIR%%/categories/C
 @dirrm %%DATADIR%%/categories
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr/image/screenshot
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr/image/icon
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr/image
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/C
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/grisbi

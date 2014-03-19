@@ -1,11 +1,15 @@
---- src/Makefile.in.orig	2011-12-30 21:52:18.000000000 +0100
-+++ src/Makefile.in	2012-05-13 17:35:48.000000000 +0200
-@@ -380,7 +380,7 @@
- top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
+--- src/Makefile.in.orig	2014-02-12 22:35:34.000000000 +0100
++++ src/Makefile.in	2014-02-19 19:51:52.000000000 +0100
+@@ -446,9 +446,9 @@
  top_srcdir = @top_srcdir@
--AM_CPPFLAGS = -I$(top_srcdir) $(GRISBI_CFLAGS) $(GTK_MAC_CFLAGS) -DLOCALEDIR=\"$(localedir)\" -DPIXMAPS_DIR="\"$(datadir)/pixmaps/@PACKAGE@\"" -DPLUGINS_DIR="\"$(plugindir)\"" -DLOGO_PATH="\"$(datadir)/pixmaps/@PACKAGE@/grisbi-logo.png\"" -DDATA_PATH="\"$(datadir)/@PACKAGE@\"" -DHELP_PATH="\"$(docdir)\""
-+AM_CPPFLAGS = -I$(top_srcdir) $(GRISBI_CFLAGS) $(GTK_MAC_CFLAGS) -DLOCALEDIR=\"$(localedir)\" -DPIXMAPS_DIR="\"$(pkgdatadir)/pixmaps\"" -DPLUGINS_DIR="\"$(plugindir)\"" -DLOGO_PATH="\"$(pkgdatadir)/pixmaps/grisbi-logo.png\"" -DDATA_PATH="\"$(pkgdatadir)\"" -DHELP_PATH="\"$(docdir)\""
+ AM_CPPFLAGS = -I$(top_srcdir) $(GRISBI_CFLAGS) $(GTK_MAC_CFLAGS) \
+ 	-DLOCALEDIR=\"$(localedir)\" \
+-	-DPIXMAPS_DIR="\"$(datadir)/pixmaps/@PACKAGE@\"" \
+-	-DLOGO_PATH="\"$(datadir)/pixmaps/@PACKAGE@/grisbi-logo.png\"" \
+-	-DDATA_PATH="\"$(datadir)/@PACKAGE@\"" \
++	-DPIXMAPS_DIR="\"$(pkgdatadir)/pixmaps/\"" \
++	-DLOGO_PATH="\"$(datadir)/pixmaps/grisbi-logo.png\"" \
++	-DDATA_PATH="\"$(datadir)/pkgdatadir\"" \
+ 	-DHELP_PATH="\"$(docdir)\"" \
+ 	-DUI_DIR="\"$(datadir)/@PACKAGE@/ui\"" $(am__append_1)
  noinst_LTLIBRARIES = libgrisbi.la
- grisbi_LDADD = $(GRISBI_LIBS) $(GTK_MAC_LIBS) libgrisbi.la
- libgrisbi_la_LIBADD = $(am__append_1) $(LIBM) $(GRISBI_LIBS) \
