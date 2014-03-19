@@ -5,7 +5,6 @@
 %%SITE_PERL%%/Error/TypeTiny/Compilation.pm
 %%SITE_PERL%%/Error/TypeTiny/WrongNumberOfParameters.pm
 %%SITE_PERL%%/Eval/TypeTiny.pm
-%%SITE_PERL%%/Exporter/TypeTiny.pm
 %%SITE_PERL%%/Reply/Plugin/TypeTiny.pm
 %%SITE_PERL%%/Test/TypeTiny.pm
 %%SITE_PERL%%/Type/Coercion.pm
@@ -31,6 +30,7 @@
 %%SITE_PERL%%/Type/Tiny/Manual/UsingWithOther.pod
 %%SITE_PERL%%/Type/Tiny/Role.pm
 %%SITE_PERL%%/Type/Tiny/Union.pm
+%%SITE_PERL%%/Type/Tiny/_HalfOp.pm
 %%SITE_PERL%%/Type/Utils.pm
 %%SITE_PERL%%/Types/Common/Numeric.pm
 %%SITE_PERL%%/Types/Common/String.pm
@@ -75,6 +75,7 @@
 %%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithOther.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Role.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Union.3.gz
+%%PERL5_MAN3%%/Type::Tiny::_HalfOp.3.gz
 %%PERL5_MAN3%%/Type::Utils.3.gz
 %%PERL5_MAN3%%/Types::Common::Numeric.3.gz
 %%PERL5_MAN3%%/Types::Common::String.3.gz
@@ -98,7 +99,6 @@
 @dirrmtry %%SITE_PERL%%/Test
 @dirrmtry %%SITE_PERL%%/Reply/Plugin
 @dirrmtry %%SITE_PERL%%/Reply
-@dirrmtry %%SITE_PERL%%/Exporter
 @dirrmtry %%SITE_PERL%%/Eval
 @dirrmtry %%SITE_PERL%%/Error/TypeTiny
 @dirrmtry %%SITE_PERL%%/Error

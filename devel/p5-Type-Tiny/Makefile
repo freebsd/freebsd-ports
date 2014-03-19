@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Type-Tiny
-PORTVERSION=	0.038
-PORTREVISION=	1
+PORTVERSION=	0.040
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -30,7 +29,10 @@ TEST_DEPENDS=	p5-Class-InsideOut>=0:${PORTSDIR}/devel/p5-Class-InsideOut \
 		p5-Role-Tiny>=0:${PORTSDIR}/devel/p5-Role-Tiny \
 		p5-Sub-Exporter-Lexical>=0:${PORTSDIR}/devel/p5-Sub-Exporter-Lexical \
 		p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace \
-		p5-Validation-Class>=0:${PORTSDIR}/devel/p5-Validation-Class
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-Tester>=0.10.9:${PORTSDIR}/devel/p5-Test-Tester \
+		p5-Validation-Class>=0:${PORTSDIR}/devel/p5-Validation-Class \
+		p5-match-simple>=0:${PORTSDIR}/devel/p5-match-simple
 
 PORTSCOUT=	limit:[^_]*
 
