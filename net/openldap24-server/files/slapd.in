@@ -47,7 +47,7 @@ if [ -n "${slapd_args+set}" ]; then
   warn "slapd_args is deprecated, use slapd_flags"
   : ${slapd_flags="$slapd_args"}
 fi
-: ${slapd_owner="ldap:ldap"}
+: ${slapd_owner="%%LDAP_USER%%:%%LDAP_GROUP%%"}
 : ${slapd_sockets_mode="666"}
 : ${slapd_cn_config="NO"}
 
@@ -83,7 +83,7 @@ start_precmd()
     for DBDIR in ${DATABASEDIR}; do
        if [ ! -d "${DBDIR}" ]; then
           mkdir -p "${DBDIR}"
-          cp "%%PREFIX%%/etc/openldap/DB_CONFIG.example" "${DBDIR}/DB_CONFIG"
+          [ -f "%%PREFIX%%/etc/openldap/DB_CONFIG.example" ] && cp "%%PREFIX%%/etc/openldap/DB_CONFIG.example" "${DBDIR}/DB_CONFIG"
        fi
        chown -RL "$slapd_owner" "${DBDIR}"
        chmod 700 "${DBDIR}"

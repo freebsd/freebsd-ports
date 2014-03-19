@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140318:
+  AFFECTS: users of net/openldap24-server
+  AUTHOR: delphij@FreeBSD.org
+
+  Please note that Berkeley DB backend is now deprecated and will be removed
+  in a future version.  Existing users should migrate data to the new MDB
+  backend when possible.
+
 20140317:
   AFFECTS: users of misc/ossp-uuid-perl
   AUTHOR: culot@FreeBSD.org
