@@ -9,5 +9,4 @@ MASTERDIR=	${.CURDIR}/../pdflib
 
 OPTIONS_DEFAULT=PERL
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -11,7 +11,7 @@ DISTNAME=	PDFlib-Lite-${PORTVERSION}p3
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
 
-RESTRICTED=	many odd restrictions on usage and distribution
+RESTRICTED=	Many odd restrictions on usage and distribution
 
 OPTIONS_DEFINE=	PERL JAVA
 PERL_DESC=	Build perl bindings
