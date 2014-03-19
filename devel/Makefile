@@ -3678,6 +3678,7 @@
     SUBDIR += py-lock_file
     SUBDIR += py-lockfile
     SUBDIR += py-log4py
+    SUBDIR += py-logan
     SUBDIR += py-logilab-common
     SUBDIR += py-lxml
     SUBDIR += py-magic
