@@ -51,6 +51,119 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="610de647-af8d-11e3-a25b-b4b52fce4ce8">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>25.0,1</gt><lt>28.0,1</lt></range>
+	<range><lt>24.4.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>28.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.25</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>24.4.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.25</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>24.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-15 Miscellaneous memory safety hazards
+	    (rv:28.0 / rv:24.4)</p>
+	  <p>MFSA 2014-16 Files extracted during updates are not always
+	    read only</p>
+	  <p>MFSA 2014-17 Out of bounds read during WAV file decoding</p>
+	  <p>MFSA 2014-18 crypto.generateCRMFRequest does not validate
+	    type of key</p>
+	  <p>MFSA 2014-19 Spoofing attack on WebRTC permission prompt</p>
+	  <p>MFSA 2014-20 onbeforeunload and Javascript navigation DOS</p>
+	  <p>MFSA 2014-21 Local file access via Open Link in new tab</p>
+	  <p>MFSA 2014-22 WebGL content injection from one domain to
+	    rendering in another</p>
+	  <p>MFSA 2014-23 Content Security Policy for data: documents
+	    not preserved by session restore</p>
+	  <p>MFSA 2014-24 Android Crash Reporter open to manipulation</p>
+	  <p>MFSA 2014-25 Firefox OS DeviceStorageFile object vulnerable
+	    to relative path escape</p>
+	  <p>MFSA 2014-26 Information disclosure through polygon
+	    rendering in MathML</p>
+	  <p>MFSA 2014-27 Memory corruption in Cairo during PDF font
+	    rendering</p>
+	  <p>MFSA 2014-28 SVG filters information disclosure through
+	    feDisplacementMap</p>
+	  <p>MFSA 2014-29 Privilege escalation using WebIDL-implemented
+	    APIs</p>
+	  <p>MFSA 2014-30 Use-after-free in TypeObject</p>
+	  <p>MFSA 2014-31 Out-of-bounds read/write through neutering
+	    ArrayBuffer objects</p>
+	  <p>MFSA 2014-32 Out-of-bounds write through TypedArrayObject
+	    after neutering</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1493</cvename>
+      <cvename>CVE-2014-1494</cvename>
+      <cvename>CVE-2014-1496</cvename>
+      <cvename>CVE-2014-1497</cvename>
+      <cvename>CVE-2014-1498</cvename>
+      <cvename>CVE-2014-1499</cvename>
+      <cvename>CVE-2014-1500</cvename>
+      <cvename>CVE-2014-1501</cvename>
+      <cvename>CVE-2014-1502</cvename>
+      <cvename>CVE-2014-1504</cvename>
+      <cvename>CVE-2014-1505</cvename>
+      <cvename>CVE-2014-1506</cvename>
+      <cvename>CVE-2014-1507</cvename>
+      <cvename>CVE-2014-1508</cvename>
+      <cvename>CVE-2014-1509</cvename>
+      <cvename>CVE-2014-1510</cvename>
+      <cvename>CVE-2014-1511</cvename>
+      <cvename>CVE-2014-1512</cvename>
+      <cvename>CVE-2014-1513</cvename>
+      <cvename>CVE-2014-1514</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-15.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-16.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-17.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-18.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-19.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-20.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-21.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-22.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-23.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-24.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-25.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-26.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-27.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-28.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-29.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-30.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-31.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-32.html</url>
+      <url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2014-03-19</discovery>
+      <entry>2014-03-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a70966a1-ac22-11e3-8d04-00262d5ed8ee">
     <topic>www/chromium -- multiple vulnerabities</topic>
     <affects>
