@@ -21,8 +21,7 @@ USE_PYTHON=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/isbg.py ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/isbg.py ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
