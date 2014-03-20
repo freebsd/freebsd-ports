@@ -3,6 +3,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.5.23
+PORTREVISION=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.mutt.org/mutt/devel/ \
@@ -58,13 +59,15 @@ USE_OPENSSL=	yes
 .if defined (MUTT_LITE)
 LITE=	YES
 .endif
-.if !defined (LITE)
+.if defined (LITE)
+OPTIONS_UNSET=	NLS DOCS EXAMPLES
+.else
 OPTIONS_DEFINE=	COMPRESSED_FOLDERS SASL DEBUG FLOCK \
 		GPGME GREETING_PATCH GSSAPI HTML ICONV IDN IFDEF_PATCH \
 		IMAP_HEADER_CACHE LOCALES_FIX MAILBOX_MANPAGES \
 		MAILDIR_HEADER_CACHE MAILDIR_MTIME_PATCH \
-		NNTP PARENT_CHILD_MATCH_PATCH \
-		QUOTE_PATCH REVERSE_REPLY_PATCH SGMLFORMAT SIDEBAR_PATCH \
+		NLS NNTP PARENT_CHILD_MATCH_PATCH \
+		QUOTE_PATCH REVERSE_REPLY_PATCH SIDEBAR_PATCH \
 		SIGNATURE_MENU SMART_DATE SMIME_OUTLOOK_COMPAT SMTP \
 		TOKYOCABINET TRASH_PATCH XML
 
@@ -89,10 +92,10 @@ MAILDIR_HEADER_CACHE_DESC=	Maildir header cache
 MAILDIR_MTIME_PATCH_DESC=	Maildir mtime patch
 MBOX_HOOK_PATCH_DESC=	Enhanced mbox-hook
 NCURSES_DESC=	Ncurses support
+NLS_DESC=	Native language support
 PARENT_CHILD_MATCH_PATCH_DESC=	Parent/child match
 QUOTE_PATCH_DESC=	Extended quoting
 REVERSE_REPLY_PATCH_DESC=	Reverse_reply
-SGMLFORMAT_DESC=	SGML support
 SIDEBAR_PATCH_DESC=	Sidebar support
 SIGNATURE_MENU_DESC=	Signature menu
 SLANG_DESC=	SLANG support
@@ -101,11 +104,13 @@ SMIME_OUTLOOK_COMPAT_DESC=	SMIME outlook compatibility
 SMTP_DESC=	SMTP relay support
 TOKYOCABINET_DESC=	Use tokyocabinet instead of Berkley DB
 TRASH_PATCH_DESC=	Trash folder support
-XML_DESC=	Use XML tools for building documentation
+XML_DESC=	Use XML tools for rebuilding documentation
 
-OPTIONS_DEFAULT=	COMPRESSED_FOLDERS HTML ICONV MAILBOX_MANPAGES \
-		NCURSES QUOTE_PATCH SGMLFORMAT SMIME_OUTLOOK_COMPAT \
-		NLS XML SMTP
+OPTIONS_DEFAULT=	COMPRESSED_FOLDERS HTML ICONV IFDEF_PATCH \
+		IMAP_HEADER_CACHE MAILBOX_MANPAGES MAILDIR_HEADER_CACHE \
+		MAILDIR_MTIME_PATCH NLS NCURSES PARENT_CHILD_MATCH_PATCH \
+		QUOTE_PATCH REVERSE_REPLY_PATCH SMART_DATE \
+		SMIME_OUTLOOK_COMPAT SMTP XML
 .endif
 
 .include <bsd.port.options.mk>
@@ -137,7 +142,7 @@ PLIST_SUB+=	MBOXMAN=""
 # XXX
 # this should be done automagically by aclocal but ....
 # for now, this will have to do
-pre-build:
+pre-build::
 	@${REINPLACE_CMD} -E -e "s|^(ACLOCAL = ).+|\1${ACLOCAL}|" \
 			-e "s|^(AUTOCONF = ).+|\1${AUTOCONF}|" \
 			-e "s|^(AUTOMAKE = ).+|\1${AUTOMAKE}|" \
@@ -167,11 +172,6 @@ LIB_DEPENDS+=	libslang.so:${PORTSDIR}/devel/libslang2
 
 .if ${PORT_OPTIONS:MNCURSES}
 USES+=		ncurses
-.endif
-
-.if ! ${PORT_OPTIONS:MSGMLFORMAT} || ! ${PORT_OPTIONS:MXML} || !defined(XML_USED) \
-	|| ! ${PORT_OPTIONS:MDOCS}
-XML_USED=	no
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
@@ -403,13 +403,6 @@ CONFIGURE_ARGS+=	--disable-hcache
 CONFIGURE_ARGS+=	--without-qdbm
 .endif
 
-.if defined (XML_NEEDED) && ${PORT_OPTIONS:MXML}
-XML_USED=	yes
-.endif
-.if ${PORT_OPTIONS:MHTML}
-XML_USED=	yes
-.endif
-
 .if ${PORT_OPTIONS:MMAILBOX_MANPAGES}
 PLIST_SUB+=	MBOXMAN=""
 .else
@@ -421,7 +414,7 @@ PLIST_SUB+=	HTML=""
 .else
 PLIST_SUB+=	HTML="@comment "
 .endif
-.if ${PORT_OPTIONS:MDOCS} || ${XML_USED} == yes
+.if ${PORT_OPTIONS:MDOCS}
 post-build:
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
 	@${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
@@ -434,10 +427,16 @@ post-build:
 		${WRKSRC}/doc/muttrc.man
 .endif
 
-.if ${XML_USED} == yes
+.if defined (XML_NEEDED) && ${PORT_OPTIONS:MXML}
+PLIST_SUB+=	XML=""
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		lynx:${PORTSDIR}/www/lynx
+.else
+PLIST_SUB+=	XML="@comment "
+pre-build::
+	@${REINPLACE_CMD} -E -e 's|-xsltproc|@-true xsltproc|g' \
+		${WRKSRC}/doc/Makefile
 .endif
 
 .if ${PORT_OPTIONS:MSLANG}
