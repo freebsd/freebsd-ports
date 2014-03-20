@@ -14,15 +14,15 @@ COMMENT=	An action-puzzle maze escape game (SDL)
 USE_SDL=	gfx image mixer sdl
 WRKSRC=		${WRKDIR}/src
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/xpired ${WRKSRC}/xpiredit ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}/img
-	@${MKDIR} ${DATADIR}/snd
+	${INSTALL_PROGRAM} ${WRKSRC}/xpired ${WRKSRC}/xpiredit \
+		${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/img
+	@${MKDIR} ${STAGEDIR}${DATADIR}/snd
 .for files in xpired.lvl xpired.cfg bgimages.txt readme.txt xpired.dmo
-	@${INSTALL_DATA} ${WRKSRC}/${files} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${files} ${STAGEDIR}${DATADIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/img/* ${DATADIR}/img
-	@${INSTALL_DATA} ${WRKSRC}/snd/* ${DATADIR}/snd
+	${INSTALL_DATA} ${WRKSRC}/img/* ${STAGEDIR}${DATADIR}/img
+	${INSTALL_DATA} ${WRKSRC}/snd/* ${STAGEDIR}${DATADIR}/snd
 
 .include <bsd.port.mk>
