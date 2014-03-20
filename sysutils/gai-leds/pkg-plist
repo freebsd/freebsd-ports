@@ -1,5 +1,4 @@
 bin/gai-leds
-libdata/bonobo/servers/GNOME_gai-ledsApplet.server
 share/pixmaps/gai-leds-icon.png
 share/pixmaps/gai-leds/capslock_off.png
 share/pixmaps/gai-leds/capslock_on.png
