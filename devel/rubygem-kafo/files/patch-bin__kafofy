@@ -1,0 +1,13 @@
+--- bin/kafofy.orig	2014-03-19 16:50:00.000000000 +0100
++++ bin/kafofy	2014-03-19 16:50:13.000000000 +0100
+@@ -48,8 +48,8 @@
+   File.chmod 0600, options[:config_file]
+   FileUtils.cp('config/kafo.yaml.example', options[:config_file])
+   if options[:answer_file]
+-    `sed -i 's/^# :answer_file.*$/:answer_file: #{options[:answer_file].gsub('/', '\/')}/' #{options[:config_file]}`
+-    `sed -i 's/^# :name.*$/:name: #{options[:name]}/' #{options[:config_file]}`
++    `gsed -i 's/^# :answer_file.*$/:answer_file: #{options[:answer_file].gsub('/', '\/')}/' #{options[:config_file]}`
++    `gsed -i 's/^# :name.*$/:name: #{options[:name]}/' #{options[:config_file]}`
+   end
+ end
+ 
