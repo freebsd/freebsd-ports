@@ -14,15 +14,13 @@ RUN_DEPENDS=	${LOCALBASE}/bin/p4:${PORTSDIR}/devel/p4
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/p4delta man/man1/p4delta.1.gz
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/ruby|#!${RUBY}|' ${WRKSRC}/p4delta
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/p4delta.1 ${PREFIX}/man/man1/
-
-MAN1=		p4delta.1
-PLIST_FILES=	bin/p4delta
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/p4delta.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
