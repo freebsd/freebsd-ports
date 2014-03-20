@@ -972,6 +972,7 @@
     SUBDIR += userneu-devel
     SUBDIR += usrinfo
     SUBDIR += utcount
+    SUBDIR += vagrant
     SUBDIR += vbetool
     SUBDIR += vcp
     SUBDIR += videogen
