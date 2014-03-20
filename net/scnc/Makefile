@@ -15,11 +15,13 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PLIST_FILES=	bin/${PORTNAME}
+USES=		shebangfix
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/scnc
+SHEBANG_FILES=	scnc
+
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
