@@ -12,7 +12,7 @@ DISTFILES=	edith1.55.common.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A X11 GUI editor for binary and plain text files
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 
