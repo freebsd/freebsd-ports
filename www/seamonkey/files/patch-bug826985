@@ -42,9 +42,9 @@ index b483cd1..f1dd1f0 100644
 --- mozilla/media/webrtc/signaling/test/Makefile.in
 +++ mozilla/media/webrtc/signaling/test/Makefile.in
 @@ -17,6 +17,7 @@ LIBS = \
-   $(NSPR_LIBS) \
    $(NSS_LIBS) \
    $(REALTIME_LIBS) \
+   $(MOZ_JS_LIBS) \
 +  $(MOZ_LIBV4L2_LIBS) \
    $(DEPTH)/xpcom/glue/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) \
    $(DEPTH)/media/mtransport/standalone/$(LIB_PREFIX)mtransport_s.$(LIB_SUFFIX) \
@@ -53,7 +53,7 @@ diff --git media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_lin
 index 239a292..bab496c 100644
 --- mozilla/media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
 +++ mozilla/media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
-@@ -26,11 +26,23 @@
+@@ -25,10 +25,21 @@
  #else
  #include <linux/videodev2.h>
  #endif
@@ -61,9 +61,8 @@ index 239a292..bab496c 100644
 +#include <libv4l2.h>
 +#endif
  
- #include "ref_count.h"
- #include "trace.h"
- 
+ #include "webrtc/system_wrappers/interface/ref_count.h"
+ #include "webrtc/system_wrappers/interface/trace.h"
  
 +#ifdef HAVE_LIBV4L2
 +#define open	v4l2_open
@@ -73,10 +72,9 @@ index 239a292..bab496c 100644
 +#define mmap	v4l2_mmap
 +#define munmap	v4l2_munmap
 +#endif
-+
+ 
  namespace webrtc
  {
- namespace videocapturemodule
 @@ -130,6 +142,11 @@ WebRtc_Word32 DeviceInfoLinux::GetDeviceName(
      memset(deviceNameUTF8, 0, deviceNameLength);
      memcpy(cameraName, cap.card, sizeof(cap.card));
@@ -154,11 +152,11 @@ diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
 index 9c16ffa..1db3794 100644
 --- mozilla/toolkit/library/Makefile.in
 +++ mozilla/toolkit/library/Makefile.in
-@@ -405,6 +405,7 @@ endif
+@@ -121,6 +121,7 @@ endif
  EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,gkmedias,$(DIST)/lib)
  
  ifdef MOZ_WEBRTC
 +EXTRA_DSO_LDOPTS += $(MOZ_LIBV4L2_LIBS)
- ifdef MOZ_PEERCONNECTION
- COMPONENT_LIBS += peerconnection
- endif
+ ifdef MOZ_WEBRTC_SIGNALING
+ SHARED_LIBRARY_LIBS += \
+   $(DEPTH)/media/webrtc/signaling/signaling_ecc/$(LIB_PREFIX)ecc.$(LIB_SUFFIX) \
