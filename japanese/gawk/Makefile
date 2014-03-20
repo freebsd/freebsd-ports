@@ -14,22 +14,25 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ota@j.email.ne.jp
 COMMENT=	GNU awk + multi-byte extension
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bitops --enable-non-decimal-data
 MAKE_JOBS_UNSAFE=	yes
 
 INFO=		gawk
 
-MAN1=		gawk.1 igawk.1
-
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
-NO_STAGE=	yes
+post-configure:
+	@${REINPLACE_CMD} -E \
+	'/(DEFPATH|sed )/!s,(bin|data|lib|info|man|libexec)dir\),DESTDIR\)$$\(&,g' \
+		${WRKSRC}/Makefile ${WRKSRC}/doc/Makefile ${WRKSRC}/awklib/Makefile
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/OREADME.MB ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.MB ${DOCSDIR}
-.endif
+	${INSTALL_MAN} ${WRKSRC}/doc/gawk.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/igawk.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} OREADME.MB README.MB ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
