@@ -18,10 +18,11 @@ BINMODE=	4755
 PLIST_FILES=	bin/wmnetmon share/examples/wmnetmon/wmnetmonrc
 PLIST_DIRS=	share/examples/wmnetmon
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmnetmon ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/wmnetmonrc ${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/wmnetmon ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/wmnetmonrc ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
