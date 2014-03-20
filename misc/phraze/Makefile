@@ -12,17 +12,14 @@ COMMENT=	Converts telephone number to combinations of valid words
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/ruby|#!${RUBY}|; \
 	s|/usr/share/phraze|${DATADIR}|' ${WRKSRC}/phraze ${WRKSRC}/phraze.1
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/wordlist.phr ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/phraze ${PREFIX}/bin/phraze
-	${INSTALL_MAN} ${WRKSRC}/phraze.1 ${PREFIX}/man/man1/
-
-MAN1=		phraze.1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/wordlist.phr ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/phraze ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/phraze.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
