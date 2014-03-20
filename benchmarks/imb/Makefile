@@ -24,22 +24,18 @@ ALL_TARGET=	all
 # _really_ want it.
 CFLAGS=		-O3
 
-# Attention: -DCHECK results are not valid as real benchmark data! Don't
-# forget to deactivate DCHECK and recompile in order to get proper results.
-.if defined(CHECK_RESULTS)
-CFLAGS+=	-DCHECK
-.endif
-
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	CHECK_RESULTS DOCS OPENMPI
+
+# Attention: -DCHECK results are not valid as real benchmark data! Don't
+# forget to deactivate DCHECK and recompile in order to get proper results.
+CHECK_RESULTS_DESC=	Check results (not valid as real benchmark data)
+CHECK_RESULTS_CFLAGS=	-DCHECK
+
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
-WITH_OPENMPI=	yes
-.endif
-
-.if defined(WITH_OPENMPI)
+.if ${PORT_OPTIONS:MOPENMPI}
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 MAKE_ENV+=	MPI_HOME=${LOCALBASE}/mpi/openmpi
@@ -50,14 +46,12 @@ MAKE_ENV+=	MPI_HOME=${LOCALBASE}
 .endif
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/IMB_3.0/doc/IMB_ug-3.0.pdf ${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/IMB_3.0/license/license.txt ${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/IMB_3.0/license/use-of-trademark-license.txt ${DOCSDIR}
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/IMB-EXT ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/IMB-IO ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/IMB-MPI1 ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKDIR}/IMB_3.0/doc/IMB_ug-3.0.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKDIR}/IMB_3.0/license/license.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKDIR}/IMB_3.0/license/use-of-trademark-license.txt \
+		${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} IMB-EXT IMB-IO IMB-MPI1 \
+		${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.post.mk>
