@@ -5,4 +5,4 @@ The WBXML format is a binary representation of XML, defined by the Wap Forum,
 and used to reduce bandwidth in mobile communications.
 
 Author: Aymerick Jehanne <aymerick@jehanne.org>
-WWW: 	http://libwbxml.opensync.org/
+WWW: http://libwbxml.opensync.org/
