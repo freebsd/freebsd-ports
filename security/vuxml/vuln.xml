@@ -56,7 +56,10 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>firefox</name>
-	<range><gt>25.0,1</gt><lt>28.0,1</lt></range>
+	<range><lt>28.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
 	<range><lt>24.4.0,1</lt></range>
       </package>
       <package>
@@ -161,6 +164,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-03-19</discovery>
       <entry>2014-03-19</entry>
+      <modified>2014-03-20</modified>
     </dates>
   </vuln>
 
