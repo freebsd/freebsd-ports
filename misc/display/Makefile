@@ -15,7 +15,6 @@ GNU_CONFIGURE=	yes
 DISPLAY_PROGRAM_PREFIX?=
 
 .if empty(DISPLAY_PROGRAM_PREFIX)
-NO_STAGE=	yes
 pre-everything::
 		@${ECHO_MSG} "NOTE: You may set DISPLAY_PROGRAM_PREFIX to change the name of the 'display'"
 		@${ECHO_MSG} "utility so that it does not conflict with similarly named files from"
@@ -24,14 +23,10 @@ pre-everything::
 CONFLICTS=	ImageMagick-[0-9]* goblin-*
 .endif
 
-CONFIGURE_ARGS+=	--program-prefix=${DISPLAY_PROGRAM_PREFIX}
-LDFLAGS+=	${STRIP}
-
-MAN1=		${DISPLAY_PROGRAM_PREFIX}display.1
-PLIST_FILES=	bin/${DISPLAY_PROGRAM_PREFIX}display
+PLIST_FILES=	bin/${DISPLAY_PROGRAM_PREFIX}display man/man1/${DISPLAY_PROGRAM_PREFIX}display.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/display ${PREFIX}/bin/${DISPLAY_PROGRAM_PREFIX}display
-	${INSTALL_MAN} ${WRKSRC}/display.man ${MANPREFIX}/man/man1/${DISPLAY_PROGRAM_PREFIX}display.1
+	${INSTALL_PROGRAM} ${WRKSRC}/display ${STAGEDIR}${PREFIX}/bin/${DISPLAY_PROGRAM_PREFIX}display
+	${INSTALL_MAN} ${WRKSRC}/display.man ${STAGEDIR}${MANPREFIX}/man/man1/${DISPLAY_PROGRAM_PREFIX}display.1
 
 .include <bsd.port.mk>
