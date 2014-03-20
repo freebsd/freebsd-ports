@@ -17,20 +17,18 @@ RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 
 NO_WRKSUBDIR=	yes
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mysqlidxchk
+SHEBANG_FILES=	mysqlidxchk
 PORTDOCS=	mysqlidxchkdoc.html mysqlidxchkguide.html
 
-NO_STAGE=	yes
-do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/mysqlidxchk ${PREFIX}/bin
+OPTIONS_DEFINE=	DOCS
 
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/mysqlidxchk ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
