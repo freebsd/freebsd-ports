@@ -54,5 +54,7 @@ VORBIS_CONFIGURE_ENABLE=	music-ogg
 post-patch:
 	@${REINPLACE_CMD} -e 's|\($$(prefix)/libdata/pkgconfig\)|$$(DESTDIR)\1|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|"modplug.h"|"libmodplug/modplug.h"|' \
+		${WRKSRC}/dynamic_modplug.h ${WRKSRC}/music_modplug.h
 
 .include <bsd.port.mk>
