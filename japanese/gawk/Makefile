@@ -30,8 +30,6 @@ post-configure:
 		${WRKSRC}/Makefile ${WRKSRC}/doc/Makefile ${WRKSRC}/awklib/Makefile
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/gawk.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/igawk.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} OREADME.MB README.MB ${STAGEDIR}${DOCSDIR})
 
