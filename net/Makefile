@@ -889,6 +889,7 @@
     SUBDIR += pure-sockets
     SUBDIR += pvm
     SUBDIR += pvm++
+    SUBDIR += pwhois
     SUBDIR += pxe
     SUBDIR += pxe-pdhcp
     SUBDIR += py-GeoIP
