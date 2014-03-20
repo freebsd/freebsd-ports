@@ -13,16 +13,15 @@ COMMENT=	Takes a PNG image and transforms it into HTML
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libgd.so:${PORTSDIR}/graphics/gd
 
 PLIST_FILES=	bin/png2html
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|CHANGE_ME|${LOCALBASE}|g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/png2html ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/png2html ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
