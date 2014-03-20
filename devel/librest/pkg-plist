@@ -42,10 +42,16 @@ share/gtk-doc/html/rest-0.7/ch01.html
 share/gtk-doc/html/rest-0.7/ch02.html
 share/gtk-doc/html/rest-0.7/ch03.html
 share/gtk-doc/html/rest-0.7/ch04.html
+share/gtk-doc/html/rest-0.7/ch05.html
 share/gtk-doc/html/rest-0.7/home.png
 share/gtk-doc/html/rest-0.7/index.html
 share/gtk-doc/html/rest-0.7/index.sgml
+share/gtk-doc/html/rest-0.7/ix01.html
+share/gtk-doc/html/rest-0.7/ix02.html
 share/gtk-doc/html/rest-0.7/left.png
+share/gtk-doc/html/rest-0.7/left-insensitive.png
+share/gtk-doc/html/rest-0.7/right-insensitive.png
+share/gtk-doc/html/rest-0.7/up-insensitive.png
 share/gtk-doc/html/rest-0.7/rest-0.7.devhelp2
 share/gtk-doc/html/rest-0.7/rest-RestParam.html
 share/gtk-doc/html/rest-0.7/rest-RestParams.html
