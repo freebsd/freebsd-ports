@@ -39,7 +39,6 @@ APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_INTERNAL_VERSION}
 SCRIPT_FILES=	bin/jcontrol jre/bin/jcontrol
 BIN_DIRS=	bin jre/bin
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -83,16 +82,16 @@ post-patch:
 	@(cd ${WRKSRC}/include; ${LN} -s linux freebsd)
 
 do-install:
-	@${MKDIR} ${APP_HOME}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${APP_HOME}
+	@${MKDIR} ${STAGEDIR}${APP_HOME}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${APP_HOME}
 .for dir in ${BIN_DIRS}
-	@${CHOWN} -R ${BINOWN}:${BINGRP} "${APP_HOME}/${dir}"
-	@${FIND} ${APP_HOME}/${dir} -type f -exec "${CHMOD}" ${BINMODE} "{}" \;
+	@${CHOWN} -R ${BINOWN}:${BINGRP} "${STAGEDIR}${APP_HOME}/${dir}"
+	@${FIND} ${STAGEDIR}${APP_HOME}/${dir} -type f -exec "${CHMOD}" ${BINMODE} "{}" \;
 .endfor
 
 post-install:
-	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JDK${PORTVERSION}"
-	@${SED} -e "s:%%JRE_HOME%%:${APP_HOME}/jre:g" \
+	@${SED} -e "s:%%JRE_HOME%%:${APP_HOME}/jre:g; \
+		s:%%STAGEDIR%%:${STAGEDIR}:g" \
 	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
