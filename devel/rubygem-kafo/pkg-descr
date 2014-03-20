@@ -1,0 +1,4 @@
+Kafo provides a framework for building shiny, user friendly command line
+installers based on puppet modules.
+
+WWW: https://github.com/theforeman/kafo
