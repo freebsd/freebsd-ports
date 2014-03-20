@@ -1,0 +1,11 @@
+--- bin/vagrant.orig	2014-03-14 10:26:06.000000000 -0700
++++ bin/vagrant	2014-03-14 10:27:05.000000000 -0700
+@@ -5,6 +5,8 @@
+ # initializing which have historically resulted in stack traces.
+ Signal.trap("INT") { abort }
+ 
++ENV["VAGRANT_INSTALLER_ENV"] = 'true'
++
+ # Split arguments by "--" if its there, we'll recombine them later
+ argv = ARGV.dup
+ argv_extra = []
