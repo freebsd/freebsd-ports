@@ -1,0 +1,1996 @@
+commit cb40a26
+Author: Alessandro Decina <alessandro.d@gmail.com>
+Date:   Fri Jan 03 08:16:54 2014 -0800
+
+    Bug 806917 - support GStreamer 1.0
+---
+ configure.in                                      |  66 ++-
+ content/media/gstreamer/GStreamerAllocator.cpp    | 198 +++++++
+ content/media/gstreamer/GStreamerAllocator.h      |  25 +
+ content/media/gstreamer/GStreamerFormatHelper.cpp |  13 +-
+ content/media/gstreamer/GStreamerFunctionList.h   |  93 +++-
+ content/media/gstreamer/GStreamerLoader.cpp       |  48 +-
+ content/media/gstreamer/GStreamerLoader.h         |   8 +
+ content/media/gstreamer/GStreamerReader-0.10.cpp  | 203 +++++++
+ content/media/gstreamer/GStreamerReader.cpp       | 632 ++++++++++++++--------
+ content/media/gstreamer/GStreamerReader.h         |  42 +-
+ content/media/gstreamer/moz.build                 |  11 +-
+ content/media/test/manifest.js                    |   6 +-
+ 12 files changed, 1061 insertions(+), 284 deletions(-)
+
+diff --git configure.in configure.in
+index 9776b8d..0b1698d 100644
+--- mozilla/configure.in
++++ mozilla/configure.in
+@@ -3955,6 +3955,7 @@ MOZ_SAMPLE_TYPE_FLOAT32=
+ MOZ_SAMPLE_TYPE_S16=
+ MOZ_OPUS=1
+ MOZ_WEBM=1
++MOZ_GSTREAMER=
+ MOZ_DIRECTSHOW=
+ MOZ_WMF=
+ MOZ_FMP4=
+@@ -5606,43 +5607,60 @@ dnl = Enable GStreamer
+ dnl ========================================================
+ if test "$OS_TARGET" = "Linux"; then
+   MOZ_GSTREAMER=1
++  GST_API_VERSION=0.10
+ fi
+ 
+-MOZ_ARG_ENABLE_BOOL(gstreamer,
+-[  --enable-gstreamer           Enable GStreamer support],
+-MOZ_GSTREAMER=1,
+-MOZ_GSTREAMER=)
+-
+-if test "$MOZ_GSTREAMER"; then
+-    # API version, eg 0.10, 1.0 etc
++MOZ_ARG_ENABLE_STRING(gstreamer,
++[  --enable-gstreamer[=0.10]           Enable GStreamer support],
++[ MOZ_GSTREAMER=1
++  # API version, eg 0.10, 1.0 etc
++  if test -z "$enableval" -o "$enableval" = "yes"; then
+     GST_API_VERSION=0.10
++  elif test "$enableval" = "no"; then
++    MOZ_GSTREAMER=
++  else
++    GST_API_VERSION=$enableval
++  fi],
++)
++
++if test -n "$MOZ_GSTREAMER"; then
+     # core/base release number
+-    GST_VERSION=0.10.25
++    if test "$GST_API_VERSION" = "1.0"; then
++      GST_VERSION=1.0
++    else
++      GST_VERSION=0.10.25
++    fi
++
+     PKG_CHECK_MODULES(GSTREAMER,
+                       gstreamer-$GST_API_VERSION >= $GST_VERSION
+                       gstreamer-app-$GST_API_VERSION
+-                      gstreamer-plugins-base-$GST_API_VERSION, ,
+-                      AC_MSG_ERROR([gstreamer and gstreamer-plugins-base development packages are needed to build gstreamer backend. Install them or disable gstreamer support with --disable-gstreamer]))
+-    if test -n "$GSTREAMER_LIBS"; then
+-       _SAVE_LDFLAGS=$LDFLAGS
+-       LDFLAGS="$LDFLAGS $GSTREAMER_LIBS -lgstvideo-$GST_API_VERSION"
+-       AC_TRY_LINK(,[return 0;],_HAVE_LIBGSTVIDEO=1,_HAVE_LIBGSTVIDEO=)
+-       if test -n "$_HAVE_LIBGSTVIDEO" ; then
+-          GSTREAMER_LIBS="$GSTREAMER_LIBS -lgstvideo-$GST_API_VERSION"
+-       else
+-          AC_MSG_ERROR([gstreamer-plugins-base found, but no libgstvideo. Something has gone terribly wrong. Try reinstalling gstreamer-plugins-base; failing that, disable the gstreamer backend with --disable-gstreamer.])
+-       fi
+-       LDFLAGS=$_SAVE_LDFLAGS
++                      gstreamer-plugins-base-$GST_API_VERSION,
++                      [_HAVE_GSTREAMER=1],
++                      [_HAVE_GSTREAMER=])
++    if test -z "$_HAVE_GSTREAMER"; then
++        AC_MSG_ERROR([gstreamer and gstreamer-plugins-base development packages are needed to build gstreamer backend. Install them or disable gstreamer support with --disable-gstreamer])
++    fi
++
++    _SAVE_LDFLAGS=$LDFLAGS
++    LDFLAGS="$LDFLAGS $GSTREAMER_LIBS -lgstvideo-$GST_API_VERSION"
++    AC_TRY_LINK(,[return 0;],_HAVE_LIBGSTVIDEO=1,_HAVE_LIBGSTVIDEO=)
++    if test -n "$_HAVE_LIBGSTVIDEO" ; then
++        GSTREAMER_LIBS="$GSTREAMER_LIBS -lgstvideo-$GST_API_VERSION"
+     else
+-       AC_MSG_ERROR([gstreamer and gstreamer-plugins-base development packages are needed to build gstreamer backend. Install them or disable gstreamer support with --disable-gstreamer])
++        AC_MSG_ERROR([gstreamer-plugins-base found, but no libgstvideo. Something has gone terribly wrong. Try reinstalling gstreamer-plugins-base; failing that, disable the gstreamer backend with --disable-gstreamer.])
+     fi
++    LDFLAGS=$_SAVE_LDFLAGS
++
++    AC_SUBST(GSTREAMER_CFLAGS)
++    AC_SUBST(GSTREAMER_LIBS)
+ fi
+-AC_SUBST(GSTREAMER_CFLAGS)
+-AC_SUBST(GSTREAMER_LIBS)
++
+ AC_SUBST(MOZ_GSTREAMER)
++AC_SUBST(GST_API_VERSION)
+ 
+ if test -n "$MOZ_GSTREAMER"; then
+-   AC_DEFINE(MOZ_GSTREAMER)
++     AC_DEFINE(MOZ_GSTREAMER)
++     AC_DEFINE_UNQUOTED(GST_API_VERSION, "$GST_API_VERSION")
+ fi
+ 
+ 
+diff --git content/media/gstreamer/GStreamerAllocator.cpp content/media/gstreamer/GStreamerAllocator.cpp
+new file mode 100644
+index 0000000..69d0385
+--- /dev/null
++++ mozilla/content/media/gstreamer/GStreamerAllocator.cpp
+@@ -0,0 +1,198 @@
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
++#include "GStreamerAllocator.h"
++
++#include <gst/video/video.h>
++#include <gst/video/gstvideometa.h>
++
++#include "GStreamerLoader.h"
++
++using namespace mozilla::layers;
++
++namespace mozilla {
++
++typedef struct
++{
++  GstAllocator parent;
++  GStreamerReader *reader;
++} MozGfxMemoryAllocator;
++
++typedef struct
++{
++  GstAllocatorClass parent;
++} MozGfxMemoryAllocatorClass;
++
++typedef struct
++{
++  GstMemory memory;
++  PlanarYCbCrImage* image;
++  guint8* data;
++} MozGfxMemory;
++
++typedef struct
++{
++  GstMeta meta;
++} MozGfxMeta;
++
++typedef struct
++{
++  GstVideoBufferPoolClass parent_class;
++} MozGfxBufferPoolClass;
++
++typedef struct
++{
++  GstVideoBufferPool pool;
++} MozGfxBufferPool;
++
++G_DEFINE_TYPE(MozGfxMemoryAllocator, moz_gfx_memory_allocator, GST_TYPE_ALLOCATOR);
++G_DEFINE_TYPE(MozGfxBufferPool, moz_gfx_buffer_pool, GST_TYPE_VIDEO_BUFFER_POOL);
++
++void
++moz_gfx_memory_reset(MozGfxMemory *mem)
++{
++  if (mem->image)
++    mem->image->Release();
++
++  ImageContainer* container = ((MozGfxMemoryAllocator*) mem->memory.allocator)->reader->GetImageContainer();
++  ImageFormat format = PLANAR_YCBCR;
++  mem->image = reinterpret_cast<PlanarYCbCrImage*>(container->CreateImage(&format, 1).get());
++  mem->data = mem->image->AllocateAndGetNewBuffer(mem->memory.size);
++}
++
++static GstMemory*
++moz_gfx_memory_allocator_alloc(GstAllocator* aAllocator, gsize aSize,
++    GstAllocationParams* aParams)
++{
++  MozGfxMemory* mem = g_slice_new (MozGfxMemory);
++  gsize maxsize = aSize + aParams->prefix + aParams->padding;
++  gst_memory_init(GST_MEMORY_CAST (mem),
++                  (GstMemoryFlags)aParams->flags,
++                  aAllocator, NULL, maxsize, aParams->align,
++                  aParams->prefix, aSize);
++  mem->image = NULL;
++  moz_gfx_memory_reset(mem);
++
++  return (GstMemory *) mem;
++}
++
++static void
++moz_gfx_memory_allocator_free (GstAllocator * allocator, GstMemory * gmem)
++{
++  MozGfxMemory *mem = (MozGfxMemory *) gmem;
++
++  if (mem->memory.parent)
++    goto sub_mem;
++
++  if (mem->image)
++    mem->image->Release();
++
++sub_mem:
++  g_slice_free (MozGfxMemory, mem);
++}
++
++static gpointer
++moz_gfx_memory_map (MozGfxMemory * mem, gsize maxsize, GstMapFlags flags)
++{
++  // check that the allocation didn't fail
++  if (mem->data == nullptr)
++    return nullptr;
++
++  return mem->data + mem->memory.offset;
++}
++
++static gboolean
++moz_gfx_memory_unmap (MozGfxMemory * mem)
++{
++  return TRUE;
++}
++
++static MozGfxMemory *
++moz_gfx_memory_share (MozGfxMemory * mem, gssize offset, gsize size)
++{
++  MozGfxMemory *sub;
++  GstMemory *parent;
++
++  /* find the real parent */
++  if ((parent = mem->memory.parent) == NULL)
++    parent = (GstMemory *) mem;
++
++  if (size == (gsize) -1)
++    size = mem->memory.size - offset;
++
++  /* the shared memory is always readonly */
++  sub = g_slice_new (MozGfxMemory);
++
++  gst_memory_init (GST_MEMORY_CAST (sub),
++      (GstMemoryFlags) (GST_MINI_OBJECT_FLAGS (parent) | GST_MINI_OBJECT_FLAG_LOCK_READONLY),
++      mem->memory.allocator, &mem->memory, mem->memory.maxsize, mem->memory.align,
++      mem->memory.offset + offset, size);
++
++  sub->image = mem->image;
++  sub->data = mem->data;
++
++  return sub;
++}
++
++static void
++moz_gfx_memory_allocator_class_init (MozGfxMemoryAllocatorClass * klass)
++{
++  GstAllocatorClass *allocator_class;
++
++  allocator_class = (GstAllocatorClass *) klass;
++
++  allocator_class->alloc = moz_gfx_memory_allocator_alloc;
++  allocator_class->free = moz_gfx_memory_allocator_free;
++}
++
++static void
++moz_gfx_memory_allocator_init (MozGfxMemoryAllocator * allocator)
++{
++  GstAllocator *alloc = GST_ALLOCATOR_CAST (allocator);
++
++  alloc->mem_type = "moz-gfx-image";
++  alloc->mem_map = (GstMemoryMapFunction) moz_gfx_memory_map;
++  alloc->mem_unmap = (GstMemoryUnmapFunction) moz_gfx_memory_unmap;
++  alloc->mem_share = (GstMemoryShareFunction) moz_gfx_memory_share;
++  /* fallback copy and is_span */
++}
++
++void
++moz_gfx_memory_allocator_set_reader(GstAllocator* aAllocator, GStreamerReader* aReader)
++{
++  MozGfxMemoryAllocator *allocator = (MozGfxMemoryAllocator *) aAllocator;
++  allocator->reader = aReader;
++}
++
++nsRefPtr<PlanarYCbCrImage>
++moz_gfx_memory_get_image(GstMemory *aMemory)
++{
++  NS_ASSERTION(GST_IS_MOZ_GFX_MEMORY_ALLOCATOR(aMemory->allocator), "Should be a gfx image");
++
++  return ((MozGfxMemory *) aMemory)->image;
++}
++
++void
++moz_gfx_buffer_pool_reset_buffer (GstBufferPool* aPool, GstBuffer* aBuffer)
++{
++  GstMemory* mem = gst_buffer_peek_memory(aBuffer, 0);
++
++  NS_ASSERTION(GST_IS_MOZ_GFX_MEMORY_ALLOCATOR(mem->allocator), "Should be a gfx image");
++  moz_gfx_memory_reset((MozGfxMemory *) mem);
++  GST_BUFFER_POOL_CLASS(moz_gfx_buffer_pool_parent_class)->reset_buffer(aPool, aBuffer);
++}
++
++static void
++moz_gfx_buffer_pool_class_init (MozGfxBufferPoolClass * klass)
++{
++  GstBufferPoolClass *pool_class = (GstBufferPoolClass *) klass;
++  pool_class->reset_buffer = moz_gfx_buffer_pool_reset_buffer;
++}
++
++static void
++moz_gfx_buffer_pool_init (MozGfxBufferPool * pool)
++{
++}
++
++} // namespace mozilla
+diff --git content/media/gstreamer/GStreamerAllocator.h content/media/gstreamer/GStreamerAllocator.h
+new file mode 100644
+index 0000000..05a4412
+--- /dev/null
++++ mozilla/content/media/gstreamer/GStreamerAllocator.h
+@@ -0,0 +1,25 @@
++/* This Source Code Form is subject to the terms of the Mozilla Public
++ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
++ * You can obtain one at http://mozilla.org/MPL/2.0/. */
++
++#if !defined(GStreamerAllocator_h_)
++#define GStreamerAllocator_h_
++
++#include "GStreamerReader.h"
++
++#define GST_TYPE_MOZ_GFX_MEMORY_ALLOCATOR   (moz_gfx_memory_allocator_get_type())
++#define GST_IS_MOZ_GFX_MEMORY_ALLOCATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_MOZ_GFX_MEMORY_ALLOCATOR))
++#define GST_TYPE_MOZ_GFX_BUFFER_POOL   (moz_gfx_buffer_pool_get_type())
++#define GST_IS_MOZ_GFX_BUFFER_POOL(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_MOZ_GFX_BUFFER_POOL))
++
++namespace mozilla {
++
++GType moz_gfx_memory_allocator_get_type();
++void moz_gfx_memory_allocator_set_reader(GstAllocator *aAllocator, GStreamerReader* aReader);
++nsRefPtr<layers::PlanarYCbCrImage> moz_gfx_memory_get_image(GstMemory *aMemory);
++
++GType moz_gfx_buffer_pool_get_type();
++
++} // namespace mozilla
++
++#endif
+diff --git content/media/gstreamer/GStreamerFormatHelper.cpp content/media/gstreamer/GStreamerFormatHelper.cpp
+index be71331..a5e5db8 100644
+--- mozilla/content/media/gstreamer/GStreamerFormatHelper.cpp
++++ mozilla/content/media/gstreamer/GStreamerFormatHelper.cpp
+@@ -294,12 +294,23 @@ bool GStreamerFormatHelper::CanHandleCodecCaps(GstCaps* aCaps)
+ GList* GStreamerFormatHelper::GetFactories() {
+   NS_ASSERTION(sLoadOK, "GStreamer library not linked");
+ 
+-  uint32_t cookie = gst_default_registry_get_feature_list_cookie ();
++#if GST_VERSION_MAJOR >= 1
++  uint32_t cookie = gst_registry_get_feature_list_cookie(gst_registry_get());
++#else
++  uint32_t cookie = gst_default_registry_get_feature_list_cookie();
++#endif
+   if (cookie != mCookie) {
+     g_list_free(mFactories);
++#if GST_VERSION_MAJOR >= 1
++    mFactories =
++      gst_registry_feature_filter(gst_registry_get(),
++                                  (GstPluginFeatureFilter)FactoryFilter,
++                                  false, nullptr);
++#else
+     mFactories =
+       gst_default_registry_feature_filter((GstPluginFeatureFilter)FactoryFilter,
+                                           false, nullptr);
++#endif
+     mCookie = cookie;
+   }
+ 
+diff --git content/media/gstreamer/GStreamerFunctionList.h content/media/gstreamer/GStreamerFunctionList.h
+index 56877c0..e169449 100644
+--- mozilla/content/media/gstreamer/GStreamerFunctionList.h
++++ mozilla/content/media/gstreamer/GStreamerFunctionList.h
+@@ -9,7 +9,6 @@
+  * List of symbol names we need to dlsym from the gstreamer library.
+  */
+ GST_FUNC(LIBGSTAPP, gst_app_sink_get_type)
+-GST_FUNC(LIBGSTAPP, gst_app_sink_pull_buffer)
+ GST_FUNC(LIBGSTAPP, gst_app_sink_set_callbacks)
+ GST_FUNC(LIBGSTAPP, gst_app_src_end_of_stream)
+ GST_FUNC(LIBGSTAPP, gst_app_src_get_size)
+@@ -22,10 +21,8 @@ GST_FUNC(LIBGSTAPP, gst_app_src_set_stream_type)
+ GST_FUNC(LIBGSTREAMER, gst_bin_get_by_name)
+ GST_FUNC(LIBGSTREAMER, gst_bin_get_type)
+ GST_FUNC(LIBGSTREAMER, gst_bin_iterate_recurse)
+-GST_FUNC(LIBGSTREAMER, gst_buffer_copy_metadata)
+ GST_FUNC(LIBGSTREAMER, gst_buffer_get_type)
+ GST_FUNC(LIBGSTREAMER, gst_buffer_new)
+-GST_FUNC(LIBGSTREAMER, gst_buffer_new_and_alloc)
+ GST_FUNC(LIBGSTREAMER, gst_bus_set_sync_handler)
+ GST_FUNC(LIBGSTREAMER, gst_bus_timed_pop_filtered)
+ GST_FUNC(LIBGSTREAMER, gst_caps_append)
+@@ -37,47 +34,37 @@ GST_FUNC(LIBGSTREAMER, gst_caps_new_any)
+ GST_FUNC(LIBGSTREAMER, gst_caps_new_empty)
+ GST_FUNC(LIBGSTREAMER, gst_caps_new_full)
+ GST_FUNC(LIBGSTREAMER, gst_caps_new_simple)
+-GST_FUNC(LIBGSTREAMER, gst_caps_unref)
+-GST_FUNC(LIBGSTREAMER, gst_element_factory_get_klass)
++GST_FUNC(LIBGSTREAMER, gst_caps_set_simple)
+ GST_FUNC(LIBGSTREAMER, gst_element_factory_get_static_pad_templates)
+ GST_FUNC(LIBGSTREAMER, gst_element_factory_get_type)
+ GST_FUNC(LIBGSTREAMER, gst_element_factory_make)
+ GST_FUNC(LIBGSTREAMER, gst_element_get_factory)
+-GST_FUNC(LIBGSTREAMER, gst_element_get_pad)
++GST_FUNC(LIBGSTREAMER, gst_element_get_static_pad)
+ GST_FUNC(LIBGSTREAMER, gst_element_get_type)
+ GST_FUNC(LIBGSTREAMER, gst_element_query_convert)
+ GST_FUNC(LIBGSTREAMER, gst_element_query_duration)
+ GST_FUNC(LIBGSTREAMER, gst_element_seek_simple)
+ GST_FUNC(LIBGSTREAMER, gst_element_set_state)
+-GST_FUNC(LIBGSTREAMER, gst_event_parse_new_segment)
+ GST_FUNC(LIBGSTREAMER, gst_flow_get_name)
+ GST_FUNC(LIBGSTREAMER, gst_init)
+ GST_FUNC(LIBGSTREAMER, gst_init_check)
+ GST_FUNC(LIBGSTREAMER, gst_iterator_next)
+ GST_FUNC(LIBGSTREAMER, gst_message_parse_error)
+ GST_FUNC(LIBGSTREAMER, gst_message_type_get_name)
+-GST_FUNC(LIBGSTREAMER, gst_mini_object_get_type)
+-GST_FUNC(LIBGSTREAMER, gst_mini_object_new)
+ GST_FUNC(LIBGSTREAMER, gst_mini_object_ref)
+ GST_FUNC(LIBGSTREAMER, gst_mini_object_unref)
+ GST_FUNC(LIBGSTREAMER, gst_object_get_name)
+ GST_FUNC(LIBGSTREAMER, gst_object_get_parent)
+ GST_FUNC(LIBGSTREAMER, gst_object_unref)
+-GST_FUNC(LIBGSTREAMER, gst_pad_add_event_probe)
+-GST_FUNC(LIBGSTREAMER, gst_pad_alloc_buffer)
+ GST_FUNC(LIBGSTREAMER, gst_pad_get_element_private)
+-GST_FUNC(LIBGSTREAMER, gst_pad_get_negotiated_caps)
+-GST_FUNC(LIBGSTREAMER, gst_pad_set_bufferalloc_function)
+ GST_FUNC(LIBGSTREAMER, gst_pad_set_element_private)
+ GST_FUNC(LIBGSTREAMER, gst_parse_bin_from_description)
+ GST_FUNC(LIBGSTREAMER, gst_pipeline_get_bus)
+ GST_FUNC(LIBGSTREAMER, gst_pipeline_get_type)
+ GST_FUNC(LIBGSTREAMER, gst_plugin_feature_get_rank)
+ GST_FUNC(LIBGSTREAMER, gst_registry_feature_filter)
+-GST_FUNC(LIBGSTREAMER, gst_registry_get_default)
+ GST_FUNC(LIBGSTREAMER, gst_registry_get_feature_list_cookie)
+ GST_FUNC(LIBGSTREAMER, gst_segment_init)
+-GST_FUNC(LIBGSTREAMER, gst_segment_set_newsegment)
+ GST_FUNC(LIBGSTREAMER, gst_segment_to_stream_time)
+ GST_FUNC(LIBGSTREAMER, gst_static_caps_get)
+ GST_FUNC(LIBGSTREAMER, gst_structure_copy)
+@@ -85,11 +72,82 @@ GST_FUNC(LIBGSTREAMER, gst_structure_get_int)
+ GST_FUNC(LIBGSTREAMER, gst_structure_get_value)
+ GST_FUNC(LIBGSTREAMER, gst_structure_new)
+ GST_FUNC(LIBGSTREAMER, gst_util_uint64_scale)
++
++#if GST_VERSION_MAJOR == 0
++GST_FUNC(LIBGSTAPP, gst_app_sink_pull_buffer)
++GST_FUNC(LIBGSTREAMER, gst_buffer_copy_metadata)
++GST_FUNC(LIBGSTREAMER, gst_buffer_new_and_alloc)
++GST_FUNC(LIBGSTREAMER, gst_caps_unref)
++GST_FUNC(LIBGSTREAMER, gst_element_factory_get_klass)
++GST_FUNC(LIBGSTREAMER, gst_element_get_pad)
++GST_FUNC(LIBGSTREAMER, gst_event_parse_new_segment)
++GST_FUNC(LIBGSTREAMER, gst_mini_object_get_type)
++GST_FUNC(LIBGSTREAMER, gst_mini_object_new)
++GST_FUNC(LIBGSTREAMER, gst_pad_add_event_probe)
++GST_FUNC(LIBGSTREAMER, gst_pad_alloc_buffer)
++GST_FUNC(LIBGSTREAMER, gst_pad_get_negotiated_caps)
++GST_FUNC(LIBGSTREAMER, gst_pad_set_bufferalloc_function)
++GST_FUNC(LIBGSTREAMER, gst_registry_get_default)
++GST_FUNC(LIBGSTREAMER, gst_segment_set_newsegment)
+ GST_FUNC(LIBGSTVIDEO, gst_video_format_get_component_height)
+ GST_FUNC(LIBGSTVIDEO, gst_video_format_get_component_offset)
+ GST_FUNC(LIBGSTVIDEO, gst_video_format_get_component_width)
++GST_FUNC(LIBGSTVIDEO, gst_video_format_get_pixel_stride)
+ GST_FUNC(LIBGSTVIDEO, gst_video_format_get_row_stride)
+ GST_FUNC(LIBGSTVIDEO, gst_video_format_parse_caps)
++#else
++
++GST_FUNC(LIBGSTAPP, gst_app_sink_pull_sample)
++GST_FUNC(LIBGSTREAMER, _gst_caps_any)
++GST_FUNC(LIBGSTREAMER, gst_allocator_get_type)
++GST_FUNC(LIBGSTREAMER, gst_buffer_copy_into)
++GST_FUNC(LIBGSTREAMER, gst_buffer_extract)
++GST_FUNC(LIBGSTREAMER, gst_buffer_get_meta)
++GST_FUNC(LIBGSTREAMER, gst_buffer_get_size)
++GST_FUNC(LIBGSTREAMER, gst_buffer_map)
++GST_FUNC(LIBGSTREAMER, gst_buffer_new_allocate)
++GST_FUNC(LIBGSTREAMER, gst_buffer_n_memory)
++GST_FUNC(LIBGSTREAMER, gst_buffer_peek_memory)
++GST_FUNC(LIBGSTREAMER, gst_buffer_pool_acquire_buffer)
++GST_FUNC(LIBGSTREAMER, gst_buffer_pool_config_set_allocator)
++GST_FUNC(LIBGSTREAMER, gst_buffer_pool_config_set_params)
++GST_FUNC(LIBGSTREAMER, gst_buffer_pool_get_config)
++GST_FUNC(LIBGSTREAMER, gst_buffer_pool_get_type)
++GST_FUNC(LIBGSTREAMER, gst_buffer_pool_is_active)
++GST_FUNC(LIBGSTREAMER, gst_buffer_pool_set_active)
++GST_FUNC(LIBGSTREAMER, gst_buffer_pool_set_config)
++GST_FUNC(LIBGSTREAMER, gst_buffer_set_size)
++GST_FUNC(LIBGSTREAMER, gst_buffer_unmap)
++GST_FUNC(LIBGSTREAMER, gst_element_factory_get_metadata)
++GST_FUNC(LIBGSTREAMER, gst_event_parse_segment)
++GST_FUNC(LIBGSTREAMER, gst_memory_init)
++GST_FUNC(LIBGSTREAMER, gst_memory_map)
++GST_FUNC(LIBGSTREAMER, gst_memory_unmap)
++GST_FUNC(LIBGSTREAMER, gst_object_get_type)
++GST_FUNC(LIBGSTREAMER, gst_pad_add_probe)
++GST_FUNC(LIBGSTREAMER, gst_pad_get_current_caps)
++GST_FUNC(LIBGSTREAMER, gst_pad_probe_info_get_query)
++GST_FUNC(LIBGSTREAMER, gst_query_add_allocation_meta)
++GST_FUNC(LIBGSTREAMER, gst_query_add_allocation_param)
++GST_FUNC(LIBGSTREAMER, gst_query_add_allocation_pool)
++GST_FUNC(LIBGSTREAMER, gst_query_parse_allocation)
++GST_FUNC(LIBGSTREAMER, gst_registry_get)
++GST_FUNC(LIBGSTREAMER, gst_sample_get_buffer)
++GST_FUNC(LIBGSTREAMER, gst_segment_copy_into)
++GST_FUNC(LIBGSTREAMER, gst_structure_free)
++GST_FUNC(LIBGSTVIDEO, gst_buffer_pool_config_get_video_alignment)
++GST_FUNC(LIBGSTVIDEO, gst_buffer_pool_has_option)
++GST_FUNC(LIBGSTVIDEO, gst_video_buffer_pool_get_type)
++GST_FUNC(LIBGSTVIDEO, gst_video_frame_map)
++GST_FUNC(LIBGSTVIDEO, gst_video_frame_unmap)
++GST_FUNC(LIBGSTVIDEO, gst_video_info_align)
++GST_FUNC(LIBGSTVIDEO, gst_video_info_from_caps)
++GST_FUNC(LIBGSTVIDEO, gst_video_info_init)
++GST_FUNC(LIBGSTVIDEO, gst_video_meta_api_get_type)
++GST_FUNC(LIBGSTVIDEO, gst_video_meta_map)
++GST_FUNC(LIBGSTVIDEO, gst_video_meta_unmap)
++
++#endif
+ 
+ /*
+  * Functions that have been defined in the header file. We replace them so that
+@@ -99,6 +157,11 @@ GST_FUNC(LIBGSTVIDEO, gst_video_format_parse_caps)
+ REPLACE_FUNC(gst_buffer_ref);
+ REPLACE_FUNC(gst_buffer_unref);
+ REPLACE_FUNC(gst_message_unref);
++
++#if GST_VERSION_MAJOR == 1
++REPLACE_FUNC(gst_caps_unref);
++REPLACE_FUNC(gst_sample_unref);
++#endif
+ #endif
+ 
+ #endif // !defined(__APPLE__)
+diff --git content/media/gstreamer/GStreamerLoader.cpp content/media/gstreamer/GStreamerLoader.cpp
+index 5961b23..e6457e0 100644
+--- mozilla/content/media/gstreamer/GStreamerLoader.cpp
++++ mozilla/content/media/gstreamer/GStreamerLoader.cpp
+@@ -6,13 +6,21 @@
+ #include <dlfcn.h>
+ #include <stdio.h>
+ 
+-#include "GStreamerLoader.h"
++#include "nsDebug.h"
+ #include "mozilla/NullPtr.h"
+ 
++#include "GStreamerLoader.h"
++
+ #define LIBGSTREAMER 0
+ #define LIBGSTAPP 1
+ #define LIBGSTVIDEO 2
+ 
++#ifdef __OpenBSD__
++#define LIB_GST_SUFFIX ".so"
++#else
++#define LIB_GST_SUFFIX ".so.0"
++#endif
++
+ namespace mozilla {
+ 
+ /*
+@@ -32,6 +40,11 @@ namespace mozilla {
+ GstBuffer * gst_buffer_ref_impl(GstBuffer *buf);
+ void gst_buffer_unref_impl(GstBuffer *buf);
+ void gst_message_unref_impl(GstMessage *msg);
++void gst_caps_unref_impl(GstCaps *caps);
++
++#if GST_VERSION_MAJOR == 1
++void gst_sample_unref_impl(GstSample *sample);
++#endif
+ 
+ bool
+ load_gstreamer()
+@@ -58,32 +71,25 @@ load_gstreamer()
+   if (major == GST_VERSION_MAJOR && minor == GST_VERSION_MINOR) {
+     gstreamerLib = RTLD_DEFAULT;
+   } else {
+-#ifdef __OpenBSD__
+-    gstreamerLib = dlopen("libgstreamer-0.10.so", RTLD_NOW | RTLD_LOCAL);
+-#else
+-    gstreamerLib = dlopen("libgstreamer-0.10.so.0", RTLD_NOW | RTLD_LOCAL);
+-#endif
++    gstreamerLib = dlopen("libgstreamer-" GST_API_VERSION LIB_GST_SUFFIX, RTLD_NOW | RTLD_LOCAL);
+   }
+ 
+-  void *handles[] = {
++  void *handles[3] = {
+     gstreamerLib,
+-#ifdef __OpenBSD__
+-    dlopen("libgstapp-0.10.so", RTLD_NOW | RTLD_LOCAL),
+-    dlopen("libgstvideo-0.10.so", RTLD_NOW | RTLD_LOCAL)
+-#else
+-    dlopen("libgstapp-0.10.so.0", RTLD_NOW | RTLD_LOCAL),
+-    dlopen("libgstvideo-0.10.so.0", RTLD_NOW | RTLD_LOCAL)
+-#endif
++    dlopen("libgstapp-" GST_API_VERSION LIB_GST_SUFFIX, RTLD_NOW | RTLD_LOCAL),
++    dlopen("libgstvideo-" GST_API_VERSION LIB_GST_SUFFIX, RTLD_NOW | RTLD_LOCAL)
+   };
+ 
+   for (size_t i = 0; i < sizeof(handles) / sizeof(handles[0]); i++) {
+     if (!handles[i]) {
++      NS_WARNING("Couldn't link gstreamer libraries");
+       goto fail;
+     }
+   }
+ 
+ #define GST_FUNC(lib, symbol) \
+   if (!(symbol = (typeof(symbol))dlsym(handles[lib], #symbol))) { \
++    NS_WARNING("Couldn't link symbol " #symbol); \
+     goto fail; \
+   }
+ #define REPLACE_FUNC(symbol) symbol = symbol##_impl;
+@@ -123,4 +129,18 @@ gst_message_unref_impl(GstMessage *msg)
+   gst_mini_object_unref(GST_MINI_OBJECT_CAST(msg));
+ }
+ 
++#if GST_VERSION_MAJOR == 1
++void
++gst_sample_unref_impl(GstSample *sample)
++{
++  gst_mini_object_unref(GST_MINI_OBJECT_CAST(sample));
++}
++#endif
++
++void
++gst_caps_unref_impl(GstCaps *caps)
++{
++  gst_mini_object_unref(GST_MINI_OBJECT_CAST(caps));
++}
++
+ }
+diff --git content/media/gstreamer/GStreamerLoader.h content/media/gstreamer/GStreamerLoader.h
+index 2d801722..cd7fe6d 100644
+--- mozilla/content/media/gstreamer/GStreamerLoader.h
++++ mozilla/content/media/gstreamer/GStreamerLoader.h
+@@ -22,6 +22,11 @@
+ #include <gst/video/video.h>
+ #pragma GCC diagnostic pop
+ 
++#if GST_VERSION_MAJOR == 1
++#include <gst/video/gstvideometa.h>
++#include <gst/video/gstvideopool.h>
++#endif
++
+ namespace mozilla {
+ 
+ /*
+@@ -42,4 +47,7 @@ bool load_gstreamer();
+ 
+ }
+ 
++#undef GST_CAPS_ANY
++#define GST_CAPS_ANY (*_gst_caps_any)
++
+ #endif // GStreamerLoader_h_
+diff --git content/media/gstreamer/GStreamerReader-0.10.cpp content/media/gstreamer/GStreamerReader-0.10.cpp
+new file mode 100644
+index 0000000..fb98bde
+--- /dev/null
++++ mozilla/content/media/gstreamer/GStreamerReader-0.10.cpp
+@@ -0,0 +1,203 @@
++#include "nsError.h"
++#include "MediaDecoderStateMachine.h"
++#include "AbstractMediaDecoder.h"
++#include "MediaResource.h"
++#include "GStreamerReader.h"
++#include "GStreamerMozVideoBuffer.h"
++#include "GStreamerFormatHelper.h"
++#include "VideoUtils.h"
++#include "mozilla/dom/TimeRanges.h"
++#include "mozilla/Preferences.h"
++
++using namespace mozilla;
++using mozilla::layers::PlanarYCbCrImage;
++using mozilla::layers::ImageContainer;
++
++GstFlowReturn GStreamerReader::AllocateVideoBufferCb(GstPad* aPad,
++                                                     guint64 aOffset,
++                                                     guint aSize,
++                                                     GstCaps* aCaps,
++                                                     GstBuffer** aBuf)
++{
++  GStreamerReader* reader = reinterpret_cast<GStreamerReader*>(gst_pad_get_element_private(aPad));
++  return reader->AllocateVideoBuffer(aPad, aOffset, aSize, aCaps, aBuf);
++}
++
++GstFlowReturn GStreamerReader::AllocateVideoBuffer(GstPad* aPad,
++                                                   guint64 aOffset,
++                                                   guint aSize,
++                                                   GstCaps* aCaps,
++                                                   GstBuffer** aBuf)
++{
++  nsRefPtr<PlanarYCbCrImage> image;
++  return AllocateVideoBufferFull(aPad, aOffset, aSize, aCaps, aBuf, image);
++}
++
++GstFlowReturn GStreamerReader::AllocateVideoBufferFull(GstPad* aPad,
++                                                       guint64 aOffset,
++                                                       guint aSize,
++                                                       GstCaps* aCaps,
++                                                       GstBuffer** aBuf,
++                                                       nsRefPtr<PlanarYCbCrImage>& aImage)
++{
++  /* allocate an image using the container */
++  ImageContainer* container = mDecoder->GetImageContainer();
++  if (!container) {
++    // We don't have an ImageContainer. We probably belong to an <audio>
++    // element.
++    return GST_FLOW_NOT_SUPPORTED;
++  }
++  ImageFormat format = PLANAR_YCBCR;
++  PlanarYCbCrImage* img = reinterpret_cast<PlanarYCbCrImage*>(container->CreateImage(&format, 1).get());
++  nsRefPtr<PlanarYCbCrImage> image = dont_AddRef(img);
++
++  /* prepare a GstBuffer pointing to the underlying PlanarYCbCrImage buffer */
++  GstBuffer* buf = GST_BUFFER(gst_moz_video_buffer_new());
++  GST_BUFFER_SIZE(buf) = aSize;
++  /* allocate the actual YUV buffer */
++  GST_BUFFER_DATA(buf) = image->AllocateAndGetNewBuffer(aSize);
++
++  aImage = image;
++
++  /* create a GstMozVideoBufferData to hold the image */
++  GstMozVideoBufferData* bufferdata = new GstMozVideoBufferData(image);
++
++  /* Attach bufferdata to our GstMozVideoBuffer, it will take care to free it */
++  gst_moz_video_buffer_set_data(GST_MOZ_VIDEO_BUFFER(buf), bufferdata);
++
++  *aBuf = buf;
++  return GST_FLOW_OK;
++}
++
++gboolean GStreamerReader::EventProbe(GstPad* aPad, GstEvent* aEvent)
++{
++  GstElement* parent = GST_ELEMENT(gst_pad_get_parent(aPad));
++  switch(GST_EVENT_TYPE(aEvent)) {
++    case GST_EVENT_NEWSEGMENT:
++    {
++      gboolean update;
++      gdouble rate;
++      GstFormat format;
++      gint64 start, stop, position;
++      GstSegment* segment;
++
++      /* Store the segments so we can convert timestamps to stream time, which
++       * is what the upper layers sync on.
++       */
++      ReentrantMonitorAutoEnter mon(mGstThreadsMonitor);
++      gst_event_parse_new_segment(aEvent, &update, &rate, &format,
++          &start, &stop, &position);
++      if (parent == GST_ELEMENT(mVideoAppSink))
++        segment = &mVideoSegment;
++      else
++        segment = &mAudioSegment;
++      gst_segment_set_newsegment(segment, update, rate, format,
++          start, stop, position);
++      break;
++    }
++    case GST_EVENT_FLUSH_STOP:
++      /* Reset on seeks */
++      ResetDecode();
++      break;
++    default:
++      break;
++  }
++  gst_object_unref(parent);
++
++  return TRUE;
++}
++
++gboolean GStreamerReader::EventProbeCb(GstPad* aPad,
++                                         GstEvent* aEvent,
++                                         gpointer aUserData)
++{
++  GStreamerReader* reader = reinterpret_cast<GStreamerReader*>(aUserData);
++  return reader->EventProbe(aPad, aEvent);
++}
++
++nsRefPtr<PlanarYCbCrImage> GStreamerReader::GetImageFromBuffer(GstBuffer* aBuffer)
++{
++  if (!GST_IS_MOZ_VIDEO_BUFFER (aBuffer))
++    return nullptr;
++
++  nsRefPtr<PlanarYCbCrImage> image;
++  GstMozVideoBufferData* bufferdata = reinterpret_cast<GstMozVideoBufferData*>(gst_moz_video_buffer_get_data(GST_MOZ_VIDEO_BUFFER(aBuffer)));
++  image = bufferdata->mImage;
++
++  PlanarYCbCrImage::Data data;
++  data.mPicX = data.mPicY = 0;
++  data.mPicSize = nsIntSize(mPicture.width, mPicture.height);
++  data.mStereoMode = STEREO_MODE_MONO;
++
++  data.mYChannel = GST_BUFFER_DATA(aBuffer);
++  data.mYStride = gst_video_format_get_row_stride(mFormat, 0, mPicture.width);
++  data.mYSize = nsIntSize(data.mYStride,
++      gst_video_format_get_component_height(mFormat, 0, mPicture.height));
++  data.mYSkip = 0;
++  data.mCbCrStride = gst_video_format_get_row_stride(mFormat, 1, mPicture.width);
++  data.mCbCrSize = nsIntSize(data.mCbCrStride,
++      gst_video_format_get_component_height(mFormat, 1, mPicture.height));
++  data.mCbChannel = data.mYChannel + gst_video_format_get_component_offset(mFormat, 1,
++      mPicture.width, mPicture.height);
++  data.mCrChannel = data.mYChannel + gst_video_format_get_component_offset(mFormat, 2,
++      mPicture.width, mPicture.height);
++  data.mCbSkip = 0;
++  data.mCrSkip = 0;
++
++  image->SetDataNoCopy(data);
++
++  return image;
++}
++
++void GStreamerReader::CopyIntoImageBuffer(GstBuffer* aBuffer,
++                                          GstBuffer** aOutBuffer,
++                                          nsRefPtr<PlanarYCbCrImage> &aImage)
++{
++  AllocateVideoBufferFull(nullptr, GST_BUFFER_OFFSET(aBuffer),
++      GST_BUFFER_SIZE(aBuffer), nullptr, aOutBuffer, aImage);
++
++  gst_buffer_copy_metadata(*aOutBuffer, aBuffer, (GstBufferCopyFlags)GST_BUFFER_COPY_ALL);
++  memcpy(GST_BUFFER_DATA(*aOutBuffer), GST_BUFFER_DATA(aBuffer), GST_BUFFER_SIZE(*aOutBuffer));
++
++  aImage = GetImageFromBuffer(*aOutBuffer);
++}
++
++GstCaps* GStreamerReader::BuildAudioSinkCaps()
++{
++  GstCaps* caps;
++#ifdef IS_LITTLE_ENDIAN
++  int endianness = 1234;
++#else
++  int endianness = 4321;
++#endif
++  gint width;
++#ifdef MOZ_SAMPLE_TYPE_FLOAT32
++  caps = gst_caps_from_string("audio/x-raw-float, channels={1,2}");
++  width = 32;
++#else /* !MOZ_SAMPLE_TYPE_FLOAT32 */
++  caps = gst_caps_from_string("audio/x-raw-int, channels={1,2}");
++  width = 16;
++#endif
++  gst_caps_set_simple(caps,
++      "width", G_TYPE_INT, width,
++      "endianness", G_TYPE_INT, endianness,
++      NULL);
++
++  return caps;
++}
++
++void GStreamerReader::InstallPadCallbacks()
++{
++  GstPad* sinkpad = gst_element_get_static_pad(GST_ELEMENT(mVideoAppSink), "sink");
++  gst_pad_add_event_probe(sinkpad,
++                          G_CALLBACK(&GStreamerReader::EventProbeCb), this);
++
++  gst_pad_set_bufferalloc_function(sinkpad, GStreamerReader::AllocateVideoBufferCb);
++  gst_pad_set_element_private(sinkpad, this);
++  gst_object_unref(sinkpad);
++
++  sinkpad = gst_element_get_static_pad(GST_ELEMENT(mAudioAppSink), "sink");
++  gst_pad_add_event_probe(sinkpad,
++                          G_CALLBACK(&GStreamerReader::EventProbeCb), this);
++  gst_object_unref(sinkpad);
++}
+diff --git content/media/gstreamer/GStreamerReader.cpp content/media/gstreamer/GStreamerReader.cpp
+index 2be45dc..54509e3 100644
+--- mozilla/content/media/gstreamer/GStreamerReader.cpp
++++ mozilla/content/media/gstreamer/GStreamerReader.cpp
+@@ -10,8 +10,10 @@
+ #include "AbstractMediaDecoder.h"
+ #include "MediaResource.h"
+ #include "GStreamerReader.h"
++#if GST_VERSION_MAJOR >= 1
++#include "GStreamerAllocator.h"
++#endif
+ #include "GStreamerFormatHelper.h"
+-#include "GStreamerMozVideoBuffer.h"
+ #include "VideoUtils.h"
+ #include "mozilla/dom/TimeRanges.h"
+ #include "mozilla/Preferences.h"
+@@ -31,14 +33,16 @@ extern PRLogModuleInfo* gMediaDecoderLog;
+ #define LOG(type, msg, ...)
+ #endif
+ 
+-extern bool
+-IsYV12Format(const VideoData::YCbCrBuffer::Plane& aYPlane,
+-             const VideoData::YCbCrBuffer::Plane& aCbPlane,
+-             const VideoData::YCbCrBuffer::Plane& aCrPlane);
+-
++#if DEBUG
+ static const unsigned int MAX_CHANNELS = 4;
+-// Let the demuxer work in pull mode for short files
+-static const int SHORT_FILE_SIZE = 1024 * 1024;
++#endif
++// Let the demuxer work in pull mode for short files. This used to be a micro
++// optimization to have more accurate durations for ogg files in mochitests.
++// Since as of today we aren't using gstreamer to demux ogg, and having demuxers
++// work in pull mode over http makes them slower (since they really assume
++// near-zero latency in pull mode) set the constant to 0 for now, which
++// effectively disables it.
++static const int SHORT_FILE_SIZE = 0;
+ // The default resource->Read() size when working in push mode
+ static const int DEFAULT_SOURCE_READ_SIZE = 50 * 1024;
+ 
+@@ -60,6 +62,10 @@ GStreamerReader::GStreamerReader(AbstractMediaDecoder* aDecoder)
+   : MediaDecoderReader(aDecoder),
+   mMP3FrameParser(aDecoder->GetResource()->GetLength()),
+   mUseParserDuration(false),
++#if GST_VERSION_MAJOR >= 1
++  mAllocator(nullptr),
++  mBufferPool(nullptr),
++#endif
+   mPlayBin(nullptr),
+   mBus(nullptr),
+   mSource(nullptr),
+@@ -72,6 +78,9 @@ GStreamerReader::GStreamerReader(AbstractMediaDecoder* aDecoder)
+   mAudioSinkBufferCount(0),
+   mGstThreadsMonitor("media.gst.threads"),
+   mReachedEos(false),
++#if GST_VERSION_MAJOR >= 1
++  mConfigureAlignment(true),
++#endif
+   fpsNum(0),
+   fpsDen(0)
+ {
+@@ -83,8 +92,12 @@ GStreamerReader::GStreamerReader(AbstractMediaDecoder* aDecoder)
+ 
+   mSinkCallbacks.eos = GStreamerReader::EosCb;
+   mSinkCallbacks.new_preroll = GStreamerReader::NewPrerollCb;
++#if GST_VERSION_MAJOR >= 1
++  mSinkCallbacks.new_sample = GStreamerReader::NewBufferCb;
++#else
+   mSinkCallbacks.new_buffer = GStreamerReader::NewBufferCb;
+   mSinkCallbacks.new_buffer_list = nullptr;
++#endif
+ 
+   gst_segment_init(&mVideoSegment, GST_FORMAT_UNDEFINED);
+   gst_segment_init(&mAudioSegment, GST_FORMAT_UNDEFINED);
+@@ -108,65 +121,59 @@ GStreamerReader::~GStreamerReader()
+     mAudioAppSink = nullptr;
+     gst_object_unref(mBus);
+     mBus = nullptr;
++#if GST_VERSION_MAJOR >= 1
++    g_object_unref(mAllocator);
++    g_object_unref(mBufferPool);
++#endif
+   }
+ }
+ 
+ nsresult GStreamerReader::Init(MediaDecoderReader* aCloneDonor)
+ {
+-  GError* error = nullptr;
+-  if (!gst_init_check(0, 0, &error)) {
+-    LOG(PR_LOG_ERROR, "gst initialization failed: %s", error->message);
+-    g_error_free(error);
+-    return NS_ERROR_FAILURE;
+-  }
++  GStreamerFormatHelper::Instance();
++
++#if GST_VERSION_MAJOR >= 1
++  mAllocator = static_cast<GstAllocator*>(g_object_new(GST_TYPE_MOZ_GFX_MEMORY_ALLOCATOR, nullptr));
++  moz_gfx_memory_allocator_set_reader(mAllocator, this);
++
++  mBufferPool = static_cast<GstBufferPool*>(g_object_new(GST_TYPE_MOZ_GFX_BUFFER_POOL, nullptr));
++#endif
+ 
++#if GST_VERSION_MAJOR >= 1
++  mPlayBin = gst_element_factory_make("playbin", nullptr);
++#else
+   mPlayBin = gst_element_factory_make("playbin2", nullptr);
++#endif
+   if (!mPlayBin) {
+-    LOG(PR_LOG_ERROR, "couldn't create playbin2");
++    LOG(PR_LOG_ERROR, "couldn't create playbin");
+     return NS_ERROR_FAILURE;
+   }
+   g_object_set(mPlayBin, "buffer-size", 0, nullptr);
+   mBus = gst_pipeline_get_bus(GST_PIPELINE(mPlayBin));
+ 
+   mVideoSink = gst_parse_bin_from_description("capsfilter name=filter ! "
+-      "appsink name=videosink sync=true max-buffers=1 "
++      "appsink name=videosink sync=false max-buffers=1 "
++#if GST_VERSION_MAJOR >= 1
++      "caps=video/x-raw,format=I420"
++#else
+       "caps=video/x-raw-yuv,format=(fourcc)I420"
++#endif
+       , TRUE, nullptr);
+   mVideoAppSink = GST_APP_SINK(gst_bin_get_by_name(GST_BIN(mVideoSink),
+         "videosink"));
+-  gst_app_sink_set_callbacks(mVideoAppSink, &mSinkCallbacks,
+-      (gpointer) this, nullptr);
+-  GstPad* sinkpad = gst_element_get_pad(GST_ELEMENT(mVideoAppSink), "sink");
+-  gst_pad_add_event_probe(sinkpad,
+-      G_CALLBACK(&GStreamerReader::EventProbeCb), this);
+-  gst_object_unref(sinkpad);
+-  gst_pad_set_bufferalloc_function(sinkpad, GStreamerReader::AllocateVideoBufferCb);
+-  gst_pad_set_element_private(sinkpad, this);
+-
+   mAudioSink = gst_parse_bin_from_description("capsfilter name=filter ! "
+-#ifdef MOZ_SAMPLE_TYPE_FLOAT32
+-        "appsink name=audiosink max-buffers=2 sync=false caps=audio/x-raw-float,"
+-#ifdef IS_LITTLE_ENDIAN
+-        "channels={1,2},width=32,endianness=1234", TRUE, nullptr);
+-#else
+-        "channels={1,2},width=32,endianness=4321", TRUE, nullptr);
+-#endif
+-#else
+-        "appsink name=audiosink max-buffers=2 sync=false caps=audio/x-raw-int,"
+-#ifdef IS_LITTLE_ENDIAN
+-        "channels={1,2},width=16,endianness=1234", TRUE, nullptr);
+-#else
+-        "channels={1,2},width=16,endianness=4321", TRUE, nullptr);
+-#endif
+-#endif
++        "appsink name=audiosink sync=false max-buffers=1", TRUE, nullptr);
+   mAudioAppSink = GST_APP_SINK(gst_bin_get_by_name(GST_BIN(mAudioSink),
+                                                    "audiosink"));
++  GstCaps* caps = BuildAudioSinkCaps();
++  g_object_set(mAudioAppSink, "caps", caps, nullptr);
++  gst_caps_unref(caps);
++
++  gst_app_sink_set_callbacks(mVideoAppSink, &mSinkCallbacks,
++      (gpointer) this, nullptr);
+   gst_app_sink_set_callbacks(mAudioAppSink, &mSinkCallbacks,
+                              (gpointer) this, nullptr);
+-  sinkpad = gst_element_get_pad(GST_ELEMENT(mAudioAppSink), "sink");
+-  gst_pad_add_event_probe(sinkpad,
+-                          G_CALLBACK(&GStreamerReader::EventProbeCb), this);
+-  gst_object_unref(sinkpad);
++  InstallPadCallbacks();
+ 
+   g_object_set(mPlayBin, "uri", "appsrc://",
+                "video-sink", mVideoSink,
+@@ -331,7 +340,7 @@ nsresult GStreamerReader::ReadMetadata(MediaInfo* aInfo,
+       /* Little trick: set the target caps to "skip" so that playbin2 fails to
+        * find a decoder for the stream we want to skip.
+        */
+-      GstCaps* filterCaps = gst_caps_new_simple ("skip", nullptr);
++      GstCaps* filterCaps = gst_caps_new_simple ("skip", nullptr, nullptr);
+       g_object_set(filter, "caps", filterCaps, nullptr);
+       gst_caps_unref(filterCaps);
+       gst_object_unref(filter);
+@@ -358,6 +367,7 @@ nsresult GStreamerReader::ReadMetadata(MediaInfo* aInfo,
+       gst_message_unref(message);
+       ret = NS_ERROR_FAILURE;
+     } else {
++      LOG(PR_LOG_DEBUG, "read metadata pipeline prerolled");
+       gst_message_unref(message);
+       ret = NS_OK;
+       break;
+@@ -373,21 +383,24 @@ nsresult GStreamerReader::ReadMetadata(MediaInfo* aInfo,
+ 
+   /* FIXME: workaround for a bug in matroskademux. This seek makes matroskademux
+    * parse the index */
++  LOG(PR_LOG_DEBUG, "doing matroskademux seek hack");
+   if (gst_element_seek_simple(mPlayBin, GST_FORMAT_TIME,
+         GST_SEEK_FLAG_FLUSH, 0)) {
+     /* after a seek we need to wait again for ASYNC_DONE */
+-    message = gst_bus_timed_pop_filtered(mBus, GST_CLOCK_TIME_NONE,
++    message = gst_bus_timed_pop_filtered(mBus, 5 * GST_SECOND,
+        (GstMessageType)(GST_MESSAGE_ASYNC_DONE | GST_MESSAGE_ERROR));
+-    if (GST_MESSAGE_TYPE(message) == GST_MESSAGE_ERROR) {
++    LOG(PR_LOG_DEBUG, "matroskademux seek hack done");
++    if (GST_MESSAGE_TYPE(message) != GST_MESSAGE_ASYNC_DONE) {
+       gst_element_set_state(mPlayBin, GST_STATE_NULL);
+       gst_message_unref(message);
+       return NS_ERROR_FAILURE;
+     }
++  } else {
++    LOG(PR_LOG_DEBUG, "matroskademux seek hack failed (non fatal)");
+   }
+ 
+   /* report the duration */
+   gint64 duration;
+-  GstFormat format = GST_FORMAT_TIME;
+ 
+   if (isMP3 && mMP3FrameParser.IsMP3()) {
+     // The MP3FrameParser has reported a duration; use that over the gstreamer
+@@ -396,17 +409,25 @@ nsresult GStreamerReader::ReadMetadata(MediaInfo* aInfo,
+     mUseParserDuration = true;
+     mLastParserDuration = mMP3FrameParser.GetDuration();
+     mDecoder->SetMediaDuration(mLastParserDuration);
+-
+-  } else if (gst_element_query_duration(GST_ELEMENT(mPlayBin),
+-      &format, &duration) && format == GST_FORMAT_TIME) {
+-    // Otherwise use the gstreamer duration.
+-    ReentrantMonitorAutoEnter mon(mDecoder->GetReentrantMonitor());
+-    LOG(PR_LOG_DEBUG, "returning duration %" GST_TIME_FORMAT, GST_TIME_ARGS(duration));
+-    duration = GST_TIME_AS_USECONDS (duration);
+-    mDecoder->SetMediaDuration(duration);
+-
+   } else {
+-    mDecoder->SetMediaSeekable(false);
++    LOG(PR_LOG_DEBUG, "querying duration");
++    // Otherwise use the gstreamer duration.
++#if GST_VERSION_MAJOR >= 1
++    if (gst_element_query_duration(GST_ELEMENT(mPlayBin),
++          GST_FORMAT_TIME, &duration)) {
++#else
++    GstFormat format = GST_FORMAT_TIME;
++    if (gst_element_query_duration(GST_ELEMENT(mPlayBin),
++      &format, &duration) && format == GST_FORMAT_TIME) {
++#endif
++      ReentrantMonitorAutoEnter mon(mDecoder->GetReentrantMonitor());
++      LOG(PR_LOG_DEBUG, "have duration %" GST_TIME_FORMAT,
++            GST_TIME_ARGS (duration));
++      duration = GST_TIME_AS_USECONDS (duration);
++      mDecoder->SetMediaDuration(duration);
++    } else {
++      mDecoder->SetMediaSeekable(false);
++    }
+   }
+ 
+   int n_video = 0, n_audio = 0;
+@@ -410,7 +428,11 @@ nsresult GStreamerReader::ReadMetadata(MediaInfo* aInfo,
+   *aTags = nullptr;
+ 
+   // Watch the pipeline for fatal errors
++#if GST_VERSION_MAJOR >= 1
++  gst_bus_set_sync_handler(mBus, GStreamerReader::ErrorCb, this, nullptr);
++#else
+   gst_bus_set_sync_handler(mBus, GStreamerReader::ErrorCb, this);
++#endif
+ 
+   /* set the pipeline to PLAYING so that it starts decoding and queueing data in
+    * the appsinks */
+@@ -424,19 +446,35 @@ nsresult GStreamerReader::CheckSupportedFormats()
+   bool done = false;
+   bool unsupported = false;
+ 
+-  GstIterator *it = gst_bin_iterate_recurse(GST_BIN(mPlayBin));
++  GstIterator* it = gst_bin_iterate_recurse(GST_BIN(mPlayBin));
+   while (!done) {
++    GstIteratorResult res;
+     GstElement* element;
+-    GstIteratorResult res = gst_iterator_next(it, (void **)&element);
++
++#if GST_VERSION_MAJOR >= 1
++    GValue value = {0,};
++    res = gst_iterator_next(it, &value);
++#else
++    res = gst_iterator_next(it, (void **) &element);
++#endif
+     switch(res) {
+       case GST_ITERATOR_OK:
+       {
++#if GST_VERSION_MAJOR >= 1
++        element = GST_ELEMENT (g_value_get_object (&value));
++#endif
+         GstElementFactory* factory = gst_element_get_factory(element);
+         if (factory) {
+           const char* klass = gst_element_factory_get_klass(factory);
+-          GstPad* pad = gst_element_get_pad(element, "sink");
++          GstPad* pad = gst_element_get_static_pad(element, "sink");
+           if (pad) {
+-            GstCaps* caps = gst_pad_get_negotiated_caps(pad);
++            GstCaps* caps;
++
++#if GST_VERSION_MAJOR >= 1
++            caps = gst_pad_get_current_caps(pad);
++#else
++            caps = gst_pad_get_negotiated_caps(pad);
++#endif
+ 
+             if (caps) {
+               /* check for demuxers but ignore elements like id3demux */
+@@ -451,7 +489,11 @@ nsresult GStreamerReader::CheckSupportedFormats()
+           }
+         }
+ 
++#if GST_VERSION_MAJOR >= 1
++        g_value_unset (&value);
++#else
+         gst_object_unref(element);
++#endif
+         done = unsupported;
+         break;
+       }
+@@ -475,6 +517,8 @@ nsresult GStreamerReader::ResetDecode()
+ {
+   nsresult res = NS_OK;
+ 
++  LOG(PR_LOG_DEBUG, "reset decode");
++
+   if (NS_FAILED(MediaDecoderReader::ResetDecode())) {
+     res = NS_ERROR_FAILURE;
+   }
+@@ -485,6 +529,11 @@ nsresult GStreamerReader::ResetDecode()
+   mVideoSinkBufferCount = 0;
+   mAudioSinkBufferCount = 0;
+   mReachedEos = false;
++#if GST_VERSION_MAJOR >= 1
++  mConfigureAlignment = true;
++#endif
++
++  LOG(PR_LOG_DEBUG, "reset decode done");
+ 
+   return res;
+ }
+@@ -508,11 +557,11 @@ bool GStreamerReader::DecodeAudioData()
+         /* We have nothing decoded so it makes no sense to return to the state machine
+          * as it will call us back immediately, we'll return again and so on, wasting
+          * CPU cycles for no job done. So, block here until there is either video or
+-         * audio data available 
++         * audio data available
+         */
+         mon.Wait();
+         if (!mAudioSinkBufferCount) {
+-          /* There is still no audio data available, so either there is video data or 
++          /* There is still no audio data available, so either there is video data or
+            * something else has happened (Eos, etc...). Return to the state machine
+            * to process it.
+            */
+@@ -524,24 +573,43 @@ bool GStreamerReader::DecodeAudioData()
+       }
+     }
+ 
++#if GST_VERSION_MAJOR >= 1
++    GstSample *sample = gst_app_sink_pull_sample(mAudioAppSink);
++    buffer = gst_buffer_ref(gst_sample_get_buffer(sample));
++    gst_sample_unref(sample);
++#else
+     buffer = gst_app_sink_pull_buffer(mAudioAppSink);
++#endif
++
+     mAudioSinkBufferCount--;
+   }
+ 
+   int64_t timestamp = GST_BUFFER_TIMESTAMP(buffer);
+   timestamp = gst_segment_to_stream_time(&mAudioSegment,
+       GST_FORMAT_TIME, timestamp);
++  
+   timestamp = GST_TIME_AS_USECONDS(timestamp);
+   int64_t duration = 0;
+   if (GST_CLOCK_TIME_IS_VALID(GST_BUFFER_DURATION(buffer)))
+     duration = GST_TIME_AS_USECONDS(GST_BUFFER_DURATION(buffer));
+ 
+   int64_t offset = GST_BUFFER_OFFSET(buffer);
++#if GST_VERSION_MAJOR >= 1
++  GstMapInfo info;
++  gst_buffer_map(buffer, &info, GST_MAP_READ);
++  unsigned int size = info.size;
++#else
+   unsigned int size = GST_BUFFER_SIZE(buffer);
++#endif
+   int32_t frames = (size / sizeof(AudioDataValue)) / mInfo.mAudio.mChannels;
+   ssize_t outSize = static_cast<size_t>(size / sizeof(AudioDataValue));
+   nsAutoArrayPtr<AudioDataValue> data(new AudioDataValue[outSize]);
++#if GST_VERSION_MAJOR >= 1
++  memcpy(data, info.data, info.size);
++  gst_buffer_unmap(buffer, &info);
++#else
+   memcpy(data, GST_BUFFER_DATA(buffer), GST_BUFFER_SIZE(buffer));
++#endif
+   AudioData* audio = new AudioData(offset, timestamp, duration,
+       frames, data.forget(), mInfo.mAudio.mChannels);
+ 
+@@ -552,7 +620,7 @@ bool GStreamerReader::DecodeAudioData()
+ }
+ 
+ bool GStreamerReader::DecodeVideoFrame(bool &aKeyFrameSkip,
+-                                         int64_t aTimeThreshold)
++                                       int64_t aTimeThreshold)
+ {
+   NS_ASSERTION(mDecoder->OnDecodeThread(), "Should be on decode thread.");
+ 
+@@ -571,11 +639,11 @@ bool GStreamerReader::DecodeVideoFrame(bool &aKeyFrameSkip,
+         /* We have nothing decoded so it makes no sense to return to the state machine
+          * as it will call us back immediately, we'll return again and so on, wasting
+          * CPU cycles for no job done. So, block here until there is either video or
+-         * audio data available 
++         * audio data available
+         */
+         mon.Wait();
+         if (!mVideoSinkBufferCount) {
+-          /* There is still no video data available, so either there is audio data or 
++          /* There is still no video data available, so either there is audio data or
+            * something else has happened (Eos, etc...). Return to the state machine
+            * to process it
+            */
+@@ -589,11 +657,17 @@ bool GStreamerReader::DecodeVideoFrame(bool &aKeyFrameSkip,
+ 
+     mDecoder->NotifyDecodedFrames(0, 1);
+ 
++#if GST_VERSION_MAJOR >= 1
++    GstSample *sample = gst_app_sink_pull_sample(mVideoAppSink);
++    buffer = gst_buffer_ref(gst_sample_get_buffer(sample));
++    gst_sample_unref(sample);
++#else
+     buffer = gst_app_sink_pull_buffer(mVideoAppSink);
++#endif
+     mVideoSinkBufferCount--;
+   }
+ 
+-  bool isKeyframe = !GST_BUFFER_FLAG_IS_SET(buffer, GST_BUFFER_FLAG_DISCONT);
++  bool isKeyframe = !GST_BUFFER_FLAG_IS_SET(buffer, GST_BUFFER_FLAG_DELTA_UNIT);
+   if ((aKeyFrameSkip && !isKeyframe)) {
+     gst_buffer_unref(buffer);
+     return true;
+@@ -618,73 +695,55 @@ bool GStreamerReader::DecodeVideoFrame(bool &aKeyFrameSkip,
+                "frame has invalid timestamp");
+ 
+   timestamp = GST_TIME_AS_USECONDS(timestamp);
++  int64_t duration;
++  if (GST_CLOCK_TIME_IS_VALID(GST_BUFFER_DURATION(buffer)))
++    duration = GST_TIME_AS_USECONDS(GST_BUFFER_DURATION(buffer));
++  else if (fpsNum && fpsDen)
++    /* add 1-frame duration */
++    duration = gst_util_uint64_scale(GST_USECOND, fpsDen, fpsNum);
++
+   if (timestamp < aTimeThreshold) {
+     LOG(PR_LOG_DEBUG, "skipping frame %" GST_TIME_FORMAT
+-                      " threshold %" GST_TIME_FORMAT,
+-                      GST_TIME_ARGS(timestamp), GST_TIME_ARGS(aTimeThreshold));
++                       " threshold %" GST_TIME_FORMAT,
++                       GST_TIME_ARGS(timestamp * 1000),
++                       GST_TIME_ARGS(aTimeThreshold * 1000));
+     gst_buffer_unref(buffer);
+     return true;
+   }
+-
+   if (!buffer)
+     /* no more frames */
+     return false;
+ 
+-  int64_t duration = 0;
+-  if (GST_CLOCK_TIME_IS_VALID(GST_BUFFER_DURATION(buffer)))
+-    duration = GST_TIME_AS_USECONDS(GST_BUFFER_DURATION(buffer));
+-  else if (fpsNum && fpsDen)
+-    /* 1-frame duration */
+-    duration = gst_util_uint64_scale(GST_USECOND, fpsNum, fpsDen);
+-
+-  nsRefPtr<PlanarYCbCrImage> image;
+-  GstMozVideoBufferData* bufferdata = reinterpret_cast<GstMozVideoBufferData*>
+-      GST_IS_MOZ_VIDEO_BUFFER(buffer)?gst_moz_video_buffer_get_data(GST_MOZ_VIDEO_BUFFER(buffer)):nullptr;
+-
+-  if(bufferdata)
+-    image = bufferdata->mImage;
++#if GST_VERSION_MAJOR >= 1
++  if (mConfigureAlignment && buffer->pool) {
++    GstStructure *config = gst_buffer_pool_get_config(buffer->pool);
++    GstVideoAlignment align;
++    if (gst_buffer_pool_config_get_video_alignment(config, &align))
++      gst_video_info_align(&mVideoInfo, &align);
++    gst_structure_free(config);
++    mConfigureAlignment = false;
++  }
++#endif
+ 
++  nsRefPtr<PlanarYCbCrImage> image = GetImageFromBuffer(buffer);
+   if (!image) {
+     /* Ugh, upstream is not calling gst_pad_alloc_buffer(). Fallback to
+      * allocating a PlanarYCbCrImage backed GstBuffer here and memcpy.
+      */
+     GstBuffer* tmp = nullptr;
+-    AllocateVideoBufferFull(nullptr, GST_BUFFER_OFFSET(buffer),
+-        GST_BUFFER_SIZE(buffer), nullptr, &tmp, image);
+-
+-    /* copy */
+-    gst_buffer_copy_metadata(tmp, buffer, (GstBufferCopyFlags)GST_BUFFER_COPY_ALL);
+-    memcpy(GST_BUFFER_DATA(tmp), GST_BUFFER_DATA(buffer),
+-        GST_BUFFER_SIZE(tmp));
++    CopyIntoImageBuffer(buffer, &tmp, image);
+     gst_buffer_unref(buffer);
+     buffer = tmp;
+   }
+ 
+-  guint8* data = GST_BUFFER_DATA(buffer);
+-
+-  int width = mPicture.width;
+-  int height = mPicture.height;
+-  GstVideoFormat format = mFormat;
+-
+-  VideoData::YCbCrBuffer b;
+-  for(int i = 0; i < 3; i++) {
+-    b.mPlanes[i].mData = data + gst_video_format_get_component_offset(format, i,
+-        width, height);
+-    b.mPlanes[i].mStride = gst_video_format_get_row_stride(format, i, width);
+-    b.mPlanes[i].mHeight = gst_video_format_get_component_height(format,
+-        i, height);
+-    b.mPlanes[i].mWidth = gst_video_format_get_component_width(format,
+-        i, width);
+-    b.mPlanes[i].mOffset = 0;
+-    b.mPlanes[i].mSkip = 0;
+-  }
+-
+-  isKeyframe = !GST_BUFFER_FLAG_IS_SET(buffer, GST_BUFFER_FLAG_DELTA_UNIT);
+   int64_t offset = mDecoder->GetResource()->Tell(); // Estimate location in media.
+-  VideoData* video = VideoData::Create(mInfo.mVideo, image, offset,
+-                                       timestamp, duration, b,
+-                                       isKeyframe, -1, mPicture);
++  VideoData* video = VideoData::CreateFromImage(mInfo.mVideo,
++                                                mDecoder->GetImageContainer(),
++                                                offset, timestamp, duration,
++                                                static_cast<Image*>(image.get()),
++                                                isKeyframe, -1, mPicture);
+   mVideoQueue.Push(video);
++
+   gst_buffer_unref(buffer);
+ 
+   return true;
+@@ -698,6 +755,10 @@ nsresult GStreamerReader::Seek(int64_t aTarget,
+     return NS_ERROR_FAILURE;
+   }
+   LOG(PR_LOG_DEBUG, "seek succeeded");
++  GstMessage* message = gst_bus_timed_pop_filtered(mBus, GST_CLOCK_TIME_NONE,
++               (GstMessageType)(GST_MESSAGE_ASYNC_DONE | GST_MESSAGE_ERROR));
++  gst_message_unref(message);
++  LOG(PR_LOG_DEBUG, "seek completed");
+ 
+   return DecodeToTarget(aTarget);
+ }
+@@ -709,7 +770,9 @@ nsresult GStreamerReader::GetBuffered(dom::TimeRanges* aBuffered,
+     return NS_OK;
+   }
+ 
++#if GST_VERSION_MAJOR == 0
+   GstFormat format = GST_FORMAT_TIME;
++#endif
+   MediaResource* resource = mDecoder->GetResource();
+   nsTArray<MediaByteRange> ranges;
+   resource->GetCachedRanges(ranges);
+@@ -731,12 +794,21 @@ nsresult GStreamerReader::GetBuffered(dom::TimeRanges* aBuffered,
+     int64_t endOffset = ranges[index].mEnd;
+     gint64 startTime, endTime;
+ 
++#if GST_VERSION_MAJOR >= 1
++    if (!gst_element_query_convert(GST_ELEMENT(mPlayBin), GST_FORMAT_BYTES,
++      startOffset, GST_FORMAT_TIME, &startTime))
++      continue;
++    if (!gst_element_query_convert(GST_ELEMENT(mPlayBin), GST_FORMAT_BYTES,
++      endOffset, GST_FORMAT_TIME, &endTime))
++      continue;
++#else
+     if (!gst_element_query_convert(GST_ELEMENT(mPlayBin), GST_FORMAT_BYTES,
+       startOffset, &format, &startTime) || format != GST_FORMAT_TIME)
+       continue;
+     if (!gst_element_query_convert(GST_ELEMENT(mPlayBin), GST_FORMAT_BYTES,
+       endOffset, &format, &endTime) || format != GST_FORMAT_TIME)
+       continue;
++#endif
+ 
+     double start = (double) GST_TIME_AS_USECONDS (startTime) / GST_MSECOND;
+     double end = (double) GST_TIME_AS_USECONDS (endTime) / GST_MSECOND;
+@@ -755,7 +827,13 @@ void GStreamerReader::ReadAndPushData(guint aLength)
+   nsresult rv = NS_OK;
+ 
+   GstBuffer* buffer = gst_buffer_new_and_alloc(aLength);
++#if GST_VERSION_MAJOR >= 1
++  GstMapInfo info;
++  gst_buffer_map(buffer, &info, GST_MAP_WRITE);
++  guint8 *data = info.data;
++#else
+   guint8* data = GST_BUFFER_DATA(buffer);
++#endif
+   uint32_t size = 0, bytesRead = 0;
+   while(bytesRead < aLength) {
+     rv = resource->Read(reinterpret_cast<char*>(data + bytesRead),
+@@ -780,7 +860,12 @@ void GStreamerReader::ReadAndPushData(guint aLength)
+   int64_t offset2 = resource->Tell();
+   unused << offset2;
+ 
++#if GST_VERSION_MAJOR >= 1
++  gst_buffer_unmap(buffer, &info);
++  gst_buffer_set_size(buffer, bytesRead);
++#else
+   GST_BUFFER_SIZE(buffer) = bytesRead;
++#endif
+ 
+   GstFlowReturn ret = gst_app_src_push_buffer(mSource, gst_buffer_ref(buffer));
+   if (ret != GST_FLOW_OK) {
+@@ -786,8 +869,13 @@ int64_t GStreamerReader::QueryDuration()
+   gint64 duration = 0;
+   GstFormat format = GST_FORMAT_TIME;
+ 
++#if GST_VERSION_MAJOR >= 1
++  if (gst_element_query_duration(GST_ELEMENT(mPlayBin),
++      format, &duration)) {
++#else
+   if (gst_element_query_duration(GST_ELEMENT(mPlayBin),
+       &format, &duration)) {
++#endif
+     if (format == GST_FORMAT_TIME) {
+       LOG(PR_LOG_DEBUG, "pipeline duration %" GST_TIME_FORMAT,
+             GST_TIME_ARGS (duration));
+@@ -866,108 +954,6 @@ gboolean GStreamerReader::SeekData(GstAppSrc* aSrc, guint64 aOffset)
+   return NS_SUCCEEDED(rv);
+ }
+ 
+-gboolean GStreamerReader::EventProbeCb(GstPad* aPad,
+-                                         GstEvent* aEvent,
+-                                         gpointer aUserData)
+-{
+-  GStreamerReader* reader = reinterpret_cast<GStreamerReader*>(aUserData);
+-  return reader->EventProbe(aPad, aEvent);
+-}
+-
+-gboolean GStreamerReader::EventProbe(GstPad* aPad, GstEvent* aEvent)
+-{
+-  GstElement* parent = GST_ELEMENT(gst_pad_get_parent(aPad));
+-  switch(GST_EVENT_TYPE(aEvent)) {
+-    case GST_EVENT_NEWSEGMENT:
+-    {
+-      gboolean update;
+-      gdouble rate;
+-      GstFormat format;
+-      gint64 start, stop, position;
+-      GstSegment* segment;
+-
+-      /* Store the segments so we can convert timestamps to stream time, which
+-       * is what the upper layers sync on.
+-       */
+-      ReentrantMonitorAutoEnter mon(mGstThreadsMonitor);
+-      gst_event_parse_new_segment(aEvent, &update, &rate, &format,
+-          &start, &stop, &position);
+-      if (parent == GST_ELEMENT(mVideoAppSink))
+-        segment = &mVideoSegment;
+-      else
+-        segment = &mAudioSegment;
+-      gst_segment_set_newsegment(segment, update, rate, format,
+-          start, stop, position);
+-      break;
+-    }
+-    case GST_EVENT_FLUSH_STOP:
+-      /* Reset on seeks */
+-      ResetDecode();
+-      break;
+-    default:
+-      break;
+-  }
+-  gst_object_unref(parent);
+-
+-  return TRUE;
+-}
+-
+-GstFlowReturn GStreamerReader::AllocateVideoBufferFull(GstPad* aPad,
+-                                                       guint64 aOffset,
+-                                                       guint aSize,
+-                                                       GstCaps* aCaps,
+-                                                       GstBuffer** aBuf,
+-                                                       nsRefPtr<PlanarYCbCrImage>& aImage)
+-{
+-  /* allocate an image using the container */
+-  ImageContainer* container = mDecoder->GetImageContainer();
+-  if (!container) {
+-    // We don't have an ImageContainer. We probably belong to an <audio>
+-    // element.
+-    return GST_FLOW_NOT_SUPPORTED;
+-  }
+-  ImageFormat format = PLANAR_YCBCR;
+-  PlanarYCbCrImage* img = reinterpret_cast<PlanarYCbCrImage*>(container->CreateImage(&format, 1).get());
+-  nsRefPtr<PlanarYCbCrImage> image = dont_AddRef(img);
+-
+-  /* prepare a GstBuffer pointing to the underlying PlanarYCbCrImage buffer */
+-  GstBuffer* buf = GST_BUFFER(gst_moz_video_buffer_new());
+-  GST_BUFFER_SIZE(buf) = aSize;
+-  /* allocate the actual YUV buffer */
+-  GST_BUFFER_DATA(buf) = image->AllocateAndGetNewBuffer(aSize);
+-
+-  aImage = image;
+-
+-  /* create a GstMozVideoBufferData to hold the image */
+-  GstMozVideoBufferData* bufferdata = new GstMozVideoBufferData(image);
+-
+-  /* Attach bufferdata to our GstMozVideoBuffer, it will take care to free it */
+-  gst_moz_video_buffer_set_data(GST_MOZ_VIDEO_BUFFER(buf), bufferdata);
+-
+-  *aBuf = buf;
+-  return GST_FLOW_OK;
+-}
+-
+-GstFlowReturn GStreamerReader::AllocateVideoBufferCb(GstPad* aPad,
+-                                                     guint64 aOffset,
+-                                                     guint aSize,
+-                                                     GstCaps* aCaps,
+-                                                     GstBuffer** aBuf)
+-{
+-  GStreamerReader* reader = reinterpret_cast<GStreamerReader*>(gst_pad_get_element_private(aPad));
+-  return reader->AllocateVideoBuffer(aPad, aOffset, aSize, aCaps, aBuf);
+-}
+-
+-GstFlowReturn GStreamerReader::AllocateVideoBuffer(GstPad* aPad,
+-                                                   guint64 aOffset,
+-                                                   guint aSize,
+-                                                   GstCaps* aCaps,
+-                                                   GstBuffer** aBuf)
+-{
+-  nsRefPtr<PlanarYCbCrImage> image;
+-  return AllocateVideoBufferFull(aPad, aOffset, aSize, aCaps, aBuf, image);
+-}
+-
+ GstFlowReturn GStreamerReader::NewPrerollCb(GstAppSink* aSink,
+                                               gpointer aUserData)
+ {
+@@ -979,8 +970,12 @@ void GStreamerReader::AudioPreroll()
+ {
+   /* The first audio buffer has reached the audio sink. Get rate and channels */
+   LOG(PR_LOG_DEBUG, "Audio preroll");
+-  GstPad* sinkpad = gst_element_get_pad(GST_ELEMENT(mAudioAppSink), "sink");
++  GstPad* sinkpad = gst_element_get_static_pad(GST_ELEMENT(mAudioAppSink), "sink");
++#if GST_VERSION_MAJOR >= 1
++  GstCaps *caps = gst_pad_get_current_caps(sinkpad);
++#else
+   GstCaps* caps = gst_pad_get_negotiated_caps(sinkpad);
++#endif
+   GstStructure* s = gst_caps_get_structure(caps, 0);
+   mInfo.mAudio.mRate = mInfo.mAudio.mChannels = 0;
+   gst_structure_get_int(s, "rate", (gint*) &mInfo.mAudio.mRate);
+@@ -998,9 +993,18 @@ void GStreamerReader::VideoPreroll()
+ {
+   /* The first video buffer has reached the video sink. Get width and height */
+   LOG(PR_LOG_DEBUG, "Video preroll");
+-  GstPad* sinkpad = gst_element_get_pad(GST_ELEMENT(mVideoAppSink), "sink");
++  GstPad* sinkpad = gst_element_get_static_pad(GST_ELEMENT(mVideoAppSink), "sink");
++#if GST_VERSION_MAJOR >= 1
++  GstCaps* caps = gst_pad_get_current_caps(sinkpad);
++  memset (&mVideoInfo, 0, sizeof (mVideoInfo));
++  gst_video_info_from_caps(&mVideoInfo, caps);
++  mFormat = mVideoInfo.finfo->format;
++  mPicture.width = mVideoInfo.width;
++  mPicture.height = mVideoInfo.height;
++#else
+   GstCaps* caps = gst_pad_get_negotiated_caps(sinkpad);
+   gst_video_format_parse_caps(caps, &mFormat, &mPicture.width, &mPicture.height);
++#endif
+   GstStructure* structure = gst_caps_get_structure(caps, 0);
+   gst_structure_get_fraction(structure, "framerate", &fpsNum, &fpsDen);
+   NS_ASSERTION(mPicture.width && mPicture.height, "invalid video resolution");
+@@ -1029,6 +1033,7 @@ void GStreamerReader::NewVideoBuffer()
+   /* We have a new video buffer queued in the video sink. Increment the counter
+    * and notify the decode thread potentially blocked in DecodeVideoFrame
+    */
++
+   mDecoder->NotifyDecodedFrames(1, 0);
+   mVideoSinkBufferCount++;
+   mon.NotifyAll();
+@@ -1095,5 +1100,199 @@ void GStreamerReader::NotifyDataArrived(const char *aBuffer,
+   }
+ }
+ 
++#if GST_VERSION_MAJOR >= 1
++GstCaps* GStreamerReader::BuildAudioSinkCaps()
++{
++  GstCaps* caps = gst_caps_from_string("audio/x-raw, channels={1,2}");
++  const char* format;
++#ifdef MOZ_SAMPLE_TYPE_FLOAT32
++#ifdef IS_LITTLE_ENDIAN
++  format = "F32LE";
++#else
++  format = "F32BE";
++#endif
++#else /* !MOZ_SAMPLE_TYPE_FLOAT32 */
++#ifdef IS_LITTLE_ENDIAN
++  format = "S16LE";
++#else
++  format = "S16BE";
++#endif
++#endif
++  gst_caps_set_simple(caps, "format", G_TYPE_STRING, format, nullptr);
++
++  return caps;
++}
++
++void GStreamerReader::InstallPadCallbacks()
++{
++  GstPad* sinkpad = gst_element_get_static_pad(GST_ELEMENT(mVideoAppSink), "sink");
++
++  gst_pad_add_probe(sinkpad,
++      (GstPadProbeType) (GST_PAD_PROBE_TYPE_SCHEDULING |
++        GST_PAD_PROBE_TYPE_EVENT_DOWNSTREAM |
++        GST_PAD_PROBE_TYPE_EVENT_UPSTREAM |
++        GST_PAD_PROBE_TYPE_EVENT_FLUSH),
++      &GStreamerReader::EventProbeCb, this, nullptr);
++  gst_pad_add_probe(sinkpad, GST_PAD_PROBE_TYPE_QUERY_DOWNSTREAM,
++      GStreamerReader::QueryProbeCb, nullptr, nullptr);
++
++  gst_pad_set_element_private(sinkpad, this);
++  gst_object_unref(sinkpad);
++
++  sinkpad = gst_element_get_static_pad(GST_ELEMENT(mAudioAppSink), "sink");
++  gst_pad_add_probe(sinkpad,
++      (GstPadProbeType) (GST_PAD_PROBE_TYPE_SCHEDULING |
++        GST_PAD_PROBE_TYPE_EVENT_DOWNSTREAM |
++        GST_PAD_PROBE_TYPE_EVENT_UPSTREAM |
++        GST_PAD_PROBE_TYPE_EVENT_FLUSH),
++      &GStreamerReader::EventProbeCb, this, nullptr);
++  gst_object_unref(sinkpad);
++}
++
++GstPadProbeReturn GStreamerReader::EventProbeCb(GstPad *aPad,
++                                                GstPadProbeInfo *aInfo,
++                                                gpointer aUserData)
++{
++  GStreamerReader *reader = (GStreamerReader *) aUserData;
++  GstEvent *aEvent = (GstEvent *)aInfo->data;
++  return reader->EventProbe(aPad, aEvent);
++}
++
++GstPadProbeReturn GStreamerReader::EventProbe(GstPad *aPad, GstEvent *aEvent)
++{
++  GstElement* parent = GST_ELEMENT(gst_pad_get_parent(aPad));
++
++  LOG(PR_LOG_DEBUG, "event probe %s", GST_EVENT_TYPE_NAME (aEvent));
++
++  switch(GST_EVENT_TYPE(aEvent)) {
++    case GST_EVENT_SEGMENT:
++    {
++      const GstSegment *newSegment;
++      GstSegment* segment;
++
++      /* Store the segments so we can convert timestamps to stream time, which
++       * is what the upper layers sync on.
++       */
++      ReentrantMonitorAutoEnter mon(mGstThreadsMonitor);
++#if GST_VERSION_MINOR <= 1 && GST_VERSION_MICRO < 1
++      ResetDecode();
++#endif
++      gst_event_parse_segment(aEvent, &newSegment);
++      if (parent == GST_ELEMENT(mVideoAppSink))
++        segment = &mVideoSegment;
++      else
++        segment = &mAudioSegment;
++      gst_segment_copy_into (newSegment, segment);
++      break;
++    }
++    case GST_EVENT_FLUSH_STOP:
++      /* Reset on seeks */
++      ResetDecode();
++      break;
++    default:
++      break;
++  }
++  gst_object_unref(parent);
++
++  return GST_PAD_PROBE_OK;
++}
++
++GstPadProbeReturn GStreamerReader::QueryProbeCb(GstPad* aPad, GstPadProbeInfo* aInfo, gpointer aUserData)
++{
++  GStreamerReader* reader = reinterpret_cast<GStreamerReader*>(gst_pad_get_element_private(aPad));
++  return reader->QueryProbe(aPad, aInfo, aUserData);
++}
++
++GstPadProbeReturn GStreamerReader::QueryProbe(GstPad* aPad, GstPadProbeInfo* aInfo, gpointer aUserData)
++{
++  GstQuery *query = gst_pad_probe_info_get_query(aInfo);
++  GstPadProbeReturn ret = GST_PAD_PROBE_OK;
++
++  switch (GST_QUERY_TYPE (query)) {
++    case GST_QUERY_ALLOCATION:
++      GstCaps *caps;
++      GstVideoInfo info;
++      gboolean need_pool;
++
++      gst_query_parse_allocation(query, &caps, &need_pool);
++      gst_video_info_init(&info);
++      gst_video_info_from_caps(&info, caps);
++      gst_query_add_allocation_param(query, mAllocator, nullptr);
++      gst_query_add_allocation_pool(query, mBufferPool, info.size, 0, 0);
++      gst_query_add_allocation_meta(query, GST_VIDEO_META_API_TYPE, nullptr);
++      break;
++    default:
++      break;
++  }
++
++  return ret;
++}
++
++void GStreamerReader::ImageDataFromVideoFrame(GstVideoFrame *aFrame,
++                                              PlanarYCbCrImage::Data *aData)
++{
++  NS_ASSERTION(GST_VIDEO_INFO_IS_YUV(&mVideoInfo),
++               "Non-YUV video frame formats not supported");
++  NS_ASSERTION(GST_VIDEO_FRAME_N_COMPONENTS(aFrame) == 3,
++               "Unsupported number of components in video frame");
++
++  aData->mPicX = aData->mPicY = 0;
++  aData->mPicSize = nsIntSize(mPicture.width, mPicture.height);
++  aData->mStereoMode = STEREO_MODE_MONO;
++
++  aData->mYChannel = GST_VIDEO_FRAME_COMP_DATA(aFrame, 0);
++  aData->mYStride = GST_VIDEO_FRAME_COMP_STRIDE(aFrame, 0);
++  aData->mYSize = nsIntSize(GST_VIDEO_FRAME_COMP_WIDTH(aFrame, 0),
++                          GST_VIDEO_FRAME_COMP_HEIGHT(aFrame, 0));
++  aData->mYSkip = GST_VIDEO_FRAME_COMP_PSTRIDE(aFrame, 0) - 1;
++  aData->mCbCrStride = GST_VIDEO_FRAME_COMP_STRIDE(aFrame, 1);
++  aData->mCbCrSize = nsIntSize(GST_VIDEO_FRAME_COMP_WIDTH(aFrame, 1),
++                             GST_VIDEO_FRAME_COMP_HEIGHT(aFrame, 1));
++  aData->mCbChannel = GST_VIDEO_FRAME_COMP_DATA(aFrame, 1);
++  aData->mCrChannel = GST_VIDEO_FRAME_COMP_DATA(aFrame, 2);
++  aData->mCbSkip = GST_VIDEO_FRAME_COMP_PSTRIDE(aFrame, 1) - 1;
++  aData->mCrSkip = GST_VIDEO_FRAME_COMP_PSTRIDE(aFrame, 2) - 1;
++}
++
++nsRefPtr<PlanarYCbCrImage> GStreamerReader::GetImageFromBuffer(GstBuffer* aBuffer)
++{
++  nsRefPtr<PlanarYCbCrImage> image = nullptr;
++
++  if (gst_buffer_n_memory(aBuffer) == 1) {
++    GstMemory* mem = gst_buffer_peek_memory(aBuffer, 0);
++    if (GST_IS_MOZ_GFX_MEMORY_ALLOCATOR(mem->allocator)) {
++      image = moz_gfx_memory_get_image(mem);
++
++      GstVideoFrame frame;
++      gst_video_frame_map(&frame, &mVideoInfo, aBuffer, GST_MAP_READ);
++      PlanarYCbCrImage::Data data;
++      ImageDataFromVideoFrame(&frame, &data);
++      image->SetDataNoCopy(data);
++      gst_video_frame_unmap(&frame);
++    }
++  }
++
++  return image;
++}
++
++void GStreamerReader::CopyIntoImageBuffer(GstBuffer* aBuffer,
++                                          GstBuffer** aOutBuffer,
++                                          nsRefPtr<PlanarYCbCrImage> &image)
++{
++  *aOutBuffer = gst_buffer_new_allocate(mAllocator, gst_buffer_get_size(aBuffer), nullptr);
++  GstMemory *mem = gst_buffer_peek_memory(*aOutBuffer, 0);
++  GstMapInfo map_info;
++  gst_memory_map(mem, &map_info, GST_MAP_WRITE);
++  gst_buffer_extract(aBuffer, 0, map_info.data, gst_buffer_get_size(aBuffer));
++  gst_memory_unmap(mem, &map_info);
++
++  /* create a new gst buffer with the newly created memory and copy the
++   * metadata over from the incoming buffer */
++  gst_buffer_copy_into(*aOutBuffer, aBuffer,
++      (GstBufferCopyFlags)(GST_BUFFER_COPY_METADATA), 0, -1);
++  image = GetImageFromBuffer(*aOutBuffer);
++}
++#endif
++
+ } // namespace mozilla
+ 
+diff --git content/media/gstreamer/GStreamerReader.h content/media/gstreamer/GStreamerReader.h
+index 1e30bed..6a90702 100644
+--- mozilla/content/media/gstreamer/GStreamerReader.h
++++ mozilla/content/media/gstreamer/GStreamerReader.h
+@@ -22,6 +22,7 @@
+ 
+ #include "MediaDecoderReader.h"
+ #include "MP3FrameParser.h"
++#include "ImageContainer.h"
+ #include "nsRect.h"
+ 
+ namespace mozilla {
+@@ -30,10 +31,6 @@ namespace dom {
+ class TimeRanges;
+ }
+ 
+-namespace layers {
+-class PlanarYCbCrImage;
+-}
+-
+ class AbstractMediaDecoder;
+ 
+ class GStreamerReader : public MediaDecoderReader
+@@ -67,10 +64,20 @@ public:
+     return mInfo.HasVideo();
+   }
+ 
++  layers::ImageContainer* GetImageContainer() { return mDecoder->GetImageContainer(); }
++
+ private:
+ 
+   void ReadAndPushData(guint aLength);
+   int64_t QueryDuration();
++  nsRefPtr<layers::PlanarYCbCrImage> GetImageFromBuffer(GstBuffer* aBuffer);
++  void CopyIntoImageBuffer(GstBuffer *aBuffer, GstBuffer** aOutBuffer, nsRefPtr<layers::PlanarYCbCrImage> &image);
++  GstCaps* BuildAudioSinkCaps();
++  void InstallPadCallbacks();
++
++#if GST_VERSION_MAJOR >= 1
++  void ImageDataFromVideoFrame(GstVideoFrame *aFrame, layers::PlanarYCbCrImage::Data *aData);
++#endif
+ 
+   /* Called once the pipeline is setup to check that the stream only contains
+    * supported formats
+@@ -105,20 +112,31 @@ private:
+   gboolean SeekData(GstAppSrc* aSrc, guint64 aOffset);
+ 
+   /* Called when events reach the sinks. See inline comments */
++#if GST_VERSION_MAJOR == 1
++  static GstPadProbeReturn EventProbeCb(GstPad *aPad, GstPadProbeInfo *aInfo, gpointer aUserData);
++  GstPadProbeReturn EventProbe(GstPad *aPad, GstEvent *aEvent);
++#else
+   static gboolean EventProbeCb(GstPad* aPad, GstEvent* aEvent, gpointer aUserData);
+   gboolean EventProbe(GstPad* aPad, GstEvent* aEvent);
++#endif
+ 
+-  /* Called when elements in the video branch of the pipeline call
+-   * gst_pad_alloc_buffer(). Used to provide PlanarYCbCrImage backed GstBuffers
+-   * to the pipeline so that a memory copy can be avoided when handling YUV
+-   * buffers from the pipeline to the gfx side.
++  /* Called when the video part of the pipeline allocates buffers. Used to
++   * provide PlanarYCbCrImage backed GstBuffers to the pipeline so that a memory
++   * copy can be avoided when handling YUV buffers from the pipeline to the gfx
++   * side.
+    */
++#if GST_VERSION_MAJOR == 1
++  static GstPadProbeReturn QueryProbeCb(GstPad *aPad, GstPadProbeInfo *aInfo, gpointer aUserData);
++  GstPadProbeReturn QueryProbe(GstPad *aPad, GstPadProbeInfo *aInfo, gpointer aUserData);
++#else
+   static GstFlowReturn AllocateVideoBufferCb(GstPad* aPad, guint64 aOffset, guint aSize,
+                                              GstCaps* aCaps, GstBuffer** aBuf);
+   GstFlowReturn AllocateVideoBufferFull(GstPad* aPad, guint64 aOffset, guint aSize,
+                                      GstCaps* aCaps, GstBuffer** aBuf, nsRefPtr<layers::PlanarYCbCrImage>& aImage);
+   GstFlowReturn AllocateVideoBuffer(GstPad* aPad, guint64 aOffset, guint aSize,
+                                      GstCaps* aCaps, GstBuffer** aBuf);
++#endif
++
+ 
+   /* Called when the pipeline is prerolled, that is when at start or after a
+    * seek, the first audio and video buffers are queued in the sinks.
+@@ -150,6 +168,11 @@ private:
+   bool mUseParserDuration;
+   int64_t mLastParserDuration;
+ 
++#if GST_VERSION_MAJOR >= 1
++  GstAllocator *mAllocator;
++  GstBufferPool *mBufferPool;
++  GstVideoInfo mVideoInfo;
++#endif
+   GstElement* mPlayBin;
+   GstBus* mBus;
+   GstAppSrc* mSource;
+@@ -180,6 +203,9 @@ private:
+    * DecodeAudioData and DecodeVideoFrame should not expect any more data
+    */
+   bool mReachedEos;
++#if GST_VERSION_MAJOR >= 1
++  bool mConfigureAlignment;
++#endif
+   int fpsNum;
+   int fpsDen;
+ };
+diff --git content/media/gstreamer/moz.build content/media/gstreamer/moz.build
+index 7d51bf5..a3c1856 100644
+--- mozilla/content/media/gstreamer/moz.build
++++ mozilla/content/media/gstreamer/moz.build
+@@ -15,10 +15,19 @@ SOURCES += [
+     'GStreamerDecoder.cpp',
+     'GStreamerFormatHelper.cpp',
+     'GStreamerLoader.cpp',
+-    'GStreamerMozVideoBuffer.cpp',
+     'GStreamerReader.cpp',
+ ]
+ 
++if CONFIG['GST_API_VERSION'] == '1.0':
++    SOURCES += [
++        'GStreamerAllocator.cpp',
++    ]
++else:
++    SOURCES += [
++        'GStreamerMozVideoBuffer.cpp',
++        'GStreamerReader-0.10.cpp',
++    ]
++
+ FAIL_ON_WARNINGS = True
+ 
+ FINAL_LIBRARY = 'gklayout'
+diff --git content/media/test/manifest.js content/media/test/manifest.js
+index 6e39753..3c8c3b9 100644
+--- mozilla/content/media/test/manifest.js
++++ mozilla/content/media/test/manifest.js
+@@ -357,9 +357,9 @@ var gUnseekableTests = [
+   { name:"bogus.duh", type:"bogus/duh"}
+ ];
+ // Unfortunately big-buck-bunny-unseekable.mp4 is doesn't play on Windows 7, so
+-// only include it in the unseekable tests if we're on later versions of Windows.
+-if (navigator.userAgent.indexOf("Windows") == -1 ||
+-    IsWindows8OrLater()) {
++// only include it in the unseekable tests if we're on later versions of Windows. 
++// This test actually only passes on win8 at the moment.
++if (navigator.userAgent.indexOf("Windows") != -1 && IsWindows8OrLater()) {
+   gUnseekableTests = gUnseekableTests.concat([
+     { name:"big-buck-bunny-unseekable.mp4", type:"video/mp4" }
+   ]);
