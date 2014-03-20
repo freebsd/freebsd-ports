@@ -1,4 +1,4 @@
-SHA256 (postgresql/postgresql-9.2.7.tar.bz2) = 83c042c3f61c69b176d3e4344e59104f844bc8b8628dad2bb9022a64cf5afe86
-SIZE (postgresql/postgresql-9.2.7.tar.bz2) = 16248445
+SHA256 (postgresql/postgresql-9.2.8.tar.bz2) = 568ba482340219097475cce9ab744766889692ee7c9df886563e8292d66ed87c
+SIZE (postgresql/postgresql-9.2.8.tar.bz2) = 16665845
 SHA256 (postgresql/pg-923-icu-2014-02-10.diff.gz) = c7ca70433c819cea5fef0a9448da236b175d910177b18a8cb2ed9012a949aeb1
 SIZE (postgresql/pg-923-icu-2014-02-10.diff.gz) = 4440

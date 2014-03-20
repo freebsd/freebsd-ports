@@ -1,0 +1,399 @@
+--- contrib/uuid-ossp/Makefile.orig	2014-03-17 20:35:47.000000000 +0100
++++ contrib/uuid-ossp/Makefile	2014-03-19 20:51:44.000000000 +0100
+@@ -1,12 +1,14 @@
+ # contrib/uuid-ossp/Makefile
++# modified using http://pgfoundry.org/projects/uuid-freebsd/
++# to actually not use ossp, since uuid methods are all
++# built in into libc in FreeBSD /girgen@
+ 
+ MODULE_big = uuid-ossp
+ OBJS = uuid-ossp.o
+ 
+ EXTENSION = uuid-ossp
+ DATA = uuid-ossp--1.0.sql uuid-ossp--unpackaged--1.0.sql
+-
+-SHLIB_LINK += $(OSSP_UUID_LIBS)
++SHLIB_LINK = -lmd
+ 
+ ifdef USE_PGXS
+ PG_CONFIG = pg_config
+--- contrib/uuid-ossp/uuid-ossp--1.0.sql.orig	2014-03-17 20:35:47.000000000 +0100
++++ contrib/uuid-ossp/uuid-ossp--1.0.sql	2014-03-19 20:51:44.000000000 +0100
+@@ -1,5 +1,12 @@
+ /* contrib/uuid-ossp/uuid-ossp--1.0.sql */
+ 
++-- this module is modified by girgen@ for FreeBSD using
++-- http://pgfoundry.org/projects/uuid-freebsd/
++-- based on the work of Andrew Gierth.
++-- The name is still uuid-ossp to maintain verbatim compatibility
++-- with the original ossp based module, although the built-in libc
++-- routines are actually used instead, not ossp.
++
+ -- complain if script is sourced in psql, rather than via CREATE EXTENSION
+ \echo Use '''CREATE EXTENSION "uuid-ossp"''' to load this file. \quit
+ 
+--- contrib/uuid-ossp/uuid-ossp.c.orig	2014-03-17 20:35:47.000000000 +0100
++++ contrib/uuid-ossp/uuid-ossp.c	2014-03-19 21:12:11.000000000 +0100
+@@ -1,11 +1,15 @@
+ /*-------------------------------------------------------------------------
+  *
+- * UUID generation functions using the OSSP UUID library
++ * UUID generation functions for FreeBSD
+  *
+  * Copyright (c) 2007-2013, PostgreSQL Global Development Group
+  *
+  * contrib/uuid-ossp/uuid-ossp.c
+  *
++ * Modified to use FreeBSD's built in uuid instead of ossp:
++ * Copyright (c) 2009 Andrew Gierth
++ *
++ * URL: http://pgfoundry.org/projects/uuid-freebsd
+  *-------------------------------------------------------------------------
+  */
+ 
+@@ -14,27 +18,14 @@
+ #include "utils/builtins.h"
+ #include "utils/uuid.h"
+ 
+-/*
+- * There's some confusion over the location of the uuid.h header file.
+- * On Debian, it's installed as ossp/uuid.h, while on Fedora, or if you
+- * install ossp-uuid from a tarball, it's installed as uuid.h. Don't know
+- * what other systems do.
+- */
+-#ifdef HAVE_OSSP_UUID_H
+-#include <ossp/uuid.h>
+-#else
+-#ifdef HAVE_UUID_H
+-#include <uuid.h>
+-#else
+-#error OSSP uuid.h not found
+-#endif
+-#endif
+-
+-/* better both be 16 */
+-#if (UUID_LEN != UUID_LEN_BIN)
+-#error UUID length mismatch
+-#endif
++/* OS has a uuid_hash that conflicts with ours; kill it*/
++/* explicit path since we do _not_ want to get any other version */
++#define uuid_hash freebsd_uuid_hash
++#include "/usr/include/uuid.h"
++#undef uuid_hash
+ 
++#include <md5.h>
++#include <sha.h>
+ 
+ PG_MODULE_MAGIC;
+ 
+@@ -64,163 +55,175 @@
+ PG_FUNCTION_INFO_V1(uuid_generate_v4);
+ PG_FUNCTION_INFO_V1(uuid_generate_v5);
+ 
+-static void
+-pguuid_complain(uuid_rc_t rc)
+-{
+-	char	   *err = uuid_error(rc);
+-
+-	if (err != NULL)
+-		ereport(ERROR,
+-				(errcode(ERRCODE_EXTERNAL_ROUTINE_EXCEPTION),
+-				 errmsg("OSSP uuid library failure: %s", err)));
+-	else
+-		ereport(ERROR,
+-				(errcode(ERRCODE_EXTERNAL_ROUTINE_EXCEPTION),
+-				 errmsg("OSSP uuid library failure: error code %d", rc)));
+-}
++/* we assume that the string representation is portable and that the
++ * native binary representation might not be. But for *ns, we assume
++ * that pg's internal storage of uuids is the simple byte-oriented
++ * binary format. */
+ 
+-static char *
+-uuid_to_string(const uuid_t *uuid)
+-{
+-	char	   *buf = palloc(UUID_LEN_STR + 1);
+-	void	   *ptr = buf;
+-	size_t		len = UUID_LEN_STR + 1;
+-	uuid_rc_t	rc;
+-
+-	rc = uuid_export(uuid, UUID_FMT_STR, &ptr, &len);
+-	if (rc != UUID_RC_OK)
+-		pguuid_complain(rc);
+-
+-	return buf;
+-}
+-
+-
+-static void
+-string_to_uuid(const char *str, uuid_t *uuid)
++static Datum
++internal_uuid_create(int v, unsigned char *ns, char *ptr, int len)
+ {
+-	uuid_rc_t	rc;
+-
+-	rc = uuid_import(uuid, UUID_FMT_STR, str, UUID_LEN_STR + 1);
+-	if (rc != UUID_RC_OK)
+-		pguuid_complain(rc);
+-}
++	char strbuf[40];
+ 
++	switch (v)
++	{
++	case 0:	 /* constant-value uuids: nil, or namespace uuids */
++		strlcpy(strbuf, ptr, 37);
++		break;
++
++	case 4: default:   /* random uuid */
++	{
++		sprintf(strbuf, "%08lx-%04x-%04x-%04x-%04x%08lx",
++			(unsigned long) arc4random(),
++			(unsigned) (arc4random() & 0xffff),
++			(unsigned) ((arc4random() & 0xfff) | 0x4000),
++			(unsigned) ((arc4random() & 0x3fff) | 0x8000),
++			(unsigned) (arc4random() & 0xffff),
++			(unsigned long) arc4random());
++		break;
++	}
++		
++	case 1:	 /* time/node-based uuids */
++	{
++		uuid_t uu;
++		uint32_t status = uuid_s_ok;
++		char *str = NULL;
++
++		uuid_create(&uu, &status);
++
++		if (status == uuid_s_ok)
++		{
++		uuid_to_string(&uu, &str, &status);
++		if (status == uuid_s_ok)
++		{
++			strlcpy(strbuf, str, 37);
++
++			/* PTR, if set, replaces the trailing characters of the uuid;
++			 * this is to support v1mc, where a random multicast MAC is
++			 * used instead of the physical one
++			 */
++			
++			if (ptr && len <= 36)
++			strcpy(strbuf + (36 - len), ptr);
++		}
++		if (str)
++			free(str);
++		}
+ 
+-static Datum
+-special_uuid_value(const char *name)
+-{
+-	uuid_t	   *uuid;
+-	char	   *str;
+-	uuid_rc_t	rc;
+-
+-	rc = uuid_create(&uuid);
+-	if (rc != UUID_RC_OK)
+-		pguuid_complain(rc);
+-	rc = uuid_load(uuid, name);
+-	if (rc != UUID_RC_OK)
+-		pguuid_complain(rc);
+-	str = uuid_to_string(uuid);
+-	rc = uuid_destroy(uuid);
+-	if (rc != UUID_RC_OK)
+-		pguuid_complain(rc);
++		if (status != uuid_s_ok)
++		{
++		ereport(ERROR,
++			(errcode(ERRCODE_EXTERNAL_ROUTINE_EXCEPTION),
++			 errmsg("FreeBSD uuid library failure: %d", (int) status)));
++		}
++		
++		break;
++	}
++
++	case 3:	 /* namespace-based MD5 uuids */
++	{
++		/* we could use pg's md5(), but we're already pulling in libmd */
++		MD5_CTX ctx;
++		unsigned char buf[16];
++
++		MD5Init(&ctx);
++		MD5Update(&ctx, ns, 16);
++		MD5Update(&ctx, (unsigned char *)ptr, len);
++		MD5Final(buf, &ctx);
++
++		sprintf(strbuf,
++			"%02x%02x%02x%02x-"
++			"%02x%02x-%02x%02x-%02x%02x-"
++			"%02x%02x%02x%02x%02x%02x",
++			buf[0], buf[1], buf[2], buf[3],
++			buf[4], buf[5], ((buf[6] & 0xf) | 0x30), buf[7],
++			((buf[8] & 0x3F) | 0x80), buf[9], buf[10], buf[11],
++			buf[12], buf[13], buf[14], buf[15]);
++
++		break;
++	}
++
++	case 5:	 /* namespace-based SHA1 uuids */
++	{
++		SHA_CTX ctx;
++		unsigned char buf[20];
++
++		SHA1_Init(&ctx);
++		SHA1_Update(&ctx, ns, 16);
++		SHA1_Update(&ctx, (unsigned char *)ptr, len);
++		SHA1_Final(buf, &ctx);
++
++		sprintf(strbuf,
++			"%02x%02x%02x%02x-"
++			"%02x%02x-%02x%02x-%02x%02x-"
++			"%02x%02x%02x%02x%02x%02x",
++			buf[0], buf[1], buf[2], buf[3],
++			buf[4], buf[5], ((buf[6] & 0xf) | 0x30), buf[7],
++			((buf[8] & 0x3F) | 0x80), buf[9], buf[10], buf[11],
++			buf[12], buf[13], buf[14], buf[15]);
++
++			break;
++		}
++	}
+ 
+-	return DirectFunctionCall1(uuid_in, CStringGetDatum(str));
++	return DirectFunctionCall1(uuid_in, CStringGetDatum(strbuf));
+ }
+ 
+ 
+ Datum
+ uuid_nil(PG_FUNCTION_ARGS)
+ {
+-	return special_uuid_value("nil");
++	return internal_uuid_create(0, NULL, "00000000-0000-0000-0000-000000000000", 36);
+ }
+ 
+ 
+ Datum
+ uuid_ns_dns(PG_FUNCTION_ARGS)
+ {
+-	return special_uuid_value("ns:DNS");
++	return internal_uuid_create(0, NULL, "6ba7b810-9dad-11d1-80b4-00c04fd430c8", 36);
+ }
+ 
+ 
+ Datum
+ uuid_ns_url(PG_FUNCTION_ARGS)
+ {
+-	return special_uuid_value("ns:URL");
++	return internal_uuid_create(0, NULL, "6ba7b811-9dad-11d1-80b4-00c04fd430c8", 36);
+ }
+ 
+ 
+ Datum
+ uuid_ns_oid(PG_FUNCTION_ARGS)
+ {
+-	return special_uuid_value("ns:OID");
++	return internal_uuid_create(0, NULL, "6ba7b812-9dad-11d1-80b4-00c04fd430c8", 36);
+ }
+ 
+ 
+ Datum
+ uuid_ns_x500(PG_FUNCTION_ARGS)
+ {
+-	return special_uuid_value("ns:X500");
+-}
+-
+-
+-static Datum
+-uuid_generate_internal(int mode, const uuid_t *ns, const char *name)
+-{
+-	uuid_t	   *uuid;
+-	char	   *str;
+-	uuid_rc_t	rc;
+-
+-	rc = uuid_create(&uuid);
+-	if (rc != UUID_RC_OK)
+-		pguuid_complain(rc);
+-	rc = uuid_make(uuid, mode, ns, name);
+-	if (rc != UUID_RC_OK)
+-		pguuid_complain(rc);
+-	str = uuid_to_string(uuid);
+-	rc = uuid_destroy(uuid);
+-	if (rc != UUID_RC_OK)
+-		pguuid_complain(rc);
+-
+-	return DirectFunctionCall1(uuid_in, CStringGetDatum(str));
++	return internal_uuid_create(0, NULL, "6ba7b814-9dad-11d1-80b4-00c04fd430c8", 36);
+ }
+ 
+ 
+ Datum
+ uuid_generate_v1(PG_FUNCTION_ARGS)
+ {
+-	return uuid_generate_internal(UUID_MAKE_V1, NULL, NULL);
++	return internal_uuid_create(1, NULL, NULL, 0);
+ }
+ 
+ 
+ Datum
+ uuid_generate_v1mc(PG_FUNCTION_ARGS)
+ {
+-	return uuid_generate_internal(UUID_MAKE_V1 | UUID_MAKE_MC, NULL, NULL);
+-}
+-
+-
+-static Datum
+-uuid_generate_v35_internal(int mode, pg_uuid_t *ns, text *name)
+-{
+-	uuid_t	   *ns_uuid;
+-	Datum		result;
+-	uuid_rc_t	rc;
+-
+-	rc = uuid_create(&ns_uuid);
+-	if (rc != UUID_RC_OK)
+-		pguuid_complain(rc);
+-	string_to_uuid(DatumGetCString(DirectFunctionCall1(uuid_out, UUIDPGetDatum(ns))),
+-				   ns_uuid);
+-
+-	result = uuid_generate_internal(mode,
+-									ns_uuid,
+-									text_to_cstring(name));
+-
+-	rc = uuid_destroy(ns_uuid);
+-	if (rc != UUID_RC_OK)
+-		pguuid_complain(rc);
++	char buf[20];
+ 
+-	return result;
++	sprintf(buf, "-%04x-%04x%08lx",
++		(unsigned)((arc4random() & 0x3FFF) | 0x8000),
++		/* set IEEE802 multicast and local-admin bits */
++		(unsigned)((arc4random() & 0xffff) | 0x0300),
++		(unsigned long) arc4random());
++		
++	return internal_uuid_create(1, NULL, buf, 18);
+ }
+ 
+ 
+@@ -230,14 +233,15 @@
+ 	pg_uuid_t  *ns = PG_GETARG_UUID_P(0);
+ 	text	   *name = PG_GETARG_TEXT_P(1);
+ 
+-	return uuid_generate_v35_internal(UUID_MAKE_V3, ns, name);
++	return internal_uuid_create(3, (unsigned char *)ns,
++				VARDATA(name), VARSIZE(name) - VARHDRSZ);
+ }
+ 
+ 
+ Datum
+ uuid_generate_v4(PG_FUNCTION_ARGS)
+ {
+-	return uuid_generate_internal(UUID_MAKE_V4, NULL, NULL);
++	return internal_uuid_create(4, NULL, NULL, 0);
+ }
+ 
+ 
+@@ -247,5 +251,6 @@
+ 	pg_uuid_t  *ns = PG_GETARG_UUID_P(0);
+ 	text	   *name = PG_GETARG_TEXT_P(1);
+ 
+-	return uuid_generate_v35_internal(UUID_MAKE_V5, ns, name);
++	return internal_uuid_create(5, (unsigned char *)ns,
++				VARDATA(name), VARSIZE(name) - VARHDRSZ);
+ }
