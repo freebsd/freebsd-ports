@@ -24,10 +24,9 @@ UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
-USES=		iconv kmod
+USES=		iconv kmod tar:bzip2
 USE_GCC=	any
 ONLY_FOR_ARCHS=	i386 amd64
-USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes
 
