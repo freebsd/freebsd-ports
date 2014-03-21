@@ -662,6 +662,8 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/renderers/py.pyc
 %%PYTHON_SITELIBDIR%%/salt/renderers/pydsl.py
 %%PYTHON_SITELIBDIR%%/salt/renderers/pydsl.pyc
+%%PYTHON_SITELIBDIR%%/salt/renderers/pyobjects.py
+%%PYTHON_SITELIBDIR%%/salt/renderers/pyobjects.pyc
 %%PYTHON_SITELIBDIR%%/salt/renderers/stateconf.py
 %%PYTHON_SITELIBDIR%%/salt/renderers/stateconf.pyc
 %%PYTHON_SITELIBDIR%%/salt/renderers/wempy.py
@@ -1020,6 +1022,8 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/utils/process.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/pydsl.py
 %%PYTHON_SITELIBDIR%%/salt/utils/pydsl.pyc
+%%PYTHON_SITELIBDIR%%/salt/utils/pyobjects.py
+%%PYTHON_SITELIBDIR%%/salt/utils/pyobjects.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/reclass.py
 %%PYTHON_SITELIBDIR%%/salt/utils/reclass.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/s3.py
@@ -1056,6 +1060,8 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/utils/winservice.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/xmlutil.py
 %%PYTHON_SITELIBDIR%%/salt/utils/xmlutil.pyc
+%%PYTHON_SITELIBDIR%%/salt/utils/yamldumper.py
+%%PYTHON_SITELIBDIR%%/salt/utils/yamldumper.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/yamlloader.py
 %%PYTHON_SITELIBDIR%%/salt/utils/yamlloader.pyc
 %%PYTHON_SITELIBDIR%%/salt/version.py
