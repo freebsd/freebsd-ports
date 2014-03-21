@@ -1,12 +1,11 @@
 ---------------------------------------------------
 %%PORTNAME%% has been successfully installed.
 
-Now you need to change your webserver configuration
-as follows:
+You probably want to add a 'Directory' section for cgit, along the lines of:
 
   <Directory "%%WWWDIR%%/">
       AllowOverride None
-      Options ExecCGI
+      Options +ExecCGI
       Order allow,deny
       Allow from all
   </Directory>
