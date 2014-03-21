@@ -11414,6 +11414,7 @@ lib/webmin/mon/CHANGELOG
 lib/webmin/mon/README
 lib/webmin/mon/backup_config.pl
 lib/webmin/mon/config
+lib/webmin/mon/config-Fedora-Linux
 lib/webmin/mon/config.info
 lib/webmin/mon/config.info.ca
 lib/webmin/mon/config.info.ca.UTF-8
@@ -18939,6 +18940,8 @@ lib/webmin/shorewall6/config.info.ms_MY
 lib/webmin/shorewall6/config.info.ms_MY.UTF-8
 lib/webmin/shorewall6/config.info.nl
 lib/webmin/shorewall6/config.info.nl.UTF-8
+lib/webmin/shorewall6/config.info.no
+lib/webmin/shorewall6/config.info.no.UTF-8
 lib/webmin/shorewall6/defaultacl
 lib/webmin/shorewall6/delete.cgi
 lib/webmin/shorewall6/down.cgi
@@ -18977,6 +18980,8 @@ lib/webmin/shorewall6/lang/en
 lib/webmin/shorewall6/lang/en.UTF-8
 lib/webmin/shorewall6/lang/nl
 lib/webmin/shorewall6/lang/nl.UTF-8
+lib/webmin/shorewall6/lang/no
+lib/webmin/shorewall6/lang/no.UTF-8
 lib/webmin/shorewall6/list.cgi
 lib/webmin/shorewall6/log_parser.pl
 lib/webmin/shorewall6/manual_form.cgi
