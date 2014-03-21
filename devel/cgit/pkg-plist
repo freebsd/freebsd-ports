@@ -1,22 +1,23 @@
-%%WWWDIR%%/cgit.cgi
-%%WWWDIR%%/cgit.css
-%%WWWDIR%%/cgit.png
 lib/cgit/filters/about-formatting.sh
 lib/cgit/filters/commit-links.sh
+lib/cgit/filters/email-gravatar.lua
+lib/cgit/filters/email-gravatar.py
 lib/cgit/filters/html-converters/man2html
 lib/cgit/filters/html-converters/md2html
 lib/cgit/filters/html-converters/resources/markdown.pl
 lib/cgit/filters/html-converters/resources/rst-template.txt
 lib/cgit/filters/html-converters/rst2html
 lib/cgit/filters/html-converters/txt2html
+lib/cgit/filters/simple-authentication.lua
 lib/cgit/filters/syntax-highlighting.py
 lib/cgit/filters/syntax-highlighting.sh
-%%PORTDOCS%%%%DOCSDIR%%/cgitrc.5.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WWWDIR%%/cgit.cgi
+%%WWWDIR%%/cgit.css
+%%WWWDIR%%/cgit.png
+%%WWWDIR%%/favicon.ico
+%%WWWDIR%%/robots.txt
+@dirrm %%WWWDIR%%
 @dirrm lib/cgit/filters/html-converters/resources
 @dirrm lib/cgit/filters/html-converters
 @dirrm lib/cgit/filters
 @dirrm lib/cgit
-@dirrm %%WWWDIR%%
-@exec mkdir -p /var/cache/%%PORTNAME%%
-@exec chown %%WWWOWN%%:%%WWWGRP%% /var/cache/%%PORTNAME%%

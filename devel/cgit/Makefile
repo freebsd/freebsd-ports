@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cgit
-PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTVERSION=	0.10.1
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 		GOOGLE_CODE:git
@@ -10,47 +9,38 @@ DISTFILES=	cgit-${PORTVERSION}${EXTRACT_SUFX}:cgit \
 		git-${GIT_VERSION}.tar.gz:git
 
 MAINTAINER=	kevinz5000@gmail.com
-COMMENT=	Fast web frontend for Git repositories
+COMMENT=	Hyperfast web frontend for Git repositories
 
 LICENSE=	GPLv2
 
 PROJECTHOST=	git-core
-GIT_VERSION=	1.8.2.3
-USE_BZIP2=	yes
-USES=		gmake iconv shebangfix
+GIT_VERSION=	1.9.0
+USES=		gmake iconv shebangfix tar:bzip2
 SHEBANG_FILES=	filters/html-converters/resources/markdown.pl
-USE_OPENSSL=	yes
+
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ARGS+=	CGIT_SCRIPT_PATH=${WWWDIR} \
-		CGIT_CONFIG=${PREFIX}/etc/cgitrc NO_GETTEXT=1
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+MAKE_ARGS+=	CGIT_SCRIPT_PATH=${WWWDIR} CGIT_CONFIG=${PREFIX}/etc/cgitrc \
+		prefix=${PREFIX} NO_GETTEXT=1 NO_LUA=1
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME}
 PLIST_SUB+=	PORTNAME=${PORTNAME} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-OPTIONS_DEFINE=	DOCS
+PORTDOCS=	${PORTNAME}rc.5.txt
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${RMDIR} ${WRKSRC}/git
 	@${MV} ${WRKDIR}/git-${GIT_VERSION} ${WRKSRC}/git
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC =/d' -e '/^CFLAGS =/d' \
-		-e '/^LDFLAGS =/d' ${WRKSRC}/git/Makefile \
-		${WRKSRC}/git/Makefile
-	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},g' \
-		-e 's,-Igit,-I.,g' ${WRKSRC}/Makefile
-.if empty(ICONV_LIB)
-	@${REINPLACE_CMD} -e '/NEEDS_LIBICONV = YesPlease/d' \
-		-e '/OLD_ICONV = YesPlease/d' \
-		${WRKSRC}/git/config.mak.uname
-.endif
+	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/git/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}rc.5.txt ${STAGEDIR}/${DOCSDIR}/
+	@${STRIP_CMD} ${STAGEDIR}${WWWDIR}/cgit.cgi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
