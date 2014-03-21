@@ -397,3 +397,13 @@
 +	return internal_uuid_create(5, (unsigned char *)ns,
 +				VARDATA(name), VARSIZE(name) - VARHDRSZ);
  }
+--- contrib/Makefile.orig	2014-03-21 08:58:32.000000000 +0100
++++ contrib/Makefile	2014-03-21 08:59:13.000000000 +0100
+@@ -52,6 +52,7 @@
+ 		test_parser	\
+ 		tsearch2	\
+ 		unaccent	\
++		uuid-ossp	\
+ 		vacuumlo	\
+ 		worker_spi
+ 

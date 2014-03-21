@@ -23,7 +23,7 @@ INSTALL_DIRS=	contrib
 
 SLAVE_ONLY=	yes
 COMPONENT=	-contrib
-CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl --with-ossp-uuid
+CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl
 LDFLAGS+=	${PTHREAD_LIBS} -L${PREFIX}/lib
 
 post-install:
