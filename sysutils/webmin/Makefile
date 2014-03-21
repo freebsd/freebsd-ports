@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmin
-PORTVERSION=	1.670
-PORTREVISION=	1
+PORTVERSION=	1.680
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -25,7 +24,7 @@ USE_RC_SUBR=	webmin
 SUB_LIST=	PERL5=${PERL}
 SUB_FILES=	pkg-message
 
-WEBMIN_MODULES=	acl-1.670-2.wbm.gz
+WEBMIN_MODULES=
 
 post-extract:
 	@${RM} -f ${WRKSRC}/mount/freebsd-mounts-?
