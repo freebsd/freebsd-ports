@@ -32,8 +32,7 @@ OPTIONS_DEFAULT=CRON
 .endif
 
 # Enable Perl dependency for logtail script
-USES=		perl5 shebangfix
-USE_XZ=		yes
+USES=		perl5 shebangfix tar:xz
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S!_!-!}
 BINMODE=	755
