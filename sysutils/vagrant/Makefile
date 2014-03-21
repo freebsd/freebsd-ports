@@ -3,6 +3,7 @@
 
 PORTNAME=	vagrant
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	LOCAL/swills https://codeload.github.com/mitchellh/vagrant/legacy.tar.gz/v${PORTVERSION}?dummy=/
 
@@ -44,6 +45,7 @@ GEM_ENV+=	RB_USER_INSTALL=yes
 
 post-patch:
 	@${RM} ${WRKSRC}/bin/vagrant.orig
+	@${RM} ${WRKSRC}/vagrant.gemspec.orig
 
 do-build:
 	@(cd ${WRKSRC}; (${ECHO_CMD} -e "install:\n\techo\n") > Makefile)
