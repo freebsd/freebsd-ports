@@ -391,3 +391,13 @@
 +	return internal_uuid_create(5, (unsigned char *)ns,
 +				VARDATA(name), VARSIZE(name) - VARHDRSZ);
  }
+--- contrib/Makefile.orig	2014-03-21 09:01:58.000000000 +0100
++++ contrib/Makefile	2014-03-21 09:02:16.000000000 +0100
+@@ -50,6 +50,7 @@
+ 		test_parser	\
+ 		tsearch2	\
+ 		unaccent	\
++		uuid-ossp	\
+ 		vacuumlo
+ 
+ ifeq ($(with_openssl),yes)
