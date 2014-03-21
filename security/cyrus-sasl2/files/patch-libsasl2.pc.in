@@ -1,0 +1,17 @@
+Index: libsasl2.pc.in
+diff -u libsasl2.pc.in.orig libsasl2.pc.in
+--- libsasl2.pc.in.orig	2012-10-12 23:05:48.000000000 +0900
++++ libsasl2.pc.in	2014-03-22 02:41:33.668062061 +0900
+@@ -1,8 +1,12 @@
++prefix = @prefix@
++exec_prefix = @exec_prefix@
++includedir = @includedir@
+ libdir = @libdir@
+ 
+ Name: Cyrus SASL
+ Description: Cyrus SASL implementation
+ URL: http://www.cyrussasl.org/
+ Version: @VERSION@
++Cflags: -I${includedir}
+ Libs: -L${libdir} -lsasl2
+ Libs.private: @LIB_DOOR@ @SASL_DL_LIB@ @LIBS@
