@@ -3,6 +3,7 @@
 
 PORTNAME=	opensurge
 PORTVERSION=	0.1.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.ime.usp.br/~alemart/opensurge_nightly/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
@@ -48,7 +49,7 @@ DESKTOP_ENTRIES="Open Surge" "" "${PORTNAME}" \
 .include "Makefile.svn_rev"
 
 post-extract-script:
-	@(cd ${WRKDIR}/opensurge-mods ; ${COPYTREE_SHARE} . ${WRKSRC})
+	@(cd ${WRKDIR}/opensurge-mods && ${COPYTREE_SHARE} . ${WRKSRC})
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/opensurge|${DATADIR}|' \
