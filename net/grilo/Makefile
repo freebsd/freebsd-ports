@@ -33,6 +33,9 @@ UI_DESC=	Enable testing UI
 UI_CONFIGURE_ENABLE=test-ui
 UI_USE=		GNOME=gtk30
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|libvala-0.20|libvala-0.22|g' ${WRKSRC}/configure
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgrilo-0.2.so.1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgrlnet-0.2.so.0 
