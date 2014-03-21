@@ -38,6 +38,7 @@ man/man8/pkg-search.8.gz
 man/man8/pkg-set.8.gz
 man/man8/pkg-shell.8.gz
 man/man8/pkg-shlib.8.gz
+man/man8/pkg-ssh.8.gz
 man/man8/pkg-static.8.gz
 man/man8/pkg-stats.8.gz
 man/man8/pkg-unlock.8.gz
