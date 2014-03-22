@@ -1,13 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-View-RRDGraph
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	RRD graph view class for catalyst
+COMMENT=	RRD graph view class for Catalyst
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-Static-Simple>=0.17:${PORTSDIR}/www/p5-Catalyst-Plugin-Static-Simple \
