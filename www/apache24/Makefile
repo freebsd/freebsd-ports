@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.6
-PORTREVISION=	1
+PORTVERSION=	2.4.9
+#PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -12,14 +12,14 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Version 2.4.x of Apache web server
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libapr-1.so.5:${PORTSDIR}/devel/apr1 \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS_INSTALL=	caudium14-1.* \
 		apache-*-2.2.* apache22-*
 
 USE_APACHE=	common24
-USES=		iconv perl5
+USES=		iconv perl5 tar:bzip2
 USE_PERL5=	run
 USE_AUTOTOOLS=	autoconf libtool
 USE_RC_SUBR=	apache24 htcacheclean
