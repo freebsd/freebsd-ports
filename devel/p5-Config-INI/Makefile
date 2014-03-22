@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-INI
-PORTVERSION=	0.022
+PORTVERSION=	0.023
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,7 @@ COMMENT=	Simple .ini files emitter and parser for Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Mixin-Linewise>=0:${PORTSDIR}/devel/p5-Mixin-Linewise
+BUILD_DEPENDS=	p5-Mixin-Linewise>=0.100:${PORTSDIR}/devel/p5-Mixin-Linewise
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
