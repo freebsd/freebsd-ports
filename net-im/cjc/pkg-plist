@@ -95,11 +95,6 @@ bin/cjc
 %%DATADIR%%/plugins/version.pyc
 %%DATADIR%%/plugins/xmlconsole.py
 %%DATADIR%%/plugins/xmlconsole.pyc
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/cjc/ui
 @dirrm %%DATADIR%%/cjc
