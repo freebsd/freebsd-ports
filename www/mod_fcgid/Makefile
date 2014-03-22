@@ -12,6 +12,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	freebsd.ports@webstyle.ch
 COMMENT=	Alternative FastCGI module for Apache2
 
+LICENSE=	APACHE20
+
 USE_APACHE=	22+
 
 HAS_CONFIGURE=		yes
