@@ -5704,7 +5704,7 @@ x11-fm/dfm||2014-03-10|Has expired: No more public distfiles
 security/xyssl|security/polarssl|2014-03-10|Has expired: No more public distfiles
 japanese/p5-Mail-SpamAssassin|japanese/spamassassin|2014-03-10|Moved to japanese/spamassassin
 mail/p5-Mail-SpamAssassin|mail/spamassassin|2014-03-10|Moved to mail/spamassassin
-databases/pear-MDB2_Driver_sqlite|2014-03-12||Unmaintained upstream
+databases/pear-MDB2_Driver_sqlite||2014-03-12|Unmaintained upstream
 net/pppd23||2014-03-14|Has expired: Depends on PPPDISC
 net/ipa_ip6fw||2014-03-14|Has expired: Depends on IPv6 ipfw firewall
 palm/synce-hal||2014-03-14|Has expired: Requires pppd
