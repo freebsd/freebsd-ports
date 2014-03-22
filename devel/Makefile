@@ -4392,6 +4392,7 @@
     SUBDIR += rubygem-thread_safe
     SUBDIR += rubygem-thrift
     SUBDIR += rubygem-tilt
+    SUBDIR += rubygem-tilt1
     SUBDIR += rubygem-timers
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-transactionsimple
