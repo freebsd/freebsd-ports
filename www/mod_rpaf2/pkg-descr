@@ -5,4 +5,4 @@ the X-Forwarded-For header). When an X-Host header exists rpaf will take
 the hostname found here, put it into Apache, and update the virtualhost 
 settings so that you can serve virtualhosts on the backend.
 
-WWW: http://stderr.net/apache/rpaf/
+WWW: http://www.stderr.net/apache/rpaf/
