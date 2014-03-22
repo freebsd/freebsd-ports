@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	4.1.9
+DISTVERSION=	4.1.10
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -13,8 +13,7 @@ COMMENT=	A set of PHP-scripts to manage MySQL over the web
 NO_ARCH=	yes
 LICENSE=	GPLv2
 
-USE_XZ=		yes
-USES=		shebangfix
+USES=		shebangfix tar:xz
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
 IGNORE_WITH_PHP=52
