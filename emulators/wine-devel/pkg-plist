@@ -460,6 +460,8 @@ include/wine/windows/msxml6did.h
 include/wine/windows/msxmldid.h
 include/wine/windows/nb30.h
 include/wine/windows/ndrtypes.h
+include/wine/windows/netcfgx.h
+include/wine/windows/netcfgx.idl
 include/wine/windows/netcon.h
 include/wine/windows/netcon.idl
 include/wine/windows/netfw.h
@@ -760,6 +762,7 @@ include/wine/windows/ddk/ntddcdvd.h
 include/wine/windows/ddk/ntddk.h
 include/wine/windows/ddk/ntddser.h
 include/wine/windows/ddk/ntddtape.h
+include/wine/windows/ddk/ntifs.h
 include/wine/windows/ddk/usb.h
 include/wine/windows/ddk/usb100.h
 include/wine/windows/ddk/usb200.h
@@ -1403,6 +1406,7 @@ lib/wine/fakedlls/sc.exe
 lib/wine/fakedlls/scarddlg.dll
 lib/wine/fakedlls/sccbase.dll
 lib/wine/fakedlls/schannel.dll
+lib/wine/fakedlls/schedsvc.dll
 lib/wine/fakedlls/schtasks.exe
 lib/wine/fakedlls/scrrun.dll
 lib/wine/fakedlls/scsiport.sys
@@ -1954,6 +1958,7 @@ lib/wine/sc.exe.so
 lib/wine/scarddlg.dll.so
 lib/wine/sccbase.dll.so
 lib/wine/schannel.dll.so
+lib/wine/schedsvc.dll.so
 lib/wine/schtasks.exe.so
 lib/wine/scrrun.dll.so
 lib/wine/scsiport.sys.so
