@@ -63,6 +63,7 @@ include/apache24/util_cfgtree.h
 include/apache24/util_charset.h
 include/apache24/util_cookies.h
 include/apache24/util_ebcdic.h
+include/apache24/util_fcgi.h
 include/apache24/util_filter.h
 include/apache24/util_ldap.h
 include/apache24/util_md5.h
