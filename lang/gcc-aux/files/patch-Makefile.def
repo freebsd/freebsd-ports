@@ -1,0 +1,10 @@
+--- Makefile.def.orig	2013-10-29 13:37:47.000000000 -0500
++++ Makefile.def
+@@ -336,6 +336,7 @@ dependencies = { module=all-libcpp; on=a
+ dependencies = { module=all-fixincludes; on=all-libiberty; };
+ 
+ dependencies = { module=all-gnattools; on=all-target-libada; };
++dependencies = { module=all-gnattools; on=all-target-libstdc++-v3; };
+ 
+ dependencies = { module=all-lto-plugin; on=all-libiberty; };
+ 

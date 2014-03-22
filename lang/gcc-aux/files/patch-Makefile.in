@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2014-03-07 07:58:27.000000000 -0500
++++ Makefile.in
+@@ -46730,6 +46730,7 @@ all-stageprofile-libcpp: maybe-all-stage
+ all-stagefeedback-libcpp: maybe-all-stagefeedback-intl
+ all-fixincludes: maybe-all-libiberty
+ all-gnattools: maybe-all-target-libada
++all-gnattools: maybe-all-target-libstdc++-v3
+ all-lto-plugin: maybe-all-libiberty
+ 
+ all-stage1-lto-plugin: maybe-all-stage1-libiberty
