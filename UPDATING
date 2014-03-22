@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140322:
+  AFFECTS: users of devel/apr1
+  AUTHOR: ohauer@FreeBSD.org
+
+  APR was updated to 1.5.0, BDB requirement was bumped to 48+
+
+  Please rebuild all ports which are using functions from APR/APR-util
+  such as Apache, Subversion, etc.
+
+  # portmaster -r apr
+    or
+  # portupgrade -r devel/apr1
+    or
+  # pkg install -fR devel/apr1
+
 20140318:
   AFFECTS: users of net/openldap24-server
   AUTHOR: delphij@FreeBSD.org
