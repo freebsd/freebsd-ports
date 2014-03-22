@@ -1,5 +1,5 @@
-SHA256 (gcc-4.9-20140302.tar.bz2) = 78838c2e96460326f2d39855afeae4f1473ac4280bdf513c239841bced24d149
-SIZE (gcc-4.9-20140302.tar.bz2) = 85100991
+SHA256 (gcc-4.9-20140316.tar.bz2) = b1c62b70f98c551ce74ad8c6a5e7342fe9c899116f98aae2b9ca142a478a712c
+SIZE (gcc-4.9-20140316.tar.bz2) = 85573522
 SHA256 (ada-bootstrap.i386.dragonfly.36A.tar.bz2) = 6b1a6ff0fe0e3bf13c667db2fef177b811329cd998400a1303969a86911cb1c8
 SIZE (ada-bootstrap.i386.dragonfly.36A.tar.bz2) = 39357314
 SHA256 (ada-bootstrap.i386.freebsd.84.tar.bz2) = b410336cb0e71c8a29dd5f831a17b4b7282e7d590f452475a94c6a625cfc8846
