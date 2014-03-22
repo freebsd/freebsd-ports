@@ -51,6 +51,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="91ecb546-b1e6-11e3-980f-20cf30e32f6d">
+    <topic>apache -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><gt>2.4.0</gt><lt>2.4.9</lt></range>
+      </package>
+      <package>
+	<name>apache22</name>
+	<range><gt>2.2.0</gt><lt>2.2.27</lt></range>
+      </package>
+      <package>
+	<name>apache22-event-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27</lt></range>
+      </package>
+      <package>
+	<name>apache22-itk-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27</lt></range>
+      </package>
+      <package>
+	<name>apache22-peruser-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27</lt></range>
+      </package>
+      <package>
+	<name>apache22-worker-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Apache HTTP SERVER PROJECT reports:</h1>
+	<blockquote cite="http://www.apache.org/dist/httpd/CHANGES_2.2.27">
+	  <p>Clean up cookie logging with fewer redundant string parsing passes.
+	    Log only cookies with a value assignment. Prevents segfaults when
+	    logging truncated cookies.</p>
+	  <p>mod_dav: Keep track of length of cdata properly when removing leading
+	    spaces. Eliminates a potential denial of service from specifically
+	    crafted DAV WRITE requests.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0098</cvename>
+      <cvename>CVE-2013-6438</cvename>
+    </references>
+    <dates>
+      <discovery>2014-02-25</discovery>
+      <entry>2014-03-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="610de647-af8d-11e3-a25b-b4b52fce4ce8">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
