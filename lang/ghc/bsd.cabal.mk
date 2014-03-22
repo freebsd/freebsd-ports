@@ -11,6 +11,7 @@
 
 .if !defined(METAPORT)
 MASTER_SITES?=	http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
+DIST_SUBDIR?=	cabal
 .else
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -22,8 +23,6 @@ NO_MTREE=	yes
 .endif # !METAPORT
 
 MAKE_ENV+=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 DESTDIR=${STAGEDIR}
-
-DIST_SUBDIR?=	cabal
 
 SETUP_CMD?=	./setup
 
