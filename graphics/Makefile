@@ -262,6 +262,7 @@
     SUBDIR += gimmage
     SUBDIR += gimp
     SUBDIR += gimp-app
+    SUBDIR += gimp-beautify-plugin
     SUBDIR += gimp-data-extras
     SUBDIR += gimp-focusblur-plugin
     SUBDIR += gimp-gap
