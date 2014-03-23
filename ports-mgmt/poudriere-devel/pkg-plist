@@ -1,0 +1,71 @@
+bin/poudriere
+etc/poudriere.conf.sample
+etc/poudriered.conf.sample
+etc/rc.d/poudriered
+libexec/poudriere/cpdup
+libexec/poudriere/dirempty
+libexec/poudriere/dirwatch
+libexec/poudriere/make_index
+libexec/poudriere/nc
+libexec/poudriere/rename
+sbin/poudriered
+man/man8/poudriere.8.gz
+%%DATADIR%%/awk/dependency_loop.awk
+%%DATADIR%%/awk/humanize.awk
+%%DATADIR%%/awk/json.awk
+%%DATADIR%%/awk/siginfo_buildtime.awk
+%%DATADIR%%/bulk.sh
+%%DATADIR%%/clean.sh
+%%DATADIR%%/common.sh
+%%DATADIR%%/common.sh.dragonfly
+%%DATADIR%%/common.sh.freebsd
+%%DATADIR%%/daemon.sh
+%%DATADIR%%/distclean.sh
+%%DATADIR%%/html/assets/bootstrap/css/bootstrap-responsive.min.css
+%%DATADIR%%/html/assets/bootstrap/css/bootstrap.min.css
+%%DATADIR%%/html/assets/bootstrap/img/glyphicons-halflings-white.png
+%%DATADIR%%/html/assets/bootstrap/img/glyphicons-halflings.png
+%%DATADIR%%/html/assets/bootstrap/js/bootstrap.min.js
+%%DATADIR%%/html/assets/dataTables/css/jquery.dataTables.css
+%%DATADIR%%/html/assets/dataTables/images/back_disabled.png
+%%DATADIR%%/html/assets/dataTables/images/back_enabled.png
+%%DATADIR%%/html/assets/dataTables/images/back_enabled_hover.png
+%%DATADIR%%/html/assets/dataTables/images/forward_disabled.png
+%%DATADIR%%/html/assets/dataTables/images/forward_enabled.png
+%%DATADIR%%/html/assets/dataTables/images/forward_enabled_hover.png
+%%DATADIR%%/html/assets/dataTables/images/sort_asc.png
+%%DATADIR%%/html/assets/dataTables/images/sort_asc_disabled.png
+%%DATADIR%%/html/assets/dataTables/images/sort_both.png
+%%DATADIR%%/html/assets/dataTables/images/sort_desc.png
+%%DATADIR%%/html/assets/dataTables/images/sort_desc_disabled.png
+%%DATADIR%%/html/assets/dataTables/js/jquery.dataTables.min.js
+%%DATADIR%%/html/assets/jquery-1.9.1.min.js
+%%DATADIR%%/html/assets/logo.jpg
+%%DATADIR%%/html/assets/poudriere.css
+%%DATADIR%%/html/assets/poudriere.js
+%%DATADIR%%/html/index.html
+%%DATADIR%%/jail.sh
+%%DATADIR%%/options.sh
+%%DATADIR%%/pkgclean.sh
+%%DATADIR%%/ports.sh
+%%DATADIR%%/processonelog.sh
+%%DATADIR%%/processonelog2.sh
+%%DATADIR%%/queue.sh
+%%DATADIR%%/status.sh
+%%DATADIR%%/testport.sh
+%%ZSH%%share/zsh/site-functions/_poudriere
+%%ZSH%%@dirrmtry share/zsh/site-functions
+%%ZSH%%@dirrmtry share/zsh/
+@dirrm %%DATADIR%%/html/assets/dataTables/js
+@dirrm %%DATADIR%%/html/assets/dataTables/images
+@dirrm %%DATADIR%%/html/assets/dataTables/css
+@dirrm %%DATADIR%%/html/assets/dataTables
+@dirrm %%DATADIR%%/html/assets/bootstrap/js
+@dirrm %%DATADIR%%/html/assets/bootstrap/img
+@dirrm %%DATADIR%%/html/assets/bootstrap/css
+@dirrm %%DATADIR%%/html/assets/bootstrap
+@dirrm %%DATADIR%%/html/assets
+@dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%/awk
+@dirrm %%DATADIR%%
+@dirrm libexec/poudriere
