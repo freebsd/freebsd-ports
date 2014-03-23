@@ -4,10 +4,10 @@ bin/redis-check-dump
 bin/redis-cli
 bin/redis-sentinel
 bin/redis-server
-@unexec (cmp -s %D/etc/redis.conf %D/etc/redis.conf.sample && rm -f %D/etc/redis.conf) || true
+@unexec if cmp -s %D/etc/redis.conf %D/etc/redis.conf.sample; then rm -f %D/etc/redis.conf; fi
 etc/redis.conf.sample
 @exec [ -f %B/redis.conf ] || cp %B/%f %B/redis.conf
-@unexec (cmp -s %D/etc/sentinel.conf %D/etc/sentinel.conf.sample && rm -f %D/etc/sentinel.conf) || true
+@unexec if cmp -s %D/etc/sentinel.conf %D/etc/sentinel.conf.sample; then rm -f %D/etc/sentinel.conf; fi
 etc/sentinel.conf.sample
 @exec [ -f %B/sentinel.conf ] || cp %B/%f %B/sentinel.conf
 @exec [ -d %%REDIS_DBDIR%% ] || mkdir -p %%REDIS_DBDIR%%
