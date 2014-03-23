@@ -178,6 +178,7 @@
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
     SUBDIR += imerge
+    SUBDIR += ini_file_manager
     SUBDIR += inplace
     SUBDIR += ipa_conv
     SUBDIR += ipbt
