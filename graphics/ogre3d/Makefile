@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ogre3d
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.0
 CATEGORIES=	graphics devel
-MASTER_SITES=	SF/ogre/ogre/${PORTVERSION:C/.[0-9]$//g}/${PORTVERSION}
-DISTNAME=	ogre_src_v${PORTVERSION:S/./-/g}
+MASTER_SITES=   https://bitbucket.org/sinbad/ogre/get/
+DISTNAME=	v1-9-0
+WRKSRC=		${WRKDIR}/sinbad-ogre-dd30349ea667
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A scene-oriented, flexible 3D engine written in C++
@@ -18,10 +19,9 @@ OPTIONS_DEFINE=	BOOST
 
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
-USES=		cmake
+USES=		cmake pkgconfig compiler:c++11-lib
 USE_SDL=	sdl
 USE_XORG=	xaw xrandr
-USE_GCC=	yes
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>

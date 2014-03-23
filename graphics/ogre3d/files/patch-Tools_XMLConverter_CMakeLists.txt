@@ -1,10 +1,10 @@
---- Tools/XMLConverter/CMakeLists.txt.orig	2013-05-21 20:52:22.000000000 +0200
-+++ Tools/XMLConverter/CMakeLists.txt	2013-05-21 20:52:22.000000000 +0200
-@@ -27,6 +27,7 @@
-   src/tinyxmlparser.cpp
- )
+--- Tools/XMLConverter/CMakeLists.txt.orig	2013-04-16 03:54:34.000000000 +0200
++++ Tools/XMLConverter/CMakeLists.txt	2013-08-12 14:34:48.000000000 +0200
+@@ -37,6 +37,7 @@
+   set(TINYXML_LIBRARIES "")
+ endif(NOT TINYXML_FOUND)
  
 +set (CMAKE_INCLUDE_DIRECTORIES_BEFORE ON)
- include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include ${TINYXML_INCLUDE_DIR})
  add_definitions(-DTIXML_USE_STL)
  ogre_add_executable(OgreXMLConverter ${HEADER_FILES} ${SOURCE_FILES})

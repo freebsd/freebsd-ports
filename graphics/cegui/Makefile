@@ -2,38 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	cegui
-PORTVERSION=	0.7.9
-#PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics devel
-MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/${PORTVERSION}
-DISTNAME=	${PORTNAME:U}-${PORTVERSION}
+MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.8
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library providing windowing and widgets for graphics APIs
 
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		pcre.3:${PORTSDIR}/devel/pcre \
-		freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.8.1:${PORTSDIR}/graphics/ogre3d
-RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.8.1:${PORTSDIR}/graphics/ogre3d
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		execinfo:${PORTSDIR}/devel/libexecinfo
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.9.0:${PORTSDIR}/graphics/ogre3d \
+		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
+RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.9.0:${PORTSDIR}/graphics/ogre3d
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/2b/2/}
-CONFIGURE_ARGS=	--disable-toluacegui --disable-irrlicht-renderer \
-		--disable-corona --enable-devil --disable-freeimage --disable-silly \
-		--disable-libxml --disable-xerces-c --disable-expat --disable-samples \
-		--enable-null-renderer --disable-external-tinyxml
-
-CONFIGURE_ENV+=	Lua_LIBS="-L${LUA_LIBDIR} -llua -lm" \
-		Lua_CFLAGS="-I${LUA_INCDIR}"
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
+CXXFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
-GNU_CONFIGURE=	yes
+## VERRIFY IF STILL NEEDED INCL. PATCH if CPPFLAGS IS SET AS ABOVE
+CMAKE_ENV+=	TOLUA_INC="${LUA_INCDIR}"
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_GL=		yes
+USE_GL=		gl glew
 USE_LUA=	5.1
 LUA_COMPS=	toluaxx
-USE_PYTHON=	yes
-USES=		pathfix pkgconfig
+USE_PYTHON=	2.6+
+USES=		cmake pathfix pkgconfig compiler:c++11-lib
 PLIST_SUB+=	WITH_OGRE=""
 
 NO_STAGE=	yes
@@ -47,15 +42,8 @@ PORTDOCS=	README COPYING
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e ' \
-		s|"-lILU.*"|"-lm -L${LOCALBASE}/lib -lILU -lIL $$LIBS"|g; \
-		s|-lpthread|${PTHREAD_LIBS}|g; \
-		s|CEGUI_LUA_VER=..|CEGUI_LUA_VER=${USE_LUA:S/.//}|g; \
-		s|DevIL_CFLAGS=.*|DevIL_CFLAGS="-DUSE_DEVIL_LIBRARY -I${LOCALBASE}/include"|g; \
-		s|-release $$cegui_lib_version_suffix|& -version-number 0|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|^SUBDIRS = tolua\+\+|SUBDIRS =|g' \
-		${WRKSRC}/cegui/include/ScriptingModules/LuaScriptModule/support/Makefile.in
+	@${REINPLACE_CMD} -e 's|\$${CEGUI_LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|g' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
