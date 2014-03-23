@@ -18,7 +18,7 @@ you update your ports collection, before attempting any port upgrades.
     or
   # portupgrade -r devel/apr1
     or
-  # pkg install -fR devel/apr1
+  # pkg install -fR devel/apr
 
 20140318:
   AFFECTS: users of net/openldap24-server
