@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="36f9ac43-b2ac-11e3-8752-080027ef73ec">
+    <topic>mail/trojita -- may leak mail contents (not user credentials) over unencrypted connection</topic>
+    <affects>
+      <package>
+	<name>trojita</name>
+	<range><lt>0.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jan Kundrát reports:</p>
+	<blockquote cite="http://jkt.flaska.net/blog/Trojita_0_4_1__a_security_update_for_CVE_2014_2567.html">
+	  <p>An SSL stripping vulnerability was discovered in Trojitá, a fast Qt
+	    IMAP e-mail client. User's credentials are never leaked, but if a
+	    user tries to send an e-mail, the automatic saving into the "sent"
+	    or "draft" folders could happen over a plaintext connection even if
+	    the user's preferences specify STARTTLS as a requirement.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://jkt.flaska.net/blog/Trojita_0_4_1__a_security_update_for_CVE_2014_2567.html</url>
+      <cvename>CVE-2014-2567</cvename>
+    </references>
+    <dates>
+      <discovery>2014-03-20</discovery>
+      <entry>2014-03-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="da4b89ad-b28f-11e3-99ca-f0def16c5c1b">
     <topic>nginx-devel -- SPDY heap buffer overflow</topic>
     <affects>
