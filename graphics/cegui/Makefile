@@ -29,9 +29,6 @@ USE_LUA=	5.1
 LUA_COMPS=	toluaxx
 USE_PYTHON=	2.6+
 USES=		cmake pathfix pkgconfig compiler:c++11-lib
-PLIST_SUB+=	WITH_OGRE=""
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -47,9 +44,9 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
