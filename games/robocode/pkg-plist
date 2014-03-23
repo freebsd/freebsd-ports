@@ -1,4 +1,15 @@
-bin/robocode
+bin/robocode-MeleeRumble
+bin/robocode-RoboRumble
+bin/robocode-Robocode
+bin/robocode-TeamRumble
+bin/robocode-TwinDuel
+share/applications/robocodeMeleeRumble.desktop
+share/applications/robocodeRoboRumble.desktop
+share/applications/robocodeRobocode.desktop
+share/applications/robocodeTeamRumble.desktop
+share/applications/robocodeTwinDuel.desktop
+%%DATADIR%%/ReadMe.html
+%%DATADIR%%/ReadMe.txt
 %%DATADIR%%/battles/intro.battle
 %%DATADIR%%/battles/sample.battle
 %%DATADIR%%/compilers/CompilerTest.java
@@ -19,6 +30,7 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/BattleEndedEvent.html
 %%DATADIR%%/javadoc/robocode/BattleResults.html
 %%DATADIR%%/javadoc/robocode/BattleRules.html
+%%DATADIR%%/javadoc/robocode/BorderSentry.html
 %%DATADIR%%/javadoc/robocode/Bullet.html
 %%DATADIR%%/javadoc/robocode/BulletHitBulletEvent.html
 %%DATADIR%%/javadoc/robocode/BulletHitEvent.html
@@ -181,6 +193,7 @@ bin/robocode
 %%DATADIR%%/robots/sample/Interactive_v2$Direction.class
 %%DATADIR%%/robots/sample/Interactive_v2.class
 %%DATADIR%%/robots/sample/Interactive_v2.java
+%%DATADIR%%/robots/sample/Interactive_v2.properties
 %%DATADIR%%/robots/sample/MyFirstJuniorRobot.class
 %%DATADIR%%/robots/sample/MyFirstJuniorRobot.java
 %%DATADIR%%/robots/sample/MyFirstJuniorRobot.properties
@@ -234,6 +247,10 @@ bin/robocode
 %%DATADIR%%/robots/sampleex/RegullarMonk.java
 %%DATADIR%%/robots/sampleex/Slave.class
 %%DATADIR%%/robots/sampleex/Slave.java
+%%DATADIR%%/robots/samplesentry/BorderGuard$RobotData.class
+%%DATADIR%%/robots/samplesentry/BorderGuard.class
+%%DATADIR%%/robots/samplesentry/BorderGuard.java
+%%DATADIR%%/robots/samplesentry/BorderGuard.properties
 %%DATADIR%%/robots/sampleteam/MyFirstDroid.class
 %%DATADIR%%/robots/sampleteam/MyFirstDroid.java
 %%DATADIR%%/robots/sampleteam/MyFirstLeader.class
@@ -247,11 +264,17 @@ bin/robocode
 %%DATADIR%%/templates/newjavafile.tpt
 %%DATADIR%%/templates/newjuniorrobot.tpt
 %%DATADIR%%/templates/newrobot.tpt
+%%DATADIR%%/theme/editor/Robocode Black Theme.properties
+%%DATADIR%%/theme/editor/Robocode White Theme.properties
 %%DATADIR%%/twinduel.sh
 %%DATADIR%%/versions.md
 share/pixmaps/robocode.png
+share/pixmaps/roborumble.png
+@dirrm %%DATADIR%%/theme/editor
+@dirrm %%DATADIR%%/theme
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/robots/sampleteam
+@dirrm %%DATADIR%%/robots/samplesentry
 @dirrm %%DATADIR%%/robots/sampleex
 @dirrmtry %%DATADIR%%/robots/sample
 @dirrmtry %%DATADIR%%/robots

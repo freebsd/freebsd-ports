@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-#
-
-export JAVA_VERSION="%%JAVA_VERSION%%"
-
-cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" -Djava.ext.dirs="%%DATADIR%%" \
--Djava.ext.dirs="%%DATADIR%%" -cp libs/robocode.jar robocode.Robocode "${@}"
