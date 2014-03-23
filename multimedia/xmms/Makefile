@@ -17,6 +17,7 @@ LICENSE=	GPLv2
 
 DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
 FORBIDDEN=	Vulnerable: CVE-2007-0653 CVE-2007-0654
+EXPIRATION_DATE=	2014-05-01
 
 CONFLICTS?=	ru-xmms-[0-9]* zh-xmms-[0-9]*
 GNU_CONFIGURE=	yes
