@@ -1,0 +1,11 @@
+[ edition version of author's www site ]
+
+GimpLensfun is a Gimp plugin to correct lens distortion using the
+lensfun library and database.
+
+The plugin can be found under "Filters > Enhance > GimpLensfun".
+
+It autodetects camera, lens type and corresponding parameters
+from the EXIF information embedded in the image file. 
+
+WWW: http://github.com/seebk/GIMP-Lensfun.git
