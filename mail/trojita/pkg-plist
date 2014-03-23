@@ -16,8 +16,10 @@ share/icons/hicolor/scalable/apps/trojita.svg
 %%DATADIR%%/locale/trojita_common_gl.qm
 %%DATADIR%%/locale/trojita_common_hu.qm
 %%DATADIR%%/locale/trojita_common_ia.qm
+%%DATADIR%%/locale/trojita_common_it.qm
 %%DATADIR%%/locale/trojita_common_lt.qm
 %%DATADIR%%/locale/trojita_common_mr.qm
+%%DATADIR%%/locale/trojita_common_nb.qm
 %%DATADIR%%/locale/trojita_common_nl.qm
 %%DATADIR%%/locale/trojita_common_pl.qm
 %%DATADIR%%/locale/trojita_common_pt.qm

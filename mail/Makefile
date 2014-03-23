@@ -717,6 +717,7 @@
     SUBDIR += tmda
     SUBDIR += tpop3d
     SUBDIR += trojita
+    SUBDIR += trojita-qt4
     SUBDIR += tumgreyspf
     SUBDIR += uebimiau
     SUBDIR += up-imapproxy
