@@ -34,7 +34,6 @@ APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JRE_VERSION}
 PACKED_JARS=	lib/charsets lib/deploy lib/ext/localedata lib/javaws lib/jsse lib/plugin lib/rt
 UNPACK_CMD=	${WRKSRC}/bin/unpack200
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -56,18 +55,18 @@ do-extract:
 
 post-patch:
 	${REINPLACE_CMD} -i.orig -e 's:^#!/bin/bash:#!/bin/sh:' ${WRKSRC}/bin/jcontrol
-	@${FIND} ${WRKSRC} -name '*.orig' -print | ${XARGS} ${RM} -f
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 do-install:
-	${MKDIR} ${APP_HOME}
+	${MKDIR} ${STAGEDIR}${APP_HOME}
 	cd ${WRKSRC} && ${FIND} . -print \
-	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
+	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${STAGEDIR}${APP_HOME}
 
 post-install:
-	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JRE${PORTVERSION}"
-	${SED} -e "s:%%JRE_HOME%%:${APP_HOME}:g" \
+	${SED} -e "s:%%JRE_HOME%%:${APP_HOME}:g; \
+		s:%%STAGEDIR%%:${STAGEDIR}:" \
 	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
