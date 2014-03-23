@@ -3,7 +3,7 @@
 
 PORTNAME=	cyphesis
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28server%29/${PORTVERSION}
 
@@ -22,18 +22,15 @@ CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig compiler:c++11-lib
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
 USE_PYTHON=	2
-USE_GCC=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1 cyaddrules.1 \
 		cyconvertrules.1 cydumprules.1 cyloadrules.1 cypasswd.1
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -59,13 +56,13 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/conf
-.for docfile in README COPYING AUTHORS THANKS NEWS ChangeLog TODO FIXME
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/conf
+.for file in README COPYING AUTHORS THANKS NEWS ChangeLog TODO FIXME
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.for docfile in acorn.xml basic.xml cyphesis.vconf mason.xml werewolf.xml
-	@${INSTALL_DATA} ${WRKSRC}/data/${docfile} ${DOCSDIR}/conf
+.for file in acorn.xml basic.xml cyphesis.vconf mason.xml werewolf.xml
+	@${INSTALL_DATA} ${WRKSRC}/data/${file} ${STAGEDIR}${DOCSDIR}/conf
 .endfor
 .endif
 
