@@ -51,14 +51,12 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-  <vuln vid="fc28df92-b233-11e3-99ca-f0def16c5c1b">
-    <topic>nginx -- SPDY heap buffer overflow</topic>
+  <vuln vid="da4b89ad-b28f-11e3-99ca-f0def16c5c1b">
+    <topic>nginx-devel -- SPDY heap buffer overflow</topic>
     <affects>
       <package>
-	<name>nginx</name>
 	<name>nginx-devel</name>
-	<range><lt>1.4.7</lt></range>
-	<range><lt>1.5.12</lt></range>
+	<range><ge>1.3.15</ge><lt>1.5.12</lt></range>
       </package>
     </affects>
     <description>
@@ -85,7 +83,43 @@ Note:  Please add new entries to the beginning of this file.
     </references>
     <dates>
       <discovery>2014-03-18</discovery>
-      <entry>2014-03-18</entry>
+      <entry>2014-03-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fc28df92-b233-11e3-99ca-f0def16c5c1b">
+    <topic>nginx -- SPDY heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><lt>1.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx project reports:</p>
+	<blockquote cite="http://mailman.nginx.org/pipermail/nginx-announce/2014/000135.html">
+	  <p>A bug in the experimental SPDY implementation in nginx was found, which
+	   might allow an attacker to cause a heap memory buffer overflow in a
+	   worker process by using a specially crafted request, potentially
+	   resulting in arbitrary code execution (CVE-2014-0133).</p>
+
+	  <p>The problem affects nginx 1.3.15 - 1.5.11, compiled with the
+	   ngx_http_spdy_module module (which is not compiled by default) and
+	   without --with-debug configure option, if the "spdy" option of the
+	   "listen" directive is used in a configuration file.</p>
+
+	  <p>The problem is fixed in nginx 1.5.12, 1.4.7.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0133</cvename>
+      <url>http://mailman.nginx.org/pipermail/nginx-announce/2014/000135.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-18</discovery>
+      <entry>2014-03-23</entry>
     </dates>
   </vuln>
 
