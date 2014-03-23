@@ -2,6 +2,7 @@
 
 PORTNAME=	core
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -14,14 +15,13 @@ LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
 USE_GNOME=	glib20
 USE_QT5=	qmake_build buildtools_build
 QT_DIST=	base
-USES=		iconv
 HAS_CONFIGURE=	yes
 # Disable (almost) everything to install minimal qconfig.h.
 # -no-feature-* adds QT_NO_* (for features which have no switch or
 # that need to be detected).
 CONFIGURE_ARGS=	-no-accessibility -no-gif -no-libpng -no-libjpeg \
 		-no-openssl -no-gui -no-widgets -no-cups \
-		-no-feature-iconv -no-dbus -no-xcb -no-opengl \
+		-no-iconv -no-dbus -no-xcb -no-opengl \
 		-no-feature-glib -no-feature-alsa \
 		-no-feature-concurrent -no-feature-evdev \
 		-no-fontconfig -no-freetype \
@@ -34,16 +34,10 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 BUILD_WRKSRC=	${WRKSRC}/src/corelib
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-QT_DEFINES=	GLIB ICONV
+QT_DEFINES=	GLIB
 QT_CONFIG=	glib icu
 
 .include <bsd.port.pre.mk>
-
-.if ${ICONV_PREFIX} == "/usr"
-QT_CONFIG+=	sun-libiconv
-.else
-QT_CONFIG+=	gnu-libiconv
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/3rdparty/harfbuzz/src/harfbuzz*.h \

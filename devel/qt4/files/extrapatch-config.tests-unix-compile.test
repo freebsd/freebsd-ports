@@ -1,0 +1,11 @@
+--- config.tests/unix/compile.test.orig
++++ config.tests/unix/compile.test
+@@ -13,7 +13,7 @@
+ shift 7
+ LFLAGS="$SYSROOT_FLAG"
+ INCLUDEPATH=""
+-CXXFLAGS="$SYSROOT_FLAG"
++CXXFLAGS="$CXXFLAGS $SYSROOT_FLAG"
+ MAC_ARCH_CXXFLAGS=""
+ MAC_ARCH_LFLAGS=""
+ while [ "$#" -gt 0 ]; do
