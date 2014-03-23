@@ -82,6 +82,7 @@
     SUBDIR += elscreen
     SUBDIR += esniper
     SUBDIR += estic
+    SUBDIR += excel-writer
     SUBDIR += explosions
     SUBDIR += fbless
     SUBDIR += felis

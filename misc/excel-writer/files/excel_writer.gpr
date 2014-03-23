@@ -1,0 +1,7 @@
+project Excel_Writer is
+   for Languages        use ("ada");
+   for Library_Name     use "excelwriter";
+   for Source_Dirs      use ("../../include/excel_writer");
+   for Library_Dir      use "../../lib/excel_writer";
+   for Externally_Built use "true";
+end Excel_Writer;

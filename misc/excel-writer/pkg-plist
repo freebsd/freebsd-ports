@@ -1,0 +1,21 @@
+bin/biff_dump
+include/excel_writer/csv.adb
+include/excel_writer/csv.ads
+include/excel_writer/excel_out.adb
+include/excel_writer/excel_out.ads
+include/excel_writer/ieee_754-generic_double_precision.adb
+include/excel_writer/ieee_754-generic_double_precision.ads
+include/excel_writer/ieee_754-long_floats.ads
+include/excel_writer/ieee_754.ads
+lib/excel_writer/csv.ali
+lib/excel_writer/excel_out.ali
+lib/excel_writer/ieee_754-generic_double_precision.ali
+lib/excel_writer/ieee_754-long_floats.ali
+lib/excel_writer/ieee_754.ali
+lib/excel_writer/libexcelwriter.a
+lib/gnat/excel_writer.gpr
+%%DATADIR%%/Big.xls
+@dirrm %%DATADIR%%
+@dirrmtry lib/gnat
+@dirrm lib/excel_writer
+@dirrm include/excel_writer
