@@ -246,6 +246,7 @@
     SUBDIR += gdtclft
     SUBDIR += geeqie
     SUBDIR += gegl
+    SUBDIR += generic_image_decoder
     SUBDIR += geoapi
     SUBDIR += geomorph
     SUBDIR += geomview
