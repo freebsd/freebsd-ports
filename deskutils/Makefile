@@ -151,6 +151,7 @@
     SUBDIR += nautilus-locked-folder
     SUBDIR += nautilus-open-terminal
     SUBDIR += nautilus-sendto
+    SUBDIR += note
     SUBDIR += notecase
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
