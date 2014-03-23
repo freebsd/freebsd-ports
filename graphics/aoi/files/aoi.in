@@ -5,4 +5,4 @@
 export JAVA_VERSION="%%JAVA_VERSION%%"
 
 cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" \
--Djava.ext.dirs="%%DATADIR%%" -jar "%%DATADIR%%/ArtOfIllusion.jar" "${@}"
+-jar "%%DATADIR%%/ArtOfIllusion.jar" "${@}"
