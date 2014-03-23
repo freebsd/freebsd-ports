@@ -1,0 +1,12 @@
+[ edited version of author's www site ]
+
+This plugin losslessly decomposes a layer of an image into layers
+of wavelet scales. This means that you can edit the image on different
+detail scales (frequencies). The trivial recomposition of the image
+can be done by GIMP's layer modes so you can see the results of
+your modifications instantly. Among the applications are retouching,
+noise reduction, and enhancing global contrast.
+
+The plugin can be found under "Filters > Generic > Wavelet decompose"
+
+WWW: http://registry.gimp.org/node/11742
