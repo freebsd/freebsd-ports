@@ -10,9 +10,8 @@ You can override this in the Robocode compiler preferences menu:
     Robot -> Editor -> Compiler -> Options -> Preferences
 
 
-After deinstallation, some files may stay in %%DATADIR%%,
-you can delete them with
+Attention not all with Rumble games works, this is work in Progress.
 
-    /bin/rm -fr %%DATADIR%%
+Have fun!
 
 ==============================================================================
