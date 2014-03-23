@@ -249,16 +249,16 @@ do-package: ${TMPPLIST}
 	      if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
 	          ${LN} -f ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
 			      || ${CP} -af ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
+		      if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
+			      if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
+			    	  if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
+		    			  ${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
+	    				  exit 1; \
+    				  fi; \
+	    		  fi ; \
+	    		  ${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
+	    	  fi; \
 	      fi; \
-		  if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
-			  if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
-				  if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
-					  ${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
-					  exit 1; \
-				  fi; \
-			  fi ; \
-			  ${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
-		  fi; \
 	else \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
 		exit 1; \
