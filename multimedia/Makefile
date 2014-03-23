@@ -137,7 +137,6 @@
     SUBDIR += gtk-recordmydesktop
     SUBDIR += gtk-youtube-viewer
     SUBDIR += gxine
-    SUBDIR += gxmms
     SUBDIR += handbrake
     SUBDIR += hs-gstreamer
     SUBDIR += imagination
@@ -392,7 +391,6 @@
     SUBDIR += xmms
     SUBDIR += xmms-skins
     SUBDIR += xmms-skins-huge
-    SUBDIR += xmms-status-plugin
     SUBDIR += xmms-weasel
     SUBDIR += xporthdmv
     SUBDIR += xtheater
