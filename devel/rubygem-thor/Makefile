@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	thor
-PORTVERSION=	0.18.1
+PORTVERSION=	0.19.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A scripting framework that replaces rake, sake, and rubigen
+COMMENT=	Scripting framework that replaces rake, sake, and rubigen
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
