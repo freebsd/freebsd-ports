@@ -22,7 +22,6 @@ PKGNAMESUFFIX=	17
 
 WRKSRC=		${WRKDIR}/jdk${DL_JDK_VERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
-PKGINSTALL=	${WRKDIR}/pkg-install
 
 NO_BUILD=	yes
 USE_LINUX=	yes
@@ -90,9 +89,10 @@ do-install:
 .endfor
 
 post-install:
-	@${SED} -e "s:%%JRE_HOME%%:${APP_HOME}/jre:g; \
-		s:%%STAGEDIR%%:${STAGEDIR}:g" \
-	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${MKDIR} ${STAGEDIR}${APP_HOME}/jre/.systemPrefs
+	${TOUCH} ${STAGEDIR}${APP_HOME}/jre/.systemPrefs/.system.lock
+	${TOUCH} ${STAGEDIR}${APP_HOME}/jre/.systemPrefs/.systemRootModFile
+	${CHMOD} 644 ${STAGEDIR}${APP_HOME}/jre/.systemPrefs/.system.lock
+	${CHMOD} 644 ${STAGEDIR}${APP_HOME}/jre/.systemPrefs/.systemRootModFile
 
 .include <bsd.port.post.mk>
