@@ -100,6 +100,7 @@
     SUBDIR += cyrus-sasl2-gssapi
     SUBDIR += cyrus-sasl2-ldapdb
     SUBDIR += cyrus-sasl2-saslauthd
+    SUBDIR += d0_blind_id
     SUBDIR += dcetest
     SUBDIR += ddos_scan
     SUBDIR += denyhosts
