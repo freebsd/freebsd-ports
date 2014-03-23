@@ -1,0 +1,21 @@
+diff --git a/bsd-user/bsd-file.h b/bsd-user/bsd-file.h
+index fc279a8..5d8a347 100644
+--- a/bsd-user/bsd-file.h
++++ b/bsd-user/bsd-file.h
+@@ -996,9 +996,15 @@ static abi_long do_bsd_lseek(void *cpu_env, abi_long arg1, abi_long arg2,
+     }
+     if (res == -1) {
+         ret = get_errno(res);
++        set_second_rval(cpu_env, 0xFFFFFFFF);
+     } else {
+-        ret = res & 0xFFFFFFFF;
++#ifdef TARGET_WORDS_BIGENDIAN
++        ret = ((res >> 32) & 0xFFFFFFFF);
++        set_second_rval(cpu_env, res & 0xFFFFFFFF);
++#else
++        ret = res & 0xFFFFFFFF;                                                
+         set_second_rval(cpu_env, (res >> 32) & 0xFFFFFFFF);
++#endif
+     }
+ #else
+     ret = get_errno(lseek(arg1, arg2, arg3));

@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -67,6 +67,7 @@ PATCHFILES= \
 	0018-bsd-user-add-arm-mips-and-mips64-options-to-configur.patch
 PATCH_DIST_STRIP=	-p1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-freebsd-os-proc.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-05ee8495804599b52a88eb36b13ea9c06b3207cd
 .endif
 
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
