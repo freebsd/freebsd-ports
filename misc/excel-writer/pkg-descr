@@ -1,0 +1,9 @@
+Excel_Out is a package that can generate basically formatted Excel files.
+
+* Ideal for the automatic production of reports
+* Fast: on a HP Mini netbook (Intel Atom, 1.66 GHz), Excel Writer produced
+  50 sheets per second where each sheet had 10,000 data cells
+* Totally portable and no external library required
+* No interation with MS Office software
+
+WWW: http://excel-writer.sourceforge.net

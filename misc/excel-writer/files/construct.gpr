@@ -1,0 +1,14 @@
+project Construct is
+
+   for Languages    use ("ada");
+   for Source_Dirs  use ("src");
+   for Object_Dir   use "obj";
+   for Library_Name use "excelwriter";
+   for Library_Dir  use "lib";
+   for Library_Kind use "static";
+
+   package Builder is
+      for Default_Switches ("ada") use ("-gnatf", "-gnatws", "-O2");
+   end Builder;
+
+end Construct;
