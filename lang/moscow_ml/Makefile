@@ -3,7 +3,7 @@
 
 PORTNAME=	moscow_ml
 PORTVERSION=	2.01
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang
 MASTER_SITES=	http://www.itu.dk/~sestoft/mosml/
 DISTNAME=	mos201src
