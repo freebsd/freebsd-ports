@@ -3843,11 +3843,12 @@ delete-package-list: delete-package-links-list
 _INSTALL_PKG_ARGS=	-f
 .endif
 install-package:
-.if exists(${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX})
-	@${PKG_ADD} ${_INSTALL_PKG_ARGS} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
-.else
-	@${PKG_ADD} ${_INSTALL_PKG_ARGS} ${PKGFILE}
-.endif
+	@if [ -f "${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}" ]; then \
+	    _pkgfile="${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}"; \
+	else \
+	    _pkgfile="${PKGFILE}"; \
+	fi; \
+	${PKG_ADD} ${_INSTALL_PKG_ARGS} $${_pkgfile}
 .endif
 
 
