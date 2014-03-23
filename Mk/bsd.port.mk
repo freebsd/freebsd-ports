@@ -3763,10 +3763,11 @@ do-package: ${TMPPLIST}
 	if [ -f ${PKGMESSAGE} ]; then \
 		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -D ${PKGMESSAGE}"; \
 	fi; \
-	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${WRKDIR}/${PKGNAME}${PKG_SUFX}; then \
+	${MKDIR} ${WRKDIR}/pkg; \
+	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}; then \
 		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
-			${LN} -f ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null || \
-			    ${CP} -af ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
+			${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null || \
+			    ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
 			cd ${.CURDIR} && eval ${MAKE} package-links; \
 		fi; \
 	else \
@@ -3816,7 +3817,7 @@ delete-package: delete-package-links
 	@${RM} -f ${PKGFILE}
 .	else
 # When staging, the package may only be in the workdir if not root
-	@${RM} -f ${PKGFILE} ${WRKDIR}/${PKGNAME}${PKG_SUFX} 2>/dev/null || :
+	@${RM} -f ${PKGFILE} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} 2>/dev/null || :
 .	endif
 .endif
 
@@ -3842,8 +3843,8 @@ delete-package-list: delete-package-links-list
 _INSTALL_PKG_ARGS=	-f
 .endif
 install-package:
-.if exists(${WRKDIR}/${PKGNAME}${PKG_SUFX})
-	@${PKG_ADD} ${_INSTALL_PKG_ARGS} ${WRKDIR}/${PKGNAME}${PKG_SUFX}
+.if exists(${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX})
+	@${PKG_ADD} ${_INSTALL_PKG_ARGS} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
 .else
 	@${PKG_ADD} ${_INSTALL_PKG_ARGS} ${PKGFILE}
 .endif

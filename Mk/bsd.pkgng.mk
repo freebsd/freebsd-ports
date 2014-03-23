@@ -245,10 +245,11 @@ do-package: ${TMPPLIST}
 	@for cat in ${CATEGORIES}; do \
 		${RM} -f ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
 	done
-	@if ${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -o ${WRKDIR} ${PKGNAME}; then \
+	@${MKDIR} ${WRKDIR}/pkg
+	@if ${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 	      if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
-	          ${LN} -f ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
-			      || ${CP} -af ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
+	          ${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
+			      || ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
 		      if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
 			      if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
 			    	  if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
