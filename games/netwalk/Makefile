@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	netwalk
@@ -28,17 +28,17 @@ PORTDOCS=	README
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 96x96 128x128
 
-DESKTOP_ENTRIES="NetWalk" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;LogicGame;" "false"
+DESKTOP_ENTRIES="NetWalk" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;LogicGame;" ""
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} \
-	-e 's|CC = gcc|CC = ${CC}|' \
-	-e 's|CFLAGS=-Wall -O2 -fomit-frame-pointer|CFLAGS+= -fomit-frame-pointer|' \
-	-e 's|sdl-config|$(SDL_CONFIG)|' \
-	-e 's|PREFIX = /usr|PREFIX = ${PREFIX}|' \
+	@${REINPLACE_CMD} -e \
+	's|CC = gcc|CC = ${CC}|; \
+	 s|CFLAGS=-Wall -O2 -fomit-frame-pointer|CFLAGS+= -fomit-frame-pointer|; \
+	 s|sdl-config|$(SDL_CONFIG)|; \
+	 s|PREFIX = /usr|PREFIX = ${PREFIX}|' \
 		${WRKSRC}/Makefile
 
 post-install:
