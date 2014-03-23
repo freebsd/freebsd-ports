@@ -84,6 +84,10 @@ lib/libgunicode.la
 lib/libgunicode.so
 lib/libgunicode.so.3
 libdata/pkgconfig/fontforge.pc
+man/man1/fontforge.1.gz
+man/man1/fontimage.1.gz
+man/man1/fontlint.1.gz
+man/man1/sfddiff.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AA-Comparison.html
 %%PORTDOCS%%%%DOCSDIR%%/AddLookup-Liga.png
 %%PORTDOCS%%%%DOCSDIR%%/AmbrosiaFV-bm.png
@@ -1083,12 +1087,12 @@ libdata/pkgconfig/fontforge.pc
 %%DATADIR%%/pixmaps/viewsmallersize.png
 %%DATADIR%%/pixmaps/viewzoomin.png
 %%DATADIR%%/pixmaps/viewzoomout.png
-%%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.a
-%%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.la
-%%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.lai
-%%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.o
-%%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.so
-%%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.so.0
+%%PLUGINS%%%%DATADIR%%/plugins/gb12345.a
+%%PLUGINS%%%%DATADIR%%/plugins/gb12345.la
+%%PLUGINS%%%%DATADIR%%/plugins/gb12345.lai
+%%PLUGINS%%%%DATADIR%%/plugins/gb12345.o
+%%PLUGINS%%%%DATADIR%%/plugins/gb12345.so
+%%PLUGINS%%%%DATADIR%%/plugins/gb12345.so.0
 %%DATADIR%%/python/excepthook.py
 share/locale/ca/LC_MESSAGES/FontForge.mo
 share/locale/de/LC_MESSAGES/FontForge.mo
@@ -1106,7 +1110,7 @@ share/locale/vi/LC_MESSAGES/FontForge.mo
 share/locale/zh_CN/LC_MESSAGES/FontForge.mo
 share/locale/zh_TW/LC_MESSAGES/FontForge.mo
 @dirrm %%DATADIR%%/python
-%%NO_PLUGINS%%@dirrm %%DATADIR%%/plugins
+%%PLUGINS%%@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%

@@ -6,8 +6,8 @@
  	$(LIBTOOL) --mode=finish $(DESTDIR)$(libdir)
 -	mkdir -p $(DESTDIR)$(libdir)/pkgconfig
 -	$(INSTALL_DATA) fontforge.pc $(DESTDIR)$(libdir)/pkgconfig
-+	mkdir -p $(prefix)/libdata/pkgconfig
-+	$(INSTALL_DATA) fontforge.pc $(prefix)/libdata/pkgconfig
++	mkdir -p $(DESTDIR)$(prefix)/libdata/pkgconfig
++	$(INSTALL_DATA) fontforge.pc $(DESTDIR)$(prefix)/libdata/pkgconfig
 
  install_docs:
  	mkdir -p $(DESTDIR)$(docdir)
