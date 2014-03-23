@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/XMMS%20Weasel%20v${PORTVERSION}
 MAINTAINER=	narayannewton@gmail.com
 COMMENT=	A XMMS plugin to hide the player
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 

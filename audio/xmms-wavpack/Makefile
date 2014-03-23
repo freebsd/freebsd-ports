@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.wavpack.com/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS input plugin to play WavPack files
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack \
 		libxmms.so:${PORTSDIR}/multimedia/xmms
 

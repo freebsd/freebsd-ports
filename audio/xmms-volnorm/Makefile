@@ -13,6 +13,9 @@ COMMENT=	Volume Normalizer plugin for XMMS
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12

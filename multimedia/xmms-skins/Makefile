@@ -93,6 +93,9 @@ EXTRACT_ONLY=
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Skins for X Multimedia System (XMMS)
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 CONFLICTS_INSTALL=	xmms-skins-huge-*
 
 NO_BUILD=	yes

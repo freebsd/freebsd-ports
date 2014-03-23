@@ -16,6 +16,9 @@ COMMENT=	XMMS Plugin that provides LADSPA Plugins to XMMS
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 

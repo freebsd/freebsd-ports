@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.shikadi.net/utils/files/
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	XMMS input plugin to play midi files (via timidity)
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 

@@ -7,6 +7,9 @@ COMMENT=	XMMS plugin for playing Nintendo Game Boy(TM) audio
 
 MASTERDIR=	${.CURDIR}/../gbsplay
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		gbsplay:${PORTSDIR}/audio/gbsplay

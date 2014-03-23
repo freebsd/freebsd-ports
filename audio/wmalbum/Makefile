@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A dockapp to display album covers for xmms
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
 		libgdk_pixbuf_xlib.so:${PORTSDIR}/graphics/gdk-pixbuf
 
