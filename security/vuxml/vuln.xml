@@ -51,6 +51,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9fa1a0ac-b2e0-11e3-bb07-6cf0490a8c18">
+    <topic>Joomla! -- Core - Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla2</name>
+	<name>joomla3</name>
+	<range><ge>2.5.*</ge><le>2.5.18</le></range>
+	<range><ge>3.0.*</ge><le>3.2.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security/578-20140301-core-sql-injection.html">
+	  <h2>[20140301] - Core - SQL Injection</h2>
+	  <p>Inadequate escaping leads to SQL injection vulnerability.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/579-20140302-core-xss-vulnerability.html">
+	  <h2>[20140302] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate escaping leads to XSS vulnerability in com_contact.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/580-20140303-core-xss-vulnerability.html">
+	  <h2>[20140303] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate escaping leads to XSS vulnerability.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/581-20140304-core-unauthorised-logins.html">
+	  <h2>[20140304] - Core - Unauthorised Logins</h2>
+	  <p>Inadequate checking allowed unauthorised logins via GMail authentication.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://developer.joomla.org/security/578-20140301-core-sql-injection.html</url>
+      <url>http://developer.joomla.org/security/579-20140302-core-xss-vulnerability.html</url>
+      <url>http://developer.joomla.org/security/580-20140303-core-xss-vulnerability.html</url>
+      <url>http://developer.joomla.org/security/581-20140304-core-unauthorised-logins.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-01</discovery>
+      <entry>2014-03-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36f9ac43-b2ac-11e3-8752-080027ef73ec">
     <topic>mail/trojita -- may leak mail contents (not user credentials) over unencrypted connection</topic>
     <affects>
