@@ -27,12 +27,9 @@ GFF2PS_MAN=	MANUAL_GFF2PS_v0.96.ps
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DOCS_DISTFILES=	${GFF2PS_MAN}.gz:doc
 
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${GFF2PS_MAN}.gz:doc
-.endif
+.include <bsd.port.options.mk>
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
@@ -48,10 +45,10 @@ post-patch:
 		 s|/usr/local/bin/gawk|${LOCALBASE}/bin/gawk|' ${WRKSRC}/gff2ps
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/gff2ps ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/gff2ps ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${GFF2PS_MAN} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${GFF2PS_MAN} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
