@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multi_json
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
