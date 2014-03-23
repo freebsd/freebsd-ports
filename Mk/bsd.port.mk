@@ -3835,13 +3835,17 @@ delete-package-list: delete-package-links-list
 	@${ECHO_CMD} "[ -f ${PKGFILE} ] && (${ECHO_CMD} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
 .endif
 
-# Only used if !defined(NO_STAGE)
+# Used if !defined(NO_STAGE) during install, or manually to install package
+# from local repository.
 .if !target(install-package)
-install-package:
 .if defined(FORCE_PKG_REGISTER)
-	@${PKG_ADD} -f ${WRKDIR}/${PKGNAME}${PKG_SUFX}
+_INSTALL_PKG_ARGS=	-f
+.endif
+install-package:
+.if exists(${WRKDIR}/${PKGNAME}${PKG_SUFX})
+	@${PKG_ADD} ${_INSTALL_PKG_ARGS} ${WRKDIR}/${PKGNAME}${PKG_SUFX}
 .else
-	@${PKG_ADD} ${WRKDIR}/${PKGNAME}${PKG_SUFX}
+	@${PKG_ADD} ${_INSTALL_PKG_ARGS} ${PKGFILE}
 .endif
 .endif
 
