@@ -1,0 +1,13 @@
+XSV is a command-line tool for performing schema-validity
+assessment of XML documents in accord with the
+W3C XML Schema specification, second edition.
+
+XSV (XML Schema Validator) is an open source (GPLed) work-in-progress
+attempt at a conformant schema-aware processor, as defined by
+XML Schema Part 1: Structures, Second Edition of 28 October 2004.
+It has been developed at the Language Technology Group of the Human
+Communication Research Centre in the School of Informatics at the
+University of Edinburgh, with support for one of us (Thompson)
+from the World Wide Web Consortium.
+
+WWW: http://www.ltg.ed.ac.uk/~ht/xsv-status.html
