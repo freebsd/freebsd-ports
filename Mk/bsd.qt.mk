@@ -166,7 +166,8 @@ CONFIGURE_ARGS+=-verbose
 . endif
 
 . if ${QT_DIST} == "base" || ${_QT_VERSION:M4*}
-EXTRA_PATCHES?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-configure
+EXTRA_PATCHES?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-configure \
+		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests-unix-compile.test
 .  if ${_QT_VERSION:M5*}
 EXTRA_PATCHES+=	${.CURDIR:H:H}/devel/qt5-core/files/extrapatch-src__corelib__tools__qdatetime.cpp
 .  endif
