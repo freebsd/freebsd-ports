@@ -1,0 +1,37 @@
+bin/mini
+bin/to_bmp
+include/generic_image_decoder/gid-buffering.adb
+include/generic_image_decoder/gid-buffering.ads
+include/generic_image_decoder/gid-color_tables.adb
+include/generic_image_decoder/gid-color_tables.ads
+include/generic_image_decoder/gid-decoding_bmp.adb
+include/generic_image_decoder/gid-decoding_bmp.ads
+include/generic_image_decoder/gid-decoding_gif.adb
+include/generic_image_decoder/gid-decoding_gif.ads
+include/generic_image_decoder/gid-decoding_jpg.adb
+include/generic_image_decoder/gid-decoding_jpg.ads
+include/generic_image_decoder/gid-decoding_png-huffman.adb
+include/generic_image_decoder/gid-decoding_png-huffman.ads
+include/generic_image_decoder/gid-decoding_png.adb
+include/generic_image_decoder/gid-decoding_png.ads
+include/generic_image_decoder/gid-decoding_tga.adb
+include/generic_image_decoder/gid-decoding_tga.ads
+include/generic_image_decoder/gid-headers.adb
+include/generic_image_decoder/gid-headers.ads
+include/generic_image_decoder/gid.adb
+include/generic_image_decoder/gid.ads
+lib/generic_image_decoder/gid-buffering.ali
+lib/generic_image_decoder/gid-color_tables.ali
+lib/generic_image_decoder/gid-decoding_bmp.ali
+lib/generic_image_decoder/gid-decoding_gif.ali
+lib/generic_image_decoder/gid-decoding_jpg.ali
+lib/generic_image_decoder/gid-decoding_png-huffman.ali
+lib/generic_image_decoder/gid-decoding_png.ali
+lib/generic_image_decoder/gid-decoding_tga.ali
+lib/generic_image_decoder/gid-headers.ali
+lib/generic_image_decoder/gid.ali
+lib/generic_image_decoder/libgenimgdec.a
+lib/gnat/generic_image_decoder.gpr
+@dirrmtry lib/gnat
+@dirrm lib/generic_image_decoder
+@dirrm include/generic_image_decoder
