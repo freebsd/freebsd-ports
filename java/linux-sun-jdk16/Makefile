@@ -27,6 +27,7 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 NO_BUILD=	yes
+USES=	shebangfix
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 JDK_VERSION=	1.6.0
@@ -38,7 +39,6 @@ APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
 PACKED_JARS=	jre/lib/charsets jre/lib/deploy jre/lib/ext/localedata jre/lib/javaws jre/lib/jsse jre/lib/plugin jre/lib/rt lib/tools
 UNPACK_CMD=	${WRKSRC}/bin/unpack200
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -95,13 +95,13 @@ post-patch:
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 do-install:
-	${MKDIR} ${APP_HOME}
+	${MKDIR} ${STAGEDIR}${APP_HOME}
 	cd ${WRKSRC} && ${FIND} . -print \
-	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
+	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${STAGEDIR}${APP_HOME}
 
 post-install:
-	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JDK${PORTVERSION}"
-	${SED} -e "s:%%JRE_HOME%%:${APP_HOME}/jre:g" \
+	${SED} -e "s:%%JRE_HOME%%:${APP_HOME}/jre:g; \
+		s:%%STAGEDIR%%:${STAGEDIR}:g" \
 	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
