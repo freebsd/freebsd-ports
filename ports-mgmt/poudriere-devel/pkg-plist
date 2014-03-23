@@ -2,6 +2,8 @@ bin/poudriere
 etc/poudriere.conf.sample
 etc/poudriered.conf.sample
 etc/rc.d/poudriered
+%%ETCDIR%%/hooks/bulk.sh.sample
+%%ETCDIR%%/hooks/pkgbuild.sh.sample
 libexec/poudriere/cpdup
 libexec/poudriere/dirempty
 libexec/poudriere/dirwatch
@@ -69,3 +71,5 @@ man/man8/poudriere.8.gz
 @dirrm %%DATADIR%%/awk
 @dirrm %%DATADIR%%
 @dirrm libexec/poudriere
+@dirrmtry %%ETCDIR%%
+@dirrmtry %%ETCDIR%%/hooks
