@@ -5,15 +5,15 @@ PREFS_LOCATION=%%JRE_HOME%%
 
 # Set up system preferences during post install
 if [ "$2" = "POST-INSTALL" ]; then
-	if [ ! -d "${PREFS_LOCATION}/.systemPrefs" ] ; then
-		mkdir -m 755 "${PREFS_LOCATION}/.systemPrefs"
+	if [ ! -d "%%STAGEDIR%%${PREFS_LOCATION}/.systemPrefs" ] ; then
+		mkdir -m 755 "%%STAGEDIR%%${PREFS_LOCATION}/.systemPrefs"
 	fi
-	if [ ! -f "${PREFS_LOCATION}/.systemPrefs/.system.lock" ] ; then
-		touch "${PREFS_LOCATION}/.systemPrefs/.system.lock"
-		chmod 644 "${PREFS_LOCATION}/.systemPrefs/.system.lock"
+	if [ ! -f "%%STAGEDIR%%${PREFS_LOCATION}/.systemPrefs/.system.lock" ] ; then
+		touch "%%STAGEDIR%%${PREFS_LOCATION}/.systemPrefs/.system.lock"
+		chmod 644 "%%STAGEDIR%%${PREFS_LOCATION}/.systemPrefs/.system.lock"
 	fi
-	if [ ! -f "${PREFS_LOCATION}/.systemPrefs/.systemRootModFile" ] ; then
-		touch "${PREFS_LOCATION}/.systemPrefs/.systemRootModFile"
-		chmod 644 "${PREFS_LOCATION}/.systemPrefs/.systemRootModFile"
+	if [ ! -f "%%STAGEDIR%%${PREFS_LOCATION}/.systemPrefs/.systemRootModFile" ] ; then
+		touch "%%STAGEDIR%%${PREFS_LOCATION}/.systemPrefs/.systemRootModFile"
+		chmod 644 "%%STAGEDIR%%${PREFS_LOCATION}/.systemPrefs/.systemRootModFile"
 	fi
 fi
