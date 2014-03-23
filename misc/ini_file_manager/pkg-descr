@@ -1,0 +1,16 @@
+The Ini file manager consists of a package, Config, which can read or write
+informations from various configuration files known as "ini" files because
+they have often the ".ini" extension. They are text files which look like
+the following:
+
+  ; Comment line
+  [Section 1]
+  a_string = abcd     # a comment here...
+  a_number = +123.456 ; another comment
+  [Section 2]
+  a_string = efgh
+
+For more examples in this format, just search files with the .ini extension
+on a windows-based computer.
+
+WWW: http://sourceforge.net/projects/ini-files/

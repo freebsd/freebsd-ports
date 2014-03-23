@@ -1,0 +1,12 @@
+with "ini_file_manager";
+project Example is
+
+   for Exec_Dir use "/tmp";
+   for Object_Dir use "/tmp";
+   for Main use ("test_config.adb");
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-O2", "-gnat05");
+   end Compiler;
+
+end Example;
