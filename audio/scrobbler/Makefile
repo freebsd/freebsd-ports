@@ -12,6 +12,9 @@ DISTNAME=	xmms-scrobbler-${PORTVERSION}
 MAINTAINER?=	novel@FreeBSD.org
 COMMENT?=	XMMS/BMP plugin for Audioscrobbler.com
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	xmms-scrobbler-[0-9]*

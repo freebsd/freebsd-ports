@@ -10,6 +10,9 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 MAINTAINER=	bitbucket63-it@yahoo.com
 COMMENT=	A Network Audio System (NAS) output plugin for XMMS
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
 		libaudio.so:${PORTSDIR}/audio/nas
 

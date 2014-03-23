@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/dist/src/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS plugin to allow playing shorten-compressed audio
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
