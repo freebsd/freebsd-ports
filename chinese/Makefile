@@ -135,7 +135,6 @@
     SUBDIR += wordpress-zh_CN
     SUBDIR += wordpress-zh_TW
     SUBDIR += xemacs21
-    SUBDIR += xmms
     SUBDIR += xpdf
     SUBDIR += xsim
     SUBDIR += ydict

@@ -1,8 +1,0 @@
-Xmms_sndfile is an input plugin for XMMS, the X MultiMedia System
-sound file player.  XMMS already plays MP3 and some WAV files.
-Using xmms_sndfile extends the capabilities of XMMS to open and
-play any file which can be opened and read by libsndfile.  Like
-XMMS, xmms_sndfile and libsndfile are released under the terms of
-the GNU General Public License.
-
-WWW: http://www.mega-nerd.com/xmms_sndfile/

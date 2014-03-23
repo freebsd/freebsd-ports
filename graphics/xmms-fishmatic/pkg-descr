@@ -1,8 +1,0 @@
-Fishmatic is an OpenGL stereogram visualization plugin.  It generates
-a backdrop, and the bubbles react to the music.  The fish swim in
-three dimensions, with changing stereogram separation.
-
-There are two types of fish: an angel fish, and a lamprologus.
-
-This is not a static-dot stereogram.  The bubbles look like bubbles,
-the fish are texture mapped with nice fish images.

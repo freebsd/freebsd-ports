@@ -1,8 +1,0 @@
-This port is the ModPlug plugin for XMMS. ModPlug is
-arguably the best mod-like music rendering engine
-capable of playing 22 different module formats. This
-plugin can also handle zip, rar, gzip and bzip2
-compressed mods (provided unzip, gunzip, unrar are
-installed).
-
-WWW: http://modplug-xmms.sourceforge.net/

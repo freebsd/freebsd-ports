@@ -1,7 +1,0 @@
-xmms-status-plugin is a general plugin for xmms player. It provides
-docklet for GNOME1, docker for KDE2, and standardized Notification
-area icon for GNOME2 and KDE3. The visual appearance of icon
-changes depending on state of player. Both graphics and actions
-are configurable.
-
-WWW: http://www.hellion.org.uk/xmms-status-plugin/
