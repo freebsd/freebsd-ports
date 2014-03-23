@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	porttools
-PORTVERSION=	1.00.2014.03.16
+PORTVERSION=	1.00.2014.03.23
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	xmj@chaot.net
@@ -17,7 +17,7 @@ RUN_DEPENDS=	portlint:${PORTSDIR}/ports-mgmt/portlint \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xmj
-GH_COMMIT=	f9e566d
+GH_COMMIT=	a0ab406
 GH_TAGNAME=	${GH_COMMIT}
 
 # Make the version information of porttools itself
