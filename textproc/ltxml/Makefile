@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/XML
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-zlib=/usr --datadir=${PREFIX}/lib/ltxml12
+CONFIGURE_ARGS=	--with-zlib=/usr --datadir=${STAGEDIR}${PREFIX}/lib/ltxml12
 
 .include <bsd.port.pre.mk>
 
@@ -34,5 +34,7 @@ CFLAGS+=	-fPIC
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=.*$$|CFLAGS=\$$CFLAGS|g ; \
 		 s|CXXFLAGS=.*$$|CXXFLAGS=\$$CXXFLAGS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|@prefix@|${STAGEDIR}${PREFIX}|' \
+		${WRKSRC}/src/Makefile.sub.in
 
 .include <bsd.port.post.mk>
