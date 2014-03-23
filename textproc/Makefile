@@ -1534,6 +1534,7 @@
     SUBDIR += xslide.el
     SUBDIR += xslint
     SUBDIR += xstream
+    SUBDIR += xsv
     SUBDIR += xt
     SUBDIR += y2l
     SUBDIR += yali
