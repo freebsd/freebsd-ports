@@ -3,6 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	3.2.17
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -27,11 +28,11 @@ RUN_DEPENDS=	rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actio
 		rubygem-rack-test>=0.6.1:${PORTSDIR}/www/rubygem-rack-test \
 		rubygem-rake>=10.1.1:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-sass-rails>=3.2.6:${PORTSDIR}/textproc/rubygem-sass-rails \
-		rubygem-sqlite3>=1.3.7:${PORTSDIR}/databases/rubygem-sqlite3 \
+		rubygem-sqlite3>=1.3.9:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-treetop>=1.4.15:${PORTSDIR}/devel/rubygem-treetop \
 		rubygem-turn>=0.8.3:${PORTSDIR}/devel/rubygem-turn \
-		rubygem-tzinfo>=0.3.35:${PORTSDIR}/devel/rubygem-tzinfo \
-		rubygem-uglifier>=1.3.0:${PORTSDIR}/www/rubygem-uglifier \
+		rubygem-tzinfo>=0.3.39:${PORTSDIR}/devel/rubygem-tzinfo \
+		rubygem-uglifier>=2.5.0:${PORTSDIR}/www/rubygem-uglifier \
 		node:${PORTSDIR}/www/node
 
 # XXX: rails3 gem no longer has a lib/ dir
