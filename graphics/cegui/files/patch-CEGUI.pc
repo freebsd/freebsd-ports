@@ -1,0 +1,9 @@
+--- cegui/CEGUI.pc.in.orig	2014-03-11 21:17:35.000000000 +0100
++++ cegui/CEGUI.pc.in	2014-03-11 21:17:44.000000000 +0100
+@@ -8,5 +8,5 @@
+ Name: CEGUI-@CEGUI_VERSION_MAJOR@
+ Description: The free GUI library for games and multi-media development.
+ Version: @CEGUI_VERSION@
+-Libs: -L${libdir} -l@CEGUI_BASE_LIBNAME@
++Libs: -L${libdir} -l@CEGUI_BASE_LIBNAME@ -lexecinfo
+ Cflags: -I${includedir} -I${includedir}/@CMAKE_PROJECT_NAME@

@@ -1,26 +1,26 @@
---- CMakeLists.txt.orig	2012-05-25 21:48:44.000000000 +0200
-+++ CMakeLists.txt	2012-06-23 16:33:51.000000000 +0200
-@@ -98,9 +98,9 @@
-     add_definitions(-msse)
+--- CMakeLists.txt.orig	2013-12-01 18:28:12.000000000 +0100
++++ CMakeLists.txt	2014-03-11 21:56:26.000000000 +0100
+@@ -102,9 +102,9 @@
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse")
    endif ()
    # This is a set of sensible warnings that provide meaningful output
--  set(OGRE_WARNING_FLAGS "-Wno-deprecated -Wall -Wctor-dtor-privacy -Winit-self -Wno-overloaded-virtual -Wcast-qual -Wwrite-strings -Wextra -Wno-unused-parameter -pedantic -Wshadow -Wno-missing-field-initializers -Wno-long-long")
-+  set(OGRE_WARNING_FLAGS "-Wno-deprecated -Wall -Wctor-dtor-privacy -Winit-self -Wno-overloaded-virtual -Wcast-qual -Wwrite-strings -Wno-unused-parameter -Wshadow -Wno-missing-field-initializers -Wno-long-long")
+-  set(OGRE_WARNING_FLAGS "-Wall -Winit-self -Wno-overloaded-virtual -Wcast-qual -Wwrite-strings -Wextra -Wno-unused-parameter -Wshadow -Wno-missing-field-initializers -Wno-long-long")
++  set(OGRE_WARNING_FLAGS "-Wall -Winit-self -Wno-overloaded-virtual -Wcast-qual -Wwrite-strings -Wno-unused-parameter -Wshadow -Wno-missing-field-initializers -Wno-long-long")
    if (NOT APPLE)
 -      set(OGRE_WARNING_FLAGS "${OGRE_WARNING_FLAGS} -Wno-unused-but-set-parameter")
 +      set(OGRE_WARNING_FLAGS "${OGRE_WARNING_FLAGS}")
    endif ()
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OGRE_WARNING_FLAGS}")
  endif ()
-@@ -323,6 +323,7 @@
+@@ -435,6 +435,7 @@
  option(OGRE_PROFILING "Enable internal profiling support." FALSE)
  cmake_dependent_option(OGRE_CONFIG_STATIC_LINK_CRT "Statically link the MS CRT dlls (msvcrt)" FALSE "MSVC" FALSE)
  set(OGRE_LIB_DIRECTORY "lib${LIB_SUFFIX}" CACHE STRING "Install path for libraries, e.g. 'lib64' on some 64-bit Linux distros.")
 +set(OGRE_LIBDATA_DIRECTORY "libdata" CACHE STRING "Install path for data files.")
- 
- # Unity build options
- # A Unity build includes all sources files in just a few actual compilation units
-@@ -359,6 +360,7 @@
+ if (WIN32)
+ 	option(OGRE_INSTALL_VSPROPS "Install Visual Studio Property Page." FALSE)
+ 	if (OGRE_INSTALL_VSPROPS)
+@@ -477,6 +478,7 @@
    OGRE_PROFILING
    OGRE_CONFIG_STATIC_LINK_CRT
    OGRE_LIB_DIRECTORY
