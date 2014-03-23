@@ -26,6 +26,7 @@
     SUBDIR += compizconfig-python
     SUBDIR += compton
     SUBDIR += ctwm
+    SUBDIR += cwm
     SUBDIR += devilspie
     SUBDIR += dwm
     SUBDIR += e16
