@@ -22,6 +22,7 @@
 %%WWWDIR%%/administrator/components/com_admin/models/sysinfo.php
 %%WWWDIR%%/administrator/components/com_admin/postinstall/eaccelerator.php
 %%WWWDIR%%/administrator/components/com_admin/postinstall/index.html
+%%WWWDIR%%/administrator/components/com_admin/postinstall/phpversion.php
 %%WWWDIR%%/administrator/components/com_admin/script.php
 %%WWWDIR%%/administrator/components/com_admin/sql/index.html
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/index.html
@@ -55,6 +56,14 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.1.4.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.1.5.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.2.0.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.2.1.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.2.2-2013-12-22.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.2.2-2013-12-28.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.2.2-2014-01-08.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.2.2-2014-01-15.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.2.2-2014-01-18.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.2.2-2014-01-23.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.2.3-2014-02-20.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/index.html
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.0.0.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.0.1.sql
@@ -67,6 +76,14 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.1.4.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.1.5.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.2.0.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.2.1.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.2.2-2013-12-22.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.2.2-2013-12-28.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.2.2-2014-01-08.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.2.2-2014-01-15.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.2.2-2014-01-18.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.2.2-2014-01-23.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.2.3-2014-02-20.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/index.html
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.2-2012-03-05.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.3-2012-03-13.sql
@@ -86,6 +103,14 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.1.4.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.1.5.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.2.0.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.2.1.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.2.2-2013-12-22.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.2.2-2013-12-28.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.2.2-2014-01-08.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.2.2-2014-01-15.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.2.2-2014-01-18.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.2.2-2014-01-23.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.2.3-2014-02-20.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/index.html
 %%WWWDIR%%/administrator/components/com_admin/views/help/index.html
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/default.php
@@ -1234,6 +1259,7 @@
 %%WWWDIR%%/administrator/components/com_weblinks/weblinks.xml
 %%WWWDIR%%/administrator/components/index.html
 %%WWWDIR%%/administrator/help/en-GB/index.html
+%%WWWDIR%%/administrator/help/en-GB/toc.json
 %%WWWDIR%%/administrator/help/helpsites.xml
 %%WWWDIR%%/administrator/help/index.html
 %%WWWDIR%%/administrator/includes/defines.php
@@ -1346,6 +1372,8 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_authentication_ldap.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_captcha_recaptcha.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_captcha_recaptcha.sys.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.plg_content_contact.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.plg_content_contact.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_content_emailcloak.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_content_emailcloak.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_content_finder.ini
@@ -1452,6 +1480,7 @@
 %%WWWDIR%%/administrator/manifests/libraries/idna_convert.xml
 %%WWWDIR%%/administrator/manifests/libraries/index.html
 %%WWWDIR%%/administrator/manifests/libraries/joomla.xml
+%%WWWDIR%%/administrator/manifests/libraries/phpass.xml
 %%WWWDIR%%/administrator/manifests/libraries/phpmailer.xml
 %%WWWDIR%%/administrator/manifests/libraries/phputf8.xml
 %%WWWDIR%%/administrator/manifests/libraries/simplepie.xml
@@ -2264,6 +2293,7 @@
 %%WWWDIR%%/build/bootstrap/js/bootstrap-typeahead.js
 %%WWWDIR%%/build/build.php
 %%WWWDIR%%/build/generatecss.php
+%%WWWDIR%%/build/helpTOC.php
 %%WWWDIR%%/build/index.html
 %%WWWDIR%%/build/indexmaker.php
 %%WWWDIR%%/build/less/bootstrap-extended.less
@@ -2441,6 +2471,7 @@
 %%WWWDIR%%/components/com_content/models/featured.php
 %%WWWDIR%%/components/com_content/models/form.php
 %%WWWDIR%%/components/com_content/models/forms/article.xml
+%%WWWDIR%%/components/com_content/models/forms/filter_articles.xml
 %%WWWDIR%%/components/com_content/models/forms/index.html
 %%WWWDIR%%/components/com_content/models/index.html
 %%WWWDIR%%/components/com_content/router.php
@@ -2459,6 +2490,7 @@
 %%WWWDIR%%/components/com_content/views/article/tmpl/index.html
 %%WWWDIR%%/components/com_content/views/article/view.html.php
 %%WWWDIR%%/components/com_content/views/categories/index.html
+%%WWWDIR%%/components/com_content/views/categories/metadata.xml
 %%WWWDIR%%/components/com_content/views/categories/tmpl/default.php
 %%WWWDIR%%/components/com_content/views/categories/tmpl/default.xml
 %%WWWDIR%%/components/com_content/views/categories/tmpl/default_items.php
@@ -2854,12 +2886,18 @@
 %%WWWDIR%%/installation/language/bg-BG/bg-BG.ini
 %%WWWDIR%%/installation/language/bg-BG/bg-BG.xml
 %%WWWDIR%%/installation/language/bg-BG/index.html
+%%WWWDIR%%/installation/language/bs-BA/bs-BA.ini
+%%WWWDIR%%/installation/language/bs-BA/bs-BA.xml
+%%WWWDIR%%/installation/language/bs-BA/index.html
 %%WWWDIR%%/installation/language/ca-ES/ca-ES.ini
 %%WWWDIR%%/installation/language/ca-ES/ca-ES.xml
 %%WWWDIR%%/installation/language/ca-ES/index.html
 %%WWWDIR%%/installation/language/ckb-IQ/ckb-IQ.ini
 %%WWWDIR%%/installation/language/ckb-IQ/ckb-IQ.xml
 %%WWWDIR%%/installation/language/ckb-IQ/index.html
+%%WWWDIR%%/installation/language/cs-CZ/cs-CZ.ini
+%%WWWDIR%%/installation/language/cs-CZ/cs-CZ.xml
+%%WWWDIR%%/installation/language/cs-CZ/index.html
 %%WWWDIR%%/installation/language/da-DK/da-DK.ini
 %%WWWDIR%%/installation/language/da-DK/da-DK.xml
 %%WWWDIR%%/installation/language/da-DK/index.html
@@ -2933,6 +2971,9 @@
 %%WWWDIR%%/installation/language/pl-PL/index.html
 %%WWWDIR%%/installation/language/pl-PL/pl-PL.ini
 %%WWWDIR%%/installation/language/pl-PL/pl-PL.xml
+%%WWWDIR%%/installation/language/ro-RO/index.html
+%%WWWDIR%%/installation/language/ro-RO/ro-RO.ini
+%%WWWDIR%%/installation/language/ro-RO/ro-RO.xml
 %%WWWDIR%%/installation/language/ru-RU/index.html
 %%WWWDIR%%/installation/language/ru-RU/ru-RU.ini
 %%WWWDIR%%/installation/language/ru-RU/ru-RU.xml
@@ -3111,6 +3152,7 @@
 %%WWWDIR%%/language/en-GB/en-GB.lib_idna_convert.sys.ini
 %%WWWDIR%%/language/en-GB/en-GB.lib_joomla.ini
 %%WWWDIR%%/language/en-GB/en-GB.lib_joomla.sys.ini
+%%WWWDIR%%/language/en-GB/en-GB.lib_phpass.sys.ini
 %%WWWDIR%%/language/en-GB/en-GB.lib_phpmailer.sys.ini
 %%WWWDIR%%/language/en-GB/en-GB.lib_phputf8.sys.ini
 %%WWWDIR%%/language/en-GB/en-GB.lib_simplepie.sys.ini
@@ -3216,17 +3258,25 @@
 %%WWWDIR%%/layouts/joomla/links/groupsopen.php
 %%WWWDIR%%/layouts/joomla/links/index.html
 %%WWWDIR%%/layouts/joomla/links/link.php
+%%WWWDIR%%/layouts/joomla/pagination/index.html
+%%WWWDIR%%/layouts/joomla/pagination/link.php
+%%WWWDIR%%/layouts/joomla/pagination/links.php
 %%WWWDIR%%/layouts/joomla/quickicons/icon.php
 %%WWWDIR%%/layouts/joomla/quickicons/index.html
 %%WWWDIR%%/layouts/joomla/searchtools/default.php
 %%WWWDIR%%/layouts/joomla/searchtools/default/bar.php
 %%WWWDIR%%/layouts/joomla/searchtools/default/filters.php
+%%WWWDIR%%/layouts/joomla/searchtools/default/index.html
 %%WWWDIR%%/layouts/joomla/searchtools/default/list.php
+%%WWWDIR%%/layouts/joomla/searchtools/grid/index.html
 %%WWWDIR%%/layouts/joomla/searchtools/grid/sort.php
+%%WWWDIR%%/layouts/joomla/searchtools/index.html
 %%WWWDIR%%/layouts/joomla/sidebars/index.html
 %%WWWDIR%%/layouts/joomla/sidebars/submenu.php
 %%WWWDIR%%/layouts/joomla/tinymce/buttons.php
 %%WWWDIR%%/layouts/joomla/tinymce/buttons/button.php
+%%WWWDIR%%/layouts/joomla/tinymce/buttons/index.html
+%%WWWDIR%%/layouts/joomla/tinymce/index.html
 %%WWWDIR%%/layouts/joomla/tinymce/textarea.php
 %%WWWDIR%%/layouts/joomla/tinymce/togglebutton.php
 %%WWWDIR%%/layouts/joomla/toolbar/base.php
@@ -4133,6 +4183,8 @@
 %%WWWDIR%%/libraries/legacy/web/index.html
 %%WWWDIR%%/libraries/legacy/web/web.php
 %%WWWDIR%%/libraries/loader.php
+%%WWWDIR%%/libraries/phpass/PasswordHash.php
+%%WWWDIR%%/libraries/phpass/index.html
 %%WWWDIR%%/libraries/phpmailer/LICENSE
 %%WWWDIR%%/libraries/phpmailer/index.html
 %%WWWDIR%%/libraries/phpmailer/language/index.html
@@ -4243,6 +4295,7 @@
 %%WWWDIR%%/media/editors/index.html
 %%WWWDIR%%/media/editors/tinymce/index.html
 %%WWWDIR%%/media/editors/tinymce/langs/ar.js
+%%WWWDIR%%/media/editors/tinymce/langs/be.js
 %%WWWDIR%%/media/editors/tinymce/langs/bg.js
 %%WWWDIR%%/media/editors/tinymce/langs/bs.js
 %%WWWDIR%%/media/editors/tinymce/langs/ca.js
@@ -4287,6 +4340,7 @@
 %%WWWDIR%%/media/editors/tinymce/langs/sr.js
 %%WWWDIR%%/media/editors/tinymce/langs/sv.js
 %%WWWDIR%%/media/editors/tinymce/langs/sw.js
+%%WWWDIR%%/media/editors/tinymce/langs/sy.js
 %%WWWDIR%%/media/editors/tinymce/langs/ta.js
 %%WWWDIR%%/media/editors/tinymce/langs/th.js
 %%WWWDIR%%/media/editors/tinymce/langs/tr.js
@@ -4624,6 +4678,7 @@
 %%WWWDIR%%/media/mod_languages/images/es_es.gif
 %%WWWDIR%%/media/mod_languages/images/et.gif
 %%WWWDIR%%/media/mod_languages/images/et_ee.gif
+%%WWWDIR%%/media/mod_languages/images/eu_es.gif
 %%WWWDIR%%/media/mod_languages/images/fa.gif
 %%WWWDIR%%/media/mod_languages/images/fa_ir.gif
 %%WWWDIR%%/media/mod_languages/images/fi.gif
@@ -4696,6 +4751,7 @@
 %%WWWDIR%%/media/mod_languages/images/sr.gif
 %%WWWDIR%%/media/mod_languages/images/sr_rs.gif
 %%WWWDIR%%/media/mod_languages/images/sr_yu.gif
+%%WWWDIR%%/media/mod_languages/images/srp_me.gif
 %%WWWDIR%%/media/mod_languages/images/sv.gif
 %%WWWDIR%%/media/mod_languages/images/sv_se.gif
 %%WWWDIR%%/media/mod_languages/images/sw.gif
@@ -4834,6 +4890,8 @@
 %%WWWDIR%%/media/system/js/passwordstrength.js
 %%WWWDIR%%/media/system/js/progressbar-uncompressed.js
 %%WWWDIR%%/media/system/js/progressbar.js
+%%WWWDIR%%/media/system/js/punycode-uncompressed.js
+%%WWWDIR%%/media/system/js/punycode.js
 %%WWWDIR%%/media/system/js/repeatable-uncompressed.js
 %%WWWDIR%%/media/system/js/repeatable.js
 %%WWWDIR%%/media/system/js/switcher-uncompressed.js
@@ -5026,6 +5084,9 @@
 %%WWWDIR%%/plugins/captcha/recaptcha/index.html
 %%WWWDIR%%/plugins/captcha/recaptcha/recaptcha.php
 %%WWWDIR%%/plugins/captcha/recaptcha/recaptcha.xml
+%%WWWDIR%%/plugins/content/contact/contact.php
+%%WWWDIR%%/plugins/content/contact/contact.xml
+%%WWWDIR%%/plugins/content/contact/index.html
 %%WWWDIR%%/plugins/content/emailcloak/emailcloak.php
 %%WWWDIR%%/plugins/content/emailcloak/emailcloak.xml
 %%WWWDIR%%/plugins/content/emailcloak/index.html
@@ -5178,8 +5239,6 @@
 %%WWWDIR%%/plugins/user/joomla/index.html
 %%WWWDIR%%/plugins/user/joomla/joomla.php
 %%WWWDIR%%/plugins/user/joomla/joomla.xml
-%%WWWDIR%%/plugins/user/joomla/postinstall/actions.php
-%%WWWDIR%%/plugins/user/joomla/postinstall/index.html
 %%WWWDIR%%/plugins/user/profile/fields/index.html
 %%WWWDIR%%/plugins/user/profile/fields/tos.php
 %%WWWDIR%%/plugins/user/profile/index.html
@@ -5829,6 +5888,7 @@
 %%WWWDIR%%/tests/unit/suites/libraries/cms/toolbar/button/JToolbarButtonSliderTest.php
 %%WWWDIR%%/tests/unit/suites/libraries/cms/toolbar/button/JToolbarButtonStandardTest.php
 %%WWWDIR%%/tests/unit/suites/libraries/cms/ucm/JUcmBaseTest.php
+%%WWWDIR%%/tests/unit/suites/libraries/cms/ucm/JUcmContentTest.php
 %%WWWDIR%%/tests/unit/suites/libraries/cms/ucm/JUcmTypeTest.php
 %%WWWDIR%%/tests/unit/suites/libraries/cms/version/JVersionTest.php
 %%WWWDIR%%/tests/unit/suites/libraries/joomla/JFactoryTest.php
@@ -6247,6 +6307,7 @@
 %%WWWDIR%%/tests/unit/suites/libraries/joomla/registry/stubs/jregistry.json
 %%WWWDIR%%/tests/unit/suites/libraries/joomla/string/JStringInflectorTest.php
 %%WWWDIR%%/tests/unit/suites/libraries/joomla/string/JStringNormaliseTest.php
+%%WWWDIR%%/tests/unit/suites/libraries/joomla/string/JStringPunycodeTest.php
 %%WWWDIR%%/tests/unit/suites/libraries/joomla/string/JStringTest.php
 %%WWWDIR%%/tests/unit/suites/libraries/joomla/string/TestHelpers/JString-helper-dataset.php
 %%WWWDIR%%/tests/unit/suites/libraries/joomla/table/JTableAssetTest.php
@@ -6308,6 +6369,8 @@
 %%WWWDIR%%/tests/unit/suites/libraries/joomla/view/stubs/MediaViewMediaListItemsHtml.php
 %%WWWDIR%%/tests/unit/suites/libraries/joomla/view/stubs/tbase.php
 %%WWWDIR%%/tests/unit/suites/libraries/joomla/view/stubs/thtml.php
+%%WWWDIR%%/tests/unit/suites/libraries/legacy/categories/JCategoriesTest.php
+%%WWWDIR%%/tests/unit/suites/libraries/legacy/categories/JCategoryNodeTest.php
 %%WWWDIR%%/tests/unit/suites/libraries/legacy/error/JErrorInspector.php
 %%WWWDIR%%/tests/unit/suites/libraries/legacy/error/JErrorTest.php
 %%WWWDIR%%/tests/unit/suites/libraries/legacy/response/JResponseTest.php
@@ -6331,6 +6394,7 @@
 @dirrmtry %%WWWDIR%%/tests/unit/suites/libraries/legacy/table
 @dirrmtry %%WWWDIR%%/tests/unit/suites/libraries/legacy/response
 @dirrmtry %%WWWDIR%%/tests/unit/suites/libraries/legacy/error
+@dirrmtry %%WWWDIR%%/tests/unit/suites/libraries/legacy/categories
 @dirrmtry %%WWWDIR%%/tests/unit/suites/libraries/legacy
 @dirrmtry %%WWWDIR%%/tests/unit/suites/libraries/joomla/view/stubs
 @dirrmtry %%WWWDIR%%/tests/unit/suites/libraries/joomla/view/mocks
@@ -6626,7 +6690,6 @@
 @dirrmtry %%WWWDIR%%/plugins/user/profile/profiles
 @dirrmtry %%WWWDIR%%/plugins/user/profile/fields
 @dirrmtry %%WWWDIR%%/plugins/user/profile
-@dirrmtry %%WWWDIR%%/plugins/user/joomla/postinstall
 @dirrmtry %%WWWDIR%%/plugins/user/joomla
 @dirrmtry %%WWWDIR%%/plugins/user/contactcreator
 @dirrmtry %%WWWDIR%%/plugins/user
@@ -6685,6 +6748,7 @@
 @dirrmtry %%WWWDIR%%/plugins/content/joomla
 @dirrmtry %%WWWDIR%%/plugins/content/finder
 @dirrmtry %%WWWDIR%%/plugins/content/emailcloak
+@dirrmtry %%WWWDIR%%/plugins/content/contact
 @dirrmtry %%WWWDIR%%/plugins/content
 @dirrmtry %%WWWDIR%%/plugins/captcha/recaptcha
 @dirrmtry %%WWWDIR%%/plugins/captcha
@@ -6857,6 +6921,7 @@
 @dirrmtry %%WWWDIR%%/libraries/phputf8
 @dirrmtry %%WWWDIR%%/libraries/phpmailer/language
 @dirrmtry %%WWWDIR%%/libraries/phpmailer
+@dirrmtry %%WWWDIR%%/libraries/phpass
 @dirrmtry %%WWWDIR%%/libraries/legacy/web
 @dirrmtry %%WWWDIR%%/libraries/legacy/view
 @dirrmtry %%WWWDIR%%/libraries/legacy/utilities
@@ -7063,6 +7128,7 @@
 @dirrmtry %%WWWDIR%%/layouts/joomla/searchtools/default
 @dirrmtry %%WWWDIR%%/layouts/joomla/searchtools
 @dirrmtry %%WWWDIR%%/layouts/joomla/quickicons
+@dirrmtry %%WWWDIR%%/layouts/joomla/pagination
 @dirrmtry %%WWWDIR%%/layouts/joomla/links
 @dirrmtry %%WWWDIR%%/layouts/joomla/edit
 @dirrmtry %%WWWDIR%%/layouts/joomla/content/info_block
@@ -7122,6 +7188,7 @@
 @dirrmtry %%WWWDIR%%/installation/language/sr-RS
 @dirrmtry %%WWWDIR%%/installation/language/sk-SK
 @dirrmtry %%WWWDIR%%/installation/language/ru-RU
+@dirrmtry %%WWWDIR%%/installation/language/ro-RO
 @dirrmtry %%WWWDIR%%/installation/language/pl-PL
 @dirrmtry %%WWWDIR%%/installation/language/nl-NL
 @dirrmtry %%WWWDIR%%/installation/language/nb-NO
@@ -7146,8 +7213,10 @@
 @dirrmtry %%WWWDIR%%/installation/language/el-GR
 @dirrmtry %%WWWDIR%%/installation/language/de-DE
 @dirrmtry %%WWWDIR%%/installation/language/da-DK
+@dirrmtry %%WWWDIR%%/installation/language/cs-CZ
 @dirrmtry %%WWWDIR%%/installation/language/ckb-IQ
 @dirrmtry %%WWWDIR%%/installation/language/ca-ES
+@dirrmtry %%WWWDIR%%/installation/language/bs-BA
 @dirrmtry %%WWWDIR%%/installation/language/bg-BG
 @dirrmtry %%WWWDIR%%/installation/language/be-BY
 @dirrmtry %%WWWDIR%%/installation/language/ar-AA
