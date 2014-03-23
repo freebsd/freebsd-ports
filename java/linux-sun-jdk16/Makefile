@@ -24,7 +24,6 @@ PKGNAMESUFFIX=	16
 
 WRKSRC=		${WRKDIR}/jdk${DL_JDK_VERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
-PKGINSTALL=	${WRKDIR}/pkg-install
 
 NO_BUILD=	yes
 USES=	shebangfix
@@ -48,13 +47,13 @@ IGNORE?=You must manually fetch the J2SE SDK self-extracting file for the Linux 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEMO}
-DEMO_UPDATE_VERSION=  ${JDK_REVISION}
+DEMO_UPDATE_VERSION=	${JDK_REVISION}
 .if ${DEMO_UPDATE_VERSION} != ${JDK_REVISION}
 DEMO_DISTNAME= jdk-6u${DEMO_UPDATE_VERSION}-linux-i586-demos
-DEMO_WRKSRC=   ${WRKDIR}/jdk${JDK_VERSION}_${DEMO_UPDATE_VERSION}
+DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_VERSION}_${DEMO_UPDATE_VERSION}
 .else
-DEMO_DISTNAME=        ${DISTNAME}-demos
-DEMO_WRKSRC=  ${WRKSRC}
+DEMO_DISTNAME=	${DISTNAME}-demos
+DEMO_WRKSRC=	${WRKSRC}
 .endif
 .if !exists(${DISTDIR}/${DEMO_DISTNAME}.tar.gz)
 IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DEMO_DISTNAME}.tar.gz) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
@@ -100,9 +99,10 @@ do-install:
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${STAGEDIR}${APP_HOME}
 
 post-install:
-	${SED} -e "s:%%JRE_HOME%%:${APP_HOME}/jre:g; \
-		s:%%STAGEDIR%%:${STAGEDIR}:g" \
-	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	 ${MKDIR} ${STAGEDIR}${APP_HOME}/jre/.systemPrefs
+	 ${TOUCH} ${STAGEDIR}${APP_HOME}/jre/.systemPrefs/.system.lock
+	 ${TOUCH} ${STAGEDIR}${APP_HOME}/jre/.systemPrefs/.systemRootModFile
+	 ${CHMOD} 644 ${STAGEDIR}${APP_HOME}/jre/.systemPrefs/.system.lock
+	 ${CHMOD} 644 ${STAGEDIR}${APP_HOME}/jre/.systemPrefs/.systemRootModFile
 
 .include <bsd.port.post.mk>
