@@ -3,7 +3,7 @@
 
 PORTNAME=	tunapie
 PORTVERSION=	2.1.18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.1
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.r,rc,}
@@ -19,13 +19,12 @@ USE_PYTHON=	yes
 USE_WX=	2.6+
 WX_COMPS=	python:run
 
-OPTIONS_DEFINE=	ADULT AMAROK TOTEM VLC XINE AUDACIOUS
+OPTIONS_DEFINE=	ADULT AMAROK TOTEM VLC XINE
 ADULT_DESC=	non-censored TV listings
 AMAROK_DESC=	use amarok instead of mplayer
 TOTEM_DESC=	use totem instead of mplayer
 VLC_DESC=	use vlc instead of mplayer
 XINE_DESC=	use xine instead of mplayer
-AUDACIOUS_DESC=	use audacious instead of xmms
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	tunapie.1
@@ -74,10 +73,6 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 # default AUDIOPLAYER
-.if ${PORT_OPTIONS:MAUDACIOUS}
 RUN_DEPENDS+=	audacious:${PORTSDIR}/multimedia/audacious
-.else
-RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
-.endif
 
 .include <bsd.port.post.mk>
