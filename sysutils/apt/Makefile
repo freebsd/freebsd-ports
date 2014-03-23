@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	apt_0.6.46.4-0.1
 
-MAINTAINER=	snb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced front-end for dpkg
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
