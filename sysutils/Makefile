@@ -920,6 +920,7 @@
     SUBDIR += timemon
     SUBDIR += titlefix
     SUBDIR += tkdvd
+    SUBDIR += tlsdate
     SUBDIR += tm
     SUBDIR += tmpreaper
     SUBDIR += tmpwatch
