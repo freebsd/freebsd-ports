@@ -1,5 +1,5 @@
---- configure.in.orig	2014-02-17 23:37:01.241643774 +0000
-+++ configure.in	2014-02-17 23:38:03.349639470 +0000
+--- configure.in.orig	2014-03-20 05:47:33.807394460 +0000
++++ configure.in	2014-03-20 05:47:49.855394229 +0000
 @@ -1386,11 +1386,11 @@
  AC_CHECK_DECLS([sys_nerr], [], [], [$ac_includes_default
  @%:@include <errno.h>])
@@ -26,14 +26,14 @@
  	AC_CHECK_LIB($pthread_lib, pthread_kill,
  		     rb_with_pthread=yes, rb_with_pthread=no)
  	if test "$rb_with_pthread" = "yes"; then break; fi
-@@ -2089,6 +2089,7 @@
-     if test x"$rb_with_pthread" = xyes; then
- 	AC_DEFINE(_REENTRANT)
- 	AC_DEFINE(_THREAD_SAFE)
+@@ -2095,6 +2095,7 @@
+ 	[c],    [],
+ 	[root], [],
+ 	[c_r],  [MAINLIBS="-pthread $MAINLIBS"],
 +	[pthread],  [MAINLIBS="-pthread $MAINLIBS"],
- 	AC_DEFINE(HAVE_LIBPTHREAD)
- 	AC_CHECK_HEADERS(pthread_np.h, [], [], [@%:@include <pthread.h>])
- 	AS_CASE([$pthread_lib],
+ 	        [AS_CASE(["$target_os"],
+ 		    [openbsd*], [LIBS="-pthread $LIBS"],
+ 		    [LIBS="-l$pthread_lib $LIBS"])])
 @@ -2326,7 +2327,6 @@
  			: ${LDSHARED='$(CC) -shared'}
  			if test "$rb_cv_binary_elf" = yes; then
