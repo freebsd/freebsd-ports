@@ -85,6 +85,7 @@ XPI_LIBDIR=	${PREFIX}/lib/xpi
 
 # avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
 # http://svnweb.freebsd.org/changeset/base/255804
+.if ${OPSYS} == FreeBSD
 .if ${CHOSEN_COMPILER_TYPE} == clang && ${ARCH} == i386 && ${OSVERSION} < 1000056
 . if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 BROKEN=		Cannot build with OPTIMIZED_CFLAGS option due to \
@@ -98,6 +99,7 @@ CXXFLAGS+=	-msse2
 CXXFLAGS+=	-O1
 .  endif
 . endif
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
@@ -138,7 +140,7 @@ MOZ_OPTIONS+=	--disable-composer
 MOZ_OPTIONS+=	--enable-calendar
 MOZ_MK_OPTIONS+=	MOZ_CO_PROJECT=calendar
 LIGHTNING_DIR=	share/lightning
-XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/xpi-stage/lightning-${L_VERSION}.en-US.${OPSYS:L}${OSREL}-${ARCH:S/x86/i386/:S/amd64/x86_64/}.xpi
+XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/xpi-stage/lightning-${L_VERSION}.en-US.${OPSYS:L}${OSREL}-${ARCH:S/amd64/x86_64/}.xpi
 XPI_ORIG_ID=	{e2fda1a4-762b-4020-b5ad-a41df1933103}
 XPI_ID=		lightning@seamonkey.mozilla.org
 .else
