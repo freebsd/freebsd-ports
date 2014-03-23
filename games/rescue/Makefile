@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rescue
@@ -13,14 +13,15 @@ COMMENT=	Action adventure in space
 
 LICENSE=	GPLv3
 
-USES=		zip:infozip
+USES=		dos2unix zip:infozip
+DOS2UNIX_GLOB=	*.txt *.htm *.css *.ini *.xml
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/r/R/}
 
-PORTDOCS=	ChangeLog.txt todo.txt
+PORTDOCS=	ChangeLog.txt
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}
