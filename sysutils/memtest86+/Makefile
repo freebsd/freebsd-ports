@@ -3,7 +3,7 @@
 
 PORTNAME=	memtest86+
 PORTVERSION=	4.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest.org/download/${PORTVERSION}/
 
@@ -12,10 +12,11 @@ COMMENT=	Stand-alone memory test for x86 architecture computers
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_DOS2UNIX=	README memtest.lds setup.S
-USE_GMAKE=	yes
+USES=	gmake dos2unix
 ALL_TARGET=	all
 PORTDOCS=	*
+
+USE_GCC=	yes
 
 # Please provide absolute path below (cannot be root)
 BOOT_DIR?=	/boot/opt
@@ -29,7 +30,6 @@ BOOT_DESC=	Build ELF image loadable by boot2 and loader
 SERIAL_DESC=	Enable serial console at COM1/9600
 HISPEED_DESC=	Set COM1 serial console speed to 115200
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBOOT}
@@ -59,6 +59,9 @@ pre-fetch:
 	@${ECHO} "build ISO image with custom tweaks in memtest86+ code."
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
+
 PLIST=		${WRKDIR}/pkg-plist
 
 pre-install:
@@ -76,17 +79,17 @@ pre-install:
 
 do-install:
 .if ${PORT_OPTIONS:MISO}
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/mt${PORTVERSION:C/\.//}.iso ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/mt${PORTVERSION:C/\.//}.iso ${STAGEDIR}${DATADIR}
 .endif
 .if ${PORT_OPTIONS:MBOOT}
-	@${MKDIR} ${BOOT_DIR}
+	@${MKDIR} ${STAGEDIR}${BOOT_DIR}
 # XXX is INSTALL_KLD really appropriate here? XXX
-	${INSTALL_KLD} ${WRKSRC}/memtest ${BOOT_DIR}/memtest86+
+	${INSTALL_KLD} ${WRKSRC}/memtest ${STAGEDIR}${BOOT_DIR}/memtest86+
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:
