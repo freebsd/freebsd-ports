@@ -33,36 +33,29 @@ SUB_FILES=	impact impactgui
 
 PLIST_FILES=	bin/impact \
 		bin/impactgui \
-		share/pixmaps/impact.png
-
-OPTIONS_DEFINE=	GMSH
-
-GMSH_DESC=	Enable automatic 3D finite element mesh generator
+		share/pixmaps/impact.png \
+		${DATADIR_REL}/.classpath \
+		${DATADIR_REL}/.project \
+		${DATADIR_REL}/.vcm_meta
+PORTDATA=	*
 
 DESKTOP_ENTRIES="Impact" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}gui" "Graphics;3DGraphics;Education;" false
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	GMSH
 
-.if ${PORT_OPTIONS:MGMSH}
-RUN_DEPENDS+=	gmsh:${PORTSDIR}/cad/gmsh
-.endif
+GMSH_DESC=		Automatic 3D finite element mesh generator
+GMSH_RUN_DEPENDS=	gmsh:${PORTSDIR}/cad/gmsh
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d -print0 -or -name .cvsignore -type f -print0 | \
 		${XARGS} -0 ${RM} -rf
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/impact ${WRKDIR}/impactgui ${PREFIX}/bin
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR})
-
-post-install:
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
-
-	@${FIND} ${DATADIR} ! -type d | \
-		${SED} 's|^${PREFIX}/||' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
-		${SED} 's|^${PREFIX}/|@dirrm |' >> ${TMPPLIST}
+	(cd ${WRKDIR} && ${INSTALL_SCRIPT} impact impactgui \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
