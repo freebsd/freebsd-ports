@@ -23,6 +23,7 @@ SHEBANG_FILES=	examples/pylab_examples/unicode_demo.py \
 		examples/animation/old_animation/movie_demo.py
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYTHON_PY3K_PLIST_HACK=yes
 CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	GTKBACKEND GTKAGGBACKEND TKAGGBACKEND WXAGGBACKEND
