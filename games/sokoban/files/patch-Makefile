@@ -1,0 +1,17 @@
+--- ./Makefile.orig	1992-05-09 19:23:46.000000000 -0400
++++ ./Makefile	2014-03-11 22:14:36.359748029 -0400
+@@ -1,8 +1,12 @@
+-CCOPT= -O3
++CCOPT= ${CFLAGS}
++.ifdef PREFIX
++CCOPT+= -DPREFIX=\"${PREFIX}\"
++.endif
++
+ OBJECTS= sok.o readscreen.o showscreen.o play.o save.o score.o
+ 
+ sokoban: $(OBJECTS)
+-	cc $(CCOPT) -static -o sokoban $(OBJECTS) -lcurses -ltermcap
++	cc $(CCOPT) -o sokoban $(OBJECTS) -lcurses -ltermcap
+ sok.o: sok.c sokoban.h
+ 	cc $(CCOPT) -c sok.c
+ 

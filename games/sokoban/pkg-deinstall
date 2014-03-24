@@ -1,8 +1,0 @@
-#!/bin/sh
-# $FreeBSD$
-
-FILE="/var/games/sokoban"
-
-if [ "$2" = "POST-DEINSTALL" -a -f "$FILE" ]; then
-	echo "===>   If you are completely uninstalling sokoban you may also want to remove the scores files: $FILE"
-fi
