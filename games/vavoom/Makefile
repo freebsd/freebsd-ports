@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
-USES=		cmake dos2unix
+USES=		cmake dos2unix tar:bzip2
 DOS2UNIX_REGEX=	((.*\.(c|cpp|h|s|asm|inc|vc|ls|acs|cfg|txt|vs|mak|mgw"))$$|\/(makefile\..*|makefile|Makefile)$$)
 
 MAKE_JOBS_UNSAFE=	yes
@@ -45,7 +44,7 @@ CMAKE_ARGS+=	-DWITH_FLAC=N
 .endif
 
 .if ${PORT_OPTIONS:MLAUNCHER}
-USE_WX=		2.4+
+USE_WX=		2.8+
 CMAKE_ARGS+=	-DENABLE_LAUNCHER=Y \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
 PLIST_SUB+=	LAUNCHER=""
