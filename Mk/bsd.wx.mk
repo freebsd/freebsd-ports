@@ -131,9 +131,9 @@ _WX_Definitions_Done=	yes
 
 _WX_COMPS_ALL=			wx contrib python svg
 _WX_DEP_TYPES_ALL=		build lib run
-_WX_VERS_ALL=			2.8 2.9 3.0
-_WX_VERS_UC_ALL=		2.8 2.9 3.0
-_WX_VERS_SKIP=			2.9 3.0
+_WX_VERS_ALL=			2.8 3.0
+_WX_VERS_UC_ALL=		2.8 3.0
+_WX_VERS_SKIP=			3.0
 _WX_VERS_LISTS=			WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 
 #
@@ -157,10 +157,6 @@ _WX_FILE_python_2.8=	${PYTHON_SITELIBDIR}/wx-2.8-gtk2${_WX_PYSUFX}/wx/__init__.p
 
 _WX_PORT_svg_2.8=		graphics/wxsvg
 _WX_LIB_svg_2.8=		wxsvg
-
-# wxgtk 2.9
-_WX_PORT_wx_2.9=		x11-toolkits/wxgtk29
-_WX_LIB_wx_2.9=			wx_baseu-2.9
 
 # wxgtk 3.0
 _WX_PORT_wx_3.0=		x11-toolkits/wxgtk30
