@@ -3,7 +3,7 @@
 
 PORTNAME=	gtimelapse
 DISTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Relase	# yes, this is not a typo (here)
 
@@ -17,7 +17,8 @@ LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		pkgconfig
-USE_WX=		2.8+
+USE_WX=		3.0
+WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
 LIBTOOLIZE_ARGS=--copy --force
