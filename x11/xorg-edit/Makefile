@@ -14,10 +14,9 @@ LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_BZIP2=	yes
-USES=		dos2unix gmake
+USES=		dos2unix gmake tar:bzip2
 DOS2UNIX_GLOB=	*.cpp *.h
-USE_WX=		2.6+
+USE_WX=		2.8
 WX_UNICODE=	yes
 
 PLIST_FILES=	bin/xorg-edit \
