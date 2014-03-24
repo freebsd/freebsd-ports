@@ -11,7 +11,7 @@ DISTNAME=	openexr-${DISTVERSION}
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libImath.so:${PORTSDIR}/graphics/ilmbase
 
@@ -45,25 +45,31 @@ LARGE_STACK_CONFIGURE_ENABLE=	large-stack
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB=	MAJORVER=2_1
-PLIST_SUB+=	VER=21
+MAJORVER=	2_1
+VER=	21
+
+PLIST_SUB=	MAJORVER=${MAJORVER}
+PLIST_SUB+=	VER=${VER}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$(datadir)/doc/OpenEXR-@OPENEXR_VERSION@/examples|$$(prefix)/share/examples/${PORTNAME}|' \
+	@${REINPLACE_CMD} \
+		-e 's|$$(datadir)/doc/OpenEXR-@OPENEXR_VERSION@/examples|$$(prefix)/share/examples/${PORTNAME}|' \
 		${WRKSRC}/IlmImfExamples/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(datadir)/doc/OpenEXR-@OPENEXR_VERSION@||' \
 		-e 's|$$(EXTRA_DIST)||' \
 		${WRKSRC}/doc/Makefile.am ${WRKSRC}/doc/Makefile.in
 
 .if ! ${PORT_OPTIONS:MEXAMPLES}
-EXTRA_PATCHES+=${FILESDIR}/extra-patch-IlmImfExamples-Makefile.in
+EXTRA_PATCHES+=${FILESDIR}/extra-patch-IlmImfExamples__Makefile.in
 .endif
 
 regression-test regression test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libIlmImf-Imf_${MAJORVER}.so.${VER}
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
