@@ -40,6 +40,10 @@ PLUGINDIR=	${LOCALBASE}/share/mupen64/plugins
 do-install:	# empty
 
 NO_STAGE=	yes
+
+DEPRECATED=	Use mupen64plus instead
+EXPIRATION_DATE=2014-04-23
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
