@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	4.0.1
-PORTREVISION=	3
+PORTVERSION=	4.0.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -45,9 +44,10 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		differences.tex
 
 OPTIONS_DEFINE=		ROOT_SERVER LARGEFILE IPV6 BIND8_STATS CHECKING \
-		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS RRL EUI_RRTYPES
+		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS RRL EUI_RRTYPES \
+		RECVMMSG
 OPTIONS_DEFAULT=	LARGEFILE IPV6 NSEC3 NSEC3PREHASH MINRESPSIZE RRL \
-		 EUI_RRTYPES
+		EUI_RRTYPES
 
 ROOT_SERVER_DESC=	Configure as a root server
 LARGEFILE_DESC=		Largefile support
@@ -60,6 +60,7 @@ MMAP_DESC=		Use mmap instead of malloc (experimental)
 MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 RRL_DESC=		Response Rate Limiting
 EUI_RRTYPES_DESC=	EUI48 and EUI64 RRtypes support
+RECVMMSG_DESC=		Enable use of recvmmsg and sendmmsg
 
 LIB_DEPENDS+=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
@@ -75,6 +76,7 @@ MMAP_CONFIGURE_ENABLE=		mmap
 MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
 RRL_CONFIGURE_ENABLE=		ratelimit
 EUI_RRTYPES_CONFIGURE_ENABLE=	draft-rrtypes
+RECVMMSG_CONFIGURE_ENABLE=	enable-recvmmsg
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
