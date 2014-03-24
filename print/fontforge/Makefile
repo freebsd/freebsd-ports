@@ -118,7 +118,9 @@ post-install:
 	(cd ${WRKSRC}/plugins; ${INSTALL_DATA} .libs/* \
 		${STAGEDIR}${PREFIX}/share/fontforge/plugins)
 .endif
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${WRKDIR}/html/*.* ${STAGEDIR}${DOCSDIR}
+.endif
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@(cd ${STAGEDIR}${PREFIX}/lib && ${STRIP_CMD} libgunicode.so.3 \
 		libgutils.so.1 libgioftp.so.1 libgdraw.so.4 libfontforge.so.1)
