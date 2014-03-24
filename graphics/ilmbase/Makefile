@@ -10,7 +10,7 @@ DISTNAME=	ilmbase-${PORTVERSION}
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	ILM Base libraries a.k.a. Half, IlmThread, Imath, and Iex
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -36,8 +36,11 @@ CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 .endif
 
-PLIST_SUB=	MAJORVER=2_1
-PLIST_SUB+=	VER=11
+MAJORVER=	2_1
+VER=	11
+
+PLIST_SUB=	MAJORVER=${MAJORVER}
+PLIST_SUB+=	VER=${VER}
 
 regression-test regression test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
@@ -48,6 +51,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' ${WRKSRC}/configure
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libHalf.so.${VER}
+.for l in libIex libIexMath libImath libIlmThread
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${l}-${MAJORVER}.so.${VER}
+.endfor
+
 .for e in ${BIN}
 	${INSTALL_PROGRAM} ${WRKSRC}/Half/${e} ${STAGEDIR}${PREFIX}/bin/${e}
 .endfor
