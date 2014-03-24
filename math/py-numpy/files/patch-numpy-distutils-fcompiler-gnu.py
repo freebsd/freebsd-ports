@@ -22,8 +22,8 @@
  
      def get_flags_linker_so(self):
          opt = self.linker_so[1:]
-+	if 'FFLAGS' in os.environ:
-+		opt.append(os.environ['FFLAGS'])
++        if 'FFLAGS' in os.environ:
++                opt.append(os.environ['FFLAGS'])
          if sys.platform=='darwin':
              target = os.environ.get('MACOSX_DEPLOYMENT_TARGET', None)
              # If MACOSX_DEPLOYMENT_TARGET is set, we simply trust the value
