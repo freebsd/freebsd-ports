@@ -1,12 +1,12 @@
---- client/CMakeLists.txt.orig	2013-06-26 22:38:20.000000000 +0200
-+++ client/CMakeLists.txt	2013-06-28 18:54:21.482641124 +0200
+--- client/CMakeLists.txt.orig	2014-03-15 18:08:38.000000000 +0100
++++ client/CMakeLists.txt	2014-03-22 21:07:36.536119132 +0100
 @@ -31,17 +31,20 @@
  COPY_OPENSSL_DLLS(copy_openssl_client)
  
  ADD_DEFINITIONS(${SSL_DEFINES})
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(mysql completion_hash.cc mysql.cc readline.cc sql_string.cc)
- TARGET_LINK_LIBRARIES(mysql mysqlclient)
+ TARGET_LINK_LIBRARIES(mysql perconaserverclient)
  IF(UNIX)
    TARGET_LINK_LIBRARIES(mysql ${EDITLINE_LIBRARY})
  ENDIF(UNIX)
@@ -14,44 +14,44 @@
  
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
- TARGET_LINK_LIBRARIES(mysqltest mysqlclient regex)
+ TARGET_LINK_LIBRARIES(mysqltest perconaserverclient regex)
  
  
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
- TARGET_LINK_LIBRARIES(mysqlcheck mysqlclient)
+ TARGET_LINK_LIBRARIES(mysqlcheck perconaserverclient)
  
 @@ -50,17 +53,21 @@
  
  MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
- TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
+ TARGET_LINK_LIBRARIES(mysqlimport perconaserverclient)
 +ENDIF()
  
  MYSQL_ADD_EXECUTABLE(mysql_upgrade mysql_upgrade.c)
- TARGET_LINK_LIBRARIES(mysql_upgrade mysqlclient)
+ TARGET_LINK_LIBRARIES(mysql_upgrade perconaserverclient)
  ADD_DEPENDENCIES(mysql_upgrade GenFixPrivs)
  
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(mysqlshow mysqlshow.c)
- TARGET_LINK_LIBRARIES(mysqlshow mysqlclient)
+ TARGET_LINK_LIBRARIES(mysqlshow perconaserverclient)
 +ENDIF()
  
  MYSQL_ADD_EXECUTABLE(mysql_plugin mysql_plugin.c)
- TARGET_LINK_LIBRARIES(mysql_plugin mysqlclient)
+ TARGET_LINK_LIBRARIES(mysql_plugin perconaserverclient)
  
 +IF(FALSE)
- MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc sql_string.cc)
- TARGET_LINK_LIBRARIES(mysqlbinlog mysqlclient)
- 
-@@ -73,6 +80,7 @@
+ MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc sql_string.cc
+                      ../sql/rpl_filter.cc ../sql/sql_list.cc)
+ TARGET_LINK_LIBRARIES(mysqlbinlog perconaserverclient)
+@@ -74,6 +81,7 @@
  
  MYSQL_ADD_EXECUTABLE(mysql_config_editor mysql_config_editor.cc)
- TARGET_LINK_LIBRARIES(mysql_config_editor mysqlclient)
+ TARGET_LINK_LIBRARIES(mysql_config_editor perconaserverclient)
 +ENDIF()
  
  # "WIN32" also covers 64 bit. "echo" is used in some files below "mysql-test/".
  IF(WIN32)
-@@ -82,11 +90,6 @@
+@@ -83,11 +91,6 @@
  SET_TARGET_PROPERTIES (
    mysql_plugin 
    mysql_upgrade

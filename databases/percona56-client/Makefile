@@ -24,4 +24,12 @@ MANPAGES=	comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_find_rows.1 \
 
 CLIENT_ONLY=	yes
 
+# Percona renamed the libraries, until we decide how to deal with it create some symlinks
+# to prevent breaking installed ports.
+post-install:
+	${LN} -s libperconaserverclient.so ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient.so
+	${LN} -s libperconaserverclient.so.18 ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient.so.18
+	${LN} -s libperconaserverclient_r.so ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so
+	${LN} -s libperconaserverclient_r.so.18 ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so.18
+
 .include "${MASTERDIR}/Makefile"
