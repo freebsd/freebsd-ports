@@ -1002,6 +1002,7 @@
     SUBDIR += p5-HTTP-Exception
     SUBDIR += p5-HTTP-HeaderParser-XS
     SUBDIR += p5-HTTP-Headers-Fast
+    SUBDIR += p5-HTTP-Link-Parser
     SUBDIR += p5-HTTP-Lite
     SUBDIR += p5-HTTP-MHTTP
     SUBDIR += p5-HTTP-Message
