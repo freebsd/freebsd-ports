@@ -2,17 +2,19 @@
 
 PORTNAME=	rapidsvn
 PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rapidsvn.org/download/release/${PORTVERSION}/
 
 MAINTAINER=	robert.ayrapetyan@gmail.com
 COMMENT=	Cross-platform GUI front-end for the Subversion revision system
 
-BUILD_DEPENDS=	svn:${PORTSDIR}/devel/subversion \
+BUILD_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/VERSION:${PORTSDIR}/textproc/docbook-xsl
 
-USE_WX=	2.6
+USE_WX=	2.8
+WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 
 GNU_CONFIGURE=	yes
@@ -29,10 +31,8 @@ CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 	--with-manpage=yes
 
 USE_LDCONFIG=	yes
-MAN1=		rapidsvn.1
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/manpage/rapidsvn.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/doc/manpage/rapidsvn.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
