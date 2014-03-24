@@ -1,0 +1,150 @@
+bin/srx2csv
+bin/srx2table
+%%PERL5_MAN3%%/RDF::Trine.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Error.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Exporter::CSV.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Exporter::RDFPatch.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Graph.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Iterator.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Iterator::Bindings.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Iterator::Bindings::Materialized.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Iterator::Boolean.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Iterator::Graph.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Iterator::Graph::Materialized.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Iterator::JSONHandler.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Iterator::SAXHandler.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Model.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Model::Dataset.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Model::StatementFilter.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Model::Union.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Namespace.3.gz
+%%PERL5_MAN3%%/RDF::Trine::NamespaceMap.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Node.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Node::Blank.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Node::Literal.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Node::Nil.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Node::Resource.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Node::Variable.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::NQuads.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::NTriples.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::RDFJSON.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::RDFXML.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::RDFa.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::Redland.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::TriG.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::Turtle.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::Turtle::Constants.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::Turtle::Lexer.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Parser::Turtle::Token.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Pattern.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Serializer.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Serializer::NQuads.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Serializer::NTriples.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Serializer::NTriples::Canonical.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Serializer::RDFJSON.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Serializer::RDFPatch.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Serializer::RDFXML.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Serializer::TSV.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Serializer::TriG.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Serializer::Turtle.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Statement.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Statement::Quad.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::DBI.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::DBI::Pg.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::DBI::SQLite.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::DBI::mysql.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::Dydra.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::Hexastore.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::Memory.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::Redis.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::Redland.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::SPARQL.3.gz
+%%PERL5_MAN3%%/RDF::Trine::VariableBindings.3.gz
+%%PERL5_MAN3%%/Test::RDF::Trine::Store.3.gz
+%%SITE_PERL%%/RDF/Trine.pm
+%%SITE_PERL%%/RDF/Trine/Error.pm
+%%SITE_PERL%%/RDF/Trine/Graph.pm
+%%SITE_PERL%%/RDF/Trine/Iterator.pm
+%%SITE_PERL%%/RDF/Trine/Model.pm
+%%SITE_PERL%%/RDF/Trine/Namespace.pm
+%%SITE_PERL%%/RDF/Trine/NamespaceMap.pm
+%%SITE_PERL%%/RDF/Trine/Node.pm
+%%SITE_PERL%%/RDF/Trine/Parser.pm
+%%SITE_PERL%%/RDF/Trine/Pattern.pm
+%%SITE_PERL%%/RDF/Trine/Serializer.pm
+%%SITE_PERL%%/RDF/Trine/Statement.pm
+%%SITE_PERL%%/RDF/Trine/Store.pm
+%%SITE_PERL%%/RDF/Trine/VariableBindings.pm
+%%SITE_PERL%%/RDF/Trine/Exporter/CSV.pm
+%%SITE_PERL%%/RDF/Trine/Exporter/RDFPatch.pm
+%%SITE_PERL%%/RDF/Trine/Iterator/Bindings.pm
+%%SITE_PERL%%/RDF/Trine/Iterator/Boolean.pm
+%%SITE_PERL%%/RDF/Trine/Iterator/Graph.pm
+%%SITE_PERL%%/RDF/Trine/Iterator/JSONHandler.pm
+%%SITE_PERL%%/RDF/Trine/Iterator/SAXHandler.pm
+%%SITE_PERL%%/RDF/Trine/Iterator/Bindings/Materialized.pm
+%%SITE_PERL%%/RDF/Trine/Iterator/Graph/Materialized.pm
+%%SITE_PERL%%/RDF/Trine/Model/Dataset.pm
+%%SITE_PERL%%/RDF/Trine/Model/StatementFilter.pm
+%%SITE_PERL%%/RDF/Trine/Model/Union.pm
+%%SITE_PERL%%/RDF/Trine/Node/Blank.pm
+%%SITE_PERL%%/RDF/Trine/Node/Literal.pm
+%%SITE_PERL%%/RDF/Trine/Node/Nil.pm
+%%SITE_PERL%%/RDF/Trine/Node/Resource.pm
+%%SITE_PERL%%/RDF/Trine/Node/Variable.pm
+%%SITE_PERL%%/RDF/Trine/Parser/NQuads.pm
+%%SITE_PERL%%/RDF/Trine/Parser/NTriples.pm
+%%SITE_PERL%%/RDF/Trine/Parser/RDFJSON.pm
+%%SITE_PERL%%/RDF/Trine/Parser/RDFXML.pm
+%%SITE_PERL%%/RDF/Trine/Parser/RDFa.pm
+%%SITE_PERL%%/RDF/Trine/Parser/Redland.pm
+%%SITE_PERL%%/RDF/Trine/Parser/TriG.pm
+%%SITE_PERL%%/RDF/Trine/Parser/Turtle.pm
+%%SITE_PERL%%/RDF/Trine/Parser/Turtle/Constants.pm
+%%SITE_PERL%%/RDF/Trine/Parser/Turtle/Lexer.pm
+%%SITE_PERL%%/RDF/Trine/Parser/Turtle/Token.pm
+%%SITE_PERL%%/RDF/Trine/Serializer/NQuads.pm
+%%SITE_PERL%%/RDF/Trine/Serializer/NTriples.pm
+%%SITE_PERL%%/RDF/Trine/Serializer/RDFJSON.pm
+%%SITE_PERL%%/RDF/Trine/Serializer/RDFPatch.pm
+%%SITE_PERL%%/RDF/Trine/Serializer/RDFXML.pm
+%%SITE_PERL%%/RDF/Trine/Serializer/TSV.pm
+%%SITE_PERL%%/RDF/Trine/Serializer/TriG.pm
+%%SITE_PERL%%/RDF/Trine/Serializer/Turtle.pm
+%%SITE_PERL%%/RDF/Trine/Serializer/NTriples/Canonical.pm
+%%SITE_PERL%%/RDF/Trine/Statement/Quad.pm
+%%SITE_PERL%%/RDF/Trine/Store/DBI.pm
+%%SITE_PERL%%/RDF/Trine/Store/Dydra.pm
+%%SITE_PERL%%/RDF/Trine/Store/Hexastore.pm
+%%SITE_PERL%%/RDF/Trine/Store/Memory.pm
+%%SITE_PERL%%/RDF/Trine/Store/Redis.pm
+%%SITE_PERL%%/RDF/Trine/Store/Redland.pm
+%%SITE_PERL%%/RDF/Trine/Store/SPARQL.pm
+%%SITE_PERL%%/RDF/Trine/Store/DBI/Pg.pm
+%%SITE_PERL%%/RDF/Trine/Store/DBI/SQLite.pm
+%%SITE_PERL%%/RDF/Trine/Store/DBI/mysql.pm
+%%SITE_PERL%%/Test/RDF/Trine/Store.pm
+%%SITE_PERL%%/mach/auto/RDF/Trine/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/RDF/Trine
+@dirrmtry %%SITE_PERL%%/mach/auto/RDF
+@dirrm %%SITE_PERL%%/Test/RDF/Trine
+@dirrmtry %%SITE_PERL%%/Test/RDF
+@dirrmtry %%SITE_PERL%%/Test
+@dirrmtry %%SITE_PERL%%/RDF
+@dirrm %%SITE_PERL%%/RDF/Trine/Store/DBI
+@dirrm %%SITE_PERL%%/RDF/Trine/Store
+@dirrm %%SITE_PERL%%/RDF/Trine/Statement
+@dirrm %%SITE_PERL%%/RDF/Trine/Serializer/NTriples
+@dirrm %%SITE_PERL%%/RDF/Trine/Serializer
+@dirrm %%SITE_PERL%%/RDF/Trine/Parser/Turtle
+@dirrm %%SITE_PERL%%/RDF/Trine/Parser
+@dirrm %%SITE_PERL%%/RDF/Trine/Node
+@dirrm %%SITE_PERL%%/RDF/Trine/Model
+@dirrm %%SITE_PERL%%/RDF/Trine/Iterator/Graph
+@dirrm %%SITE_PERL%%/RDF/Trine/Iterator/Bindings
+@dirrm %%SITE_PERL%%/RDF/Trine/Iterator
+@dirrm %%SITE_PERL%%/RDF/Trine/Exporter
+@dirrm %%SITE_PERL%%/RDF/Trine
+@dirrmtry %%SITE_PERL%%/RDF
