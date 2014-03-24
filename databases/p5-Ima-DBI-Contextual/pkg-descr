@@ -1,5 +1,0 @@
-If you like Ima::DBI but need it to be more context-aware i
-(eg: tie dbi connections to more than the name and process id) 
-then you need Ima::DBI::Contextual.
-
-WWW: http://search.cpan.org/dist/Ima-DBI-Contextual/
