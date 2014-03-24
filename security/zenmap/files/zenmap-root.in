@@ -3,6 +3,6 @@
 # $FreeBSD$
 #
 
-cd "%%DATADIR%%" ; exec su-to-zenmap.sh zenmap
+cd "%%DATADIR%%" && exec su-to-zenmap.sh zenmap
 
 
