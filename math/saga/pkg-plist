@@ -82,6 +82,8 @@ lib/saga/libtable_tools.so
 lib/saga/libtin_tools.so
 lib/saga/libtin_viewer.so
 lib/saga/libtransect.so
+man/man1/saga_cmd.1.gz
+man/man1/saga_gui.1.gz
 %%VIGRA%%lib/saga/libvigra.so
 %%DATADIR%%/saga.png
 %%DATADIR%%/saga_tip.txt
