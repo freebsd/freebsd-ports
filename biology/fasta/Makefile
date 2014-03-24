@@ -15,17 +15,13 @@ NO_CDROM=	May not be sold or incorporated into a commercial product
 WRKSRC=		${WRKDIR}/fasta
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
-FASTA_DOCS=	COPYRIGHT README.versions fasta20.doc fasta20.me format.doc \
-		readme.*
 
-MAN1=		align.1 fasta.1 lalign.1 prdf.1 prss.1 randseq.1 ssearch.1
-MLINKS=		fasta.1 tfasta.1 fasta.1 lfasta.1 fasta.1 plfasta.1 \
-		fasta.1 fastx.1  fasta.1 tfastx.1 \
-		align.1 align0.1 lalign.1 plalign.1
+MAN_FILES=	align.1 fasta.1 lalign.1 prdf.1 prss.1 randseq.1 ssearch.1
+PORTDOCS=	COPYRIGHT README.versions fasta20.doc fasta20.me format.doc \
+		readme.*
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-extract:
 	@ ${RM} -rf ${WRKDIR}
 	@ ${MKDIR} ${WRKSRC}
@@ -33,19 +29,23 @@ do-extract:
 	  cd ${WRKSRC} && (${GZCAT} ${DISTDIR}/$${f} | ${SH} >/dev/null); \
 	done
 
+post-patch:
+	@${REINPLACE_CMD} 's|BIN)|DESTDIR)$$(&|' ${WRKSRC}/Makefile
+
 BROKEN_powerpc=	Does not build: runs out of space on powerpc
 
-.include <bsd.port.options.mk>
-
 post-install:
-.for manpage in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${manpage} ${MAN1PREFIX}/man/man1/
+	(cd ${WRKSRC} && ${INSTALL_MAN} ${MAN_FILES} \
+		${STAGEDIR}${MAN1PREFIX}/man/man1)
+.for mlink in tfasta lfasta plfasta fastx tfastx
+	${LN} -s ${MAN1PREFIX}/man/man1/fasta.1.gz \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${mlink}.1.gz
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@ ${MKDIR} ${DOCSDIR}
-.for docfile in ${FASTA_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
-.endif
+	${LN} -s ${MAN1PREFIX}/man/man1/align.1.gz \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/align0.1.gz
+	${LN} -s ${MAN1PREFIX}/man/man1/align.1.gz \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/plalign.1.gz
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
