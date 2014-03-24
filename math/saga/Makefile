@@ -21,20 +21,14 @@ LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 		liblas.so:${PORTSDIR}/devel/liblas \
 		libopencv_core.so:${PORTSDIR}/graphics/opencv-core
 
-USES=		zip
-USE_WX=		2.9
+USES=		dos2unix zip compiler:features
+DOS2UNIX_GLOB=	dlg_about.cpp
+USE_WX=		3.0
 WX_UNICODE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtoolize
 AUTOMAKE_ARGS=	--add-missing
-
-# CLANG is not able to handle neither Fortran nor OpenMP
-USE_GCC=	any
-CFLAGS+=	-I${LOCALBASE}/include
-USE_DOS2UNIX=	dlg_about.cpp
-
-MAN1=		saga_cmd.1 saga_gui.1
 
 DESKTOP_ENTRIES=	"SAGA GIS" "${COMMENT}" "${DATADIR}/saga.png" \
 			"saga_gui" "Science;Geoscience;Math;" true
@@ -46,7 +40,6 @@ OPENMP_DESC=	Enable Multiprocessing
 HARU_DESC=	Enable Haru Free PDF Library
 VIGRA_DESC=	Enable 'Vision with Generic Algorithms' Library
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lopencv_core
@@ -90,6 +83,18 @@ PLIST_SUB+=	VIGRA="@comment "
 
 .include <bsd.port.pre.mk>
 
+# Late define USE_GCC (openmp support)
+# and make g++ use libc++ is possible
+USE_GCC=	any
+
+.if ${COMPILER_FEATURES:Mlibc++}
+LDFLAGS+=	-L${LOCALBASE}/lib/c++
+CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
+BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
+.else
+
+.endif
+
 post-extract:
 	@${REINPLACE_CMD} -e's|wx-config |${WX_CONFIG} |g' \
 		${WRKSRC}/configure.in \
@@ -119,12 +124,11 @@ post-patch:
 .endif
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga_tip.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.png ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga_tip.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.png ${STAGEDIR}${DATADIR}
 # library helper files are not needed and cripple some math/qgis extensions
-	@${RM} ${PREFIX}/lib/saga/*.la
-	@${RM} ${PREFIX}/lib/saga/*.a
-	@${CAT} ${PKGMESSAGE}
+	@${RM} ${STAGEDIR}${PREFIX}/lib/saga/*.la
+	@${RM} ${STAGEDIR}${PREFIX}/lib/saga/*.a
 
 .include <bsd.port.post.mk>
