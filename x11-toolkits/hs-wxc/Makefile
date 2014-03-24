@@ -10,6 +10,8 @@ COMMENT=	wxHaskell C++ wrapper
 
 USE_CABAL=	wxdirect>=0.90
 
+BROKEN=		does not build with any of the supported wx
+
 USE_WX=		3.0
 WX_COMPS=	wx
 WX_UNICODE=	yes
