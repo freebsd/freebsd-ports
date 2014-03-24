@@ -3,7 +3,7 @@
 
 PORTNAME=	solidcoin
 PORTVERSION=	2.041
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	http://downloads.solidcoin.info/ \
 		http://dl.dropbox.com/u/47582909/
@@ -40,7 +40,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWXGTK}
-USE_WX=		2.9
+USE_WX=		3.0
 WX_UNICODE=	yes
 PLIST_FILES+=	share/pixmaps/solidcoin48.xpm
 DESKTOP_ENTRIES="SolidCoin" "" "${PREFIX}/share/pixmaps/solidcoin48.xpm" \
