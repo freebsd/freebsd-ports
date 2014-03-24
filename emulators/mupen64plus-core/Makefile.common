@@ -69,6 +69,7 @@ pre-install:
 		@${ECHO_CMD} "bin/${PORTNAME}" >> ${PLIST}
 .	endif
 .else
+post-patch:
 	@cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e 's|gcc|${CC}|g' -e \
 		's|g++|${CXX}|g' Makefile
 .endif
