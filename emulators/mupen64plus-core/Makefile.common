@@ -37,8 +37,8 @@ post-patch:
 				GlideHQ/TxQuantize.cpp GlideHQ/TxFilter.cpp
 .	endif
 .	if ${PKGNAMESUFFIX} == "-video-glide64"
-                @cd ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/src && \
-                        ${REINPLACE_CMD} -e 's|__builtin_ia32_loadups|_mm_loadu_ps|g' -e \
+		@cd ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/src && \
+			${REINPLACE_CMD} -e 's|__builtin_ia32_loadups|_mm_loadu_ps|g' -e \
 				's|__builtin_ia32_storeups|_mm_storeu_ps|g' \
 					3dmath.cpp
 .	endif
