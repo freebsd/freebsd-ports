@@ -1,6 +1,7 @@
 bin/dact
 etc/dact.conf
 lib/libdact.so
+man/man1/dact.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/dact.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dact.conf
