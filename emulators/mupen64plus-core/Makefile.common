@@ -29,10 +29,18 @@ LIB_DEPENDS+=		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 .if ${PKGNAMESUFFIX} != "-core"
 post-patch:
+	@cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e 's|gcc|${CC}|g' -e \
+		's|g++|${CXX}|g' Makefile
 .	if ${PKGNAMESUFFIX} == "-video-glide64mk2"
 		@cd ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/src && \
 			${REINPLACE_CMD} -e 's|#include <thread>||g' \
 				GlideHQ/TxQuantize.cpp GlideHQ/TxFilter.cpp
+.	endif
+.	if ${PKGNAMESUFFIX} == "-video-glide64"
+                @cd ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/src && \
+                        ${REINPLACE_CMD} -e 's|__builtin_ia32_loadups|_mm_loadu_ps|g' -e \
+				's|__builtin_ia32_storeups|_mm_storeu_ps|g' \
+					3dmath.cpp
 .	endif
 
 pre-install:
@@ -60,6 +68,9 @@ pre-install:
 .	else
 		@${ECHO_CMD} "bin/${PORTNAME}" >> ${PLIST}
 .	endif
+.else
+	@cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e 's|gcc|${CC}|g' -e \
+		's|g++|${CXX}|g' Makefile
 .endif
 
 do-install:
