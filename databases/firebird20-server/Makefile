@@ -48,6 +48,9 @@ CONFLICTS+=	firebird-client-2.1* firebird-server-2.1* \
 
 INSTALL_FB=	${INSTALL} ${COPY} -g firebird
 
+DEPRECATED=	firebird20 has been discontinued. Use firebird21-* or firebird25-* instead
+EXPIRATION_DATE=2014-04-23
+
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
 .if ${IPCCHECK:Mimplemented}
 IGNORE=		your system does not support sysvipc
