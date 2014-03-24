@@ -19,10 +19,8 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 
 ALL_TARGET=	php_gdal.so php_gdalconst.so php_ogr.so php_osr.so
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
-LIBTOOLFILES=	# empty
 MAKEFILE=	GNUmakefile
 PHP_MOD_NAME=	php_${PORTNAME}
-USE_AUTOTOOLS=	libtool
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USES=		gmake
@@ -31,9 +29,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/swig/php
 post-patch:
 	@${REINPLACE_CMD} -e '/^SWIG = swig/ s|$$|2.0|' ${WRKSRC}/../SWIGmake.base
 	@${REINPLACE_CMD} -e 's|^CC=.*$$|CC=${CC}|; s|^CXX=.*$$|CXX=${CXX}|; s|^CFLAGS=.*$$|CFLAGS=${CFLAGS}|' ${WRKSRC}/${MAKEFILE}
-
-do-configure:
-	@${DO_NADA}
 
 # include/cpl_config.h will exist after build phase
 pre-build:
