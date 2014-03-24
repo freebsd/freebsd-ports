@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# periodic(8) script that runs duply on a nightly basis
+#
+# Define these variables in either /etc/periodic.conf or
+# /etc/periodic.conf.local to override the defaults.
+#
+# Configuration Settings (with default values):
+#
+# backup_duply_enable="NO"
+#	enable duply backup
+#
+# backup_duply_profile=""
+#	default duply profile to use
+#	see duply usage
+#
+# backup_duply_command="bkp_status"
+#	default duply commands
+#
+# backup_duply_opt=""
+#	options passed to duply
+#
+# backup_duply_random="0"
+#	randomize backup time
+#
+
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+: ${backup_duply_enable}="NO"
+: ${backup_duply_command}="bkp_status"
+: ${backup_duply_profile}=""
+: ${backup_duply_opt}=""
+: ${backup_duply_random}="0"
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
+export PATH
+
+case "$backup_duply_enable" in
+    [Yy][Ee][Ss])
+	eval sleep $(jot -r 1 0 ${backup_duply_random})
+	echo
+        echo "Duply Backup:"
+        eval duply ${backup_duply_profile} ${backup_duply_command} ${backup_duply_opt}
+        if [ $? -gt 0 ]
+        then
+            echo "Errors were reported during backup."
+            rc=3
+        fi
+        ;;
+esac
+
+exit $rc
+
