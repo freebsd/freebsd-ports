@@ -29,6 +29,8 @@ lib/X11/wdm/wdm-config.dist
 @exec [ -f %D/lib/X11/wdm/wdm-config ] || (cp %D/lib/X11/wdm/wdm-config.dist %D/lib/X11/wdm/wdm-config)
 lib/X11/wdm/wdm-config.in
 lib/X11/wdm/wdmReconfig
+man/man1/wdm.1.gz
+man/man1/wdmLogin.1.gz
 share/locale/cs/LC_MESSAGES/wdm.mo
 share/locale/cy/LC_MESSAGES/wdm.mo
 share/locale/de/LC_MESSAGES/wdm.mo
@@ -43,3 +45,5 @@ share/locale/ru/LC_MESSAGES/wdm.mo
 @dirrmtry lib/X11/wdm
 %%PAM%%@cwd %%LOCALBASE%%
 %%PAM%%etc/pam.d/wdm
+@cwd /
+@dirrmtry /var/run/wdm
