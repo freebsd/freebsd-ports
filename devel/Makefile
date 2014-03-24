@@ -4100,8 +4100,6 @@
     SUBDIR += ruby-fastri
     SUBDIR += ruby-flexmock
     SUBDIR += ruby-gems
-    SUBDIR += ruby-gio2
-    SUBDIR += ruby-glib2
     SUBDIR += ruby-intl
     SUBDIR += ruby-korundum
     SUBDIR += ruby-krossruby

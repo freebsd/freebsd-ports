@@ -5779,3 +5779,17 @@ x11-toolkits/wxgtk26-docs|x11-toolkits/wxgtk28-docs|2014-03-24|wxGTK 2.6 is EOLe
 x11-toolkits/wxgtk26-unicode|x11-toolkits/wxgtk28-unicode|2014-03-24|wxGTK 2.6 is EOLed
 x11-toolkits/wxgtk26-unicode-contrib|x11-toolkits/wxgtk28-unicode-contrib|2014-03-24|wxGTK 2.6 is EOLed
 x11-toolkits/wxgtk29|x11-toolkits/wxgtk30|2014-03-24|wxGTK 2.9 was a developement version superseeded by the 3.0 release
+accessibility/ruby-atk||2014-03-24|Has expired: Use rubygem-atk instead
+devel/ruby-gio2||2014-03-24|Has expired: Use rubygem-gio2 instead
+devel/ruby-glib2||2014-03-24|Has expired: Use rubygem-glib2 instead
+graphics/ruby-cairo||2014-03-24|Has expired: Use rubygem-cairo instead
+graphics/ruby-gdk_pixbuf2||2014-03-24|Has expired: Use rubygem-gdk_pixbuf2 instead
+graphics/ruby-rsvg2||2014-03-24|Has expired: Use rubygem-rsvg2 instead
+x11-toolkits/ruby-goocanvas||2014-03-24|Has expired: No longer included upstream
+x11-toolkits/ruby-gstreamer||2014-03-24|Has expired: Use rubygem-gstreamer instead
+x11-toolkits/ruby-gtk2||2014-03-24|Has expired: Use rubygem-gtk2 instead
+x11-toolkits/ruby-gtksourceview2||2014-03-24|Has expired: Use rubygem-gtksourceview2 instead
+x11-toolkits/ruby-pango||2014-03-24|Has expired: Use rubygem-pango instead
+x11-toolkits/ruby-poppler||2014-03-24|Has expired: Use rubygem-poppler instead
+x11-toolkits/ruby-vte||2014-03-24|Has expired: Use rubygem-vte instead
+x11/ruby-gnome2||2014-03-24|Has expired: Use rubygem-gnome2 instead

@@ -908,15 +908,12 @@
     SUBDIR += repng2jpeg
     SUBDIR += rgbpaint
     SUBDIR += ristretto
-    SUBDIR += ruby-cairo
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdal
-    SUBDIR += ruby-gdk_pixbuf2
     SUBDIR += ruby-image_size
     SUBDIR += ruby-imlib2
     SUBDIR += ruby-ming
     SUBDIR += ruby-rmagick
-    SUBDIR += ruby-rsvg2
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
     SUBDIR += rubygem-cairo

@@ -220,13 +220,6 @@
     SUBDIR += qwt6-designerplugin
     SUBDIR += rep-gtk2
     SUBDIR += ruby-fox16
-    SUBDIR += ruby-goocanvas
-    SUBDIR += ruby-gstreamer
-    SUBDIR += ruby-gtk2
-    SUBDIR += ruby-gtksourceview2
-    SUBDIR += ruby-pango
-    SUBDIR += ruby-poppler
-    SUBDIR += ruby-vte
     SUBDIR += rubygem-gdk3
     SUBDIR += rubygem-gtk2
     SUBDIR += rubygem-gtk3
