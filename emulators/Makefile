@@ -108,7 +108,7 @@
     SUBDIR += mupen64plus-rsp-z64
     SUBDIR += mupen64plus-ui-console
     SUBDIR += mupen64plus-video-arachnoid
-    SUBDIR += mupen64plus-video-glide64
+#   SUBDIR += mupen64plus-video-glide64
     SUBDIR += mupen64plus-video-glide64mk2
     SUBDIR += mupen64plus-video-rice
     SUBDIR += mupen64plus-video-z64
