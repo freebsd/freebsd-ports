@@ -62,6 +62,19 @@ GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/Volumes.tiff
 GNUstep/System/Library/Bundles/Volumes.prefPane/Volumes
 GNUstep/System/Library/Bundles/Volumes.prefPane/stamp.make
 GNUstep/System/Tools/SystemPreferences
+GNUstep/System/Applications/SystemPreferences.app/Resources/SystemPreferences.ico
+GNUstep/System/Library/Bundles/Defaults.prefPane/Resources/English.lproj/Localizable.strings
+GNUstep/System/Library/Bundles/InternetModule.prefPane/InternetModule
+GNUstep/System/Library/Bundles/InternetModule.prefPane/stamp.make
+GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/InternetModule.tiff
+GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm/data.classes
+GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm/data.info
+GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm/objects.gorm
+@dirrm GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm
+@dirrm GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources
+@dirrm GNUstep/System/Library/Bundles/InternetModule.prefPane
 @dirrm GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/English.lproj/Volumes.gorm
 @dirrm GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/English.lproj
 @dirrm GNUstep/System/Library/Bundles/Volumes.prefPane/Resources
