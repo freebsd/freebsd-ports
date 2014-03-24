@@ -1,7 +1,0 @@
-The "meta-port" for Ruby/GNOME2
-
-Ruby/GNOME2 is a set of Ruby bindings for GNOME2 which consists of atk, glib2,
-gio2, gdk_pixbuf2, rsvg2, goocanvas, gstreamer, gtk2, gtksourceview2, pango,
-poppler and vte modules.
-
-WWW: http://ruby-gnome2.sourceforge.jp/

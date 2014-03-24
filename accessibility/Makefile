@@ -32,7 +32,6 @@
     SUBDIR += py-papi
     SUBDIR += qt4-accessible
     SUBDIR += redshift
-    SUBDIR += ruby-atk
     SUBDIR += rubygem-atk
     SUBDIR += speech-dispatcher
     SUBDIR += yasr

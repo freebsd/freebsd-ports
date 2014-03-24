@@ -1,9 +1,0 @@
-libdata/pkgconfig/ruby-atk.pc
-%%RUBY_SITELIBDIR%%/atk.rb
-%%RUBY_SITEARCHLIBDIR%%/atk.so
-%%RUBY_SITEARCHLIBDIR%%/rbatk.h
-%%RUBY_SITEARCHLIBDIR%%/rbatkversion.h
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
