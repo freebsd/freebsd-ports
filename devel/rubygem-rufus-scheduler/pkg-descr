@@ -1,0 +1,4 @@
+Rufus-scheduler (out of the box) is an in-process, in-memory scheduler. 
+It supports five kinds of jobs: in, at, every, interval and cron jobs.
+
+WWW: https://github.com/jmettraux/rufus-scheduler
