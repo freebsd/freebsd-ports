@@ -17,19 +17,19 @@
 
 --- RULES/cc-gcc.rul.orig	Thu Jul  6 12:59:44 2006
 +++ RULES/cc-gcc.rul	Sat Jul 22 03:55:52 2006
-@@ -20,8 +20,9 @@
+@@ -22,8 +22,9 @@
  ###########################################################################
  
- CPPFLAGS=	-DSCHILY_BUILD $(CPPOPTS) $(CPPOPTX)
+ CPPFLAGS=	-DSCHILY_BUILD $(CPPOPTS) $(CPPOPTX) $(OSINCDIRS:%=-I%) $(OSDEFS) $(OSDEFSX)
 -CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
 -C++FLAGS=	$(C++OPTS) $(C++WARNOPTS) $(C++OPTOPT) $(G++OPTOPT) $(C++OPTX)
 +XCFLAGS:=	$(CFLAGS)
 +CFLAGS=		$(COPTS) $(CWARNOPTS) $(XCFLAGS) $(GCCOPTOPT) $(COPTX)
 +C++FLAGS=	$(C++OPTS) $(C++WARNOPTS) $(CXXFLAGS) $(G++OPTOPT) $(C++OPTX)
  
- CPPOPTS=	-I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(INCDIRSX:%=-I%) $(OSDEFS)
+ CPPOPTS=	-I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(INCDIRSX:%=-I%)
  COPTS=
-@@ -29,12 +30,10 @@
+@@ -31,12 +32,10 @@
  CWOPTS=		-Wall -Wtraditional
  CWOPTS=		-Wall -Wno-unknown-pragmas \
  		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
@@ -42,21 +42,33 @@
  C++OPTDYN=	-fpic
  C++OPTGPROF=	-pg
  
-@@ -54,18 +53,17 @@
+@@ -56,28 +55,18 @@
  
  FLOAT_OPTIONS=	
  
--CC_COM=		gcc
--CC++_COM=	g++
-+CC_COM=		$(CC)
-+CC++_COM=	$(CXX)
- 
--CC=		@echo "	==> COMPILING \"$@\""; $(CC_COM)
+-__CC_COM=	$(_UNIQ)$(CC)
+-___CC_COM=	$(__CC_COM:$(_UNIQ)=$(CC_COM_DEF))
+-CC_COM=		$(___CC_COM:$(_UNIQ)%=%)
+-
+-__CC++_COM=	$(_UNIQ)$(CCC)
+-___CC++_COM=	$(__CC++_COM:$(_UNIQ)=$(CC++_COM_DEF))
+-CC++_COM=	$(___CC++_COM:$(_UNIQ)%=%)
+-
+-CC_COM_DEF=	gcc
+-CC++_COM_DEF=	g++
+-CC=		$(CC_COM_DEF)
+-CCC=		$(CC++_COM_DEF)
+-
+-CCCC=		@echo "	==> COMPILING \"$@\""; $(CC_COM)
 -CC++ =		@echo "	==> COMPILING \"$@\""; $(CC++_COM)
 -LDCC=		@echo "	==> LINKING \"$@\""; $(CC_COM)
 -LDCC++ =	@echo "	==> LINKING \"$@\""; $(CC++_COM)
 -DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; $(CC_COM)
 -DYNLDC++ =	@echo "	==> LINKING dynamic library \"$@\""; $(CC++_COM)
++CC_COM=		$(CC)
++CC++_COM=	$(CXX)
++
++CCCC =		$(CC_COM)
 +CC++ =		$(CC++_COM)
 +LDCC=		$(CC_COM)
 +LDCC++ =	$(CC++_COM)
