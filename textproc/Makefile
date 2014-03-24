@@ -960,6 +960,7 @@
     SUBDIR += p5-XML-Literal
     SUBDIR += p5-XML-Mini
     SUBDIR += p5-XML-MyXML
+    SUBDIR += p5-XML-Namespace
     SUBDIR += p5-XML-NamespaceFactory
     SUBDIR += p5-XML-NamespaceSupport
     SUBDIR += p5-XML-Node
