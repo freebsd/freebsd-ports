@@ -3,6 +3,7 @@
 
 PORTNAME=	wxmupen64plus
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,} \
@@ -10,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 DIST_SUBDIR=	${PORTNAME:S/wx//}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A Mupen64Plus 2.0 GUI frontend written using wxWidgets
+COMMENT=	Mupen64Plus 2.0 GUI frontend written using wxWidgets
 
 LIB_DEPENDS=	mupen64plus:${PORTSDIR}/emulators/mupen64plus-core
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core \
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64p
 
 PROJECTHOST=	bsdistfiles
 USE_SDL=	yes
-USE_WX=		2.9
+USE_WX=		3.0
 WX_UNICODE=	yes
 USE_PYTHON=	yes
 WAF_SCRIPT=	waf
