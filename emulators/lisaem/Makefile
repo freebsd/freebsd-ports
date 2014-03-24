@@ -3,7 +3,7 @@
 
 PORTNAME=	lisaem
 DISTVERSION=	1.2.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators
 MASTER_SITES=	http://lisaem.sunder.net/downloads/
 
@@ -14,8 +14,9 @@ BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm
 
 LICENSE=	GPLv2 # (or later)
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_WX=		2.8
+WX_UNICODE=	yes
 
 DESKTOP_ENTRIES="LisaEm" "" "${DATADIR}/lisa2icon.xpm" "${PORTNAME}" "" ""
 
