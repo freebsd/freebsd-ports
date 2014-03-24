@@ -10,11 +10,10 @@ MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Start gnome-terminal from a list of configured profiles (incl. Applet)
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	yes
 USE_GNOME=	pygnome2 pygnomeextras gnomeprefix
 
-NO_STAGE=	yes
 do-build:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/*.py ${WRKSRC}/*.server
@@ -23,16 +22,16 @@ do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
-		${PREFIX}/libexec/${PORTNAME}/
-	@${INSTALL_SCRIPT} ${WRKSRC}/*.py* \
-		${PREFIX}/libexec/${PORTNAME}/
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${PREFIX}/share/applications/
-	@${INSTALL_DATA} ${WRKSRC}/*.server \
-		${PREFIX}/libdata/bonobo/servers/
-	@${LN} -sf ${PREFIX}/libexec/${PORTNAME}/${PORTNAME} \
-		${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/
+	${INSTALL_SCRIPT} ${WRKSRC}/*.py* \
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/*.server \
+		${STAGEDIR}${PREFIX}/libdata/bonobo/servers/
+	${LN} -sf ${PREFIX}/libexec/${PORTNAME}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
