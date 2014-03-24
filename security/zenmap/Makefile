@@ -22,8 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-USE_BZIP2=	yes
-USES=		desktop-file-utils
+USES=		dos2unix tar:bzip2
+DOS2UNIX_GLOB=	*.xml
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -77,7 +77,8 @@ post-build:
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/zenmap-root ${STAGEDIR}${PREFIX}/bin/
 	 @(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 754 su-to-zenmap.sh)
-	${INSTALL_MAN} ${WRKSRC}/../docs/zenmap.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/../docs/zenmap.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
 	@(cd ${WRKSRC}/../ndiff \
 		&& ${PYTHON_CMD} setup.py install --prefix=${STAGEDIR}${PREFIX})
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
