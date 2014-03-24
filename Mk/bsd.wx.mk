@@ -35,7 +35,6 @@
 #				  wx			- The wxWidgets library.
 #				  contrib		- The wxWidgets contributed libraries.
 #				  python		- The wxWidgets API for Python.
-#				  svg			- WxSVG (only for 2.8).
 #				  The available dependency types are:
 #				  build			- Requires component for building.
 #				  lib			- Requires component for building and running.
@@ -129,7 +128,7 @@ _WX_Definitions_Done=	yes
 # _WX_VERS_LISTS		- Reverse lists preference order.
 #
 
-_WX_COMPS_ALL=			wx contrib python svg
+_WX_COMPS_ALL=			wx contrib python
 _WX_DEP_TYPES_ALL=		build lib run
 _WX_VERS_ALL=			2.8 3.0
 _WX_VERS_UC_ALL=		2.8 3.0
@@ -154,9 +153,6 @@ _WX_LIB_contrib_2.8=	wx_gtk2${_WX_UC}_fl-2.8
 
 _WX_PORT_python_2.8=	x11-toolkits/py-wxPython28${_WX_UCL}
 _WX_FILE_python_2.8=	${PYTHON_SITELIBDIR}/wx-2.8-gtk2${_WX_PYSUFX}/wx/__init__.py
-
-_WX_PORT_svg_2.8=		graphics/wxsvg
-_WX_LIB_svg_2.8=		wxsvg
 
 # wxgtk 3.0
 _WX_PORT_wx_3.0=		x11-toolkits/wxgtk30

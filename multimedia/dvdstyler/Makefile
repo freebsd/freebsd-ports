@@ -3,6 +3,7 @@
 
 PORTNAME=	dvdstyler
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
@@ -29,10 +30,10 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		mkisofs:${PORTSDIR}/sysutils/cdrtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
-USE_WX=		2.8
-WX_COMPS=	wx svg
+USES=		gettext gmake pkgconfig tar:bzip2
+USE_WX=		3.0
+WX_UNICODE=	yes
+WX_COMPS=	wx
 WX_CONF_ARGS=	absolute
 USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	-I ${WRKSRC}
