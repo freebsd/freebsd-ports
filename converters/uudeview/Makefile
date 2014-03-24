@@ -7,7 +7,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program for uu/xx/Base64/BinHex/yEnc de-/encoding
+COMMENT=	Program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
 LICENSE=	GPLv2
 
@@ -18,11 +18,12 @@ CONFIGURE_ARGS=	--disable-tcl
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		uudeview.1 uuenview.1
 PORTDOCS=	HISTORY porting.notes
-PLIST_FILES=	bin/uudeview bin/uuenview
+PLIST_FILES=	bin/uudeview bin/uuenview man/man1/uudeview.1.gz \
+		man/man1/uuenview.1.gz
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 # Try and catch some of the different places that inn and cnews put inews
@@ -34,14 +35,15 @@ CONFIGURE_ARGS+=	--enable-inews=${PREFIX}/bin/inews
 CONFIGURE_ARGS+=	--enable-inews=${PREFIX}/news/lib/inews
 .endif
 
+post-configure:
+	@${REINPLACE_CMD} -E '/INSTALL_/ s,(BIN|MAN)DIR,DESTDIR\)$$\(&,g' \
+		${WRKSRC}/Makefile
+
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/uudeview
-	@${STRIP_CMD} ${PREFIX}/bin/uuenview
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "===>  Installing documents to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/HISTORY ${DOCSDIR}
-	@${INSTALL_DATA} ${FILESDIR}/porting.notes ${DOCSDIR}
-.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uudeview
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uuenview
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/HISTORY ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/porting.notes ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
