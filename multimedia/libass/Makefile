@@ -16,8 +16,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libfribidi.so:${PORTSDIR}/converters/fribidi
 
-USES=	pathfix pkgconfig
-USE_XZ=	yes
+USES=	pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
