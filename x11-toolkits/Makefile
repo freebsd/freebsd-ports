@@ -202,9 +202,6 @@
     SUBDIR += py-vte
     SUBDIR += py-wax
     SUBDIR += py-wmdockapps
-    SUBDIR += py-wxPython26
-    SUBDIR += py-wxPython26-common
-    SUBDIR += py-wxPython26-unicode
     SUBDIR += py-wxPython28
     SUBDIR += py-wxPython28-common
     SUBDIR += py-wxPython28-unicode
@@ -268,13 +265,6 @@
     SUBDIR += vte3
     SUBDIR += vtkfox
     SUBDIR += wmapp
-    SUBDIR += wxgtk26
-    SUBDIR += wxgtk26-common
-    SUBDIR += wxgtk26-contrib
-    SUBDIR += wxgtk26-contrib-common
-    SUBDIR += wxgtk26-docs
-    SUBDIR += wxgtk26-unicode
-    SUBDIR += wxgtk26-unicode-contrib
     SUBDIR += wxgtk28
     SUBDIR += wxgtk28-common
     SUBDIR += wxgtk28-contrib
