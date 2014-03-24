@@ -13,11 +13,11 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Mupen64 is a Nintendo 64 emulator
 
+USES=		gmake
 USE_GNOME?=	#
 USE_GL?=	#
 USE_SDL?=	#
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
 
 MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -29,6 +29,10 @@ OPTIONS_DEFINE=	GTK2
 GTK2_DESC=	Use gtk20 instead of gtk12
 
 NO_STAGE=	yes
+
+DEPRECATED=	Use mupen64plus instead
+EXPIRATION_DATE=2014-04-23
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
