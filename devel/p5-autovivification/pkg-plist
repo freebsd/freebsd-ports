@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/autovivification.3.gz
+%%SITE_PERL%%/mach/autovivification.pm
+%%SITE_PERL%%/mach/auto/autovivification/.packlist
+%%SITE_PERL%%/mach/auto/autovivification/autovivification.bs
+%%SITE_PERL%%/mach/auto/autovivification/autovivification.so
+@dirrm %%SITE_PERL%%/mach/auto/autovivification
