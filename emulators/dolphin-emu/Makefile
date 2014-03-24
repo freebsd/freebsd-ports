@@ -3,7 +3,7 @@
 
 PORTNAME=	dolphin-emu
 PORTVERSION=	4.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 USE_SDL=	sdl
 USE_XORG=	ice xext x11 xrandr xi
-USE_WX=		2.9+
+USE_WX=		3.0+
 WX_UNICODE=	yes
 USE_GL=	gl glew glu
 
