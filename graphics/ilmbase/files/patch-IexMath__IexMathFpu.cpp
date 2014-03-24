@@ -1,5 +1,5 @@
---- IexMath/IexMathFpu.cpp.orig	2013-06-18 21:51:38.000000000 +0200
-+++ IexMath/IexMathFpu.cpp	2013-10-04 19:25:00.000000000 +0200
+--- ./IexMath/IexMathFpu.cpp.orig	2013-06-18 21:51:38.000000000 +0200
++++ ./IexMath/IexMathFpu.cpp	2014-01-29 13:16:44.000000000 +0100
 @@ -53,7 +53,7 @@
  #endif
  
