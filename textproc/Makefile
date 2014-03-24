@@ -902,6 +902,7 @@
     SUBDIR += p5-XML-Catalog
     SUBDIR += p5-XML-Clean
     SUBDIR += p5-XML-Code
+    SUBDIR += p5-XML-CommonNS
     SUBDIR += p5-XML-Compile
     SUBDIR += p5-XML-Compile-Cache
     SUBDIR += p5-XML-Compile-Dumper
