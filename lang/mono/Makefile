@@ -3,18 +3,17 @@
 
 PORTNAME=	mono
 PORTVERSION=	3.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
-COMMENT=	An open source implementation of .NET Development Framework
+COMMENT=	Open source implementation of .NET Development Framework
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
     		bash:${PORTSDIR}/shells/bash
 
-USE_BZIP2=	yes
-USES=		bison gettext gmake pathfix perl5
+USES=		bison gettext gmake iconv pathfix perl5 tar:bzip2
 USE_GNOME=	glib20
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
