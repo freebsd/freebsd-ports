@@ -3,7 +3,7 @@
 
 PORTNAME=	libroadnav
 PORTVERSION=	0.19
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	astro geography
 MASTER_SITES=	SF/roadnav/LibRoadnav/${PORTVERSION}
 
@@ -12,8 +12,9 @@ COMMENT=	Helper library for Roadnav (3D GPS mapping program)
 
 OPTIONS_DEFINE=	DOCS
 
-USE_WX=		2.6+
+USE_WX=		2.8+
 WX_COMPS=	wx contrib
+WX_UNICODE=	yes
 USES=		gmake
 
 GNU_CONFIGURE=	yes

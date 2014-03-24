@@ -3,7 +3,7 @@
 
 PORTNAME=	roadnav
 PORTVERSION=	0.19
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	astro geography
 MASTER_SITES=	SF/${PORTNAME}/Roadnav/${PORTVERSION}
 
@@ -12,9 +12,11 @@ COMMENT=	3D GPS mapping program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libroadnav.a:${PORTSDIR}/astro/libroadnav
 
-USE_WX=		2.6+
+USE_WX=		2.8+
 WX_COMPS=	wx contrib
+WX_UNICODE=	yes
 USES=		gmake
+CXXFLAGS+=	-Wnon-pod-varargs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-prefix=${LOCALBASE} --with-wx-config=${WX_CONFIG}
