@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/XML::CommonNS.3.gz
+%%SITE_PERL%%/XML/CommonNS.pm
+%%SITE_PERL%%/mach/auto/XML/CommonNS/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/XML/CommonNS
+@dirrmtry %%SITE_PERL%%/mach/auto/XML
+@dirrmtry %%SITE_PERL%%/XML
