@@ -2,7 +2,7 @@
 
 PORTNAME=	wxcore
 PORTVERSION=	0.90.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	wxHaskell core
 
 USE_CABAL=	parsec stm wxc>=0.90.0.4 wxdirect>=0.90
 
-USE_WX=		2.9
+USE_WX=		3.0
 WX_COMPS=	wx
 WX_UNICODE=	yes
 
