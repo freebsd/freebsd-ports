@@ -1,0 +1,27 @@
+From ebc81421813878cff65dc50c54d37d1d8c327ef2 Mon Sep 17 00:00:00 2001
+From: Andrej Zverev <andrej.zverev@gmail.com>
+Date: Mon, 24 Mar 2014 16:50:01 +0000
+Subject: [PATCH] Resolve regression in MM_Unix.pm
+
+Reported as https://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker/issues/96
+
+Signed-off-by: Chris 'BinGOs' Williams <chris@bingosnet.co.uk>
+---
+ lib/ExtUtils/MM_Unix.pm | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/ExtUtils/MM_Unix.pm b/lib/ExtUtils/MM_Unix.pm
+index fe02dec..2a2d051 100644
+--- lib/ExtUtils/MM_Unix.pm
++++ lib/ExtUtils/MM_Unix.pm
+@@ -1291,7 +1291,7 @@ sub init_dirscan {	# --- File and Directory Lists (.xs .pm .pod etc)
+ 
+     foreach my $name ($self->lsdir($Curdir)){
+ 	next if $name =~ /\#/;
+-	next if $name =~ $distprefix;
++	next if $name =~ $distprefix && -d $name;
+ 	$name = lc($name) if $Is{VMS};
+ 	next if $name eq $Curdir or $name eq $Updir or $ignore{$name};
+ 	next unless $self->libscan($name);
+-- 
+
