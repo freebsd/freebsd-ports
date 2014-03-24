@@ -3,6 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.10.1
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -36,5 +37,8 @@ do-configure:
 pre-configure:
 	@${SED} -e '/^GDAL_ROOT/d' ${DATADIR}/GDALmake.opt > ${WRKSRC}/../../GDALmake.opt
 	@${CP} ${LOCALBASE}/include/cpl_config.h ${WRKSRC}/../../port/
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${RUBY_SITELIBDIR}/${RUBY_ARCH}/gdal/*.so
 
 .include <bsd.port.mk>
