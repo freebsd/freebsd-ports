@@ -24,5 +24,25 @@ include/mba/time.h
 include/mba/varray.h
 lib/libmba.a
 lib/libmba.so
-lib/libmba.so.%%SHLIB_MAJOR%%
+lib/libmba.so.0
+man/man3/allocator.3m.gz
+man/man3/bitset.3m.gz
+man/man3/cfg.3m.gz
+man/man3/csv.3m.gz
+man/man3/diff.3m.gz
+man/man3/eval.3m.gz
+man/man3/hashmap.3m.gz
+man/man3/hexdump.3m.gz
+man/man3/linkedlist.3m.gz
+man/man3/msgno.3m.gz
+man/man3/path.3m.gz
+man/man3/pool.3m.gz
+man/man3/shellout.3m.gz
+man/man3/stack.3m.gz
+man/man3/suba.3m.gz
+man/man3/svcond.3m.gz
+man/man3/svsem.3m.gz
+man/man3/text.3m.gz
+man/man3/time.3m.gz
+man/man3/varray.3m.gz
 @dirrm include/mba
