@@ -3,6 +3,7 @@
 
 PORTNAME=	lxmed
 PORTVERSION=	20120515
+PORTREVISION=	1
 CATEGORIES=	x11-wm java
 MASTER_SITES=	SF/${PORTNAME}/
 DIST_SUBDIR=	java
@@ -22,27 +23,31 @@ NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-SUB_FILES=	${PORTNAME}.sh
+SUB_FILES=	${PORTNAME}.sh ${PORTNAME}-root
+
+post-extract:
+	@(cd ${WRKSRC}/content/ && ${CP} -a ${PORTNAME}.desktop \
+		${PORTNAME}-root.desktop)
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/opt/lxmed/${PORTNAME}.png|${PREFIX}/share/pixmaps/${PORTNAME}.png|' \
-		-e 's|Main Menu Editor|${COMMENT}|g' \
+	@${REINPLACE_CMD} -e 's|/opt/lxmed/${PORTNAME}.png|${PORTNAME}|; \
+		s|Main Menu Editor|${COMMENT}|' \
 		${WRKSRC}/content/${PORTNAME}.desktop
-	@(cd ${WRKSRC}/content/ && ${CP} -a ${PORTNAME}.desktop ${PORTNAME}-root.desktop)
-	@${REINPLACE_CMD} -e 's|Exec=lxmed|Exec=${DATADIR}/pc-su ${PORTNAME}|' \
-		-e 's|${COMMENT}|${COMMENT} (as root)|g' \
+	@${REINPLACE_CMD} -e 's|/opt/lxmed/${PORTNAME}.png|${PORTNAME}|; \
+		s|Exec=lxmed|Exec=${PORTNAME}-root ${PORTNAME}|; \
+		s|Main Menu Editor|${COMMENT} (as root)|' \
 		${WRKSRC}/content/${PORTNAME}-root.desktop
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-root \
+		${STAGEDIR}${PREFIX}/bin/
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} -a ${FILESDIR}/pc-su ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/content/LXMenuEditor.jar ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/content/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-
-.for d in ${PORTNAME}.desktop ${PORTNAME}-root.desktop
-	${INSTALL_DATA} ${WRKSRC}/content/${d} ${STAGEDIR}${DESKTOPDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/content/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/content/*.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
