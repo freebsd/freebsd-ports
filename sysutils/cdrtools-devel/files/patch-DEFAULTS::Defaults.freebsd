@@ -1,0 +1,30 @@
+###########################################################################
+# This patch was contributed by Marius Strobl.
+###########################################################################
+# The contents of this file are subject to the terms of the
+# Common Development and Distribution License, Version 1.0 only
+# (the "License").  You may not use this file except in compliance
+# with the License.
+#
+# See the file CDDL.Schily.txt in this distribution for details.
+#
+# When distributing Covered Code, include this CDDL HEADER in each
+# file and include the License file CDDL.Schily.txt from this distribution.
+###########################################################################
+# The file CDDL.Schily.txt can be found in the original cdrtools tarball,
+# which is mirrored at ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/.
+###########################################################################
+
+--- DEFAULTS/Defaults.freebsd.orig	2013-11-04 21:58:20.000000000 +0100
++++ DEFAULTS/Defaults.freebsd	2014-02-03 01:16:19.000000000 +0100
+@@ -29,8 +29,8 @@
+ CWARNOPTS=
+ 
+ DEFINCDIRS=	$(SRCROOT)/include
+-DEFOSINCDIRS=	/usr/local/include
+-LDPATH=		-L/opt/schily/lib -L/usr/local/lib
++#DEFOSINCDIRS=	/usr/local/include
++#LDPATH=		-L/opt/schily/lib -L/usr/local/lib
+ #RUNPATH=	-R$(INS_BASE)/lib -R/opt/schily/lib -R$(OLIBSDIR)	Will probably not work
+ 
+ ###########################################################################
