@@ -10,13 +10,18 @@ share/applications/higan.desktop
 %%DATADIR%%/Game Boy.sys/manifest.bml
 %%DATADIR%%/Super Famicom.sys/ipl.rom
 %%DATADIR%%/Super Famicom.sys/manifest.bml
-%%DATADIR%%/Video Shaders/Curvature.OpenGL.shader
-%%DATADIR%%/Video Shaders/HQ2x.OpenGL.shader
-%%DATADIR%%/Video Shaders/Pixellate.OpenGL.shader
-%%DATADIR%%/Video Shaders/Scale2x.OpenGL.shader
+%%DATADIR%%/shaders/Curvature.shader/curvature.fs
+%%DATADIR%%/shaders/Curvature.shader/manifest.bml
+%%DATADIR%%/shaders/Edge Detection.shader/edge-detection.fs
+%%DATADIR%%/shaders/Edge Detection.shader/manifest.bml
+%%DATADIR%%/shaders/Scanline.shader/manifest.bml
+%%DATADIR%%/shaders/Scanline.shader/scanline.fs
 share/pixmaps/higan.png
 @dirrmtry share/pixmaps
-@dirrm %%DATADIR%%/Video Shaders
+@dirrm %%DATADIR%%/shaders/Scanline.shader
+@dirrm %%DATADIR%%/shaders/Edge Detection.shader
+@dirrm %%DATADIR%%/shaders/Curvature.shader
+@dirrm %%DATADIR%%/shaders
 @dirrm %%DATADIR%%/Super Famicom.sys
 @dirrm %%DATADIR%%/Game Boy.sys
 @dirrm %%DATADIR%%/Game Boy Color.sys
