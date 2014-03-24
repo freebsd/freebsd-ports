@@ -95,7 +95,6 @@
     SUBDIR += gcompmgr
     SUBDIR += genmenu
     SUBDIR += golem
-    SUBDIR += hackedbox
     SUBDIR += herbstluftwm
     SUBDIR += hs-xmonad
     SUBDIR += hs-xmonad-contrib

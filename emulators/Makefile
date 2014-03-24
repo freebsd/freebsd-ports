@@ -53,7 +53,6 @@
     SUBDIR += gxmame
     SUBDIR += hatari
     SUBDIR += hercules
-    SUBDIR += hfs
     SUBDIR += higan
     SUBDIR += hugo
     SUBDIR += i386-wine

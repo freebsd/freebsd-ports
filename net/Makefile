@@ -6,7 +6,6 @@
     SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
-    SUBDIR += AquaGatekeeper
     SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
     SUBDIR += R-cran-twitteR

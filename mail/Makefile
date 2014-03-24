@@ -249,7 +249,6 @@
     SUBDIR += mailscanner
     SUBDIR += mailsync
     SUBDIR += mailtray
-    SUBDIR += mailutils
     SUBDIR += mailx
     SUBDIR += mairix
     SUBDIR += majordomo

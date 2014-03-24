@@ -299,7 +299,6 @@
     SUBDIR += frozen-bubble
     SUBDIR += fteqw
     SUBDIR += ftjava
-    SUBDIR += fuhquake
     SUBDIR += funnyboat
     SUBDIR += fxsudoku
     SUBDIR += galaxis
@@ -693,7 +692,6 @@
     SUBDIR += osgg
     SUBDIR += outerspace
     SUBDIR += p5-Acme-GuessNumber
-    SUBDIR += p5-Algorithm-Pair-Best
     SUBDIR += p5-Algorithm-Pair-Best2
     SUBDIR += p5-Algorithm-Pair-Swiss
     SUBDIR += p5-Baseball-Sabermetrics
@@ -1073,7 +1071,6 @@
     SUBDIR += xevil
     SUBDIR += xeyesplus
     SUBDIR += xfireworks
-    SUBDIR += xflame
     SUBDIR += xfrisk
     SUBDIR += xgalaga
     SUBDIR += xgalaga++
