@@ -12,15 +12,13 @@ COMMENT=	Display Control Panel for X NVidia driver
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_GL=		gl
 USE_XORG=	xv xext
 
-PLIST_FILES=	bin/nvidia-settings
-MANCOMPRESSED=	yes
-MAN1=		nvidia-settings.1
+PLIST_FILES=	bin/nvidia-settings \
+		man/man1/nvidia-settings.1.gz
 
 MAKE_ENV=	NV_VERBOSE= \
 		STRIP_CMD=${TRUE} \
@@ -37,5 +35,4 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/^prefix/s/=/?&/' \
 		 -e '/^MANDIR/s|share/||' ${WRKSRC}/utils.mk
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
