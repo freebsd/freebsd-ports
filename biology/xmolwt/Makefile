@@ -19,7 +19,6 @@ ALL_TARGET=	gmolwt
 PORTDOCS=	*
 PLIST_FILES=	bin/gmolwt bin/molwt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
@@ -38,16 +37,10 @@ post-patch:
 		/^GTKCONFIG/s| =| ?=|' ${WRKSRC}/Makefile.gtk
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gmolwt ${PREFIX}/bin
-	${LN} -sf gmolwt ${PREFIX}/bin/molwt
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/share/doc/xmolwt
-	${INSTALL_DATA} ${WRKSRC}/Howtouse.* ${PREFIX}/share/doc/xmolwt
-	${INSTALL_DATA} ${WRKSRC}/Readme ${PREFIX}/share/doc/xmolwt
-	${INSTALL_DATA} ${WRKSRC}/Xmolwt ${PREFIX}/share/doc/xmolwt
-	${INSTALL_DATA} ${WRKSRC}/dot.gtkrc ${PREFIX}/share/doc/xmolwt
-	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/xmolwt
-	${INSTALL_DATA} ${WRKSRC}/*.gif ${PREFIX}/share/doc/xmolwt
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/gmolwt ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf gmolwt ${STAGEDIR}${PREFIX}/bin/molwt
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} Howtouse.* Readme Xmolwt dot.gtkrc \
+		*.html *.gif ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
