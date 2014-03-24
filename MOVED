@@ -5768,3 +5768,13 @@ x11-themes/xmms-bluecurve-theme|multimedia/audacious|2014-03-23|Has expired: Aba
 x11-themes/xmms-eq-skins|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
 x11-themes/xmms-vumeter-skins|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
 mail/mahogany||2014-03-24|Broken with all support compilers
+x11-toolkits/py-wxPython26|x11-toolkits/py-wxPython28|2014-03-24|wxPython26 is EOLed
+x11-toolkits/py-wxPython26-common|x11-toolkits/py-wxPython28-common|2014-03-24|wxPython26 is EOLed
+x11-toolkits/py-wxPython26-unicode|x11-toolkits/py-wxPython28-unicode|2014-03-24|wxPython26 is EOLed
+x11-toolkits/wxgtk26|x11-toolkits/wxgtk28|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-common|x11-toolkits/wxgtk28-common|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-contrib|x11-toolkits/wxgtk28-contrib|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-contrib-common|x11-toolkits/wxgtk28-contrib-common|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-docs|x11-toolkits/wxgtk28-docs|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-unicode|x11-toolkits/wxgtk28-unicode|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-unicode-contrib|x11-toolkits/wxgtk28-unicode-contrib|2014-03-24|wxGTK 2.6 is EOLed
