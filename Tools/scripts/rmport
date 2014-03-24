@@ -47,7 +47,7 @@ SED="sed -i .orig -E"
 SVNREPO=${SVNREPO:-svn+ssh://svn.FreeBSD.org/ports}
 
 if ! CDIFF=$(which cdiff) ; then
-	CDIFF=${EDITOR}
+	CDIFF=${PAGER}
 fi
 
 log()
@@ -529,7 +529,7 @@ answer=y
 while [ "${answer}" = "y" ] ; do
 	diffout=$(diff)
 
-	${CDIFF} ${diffout}
+	${CDIFF} < ${diffout}
 
 	echo "" >&2
 	echo "you can now edit files under ${codir}/ by hand" >&2
