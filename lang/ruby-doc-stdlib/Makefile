@@ -19,8 +19,9 @@ COMMENT=	Documentation for the Ruby language standard library
 USE_RUBY=	yes
 NO_BUILD=	yes
 
+BROKEN=		Checksum and size mismatch
 DEPRECATED=	Upstream rerolls frequently, online docs work well
-EXPRIATION_DATE=	2014-04-24
+EXPIRATION_DATE=	2014-04-24
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_rdocs//}
 
