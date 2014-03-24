@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	excel-writer
-PORTVERSION=	07
+PORTVERSION=	11
 CATEGORIES=	misc
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	excel_writer_${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	Ada package for easily creating Excel files with basic formats
 LICENSE=	MIT
 
 USES=		ada zip dos2unix
-SFPATH=		excel-writer/files/excel-writer/excel-writer-${PORTVERSION}
+SFPATH=		excel-writer/files/excel-writer
 WRKSRC=		${WRKDIR}/Excel_Writer
 PORTDOCS=	excel_writer.txt
 PORTEXAMPLES=	example.gpr excel_out_test.adb runme.sh
