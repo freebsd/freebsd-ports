@@ -2,7 +2,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.18.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -12,8 +12,7 @@ COMMENT=	Remote-controllable music daemon
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig compiler:c++11-lib
-USE_XZ=		yes
+USES=		gmake pkgconfig compiler:c++11-lib tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
@@ -54,7 +53,7 @@ VORBISENC_DESC=	Ogg Vorbis encoder
 WAVPACK_DESC=	WavPack support
 WILDMIDI_DESC=	WildMIDI support (MIDI files)
 
-OPTIONS_DEFAULT=ID3TAG IPV6 MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE
+OPTIONS_DEFAULT=ID3TAG IPV6 MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE CURL
 
 AAC_CONFIGURE_ENABLE=aac
 AAC_LIB_DEPENDS=libfaad.so:${PORTSDIR}/audio/faad
