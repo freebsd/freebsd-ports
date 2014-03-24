@@ -1,9 +1,0 @@
-#!/bin/sh
-
-FILE="/var/games/sokoban"
-[ "$2" != "POST-INSTALL" -o -f "$FILE" ] && exit 0
-
-echo "===>   Creating initial high score file $FILE"
-dd if=/dev/zero of=$FILE bs=1 count=2
-chmod 664 $FILE
-chown root:games $FILE
