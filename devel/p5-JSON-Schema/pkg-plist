@@ -1,0 +1,17 @@
+%%PERL5_MAN3%%/JSON::Schema.3.gz
+%%PERL5_MAN3%%/JSON::Schema::Error.3.gz
+%%PERL5_MAN3%%/JSON::Schema::Examples.3.gz
+%%PERL5_MAN3%%/JSON::Schema::Helper.3.gz
+%%PERL5_MAN3%%/JSON::Schema::Null.3.gz
+%%PERL5_MAN3%%/JSON::Schema::Result.3.gz
+%%SITE_PERL%%/JSON/Schema.pm
+%%SITE_PERL%%/JSON/Schema/Error.pm
+%%SITE_PERL%%/JSON/Schema/Examples.pod
+%%SITE_PERL%%/JSON/Schema/Helper.pm
+%%SITE_PERL%%/JSON/Schema/Null.pm
+%%SITE_PERL%%/JSON/Schema/Result.pm
+%%SITE_PERL%%/mach/auto/JSON/Schema/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/JSON/Schema
+@dirrmtry %%SITE_PERL%%/mach/auto/JSON
+@dirrm %%SITE_PERL%%/JSON/Schema
+@dirrmtry %%SITE_PERL%%/JSON
