@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
 
+DEPRECATED=	Broken on recent FreeBSD 9+, not staged
+EXPIRATION_DATE=	2014-04-24
+
 BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 RUN_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 
