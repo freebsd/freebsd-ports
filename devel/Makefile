@@ -2365,6 +2365,7 @@
     SUBDIR += p5-MooseX-Aliases
     SUBDIR += p5-MooseX-App
     SUBDIR += p5-MooseX-App-Cmd
+    SUBDIR += p5-MooseX-ArrayRef
     SUBDIR += p5-MooseX-Async
     SUBDIR += p5-MooseX-Attribute-Chained
     SUBDIR += p5-MooseX-Attribute-ENV
