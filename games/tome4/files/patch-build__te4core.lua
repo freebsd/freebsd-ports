@@ -1,14 +1,5 @@
 --- ./build/te4core.lua.orig	2014-01-05 19:42:37.000000000 -0500
-+++ ./build/te4core.lua	2014-02-06 13:23:22.476164878 -0500
-@@ -109,7 +109,7 @@
- 
- 	configuration "bsd"
- 		libdirs {"/usr/local/lib/"}
--		links { "SDL2", "SDL2_ttf", "SDL2_image", "png", "openal", "vorbisfile", "GL", "GLU", "m", "pthread" }
-+		links { "SDL2", "SDL2_ttf", "SDL2_image", "png", "openal", "vorbisfile", "GL", "GLU", "m" }
- 		defines { [[TENGINE_HOME_PATH='".t-engine"']], 'SELFEXE_BSD' }
- 
- 	configuration {"Debug"}
++++ ./build/te4core.lua	2014-01-05 19:42:37.000000000 -0500
 @@ -159,7 +159,7 @@
  
  		files { "../src/luajit2/src/host/minilua.c" }
