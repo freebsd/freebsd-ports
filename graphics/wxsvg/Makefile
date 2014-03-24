@@ -3,7 +3,7 @@
 
 PORTNAME=	wxsvg
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -15,9 +15,9 @@ LICENSE=	LGPL21 # (or later)
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
-USE_BZIP2=	yes
-USES=		gmake pathfix pkgconfig
-USE_WX=		yes
+USES=		gmake pathfix pkgconfig tar:bzip2
+USE_WX=		3.0
+WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 USE_GNOME=	cairo
 GNU_CONFIGURE=	yes
