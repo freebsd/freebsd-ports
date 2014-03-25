@@ -1,5 +1,8 @@
 bin/griffith
 etc/bash_completion.d/griffith
+man/man1/griffith.1.gz
+man/pl/man1/griffith.1.gz
+man/pt/man1/griffith.1.gz
 share/applications/griffith.desktop
 %%DATADIR%%/export_templates/csv/config.xml
 %%DATADIR%%/export_templates/csv/page.tpl
