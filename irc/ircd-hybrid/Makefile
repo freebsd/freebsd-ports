@@ -26,10 +26,10 @@ OPTIONS_DEFINE=	OPENSSL HALFOPS ASSERT
 OPTIONS_DEFAULT=OPENSSL
 
 ASSERT_CONFIGURE_ENABLE=	assert
-ASSERT_DESC=	Enable halfops on the server
+ASSERT_DESC=	Enable parts of the debugging code
 
 HALFOPS_CONFIGURE_ENABLE=	halfops
-HALFOPS_DESC=	Enable parts of the debugging code
+HALFOPS_DESC=	Enable halfops on the server
 
 OPENSSL_DESC=	Enable openssl - allows use of CHALLENGE and encrypted links
 
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--enable-openssl=${OPENSSLBASE}
 .endif
 
 # User Configurable Variables
-# NICKLEN		- Nick length. Default is 9. Must be consistant across the network.
+# NICKLEN		- Nick length. Default is 9. Must be consistent across the network.
 
 .if defined(NICKLEN)
 CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
