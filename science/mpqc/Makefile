@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -59,7 +59,8 @@ CXXFLAGS=	-O3 -tpp7 -xMKW -Vaxlib
 CONFIGURE_ARGS+=--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-f77=${FC} \
-		--with-libdirs=-L${LOCALBASE}/lib \
+		--with-include="-I${WRKDIR} -I${LOCALBASE}/include" \
+		--with-libdirs="-L${LOCALBASE}/lib ${LDFLAGS}" \
 		--with-blas="${BLAS}" \
 		--with-lapack="${LAPACK}" \
 		--with-coptflags="${CFLAGS}" \
@@ -71,14 +72,8 @@ CONFIGURE_ARGS+=--with-cc=${CC} \
 CONFIGURE_ARGS+=--with-libs="-lsvml"
 .endif
 .if defined(WITH_MPICH)
-CONFIGURE_ARGS+=--with-libdirs="-L${LOCALBASE}/lib -L${LOCALBASE}/lib"\
-		--enable-always-use-mpi
+CONFIGURE_ARGS+=--enable-always-use-mpi
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-.endif
-.if defined(WITH_MPICH)
-CONFIGURE_ARGS+=--with-include="-I${LOCALBASE}/include -I${WRKDIR} -I${LOCALBASE}/include"
-.else
-CONFIGURE_ARGS+=--with-include="-I${WRKDIR} -I${LOCALBASE}/include"
 .endif
 
 MPQC_COMMAND=	${PREFIX}/bin/mpqc
