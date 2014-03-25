@@ -6,18 +6,18 @@ X-Git-Url: http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=catagits%2FCatalyst-Au
 Fix calling User->can() as a class method. RT#90715
 ---
 
-diff --git a/Changes b/Changes
-index 137ee33..c8babb3 100644
---- a/Changes
-+++ b/Changes
-@@ -1,6 +1,7 @@
- Revision history for Catalyst-Plugin-Authentication-Store-DBIx-Class
- 
-        * Fix doc bugs. RT#87372
-+       * Fix calling User->can() as a class method. RT#90715
- 
- 0.1505 2013-06-10
-        * Fix RT#82944 - test fails on perl >= 5.17.3
+#diff --git a/Changes b/Changes
+#index 137ee33..c8babb3 100644
+#--- a/Changes
+#+++ b/Changes
+#@@ -1,6 +1,7 @@
+# Revision history for Catalyst-Plugin-Authentication-Store-DBIx-Class
+# 
+#        * Fix doc bugs. RT#87372
+#+       * Fix calling User->can() as a class method. RT#90715
+# 
+# 0.1505 2013-06-10
+#        * Fix RT#82944 - test fails on perl >= 5.17.3
 diff --git a/lib/Catalyst/Authentication/Store/DBIx/Class/User.pm b/lib/Catalyst/Authentication/Store/DBIx/Class/User.pm
 index 405ae75..18282a4 100644
 --- a/lib/Catalyst/Authentication/Store/DBIx/Class/User.pm
