@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A convenience package to install the compat7x libraries
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-USE_XZ=		yes
+USES=		tar:xz
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${PKGDIR}/pkg-plist.${ARCH}
@@ -23,8 +23,8 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-IGNORE=		is for FreeBSD 7.x and newer
+.if ${OSVERSION} < 800000
+IGNORE=		is for FreeBSD 8.x and newer
 .endif
 
 .if ${ARCH} == amd64
