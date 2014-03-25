@@ -7,31 +7,25 @@ CATEGORIES=	lang devel
 MASTER_SITES=	SF
 
 MAINTAINER=	sperber@FreeBSD.org
-COMMENT=	A C99 compiler using libFIRM as backend
+COMMENT=	C99 compiler using libFIRM as backend
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	firm:${PORTSDIR}/devel/libfirm
+LIB_DEPENDS=	libfirm.so:${PORTSDIR}/devel/libfirm
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		pkgconfig
+USES=		pkgconfig gmake tar:bzip2
 
-PLIST_FILES=	bin/cparser
-
-MAN1=	cparser.1
+PLIST_FILES=	bin/cparser \
+		man/man1/cparser.1.gz
 
 BUILDDIR=	optimize
-INSTALL_CMD=	${INSTALL_PROGRAM}
 
 OPTIONS_DEFINE=	DEBUG
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
 BUILDDIR=	debug
-INSTALL_CMD=	${INSTALL_PROGRAM:S,-s,,}
 .else
 post-patch:
 	@${REINPLACE_CMD} -e 's/^variant  ?= debug/variant  ?= optimize/' \
@@ -39,7 +33,7 @@ post-patch:
 .endif
 
 do-install:
-	@${INSTALL_CMD} ${WRKSRC}/build/${BUILDDIR}/cparser ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/cparser.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/build/${BUILDDIR}/cparser ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cparser.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
