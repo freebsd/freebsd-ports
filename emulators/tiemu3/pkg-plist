@@ -1,4 +1,5 @@
 bin/tiemu
+man/man1/tiemu.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/tiemu.mo
 share/tiemu/Manpage.txt
 share/tiemu/glade/calc-2.glade
