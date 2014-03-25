@@ -1,0 +1,17 @@
+diff -u lib/tc_command.sh.orig lib/tc_command.sh
+--- lib/tc_command.sh.orig
++++ lib/tc_command.sh
+@@ -1284,11 +1284,12 @@ enterBuild () {
+ 	return 1
+     fi
+ 
++    tc=$(tinderLoc scripts tc)
+     portstree=$(${tc} getPortsTreeForBuild -b ${build})
+     sleepName=$(echo ${portDir} | sed -e 'y/\//_/')
+     buildPortFullDir=${buildRoot}/usr/ports/${portDir}
+     portsTreeDir=$(tinderLoc portstree ${portstree})
+-    portFullDir=${portsTreeDir}/${portDir}
++    portFullDir=${portsTreeDir}/ports/${portDir}
+ 
+     if [ ! -d ${portFullDir} ]; then
+ 	echo "enterBuild: Build environment does not exist yet, sleeping."
