@@ -13,7 +13,6 @@ COMMENT=	Small, fast malloc library by Doug Lea
 NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 .for f in ${DISTFILES}
