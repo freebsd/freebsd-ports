@@ -3,18 +3,18 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		6.4.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
 MAINTAINER=		wen@FreeBSD.org
 COMMENT=		System for developing web-based GIS applications
 
-LIB_DEPENDS=		gd:${PORTSDIR}/graphics/gd \
-			proj:${PORTSDIR}/graphics/proj \
-			png15:${PORTSDIR}/graphics/png \
-			jpeg:${PORTSDIR}/graphics/jpeg \
-			gif:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd \
+			libproj.so:${PORTSDIR}/graphics/proj \
+			libpng15.so:${PORTSDIR}/graphics/png \
+			libjpeg.so:${PORTSDIR}/graphics/jpeg \
+			libgif.so:${PORTSDIR}/graphics/giflib
 
 USES=			cmake
 LDFLAGS+=		-L${LOCALBASE} -pthread
@@ -49,6 +49,8 @@ PLIST_SUB+=		MAPSERV="@comment "
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=		2
+BUILD_DEPENDS+=		swig2.0:${PORTSDIR}/devel/swig20
+CMAKE_ARGS+=		-DWITH_PYTHON=yes
 PLIST_SUB+=		PYTHON=""
 MAP_EGG=		MapScript-${PORTVERSION}-${PYTHON_VERSION:S/thon//}
 PLIST_SUB+=		MAP_EGG=${MAP_EGG}
@@ -57,24 +59,24 @@ PLIST_SUB+=		PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo \
-			expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=		libcairo.so:${PORTSDIR}/graphics/cairo \
+			libexpat.so:${PORTSDIR}/textproc/expat2
 CMAKE_ARGS+=		-DWITH_CAIRO=1
 .else
 CMAKE_ARGS+=		-DWITH_CAIRO=0
 .endif
 
 .if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=		fribidi:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=		libfribidi.so:${PORTSDIR}/converters/fribidi
 CMAKE_ARGS+=		-DWITH_FRIBIDI=1
 .else
 CMAKE_ARGS+=		-DWITH_FRIBIDI=0
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO_SVG}
-LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo \
-			svg-cairo:${PORTSDIR}/graphics/libsvg-cairo \
-			expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=		libcairo.so:${PORTSDIR}/graphics/cairo \
+			libsvg-cairo.so:${PORTSDIR}/graphics/libsvg-cairo \
+			libexpat.so:${PORTSDIR}/textproc/expat2
 CMAKE_ARGS+=		-DWITH_SVGCAIRO=1 -DWITH_CAIRO=1
 USES+=			pkgconfig
 .else
@@ -82,7 +84,7 @@ CMAKE_ARGS+=		-DWITH_SVGCAIRO=0
 .endif
 
 .if ${PORT_OPTIONS:MKML}
-LIB_DEPENDS+=		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=		libxml2.so:${PORTSDIR}/textproc/libxml2
 CMAKE_ARGS+=		-DWITH_KML=1
 .else
 CMAKE_ARGS+=		-DWITH_KML=0
@@ -107,14 +109,14 @@ CMAKE_ARGS+=		-DWITH_WCS=0
 .endif
 
 .if ${PORT_OPTIONS:MGDAL}
-LIB_DEPENDS+=		gdal:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=		libgdal.so:${PORTSDIR}/graphics/gdal
 CMAKE_ARGS+=		-DWITH_GDAL=1
 .else
 CMAKE_ARGS+=		-DWITH_GDAL=0
 .endif
 
 .if ${PORT_OPTIONS:MGEOS}
-LIB_DEPENDS+=		geos:${PORTSDIR}/graphics/geos
+LIB_DEPENDS+=		libgeos.so:${PORTSDIR}/graphics/geos
 CMAKE_ARGS+=		-DWITH_GEOS=1
 .else
 CMAKE_ARGS+=		-DWITH_GEOS=0
@@ -150,7 +152,7 @@ PLIST_SUB+=	PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
 CMAKE_ARGS+=		-DWITH_CURL=1
 .else
 CMAKE_ARGS+=		-DWITH_CURL=0
@@ -187,6 +189,10 @@ do-install:
 	@${MKDIR} ${LOCALBASE}/${PHP_EXTENSION_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php/php_mapscript.so \
 		${LOCALBASE}/${PHP_EXTENSION_DIR}/
+.endif
+
+.if ${PORT_OPTIONS:MPYTHON}
+	(cd ${WRKSRC}/mapscript/python && ${CP} mapscript.py _mapscript.so ${PYTHON_SITELIBDIR}/)
 .endif
 
 post-install:
