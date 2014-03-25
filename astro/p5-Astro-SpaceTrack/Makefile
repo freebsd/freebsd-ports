@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Astro-SpaceTrack
-PORTVERSION=	0.084
+PORTVERSION=	0.085
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT
@@ -14,7 +14,8 @@ COMMENT=	Retrieve orbital data from www.space-track.org
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-Message>=6.03:${PORTSDIR}/www/p5-HTTP-Message \
+BUILD_DEPENDS=	p5-HTTP-Date>=0:${PORTSDIR}/www/p5-HTTP-Date \
+		p5-HTTP-Message>=6.03:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
