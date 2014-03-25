@@ -2,6 +2,9 @@ bin/mp3blaster
 bin/mp3tag
 bin/nmixer
 bin/splay
+man/man1/mp3blaster.1.gz
+man/man1/nmixer.1.gz
+man/man1/splay.1.gz
 %%DATADIR%%/charmap/README
 %%DATADIR%%/charmap/chargen.c
 %%DATADIR%%/charmap/koi8-r
