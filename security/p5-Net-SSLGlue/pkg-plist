@@ -1,0 +1,19 @@
+%%SITE_PERL%%/Net/SSLGlue.pm
+%%SITE_PERL%%/Net/SSLGlue/FTP.pm
+%%SITE_PERL%%/Net/SSLGlue/LDAP.pm
+%%SITE_PERL%%/Net/SSLGlue/LWP.pm
+%%SITE_PERL%%/Net/SSLGlue/POP3.pm
+%%SITE_PERL%%/Net/SSLGlue/SMTP.pm
+%%SITE_PERL%%/Net/SSLGlue/Socket.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLGlue/.packlist
+%%PERL5_MAN3%%/Net::SSLGlue.3.gz
+%%PERL5_MAN3%%/Net::SSLGlue::FTP.3.gz
+%%PERL5_MAN3%%/Net::SSLGlue::LDAP.3.gz
+%%PERL5_MAN3%%/Net::SSLGlue::LWP.3.gz
+%%PERL5_MAN3%%/Net::SSLGlue::POP3.3.gz
+%%PERL5_MAN3%%/Net::SSLGlue::SMTP.3.gz
+%%PERL5_MAN3%%/Net::SSLGlue::Socket.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLGlue
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/Net/SSLGlue
+@dirrmtry %%SITE_PERL%%/Net
