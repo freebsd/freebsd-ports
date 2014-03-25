@@ -1,0 +1,14 @@
+include/apq-odbc/apq-odbc-client.adb
+include/apq-odbc/apq-odbc-client.ads
+include/apq-odbc/apq-odbc.adb
+include/apq-odbc/apq-odbc.ads
+include/apq-odbc/odbc_lib.c
+include/apq-odbc/odbc_lib.h
+lib/apq-odbc/static/apq-odbc-client.ali
+lib/apq-odbc/static/apq-odbc.ali
+lib/apq-odbc/static/libapq-odbc.a
+lib/gnat/apq-odbc.gpr
+@dirrmtry lib/gnat
+@dirrm lib/apq-odbc/static
+@dirrm lib/apq-odbc
+@dirrm include/apq-odbc

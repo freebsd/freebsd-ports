@@ -18,6 +18,10 @@
     SUBDIR += animenfo-client-gtk
     SUBDIR += aolserver-nsmysql
     SUBDIR += aolserver-nspostgres
+    SUBDIR += apq
+    SUBDIR += apq-mysql
+    SUBDIR += apq-odbc
+    SUBDIR += apq-pgsql
     SUBDIR += autobackupmysql
     SUBDIR += bbdb
     SUBDIR += beansdb

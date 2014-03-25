@@ -1,0 +1,4 @@
+APQ is a database interface library written in Ada95, and this is the
+PostgreSQL driver that is used with it.
+
+WWW: https://bitbucket.org/kowframework/apq-postgresql

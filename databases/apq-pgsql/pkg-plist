@@ -1,0 +1,20 @@
+include/apq-postgresql/apq-postgresql-client.adb
+include/apq-postgresql/apq-postgresql-client.ads
+include/apq-postgresql/apq-postgresql-decimal.adb
+include/apq-postgresql/apq-postgresql-decimal.ads
+include/apq-postgresql/apq-postgresql.ads
+include/apq-postgresql/apq-postgresql.ads-e
+include/apq-postgresql/decimal.h
+include/apq-postgresql/notices.c
+include/apq-postgresql/numeric.c
+include/apq-postgresql/numeric.h
+include/apq-postgresql/pgtypes.h
+lib/apq-postgresql/static/apq-postgresql-client.ali
+lib/apq-postgresql/static/apq-postgresql-decimal.ali
+lib/apq-postgresql/static/apq-postgresql.ali
+lib/apq-postgresql/static/libapq-postgresql.a
+lib/gnat/apq-postgresql.gpr
+@dirrmtry lib/gnat
+@dirrm lib/apq-postgresql/static
+@dirrm lib/apq-postgresql
+@dirrm include/apq-postgresql
