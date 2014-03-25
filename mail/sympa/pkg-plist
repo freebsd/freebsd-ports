@@ -38,7 +38,6 @@ libexec/sympa/Upgrade.pm
 libexec/sympa/WebAgent.pm
 libexec/sympa/admin.pm
 libexec/sympa/alias_manager.pl
-libexec/sympa/aliaswrapper
 libexec/sympa/arc2webarc.pl
 libexec/sympa/archived.pl
 libexec/sympa/bounced.pl
@@ -61,6 +60,8 @@ libexec/sympa/mysql_alias_manager.pl
 libexec/sympa/p12topem.pl
 libexec/sympa/queue
 libexec/sympa/report.pm
+libexec/sympa/sympa_newaliases-wrapper
+libexec/sympa/sympa_newaliases.pl
 libexec/sympa/sympa.pl
 libexec/sympa/sympa_soap_client.pl
 libexec/sympa/sympa_soap_server-wrapper.fcgi
@@ -74,7 +75,6 @@ libexec/sympa/time_utils.pm
 libexec/sympa/tools.pm
 libexec/sympa/tpl2tt2.pl
 libexec/sympa/tt2.pm
-libexec/sympa/virtualwrapper
 libexec/sympa/wwslib.pm
 libexec/sympa/wwsympa-wrapper.fcgi
 libexec/sympa/wwsympa.fcgi
@@ -586,3 +586,5 @@ man/man8/sympa.8.gz
 @dirrm libexec/sympa/Marc
 @dirrm libexec/sympa/HTML
 @dirrm libexec/sympa
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%

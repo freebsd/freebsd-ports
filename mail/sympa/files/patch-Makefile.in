@@ -2,9 +2,9 @@ Avoid chown before install, to avoid using root.
 
 createddirs is read in Makefile and processed there
 
---- Makefile.in.orig	2013-02-05 14:57:30.000000000 +0000
-+++ Makefile.in	2014-01-01 20:07:50.489335639 +0000
-@@ -631,12 +631,9 @@
+--- Makefile.in.orig	2014-02-05 15:08:23.000000000 +0100
++++ Makefile.in	2014-03-14 10:42:06.143965800 +0100
+@@ -639,12 +639,7 @@
  		$(spooldir)/moderation $(spooldir)/expire $(spooldir)/auth \
  		$(spooldir)/outgoing $(spooldir)/tmp $(spooldir)/task \
  		$(bouncedir) $(arcdir) $(piddir) $(staticdir) $(sysconfdir); do \
@@ -15,17 +15,35 @@ createddirs is read in Makefile and processed there
 -		chown $(USER) $(DESTDIR)$$dir || /bin/true; \
 -		chgrp $(GROUP) $(DESTDIR)$$dir || /bin/true; \
 +		echo "$${dir}" >> createddirs; \
-+		\
-+		\
  	done
  
  installconfig: installdir
-@@ -668,8 +665,6 @@
+@@ -676,27 +671,12 @@
  		echo "# automatically created file" >> data_structure.version; \
  		echo "# you should not modify it" >> data_structure.version; \
  		echo $(VERSION) >> data_structure.version; \
 -		chown $(USER) data_structure.version || /bin/true; \
 -		chgrp $(GROUP) data_structure.version || /bin/true; \
  	fi
+ 	@for dir in create_list_templates families \
+ 		global_task_models list_task_models scenari search_filters \
+ 		mail_tt2 web_tt2; do \
+-		if [ ! -d $(DESTDIR)$(sysconfdir)/$$dir ] ; then \
+-			echo "Creating $(DESTDIR)$(sysconfdir)/$$dir"; \
+-			install -d -m 755 $(DESTDIR)$(sysconfdir)/$$dir; \
+-		fi; \
+-		chown $(USER) $(DESTDIR)$(sysconfdir)/$$dir || /bin/true; \
+-		chgrp $(GROUP) $(DESTDIR)$(sysconfdir)/$$dir || /bin/true; \
++		echo "$(DESTDIR)$(sysconfdir)/$${dir}" >> createddirs; \
+ 	done
+-	@if [ ! -e $(DESTDIR)$(sysconfdir)/README ]; then \
+-		echo "Creating $(DESTDIR)$(sysconfdir)/README"; \
+-		$(SED) \
+-			-e 's|--sysconfdir--|$(sysconfdir)|' \
+-			-e 's|--defaultdir--|$(defaultdir)|' \
+-			etc_README > $(DESTDIR)$(sysconfdir)/README; \
+-		chmod 444 $(DESTDIR)$(sysconfdir)/README; \
+-	fi
  
  nextstep: 
+ 	@echo ""
