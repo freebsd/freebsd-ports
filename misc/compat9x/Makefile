@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A convenience package to install the compat9x libraries
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-USE_XZ=		yes
+USES=		tar:xz
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${PKGDIR}/pkg-plist.${ARCH}
@@ -23,8 +23,8 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000
-IGNORE=		is for FreeBSD 9.x and newer
+.if ${OSVERSION} < 1000000
+IGNORE=		is for FreeBSD 10.x and newer
 .endif
 
 .if ${ARCH} == amd64
