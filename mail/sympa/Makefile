@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-PORTVERSION=	6.1.17
-PORTREVISION=	1
+PORTVERSION=	6.1.20
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -127,7 +126,7 @@ post-patch:
 	    -e 's|^\( *bouncedir=\).*$$|\1${DATADIR}/bounce|'		\
 	    -e 's|^\( *execcgidir=\).*$$|\1${PREFIX}/libexec/${PORTNAME}|' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|\(--target.*sympa.conf\)|\1.sample|'	\
+	@${REINPLACE_CMD} -e 's|\(--target.*sympa.conf\)|\1.sample|'	\
 			  -e 's|/bin/true$$|:|'				\
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's#\$$(DESTDIR)\$$(sampledir)#${STAGEDIR}\$$(sampledir)#g' \
@@ -140,11 +139,12 @@ post-install:
 	for dir in $$(sort ${WRKSRC}/createddirs); do \
 		${MKDIR} -m755 ${STAGEDIR}$$dir; \
 		${TOUCH} ${STAGEDIR}$$dir/.keep; \
-		${ECHO_CMD} "@exec chown ${USERS}:${GROUPS} $${dir#${PREFIX}/}" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@exec ${CHOWN} ${USERS}:${GROUPS} $${dir#${PREFIX}/}" >> ${TMPPLIST}; \
 		${ECHO_CMD} "$${dir#${PREFIX}/}/.keep" >> ${TMPPLIST}; \
 	done; \
 	for dir in $$(sort -r ${WRKSRC}/createddirs); do \
-		${ECHO_CMD} "@unexec rmdir $$dir" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@unexec ${RMDIR} $$dir" >> ${TMPPLIST}; \
 	done
+	${INSTALL_DATA} ${WRKSRC}/etc_README ${STAGEDIR}/${ETCDIR}
 
 .include <bsd.port.mk>
