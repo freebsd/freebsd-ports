@@ -1042,7 +1042,6 @@
     SUBDIR += worldofpadman
     SUBDIR += wtf
     SUBDIR += xabacus
-    SUBDIR += xarchon
     SUBDIR += xasteroids
     SUBDIR += xataxx
     SUBDIR += xbat
