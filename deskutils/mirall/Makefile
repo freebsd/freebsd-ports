@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mirall
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 
@@ -15,27 +15,27 @@ LIB_DEPENDS=	libocsync.so:${PORTSDIR}/net/owncloud-csync \
 		libinotify.so:${PORTSDIR}/devel/libinotify \
 		libqtkeychain.so:${PORTSDIR}/security/qtkeychain
 
-USES=		cmake:outsource pkgconfig gmake compiler:c++11-lang
-USE_BZIP2=
+USES=		cmake:outsource pkgconfig gmake compiler:c++11-lang tar:bzip2
 USE_QT4=	corelib dbus gui linguist moc network qmake qtestlib rcc uic webkit xml
 CMAKE_ENV=	CSYNC_DIR=${LOCALBASE} INOTIFY_LIB=${LOCALBASE}/lib
 CMAKE_ARGS=	-DCSYNC_INCLUDE_PATH:STRING=${LOCALBASE}/include/ocsync/
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
+ALL_TARGET=	all
+
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 DOCS_USE=	TEX=latex:build
+DOCS_CMAKE_ON=	WITH_DOC=true
+DOCS_ALL_TARGET=	doc-html doc-pdf
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-CMAKE_ARGS+=	WITH_DOC=TRUE
-ALL_TARGET=	all doc-html doc-pdf
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html

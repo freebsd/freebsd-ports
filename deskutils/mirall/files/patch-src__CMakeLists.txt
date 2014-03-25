@@ -1,9 +1,9 @@
---- ./src/CMakeLists.txt.orig	2013-12-12 18:20:45.000000000 +0100
-+++ ./src/CMakeLists.txt	2014-01-09 19:53:06.000000000 +0100
-@@ -118,6 +118,7 @@
-     set(libsync_SRCS ${libsync_SRCS} mirall/folderwatcher_inotify.cpp)
-     set(libsync_HEADERS ${libsync_HEADERS} mirall/inotify.h)
-     set(libsync_HEADERS ${libsync_HEADERS} mirall/folderwatcher_inotify.h)
+--- ./src/CMakeLists.txt.orig	2014-03-10 12:22:06.000000000 +0100
++++ ./src/CMakeLists.txt	2014-03-18 17:12:29.000000000 +0100
+@@ -136,6 +136,7 @@
+ IF( NOT WIN32 AND NOT APPLE )
+     set(libsync_SRCS ${libsync_SRCS} mirall/folderwatcher_linux.cpp)
+     set(libsync_HEADERS ${libsync_HEADERS} mirall/folderwatcher_linux.h)
 +    link_directories($ENV{INOTIFY_LIB})
  ENDIF()
  IF( WIN32 )
