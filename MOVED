@@ -5803,3 +5803,4 @@ games/p5-Algorithm-Pair-Best|games/p5-Algorithm-Pair-Best2|2014-03-24|Has expire
 x11-wm/hackedbox||2014-03-24|Has expired: Abandonware
 emulators/hfs|sysutils/hfsutils|2014-03-24|Has expired: No upstream, no public distfiles; consider using 'sysutils/hfsutils'
 games/fuhquake||2014-03-24|Has expired: Upstream disappeared; no more public distfiles; unmaintained
+games/xarchon||2014-03-25|Has expired: Unusable, development ceased, not works with stage
