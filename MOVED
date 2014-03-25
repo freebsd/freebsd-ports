@@ -5804,3 +5804,4 @@ x11-wm/hackedbox||2014-03-24|Has expired: Abandonware
 emulators/hfs|sysutils/hfsutils|2014-03-24|Has expired: No upstream, no public distfiles; consider using 'sysutils/hfsutils'
 games/fuhquake||2014-03-24|Has expired: Upstream disappeared; no more public distfiles; unmaintained
 games/xarchon||2014-03-25|Has expired: Unusable, development ceased, not works with stage
+lang/libstdc++_stldoc_3.4.0||2014-03-25|STL 3.4 is not supported for long
