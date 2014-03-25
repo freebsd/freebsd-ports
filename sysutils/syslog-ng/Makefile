@@ -4,7 +4,6 @@
 PORTNAME=	syslog-ng
 PORTVERSION=	3.5.4.1
 CATEGORIES=	sysutils
-PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/${DISTVERSION}/source/

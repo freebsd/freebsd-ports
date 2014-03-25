@@ -1,7 +1,7 @@
 # Created by: Ivan Lago <ivan.lago@ifom-ieo-campus.it>
 # $FreeBSD$
 
-PORTNAME=	syslog-ng
+PORTNAME=	syslog-ng34
 PORTVERSION=	3.4.7
 PORTREVISION=	1
 CATEGORIES=	sysutils
