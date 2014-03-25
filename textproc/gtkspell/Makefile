@@ -14,16 +14,15 @@ COMMENT=	A GTK+ 2 spell checking component
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 
-USE_GNOME=	gnomeprefix gnomehack gtk20 intlhack
-USES=		gettext gmake pkgconfig
+USE_GNOME=	gnomeprefix gtk20 intlhack
+USES=		gettext gmake pkgconfig pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|docs||' ${WRKSRC}/Makefile.in
 
