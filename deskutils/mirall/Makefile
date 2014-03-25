@@ -3,6 +3,7 @@
 
 PORTNAME=	mirall
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 
