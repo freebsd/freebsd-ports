@@ -6,7 +6,7 @@ PORTVERSION=	1.8.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Open-source audio processing library
 
 LICENSE=	LGPL21
@@ -18,6 +18,9 @@ ACLOCAL_ARGS=	-I config/m4
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
 CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
+
+USES=			pathfix
+PATHFIX_MAKEFILEIN=	Makefile.am
 
 OPTIONS_DEFINE=	INTEGER_SAMPLES DOCS
 OPTIONS_DEFINE_amd64=	SSE
@@ -31,8 +34,7 @@ SSE_CONFIGURE_ENABLE=	x86-optimizations
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/^pkgdoc_DATA/s|COPYING.TXT|| ; \
-		 s|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
+		'/^pkgdoc_DATA/s|COPYING.TXT||' \
 		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e \
 		's|^INCLUDES|AM_CPPFLAGS| ; \
@@ -40,7 +42,7 @@ post-patch:
 		${WRKSRC}/config/am_include.mk
 .for i in SoundStretch SoundTouch
 	@${REINPLACE_CMD} -e \
-		's|-O[0-9]||' \
+		's|-O[0-9]||;s|-fcheck-new||' \
 		${WRKSRC}/source/${i}/Makefile.am
 .endfor
 
