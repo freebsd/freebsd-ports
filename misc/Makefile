@@ -47,6 +47,7 @@
     SUBDIR += cmatrix
     SUBDIR += color-theme.el
     SUBDIR += colortail
+    SUBDIR += compat10x
     SUBDIR += compat4x
     SUBDIR += compat5x
     SUBDIR += compat6x
