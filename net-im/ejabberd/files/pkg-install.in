@@ -14,9 +14,7 @@ chown -R %%USERS%%:%%GROUPS%%  %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERS
 find %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chmod %%SHAREMODE%%
 find %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chown %%SHAREOWN%%:%%SHAREGRP%%
 
-if [ "%%PAM%%" = 1 ]; then
-	chmod 4750 %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
-	chown root:%%GROUPS%% %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
-fi
+%%PAM%%chmod 4750 %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
+%%PAM%%chown root:%%GROUPS%% %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
 
 exit 0

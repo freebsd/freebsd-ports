@@ -398,12 +398,20 @@ ALL_OPTIONS=	${OPTIONS_DEFINE}
 .for opt in ${COMPLETE_OPTIONS_LIST} ${OPTIONS_SLAVE} ${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE}
 # PLIST_SUB
 PLIST_SUB?=
+SUB_LIST?=
 .  if defined(OPTIONS_SUB)
 .    if ! ${PLIST_SUB:M${opt}=*}
 .      if ${PORT_OPTIONS:M${opt}}
 PLIST_SUB:=	${PLIST_SUB} ${opt}="" NO_${opt}="@comment "
 .      else
 PLIST_SUB:=	${PLIST_SUB} ${opt}="@comment " NO_${opt}=""
+.      endif
+.    endif
+.    if ! ${SUB_LIST:M${opt}=*}
+.      if ${PORT_OPTIONS:M${opt}}
+SUB_LIST:=	${SUB_LIST} ${opt}="" NO_${opt}="@comment "
+.      else
+SUB_LIST:=	${SUB_LIST} ${opt}="@comment " NO_${opt}=""
 .      endif
 .    endif
 .  endif

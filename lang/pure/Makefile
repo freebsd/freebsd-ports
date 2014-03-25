@@ -64,12 +64,6 @@ SUB_LIST+=	NOCLANG=""
 SUB_LIST+=	NOCLANG="@comment "
 .endif
 
-.if ${PORT_OPTIONS:METC}
-SUB_LIST+=	ETC=""
-.else
-SUB_LIST+=	ETC="@comment "
-.endif
-
 # automatically disable readline support if editline support is available
 .if exists(/usr/include/edit/readline/readline.h)
 CONFIGURE_ARGS+=	--without-readline
