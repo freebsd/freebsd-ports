@@ -3,6 +3,7 @@
 
 PORTNAME=	mythtv
 PORTVERSION=	0.27.0.20140121
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 
@@ -28,6 +29,7 @@ GH_COMMIT=	5a5e1cd
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/${GH_PROJECT}
 
 ONLY_FOR_ARCHS=	i386 amd64
+NOPRECIOUSMAKEVARS=	# don't override $(ARCH) in ffmpeg makefiles
 USES=		gmake pkgconfig perl5
 USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
 		moc_build qmake_build rcc_build uic_build imageformats
