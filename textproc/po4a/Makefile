@@ -4,8 +4,7 @@
 PORTNAME=	po4a
 PORTVERSION=	0.45
 CATEGORIES=	textproc perl5
-MASTER_SITES=	LOCAL/garga/po4a/orig \
-		http://leaf.dragonflybsd.org/~marino/dports-src/
+MASTER_SITES=	LOCAL/garga/po4a
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Brings gettext translation tools to all kinds of docs
