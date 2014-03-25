@@ -611,6 +611,7 @@
     SUBDIR += ruby-narray_miss
     SUBDIR += ruby-numru_misc
     SUBDIR += ruby-numru_units
+    SUBDIR += rubygem-narray
     SUBDIR += saga
     SUBDIR += sage
     SUBDIR += sc
