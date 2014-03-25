@@ -1,22 +1,18 @@
 bin/saga_cmd
 bin/saga_gui
+lib/libsaga_api-2.1.1.so
 lib/libsaga_api.la
-lib/libsaga_api-2.1.0.so
 lib/libsaga_api.so
-lib/libsaga_gdi-2.1.0.so
+lib/libsaga_gdi-2.1.1.so
 lib/libsaga_gdi.la
 lib/libsaga_gdi.so
-lib/libsaga_odbc.a
-lib/libsaga_odbc.la
-lib/libsaga_odbc-2.1.0.so
-lib/libsaga_odbc.so
-%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api-2.1.0.so
-%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api.a
-%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api.la
-%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api.so
-%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/saga_api.py
-%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/saga_api.pyc
-%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/saga_api.pyo
+%%PYTHON_SITELIBDIR%%/_saga_api-2.1.1.so
+%%PYTHON_SITELIBDIR%%/_saga_api.a
+%%PYTHON_SITELIBDIR%%/_saga_api.la
+%%PYTHON_SITELIBDIR%%/_saga_api.so
+%%PYTHON_SITELIBDIR%%/saga_api.py
+%%PYTHON_SITELIBDIR%%/saga_api.pyc
+%%PYTHON_SITELIBDIR%%/saga_api.pyo
 lib/saga/libclimate_tools.so
 lib/saga/libcontrib_a_perego.so
 lib/saga/libdocs_html.so
@@ -48,16 +44,17 @@ lib/saga/libio_grid.so
 lib/saga/libio_grid_grib2.so
 lib/saga/libio_grid_image.so
 lib/saga/libio_odbc.so
+lib/saga/libio_pgsql.so
 lib/saga/libio_shapes.so
 lib/saga/libio_shapes_dxf.so
 lib/saga/libio_shapes_las.so
 lib/saga/libio_table.so
 lib/saga/liblectures_introduction.so
+lib/saga/libopencv.so
 lib/saga/libpj_georeference.so
 lib/saga/libpj_proj4.so
 lib/saga/libpointcloud_tools.so
 lib/saga/libpointcloud_viewer.so
-lib/saga/libopencv.so
 lib/saga/librecreations_fractals.so
 lib/saga/librecreations_games.so
 lib/saga/libshapes_grid.so
@@ -65,6 +62,7 @@ lib/saga/libshapes_lines.so
 lib/saga/libshapes_points.so
 lib/saga/libshapes_polygons.so
 lib/saga/libshapes_tools.so
+lib/saga/libshapes_transect.so
 lib/saga/libsim_cellular_automata.so
 lib/saga/libsim_ecosystems_hugget.so
 lib/saga/libsim_erosion.so
@@ -81,11 +79,11 @@ lib/saga/libtable_calculus.so
 lib/saga/libtable_tools.so
 lib/saga/libtin_tools.so
 lib/saga/libtin_viewer.so
-lib/saga/libtransect.so
+%%VIGRA%%lib/saga/libvigra.so
 man/man1/saga_cmd.1.gz
 man/man1/saga_gui.1.gz
-%%VIGRA%%lib/saga/libvigra.so
+share/applications/saga_gui.desktop
 %%DATADIR%%/saga.png
 %%DATADIR%%/saga_tip.txt
-@dirrm share/saga
-@dirrm lib/saga
+@dirrmtry %%DATADIR%%
+@dirrmtry lib/saga
