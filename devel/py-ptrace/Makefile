@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ptrace
-PORTVERSION=	0.6.5
+PORTVERSION=	0.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,33 +17,25 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distorm>0:${PORTSDIR}/devel/py-distorm
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	python_ptrace
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+PYDISTUTILS_AUTOPLIST=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${DOCSDIR:C/doc/examples/}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-PORTSDOCS=	AUTHORS ChangeLog PKG-INFO README README.cptrace TODO
+PORTDOCS=	AUTHORS ChangeLog PKG-INFO README README.cptrace TODO
+PORTEXAMPLES=	itrace.py simple_dbg.py
 
-ONLY_FOR_ARCHS=	i386
+OPTIONS_DEFINE= DOCS EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${STAGEDIR}${EXAMPLESDIR}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|libdistorm64.so|${PYTHON_SITELIBDIR}/distorm3/libdistorm3.so|' \
 		${WRKSRC}/ptrace/pydistorm.py
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTSDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-.endif
 
 regression-test: extract
 	@(cd ${WRKSRC} && ${PYTHON_CMD} test_doc.py)
