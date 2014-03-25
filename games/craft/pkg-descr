@@ -1,0 +1,9 @@
+Craft is a Minecraft clone.
+Just a few thousand lines of C using modern OpenGL (shaders).
+Online multiplayer support is included using a Python-based server.
+
+This version is adapted to build, install and run on FreeBSD.
+
+Craft was created by Michael Fogleman.
+
+WWW: http://www.michaelfogleman.com/craft/
