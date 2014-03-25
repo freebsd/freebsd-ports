@@ -5,10 +5,10 @@
    LTLINK = $(LIBTOOL) --mode=link
    ifneq ($(BUILDID),)
 -    LTLINKLIBOPTS = -rpath $(libdir) -release $(BUILDID) -version-info $(SC_SO_VERSION)
-+    LTLINKLIBOPTS = %%EXTRARPATH%% -rpath $(libdir) -release $(BUILDID) -version-info $(SC_SO_VERSION)
++    LTLINKLIBOPTS = $(LDFLAGS) -rpath $(libdir) -release $(BUILDID) -version-info $(SC_SO_VERSION)
    else
 -    LTLINKLIBOPTS = -rpath $(libdir) -version-info $(SC_SO_VERSION)
-+    LTLINKLIBOPTS = %%EXTRARPATH%% -rpath $(libdir) -version-info $(SC_SO_VERSION)
++    LTLINKLIBOPTS = $(LDFLAGS) -rpath $(libdir) -version-info $(SC_SO_VERSION)
    endif
    LTLINKBINOPTS =
    LTCOMP = $(LIBTOOL) --mode=compile
