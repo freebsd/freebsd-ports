@@ -27,7 +27,7 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENV_OFF=	am_cv_func_iconv=no
-NLS_CONFIGURE_ENABLE=	yes
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|doc||g ; \
