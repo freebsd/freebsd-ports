@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doomsday
-PORTVERSION=	1.12.2
+PORTVERSION=	1.13.2
 CATEGORIES=	games
 MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
 
@@ -37,6 +37,8 @@ OPENAL_DESC=	Build OpenAL sound plugin
 OPENAL_USES=	openal:al
 OPENAL_QMAKE_ON=	CONFIG+=deng_openal
 OPENAL_QMAKE_OFF=	CONFIG+=deng_noopenal
+
+PORTSCOUT=	limit:^\d+\.\d+\.\d+$
 
 post-patch:
 	${REINPLACE_CMD} 's,share/man,man,' \
