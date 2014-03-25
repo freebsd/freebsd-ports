@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getdns
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://getdnsapi.net/dist/ \
     		http://mirrors.rit.edu/zi/
@@ -33,8 +33,11 @@ LIBUV_DESC=	Build with libuv extension
 LIBEVENT_DESC=	Build with libevent extension
 
 LIBEV_LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
+LIBEV_CONFIGURE_WITH=	libev
 LIBUV_LIB_DEPENDS=	libuv.so:${PORTSDIR}/devel/libuv
+LIBUV_CONFIGURE_WITH=	libuv
 LIBEVENT_LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
+LIBEVENT_CONFIGURE_WITH=libevent
 
 .include <bsd.port.options.mk>
 
@@ -45,12 +48,7 @@ post-patch:
 post-install:
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${WRKDIR}/examples
-	@${MV} ${WRKDIR}/doc/spec/${PORTNAME}*gz ${WRKDIR}/examples/${PORTNAME}.tgz
-	@${RM} -fr ${WRKDIR}/doc/spec
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/)
+	@${MV} ${WRKSRC}/spec/${PORTNAME}*gz ${WRKDIR}/examples/${PORTNAME}.tgz
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@(cd ${WRKDIR}/examples && ${TAR} --strip-components=1 -xf ${PORTNAME}.tgz)
