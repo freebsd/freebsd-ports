@@ -3,12 +3,12 @@ include/tox/tox.h
 include/tox/toxav.h
 lib/libtoxav.a
 lib/libtoxav.la
-lib/libtoxav.so
-lib/libtoxav.so.0
+%%SODIUM%%lib/libtoxav.so
+%%SODIUM%%lib/libtoxav.so.0
 lib/libtoxcore.a
 lib/libtoxcore.la
-lib/libtoxcore.so
-lib/libtoxcore.so.0
+%%SODIUM%%lib/libtoxcore.so
+%%SODIUM%%lib/libtoxcore.so.0
 libdata/pkgconfig/libtoxav.pc
 libdata/pkgconfig/libtoxcore.pc
 @dirrm include/tox
