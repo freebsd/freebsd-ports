@@ -2,7 +2,6 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.4.16
-#PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -13,9 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
-USES=		charsetfix
-USE_BZIP2=	YES
-USE_GMAKE=	YES
+USES=		charsetfix gmake tar:bzip2
 GNU_CONFIGURE=	YES
 .if ${MACHINE_CPU:Mi586}
 MACHINE_ARCH=	i586
@@ -45,7 +42,7 @@ CFLAGS:=	${CFLAGS:S/$/ -fheinous-gnu-extensions/}
 .if ${PORT_OPTIONS:MLIBICONV}
 USES+=		iconv
 .else
-CONFIGURE_ARGS+=	--without-libiconv-prefix
+CONFIGURE_ARGS+=	--disable-gnupg-iconv
 .endif
 
 .if ${PORT_OPTIONS:MLIBUSB}
@@ -73,7 +70,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
 # Work around a GnuPG configure buglet
 CONFIGURE_ENV+=	_libcurl_config=${LOCALBASE}/bin/curl-config
