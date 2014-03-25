@@ -6,8 +6,7 @@ PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=${OPSYS}-
 PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.ac.auone-net.jp/~baba/${PORTNAME}/ \
-		http://chirashi-no-ura.net/files/
+MASTER_SITES=	http://www.ac.auone-net.jp/~baba/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual terminal emulator for framebuffer
