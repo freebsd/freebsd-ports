@@ -8,6 +8,7 @@ LOCALBASE    ?= /usr/local
 PREFIX       ?= ${LOCALBASE}
 LIBUTIL      ?= /usr/lib/libutil.a
 LIBARCH      ?= /usr/lib/lib${ARCH}.a
+LIBCHARSET   ?= ${LOCALBASE}/lib/libcharset.a
 LIBICONV     ?= ${LOCALBASE}/lib/libiconv.a
 LIBPNG       ?= ${LOCALBASE}/lib/libpng.a
 GUNZIP       ?= /usr/bin/gunzip
@@ -67,7 +68,7 @@ CFLAGS      += -DPCF_DEBUG
 CFLAGS  += -DENABLE_UTF8
 CFLAGS  += -DENABLE_OTHER_CODING_SYSTEM
 . if !${CFLAGS:M-DLIBICONV_PLUG} && ${OPSYS:MFreeBSD}
-DPADD   += ${LIBICONV}
+DPADD   += ${LIBICONV} ${LIBCHARSET}
 . endif
 .endif
 
