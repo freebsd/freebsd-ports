@@ -18,28 +18,25 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 
 		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
 		${PYXML}
 
-OPTIONS_DEFINE=	LXML REPORTLAB2 CHARDET PYGNOMEEXTRAS
-LXML_DESC=	Enable lxml support
-REPORTLAB2_DESC=	Enable ReportLab2 support
-CHARDET_DESC=	Enable chardet support
-PYGNOMEEXTRAS_DESC=	Enable python-gnome-extras support
-
-USE_XZ=		yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gmake gettext tar:xz
 NO_BUILD=	yes
 
-MANLANG=	"" pl pt
-MAN1=		${PORTNAME}.1
+OPTIONS_DEFINE=	CHARDET LXML PYGNOMEEXTRAS REPORTLAB2    
 
-NO_STAGE=	yes
+CHARDET_DESC=		chardet support
+CHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:${PORTSDIR}/textproc/py-chardet
+
+LXML_DESC=		lxml support
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
+
+PYGNOMEEXTRAS_DESC=	python-gnome-extras support
+PYGNOMEEXTRAS_USE=	GNOME=pygnomeextras
+
+REPORTLAB2_DESC=	ReportLab2 support
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLXML}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
-.endif
 
 .if ${PORT_OPTIONS:MREPORTLAB2}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab2>=2:${PORTSDIR}/print/py-reportlab2
@@ -47,25 +44,20 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab2>=2:${PORTSDIR}/print/py-reportla
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab1>=1.19:${PORTSDIR}/print/py-reportlab1
 .endif
 
-.if ${PORT_OPTIONS:MCHARDET}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}chardet>=0:${PORTSDIR}/textproc/py-chardet
-.endif
-
-.if ${PORT_OPTIONS:MPYGNOMEEXTRAS}
-USE_GNOME+=	pygnomeextras
-.endif
-
 post-patch:
 .for file in Makefile
 	@${REINPLACE_CMD} -e \
 		'/^LANGUAGES=/s|find.*|cd i18n/\&\&ls -d *)|g ; \
-		 /^PREFIX/s|^|#|g ; \
+		 /^PREFIX/s|?=|=|g ; s|/usr|${PREFIX}|; /ln -s/d; \
 		 /^ETCDIR/s|=.*|= $$(PREFIX)/etc|g' ${WRKSRC}/${file}
 .endfor
 .for file in docs/en/Makefile docs/pl/Makefile docs/pt/Makefile
 	@${REINPLACE_CMD} -e \
-		'/^PREFIX/s|^|#|g ; \
-		 /^MANDIR/s|=.*|=${MANPREFIX}/man|g' ${WRKSRC}/${file}
+		'/^PREFIX/s|?=|=|g ; s|/usr|${PREFIX}|; \
+		 /^MANDIR/s|=.*|=${STAGEDIR}${MANPREFIX}/man|g' ${WRKSRC}/${file}
 .endfor
+
+pre-install:
+	${LN} -s ${DATADIR}/lib/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
