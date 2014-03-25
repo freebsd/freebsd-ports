@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	asteroid
@@ -24,6 +24,7 @@ USE_XORG=	xmu
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS NEWS README.md
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
