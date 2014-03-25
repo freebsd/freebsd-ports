@@ -1,2 +1,0 @@
-Warning: due to NaCl weirdness, if you switch your config from libsodium
-to libnacl, you will have to rebuild the consumers of libtoxcore.
