@@ -1,7 +1,10 @@
 abills/Abills/BER.pm
 abills/Abills/Base.pm
+abills/Abills/CONSOLE.pm
 abills/Abills/DES.pm
+abills/Abills/EXCEL.pm
 abills/Abills/HTML.pm
+abills/Abills/HTML5.pm
 abills/Abills/MIBs/ASCEND-MIB
 abills/Abills/MIBs/ASCEND-SESSION-MIB
 abills/Abills/MIBs/CISCO-AAA-SESSION-MIB
@@ -61,6 +64,7 @@ abills/Abills/main_tpls/form_build.tpl
 abills/Abills/main_tpls/form_buy_cards.tpl
 abills/Abills/main_tpls/form_buy_cards_card.tpl
 abills/Abills/main_tpls/form_buy_cards_paysys.tpl
+abills/Abills/main_tpls/form_callcenter_menu.tpl
 abills/Abills/main_tpls/form_chg_bill.tpl
 abills/Abills/main_tpls/form_chg_client_info.tpl
 abills/Abills/main_tpls/form_chg_company.tpl
@@ -92,6 +96,7 @@ abills/Abills/main_tpls/form_money_transfer_s2.tpl
 abills/Abills/main_tpls/form_money_transfer_s3.tpl
 abills/Abills/main_tpls/form_nas.tpl
 abills/Abills/main_tpls/form_nas_configure.tpl
+abills/Abills/main_tpls/form_nas_console.tpl
 abills/Abills/main_tpls/form_nas_group.tpl
 abills/Abills/main_tpls/form_neg_deposit.tpl
 abills/Abills/main_tpls/form_password.tpl
@@ -115,6 +120,8 @@ abills/Abills/main_tpls/form_tp_group.tpl
 abills/Abills/main_tpls/form_user.tpl
 abills/Abills/main_tpls/form_user_exdata.tpl
 abills/Abills/main_tpls/form_user_exdata_add.tpl
+abills/Abills/main_tpls/form_user_footer.tpl
+abills/Abills/main_tpls/form_user_header.tpl
 abills/Abills/main_tpls/form_user_info.tpl
 abills/Abills/main_tpls/form_view.tpl
 abills/Abills/main_tpls/header.tpl
@@ -131,6 +138,7 @@ abills/Abills/modules/Abon/templates/abon_notification1.tpl
 abills/Abills/modules/Abon/templates/abon_notification2.tpl
 abills/Abills/modules/Abon/templates/abon_notification3.tpl
 abills/Abills/modules/Abon/templates/abon_tp.tpl
+abills/Abills/modules/Abon/templates/abon_users_search.tpl
 abills/Abills/modules/Abon/templates/describe.tpls
 abills/Abills/modules/Abon/webinterface
 abills/Abills/modules/Ashield/avd.cgi
@@ -150,6 +158,7 @@ abills/Abills/modules/Bonus/config
 abills/Abills/modules/Bonus/lng_english.pl
 abills/Abills/modules/Bonus/lng_russian.pl
 abills/Abills/modules/Bonus/lng_ukraine.pl
+abills/Abills/modules/Bonus/templates/bonus_accomulation_transfer.tpl
 abills/Abills/modules/Bonus/templates/bonus_operation.tpl
 abills/Abills/modules/Bonus/templates/bonus_service_discount.tpl
 abills/Abills/modules/Bonus/templates/bonus_service_discount_client.tpl
@@ -158,6 +167,7 @@ abills/Abills/modules/Bonus/templates/bonus_tp.tpl
 abills/Abills/modules/Bonus/templates/bonus_tp_row.tpl
 abills/Abills/modules/Bonus/templates/bonus_turbo.tpl
 abills/Abills/modules/Bonus/templates/bonus_user.tpl
+abills/Abills/modules/Bonus/templates/bonus_user_accomulation.tpl
 abills/Abills/modules/Bonus/webinterface
 abills/Abills/modules/Cards/config
 abills/Abills/modules/Cards/lng_english.pl
@@ -228,11 +238,17 @@ abills/Abills/modules/Docs/templates/docs_invoice.dsc
 abills/Abills/modules/Docs/templates/docs_invoice.pdf
 abills/Abills/modules/Docs/templates/docs_invoice.tpl
 abills/Abills/modules/Docs/templates/docs_invoice_add.tpl
+abills/Abills/modules/Docs/templates/docs_invoice_alt.dsc
+abills/Abills/modules/Docs/templates/docs_invoice_alt.pdf
+abills/Abills/modules/Docs/templates/docs_invoice_alt.tpl
 abills/Abills/modules/Docs/templates/docs_invoice_client_add.tpl
 abills/Abills/modules/Docs/templates/docs_invoice_client_orders.tpl
 abills/Abills/modules/Docs/templates/docs_invoice_company.dsc
 abills/Abills/modules/Docs/templates/docs_invoice_company.pdf
 abills/Abills/modules/Docs/templates/docs_invoice_company.tpl
+abills/Abills/modules/Docs/templates/docs_invoice_company_alt.dsc
+abills/Abills/modules/Docs/templates/docs_invoice_company_alt.pdf
+abills/Abills/modules/Docs/templates/docs_invoice_company_alt.tpl
 abills/Abills/modules/Docs/templates/docs_invoice_email.tpl
 abills/Abills/modules/Docs/templates/docs_invoice_multi_add.tpl
 abills/Abills/modules/Docs/templates/docs_invoice_multi_sel.tpl
@@ -243,6 +259,7 @@ abills/Abills/modules/Docs/templates/docs_multi_invoice.dsc
 abills/Abills/modules/Docs/templates/docs_multi_invoice.pdf
 abills/Abills/modules/Docs/templates/docs_multi_invoice.tpl
 abills/Abills/modules/Docs/templates/docs_multi_receipt.tpl
+abills/Abills/modules/Docs/templates/docs_payment2invoice.tpl
 abills/Abills/modules/Docs/templates/docs_receipt.dsc
 abills/Abills/modules/Docs/templates/docs_receipt.pdf
 abills/Abills/modules/Docs/templates/docs_receipt.tpl
@@ -277,10 +294,12 @@ abills/Abills/modules/Dv/templates/dv_tp.tpl
 abills/Abills/modules/Dv/templates/dv_traffic_class.tpl
 abills/Abills/modules/Dv/templates/dv_tt.tpl
 abills/Abills/modules/Dv/templates/dv_user.tpl
-abills/Abills/modules/Dv/templates/dv_user_info.dsc
 abills/Abills/modules/Dv/templates/dv_user_info.pdf
 abills/Abills/modules/Dv/templates/dv_user_info.tpl
 abills/Abills/modules/Dv/templates/dv_user_join_service.tpl
+abills/Abills/modules/Dv/templates/dv_user_memo.dsc
+abills/Abills/modules/Dv/templates/dv_user_memo.pdf
+abills/Abills/modules/Dv/templates/dv_user_memo.tpl
 abills/Abills/modules/Dv/templates/dv_user_rating.tpl
 abills/Abills/modules/Dv/templates/dv_user_rating_pre.tpl
 abills/Abills/modules/Dv/templates/dv_user_speed.tpl
@@ -324,7 +343,11 @@ abills/Abills/modules/Iptv/lng_russian.pl
 abills/Abills/modules/Iptv/lng_ukraine.pl
 abills/Abills/modules/Iptv/port_control.sh
 abills/Abills/modules/Iptv/templates/iptv_channel.tpl
+abills/Abills/modules/Iptv/templates/iptv_modems.tpl
 abills/Abills/modules/Iptv/templates/iptv_pin_access.tpl
+abills/Abills/modules/Iptv/templates/iptv_send_message.tpl
+abills/Abills/modules/Iptv/templates/iptv_stalker_ch_add.tpl
+abills/Abills/modules/Iptv/templates/iptv_stalker_tp_add.tpl
 abills/Abills/modules/Iptv/templates/iptv_ti.tpl
 abills/Abills/modules/Iptv/templates/iptv_tp.tpl
 abills/Abills/modules/Iptv/templates/iptv_user.tpl
@@ -356,6 +379,7 @@ abills/Abills/modules/Managers/templates/managers_edit_user.tpl
 abills/Abills/modules/Managers/templates/managers_filter_reports.tpl
 abills/Abills/modules/Managers/templates/managers_main.tpl
 abills/Abills/modules/Managers/templates/managers_main_content.tpl
+abills/Abills/modules/Managers/templates/managers_menu.tpl
 abills/Abills/modules/Managers/templates/managers_user_table.tpl
 abills/Abills/modules/Managers/webinterface
 abills/Abills/modules/Maps/config
@@ -368,6 +392,8 @@ abills/Abills/modules/Maps/templates/google_location_info.tpl
 abills/Abills/modules/Maps/templates/google_location_info_client.tpl
 abills/Abills/modules/Maps/templates/google_map_add.tpl
 abills/Abills/modules/Maps/templates/google_map_add_district.tpl
+abills/Abills/modules/Maps/templates/google_map_add_well.tpl
+abills/Abills/modules/Maps/templates/google_map_add_wifi.tpl
 abills/Abills/modules/Maps/templates/google_map_show.tpl
 abills/Abills/modules/Maps/templates/google_map_show_client.tpl
 abills/Abills/modules/Maps/templates/google_maps_add_form.tpl
@@ -387,6 +413,7 @@ abills/Abills/modules/Marketing/config
 abills/Abills/modules/Marketing/lng_english.pl
 abills/Abills/modules/Marketing/lng_russian.pl
 abills/Abills/modules/Marketing/lng_ukraine.pl
+abills/Abills/modules/Marketing/templates/marketing_dhcp_full_search.tpl
 abills/Abills/modules/Marketing/templates/marketing_report2.tpl
 abills/Abills/modules/Marketing/templates/marketing_search.tpl
 abills/Abills/modules/Marketing/webinterface
@@ -468,22 +495,29 @@ abills/Abills/modules/Paysys/paysys_check.cgi
 abills/Abills/modules/Paysys/paysys_cons
 abills/Abills/modules/Paysys/paysys_qiwi_check.cgi
 abills/Abills/modules/Paysys/plugins/paypal
+abills/Abills/modules/Paysys/templates/paysys_cashcom_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_cyberplat_visa.tpl
 abills/Abills/modules/Paysys/templates/paysys_file_import.tpl
 abills/Abills/modules/Paysys/templates/paysys_ipay_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_liqpay_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_lr_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_main.tpl
+abills/Abills/modules/Paysys/templates/paysys_okpay_add.tpl
+abills/Abills/modules/Paysys/templates/paysys_payonline_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_paypal_add.tpl
+abills/Abills/modules/Paysys/templates/paysys_payu_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_pb_add.tpl
+abills/Abills/modules/Paysys/templates/paysys_perfectmoney_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_portmone_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_privatbank_p24_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_qiwi_add.tpl
+abills/Abills/modules/Paysys/templates/paysys_rbkmoney_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_rupay_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_search.tpl
 abills/Abills/modules/Paysys/templates/paysys_smsproxy_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_ukrpays_add.tpl
 abills/Abills/modules/Paysys/templates/paysys_webmoney_add.tpl
+abills/Abills/modules/Paysys/templates/paysys_ym_confirm.tpl
 abills/Abills/modules/Paysys/webinterface
 abills/Abills/modules/Portal/config
 abills/Abills/modules/Portal/lng_english.pl
@@ -497,6 +531,13 @@ abills/Abills/modules/Portal/templates/portal_menu_add.tpl
 abills/Abills/modules/Portal/templates/portal_menu_hovered.tpl
 abills/Abills/modules/Portal/templates/portal_redirect.tpl
 abills/Abills/modules/Portal/webinterface
+abills/Abills/modules/Rwizard/config
+abills/Abills/modules/Rwizard/lng_english.pl
+abills/Abills/modules/Rwizard/lng_russian.pl
+abills/Abills/modules/Rwizard/lng_ukraine.pl
+abills/Abills/modules/Rwizard/templates/rwizard_config.tpl
+abills/Abills/modules/Rwizard/templates/rwizard_panel.tpl
+abills/Abills/modules/Rwizard/webinterface
 abills/Abills/modules/Sharing/auth.pl
 abills/Abills/modules/Sharing/config
 abills/Abills/modules/Sharing/lng_english.pl
@@ -512,7 +553,12 @@ abills/Abills/modules/Sharing/templates/sharing_user.tpl
 abills/Abills/modules/Sharing/templates/sharing_user_info.tpl
 abills/Abills/modules/Sharing/webinterface
 abills/Abills/modules/Sms/config
+abills/Abills/modules/Sms/lng_english.pl
+abills/Abills/modules/Sms/lng_russian.pl
+abills/Abills/modules/Sms/lng_ukraine.pl
 abills/Abills/modules/Sms/templates/sms_check_form.tpl
+abills/Abills/modules/Sms/templates/sms_password_recovery.tpl
+abills/Abills/modules/Sms/templates/sms_search.tpl
 abills/Abills/modules/Sms/webinterface
 abills/Abills/modules/Snmputils/config
 abills/Abills/modules/Snmputils/lng_english.pl
@@ -566,7 +612,24 @@ abills/Abills/modules/Ureports/config
 abills/Abills/modules/Ureports/lng_english.pl
 abills/Abills/modules/Ureports/lng_russian.pl
 abills/Abills/modules/Ureports/lng_ukraine.pl
+abills/Abills/modules/Ureports/templates/describe.tpls
+abills/Abills/modules/Ureports/templates/ureports_email_message.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_1.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_10.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_11.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_12.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_13.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_15.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_2.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_3.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_4.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_5.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_6.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_7.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_8.tpl
+abills/Abills/modules/Ureports/templates/ureports_report_9.tpl
 abills/Abills/modules/Ureports/templates/ureports_session_detail.tpl
+abills/Abills/modules/Ureports/templates/ureports_sms_message.tpl
 abills/Abills/modules/Ureports/templates/ureports_tp.tpl
 abills/Abills/modules/Ureports/templates/ureports_user.tpl
 abills/Abills/modules/Ureports/templates/ureports_user_info.tpl
@@ -595,6 +658,7 @@ abills/Abills/modules/Voip/templates/voip_provision_user.tpl
 abills/Abills/modules/Voip/templates/voip_provision_xml.tpl
 abills/Abills/modules/Voip/templates/voip_route.tpl
 abills/Abills/modules/Voip/templates/voip_session_detail.tpl
+abills/Abills/modules/Voip/templates/voip_sessions_search.tpl
 abills/Abills/modules/Voip/templates/voip_tp.tpl
 abills/Abills/modules/Voip/templates/voip_trunk.tpl
 abills/Abills/modules/Voip/templates/voip_user.tpl
@@ -637,11 +701,11 @@ abills/Abills/mysql/Netlist.pm
 abills/Abills/mysql/Notepad.pm
 abills/Abills/mysql/Payments.pm
 abills/Abills/mysql/Portal.pm
+abills/Abills/mysql/Reports.pm
 abills/Abills/mysql/Sharing.pm
 abills/Abills/mysql/Shedule.pm
 abills/Abills/mysql/Snmputils.pm
 abills/Abills/mysql/Sqlcmd.pm
-abills/Abills/mysql/Storage.pm
 abills/Abills/mysql/Tariffs.pm
 abills/Abills/mysql/Users.pm
 abills/Abills/mysql/Vlan.pm
@@ -650,12 +714,12 @@ abills/Abills/mysql/Voip_Sessions.pm
 abills/Abills/mysql/Voip_aaa.pm
 abills/Abills/mysql/main.pm
 abills/Abills/nas.pl
+abills/Abills/templates.pl
 abills/Abills/templates/fonts/FreeSerif.ttf
 abills/Abills/templates/fonts/FreeSerifBold.ttf
 abills/Abills/templates/fonts/FreeSerifBoldItalic.ttf
 abills/Abills/templates/fonts/FreeSerifItalic.ttf
 abills/Abills/templates/user_info
-abills/Abills/templates.pl
 abills/CHANGES
 abills/COPYING
 abills/README
@@ -671,6 +735,7 @@ abills/cgi-bin/ajax/maps/tip_centerwindow.js
 abills/cgi-bin/ajax/maps/tip_followscroll.js
 abills/cgi-bin/ajax/maps/wz_tooltip.js
 abills/cgi-bin/calendar.js
+abills/cgi-bin/charts.swf
 abills/cgi-bin/charts/AC_RunActiveContent.js
 abills/cgi-bin/charts/charts.swf
 abills/cgi-bin/charts/charts_library/ar3d.swf
@@ -717,7 +782,6 @@ abills/cgi-bin/charts/resources/scroll/slider_handle_L.gif
 abills/cgi-bin/charts/resources/scroll/slider_handle_R.gif
 abills/cgi-bin/charts/resources/scroll/slider_over_L.gif
 abills/cgi-bin/charts/resources/scroll/slider_over_R.gif
-abills/cgi-bin/charts.swf
 abills/cgi-bin/charts_library/arno.swf
 abills/cgi-bin/charts_library/arst.swf
 abills/cgi-bin/charts_library/brfl.swf
@@ -745,6 +809,7 @@ abills/cgi-bin/img/bonus.png
 abills/cgi-bin/img/button_activate.png
 abills/cgi-bin/img/button_add.png
 abills/cgi-bin/img/button_change.png
+abills/cgi-bin/img/button_csv.png
 abills/cgi-bin/img/button_del.png
 abills/cgi-bin/img/button_download.png
 abills/cgi-bin/img/button_fees.png
@@ -758,6 +823,7 @@ abills/cgi-bin/img/button_password.png
 abills/cgi-bin/img/button_payments.png
 abills/cgi-bin/img/button_permissions.png
 abills/cgi-bin/img/button_print.png
+abills/cgi-bin/img/button_print_ext.png
 abills/cgi-bin/img/button_routes.png
 abills/cgi-bin/img/button_search.png
 abills/cgi-bin/img/button_sendmail.png
@@ -767,19 +833,24 @@ abills/cgi-bin/img/button_sql.png
 abills/cgi-bin/img/button_stats.png
 abills/cgi-bin/img/button_traffic.png
 abills/cgi-bin/img/button_users.png
+abills/cgi-bin/img/button_xls.png
 abills/cgi-bin/img/button_xml.png
 abills/cgi-bin/img/cal.gif
 abills/cgi-bin/img/call_help.png
 abills/cgi-bin/img/chart.png
 abills/cgi-bin/img/chart_16.png
+abills/cgi-bin/img/contact_tab.gif
+abills/cgi-bin/img/controls.png
 abills/cgi-bin/img/delivered1.png
 abills/cgi-bin/img/delivered2.png
 abills/cgi-bin/img/documents.png
 abills/cgi-bin/img/down_pointer.png
 abills/cgi-bin/img/dropdown.png
+abills/cgi-bin/img/dropup.png
 abills/cgi-bin/img/drweb.png
 abills/cgi-bin/img/email-g.gif
 abills/cgi-bin/img/exclamation.png
+abills/cgi-bin/img/feedback_top_tab.gif
 abills/cgi-bin/img/filearch_user_video.png
 abills/cgi-bin/img/google_map/Bld.png
 abills/cgi-bin/img/google_map/Blu.png
@@ -791,11 +862,18 @@ abills/cgi-bin/img/google_map/Bsd.png
 abills/cgi-bin/img/google_map/Bsu.png
 abills/cgi-bin/img/google_map/addr.png
 abills/cgi-bin/img/google_map/addrh.png
+abills/cgi-bin/img/google_map/black_poly.png
 abills/cgi-bin/img/google_map/blue.png
+abills/cgi-bin/img/google_map/build_off.png
+abills/cgi-bin/img/google_map/build_on.png
 abills/cgi-bin/img/google_map/green.png
+abills/cgi-bin/img/google_map/nas.png
 abills/cgi-bin/img/google_map/orange.png
 abills/cgi-bin/img/google_map/purple.png
 abills/cgi-bin/img/google_map/red.png
+abills/cgi-bin/img/google_map/red_poly.png
+abills/cgi-bin/img/google_map/well.png
+abills/cgi-bin/img/google_map/wifi.png
 abills/cgi-bin/img/google_map/yellow.png
 abills/cgi-bin/img/gorblue.gif
 abills/cgi-bin/img/gorgreen.gif
@@ -876,6 +954,38 @@ abills/cgi-bin/portal.cgi
 abills/cgi-bin/print.css
 abills/cgi-bin/registration.cgi
 abills/cgi-bin/skip_warning.cgi
+abills/cgi-bin/styles/default/chosen.css
+abills/cgi-bin/styles/default/client.css
+abills/cgi-bin/styles/default/img/arrow_filter.png
+abills/cgi-bin/styles/default/img/bg.jpg
+abills/cgi-bin/styles/default/img/cal.gif
+abills/cgi-bin/styles/default/img/chosen-sprite.png
+abills/cgi-bin/styles/default/img/chosen-sprite@2x.png
+abills/cgi-bin/styles/default/img/dropdown.png
+abills/cgi-bin/styles/default/img/dropup.png
+abills/cgi-bin/styles/default/img/footer_separator.png
+abills/cgi-bin/styles/default/img/next_mon.gif
+abills/cgi-bin/styles/default/img/next_year.gif
+abills/cgi-bin/styles/default/img/no_cal.gif
+abills/cgi-bin/styles/default/img/prev_mon.gif
+abills/cgi-bin/styles/default/img/prev_year.gif
+abills/cgi-bin/styles/default/img/radiobutton.png
+abills/cgi-bin/styles/default/img/select.png
+abills/cgi-bin/styles/default/img/separator.png
+abills/cgi-bin/styles/default/img/visible.png
+abills/cgi-bin/styles/default/js/calendar.js
+abills/cgi-bin/styles/default/js/checkform.js
+abills/cgi-bin/styles/default/js/chosen.jquery.min.js
+abills/cgi-bin/styles/default/js/functions.js
+abills/cgi-bin/styles/default/js/html5.js
+abills/cgi-bin/styles/default/js/jquery-1.5.1.min.js
+abills/cgi-bin/styles/default/js/jquery.tabSlideOut.v1.2.js
+abills/cgi-bin/styles/default/js/main_kabinet.js
+abills/cgi-bin/styles/default/js/script.js
+abills/cgi-bin/styles/default/js/selectbox/jquery.selectbox-0.6.1.js
+abills/cgi-bin/styles/default/js/selectbox/jquery.selectbox.css
+abills/cgi-bin/styles/default/styleIE.css
+abills/cgi-bin/styles/default/styleLib.css
 abills/db/Abon.sql
 abills/db/Ashield.sql
 abills/db/Bonus.sql
@@ -895,6 +1005,7 @@ abills/db/Netlist.sql
 abills/db/Notepad.sql
 abills/db/Paysys.sql
 abills/db/Portal.sql
+abills/db/Rwizard.sql
 abills/db/Sharing.sql
 abills/db/Snmputils.sql
 abills/db/Storage.sql
@@ -919,7 +1030,10 @@ abills/docs/mail.htm
 abills/docs/misc.htm
 abills/docs/mpd.htm
 abills/docs/nas.htm
+abills/install.sh
 abills/language/armenian.pl
+abills/language/azeri.pl
+abills/language/belarussian.pl
 abills/language/bulgarian.pl
 abills/language/english.pl
 abills/language/french.pl
@@ -929,6 +1043,10 @@ abills/language/ukraine.pl
 abills/libexec/billd
 abills/libexec/billd.plugins/check_dublicates.pm
 abills/libexec/billd.plugins/check_programs.pm
+abills/libexec/billd.plugins/dhcp_clean_leases.pm
+abills/libexec/billd.plugins/mx80_change_profile.pm
+abills/libexec/billd.plugins/neg_deposit_warning.pm
+abills/libexec/billd.plugins/stalker_online.pm
 abills/libexec/config.pl.default
 abills/libexec/linkupdown
 abills/libexec/periodic
@@ -942,6 +1060,9 @@ abills/miniserv/mime.types
 abills/miniserv/miniserv.conf
 abills/miniserv/miniserv.pem
 abills/miniserv/miniserv.pl
+abills/misc/accel-ppp/accel-ppp
+abills/misc/accel-ppp/accel-ppp.conf
+abills/misc/accel-ppp/install
 abills/misc/apache/abills_hotspot.conf
 abills/misc/apache/abills_httpd.conf
 abills/misc/apache/install
@@ -966,10 +1087,14 @@ abills/misc/external_adduser
 abills/misc/flow-tools/flow-capture.conf
 abills/misc/flow-tools/install
 abills/misc/flow-tools/ng_flow
+abills/misc/freebsd/install
+abills/misc/freebsd/shaper_start.sh
 abills/misc/freeradius/acct_users
 abills/misc/freeradius/clients.conf
 abills/misc/freeradius/eap.conf
 abills/misc/freeradius/install
+abills/misc/freeradius/linux/freeradius
+abills/misc/freeradius/linux/radiusd.conf
 abills/misc/freeradius/radiusd.conf
 abills/misc/freeradius/rlm_perl.conf
 abills/misc/freeradius/users
@@ -984,10 +1109,11 @@ abills/misc/freeradius/v2/users
 abills/misc/freeradius/v2/users_perl
 abills/misc/ipcad/install
 abills/misc/ipcad/ipcad.conf
-abills/misc/ipfw/install
-abills/misc/ipfw/ipfw_allow_gre
-abills/misc/ipfw/shaper_start.sh
 abills/misc/ipn_filter.sh
+abills/misc/linux/shaper_start.sh
+abills/misc/mikrotik/dictionary.mikrotik
+abills/misc/mikrotik/mikrotik_configure
+abills/misc/mikrotik/static_mac.sh
 abills/misc/monit/flow_capture
 abills/misc/monit/install
 abills/misc/monit/main
@@ -1030,8 +1156,10 @@ abills/misc/pppd/accel-ppp
 abills/misc/pppd/accel-ppp.conf
 abills/misc/pppd/dictionary.microsoft
 abills/misc/pppd/install
+abills/misc/pppd/ip-down
 abills/misc/pppd/ip-up.local
 abills/misc/pppd/pppd.dictionary
+abills/misc/pppd/pppoe
 abills/misc/pppd/pppoe-server-options
 abills/misc/pppd/pptpd.conf
 abills/misc/pppd/pptpd.options
@@ -1046,8 +1174,7 @@ abills/misc/usr-trafic
 abills/misc/vlan/vlan.sh
 abills/neg_deposit/index.html.sample
 abills/neg_deposit/neg_deposit
-@dirrm abills/var/log
-@dirrm abills/var
+abills/update.sh
 @dirrm abills/neg_deposit
 @dirrm abills/misc/vlan
 @dirrm abills/misc/proftpd
@@ -1060,15 +1187,19 @@ abills/neg_deposit/neg_deposit
 @dirrm abills/misc/mrtg
 @dirrm abills/misc/mpd
 @dirrm abills/misc/monit
-@dirrm abills/misc/ipfw
+@dirrm abills/misc/mikrotik
+@dirrm abills/misc/linux
 @dirrm abills/misc/ipcad
 @dirrm abills/misc/freeradius/v2
+@dirrm abills/misc/freeradius/linux
 @dirrm abills/misc/freeradius
+@dirrm abills/misc/freebsd
 @dirrm abills/misc/flow-tools
 @dirrm abills/misc/exppp
 @dirrm abills/misc/dhcp
 @dirrm abills/misc/asterisk
 @dirrm abills/misc/apache
+@dirrm abills/misc/accel-ppp
 @dirrm abills/misc
 @dirrm abills/miniserv/etc
 @dirrm abills/miniserv
@@ -1078,6 +1209,11 @@ abills/neg_deposit/neg_deposit
 @dirrm abills/docs/img
 @dirrm abills/docs
 @dirrm abills/db
+@dirrm abills/cgi-bin/styles/default/js/selectbox
+@dirrm abills/cgi-bin/styles/default/js
+@dirrm abills/cgi-bin/styles/default/img
+@dirrm abills/cgi-bin/styles/default
+@dirrm abills/cgi-bin/styles
 @dirrm abills/cgi-bin/js
 @dirrm abills/cgi-bin/img/portal
 @dirrm abills/cgi-bin/img/popup_window
@@ -1100,7 +1236,6 @@ abills/neg_deposit/neg_deposit
 @dirrm abills/cgi-bin/admin
 @dirrm abills/cgi-bin
 @dirrm abills/bin
-@dirrm abills/backup
 @dirrm abills/Abills/templates/fonts
 @dirrm abills/Abills/templates
 @dirrm abills/Abills/mysql
@@ -1123,6 +1258,8 @@ abills/neg_deposit/neg_deposit
 @dirrm abills/Abills/modules/Sms
 @dirrm abills/Abills/modules/Sharing/templates
 @dirrm abills/Abills/modules/Sharing
+@dirrm abills/Abills/modules/Rwizard/templates
+@dirrm abills/Abills/modules/Rwizard
 @dirrm abills/Abills/modules/Portal/templates
 @dirrm abills/Abills/modules/Portal
 @dirrm abills/Abills/modules/Paysys/templates

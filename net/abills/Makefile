@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abills
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -27,7 +27,6 @@ USE_PERL5=	run
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "/usr/abills" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/abills|${PREFIX}/abills|g'
@@ -35,14 +34,14 @@ post-patch:
 		's|/usr/bin/perl|${PERL}|g'
 
 do-install:
-	@${MKDIR} ${PREFIX}/abills
+	@${MKDIR} ${STAGEDIR}${PREFIX}/abills
 	@(${TAR} -C ${WRKSRC} --exclude "*.DS*" --exclude "*.bak" \
-		--exclude "*.orig" -cf - . | ${TAR} -C ${PREFIX}/abills \
+		--exclude "*.orig" -cf - . | ${TAR} -C ${STAGEDIR}${PREFIX}/abills \
 		--unlink -xf -)
-	@${FIND} ${PREFIX}/abills | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${PREFIX}/abills/cgi-bin | ${XARGS} ${CHOWN} www
-	@${FIND} ${PREFIX}/abills -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${PREFIX}/abills -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${STAGEDIR}${PREFIX}/abills | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${STAGEDIR}${PREFIX}/abills/cgi-bin | ${XARGS} ${CHOWN} ${WWWOWN}
+	@${FIND} ${STAGEDIR}${PREFIX}/abills -type d | ${XARGS} ${CHMOD} a+rx
+	@${FIND} ${STAGEDIR}${PREFIX}/abills -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
