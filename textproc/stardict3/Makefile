@@ -3,6 +3,7 @@
 
 PORTNAME=	stardict
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 DIST_SUBDIR=	stardict
@@ -20,8 +21,7 @@ CONFIGURE_ARGS=	--disable-festival \
 		--disable-gucharmap \
 		--disable-espeak \
 		--disable-updateinfo
-USE_BZIP2=	yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		tar:bzip2 gettext gmake pathfix pkgconfig
 CONFIGURE_WRKSRC=	${WRKSRC}/dict
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
@@ -29,9 +29,6 @@ INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 PROJECTHOST=	stardict-3
 
 OPTIONS_DEFINE=	GNOME
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
-
-CONFLICTS_INSTALL=	stardict-2.[0-9]*
 
 .include <bsd.port.options.mk>
 
