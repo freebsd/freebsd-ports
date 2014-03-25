@@ -10,15 +10,17 @@
 
 . /etc/rc.subr
 
-name="named"
+name=named
 rcvar=named_enable
 
-extra_commands="reload"
+load_rc_config $name
 
-start_precmd="named_prestart"
-start_postcmd="named_poststart"
-reload_cmd="named_reload"
-stop_cmd="named_stop"
+extra_commands=reload
+
+start_precmd=named_prestart
+start_postcmd=named_poststart
+reload_cmd="${command%/named}/rndc reload"
+stop_cmd=named_stop
 
 named_enable=${named_enable:-"NO"}		# Run named, the DNS server (or NO).
 named_program=${named_program:-"%%PREFIX%%/sbin/named"}	# Path to named, if you want a different one.
@@ -29,19 +31,16 @@ named_wait=${named_wait:-"NO"}			# Wait for working name service before exiting
 named_wait_host=${named_wait_host:-"localhost"}	# Hostname to check if named_wait is enabled
 named_auto_forward=${named_auto_forward:-"NO"}	# Set up forwarders from /etc/resolv.conf
 named_auto_forward_only=${named_auto_forward_only:-"NO"}	# Do "forward only" instead of "forward first"
+named_confdir="${named_conf%/*}" 		# Not a configuration directive but makes rclint happy.
 
-named_poststart() {
+named_poststart()
+{
 	if checkyesno named_wait; then
 		until ${command%/sbin/named}/bin/host $named_wait_host >/dev/null 2>&1; do
 			echo "	Waiting for nameserver to resolve $named_wait_host"
 			sleep 1
 		done
 	fi
-}
-
-named_reload()
-{
-	${command%/named}/rndc reload
 }
 
 find_pidfile()
@@ -76,13 +75,12 @@ named_stop()
   	fi
 }
 
-create_file() {
+create_file()
+{
 	if [ -e "$1" ]; then
 		unlink $1
 	fi
-	> $1
-	chown root:wheel $1
-	chmod 644 $1
+	install -u root -g wheel -m 0644 /dev/null $1
 }
 
 named_prestart()
@@ -95,8 +93,7 @@ named_prestart()
 
 	echo ${pidfile%/pid}
 	if [ ! -d ${pidfile%/pid} ]; then
-		mkdir -p ${pidfile%/pid}
-		chown ${named_uid}:${named_uid} ${pidfile%/pid}
+		install -d -u ${named_uid} -g ${named_uid} ${pidfile%/pid}
 	fi
 
 	command_args="-u ${named_uid:=root} -c $named_conf $command_args"
@@ -196,9 +193,5 @@ named_prestart()
 
 	$checkconf $named_conf || err 3 'named-checkconf for $named_conf failed'
 }
-
-load_rc_config $name
-
-named_confdir="${named_conf%/*}"
 
 run_rc_command "$1"
