@@ -621,6 +621,7 @@ qt-post-install:
 	@${ECHO_CMD} "@dirrmtry ${QT_MKSPECDIR_REL}/modules" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrmtry ${QT_MKSPECDIR_REL}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrmtry ${QT_ARCHDIR_REL}" >> ${TMPPLIST}
+	@${SED} -i "" -e '${PLIST_REINPLACE_DIRRMTRY}' ${TMPPLIST}
 . endif # ${QT_CONFIG:N-*}
 .endif # defined(QT_DIST) && ! ${_QT_VERSION:M4*}
 
