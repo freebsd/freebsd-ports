@@ -13,6 +13,15 @@ COMMENT=	Perl interface to iconv() codeset conversion function
 USES=		perl5 iconv
 USE_PERL5=	configure
 CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
+		LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}" \
+		ccflags="${CFLAGS}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${OSVERSION} >= 1000043
+	@${REINPLACE_CMD} 's|<iconv.h>|"/usr/include/iconv.h"|' \
+		${WRKSRC}/Iconv.xs
+.endif
+
+.include <bsd.port.post.mk>
