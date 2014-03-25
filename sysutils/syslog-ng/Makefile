@@ -164,6 +164,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/scl/syslog-ng.conf.dist ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/scl/scl.conf.dist ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/lib/ivykis/src/include/iv*.h ${STAGEDIR}${PREFIX}/include/syslog-ng/
-	${RMDIR} ${STAGEDIR}${PREFIX}/tests
 
 .include <bsd.port.post.mk>
