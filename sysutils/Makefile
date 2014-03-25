@@ -901,6 +901,7 @@
     SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng2
     SUBDIR += syslog-ng33
+    SUBDIR += syslog-ng34
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
