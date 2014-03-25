@@ -5,7 +5,7 @@ lib/cycle/p_rotor.py
 lib/cycle/save_load.py
 lib/cycle/set_dir.py
 lib/cycle/setup.py
-@dirrm lib/cycle
+man/man1/cycle.1.gz
 %%DATADIR%%/bitmaps/curr.png
 %%DATADIR%%/bitmaps/dec.png
 %%DATADIR%%/bitmaps/exit.png
@@ -14,14 +14,12 @@ lib/cycle/setup.py
 %%DATADIR%%/bitmaps/legend.png
 %%DATADIR%%/bitmaps/set.png
 %%DATADIR%%/bitmaps/smiles.bmp
-@dirrm %%DATADIR%%/bitmaps
-%%DATADIR%%/icons/mini/cycle.xpm
-@dirrm %%DATADIR%%/icons/mini
-%%DATADIR%%/icons/large/cycle.xpm
-@dirrm %%DATADIR%%/icons/large
 %%DATADIR%%/icons/cycle.xpm
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
+%%DATADIR%%/icons/large/cycle.xpm
+%%DATADIR%%/icons/mini/cycle.xpm
+%%DOCSDIR%%/README.html
+%%DOCSDIR%%/README_de.html
+%%DOCSDIR%%/README_ru.html
 share/locale/ca/LC_MESSAGES/cycle.mo
 share/locale/cs/LC_MESSAGES/cycle.mo
 share/locale/de/LC_MESSAGES/cycle.mo
@@ -29,7 +27,10 @@ share/locale/es/LC_MESSAGES/cycle.mo
 share/locale/gl/LC_MESSAGES/cycle.mo
 share/locale/ru/LC_MESSAGES/cycle.mo
 share/locale/sk/LC_MESSAGES/cycle.mo
-%%DOCSDIR%%/README.html
-%%DOCSDIR%%/README_de.html
-%%DOCSDIR%%/README_ru.html
 @dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/icons/mini
+@dirrm %%DATADIR%%/icons/large
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/bitmaps
+@dirrm %%DATADIR%%
+@dirrm lib/cycle
