@@ -156,6 +156,7 @@
     SUBDIR += cosmosmash
     SUBDIR += cowsay
     SUBDIR += crack-attack
+    SUBDIR += craft
     SUBDIR += crafty
     SUBDIR += crafty-open-enormous
     SUBDIR += crafty-open-large
