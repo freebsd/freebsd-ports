@@ -1,0 +1,91 @@
+From: Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>
+Date: Sat, 23 Nov 2013 13:02:41 +0000 (+0000)
+Subject: Fix calling User->can() as a class method. RT#90715
+X-Git-Url: http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=catagits%2FCatalyst-Authentication-Store-DBIx-Class.git;a=commitdiff_plain;h=c30ad9df2c49e9f51435b03182a2bf263c69d63e
+
+Fix calling User->can() as a class method. RT#90715
+---
+
+diff --git a/Changes b/Changes
+index 137ee33..c8babb3 100644
+--- a/Changes
++++ b/Changes
+@@ -1,6 +1,7 @@
+ Revision history for Catalyst-Plugin-Authentication-Store-DBIx-Class
+ 
+        * Fix doc bugs. RT#87372
++       * Fix calling User->can() as a class method. RT#90715
+ 
+ 0.1505 2013-06-10
+        * Fix RT#82944 - test fails on perl >= 5.17.3
+diff --git a/lib/Catalyst/Authentication/Store/DBIx/Class/User.pm b/lib/Catalyst/Authentication/Store/DBIx/Class/User.pm
+index 405ae75..18282a4 100644
+--- a/lib/Catalyst/Authentication/Store/DBIx/Class/User.pm
++++ b/lib/Catalyst/Authentication/Store/DBIx/Class/User.pm
+@@ -261,7 +261,9 @@ sub can {
+     my $self = shift;
+     return $self->SUPER::can(@_) || do {
+         my ($method) = @_;
+-        if (not $self->_user) {
++        if (not ref $self) {
++            undef;
++        } elsif (not $self->_user) {
+             undef;
+         } elsif (my $code = $self->_user->can($method)) {
+             sub { shift->_user->$code(@_) }
+@@ -279,6 +281,8 @@ sub AUTOLOAD {
+     (my $method) = (our $AUTOLOAD =~ /([^:]+)$/);
+     return if $method eq "DESTROY";
+ 
++    return unless ref $self;
++
+     if (my $code = $self->_user->can($method)) {
+         return $self->_user->$code(@_);
+     }
+diff --git a/t/10-user-autoload.t b/t/10-user-autoload.t
+index 74b243d..451ee65 100644
+--- a/t/10-user-autoload.t
++++ b/t/10-user-autoload.t
+@@ -1,6 +1,7 @@
+ use strict;
+ use warnings;
+ use Test::More;
++use Try::Tiny;
+ use Catalyst::Authentication::Store::DBIx::Class::User;
+ 
+ my $message = 'I exist';
+@@ -11,9 +12,10 @@ my $message = 'I exist';
+   sub exists { $message }
+ }
+ 
++my $class = 'Catalyst::Authentication::Store::DBIx::Class::User';
+ my $o = bless({
+   _user => bless({}, 'My::Test'),
+-}, 'Catalyst::Authentication::Store::DBIx::Class::User');
++}, $class);
+ 
+ is($o->exists, $message, 'AUTOLOAD proxies ok');
+ 
+@@ -23,4 +25,22 @@ is($o->$meth, $message, 'can returns right coderef');
+ 
+ is($o->can('non_existent_method'), undef, 'can on non existent method returns undef');
+ 
++is($o->non_existent_method, undef, 'AUTOLOAD traps non existent method');
++
++try {
++    is($class->can('non_existent_method'), undef, "can on non existent class method");
++} catch {
++    my $e = $_;
++    fail('can on non existent class method');
++    diag("Got exception: $e");
++};
++
++try { 
++    is($class->non_existent_method, undef, 'AUTOLOAD traps non existent class method');
++} catch {
++    my $e = $_;
++    fail('AUTOLOAD traps non existent class method');
++    diag("Got exception: $e");
++};
++
+ done_testing;
