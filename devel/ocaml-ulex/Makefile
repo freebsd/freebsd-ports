@@ -11,31 +11,27 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A lexer generator for Unicode and OCaml
 
+USES=		gmake
 USE_OCAML=	true
 USE_OCAML_FINDLIB=	true
 USE_OCAML_LDCONFIG=	true
-OCAMLC_DEPEND=	ocaml>=3.10:${OCAMLC_PORT}
+USE_OCAMLFIND_PLIST=	yes
 
 ALL_TARGET=	all all.opt
-
-USE_GMAKE=	yes
-
 MAKE_JOBS_UNSAFE=	yes
 
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	doc
 PORTDOCS=	*
-.endif
 
-PKGDEINSTALL=	${PKGINSTALL}
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	doc
+
 post-install:
-	@${FIND} ${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.css ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.css ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
