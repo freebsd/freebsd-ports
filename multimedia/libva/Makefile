@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l
 LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
 
 USES=		pkgconfig tar:bzip2
-USE_XORG=	glproto pciaccess xext xfixes 
+USE_XORG=	glproto pciaccess xext xfixes
 USE_GL=		gl
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
