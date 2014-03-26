@@ -3,6 +3,7 @@
 
 PORTNAME=	omake
 DISTVERSION=	0.9.8.6-0.rc1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://main.metaprl.org/download/omake/
 
@@ -13,11 +14,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C|-.*||}
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 USES=		ncurses readline
+MAKE_ENV+=	INSTALL_ROOT=${STAGEDIR}
 MAKE_JOBS_UNSAFE=	yes
 
 INFO=		omake-doc
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
@@ -55,13 +56,13 @@ bench: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_ARGS} boot/omake bench
 
 post-install:
-	@(cd ${WRKSRC}/doc/info \
-		&& ${INSTALL_DATA} omake-doc.info ${PREFIX}/${INFO_PATH})
-	@(cd ${WRKSRC}/doc/info \
-		&& ${INSTALL_DATA} omake-doc.info-* ${PREFIX}/${INFO_PATH})
+	@(cd ${WRKSRC}/doc/info && ${INSTALL_DATA} omake-doc.info \
+		${STAGEDIR}${PREFIX}/${INFO_PATH})
+	@(cd ${WRKSRC}/doc/info && ${INSTALL_DATA} omake-doc.info-* \
+		${STAGEDIR}${PREFIX}/${INFO_PATH})
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>

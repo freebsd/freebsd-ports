@@ -1,19 +1,15 @@
---- OMakefile.orig	2010-10-26 20:42:37.000000000 -0400
-+++ OMakefile	2013-04-03 16:50:13.000000000 -0400
-@@ -33,7 +33,6 @@
-     #
-     # Extra options for the C compiler
-     #
--    CFLAGS += -g -O2 -Wall -Werror -Wno-unused
- 
-     #
-     # We never need threads on Unix
-@@ -57,7 +56,7 @@
+$NetBSD: patch-aa,v 1.2 2010/12/17 09:40:14 wiz Exp $
+
+From upstream SVN.
+
+--- OMakefile.orig	2010-10-27 00:42:37.000000000 +0000
++++ OMakefile
+@@ -57,7 +57,7 @@ if $(not $(defined CAMLLIB))
  #
  # OCaml options
  #
 -OCAMLFLAGS[] += -w Ae$(if $(OCAML_ACCEPTS_Z_WARNING), z)
-+OCAMLFLAGS[] += -w Aer-29$(if $(OCAML_ACCEPTS_Z_WARNING), z)
++OCAMLFLAGS[] += -w Ae$(if $(OCAML_ACCEPTS_Z_WARNING), z-9-29)
  if $(THREADS_ENABLED)
      OCAMLFLAGS += -thread
      export
