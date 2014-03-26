@@ -3,6 +3,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	4.00.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		${MASTER_SITE_GENTOO}
@@ -157,6 +158,7 @@ check test: install
 
 post-install:
 	@${TOUCH} ${PREFIX}/lib/ocaml/ocamldoc/custom/.keep
+	@${CHMOD} 755 ${PREFIX}/lib/ocaml/expunge
 .if ${PORT_OPTIONS:MTK}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/otherlibs/labltk && \
