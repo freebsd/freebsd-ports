@@ -2,20 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	ocaml
-PORTVERSION=	3.12.1
-PORTREVISION=	1
+PORTVERSION=	4.00.1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
-		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
-		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME:R}/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	${SFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	michael.grunewald@laposte.net
 COMMENT?=	The Objective Caml compiler and programming environment
 
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt
@@ -23,20 +22,32 @@ STRIP=
 SSP_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" -cc "${CC}" -as "${AS}" \
-		-aspp "${CC} -c" -partialld "${LD} -r"
-OPTIONS_DEFINE=	X11 TK THREADS CMP_LIB OPT_DEF
-OPTIONS_DEFAULT=	X11 TK THREADS
+CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" \
+		-cc "${CC} ${CFLAGS}" \
+		-as "${AS} ${ASFLAGS}" \
+		-aspp "${CC} -c" \
+		-partialld "${LD} -r"
+
+OPTIONS_DEFINE= X11 TK THREADS OPT_DEF DOCS
+OPTIONS_DEFAULT=X11 TK THREADS
 TK_DESC=	LablTk library (requires X11 support)
-CMP_LIB_DESC=	Install compiler's libraries
-OPT_DEF_DESC=	Use system-optimized binaries by default
+CMP_LIB_DESC=	Install compiler libraries
+OPT_DEF_DESC=	Use system-optimizes binaries by default
+PORTDOCS=	htmlman ${DOCSDISTNAME}-refman.ps.gz \
+		${DOCSDISTNAME}-refman.pdf
 
 MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]
+DOCSDISTNAME=   ${DISTNAME:C/([[:digit:]]+)\.([[:digit:]]+)\.([[:digit:]]+)/\1.\2/}
 
 NO_STAGE=	yes
-
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+= 	${DOCSDISTNAME}-refman-html.tar.gz \
+		${DOCSDISTNAME}-refman.ps.gz \
+		${DOCSDISTNAME}-refman.pdf
+.endif
 
 .if ${PORT_OPTIONS:MTHREADS}
 PLIST_SUB+=	THREADS=""
@@ -79,26 +90,27 @@ CONFIGURE_ARGS+=	-tkdefs \
 .endif
 
 .include <bsd.port.pre.mk>
-
 .include "${FILESDIR}/manfiles"
 
-.if ${ARCH} == powerpc
-ARCH=	power
-.endif
+OCAML_ARCH= ${ARCH:S/x86_64/amd64/:S/powerpc/power/}
 
-.if ${ARCH} == power
+.if ${OCAML_ARCH} == power
 PLIST_SUB+=	PROF="@comment "
 .else
 PLIST_SUB+=	PROF=""
 .endif
 
-.if ${ARCH} == sparc64
-BROKEN=	ocamlc.opt seg-faults on ${ARCH}, please try to fix
-.endif
-
 post-extract:
-.if ${ARCH} == power
+.if ${OCAML_ARCH} == power
 	${MV} ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
+.endif
+.if ${PORT_OPTIONS:MDOCS}
+	@if ! (cd ${WRKDIR} && \
+	  ${TAR} xf ${_DISTDIR}${DOCSDISTNAME}-refman-html.tar.gz \
+	) \
+	then \
+	  exit 1; \
+	fi;
 .endif
 
 post-patch:
@@ -131,7 +143,7 @@ post-configure:
 # user's umask(1)
 	@${FIND} ${WRKDIR} -type f -name Makefile -print0 | \
 		${XARGS} -0 -n 5 -x ${REINPLACE_CMD} -E \
-		-e 's,\$$\(ARCH\),${ARCH:sparc64=sparc},g'	\
+		-e 's,\$$\(ARCH\),${OCAML_ARCH},g' \
 		-e 's,^(${PATTERN}+.*INSTALLDIR),\1\$${BSD_INSTALL_DATA} \4,' \
 		-e 's,^(${PATTERN}+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \4,' \
 		-e 's,^(${PATTERN}+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \4,' \
@@ -154,8 +166,16 @@ post-install:
 		"! -name .cvsignore")
 .endif
 
-.for PROG in camlp4o.opt camlp4r.opt ocamlc.opt ocamldep.opt ocamldoc.opt \
-		ocamllex.opt ocamlopt.opt ocamlrun ocamlyacc
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKDIR} && ${COPYTREE_SHARE} htmlman ${DOCSDIR})
+	${INSTALL_DATA} ${_DISTDIR}${DOCSDISTNAME}-refman.ps.gz ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}${DOCSDISTNAME}-refman.pdf ${DOCSDIR}
+.endif
+
+.for PROG in camlp4o.opt camlp4of.opt camlp4oof.opt camlp4orf.opt \
+	camlp4r.opt camlp4rf.opt ocamlc.opt ocamldep.opt ocamldoc.opt \
+	ocamllex.opt ocamlopt.opt ocamlrun ocamlyacc
 	@${STRIP_CMD} ${PREFIX}/bin/${PROG}
 .endfor
 
@@ -174,20 +194,5 @@ post-install:
 	@${ECHO_CMD} "@exec ${LN} %D/${module}.opt %D/${module}" >> ${TMPPLIST}
 . endfor
 .endif
-
-# Add compiler's libs if required
-.if ${PORT_OPTIONS:MCMP_LIB}
-	@${MKDIR}  ${PREFIX}/lib/ocaml/compiler-lib
-	@${INSTALL_DATA} ${WRKSRC}/utils/*.cm* ${PREFIX}/lib/ocaml/compiler-lib
-	@${INSTALL_DATA} ${WRKSRC}/utils/*.o ${PREFIX}/lib/ocaml/compiler-lib
-	@${INSTALL_DATA} ${WRKSRC}/parsing/*.cm* ${PREFIX}/lib/ocaml/compiler-lib
-	@${INSTALL_DATA} ${WRKSRC}/parsing/*.o ${PREFIX}/lib/ocaml/compiler-lib
-	@${INSTALL_DATA} ${WRKSRC}/typing/*.cm* ${PREFIX}/lib/ocaml/compiler-lib
-	@${INSTALL_DATA} ${WRKSRC}/typing/*.o ${PREFIX}/lib/ocaml/compiler-lib
-	@${FIND} ${PREFIX}/lib/ocaml/compiler-lib -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/compiler-lib" >> ${TMPPLIST}
-.endif
-	@${ECHO_CMD} "@unexec rmdir "%D/lib/ocaml" 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
