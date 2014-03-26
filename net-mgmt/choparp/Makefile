@@ -10,11 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple proxy arp daemon
 
+LICENSE=	BSD3CLAUSE
+
 USE_RC_SUBR=	choparp
 
-MANCOMPRESSED=	yes
-MAN8=		choparp.8
-PLIST_FILES=	sbin/choparp
+PLIST_FILES=	sbin/choparp man/man8/choparp.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
