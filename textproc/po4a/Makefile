@@ -3,6 +3,7 @@
 
 PORTNAME=	po4a
 PORTVERSION=	0.45
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	LOCAL/garga/po4a
 
@@ -16,6 +17,7 @@ BUILD_DEPENDS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-SGMLSpm>=1.03:${PORTSDIR}/textproc/p5-SGMLSpm \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		jade>=0:${PORTSDIR}/textproc/jade \
+		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook:${PORTSDIR}/textproc/docbook-xsl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
