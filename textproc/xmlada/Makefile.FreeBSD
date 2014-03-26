@@ -1,0 +1,5 @@
+# $FreeBSD$
+
+.if ${OSVERSION} < 900000
+CONFIGURE_ARGS+= --disable-shared
+.endif
