@@ -3842,6 +3842,9 @@ delete-package-list: delete-package-links-list
 .if defined(FORCE_PKG_REGISTER)
 _INSTALL_PKG_ARGS=	-f
 .endif
+.if defined(INSTALLS_DEPENDS) && defined(WITH_PKGNG)
+_INSTALL_PKG_ARGS+=	-A
+.endif
 install-package:
 	@if [ -f "${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}" ]; then \
 	    _pkgfile="${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}"; \
