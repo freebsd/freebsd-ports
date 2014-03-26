@@ -1,11 +1,20 @@
---- Makefile	Fri Sep 15 03:55:16 2006
-+++ Makefile	Fri Sep 22 00:40:31 2006
-@@ -238,7 +238,7 @@
+--- Makefile	2014-03-23 19:30:47.000000000 -0500
++++ Makefile	2014-03-25 19:19:37.000000000 -0500
+@@ -294,7 +294,7 @@
  LAZARUS_INSTALL_DIR=C:\lazarus
  endif
  ifneq ($(findstring $(OS_TARGET),freebsd),)
 -LAZARUS_INSTALL_DIR=/usr/local/lazarus
 +LAZARUS_INSTALL_DIR=%%DATADIR%%
  endif
- ifeq ($(FULL_TARGET),i386-linux)
- override TARGET_DIRS+=lcl components packager/registration ideintf designer packager
+ ifneq ($(findstring $(OS_TARGET),win32 win64),)
+ IDEVERSION=$(shell .\tools\install\get_lazarus_version.bat)
+@@ -2848,7 +2848,7 @@
+ examples:
+ 	$(MAKE) -C examples
+ all: lazbuild lcl basecomponents ide starter
+-bigide: lazbuild lcl basecomponents bigidecomponents idebig starter lhelp
++bigide: lazbuild bigidecomponents idebig starter lhelp
+ cleanide:
+ 	$(MAKE) -C ide cleanide
+ cleanlaz: cleanide
