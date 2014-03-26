@@ -11,13 +11,9 @@ MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	A date and time library for OCaml
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
-
-NO_STAGE=	yes
-post-install:
-	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+USE_OCAMLFIND_PLIST=	yes
 
 .include <bsd.port.mk>
