@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/WorldOfGooDemo
 DATADIR=	${PREFIX}/share/WorldOfGoo
 DOCSDIR=	${PREFIX}/share/doc/WorldOfGoo
 
+OPTIONS_DEFINE=	DOCS
+
 .if defined(WITH_NVIDIA_GL)
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=	libglu
@@ -28,7 +30,6 @@ USE_LINUX_APPS+=	libglu
 USE_LINUX_APPS+=	dri
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -52,12 +53,12 @@ pre-patch: .SILENT
 		>> ${WRKSRC}/WorldOfGoo
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${TARGET_BIN} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/WorldOfGoo ${PREFIX}/bin
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "properties res" ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${TARGET_BIN} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/WorldOfGoo ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "properties res" ${STAGEDIR}${DATADIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
