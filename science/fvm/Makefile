@@ -3,7 +3,7 @@
 
 PORTNAME=	fvm
 PORTVERSION=	0.15.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science parallel
 MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -13,10 +13,10 @@ COMMENT=	Code_Saturne Finite Volume Mesh
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	med.5:${PORTSDIR}/french/med		\
-		bft.1:${PORTSDIR}/science/bft		\
-		hdf5.7:${PORTSDIR}/science/hdf5-18	\
-		cgns.3:${PORTSDIR}/science/cgnslib
+LIB_DEPENDS=	libmed.so:${PORTSDIR}/french/med	\
+		libbft.so:${PORTSDIR}/science/bft	\
+		libhdf5.so.7:${PORTSDIR}/science/hdf5-18\
+		libcgns.so:${PORTSDIR}/science/cgnslib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -47,11 +47,8 @@ CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-MAN1=		fvm-config.1
-
 TESTSBIN=	fvm_file_test fvm_interface_test fvm_selector_postfix_test fvm_selector_test
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lmpich|-lmpich -lmpl|'	\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
