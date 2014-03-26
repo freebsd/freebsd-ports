@@ -4811,7 +4811,10 @@ _INSTALL_DEPENDS=	\
 					${WRKDIR}/pkg-static add $${subpkgfile}; \
 					${RM} -f ${WRKDIR}/pkg-static; \
 				else \
-					${PKG_ADD} $${subpkgfile}; \
+					if [ -n "${WITH_PKGNG}" ]; then \
+						_pkg_add_a="-A"; \
+					fi; \
+					${PKG_ADD} $${_pkg_add_a} $${subpkgfile}; \
 				fi; \
 			elif [ -n "${USE_PACKAGE_DEPENDS_ONLY}" -a "$${target}" = "${DEPENDS_TARGET}" ]; then \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on package: $${subpkgfile} - not found"; \
