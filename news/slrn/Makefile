@@ -3,6 +3,7 @@
 
 PORTNAME=	slrn
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		http://www.jedsoft.org/slrn/download/
@@ -18,7 +19,7 @@ USES=		gmake iconv
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-ipv6 --disable-inews --with-slrnpull \
-		${ICONV_CONFIGURE_ARG}
+		--with-non-gnu-iconv ${ICONV_CONFIGURE_ARG}
 
 ALL_TARGET=	all
 
