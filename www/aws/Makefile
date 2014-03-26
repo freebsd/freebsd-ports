@@ -132,7 +132,7 @@ post-install:
 #	additive.  Trying to capture every permutation is error prone and
 #	tedious, so a generated PLIST is the way to go.
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${TMPPLIST}
+	   ${SORT} >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
 	   ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' -e '/share\/gps/d' \
 	   -e '/share\/examples$$/d' -e 's/^/@dirrm /g' >> ${TMPPLIST}
