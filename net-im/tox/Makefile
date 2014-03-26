@@ -49,7 +49,7 @@ NACL_RUN_DEPENDS=	${LOCALBASE}/lib/libnacl.a:${PORTSDIR}/security/nacl
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 USE_GCC=	yes
-BROKEN_i386=	`__stack_chk_fail_local' isn't defined
+BROKEN_i386=	'__stack_chk_fail_local' isn't defined
 .endif
 
 .if ${PORT_OPTIONS:MNACL}

@@ -137,7 +137,7 @@ PORTDOCS=		CHANGES drafts rfc
 PORT_OPTIONS+=	SASL
 .endif
 .if defined(USE_OPENLDAP)
-BROKEN=			You have `USE_OPENLDAP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+BROKEN=			You have 'USE_OPENLDAP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 .else
 USE_OPENLDAP=		yes
