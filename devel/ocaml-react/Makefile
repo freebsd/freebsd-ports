@@ -3,6 +3,7 @@
 
 PORTNAME=	react
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://erratique.ch/software/react/releases/
 PKGNAMEPREFIX=	ocaml-
@@ -21,6 +22,7 @@ OCAMLC_DEPEND=		ocaml>=3.11:${OCAMLC_PORT}
 .endif
 
 USE_OCAML_FINDLIB=	yes
+USE_OCAML_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"install" :: findlib_name,"install" :: "-destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib" :: "-ldconf /dev/null" :: findlib_name,' \

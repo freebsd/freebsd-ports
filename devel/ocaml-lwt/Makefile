@@ -3,6 +3,7 @@
 
 PORTNAME=	lwt
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ocsigen.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -24,6 +25,7 @@ USE_OCAML=		yes
 OCAMLC_DEPEND=		ocaml>=3.11:${OCAMLC_PORT}
 USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
+USE_OCAML_LDCONFIG=	yes
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		--destdir "${STAGEDIR}" \
 			--prefix "${PREFIX}" \
