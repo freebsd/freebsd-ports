@@ -3,7 +3,7 @@
 
 PORTNAME=	unrealgold
 PORTVERSION=	436
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://offload1.icculus.org/~ravage/unreal/${PORTNAME}/
 PKGNAMEPREFIX=	linux-
@@ -31,11 +31,12 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 HELPFILES=	README ReadMe.htm ReadMe.txt ReadMe220.htm ReadMe222.htm ReadMe223.htm ReadMe224.htm
 MANUALFILES=	"Unreal NaPali Manual.pdf" "Unreal manual.pdf"
 PORTDOCS=	${HELPFILES}
+OPTIONS_DEFINE=	DOCS
 
 CDDIRS=		Help Maps Maps/UPak Music Sounds Sounds/int System Textures
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 UT_DATADIR!=	cd ${PORTSDIR}/games/linux-ut && ${MAKE} -V DATADIR
 
@@ -150,41 +151,41 @@ do-install:
 	    ${ECHO_CMD} "${PKGNAME} requires linux-ut with 436 version."; \
 	    ${FALSE}; \
 	fi
-	@${MKDIR} ${DATADIR}
-	@cd ${DATADIR} && ${MKDIR} ${CDDIRS}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@cd ${STAGEDIR}${DATADIR} && ${MKDIR} ${CDDIRS}
 .for dir in Music Sounds Textures System
 	@${ECHO_CMD} "Linking UT ${dir}"
 	@${GREP} "%%UT%%%%DATADIR%%/${dir}" ${PLIST} | \
 		${SED} -e 's|%%UT%%%%DATADIR%%|${UT_DATADIR}|' | \
-			${XARGS} -J % ${LN} -sf % ${DATADIR}/${dir}
+			${XARGS} -J % ${LN} -sf % ${STAGEDIR}${DATADIR}/${dir}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/Data/Help/Logo.xpm ${DATADIR}/Help
-	${INSTALL_DATA} ${WRKSRC}/Data/System/*.ini ${DATADIR}/System
-	${INSTALL_DATA} ${WRKSRC}/Data/System/*.int ${DATADIR}/System
-	${INSTALL_DATA} ${WRKSRC}/Data/System/*.u ${DATADIR}/System
-	${INSTALL_PROGRAM} ${WRKSRC}/Data/System/*-bin ${DATADIR}/System
-	@${BRANDELF} -t Linux ${DATADIR}/System/*-bin
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/Data/Help/Logo.xpm ${STAGEDIR}${DATADIR}/Help
+	${INSTALL_DATA} ${WRKSRC}/Data/System/*.ini ${STAGEDIR}${DATADIR}/System
+	${INSTALL_DATA} ${WRKSRC}/Data/System/*.int ${STAGEDIR}${DATADIR}/System
+	${INSTALL_DATA} ${WRKSRC}/Data/System/*.u ${STAGEDIR}${DATADIR}/System
+	${INSTALL_PROGRAM} ${WRKSRC}/Data/System/*-bin ${STAGEDIR}${DATADIR}/System
+	@${BRANDELF} -t Linux ${STAGEDIR}${DATADIR}/System/*-bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 # Install the files
 	@${ECHO_CMD} "Installing files from CD"
 .for dir in ${CDDIRS}
 	@${GREP} -e "%%UG%%%%DATADIR%%/${dir}/[^/]*$$" ${PLIST} | \
 		${SED} -e 's|%%UG%%%%DATADIR%%|${WRKDIR}/source|' | \
-			${XARGS} -J % ${INSTALL_DATA} % ${DATADIR}/${dir}
+			${XARGS} -J % ${INSTALL_DATA} % ${STAGEDIR}${DATADIR}/${dir}
 .endfor
 # Rename DM maps so UT can see them
-	@${FIND} ${DATADIR}/Maps -name Dm\*.unr | \
+	@${FIND} ${STAGEDIR}${DATADIR}/Maps -name Dm\*.unr | \
 		${SED} 's/\(.*\)\(Dm\)\(.*\)/${LN:S,/,\\/,g} -sf & \1DM-\3/' | ${SH}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .if !defined(RAVAGE)
 .for i in ${HELPFILES:NREADME}
-	${INSTALL_DATA} ${WRKDIR}/source/Help/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/source/Help/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 .for i in ${MANUALFILES}
-	${INSTALL_DATA} ${WRKDIR}/source/Manual/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/source/Manual/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
