@@ -11,10 +11,10 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	OpenSSL bindings for OCaml
 
-DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
+MAKE_ENV=	OCAMLFIND_INSTFLAGS="-ldconf ignore"
 MAKE_JOBS_UNSAFE=	yes
 
 USE_OPENSSL=		yes
@@ -25,26 +25,13 @@ USE_OCAMLFIND_PLIST=	yes
 
 ALL_TARGET=	all doc
 
-.if !defined(NOPORTDOCS)
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-extract:
-# For nonstandard prefixes
-.if !exists(${OCAMLFIND_DESTDIR})
-	${MKDIR} ${OCAMLFIND_DESTDIR}
-.endif
-.if !exists(${OCAMLFIND_LDCONF})
-	${TOUCH} ${OCAMLFIND_LDCONF}
-.endif
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/html
-	${INSTALL_MAN} ${WRKSRC}/doc/html/* ${DOCSDIR}/html
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${STAGEDIR}${DOCSDIR}/html
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
