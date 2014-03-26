@@ -1,200 +1,143 @@
-$FreeBSD$
-
---- configure.orig	2011-07-04 22:15:01.000000000 +0100
-+++ configure	2012-01-15 20:29:30.319674803 +0000
-@@ -85,6 +85,8 @@
+--- configure.orig	2012-06-26 15:33:50.000000000 +0000
++++ configure
+@@ -88,6 +88,8 @@ while : ; do
          withcurses=no;;
-     -no-shared-libs)
+     -no-shared-libs|--no-shared-libs)
          withsharedlibs=no;;
 +    -no-x11|--no-x11)
 +        x11_wanted=no;;
      -x11include*|--x11include*)
          x11_include_dir=$2; shift;;
      -x11lib*|--x11lib*)
-@@ -521,7 +523,7 @@
+@@ -537,9 +539,9 @@ if test $withsharedlibs = "yes"; then
        mksharedlib="$flexlink"
        mkmaindll="$flexlink -maindll"
        shared_libraries_supported=true;;
 -    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*)
-+    *-*-linux-gnu|*-*-linux|*-*-freebsd*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*)
++    *-*-linux-gnu|*-*-linux|*-*-dragonfly*|*-*-freebsd*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*)
        sharedcccompopts="-fPIC"
-       mksharedlib="$bytecc -shared"
+-      mksharedlib="$bytecc -shared"
++      mksharedlib="$bytecc $bytecclinkopts -shared"
        bytecclinkopts="$bytecclinkopts -Wl,-E"
-@@ -636,6 +638,7 @@
-     i[345]86-*-netbsd*)           natdynlink=true;;
-     x86_64-*-netbsd*)             natdynlink=true;;
-     i386-*-gnu0.3)                natdynlink=true;;
-+    *-*-freebsd*)                 natdynlink=true;;
-   esac
- fi
- 
-@@ -687,6 +690,7 @@
-   hppa*-*-gnu*)                 arch=hppa; system=gnu;;
+       byteccrpath="-Wl,-rpath,"
+       mksharedlibrpath="-Wl,-rpath,"
+@@ -549,7 +551,7 @@ if test $withsharedlibs = "yes"; then
+       case "$bytecc" in
+         gcc*)
+           sharedcccompopts="-fPIC"
+-          mksharedlib="$bytecc -shared"
++          mksharedlib="$bytecc $bytecclinkopts -shared"
+           byteccrpath="-Wl,-rpath,"
+           mksharedlibrpath="-Wl,-rpath,"
+           shared_libraries_supported=true;;
+@@ -565,11 +567,11 @@ if test $withsharedlibs = "yes"; then
+         gcc*)
+           sharedcccompopts="-fPIC"
+           if sh ./solaris-ld; then
+-            mksharedlib="$bytecc -shared"
++            mksharedlib="$bytecc $bytecclinkopts -shared"
+             byteccrpath="-R"
+             mksharedlibrpath="-R"
+           else
+-            mksharedlib="$bytecc -shared"
++            mksharedlib="$bytecc $bytecclinkopts -shared"
+             bytecclinkopts="$bytecclinkopts -Wl,-E"
+             natdynlinkopts="-Wl,-E"
+             byteccrpath="-Wl,-rpath,"
+@@ -593,12 +595,12 @@ if test $withsharedlibs = "yes"; then
+       mksharedlibrpath="-rpath "
+       shared_libraries_supported=true;;
+     i[3456]86-*-darwin[89].*)
+-      mksharedlib="$bytecc -bundle -flat_namespace -undefined suppress -read_only_relocs suppress"
++      mksharedlib="$bytecc $bytecclinkopts -bundle -flat_namespace -undefined suppress -read_only_relocs suppress"
+       bytecccompopts="$dl_defs $bytecccompopts"
+       dl_needs_underscore=false
+       shared_libraries_supported=true;;
+     *-apple-darwin*)
+-      mksharedlib="$bytecc -bundle -flat_namespace -undefined suppress"
++      mksharedlib="$bytecc $bytecclinkopts -bundle -flat_namespace -undefined suppress"
+       bytecccompopts="$dl_defs $bytecccompopts"
+       dl_needs_underscore=false
+       shared_libraries_supported=true;;
+@@ -608,7 +610,7 @@ if test $withsharedlibs = "yes"; then
+       shared_libraries_supported=false;;
+     *-*-openbsd*)
+       sharedcccompopts="-fPIC"
+-      mksharedlib="$bytecc -shared"
++      mksharedlib="$bytecc $bytecclinkopts -shared"
+       bytecclinkopts="$bytecclinkopts -Wl,-E"
+       natdynlinkopts="-Wl,-E"
+       byteccrpath="-Wl,-rpath,"
+@@ -633,7 +635,7 @@ if test $withsharedlibs = "yes"; then
+     x86_64-*-linux*)              natdynlink=true;;
+     i[3456]86-*-darwin[89].*)     natdynlink=true;;
+     i[3456]86-*-darwin*)
+-      if test $arch64 == true; then
++      if test $arch64 = true; then
+         natdynlink=true
+       fi;;
+     x86_64-*-darwin*)             natdynlink=true;;
+@@ -641,6 +643,8 @@ if test $withsharedlibs = "yes"; then
+     sparc*-*-linux*)              natdynlink=true;;
+     i686-*-kfreebsd*)             natdynlink=true;;
+     x86_64-*-kfreebsd*)           natdynlink=true;;
++    i[345]86-*-dragonfly*)        natdynlink=true;;
++    x86_64-*-dragonfly*)          natdynlink=true;;
+     i[345]86-*-freebsd*)          natdynlink=true;;
+     x86_64-*-freebsd*)            natdynlink=true;;
+     i[345]86-*-openbsd*)          natdynlink=true;;
+@@ -672,6 +676,7 @@ case "$host" in
+   sparc*-*-gnu*)                arch=sparc; system=gnu;;
+   i[3456]86-*-linux*)           arch=i386; system=linux_`sh ./runtest elf.c`;;
+   i[3456]86-*-*bsd*)            arch=i386; system=bsd_`sh ./runtest elf.c`;;
++  i[3456]86-*-dragonfly*)       arch=i386; system=bsd_`sh ./runtest elf.c`;;
+   i[3456]86-*-nextstep*)        arch=i386; system=nextstep;;
+   i[3456]86-*-solaris*)         if $arch64; then
+                                   arch=amd64; system=solaris
+@@ -687,6 +692,7 @@ case "$host" in
+                                 fi;;
+   i[3456]86-*-gnu*)             arch=i386; system=gnu;;
    powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
++  powerpc-*-freebsd*)           arch=power; model=ppc; system=elf;;
    powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
-+  powerpc-*-freebsd*)           arch=power; model=ppc; system=bsd;;
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
    powerpc-*-darwin*)            arch=power; system=rhapsody
-                                 if $arch64; then model=ppc64; else model=ppc; fi;;
-@@ -796,6 +800,7 @@
-   i386,*,bsd_elf) profiling='prof';;
-   amd64,*,macosx) profiling='prof';;
-   i386,*,macosx) profiling='prof';;
-+  *,*,freebsd) profiling='prof';;
-   sparc,*,solaris)
-     profiling='prof'
-     case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -1256,133 +1261,24 @@
- x11_include="not found"
- x11_link="not found"
- 
--for dir in \
--    $x11_include_dir          \
--                              \
--    /usr/X11R7/include        \
--    /usr/include/X11R7        \
--    /usr/local/X11R7/include  \
--    /usr/local/include/X11R7  \
--    /opt/X11R7/include        \
--                              \
--    /usr/X11R6/include        \
--    /usr/include/X11R6        \
--    /usr/local/X11R6/include  \
--    /usr/local/include/X11R6  \
--    /opt/X11R6/include        \
--                              \
--    /usr/X11/include          \
--    /usr/include/X11          \
--    /usr/local/X11/include    \
--    /usr/local/include/X11    \
--    /opt/X11/include          \
--                              \
--    /usr/X11R5/include        \
--    /usr/include/X11R5        \
--    /usr/local/X11R5/include  \
--    /usr/local/include/X11R5  \
--    /usr/local/x11r5/include  \
--    /opt/X11R5/include        \
--                              \
--    /usr/X11R4/include        \
--    /usr/include/X11R4        \
--    /usr/local/X11R4/include  \
--    /usr/local/include/X11R4  \
--                              \
--    /usr/X386/include         \
--    /usr/x386/include         \
--    /usr/XFree86/include/X11  \
--                              \
--    /usr/include              \
--    /usr/local/include        \
--    /usr/unsupported/include  \
--    /usr/athena/include       \
--    /usr/lpp/Xamples/include  \
--                              \
--    /usr/openwin/include      \
--    /usr/openwin/share/include \
--    ; \
--do
--  if test -f $dir/X11/X.h; then
--    x11_include=$dir
--    break
--  fi
--done
--
--if test "$x11_include" = "not found"; then
--  x11_try_lib_dir=''
--else
--  x11_try_lib_dir=`echo $x11_include | sed -e 's|include|lib|'`
-+if [ -n "$x11_include_dir" ]; then
-+  x11_include="$x11_include_dir"
+@@ -700,6 +706,7 @@ case "$host" in
+   arm*-*-linux-gnueabi)         arch=arm; system=linux_eabi;;
+   x86_64-*-linux*)              arch=amd64; system=linux;;
+   x86_64-*-gnu*)                arch=amd64; system=gnu;;
++  x86_64-*-dragonfly*)          arch=amd64; system=dragonfly;;
+   x86_64-*-freebsd*)            arch=amd64; system=freebsd;;
+   x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
+   x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
+@@ -724,7 +731,7 @@ else
  fi
  
--for dir in \
--    $x11_lib_dir          \
--    $x11_try_lib_dir      \
--                          \
--    /usr/X11R6/lib64      \
--    /usr/X11R6/lib        \
--    /usr/lib/X11R6        \
--    /usr/local/X11R6/lib  \
--    /usr/local/lib/X11R6  \
--    /opt/X11R6/lib        \
--                          \
--    /usr/X11/lib          \
--    /usr/lib/X11          \
--    /usr/local/X11/lib    \
--    /usr/local/lib/X11    \
--    /opt/X11/lib          \
--                          \
--    /usr/X11R5/lib        \
--    /usr/lib/X11R5        \
--    /usr/local/X11R5/lib  \
--    /usr/local/lib/X11R5  \
--    /usr/local/x11r5/lib  \
--    /opt/X11R5/lib        \
--                          \
--    /usr/X11R4/lib        \
--    /usr/lib/X11R4        \
--    /usr/local/X11R4/lib  \
--    /usr/local/lib/X11R4  \
--                          \
--    /usr/X386/lib         \
--    /usr/x386/lib         \
--    /usr/XFree86/lib/X11  \
--                          \
--    /usr/lib64            \
--    /usr/lib              \
--    /usr/local/lib        \
--    /usr/unsupported/lib  \
--    /usr/athena/lib       \
--    /usr/lpp/Xamples/lib  \
--    /lib/usr/lib/X11      \
--                          \
--    /usr/openwin/lib      \
--    /usr/openwin/share/lib \
--    ; \
--do
--  if test -f $dir/libX11.a || \
--     test -f $dir/libX11.so || \
--     test -f $dir/libX11.dll.a || \
--     test -f $dir/libX11.dylib || \
--     test -f $dir/libX11.sa; then
--    if test $dir = /usr/lib; then
--      x11_link="-lX11"
--    else
--      x11_libs="-L$dir"
--      case "$host" in
--        *-*-*bsd*) x11_link="-R$dir -L$dir -lX11";;
--        *) x11_link="-L$dir -lX11";;
--      esac
--    fi
--    break
--  fi
--done
--
-+if [ -n "$x11_lib_dir" ]; then
-+  x11_link="-L$x11_lib_dir -lX11"
-+  x11_libs="-L$x11_lib_dir"
-+fi
+ nativecccompopts=''
+-nativecclinkopts=''
++nativecclinkopts=""
+ nativeccrpath="$byteccrpath"
  
- if test "$x11_include" = "not found" || test "$x11_link" = "not found"
- then
-   echo "X11 not found, the \"graph\" library will not be supported."
-   x11_include=""
-+elif test "$x11_wanted" = "no"
-+then
-+  echo "X11 support was disabled, the \"graph\" library will not be supported."
-+  x11_include=""
-+  x11_link=""
+ case "$arch,$nativecc,$system,$host_type" in
+@@ -786,6 +793,8 @@ case "$arch,$model,$system" in
+   amd64,*,linux) profiling='prof';;
+   amd64,*,gnu) profiling='prof';;
+   arm,*,linux*) profiling='prof';;
++  *,*,dragonfly) profiling='prof';;
++  *,*,freebsd) profiling='prof';;
+   *) profiling='noprof';;
+ esac
+ 
+@@ -1544,10 +1553,10 @@ fi
+ # Look for BFD library
+ 
+ if ./hasgot -i bfd.h && \
+-   ./hasgot -lbfd -ldl -liberty -lz bfd_openr; then
++   ./hasgot -lbfd $dllib -liberty -lz bfd_openr; then
+   echo "BFD library found."
+   echo "#define HAS_LIBBFD" >> s.h
+-  echo "LIBBFD_LINK=-lbfd -ldl -liberty -lz" >> Makefile
++  echo "LIBBFD_LINK=-lbfd $dllib -liberty -lz" >> Makefile
  else
-   echo "Location of X11 include files: $x11_include/X11"
-   echo "Options for linking with X11: $x11_link"
-@@ -1509,7 +1405,7 @@
-   then tk_libs="$tk_libs $dllib"
-   elif sh ./hasgot $tk_libs -ltcl$tclmaj.$tclmin $tkauxlibs Tcl_DoOneEvent
-   then
--    tk_libs="$tk_libs -ltk$tkmaj.$tkmin -ltcl$tclmaj.$tclmin $dllib"
-+    tk_libs="$tk_libs -ltk$tkmaj$tkmin -ltcl$tclmaj.$tclmin $dllib"
-   elif sh ./hasgot $tk_libs -ltcl$tclmaj$tclmin $tkauxlibs Tcl_DoOneEvent
-   then
-     tk_libs="$tk_libs -ltk$tkmaj$tkmin -ltcl$tclmaj$tclmin $dllib"
+   echo "BFD library not found, 'objinfo' will be unable to display info on .cmxs files"
+   echo "LIBBFD_LINK=" >> Makefile

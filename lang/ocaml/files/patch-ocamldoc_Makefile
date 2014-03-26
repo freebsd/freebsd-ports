@@ -9,16 +9,3 @@
  
  INSTALL_MLIS=odoc_info.mli
  INSTALL_CMIS=$(INSTALL_MLIS:.mli=.cmi)
-@@ -265,7 +265,11 @@
- 	$(CP) ocamldoc.hva *.cmi $(OCAMLDOC_LIBCMA) $(INSTALL_LIBDIR)
- 	$(CP) $(INSTALL_MLIS) $(INSTALL_CMIS) $(INSTALL_LIBDIR)
- 	if test -d $(INSTALL_MANODIR); then : ; else $(MKDIR) $(INSTALL_MANODIR); fi
--	if test -d stdlib_man; then $(CP) stdlib_man/* $(INSTALL_MANODIR); else : ; fi
-+	if test -d stdlib_man; then \
-+		for f in stdlib_man/*; do \
-+			$(BSD_INSTALL_MAN) $$f $(INSTALL_MANODIR)/`basename $$f .3o`.n; \
-+		done; \
-+	fi
- 
- installopt:
- 	if test -f $(OCAMLDOC_OPT) ; then $(MAKE) installopt_really ; fi

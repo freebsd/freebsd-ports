@@ -1,4 +1,3 @@
-bin/ocamlobjinfo
 bin/camlp4
 bin/camlp4boot
 bin/camlp4o
@@ -33,12 +32,15 @@ bin/ocamllex
 bin/ocamllex.opt
 bin/ocamlmklib
 bin/ocamlmktop
+bin/ocamlobjinfo
 bin/ocamlopt
 bin/ocamlopt.opt
+bin/ocamloptp
 bin/ocamlprof
 bin/ocamlrun
 bin/ocamlyacc
 lib/ocaml/Makefile.config
+lib/ocaml/VERSION
 lib/ocaml/arg.cmi
 lib/ocaml/arg.cmx
 lib/ocaml/arg.ml
@@ -85,6 +87,7 @@ lib/ocaml/caml/compatibility.h
 lib/ocaml/caml/config.h
 lib/ocaml/caml/custom.h
 lib/ocaml/caml/fail.h
+lib/ocaml/caml/hash.h
 lib/ocaml/caml/intext.h
 lib/ocaml/caml/memory.h
 lib/ocaml/caml/misc.h
@@ -261,29 +264,158 @@ lib/ocaml/char.cmx
 lib/ocaml/char.ml
 lib/ocaml/char.mli
 %%PROF%%lib/ocaml/char.p.cmx
+lib/ocaml/compiler-libs/annot.cmi
+lib/ocaml/compiler-libs/arch.cmi
+lib/ocaml/compiler-libs/asmgen.cmi
+lib/ocaml/compiler-libs/asmlibrarian.cmi
+lib/ocaml/compiler-libs/asmlink.cmi
+lib/ocaml/compiler-libs/asmpackager.cmi
+lib/ocaml/compiler-libs/asttypes.cmi
+lib/ocaml/compiler-libs/btype.cmi
+lib/ocaml/compiler-libs/bytegen.cmi
+lib/ocaml/compiler-libs/bytelibrarian.cmi
+lib/ocaml/compiler-libs/bytelink.cmi
+lib/ocaml/compiler-libs/bytepackager.cmi
+lib/ocaml/compiler-libs/bytesections.cmi
+lib/ocaml/compiler-libs/ccomp.cmi
+lib/ocaml/compiler-libs/clambda.cmi
+lib/ocaml/compiler-libs/clflags.cmi
+lib/ocaml/compiler-libs/closure.cmi
+lib/ocaml/compiler-libs/cmi_format.cmi
+lib/ocaml/compiler-libs/cmm.cmi
+lib/ocaml/compiler-libs/cmmgen.cmi
+lib/ocaml/compiler-libs/cmo_format.cmi
+lib/ocaml/compiler-libs/cmt_format.cmi
+lib/ocaml/compiler-libs/cmx_format.cmi
+lib/ocaml/compiler-libs/coloring.cmi
+lib/ocaml/compiler-libs/comballoc.cmi
+lib/ocaml/compiler-libs/compile.cmi
+lib/ocaml/compiler-libs/compilenv.cmi
+lib/ocaml/compiler-libs/config.cmi
+lib/ocaml/compiler-libs/consistbl.cmi
+lib/ocaml/compiler-libs/ctype.cmi
+lib/ocaml/compiler-libs/datarepr.cmi
+lib/ocaml/compiler-libs/debuginfo.cmi
+lib/ocaml/compiler-libs/dll.cmi
+lib/ocaml/compiler-libs/emit.cmi
+lib/ocaml/compiler-libs/emitaux.cmi
+lib/ocaml/compiler-libs/emitcode.cmi
+lib/ocaml/compiler-libs/env.cmi
+lib/ocaml/compiler-libs/errors.cmi
+lib/ocaml/compiler-libs/expunge.cmi
+lib/ocaml/compiler-libs/genprintval.cmi
+lib/ocaml/compiler-libs/ident.cmi
+lib/ocaml/compiler-libs/includeclass.cmi
+lib/ocaml/compiler-libs/includecore.cmi
+lib/ocaml/compiler-libs/includemod.cmi
+lib/ocaml/compiler-libs/instruct.cmi
+lib/ocaml/compiler-libs/interf.cmi
+lib/ocaml/compiler-libs/lambda.cmi
+lib/ocaml/compiler-libs/lexer.cmi
+lib/ocaml/compiler-libs/linearize.cmi
+lib/ocaml/compiler-libs/liveness.cmi
+lib/ocaml/compiler-libs/location.cmi
+lib/ocaml/compiler-libs/longident.cmi
+lib/ocaml/compiler-libs/mach.cmi
+lib/ocaml/compiler-libs/main.cmi
+lib/ocaml/compiler-libs/main.cmo
+lib/ocaml/compiler-libs/main.cmx
+lib/ocaml/compiler-libs/main.o
+lib/ocaml/compiler-libs/main_args.cmi
+lib/ocaml/compiler-libs/matching.cmi
+lib/ocaml/compiler-libs/meta.cmi
+lib/ocaml/compiler-libs/misc.cmi
+lib/ocaml/compiler-libs/mtype.cmi
+lib/ocaml/compiler-libs/ocamlbytecomp.a
+lib/ocaml/compiler-libs/ocamlbytecomp.cma
+lib/ocaml/compiler-libs/ocamlbytecomp.cmxa
+lib/ocaml/compiler-libs/ocamlcommon.a
+lib/ocaml/compiler-libs/ocamlcommon.cma
+lib/ocaml/compiler-libs/ocamlcommon.cmxa
+lib/ocaml/compiler-libs/ocamloptcomp.a
+lib/ocaml/compiler-libs/ocamloptcomp.cma
+lib/ocaml/compiler-libs/ocamloptcomp.cmxa
+lib/ocaml/compiler-libs/ocamltoplevel.cma
+lib/ocaml/compiler-libs/opcodes.cmi
+lib/ocaml/compiler-libs/oprint.cmi
+lib/ocaml/compiler-libs/optcompile.cmi
+lib/ocaml/compiler-libs/opterrors.cmi
+lib/ocaml/compiler-libs/optmain.cmi
+lib/ocaml/compiler-libs/optmain.cmo
+lib/ocaml/compiler-libs/optmain.cmx
+lib/ocaml/compiler-libs/optmain.o
+lib/ocaml/compiler-libs/outcometree.cmi
+lib/ocaml/compiler-libs/parmatch.cmi
+lib/ocaml/compiler-libs/parse.cmi
+lib/ocaml/compiler-libs/parser.cmi
+lib/ocaml/compiler-libs/parsetree.cmi
+lib/ocaml/compiler-libs/path.cmi
+lib/ocaml/compiler-libs/pparse.cmi
+lib/ocaml/compiler-libs/predef.cmi
+lib/ocaml/compiler-libs/primitive.cmi
+lib/ocaml/compiler-libs/printast.cmi
+lib/ocaml/compiler-libs/printclambda.cmi
+lib/ocaml/compiler-libs/printcmm.cmi
+lib/ocaml/compiler-libs/printinstr.cmi
+lib/ocaml/compiler-libs/printlambda.cmi
+lib/ocaml/compiler-libs/printlinear.cmi
+lib/ocaml/compiler-libs/printmach.cmi
+lib/ocaml/compiler-libs/printtyp.cmi
+lib/ocaml/compiler-libs/printtyped.cmi
+lib/ocaml/compiler-libs/proc.cmi
+lib/ocaml/compiler-libs/reg.cmi
+lib/ocaml/compiler-libs/reload.cmi
+lib/ocaml/compiler-libs/reloadgen.cmi
+lib/ocaml/compiler-libs/runtimedef.cmi
+lib/ocaml/compiler-libs/schedgen.cmi
+lib/ocaml/compiler-libs/scheduling.cmi
+lib/ocaml/compiler-libs/selectgen.cmi
+lib/ocaml/compiler-libs/selection.cmi
+lib/ocaml/compiler-libs/simplif.cmi
+lib/ocaml/compiler-libs/spill.cmi
+lib/ocaml/compiler-libs/split.cmi
+lib/ocaml/compiler-libs/stypes.cmi
+lib/ocaml/compiler-libs/subst.cmi
+lib/ocaml/compiler-libs/switch.cmi
+lib/ocaml/compiler-libs/symtable.cmi
+lib/ocaml/compiler-libs/syntaxerr.cmi
+lib/ocaml/compiler-libs/tbl.cmi
+lib/ocaml/compiler-libs/terminfo.cmi
+lib/ocaml/compiler-libs/topdirs.cmi
+lib/ocaml/compiler-libs/toploop.cmi
+lib/ocaml/compiler-libs/topmain.cmi
+lib/ocaml/compiler-libs/topstart.cmi
+lib/ocaml/compiler-libs/topstart.cmo
+lib/ocaml/compiler-libs/trace.cmi
+lib/ocaml/compiler-libs/translclass.cmi
+lib/ocaml/compiler-libs/translcore.cmi
+lib/ocaml/compiler-libs/translmod.cmi
+lib/ocaml/compiler-libs/translobj.cmi
+lib/ocaml/compiler-libs/typeclass.cmi
+lib/ocaml/compiler-libs/typecore.cmi
+lib/ocaml/compiler-libs/typedecl.cmi
+lib/ocaml/compiler-libs/typedtree.cmi
+lib/ocaml/compiler-libs/typemod.cmi
+lib/ocaml/compiler-libs/typeopt.cmi
+lib/ocaml/compiler-libs/types.cmi
+lib/ocaml/compiler-libs/typetexp.cmi
+lib/ocaml/compiler-libs/warnings.cmi
 lib/ocaml/complex.cmi
 lib/ocaml/complex.cmx
 lib/ocaml/complex.ml
 lib/ocaml/complex.mli
 %%PROF%%lib/ocaml/complex.p.cmx
 %%THREADS%%lib/ocaml/condition.mli
-lib/ocaml/dbm.a
-lib/ocaml/dbm.cma
-lib/ocaml/dbm.cmi
-lib/ocaml/dbm.cmx
-lib/ocaml/dbm.cmxa
-lib/ocaml/dbm.cmxs
-lib/ocaml/dbm.mli
 lib/ocaml/digest.cmi
 lib/ocaml/digest.cmx
 lib/ocaml/digest.ml
 lib/ocaml/digest.mli
 %%PROF%%lib/ocaml/digest.p.cmx
 lib/ocaml/dynlink.a
-lib/ocaml/dynlink.cmx
-lib/ocaml/dynlink.cmxa
 lib/ocaml/dynlink.cma
 lib/ocaml/dynlink.cmi
+lib/ocaml/dynlink.cmx
+lib/ocaml/dynlink.cmxa
 lib/ocaml/dynlink.mli
 %%THREADS%%lib/ocaml/event.mli
 lib/ocaml/expunge
@@ -671,7 +803,6 @@ lib/ocaml/libcamlrun.a
 lib/ocaml/libcamlrun_shared.so
 lib/ocaml/libcamlstr.a
 %%X11%%lib/ocaml/libgraphics.a
-lib/ocaml/libmldbm.a
 lib/ocaml/libnums.a
 %%THREADS%%lib/ocaml/libthreads.a
 %%THREADS%%lib/ocaml/libthreadsnat.a
@@ -721,8 +852,8 @@ lib/ocaml/obj.cmi
 lib/ocaml/obj.cmx
 lib/ocaml/obj.ml
 lib/ocaml/obj.mli
-lib/ocaml/objinfo_helper
 %%PROF%%lib/ocaml/obj.p.cmx
+lib/ocaml/objinfo_helper
 lib/ocaml/ocamlbuild/ocamlbuild.cmo
 lib/ocaml/ocamlbuild/ocamlbuild.cmx
 lib/ocaml/ocamlbuild/ocamlbuild.o
@@ -756,6 +887,7 @@ lib/ocaml/ocamldoc/odoc_dep.cmi
 lib/ocaml/ocamldoc/odoc_dot.cmi
 lib/ocaml/ocamldoc/odoc_env.cmi
 lib/ocaml/ocamldoc/odoc_exception.cmi
+lib/ocaml/ocamldoc/odoc_gen.cmi
 lib/ocaml/ocamldoc/odoc_global.cmi
 lib/ocaml/ocamldoc/odoc_html.cmi
 lib/ocaml/ocamldoc/odoc_info.a
@@ -796,8 +928,6 @@ lib/ocaml/oo.cmx
 lib/ocaml/oo.ml
 lib/ocaml/oo.mli
 %%PROF%%lib/ocaml/oo.p.cmx
-lib/ocaml/outcometree.cmi
-lib/ocaml/outcometree.mli
 lib/ocaml/parsing.cmi
 lib/ocaml/parsing.cmx
 lib/ocaml/parsing.ml
@@ -820,6 +950,8 @@ lib/ocaml/printf.mli
 %%PROF%%lib/ocaml/printf.p.cmx
 lib/ocaml/profiling.cmi
 lib/ocaml/profiling.cmo
+lib/ocaml/profiling.cmx
+lib/ocaml/profiling.o
 lib/ocaml/queue.cmi
 lib/ocaml/queue.cmx
 lib/ocaml/queue.ml
@@ -863,7 +995,7 @@ lib/ocaml/std_exit.cmo
 lib/ocaml/std_exit.cmx
 lib/ocaml/std_exit.ml
 lib/ocaml/std_exit.o
-lib/ocaml/std_exit.p.cmx
+%%PROF%%lib/ocaml/std_exit.p.cmx
 lib/ocaml/std_exit.p.o
 lib/ocaml/stdlib.a
 lib/ocaml/stdlib.cma
@@ -893,10 +1025,9 @@ lib/ocaml/stringLabels.ml
 lib/ocaml/stringLabels.mli
 %%PROF%%lib/ocaml/stringLabels.p.cmx
 lib/ocaml/stublibs/dllbigarray.so
+lib/ocaml/stublibs/dllcamlstr.so
 %%X11%%lib/ocaml/stublibs/dllgraphics.so
 %%TK%%lib/ocaml/stublibs/dlllabltk.so
-lib/ocaml/stublibs/dllcamlstr.so
-lib/ocaml/stublibs/dllmldbm.so
 lib/ocaml/stublibs/dllnums.so
 %%THREADS%%lib/ocaml/stublibs/dllthreads.so
 lib/ocaml/stublibs/dllunix.so
@@ -922,10 +1053,6 @@ lib/ocaml/sys.mli
 %%THREADS%%lib/ocaml/threads/threads.cma
 %%THREADS%%lib/ocaml/threads/threads.cmxa
 lib/ocaml/topdirs.cmi
-lib/ocaml/toplevellib.cma
-lib/ocaml/toploop.cmi
-lib/ocaml/topmain.cmi
-lib/ocaml/topstart.cmo
 lib/ocaml/unix.a
 lib/ocaml/unix.cma
 lib/ocaml/unix.cmi
@@ -955,6 +1082,7 @@ lib/ocaml/weak.cmx
 lib/ocaml/weak.ml
 lib/ocaml/weak.mli
 %%PROF%%lib/ocaml/weak.p.cmx
+%%TK%%%%EXAMPLESDIR%%/examples_camltk/.ignore
 %%TK%%%%EXAMPLESDIR%%/examples_camltk/Makefile
 %%TK%%%%EXAMPLESDIR%%/examples_camltk/Makefile.nt
 %%TK%%%%EXAMPLESDIR%%/examples_camltk/addition.ml
@@ -972,6 +1100,7 @@ lib/ocaml/weak.mli
 %%TK%%%%EXAMPLESDIR%%/examples_camltk/tetris.ml
 %%TK%%%%EXAMPLESDIR%%/examples_camltk/text.ml
 %%TK%%%%EXAMPLESDIR%%/examples_camltk/winskel.ml
+%%TK%%%%EXAMPLESDIR%%/examples_labltk/.ignore
 %%TK%%%%EXAMPLESDIR%%/examples_labltk/Lambda2.back.gif
 %%TK%%%%EXAMPLESDIR%%/examples_labltk/Makefile
 %%TK%%%%EXAMPLESDIR%%/examples_labltk/Makefile.nt
@@ -988,7 +1117,7 @@ lib/ocaml/weak.mli
 %%TK%%@dirrm %%EXAMPLESDIR%%/examples_labltk
 %%TK%%@dirrm %%EXAMPLESDIR%%/examples_camltk/images
 %%TK%%@dirrm %%EXAMPLESDIR%%/examples_camltk
-%%TK%%@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%EXAMPLESDIR%%
 @dirrm lib/ocaml/vmthreads
 %%THREADS%%@dirrm lib/ocaml/threads
 @dirrmtry lib/ocaml/stublibs
@@ -996,10 +1125,11 @@ lib/ocaml/weak.mli
 @dirrm lib/ocaml/ocamldoc
 @dirrm lib/ocaml/ocamlbuild
 %%TK%%@dirrmtry lib/ocaml/labltk
+@dirrm lib/ocaml/compiler-libs
 @dirrm lib/ocaml/camlp4/Camlp4Top
 @dirrm lib/ocaml/camlp4/Camlp4Printers
 @dirrm lib/ocaml/camlp4/Camlp4Parsers
 @dirrm lib/ocaml/camlp4/Camlp4Filters
 @dirrm lib/ocaml/camlp4
 @dirrm lib/ocaml/caml
-@comment lib/ocaml will be added by Makefile
+@dirrm lib/ocaml
