@@ -3,8 +3,8 @@
 
 PORTNAME=	mulberry
 PORTVERSION=	4.0.8
-PORTREVISION=	1
-CATEGORIES=	mail
+PORTREVISION=	2
+CATEGORIES=	mail linux
 MASTER_SITES=	http://www.mulberrymail.com/downloads/Mulberry/%SUBDIR%/
 MASTER_SITE_SUBDIR=v${PORTVERSION:S/./_/g}
 DISTNAME=	Mulberry
@@ -12,15 +12,16 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A scalable high-performance GUI internet Mail User Agent
+COMMENT=	Scalable high-performance GUI Internet Mail User Agent
+OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 PLUGINSDIR=	${PREFIX}/lib/${PORTNAME}/Plug-ins
@@ -34,25 +35,25 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_DIR} ${PLUGINSDIR}
-	${INSTALL_DIR} ${PIXMAPSDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-#	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/lib/${PORTNAME}/${PORTNAME}.bin
-#	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/Plug-ins/*.so ${PLUGINSDIR}
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}/Resources
-	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/Resources/* ${RESOURCESDIR}
-	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/icons/* ${PIXMAPSDIR}
-	${INSTALL_DIR} ${PLUGINSDIR}/Timezones
-	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/Plug-ins/Timezones/* ${PLUGINSDIR}/Timezones
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/mailcap ${EXAMPLESDIR}
-	@[ -f ${PREFIX}/etc/mailcap ] || ${INSTALL_DATA} ${FILESDIR}/mailcap ${PREFIX}/etc/mailcap
-	${INSTALL_DATA} ${FILESDIR}/url.helpers ${EXAMPLESDIR}
-	@[ -f ${PREFIX}/lib/url.helpers ] || ${INSTALL_DATA} ${FILESDIR}/url.helpers ${PREFIX}/lib/url.helpers
-.if !defined(NOPORTDOCS)
-	${INSTALL_DIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/CHANGES* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Mulberry_License ${DOCSDIR}
+	${INSTALL_DIR} ${STAGEDIR}${PLUGINSDIR}
+	${INSTALL_DIR} ${STAGEDIR}${PIXMAPSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+#	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTNAME}.bin
+#	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/Plug-ins/*.so ${STAGEDIR}${PLUGINSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/Resources
+	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/Resources/* ${STAGEDIR}${RESOURCESDIR}
+	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/icons/* ${STAGEDIR}${PIXMAPSDIR}
+	${INSTALL_DIR} ${STAGEDIR}${PLUGINSDIR}/Timezones
+	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/Plug-ins/Timezones/* ${STAGEDIR}${PLUGINSDIR}/Timezones
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/mailcap ${STAGEDIR}${EXAMPLESDIR}
+	@[ -f ${PREFIX}/etc/mailcap ] || ${INSTALL_DATA} ${FILESDIR}/mailcap ${STAGEDIR}${PREFIX}/etc/mailcap
+	${INSTALL_DATA} ${FILESDIR}/url.helpers ${STAGEDIR}${EXAMPLESDIR}
+	@[ -f ${PREFIX}/lib/url.helpers ] || ${INSTALL_DATA} ${FILESDIR}/url.helpers ${STAGEDIR}${PREFIX}/lib/url.helpers
+.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_DIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/CHANGES* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Mulberry_License ${STAGEDIR}${DOCSDIR}
 .endif
 .include <bsd.port.post.mk>
