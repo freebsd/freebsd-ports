@@ -3,6 +3,7 @@
 
 PORTNAME=	parcellite
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -31,6 +32,9 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|"/proc/|"/compat/linux/proc/|; \
+		s|"/proc"|"/compat/linux/proc"|' \
+		${WRKSRC}/src/utils.c
 .if ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|$$(DATADIRNAME)/locale|share/locale|' \
 		${WRKSRC}/po/Makefile.in.in
