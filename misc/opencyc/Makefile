@@ -17,14 +17,13 @@ NO_BUILD=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-NO_STAGE=	yes
 post-extract:
-	cd ${WRKSRC}/doc && ${RM} '#migration.txt#' 'package-list.~1~' '.#faq' '.#migration.txt'
+	@cd ${WRKSRC}/doc && ${RM} '#migration.txt#' 'package-list.~1~' '.#faq' '.#migration.txt'
 
 pre-patch:
 	@${BRANDELF} -t Linux ${WRKSRC}/run/bin/latest.bin
 
 do-install:
-	@${CP} -PRpf ${WRKSRC} ${PREFIX}
+	@${CP} -PRpf ${WRKSRC} ${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
