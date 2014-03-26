@@ -17,30 +17,22 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	api basics.html cop cvs-usage.html dependencies.html images \
 		index.html issue-tracking.html license.html linkcheck.html \
 		mail-lists.html maven-reports.html principals \
 		project-info.html style team-list.html
-.endif
 
 JARFILES=	${PORTNAME}.jar ${PORTNAME}-api.jar ${PORTNAME}-impl.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}/..."
 .for jarfile in ${JARFILES}
-	@${ECHO_MSG} -n " ${jarfile}"
-	@${INSTALL_DATA} ${WRKSRC}/jars/${jarfile:S,.jar$,-${PORTVERSION}.jar,} ${JAVAJARDIR}/${jarfile}
+	${INSTALL_DATA} ${WRKSRC}/jars/${jarfile:S,.jar$,-${PORTVERSION}.jar,} \
+		${STAGEDIR}${JAVAJARDIR}/${jarfile}
 .endfor
-	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd ${WRKSRC}/docs \
-	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${ECHO_MSG} " [ DONE ]"
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
