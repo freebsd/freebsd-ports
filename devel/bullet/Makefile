@@ -11,9 +11,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	3D collision detection and rigid body dynamics library
 
+LICENSE=	ZLIB
+
 USE_GL=		gl glu glut
 USE_XORG=	x11
-#USE_GCC=	any
 
 USES=		cmake
 
