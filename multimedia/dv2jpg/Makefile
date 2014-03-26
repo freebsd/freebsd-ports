@@ -3,45 +3,55 @@
 
 PORTNAME=	dv2jpg
 PORTVERSION=	1.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Type-2 DV codec-encoded AVI streams to mjpeg-encoded AVI
 
-LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libdv.so:${PORTSDIR}/multimedia/libdv
 
 USE_GNOME=	gdkpixbuf
 MAKEFILE=	makefile
 
-.if defined(WITH_PAL_VIDEO)
-VID_FORMAT=	PAL
-.else
-VID_FORMAT=	NTSC
-.endif
+PLIST_FILES=	bin/avijoin bin/dv2jpg
 
-NO_STAGE=	yes
-pre-everything::
-	@${ECHO_MSG} "===> The default video format is NTSC"
-	@${ECHO_MSG} "===> You can change this to PAL by defining"
-	@${ECHO_MSG} "===> WITH_PAL_VIDEO"
+PORTDOCS=	README.avilib README.dv2jpg.html
+OPTIONS_DEFINE=	DOCS
+
+OPTIONS_SINGLE=	VIDEO-FORMAT
+OPTIONS_SINGLE_VIDEO-FORMAT=	NTSC PAL
+OPTIONS_DEFAULT=	NTSC
+
+VIDEO-FORMAT_DESC=	Use default video format
+NTSC_DESC=	Default video format NTSC
+PAL_DESC=	Default video format PAL
+
+.include <bsd.port.options.mk>
 
 post-extract:
+	${INSTALL_DATA} ${FILESDIR}/makefile ${WRKSRC}
 	${RM} ${WRKSRC}/avijoin ${WRKSRC}/dv2jpg ${WRKSRC}/*.o
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%VID_FORMAT%%|${VID_FORMAT}|' \
+	@${REINPLACE_CMD} -e 's|/opt/vidpb/lib/avilib.h|avilib.h|' \
+		${WRKSRC}/avijoin.c
+
+.if ${PORT_OPTIONS:MPAL}
+	@${REINPLACE_CMD} -e 's|VIDEO=NTSC|# VIDEO=NTSC|; \
+		s|# VIDEO=PAL|VIDEO=PAL|' \
 		${WRKSRC}/${MAKEFILE}
+.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/avijoin ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/dv2jpg ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for f in README.avilib	README.dv2jpg.html
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.for f in avijoin dv2jpg
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${f} ${STAGEDIR}${PREFIX}/bin/)
 .endfor
-.endif
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
