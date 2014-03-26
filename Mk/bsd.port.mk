@@ -1845,6 +1845,10 @@ IGNORE=	Do not define STAGEDIR in command line
 .include "${PORTSDIR}/Mk/bsd.java.mk"
 .endif
 
+.if defined(USE_OCAML)
+.include "${PORTSDIR}/Mk/bsd.ocaml.mk"
+.endif
+
 .if defined(USE_LINUX_RPM)
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
 .endif

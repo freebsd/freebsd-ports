@@ -108,25 +108,19 @@ post-install-script: ocaml-findlib ocaml-ldconfig ocaml-wash
 #
 BUILD_DEPENDS+=		${OCAMLFIND_DEPEND}
 RUN_DEPENDS+=		${OCAMLFIND_DEPEND}
-MAKE_ENV+=	OCAMLFIND_DESTDIR="${OCAMLFIND_DESTDIR}" \
+MAKE_ENV+=	OCAMLFIND_DESTDIR="${STAGEDIR}${OCAMLFIND_DESTDIR}" \
 		OCAMLFIND_LDCONF="${OCAMLFIND_LDCONF}"
 
 #
 # Directories under site-lib to process automatically
 #
 OCAML_PKGDIRS?=	${PORTNAME}
-. if !target(pre-install-script)
-pre-install-script:
-.if !exists(${OCAMLFIND_DESTDIR})
-	@${MKDIR} "${PREFIX}/${OCAML_SITELIBDIR}"
-.endif
-. endif
 . if !target(ocaml-findlib)
 ocaml-findlib:
 .  for DIR in ${OCAML_PKGDIRS}
 .   if defined(USE_OCAMLFIND_PLIST)
-	@${FIND} ${PREFIX}/${OCAML_SITELIBDIR}/${DIR}/ -type f -print | ${SED} -e \
-		's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${DIR}/ -type f -print | ${SED} -e \
+		's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 .   endif
 	@${ECHO_CMD} "@unexec rmdir %D/${OCAML_SITELIBDIR}/${DIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${OCAMLFIND} remove ${DIR} 2>/dev/null" \
@@ -143,7 +137,9 @@ OCAML_LDLIBS?=	${OCAML_SITELIBDIR}/${PORTNAME}
 . if !target(ocaml-ldconfig)
 ocaml-ldconfig:
 .  for LIB in ${OCAML_LDLIBS}
+.   if defined(NO_STAGE)
 	@${ECHO_CMD} "${PREFIX}/${LIB}" >> "${PREFIX}/${OCAML_LDCONF}"
+.   endif
 	@${ECHO_CMD} "@exec ${ECHO_CMD} "%D/${LIB}" >> %D/${OCAML_LDCONF}" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${SED} -i \"\" -e '/${LIB:S#/#\/#g}/d' %D/${OCAML_LDCONF}"  >> ${TMPPLIST}
@@ -199,3 +195,15 @@ add-plist-post:
 .endif
 
 .endif #!defined(OCAML_include)
+
+.if defined(_POSTMKINCLUDED)
+
+.if defined(USE_OCAML_FINDLIB)
+
+pre-install: ${STAGEDIR}${OCAMLFIND_DESTDIR}
+${STAGEDIR}${OCAMLFIND_DESTDIR}:
+	@${MKDIR} ${.TARGET}
+
+.endif
+
+.endif # _POSTMKINCLUDED
