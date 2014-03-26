@@ -23,6 +23,7 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 						gtk-query-immodules \
 						ldconfig \
 						load-octave-pkg \
+						ocamlfind \
 						update-desktop-database update-mime-database \
 						gdk-pixbuf-query-loaders catalog.ports \
 						glib-compile-schemas \
