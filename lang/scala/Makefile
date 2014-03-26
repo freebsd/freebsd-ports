@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scala
-PORTVERSION=	2.10.3
+PORTVERSION=	2.10.4
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/files/archive/
 EXTRACT_SUFX=	.tgz
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mitsururike@gmail.com
 COMMENT=	Scala Programming Language
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
