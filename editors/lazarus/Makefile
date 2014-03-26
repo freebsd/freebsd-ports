@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	lazarus
-PORTVERSION=	1.0.12
-PORTREVISION?=	1
+PORTVERSION=	1.2
+PORTREVISION?=	0
 CATEGORIES=	editors devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		${MASTER_SITE_LOCAL:S|$|acm/freepascal/|} \
-		SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
+		${MASTER_SITE_LOCAL:S|$|acm/freepascal/|}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-0/}
 DIST_SUBDIR=	freepascal
 
@@ -17,31 +16,30 @@ COMMENT?=	A portable Delphi-like IDE for the FreePascal compiler
 BUILD_DEPENDS?=	#
 RUN_DEPENDS?=	#
 
-PROJECTHOST=	bsdistfiles
 ONLY_FOR_ARCHS=	i386 amd64
 
-#USE_BZIP2=	yes
+USES=		gmake
 USE_GMAKE=	yes
 USE_GNOME=	#
-USE_FPC?=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-res fcl-xml \
-		iconvenc pasjpeg x11
-MAKE_ENV=	OPT="-Sgic -Fu../lcl -Fu../lcl/widgetset -Fu../lcl/forms -Fu../../lcl \
-			-Fu../../lcl/forms -Fu../../lcl/widgetset -Fu../../lcl/nonwin32 \
-			-Fu. -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${LOCALBASE}/lib/qt4 \
-				${OPT_EXTRA} -Fi../lcl/include -Fi../../lcl/include \
-			-Fu../components/lazutils -Fu../../components/lazutils"
+USE_FPC?=	fcl-base fcl-db fcl-fpcunit fcl-image fcl-process fcl-registry \
+		fcl-res fcl-xml iconvenc numlib pasjpeg x11
+OPT?=		"-Sgic "
+
+MAKE_ENV=	OPT=${OPT}
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC?=	${WRKDIR}/${PORTNAME}
 
 .if !defined(PKGNAMESUFFIX)
+OPTIONS_DEFINE=		GDB
 OPTIONS_SINGLE=		LCL
 OPTIONS_SINGLE_LCL=	GTK1 GTK2 QT4
 
+GDB_DESC=		Install a newest version  of gdb
 GTK1_DESC=		Use gtk12 interface
 GTK2_DESC=		Use gtk20 interface
 QT4_DESC=		Use qt4 interface
 
-OPTIONS_DEFAULT=	GTK2
+OPTIONS_DEFAULT=	GTK2 GDB
 .endif
 
 NO_STAGE=	yes
@@ -69,6 +67,10 @@ USES+=	gettext iconv
 MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR="${PORTSDIR}"
+
+.if ${PORT_OPTIONS:MGDB}
+RUN_DEPENDS+=	gdb762:${PORTSDIR}/devel/gdb
+.endif
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
@@ -104,24 +106,24 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
-			-e 's|tools: lcl|tools:|g' -e '2744d' -e '2746d' -e '2747d' ${WRKSRC}/${MAKEFILE}
+			-e 's|tools: lcl|tools:|g' -e '2840d' -e '2842d' -e '2843d' -e '2844d' ${WRKSRC}/${MAKEFILE}
 
 pre-build:
 	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/lcl/units ${WRKSRC}/lcl/units
-	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/ideintf/units ${WRKSRC}/ideintf/units
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/components/ideintf/units ${WRKSRC}/components/ideintf/units
 	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/components/synedit/units ${WRKSRC}/components/synedit/units
 	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/components/lazcontrols/lib ${WRKSRC}/components/lazcontrols/lib
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} registration lazutils codetools ide starter lazbuild LCL_PLATFORM=${LCL_PLATFORM}
+		${SETENV} ${MAKE_ENV} ${GMAKE} registration lazutils codetools bigide starter lazbuild LCL_PLATFORM=${LCL_PLATFORM}
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} tools LCL_PLATFORM=${LCL_PLATFORM}
 
 post-build:
 	@cd ${WRKSRC} && \
 		${RM} -Rf COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app \
-			ide/Makefile*.orig ide/Makefile*.bak lcl/units ideintf/units \
+			ide/Makefile*.orig ide/Makefile*.bak lcl/units components/ideintf/units \
 				components/synedit/units components/lazcontrols/lib
 
 pre-install:
@@ -158,7 +160,7 @@ pre-install:
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
 
 do-install:
-.for DIRE in components converter debugger designer doceditor ide ideintf images install languages lazarus.app lcl \
+.for DIRE in components converter debugger designer doceditor ide images install languages lazarus.app lcl \
 	packager tools units
 		@${MKDIR} ${DATADIR}/${DIRE}
 		@cd ${WRKSRC}/${DIRE} && \
@@ -188,7 +190,7 @@ do-install:
 
 	${INSTALL_SCRIPT} ${WRKSRC}/localize.sh ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/lazarus-wrapper ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA}	${WRKSRC}/Makefile* ${DATADIR}
+	${INSTALL_DATA}	${WRKSRC}/Makefile* ${WRKSRC}/fpmake*  ${DATADIR}
 .for FILE in ${MAN1}
 	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${MAN1PREFIX}/man/man1
 .endfor
