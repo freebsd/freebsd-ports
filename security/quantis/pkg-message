@@ -5,6 +5,6 @@ you have to change permissions on the generated 'ugen'
 device.
 
 A devd config sample has been put in the examples directory.
-Copy it into /usr/local/etc/devd ad modify it at your needs.
+Copy it into %%LOCALBASE%%/etc/devd ad modify it at your needs.
 
 ************************************************************
