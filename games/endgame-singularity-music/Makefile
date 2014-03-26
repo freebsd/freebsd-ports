@@ -10,12 +10,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music pack for endgame-singularity
 
 PROJECTHOST=	endgame-singularity
+
 NO_BUILD=	yes
 USES=		zip
+
 DATADIR=	${PREFIX}/share/singularity
 
-NO_STAGE=	yes
 do-install:
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} music ${DATADIR}/
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} music ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
