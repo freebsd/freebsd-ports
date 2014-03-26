@@ -1,3 +1,4 @@
 bin/xxgdb
 bin/xxgdbiowin
 lib/X11/app-defaults/XDbx
+man/man1/xxgdb.1.gz
