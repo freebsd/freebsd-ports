@@ -3,4 +3,10 @@
 Thanks to Nikos Ntarmos, it is now possible to start slim from /etc/ttys.
 Please see %%PREFIX%%/etc/rc.d/slim for instructions on how to do that.
 
+Alternatively, just put
+
+slim_enable=yes
+
+into /etc/rc.conf
+
 *************************************************************************

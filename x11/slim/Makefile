@@ -3,6 +3,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
@@ -49,6 +50,8 @@ post-patch:
 	@${CP} ${WRKSRC}/slim.conf ${WRKSRC}/slim.conf.sample
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/slim.conf.sample
+	@${REINPLACE_CMD} -e 's,/etc/slim.conf,${PREFIX}&,' \
+		${WRKSRC}/slim.1
 
 post-install:
 .	if ${PORT_OPTIONS:MPAM}

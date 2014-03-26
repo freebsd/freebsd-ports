@@ -1,0 +1,14 @@
+$FreeBSD$
+
+--- slim.1.orig	2014-03-10 21:18:36.740597788 +0000
++++ slim.1	2014-03-10 21:22:07.373025770 +0000
+@@ -42,6 +42,9 @@
+ .SH STARTING SLIM AT BOOT
+ Please refer to documentation of your Operating System to make \fBslim\fP
+ automatically startup after the system boots.
++.PP
++For \fBFreeBSD\fP, you should add the line slim_enable=yes to /etc/rc.conf
++to make \fBslim\fP start on boot.
+ .SH CONFIGURATION
+ Global configuration is stored in the /etc/slim.conf file. See the comments
+ inside the file for a detailed explanation of the \fIoptions\fP.
