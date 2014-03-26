@@ -33,6 +33,10 @@ post-patch:
 	${RM} ${WRKSRC}/src/*.orig
 	@${REINPLACE_CMD} -e '/for Object_Dir/d' \
 		${WRKSRC}/src-in/apq-postgresql.gpr.in
+	${REINPLACE_CMD} -e 's|processors=2|gprbuild_params="--autoconf=apq.cgpr"|' \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-ws|-ws --autoconf=dummy.cgpr|' \
+		${WRKSRC}/scripts/buildutil.sh
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat \
