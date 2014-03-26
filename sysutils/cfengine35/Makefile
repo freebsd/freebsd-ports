@@ -3,13 +3,15 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
 COMMENT=	A systems administration tool for networks
+
+LICENSE=	GPLv3
 
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	35
@@ -51,12 +53,12 @@ OPTIONS_DEFAULT=TOKYOCABINET
 
 .if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--with-tokyocabinet=${LOCALBASE}
-LIB_DEPENDS+=	libtokyocabinet.so.9:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS+=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 .endif
 
 .if ${PORT_OPTIONS:MQDBM}
 CONFIGURE_ARGS+=	--with-qdbm=${LOCALBASE}
-LIB_DEPENDS+=	libqdbm.so.14:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS+=	libqdbm.so:${PORTSDIR}/databases/qdbm
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
