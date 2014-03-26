@@ -1,11 +1,12 @@
 # Created by: Ivan Lago <ivan.lago@ifom-ieo-campus.it>
 # $FreeBSD$
 
-PORTNAME=	syslog-ng34
+PORTNAME=	syslog-ng
 PORTVERSION=	3.4.7
 PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
+PKGNAMESUFFIX=	34
 DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/${DISTVERSION}/source/
 
