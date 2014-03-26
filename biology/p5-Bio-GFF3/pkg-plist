@@ -3,11 +3,13 @@ bin/gff3_from_fasta
 %%SITE_PERL%%/Bio/GFF3/LowLevel/Parser.pm
 %%SITE_PERL%%/Bio/GFF3/LowLevel/Parser/1_0_backcompat.pm
 %%SITE_PERL%%/Bio/GFF3/Transform/FromFasta.pm
+%%SITE_PERL%%/Bio/GFF3/Transform/SyncDirectives.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/GFF3/.packlist
 %%PERL5_MAN3%%/Bio::GFF3::LowLevel.3.gz
 %%PERL5_MAN3%%/Bio::GFF3::LowLevel::Parser.3.gz
 %%PERL5_MAN3%%/Bio::GFF3::LowLevel::Parser::1_0_backcompat.3.gz
 %%PERL5_MAN3%%/Bio::GFF3::Transform::FromFasta.3.gz
+%%PERL5_MAN3%%/Bio::GFF3::Transform::SyncDirectives.3.gz
 man/man1/gff3_from_fasta.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/GFF3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
