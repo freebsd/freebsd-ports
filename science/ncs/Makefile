@@ -3,7 +3,7 @@
 
 PORTNAME=	ncs
 PORTVERSION=	2.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science parallel
 MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -16,18 +16,19 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4	\
 		cs_preprocess:${PORTSDIR}/science/ecs	\
 		pyrcc4:${PORTSDIR}/textproc/py-qt4-xml
-LIB_DEPENDS=	fvm.0:${PORTSDIR}/science/fvm	\
-		mei.0:${PORTSDIR}/science/mei
+LIB_DEPENDS=	libfvm.so:${PORTSDIR}/science/fvm	\
+		libmei.so:${PORTSDIR}/science/mei
 RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
 		bash:${PORTSDIR}/shells/bash	\
 		xterm:${PORTSDIR}/x11/xterm	\
 		cs_preprocess:${PORTSDIR}/science/ecs
 
-USES=		fortran gettext gmake iconv zip
+USES=		fortran gettext gmake iconv zip shebangfix
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-CPPFLAGS+=	-I${LOCALBASE}/include/libxml2
+SHEBANG_FILES=	bin/runcase.in
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MPI_LIBS="${MPI_LIBS}" \
 		PYEXE="${PYTHON_CMD}"
@@ -35,6 +36,7 @@ MAKE_ENV=	NOM_ARCH=${OPSYS} CS_MPI_PATH=${MPI_HOME}/bin	\
 		PTHREAD_LIBS=${PTHREAD_LIBS} TERM=${TERM}	\
 		MPI_HOME=${MPI_HOME} MPI_LIBS="${MPI_LIBS}"
 USE_LDCONFIG=	yes
+NEED_ROOT=	yes
 
 FORTRANLIBDIR=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``
 FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
@@ -50,8 +52,6 @@ BIN_SCRIPTS=	autovalid check_mesh compiler_version cree_sat cs.exe gracehst	\
 		grp info_cs lance_install rang_mpi.sh
 BIN_DATAS=	Makefile SaturneGUI autovalid.xml cs_profile lance lance.help	\
 		macros_FreeBSD.mk
-
-MAN1=		code_saturne.1 cs_solver.1
 
 .if defined(WITH_LAM)
 MPI_HOME=	${LOCALBASE}
@@ -78,17 +78,16 @@ INSTALL_TARGET=	install install-pdf
 DOCS=		AUTHORS COMPATIBILITY ChangeLog README
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS) && !defined(WITHOUT_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS_LIB=	-lf77blas
 .elif !defined(WITHOUT_BLAS)
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
 BLAS_LIB=	-lblas
 .endif
 
@@ -107,16 +106,14 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_BLAS or WITHOUT_ATLAS if you prefer."
 	@${ECHO_MSG}
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|/bin/bash| ${LOCALBASE}/bin/bash|' ${WRKSRC}/bin/runcase.in
-
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${DOCS:C|^|${WRKSRC}/|} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:C|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
