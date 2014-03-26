@@ -63,6 +63,7 @@ CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 SUB_FILES=	pkg-install
 SUB_LIST=	DB_TYPE=${DB_TYPE:L} WITH_FASTCGI=${PORT_OPTIONS:MFASTCGI}
+PORTEXAMPLES=	*
 
 USE_RC_SUBR=	sympa
 
@@ -136,14 +137,14 @@ pre-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 
 post-install:
-	for dir in $$(sort ${WRKSRC}/createddirs); do \
+	for dir in $$(sort ${WRKSRC}/createddirs | ${SED} 's,^${STAGEDIR},,'); do \
 		${MKDIR} -m755 ${STAGEDIR}$$dir; \
 		${TOUCH} ${STAGEDIR}$$dir/.keep; \
 		${ECHO_CMD} "@exec ${CHOWN} ${USERS}:${GROUPS} $${dir#${PREFIX}/}" >> ${TMPPLIST}; \
 		${ECHO_CMD} "$${dir#${PREFIX}/}/.keep" >> ${TMPPLIST}; \
 	done; \
 	for dir in $$(sort -r ${WRKSRC}/createddirs); do \
-		${ECHO_CMD} "@unexec ${RMDIR} $$dir" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@unexec rmdir $${dir#${STAGEDIR}} || : 2>/dev/null" >> ${TMPPLIST}; \
 	done
 	${INSTALL_DATA} ${WRKSRC}/etc_README ${STAGEDIR}/${ETCDIR}
 
