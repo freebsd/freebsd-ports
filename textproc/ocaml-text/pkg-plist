@@ -1,18 +1,42 @@
-%%DOCSDIR%%/api/Encoding.html
-%%DOCSDIR%%/api/Text.html
-%%DOCSDIR%%/api/index.html
-%%DOCSDIR%%/api/index_attributes.html
-%%DOCSDIR%%/api/index_class_types.html
-%%DOCSDIR%%/api/index_classes.html
-%%DOCSDIR%%/api/index_exceptions.html
-%%DOCSDIR%%/api/index_methods.html
-%%DOCSDIR%%/api/index_module_types.html
-%%DOCSDIR%%/api/index_modules.html
-%%DOCSDIR%%/api/index_types.html
-%%DOCSDIR%%/api/index_values.html
-%%DOCSDIR%%/api/style.css
-%%DOCSDIR%%/api/type_Encoding.html
-%%DOCSDIR%%/api/type_Text.html
-@dirrm %%DOCSDIR%%/api
-%%DOCSDIR%%/manual.pdf
-@dirrm %%DOCSDIR%%
+%%OCAML_SITELIBDIR%%/text/META
+%%OCAML_SITELIBDIR%%/text/dlltext-bigarray_stubs.so
+%%OCAML_SITELIBDIR%%/text/dlltext_stubs.so
+%%OCAML_SITELIBDIR%%/text/encoding.cmi
+%%OCAML_SITELIBDIR%%/text/encoding.cmx
+%%OCAML_SITELIBDIR%%/text/encoding.mli
+%%OCAML_SITELIBDIR%%/text/encoding_bigarray.cmi
+%%OCAML_SITELIBDIR%%/text/encoding_bigarray.cmx
+%%OCAML_SITELIBDIR%%/text/encoding_bigarray.mli
+%%OCAML_SITELIBDIR%%/text/libtext-bigarray_stubs.a
+%%OCAML_SITELIBDIR%%/text/libtext_stubs.a
+%%OCAML_SITELIBDIR%%/text/pa_text_env.cmx
+%%OCAML_SITELIBDIR%%/text/pa_text_main.cmx
+%%OCAML_SITELIBDIR%%/text/pa_text_parse.cmx
+%%OCAML_SITELIBDIR%%/text/pa_text_regexp.cmx
+%%OCAML_SITELIBDIR%%/text/pa_text_types.cmx
+%%OCAML_SITELIBDIR%%/text/pa_text_util.cmx
+%%OCAML_SITELIBDIR%%/text/text-bigarray.a
+%%OCAML_SITELIBDIR%%/text/text-bigarray.cma
+%%OCAML_SITELIBDIR%%/text/text-bigarray.cmxa
+%%OCAML_SITELIBDIR%%/text/text-bigarray.cmxs
+%%OCAML_SITELIBDIR%%/text/text-pcre-syntax.a
+%%OCAML_SITELIBDIR%%/text/text-pcre-syntax.cma
+%%OCAML_SITELIBDIR%%/text/text-pcre-syntax.cmxa
+%%OCAML_SITELIBDIR%%/text/text-pcre-syntax.cmxs
+%%OCAML_SITELIBDIR%%/text/text-pcre.a
+%%OCAML_SITELIBDIR%%/text/text-pcre.cma
+%%OCAML_SITELIBDIR%%/text/text-pcre.cmxa
+%%OCAML_SITELIBDIR%%/text/text-pcre.cmxs
+%%OCAML_SITELIBDIR%%/text/text.a
+%%OCAML_SITELIBDIR%%/text/text.cma
+%%OCAML_SITELIBDIR%%/text/text.cmi
+%%OCAML_SITELIBDIR%%/text/text.cmx
+%%OCAML_SITELIBDIR%%/text/text.cmxa
+%%OCAML_SITELIBDIR%%/text/text.cmxs
+%%OCAML_SITELIBDIR%%/text/text.mli
+%%OCAML_SITELIBDIR%%/text/text_pcre.cmi
+%%OCAML_SITELIBDIR%%/text/text_pcre.cmx
+%%OCAML_SITELIBDIR%%/text/text_pcre.mli
+@dirrm %%OCAML_SITELIBDIR%%/text
+@dirrmtry %%OCAML_SITELIBDIR%%
+@dirrmtry lib/ocaml
