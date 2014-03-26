@@ -136,6 +136,7 @@ pre-install:
 	@echo "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-home
 	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o
 	@cd ${WRKSRC} ; ${MAKE_CMD} install instcheck
+	@${TOUCH} ${WRKSRC}/*-conf
 	@${MV} -f ${WRKSRC}/conf-home.sav ${WRKSRC}/conf-home
 
 .if ${PORT_OPTIONS:MMAN}
