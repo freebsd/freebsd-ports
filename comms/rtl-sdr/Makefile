@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtl-sdr
-PORTVERSION=	20130913
+PORTVERSION=	20140210
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -38,5 +38,8 @@ post-patch:
 
 pre-configure:
 	@(cd ${WRKSRC} && ${AUTORECONF} -fi)
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librtlsdr.so.0
 
 .include <bsd.port.post.mk>
