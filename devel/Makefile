@@ -51,6 +51,7 @@
     SUBDIR += alf
     SUBDIR += allegro
     SUBDIR += allegro-devel
+    SUBDIR += alog
     SUBDIR += android-tools-adb
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
