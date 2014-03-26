@@ -874,6 +874,7 @@
     SUBDIR += searchandrescue-data
     SUBDIR += secretmaryochronicles
     SUBDIR += secretmaryochronicles-music
+    SUBDIR += secrettower
     SUBDIR += senken
     SUBDIR += sets
     SUBDIR += sex
