@@ -9,7 +9,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custfcgi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custfcgi.rst
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custhttpapp.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custhttpapp.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custhttpapp.rst
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custweb.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custweb.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custweb.rst

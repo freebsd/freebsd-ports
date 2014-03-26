@@ -66,8 +66,8 @@ _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi fcl-async 
 		fcl-db fcl-extra fcl-fpcunit fcl-image fcl-js fcl-json fcl-net fcl-passrc \
 		fcl-process fcl-registry fcl-res fcl-web fcl-xml fftw fpgtk fpindexer \
 		fpmkunit fppkg fv gdbint gdbm ggi gmp gnome1 graph gtk1 gtk2 hash \
-		hermes httpd22 ibase iconvenc imagemagick imlib ldap libcurl libgd \
-		libpng libxml2 lua mad matroska modplug mysql ncurses newt numlib \
+		hermes httpd22 httpd24 ibase iconvenc imagemagick imlib ldap libcurl libgd \
+		libpng libvlc libxml2 lua mad matroska modplug mysql ncurses newt numlib \
 		odbc oggvorbis openal opengl openssl oracle pasjpeg paszlib pcap \
 		postgres proj4 pthreads pxlib regexpr rexx rsvg sdl sndfile sqlite \
 		svgalib symbolic syslog tcl unzip users utmp uuid x11 xforms zlib
@@ -76,7 +76,7 @@ _FPC_CFG_UNITS=	fastcgi fcl-web
 
 .if defined(WANT_FPC_BASE)
 .       if ${WANT_FPC_BASE:L} == "yes"
-USE_FPC=	gdbint graph hash httpd22 ibase mysql odbc oracle pasjpeg paszlib \
+USE_FPC=	gdbint graph hash httpd22 httpd24 ibase mysql odbc oracle pasjpeg paszlib \
 		postgres pthreads regexpr sqlite
 .       else
 IGNORE= unknown value, please use "yes" instead of
@@ -104,6 +104,7 @@ gdbint_UNIT=	devel/fpc-gdbint
 graph_UNIT=	graphics/fpc-graph
 hash_UNIT=	security/fpc-hash
 httpd22_UNIT=	www/fpc-httpd22
+httpd24_UNIT=	www/fpc-httpd24
 ibase_UNIT=	databases/fpc-ibase
 mysql_UNIT=	databases/fpc-mysql
 odbc_UNIT=	databases/fpc-odbc
@@ -162,6 +163,7 @@ ldap_UNIT=	net/fpc-ldap
 libcurl_UNIT=	ftp/fpc-libcurl
 libgd_UNIT=	graphics/fpc-libgd
 libpng_UNIT=	graphics/fpc-libpng
+libvlc_UNIT=	multimedia/fpc-libvlc
 libxml2_UNIT=	textproc/fpc-libxml2
 lua_UNIT=	lang/fpc-lua
 mad_UNIT=	audio/fpc-mad
