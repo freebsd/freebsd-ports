@@ -1,6 +1,14 @@
---- src/tiffwrite.c.orig	2009-10-26 13:42:03.000000000 +0100
-+++ src/tiffwrite.c	2010-08-28 10:46:35.000000000 +0200
-@@ -25,6 +25,8 @@
+--- src/tiffwrite.c.orig	2011-06-22 20:04:32.000000000 +0200
++++ src/tiffwrite.c
+@@ -20,11 +20,16 @@
+ #include <caml/memory.h>
+ #include <caml/fail.h>
+ 
++/* Avoid redefinitions */
++#undef int16
++#undef uint16
+ /* These are defined in caml/config.h */
+ #define int16 int16tiff
  #define uint16 uint16tiff
  #define int32 int32tiff
  #define uint32 uint32tiff
@@ -9,7 +17,7 @@
  
  #include <tiffio.h>
  
-@@ -32,6 +34,8 @@
+@@ -32,6 +37,8 @@
  #undef uint16
  #undef int32
  #undef uint32
