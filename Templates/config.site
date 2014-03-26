@@ -262,9 +262,11 @@
 : ${ac_cv_func_arc4random_uniform=yes}
 : ${ac_cv_func_asprintf=yes}
 : ${ac_cv_func_atexit=yes}
+: ${ac_cv_func_bcmp=yes}
 : ${ac_cv_func_bcopy=yes}
 : ${ac_cv_func_bindresvport_sa=yes}
 : ${ac_cv_func_btowc=yes}
+: ${ac_cv_func_bzero=yes}
 : ${ac_cv_func_chown=yes}
 : ${ac_cv_func_clock=yes}
 : ${ac_cv_func_clock_gettime=yes}
@@ -278,6 +280,7 @@
 : ${ac_cv_func_fchmod=yes}
 : ${ac_cv_func_fchown=yes}
 : ${ac_cv_func_fcntl=yes}
+: ${ac_cv_func_fileno=yes}
 : ${ac_cv_func_fork=yes}
 : ${ac_cv_func_fpurge=yes}
 : ${ac_cv_func_freeaddrinfo=yes}
@@ -311,6 +314,7 @@
 : ${ac_cv_func_gettimeofday=yes}
 : ${ac_cv_func_getttyent=yes}
 : ${ac_cv_func_getuid=yes}
+: ${ac_cv_func_getwd=yes}
 : ${ac_cv_func_glob=yes}
 : ${ac_cv_func_group_from_gid=yes}
 : ${ac_cv_func_inet_aton=yes}
@@ -341,6 +345,7 @@
 : ${ac_cv_func_memset=yes}
 : ${ac_cv_func_mkdtemp=yes}
 : ${ac_cv_func_mkstemp=yes}
+: ${ac_cv_func_mktemp=yes}
 : ${ac_cv_func_mlock=yes}
 : ${ac_cv_func_mmap=yes}
 : ${ac_cv_func_mmap_fixed_mapped=yes}
