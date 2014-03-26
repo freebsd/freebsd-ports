@@ -25,7 +25,7 @@ PLIST_SUB=	VERSION="1.0"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900033
+.if ${OSVERSION} < 900033 || ${ARCH} == ia64
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
