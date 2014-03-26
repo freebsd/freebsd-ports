@@ -12,10 +12,9 @@ DISTNAME=	caml${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	OCaml library to manipulate bz2 files
 
+DESTDIRNAME=	DONTUSEIT
 GNU_CONFIGURE=	yes
 USES=		gmake
-NO_STAGE=	yes
-
 USE_OCAML=		yes
 USE_OCAML_LDCONFIG=	yes
 USE_OCAML_WASH=		yes
@@ -23,14 +22,13 @@ USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
 
 PORTDOCS=	*
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
