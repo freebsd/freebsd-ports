@@ -3,6 +3,7 @@
 
 PORTNAME=	checkmol
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/checkmol/
 EXTRACT_SUFX=	.pas
