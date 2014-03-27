@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--disable-tcl
 OPTIONS_DEFINE=	PYTHON RUBY PERL DOCS EXAMPLES
 OPTIONS_DEFAULT=	PERL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
@@ -65,18 +64,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libart-2.0 -I${LOCALBAS
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS:=	${CFLAGS:N-ffast-math}
 
-MAN1=		bin_dec_hex.1 cdeftutorial.1 rpntutorial.1 rrd-beginners.1 \
-		rrdbuild.1 rrdcgi.1 rrdcreate.1 rrddump.1 rrdfetch.1 rrdfirst.1 \
-		rrdgraph.1 rrdgraph_data.1 rrdgraph_examples.1 rrdgraph_graph.1 \
-		rrdgraph_rpn.1 rrdinfo.1 rrdlast.1 rrdresize.1 rrdrestore.1 \
-		rrdthreads.1 rrdtool.1 rrdtune.1 rrdtutorial.1 rrdupdate.1 \
-		rrdxport.1 rrdlastupdate.1
-
-.if ${PORT_OPTIONS:MPERL}
-MAN3=		RRDp.3 RRDs.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
-.endif
-
 post-extract:
 .if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's/install-idocDATA install-ihtmlDATA//g' \
@@ -89,6 +76,8 @@ post-extract:
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librrd.so.2
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librrd_th.so.2
 .if !defined(BATCH) && empty(PORT_OPTIONS:MEXAMPLES)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "############################################################################"
