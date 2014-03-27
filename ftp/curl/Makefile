@@ -12,7 +12,7 @@ COMMENT?=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
 LICENSE=	MIT
 
-OPTIONS_DEFINE=	CA_BUNDLE COOKIES CURL_DEBUG DEBUG DOCS EXAMPLES IDN IPV6 LDAP LDAPS LIBSSH2 PROXY RTMP SPNEGO TLS_SRP
+OPTIONS_DEFINE=	CA_BUNDLE COOKIES CURL_DEBUG DEBUG DOCS EXAMPLES HTTP2 IDN IPV6 LDAP LDAPS LIBSSH2 PROXY RTMP SPNEGO TLS_SRP
 OPTIONS_RADIO=	GSSAPI RESOLV SSL
 OPTIONS_RADIO_GSSAPI=	GSSAPI_BASE HEIMDAL_PORT KRB5_PORT
 OPTIONS_RADIO_RESOLV=	CARES THREADED_RESOLVER
@@ -81,6 +81,8 @@ HEIMDAL_PORT_CONFIGURE_ON=	--with-gssapi=${HEIMDAL_HOME}
 HEIMDAL_PORT_CPPFLAGS=	-I${HEIMDAL_HOME}/include
 HEIMDAL_PORT_LDFLAGS=	-L${HEIMDAL_HOME}/lib
 HEIMDAL_PORT_LIB_DEPENDS=	libgssapi.so:${PORTSDIR}/security/heimdal
+HTTP2_CONFIGURE_OFF=	--without-nghttp2
+HTTP2_CONFIGURE_ON=	--with-nghttp2=${LOCALBASE}
 IDN_CONFIGURE_OFF=	--without-libidn
 IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE}
 IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
@@ -153,7 +155,7 @@ CONFIGURE_ARGS+=--without-gssapi
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(flags_dbg_off=\)".*"|\1""|; s|\(flags_opt_off=\)".*"|\1""|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|\(flags_dbg_off=\)".*"|\1""|; s|\(flags_opt_off=\)".*"|\1""|; s|lib/pkgconfig|libdata/pkgconfig|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|$$| docs|; /^DIST_SUBDIRS = / s| docs||; /cd docs &&/d' ${WRKSRC}/Makefile.in
 
 post-install:
