@@ -33,7 +33,7 @@ rcvar=apache22_enable
 start_precmd="apache22_prestart"
 restart_precmd="apache22_checkconfig"
 reload_precmd="apache22_checkconfig"
-reload_cmd="apache22_graceful"
+reload_cmd="apache22_%%RELOAD_CMD%%"
 graceful_cmd="apache22_graceful"
 gracefulstop_cmd="apache22_gracefulstop"
 configtest_cmd="apache22_checkconfig"
@@ -150,6 +150,13 @@ apache22_graceful() {
 
 	echo "Performing a graceful restart"
 	eval ${command} ${apache22_flags} -k graceful
+}
+
+apache22_hrestart() {
+	apache22_requirepidfile
+
+	echo "Performing a graceful restart"
+	eval ${command} ${apache22_flags} -k restart
 }
 
 apache22_gracefulstop() {
