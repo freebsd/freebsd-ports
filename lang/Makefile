@@ -130,6 +130,7 @@
     SUBDIR += jakarta-commons-jelly
     SUBDIR += jimtcl
     SUBDIR += jruby
+    SUBDIR += js_of_ocaml
     SUBDIR += jython
     SUBDIR += kawa
     SUBDIR += klone
