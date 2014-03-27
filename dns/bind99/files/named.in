@@ -80,7 +80,7 @@ create_file()
 	if [ -e "$1" ]; then
 		unlink $1
 	fi
-	install -u root -g wheel -m 0644 /dev/null $1
+	install -o root -g wheel -m 0644 /dev/null $1
 }
 
 named_prestart()
@@ -93,7 +93,7 @@ named_prestart()
 
 	echo ${pidfile%/pid}
 	if [ ! -d ${pidfile%/pid} ]; then
-		install -d -u ${named_uid} -g ${named_uid} ${pidfile%/pid}
+		install -d -o ${named_uid} -g ${named_uid} ${pidfile%/pid}
 	fi
 
 	command_args="-u ${named_uid:=root} -c $named_conf $command_args"
