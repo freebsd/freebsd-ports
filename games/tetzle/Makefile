@@ -11,8 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Jigsaw puzzle with tetrominoes
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 qmake desktop-file-utils
 USE_QT4=	corelib gui moc_build opengl rcc_build xml
 INSTALLS_ICONS=	yes
 
