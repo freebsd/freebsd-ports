@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Apr 21 20:29:07 2003
-+++ Makefile.in	Tue Apr  6 09:05:17 2004
+--- Makefile.in.orig	2003-04-21 14:29:07.000000000 +0200
++++ Makefile.in	2014-03-27 17:32:22.000000000 +0100
 @@ -87,7 +87,7 @@
  ARCH = `uname -mrs`
  DATE = `date '+%d %h %y'`
@@ -18,3 +18,19 @@
  cxx_dprog_test_SOURCES = cxx_dprog_test.cc
  
  symbol_checking_test_SOURCES = ast.hh ast.cc visitor.hh pretty_printer.hh pretty_printer.cc symbol_checking.hh symbol_checking.cc type_checking.hh type_checking.cc functions.hh functions.cc codegen.hh codegen.cc cxx_codegen.hh cxx_codegen.cc options.hh options.cc symbol_checking_test.cc
+@@ -315,6 +315,7 @@
+ 	@list='$(lib_LIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    f="`echo $$p | sed -e 's|^.*/||'`"; \
++	    $(RANLIB) $$p; \
+ 	    echo " $(libLIBRARIES_INSTALL) $$p $(DESTDIR)$(libdir)/$$f"; \
+ 	    $(libLIBRARIES_INSTALL) $$p $(DESTDIR)$(libdir)/$$f; \
+ 	  else :; fi; \
+@@ -324,7 +325,6 @@
+ 	  if test -f $$p; then \
+ 	    p="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	    echo " $(RANLIB) $(DESTDIR)$(libdir)/$$p"; \
+-	    $(RANLIB) $(DESTDIR)$(libdir)/$$p; \
+ 	  else :; fi; \
+ 	done
+ 
