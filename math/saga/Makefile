@@ -39,6 +39,7 @@ WX_UNICODE=	yes
 DESKTOP_ENTRIES=	"SAGA GIS" "${COMMENT}" "${DATADIR}/saga.png" \
 			"saga_gui" "Science;Geoscience;Math;" true
 DOS2UNIX_GLOB=	*.cpp *.h
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	PGSQL OPENMP HARU VIGRA
 OPTIONS_DEFAULT=PGSQL OPENMP HARU VIGRA
@@ -63,7 +64,7 @@ VIGRA_RUN_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigra
 .include <bsd.port.pre.mk>
 
 # CLANG is not able to handle neither Fortran nor OpenMP
-USE_GCC=	4.8+
+USE_GCC=	yes
 .if ${COMPILER_FEATURES:Mlibc++}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
 CFLAGS+=	-isystem ${LOCALBASE}/include/c++/v1
@@ -103,9 +104,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga_tip.txt ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.png ${STAGEDIR}${DATADIR}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsaga_api-2.1.1.so
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_saga_api-2.1.1.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsaga_gdi-2.1.1.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsaga_api-${PORTVERSION}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_saga_api-${PORTVERSION}.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsaga_gdi-${PORTVERSION}.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/saga/*.so
 
 .include <bsd.port.post.mk>
