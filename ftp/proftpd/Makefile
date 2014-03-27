@@ -5,7 +5,7 @@ PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
 PORTVERSION?=	${PROFTPD_VERSION}
 .endif
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
@@ -85,7 +85,7 @@ PLIST_FILES+=	libexec/proftpd/${m}.a \
 .endfor
 PLIST_DIRSTRY+=	libexec/proftpd
 .else
-OPTIONS_DEFINE=	HTMLDOCS IPV6 NLS MEMCACHE PCRE
+OPTIONS_DEFINE=	DOCS HTMLDOCS IPV6 NLS MEMCACHE PCRE
 OPTIONS_DEFAULT=	IPV6 NLS PCRE
 
 HTMLDOCS_DESC=		Include HTML documentation
@@ -158,8 +158,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--enable-nls
-USES+=	gettext
-PROFTPD_LIBS+=	-lintl -L${LOCALBASE}/lib
+USES+=	gettext iconv
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -198,12 +197,16 @@ CONFIGURE_ARGS+=	--with-shared=${_MODULES:C/^://g}
 CONFIGURE_ARGS+=	--with-includes=${INCLUDEDIRS}
 CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 
+.include <bsd.port.pre.mk>
+
 .if !defined(_BUILDING_PROFTPD_MODULE)
 
-post-patch:
-.if ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's|-lsupp|-lsupp -lintl|g' ${WRKSRC}/Makefile.in
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=	ac_cv_lib_iconv_iconv_open=no \
+			ac_cv_lib_iconv_libiconv_open=no
 .endif
+
+post-patch:
 	@${REINPLACE_CMD} -e 's|proftpd\.conf|proftpd.conf.sample|g' ${WRKSRC}/Makefile.in
 
 pre-configure:
@@ -247,4 +250,4 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 .endif #!defined(_BUILDING_PROFTPD_MODULE)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
