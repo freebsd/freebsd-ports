@@ -1,0 +1,13 @@
+--- Makefile.orig	2006-01-11 11:09:05.000000000 -0200
++++ Makefile	2014-03-27 15:31:34.000000000 -0300
+@@ -21,8 +21,8 @@
+ all: ${TARGET}
+ 
+ install: ${TARGET}
+-	${INSTALL} -g bin -o root -m 755 ${TARGET} ${INSTALL_BIN}
+-	${INSTALL} -g bin -o root -m 644 ${MAN} ${INSTALL_MAN}
++	${INSTALL} -s -m 755 ${TARGET} ${DESTDIR}${INSTALL_BIN}
++	${INSTALL} -m 644 ${MAN} ${DESTDIR}${INSTALL_MAN}
+ 
+ clean:
+ 	rm -f ${TARGET}
