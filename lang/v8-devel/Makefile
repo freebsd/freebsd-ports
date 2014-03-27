@@ -19,9 +19,8 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 CONFLICTS=	v8-3.19.*
 
-USES=		gmake shebangfix compiler
+USES=		gmake shebangfix compiler tar:xz
 SHEBANG_FILES=	${WRKSRC}/build/gyp/gyp
-USE_XZ=		yes
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 ALL_TARGET=	native
@@ -37,6 +36,9 @@ MAKE_ARGS+=	clang=on
 CFLAGS+=	-Wno-unused-private-field -Wno-unused-variable
 .if ${COMPILER_VERSION} >= 33
 CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
+.endif
+.if ${COMPILER_VERSION} >= 34
+CFLAGS+=	-Wno-unused-const-variable
 .endif
 .else
 MAKE_ARGS+=	strictaliasing=off
