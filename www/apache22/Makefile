@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache22
-PORTVERSION=	2.2.26
+PORTVERSION=	2.2.27
 #PORTREVISION?=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
@@ -62,6 +62,13 @@ SUEXEC_USERDIR_EXTRA_PATCHES=	${FILESDIR}/extra-patch-suexec_userdir
 .include <bsd.port.options.mk>
 
 ETC_SUBDIRS=		Includes envvars.d extra modules.d
+
+# PR: 182947
+.if ${WITH_MPM} != "peruser"
+SUB_LIST+=	RELOAD_CMD=graceful
+.else
+SUB_LIST+=	RELOAD_CMD=hrestart
+.endif
 
 .if ! ${PORT_OPTIONS:MDOCS}
 MAKE_ENV+=	NOPORTDOCS=yes
