@@ -73,6 +73,7 @@
     SUBDIR += phpwebftp
     SUBDIR += plasma-applet-ftpmonitor
     SUBDIR += proftpd
+    SUBDIR += proftpd-mod_geoip
     SUBDIR += profxp
     SUBDIR += puf
     SUBDIR += pure-ftpd
