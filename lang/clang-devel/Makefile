@@ -33,7 +33,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
-USES=		gmake perl5
+USES=		compiler:c++11-lang gmake perl5
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 
