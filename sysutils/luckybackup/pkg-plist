@@ -96,8 +96,6 @@ share/doc/luckybackup/manual/images/selected.png
 share/doc/luckybackup/manual/images/top.png
 share/doc/luckybackup/manual/index.html
 share/doc/luckybackup/manual/styles.css
-share/luckybackup/translations/luckybackup_ara.qm
-share/luckybackup/translations/luckybackup_ara.ts
 share/luckybackup/translations/luckybackup_bs.qm
 share/luckybackup/translations/luckybackup_bs.ts
 share/luckybackup/translations/luckybackup_ca.qm
@@ -118,6 +116,10 @@ share/luckybackup/translations/luckybackup_it.qm
 share/luckybackup/translations/luckybackup_it.ts
 share/luckybackup/translations/luckybackup_nl.qm
 share/luckybackup/translations/luckybackup_nl.ts
+share/luckybackup/translations/luckybackup_no.qm
+share/luckybackup/translations/luckybackup_no.ts
+share/luckybackup/translations/luckybackup_pl.qm
+share/luckybackup/translations/luckybackup_pl.ts
 share/luckybackup/translations/luckybackup_pt_BR.qm
 share/luckybackup/translations/luckybackup_pt_BR.ts
 share/luckybackup/translations/luckybackup_ro.qm
@@ -132,6 +134,8 @@ share/luckybackup/translations/luckybackup_sv.qm
 share/luckybackup/translations/luckybackup_sv.ts
 share/luckybackup/translations/luckybackup_tr.qm
 share/luckybackup/translations/luckybackup_tr.ts
+share/luckybackup/translations/luckybackup_zh_TW.qm
+share/luckybackup/translations/luckybackup_zh_TW.ts
 share/pixmaps/luckybackup.png
 share/pixmaps/luckybackup.xpm
 @dirrm share/luckybackup/translations
