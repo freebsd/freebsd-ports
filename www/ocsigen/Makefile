@@ -2,41 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	ocsigen
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.ocsigen.org/download/
+MASTER_SITES=	http://ocsigen.org/download/
+DISTNAME=	ocsigenserver-${PORTVERSION}
 
 MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	Web programming framework for OCaml
 
-BROKEN=		Does not build
+LICENSE=	LGPL21_SSLEX
+LICENSE_NAME=	Lesser GPL 2.1 with a special OpenSSL exception clause
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	ocaml-net>=2:${PORTSDIR}/www/ocaml-net \
+BUILD_DEPENDS=	${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
 		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl \
-		${SA_DIR}/lwt/lwt.a:${PORTSDIR}/devel/ocaml-lwt \
-		${SA_DIR}/cryptokit/cryptokit.a:${PORTSDIR}/security/ocaml-cryptokit
-RUN_DEPENDS=	ocaml-net>=2:${PORTSDIR}/www/ocaml-net \
-		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl \
-		${SA_DIR}/lwt/lwt.a:${PORTSDIR}/devel/ocaml-lwt \
-		${SA_DIR}/cryptokit/cryptokit.a:${PORTSDIR}/security/ocaml-cryptokit
+		ocaml-net>=3:${PORTSDIR}/www/ocaml-net \
+		ocaml-lwt>=2.4.2:${PORTSDIR}/devel/ocaml-lwt \
+		${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
+		${SA_DIR}/cryptokit/cryptokit.a:${PORTSDIR}/security/ocaml-cryptokit \
+		${SA_DIR}/text/text.a:${PORTSDIR}/textproc/ocaml-text \
+		ocaml-tyxml>=2.2.0:${PORTSDIR}/textproc/ocaml-tyxml
 
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
 USE_OCAML_LDCONFIG=	yes
+OCAML_PKGDIRS=		ocsigenserver
+OCAML_LDLIBS=		${OCAML_PKGDIRS:S/^/${OCAML_SITELIBDIR}\//}
+MAKE_JOBS_UNSAFE=	yes
 
-SA_DIR=		${PREFIX}/${OCAML_SITELIBDIR}
+SA_DIR=			${PREFIX}/${OCAML_SITELIBDIR}
 
-OPTIONS_DEFINE=	SQLITE CAMLZIP
-OPTIONS_DEFAULT=	CAMLZIP
-CAMLZIP_DESC=	Use camlzip for compression
+OPTIONS_DEFINE=		CAMLZIP
+OPTIONS_MULTI=		DB
+OPTIONS_MULTI_DB=	SQLITE DBM
+OPTIONS_DEFAULT=	CAMLZIP SQLITE
+OPTIONS_SUB=		yes
+SQLITE_DESC=		Use sqlite as a database backend
+DBM_DESC=		Use dbm as a database backend
+CAMLZIP_DESC=		Use camlzip for compression
 
 USES=		gmake
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--name ${PORTNAME} \
-		--disable-nativecode \
-		--disable-debug \
+CONFIGURE_ARGS= --disable-debug \
+		--temproot ${STAGEDIR} \
+		--enable-natdynlink \
 		--ocsigen-user ${WWWOWN} \
 		--ocsigen-group ${WWWGRP} \
 		--bindir ${PREFIX}/bin \
@@ -44,45 +55,35 @@ CONFIGURE_ARGS=	--name ${PORTNAME} \
 		--libdir ${SA_DIR} \
 		--docdir ${DOCSDIR} \
 		--sysconfdir ${PREFIX}/etc \
+		--datadir ${PREFIX}/var/ocsigen \
 		--staticpagesdir ${PREFIX}/share/ocsigen/www \
-		--uploaddir /tmp \
-		--disable-ocamlduce
+		--uploaddir /tmp
 
-ALL_TARGET=	depend all
-INSTALL_TARGET=	installnodoc
+ALL_TARGET=	all
+INSTALL_TARGET=	install
 
-MAN1=		ocsigen.1
+SQLITE_CONFIGURE_WITH=	sqlite
+SQLITE_BUILD_DEPENDS=	${SA_DIR}/sqlite3/sqlite3.a:${PORTSDIR}/databases/ocaml-sqlite3
+SQLITE_RUN_DEPENDS=	${SA_DIR}/sqlite3/sqlite3.a:${PORTSDIR}/databases/ocaml-sqlite3
 
-NO_STAGE=	yes
+DBM_CONFIGURE_WITH=	dbm
+DBM_BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/dbm.a:${PORTSDIR}/databases/ocaml-dbm
+DBM_RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/dbm.a:${PORTSDIR}/databases/ocaml-dbm
+
+CAMLZIP_CONFIGURE_WITH=	camlzip
+CAMLZIP_BUILD_DEPENDS=	ocaml-zip>=1.03_2:${PORTSDIR}/archivers/ocaml-zip
+CAMLZIP_RUN_DEPENDS=	ocaml-zip>=1.03_2:${PORTSDIR}/archivers/ocaml-zip
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET+=	docinstall
-PORTDOCS=		*
-.endif
+# Docs fail with some kind of Netstring-pcre error, wasn't able to fix it
+#.if ${PORT_OPTIONS:MDOCS}
+#ALL_TARGET+=	doc
+#INSTALL_TARGET+=install.doc
+#PORTDOCS=	*
+#.endif
 
-.if ${PORT_OPTIONS:MSQLITE}
-BUILD_DEPENDS+=	${SA_DIR}/sqlite3/sqlite3.a:${PORTSDIR}/databases/ocaml-sqlite3
-RUN_DEPENDS+=	${SA_DIR}/sqlite3/sqlite3.a:${PORTSDIR}/databases/ocaml-sqlite3
-CONFIGURE_ARGS+=	--enable-sqlite
-PLIST_FILES+=	lib/ocsigen/extensions/ocsipersist-sqlite.cma
-.else
-CONFIGURE_ARGS+=	--disable-sqlite
-.endif
-
-.if ${PORT_OPTIONS:MCAMLZIP}
-CONFIGURE_ARGS+=	--enable-camlzip
-BUILD_DEPENDS+=	ocaml-zip>=1.03_2:${PORTSDIR}/archivers/ocaml-zip
-RUN_DEPENDS+=	ocaml-zip>=1.03_2:${PORTSDIR}/archivers/ocaml-zip
-PLIST_FILES+=	lib/ocsigen/extensions/deflatemod.cmo
-.else
-CONFIGURE_ARGS+=	--disable-camlzip
-.endif
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/${PORTNAME}/ocsigen.conf ]; then \
-	  ${CP} -p ${PREFIX}/etc/${PORTNAME}/ocsigen.conf.sample \
-	    ${PREFIX}/etc/${PORTNAME}/ocsigen.conf; \
-	fi
+do-configure:
+	@(cd ${WRKSRC} && ${SH} configure ${CONFIGURE_ARGS})
 
 .include <bsd.port.mk>
