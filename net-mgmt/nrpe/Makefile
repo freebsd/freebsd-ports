@@ -3,7 +3,7 @@
 
 PORTNAME=	nrpe
 DISTVERSION=	2.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
@@ -20,9 +20,10 @@ USE_RC_SUBR=	nrpe2
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	SSL ARGS
+OPTIONS_DEFAULT=	ARGS
 
 SSL_DESC=	Enable SSL support (disables plain-text server)
-ARGS_DESC=	Enable command argument processing **Security Risk**
+ARGS_DESC=	Enable command argument processing
 
 SSL_USE=		OPENSSL=yes
 SSL_CONFIGURE_ON=	--enable-ssl --with-ssl=${OPENSSLDIR} \
