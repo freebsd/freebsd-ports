@@ -22,22 +22,20 @@
 name=proftpd
 rcvar=proftpd_enable
 
+proftpd_enable=${proftpd_enable:="NO"}
+proftpd_config=${proftpd_config:="%%PREFIX%%/etc/proftpd.conf"}
+
 command=%%PREFIX%%/sbin/proftpd
-pidfile=$(grep PidFile /usr/local/etc/proftpd.conf | awk '{print($2)}')
-required_files=%%PREFIX%%/etc/proftpd.conf
+command_args="-c ${proftpd_config}"
+pidfile=$(grep PidFile ${proftpd_config} | awk '{print($2)}')
+required_files=${proftpd_config}
 
+extra_commands="reload"
 stop_postcmd=stop_postcmd
-
 stop_postcmd()
 {
   rm -f $pidfile
 }
-
-# set defaults
-
-proftpd_enable=${proftpd_enable:-"NO"}
-
-extra_commands="reload"
 
 load_rc_config $name
 run_rc_command "$1"
