@@ -1,12 +1,12 @@
 bin/saga_cmd
 bin/saga_gui
-lib/libsaga_api-2.1.1.so
+lib/libsaga_api-%%PORTVERSION%%.so
 lib/libsaga_api.la
 lib/libsaga_api.so
-lib/libsaga_gdi-2.1.1.so
+lib/libsaga_gdi-%%PORTVERSION%%.so
 lib/libsaga_gdi.la
 lib/libsaga_gdi.so
-%%PYTHON_SITELIBDIR%%/_saga_api-2.1.1.so
+%%PYTHON_SITELIBDIR%%/_saga_api-%%PORTVERSION%%.so
 %%PYTHON_SITELIBDIR%%/_saga_api.a
 %%PYTHON_SITELIBDIR%%/_saga_api.la
 %%PYTHON_SITELIBDIR%%/_saga_api.so
