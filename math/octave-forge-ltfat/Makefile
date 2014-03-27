@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-ltfat
-PORTVERSION=	1.4.2
-PORTREVISION=	3
+PORTVERSION=	1.4.4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -20,6 +19,8 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
+
+MAKEFILE=	Makefile_unix
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
