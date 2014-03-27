@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--with-ffmpeg-extra-configure="${FFMPEG_CONFIG}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900033
+.if ${OSVERSION} < 900033 || ${ARCH} == ia64
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
