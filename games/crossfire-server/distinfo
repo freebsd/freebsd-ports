@@ -1,4 +1,4 @@
 SHA256 (crossfire-1.70.0.tar.gz) = f6679aa19f7b041a779d26215a7f0062ab7a1fd96185527c207485e084b4654d
 SIZE (crossfire-1.70.0.tar.gz) = 6626864
-SHA256 (crossfire-1.70.0.maps.tar.bz2) = d75a8a48356db0c0d9a3875b98165f7acaa74a8d6027e696796a899e55ade3f4
-SIZE (crossfire-1.70.0.maps.tar.bz2) = 19500334
+SHA256 (crossfire-1.70.0.maps.tar.gz) = 64b1bccef796fde9559a84b4486cf380710b9db70c2c45a1b0f67adf3d822aa9
+SIZE (crossfire-1.70.0.maps.tar.gz) = 28911538
