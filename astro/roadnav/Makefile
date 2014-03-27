@@ -16,7 +16,6 @@ USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
 USES=		gmake
-CXXFLAGS+=	-Wnon-pod-varargs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-prefix=${LOCALBASE} --with-wx-config=${WX_CONFIG}
