@@ -2,6 +2,7 @@
 
 PORTNAME=	Horde_ActiveSync
 PORTVERSION=	2.13.3
+PORTREVISION=	1
 CATEGORIES=	comms www pear
 
 MAINTAINER=	horde@FreeBSD.org
@@ -11,6 +12,7 @@ USE_HORDE_RUN=	Horde_Compress \
 		Horde_Date \
 		Horde_Exception \
 		Horde_Icalendar \
+		Horde_Mapi \
 		Horde_Mime \
 		Horde_Stream \
 		Horde_Support \
