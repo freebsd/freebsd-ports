@@ -3,16 +3,15 @@
 
 PORTNAME=	cil
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infrastructure for C Program Analysis and Transformation
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	ccured-[0-9]*
 
@@ -39,8 +38,7 @@ LIBFILES=	App/Cilly/KeptFile.pm \
 		App/Cilly/TempFile.pm
 LIBBINS=	patcher
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -67,26 +65,26 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^use OutputFile;|use CIL::OutputFile;|' \
 		${WRKSRC}/lib/App/Cilly/TempFile.pm
+	@${REINPLACE_CMD} '/MACHDEPCC/ s|gcc|${CC}|' ${WRKSRC}/Makefile.in
+
+	
+pre-install:
+	@${STRIP_CMD} ${WRKSRC}/bin/cilly.native
 
 do-install:
-.for f in ${BINFILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/bin
-.endfor
-	@${MKDIR} ${SITE_PERL}
-	${INSTALL_DATA} ${WRKSRC}/lib/App/Cilly/CilConfig.pm ${SITE_PERL}
-	@${MKDIR} ${SITE_PERL}/CIL/App/Cilly
-.for f in ${LIBFILES}
-	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${SITE_PERL}/CIL/App/Cilly
-.endfor
-.for f in ${LIBAFILES}
-	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${SITE_PERL}/CIL/App
-.endfor
-.for f in ${LIBBINS}
-	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${SITE_PERL}/CIL
-.endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
+	(cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${BINFILES} \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}/CIL/App/Cilly
+	${INSTALL_DATA} ${WRKSRC}/lib/App/Cilly/CilConfig.pm \
+		${STAGEDIR}${SITE_PERL}
+	(cd ${WRKSRC}/lib && ${INSTALL_DATA} ${LIBFILES} \
+		${STAGEDIR}${SITE_PERL}/CIL/App/Cilly)
+	(cd ${WRKSRC}/lib && ${INSTALL_DATA} ${LIBAFILES} \
+		${STAGEDIR}${SITE_PERL}/CIL/App)
+	(cd ${WRKSRC}/lib && ${INSTALL_DATA} ${LIBBINS} \
+		${STAGEDIR}${SITE_PERL}/CIL)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${RM} -rf ${WRKSRC}/doc/cilcode.tmp
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
