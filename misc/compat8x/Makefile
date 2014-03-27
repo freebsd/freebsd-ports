@@ -24,8 +24,8 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000
-IGNORE=		is for FreeBSD 9.x and newer
+.if ${OSVERSION} < 800000
+IGNORE=		is for FreeBSD 8.x and newer
 .endif
 
 # libstdc++.so.6 could be necessary to run an 8.x binary
