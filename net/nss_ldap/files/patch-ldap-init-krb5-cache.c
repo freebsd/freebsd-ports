@@ -1,6 +1,6 @@
---- ldap-init-krb5-cache.c.orig
-+++ ldap-init-krb5-cache.c
-@@ -109,6 +109,10 @@
+--- ldap-init-krb5-cache.c.orig	2009-11-06 11:28:08.000000000 +0100
++++ ldap-init-krb5-cache.c	2014-03-26 21:42:54.575385677 +0100
+@@ -109,14 +109,14 @@
  #include <gssapi/gssapi.h>
  #include <gssapi/gssapi_krb5.h>
  
@@ -11,7 +11,15 @@
  #define MAX_RENEW_TIME "365d"
  
  #define KT_PATH_MAX 256
-@@ -213,14 +217,25 @@
+ 
+-#ifndef HEIMDAL
+-typedef struct _profile_t *profile_t;
+-#endif
+-
+ /* State machine items */
+ typedef enum
+ {
+@@ -213,14 +213,25 @@
  {
    krb5_error_code code = 0;
    krb5_keytab __keytab;
@@ -39,7 +47,7 @@
  	{
  	  debug ("==> krb5_cache_kt_is_accessible: kt type = FILE");
  	  uid_t ruid = getuid ();
-@@ -542,7 +557,7 @@
+@@ -542,7 +553,7 @@
      }
    profile_release (profile);
  #else
@@ -48,7 +56,7 @@
  #endif
    ccname = krb5_cache_get_ccname (config);
    debug ("==> krb5_cache_setup: credential cache name %s",
-@@ -671,7 +686,11 @@
+@@ -671,7 +682,11 @@
  		     ccname ? ccname : "NULL");
  		}
  	    }
