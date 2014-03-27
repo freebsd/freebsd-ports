@@ -11,12 +11,10 @@ MAINTAINER=	pankov_p@mail.ru
 COMMENT=	A inetd-like program intended for temporarily usage
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_FILES=	bin/micro_inetd
-MAN1=		micro_inetd.1
+PLIST_FILES=	bin/micro_inetd man/man1/micro_inetd.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/micro_inetd ${PREFIX}/bin/micro_inetd
-	${INSTALL_MAN} ${WRKSRC}/micro_inetd.1 ${MAN1PREFIX}/man/man1/micro_inetd.1
+	${INSTALL_PROGRAM} ${WRKSRC}/micro_inetd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/micro_inetd.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
