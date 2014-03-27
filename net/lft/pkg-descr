@@ -5,7 +5,7 @@ implements numerous other features including AS number lookups, loose source
 routing, netblock name lookups, et al. Though LFT has been around since 1998,
 its development effort has just recently resumed.
 
-WWW:	http://pwhois.org/lft/
+WWW: http://pwhois.org/lft/
 
 Ported to FreeBSD by:
 Marco P. Rodrigues
