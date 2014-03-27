@@ -12,7 +12,7 @@ COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	compile.sh
 ALL_TARGET=	x11
@@ -23,11 +23,8 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-w
 
-PLIST_FILES=	include/GL/glfw.h \
-		lib/libglfw.a \
-		lib/libglfw.so \
-		lib/libglfw.so.0 \
-		libdata/pkgconfig/libglfw.pc
+PLIST_FILES=	include/GL/glfw.h lib/libglfw.a lib/libglfw.so \
+		lib/libglfw.so.0 libdata/pkgconfig/libglfw.pc
 
 PORTDOCS=	*
 
@@ -63,9 +60,9 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/usr/X11R6|${LOCALBASE}| ; \
-		 /SOFLAGS/s|-soname |-Wl,-soname,| ; \
-		 /CFLAGS_THREAD/s|"-pthread"|"${PTHREAD_CFLAGS}"| ; \
+		's|/usr/X11R6|${LOCALBASE}|; \
+		 /SOFLAGS/s|-soname |-Wl,-soname,|; \
+		 /CFLAGS_THREAD/s|"-pthread"|"${PTHREAD_CFLAGS}"|; \
 		 /LFLAGS_THREAD/s|"-pthread"|"${PTHREAD_LIBS}"|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} \
@@ -78,14 +75,13 @@ post-install:
 	${LN} -sf ${PREFIX}/lib/libglfw.so.0 ${STAGEDIR}${PREFIX}/lib/libglfw.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libglfw.so.0
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${EXAMPLES_FILES1:S|^|${EXAMPLESSRCDIR1}/|} \
-		${STAGEDIR}${EXAMPLESDIR} 
+		${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${EXAMPLESSRCDIR1}/*.tga ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR2}
 	${INSTALL_PROGRAM} ${EXAMPLES_FILES2:S|^|${EXAMPLESSRCDIR2}/|} \
