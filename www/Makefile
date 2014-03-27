@@ -182,6 +182,7 @@
     SUBDIR += egueb
     SUBDIR += elgg
     SUBDIR += elinks
+    SUBDIR += eliom
     SUBDIR += elog
     SUBDIR += emacs-w3m
     SUBDIR += emacs-w3m-emacs21
