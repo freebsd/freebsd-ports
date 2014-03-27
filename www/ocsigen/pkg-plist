@@ -1,64 +1,38 @@
-bin/ocsigen
-etc/ocsigen/mime.types
-etc/ocsigen/ocsigen.conf
-etc/ocsigen/ocsigen.conf.sample
-etc/ocsigen/ocsigen.conf.opt.sample
-lib/ocsigen/METAS/META.eliom_examples
-lib/ocsigen/METAS/META.ocsigen_ext
-lib/ocsigen/examples/miniwiki.cmo
-lib/ocsigen/examples/monitoring.cmo
-lib/ocsigen/examples/tutoeliom.cmi
-lib/ocsigen/examples/tutoeliom.cmo
-lib/ocsigen/extensions/accesscontrol.cmo
-lib/ocsigen/extensions/authbasic.cmo
-lib/ocsigen/extensions/cgimod.cmo
-lib/ocsigen/extensions/eliom.cma
-lib/ocsigen/extensions/ocsidbm
-lib/ocsigen/extensions/ocsipersist-dbm.cma
-lib/ocsigen/extensions/outputfilter.cmo
-lib/ocsigen/extensions/redirectmod.cmo
-lib/ocsigen/extensions/revproxy.cmo
-lib/ocsigen/extensions/staticmod.cmo
-lib/ocsigen/extensions/userconf.cmo
-share/ocsigen/www/ocsigen/miniwiki/style.css
-share/ocsigen/www/ocsigen/ocsigenstuff/LICENSE
-share/ocsigen/www/ocsigen/ocsigenstuff/back.png
-share/ocsigen/www/ocsigen/ocsigenstuff/cdimage.png
-share/ocsigen/www/ocsigen/ocsigenstuff/deb.png
-share/ocsigen/www/ocsigen/ocsigenstuff/dvi.png
-share/ocsigen/www/ocsigen/ocsigenstuff/folder_open.png
-share/ocsigen/www/ocsigen/ocsigenstuff/html.png
-share/ocsigen/www/ocsigen/ocsigenstuff/image.png
-share/ocsigen/www/ocsigen/ocsigenstuff/ocsigen5.png
-share/ocsigen/www/ocsigen/ocsigenstuff/pdf.png
-share/ocsigen/www/ocsigen/ocsigenstuff/postscript.png
-share/ocsigen/www/ocsigen/ocsigenstuff/readme.png
-share/ocsigen/www/ocsigen/ocsigenstuff/rpm.png
-share/ocsigen/www/ocsigen/ocsigenstuff/sound.png
-share/ocsigen/www/ocsigen/ocsigenstuff/source_c.png
-share/ocsigen/www/ocsigen/ocsigenstuff/source_java.png
-share/ocsigen/www/ocsigen/ocsigenstuff/source_pl.png
-share/ocsigen/www/ocsigen/ocsigenstuff/source_py.png
-share/ocsigen/www/ocsigen/ocsigenstuff/style.css
-share/ocsigen/www/ocsigen/ocsigenstuff/tar.png
-share/ocsigen/www/ocsigen/ocsigenstuff/tex.png
-share/ocsigen/www/ocsigen/ocsigenstuff/tgz.png
-share/ocsigen/www/ocsigen/ocsigenstuff/txt.png
-share/ocsigen/www/ocsigen/ocsigenstuff/unknown.png
-share/ocsigen/www/ocsigen/ocsigenstuff/video.png
-share/ocsigen/www/ocsigen/tutorial/bulles-bleues.png
-share/ocsigen/www/ocsigen/tutorial/ocsigen5.png
-share/ocsigen/www/ocsigen/tutorial/style.css
-@dirrm share/ocsigen/www/ocsigen/miniwiki
-@dirrm share/ocsigen/www/ocsigen/ocsigenstuff
-@dirrm share/ocsigen/www/ocsigen/tutorial
-@dirrm share/ocsigen/www/ocsigen
+bin/ocsigenserver
+bin/ocsigenserver.opt
+@unexec if cmp -s %D/etc/ocsigenserver.conf.sample %D/etc/ocsigenserver.conf; then rm -f %D/etc/ocsigenserver.conf; fi
+etc/ocsigenserver.conf.sample
+@exec if [ ! -f %D/etc/ocsigenserver.conf ] ; then cp -p %D/%F %B/ocsigenserver.conf; fi
+etc/mime.types
+man/man1/ocsigenserver.1.gz
+share/ocsigen/www/index.html
+share/ocsigen/www/ocsigenstuff/back.png
+share/ocsigen/www/ocsigenstuff/cdimage.png
+share/ocsigen/www/ocsigenstuff/deb.png
+share/ocsigen/www/ocsigenstuff/dvi.png
+share/ocsigen/www/ocsigenstuff/folder_open.png
+share/ocsigen/www/ocsigenstuff/html.png
+share/ocsigen/www/ocsigenstuff/image.png
+share/ocsigen/www/ocsigenstuff/ocsigen5.png
+share/ocsigen/www/ocsigenstuff/pdf.png
+share/ocsigen/www/ocsigenstuff/postscript.png
+share/ocsigen/www/ocsigenstuff/readme.png
+share/ocsigen/www/ocsigenstuff/rpm.png
+share/ocsigen/www/ocsigenstuff/sound.png
+share/ocsigen/www/ocsigenstuff/source_c.png
+share/ocsigen/www/ocsigenstuff/source_java.png
+share/ocsigen/www/ocsigenstuff/source_pl.png
+share/ocsigen/www/ocsigenstuff/source_py.png
+share/ocsigen/www/ocsigenstuff/tar.png
+share/ocsigen/www/ocsigenstuff/tex.png
+share/ocsigen/www/ocsigenstuff/tgz.png
+share/ocsigen/www/ocsigenstuff/txt.png
+share/ocsigen/www/ocsigenstuff/unknown.png
+share/ocsigen/www/ocsigenstuff/video.png
+share/ocsigen/www/ocsigenstuff/style.css
+@dirrm %%OCAML_SITELIBDIR%%/ocsigenserver/extensions
+@dirrm share/ocsigen/www/ocsigenstuff
 @dirrm share/ocsigen/www
 @dirrm share/ocsigen
-@dirrm lib/ocsigen/METAS
-@dirrm lib/ocsigen/examples
-@dirrm lib/ocsigen/extensions
-@dirrm lib/ocsigen
-@dirrm etc/ocsigen
-@unexec if cmp -s %D/etc/${PORTNAME}/ocsigen.conf.sample %D/etc/${PORTNAME}/ocsigen.conf; then rm -f %D/etc/${PORTNAME}/ocsigen.conf; fi
-@exec if [ ! -f %D/etc/${PORTNAME}/ocsigen.conf ] ; then cp -p %D/%F %B/${PORTNAME}/ocsigen.conf; fi
+@dirrmtry var/ocsigen
+@dirrmtry var
