@@ -1,0 +1,13 @@
+bin/iperf3
+include/iperf_api.h
+lib/libiperf.a
+lib/libiperf.la
+lib/libiperf.so
+lib/libiperf.so.0
+lib/libiperf.so.0.0.0
+man/man1/iperf3.1.gz
+man/man3/libiperf.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
