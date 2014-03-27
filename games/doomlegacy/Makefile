@@ -3,12 +3,13 @@
 
 PORTNAME=	doomlegacy
 DISTVERSION=	1.44_alpha4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://doomlegacy.sourceforge.net/releases/ \
 		http://freebsd.nsu.ru/distfiles/:wad
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_r${SVN_REV}
-# legacy.wad is not provided by upstream and must be regenerated manually
+# legacy.wad is not included in distfile and must be regenerated manually
 # when needed (its contents change); luckily, it doesn't happen too often
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} legacy_wad${EXTRACT_SUFX}:wad
 DIST_SUBDIR=	${PORTNAME}
@@ -33,13 +34,15 @@ SVN_REV=	999
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFINE_i386=	ASM
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MASM}
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-MAKE_ENV=	USEASM=1 OLD_DEPENDENCIES=1
+.if exists(/usr/include/netipx/ipx.h)
+OPTIONS_DEFINE+=	IPX
+IPX_DESC=	IPX protocol support
 .endif
+
+ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_MAKE_ENV=		USEASM=1 OLD_DEPENDENCIES=1
+
+.include <bsd.port.options.mk>
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|<malloc|<stdlib|' ${WRKSRC}/p_setup.c \
@@ -56,15 +59,17 @@ post-patch: .SILENT
 # Provide better support for relative paths (for `-iwad' switch)
 	${REINPLACE_CMD} -e "s|s\[0\] ==[^)]*|strchr(s, '/')|" \
 			${WRKSRC}/d_main.c
-	${RM} ${WRKSRC}/_doc/LICENSE.txt
+.if ! ${PORT_OPTIONS:MIPX}
+	${REINPLACE_CMD} -e '/USE_IPX/s|define|undef|' ${WRKSRC}/doomdef.h
+	${REINPLACE_CMD} -e 's| -lipx||' ${WRKSRC}/Makefile
+.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/doomlegacy ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/legacy.wad ${DMDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/_doc && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/doomlegacy ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DMDIR}
+	${INSTALL_DATA} ${WRKDIR}/legacy.wad ${STAGEDIR}${DMDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/_doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 .include <bsd.port.mk>
