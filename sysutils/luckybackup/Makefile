@@ -2,6 +2,7 @@
 
 PORTNAME=	luckybackup
 PORTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/source
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 USES=		qmake
-USE_QT4=	gui moc_build rcc_build uic_build
+USE_QT4=	gui network moc_build rcc_build uic_build
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr|$$$${PREFIX}|g' -e '/INSTALLS/s|debianmenu ||' \
