@@ -512,6 +512,8 @@
     SUBDIR += mod_ntlm2
     SUBDIR += mod_pagespeed
     SUBDIR += mod_perl2
+    SUBDIR += mod_php5
+    SUBDIR += mod_php55
     SUBDIR += mod_proctitle
     SUBDIR += mod_proxy_html
     SUBDIR += mod_proxy_uwsgi
