@@ -2,48 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	1.6.1
+PORTVERSION=	2.0.4
 CATEGORIES=	databases
-MASTER_SITES=	http://hg.ocaml.info/release/${PKGNAMEPREFIX}${PORTNAME}/archive/
+MASTER_SITES=	http://cdn.bitbucket.org/mmottl/sqlite3-ocaml/downloads/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	release-${PORTVERSION}
+DISTNAME=	${PORTNAME}-ocaml-${PORTVERSION}
 
 MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	OCaml bindings to sqlite3 library
 
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-release-${PORTVERSION}
+LICENSE=	OCSQLT3
+LICENSE_NAME=	OCaml-SQLite3 unique permissive license
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_AUTOTOOLS=		autoconf
-USE_GMAKE=		yes
+USES=			gmake pkgconfig
 USE_SQLITE=		yes
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 USE_OCAMLFIND_PLIST=	yes
+HAS_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
+CONFIGURE_ARGS=		--destdir "${STAGEDIR}" \
+			--prefix "${PREFIX}"
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CC="${CC}"\
-		CFLAGS="${CFLAGS}"\
-		CPPFLAGS="-UHAVE_ALLOCA_H -I${PREFIX}/include"\
-		LDFLAGS="-L${PREFIX}/lib"\
-		LIBS="${PTHREAD_LIBS}"
+post-patch:
+	@${REINPLACE_CMD} -e 's,"install" :: findlib_name,"install" :: "-destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib" :: "-ldconf /var/null" :: findlib_name,' \
+		${WRKSRC}/setup.ml
 
-USE_BZIP2=	yes
+do-configure:
+	(cd ${WRKSRC} && ocaml setup.ml -configure ${CONFIGURE_ARGS})
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-PORTDOCS=	style.css *.html
+do-build:
+	(cd ${WRKSRC} && ocaml setup.ml -build)
 
-PLIST_FILES=	bin/sqlite3top
-
-NO_STAGE=	yes
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@( cd ${WRKSRC}/doc;\
-	   for f in `${FIND} . -type f -print`; do\
-		${INSTALL_DATA} $${f} ${DOCSDIR};\
-	   done )
-.endif
+do-install:
+	(cd ${WRKSRC} && ocaml setup.ml -install)
 
 .include <bsd.port.mk>
