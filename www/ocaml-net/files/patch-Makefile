@@ -1,0 +1,15 @@
+$NetBSD: patch-Makefile.rules,v 1.1 2012/07/06 09:29:14 wiz Exp $
+
+make package work with DESTDIR support
+--- Makefile.rules.orig	2012-02-29 18:02:51.000000000 +0000
++++ Makefile.rules
+@@ -148,7 +148,8 @@ realuninstall: $(UNINSTOTHER) uninstall-
+ .PHONY: install-findlib
+ install-findlib: META
+ 	files=`$(COLLECT_FILES) *.mli *.cmi *.cma *.cmxa *.a dll* META $(INSTALL_EXTRA)` && \
+-	$(OCAMLFIND) install $(PKGNAME) $$files
++	$(OCAMLFIND) install -destdir $(DESTDIR)/$(PREFIX)/lib/ocaml/site-lib \
++	-ldconf /dev/null $(PKGNAME) $$files
+ 
+ .PHONY: uninstall-findlib
+ uninstall-findlib:
