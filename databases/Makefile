@@ -250,6 +250,7 @@
     SUBDIR += nagios-check_redis
     SUBDIR += namazu2
     SUBDIR += ntdb
+    SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
     SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3

@@ -1,0 +1,11 @@
+lib/ocaml/dbm.a
+lib/ocaml/dbm.cma
+lib/ocaml/dbm.cmi
+lib/ocaml/dbm.cmxa
+lib/ocaml/dbm.cmxs
+lib/ocaml/dbm.mli
+lib/ocaml/libcamldbm.a
+lib/ocaml/site-lib/dbm/META
+lib/ocaml/stublibs/dllcamldbm.so
+@dirrm lib/ocaml/site-lib/dbm
+@dirrmtry lib/ocaml/site-lib
