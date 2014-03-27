@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140327:
+  AFFECTS: users of lang/php5 and lang/php55 with Apache module
+  AUTHOR: ale@FreeBSD.org
+
+  The Apache PHP module has been splitted from main PHP port, so if you
+  are using it you should install one of www/mod_php5 or www/mod_php55.
+
 20140322:
   AFFECTS: users of devel/apr1
   AUTHOR: ohauer@FreeBSD.org

@@ -105,7 +105,7 @@ check-makevars::
 		@${ECHO_CMD} "If you define WANT_PHP_WEB you cannot set also WANT_PHP_CGI"
 		@${ECHO_CMD} "or WANT_PHP_MOD. Use only one of them."
 		@${FALSE}
-.	elif defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "" && ${PHP_SAPI:Mmod} == ""
+.	elif defined(PHP_VERSION) && ${PHP_VER} == 53 && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "" && ${PHP_SAPI:Mmod} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the Apache Module or the CGI version of PHP, but you have"
 		@${ECHO_CMD} "already installed a PHP port without them."
@@ -132,7 +132,7 @@ check-makevars::
 .endif
 
 .if defined(WANT_PHP_MOD)
-.	if defined(PHP_VERSION) && ${PHP_SAPI:Mmod} == ""
+.	if defined(PHP_VERSION) && ${PHP_VER} == 53 && ${PHP_SAPI:Mmod} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the Apache Module for PHP, but you have already"
 		@${ECHO_CMD} "installed a PHP port without the Apache Module."
@@ -150,11 +150,19 @@ check-makevars::
 .endif
 
 PHP_PORT?=	lang/php${PHP_VER}
+.if ${PHP_VER} == 53
+MOD_PHP_PORT?=	${PHP_PORT}
+.else
+MOD_PHP_PORT?=	www/mod_php${PHP_VER}
+.endif
 
 .if defined(USE_PHP_BUILD)
 BUILD_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
 .endif
 RUN_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
+.if defined(WANT_PHP_MOD) || (defined(WANT_PHP_WEB) && defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "")
+RUN_DEPENDS+=	${PHPBASE}/${APACHEMODDIR}/libphp5.so:${PORTSDIR}/${MOD_PHP_PORT}
+.endif
 
 PLIST_SUB+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 SUB_LIST+=	PHP_EXT_DIR=${PHP_EXT_DIR}
