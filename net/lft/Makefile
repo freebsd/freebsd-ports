@@ -11,21 +11,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Layer 4 Traceroute program
 
 GNU_CONFIGURE=	yes
-MAN8=		lft.8 whob.8
-PLIST_FILES=	sbin/lft bin/whob
+
+PLIST_FILES=	sbin/lft bin/whob man/man8/lft.8.gz man/man8/whob.8.gz
 PORTDOCS=	CHANGELOG README TODO
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lft ${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/whob ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/lft.8 ${MAN8PREFIX}/man/man8/
-	${INSTALL_MAN} ${WRKSRC}/whob.8 ${MAN8PREFIX}/man/man8/
-.ifndef NOPORTDOCS
-	${INSTALL} -d ${DOCSDIR}/
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/lft ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/whob ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/lft.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/whob.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
