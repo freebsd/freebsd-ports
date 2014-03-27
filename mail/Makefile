@@ -457,6 +457,7 @@
     SUBDIR += pear-Horde_Kolab_Storage
     SUBDIR += pear-Horde_ListHeaders
     SUBDIR += pear-Horde_Mail
+    SUBDIR += pear-Horde_Mapi
     SUBDIR += pear-Horde_Mime
     SUBDIR += pear-Horde_Mime_Viewer
     SUBDIR += pear-Horde_Smtp
