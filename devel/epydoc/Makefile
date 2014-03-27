@@ -11,17 +11,14 @@ COMMENT=	Python API documentation generation tool
 
 LICENSE=	MIT
 
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+
 OPTIONS_DEFINE=	DOCS UTF8
 
 UTF8_DESC=	Use UTF-8 instead of iso-8859-1 in HTMLs
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-MAN1=		epydoc.1 epydocgui.1
 
 .if ${PORT_OPTIONS:MUTF8}
 HTMLENCODING?=	utf-8
@@ -34,10 +31,9 @@ post-patch:
 .endif
 
 post-install:
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
+	(cd ${WRKSRC}/man && ${INSTALL_MAN} epydoc.1 epydocgui.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

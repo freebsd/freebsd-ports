@@ -1,6 +1,8 @@
 bin/apirst2html.py
 bin/epydoc
 bin/epydocgui
+man/man1/epydoc.1.gz
+man/man1/epydocgui.1.gz
 %%PYTHON_SITELIBDIR%%/epydoc/__init__.py
 %%PYTHON_SITELIBDIR%%/epydoc/__init__.pyc
 %%PYTHON_SITELIBDIR%%/epydoc/__init__.pyo
