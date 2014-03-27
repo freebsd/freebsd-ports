@@ -11,17 +11,13 @@ MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Elinks - links text WWW browser with enhancements
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		bison gmake
+USES=		bison gmake tar:bzip2
 USE_OPENSSL=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
 SAMBA_PORT?=	net/samba36
-
-MAN1=		elinks.1
-MAN5=		elinkskeys.5 elinks.conf.5
 
 OPTIONS_DEFINE=		88COLORS 256COLORS SPIDERMONKEY XBELMARKS LOCAL_CGI \
 			FINGER GOPHER BITTORRENT NNTP FTP FSP SMB EXMODE \
@@ -39,7 +35,6 @@ HIGHLIGHT_DESC=		HTML highlighting using DOM engine
 NOROOT_DESC=		Prevention of usage by root
 FASTMEM_DESC=		Fast memory allocation functions
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--without-zlib
