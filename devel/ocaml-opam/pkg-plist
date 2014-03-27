@@ -1,5 +1,6 @@
 bin/opam
 bin/opam-admin
+bin/opam-installer
 man/man1/opam-admin-check.1.gz
 man/man1/opam-admin-make.1.gz
 man/man1/opam-admin.1.gz
@@ -16,7 +17,9 @@ man/man1/opam-remote.1.gz
 man/man1/opam-remove.1.gz
 man/man1/opam-repository.1.gz
 man/man1/opam-search.1.gz
+man/man1/opam-show.1.gz
 man/man1/opam-switch.1.gz
+man/man1/opam-uninstall.1.gz
 man/man1/opam-update.1.gz
 man/man1/opam-upgrade.1.gz
 man/man1/opam.1.gz
