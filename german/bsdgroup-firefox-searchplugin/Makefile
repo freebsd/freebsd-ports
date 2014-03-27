@@ -18,6 +18,10 @@ USE_FIREFOX=	yes
 NO_BUILD=	yes
 
 NO_STAGE=	yes
+
+DEPRECATED=	bsdgroup.de no longer seems to exist
+EXPIRATION_DATE=2014-05-31
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/bsdgroup.src ${WRKSRC}
