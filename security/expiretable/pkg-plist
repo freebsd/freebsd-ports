@@ -1,2 +1,5 @@
 @stopdaemon expiretable
+@group bin
 sbin/expiretable
+man/man1/expiretable.1.gz
+@group
