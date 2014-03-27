@@ -1,5 +1,14 @@
 --- Makefile.tmpl.orig	2005-11-27 21:52:05.000000000 +0100
-+++ Makefile.tmpl	2013-12-05 09:24:17.000000000 +0100
++++ Makefile.tmpl	2014-03-27 20:44:51.000000000 +0100
+@@ -10,7 +10,7 @@
+ <ALL> #
+ <ALL> #--------------------------------------------------------------------*
+ <ALL>
+-<ALL>CC =		gcc
++<ALL>CC?=		gcc
+ <ALL>SRCS =		dns.c dnsbl.c hndlrs.c misc.c smisc.c mx.c smtp.c inet.c ifi.c bwlist.c badext.c <WITH_POPAUTH popauth.c><WITH_LIBSPF spfapi.c> <INC_SunOS nstring.c>
+ <ALL>OBJS =		${SRCS:.c=.o}
+ <ALL>INCLUDES =	${SRCS:.c=.h} spamilter.h <INC_OpenBSD ns_compat.h>
 @@ -26,17 +26,17 @@
  <ALL>INCLUDEDIR =	-I. -I${SMDIR}/include <WITH_LIBSPF -I${LIBSPFINC}>
  <INCDIRS>INCLUDEDIR +=		<X>
