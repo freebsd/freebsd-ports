@@ -13,6 +13,7 @@ COMMENT?=	Cross-platform Makefile generator
 LICENSE=	BSD3CLAUSE
 
 USE_KDE4=	# env
+USE_OPENSSL=	yes
 CONFIGURE_ENV=	MAKE=make
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir="/${DATADIR_REL}" \
