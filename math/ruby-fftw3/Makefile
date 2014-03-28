@@ -25,10 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-RUBY_NARRAY_VERSION!=	${MAKE} -C ${PORTSDIR}/math/rubygem-narray -V PORTVERSION
-RUBY_NARRAY_PKGNAME=	narray-${RUBY_NARRAY_VERSION}
-
-CONFIGURE_ARGS+=	--with-narray-include=${LOCALBASE}/lib/ruby/gems/${RUBY_VER}/gems/${RUBY_NARRAY_PKGNAME}/
+CONFIGURE_ARGS+=	--with-narray-include=${LOCALBASE}/lib/ruby/gems/${RUBY_VER}/gems/narray-${NARRAY_VERSION}/
 
 DOCS=		LICENSE.txt doc/*
 
@@ -37,5 +34,7 @@ post-install:
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
+
+.include "${.CURDIR}/../rubygem-narray/Makefile.version"
 
 .include <bsd.port.mk>
