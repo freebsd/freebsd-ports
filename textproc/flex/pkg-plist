@@ -16,6 +16,8 @@ man/man1/flex.1.gz
 %%NLS%%share/locale/ca/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/da/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/de/LC_MESSAGES/flex.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/flex.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/es/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/flex.mo
@@ -33,8 +35,10 @@ man/man1/flex.1.gz
 %%NLS%%share/locale/tr/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/flex.mo
-%%NLS%%share/locale/zh_tw/LC_MESSAGES/flex.mo
-%%NLS%%@dirrmtry share/locale/zh_tw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_tw
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/flex.mo
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
+%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@boldquot
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/flex
