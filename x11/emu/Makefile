@@ -11,7 +11,8 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
 
-DEPRECATED=	Broken on recent FreeBSD 9+, not staged
+BROKEN=		fails to build
+DEPRECATED=	Broken, not staged
 EXPIRATION_DATE=	2014-04-24
 
 BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
@@ -23,15 +24,10 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 WRKSRC=		${WRKDIR}/emu
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
 
 MAN1=		emu.1
 
 pre-configure:
 	cd ${WRKSRC}/client ; ${LN} -s ../doc/emu.man .
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
