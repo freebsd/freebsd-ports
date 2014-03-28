@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	srilm
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.12
 CATEGORIES=	textproc
 DISTNAME=	srilm
 EXTRACT_SUFX?=	.tgz
@@ -10,11 +10,11 @@ EXTRACT_SUFX?=	.tgz
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Toolkit for building and applying statistical language models
 
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84
 
 DOWNLOAD_URL?=	http://www.speech.sri.com/projects/srilm/download.html
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV+=	SRILM=${WRKSRC}
 ALL_TARGET=	World
 ONLY_FOR_ARCHS=	i386 amd64
@@ -47,17 +47,7 @@ GAWK_SCRIPTS=	add-classes-to-pfsg add-dummy-bows add-pauses-to-pfsg \
 		reverse-ngram-counts sentid-to-sclite sentid-to-ctm \
 		subtract-ppls uniform-classes vp2text wlat-to-dot \
 		wlat-to-pfsg wlat-stats wordlat-to-lisp prettify
-MAN1=		ngram.1 ngram-count.1 ngram-class.1 ngram-merge.1 disambig.1 \
-		nbest-lattice.1 nbest-optimize.1 nbest-mix.1 \
-		nbest-pron-score.1 segment.1 segment-nbest.1 hidden-ngram.1 \
-		anti-ngram.1 multi-ngram.1 lattice-tool.1 training-scripts.1 \
-		lm-scripts.1 ppl-scripts.1 pfsg-scripts.1 nbest-scripts.1 \
-		select-vocab.1
-MAN3=		Prob.3 Vocab.3 LM.3 File.3
-MAN5=		ngram-format.5 nbest-format.5 classes-format.5 \
-		pfsg-format.5 wlat-format.5
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -79,21 +69,21 @@ do-extract:
 post-patch:
 	@cd ${WRKSRC} && \
 	${REINPLACE_CMD} -e 's,$$WRKSRC,${WRKSRC},g' \
-		test/go.run-test
+		sbin/go.run-test
 
 do-install:
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/bin/freebsd && \
-		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
-		${INSTALL_SCRIPT} ${GAWK_SCRIPTS} ${EXAMPLESDIR} && \
+		${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin && \
+		${INSTALL_SCRIPT} ${GAWK_SCRIPTS} ${STAGEDIR}${EXAMPLESDIR} && \
 	cd ${WRKSRC}/man/man1 && \
-		${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 && \
+		${INSTALL_MAN} *.1 ${STAGEDIR}${MAN1PREFIX}/man/man1 && \
 	cd ${WRKSRC}/man/man3 && \
-		${INSTALL_MAN} ${MAN3} ${MAN3PREFIX}/man/man3 && \
+		${INSTALL_MAN} *.3 ${STAGEDIR}${MAN3PREFIX}/man/man3 && \
 	cd ${WRKSRC}/man/man5 && \
-		${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5 && \
+		${INSTALL_MAN} *.5 ${STAGEDIR}${MAN5PREFIX}/man/man5 && \
 	cd ${WRKSRC}/bin && \
-		${INSTALL_SCRIPT} ${SCRIPTS} ${EXAMPLESDIR}
+		${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${EXAMPLESDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
