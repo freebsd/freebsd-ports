@@ -19,8 +19,7 @@ BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=
@@ -33,7 +32,6 @@ OPTIONS_DEFAULT=	WXGTK
 
 .if ${PORT_OPTIONS:MWXGTK}
 USE_WX=		3.0
-WX_CONFIG=	${LOCALBASE}/bin/wxgtk2-2.8-config
 WX_COMP=	wx:lib:build
 WX_UNICODE=	yes
 GUI_BIN=	tools_gui
