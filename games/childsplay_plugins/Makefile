@@ -17,13 +17,10 @@ RUN_DEPENDS=	childsplay:${PORTSDIR}/games/childsplay
 USE_PYTHON=	yes
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=		fails to install on 9.X
-.endif
+BROKEN=		Does not build
 
 post-patch:
 	@${REINPLACE_CMD} -e "s@PREFIX=/usr/local@PREFIX=${PREFIX}@g " ${WRKSRC}/install.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
