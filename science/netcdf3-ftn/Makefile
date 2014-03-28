@@ -11,4 +11,6 @@ MASTERDIR=	${.CURDIR}/../netcdf
 
 WITH_FORTRAN=	yes
 
+MAKE_JOBS_UNSAFE= yes
+
 .include "${MASTERDIR}/Makefile"
