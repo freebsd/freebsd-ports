@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mono's upper-level libraries
 
 DEPRECATED=	Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
-EXPIRATION=	2014-05-01
+EXPIRATION_DATE=2014-05-01
 
 BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		treecc:${PORTSDIR}/lang/treecc \

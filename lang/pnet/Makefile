@@ -18,7 +18,7 @@ RUN_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		sqlsharp-pnet:${PORTSDIR}/lang/ml-pnet
 
 DEPRECATED=	Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
-EXPIRATION=	2014-05-01
+EXPIRATION_DATE=2014-05-01
 
 NO_BUILD=	yes
 

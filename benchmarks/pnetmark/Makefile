@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for Common Language Runtime (CLR)
 
 DEPRECATED=	PNET dependency decommissioned Dec 2012 
-EXPIRATION=	2014-05-01
+EXPIRATION_DATE=2014-05-01
 
 BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		csunit:${PORTSDIR}/lang/pnetlib
