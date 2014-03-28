@@ -91,7 +91,6 @@
     SUBDIR += fvwm
     SUBDIR += fvwm-crystal
     SUBDIR += fvwm2
-    SUBDIR += fvwm2-i18n
     SUBDIR += gcompmgr
     SUBDIR += genmenu
     SUBDIR += golem
