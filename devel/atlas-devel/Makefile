@@ -21,6 +21,10 @@ USE_BZIP2=	YES
 MAKE_ARGS=	docdir=${DOCSDIR}
 CONFIGURE_ARGS+=--program-transform-name=
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|^static const bool debug_flag = false;$$||' \
+		${WRKSRC}/Atlas/Message/DecoderBase.cpp
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in README COPYING AUTHORS THANKS NEWS ChangeLog TODO HACKING ROADMAP
