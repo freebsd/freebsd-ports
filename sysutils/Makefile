@@ -156,6 +156,7 @@
     SUBDIR += daedalus
     SUBDIR += daemontools
     SUBDIR += dar
+    SUBDIR += dateutils
     SUBDIR += dc3dd
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
