@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-data
-PORTVERSION=	2.12.1
+PORTVERSION=	3.0.0
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Shared/ \
@@ -18,7 +18,7 @@ COMMENT=	FlightGear scenery, textures, and aircraft models
 LICENSE=	GPLv2
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/fgdata
 DATADIR=	${PREFIX}/share/flightgear
 
