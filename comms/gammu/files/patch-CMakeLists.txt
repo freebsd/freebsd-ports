@@ -1,5 +1,14 @@
 --- CMakeLists.txt.orig	2011-12-21 17:25:37.000000000 +0400
 +++ CMakeLists.txt	2011-12-23 14:57:04.447118270 +0400
+@@ -120,7 +120,7 @@
+ check_symbol_exists (getgrnam "grp.h" HAVE_GETGRNAM)
+ check_symbol_exists (getpwuid "pwd.h" HAVE_GETPWUID)
+ check_symbol_exists (getuid "unistd.h" HAVE_GETUID)
+-check_symbol_exists (initgroups "grp.h" HAVE_INITGROUPS)
++check_symbol_exists (initgroups "unistd.h" HAVE_INITGROUPS)
+ check_symbol_exists (setuid "unistd.h" HAVE_SETUID)
+ check_symbol_exists (setgid "unistd.h" HAVE_SETGID)
+ check_symbol_exists (SIGHUP "signal.h" HAVE_SIGHUP)
 @@ -656,7 +656,7 @@ mark_as_advanced (INSTALL_DATA_DIR)
  set (INSTALL_DOC_DIR "share/doc/gammu" CACHE STRING "Path for documentation installation")
  mark_as_advanced (INSTALL_DOC_DIR)

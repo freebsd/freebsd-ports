@@ -1,5 +1,6 @@
 bin/gammu
 bin/gammu-config
+bin/gammu-detect
 bin/gammu-smsd
 bin/gammu-smsd-inject
 bin/gammu-smsd-monitor
@@ -40,6 +41,26 @@ lib/libGammu.so.7.1.33.0
 lib/libgsmsd.so
 lib/libgsmsd.so.7
 lib/libgsmsd.so.7.1.33.0
+man/man1/gammu-config.1.gz
+man/man1/gammu-detect.1.gz
+man/man1/gammu-smsd-inject.1.gz
+man/man1/gammu-smsd-monitor.1.gz
+man/man1/gammu-smsd.1.gz
+man/man1/gammu.1.gz
+man/man1/jadmaker.1.gz
+man/man5/gammu-backup.5.gz
+man/man5/gammu-smsbackup.5.gz
+man/man5/gammu-smsdrc.5.gz
+man/man5/gammurc.5.gz
+man/man7/gammu-smsd-dbi.7.gz
+man/man7/gammu-smsd-files.7.gz
+man/man7/gammu-smsd-mysql.7.gz
+man/man7/gammu-smsd-null.7.gz
+man/man7/gammu-smsd-odbc.7.gz
+man/man7/gammu-smsd-pgsql.7.gz
+man/man7/gammu-smsd-run.7.gz
+man/man7/gammu-smsd-sql.7.gz
+man/man7/gammu-smsd-tables.7.gz
 share/gammu/gammu-s60-remote.sis
 share/gammu/gnapplet.ini
 share/gammu/gnapplet.sis
@@ -132,3 +153,5 @@ share/locale/zh_TW/LC_MESSAGES/libgammu.mo
 @dirrm share/gammu
 @dirrm include/gammu
 @dirrm %%PYTHON_SITELIBDIR%%/gammu
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
