@@ -2,46 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	matio
-PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTVERSION=	1.5.2
 CATEGORIES=	math
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Library for reading/writing Matlab files
+MAINTAINER=	makc@FreeBSD.org
+COMMENT=	Library for reading and writing Matlab MAT files
+
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=		pathfix
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	FORTRAN
-FORTRAN_DESC=	Build Fortran bindings
+OPTIONS_DEFINE=	HDF5
+OPTIONS_DEFAULT=	HDF5
 
-CONFIGURE_ARGS=	--enable-shared
-
-PLIST_FILES= 	include/matio.h \
-		include/matioConfig.h \
-		lib/libmatio.a \
-		lib/libmatio.la \
-		lib/libmatio.so \
-		lib/libmatio.so.1 \
-		libdata/pkgconfig/matio.pc
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFORTRAN}
-USES+=		fortran
-
-CONFIGURE_ARGS+=	--enable-fortran
-CONFIGURE_ENV+=	FCFLAGS="${FFLAGS}"
-
-PLIST_FILES+=	include/matio.mod
-
-MAKE_JOBS_UNSAFE=yes
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/AM_LDFLAGS = /s/$$/ -version-info 1/'	\
-		${WRKSRC}/src/Makefile.in
+HDF5_DESC=	Support for MAT file version 7.3
+HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5-18
+HDF5_CONFIGURE_ON=	--enable-mat73=yes \
+			--with-hdf5=${LOCALBASE}
 
 .include <bsd.port.mk>

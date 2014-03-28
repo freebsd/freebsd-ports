@@ -1,4 +1,3 @@
-matio is an ISO C library (with a limited Fortran 90 interface) for reading
-and writing Matlab MAT files.
+matio is an ISO C library for reading and writing Matlab MAT files.
 
 WWW: http://sourceforge.net/projects/matio/
