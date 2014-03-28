@@ -15,7 +15,7 @@ BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		treecc:${PORTSDIR}/lang/treecc
 
 DEPRECATED=	Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
-EXPIRATION=	2014-05-01
+EXPIRATION_DATE=2014-05-01
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
