@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phylogenetic tree viewer
 
 USE_WX=		2.8
-WX_COMPS=	wx
+WX_COMPS=	wx contrib
 USES=		gmake
 GNU_CONFIGURE=	yes
 
