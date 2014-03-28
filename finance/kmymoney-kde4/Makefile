@@ -14,11 +14,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_graph.so:${PORTSDIR}/devel/boost-libs \
 		libalkimia.so:${PORTSDIR}/finance/libalkimia
 
-USES=		cmake pkgconfig shared-mime-info tar:xz
+USES=		cmake pkgconfig shared-mime-info shebangfix tar:xz
 USE_QT4=	gui dbus network phonon sql svg xml \
 		qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdehier kdeprefix automoc4 kdelibs pimlibs
 USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	kmymoney/misc/financequote.pl
 
 OPTIONS_DEFINE=		NLS CALENDAR KBANKING OFX QUOTES
 OPTIONS_DEFAULT=	CALENDAR
