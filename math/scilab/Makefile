@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific software package for numerical computations
 
 EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
-NO_STAGE=	yes
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
@@ -31,6 +30,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gfortran
 CONFIGURE_ENV=	ac_cv_search_pthread_join="${PTHREAD_LIBS}" \
 	BLAS_LIBS="${BLAS_LIBS}" LAPACK_LIBS="${LAPACK_LIBS}"
+# prevert from creating $HOME/.Scilab during build
+MAKE_ENV=	HOME=/dev/null
 
 OPTIONS_DEFINE=	ATLAS FFTW GUI HELP NLS MATIO OCAML PVM TK UMFPACK
 OPTIONS_DEFAULT=	FFTW GUI HELP
@@ -246,36 +247,37 @@ post-patch:
 .endif
 
 pre-install:
-	@${MKDIR} ${DATADIR}/.atoms
+	@${MKDIR} ${STAGEDIR}${DATADIR}/.atoms
+	@${TOUCH} ${STAGEDIR}${DATADIR}/.atoms/.keep_me
 .if ${PORT_OPTIONS:MGUI}
-	@${MKDIR} ${DATADIR}/modules && ${INSTALL_DATA} ${DISTDIR}/${JGRAPHX_JAR} ${DATADIR}/modules/jgraphx.jar
+	@${MKDIR} ${STAGEDIR}${DATADIR}/modules && ${INSTALL_DATA} ${DISTDIR}/${JGRAPHX_JAR} ${STAGEDIR}${DATADIR}/modules/jgraphx.jar
 	@${REINPLACE_CMD} -e 's|${WRKSRC}/thirdparty/jgraphx.jar|${DATADIR}/modules/jgraphx.jar|g' ${WRKSRC}/etc/classpath.xml
 .endif
 
 post-install:
 	@# Remove empty dirs in DATADIR/modules - they will be removed by the
 	@# toolbox uninstaller otherwise if 3rd party toolboxes are used
-	@${FIND} ${DATADIR}/modules -type d -empty -delete
+	@${FIND} ${STAGEDIR}${DATADIR}/modules -type d -empty -delete
 	@# plist for include/scilab
-	@${FIND} -s ${PREFIX}/include/scilab -not -type d | ${SORT} | \
-		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/include/scilab -type d | ${SORT} -r | \
-		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} -s ${STAGEDIR}${PREFIX}/include/scilab -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${PREFIX}/include/scilab -type d | ${SORT} -r | \
+		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@# plist for lib/scilab
-	@${FIND} -s ${PREFIX}/lib/scilab -not -type d | ${SORT} | \
-		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/lib/scilab -type d | ${SORT} -r | \
-		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} -s ${STAGEDIR}${PREFIX}/lib/scilab -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/scilab -type d | ${SORT} -r | \
+		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@# plist for share/scilab EXCEPT:
 	@# contrib and .atoms (3rd party toolboxes)
-	@${FIND} -s ${DATADIR} -not -type d -not -path ${DATADIR}/contrib\* | \
-		${SORT} | ${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d -not -path ${DATADIR}/contrib\* \
-		-not -path ${DATADIR}/.atoms\* -not -path ${DATADIR} | \
-		${SORT} -r | ${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} -s ${STAGEDIR}${DATADIR} -not -type d -not -path ${STAGEDIR}${DATADIR}/contrib\* | \
+		${SORT} | ${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${DATADIR} -type d -not -path ${STAGEDIR}${DATADIR}/contrib\* \
+		-not -path ${STAGEDIR}${DATADIR}/.atoms\* -not -path ${STAGEDIR}${DATADIR} | \
+		${SORT} -r | ${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/share/scilab 2>/dev/null || true" >> ${TMPPLIST}
 .if ! ${PORT_OPTIONS:MGUI}
-	@${TOUCH} ${DATADIR}/contrib/xcos_toolbox_skeleton/images/h5/.keep_me
+	@${TOUCH} ${STAGEDIR}${DATADIR}/contrib/xcos_toolbox_skeleton/images/h5/.keep_me
 .endif
 
 check test regression-test: build
