@@ -3,7 +3,7 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -13,8 +13,7 @@ COMMENT?=	Advanced, highly configurable system monitor for X11
 CONFLICTS?=	conky-awesome-[0-9]*
 SLAVEDIRS=	sysutils/conky-awesome
 
-USES=		gmake iconv pkgconfig
-USE_BZIP2=	yes
+USES=		gmake iconv pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-hddtemp \

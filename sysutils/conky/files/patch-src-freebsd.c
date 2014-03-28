@@ -1,5 +1,5 @@
---- src/freebsd.c.orig	2012-05-04 00:08:27.000000000 +0300
-+++ src/freebsd.c	2012-12-04 11:09:20.000000000 +0200
+--- src/freebsd.c.orig	2012-05-04 06:08:27.000000000 +0900
++++ src/freebsd.c	2013-08-05 09:02:37.000000000 +0900
 @@ -38,6 +38,11 @@
  #include <sys/types.h>
  #include <sys/user.h>
@@ -53,3 +53,12 @@
  
  	if (!global_cpu) {
  		malloc_cpu_size = (info.cpu_count + 1) * sizeof(struct cpu_info);
+@@ -702,7 +706,7 @@
+ 		free(dev_select);
+ 	}
+ 
+-	free(statinfo_cur.dinfo);
++	free(statinfo_cur.dinfo->mem_ptr);
+ 	return 0;
+ }
+
