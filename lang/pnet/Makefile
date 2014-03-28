@@ -9,13 +9,16 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The "meta-port" for DotGNU Portable.NET
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
 RUN_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		csunit:${PORTSDIR}/lang/pnetlib \
 		sqlsharp-pnet:${PORTSDIR}/lang/ml-pnet
+
+DEPRECATED=	Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+EXPIRATION=	2014-05-01
 
 NO_BUILD=	yes
 

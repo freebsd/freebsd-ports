@@ -8,11 +8,14 @@ CATEGORIES=	lang
 MASTER_SITES=	${PNET_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C\# system library for pnet
 
 BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		treecc:${PORTSDIR}/lang/treecc
+
+DEPRECATED=	Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+EXPIRATION=	2014-05-01
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
