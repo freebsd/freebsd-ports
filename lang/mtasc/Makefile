@@ -14,6 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/extlib/IO.cmi:${PORTSDIR}/devel/o
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
+OCAML_PKGDIRS=	# This port uses ocaml-findlib but doesn't install one
 
 OCAMLLEX?=	${LOCALBASE}/bin/ocamllex
 OCAMLOPT?=	${LOCALBASE}/bin/ocamlopt
@@ -25,16 +26,11 @@ SWFLIB_FILES=	as3.mli as3code.ml as3parse.ml swf.ml swfZip.ml actionScript.ml \
 MTASC_OBJ=	expr.cmx lexer.cmx parser.cmx typer.cmx class.cmx plugin.cmx\
 		genSwf.cmx main.cmx
 
-MAN1=		mtasc.1
-
 WRKSRC=		${WRKDIR}/ocaml
 
-.if !defined(NOPORTDATA)
 PORTDATA=	std std8
-.endif
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-build:
 	(cd ${WRKSRC}/extc && \
@@ -58,23 +54,13 @@ do-build:
 			${MTASC_OBJ} )
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mtasc-bin	${PREFIX}/bin/mtasc
-.if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/mtasc && ${FIND} ${PORTDATA} -type f | ${CPIO} -pdmu ${DATADIR})
-	@${FIND} ${DATADIR} -type d -exec ${CHMOD} 555 {} \;
-	@${FIND} ${DATADIR} -type f -exec ${CHMOD} 444 {} \;
-.endif
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/mtasc/doc/mtasc.1 ${PREFIX}/man/man1
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA}	${WRKSRC}/mtasc/doc/*.txt ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA}	${WRKSRC}/mtasc/doc/HelloWorld.as ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/mtasc-bin ${STAGEDIR}${PREFIX}/bin/mtasc
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/mtasc && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
+	${INSTALL_MAN} ${WRKSRC}/mtasc/doc/mtasc.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/mtasc/doc/*.txt ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA}	${WRKSRC}/mtasc/doc/HelloWorld.as ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
