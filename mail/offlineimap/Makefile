@@ -46,7 +46,6 @@ PORTEXAMPLES=	${EXAMPLE_FILES:N*/*}
 DOC_DIRS=	${DOC_FILES:H:O:u:N.}
 EXAMPLE_DIRS=	${EXAMPLE_FILES:H:O:u:N.}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MHTMLDOCS}
@@ -70,26 +69,21 @@ post-build:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@for i in ${DOC_DIRS}; do \
-	  ${MKDIR} ${DOCSDIR}/$$i; \
+	  ${MKDIR} ${STAGEDIR}${DOCSDIR}/$$i; \
 	  done
 	@cd ${WRKSRC} && for i in ${DOC_FILES}; do \
-	  ${ECHO} "Installing ${DOCSDIR}/$$i"; \
-	  ${INSTALL_DATA} $$i ${DOCSDIR}/$$i; \
+	  ${ECHO} "Installing ${STAGEDIR}${DOCSDIR}/$$i"; \
+	  ${INSTALL_DATA} $$i ${STAGEDIR}${DOCSDIR}/$$i; \
 	  done
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@for i in ${EXAMPLE_DIRS}; do \
-	  ${MKDIR} ${EXAMPLESDIR}/$$i; \
+	  ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/$$i; \
 	  done
 	@cd ${WRKSRC} && for i in ${EXAMPLE_FILES}; do \
-	  ${ECHO} "Installing ${EXAMPLESDIR}/$$i"; \
-	  ${INSTALL_DATA} $$i ${EXAMPLESDIR}/$$i; \
+	  ${ECHO} "Installing ${STAGEDIR}${EXAMPLESDIR}/$$i"; \
+	  ${INSTALL_DATA} $$i ${STAGEDIR}${EXAMPLESDIR}/$$i; \
 	  done
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
