@@ -15,6 +15,7 @@ LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84
 DOWNLOAD_URL?=	http://www.speech.sri.com/projects/srilm/download.html
 
 USES=		gmake
+USE_GCC=	yes
 MAKE_ENV+=	SRILM=${WRKSRC}
 ALL_TARGET=	World
 ONLY_FOR_ARCHS=	i386 amd64
@@ -70,6 +71,8 @@ post-patch:
 	@cd ${WRKSRC} && \
 	${REINPLACE_CMD} -e 's,$$WRKSRC,${WRKSRC},g' \
 		sbin/go.run-test
+	${REINPLACE_CMD} -e 's,gcc,${CC},' -e 's,g++,${CXX},' \
+		${WRKSRC}/common/Makefile.machine.freebsd
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
