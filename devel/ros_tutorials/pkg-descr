@@ -1,8 +1,0 @@
-ros_tutorials contains packages that demonstrate various features of ROS,
-as well as support packages which help demonstrate those features.
-This includes using messages, servers, parameters, etc.
-
-This package accompagnies the tutorials at
-http://www.rog.org/wiki/ROS/Tutorials
-
-WWW: http://www.ros.org/wiki/ros_tutorials

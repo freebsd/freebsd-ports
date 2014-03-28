@@ -1,7 +1,0 @@
-The rx stack contains GUI-related tools for using ROS, including:
-* rxbag: ROS bag recording, playback and visualization
-* rxgraph: ROS graph visualization
-* rxplot: ROS topic data visualization
-* rxconsole: ROS/rosout logging output 
-
-WWW: http://www.ros.org/wiki/rx

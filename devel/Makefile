@@ -30,7 +30,6 @@
     SUBDIR += R-cran-randomForest
     SUBDIR += R-cran-reshape
     SUBDIR += R-cran-reshape2
-    SUBDIR += R-cran-vcd
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += abi-compliance-checker
@@ -4078,12 +4077,6 @@
     SUBDIR += robodoc
     SUBDIR += root-doc
     SUBDIR += ros
-    SUBDIR += ros-common_msgs
-    SUBDIR += ros-documentation
-    SUBDIR += ros-nxt
-    SUBDIR += ros-rx
-    SUBDIR += ros_comm
-    SUBDIR += ros_tutorials
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpm-spec-mode.el

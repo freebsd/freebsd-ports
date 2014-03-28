@@ -1,5 +1,0 @@
-The documentation stack houses documentation tools for ROS.  This stack
-exists separately from the main ros stack in order to minimize heavyweight
-dependencies, such as Doxygen, LaTeX, Epydoc, and Sphinx. 
-
-WWW: http://www.ros.org/wiki/documentation
