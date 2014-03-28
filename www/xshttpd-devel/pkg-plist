@@ -98,5 +98,5 @@ man/man7/httpd_ssi.7.gz
 @dirrmtry %%ETCDIR%%
 @dirrmtry libexec/xshttpd
 @cwd /
-@unexec rmdir var/log/xshttpd 2>/dev/null || true
-@exec mkdir -p var/log/xshttpd
+@unexec rmdir var/log/xshttpd var/db/xshttpd/sessions var/db/xshttpd 2>/dev/null || true
+@exec mkdir -p var/log/xshttpd var/db/xshttpd/sessions
