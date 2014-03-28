@@ -18,10 +18,6 @@ SUB_FILES=	freecol
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-.if defined(NOPORTDATA)
-IGNORE=		needs data file to run, unset NOPORTDATA
-.endif
-
 PLIST_FILES=	bin/freecol
 PORTDATA=	*
 PORTDOCS=	*
