@@ -12,7 +12,7 @@ MAINTAINER=	devel@stasyan.com
 COMMENT=	Aliens versus predator unofficial port from icculus.org
 
 USE_SDL=	mixer sdl
-USES=		gmake openal
+USES=		gmake openal pkgconfig
 USE_GL=		gl
 
 WRKSRC=		${WRKDIR}
