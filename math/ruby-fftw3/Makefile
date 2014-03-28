@@ -3,7 +3,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-fftw3/release/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/ruby-fftw3/release/ \
@@ -18,12 +18,17 @@ COMMENT=	A Ruby interface to the FFTW ver.3
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
-BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
+LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+BUILD_DEPENDS=	rubygem-narray>=0:${PORTSDIR}/math/rubygem-narray
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+
+RUBY_NARRAY_VERSION!=	${MAKE} -C ${PORTSDIR}/math/rubygem-narray -V PORTVERSION
+RUBY_NARRAY_PKGNAME=	narray-${RUBY_NARRAY_VERSION}
+
+CONFIGURE_ARGS+=	--with-narray-include=${LOCALBASE}/lib/ruby/gems/${RUBY_VER}/gems/${RUBY_NARRAY_PKGNAME}/
 
 DOCS=		LICENSE.txt doc/*
 
