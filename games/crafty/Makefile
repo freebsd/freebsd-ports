@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	crafty
-PORTVERSION=	23.4
+PORTVERSION=	23.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.craftychess.com/:src \
 		http://www.cis.uab.edu/hyatt/crafty/pgn/:data \
@@ -15,7 +15,7 @@ DISTFILES=	crafty-${PORTVERSION}.zip:src \
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Chess program for playing and analyzing games
 
 USES=		gmake zip
@@ -37,7 +37,18 @@ OPT=		-DCPUS=4 -DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 		-DTBDIR=\\\"${WITH_TBDIR}\\\" \
 		-DPERSDIR=\\\"${WITH_PERSDIR}\\\" -DSKILL
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS BOOK
+OPTIONS_DEFAULT=DOCS
+OPTIONS_SUB=	yes
+BOOK_DESC=	Include (default) opening book
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+OPT+=		-DINLINE32
+.elif ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.endif
 
 .include <bsd.port.options.mk>
 
@@ -48,50 +59,36 @@ UTILS=		bitmaps.tgz sound.zip
 DISTFILES+=	${UTILS:S/$/:utils/}
 .endif
 
-.if ${ARCH} == "i386"
-OPT+=		-DINLINE32
-.elif ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-.if defined(WITH_BOOK)
+.if ${PORT_OPTIONS:MBOOK}
 BOOKS+=		book.bin
 DISTFILES+=	${BOOKS:S/$/:books/}
 PKGNAMESUFFIX=	-open-default
 CONFLICTS+=	crafty-open-enormous-* crafty-open-large-* crafty-open-medium-*
-PLIST_SUB+=	BOOK=""
-.else
-PLIST_SUB+=	BOOK="@comment "
 .endif
 
 MAKE_ENV+=	opt="${OPT}" target=${OPSYS} CXFLAGS="${CXXFLAGS}"
 
 post-extract:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/start.pgn ${WRKSRC}/start.pgn
-.if defined(WITH_BOOK)
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/book.bin ${WRKSRC}/book.bin
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} start.pgn books.bin ${WRKSRC}
+.if ${PORT_OPTIONS:MBOOK}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/book.bin ${WRKSRC}
 .endif
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/books.bin ${WRKSRC}/books.bin
 
 post-build:
 	(cd ${WRKSRC}; ./crafty bookpath=. <${FILESDIR}/books-building)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/crafty ${STAGEDIR}${PREFIX}/bin/crafty
-	${CHOWN} root:nogroup ${STAGEDIR}${PREFIX}/bin/crafty
-	${CHMOD} 2555 ${STAGEDIR}${PREFIX}/bin/crafty
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/crafty/cpf
-	${CHOWN} -R root:nogroup ${STAGEDIR}${PREFIX}/lib/crafty
-	${CHMOD} 775 ${STAGEDIR}${PREFIX}/lib/crafty ${STAGEDIR}${PREFIX}/lib/crafty/cpf
-.if defined(WITH_BOOK)
-	${INSTALL_DATA} ${WRKSRC}/book.bin ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
+.if ${PORT_OPTIONS:MBOOK}
+	${INSTALL_DATA} ${WRKSRC}/book.bin ${STAGEDIR}${PREFIX}/lib/crafty
 .endif
-	${INSTALL_DATA} ${WRKSRC}/books.bin ${STAGEDIR}${PREFIX}/lib/crafty/books.bin
-	${INSTALL_DATA} ${WRKSRC}/crafty.hlp ${STAGEDIR}${PREFIX}/lib/crafty/crafty.hlp
-	${CHOWN} root:nogroup ${STAGEDIR}${PREFIX}/lib/crafty/book*
-	${CHMOD} 664 ${STAGEDIR}${PREFIX}/lib/crafty/book*
+	${INSTALL_DATA} ${WRKSRC}/books.bin ${WRKSRC}/crafty.hlp \
+		${STAGEDIR}${PREFIX}/lib/crafty
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DOCFILES} ${STAGEDIR}${DOCSDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${UTILS} ${STAGEDIR}${DOCSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DOCFILES} ${UTILS} \
+		${STAGEDIR}${DOCSDIR}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
