@@ -1,0 +1,37 @@
+bin/dadd
+bin/dconv
+bin/ddiff
+bin/dgrep
+bin/dround
+bin/dseq
+bin/dtest
+bin/strptime
+include/dateutils/boops.h
+include/dateutils/date-core-strpf.h
+include/dateutils/date-core.h
+include/dateutils/dt-core-strpf.h
+include/dateutils/dt-core-tz-glue.h
+include/dateutils/dt-core.h
+include/dateutils/generics.h
+include/dateutils/leaps.h
+include/dateutils/leapseconds.def
+include/dateutils/nifty.h
+include/dateutils/strops.h
+include/dateutils/time-core-strpf.h
+include/dateutils/time-core.h
+include/dateutils/token.h
+include/dateutils/tzraw.h
+lib/libdut.a
+libdata/pkgconfig/libdut.pc
+man/man1/dadd.1.gz
+man/man1/dateutils.1.gz
+man/man1/dconv.1.gz
+man/man1/ddiff.1.gz
+man/man1/dgrep.1.gz
+man/man1/dround.1.gz
+man/man1/dseq.1.gz
+man/man1/dtest.1.gz
+man/man1/strptime.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/dateutils
