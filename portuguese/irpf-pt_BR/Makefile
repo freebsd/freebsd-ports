@@ -90,7 +90,7 @@ PLIST_DIRS+=	\
 		%%JAR_DIR%%
 
 post-extract:
-	@( cd ${WRKSRC} && ${JAR} xf ./irpf.jar IRPF-Licenses.txt )
+	@( cd ${WRKSRC} && ${TAR} xf ./irpf.jar IRPF-Licenses.txt )
 
 post-patch:
 	@${SED} -e  "s|%%JAR_DIR%%|${JAR_DIR}|; \
