@@ -542,7 +542,6 @@
     SUBDIR += linux-savage
     SUBDIR += linux-skulltag
     SUBDIR += linux-sof
-    SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
     SUBDIR += linux-steam
