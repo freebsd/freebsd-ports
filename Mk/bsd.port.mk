@@ -1311,12 +1311,6 @@ WITH_DEBUG=	yes
 .endif
 .endif
 
-# Reset value from bsd.own.mk.
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
-STRIP=	#none
-MAKE_ENV+=	DONTSTRIP=yes
-.endif
-
 .include "${PORTSDIR}/Mk/bsd.options.mk"
 
 # Start of pre-makefile section.
@@ -1596,7 +1590,10 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .endif
 .endif
 
+# Reset value from bsd.own.mk.
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+STRIP=	#none
+MAKE_ENV+=	DONTSTRIP=yes
 STRIP_CMD=	${TRUE}
 DEBUG_FLAGS?=	-g
 CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}

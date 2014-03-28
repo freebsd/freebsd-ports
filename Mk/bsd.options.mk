@@ -391,6 +391,10 @@ NOPORTDOCS=	yes
 NOPORTEXAMPLES=	yes
 .endif
 
+.if ${PORT_OPTIONS:MDEBUG}
+WITH_DEBUG=	yes
+.endif
+
 .if defined(NO_OPTIONS_SORT)
 ALL_OPTIONS=	${OPTIONS_DEFINE}
 .endif
