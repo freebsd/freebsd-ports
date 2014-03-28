@@ -241,9 +241,6 @@ share/locale/sv/LC_MESSAGES/krecipes.mo
 share/locale/tr/LC_MESSAGES/krecipes.mo
 share/locale/uk/LC_MESSAGES/krecipes.mo
 share/locale/zh_TW/LC_MESSAGES/krecipes.mo
-share/mime/application/x-krecipes-backup.xml
-share/mime/application/x-krecipes-recipes-compressed.xml
-share/mime/application/x-krecipes-recipes.xml
 share/mime/packages/krecipes-mime.xml
 @dirrm share/doc/HTML/uk/krecipes
 @dirrm share/doc/HTML/sv/krecipes

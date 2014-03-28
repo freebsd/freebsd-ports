@@ -15,8 +15,6 @@ USES=		cmake gettext shared-mime-info
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdeprefix kdelibs qimageblitz
 
-NO_STAGE=	yes
-
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	SQLITE MYSQL PGSQL
 OPTIONS_DEFAULT=	SQLITE
