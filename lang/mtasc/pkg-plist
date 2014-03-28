@@ -1,4 +1,5 @@
 bin/mtasc
+man/man1/mtasc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/Future.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
