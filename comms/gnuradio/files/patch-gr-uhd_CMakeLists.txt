@@ -1,6 +1,6 @@
---- gr-uhd/CMakeLists.txt.orig	2013-06-04 17:35:10.000000000 -0500
-+++ gr-uhd/CMakeLists.txt	2013-06-04 17:35:23.000000000 -0500
-@@ -111,7 +111,7 @@
+--- gr-uhd/CMakeLists.txt.orig	2013-08-28 13:27:03.000000000 -0500
++++ gr-uhd/CMakeLists.txt	2014-03-02 20:20:30.000000000 -0500
+@@ -115,7 +115,7 @@
  
  install(
      FILES ${CMAKE_CURRENT_BINARY_DIR}/gnuradio-uhd.pc

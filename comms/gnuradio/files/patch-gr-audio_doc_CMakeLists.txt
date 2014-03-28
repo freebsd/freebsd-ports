@@ -1,5 +1,5 @@
---- gr-audio/doc/CMakeLists.txt.orig	2012-10-26 13:30:24.000000000 -0500
-+++ gr-audio/doc/CMakeLists.txt	2012-10-26 13:30:54.000000000 -0500
+--- gr-audio/doc/CMakeLists.txt.orig	2012-04-21 15:12:41.000000000 -0500
++++ gr-audio/doc/CMakeLists.txt	2014-03-02 20:20:02.000000000 -0500
 @@ -17,7 +17,9 @@
  # the Free Software Foundation, Inc., 51 Franklin Street,
  # Boston, MA 02110-1301, USA.

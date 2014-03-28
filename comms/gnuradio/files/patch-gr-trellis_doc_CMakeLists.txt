@@ -1,5 +1,5 @@
---- gr-trellis/doc/CMakeLists.txt.orig	2012-09-04 19:43:06.000000000 -0500
-+++ gr-trellis/doc/CMakeLists.txt	2012-10-26 16:40:45.000000000 -0500
+--- gr-trellis/doc/CMakeLists.txt.orig	2012-04-21 15:12:41.000000000 -0500
++++ gr-trellis/doc/CMakeLists.txt	2014-03-02 20:20:28.000000000 -0500
 @@ -32,12 +32,14 @@
          ${CMAKE_CURRENT_SOURCE_DIR}/gr-trellis.xml
  )

@@ -1,5 +1,5 @@
---- gnuradio-runtime/lib/thread/thread.cc.orig	2013-08-28 14:27:03.000000000 -0400
-+++ gnuradio-runtime/lib/thread/thread.cc	2014-01-05 20:39:46.220592423 -0500
+--- gnuradio-runtime/lib/thread/thread.cc.orig	2013-08-28 13:27:03.000000000 -0500
++++ gnuradio-runtime/lib/thread/thread.cc	2014-03-02 20:19:59.000000000 -0500
 @@ -217,6 +217,7 @@
      void
      thread_bind_to_processor(gr_thread_t thread, const std::vector<int> &mask)

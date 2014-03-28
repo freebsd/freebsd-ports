@@ -1,5 +1,5 @@
---- grc/CMakeLists.txt.orig	2013-05-01 18:57:50.000000000 -0500
-+++ grc/CMakeLists.txt	2013-06-07 15:33:23.000000000 -0500
+--- grc/CMakeLists.txt.orig	2013-08-28 13:27:03.000000000 -0500
++++ grc/CMakeLists.txt	2014-03-02 20:20:40.000000000 -0500
 @@ -73,11 +73,21 @@
      ${CMAKE_CURRENT_BINARY_DIR}/grc.conf
  @ONLY)
