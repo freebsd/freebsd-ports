@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-input
 
 COMMENT=	Input plugin for Mupen64
 
+BROKEN=		Fails to build
 USE_SDL=	sdl
 
 FIXFILES=	#

@@ -4,6 +4,7 @@ PKGNAMESUFFIX=	-rsp
 
 COMMENT=	RSP plugin for Mupen64
 
+BROKEN=		Fails to build
 FIXFILES=	#
 
 PLUGIN_NAME=	mupen64_hle_rsp_azimer
