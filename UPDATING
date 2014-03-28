@@ -9,8 +9,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of lang/php5 and lang/php55 with Apache module
   AUTHOR: ale@FreeBSD.org
 
-  The Apache PHP module has been splitted from main PHP port, so if you
-  are using it you should install one of www/mod_php5 or www/mod_php55.
+  The Apache PHP module has been separated from the main PHP port.
+  If it is needed, install either www/mod_php5 or www/mod_php55.
 
 20140322:
   AFFECTS: users of devel/apr1
