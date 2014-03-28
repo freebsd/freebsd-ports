@@ -23,10 +23,6 @@ PORTEXAMPLES=	*
 
 LATEST_LINK=	jpgraph2
 
-.if defined(NOPORTDATA)
-IGNORE=		requires port data, unset NOPORTDATA
-.endif
-
 do-install:
 	@${MKDIR} ${DATADIR}
 	${CP} ${WRKSRC}/src/*.php ${DATADIR}
