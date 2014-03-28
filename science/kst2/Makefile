@@ -3,7 +3,7 @@
 
 PORTNAME=	kst
 DISTVERSION=	2.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science kde
 MASTER_SITES=	SF/${PORTNAME}/Kst%20${DISTVERSION:C/-r.*//}/
 
@@ -12,7 +12,7 @@ COMMENT=	Data viewing and plotting tool
 
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_QT4=	gui xml designer svg opengl \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
@@ -30,7 +30,7 @@ FITS_DESC=	Support for data in FITS format
 FITS_LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
 
 MATLAB_DESC=	Support for data in MATLAB format
-MATLAB_BUILD_DEPENDS=	${LOCALBASE}/lib/libmatio.a:${PORTSDIR}/math/matio
+MATLAB_LIB_DEPENDS=	libmatio.so:${PORTSDIR}/math/matio
 
 NETCDF_DESC=	Support for data in NetCDF format
 NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
