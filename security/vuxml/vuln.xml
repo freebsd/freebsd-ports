@@ -56832,7 +56832,8 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>php5-nms</name>
 	<name>mod_php4</name>
 	<name>mod_php5</name>
-	<range><ge>0</ge></range>
+	<range><lt>4.4.4</lt></range>
+	<range><ge>5</ge><lt>5.1.5</lt></range>
       </package>
     </affects>
     <description>
@@ -56870,7 +56871,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2006-08-18</discovery>
       <entry>2006-09-13</entry>
-      <modified>2006-09-14</modified>
+      <modified>2014-03-28</modified>
     </dates>
   </vuln>
 
