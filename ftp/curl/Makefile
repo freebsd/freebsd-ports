@@ -83,6 +83,8 @@ HEIMDAL_PORT_LDFLAGS=	-L${HEIMDAL_HOME}/lib
 HEIMDAL_PORT_LIB_DEPENDS=	libgssapi.so:${PORTSDIR}/security/heimdal
 HTTP2_CONFIGURE_OFF=	--without-nghttp2
 HTTP2_CONFIGURE_ON=	--with-nghttp2=${LOCALBASE}
+HTTP2_LIB_DEPENDS=	libnghttp2.so:${PORTSDIR}/www/nghttp2
+HTTP2_USES=		pkgconfig
 IDN_CONFIGURE_OFF=	--without-libidn
 IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE}
 IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
