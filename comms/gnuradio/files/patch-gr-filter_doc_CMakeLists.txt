@@ -1,5 +1,5 @@
---- gr-filter/doc/CMakeLists.txt.orig	2012-10-26 14:11:17.000000000 -0500
-+++ gr-filter/doc/CMakeLists.txt	2012-10-26 14:10:40.000000000 -0500
+--- gr-filter/doc/CMakeLists.txt.orig	2012-09-04 21:08:20.000000000 -0500
++++ gr-filter/doc/CMakeLists.txt	2014-03-02 20:20:23.000000000 -0500
 @@ -17,7 +17,9 @@
  # the Free Software Foundation, Inc., 51 Franklin Street,
  # Boston, MA 02110-1301, USA.

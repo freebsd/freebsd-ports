@@ -1,5 +1,5 @@
---- volk/CMakeLists.txt.orig	2013-08-28 14:27:03.000000000 -0400
-+++ volk/CMakeLists.txt	2013-12-24 23:03:29.644092599 -0500
+--- volk/CMakeLists.txt.orig	2013-08-28 13:27:03.000000000 -0500
++++ volk/CMakeLists.txt	2014-03-02 20:20:43.000000000 -0500
 @@ -97,7 +97,7 @@
  
  install(

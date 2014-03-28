@@ -1,11 +1,11 @@
---- cmake/Modules/GrMiscUtils.cmake.orig	2013-01-08 15:56:55.000000000 -0500
-+++ cmake/Modules/GrMiscUtils.cmake	2013-04-21 19:05:30.000000000 -0500
+--- cmake/Modules/GrMiscUtils.cmake.orig	2013-08-28 13:27:03.000000000 -0500
++++ cmake/Modules/GrMiscUtils.cmake	2014-03-02 20:19:48.000000000 -0500
 @@ -142,7 +142,31 @@
          ARCHIVE DESTINATION ${GR_LIBRARY_DIR} COMPONENT ${GR_LIBRARY_DEVEL_COMPONENT}   # .lib file
          RUNTIME DESTINATION ${GR_RUNTIME_DIR} COMPONENT ${GR_LIBRARY_RUNTIME_COMPONENT} # .dll file
      )
 +    
- 
++
 +    if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +        #create .la file
 +        GR_LIBTOOL(TARGET ${target} DESTINATION ${GR_LIBRARY_DIR})
@@ -20,7 +20,7 @@
 +            COMMAND ${CMAKE_COMMAND} -E create_symlink ${target_name} "${CMAKE_CURRENT_BINARY_DIR}/lib${target}.so.${MAJOR_VERSION}"
 +            COMMAND ${CMAKE_COMMAND} -E touch ${target_name} #so the symlinks point to something valid so cmake 2.6 will install
 +        )
-+
+ 
 +        #and install the extra symlinks
 +        install(
 +            FILES

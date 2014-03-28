@@ -1,5 +1,5 @@
---- gr-digital/doc/CMakeLists.txt.orig	2012-10-26 14:12:21.000000000 -0500
-+++ gr-digital/doc/CMakeLists.txt	2012-10-26 14:12:43.000000000 -0500
+--- gr-digital/doc/CMakeLists.txt.orig	2012-01-02 14:04:33.000000000 -0500
++++ gr-digital/doc/CMakeLists.txt	2014-03-02 20:20:09.000000000 -0500
 @@ -17,7 +17,9 @@
  # the Free Software Foundation, Inc., 51 Franklin Street,
  # Boston, MA 02110-1301, USA.

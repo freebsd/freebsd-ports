@@ -1,5 +1,5 @@
 --- gr-fcd/lib/hid/hid-libusb.c.orig	2013-08-28 13:27:03.000000000 -0500
-+++ gr-fcd/lib/hid/hid-libusb.c	2014-01-16 20:59:56.000000000 -0500
++++ gr-fcd/lib/hid/hid-libusb.c	2014-03-02 20:20:18.000000000 -0500
 @@ -250,7 +250,7 @@
  }
  #endif /* INVASIVE_GET_USAGE */

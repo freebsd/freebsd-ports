@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2013-11-09 15:25:45.000000000 -0500
-+++ CMakeLists.txt	2014-02-11 20:23:20.000000000 -0500
+--- CMakeLists.txt.orig	2013-11-29 19:04:23.000000000 -0500
++++ CMakeLists.txt	2014-03-10 16:31:14.000000000 -0500
 @@ -108,6 +108,14 @@
  ########################################################################
  include(GrPlatform) #define LIB_SUFFIX
@@ -15,7 +15,7 @@
  set(GR_LIBRARY_DIR      lib${LIB_SUFFIX})
  set(GR_INCLUDE_DIR      include)
  set(GR_DATA_DIR         share)
-@@ -163,6 +171,41 @@
+@@ -163,6 +171,42 @@
  )
  
  ########################################################################
@@ -23,6 +23,7 @@
 +########################################################################
 +if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +  message( "-- Adding iconv for FreeBSD")
++message ("-- ICONV_LIB = ${ICONV_LIB}")
 +
 +  set (ICONV_INCLUDE_DIR ${ICONV_PREFIX}/include)
 +  if (${ICONV_LIB} STREQUAL "X-liconv")
@@ -57,7 +58,7 @@
  # Enable python component
  ########################################################################
  find_package(PythonLibs 2)
-@@ -247,11 +290,13 @@
+@@ -247,11 +291,13 @@
  ########################################################################
  # Distribute the README file
  ########################################################################

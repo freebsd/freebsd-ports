@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuradio
-PORTVERSION=	3.7.2
-PORTREVISION=	1
+PORTVERSION=	3.7.2.1
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		${MASTER_SITE_LOCAL}
@@ -19,6 +18,8 @@ BUILD_DEPENDS=	sdl-config:${PORTSDIR}/devel/sdl12 \
 		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4 \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		guile:${PORTSDIR}/lang/guile \
+		icebox:${PORTSDIR}/devel/ice \
+		aconnect:${PORTSDIR}/audio/alsa-utils \
 		git:${PORTSDIR}/devel/git
 LIB_DEPENDS=	libcppunit.so:${PORTSDIR}/devel/cppunit \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
@@ -36,12 +37,14 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		iconv cmake:outsource perl5
 CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"
 CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
-		-DICONV_LIB:STRING="X${ICONV_LIB}"
+		-DICONV_LIB:STRING="X${ICONV_LIB}" \
+		-DICE_CONFIG_INCLUDE_DIR="${LOCALBASE}/include/"
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	2.7+
 USE_WX=		2.6+
+WX_UNICODE=	yes
 USE_QT4=	gui xml qmake moc rcc uic
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_LDCONFIG=	yes
@@ -50,6 +53,8 @@ PLIST_SUB+=	MAJOR_VERSION="3"
 OPTIONS_DEFINE=		USRP TESTING
 # Unfortunately building docs on i386 fails
 OPTIONS_EXCLUDE_${i386}=	DOCS
+# Yay. building docs is broken on 10 and HEAD too so turn them all off
+OPTIONS_EXCLUDE=	DOCS
 # turn this off until usrp port is fixed on -10 and HEAD
 #OPTIONS_DEFAULT=	USRP
 USRP_DESC=	Include USRP support (UHD) from Ettus
@@ -58,6 +63,15 @@ TESTING_DESC=	Include testing support
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+# Only use port clang34 on 10 if not RELEASE. I think this should do it.
+.if ${OSVERSION} <= 1000510 && ${OSVERSION} > 1000000
+# Debug hack
+#.if ${OSVERSION} <= 1200000
+BUILD_DEPENDS=	clang34:${PORTSDIR}/lang/clang34
+CC=		clang34
+CXX=		clang++34
+.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
@@ -93,7 +107,7 @@ CMAKE_ARGS+=	-DENABLE_TESTING:STRING="OFF"
 .endif
 
 post-patch:
-	${FIND} ${WRKSRC}/.. -name CMakeLists.txt | \
+	@${FIND} ${WRKSRC}/.. -name CMakeLists.txt | \
 	    ${XARGS} ${REINPLACE_CMD} -e \
 		 "s|{GR_LIBRARY_DIR}/pkgconfig|{GR_PKGCONFIG_DIR}/pkgconfig|g"
 
@@ -130,6 +144,8 @@ pre-install:
 	    ${SED} -e 's|xml|%%PORTDOCS%%@dirrm %%DOCSDIR%%/xml|' \
 		 >> ${PLIST}
 	@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
+.else
+	@${CAT} ${PLISTDIRS} >> ${PLIST}
 .endif
 
 .include <bsd.port.post.mk>
