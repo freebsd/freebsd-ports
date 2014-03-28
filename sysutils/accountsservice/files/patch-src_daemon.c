@@ -1,58 +1,15 @@
---- src/daemon.c.orig	2013-10-15 22:25:19.000000000 +0200
-+++ src/daemon.c	2014-03-15 15:33:49.000000000 +0100
-@@ -50,9 +50,8 @@
+--- src/daemon.c.orig	2014-03-23 09:36:37.194365289 +0000
++++ src/daemon.c	2014-03-23 09:36:39.836364714 +0000
+@@ -48,7 +48,7 @@
  #define PATH_PASSWD "/etc/passwd"
  #define PATH_SHADOW "/etc/shadow"
  #define PATH_GROUP "/etc/group"
 -#define PATH_GDM_CUSTOM "/etc/gdm/custom.conf"
 +#define PATH_GDM_CUSTOM "/usr/local/etc/gdm/custom.conf"
- #ifdef HAVE_UTMPX_H
--#define PATH_WTMP _PATH_WTMPX
- #endif
  
  enum {
-@@ -73,7 +72,7 @@
-         GFileMonitor *group_monitor;
-         GFileMonitor *gdm_monitor;
- #ifdef HAVE_UTMPX_H
--        GFileMonitor *wtmp_monitor;
-+//        GFileMonitor *wtmp_monitor;
- #endif
- 
-         guint reload_id;
-@@ -162,6 +161,10 @@
-         g_free (previous_login);
- }
- 
-+#ifndef HAVE_FGETPWENT
-+#include "fgetpwent.c"
-+#endif
-+
- static struct passwd *
- entry_generator_wtmp (GHashTable *users,
-                       gpointer   *state)
-@@ -183,7 +186,7 @@
-                         return NULL;
-                 }
- #else
--                utmpxname (PATH_WTMP);
-+//                utmpxname (PATH_WTMP);
-                 setutxent ();
- #endif
-                 *state = g_new (WTmpGeneratorState, 1);
-@@ -697,11 +700,6 @@
-                                                      PATH_GROUP,
-                                                      on_users_monitor_changed);
- 
--#ifdef HAVE_UTMPX_H
--        daemon->priv->wtmp_monitor = setup_monitor (daemon,
--                                                    PATH_WTMP,
--                                                    on_users_monitor_changed);
--#endif
- 
-         daemon->priv->gdm_monitor = setup_monitor (daemon,
-                                                    PATH_GDM_CUSTOM,
-@@ -1061,20 +1059,18 @@
+         PROP_0,
+@@ -892,20 +892,18 @@
  
          sys_log (context, "create user '%s'", cd->user_name);
  

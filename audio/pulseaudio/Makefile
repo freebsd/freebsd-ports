@@ -13,7 +13,6 @@ MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound server for UNIX
 
-# keep the json version otherwise it will match json-glib
 LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libspeexdsp.so:${PORTSDIR}/audio/speex \
@@ -25,14 +24,13 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 
-USE_XZ=		yes
 USE_GNOME=	glib20 intltool gnomehier
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl
-MAKE_JOBS_UNSAFE=yes
+#MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		OPENSSL_CFLAGS="-I/usr/include" \
@@ -57,7 +55,7 @@ USERS=		pulse
 GROUPS=		pulse pulse-access pulse-rt
 
 OPTIONS_DEFINE=	JACK AVAHI GCONF ALSA SIMD
-OPTIONS_DEFAULT=AVAHI GCONF SIMD
+OPTIONS_DEFAULT=AVAHI SIMD
 
 PULSE_VERSION=	${PORTVERSION}
 PLIST_SUB=	PULSE_VERSION=${PULSE_VERSION}

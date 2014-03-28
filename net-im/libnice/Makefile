@@ -1,18 +1,18 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/libnice/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/net-im/libnice/Makefile 19243 2014-03-23 09:49:52Z kwm $
 
 PORTNAME=	libnice
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://nice.freedesktop.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library and transmitter that implements ICE-19
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	glib20 ltverhack
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_GETIFADDRS
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -48,6 +48,7 @@ post-patch:
 	    	's|-Wno-missing-field-initializers|#|g'
 	@${REINPLACE_CMD} -e 's|-Wno-missing-field-initializers|#|g' \
 	    	${WRKSRC}/common.mk
+	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(LIBNICE_SLAVE)

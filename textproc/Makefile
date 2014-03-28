@@ -1211,6 +1211,7 @@
     SUBDIR += pybook
     SUBDIR += pychm
     SUBDIR += pystemmer
+    SUBDIR += py3-libxml2
     SUBDIR += qprint
     SUBDIR += qstardict
     SUBDIR += qt4-xml

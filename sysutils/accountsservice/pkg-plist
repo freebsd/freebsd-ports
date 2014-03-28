@@ -97,5 +97,6 @@ share/polkit-1/actions/org.freedesktop.accounts.policy
 @dirrm include/accountsservice-1.0
 @cwd /
 @dirrmtry var/db/AccountsService/users
+@dirrmtry var/db/AccountsService/icons
 @dirrmtry var/db/AccountsService
 @cwd

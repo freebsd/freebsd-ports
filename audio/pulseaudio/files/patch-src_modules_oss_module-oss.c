@@ -1,10 +1,12 @@
---- src/modules/oss/module-oss.c.orig	2014-01-23 13:57:55.000000000 -0500
-+++ src/modules/oss/module-oss.c	2014-03-05 15:56:36.924173392 -0500
-@@ -1229,10 +1229,12 @@
+--- src/modules/oss/module-oss.c.orig	2014-01-23 19:57:55.000000000 +0100
++++ src/modules/oss/module-oss.c	2014-03-22 10:59:05.000000000 +0100
+@@ -1229,10 +1229,14 @@ int pa__init(pa_module*m) {
          use_mmap = false;
      }
  
 +#ifndef __FreeBSD__
++/* Disable mmap. The OSS on FreeBSD doesn't support read & write on 
++   the same socket */
      if (use_mmap && mode == O_WRONLY) {
          pa_log_info("Device opened for playback only, cannot do memory mapping, falling back to UNIX write() mode.");
          use_mmap = false;
@@ -13,7 +15,7 @@
  
      if (pa_oss_get_hw_description(dev, hwdesc, sizeof(hwdesc)) >= 0)
          pa_log_info("Hardware name is '%s'.", hwdesc);
-@@ -1428,7 +1430,7 @@
+@@ -1428,7 +1432,7 @@ int pa__init(pa_module*m) {
      if ((u->mixer_fd = pa_oss_open_mixer_for_device(u->device_name)) >= 0) {
          bool do_close = true;
  

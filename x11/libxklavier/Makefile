@@ -16,11 +16,10 @@ RUN_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_XORG=	x11 xkbfile
-USE_XZ=		yes
-USES=		gmake pathfix pkgconfig
-USE_GNOME=	libxml2 glib20 ltverhack:12 introspection:build
+USES=		gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	libxml2 glib20 introspection:build
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-xkb-base=${LOCALBASE}/share/X11/xkb \
 		--with-xkb-bin-base=${LOCALBASE}/bin \
@@ -31,5 +30,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxklavier.so.*
 
 .include <bsd.port.mk>
