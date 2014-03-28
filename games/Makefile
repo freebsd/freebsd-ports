@@ -765,9 +765,6 @@
     SUBDIR += pyching
     SUBDIR += pydance
     SUBDIR += pykawari
-    SUBDIR += pysol
-    SUBDIR += pysol-cardsets
-    SUBDIR += pysol-music
     SUBDIR += pysolfc
     SUBDIR += pyspacewar
     SUBDIR += pysycache

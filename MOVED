@@ -5806,3 +5806,15 @@ games/fuhquake||2014-03-24|Has expired: Upstream disappeared; no more public dis
 games/xarchon||2014-03-25|Has expired: Unusable, development ceased, not works with stage
 lang/libstdc++_stldoc_3.4.0||2014-03-25|STL 3.4 is not supported for long
 games/linux-warsow||2014-03-26|Has expired: outdated, broken
+audio/pysol-sound-server|games/pysolfc|2014-03-28|Has expired: Broken, abondonware, use pysolfc
+games/pysol-cardsets|games/pysolfc|2014-03-28|Has expired: Broken, abondonware, use pysolfc
+games/pysol-music|games/pysolfc|2014-03-28|Has expired: Broken, abondonware, use pysolfc
+games/pysol|games/pysolfc|2014-03-28|Has expired: Broken, abondonware, use pysolfc
+devel/ros_tutorials||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+math/ros-geometry||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+devel/ros-nxt||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+devel/ros-rx||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+devel/R-cran-vcd||2014-03-28|Has expired: New port without proper maintainer
+devel/ros-documentation||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+devel/ros-common_msgs||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+devel/ros_comm||2014-03-28|Has expired: Broken for more than 6 months

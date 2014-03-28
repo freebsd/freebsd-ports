@@ -615,7 +615,6 @@
     SUBDIR += py-vorbis
     SUBDIR += py-xmms
     SUBDIR += py-xmms2
-    SUBDIR += pysol-sound-server
     SUBDIR += pytone
     SUBDIR += qjackctl
     SUBDIR += qmpdclient

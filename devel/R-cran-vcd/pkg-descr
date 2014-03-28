@@ -1,6 +1,0 @@
-Visualization techniques, data sets, summary and inference procedures aimed
-particularly at categorical data. Special emphasis is given to highly
-extensible grid graphics. The package was inspired by the book "Visualizing
-Categorical Data" by Michael Friendly.
-
-WWW: http://cran.r-project.org/web/packages/vcd/index.html
