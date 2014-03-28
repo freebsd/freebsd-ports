@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for Common Language Runtime (CLR)
 
+DEPRECATED=	PNET dependency decommissioned Dec 2012 
+EXPIRATION=	2014-05-01
+
 BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		csunit:${PORTSDIR}/lang/pnetlib
 RUN_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \

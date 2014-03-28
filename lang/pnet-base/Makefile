@@ -9,10 +9,13 @@ MASTER_SITES=	${PNET_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
 PKGNAMESUFFIX=	base
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C\# compiler and runtime engine
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
+
+DEPRECATED=	Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+EXPIRATION=	2014-05-01
 
 NOT_FOR_ARCHS=	sparc64
 
