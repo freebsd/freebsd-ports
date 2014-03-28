@@ -38,7 +38,7 @@ OPENAL_USES=	openal:al
 OPENAL_QMAKE_ON=	CONFIG+=deng_openal
 OPENAL_QMAKE_OFF=	CONFIG+=deng_noopenal
 
-PORTSCOUT=	limit:^\d+\.\d+\.\d+$
+PORTSCOUT=	limit:^\d+\.\d+\.\d+$$
 
 post-patch:
 	${REINPLACE_CMD} 's,share/man,man,' \
