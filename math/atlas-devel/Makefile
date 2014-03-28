@@ -16,8 +16,8 @@ IGNORE =	: dependent ports have been altered to link with math/atlas -- please\
 use that port instead of math/atlas-devel, while the latter is being revised
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
 
-USES=		fortran gmake
-USE_BZIP2=	yes
+USES=		fortran gmake tar:bzip2
+USE_GCC=	yes
 WRKSRC=		${WRKDIR}/ATLAS
 USE_LDCONFIG=	yes
 CONFLICTS=	atlas-[0-9]* cblas-[0-9]*

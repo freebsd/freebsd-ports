@@ -9,8 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20devel/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collect information from all over the Internet
 
-USES=		perl5
-USE_BZIP2=	yes
+USES=		tar:bzip2 perl5
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure src/gatherer/curl/configure
 USE_LDCONFIG=	yes

@@ -23,7 +23,6 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 USES=		pkgconfig
 USE_BZIP2=	yes
 USE_SCONS=	yes
-USES=		pkgconfig
 USE_GL=		gl glu
 USE_SDL=	mixer
 SUB_FILES=	pink-pony.sh

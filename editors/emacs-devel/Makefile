@@ -16,13 +16,13 @@ COMMENT=	GNU editing macros
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	emacs-19.* emacs21-* emacs22-* emacs23-* \
-		emacs24-* xemacs-[0-9]* xemacs-devel-[0-9]* \
+CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
+		emacs24-[0-9]* xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 
 EMACS_VER=	24.3.50
-EMACS_REV=	116446
+EMACS_REV=	116732
 GNU_CONFIGURE=	yes
 USES=		ncurses pkgconfig
 USE_GMAKE=	yes
@@ -51,17 +51,16 @@ INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 		org pcl-cvs pgg rcirc reftex remember sasl sc semantic ses sieve \
 		smtpmail speedbar srecode todo-mode tramp url vip viper widget wisent woman
 
-OPTIONS_DEFINE=	X11 ACL DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT SCROLLBARS \
+OPTIONS_DEFINE=	X11 ACL DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SCROLLBARS \
 		XFT XIM XML XPM MAGICK GNUTLS GSETTINGS LTO FILENOTIFY
 
-OPTIONS_SINGLE=	X11 SOUND
+OPTIONS_SINGLE=	X11 SOUND GNUTLS
 
 ACL_DESC=		ACL support
 GSETTINGS_DESC=		GSettings support
 SCROLLBARS_DESC=	Toolkit scroll-bars
 SOUND_DESC=		Sound support
 SOURCES_DESC=		Install sources
-SYNC_INPUT_DESC=	Synchronously process asynchronous input
 XAW_DESC=		Athena widgets
 XAW3D_DESC=		Athena3D widgets
 XIM_DESC=		X Input Method Support
@@ -69,12 +68,15 @@ M17N_DESC=		M17N support for text-shaping
 OTF_DESC=		Opentype fonts suport
 FILENOTIFY_DESC=	File notification support
 LTO_DESC=		Enable link-time optimization (requires GCC 4.6+)
+GNUTLS2_DESC=		GnuTLS 2.x
+GNUTLS3_DESC=		GnuTLS 3.x
 
 OPTIONS_SINGLE_X11=	GTK2 GTK3 XAW XAW3D MOTIF
 OPTIONS_SINGLE_SOUND=		ALSA OSS
+OPTIONS_SINGLE_GNUTLS=		GNUTLS2 GNUTLS3
 
-OPTIONS_DEFAULT=ACL DBUS GCONF GIF GTK2 JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT \
-		SCROLLBARS XFT XIM XML XPM MAGICK GNUTLS GSETTINGS FILENOTIFY OSS X11
+OPTIONS_DEFAULT=ACL DBUS GCONF GIF GTK2 JPEG M17N OTF PNG SOUND SOURCES SVG TIFF \
+		SCROLLBARS XFT XIM XML XPM MAGICK GNUTLS GSETTINGS FILENOTIFY OSS X11 GNUTLS3
 
 OPTIONS_SUB=		SOURCES
 
@@ -85,8 +87,10 @@ OSS_CONFIGURE_ON=		--with-sound=oss
 DBUS_LIB_DEPENDS=		dbus-1:${PORTSDIR}/devel/dbus
 DBUS_CONFIGURE_WITH=		dbus
 
-GNUTLS_LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
+
+GNUTLS3_LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls3
+GNUTLS2_LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 
 XML_USE=		GNOME=libxml2
 XML_CONFIGURE_WITH=	xml2
@@ -155,7 +159,7 @@ XIM_CONFIGURE_WITH=		xim
 LTO_CONFIGURE_ON=		--enable-link-time-optimization
 LTO_USE=			GCC=4.6+
 
-ACL_CONFIGURE_WITH=		acl
+ACL_CONFIGURE_OFF=		--disable-acl
 
 FILENOTIFY_CONFIGURE_ON=	--with-file-notification=gfile
 FILENOTIFY_CONFIGURE_OFF=	--without-file-notification
@@ -202,8 +206,19 @@ IGNORE=	GSettings support requires DBUS. Please run 'make config'
 
 .include <bsd.port.pre.mk>
 
+# Building with GCC 4.6+ requires it
+.if ${ncurses_ARGS} == "port"
+LDFLAGS+=	-ltinfo
+.endif
+
 .if ${ARCH} == "ia64"
 BROKEN=	Emacs 24.X does not currently build on ia64
+.endif
+
+.if ${PORT_OPTIONS:MGNUTLS3}
+GNUTLS3_RPATH=	-Wl,-rpath,${LOCALBASE}/lib/gnutls3
+.else
+GNUTLS3_RPATH=
 .endif
 
 post-patch:
@@ -212,9 +227,14 @@ post-patch:
 .if defined(WITHOUT_X11)
 	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/' ${WRKSRC}/etc/emacs.desktop
 .endif
+.if ${PORT_OPTIONS:MGNUTLS3}
+	@${REINPLACE_CMD} -e '/HAVE_GNUTLS3=yes/s/gnutls >=/gnutls3 >=/' ${WRKSRC}/configure.ac
+.endif
 
 post-configure:
-	@${REINPLACE_CMD} -e "s/^\(DBUS_LIBS.*\)-pthread\(.*\)$$/\1$$(${DBUS_PTHREAD_LIBS})\2/" ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e "s/^\(DBUS_LIBS.*\)-pthread\(.*\)$$/\1$$(${DBUS_PTHREAD_LIBS})\2/" \
+			  -e 's|%%GNUTLS3_RPATH%%|${GNUTLS3_RPATH}|g' \
+			  ${WRKSRC}/src/Makefile
 
 add-plist-data:
 .for i in ${EMACS_DIRS}

@@ -12,9 +12,8 @@ COMMENT=	Multipurpose relay and more
 
 LICENSE=	GPLv2
 
-USES=		compiler
+USES=		compiler tar:bzip2
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_RC_SUBR=	socat
 USE_OPENSSL=	yes
 
@@ -41,7 +40,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .if ${ARCH} == "arm"

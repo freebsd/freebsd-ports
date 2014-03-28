@@ -1,0 +1,14 @@
+APQ is a database interface library written in Ada95.  This is the base
+library, but it is not useful without a driver.  There are three drivers
+available for PostgreSQL, MySQL, and ODBC in separate ports.
+
+Some features:
+  * Thick binding
+  * Strong typing support
+  * Full BLOB support (PGSQL)
+  * High performance BLOB I/O via streams
+  * Full support for NULL Values
+  * Fully portable (database neutral) code possible
+  * Four levels of debug tracing
+
+WWW: https://bitbucket.org/kowframework/apq

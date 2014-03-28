@@ -1,5 +1,5 @@
---- build.sh.orig	2010-12-28 05:22:08.000000000 +0900
-+++ build.sh	2011-01-04 16:58:54.000000000 +0900
+--- build.sh.orig	2014-02-24 05:44:13.000000000 +0900
++++ build.sh	2014-03-14 21:49:48.000000000 +0900
 @@ -1,7 +1,7 @@
  #!/bin/sh 
  
@@ -9,7 +9,17 @@
  
  CURR_DIR=`pwd`
  PLATFORM="linux-32-gcc-release"
-@@ -217,11 +217,11 @@
+@@ -33,6 +33,9 @@
+     exit 1
+   fi
+   ;;
++FreeBSD)
++  PLATFORM="freebsd-32-gcc-release"
++  ;;
+ *)
+   # Assume Linux for the remaining variants
+   case `arch` in
+@@ -284,11 +287,11 @@
    ;;
  esac
  
@@ -23,7 +33,7 @@
    echo "*** ERROR: unable to locate Qt UIC in $QTBIN"
    exit 1
  fi
-@@ -331,12 +331,12 @@
+@@ -409,12 +412,12 @@
  if [ $WIN_CYGWIN = 0 ]; then
    echo ""
    echo "Final binary is ready in $BIN/$EXEC_NAME."

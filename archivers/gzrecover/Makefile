@@ -25,7 +25,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.mk>

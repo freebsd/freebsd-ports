@@ -73,7 +73,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MAN${f:E}PREFIX}/man/man${f:E}
 .endfor
 
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/nightmode.gbs \
 		${STAGEDIR}${EXAMPLESDIR}
 
@@ -88,7 +88,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/po/${l}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${l}/LC_MESSAGES/gbsplay.mo
 .endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

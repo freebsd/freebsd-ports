@@ -10,9 +10,13 @@ MASTER_SITE_SUBDIR=	bsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide network access to local serial ports and make remote ports appear local
 
-MAN8=		comservd.8
-MANCOMPRESSED=	yes
-PLIST_FILES=	sbin/comservd etc/comservd.conf.sample etc/rc.d/comservd.sh.sample
+PLIST_FILES=	sbin/comservd etc/comservd.conf.sample \
+		etc/rc.d/comservd.sh.sample man/man8/comservd.8.gz
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e '/(INSTALL_|gzip)/ s,(BIN|CONF|MAN|RC)DIR,DESTDIR}$${&,g' \
+		-e 's,-o root -g wheel,,' \
+		${WRKSRC}/Makefile
+
 .include <bsd.port.mk>

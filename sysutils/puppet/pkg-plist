@@ -49,15 +49,17 @@ man/man8/puppet.8.gz
 %%ETCDIR%%/auth.conf-dist
 www/puppet/config.ru
 @exec /usr/sbin/chown -Rh puppet:puppet %D/%F
+@exec /usr/sbin/chown -Rh puppet:puppet /var/puppet
 @dirrm www/puppet/public
 @dirrm www/puppet
 @dirrmtry etc/puppet/modules
 @dirrmtry etc/puppet
-@unexec rmdir /var/puppet 2>/dev/null || :
-@exec /usr/sbin/chown -Rh puppet:puppet /var/puppet
 @dirrm %%RUBY_SITELIBDIR%%/hiera/backend
 @dirrm %%RUBY_SITELIBDIR%%/hiera
 @dirrm %%RUBY_SITELIBDIR%%/puppetx/puppetlabs/syntax_checkers
 @dirrm %%RUBY_SITELIBDIR%%/puppetx/puppetlabs
 @dirrm %%RUBY_SITELIBDIR%%/puppetx/puppet
 @dirrm %%RUBY_SITELIBDIR%%/puppetx
+@cwd /
+@dirrm var/puppet
+@cwd %%RESETPREFIX%%

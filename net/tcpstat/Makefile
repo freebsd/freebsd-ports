@@ -9,10 +9,16 @@ MASTER_SITES=	http://www.frenchfries.net/paul/tcpstat/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to report various network statistics
 
+LICENSE=	BSD2CLAUSE
+
 GNU_CONFIGURE=	yes
 
-DOCS=		AUTHORS ChangeLog LICENSE README doc/Tips_and_Tricks.txt
+PLIST_FILES=	bin/tcpstat bin/tcpprof \
+		man/man1/tcpprof.1.gz man/man1/tcpstat.1.gz
 
+PORTDOCS=	*
+
+DOCS=		AUTHORS ChangeLog README doc/Tips_and_Tricks.txt
 OPTIONS_DEFINE=	DOCS
 
 post-install:

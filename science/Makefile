@@ -174,6 +174,7 @@
     SUBDIR += ruby-gphys
     SUBDIR += ruby-netcdf
     SUBDIR += rubygem-ai4r
+    SUBDIR += rubygem-netcdf
     SUBDIR += sigrok-cli
     SUBDIR += silo
     SUBDIR += simlib

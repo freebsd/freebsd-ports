@@ -27,7 +27,7 @@ RUN_DEPENDS=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
 
 DIST_SUBDIR=	vdr
 PATCH_STRIP=	-p1
-USE_BZIP2=	yes
+USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/}-${DISTVERSION}
 NO_BUILD=	yes
 USE_RC_SUBR=	vdradmind

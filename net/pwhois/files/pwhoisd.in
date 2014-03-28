@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: pwhoisd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable pwhoisd:
+#
+#  pwhoisd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=pwhoisd
+rcvar=pwhoisd_enable
+load_rc_config $name
+
+# Set defaults
+pwhoisd_enable=${pwhoisd_enable:-"NO"}
+
+_logdir=/var/log/pwhois
+_dbdir=/var/db/pwhois
+pidfile=/var/run/pwhoisd.pid
+command=%%PREFIX%%/sbin/pwhoisd
+command_args="-d -u 512 -g 512"
+required_files=%%PREFIX%%/etc/pwhois/pwhoisd.conf
+
+start_precmd=pwhoisd_precmd
+stop_postcmd=pwhoisd_cleanup
+
+pwhoisd_precmd()
+{
+    [ ! -f $pidfile ] && %%TOUCH%% $pidfile && %%CHOWN%% %%USER%%:%%GROUP%% $pidfile
+    [ ! -d $_dbdir ] && %%INSTALL%% -d -o %%USER%% -g %%GROUP%% $_dbdir
+    [ ! -d $_logdir ] && %%INSTALL%% -d -o %%USER%% -g %%GROUP%% $_logdir
+    return 0
+}
+
+pwhoisd_cleanup() {
+    [ -f ${pidfile} ] && %%RM%% ${pidfile}
+}
+
+run_rc_command "$1"

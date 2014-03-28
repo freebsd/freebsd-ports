@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-utils
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Compiler utils
 
-USE_FPC=	chm fcl-base fcl-net fcl-process fcl-res fppkg libcurl
+USE_FPC=	chm fcl-base fcl-net fcl-passrc fcl-process fcl-res fppkg libcurl
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/${PKGNAMESUFFIX:S/-//}

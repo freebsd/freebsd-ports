@@ -5664,6 +5664,7 @@ audio/bmp-scrobbler|multimedia/audacious|2014-03-06|Has expired: Abandonware, pl
 shells/wapsh||2014-03-06|Broken and abandonware
 shells/zoidberg||2014-03-06|Broken and abandonware
 x11-toolkits/py31-tkinter|x11-toolkits/py-tkinter|2014-03-06|Has expired: Depends on expiring lang/python31
+misc/logsurfer+|misc/logsurfer|2014-03-07|Renamed upstream
 net-p2p/i2p|security/i2p|2014-03-07|Category change
 deskutils/phprojekt||2014-03-08|Has expired: No more public distfiles
 deskutils/libopensync-plugin-synce-legacy||2014-03-08|Has expired: No more public distfiles
@@ -5701,7 +5702,6 @@ emulators/cygne-sdl||2014-03-10|Has expired: No more public distfiles
 mail/newmail||2014-03-10|Has expired: No more public distfiles
 x11-toolkits/xscoop||2014-03-10|Has expired: No more public distfiles
 security/didentd||2014-03-10|Has expired: No more public distfiles
-sysutils/wait_on||2014-03-10|Has expired: No more public distfiles
 net/freeswitch-sbc-devel||2014-03-10|Has expired: No more public distfiles
 multimedia/gxanim||2014-03-10|Has expired: No more public distfiles
 www/nd||2014-03-10|Has expired: No more public distfiles
@@ -5768,8 +5768,117 @@ x11-fm/dfm||2014-03-10|Has expired: No more public distfiles
 security/xyssl|security/polarssl|2014-03-10|Has expired: No more public distfiles
 japanese/p5-Mail-SpamAssassin|japanese/spamassassin|2014-03-10|Moved to japanese/spamassassin
 mail/p5-Mail-SpamAssassin|mail/spamassassin|2014-03-10|Moved to mail/spamassassin
-databases/pear-MDB2_Driver_sqlite|2014-03-12||Unmaintained upstream
+databases/pear-MDB2_Driver_sqlite||2014-03-12|Unmaintained upstream
 net/pppd23||2014-03-14|Has expired: Depends on PPPDISC
 net/ipa_ip6fw||2014-03-14|Has expired: Depends on IPv6 ipfw firewall
 palm/synce-hal||2014-03-14|Has expired: Requires pppd
 net/pppoa||2014-03-14|Has expired: Broken on FreeBSD 8 and later since june 2009
+multimedia/linux-huludesktop||2014-03-14|Removed
+multimedia/linux_v4l2wrapper-kmod||2014-03-16|Has expired: Included now in all supported FreeBSD versions
+devel/sgl||2014-03-16|Has expired: S/W never progressed beyond incomplete graduate project; library was never properly built - not worth fixing
+palm/jpilot-db||2014-03-16|Has expired
+databases/ludia||2014-03-18|Has expired: Broken since June 2013
+lang/schemetoc||2014-03-18|Has expired: Broken since July 2013
+sysutils/cfengine-devel||2014-03-19|Has expired: Broken since June 2013
+sysutils/py-salt-cloud|sysutils/py-salt|2014-03-19|Removed:py-salt-cloud is now part of py-salt
+devel/py-pyzmq|net/py-pyzmq|2014-03-22|Move to a more suitable category with other ZeroMQ ports 
+audio/p5-Xmms|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-a52dec|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-audiofile|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-cdread|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-crossfade|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-crystality|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-defx|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-efxmms|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-eq|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-faad|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-fc|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-fxt|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-infopipe|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-jack|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-liveice|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-mac|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-mad|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-midi|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-modplug|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-mp3cue|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-osssurround|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-quix3dn|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-sid|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-sndfile|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-tfmx|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+chinese/xmms|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-blursk|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-dancingparticles|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-dflowers|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-dscope|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-dspectogram|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-dspectral|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-finespectrum|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-fishmatic|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-gdancer|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-iris|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-jess|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-nebulus|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-paranormal|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-scivi|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-vumeter|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+graphics/xmms-waterfall|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+multimedia/gxmms|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+multimedia/xmms-status-plugin|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+russian/xmms|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+x11-themes/xmms-bluecurve-theme|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+x11-themes/xmms-eq-skins|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+x11-themes/xmms-vumeter-skins|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
+mail/mahogany||2014-03-24|Broken with all support compilers
+x11-toolkits/py-wxPython26|x11-toolkits/py-wxPython28|2014-03-24|wxPython26 is EOLed
+x11-toolkits/py-wxPython26-common|x11-toolkits/py-wxPython28-common|2014-03-24|wxPython26 is EOLed
+x11-toolkits/py-wxPython26-unicode|x11-toolkits/py-wxPython28-unicode|2014-03-24|wxPython26 is EOLed
+x11-toolkits/wxgtk26|x11-toolkits/wxgtk28|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-common|x11-toolkits/wxgtk28-common|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-contrib|x11-toolkits/wxgtk28-contrib|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-contrib-common|x11-toolkits/wxgtk28-contrib-common|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-docs|x11-toolkits/wxgtk28-docs|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-unicode|x11-toolkits/wxgtk28-unicode|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-unicode-contrib|x11-toolkits/wxgtk28-unicode-contrib|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk29|x11-toolkits/wxgtk30|2014-03-24|wxGTK 2.9 was a developement version superseeded by the 3.0 release
+accessibility/ruby-atk||2014-03-24|Has expired: Use rubygem-atk instead
+devel/ruby-gio2||2014-03-24|Has expired: Use rubygem-gio2 instead
+devel/ruby-glib2||2014-03-24|Has expired: Use rubygem-glib2 instead
+graphics/ruby-cairo||2014-03-24|Has expired: Use rubygem-cairo instead
+graphics/ruby-gdk_pixbuf2||2014-03-24|Has expired: Use rubygem-gdk_pixbuf2 instead
+graphics/ruby-rsvg2||2014-03-24|Has expired: Use rubygem-rsvg2 instead
+x11-toolkits/ruby-goocanvas||2014-03-24|Has expired: No longer included upstream
+x11-toolkits/ruby-gstreamer||2014-03-24|Has expired: Use rubygem-gstreamer instead
+x11-toolkits/ruby-gtk2||2014-03-24|Has expired: Use rubygem-gtk2 instead
+x11-toolkits/ruby-gtksourceview2||2014-03-24|Has expired: Use rubygem-gtksourceview2 instead
+x11-toolkits/ruby-pango||2014-03-24|Has expired: Use rubygem-pango instead
+x11-toolkits/ruby-poppler||2014-03-24|Has expired: Use rubygem-poppler instead
+x11-toolkits/ruby-vte||2014-03-24|Has expired: Use rubygem-vte instead
+x11/ruby-gnome2||2014-03-24|Has expired: Use rubygem-gnome2 instead
+deskutils/lxshortcut||2014-03-24|Has expired: Now distributed with x11/libfm-1.2.0
+databases/p5-Ima-DBI-Contextual||2014-03-24|Has expired: deprecated by upstream
+databases/p5-Class-DBI-Lite||2014-03-24|Has expired: deprecated by upstream
+net/AquaGatekeeper||2014-03-24|Has expired: Binary port of software abandoned by the vendor
+mail/mailutils||2014-03-24|Has expired: This port needs to be taken care of, it suffers from bit rot.  Especially with options other than GUILE, uninstall may leave files behind
+games/xflame||2014-03-24|Has expired: No more public distfiles
+games/p5-Algorithm-Pair-Best|games/p5-Algorithm-Pair-Best2|2014-03-24|Has expired: Use games/p5-Algorithm-Pair-Best2 instead
+x11-wm/hackedbox||2014-03-24|Has expired: Abandonware
+emulators/hfs|sysutils/hfsutils|2014-03-24|Has expired: No upstream, no public distfiles; consider using 'sysutils/hfsutils'
+games/fuhquake||2014-03-24|Has expired: Upstream disappeared; no more public distfiles; unmaintained
+games/xarchon||2014-03-25|Has expired: Unusable, development ceased, not works with stage
+lang/libstdc++_stldoc_3.4.0||2014-03-25|STL 3.4 is not supported for long
+games/linux-warsow||2014-03-26|Has expired: outdated, broken
+audio/pysol-sound-server|games/pysolfc|2014-03-28|Has expired: Broken, abondonware, use pysolfc
+games/pysol-cardsets|games/pysolfc|2014-03-28|Has expired: Broken, abondonware, use pysolfc
+games/pysol-music|games/pysolfc|2014-03-28|Has expired: Broken, abondonware, use pysolfc
+games/pysol|games/pysolfc|2014-03-28|Has expired: Broken, abondonware, use pysolfc
+devel/ros_tutorials||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+math/ros-geometry||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+devel/ros-nxt||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+devel/ros-rx||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+devel/R-cran-vcd||2014-03-28|Has expired: New port without proper maintainer
+devel/ros-documentation||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+devel/ros-common_msgs||2014-03-28|Has expired: Depends on expiring devel/ros_comm
+devel/ros_comm||2014-03-28|Has expired: Broken for more than 6 months
+devel/cross-gdb||2014-03-28|Has expired: No more public distfiles, unstaged

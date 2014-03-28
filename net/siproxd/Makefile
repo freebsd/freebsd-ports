@@ -10,7 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	A proxy/masquerading daemon for the SIP protocol
 
-LIB_DEPENDS=	osip2.9:${PORTSDIR}/net/libosip
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libosip2.so:${PORTSDIR}/net/libosip
 
 USE_RC_SUBR=	siproxd
 GNU_CONFIGURE=	yes
@@ -21,7 +23,6 @@ PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \
 		sample_cfg_budgetone.txt sample_cfg_x-lite.txt
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -37,14 +38,16 @@ post-extract:
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	${CP} ${WRKSRC}/doc/siproxd.conf.example ${PREFIX}/etc
-	${CP} ${WRKSRC}/doc/siproxd_passwd.cfg ${PREFIX}/etc
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${CP} ${WRKSRC}/doc/siproxd.conf.example ${STAGEDIR}${PREFIX}/etc
+	${CP} ${WRKSRC}/doc/siproxd_passwd.cfg ${STAGEDIR}${PREFIX}/etc
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/siproxd/plugin_defaulttarget.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/siproxd/plugin_demo.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/siproxd/plugin_fix_bogus_via.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/siproxd/plugin_logcall.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/siproxd/plugin_shortdial.so
 
 .include <bsd.port.post.mk>

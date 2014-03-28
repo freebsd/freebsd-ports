@@ -56,6 +56,9 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.14.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.15.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.16.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.17.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.18.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.19.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.2-2012-03-05.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.3-2012-03-13.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.4-2012-03-18.sql
@@ -73,6 +76,9 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.14.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.15.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.16.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.17.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.18.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.19.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.2-2012-03-05.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.3-2012-03-13.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.4-2012-03-18.sql
@@ -3563,6 +3569,8 @@
 %%WWWDIR%%/libraries/joomla/utilities/utility.php
 %%WWWDIR%%/libraries/joomla/utilities/xmlelement.php
 %%WWWDIR%%/libraries/loader.php
+%%WWWDIR%%/libraries/phpass/PasswordHash.php
+%%WWWDIR%%/libraries/phpass/index.html
 %%WWWDIR%%/libraries/phpmailer/LICENSE
 %%WWWDIR%%/libraries/phpmailer/index.html
 %%WWWDIR%%/libraries/phpmailer/language/index.html
@@ -6017,6 +6025,7 @@
 @dirrmtry %%WWWDIR%%/libraries/phputf8
 @dirrmtry %%WWWDIR%%/libraries/phpmailer/language
 @dirrmtry %%WWWDIR%%/libraries/phpmailer
+@dirrmtry %%WWWDIR%%/libraries/phpass
 @dirrmtry %%WWWDIR%%/libraries/joomla/utilities
 @dirrmtry %%WWWDIR%%/libraries/joomla/user
 @dirrmtry %%WWWDIR%%/libraries/joomla/updater/adapters

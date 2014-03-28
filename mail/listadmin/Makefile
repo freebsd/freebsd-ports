@@ -14,15 +14,16 @@ RUN_DEPENDS=	p5-Text-Reform>=0:${PORTSDIR}/textproc/p5-Text-Reform \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 
-PLIST_FILES=	bin/listadmin
-MAN1=		listadmin.1
+PLIST_FILES=	bin/listadmin man/man1/listadmin.1.gz
+SHEBANG_FILES=	listadmin.pl
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/listadmin.pl ${PREFIX}/bin/listadmin
-	@${INSTALL_MAN} ${WRKSRC}/listadmin.man ${MAN1PREFIX}/man/man1/listadmin.1
+	${INSTALL_SCRIPT} ${WRKSRC}/listadmin.pl \
+		${STAGEDIR}${PREFIX}/bin/listadmin
+	${INSTALL_MAN} ${WRKSRC}/listadmin.man \
+		${STAGEDIR}${MANPREFIX}/man/man1/listadmin.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	matreshka
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://forge.ada-ru.org/matreshka/downloads/
 
@@ -21,11 +21,6 @@ NO_MTREE=	yes
 OPTIONS_DEFINE=	SQLITE3 FIREBIRD PGSQL MYSQL ORACLE AMF
 OPTIONS_DEFAULT=SQLITE3 FIREBIRD PGSQL MYSQL
 
-#FIREBIRD option requires Ada-2012; disable until new compiler arrives
-#Excluding option breaks X_CONFIGURE_ENABLE, so manually set that too
-OPTIONS_EXCLUDE=FIREBIRD
-CONFIGURE_ARGS+= --disable-firebird
-
 AMF_DESC=	Build Ada Modeling Framework
 
 SQLITE3_CONFIGURE_ENABLE=	sqlite3
@@ -36,7 +31,6 @@ ORACLE_CONFIGURE_ENABLE=	oracle
 AMF_CONFIGURE_ENABLE=		amf
 
 MAKE_JOBS_UNSAFE=	yes
-NO_LICENSES_INSTALL=	yes
 
 MAKE_ENV+=	SMP_MFLAGS=-j${MAKE_JOBS_NUMBER}
 
@@ -60,11 +54,11 @@ USE_SQLITE= yes
 .endif
 
 pre-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GMAKE} config
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE_CMD} config
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${TMPPLIST}
+	   ${SORT} >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
 	   ${SED} -e '/lib\/gnat$$/d' -e 's/^/@dirrm /g' >> ${TMPPLIST}
 	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}

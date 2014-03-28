@@ -2,7 +2,7 @@
 
 PORTNAME=	mariadb
 PORTVERSION=	5.3.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
@@ -48,11 +48,7 @@ OPENSSL_DESC=	Use OpenSSL instead of bundled yassl
 
 
 .if !defined(MARIADB_CLIENT_SLAVE)
-CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE}
-LIB_DEPENDS+=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
-CFLAGS+=	-I${LOCALBASE}/include/event2/compat \
-		-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/event2
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 MANS=	innochecksum.1 my_print_defaults.1 myisam_ftdump.1 myisamchk.1 \
 	myisamlog.1 myisampack.1 mysql.server.1 mysql_client_test_embedded.1 \
@@ -275,7 +271,6 @@ EXTRA_PATCHES+=	${FILESDIR}/scripts__Makefile.in
 MDB_SERVER_SUBDIRS=	include @docs_dirs@ sql-common libservices mysys strings dbug ${MDB_EXTRA_SUBDIRS} unittest cmd-line-utils libmysql scripts @sql_server_dirs@ @sql_server@ @man_dirs@ @libmysqld_dirs@ support-files
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-levent|-levent-2.0|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|%%SUBDIRS%%|${MDB_SERVER_SUBDIRS}|" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|%%MANS%%|${MANS}|" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|^\(install:\).*|\1|" ${WRKSRC}/mysql-test/Makefile.in ${WRKSRC}/sql-bench/Makefile.in

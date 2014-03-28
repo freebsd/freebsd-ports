@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	tigervnc
-PORTVERSION=	1.3.0
-PORTREVISION=	4
+PORTVERSION=	1.3.1
+PORTREVISION=	0
 CATEGORIES=	net x11-servers
 MASTER_SITES=	SF:tigervnc
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}/:tigervnc
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2:tigervnc
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:tigervnc
 
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	High-performance, platform-neutral implementation of VNC

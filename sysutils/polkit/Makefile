@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-systemd \
 		--enable-introspection \
 		--localstatedir=/var
+MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ENV=	GTKDOC="false"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

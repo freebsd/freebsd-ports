@@ -13,6 +13,9 @@ COMMENT=	XMMS input plugin for playing 8bit Atari(TM) .sap audio files
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
@@ -51,7 +54,7 @@ post-patch:
 		${WRKSRC}/saplib/Makefile
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
 	${INSTALL_DATA} ${WRKSRC}/libsap.so \
 		${STAGEDIR}${PREFIX}/lib/xmms/Input/libsap.so
 

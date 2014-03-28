@@ -1,6 +1,14 @@
---- Imakefile.orig	Tue Jun 20 07:20:55 1995
-+++ Imakefile	Fri Nov 17 21:27:09 2000
-@@ -79,6 +79,10 @@
+--- Imakefile.orig	1995-06-19 15:20:55.000000000 -0700
++++ Imakefile	2014-03-25 21:44:23.829815727 -0700
+@@ -8,6 +8,7 @@
+ #endif
+ 
+ #CC = gcc
++CCOPTIONS=-O0
+ 
+ #if mc68000			/* for SUN 3 */
+ CCOPTIONS=-m68881
+@@ -79,11 +80,15 @@
  # Add to open all windows at startup
  #DEFINES+=-DOPEN_ALL_WINDOWS
  
@@ -11,3 +19,9 @@
  mallocc = #malloc.c
  malloco = #malloc.o
  
+         DEPLIBS = $(DEPXAWLIB) $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB)
+-LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
++LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) -lutil
+ 
+            SRCS = calldbx.c command.c dbx.c dialog.c datadpy.c filemenu.c \
+ 		  handler.c parser.c regex.c signs.c signals.c source.c \

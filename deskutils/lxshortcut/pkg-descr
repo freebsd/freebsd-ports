@@ -1,9 +1,0 @@
-LXShortcut is a small program used to edit easily application shortcuts
-created with freedesktop.org Desktop Entry spec.
-
-It’s mainly designed to be called by other LXDE components, and not directly
-used by the users. If you want to use it manually, see
-
-     lxshortcut --help
-
-WWW: http://wiki.lxde.org/en/LXShortCut

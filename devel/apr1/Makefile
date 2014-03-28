@@ -26,7 +26,7 @@ NDBM_DESC=	NDBM support
 SSL_DESC=	OpenSSL crypto driver
 NSS_DESC=	NSS crypto driver
 
-APR_VERSION=	1.4.8
+APR_VERSION=	1.5.0
 APU_VERSION=	1.5.3
 
 USES=		iconv pathfix
@@ -38,7 +38,7 @@ APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
 APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
 
 PLIST_SUB+=	SHLIB_APR_MAJOR="${SHLIB_APR_MAJOR}" SHLIB_APU_MAJOR="${SHLIB_APU_MAJOR}"
-SHLIB_APR_MAJOR=	4
+SHLIB_APR_MAJOR=	5
 SHLIB_APU_MAJOR=	5
 
 APR_CONF_ARGS=	--with-installbuilddir=${DATADIR}/build-1
@@ -81,7 +81,7 @@ APU_CONF_ARGS+=	--without-gdbm
 .if ${PORT_OPTIONS:MBDB}
 APU_EXTRAS=	yes
 PLIST_SUB+=	BDB=""
-USE_BDB=	42+
+USE_BDB=	48+
 APU_CONF_ARGS+=	--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
 .else
 PLIST_SUB+=	BDB="@comment "
@@ -200,19 +200,17 @@ post-patch:
 
 do-configure:
 	@(cd ${APR_WRKDIR} && \
-		${SETENV} ${CONFIGURE_ENV} \
-		./configure ${CONFIGURE_ARGS} ${APR_CONF_ARGS})
+		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} ${APR_CONF_ARGS})
 	@(cd ${APU_WRKDIR} && \
-		${SETENV} ${CONFIGURE_ENV} \
-		./configure ${CONFIGURE_ARGS} ${APU_CONF_ARGS})
+		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} ${APU_CONF_ARGS})
 
 do-build:
 	@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS})
 	@(cd ${APU_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS})
 
 do-install:
-	@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET} ${MAKE_ARGS} )
-	@(cd ${APU_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET} ${MAKE_ARGS} )
+	@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET} ${MAKE_ARGS})
+	@(cd ${APU_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET} ${MAKE_ARGS})
 
 test: build
 	-@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} test)

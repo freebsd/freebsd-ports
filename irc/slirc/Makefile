@@ -14,7 +14,7 @@ COMMENT=	A SLang-based IRC client
 
 LIB_DEPENDS=	${LIB_DEPENDS_LIBSLANG}
 
-USE_GMAKE=	yes
+USES=		gmake
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

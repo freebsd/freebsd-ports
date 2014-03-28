@@ -1,0 +1,11 @@
+--- tilt-1.4.1.gemspec.orig	2014-03-22 22:37:21.538619659 +0000
++++ tilt-1.4.1.gemspec	2014-03-22 22:39:47.694609404 +0000
+@@ -381,8 +381,6 @@
+         version: '0'
+ description: Generic interface to multiple Ruby template engines
+ email: r@tomayko.com
+-executables:
+-- tilt
+ extensions: []
+ extra_rdoc_files: []
+ files:

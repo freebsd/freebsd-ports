@@ -8,11 +8,13 @@ CATEGORIES=	devel net
 MASTER_SITES=	SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	A socket abstraction library for C programmers
+COMMENT=	Socket abstraction library for C programmers
 
-LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
-USE_BZIP2=	yes
+OPTIONS_DEFINE=	DEBUG
+
+USES=		tar:bzip2 desthack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-throttling \
@@ -24,19 +26,16 @@ PLIST_FILES=	lib/libmsocket.so \
 		include/msocket.h \
 		include/msocketutils.h
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+CFLAGS_amd64+=	-fPIC -DPIC
+CFLAGS_iad64+=	-fPIC -DPIC
 
-.if ${ARCH} != "i386"
-CFLAGS+=	-fPIC -DPIC
-.endif
-
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
+DEBUG_CONFIGURE_ON=	--enable-debug
 
 post-patch:
 	${REINPLACE_CMD} 's,  withval=$$with_libevent; cf_enable_libevent=$$enableval,   withval=$$with_libevent; cf_enable_libevent=$$with_libevent,' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+post-install:
+	${LN} -sf libmsocket.so.0.1 ${STAGEDIR}${PREFIX}/lib/libmsocket.so
+
+.include <bsd.port.mk>

@@ -1,5 +1,5 @@
-%%WWWDIR%%/CAcert-ssl-security.png
-%%WWWDIR%%/README
-%%WWWDIR%%/config.inc.php.dist
-%%WWWDIR%%/login_info.php
-@dirrmtry %%WWWDIR%%
+%%PLUGDIR%%/CAcert-ssl-security.png
+%%PLUGDIR%%/README
+%%PLUGDIR%%/config.inc.php.dist
+%%PLUGDIR%%/login_info.php
+@dirrmtry %%PLUGDIR%%

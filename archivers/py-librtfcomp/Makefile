@@ -1,6 +1,7 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,11 +12,11 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${LOCALBASE}/bin/pyrexc:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	librtfcomp.so:${PORTSDIR}/archivers/librtfcomp
 
-USE_PYTHON=	yes
+USE_PYTHON=	2
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
-PLIST=		# empty
+PLIST=		${NONEXISTENT}
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pyrtfcomp.a \
 		%%PYTHON_SITELIBDIR%%/pyrtfcomp.la \

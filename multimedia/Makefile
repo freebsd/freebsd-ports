@@ -60,6 +60,7 @@
     SUBDIR += flvtool++
     SUBDIR += fpc-dts
     SUBDIR += fpc-matroska
+    SUBDIR += fpc-libvlc
     SUBDIR += freetuxtv
     SUBDIR += freevo
     SUBDIR += fxtv
@@ -137,7 +138,6 @@
     SUBDIR += gtk-recordmydesktop
     SUBDIR += gtk-youtube-viewer
     SUBDIR += gxine
-    SUBDIR += gxmms
     SUBDIR += handbrake
     SUBDIR += hs-gstreamer
     SUBDIR += imagination
@@ -192,12 +192,10 @@
     SUBDIR += libxspf
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f10-libv4l
-    SUBDIR += linux-huludesktop
     SUBDIR += linux-realplayer
     SUBDIR += linux-tsmuxer
     SUBDIR += linux-xmovie
     SUBDIR += linux_dvbwrapper-kmod
-    SUBDIR += linux_v4l2wrapper-kmod
     SUBDIR += lives
     SUBDIR += livestreamer
     SUBDIR += lsdvd
@@ -395,7 +393,6 @@
     SUBDIR += xmms
     SUBDIR += xmms-skins
     SUBDIR += xmms-skins-huge
-    SUBDIR += xmms-status-plugin
     SUBDIR += xmms-weasel
     SUBDIR += xporthdmv
     SUBDIR += xtheater

@@ -8,13 +8,11 @@ CATEGORIES=	graphics devel java
 MASTER_SITES=http://download.java.net/media/jogl/builds/archive/jsr-231-1.1.1/
 EXTRACT_SUFX=	-src.zip
 
-MAINTAINER=	peterjeremy@optushome.com.au
+MAINTAINER=	peterj@FreeBSD.org
 COMMENT=	Java bindings for OpenGL
 
-LIB_DEPENDS=	drm.2:${PORTSDIR}/graphics/libdrm
-BUILD_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper     \
-		${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
+BUILD_DEPENDS=	${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr
 
 CONFLICTS=	jogamp-jogl-*
 
@@ -23,9 +21,6 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 ALL_TARGET=	all
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadoc
-.endif
 
 # Java currently only supports i386 and amd64.  Supporting additional
 # architectures will need patches to at least
@@ -45,8 +40,17 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
 BUILD_WRKSRC=	${WRKSRC}/jogl/make
+BUILD_BINPATH=	${WRKSRC}/bin
+MAKE_ENV+=	PATH="${BUILD_BINPATH}:${PATH}"
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	javadoc
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|g' \
 		${WRKSRC}/gluegen/make/build.xml
@@ -54,18 +58,22 @@ post-patch:
 			  -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/jogl/make/build.xml
 
+pre-build:
+	${MKDIR} ${BUILD_BINPATH}
+	${LN} -sf /usr/bin/cc ${BUILD_BINPATH}/gcc
+
 do-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DATADIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/jogl/doc/userguide/index.html \
-		${DATADIR}/UserGuide.html
+		${STAGEDIR}${DATADIR}/UserGuide.html
 	cd ${BUILD_WRKSRC}/../javadoc_public && \
-		${FIND} . -print | ${CPIO} -pdm ${DATADIR}
+		${FIND} . -print | ${CPIO} -pdm ${STAGEDIR}${DATADIR}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/gluegen/build/obj/libgluegen-rt.so \
 		${WRKSRC}/jogl/build/obj/libjogl.so \
-		${WRKSRC}/jogl/build/obj/libjogl_awt.so ${PREFIX}/lib
+		${WRKSRC}/jogl/build/obj/libjogl_awt.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/gluegen/build/gluegen-rt.jar \
-		${WRKSRC}/jogl/build/jogl.jar ${JAVAJARDIR}
+		${WRKSRC}/jogl/build/jogl.jar ${STAGEDIR}${JAVAJARDIR}
 
 .include <bsd.port.mk>

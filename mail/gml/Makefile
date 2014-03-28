@@ -20,23 +20,18 @@ PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|.exe||g' \
 		-e 's|"c:\\mail\\Inbox.*"|/home/user/Inbox|g' ${WRKDIR}/*
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.py \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

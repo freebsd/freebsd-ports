@@ -1,12 +1,26 @@
-diff --git browser/themes/moz.build browser/themes/moz.build
-index d82bda3..86d343d 100644
---- browser/themes/moz.build
-+++ browser/themes/moz.build
-@@ -9,6 +9,7 @@ toolkit = CONFIG['MOZ_WIDGET_TOOLKIT']
- if toolkit == 'cocoa':
-     DIRS += ['osx']
- elif toolkit in ('gtk2', 'gtk3', 'qt'):
-+    DEFINES += ['-DXP_LINUX']
-     DIRS += ['linux']
- else:
-     DIRS += ['windows']
+diff --git browser/themes/shared/devtools/common.inc.css browser/themes/shared/devtools/common.inc.css
+index 268164e..922f21a 100644
+--- browser/themes/shared/devtools/common.inc.css
++++ browser/themes/shared/devtools/common.inc.css
+@@ -14,7 +14,7 @@
+   background-color: transparent;
+   background-image: linear-gradient(to bottom, hsla(209,18%,18%,0.9), hsl(210,11%,16%));
+   border-radius: 3px;
+-%ifdef XP_LINUX
++%if defined(MOZ_WIDGET_GTK) || defined(MOZ_WIDGET_QT)
+   max-height: 32rem;
+ %else
+   max-height: 40rem;
+diff --git browser/themes/shared/devtools/highlighter.inc.css browser/themes/shared/devtools/highlighter.inc.css
+index 3d5ae51..3fb4b01 100644
+--- browser/themes/shared/devtools/highlighter.inc.css
++++ browser/themes/shared/devtools/highlighter.inc.css
+@@ -54,7 +54,7 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
+   padding: 0;
+   width: 26px;
+   min-height: 26px;
+-%ifndef XP_LINUX
++%if !defined(MOZ_WIDGET_GTK) && !defined(MOZ_WIDGET_QT)
+   background-color: transparent;
+ %endif
+ }

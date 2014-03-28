@@ -1,13 +1,12 @@
 # $FreeBSD$
 #
-# MAINTAINER: x11@FreeBSD.org
-#
 # Feature:	display
 # Usage:	USES=display or USES=display:ARGS
 # Valid ARGS:	install (default, implicit), any target
 # 
 # Except the target where the DISPLAY is needed
 #
+# MAINTAINER: x11@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_DISPLAY_MK)
 _INCLUDE_USES_DISPLAY_MK=	yes

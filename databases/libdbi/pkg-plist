@@ -5,6 +5,7 @@ lib/libdbi.a
 lib/libdbi.la
 lib/libdbi.so
 lib/libdbi.so.2
+libdata/pkgconfig/dbi.pc
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/contact.html
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/copying-fdl.html

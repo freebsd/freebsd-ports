@@ -2,11 +2,11 @@
 #
 # handle zip archives
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	zip
 # Usage:	USES=zip[:infozip]
 #
+# MAINTAINER: portmgr@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_ZIP_Mk)
 _INCLUDE_USES_ZIP_MK=	yes
 

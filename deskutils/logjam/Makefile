@@ -13,14 +13,11 @@ COMMENT=	A GTK2 interface to livejournals, ie www.livejournal.com
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-MAN1=		logjam.1
-
-USES=		pkgconfig
+USES=		pkgconfig gmake pathfix
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20 libxml2 intlhack
+USE_GNOME=	gnomeprefix gtk20 libxml2 intlhack
 CONFIGURE_ARGS=	--program-transform-name="s/$$//"
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -44,7 +41,6 @@ PLIST_SUB+=		WITH_XMMS="@comment "
 CONFIGURE_ARGS+=	--without-xmms
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtkhtml3}!=""

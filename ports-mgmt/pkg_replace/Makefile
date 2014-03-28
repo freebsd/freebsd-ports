@@ -3,7 +3,7 @@
 
 PORTNAME=	pkg_replace
 PORTVERSION=	0.8.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	portutil/22116
@@ -14,20 +14,16 @@ PATCHFILES=	${PKGNAME}.patch
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
 COMMENT=	Utility for upgrading installed packages
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		PORTSDIR="${PORTSDIR}" PKG_DBDIR="${PKG_DBDIR}"
 
-OPTIONS_DEFINE=	ZSH
-
-.if empty(WITH_PKGNG)
-OPTIONS_DEFINE+=	PKGDB_FIX
+OPTIONS_DEFINE=	PKGDB_FIX ZSH
 PKGDB_FIX_DESC=	Fixing tool of installed package dependencies
-.else
-PLIST_SUB+=	PKGDB_FIX="@comment "
-.endif
 
 OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/pkg_replace/pkg_replace pkgdb_fix/' ${WRKSRC}/sbin/Makefile
@@ -35,5 +31,10 @@ post-patch:
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+
+.if defined(WITH_PKGNG)
+post-install:
+	@${REINPLACE_CMD} -e '/pkgdb_fix/d' ${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>

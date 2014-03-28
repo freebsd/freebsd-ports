@@ -1,0 +1,28 @@
+--- afay/aflex/src/dfaB.a.orig	2004-10-16 16:41:22.000000000 +0000
++++ afay/aflex/src/dfaB.a
+@@ -496,7 +496,11 @@ package body DFA is
+         NSET(NUMSTATES) := NFA.MKBRANCH(SCBOL(CNT/2), SCSET(CNT/2)); 
+       end if; 
+ 
+-      DFA.EPSCLOSURE(NSET, NUMSTATES, ACCSET, NACC, HASHVAL, NSET); 
++      declare
++        NSET_COPY : INT_PTR := NSET;
++      begin
++        DFA.EPSCLOSURE(NSET_COPY, NUMSTATES, ACCSET, NACC, HASHVAL, NSET); 
++      end;
+ 
+       SNSTODS(NSET, NUMSTATES, ACCSET, NACC, HASHVAL, DS, SNSRESULT); 
+       if (SNSRESULT) then 
+@@ -548,7 +552,11 @@ package body DFA is
+           if (DUPLIST(SYM) = NIL) then 
+           -- symbol has unique out-transitions
+             NUMSTATES := SYMFOLLOWSET(DSET, DSIZE, SYM, NSET); 
+-            DFA.EPSCLOSURE(NSET, NUMSTATES, ACCSET, NACC, HASHVAL, NSET); 
++            declare
++              NSET_COPY : INT_PTR := NSET;
++            begin
++              DFA.EPSCLOSURE(NSET_COPY, NUMSTATES, ACCSET, NACC, HASHVAL, NSET); 
++            end;
+ 
+             SNSTODS(NSET, NUMSTATES, ACCSET, NACC, HASHVAL, NEWDS, SNSRESULT); 
+             if (SNSRESULT) then 

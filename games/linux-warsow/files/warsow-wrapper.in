@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd %%PREFIX%%/lib/linux-warsow || exit 1
-exec ./warsow "$@"

@@ -12,14 +12,13 @@ COMMENT=	Generating menus for Bbox, Fbox, Obox, WM and E
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-PLIST_FILES=	bin/genmenu
+USES=		shebangfix
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e "s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|" ${WRKSRC}/genmenu
+PLIST_FILES=	bin/genmenu
+SHEBANG_FILES=	genmenu
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/genmenu ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/genmenu ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

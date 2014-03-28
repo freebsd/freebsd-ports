@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chessx
-DISTVERSION=	1-0-0
+DISTVERSION=	1-1-0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -11,10 +11,12 @@ COMMENT=	Qt 4 chess database application
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		shared-mime-info qmake
+USES=		desktop-file-utils shared-mime-info qmake
 USE_QT4=	corelib gui svg xml network linguist_build \
 		moc_build qmake_build rcc_build uic_build
 QMAKE_ARGS+=	QMAKE_LRELEASE=${LRELEASE}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	STOCKFISH CRAFTY
 

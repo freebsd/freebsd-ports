@@ -173,6 +173,7 @@ CONFIGURE_ARGS+=	--with-umfpack-include=${LOCALBASE}/include \
 .if ! ${PORT_OPTIONS:MMATIO}
 CONFIGURE_ARGS+=	--without-matio
 .else
+BROKEN=		doesn't build with modern matio
 LIB_DEPENDS+=	libmatio.so:${PORTSDIR}/math/matio
 .endif
 

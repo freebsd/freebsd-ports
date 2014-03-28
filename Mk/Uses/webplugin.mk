@@ -1,7 +1,5 @@
 # $FreeBSD$
 #
-# MAINTAINER= gecko@FreeBSD.org
-#
 # Documentation and examples:
 #
 # Feature:	webplugin
@@ -104,6 +102,8 @@
 #	/usr/local/lib/browser_plugins/symlinks/gecko/fooplugin.so -> /usr/local/lib/application/fooplugin.so
 #	/usr/local/lib/browser_plugins/symlinks/gecko/fooplugin.xpi -> /usr/local/lib/application/fooplugin.xpi
 #	------------------------------------------------------
+#
+# MAINTAINER= gecko@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_WEBPLUGIN_MK)
 _INCLUDE_USES_WEBPLUGIN_MK=	yes

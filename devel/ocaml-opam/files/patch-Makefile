@@ -1,0 +1,10 @@
+--- Makefile.orig	2014-01-14 17:04:37.000000000 +0100
++++ Makefile
+@@ -1,6 +1,6 @@
+ -include Makefile.config
+ 
+-LOCAL_OCPBUILD=./ocp-build/ocp-build -no-use-ocamlfind
++LOCAL_OCPBUILD=./ocp-build/ocp-build -no-use-ocamlfind -no-user-prefs
+ OCPBUILD ?= $(LOCAL_OCPBUILD)
+ SRC_EXT=src_ext
+ TARGETS = opam opam-admin opam-installer

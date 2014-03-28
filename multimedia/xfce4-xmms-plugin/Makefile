@@ -12,6 +12,9 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce4 XMMS control plugin for xfce4-panel
 
+DEPRECATED=	Abandonware, and can't select another player instead XMMS
+EXPIRATION_DATE=	2014-04-27
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USES=		gettext gmake pkgconfig

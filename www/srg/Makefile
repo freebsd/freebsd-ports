@@ -8,12 +8,12 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://mirror.crc.net.nz/pub/srg/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Squid Report Generator
+COMMENT=	Squid Report Generator
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	EXAMPLES

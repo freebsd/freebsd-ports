@@ -19,10 +19,8 @@ NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${_DISTDIR}/${DISTFILES} ${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${_DISTDIR}/${DISTFILES} \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
 .include <bsd.port.mk>

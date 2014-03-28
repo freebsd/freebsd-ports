@@ -13,26 +13,21 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library providing access to ``dictionary'' data structures
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
-NO_STAGE=	yes
 post-extract:
 .	for ___f in avl_insert.pdf empty.pdf treap_insert.pdf
 	@${CP} ${DISTDIR}/${___f} ${WRKSRC}/
 .	endfor
 
-pre-install:
-	-@${MKDIR} ${PREFIX}/include/
-	-@${MKDIR} ${PREFIX}/lib/
-.ifndef(NOPORTDOCS)
-	-@${MKDIR} ${DOCSDIR}
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for ___f in avl_insert.pdf empty.pdf treap_insert.pdf
-	@${CP} ${WRKSRC}/${___f} ${DOCSDIR}
+	@${CP} ${WRKSRC}/${___f} ${STAGEDIR}${DOCSDIR}
 .	endfor
-.endif
 
 .include <bsd.port.mk>

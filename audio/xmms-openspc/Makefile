@@ -12,6 +12,9 @@ DISTNAME=	xmms-OpenSPC-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	An SPC player for XMMS using OpenSPC
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

@@ -76,10 +76,10 @@
  	  /* if a user tries to set the size to 0 set it to 1KB */
 --- servconf.c.orig	2013-10-11 09:24:44.734138483 -0500
 +++ servconf.c	2013-10-11 09:25:50.777137928 -0500
-@@ -305,10 +305,16 @@ fill_default_server_options(ServerOption
+@@ -303,10 +303,16 @@
+ 	}
+ 	if (options->permit_tun == -1)
  		options->permit_tun = SSH_TUNMODE_NO;
- 	if (options->zero_knowledge_password_authentication == -1)
- 		options->zero_knowledge_password_authentication = 0;
 +#ifdef NONECIPHER
  	if (options->none_enabled == -1) 
 +#endif

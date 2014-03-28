@@ -1,7 +1,5 @@
 # $FreeBSD$
 #
-# Handle dependency on File Alteration Monitor
-#
 # MAINTAINER: portmgr@FreeBSD.org
 #
 # Feature:	fam
@@ -12,7 +10,8 @@
 # Usage:	WITH_FAM_SYSTEM=ARG
 # Valid ARG:	gamin (default), fam
 #
-#
+# Handle dependency on File Alteration Monitor
+
 .if !defined(_INCLUDE_USES_FAM_MK)
 _INCLUDE_USES_FAM_MK=	yes
 

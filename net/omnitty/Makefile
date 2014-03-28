@@ -10,24 +10,21 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A curses-based SSH multiplexer
 
-LIB_DEPENDS=	rote:${PORTSDIR}/devel/rote
+LIB_DEPENDS=	librote.so:${PORTSDIR}/devel/rote
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 ALL_TARGET=	${PORTNAME}
 
-MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/omnitty man/man1/omnitty.1.gz
 
-PLIST_FILES=	bin/${PORTNAME}
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's|<alloca.h>|<stdlib.h>|' \
 		${WRKSRC}/machmgr.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

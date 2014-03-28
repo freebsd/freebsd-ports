@@ -8,18 +8,16 @@ CATEGORIES=	x11
 MASTER_SITES=	LOCAL/marcus
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	A tool to add reactivity to the edges and corners of the GNOME desktop
+COMMENT=	Tool to add reactivity to the edges and corners of the GNOME desktop
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pathfix pkgconfig tar:bzip2
 USE_XORG=	x11 xt
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehack libwnck libgnomeui
+USE_GNOME=	gnomeprefix libwnck libgnomeui
 CONFIGURE_ARGS=	--enable-tray-icon
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	brightside.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

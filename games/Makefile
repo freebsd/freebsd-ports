@@ -96,6 +96,7 @@
     SUBDIR += bombherman
     SUBDIR += bombz
     SUBDIR += bomns
+    SUBDIR += bomns3
     SUBDIR += boswars
     SUBDIR += bouncy
     SUBDIR += bovo
@@ -156,6 +157,7 @@
     SUBDIR += cosmosmash
     SUBDIR += cowsay
     SUBDIR += crack-attack
+    SUBDIR += craft
     SUBDIR += crafty
     SUBDIR += crafty-open-enormous
     SUBDIR += crafty-open-large
@@ -301,7 +303,6 @@
     SUBDIR += frozen-bubble
     SUBDIR += fteqw
     SUBDIR += ftjava
-    SUBDIR += fuhquake
     SUBDIR += funnyboat
     SUBDIR += fxsudoku
     SUBDIR += galaxis
@@ -563,7 +564,6 @@
     SUBDIR += linux-ut2003-demo
     SUBDIR += linux-ut2004-demo
     SUBDIR += linux-virtual-jay-peak
-    SUBDIR += linux-warsow
     SUBDIR += linux-worldofgoo-demo
     SUBDIR += linwarrior
     SUBDIR += liquidwar
@@ -705,7 +705,6 @@
     SUBDIR += osgg
     SUBDIR += outerspace
     SUBDIR += p5-Acme-GuessNumber
-    SUBDIR += p5-Algorithm-Pair-Best
     SUBDIR += p5-Algorithm-Pair-Best2
     SUBDIR += p5-Algorithm-Pair-Swiss
     SUBDIR += p5-Baseball-Sabermetrics
@@ -778,9 +777,6 @@
     SUBDIR += pyching
     SUBDIR += pydance
     SUBDIR += pykawari
-    SUBDIR += pysol
-    SUBDIR += pysol-cardsets
-    SUBDIR += pysol-music
     SUBDIR += pysolfc
     SUBDIR += pyspacewar
     SUBDIR += pysycache
@@ -887,6 +883,7 @@
     SUBDIR += searchandrescue-data
     SUBDIR += secretmaryochronicles
     SUBDIR += secretmaryochronicles-music
+    SUBDIR += secrettower
     SUBDIR += senken
     SUBDIR += sets
     SUBDIR += sex
@@ -1059,7 +1056,6 @@
     SUBDIR += worldofpadman
     SUBDIR += wtf
     SUBDIR += xabacus
-    SUBDIR += xarchon
     SUBDIR += xasteroids
     SUBDIR += xataxx
     SUBDIR += xbat
@@ -1088,7 +1084,6 @@
     SUBDIR += xevil
     SUBDIR += xeyesplus
     SUBDIR += xfireworks
-    SUBDIR += xflame
     SUBDIR += xfrisk
     SUBDIR += xgalaga
     SUBDIR += xgalaga++

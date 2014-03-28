@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libva.pc:${PORTSDIR}/multimedia/li
 		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_GL=		gl
 
 GNU_CONFIGURE=	yes

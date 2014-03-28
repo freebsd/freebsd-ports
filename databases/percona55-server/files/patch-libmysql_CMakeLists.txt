@@ -1,11 +1,11 @@
---- libmysql/CMakeLists.txt.orig	2014-01-19 11:47:44.423382348 -0500
-+++ libmysql/CMakeLists.txt	2014-01-19 12:08:16.021297429 -0500
+--- libmysql/CMakeLists.txt.orig	2014-03-15 18:08:16.000000000 +0100
++++ libmysql/CMakeLists.txt	2014-03-22 19:37:32.145100925 +0100
 @@ -165,7 +165,7 @@
  
- # Merge several convenience libraries into one big mysqlclient
+ # Merge several convenience libraries into one big perconaserverclient
  # and link them together into shared library.
--MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development)
-+MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development NOINSTALL)
+-MERGE_LIBRARIES(perconaserverclient STATIC ${LIBS} COMPONENT Development)
++MERGE_LIBRARIES(perconaserverclient STATIC ${LIBS} COMPONENT Development NOINSTALL)
  
  # Visual Studio users need debug  static library for debug projects
  INSTALL_DEBUG_SYMBOLS(clientlib)
@@ -19,7 +19,7 @@
      SET(DOT_VERSION ".${VERSION}")
 @@ -188,9 +189,11 @@
    ENDMACRO()
-   INSTALL_SYMLINK(${CMAKE_STATIC_LIBRARY_PREFIX}mysqlclient_r.a mysqlclient ${INSTALL_LIBDIR} Development)
+   INSTALL_SYMLINK(${CMAKE_STATIC_LIBRARY_PREFIX}perconaserverclient_r.a perconaserverclient ${INSTALL_LIBDIR} Development)
  ENDIF()
 +ENDIF()
  

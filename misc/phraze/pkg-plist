@@ -1,3 +1,4 @@
 bin/phraze
+man/man1/phraze.1.gz
 %%DATADIR%%/wordlist.phr
 @dirrm %%DATADIR%%

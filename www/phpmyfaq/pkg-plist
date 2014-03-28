@@ -1186,6 +1186,10 @@
 %%WWWDIR%%/inc/libs/tcpdf/fonts/timesb.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/timesbi.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/timesi.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_ac15.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_ag15.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_aj16.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_ak12.php
 %%WWWDIR%%/inc/libs/tcpdf/htmlcolors.php
 %%WWWDIR%%/inc/libs/tcpdf/tcpdf.php
 %%WWWDIR%%/inc/libs/tcpdf/tcpdf_filters.php

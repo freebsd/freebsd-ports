@@ -17,18 +17,21 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 PLIST_DIRSTRY=	libexec/nagios
 PLIST_FILES=	libexec/nagios/check_tftp
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 post-patch:
-		${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/check_tftp
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/check_tftp
 
 do-extract:
-		@${MKDIR} ${WRKDIR}
-		@${CP} ${DISTDIR}/${PORTNAME}	${WRKDIR}/
+	@${MKDIR} ${WRKDIR}
+	@${CP} ${DISTDIR}/${PORTNAME} ${WRKDIR}
+
 do-install:
-		@${MKDIR} ${PREFIX}/libexec/nagios
-		@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/libexec/nagios
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/libexec/nagios
 
 .include <bsd.port.mk>

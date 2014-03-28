@@ -19,9 +19,9 @@ USE_LDCONFIG=	yes
 USE_RUBY=	yes
 USE_PERL5=	build
 
-BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
+BUILD_DEPENDS+=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2 \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
+RUN_DEPENDS+=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2
 
 # We cannot use ${ARCH} nor ${UNAME} which are defined in bsd.port.mk, here.
 UNAME?=		/usr/bin/uname

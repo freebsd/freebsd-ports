@@ -13,8 +13,7 @@ COMMENT=	Easy, eye-candy, light, and powerful window manager for X11
 RUN_DEPENDS=	fvwm>=2.5:${PORTSDIR}/x11-wm/fvwm2 \
 		bash:${PORTSDIR}/shells/bash
 
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake
 USE_PYTHON=	yes
 MAKE_ENV=	prefix="${PREFIX}" addondir="${DOCSDIR}/addons"
 PORTDOCS=	*

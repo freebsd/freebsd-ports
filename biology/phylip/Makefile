@@ -3,7 +3,7 @@
 
 PORTNAME=	phylip
 PORTVERSION=	3.695
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://evolution.gs.washington.edu/phylip/download/
@@ -12,8 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phylogeny Inference Package
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
@@ -29,28 +27,26 @@ USE_LDCONFIG=	yes
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+pre-install:
+	@(cd ${WRKSRC}/src && ${STRIP_CMD} libdrawtree.so libdrawgram.so)
 
 post-install:
 	@cd ${WRKSRC}/exe && \
 		${FIND} . -maxdepth 1 -not -type d -not -name '*.jar' \
 		-not -name '*.unx' -not -name 'font*' -not -name '*.so' \
-		-exec ${INSTALL_PROGRAM} "{}" "${PREFIX}/bin/{}" \;
+		-exec ${INSTALL_PROGRAM} "{}" "${STAGEDIR}${PREFIX}/bin/{}" \;
 	@cd ${WRKSRC}/exe && \
 		${FIND} . -maxdepth 1 -not -type d -name "*.so" \
-		-exec ${INSTALL_DATA} "{}" "${PREFIX}/lib/{}" \;
-	@${MKDIR} ${DATADIR}
+		-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/lib/{}" \;
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/exe && \
 		${FIND} . -maxdepth 1 -not -type d -name 'font*' \
-		-exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/exe && ${COPYTREE_SHARE} testdata ${EXAMPLESDIR})
-.endif
+		-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/exe && ${COPYTREE_SHARE} testdata ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

@@ -3,9 +3,22 @@ include/X11/Xcm/XcmDDC.h
 include/X11/Xcm/XcmEdidParse.h
 include/X11/Xcm/XcmEvents.h
 include/X11/Xcm/XcmVersion.h
+lib/cmake/Xcm/XcmConfig.cmake
 lib/libXcm.la
 lib/libXcm.so
 lib/libXcm.so.0
+lib/libXcmDDC.la
+lib/libXcmDDC.so
+lib/libXcmDDC.so.0
+lib/libXcmEDID.la
+lib/libXcmEDID.so
+lib/libXcmEDID.so.0
+lib/libXcmX11.la
+lib/libXcmX11.so
+lib/libXcmX11.so.0
+libdata/pkgconfig/xcm-ddc.pc
+libdata/pkgconfig/xcm-edid.pc
+libdata/pkgconfig/xcm-x11.pc
 libdata/pkgconfig/xcm.pc
 man/man3/Xcm.3.gz
 man/man3/XcmDDC.3.gz
@@ -14,7 +27,6 @@ man/man3/XcmEvents.3.gz
 man/man3/XcolorProfile.3.gz
 man/man3/XcolorRegion.3.gz
 man/man3/libXcm.3.gz
-share/cmake/Modules/FindXcm.cmake
-@dirrmtry share/cmake/Modules
-@dirrmtry share/cmake
+@dirrmtry lib/cmake/Xcm
+@dirrmtry lib/cmake
 @dirrmtry include/X11/Xcm

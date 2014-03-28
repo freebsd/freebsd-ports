@@ -28,7 +28,7 @@ post-patch:
 		${WRKSRC}/collect_diffs.rb
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
 .for f in collect_diffs.rb cvsspam.rb record_lastdir.rb
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} \
 		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cvsspam.conf \
 		${STAGEDIR}${PREFIX}/etc/cvsspam.conf
 .endif
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

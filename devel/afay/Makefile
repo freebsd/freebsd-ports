@@ -3,7 +3,7 @@
 
 PORTNAME=	afay
 PORTVERSION=	041111
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://thiberlog.free.fr/src/
 DISTNAME=	${PORTNAME}_thiberlog_${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Improved aflex and ayacc Ada 95 scanner and parser generators
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		ada:47
+USES=		ada
 NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -32,25 +32,31 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/afay/ayacc/src/ayacc ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex.man ${STAGEDIR}${PREFIX}/man/man1/aflex.1
 	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/old_docs/ayacc.manpage ${STAGEDIR}${PREFIX}/man/man1/ayacc.1
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/READ_ME ${STAGEDIR}${DOCSDIR}/READ_ME.aflex
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex_user_man.* ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/READ_ME ${STAGEDIR}${DOCSDIR}/READ_ME.ayacc
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/ayacc.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/ayacc_user_man.tex ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/ada_parser
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/calc
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/example.l ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/test95.l ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/afay/ayacc/examples/ada_parser/COMPILE ${STAGEDIR}${EXAMPLESDIR}/ada_parser
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/READ.ME ${STAGEDIR}${EXAMPLESDIR}/ada_parser
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/ada.y ${STAGEDIR}${EXAMPLESDIR}/ada_parser
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/ada_lex.l ${STAGEDIR}${EXAMPLESDIR}/ada_parser
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/ada_parser/driver.a ${STAGEDIR}${EXAMPLESDIR}/ada_parser
-	${INSTALL_SCRIPT} ${WRKSRC}/afay/ayacc/examples/calc/COMPILE ${STAGEDIR}${EXAMPLESDIR}/calc
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/calc/READ.ME ${STAGEDIR}${EXAMPLESDIR}/calc
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/calc/calc* ${STAGEDIR}${EXAMPLESDIR}/calc
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/examples/calc/driver.a ${STAGEDIR}${EXAMPLESDIR}/calc
+	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/READ_ME \
+		${STAGEDIR}${DOCSDIR}/READ_ME.aflex
+	(cd ${WRKSRC}/afay/aflex/doc && ${INSTALL_DATA} aflex.html \
+		aflex_user_man.* ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/READ_ME \
+		${STAGEDIR}${DOCSDIR}/READ_ME.ayacc
+	(cd ${WRKSRC}/afay/ayacc/doc && ${INSTALL_DATA} ayacc.html \
+		ayacc_user_man.tex ${STAGEDIR}${DOCSDIR})
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/ada_parser \
+		${STAGEDIR}${EXAMPLESDIR}/calc
+	(cd ${WRKSRC}/afay/aflex/doc && ${INSTALL_DATA} example.l test95.l \
+		${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_SCRIPT} ${WRKSRC}/afay/ayacc/examples/ada_parser/COMPILE \
+		${STAGEDIR}${EXAMPLESDIR}/ada_parser
+	(cd ${WRKSRC}/afay/ayacc/examples/ada_parser && \
+		${INSTALL_DATA} READ.ME ada.y ada_lex.l driver.a \
+		${STAGEDIR}${EXAMPLESDIR}/ada_parser)
+	${INSTALL_SCRIPT} ${WRKSRC}/afay/ayacc/examples/calc/COMPILE \
+		${STAGEDIR}${EXAMPLESDIR}/calc
+	(cd ${WRKSRC}/afay/ayacc/examples/calc && ${INSTALL_DATA} \
+		READ.ME calc* driver.a ${STAGEDIR}${EXAMPLESDIR}/calc)
+.endif
 
 .include <bsd.port.mk>

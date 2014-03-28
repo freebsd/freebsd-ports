@@ -2,6 +2,8 @@ bin/gawk
 bin/igawk
 libexec/awk/grcat
 libexec/awk/pwcat
+man/man1/gawk.1.gz
+man/man1/igawk.1.gz
 share/awk/assert.awk
 share/awk/ctime.awk
 share/awk/ftrans.awk
@@ -14,8 +16,8 @@ share/awk/nextfile.awk
 share/awk/ord.awk
 share/awk/passwd.awk
 share/awk/round.awk
-%%PORTDOCS%%share/doc/ja-gawk/OREADME.MB
-%%PORTDOCS%%share/doc/ja-gawk/README.MB
-%%PORTDOCS%%@dirrm share/doc/ja-gawk
+%%PORTDOCS%%%%DOCSDIR%%/OREADME.MB
+%%PORTDOCS%%%%DOCSDIR%%/README.MB
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/awk
 @dirrm libexec/awk

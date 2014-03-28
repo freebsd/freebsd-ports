@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	help_hannahs_horse
@@ -22,8 +22,7 @@ USES=		gmake
 USE_SDL=	sdl image mixer ttf
 ALL_TARGET=	# empty
 
-PORTDOCS=	CHANGELOG README TODO
-
+PORTDOCS=	CHANGELOG README
 OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
@@ -33,11 +32,11 @@ DESKTOP_ENTRIES="Help Hannah's Horse" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/games/hhh|${DATADIR}| ; \
-		s|/usr/local/bin|${PREFIX}/bin| ; \
-		s|CXX       = g++|CXX       ?= g++}| ; \
-		s|CXXFLAGS   = -O2 -Wall -g|CXXFLAGS   +=| ; \
-		s|OUT = hhh|OUT = ${PORTNAME}| ; \
+	@${REINPLACE_CMD} -e 's|/usr/local/games/hhh|${DATADIR}|; \
+		s|/usr/local/bin|${PREFIX}/bin|; \
+		s|CXX       = g++|CXX       ?= g++}|; \
+		s|CXXFLAGS   = -O2 -Wall -g|CXXFLAGS   +=|; \
+		s|OUT = hhh|OUT = ${PORTNAME}|; \
 		s|-include deps|#-include deps|' \
 		${WRKSRC}/Makefile
 
@@ -48,8 +47,8 @@ do-install:
 		 pink red sounds stop
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
-.for d in *.ogg *.ttf *.dat *.png
-	@(cd ${WRKSRC} && ${INSTALL_DATA} ${d} ${STAGEDIR}${DATADIR})
+.for f in *.ogg *.ttf *.dat *.png
+	@(cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${STAGEDIR}${DATADIR})
 .endfor
 
 post-install:

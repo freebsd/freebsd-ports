@@ -195,6 +195,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpmysql41conn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpmysql4conn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpmysql50conn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpmysql51conn.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpmysql56conn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpmysql55conn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpodbcconn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libporacleconnection.a
@@ -226,6 +227,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/mysql51conn.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/mysql51conn.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/mysql55conn.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/mysql55conn.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/mysql56conn.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/mysql56conn.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/odbcconn.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/odbcconn.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/oracleconnection.o

@@ -3,7 +3,7 @@
 
 PORTNAME=	dejavu
 PORTVERSION=	2.34
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-fonts-ttf-${PORTVERSION}
@@ -19,7 +19,7 @@ OPTIONS_DEFAULT=LINKS
 OPTIONS_SUB=	yes
 LINKS_DESC=	Install links of configuration files in conf.d
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 PLIST_SUB=	FCDIR=${FCDIR} FCDIR_LINKS=${FCDIR_LINKS} FONTSDIR=${FONTSDIR}
 PORTDOCS=	README langcover.txt status.txt unicover.txt
@@ -31,14 +31,14 @@ FCDIR_LINKS=	${FCDIR:S|conf.avail|conf.d|}
 FONTSDIR?=	lib/X11/fonts/${PORTNAME}
 
 do-build:
-	@cd ${WRKSRC}/ && ${LOCALBASE}/bin/mkfontscale
-	@cd ${WRKSRC}/ && ${LOCALBASE}/bin/mkfontdir
+	@cd ${WRKSRC}/ttf/ && ${LOCALBASE}/bin/mkfontscale
+	@cd ${WRKSRC}/ttf/ && ${LOCALBASE}/bin/mkfontdir
 
 do-install:
 	cd ${STAGEDIR}${PREFIX}/ && ${MKDIR} ${FCDIR}/ ${FCDIR_LINKS}/ ${FONTSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/fontconfig/*.conf ${STAGEDIR}${PREFIX}/${FCDIR}/
 	cd ${STAGEDIR}${PREFIX}/${FCDIR_LINKS}/ && ${LN} -fs ../conf.avail/*dejavu*.conf .
-	${INSTALL_DATA} ${WRKSRC}/fonts.* ${WRKSRC}/ttf/*.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ttf/fonts.* ${WRKSRC}/ttf/*.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 

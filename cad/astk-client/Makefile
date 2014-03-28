@@ -9,5 +9,4 @@ MASTERDIR=	${.CURDIR}/../astk-serveur
 
 CLIENT_SEUL=	oui
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

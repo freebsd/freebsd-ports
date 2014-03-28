@@ -20,7 +20,6 @@ PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} `pkg-config --cflags --libs gtk+-2.0` \
 		gperiodic.c -o gperiodic
@@ -28,24 +27,18 @@ do-build:
 	cd ${WRKSRC}/po && msgfmt -f -v -o ${lang}.mo ${lang}.po
 .endfor
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gperiodic ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gperiodic ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/gperiodic.desktop \
-		${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/gperiodic.png \
-		${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/gperiodic-crystal.png \
-		${PREFIX}/share/pixmaps
+		${STAGEDIR}${PREFIX}/share/applications
+	(cd ${WRKSRC} && ${INSTALL_DATA} gperiodic.png gperiodic-crystal.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps)
 .for lang in ${LANGS}
-	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
-		${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
+		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	solidcoin
 PORTVERSION=	2.041
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	http://downloads.solidcoin.info/ \
 		http://dl.dropbox.com/u/47582909/
@@ -16,6 +16,8 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/parallel/algorithm.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
+
+BROKEN=		Does not build with any of the supported wx
 
 OPTIONS_DEFINE=	WXGTK
 OPTIONS_DEFAULT=	WXGTK
@@ -40,7 +42,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWXGTK}
-USE_WX=		2.9
+USE_WX=		3.0
 WX_UNICODE=	yes
 PLIST_FILES+=	share/pixmaps/solidcoin48.xpm
 DESKTOP_ENTRIES="SolidCoin" "" "${PREFIX}/share/pixmaps/solidcoin48.xpm" \

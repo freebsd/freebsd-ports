@@ -1,0 +1,4 @@
+The ProFTPd mod_geoip module uses the GeoIP library from MaxMind to look up
+various geographic information for a connecting client.
+
+WWW: http://www.castaglia.org/proftpd/modules/mod_geoip.html

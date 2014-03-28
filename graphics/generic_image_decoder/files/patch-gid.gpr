@@ -1,0 +1,11 @@
+--- gid.gpr.orig	2014-03-21 21:26:29.000000000 +0000
++++ gid.gpr
+@@ -4,7 +4,7 @@
+ --
+ project GID is
+ 
+-   for Source_Dirs use (".", "test");
++   for Source_Dirs use ("src", "test");
+    for Exec_Dir use "test";
+    type Build_Mode_Type is
+       ("Debug", "Fast_but_checked", "Fast", "Small", "Smallest", "Profiling");

@@ -1,4 +1,8 @@
 %%SITE_PERL%%/Unix/Passwd/File.pm
 %%PERL5_MAN3%%/Unix::Passwd::File.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Passwd/File/.packlist
 @dirrmtry %%SITE_PERL%%/Unix/Passwd
 @dirrmtry %%SITE_PERL%%/Unix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Passwd/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Passwd
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix

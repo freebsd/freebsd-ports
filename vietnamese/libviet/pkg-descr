@@ -1,1 +1,9 @@
-VIQR<->VISCII (RFC 1456) conversion and VISCII ctype-like routines
+This port offers VIQR<->VISCII (RFC 1456) conversion and VISCII ctype-like
+routines for Vietnamese text processing.  Of prime interest is the finite
+state machine that reads 7-bit Viet-Net style Vietnamese and produces 8-bit
+output.  Developers are encouraged to take advantage of these routines for
+these reasons:
+
+  - Parsing task is greatly simplified
+  - Makes one's code easier to port from one character encoding to another
+  - Ensures a consistent user interface across many software packages

@@ -599,7 +599,6 @@
     SUBDIR += rkward-kde4
     SUBDIR += rngstreams
     SUBDIR += rocs
-    SUBDIR += ros-geometry
     SUBDIR += rpcalc
     SUBDIR += rpy
     SUBDIR += rpy2
@@ -611,6 +610,8 @@
     SUBDIR += ruby-narray_miss
     SUBDIR += ruby-numru_misc
     SUBDIR += ruby-numru_units
+    SUBDIR += rubygem-narray
+    SUBDIR += rubygem-narray_miss
     SUBDIR += saga
     SUBDIR += sage
     SUBDIR += sc

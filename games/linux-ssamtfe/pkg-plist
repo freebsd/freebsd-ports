@@ -117,7 +117,7 @@ etc/ssamtfe.conf.sample
 %%DATADIR%%/Scripts/Dedicated/DemoCoop/3_begin.ini
 %%DATADIR%%/Scripts/Dedicated/DemoCoop/3_end.ini
 %%DATADIR%%/Scripts/Dedicated/DemoCoop/init.ini
-%%NORMAL%%%%DATADIR%%/Scripts/Dedicated/Dedicated_startup.ini
+%%NORMAL%%%%DATADIR%%/Scripts/Dedicated_startup.ini
 %%DATADIR%%/Scripts/GLSettings/3Dfx-V1.ini
 %%DATADIR%%/Scripts/GLSettings/3Dfx-V2.ini
 %%DATADIR%%/Scripts/GLSettings/3Dfx-V3.ini

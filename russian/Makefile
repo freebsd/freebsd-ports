@@ -51,7 +51,6 @@
     SUBDIR += unzip
     SUBDIR += wordpress
     SUBDIR += xcode
-    SUBDIR += xmms
     SUBDIR += xpi-tabextensions
     SUBDIR += xruskb
 

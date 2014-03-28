@@ -3,12 +3,14 @@
 
 PORTNAME=	libdbi
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Database Independent Abstraction Layer for C
 
+USES=		pathfix
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	6.5p1
-PORTREVISION=	1
+DISTVERSION=	6.6p1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -80,12 +79,12 @@ LPK_CONFIGURE_ON=	--with-ldap=yes \
 LPK_USE=		OPENLDAP=yes
 
 # See http://www.roumenpetrov.info/openssh/
-X509_VERSION=		7.8
+X509_VERSION=		7.9
 X509_PATCH_SITES=	http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
-X509_PATCHFILES=	${PORTNAME}-6.5p1+x509-${X509_VERSION}.diff.gz:-p1:x509
+X509_PATCHFILES=	${PORTNAME}-6.6p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 
 # See https://bugzilla.mindrot.org/show_bug.cgi?id=2016
-SCTP_PATCHFILES=	${PORTNAME}-6.5p1-sctp-2329.patch.gz
+SCTP_PATCHFILES=	${PORTNAME}-6.6p1-sctp-2329.patch.gz
 SCTP_CONFIGURE_WITH=	sctp
 
 # Adapated from 5.7 patch at http://www.sxw.org.uk/computing/patches/
@@ -112,7 +111,7 @@ BROKEN=		KERB_GSSAPI Patch is not updated for 6.5 and upstream has not been acti
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 PORTDOCS+=		HPN-README
 HPN_VERSION=		14v2
-HPN_DISTVERSION=	6.5p1
+HPN_DISTVERSION=	6.6p1
 PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:S/$/:hpn/}
 PATCH_SITE_SUBDIR+=	hpnssh/HPN-SSH%20${HPN_VERSION}%20${HPN_DISTVERSION}/:hpn
 PATCHFILES+=		${PORTNAME}-${HPN_DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn

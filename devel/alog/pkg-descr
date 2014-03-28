@@ -1,0 +1,12 @@
+Alog is a stackable logging framework for Ada. It aims to be straight
+forward to use and is easily extendable. It provides support for various
+logger types, log facilities, loglevel policies and message
+transformations.
+
+The Alog library comes in two flavors: base and full. The base build
+includes facilities to log to files and syslog while the full version
+provides more advanced log facilities like SMTP, Jabber/XMPP or PostgreSQL.
+The full version requires AWS (Ada Web Server) and APQ (Ada95 database
+binding) and are offered as non-default option.
+
+WWW: http://www.codelabs.ch/alog

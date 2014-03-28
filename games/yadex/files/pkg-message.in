@@ -1,0 +1,8 @@
+  Yadex is now installed.
+
+  Before you run it, enter the paths to your IWADs in
+  %%ETCDIR%%/yadex.cfg or ~/.yadex/yadex.cfg.
+  When you're done, type "yadex" (without quotes) to start.
+  If you're confused, take a look at %%DOCSDIR%%/index.html.
+
+  Happy editing!

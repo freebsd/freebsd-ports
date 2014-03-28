@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.69.0test11
-DISTVERSION=	2.69test11
+PORTVERSION=	2.69r1
+DISTVERSION=	2.69rc1
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/test-releases/
+MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -20,7 +20,6 @@ PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
 SUB_FILES=	pkg-message
 
-USE_XZ=		yes
 CFLAGS+=	-Wall -Wno-unused-value
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
@@ -31,7 +30,7 @@ NLS_DESC=	National Language Support (NLS, enables IDN)
 IDN_DESC=	International Domain Names (IDN) WITHOUT NLS
 LUA_DESC=	Support lease-change scripts in LUA
 DNSSEC_DESC=	Enable DNSSEC caching and validation
-USES=		shebangfix
+USES=		shebangfix tar:xz
 SHEBANG_FILES=	contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl \
 		contrib/dnslist/dnslist.pl
 

@@ -21,8 +21,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include "${.CURDIR}/../quake-data/Makefile.include"
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in Autoexec.cfg PROGS.DAT
@@ -33,4 +31,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f:L}
 .endfor
 
+.include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.mk>

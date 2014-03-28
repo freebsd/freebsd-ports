@@ -2,8 +2,6 @@
 #
 # handle dependency on the ncurses port
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	ncurses
 # Usage:	USES=ncurses
 # Valid ARGS:	base port
@@ -22,6 +20,8 @@
 #
 # BUILD_DEPENDS		- are added if needed
 # RUN_DEPENDS		- are added if needed
+#
+# MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_NCURSES_MK)
 _INCLUDE_USES_NCURSES_MK=	yes

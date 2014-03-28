@@ -1,40 +1,29 @@
-%%WITH_C%%bin/cli_mt
-%%WITH_C%%bin/cli_st
-%%WITH_C%%bin/load_gen
-%%WITH_C%%include/c-client-src/recordio.h
-%%WITH_C%%include/c-client-src/zookeeper.h
-%%WITH_C%%include/c-client-src/zookeeper.jute.h
-%%WITH_C%%include/c-client-src/zookeeper_log.h
-%%WITH_C%%include/c-client-src/zookeeper_version.h
-%%WITH_C%%lib/libzookeeper_mt.a
-%%WITH_C%%lib/libzookeeper_mt.la
-%%WITH_C%%lib/libzookeeper_mt.so
-%%WITH_C%%lib/libzookeeper_mt.so.2
-%%WITH_C%%lib/libzookeeper_st.a
-%%WITH_C%%lib/libzookeeper_st.la
-%%WITH_C%%lib/libzookeeper_st.so
-%%WITH_C%%lib/libzookeeper_st.so.2
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/ZooKeeper-0.4-py2.7.egg-info
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/zookeeper.so
-zookeeper/bin/zkCleanup.sh
-zookeeper/bin/zkCli.sh
-zookeeper/bin/zkEnv.sh
-zookeeper/bin/zkServer.sh
-zookeeper/conf/configuration.xsl
-zookeeper/conf/log4j.properties
-zookeeper/conf/zoo_sample.cfg
-zookeeper/lib/cobertura/README.txt
-zookeeper/lib/jdiff/zookeeper_3.1.1.xml
-zookeeper/lib/jdiff/zookeeper_3.3.6.xml
-zookeeper/lib/jline-0.9.94.LICENSE.txt
-zookeeper/lib/jline-0.9.94.jar
-zookeeper/lib/log4j-1.2.15.LICENSE.txt
-zookeeper/lib/log4j-1.2.15.jar
-zookeeper/zookeeper-%%PORTVERSION%%.jar
-%%WITH_C%%@dirrm include/c-client-src
-@dirrm zookeeper/lib/jdiff
-@dirrm zookeeper/lib/cobertura
-@dirrm zookeeper/lib
-@dirrmtry zookeeper/conf
-@dirrm zookeeper/bin
-@dirrmtry zookeeper
+%%PORTNAME%%/bin/zkCleanup.sh
+%%PORTNAME%%/bin/zkCli.sh
+%%PORTNAME%%/bin/zkEnv.sh
+%%PORTNAME%%/bin/zkServer.sh
+%%PORTNAME%%/conf/configuration.xsl
+%%PORTNAME%%/conf/log4j.properties
+%%PORTNAME%%/conf/zoo_sample.cfg
+%%PORTNAME%%/lib/cobertura/README.txt
+%%PORTNAME%%/lib/jdiff/%%PORTNAME%%_3.1.1.xml
+%%PORTNAME%%/lib/jdiff/%%PORTNAME%%_3.4.6.xml
+%%PORTNAME%%/lib/jdiff/%%PORTNAME%%_%%PORTVERSION%%-SNAPSHOT.xml
+%%PORTNAME%%/lib/jline-0.9.94.LICENSE.txt
+%%PORTNAME%%/lib/jline-0.9.94.jar
+%%PORTNAME%%/lib/log4j-1.2.16.LICENSE.txt
+%%PORTNAME%%/lib/log4j-1.2.16.jar
+%%PORTNAME%%/lib/netty-3.7.0.Final.jar
+%%PORTNAME%%/lib/slf4j-api-1.6.1.jar
+%%PORTNAME%%/lib/slf4j-log4j12-1.6.1.jar
+%%PORTNAME%%/%%PORTNAME%%-%%PORTVERSION%%.jar
+@dirrm %%PORTNAME%%/lib/jdiff
+@dirrm %%PORTNAME%%/lib/cobertura
+@dirrm %%PORTNAME%%/lib
+@dirrm %%PORTNAME%%/bin
+@dirrmtry %%PORTNAME%%/conf
+@dirrmtry %%PORTNAME%%
+@cwd /
+@dirrmtry var/log/%%PORTNAME%%
+@dirrmtry var/run/%%PORTNAME%%
+@cwd %%RESETPREFIX%%

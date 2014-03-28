@@ -6,14 +6,14 @@ To make FiSH work with with py-fishcrypt please symlink as user
 
     su user
 
-For XChat
-
-    ln -sf %%DATADIR%%/fishcrypt.py ~/.xchat2/
-
-
 For HexChat
 
     ln -sf %%DATADIR%%/fishcrypt.py ~/.config/hexchat/addons/
+
+
+For XChat
+
+    ln -sf %%DATADIR%%/fishcrypt.py ~/.xchat2/
 
     exit
 

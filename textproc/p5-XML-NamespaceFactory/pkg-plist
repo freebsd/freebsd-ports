@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/XML::NamespaceFactory.3.gz
+%%SITE_PERL%%/XML/NamespaceFactory.pm
+%%SITE_PERL%%/mach/auto/XML/NamespaceFactory/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/XML/NamespaceFactory
+@dirrmtry %%SITE_PERL%%/mach/auto/XML
+@dirrmtry %%SITE_PERL%%/XML

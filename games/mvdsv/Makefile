@@ -13,7 +13,7 @@ COMMENT?=	Enhanced QuakeWorld server with multi-view demos capability
 
 LICENSE=	GPLv2
 
-USES=	zip
+USES=		zip
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${OPSYS} ${ARCH:C/.*(64)/\1/}
@@ -27,22 +27,15 @@ OPTIONS_DEFINE_amd64=	ASM
 OPTIONS_DEFAULT_i386=	ASM
 OPTIONS_DEFAULT_amd64=	ASM
 
-.if ${PORTNAME} == "mvdsv"
+.if ${PORTNAME} == mvdsv
 OPTIONS_DEFINE+=	KQUEUE
 OPTIONS_DEFAULT+=	KQUEUE
 .endif
 
 KQUEUE_DESC=	Kqueue support
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MKQUEUE}
-MAKE_ARGS+=	-DNOKQUEUE
-.endif
-
-.if ! ${PORT_OPTIONS:MASM}
-MAKE_ARGS+=	-DWITHOUT_X86_ASM
-.endif
+KQUEUE_MAKE_ARGS_OFF=	-DNOKQUEUE
+ASM_MAKE_ARGS_OFF=	-DWITHOUT_X86_ASM
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,gcc,${CC},' ${WRKSRC}/configure

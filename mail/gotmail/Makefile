@@ -14,21 +14,21 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Net>=0:${PORTSDIR}/net/p5-Net
 
-MAN1=		${PORTNAME}.1
-USES=		perl5
+USES=		perl5 shebangfix
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/gotmail man/man1/gotmail.1.gz
+SHEBANG_FILES=	gotmail
+PORTDOCS=	ChangeLog README sample.gotmailrc
+
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
-		${MANPREFIX}/man/man1/${PORTNAME}.1
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ChangeLog README sample.gotmailrc
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor # i in ChangeLog README sample.gotmailrc
-.endif # !defined(NOPORTDOCS)
+		${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

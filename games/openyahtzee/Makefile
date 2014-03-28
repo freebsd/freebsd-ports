@@ -3,7 +3,7 @@
 
 PORTNAME=	openyahtzee
 PORTVERSION=	1.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Open%20Yahtzee/Open%20Yahtzee%20${PORTVERSION}
 
@@ -15,19 +15,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/scoped_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USE_BZIP2=	yes
-USE_GCC=	yes
-USE_WX=		2.8+
+USES=		tar:bzip2 compiler:c++11-lang
+USE_WX=		2.8
+WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN6=		openyahtzee.6
 PLIST_FILES=	bin/openyahtzee \
 		share/applications/openyahtzee.desktop \
-		share/pixmaps/openyahtzee.png
+		share/pixmaps/openyahtzee.png \
+		man/man6/openyahtzee.6.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

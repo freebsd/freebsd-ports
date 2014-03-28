@@ -3,7 +3,7 @@
 
 PORTNAME=	gthumb
 PORTVERSION=	2.14.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -37,7 +37,6 @@ OPTIONS_DEFINE=	EXIV2 CLUTTER GSTREAMER OPENRAW SOUP BRASERO YELP
 OPTIONS_DEFAULT=	EXIV2 CLUTTER GSTREAMER OPENRAW SOUP BRASERO YELP
 CLUTTER_DESC=	Fancy slideshows
 GSTREAMER_DESC=	Video playback
-OPENRAW_DESC=	Support for camera RAW files
 SOUP_DESC=	Web services uploaders
 BRASERO_DESC=	Write galleries to CD/DVD (large dependency)
 YELP_DESC=	Viewer for built-in help system
@@ -73,7 +72,7 @@ PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENRAW}
-LIB_DEPENDS+=	openrawgnome.6:${PORTSDIR}/graphics/libopenraw
+LIB_DEPENDS+=	libopenrawgnome.so:${PORTSDIR}/graphics/libopenraw
 CONFIGURE_ARGS+=--enable-libopenraw
 .else
 CONFIGURE_ARGS+=--disable-libopenraw

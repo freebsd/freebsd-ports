@@ -1,9 +1,9 @@
---- ./salt/grains/core.py.orig	2013-10-17 08:48:57.000000000 +0400
-+++ ./salt/grains/core.py	2013-10-25 10:46:21.000000000 +0400
-@@ -1059,7 +1059,7 @@
-     '''
+--- ./salt/grains/core.py.orig	2014-02-19 22:21:14.000000000 +0200
++++ ./salt/grains/core.py	2014-03-06 10:50:07.000000000 +0200
+@@ -1133,7 +1133,7 @@
      # Provides:
      #   path
+ 
 -    return {'path': os.environ['PATH'].strip()}
 +    return {'path': os.environ['PATH'].strip() + ':/usr/local/bin:/usr/local/sbin'}
  

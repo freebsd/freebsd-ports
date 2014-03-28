@@ -2,11 +2,11 @@
 #
 # Establish Ada-capable compiler as a build dependency
 #
-# MAINTAINER: marino@FreeBSD.org
-#
 # Feature:      ada
 # Usage:        USES=ada
 # Valid ARGS:   47
+#
+# MAINTAINER: marino@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_ADA_MK)
 _INCLUDE_USES_ADA_MK=    yes

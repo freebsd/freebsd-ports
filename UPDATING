@@ -5,6 +5,49 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140327:
+  AFFECTS: users of lang/php5 and lang/php55 with Apache module
+  AUTHOR: ale@FreeBSD.org
+
+  The Apache PHP module has been splitted from main PHP port, so if you
+  are using it you should install one of www/mod_php5 or www/mod_php55.
+
+20140322:
+  AFFECTS: users of devel/apr1
+  AUTHOR: ohauer@FreeBSD.org
+
+  APR was updated to 1.5.0, BDB requirement was bumped to 48+
+
+  Please rebuild all ports which are using functions from APR/APR-util
+  such as Apache, Subversion, etc.
+
+  # portmaster -r apr
+    or
+  # portupgrade -r devel/apr1
+    or
+  # pkg install -fR devel/apr1
+
+20140318:
+  AFFECTS: users of net/openldap24-server
+  AUTHOR: delphij@FreeBSD.org
+
+  Please note that Berkeley DB backend is now deprecated and will be removed
+  in a future version.  Existing users should migrate data to the new MDB
+  backend when possible.
+
+20140317:
+  AFFECTS: users of misc/ossp-uuid-perl
+  AUTHOR: culot@FreeBSD.org
+
+  misc/ossp-uuid-perl was replaced by misc/p5-OSSP-uuid. Please do the
+  following according to package manager used.
+
+  # portmaster -o misc/p5-OSSP-uuid misc/ossp-uuid-perl
+    or
+  # portupgrade -fo misc/p5-OSSP-uuid misc/ossp-uuid-perl
+    or
+  # pkg set -o misc/p5-OSSP-uuid:misc/ossp-uuid-perl
+
 20140312:
   AFFECTS: users of net/openistgt
   AUTHOR: jpaetzel@FreeBSD.org
@@ -14,7 +57,7 @@ you update your ports collection, before attempting any port upgrades.
   the support for it is as best questionable.
 
   pkgng users:
-  
+
   # pkg set -o net/openistgt:net/istgt
 
   portmaster users:
@@ -26,6 +69,24 @@ you update your ports collection, before attempting any port upgrades.
 
   # portupgrade -o net/istgt -f net/openistgt
   # portupgrade -fr net/istgt
+
+20140310:
+  AFFECTS: users of mail/p5-Mail-SpamAssassin and japanese/p5-Mail-SpamAssassin
+  AUTHOR: ohauer@FreeBSD.org
+
+  The port mail/p5-Mail-SpamAssassin was renamed to mail/spamassassin and
+  the port japanese/p5-Mail-SpamAssassin was renamed to japanese/spamassassin.
+  To ease upgrading run the following set of commands:
+
+  pkgng users:
+
+  # pkg set -o mail/p5-Mail-SpamAssassin:mail/spamassassin
+  # pkg set -o japanese/p5-Mail-SpamAssassin:japanese/spamassassin
+
+  portmaster users:
+
+  # portmaster -o mail/spamassassin mail/p5-Mail-SpamAssassin
+  # portmaster -o japanese/spamassassin japanese/p5-Mail-SpamAssassin
 
 20140307:
   AFFECTS: users of devel/py-setuptools dependent ports
@@ -44,7 +105,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Please rebuild all ports that depend on devel/py-setuptools and use
   devel/py-setuptools{27,32,33} instead.
-  
+
   XX represents python version (27, 32 or 33) in the following steps.
 
   pkgng users:
@@ -84,7 +145,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: ohauer@FreeBSD.org
 
   livecheck was removed in 1.2.3.i5. It never was really stable, Nagios4
-  has something similar built in. 
+  has something similar built in.
   Please remove the "livecheck=..." directive from etc/nagios/nagios.cfg.
 
 20140222:

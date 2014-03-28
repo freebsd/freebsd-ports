@@ -17,11 +17,10 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:${PORTSDIR}/x11-toolkit
 NO_BUILD=	yes
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/share/ttb
-	${INSTALL_SCRIPT} ${WRKSRC}/src/ttb ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/glade/ttb.glade ${PREFIX}/share/ttb
-	${INSTALL_DATA} ${WRKSRC}/images/ttb.png ${PREFIX}/share/ttb
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/ttb
+	${INSTALL_SCRIPT} ${WRKSRC}/src/ttb ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/glade/ttb.glade ${STAGEDIR}${PREFIX}/share/ttb
+	${INSTALL_DATA} ${WRKSRC}/images/ttb.png ${STAGEDIR}${PREFIX}/share/ttb
 
 .include <bsd.port.mk>

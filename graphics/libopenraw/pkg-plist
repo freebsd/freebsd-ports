@@ -11,17 +11,19 @@ include/libopenraw-1.0/libopenraw/rawfile.h
 include/libopenraw-1.0/libopenraw/thumbnails.h
 include/libopenraw-1.0/libopenraw/types.h
 %%GNOME%%include/libopenraw-1.0/libopenraw-gnome/gdkpixbuf.h
-%%GNOME%%lib/gtk-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.a
-%%GNOME%%lib/gtk-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.la
-%%GNOME%%lib/gtk-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.so
+%%GNOME%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.a
+%%GNOME%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.la
+%%GNOME%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.so
 lib/libopenraw.a
 lib/libopenraw.la
 lib/libopenraw.so
-lib/libopenraw.so.6
+lib/libopenraw.so.1
+lib/libopenraw.so.1.6.0
 %%GNOME%%lib/libopenrawgnome.a
 %%GNOME%%lib/libopenrawgnome.la
 %%GNOME%%lib/libopenrawgnome.so
-%%GNOME%%lib/libopenrawgnome.so.6
+%%GNOME%%lib/libopenrawgnome.so.1
+%%GNOME%%lib/libopenrawgnome.so.1.6.0
 libdata/pkgconfig/libopenraw-1.0.pc
 %%GNOME%%libdata/pkgconfig/libopenraw-gnome-1.0.pc
 %%GNOME%%@dirrm include/libopenraw-1.0/libopenraw-gnome

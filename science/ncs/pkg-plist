@@ -746,6 +746,8 @@ lib/libsyrcs.a
 lib/libsyrcs.la
 lib/libsyrcs.so
 lib/libsyrcs.so.0
+man/man1/code_saturne.1.gz
+man/man1/cs_solver.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COMPATIBILITY
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

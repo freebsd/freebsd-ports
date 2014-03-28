@@ -39,7 +39,6 @@ alephone/M1A1.zip	games/alephone-data	Bungie/Microsoft do not allow charging for
 alephone/Marathon*.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
 annelid-*		games/annelid		No redistribution allowed
 apache2/mod_h264_streaming-*	www/mod_h264_streaming	No commercial use
-AquaGatekeeper*		net/AquaGatekeeper	No redistribution allowed
 armyops*-linux.run	games/linux-americasarmy Redistribution is limited
 astah-community-*.zip	devel/astah-community	License restrictions -- See http://astah.net/faq/community/enduser-license-agreement
 asWedit-*		www/aswedit		Commercial software
@@ -86,7 +85,7 @@ dtiquery-*		science/dtiquery	License agreement is required
 eagle-lin-*.run		cad/linux-eagle5	Usage permitted for non-commercial purposes only
 eawpats*		audio/eawpats		Some of the patches are not for commercial use
 eClient-linux-i686.run	games/atitd		Redistribution not allowed
-ecw_jpeg_2000_*.zip	graphics/libecwj2	Must be downloaded manually from Ermapper site
+ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources, but sources no longer available on ERDAS website
 edith*			editors/edith		Redistribution not allowed
 eijiro*			japanese/eijiro-fpw	The original dictionary is not free
 emc2*			math/emc2		No resale, contact author for commercial usage
@@ -128,7 +127,6 @@ HeroesOfMightAndMagic-*	games/HeroesOfMightAndMagic	Software is commercial
 homard-*		french/homard		The free downloading of HOMARD software is only allowed for coupling with Code_Aster. For any other use, a license agreement is requested. Please contact HOMARD project: <homard@edf.fr>.
 hplip-*-plugin.run	print/hplip-plugin	License agreement is required
 httprint_freebsd_*.zip	security/httprint	No cost for personal, education and non-commercial use
-huludesktop-i386.rpm	multimedia/linux-huludesktop No redistribution allowed, not for commercial use, export controlled
 HyperSpec-*		devel/clisp-hyperspec	Commercial redistribution prohibited
 HyperSpec-*.tar.gz	devel/clisp-hyperspec	Commercial redistribution prohibited
 ICON-AquaFusion.*	x11-themes/gnome-icons-aqua-fusion Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
@@ -165,8 +163,8 @@ lame*			audio/lame		patent issues, see http://www.mp3licensing.com/
 lgrind/*		print/lgrind		Contains non-free code written by Van Jacobson
 lha-1.14i-ac*		archivers/lha-ac	No redistribution allowed
 libaacplus-*		audio/libaacplus	Unclear legal status
-libamrnb		audio/libamrnb		No redistribution allowed
-libamrwb		audio/libamrwb		No redistribution allowed
+libamrnb/26104-*.zip	audio/libamrnb		unclear legal status, probably need licenses from 3GPP and more
+libamrwb/26204-*.zip	audio/libamrwb		unclear legal status, probably need licenses from 3GPP and more
 libdvdcss-*.tar.bz2	multimedia/libdvdcss	CSS code may violate the DMCA
 linux-unrealgold*	games/linux-unrealgold	Redistribution limited
 linux-ut/*		games/linux-ut		Redistribution limited

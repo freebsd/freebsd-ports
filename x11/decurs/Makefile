@@ -13,6 +13,9 @@ COMMENT=	Lets you edit your X11 mouse cursors
 
 LIB_DEPENDS=	libgtkmm-2.0.6.so:${PORTSDIR}/x11-toolkits/gtkmm20
 
+DEPRECATED=	Abandonware, not staged
+EXPIRATION_DATE=	2014-04-24
+
 USE_XORG=	x11
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

@@ -23,6 +23,7 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 						gtk-query-immodules \
 						ldconfig \
 						load-octave-pkg \
+						ocamlfind \
 						update-desktop-database update-mime-database \
 						gdk-pixbuf-query-loaders catalog.ports \
 						glib-compile-schemas \
@@ -245,16 +246,21 @@ do-package: ${TMPPLIST}
 	@for cat in ${CATEGORIES}; do \
 		${RM} -f ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
 	done
-	@if ${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -o ${PKGREPOSITORY} ${PKGNAME}; then \
-		  if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
-			  if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
-				  if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
-					  ${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
-					  exit 1; \
-				  fi; \
-			  fi ; \
-			  ${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
-		  fi; \
+	@${MKDIR} ${WRKDIR}/pkg
+	@if ${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -o ${WRKDIR}/pkg ${PKGNAME}; then \
+	      if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
+	          ${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
+			      || ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
+		      if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
+			      if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
+			    	  if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
+		    			  ${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
+	    				  exit 1; \
+    				  fi; \
+	    		  fi ; \
+	    		  ${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
+	    	  fi; \
+	      fi; \
 	else \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
 		exit 1; \

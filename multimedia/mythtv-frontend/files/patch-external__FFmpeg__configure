@@ -20,12 +20,3 @@
          ;;
          # targets that do support conditional mov but on which it's slow
          pentium4|pentium4m|prescott|nocona)
-@@ -3063,7 +3063,7 @@
- SRC_PATH_BARE=$source_path
- BUILD_ROOT="$PWD"
- CC_IDENT=$cc_ident
--ARCH=$arch
-+FFMPEG_ARCH=$arch
- CC=$cc
- AS=$as
- LD=$ld

@@ -10,15 +10,14 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	giffunip@tutopia.com
 COMMENT=	Portable general-purpose computer algebra system (CSL version)
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_XORG=	xext x11 xft
 USE_GNOME=	lthack ltverhack
 
@@ -27,6 +26,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-csl
 ALL_TARGET=
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

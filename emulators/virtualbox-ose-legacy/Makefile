@@ -32,10 +32,9 @@ RUN_DEPENDS=	${KMODDIR}/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod-leg
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig tar:bzip2
 USE_GCC=	any
 USE_GNOME=	libidl
-USE_BZIP2=	yes
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	vboxapi

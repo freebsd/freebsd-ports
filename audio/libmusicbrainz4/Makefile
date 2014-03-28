@@ -13,6 +13,9 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
 
+DEPRECATED=	Please use audio/libmusicbrainz5 instead
+EXPIRATION_DATE=	2014-04-28
+
 USES=		cmake
 USE_LDCONFIG=	yes
 

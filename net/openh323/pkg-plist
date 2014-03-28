@@ -88,3 +88,4 @@ lib/pwlib/codecs/audio/lpc10_audio_pwplugin.so
 lib/pwlib/codecs/audio/speex_audio_pwplugin.so
 @dirrm lib/pwlib/codecs/audio
 @dirrm lib/pwlib/codecs
+@dirrmtry lib/pwlib

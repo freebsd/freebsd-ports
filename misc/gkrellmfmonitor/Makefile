@@ -16,13 +16,16 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrel
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 PLIST_FILES=	libexec/gkrellm/plugins/fmonitor.so
+PLIST_DIRSTRY=	libexec/gkrellm/plugins libexec/gkrellm
+
 USE_GNOME=	imlib
 ALL_TARGET=	fmonitor.so
 CFLAGS+=	-fPIC `${GTK_CONFIG} --cflags` `imlib-config --cflags-gdk`
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" GTK_LIB="`${GTK_CONFIG} --libs`"
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fmonitor.so ${PREFIX}/libexec/gkrellm/plugins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm/plugins
+	${INSTALL_LIB} ${WRKSRC}/fmonitor.so \
+		${STAGEDIR}${PREFIX}/libexec/gkrellm/plugins
 
 .include <bsd.port.mk>

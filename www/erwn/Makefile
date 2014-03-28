@@ -11,9 +11,8 @@ DISTNAME=	erwin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK+-2 HTML editor
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gmake
 USE_GNOME=	gnomeprefix gtksourceview gtkhtml3
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		erwin.1

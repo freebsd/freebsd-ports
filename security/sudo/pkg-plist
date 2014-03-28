@@ -38,7 +38,9 @@ sbin/visudo
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.OpenLDAP
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.iPlanet
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.ActiveDirectory
+%%NLS%%share/locale/ca/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/de/LC_MESSAGES/sudo.mo
@@ -69,6 +71,7 @@ sbin/visudo
 %%NLS%%share/locale/sl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/sudo.mo
@@ -85,4 +88,5 @@ etc/sudoers.d/.keep-me
 @dirrmtry etc/sudoers.d
 @cwd /
 @dirrmtry /var/db/sudo
+@dirrmtry /var/run/sudo
 @cwd

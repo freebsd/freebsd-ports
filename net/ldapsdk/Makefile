@@ -15,21 +15,19 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c-sdk
 
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimize \
 		--with-dist-prefix=${WRKDIR}/fakeroot \
 		--with-nspr-inc=${LOCALBASE}/include/nspr \
 		--with-nspr-lib=${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKDIR}/fakeroot
 
 do-install:
-	@${MKDIR} ${PREFIX}/mozilla/directory
+	@${MKDIR} ${STAGEDIR}${PREFIX}/mozilla/directory
 	@(cd ${WRKDIR}/fakeroot \
-		&& ${COPYTREE_SHARE} . ${PREFIX}/mozilla/directory)
+		&& ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/mozilla/directory)
 
 .include <bsd.port.mk>

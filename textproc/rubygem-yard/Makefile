@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yard
-PORTVERSION=	0.8.7.3
+PORTVERSION=	0.8.7.4
 CATEGORIES=	textproc devel rubygems
 MASTER_SITES=	RG
 

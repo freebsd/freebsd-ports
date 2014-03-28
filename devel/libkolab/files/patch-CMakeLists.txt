@@ -1,0 +1,20 @@
+Remove -fno-check-new from CXX_FLAGS.
+
+The same reasoning given when this flag was removed from Akonadi also
+applies here: this a GCC-specific flag that makes the Clang build fail with
+Clang 3.4 (which started failing when unsupported flags are passed to it),
+and the overhead of non-null checks should be minimal.
+
+Sent upstream: http://lists.kolab.org/pipermail/devel/2014-March/014987.html
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -82,7 +82,7 @@ if("${KdepimLibs_VERSION}" VERSION_GREATER "4.8.40" OR USE_LIBCALENDARING)
+     add_definitions(-DKDEPIMLIBS_VERSION_DEVEL)
+ endif()
+ 
+-set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -ansi -Wundef -Wcast-align -Wchar-subscripts -Wall -W -Wpointer-arith -Wformat-security -fno-exceptions -DQT_NO_EXCEPTIONS -fno-check-new -fno-common -Woverloaded-virtual -fno-threadsafe-statics -fvisibility=hidden -Werror=return-type -fvisibility-inlines-hidden -fexceptions -UQT_NO_EXCEPTIONS -fPIC -g" )
++set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -ansi -Wundef -Wcast-align -Wchar-subscripts -Wall -W -Wpointer-arith -Wformat-security -fno-exceptions -DQT_NO_EXCEPTIONS -fno-common -Woverloaded-virtual -fno-threadsafe-statics -fvisibility=hidden -Werror=return-type -fvisibility-inlines-hidden -fexceptions -UQT_NO_EXCEPTIONS -fPIC -g" )
+ # message("${CMAKE_CXX_FLAGS}")
+ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DQT_NO_DEBUG")
+ 
+

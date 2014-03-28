@@ -1,8 +1,8 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: jkim/emulators/virtualbox-ose-additions/Makefile 23858 2014-03-05 18:45:55Z jkim $
+# $FreeBSD: jkim/emulators/virtualbox-ose-additions/Makefile 24980 2014-03-27 23:14:05Z jkim $
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.8
+DISTVERSION=	4.3.10
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -23,9 +23,8 @@ UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
-USES=		compiler:features iconv kmod
+USES=		compiler:features iconv kmod tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
-USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes
 

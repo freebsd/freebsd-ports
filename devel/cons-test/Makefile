@@ -3,7 +3,7 @@
 
 PORTNAME=	cons-test
 PORTVERSION=	2.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A test bed for `Cons' development
+COMMENT=	Test bed for `Cons' development
 
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -27,54 +27,32 @@ PLIST_SUB=	CONS_VER="${PORTVERSION}" CONS_TEST="${CONS_TEST}"
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-test//}-${PORTVERSION}/test
 
-MANCOMPRESSED=	yes
-MAN1=		cons-test.1
-
 CONS_TEST=	cons-${PORTVERSION}/test
-DOCS=		CHANGES COPYRIGHT README TODO Tests.txt
+PORTDOCS=	CHANGES COPYRIGHT README TODO Tests.txt
 TESTS=		1..83,101..147
 TEST_LIBS=	Cmd.pm Cons.pm
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's:/usr/lib:${PREFIX}/lib:g' \
 		${WRKSRC}/cons-test
 
 do-install:
-#
-# Install the script
-#
-	${INSTALL_SCRIPT} ${WRKSRC}/cons-test \
-		${PREFIX}/bin
-#
-# Install the tests
-#
-	${MKDIR} ${PREFIX}/lib/${CONS_TEST}/t
+	${INSTALL_SCRIPT} ${WRKSRC}/cons-test ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/t
 	${PERL} -e 'for (${TESTS}) {$$f=sprintf "t%04d.t", $$_;\
 		    $$x= "${INSTALL_DATA} ${WRKSRC}/t/$$f \
-			    ${PREFIX}/lib/${CONS_TEST}/t";\
+		    	    ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/t";\
 		    printf "$$x\n"; system $$x;}'
-#
-# Install the test libraries
-#
-	${MKDIR} ${PREFIX}/lib/${CONS_TEST}/Test/Cmd
-	${INSTALL_DATA} ${WRKSRC}/Test/Cmd.pm ${PREFIX}/lib/${CONS_TEST}/Test
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/Test/Cmd
+	${INSTALL_DATA} ${WRKSRC}/Test/Cmd.pm \
+		${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/Test
 	${INSTALL_DATA} ${WRKSRC}/Test/Cmd/Cons.pm \
-	    ${PREFIX}/lib/${CONS_TEST}/Test/Cmd
-#
-# Install the man pages
-#
+		${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/Test/Cmd
 	${INSTALL_MAN} ${WRKSRC}/cons-test.1.gz \
-		${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-#
-# Install the documentation
-#
-	${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} \
-		${DOCSDIR}
-.endfor
-.endif
+		${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

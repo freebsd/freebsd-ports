@@ -1,8 +1,0 @@
-%%PERL5_MAN3%%/Algorithm::Pair::Best.3.gz
-%%SITE_PERL%%/Algorithm/Pair/Best.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Pair/Best/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Pair/Best
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Pair
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/Algorithm/Pair
-@dirrmtry %%SITE_PERL%%/Algorithm

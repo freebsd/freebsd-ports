@@ -17,9 +17,8 @@ COMMENT=	Apache module for non-ASCII filename interoperability
 #APACHE_VERSION=	1.3.6
 
 USE_APACHE=	22+
-USES=		iconv
+USES=		iconv gmake
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \

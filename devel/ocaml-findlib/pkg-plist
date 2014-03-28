@@ -3,7 +3,7 @@ bin/safe_camlp4
 etc/findlib.conf
 lib/ocaml/site-lib/bigarray/META
 lib/ocaml/site-lib/camlp4/META
-lib/ocaml/site-lib/dbm/META
+lib/ocaml/site-lib/compiler-libs/META
 lib/ocaml/site-lib/dynlink/META
 lib/ocaml/site-lib/findlib/META
 lib/ocaml/site-lib/findlib/Makefile.config
@@ -18,9 +18,7 @@ lib/ocaml/site-lib/findlib/fl_metascanner.mli
 lib/ocaml/site-lib/findlib/fl_metatoken.cmi
 lib/ocaml/site-lib/findlib/fl_package_base.cmi
 lib/ocaml/site-lib/findlib/fl_package_base.mli
-@mode 755
 %%TOOLBOX%%lib/ocaml/site-lib/findlib/make_wizard
-@mode
 %%TOOLBOX%%lib/ocaml/site-lib/findlib/make_wizard.pattern
 lib/ocaml/site-lib/findlib/topfind.cmi
 lib/ocaml/site-lib/findlib/topfind.mli
@@ -139,8 +137,8 @@ man/man5/site-lib.5.gz
 @dirrm lib/ocaml/site-lib/graphics
 @dirrm lib/ocaml/site-lib/findlib
 @dirrm lib/ocaml/site-lib/dynlink
-@dirrm lib/ocaml/site-lib/dbm
 @dirrm lib/ocaml/site-lib/camlp4
+@dirrm lib/ocaml/site-lib/compiler-libs
 @dirrm lib/ocaml/site-lib/bigarray
 @dirrmtry lib/ocaml/site-lib/labltk
 @dirrmtry lib/ocaml/site-lib

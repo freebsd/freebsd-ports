@@ -101,6 +101,7 @@ CONFIGURE_ARGS+=--without-ssl
 #
 .if ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=--with-gssapi
+LDFLAGS+=	-lgssapi_krb5
 .else
 CONFIGURE_ARGS+=--without-gssapi
 .endif

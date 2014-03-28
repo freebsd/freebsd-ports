@@ -5,8 +5,7 @@ PORTNAME=	source
 PORTVERSION=	1.01
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
-MASTER_SITE_SUBDIR=	source
+MASTER_SITES=	IDSOFTWARE/source
 PKGNAMEPREFIX=	quake-
 DISTNAME=	qcc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -24,7 +23,6 @@ OPTIONS_DEFAULT=	QUAKEWORLD
 
 QUAKEWORLD_DESC=	Install QuakeWorld game source
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQUAKEWORLD}
@@ -36,24 +34,18 @@ PLIST_SUB+=	QUAKEWORLD=""
 PLIST_SUB+=	QUAKEWORLD="@comment "
 .endif
 
-pre-patch:
-# CRLF -> LF conversion (XXX why not USE_DOS2UNIX?)
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${FILE} | \
-		${GREP} 'CRLF' | ${SED} -e 's/:.*//' | ${XARGS} \
-			${REINPLACE_CMD} -i "" -e "s/`${PRINTF} '\r'`$$//"
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,^\.\.,.,' ${WRKSRC}/send/v101qc/progs.src
 	@${RM} ${WRKSRC}/send/v101qc/progs.src.bak
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${CP} -a ${WRKSRC}/send/v101qc ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -a ${WRKSRC}/send/v101qc ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MQUAKEWORLD}
-	@${MKDIR} ${DATADIR}/qw
+	@${MKDIR} ${STAGEDIR}${DATADIR}/qw
 .  for f in *.h *.qc *.src
-	@${REINPLACE_CMD} -e "s|`${ECHO_CMD} -e '\r'`$$||" ${WRKSRC}/qw/${f}
-	${INSTALL_DATA} ${WRKSRC}/qw/${f} ${DATADIR}/qw
+	@${REINPLACE_CMD} -e 's,[[:cntrl:]]*$$,,' ${WRKSRC}/qw/${f}
+	${INSTALL_DATA} ${WRKSRC}/qw/${f} ${STAGEDIR}${DATADIR}/qw
 .  endfor
 .endif
 

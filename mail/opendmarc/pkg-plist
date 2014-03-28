@@ -1,3 +1,11 @@
+man/man5/opendmarc.conf.5.gz
+man/man8/opendmarc-check.8.gz
+man/man8/opendmarc-expire.8.gz
+man/man8/opendmarc-import.8.gz
+man/man8/opendmarc-params.8.gz
+man/man8/opendmarc-reports.8.gz
+man/man8/opendmarc.8.gz
+man/man8/opendmarc-importstats.8.gz
 etc/mail/opendmarc.conf.sample
 include/opendmarc/dmarc.h
 lib/libopendmarc.a

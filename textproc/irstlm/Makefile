@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	run
-USE_GCC=	4.7+
+USE_GCC=	yes
 USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
 AUTOMAKE_ARGS=	--add-missing
 USES=		shebangfix

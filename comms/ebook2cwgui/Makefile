@@ -13,7 +13,8 @@ COMMENT=	gui front end for ebooks2cw
 
 RUN_DEPENDS=	ebook2cw:${PORTSDIR}/comms/ebook2cw
 
-USE_WX=	yes
+USE_WX=	2.8
+WX_UNICODE=	yes
 
 PORTDOCS=	*
 

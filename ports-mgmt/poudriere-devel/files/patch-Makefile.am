@@ -1,0 +1,21 @@
+--- ./Makefile.am.orig	2014-03-23 10:59:46.490421007 -0500
++++ ./Makefile.am	2014-03-23 11:00:25.195417823 -0500
+@@ -12,6 +12,7 @@
+ dtimagesdir= $(datatablesdir)/images
+ dtjsdir= $(datatablesdir)/js
+ rcdir= $(sysconfdir)/rc.d
++hookdir= $(sysconfdir)/poudriere.d/hooks
+ 
+ dist_bin_SCRIPTS=	src/bin/poudriere
+ 
+@@ -20,6 +21,10 @@
+ sysconf_DATA=	src/etc/poudriere.conf.sample \
+ 		src/etc/poudriered.conf.sample
+ 
++hook_DATA=	src/etc/poudriere.d/hooks/bulk.sh.sample \
++		src/etc/poudriere.d/hooks/pkgbuild.sh.sample
++
++
+ dist_pkgdata_DATA=	src/share/poudriere/bulk.sh \
+ 			src/share/poudriere/clean.sh \
+ 			src/share/poudriere/common.sh \

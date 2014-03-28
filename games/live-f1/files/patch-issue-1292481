@@ -1,0 +1,72 @@
+# Backport fix for missing sector time data
+# Issue: https://bugs.launchpad.net/live-f1/+bug/1292481
+# Changeset: http://bazaar.launchpad.net/~davepusey/live-f1/live-f1/revision/114
+
+=== modified file 'src/display.c' (properties changed: -x to +x)
+--- src/display.c	2014-03-15 09:32:53 +0000
++++ src/display.c	2014-03-15 10:39:36 +0000
+@@ -247,10 +247,10 @@
+ 	      int           car,
+ 	      int           type)
+ {
+-	int         y, x, sz, align, attr;
+-	CarAtom    *atom;
+-	const char *text;
+-	size_t      len, pad;
++	int                  y, x, sz, align, attr;
++	CarAtom             *atom;
++	unsigned const char *text;
++	size_t               len, pad;
+ 
+ 	y = state->car_position[car - 1];
+ 	if (! y)
+@@ -415,17 +415,17 @@
+ 			break;
+ 		case QUALIFYING_SECTOR_1:
+ 			x = 48;
+-			sz = 5;
++			sz = 3;
+ 			align = 1;
+ 			break;
+ 		case QUALIFYING_SECTOR_2:
+ 			x = 54;
+-			sz = 5;
++			sz = 3;
+ 			align = 1;
+ 			break;
+ 		case QUALIFYING_SECTOR_3:
+ 			x = 60;
+-			sz = 5;
++			sz = 3;
+ 			align = 1;
+ 			break;
+ 		case QUALIFYING_LAP:
+@@ -444,6 +444,9 @@
+ 	atom = &state->car_info[car - 1][type];
+ 	attr = attrs[atom->data];
+ 	text = atom->text;
++
++	if (text[0] == 0xE2) text = "*";
++
+ 	len = strlen ((const char *) text);
+ 
+ 	/* Check for over-long atoms */
+@@ -646,7 +649,7 @@
+ 	}
+ 
+ 	/* Display weather */
+-
++/*
+ 	int wline = 5;
+ 	wattrset (statwin, attrs[COLOUR_DATA]);
+  
+@@ -698,7 +701,7 @@
+ 	wprintw(statwin, "%-2s%6dmb", "", state->pressure);
+ 	wmove (statwin, wline, 6);
+ 	waddch (statwin, '.');
+-
++*/
+ 	/* Update fastest lap line (race only) */
+ 
+ 	if (state->event_type == RACE_EVENT)
+

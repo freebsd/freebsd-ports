@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Linux::Cpuinfo.3.gz
+%%SITE_PERL%%/Linux/Cpuinfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Linux/Cpuinfo/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Linux/Cpuinfo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Linux
+@dirrmtry %%SITE_PERL%%/Linux

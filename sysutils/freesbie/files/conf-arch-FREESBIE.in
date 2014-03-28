@@ -1,0 +1,5 @@
+include /usr/src/sys/%%ARCH%%/conf/GENERIC
+ident FREESBIE
+options GEOM_UZIP # Read-only compressed disks
+options GEOM_LABEL # Providers labelization.
+options UNIONFS # Union filesystem

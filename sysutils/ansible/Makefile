@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.5
+PORTVERSION=	1.5.3
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://releases.ansible.com/ansible/
 
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Simple ssh-based configuration management and orchestration system
@@ -20,6 +19,11 @@ OPTIONS_DEFAULT=	ACCELERATE
 ACCELERATE_DESC=	Enable Accelerated Mode (Uses pycrypto and keyczar)
 ACCELERATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
 			${PYTHON_PKGNAMEPREFIX}keyczar>0:${PORTSDIR}/security/py-keyczar
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ansible
+GH_TAGNAME=	v${DISTVERSION}
+GH_COMMIT=	6ae58a9
 
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes

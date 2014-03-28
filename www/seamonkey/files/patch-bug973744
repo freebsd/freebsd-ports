@@ -1,0 +1,38 @@
+commit 2506904
+Author: Alessandro Decina <alessandro.d@gmail.com>
+Date:   Wed Feb 19 11:30:09 2014 -0500
+
+    Bug 973744 - Remove matroska seek hack in the gstreamer media backend. r=edwin
+---
+ content/media/gstreamer/GStreamerReader.cpp | 21 ---------------------
+ 1 file changed, 21 deletions(-)
+
+diff --git content/media/gstreamer/GStreamerReader.cpp content/media/gstreamer/GStreamerReader.cpp
+index e21ffdd..82dadeb 100644
+--- mozilla/content/media/gstreamer/GStreamerReader.cpp
++++ mozilla/content/media/gstreamer/GStreamerReader.cpp
+@@ -381,24 +381,6 @@ nsresult GStreamerReader::ReadMetadata(MediaInfo* aInfo,
+     /* we couldn't get this to play */
+     return ret;
+ 
+-  /* FIXME: workaround for a bug in matroskademux. This seek makes matroskademux
+-   * parse the index */
+-  LOG(PR_LOG_DEBUG, "doing matroskademux seek hack");
+-  if (gst_element_seek_simple(mPlayBin, GST_FORMAT_TIME,
+-        GST_SEEK_FLAG_FLUSH, 0)) {
+-    /* after a seek we need to wait again for ASYNC_DONE */
+-    message = gst_bus_timed_pop_filtered(mBus, 5 * GST_SECOND,
+-       (GstMessageType)(GST_MESSAGE_ASYNC_DONE | GST_MESSAGE_ERROR));
+-    LOG(PR_LOG_DEBUG, "matroskademux seek hack done");
+-    if (GST_MESSAGE_TYPE(message) != GST_MESSAGE_ASYNC_DONE) {
+-      gst_element_set_state(mPlayBin, GST_STATE_NULL);
+-      gst_message_unref(message);
+-      return NS_ERROR_FAILURE;
+-    }
+-  } else {
+-    LOG(PR_LOG_DEBUG, "matroskademux seek hack failed (non fatal)");
+-  }
+-
+   /* report the duration */
+   gint64 duration;
+ 

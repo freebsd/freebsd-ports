@@ -9,14 +9,14 @@ MASTER_SITES=	http://hcilab.uniud.it/pan/downloads/
 DISTNAME=	mb339pan_${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	A simulation of the MB-339 PAN aerobatic jet
+COMMENT=	Simulation of the MB-339 PAN aerobatic jet
 
 RUN_DEPENDS=	${LOCALBASE}/share/flightgear/version:${PORTSDIR}/games/flightgear-data
 
 RESTRICTED=	Redistribution prohibited
 
 NO_BUILD=	yes
-USES=		zip
+USES=		zip:infozip
 WRKSRC=	${WRKDIR}/${PORTNAME}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 DATADIR=	${PREFIX}/share/flightgear/Aircraft

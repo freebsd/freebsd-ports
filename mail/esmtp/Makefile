@@ -10,26 +10,25 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Relay-only Mail Transfer Agent with sendmail compatible syntax
 
-LIB_DEPENDS=	esmtp.7:${PORTSDIR}/mail/libesmtp
-
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
+
+USES=		tar:bzip2 bison
 USE_OPENSSL=	yes
-USES=		bison
 GNU_CONFIGURE=	yes
 
-MAN1=		esmtp.1
-MAN5=		esmtprc.5
 PORTDOCS=	README
-PLIST_FILES=	bin/esmtp etc/esmtprc.sample
+PLIST_FILES=	bin/esmtp etc/esmtprc.sample man/man1/esmtp.1.gz \
+		man/man5/esmtprc.5.gz
 
 SUB_FILES=	pkg-message
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 .for file in ${PORTNAME}.1
 	@${REINPLACE_CMD} -e \
@@ -42,17 +41,12 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/esmtprc.5 ${MAN5PREFIX}/man/man5
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/esmtprc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 	${INSTALL_DATA} ${WRKSRC}/sample.esmtprc \
-		${PREFIX}/etc/esmtprc.sample
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/etc/esmtprc.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- cmake/Modules/FindPortaudio.cmake.orig	2013-01-08 15:56:55.000000000 -0500
-+++ cmake/Modules/FindPortaudio.cmake	2013-04-23 07:47:40.000000000 -0500
+--- cmake/Modules/FindPortaudio.cmake.orig	2012-04-25 11:12:33.000000000 -0500
++++ cmake/Modules/FindPortaudio.cmake	2014-03-02 20:19:36.000000000 -0500
 @@ -6,7 +6,13 @@
  #  PORTAUDIO_LIBRARIES - Link these to use Portaudio
  

@@ -16,13 +16,11 @@ USE_PYTHON=	yes
 
 NO_BUILD=	yes
 
-PLIST_FILES=	sbin/flowgrep
+PLIST_FILES=	sbin/flowgrep man/man8/flowgrep.8.gz
 
-MAN8=	flowgrep.8
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/flowgrep.py ${PREFIX}/sbin/flowgrep
-	${INSTALL_MAN} ${WRKSRC}/flowgrep.8 ${PREFIX}/man/man8/flowgrep.8
+	${INSTALL_SCRIPT} ${WRKSRC}/flowgrep.py \
+		${STAGEDIR}${PREFIX}/sbin/flowgrep
+	${INSTALL_MAN} ${WRKSRC}/flowgrep.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

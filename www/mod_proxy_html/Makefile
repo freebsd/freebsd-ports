@@ -21,7 +21,7 @@ USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	proxy_html
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_GNOME=	libxml2
 
 AP_INC+=	${LOCALBASE}/include/libxml2 -I${WRKSRC}

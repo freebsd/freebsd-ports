@@ -1,15 +1,14 @@
---- Makefile.inc.orig	Mon Jan 19 16:03:37 2004
-+++ Makefile.inc	Tue Feb  3 21:01:10 2004
-@@ -2,7 +2,7 @@
+--- Makefile.inc.orig	2004-01-19 15:03:37.000000000 +0000
++++ Makefile.inc
+@@ -2,7 +2,6 @@
  
  # Where to install stuff
  
 -MOSMLHOME=${HOME}/mosml
-+#MOSMLHOME=${HOME}/mosml
  
  # Various utility programs
  INSTALL_PROGRAM=cp
-@@ -15,7 +15,7 @@
+@@ -15,7 +14,7 @@ PERL=perl
  
  ADDPRIMS=dynlib.c
  ADDOBJS=dynlib.o
@@ -18,7 +17,7 @@
  ADDRUNCFLAGS=
  ADDDYNLIBCFLAGS=
  
-@@ -45,13 +45,14 @@
+@@ -45,13 +44,14 @@ DYNLD=ld -shared
  
  # For NetBSD, use:
  # ------------------------
@@ -40,7 +39,7 @@
  
  # For Solaris 2 (not SunOS 4), use:
  # ---------------------------------
-@@ -113,13 +113,16 @@
+@@ -113,13 +113,11 @@ SHELL=/bin/sh
  # INCDIR contains the runtime system header files (for compiling dynlibs)
  # DOCDIR contains documentation
  
@@ -51,20 +50,15 @@
 -TOOLDIR=${MOSMLHOME}/tools
 -# LIBDIR=${MOSMLHOME}/lib/moscow_ml
 -# TOOLDIR=${MOSMLHOME}/libexec/moscow_ml
-+#BINDIR=${MOSMLHOME}/bin
-+BINDIR=${PREFIX}/bin
-+#LIBDIR=${MOSMLHOME}/lib
-+LIBDIR=${PREFIX}/lib/mosml
-+#INCDIR=${MOSMLHOME}/include
-+INCDIR=${PREFIX}/include/mosml
-+#DOCDIR=${MOSMLHOME}/doc
-+DOCDIR=${DOCSDIR}
-+#TOOLDIR=${MOSMLHOME}/tools
-+TOOLDIR=${PREFIX}/libexec/mosml
++BINDIR=${DESTDIR}${PREFIX}/bin
++LIBDIR=${DESTDIR}${PREFIX}/lib/mosml
++INCDIR=${DESTDIR}${PREFIX}/include/mosml
++DOCDIR=${DESTDIR}${DOCSDIR}
++TOOLDIR=${DESTDIR}${PREFIX}/libexec/mosml
  
  CAMLRT=../runtime
  
-@@ -142,7 +145,7 @@
+@@ -142,7 +140,7 @@ MOSMLDEP=../camlrunm ../mosmldep
  # For cross-compiling to Win 32 (from Linux) (development only)
  # CPP=/lib/cpp -P -traditional -Umsdos -Uunix -Dwin32
  

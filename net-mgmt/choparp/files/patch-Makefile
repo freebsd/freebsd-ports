@@ -1,0 +1,14 @@
+--- /dev/null	Tue Oct  7 23:33:35 1997
++++ Makefile	Tue Oct  7 23:42:51 1997
+@@ -0,0 +1,11 @@
++PROG=	choparp
++MAN8=	choparp.8
++
++BINOWN!=	/usr/bin/id -n -u
++BINGRP!=	/usr/bin/id -n -g
++MANOWN=	${BINOWN}
++MANGRP=	${BINGRP}
++BINDIR=	${PREFIX}/sbin
++MANDIR=	${PREFIX}/man/man
++
++.include <bsd.prog.mk>

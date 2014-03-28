@@ -21,14 +21,6 @@ USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--localstatedir="${PREFIX}"
 
-MAN1=	flow-capture.1 flow-cat.1 flow-dscan.1 flow-expire.1	\
-	flow-export.1 flow-fanout.1 flow-filter.1 flow-gen.1	\
-	flow-header.1 flow-import.1 flow-mask.1 flow-merge.1	\
-	flow-nfilter.1 flow-print.1 flow-receive.1		\
-	flow-report.1 flow-send.1 flow-split.1 flow-stat.1	\
-	flow-tag.1 flow-tools.1	flow-tools-examples.1 		\
-	flow-xlate.1 flow-rptfmt.1 flow-log2rrd.1 flow-rpt2rrd.1
-
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	FLOW_CAPTURE_SPOOL="${FLOW_CAPTURE_SPOOL}" \
 		FLOW_CAPTURE_USER="${FLOW_CAPTURE_USER}" \
@@ -46,7 +38,6 @@ FLOW_CAPTURE_UID=	174
 FLOW_CAPTURE_GID=	174
 FLOW_CAPTURE_PIDDIR=	${VARDIR}/run/flow-capture
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -68,16 +59,10 @@ post-patch:
 	 -e 's|@localstatedir@/sym/|${PREFIX}/share/flow-tools/|' \
 	 -e 's|@localstatedir@/cfg/|${PREFIX}/etc/flow-tools/|' \
 	  ${WRKSRC}/docs/flow-*.1.in ${WRKSRC}/docs/flow-*.html.in
-
-pre-su-install:
-	@${SETENV} ${SCRIPTS_ENV} \
-		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' \
+		${WRKSRC}/lib/Makefile.in
 
 post-install:
-.for I in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/docs/${I} ${PREFIX}/man/man1/
-.endfor
-	@${SETENV} ${SCRIPTS_ENV} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${INSTALL_MAN} ${WRKSRC}/docs/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

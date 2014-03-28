@@ -12,9 +12,9 @@ EXTRACT_SUFX=	-nogdb.tar.gz
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	TI89(ti)/92(+)/V200 hand-helds emulator
 
-LIB_DEPENDS=	ticalcs2:${PORTSDIR}/comms/libticalcs2 \
-		ticables2:${PORTSDIR}/comms/libticables2 \
-		tifiles2:${PORTSDIR}/devel/libtifiles2
+LIB_DEPENDS=	libticalcs2.so:${PORTSDIR}/comms/libticalcs2 \
+		libticables2.so:${PORTSDIR}/comms/libticables2 \
+		libtifiles2.so:${PORTSDIR}/devel/libtifiles2
 
 USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
@@ -23,25 +23,13 @@ USE_SDL=	sdl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
-CONFIGURE_ARGS=	--disable-gdb
-
-MAN1=		tiemu.1
-
-NO_STAGE=	yes
+CONFIGURE_ARGS=	--disable-gdb --without-kde
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
-
-CONFIGURE_ARGS+=	--without-kde
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -E 's,(install-data-am:).*$$,\1,' ${WRKSRC}/Makefile.in

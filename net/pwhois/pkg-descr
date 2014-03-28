@@ -1,0 +1,9 @@
+The Prefix WhoIs Project provides a whois-compatible client and server
+framework for disclosing various up-to-date routing information.
+Instead of using registrar-originated network information (which is often
+unspecific or inaccurate), Prefix WhoIs uses the Internet's global routing
+table as gleaned from a number of routing peers around the world. Other
+sources of information, such as imported data from ARIN are also supported
+(a separate agreement with ARIN is required).
+
+WWW: http://pwhois.org/

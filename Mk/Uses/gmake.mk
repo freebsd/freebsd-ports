@@ -2,11 +2,10 @@
 #
 # Provide support to use the GNU make
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:		gmake
 # Usage:		USES=gmake
 #
+# MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GMAKE_MK)
 _INCLUDE_USES_GMAKE_MK=	yes

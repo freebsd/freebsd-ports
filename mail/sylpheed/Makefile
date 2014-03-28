@@ -15,8 +15,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
-USES=		gettext iconv gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gettext iconv gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

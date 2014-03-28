@@ -14,12 +14,12 @@ COMMENT=	Role-playing game, featuring both a single and a multiplayer mode
 
 BROKEN=		Fails to build
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.8.1:${PORTSDIR}/graphics/ogre3d \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS-1.2.0.so:${PORTSDIR}/devel/ois \
 		${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
-RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.8.1:${PORTSDIR}/graphics/ogre3d \
+RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS-1.2.0.so:${PORTSDIR}/devel/ois
-LIB_DEPENDS=	CEGUIBase-0.7.9.0:${PORTSDIR}/graphics/cegui \
+LIB_DEPENDS=	CEGUIBase-0.so:${PORTSDIR}/graphics/cegui \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		PocoNet.12:${PORTSDIR}/devel/poco \
 		physfs.1:${PORTSDIR}/devel/physfs

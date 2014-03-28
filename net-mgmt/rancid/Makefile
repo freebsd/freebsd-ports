@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--with-svn
 BUILD_DEPENDS+=		svn:${PORTSDIR}/devel/subversion
 .else
 CONFIGURE_ARGS+=	--without-svn
-.if ${OPSYS} == DragonFly && ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 RUN_DEPENDS+=	cvs>0:${PORTSDIR}/devel/cvs
 .endif
 .endif

@@ -1,9 +1,0 @@
-****************************************************************************
-!!! NOTE: THE AQUA GATEKEEPER IS DISCONTIUED BY ITS VENDOR. No vendor support,
-!!! no updates, no bugfixes. This port is still provided to support
-!!! old installations only. You should choose other software for new setups.
-
-  Please read documentation located in %%DOCSDIR%%
-  You will need to write configuration file to run the Gatekeeper.
-  Some examples are in %%EXAMPLESDIR%%
-****************************************************************************

@@ -22,9 +22,8 @@ DVBPATCH_DESC=		DVB audio patch for some countries
 STB0899_SIGNAL_DESC=	STB0899 signal strength patch
 OPTIONS_DEFAULT=	IPTVPATCH TTXPATCH
 
-USES=		pkgconfig gettext iconv:wchar_t gmake
+USES=		pkgconfig gettext iconv:wchar_t gmake tar:bzip2
 DIST_SUBDIR=	vdr
-USE_BZIP2=	yes
 PORTDOCS=	COPYING INSTALL MANUAL README HISTORY
 CONFDIR=	$(ETCDIR)
 USE_CSTD=	gnu89

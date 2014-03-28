@@ -106,7 +106,6 @@
     SUBDIR += cdrtools
     SUBDIR += cdrtools-devel
     SUBDIR += cfengine
-    SUBDIR += cfengine-devel
     SUBDIR += cfengine22
     SUBDIR += cfengine32
     SUBDIR += cfengine33
@@ -601,6 +600,7 @@
     SUBDIR += p5-Fuse-Simple
     SUBDIR += p5-Iterator-File
     SUBDIR += p5-Lchown
+    SUBDIR += p5-Linux-Cpuinfo
     SUBDIR += p5-MogileFS-Client
     SUBDIR += p5-MogileFS-Network
     SUBDIR += p5-MogileFS-Server
@@ -734,16 +734,16 @@
     SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
     SUBDIR += py-glances
-    SUBDIR += py-halite 
+    SUBDIR += py-halite
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
     SUBDIR += py-plumbum
     SUBDIR += py-psutil
+    SUBDIR += py-psutil121
     SUBDIR += py-pytsk
     SUBDIR += py-ranger
     SUBDIR += py-salt
     SUBDIR += py-salt-api
-    SUBDIR += py-salt-cloud
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor
     SUBDIR += py-zdaemon
@@ -902,8 +902,10 @@
     SUBDIR += syslinux
     SUBDIR += syslog-ng
     SUBDIR += syslog-ng-devel
+    SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng2
     SUBDIR += syslog-ng33
+    SUBDIR += syslog-ng34
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
@@ -923,6 +925,7 @@
     SUBDIR += timemon
     SUBDIR += titlefix
     SUBDIR += tkdvd
+    SUBDIR += tlsdate
     SUBDIR += tm
     SUBDIR += tmpreaper
     SUBDIR += tmpwatch
@@ -972,6 +975,7 @@
     SUBDIR += userneu-devel
     SUBDIR += usrinfo
     SUBDIR += utcount
+    SUBDIR += vagrant
     SUBDIR += vbetool
     SUBDIR += vcp
     SUBDIR += videogen
@@ -987,6 +991,7 @@
     SUBDIR += vpnc-scripts
     SUBDIR += vstrip
     SUBDIR += vttest
+    SUBDIR += wait_on
     SUBDIR += watchdog
     SUBDIR += watchfolder
     SUBDIR += watchmen

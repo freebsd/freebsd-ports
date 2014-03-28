@@ -14,36 +14,20 @@ COMMENT=	Symmetric cryptographic algorithms package for OCaml
 LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GMAKE=	yes
+USES=		gmake
 USE_OCAML=	yes
-USE_OCAML_FINDLIB=yes
+USE_OCAML_FINDLIB=	yes
+USE_OCAMLFIND_PLIST=	yes
 
 ALL_TARGET=	all opt
-MASTERPORT=	${PORTSDIR}/devel/ocaml-camlidl
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
-.endif
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-extract:
-# For nonstandard prefixes
-.if !exists(${OCAMLFIND_DESTDIR})
-	${MKDIR} ${OCAMLFIND_DESTDIR}
-.endif
-.if !exists(${OCAMLFIND_LDCONF})
-	${TOUCH} ${OCAMLFIND_LDCONF}
-.endif
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

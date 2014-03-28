@@ -38,6 +38,7 @@ lib/postgresql/tablefunc.so
 lib/postgresql/test_parser.so
 lib/postgresql/timetravel.so
 lib/postgresql/tsearch2.so
+lib/postgresql/uuid-ossp.so
 %%DOCSDIR%%/README-contrib
 %%DOCSDIR%%/contrib/README
 %%DOCSDIR%%/contrib/autoinc.example
@@ -112,6 +113,8 @@ share/postgresql/contrib/uninstall_sslinfo.sql
 share/postgresql/contrib/uninstall_tablefunc.sql
 share/postgresql/contrib/uninstall_test_parser.sql
 share/postgresql/contrib/uninstall_tsearch2.sql
+share/postgresql/contrib/uninstall_uuid-ossp.sql
+share/postgresql/contrib/uuid-ossp.sql
 share/postgresql/tsearch_data/xsyn_sample.rules
 @dirrmtry share/postgresql/tsearch_data
 @dirrmtry share/postgresql/contrib

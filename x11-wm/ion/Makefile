@@ -15,7 +15,7 @@ CONFLICTS=	ion-2-*
 MAN1=		ion.1x
 
 USE_XORG=	x11
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

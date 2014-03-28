@@ -6,7 +6,6 @@
     SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
-    SUBDIR += AquaGatekeeper
     SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
     SUBDIR += R-cran-twitteR
@@ -866,10 +865,10 @@
     SUBDIR += php53-soap
     SUBDIR += php53-sockets
     SUBDIR += php53-xmlrpc
-    SUBDIR += php55-ldap 
+    SUBDIR += php55-ldap
     SUBDIR += php55-soap
     SUBDIR += php55-sockets
-    SUBDIR += php55-xmlrpc  
+    SUBDIR += php55-xmlrpc
     SUBDIR += phpldapadmin
     SUBDIR += pimdd
     SUBDIR += pipsecd
@@ -894,6 +893,7 @@
     SUBDIR += pure-sockets
     SUBDIR += pvm
     SUBDIR += pvm++
+    SUBDIR += pwhois
     SUBDIR += pxe
     SUBDIR += pxe-pdhcp
     SUBDIR += py-GeoIP
@@ -936,6 +936,7 @@
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
     SUBDIR += py-pysphere
+    SUBDIR += py-pyzmq
     SUBDIR += py-qt4-network
     SUBDIR += py-radix
     SUBDIR += py-s3cmd

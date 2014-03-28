@@ -23,8 +23,7 @@ MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 USE_PYTHON_RUN=	yes
-USE_XZ=		yes
-USES=		gmake pathfix pkgconfig shebangfix
+USES=		gmake pathfix pkgconfig shebangfix tar:xz
 
 SHEBANG_FILES=	tools/gupnp-binding-tool
 python_CMD=	${PYTHON_CMD}

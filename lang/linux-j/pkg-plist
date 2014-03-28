@@ -1688,6 +1688,7 @@ lib/j/user/projects/projects.txt
 lib/j/user/user.txt
 lib/j/user/classes/classes.txt
 lib/j/profile.ijs
+man/man1/j-jconsole.1.gz
 @dirrm lib/j/system/classes/browse
 @dirrm lib/j/system/classes/cs
 @dirrm lib/j/system/classes/dict

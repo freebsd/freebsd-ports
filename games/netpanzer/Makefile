@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
 
-USES=		scons
-USE_BZIP2=	yes
+USES=		scons tar:bzip2
 USE_SDL=	sdl mixer image
 USE_GNOME=	libxml2
 SCONS_ARGS+=	datadir="${DATADIR}"

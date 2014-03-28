@@ -1,0 +1,188 @@
+# Allow building against system-wide graphite2/harfbuzz.
+
+diff --git config/Makefile.in config/Makefile.in
+index 14bfc0d..5383399 100644
+--- config/Makefile.in
++++ config/Makefile.in
+@@ -77,6 +77,8 @@ export:: $(export-preqs)
+ 		-DMOZ_NATIVE_LIBEVENT=$(MOZ_NATIVE_LIBEVENT) \
+ 		-DMOZ_NATIVE_LIBVPX=$(MOZ_NATIVE_LIBVPX) \
+ 		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
++		-DMOZ_NATIVE_GRAPHITE2=$(MOZ_NATIVE_GRAPHITE2) \
++		-DMOZ_NATIVE_HARFBUZZ=$(MOZ_NATIVE_HARFBUZZ) \
+ 		$(srcdir)/system-headers | $(PERL) $(topsrcdir)/nsprpub/config/make-system-wrappers.pl system_wrappers
+ 	$(INSTALL) system_wrappers $(DIST)
+ 
+diff --git config/system-headers config/system-headers
+index 126391e..b711fc3 100644
+--- config/system-headers
++++ config/system-headers
+@@ -1144,3 +1144,11 @@ unicode/utypes.h
+ #endif
+ libutil.h
+ unwind.h
++#if MOZ_NATIVE_GRAPHITE2==1
++graphite2/Font.h
++graphite2/Segment.h
++#endif
++#if MOZ_NATIVE_HARFBUZZ==1
++harfbuzz/hb-ot.h
++harfbuzz/hb.h
++#endif
+diff --git configure.in configure.in
+index bbc7b40..1747206 100644
+--- configure.in
++++ configure.in
+@@ -7848,6 +7848,34 @@ if test "$USE_FC_FREETYPE"; then
+ fi
+ 
+ dnl ========================================================
++dnl Check for graphite2 and harfbuzz
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-harfbuzz,
++[  --with-system-harfbuzz  Use system harfbuzz (located with pkgconfig)],
++MOZ_NATIVE_HARFBUZZ=1,
++MOZ_NATIVE_HARFBUZZ= )
++
++if test -n "$MOZ_NATIVE_HARFBUZZ"; then
++    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 0.9.25)
++fi
++AC_SUBST(MOZ_NATIVE_HARFBUZZ)
++AC_SUBST(MOZ_HARFBUZZ_CFLAGS)
++AC_SUBST(MOZ_HARFBUZZ_LIBS)
++
++MOZ_ARG_WITH_BOOL(system-graphite2,
++[  --with-system-graphite2 Use system graphite2 (located with pkgconfig)],
++MOZ_NATIVE_GRAPHITE2=1,
++MOZ_NATIVE_GRAPHITE2= )
++
++if test -n "$MOZ_NATIVE_GRAPHITE2"; then
++    PKG_CHECK_MODULES(MOZ_GRAPHITE2, graphite2 >= 1.2.4)
++fi
++AC_SUBST(MOZ_NATIVE_GRAPHITE2)
++AC_SUBST(MOZ_GRAPHITE2_CFLAGS)
++AC_SUBST(MOZ_GRAPHITE2_LIBS)
++
++dnl ========================================================
+ dnl Check for pixman and cairo
+ dnl ========================================================
+ 
+diff --git content/base/src/Makefile.in content/base/src/Makefile.in
+index a618096..596901a 100644
+--- content/base/src/Makefile.in
++++ content/base/src/Makefile.in
+@@ -5,6 +5,10 @@
+ 
+ include $(topsrcdir)/config/rules.mk
+ 
++ifdef MOZ_NATIVE_HARFBUZZ
++nsContentUtils.$(OBJ_SUFFIX): CXXFLAGS+=$(MOZ_HARFBUZZ_CFLAGS)
++endif
++
+ # gcc requires -msse2 for this file since it uses SSE2 intrinsics.  (See bug
+ # 585538 comment 12.)
+ ifneq (,$(INTEL_ARCHITECTURE))
+diff --git gfx/moz.build gfx/moz.build
+index 519aa46..6929751 100644
+--- gfx/moz.build
++++ gfx/moz.build
+@@ -7,6 +7,12 @@
+ if CONFIG['MOZ_TREE_CAIRO']:
+     DIRS += ['cairo']
+ 
++if not CONFIG['MOZ_NATIVE_GRAPHITE2']:
++    DIRS += ['graphite2/src' ]
++
++if not CONFIG['MOZ_NATIVE_HARFBUZZ']:
++    DIRS += ['harfbuzz/src']
++
+ DIRS += [
+     '2d',
+     'ycbcr',
+@@ -15,8 +21,6 @@ DIRS += [
+     'qcms',
+     'gl',
+     'layers',
+-    'graphite2/src',
+-    'harfbuzz/src',
+     'ots/src',
+     'thebes',
+     'ipc',
+diff --git gfx/skia/Makefile.in gfx/skia/Makefile.in
+index 07a77a3..067f7bd 100644
+--- gfx/skia/Makefile.in
++++ gfx/skia/Makefile.in
+@@ -15,6 +15,10 @@ ifeq (qt,$(MOZ_WIDGET_TOOLKIT))
+ OS_CXXFLAGS += $(MOZ_CAIRO_CFLAGS) $(MOZ_PANGO_CFLAGS) $(CAIRO_FT_CFLAGS)
+ endif
+ 
++ifdef MOZ_NATIVE_HARFBUZZ
++OS_CXXFLAGS += $(MOZ_HARFBUZZ_CFLAGS)
++endif
++
+ include $(topsrcdir)/config/rules.mk
+ 
+ ifneq (,$(INTEL_ARCHITECTURE))
+diff --git gfx/thebes/Makefile.in gfx/thebes/Makefile.in
+index e9f6b6c..0df2d8d 100644
+--- gfx/thebes/Makefile.in
++++ gfx/thebes/Makefile.in
+@@ -13,6 +13,14 @@ DEFINES := $(filter-out -DUNICODE,$(DEFINES))
+ CXXFLAGS += $(MOZ_CAIRO_CFLAGS) $(TK_CFLAGS)
+ CFLAGS += $(MOZ_CAIRO_CFLAGS) $(TK_CFLAGS)
+ 
++ifdef MOZ_NATIVE_GRAPHITE2
++CXXFLAGS += $(MOZ_GRAPHITE2_CFLAGS)
++endif
++
++ifdef MOZ_NATIVE_HARFBUZZ
++CXXFLAGS += $(MOZ_HARFBUZZ_CFLAGS)
++endif
++
+ ifeq ($(MOZ_WIDGET_TOOLKIT),android)
+ CXXFLAGS += $(CAIRO_FT_CFLAGS)
+ endif
+diff --git intl/unicharutil/util/Makefile.in intl/unicharutil/util/Makefile.in
+index f6b9f7c..11c44f4 100644
+--- intl/unicharutil/util/Makefile.in
++++ intl/unicharutil/util/Makefile.in
+@@ -21,3 +21,7 @@ ifdef _MSC_VER
+ OS_COMPILE_CXXFLAGS += -Zl
+ OS_COMPILE_CFLAGS += -Zl
+ endif
++
++ifdef MOZ_NATIVE_HARFBUZZ
++nsUnicodePropertyData.$(OBJ_SUFFIX): CXXFLAGS+=$(MOZ_HARFBUZZ_CFLAGS)
++endif
+diff --git netwerk/dns/Makefile.in netwerk/dns/Makefile.in
+index 1cacbd7..a8cd156 100644
+--- netwerk/dns/Makefile.in
++++ netwerk/dns/Makefile.in
+@@ -9,3 +9,7 @@ include $(topsrcdir)/config/rules.mk
+ # for effective TLD data.
+ etld_data.inc: $(srcdir)/prepare_tlds.py $(srcdir)/effective_tld_names.dat
+ 	$(PYTHON) $(srcdir)/prepare_tlds.py $(srcdir)/effective_tld_names.dat > etld_data.inc
++
++ifdef MOZ_NATIVE_HARFBUZZ
++nsIDNService.$(OBJ_SUFFIX): CXXFLAGS+=$(MOZ_HARFBUZZ_CFLAGS)
++endif
+diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
+index 007f272..27f488e 100644
+--- toolkit/library/Makefile.in
++++ toolkit/library/Makefile.in
+@@ -103,6 +103,14 @@ ifndef MOZ_TREE_PIXMAN
+ EXTRA_DSO_LDOPTS += $(MOZ_PIXMAN_LIBS)
+ endif
+ 
++ifdef MOZ_NATIVE_GRAPHITE2
++EXTRA_DSO_LDOPTS += $(MOZ_GRAPHITE2_LIBS)
++endif
++
++ifdef MOZ_NATIVE_HARFBUZZ
++EXTRA_DSO_LDOPTS += $(MOZ_HARFBUZZ_LIBS)
++endif
++
+ ifdef MOZ_DMD
+ EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,dmd,$(DIST)/lib)
+ endif

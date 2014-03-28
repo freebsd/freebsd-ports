@@ -25,13 +25,8 @@ SUB_FILES=	pkg-message
 ECOFONT=	${DISTNAME}.ttf
 ECOFONTDIR=	lib/X11/fonts/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/${ECOFONTDIR}
-	@${INSTALL_DATA} ${WRKDIR}/${ECOFONT} ${PREFIX}/${ECOFONTDIR}
-
-post-install:
-	@${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/${ECOFONTDIR} > /dev/null
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ECOFONTDIR}
+	${INSTALL_DATA} ${WRKDIR}/${ECOFONT} ${STAGEDIR}${PREFIX}/${ECOFONTDIR}
 
 .include <bsd.port.mk>

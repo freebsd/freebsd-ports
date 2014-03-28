@@ -4,7 +4,8 @@
 PORTNAME=	i2p
 PORTVERSION=	0.9.11
 CATEGORIES=	security java net-p2p
-MASTER_SITES=	http://download.i2p2.no/releases/${PORTVERSION}/ \
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTVERSION} \
+		http://download.i2p2.no/releases/${PORTVERSION}/ \
 		http://download2.geti2p.com/${PORTVERSION}/ \
 		http://download.geti2p.com/${PORTVERSION}/ \
 		http://download.i2p2.de/releases/${PORTVERSION}/ \
@@ -30,8 +31,7 @@ ONLY_FOR_ARCHS_REASON=	i2p libwrapper.so library binary only available for i386 
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gettext iconv
-USE_BZIP2=	yes
+USES=		gettext iconv tar:bzip2
 USE_RC_SUBR=	i2p
 
 USE_ANT=	yes

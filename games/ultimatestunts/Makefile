@@ -3,19 +3,21 @@
 
 PORTNAME=	ultimatestunts
 PORTVERSION=	0.7.7.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	srcdata-
 DISTVERSION=	${PORTVERSION:S/.//g}
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/sourcecode
+MASTER_SITES=	SF/${PORTNAME}/sourcecode \
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Racing game with elaborate stunts
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
-
-OPTIONS_DEFINE=	DOCS
+LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 
 USES=		gettext openal:al,alut pkgconfig
 USE_GL=		gl glu
@@ -24,31 +26,51 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openal
 MAKE_JOBS_UNSAFE=	yes
 
-CPPFLAGS+=	$$(pkgconf --cflags-only-I sdl) -I${LOCALBASE}/include
-LDFLAGS+=	$$(pkgconf --libs-only-L sdl) -L${LOCALBASE}/lib
+CPPFLAGS+=	$$(pkgconf --cflags-only-I sdl)
+LDFLAGS+=	$$(pkgconf --libs-only-L sdl)
 
-PORT_VERBS=	${PORTNAME} ustunts
+PORTDOCS=	*
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+INSTALLS_ICONS=	yes
+ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
+
+DESKTOP_ENTRIES="Ultimate Stunts" "" "${PORTNAME}" \
+		"ustunts" "Game;ArcadeGame;" ""
+
 .include <bsd.port.options.mk>
 
 post-extract:
-	@${FIND} ${WRKSRC} -name ".svn" -print0 | ${XARGS} -0 ${RM} -rf
+	@${FIND} ${WRKSRC} -name .svn -print0 | ${XARGS} -0 ${RM} -fr
+	@(cd ${WRKSRC} && ${CP} ${PORTNAME}.conf.in ${PORTNAME}.conf)
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-I/usr/local/include|| ; \
-		 s|-L/usr/local/lib||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		'/^sysconf_DATA/s|^|#| ; \
-		 /^SUBDIRS/s| data | |' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|@usdatadir@|${DATADIR}|; \
+		s|@PACKAGE_VERSION@|${PORTVERSION:R}|' \
+		${WRKSRC}/${PORTNAME}.conf
+	${REINPLACE_CMD} -e 's|^localedir.*|localedir = ${DATADIR}/lang|' \
+		${WRKSRC}/po/Makefile.in.in
+	${REINPLACE_CMD} -e 's|$${usdatadir}|${STAGEDIR}${DATADIR}|; \
+		s|lang ||' \
+		${WRKSRC}/data/Makefile.in
+
+.if ! ${PORT_OPTIONS:MNLS}
+	${REINPLACE_CMD} -e 's|install-exec install-data|install-exec|' \
+		${WRKSRC}/po/Makefile.in.in
+.endif
 
 post-install:
-.for dir in cars environment lang misc music textures textures.dat tiles tracks
-	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} ${dir} ${DATADIR})
+.for s in ${ICON_SIZES}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
+
 .if ${PORT_OPTIONS:MDOCS}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

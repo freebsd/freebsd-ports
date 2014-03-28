@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ProjectTox-Core
-PORTVERSION=	0.140301
+PORTVERSION=	0.140325
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	ProjectTox-Core
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	16b93e8
+GH_COMMIT=	90d7eb4
 
 USE_AUTOTOOLS=	automake autoconf libtoolize
 USES=		pkgconfig
@@ -28,6 +28,7 @@ OPTIONS_RADIO=		CRYPTO
 OPTIONS_RADIO_CRYPTO=	SODIUM NACL
 OPTIONS_DEFINE=		PHONE
 OPTIONS_DEFAULT=	PHONE SODIUM
+OPTIONS_SUB=		yes
 
 PHONE_DESC=		Enable phone test
 PHONE_CONFIGURE_ENABLE=	phone
@@ -48,7 +49,7 @@ NACL_RUN_DEPENDS=	${LOCALBASE}/lib/libnacl.a:${PORTSDIR}/security/nacl
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 USE_GCC=	yes
-BROKEN_i386=	`__stack_chk_fail_local' isn't defined
+BROKEN_i386=	'__stack_chk_fail_local' isn't defined
 .endif
 
 .if ${PORT_OPTIONS:MNACL}

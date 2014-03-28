@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME?=	proftpd
-PORTVERSION?=	1.3.4d
-PORTREVISION?=	1
+.if !defined(DISTVERSION)
+PORTVERSION?=	${PROFTPD_VERSION}
+.endif
+PORTREVISION?=	5
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
 		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
-		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/ \
-		http://labratsoftware.com/mod_sql_tds/:sql_tds \
-		LOCAL/beech:sql_tds
-#		https://secure.thrallingpenguin.com/redmine/attachments/download/1/:clam
+		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/
 .if defined(_BUILDING_PROFTPD_MODULE)
-DISTNAME=	proftpd-${PORTVERSION}
+DISTNAME=	proftpd-${PROFTPD_VERSION}
 .endif
 
 MAINTAINER?=	mm@FreeBSD.org
@@ -27,15 +26,20 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 .endif
 
+PROFTPD_VERSION=	1.3.4d
+
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY+=	${DISTNAME}${EXTRACT_SUFX}
-WRKSRC=		${WRKDIR}/proftpd-${PORTVERSION}
+WRKSRC=		${WRKDIR}/proftpd-${PROFTPD_VERSION}
 . if defined(_PROFTPD_MODULE_EXTRACT_ONLY)
 EXTRACT_ONLY+=	${_PROFTPD_MODULE_EXTRACT_ONLY}
 . endif
 . if defined(_PROFTPD_MODULE_DISTFILES)
 DISTFILES+=	${_PROFTPD_MODULE_DISTFILES}
+. endif
+. if defined(_PROFTPD_MODULE_MASTER_SITES)
+MASTER_SITES+=	${_PROFTPD_MODULE_MASTER_SITES}
 . endif
 .endif
 
@@ -81,10 +85,9 @@ PLIST_FILES+=	libexec/proftpd/${m}.a \
 .endfor
 PLIST_DIRSTRY+=	libexec/proftpd
 .else
-OPTIONS_DEFINE=	HTMLDOCS IPV6 NLS MEMCACHE PCRE
+OPTIONS_DEFINE=	DOCS HTMLDOCS IPV6 NLS MEMCACHE PCRE
 OPTIONS_DEFAULT=	IPV6 NLS PCRE
 
-#CLAMAV_DESC=		Include mod_clamav
 HTMLDOCS_DESC=		Include HTML documentation
 MEMCACHE_DESC=		Memcache support using libmemcached
 
@@ -155,8 +158,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--enable-nls
-USES+=	gettext
-PROFTPD_LIBS+=	-lintl -L${LOCALBASE}/lib
+USES+=	gettext iconv
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -168,23 +170,6 @@ CONFIGURE_ARGS+=	--enable-pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif
-
-.if make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		mod_sql_tds-4.13${EXTRACT_SUFX}:sql_tds
-.endif
-
-#.if ${PORT_OPTIONS:MCLAMAV} || make(makesum) || defined(FETCH_ALL)
-#DISTFILES+=	mod_clamav-0.11rc.tar.gz:clam
-#EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_mod_xfer.c
-#USE_CLAMAV=	yes
-#MODULES+=	mod_clamav
-#LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
-#PLIST_SUB+=	CLAMAV=""
-#PROFTPD_LIBS+=	-lclamav
-#.else
-PLIST_SUB+=	CLAMAV="@comment "
-#.endif
 
 .if ${PORT_OPTIONS:MMEMCACHE}
 MODULES+=		mod_memcache \
@@ -212,17 +197,16 @@ CONFIGURE_ARGS+=	--with-shared=${_MODULES:C/^://g}
 CONFIGURE_ARGS+=	--with-includes=${INCLUDEDIRS}
 CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 
+.include <bsd.port.pre.mk>
+
 .if !defined(_BUILDING_PROFTPD_MODULE)
-#post-extract:
-#.if ${PORT_OPTIONS:MCLAMAV}
-#	(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mod_clamav-0.11rc.tar.gz ${EXTRACT_AFTER_ARGS})
-#	@${CP} ${WRKDIR}/mod_clamav-0.11rc/mod_clamav.* ${WRKSRC}/contrib
-#.endif
+
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=	ac_cv_lib_iconv_iconv_open=no \
+			ac_cv_lib_iconv_libiconv_open=no
+.endif
 
 post-patch:
-.if ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's|-lsupp|-lsupp -lintl|g' ${WRKSRC}/Makefile.in
-.endif
 	@${REINPLACE_CMD} -e 's|proftpd\.conf|proftpd.conf.sample|g' ${WRKSRC}/Makefile.in
 
 pre-configure:
@@ -266,4 +250,4 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 .endif #!defined(_BUILDING_PROFTPD_MODULE)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

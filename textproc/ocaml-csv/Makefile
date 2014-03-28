@@ -13,11 +13,10 @@ COMMENT=	An OCaml library to read and write CSV files
 BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/extlib:${PORTSDIR}/devel/ocaml-extlib
 
 WRKSRC=		${WRKDIR}/csv-${PORTVERSION}
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	byte native
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 OCAML_PKGDIRS=	csv
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

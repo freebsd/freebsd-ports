@@ -7,7 +7,6 @@ PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/880/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
-EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	http://projects.vdr-developer.org/attachments/download/893/
 PATCHFILES=	osdpip-vdr-1.7.26.diff
@@ -17,7 +16,7 @@ COMMENT=	Video Disk Recorder - picture-in-picture plugin
 
 LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 DIST_SUBDIR=	vdr
 PATCH_STRIP=	-p1
 PATCH_DIST_STRIP=	-p1

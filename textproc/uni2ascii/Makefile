@@ -12,8 +12,8 @@ COMMENT=	Convert between UTF-8 Unicode and 7-bit ASCII equivalents
 
 LICENSE=	GPLv3
 
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 

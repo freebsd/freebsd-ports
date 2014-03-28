@@ -43,7 +43,7 @@ lib/postgresql/test_parser.so
 lib/postgresql/timetravel.so
 lib/postgresql/tsearch2.so
 lib/postgresql/unaccent.so
-%%OSSP%%lib/postgresql/uuid-ossp.so
+lib/postgresql/uuid-ossp.so
 %%DOCSDIR%%/README-contrib
 %%DOCSDIR%%/contrib/README
 %%DOCSDIR%%/contrib/autoinc.example
@@ -88,8 +88,8 @@ share/postgresql/contrib/test_parser.sql
 share/postgresql/contrib/timetravel.sql
 share/postgresql/contrib/tsearch2.sql
 share/postgresql/contrib/unaccent.sql
-%%OSSP%%share/postgresql/contrib/uninstall_uuid-ossp.sql
-%%OSSP%%share/postgresql/contrib/uuid-ossp.sql
+share/postgresql/contrib/uninstall_uuid-ossp.sql
+share/postgresql/contrib/uuid-ossp.sql
 share/postgresql/contrib/uninstall__int.sql
 share/postgresql/contrib/uninstall_adminpack.sql
 share/postgresql/contrib/uninstall_btree_gin.sql

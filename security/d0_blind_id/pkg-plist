@@ -1,0 +1,15 @@
+bin/blind_id
+include/d0_blind_id/d0.h
+include/d0_blind_id/d0_blind_id.h
+include/d0_blind_id/d0_rijndael.h
+lib/libd0_blind_id.a
+lib/libd0_blind_id.la
+lib/libd0_blind_id.so
+lib/libd0_blind_id.so.0
+lib/libd0_rijndael.a
+lib/libd0_rijndael.la
+lib/libd0_rijndael.so
+lib/libd0_rijndael.so.0
+libdata/pkgconfig/d0_blind_id.pc
+libdata/pkgconfig/d0_rijndael.pc
+@dirrmtry include/d0_blind_id

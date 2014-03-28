@@ -47,6 +47,8 @@ lib/libaudtag.so.1
 lib/libaudtag.so.1.0.0
 libdata/pkgconfig/audacious.pc
 libdata/pkgconfig/audclient.pc
+man/man1/audacious.1.gz
+man/man1/audtool.1.gz
 share/applications/audacious.desktop
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
@@ -64,9 +66,10 @@ share/applications/audacious.desktop
 share/icons/hicolor/48x48/apps/audacious.png
 share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/ast/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/be/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/cmn/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/da/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/de/LC_MESSAGES/audacious.mo
@@ -109,24 +112,30 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/ml_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ml_IN
+%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ky
 %%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/id_ID
 %%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es_AR
+%%NLS%%@dirrmtry share/locale/cmn/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cmn
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/ml_IN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ml_IN
-man/man1/audacious.1.gz
-man/man1/audtool.1.gz
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
 @dirrm include/libaudgui
 @dirrm include/libaudcore
 @dirrm include/audacious
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

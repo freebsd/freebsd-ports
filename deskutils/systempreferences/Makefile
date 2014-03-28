@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	systempreferences
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=usr-apps

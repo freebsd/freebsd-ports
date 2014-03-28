@@ -23,8 +23,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/ompload
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/ompload
+	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/ompload
 
 .include <bsd.port.mk>

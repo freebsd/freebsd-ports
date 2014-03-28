@@ -17,12 +17,11 @@ RUN_DEPENDS=	nec2c:${PORTSDIR}/comms/nec2c
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 
-MAN1=		xnecview.1
-PLIST_FILES=	bin/xnecview
+PLIST_FILES=	bin/xnecview man/man1/xnecview.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xnecview ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xnecview.man ${MANPREFIX}/man/man1/xnecview.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xnecview ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xnecview.man \
+		${STAGEDIR}${MANPREFIX}/man/man1/xnecview.1
 
 .include <bsd.port.mk>

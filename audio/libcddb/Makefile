@@ -3,19 +3,18 @@
 
 PORTNAME=	libcddb
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	A library to access data on a CDDB server
+COMMENT=	Library to access data on a CDDB server
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=	pathfix pkgconfig iconv
+USES=		iconv libtool:oldver pathfix tar:bzip2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-cdio
-CPPFLAGS+=	-DICONV_CONST="const" -I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

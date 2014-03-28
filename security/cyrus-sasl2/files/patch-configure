@@ -1,7 +1,7 @@
 Index: configure
 diff -u configure.orig configure
 --- configure.orig	2012-11-07 04:21:37.000000000 +0900
-+++ configure	2013-01-06 17:10:15.920678021 +0900
++++ configure	2014-03-25 18:24:59.021374856 +0900
 @@ -2365,6 +2365,7 @@
  fi
  { $as_echo "$as_me:$LINENO: result: yes" >&5
@@ -70,3 +70,27 @@ diff -u configure.orig configure
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
+@@ -14591,9 +14597,9 @@
+ $as_echo "$as_me: WARNING: SQLite Library not found" >&2;}; true;;
+     *)
+      if test -d ${with_sqlite}/lib; then
+-         LIB_SQLITE="-L${with_sqlite}/lib -R${with_sqlite}/lib"
++         LIB_SQLITE="-L${with_sqlite}/lib $andrew_cv_runpath_switch${with_sqlite}/lib"
+      else
+-         LIB_SQLITE="-L${with_sqlite} -R${with_sqlite}"
++         LIB_SQLITE="-L${with_sqlite} $andrew_cv_runpath_switch${with_sqlite}"
+      fi
+ 
+      LIB_SQLITE_DIR=$LIB_SQLITE
+@@ -14721,9 +14727,9 @@
+ $as_echo "$as_me: WARNING: SQLite3 Library not found" >&2;}; true;;
+     *)
+      if test -d ${with_sqlite3}/lib; then
+-         LIB_SQLITE3="-L${with_sqlite3}/lib -R${with_sqlite3}/lib"
++         LIB_SQLITE3="-L${with_sqlite3}/lib $andrew_cv_runpath_switch${with_sqlite3}/lib"
+      else
+-         LIB_SQLITE3="-L${with_sqlite3} -R${with_sqlite3}"
++         LIB_SQLITE3="-L${with_sqlite3} $andrew_cv_runpath_switch${with_sqlite3}"
+      fi
+ 
+      LIB_SQLITE3_DIR=$LIB_SQLITE3

@@ -12,7 +12,9 @@ DISTNAME=	smc-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Secret Maryo Chronicles two-dimensional platform game
 
-LIB_DEPENDS=	libCEGUIBase-0.7.9.so:${PORTSDIR}/graphics/cegui \
+BROKEN=		Does not compile with graphics/cegui 0.8.3.
+
+LIB_DEPENDS=	libCEGUIBase-0.so:${PORTSDIR}/graphics/cegui \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 		libpng15.so:${PORTSDIR}/graphics/png
 

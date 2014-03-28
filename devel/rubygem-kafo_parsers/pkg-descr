@@ -1,0 +1,4 @@
+The kafo_parser gem can parse values, validations, documentation, types, groups
+and conditions of parameters from your puppet modules.
+
+WWW: https://github.com/theforeman/kafo_parsers

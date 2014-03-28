@@ -1,8 +1,8 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: jkim/emulators/virtualbox-ose/Makefile 23858 2014-03-05 18:45:55Z jkim $
+# $FreeBSD: jkim/emulators/virtualbox-ose/Makefile 24980 2014-03-27 23:14:05Z jkim $
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.8
+DISTVERSION=	4.3.10
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -30,9 +30,8 @@ RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:${PORTSDIR}/emulators/virtualbox-ose-
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler iconv pkgconfig
+USES=		compiler iconv pkgconfig tar:bzip2
 USE_GNOME=	libidl
-USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 
 HAS_CONFIGURE=	yes

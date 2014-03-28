@@ -1,0 +1,22 @@
+bin/note
+%%PERL5_MAN3%%/NOTEDB::binary.3.gz
+%%PERL5_MAN3%%/NOTEDB::dbm.3.gz
+%%PERL5_MAN3%%/NOTEDB::dumper.3.gz
+%%PERL5_MAN3%%/NOTEDB::general.3.gz
+%%PERL5_MAN3%%/NOTEDB::mysql.3.gz
+%%PERL5_MAN3%%/NOTEDB::pwsafe3.3.gz
+%%PERL5_MAN3%%/NOTEDB::text.3.gz
+%%PERL5_MAN3%%/note.3.gz
+%%SITE_PERL%%/NOTEDB.pm
+%%SITE_PERL%%/NOTEDB/README
+%%SITE_PERL%%/NOTEDB/binary.pm
+%%SITE_PERL%%/NOTEDB/dbm.pm
+%%SITE_PERL%%/NOTEDB/dumper.pm
+%%SITE_PERL%%/NOTEDB/general.pm
+%%SITE_PERL%%/NOTEDB/mysql.pm
+%%SITE_PERL%%/NOTEDB/pwsafe3.pm
+%%SITE_PERL%%/NOTEDB/text.pm
+%%SITE_PERL%%/mach/auto/NOTEDB/.packlist
+%%SITE_PERL%%/note.pod
+@dirrm %%SITE_PERL%%/mach/auto/NOTEDB
+@dirrm %%SITE_PERL%%/NOTEDB

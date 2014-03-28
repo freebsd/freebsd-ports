@@ -1,0 +1,12 @@
+include/apq/apq.adb
+include/apq/apq.ads
+include/apq/apq_helper.adb
+include/apq/apq_helper.ads
+lib/apq/static/apq.ali
+lib/apq/static/apq_helper.ali
+lib/apq/static/libapq.a
+lib/gnat/apq.gpr
+@dirrmtry lib/gnat
+@dirrm lib/apq/static
+@dirrm lib/apq
+@dirrm include/apq

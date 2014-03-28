@@ -22,7 +22,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -32,11 +31,9 @@ post-patch:
 		${WRKSRC}/l_precomp.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qcc ${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/[^gr]*.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/qcc ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/[^gr]*.txt ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../quake-source/Makefile.include"
 .include <bsd.port.mk>

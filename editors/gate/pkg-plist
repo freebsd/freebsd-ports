@@ -1,3 +1,4 @@
 bin/gate
+man/man1/gate.1.gz
 %%DATADIR%%/gate.help
 @dirrm %%DATADIR%%

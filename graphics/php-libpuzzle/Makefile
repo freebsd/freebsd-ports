@@ -12,21 +12,22 @@ PKGNAMEPREFIX=	php-
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	PHP extension for Puzzle library to find similar pictures
 
-LIB_DEPENDS=	puzzle.1:${PORTSDIR}/graphics/libpuzzle \
-		gd:${PORTSDIR}/graphics/gd
-
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILES=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libpuzzle.so:${PORTSDIR}/graphics/libpuzzle \
+		libgd.so:${PORTSDIR}/graphics/gd
+
+USES=		tar:bzip2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/php/${PORTNAME}
-
-
-USE_BZIP2=	yes
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes
 
-NO_STAGE=	yes
+pre-install:
+	@${STRIP_CMD} ${WRKSRC}/modules/libpuzzle.so
+
 .include <bsd.port.mk>

@@ -1,12 +1,13 @@
 This software interprets Infocom text-adventure games.  This port
 does not install any games; you can install them yourself if you
 own the games, or you can legally obtain the Zork series from:
+
 	http://www.csd.uwo.ca/~pete/Infocom/download.html
 
 More games can be found at:
+
 	http://www.ifarchive.org/indexes/if-archiveXgamesXzcode.html
 
 LICENSE: copy freely, do not distribute modified versions
 
 WWW: http://www.csd.uwo.ca/Infocom/
-

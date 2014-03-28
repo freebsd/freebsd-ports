@@ -9,16 +9,13 @@ MASTER_SITES=	http://ordiluc.net/selectwm/
 MAINTAINER=	bhaga@absoludicrous.com
 COMMENT=	GTK application to let you select a window manager when starting X
 
-MAN1=		selectwm.1
-
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/selectwm share/locale/fr/LC_MESSAGES/selectwm.mo
+PLIST_FILES=	bin/selectwm share/locale/fr/LC_MESSAGES/selectwm.mo \
+		man/man1/selectwm.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,${CFLAGS},g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,^CFLAGS =,CFLAGS +=,' -e 's,-O2,,' \

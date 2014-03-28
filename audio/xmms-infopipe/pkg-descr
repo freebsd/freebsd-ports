@@ -1,5 +1,0 @@
-Opens a named pipe to /tmp/xmms-info. When read from there, it just
-returns plain text that has information about currently playing
-song.
-
-WWW: http://www.beastwithin.org/users/wwwwolf/code/xmms/infopipe.html

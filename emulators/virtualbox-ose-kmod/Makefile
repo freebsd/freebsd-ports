@@ -1,8 +1,8 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: jkim/emulators/virtualbox-ose-kmod/Makefile 23858 2014-03-05 18:45:55Z jkim $
+# $FreeBSD: jkim/emulators/virtualbox-ose-kmod/Makefile 24980 2014-03-27 23:14:05Z jkim $
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.8
+DISTVERSION=	4.3.10
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -18,13 +18,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	kmk:${PORTSDIR}/devel/kBuild
 
-USES=		kmod
+USES=		kmod tar:bzip2
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxnet
 ONLY_FOR_ARCHS=	i386 amd64
-USE_BZIP2=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \

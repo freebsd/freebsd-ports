@@ -14,8 +14,7 @@ COMMENT=	WAP/SMS gateway
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}

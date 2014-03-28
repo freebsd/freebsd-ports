@@ -6,7 +6,6 @@ PORTVERSION=	0.96
 PORTREVISION=	4
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://www.sdr-j.tk/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	DAB/DAB+ and wideband FM receiver for RTL2832-based USB sticks
@@ -21,6 +20,7 @@ LIB_DEPENDS+=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfaad.so:${PORTSDIR}/audio/faad
 
+USES=		tar:tgz
 USE_QT4=	gui qt3support qmake_build moc_build rcc_build uic_build
 
 PORTDOCS=	*

@@ -1,0 +1,23 @@
+--- kafo_parsers-0.0.1.gemspec.orig	2014-03-19 14:32:20.000000000 +0100
++++ kafo_parsers-0.0.1.gemspec	2014-03-19 14:32:49.000000000 +0100
+@@ -81,20 +81,6 @@
+       - !ruby/object:Gem::Version
+         version: '0'
+ - !ruby/object:Gem::Dependency
+-  name: puppet
+-  requirement: !ruby/object:Gem::Requirement
+-    requirements:
+-    - - '>='
+-      - !ruby/object:Gem::Version
+-        version: '0'
+-  type: :runtime
+-  prerelease: false
+-  version_requirements: !ruby/object:Gem::Requirement
+-    requirements:
+-    - - '>='
+-      - !ruby/object:Gem::Version
+-        version: '0'
+-- !ruby/object:Gem::Dependency
+   name: rdoc
+   requirement: !ruby/object:Gem::Requirement
+     requirements:

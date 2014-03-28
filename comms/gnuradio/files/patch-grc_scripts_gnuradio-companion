@@ -1,0 +1,13 @@
+--- grc/scripts/gnuradio-companion.orig	2014-03-27 14:30:40.047953899 -0400
++++ grc/scripts/gnuradio-companion	2014-03-27 14:31:24.523952302 -0400
+@@ -18,6 +18,10 @@
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
+ """
+ 
++# XXX workaround to make sure we import gcc47's libgcc_s.so not
++# the older one from base:
++from numpy.linalg import lapack_lite
++
+ import pygtk
+ pygtk.require('2.0')
+ import gtk

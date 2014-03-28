@@ -3,18 +3,13 @@ bin/domination-Increment1GUI
 bin/domination-SimpleGUI
 bin/domination-SwingGUI
 %%DATADIR%%/ChangeLog.txt
-%%DATADIR%%/CommandLine.cmd
 %%DATADIR%%/CommandLine.sh
 %%DATADIR%%/Domination.jar
-%%DATADIR%%/FlashGUI.cmd
 %%DATADIR%%/FlashGUI.htm
 %%DATADIR%%/FlashGUI.sh
-%%DATADIR%%/Increment1GUI.cmd
 %%DATADIR%%/Increment1GUI.sh
 %%DATADIR%%/ReadMe.txt
-%%DATADIR%%/SimpleGUI.cmd
 %%DATADIR%%/SimpleGUI.sh
-%%DATADIR%%/SwingGUI.cmd
 %%DATADIR%%/SwingGUI.htm
 %%DATADIR%%/SwingGUI.sh
 %%DATADIR%%/commands.txt
@@ -497,14 +492,13 @@ bin/domination-SwingGUI
 %%DATADIR%%/maps/zertina_pic.jpg
 %%DATADIR%%/resources/icon.ico
 %%DATADIR%%/resources/icon.png
-%%DATADIR%%/run.cmd
 %%DATADIR%%/run.sh
 %%DATADIR%%/todo.txt
 share/pixmaps/domination.png
-@dirrm %%DATADIR%%/saves
+@dirrmtry %%DATADIR%%/saves
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/maps/preview
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%

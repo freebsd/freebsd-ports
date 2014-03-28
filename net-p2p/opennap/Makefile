@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	sam@cassiba.com
 COMMENT=	Open-source Napster server
 
-USE_GMAKE=	YES
+USES=		gmake
 GNU_CONFIGURE=	YES
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

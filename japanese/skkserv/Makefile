@@ -26,8 +26,7 @@ GROUPS=		skkserv
 SKKJISYO_SIZE?=	L
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/skkserv/skkserv ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/skkserv/skkserv ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

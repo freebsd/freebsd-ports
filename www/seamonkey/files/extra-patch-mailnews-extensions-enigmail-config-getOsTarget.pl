@@ -41,3 +41,13 @@ index 91285cd..cf4a233 100755
    if ($targetOs eq "SunOS") {
      $targetComp = "sunc";
    }
+@@ -107,6 +109,9 @@ elsif ($srcComp =~ /cc/) {
+   elsif ($targetOs eq "AIX") {
+     $targetComp = "ibmc";
+   }
++  else {
++    $targetComp = "gcc3";
++  }
+ }
+ else {
+   $targetComp = $srcComp;

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaz
-PORTVERSION=	5.0.18
+PORTVERSION=	5.0.21
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -23,6 +23,8 @@ CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
 		--with-iconv=${ICONV_PREFIX} --with-xml2=${LOCALBASE} \
 		--with-xslt=${LOCALBASE} --with-icu=${LOCALBASE} \
 		--enable-tcpd
+
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 

@@ -15,7 +15,7 @@ COMMENT=	GNOME Edy Viewer
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
+RUN_DEPENDS=	rubygem-gtk2>0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/pasori.so:${PORTSDIR}/devel/libpafe-ruby
 
 USE_RUBY=		yes

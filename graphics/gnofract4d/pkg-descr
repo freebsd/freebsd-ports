@@ -1,7 +1,7 @@
-Gnofract4D is a weird fractal-generating program
-written for the GNOME project. But it makes very
-nice looking fractals. Worth a try for those
-graphics freaks (like me ;).
+Gnofract 4D is a free, open source program which allows anyone to create
+beautiful images called fractals. The images are automatically created by
+the computer based on mathematical principles. These include the Mandelbrot
+and Julia sets and many more. You don't need to do any math: you can explore
+a universe of images just using a mouse.
 
-Author: Edwin Young <edwin@users.sourceforge.net>
 WWW: http://gnofract4d.sourceforge.net/

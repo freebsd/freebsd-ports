@@ -1,0 +1,7 @@
+project Ini_File_Manager is
+   for Languages        use ("ada");
+   for Library_Name     use "inifiles";
+   for Source_Dirs      use ("../../include/ini_file_manager");
+   for Library_Dir      use "../../lib/ini_file_manager";
+   for Externally_Built use "true";
+end Ini_File_Manager;

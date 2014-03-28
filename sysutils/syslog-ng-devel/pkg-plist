@@ -119,7 +119,7 @@ include/syslog-ng/rewrite/rewrite-set.h
 include/syslog-ng/rewrite/rewrite-subst.h
 include/syslog-ng/rewrite/rewrite-expr-parser.h
 include/syslog-ng/template/templates.h
-lib/libsyslog-ng-3.5.3.so
+lib/libsyslog-ng-3.5.4.1.so
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
 lib/syslog-ng/libafamqp.la
@@ -163,31 +163,32 @@ man/man5/syslog-ng.conf.5.gz
 man/man8/syslog-ng.8.gz
 sbin/syslog-ng
 sbin/syslog-ng-ctl
-share/include/scl/pacct/plugin.conf
-share/include/scl/syslogconf/README
-share/include/scl/syslogconf/convert-syslogconf.awk
-share/include/scl/syslogconf/plugin.conf
-share/include/scl/system/plugin.conf
-share/include/scl/rewrite/cc-mask.conf
-share/tools/cfg-grammar.y
-share/tools/lex-rules.am
-share/tools/merge-grammar.pl
-share/xsd/patterndb-1.xsd
-share/xsd/patterndb-2.xsd
-share/xsd/patterndb-3.xsd
-share/xsd/patterndb-4.xsd
+share/syslog-ng/include/scl/pacct/plugin.conf
+share/syslog-ng/include/scl/syslogconf/README
+share/syslog-ng/include/scl/syslogconf/convert-syslogconf.awk
+share/syslog-ng/include/scl/syslogconf/plugin.conf
+share/syslog-ng/include/scl/system/plugin.conf
+share/syslog-ng/include/scl/rewrite/cc-mask.conf
+share/syslog-ng/tools/cfg-grammar.y
+share/syslog-ng/tools/lex-rules.am
+share/syslog-ng/tools/merge-grammar.pl
+share/syslog-ng/xsd/patterndb-1.xsd
+share/syslog-ng/xsd/patterndb-2.xsd
+share/syslog-ng/xsd/patterndb-3.xsd
+share/syslog-ng/xsd/patterndb-4.xsd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/xsd
-@dirrmtry share/tools
-@dirrm share/include/scl/system
-@dirrm share/include/scl/syslogconf
-@dirrm share/include/scl/pacct
-@dirrm share/include/scl/rewrite
-@dirrm share/include/scl
-@dirrm share/include
+@dirrm share/syslog-ng/xsd
+@dirrmtry share/syslog-ng/tools
+@dirrm share/syslog-ng/include/scl/system
+@dirrm share/syslog-ng/include/scl/syslogconf
+@dirrm share/syslog-ng/include/scl/pacct
+@dirrm share/syslog-ng/include/scl/rewrite
+@dirrm share/syslog-ng/include/scl
+@dirrm share/syslog-ng/include
+@dirrm share/syslog-ng
 @dirrm lib/syslog-ng
 @dirrm include/syslog-ng/filter
 @dirrm include/syslog-ng/logproto

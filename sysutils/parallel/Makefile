@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parallel
-PORTVERSION=	20140222
+PORTVERSION=	20140322
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -17,8 +17,7 @@ CONFLICTS=	moreutils-parallel-[0-9]*
 
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:bzip2
 
 PLIST_FILES=	bin/niceload bin/parallel bin/sem bin/sql \
 		man/man1/niceload.1.gz man/man1/parallel.1.gz \

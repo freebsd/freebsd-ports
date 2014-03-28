@@ -3,7 +3,7 @@
 
 PORTNAME=	abgx360gui
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://update.cooltrainer.org/abgx360/ \
@@ -22,6 +22,7 @@ PLIST_FILES=	bin/abgx360gui \
 
 GNU_CONFIGURE=	yes
 USE_WX=		2.8
+WX_UNICODE=	yes
 WX_COMPS=	wx
 CONFIGURE_ARGS=	--with-wx=${LOCALBASE} \
 		--with-wx-config=${WX_CONFIG:T}
@@ -33,9 +34,8 @@ DESKTOP_ENTRIES=	"abgx360" \
 			"Utility;" \
 			false
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/abgx360gui ${PREFIX}/bin
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/abgx360-256.png ${PREFIX}/share/pixmaps
+	${INSTALL_PROGRAM} ${WRKSRC}/abgx360gui ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/abgx360-256.png ${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

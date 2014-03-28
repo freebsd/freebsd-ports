@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quantis
-DISTVERSION=	v13.04.29
+DISTVERSION=	v13.11.08
 CATEGORIES=	security devel java
 MASTER_SITES=	http://www.idquantique.com/~download/Quantis/ \
 		${MASTER_SITE_LOCAL}
@@ -12,7 +12,7 @@ DISTNAME=	Quantis-${DISTVERSION}-src
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access Quantis devices
 
-LICENSE=	BSD GPLv2
+LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/Quantis-${DISTVERSION}/License.txt
 
@@ -39,8 +39,7 @@ KMODDIR?=	/boot/modules
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCI}
 RUN_DEPENDS+=	${KMODDIR}/quantis.ko:${PORTSDIR}/security/quantis-kmod
@@ -50,6 +49,7 @@ CMAKE_ARGS+=	-DDISABLE_QUANTIS_PCI=1
 
 .if ! ${PORT_OPTIONS:MUSB}
 CMAKE_ARGS+=	-DDISABLE_QUANTIS_USB=1
+PKGMESSAGE=	${PKGDIR}/notexistent
 .endif
 
 .if ${PORT_OPTIONS:MJAVA}
@@ -90,19 +90,14 @@ post-patch:
 		${WRKSRC}/CMake/CompilersFlags.cmake
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../*.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../User_Manual.pdf ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/../Samples; ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.if ${PORT_OPTIONS:MUSB} && ${OSVERSION} >= 801000
-	@${MKDIR} ${EXAMPLESDIR}/devd
-	${INSTALL_DATA} ${FILESDIR}/quantis.conf ${EXAMPLESDIR}/devd
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../*.txt ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../User_Manual.pdf ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/../Samples; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+.if ${PORT_OPTIONS:MUSB}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/devd
+	${INSTALL_DATA} ${FILESDIR}/quantis.conf ${STAGEDIR}${EXAMPLESDIR}/devd
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

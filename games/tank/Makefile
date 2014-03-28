@@ -5,8 +5,7 @@ PORTNAME=	tank
 PORTVERSION=	0.4a
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://elfga.com/~erik/fbsd/files/ \
-	http://elfga.com/~erik/fbsd/files/
+MASTER_SITES=	http://elfga.com/~erik/fbsd/files/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	erik@bz.bzflag.bz
@@ -14,15 +13,14 @@ COMMENT=	3-D network tank game that uses OpenGL/Mesa
 
 BUILD_DEPENDS=	libaux>=1.0:${PORTSDIR}/graphics/libaux
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	linux-mesa-elf
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tank ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.tga ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.au ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/tank ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.tga ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.au ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

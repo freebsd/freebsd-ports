@@ -1,0 +1,64 @@
+From 5eb482ca5657a91b7641b97ec503ade881889d49 Mon Sep 17 00:00:00 2001
+From: Fabian Keil <fk@fabiankeil.de>
+Date: Sat, 11 Jan 2014 21:58:37 +0100
+Subject: [PATCH] Use fmemopen reimplementation on FreeBSD systems that need it
+
+Apparently FreeBSD 8.4 does.
+---
+ src/include.am | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git src/include.am src/include.am
+index 259d618..6f230d7 100644
+--- src/include.am
++++ src/include.am
+@@ -231,6 +231,13 @@ endif
+ check_PROGRAMS+= src/proxy-bio_unittest
+ noinst_PROGRAMS+= src/proxy-bio_unittest
+ endif
++# XXX This conditional should apply for any system where we're building
++# conf_unittest, but I don't know how to tell that to automake.
++if !HAVE_FMEMOPEN
++if HAVE_FUNOPEN
++src_conf_unittest_SOURCES+= src/common/fmemopen-funopen.c
++endif
++endif
+ endif
+ 
+ if TARGET_NETBSD
+-- 
+1.8.5.2
+
+From ebfa24395c046e3e732d5be4475f412165bef679 Mon Sep 17 00:00:00 2001
+From: Fabian Keil <fk@fabiankeil.de>
+Date: Sun, 12 Jan 2014 21:02:37 +0100
+Subject: [PATCH] Only compile event_unittest when targetting GNU/Linux
+
+It tests code that currently doesn't compile on FreeBSD and
+it looks like it won't compile on the other non-GNU/Linux
+targets either.
+---
+ src/include.am | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git src/include.am src/include.am
+index 6f230d7..c164627 100644
+--- src/include.am
++++ src/include.am
+@@ -439,11 +439,13 @@ endif
+ endif
+ endif
+ 
++if TARGET_LINUX
+ src_event_unittest_SOURCES = src/event.c
+ src_event_unittest_SOURCES+= src/event-unittest.c
+ src_event_unittest_SOURCES+= src/routeup.c
+ src_event_unittest_SOURCES+= src/util.c
+ check_PROGRAMS+= src/event_unittest
++endif
+ 
+ if !TARGET_OSX
+ check_PROGRAMS+= src/test/proxy-override src/test/return-argc \
+-- 
+1.8.5.2
+

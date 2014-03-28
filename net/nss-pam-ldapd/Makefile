@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		nss-pam-ldapd
-PORTVERSION=		0.8.13
-PORTREVISION=		2
+PORTVERSION=		0.8.14
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
     			http://mirrors.rit.edu/zi/
@@ -15,9 +14,6 @@ LICENSE=		LGPL21 LGPL3
 LICENSE_COMB=		dual
 
 GNU_CONFIGURE=		yes
-# Gmake seems to be not really needed anymore.
-# Gmake specific constructs are limited to maintainer targets
-# USE_GMAKE=		yes
 USE_OPENLDAP=		yes
 USE_RC_SUBR=		nslcd
 PAM_LDAP_SHMAJOR=	1
@@ -29,19 +25,19 @@ NSLCD_PIDFILE?=		/var/run/nslcd.pid
 NSLCD_SOCKET?=		/var/run/nslcd.ctl
 
 .if defined(SLAVE_PORT)
-OPTIONS_DEFINE=	SASL
-OPTIONS_MULTI=	MG1
+OPTIONS_DEFINE=		SASL
+OPTIONS_MULTI=		MG1
 OPTIONS_MULTI_MG1=	PAM NSS
-PAM_DESC=	Build pam_ldap
-NSS_DESC=	Build nss support
-SASL_DESC=	Build sasl support
+PAM_DESC=		Build pam_ldap
+NSS_DESC=		Build nss support
+SASL_DESC=		Build sasl support
 OPTIONS_DEFAULT=	PAM NSS
 CONFLICTS+=		nss-pam-ldapd-[0-9]*
 .else
-OPTIONS_MULTI=	MG1
+OPTIONS_MULTI=		MG1
 OPTIONS_MULTI_MG1=	PAM NSS
-PAM_DESC=	Build pam_ldap
-NSS_DESC=	Build nss support
+PAM_DESC=		Build pam_ldap
+NSS_DESC=		Build nss support
 OPTIONS_DEFAULT=	PAM NSS
 CONFLICTS+=		nss-pam-ldapd-sasl-[0-9]*
 .endif
@@ -56,7 +52,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=	--with-nslcd-pidfile=${NSLCD_PIDFILE} \
 			--with-nslcd-socket=${NSLCD_SOCKET} \
-			--with-ldap-lib=openldap --disable-kerberos \
+			--with-ldap-lib=openldap \
 			--with-nss-ldap-soname=nss_ldap.so.${NSS_LDAP_SHMAJOR}
 
 CONFIG_FILE=		"nslcd.conf"

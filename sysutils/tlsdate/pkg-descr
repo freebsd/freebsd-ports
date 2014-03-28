@@ -1,0 +1,7 @@
+tlsdate sets the local clock by securely connecting with TLS to remote
+servers and extracting the remote time out of the secure handshake. Unlike
+ntpdate, tlsdate uses TCP, for instance connecting to a remote HTTPS or TLS
+enabled service, and provides some protection against adversaries that try to
+feed you malicious time information.
+
+WWW: https://github.com/ioerror/tlsdate

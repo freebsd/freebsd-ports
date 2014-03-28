@@ -7,11 +7,11 @@ PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://wirbel.htpc-forum.de/wirbelscan/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - wirbelscan plugin
 
+USES=		tar:tgz
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY

@@ -3,7 +3,6 @@
 # Provide support for lua
 # 
 # MAINTAINER: lua@FreeBSD.org
-#
 
 .if !defined(_INCLUDE_USES_LUA_MK)
 _INCLUDE_USES_LUA_MK=	yes

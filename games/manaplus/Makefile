@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	manaplus
-PORTVERSION=	1.4.2.15
+PORTVERSION=	1.4.3.15
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 
@@ -14,15 +14,12 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libcurl.so:${PORTSDIR}/ftp/curl \
-		libphysfs.so:${PORTSDIR}/devel/physfs \
-		libguichan.so:${PORTSDIR}/devel/guichan
+		libphysfs.so:${PORTSDIR}/devel/physfs
 
-USES=		gettext pkgconfig:build
-USE_XZ=		yes
+USES=		gettext pkgconfig:build tar:xz
 USE_SDL=	sdl gfx image mixer net ttf
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-internalguichan \
-		--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

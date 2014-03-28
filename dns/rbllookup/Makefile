@@ -12,18 +12,17 @@ COMMENT=	Check given IP/Host presence in 106 RBLs
 BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor
 
-NO_BUILD=	yes
 USES=		perl5
+NO_BUILD=	yes
 
 PLIST_FILES=	bin/rbllookup
 PORTDOCS=	CHANGELOG INSTALL NOTES README TODO gpg.asc
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/rbl.pl ${PREFIX}/bin/rbllookup
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/rbl.pl ${STAGEDIR}${PREFIX}/bin/rbllookup
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

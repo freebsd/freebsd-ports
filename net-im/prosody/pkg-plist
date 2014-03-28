@@ -136,6 +136,7 @@ lib/prosody/util/sasl/digest-md5.lua
 lib/prosody/util/sasl/plain.lua
 lib/prosody/util/sasl/scram.lua
 lib/prosody/util/sasl_cyrus.lua
+man/man1/prosodyctl.1.gz
 @dirrmtry etc/prosody/certs
 @dirrmtry etc/prosody
 @dirrm lib/prosody/util/sasl
@@ -149,3 +150,7 @@ lib/prosody/util/sasl_cyrus.lua
 @dirrm lib/prosody/modules
 @dirrm lib/prosody/core
 @dirrm lib/prosody
+@exec chown -R %%PROSODY_USER%%:%%PROSODY_GROUP%% %D/var/lib/prosody
+@dirrmtry var/lib/prosody
+@dirrmtry var/lib
+@dirrmtry var

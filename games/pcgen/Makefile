@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	pcgen
-PORTVERSION=	6.02.0
+PORTVERSION=	6.02.1
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/PCGen%20Stable/${PORTVERSION}
-DISTNAME=	pcgen${PORTVERSION:S/.//g}0_full
+DISTNAME=	pcgen${PORTVERSION:S/.//g}_full
 
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Java-based RPG character generator and maintenance program
@@ -12,7 +12,7 @@ COMMENT=	Java-based RPG character generator and maintenance program
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USES=		zip
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}0
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 NO_BUILD=	YES

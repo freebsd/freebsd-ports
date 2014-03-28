@@ -2,66 +2,57 @@
 # $FreeBSD$
 
 PORTNAME=	gnofract4d
-PORTVERSION=	3.14
-PORTREVISION=	1
+PORTVERSION=	3.14.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LICENSE=	BSD3CLAUSE
 
-LICENSE=	BSD
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
-USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui lthack \
-		pygtk2
+USES=		desktop-file-utils pathfix pkgconfig shared-mime-info
+USE_GNOME=	gnomeprefix intlhack libgnomeui lthack pygtk2
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-
-CFLAGS+=	-I${LOCALBASE}/include
-PORTDOCS=	README COPYING
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_EGGINFODIR=	${PYTHON_SITELIBDIR}
+USE_GCC=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+CFLAGS+=	-I${LOCALBASE}/include
+
+PLIST_FILES=	man/man1/gnofract4d.1.gz
+
+PORTDOCS=	README
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
-	# where to install libraries
-	@${REINPLACE_CMD} \
-		-e 's,\(^install_lib =\).*,\1${PREFIX}/lib/${PORTNAME},' \
-		${WRKSRC}/setup.cfg
-
-	# contain in DATADIR
-	# ('share/foobar/gnofract4d' -> # 'share/gnofract4d/foobar')
-	@${FIND} ${WRKSRC} -name '*.py' -exec \
-		${REINPLACE_CMD} \
-		-e "s,\([\"']\)share/\([^/]*\)/gnofract4d\1,\1${DATADIR:C/${PREFIX}\///}/\2\1," {} \;
-
-	# libraries again
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/gnofract4d
-
-	# fix NOPORTDOCS
-	@${REINPLACE_CMD} -e '249,251d' ${WRKSRC}/setup.py
-
-	# fixup library detection
-	@${REINPLACE_CMD} -e "s/libpng/libpng15/" ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} \
-	     -e "s,/usr/include/jpeglib.h,${LOCALBASE}/include/jpeglib.h," \
-	     ${WRKSRC}/setup.py
-
-	# png14
-	@${REINPLACE_CMD} -e "s/png_infopp_NULL/NULL/g" \
-		-e "s/png_bytepp_NULL/NULL/g" \
-		-e "s/int_p_NULL/NULL/g" \
-		${WRKSRC}/fract4d/c/imageIO.cpp
+	@${REINPLACE_CMD}  -e 's|/usr/include/|${LOCALBASE}/include/|; \
+		/# doc files/,+2d' \
+		${WRKSRC}/setup.py
+	@${REINPLACE_CMD}  -e 's|"CC"|"${CC}"|; s|"gcc"|"${CC}"|' \
+		${WRKSRC}/setup.py \
+		${WRKSRC}/fract4d/test_fractconfig.py \
+		${WRKSRC}/fract4d/fc.py
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' \
+		${WRKSRC}/fract4d/test_codegen.py \
+		${WRKSRC}/fract4d/fractconfig.py
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
+.for l in fract4d_stdlib fract4dc
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/fract4d/${l}.so
+.endfor
 
-.include <bsd.port.post.mk>
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

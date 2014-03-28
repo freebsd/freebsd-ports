@@ -16,10 +16,9 @@ LINUX_DESC=	Install Linux binary too (linux-w_scan)
 
 .include <bsd.port.options.mk>
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-lp1
-USES+=		gettext iconv
+USES+=		gettext iconv tar:bzip2
 CPPFLAGS+=	-I"${LOCALBASE}/include"
 LDFLAGS+=	-L"${LOCALBASE}/lib\ ${ICONV_LIB}"
 PORTDOCS=	COPYING ChangeLog README

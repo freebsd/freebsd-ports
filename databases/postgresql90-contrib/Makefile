@@ -26,10 +26,6 @@ COMPONENT=	-contrib
 CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl
 LDFLAGS+=	${PTHREAD_LIBS} -L${PREFIX}/lib
 
-OPTIONS_DEFINE=	OSSP_UUID
-OSSP_UUID_DESC=	Enable / disable ossp-uuid support
-OPTIONS_DEFAULT=	OSSP_UUID
-
 post-install:
 	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${STAGEDIR}${DOCSDIR}/contrib/README
 

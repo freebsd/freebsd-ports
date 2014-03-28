@@ -13,7 +13,7 @@ DISTNAME=	purge-20040201-src
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Powerful object purging utility for the Squid web proxy cache
 
-USE_GMAKE=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/purge
 
 PLIST_FILES=	sbin/purge

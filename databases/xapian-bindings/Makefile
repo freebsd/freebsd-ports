@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		--without-csharp --without-java --without-tcl
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
-USE_XZ=		yes
+USES=		tar:xz
 
 PORTDOCS=	*
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	coccinella
 PORTVERSION=	0.96.20
+PORTREVISION=	1
 CATEGORIES=	net-im tk
 MASTER_SITES=	SF
 DISTNAME=	Coccinella-${PORTVERSION}Src
@@ -11,9 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber client with whiteboard communication
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
-
-OPTIONS_DEFINE=	DOCS
 
 RUN_DEPENDS=	snack>=0:${PORTSDIR}/audio/snack \
 		tcltls>=0:${PORTSDIR}/devel/tcltls \
@@ -22,31 +20,52 @@ RUN_DEPENDS=	snack>=0:${PORTSDIR}/audio/snack \
 		tktreectrl>=0:${PORTSDIR}/x11-toolkits/tktreectrl
 
 NO_BUILD=	yes
-
 USES=		tk
 
-LIBTARGETDIR=	${PREFIX}/${PORTNAME}
-PLIST_SUB=	LIBTARGETDIR="${PORTNAME}"
+PORTDOCS=	*
+
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	AUTHORS.txt CHANGES.txt README.txt
+
+DOCSRCDIR2=	${WRKSRC}/READMEs
+DOCSDIR2=	${DOCSDIR}/READMEs
+DOC_FILES2=	*
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+
+DESKTOP_ENTRIES="Coccinella" "" "${PORTNAME}" \
+		"${PORTNAME}" "Network;InstantMessaging;" ""
 
 .include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e '1s|/usr/bin/env wish|${WISH}|' ${WRKSRC}/Coccinella.tcl
+	@${REINPLACE_CMD} -e '1s|/usr/bin/env wish|${WISH}|' \
+		${WRKSRC}/Coccinella.tcl
+	@${REINPLACE_CMD} -e 's|exec tclsh|exec ${TCLSH}|' \
+		${WRKSRC}/po/compile.tcl
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${LIBTARGETDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/Coccinella.tcl ${STAGEDIR}${LIBTARGETDIR}
-	@${LN} -sf ${LIBTARGETDIR}/Coccinella.tcl ${STAGEDIR}${PREFIX}/bin/coccinella
 .for dir in TclXML certificates components contrib docs httpd iconsets items \
-	jabber jabberlib lib msgs plugins po resources themes whiteboard xmpp
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${LIBTARGETDIR})
+	jabber jabberlib lib plugins resources themes whiteboard xmpp
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR})
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in AUTHORS.txt CHANGES.txt README.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} READMEs ${STAGEDIR}${DOCSDIR})
+	${INSTALL_SCRIPT} ${WRKSRC}/Coccinella.tcl ${STAGEDIR}${DATADIR}
+	@${LN} -sf ${DATADIR}/Coccinella.tcl ${STAGEDIR}${PREFIX}/bin/coccinella
+
+	${LN} -sf ${DATADIR}/themes/Oxygen/icons/64x64/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
+.if ${PORT_OPTIONS:MNLS}
+	@(cd ${WRKSRC}/po && ${CHMOD} 755 compile.tcl && \
+		./compile.tcl)
+	@(cd ${WRKSRC}/msgs && ${COPYTREE_SHARE} "*.msg" ${STAGEDIR}${DATADIR}/msgs)
 .endif
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>

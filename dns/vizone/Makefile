@@ -23,7 +23,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/updserial ${STAGEDIR}${PREFIX}/bin
 
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example.tld ${STAGEDIR}${EXAMPLESDIR}
 .endif
 

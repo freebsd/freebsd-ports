@@ -15,7 +15,7 @@ COMMENT=	Stani's Python Editor
 NO_BUILD=	yes
 
 USE_PYTHON=	yes
-USE_WX=		2.6
+USE_WX=		2.8
 WANT_UNICODE=	yes
 WX_COMPS=	python
 
@@ -39,7 +39,6 @@ DESKTOP_ENTRIES=	"SPE (Stani's Python Editor)" \
 			"Development;IDE;Debugger;GUIDesigner;" \
 			true
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MENCRYPTED_DEBUG}
@@ -50,27 +49,25 @@ post-patch:
 	@cd ${WRKSRC}/_spe && ${REINPLACE_CMD} ${SPESCRIPTS} && ${RM} ${RM_OPTS} *.bak
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} _spe ${DATADIR} && \
-	${LN} ${LN_OPTS} ${DATADIR}/_spe/spe ${PREFIX}/bin/spe
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} _spe ${STAGEDIR}${DATADIR} && \
+	${LN} ${LN_OPTS} ${DATADIR}/_spe/spe ${STAGEDIR}${PREFIX}/bin/spe
 
 # documentation
 .if ${PORT_OPTIONS:MDOCS}
-	@${MV} ${SPEDOCS} ${DOCSDIR} && \
-	${LN} ${LN_OPTS} ${DOCSDIR} ${SPEDOCS}
+	${MV} ${STAGEDIR}${SPEDOCS} ${STAGEDIR}${DOCSDIR} && \
+	${LN} ${LN_OPTS} ${DOCSDIR} ${STAGEDIR}${SPEDOCS}
 .else
-	@${RM} ${RM_OPTS} ${SPEDOCS}
+	@${RM} ${RM_OPTS} ${STAGEDIR}${SPEDOCS}
 .endif
 # examples
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MV} ${SPEXAMPLES} ${EXAMPLESDIR} && \
-	${LN} ${LN_OPTS} ${EXAMPLESDIR} ${SPEXAMPLES}
+	${MV} ${STAGEDIR}${SPEXAMPLES} ${STAGEDIR}${EXAMPLESDIR} && \
+	${LN} ${LN_OPTS} ${EXAMPLESDIR} ${STAGEDIR}${SPEXAMPLES}
 .else
-	@${RM} ${RM_OPTS} ${SPEXAMPLES}
+	@${RM} ${RM_OPTS} ${STAGEDIR}${SPEXAMPLES}
 .endif
-
-post-install:
-	@cd ${DATADIR}/_spe && \
+	cd ${STAGEDIR}${DATADIR}/_spe/ && \
 	${CHMOD} ${BINMODE} ${SPESCRIPTS}
 
 .include <bsd.port.mk>

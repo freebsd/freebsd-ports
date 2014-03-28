@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/trunk/lang/vala-vapigen/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-vapigen
 

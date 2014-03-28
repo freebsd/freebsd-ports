@@ -12,8 +12,7 @@ COMMENT=	Dynamic IP routing daemon (devel version)
 
 CONFLICTS=	bird-[0-9]*
 
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --enable-mpls
 USE_CSTD=	gnu89
@@ -25,18 +24,9 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_RC_SUBR=	bird
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MKMPLS}
-CONFIGURE_ARGS+=	--enable-kmpls
-.endif
+KMPLS_CONFIGURE_ON=	--enable-kmpls
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/bird.conf ]; then \
-		${CP} -p ${PREFIX}/etc/bird.conf.example ${PREFIX}/etc/bird.conf ; \
-		${CHMOD} 0640 ${PREFIX}/etc/bird.conf ; \
-	fi
 	@${ECHO_MSG}
 	@${ECHO_MSG} =====================================================================
 	@${ECHO_MSG}
@@ -48,4 +38,4 @@ post-install:
 	@${ECHO_MSG} =====================================================================
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

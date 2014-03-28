@@ -13,13 +13,12 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-USE_BZIP2=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog README
 
 SUB_FILES=	pkg-message
 
@@ -35,12 +34,14 @@ NLS_USES=		gettext
 PORTSCOUT=    limit:^0.7\..*
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|^Icon.*|Icon=${PREFIX}/share/pixmaps/${PORTNAME}/logo.png|' \
+	@${REINPLACE_CMD} -e \
+		's|^Icon.*|Icon=${PREFIX}/share/pixmaps/${PORTNAME}/logo.png|' \
 		-e 's|^Categories=.*|Categories=GTK;Utility;System;|' \
 		${WRKSRC}/data/${PORTNAME}.desktop.in
 
 post-patch:
-	@${REINPLACE_CMD} -E -e "s@encrypt\(@bfishencrypt\(@g" ${WRKSRC}/src/blowfish.c
+	@${REINPLACE_CMD} -E -e "s@encrypt\(@bfishencrypt\(@g" \
+		${WRKSRC}/src/blowfish.c
 	@${REINPLACE_CMD} -e 's|gdk_pixbuf_unref|g_object_unref|g' \
 		${WRKSRC}/src/interface.c
 

@@ -1,6 +1,6 @@
---- configure.in.orig	2013-02-11 14:33:14.000000000 +0000
-+++ configure.in	2013-02-11 14:30:13.000000000 +0000
-@@ -1129,11 +1129,11 @@
+--- configure.in.orig	2014-03-20 05:49:55.847385089 +0000
++++ configure.in	2014-03-20 05:50:09.238383528 +0000
+@@ -1139,11 +1139,11 @@
  [superux*], [	ac_cv_func_setitimer=no
  		],
  [	LIBS="-lm $LIBS"])
@@ -17,7 +17,7 @@
  if test "${enable_win95}" = maybe; then
      AC_HAVE_LIBRARY(unicows, [enable_win95=yes], [enable_win95=no])
  fi
-@@ -1828,7 +1828,7 @@
+@@ -1789,7 +1789,7 @@
  fi
  
  if test x"$enable_pthread" = xyes; then
@@ -26,15 +26,15 @@
  	AC_CHECK_LIB($pthread_lib, pthread_kill,
  		     rb_with_pthread=yes, rb_with_pthread=no)
  	if test "$rb_with_pthread" = "yes"; then break; fi
-@@ -1836,6 +1836,7 @@
-     if test x"$rb_with_pthread" = xyes; then
- 	AC_DEFINE(_REENTRANT)
- 	AC_DEFINE(_THREAD_SAFE)
+@@ -1803,6 +1803,7 @@
+ 	[c],    [],
+ 	[root], [],
+ 	[c_r],  [MAINLIBS="-pthread $MAINLIBS"],
 +	[pthread],  [MAINLIBS="-pthread $MAINLIBS"],
- 	AC_DEFINE(HAVE_LIBPTHREAD)
- 	AC_CHECK_HEADERS(pthread_np.h, [], [], [@%:@include <pthread.h>])
- 	AS_CASE([$pthread_lib],
-@@ -2080,7 +2081,6 @@
+ 	        [AS_CASE(["$target_os"],
+ 		    [openbsd*], [LIBS="-pthread $LIBS"],
+ 		    [LIBS="-l$pthread_lib $LIBS"])])
+@@ -2041,7 +2042,6 @@
  			: ${LDSHARED='$(CC) -shared'}
  			if test "$rb_cv_binary_elf" = yes; then
  			    LDFLAGS="$LDFLAGS -rdynamic"
@@ -42,7 +42,7 @@
  			else
  			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED="ld -Bshareable"
  			fi
-@@ -2385,6 +2385,7 @@
+@@ -2348,6 +2348,7 @@
      [freebsd*|dragonfly*], [
  	SOLIBS='$(LIBS)'
  	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR)$(MINOR)'

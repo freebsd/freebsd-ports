@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Method-Modifiers
-PORTVERSION=	2.09
+PORTVERSION=	2.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,6 @@ TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 USES=		perl5
-USE_PERL5=	modbuildtiny
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

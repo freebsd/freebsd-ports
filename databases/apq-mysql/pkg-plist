@@ -1,0 +1,12 @@
+include/apq-mysql/apq-mysql-client.adb
+include/apq-mysql/apq-mysql-client.ads
+include/apq-mysql/apq-mysql.ads
+include/apq-mysql/c_mysql.c
+lib/apq-mysql/static/apq-mysql-client.ali
+lib/apq-mysql/static/apq-mysql.ali
+lib/apq-mysql/static/libapq-mysql.a
+lib/gnat/apq-mysql.gpr
+@dirrmtry lib/gnat
+@dirrm lib/apq-mysql/static
+@dirrm lib/apq-mysql
+@dirrm include/apq-mysql

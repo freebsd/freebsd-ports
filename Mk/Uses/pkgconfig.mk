@@ -2,13 +2,12 @@
 #
 # handle dependency on the pkgconf port
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	pkgconfig
 # Usage:	USES=pkgconfig or USES=pkgconfig:ARGS
 # Valid ARGS:	build (default, implicit), run, both
 #
-#
+# MAINTAINER: portmgr@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_PKGCONFIG_MK)
 _INCLUDE_USES_PKGCONFIG_MK=	yes
 

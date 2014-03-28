@@ -2,6 +2,10 @@ bin/wbar
 %%WBARCONFIG%%bin/wbar-config
 etc/bash_completion.d/wbar
 etc/wbar.d/wbar.cfg
+%%WBARCONFIG%%man/es/man1/wbar-config.1.gz
+man/es/man1/wbar.1.gz
+%%WBARCONFIG%%man/man1/wbar-config.1.gz
+man/man1/wbar.1.gz
 %%DESKTOPDIR%%/wbar.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/wbar.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wbar.mo

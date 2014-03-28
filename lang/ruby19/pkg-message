@@ -12,7 +12,6 @@ since they require extra dependencies:
 	databases/ruby-gdbm:	GDBM module
 	x11-toolkits/ruby-tk:	Tcl/Tk modules
 	japanese/ruby-tk:	Tcl/Tk modules for Japanized Tcl/Tk
-	lang/ruby-mode.el:	Emacs lisp modules
 
 Install them as occasion demands.
 ====

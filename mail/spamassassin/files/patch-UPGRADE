@@ -1,0 +1,12 @@
+--- UPGRADE.orig	2014/02/11 16:54:00	1567218
++++ UPGRADE	2014/02/11 16:55:08	1567219
+@@ -1,3 +1,9 @@
++Note for Users Upgrading to SpamAssassin 3.4.0
++----------------------------------------------
++- Please see the Announcement file at:
++   http://svn.apache.org/repos/asf/spamassassin/branches/3.4/build/announcements/3.4.0.txt
++   or %%DOCSDIR%%/3.4.0-RELEASE-NOTES.txt
++
+ Note for Users Upgrading to SpamAssassin 3.3.0
+ -----------------------------------------------
+ 

@@ -11,11 +11,12 @@ COMMENT=	Optimizing BrainF*ck to C compiler
 
 LICENSE=	BSD2CLAUSE
 
+USES=		tar:xz
+
 PATCH_STRIP=	-p1
 USE_GITHUB=	yes
 GH_ACCOUNT=	rene0
 GH_COMMIT=	4761081
-USE_XZ=		yes
 
 OPTIONS_DEFINE=	DOCS
 

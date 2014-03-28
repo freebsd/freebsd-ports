@@ -6,7 +6,7 @@ PORTVERSION=	0.4.2
 PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freenet-homepage.de/thomas-steinke/ \
-		${MASTER_SITE_LOCAL}
+		LOCAL
 MASTER_SITE_SUBDIR=	novel
 EXTRACT_SUFX=	.tgz
 
@@ -17,11 +17,14 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 PLIST_FILES=	libexec/gkrellm2/plugins/${PORTNAME}.so
+PLIST_DIRSTRY=	libexec/gkrellm2/plugins libexec/gkrellm2
+
 USES=		gmake pkgconfig
 MAKE_ARGS=	CC="${CC}"
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.so ${PREFIX}/libexec/gkrellm2/plugins/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
+	${INSTALL_LIB} ${WRKSRC}/${PORTNAME}.so \
+		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
 .include <bsd.port.mk>

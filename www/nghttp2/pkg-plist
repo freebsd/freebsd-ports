@@ -10,4 +10,7 @@ lib/libnghttp2.la
 lib/libnghttp2.so
 lib/libnghttp2.so.2
 libdata/pkgconfig/libnghttp2.pc
+man/man1/nghttp.1.gz
+man/man1/nghttpd.1.gz
+man/man1/nghttpx.1.gz
 @dirrm include/nghttp2

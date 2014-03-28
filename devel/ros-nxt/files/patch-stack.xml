@@ -1,9 +1,0 @@
---- stack.xml.orig	2010-11-26 16:39:16.000000000 +0100
-+++ stack.xml	2010-11-27 15:52:55.000000000 +0100
-@@ -10,6 +10,5 @@
-   <depend stack="common_msgs" /> <!-- nav_msgs, sensor_msgs, geometry_msgs -->
-   <depend stack="geometry" /> <!-- kdl, tf, tf_conversions -->
-   <depend stack="ros" /> <!-- rospy, std_msgs, roscpp -->
--  <depend stack="visualization" /> <!-- rviz -->
- 
- </stack>

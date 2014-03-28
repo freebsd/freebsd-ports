@@ -9,7 +9,6 @@ include/curl/mprintf.h
 include/curl/multi.h
 include/curl/stdcheaders.h
 include/curl/typecheck-gcc.h
-share/aclocal/libcurl.m4
 lib/libcurl.a
 lib/libcurl.la
 lib/libcurl.so
@@ -71,4 +70,5 @@ man/man3/libcurl-multi.3.gz
 man/man3/libcurl-share.3.gz
 man/man3/libcurl-tutorial.3.gz
 man/man3/libcurl.3.gz
+share/aclocal/libcurl.m4
 @dirrm include/curl

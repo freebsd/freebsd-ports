@@ -21,14 +21,8 @@ FONTSDIR=	${PREFIX}/lib/X11/fonts/pingwi
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTSDIR=${FONTSDIR}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
-
-post-install:
-	@${ECHO_MSG} "===> Running fc-cache"
-	@-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

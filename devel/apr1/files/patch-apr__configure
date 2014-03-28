@@ -1,6 +1,6 @@
---- ./apr-1.4.8/configure.orig	2013-06-30 12:29:38.000000000 +0200
-+++ ./apr-1.4.8/configure	2013-06-30 12:32:04.000000000 +0200
-@@ -6642,11 +6642,7 @@
+--- ./apr-1.5.0/configure.orig	2014-03-22 18:52:57.000000000 +0100
++++ ./apr-1.5.0/configure	2014-03-22 18:52:57.000000000 +0100
+@@ -6622,11 +6622,7 @@
      apr_lock_method="USE_FLOCK_SERIALIZE"
    fi
  
@@ -13,7 +13,7 @@
          # 502102 is when libc_r switched to libpthread (aka libkse).
          if test $os_version -ge "502102"; then
            apr_cv_pthreads_cflags="none"
-@@ -18784,11 +18780,7 @@
+@@ -18812,11 +18808,7 @@
  # comparisons.
  case $host in
      *freebsd*)
@@ -25,4 +25,4 @@
 +            os_version="OSVERSION"
          ;;
      *linux*)
-         os_version=`uname -r | sed -e 's/\(.\)\.\(.\)\.\(.\).*/\1\2\3/'`
+         os_major=`uname -r | sed -e 's/\([1-9][0-9]*\)\..*/\1/'`

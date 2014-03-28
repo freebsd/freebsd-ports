@@ -1,0 +1,35 @@
+--- ./man/man5/policyd-weight.conf.5.orig	2011-09-18 14:27:29.000000000 +0200
++++ ./man/man5/policyd-weight.conf.5	2014-03-15 17:15:33.000000000 +0100
+@@ -101,7 +101,7 @@
+ .IP "\fB$PIDFILE\fR (default: /var/run/policyd-weight.pid)"
+ Path and filename to store the master pid (daemon mode)
+ 
+-.IP "\fB$LOCKPATH\fR (default: /tmp/.policyd-weight/)"
++.IP "\fB$LOCKPATH\fR (default: /var/run/policyd-weight/)"
+ Directory where policyd-weight stores sockets and lock-files/directories. Its
+ argument must contain a trailing slash.
+ 
+@@ -304,9 +304,8 @@
+ 
+ @dnsbl_score = (
+     "pbl.spamhaus.org",     3.25,   0,      "DYN_PBL_SPAMHAUS",
+-    "dnsbl.njabl.org",      4.25,   -1.5,   "BL_NJABL",
+-    "bl.spamcop.net",       1.75,   -1.5,   "SPAMCOP",
+     "sbl-xbl.spamhaus.org", 4.35,   -1.5,   "SBL_XBL_SPAMHAUS",
++    "bl.spamcop.net",       1.75,   -1.5,   "SPAMCOP",
+     "ix.dnsbl.manitu.net",  4.35,   0,      "IX_MANITU"
+ .br
+ );
+@@ -330,10 +329,8 @@
+ The default is:
+ 
+ @rhsbl_score = (
+-    "rhsbl.ahbl.org",              1.8,     0,  "AHBL",
+-    "dsn.rfc-ignorant.org",        3.2,     0,  "DSN_RFCI",
+-    "postmaster.rfc-ignorant.org", 1 ,      0,  "PM_RFCI",
+-    "abuse.rfc-ignorant.org",      1,       0,  "ABUSE_RFCI"
++    'multi.surbl.org',       4,    0,        'SURBL',
++    'rhsbl.ahbl.org',        4,    0,        'AHBL'
+ .br
+ );
+ 

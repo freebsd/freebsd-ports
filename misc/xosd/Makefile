@@ -3,7 +3,7 @@
 
 PORTNAME=	xosd
 PORTVERSION=	2.2.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	SF/libxosd/libxosd/${PORTNAME}-${PORTVERSION}
 
@@ -19,24 +19,17 @@ USE_XORG=	x11 xext xt sm ice
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib' \
 		LOCALBASE='${LOCALBASE}' \
-		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}' \
-		XMMS_PLUGINDIR=${LOCALBASE}/lib/xmms
-CONFIGURE_ARGS=	--disable-beep_media_player_plugin
+		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}'
+CONFIGURE_ARGS=	--disable-beep_media_player_plugin --disable-new-plugin
 PATCH_STRIP=	-p1
 
 PORTDOCS=	AUTHORS ChangeLog TODO
 
-OPTIONS_DEFINE=	XMMS MSEC XFT DOCS
-OPTIONS_DEFAULT=	XMMS
-XMMS_DESC=	Build and install XMMS-OSD plugin
+OPTIONS_DEFINE=	MSEC XFT DOCS
 MSEC_DESC=	Use milliseconds timeout (breaks compatibility!)
 XFT_DESC=	Unofficial Xft support
 
 OPTIONS_SUB=	yes
-
-XMMS_LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
-			libgdk_pixbuf.so:${PORTSDIR}/graphics/gdk-pixbuf
-XMMS_CONFIGURE_ENABLE=	new-plugin
 
 MSEC_EXTRA_PATCHES=	${FILESDIR}/extra-patch-msec-timeout
 
@@ -44,10 +37,6 @@ XFT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-xft
 XFT_USE=		GNOME=pango XORG=xft
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXMMS}
-COMMENT+=	(with XMMS plugin)
-.endif
 
 .if ${PORT_OPTIONS:MMSEC}
 DELAY_UNITS=	milliseconds

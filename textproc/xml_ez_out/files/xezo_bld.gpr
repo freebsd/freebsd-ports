@@ -1,0 +1,14 @@
+project XEZO_Bld is
+
+   for Languages use ("ada");
+   for Source_Dirs use ("mckae");
+   for Object_Dir use "obj";
+   for Library_Name use "xml_ez_out";
+   for Library_Dir use "lib";
+   for Library_Kind use "static";
+
+   package Builder is
+      for Default_Switches ("ada") use ("-gnatf", "-gnatws", "-O2");
+   end Builder;
+
+end XEZO_Bld;

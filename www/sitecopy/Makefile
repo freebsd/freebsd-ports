@@ -20,7 +20,7 @@ CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
 LIBS=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-neon --with-libxml2
 USE_GNOME=	libxml2
-USE_GMAKE=	yes
+USES=		gmake
 
 OPTIONS_DEFINE=	NLS
 

@@ -1,19 +1,23 @@
 bin/crossfire-config
+@group games
+@mode 2755
 bin/crossfire-server
+@mode
+@group
 bin/crossloop
 bin/crossloop.pl
 bin/crossloop.web
 bin/player_dl.pl
-etc/crossfire/ban_file
-etc/crossfire/dm_file
-etc/crossfire/exp_table
-etc/crossfire/forbid
-etc/crossfire/metaserver2
-etc/crossfire/motd
-etc/crossfire/news
-etc/crossfire/rules
-etc/crossfire/settings
-etc/crossfire/stat_bonus
+%%ETCDIR%%/ban_file
+%%ETCDIR%%/dm_file
+%%ETCDIR%%/exp_table
+%%ETCDIR%%/forbid
+%%ETCDIR%%/metaserver2
+%%ETCDIR%%/motd
+%%ETCDIR%%/news
+%%ETCDIR%%/rules
+%%ETCDIR%%/settings
+%%ETCDIR%%/stat_bonus
 lib/crossfire/plugins/cfanim.a
 lib/crossfire/plugins/cfanim.la
 lib/crossfire/plugins/cfanim.so
@@ -33,6 +37,10 @@ libexec/crossfire/add_throw.perl
 libexec/crossfire/metaserver.pl
 libexec/crossfire/mktable.script
 libexec/crossfire/random_map
+man/man6/crossfire-config.6.gz
+man/man6/crossfire-server.6.gz
+man/man6/crossloop.6.gz
+man/man6/crossloop.web.6.gz
 %%DATADIR%%/adm/archsearch.pl
 %%DATADIR%%/adm/collect_images.pl
 %%DATADIR%%/adm/map_expand.pl
@@ -516,6 +524,7 @@ libexec/crossfire/random_map
 %%DATADIR%%/maps/darcap/cave/level2
 %%DATADIR%%/maps/darcap/cave/level3
 %%DATADIR%%/maps/darcap/cave/level4
+%%DATADIR%%/maps/darcap/darcap.quests
 %%DATADIR%%/maps/darcap/darcap/airhouse
 %%DATADIR%%/maps/darcap/darcap/apartment
 %%DATADIR%%/maps/darcap/darcap/bob.msg
@@ -622,7 +631,6 @@ libexec/crossfire/random_map
 %%DATADIR%%/maps/darcap/darcap/thilgar
 %%DATADIR%%/maps/darcap/darcap/thilgar_top
 %%DATADIR%%/maps/darcap/darcap/waterhouse
-%%DATADIR%%/maps/darcap/darcap.quests
 %%DATADIR%%/maps/darcap/house1
 %%DATADIR%%/maps/darcap/lynn/castle1.0
 %%DATADIR%%/maps/darcap/lynn/castle1.1
@@ -3197,6 +3205,7 @@ libexec/crossfire/random_map
 %%DATADIR%%/maps/wolfsburg/volcano/vvmansion
 %%DATADIR%%/maps/wolfsburg/ware1
 %%DATADIR%%/maps/wolfsburg/wolfsburg.quests
+%%DATADIR%%/maps/world.quests
 %%DATADIR%%/maps/world/world_100_100
 %%DATADIR%%/maps/world/world_100_101
 %%DATADIR%%/maps/world/world_100_102
@@ -4097,7 +4106,6 @@ libexec/crossfire/random_map
 %%DATADIR%%/maps/world/world_129_127
 %%DATADIR%%/maps/world/world_129_128
 %%DATADIR%%/maps/world/world_129_129
-%%DATADIR%%/maps/world.quests
 %%DATADIR%%/materials
 %%DATADIR%%/messages
 %%DATADIR%%/races
@@ -4152,12 +4160,19 @@ libexec/crossfire/random_map
 %%DATADIR%%/wizhelp/wizcast
 %%DATADIR%%/wizhelp/wizhelp
 %%DATADIR%%/wizhelp/wizpass
-var/crossfire/banish_file
-var/crossfire/bookarch
-var/crossfire/clockdata
-var/crossfire/highscore
-var/crossfire/temp.maps
-@dirrm %%DATADIR%%/wizhelp
+/var/games/crossfire/banish_file
+/var/games/crossfire/bookarch
+/var/games/crossfire/clockdata
+/var/games/crossfire/highscore
+/var/games/crossfire/temp.maps
+@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/unique-items || :
+@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/template-maps || :
+@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/players || :
+@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/maps || :
+@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/datafiles || :
+@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/account || :
+@unexec rmdir >/dev/null 2>&1 /var/games/crossfire || :
+@dirrmtry %%DATADIR%%/wizhelp
 @dirrm %%DATADIR%%/maps/world
 @dirrm %%DATADIR%%/maps/wolfsburg/volcano
 @dirrm %%DATADIR%%/maps/wolfsburg/tt
@@ -4533,18 +4548,4 @@ var/crossfire/temp.maps
 @dirrm libexec/crossfire
 @dirrm lib/crossfire/plugins
 @dirrm lib/crossfire
-@dirrm etc/crossfire
-@exec mkdir -p %D/var/crossfire/account
-@exec mkdir -p %D/var/crossfire/datafiles
-@exec mkdir -p %D/var/crossfire/maps
-@exec mkdir -p %D/var/crossfire/players
-@exec mkdir -p %D/var/crossfire/template-maps
-@exec mkdir -p %D/var/crossfire/unique-items
-@dirrmtry var/crossfire/unique-items
-@dirrmtry var/crossfire/template-maps
-@dirrmtry var/crossfire/players
-@dirrmtry var/crossfire/maps
-@dirrmtry var/crossfire/datafiles
-@dirrmtry var/crossfire/account
-@dirrmtry var/crossfire
-@dirrmtry var
+@dirrm %%ETCDIR%%

@@ -1,0 +1,6 @@
+Tilt is a thin interface over a bunch of different Ruby template engines in an
+attempt to make their usage as generic possible. This is useful for web
+frameworks, static site generators, and other systems that support multiple
+template engines but don't want to code for each of them individually.
+
+WWW: https://github.com/rtomayko/tilt/

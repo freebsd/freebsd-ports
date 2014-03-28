@@ -3,24 +3,24 @@
 
 PORTNAME=	libiconv
 PORTVERSION=	1.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A character set conversion library
+COMMENT=	Character set conversion library
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--without-libintl-prefix \
 		--docdir=${DOCSDIR}
-CONFIGURE_ENV=	gl_cv_cc_visibility="no" \
-		am_cv_func_iconv="yes" \
+CONFIGURE_ENV=	am_cv_func_iconv="yes" \
 		am_cv_proto_iconv_arg1="const"
 MAKE_JOBS_UNSAFE=	yes
+USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	ENCODINGS PATCHES
+OPTIONS_DEFINE=	DOCS ENCODINGS PATCHES
 OPTIONS_DEFAULT=ENCODINGS
 ENCODINGS_DESC=	Include extra character sets
 PATCHES_DESC=	Apply patches to fix CP932, add EUCJP-MS

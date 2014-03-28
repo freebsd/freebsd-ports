@@ -1,0 +1,25 @@
+--- ./Makefile.orig	2014-03-17 03:52:56.000000000 +0100
++++ ./Makefile	2014-03-17 04:05:08.000000000 +0100
+@@ -3,7 +3,7 @@
+ 
+ PROG=		cwm
+ 
+-PREFIX=         /usr/local
++#PREFIX=         /usr/local
+ 
+ SRCS=		calmwm.c screen.c xmalloc.c client.c menu.c \
+ 		search.c util.c xutil.c conf.c xevents.c group.c \
+@@ -16,11 +16,11 @@
+ 
+ CPPFLAGS+=	`pkg-config --cflags fontconfig x11 xft xinerama xrandr`
+ 
+-CFLAGS=		-Wall -O2 -g -D_GNU_SOURCE
++CFLAGS+=	-Wall -g -pthread
+ 
+ LDFLAGS+=	`pkg-config --libs fontconfig x11 xft xinerama xrandr`
+ 
+-MANPREFIX=	${PREFIX}/share/man
++#MANPREFIX=	${PREFIX}/share/man
+ 
+ all: ${PROG}
+ 

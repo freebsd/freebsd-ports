@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# This script will:
+# 1) Build the example executable in /tmp
+# 2) Tell the user how to execute it
+
+GNATMAKE=@PREFIX@/gcc-aux/bin/gnatmake
+ADA_PROJECT_PATH=@PREFIX@/lib/gnat
+export ADA_PROJECT_PATH
+
+${GNATMAKE} -P example
+
+echo
+echo "The source for the example is test_config.adb"
+echo "The executable example is located in /tmp/test_config"
+echo "It requires no options; just run it"
+echo 'You may want to execute "rm /tmp/test_config*" when you are done.'

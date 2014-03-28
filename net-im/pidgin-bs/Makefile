@@ -17,8 +17,7 @@ LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
 

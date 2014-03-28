@@ -1,4 +1,2 @@
-SHA256 (ocaml-autoconf-1.0.tar.gz) = 67e85520f65c033c86e99e5438e51657e777579034570527c1b2c62096ecb004
-SIZE (ocaml-autoconf-1.0.tar.gz) = 11337
-SHA256 (camlimages-3.0.2.tgz) = db5aec421c89bea7b1bf55df6a674a0a6ac245f89c220c818e2e5d83f623662c
-SIZE (camlimages-3.0.2.tgz) = 1429138
+SHA256 (ocaml-images/v4.0.1.tar.gz) = b40237c1505487049799a7af296eb3996b3fa08eab94415546f46d61355747c4
+SIZE (ocaml-images/v4.0.1.tar.gz) = 2190274

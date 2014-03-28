@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-proxy
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-Proxy
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Monitor, analyze, or transform the communication of MySQL
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent \
 		libglib-2.0.so:${PORTSDIR}/devel/glib20
@@ -24,5 +26,4 @@ USE_LUA=	5.1+
 USE_MYSQL=	yes
 USE_RC_SUBR=	mysql-proxy
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

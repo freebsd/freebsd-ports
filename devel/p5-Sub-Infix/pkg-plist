@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Sub/Infix.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Infix/.packlist
+%%PERL5_MAN3%%/Sub::Infix.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Infix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
+@dirrmtry %%SITE_PERL%%/Sub

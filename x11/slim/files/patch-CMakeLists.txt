@@ -1,0 +1,87 @@
+--- ./CMakeLists.txt.orig	2013-10-01 22:38:05.000000000 +0000
++++ ./CMakeLists.txt	2014-03-08 16:26:46.000000000 +0000
+@@ -14,6 +14,7 @@
+ INCLUDE(CheckCCompilerFlag)
+ INCLUDE(CheckCXXCompilerFlag)
+ INCLUDE(CheckTypeSize)
++INCLUDE(GNUInstallDirs)
+ 
+ # Version
+ set(SLIM_VERSION_MAJOR "1")
+@@ -23,14 +24,23 @@
+ 
+ set(CMAKE_INSTALL_PREFIX "/usr/local" CACHE PATH "Installation Directory")
+ set(PKGDATADIR "${CMAKE_INSTALL_PREFIX}/share/slim")
+-set(SYSCONFDIR "/etc")
+-set(LIBDIR "/lib")
+-set(MANDIR "${CMAKE_INSTALL_PREFIX}/share/man")
++if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR
++		${CMAKE_SYSTEM_NAME} MATCHES "DragonFly"
++		)
++	set(SYSCONFDIR "${CMAKE_INSTALL_FULL_SYSCONFDIR}")
++	set(LIBDIR "${CMAKE_INSTALL_FULL_LIBDIR}")
++	set(MANDIR "${CMAKE_INSTALL_PREFIX}/man")
++else()
++        set(SYSCONFDIR "/etc")
++        set(LIBDIR "/lib")
++        set(MANDIR "${CMAKE_INSTALL_PREFIX}/share/man")
++endif()
+ 
+ set(SLIM_DEFINITIONS)
+ if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR
+ 		${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" OR
+-		${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD"
++		${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD" OR
++		${CMAKE_SYSTEM_NAME} MATCHES "DragonFly"
+ 		)
+ 	set(SLIM_DEFINITIONS ${SLIM_DEFINITIONS} "-DNEEDS_BASENAME")
+ else()
+@@ -70,8 +80,10 @@
+ )
+ if(USE_PAM)
+ 	set(common_srcs ${common_srcs} PAM.cpp)
+-    # for now, only build slimlock if we are using PAM.
+-    set(BUILD_SLIMLOCK 1)
++        # for now, only build slimlock if we are using PAM.
++        if(BUILD_SLIMLOCK)
++                set(BUILD_SLIMLOCK 1)
++        endif(BUILD_SLIMLOCK)
+ endif(USE_PAM)
+ 
+ # Build common library
+@@ -120,7 +132,9 @@
+ 		message("\tPAM Found")
+ 		set(SLIM_DEFINITIONS ${SLIM_DEFINITIONS} "-DUSE_PAM")
+ 		target_link_libraries(${PROJECT_NAME} ${PAM_LIBRARY})
+-		target_link_libraries(slimlock ${PAM_LIBRARY})
++		if(BUILD_SLIMLOCK)
++		        target_link_libraries(slimlock ${PAM_LIBRARY})
++		endif(BUILD_SLIMLOCK)
+ 		include_directories(${PAM_INCLUDE_DIR})
+ 	else(PAM_FOUND)
+ 		message("\tPAM Not Found")
+@@ -221,7 +235,9 @@
+ ####### install
+ # slim
+ install(TARGETS slim RUNTIME DESTINATION bin)
+-install(TARGETS slimlock RUNTIME DESTINATION bin)
++if(BUILD_SLIMLOCK)
++        install(TARGETS slimlock RUNTIME DESTINATION bin)
++endif(BUILD_SLIMLOCK)
+ 
+ if (BUILD_SHARED_LIBS)
+ 	set_target_properties(libslim PROPERTIES
+@@ -236,9 +252,11 @@
+ 
+ # man file
+ install(FILES slim.1 DESTINATION ${MANDIR}/man1/)
+-install(FILES slimlock.1 DESTINATION ${MANDIR}/man1/)
++if(BUILD_SLIMLOCK)
++        install(FILES slimlock.1 DESTINATION ${MANDIR}/man1/)
++endif(BUILD_SLIMLOCK)
+ # configure
+-install(FILES slim.conf DESTINATION ${SYSCONFDIR})
++install(FILES slim.conf.sample DESTINATION ${SYSCONFDIR})
+ # systemd service file
+ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ 	install(FILES slim.service DESTINATION ${LIBDIR}/systemd/system)

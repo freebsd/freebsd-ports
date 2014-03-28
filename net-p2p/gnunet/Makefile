@@ -32,8 +32,7 @@ OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	SQLITE
 
 USE_AUTOTOOLS=	libltdl libtool
-USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv gmake
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS =	--with-daemon-home-dir=${GNUNET_DAEMON_DIR} \

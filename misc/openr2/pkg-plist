@@ -17,4 +17,6 @@ lib/libopenr2.a
 lib/libopenr2.la
 lib/libopenr2.so
 lib/libopenr2.so.4
+man/man5/r2test.conf.5.gz
+man/man8/r2test.8.gz
 @dirrm include/openr2

@@ -17,7 +17,8 @@ LIB_DEPENDS+=	libbdd.so:${PORTSDIR}/science/buddy \
 USES=		zip
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
@@ -30,11 +31,9 @@ do-build:
 		-o ${WRKSRC}/bddsolve ${WRKSRC}/src/bddsolve.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bddsolve ${LOCALBASE}/bin/
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example/reach.b ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/example/sat.b ${EXAMPLESDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/bddsolve ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/reach.b ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/sat.b ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>

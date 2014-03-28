@@ -48,6 +48,7 @@
     SUBDIR += cmatrix
     SUBDIR += color-theme.el
     SUBDIR += colortail
+    SUBDIR += compat10x
     SUBDIR += compat4x
     SUBDIR += compat5x
     SUBDIR += compat6x
@@ -83,6 +84,7 @@
     SUBDIR += elscreen
     SUBDIR += esniper
     SUBDIR += estic
+    SUBDIR += excel-writer
     SUBDIR += explosions
     SUBDIR += fbless
     SUBDIR += felis
@@ -178,6 +180,7 @@
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
     SUBDIR += imerge
+    SUBDIR += ini_file_manager
     SUBDIR += inplace
     SUBDIR += ipa_conv
     SUBDIR += ipbt
@@ -287,7 +290,6 @@
     SUBDIR += openr2
     SUBDIR += orville-write
     SUBDIR += ossp-uuid
-    SUBDIR += ossp-uuid-perl
     SUBDIR += otter
     SUBDIR += p5-Acme-ButFirst
     SUBDIR += p5-Array-Compare
@@ -344,6 +346,7 @@
     SUBDIR += p5-Locale-US
     SUBDIR += p5-Net-vCard
     SUBDIR += p5-Norge
+    SUBDIR += p5-OSSP-uuid
     SUBDIR += p5-Software-License
     SUBDIR += p5-Test-Dir
     SUBDIR += p5-Text-FIGlet

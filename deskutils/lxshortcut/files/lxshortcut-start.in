@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-#
-
-lxshortcut -o %U

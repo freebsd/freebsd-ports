@@ -1,0 +1,43 @@
+--- ./policyd-weight.conf.sample.orig	2011-09-03 16:10:01.000000000 +0200
++++ ./policyd-weight.conf.sample	2014-03-15 17:15:33.000000000 +0100
+@@ -59,9 +59,8 @@
+     'pbl.spamhaus.org',       3.25,          0,        'DYN_PBL_SPAMHAUS',
+     'sbl-xbl.spamhaus.org',   4.35,       -1.5,        'SBL_XBL_SPAMHAUS',
+     'bl.spamcop.net',         3.75,       -1.5,        'SPAMCOP',
+-    'dnsbl.njabl.org',        4.25,       -1.5,        'BL_NJABL',
++#    'dnsbl-1.uceprotect.net', 4.35,          0,        'UCE_1',
+     'ix.dnsbl.manitu.net',    4.35,          0,        'IX_MANITU'
+-    #'rbl.ipv6-world.net',     4.25,          0,        'IPv6_RBL'  #don't use, kept for testing failures!
+ );
+ 
+    $MAXDNSBLHITS  = 2;  # If Client IP is listed in MORE
+@@ -77,10 +76,7 @@
+ ## RHSBL settings
+    @rhsbl_score = (
+     'multi.surbl.org',             4,        0,        'SURBL',
+-    'rhsbl.ahbl.org',              4,        0,        'AHBL',
+-    'dsn.rfc-ignorant.org',        3.5,      0,        'DSN_RFCI',
+-    'postmaster.rfc-ignorant.org', 0.1,      0,        'PM_RFCI',
+-    'abuse.rfc-ignorant.org',      0.1,      0,        'ABUSE_RFCI'
++    'rhsbl.ahbl.org',              4,        0,        'AHBL'
+ );
+ 
+    $BL_ERROR_SKIP     = 2;  # skip a RBL if this RBL had this many continuous
+@@ -89,7 +85,7 @@
+    $BL_SKIP_RELEASE   = 10; # skip a RBL for that many times
+ 
+ ## cache stuff
+-   $LOCKPATH          = '/tmp/.policyd-weight/';    # must be a directory (add
++   $LOCKPATH          = '/var/run/policyd-weight/';    # must be a directory (add
+                                                     # trailing slash)
+ 
+    $SPATH             = $LOCKPATH.'/polw.sock';     # socket path for the cache
+@@ -111,7 +107,7 @@
+ 
+    $CACHEMAXSIZE    = 4000; # at this number of entries cleanup takes place
+ 
+-   $CACHEREJECTMSG  = '550 temporarily blocked because of previous errors';
++   $CACHEREJECTMSG  = $REJECTMSG . " [cached]";
+ 
+    $NTTL            = 1;    # after NTTL retries the cache entry is deleted
+ 

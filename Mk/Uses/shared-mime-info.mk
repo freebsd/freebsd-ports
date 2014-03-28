@@ -2,13 +2,12 @@
 #
 # handle dependency depends on shared-mime-info and package regen
 #
-# MAINTAINER: gnome@FreeBSD.org
-#
 # Feature:	shared-mime-info
 # Usage:	USES=shared-mime-info
 # Valid ARGS:	does not require args
 #
-#
+# MAINTAINER: gnome@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_SHARED_MIME_INFO_MK)
 _INCLUDE_USES_SHARED_MIME_INFO_MK=	yes
 

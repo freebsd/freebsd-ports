@@ -11,13 +11,13 @@ COMMENT=	Fast way to delete entries from OpenSSH known_hosts file
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+USES=		shebangfix
 NO_BUILD=	yes
-PLIST_FILES=	bin/unssh
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/unssh
+SHEBANG_FILES=	unssh.sh
+
 do-install:
-	@${INSTALL} -d ${PREFIX}/bin
-	@${CP} ${WRKSRC}/unssh.sh ${PREFIX}/bin/unssh
-	@${CHMOD} ${BINMODE} ${PREFIX}/bin/unssh
+	${INSTALL_SCRIPT} ${WRKSRC}/unssh.sh ${STAGEDIR}${PREFIX}/bin/unssh
 
 .include <bsd.port.mk>

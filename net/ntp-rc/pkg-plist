@@ -8,6 +8,12 @@ bin/ntptime
 bin/ntptrace
 bin/sntp
 bin/tickadj
+man/man1/sntp.1.gz
+man/man1/ntpd.1.gz
+man/man1/ntpdc.1.gz
+man/man1/ntpq.1.gz
+man/man1/ntpsnmpd.1.gz
+man/man1/ntp-keygen.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/accopt.html
 %%PORTDOCS%%%%DOCSDIR%%/assoc.html
 %%PORTDOCS%%%%DOCSDIR%%/audio.html

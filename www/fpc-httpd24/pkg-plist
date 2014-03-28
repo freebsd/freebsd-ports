@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/apr24.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/apr24.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/httpd24.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/httpd24.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/libpapr24.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/libphttpd24.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

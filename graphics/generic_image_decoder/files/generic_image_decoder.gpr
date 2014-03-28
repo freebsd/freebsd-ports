@@ -1,0 +1,7 @@
+project Generic_Image_Decoder is
+   for Languages        use ("ada");
+   for Library_Name     use "genimgdec";
+   for Source_Dirs      use ("../../include/generic_image_decoder");
+   for Library_Dir      use "../../lib/generic_image_decoder";
+   for Externally_Built use "true";
+end Generic_Image_Decoder;

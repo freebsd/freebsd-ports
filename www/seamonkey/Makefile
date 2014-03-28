@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.24
+DISTVERSION=	2.25
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
@@ -12,18 +12,23 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-BUILD_DEPENDS=	nspr>=4.10.2:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.10.3:${PORTSDIR}/devel/nspr \
 		nss>=3.15.4:${PORTSDIR}/security/nss \
-		sqlite3>=3.8.0.2:${PORTSDIR}/databases/sqlite3 \
+		harfbuzz>=0.9.25:${PORTSDIR}/print/harfbuzz \
+		libvorbis>=1.3.4:${PORTSDIR}/audio/libvorbis \
+		opus>=1.1:${PORTSDIR}/audio/opus \
+		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
+		sqlite3>=3.8.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
+		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 #		cairo>=1.12.16,2:${PORTSDIR}/graphics/cairo \
 
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 EM_VERSION=	1.6.1_pre20140112
-L_VERSION=	2.9b1
+L_VERSION=	3.0b1
 
 SSP_UNSAFE=	yes
 USE_AUTOTOOLS=	autoconf213:env
@@ -78,6 +83,25 @@ MOZSRC:=	${WRKSRC}/mozilla
 
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 
+# avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
+# http://svnweb.freebsd.org/changeset/base/255804
+.if ${OPSYS} == FreeBSD
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${ARCH} == i386 && ${OSVERSION} < 1000056
+. if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+BROKEN=		Cannot build with OPTIMIZED_CFLAGS option due to \
+		a ${CHOSEN_COMPILER_TYPE} bug: unset the option or \
+		use FAVORITE_COMPILER=gcc in Makefile.local/make.conf
+# apply workaround only for -O2 or greater
+. elif ${CXXFLAGS:M-O*} && ! ${CXXFLAGS:M-O[01]}
+.  if ${MACHINE_CPU:Msse2}
+CXXFLAGS+=	-msse2
+.  else
+CXXFLAGS+=	-O1
+.  endif
+. endif
+.endif
+.endif
+
 .if ${PORT_OPTIONS:MALSA}
 BUILD_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
 .endif
@@ -116,7 +140,7 @@ MOZ_OPTIONS+=	--disable-composer
 MOZ_OPTIONS+=	--enable-calendar
 MOZ_MK_OPTIONS+=	MOZ_CO_PROJECT=calendar
 LIGHTNING_DIR=	share/lightning
-XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/xpi-stage/lightning-${L_VERSION}.en-US.${OPSYS:L}${OSREL}-${ARCH:S/x86/i386/:S/amd64/x86_64/}.xpi
+XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/xpi-stage/lightning-${L_VERSION}.en-US.${OPSYS:L}${OSREL}-${ARCH:S/amd64/x86_64/}.xpi
 XPI_ORIG_ID=	{e2fda1a4-762b-4020-b5ad-a41df1933103}
 XPI_ID=		lightning@seamonkey.mozilla.org
 .else

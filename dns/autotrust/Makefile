@@ -10,20 +10,17 @@ MASTER_SITES=	http://www.nlnetlabs.nl/downloads/autotrust/
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	A tool to automatically update DNSSEC trust anchors
 
-LIB_DEPENDS+=	ldns:${PORTSDIR}/dns/ldns \
-		unbound:${PORTSDIR}/dns/unbound
+LIB_DEPENDS+=	libldns.so:${PORTSDIR}/dns/ldns \
+		libunbound.so:${PORTSDIR}/dns/unbound
 
 GNU_CONFIGURE=	yes
 CFLAGS=		-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-MAN8=		autotrust.8
-
-PLIST_FILES=	sbin/autotrust \
+PLIST_FILES=	sbin/autotrust man/man8/autotrust.8.gz \
 		etc/autotrust/autotrust.conf.sample
 PLIST_DIRS=	etc/autotrust
 
-NO_STAGE=	yes
 do-patch:
 	${REINPLACE_CMD} \
 		'45s!=!\?=!; \
@@ -31,9 +28,9 @@ do-patch:
 		${WRKSRC}/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-	${MKDIR} ${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${ETCDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${ETCDIR}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

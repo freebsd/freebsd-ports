@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	Skins for X Multimedia System (XMMS)
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 CONFLICTS_INSTALL=	xmms-skins-[0-9]*
 
 NO_BUILD=	yes

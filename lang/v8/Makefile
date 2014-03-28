@@ -12,12 +12,11 @@ COMMENT=	Google\'s open source JavaScript engine
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 CONFLICTS=	v8-3.24.*
 
-USES=		gmake compiler
-USE_XZ=		yes
+USES=		gmake compiler tar:xz
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 ALL_TARGET=	native
@@ -31,6 +30,9 @@ MAKE_ENV+=	LINK=clang++
 CFLAGS+=	-Wno-unused-private-field
 .if ${COMPILER_VERSION} >= 33
 CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
+.if ${COMPILER_VERSION} >= 34
+CFLAGS+=	-Wno-unused-const-variable
+.endif
 .endif
 .else
 MAKE_ARGS+=	strictaliasing=off

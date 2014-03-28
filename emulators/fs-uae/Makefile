@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fs-uae
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fs-uae.net/stable/${PORTVERSION}/
 

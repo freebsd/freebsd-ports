@@ -10,8 +10,7 @@ MASTER_SITES=	http://www.webonaut.com/distfiles/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper scripts for firefox web browser
 
-USE_BZIP2=	yes
-
+USES=		tar:bzip2
 UTF8_HACK=	no
 FIREFOX_REMOTE=	firefox-remote
 THUNDERBIRD_REMOTE=	thunderbird-remote

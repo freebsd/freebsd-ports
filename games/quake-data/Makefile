@@ -59,7 +59,9 @@ PLIST_SUB+=	QUAKEWORLD="@comment "
 pre-fetch:
 .if ${PORT_OPTIONS:MFULLGAME} && !exists(${_DISTDIR}/pak1.pak)
 	@${ECHO_CMD}
-	@${ECHO_CMD} You need to copy the file pak1.pak from the original Quake CDROM to ${_DISTDIR} in order to install this port. | ${FMT}
+	@${ECHO_CMD} You need to copy the file pak1.pak from the \
+		original Quake CDROM to ${_DISTDIR} in order to \
+		install this port. | ${FMT}
 	@${ECHO_CMD}
 	@${FALSE}
 .endif
@@ -74,13 +76,14 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/qw
 	${INSTALL_DATA} ${WRKSRC}/qw/qwprogs.dat ${STAGEDIR}${DATADIR}/qw
 	@${MKDIR} ${STAGEDIR}${DATADIR}/qw/skins
-	${INSTALL_SCRIPT} ${WRKSRC}/qw/skins/fixskins.sh ${STAGEDIR}${DATADIR}/qw/skins
-. if ${PORT_OPTIONS:MQW_SKINS}
-.   for f in ${SKINFILES}
+	${INSTALL_SCRIPT} ${WRKSRC}/qw/skins/fixskins.sh \
+		${STAGEDIR}${DATADIR}/qw/skins
+.  if ${PORT_OPTIONS:MQW_SKINS}
+.    for f in ${SKINFILES}
 	@${UNZIP_CMD} -nq ${_DISTDIR}/${f} -d ${STAGEDIR}${DATADIR}/qw/skins
-.   endfor
+.    endfor
 	@(cd ${STAGEDIR}${DATADIR}/qw/skins && LANG=C ./fixskins.sh *)
-. endif
+.  endif
 .endif
 
 .include <bsd.port.mk>

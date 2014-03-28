@@ -1,6 +1,15 @@
 --- ./install.sh.orig	2010-10-01 10:49:18.000000000 -0400
 +++ ./install.sh	2011-12-03 23:04:22.000000000 -0500
-@@ -41,56 +41,12 @@
+@@ -15,7 +15,7 @@
+ #You should have received a copy of the GNU General Public License
+ #along with autojump.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-function show_help {
++show_help() {
+         echo "sudo ./install.sh [--prefix /usr/local]"
+ }
+ 
+@@ -41,56 +41,12 @@ done
  echo "Installing to ${prefix} ..."
  
  # INSTALL AUTOJUMP

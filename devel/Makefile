@@ -30,7 +30,6 @@
     SUBDIR += R-cran-randomForest
     SUBDIR += R-cran-reshape
     SUBDIR += R-cran-reshape2
-    SUBDIR += R-cran-vcd
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += abi-compliance-checker
@@ -51,6 +50,7 @@
     SUBDIR += alf
     SUBDIR += allegro
     SUBDIR += allegro-devel
+    SUBDIR += alog
     SUBDIR += android-tools-adb
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
@@ -278,7 +278,6 @@
     SUBDIR += critcl
     SUBDIR += cross-binutils
     SUBDIR += cross-gcc
-    SUBDIR += cross-gdb
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csmith
@@ -1164,6 +1163,7 @@
     SUBDIR += linux-f10-sdl12
     SUBDIR += linux-kmod-compat
     SUBDIR += linux_kdump
+    SUBDIR += linux_libusb
     SUBDIR += lion
     SUBDIR += llnextgen
     SUBDIR += llvm-devel
@@ -2189,6 +2189,7 @@
     SUBDIR += p5-InlineX-C2XS
     SUBDIR += p5-InlineX-CPP2XS
     SUBDIR += p5-Ioctl
+    SUBDIR += p5-Iodef-Pb-Simple
     SUBDIR += p5-Iterator
     SUBDIR += p5-Iterator-IO
     SUBDIR += p5-Iterator-Misc
@@ -2196,10 +2197,12 @@
     SUBDIR += p5-Iterator-Util
     SUBDIR += p5-JIRA-Client
     SUBDIR += p5-JQuery
+    SUBDIR += p5-JSON-Hyper
     SUBDIR += p5-JSON-Path
     SUBDIR += p5-JSON-RPC
     SUBDIR += p5-JSON-RPC-Common
     SUBDIR += p5-JSON-RPC-Dispatcher
+    SUBDIR += p5-JSON-Schema
     SUBDIR += p5-Java
     SUBDIR += p5-Jonk
     SUBDIR += p5-LV
@@ -2363,6 +2366,7 @@
     SUBDIR += p5-MooseX-Aliases
     SUBDIR += p5-MooseX-App
     SUBDIR += p5-MooseX-App-Cmd
+    SUBDIR += p5-MooseX-ArrayRef
     SUBDIR += p5-MooseX-Async
     SUBDIR += p5-MooseX-Attribute-Chained
     SUBDIR += p5-MooseX-Attribute-ENV
@@ -2607,6 +2611,7 @@
     SUBDIR += p5-Project-Gantt
     SUBDIR += p5-Project-Libs
     SUBDIR += p5-Qudo
+    SUBDIR += p5-RPSL-Parser
     SUBDIR += p5-RRDTool-OO
     SUBDIR += p5-Range-String
     SUBDIR += p5-Rcs
@@ -2628,6 +2633,7 @@
     SUBDIR += p5-Religion
     SUBDIR += p5-ResourcePool
     SUBDIR += p5-Resources
+    SUBDIR += p5-Return-Type
     SUBDIR += p5-Return-Value
     SUBDIR += p5-Role-Basic
     SUBDIR += p5-Role-HasMessage
@@ -2730,6 +2736,7 @@
     SUBDIR += p5-Sub-Exporter-Lexical
     SUBDIR += p5-Sub-Exporter-Progressive
     SUBDIR += p5-Sub-Identify
+    SUBDIR += p5-Sub-Infix
     SUBDIR += p5-Sub-Install
     SUBDIR += p5-Sub-Installer
     SUBDIR += p5-Sub-Multi
@@ -3055,6 +3062,7 @@
     SUBDIR += p5-autobox
     SUBDIR += p5-autobox-Core
     SUBDIR += p5-autodie
+    SUBDIR += p5-autovivification
     SUBDIR += p5-bareword-filehandles
     SUBDIR += p5-base
     SUBDIR += p5-boolean
@@ -3080,6 +3088,7 @@
     SUBDIR += p5-libalarm
     SUBDIR += p5-libxml-enno
     SUBDIR += p5-local-lib
+    SUBDIR += p5-match-simple
     SUBDIR += p5-mixin
     SUBDIR += p5-mocked
     SUBDIR += p5-multidimensional
@@ -3327,6 +3336,7 @@
     SUBDIR += pecl-params
     SUBDIR += pecl-parsekit
     SUBDIR += pecl-pthreads
+    SUBDIR += pecl-qb
     SUBDIR += pecl-runkit
     SUBDIR += pecl-scream
     SUBDIR += pecl-shape
@@ -3675,6 +3685,7 @@
     SUBDIR += py-lock_file
     SUBDIR += py-lockfile
     SUBDIR += py-log4py
+    SUBDIR += py-logan
     SUBDIR += py-logilab-common
     SUBDIR += py-lxml
     SUBDIR += py-magic
@@ -3757,7 +3768,6 @@
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
     SUBDIR += py-pyxml2obj
-    SUBDIR += py-pyzmq
     SUBDIR += py-qpid
     SUBDIR += py-qserve
     SUBDIR += py-qt4
@@ -4068,12 +4078,6 @@
     SUBDIR += robodoc
     SUBDIR += root-doc
     SUBDIR += ros
-    SUBDIR += ros-common_msgs
-    SUBDIR += ros-documentation
-    SUBDIR += ros-nxt
-    SUBDIR += ros-rx
-    SUBDIR += ros_comm
-    SUBDIR += ros_tutorials
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpm-spec-mode.el
@@ -4093,8 +4097,6 @@
     SUBDIR += ruby-fastri
     SUBDIR += ruby-flexmock
     SUBDIR += ruby-gems
-    SUBDIR += ruby-gio2
-    SUBDIR += ruby-glib2
     SUBDIR += ruby-intl
     SUBDIR += ruby-korundum
     SUBDIR += ruby-krossruby
@@ -4249,6 +4251,8 @@
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json146
     SUBDIR += rubygem-json_pure
+    SUBDIR += rubygem-kafo
+    SUBDIR += rubygem-kafo_parsers
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-librarian
@@ -4299,6 +4303,7 @@
     SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-popen4
     SUBDIR += rubygem-posix-spawn
+    SUBDIR += rubygem-powerbar
     SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-pry-remote-em
@@ -4313,6 +4318,7 @@
     SUBDIR += rubygem-rake-compiler
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rash
+    SUBDIR += rubygem-rb-fsevent
     SUBDIR += rubygem-rb-inotify
     SUBDIR += rubygem-rb-kqueue
     SUBDIR += rubygem-rcov
@@ -4341,6 +4347,7 @@
     SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-rubytree
+    SUBDIR += rubygem-rufus-scheduler
     SUBDIR += rubygem-runt
     SUBDIR += rubygem-ruport
     SUBDIR += rubygem-safe_yaml
@@ -4384,6 +4391,7 @@
     SUBDIR += rubygem-thread_safe
     SUBDIR += rubygem-thrift
     SUBDIR += rubygem-tilt
+    SUBDIR += rubygem-tilt1
     SUBDIR += rubygem-timers
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-transactionsimple
@@ -4400,6 +4408,7 @@
     SUBDIR += rubygem-virtus
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
+    SUBDIR += rubygem-wdm
     SUBDIR += rubygem-webby
     SUBDIR += rubygem-xpath
     SUBDIR += rubygem-yajl-ruby
@@ -4436,7 +4445,6 @@
     SUBDIR += sfslite-dbg
     SUBDIR += sfslite-noopt
     SUBDIR += sgb
-    SUBDIR += sgl
     SUBDIR += shapelib
     SUBDIR += shflags
     SUBDIR += shiboken

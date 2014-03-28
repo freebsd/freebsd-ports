@@ -3,6 +3,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -21,7 +22,7 @@ OPTIONS_MULTI_DB=	PGSQL MYSQL SQLITE
 OPTIONS_RADIO=		WEB
 OPTIONS_RADIO_WEB=	APACHE HIAWATHA LIGHTTPD NGINX
 
-OPTIONS_DEFINE=		CHECK_ROOT EMAILS LSOF LOG_COMPRESS
+OPTIONS_DEFINE=		CHECK_ROOT EMAILS LSOF LOG_COMPRESS HIDE_PHP HIDE_MARKUP
 
 CHECK_ROOT_DESC=	Check if ./tc is run by uid 0
 EMAILS_DESC=		Support for build failure/completion emails
@@ -29,6 +30,8 @@ LSOF_DESC=		For killMountProcesses() when using nullfs
 LOG_COMPRESS_DESC=	Support bzip log compression
 HIAWATHA_DESC=		Hiawatha server
 NGINX_DESC=		Nginx server
+HIDE_PHP_DESC=		Hide index.php in webui templates
+HIDE_MARKUP_DESC=	Hide display_markup_log action
 
 OPTIONS_DEFAULT=	MYSQL APACHE CHECK_ROOT EMAILS LSOF \
 			LOG_COMPRESS
@@ -101,6 +104,18 @@ post-patch:
 	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
 		${WRKSRC}/tc
 .endif
+.if defined(WEBUI)
+.  if ${PORT_OPTIONS:MHIDE_PHP}
+	@${REINPLACE_CMD} -e 's#index.php\?#\?#g;s#index.php#\?#g' \
+		${WRKSRC}/webui/templates/*/*.tpl
+.  endif
+.  if ${PORT_OPTIONS:MHIDE_MARKUP}
+	@${REINPLACE_CMD} -e 's#<a href="[^"]*">markup</a>#markup#g' \
+			  -e 's#>markup_log.*;#>markup_log(-1,-1)#g' \
+		${WRKSRC}/webui/templates/*/*.tpl ${WRKSRC}/webui/index.php
+.  endif
+.endif
+	@${FIND} ${WRKSRC} -name '*.orig' -or -name '*.bak' -delete
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/tinderbox/scripts

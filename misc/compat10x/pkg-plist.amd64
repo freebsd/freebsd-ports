@@ -1,0 +1,12 @@
+lib/compat/libcam.so.6
+lib/compat/libdwarf.so.3
+lib/compat/libelf.so.1
+lib/compat/libipx.so.5
+lib32/compat/libcam.so.6
+lib32/compat/libdwarf.so.3
+lib32/compat/libelf.so.1
+lib32/compat/libipx.so.5
+@dirrmtry lib/compat
+@dirrmtry lib32/compat
+@dirrmtry lib32
+@exec %%LDCONFIG_LIB32%% -m %D/lib32/compat

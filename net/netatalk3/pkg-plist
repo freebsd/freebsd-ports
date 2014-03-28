@@ -72,7 +72,7 @@ include/atalk/volume.h
 lib/libatalk.a
 lib/libatalk.la
 lib/libatalk.so
-lib/libatalk.so.12
+lib/libatalk.so.13
 man/man1/ad.1.gz
 man/man1/afpldaptest.1.gz
 man/man1/afppasswd.1.gz

@@ -18,6 +18,10 @@ USE_FIREFOX=	yes
 NO_BUILD=	yes
 
 NO_STAGE=	yes
+
+DEPRECATED=	No longer works after forum software update
+EXPIRATION_DATE=2014-05-31
+
 .include <bsd.port.pre.mk>
 
 do-extract:

@@ -4,9 +4,9 @@
 ***  For the library to be able to perform DNSSEC, the root
 ***  trust anchor needs to be present in presentation format
 ***  in the file:
-***        %%LOCALBASE%%/etc/unbound/root.key
+***     %%LOCALBASE%%/etc/unbound/root.key
 ***
 ***  We recomend using unbound-anchor to retrieve and install
 ***  the root trust anchor like this:
-***        unbound-anchor -a "%%LOCALBASE%%/etc/unbound/root.key"
+***     su -m unbound -c /usr/local/sbin/unbound-anchor
 ***

@@ -2,11 +2,11 @@
 #
 # Provide support to convert files from dos2unix
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # DOS2UNIX_REGEX	a regular expression to match files that needs to be converted
 # DOS2UNIX_FILES	list of files of glob pattern relative to ${WRKSRC}
 # DOS2UNIX_GLOB		list of glob pattern find(1) will match with
+#
+# MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_DOS2UNIX_MK)
 _INCLUDE_USES_DOS2UNIX_MK=	yes

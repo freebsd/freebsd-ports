@@ -12,25 +12,18 @@ COMMENT=	Planet is a flexible feed aggregator - and more!
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/Tidy/Tidy.py:${PORTSDIR}/devel/py-mx-experimental \
 		${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
 
-DEPRECATED=	distfiles no longer fetchable
-EXPIRATION_DATE=	2014-04-01
-
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 USE_PYTHON=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
 post-extract:
 	@${RM}	${WRKSRC}/.bzrignore
 	@${FIND} ${WRKSRC}/ -type d -name '.bzr' | ${XARGS} ${RM} -rf
 
 do-install:
-	${MKDIR} ${PREFIX}/share/planet
-	${CP} -R ${WRKSRC}/ ${PREFIX}/share/planet
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

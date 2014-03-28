@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cbviewer
@@ -20,7 +20,8 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		unzip:${PORTSDIR}/archivers/unzip
 
-USES=		zip:infozip
+USES=		dos2unix zip:infozip
+DOS2UNIX_GLOB=	CREDITS
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
@@ -33,7 +34,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 PLIST_DIRSTRY=	share/java/cbviewer
 
 PORTDOCS=	CREDITS
-
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}

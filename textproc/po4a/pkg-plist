@@ -7,20 +7,18 @@ bin/po4a-translate
 bin/po4a-updatepo
 bin/po4aman-display-po
 bin/po4apod-display-po
+%%SITE_PERL%%/Locale/Po4a/AsciiDoc.pm
 %%SITE_PERL%%/Locale/Po4a/BibTeX.pm
 %%SITE_PERL%%/Locale/Po4a/Chooser.pm
 %%SITE_PERL%%/Locale/Po4a/Common.pm
-%%SITE_PERL%%/Locale/Po4a/Debconf.pm
 %%SITE_PERL%%/Locale/Po4a/Dia.pm
 %%SITE_PERL%%/Locale/Po4a/Docbook.pm
 %%SITE_PERL%%/Locale/Po4a/Guide.pm
 %%SITE_PERL%%/Locale/Po4a/Halibut.pm
-%%SITE_PERL%%/Locale/Po4a/Html.pm
 %%SITE_PERL%%/Locale/Po4a/Ini.pm
 %%SITE_PERL%%/Locale/Po4a/KernelHelp.pm
 %%SITE_PERL%%/Locale/Po4a/LaTeX.pm
 %%SITE_PERL%%/Locale/Po4a/Man.pm
-%%SITE_PERL%%/Locale/Po4a/NewsDebian.pm
 %%SITE_PERL%%/Locale/Po4a/Po.pm
 %%SITE_PERL%%/Locale/Po4a/Pod.pm
 %%SITE_PERL%%/Locale/Po4a/Sgml.pm
@@ -31,5 +29,416 @@ bin/po4apod-display-po
 %%SITE_PERL%%/Locale/Po4a/Wml.pm
 %%SITE_PERL%%/Locale/Po4a/Xhtml.pm
 %%SITE_PERL%%/Locale/Po4a/Xml.pm
+%%PERL5_MAN3%%/Locale::Po4a::AsciiDoc.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::BibTeX.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Chooser.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Common.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Dia.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Docbook.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Guide.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Halibut.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Ini.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::KernelHelp.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::LaTeX.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Man.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Po.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Pod.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Sgml.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::TeX.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Texinfo.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Text.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::TransTractor.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Wml.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Xhtml.3.gz
+%%PERL5_MAN3%%/Locale::Po4a::Xml.3.gz
+share/locale/af/LC_MESSAGES/po4a.mo
+share/locale/ca/LC_MESSAGES/po4a.mo
+share/locale/cs/LC_MESSAGES/po4a.mo
+share/locale/da/LC_MESSAGES/po4a.mo
+share/locale/de/LC_MESSAGES/po4a.mo
+share/locale/eo/LC_MESSAGES/po4a.mo
+share/locale/es/LC_MESSAGES/po4a.mo
+share/locale/et/LC_MESSAGES/po4a.mo
+share/locale/eu/LC_MESSAGES/po4a.mo
+share/locale/fr/LC_MESSAGES/po4a.mo
+share/locale/hr/LC_MESSAGES/po4a.mo
+share/locale/id/LC_MESSAGES/po4a.mo
+share/locale/it/LC_MESSAGES/po4a.mo
+share/locale/ja/LC_MESSAGES/po4a.mo
+share/locale/kn/LC_MESSAGES/po4a.mo
+share/locale/ko/LC_MESSAGES/po4a.mo
+share/locale/nb/LC_MESSAGES/po4a.mo
+share/locale/nl/LC_MESSAGES/po4a.mo
+share/locale/pl/LC_MESSAGES/po4a.mo
+share/locale/pt/LC_MESSAGES/po4a.mo
+share/locale/pt_BR/LC_MESSAGES/po4a.mo
+share/locale/ru/LC_MESSAGES/po4a.mo
+share/locale/sl/LC_MESSAGES/po4a.mo
+share/locale/sv/LC_MESSAGES/po4a.mo
+share/locale/uk/LC_MESSAGES/po4a.mo
+share/locale/vi/LC_MESSAGES/po4a.mo
+share/locale/zh_CN/LC_MESSAGES/po4a.mo
+share/locale/zh_HK/LC_MESSAGES/po4a.mo
+man/ca/man1/po4a-normalize.1p.gz
+man/ca/man1/po4a-translate.1p.gz
+man/ca/man3/Locale::Po4a::BibTeX.3pm.gz
+man/ca/man3/Locale::Po4a::Chooser.3pm.gz
+man/ca/man3/Locale::Po4a::Dia.3pm.gz
+man/ca/man3/Locale::Po4a::Docbook.3pm.gz
+man/ca/man3/Locale::Po4a::Guide.3pm.gz
+man/ca/man3/Locale::Po4a::KernelHelp.3pm.gz
+man/ca/man3/Locale::Po4a::LaTeX.3pm.gz
+man/ca/man3/Locale::Po4a::Po.3pm.gz
+man/ca/man3/Locale::Po4a::Pod.3pm.gz
+man/ca/man3/Locale::Po4a::Sgml.3pm.gz
+man/ca/man3/Locale::Po4a::Texinfo.3pm.gz
+man/ca/man3/Locale::Po4a::TransTractor.3pm.gz
+man/ca/man7/po4a.7.gz
+man/de/man1/msguntypot.1p.gz
+man/de/man1/po4a-build.1.gz
+man/de/man1/po4a-gettextize.1p.gz
+man/de/man1/po4a-normalize.1p.gz
+man/de/man1/po4a-translate.1p.gz
+man/de/man1/po4a-updatepo.1p.gz
+man/de/man1/po4a.1p.gz
+man/de/man1/po4aman-display-po.1.gz
+man/de/man1/po4apod-display-po.1.gz
+man/de/man3/Locale::Po4a::AsciiDoc.3pm.gz
+man/de/man3/Locale::Po4a::BibTeX.3pm.gz
+man/de/man3/Locale::Po4a::Chooser.3pm.gz
+man/de/man3/Locale::Po4a::Common.3pm.gz
+man/de/man3/Locale::Po4a::Dia.3pm.gz
+man/de/man3/Locale::Po4a::Docbook.3pm.gz
+man/de/man3/Locale::Po4a::Guide.3pm.gz
+man/de/man3/Locale::Po4a::Halibut.3pm.gz
+man/de/man3/Locale::Po4a::Ini.3pm.gz
+man/de/man3/Locale::Po4a::KernelHelp.3pm.gz
+man/de/man3/Locale::Po4a::LaTeX.3pm.gz
+man/de/man3/Locale::Po4a::Man.3pm.gz
+man/de/man3/Locale::Po4a::Po.3pm.gz
+man/de/man3/Locale::Po4a::Pod.3pm.gz
+man/de/man3/Locale::Po4a::Sgml.3pm.gz
+man/de/man3/Locale::Po4a::TeX.3pm.gz
+man/de/man3/Locale::Po4a::Texinfo.3pm.gz
+man/de/man3/Locale::Po4a::Text.3pm.gz
+man/de/man3/Locale::Po4a::TransTractor.3pm.gz
+man/de/man3/Locale::Po4a::Wml.3pm.gz
+man/de/man3/Locale::Po4a::Xhtml.3pm.gz
+man/de/man3/Locale::Po4a::Xml.3pm.gz
+man/de/man5/po4a-build.conf.5.gz
+man/de/man7/po4a-runtime.7.gz
+man/de/man7/po4a.7.gz
+man/es/man1/msguntypot.1p.gz
+man/es/man1/po4a-build.1.gz
+man/es/man1/po4a-gettextize.1p.gz
+man/es/man1/po4a-normalize.1p.gz
+man/es/man1/po4a-translate.1p.gz
+man/es/man1/po4a-updatepo.1p.gz
+man/es/man1/po4a.1p.gz
+man/es/man1/po4aman-display-po.1.gz
+man/es/man1/po4apod-display-po.1.gz
+man/es/man3/Locale::Po4a::AsciiDoc.3pm.gz
+man/es/man3/Locale::Po4a::BibTeX.3pm.gz
+man/es/man3/Locale::Po4a::Chooser.3pm.gz
+man/es/man3/Locale::Po4a::Common.3pm.gz
+man/es/man3/Locale::Po4a::Dia.3pm.gz
+man/es/man3/Locale::Po4a::Docbook.3pm.gz
+man/es/man3/Locale::Po4a::Guide.3pm.gz
+man/es/man3/Locale::Po4a::Halibut.3pm.gz
+man/es/man3/Locale::Po4a::Ini.3pm.gz
+man/es/man3/Locale::Po4a::KernelHelp.3pm.gz
+man/es/man3/Locale::Po4a::LaTeX.3pm.gz
+man/es/man3/Locale::Po4a::Man.3pm.gz
+man/es/man3/Locale::Po4a::Po.3pm.gz
+man/es/man3/Locale::Po4a::Pod.3pm.gz
+man/es/man3/Locale::Po4a::Sgml.3pm.gz
+man/es/man3/Locale::Po4a::TeX.3pm.gz
+man/es/man3/Locale::Po4a::Texinfo.3pm.gz
+man/es/man3/Locale::Po4a::Text.3pm.gz
+man/es/man3/Locale::Po4a::TransTractor.3pm.gz
+man/es/man3/Locale::Po4a::Wml.3pm.gz
+man/es/man3/Locale::Po4a::Xhtml.3pm.gz
+man/es/man3/Locale::Po4a::Xml.3pm.gz
+man/es/man5/po4a-build.conf.5.gz
+man/es/man7/po4a-runtime.7.gz
+man/es/man7/po4a.7.gz
+man/fr/man1/msguntypot.1p.gz
+man/fr/man1/po4a-build.1.gz
+man/fr/man1/po4a-gettextize.1p.gz
+man/fr/man1/po4a-normalize.1p.gz
+man/fr/man1/po4a-translate.1p.gz
+man/fr/man1/po4a-updatepo.1p.gz
+man/fr/man1/po4a.1p.gz
+man/fr/man1/po4aman-display-po.1.gz
+man/fr/man1/po4apod-display-po.1.gz
+man/fr/man3/Locale::Po4a::AsciiDoc.3pm.gz
+man/fr/man3/Locale::Po4a::BibTeX.3pm.gz
+man/fr/man3/Locale::Po4a::Chooser.3pm.gz
+man/fr/man3/Locale::Po4a::Common.3pm.gz
+man/fr/man3/Locale::Po4a::Dia.3pm.gz
+man/fr/man3/Locale::Po4a::Docbook.3pm.gz
+man/fr/man3/Locale::Po4a::Guide.3pm.gz
+man/fr/man3/Locale::Po4a::Halibut.3pm.gz
+man/fr/man3/Locale::Po4a::Ini.3pm.gz
+man/fr/man3/Locale::Po4a::KernelHelp.3pm.gz
+man/fr/man3/Locale::Po4a::LaTeX.3pm.gz
+man/fr/man3/Locale::Po4a::Man.3pm.gz
+man/fr/man3/Locale::Po4a::Po.3pm.gz
+man/fr/man3/Locale::Po4a::Pod.3pm.gz
+man/fr/man3/Locale::Po4a::Sgml.3pm.gz
+man/fr/man3/Locale::Po4a::TeX.3pm.gz
+man/fr/man3/Locale::Po4a::Texinfo.3pm.gz
+man/fr/man3/Locale::Po4a::Text.3pm.gz
+man/fr/man3/Locale::Po4a::TransTractor.3pm.gz
+man/fr/man3/Locale::Po4a::Wml.3pm.gz
+man/fr/man3/Locale::Po4a::Xhtml.3pm.gz
+man/fr/man3/Locale::Po4a::Xml.3pm.gz
+man/fr/man5/po4a-build.conf.5.gz
+man/fr/man7/po4a-runtime.7.gz
+man/fr/man7/po4a.7.gz
+man/it/man1/po4a-normalize.1p.gz
+man/it/man1/po4a-translate.1p.gz
+man/it/man3/Locale::Po4a::Chooser.3pm.gz
+man/it/man3/Locale::Po4a::Dia.3pm.gz
+man/it/man3/Locale::Po4a::Docbook.3pm.gz
+man/it/man3/Locale::Po4a::Guide.3pm.gz
+man/it/man3/Locale::Po4a::KernelHelp.3pm.gz
+man/it/man3/Locale::Po4a::Pod.3pm.gz
+man/ja/man1/msguntypot.1p.gz
+man/ja/man1/po4a-build.1.gz
+man/ja/man1/po4a-gettextize.1p.gz
+man/ja/man1/po4a-normalize.1p.gz
+man/ja/man1/po4a-translate.1p.gz
+man/ja/man1/po4a-updatepo.1p.gz
+man/ja/man1/po4a.1p.gz
+man/ja/man1/po4aman-display-po.1.gz
+man/ja/man1/po4apod-display-po.1.gz
+man/ja/man3/Locale::Po4a::AsciiDoc.3pm.gz
+man/ja/man3/Locale::Po4a::BibTeX.3pm.gz
+man/ja/man3/Locale::Po4a::Chooser.3pm.gz
+man/ja/man3/Locale::Po4a::Common.3pm.gz
+man/ja/man3/Locale::Po4a::Dia.3pm.gz
+man/ja/man3/Locale::Po4a::Docbook.3pm.gz
+man/ja/man3/Locale::Po4a::Guide.3pm.gz
+man/ja/man3/Locale::Po4a::Halibut.3pm.gz
+man/ja/man3/Locale::Po4a::Ini.3pm.gz
+man/ja/man3/Locale::Po4a::KernelHelp.3pm.gz
+man/ja/man3/Locale::Po4a::LaTeX.3pm.gz
+man/ja/man3/Locale::Po4a::Man.3pm.gz
+man/ja/man3/Locale::Po4a::Po.3pm.gz
+man/ja/man3/Locale::Po4a::Pod.3pm.gz
+man/ja/man3/Locale::Po4a::Sgml.3pm.gz
+man/ja/man3/Locale::Po4a::TeX.3pm.gz
+man/ja/man3/Locale::Po4a::Texinfo.3pm.gz
+man/ja/man3/Locale::Po4a::Text.3pm.gz
+man/ja/man3/Locale::Po4a::TransTractor.3pm.gz
+man/ja/man3/Locale::Po4a::Wml.3pm.gz
+man/ja/man3/Locale::Po4a::Xhtml.3pm.gz
+man/ja/man3/Locale::Po4a::Xml.3pm.gz
+man/ja/man5/po4a-build.conf.5.gz
+man/ja/man7/po4a-runtime.7.gz
+man/ja/man7/po4a.7.gz
+man/man1/msguntypot.1p.gz
+man/man1/po4a-build.1.gz
+man/man1/po4a-gettextize.1p.gz
+man/man1/po4a-normalize.1p.gz
+man/man1/po4a-translate.1p.gz
+man/man1/po4a-updatepo.1p.gz
+man/man1/po4a.1p.gz
+man/man1/po4aman-display-po.1.gz
+man/man1/po4apod-display-po.1.gz
+man/man3/Locale::Po4a::AsciiDoc.pm.3pm.gz
+man/man3/Locale::Po4a::BibTeX.pm.3pm.gz
+man/man3/Locale::Po4a::Chooser.pm.3pm.gz
+man/man3/Locale::Po4a::Common.pm.3pm.gz
+man/man3/Locale::Po4a::Dia.pm.3pm.gz
+man/man3/Locale::Po4a::Docbook.pm.3pm.gz
+man/man3/Locale::Po4a::Guide.pm.3pm.gz
+man/man3/Locale::Po4a::Halibut.pm.3pm.gz
+man/man3/Locale::Po4a::Ini.pm.3pm.gz
+man/man3/Locale::Po4a::KernelHelp.pm.3pm.gz
+man/man3/Locale::Po4a::LaTeX.pm.3pm.gz
+man/man3/Locale::Po4a::Man.pm.3pm.gz
+man/man3/Locale::Po4a::Po.pm.3pm.gz
+man/man3/Locale::Po4a::Pod.pm.3pm.gz
+man/man3/Locale::Po4a::Sgml.pm.3pm.gz
+man/man3/Locale::Po4a::TeX.pm.3pm.gz
+man/man3/Locale::Po4a::Texinfo.pm.3pm.gz
+man/man3/Locale::Po4a::Text.pm.3pm.gz
+man/man3/Locale::Po4a::TransTractor.pm.3pm.gz
+man/man3/Locale::Po4a::Wml.pm.3pm.gz
+man/man3/Locale::Po4a::Xhtml.pm.3pm.gz
+man/man3/Locale::Po4a::Xml.pm.3pm.gz
+man/man5/po4a-build.conf.5.gz
+man/man7/po4a-runtime.7.gz
+man/man7/po4a.7.gz
+man/pl/man1/msguntypot.1p.gz
+man/pl/man1/po4a-build.1.gz
+man/pl/man1/po4a-gettextize.1p.gz
+man/pl/man1/po4a-normalize.1p.gz
+man/pl/man1/po4a-translate.1p.gz
+man/pl/man1/po4a-updatepo.1p.gz
+man/pl/man1/po4a.1p.gz
+man/pl/man1/po4aman-display-po.1.gz
+man/pl/man1/po4apod-display-po.1.gz
+man/pl/man3/Locale::Po4a::BibTeX.3pm.gz
+man/pl/man3/Locale::Po4a::Chooser.3pm.gz
+man/pl/man3/Locale::Po4a::Common.3pm.gz
+man/pl/man3/Locale::Po4a::Dia.3pm.gz
+man/pl/man3/Locale::Po4a::Docbook.3pm.gz
+man/pl/man3/Locale::Po4a::Guide.3pm.gz
+man/pl/man3/Locale::Po4a::Halibut.3pm.gz
+man/pl/man3/Locale::Po4a::Ini.3pm.gz
+man/pl/man3/Locale::Po4a::KernelHelp.3pm.gz
+man/pl/man3/Locale::Po4a::LaTeX.3pm.gz
+man/pl/man3/Locale::Po4a::Man.3pm.gz
+man/pl/man3/Locale::Po4a::Po.3pm.gz
+man/pl/man3/Locale::Po4a::Pod.3pm.gz
+man/pl/man3/Locale::Po4a::Sgml.3pm.gz
+man/pl/man3/Locale::Po4a::TeX.3pm.gz
+man/pl/man3/Locale::Po4a::Texinfo.3pm.gz
+man/pl/man3/Locale::Po4a::Text.3pm.gz
+man/pl/man3/Locale::Po4a::TransTractor.3pm.gz
+man/pl/man3/Locale::Po4a::Wml.3pm.gz
+man/pl/man3/Locale::Po4a::Xhtml.3pm.gz
+man/pl/man3/Locale::Po4a::Xml.3pm.gz
+man/pl/man5/po4a-build.conf.5.gz
+man/pl/man7/po4a-runtime.7.gz
+man/pl/man7/po4a.7.gz
+man/pt/man1/msguntypot.1p.gz
+man/pt/man1/po4a-build.1.gz
+man/pt/man1/po4a-gettextize.1p.gz
+man/pt/man1/po4a-normalize.1p.gz
+man/pt/man1/po4a-translate.1p.gz
+man/pt/man1/po4a-updatepo.1p.gz
+man/pt/man1/po4a.1p.gz
+man/pt/man1/po4aman-display-po.1.gz
+man/pt/man1/po4apod-display-po.1.gz
+man/pt/man3/Locale::Po4a::BibTeX.3pm.gz
+man/pt/man3/Locale::Po4a::Chooser.3pm.gz
+man/pt/man3/Locale::Po4a::Common.3pm.gz
+man/pt/man3/Locale::Po4a::Dia.3pm.gz
+man/pt/man3/Locale::Po4a::Docbook.3pm.gz
+man/pt/man3/Locale::Po4a::Guide.3pm.gz
+man/pt/man3/Locale::Po4a::Halibut.3pm.gz
+man/pt/man3/Locale::Po4a::Ini.3pm.gz
+man/pt/man3/Locale::Po4a::KernelHelp.3pm.gz
+man/pt/man3/Locale::Po4a::LaTeX.3pm.gz
+man/pt/man3/Locale::Po4a::Man.3pm.gz
+man/pt/man3/Locale::Po4a::Po.3pm.gz
+man/pt/man3/Locale::Po4a::Pod.3pm.gz
+man/pt/man3/Locale::Po4a::Sgml.3pm.gz
+man/pt/man3/Locale::Po4a::TeX.3pm.gz
+man/pt/man3/Locale::Po4a::Texinfo.3pm.gz
+man/pt/man3/Locale::Po4a::Text.3pm.gz
+man/pt/man3/Locale::Po4a::TransTractor.3pm.gz
+man/pt/man3/Locale::Po4a::Wml.3pm.gz
+man/pt/man3/Locale::Po4a::Xhtml.3pm.gz
+man/pt/man3/Locale::Po4a::Xml.3pm.gz
+man/pt/man5/po4a-build.conf.5.gz
+man/pt/man7/po4a-runtime.7.gz
+man/pt/man7/po4a.7.gz
+man/ru/man1/msguntypot.1p.gz
+man/ru/man1/po4a-build.1.gz
+man/ru/man1/po4a-gettextize.1p.gz
+man/ru/man1/po4a-normalize.1p.gz
+man/ru/man1/po4a-translate.1p.gz
+man/ru/man1/po4a-updatepo.1p.gz
+man/ru/man1/po4a.1p.gz
+man/ru/man1/po4aman-display-po.1.gz
+man/ru/man1/po4apod-display-po.1.gz
+man/ru/man3/Locale::Po4a::Man.3pm.gz
+@dirrmtry man/ru/man3
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
+@dirrmtry man/pt/man7
+@dirrmtry man/pt/man5
+@dirrmtry man/pt/man3
+@dirrmtry man/pt/man1
+@dirrmtry man/pt
+@dirrmtry man/pl/man7
+@dirrmtry man/pl/man5
+@dirrmtry man/pl/man3
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
+@dirrmtry man/it/man3
+@dirrmtry man/it/man1
+@dirrmtry man/it
+@dirrmtry man/fr/man7
+@dirrmtry man/fr/man5
+@dirrmtry man/fr/man3
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/es/man7
+@dirrmtry man/es/man5
+@dirrmtry man/es/man3
+@dirrmtry man/es/man1
+@dirrmtry man/es
+@dirrmtry man/de/man7
+@dirrmtry man/de/man5
+@dirrmtry man/de/man3
+@dirrmtry man/de/man1
+@dirrmtry man/de
+@dirrmtry man/ca/man7
+@dirrmtry man/ca/man3
+@dirrmtry man/ca/man1
+@dirrmtry man/ca
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/vi/LC_MESSAGES
+@dirrmtry share/locale/vi
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sv
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/pt_BR
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/nb/LC_MESSAGES
+@dirrmtry share/locale/nb
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/kn/LC_MESSAGES
+@dirrmtry share/locale/kn
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/ja
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/it
+@dirrmtry share/locale/id/LC_MESSAGES
+@dirrmtry share/locale/id
+@dirrmtry share/locale/hr/LC_MESSAGES
+@dirrmtry share/locale/hr
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/eu/LC_MESSAGES
+@dirrmtry share/locale/eu
+@dirrmtry share/locale/et/LC_MESSAGES
+@dirrmtry share/locale/et
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/eo/LC_MESSAGES
+@dirrmtry share/locale/eo
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/da/LC_MESSAGES
+@dirrmtry share/locale/da
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/af/LC_MESSAGES
+@dirrmtry share/locale/af
+@dirrmtry %%PERL5_MAN3%%
 @dirrmtry %%SITE_PERL%%/Locale/Po4a
 @dirrmtry %%SITE_PERL%%/Locale

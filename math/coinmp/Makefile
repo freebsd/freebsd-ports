@@ -5,7 +5,6 @@ PORTNAME=	CoinMP
 PORTVERSION=	1.7.2
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimization library with support for COIN-OR CLP, CBC, and CGL
@@ -13,11 +12,11 @@ COMMENT=	Optimization library with support for COIN-OR CLP, CBC, and CGL
 LICENSE=	CPL
 LICENSE_NAME=	Common Public License, Version 1.0
 LICENSE_FILE=	${WRKSRC}/CoinMP/LICENSE
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	clp-[0-9]*
 
-USES=	pkgconfig
+USES=	pkgconfig tar:tgz
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GCC=	any

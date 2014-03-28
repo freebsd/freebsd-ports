@@ -236,7 +236,6 @@
     SUBDIR += lmtp2nntp
     SUBDIR += lookout
     SUBDIR += lurker
-    SUBDIR += mahogany
     SUBDIR += mail-notification
     SUBDIR += mail2procmailrc
     SUBDIR += mail2sms
@@ -252,7 +251,6 @@
     SUBDIR += mailscanner
     SUBDIR += mailsync
     SUBDIR += mailtray
-    SUBDIR += mailutils
     SUBDIR += mailx
     SUBDIR += mairix
     SUBDIR += majordomo
@@ -462,6 +460,7 @@
     SUBDIR += pear-Horde_Kolab_Storage
     SUBDIR += pear-Horde_ListHeaders
     SUBDIR += pear-Horde_Mail
+    SUBDIR += pear-Horde_Mapi
     SUBDIR += pear-Horde_Mime
     SUBDIR += pear-Horde_Mime_Viewer
     SUBDIR += pear-Horde_Smtp
@@ -720,6 +719,7 @@
     SUBDIR += tmda
     SUBDIR += tpop3d
     SUBDIR += trojita
+    SUBDIR += trojita-qt4
     SUBDIR += tumgreyspf
     SUBDIR += uebimiau
     SUBDIR += up-imapproxy

@@ -9,7 +9,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custfcgi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custfcgi.rst
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custhttpapp.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custhttpapp.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custhttpapp.rst
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custweb.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custweb.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custweb.rst
@@ -27,6 +26,9 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fcgigate.rst
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache.rst
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache24.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache24.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache24.rst
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpcgi.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpcgi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpdatasetform.o
@@ -81,6 +83,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpextjsjson.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpextjsxml.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpezcgi.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfcgigate.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfpapache24.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfpapache.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfpcgi.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfpdatasetform.a

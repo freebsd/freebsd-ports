@@ -9,8 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/Anope%20${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A set of IRC services for IRC networks
 
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" \

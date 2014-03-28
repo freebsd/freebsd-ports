@@ -1,6 +1,6 @@
---- GUISupport/Qt/CMakeLists.txt.orig	2013-06-12 21:47:10.000000000 +0200
-+++ GUISupport/Qt/CMakeLists.txt	2013-09-13 11:24:33.000000000 +0200
-@@ -89,7 +89,7 @@
+--- GUISupport/Qt/CMakeLists.txt.orig	2014-01-22 16:55:41.000000000 +0100
++++ GUISupport/Qt/CMakeLists.txt	2014-03-10 12:25:40.000000000 +0100
+@@ -101,7 +101,7 @@
  endif()
  
  # This build plugin logic should just get migrated into a module I think.
@@ -9,7 +9,7 @@
    set(PluginLibSrcs Q4VTKWidgetPlugin.cxx)
  
    set(PluginMocHeaders Q4VTKWidgetPlugin.h)
-@@ -100,16 +100,16 @@
+@@ -121,16 +121,16 @@
  
    # add QVTK plugin from sources
    # stand-alone as it doesn't depend on QVTK library
@@ -24,8 +24,8 @@
 +  set_target_properties(QVTKWidgetPlugin-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION} PROPERTIES COMPILE_DEFINITIONS QT_NO_DEBUG)
  
    # link with Qt libs
--  target_link_libraries(QVTKWidgetPlugin
-+  target_link_libraries(QVTKWidgetPlugin-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}
-     ${QT_QTGUI_LIBRARY}
-     ${QT_QTCORE_LIBRARY}
-     )
+-  target_link_libraries(QVTKWidgetPlugin ${QT_LIBRARIES})
++  target_link_libraries(QVTKWidgetPlugin-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION} ${QT_LIBRARIES})
+ 
+   # install rules
+ 

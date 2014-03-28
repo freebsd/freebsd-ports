@@ -9,12 +9,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Library for doing approximate and phonetic matching of strings
 
-LICENSE=	BSD
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+LICENSE=	BSD3CLAUSE
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_ARCHDEP=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

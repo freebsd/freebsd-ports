@@ -2,12 +2,11 @@
 #
 # handle dependency on the readline port
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	readline
 # Usage:	USES=readline
 # Valid ARGS:	port
 #
+# MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_READLINE_MK)
 _INCLUDE_USES_READLINE_MK=	yes

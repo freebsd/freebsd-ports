@@ -8136,7 +8136,7 @@
  TARGET_ADA_SRCS =
 --- gcc/ada/gcc-interface/Makefile.in.orig
 +++ gcc/ada/gcc-interface/Makefile.in
-@@ -1043,9 +1043,11 @@
+@@ -1044,9 +1044,11 @@
  ifeq ($(strip $(filter-out arm% linux-androideabi,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
    a-intnam.ads<a-intnam-linux.ads \
@@ -8148,7 +8148,7 @@
    s-osinte.adb<s-osinte-android.adb \
    s-osinte.ads<s-osinte-android.ads \
    s-osprim.adb<s-osprim-posix.adb \
-@@ -1055,10 +1057,6 @@
+@@ -1056,10 +1058,6 @@
    system.ads<system-linux-armel.ads \
    $(DUMMY_SOCKETS_TARGET_PAIRS)
  
@@ -8159,7 +8159,7 @@
    GNATRTL_SOCKETS_OBJS =
    EXTRA_GNATRTL_TASKING_OBJS=s-linux.o
    EH_MECHANISM=
-@@ -1071,6 +1069,7 @@
+@@ -1072,6 +1070,7 @@
  ifeq ($(strip $(filter-out sparc% sun solaris%,$(target_cpu) $(target_vendor) $(target_os))),)
    LIBGNAT_TARGET_PAIRS_COMMON = \
    a-intnam.ads<a-intnam-solaris.ads \
@@ -8167,7 +8167,7 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-solaris.adb \
    s-mudido.adb<s-mudido-affinity.adb \
-@@ -1113,6 +1112,8 @@
+@@ -1114,6 +1113,8 @@
    TOOLS_TARGET_PAIRS=mlib-tgt-specific.adb<mlib-tgt-specific-solaris.adb
  
    EH_MECHANISM=-gcc
@@ -8176,7 +8176,7 @@
    THREADSLIB = -lposix4 -lthread
    MISCLIB = -lposix4 -lnsl -lsocket
    SO_OPTS = -Wl,-h,
-@@ -1324,12 +1325,17 @@
+@@ -1325,12 +1326,17 @@
  # x86 FreeBSD
  ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
@@ -8196,7 +8196,7 @@
    s-taprop.adb<s-taprop-posix.adb \
    s-taspri.ads<s-taspri-posix.ads \
    s-tpopsp.adb<s-tpopsp-posix.adb \
-@@ -1337,11 +1343,12 @@
+@@ -1338,11 +1344,12 @@
    $(X86_TARGET_PAIRS) \
    system.ads<system-freebsd-x86.ads
  
@@ -8211,7 +8211,7 @@
  
    EH_MECHANISM=-gcc
    THREADSLIB= -lpthread
-@@ -1353,12 +1360,17 @@
+@@ -1354,12 +1361,17 @@
  # x86-64 FreeBSD
  ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
@@ -8231,7 +8231,7 @@
    s-taprop.adb<s-taprop-posix.adb \
    s-taspri.ads<s-taspri-posix.ads \
    s-tpopsp.adb<s-tpopsp-posix.adb \
-@@ -1366,11 +1378,240 @@
+@@ -1367,11 +1379,240 @@
    $(X86_64_TARGET_PAIRS) \
    system.ads<system-freebsd-x86_64.ads
  

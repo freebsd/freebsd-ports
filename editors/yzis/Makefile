@@ -3,7 +3,7 @@
 
 PORTNAME=	yzis
 PORTVERSION=	1.0.a.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	editors
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/45/ \
 		http://contribs.martymac.org/FreeBSD-ports/distfiles/
@@ -15,14 +15,12 @@ COMMENT=	Vi-like editor
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+USES=		cmake gettext perl5
 USE_BZIP2=	yes
 USE_XORG=	x11 xext ice
 USE_LUA=	5.1
 LUA_COMPS=	lua
 USE_QT4=	qtestlib qmake_build rcc_build uic_build moc_build gui xml
-USES=		perl5
-
-USES=		cmake gettext
 CMAKE_ARGS+=	-DLOCALBASE:STRING="${LOCALBASE}" \
 		-DLUA_INCDIR:STRING="${LUA_INCDIR}" \
 		-DLUA_LIBDIR:STRING="${LUA_LIBDIR}" \

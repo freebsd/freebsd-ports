@@ -13,6 +13,7 @@ lib/libregf.a
 lib/libregf.la
 lib/libregf.so
 lib/libregf.so.1
+lib/libregf.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyregf.a
 %%PYTHON_SITELIBDIR%%/pyregf.la
 %%PYTHON_SITELIBDIR%%/pyregf.so

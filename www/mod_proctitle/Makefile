@@ -10,11 +10,11 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Set httpd process titles to reflect currently processed request
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_APACHE=	22+
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/apr-1

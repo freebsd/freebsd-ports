@@ -3,7 +3,7 @@
 
 PORTNAME=	mopac
 PORTVERSION=	7.${MOPAC_SUBVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}7/${PORTNAME}7/${PORTNAME}7-1.00
@@ -29,7 +29,6 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/s|$$(libdir)|$$(prefix)/libdata|g' \
 		${WRKSRC}/Makefile.am
@@ -37,14 +36,13 @@ post-patch:
 		-e 's|./src/mopac7|${PREFIX}/libexec/mopac7|g' \
 		${WRKSRC}/run_${PORTNAME}7
 
-.include <bsd.port.options.mk>
-
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/run_${PORTNAME}7 ${PREFIX}/bin/${PORTNAME}7
-	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/${PORTNAME}7 ${PREFIX}/libexec/${PORTNAME}7
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}/test
-	${INSTALL_DATA} ${WRKSRC}/tests/*.dat ${EXAMPLESDIR}/test
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/run_${PORTNAME}7 \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}7
+	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/${PORTNAME}7 \
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}7
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/test
+	${INSTALL_DATA} ${WRKSRC}/tests/*.dat ${STAGEDIR}${EXAMPLESDIR}/test
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmopac7.so.0
 
 .include <bsd.port.mk>

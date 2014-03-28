@@ -12,7 +12,7 @@ COMMENT=	Solid Internet Relay Chat Daemon based on bahamut IRCd
 
 WRKSRC=		${WRKDIR}/solidircd-stable
 
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/${PORTNAME}

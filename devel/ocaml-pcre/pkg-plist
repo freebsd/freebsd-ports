@@ -4,5 +4,39 @@
 %%OCAML_SITELIBDIR%%/pcre/pcre.a
 %%OCAML_SITELIBDIR%%/pcre/pcre.cma
 %%OCAML_SITELIBDIR%%/pcre/pcre.cmi
+%%OCAML_SITELIBDIR%%/pcre/pcre.cmx
 %%OCAML_SITELIBDIR%%/pcre/pcre.cmxa
+%%OCAML_SITELIBDIR%%/pcre/pcre.cmxs
 %%OCAML_SITELIBDIR%%/pcre/pcre.mli
+%%PORTDOCS%%%%DOCSDIR%%/api/Pcre.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index_attributes.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index_class_types.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index_classes.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index_exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index_methods.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index_module_types.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index_modules.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index_types.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index_values.html
+%%PORTDOCS%%%%DOCSDIR%%/api/style.css
+%%PORTDOCS%%%%DOCSDIR%%/api/type_Pcre.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloc/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloc/cloc.ml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/count_hash/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/count_hash/count_hash.ml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcregrep/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcregrep/pcregrep.ml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subst/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subst/subst.ml
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/subst
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/pcregrep
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/count_hash
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cloc
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry share/examples/ocaml
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%OCAML_SITELIBDIR%%/pcre
+@dirrmtry %%OCAML_SITELIBDIR%%
+@dirrmtry lib/ocaml

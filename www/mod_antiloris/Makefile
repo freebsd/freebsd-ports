@@ -12,7 +12,7 @@ COMMENT=	Protect Apache 2.x against the Slowloris HTTP DoS attack
 
 LICENSE=	APACHE20
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

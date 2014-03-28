@@ -5,5 +5,5 @@
 
 export JAVA_VERSION="%%JAVA_VERSION%%"
 
-cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" -Djava.ext.dirs="%%DATADIR%%" \
--Djava.ext.dirs="%%DATADIR%%" -cp Domination.jar net.yura.domination.ui.swinggui.SwingGUIFrame "${@}"
+cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" \
+-cp Domination.jar net.yura.domination.ui.swinggui.SwingGUIFrame "${@}"

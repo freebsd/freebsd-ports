@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+etc/periodic/daily/512.pwhois-updatedb
+sbin/pwhois-updatedb
+sbin/pwhoisd
+@group pwhois
+@mode 640
+@unexec if cmp -s %D/etc/pwhois/pwhoisd.conf %D/etc/pwhois/pwhoisd.conf.sample ; then rm -f %D/etc/pwhois/pwhoisd.conf ; fi
+%%ETCDIR%%/pwhoisd.conf.sample
+@exec if [ ! -f %D/etc/pwhois/pwhoisd.conf ]; then cp -p %D/%F %B/pwhoisd.conf; fi
+@group wheel
+@mode
+%%DATADIR%%/createdb.sql
+@dirrm %%DATADIR%%
+@dirrmtry %%ETCDIR%%
+@dirrmtry etc/periodic/daily
+@dirrmtry etc/periodic
+@cwd /
+@dirrmtry var/db/pwhois
+@dirrmtry var/log/pwhois
+@unexec if [ -d var/db/pwhois ]; then echo "You should remove /var/db/pwhois if you don't need it any more."; fi
+@unexec if [ -d var/log/pwhois ]; then echo "You should remove /var/log/pwhois if you don't need it any more."; fi

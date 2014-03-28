@@ -2,8 +2,6 @@
 #
 # Provide support for PostgreSQL (pgsql)
 #
-# MAINTAINER: pgsql@FreeBSD.org
-#
 # Feature:	pgsql
 # Usage:	USES=		pgsql[:version]
 #
@@ -19,6 +17,8 @@
 #		by the user via defined variable), try to find the
 #		currently installed version.  Fall back to default if
 #		necessary.
+#
+# MAINTAINER: pgsql@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_PGSQL_MK)
 

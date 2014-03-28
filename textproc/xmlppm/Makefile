@@ -7,32 +7,26 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 		http://www.cs.cornell.edu/People/jcheney/xmlppm/
 
-
 MAINTAINER=	hsmtkk@gmail.com
 COMMENT=	XML-Conscious PPM Compression
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		iconv
-USE_GMAKE=	yes
+USES=		iconv gmake
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexpat ${ICONV_LIB}"
 GNU_CONFIGURE=	yes
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README
-.endif
-
 PLIST_FILES=	bin/xmlppm bin/xmlunppm
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xmlppm ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xmlunppm ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xmlppm ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xmlunppm ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

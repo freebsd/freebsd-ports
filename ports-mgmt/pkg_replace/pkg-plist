@@ -1,7 +1,7 @@
 etc/pkg_replace.conf.sample
 man/man1/pkg_replace.1.gz
-sbin/pkg_replace
 %%PKGDB_FIX%%man/man1/pkgdb_fix.1.gz
+sbin/pkg_replace
 %%PKGDB_FIX%%sbin/pkgdb_fix
 %%ZSH%%share/zsh/site-functions/_pkg_replace
 %%ZSH%%@dirrmtry share/zsh/site-functions

@@ -29,14 +29,14 @@ MAKE_ARGS+=	-DWITH_IPV6
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tinystats ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tinydns.sh.sample      \
 			${WRKSRC}/tinydns.log.run.sample \
 			${WRKSRC}/update_slave.sh.sample \
 			${WRKSRC}/start_slave.sh.sample  \
 			${WRKSRC}/Makefile.sample        \
 				${STAGEDIR}${EXAMPLESDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

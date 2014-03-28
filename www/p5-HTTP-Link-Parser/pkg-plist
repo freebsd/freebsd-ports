@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/HTTP::Link::Parser.3.gz
+%%SITE_PERL%%/HTTP/Link/Parser.pm
+%%SITE_PERL%%/mach/auto/HTTP/Link/Parser/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/HTTP/Link/Parser
+@dirrmtry %%SITE_PERL%%/mach/auto/HTTP/Link
+@dirrm %%SITE_PERL%%/HTTP/Link
+@dirrmtry %%SITE_PERL%%/HTTP/

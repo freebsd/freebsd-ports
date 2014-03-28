@@ -9,8 +9,7 @@ MASTER_SITES=	http://www.fefe.de/fnord/
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Small and fast webserver with CGI-capability
 
-USE_GMAKE=	yes
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 PLIST_FILES=	bin/fnord \
 		bin/fnord-conf \

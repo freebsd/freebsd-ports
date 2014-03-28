@@ -16,11 +16,9 @@ BUILD_DEPENDS=	\
 	${PYTHON_SITELIBDIR}/Pyrex/Distutils/__init__.py:${PORTSDIR}/devel/pyrex
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_PYTHON=	2
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gmake tar:bzip2
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	libtool
 

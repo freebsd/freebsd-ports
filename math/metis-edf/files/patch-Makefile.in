@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2012-10-02 18:12:21.000000000 +0200
++++ Makefile.in	2013-08-13 23:09:15.000000000 +0200
+@@ -1,9 +1,9 @@
+ 
+ # Which compiler to use
+-CC = cc
++#CC = cc
+ 
+ # What optimization level to use
+-OPTFLAGS = -O2 
++#OPTFLAGS = -O2 
+ 
+ # What options to be used by the compiler
+ COPTIONS = 

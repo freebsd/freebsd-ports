@@ -9,6 +9,9 @@ DISTNAME=	flac-${PORTVERSION}
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS input plugin for playing FLAC files
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-04-27
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \

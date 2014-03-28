@@ -28,7 +28,6 @@ SUB_FILES=	pkg-message
 IGNORE=		${PKGNAME} requires CDROM_MOUNT set to mount point of CD
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVORBIS}
@@ -65,54 +64,54 @@ do-install:
 	@${ECHO_CMD} "${PKGNAME} requires a retail First Encounter disc"
 	@${FALSE}
 .endif
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for gro in ${GRO_FILES}
-	${INSTALL_DATA} "${CDROM_MOUNT}/Install/1_00_${gro}.gro" ${DATADIR}/1_00_${gro}.gro
+	${INSTALL_DATA} "${CDROM_MOUNT}/Install/1_00_${gro}.gro" ${STAGEDIR}${DATADIR}/1_00_${gro}.gro
 .endfor
 .if defined(GOLD)
 .for gro in "" _scripts
-	${INSTALL_DATA} "${CDROM_MOUNT}/Install/1_00c${gro}.gro" ${DATADIR}/1_00c${gro}.gro
+	${INSTALL_DATA} "${CDROM_MOUNT}/Install/1_00c${gro}.gro" ${STAGEDIR}${DATADIR}/1_00c${gro}.gro
 .endfor
 .endif
 .for gro in 1_00_ExtraTools 1_04_patch
-	${INSTALL_DATA} ${WRKSRC}/Data/${gro}.gro ${DATADIR}/${gro}.gro
+	${INSTALL_DATA} ${WRKSRC}/Data/${gro}.gro ${STAGEDIR}${DATADIR}/${gro}.gro
 .endfor
 .for dir in Controls Data Levels Demos Mods Scripts VirtualTrees
 	@cd ${CDROM_MOUNT}/Install && \
 		${FIND} ${dir} -type d -exec \
-			${MKDIR} "${DATADIR}/{}" \; && \
+			${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
 		${FIND} ${dir} -type f -exec \
-			${INSTALL_DATA} "${CDROM_MOUNT}/Install/{}" "${DATADIR}/{}" \;
+			${INSTALL_DATA} "${CDROM_MOUNT}/Install/{}" "${STAGEDIR}${DATADIR}/{}" \;
 .endfor
 .for dir in Controls Data Help Players SaveGame Scripts Temp
 	@cd ${WRKSRC}/Data && \
 		${FIND} ${dir} -type d -exec \
-			${MKDIR} "${DATADIR}/{}" \; && \
+			${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
 		${FIND} ${dir} -type f -exec \
-			${INSTALL_DATA} "${WRKSRC}/Data/{}" "${DATADIR}/{}" \;
+			${INSTALL_DATA} "${WRKSRC}/Data/{}" "${STAGEDIR}${DATADIR}/{}" \;
 .endfor
-	@${MKDIR} ${DATADIR}/Bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Bin
 	@cd ${WRKSRC}/Data && \
 		${FIND} Bin -type f -exec \
-			${INSTALL_PROGRAM} "${WRKSRC}/Data/{}" "${DATADIR}/{}" \;
-	${BRANDELF} -t Linux ${DATADIR}/Bin/ssam_*
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
+			${INSTALL_PROGRAM} "${WRKSRC}/Data/{}" "${STAGEDIR}${DATADIR}/{}" \;
+	${BRANDELF} -t Linux ${STAGEDIR}${DATADIR}/Bin/ssam_*
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MVORBIS}
-	${LN} -fs ${LINUXBASE}/usr/lib/libvorbisfile.so.3 ${DATADIR}/Bin/libvorbisfile.so
+	${LN} -fs ${LINUXBASE}/usr/lib/libvorbisfile.so.3 ${STAGEDIR}${DATADIR}/Bin/libvorbisfile.so
 .endif
-	@${FIND} -E ${DATADIR} -type f \
+	@${FIND} -E ${STAGEDIR}${DATADIR} -type f \
 		-iregex ".*\.(ctl|txt|lst|ini|cfg|des|reg)" \
 		-exec ${SH} -c "${SED} "s/`printf '\r'`//" '{}' \
 		>${WRKDIR}/tmp.txt; ${MV} ${WRKDIR}/tmp.txt '{}'" \;
-	@${ECHO} SERIOUS_MHZ=2000 > ${PREFIX}/etc/${PORTNAME}.conf.sample
+	@${ECHO} SERIOUS_MHZ=2000 > ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 .if !exists(${PREFIX}/etc/${PORTNAME}.conf)
-	${INSTALL_DATA} ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} -p ${WRKSRC}/README.liflg ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} -p ${WRKSRC}/README.liflg ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS:NREADME.liflg}
-	${LN} -sf ${DATADIR}/Help/${i} ${DOCSDIR}/${i}
+	${LN} -sf ${DATADIR}/Help/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
 .endif
 

@@ -1,9 +1,0 @@
-This software consists of XMMS plugin and stdin/stdout plugin. It
-was written for realtime remastering of sound from mp3 files. You
-will need a reasonably good stereo and a good ear to notice quality
-improvement, otherwise this is not for you. This plugin tries to
-patch mp3 format flaws, not a poor audio hardware! Yes, you should
-be able to hear well enough (sorry) - for some of my friends plugin
-is a cool thing, while the others does not hear nothing but echo
-and stereo expander (well, you will hear every effect if you set
-it to the maximum, but it will not sound nice).

@@ -1,0 +1,13 @@
+project Biff_Dump is
+
+   for Languages    use ("ada");
+   for Exec_Dir     use "bin";
+   for Object_Dir   use "obj";
+   for Source_Dirs  use ("extras", "src");
+   for Main         use ("biff_dump.adb");
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-O2", "-gnat05");
+   end Compiler;
+
+end Biff_Dump;

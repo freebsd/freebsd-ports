@@ -20,7 +20,7 @@ PLIST_FILES=	sbin/pkg_cleanup \
 IGNORE=		requires r223289 or higher to compile
 .endif
 .if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
-BROKEN=		Does not build on powerpc-9: undefined reference to `sqrt'
+BROKEN=		Does not build on powerpc-9: undefined reference to 'sqrt'
 .endif
 
 do-extract:

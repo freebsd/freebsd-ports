@@ -1,7 +1,0 @@
-lib/xmms/Visualization/libdspectral.so
-share/xmms/dspectral_themes/bg_blue.xpm
-share/xmms/dspectral_themes/bg_darkgreen.xpm
-share/xmms/dspectral_themes/bg_gtk.xpm
-share/xmms/dspectral_themes/bg_white.xpm
-share/xmms/dspectral_themes/bg_xmms.xpm
-@dirrm share/xmms/dspectral_themes

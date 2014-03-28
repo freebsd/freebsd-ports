@@ -63,6 +63,7 @@ horde-Horde_Lock-DEPEND=	${PEARDIR}/Horde/Lock.php:${PORTSDIR}/devel/pear-Horde_
 horde-Horde_Log-DEPEND=		${PEARDIR}/Horde/Log.php:${PORTSDIR}/sysutils/pear-Horde_Log
 horde-Horde_LoginTasks-DEPEND=	${PEARDIR}/Horde/LoginTasks.php:${PORTSDIR}/devel/pear-Horde_LoginTasks
 horde-Horde_Mail-DEPEND=	${PEARDIR}/Horde/Mail/Transport.php:${PORTSDIR}/mail/pear-Horde_Mail
+horde-Horde_Mapi-DEPEND=	${PEARDIR}/Horde/Mapi.php:${PORTSDIR}/mail/pear-Horde_Mapi
 horde-Horde_Memcache-DEPEND=	${PEARDIR}/Horde/Memcache.php:${PORTSDIR}/databases/pear-Horde_Memcache
 horde-Horde_Mime-DEPEND=	${PEARDIR}/Horde/Mime.php:${PORTSDIR}/mail/pear-Horde_Mime
 horde-Horde_Mime_Viewer-DEPEND=	${PEARDIR}/Horde/Mime/Viewer.php:${PORTSDIR}/mail/pear-Horde_Mime_Viewer

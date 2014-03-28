@@ -1,55 +1,62 @@
+@group games
+@mode 2555
 bin/sokoban
-share/sokoban/screens/sokoban.help
-share/sokoban/screens/screen.1
-share/sokoban/screens/screen.2
-share/sokoban/screens/screen.3
-share/sokoban/screens/screen.4
-share/sokoban/screens/screen.5
-share/sokoban/screens/screen.6
-share/sokoban/screens/screen.7
-share/sokoban/screens/screen.8
-share/sokoban/screens/screen.9
-share/sokoban/screens/screen.10
-share/sokoban/screens/screen.11
-share/sokoban/screens/screen.12
-share/sokoban/screens/screen.13
-share/sokoban/screens/screen.14
-share/sokoban/screens/screen.15
-share/sokoban/screens/screen.16
-share/sokoban/screens/screen.17
-share/sokoban/screens/screen.18
-share/sokoban/screens/screen.19
-share/sokoban/screens/screen.20
-share/sokoban/screens/screen.21
-share/sokoban/screens/screen.22
-share/sokoban/screens/screen.23
-share/sokoban/screens/screen.24
-share/sokoban/screens/screen.25
-share/sokoban/screens/screen.26
-share/sokoban/screens/screen.27
-share/sokoban/screens/screen.28
-share/sokoban/screens/screen.29
-share/sokoban/screens/screen.30
-share/sokoban/screens/screen.31
-share/sokoban/screens/screen.32
-share/sokoban/screens/screen.33
-share/sokoban/screens/screen.34
-share/sokoban/screens/screen.35
-share/sokoban/screens/screen.36
-share/sokoban/screens/screen.37
-share/sokoban/screens/screen.38
-share/sokoban/screens/screen.39
-share/sokoban/screens/screen.40
-share/sokoban/screens/screen.41
-share/sokoban/screens/screen.42
-share/sokoban/screens/screen.43
-share/sokoban/screens/screen.44
-share/sokoban/screens/screen.45
-share/sokoban/screens/screen.46
-share/sokoban/screens/screen.47
-share/sokoban/screens/screen.48
-share/sokoban/screens/screen.49
-share/sokoban/screens/screen.50
-@dirrm share/sokoban/screens
-@dirrm share/sokoban
-@unexec if [ `stat -f %z /var/games/sokoban 2>/dev/null` = "2" ]; then rm -f /var/games/sokoban; fi
+@group
+@mode
+@exec truncate -s 512B /var/games/sokoban
+@exec chgrp games /var/games/sokoban
+@exec chmod 0664 /var/games/sokoban
+%%DATADIR%%/screens/sokoban.help
+%%DATADIR%%/screens/screen.1
+%%DATADIR%%/screens/screen.2
+%%DATADIR%%/screens/screen.3
+%%DATADIR%%/screens/screen.4
+%%DATADIR%%/screens/screen.5
+%%DATADIR%%/screens/screen.6
+%%DATADIR%%/screens/screen.7
+%%DATADIR%%/screens/screen.8
+%%DATADIR%%/screens/screen.9
+%%DATADIR%%/screens/screen.10
+%%DATADIR%%/screens/screen.11
+%%DATADIR%%/screens/screen.12
+%%DATADIR%%/screens/screen.13
+%%DATADIR%%/screens/screen.14
+%%DATADIR%%/screens/screen.15
+%%DATADIR%%/screens/screen.16
+%%DATADIR%%/screens/screen.17
+%%DATADIR%%/screens/screen.18
+%%DATADIR%%/screens/screen.19
+%%DATADIR%%/screens/screen.20
+%%DATADIR%%/screens/screen.21
+%%DATADIR%%/screens/screen.22
+%%DATADIR%%/screens/screen.23
+%%DATADIR%%/screens/screen.24
+%%DATADIR%%/screens/screen.25
+%%DATADIR%%/screens/screen.26
+%%DATADIR%%/screens/screen.27
+%%DATADIR%%/screens/screen.28
+%%DATADIR%%/screens/screen.29
+%%DATADIR%%/screens/screen.30
+%%DATADIR%%/screens/screen.31
+%%DATADIR%%/screens/screen.32
+%%DATADIR%%/screens/screen.33
+%%DATADIR%%/screens/screen.34
+%%DATADIR%%/screens/screen.35
+%%DATADIR%%/screens/screen.36
+%%DATADIR%%/screens/screen.37
+%%DATADIR%%/screens/screen.38
+%%DATADIR%%/screens/screen.39
+%%DATADIR%%/screens/screen.40
+%%DATADIR%%/screens/screen.41
+%%DATADIR%%/screens/screen.42
+%%DATADIR%%/screens/screen.43
+%%DATADIR%%/screens/screen.44
+%%DATADIR%%/screens/screen.45
+%%DATADIR%%/screens/screen.46
+%%DATADIR%%/screens/screen.47
+%%DATADIR%%/screens/screen.48
+%%DATADIR%%/screens/screen.49
+%%DATADIR%%/screens/screen.50
+@dirrm %%DATADIR%%/screens
+@dirrm %%DATADIR%%
+@unexec rm -f /var/games/sokoban

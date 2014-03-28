@@ -12,7 +12,7 @@ COMMENT=	BIOS password recovery tool
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 PLIST_FILES=	bin/cmospwd
 PORTDOCS=	cmospwd.txt
@@ -34,7 +34,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

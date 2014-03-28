@@ -3,7 +3,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -36,6 +36,8 @@ USE_QT4=	dbus gui xml qmake_build uic_build moc_build rcc_build \
 INSTALLS_ICONS=	yes
 USE_GSTREAMER=	gio ogg mp3 flac soup vorbis
 CONFLICTS_BUILD=	qt-3.*
+
+CFLAGS+=	-Wno-deprecated-register
 
 CMAKE_ARGS+=	-DCMAKE_LIBRARY_PATH:PATH="${LOCALBASE}/lib:${PREFIX}/lib" \
 		-DENABLE_DBUS=ON -DENABLE_SPARKLE=OFF \

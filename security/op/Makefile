@@ -13,7 +13,7 @@ COMMENT=	Controlled privilege escalation tool
 GNU_CONFIGURE=	yes
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/op.d
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/op.d
 	${INSTALL_DATA} -m 0600 ${WRKSRC}/${PORTNAME}.conf \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 

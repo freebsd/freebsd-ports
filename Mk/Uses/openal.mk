@@ -2,8 +2,6 @@
 #
 # Handle dependency on OpenAL
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:	openal
 # Usage:	USES=openal or USES=openal:ARGS
 # Valid ARGS:	al, soft (default), si, alut
@@ -12,7 +10,8 @@
 # Usage:	WANT_OPENAL=ARG
 # Valid ARG:	soft (default), si
 #
-#
+# MAINTAINER: portmgr@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_OPENAL_MK)
 _INCLUDE_USES_OPENAL_MK=	yes
 

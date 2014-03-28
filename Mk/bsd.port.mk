@@ -1311,12 +1311,6 @@ WITH_DEBUG=	yes
 .endif
 .endif
 
-# Reset value from bsd.own.mk.
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
-STRIP=	#none
-MAKE_ENV+=	DONTSTRIP=yes
-.endif
-
 .include "${PORTSDIR}/Mk/bsd.options.mk"
 
 # Start of pre-makefile section.
@@ -1596,10 +1590,14 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .endif
 .endif
 
+# Reset value from bsd.own.mk.
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+STRIP=	#none
+MAKE_ENV+=	DONTSTRIP=yes
 STRIP_CMD=	${TRUE}
 DEBUG_FLAGS?=	-g
 CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}
+INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 .endif
 
 .if defined(WITH_SSP) || defined(WITH_SSP_PORTS)
@@ -1843,6 +1841,10 @@ IGNORE=	Do not define STAGEDIR in command line
 
 .if defined(USE_JAVA)
 .include "${PORTSDIR}/Mk/bsd.java.mk"
+.endif
+
+.if defined(USE_OCAML)
+.include "${PORTSDIR}/Mk/bsd.ocaml.mk"
 .endif
 
 .if defined(USE_LINUX_RPM)
@@ -3170,6 +3172,13 @@ build: configure
 	@${TOUCH} ${TOUCH_FLAGS} ${BUILD_COOKIE}
 .endif
 
+# Disable staging. Be non-fatal here as some scripts may just call it as a
+# matter of correctness in their ordering.
+.if defined(NO_STAGE) && !target(stage)
+stage:
+	@${ECHO_MSG} "===>   This port does not yet support staging"
+.endif
+
 # Disable install
 .if defined(NO_INSTALL) && !target(do-install)
 do-install:
@@ -3762,10 +3771,11 @@ do-package: ${TMPPLIST}
 	if [ -f ${PKGMESSAGE} ]; then \
 		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -D ${PKGMESSAGE}"; \
 	fi; \
-	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${WRKDIR}/${PKGNAME}${PKG_SUFX}; then \
-		if [ -d ${PACKAGES} -a -w ${PACKAGES} ]; then \
-			${LN} -f ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null || \
-			    ${CP} -af ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
+	${MKDIR} ${WRKDIR}/pkg; \
+	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}; then \
+		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
+			${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null || \
+			    ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
 			cd ${.CURDIR} && eval ${MAKE} package-links; \
 		fi; \
 	else \
@@ -3815,7 +3825,7 @@ delete-package: delete-package-links
 	@${RM} -f ${PKGFILE}
 .	else
 # When staging, the package may only be in the workdir if not root
-	@${RM} -f ${PKGFILE} ${WRKDIR}/${PKGNAME}${PKG_SUFX} 2>/dev/null || :
+	@${RM} -f ${PKGFILE} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} 2>/dev/null || :
 .	endif
 .endif
 
@@ -3834,14 +3844,22 @@ delete-package-list: delete-package-links-list
 	@${ECHO_CMD} "[ -f ${PKGFILE} ] && (${ECHO_CMD} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
 .endif
 
-# Only used if !defined(NO_STAGE)
+# Used if !defined(NO_STAGE) during install, or manually to install package
+# from local repository.
 .if !target(install-package)
-install-package:
 .if defined(FORCE_PKG_REGISTER)
-	@${PKG_ADD} -f ${WRKDIR}/${PKGNAME}${PKG_SUFX}
-.else
-	@${PKG_ADD} ${WRKDIR}/${PKGNAME}${PKG_SUFX}
+_INSTALL_PKG_ARGS=	-f
 .endif
+.if defined(INSTALLS_DEPENDS) && defined(WITH_PKGNG)
+_INSTALL_PKG_ARGS+=	-A
+.endif
+install-package:
+	@if [ -f "${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}" ]; then \
+	    _pkgfile="${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}"; \
+	else \
+	    _pkgfile="${PKGFILE}"; \
+	fi; \
+	${PKG_ADD} ${_INSTALL_PKG_ARGS} $${_pkgfile}
 .endif
 
 
@@ -4801,7 +4819,10 @@ _INSTALL_DEPENDS=	\
 					${WRKDIR}/pkg-static add $${subpkgfile}; \
 					${RM} -f ${WRKDIR}/pkg-static; \
 				else \
-					${PKG_ADD} $${subpkgfile}; \
+					if [ -n "${WITH_PKGNG}" ]; then \
+						_pkg_add_a="-A"; \
+					fi; \
+					${PKG_ADD} $${_pkg_add_a} $${subpkgfile}; \
 				fi; \
 			elif [ -n "${USE_PACKAGE_DEPENDS_ONLY}" -a "$${target}" = "${DEPENDS_TARGET}" ]; then \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on package: $${subpkgfile} - not found"; \

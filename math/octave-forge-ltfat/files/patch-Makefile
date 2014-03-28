@@ -1,8 +1,0 @@
---- Makefile-orig	2013-09-18 02:28:16.000000000 +0000
-+++ Makefile	2013-09-18 02:28:30.000000000 +0000
-@@ -2,4 +2,4 @@
- 	$(MAKE) -f Makefile_unix
- 	$(MAKE) -C ../oct -f Makefile_unix
- 	mv ../oct/*.oct .
--	ls -1 *.oct | cut -d . -f 1 | xargs -i rm -f ../inst/comp/{}.m
-+	ls -1 *.oct | cut -d . -f 1 | xargs -I{} rm -f ../inst/comp/{}.m

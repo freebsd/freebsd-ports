@@ -2,34 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	hf
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ee.lbl.gov/ \
-		ftp://ftp4.uk.freebsd.org/pub/FreeBSD/
+		http://www.mmnt.net/db/0/3/ftp.ee.lbl.gov/
 PKGNAMEPREFIX=	lbl-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Address to hostname filter
+
+LICENSE=	BSD3CLAUSE
 
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	hf-[0-9]*
 
-PLIST_FILES=	bin/hf
-
-MAN1=		hf.1
+PLIST_FILES=	bin/hf \
+		man/man1/hf.1.gz
 
 GNU_CONFIGURE=	yes
 
-verify: checksum
-	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
-
 # Only install hf
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hf ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/hf.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/hf ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/hf.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

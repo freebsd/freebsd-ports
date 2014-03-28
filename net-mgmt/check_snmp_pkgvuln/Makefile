@@ -18,17 +18,16 @@ RUN_DEPENDS=	snmpwalk:${PORTSDIR}/net-mgmt/net-snmp \
 NAGIOS_PLUGIN_DIR?=	libexec/nagios
 
 NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 
 PLIST_SUB=	NAGIOS_PLUGIN_DIR=${NAGIOS_PLUGIN_DIR}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/|' ${WRKSRC}/${PORTNAME}
 
-do-build:
-
 do-install:
-	@${MKDIR} ${PREFIX}/${NAGIOS_PLUGIN_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/${NAGIOS_PLUGIN_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${NAGIOS_PLUGIN_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/${NAGIOS_PLUGIN_DIR}
 
 .include <bsd.port.mk>

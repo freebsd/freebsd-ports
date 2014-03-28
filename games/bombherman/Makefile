@@ -5,7 +5,7 @@ PORTNAME=	bomb-her-man
 PORTVERSION=	0.3
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	SF/nemysisfreebsdp/:icons
+MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
@@ -38,7 +38,7 @@ INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
 DESKTOP_ENTRIES="Bomb-her-man" "Bomberman clone" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -55,7 +55,8 @@ pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
 
 .if ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's|$$(prefix)/$$(DATADIRNAME)/locale|$$(prefix)/share/locale|' \
+	@${REINPLACE_CMD} -e \
+		's|$$(prefix)/$$(DATADIRNAME)/locale|$$(prefix)/share/locale|' \
 		${WRKSRC}/po/Makefile.in.in
 .endif
 

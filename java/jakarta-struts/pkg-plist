@@ -27,7 +27,6 @@
 %%T%%/contrib/struts-el/webapps/strutsel-exercise-taglib.war
 %%T%%/lib/antlr.jar
 %%T%%/lib/commons-beanutils.jar
-%%T%%/lib/commons-collections.jar
 %%T%%/lib/commons-digester.jar
 %%T%%/lib/commons-fileupload.jar
 %%T%%/lib/commons-logging.jar

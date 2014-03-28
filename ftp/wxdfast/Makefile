@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_WX=		2.6+
+USE_WX=		2.8+
 WX_CONF_ARGS=	relative
 WX_UNICODE=	yes
 USES=		gettext

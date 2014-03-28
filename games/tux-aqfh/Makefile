@@ -22,7 +22,6 @@ USES=		gmake
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
-#USE_GCC=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid ${PTHREAD_LIBS}
@@ -36,20 +35,20 @@ DOCSRCDIR2=	${WRKSRC}/doc
 DOCSDIR2=	${DOCSDIR}/doc
 DOC_FILES2=	*.png *.html
 
+OPTIONS_DEFINE=	DOCS
+
 DESKTOP_ENTRIES="Tuxedo The Penguin: A Quest for Herring" "" ${PORTNAME} \
 		"${PORTNAME}" "Game;SportsGame;" ""
 
-OPTIONS_DEFINE=	DOCS
-
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-lplibul|-lplibul -lplibjs| ; \
-		 s|-O6 -Wall|-w|g ; \
-		 s|-lpthread|| ; \
+		's|-lplibul|-lplibul -lplibjs|; \
+		 s|-O6 -Wall||; \
+		 s|-lpthread||; \
 		 s|datadir/games|datadir|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(prefix)/games|@bindir@|g ; \
-		 s|$$(datadir)/games|$$(datadir)|g'
+		's|$$(prefix)/games|@bindir@|; \
+		 s|$$(datadir)/games|$$(datadir)|'
 	@${REINPLACE_CMD} -e 's|doc contrib| contrib|' \
 		${WRKSRC}/Makefile.in
 

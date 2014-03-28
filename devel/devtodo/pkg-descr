@@ -4,4 +4,4 @@ prioritised, list. Additionally, it can automatically list outstanding
 items when you change into a directory (see example shell configurations
 in ${PREFIX}/share/examples/devtodo).
 
-WWW: http://swapoff.org/DevTodo
+WWW: http://swapoff.org/devtodo.html

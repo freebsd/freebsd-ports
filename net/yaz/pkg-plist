@@ -148,80 +148,6 @@ man/man7/yaz-log.7.gz
 man/man7/yaz.7.gz
 man/man8/yaz-ztest.8.gz
 share/aclocal/yaz.m4
-%%PORTDOCS%%%%DOCSDIR%%/apilayer.png
-%%PORTDOCS%%%%DOCSDIR%%/asn.external.html
-%%PORTDOCS%%%%DOCSDIR%%/asn.html
-%%PORTDOCS%%%%DOCSDIR%%/asn.pdu.html
-%%PORTDOCS%%%%DOCSDIR%%/asn.preparing.html
-%%PORTDOCS%%%%DOCSDIR%%/bib1.html
-%%PORTDOCS%%%%DOCSDIR%%/ch07s07.html
-%%PORTDOCS%%%%DOCSDIR%%/common/id.png
-%%PORTDOCS%%%%DOCSDIR%%/common/style1.css
-%%PORTDOCS%%%%DOCSDIR%%/comstack.addresses.html
-%%PORTDOCS%%%%DOCSDIR%%/comstack.client.html
-%%PORTDOCS%%%%DOCSDIR%%/comstack.common.html
-%%PORTDOCS%%%%DOCSDIR%%/comstack.diagnostics.html
-%%PORTDOCS%%%%DOCSDIR%%/comstack.html
-%%PORTDOCS%%%%DOCSDIR%%/comstack.introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/comstack.server.html
-%%PORTDOCS%%%%DOCSDIR%%/comstack.ssl.html
-%%PORTDOCS%%%%DOCSDIR%%/comstack.summary.html
-%%PORTDOCS%%%%DOCSDIR%%/credits.html
-%%PORTDOCS%%%%DOCSDIR%%/future.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/indexdata.html
-%%PORTDOCS%%%%DOCSDIR%%/installation.html
-%%PORTDOCS%%%%DOCSDIR%%/installation.unix.html
-%%PORTDOCS%%%%DOCSDIR%%/installation.win32.html
-%%PORTDOCS%%%%DOCSDIR%%/introduction.api.html
-%%PORTDOCS%%%%DOCSDIR%%/introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/list-oids.html
-%%PORTDOCS%%%%DOCSDIR%%/marc.html
-%%PORTDOCS%%%%DOCSDIR%%/odr.debugging.html
-%%PORTDOCS%%%%DOCSDIR%%/odr.html
-%%PORTDOCS%%%%DOCSDIR%%/odr.programming.html
-%%PORTDOCS%%%%DOCSDIR%%/odr.use.html
-%%PORTDOCS%%%%DOCSDIR%%/reference.html
-%%PORTDOCS%%%%DOCSDIR%%/server.backend.html
-%%PORTDOCS%%%%DOCSDIR%%/server.backendfunctions.html
-%%PORTDOCS%%%%DOCSDIR%%/server.frontend.html
-%%PORTDOCS%%%%DOCSDIR%%/server.html
-%%PORTDOCS%%%%DOCSDIR%%/server.invocation.html
-%%PORTDOCS%%%%DOCSDIR%%/server.main.html
-%%PORTDOCS%%%%DOCSDIR%%/server.vhosts.html
-%%PORTDOCS%%%%DOCSDIR%%/soap.html
-%%PORTDOCS%%%%DOCSDIR%%/soap.http.html
-%%PORTDOCS%%%%DOCSDIR%%/soap.srw.html
-%%PORTDOCS%%%%DOCSDIR%%/soap.xml.html
-%%PORTDOCS%%%%DOCSDIR%%/tools.html
-%%PORTDOCS%%%%DOCSDIR%%/tools.log.html
-%%PORTDOCS%%%%DOCSDIR%%/tools.nmem.html
-%%PORTDOCS%%%%DOCSDIR%%/tools.oid.html
-%%PORTDOCS%%%%DOCSDIR%%/tools.retrieval.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-asncomp.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-client.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-config.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-iconv.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-icu.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-illclient.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-json-parse.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-log.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-marcdump.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-url.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz-ztest.html
-%%PORTDOCS%%%%DOCSDIR%%/yaz.html
-%%PORTDOCS%%%%DOCSDIR%%/zoom.events.html
-%%PORTDOCS%%%%DOCSDIR%%/zoom.extendedservices.html
-%%PORTDOCS%%%%DOCSDIR%%/zoom.facets.html
-%%PORTDOCS%%%%DOCSDIR%%/zoom.html
-%%PORTDOCS%%%%DOCSDIR%%/zoom.options.html
-%%PORTDOCS%%%%DOCSDIR%%/zoom.query.html
-%%PORTDOCS%%%%DOCSDIR%%/zoom.queryconversions.html
-%%PORTDOCS%%%%DOCSDIR%%/zoom.records.html
-%%PORTDOCS%%%%DOCSDIR%%/zoom.resultsets.html
-%%PORTDOCS%%%%DOCSDIR%%/zoom.scan.html
-%%PORTDOCS%%%%DOCSDIR%%/zoomsh.html
 %%DATADIR%%/etc/MARC21slim2DC.xsl
 %%DATADIR%%/etc/MARC21slim2MODS.xsl
 %%DATADIR%%/etc/MARC21slim2RDFDC.xsl
@@ -250,6 +176,4 @@ share/aclocal/yaz.m4
 @dirrm %%DATADIR%%/ill
 @dirrm %%DATADIR%%/etc
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/common
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/yaz

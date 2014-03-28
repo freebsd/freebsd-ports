@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1000/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - softhddevice plugin
@@ -17,7 +16,7 @@ LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
 		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms \
 		libasound.so:${PORTSDIR}/audio/alsa-lib
 
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 USE_XORG+=	xv x11 xcb xinerama
 USE_GL+=	gl glu
 PATCH_STRIP=	-p1

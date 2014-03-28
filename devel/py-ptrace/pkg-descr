@@ -11,4 +11,4 @@ Features:
 * Dump registers, memory mappings, stack, etc.
 * Syscall tracer and parser (strace command) 
 
-WWW:	http://bitbucket.org/haypo/python-ptrace/wiki/Home
+WWW: http://bitbucket.org/haypo/python-ptrace/wiki/Home

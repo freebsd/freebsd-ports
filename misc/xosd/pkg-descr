@@ -2,7 +2,4 @@ XOSD displays text on your screen; sounds simple, right?  The difference is
 that it is unmanaged and shaped, so it appears transparent.  This gives the
 effect of an on-screen-display, just like on your TV/VCR, etc.
 
-The port also includes XMMS plugin, which can automatically display various
-interesting things as they change (like song name and volume).
-
 WWW: http://sourceforge.net/projects/libxosd/

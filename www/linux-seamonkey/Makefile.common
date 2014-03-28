@@ -76,7 +76,7 @@ post-patch:
 	@${DO_NADA} >>${PREFS_FILE}
 
 . if (${DISTVERSION:R:R} < 28 && ${PORTNAME} != "seamonkey") || \
- (${PORTNAME} == "seamonkey" && ${DISTVERSION:C/[0-9]*\.//:C/b.*//} < 25)
+ (${PORTNAME} == "seamonkey" && ${DISTVERSION:C/[0-9]*\.//:C/[ab].*//} < 25)
 	# dummy resident-unique for make about:memory's "measure"
 	@${REINPLACE_CMD} -i '' \
 		's,/proc/self/smaps\(.Private\),////////dev/null\1,' \

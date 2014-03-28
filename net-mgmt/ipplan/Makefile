@@ -3,7 +3,7 @@
 
 PORTNAME=	ipplan
 PORTVERSION=	4.92b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/iptrack/${PORTNAME}/Release%204.92
 
@@ -12,17 +12,16 @@ COMMENT=	IP address management and tracking
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 USE_PHP=	gettext pcre xml zlib
+SHEBANG_FILES=	${WRKSRC}/contrib/process-exports.pl ${WRKSRC}/contrib/ipplan-poller.php
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIG=		config.php
 SUB_FILES=	pkg-message
 REINPLACE_ARGS=	-i ''
-USES=	shebangfix
-SHEBANG_FILES=	${WRKSRC}/contrib/process-exports.pl ${WRKSRC}/contrib/ipplan-poller.php
 
 OPTIONS_DEFINE=	MYSQL PGSQL SNMP
 OPTIONS_DEFAULT=	MYSQL

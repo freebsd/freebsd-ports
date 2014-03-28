@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.1//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd">
 <!--
-Copyright 2003-2013 Jacques Vidrine and contributors
+Copyright 2003-2014 Jacques Vidrine and contributors
 
 Redistribution and use in source (VuXML) and 'compiled' forms (SGML,
 HTML, PDF, PostScript, RTF and so forth) with or without modification,
@@ -51,6 +51,394 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9fa1a0ac-b2e0-11e3-bb07-6cf0490a8c18">
+    <topic>Joomla! -- Core - Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla2</name>
+	<name>joomla3</name>
+	<range><ge>2.5.*</ge><le>2.5.18</le></range>
+	<range><ge>3.0.*</ge><le>3.2.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security/578-20140301-core-sql-injection.html">
+	  <h2>[20140301] - Core - SQL Injection</h2>
+	  <p>Inadequate escaping leads to SQL injection vulnerability.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/579-20140302-core-xss-vulnerability.html">
+	  <h2>[20140302] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate escaping leads to XSS vulnerability in com_contact.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/580-20140303-core-xss-vulnerability.html">
+	  <h2>[20140303] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate escaping leads to XSS vulnerability.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/581-20140304-core-unauthorised-logins.html">
+	  <h2>[20140304] - Core - Unauthorised Logins</h2>
+	  <p>Inadequate checking allowed unauthorised logins via GMail authentication.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://developer.joomla.org/security/578-20140301-core-sql-injection.html</url>
+      <url>http://developer.joomla.org/security/579-20140302-core-xss-vulnerability.html</url>
+      <url>http://developer.joomla.org/security/580-20140303-core-xss-vulnerability.html</url>
+      <url>http://developer.joomla.org/security/581-20140304-core-unauthorised-logins.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-01</discovery>
+      <entry>2014-03-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="36f9ac43-b2ac-11e3-8752-080027ef73ec">
+    <topic>mail/trojita -- may leak mail contents (not user credentials) over unencrypted connection</topic>
+    <affects>
+      <package>
+	<name>trojita</name>
+	<range><lt>0.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jan Kundrát reports:</p>
+	<blockquote cite="http://jkt.flaska.net/blog/Trojita_0_4_1__a_security_update_for_CVE_2014_2567.html">
+	  <p>An SSL stripping vulnerability was discovered in Trojitá, a fast Qt
+	    IMAP e-mail client. User's credentials are never leaked, but if a
+	    user tries to send an e-mail, the automatic saving into the "sent"
+	    or "draft" folders could happen over a plaintext connection even if
+	    the user's preferences specify STARTTLS as a requirement.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-2567</cvename>
+      <url>http://jkt.flaska.net/blog/Trojita_0_4_1__a_security_update_for_CVE_2014_2567.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-20</discovery>
+      <entry>2014-03-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="da4b89ad-b28f-11e3-99ca-f0def16c5c1b">
+    <topic>nginx-devel -- SPDY heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>nginx-devel</name>
+	<range><ge>1.3.15</ge><lt>1.5.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx project reports:</p>
+	<blockquote cite="http://mailman.nginx.org/pipermail/nginx-announce/2014/000135.html">
+	  <p>A bug in the experimental SPDY implementation in nginx was found, which
+	   might allow an attacker to cause a heap memory buffer overflow in a
+	   worker process by using a specially crafted request, potentially
+	   resulting in arbitrary code execution (CVE-2014-0133).</p>
+
+	  <p>The problem affects nginx 1.3.15 - 1.5.11, compiled with the
+	   ngx_http_spdy_module module (which is not compiled by default) and
+	   without --with-debug configure option, if the "spdy" option of the
+	   "listen" directive is used in a configuration file.</p>
+
+	  <p>The problem is fixed in nginx 1.5.12, 1.4.7.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0133</cvename>
+      <url>http://mailman.nginx.org/pipermail/nginx-announce/2014/000135.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-18</discovery>
+      <entry>2014-03-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fc28df92-b233-11e3-99ca-f0def16c5c1b">
+    <topic>nginx -- SPDY heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><lt>1.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx project reports:</p>
+	<blockquote cite="http://mailman.nginx.org/pipermail/nginx-announce/2014/000135.html">
+	  <p>A bug in the experimental SPDY implementation in nginx was found, which
+	   might allow an attacker to cause a heap memory buffer overflow in a
+	   worker process by using a specially crafted request, potentially
+	   resulting in arbitrary code execution (CVE-2014-0133).</p>
+
+	  <p>The problem affects nginx 1.3.15 - 1.5.11, compiled with the
+	   ngx_http_spdy_module module (which is not compiled by default) and
+	   without --with-debug configure option, if the "spdy" option of the
+	   "listen" directive is used in a configuration file.</p>
+
+	  <p>The problem is fixed in nginx 1.5.12, 1.4.7.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0133</cvename>
+      <url>http://mailman.nginx.org/pipermail/nginx-announce/2014/000135.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-18</discovery>
+      <entry>2014-03-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="91ecb546-b1e6-11e3-980f-20cf30e32f6d">
+    <topic>apache -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><gt>2.4.0</gt><lt>2.4.9</lt></range>
+      </package>
+      <package>
+	<name>apache22</name>
+	<range><gt>2.2.0</gt><lt>2.2.27</lt></range>
+      </package>
+      <package>
+	<name>apache22-event-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27</lt></range>
+      </package>
+      <package>
+	<name>apache22-itk-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27</lt></range>
+      </package>
+      <package>
+	<name>apache22-peruser-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27</lt></range>
+      </package>
+      <package>
+	<name>apache22-worker-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Apache HTTP SERVER PROJECT reports:</h1>
+	<blockquote cite="http://www.apache.org/dist/httpd/CHANGES_2.2.27">
+	  <p>Clean up cookie logging with fewer redundant string parsing passes.
+	    Log only cookies with a value assignment. Prevents segfaults when
+	    logging truncated cookies.</p>
+	  <p>mod_dav: Keep track of length of cdata properly when removing leading
+	    spaces. Eliminates a potential denial of service from specifically
+	    crafted DAV WRITE requests.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0098</cvename>
+      <cvename>CVE-2013-6438</cvename>
+    </references>
+    <dates>
+      <discovery>2014-02-25</discovery>
+      <entry>2014-03-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="610de647-af8d-11e3-a25b-b4b52fce4ce8">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>28.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>24.4.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>28.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.25</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>24.4.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.25</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>24.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-15 Miscellaneous memory safety hazards
+	    (rv:28.0 / rv:24.4)</p>
+	  <p>MFSA 2014-16 Files extracted during updates are not always
+	    read only</p>
+	  <p>MFSA 2014-17 Out of bounds read during WAV file decoding</p>
+	  <p>MFSA 2014-18 crypto.generateCRMFRequest does not validate
+	    type of key</p>
+	  <p>MFSA 2014-19 Spoofing attack on WebRTC permission prompt</p>
+	  <p>MFSA 2014-20 onbeforeunload and Javascript navigation DOS</p>
+	  <p>MFSA 2014-21 Local file access via Open Link in new tab</p>
+	  <p>MFSA 2014-22 WebGL content injection from one domain to
+	    rendering in another</p>
+	  <p>MFSA 2014-23 Content Security Policy for data: documents
+	    not preserved by session restore</p>
+	  <p>MFSA 2014-24 Android Crash Reporter open to manipulation</p>
+	  <p>MFSA 2014-25 Firefox OS DeviceStorageFile object vulnerable
+	    to relative path escape</p>
+	  <p>MFSA 2014-26 Information disclosure through polygon
+	    rendering in MathML</p>
+	  <p>MFSA 2014-27 Memory corruption in Cairo during PDF font
+	    rendering</p>
+	  <p>MFSA 2014-28 SVG filters information disclosure through
+	    feDisplacementMap</p>
+	  <p>MFSA 2014-29 Privilege escalation using WebIDL-implemented
+	    APIs</p>
+	  <p>MFSA 2014-30 Use-after-free in TypeObject</p>
+	  <p>MFSA 2014-31 Out-of-bounds read/write through neutering
+	    ArrayBuffer objects</p>
+	  <p>MFSA 2014-32 Out-of-bounds write through TypedArrayObject
+	    after neutering</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1493</cvename>
+      <cvename>CVE-2014-1494</cvename>
+      <cvename>CVE-2014-1496</cvename>
+      <cvename>CVE-2014-1497</cvename>
+      <cvename>CVE-2014-1498</cvename>
+      <cvename>CVE-2014-1499</cvename>
+      <cvename>CVE-2014-1500</cvename>
+      <cvename>CVE-2014-1501</cvename>
+      <cvename>CVE-2014-1502</cvename>
+      <cvename>CVE-2014-1504</cvename>
+      <cvename>CVE-2014-1505</cvename>
+      <cvename>CVE-2014-1506</cvename>
+      <cvename>CVE-2014-1507</cvename>
+      <cvename>CVE-2014-1508</cvename>
+      <cvename>CVE-2014-1509</cvename>
+      <cvename>CVE-2014-1510</cvename>
+      <cvename>CVE-2014-1511</cvename>
+      <cvename>CVE-2014-1512</cvename>
+      <cvename>CVE-2014-1513</cvename>
+      <cvename>CVE-2014-1514</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-15.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-16.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-17.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-18.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-19.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-20.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-21.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-22.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-23.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-24.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-25.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-26.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-27.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-28.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-29.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-30.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-31.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-32.html</url>
+      <url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2014-03-19</discovery>
+      <entry>2014-03-19</entry>
+      <modified>2014-03-20</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="a70966a1-ac22-11e3-8d04-00262d5ed8ee">
+    <topic>www/chromium -- multiple vulnerabities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>33.0.1750.152</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>New vulnerabilites after the Pwn2Own competition:</p>
+	  <ul>
+	    <li>[352369] Code execution outside sandbox. Credit to VUPEN.
+	      <ul>
+		<li>[352374] High CVE-2014-1713: Use-after-free in Blink
+		  bindings</li>
+		<li>[352395] High CVE-2014-1714: Windows clipboard
+		  vulnerability</li>
+	      </ul>
+	    </li>
+	    <li> [352420] Code execution outside sandbox. Credit to Anonymous.
+	      <ul>
+		<li>[351787] High CVE-2014-1705: Memory corruption in V8</li>
+		<li>[352429] High CVE-2014-1715: Directory traversal issue</li>
+	      </ul>
+	    </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1705</cvename>
+      <cvename>CVE-2014-1713</cvename>
+      <cvename>CVE-2014-1714</cvename>
+      <cvename>CVE-2014-1715</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-03-14</discovery>
+      <entry>2014-03-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="eb426e82-ab68-11e3-9d09-000c2980a9f3">
+    <topic>mutt -- denial of service, potential remote code execution</topic>
+    <affects>
+      <package>
+	<name>mutt</name>
+	<range><lt>1.5.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Beatrice Torracca and Evgeni Golov report:</p>
+	<blockquote cite="http://www.securityfocus.com/archive/1/531431">
+	  <p>A buffer overflow has been discovered that could result in
+	    denial of service or potential execution of arbitrary code.</p>
+	  <p>This condition can be triggered by malformed RFC2047 header
+	    lines</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0467</cvename>
+      <url>http://packetstormsecurity.com/files/cve/CVE-2014-0467</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0467</url>
+    </references>
+    <dates>
+      <discovery>2014-03-12</discovery>
+      <entry>2014-03-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="777d7b9e-ab02-11e3-841e-60a44c524f57">
     <topic>wemux -- read-only can be bypassed</topic>
     <affects>
@@ -56444,7 +56832,8 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>php5-nms</name>
 	<name>mod_php4</name>
 	<name>mod_php5</name>
-	<range><ge>0</ge></range>
+	<range><lt>4.4.4</lt></range>
+	<range><ge>5</ge><lt>5.1.5</lt></range>
       </package>
     </affects>
     <description>
@@ -56482,7 +56871,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2006-08-18</discovery>
       <entry>2006-09-13</entry>
-      <modified>2006-09-14</modified>
+      <modified>2014-03-28</modified>
     </dates>
   </vuln>
 

@@ -1,0 +1,5 @@
+GtkSpell provides MSWord/MacOSX-style highlighting of misspelled words in a 
+GtkTextView widget as you type. Right-clicking a misspelled word pops up a menu 
+of suggested replacements.
+
+WWW: http://gtkspell.sourceforge.net/

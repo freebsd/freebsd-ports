@@ -1,0 +1,12 @@
+--- xxgdb.man.orig	1994-12-02 17:40:19.000000000 -0800
++++ xxgdb.man	2014-03-26 12:27:51.559896216 -0700
+@@ -29,7 +29,8 @@
+ .LP
+ The name of the debugger invoked by \fIxxgdb\fP is, by default, gdb, but
+ it can be overridden with the environment variable XXGDB_DEBUGGER or with
+-the db_name option.
++the db_name option. Additionally, the prompt string can be overridden with
++the environment variable XXGDB_DBXPROMPT or with the db_prompt option.
+ .SH OPTIONS
+ \fIXxgdb\fP accepts all of the standard X Toolkit command line options 
+ (see \fIX\fP(1)), and all the gdb options (see \fIgdb\fP(1)), plus

@@ -15,9 +15,8 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		shebangfix
+USES=		shebangfix gmake
 SHEBANG_FILES=	configure
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

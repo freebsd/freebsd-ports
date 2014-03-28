@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jdiskreport
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://www.jGoodies.com/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}
@@ -23,9 +22,8 @@ JAVAVM?=	${LOCALBASE}/bin/java
 JDISKDIR?=	${PREFIX}/lib/jdiskreport
 
 DESKTOP_ENTRIES="JDiskReport" "${COMMENT}" "" "jdiskreport" \
-		"System;Filesystem;" "false"
+		"System;Filesystem;" false
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKDIR}
 	@${SED} -e 's,%%JDISKDIR%%,${JDISKDIR},g' \
@@ -34,8 +32,9 @@ do-build:
 		> ${WRKDIR}/jdiskreport
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/jdiskreport ${PREFIX}/bin
-	-@${MKDIR} ${JDISKDIR}
-	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/jdiskreport-${PORTVERSION}.jar ${JDISKDIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/jdiskreport ${STAGEDIR}${PREFIX}/bin
+	-@${MKDIR} ${STAGEDIR}${JDISKDIR}
+	@${INSTALL_DATA} ${WRKSRC:S|_|.|g}/jdiskreport-${PORTVERSION}.jar \
+		${STAGEDIR}${JDISKDIR}
 
 .include <bsd.port.mk>

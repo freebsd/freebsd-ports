@@ -1,0 +1,19 @@
+bin/craft
+%%SERVER%%bin/craft-server
+%%SERVER%%lib/libcraft-world.so
+%%SERVER%%%%PYTHON_SITELIBDIR%%/craft_world.py
+%%DATADIR%%/shaders/block_fragment.glsl
+%%DATADIR%%/shaders/block_vertex.glsl
+%%DATADIR%%/shaders/line_fragment.glsl
+%%DATADIR%%/shaders/line_vertex.glsl
+%%DATADIR%%/shaders/sky_fragment.glsl
+%%DATADIR%%/shaders/sky_vertex.glsl
+%%DATADIR%%/shaders/text_fragment.glsl
+%%DATADIR%%/shaders/text_vertex.glsl
+%%DATADIR%%/textures/font.png
+%%DATADIR%%/textures/sign.png
+%%DATADIR%%/textures/sky.png
+%%DATADIR%%/textures/texture.png
+@dirrmtry %%DATADIR%%/textures
+@dirrmtry %%DATADIR%%/shaders
+@dirrmtry %%DATADIR%%

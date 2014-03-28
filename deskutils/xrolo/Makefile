@@ -19,8 +19,11 @@ WRKSRC=		${WRKDIR}/xrolo
 
 USES=		imake
 USE_XORG=	x11 xext
-MAN1=		xrolo.1
-PLIST_FILES=	bin/xrolo
+PLIST_FILES=	bin/xrolo man/man1/xrolo.1.gz
 
-NO_STAGE=	yes
+CFLAGS+=	-Wno-return-type
+
+post-configure:
+	@${REINPLACE_CMD} 's|DESTDIR) |DESTDIR)|g' ${WRKSRC}/Makefile
+
 .include <bsd.port.mk>

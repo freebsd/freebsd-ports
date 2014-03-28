@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	augeas
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.augeas.net/
 
 MAINTAINER=	swills@FreeBSD.org
-COMMENT=	A configuration editing tool
+COMMENT=	Configuration editing tool
 
 LICENSE=	LGPL21
 
@@ -30,5 +30,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:%%LOCALBASE%%:${LOCALBASE}:' \
 		${WRKSRC}/lenses/puppet.aug \
 		${WRKSRC}/lenses/puppetfileserver.aug
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaugeas.so.18
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfa.so.5
 
 .include <bsd.port.mk>

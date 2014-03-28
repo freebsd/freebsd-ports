@@ -5,6 +5,7 @@ man/man5/porttools.5.gz
 %%DATADIR%%/cmd_create
 %%DATADIR%%/cmd_diff
 %%DATADIR%%/cmd_fetch
+%%DATADIR%%/cmd_followup
 %%DATADIR%%/cmd_getpr
 %%DATADIR%%/cmd_help
 %%DATADIR%%/cmd_install

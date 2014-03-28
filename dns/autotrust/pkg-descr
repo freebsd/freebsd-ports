@@ -2,4 +2,4 @@ Autotrust is a command line tool to automatically update your DNSSEC
 trust anchors. It is intended to run from a cron job and can run
 next to any validating resolver. It makes use of ldns and libunbound.
 
-WWW:	http://www.nlnetlabs.nl/projects/autotrust/
+WWW: http://www.nlnetlabs.nl/projects/autotrust/

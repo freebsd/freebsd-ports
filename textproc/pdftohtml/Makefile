@@ -17,12 +17,12 @@ PLIST_FILES=	bin/pdf-to-html
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-NO_STAGE=	yes
 pre-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s|-O[0-9]||" -e "s|-g||"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/pdftohtml ${PREFIX}/bin/pdf-to-html
+	${INSTALL_PROGRAM} ${WRKSRC}/src/pdftohtml \
+		${STAGEDIR}${PREFIX}/bin/pdf-to-html
 
 .include <bsd.port.mk>

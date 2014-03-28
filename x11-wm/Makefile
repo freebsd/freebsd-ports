@@ -26,6 +26,7 @@
     SUBDIR += compizconfig-python
     SUBDIR += compton
     SUBDIR += ctwm
+    SUBDIR += cwm
     SUBDIR += devilspie
     SUBDIR += dwm
     SUBDIR += e16
@@ -94,7 +95,6 @@
     SUBDIR += gcompmgr
     SUBDIR += genmenu
     SUBDIR += golem
-    SUBDIR += hackedbox
     SUBDIR += herbstluftwm
     SUBDIR += hs-xmonad
     SUBDIR += hs-xmonad-contrib

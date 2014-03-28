@@ -3,7 +3,7 @@
 
 PORTNAME=	karaoke
 PORTVERSION=	0.7.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,11 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game \
 		dejavu>0:${PORTSDIR}/x11-fonts/dejavu \
 		${PYNUMPY}
 
-OPTIONS_DEFINE=	MUTAGEN
-MUTAGEN_DESC=	Enable Mutagen support
-
-USES=		iconv zip
-NO_STAGE=	yes
+USES=		desktop-file-utils iconv zip
 USE_SDL=	sdl
 USE_XORG=	x11 xau xcb xdmcp
 USE_WX=		2.6+
@@ -37,11 +33,10 @@ PYDISTUTILS_PKGNAME=	py${PORTNAME}
 
 DATADIR=	${PREFIX}/share/py${PORTNAME}
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	MUTAGEN
 
-.if ${PORT_OPTIONS:MMUTAGEN}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mutagen>0:${PORTSDIR}/audio/py-mutagen
-.endif
+MUTAGEN_DESC=		Mutagen support
+MUTAGEN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:${PORTSDIR}/audio/py-mutagen
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -57,9 +52,11 @@ post-patch:
 .endfor
 
 post-install:
-	@${MKDIR} ${DATADIR}/fonts
+	@${MKDIR} ${STAGEDIR}${DATADIR}/fonts
 .for i in DejaVuSans.ttf DejaVuSansCondensed-Bold.ttf DejaVuSansCondensed.ttf
-	@${LN} -sf ${LOCALBASE}/lib/X11/fonts/dejavu/${i} ${DATADIR}/fonts
+	@${LN} -sf ${LOCALBASE}/lib/X11/fonts/dejavu/${i} \
+		${STAGEDIR}${DATADIR}/fonts
 .endfor
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pycdgAux.so
 
 .include <bsd.port.mk>

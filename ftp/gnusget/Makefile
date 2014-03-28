@@ -16,8 +16,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/gnusget
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/gnusget ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/gnusget ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

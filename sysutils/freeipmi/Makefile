@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeipmi
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME}/ \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/
@@ -36,6 +36,7 @@ USES=		gmake shebangfix
 
 INFO=		freeipmi-faq
 PLIST_SUB=	CACHE_DIR=${CACHE_DIR} LOG_DIR=${LOG_DIR} RUN_DIR=${RUN_DIR}
+PORTDOCS=	*
 
 CACHE_DIR?=	/var/db/${PORTNAME}
 LOG_DIR=	/var/log/${PORTNAME}
@@ -50,17 +51,11 @@ DEBUG_CONFIGURE_ARGS=	--enable-debug --enable-trace
 DEBUG_MAKE_ENV=		INSTALL_STRIP_FLAG=""
 IOPERM_CPPFLAGS=	-DUSE_IOPERM
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.man' -o -name '*.pre.in' | ${XARGS} -I % ${REINPLACE_CMD} -e '/^\.\\\"/ s|$$|"|' %
 	@${REINPLACE_CMD} \
 		-e '/^FREEIPMI_SYSCONFDIR/ s|/freeipmi/$$||' \
 		-e '/FREEIPMI_CONFIG_FILE_DEFAULT_TMP1=/ s|freeipmi.conf|&.sample|' \
 			${WRKSRC}/configure
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-docDATA||' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
-.endif
 
 .include <bsd.port.mk>

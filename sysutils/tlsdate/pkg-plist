@@ -1,0 +1,12 @@
+bin/tlsdate
+bin/tlsdate-helper
+etc/tlsdate/ca-roots/tlsdate-ca-roots.conf
+man/man1/tlsdate-helper.1.gz
+man/man1/tlsdate.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/tlsdate/ca-roots
+@dirrmtry etc/tlsdate

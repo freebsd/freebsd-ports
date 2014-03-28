@@ -3,7 +3,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	4.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.sra.co.jp/pub/misc/eb/old/eb-${PORTVERSION:C/^([0-9]+)\.([0-9]+).*/\1.\2/}/
@@ -64,30 +64,24 @@ PORTDOCS=	eb-01.html eb-02.html eb-03.html eb-04.html eb-05.html eb-06.html \
 		ebzip-08.html ebzip-09.html ebzip-10.html ebzip.html
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
-USES=		perl5
+USES=		perl5 tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pkgdocdir=${DOCSDIR}
+CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
 APPENDIXDIR=	${DATADIR}/appendix
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext iconv
-CONFIGURE_ARGS+=	--enable-nls \
+NLS_USES=		gettext iconv
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_ON= \
 		--with-gettext-includes=${LOCALBASE}/include \
 		--with-gettext-libraries=${LOCALBASE}/lib \
 		--with-iconv-includes=${ICONV_PREFIX}/include \
 		--with-iconv-libraries=${ICONV_PREFIX}/lib
-PLIST_SUB=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
 
 post-extract:
 	${RM} -fr ${WRKSRC}/zlib
@@ -99,9 +93,8 @@ post-extract:
 
 post-install:
 	(cd ${WRKDIR}/appendix && ${COPYTREE_SHARE} . ${STAGEDIR}${APPENDIXDIR} )
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libeb.so
 
 .include <bsd.port.mk>

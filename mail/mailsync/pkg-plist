@@ -1,4 +1,5 @@
 bin/mailsync
+man/man1/mailsync.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ABSTRACT
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libzmq4
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}

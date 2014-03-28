@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	Free library for decoding mpeg-2 and mpeg-1 video streams
+COMMENT=	Free library for decoding MPEG-2 and MPEG-1 video streams
 
 USES=		libtool pathfix
 GNU_CONFIGURE=	yes
@@ -22,17 +22,17 @@ OPTIONS_DEFINE=	DOCS SDL X11
 
 SDL_USE=	SDL=yes
 SDL_CONFIGURE_ENABLE=	sdl
-X11_USE=	XORG=sm XORG=xv
+X11_USE=	XORG=sm,xv
 X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O3||;s|<termio.h>|<termios.h>|' \
+	@${REINPLACE_CMD} -e 's| -O3|| ; s|<termio|&s|' \
 		${WRKSRC}/configure
 # AMD64 prefers position independent code
 .if ${ARCH:L} == "amd64"
-	@${REINPLACE_CMD} -e 's|-prefer-non-pic||' \
+	@${REINPLACE_CMD} -e '/CFLAGS/s| -prefer-non-pic||' \
 		${WRKSRC}/configure
 .endif
 

@@ -30,8 +30,8 @@ do-build:
 		-o ${WRKSRC}/xfce4-generic-slider-plugin
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/xfce4/panel-plugins
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xfce4/xfce4/panel-plugins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xfce4/panel-plugins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xfce4/xfce4/panel-plugins
 	${INSTALL_DATA} ${WRKSRC}/generic-slider.desktop \
 		${STAGEDIR}${PREFIX}/share/xfce4/panel-plugins
 	${INSTALL_PROGRAM} ${WRKSRC}/xfce4-generic-slider-plugin \

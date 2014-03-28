@@ -9,8 +9,6 @@ DIST_SUBDIR=	python
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	FiSH/Mircryption clone for XChat/HexChat
 
-LICENSE=	BSD
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto
 
 USE_GITHUB=	yes
@@ -19,6 +17,7 @@ GH_PROJECT=	py-fishcrypt
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT= 	c001c75
 
+USES=		dos2unix
 USE_PYTHON_RUN=	yes
 NO_BUILD=	yes
 
@@ -29,22 +28,15 @@ PORTDOCS=	README.md
 PLIST_FILES=	%%DATADIR%%/fishcrypt.py
 PLIST_DIRS=     %%DATADIR%%
 
-OPTIONS_DEFINE=	DOCS XCHAT HEXCHAT
+OPTIONS_DEFINE=	DOCS HEXCHAT XCHAT
 
-XCHAT_DESC=		FiSH encryption for XChat
 HEXCHAT_DESC=		FiSH encryption for HexChat
+XCHAT_DESC=		FiSH encryption for XChat
 
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXCHAT}
-RUN_DEPENDS+=	xchat:${PORTSDIR}/irc/xchat
-.endif
-
-.if ${PORT_OPTIONS:MHEXCHAT}
-RUN_DEPENDS+=	hexchat:${PORTSDIR}/irc/hexchat
-.endif
+HEXCHAT_RUN_DEPENDS=	hexchat:${PORTSDIR}/irc/hexchat
+XCHAT_RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	c-icap
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.2
 CATEGORIES=	www security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/0.2.x/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/0.3.x/
 PKGNAMESUFFIX=	-modules
 DISTNAME=	c_icap_modules-${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	c-icap modules virus_scan and srv_url_check
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	icapapi:${PORTSDIR}/www/c-icap \
+LIB_DEPENDS+=	icapapi.3:${PORTSDIR}/www/c-icap \
 		clamav:${PORTSDIR}/security/clamav
 
 GNU_CONFIGURE=	yes
@@ -27,11 +27,17 @@ CONFIGURE_ARGS+=	--enable-static \
 			--with-c-icap=${LOCALBASE} \
 			--with-clamav=${LOCALBASE}
 
-NO_STAGE=	yes
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/c-icap
+
 post-install:
-	@${CP} -np ${PREFIX}/etc/c-icap/srv_url_check.conf.default \
-		${PREFIX}/etc/c-icap/srv_url_check.conf || ${TRUE}
-	@${CP} -np ${PREFIX}/etc/c-icap/virus_scan.conf.default \
-		${PREFIX}/etc/c-icap/virus_scan.conf || ${TRUE}
+	@${CP} -np ${STAGEDIR}${PREFIX}/etc/c-icap/clamav_mod.conf.default \
+		${STAGEDIR}${PREFIX}/etc/c-icap/clamav_mod.conf || ${TRUE}
+	@${CP} -np ${STAGEDIR}${PREFIX}/etc/c-icap/clamd_mod.conf.default \
+		${STAGEDIR}${PREFIX}/etc/c-icap/clamd_mod.conf || ${TRUE}
+	@${CP} -np ${STAGEDIR}${PREFIX}/etc/c-icap/srv_url_check.conf.default \
+		${STAGEDIR}${PREFIX}/etc/c-icap/srv_url_check.conf || ${TRUE}
+	@${CP} -np ${STAGEDIR}${PREFIX}/etc/c-icap/virus_scan.conf.default \
+		${STAGEDIR}${PREFIX}/etc/c-icap/virus_scan.conf || ${TRUE}
 
 .include <bsd.port.mk>

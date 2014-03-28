@@ -43,7 +43,7 @@ lib/postgresql/test_parser.so
 lib/postgresql/timetravel.so
 lib/postgresql/tsearch2.so
 lib/postgresql/unaccent.so
-%%OSSP%%lib/postgresql/uuid-ossp.so
+lib/postgresql/uuid-ossp.so
 %%DOCSDIR%%/README-contrib
 %%DOCSDIR%%/extension/README
 bin/pg_test_fsync
@@ -164,9 +164,9 @@ share/postgresql/extension/tsearch2.control
 share/postgresql/extension/unaccent--1.0.sql
 share/postgresql/extension/unaccent--unpackaged--1.0.sql
 share/postgresql/extension/unaccent.control
-%%OSSP%%share/postgresql/extension/uuid-ossp--1.0.sql
-%%OSSP%%share/postgresql/extension/uuid-ossp--unpackaged--1.0.sql
-%%OSSP%%share/postgresql/extension/uuid-ossp.control
+share/postgresql/extension/uuid-ossp--1.0.sql
+share/postgresql/extension/uuid-ossp--unpackaged--1.0.sql
+share/postgresql/extension/uuid-ossp.control
 share/postgresql/extension/xml2--1.0.sql
 share/postgresql/extension/xml2--unpackaged--1.0.sql
 share/postgresql/extension/xml2.control

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.7b28
+DISTVERSION=	3.7b29
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS_INSTALL=	xshttpd-[0-9]* publicfile-[0-9]*
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_OPENSSL=	yes
 USE_RC_SUBR=	xshttpd
 GNU_CONFIGURE=	yes
@@ -46,7 +46,6 @@ PORTDOCS=	README ChangeLog
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\(MIME_TYPES\).*|\1 "${LOCALBASE}/etc/mime.types"|' \
-		-e 's|httpd\.pid|xs&|' \
 		${WRKSRC}/src/constants.h
 	@${REINPLACE_CMD} -e 's|mime.types ||g' \
 		${WRKSRC}/config/Makefile.in

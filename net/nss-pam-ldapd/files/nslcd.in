@@ -33,14 +33,14 @@ nslcd_prestart()
 	if checkyesno nslcd_supervisor ; then
 	    	notsupported=$(${command} -r 3>&1 1>&2 2>&3 | grep -c illegal)
 		if [ ${notsupported} -eq 0 ]; then
-			command_args="-f -r %%PREFIX%%/sbin/nslcd -d"
+			command_args="-f -r %%PREFIX%%/sbin/nslcd -n"
 		else
 		    	echo "Your FreeBSD version's daemon(8) does not support supervision.";
 			echo "${name} was not started.";
 			exit 1
 		fi
 	else
-		command_args="-f %%PREFIX%%/sbin/nslcd -d"
+		command_args="-f %%PREFIX%%/sbin/nslcd"
 	fi
 }
 

@@ -1,8 +1,6 @@
-# Makefile for dependency to quake-source.
+# Makefile for dependency on quake-source
 
-PREFIX=		${LOCALBASE}
-
-Q1SRCDIR=	${PREFIX}/share/quake-source
+Q1SRCDIR=	${LOCALBASE}/share/quake-source
 
 .if ${PORTNAME} == "source"
 DATADIR=	${Q1SRCDIR}

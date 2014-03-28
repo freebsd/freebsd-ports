@@ -3,6 +3,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -38,13 +39,11 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		x264:${PORTSDIR}/multimedia/x264 \
-		xmms:${PORTSDIR}/multimedia/xmms \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
-USES=		pkgconfig perl5
-USE_BZIP2=	yes
+USES=		perl5 pkgconfig tar:bzip2 
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_PYTHON=	yes

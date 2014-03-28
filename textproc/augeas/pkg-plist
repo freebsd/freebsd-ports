@@ -6,7 +6,7 @@ include/fa.h
 lib/libaugeas.a
 lib/libaugeas.la
 lib/libaugeas.so
-lib/libaugeas.so.17
+lib/libaugeas.so.18
 lib/libfa.a
 lib/libfa.la
 lib/libfa.so
@@ -86,6 +86,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/json.aug
 %%DATADIR%%/lenses/dist/kdump.aug
 %%DATADIR%%/lenses/dist/keepalived.aug
+%%DATADIR%%/lenses/dist/koji.aug
 %%DATADIR%%/lenses/dist/krb5.aug
 %%DATADIR%%/lenses/dist/ldif.aug
 %%DATADIR%%/lenses/dist/ldso.aug
@@ -175,6 +176,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/subversion.aug
 %%DATADIR%%/lenses/dist/sudoers.aug
 %%DATADIR%%/lenses/dist/sysconfig.aug
+%%DATADIR%%/lenses/dist/sysconfig_route.aug
 %%DATADIR%%/lenses/dist/sysctl.aug
 %%DATADIR%%/lenses/dist/syslog.aug
 %%DATADIR%%/lenses/dist/systemd.aug
@@ -250,6 +252,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_json.aug
 %%DATADIR%%/lenses/dist/tests/test_kdump.aug
 %%DATADIR%%/lenses/dist/tests/test_keepalived.aug
+%%DATADIR%%/lenses/dist/tests/test_koji.aug
 %%DATADIR%%/lenses/dist/tests/test_krb5.aug
 %%DATADIR%%/lenses/dist/tests/test_ldap.aug
 %%DATADIR%%/lenses/dist/tests/test_ldif.aug
@@ -339,6 +342,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_subversion.aug
 %%DATADIR%%/lenses/dist/tests/test_sudoers.aug
 %%DATADIR%%/lenses/dist/tests/test_sysconfig.aug
+%%DATADIR%%/lenses/dist/tests/test_sysconfig_route.aug
 %%DATADIR%%/lenses/dist/tests/test_sysctl.aug
 %%DATADIR%%/lenses/dist/tests/test_syslog.aug
 %%DATADIR%%/lenses/dist/tests/test_systemd.aug
@@ -355,6 +359,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_xml.aug
 %%DATADIR%%/lenses/dist/tests/test_xorg.aug
 %%DATADIR%%/lenses/dist/tests/test_xymon.aug
+%%DATADIR%%/lenses/dist/tests/test_xymon_alerting.aug
 %%DATADIR%%/lenses/dist/tests/test_yum.aug
 %%DATADIR%%/lenses/dist/thttpd.aug
 %%DATADIR%%/lenses/dist/up2date.aug
@@ -369,6 +374,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/xml.aug
 %%DATADIR%%/lenses/dist/xorg.aug
 %%DATADIR%%/lenses/dist/xymon.aug
+%%DATADIR%%/lenses/dist/xymon_alerting.aug
 %%DATADIR%%/lenses/dist/yum.aug
 share/vim/vimfiles/ftdetect/augeas.vim
 share/vim/vimfiles/syntax/augeas.vim

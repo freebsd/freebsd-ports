@@ -1,8 +1,0 @@
-%%PERL5_MAN3%%/Ima::DBI::Contextual.3.gz
-%%SITE_PERL%%/Ima/DBI/Contextual.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima/DBI/Contextual/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima/DBI/Contextual
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima
-@dirrmtry %%SITE_PERL%%/Ima/DBI
-@dirrmtry %%SITE_PERL%%/Ima

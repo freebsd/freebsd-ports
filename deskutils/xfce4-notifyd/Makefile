@@ -16,10 +16,9 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake tar:bzip2
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil xfconf
 INSTALLS_ICONS=	yes

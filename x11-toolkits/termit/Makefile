@@ -12,8 +12,7 @@ COMMENT=	Small terminal emulator
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		cmake pkgconfig lua
+USES=		cmake lua pkgconfig tar:bzip2
 USE_GNOME=	gdkpixbuf2 vte
 
 CFLAGS+=	-I${LOCALBASE}/include/vte-0.0

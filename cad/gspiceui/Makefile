@@ -3,7 +3,7 @@
 
 PORTNAME=	gspiceui
 PORTVERSION=	1.0.00
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/gSpiceUI/${PORTNAME}-v${PORTVERSION}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -25,10 +25,9 @@ NGSPICE_DESC=	Depend on ngspice as a simulation backend
 
 OPTIONS_DEFAULT=	NGSPICE
 
-USE_WX=		2.6+
+USE_WX=		2.8+
 WX_UNICODE=	yes
-USE_GCC=	yes
-USES=		gmake
+USES=		gmake compiler:c++11-lib
 
 DESKTOP_ENTRIES=	"GSpiceUI" "Circuit Simulator GUI" \
 			"${PREFIX}/share/pixmaps/gspiceui-48x48.xpm" \

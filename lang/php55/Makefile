@@ -16,7 +16,7 @@ LICENSE=	PHP301
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_OPTIONS_SORT=yes
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf
@@ -36,15 +36,13 @@ CONFIGURE_ARGS+=--with-layout=GNU \
 
 USE_GNOME=	libxml2
 
-OPTIONS_DEFINE=	CLI CGI FPM APACHE AP2FILTER EMBED DEBUG DTRACE IPV6 MAILHEAD LINKTHR ZTS
+OPTIONS_DEFINE+=CLI CGI FPM EMBED DEBUG DTRACE IPV6 MAILHEAD LINKTHR ZTS
 OPTIONS_DEFAULT=CLI CGI FPM IPV6 LINKTHR
 OPTIONS_SUB=	yes
 
 CLI_DESC=	Build CLI version
 CGI_DESC=	Build CGI version
 FPM_DESC=	Build FPM version
-APACHE_DESC=	Build Apache module
-AP2FILTER_DESC=	Use Apache 2.x filter interface (experimental)
 EMBED_DESC=	Build embedded library
 DEBUG_DESC=	Enable debug
 DTRACE_DESC=	Enable DTrace support
@@ -53,7 +51,7 @@ MAILHEAD_DESC=	Enable mail header patch
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
-CONFLICTS=	php52-5* php53-5* php54-5* php5-5*
+CONFLICTS=	php53-5* php54-5* php5-5*
 
 DESTDIRNAME=	INSTALL_ROOT
 
@@ -89,12 +87,10 @@ CONFIGURE_ARGS+=--enable-fpm \
 		--with-fpm-group=${WWWGRP}
 .endif
 
-.if ${PORT_OPTIONS:MAPACHE} && ${PORT_OPTIONS:MEMBED}
-IGNORE=		cannot be built with multiple SAPI (apache and embedded)
-.endif
-
-.if ${PORT_OPTIONS:MAPACHE}
-PHP_SAPI+=	mod
+.if defined(PKGNAMEPREFIX)
+USE_PHP=	yes
+DEFAULT_VERSIONS=	php=55
+IGNORE_WITH_PHP=53 54 5
 USE_APACHE=	22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${PORT_OPTIONS:MAP2FILTER}
@@ -102,9 +98,11 @@ CONFIGURE_ARGS+=--with-apxs2filter=${APXS}
 .else
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
 .endif
+PLIST=		${PKGDIR}/pkg-plist.mod
 PKGMESSAGE=	${PKGDIR}/pkg-message.mod
 MODULENAME=	libphp5
 SHORTMODNAME=	php5
+WARNING=	"!!! If you have a threaded Apache, you must build ${PHP_PORT} with ZTS support to enable thread-safety in extensions !!!"
 .endif
 
 .if ${PORT_OPTIONS:MEMBED}
@@ -175,6 +173,7 @@ pre-configure:
 	@${RM} ${WRKSRC}/configure
 	@${CAT} ${WRKSRC}/acinclude.m4 ${WRKSRC}/build/libtool.m4 > ${WRKSRC}/aclocal.m4
 
+.if !defined(PKGNAMEPREFIX)
 post-build:
 	@${ECHO_CMD} "PHP_VER=55" > ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
@@ -187,6 +186,12 @@ test: build
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-development ${WRKSRC}/php.ini-production \
 		${WRKDIR}/php.conf ${STAGEDIR}/${PREFIX}/etc
+.else
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+	${INSTALL_LIB} ${WRKSRC}/libs/${MODULENAME}.so \
+		${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+.endif
 
 .else
 .include "${MASTERDIR}/Makefile.ext"

@@ -3,7 +3,7 @@
 
 PORTNAME=	mbox
 PORTVERSION=	0.7.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mbox.wz.cz/src/ CENKES
 
@@ -17,12 +17,12 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-ogg \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 
 WRKSRC=		${WRKDIR}/mBox-${PORTVERSION}
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	mBox
-USE_WX=		2.6
+USE_WX=		2.8
+WX_UNICODE=	yes
 WX_COMPS=	python
 
 .include <bsd.port.mk>

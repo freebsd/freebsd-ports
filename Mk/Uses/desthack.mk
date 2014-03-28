@@ -1,14 +1,12 @@
-#
 # $FreeBSD$
 #
 # Handle gnu configure that does not properly support DESTDIR
-#
-# MAINTAINER:	portmgr@FreeBSD.org
 #
 # Feature:	desthack
 # Usage:	USES=desthack
 # Valid ARGS:	none
 #
+# MAINTAINER:	portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_DESTHACK_MK)
 _INCLUDE_USES_DESTHACK_MK=	yes

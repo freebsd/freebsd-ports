@@ -1,0 +1,30 @@
+--- Makefile.orig	2012-12-17 18:35:40.000000000 +0100
++++ Makefile	2014-01-17 09:29:52.000000000 +0100
+@@ -16,19 +16,19 @@
+ 	(cd Test ; make realclean )
+ 
+ prefix     ?= /usr/local
+-bindir     ?= $(prefix)/bin
+-includedir ?= $(prefix)/include
+-libdir     ?= $(prefix)/lib
++bindir     ?= $(DESTDIR)$(prefix)/bin
++includedir ?= $(DESTDIR)$(prefix)/include/metis
++libdir     ?= $(DESTDIR)$(prefix)/lib
+ 
+ $(bindir) $(includedir) $(libdir):
+ 	mkdir -p $@
+ 
+-LIBS = libmetis.a
++LIBS = libmetis.a libmetis.so libmetis.so.0
+ INCS = Lib/defs.h  Lib/macros.h  Lib/metis.h  Lib/proto.h  Lib/rename.h  Lib/struct.h
+ PRGS = kmetis mesh2dual mesh2nodal oemetis onmetis partdmesh partnmesh pmetis
+ 
+-install: $(bindir) $(includedir) $(libdir) default | $(INCS) $(LIBS) $(PRGS)
+-	cp $(INCS) $(includedir)
+-	cp $(LIBS) $(libdir)
+-	cp $(PRGS) $(bindir)
++install: $(bindir) $(includedir) $(libdir) $(INCS) $(LIBS) $(PRGS)
++	$(BSD_INSTALL_DATA) $(INCS) $(includedir)
++	$(BSD_INSTALL_DATA) $(LIBS) $(libdir)
++	$(BSD_INSTALL_PROGRAM) $(PRGS) $(bindir)
+ 

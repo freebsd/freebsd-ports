@@ -1,0 +1,90 @@
+You guys are doing it wrong. And clang is strict about it.
+This makes rtorrent link again.
+
+--- src/data/memory_chunk.cc	2013-12-07 17:21:35.803392000 +0100
++++ old/data/memory_chunk.cc	2013-12-07 17:47:23.430285373 +0100
+@@ -54,6 +54,29 @@ extern "C" int madvise(void *, size_t, i
+ 
+ namespace torrent {
+ 
++const int MemoryChunk::prot_exec;
++const int MemoryChunk::prot_read;
++const int MemoryChunk::prot_write;
++const int MemoryChunk::prot_none;
++const int MemoryChunk::map_shared;
++
++#ifdef USE_MADVISE
++const int MemoryChunk::advice_normal;
++const int MemoryChunk::advice_random;
++const int MemoryChunk::advice_sequential;
++const int MemoryChunk::advice_willneed;
++const int MemoryChunk::advice_dontneed;
++#else
++const int MemoryChunk::advice_normal;
++const int MemoryChunk::advice_random;
++const int MemoryChunk::advice_sequential;
++const int MemoryChunk::advice_willneed;
++const int MemoryChunk::advice_dontneed;
++#endif
++const int MemoryChunk::sync_sync;
++const int MemoryChunk::sync_async;
++const int MemoryChunk::sync_invalidate;
++
+ uint32_t MemoryChunk::m_pagesize = getpagesize();
+ 
+ inline void
+--- src/torrent/data/file.cc	2013-12-07 17:21:35.590392000 +0100
++++ old/torrent/data/file.cc	2013-12-07 17:45:59.975290599 +0100
+@@ -50,6 +50,15 @@
+ 
+ namespace torrent {
+ 
++const int File::flag_active;
++const int File::flag_create_queued;
++const int File::flag_resize_queued;
++const int File::flag_fallocate;
++const int File::flag_previously_created;
++
++const int File::flag_prioritize_first;
++const int File::flag_prioritize_last;
++
+ File::File() :
+   m_fd(-1),
+   m_protection(0),
+--- src/torrent/download.cc	2013-12-07 17:21:35.721391000 +0100
++++ old/torrent/download.cc	2013-12-07 17:44:19.498298036 +0100
+@@ -72,6 +72,20 @@
+ 
+ namespace torrent {
+ 
++const int DownloadInfo::flag_open;
++const int DownloadInfo::flag_active;
++const int DownloadInfo::flag_compact;
++const int DownloadInfo::flag_accepting_new_peers;
++const int DownloadInfo::flag_accepting_seeders;
++const int DownloadInfo::flag_private;
++const int DownloadInfo::flag_meta_download;
++const int DownloadInfo::flag_pex_enabled;
++const int DownloadInfo::flag_pex_active;
++
++const int DownloadInfo::public_flags;
++
++const uint32_t DownloadInfo::unlimited;
++
+ const DownloadInfo* Download::info() const { return m_ptr->info(); }
+ const download_data* Download::data() const { return m_ptr->data(); }
+ 
+--- src/torrent/peer/connection_list.cc	2013-12-07 17:21:35.676392000 +0100
++++ old/torrent/peer/connection_list.cc	2013-12-07 17:44:32.385410379 +0100
+@@ -60,6 +60,11 @@
+ 
+ namespace torrent {
+ 
++const int ConnectionList::disconnect_available;
++const int ConnectionList::disconnect_quick;
++const int ConnectionList::disconnect_unwanted;
++const int ConnectionList::disconnect_delayed;
++
+ ConnectionList::ConnectionList(DownloadMain* download) :
+   m_download(download), m_minSize(50), m_maxSize(100) {
+ }

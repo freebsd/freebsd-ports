@@ -3,7 +3,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	#please edit Makefile.inc for PORTVERSION, so ../svnmerge can stay in sync.
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES+=	devel
 PKGNAMESUFFIX=	16
 MASTER_SITES=	http://subversion.tigris.org/downloads/

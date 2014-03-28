@@ -3,17 +3,19 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
@@ -27,7 +29,8 @@ PORTDOCS=	AUTHORS
 OPTIONS_DEFINE=	DBUS OSS4 SDLOUT ALSA CUE MP3 STATUSICON AOSD AOSDXCOMP \
 		ADPLUG VORBIS FLAC WAVPACK AAC SNDFILE MODPLUG JACK \
 		CDAUDIO SCROBBLER MMS GIO NLS RESAMPLE AMIDI GLSPECTRUM \
-		NOTIFY BS2B FFAUDIO PULSE NEON SPEEDPITCH LIRC MP3FILEWRITER
+		NOTIFY BS2B FFAUDIO PULSE NEON SPEEDPITCH LIRC MP3FILEWRITER \
+		SID
 OPTIONS_DEFAULT=DBUS CUE MP3 STATUSICON AOSD AOSDXCOMP AAC CDAUDIO \
 		SCROBBLER NEON NLS OSS4 FFAUDIO
 
@@ -45,13 +48,13 @@ PULSE_DESC=	PulseAudio support
 RESAMPLE_DESC=	Resample effect
 SCROBBLER_DESC=	Scrobbler decoder
 SDLOUT_DESC=	SDL Output
+SID_DESC=	SID decoder
 STATUSICON_DESC=X11 Status icon
 NEON_DESC=	Neon plugin
 SPEEDPITCH_DESC=Speed and Pitch plugin
 LIRC_DESC=	LIRC plugin
 MP3FILEWRITER=	Filewriter plugin for MP3
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDLOUT}
@@ -63,8 +66,8 @@ PLIST_SUB+=	SDL="@comment "
 CONFIGURE_ARGS+=--disable-sdlout
 .endif
 
-.if ${PORT_OPTIONS:MNOTIFY} || exists(${LOCALBASE}/lib/libnotify.so.1)
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+.if ${PORT_OPTIONS:MNOTIFY} || exists(${LOCALBASE}/lib/libnotify.so)
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notify
 PLIST_SUB+=	NOTIFY=""
 .else
@@ -82,7 +85,7 @@ PLIST_SUB+=	GLSPECTRUM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-glib:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-gnomeshortcuts
 PLIST_SUB+=	DBUS=""
 .else
@@ -91,7 +94,7 @@ PLIST_SUB+=	DBUS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCUE}
-LIB_DEPENDS+=	cue:${PORTSDIR}/textproc/libcue
+LIB_DEPENDS+=	libcue.so:${PORTSDIR}/textproc/libcue
 CONFIGURE_ARGS+=--enable-cue
 PLIST_SUB+=	CUEPLUGIN=""
 .else
@@ -100,11 +103,11 @@ PLIST_SUB+=	CUEPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMP3}
-LIB_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
+LIB_DEPENDS+=	libmpg123.so:${PORTSDIR}/audio/mpg123
 CONFIGURE_ARGS+=--enable-mp3 --enable-filewriter_mp3
 PLIST_SUB+=	MP3PLUGIN=""
 .if ${PORT_OPTIONS:MMP3FILEWRITER}
-LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=--enable-filewriter_mp3
 .else
 CONFIGURE_ARGS+=--disable-filewriter_mp3
@@ -133,7 +136,7 @@ PLIST_SUB+=	AOSDPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAOSDXCOMP}
-LIB_DEPENDS+=	Xcomposite:${PORTSDIR}/x11/libXcomposite
+LIB_DEPENDS+=	libXcomposite.so:${PORTSDIR}/x11/libXcomposite
 CONFIGURE_ARGS+=--enable-aosd-xcomp
 PLIST_SUB+=	AOSDXCOMPPLUGIN=""
 .else
@@ -142,7 +145,7 @@ PLIST_SUB+=	AOSDXCOMPPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MADPLUG}
-LIB_DEPENDS+=	binio:${PORTSDIR}/devel/libbinio
+LIB_DEPENDS+=	libbinio.so:${PORTSDIR}/devel/libbinio
 CONFIGURE_ARGS+=--enable-adplug
 PLIST_SUB+=	ADPLUGPLUGIN=""
 .else
@@ -151,7 +154,7 @@ PLIST_SUB+=	ADPLUGPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis
 PLIST_SUB+=	VORBISPLUGIN=""
 .else
@@ -160,7 +163,7 @@ PLIST_SUB+=	VORBISPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--enable-flacng --enable-filewriter_flac
 PLIST_SUB+=	FLACPLUGIN=""
 .else
@@ -178,7 +181,7 @@ PLIST_SUB+=	FFAUDIOPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MWAVPACK}
-LIB_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	libwavpack.so:${PORTSDIR}/audio/wavpack
 CONFIGURE_ARGS+=--enable-wavpack
 PLIST_SUB+=	WAVPACKPLUGIN=""
 .else
@@ -189,14 +192,14 @@ PLIST_SUB+=	WAVPACKPLUGIN="@comment "
 .if ${PORT_OPTIONS:MAAC}
 CONFIGURE_ARGS+=--enable-aac
 PLIST_SUB+=	AACPLUGIN=""
-LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-aac
 PLIST_SUB+=	AACPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 CONFIGURE_ARGS+=--enable-sndfile
 PLIST_SUB+=	SNDFILEPLUGIN=""
 .else
@@ -205,7 +208,7 @@ PLIST_SUB+=	SNDFILEPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMODPLUG}
-LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	libmodplug.so:${PORTSDIR}/audio/libmodplug
 PLIST_SUB+=	MODPLUG=""
 CONFIGURE_ARGS+=--enable-modplug
 .else
@@ -214,8 +217,8 @@ CONFIGURE_ARGS+=--disable-modplug
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack \
-		samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-jack
 PLIST_SUB+=	JACKPLUGIN=""
 .else
@@ -224,7 +227,7 @@ PLIST_SUB+=	JACKPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSCROBBLER}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	SCROBBLERPLUGIN=""
 CONFIGURE_ARGS+=--enable-scrobbler2
 .else
@@ -241,7 +244,7 @@ CONFIGURE_ARGS+=--disable-oss4
 .endif
 
 .if ${PORT_OPTIONS:MSID}
-LIB_DEPENDS+=	sidplay:${PORTSDIR}/audio/libsidplay
+LIB_DEPENDS+=	libsidplayfp.so:${PORTSDIR}/audio/libsidplayfp
 PLIST_SUB+=	SIDPLUGIN=""
 CONFIGURE_ARGS+=--enable-sid
 .else
@@ -250,8 +253,8 @@ CONFIGURE_ARGS+=--disable-sid
 .endif
 
 .if ${PORT_OPTIONS:MCDAUDIO}
-LIB_DEPENDS+=	cdio:${PORTSDIR}/sysutils/libcdio \
-		cddb:${PORTSDIR}/audio/libcddb
+LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
+		libcddb.so:${PORTSDIR}/audio/libcddb
 CONFIGURE_ARGS+=--enable-cdaudio
 PLIST_SUB+=	CDAUDIOPLUGIN=""
 .else
@@ -260,7 +263,7 @@ PLIST_SUB+=	CDAUDIOPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNEON}
-LIB_DEPENDS+=	neon:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
 CONFIGURE_ARGS+=--enable-neon
 PLIST_SUB+=	NEONPLUGIN=""
 .else
@@ -269,7 +272,7 @@ PLIST_SUB+=	NEONPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMMS}
-LIB_DEPENDS+=	mms:${PORTSDIR}/net/libmms
+LIB_DEPENDS+=	libmms.so:${PORTSDIR}/net/libmms
 CONFIGURE_ARGS+=--enable-mms
 PLIST_SUB+=	MMSPLUGIN=""
 .else
@@ -278,7 +281,7 @@ PLIST_SUB+=	MMSPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRESAMPLE}
-LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-resample
 PLIST_SUB+=	RESAMPLEPLUGIN=""
 .else
@@ -287,7 +290,7 @@ PLIST_SUB+=	RESAMPLEPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSPEEDPITCH}
-LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-speedpitch
 PLIST_SUB+=	SPEEDPITCHPLUGIN=""
 .else
@@ -296,7 +299,7 @@ PLIST_SUB+=	SPEEDPITCHPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 CONFIGURE_ARGS+=--enable-alsa
 PLIST_SUB+=	ALSAPLUGIN=""
 .else
@@ -310,7 +313,7 @@ CONFIGURE_ARGS+=--enable-amidiplug --enable-amidiplug-alsa
 PLIST_SUB+=	AMIDIFPLUGIN="@comment "
 PLIST_SUB+=	AMIDIAPLUGIN=""
 .else
-LIB_DEPENDS+=	fluidsynth:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS+=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 CONFIGURE_ARGS+=--enable-amidiplug --enable-amidiplug-flsyn
 PLIST_SUB+=	AMIDIFPLUGIN=""
 PLIST_SUB+=	AMIDIAPLUGIN="@comment "
@@ -324,7 +327,7 @@ PLIST_SUB+=	AMIDIPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBS2B}
-LIB_DEPENDS+=	bs2b:${PORTSDIR}/audio/libbs2b
+LIB_DEPENDS+=	libbs2b.so:${PORTSDIR}/audio/libbs2b
 CONFIGURE_ARGS+=--enable-bs2b
 PLIST_SUB+=	BS2BPLUGIN=""
 .else
@@ -351,7 +354,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPULSE}
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=--enable-pulse
 PLIST_SUB+=	PULSE=""
 .else
@@ -360,7 +363,7 @@ PLIST_SUB+=	PULSE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=	lirc_client:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	liblirc_client.so:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=--enable-lirc
 PLIST_SUB+=	LIRC=""
 .else
@@ -368,35 +371,12 @@ CONFIGURE_ARGS+=--disable-lirc
 PLIST_SUB+=	LIRC="@comment "
 .endif
 
-pre-everything::
-.if ${PORT_OPTIONS:MAUDIOCD} && !exists(${LOCALBASE}/lib/libcdio_cdda.so)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Make sure you select the PARANOIA option when installing libcdio!"
-	@${ECHO_CMD} ""
-.endif
-
-pre-configure:
-.if ${PORT_OPTIONS:MAUDIOCD} && !exists(${LOCALBASE}/lib/libcdio_cdda.so)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "sysutils/libcdio got not installed with PARANOIA enabled!"
-	@${ECHO_CMD} "To use the audiocd option you have to install libcdio with"
-	@${ECHO_CMD} "PARANOIA support! So please reinstall it properly."
-	@${ECHO_CMD} ""
-	@exit 1
-.endif
-
 post-install:
-.if ${PORT_OPTIONS:MGNOME}
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You have installed audacious with gconf support."
-	@${ECHO_MSG} "ALL PRESETS will be stored in the gconf database."
-	@${ECHO_MSG} ""
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/audacious/ -name "*.so" \
+		-exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.mk>

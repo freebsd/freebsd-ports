@@ -46,7 +46,7 @@ procname="%%PREFIX%%/libexec/mysqld"
 start_precmd="${name}_prestart"
 start_postcmd="${name}_poststart"
 mysql_install_db="%%PREFIX%%/bin/mysql_install_db"
-mysql_install_db_args="--basedir=%%PREFIX%% --datadir=${mysql_dbdir} --force"
+mysql_install_db_args="--basedir=%%PREFIX%% --datadir=${mysql_dbdir} --defaults-extra-file=${mysql_optfile} --force"
 
 mysql_create_auth_tables()
 {

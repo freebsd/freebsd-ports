@@ -5,7 +5,7 @@ PORTNAME=	mod_rpaf2
 PORTVERSION=	0.6
 PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	http://stderr.net/apache/rpaf/download/
+MASTER_SITES=	http://www.stderr.net/apache/rpaf/download/
 DISTNAME=	mod_rpaf-${PORTVERSION}
 
 MAINTAINER=	apache@FreeBSD.org

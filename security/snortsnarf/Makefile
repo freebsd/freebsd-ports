@@ -17,21 +17,20 @@ USES=		perl5
 NO_BUILD=	yes
 USE_PERL5=	run
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${SED} -e 's|\./include|${PREFIX}/libdata/${PORTNAME}|' \
 		< ${WRKSRC}/snortsnarf.pl > ${WRKSRC}/snortsnarf
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/snortsnarf ${LOCALBASE}/bin
-	@${MKDIR} ${PREFIX}/libdata/snortsnarf
-	@(cd ${WRKSRC}/include \
-		&& ${COPYTREE_SHARE} . ${PREFIX}/libdata/${PORTNAME})
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/snortsnarf ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/snortsnarf
+	(cd ${WRKSRC}/include \
+		&& ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/libdata/${PORTNAME})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in README Usage
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

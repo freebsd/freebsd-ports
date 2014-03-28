@@ -1,3 +1,67 @@
+lib/audacious/Container/asx.so
+lib/audacious/Container/audpl.so
+%%CUEPLUGIN%%lib/audacious/Container/cue.so
+lib/audacious/Container/m3u.so
+lib/audacious/Container/pls.so
+lib/audacious/Container/xspf.so
+%%BS2BPLUGIN%%lib/audacious/Effect/bs2b.so
+lib/audacious/Effect/compressor.so
+lib/audacious/Effect/crossfade.so
+lib/audacious/Effect/crystalizer.so
+lib/audacious/Effect/echo.so
+lib/audacious/Effect/ladspa.so
+lib/audacious/Effect/mixer.so
+%%RESAMPLEPLUGIN%%lib/audacious/Effect/resample.so
+%%SPEEDPITCHPLUGIN%%lib/audacious/Effect/speed-pitch.so
+lib/audacious/Effect/stereo.so
+lib/audacious/Effect/voice_removal.so
+lib/audacious/General/alarm.so
+lib/audacious/General/albumart.so
+%%AOSDPLUGIN%%lib/audacious/General/aosd.so
+%%CDAUDIOPLUGIN%%lib/audacious/General/cd-menu-items.so
+%%DBUS%%lib/audacious/General/gnomeshortcuts.so
+lib/audacious/General/gtkui.so
+lib/audacious/General/hotkey.so
+lib/audacious/General/lyricwiki.so
+%%NOTIFY%%lib/audacious/General/notify.so
+%%SCROBBLERPLUGIN%%lib/audacious/General/scrobbler.so
+lib/audacious/General/search-tool.so
+lib/audacious/General/skins.so
+lib/audacious/General/song_change.so
+%%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
+%%AACPLUGIN%%lib/audacious/Input/aac.so
+%%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
+%%AMIDIPLUGIN%%lib/audacious/Input/amidi-plug.so
+%%AMIDIAPLUGIN%%lib/audacious/Input/amidi-plug/ap-alsa.so
+%%AMIDIFPLUGIN%%lib/audacious/Input/amidi-plug/ap-fluidsynth.so
+%%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
+lib/audacious/Input/console.so
+%%FFAUDIOPLUGIN%%lib/audacious/Input/ffaudio.so
+%%FLACPLUGIN%%lib/audacious/Input/flacng.so
+%%MP3PLUGIN%%lib/audacious/Input/madplug.so
+lib/audacious/Input/metronom.so
+%%MODPLUG%%lib/audacious/Input/modplug.so
+lib/audacious/Input/psf2.so
+%%SIDPLUGIN%%lib/audacious/Input/sid.so
+%%SNDFILEPLUGIN%%lib/audacious/Input/sndfile.so
+lib/audacious/Input/tonegen.so
+%%VORBISPLUGIN%%lib/audacious/Input/vorbis.so
+lib/audacious/Input/vtx.so
+lib/audacious/Input/xsf.so
+%%WAVPACKPLUGIN%%lib/audacious/Input/wavpack.so
+%%ALSAPLUGIN%%lib/audacious/Output/alsa.so
+lib/audacious/Output/filewriter.so
+%%JACKPLUGIN%%lib/audacious/Output/jackout.so
+%%OSS4PLUGIN%%lib/audacious/Output/oss4.so
+%%PULSE%%lib/audacious/Output/pulse_audio.so
+%%SDL%%lib/audacious/Output/sdlout.so
+%%GIOPLUGIN%%lib/audacious/Transport/gio.so
+%%MMSPLUGIN%%lib/audacious/Transport/mms.so
+%%NEONPLUGIN%%lib/audacious/Transport/neon.so
+lib/audacious/Transport/unix-io.so
+lib/audacious/Visualization/blur_scope.so
+lib/audacious/Visualization/cairo-spectrum.so
+%%GLSPECTRUM%%lib/audacious/Visualization/gl-spectrum.so
 share/audacious/Skins/Classic/balance.png
 share/audacious/Skins/Classic/cbuttons.png
 share/audacious/Skins/Classic/eq_ex.png
@@ -120,11 +184,12 @@ share/audacious/Skins/TinyPlayer/volume.png
 share/audacious/ui/equalizer.ui
 share/audacious/ui/mainwin.ui
 share/audacious/ui/playlist.ui
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%NLS%%share/locale/be/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious-plugins.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cmn/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/da/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/de/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/el/LC_MESSAGES/audacious-plugins.mo
@@ -138,9 +203,9 @@ share/audacious/ui/playlist.ui
 %%NLS%%share/locale/fr/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/id_ID/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/it/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/audacious-plugins.mo
-%%NLS%%share/locale/id_ID/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ky/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/audacious-plugins.mo
@@ -158,99 +223,37 @@ share/audacious/ui/playlist.ui
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious-plugins.mo
-%%MMSPLUGIN%%lib/audacious/Transport/mms.so
-%%NEONPLUGIN%%lib/audacious/Transport/neon.so
-lib/audacious/Transport/unix-io.so
-%%GIOPLUGIN%%lib/audacious/Transport/gio.so
-%%AMIDIPLUGIN%%lib/audacious/Input/amidi-plug.so
-%%AMIDIAPLUGIN%%lib/audacious/Input/amidi-plug/ap-alsa.so
-%%AMIDIFPLUGIN%%lib/audacious/Input/amidi-plug/ap-fluidsynth.so
-%%AACPLUGIN%%lib/audacious/Input/aac.so
-%%VORBISPLUGIN%%lib/audacious/Input/vorbis.so
-%%MODPLUG%%lib/audacious/Input/modplug.so
-lib/audacious/Input/tonegen.so
-lib/audacious/Input/vtx.so
-%%FLACPLUGIN%%lib/audacious/Input/flacng.so
-%%FFAUDIOPLUGIN%%lib/audacious/Input/ffaudio.so
-lib/audacious/Input/xsf.so
-%%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
-lib/audacious/Input/metronom.so
-%%WAVPACKPLUGIN%%lib/audacious/Input/wavpack.so
-lib/audacious/Input/console.so
-lib/audacious/Input/psf2.so
-%%MP3PLUGIN%%lib/audacious/Input/madplug.so
-%%SNDFILEPLUGIN%%lib/audacious/Input/sndfile.so
-%%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
-lib/audacious/Effect/stereo.so
-lib/audacious/Effect/crystalizer.so
-%%RESAMPLEPLUGIN%%lib/audacious/Effect/resample.so
-%%SPEEDPITCHPLUGIN%%lib/audacious/Effect/speed-pitch.so
-lib/audacious/Effect/crossfade.so
-lib/audacious/Effect/compressor.so
-lib/audacious/Effect/ladspa.so
-lib/audacious/Effect/mixer.so
-lib/audacious/Effect/echo.so
-lib/audacious/Effect/voice_removal.so
-%%BS2BPLUGIN%%lib/audacious/Effect/bs2b.so
-lib/audacious/Visualization/blur_scope.so
-lib/audacious/Visualization/cairo-spectrum.so
-%%DBUS%%lib/audacious/General/gnomeshortcuts.so
-%%GLSPECTRUM%%lib/audacious/Visualization/gl-spectrum.so
-lib/audacious/General/lyricwiki.so
-%%SCROBBLERPLUGIN%%lib/audacious/General/scrobbler.so
-lib/audacious/General/alarm.so
-%%NOTIFY%%lib/audacious/General/notify.so
-lib/audacious/General/hotkey.so
-lib/audacious/General/search-tool.so
-lib/audacious/General/gtkui.so
-lib/audacious/General/albumart.so
-%%AOSDPLUGIN%%lib/audacious/General/aosd.so
-lib/audacious/General/skins.so
-lib/audacious/General/song_change.so
-%%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
-%%CDAUDIOPLUGIN%%lib/audacious/General/cd-menu-items.so
-%%OSS4PLUGIN%%lib/audacious/Output/oss4.so
-%%ALSAPLUGIN%%lib/audacious/Output/alsa.so
-lib/audacious/Output/filewriter.so
-%%JACKPLUGIN%%lib/audacious/Output/jackout.so
-%%PULSE%%lib/audacious/Output/pulse_audio.so
-%%SDL%%lib/audacious/Output/sdlout.so
-lib/audacious/Container/xspf.so
-lib/audacious/Container/audpl.so
-lib/audacious/Container/m3u.so
-%%CUEPLUGIN%%lib/audacious/Container/cue.so
-lib/audacious/Container/asx.so
-lib/audacious/Container/pls.so
-@dirrm lib/audacious/Container
-@dirrm lib/audacious/Output
-@dirrm lib/audacious/General
-@dirrm lib/audacious/Visualization
-@dirrm lib/audacious/Effect
-%%AMIDIPLUGIN%%@dirrm lib/audacious/Input/amidi-plug
-@dirrm lib/audacious/Input
-@dirrm lib/audacious/Transport
-@dirrmtry lib/audacious
-@dirrm share/audacious/Skins/Default
-@dirrm share/audacious/Skins/TinyPlayer
-@dirrm share/audacious/Skins/Osmosis
-@dirrm share/audacious/Skins/Ivory
-@dirrm share/audacious/Skins/Refugee
-@dirrm share/audacious/Skins/Classic
-@dirrm share/audacious/Skins/Classic1.3
-@dirrm share/audacious/Skins
-@dirrm share/audacious/ui
-%%NLS%%@dirrmtry share/locale/cmn/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cmn
-%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/id_ID
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/sr_RS/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr_RS
-%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_AR
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/ml_IN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ml_IN
+%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ky
+%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id_ID
+%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_AR
+%%NLS%%@dirrmtry share/locale/cmn/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cmn
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm share/audacious/ui
+@dirrm share/audacious/Skins/TinyPlayer
+@dirrm share/audacious/Skins/Refugee
+@dirrm share/audacious/Skins/Osmosis
+@dirrm share/audacious/Skins/Ivory
+@dirrm share/audacious/Skins/Default
+@dirrm share/audacious/Skins/Classic1.3
+@dirrm share/audacious/Skins/Classic
+@dirrm share/audacious/Skins
 @dirrmtry share/audacious
+@dirrm lib/audacious/Visualization
+@dirrm lib/audacious/Transport
+@dirrm lib/audacious/Output
+%%AMIDIPLUGIN%%@dirrm lib/audacious/Input/amidi-plug
+@dirrm lib/audacious/Input
+@dirrm lib/audacious/General
+@dirrm lib/audacious/Effect
+@dirrm lib/audacious/Container
+@dirrmtry lib/audacious

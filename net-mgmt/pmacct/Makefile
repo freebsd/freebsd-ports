@@ -3,6 +3,7 @@
 
 PORTNAME=	pmacct
 DISTVERSION=	0.14.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/ \
 		http://mirrors.rit.edu/zi/
@@ -17,6 +18,7 @@ SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
+PORTSCOUT=	skipv:0.15.0
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE THREADS MMAP LAYER2 IPV6 SHARED DEBUG \
 		MONGO GEOIP
@@ -27,7 +29,6 @@ MMAP_DESC=	Enable mmap(2) support
 LAYER2_DESC=	Enable Layer-2 support: MAC addresses and VLANs
 SHARED_DESC=	Enable shared objects
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
@@ -113,18 +114,17 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 .for i in ChangeLog FAQS README TOOLS CONFIG-KEYS KNOWN-BUGS
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/sql/* ${DATADIR}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sql/* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>

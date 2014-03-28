@@ -11,18 +11,17 @@ MASTER_SITES=	http://www.sourcefiles.org/Productivity_Tools/Calculators/ \
 MAINTAINER=	psh@iki.fi
 COMMENT=	Programmer's calculator
 
+USES=		shebangfix
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 NO_BUILD=	yes
-MAN1=		clarence.1
-PLIST_FILES=	bin/clarence
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e "s,#!/usr/bin/python,#!/usr/bin/env python,g" ${WRKSRC}/clarence.py
+PLIST_FILES=	bin/clarence man/man1/clarence.1.gz
+SHEBANG_FILES=	clarence.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/clarence.py ${PREFIX}/bin/clarence
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/clarence.py \
+		${STAGEDIR}${PREFIX}/bin/clarence
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

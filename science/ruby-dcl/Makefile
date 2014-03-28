@@ -21,8 +21,8 @@ BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
 		${LOCALBASE}/lib/libcdcl.so:${PORTSDIR}/science/cdcl
 RUN_DEPENDS=	${LOCALBASE}/lib/libcdcl.so:${PORTSDIR}/science/cdcl \
 		${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
-		${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
-		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
+		rubygem-gdk_pixbuf2>0:${PORTSDIR}/graphics/rubygem-gdk_pixbuf2 \
+		rubygem-gtk2>0:${PORTSDIR}/x11-toolkits/rubygem-gtk2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

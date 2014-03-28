@@ -1,0 +1,427 @@
+--- src/command_download.cc	2013-12-07 17:54:06.182256000 +0100
++++ src/command_download.cc	2013-12-07 18:32:56.086096805 +0100
+@@ -813,8 +813,8 @@ initialize_command_download() {
+   CMD2_DL_V       ("d.disconnect.seeders",        tr1::bind(&torrent::ConnectionList::erase_seeders, CMD2_BIND_CL));
+ 
+   CMD2_DL         ("d.accepting_seeders",         CMD2_ON_INFO(is_accepting_seeders));
+-  CMD2_DL_V       ("d.accepting_seeders.enable",  tr1::bind(&torrent::DownloadInfo::public_set_flags,   CMD2_BIND_INFO, torrent::DownloadInfo::flag_accepting_seeders));
+-  CMD2_DL_V       ("d.accepting_seeders.disable", tr1::bind(&torrent::DownloadInfo::public_unset_flags, CMD2_BIND_INFO, torrent::DownloadInfo::flag_accepting_seeders));
++  CMD2_DL_V       ("d.accepting_seeders.enable",  tr1::bind(&torrent::DownloadInfo::public_set_flags,   CMD2_BIND_INFO, (1<<4)));
++  CMD2_DL_V       ("d.accepting_seeders.disable", tr1::bind(&torrent::DownloadInfo::public_unset_flags, CMD2_BIND_INFO, (1<<4)));
+ 
+   CMD2_DL         ("d.throttle_name",     tr1::bind(&download_get_variable, tr1::placeholders::_1, "rtorrent", "throttle_name"));
+   CMD2_DL_STRING_V("d.throttle_name.set", tr1::bind(&core::Download::set_throttle_name, tr1::placeholders::_1, std::placeholders::_2));
+--- src/command_dynamic.cc	2013-12-07 17:54:06.293257000 +0100
++++ src/command_dynamic.cc	2013-12-07 18:00:29.238231276 +0100
+@@ -127,18 +127,18 @@ system_method_insert_object(const torren
+ 
+   torrent::Object value;
+ 
+-  switch (flags & rpc::object_storage::mask_type) {
+-  case rpc::object_storage::flag_bool_type:
+-  case rpc::object_storage::flag_value_type:
++  switch (flags & rpc::mask_type) {
++  case rpc::flag_bool_type:
++  case rpc::flag_value_type:
+     value = itrArgs != args.end() ? rpc::convert_to_value(*itrArgs) : int64_t();
+     break;
+-  case rpc::object_storage::flag_string_type:
++  case rpc::flag_string_type:
+     value = itrArgs != args.end() ? rpc::convert_to_string(*itrArgs) : "";
+     break;
+-  case rpc::object_storage::flag_function_type:
++  case rpc::flag_function_type:
+     system_method_generate_command2(&value, itrArgs, args.end());
+     break;
+-  case rpc::object_storage::flag_multi_type:
++  case rpc::flag_multi_type:
+     break;
+   default:
+     throw torrent::input_error("Invalid type.");
+@@ -146,15 +146,15 @@ system_method_insert_object(const torren
+ 
+   int cmd_flags = 0;
+ 
+-  if (!(flags & rpc::object_storage::flag_static))
++  if (!(flags & rpc::flag_static))
+     cmd_flags |= rpc::CommandMap::flag_modifiable;
+-  if (!(flags & rpc::object_storage::flag_private))
++  if (!(flags & rpc::flag_private))
+     cmd_flags |= rpc::CommandMap::flag_public_xmlrpc;
+ 
+   control->object_storage()->insert_str(rawKey, value, flags);
+ 
+-  if ((flags & rpc::object_storage::mask_type) == rpc::object_storage::flag_function_type ||
+-      (flags & rpc::object_storage::mask_type) == rpc::object_storage::flag_multi_type) {
++  if ((flags & rpc::mask_type) == rpc::flag_function_type ||
++      (flags & rpc::mask_type) == rpc::flag_multi_type) {
+ 
+     rpc::commands.insert_slot<rpc::command_base_is_type<rpc::command_base_call<rpc::target_type> >::type>
+       (create_new_key(rawKey),
+@@ -172,7 +172,7 @@ system_method_insert_object(const torren
+   }
+ 
+   // Not the right argument.
+-  // if (flags & rpc::object_storage::flag_rlookup) {
++  // if (flags & rpc::flag_rlookup) {
+   //   rpc::commands.insert_slot<rpc::command_base_is_type<rpc::command_base_call_string<rpc::target_type> >::type>
+   //     (create_new_key<9>(rawKey, ".rlookup"),
+   //      tr1::bind(&rpc::object_storage::rlookup_obj_list, control->object_storage(), rawKey),
+@@ -184,31 +184,31 @@ system_method_insert_object(const torren
+ 
+ //   // Ehm... no proper handling if these throw.
+ 
+-  if (!(flags & rpc::object_storage::flag_constant)) {
+-    switch (flags & rpc::object_storage::mask_type) {
+-    case rpc::object_storage::flag_bool_type:
++  if (!(flags & rpc::flag_constant)) {
++    switch (flags & rpc::mask_type) {
++    case rpc::flag_bool_type:
+       rpc::commands.insert_slot<rpc::command_base_is_type<rpc::command_base_call_value<rpc::target_type> >::type>
+         (create_new_key<5>(rawKey, ".set"),
+          tr1::bind(&rpc::object_storage::set_str_bool, control->object_storage(), rawKey, tr1::placeholders::_2),
+          &rpc::command_base_call_value<rpc::target_type>,
+          cmd_flags, NULL, NULL);
+       break;
+-    case rpc::object_storage::flag_value_type:
++    case rpc::flag_value_type:
+       rpc::commands.insert_slot<rpc::command_base_is_type<rpc::command_base_call_value<rpc::target_type> >::type>
+         (create_new_key<5>(rawKey, ".set"),
+          tr1::bind(&rpc::object_storage::set_str_value, control->object_storage(), rawKey, tr1::placeholders::_2),
+          &rpc::command_base_call_value<rpc::target_type>,
+          cmd_flags, NULL, NULL);
+       break;
+-    case rpc::object_storage::flag_string_type:
++    case rpc::flag_string_type:
+       rpc::commands.insert_slot<rpc::command_base_is_type<rpc::command_base_call_string<rpc::target_type> >::type>
+         (create_new_key<5>(rawKey, ".set"),
+          tr1::bind(&rpc::object_storage::set_str_string, control->object_storage(), rawKey, tr1::placeholders::_2),
+          &rpc::command_base_call_string<rpc::target_type>,
+          cmd_flags, NULL, NULL);
+       break;
+-    case rpc::object_storage::flag_function_type:
+-    case rpc::object_storage::flag_multi_type:
++    case rpc::flag_function_type:
++    case rpc::flag_multi_type:
+     default: break;
+     }
+   }
+@@ -256,16 +256,16 @@ system_method_insert(const torrent::Obje
+     new_args.push_back(rawKey);
+     new_args.push_back(system_method_generate_command(++itrArgs, args.end()));
+ 
+-    int new_flags = rpc::object_storage::flag_multi_type;
++    int new_flags = rpc::flag_multi_type;
+ 
+     if (options.find("static") != std::string::npos)
+-      new_flags |= rpc::object_storage::flag_static;
++      new_flags |= rpc::flag_static;
+     if (options.find("private") != std::string::npos)
+-      new_flags |= rpc::object_storage::flag_private;
++      new_flags |= rpc::flag_private;
+     if (options.find("const") != std::string::npos)
+-      new_flags |= rpc::object_storage::flag_constant;
++      new_flags |= rpc::flag_constant;
+     if (options.find("rlookup") != std::string::npos)
+-      new_flags |= rpc::object_storage::flag_rlookup;
++      new_flags |= rpc::flag_rlookup;
+ 
+     return system_method_insert_object(new_args, new_flags);
+ 
+@@ -274,14 +274,14 @@ system_method_insert(const torrent::Obje
+     new_args.push_back(rawKey);
+     new_args.push_back(system_method_generate_command(++itrArgs, args.end()));
+ 
+-    int new_flags = rpc::object_storage::flag_function_type;
++    int new_flags = rpc::flag_function_type;
+ 
+     if (options.find("static") != std::string::npos)
+-      new_flags |= rpc::object_storage::flag_static;
++      new_flags |= rpc::flag_static;
+     if (options.find("private") != std::string::npos)
+-      new_flags |= rpc::object_storage::flag_private;
++      new_flags |= rpc::flag_private;
+     if (options.find("const") != std::string::npos)
+-      new_flags |= rpc::object_storage::flag_constant;
++      new_flags |= rpc::flag_constant;
+ 
+     return system_method_insert_object(new_args, new_flags);
+ 
+@@ -299,24 +299,24 @@ system_method_insert(const torrent::Obje
+     int new_flags;
+ 
+     if (options.find("value") != std::string::npos)
+-      new_flags = rpc::object_storage::flag_value_type;
++      new_flags = rpc::flag_value_type;
+     else if (options.find("bool") != std::string::npos)
+-      new_flags = rpc::object_storage::flag_bool_type;
++      new_flags = rpc::flag_bool_type;
+     else if (options.find("string") != std::string::npos)
+-      new_flags = rpc::object_storage::flag_string_type;
++      new_flags = rpc::flag_string_type;
+     else if (options.find("list") != std::string::npos)
+-      new_flags = rpc::object_storage::flag_list_type;
++      new_flags = rpc::flag_list_type;
+     else if (options.find("simple") != std::string::npos)
+-      new_flags = rpc::object_storage::flag_function_type;
++      new_flags = rpc::flag_function_type;
+     else 
+       throw torrent::input_error("No support for 'list' variable type.");
+ 
+     if (options.find("static") != std::string::npos)
+-      new_flags |= rpc::object_storage::flag_static;
++      new_flags |= rpc::flag_static;
+     if (options.find("private") != std::string::npos)
+-      new_flags |= rpc::object_storage::flag_private;
++      new_flags |= rpc::flag_private;
+     if (options.find("const") != std::string::npos)
+-      new_flags |= rpc::object_storage::flag_constant;
++      new_flags |= rpc::flag_constant;
+ 
+     return system_method_insert_object(new_args, new_flags);
+ 
+@@ -369,7 +369,7 @@ system_method_set_function(const torrent
+   rpc::object_storage::local_iterator itr =
+     control->object_storage()->find_local(torrent::raw_string::from_string(args.front().as_string()));
+ 
+-  if (itr == control->object_storage()->end(0) || itr->second.flags & rpc::object_storage::flag_constant)
++  if (itr == control->object_storage()->end(0) || itr->second.flags & rpc::flag_constant)
+     throw torrent::input_error("Command is not modifiable.");    
+ 
+   return control->object_storage()->set_str_function(args.front().as_string(),
+@@ -442,12 +442,12 @@ initialize_command_dynamic() {
+   CMD2_VAR_VALUE   ("method.use_intermediate", 1);
+ 
+   CMD2_ANY_LIST    ("method.insert",             tr1::bind(&system_method_insert, tr1::placeholders::_2));
+-  CMD2_ANY_LIST    ("method.insert.value",       tr1::bind(&system_method_insert_object, tr1::placeholders::_2, rpc::object_storage::flag_value_type));
++  CMD2_ANY_LIST    ("method.insert.value",       tr1::bind(&system_method_insert_object, tr1::placeholders::_2, rpc::flag_value_type));
+ 
+-  CMD2_METHOD_INSERT("method.insert.simple",     rpc::object_storage::flag_function_type);
+-  CMD2_METHOD_INSERT("method.insert.c_simple",   rpc::object_storage::flag_constant | rpc::object_storage::flag_function_type);
+-  CMD2_METHOD_INSERT("method.insert.s_c_simple", rpc::object_storage::flag_static |
+-                     rpc::object_storage::flag_constant |rpc::object_storage::flag_function_type);
++  CMD2_METHOD_INSERT("method.insert.simple",     rpc::flag_function_type);
++  CMD2_METHOD_INSERT("method.insert.c_simple",   rpc::flag_constant | rpc::flag_function_type);
++  CMD2_METHOD_INSERT("method.insert.s_c_simple", rpc::flag_static |
++                     rpc::flag_constant |rpc::flag_function_type);
+ 
+   CMD2_ANY_STRING  ("method.erase",     tr1::bind(&system_method_erase, tr1::placeholders::_2));
+   CMD2_ANY_LIST    ("method.redirect",  tr1::bind(&system_method_redirect, tr1::placeholders::_2));
+@@ -456,9 +456,9 @@ initialize_command_dynamic() {
+   CMD2_ANY_LIST    ("method.set",       tr1::bind(&system_method_set_function, tr1::placeholders::_2));
+ 
+   CMD2_ANY_STRING  ("method.const",        tr1::bind(&rpc::object_storage::has_flag_str, control->object_storage(),
+-                                                      tr1::placeholders::_2, rpc::object_storage::flag_constant));
++                                                      tr1::placeholders::_2, rpc::flag_constant));
+   CMD2_ANY_STRING_V("method.const.enable", tr1::bind(&rpc::object_storage::enable_flag_str, control->object_storage(),
+-                                                     tr1::placeholders::_2, rpc::object_storage::flag_constant));
++                                                     tr1::placeholders::_2, rpc::flag_constant));
+ 
+   CMD2_ANY_LIST    ("method.has_key",   tr1::bind(&system_method_has_key, tr1::placeholders::_2));
+   CMD2_ANY_LIST    ("method.set_key",   tr1::bind(&system_method_set_key, tr1::placeholders::_2));
+--- src/command_events.cc	2013-12-07 17:54:06.298257000 +0100
++++ src/command_events.cc	2013-12-07 18:08:23.828198403 +0100
+@@ -321,15 +321,15 @@ initialize_command_events() {
+   CMD2_ANY_STRING_V("import",          tr1::bind(&apply_import, tr1::placeholders::_2));
+   CMD2_ANY_STRING_V("try_import",      tr1::bind(&apply_try_import, tr1::placeholders::_2));
+ 
+-  CMD2_ANY_LIST    ("load.normal",        tr1::bind(&apply_load, tr1::placeholders::_2, core::Manager::create_quiet | core::Manager::create_tied));
+-  CMD2_ANY_LIST    ("load.verbose",       tr1::bind(&apply_load, tr1::placeholders::_2, core::Manager::create_tied));
++  CMD2_ANY_LIST    ("load.normal",        tr1::bind(&apply_load, tr1::placeholders::_2, core::create_quiet | core::create_tied));
++  CMD2_ANY_LIST    ("load.verbose",       tr1::bind(&apply_load, tr1::placeholders::_2, core::create_tied));
+   CMD2_ANY_LIST    ("load.start",         tr1::bind(&apply_load, tr1::placeholders::_2,
+-                                                         core::Manager::create_quiet | core::Manager::create_tied | core::Manager::create_start));
+-  CMD2_ANY_LIST    ("load.start_verbose", tr1::bind(&apply_load, tr1::placeholders::_2, core::Manager::create_tied  | core::Manager::create_start));
+-  CMD2_ANY_LIST    ("load.raw",           tr1::bind(&apply_load, tr1::placeholders::_2, core::Manager::create_quiet | core::Manager::create_raw_data));
+-  CMD2_ANY_LIST    ("load.raw_verbose",   tr1::bind(&apply_load, tr1::placeholders::_2, core::Manager::create_raw_data));
++                                                         core::create_quiet | core::create_tied | core::create_start));
++  CMD2_ANY_LIST    ("load.start_verbose", tr1::bind(&apply_load, tr1::placeholders::_2, core::create_tied  | core::create_start));
++  CMD2_ANY_LIST    ("load.raw",           tr1::bind(&apply_load, tr1::placeholders::_2, core::create_quiet | core::create_raw_data));
++  CMD2_ANY_LIST    ("load.raw_verbose",   tr1::bind(&apply_load, tr1::placeholders::_2, core::create_raw_data));
+   CMD2_ANY_LIST    ("load.raw_start",     tr1::bind(&apply_load, tr1::placeholders::_2,
+-                                                         core::Manager::create_quiet | core::Manager::create_start | core::Manager::create_raw_data));
++                                                         core::create_quiet | core::create_start | core::create_raw_data));
+ 
+   CMD2_ANY_VALUE   ("close_low_diskspace", tr1::bind(&apply_close_low_diskspace, tr1::placeholders::_2));
+ 
+--- src/command_helpers.h	2013-12-07 17:54:06.288256000 +0100
++++ src/command_helpers.h	2013-12-07 18:01:51.700225354 +0100
+@@ -98,21 +98,21 @@ void initialize_commands();
+ #define CMD2_TRACKER_VALUE_V(key, slot) CMD2_A_FUNCTION(key, command_base_call_value<torrent::Tracker*>, object_convert_void(slot), "i:i", "")
+ 
+ #define CMD2_VAR_BOOL(key, value)                                       \
+-  control->object_storage()->insert_c_str(key, int64_t(value), rpc::object_storage::flag_bool_type); \
++  control->object_storage()->insert_c_str(key, int64_t(value), rpc::flag_bool_type); \
+   CMD2_ANY(key, tr1::bind(&rpc::object_storage::get, control->object_storage(), \
+                                torrent::raw_string::from_c_str(key)));  \
+   CMD2_ANY_VALUE(key ".set", tr1::bind(&rpc::object_storage::set_bool, control->object_storage(), \
+                                             torrent::raw_string::from_c_str(key), tr1::placeholders::_2));
+ 
+ #define CMD2_VAR_VALUE(key, value)                                      \
+-  control->object_storage()->insert_c_str(key, int64_t(value), rpc::object_storage::flag_value_type); \
++  control->object_storage()->insert_c_str(key, int64_t(value), rpc::flag_value_type); \
+   CMD2_ANY(key, tr1::bind(&rpc::object_storage::get, control->object_storage(), \
+                                torrent::raw_string::from_c_str(key)));  \
+   CMD2_ANY_VALUE(key ".set", tr1::bind(&rpc::object_storage::set_value, control->object_storage(), \
+                                             torrent::raw_string::from_c_str(key), tr1::placeholders::_2));
+ 
+ #define CMD2_VAR_STRING(key, value)                                     \
+-  control->object_storage()->insert_c_str(key, value, rpc::object_storage::flag_string_type); \
++  control->object_storage()->insert_c_str(key, value, rpc::flag_string_type); \
+   CMD2_ANY(key, tr1::bind(&rpc::object_storage::get, control->object_storage(), \
+                                torrent::raw_string::from_c_str(key)));  \
+   CMD2_ANY_STRING(key ".set", tr1::bind(&rpc::object_storage::set_string, control->object_storage(), \
+@@ -120,12 +120,12 @@ void initialize_commands();
+ 
+ 
+ #define CMD2_VAR_C_STRING(key, value)                                   \
+-  control->object_storage()->insert_c_str(key, value, rpc::object_storage::flag_string_type); \
++  control->object_storage()->insert_c_str(key, value, rpc::flag_string_type); \
+   CMD2_ANY(key, tr1::bind(&rpc::object_storage::get, control->object_storage(), \
+                                torrent::raw_string::from_c_str(key)));
+ 
+ #define CMD2_VAR_LIST(key)                                              \
+-  control->object_storage()->insert_c_str(key, torrent::Object::create_list(), rpc::object_storage::flag_list_type); \
++  control->object_storage()->insert_c_str(key, torrent::Object::create_list(), rpc::flag_list_type); \
+   CMD2_ANY(key, tr1::bind(&rpc::object_storage::get, control->object_storage(), \
+                                torrent::raw_string::from_c_str(key)));  \
+   CMD2_ANY_LIST(key ".set", tr1::bind(&rpc::object_storage::set_list, control->object_storage(), \
+--- src/command_local.cc	2013-12-07 17:54:06.105258000 +0100
++++ src/command_local.cc	2013-12-07 17:57:18.242251030 +0100
+@@ -401,17 +401,17 @@ initialize_command_local() {
+ #define CMD2_EXECUTE(key, flags)                                         \
+   CMD2_ANY(key, tr1::bind(&rpc::ExecFile::execute_object, &rpc::execFile, tr1::placeholders::_2, flags));
+ 
+-  CMD2_EXECUTE     ("execute2",                rpc::ExecFile::flag_expand_tilde | rpc::ExecFile::flag_throw);
+-  CMD2_EXECUTE     ("execute.throw",           rpc::ExecFile::flag_expand_tilde | rpc::ExecFile::flag_throw);
+-  CMD2_EXECUTE     ("execute.throw.bg",        rpc::ExecFile::flag_expand_tilde | rpc::ExecFile::flag_throw | rpc::ExecFile::flag_background);
+-  CMD2_EXECUTE     ("execute.nothrow",         rpc::ExecFile::flag_expand_tilde);
+-  CMD2_EXECUTE     ("execute.nothrow.bg",      rpc::ExecFile::flag_expand_tilde | rpc::ExecFile::flag_background);
+-  CMD2_EXECUTE     ("execute.raw",             rpc::ExecFile::flag_throw);
+-  CMD2_EXECUTE     ("execute.raw.bg",          rpc::ExecFile::flag_throw | rpc::ExecFile::flag_background);
++  CMD2_EXECUTE     ("execute2",                rpc::flag_expand_tilde | rpc::flag_throw);
++  CMD2_EXECUTE     ("execute.throw",           rpc::flag_expand_tilde | rpc::flag_throw);
++  CMD2_EXECUTE     ("execute.throw.bg",        rpc::flag_expand_tilde | rpc::flag_throw | rpc::flag_background);
++  CMD2_EXECUTE     ("execute.nothrow",         rpc::flag_expand_tilde);
++  CMD2_EXECUTE     ("execute.nothrow.bg",      rpc::flag_expand_tilde | rpc::flag_background);
++  CMD2_EXECUTE     ("execute.raw",             rpc::flag_throw);
++  CMD2_EXECUTE     ("execute.raw.bg",          rpc::flag_throw | rpc::flag_background);
+   CMD2_EXECUTE     ("execute.raw_nothrow",     0);
+-  CMD2_EXECUTE     ("execute.raw_nothrow.bg",  rpc::ExecFile::flag_background);
+-  CMD2_EXECUTE     ("execute.capture",         rpc::ExecFile::flag_throw | rpc::ExecFile::flag_expand_tilde | rpc::ExecFile::flag_capture);
+-  CMD2_EXECUTE     ("execute.capture_nothrow", rpc::ExecFile::flag_expand_tilde | rpc::ExecFile::flag_capture);
++  CMD2_EXECUTE     ("execute.raw_nothrow.bg",  rpc::flag_background);
++  CMD2_EXECUTE     ("execute.capture",         rpc::flag_throw | rpc::flag_expand_tilde | rpc::flag_capture);
++  CMD2_EXECUTE     ("execute.capture_nothrow", rpc::flag_expand_tilde | rpc::flag_capture);
+ 
+   CMD2_ANY_LIST    ("log.open_file",  tr1::bind(&apply_log_open_file, tr1::placeholders::_2));
+   CMD2_ANY_LIST    ("log.add_output", tr1::bind(&apply_log_add_output, tr1::placeholders::_2));
+--- src/core/manager.h	2013-12-07 17:54:06.361257000 +0100
++++ src/core/manager.h	2013-12-07 18:07:30.429202321 +0100
+@@ -64,6 +64,11 @@ typedef std::map<std::string, torrent::T
+ 
+ class View;
+ 
++static const int create_start    = 0x1;
++static const int create_tied     = 0x2;
++static const int create_quiet    = 0x4;
++static const int create_raw_data = 0x8;
++
+ class Manager {
+ public:
+   typedef DownloadList::iterator                    DListItr;
+@@ -118,11 +123,6 @@ public:
+ 
+   void                handshake_log(const sockaddr* sa, int msg, int err, const torrent::HashString* hash);
+ 
+-  static const int create_start    = 0x1;
+-  static const int create_tied     = 0x2;
+-  static const int create_quiet    = 0x4;
+-  static const int create_raw_data = 0x8;
+-
+   typedef std::vector<std::string> command_list_type;
+ 
+   // Temporary, find a better place for this.
+--- src/rpc/exec_file.h	2013-12-07 17:54:06.332256000 +0100
++++ src/rpc/exec_file.h	2013-12-07 17:57:52.777241888 +0100
+@@ -41,15 +41,16 @@
+ 
+ namespace rpc {
+ 
++const unsigned int max_args    = 128;
++const unsigned int buffer_size = 4096;
++
++const int flag_expand_tilde = 0x1;
++const int flag_throw        = 0x2;
++const int flag_capture      = 0x4;
++const int flag_background   = 0x8;
++
+ class ExecFile {
+ public:
+-  static const unsigned int max_args    = 128;
+-  static const unsigned int buffer_size = 4096;
+-    
+-  static const int flag_expand_tilde = 0x1;
+-  static const int flag_throw        = 0x2;
+-  static const int flag_capture      = 0x4;
+-  static const int flag_background   = 0x8;
+ 
+   ExecFile() : m_logFd(-1) {}
+ 
+--- src/rpc/object_storage.h	2013-12-07 17:54:06.347257000 +0100
++++ src/rpc/object_storage.h	2013-12-07 17:59:00.255372089 +0100
+@@ -58,6 +58,21 @@ struct object_storage_node {
+ 
+ typedef std::unordered_map<fixed_key_type<64>, object_storage_node, hash_fixed_key_type> object_storage_base_type;
+ 
++static const unsigned int flag_generic_type  = 0x1;
++static const unsigned int flag_bool_type     = 0x2;
++static const unsigned int flag_value_type    = 0x3;
++static const unsigned int flag_string_type   = 0x4;
++static const unsigned int flag_list_type     = 0x5;
++static const unsigned int flag_function_type = 0x6;
++static const unsigned int flag_multi_type    = 0x7;
++
++static const unsigned int mask_type          = 0xf;
++
++static const unsigned int flag_constant      = 0x10;
++static const unsigned int flag_static        = 0x20;
++static const unsigned int flag_private       = 0x40;
++static const unsigned int flag_rlookup       = 0x80;
++
+ class object_storage : private object_storage_base_type {
+ public:
+   // Should really change rlookup_type into a set with pair values.
+@@ -90,21 +105,6 @@ public:
+   using base_type::find;
+   using base_type::erase;
+   
+-  static const unsigned int flag_generic_type  = 0x1;
+-  static const unsigned int flag_bool_type     = 0x2;
+-  static const unsigned int flag_value_type    = 0x3;
+-  static const unsigned int flag_string_type   = 0x4;
+-  static const unsigned int flag_list_type     = 0x5;
+-  static const unsigned int flag_function_type = 0x6;
+-  static const unsigned int flag_multi_type    = 0x7;
+-
+-  static const unsigned int mask_type          = 0xf;
+-
+-  static const unsigned int flag_constant      = 0x10;
+-  static const unsigned int flag_static        = 0x20;
+-  static const unsigned int flag_private       = 0x40;
+-  static const unsigned int flag_rlookup       = 0x80;
+-
+   static const size_t key_size = key_type::max_size;
+ 
+   local_iterator find_local(const torrent::raw_string& key);
+--- src/ui/download_list.cc	2013-12-07 17:54:06.155258000 +0100
++++ src/ui/download_list.cc	2013-12-07 18:09:06.091195600 +0100
+@@ -304,7 +304,7 @@ DownloadList::receive_exit_input(Input t
+       if (input->str().empty())
+         break;
+ 
+-      control->core()->try_create_download_expand(input->str(), type == INPUT_LOAD_DEFAULT ? core::Manager::create_start : 0);
++      control->core()->try_create_download_expand(input->str(), type == INPUT_LOAD_DEFAULT ? core::create_start : 0);
+       break;
+ 
+     case INPUT_CHANGE_DIRECTORY:

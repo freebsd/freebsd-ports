@@ -13,24 +13,24 @@ COMMENT=	SMB/CIFS shares mounting scripts to do it at login
 RUN_DEPENDS=	nbtscan:${PORTSDIR}/net-mgmt/nbtscan \
 		sudo:${PORTSDIR}/security/sudo
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 
-EXAMPLES=	sudoers .login .nsmbrc .mssmbrc nsmb.conf
 SCRIPTS=	smb2nsmbrc mountsmb2
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+PLIST_FILES=	bin/mountsmb2 bin/smb2nsmbrc
+PORTDOCS=	README.FreeBSD
+PORTEXAMPLES=	sudoers .login .nsmbrc .mssmbrc nsmb.conf
+
 do-install:
-	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/,} ${PREFIX}/bin
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

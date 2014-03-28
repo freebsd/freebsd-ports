@@ -1,9 +1,21 @@
+@unexec if cmp -s %D/etc/c-icap/clamav_mod.conf %D/etc/c-icap/clamav_mod.conf.default; then rm -f %D/etc/c-icap/clamav_mod.conf; fi
+etc/c-icap/clamav_mod.conf.default
+@exec [ -f %B/clamav_mod.conf ] || cp %B/%f %B/clamav_mod.conf
+@unexec if cmp -s %D/etc/c-icap/clamd_mod.conf %D/etc/c-icap/clamd_mod.conf.default; then rm -f %D/etc/c-icap/clamd_mod.conf; fi
+etc/c-icap/clamd_mod.conf.default
+@exec [ -f %B/clamd_mod.conf ] || cp %B/%f %B/clamd_mod.conf
 @unexec if cmp -s %D/etc/c-icap/srv_url_check.conf %D/etc/c-icap/srv_url_check.conf.default; then rm -f %D/etc/c-icap/srv_url_check.conf; fi
 etc/c-icap/srv_url_check.conf.default
 @exec [ -f %B/srv_url_check.conf ] || cp %B/%f %B/srv_url_check.conf
 @unexec if cmp -s %D/etc/c-icap/virus_scan.conf %D/etc/c-icap/virus_scan.conf.default; then rm -f %D/etc/c-icap/virus_scan.conf; fi
 etc/c-icap/virus_scan.conf.default
 @exec [ -f %B/virus_scan.conf ] || cp %B/%f %B/virus_scan.conf
+lib/c_icap/clamav_mod.a
+lib/c_icap/clamav_mod.la
+lib/c_icap/clamav_mod.so
+lib/c_icap/clamd_mod.a
+lib/c_icap/clamd_mod.la
+lib/c_icap/clamd_mod.so
 lib/c_icap/srv_url_check.a
 lib/c_icap/srv_url_check.la
 lib/c_icap/srv_url_check.so

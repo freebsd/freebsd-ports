@@ -3,7 +3,7 @@
 PORTNAME=	hunspell
 PORTVERSION=	0.5.6
 CATEGORIES=	korean textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-dict-ko-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
@@ -14,9 +14,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
-USES=		gmake
+USES=		gmake tar:xz
 USE_PYTHON_BUILD=	yes
-USE_XZ=			yes
 
 PLIST_FILES=	%%DATADIR%%/ko_KR.aff \
 		%%DATADIR%%/ko_KR.dic

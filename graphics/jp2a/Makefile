@@ -7,21 +7,22 @@ PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Converts JPG images to ASCII
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-jpeg-prefix=${LOCALBASE} --with-curl-config=${LOCALBASE}/bin/curl-config
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
+CONFIGURE_ARGS=	--with-jpeg-prefix=${LOCALBASE} \
+		--with-curl-config=${LOCALBASE}/bin/curl-config
+
+PLIST_FILES=	bin/jp2a man/man1/jp2a.1.gz
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
-	@${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/jp2a ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/jp2a.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

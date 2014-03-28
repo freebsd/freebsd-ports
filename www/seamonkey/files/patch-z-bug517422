@@ -1,0 +1,263 @@
+# Allow building against system-wide ogg/vorbis/opus.
+
+diff --git config/Makefile.in config/Makefile.in
+index 5383399..4393ae8 100644
+--- mozilla/config/Makefile.in
++++ mozilla/config/Makefile.in
+@@ -79,6 +79,9 @@ export:: $(export-preqs)
+ 		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
+ 		-DMOZ_NATIVE_GRAPHITE2=$(MOZ_NATIVE_GRAPHITE2) \
+ 		-DMOZ_NATIVE_HARFBUZZ=$(MOZ_NATIVE_HARFBUZZ) \
++		-DMOZ_NATIVE_OGG=$(MOZ_NATIVE_OGG) \
++		-DMOZ_NATIVE_VORBIS=$(MOZ_NATIVE_VORBIS) \
++		-DMOZ_NATIVE_OPUS=$(MOZ_NATIVE_OPUS) \
+ 		$(srcdir)/system-headers | $(PERL) $(topsrcdir)/nsprpub/config/make-system-wrappers.pl system_wrappers
+ 	$(INSTALL) system_wrappers $(DIST)
+ 
+diff --git config/external/moz.build config/external/moz.build
+index c22a36c..740402e 100644
+--- mozilla/config/external/moz.build
++++ mozilla/config/external/moz.build
+@@ -15,13 +15,13 @@ if CONFIG['MOZ_UPDATER']:
+     if not CONFIG['MOZ_NATIVE_BZ2']:
+         external_dirs += ['modules/libbz2']
+ 
+-if CONFIG['MOZ_VORBIS']:
++if CONFIG['MOZ_VORBIS'] and not CONFIG['MOZ_NATIVE_VORBIS']:
+     external_dirs += ['media/libvorbis']
+ 
+ if CONFIG['MOZ_TREMOR']:
+     external_dirs += ['media/libtremor']
+ 
+-if CONFIG['MOZ_OPUS']:
++if CONFIG['MOZ_OPUS'] and not CONFIG['MOZ_NATIVE_OPUS']:
+     external_dirs += ['media/libopus']
+ 
+ if CONFIG['MOZ_WEBM']:
+@@ -34,7 +34,9 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ_NATIVE_LIBVPX']:
+     external_dirs += ['media/libvpx']
+ 
+ if CONFIG['MOZ_OGG']:
+-    external_dirs += ['media/libogg', 'media/libtheora']
++    if not CONFIG['MOZ_NATIVE_OGG']:
++        external_dirs += ['media/libogg']
++    external_dirs += ['media/libtheora']
+ 
+ if not CONFIG['MOZ_NATIVE_PNG']:
+     external_dirs += ['media/libpng']
+diff --git config/system-headers config/system-headers
+index b711fc3..fd3c14f 100644
+--- mozilla/config/system-headers
++++ mozilla/config/system-headers
+@@ -1153,3 +1153,17 @@ graphite2/Segment.h
+ harfbuzz/hb-ot.h
+ harfbuzz/hb.h
+ #endif
++#if MOZ_NATIVE_OGG==1
++ogg/ogg.h
++ogg/os_types.h
++#endif
++#if MOZ_NATIVE_VORBIS==1
++vorbis/codec.h
++vorbis/vorbisenc.h
++#endif
++#if MOZ_NATIVE_OPUS==1
++opus.h
++opus_multistream.h
++opus/opus.h
++opus/opus_multistream.h
++#endif
+diff --git configure.in configure.in
+index df49287..05e97ff 100644
+--- mozilla/configure.in
++++ mozilla/configure.in
+@@ -5130,6 +5130,40 @@ if test "${ac_cv_c_attribute_aligned}" != "0"; then
+ fi
+ 
+ dnl ========================================================
++dnl Check for libogg
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-ogg,
++[  --with-system-ogg       Use system libogg (located with pkgconfig)],
++MOZ_NATIVE_OGG=1,
++MOZ_NATIVE_OGG= )
++
++if test -n "$MOZ_NATIVE_OGG"; then
++    PKG_CHECK_MODULES(MOZ_OGG, ogg >= 1.2.1)
++fi
++
++AC_SUBST(MOZ_NATIVE_OGG)
++AC_SUBST(MOZ_OGG_CFLAGS)
++AC_SUBST(MOZ_OGG_LIBS)
++
++dnl ========================================================
++dnl Check for libvorbis
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-vorbis,
++[  --with-system-vorbis    Use system libvorbis (located with pkgconfig)],
++MOZ_NATIVE_VORBIS=1,
++MOZ_NATIVE_VORBIS= )
++
++if test -n "$MOZ_NATIVE_VORBIS"; then
++    PKG_CHECK_MODULES(MOZ_VORBIS, vorbis vorbisenc >= 1.3.4)
++fi
++
++AC_SUBST(MOZ_NATIVE_VORBIS)
++AC_SUBST(MOZ_VORBIS_CFLAGS)
++AC_SUBST(MOZ_VORBIS_LIBS)
++
++dnl ========================================================
+ dnl = Disable Opus audio codec support
+ dnl ========================================================
+ MOZ_ARG_DISABLE_BOOL(opus,
+@@ -5138,6 +5172,25 @@ MOZ_ARG_DISABLE_BOOL(opus,
+     MOZ_OPUS=1)
+ 
+ dnl ========================================================
++dnl Check for libopus
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-opus,
++[  --with-system-opus      Use system libopus (located with pkgconfig)],
++MOZ_NATIVE_OPUS=1,
++MOZ_NATIVE_OPUS= )
++
++if test -n "$MOZ_NATIVE_OPUS"; then
++    PKG_CHECK_MODULES(MOZ_OPUS, opus >= 1.1)
++else
++    MOZ_OPUS_CFLAGS='-I$(topsrcdir)/media/libopus/include'
++fi
++
++AC_SUBST(MOZ_NATIVE_OPUS)
++AC_SUBST(MOZ_OPUS_CFLAGS)
++AC_SUBST(MOZ_OPUS_LIBS)
++
++dnl ========================================================
+ dnl = Disable VP8 decoder support
+ dnl ========================================================
+ MOZ_ARG_DISABLE_BOOL(webm,
+diff --git content/media/Makefile.in content/media/Makefile.in
+index 68f360e..76f2d57 100644
+--- mozilla/content/media/Makefile.in
++++ mozilla/content/media/Makefile.in
+@@ -7,4 +7,16 @@ include $(topsrcdir)/config/rules.mk
+ CFLAGS   += $(GSTREAMER_CFLAGS)
+ CXXFLAGS += $(GSTREAMER_CFLAGS)
+ 
++ifdef MOZ_NATIVE_OGG
++CXXFLAGS += $(MOZ_OGG_CFLAGS)
++endif
++
++ifdef MOZ_NATIVE_VORBIS
++CXXFLAGS += $(MOZ_VORBIS_CFLAGS)
++endif
++
++ifdef MOZ_NATIVE_OPUS
++CXXFLAGS += $(MOZ_OPUS_CFLAGS)
++endif
++
+ AudioNodeEngineNEON.$(OBJ_SUFFIX): CXXFLAGS += -mfpu=neon
+diff --git media/libtheora/Makefile.in media/libtheora/Makefile.in
+new file mode 100644
+index 0000000..1f02dc0
+--- /dev/null
++++ mozilla/media/libtheora/Makefile.in
+@@ -0,0 +1,9 @@
++# This Source Code Form is subject to the terms of the Mozilla Public
++# License, v. 2.0. If a copy of the MPL was not distributed with this
++# file, You can obtain one at http://mozilla.org/MPL/2.0/.
++
++include $(topsrcdir)/config/rules.mk
++
++ifdef MOZ_NATIVE_OGG
++CFLAGS += $(MOZ_OGG_CFLAGS)
++endif
+diff --git media/libtremor/Makefile.in media/libtremor/Makefile.in
+new file mode 100644
+index 0000000..1f02dc0
+--- /dev/null
++++ mozilla/media/libtremor/Makefile.in
+@@ -0,0 +1,9 @@
++# This Source Code Form is subject to the terms of the Mozilla Public
++# License, v. 2.0. If a copy of the MPL was not distributed with this
++# file, You can obtain one at http://mozilla.org/MPL/2.0/.
++
++include $(topsrcdir)/config/rules.mk
++
++ifdef MOZ_NATIVE_OGG
++CFLAGS += $(MOZ_OGG_CFLAGS)
++endif
+diff --git media/libvorbis/Makefile.in media/libvorbis/Makefile.in
+new file mode 100644
+index 0000000..1f02dc0
+--- /dev/null
++++ mozilla/media/libvorbis/Makefile.in
+@@ -0,0 +1,9 @@
++# This Source Code Form is subject to the terms of the Mozilla Public
++# License, v. 2.0. If a copy of the MPL was not distributed with this
++# file, You can obtain one at http://mozilla.org/MPL/2.0/.
++
++include $(topsrcdir)/config/rules.mk
++
++ifdef MOZ_NATIVE_OGG
++CFLAGS += $(MOZ_OGG_CFLAGS)
++endif
+diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
+index c5e82c4..91ef86a 100644
+--- mozilla/media/webrtc/signaling/test/Makefile.in
++++ mozilla/media/webrtc/signaling/test/Makefile.in
+@@ -48,6 +48,12 @@ LIBS += \
+   $(NULL)
+ endif
+ 
++ifdef MOZ_NATIVE_OPUS
++LIBS += \
++  $(MOZ_OPUS_LIBS) \
++  $(NULL)
++endif
++
+ ifdef MOZ_NATIVE_LIBVPX
+ LIBS += \
+   $(MOZ_LIBVPX_LIBS) \
+diff --git media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi
+index 00e77e7..55f48ab 100644
+--- mozilla/media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi
++++ mozilla/media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi
+@@ -14,9 +14,9 @@
+       'conditions': [
+         ['build_with_mozilla==1', {
+           # Mozilla provides its own build of the opus library.
+-          'include_dirs': [
+-            '$(DIST)/include/opus',
+-           ]
++          'cflags_mozilla': [
++            '$(MOZ_OPUS_CFLAGS)',
++          ],
+         }, {
+           'dependencies': [
+             '<(DEPTH)/third_party/opus/opus.gyp:opus'
+diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
+index 27f488e..cd27084 100644
+--- mozilla/toolkit/library/Makefile.in
++++ mozilla/toolkit/library/Makefile.in
+@@ -91,6 +91,18 @@ ifdef MOZ_NATIVE_HUNSPELL
+ EXTRA_DSO_LDOPTS += $(MOZ_HUNSPELL_LIBS)
+ endif
+ 
++ifdef MOZ_NATIVE_OGG
++EXTRA_DSO_LDOPTS += $(MOZ_OGG_LIBS)
++endif
++
++ifdef MOZ_NATIVE_VORBIS
++EXTRA_DSO_LDOPTS += $(MOZ_VORBIS_LIBS)
++endif
++
++ifdef MOZ_NATIVE_OPUS
++EXTRA_DSO_LDOPTS += $(MOZ_OPUS_LIBS)
++endif
++
+ ifdef MOZ_NATIVE_LIBEVENT
+ EXTRA_DSO_LDOPTS += $(MOZ_LIBEVENT_LIBS)
+ endif

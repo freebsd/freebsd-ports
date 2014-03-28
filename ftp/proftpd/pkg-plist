@@ -45,7 +45,6 @@ include/proftpd/libsupp.h
 include/proftpd/log.h
 include/proftpd/memcache.h
 include/proftpd/mkhome.h
-%%CLAMAV%%include/proftpd/mod_clamav.h
 include/proftpd/mod_wrap2.h
 include/proftpd/mod_sftp.h
 include/proftpd/mod_sql.h
@@ -84,9 +83,6 @@ libdata/pkgconfig/proftpd.pc
 libexec/proftpd/mod_ban.a
 libexec/proftpd/mod_ban.la
 libexec/proftpd/mod_ban.so
-%%CLAMAV%%libexec/proftpd/mod_clamav.a
-%%CLAMAV%%libexec/proftpd/mod_clamav.la
-%%CLAMAV%%libexec/proftpd/mod_clamav.so
 libexec/proftpd/mod_copy.a
 libexec/proftpd/mod_copy.la
 libexec/proftpd/mod_copy.so

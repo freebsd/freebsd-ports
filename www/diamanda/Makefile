@@ -20,10 +20,9 @@ SNAPSHOT=	2007.04.26
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_PYTHON=	yes
-USES=		gettext
+USES=		tar:bzip2 gettext
 SUB_FILES=	pkg-message
 
 NO_STAGE=	yes

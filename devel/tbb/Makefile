@@ -18,10 +18,12 @@ ONLY_FOR_ARCHS=	amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 
 USE_LDCONFIG=	yes
-USES=	gmake
+USES=	compiler gmake
 ALL_TARGET=	default
 
 WRKSRC=	${WRKDIR}/${DISTNAME:S/_src//}
+
+.include <bsd.port.pre.mk>
 
 post-extract:
 .if ${CC} != "gcc"
@@ -32,6 +34,10 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' -e 's|g++|${CXX}|g' \
 		${WRKSRC}/build/FreeBSD.${CC}.inc
+.if ${COMPILER_TYPE} != "gcc"
+	@${REINPLACE_CMD} -e 's| -fno-schedule-insns2||g' \
+		${WRKSRC}/build/FreeBSD.${CC}.inc
+.endif
 
 do-install:
 	cd ${WRKSRC}; \
@@ -46,4 +52,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tbb/; \
 	cd include/tbb/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/tbb/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,18 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	liboauth
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	C library implementing the OAuth Core standard
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
+INSTALL_TARGET=	install-strip
 
 USE_OPENSSL=	yes
 USES=		pkgconfig

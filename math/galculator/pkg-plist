@@ -23,8 +23,10 @@ share/icons/hicolor/48x48/apps/galculator.png
 share/icons/hicolor/scalable/apps/galculator.svg
 share/locale/da_DK/LC_MESSAGES/galculator.mo
 share/locale/de/LC_MESSAGES/galculator.mo
+share/locale/es/LC_MESSAGES/galculator.mo
 share/locale/es_MX/LC_MESSAGES/galculator.mo
 share/locale/fr/LC_MESSAGES/galculator.mo
+share/locale/hu/LC_MESSAGES/galculator.mo
 share/locale/ja/LC_MESSAGES/galculator.mo
 share/locale/kk_KZ/LC_MESSAGES/galculator.mo
 share/locale/lt/LC_MESSAGES/galculator.mo

@@ -13,25 +13,22 @@ COMMENT=	Postfix Log Entry Summarizer
 
 RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 
+USES=		perl5 shebangfix
 NO_BUILD=	yes
-USES=		perl5
-PLIST_FILES=	bin/pflogsumm
-.if !defined(NOPORTDOCS)
+
+PLIST_FILES=	bin/pflogsumm man/man1/pflogsumm.1.gz
+SHEBANG_FILES=	${PORTNAME}.pl
 PORTDOCS=	README ToDo pflogsumm-faq.txt
-.endif
 
-MAN1=		pflogsumm.1
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
-		${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -22,11 +22,11 @@ PLIST_FILES=	bin/panoptis \
 		bin/pview.py \
 		bin/speed.py
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/panoptis/panoptis ${PREFIX}/bin/panoptis
+	${INSTALL_PROGRAM} ${WRKSRC}/panoptis/panoptis \
+		${STAGEDIR}${PREFIX}/bin/panoptis
 .for f in mail.py pview.py speed.py
-	${INSTALL_SCRIPT} ${WRKSRC}/panoptis/${f} ${PREFIX}/bin/${f}
+	${INSTALL_SCRIPT} ${WRKSRC}/panoptis/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
 .include <bsd.port.mk>

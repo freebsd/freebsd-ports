@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.eterna.com.au/bozohttpd/ \
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	The bozotic HTTP server
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_BZIP2=	YES
 USE_RC_SUBR=	bozohttpd

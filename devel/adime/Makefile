@@ -14,11 +14,9 @@ LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
 
 USES=	gmake
 
-NO_STAGE=	yes
-.include "Makefile.man"
-
 MAKEFILE=	makefile
 INSTALL_TARGET=	install install-man
+MAKE_ARGS=	SYSTEM_DIR=${STAGEDIR}${PREFIX}
 USE_LDCONFIG=	yes
 
 pre-build:

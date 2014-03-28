@@ -15,6 +15,8 @@ COMMENT=	Compiler for the functional language Haskell
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+MAKE_JOBS_NUMBER_LIMIT=		4
+
 GHC_VERSION=		${PORTVERSION}
 HSCOLOUR_VERSION=	1.20.3
 

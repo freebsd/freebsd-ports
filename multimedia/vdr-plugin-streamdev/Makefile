@@ -9,13 +9,13 @@ MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/953/:releas
 		LOCAL:snapshot
 MASTER_SITE_SUBDIR=	nox/:snapshot
 DISTFILES=	${DISTNAME:S/plugin-//}${EXTRACT_SUFX}:release
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - stream device plugin
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
+USES=		tar:tgz
 PORTDOCS=	COPYING README HISTORY
 HAVE_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

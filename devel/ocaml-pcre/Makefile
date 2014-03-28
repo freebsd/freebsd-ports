@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcre
-PORTVERSION=	7.0.2
+PORTVERSION=	7.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/mmottl/pcre-ocaml/downloads/
 PKGNAMEPREFIX=	ocaml-
@@ -11,23 +11,21 @@ DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX}${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Perl compatible regular expressions for Objective Caml
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 
-PORTEXAMPLES=	*
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
-
-PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/pcre-ocaml
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$prefix"/"share|${STAGEDIR}${PREFIX}/share|' \
+		${WRKSRC}/setup.ml
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

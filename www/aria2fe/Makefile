@@ -15,8 +15,7 @@ LICENSE=	GPLv3 # (or later)
 RUN_DEPENDS=	aria2c:${PORTSDIR}/www/aria2 \
 		xterm:${PORTSDIR}/x11/xterm
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 qmake
 USE_QT4=	gui moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/${PORTNAME}

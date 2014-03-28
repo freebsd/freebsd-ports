@@ -41,19 +41,15 @@ BLAST_EXE=	bl2seq blastall blastcl3 blastclust blastpgp copymat \
 X11_EXE=	Nentrez Psequin ddv entrez2 sbtedit udv
 
 # and these are the man pages we have
-MAN1=		Psequin.1 asn2ff.1 asn2idx.1 asn2xml.1 asndhuff.1 \
+MAN_FILES=	Psequin.1 asn2ff.1 asn2idx.1 asn2xml.1 asndhuff.1 \
 		asntool.1 blast.1 blastclust.1 cdscan.1 checksub.1 \
 		copymat.1 ddv.1 debruijn.1 entrez2.1 errhdr.1 fa2htgs.1 \
 		fastacmd.1 findspl.1 formatdb.1 formatrpsdb.1 getmesh.1 \
 		getpub.1 gil2bin.1 idfetch.1 indexpub.1 makemat.1 \
 		taxblast.1 tbl2asn.1 udv.1 vecscreen.1
 
-MLINKS=		blast.1 bl2seq.1 blast.1 blastall.1 blast.1 blastcl3.1 \
-		blast.1 blastpgp.1 blast.1 impala.1 blast.1 megablast.1 \
-		blast.1 seedtop.1 blast.1 rpsblast.1 
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+MAN_LINKS=	bl2seq blastall blastcl3 blastpgp impala megablast \
+		seedtop rpsblast
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -80,36 +76,28 @@ do-build:
 # we thus roll our own
 
 do-install:
-.for blastexe in ${BLAST_EXE}
-	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${blastexe} ${PREFIX}/bin)
-.endfor
-.for toolkitexe in ${TOOLKIT_EXE}
-	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${toolkitexe} ${PREFIX}/bin)
-.endfor
-.for x11exe in ${X11_EXE}
-	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${x11exe} ${PREFIX}/bin)
-.endfor
-	@${MKDIR} ${PREFIX}/lib/${DISTNAME}
-	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.a ${PREFIX}/lib/${DISTNAME})
-	@${MKDIR} ${PREFIX}/include/${DISTNAME}
+	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${BLAST_EXE} \
+		${TOOLKIT_EXE} ${X11_EXE} ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${DISTNAME}
+	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.a \
+		${STAGEDIR}${PREFIX}/lib/${DISTNAME})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${DISTNAME}/connect
 	(cd ${WRKSRC}/include && ${INSTALL_DATA} *.h \
-		${PREFIX}/include/${DISTNAME})
-	@${MKDIR} ${PREFIX}/include/${DISTNAME}/connect
+		${STAGEDIR}${PREFIX}/include/${DISTNAME})
 	(cd ${WRKSRC}/include/connect && ${INSTALL_DATA} *.h \
-		${PREFIX}/include/${DISTNAME}/connect)
-.for man in ${MAN1}
-	(cd ${WRKSRC}/doc/man && ${INSTALL_MAN} ${man} ${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/include/${DISTNAME}/connect)
+	(cd ${WRKSRC}/doc/man && ${INSTALL_MAN} ${MAN_FILES} \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+.for man in ${MAN_LINKS}
+	${LN} -s ${MANPREFIX}/man/man1/blast.1.gz \
+		${STAGEDIR}${PREFIX}/man/man1/${man}.1.gz
 .endfor
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/data && ${INSTALL_DATA} * ${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/data && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${TAR} --exclude man -cf - .) | \
-		(cd ${DOCSDIR} && ${TAR} --unlink -xf -)
-	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.endif
-	@${CAT} ${PKGMESSAGE}
+		(cd ${STAGEDIR}${DOCSDIR} && ${TAR} --unlink -xf -)
+	@${FIND} ${STAGEDIR}${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+rx
+	@${FIND} ${STAGEDIR}${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 .include <bsd.port.mk>

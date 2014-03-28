@@ -13,13 +13,13 @@ COMMENT=	Discover/audit forward and reverse DNS records
 RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		nmap:${PORTSDIR}/security/nmap
 
-PLIST_FILES=	bin/scavenge
-
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/scavenge
+SHEBANG_FILES=	src/scavenge
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/src/scavenge ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/src/scavenge ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

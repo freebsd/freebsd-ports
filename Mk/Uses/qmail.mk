@@ -1,7 +1,5 @@
 # $FreeBSD$
 #
-# MAINTAINER=	bdrewery@FreeBSD.org
-#
 # Feature:	qmail
 # Usage:	USES=qmail or USES=qmail:ARGS
 # Valid ARGS:	both (default, implicit), run, build, vars
@@ -15,6 +13,7 @@
 #			  prevent stale dependencies. Valid slaveports are:
 #			  ldap, mysql, spamcontrol and tls.
 #
+# MAINTAINER=	bdrewery@FreeBSD.org
 
 .if !defined(_INCLUDE_QMAIL_MK)
 _INCLUDE_QMAIL_MK=	yes

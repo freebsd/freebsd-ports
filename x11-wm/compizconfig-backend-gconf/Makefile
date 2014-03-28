@@ -13,13 +13,11 @@ COMMENT=	The gconf backend for CompizConfig
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
 LIB_DEPENDS=	compizconfig.0:${PORTSDIR}/x11-wm/libcompizconfig
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gmake tar:bzip2
 USE_GNOME=	glib20 gconf2
 
 NO_STAGE=	yes

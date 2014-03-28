@@ -7,6 +7,3 @@ language (e.g. Lingua::Romana::Perligata). Effec- tively, it allows one to use
 the full power of Perl as its own, recur- sively applied, macro language.
 
 WWW: http://search.cpan.org/dist/Filter-Simple/
-
-Philip M. Gollucci
-<pgollucci@p6m7g8.com>

@@ -14,7 +14,7 @@ COMMENT=	Generic Apache2 Request Library
 LICENSE=	APACHE20
 
 USE_APACHE=	22+
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf libtool
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}

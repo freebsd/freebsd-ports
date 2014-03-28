@@ -33,7 +33,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/fldiff.man ${STAGEDIR}${MAN1PREFIX}/man/man1/fldiff.1
 	${INSTALL_DATA} ${WRKSRC}/fldiff.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/fldiff.png ${STAGEDIR}${PREFIX}/share/pixmaps
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

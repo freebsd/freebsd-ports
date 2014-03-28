@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pytsk
-DISTVERSION=	2014-02-09
+PORTVERSION=	20140320
 CATEGORIES=	sysutils security devel python
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiScUxsUm54cG02RDA/ \
 		LOCAL/antoine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python bindings for the Sleuthkit
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libtsk.so:${PORTSDIR}/sysutils/sleuthkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		shebangfix
+USES=		shebangfix tar:tgz
 SHEBANG_FILES=	samples/*.py
 python_OLD_CMD=	.*
 python_CMD=	${PYTHON_CMD}

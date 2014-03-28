@@ -2,8 +2,6 @@
 #
 # Provide support for Zope-related ports
 #
-# MAINTAINER: zope@FreeBSD.org
-#
 # SZOPEBASEDIR		- relative base directory of zope server
 # ZOPEBASEDIR		- absolute base directory of zope that is
 #					  ${LOCALBASE}/${SZOPEBASEDIR} by default,
@@ -13,6 +11,8 @@
 #					  in your /etc/make.conf in case you want to use a
 #					  specific version of zope.
 #
+# MAINTAINER: zope@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_ZOPE_MK)
 _INCLUDE_USES_ZOPE_MK=	yes
 

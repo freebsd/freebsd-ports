@@ -100,6 +100,7 @@
     SUBDIR += cyrus-sasl2-gssapi
     SUBDIR += cyrus-sasl2-ldapdb
     SUBDIR += cyrus-sasl2-saslauthd
+    SUBDIR += d0_blind_id
     SUBDIR += dcetest
     SUBDIR += ddos_scan
     SUBDIR += denyhosts
@@ -238,6 +239,7 @@
     SUBDIR += kedpm
     SUBDIR += keepassx
     SUBDIR += keepassx2
+    SUBDIR += keybase
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
@@ -576,6 +578,7 @@
     SUBDIR += p5-Net-Radius-Server
     SUBDIR += p5-Net-SAML
     SUBDIR += p5-Net-SSL-ExpireDate
+    SUBDIR += p5-Net-SSLGlue
     SUBDIR += p5-Net-SSLeay
     SUBDIR += p5-Net-Server-Mail-ESMTP-AUTH
     SUBDIR += p5-Net-SinFP
@@ -728,6 +731,7 @@
     SUBDIR += prelude-lml
     SUBDIR += prelude-manager
     SUBDIR += prelude-pflogger
+    SUBDIR += proftpd-mod_clamav
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pscan
@@ -746,6 +750,7 @@
     SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
     SUBDIR += py-SecretStorage
+    SUBDIR += py-backports.ssl_match_hostname
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole
     SUBDIR += py-cerealizer

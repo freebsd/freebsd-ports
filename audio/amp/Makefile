@@ -16,6 +16,10 @@ USES=		gmake
 PLIST_FILES=	bin/amp \
 		man/man1/amp.1.gz
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|-O6 -ffast-math -fomit-frame-pointer|${CFLAGS}|' \
+		-e 's|gcc|${CC}|' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/amp ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/amp.1 ${STAGEDIR}${PREFIX}/man/man1

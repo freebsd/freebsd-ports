@@ -131,6 +131,7 @@
     SUBDIR += jakarta-commons-jelly
     SUBDIR += jimtcl
     SUBDIR += jruby
+    SUBDIR += js_of_ocaml
     SUBDIR += jython
     SUBDIR += kawa
     SUBDIR += klone
@@ -141,7 +142,6 @@
     SUBDIR += libjit
     SUBDIR += libobjc2
     SUBDIR += librep
-    SUBDIR += libstdc++_stldoc_3.4.0
     SUBDIR += libstdc++_stldoc_4.2.2
     SUBDIR += linux-f10-libg2c
     SUBDIR += linux-f10-tcl85
@@ -301,7 +301,6 @@
     SUBDIR += scala
     SUBDIR += scala-docs
     SUBDIR += scheme48
-    SUBDIR += schemetoc
     SUBDIR += scm
     SUBDIR += scsh
     SUBDIR += sdcc

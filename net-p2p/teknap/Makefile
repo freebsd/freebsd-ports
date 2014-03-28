@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/TekNap
 PLIST_FILES=	bin/TekNap \
 		bin/TekNap-1.3g
 
-USE_GMAKE=	yes
+USES=	gmake
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 DOCSDIR=	${PREFIX}/share/doc/TekNap

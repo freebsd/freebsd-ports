@@ -137,7 +137,6 @@
     SUBDIR += ljclive
     SUBDIR += ljit
     SUBDIR += logjam
-    SUBDIR += lxshortcut
     SUBDIR += mate-character-map
     SUBDIR += mate-file-manager-open-terminal
     SUBDIR += mate-menu-editor
@@ -161,6 +160,7 @@
     SUBDIR += nautilus-open-terminal
     SUBDIR += nautilus-sendto
     SUBDIR += nemo-extensions
+    SUBDIR += note
     SUBDIR += notecase
     SUBDIR += notification-daemon
     SUBDIR += notify-osd

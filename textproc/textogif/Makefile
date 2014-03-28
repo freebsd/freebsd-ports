@@ -16,12 +16,13 @@ RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
 NO_BUILD=	yes
 USE_TEX=	latex dvipsk
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
+SHEBANG_FILES=	textogif
+
 do-install:
-	@cd ${WRKDIR};\
-	${INSTALL_SCRIPT} ${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

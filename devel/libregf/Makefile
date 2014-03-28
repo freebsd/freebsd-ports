@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libregf
-DISTVERSION=	alpha-20140118
+DISTVERSION=	alpha-20140323
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSSC1yUDZpb3l0UHM/ \
 		LOCAL/antoine
@@ -14,9 +14,10 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} ${ICONV_CONFIGURE_ARG}
-USES=		fuse gettext iconv pathfix pkgconfig
+USES=		fuse gettext iconv libtool pathfix pkgconfig
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
 
 PORTDOCS=	AUTHORS ChangeLog

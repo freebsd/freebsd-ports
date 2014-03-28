@@ -1,7 +1,9 @@
+@comment $FreeBSD$
 bin/jvim
 bin/jvim3
 bin/jgrep
 lib/jvim3.hlp
+man/man1/jvim3.1.gz
 @unexec if cmp -s %D/etc/jvim3rc %D/etc/jvim3rc.dist; then rm -f %D/etc/jvim3rc; fi
 etc/jvim3rc.dist
 @exec if [ ! -f %D/etc/jvim3rc ]; then cp %D/etc/jvim3rc.dist %D/etc/jvim3rc; fi

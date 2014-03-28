@@ -15,6 +15,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
 		libOIS.so:${PORTSDIR}/devel/ois
 
+BROKEN=		Does not compile with graphics/ogre3d 1.9.0
+
 USES=		cmake pkgconfig zip
 CMAKE_ARGS=	-DMYGUI_BUILD_DEMOS=OFF -DMYGUI_BUILD_DOCS=OFF
 USE_LDCONFIG=	yes

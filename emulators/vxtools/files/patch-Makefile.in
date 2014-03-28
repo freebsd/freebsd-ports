@@ -1,0 +1,12 @@
+--- ./Makefile.in.orig	1999-12-02 18:52:25.000000000 +0100
++++ ./Makefile.in	2014-03-14 13:55:04.943662466 +0100
+@@ -10,8 +10,7 @@
+ MAN8 = prtvtoc.8
+ 
+ CC = @CC@
+-CFLAGS = -Wall -g -I.
+-LDFLAGS = -g
++CFLAGS += -Wall -I.
+ 
+ all:	$(BINS)
+ 

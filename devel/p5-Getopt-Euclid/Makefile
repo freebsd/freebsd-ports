@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Getopt-Euclid
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,6 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

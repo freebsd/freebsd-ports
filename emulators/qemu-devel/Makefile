@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTVERSION=	1.7.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -15,8 +14,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
 
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gmake pkgconfig bison perl5
+USES=		gmake pkgconfig bison perl5 tar:bzip2
 USE_PERL5=	build
 USE_PYTHON_BUILD=	2
 USE_XORG=	pixman
@@ -68,6 +66,7 @@ PATCHFILES= \
 	0018-bsd-user-add-arm-mips-and-mips64-options-to-configur.patch
 PATCH_DIST_STRIP=	-p1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-freebsd-os-proc.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-05ee8495804599b52a88eb36b13ea9c06b3207cd
 .endif
 
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib

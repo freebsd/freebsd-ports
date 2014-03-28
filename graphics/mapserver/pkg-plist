@@ -15,6 +15,4 @@ lib/libmapserver.so.6.4.0
 %%PHP%%@dirrmtry %%PHP_EXTENSION_DIR%%
 %%PHP%%@dirrmtry etc/php
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_mapscript.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%MAP_EGG%%.egg-info

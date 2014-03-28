@@ -1331,7 +1331,7 @@
  	;;
  i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	tm_file="i386/i386.h i386/unix.h i386/bsd.h i386/gas.h i386/gstabs.h openbsd-oldgas.h openbsd.h i386/openbsd.h"
-@@ -4106,6 +4137,8 @@
+@@ -4109,6 +4140,8 @@
  		;;
  	i[34567]86-*-mingw* | x86_64-*-mingw*)
  		;;
@@ -1342,7 +1342,7 @@
  	ia64*-*-linux*)
 --- gcc/configure.orig
 +++ gcc/configure
-@@ -27347,6 +27347,20 @@
+@@ -27421,6 +27421,20 @@
        gcc_cv_target_dl_iterate_phdr=no
      fi
      ;;
@@ -1414,7 +1414,7 @@
  insn-preds.c: s-preds; @true
  tm-preds.h: s-preds-h; @true
  tm-constrs.h: s-constrs-h; @true
-@@ -3207,6 +3218,9 @@
+@@ -3208,6 +3219,9 @@
  	-rm -f $(DESTDIR)$(bindir)/$(target_noncanonical)-gcc-$(version)$(exeext)
  	-( cd $(DESTDIR)$(bindir) && \
  	   $(LN) $(GCC_INSTALL_NAME)$(exeext) $(target_noncanonical)-gcc-$(version)$(exeext) )
@@ -1438,7 +1438,7 @@
  *-*-freebsd*)
    # This is the generic ELF configuration of FreeBSD.  Later
    # machine-specific sections may refine and add to this
-@@ -235,7 +240,8 @@
+@@ -238,7 +243,8 @@
    extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
    ;;
  *-*-netbsd*)
@@ -1448,7 +1448,7 @@
    # NetBSD 1.7 and later are set up to use GCC's crtstuff for
    # ELF configurations.  We will clear extra_parts in the
    # a.out configurations.
-@@ -299,7 +305,10 @@
+@@ -302,7 +308,10 @@
  esac
  
  case ${host} in
@@ -1460,7 +1460,7 @@
    enable_execute_stack=enable-execute-stack-mprotect.c
    ;;
  i[34567]86-*-mingw* | x86_64-*-mingw*)
-@@ -542,16 +551,29 @@
+@@ -545,16 +554,29 @@
  x86_64-*-elf*)
  	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
  	;;
@@ -1490,7 +1490,7 @@
  	;;
  i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	;;
-@@ -1256,6 +1278,7 @@
+@@ -1259,6 +1281,7 @@
    i[34567]86-*-solaris2* | x86_64-*-solaris2.1[0-9]* | \
    i[34567]86-*-cygwin* | x86_64-*-cygwin* | \
    i[34567]86-*-mingw* | x86_64-*-mingw* | \

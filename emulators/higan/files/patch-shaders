@@ -1,0 +1,22 @@
+--- ./target-ethos/general/presentation.cpp.orig	2013-12-06 15:19:40.000000000 -0500
++++ ./target-ethos/general/presentation.cpp	2014-03-16 22:40:31.000000000 -0400
+@@ -235,7 +235,7 @@
+ void Presentation::loadShaders() {
+   //only the OpenGL driver has video shader support
+   if(config->video.driver == "OpenGL") {
+-    string pathname = program->path("Video Shaders/");
++    string pathname = program->path("shaders/");
+     lstring shaders = directory::folders(pathname, "*.shader");
+     for(auto& name : shaders) {
+       auto shader = new RadioItem;
+--- ./target-ethos/utility/utility.cpp.orig	2013-12-21 02:00:03.000000000 -0500
++++ ./target-ethos/utility/utility.cpp	2014-03-16 22:41:03.000000000 -0400
+@@ -203,7 +203,7 @@
+     video.set(Video::Filter, Video::FilterLinear);
+   } else if(config->video.shader == "Display Emulation") {
+     if(program->active) {
+-      string pathname = program->path("Video Shaders/");
++      string pathname = program->path("shaders/");
+       pathname.append("Display Emulation/");
+       pathname.append(presentation->systemName, ".shader/");
+       if(directory::exists(pathname)) {

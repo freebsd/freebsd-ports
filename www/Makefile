@@ -182,6 +182,7 @@
     SUBDIR += egueb
     SUBDIR += elgg
     SUBDIR += elinks
+    SUBDIR += eliom
     SUBDIR += elog
     SUBDIR += emacs-w3m
     SUBDIR += emacs-w3m-emacs21
@@ -224,6 +225,7 @@
     SUBDIR += foswiki-ModPerlEngineContrib
     SUBDIR += fpc-fastcgi
     SUBDIR += fpc-httpd22
+    SUBDIR += fpc-httpd24
     SUBDIR += free-sa
     SUBDIR += free-sa-devel
     SUBDIR += freeway
@@ -431,6 +433,7 @@
     SUBDIR += mediawiki119
     SUBDIR += mediawiki120
     SUBDIR += mediawiki121
+    SUBDIR += mediawiki122
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
@@ -512,8 +515,11 @@
     SUBDIR += mod_ntlm2
     SUBDIR += mod_pagespeed
     SUBDIR += mod_perl2
+    SUBDIR += mod_php5
+    SUBDIR += mod_php55
     SUBDIR += mod_proctitle
     SUBDIR += mod_proxy_html
+    SUBDIR += mod_proxy_uwsgi
     SUBDIR += mod_proxy_xml
     SUBDIR += mod_python3
     SUBDIR += mod_qos
@@ -546,6 +552,7 @@
     SUBDIR += moodle
     SUBDIR += moodle24
     SUBDIR += moodle25
+    SUBDIR += moodle26
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += multiwatch
@@ -1001,6 +1008,7 @@
     SUBDIR += p5-HTTP-Exception
     SUBDIR += p5-HTTP-HeaderParser-XS
     SUBDIR += p5-HTTP-Headers-Fast
+    SUBDIR += p5-HTTP-Link-Parser
     SUBDIR += p5-HTTP-Lite
     SUBDIR += p5-HTTP-MHTTP
     SUBDIR += p5-HTTP-Message

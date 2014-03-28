@@ -59,7 +59,7 @@ SVGALIB_CONFIGURE_ENABLE=	video-svga
 SVGALIB_LIB_DEPENDS=		libvga.so:${PORTSDIR}/graphics/svgalib
 VGL_CONFIGURE_ENABLE=		video-vgl
 X11_CONFIGURE_ENABLE=		video-x11
-X11_USE=			XORG= x11 xrender xrandr xextproto
+X11_USE=			XORG=x11,xrender,xrandr,xextproto
 
 .include <bsd.port.options.mk>
 

@@ -3066,48 +3066,48 @@ share/icons/hicolor/256x256/apps/kadu.png
 %%DATADIR%%/themes/icons/default/protocols/xmpp/svg/offline_d.svg
 %%DATADIR%%/themes/icons/default/protocols/xmpp/svg/online.svg
 %%DATADIR%%/themes/icons/default/protocols/xmpp/svg/online_d.svg
-%%DATADIR%%/themes/icons/glass/16x16/application-exit.png
-%%DATADIR%%/themes/icons/glass/16x16/audio-input-microphone.png
-%%DATADIR%%/themes/icons/glass/16x16/audio-volume-high.png
-%%DATADIR%%/themes/icons/glass/16x16/audio-volume-low.png
-%%DATADIR%%/themes/icons/glass/16x16/audio-volume-muted.png
-%%DATADIR%%/themes/icons/glass/16x16/contact-new.png
-%%DATADIR%%/themes/icons/glass/16x16/dialog-apply.png
-%%DATADIR%%/themes/icons/glass/16x16/dialog-cancel.png
-%%DATADIR%%/themes/icons/glass/16x16/dialog-error.png
 %%DATADIR%%/themes/icons/glass/16x16/dialog-information.png
-%%DATADIR%%/themes/icons/glass/16x16/dialog-ok.png
-%%DATADIR%%/themes/icons/glass/16x16/dialog-password.png
-%%DATADIR%%/themes/icons/glass/16x16/document-open.png
-%%DATADIR%%/themes/icons/glass/16x16/document-save.png
-%%DATADIR%%/themes/icons/glass/16x16/document-send.png
 %%DATADIR%%/themes/icons/glass/16x16/edit-clear-locationbar-ltr.png
 %%DATADIR%%/themes/icons/glass/16x16/edit-clear-locationbar-rtl.png
-%%DATADIR%%/themes/icons/glass/16x16/edit-clear.png
-%%DATADIR%%/themes/icons/glass/16x16/edit-copy.png
-%%DATADIR%%/themes/icons/glass/16x16/edit-delete.png
-%%DATADIR%%/themes/icons/glass/16x16/edit-find.png
-%%DATADIR%%/themes/icons/glass/16x16/face-smile.png
-%%DATADIR%%/themes/icons/glass/16x16/format-text-bold.png
-%%DATADIR%%/themes/icons/glass/16x16/format-text-italic.png
-%%DATADIR%%/themes/icons/glass/16x16/format-text-underline.png
-%%DATADIR%%/themes/icons/glass/16x16/go-jump.png
-%%DATADIR%%/themes/icons/glass/16x16/go-next.png
-%%DATADIR%%/themes/icons/glass/16x16/go-previous.png
-%%DATADIR%%/themes/icons/glass/16x16/group-new.png
-%%DATADIR%%/themes/icons/glass/16x16/help-contents.png
-%%DATADIR%%/themes/icons/glass/16x16/insert-image.png
-%%DATADIR%%/themes/icons/glass/16x16/internet-group-chat.png
-%%DATADIR%%/themes/icons/glass/16x16/list-add.png
-%%DATADIR%%/themes/icons/glass/16x16/list-remove.png
-%%DATADIR%%/themes/icons/glass/16x16/mail-attachment.png
-%%DATADIR%%/themes/icons/glass/16x16/mail-message-new.png
-%%DATADIR%%/themes/icons/glass/16x16/phone.png
-%%DATADIR%%/themes/icons/glass/16x16/preferences-other.png
-%%DATADIR%%/themes/icons/glass/16x16/security-high.png
-%%DATADIR%%/themes/icons/glass/16x16/security-low.png
-%%DATADIR%%/themes/icons/glass/16x16/view-refresh.png
-%%DATADIR%%/themes/icons/glass/16x16/x-office-address-book.png
+%%DATADIR%%/themes/icons/glass/22x22/application-exit.png
+%%DATADIR%%/themes/icons/glass/22x22/audio-input-microphone.png
+%%DATADIR%%/themes/icons/glass/22x22/audio-volume-high.png
+%%DATADIR%%/themes/icons/glass/22x22/audio-volume-low.png
+%%DATADIR%%/themes/icons/glass/22x22/audio-volume-muted.png
+%%DATADIR%%/themes/icons/glass/22x22/contact-new.png
+%%DATADIR%%/themes/icons/glass/22x22/dialog-apply.png
+%%DATADIR%%/themes/icons/glass/22x22/dialog-cancel.png
+%%DATADIR%%/themes/icons/glass/22x22/dialog-error.png
+%%DATADIR%%/themes/icons/glass/22x22/dialog-ok.png
+%%DATADIR%%/themes/icons/glass/22x22/dialog-password.png
+%%DATADIR%%/themes/icons/glass/22x22/document-open.png
+%%DATADIR%%/themes/icons/glass/22x22/document-save.png
+%%DATADIR%%/themes/icons/glass/22x22/document-send.png
+%%DATADIR%%/themes/icons/glass/22x22/edit-clear.png
+%%DATADIR%%/themes/icons/glass/22x22/edit-copy.png
+%%DATADIR%%/themes/icons/glass/22x22/edit-delete.png
+%%DATADIR%%/themes/icons/glass/22x22/edit-find.png
+%%DATADIR%%/themes/icons/glass/22x22/face-smile.png
+%%DATADIR%%/themes/icons/glass/22x22/format-text-bold.png
+%%DATADIR%%/themes/icons/glass/22x22/format-text-italic.png
+%%DATADIR%%/themes/icons/glass/22x22/format-text-underline.png
+%%DATADIR%%/themes/icons/glass/22x22/go-jump.png
+%%DATADIR%%/themes/icons/glass/22x22/go-next.png
+%%DATADIR%%/themes/icons/glass/22x22/go-previous.png
+%%DATADIR%%/themes/icons/glass/22x22/group-new.png
+%%DATADIR%%/themes/icons/glass/22x22/help-contents.png
+%%DATADIR%%/themes/icons/glass/22x22/insert-image.png
+%%DATADIR%%/themes/icons/glass/22x22/internet-group-chat.png
+%%DATADIR%%/themes/icons/glass/22x22/list-add.png
+%%DATADIR%%/themes/icons/glass/22x22/list-remove.png
+%%DATADIR%%/themes/icons/glass/22x22/mail-attachment.png
+%%DATADIR%%/themes/icons/glass/22x22/mail-message-new.png
+%%DATADIR%%/themes/icons/glass/22x22/phone.png
+%%DATADIR%%/themes/icons/glass/22x22/preferences-other.png
+%%DATADIR%%/themes/icons/glass/22x22/security-high.png
+%%DATADIR%%/themes/icons/glass/22x22/security-low.png
+%%DATADIR%%/themes/icons/glass/22x22/view-refresh.png
+%%DATADIR%%/themes/icons/glass/22x22/x-office-address-book.png
 %%DATADIR%%/themes/icons/glass/32x32/contact-new.png
 %%DATADIR%%/themes/icons/glass/32x32/dialog-error.png
 %%DATADIR%%/themes/icons/glass/32x32/dialog-information.png
@@ -3121,21 +3121,17 @@ share/icons/hicolor/256x256/apps/kadu.png
 %%DATADIR%%/themes/icons/glass/32x32/security-high.png
 %%DATADIR%%/themes/icons/glass/32x32/system-users.png
 %%DATADIR%%/themes/icons/glass/32x32/x-office-address-book.png
-%%DATADIR%%/themes/icons/glass/external_modules/16x16/agent.png
 %%DATADIR%%/themes/icons/glass/external_modules/16x16/mediaplayer-media-playback-pause.png
 %%DATADIR%%/themes/icons/glass/external_modules/16x16/mediaplayer-media-playback-play.png
 %%DATADIR%%/themes/icons/glass/external_modules/16x16/mediaplayer-media-playback-stop.png
 %%DATADIR%%/themes/icons/glass/external_modules/16x16/mediaplayer-media-skip-backward.png
 %%DATADIR%%/themes/icons/glass/external_modules/16x16/mediaplayer-media-skip-forward.png
-%%DATADIR%%/themes/icons/glass/external_modules/16x16/profiles-configure.png
-%%DATADIR%%/themes/icons/glass/external_modules/16x16/profiles-user.png
-%%DATADIR%%/themes/icons/glass/external_modules/16x16/profiles.png
-%%DATADIR%%/themes/icons/glass/external_modules/16x16/qt4notify.png
-%%DATADIR%%/themes/icons/glass/external_modules/16x16/screenshot-camera-photo.png
-%%DATADIR%%/themes/icons/glass/external_modules/16x16/weather-show-weather-few-clouds.png
+%%DATADIR%%/themes/icons/glass/external_modules/22x22/agent.png
 %%DATADIR%%/themes/icons/glass/external_modules/22x22/mediaplayer-media-playback-play.png
 %%DATADIR%%/themes/icons/glass/external_modules/22x22/profiles-configure.png
 %%DATADIR%%/themes/icons/glass/external_modules/22x22/profiles-user.png
+%%DATADIR%%/themes/icons/glass/external_modules/22x22/profiles.png
+%%DATADIR%%/themes/icons/glass/external_modules/22x22/qt4notify.png
 %%DATADIR%%/themes/icons/glass/external_modules/22x22/screenshot-camera-photo.png
 %%DATADIR%%/themes/icons/glass/external_modules/22x22/weather-show-weather-few-clouds.png
 %%DATADIR%%/themes/icons/glass/external_modules/32x32/mail-internet-mail.png
@@ -3149,44 +3145,43 @@ share/icons/hicolor/256x256/apps/kadu.png
 %%DATADIR%%/themes/icons/glass/external_modules/32x32/xosd.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/0.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/about-kadu.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/block-buddy.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/blocked.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/blocking.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/change-color.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/change-status.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/clear-history.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/conference.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/copy-personal-info.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/enable-notifications.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/enter.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/gender0.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/gender1.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/gender2.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/get-involved.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/history.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/merge-buddies.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/multilogon.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/notify-about-buddy.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/notify-hints.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/notify-led.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/only-show-online-and-with-description.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/only-show-with-description.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/please-wait.gif
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/plugins.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/report-a-bug.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/show-blocked-buddies.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/show-descriptions.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/show-information-panel.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/show-offline-buddies.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/stylesheet-branch-closed.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/stylesheet-branch-open.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/support-us.png
-%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/tab-detach.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/tab-remove.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/translate-kadu.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/use-proxy.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/22x22/0.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/block-buddy.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/blocked.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/blocking.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/change-color.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/change-status.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/clear-history.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/conference.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/copy-personal-info.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/enable-notifications.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/enter.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/history.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/merge-buddies.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/22x22/multilogon.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/notify-about-buddy.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/notify-hints.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/only-show-online-and-with-description.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/only-show-with-description.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/plugins.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/show-blocked-buddies.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/show-descriptions.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/show-information-panel.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/show-offline-buddies.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/22x22/tab-detach.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/32x32/0.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/32x32/multilogon.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/32x32/plugins.png
@@ -3204,10 +3199,6 @@ share/icons/hicolor/256x256/apps/kadu.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/96x96/buddy2.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/svg/composing.svg
 %%DATADIR%%/themes/icons/glass/protocols/common/128x128/message.png
-%%DATADIR%%/themes/icons/glass/protocols/common/16x16/message.png
-%%DATADIR%%/themes/icons/glass/protocols/common/16x16/message_anim.gif
-%%DATADIR%%/themes/icons/glass/protocols/common/16x16/muc_active.png
-%%DATADIR%%/themes/icons/glass/protocols/common/16x16/muc_inactive.png
 %%DATADIR%%/themes/icons/glass/protocols/common/22x22/message.png
 %%DATADIR%%/themes/icons/glass/protocols/common/22x22/message_anim.gif
 %%DATADIR%%/themes/icons/glass/protocols/common/22x22/muc_active.png
@@ -3229,20 +3220,6 @@ share/icons/hicolor/256x256/apps/kadu.png
 %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/128x128/offline_d.png
 %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/128x128/online.png
 %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/128x128/online_d.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/away.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/away_d.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/do_not_disturb.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/do_not_disturb_d.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/free_for_chat.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/free_for_chat_d.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/invisible.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/invisible_d.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/not_available.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/not_available_d.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/offline.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/offline_d.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/online.png
-%%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/online_d.png
 %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/22x22/away.png
 %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/22x22/away_d.png
 %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/22x22/do_not_disturb.png
@@ -3712,14 +3689,12 @@ share/icons/hicolor/256x256/apps/kadu.png
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/xmpp
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/32x32
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/22x22
-@dirrm %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/128x128
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/common/64x64
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/common/48x48
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/common/32x32
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/common/22x22
-@dirrm %%DATADIR%%/themes/icons/glass/protocols/common/16x16
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/common/128x128
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/common
 @dirrm %%DATADIR%%/themes/icons/glass/protocols
@@ -3737,6 +3712,7 @@ share/icons/hicolor/256x256/apps/kadu.png
 @dirrm %%DATADIR%%/themes/icons/glass/external_modules
 @dirrm %%DATADIR%%/themes/icons/glass/32x32
 @dirrm %%DATADIR%%/themes/icons/glass/16x16
+@dirrm %%DATADIR%%/themes/icons/glass/22x22
 @dirrm %%DATADIR%%/themes/icons/glass
 @dirrm %%DATADIR%%/themes/icons/default/protocols/xmpp/svg
 @dirrm %%DATADIR%%/themes/icons/default/protocols/xmpp/brand_name/16x16

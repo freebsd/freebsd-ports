@@ -24,12 +24,11 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/sshsudo
 
-NO_STAGE=	yes
 post-patch:
 	${SED} -e "s,/bin/bash,${LOCALBASE}/bin/bash," -e "s,mktemp,mktemp -t sshsudo," \
 	<${DISTDIR}/${DISTNAME} >${WRKSRC}/${DISTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

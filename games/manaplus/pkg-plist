@@ -154,6 +154,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/graphics/sprites/manaplus_emotes.xml
 %%DATADIR%%/data/graphics/sprites/manaplus_emotions.png
 %%DATADIR%%/data/graphics/sprites/test.xml
+%%DATADIR%%/data/help/about-tmw.txt
 %%DATADIR%%/data/help/about.txt
 %%DATADIR%%/data/help/chatcommands.txt
 %%DATADIR%%/data/help/chatguild.txt
@@ -202,6 +203,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/perserver/default/deadmessages.xml
 %%DATADIR%%/data/perserver/default/features.xml
 %%DATADIR%%/data/perserver/default/gmcommands.txt
+%%DATADIR%%/data/perserver/default/weapons.xml
 %%DATADIR%%/data/sfx/system/attention.ogg
 %%DATADIR%%/data/sfx/system/book.ogg
 %%DATADIR%%/data/sfx/system/chat1.ogg
@@ -545,6 +547,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/wood/window.png
 %%DATADIR%%/data/themes/wood/window.xml
 %%DATADIR%%/data/themes/wood/world.xml
+%%DATADIR%%/data/translations/help/cs.po
 %%DATADIR%%/data/translations/help/de.po
 %%DATADIR%%/data/translations/help/es.po
 %%DATADIR%%/data/translations/help/fr.po
@@ -553,6 +556,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/translations/help/pl.po
 %%DATADIR%%/data/translations/help/pt_BR.po
 %%DATADIR%%/data/translations/help/ru.po
+%%DATADIR%%/data/translations/help/zh_CN.po
 share/pixmaps/manaplus.png
 @dirrm %%DATADIR%%/data/translations/help
 @dirrm %%DATADIR%%/data/translations

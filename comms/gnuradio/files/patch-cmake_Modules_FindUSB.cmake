@@ -1,5 +1,5 @@
---- cmake/Modules/FindUSB.cmake.orig	2012-04-09 11:38:58.000000000 -0400
-+++ cmake/Modules/FindUSB.cmake	2014-02-06 10:29:24.962247114 -0500
+--- cmake/Modules/FindUSB.cmake.orig	2012-04-09 10:38:58.000000000 -0500
++++ cmake/Modules/FindUSB.cmake	2014-03-02 20:19:39.000000000 -0500
 @@ -1,20 +1,38 @@
  if(NOT LIBUSB_FOUND)
 -  pkg_check_modules (LIBUSB_PKG libusb-1.0)

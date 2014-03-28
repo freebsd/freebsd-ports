@@ -13,12 +13,12 @@ DIST_SUBDIR=	openh323
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A H323 Video Conferencing library
 
-LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib
+LIB_DEPENDS=	libpt_r.so:${PORTSDIR}/devel/pwlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake
+USE_GCC=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -29,16 +29,15 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	BUILDTIME="YES"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .ifdef (WITH_FFMPEG)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-rfc2190avcodec=${LOCALBASE}/include/ffmpeg
 .endif
 
 .ifdef (WITH_SPEEX)
-LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=	--enable-localspeex=no
 .else
 CONFIGURE_ARGS+=	--enable-localspeex=yes
@@ -51,5 +50,9 @@ CFLAGS+=	-fPIC
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/configure.ac
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libh323_r.so.1
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pwlib/codecs/audio/*.so
 
 .include <bsd.port.post.mk>

@@ -34,20 +34,20 @@ OPTIONS_SUB=	yes
 
 BUILD_DEPENDS=	sftp:${PORTSDIR}/security/openssh-portable
 DEFAULT_CHDIR_CONFIGURE_ON=	--with-default-chdir=${SCPONLY_DEFAULT_CHDIR}
-WILDCARDS_CONFIGURE_ENABLE=	--enable-wildcards
-GFTP_CONFIGURE_ENABLE=		--enable-gftp-compat
-CHROOT_CONFIGURE_ENABLE=	--enable-chrooted-binary
+WILDCARDS_CONFIGURE_ENABLE=	wildcards
+GFTP_CONFIGURE_ENABLE=		gftp-compat
+CHROOT_CONFIGURE_ENABLE=	chrooted-binary
 CHROOT_USE=			RC_SUBR=scponlyc
 RSYNC_BUILD_DEPENDS=		rsync:${PORTSDIR}/net/rsync
-RSYNC_CONFIGURE_ENABLE=		--enable-rsync-compat
-SCP_CONFIGURE_ENABLE=		--enable-scp-compat
-SVN_CONFIGURE_ENABLE=		--enable-svn-compat
+RSYNC_CONFIGURE_ENABLE=		rsync-compat
+SCP_CONFIGURE_ENABLE=		scp-compat
+SVN_CONFIGURE_ENABLE=		svn-compat
 SVN_BUILD_DEPENDS=		svn:${PORTSDIR}/devel/subversion
 SVNSERVE_BUILD_DEPENDS=		svn:${PORTSDIR}/devel/subversion
-SVNSERVE_CONFIGURE_ENABLE=	--enable-svnserv-compat
+SVNSERVE_CONFIGURE_ENABLE=	svnserv-compat
 UNISON_BUILD_DEPENDS=		unison:${PORTSDIR}/net/unison
-UNISON_CONFIGURE_ENABLE=	--enable-unison-compat
-WINSCP_CONFIGURE_ENABLE=	--enable-winscp-compat
+UNISON_CONFIGURE_ENABLE=	unison-compat
+WINSCP_CONFIGURE_ENABLE=	winscp-compat
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

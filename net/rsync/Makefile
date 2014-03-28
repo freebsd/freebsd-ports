@@ -3,7 +3,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -71,18 +71,14 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/atimes.diff
 
 .if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED} || ${PORT_OPTIONS:MRENFL} 
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
-CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
-CONFIGUREDCFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CONFIGUREDCFLAGS="${CONFIGUREDCFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .else
-CONFIGURE_ARGS+=	--disable-iconv
-CONFIGURE_ENV+=		ac_cv_search_libiconv_open=no
-CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
+CONFIGURE_ARGS+=--disable-iconv --disable-iconv-open
 .endif
 
 .if ${PORT_OPTIONS:MFLAGS}
@@ -111,9 +107,9 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
 .endif
 
 .if ${PORT_OPTIONS:MPOPT_PORT}
-LIB_DEPENDS+=	popt:${PORTSDIR}/devel/popt
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
-CFLAGS+=	-I${LOCALBASE}/include
+LIB_DEPENDS+=	libpopt.so:${PORTSDIR}/devel/popt
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-included-popt
 .endif
@@ -124,25 +120,24 @@ CONFIGURE_ARGS+=	--with-rsh=ssh
 CONFIGURE_ARGS+=	--with-rsh=rsh
 .endif
 
-# guard against CFLAGS damage by MAKE_ENV
-post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS|CONFIGUREDCFLAGS|' \
-		-e 's|perl.*|${DO_NADA}|' \
-			${WRKSRC}/Makefile.in
+.include <bsd.port.pre.mk>
 
-pre-configure:
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_search_libiconv_open=no
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|perl.*|${DO_NADA}|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's:/etc/:${PREFIX}/etc/:g'  \
 		${WRKSRC}/rsync.h ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
-		${WRKSRC}/rsync.h ${WRKSRC}/zlib/zutil.h
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rsync
-	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${STAGEDIR}${PREFIX}/etc/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 test: build
-	@cd ${WRKSRC} && ${MAKE} check
+	@(cd ${WRKSRC} && ${MAKE_CMD} check)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

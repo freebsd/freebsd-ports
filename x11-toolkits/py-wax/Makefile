@@ -11,10 +11,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A user-friendly layer on top of wxPython
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/${WX_PYTHON_DIR}/wxPython/_wx.py:${PORTSDIR}/x11-toolkits/py-wxPython26
-
 NO_BUILD=	yes
 USE_PYTHON=	yes
+USE_WX=		2.8
+WX_UNICODE=	yes
+WX_COMPS=	python:run
 
 DATADIR=	${PYTHON_SITELIBDIR}
 
@@ -37,12 +38,6 @@ do-install:
 	${RM} -r ${DATADIR}/${PORTNAME}/examples
 .else
 	${MV} ${DATADIR}/${PORTNAME}/examples ${EXAMPLESDIR}
-.endif
-
-.if defined(WITH_UNICODE)
-WX_PYTHON_DIR=	wx-2.6-gtk2-unicode
-.else
-WX_PYTHON_DIR=	wx-2.6-gtk2-ansi
 .endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- testsuite/tests/backtrace/Makefile.orig	2012-11-01 20:28:23.000000000 +0100
++++ testsuite/tests/backtrace/Makefile	2012-11-01 20:28:30.000000000 +0100
+@@ -6,7 +6,7 @@
+ 	  $(OCAMLC) -g -o $(EXECNAME) $$file; \
+ 	  for arg in a b c d ''; do \
+ 	    printf " ... testing '$$file' (with argument '$$arg'):"; \
+-	    OCAMLRUNPARAM=b=1 $(EXECNAME) $$arg > `basename $$file ml`$$arg.result 2>&1; \
++	    sh -c "OCAMLRUNPARAM=b=1 $(EXECNAME) $$arg; true" > `basename $$file ml`$$arg.result 2>&1; \
+ 	    $(DIFF) `basename $$file ml`$$arg.reference `basename $$file ml`$$arg.result > /dev/null && echo " => passed" || (echo " => failed" && exit 1); \
+ 	  done; \
+ 	done

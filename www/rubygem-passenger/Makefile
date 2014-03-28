@@ -31,7 +31,7 @@ USE_APACHE=	22+
 .endif
 
 .if ${PORT_OPTIONS:MNGINX}
-NGINXVERSION!=	${PKG_INFO} -qO www/nginx-devel 2>/dev/null || true
+NGINXVERSION!=	${PKG_INFO} -qO www/nginx-devel 2>/dev/null; ${ECHO_CMD}
 .if empty(NGINXVERSION)
 BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
 .else

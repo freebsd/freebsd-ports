@@ -13,6 +13,7 @@ include/apr-1/apr_dbm.h
 include/apr-1/apr_dso.h
 include/apr-1/apr_env.h
 include/apr-1/apr_errno.h
+include/apr-1/apr_escape.h
 include/apr-1/apr_file_info.h
 include/apr-1/apr_file_io.h
 include/apr-1/apr_fnmatch.h
@@ -48,6 +49,7 @@ include/apr-1/apr_sdbm.h
 include/apr-1/apr_sha1.h
 include/apr-1/apr_shm.h
 include/apr-1/apr_signal.h
+include/apr-1/apr_skiplist.h
 include/apr-1/apr_strings.h
 include/apr-1/apr_strmatch.h
 include/apr-1/apr_support.h

@@ -16,7 +16,10 @@ The Lazarus RAD was installed
 
    It could be extracted to your home directory.
 
-4) The lazbuild.cfg file has been removed, it is not necessary anymore. Now 
+4) You can use %%LOCALBASE%%/bin/gdb762 debugger instead of gdb installed deugger
+   installed from base system. Lazarus works better with this version.
+
+5) The lazbuild.cfg file has been removed, it is not necessary anymore. Now 
    we can use the following ports for aplications that depend of lazarus 
    and these can be built with an interface different than lazarus has compiled 
    by default:
@@ -30,6 +33,6 @@ The Lazarus RAD was installed
    interfaces. Please look at net-p2p/transmission-remote-gui like a example of
    how use it
 
-5) Enjoy it ;)
+6) Enjoy it ;)
 
 ###############################################################################

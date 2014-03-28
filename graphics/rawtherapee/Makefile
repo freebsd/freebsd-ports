@@ -23,9 +23,8 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 
-USES=		cmake:outsource pkgconfig compiler:features desktop-file-utils dos2unix
+USES=		cmake:outsource pkgconfig compiler:features desktop-file-utils dos2unix tar:xz
 DOS2UNIX_REGEX=	.*\.(cc|h)
-USE_XZ=		yes
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}

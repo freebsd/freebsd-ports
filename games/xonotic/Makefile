@@ -3,7 +3,7 @@
 
 PORTNAME=	xonotic
 PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://nl.dl.xonotic.org/ \
 		http://mirror.bitmissile.com/xonotic/releases/
@@ -32,16 +32,19 @@ USE_GCC=	yes
 PORTDATA=	*
 
 OPTIONS_MULTI=	COMPONENTS
-OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
-OPTIONS_DEFAULT=CLIENT DEDICATED
+OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED ENCRYPTION
+OPTIONS_DEFAULT=CLIENT DEDICATED ENCRYPTION
 
 CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
+ENCRYPTION_DESC=Build encryption (required for stats submission)
 
 CLIENT_LIB_DEPENDS+=	libmodplug.so:${PORTSDIR}/audio/libmodplug \
 			libtheora.so:${PORTSDIR}/multimedia/libtheora \
 			libvorbis.so:${PORTSDIR}/audio/libvorbis \
 			libogg.so:${PORTSDIR}/audio/libogg
+
+ENCRYPTION_LIB_DEPENDS=	libd0_rijndael.so:${PORTSDIR}/security/d0_blind_id
 
 .include <bsd.port.options.mk>
 
@@ -83,6 +86,9 @@ do-install:
 # Fixup lost +x permissions on scripts after COPYTREE_SHARE
 	${FIND} ${STAGEDIR}${DATADIR}/server -type f -name *.sh -o -name rcon*.pl | \
 		${XARGS} ${CHMOD} +x
+.endif
+.if ${PORT_OPTIONS:MENCRYPTION}
+	${INSTALL_DATA} ${WRKDIR}/Xonotic/key_0.d0pk ${STAGEDIR}${PREFIX}/share/${PORTNAME}
 .endif
 	${MKDIR} ${STAGEDIR}${DATADIR}/data
 	${INSTALL_DATA} ${WRKDIR}/Xonotic/data/*.pk3 ${STAGEDIR}${DATADIR}/data/

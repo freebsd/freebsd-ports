@@ -25,18 +25,20 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e "s|%%PORTVERSION%%|${PORTVERSION}|g" \
 		-e "s|%%DATABASEDIR%%|${DATABASEDIR}|g"
 
-NO_STAGE=	yes
 do-build:
-	@for f in packaudit.sh packaudit.conf; do \
-		${SED} ${SED_SCRIPT} "${FILESDIR}/$$f" > "${WRKDIR}/$$f"; \
-	done
+.for f in packaudit.sh packaudit.conf
+	@${SED} ${SED_SCRIPT} "${FILESDIR}/$$f" > "${WRKDIR}/${f}"
+.endfor
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/packaudit.sh ${PREFIX}/bin/packaudit
-	@${INSTALL_DATA} ${WRKDIR}/packaudit.conf ${PREFIX}/etc/packaudit.conf.sample
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_SCRIPT} ${FILESDIR}/portaudit2vuxml.awk ${DATADIR}
-	@${INSTALL_DATA} ${FILESDIR}/vuxml2html.xslt ${FILESDIR}/vuxml2portaudit.xslt ${DATADIR}
-	@${MKDIR} ${DATABASEDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/packaudit.sh \
+		${STAGEDIR}${PREFIX}/bin/packaudit
+	${INSTALL_DATA} ${WRKDIR}/packaudit.conf \
+		${STAGEDIR}${PREFIX}/etc/packaudit.conf.sample
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/portaudit2vuxml.awk ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/vuxml2html.xslt ${FILESDIR}/vuxml2portaudit.xslt \
+		${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATABASEDIR}
 
 .include <bsd.port.mk>

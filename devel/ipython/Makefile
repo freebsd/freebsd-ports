@@ -3,6 +3,7 @@
 
 PORTNAME=	ipython
 PORTVERSION=	1.2.1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=2:${PORTSDIR}/misc/py-pexpect \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYTHON_PY3K_PLIST_HACK=yes
 
 OPTIONS_DEFINE=	X11 HTML_NOTEBOOK ZMQ
 OPTIONS_DEFAULT=X11 ZMQ
@@ -37,7 +39,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.0:${PORTSDIR}/www/py-tornado \
 .endif
 
 .if ${PORT_OPTIONS:MZMQ} || ${PORT_OPTIONS:MHTML_NOTEBOOK}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:${PORTSDIR}/devel/py-pyzmq
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:${PORTSDIR}/net/py-pyzmq
 .endif
 
 post-install:
@@ -45,4 +47,12 @@ post-install:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_MAJOR_VER} == "3"
+PLIST_SUB+=	IPYTHON_SUFFIX="3"
+.else
+PLIST_SUB+=	IPYTHON_SUFFIX=""
+.endif
+
+.include <bsd.port.post.mk>

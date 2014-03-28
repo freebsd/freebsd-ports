@@ -18,22 +18,14 @@ RUN_DEPENDS=	roundcube>=0.5:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
 
-WWWDIR=		${PREFIX}/www/roundcube/plugins/login_info
+WWWDIR=		${LOCALBASE}/www/roundcube
+PLUGDIR=	${WWWDIR}/plugins/login_info
+PLIST_SUB+=	PLUGDIR="www/roundcube/plugins/login_info"
 WRKSRC=		${WRKDIR}/login_info
 
-# This target is only meant to be used by the port maintainer.
-x-generate-plist: build
-	cd ${WRKSRC}; \
-	${FIND} . ! -type d ! -name '*.orig' | ${SORT} | \
-		${SED} -e "s,^\.,%%WWWDIR%%," >${.CURDIR}/pkg-plist.tmp ; \
-	${FIND} . -type d | ${SORT} -r | ${SED} \
-		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
-		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
-
-NO_STAGE=	yes
 do-install:
-	@${ECHO} "Installing in ${WWWDIR}"
-	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
+	@${ECHO} "Installing in ${PLUGDIR}"
+	${MKDIR} ${STAGEDIR}/${PLUGDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${PLUGDIR}
 
 .include <bsd.port.mk>

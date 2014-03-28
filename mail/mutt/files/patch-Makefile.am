@@ -1,6 +1,15 @@
---- Makefile.am.orig	2008-05-19 19:00:44.000000000 +0200
-+++ Makefile.am	2008-05-19 19:03:20.000000000 +0200
-@@ -136,10 +136,6 @@
+--- Makefile.am.orig	2014-03-12 17:03:44.000000000 +0100
++++ Makefile.am	2014-03-16 17:22:07.000000000 +0100
+@@ -97,7 +97,7 @@
+ 
+ # If this fails, we will fall back to the implementation in txt2c.sh
+ txt2c: txt2c.c
+-	-$${NATIVECC-$(CC)} -o $@ $<
++	-$(CC) -o $@ $<
+ 
+ conststrings.c: txt2c config.status
+ 	( \
+@@ -162,10 +162,6 @@
  
  install-data-local:
  	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)

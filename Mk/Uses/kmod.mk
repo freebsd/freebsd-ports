@@ -2,12 +2,12 @@
 #
 # Handles common items for kernel module ports.
 #
-# MAINTAINER: rene@FreeBSD.org
-#
 # Feature:	kmod
 # Usage:	USES=kmod
 # Valid ARGS:	none
 #
+# MAINTAINER: rene@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_KMOD_MK)
 _INCLUDE_USES_KMOD_MK=	yes
 

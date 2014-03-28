@@ -1,4 +1,7 @@
 bin/elinks
+man/man1/elinks.1.gz
+man/man5/elinkskeys.5.gz
+man/man5/elinks.conf.5.gz
 %%NLS%%share/locale/be/LC_MESSAGES/elinks.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/elinks.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/elinks.mo

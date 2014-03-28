@@ -21,13 +21,15 @@ lib/libowncloudsync.so.0
 lib/libowncloudsync.so.%%VERSION%%
 share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/folderwizard_local.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/folderwizard_remote.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/ignored_files_editor.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/menu.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/settings_account.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/settings_activity.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/settings_general.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/settings_network.png
-%%PORTDOCS%%%%DOCSDIR%%/html/_images/sync_protocol.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/wizard_overview.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/wizard_targetfolder.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/wizard_url.png
@@ -35,6 +37,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/accountsetup.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/advancedusage.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/architecture.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/autoupdate.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/building.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/conffile.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/glossary.txt
@@ -68,6 +71,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/accountsetup.html
 %%PORTDOCS%%%%DOCSDIR%%/html/advancedusage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/architecture.html
+%%PORTDOCS%%%%DOCSDIR%%/html/autoupdate.html
 %%PORTDOCS%%%%DOCSDIR%%/html/building.html
 %%PORTDOCS%%%%DOCSDIR%%/html/conffile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/genindex.html

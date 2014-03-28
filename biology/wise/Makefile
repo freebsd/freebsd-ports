@@ -43,9 +43,6 @@ DATAFILES=	BLOSUM30.bla BLOSUM45.bla BLOSUM62.bla BLOSUM80.bla aa.rnd \
 		human.stats idenity.bla methods pb.gf pombe.gf tm.pri \
 		wise.2 wise.per worm.gf
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name "makefile" | ${XARGS} \
 		${REINPLACE_CMD} -e \
@@ -59,21 +56,14 @@ post-patch:
 		 /welcome.csh/s|^|#|'
 
 do-install:
-.for i in ${BINFILES}
-	(cd ${BUILD_WRKSRC}/bin && ${INSTALL_PROGRAM} ${i} ${PREFIX}/bin)
-.endfor
-	@${MKDIR} ${DATADIR}
-.for i in ${DATAFILES}
-	(cd ${WRKSRC}/wisecfg && ${INSTALL_DATA} ${i} ${DATADIR})
-.endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	 @${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/test_data && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
-	@${CAT} ${PKGMESSAGE}
+	(cd ${BUILD_WRKSRC}/bin && ${INSTALL_PROGRAM} ${BINFILES} \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/wisecfg && ${INSTALL_DATA} ${DATAFILES} \
+		${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/test_data && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

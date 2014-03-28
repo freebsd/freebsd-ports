@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libopenraw
-PORTVERSION=	0.0.8
-PORTREVISION=	6
+PORTVERSION=	0.0.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 
@@ -13,7 +12,7 @@ COMMENT=	Library for camera RAW files decoding
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-USES=		pkgconfig
+USES=		compiler:c++11-lang libtool pkgconfig tar:bzip2
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -26,7 +25,7 @@ OPTIONS_DEFAULT=	GNOME
 
 OPTIONS_SUB=	yes
 GNOME_CONFIGURE_ENABLE=	gnome
-GNOME_USE=	GNOME=gtk20
+GNOME_USE=	GNOME=glib20,gdkpixbuf2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/configure

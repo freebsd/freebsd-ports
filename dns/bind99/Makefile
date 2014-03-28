@@ -2,7 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	9.9.5
-PORTREVISION=	4
+PORTREVISION=	8
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -31,7 +31,7 @@ ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind-tools-9.*
 
-OPTIONS_DEFAULT=	IPV6 SSL THREADS GSSAPI
+OPTIONS_DEFAULT=	IPV6 SSL THREADS
 OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE \
 			FIXED_RRSET SIGCHASE IPV6 THREADS GSSAPI FILTER_AAAA
 .if !defined(BIND_TOOLS_SLAVE)
@@ -70,7 +70,7 @@ SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_USE=		openssl=yes
 SSL_CONFIGURE_OFF=	--disable-openssl-version-check --without-openssl
 
-NEWSTATS_CONFIGURE_ENABLE=     newstats
+NEWSTATS_CONFIGURE_ENABLE=	newstats
 
 IDN_USES=		iconv
 IDN_CONFIGURE_ON=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
@@ -159,9 +159,12 @@ PKGDEINSTALL=	${PKGINSTALL}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${BIND_DESTETC}
 PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
+SUB_LIST+=	BIND_DESTETC="${BIND_DESTETC}"
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 PLIST_SUB+=	NOBASE="" BASE="@comment "
+USE_RC_SUBR+=	named
+SUB_FILES+=	named.conf
 .else
 PLIST_SUB+=	NOBASE="@comment " BASE=""
 .endif
@@ -198,12 +201,6 @@ post-install:
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
-.for FILE in named named.conf
-	${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
-		-e 's#%%BIND_DESTETC%%#${BIND_DESTETC}#g' \
-		${FILESDIR}/${FILE} > ${WRKDIR}/${FILE}
-.endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/named ${STAGEDIR}${PREFIX}/etc/rc.d
 	${MKDIR} ${STAGEDIR}${BIND_DESTETC}
 .for i in dynamic master slave working
 	@${MKDIR} ${STAGEDIR}${BIND_DESTETC}/$i

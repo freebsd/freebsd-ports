@@ -19,7 +19,7 @@ MAN4=		wacom.4x
 MAN1=		xsetwacom.1
 #MANCOMPRESSED=	yes
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	wacom
 
 KMODDIR?=	/boot/modules

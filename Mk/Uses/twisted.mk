@@ -2,8 +2,6 @@
 #
 # Provide support for Twisted-related ports
 #
-# MAINTAINER: python@FreeBSD.org
-#
 # Feature:		twisted
 # Usage:		USES=	twisted:build,run,compA,compB,...
 # Valid ARGS:
@@ -21,6 +19,8 @@
 #
 #	conch flow lore mail names news runner web web2 words
 #
+# MAINTAINER: python@FreeBSD.org
+
 .if !defined(_INCLUDE_USES_TWISTED_MK)
 _INCLUDE_USES_TWISTED_MK=	yes
 

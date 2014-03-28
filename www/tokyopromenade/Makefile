@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	LUA
 
 CONFIGURE_ARGS=	--enable-fcgi
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 SUB_FILES=	pkg-message
 

@@ -11,8 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	High performance single-tasking web server
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 INFO=		boa

@@ -12,7 +12,8 @@ MAINTAINER=	shurd@sasktel.net
 COMMENT=	Frontend and .dmod installer for GNU FreeDink
 
 USES=		desktop-file-utils gettext gmake shared-mime-info
-USE_WX=		2.6+
+USE_WX=		2.8
+WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	intltool

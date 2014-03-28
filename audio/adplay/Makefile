@@ -49,7 +49,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/adplay ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/adplay.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/${DBVERSION}/${DBFILE} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

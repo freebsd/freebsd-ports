@@ -1,3 +1,8 @@
-IEEE1284 communications library
+This library is intended to be used by applications that need to communicate
+with (or at least identify) devices that are attached via a parallel port.
+
+The aim of this library is to take all the worry about the above wrinkles
+from the application.  It will figure out which methods are appropriate for
+the currently running kernel (or operating system).
 
 WWW: http://cyberelk.net/tim/libieee1284/

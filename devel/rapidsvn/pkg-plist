@@ -3,6 +3,7 @@ lib/libsvncpp.a
 lib/libsvncpp.la
 lib/libsvncpp.so
 lib/libsvncpp.so.3
+man/man1/rapidsvn.1.gz
 share/locale/de/LC_MESSAGES/rapidsvn.mo
 share/locale/es/LC_MESSAGES/rapidsvn.mo
 share/locale/fr/LC_MESSAGES/rapidsvn.mo

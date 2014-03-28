@@ -1,12 +1,6 @@
-Index: makerule.mk.in
-===================================================================
-RCS file: /home/cvs/private/hrs/freewnn/makerule.mk.in,v
-retrieving revision 1.1.1.1
-retrieving revision 1.2
-diff -u -p -r1.1.1.1 -r1.2
---- makerule.mk.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
-+++ makerule.mk.in	20 Dec 2008 07:17:14 -0000	1.2
-@@ -42,8 +42,8 @@ all::
+--- makerule.mk.in.orig	2003-05-12 03:22:57.000000000 +0900
++++ makerule.mk.in	2014-03-14 21:38:40.000000000 +0900
+@@ -42,8 +42,8 @@
  # for libtool (AM_PROG_LIBTOOL)
  #     top_builddir = @abs_top_srcdir@
  
@@ -17,3 +11,12 @@ diff -u -p -r1.1.1.1 -r1.2
  
          MANSUFFIX = 1
       LIBMANSUFFIX = 3
+@@ -101,7 +101,7 @@
+ # OMRON INPUT METHOD MAKE ENV
+ #
+ 
+-       WNNOWNER = wnn
++       WNNOWNER = root
+ 
+           IMTOP = $(TOP)
+ 

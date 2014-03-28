@@ -2,11 +2,10 @@
 #
 # Provide support to use the legacy FreeBSD make
 #
-# MAINTAINER: portmgr@FreeBSD.org
-#
 # Feature:		fmake
 # Usage:		USES=fmake
 #
+# MAINTAINER: portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_FMAKE_MK)
 _INCLUDE_USES_FMAKE_MK=	yes

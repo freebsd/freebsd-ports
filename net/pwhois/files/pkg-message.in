@@ -1,0 +1,24 @@
+This port requires additional tasks before it will function properly.
+
+1.  Create and initialize the database:
+mysql> create database pwhois;
+mysql> create user 'pwhois'@'localhost' identified by 'secret-password';
+mysql> grant all privileges on pwhois.* to 'pwhois'@'localhost';
+mysql> use pwhois;
+mysql> \. %%DATADIR%%/createdb.sql
+
+2.  Edit %%ETCDIR%%/pwhoisd.conf and update:
+ * Database connection information
+ * RouteView servers (some may be slower than others)
+
+3.  Populate the database with data for the first time by running:
+%%PREFIX%%/sbin/pwhois-updatedb
+
+4.  Add the following to /etc/rc.conf:
+pwhoisd_enable="YES"
+
+5.  Start pwhoisd for the first time by running:
+service pwhoisd start
+
+6.  To enable daily updates, edit /etc/periodic.conf and add:
+daily_pwhois-updatedb_enable="YES"

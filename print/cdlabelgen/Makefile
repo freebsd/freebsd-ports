@@ -5,12 +5,11 @@ PORTNAME=	cdlabelgen
 PORTVERSION=	4.2.0
 CATEGORIES=	print perl5
 MASTER_SITES=	http://www.aczoom.com/pub/tools/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Generate postscript for frontcards and traycards for CDs
 
-USES=		perl5
+USES=		perl5 tar:tgz
 MAKE_ARGS=	BASE_DIR="${STAGEDIR}${PREFIX}" \
 		LIB_DIR="${STAGEDIR}${DATADIR}" \
 		INSTALL="${INSTALL_SCRIPT}" \

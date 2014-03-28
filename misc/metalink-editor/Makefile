@@ -15,13 +15,16 @@ COMMENT=	GUI editor to create and edit metalinks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/license.txt
 
+OPTIONS_DEFINE=	DOCS
+
 USES=		dos2unix zip
 DOS2UNIX_REGEX=	.*\.txt
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_EGGINFO=	metalink_editor-${PORTVERSION}-py${PYTHON_VER}.egg-info
-USE_WX=		2.6
+USE_WX=		2.8
+WX_UNICODE=	yes
 WX_COMPS=	python
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
@@ -39,11 +42,8 @@ DESKTOP_ENTRIES=	"Metalink editor" \
 DOC_FILES=	\
 		readme.txt
 #
-.ifndef(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
 post-extract:
 # Create a package to avoid namespace pollution
 	@${MKDIR} ${WRKSRC}/Metalink_editor
@@ -66,16 +66,14 @@ pre-configure:
 
 post-install:
 # docs
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 # fix installation permissions for restritive umask(1)
 	@${FIND} \
-		${DATADIR} \
-		${PYTHONPREFIX_SITELIBDIR}/Metalink_editor \
+		${STAGEDIR}${DATADIR} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Metalink_editor \
 		-type f -exec \
 		${CHMOD} ${SHAREMODE} {} \;
 

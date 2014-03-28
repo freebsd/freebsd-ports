@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-PORTVERSION=	6.1.17
-PORTREVISION=	1
+PORTVERSION=	6.1.20
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -64,6 +63,7 @@ CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 SUB_FILES=	pkg-install
 SUB_LIST=	DB_TYPE=${DB_TYPE:L} WITH_FASTCGI=${PORT_OPTIONS:MFASTCGI}
+PORTEXAMPLES=	*
 
 USE_RC_SUBR=	sympa
 
@@ -127,7 +127,7 @@ post-patch:
 	    -e 's|^\( *bouncedir=\).*$$|\1${DATADIR}/bounce|'		\
 	    -e 's|^\( *execcgidir=\).*$$|\1${PREFIX}/libexec/${PORTNAME}|' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|\(--target.*sympa.conf\)|\1.sample|'	\
+	@${REINPLACE_CMD} -e 's|\(--target.*sympa.conf\)|\1.sample|'	\
 			  -e 's|/bin/true$$|:|'				\
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's#\$$(DESTDIR)\$$(sampledir)#${STAGEDIR}\$$(sampledir)#g' \
@@ -137,14 +137,15 @@ pre-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 
 post-install:
-	for dir in $$(sort ${WRKSRC}/createddirs); do \
+	for dir in $$(sort ${WRKSRC}/createddirs | ${SED} 's,^${STAGEDIR},,'); do \
 		${MKDIR} -m755 ${STAGEDIR}$$dir; \
 		${TOUCH} ${STAGEDIR}$$dir/.keep; \
-		${ECHO_CMD} "@exec chown ${USERS}:${GROUPS} $${dir#${PREFIX}/}" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@exec ${CHOWN} ${USERS}:${GROUPS} $${dir#${PREFIX}/}" >> ${TMPPLIST}; \
 		${ECHO_CMD} "$${dir#${PREFIX}/}/.keep" >> ${TMPPLIST}; \
 	done; \
 	for dir in $$(sort -r ${WRKSRC}/createddirs); do \
-		${ECHO_CMD} "@unexec rmdir $$dir" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@unexec rmdir $${dir#${STAGEDIR}} || : 2>/dev/null" >> ${TMPPLIST}; \
 	done
+	${INSTALL_DATA} ${WRKSRC}/etc_README ${STAGEDIR}/${ETCDIR}
 
 .include <bsd.port.mk>

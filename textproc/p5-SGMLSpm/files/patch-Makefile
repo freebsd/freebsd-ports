@@ -1,5 +1,5 @@
---- Makefile.orig	Tue May  4 10:39:40 2004
-+++ Makefile	Tue May  4 10:39:57 2004
+--- ./Makefile.orig	1995-12-05 13:26:11.000000000 +0100
++++ ./Makefile	2014-03-25 15:52:27.000000000 +0100
 @@ -36,7 +36,7 @@
  # End of user options.
  #
@@ -9,3 +9,12 @@
  
  FILES =	${BINDIR}/sgmlspl \
  	${PERL5DIR}/SGMLS.pm \
+@@ -62,7 +62,7 @@
+ 
+ ${MODULEDIR}:
+ 	if [ ! -d ${MODULEDIR} ]; then\
+-	  mkdir ${MODULEDIR}; \
++	  mkdir -p ${MODULEDIR}; \
+ 	  chmod a+x ${MODULEDIR}; \
+ 	fi
+ 

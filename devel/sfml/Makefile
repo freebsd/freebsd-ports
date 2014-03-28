@@ -16,11 +16,11 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		gmake openal:al pkgconfig
+USES=		gmake openal:al pkgconfig dos2unix
+DOS2UNIX_GLOB=	Makefile
 USE_XORG=	x11 xrandr
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	Makefile
 DESTDIRNAME=	STAGEDIR
 
 WRKSRC=		${WRKDIR}/SFML-${PORTVERSION}

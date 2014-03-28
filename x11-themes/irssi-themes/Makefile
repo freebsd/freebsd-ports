@@ -34,7 +34,7 @@ do-extract:
 .endfor
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${THEMESDIR_REL}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${THEMESDIR_REL}
 .for f in ${DISTFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${THEMESDIR_REL}
 .endfor

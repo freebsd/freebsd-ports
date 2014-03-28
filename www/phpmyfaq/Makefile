@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	2.8.7
+PORTVERSION=	2.8.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 

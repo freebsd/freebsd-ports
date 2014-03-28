@@ -18,6 +18,10 @@
     SUBDIR += animenfo-client-gtk
     SUBDIR += aolserver-nsmysql
     SUBDIR += aolserver-nspostgres
+    SUBDIR += apq
+    SUBDIR += apq-mysql
+    SUBDIR += apq-odbc
+    SUBDIR += apq-pgsql
     SUBDIR += autobackupmysql
     SUBDIR += bbdb
     SUBDIR += beansdb
@@ -187,7 +191,6 @@
     SUBDIR += luasql-mysql
     SUBDIR += luasql-postgres
     SUBDIR += luasql-sqlite3
-    SUBDIR += ludia
     SUBDIR += mantis
     SUBDIR += mariadb-client
     SUBDIR += mariadb-scripts
@@ -247,6 +250,7 @@
     SUBDIR += nagios-check_redis
     SUBDIR += namazu2
     SUBDIR += ntdb
+    SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
     SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
@@ -285,7 +289,6 @@
     SUBDIR += p5-Class-DBI-DDL
     SUBDIR += p5-Class-DBI-FromCGI
     SUBDIR += p5-Class-DBI-LazyInflate
-    SUBDIR += p5-Class-DBI-Lite
     SUBDIR += p5-Class-DBI-Loader
     SUBDIR += p5-Class-DBI-Loader-Relationship
     SUBDIR += p5-Class-DBI-Oracle
@@ -431,7 +434,6 @@
     SUBDIR += p5-GraphViz-DBI
     SUBDIR += p5-HTML-FormHandler-Model-DBIC
     SUBDIR += p5-Ima-DBI
-    SUBDIR += p5-Ima-DBI-Contextual
     SUBDIR += p5-Iterator-DBI
     SUBDIR += p5-Jifty-DBI
     SUBDIR += p5-KyotoCabinet
@@ -456,6 +458,8 @@
     SUBDIR += p5-RRD-Simple
     SUBDIR += p5-Redis
     SUBDIR += p5-Redis-hiredis
+    SUBDIR += p5-RedisDB
+    SUBDIR += p5-RedisDB-Parser
     SUBDIR += p5-Relations
     SUBDIR += p5-Relations-Query
     SUBDIR += p5-ResourcePool-Resource-DBI
@@ -624,7 +628,7 @@
     SUBDIR += php55-mssql
     SUBDIR += php55-mysql
     SUBDIR += php55-mysqli
-    SUBDIR += php55-odbc   
+    SUBDIR += php55-odbc
     SUBDIR += php55-pdo
     SUBDIR += php55-pdo_dblib
     SUBDIR += php55-pdo_firebird

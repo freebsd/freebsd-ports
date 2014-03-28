@@ -1,0 +1,18 @@
+Some commonly used Perl modules don't have SSL support at all, even if the
+protocol supports it. Others have SSL support, but most of them don't do proper
+checking of the server's certificate.
+
+The Net::SSLGlue::* modules try to add SSL support or proper certificate
+checking to these modules. Currently support for the following modules is
+available:
+- Net::SMTP - add SSL from beginning or using STARTTLS
+- Net::POP3 - add SSL from beginning or using STLS
+- Net::FTP - add SSL and IPv6 support to Net::FTP
+- Net::LDAP - add proper certificate checking
+- LWP - add proper certificate checking
+
+There is also a Net::SSLGlue::Socket package which combines SSL and non-SSL and
+IPv6 capabilities to make it easier to enhance modules based on
+IO::Socket::INET.
+
+WWW: http://search.cpan.org/dist/Net-SSLGlue/

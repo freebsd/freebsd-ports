@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	flex
-PORTVERSION=	2.5.38
-PORTREVISION=	2
+PORTVERSION=	2.5.39
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -13,8 +12,7 @@ BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
 		gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		bison gmake
-USE_BZIP2=	yes
+USES=		bison gmake tar:bzip2
 GNU_CONFIGURE=	yes
 # install flex header to its own dir to avoid conflict with system flex.
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/flex --disable-shared

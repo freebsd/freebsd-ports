@@ -1,29 +1,29 @@
-bin/rust
 bin/rustc
 bin/rustdoc
-bin/rusti
 %%RUSTPKG%%bin/rustpkg
-lib/libextra-a7c050cfd46b2c9a-0.8.so
-lib/librust-5828c92a27389871-0.8.so
-lib/librustc-d3cb8c2ccd84a7a7-0.8.so
-lib/librustdoc-a437806a76c5f37a-0.8.so
-lib/librusti-53e0ef2ae196aaff-0.8.so
-lib/librustllvm.so
-lib/librustpkg-45c3eae3148fd21-0.8.so
-lib/librustrt.so
-lib/libstd-6c65cf4b443341b1-0.8.so
-lib/libsyntax-64629f7f0c6a9bc-0.8.so
-lib/rustc/x86_64-unknown-freebsd/lib/libextra-a7c050cfd46b2c9a-0.8.so
-lib/rustc/x86_64-unknown-freebsd/lib/libmorestack.a
-lib/rustc/x86_64-unknown-freebsd/lib/librust-5828c92a27389871-0.8.so
-lib/rustc/x86_64-unknown-freebsd/lib/librustc-d3cb8c2ccd84a7a7-0.8.so
-lib/rustc/x86_64-unknown-freebsd/lib/librustdoc-a437806a76c5f37a-0.8.so
-lib/rustc/x86_64-unknown-freebsd/lib/librusti-53e0ef2ae196aaff-0.8.so
-lib/rustc/x86_64-unknown-freebsd/lib/librustllvm.so
-lib/rustc/x86_64-unknown-freebsd/lib/librustpkg-45c3eae3148fd21-0.8.so
-lib/rustc/x86_64-unknown-freebsd/lib/librustrt.so
-lib/rustc/x86_64-unknown-freebsd/lib/libstd-6c65cf4b443341b1-0.8.so
-lib/rustc/x86_64-unknown-freebsd/lib/libsyntax-64629f7f0c6a9bc-0.8.so
-@dirrm lib/rustc/x86_64-unknown-freebsd/lib
-@dirrm lib/rustc/x86_64-unknown-freebsd
-@dirrm lib/rustc
+lib/libextra-fd30a1b1-0.9.so
+lib/libgreen-83b1c0e5-0.9.so
+lib/librustc-8b28e8d8-0.9.so
+lib/librustdoc-f0f95988-0.9.so
+lib/librustpkg-7b329bae-0.9.so
+lib/librustuv-2ba3695a-0.9.so
+lib/libstd-3e5aeb83-0.9.so
+lib/libsyntax-9be99726-0.9.so
+lib/rustlib/x86_64-unknown-freebsd/lib/libextra-fd30a1b1-0.9.rlib
+lib/rustlib/x86_64-unknown-freebsd/lib/libextra-fd30a1b1-0.9.so
+lib/rustlib/x86_64-unknown-freebsd/lib/libgreen-83b1c0e5-0.9.rlib
+lib/rustlib/x86_64-unknown-freebsd/lib/libgreen-83b1c0e5-0.9.so
+lib/rustlib/x86_64-unknown-freebsd/lib/libmorestack.a
+lib/rustlib/x86_64-unknown-freebsd/lib/libnative-cf55a53a-0.9.rlib
+lib/rustlib/x86_64-unknown-freebsd/lib/libnative-cf55a53a-0.9.so
+lib/rustlib/x86_64-unknown-freebsd/lib/librustc-8b28e8d8-0.9.so
+lib/rustlib/x86_64-unknown-freebsd/lib/librustdoc-f0f95988-0.9.so
+lib/rustlib/x86_64-unknown-freebsd/lib/librustpkg-7b329bae-0.9.so
+lib/rustlib/x86_64-unknown-freebsd/lib/librustuv-2ba3695a-0.9.rlib
+lib/rustlib/x86_64-unknown-freebsd/lib/librustuv-2ba3695a-0.9.so
+lib/rustlib/x86_64-unknown-freebsd/lib/libstd-3e5aeb83-0.9.rlib
+lib/rustlib/x86_64-unknown-freebsd/lib/libstd-3e5aeb83-0.9.so
+lib/rustlib/x86_64-unknown-freebsd/lib/libsyntax-9be99726-0.9.so
+@dirrm lib/rustlib/x86_64-unknown-freebsd/lib
+@dirrm lib/rustlib/x86_64-unknown-freebsd
+@dirrm lib/rustlib

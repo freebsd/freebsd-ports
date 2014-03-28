@@ -12,7 +12,7 @@ COMMENT=	Colorized, small, and flexible Tetris(TM)-clone for the console
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 PLIST_FILES=	bin/ctris man/man6/ctris.6.gz
 

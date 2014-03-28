@@ -1,4 +1,2 @@
-SHA256 (webmin-1.670.tar.gz) = 43e7dedef907bae7ed61dfcb33fa8f8e132cf0194fa46118afedebd6bc575969
-SIZE (webmin-1.670.tar.gz) = 22388491
-SHA256 (acl-1.670-2.wbm.gz) = a974e0d33ca3876ff97bf56e447f7da8361b74bd4de784766fd4773a9904a36b
-SIZE (acl-1.670-2.wbm.gz) = 275245
+SHA256 (webmin-1.680.tar.gz) = c6205b6a9dfa1aa7179591bb9a82a9f321e775ed08710da8877d01c5bf9b8078
+SIZE (webmin-1.680.tar.gz) = 22418010
