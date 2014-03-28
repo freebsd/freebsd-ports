@@ -4,28 +4,28 @@
 PORTNAME=		visualworks
 PORTVERSION=		7.6
 CATEGORIES=		lang linux
-SUBDIR=			vwnc${PORTVERSION}
 MASTER_SITES=		http://www.cincomsmalltalk.com/bsdports/${SUBDIR}.old/
 DISTFILES=		BaseVisualWorks.tar.gz \
 			VM-Linux86.tar.gz
-DIST_SUBDIR=		${SUBDIR}
 EXTRACT_ONLY=
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A high performance Smalltalk environment
 
+DIST_SUBDIR=		${SUBDIR}
+SUBDIR=			vwnc${PORTVERSION}
+
 USE_LINUX=		yes
 USE_LINUX_APPS=		xorglibs
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		i386 amd64
 NO_BUILD=		yes
-PLIST_FILES=		bin/visual
 MY_STARTUP_SCRIPT=	visual.sh
 
 RESTRICTED=		Redistribution is probably not permitted
 
-OPTIONS_DEFINE=	ATOOLS COM DLLC DST DATABASE DOTNET CONTRIBUTED ARAGON COAST DOME JUN 3D \
+OPTIONS_DEFINE=	ATOOLS COM DLLC DST DATABASE DOTNET CONTRIBUTED ARAGON COAST DOME JUN \
 		SEASIDE SILVERMARK GEMSTONE I18N OBSOLETE OPENTALK PLUGIN PREVIEW STORE  \
-		WEBAPP WEBSERVICES VMLINUX VMWINDOWS VMMAC VMSOLARIS VMAIX VMHPUX VMSGI 
+		WEBAPP WEBSERVICES VMLINUX VMWINDOWS VMMAC VMSOLARIS VMAIX VMHPUX VMSGI
 OPTIONS_DEFAULT=	DLLC DATABASE SEASIDE STORE
 
 ATOOLS_DESC=	Advanced Tools
@@ -58,7 +58,6 @@ VMAIX_DESC=	Virtual Machine for AIX
 VMHPUX_DESC=	Virtual Machine for HPUX
 VMSGI_DESC=	Virtual Machine for SGI
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MATOOLS}
@@ -155,20 +154,16 @@ DISTFILES+=	WebServices.tar.gz
 .endif
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@for f in ${DISTFILES}; do tar xzpf ${DISTDIR}/${DIST_SUBDIR}/$$f -C ${DATADIR}; done
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@for f in ${DISTFILES}; do tar xzpf ${DISTDIR}/${DIST_SUBDIR}/$$f -C ${STAGEDIR}${DATADIR}; done
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/${MY_STARTUP_SCRIPT}
 	@${ECHO_CMD} "VISUALWORKS=${DATADIR}" >> ${WRKDIR}/${MY_STARTUP_SCRIPT}
 	@${ECHO_CMD} "export VISUALWORKS" >> ${WRKDIR}/${MY_STARTUP_SCRIPT}
 	@${ECHO_CMD} "${DATADIR}/bin/linux86/visual \$$*" >> ${WRKDIR}/${MY_STARTUP_SCRIPT}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${MY_STARTUP_SCRIPT} ${DATADIR}
-	@${LN} -s ${DATADIR}/${MY_STARTUP_SCRIPT} ${PREFIX}/bin/visual
+	@${INSTALL_SCRIPT} ${WRKDIR}/${MY_STARTUP_SCRIPT} ${STAGEDIR}${DATADIR}
+	@${LN} -s ${DATADIR}/${MY_STARTUP_SCRIPT} ${STAGEDIR}${PREFIX}/bin/visual
 
 post-install:
-	@${FIND} ${DATADIR} -not -type d \
-	  | ${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -d ${DATADIR} -type d \
-	  | ${SED} -ne 's,^${DATADIR},@dirrm share/${PORTNAME},p' >> ${TMPPLIST}
 	@${ECHO_MSG} " "
 	@${ECHO_MSG} " --------------------------- Please note: ---------------------------"
 	@${ECHO_MSG} " "
