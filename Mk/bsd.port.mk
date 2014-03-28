@@ -3174,6 +3174,13 @@ build: configure
 	@${TOUCH} ${TOUCH_FLAGS} ${BUILD_COOKIE}
 .endif
 
+# Disable staging. Be non-fatal here as some scripts may just call it as a
+# matter of correctness in their ordering.
+.if defined(NO_STAGE) && !target(stage)
+stage:
+	@${ECHO_MSG} "===>   This port does not yet support staging"
+.endif
+
 # Disable install
 .if defined(NO_INSTALL) && !target(do-install)
 do-install:
