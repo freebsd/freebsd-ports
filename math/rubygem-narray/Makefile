@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	narray
-PORTVERSION=	0.6.0.8
+PORTVERSION=	${NARRAY_VERSION}
 CATEGORIES=	math rubygems
 MASTER_SITES=	RG
 
@@ -13,5 +13,7 @@ USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+.include "${.CURDIR}/Makefile.version"
 
 .include <bsd.port.mk>
