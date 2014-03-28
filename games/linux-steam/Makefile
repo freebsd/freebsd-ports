@@ -25,7 +25,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	INSTALLDIR=${PREFIX}/${INSTALLDIR}
 PLIST_SUB+=	INSTALLDIR=${INSTALLDIR}
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "You can use the INSTALLDIR option to change the install directory."
 
@@ -35,8 +34,8 @@ do-build:
 	@${CHMOD} +x ${WRKDIR}/${DISTFILES} && cd ${WRKDIR} && ./${DISTFILES}
 
 do-install:
-	@${MKDIR} ${PREFIX}/${INSTALLDIR}
-	@${CP} ${WRKDIR}/${PORTNAME} ${PREFIX}/${INSTALLDIR}/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLDIR}
+	@${CP} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/${INSTALLDIR}/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
