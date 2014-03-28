@@ -278,7 +278,6 @@
     SUBDIR += critcl
     SUBDIR += cross-binutils
     SUBDIR += cross-gcc
-    SUBDIR += cross-gdb
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csmith
