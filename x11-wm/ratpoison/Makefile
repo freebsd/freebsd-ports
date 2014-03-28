@@ -17,9 +17,9 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	GDM_SUPPORT DOCS
 GDM_SUPPORT_DESC=	Install session data files for GDM
 
+INFO=		ratpoison
 SUB_FILES=	ratpoison.desktop
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -29,17 +29,10 @@ post-patch:
 PLIST_SUB+=	WITH_GDM=""
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/dm/Sessions
-	${INSTALL_DATA} ${WRKDIR}/ratpoison.desktop ${PREFIX}/etc/dm/Sessions/
+	@${MKDIR} ${PREFIX}/etc/dm/Sessions
+	${INSTALL_DATA} ${WRKDIR}/ratpoison.desktop ${STAGEDIR}${PREFIX}/etc/dm/Sessions
 .else
 PLIST_SUB+=	WITH_GDM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-MAN1=		ratpoison.1
-INFO=		ratpoison
-.else
-INSTALL_TARGET=	SUBDIRS=src install-exec
 .endif
 
 .include <bsd.port.mk>
