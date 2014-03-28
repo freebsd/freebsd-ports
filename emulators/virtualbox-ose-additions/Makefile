@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.8
-PORTREVISION=	1
+DISTVERSION=	4.3.10
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -24,8 +23,7 @@ UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
-USES=		iconv kmod tar:bzip2
-USE_GCC=	any
+USES=		compiler:features iconv kmod tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
 USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -93,6 +91,14 @@ XSERVER_ABI:=	${XSERVER_VER:S/.//:R}
 
 .include <bsd.port.pre.mk>
 
+.if ${COMPILER_TYPE} == clang
+EXTRA_PATCHES=	${PATCHDIR}/extrapatch-Config.kmk \
+		${PATCHDIR}/extrapatch-src-VBox-Additions-x11-vboxvideo-Makefile.kmk
+.if ${COMPILER_FEATURES:Mlibc++}
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-VBoxClient-Makefile.kmk
+.endif
+.endif
+
 pre-everything::
 .if ${ARCH} == "amd64"
 .if !exists(/usr/lib32/libc.so)
@@ -105,6 +111,12 @@ pre-everything::
 post-patch:
 	@${ECHO} 'VBOX_ONLY_ADDITIONS = 1' > ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS = ${VBOX_WITH_X11}' >> ${WRKSRC}/LocalConfig.kmk
+.if ${COMPILER_TYPE} == clang
+	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
+	    -e 's| -fno-merge-constants||' \
+	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
+	@${ECHO} 'VBOX_GCC_Wno-unused-parameter = -Wno-unused-parameter' >> ${WRKSRC}/LocalConfig.kmk
+.endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Config.kmk \
 		${WRKSRC}/configure \

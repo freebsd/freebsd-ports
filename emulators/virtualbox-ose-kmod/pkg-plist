@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @cwd /
 %%KMODDIR%%/vboxdrv.ko
 %%DEBUG%%%%KMODDIR%%/vboxdrv.ko.symbols
