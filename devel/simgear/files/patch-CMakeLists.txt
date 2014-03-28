@@ -1,11 +1,44 @@
---- CMakeLists.txt.orig	2013-02-23 10:59:16.000000000 +0100
-+++ CMakeLists.txt	2013-02-23 10:59:35.000000000 +0100
-@@ -327,7 +327,7 @@
- set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${WARNING_FLAGS_C} ${MSVC_FLAGS}")
+--- CMakeLists.txt.orig	2014-02-15 01:04:11.000000000 +0100
++++ CMakeLists.txt	2014-03-10 18:06:13.000000000 +0100
+@@ -259,18 +259,20 @@
+ endif(HAVE_CLOCK_GETTIME)
+ 
+ set(DL_LIBRARY "")
+-check_cxx_source_compiles(
+-    "#include <dlfcn.h>
+-    int main(void) {
+-        return 0;
+-    }
+-    "
+-    HAVE_DLFCN_H)
+-
+-if(HAVE_DLFCN_H)
+-    check_library_exists(dl dlerror "" HAVE_DL)
+-    set(DL_LIBRARY "dl")
+-endif()
++if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    check_cxx_source_compiles(
++        "#include <dlfcn.h>
++        int main(void) {
++            return 0;
++        }
++        "
++        HAVE_DLFCN_H)
++
++    if(HAVE_DLFCN_H)
++        check_library_exists(dl dlerror "" HAVE_DL)
++        set(DL_LIBRARY "dl")
++    endif()
++endif (NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+ 
+ SET(CMAKE_DEBUG_POSTFIX "d" CACHE STRING "add a postfix, usually 'd' on windows")
+ SET(CMAKE_RELEASE_POSTFIX "" CACHE STRING "add a postfix, usually empty on windows")
+@@ -342,7 +344,7 @@
  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${WARNING_FLAGS_CXX} ${MSVC_FLAGS} ${BOOST_CXX_FLAGS}")
+ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${MSVC_LD_FLAGS}")
  
 -include_directories(${PROJECT_SOURCE_DIR})
 +include_directories(BEFORE ${PROJECT_SOURCE_DIR})
  include_directories(${PROJECT_SOURCE_DIR}/simgear/canvas/ShivaVG/include)
  include_directories(${PROJECT_BINARY_DIR}/simgear)
- include_directories(${PROJECT_BINARY_DIR}/simgear/xml)
+ 
