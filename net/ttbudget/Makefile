@@ -34,7 +34,7 @@ post-install:
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerprc, or sparc64
-.elif ${OSVERSION} >= 900000
+.else
 BROKEN=		does not build
 .endif
 
