@@ -1,5 +1,5 @@
 --- src/VBox/Runtime/Makefile.kmk.orig	2013-12-18 11:10:31.000000000 -0500
-+++ src/VBox/Runtime/Makefile.kmk	2014-02-20 18:14:28.000000000 -0500
++++ src/VBox/Runtime/Makefile.kmk	2014-02-21 13:45:17.000000000 -0500
 @@ -157,6 +157,11 @@
  	IPRT_BLDCFG_TYPE=\"$(KBUILD_TYPE)\"
  
