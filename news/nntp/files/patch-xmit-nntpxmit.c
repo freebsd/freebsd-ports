@@ -1,5 +1,5 @@
---- xmit/nntpxmit.c.orig	Sat Dec  3 23:37:58 1994
-+++ xmit/nntpxmit.c	Fri Jul 25 19:14:34 2003
+--- xmit/nntpxmit.c.orig	1994-12-03 23:37:58.000000000 +0100
++++ xmit/nntpxmit.c	2014-02-07 22:23:30.000000000 +0100
 @@ -66,6 +66,7 @@
  #include "../conf.h"
  #include <stdio.h>
@@ -19,16 +19,18 @@
  #include <fcntl.h>
  #include <signal.h>
  #ifdef USG
-@@ -105,7 +109,7 @@
+@@ -105,7 +109,9 @@
  SIGRET	catchsig();
  void	restsig();
  void	logstats();
 -void	log();
 +void	nntpdlog();
++void	cleanup();
++void	rewrite();
  int	interrupted();
  
  /*
-@@ -148,6 +152,7 @@
+@@ -148,6 +154,7 @@
  
  double Tbegin, Tend;		/* transfer timestamps */
  
@@ -36,7 +38,7 @@
  extern	int	errno;
  extern 	int	strncmp();
  extern	char	*rindex();
-@@ -155,6 +160,7 @@
+@@ -155,6 +162,7 @@
  extern	char	*mktemp();
  extern	char	*strcpy();
  extern	char	*strcat();
@@ -44,7 +46,7 @@
  
  main(ac, av)
  int	ac;
-@@ -298,10 +304,10 @@
+@@ -298,10 +306,10 @@
  		"%s stats %lu offered %lu accepted %lu rejected %lu failed",
  		Host, Stats.offered, Stats.accepted, Stats.rejected,
  		Stats.failed);
@@ -57,7 +59,7 @@
  	/* reset reference point */
  	Tbegin = Tend;	
  	ouser = user;
-@@ -336,7 +342,7 @@
+@@ -336,7 +344,7 @@
  		char	buf[BUFSIZ];
  
  		sprintf(buf, E_fopen, file, mode, errmsg(errno));
@@ -66,7 +68,7 @@
  		return(FALSE);
  	}
  
-@@ -437,7 +443,7 @@
+@@ -437,7 +445,7 @@
  		if (fp == NULL && errno != ENOENT) {
  			/* Worse than "No such file or directory"? */
  			sprintf(buf, E_fopen, file, "r", errmsg(errno));
@@ -75,7 +77,7 @@
  			goodbye(DONT_WAIT);
  			exit(EX_OSERR);
  		}
-@@ -445,13 +451,13 @@
+@@ -445,13 +453,13 @@
  			/* Hmph. The file didn't exist. */
  			error = sendcmd(".");
  		} else {
@@ -91,7 +93,7 @@
  			Stats.failed++;
  			if (fp) { (void) fclose(fp); fp = NULL; }
  			return(FALSE);
-@@ -466,12 +472,12 @@
+@@ -466,12 +474,12 @@
  			if (code < 0) {
  				if (errno > 0) {
  					sprintf(buf, e_xfer, host, errmsg(errno));
@@ -106,7 +108,7 @@
  				}
  				if (fp) { (void) fclose(fp); fp = NULL; }
  				return(FALSE);
-@@ -495,14 +501,14 @@
+@@ -495,14 +503,14 @@
  		if (code < 0) {
  			if (errno > 0) {
  				sprintf(buf, e_xfer, host, errmsg(errno));
@@ -124,7 +126,7 @@
  			if (fp) { (void) fclose(fp); fp = NULL; }
  		}
  		return(FALSE);
-@@ -515,8 +521,10 @@
+@@ -515,8 +523,10 @@
  errmsg(code)
  int code;
  {
@@ -135,7 +137,7 @@
  	static char ebuf[6+5+1];
  
  	if (code > sys_nerr || code < 0) {
-@@ -769,13 +777,13 @@
+@@ -769,13 +779,13 @@
  		** communications with the remote either.
  		*/
  		sprintf(buf, "%s: message-id missing!", Article);
@@ -151,7 +153,16 @@
  		return(ERR_GOTIT);
  	}
  
-@@ -856,7 +864,7 @@
+@@ -836,7 +846,7 @@
+ /*
+ ** OK, clean up any mess and requeue failed articles
+ */
+-cleanup()
++void cleanup()
+ {
+ 	dprintf(stderr, "%s: cleanup()\n", Pname);
+ 	if (Qfp == (FILE *)NULL || Qfile == (char *)NULL)
+@@ -856,7 +866,7 @@
  				char	buf[BUFSIZ];
  
  				sprintf(buf, E_unlk, Qfile, errmsg(errno));
@@ -160,7 +171,16 @@
  			}
  		}
  		FCLOSE(Qfp);
-@@ -925,7 +933,7 @@
+@@ -908,7 +918,7 @@
+ ** account is supposed to own netnews), the resultant file will be the
+ ** wrong ownership, permissions, etc.
+ */
+-rewrite()
++void rewrite()
+ {
+ 	register ll_t	*lp;
+ 	register FILE	*tmpfp;
+@@ -925,7 +935,7 @@
  
  	if ((tmpfp = fopen(tempfile, mode)) == (FILE *)NULL) {
  		sprintf(buf, E_fopen, tempfile, mode, errmsg(errno));
@@ -169,7 +189,7 @@
  		FCLOSE(Qfp);
  		return;
  	}
-@@ -962,12 +970,12 @@
+@@ -962,12 +972,12 @@
  	*/
  	if (ferror(tmpfp)) {
  		sprintf(buf, "rewrite(): copy to %s failed", tempfile);
@@ -184,7 +204,7 @@
  		}
  		requeue((char *)NULL,(char *)NULL);	/* reset */
  		return;
-@@ -978,12 +986,12 @@
+@@ -978,12 +988,12 @@
  	rewind(Qfp);
  	if (ftruncate(fileno(Qfp), (off_t)0) < 0) {
  		sprintf(buf, "ftruncate(%s, 0): %s", Qfile, errmsg(errno));
@@ -199,7 +219,7 @@
  		}
  		requeue((char *)NULL,(char *)NULL);	/* reset */
  		return;
-@@ -992,11 +1000,11 @@
+@@ -992,11 +1002,11 @@
  	FCLOSE(Qfp);	/* we just nuked our lock here (lockfd) */
  	if ((Qfp = fopen(Qfile, mode)) == (FILE *)NULL) {
  		sprintf(buf, E_fopen, Qfile, mode, errmsg(errno));
@@ -213,7 +233,7 @@
  		}
  		requeue((char *)NULL,(char *)NULL);	/* reset */
  		return;
-@@ -1012,13 +1020,13 @@
+@@ -1012,13 +1022,13 @@
  	(void) fflush(Qfp);
  	if (ferror(Qfp)) {
  		sprintf(buf, "rewrite(): copy to %s failed", Qfile);
@@ -229,7 +249,7 @@
  	}
  	requeue((char *)NULL,(char *)NULL);		/* reset */
  	dprintf(stderr, "%s: rewrite(%s): done\n", Pname, Qfile);
-@@ -1040,7 +1048,7 @@
+@@ -1040,7 +1050,7 @@
  	catchsig(SIG_IGN);	/* for System V - hope we're quick enough */
  #endif	/* RELSIG */
  	sprintf(buf, "%s signal %d", Host, sig);
@@ -238,7 +258,7 @@
  	requeue(Article,(char *)NULL);
  	cleanup();
  	if (Report_Stats)
-@@ -1092,7 +1100,7 @@
+@@ -1092,7 +1102,7 @@
  ** log stuff
  */
  void
@@ -247,7 +267,7 @@
  int	importance;
  char	*error;
  {
-@@ -1131,7 +1139,7 @@
+@@ -1131,7 +1141,7 @@
  	if (lockf(fd, (non_blocking ? F_TLOCK : F_LOCK), 0) < 0) {
  		if (errno != EACCES) {
  			sprintf(buf, "lockf(%s): %s\n", file, errmsg(errno));
@@ -256,7 +276,7 @@
  		}
  		return(FALSE);
  	}
-@@ -1141,7 +1149,7 @@
+@@ -1141,7 +1151,7 @@
  	if (flock(fd, LOCK_EX|(non_blocking ? LOCK_NB : 0)) < 0) {
  		if (errno != EWOULDBLOCK) {
  			sprintf(buf, "flock(%s): %s\n", file, errmsg(errno));
