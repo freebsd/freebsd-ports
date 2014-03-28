@@ -238,6 +238,7 @@
     SUBDIR += kedpm
     SUBDIR += keepassx
     SUBDIR += keepassx2
+    SUBDIR += keybase
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
