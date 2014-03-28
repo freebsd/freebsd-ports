@@ -5818,3 +5818,4 @@ devel/R-cran-vcd||2014-03-28|Has expired: New port without proper maintainer
 devel/ros-documentation||2014-03-28|Has expired: Depends on expiring devel/ros_comm
 devel/ros-common_msgs||2014-03-28|Has expired: Depends on expiring devel/ros_comm
 devel/ros_comm||2014-03-28|Has expired: Broken for more than 6 months
+devel/cross-gdb||2014-03-28|Has expired: No more public distfiles, unstaged
