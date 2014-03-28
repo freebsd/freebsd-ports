@@ -1,6 +1,7 @@
 # Created by:	marcus@FreeBSD.org
 # $FreeBSD$
 
+CATEGORIES=	www devel
 PKGNAMEPREFIX=	mod_
 
 MAINTAINER=	ale@FreeBSD.org
