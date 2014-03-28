@@ -186,21 +186,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/libs/liblock/configure
 
-	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
-		${WRKSRC}/libs/sqwebmail/Makefile.in
-
 	@${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/libs/pcp/configure
-
-#	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}| ; \
-#		s|$$(SHELL) $$(MKINSTALLDIRS)|$$(MKINSTALLDIRS)| ; \
-#		s|$$(libdir)/charset|$$(prefix)/libdata/charset|g ; \
-#		s|$$(libdir)/t-charset|$$(prefix)/libdata/t-charset|g' \
-#		${WRKSRC}/libs/pcp/intl/Makefile.in
-
-post-install:
-#	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-#		${FILESDIR}/sqwebmail-sqwebmaild.sh > ${WRKDIR}/sqwebmail-sqwebmaild.sh
-#	${INSTALL_SCRIPT} ${WRKDIR}/sqwebmail-sqwebmaild.sh ${RCDIR}/sqwebmail-sqwebmaild.sh
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
