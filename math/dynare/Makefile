@@ -3,7 +3,7 @@
 
 PORTNAME=	dynare
 PORTVERSION=	4.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/release/source/
 
@@ -16,8 +16,7 @@ LIB_DEPENDS=	libumfpack.so:${PORTSDIR}/math/suitesparse \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
-USES=		fortran gmake
-USE_XZ=		yes
+USES=		fortran gmake pkgconfig tar:xz
 
 INFO=		dynare
 
@@ -32,6 +31,11 @@ OCTAVE_BUILD_DEPENDS=		octave:${PORTSDIR}/math/octave
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+pre-configure:
+# fix matio detection
+	${REINPLACE_CMD} 's,-lmatio .*$$LIBS,`pkgconf --libs matio`,' \
+		${WRKSRC}/configure ${WRKSRC}/mex/build/octave/configure
 
 post-configure:
 	@${ECHO_MSG} ""
