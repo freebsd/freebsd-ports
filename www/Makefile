@@ -1132,6 +1132,7 @@
     SUBDIR += p5-Plack-Middleware-Deflater
     SUBDIR += p5-Plack-Middleware-Expires
     SUBDIR += p5-Plack-Middleware-File-Sass
+    SUBDIR += p5-Plack-Middleware-FixMissingBodyInRedirect
     SUBDIR += p5-Plack-Middleware-ForceEnv
     SUBDIR += p5-Plack-Middleware-Header
     SUBDIR += p5-Plack-Middleware-IEnosniff

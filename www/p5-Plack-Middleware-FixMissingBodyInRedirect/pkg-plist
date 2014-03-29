@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Plack/Middleware/FixMissingBodyInRedirect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/FixMissingBodyInRedirect/.packlist
+%%PERL5_MAN3%%/Plack::Middleware::FixMissingBodyInRedirect.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/FixMissingBodyInRedirect
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
+@dirrmtry %%SITE_PERL%%/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/Plack

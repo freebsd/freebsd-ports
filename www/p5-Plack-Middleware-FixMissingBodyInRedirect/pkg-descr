@@ -1,0 +1,4 @@
+Plack::Middleware::FixMissingBodyInRedirect sets body in redirect response, if
+it is not already set.
+
+WWW: http://search.cpan.org/dist/Plack-Middleware-FixMissingBodyInRedirect/
