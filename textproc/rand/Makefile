@@ -10,10 +10,15 @@ MASTER_SITES=	http://bzflag.bz/~erik/files/ \
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Utility to display files or streams in random order
 
+LICENSE=	GPLv2
+
 USES=	gmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/rand man/man1/rand.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|}-R|}-L|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/rand ${STAGEDIR}${PREFIX}/bin
