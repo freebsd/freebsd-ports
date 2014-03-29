@@ -22,29 +22,33 @@ MAN8=		dicmd.8 didump.8 dexpireover.8 dfeedinfo.8 dgrpctl.8 \
 PORTDOCS=	COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DES DOCS
+DES_DESC=	DES encryption support
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${CP} ${SCRIPTDIR}/diablo.sh-sample ${WRKDIR}
-	@${REINPLACE_CMD} -E 's|%%PREFIX%%|${PREFIX}|g ;\
+	${CP} ${SCRIPTDIR}/diablo.sh-sample ${WRKDIR}
+	${REINPLACE_CMD} -E 's|%%PREFIX%%|${PREFIX}|g ;\
 		s|-g -O.?|${CFLAGS}| ; s|g?cc|${CC}|' \
 		${WRKDIR}/diablo.sh-sample ${WRKSRC}/XMakefile.inc
 # Fix for GCC 4.2
-	@${REINPLACE_CMD} -e 's|VServerConfig\[\]|*VServerConfig|' \
+	${REINPLACE_CMD} -e 's|VServerConfig\[\]|*VServerConfig|' \
 		${WRKSRC}/dreaderd/main.c
 
-.if !defined(WITH_DES)
-	@${REINPLACE_CMD} -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
+.if empty(PORT_OPTIONS:MDES)
+	${REINPLACE_CMD} -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
 .endif
 
 do-build:
-	@cd ${WRKSRC} && xmake all
-
-pre-install:
-	${INSTALL} -d ${DOCDIR} ${PREFIX}/news ${PREFIX}/news/dbin
+	(cd ${WRKSRC} && xmake all)
 
 do-install:
-	@cd ${WRKSRC} && xmake install
+	${MKDIR} ${PREFIX}/news/dbin
+	(cd ${WRKSRC} && xmake install)
 	${INSTALL_SCRIPT} ${WRKDIR}/diablo.sh-sample ${PREFIX}/etc/rc.d
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

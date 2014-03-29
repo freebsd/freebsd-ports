@@ -16,29 +16,23 @@ COMMENT=	A perl script for downloading nzb files
 
 RUN_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${LOCALBASE}/bin/uudeview:${PORTSDIR}/converters/uudeview
+		uudeview:${PORTSDIR}/converters/uudeview
 
-PLIST_FILES=	bin/nzbperl
+PLIST_FILES=	bin/${PORTNAME}
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	${DISTNAME}
+WRKSRC=		${WRKDIR}
 
-.if defined(WITH_SSL)
-RUN_DEPENDS+=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
-.endif
+OPTIONS_DEFINE=	SSL
+SSL_RUN_DEPENDS=p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}
-	@${REINPLACE_CMD} -e \
-		"s,#!/usr/bin/perl -w,#!/usr/local/bin/perl -w," \
-		${WRKDIR}/${DISTNAME}
+	${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

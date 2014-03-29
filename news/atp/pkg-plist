@@ -1,6 +1,10 @@
 bin/atp
 bin/atpdiag
 bin/rot13
-share/atp/atprc
-share/atp/taglines.atp
-@dirrm share/atp
+%%DATADIR%%/atprc
+%%DATADIR%%/taglines.atp
+man/man1/atp.1.gz
+man/man1/atpdiag.1.gz
+man/man1/rot13.1.gz
+man/man3/editline.3.gz
+@dirrm %%DATADIR%%

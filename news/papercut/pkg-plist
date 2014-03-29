@@ -2,7 +2,10 @@ bin/papercut
 %%DATADIR%%/papercut.py
 %%DATADIR%%/papercut_cache.py
 %%DATADIR%%/portable_locker.py
+@unexec if cmp -s %D/%%DATADIR%%/settings.py.sample %D/%%DATADIR%%/settings.py; then rm -f %D/%%DATADIR%%/settings.py; fi
 %%DATADIR%%/settings.py.sample
+@exec if [ ! -f %D/%%DATADIR%%/settings.py ] ; then cp -p %D/%F %B/settings.py; fi
+@exec echo "To use papercut you need to edit %D/%%DATADIR%%/settings.py." |fmt
 %%DATADIR%%/auth/__init__.py
 %%DATADIR%%/auth/mysql.py
 %%DATADIR%%/auth/phorum_mysql_users.py
@@ -26,7 +29,6 @@ bin/papercut
 %%DATADIR%%/storage/phpbb_mysql_fix.sql
 %%DATADIR%%/storage/phpnuke_phpbb_mysql.py
 %%DATADIR%%/storage/strutil.py
-@exec echo "To use papercut you need to copy %D/%%DATADIR%%/settings.py.sample to %D/%%DATADIR%%/settings.py and edit it." |fmt
 @unexec [ -f %D/%%DATADIR%%/papercut.pyc ] && rm %D/%%DATADIR%%/papercut.pyc || true
 @unexec [ -f %D/%%DATADIR%%/papercut_cache.pyc ] && rm %D/%%DATADIR%%/papercut_cache.pyc || true
 @unexec [ -f %D/%%DATADIR%%/portable_locker.pyc ] && rm %D/%%DATADIR%%/portable_locker.pyc || true

@@ -3,7 +3,7 @@
 
 PORTNAME=		fidogate
 PORTVERSION=		5.1.7
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		news mail
 MASTER_SITES=		SF/rus${PORTNAME}/${PORTNAME}-stable/${PORTNAME}%20${PORTVERSION}ds
 PKGNAMESUFFIX=		-ds
@@ -14,16 +14,11 @@ COMMENT=		Fido-Internet Gateway and Tosser
 
 PORTSCOUT=		limit:^5\.[^2] # 5.2.X is development branch
 
-.if !defined(WITHOUT_INN)
-BUILD_DEPENDS=		${LOCALBASE}/news/bin/innconfval:${PORTSDIR}/news/inn
-.endif
-
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 USES=		perl5
 MAKE_JOBS_UNSAFE=	yes
-NO_STAGE=	yes
 
 SPOOLDIR?=/var/spool/fido/gate
 BTBASEDIR?=/var/spool/fido/bt
@@ -38,39 +33,32 @@ PLIST_SUB+=		SPOOLDIR=${SPOOLDIR} \
 			VARDIR=${VARDIR} \
 			PREFIX=${PREFIX}
 
-HAS_CONFIGURE=		yes
-.if defined(WITHOUT_INN) || defined (BATCH)
-CONFIGURE_ARGS+=	--without-news
-.else
-CONFIGURE_ARGS+=	--with-newsbindir=${LOCALBASE}/news/bin
-.endif
-.if !defined(WITH_BSO)
-CONFIGURE_ARGS+=	--enable-amiga-out
-.endif
-.if !defined(WITH_DESCDIR)
-CONFIGURE_ARGS+=	--disable-desc-dir
-.endif
-.if !defined(WITHOUT_ALIASES)
-CONFIGURE_ARGS+=	--enable-aliases-local
-.endif
-.if defined(WITH_DBC)
-CONFIGURE_ARGS+=	--enable-dbc-history
-.endif
-.if defined(DNT_NETMAIL)
-CONFIGURE_ARGS+=	--enable-dnt-netmail
-.endif
-.if defined(WITHOUT_FMSGID)
-CONFIGURE_ARGS+=	--disable-fs-msgid
-.endif
-.if !defined(WITH_AVAIL)
-CONFIGURE_ARGS+=	--disable-af-avail
-.endif
-.if defined(WITHOUT_BEST_AKA)
-CONFIGURE_ARGS+=	--disable-best-aka
-.endif
-.if defined(WITH_NFS_LOCK)
-CONFIGURE_ARGS+=	--enable-nfs-safe-lock
-.endif
+OPTIONS_DEFINE=	ALIASES AVAIL BEST_AKA BSO DBC DESCDIR DNT_NETMAIL DOCS FMSGID INN NFS_LOCK
+OPTIONS_DEFAULT=ALIASES BEST_AKA BSO DOCS FMSGID INN 
+ALIASES_DESC=	Enable local aliases
+AVAIL_DESC=		Change %list and %avail behaviour
+BEST_AKA_DESC=	Enable best AKA
+BSO_DESC=		Create 4D outbound filenames for AmigaDOS mailers
+DBC_DESC=		Use msgid correspond data base
+DESCDIR_DESC=	Put file descriptions into files.bbs
+DNT_NETMAIL_DESC=	Do not toss netmail
+FMSGID_DESC=	Set gate msgid into outgoing messages
+INN_DESC=		News support
+NFS_LOCK_DESC=	Create lock files/BSY files in an NFS-safe way
+
+ALIASES_CONFIGURE_ENABLE=	aliases-local
+AVAIL_CONFIGURE_ENABLE=		af-avail
+BEST_AKA_CONFIGURE_ENABLE=	best-aka
+BSO_CONFIGURE_ENABLE=		amiga-out
+DBC_CONFIGURE_ENABLE=		dbc-history
+DESCDIR_CONFIGURE_ENABLE=	desc-dir
+DNT_NETMAIL_CONFIGURE_ENABLE=	dnt-netmail
+FMSGID_CONFIGURE_ENABLE=	fs-msgid
+INN_BUILD_DEPENDS=			${LOCALBASE}/news/bin/innconfval:${PORTSDIR}/news/inn
+INN_CONFIGURE_WITH=			news
+INN_CONFIGURE_ON=			--with-newsbindir=${LOCALBASE}/news/bin
+NFS_LOCK_CONFIGURE_ENABLE=	nfs-safe-lock
+
 CONFIGURE_ARGS+=	--libexec=${PREFIX}/libexec/fidogate \
 			--sysconfdir=${PREFIX}/etc/fido/gate \
 			--libdir=${PREFIX}/lib/fidogate \
@@ -85,26 +73,33 @@ DOCS=		doc/README.ru doc/README doc/FAQ.ru doc/FIDOGATE+tracker.ru \
 		doc/old/FIDOGATE_ftrack doc/old/README.snp \
 		doc/old/fidogate.txt doc/old/fidogate.texi doc/old/msgid.doc
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for a in ${DOCS}
-	${INSTALL_DATA}	${WRKSRC}/${a} ${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/${a} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for a in point inn postfix sendmail
-	${MKDIR} ${EXAMPLESDIR}/${a}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${a}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/areas ${EXAMPLESDIR}/point/areas
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/areas.bbs ${EXAMPLESDIR}/point/areas.bbs
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/fidogate.conf ${EXAMPLESDIR}/point/fidogate.conf
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/newsfeeds ${EXAMPLESDIR}/point/newsfeeds
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/packing ${EXAMPLESDIR}/point/packing
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/routing ${EXAMPLESDIR}/point/routing
-	${INSTALL_DATA} ${WRKSRC}/doc/news/inn/newsfeeds.fidogate ${EXAMPLESDIR}/inn/newsfeeds.fidogate
-	${INSTALL_DATA}	${WRKSRC}/doc/mailer/postfix/master.cf ${EXAMPLESDIR}/postfix/master.cf
-	${INSTALL_DATA} ${WRKSRC}/doc/mailer/postfix/transport ${EXAMPLESDIR}/postfix/transport
-	${INSTALL_DATA} ${WRKSRC}/doc/mailer/sendmail/mailer/ftn.m4 ${EXAMPLESDIR}/sendmail/ftn.m4
-.endif
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/areas ${STAGEDIR}${EXAMPLESDIR}/point/areas
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/areas.bbs ${STAGEDIR}${EXAMPLESDIR}/point/areas.bbs
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/fidogate.conf ${STAGEDIR}${EXAMPLESDIR}/point/fidogate.conf
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/newsfeeds ${STAGEDIR}${EXAMPLESDIR}/point/newsfeeds
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/packing ${STAGEDIR}${EXAMPLESDIR}/point/packing
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/point/routing ${STAGEDIR}${EXAMPLESDIR}/point/routing
+	${INSTALL_DATA} ${WRKSRC}/doc/news/inn/newsfeeds.fidogate ${STAGEDIR}${EXAMPLESDIR}/inn/newsfeeds.fidogate
+	${INSTALL_DATA}	${WRKSRC}/doc/mailer/postfix/master.cf ${STAGEDIR}${EXAMPLESDIR}/postfix/master.cf
+	${INSTALL_DATA} ${WRKSRC}/doc/mailer/postfix/transport ${STAGEDIR}${EXAMPLESDIR}/postfix/transport
+	${INSTALL_DATA} ${WRKSRC}/doc/mailer/sendmail/mailer/ftn.m4 ${STAGEDIR}${EXAMPLESDIR}/sendmail/ftn.m4
+.for i in toss/bad toss/pack toss/route toss/toss outrfc/mail outrfc/news outpkt/mail outpkt/news
+	@${TOUCH} ${STAGEDIR}${SPOOLDIR}/$i/.keep_me
+.endfor
+.for i in in/bad in/tmpunpack pin/bad pin/tmpunpack tick
+	@${TOUCH} ${STAGEDIR}${BTBASEDIR}/$i/.keep_me
+.endfor
+.for i in ${LOGDIR} ${LOCKDIR}
+	@${TOUCH} ${STAGEDIR}$i/.keep_me
+.endfor
 
 .include <bsd.port.mk>

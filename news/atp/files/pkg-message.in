@@ -5,7 +5,7 @@ Each user who wishes to use ATP must do the following:
 
 2.  create the directory named above
 
-3.  copy the files in ${PREFIX}/share/atp into it
+3.  copy the files in %%PREFIX%%/share/atp into it
 
 4.  edit the atprc and taglines.atp file to contain whatever
     data you want.
