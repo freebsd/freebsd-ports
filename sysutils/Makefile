@@ -827,6 +827,7 @@
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
     SUBDIR += rubygem-teamocil
+    SUBDIR += rubygem-yell
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm
