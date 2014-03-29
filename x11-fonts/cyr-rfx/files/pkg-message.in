@@ -1,10 +1,10 @@
 
 This port provides Cyrillic replacements for most of the standard
-	/usr/X11R6/lib/X11/fonts/misc
+	%%PREFIX%%/lib/X11/fonts/misc
 and
-	/usr/X11R6/lib/X11/fonts/75dpi
+	%%PREFIX%%/lib/X11/fonts/75dpi
 fonts.
 
 You may want to make sure, the
-	/usr/X11R6/lib/X11/fonts/cyr-rfx-koi8-o
+	%%PREFIX%%/lib/X11/fonts/cyr-rfx-%%CYR_RFX_ENCODING%%
 is listed in your fontpath before those two paths.
