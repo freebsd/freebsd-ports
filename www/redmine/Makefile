@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	redmine
-PORTVERSION=	2.3.3
-PORTREVISION=	4
+PORTVERSION=	2.5.1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.redmine.org/releases/
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A flexible project management web application
@@ -20,6 +18,8 @@ RUN_DEPENDS=	rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
 		rubygem-coderay>=1.0.9:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-fastercsv>=1.5.0:${PORTSDIR}/devel/rubygem-fastercsv \
 		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
+		rubygem-redcarpet>0:${PORTSDIR}/textproc/rubygem-redcarpet \
+		rubygem-awesome_nested_set>0:${PORTSDIR}/databases/rubygem-awesome_nested_set \
 		rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap
 
 USE_RUBY=	yes
@@ -39,7 +39,6 @@ PASSENGER_DESC=	Use Apache/Nginx WEB server
 MYSQL2_DESC=	MySQL database support (via mysql2 rubygem)
 NO_OPTIONS_SORT=yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -81,23 +80,23 @@ pre-install:
 	${MKDIR} ${WRKSRC}/public/plugin_assets
 
 do-install:
-	${MKDIR} ${WWWDIR}
-	${MKDIR} ${WWWDIR}/tmp/pids
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/pids
 	cd ${WRKSRC} && \
-	${COPYTREE_SHARE} "*" ${WWWDIR} "! ( -name *\.orig -o -name *\.bak )"
+	${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} "! ( -name *\.orig -o -name *\.bak )"
 	${FIND} ${WRKSRC}/script -type f -print | ${XARGS} ${CHMOD} 755
 
 post-install:
-	${TOUCH} ${WWWDIR}/Gemfile.lock
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/Gemfile.lock
+	${TOUCH} ${STAGEDIR}${WWWDIR}/Gemfile.lock
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/Gemfile.lock
 	
-	if ! [ -r ${WWWDIR}/config/settings.yml ]; then			\
-		${INSTALL_DATA} ${WWWDIR}/config/settings.yml-dist	\
-			${WWWDIR}/config/settings.yml;			\
+	if ! [ -r ${STAGEDIR}${WWWDIR}/config/settings.yml ]; then		\
+		${INSTALL_DATA} ${STAGEDIR}${WWWDIR}/config/settings.yml-dist	\
+			${STAGEDIR}${WWWDIR}/config/settings.yml;		\
 	fi
 	for subdir in files log tmp public/plugin_assets; do \
-		${CHOWN} -R :${WWWGRP} ${WWWDIR}/$$subdir; \
-		${CHMOD} -R g+w ${WWWDIR}/$$subdir; \
+		${CHOWN} -R :${WWWGRP} ${STAGEDIR}${WWWDIR}/$$subdir; \
+		${CHMOD} -R g+w ${STAGEDIR}${WWWDIR}/$$subdir; \
 	done
 	@${CAT} ${PKGMESSAGE}
 
