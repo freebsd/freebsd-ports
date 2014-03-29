@@ -1,5 +1,5 @@
---- makefile.orig	2009-08-29 15:28:59.000000000 -0300
-+++ makefile	2009-08-29 15:30:34.000000000 -0300
+--- makefile.orig	2004-08-01 22:52:06.000000000 +0400
++++ makefile	2014-03-06 18:50:45.513966851 +0400
 @@ -28,7 +28,6 @@
  # Set this for where to store the man pages and executables.
  # If you want to store this as part of an official distribution,
@@ -16,12 +16,14 @@
  
  # Set this to the name of your "install" program.  On some systems,
  # "install -C" would be useful (so unchanged files won't be modified),
-@@ -70,7 +68,7 @@
+@@ -69,8 +67,8 @@
+ RPM_VERSION=1
  ARCH=i386
  VERSIONEDNAME=$(NAME)-$(VERSION)
- INSTALL_DIR=$(PREFIX)/bin
+-INSTALL_DIR=$(PREFIX)/bin
 -MAN_DIR=$(PREFIX)/share/man
-+MAN_DIR=$(PREFIX)/man
++INSTALL_DIR=${DESTDIR}$(PREFIX)/bin
++MAN_DIR=${DESTDIR}$(PREFIX)/man
  MAN_DIR_MAN1=$(MAN_DIR)/man1
  DOC_DIR=$(PREFIX)/share/doc/$(VERSIONEDNAME)-$(RPM_VERSION)
  POSTED_DIR=/home/dwheeler/dwheeler.com/sloccount

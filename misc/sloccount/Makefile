@@ -16,19 +16,13 @@ INSTALL_TARGET=	install_programs install_man
 
 PORTDOCS=	ChangeLog README TODO sloccount.html
 
-MAN1=		sloccount.1
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 post-install:
 .for file in lexcount1 c_count java_count php_count
-	@${STRIP_CMD} ${PREFIX}/bin/${file}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
