@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	method_source
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
