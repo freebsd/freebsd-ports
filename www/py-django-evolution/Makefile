@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-evolution
-PORTVERSION=	0.6.8
-PORTREVISION=	1
+PORTVERSION=	0.6.9
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ COMMENT=	A database schema evolution tool for the Django web framework
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.1.1<1.5:${PORTSDIR}/www/py-django14
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.1.1:${PORTSDIR}/www/py-django14
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
