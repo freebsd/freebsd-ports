@@ -19,8 +19,7 @@ CMAKE_ARGS=	-DBUILD_DOCS=OFF \
 		-DUSE_VALGRIND=OFF
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	2
-USE_XZ=		yes
-USES=		cmake pkgconfig shebangfix
+USES=		cmake pkgconfig shebangfix tar:xz
 
 SHEBANG_FILES=	gen-config.py
 python_OLD_CMD=	${SETENV} python
