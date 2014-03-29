@@ -4160,6 +4160,7 @@
     SUBDIR += rubygem-clio
     SUBDIR += rubygem-cloudfiles
     SUBDIR += rubygem-cocaine
+    SUBDIR += rubygem-coercible
     SUBDIR += rubygem-coffee-rails
     SUBDIR += rubygem-coffee-script
     SUBDIR += rubygem-coffee-script-source
