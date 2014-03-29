@@ -499,6 +499,7 @@
     SUBDIR += mcelog
     SUBDIR += mcollective
     SUBDIR += mcollective-nrpe-agent
+    SUBDIR += mcollective-puppet-agent
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdcp
