@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	atomic
-PORTVERSION=	1.1.14
+PORTVERSION=	1.1.16
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
