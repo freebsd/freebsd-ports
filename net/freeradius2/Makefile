@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeradius
-DISTVERSION=	2.2.3
-PORTREVISION=	1
+DISTVERSION=	2.2.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \

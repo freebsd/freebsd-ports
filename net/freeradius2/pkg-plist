@@ -89,6 +89,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/sradutmp
 %%EXAMPLESDIR%%/raddb/modules/unix
 %%EXAMPLESDIR%%/raddb/modules/wimax
+%%EXAMPLESDIR%%/raddb/panic.gdb
 %%EXAMPLESDIR%%/raddb/policy.conf
 %%EXAMPLESDIR%%/raddb/policy.txt
 %%EXAMPLESDIR%%/raddb/preproxy_users
