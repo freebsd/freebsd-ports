@@ -15,11 +15,15 @@ RUN_DEPENDS=	rubygem-columnize>=0.3:${PORTSDIR}/devel/rubygem-columnize \
 		rubygem-debugger-linecache>=1.2:${PORTSDIR}/devel/rubygem-debugger-linecache
 
 USE_RUBY=	yes
-RUBY_REQUIRE=	Ruby >= 200
-
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/byebug
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+IGNORE=		Requires Ruby 2.0 or newer
+.endif
+
+.include <bsd.port.post.mk>
