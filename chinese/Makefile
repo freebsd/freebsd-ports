@@ -107,7 +107,7 @@
     SUBDIR += p5-Text-Greeking-zh_TW
     SUBDIR += p5-cconv
     SUBDIR += pcmanx
-    SUBDIR += php5-cconv
+    SUBDIR += php-cconv
     SUBDIR += phpbb-tw
     SUBDIR += phpbb3-tw
     SUBDIR += pine4
