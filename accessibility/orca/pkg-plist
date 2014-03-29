@@ -593,6 +593,7 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/where_am_I.py
 %%PYTHON_SITELIBDIR%%/orca/where_am_I.pyc
 %%PYTHON_SITELIBDIR%%/orca/where_am_I.pyo
+man/man1/orca.1.gz
 share/applications/orca.desktop
 share/icons/hicolor/16x16/apps/orca.png
 share/icons/hicolor/22x22/apps/orca.png

@@ -12,7 +12,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mouse accessibility enhancements for the GNOME desktop
 
-NO_STAGE=	yes
 USE_XORG=	x11 xfixes xcursor xtst
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack
@@ -23,6 +22,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	mousetweaks.schemas pointer-capture-applet.schemas
-MAN1=		dwell-click-applet.1 mousetweaks.1 pointer-capture-applet.1
 
 .include <bsd.port.mk>

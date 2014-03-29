@@ -3,6 +3,9 @@ bin/mousetweaks
 bin/pointer-capture-applet
 libdata/bonobo/servers/DwellClick_Factory.server
 libdata/bonobo/servers/PointerCapture_Factory.server
+man/man1/dwell-click-applet.1.gz
+man/man1/mousetweaks.1.gz
+man/man1/pointer-capture-applet.1.gz
 share/gnome/help/mousetweaks/C/figures/mouse-a11y-dwell-checkbox.png
 share/gnome/help/mousetweaks/C/figures/mouse-a11y-dwell-click-type-applet.png
 share/gnome/help/mousetweaks/C/figures/mouse-a11y-dwell-click-type-window.png

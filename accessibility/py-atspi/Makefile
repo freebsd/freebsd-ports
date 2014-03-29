@@ -18,7 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at
 
 CONFLICTS=	at-spi-1.[0-9]*
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomehier intlhack pygobject3
