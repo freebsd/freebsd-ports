@@ -51,6 +51,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7e61a839-b714-11e3-8195-001966155bea">
+    <topic>file -- out-of-bounds access in search rules with offsets from input file</topic>
+    <affects>
+      <package>
+	<name>file</name>
+	<range><lt>5.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aaron Reffett reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2270">
+	  <p>softmagic.c in file ... and libmagic allows context-dependent
+	    attackers to cause a denial of service (out-of-bounds memory access and
+	    crash) via crafted offsets in the softmagic of a PE executable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-2270</cvename>
+      <url>http://bugs.gw.com/view.php?id=31</url>
+    </references>
+    <dates>
+      <discovery>2013-12-20</discovery>
+      <entry>2014-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9fa1a0ac-b2e0-11e3-bb07-6cf0490a8c18">
     <topic>Joomla! -- Core - Multiple Vulnerabilities</topic>
     <affects>
@@ -820,9 +848,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Fine Free file project reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1943">
-	  <p>... file before 5.17 allows context-dependent attackers to
-	  cause a denial of service (infinite recursion, CPU consumption, and
-	  crash) via a crafted indirect offset value in the magic of a file.</p>
+	  <p>file before 5.17 allows context-dependent attackers to
+	    cause a denial of service (infinite recursion, CPU consumption, and
+	    crash) via a crafted indirect offset value in the magic of a file.</p>
 	</blockquote>
       </body>
     </description>
