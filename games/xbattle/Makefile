@@ -3,44 +3,55 @@
 
 PORTNAME=	xbattle
 PORTVERSION=	5.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	GENTOO/distfiles \
+		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Concurrent multi-player battle strategy game
 
-DEPRECATED=	Unmaintained since 2001
-EXPIRATION_DATE=	2014-04-12
+RUN_DEPENDS=	xdialog>0:${PORTSDIR}/x11/xdialog
+
 USES=		imake
 USE_XORG=	x11 xext
-MAN1=		xbattle.1
-
+USE_CSTD=	gnu89
 CFLAGS+=	-Wno-return-type
 
-NO_STAGE=	yes
-
+PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+INSTALLS_ICONS=	yes
+ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
+
+SUB_FILES=	${PORTNAME}-menu
+
+DESKTOP_ENTRIES="XBattle" "" "${PORTNAME}" \
+		"${PORTNAME}-menu" "Game;ArcadeGame;" ""
 
 post-install:
-	$(MKDIR) $(PREFIX)/share/xbattle
-	$(CP) -R $(WRKSRC)/xbos $(PREFIX)/share/xbattle/
-	$(CP) -R $(WRKSRC)/xbts $(PREFIX)/share/xbattle/
-	$(CP) -R $(WRKSRC)/xbas $(PREFIX)/share/xbattle/
-	@${CHMOD} 755 ${PREFIX}/share/xbattle
-	@${CHMOD} 755 ${PREFIX}/share/xbattle/xbas
-	@${CHMOD} 644 ${PREFIX}/share/xbattle/xbas/*
-	@${CHMOD} 755 ${PREFIX}/share/xbattle/xbos
-	@${CHMOD} 644 ${PREFIX}/share/xbattle/xbos/*
-	@${CHMOD} 755 ${PREFIX}/share/xbattle/xbts
-	@${CHMOD} 644 ${PREFIX}/share/xbattle/xbts/*
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/tutorial* ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-menu ${STAGEDIR}${PREFIX}/bin/
+.for d in xbas xbos xbts
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+	@${CHMOD} 755 ${STAGEDIR}${DATADIR}/${d}
+	@${CHMOD} 644 ${STAGEDIR}${DATADIR}/${d}/*
+.endfor
+	@${CHMOD} 755 ${STAGEDIR}${DATADIR}
+.for f in tutorial1 tutorial2
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${f}
+.endfor
+
+.for s in ${ICON_SIZES}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
+.endfor
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
