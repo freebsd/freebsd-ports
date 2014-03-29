@@ -127,7 +127,7 @@
                Sin_Family => Constants.Sys.AF_INET6,
                Sin_Port   => C.unsigned_short
                  (Byte_Swapping.Host_To_Network (Input => Port)),
-@@ -253,6 +261,51 @@ package body Anet.Sockets.Inet is
+@@ -253,6 +261,52 @@ package body Anet.Sockets.Inet is
  
     -------------------------------------------------------------------------
  
@@ -157,7 +157,8 @@
 +               Interfaces.C.Strings.Value (frame.all.ifa_name);
 +         begin
 +            if testname = String (Iface_Name) and then
-+              frame.all.ifa_addr.all.Sin_Family = Constants.Sys.AF_INET6 then
++              frame.all.ifa_addr.all.Sin_Family = Constants.Sys.AF_INET6
++            then
 +               found := True;
 +               IPv6_Address := frame.all.ifa_addr.all.Sin6_Addr;
 +            end if;
@@ -179,7 +180,7 @@
     procedure Init (Socket : in out UDPv4_Socket_Type)
     is
     begin
-@@ -301,15 +354,15 @@ package body Anet.Sockets.Inet is
+@@ -301,15 +355,15 @@ package body Anet.Sockets.Inet is
        use type C.unsigned_short;
  
        Mreq      : Thin.IPv4_Mreq_Type;
@@ -198,7 +199,7 @@
  
        Res := Thin.C_Setsockopt
          (S       => Socket.Sock_FD,
-@@ -335,10 +388,14 @@ package body Anet.Sockets.Inet is
+@@ -335,10 +389,14 @@ package body Anet.Sockets.Inet is
  
        Mreq6     : Thin.IPv6_Mreq_Type;
        Iface_Idx : Natural := 0;
@@ -214,7 +215,7 @@
        end if;
  
        Mreq6.IPv6mr_Multiaddr := Group;
-@@ -349,7 +406,7 @@ package body Anet.Sockets.Inet is
+@@ -349,7 +407,7 @@ package body Anet.Sockets.Inet is
           Level   => Constants.IPPROTO_IPV6,
           Optname => Constants.IPV6_ADD_MEMBERSHIP,
           Optval  => Mreq6'Address,
@@ -223,7 +224,7 @@
  
        if Res = C_Failure then
           raise Socket_Error with "Unable to join multicast group "
-@@ -440,7 +497,8 @@ package body Anet.Sockets.Inet is
+@@ -440,7 +498,8 @@ package body Anet.Sockets.Inet is
        Dst_Addr : IPv4_Addr_Type;
        Dst_Port : Port_Type)
     is
@@ -233,7 +234,7 @@
        Dst : constant Thin.Sockaddr_In_Type := Create_Inet4
          (Address => Dst_Addr,
           Port    => Dst_Port);
-@@ -450,7 +508,7 @@ package body Anet.Sockets.Inet is
+@@ -450,7 +509,7 @@ package body Anet.Sockets.Inet is
                              Len   => Item'Length,
                              Flags => 0,
                              To    => Dst'Address,
@@ -242,7 +243,7 @@
  
        if Res = C_Failure then
           raise Socket_Error with "Error sending data to "
-@@ -473,7 +531,8 @@ package body Anet.Sockets.Inet is
+@@ -473,7 +532,8 @@ package body Anet.Sockets.Inet is
        Dst_Addr : IPv6_Addr_Type;
        Dst_Port : Port_Type)
     is
@@ -252,7 +253,7 @@
        Dst : constant Thin.Sockaddr_In_Type := Create_Inet6
          (Address => Dst_Addr,
           Port    => Dst_Port);
-@@ -483,7 +542,7 @@ package body Anet.Sockets.Inet is
+@@ -483,7 +543,7 @@ package body Anet.Sockets.Inet is
                              Len   => Item'Length,
                              Flags => 0,
                              To    => Dst'Address,
