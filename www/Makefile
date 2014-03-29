@@ -1139,6 +1139,7 @@
     SUBDIR += p5-Plack-Middleware-InteractiveDebugger
     SUBDIR += p5-Plack-Middleware-JSConcat
     SUBDIR += p5-Plack-Middleware-MemoryUsage
+    SUBDIR += p5-Plack-Middleware-MethodOverride
     SUBDIR += p5-Plack-Middleware-Precompressed
     SUBDIR += p5-Plack-Middleware-Reproxy
     SUBDIR += p5-Plack-Middleware-ReverseProxy

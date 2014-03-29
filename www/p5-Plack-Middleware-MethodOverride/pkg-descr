@@ -1,0 +1,20 @@
+Writing RESTful apps is a good thing, but if you're also trying to support web
+browsers, you're probably going to need some hackish workarounds. This module
+provides one such workaround for your Plack applications.
+
+Specifically, you can also use a header named X-HTTP-Method-Override (as used by
+Google for its APIs) override the POST request method. Or you can add a
+parameter named x-tunneled-method to your form action's query. Either way, the
+overriding works only via POST requests, not GET.
+
+If either of these attributes are available in a POST request, the
+REQUEST_METHOD key of the Plack environment hash will be replaced with its
+value. This allows your apps to override any HTTP method over POST. If your
+application needs to know that such overriding has taken place, the original
+method is stored under the plack.original_request_method key in the Plack
+environment hash.
+
+The list of methods you can specify are: GET, POST, HEAD, PUT, DELETE, OPTIONS,
+TRACE and CONNECT.
+
+WWW: http://search.cpan.org/dist/Plack-Middleware-MethodOverride/
