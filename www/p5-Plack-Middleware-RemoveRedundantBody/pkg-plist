@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Plack/Middleware/RemoveRedundantBody.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/RemoveRedundantBody/.packlist
+%%PERL5_MAN3%%/Plack::Middleware::RemoveRedundantBody.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/RemoveRedundantBody
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
+@dirrmtry %%SITE_PERL%%/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/Plack
