@@ -51,6 +51,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4e95eb4e-b737-11e3-87cd-f0def10dca57">
+    <topic>Icinga -- buffer overflow in classic web interface</topic>
+    <affects>
+      <package>
+	<name>icinga</name>
+	<range><lt>1.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Icinga Team reports:</p>
+	<blockquote cite="https://git.icinga.org/?p=icinga-core.git;a=commitdiff;h=73285093b71a5551abdaab0a042d3d6bae093b0d">
+	  <p>Wrong strlen check against MAX_INPUT_BUFFER without taking '\0' into account [...]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-2386</cvename>
+      <url>http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-2386</url>
+    </references>
+    <dates>
+      <discovery>2014-02-18</discovery>
+      <entry>2014-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7e61a839-b714-11e3-8195-001966155bea">
     <topic>file -- out-of-bounds access in search rules with offsets from input file</topic>
     <affects>
