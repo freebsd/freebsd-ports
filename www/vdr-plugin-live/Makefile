@@ -3,6 +3,7 @@
 
 PORTNAME=	vdr-plugin-live
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://live.vdr-developer.org/downloads/:release \
 		LOCAL/nox/:snapshot
