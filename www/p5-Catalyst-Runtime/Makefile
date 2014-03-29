@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90053
+PORTVERSION=	5.90061
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
@@ -18,11 +18,8 @@ LICENSE_COMB=	dual
 # - devel/p5-Test-WWW-Mechanize-Catalyst
 # - www/p5-Catalyst-Engine-PSGI
 # - www/p5-CatalystX-LeakChecker
-#
-# DEPENDS: Devel::InnerPackage was first released with perl v5.8.9 and removed from v5.19.0
 BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-CGI-Struct>=0:${PORTSDIR}/www/p5-CGI-Struct \
-		p5-Catalyst-DispatchType-Regex>=5.90.021:${PORTSDIR}/www/p5-Catalyst-DispatchType-Regex \
 		p5-Class-C3-Adopt-NEXT>=0.07:${PORTSDIR}/devel/p5-Class-C3-Adopt-NEXT \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-Load>=0.12:${PORTSDIR}/devel/p5-Class-Load \
@@ -36,7 +33,6 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-JSON-MaybeXS>=1:${PORTSDIR}/converters/p5-JSON-MaybeXS \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
-		p5-Module-Pluggable>=4.7:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Emulate-Class-Accessor-Fast>=0.00903:${PORTSDIR}/devel/p5-MooseX-Emulate-Class-Accessor-Fast \
 		p5-MooseX-Getopt>=0.30:${PORTSDIR}/devel/p5-MooseX-Getopt \
@@ -47,6 +43,9 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-MooseX-Types-LoadableClass>=0.003:${PORTSDIR}/devel/p5-MooseX-Types-LoadableClass \
 		p5-Path-Class>=0.09:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Plack>=0.9991:${PORTSDIR}/www/p5-Plack \
+		p5-Plack-Middleware-FixMissingBodyInRedirect>=0.09:${PORTSDIR}/www/p5-Plack-Middleware-FixMissingBodyInRedirect \
+		p5-Plack-Middleware-MethodOverride>=0:${PORTSDIR}/www/p5-Plack-Middleware-MethodOverride \
+		p5-Plack-Middleware-RemoveRedundantBody>=0.03:${PORTSDIR}/www/p5-Plack-Middleware-RemoveRedundantBody \
 		p5-Plack-Middleware-ReverseProxy>=0.04:${PORTSDIR}/www/p5-Plack-Middleware-ReverseProxy \
 		p5-Plack-Test-ExternalServer>=0:${PORTSDIR}/www/p5-Plack-Test-ExternalServer \
 		p5-Safe-Isa>=0:${PORTSDIR}/devel/p5-Safe-Isa \
@@ -76,6 +75,12 @@ USE_PERL5=	configure
 .if ${PERL_LEVEL} < 501800
 BUILD_DEPENDS+=	p5-Encode>=2.49:${PORTSDIR}/converters/p5-Encode
 RUN_DEPENDS+=	p5-Encode>=2.49:${PORTSDIR}/converters/p5-Encode
+.endif
+
+# Devel::InnerPackage (in Module::Pluggable) will be removed from core since Perl 5.20
+.if ${PERL_LEVEL} >= 502000
+BUILD_DEPENDS+=	p5-Module-Pluggable>=4.7:${PORTSDIR}/devel/p5-Module-Pluggable
+RUN_DEPENDS+=	p5-Module-Pluggable>=4.7:${PORTSDIR}/devel/p5-Module-Pluggable
 .endif
 
 .include <bsd.port.post.mk>
