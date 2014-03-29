@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	descendants_tracker
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
