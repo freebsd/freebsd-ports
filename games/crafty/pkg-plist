@@ -1,19 +1,21 @@
 @group nogroup
 @mode 2755
 bin/crafty
-@mode 775
-lib/crafty
-lib/crafty/cpf
 @mode 664
 %%BOOK%%lib/crafty/book.bin
 @mode 644
 lib/crafty/books.bin
 lib/crafty/crafty.hlp
-@group
+@mode
+@group wheel
 %%PORTDOCS%%%%DOCSDIR%%/crafty.doc.ascii
 %%PORTDOCS%%%%DOCSDIR%%/crafty.doc.ps
 %%PORTDOCS%%%%DOCSDIR%%/bitmaps.tgz
 %%PORTDOCS%%%%DOCSDIR%%/sound.zip
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@mode 775
+@group nogroup
 @dirrm lib/crafty/cpf
 @dirrm lib/crafty
+@mode
+@group wheel
