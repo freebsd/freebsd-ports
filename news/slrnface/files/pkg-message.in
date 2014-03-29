@@ -1,7 +1,7 @@
 *********************************************************
 Add
 
- interpret ${PREFIX}/share/examples/slrnface/slrnface.sl
+ interpret %%DATADIR%%/slrnface.sl
 
 to your .slrnrc
 

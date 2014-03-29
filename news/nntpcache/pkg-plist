@@ -1,42 +1,48 @@
 @exec mkdir -p %%SPOOLDIR%%
 bin/confused
 bin/mmap_tests
-etc/nntpcache/VERSION
+%%ETCDIR%%/VERSION
 @unexec rm %%SPOOLDIR%%/VERSION 2>&1 >/dev/null || true
 @exec cp %D/%F %%SPOOLDIR%%
 @exec chown -R news:news %%SPOOLDIR%%
 @exec chmod 750 %%SPOOLDIR%%
 @exec chmod 640 %%SPOOLDIR%%/VERSION
-etc/nntpcache/http/index.html
-etc/nntpcache/http/moose.gif
-etc/nntpcache/http/nntpcache.jpg
-etc/nntpcache/innreport.conf-dist
-etc/nntpcache/innreport.pl
-etc/nntpcache/innreport.pm
-etc/nntpcache/newshound.conf-dist
-@unexec if cmp -s %D/etc/nntpcache/nntpcache.access %D/etc/nntpcache/nntpcache.access-dist; then rm -f %D/etc/nntpcache/nntpcache.access; fi
-etc/nntpcache/nntpcache.access-dist
-@unexec if cmp -s %D/etc/nntpcache/nntpcache.config %D/etc/nntpcache/nntpcache.config-dist; then rm -f %D/etc/nntpcache/nntpcache.config; fi
-etc/nntpcache/nntpcache.config-dist
-@unexec if cmp -s %D/etc/nntpcache/nntpcache.servers %D/etc/nntpcache/nntpcache.servers-dist; then rm -f %D/etc/nntpcache/nntpcache.servers; fi
-etc/nntpcache/nntpcache.servers-dist
-@unexec if cmp -s %D/etc/nntpcache/pubring.asc %D/etc/nntpcache/pubring.asc-dist; then rm -f %D/etc/nntpcache/pubring.asc; fi
-etc/nntpcache/pubring.asc-dist
-@unexec if cmp -s %D/etc/nntpcache/pubring.pgp %D/etc/nntpcache/pubring.pgp-dist; then rm -f %D/etc/nntpcache/pubring.pgp; fi
-etc/nntpcache/pubring.pgp-dist
-etc/nntpcache/spam.filter
+%%ETCDIR%%/http/index.html
+%%ETCDIR%%/http/moose.gif
+%%ETCDIR%%/http/nntpcache.jpg
+%%ETCDIR%%/innreport.conf-dist
+%%ETCDIR%%/innreport.pl
+%%ETCDIR%%/innreport.pm
+%%ETCDIR%%/newshound.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/nntpcache.access %D/etc/nntpcache/nntpcache.access-dist; then rm -f %D/etc/nntpcache/nntpcache.access; fi
+%%ETCDIR%%/nntpcache.access-dist
+@exec if [ ! -f %D/%%ETCDIR%%/nttpcache.access ]; then cp -p %D/%F %B/nntpcache.access
+@unexec if cmp -s %D/%%ETCDIR%%/nntpcache.config %D/etc/nntpcache/nntpcache.config-dist; then rm -f %D/etc/nntpcache/nntpcache.config; fi
+%%ETCDIR%%/nntpcache.config-dist
+@exec if [ ! -f %D/%%ETCDIR%%/nttpcache.config ]; then cp -p %D/%F %B/nntpcache.config
+@unexec if cmp -s %D/%%ETCDIR%%/nntpcache.servers %D/etc/nntpcache/nntpcache.servers-dist; then rm -f %D/etc/nntpcache/nntpcache.servers; fi
+%%ETCDIR%%/nntpcache.servers-dist
+@exec if [ ! -f %D/%%ETCDIR%%/nttpcache.servers ]; then cp -p %D/%F %B/nntpcache.servers
+@unexec if cmp -s %D/%%ETCDIR%%/pubring.asc %D/etc/nntpcache/pubring.asc-dist; then rm -f %D/etc/nntpcache/pubring.asc; fi
+%%ETCDIR%%/pubring.asc-dist
+@exec if [ ! -f %D/%%ETCDIR%%/pubring.asc ]; then cp -p %D/%F %B/pubring.asc
+@unexec if cmp -s %D/%%ETCDIR%%/pubring.pgp %D/etc/nntpcache/pubring.pgp-dist; then rm -f %D/etc/nntpcache/pubring.pgp; fi
+%%ETCDIR%%/pubring.pgp-dist
+@exec if [ ! -f %D/%%ETCDIR%%/pubring.pgp ]; then cp -p %D/%F %B/pubring.pgp
+%%ETCDIR%%/spam.filter
 include/mmap_results.h
 libexec/nntpcache-gdb.sh
 libexec/nntpcache.gdb
-libexec/nntpcached.debug
 libexec/unixauth
+man/man8/newshound.8.gz
+man/man8/nntpcached.8.gz
 sbin/innreport.sh
 sbin/newshound
 sbin/newshound.pl
 sbin/nntpcached
-@exec mkdir -p %D/etc/nntpcache/http/innreport/pics
-@dirrm etc/nntpcache/http/innreport/pics
-@dirrm etc/nntpcache/http/innreport
-@dirrm etc/nntpcache/http
-@dirrmtry etc/nntpcache
+@exec mkdir -p %D/%%ETCDIR%%/http/innreport/pics
+@dirrm %%ETCDIR%%/http/innreport/pics
+@dirrm %%ETCDIR%%/http/innreport
+@dirrm %%ETCDIR%%/http
+@dirrmtry %%ETCDIR%%
 @unexec rmdir %%SPOOLDIR%% 2>&1 >/dev/null || echo "If you want to completely remove nntpcached, please execute 'rm -fr %%SPOOLDIR%%' by yourself."; true

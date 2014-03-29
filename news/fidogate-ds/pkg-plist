@@ -91,21 +91,36 @@ var/fidogate/fareas.bbs.sample
 %%PORTDOCS%%%%DOCSDIR%%/fidogate.txt
 %%PORTDOCS%%%%DOCSDIR%%/fidogate.texi
 %%PORTDOCS%%%%DOCSDIR%%/msgid.doc
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/areas
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/areas.bbs
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/fidogate.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/newsfeeds
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/packing
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/routing
-%%PORTDOCS%%%%EXAMPLESDIR%%/postfix/master.cf
-%%PORTDOCS%%%%EXAMPLESDIR%%/postfix/transport
-%%PORTDOCS%%%%EXAMPLESDIR%%/sendmail/ftn.m4
-%%PORTDOCS%%%%EXAMPLESDIR%%/inn/newsfeeds.fidogate
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/point
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/postfix
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/sendmail
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/inn
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/areas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/areas.bbs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/fidogate.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/newsfeeds
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/packing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/routing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/postfix/master.cf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/postfix/transport
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail/ftn.m4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inn/newsfeeds.fidogate
+%%LOGDIR%%/.keep_me
+%%LOCKDIR%%/.keep_me
+%%BTBASEDIR%%/in/bad/.keep_me
+%%BTBASEDIR%%/in/tmpunpack/.keep_me
+%%BTBASEDIR%%/pin/bad/.keep_me
+%%BTBASEDIR%%/pin/tmpunpack/.keep_me
+%%BTBASEDIR%%/tick/.keep_me
+%%SPOOLDIR%%/outpkt/mail/.keep_me
+%%SPOOLDIR%%/outpkt/news/.keep_me
+%%SPOOLDIR%%/outrfc/mail/.keep_me
+%%SPOOLDIR%%/outrfc/news/.keep_me
+%%SPOOLDIR%%/toss/bad/.keep_me
+%%SPOOLDIR%%/toss/pack/.keep_me
+%%SPOOLDIR%%/toss/route/.keep_me
+%%SPOOLDIR%%/toss/toss/.keep_me
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/point
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/postfix
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sendmail
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inn
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm var/fidogate/seq
 @dirrm var/fidogate
@@ -114,3 +129,27 @@ var/fidogate/fareas.bbs.sample
 @dirrm etc/fido
 @dirrm libexec/fidogate
 @dirrm lib/fidogate
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/toss/toss || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/toss/route || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/toss/pack || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/toss/bad || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/toss || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/outrfc/news || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/outrfc/mail || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/outrfc || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/outpkt/news || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/outpkt/mail || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%%/outpkt || true
+@unexec rmdir >/dev/null 2>&1 %%SPOOLDIR%% || true
+@unexec rmdir >/dev/null 2>&1 %%BTBASEDIR%%/tick || true
+@unexec rmdir >/dev/null 2>&1 %%BTBASEDIR%%/pin/tmpunpack || true
+@unexec rmdir >/dev/null 2>&1 %%BTBASEDIR%%/pin/bad || true
+@unexec rmdir >/dev/null 2>&1 %%BTBASEDIR%%/pin || true
+@unexec rmdir >/dev/null 2>&1 %%BTBASEDIR%%/in/tmpunpack || true
+@unexec rmdir >/dev/null 2>&1 %%BTBASEDIR%%/in/bad || true
+@unexec rmdir >/dev/null 2>&1 %%BTBASEDIR%%/in || true
+@unexec rmdir >/dev/null 2>&1 %%BTBASEDIR%% || true
+@unexec rmdir >/dev/null 2>&1 /var/spool/fido || true
+@unexec rmdir >/dev/null 2>&1 %%LOCKDIR%% || true
+@unexec rmdir >/dev/null 2>&1 %%LOGDIR%% || true
+@unexec rmdir >/dev/null 2>&1 /var/log/fido || true

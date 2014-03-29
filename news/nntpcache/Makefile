@@ -3,7 +3,7 @@
 
 PORTNAME=	nntpcache
 PORTVERSION=	3.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	news
 MASTER_SITES=	http://www.xs4all.nl/~suelette/
 
@@ -27,7 +27,6 @@ USE_RC_SUBR=	nntpcached
 OPTIONS_DEFINE=	LDAP RADIUS SPAMPHOBIA
 SPAMPHOBIA_DESC=	Spamphobia NoCeM support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRADIUS}
@@ -58,17 +57,11 @@ PATCHFILES+=	${DISTNAME}-spamphobia-${REVISEDATE}.diff.gz:SPAMPHOBIA
 .endif
 
 post-configure:
-	@cd ${WRKSRC}/src && ${GMAKE} ${AUTHINFO_EXT}
+	${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -C ${WRKSRC}/src ${AUTHINFO_EXT}
 
 post-install:
-	@ ${MKDIR} ${NNTPSPOOLDIR} && ${CHMOD} 750 ${NNTPSPOOLDIR}
-	@ ${CP} ${PREFIX}/etc/${PORTNAME}/VERSION ${NNTPSPOOLDIR} && \
-	  ${CHMOD} 640 ${NNTPSPOOLDIR}/VERSION
-	@ ${CHOWN} -R news:news ${NNTPSPOOLDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC} && ${FIND} ${PORTDOCS} \
-	  | ${CPIO_CMD} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-.endif
+	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${FIND} ${PORTDOCS} \
+	  | ${CPIO_CMD} ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
