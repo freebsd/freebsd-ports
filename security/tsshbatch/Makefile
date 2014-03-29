@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tsshbatch
-PORTVERSION=	1.171
+PORTVERSION=	1.177
 CATEGORIES=	security python
 MASTER_SITES=	http://www.tundraware.com/Software/tsshbatch/
 
