@@ -9,23 +9,21 @@ MASTER_SITES=	http://openbox.org/dist/obconf/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
 
-LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
-		obrender:${PORTSDIR}/x11-wm/openbox
+LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
+		libobrender.so:${PORTSDIR}/x11-wm/openbox
 
-USES=		pkgconfig
+USES=		pkgconfig desktop-file-utils shared-mime-info
 USE_GNOME=	gnomehier libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENBOX_CFLAGS="`pkg-config --cflags obrender-3.5 obt-3.5`" \
 		OPENBOX_LIBS="`pkg-config --libs obrender-3.5 obt-3.5`"
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openbox
+CONFIGURE_ARGS=	--sysconfdir=${STAGEDIR}${PREFIX}/etc/openbox
 MAKE_ARGS=	mkdir_p='${MKDIR}'
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	ABOUT-NLS AUTHORS README TODO
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 
@@ -43,7 +41,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
