@@ -3,7 +3,7 @@
 
 PORTNAME=	nntpcache
 PORTVERSION=	3.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	news
 MASTER_SITES=	http://www.xs4all.nl/~suelette/
 
