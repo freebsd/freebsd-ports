@@ -1,37 +1,48 @@
 bin/dbconvert
+bin/tinymux
+@unexec if cmp -s %D/etc/tinymux/alias.conf %D/etc/tinymux/alias.conf.sample; then rm -f %D/etc/tinymux/alias.conf; fi
 etc/tinymux/alias.conf.sample
+@exec if [ ! -f %D/etc/tinymux/alias.conf ] ; then cp -p %D/%F %B/alias.conf; fi
+@unexec if cmp -s %D/etc/tinymux/compat.conf %D/etc/tinymux/compat.conf.sample; then rm -f %D/etc/tinymux/compat.conf; fi
 etc/tinymux/compat.conf.sample
+@exec if [ ! -f %D/etc/tinymux/compat.conf ] ; then cp -p %D/%F %B/compat.conf; fi
+@unexec if cmp -s %D/etc/tinymux/mux.config %D/etc/tinymux/mux.config.sample; then rm -f %D/etc/tinymux/mux.config; fi
 etc/tinymux/mux.config.sample
+@exec if [ ! -f %D/etc/tinymux/mux.config ] ; then cp -p %D/%F %B/mux.config; fi
+%%SSL%%@unexec if cmp -s %D/etc/tinymux/muxssl.conf %D/etc/tinymux/muxssl.conf.sample; then rm -f %D/etc/tinymux/muxssl.conf; fi
+%%SSL%%etc/tinymux/muxssl.conf.sample
+%%SSL%%@exec if [ ! -f %D/etc/tinymux/muxssl.conf ] ; then cp -p %D/%F %B/muxssl.conf; fi
+@unexec if cmp -s %D/etc/tinymux/netmux.conf %D/etc/tinymux/netmux.conf.sample; then rm -f %D/etc/tinymux/netmux.conf; fi
 etc/tinymux/netmux.conf.sample
+@exec if [ ! -f %D/etc/tinymux/netmux.conf ] ; then cp -p %D/%F %B/netmux.conf; fi
+lib/libmux.so
 sbin/netmux
 sbin/slave
-%%DATADIR%%/game/netmux/Backup
-%%DATADIR%%/game/netmux/Startmux
-%%DATADIR%%/game/netmux/_backupflat.sh
-%%DATADIR%%/game/netmux/data/db_check
-%%DATADIR%%/game/netmux/data/db_load
-%%DATADIR%%/game/netmux/data/db_unload
-%%DATADIR%%/game/netmux/data/netmux.db
-%%DATADIR%%/game/netmux/text/badsite.txt
-%%DATADIR%%/game/netmux/text/connect.txt
-%%DATADIR%%/game/netmux/text/create_reg.txt
-%%DATADIR%%/game/netmux/text/down.txt
-%%DATADIR%%/game/netmux/text/full.txt
-%%DATADIR%%/game/netmux/text/guest.txt
-%%DATADIR%%/game/netmux/text/help.txt
-%%DATADIR%%/game/netmux/text/motd.txt
-%%DATADIR%%/game/netmux/text/news.txt
-%%DATADIR%%/game/netmux/text/newuser.txt
-%%DATADIR%%/game/netmux/text/plushelp.txt
-%%DATADIR%%/game/netmux/text/quit.txt
-%%DATADIR%%/game/netmux/text/register.txt
-%%DATADIR%%/game/netmux/text/staffhelp.txt
-%%DATADIR%%/game/netmux/text/wizhelp.txt
-%%DATADIR%%/game/netmux/text/wizmotd.txt
-%%DATADIR%%/game/netmux/text/wiznews.txt
-@dirrm %%DATADIR%%/game/netmux/text
-@dirrm %%DATADIR%%/game/netmux/data
-@dirrm %%DATADIR%%/game/netmux
-@dirrm %%DATADIR%%/game
-@dirrm %%DATADIR%%
-@dirrm etc/tinymux
+%%DATADIR%%/Backup
+%%DATADIR%%/Startmux
+%%DATADIR%%/_backupflat.sh
+%%DATADIR%%/data/db_check
+%%DATADIR%%/data/db_load
+%%DATADIR%%/data/db_unload
+%%DATADIR%%/data/netmux.db
+%%DATADIR%%/text/badsite.txt
+%%DATADIR%%/text/connect.txt
+%%DATADIR%%/text/create_reg.txt
+%%DATADIR%%/text/down.txt
+%%DATADIR%%/text/full.txt
+%%DATADIR%%/text/guest.txt
+%%DATADIR%%/text/help.txt
+%%DATADIR%%/text/motd.txt
+%%DATADIR%%/text/news.txt
+%%DATADIR%%/text/newuser.txt
+%%DATADIR%%/text/plushelp.txt
+%%DATADIR%%/text/quit.txt
+%%DATADIR%%/text/register.txt
+%%DATADIR%%/text/staffhelp.txt
+%%DATADIR%%/text/wizhelp.txt
+%%DATADIR%%/text/wizmotd.txt
+%%DATADIR%%/text/wiznews.txt
+@dirrm %%DATADIR%%/text
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%
+@dirrmtry etc/tinymux
