@@ -2,7 +2,7 @@
 
 PORTNAME=	data-lens
 PORTVERSION=	2.10.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

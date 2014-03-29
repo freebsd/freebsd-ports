@@ -2,7 +2,7 @@
 
 PORTNAME=	system-filepath
 PORTVERSION=	0.4.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

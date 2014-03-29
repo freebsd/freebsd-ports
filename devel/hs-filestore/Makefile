@@ -2,7 +2,7 @@
 
 PORTNAME=	filestore
 PORTVERSION=	0.6.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

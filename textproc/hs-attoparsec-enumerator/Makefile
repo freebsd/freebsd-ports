@@ -2,7 +2,7 @@
 
 PORTNAME=	attoparsec-enumerator
 PORTVERSION=	0.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
