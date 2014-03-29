@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 DISTNAME=	LinLibertineFont-${PORTVERSION}-2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bkoenig@alpha-tierchen.de
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Linux Libertine Open Fonts
 
 LICENSE=	GPLv2 LINUXLIBERTINE OFL10
