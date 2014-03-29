@@ -58,6 +58,10 @@ lib/anet/anet-util.ali
 lib/anet/anet.ali
 lib/anet/libanet.a
 lib/gnat/anet.gpr
+%%PORTDOCS%%%%DOCSDIR%%/html/asciidoc.css
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry lib/gnat
 @dirrm lib/anet
 @dirrm include/anet
