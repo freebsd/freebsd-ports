@@ -218,6 +218,9 @@ bin/smbencrypt
 %%LIBDIR%%/rlm_unix.a
 %%LIBDIR%%/rlm_unix.la
 %%LIBDIR%%/rlm_unix.so
+%%LIBDIR%%/rlm_unpack.a
+%%LIBDIR%%/rlm_unpack.la
+%%LIBDIR%%/rlm_unpack.so
 %%LIBDIR%%/rlm_utf8.a
 %%LIBDIR%%/rlm_utf8.la
 %%LIBDIR%%/rlm_utf8.so
@@ -398,6 +401,7 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.3gpp2
 %%DATADIR%%/dictionary.acc
 %%DATADIR%%/dictionary.acme
+%%DATADIR%%/dictionary.actelis
 %%DATADIR%%/dictionary.aerohive
 %%DATADIR%%/dictionary.airespace
 %%DATADIR%%/dictionary.alcatel
@@ -419,6 +423,7 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.audiocodes
 %%DATADIR%%/dictionary.bay
 %%DATADIR%%/dictionary.bintec
+%%DATADIR%%/dictionary.bluecoat
 %%DATADIR%%/dictionary.bristol
 %%DATADIR%%/dictionary.broadsoft
 %%DATADIR%%/dictionary.bskyb
@@ -447,6 +452,7 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.ericsson
 %%DATADIR%%/dictionary.erx
 %%DATADIR%%/dictionary.extreme
+%%DATADIR%%/dictionary.equallogic
 %%DATADIR%%/dictionary.f5
 %%DATADIR%%/dictionary.fdxtended
 %%DATADIR%%/dictionary.fortinet
@@ -602,12 +608,15 @@ include/freeradius/udpfromto.h
 %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/msqlippool.txt
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/procedures.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite/queries.conf
@@ -721,6 +730,7 @@ include/freeradius/udpfromto.h
 %%EXAMPLESDIR%%/raddb/mods-available/ntlm_auth
 %%EXAMPLESDIR%%/raddb/mods-available/realm
 %%EXAMPLESDIR%%/raddb/mods-available/unix
+%%EXAMPLESDIR%%/raddb/mods-available/unpack
 %%EXAMPLESDIR%%/raddb/mods-available/cui
 %%EXAMPLESDIR%%/raddb/mods-available/idn
 %%EXAMPLESDIR%%/raddb/mods-available/expiration
@@ -752,6 +762,7 @@ include/freeradius/udpfromto.h
 %%EXAMPLESDIR%%/raddb/mods-enabled/soh
 %%EXAMPLESDIR%%/raddb/mods-enabled/sradutmp
 %%EXAMPLESDIR%%/raddb/mods-enabled/unix
+%%EXAMPLESDIR%%/raddb/mods-enabled/unpack
 %%EXAMPLESDIR%%/raddb/mods-enabled/utf8
 %%EXAMPLESDIR%%/raddb/policy.d/accounting
 %%EXAMPLESDIR%%/raddb/policy.d/canonicalization
@@ -791,6 +802,7 @@ include/freeradius/udpfromto.h
 %%EXAMPLESDIR%%/raddb/dictionary
 %%EXAMPLESDIR%%/raddb/templates.conf
 %%EXAMPLESDIR%%/raddb/experimental.conf
+%%EXAMPLESDIR%%/raddb/panic.gdb
 %%EXAMPLESDIR%%/raddb/proxy.conf
 %%EXAMPLESDIR%%/raddb/radiusd.conf
 %%EXAMPLESDIR%%/raddb/huntgroups
@@ -818,6 +830,7 @@ include/freeradius/udpfromto.h
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite
@@ -829,7 +842,6 @@ include/freeradius/udpfromto.h
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/python
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/preprocess
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/perl
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/files
