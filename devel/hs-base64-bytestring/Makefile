@@ -2,7 +2,7 @@
 
 PORTNAME=	base64-bytestring
 PORTVERSION=	1.0.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

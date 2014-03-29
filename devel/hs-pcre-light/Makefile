@@ -2,7 +2,7 @@
 
 PORTNAME=	pcre-light
 PORTVERSION=	0.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

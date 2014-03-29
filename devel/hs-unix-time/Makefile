@@ -2,7 +2,7 @@
 
 PORTNAME=	unix-time
 PORTVERSION=	0.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

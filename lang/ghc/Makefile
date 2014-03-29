@@ -3,7 +3,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	7.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/}
@@ -74,11 +74,7 @@ LIB_DEPENDS+=	ffi.6:${PORTSDIR}/devel/libffi
 
 .if empty(PORT_OPTIONS:MBOOT)
 
-.if ${OSVERSION} >= 1000043
 BOOT_GHC_VERSION=	7.6.3
-.else
-BOOT_GHC_VERSION=	7.4.1
-.endif
 
 EXTRA_PATCHES=		${PATCHDIR}/nopatch-.._ghc-${BOOT_GHC_VERSION}-boot_rts_package.conf.in
 
@@ -151,7 +147,7 @@ BOOT_HSC2HS=	${BOOT_DIR}/bin/hsc2hs
 
 SLAVE_CMD=	${SETENV} PATH=${BOOT_DIR}/bin:${PATH}
 
-CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} --with-gcc=${CC}
+CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} --with-gcc=${CC} --with-ld=${LD}
 CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}
 
 .else # MBOOT
@@ -316,7 +312,7 @@ pre-configure:
 		${TAR} xvf ${DISTDIR}/hscolour-${HSCOLOUR_VERSION}.tar.gz && \
 		cd hscolour-${HSCOLOUR_VERSION} && \
 		${SLAVE_CMD} ghc --make -o Setup Setup.hs -package Cabal && \
-		${SLAVE_CMD} ./Setup configure --ghc --prefix=${SLAVES_PREFIX} && \
+		${SLAVE_CMD} ./Setup configure --ghc --prefix=${SLAVES_PREFIX} --with-gcc=${CC} --with-ld=${LD} && \
 		${SLAVE_CMD} ./Setup build && \
 		${SLAVE_CMD} ./Setup install)
 .endif
