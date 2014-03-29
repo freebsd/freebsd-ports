@@ -12,6 +12,8 @@ DISTFILES=	vim-3.0.tar.gz jvim.2.1b.tar.gz
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanized Vim-3.0
 
+BROKEN=		Fails to link
+
 EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}.diff
 WRKSRC=		${WRKDIR}/vim
 BUILD_WRKSRC=	${WRKSRC}/src
