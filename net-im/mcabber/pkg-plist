@@ -39,6 +39,7 @@ lib/mcabber/libfifo.la
 lib/mcabber/liburlregex.so
 lib/mcabber/libfifo.so
 libdata/pkgconfig/mcabber.pc
+man/man1/mcabber.1.gz
 share/applications/mcabber.desktop
 %%EXAMPLESDIR%%/mcabberrc
 %%DATADIR%%/help/en/hlp.txt
