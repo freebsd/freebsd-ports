@@ -17,8 +17,8 @@ LICENSE=	APACHE20
 OPTIONS_DEFINE=	GEOS
 OPTIONS_DEFAULT=GEOS
 
-USE_BZIP2=	yes
-USES=		cmake
+USE_LDCONFIG=	yes
+USES=		cmake tar:bzip2
 
 WRKSRC=		${WRKDIR}/luciad-libgpkg-efe52f76ad35
 
@@ -27,6 +27,6 @@ GEOS_CMAKE_ON=		-DGPKG_GEOS=ON
 GEOS_LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos
 
 post-install:
-	@${INSTALL_LIB} ${WRKSRC}/gpkg/libgpkg.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/gpkg/libgpkg.a ${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.mk>
