@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	prawn
-PORTVERSION=	0.12.0
+PORTVERSION=	1.0.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast pure Ruby PDF generator
 
-RUN_DEPENDS=	rubygem-pdf-reader>=0.9.0:${PORTSDIR}/print/rubygem-pdf-reader \
-		rubygem-ttfunk>=1.0.2:${PORTSDIR}/print/rubygem-ttfunk
+RUN_DEPENDS=	rubygem-pdf-core>=0.2.2:${PORTSDIR}/print/rubygem-pdf-core \
+		rubygem-ttfunk>=1.1.1:${PORTSDIR}/print/rubygem-ttfunk
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
