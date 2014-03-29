@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" \
 		-aspp "${CC} -c" \
 		-partialld "${LD} -r"
 
-OPTIONS_DEFINE= X11 TK THREADS OPT_DEF DOCS
+OPTIONS_DEFINE= X11 TK THREADS CMP_LIB OPT_DEF DOCS
 OPTIONS_DEFAULT=X11 TK THREADS
 TK_DESC=	LablTk library (requires X11 support)
 CMP_LIB_DESC=	Install compiler libraries
