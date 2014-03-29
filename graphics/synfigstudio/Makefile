@@ -10,6 +10,8 @@ MASTER_SITES=	SF/synfig/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Vector-based 2D animation software package
 
+BROKEN=		Fails to compile
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl
 LIB_DEPENDS=	synfig.0:${PORTSDIR}/devel/synfig \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
