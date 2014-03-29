@@ -55,8 +55,8 @@ DESCDIR_CONFIGURE_ENABLE=	desc-dir
 DNT_NETMAIL_CONFIGURE_ENABLE=	dnt-netmail
 FMSGID_CONFIGURE_ENABLE=	fs-msgid
 INN_BUILD_DEPENDS=			${LOCALBASE}/news/bin/innconfval:${PORTSDIR}/news/inn
-INN_CONFIGURE_WITH=			news
 INN_CONFIGURE_ON=			--with-newsbindir=${LOCALBASE}/news/bin
+INN_CONFIGURE_OFF=			--without-news
 NFS_LOCK_CONFIGURE_ENABLE=	nfs-safe-lock
 
 CONFIGURE_ARGS+=	--libexec=${PREFIX}/libexec/fidogate \
