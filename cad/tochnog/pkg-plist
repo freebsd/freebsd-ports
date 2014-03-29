@@ -1,18 +1,16 @@
 bin/aba2tn
 bin/tochnog
 bin/gmsh2tn.awk
-bin/mkansys.awk
-bin/mkgmsh.awk
 %%GIDDIR%%/problemtypes/tochnog.gid/tochnog.bas
 %%GIDDIR%%/problemtypes/tochnog.gid/tochnog.bat
 %%GIDDIR%%/problemtypes/tochnog.gid/tochnog.cnd
 %%GIDDIR%%/problemtypes/tochnog.gid/tochnog.mat
-@dirrm %%GIDDIR%%/problemtypes/tochnog.gid
-@dirrm %%GIDDIR%%/problemtypes
-@dirrm %%GIDDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/absorp1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axisym1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axisym2.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axisym2.dbs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axisym2.flavia.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axisym2.flavia.res
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axisym3.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axisym4.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axisym5.dat
@@ -43,9 +41,6 @@ bin/mkgmsh.awk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contac4.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/convec1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/convec2.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crack1.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crack2.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crack3.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ctvmis1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ctvmis2.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/damage1.dat
@@ -55,7 +50,6 @@ bin/mkgmsh.awk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/depend1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/diprisc1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/disk1.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/disk2a.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distri1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/druckpr1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eigen1.dat
@@ -68,7 +62,6 @@ bin/mkgmsh.awk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp10.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp11.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp12.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp13.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp14.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp15.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp16.dat
@@ -84,6 +77,9 @@ bin/mkgmsh.awk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp4.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp5.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp6.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp6.dbs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp6.flavia.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp6.flavia.res
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp7.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp8.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examp9.dat
@@ -148,6 +144,7 @@ bin/mkgmsh.awk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/post5.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/post6.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pridbs.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pruebavel.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radiate1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radiate2.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/refine1.dat
@@ -161,7 +158,6 @@ bin/mkgmsh.awk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/silo1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/skip1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slide1.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slope.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/soften1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spring1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spring2.dat
@@ -185,6 +181,7 @@ bin/mkgmsh.awk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tendon8.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tension1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tet10.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tn.dvd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/total1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/total2.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/total3.dat
@@ -214,3 +211,6 @@ bin/mkgmsh.awk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vonmis2.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wave1.dat
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%GIDDIR%%/problemtypes/tochnog.gid
+@dirrm %%GIDDIR%%/problemtypes
+@dirrm %%GIDDIR%%
