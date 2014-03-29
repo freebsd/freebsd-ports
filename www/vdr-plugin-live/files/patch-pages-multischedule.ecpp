@@ -1,0 +1,11 @@
+--- a/pages/multischedule.ecpp.orig
++++ b/pages/multischedule.ecpp
+@@ -295,7 +295,7 @@ pageTitle = tr("MultiSchedule");
+           cChannel* Channel = Channels.GetByNumber( chan );
+           if ( ! Channel )
+             continue;
+-          if ( Channel->GroupSep() || Channel->Name() == '\0' )
++          if ( Channel->GroupSep() || *Channel->Name() == '\0' )
+             continue;
+           channel_names[ j ] = Channel->Name();
+           channel_IDs[ j ] = Channel->GetChannelID();
