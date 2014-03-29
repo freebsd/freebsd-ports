@@ -51,6 +51,8 @@ post-patch:
 		${WRKSRC}/config/Makefile.in
 	@${REINPLACE_CMD} -e '/libdir/ s|(INSTALL_DATA)|& -s|' \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's/$$(htmldir)/$$(DESTDIR)&/' \
+		${WRKSRC}/contrib/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${WWWDIR}/htdocs
