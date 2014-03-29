@@ -1,26 +1,16 @@
---- makefile.orig	Sun Aug 19 19:31:52 2001
-+++ makefile	Sun Aug  6 18:58:12 2006
-@@ -1,6 +1,7 @@
- #  ***********  fortran 2 c *******************
- # Set F2C (for unix -lf2c and for MS windows to f2c.lib)
--F2C=
+--- makefile.orig	2014-01-05 15:35:37.000000000 +0100
++++ makefile	2014-03-09 22:07:32.000000000 +0100
+@@ -5,7 +5,8 @@
+ #***********  fortran 2 c *******************
+ # Set F2C (for unix -lf2c and for MS windows if using Visual C++ to f2c.lib)
+ 
+-F2C= -lf2c 
 +F2C= -lf2c -L%%LOCALBASE%%/lib
 +F2C_INCLUDE= -I%%LOCALBASE%%/include
- 
  #  ***********  hypoplasticity ****************
  # For hypoplasticity:
-@@ -8,8 +9,8 @@
- #    set HYPO_USE to 1 in tnhypo.h
- #    set HYPO_SRC to hypo.c below
- #    set HYPO_OBJ to hypo.o below
--HYPO_SRC=hypo_dum.c
--HYPO_OBJ=hypo_dum.o
-+HYPO_SRC=hypo.c
-+HYPO_OBJ=hypo.o
- 
- #  ***********  profiler ***********************
- # for the gnu profiler, use as follows:
-@@ -26,11 +27,11 @@
+ #    install f2c on your computer (also see F2C above)
+@@ -30,11 +31,11 @@
  SYS_FILE=sysother
  BCPP=-P
  VCPP=
@@ -36,59 +26,66 @@
  LINK_FLAGS_AFTER=
  
  #  ***********  SUPERLU library *******************
-@@ -39,9 +40,9 @@
- #      Set SUPERLU_MT_USE to 1 in tnsuplu.h for the multi threaded version
- #      Set SUPERLU_DIST_USE to 1 in tnsuplu.h for the distributed MPI version
- #   2. Activate and adjust the next three lines
--# SUPERLU=/home/programs/src/SuperLU
--# SUPERLU_LIB=$(SUPERLU)/superlu.a $(SUPERLU)/blas.a
--# SUPERLU_INCLUDE=-I$(SUPERLU)/SRC
+@@ -49,6 +50,9 @@
+ #      SUPERLU_INCLUDE=-I/Users/fdolorenzo/Downloads/petsc-3.4.2/arch-darwin-c-debug/include
+ #      3. For SuperLU_MT be sure to compile a multi threaded version
+ #      of Tochnog (sparc_parallel, alpha_parallel, linux, etc.
 +SUPERLU=%%LOCALBASE%%
 +SUPERLU_LIB=$(SUPERLU)/lib/lib%%SUPERLU%%.a %%BLAS_LIBS%%
 +SUPERLU_INCLUDE=-I$(SUPERLU)/include/%%SUPERLU%%
- #   3. For SuperLU_MT be sure to compile a multi threaded version
- #      of Tochnog (sparc_parallel, alpha_parallel, linux, etc.)
  
-@@ -65,7 +66,7 @@
- ALL_LIB= $(PETSC_LIB) $(SUPERLU_LIB) $(F2C)
+ #  ***********  PetSc library *******************
+ # Do NOT link together with the SUPERLU library
+@@ -80,7 +84,7 @@
+ ALL_LIB=  $(LAPACK_LIB)  $(BLAS_LIB) $(F2C) -lm $(PETSC_LIB) $(SUPERLU_LIB)
  
  #  ***********  default platform  *******************
--default: linux_old
+-default: darwin-intel
 +default: freebsd_old
  
  # single and multi-processor windows; borland c++ compiler
  # set SYS_FILE above to syswin32 for multi-processor
-@@ -101,17 +102,22 @@
- 	"LINK_FLAGS_AFTER= /link $(F2C) $(PROFILE) /OUT:tochnog.exe"
+@@ -130,17 +134,22 @@
+ 	"LINK_FLAGS_AFTER=-g -v -dynamic -undefined dynamic_lookup  $(ALL_LIB) $(PROFILE) -dynamic -lpthread -o tochnog"
  
  # single processor linux; gnu gcc compiler
 -linux_old: 
-+freebsd_old: 
- 	make tochnog \
+-	make tochnog \
++freebsd_old:
++	${MAKE} tochnog \
  	"SYS_FILE=sysother" \
  	"OBJ=o" \
 -	"BCPP=" \
 -	"VCPP=" \
 -	"COMPILER_C=gcc" \
--	"COMPILER_CPP=g++" \
+-	"COMPILER_CPP=g++-4.2" \
 -	"COMPILER_FLAGS= -ansi -c -O2 -Wall $(PROFILE) $(ALL_INCLUDE)" \
 +	"COMPILER_FLAGS= -c ${CFLAGS} ${CPPFLAGS} $(ALL_INCLUDE)" \
  	"LINK_FLAGS_BEFORE=" \
 -	"LINK_FLAGS_AFTER= $(PROFILE) $(ALL_LIB) -static -lm -o tochnog"
-+	"LINK_FLAGS_AFTER= $(PROFILE) $(ALL_LIB) ${LDFLAGS} -lm -o tochnog"
++	"LINK_FLAGS_AFTER= $(PROFILE) $(ALL_LIB) ${LDFLAGS} -pthread -lm -o tochnog"
 +
 +# Multithreaded FreeBSD
 +freebsd_parallel:
-+	make tochnog \
++	${MAKE} tochnog \
 +	"SYS_FILE=sysposix" \
 +	"OBJ=o" \
-+	"COMPILER_FLAGS= -c ${CFLAGS} ${CPPFLAGS} -D_REENTRANT $(ALL_INCLUDE)" \
++	"COMPILER_FLAGS= -c ${CFLAGS} ${CPPFLAGS} -D_REENTRANT $(PTHREAD_CFLAGS) $(ALL_INCLUDE)" \
 +	"LINK_FLAGS_BEFORE=" \
-+	"LINK_FLAGS_AFTER= $(PROFILE) $(ALL_LIB) ${LDFLAGS} -pthread -lm -o tochnog"
++	"LINK_FLAGS_AFTER= $(PROFILE) $(ALL_LIB) ${LDFLAGS} $(PTHREAD_LIBS) -lm -o tochnog"
  
  # multi processor linux; gnu gcc compiler
  linux: 
-@@ -375,7 +381,7 @@
+@@ -289,7 +298,7 @@
+ 	renumber.$(OBJ) repeat.$(OBJ) restart.$(OBJ) \
+ 	slide.$(OBJ) \
+ 	so.$(OBJ) so_bicg.$(OBJ) \
+-	   split.$(OBJ) \
++	so_suplu.$(OBJ) split.$(OBJ) \
+ 	spring.$(OBJ) stress.$(OBJ) \
+ 	$(SYS_FILE).$(OBJ) tendon.$(OBJ) time.$(OBJ) tn.$(OBJ) \
+ 	top.$(OBJ) truss.$(OBJ) \
+@@ -401,7 +410,7 @@
  	$(COMPILER_CPP) $(COMPILER_FLAGS) $(BCPP) $(VCPP)hyperela.$(SRC_CPP)
  
  $(HYPO_OBJ): $(HYPO_SRC)
@@ -97,3 +94,13 @@
  
  hypoplas.$(OBJ): hypoplas.$(SRC_CPP) tochnog.h
  	$(COMPILER_CPP) $(COMPILER_FLAGS) $(BCPP) $(VCPP)hypoplas.$(SRC_CPP)
+@@ -565,6 +574,9 @@
+ #so_petsc.$(OBJ): so_petsc.$(SRC_C) tochnog.h
+ #	$(COMPILER_C) $(COMPILER_FLAGS) so_petsc.$(SRC_C)
+ 
++so_suplu.$(OBJ): so_suplu.$(SRC_C) tochnog.h
++	$(COMPILER_C) $(COMPILER_FLAGS) so_suplu.$(SRC_C)
++
+ split.$(OBJ): split.$(SRC_CPP) tochnog.h
+ 	$(COMPILER_CPP) $(COMPILER_FLAGS) $(BCPP) $(VCPP)split.$(SRC_CPP)
+ 
