@@ -3,6 +3,7 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	12.1
+PORTREVISION=	1
 CATEGORIES=	net comms linux
 MASTER_SITES=	#
 DISTNAME=	linuxx86_12.1.0.203066
@@ -31,7 +32,6 @@ PLIST_SUB+=	HAVE_ICA_CERTS="@comment "
 SUB_FILES=	wfcmgr wfica
 SUB_LIST=	CDIR=${CDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -50,7 +50,7 @@ pre-fetch:
 .endif
 
 do-install:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/linuxx86/hinst
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKDIR}/linuxx86/hinst
 	@if (test -d "${CDIR}") ; \
 	then \
 		${ECHO} "-----------------------------------------------------------" ; \
@@ -62,13 +62,18 @@ do-install:
 		${FALSE} ; \
 	fi
 	cd ${WRKSRC} && ${SH} -c './setupwfc'
-	${INSTALL_SCRIPT} ${WRKDIR}/wfcmgr ${PREFIX}/bin/wfcmgr
-	${INSTALL_SCRIPT} ${WRKDIR}/wfica ${PREFIX}/bin/wfica
+	${INSTALL_SCRIPT} ${WRKDIR}/wfcmgr ${STAGEDIR}${PREFIX}/bin/wfcmgr
+	${INSTALL_SCRIPT} ${WRKDIR}/wfica ${STAGEDIR}${PREFIX}/bin/wfica
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
+	${MKDIR} ${STAGEDIR}${CDIR}
+	${MKDIR} ${STAGEDIR}${CDIR}/config
+	cd ${WRKDIR}/linuxx86/linuxx86.cor/ && ${COPYTREE_SHARE} . ${STAGEDIR}${CDIR}
+	cp ${WRKDIR}/setupwfc ${STAGEDIR}${CDIR}
 
 .if defined(ICA_CERTS)
+	${MKDIR} ${STAGEDIR}${CERTDIR}
 .for f in ${ICA_CERTS}
-	${INSTALL_DATA} ${DISTDIR}/${f} ${CERTDIR}
+	${INSTALL_DATA} ${DISTDIR}/${f} ${STAGEDIR}${CERTDIR}
 .endfor
 .endif
 
