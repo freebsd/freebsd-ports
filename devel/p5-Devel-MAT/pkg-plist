@@ -1,0 +1,74 @@
+bin/pmat-callstack
+bin/pmat-cat-svpv
+bin/pmat-count
+bin/pmat-dump-symbols
+bin/pmat-explore-gtk
+bin/pmat-identify-sv
+bin/pmat-largest-svs
+bin/pmat-list-dangling-ptrs
+bin/pmat-list-orphans
+bin/pmat-show-sv
+bin/pmat-sizes
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Context.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Dumper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Dumpfile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/SV.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Tool.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Tool/Count.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Tool/Inrefs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Tool/Reachability.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Tool/Sizes.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/UI.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT/Dumper/Dumper.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT/Dumper/Dumper.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT/MAT.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT/MAT.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/reachable-internal.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/reachable-lexical.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/reachable-none.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/reachable-padlist.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/reachable-symtab.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/reachable-user.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/reachable-yes.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/refs-All.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/refs-Direct.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/refs-Strong.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/size-Owned.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/size-SV.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/size-Structure.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-ARRAY.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-CODE.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-FORMAT.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-GLOB.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-HASH.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-IO.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-LVALUE.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-PAD.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-PADLIST.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-PADNAMES.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-REF.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-REGEXP.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-SCALAR.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-STASH.svg
+%%PERL5_MAN3%%/Devel::MAT.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Context.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Dumper.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Dumpfile.3.gz
+%%PERL5_MAN3%%/Devel::MAT::SV.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Count.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Inrefs.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Reachability.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Sizes.3.gz
+%%PERL5_MAN3%%/Devel::MAT::UI.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT/Dumper
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Tool
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel
