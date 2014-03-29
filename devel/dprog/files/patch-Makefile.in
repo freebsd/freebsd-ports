@@ -1,5 +1,5 @@
 --- Makefile.in.orig	2003-04-21 14:29:07.000000000 +0200
-+++ Makefile.in	2014-03-27 17:32:22.000000000 +0100
++++ Makefile.in	2014-03-28 11:53:55.832875969 +0100
 @@ -87,7 +87,7 @@
  ARCH = `uname -mrs`
  DATE = `date '+%d %h %y'`
@@ -18,6 +18,15 @@
  cxx_dprog_test_SOURCES = cxx_dprog_test.cc
  
  symbol_checking_test_SOURCES = ast.hh ast.cc visitor.hh pretty_printer.hh pretty_printer.cc symbol_checking.hh symbol_checking.cc type_checking.hh type_checking.cc functions.hh functions.cc codegen.hh codegen.cc cxx_codegen.hh cxx_codegen.cc options.hh options.cc symbol_checking_test.cc
+@@ -169,7 +169,7 @@
+ codegen_test_LDFLAGS =
+ am_cxx_dprog_test_OBJECTS = cxx_dprog_test.$(OBJEXT)
+ cxx_dprog_test_OBJECTS = $(am_cxx_dprog_test_OBJECTS)
+-cxx_dprog_test_DEPENDENCIES =
++cxx_dprog_test_DEPENDENCIES = $(lib_LIBRARIES)
+ cxx_dprog_test_LDFLAGS =
+ am_dprog_OBJECTS = lexer.$(OBJEXT) parser.$(OBJEXT) ast.$(OBJEXT) \
+ 	pretty_printer.$(OBJEXT) range_checking.$(OBJEXT) \
 @@ -315,6 +315,7 @@
  	@list='$(lib_LIBRARIES)'; for p in $$list; do \
  	  if test -f $$p; then \
