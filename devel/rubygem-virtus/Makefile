@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtus
-PORTVERSION=	0.5.5
+PORTVERSION=	1.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,10 @@ COMMENT=	Attributes on Steroids for Plain Old Ruby Objects
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-backports>=3.3:${PORTSDIR}/devel/rubygem-backports \
-		rubygem-descendants_tracker>=0.0.1:${PORTSDIR}/devel/rubygem-descendants_tracker
+RUN_DEPENDS=	rubygem-axiom-types>=0.1:${PORTSDIR}/devel/rubygem-axiom-types \
+		rubygem-coercible>=1.0.0:${PORTSDIR}/devel/rubygem-coercible \
+		rubygem-descendants_tracker>=0.0.3:${PORTSDIR}/devel/rubygem-descendants_tracker \
+		rubygem-equalizer>=0.0.9:${PORTSDIR}/devel/rubygem-equalizer
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
