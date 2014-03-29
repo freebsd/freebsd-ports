@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-ssl
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
