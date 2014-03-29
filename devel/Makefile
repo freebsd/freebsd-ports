@@ -4241,6 +4241,7 @@
     SUBDIR += rubygem-holidays
     SUBDIR += rubygem-i18n
     SUBDIR += rubygem-icalendar
+    SUBDIR += rubygem-ice_nine
     SUBDIR += rubygem-igraph
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-interact
