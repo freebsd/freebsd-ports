@@ -1,0 +1,4 @@
+Coercible gives access to coercer objects where each object is
+responsible for coercing only one type into other types.
+
+WWW: https://github.com/solnic/coercible
