@@ -1141,6 +1141,7 @@
     SUBDIR += p5-Plack-Middleware-MemoryUsage
     SUBDIR += p5-Plack-Middleware-MethodOverride
     SUBDIR += p5-Plack-Middleware-Precompressed
+    SUBDIR += p5-Plack-Middleware-RemoveRedundantBody
     SUBDIR += p5-Plack-Middleware-Reproxy
     SUBDIR += p5-Plack-Middleware-ReverseProxy
     SUBDIR += p5-Plack-Middleware-ServerStatus-Lite
