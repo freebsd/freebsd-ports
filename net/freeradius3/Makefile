@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeradius
-DISTVERSION=	3.0.1
-PORTREVISION=	2
+DISTVERSION=	3.0.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -18,8 +17,8 @@ COMMENT=	A free RADIUS server implementation
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm \
-		talloc:${PORTSDIR}/devel/talloc
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
+		libtalloc.so:${PORTSDIR}/devel/talloc
 
 LOGDIR?=	/var/log
 KRB5_CONFIG?=	/usr/bin/krb5-config --libs
@@ -84,11 +83,11 @@ ${UNIQUENAME}_SET+=	KERBEROS
 .if ${PORT_OPTIONS:MKERBEROS}
 .if ${PORT_OPTIONS:MHEIMDAL}
 .if ${PORT_OPTIONS:MHEIMDAL_PORT}
-LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/heimdal
 .endif
 CONFIGURE_ARGS+=--enable-heimdal-krb5 --enable-pthread-support
 .else
-LIB_DEPENDS+=	krb5:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
 .endif
 CONFIGURE_ARGS+=--with-rlm_krb5
 .if ${PORT_OPTIONS:MHEIMDAL} && empty(PORT_OPTIONS:MHEIMDAL_PORT)
@@ -147,7 +146,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .if ${PORT_OPTIONS:MUNIXODBC}
 CONFIGURE_ARGS+=--with-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC=""
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 .else
 CONFIGURE_ARGS+=--without-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC="@comment "
@@ -202,7 +201,7 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MREDIS}
-LIB_DEPENDS+=	hiredis:${PORTSDIR}/databases/hiredis
+LIB_DEPENDS+=	libhiredis.so:${PORTSDIR}/databases/hiredis
 CONFIGURE_ARGS+=--with-rlm_redis --with-rlm_rediswho
 PLIST_SUB+=	RLMREDIS=""
 .else
@@ -217,8 +216,8 @@ EXPM=		yes
 
 .if ${PORT_OPTIONS:MREST}
 IGNORE=		requires devel/json-c to be updated to 0.11 to build with RESTful support
-LIB_DEPENDS+=	json:${PORTSDIR}/devel/json-c \
-    		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libjson.so:${PORTSDIR}/devel/json-c \
+    		libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-rlm_rest \
 		--with-libcurl=${LOCALBASE} \
 		--with-jsonc-lib-dir=${LOCALBASE}/lib \
@@ -235,7 +234,7 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MFREETDS}
-LIB_DEPENDS+=	tds:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	libtds.so:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=--with-rlm_freetds
 PLIST_SUB+=	RLMFREETDS=""
 .else
@@ -249,7 +248,7 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=--with-rlm_idn
 PLIST_SUB+=	RLMIDN=""
 .else
@@ -395,7 +394,6 @@ pre-install:
 		PRE-INSTALL
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/dictionary.cisco.asa ${DATADIR}
 # If ${PREFIX}/etc/raddb isn't a directory (or a symlink), make a copy
 # of ${EXAMPLESDIR}/raddb as ${PREFIX}/etc/raddb, then bootstrap the
 # certificates
