@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Net/DHCP/Watch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DHCP/Watch/.packlist
+%%PERL5_MAN3%%/Net::DHCP::Watch.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DHCP/Watch
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DHCP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/DHCP
+@dirrmtry %%SITE_PERL%%/Net
