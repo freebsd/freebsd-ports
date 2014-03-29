@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Small Jabber console client
 
-LIB_DEPENDS=	loudmouth:${PORTSDIR}/net-im/loudmouth
+LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
 
 LICENSE=	GPLv2
 
@@ -22,48 +22,24 @@ USES=		pkgconfig gettext iconv ncurses
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 
-MAN1=		mcabber.1
-
 OPTIONS_DEFINE=	GPGME OTR
 OPTIONS_RADIO=	SPELL
 OPTIONS_RADIO_SPELL=	ASPELL ENCHANT
+OPTIONS_SUB=	yes
+
 GPGME_DESC=	Use security/gpgme for PGP support
 OTR_DESC=	Off-the-record messaging support
 ENCHANT_DESC=	Spell checking via enchant
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGPGME}
-LIB_DEPENDS+=	libgpgme.so:${PORTSDIR}/security/gpgme
-CONFIGURE_ARGS+=--enable-gpgme
-.else
-CONFIGURE_ARGS+=--disable-gpgme
-.endif
-
-.if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=--enable-aspell
-.else
-CONFIGURE_ARGS+=--disable-aspell
-.endif
-
-.if ${PORT_OPTIONS:MENCHANT}
-LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
-CONFIGURE_ARGS+=--enable-enchant
-.else
-CONFIGURE_ARGS+=--disable-enchant
-.endif
-
-.if ${PORT_OPTIONS:MOTR}
-LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr3 \
-		gcrypt:${PORTSDIR}/security/libgcrypt
-CONFIGURE_ARGS+=--enable-otr
-PLIST_SUB+=	OTR=""
-.else
-CONFIGURE_ARGS+=--disable-otr
-PLIST_SUB+=	OTR="@comment "
-.endif
+GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_CONFIGURE_ENABLE=	gpgme
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_CONFIGURE_ENABLE=aspell
+ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+ENCHANT_CONFIGURE_ENABLE=enchant
+OTR_LIB_DEPENDS=	libotr.so.4:${PORTSDIR}/security/libotr3 \
+			libgcrypt.so:${PORTSDIR}/security/libgcrypt
+OTR_CONFIGURE_ENABLE=	otr
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$"$${datadir}"|"$${datadir}"|;s|-O2||'\
@@ -72,9 +48,9 @@ post-patch:
 		${WRKSRC}/Makefile.*
 
 post-install:
-	@${INSTALL} -d ${PREFIX}/share/applications/ ${EXAMPLESDIR}/
-	@${INSTALL} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications/
-	@${CP} -R ${WRKSRC}/contrib ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/mcabberrc.example ${EXAMPLESDIR}/mcabberrc
+	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/
+	@${INSTALL} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	@${CP} -R ${WRKSRC}/contrib ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/mcabberrc.example ${STAGEDIR}${EXAMPLESDIR}/mcabberrc
 
 .include <bsd.port.mk>
