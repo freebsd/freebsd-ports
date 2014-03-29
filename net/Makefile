@@ -560,6 +560,7 @@
     SUBDIR += p5-Net-Cassandra-Easy
     SUBDIR += p5-Net-DAV-Server
     SUBDIR += p5-Net-DHCP
+    SUBDIR += p5-Net-DHCP-Watch
     SUBDIR += p5-Net-DHCPClient
     SUBDIR += p5-Net-DLookup
     SUBDIR += p5-Net-Daemon
