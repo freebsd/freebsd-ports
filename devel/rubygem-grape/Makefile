@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grape
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-rack>=1.3.0:${PORTSDIR}/www/rubygem-rack \
 		rubygem-rack-accept>=0:${PORTSDIR}/www/rubygem-rack-accept \
 		rubygem-rack-mount>=0:${PORTSDIR}/www/rubygem-rack-mount\
-		rubygem-virtus>=0:${PORTSDIR}/devel/rubygem-virtus
+		rubygem-virtus>=1.0.0:${PORTSDIR}/devel/rubygem-virtus
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
