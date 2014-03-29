@@ -3,7 +3,7 @@
 
 PORTNAME=	tilem
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -14,14 +14,13 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libticalcs2.so:${PORTSDIR}/comms/libticalcs2
 
-USES=		desktop-file-utils shared-mime-info pkgconfig
-USE_BZIP2=	yes
+USES=		desktop-file-utils pkgconfig shared-mime-info tar:bzip2
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	OPT_CFLAGS=" "	# Inhibit -O3, our default CFLAGS are upheld
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
 # Unbreak parallel builds (-jX)
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's,cd (.+) && (\$$\(MAKE\)),\2 -C \1,' \
 		${WRKSRC}/Makefile.in
