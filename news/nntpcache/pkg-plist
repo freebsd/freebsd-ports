@@ -33,6 +33,7 @@ bin/mmap_tests
 include/mmap_results.h
 libexec/nntpcache-gdb.sh
 libexec/nntpcache.gdb
+libexec/nntpcached.debug
 libexec/unixauth
 man/man8/newshound.8.gz
 man/man8/nntpcached.8.gz
