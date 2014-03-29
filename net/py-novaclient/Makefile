@@ -16,14 +16,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0:${PORTSDIR}/devel/py-argparse \
 		${PKGNAMEPREFIX}httplib2>=0:${PORTSDIR}/www/py-httplib2
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
 PYDISTUTILS_NOEGGINFO=	yes
-PYDISTUTILS_PKGNAME=	python-${PORTNAME}
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/nova \
-		${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/${PYEASYINSTALL_EGG}
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,install_requires.*,,' ${WRKSRC}/setup.py
 
