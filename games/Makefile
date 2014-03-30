@@ -1063,6 +1063,7 @@
     SUBDIR += xdesktopwaves
     SUBDIR += xdigger
     SUBDIR += xdino
+    SUBDIR += xemeraldia
     SUBDIR += xevil
     SUBDIR += xeyesplus
     SUBDIR += xfireworks
