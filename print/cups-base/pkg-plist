@@ -1,21 +1,20 @@
-@exec if ! pw groupshow cups 2>/dev/null; then pw groupadd cups -g 193; fi
-@exec if ! pw usershow cups 2>/dev/null; then pw useradd cups -g cups -u 193 -h - -d /nonexistent -s /usr/sbin/nologin -c "CUPS Owner"; fi
-@unexec if pw usershow cups; then pw userdel cups; fi
 @exec mkdir -p /var/spool/cups/tmp || true
-@exec chown -R root:daemon /var/spool/cups
-@exec mkdir -p %%CACHEDIR%% || true
-@exec chown root:cups %%CACHEDIR%%
-@exec chmod 775 %%CACHEDIR%%
+@exec chown -R root:cups /var/spool/cups
+@exec chmod 1710 /var/spool/cups/tmp
+@comment
+@exec mkdir -p %%CACHEDIR%%/rss || true
+@exec chown -R root:cups %%CACHEDIR%%
+@exec chmod -R 775 %%CACHEDIR%%
+@comment
 @exec mkdir -p /var/log/cups || true
 @exec chown cups:daemon /var/log/cups
+@comment
+@exec mkdir -p /var/run/cups/certs
+@exec chown root:cups /var/run/cups
+@exec chown cups:wheel /var/run/cups/certs
+@comment
 @exec mkdir -p %D/etc/cups/ppd || true
 @exec mkdir -p %D/etc/cups/interfaces || true
-@unexec rm -rf %%CACHEDIR%% 2>/dev/null || true
-@unexec rmdir /var/spool/cups/tmp 2>/dev/null || true
-@unexec rmdir /var/spool/cups 2>/dev/null || true
-@unexec rmdir /var/log/cups 2>/dev/null || true
-@unexec rmdir /var/run/cups/certs 2>/dev/null || true
-@unexec rmdir /var/run/cups 2>/dev/null || true
 %%OVERWRITE%%@exec if test -e /usr/bin/lp; then chmod -h 0 /usr/bin/lp; fi
 %%OVERWRITE%%@exec if test -e /usr/bin/lpq; then chmod -h 0 /usr/bin/lpq; fi
 %%OVERWRITE%%@exec if test -e /usr/bin/lpr; then chmod -h 0 /usr/bin/lpr; fi
@@ -26,18 +25,22 @@
 %%OVERWRITE%%@unexec if test -e /usr/bin/lpr; then chmod -h 06555 /usr/bin/lpr; fi
 %%OVERWRITE%%@unexec if test -e /usr/bin/lprm; then chmod -h 06555 /usr/bin/lprm; fi
 %%OVERWRITE%%@unexec if test -e /usr/sbin/lpc; then chmod -h 02555 /usr/sbin/lpc; fi
-@unexec if cmp -s %D/etc/cups/cupsd.conf.N %D/etc/cups/cupsd.conf; then rm -f %D/etc/cups/cupsd.conf; fi
-etc/cups/cupsd.conf.N
-@exec if test ! -f %D/etc/cups/cupsd.conf; then cp -p %D/etc/cups/cupsd.conf.N %D/etc/cups/cupsd.conf; fi
-@unexec if cmp -s %D/etc/cups/mime.convs.N %D/etc/cups/mime.convs; then rm -f %D/etc/cups/mime.convs; fi
-etc/cups/mime.convs.N
-@exec if test ! -f %D/etc/cups/mime.convs; then cp -p %D/etc/cups/mime.convs.N %D/etc/cups/mime.convs; fi
-@unexec if cmp -s %D/etc/cups/mime.types.N %D/etc/cups/mime.types; then rm -f %D/etc/cups/mime.types; fi
-etc/cups/mime.types.N
-@exec if test ! -f %D/etc/cups/mime.types; then cp -p %D/etc/cups/mime.types.N %D/etc/cups/mime.types; fi
-@unexec if cmp -s %D/etc/cups/snmp.conf.N %D/etc/cups/snmp.conf; then rm -f %D/etc/cups/snmp.conf; fi
-etc/cups/snmp.conf.N
-@exec if test ! -f %D/etc/cups/snmp.conf; then cp -p %D/etc/cups/snmp.conf.N %D/etc/cups/snmp.conf; fi
+@unexec if cmp -s %D/etc/cups/cups-files.conf.sample %D/etc/cups/cups-files.conf; then rm -f %D/etc/cups/cups-files.conf; fi
+@comment %%ETCDIR%%/cups-files.conf.sample
+%%ETCDIR%%/cups-files.conf.sample
+@exec if test ! -f %D/etc/cups/cups-files.conf; then cp -p %D/etc/cups/cups-files.conf.sample %D/etc/cups/cups-files.conf; fi
+@unexec if cmp -s %D/etc/cups/cupsd.conf.sample %D/etc/cups/cupsd.conf; then rm -f %D/etc/cups/cupsd.conf; fi
+%%ETCDIR%%/cupsd.conf.sample
+@exec if test ! -f %D/etc/cups/cupsd.conf; then cp -p %D/etc/cups/cupsd.conf.sample %D/etc/cups/cupsd.conf; fi
+@unexec if cmp -s %D/etc/cups/mime.convs.sample %D/etc/cups/mime.convs; then rm -f %D/etc/cups/mime.convs; fi
+%%ETCDIR%%/mime.convs.sample
+@exec if test ! -f %D/etc/cups/mime.convs; then cp -p %D/etc/cups/mime.convs.sample %D/etc/cups/mime.convs; fi
+@unexec if cmp -s %D/etc/cups/mime.types.sample %D/etc/cups/mime.types; then rm -f %D/etc/cups/mime.types; fi
+%%ETCDIR%%/mime.types.sample
+@exec if test ! -f %D/etc/cups/mime.types; then cp -p %D/etc/cups/mime.types.sample %D/etc/cups/mime.types; fi
+@unexec if cmp -s %D/etc/cups/snmp.conf.sample %D/etc/cups/snmp.conf; then rm -f %D/etc/cups/snmp.conf; fi
+%%ETCDIR%%/snmp.conf.sample
+@exec if test ! -f %D/etc/cups/snmp.conf; then cp -p %D/etc/cups/snmp.conf.sample %D/etc/cups/snmp.conf; fi
 @exec chgrp cups %D/etc/cups
 %%WITH_PAMD%%@unexec if cmp -s %D/etc/pam.d/cups.default %D/etc/pam.d/cups; then rm -f %D/etc/pam.d/cups ; fi
 %%WITH_PAMD%%etc/pam.d/cups.default
@@ -45,6 +48,7 @@ etc/cups/snmp.conf.N
 bin/cancel
 bin/cupstestdsc
 bin/cupstestppd
+@comment bin/ippfind
 bin/ipptool
 bin/lp
 bin/lpoptions
@@ -61,14 +65,11 @@ bin/ppdmerge
 bin/ppdpo
 etc/cups/cupsd.conf.default
 include/cups/cgi.h
-include/cups/driver.h
 include/cups/help-index.h
 include/cups/mime.h
 include/cups/ppdc.h
 lib/libcupscgi.so
 lib/libcupscgi.so.1
-lib/libcupsdriver.so
-lib/libcupsdriver.so.1
 lib/libcupsmime.so
 lib/libcupsmime.so.1
 lib/libcupsppdc.so
@@ -79,8 +80,6 @@ libexec/cups/backend/https
 libexec/cups/backend/ipp
 libexec/cups/backend/ipps
 libexec/cups/backend/lpd
-libexec/cups/backend/parallel
-libexec/cups/backend/serial
 libexec/cups/backend/snmp
 libexec/cups/backend/socket
 libexec/cups/backend/usb
@@ -95,17 +94,61 @@ libexec/cups/daemon/cups-deviced
 libexec/cups/daemon/cups-driverd
 libexec/cups/daemon/cups-exec
 libexec/cups/daemon/cups-lpd
-libexec/cups/daemon/cups-polld
-libexec/cups/filter/commandtoescpx
-libexec/cups/filter/commandtopclx
-%%WITH_PDFTOPS%%libexec/cups/filter/pdftops
-libexec/cups/filter/rastertoescpx
-libexec/cups/filter/rastertopclx
 libexec/cups/monitor/bcp
 libexec/cups/monitor/tbcp
 %%WITH_DBUS%%libexec/cups/notifier/dbus
 libexec/cups/notifier/mailto
 libexec/cups/notifier/rss
+man/man1/cancel.1.gz
+man/man1/cupstestdsc.1.gz
+man/man1/cupstestppd.1.gz
+@comment man/man1/ippfind.1.gz
+man/man1/ipptool.1.gz
+man/man1/lp.1.gz
+man/man1/lpoptions.1.gz
+man/man1/lppasswd.1.gz
+man/man1/lpq.1.gz
+man/man1/lpr.1.gz
+man/man1/lprm.1.gz
+man/man1/lpstat.1.gz
+man/man1/ppdc.1.gz
+man/man1/ppdhtml.1.gz
+man/man1/ppdi.1.gz
+man/man1/ppdmerge.1.gz
+man/man1/ppdpo.1.gz
+man/man5/classes.conf.5.gz
+man/man5/client.conf.5.gz
+man/man5/cups-files.conf.5.gz
+man/man5/cups-snmp.conf.5.gz
+man/man5/cupsd.conf.5.gz
+man/man5/ipptoolfile.5.gz
+man/man5/mailto.conf.5.gz
+man/man5/mime.convs.5.gz
+man/man5/mime.types.5.gz
+man/man5/ppdcfile.5.gz
+man/man5/printers.conf.5.gz
+man/man5/subscriptions.conf.5.gz
+man/man7/backend.7.gz
+man/man7/filter.7.gz
+man/man7/notifier.7.gz
+man/man8/accept.8.gz
+man/man8/cups-deviced.8.gz
+man/man8/cups-driverd.8.gz
+man/man8/cups-lpd.8.gz
+man/man8/cups-snmp.8.gz
+man/man8/cupsaccept.8.gz
+man/man8/cupsaddsmb.8.gz
+man/man8/cupsctl.8.gz
+man/man8/cupsd.8.gz
+man/man8/cupsdisable.8.gz
+man/man8/cupsenable.8.gz
+man/man8/cupsfilter.8.gz
+man/man8/cupsreject.8.gz
+man/man8/lpadmin.8.gz
+man/man8/lpc.8.gz
+man/man8/lpinfo.8.gz
+man/man8/lpmove.8.gz
+man/man8/reject.8.gz
 sbin/accept
 sbin/cupsaccept
 sbin/cupsaddsmb
@@ -115,21 +158,12 @@ sbin/cupsdisable
 sbin/cupsenable
 sbin/cupsfilter
 sbin/cupsreject
-sbin/ulpt-cupsd.sh
 sbin/lpadmin
 sbin/lpc
 sbin/lpinfo
 sbin/lpmove
 sbin/reject
-%%DATADIR%%/banners/classified
-%%DATADIR%%/banners/confidential
-%%DATADIR%%/banners/secret
-%%DATADIR%%/banners/standard
-%%DATADIR%%/banners/topsecret
-%%DATADIR%%/banners/unclassified
-%%DATADIR%%/charsets/utf-8
-%%DATADIR%%/data/psglyphs
-%%DATADIR%%/data/testprint
+sbin/ulpt-cupsd.sh
 %%DATADIR%%/drv/sample.drv
 %%DATADIR%%/examples/color.drv
 %%DATADIR%%/examples/constraint.drv
@@ -142,24 +176,118 @@ sbin/reject
 %%DATADIR%%/examples/r300-basic.drv
 %%DATADIR%%/examples/r300-colorman.drv
 %%DATADIR%%/examples/r300-remote.drv
-%%DATADIR%%/fonts/Monospace
-%%DATADIR%%/fonts/Monospace-Bold
-%%DATADIR%%/fonts/Monospace-BoldOblique
-%%DATADIR%%/fonts/Monospace-Oblique
+%%DATADIR%%/ipptool/color.jpg
+%%DATADIR%%/ipptool/create-printer-subscription.test
+%%DATADIR%%/ipptool/document-a4.pdf
+%%DATADIR%%/ipptool/document-a4.ps
+%%DATADIR%%/ipptool/document-letter.pdf
+%%DATADIR%%/ipptool/document-letter.ps
+%%DATADIR%%/ipptool/get-completed-jobs.test
+%%DATADIR%%/ipptool/get-jobs.test
+%%DATADIR%%/ipptool/get-notifications.test
+%%DATADIR%%/ipptool/get-printer-attributes.test
+%%DATADIR%%/ipptool/get-subscriptions.test
+%%DATADIR%%/ipptool/gray.jpg
+%%DATADIR%%/ipptool/ipp-1.1.test
+%%DATADIR%%/ipptool/ipp-2.0.test
+%%DATADIR%%/ipptool/ipp-2.1.test
+%%DATADIR%%/ipptool/ipp-2.2.test
+%%DATADIR%%/ipptool/ipp-everywhere.test
+%%DATADIR%%/ipptool/onepage-a4.pdf
+%%DATADIR%%/ipptool/onepage-a4.ps
+%%DATADIR%%/ipptool/onepage-letter.pdf
+%%DATADIR%%/ipptool/onepage-letter.ps
+%%DATADIR%%/ipptool/print-job-deflate.test
+%%DATADIR%%/ipptool/print-job-gzip.test
+%%DATADIR%%/ipptool/print-job.test
+%%DATADIR%%/ipptool/testfile.jpg
+%%DATADIR%%/ipptool/testfile.pcl
+%%DATADIR%%/ipptool/testfile.pdf
+%%DATADIR%%/ipptool/testfile.ps
+%%DATADIR%%/ipptool/testfile.txt
+%%DATADIR%%/ipptool/validate-job.test
 %%DATADIR%%/mime/mime.convs
 %%DATADIR%%/mime/mime.types
 %%DATADIR%%/ppdc/epson.h
-%%DATADIR%%/ppdc/escp.h
 %%DATADIR%%/ppdc/font.defs
 %%DATADIR%%/ppdc/hp.h
 %%DATADIR%%/ppdc/label.h
 %%DATADIR%%/ppdc/media.defs
-%%DATADIR%%/ppdc/pcl.h
 %%DATADIR%%/ppdc/raster.defs
 %%DATADIR%%/templates/add-class.tmpl
 %%DATADIR%%/templates/add-printer.tmpl
 %%DATADIR%%/templates/add-rss-subscription.tmpl
 %%DATADIR%%/templates/admin.tmpl
+%%DATADIR%%/templates/ca/add-class.tmpl
+%%DATADIR%%/templates/ca/add-printer.tmpl
+%%DATADIR%%/templates/ca/add-rss-subscription.tmpl
+%%DATADIR%%/templates/ca/admin.tmpl
+%%DATADIR%%/templates/ca/choose-device.tmpl
+%%DATADIR%%/templates/ca/choose-make.tmpl
+%%DATADIR%%/templates/ca/choose-model.tmpl
+%%DATADIR%%/templates/ca/choose-serial.tmpl
+%%DATADIR%%/templates/ca/choose-uri.tmpl
+%%DATADIR%%/templates/ca/class-added.tmpl
+%%DATADIR%%/templates/ca/class-confirm.tmpl
+%%DATADIR%%/templates/ca/class-deleted.tmpl
+%%DATADIR%%/templates/ca/class-jobs-header.tmpl
+%%DATADIR%%/templates/ca/class-modified.tmpl
+%%DATADIR%%/templates/ca/class.tmpl
+%%DATADIR%%/templates/ca/classes-header.tmpl
+%%DATADIR%%/templates/ca/classes.tmpl
+%%DATADIR%%/templates/ca/command.tmpl
+%%DATADIR%%/templates/ca/edit-config.tmpl
+%%DATADIR%%/templates/ca/error-op.tmpl
+%%DATADIR%%/templates/ca/error.tmpl
+%%DATADIR%%/templates/ca/header.tmpl
+%%DATADIR%%/templates/ca/help-header.tmpl
+%%DATADIR%%/templates/ca/help-printable.tmpl
+%%DATADIR%%/templates/ca/help-trailer.tmpl
+%%DATADIR%%/templates/ca/job-cancel.tmpl
+%%DATADIR%%/templates/ca/job-hold.tmpl
+%%DATADIR%%/templates/ca/job-move.tmpl
+%%DATADIR%%/templates/ca/job-moved.tmpl
+%%DATADIR%%/templates/ca/job-release.tmpl
+%%DATADIR%%/templates/ca/job-restart.tmpl
+%%DATADIR%%/templates/ca/jobs-header.tmpl
+%%DATADIR%%/templates/ca/jobs.tmpl
+%%DATADIR%%/templates/ca/list-available-printers.tmpl
+%%DATADIR%%/templates/ca/modify-class.tmpl
+%%DATADIR%%/templates/ca/modify-printer.tmpl
+%%DATADIR%%/templates/ca/norestart.tmpl
+%%DATADIR%%/templates/ca/option-boolean.tmpl
+%%DATADIR%%/templates/ca/option-conflict.tmpl
+%%DATADIR%%/templates/ca/option-header.tmpl
+%%DATADIR%%/templates/ca/option-pickmany.tmpl
+%%DATADIR%%/templates/ca/option-pickone.tmpl
+%%DATADIR%%/templates/ca/option-trailer.tmpl
+%%DATADIR%%/templates/ca/pager.tmpl
+%%DATADIR%%/templates/ca/printer-accept.tmpl
+%%DATADIR%%/templates/ca/printer-added.tmpl
+%%DATADIR%%/templates/ca/printer-configured.tmpl
+%%DATADIR%%/templates/ca/printer-confirm.tmpl
+%%DATADIR%%/templates/ca/printer-default.tmpl
+%%DATADIR%%/templates/ca/printer-deleted.tmpl
+%%DATADIR%%/templates/ca/printer-jobs-header.tmpl
+%%DATADIR%%/templates/ca/printer-modified.tmpl
+%%DATADIR%%/templates/ca/printer-purge.tmpl
+%%DATADIR%%/templates/ca/printer-reject.tmpl
+%%DATADIR%%/templates/ca/printer-start.tmpl
+%%DATADIR%%/templates/ca/printer-stop.tmpl
+%%DATADIR%%/templates/ca/printer.tmpl
+%%DATADIR%%/templates/ca/printers-header.tmpl
+%%DATADIR%%/templates/ca/printers.tmpl
+%%DATADIR%%/templates/ca/restart.tmpl
+%%DATADIR%%/templates/ca/samba-export.tmpl
+%%DATADIR%%/templates/ca/samba-exported.tmpl
+%%DATADIR%%/templates/ca/search.tmpl
+%%DATADIR%%/templates/ca/set-printer-options-header.tmpl
+%%DATADIR%%/templates/ca/set-printer-options-trailer.tmpl
+%%DATADIR%%/templates/ca/subscription-added.tmpl
+%%DATADIR%%/templates/ca/subscription-canceled.tmpl
+%%DATADIR%%/templates/ca/test-page.tmpl
+%%DATADIR%%/templates/ca/trailer.tmpl
+%%DATADIR%%/templates/ca/users.tmpl
 %%DATADIR%%/templates/choose-device.tmpl
 %%DATADIR%%/templates/choose-make.tmpl
 %%DATADIR%%/templates/choose-model.tmpl
@@ -174,76 +302,76 @@ sbin/reject
 %%DATADIR%%/templates/classes-header.tmpl
 %%DATADIR%%/templates/classes.tmpl
 %%DATADIR%%/templates/command.tmpl
-%%DATADIR%%/templates/de/add-class.tmpl
-%%DATADIR%%/templates/de/add-printer.tmpl
-%%DATADIR%%/templates/de/add-rss-subscription.tmpl
-%%DATADIR%%/templates/de/admin.tmpl
-%%DATADIR%%/templates/de/choose-device.tmpl
-%%DATADIR%%/templates/de/choose-make.tmpl
-%%DATADIR%%/templates/de/choose-model.tmpl
-%%DATADIR%%/templates/de/choose-serial.tmpl
-%%DATADIR%%/templates/de/choose-uri.tmpl
-%%DATADIR%%/templates/de/class-added.tmpl
-%%DATADIR%%/templates/de/class-confirm.tmpl
-%%DATADIR%%/templates/de/class-deleted.tmpl
-%%DATADIR%%/templates/de/class-jobs-header.tmpl
-%%DATADIR%%/templates/de/class-modified.tmpl
-%%DATADIR%%/templates/de/class.tmpl
-%%DATADIR%%/templates/de/classes-header.tmpl
-%%DATADIR%%/templates/de/classes.tmpl
-%%DATADIR%%/templates/de/command.tmpl
-%%DATADIR%%/templates/de/edit-config.tmpl
-%%DATADIR%%/templates/de/error-op.tmpl
-%%DATADIR%%/templates/de/error.tmpl
-%%DATADIR%%/templates/de/header.tmpl
-%%DATADIR%%/templates/de/help-header.tmpl
-%%DATADIR%%/templates/de/help-trailer.tmpl
-%%DATADIR%%/templates/de/help-printable.tmpl
-%%DATADIR%%/templates/de/job-cancel.tmpl
-%%DATADIR%%/templates/de/job-hold.tmpl
-%%DATADIR%%/templates/de/job-move.tmpl
-%%DATADIR%%/templates/de/job-moved.tmpl
-%%DATADIR%%/templates/de/job-release.tmpl
-%%DATADIR%%/templates/de/job-restart.tmpl
-%%DATADIR%%/templates/de/jobs-header.tmpl
-%%DATADIR%%/templates/de/jobs.tmpl
-%%DATADIR%%/templates/de/list-available-printers.tmpl
-%%DATADIR%%/templates/de/modify-class.tmpl
-%%DATADIR%%/templates/de/modify-printer.tmpl
-%%DATADIR%%/templates/de/norestart.tmpl
-%%DATADIR%%/templates/de/option-boolean.tmpl
-%%DATADIR%%/templates/de/option-conflict.tmpl
-%%DATADIR%%/templates/de/option-header.tmpl
-%%DATADIR%%/templates/de/option-pickmany.tmpl
-%%DATADIR%%/templates/de/option-pickone.tmpl
-%%DATADIR%%/templates/de/option-trailer.tmpl
-%%DATADIR%%/templates/de/pager.tmpl
-%%DATADIR%%/templates/de/printer-accept.tmpl
-%%DATADIR%%/templates/de/printer-added.tmpl
-%%DATADIR%%/templates/de/printer-configured.tmpl
-%%DATADIR%%/templates/de/printer-confirm.tmpl
-%%DATADIR%%/templates/de/printer-default.tmpl
-%%DATADIR%%/templates/de/printer-deleted.tmpl
-%%DATADIR%%/templates/de/printer-jobs-header.tmpl
-%%DATADIR%%/templates/de/printer-modified.tmpl
-%%DATADIR%%/templates/de/printer-purge.tmpl
-%%DATADIR%%/templates/de/printer-reject.tmpl
-%%DATADIR%%/templates/de/printer-start.tmpl
-%%DATADIR%%/templates/de/printer-stop.tmpl
-%%DATADIR%%/templates/de/printer.tmpl
-%%DATADIR%%/templates/de/printers-header.tmpl
-%%DATADIR%%/templates/de/printers.tmpl
-%%DATADIR%%/templates/de/restart.tmpl
-%%DATADIR%%/templates/de/samba-export.tmpl
-%%DATADIR%%/templates/de/samba-exported.tmpl
-%%DATADIR%%/templates/de/search.tmpl
-%%DATADIR%%/templates/de/set-printer-options-header.tmpl
-%%DATADIR%%/templates/de/set-printer-options-trailer.tmpl
-%%DATADIR%%/templates/de/subscription-added.tmpl
-%%DATADIR%%/templates/de/subscription-canceled.tmpl
-%%DATADIR%%/templates/de/test-page.tmpl
-%%DATADIR%%/templates/de/trailer.tmpl
-%%DATADIR%%/templates/de/users.tmpl
+%%DATADIR%%/templates/cs/add-class.tmpl
+%%DATADIR%%/templates/cs/add-printer.tmpl
+%%DATADIR%%/templates/cs/add-rss-subscription.tmpl
+%%DATADIR%%/templates/cs/admin.tmpl
+%%DATADIR%%/templates/cs/choose-device.tmpl
+%%DATADIR%%/templates/cs/choose-make.tmpl
+%%DATADIR%%/templates/cs/choose-model.tmpl
+%%DATADIR%%/templates/cs/choose-serial.tmpl
+%%DATADIR%%/templates/cs/choose-uri.tmpl
+%%DATADIR%%/templates/cs/class-added.tmpl
+%%DATADIR%%/templates/cs/class-confirm.tmpl
+%%DATADIR%%/templates/cs/class-deleted.tmpl
+%%DATADIR%%/templates/cs/class-jobs-header.tmpl
+%%DATADIR%%/templates/cs/class-modified.tmpl
+%%DATADIR%%/templates/cs/class.tmpl
+%%DATADIR%%/templates/cs/classes-header.tmpl
+%%DATADIR%%/templates/cs/classes.tmpl
+%%DATADIR%%/templates/cs/command.tmpl
+%%DATADIR%%/templates/cs/edit-config.tmpl
+%%DATADIR%%/templates/cs/error-op.tmpl
+%%DATADIR%%/templates/cs/error.tmpl
+%%DATADIR%%/templates/cs/header.tmpl
+%%DATADIR%%/templates/cs/help-header.tmpl
+%%DATADIR%%/templates/cs/help-printable.tmpl
+%%DATADIR%%/templates/cs/help-trailer.tmpl
+%%DATADIR%%/templates/cs/job-cancel.tmpl
+%%DATADIR%%/templates/cs/job-hold.tmpl
+%%DATADIR%%/templates/cs/job-move.tmpl
+%%DATADIR%%/templates/cs/job-moved.tmpl
+%%DATADIR%%/templates/cs/job-release.tmpl
+%%DATADIR%%/templates/cs/job-restart.tmpl
+%%DATADIR%%/templates/cs/jobs-header.tmpl
+%%DATADIR%%/templates/cs/jobs.tmpl
+%%DATADIR%%/templates/cs/list-available-printers.tmpl
+%%DATADIR%%/templates/cs/modify-class.tmpl
+%%DATADIR%%/templates/cs/modify-printer.tmpl
+%%DATADIR%%/templates/cs/norestart.tmpl
+%%DATADIR%%/templates/cs/option-boolean.tmpl
+%%DATADIR%%/templates/cs/option-conflict.tmpl
+%%DATADIR%%/templates/cs/option-header.tmpl
+%%DATADIR%%/templates/cs/option-pickmany.tmpl
+%%DATADIR%%/templates/cs/option-pickone.tmpl
+%%DATADIR%%/templates/cs/option-trailer.tmpl
+%%DATADIR%%/templates/cs/pager.tmpl
+%%DATADIR%%/templates/cs/printer-accept.tmpl
+%%DATADIR%%/templates/cs/printer-added.tmpl
+%%DATADIR%%/templates/cs/printer-configured.tmpl
+%%DATADIR%%/templates/cs/printer-confirm.tmpl
+%%DATADIR%%/templates/cs/printer-default.tmpl
+%%DATADIR%%/templates/cs/printer-deleted.tmpl
+%%DATADIR%%/templates/cs/printer-jobs-header.tmpl
+%%DATADIR%%/templates/cs/printer-modified.tmpl
+%%DATADIR%%/templates/cs/printer-purge.tmpl
+%%DATADIR%%/templates/cs/printer-reject.tmpl
+%%DATADIR%%/templates/cs/printer-start.tmpl
+%%DATADIR%%/templates/cs/printer-stop.tmpl
+%%DATADIR%%/templates/cs/printer.tmpl
+%%DATADIR%%/templates/cs/printers-header.tmpl
+%%DATADIR%%/templates/cs/printers.tmpl
+%%DATADIR%%/templates/cs/restart.tmpl
+%%DATADIR%%/templates/cs/samba-export.tmpl
+%%DATADIR%%/templates/cs/samba-exported.tmpl
+%%DATADIR%%/templates/cs/search.tmpl
+%%DATADIR%%/templates/cs/set-printer-options-header.tmpl
+%%DATADIR%%/templates/cs/set-printer-options-trailer.tmpl
+%%DATADIR%%/templates/cs/subscription-added.tmpl
+%%DATADIR%%/templates/cs/subscription-canceled.tmpl
+%%DATADIR%%/templates/cs/test-page.tmpl
+%%DATADIR%%/templates/cs/trailer.tmpl
+%%DATADIR%%/templates/cs/users.tmpl
 %%DATADIR%%/templates/edit-config.tmpl
 %%DATADIR%%/templates/error-op.tmpl
 %%DATADIR%%/templates/error.tmpl
@@ -317,76 +445,6 @@ sbin/reject
 %%DATADIR%%/templates/es/test-page.tmpl
 %%DATADIR%%/templates/es/trailer.tmpl
 %%DATADIR%%/templates/es/users.tmpl
-%%DATADIR%%/templates/eu/add-class.tmpl
-%%DATADIR%%/templates/eu/add-printer.tmpl
-%%DATADIR%%/templates/eu/add-rss-subscription.tmpl
-%%DATADIR%%/templates/eu/admin.tmpl
-%%DATADIR%%/templates/eu/choose-device.tmpl
-%%DATADIR%%/templates/eu/choose-make.tmpl
-%%DATADIR%%/templates/eu/choose-model.tmpl
-%%DATADIR%%/templates/eu/choose-serial.tmpl
-%%DATADIR%%/templates/eu/choose-uri.tmpl
-%%DATADIR%%/templates/eu/class-added.tmpl
-%%DATADIR%%/templates/eu/class-confirm.tmpl
-%%DATADIR%%/templates/eu/class-deleted.tmpl
-%%DATADIR%%/templates/eu/class-jobs-header.tmpl
-%%DATADIR%%/templates/eu/class-modified.tmpl
-%%DATADIR%%/templates/eu/class.tmpl
-%%DATADIR%%/templates/eu/classes-header.tmpl
-%%DATADIR%%/templates/eu/classes.tmpl
-%%DATADIR%%/templates/eu/command.tmpl
-%%DATADIR%%/templates/eu/edit-config.tmpl
-%%DATADIR%%/templates/eu/error-op.tmpl
-%%DATADIR%%/templates/eu/error.tmpl
-%%DATADIR%%/templates/eu/header.tmpl
-%%DATADIR%%/templates/eu/help-header.tmpl
-%%DATADIR%%/templates/eu/help-printable.tmpl
-%%DATADIR%%/templates/eu/help-trailer.tmpl
-%%DATADIR%%/templates/eu/job-cancel.tmpl
-%%DATADIR%%/templates/eu/job-hold.tmpl
-%%DATADIR%%/templates/eu/job-move.tmpl
-%%DATADIR%%/templates/eu/job-moved.tmpl
-%%DATADIR%%/templates/eu/job-release.tmpl
-%%DATADIR%%/templates/eu/job-restart.tmpl
-%%DATADIR%%/templates/eu/jobs-header.tmpl
-%%DATADIR%%/templates/eu/jobs.tmpl
-%%DATADIR%%/templates/eu/list-available-printers.tmpl
-%%DATADIR%%/templates/eu/modify-class.tmpl
-%%DATADIR%%/templates/eu/modify-printer.tmpl
-%%DATADIR%%/templates/eu/norestart.tmpl
-%%DATADIR%%/templates/eu/option-boolean.tmpl
-%%DATADIR%%/templates/eu/option-conflict.tmpl
-%%DATADIR%%/templates/eu/option-header.tmpl
-%%DATADIR%%/templates/eu/option-pickmany.tmpl
-%%DATADIR%%/templates/eu/option-pickone.tmpl
-%%DATADIR%%/templates/eu/option-trailer.tmpl
-%%DATADIR%%/templates/eu/pager.tmpl
-%%DATADIR%%/templates/eu/printer-accept.tmpl
-%%DATADIR%%/templates/eu/printer-added.tmpl
-%%DATADIR%%/templates/eu/printer-configured.tmpl
-%%DATADIR%%/templates/eu/printer-confirm.tmpl
-%%DATADIR%%/templates/eu/printer-default.tmpl
-%%DATADIR%%/templates/eu/printer-deleted.tmpl
-%%DATADIR%%/templates/eu/printer-jobs-header.tmpl
-%%DATADIR%%/templates/eu/printer-modified.tmpl
-%%DATADIR%%/templates/eu/printer-purge.tmpl
-%%DATADIR%%/templates/eu/printer-reject.tmpl
-%%DATADIR%%/templates/eu/printer-start.tmpl
-%%DATADIR%%/templates/eu/printer-stop.tmpl
-%%DATADIR%%/templates/eu/printer.tmpl
-%%DATADIR%%/templates/eu/printers-header.tmpl
-%%DATADIR%%/templates/eu/printers.tmpl
-%%DATADIR%%/templates/eu/restart.tmpl
-%%DATADIR%%/templates/eu/samba-export.tmpl
-%%DATADIR%%/templates/eu/samba-exported.tmpl
-%%DATADIR%%/templates/eu/search.tmpl
-%%DATADIR%%/templates/eu/set-printer-options-header.tmpl
-%%DATADIR%%/templates/eu/set-printer-options-trailer.tmpl
-%%DATADIR%%/templates/eu/subscription-added.tmpl
-%%DATADIR%%/templates/eu/subscription-canceled.tmpl
-%%DATADIR%%/templates/eu/test-page.tmpl
-%%DATADIR%%/templates/eu/trailer.tmpl
-%%DATADIR%%/templates/eu/users.tmpl
 %%DATADIR%%/templates/fr/add-class.tmpl
 %%DATADIR%%/templates/fr/add-printer.tmpl
 %%DATADIR%%/templates/fr/add-rss-subscription.tmpl
@@ -396,18 +454,18 @@ sbin/reject
 %%DATADIR%%/templates/fr/choose-model.tmpl
 %%DATADIR%%/templates/fr/choose-serial.tmpl
 %%DATADIR%%/templates/fr/choose-uri.tmpl
-%%DATADIR%%/templates/fr/class.tmpl
 %%DATADIR%%/templates/fr/class-added.tmpl
 %%DATADIR%%/templates/fr/class-confirm.tmpl
 %%DATADIR%%/templates/fr/class-deleted.tmpl
 %%DATADIR%%/templates/fr/class-jobs-header.tmpl
 %%DATADIR%%/templates/fr/class-modified.tmpl
-%%DATADIR%%/templates/fr/classes.tmpl
+%%DATADIR%%/templates/fr/class.tmpl
 %%DATADIR%%/templates/fr/classes-header.tmpl
+%%DATADIR%%/templates/fr/classes.tmpl
 %%DATADIR%%/templates/fr/command.tmpl
 %%DATADIR%%/templates/fr/edit-config.tmpl
-%%DATADIR%%/templates/fr/error.tmpl
 %%DATADIR%%/templates/fr/error-op.tmpl
+%%DATADIR%%/templates/fr/error.tmpl
 %%DATADIR%%/templates/fr/header.tmpl
 %%DATADIR%%/templates/fr/help-header.tmpl
 %%DATADIR%%/templates/fr/help-trailer.tmpl
@@ -457,150 +515,10 @@ sbin/reject
 %%DATADIR%%/templates/fr/test-page.tmpl
 %%DATADIR%%/templates/fr/trailer.tmpl
 %%DATADIR%%/templates/fr/users.tmpl
-%%DATADIR%%/templates/hu/add-class.tmpl
-%%DATADIR%%/templates/hu/add-printer.tmpl
-%%DATADIR%%/templates/hu/add-rss-subscription.tmpl
-%%DATADIR%%/templates/hu/admin.tmpl
-%%DATADIR%%/templates/hu/choose-device.tmpl
-%%DATADIR%%/templates/hu/choose-make.tmpl
-%%DATADIR%%/templates/hu/choose-model.tmpl
-%%DATADIR%%/templates/hu/choose-serial.tmpl
-%%DATADIR%%/templates/hu/choose-uri.tmpl
-%%DATADIR%%/templates/hu/class.tmpl
-%%DATADIR%%/templates/hu/class-added.tmpl
-%%DATADIR%%/templates/hu/class-confirm.tmpl
-%%DATADIR%%/templates/hu/class-deleted.tmpl
-%%DATADIR%%/templates/hu/class-jobs-header.tmpl
-%%DATADIR%%/templates/hu/class-modified.tmpl
-%%DATADIR%%/templates/hu/classes.tmpl
-%%DATADIR%%/templates/hu/classes-header.tmpl
-%%DATADIR%%/templates/hu/command.tmpl
-%%DATADIR%%/templates/hu/edit-config.tmpl
-%%DATADIR%%/templates/hu/error.tmpl
-%%DATADIR%%/templates/hu/error-op.tmpl
-%%DATADIR%%/templates/hu/header.tmpl
-%%DATADIR%%/templates/hu/help-header.tmpl
-%%DATADIR%%/templates/hu/help-trailer.tmpl
-%%DATADIR%%/templates/hu/help-printable.tmpl
-%%DATADIR%%/templates/hu/job-cancel.tmpl
-%%DATADIR%%/templates/hu/job-hold.tmpl
-%%DATADIR%%/templates/hu/job-move.tmpl
-%%DATADIR%%/templates/hu/job-moved.tmpl
-%%DATADIR%%/templates/hu/job-release.tmpl
-%%DATADIR%%/templates/hu/job-restart.tmpl
-%%DATADIR%%/templates/hu/jobs.tmpl
-%%DATADIR%%/templates/hu/jobs-header.tmpl
-%%DATADIR%%/templates/hu/list-available-printers.tmpl
-%%DATADIR%%/templates/hu/modify-class.tmpl
-%%DATADIR%%/templates/hu/modify-printer.tmpl
-%%DATADIR%%/templates/hu/norestart.tmpl
-%%DATADIR%%/templates/hu/option-boolean.tmpl
-%%DATADIR%%/templates/hu/option-conflict.tmpl
-%%DATADIR%%/templates/hu/option-header.tmpl
-%%DATADIR%%/templates/hu/option-pickmany.tmpl
-%%DATADIR%%/templates/hu/option-pickone.tmpl
-%%DATADIR%%/templates/hu/option-trailer.tmpl
-%%DATADIR%%/templates/hu/pager.tmpl
-%%DATADIR%%/templates/hu/printer.tmpl
-%%DATADIR%%/templates/hu/printer-accept.tmpl
-%%DATADIR%%/templates/hu/printer-added.tmpl
-%%DATADIR%%/templates/hu/printer-configured.tmpl
-%%DATADIR%%/templates/hu/printer-confirm.tmpl
-%%DATADIR%%/templates/hu/printer-default.tmpl
-%%DATADIR%%/templates/hu/printer-deleted.tmpl
-%%DATADIR%%/templates/hu/printer-jobs-header.tmpl
-%%DATADIR%%/templates/hu/printer-modified.tmpl
-%%DATADIR%%/templates/hu/printer-purge.tmpl
-%%DATADIR%%/templates/hu/printer-reject.tmpl
-%%DATADIR%%/templates/hu/printer-start.tmpl
-%%DATADIR%%/templates/hu/printer-stop.tmpl
-%%DATADIR%%/templates/hu/printers.tmpl
-%%DATADIR%%/templates/hu/printers-header.tmpl
-%%DATADIR%%/templates/hu/restart.tmpl
-%%DATADIR%%/templates/hu/samba-export.tmpl
-%%DATADIR%%/templates/hu/samba-exported.tmpl
-%%DATADIR%%/templates/hu/search.tmpl
-%%DATADIR%%/templates/hu/set-printer-options-header.tmpl
-%%DATADIR%%/templates/hu/set-printer-options-trailer.tmpl
-%%DATADIR%%/templates/hu/subscription-added.tmpl
-%%DATADIR%%/templates/hu/subscription-canceled.tmpl
-%%DATADIR%%/templates/hu/test-page.tmpl
-%%DATADIR%%/templates/hu/trailer.tmpl
-%%DATADIR%%/templates/hu/users.tmpl
 %%DATADIR%%/templates/header.tmpl
 %%DATADIR%%/templates/help-header.tmpl
 %%DATADIR%%/templates/help-printable.tmpl
 %%DATADIR%%/templates/help-trailer.tmpl
-%%DATADIR%%/templates/id/add-class.tmpl
-%%DATADIR%%/templates/id/add-printer.tmpl
-%%DATADIR%%/templates/id/add-rss-subscription.tmpl
-%%DATADIR%%/templates/id/admin.tmpl
-%%DATADIR%%/templates/id/choose-device.tmpl
-%%DATADIR%%/templates/id/choose-make.tmpl
-%%DATADIR%%/templates/id/choose-model.tmpl
-%%DATADIR%%/templates/id/choose-serial.tmpl
-%%DATADIR%%/templates/id/choose-uri.tmpl
-%%DATADIR%%/templates/id/class-added.tmpl
-%%DATADIR%%/templates/id/class-confirm.tmpl
-%%DATADIR%%/templates/id/class-deleted.tmpl
-%%DATADIR%%/templates/id/class-jobs-header.tmpl
-%%DATADIR%%/templates/id/class-modified.tmpl
-%%DATADIR%%/templates/id/class.tmpl
-%%DATADIR%%/templates/id/classes-header.tmpl
-%%DATADIR%%/templates/id/classes.tmpl
-%%DATADIR%%/templates/id/command.tmpl
-%%DATADIR%%/templates/id/edit-config.tmpl
-%%DATADIR%%/templates/id/error-op.tmpl
-%%DATADIR%%/templates/id/error.tmpl
-%%DATADIR%%/templates/id/header.tmpl
-%%DATADIR%%/templates/id/help-header.tmpl
-%%DATADIR%%/templates/id/help-printable.tmpl
-%%DATADIR%%/templates/id/help-trailer.tmpl
-%%DATADIR%%/templates/id/job-cancel.tmpl
-%%DATADIR%%/templates/id/job-hold.tmpl
-%%DATADIR%%/templates/id/job-move.tmpl
-%%DATADIR%%/templates/id/job-moved.tmpl
-%%DATADIR%%/templates/id/job-release.tmpl
-%%DATADIR%%/templates/id/job-restart.tmpl
-%%DATADIR%%/templates/id/jobs-header.tmpl
-%%DATADIR%%/templates/id/jobs.tmpl
-%%DATADIR%%/templates/id/list-available-printers.tmpl
-%%DATADIR%%/templates/id/modify-class.tmpl
-%%DATADIR%%/templates/id/modify-printer.tmpl
-%%DATADIR%%/templates/id/norestart.tmpl
-%%DATADIR%%/templates/id/option-boolean.tmpl
-%%DATADIR%%/templates/id/option-conflict.tmpl
-%%DATADIR%%/templates/id/option-header.tmpl
-%%DATADIR%%/templates/id/option-pickmany.tmpl
-%%DATADIR%%/templates/id/option-pickone.tmpl
-%%DATADIR%%/templates/id/option-trailer.tmpl
-%%DATADIR%%/templates/id/pager.tmpl
-%%DATADIR%%/templates/id/printer-accept.tmpl
-%%DATADIR%%/templates/id/printer-added.tmpl
-%%DATADIR%%/templates/id/printer-configured.tmpl
-%%DATADIR%%/templates/id/printer-confirm.tmpl
-%%DATADIR%%/templates/id/printer-default.tmpl
-%%DATADIR%%/templates/id/printer-deleted.tmpl
-%%DATADIR%%/templates/id/printer-jobs-header.tmpl
-%%DATADIR%%/templates/id/printer-modified.tmpl
-%%DATADIR%%/templates/id/printer-purge.tmpl
-%%DATADIR%%/templates/id/printer-reject.tmpl
-%%DATADIR%%/templates/id/printer-start.tmpl
-%%DATADIR%%/templates/id/printer-stop.tmpl
-%%DATADIR%%/templates/id/printer.tmpl
-%%DATADIR%%/templates/id/printers-header.tmpl
-%%DATADIR%%/templates/id/printers.tmpl
-%%DATADIR%%/templates/id/restart.tmpl
-%%DATADIR%%/templates/id/samba-export.tmpl
-%%DATADIR%%/templates/id/samba-exported.tmpl
-%%DATADIR%%/templates/id/search.tmpl
-%%DATADIR%%/templates/id/set-printer-options-header.tmpl
-%%DATADIR%%/templates/id/set-printer-options-trailer.tmpl
-%%DATADIR%%/templates/id/subscription-added.tmpl
-%%DATADIR%%/templates/id/subscription-canceled.tmpl
-%%DATADIR%%/templates/id/test-page.tmpl
-%%DATADIR%%/templates/id/trailer.tmpl
-%%DATADIR%%/templates/id/users.tmpl
 %%DATADIR%%/templates/it/add-class.tmpl
 %%DATADIR%%/templates/it/add-printer.tmpl
 %%DATADIR%%/templates/it/add-rss-subscription.tmpl
@@ -622,6 +540,7 @@ sbin/reject
 %%DATADIR%%/templates/it/edit-config.tmpl
 %%DATADIR%%/templates/it/error-op.tmpl
 %%DATADIR%%/templates/it/error.tmpl
+%%DATADIR%%/templates/it/header.tmpl
 %%DATADIR%%/templates/it/help-header.tmpl
 %%DATADIR%%/templates/it/help-printable.tmpl
 %%DATADIR%%/templates/it/help-trailer.tmpl
@@ -759,74 +678,6 @@ sbin/reject
 %%DATADIR%%/templates/option-pickone.tmpl
 %%DATADIR%%/templates/option-trailer.tmpl
 %%DATADIR%%/templates/pager.tmpl
-%%DATADIR%%/templates/pl/add-class.tmpl
-%%DATADIR%%/templates/pl/add-printer.tmpl
-%%DATADIR%%/templates/pl/add-rss-subscription.tmpl
-%%DATADIR%%/templates/pl/admin.tmpl
-%%DATADIR%%/templates/pl/choose-device.tmpl
-%%DATADIR%%/templates/pl/choose-make.tmpl
-%%DATADIR%%/templates/pl/choose-model.tmpl
-%%DATADIR%%/templates/pl/choose-serial.tmpl
-%%DATADIR%%/templates/pl/choose-uri.tmpl
-%%DATADIR%%/templates/pl/class-added.tmpl
-%%DATADIR%%/templates/pl/class-confirm.tmpl
-%%DATADIR%%/templates/pl/class-deleted.tmpl
-%%DATADIR%%/templates/pl/class-jobs-header.tmpl
-%%DATADIR%%/templates/pl/class-modified.tmpl
-%%DATADIR%%/templates/pl/class.tmpl
-%%DATADIR%%/templates/pl/classes-header.tmpl
-%%DATADIR%%/templates/pl/classes.tmpl
-%%DATADIR%%/templates/pl/command.tmpl
-%%DATADIR%%/templates/pl/edit-config.tmpl
-%%DATADIR%%/templates/pl/error-op.tmpl
-%%DATADIR%%/templates/pl/error.tmpl
-%%DATADIR%%/templates/pl/header.tmpl
-%%DATADIR%%/templates/pl/help-header.tmpl
-%%DATADIR%%/templates/pl/help-printable.tmpl
-%%DATADIR%%/templates/pl/help-trailer.tmpl
-%%DATADIR%%/templates/pl/job-cancel.tmpl
-%%DATADIR%%/templates/pl/job-hold.tmpl
-%%DATADIR%%/templates/pl/job-move.tmpl
-%%DATADIR%%/templates/pl/job-moved.tmpl
-%%DATADIR%%/templates/pl/job-release.tmpl
-%%DATADIR%%/templates/pl/job-restart.tmpl
-%%DATADIR%%/templates/pl/jobs-header.tmpl
-%%DATADIR%%/templates/pl/jobs.tmpl
-%%DATADIR%%/templates/pl/list-available-printers.tmpl
-%%DATADIR%%/templates/pl/modify-class.tmpl
-%%DATADIR%%/templates/pl/modify-printer.tmpl
-%%DATADIR%%/templates/pl/option-boolean.tmpl
-%%DATADIR%%/templates/pl/option-conflict.tmpl
-%%DATADIR%%/templates/pl/option-header.tmpl
-%%DATADIR%%/templates/pl/option-pickmany.tmpl
-%%DATADIR%%/templates/pl/option-pickone.tmpl
-%%DATADIR%%/templates/pl/option-trailer.tmpl
-%%DATADIR%%/templates/pl/pager.tmpl
-%%DATADIR%%/templates/pl/printer-accept.tmpl
-%%DATADIR%%/templates/pl/printer-added.tmpl
-%%DATADIR%%/templates/pl/printer-configured.tmpl
-%%DATADIR%%/templates/pl/printer-confirm.tmpl
-%%DATADIR%%/templates/pl/printer-default.tmpl
-%%DATADIR%%/templates/pl/printer-deleted.tmpl
-%%DATADIR%%/templates/pl/printer-jobs-header.tmpl
-%%DATADIR%%/templates/pl/printer-modified.tmpl
-%%DATADIR%%/templates/pl/printer-purge.tmpl
-%%DATADIR%%/templates/pl/printer-reject.tmpl
-%%DATADIR%%/templates/pl/printer-start.tmpl
-%%DATADIR%%/templates/pl/printer-stop.tmpl
-%%DATADIR%%/templates/pl/printers-header.tmpl
-%%DATADIR%%/templates/pl/printers.tmpl
-%%DATADIR%%/templates/pl/restart.tmpl
-%%DATADIR%%/templates/pl/samba-export.tmpl
-%%DATADIR%%/templates/pl/samba-exported.tmpl
-%%DATADIR%%/templates/pl/search.tmpl
-%%DATADIR%%/templates/pl/set-printer-options-header.tmpl
-%%DATADIR%%/templates/pl/set-printer-options-trailer.tmpl
-%%DATADIR%%/templates/pl/subscription-added.tmpl
-%%DATADIR%%/templates/pl/subscription-canceled.tmpl
-%%DATADIR%%/templates/pl/test-page.tmpl
-%%DATADIR%%/templates/pl/trailer.tmpl
-%%DATADIR%%/templates/pl/users.tmpl
 %%DATADIR%%/templates/printer-accept.tmpl
 %%DATADIR%%/templates/printer-added.tmpl
 %%DATADIR%%/templates/printer-configured.tmpl
@@ -839,8 +690,6 @@ sbin/reject
 %%DATADIR%%/templates/printer-reject.tmpl
 %%DATADIR%%/templates/printer-start.tmpl
 %%DATADIR%%/templates/printer-stop.tmpl
-%%DATADIR%%/templates/pl/norestart.tmpl
-%%DATADIR%%/templates/pl/printer.tmpl
 %%DATADIR%%/templates/printer.tmpl
 %%DATADIR%%/templates/printers-header.tmpl
 %%DATADIR%%/templates/printers.tmpl
@@ -925,168 +774,136 @@ sbin/reject
 %%DATADIR%%/templates/test-page.tmpl
 %%DATADIR%%/templates/trailer.tmpl
 %%DATADIR%%/templates/users.tmpl
-%%DOCSDIR%%/cups-printable.css
-%%DOCSDIR%%/cups.css
-%%DOCSDIR%%/de/index.html
-%%DOCSDIR%%/es/index.html
-%%DOCSDIR%%/eu/index.html
-%%DOCSDIR%%/fr/index.html
-%%DOCSDIR%%/hu/index.html
-%%DOCSDIR%%/help/accounting.html
-%%DOCSDIR%%/help/api-array.html
-%%DOCSDIR%%/help/api-cgi.html
-%%DOCSDIR%%/help/api-cups.html
-%%DOCSDIR%%/help/api-driver.html
-%%DOCSDIR%%/help/api-filedir.html
-%%DOCSDIR%%/help/api-filter.html
-%%DOCSDIR%%/help/api-httpipp.html
-%%DOCSDIR%%/help/api-mime.html
-%%DOCSDIR%%/help/api-overview.html
-%%DOCSDIR%%/help/api-ppd.html
-%%DOCSDIR%%/help/api-ppdc.html
-%%DOCSDIR%%/help/api-raster.html
-%%DOCSDIR%%/help/cgi.html
-%%DOCSDIR%%/help/glossary.html
-%%DOCSDIR%%/help/kerberos.html
-%%DOCSDIR%%/help/license.html
-%%DOCSDIR%%/help/man-backend.html
-%%DOCSDIR%%/help/man-cancel.html
-%%DOCSDIR%%/help/man-cups-lpd.html
-%%DOCSDIR%%/help/man-cups-polld.html
-%%DOCSDIR%%/help/man-cupsaccept.html
-%%DOCSDIR%%/help/man-cupsaddsmb.html
-%%DOCSDIR%%/help/man-cupsd.html
-%%DOCSDIR%%/help/man-cupsenable.html
-%%DOCSDIR%%/help/man-cupstestdsc.html
-%%DOCSDIR%%/help/man-cupstestppd.html
-%%DOCSDIR%%/help/man-filter.html
-%%DOCSDIR%%/help/man-ipptool.html
-%%DOCSDIR%%/help/man-ipptoolfile.html
-%%DOCSDIR%%/help/man-lp.html
-%%DOCSDIR%%/help/man-lpadmin.html
-%%DOCSDIR%%/help/man-lpc.html
-%%DOCSDIR%%/help/man-lpinfo.html
-%%DOCSDIR%%/help/man-lpmove.html
-%%DOCSDIR%%/help/man-lpoptions.html
-%%DOCSDIR%%/help/man-lppasswd.html
-%%DOCSDIR%%/help/man-lpq.html
-%%DOCSDIR%%/help/man-lpr.html
-%%DOCSDIR%%/help/man-lprm.html
-%%DOCSDIR%%/help/man-lpstat.html
-%%DOCSDIR%%/help/man-mime.convs.html
-%%DOCSDIR%%/help/man-mime.types.html
-%%DOCSDIR%%/help/man-notifier.html
-%%DOCSDIR%%/help/man-ppdc.html
-%%DOCSDIR%%/help/man-ppdhtml.html
-%%DOCSDIR%%/help/man-ppdi.html
-%%DOCSDIR%%/help/man-ppdmerge.html
-%%DOCSDIR%%/help/man-ppdpo.html
-%%DOCSDIR%%/help/network.html
-%%DOCSDIR%%/help/options.html
-%%DOCSDIR%%/help/overview.html
-%%DOCSDIR%%/help/policies.html
-%%DOCSDIR%%/help/postscript-driver.html
-%%DOCSDIR%%/help/ppd-compiler.html
-%%DOCSDIR%%/help/raster-driver.html
-%%DOCSDIR%%/help/ref-access_log.html
-%%DOCSDIR%%/help/ref-classes-conf.html
-%%DOCSDIR%%/help/ref-client-conf.html
-%%DOCSDIR%%/help/ref-cupsd-conf.html
-%%DOCSDIR%%/help/ref-error_log.html
-%%DOCSDIR%%/help/ref-mailto-conf.html
-%%DOCSDIR%%/help/ref-page_log.html
-%%DOCSDIR%%/help/ref-ppdcfile.html
-%%DOCSDIR%%/help/ref-printers-conf.html
-%%DOCSDIR%%/help/ref-snmp-conf.html
-%%DOCSDIR%%/help/ref-subscriptions-conf.html
-%%DOCSDIR%%/help/security.html
-%%DOCSDIR%%/help/sharing.html
-%%DOCSDIR%%/help/spec-banner.html
-%%DOCSDIR%%/help/spec-browsing.html
-%%DOCSDIR%%/help/spec-cmp.html
-%%DOCSDIR%%/help/spec-command.html
-%%DOCSDIR%%/help/spec-design.html
-%%DOCSDIR%%/help/spec-ipp.html
-%%DOCSDIR%%/help/spec-postscript.html
-%%DOCSDIR%%/help/spec-pdf.html
-%%DOCSDIR%%/help/spec-ppd.html
-%%DOCSDIR%%/help/spec-raster.html
-%%DOCSDIR%%/help/spec-stp.html
-%%DOCSDIR%%/help/standard.html
-%%DOCSDIR%%/help/translation.html
-%%DOCSDIR%%/help/whatsnew.html
-%%DOCSDIR%%/id/index.html
-%%DOCSDIR%%/images/color-wheel.png
-%%DOCSDIR%%/images/cups-block-diagram.png
-%%DOCSDIR%%/images/cups-command-chain.png
-%%DOCSDIR%%/images/cups-icon.png
-%%DOCSDIR%%/images/cups-postscript-chain.png
-%%DOCSDIR%%/images/cups-raster-chain.png
-%%DOCSDIR%%/images/cups.png
-%%DOCSDIR%%/images/generic.png
-%%DOCSDIR%%/images/left.gif
-%%DOCSDIR%%/images/raster-organization.png
-%%DOCSDIR%%/images/raster.png
-%%DOCSDIR%%/images/right.gif
-%%DOCSDIR%%/images/sample-image.png
-%%DOCSDIR%%/images/sel.gif
-%%DOCSDIR%%/images/smiley.jpg
-%%DOCSDIR%%/images/unsel.gif
-%%DOCSDIR%%/images/wait.gif
-%%DOCSDIR%%/index.html
-%%DATADIR%%/ipptool/create-printer-subscription.test
-%%DATADIR%%/ipptool/color.jpg
-%%DATADIR%%/ipptool/document-a4.pdf
-%%DATADIR%%/ipptool/document-a4.ps
-%%DATADIR%%/ipptool/document-letter.pdf
-%%DATADIR%%/ipptool/document-letter.ps
-%%DATADIR%%/ipptool/gray.jpg
-%%DATADIR%%/ipptool/ipp-2.2.test
-%%DATADIR%%/ipptool/onepage-a4.pdf
-%%DATADIR%%/ipptool/onepage-a4.ps
-%%DATADIR%%/ipptool/onepage-letter.pdf
-%%DATADIR%%/ipptool/onepage-letter.ps
-%%DATADIR%%/ipptool/get-completed-jobs.test
-%%DATADIR%%/ipptool/get-jobs.test
-%%DATADIR%%/ipptool/get-printer-attributes.test
-%%DATADIR%%/ipptool/ipp-1.1.test
-%%DATADIR%%/ipptool/ipp-2.0.test
-%%DATADIR%%/ipptool/ipp-2.1.test
-%%DATADIR%%/ipptool/testfile.jpg
-%%DATADIR%%/ipptool/testfile.pdf
-%%DATADIR%%/ipptool/testfile.ps
-%%DATADIR%%/ipptool/testfile.txt
-%%DOCSDIR%%/it/index.html
-%%DOCSDIR%%/ja/index.html
-%%DOCSDIR%%/pl/index.html
-%%DOCSDIR%%/robots.txt
-%%DOCSDIR%%/ru/index.html
-%%EXAMPLESDIR%%/ulpt-cupsd.conf
+%%PORTDOCS%%%%DOCSDIR%%/cups-printable.css
+%%PORTDOCS%%%%DOCSDIR%%/cups.css
+%%PORTDOCS%%%%DOCSDIR%%/ca/index.html
+%%PORTDOCS%%%%DOCSDIR%%/cs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/es/index.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/index.html
+%%PORTDOCS%%%%DOCSDIR%%/help/accounting.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-array.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-cgi.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-cups.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-driver.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-filedir.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-filter.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-httpipp.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-mime.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-overview.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-ppd.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-ppdc.html
+%%PORTDOCS%%%%DOCSDIR%%/help/api-raster.html
+%%PORTDOCS%%%%DOCSDIR%%/help/cgi.html
+%%PORTDOCS%%%%DOCSDIR%%/help/glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/help/kerberos.html
+%%PORTDOCS%%%%DOCSDIR%%/help/license.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-backend.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-cancel.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-cups-config.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-cups-lpd.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-cups-snmp.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-cupsaccept.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-cupsaddsmb.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-cupsd.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-cupsenable.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-cupstestdsc.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-cupstestppd.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-filter.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-ipptool.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-ipptoolfile.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lp.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lpadmin.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lpc.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lpinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lpmove.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lpoptions.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lppasswd.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lpq.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lpr.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lprm.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-lpstat.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-mime.convs.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-mime.types.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-notifier.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-ppdc.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-ppdhtml.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-ppdi.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-ppdmerge.html
+%%PORTDOCS%%%%DOCSDIR%%/help/man-ppdpo.html
+%%PORTDOCS%%%%DOCSDIR%%/help/network.html
+%%PORTDOCS%%%%DOCSDIR%%/help/options.html
+%%PORTDOCS%%%%DOCSDIR%%/help/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/help/policies.html
+%%PORTDOCS%%%%DOCSDIR%%/help/postscript-driver.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ppd-compiler.html
+%%PORTDOCS%%%%DOCSDIR%%/help/raster-driver.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-access_log.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-classes-conf.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-client-conf.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-cups-files-conf.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-cupsd-conf.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-error_log.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-mailto-conf.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-page_log.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-ppdcfile.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-printers-conf.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-snmp-conf.html
+%%PORTDOCS%%%%DOCSDIR%%/help/ref-subscriptions-conf.html
+%%PORTDOCS%%%%DOCSDIR%%/help/security.html
+%%PORTDOCS%%%%DOCSDIR%%/help/sharing.html
+%%PORTDOCS%%%%DOCSDIR%%/help/spec-banner.html
+%%PORTDOCS%%%%DOCSDIR%%/help/spec-cmp.html
+%%PORTDOCS%%%%DOCSDIR%%/help/spec-command.html
+%%PORTDOCS%%%%DOCSDIR%%/help/spec-design.html
+%%PORTDOCS%%%%DOCSDIR%%/help/spec-ipp.html
+%%PORTDOCS%%%%DOCSDIR%%/help/spec-pdf.html
+%%PORTDOCS%%%%DOCSDIR%%/help/spec-postscript.html
+%%PORTDOCS%%%%DOCSDIR%%/help/spec-ppd.html
+%%PORTDOCS%%%%DOCSDIR%%/help/spec-raster.html
+%%PORTDOCS%%%%DOCSDIR%%/help/spec-stp.html
+%%PORTDOCS%%%%DOCSDIR%%/help/translation.html
+%%PORTDOCS%%%%DOCSDIR%%/help/whatsnew.html
+%%PORTDOCS%%%%DOCSDIR%%/images/color-wheel.png
+%%PORTDOCS%%%%DOCSDIR%%/images/cups-block-diagram.png
+%%PORTDOCS%%%%DOCSDIR%%/images/cups-command-chain.png
+%%PORTDOCS%%%%DOCSDIR%%/images/cups-icon.png
+%%PORTDOCS%%%%DOCSDIR%%/images/cups-postscript-chain.png
+%%PORTDOCS%%%%DOCSDIR%%/images/cups-raster-chain.png
+%%PORTDOCS%%%%DOCSDIR%%/images/cups.png
+%%PORTDOCS%%%%DOCSDIR%%/images/left.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/raster-organization.png
+%%PORTDOCS%%%%DOCSDIR%%/images/raster.png
+%%PORTDOCS%%%%DOCSDIR%%/images/right.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/sample-image.png
+%%PORTDOCS%%%%DOCSDIR%%/images/sel.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/smiley.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/unsel.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/wait.gif
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/it/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/index.html
+%%PORTDOCS%%%%DOCSDIR%%/robots.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ulpt-cupsd.conf
 share/applications/cups.desktop
 share/icons/hicolor/16x16/apps/cups.png
 share/icons/hicolor/32x32/apps/cups.png
 share/icons/hicolor/64x64/apps/cups.png
 share/icons/hicolor/128x128/apps/cups.png
-share/locale/da/cups_da.po
-share/locale/de/cups_de.po
+share/locale/ca/cups_ca.po
+share/locale/cs/cups_cs.po
 share/locale/es/cups_es.po
-share/locale/eu/cups_eu.po
-share/locale/fi/cups_fi.po
 share/locale/fr/cups_fr.po
-share/locale/hu/cups_hu.po
-share/locale/id/cups_id.po
 share/locale/it/cups_it.po
 share/locale/ja/cups_ja.po
-share/locale/ko/cups_ko.po
-share/locale/nl/cups_nl.po
-share/locale/no/cups_no.po
-share/locale/pl/cups_pl.po
-share/locale/pt/cups_pt.po
-share/locale/pt_BR/cups_pt_BR.po
 share/locale/ru/cups_ru.po
-share/locale/sv/cups_sv.po
-share/locale/zh/cups_zh.po
-share/locale/zh_TW/cups_zh_TW.po
+@unexec rmdir >/dev/null 2>&1 /var/spool/cups/tmp || :
+@unexec rmdir >/dev/null 2>&1 /var/spool/cups || :
+@unexec rmdir >/dev/null 2>&1 /var/run/cups/certs || :
+@unexec rmdir >/dev/null 2>&1 /var/run/cups || :
+@unexec rmdir >/dev/null 2>&1 /var/log/cups || :
+@unexec rmdir >/dev/null 2>&1 /var/db/cups/rss || :
+@unexec rmdir >/dev/null 2>&1 /var/db/cups || :
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/32x32/apps
@@ -1097,31 +914,25 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm %%DOCSDIR%%/ru
-@dirrm %%DOCSDIR%%/pl
-@dirrm %%DOCSDIR%%/ja
-@dirrm %%DOCSDIR%%/it
-@dirrm %%DATADIR%%/ipptool
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%/id
-@dirrm %%DOCSDIR%%/help
-@dirrm %%DOCSDIR%%/eu
-@dirrm %%DOCSDIR%%/es
-@dirrm %%DOCSDIR%%/de
-@dirrm %%DOCSDIR%%/fr
-@dirrm %%DOCSDIR%%/hu
-@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ca
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/it
+%%PORTDOCS%%@dirrm %%DATADIR%%/ipptool
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/templates/cs
+@dirrm %%DATADIR%%/templates/ca
 @dirrm %%DATADIR%%/templates/ru
-@dirrm %%DATADIR%%/templates/pl
 @dirrm %%DATADIR%%/templates/ja
 @dirrm %%DATADIR%%/templates/it
-@dirrm %%DATADIR%%/templates/id
-@dirrm %%DATADIR%%/templates/eu
 @dirrm %%DATADIR%%/templates/es
 @dirrm %%DATADIR%%/templates/fr
-@dirrm %%DATADIR%%/templates/de
-@dirrm %%DATADIR%%/templates/hu
 @dirrm %%DATADIR%%/templates
 @exec  mkdir -p %D/%%DATADIR%%/profiles
 @dirrm %%DATADIR%%/profiles
@@ -1129,20 +940,16 @@ share/locale/zh_TW/cups_zh_TW.po
 @exec  mkdir -p %D/%%DATADIR%%/model
 @dirrmtry %%DATADIR%%/model
 @dirrm %%DATADIR%%/mime
-@dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/drv
-@dirrm %%DATADIR%%/charsets
-@dirrm %%DATADIR%%/banners
 @dirrmtry %%DATADIR%%
 @dirrm libexec/cups/notifier
 @dirrm libexec/cups/monitor
-@dirrmtry libexec/cups/filter
 @exec mkdir -p %D/libexec/cups/driver
+@dirrmtry include/cups
 @dirrmtry libexec/cups/driver
-@dirrm libexec/cups/daemon
-@dirrm libexec/cups/cgi-bin
+@dirrmtry libexec/cups/daemon
+@dirrmtry libexec/cups/cgi-bin
 @dirrmtry libexec/cups/backend
 @dirrmtry libexec/cups
 %%PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
