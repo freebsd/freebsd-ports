@@ -179,7 +179,6 @@
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
     SUBDIR += xhomer
-    SUBDIR += xmame
     SUBDIR += xsystem35
     SUBDIR += xzx
     SUBDIR += yabause
