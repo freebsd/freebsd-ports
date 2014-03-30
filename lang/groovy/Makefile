@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	groovy
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.2
 CATEGORIES=	lang java
-MASTER_SITES=	http://dist.groovy.codehaus.org/distributions/
+MASTER_SITES=	http://dl.bintray.com/groovy/maven/
 DISTFILES=	groovy-binary-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mjs@Bur.st
@@ -21,15 +21,14 @@ NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	ANTLR-LICENSE.txt ASM-LICENSE.txt CLI-LICENSE.txt JSR223-LICENSE.txt LICENSE.txt conf lib
 SCRIPTFILES=	groovy groovyConsole groovyc groovysh java2groovy startGroovy
+PORTDOCS=	html pdf
 
 OPTIONS_DEFINE=	DOCS
 
+DOCS_DISTFILES=	groovy-docs-${PORTVERSION}${EXTRACT_SUFX}
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	groovy-docs-${PORTVERSION}${EXTRACT_SUFX}
-PORTDOCS=	html pdf
-.endif
 PLIST_FILES=	${SCRIPTFILES:S,^,bin/,} %%JAVAJARDIR%%/${PORTNAME}.jar
 SUB_FILES=	set-groovy_home.sed
 
