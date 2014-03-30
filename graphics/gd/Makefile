@@ -18,8 +18,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	bazaar-1.*
 
-USE_XZ=		yes
-USES=		pkgconfig
+USES=		tar:xz pkgconfig
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_ENV=	PKG_CONFIG_LIBDIR=${LOCALBASE}/libdata/pkgconfig
 GNU_CONFIGURE_ARGS=
@@ -31,9 +30,7 @@ NO_OPTIONS_SORT=yes
 FONTCONFIG_LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 FONTCONFIG_CONFIGURE_OFF=	--with-fontconfig=no
 ICONV_USES=	iconv
-ICONV_CONFIGURE_WITH=	libiconv
 ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
-ICONV_CONFIGURE_OFF=	--with-libiconv-prefix=no
 VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
 VPX_CONFIGURE_OFF=	--without-vpx
 XPM_USE=	xorg=xpm,x11
