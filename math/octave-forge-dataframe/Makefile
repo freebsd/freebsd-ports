@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-dataframe
-PORTVERSION=	0.9.1
-PORTREVISION=	5
+PORTVERSION=	1.0.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE=	GPLv3
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+OCTSRC=		${DISTNAME}
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
