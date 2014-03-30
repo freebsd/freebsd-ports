@@ -3,7 +3,7 @@
 
 PORTNAME=	xboing
 PORTVERSION=	2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
@@ -27,5 +27,8 @@ OPTIONS_SUB=yes
 .if ${PORT_OPTIONS:MSOUND}
 MAKE_ENV+=	WITHOUT_AUDIO=True
 .endif
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/X11/xboing/.xboing.scr
 
 .include <bsd.port.mk>

@@ -1,5 +1,4 @@
 bin/xboing
-lib/X11/xboing/.xboing.scr
 lib/X11/xboing/levels/demo.data
 lib/X11/xboing/levels/editor.data
 lib/X11/xboing/levels/level01.data
@@ -131,11 +130,14 @@ man/man1/xboing.1.gz
 %%SOUND%%lib/X11/xboing/sounds/wzzz2.au
 %%SOUND%%lib/X11/xboing/sounds/youagod.au
 lib/X11/xboing/problems.doc
-@dirrm lib/X11/xboing/levels
-%%SOUND%%@dirrm lib/X11/xboing/sounds
-@dirrm lib/X11/xboing
 @exec chown root:games %D/bin/xboing
 @exec chmod 2755 %D/bin/xboing
 @exec touch %D/lib/X11/xboing/.xboing.scr
+@exec chown root:games %D/lib/X11/xboing
+@exec chmod 775 %D/lib/X11/xboing
 @exec chown root:games %D/lib/X11/xboing/.xboing.scr
 @exec chmod 664 %D/lib/X11/xboing/.xboing.scr
+@unexec if test ! -s %D/lib/X11/xboing/.xboing.scr ; then rm -f %D/lib/X11/xboing/.xboing.scr ; fi
+%%SOUND%%@dirrm lib/X11/xboing/sounds
+@dirrm lib/X11/xboing/levels
+@dirrm lib/X11/xboing
