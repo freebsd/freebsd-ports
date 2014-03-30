@@ -1541,6 +1541,7 @@
     SUBDIR += xstream
     SUBDIR += xsv
     SUBDIR += xt
+    SUBDIR += xwindiff
     SUBDIR += y2l
     SUBDIR += yali
     SUBDIR += yamcha
