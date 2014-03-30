@@ -3,33 +3,45 @@
 
 PORTNAME=	xvier
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/strategy
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	SUNSITE/games/strategy \
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=	${PORTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
 EXTRACT_SUFX=	.tar.Z
+EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Throw stones into free columns
 
-DEPRECATED=	Unmaintained since 2000
-EXPIRATION_DATE=	2014-04-11
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		imake
 USE_XORG=	x11 xext
-MAN6=		xvier.6
+USE_CSTD=	gnu89
 
-NO_STAGE=	yes
-
+PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/${PORTNAME} \
+		libexec/${PORTNAME}_prog \
+		man/man6/xvier.6.gz \
+		share/pixmaps/xvier.png
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+DESKTOP_ENTRIES="Xvier" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}_prog \
+		${STAGEDIR}${PREFIX}/libexec/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
+		${STAGEDIR}${MAN6PREFIX}/man/man6/${PORTNAME}.6
+
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
