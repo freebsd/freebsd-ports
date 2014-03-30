@@ -74,8 +74,8 @@ post-configure:
 	@cd ${WRKSRC}/fonts && { ${ECHO_CMD} ''; \
 	${ECHO_CMD} "pfb_fonts =" *.pfb; } >> Makefile && \
 	${REINPLACE_CMD} 's,^\(fonts_DATA = .*\),\1 $$(pfb_fonts),' Makefile
-	@cd ${WRKSRC}/afm && { ${ECHO} ''; \
-	${ECHO} "i18n_afms =" `cat ${WRKDIR}/${I18N_PACKAGE}/afm/afms.lst`; } >> Makefile && \
+	@cd ${WRKSRC}/afm && { ${ECHO_CMD} ''; \
+	${ECHO_CMD} "i18n_afms =" `cat ${WRKDIR}/${I18N_PACKAGE}/afm/afms.lst`; } >> Makefile && \
 	${REINPLACE_CMD} 's,^\(all_afms = .*\),\1 $$(i18n_afms),' Makefile
 .endif
 
@@ -83,9 +83,9 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/a2ps
 .if ${PORT_OPTIONS:MEMACS}
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp
-	${LN} -sf ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/a2ps-print.el \
+	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps-print.el \
 		  ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/a2ps-print.el
-	${LN} -sf ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/a2ps.el \
+	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps.el \
 		  ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/a2ps.el
 .endif
 	cd ${WRKSRC}/doc && \
