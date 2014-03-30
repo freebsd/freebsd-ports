@@ -10,15 +10,14 @@ MASTER_SITE_SUBDIR=	apps/asprint
 DISTNAME=	asprint
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple browser to allow a user to print
+COMMENT=	Simple browser to allow a user to print
 
 PLIST_FILES=	bin/asprint
 USE_XORG=	xmu xpm xt xaw x11
 ALL_TARGET=	asprint
 MAKEFILE=	makefile
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} $(WRKSRC)/asprint ${PREFIX}/bin
+	${INSTALL_PROGRAM} $(WRKSRC)/asprint ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
