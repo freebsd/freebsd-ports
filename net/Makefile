@@ -359,7 +359,6 @@
     SUBDIR += linphone-base
     SUBDIR += linux-f10-nss_ldap
     SUBDIR += linux-f10-openldap
-    SUBDIR += linux-nx-client
     SUBDIR += linuxigd
     SUBDIR += liveMedia
     SUBDIR += lla

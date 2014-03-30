@@ -470,7 +470,6 @@
     SUBDIR += lmon
     SUBDIR += log_analysis
     SUBDIR += loganalyzer
-    SUBDIR += logmon
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash

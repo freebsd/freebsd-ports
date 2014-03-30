@@ -5822,3 +5822,33 @@ devel/cross-gdb||2014-03-28|Has expired: No more public distfiles, unstaged
 x11-wm/fvwm2-i18n|x11-wm/fvwm2|2014-03-28|Does not differ from main fvwm2 port
 games/linux-spheresofchaos-demo||2014-03-28|Has expired: No more public distfiles
 chinese/php5-cconv|chinese/php-cconv|2014-03-30|Rename to php-
+emulators/gxmame||2014-03-30|Has expired: Depends on deprecated emulators/xmame
+emulators/pyxmame||2014-03-30|Has expired: Depends on deprecated emulators/xmame
+emulators/xmess||2014-03-30|Has expired: No more public distfiles
+benchmarks/xdd||2014-03-30|Has expired: No more public distfiles
+chinese/srecite||2014-03-30|Has expired: No more public distfiles
+games/hlstats||2014-03-30|Has expired: No more public distfiles
+audio/teamspeak_server||2014-03-30|Has expired: No more public distfiles
+games/utserver||2014-03-30|Has expired: No more public distfiles
+databases/p5-hp200lx-db||2014-03-30|Has expired: No more public distfiles
+audio/teamspeak_client||2014-03-30|Has expired: No more public distfiles
+german/vtiger||2014-03-30|Has expired: Depends on expiring www/vtiger
+www/gallery||2014-03-30|Has expired: No more public distfiles
+www/vtiger||2014-03-30|Has expired: No more public distfiles
+net/linux-nx-client||2014-03-30|Has expired: No more public distfiles
+emulators/extract-xiso||2014-03-30|Has expired: No more public distfiles
+www/trac-wantedpages||2014-03-30|Has expired: No more public distfiles
+www/trac-ldap||2014-03-30|Has expired: No more public distfiles
+www/trac-codetags||2014-03-30|Has expired: No more public distfiles
+www/trac-addcomment||2014-03-30|Has expired: No more public distfiles
+www/trac-nav||2014-03-30|Has expired: No more public distfiles
+www/baikal||2014-03-30|Has expired: No more public distfiles
+www/trac-pagetopdf||2014-03-30|Has expired: No more public distfiles
+sysutils/logmon||2014-03-30|Has expired: No more public distfiles
+www/trac-simpleticket||2014-03-30|Has expired: No more public distfiles
+www/trac-wikinegotiator||2014-03-30|Has expired: No more public distfiles
+www/trac-pagelist||2014-03-30|Has expired: No more public distfiles
+www/trac-remind||2014-03-30|Has expired: No more public distfiles
+www/trac-macropost||2014-03-30|Has expired: No more public distfiles
+mail/vexim||2014-03-30|Has expired: No more public distfiles
+lang/rscheme||2014-03-30|Has expired: No more public distfiles

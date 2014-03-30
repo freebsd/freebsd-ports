@@ -48,7 +48,6 @@
     SUBDIR += axis2
     SUBDIR += b2evolution
     SUBDIR += bacula-web
-    SUBDIR += baikal
     SUBDIR += bannerfilter
     SUBDIR += bblog
     SUBDIR += bigbluebutton
@@ -236,7 +235,6 @@
     SUBDIR += g-gcl
     SUBDIR += gaeo
     SUBDIR += gaeutilities
-    SUBDIR += gallery
     SUBDIR += gallery2
     SUBDIR += gallery3
     SUBDIR += gatling
@@ -1973,7 +1971,6 @@
     SUBDIR += trac-TracDuplicates
     SUBDIR += trac-TracGoogleAnalytics
     SUBDIR += trac-accountmanager
-    SUBDIR += trac-addcomment
     SUBDIR += trac-advancedticketworkflow
     SUBDIR += trac-attachmentpolicy
     SUBDIR += trac-autocomplete
@@ -1981,7 +1978,6 @@
     SUBDIR += trac-bzr
     SUBDIR += trac-ccselector
     SUBDIR += trac-childtickets
-    SUBDIR += trac-codetags
     SUBDIR += trac-customfieldadmin
     SUBDIR += trac-datefield
     SUBDIR += trac-defaultcc
@@ -1999,22 +1995,15 @@
     SUBDIR += trac-iniadmin
     SUBDIR += trac-keywords
     SUBDIR += trac-keywordsecretticket
-    SUBDIR += trac-ldap
-    SUBDIR += trac-macropost
     SUBDIR += trac-mastertickets
     SUBDIR += trac-math
     SUBDIR += trac-mercurial
-    SUBDIR += trac-nav
     SUBDIR += trac-navadd
-    SUBDIR += trac-pagelist
-    SUBDIR += trac-pagetopdf
     SUBDIR += trac-permredirect
     SUBDIR += trac-privatetickets
     SUBDIR += trac-pydotorgtheme
-    SUBDIR += trac-remind
     SUBDIR += trac-robotstxt
     SUBDIR += trac-scrumburndown
-    SUBDIR += trac-simpleticket
     SUBDIR += trac-spam-filter
     SUBDIR += trac-subtickets
     SUBDIR += trac-tags
@@ -2026,10 +2015,8 @@
     SUBDIR += trac-tracdragdrop
     SUBDIR += trac-tweakui
     SUBDIR += trac-vote
-    SUBDIR += trac-wantedpages
     SUBDIR += trac-watchlist
     SUBDIR += trac-wikigoodies
-    SUBDIR += trac-wikinegotiator
     SUBDIR += trac-wikinotification
     SUBDIR += trac-wikitemplates
     SUBDIR += trac-wikitopdf
@@ -2100,7 +2087,6 @@
     SUBDIR += videocache
     SUBDIR += visitors
     SUBDIR += volta
-    SUBDIR += vtiger
     SUBDIR += w3m
     SUBDIR += w3m-img
     SUBDIR += w3mir

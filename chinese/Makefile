@@ -121,7 +121,6 @@
     SUBDIR += scim-fcitx
     SUBDIR += scim-pinyin
     SUBDIR += scim-tables
-    SUBDIR += srecite
     SUBDIR += sunpinyin
     SUBDIR += telnet
     SUBDIR += tin

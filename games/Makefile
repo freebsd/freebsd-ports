@@ -396,7 +396,6 @@
     SUBDIR += hinversi
     SUBDIR += hitori
     SUBDIR += hllib
-    SUBDIR += hlstats
     SUBDIR += hlstatsx
     SUBDIR += hohlin
     SUBDIR += hoichess
@@ -999,7 +998,6 @@
     SUBDIR += untahris
     SUBDIR += uqm
     SUBDIR += urbanterror-data
-    SUBDIR += utserver
     SUBDIR += valyriatear
     SUBDIR += vamos
     SUBDIR += vavoom

@@ -721,8 +721,6 @@
     SUBDIR += tcd
     SUBDIR += tclmidi
     SUBDIR += teamspeak3-server
-    SUBDIR += teamspeak_client
-    SUBDIR += teamspeak_server
     SUBDIR += tempest_for_eliza
     SUBDIR += tepsonic
     SUBDIR += terminatorx
