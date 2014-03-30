@@ -1,5 +1,5 @@
---- Imakefile.orig	Thu Nov 21 19:28:46 1996
-+++ Imakefile	Sun Jun 20 18:39:19 1999
+--- Imakefile.orig	1996-11-22 02:28:46.000000000 +0100
++++ Imakefile	2014-03-30 17:51:01.000000000 +0200
 @@ -24,23 +24,28 @@
  XCOMM This is the directory where the highscore, level & sound data will be 
  XCOMM placed. Default will be the current directory.
@@ -43,4 +43,44 @@
 +        -DUSE_FLOCK=\"True\"
  XCOMM   -DNEED_USLEEP=\"True\" \
  XCOMM   -DNO_LOCKING=\"True\" 
+ 
+@@ -182,30 +187,30 @@
+ 	@echo "XBoing directory is " $(XBOING_DIR)
+ 	@:
+ 	@echo "Creating directory " $(XBOING_DIR)
+-	@if [ ! -d $(XBOING_DIR) ]; then mkdir $(XBOING_DIR); fi
+-	$(INSTALL) -c $(INSTDATFLAGS) docs/problems.doc $(XBOING_DIR)
++	@if [ ! -d ${DESTDIR}$(XBOING_DIR) ]; then mkdir ${DESTDIR}$(XBOING_DIR); fi
++	$(INSTALL) -c $(INSTDATFLAGS) docs/problems.doc ${DESTDIR}$(XBOING_DIR)
+ 	@:
+ 	@echo "Creating directory " $(LEVEL_INSTALL_DIR)
+-	@if [ ! -d $(LEVEL_INSTALL_DIR) ]; then mkdir $(LEVEL_INSTALL_DIR); fi
++	@if [ ! -d ${DESTDIR}$(LEVEL_INSTALL_DIR) ]; then mkdir ${DESTDIR}$(LEVEL_INSTALL_DIR); fi
+ 	@:
+ 	@echo "Copying level data into directory " $(LEVEL_INSTALL_DIR)
+ 	@cd ./levels; set -x; for file in *.data; do			\
+-		$(INSTALL) -c $(INSTDATFLAGS) $$file $(LEVEL_INSTALL_DIR);\
++		$(INSTALL) -c $(INSTDATFLAGS) $$file ${DESTDIR}$(LEVEL_INSTALL_DIR);\
+ 	done
+ 	@:
+ 	@if [ "$(AUDIO_AVAILABLE)" = "True" ]; 				\
+ 	 then								\
+ 		echo "Creating directory " $(SOUNDS_DIR); 		\
+-		if [ ! -d $(SOUNDS_DIR) ]; then mkdir $(SOUNDS_DIR); fi;\
++		if [ ! -d ${DESTDIR}$(SOUNDS_DIR) ]; then mkdir ${DESTDIR}$(SOUNDS_DIR); fi;\
+ 		echo "Copying sound files into directory " $(SOUNDS_DIR);\
+ 		cd ./sounds; set -x; for file in *.au; do		\
+-		    $(INSTALL) -c $(INSTDATFLAGS) $$file $(SOUNDS_DIR);	\
++		    $(INSTALL) -c $(INSTDATFLAGS) $$file ${DESTDIR}$(SOUNDS_DIR);	\
+ 		done;							\
+ 	 fi
+ 	@:
+-	@echo "Creating a highscore file " $(HIGH_SCORE_FILE)
+-	@touch $(HIGH_SCORE_FILE);
+-	@chmod a+rw $(HIGH_SCORE_FILE);
++	@echo "Creating a highscore file " ${DESTDIR}$(HIGH_SCORE_FILE)
++	@touch ${DESTDIR}$(HIGH_SCORE_FILE);
++	@chmod a+rw ${DESTDIR}$(HIGH_SCORE_FILE);
+ 
+ XCOMM I use this for my daily backup of my code.
  
