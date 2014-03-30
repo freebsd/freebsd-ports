@@ -82,8 +82,8 @@ share/tomoe/recognizer/handwriting-zh_CN.xml
 @dirrm share/tomoe/recognizer
 share/tomoe/xml2est.rb
 @dirrm share/tomoe
-%%RUBY_SITEARCHLIBDIR%%/rbtomoe.h
-%%RUBY_SITEARCHLIBDIR%%/tomoe.a
-%%RUBY_SITEARCHLIBDIR%%/tomoe.la
-%%RUBY_SITEARCHLIBDIR%%/tomoe.so
-%%RUBY_SITELIBDIR%%/tomoe.rb
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/rbtomoe.h
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/tomoe.a
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/tomoe.la
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/tomoe.so
+%%RUBY%%%%RUBY_SITELIBDIR%%/tomoe.rb

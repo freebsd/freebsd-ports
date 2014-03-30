@@ -19,9 +19,7 @@ USE_LDCONFIG=	yes
 USE_RUBY=	yes
 USE_PERL5=	build
 
-BUILD_DEPENDS+=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2 \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-RUN_DEPENDS+=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 # We cannot use ${ARCH} nor ${UNAME} which are defined in bsd.port.mk, here.
 UNAME?=		/usr/bin/uname
@@ -38,7 +36,7 @@ OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
 .endif
 
-OPTIONS_DEFINE=		DICT_RUBY EST MYSQL PYTHON UNIHAN
+OPTIONS_DEFINE=		DICT_RUBY EST MYSQL PYTHON RUBY UNIHAN
 OPTIONS_DEFAULT=	PYTHON
 .if ${ARCH} != "sparc64" && ${OSVERSION} < 700042
 OPTIONS_DEFAULT+=	UNIHAN
@@ -54,10 +52,21 @@ MYSQL_CONFIGURE_WITH=	mysql
 PYTHON_DESC=		Enable Python module
 PYTHON_USE=		PYTHON=yes GNOME=pygtk2
 PYTHON_CONFIGURE_OFF=	--with-python=no
+RUBY_DESC=		Enable Ruby module
+RUBY_USE=		RUBY=yes
+RUBY_CONFIGURE_OFF=	--with-ruby=no
+RUBY_BUILD_DEPENDS=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2
+RUBY_RUN_DEPENDS=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2
+RUBY_CFLAGS=		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
+			-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 UNIHAN_DESC=		Enable Unihan database dictionary module
 UNIHAN_CONFIGURE_ENABLE=	unihan
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MRUBY}
+BROKEN=		Broken with gem version of glib2
+.endif
 
 .if ${PORT_OPTIONS:MUNIHAN}
 .if ${OSVERSION} >= 700042
@@ -77,9 +86,7 @@ BUILD_DEPENDS+=	\
 CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
 		pyexecdir=${PYTHON_SITELIBDIR} \
 		GMSGFMT="${LOCALBASE}/bin/msgfmt"
-CFLAGS+=	-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
-		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
+CFLAGS+=	-I${LOCALBASE}/include
 
 .if ${PORT_OPTIONS:MUNIHAN}
 post-extract:
