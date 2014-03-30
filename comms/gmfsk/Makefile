@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 # preprocessor include tests.  The following line is a work around.
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+USES_CSTD=	gnu89
 USES=		gmake pkgconfig
 USE_GNOME=	libgnomeui gnomehack gnomeprefix
 INSTALLS_OMF=	yes
