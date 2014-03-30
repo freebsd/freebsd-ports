@@ -13,8 +13,7 @@ COMMENT=	MP3 frame level editor
 
 LICENSE=	GPLv2
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
 PLIST_FILES=	bin/mp3asm
@@ -25,7 +24,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-extract:
-	@${RM} ${WRKSRC}/config.cache
+	${RM} ${WRKSRC}/config.cache
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
