@@ -18,7 +18,6 @@
 %%FONTSDIR%%/LinLibertine_Re-4.7.5.ttf
 %%FONTSDIR%%/LinBiolinum_Sl-0.4.9.otf
 %%FONTSDIR%%/LinBiolinum_Sl-0.4.9.ttf
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrmtry %%FONTSDIR%%
 @exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
