@@ -2,21 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	amatch
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.7
 CATEGORIES=	textproc ruby
-MASTER_SITES=	RF
+MASTER_SITES=	https://codeload.github.com/flori/amatch/zipball/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	ruby
+EXTRACT_SUFX=
+DISTNAME=	v${PORTVERSION}
+DIST_SUBDIR=	ruby/amatch
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for approximate string matching and searching
 
 OPTIONS_DEFINE=	DOCS
 
-NO_BUILD=	yes # build while install
-USE_RUBY=	yes
 USES=		gmake
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	flori
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	98473c4
+CONFIGURE_WRKSRC=	${WRKSRC}/ext
+BUILD_WRKSRC=	${WRKSRC}/ext
 
 PLIST_FILES=	bin/agrep.rb %%RUBY_SITELIBDIR%%/amatch/version.rb \
 		%%RUBY_SITEARCHLIBDIR%%/amatch.so
@@ -24,17 +31,23 @@ PLIST_DIRS=	%%RUBY_SITELIBDIR%%/amatch
 
 AMATCH_RUBY=	install.rb
 DOCSDIR=	${RUBY_MODDOCDIR}
-PORTDOCS=	CHANGES README
+PORTDOCS=	CHANGES README.rdoc
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	@${ECHO_MSG} "===>  Running ${AMATCH_RUBY} to install"
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${AMATCH_RUBY} install
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/amatch \
+		${STAGEDIR}${RUBY_SITEARCHLIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/agrep.rb \
+		${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/amatch/version.rb \
+		${STAGEDIR}${RUBY_SITELIBDIR}/amatch/
+	${INSTALL_DATA} ${WRKSRC}/ext/amatch.so \
+		${STAGEDIR}${RUBY_SITEARCHLIBDIR}/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} \
+		${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
