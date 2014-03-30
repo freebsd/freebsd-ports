@@ -3,6 +3,7 @@
 
 PORTNAME=	bsfilter
 PORTVERSION=	1.0.19
+PORTREVISION=	1
 CATEGORIES=	mail ruby
 MASTER_SITES=	SFJP
 MASTER_SITE_SUBDIR=	bsfilter/59804
@@ -19,6 +20,7 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 USES=		shebangfix
 SHEBANG_FILES=	bsfilter/bsfilter
+ruby_OLD_CMD=	/usr/bin/env ruby
 
 OPTIONS_DEFINE=	EXAMPLES MECAB
 
