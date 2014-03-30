@@ -13,7 +13,7 @@ COMMENT=	A computer algebra system for computing in algebraic number fields
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-NO_CDROM=	not for commercial distribution or use
+NO_CDROM=	Not for commercial distribution or use
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=		OPTLIB DOCS
