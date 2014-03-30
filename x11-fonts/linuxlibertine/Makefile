@@ -14,6 +14,8 @@ COMMENT=	Linux Libertine Open Fonts
 LICENSE=	GPLv2 LINUXLIBERTINE OFL10
 LICENSE_COMB=	multi
 
+OPTIONS_DEFINE=	DOCS
+
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
@@ -37,21 +39,14 @@ PORTDOCS=	Bugs.txt \
 		Readme.txt \
 		Readme-TEX.txt
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for ext in ttf otf
-	${INSTALL_DATA} ${WRKSRC}/Fonts/*.${ext} ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Fonts/*.${ext} ${STAGEDIR}${FONTSDIR}
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-
-post-install:
-	@${ECHO_MSG} "===> Running fc-cache"
-	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
 
 .include <bsd.port.mk>
