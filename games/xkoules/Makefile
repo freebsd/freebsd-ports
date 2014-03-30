@@ -3,38 +3,40 @@
 
 PORTNAME=	xkoules
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/arcade/koules
-DISTNAME=	${PORTNAME:S/^x//}${PORTVERSION}
-EXTRACT_SUFX=	-src.tar.gz
+MASTER_SITES=	http://www.ucw.cz/~hubicka/koules/packages/ \
+		GENTOO/distfiles \
+		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
+DISTFILES=	${PORTNAME:S/x//}${PORTVERSION}-src${EXTRACT_SUFX} \
+		${PORTNAME:S/x//}.png:icons
+EXTRACT_ONLY=	${PORTNAME:S/x//}${PORTVERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast action arcade-style game for X Window
 
-DEPRECATED=	Unmaintained since 2000
-EXPIRATION_DATE=	2014-04-11
+LICENSE=	GPLv2
+
+WRKSRC=		${WRKDIR}/${PORTNAME:S/x//}${PORTVERSION}
+
 USES=		imake
 USE_XORG=	x11 xext
-MAN6=		xkoules.6
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
-
+PORTDOCS=	ANNOUNCE ChangeLog Koules.FAQ README
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="XKoules" "" "${PORTNAME}" \
+		"${PORTNAME} -M" "Game;ArcadeGame;" ""
 
 post-extract:
 	@${CP} ${WRKSRC}/xkoules.6 ${WRKSRC}/xkoules.man
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in ANNOUNCE BUGS Card ChangeLog Koules.FAQ TODO
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME:S/x//}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
