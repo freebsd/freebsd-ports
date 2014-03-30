@@ -407,6 +407,7 @@ share/applications/tortoisehg.desktop
 share/pixmaps/tortoisehg/icons/16x16/apps/gnupg.png
 share/pixmaps/tortoisehg/icons/16x16/apps/kiln.png
 share/pixmaps/tortoisehg/icons/16x16/apps/reviewboard.png
+share/pixmaps/tortoisehg/icons/16x16/mimetypes/text-x-generic.png
 share/pixmaps/tortoisehg/icons/22x22/actions/window-close.png
 share/pixmaps/tortoisehg/icons/24x24/actions/hg-incoming.png
 share/pixmaps/tortoisehg/icons/24x24/actions/hg-outgoing.png
@@ -591,6 +592,7 @@ share/pixmaps/tortoisehg/icons/thg_logo.ico
 share/pixmaps/tortoisehg/icons/thg_logo_92x50.png
 share/tortoisehg/mergetools.rc
 @dirrm share/tortoisehg
+@dirrm share/pixmaps/tortoisehg/icons/16x16/mimetypes
 @dirrm share/pixmaps/tortoisehg/icons/16x16/apps
 @dirrm share/pixmaps/tortoisehg/icons/16x16
 @dirrm share/pixmaps/tortoisehg/icons/22x22/actions
