@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.chronos.org.uk/download/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Amateur Radio DX cluster monitor
 
 USE_GNOME=	gtk20
