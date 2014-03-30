@@ -1,5 +1,5 @@
---- xlib/shmbitmap.c.orig	Thu Mar  5 03:59:19 1998
-+++ xlib/shmbitmap.c	Tue Jun 13 03:45:28 2000
+--- ./xlib/shmbitmap.c.orig	1998-03-04 19:59:19.000000000 +0100
++++ ./xlib/shmbitmap.c	2014-03-30 03:11:00.579428909 +0200
 @@ -237,7 +237,7 @@
  #define __clipy1 0
  #undef __clipy2

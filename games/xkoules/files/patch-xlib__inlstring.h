@@ -1,5 +1,5 @@
---- xlib/inlstring.h.orig	Thu Mar  5 03:59:19 1998
-+++ xlib/inlstring.h	Sat Oct 25 20:52:47 2003
+--- ./xlib/inlstring.h.orig	1998-03-04 19:59:19.000000000 +0100
++++ ./xlib/inlstring.h	2014-03-30 03:11:00.579428909 +0200
 @@ -238,12 +238,12 @@
  static INLINE void *
  __memcpy_aligndest (void *dest, const void *src, int n)
