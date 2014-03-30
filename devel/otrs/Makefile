@@ -41,7 +41,6 @@ BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA
-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		shebangfix perl5
