@@ -17,7 +17,7 @@ COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 LICENSE=	ISCL
 
 PATCHLEVEL=	R7
-PORTREVISION_SERVER=	7
+PORTREVISION_SERVER=	8
 PORTREVISION_CLIENT=	2
 PORTREVISION_RELAY=	5
 
@@ -119,6 +119,9 @@ CONFIGURE_ENV+=	LIBS="-lssl"
 
 .if ${PORT_OPTIONS:MPARANOIA}
 CONFIGURE_ARGS+=	--enable-paranoia --enable-early-chroot
+SUB_LIST+=		PARANOIA="yes"
+.else
+SUB_LIST+=		PARANOIA="no"
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
