@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dyncall
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dyncall.org/r${PORTVERSION}/ \
 		http://www.potion-studios.com/
@@ -11,8 +11,6 @@ MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	Highly dynamic multi-platform foreign function call interface library
 
 HAS_CONFIGURE=	yes
-
-MAKEFILE=	BSDmakefile
 
 # There is no install target in the BSD makefile for this version of the dyncall
 # library, so install it manually.
@@ -64,6 +62,10 @@ do-install:
 		${WRKSRC}/dynload/libdynload_s.a \
 		${STAGEDIR}${PREFIX}/lib
 
-	${INSTALL_MAN} ${WRKSRC}/dyncall/dyncall.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
+	${INSTALL_MAN} \
+		${WRKSRC}/dyncall/dyncall.3 \
+		${WRKSRC}/dyncallback/dyncallback.3 \
+		${WRKSRC}/dynload/dynload.3 \
+		${STAGEDIR}${MAN3PREFIX}/man/man3
 
 .include <bsd.port.post.mk>
