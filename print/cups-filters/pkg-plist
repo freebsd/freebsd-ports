@@ -1,0 +1,94 @@
+bin/ttfread
+etc/cups/cups-browsed.conf
+etc/fonts/conf.d/99pdftoopvp.conf
+include/cupsfilters/colord.h
+include/cupsfilters/driver.h
+include/cupsfilters/image.h
+include/cupsfilters/raster.h
+include/fontembed/bitset.h
+include/fontembed/embed.h
+include/fontembed/fontfile.h
+include/fontembed/iofn.h
+include/fontembed/sfnt.h
+lib/libcupsfilters.a
+lib/libcupsfilters.la
+lib/libcupsfilters.so
+lib/libcupsfilters.so.1
+lib/libfontembed.a
+lib/libfontembed.la
+lib/libfontembed.so
+lib/libfontembed.so.1
+libdata/pkgconfig/libcupsfilters.pc
+libdata/pkgconfig/libfontembed.pc
+libexec/cups/backend/parallel
+libexec/cups/backend/serial
+libexec/cups/filter/bannertopdf
+libexec/cups/filter/commandtoescpx
+libexec/cups/filter/commandtopclx
+libexec/cups/filter/gstopxl
+libexec/cups/filter/gstoraster
+libexec/cups/filter/imagetopdf
+libexec/cups/filter/imagetops
+libexec/cups/filter/imagetoraster
+libexec/cups/filter/pdftoijs
+libexec/cups/filter/pdftoippprinter
+libexec/cups/filter/pdftoopvp
+libexec/cups/filter/pdftopdf
+libexec/cups/filter/pdftops
+libexec/cups/filter/pdftoraster
+libexec/cups/filter/pstopdf
+libexec/cups/filter/rastertoescpx
+libexec/cups/filter/rastertopclx
+libexec/cups/filter/textonly
+libexec/cups/filter/texttopdf
+libexec/cups/filter/texttops
+libexec/cups/filter/urftopdf
+man/man5/cups-browsed.conf.5.gz
+man/man8/cups-browsed.8.gz
+sbin/cups-browsed
+share/cups/banners/classified
+share/cups/banners/confidential
+share/cups/banners/secret
+share/cups/banners/standard
+share/cups/banners/topsecret
+share/cups/banners/unclassified
+share/cups/charsets/pdf.utf-8
+share/cups/charsets/pdf.utf-8.heavy
+share/cups/charsets/pdf.utf-8.simple
+share/cups/data/default-testpage.pdf
+share/cups/data/default.pdf
+share/cups/data/testprint
+share/cups/drv/cupsfilters.drv
+share/cups/mime/cupsfilters.convs
+share/cups/mime/cupsfilters.types
+share/cups/ppdc/escp.h
+share/cups/ppdc/pcl.h
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
+share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
+share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
+share/ppd/cupsfilters/pxlcolor.ppd
+share/ppd/cupsfilters/pxlmono.ppd
+share/ppd/cupsfilters/textonly.ppd
+@dirrmtry share/ppd/cupsfilters
+@dirrmtry share/ppd
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry share/cups/ppdc
+@dirrmtry share/cups/mime
+@dirrmtry share/cups/drv
+@dirrmtry share/cups/data
+@dirrmtry share/cups/charsets
+@dirrmtry share/cups/banners
+@dirrmtry share/cups
+@dirrmtry libexec/cups/filter
+@dirrmtry libexec/cups/backend
+@dirrmtry libexec/cups
+@dirrmtry include/fontembed
+@dirrmtry include/cupsfilters
+@dirrmtry etc/fonts/conf.d
+@dirrmtry etc/fonts
+@dirrmtry etc/cups
