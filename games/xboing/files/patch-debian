@@ -120,17 +120,6 @@
  	else
  		strcpy(filename, HIGH_SCORE_FILE);
  
---- init.c
-+++ init.c
-@@ -438,7 +438,7 @@
- 		WarningMessage("Your X Window system display variable is not set.");
- 	else
- 	{
--		sprintf(string, "Cannot connect to display called <%s>.", displayName);
-+		snprintf(string, sizeof(string) - 1, "Cannot connect to display called <%s>.", displayName);
- 		WarningMessage(string);
- 	}
- }
 --- misc.c
 +++ misc.c
 @@ -427,7 +431,7 @@
