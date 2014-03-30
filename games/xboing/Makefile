@@ -14,24 +14,18 @@ COMMENT=	X11 arcade game
 
 LICENSE=	MIT
 
-NO_STAGE=	yes
-
 USES=		imake
 USE_XORG=	xpm xext x11
 WRKSRC=		${WRKDIR}/xboing
-MAN1=		xboing.1
 
-.if defined(WITHOUT_AUDIO)
+OPTIONS_DEFINE=SOUND
+OPTIONS_DEFAULT=SOUND
+OPTIONS_SUB=yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSOUND}
 MAKE_ENV+=	WITHOUT_AUDIO=True
-PLIST_SUB+=	WITH_SOUND="@comment "
-.else
-PLIST_SUB+=	WITH_SOUND=""
 .endif
-
-post-install:
-	${CHOWN} root:games ${PREFIX}/bin/xboing
-	${CHMOD} 2755 ${PREFIX}/bin/xboing
-	${CHOWN} root:games ${PREFIX}/lib/X11/xboing/.xboing.scr
-	${CHMOD} 664 ${PREFIX}/lib/X11/xboing/.xboing.scr
 
 .include <bsd.port.mk>
