@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	14
 MAINTAINER=	bamby@sippysoft.com
 COMMENT=	An Open Source PBX and telephony toolkit
 
+BROKEN=		Fails to configure or build
+
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.52:${PORTSDIR}/devel/newt \
