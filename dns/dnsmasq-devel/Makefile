@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.69r1
-DISTVERSION=	2.69rc1
+PORTVERSION=	2.69r2
+DISTVERSION=	2.69rc2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 PKGNAMESUFFIX=	-devel
