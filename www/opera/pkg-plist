@@ -1,5 +1,4 @@
 bin/opera
-bin/uninstall-opera
 lib/opera/gstreamer/plugins/libgstoperamatroska.so
 lib/opera/gstreamer/plugins/libgstoperavp8.so
 lib/opera/liboperagtk2.so
@@ -8,6 +7,7 @@ lib/opera/opera
 lib/opera/plugins/README
 lib/opera/pluginwrapper/operapluginwrapper
 lib/opera/pluginwrapper/operapluginwrapper-native
+man/man1/opera.1.gz
 share/applications/opera-browser.desktop
 %%DOCSDIR%%/LGPL-2
 %%DOCSDIR%%/LICENSE
@@ -26,7 +26,6 @@ share/icons/hicolor/32x32/mimetypes/opera-extension.png
 share/icons/hicolor/48x48/apps/opera-browser.png
 share/icons/hicolor/48x48/mimetypes/opera-extension.png
 share/icons/hicolor/scalable/mimetypes/opera-extension.svg
-share/mime/application/x-opera-extension.xml
 share/mime/packages/opera-extension.xml
 %%DATADIR%%/cert.pem
 %%DATADIR%%/defaults/bookmarks.adr
@@ -443,7 +442,6 @@ share/mime/packages/opera-extension.xml
 @dirrm %%DATADIR%%/defaults
 @dirrm %%DATADIR%%
 @dirrmtry share/mime/packages
-@dirrmtry share/mime/application
 @dirrmtry share/mime
 @dirrmtry share/icons/hicolor/scalable/mimetypes
 @dirrmtry share/icons/hicolor/scalable
@@ -475,7 +473,3 @@ share/mime/packages/opera-extension.xml
 @dirrm lib/opera/gstreamer/plugins
 @dirrm lib/opera/gstreamer
 @dirrm lib/opera
-@exec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime || /usr/bin/true

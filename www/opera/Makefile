@@ -21,26 +21,22 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-NO_STAGE=	yes
-
 OPERA_VER?=	12.16
 OPERA_BUILD?=	1860
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
-USES=		desktop-file-utils
-USE_XZ=		yes
+USES=		tar:xz desktop-file-utils shared-mime-info
 USE_XORG=	x11 xext sm ice xft xrender
 INSTALLS_ICONS=	yes
-
-MAN1=		opera.1
-MANCOMPRESSED=	yes
+REINPLACE_ARGS=	-i '' # no .bak files
 
 NO_BUILD=	yes
 EXPLICIT_PACKAGE_DEPENDS=	yes
+WEBPLUGIN_SUBDIR=	${LOCALBASE}/lib/browser_plugins/symlinks/opera
 
 OPTIONS_DEFINE=	CUPS VIDEO GTK2 KDE4
 OPTIONS_SINGLE=	LIBSTDCXX
-OPTIONS_SINGLE_LIBSTDCXX=	COMPAT9 GCCXX GCC42 GCC46
+OPTIONS_SINGLE_LIBSTDCXX=	COMPAT9 GCCXX GCC46
 OPTIONS_DEFAULT=	CUPS VIDEO COMPAT9
 NO_OPTIONS_SORT=yes
 
@@ -48,7 +44,6 @@ CUPS_DESC=	support for printing (requires CUPS)
 VIDEO_DESC=	support for HTML5 video (requires GStreamer)
 COMPAT9_DESC=	use libstdc++.so.6 from compat9x
 GCCXX_DESC=	use libstdc++.so.6 from lang/gcc
-GCC42_DESC=	use libstdc++.so.6 from lang/gcc42
 GCC46_DESC=	use libstdc++.so.6 from lang/gcc46
 
 CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
@@ -92,9 +87,6 @@ IGNORE=		only for FreeBSD 7.x and higher
 .if ${PORT_OPTIONS:MCOMPAT9}
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
 .endif
-.if ${PORT_OPTIONS:MGCC42}
-RUN_DEPENDS+=	${LOCALBASE}/lib/gcc42/libstdc++.so.6:${PORTSDIR}/lang/gcc42
-.endif
 .if ${PORT_OPTIONS:MGCC46}
 RUN_DEPENDS+=	${LOCALBASE}/lib/gcc46/libstdc++.so.6:${PORTSDIR}/lang/gcc46
 .endif
@@ -104,18 +96,27 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/gcc46/libstdc++.so.6:${PORTSDIR}/lang/gcc
 .endif
 
 post-extract:
-	@${MV} ${WRKSRC}/share/man ${WRKSRC}/man
+	${GUNZIP_CMD} ${WRKSRC}/share/man/man1/opera.1.gz
+
+do-configure:
+	${MV} ${WRKSRC}/share/man ${WRKSRC}/man
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+		-e 's|share/man|man|g' ${WRKSRC}/install
+	${REINPLACE_CMD} -e 's|"$${0%/.}"|${PREFIX}|g' \
+		-e 's|/usr/local/profile|$$HOME/.opera|' \
+		${WRKSRC}/opera
+	${REINPLACE_CMD} -e 's|@@{PREFIX}|${PREFIX}|g' \
+		-e 's|@@{_SUFFIX}||g' -e 's|@@{SUFFIX}||g' \
+		-e 's|@@{USUFFIX}||g' \
+		${WRKSRC}/share/applications/opera-browser.desktop \
+		${WRKSRC}/share/mime/packages/opera-extension.xml \
+		${WRKSRC}/man/man1/opera.1
+	${REINPLACE_CMD} -e 's|/usr/X11R6/lib/browser_plugins|${WEBPLUGIN_SUBDIR}|g' \
+		${WRKSRC}/share/opera/defaults/pluginpath.ini
 
 do-install:
-	@${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1.gz ${PREFIX}/man/man1/
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/install
-	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/install
-	@(cd ${WRKSRC} && ./install --text --system --unattended)
-	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib/browser_plugins|${LOCALBASE}/lib/browser_plugins/symlinks/opera|g' \
-		${DATADIR}/defaults/pluginpath.ini
-	@${RM} ${DATADIR}/defaults/pluginpath.ini.bak
-	-${LOCALBASE}/bin/update-desktop-database
-	-${LOCALBASE}/bin/update-mime-database ${LOCALBASE}/share/mime
+	${INSTALL_SCRIPT} ${WRKSRC}/opera ${STAGEDIR}${PREFIX}/bin/
+	${TAR} -C ${WRKSRC} -cf - lib man share | ${TAR} -C ${STAGEDIR}${PREFIX} -xf -
 
 # target to build distinfo for both arch
 makesum-all:
