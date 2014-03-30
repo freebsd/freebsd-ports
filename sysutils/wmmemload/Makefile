@@ -8,8 +8,11 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	xride
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An dockapp for windowmaker that displays the current mem/swap usage
+
+BROKEN=		Fails to configure
+EXPIRATION_DATE=	2014-05-01
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
