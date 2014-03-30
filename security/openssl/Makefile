@@ -45,6 +45,8 @@ RFC3779_DESC?=	RFC3779 support
 GMP_DESC?=	gmp support (LGPLv3)
 EC_DESC?=	Optimize NIST elliptic curves
 
+GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+
 MAKE_JOBS_UNSAFE=	yes
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
