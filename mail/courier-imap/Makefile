@@ -117,8 +117,6 @@ post-patch:
 		${WRKSRC}/libs/liblock/configure
 	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
-		${WRKSRC}/libs/imap/Makefile.in
 	@${REINPLACE_CMD} -e 's|TLS_PROTOCOL=SSL3|TLS_PROTOCOL=SSL23|g' \
 		${WRKSRC}/libs/imap/pop3d-ssl.dist.in \
 		${WRKSRC}/libs/imap/imapd-ssl.dist.in
