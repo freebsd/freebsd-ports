@@ -1,6 +1,0 @@
-The [[TracNav]] macro implements fully customizable navigation bar for the Trac
-wiki engine. The contents of the navigation bar is a wiki page itself and can
-be edited like any other wiki page. The navigation bar supports hierarchical
-ordering of topics.
-
-WWW: http://svn.ipd.kit.edu/trac/javaparty/wiki/TracNav

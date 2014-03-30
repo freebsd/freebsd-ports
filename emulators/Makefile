@@ -33,7 +33,6 @@
     SUBDIR += dynamips-community
     SUBDIR += dynamips-devel
     SUBDIR += e-uae
-    SUBDIR += extract-xiso
     SUBDIR += fceux
     SUBDIR += fmsx
     SUBDIR += frodo
@@ -50,7 +49,6 @@
     SUBDIR += gns3
     SUBDIR += gnuboy
     SUBDIR += gxemul
-    SUBDIR += gxmame
     SUBDIR += hatari
     SUBDIR += hercules
     SUBDIR += higan
@@ -124,7 +122,6 @@
     SUBDIR += pearpc
     SUBDIR += prodosemu
     SUBDIR += psim-freebsd
-    SUBDIR += pyxmame
     SUBDIR += q4wine
     SUBDIR += qemu
     SUBDIR += qemu-devel
@@ -183,7 +180,6 @@
     SUBDIR += xcpc
     SUBDIR += xhomer
     SUBDIR += xmame
-    SUBDIR += xmess
     SUBDIR += xsystem35
     SUBDIR += xzx
     SUBDIR += yabause

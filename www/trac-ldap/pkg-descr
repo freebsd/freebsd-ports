@@ -1,7 +1,0 @@
-LDAP support with group management has been added as a Trac extension. This
-extension enables to use existing LDAP groups to grant permissions rather than
-defining permissions for every single user on the system. The latest release
-also permits to store permissions (both users and groups permissions) in the
-LDAP directory itself rather than in the SQL backend.
-
-WWW: http://trac-hacks.org/wiki/LdapPlugin

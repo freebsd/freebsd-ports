@@ -1,4 +1,0 @@
-This plugin provides content negotiation mechanism for Trac wiki pages. With
-this plugin, your trac site can provides multiple localized pages for users.
-
-WWW: http://trac-hacks.org/wiki/TracWikiNegotiatorPlugin

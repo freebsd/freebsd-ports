@@ -1,7 +1,0 @@
-This plugin uses the new content conversion API in Trac's trunk to export Wiki
-pages to a PDF. The link appers in the Download in other formats list at the
-bottom of Wiki pages.
-
-This plugin uses htmldoc to perform the conversion.
-
-WWW: http://trac-hacks.org/wiki/PageToPdfPlugin
