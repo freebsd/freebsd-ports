@@ -27,7 +27,7 @@ LICENSES=	LICENSE.txt LIZENZ.txt
 
 LINK_OPTS=	-sf
 
-RESTRICTED=	binary under GNU LGPL without accompanying source
+RESTRICTED=	Binary under GNU LGPL without accompanying source
 
 NO_STAGE=	yes
 do-install:
