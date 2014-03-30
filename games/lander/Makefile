@@ -38,6 +38,9 @@ DESKTOP_ENTRIES="Lunar Lander" \
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-R$$found_dir||g' ${WRKSRC}/configure
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
