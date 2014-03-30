@@ -6,6 +6,6 @@ COMMENT=	An X11 program that displays images of various formats with multilingua
 
 MASTERDIR=	${.CURDIR}/../xv
 
-WITH_M17N=	yes
+OPTIONS_SLAVE=	M17N
 
 .include "${MASTERDIR}/Makefile"
