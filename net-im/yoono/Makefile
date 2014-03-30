@@ -30,22 +30,18 @@ ONLY_FOR_ARCHS_REASON=	binary distribution
 SUB_FILES=	${PORTNAME} pkg-message
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	alsalib dbuslibs gtk2 xorglibs
+USES=	tar:bzip2
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-desktop
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && \
-	${COPYTREE_SHARE} . ${DATADIR}
-	${CHMOD} ${BINMODE} ${DATADIR}/${PORTNAME}-desktop
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && \
+	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/${PORTNAME}-desktop
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
