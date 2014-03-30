@@ -45,6 +45,7 @@ post-install:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBASH}
+BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 PLIST_FILES+=	etc/bash_completion.d/gammu
 PLIST_DIRSTRY+=	etc/bash_completion.d
