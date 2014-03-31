@@ -25,7 +25,6 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 
 USE_GNOME=	gnomehack glib20 intltool ltverhack
-NO_STAGE=	yes
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
 USES=		gettext gmake pkgconfig
@@ -61,10 +60,6 @@ OPTIONS_DEFAULT=	AVAHI HAL GCONF
 
 PULSE_VERSION=	${PORTVERSION}
 PLIST_SUB=	PULSE_VERSION=${PULSE_VERSION}
-
-MAN1=		esdcompat.1 pabrowse.1 pacat.1 pacmd.1 pactl.1 padsp.1 \
-		paplay.1 pasuspender.1 pax11publish.1 pulseaudio.1
-MAN5=		default.pa.5 pulse-client.conf.5 pulse-daemon.conf.5
 
 .include <bsd.port.pre.mk>
 
@@ -112,14 +107,10 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/pulse
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pulse
 .for ii in default.pa daemon.conf client.conf system.pa
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
-		${PREFIX}/etc/pulse/${ii}-dist
-. if !exists(${PREFIX}/etc/pulse/${II})
-	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
-		${PREFIX}/etc/pulse/${ii}
-. endif
+		${STAGEDIR}${PREFIX}/etc/pulse/${ii}-dist
 .endfor
 
 .include <bsd.port.post.mk>
