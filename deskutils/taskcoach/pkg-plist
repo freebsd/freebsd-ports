@@ -287,9 +287,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/taskbaricon.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/taskbaricon.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/taskbaricon.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/threads.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/threads.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/threads.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/toolbar.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/toolbar.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/toolbar.pyo
@@ -608,9 +605,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/patterns/metaclass.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/patterns/metaclass.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/patterns/metaclass.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/patterns/network.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/patterns/network.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/patterns/network.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/patterns/observer.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/patterns/observer.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/patterns/observer.pyo
@@ -1061,6 +1055,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/py30compat.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/py30compat.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/py30compat.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/test_XDG.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/test_XDG.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/test_XDG.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/test_backend.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/test_backend.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/test_backend.pyo
@@ -1076,6 +1073,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/util.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/util.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/util.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/util/XDG.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/util/XDG.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/util/XDG.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/util/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/util/__init__.pyo
