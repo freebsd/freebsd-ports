@@ -26,5 +26,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gucharmap.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -30,9 +30,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GCONF_SCHEMAS=	ontv.schemas
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/python2.6|${PYTHON_LIBDIR}|' \
 		${WRKSRC}/bin/ontv
+
+post-install:
+	@${RM} -f ${STAGEDIR}${PREFIX}/share/gnome-control-center/keybindings/90-ontv.xml
 
 .include <bsd.port.mk>
