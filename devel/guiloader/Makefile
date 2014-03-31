@@ -8,15 +8,16 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A high-performance and compact GuiXml loader library
+COMMENT=	High-performance and compact GuiXml loader library
 
 PROJECTHOST=	nothing-personal
-USE_BZIP2=	yes
-USES=        pathfix gettext gmake pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-hidden-visibility
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libguiloader.so.1
+
 .include <bsd.port.mk>
