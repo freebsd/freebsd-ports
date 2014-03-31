@@ -3,6 +3,7 @@
 
 PORTNAME=	compass
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-chunky_png>=1.2:${PORTSDIR}/graphics/rubygem-chunky_png \
 		rubygem-fssm>=0.2.7:${PORTSDIR}/sysutils/rubygem-fssm \
-		rubygem-sass>=3.1:${PORTSDIR}/textproc/rubygem-sass
+		rubygem-sass32>=3.1:${PORTSDIR}/textproc/rubygem-sass32
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
