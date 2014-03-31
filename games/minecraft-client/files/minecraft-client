@@ -1,0 +1,50 @@
+#!/bin/sh
+export JAVA_HOME=JAVA_HOME
+/bin/cat << EOF
+When starting a version for the first time, select the version you want in your
+profile, start Minecraft, close Minecraft and launcher, run minecraft-client
+again, then select version "x-freebsd" in your profile.
+
+If you run versions older than 1.6.1 in the Launcher, add
+-Djava.net.preferIPv4Stack=true to JVM Arguments in the profile.
+
+EOF
+LIBDIR="${HOME}/.minecraft/libraries/"
+
+for i in ${LIBDIR}/org/lwjgl/lwjgl/lwjgl-platform/*/lwjgl-platform-*-natives-linux.jar; do
+  if [ -f "${i}" ]; then
+    cmp -s "PREFIX/share/minecraft-client/lwjgl-native-libs.jar" "${i%linux.jar}freebsd.jar"
+    if [ $? -ne 0 ]; then
+      cp -v "PREFIX/share/minecraft-client/lwjgl-native-libs.jar" "${i%linux.jar}freebsd.jar"
+    fi
+  fi
+done
+
+versions_base="${HOME}/.minecraft/versions"
+
+for i in ${HOME}/.minecraft/versions/*; do
+  if [ "${i}" != "${i%-freebsd}" -o "${i}" == "${HOME}"'/.minecraft/versions/*' ]; then continue; fi
+  OLDIFS=$IFS
+  IFS=/
+  for x in ${i}; do
+    version="${x}"
+  done
+  IFS=${OLDIFS}
+
+  native_path="${versions_base}/${version}-freebsd/"
+  mkdir -p "${native_path}"
+
+  vendor_file="${versions_base}/${version}/${version}"
+  native_file="${native_path}/${version}-freebsd"
+
+  if [ -f "${vendor_file}.jar" -a ! -f "${native_file}.jar" ]; then
+    cp -v "${vendor_file}.jar" "${native_file}.jar"
+  fi
+  if [  -f "${vendor_file}.json" -a ! -f "${native_file}.json" ]; then
+    sed -e '/"id"/s/",/-freebsd",/' -e '/lwjgl/,/extract/s/natives-linux/natives-freebsd/' \
+    < "${vendor_file}.json" > "${native_file}.json"
+  fi
+done
+
+exec JAVA_CMD -Djava.nio.file.spi.DefaultFileSystemProvider=sun.nio.fs.BsdFileSystemProvider \
+ -Dos.name=Linux -jar PREFIX/share/minecraft-client/Minecraft.jar
