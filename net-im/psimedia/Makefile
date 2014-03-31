@@ -9,10 +9,10 @@ MASTER_SITES=	http://delta.affinix.com/download/psimedia/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Voice and video API for Psi-like IM clients
 
-LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil
+LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil \
+		libspeexdsp.so:${PORTSDIR}/audio/speex
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes
 USE_QT4=	gui qmake_build moc_build uic_build
 USE_GSTREAMER=	jpeg speex theora vorbis
@@ -20,31 +20,22 @@ USE_GSTREAMER=	jpeg speex theora vorbis
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--qtdir=${LOCALBASE} \
 		--verbose
-MAKE_JOBS_UNSAFE=	yes
 DESTDIRNAME=	INSTALL_ROOT
 
 PSI_PLUGIN_DIR=	lib/psi/plugins
 
-.if !defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--release
-PLIST_SUB+=	DEBUG="@comment "
-.else
-CONFIGURE_ARGS+=	--debug
-PLIST_SUB+=	DEBUG=""
-.endif
+OPTIONS_DEFINE=	DEBUG
+OPTIONS_SUB=	yes
+DEBUG_CONFIGURE_ON=	--debug
+DEBUG_CONFIGURE_OFF=	--release
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
-		${WRKSRC}/gstprovider/rwcontrol.h \
-		${WRKSRC}/gstprovider/gstthread.h \
-		${WRKSRC}/gstprovider/gstelements/static/gstelements.h \
-		${WRKSRC}/gstprovider/gstcustomelements/gstcustomelements.h	
+.include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PSI_PLUGIN_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/gstprovider/libgstprovider.so \
+	${INSTALL_LIB} ${WRKSRC}/gstprovider/libgstprovider.so \
 		${STAGEDIR}${PREFIX}/${PSI_PLUGIN_DIR}
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 	${INSTALL_DATA} ${WRKSRC}/gstprovider/libgstprovider.so.debug \
 		${STAGEDIR}${PREFIX}/${PSI_PLUGIN_DIR}
 .endif
