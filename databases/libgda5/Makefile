@@ -35,15 +35,12 @@ CONFIGURE_ARGS=	--without-oracle \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 VERSION=	5.0
 PLIST_SUB=	VERSION=${VERSION}
 
-.if ${LIBGDA5_SLAVE}=="no"
-MAN1=		gda-sql-5.0.1
-.else
+.if ${LIBGDA5_SLAVE}!="no"
 USE_GNOME+=	libgda5
 .endif
 
@@ -132,12 +129,13 @@ pre-build:
 .if ${LIBGDA5_SLAVE}==no
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/config \
-		${PREFIX}/etc/libgda-${VERSION}/config.default
+		${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config.default
+	@${RM} -f ${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config
 .endif
 .if ${LIBGDA5_SLAVE}==ui
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/libgda-ui-5.0.pc \
-		${PREFIX}/libdata/pkgconfig/
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 .endif
 
 .include <bsd.port.mk>

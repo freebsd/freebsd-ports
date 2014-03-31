@@ -4,7 +4,7 @@
 
 PORTNAME=	libgda
 PORTVERSION=	4.2.12
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	4
@@ -46,7 +46,6 @@ SOUP_DESC=	Web provider
 KEYRING_DESC=	Support gnome-keyring
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 VERSION=	4.0
@@ -159,7 +158,8 @@ pre-build:
 .if ${LIBGDA4_SLAVE}=="no"
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/config \
-		${PREFIX}/etc/libgda-${VERSION}/config.default
+		${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config.default
+	@${RM} -f ${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config
 .endif
 
 .include <bsd.port.mk>
