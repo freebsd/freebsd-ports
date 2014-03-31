@@ -31,13 +31,10 @@ CONFIGURE_ARGS=	--enable-maintainer-flags=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gnome-dictionary.1 gnome-screenshot.1 gnome-search-tool.1 \
-		gnome-system-log.1 baobab.1
 GCONF_SCHEMAS=	gnome-dictionary.schemas gnome-screenshot.schemas \
 		gnome-search-tool.schemas baobab.schemas \
 		gnome-system-log.schemas
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/gsearchtool/libgnomeui-deprecated/Makefile.in

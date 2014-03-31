@@ -30,7 +30,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	hamster-applet.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # WAF needs that
@@ -43,11 +42,10 @@ do-build:
 	@cd ${WRKSRC} && ./waf build
 
 do-install:
-	@cd ${WRKSRC} && dbus-launch ./waf install
-# -O -Qold
-	@${PYTHON_CMD} -Qold ${PYTHON_LIBDIR}/compileall.py -q \
-		${PYTHON_SITELIBDIR:S|${LOCALBASE}|${PREFIX}|}/hamster
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -q \
-		${PYTHON_SITELIBDIR:S|${LOCALBASE}|${PREFIX}|}/hamster
+	@cd ${WRKSRC} && DESTDIR=${STAGEDIR} dbus-launch ./waf install
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
 .include <bsd.port.post.mk>

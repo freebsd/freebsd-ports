@@ -24,6 +24,11 @@ lib/libgdict-1.0.so.6
 libdata/bonobo/servers/GNOME_DictionaryApplet.server
 libdata/pkgconfig/gdict-1.0.pc
 libexec/gnome-dictionary-applet
+man/man1/baobab.1.gz
+man/man1/gnome-dictionary.1.gz
+man/man1/gnome-screenshot.1.gz
+man/man1/gnome-search-tool.1.gz
+man/man1/gnome-system-log.1.gz
 share/doc/gdict/GdictClientContext.html
 share/doc/gdict/GdictDatabaseChooser.html
 share/doc/gdict/GdictDefbox.html
