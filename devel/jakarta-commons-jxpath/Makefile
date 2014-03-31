@@ -16,25 +16,15 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	(cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/apidocs && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
-	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/apidocs \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${ECHO_MSG} " [ DONE ]"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
