@@ -13,6 +13,9 @@ DISTNAME=	asterisk${PKGNAMESUFFIX}-${DISTVERSION}
 MAINTAINER=	bamby@sippysoft.com
 COMMENT=	GPL modules for the Asterisk Open Source PBX
 
+DEPRECATED=	Depends on broken and unsupported asterisk14
+EXPIRATION_DATE=2014-04-30
+
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 
