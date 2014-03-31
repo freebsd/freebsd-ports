@@ -3,7 +3,7 @@
 
 PORTNAME=	translate-toolkit
 PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/translate/Translate%20Toolkit/${PORTVERSION} \
 		http://freebsd.unixfreunde.de/sources/
@@ -23,12 +23,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 
-USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-MAN1=		csv2po.1 csv2tbx.1 html2po.1 ical2po.1 ini2po.1 \
+# list of manual pages to generate
+GEN_MAN=	csv2po.1 csv2tbx.1 html2po.1 ical2po.1 ini2po.1 \
 		moz2po.1 odf2xliff.1 oo2po.1 oo2xliff.1 \
 		php2po.1 po2csv.1 po2html.1 po2ical.1 po2ini.1 \
 		po2moz.1 po2oo.1 po2php.1 po2prop.1 po2rc.1 \
@@ -39,7 +39,6 @@ MAN1=		csv2po.1 csv2tbx.1 html2po.1 ical2po.1 ini2po.1 \
 		prop2po.1 rc2po.1 symb2po.1 tiki2po.1 ts2po.1 \
 		txt2po.1 web2py2po.1 xliff2odf.1 xliff2oo.1 xliff2po.1
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/tools -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e \
@@ -48,15 +47,15 @@ post-patch:
 
 post-build:
 	@${MKDIR} ${WRKDIR}/manpages
-.for i in ${MAN1:S|.1||}
+.for i in ${GEN_MAN:S|.1||}
 	cd ${WRKSRC}/build/scripts-* && \
 		${SETENV} PYTHONPATH=${WRKSRC}/build/lib ${PYTHON_CMD} \
 			${i} --man > ${WRKDIR}/manpages/${i}.1
 .endfor
 
 post-install:
-.for i in ${MAN1}
-	cd ${WRKDIR}/manpages && ${INSTALL_MAN} ${i} ${MANPREFIX}/man/man1
+.for i in ${GEN_MAN}
+	cd ${WRKDIR}/manpages && ${INSTALL_MAN} ${i} ${STAGEDIR}${PREFIX}/man/man1
 .endfor
 
 list-man1:	build
