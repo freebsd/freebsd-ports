@@ -5,7 +5,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finds sets of identical files
 
 LICENSE=	GPLv2
