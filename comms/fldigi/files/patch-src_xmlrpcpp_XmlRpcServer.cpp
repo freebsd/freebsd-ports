@@ -1,6 +1,6 @@
---- src/xmlrpcpp/XmlRpcServer.cpp.orig	2013-11-19 10:16:57.123343807 -0500
-+++ src/xmlrpcpp/XmlRpcServer.cpp	2013-11-19 10:17:23.150721491 -0500
-@@ -481,7 +481,7 @@
+--- src/xmlrpcpp/XmlRpcServer.cpp.orig	2014-03-21 11:25:57.000000000 -0500
++++ src/xmlrpcpp/XmlRpcServer.cpp	2014-03-21 18:21:06.000000000 -0500
+@@ -500,7 +500,7 @@
      "Content-length: ";
  
    char buffLen[40];
