@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo auth_ok:0
+echo end
