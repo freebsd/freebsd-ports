@@ -129,6 +129,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/librecad_et.qm
 %%DATADIR%%/qm/librecad_fi.qm
 %%DATADIR%%/qm/librecad_fr.qm
+%%DATADIR%%/qm/librecad_hi.qm
 %%DATADIR%%/qm/librecad_hu.qm
 %%DATADIR%%/qm/librecad_id_ID.qm
 %%DATADIR%%/qm/librecad_it.qm
@@ -180,6 +181,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_et.qm
 %%DATADIR%%/qm/plugins_fi.qm
 %%DATADIR%%/qm/plugins_fr.qm
+%%DATADIR%%/qm/plugins_hi.qm
 %%DATADIR%%/qm/plugins_hu.qm
 %%DATADIR%%/qm/plugins_id_ID.qm
 %%DATADIR%%/qm/plugins_it.qm
