@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ka9q.net/code/cpuid/
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU identification utility
 
 PLIST_FILES=	bin/cpuid
