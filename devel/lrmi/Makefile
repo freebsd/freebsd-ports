@@ -16,15 +16,17 @@ MAKEFILE=	Makefile.bsd
 SHLIB_VERSION=	0
 PLIST_SUB+=	"SHLIB_VERSION=${SHLIB_VERSION}"
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+pre-install:
+	@${STRIP_CMD} ${WRKSRC}/liblrmi.so
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/liblrmi.so ${PREFIX}/lib/liblrmi.so.${SHLIB_VERSION}
-	${LN} -fs ${PREFIX}/lib/liblrmi.so.${SHLIB_VERSION} ${PREFIX}/lib/liblrmi.so
-	@${MKDIR} ${PREFIX}/include/lrmi
-	${INSTALL_DATA} ${WRKSRC}/lrmi.h ${PREFIX}/include/lrmi
-	${INSTALL_DATA} ${WRKSRC}/vbe.h ${PREFIX}/include/lrmi
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/liblrmi.so \
+		${STAGEDIR}${PREFIX}/lib/liblrmi.so.${SHLIB_VERSION}
+	${LN} -fs ${PREFIX}/lib/liblrmi.so.${SHLIB_VERSION} \
+		${STAGEDIR}${PREFIX}/lib/liblrmi.so
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/lrmi
+	${INSTALL_DATA} ${WRKSRC}/lrmi.h ${STAGEDIR}${PREFIX}/include/lrmi
+	${INSTALL_DATA} ${WRKSRC}/vbe.h ${STAGEDIR}${PREFIX}/include/lrmi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
