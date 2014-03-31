@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.3.0.a5
+DISTVERSION=	1.3.0.a6
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
 		http://files.etoilebsd.net/pkg/ \
@@ -18,6 +18,8 @@ LICENSE=	BSD2CLAUSE
 # Disable CCACHE support because of the chicken/egg problem pkg should always
 # With no dependency at all
 NO_CCACHE=	yes
+WITH_DEBUG=	yes
+CFLAGS+=	-O0 -g
 USE_LDCONFIG=	yes
 USES=		tar:xz
 GNU_CONFIGURE=	yes
