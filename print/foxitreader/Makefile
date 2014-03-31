@@ -20,43 +20,32 @@ LICENSE_TEXT=	http://www.foxitsoftware.com/pdf/desklinux/eula.htm
 
 NO_BUILD=	yes
 
-PLIST_SUB=	NLS="${NLS}"
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-USE_BZIP2=	yes
-USES=		gettext
+USES=	gettext tar:bzip2
 USE_LINUX=	yes
 USE_LINUX_APPS=	cups-libs gtk2
 
 WRKSRC=	${WRKDIR}/${PORTVERSION:R}-release
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS NLS
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=FoxitReader${PORTVERSION:R}ForLinux_Manual.pdf:manual
-.endif
-.if ${PORT_OPTIONS:MNLS}
-NLS=	""
-.else
-NLS=	"@comment "
+DISTFILES+=	FoxitReader${PORTVERSION:R}ForLinux_Manual.pdf:manual
 .endif
 
 do-install:
-	cd ${WRKSRC} && ${MKDIR} ${DATADIR} && \
-	${INSTALL_DATA} fpdfcjk.bin fum.fhd ${DATADIR} && \
-	${INSTALL_PROGRAM} FoxitReader ${DATADIR} && \
-	${LN} -s ${DATADIR}/FoxitReader ${PREFIX}/bin/FoxitReader
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} fpdfcjk.bin fum.fhd ${STAGEDIR}${DATADIR})
+	${INSTALL_PROGRAM} ${WRKSRC}/FoxitReader ${STAGEDIR}${DATADIR}
+	${LN} -s ${DATADIR}/FoxitReader ${STAGEDIR}${PREFIX}/bin/FoxitReader
 .if ${PORT_OPTIONS:MNLS}
 .for locale in de fr ja zh_CN zh_TW
-	${INSTALL_DATA} ${WRKSRC}/po/${locale}/FoxitReader.mo ${PREFIX}/share/locale/${locale}/LC_MESSAGES/
+	${INSTALL_DATA} ${WRKSRC}/po/${locale}/FoxitReader.mo ${STAGEDIR}${PREFIX}/share/locale/${locale}/LC_MESSAGES/
 .endfor
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR} && \
-	${INSTALL_DATA} ${DISTDIR}/FoxitReader${PORTVERSION:R}ForLinux_Manual.pdf ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/FoxitReader${PORTVERSION:R}ForLinux_Manual.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
