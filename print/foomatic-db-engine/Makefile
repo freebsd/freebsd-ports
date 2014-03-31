@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	engine
-PORTVERSION=	4.0.9
+PORTVERSION=	4.0.11
 PORTEPOCH=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/ \
