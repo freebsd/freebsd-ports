@@ -12,6 +12,9 @@ COMMENT=	Full-screen curses-based remote login to IBM mainframes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
 
+# Conflict due to x3270if
+CONFLICTS	x3270-*
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
