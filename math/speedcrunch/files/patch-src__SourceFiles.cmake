@@ -1,10 +1,10 @@
---- ./src/SourceFiles.cmake.orig	2008-05-23 01:45:21.000000000 +0400
-+++ ./src/SourceFiles.cmake	2009-07-06 22:48:59.000000000 +0400
-@@ -43,7 +43,6 @@
- )
+--- ./src/SourceFiles.cmake.orig	2014-01-29 21:24:08.000000000 +0000
++++ ./src/SourceFiles.cmake	2014-03-30 08:33:39.027726508 +0000
+@@ -55,7 +55,6 @@
  
  set(speedcrunch_SOURCES
--3rdparty/util/binreloc.c
- base/constants.cpp
- base/evaluator.cpp
- base/functions.cpp
+ main.cpp
+-thirdparty/binreloc.c
+ core/book.cpp
+ core/constants.cpp
+ core/evaluator.cpp
