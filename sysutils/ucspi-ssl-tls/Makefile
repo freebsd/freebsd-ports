@@ -17,5 +17,4 @@ PATCH_WRKSRC=		${WRKSRC}/src
 
 MASTERDIR=	${.CURDIR}/../ucspi-ssl
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
