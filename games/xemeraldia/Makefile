@@ -1,4 +1,4 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
+# Created by: Steven Wallace <swallace@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xemeraldia
