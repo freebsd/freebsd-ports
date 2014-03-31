@@ -30,10 +30,10 @@ DOCS_CONFIGURE_OFF=	--without-docs
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_FEATURES:Mlibc++}
-CONFIGURE_ARGS=	--with-sharedptr=c++11
+CONFIGURE_ARGS+=	--with-sharedptr=c++11
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-CONFIGURE_ARGS=	--with-sharedptr=boost
+CONFIGURE_ARGS+=	--with-sharedptr=boost
 .endif
 
 .include <bsd.port.post.mk>
