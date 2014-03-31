@@ -21,6 +21,9 @@ you update your ports collection, before attempting any port upgrades.
 
   2. Install/upgrade other cups* packages.
 
+  If cups-filters complains about a missing cups/raster.h include,
+  try reinstalling the cups-client package.
+
 20140327:
   AFFECTS: users of lang/php5 and lang/php55 with Apache module
   AUTHOR: ale@FreeBSD.org
