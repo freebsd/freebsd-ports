@@ -8,77 +8,67 @@ LessTif/INSTALL.txt
 LessTif/README
 LessTif/ReleaseNotes.html
 LessTif/ReleaseNotes.txt
-LessTif/doc/ReleaseNotes.html
-LessTif/doc/images/hungry.png
-LessTif/doc/images/lesstif-realsmall.png
-LessTif/doc/images/lesstif-small.png
-LessTif/doc/images/lesstif.png
-LessTif/doc/images/ltsunlogo.png
-LessTif/doc/images/lesstif.jpg
-LessTif/doc/images/ltsunlogo.jpg
-LessTif/doc/images/vh32.jpg
-LessTif/doc/images/vh32.png
-LessTif/doc/images/vh40.jpg
-LessTif/doc/images/vh40.png
 LessTif/doc/Advocacy.html
-LessTif/doc/contents.html
-LessTif/doc/misc_frame.html
+LessTif/doc/All.html
 LessTif/doc/BUG-HUNTING.html
-LessTif/doc/core.html
-LessTif/doc/news.html
 LessTif/doc/COPYING.LIB.html
-LessTif/doc/cvs.html
-LessTif/doc/news_frame.html
+LessTif/doc/Clipboard.txt
+LessTif/doc/DragAndDrop.txt
 LessTif/doc/FAQ.html
-LessTif/doc/doc_frame.html
-LessTif/doc/platforms.html
+LessTif/doc/Form.txt
+LessTif/doc/GeoUtils.txt
+LessTif/doc/Geometry.html
 LessTif/doc/INSTALL.html
-LessTif/doc/download.html
-LessTif/doc/printing.html
+LessTif/doc/Lessdox
 LessTif/doc/PROGRAMMING_TIPS.html
-LessTif/doc/feedback.html
-LessTif/doc/related_frame.html
-LessTif/doc/frames.html
-LessTif/doc/release-policy.html
-LessTif/doc/future.html
-LessTif/doc/test_policy.html
+LessTif/doc/ReleaseNotes.html
+LessTif/doc/SyntheticResources.txt
+LessTif/doc/UIL.txt
+LessTif/doc/XmStrings.txt
 LessTif/doc/XpREADME.html
-LessTif/doc/get_frame.html
-LessTif/doc/test_summary.html
 LessTif/doc/XprtConfig.html
-LessTif/doc/help.html
-LessTif/doc/testers.html
 LessTif/doc/about.html
-LessTif/doc/index.html
-LessTif/doc/titlebar.html
 LessTif/doc/apps.html
-LessTif/doc/known.html
-LessTif/doc/versions.html
 LessTif/doc/bugs.html
-LessTif/doc/links.html
-LessTif/doc/web_button.html
 LessTif/doc/bugs_frame.html
-LessTif/doc/lists.html
 LessTif/doc/cdrom.html
-LessTif/doc/html/mwm.html
-LessTif/doc/html/mwmrc.html
-LessTif/doc/html/xmbind.html
-LessTif/doc/html/lesstif.html
-LessTif/doc/html/uil.html
-LessTif/doc/html/VirtualBindings.html
-LessTif/doc/html/XmClipboard.html
+LessTif/doc/contents.html
+LessTif/doc/core.html
+LessTif/doc/cvs.html
+LessTif/doc/doc_frame.html
+LessTif/doc/download.html
+LessTif/doc/feedback.html
+LessTif/doc/frames.html
+LessTif/doc/future.html
+LessTif/doc/get_frame.html
+LessTif/doc/help.html
+LessTif/doc/html/ApplicationShell.html
+LessTif/doc/html/Composite.html
+LessTif/doc/html/Constraint.html
+LessTif/doc/html/Core.html
 LessTif/doc/html/LessTifInternals.html
+LessTif/doc/html/Object.html
+LessTif/doc/html/OverrideShell.html
+LessTif/doc/html/Rect.html
+LessTif/doc/html/Shell.html
+LessTif/doc/html/TopLevelShell.html
+LessTif/doc/html/TransientShell.html
+LessTif/doc/html/UnNamedObj.html
+LessTif/doc/html/VendorShell.html
+LessTif/doc/html/VirtualBindings.html
+LessTif/doc/html/WmShell.html
 LessTif/doc/html/XmArrowButton.html
 LessTif/doc/html/XmArrowButtonGadget.html
 LessTif/doc/html/XmBulletinBoard.html
 LessTif/doc/html/XmCascadeButton.html
 LessTif/doc/html/XmCascadeButtonGadget.html
+LessTif/doc/html/XmClipboard.html
 LessTif/doc/html/XmComboBox.html
 LessTif/doc/html/XmCommand.html
 LessTif/doc/html/XmDesktop.html
 LessTif/doc/html/XmDialogShell.html
-LessTif/doc/html/XmDisplay.html
 LessTif/doc/html/XmDialogShellExt.html
+LessTif/doc/html/XmDisplay.html
 LessTif/doc/html/XmDragContext.html
 LessTif/doc/html/XmDragIcon.html
 LessTif/doc/html/XmDragOverShell.html
@@ -123,30 +113,41 @@ LessTif/doc/html/XmToggleButton.html
 LessTif/doc/html/XmToggleButtonGadget.html
 LessTif/doc/html/XmVendorShell.html
 LessTif/doc/html/XmWorld.html
-LessTif/doc/html/ApplicationShell.html
-LessTif/doc/html/Composite.html
-LessTif/doc/html/Core.html
-LessTif/doc/html/Object.html
-LessTif/doc/html/OverrideShell.html
-LessTif/doc/html/Shell.html
-LessTif/doc/html/TopLevelShell.html
-LessTif/doc/html/TransientShell.html
-LessTif/doc/html/WmShell.html
-LessTif/doc/html/Rect.html
-LessTif/doc/html/UnNamedObj.html
-LessTif/doc/html/Constraint.html
-LessTif/doc/html/VendorShell.html
+LessTif/doc/html/lesstif.html
+LessTif/doc/html/mwm.html
+LessTif/doc/html/mwmrc.html
+LessTif/doc/html/uil.html
+LessTif/doc/html/xmbind.html
+LessTif/doc/images/hungry.png
+LessTif/doc/images/lesstif-realsmall.png
+LessTif/doc/images/lesstif-small.png
+LessTif/doc/images/lesstif.jpg
+LessTif/doc/images/lesstif.png
+LessTif/doc/images/ltsunlogo.jpg
+LessTif/doc/images/ltsunlogo.png
+LessTif/doc/images/vh32.jpg
+LessTif/doc/images/vh32.png
+LessTif/doc/images/vh40.jpg
+LessTif/doc/images/vh40.png
+LessTif/doc/index.html
+LessTif/doc/known.html
+LessTif/doc/links.html
+LessTif/doc/lists.html
 LessTif/doc/mirrors.html
-LessTif/doc/All.html
-LessTif/doc/Clipboard.txt
-LessTif/doc/DragAndDrop.txt
-LessTif/doc/Form.txt
-LessTif/doc/GeoUtils.txt
-LessTif/doc/Geometry.html
-LessTif/doc/SyntheticResources.txt
-LessTif/doc/UIL.txt
-LessTif/doc/XmStrings.txt
+LessTif/doc/misc_frame.html
+LessTif/doc/news.html
+LessTif/doc/news_frame.html
+LessTif/doc/platforms.html
+LessTif/doc/printing.html
+LessTif/doc/related_frame.html
+LessTif/doc/release-policy.html
+LessTif/doc/test_policy.html
+LessTif/doc/test_summary.html
+LessTif/doc/testers.html
 LessTif/doc/thread.html
+LessTif/doc/titlebar.html
+LessTif/doc/versions.html
+LessTif/doc/web_button.html
 bin/motif-config
 bin/mwm
 bin/mxmkmf
@@ -334,14 +335,14 @@ lib/libDtPrint.a
 lib/libDtPrint.la
 lib/libDtPrint.so
 lib/libDtPrint.so.1
-lib/libUil.a
-lib/libUil.la
-lib/libUil.so
-lib/libUil.so.2
 lib/libMrm.a
 lib/libMrm.la
 lib/libMrm.so
 lib/libMrm.so.2
+lib/libUil.a
+lib/libUil.la
+lib/libUil.so
+lib/libUil.so.2
 lib/libXm.a
 lib/libXm.la
 lib/libXm.so
@@ -424,15 +425,14 @@ man/man3/XmWorld.3.gz
 man/man5/VirtualBindings.5.gz
 man/man5/mwmrc.5.gz
 share/aclocal/ac_find_motif.m4
-@unexec rm -f %D/LessTif/doc/Lessdox
+@dirrm lib/X11/mwm
+@dirrm lib/LessTif/config
+@dirrm lib/LessTif
+@dirrm include/uil
+@dirrm include/Xm
+@dirrm include/Mrm
+@dirrm include/Dt
 @dirrm LessTif/doc/images
 @dirrm LessTif/doc/html
 @dirrm LessTif/doc
 @dirrm LessTif
-@dirrm include/Dt
-@dirrm include/Mrm
-@dirrm include/Xm
-@dirrm include/uil
-@dirrm lib/LessTif/config
-@dirrm lib/LessTif
-@dirrm lib/X11/mwm
