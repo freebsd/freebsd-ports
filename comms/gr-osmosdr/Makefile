@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gr-osmosdr
-PORTVERSION=	20130509
-PORTREVISION=	6
+PORTVERSION=	20140314
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -15,9 +14,9 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
 		cheetah:${PORTSDIR}/devel/py-cheetah
-LIB_DEPENDS=	libgnuradio-core.so:${PORTSDIR}/comms/gnuradio \
-		libgnuradio-fcd.so:${PORTSDIR}/comms/gnuradio \
-		libgruel.so:${PORTSDIR}/comms/gnuradio \
+LIB_DEPENDS=	libgnuradio-runtime.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-pmt.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-blocks.so:${PORTSDIR}/comms/gnuradio \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
@@ -25,9 +24,11 @@ USES=	pkgconfig cmake
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 
+# See lib/CMakeLists.txt to enable more components
 CMAKE_ARGS+=	-DENABLE_DEFAULT:BOOL=OFF \
 		-DENABLE_FCD:BOOL=ON \
-		-DENABLE_FILE:BOOL=ON
+		-DENABLE_FILE:BOOL=ON \
+		-DENABLE_PYTHON=ON
 
 OPTIONS_DEFINE=	RTLSDR
 RTLSDR_DESC=	Enable rtl-sdr (RTL2832) support
