@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.b2bua.org/chrome/site/
 MAINTAINER=	bamby@sippysoft.com
 COMMENT=	A H.323 support module for the Asterisk soft PBX
 
+DEPRECATED=	Depends on broken and unsupported asterisk14
+EXPIRATION_DATE=2014-04-30
+
 BUILD_DEPENDS= 	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk14
 LIB_DEPENDS= 	pt_r.1:${PORTSDIR}/devel/pwlib\
 	    	h323_r.1:${PORTSDIR}/net/openh323

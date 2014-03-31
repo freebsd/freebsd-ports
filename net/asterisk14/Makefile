@@ -13,6 +13,9 @@ MAINTAINER=	bamby@sippysoft.com
 COMMENT=	An Open Source PBX and telephony toolkit
 
 BROKEN=		Fails to configure or build
+FORBIDDEN=	Unsupported for so long that this version is not listed in security advisories
+DEPRECATED=	Broken and unsupported
+EXPIRATION_DATE=2014-04-30
 
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
