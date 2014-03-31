@@ -20,6 +20,12 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} > 1000000
+.if ${CC} != gcc42
+BROKEN= needs gcc4.2 to compile
+.endif
+.endif
+
 post-install:
 .for i in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/man/man1/
