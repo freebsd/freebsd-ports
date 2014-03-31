@@ -1,5 +1,6 @@
 bin/xmailbox
 lib/X11/app-defaults/XMailbox
+man/man1/xmailbox.1.gz
 %%PORTDOCS%%share/doc/xmailbox/DISCLAIMER
 %%PORTDOCS%%share/doc/xmailbox/README
 share/xmailbox/dingdong.au
