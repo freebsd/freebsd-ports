@@ -17,30 +17,26 @@ JAVA_VERSION=	1.6+
 
 USE_ANT=	yes
 ALL_TARGET=	dist
-.if !defined(NOPORTDOCS)
+
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PORTDOCS=	apidocs index.html
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	javadoc
 .endif
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
-.if !defined(NOPORTDOCS)
-PORTDOCS=	apidocs index.html
-.endif
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/lib/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
-	@cd ${WRKSRC}/docs \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/apidocs/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/apidocs/{} \;
-	@${INSTALL_DATA} ${WRKSRC}/intro.html ${DOCSDIR}/index.html
-	@${ECHO_MSG} " [ DONE ]"
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/${DISTNAME}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apidocs
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/apidocs)
+	${INSTALL_DATA} ${WRKSRC}/intro.html ${STAGEDIR}${DOCSDIR}/index.html
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
