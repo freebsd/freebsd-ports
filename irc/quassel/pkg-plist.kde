@@ -52,6 +52,7 @@
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/tr.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/uk.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/zh_CN.qm
+%%MONO_OR_CLIENT%%share/apps/quassel/translations/zh_TW.qm
 %%MONO_OR_CLIENT%%share/icons/hicolor/128x128/apps/quassel.png
 %%MONO_OR_CLIENT%%share/icons/hicolor/128x128/status/quassel-inactive.png
 %%MONO_OR_CLIENT%%share/icons/hicolor/128x128/status/quassel-message.png
