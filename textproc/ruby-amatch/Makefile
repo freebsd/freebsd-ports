@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	amatch
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.12
 CATEGORIES=	textproc ruby
-MASTER_SITES=	https://codeload.github.com/flori/amatch/zipball/
+MASTER_SITES=	https://github.com/flori/amatch/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-EXTRACT_SUFX=
 DISTNAME=	v${PORTVERSION}
 DIST_SUBDIR=	ruby/amatch
 
@@ -15,18 +14,19 @@ COMMENT=	Ruby library for approximate string matching and searching
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake
+USES=		zip gmake
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	flori
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	98473c4
+GH_COMMIT=	v${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/ext
 BUILD_WRKSRC=	${WRKSRC}/ext
 
 PLIST_FILES=	bin/agrep.rb %%RUBY_SITELIBDIR%%/amatch/version.rb \
-		%%RUBY_SITEARCHLIBDIR%%/amatch.so
+		%%RUBY_SITEARCHLIBDIR%%/amatch_ext.so
 PLIST_DIRS=	%%RUBY_SITELIBDIR%%/amatch
 
 AMATCH_RUBY=	install.rb
@@ -42,7 +42,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/amatch/version.rb \
 		${STAGEDIR}${RUBY_SITELIBDIR}/amatch/
-	${INSTALL_DATA} ${WRKSRC}/ext/amatch.so \
+	${INSTALL_DATA} ${WRKSRC}/ext/amatch_ext.so \
 		${STAGEDIR}${RUBY_SITEARCHLIBDIR}/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
