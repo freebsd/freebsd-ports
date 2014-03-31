@@ -9,6 +9,7 @@ include/tidy/tidyenum.h
 %%SHLIB%%lib/libtidy.la
 %%SHLIB%%lib/libtidy.so
 lib/libtidy.a
+%%NSHLIB%%man/man1/tidy.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Overview.html
 %%PORTDOCS%%%%DOCSDIR%%/checked_by_tidy.gif
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
