@@ -6,7 +6,7 @@ PORTVERSION=	3.0.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://hem.bredband.net/jpgraph2/
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
 USE_BZIP2=	yes

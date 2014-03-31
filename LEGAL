@@ -149,7 +149,7 @@ jdk-6*-i586.bin		java/linux-sun-jdk16	Redistribution of repackaged binaries not 
 jdk-7*-i586.tar.gz	java/linux-sun-jdk17	Redistribution of repackaged binaries not permitted
 jfbuild_src_*		games/jfsw		Must be distributed only through the Internet and free of charge
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled binaries is not permitted
-jpgraph-2.*		graphics/jpgraph2	Not for commercial use
+jpgraph-2.*		graphics/jpgraph2	The free version cannot be used in a commercial context
 jre-6*-i586.bin		java/linux-sun-jre16	License does not allow distribution with fee
 jre-7*-i586.tar.gz	java/linux-sun-jre17	License does not allow distribution with fee
 jta-*.zip		java/jta		See the license
