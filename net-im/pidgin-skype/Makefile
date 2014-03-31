@@ -59,7 +59,7 @@ PLIST_SUB+=	NLS=""
 post-patch:
 	${REINPLACE_CMD} 's/#undef ENABLE_NLS//' ${WRKSRC}/libskype.c
 .else
-PLIST_SUB+=	NLS="@comment"
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 do-build:
