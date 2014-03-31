@@ -16,28 +16,16 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE.txt NOTICE.txt \
+		RELEASE-NOTES.txt ${STAGEDIR}${DOCSDIR})
 
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
-	@cd ${WRKSRC}/docs \
-	 && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/docs/{} \; \
-	 && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/docs/{} \;
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/NOTICE.txt ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/RELEASE-NOTES.txt ${DOCSDIR}/
-	@${ECHO_MSG} " [ DONE ]"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
