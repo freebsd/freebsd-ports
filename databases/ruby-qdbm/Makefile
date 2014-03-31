@@ -14,5 +14,4 @@ PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 PATCHDIR=	${.CURDIR}/files
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
