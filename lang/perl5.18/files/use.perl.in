@@ -54,6 +54,7 @@ do_cleanup_manpath()
 			{ if (s != 1) { mode = 0 } if (mode == 0) print }' /etc/manpath.config >/etc/manpath.config.new
 		/bin/mv /etc/manpath.config /etc/manpath.config.bak
 		/bin/mv /etc/manpath.config.new /etc/manpath.config
+		/bin/rm /etc/manpath.config.bak
 	fi
 }
 
