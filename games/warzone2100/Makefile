@@ -53,7 +53,7 @@ NLS_CONFIGURE_ENABLE=	nls
 MANPAGES_BUILD_DEPENDS=	a2x:${PORTSDIR}/textproc/asciidoc
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-Werror||g; s|-R$$found_dir||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|./build_tools/autorevision|& -f|g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
