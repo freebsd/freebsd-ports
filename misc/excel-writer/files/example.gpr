@@ -3,7 +3,7 @@ project Example is
 
    for Exec_Dir use "/tmp";
    for Object_Dir use "/tmp";
-   for Main use ("excel_out_test.adb");
+   for Main use ("excel_out_demo.adb");
 
    package Compiler is
       for Default_Switches ("ada") use ("-O2", "-gnat05");
