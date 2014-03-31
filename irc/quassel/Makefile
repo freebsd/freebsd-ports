@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quassel
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
@@ -12,8 +11,7 @@ COMMENT=	Qt 4 based distributed IRC client
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USE_BZIP2=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:bzip2
 USE_QT4=	corelib network script sql \
 		qmake_build moc_build rcc_build uic_build
 
@@ -88,13 +86,6 @@ pre-configure:
 .if !${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e '/add_subdirectory(i18n)/d' \
 		${WRKSRC}/CMakeLists.txt
-.endif
-	${REINPLACE_CMD} -e 's,knotifyconfig,$${KDE4_KNOTIFYCONFIG_LIBRARY},' \
-		${WRKSRC}/CMakeLists.txt
-
-.if ${PORT_OPTIONS:MKDE}
-pre-su-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
 .endif
 
 .include <bsd.port.mk>
