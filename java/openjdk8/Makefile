@@ -3,14 +3,15 @@
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER:S/^0//}
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.java.net/openjdk/jdk8/promoted/b${JDK_BUILD_NUMBER}/:jdk \
+MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
-		LOCAL/jkim:jdk LOCAL/jkim:jtreg
+		LOCAL/jkim:jdk,jtreg
+PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}
 DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:jdk
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	Java Development Kit 8
+COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 LICENSE=	GPLv2
 
@@ -27,7 +28,6 @@ USES=		compiler:features dos2unix gmake iconv pkgconfig shebangfix zip
 USE_AUTOTOOLS=	autoconf
 USE_XORG=	x11 xext xi xrender xt xtst
 
-LATEST_LINK=	openjdk8
 ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -94,7 +94,7 @@ RELEASE_CONFIGURE_ON=	--disable-debug-symbols
 TEST_ALL_TARGET=	test
 TEST_CONFIGURE_ON=	--with-jtreg=${WRKDIR}/jtreg
 TEST_DISTFILES=		jtreg${JTREG_VERSION}-${JTREG_BUILD_NUMBER}.tar.gz:jtreg
-TZUPDATE_RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo:${PORTSDIR}/converters/libiconv
+TZUPDATE_RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 
 .include <bsd.port.options.mk>
 
