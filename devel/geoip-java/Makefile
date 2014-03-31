@@ -25,8 +25,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/maxmind-geoip-${PORTVERSION}.jar
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -41,10 +39,11 @@ post-build-script:
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/maxmind-geoip.jar ${JAVAJARDIR}/maxmind-geoip-${PORTVERSION}.jar
+	${INSTALL_DATA} ${WRKSRC}/maxmind-geoip.jar \
+		${STAGEDIR}${JAVAJARDIR}/maxmind-geoip-${PORTVERSION}.jar
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/javadoc && ${COPYTREE_SHARE} \* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/javadoc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
