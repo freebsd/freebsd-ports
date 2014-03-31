@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140331:
+  AFFECTS: users of print/cups-client and print/cups-image
+  AUTHOR: bsam@FreeBSD.org
+
+  CUPS ports have been updated to version 1.7.1. A file has migrated from
+  cups-image port to cups-client. Before upgrading you should force the
+  removal of cups-image port, otherwise it will conflict with the new one.
+
+  pkg users:
+  # pkg delete -f cups-image\*
+
+  other users:
+  # pkg_delete -f cups-image\*
+
+  2. Install/upgrade other cups* packages.
+
 20140327:
   AFFECTS: users of lang/php5 and lang/php55 with Apache module
   AUTHOR: ale@FreeBSD.org
