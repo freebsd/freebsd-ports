@@ -1,6 +1,6 @@
---- src/dominoex/dominoex.cxx.orig	2013-05-14 05:06:28.000000000 -0400
-+++ src/dominoex/dominoex.cxx	2013-11-16 11:17:10.251959725 -0500
-@@ -64,7 +64,7 @@
+--- src/dominoex/dominoex.cxx.orig	2014-03-21 11:25:57.000000000 -0500
++++ src/dominoex/dominoex.cxx	2014-03-21 18:19:42.000000000 -0500
+@@ -63,7 +63,7 @@
  
  	strSecXmtText = progdefaults.secText;
  	if (strSecXmtText.length() == 0)

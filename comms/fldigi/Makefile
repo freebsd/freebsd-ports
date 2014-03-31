@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	3.21.72
-PORTREVISION=	1
+PORTVERSION=	3.21.81
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
 		${MASTER_SITE_LOCAL}
@@ -27,13 +26,12 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig compiler:c++11-lib
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config" \
 		    EXTRA_LIBS="-lexecinfo"
-MAN1=		fldigi.1
+MAN1=		fldigi.1 fldigi-shell.1
 
-OPTIONS_DEFINE=	NATIVE_OPT FLARQ XMLRPC OSS SNDFILE PORTAUDIO PULSEAUDIO HAMLIB NLS
+OPTIONS_DEFINE=	NATIVE_OPT FLARQ OSS SNDFILE PORTAUDIO PULSEAUDIO HAMLIB NLS
 
 NATIVE_OPT_DESC=	Enable Native Optimizations
 FLARQ_DESC=		Compile flarq
-XMLRPC_DESC=		Support XMLrpc (fldigi-shell)
 OSS_DESC=		Support OSS
 SNDFILE_DESC=		Support for libsndfile
 PORTAUDIO_DESC=		PortAudio support
@@ -60,15 +58,7 @@ PLIST_SUB+=	FLARQ=""
 CONFIGURE_ARGS+=--disable-flarq
 PLIST_SUB+=	FLARQ="@comment "
 .endif
-.if ${PORT_OPTIONS:MXMLRPC}
-CONFIGURE_ARGS+=--with-xmlrpc
-LIB_DEPENDS+=	xmlrpc:${PORTSDIR}/net/xmlrpc-c
 PLIST_SUB+=	XMLRPC=""
-MAN1+=		fldigi-shell.1
-.else
-CONFIGURE_ARGS+=--without-xmlrpc
-PLIST_SUB+=	XMLRPC="@comment "
-.endif
 .if ${PORT_OPTIONS:MOSS}
 CONFIGURE_ARGS+=--enable-oss
 .else
