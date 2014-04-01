@@ -1,24 +1,24 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/BSON.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/BSON/Binary.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Code.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Collection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Connection.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Database.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Cursor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/DBRef.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/DataTypes.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Cursor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Collection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Database.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Examples.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS/File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Indexing.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/MongoClient.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/OID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Timestamp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Tutorial.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB/MongoDB.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB/MongoDB.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB/MongoDB.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB/MongoDB.so
 %%PERL5_MAN3%%/MongoDB.3.gz
 %%PERL5_MAN3%%/MongoDB::BSON.3.gz
 %%PERL5_MAN3%%/MongoDB::BSON::Binary.3.gz
@@ -38,6 +38,6 @@
 %%PERL5_MAN3%%/MongoDB::Timestamp.3.gz
 %%PERL5_MAN3%%/MongoDB::Tutorial.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/BSON
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/BSON
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB
