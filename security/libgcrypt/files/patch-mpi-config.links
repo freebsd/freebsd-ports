@@ -1,0 +1,32 @@
+--- mpi/config.links.orig	2013-07-25 11:10:04.000000000 +0200
++++ mpi/config.links	2014-03-16 17:53:55.000000000 +0100
+@@ -46,9 +46,7 @@
+        path=""
+        ;;
+     i[3467]86*-*-openbsd*      | \
+-    i[3467]86*-*-freebsd*-elf  | \
+-    i[3467]86*-*-freebsd[3-9]* | \
+-    i[3467]86*-*-freebsdelf*   | \
++    i[3467]86*-*-freebsd*      | \
+     i[3467]86*-*-netbsd*       | \
+     i[3467]86*-*-k*bsd*)
+        echo '#define ELF_SYNTAX' >>./mpi/asm-syntax.h
+@@ -56,9 +54,7 @@
+        path="i386"
+        ;;
+     i586*-*-openbsd*         | \
+-    i586*-*-freebsd*-elf     | \
+-    i586*-*-freebsd[3-9]*    | \
+-    i586*-*-freebsdelf*      | \
++    i586*-*-freebsd*         | \
+     i586*-*-netbsd*	     | \
+     i586*-*-k*bsd*	     | \
+     pentium-*-netbsd*	     | \
+@@ -112,6 +108,7 @@
+ 	cat  $srcdir/mpi/i386/syntax.h	    >>./mpi/asm-syntax.h
+ 	path="i586 i386"
+ 	;;
++    amd64-*-* | \
+     x86_64-*-*)
+ 	echo '#define ELF_SYNTAX' >>./mpi/asm-syntax.h
+ 	cat  $srcdir/mpi/i386/syntax.h	    >>./mpi/asm-syntax.h
