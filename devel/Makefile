@@ -39,7 +39,6 @@
     SUBDIR += activitymail
     SUBDIR += adabooch
     SUBDIR += adacurses
-    SUBDIR += adasdl
     SUBDIR += adime
     SUBDIR += aegis
     SUBDIR += afay
@@ -848,7 +847,6 @@
     SUBDIR += htable
     SUBDIR += hub
     SUBDIR += hwloc
-    SUBDIR += hyena
     SUBDIR += ice
     SUBDIR += icmake
     SUBDIR += icu
