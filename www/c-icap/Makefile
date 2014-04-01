@@ -3,6 +3,7 @@
 
 PORTNAME=	c-icap
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.3.x/
@@ -31,13 +32,6 @@ CICAP_GID=	959
 
 USERS=		${CICAP_USER}
 GROUPS=		${CICAP_GROUP}
-
-MAN8=		c-icap-client.8 \
-		c-icap-config.8 \
-		c-icap-libicapapi-config.8 \
-		c-icap-mkbdb.8 \
-		c-icap-stretch.8 \
-		c-icap.8
 
 CONFIGURE_ARGS+=	--enable-static \
 			--sysconfdir="${PREFIX}/etc/c-icap" \
