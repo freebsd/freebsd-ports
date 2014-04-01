@@ -43,6 +43,7 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/pgpkeys
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/pam
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/new-users
