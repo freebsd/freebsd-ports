@@ -3,6 +3,7 @@
 
 PORTNAME=	evilwm
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.6809.org.uk/evilwm/
 
@@ -13,27 +14,22 @@ USES=		gmake
 USE_XORG=	x11 xpm xext xrandr xrender
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=		evilwm.1
 PORTDOCS=	ChangeLog README TODO
 PLIST_FILES=	bin/evilwm \
+		man/man1/evilwm.1.gz \
 		${DESKTOPDIR:S,^${PREFIX}/,,}/${PORTNAME}.desktop
-PLIST_DIRSTRY=	${DESKTOPDIR:S,^${PREFIX}/,,}
 
 # X11's include and library path
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
-	${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/evilwm ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/evilwm.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/evilwm.desktop ${STAGEDIR}${DESKTOPDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
