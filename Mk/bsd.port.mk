@@ -6558,7 +6558,8 @@ ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_REAL_SEQ}
 		${SU_CMD} "${MAKE} ${_${target:U}_REAL_SUSEQ}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
-.elif defined(USE_SUBMAKE)
+.else
+.if defined(USE_SUBMAKE)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
 	@cd ${.CURDIR} && \
 		${MAKE} ${_${target:U}_REAL_SEQ} ${_${target:U}_REAL_SUSEQ}
@@ -6566,6 +6567,7 @@ ${${target:U}_COOKIE}: ${_${target:U}_DEP}
 .else
 ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_REAL_SEQ} ${_${target:U}_REAL_SUSEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
+.endif
 .endif
 
 .else
