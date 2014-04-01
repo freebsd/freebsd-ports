@@ -37,6 +37,22 @@ m6811-elf/lib/ldscripts/m68hc12elfb.xbn
 m6811-elf/lib/ldscripts/m68hc12elfb.xn
 m6811-elf/lib/ldscripts/m68hc12elfb.xr
 m6811-elf/lib/ldscripts/m68hc12elfb.xu
+man/man1/m6811-elf-addr2line.1.gz
+man/man1/m6811-elf-ar.1.gz
+man/man1/m6811-elf-as.1.gz
+man/man1/m6811-elf-c++filt.1.gz
+man/man1/m6811-elf-dlltool.1.gz
+man/man1/m6811-elf-ld.1.gz
+man/man1/m6811-elf-nlmconv.1.gz
+man/man1/m6811-elf-nm.1.gz
+man/man1/m6811-elf-objcopy.1.gz
+man/man1/m6811-elf-objdump.1.gz
+man/man1/m6811-elf-ranlib.1.gz
+man/man1/m6811-elf-readelf.1.gz
+man/man1/m6811-elf-size.1.gz
+man/man1/m6811-elf-strings.1.gz
+man/man1/m6811-elf-strip.1.gz
+man/man1/m6811-elf-windres.1.gz
 @dirrm m6811-elf/lib/ldscripts
 @dirrm m6811-elf/lib
 @dirrm m6811-elf/bin
