@@ -14,25 +14,14 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/kua bin/ua \
 		man/man1/kua.1.gz man/man1/ua.1.gz
 PORTDOCS=	README
-MAN1L=		kua.1 ua.1
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} > 1000000
-.if ${CC} != gcc42
-BROKEN= needs gcc4.2 to compile
-.endif
-.endif
-
 post-install:
-.for i in ${MAN1L}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/man/man1/
-.endfor
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
