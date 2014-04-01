@@ -15,30 +15,26 @@ BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \
 		ocaml-cfg>0:${PORTSDIR}/devel/ocaml-cfg \
 		ocaml-pcre>0:${PORTSDIR}/devel/ocaml-pcre \
 		ocaml-res>0:${PORTSDIR}/devel/ocaml-res
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix ${PREFIX}
+CONFIGURE_ARGS=	--prefix ${STAGEDIR}${PREFIX}
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in AUTHORS.txt CHANGES.txt README.md TODO.md
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
-.endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${INSTALL_DATA} * ${EXAMPLESDIR})
-.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS.txt CHANGES.txt README.md \
+		TODO.md ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
