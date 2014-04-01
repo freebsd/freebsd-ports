@@ -724,6 +724,7 @@
     SUBDIR += usendmail
     SUBDIR += vacation
     SUBDIR += vbsfilter
+    SUBDIR += vexim
     SUBDIR += vm
     SUBDIR += vm-pop3d
     SUBDIR += vmailmgr
