@@ -40,10 +40,9 @@ CONFIGURE_ARGS=	--localstatedir=/var --sysconfdir=${PREFIX}/etc \
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PAM_DIR=${PAM_DIR} PAM_TARGET=${PAM_TARGET}
-USE_BZIP2=	yes
 USE_PERL5=	run
 USE_RC_SUBR=	pure-ftpd
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:bzip2
 
 PORTDOCS=	AUTHORS CONTACT COPYING HISTORY NEWS README \
 		README.Authentication-Modules README.Configuration-File \
