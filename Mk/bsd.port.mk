@@ -6421,6 +6421,9 @@ _TARGETS_STAGES=	SANITY PKG FETCH EXTRACT PATCH CONFIGURE BUILD INSTALL PACKAGE
 _TARGETS_STAGES+=	STAGE
 .endif
 
+# Define the SEQ of actions to take when each target is ran, and which targets
+# it depends on before running its SEQ.
+
 _SANITY_SEQ=	post-chroot pre-everything check-makefile \
 				show-warnings show-dev-warnings show-dev-errors \
 				check-categories check-makevars check-desktop-entries \
@@ -6533,8 +6536,17 @@ _${_t}_REAL_SUSEQ+=	${s}
 .ORDER: ${_${_t}_DEP} ${_${_t}_REAL_SEQ}
 .endfor
 
+# Define all of the main targets which depend on a sequence of other targets.
+# See above *_SEQ and *_DEP. The _DEP will run before this defined target is
+# ran. The _SEQ will run as this target once _DEP is satisfied.
+
 .for target in extract patch configure build stage install package
 
+# Check if config dialog needs to show and execute it if needed. If is it not
+# needed (_OPTIONS_OK), then just depend on the cookie which is defined later
+# to depend on the *_DEP and execute the *_SEQ.
+# If options are required, execute config-conditional and then re-execute the
+# target noting that config is no longer needed.
 .if !target(${target}) && defined(_OPTIONS_OK)
 _PHONY_TARGETS+= ${target}
 ${target}: ${${target:U}_COOKIE}
@@ -6546,40 +6558,42 @@ ${target}: config-conditional
 
 .if !exists(${${target:U}_COOKIE})
 
+# Define the real target behavior. Depend on the target's *_DEP. Execute
+# the target's *_SEQ. Also handle su and USE_SUBMAKE needs.
 .if ${UID} != 0 && defined(_${target:U}_REAL_SUSEQ) && !defined(INSTALL_AS_USER)
-.if defined(USE_SUBMAKE)
+.  if defined(USE_SUBMAKE)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
 	@cd ${.CURDIR} && ${MAKE} ${_${target:U}_REAL_SEQ}
-.else
+.  else  # !USE_SUBMAKE
 ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_REAL_SEQ}
-.endif
+.  endif # USE_SUBMAKE
 	@${ECHO_MSG} "===>  Switching to root credentials for '${target}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${_${target:U}_REAL_SUSEQ}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
-.else
-.if defined(USE_SUBMAKE)
+.else # No SU needed
+.  if defined(USE_SUBMAKE)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
 	@cd ${.CURDIR} && \
 		${MAKE} ${_${target:U}_REAL_SEQ} ${_${target:U}_REAL_SUSEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
-.else
+.  else # !USE_SUBMAKE
 ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_REAL_SEQ} ${_${target:U}_REAL_SUSEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
-.endif
-.endif
+.  endif # USE_SUBMAKE
+.endif # SU needed
 
-.else
+.else # exists(cookie)
 ${${target:U}_COOKIE}::
 	@if [ -e ${.TARGET} ]; then \
 		${DO_NADA}; \
 	else \
 		cd ${.CURDIR} && ${MAKE} ${.TARGET}; \
 	fi
-.endif
+.endif # !exists(cookie)
 
-.endfor
+.endfor # foreach(targets)
 
 .PHONY: ${_PHONY_TARGETS} check-sanity fetch pkg
 
