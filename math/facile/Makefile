@@ -3,23 +3,26 @@
 
 PORTNAME=	facile
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.recherche.enac.fr/log/facile/distrib/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Functional Constraint Library
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Functional Constraint Library
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gmake
 USE_OCAML=	yes
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
 ALL_TARGET=	compile
 
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} -e "s,make,${GMAKE},; \
-		s,cp,${INSTALL_DATA}," ${WRKSRC}/Makefile
+post-configure:
+	${REINPLACE_CMD} -e "s,make,${MAKE_CMD},; \
+		s,cp,${INSTALL_DATA},;\
+		s,mkdir,${MKDIR}," ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s,${LOCALBASE},${STAGEDIR}${PREFIX}," \
+		${WRKSRC}/config_Makefile
 
 .include <bsd.port.mk>
