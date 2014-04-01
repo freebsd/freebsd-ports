@@ -114,6 +114,8 @@
     SUBDIR += jump
     SUBDIR += junit
     SUBDIR += langspec
+    SUBDIR += linux-oracle-jdk18
+    SUBDIR += linux-oracle-jre18
     SUBDIR += linux-sun-jdk16
     SUBDIR += linux-sun-jdk17
     SUBDIR += linux-sun-jre16

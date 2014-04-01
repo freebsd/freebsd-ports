@@ -1,0 +1,380 @@
+%%T%%/COPYRIGHT
+%%T%%/LICENSE
+%%T%%/README
+%%T%%/THIRDPARTYLICENSEREADME-JAVAFX.txt
+%%T%%/THIRDPARTYLICENSEREADME.txt
+%%T%%/Welcome.html
+%%T%%/bin/ControlPanel
+%%T%%/bin/java
+%%T%%/bin/javaws
+%%T%%/bin/jcontrol
+%%T%%/bin/jjs
+%%T%%/bin/keytool
+%%T%%/bin/orbd
+%%T%%/bin/pack200
+%%T%%/bin/policytool
+%%T%%/bin/rmid
+%%T%%/bin/rmiregistry
+%%T%%/bin/servertool
+%%T%%/bin/tnameserv
+%%T%%/bin/unpack200
+%%T%%/lib/calendars.properties
+%%T%%/lib/charsets.jar
+%%T%%/lib/classlist
+%%T%%/lib/cmm/CIEXYZ.pf
+%%T%%/lib/cmm/GRAY.pf
+%%T%%/lib/cmm/LINEAR_RGB.pf
+%%T%%/lib/cmm/PYCC.pf
+%%T%%/lib/cmm/sRGB.pf
+%%T%%/lib/content-types.properties
+%%T%%/lib/currency.data
+%%T%%/lib/deploy.jar
+%%T%%/lib/deploy/MixedCodeMainDialog.ui
+%%T%%/lib/deploy/MixedCodeMainDialogJs.ui
+%%T%%/lib/deploy/cautionshield.icns
+%%T%%/lib/deploy/ffjcext.zip
+%%T%%/lib/deploy/java-icon.ico
+%%T%%/lib/deploy/messages.properties
+%%T%%/lib/deploy/messages_de.properties
+%%T%%/lib/deploy/messages_es.properties
+%%T%%/lib/deploy/messages_fr.properties
+%%T%%/lib/deploy/messages_it.properties
+%%T%%/lib/deploy/messages_ja.properties
+%%T%%/lib/deploy/messages_ko.properties
+%%T%%/lib/deploy/messages_pt_BR.properties
+%%T%%/lib/deploy/messages_sv.properties
+%%T%%/lib/deploy/messages_zh_CN.properties
+%%T%%/lib/deploy/messages_zh_HK.properties
+%%T%%/lib/deploy/messages_zh_TW.properties
+%%T%%/lib/deploy/mixcode_s.png
+%%T%%/lib/deploy/splash.gif
+%%T%%/lib/desktop/applications/sun-java.desktop
+%%T%%/lib/desktop/applications/sun-javaws.desktop
+%%T%%/lib/desktop/applications/sun_java.desktop
+%%T%%/lib/desktop/icons/HighContrast/16x16/apps/sun-java.png
+%%T%%/lib/desktop/icons/HighContrast/16x16/apps/sun-javaws.png
+%%T%%/lib/desktop/icons/HighContrast/16x16/apps/sun-jcontrol.png
+%%T%%/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/lib/desktop/icons/HighContrast/16x16/mimetypes/gnome-mime-text-x-java.png
+%%T%%/lib/desktop/icons/HighContrast/48x48/apps/sun-java.png
+%%T%%/lib/desktop/icons/HighContrast/48x48/apps/sun-javaws.png
+%%T%%/lib/desktop/icons/HighContrast/48x48/apps/sun-jcontrol.png
+%%T%%/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/lib/desktop/icons/HighContrast/48x48/mimetypes/gnome-mime-text-x-java.png
+%%T%%/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-java.png
+%%T%%/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-javaws.png
+%%T%%/lib/desktop/icons/HighContrastInverse/16x16/apps/sun-jcontrol.png
+%%T%%/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/lib/desktop/icons/HighContrastInverse/16x16/mimetypes/gnome-mime-text-x-java.png
+%%T%%/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-java.png
+%%T%%/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-javaws.png
+%%T%%/lib/desktop/icons/HighContrastInverse/48x48/apps/sun-jcontrol.png
+%%T%%/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/lib/desktop/icons/HighContrastInverse/48x48/mimetypes/gnome-mime-text-x-java.png
+%%T%%/lib/desktop/icons/LowContrast/16x16/apps/sun-java.png
+%%T%%/lib/desktop/icons/LowContrast/16x16/apps/sun-javaws.png
+%%T%%/lib/desktop/icons/LowContrast/16x16/apps/sun-jcontrol.png
+%%T%%/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/lib/desktop/icons/LowContrast/16x16/mimetypes/gnome-mime-text-x-java.png
+%%T%%/lib/desktop/icons/LowContrast/48x48/apps/sun-java.png
+%%T%%/lib/desktop/icons/LowContrast/48x48/apps/sun-javaws.png
+%%T%%/lib/desktop/icons/LowContrast/48x48/apps/sun-jcontrol.png
+%%T%%/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/lib/desktop/icons/LowContrast/48x48/mimetypes/gnome-mime-text-x-java.png
+%%T%%/lib/desktop/icons/hicolor/16x16/apps/sun-java.png
+%%T%%/lib/desktop/icons/hicolor/16x16/apps/sun-javaws.png
+%%T%%/lib/desktop/icons/hicolor/16x16/apps/sun-jcontrol.png
+%%T%%/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/lib/desktop/icons/hicolor/16x16/mimetypes/gnome-mime-text-x-java.png
+%%T%%/lib/desktop/icons/hicolor/48x48/apps/sun-java.png
+%%T%%/lib/desktop/icons/hicolor/48x48/apps/sun-javaws.png
+%%T%%/lib/desktop/icons/hicolor/48x48/apps/sun-jcontrol.png
+%%T%%/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-java-archive.png
+%%T%%/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-java-jnlp-file.png
+%%T%%/lib/desktop/icons/hicolor/48x48/mimetypes/gnome-mime-text-x-java.png
+%%T%%/lib/desktop/mime/packages/x-java-archive.xml
+%%T%%/lib/desktop/mime/packages/x-java-jnlp-file.xml
+%%T%%/lib/ext/cldrdata.jar
+%%T%%/lib/ext/dnsns.jar
+%%T%%/lib/ext/jfxrt.jar
+%%T%%/lib/ext/localedata.jar
+%%T%%/lib/ext/meta-index
+%%T%%/lib/ext/nashorn.jar
+%%T%%/lib/ext/sunec.jar
+%%T%%/lib/ext/sunjce_provider.jar
+%%T%%/lib/ext/sunpkcs11.jar
+%%T%%/lib/ext/zipfs.jar
+%%T%%/lib/flavormap.properties
+%%T%%/lib/fontconfig.RedHat.5.bfc
+%%T%%/lib/fontconfig.RedHat.5.properties.src
+%%T%%/lib/fontconfig.RedHat.6.bfc
+%%T%%/lib/fontconfig.RedHat.6.properties.src
+%%T%%/lib/fontconfig.SuSE.10.bfc
+%%T%%/lib/fontconfig.SuSE.10.properties.src
+%%T%%/lib/fontconfig.SuSE.11.bfc
+%%T%%/lib/fontconfig.SuSE.11.properties.src
+%%T%%/lib/fontconfig.Turbo.bfc
+%%T%%/lib/fontconfig.Turbo.properties.src
+%%T%%/lib/fontconfig.bfc
+%%T%%/lib/fontconfig.properties.src
+%%T%%/lib/fonts/LucidaBrightDemiBold.ttf
+%%T%%/lib/fonts/LucidaBrightDemiItalic.ttf
+%%T%%/lib/fonts/LucidaBrightItalic.ttf
+%%T%%/lib/fonts/LucidaBrightRegular.ttf
+%%T%%/lib/fonts/LucidaSansDemiBold.ttf
+%%T%%/lib/fonts/LucidaSansRegular.ttf
+%%T%%/lib/fonts/LucidaTypewriterBold.ttf
+%%T%%/lib/fonts/LucidaTypewriterRegular.ttf
+%%T%%/lib/fonts/fonts.dir
+%%T%%/lib/hijrah-config-umalqura.properties
+%%T%%/lib/i386/client/Xusage.txt
+%%T%%/lib/i386/client/libjsig.so
+%%T%%/lib/i386/client/libjvm.so
+%%T%%/lib/i386/jli/libjli.so
+%%T%%/lib/i386/jvm.cfg
+%%T%%/lib/i386/libavplugin.so
+%%T%%/lib/i386/libawt.so
+%%T%%/lib/i386/libawt_headless.so
+%%T%%/lib/i386/libawt_xawt.so
+%%T%%/lib/i386/libdcpr.so
+%%T%%/lib/i386/libdecora_sse.so
+%%T%%/lib/i386/libdeploy.so
+%%T%%/lib/i386/libdt_socket.so
+%%T%%/lib/i386/libfontmanager.so
+%%T%%/lib/i386/libfxplugins.so
+%%T%%/lib/i386/libglass.so
+%%T%%/lib/i386/libgstreamer-lite.so
+%%T%%/lib/i386/libhprof.so
+%%T%%/lib/i386/libinstrument.so
+%%T%%/lib/i386/libj2gss.so
+%%T%%/lib/i386/libj2pcsc.so
+%%T%%/lib/i386/libj2pkcs11.so
+%%T%%/lib/i386/libjaas_unix.so
+%%T%%/lib/i386/libjava.so
+%%T%%/lib/i386/libjava_crw_demo.so
+%%T%%/lib/i386/libjavafx_font.so
+%%T%%/lib/i386/libjavafx_font_freetype.so
+%%T%%/lib/i386/libjavafx_font_pango.so
+%%T%%/lib/i386/libjavafx_font_t2k.so
+%%T%%/lib/i386/libjavafx_iio.so
+%%T%%/lib/i386/libjawt.so
+%%T%%/lib/i386/libjdwp.so
+%%T%%/lib/i386/libjfr.so
+%%T%%/lib/i386/libjfxmedia.so
+%%T%%/lib/i386/libjfxwebkit.so
+%%T%%/lib/i386/libjpeg.so
+%%T%%/lib/i386/libjsdt.so
+%%T%%/lib/i386/libjsig.so
+%%T%%/lib/i386/libjsound.so
+%%T%%/lib/i386/libjsoundalsa.so
+%%T%%/lib/i386/libkcms.so
+%%T%%/lib/i386/liblcms.so
+%%T%%/lib/i386/libmanagement.so
+%%T%%/lib/i386/libmlib_image.so
+%%T%%/lib/i386/libnet.so
+%%T%%/lib/i386/libnio.so
+%%T%%/lib/i386/libnpjp2.so
+%%T%%/lib/i386/libnpt.so
+%%T%%/lib/i386/libprism_common.so
+%%T%%/lib/i386/libprism_es2.so
+%%T%%/lib/i386/libprism_sw.so
+%%T%%/lib/i386/libsctp.so
+%%T%%/lib/i386/libsplashscreen.so
+%%T%%/lib/i386/libsunec.so
+%%T%%/lib/i386/libt2k.so
+%%T%%/lib/i386/libunpack.so
+%%T%%/lib/i386/libverify.so
+%%T%%/lib/i386/libzip.so
+%%T%%/lib/i386/server/Xusage.txt
+%%T%%/lib/i386/server/libjsig.so
+%%T%%/lib/i386/server/libjvm.so
+%%T%%/lib/images/cursors/cursors.properties
+%%T%%/lib/images/cursors/invalid32x32.gif
+%%T%%/lib/images/cursors/motif_CopyDrop32x32.gif
+%%T%%/lib/images/cursors/motif_CopyNoDrop32x32.gif
+%%T%%/lib/images/cursors/motif_LinkDrop32x32.gif
+%%T%%/lib/images/cursors/motif_LinkNoDrop32x32.gif
+%%T%%/lib/images/cursors/motif_MoveDrop32x32.gif
+%%T%%/lib/images/cursors/motif_MoveNoDrop32x32.gif
+%%T%%/lib/images/icons/sun-java.png
+%%T%%/lib/images/icons/sun-java_HighContrast.png
+%%T%%/lib/images/icons/sun-java_HighContrastInverse.png
+%%T%%/lib/images/icons/sun-java_LowContrast.png
+%%T%%/lib/javafx.properties
+%%T%%/lib/javaws.jar
+%%T%%/lib/jce.jar
+%%T%%/lib/jexec
+%%T%%/lib/jfr.jar
+%%T%%/lib/jfr/default.jfc
+%%T%%/lib/jfr/profile.jfc
+%%T%%/lib/jfxswt.jar
+%%T%%/lib/jsse.jar
+%%T%%/lib/jvm.hprof.txt
+%%T%%/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/pt_BR/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/zh_HK.BIG5HK/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
+%%T%%/lib/logging.properties
+%%T%%/lib/management-agent.jar
+%%T%%/lib/management/jmxremote.access
+%%T%%/lib/management/jmxremote.password.template
+%%T%%/lib/management/management.properties
+%%T%%/lib/management/snmp.acl.template
+%%T%%/lib/meta-index
+%%T%%/lib/net.properties
+%%T%%/lib/oblique-fonts/LucidaSansDemiOblique.ttf
+%%T%%/lib/oblique-fonts/LucidaSansOblique.ttf
+%%T%%/lib/oblique-fonts/LucidaTypewriterBoldOblique.ttf
+%%T%%/lib/oblique-fonts/LucidaTypewriterOblique.ttf
+%%T%%/lib/oblique-fonts/fonts.dir
+%%T%%/lib/plugin.jar
+%%T%%/lib/psfont.properties.ja
+%%T%%/lib/psfontj2d.properties
+%%T%%/lib/resources.jar
+%%T%%/lib/rt.jar
+%%T%%/lib/security/US_export_policy.jar
+%%T%%/lib/security/blacklist
+%%T%%/lib/security/blacklisted.certs
+%%T%%/lib/security/cacerts
+%%T%%/lib/security/java.policy
+%%T%%/lib/security/java.security
+%%T%%/lib/security/javaws.policy
+%%T%%/lib/security/local_policy.jar
+%%T%%/lib/security/trusted.libraries
+%%T%%/lib/sound.properties
+%%T%%/lib/tzdb.dat
+%%T%%/man/ja
+%%T%%/man/ja_JP.UTF-8/man1/java.1
+%%T%%/man/ja_JP.UTF-8/man1/javaws.1
+%%T%%/man/ja_JP.UTF-8/man1/jjs.1
+%%T%%/man/ja_JP.UTF-8/man1/keytool.1
+%%T%%/man/ja_JP.UTF-8/man1/orbd.1
+%%T%%/man/ja_JP.UTF-8/man1/pack200.1
+%%T%%/man/ja_JP.UTF-8/man1/policytool.1
+%%T%%/man/ja_JP.UTF-8/man1/rmid.1
+%%T%%/man/ja_JP.UTF-8/man1/rmiregistry.1
+%%T%%/man/ja_JP.UTF-8/man1/servertool.1
+%%T%%/man/ja_JP.UTF-8/man1/tnameserv.1
+%%T%%/man/ja_JP.UTF-8/man1/unpack200.1
+%%T%%/man/man1/java.1
+%%T%%/man/man1/javaws.1
+%%T%%/man/man1/jjs.1
+%%T%%/man/man1/keytool.1
+%%T%%/man/man1/orbd.1
+%%T%%/man/man1/pack200.1
+%%T%%/man/man1/policytool.1
+%%T%%/man/man1/rmid.1
+%%T%%/man/man1/rmiregistry.1
+%%T%%/man/man1/servertool.1
+%%T%%/man/man1/tnameserv.1
+%%T%%/man/man1/unpack200.1
+%%T%%/plugin/desktop/sun_java.desktop
+%%T%%/plugin/desktop/sun_java.png
+%%T%%/release
+@exec mkdir -p %D/%%T%%/lib/applet
+@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Oracle-JRE%%PORTVERSION%%"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
+@dirrm %%T%%/plugin/desktop
+@dirrm %%T%%/plugin
+@dirrm %%T%%/man/man1
+@dirrm %%T%%/man/ja_JP.UTF-8/man1
+@dirrm %%T%%/man/ja_JP.UTF-8
+@dirrm %%T%%/man
+@dirrm %%T%%/lib/security
+@dirrm %%T%%/lib/oblique-fonts
+@dirrm %%T%%/lib/management
+@dirrm %%T%%/lib/locale/zh_TW/LC_MESSAGES
+@dirrm %%T%%/lib/locale/zh_TW.BIG5/LC_MESSAGES
+@dirrm %%T%%/lib/locale/zh_TW.BIG5
+@dirrm %%T%%/lib/locale/zh_TW
+@dirrm %%T%%/lib/locale/zh_HK.BIG5HK/LC_MESSAGES
+@dirrm %%T%%/lib/locale/zh_HK.BIG5HK
+@dirrm %%T%%/lib/locale/zh/LC_MESSAGES
+@dirrm %%T%%/lib/locale/zh.GBK/LC_MESSAGES
+@dirrm %%T%%/lib/locale/zh.GBK
+@dirrm %%T%%/lib/locale/zh
+@dirrm %%T%%/lib/locale/sv/LC_MESSAGES
+@dirrm %%T%%/lib/locale/sv
+@dirrm %%T%%/lib/locale/pt_BR/LC_MESSAGES
+@dirrm %%T%%/lib/locale/pt_BR
+@dirrm %%T%%/lib/locale/ko/LC_MESSAGES
+@dirrm %%T%%/lib/locale/ko.UTF-8/LC_MESSAGES
+@dirrm %%T%%/lib/locale/ko.UTF-8
+@dirrm %%T%%/lib/locale/ko
+@dirrm %%T%%/lib/locale/ja/LC_MESSAGES
+@dirrm %%T%%/lib/locale/ja
+@dirrm %%T%%/lib/locale/it/LC_MESSAGES
+@dirrm %%T%%/lib/locale/it
+@dirrm %%T%%/lib/locale/fr/LC_MESSAGES
+@dirrm %%T%%/lib/locale/fr
+@dirrm %%T%%/lib/locale/es/LC_MESSAGES
+@dirrm %%T%%/lib/locale/es
+@dirrm %%T%%/lib/locale/de/LC_MESSAGES
+@dirrm %%T%%/lib/locale/de
+@dirrm %%T%%/lib/locale
+@dirrm %%T%%/lib/jfr
+@dirrm %%T%%/lib/images/icons
+@dirrm %%T%%/lib/images/cursors
+@dirrm %%T%%/lib/images
+@dirrm %%T%%/lib/i386/server
+@dirrm %%T%%/lib/i386/jli
+@dirrm %%T%%/lib/i386/client
+@dirrm %%T%%/lib/i386
+@dirrm %%T%%/lib/fonts
+@dirrm %%T%%/lib/ext
+@dirrm %%T%%/lib/desktop/mime/packages
+@dirrm %%T%%/lib/desktop/mime
+@dirrm %%T%%/lib/desktop/icons/hicolor/48x48/mimetypes
+@dirrm %%T%%/lib/desktop/icons/hicolor/48x48/apps
+@dirrm %%T%%/lib/desktop/icons/hicolor/48x48
+@dirrm %%T%%/lib/desktop/icons/hicolor/16x16/mimetypes
+@dirrm %%T%%/lib/desktop/icons/hicolor/16x16/apps
+@dirrm %%T%%/lib/desktop/icons/hicolor/16x16
+@dirrm %%T%%/lib/desktop/icons/hicolor
+@dirrm %%T%%/lib/desktop/icons/LowContrast/48x48/mimetypes
+@dirrm %%T%%/lib/desktop/icons/LowContrast/48x48/apps
+@dirrm %%T%%/lib/desktop/icons/LowContrast/48x48
+@dirrm %%T%%/lib/desktop/icons/LowContrast/16x16/mimetypes
+@dirrm %%T%%/lib/desktop/icons/LowContrast/16x16/apps
+@dirrm %%T%%/lib/desktop/icons/LowContrast/16x16
+@dirrm %%T%%/lib/desktop/icons/LowContrast
+@dirrm %%T%%/lib/desktop/icons/HighContrastInverse/48x48/mimetypes
+@dirrm %%T%%/lib/desktop/icons/HighContrastInverse/48x48/apps
+@dirrm %%T%%/lib/desktop/icons/HighContrastInverse/48x48
+@dirrm %%T%%/lib/desktop/icons/HighContrastInverse/16x16/mimetypes
+@dirrm %%T%%/lib/desktop/icons/HighContrastInverse/16x16/apps
+@dirrm %%T%%/lib/desktop/icons/HighContrastInverse/16x16
+@dirrm %%T%%/lib/desktop/icons/HighContrastInverse
+@dirrm %%T%%/lib/desktop/icons/HighContrast/48x48/mimetypes
+@dirrm %%T%%/lib/desktop/icons/HighContrast/48x48/apps
+@dirrm %%T%%/lib/desktop/icons/HighContrast/48x48
+@dirrm %%T%%/lib/desktop/icons/HighContrast/16x16/mimetypes
+@dirrm %%T%%/lib/desktop/icons/HighContrast/16x16/apps
+@dirrm %%T%%/lib/desktop/icons/HighContrast/16x16
+@dirrm %%T%%/lib/desktop/icons/HighContrast
+@dirrm %%T%%/lib/desktop/icons
+@dirrm %%T%%/lib/desktop/applications
+@dirrm %%T%%/lib/desktop
+@dirrm %%T%%/lib/deploy
+@dirrm %%T%%/lib/cmm
+@dirrm %%T%%/lib/applet
+@dirrm %%T%%/lib
+@dirrm %%T%%/bin
+@dirrm %%T%%
