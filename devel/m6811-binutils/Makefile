@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The binutils cross-toolchain for the 6811
 
 NOT_FOR_ARCHS=	amd64
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 
 M68_TARGET=	m6811-elf
@@ -26,29 +26,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--program-prefix=${M68_TARGET}- \
 		--disable-nls
 
-MAN1=		${M68_TARGET}-addr2line.1 \
-		${M68_TARGET}-ar.1 \
-		${M68_TARGET}-as.1 \
-		${M68_TARGET}-c++filt.1 \
-		${M68_TARGET}-dlltool.1 \
-		${M68_TARGET}-ld.1 \
-		${M68_TARGET}-nlmconv.1 \
-		${M68_TARGET}-nm.1 \
-		${M68_TARGET}-objcopy.1 \
-		${M68_TARGET}-objdump.1 \
-		${M68_TARGET}-ranlib.1 \
-		${M68_TARGET}-readelf.1 \
-		${M68_TARGET}-size.1 \
-		${M68_TARGET}-strings.1 \
-		${M68_TARGET}-strip.1 \
-		${M68_TARGET}-windres.1
-
 INFO=		${M68_TARGET}-as \
 		${M68_TARGET}-bfd \
 		${M68_TARGET}-binutils \
 		${M68_TARGET}-ld \
 
-NO_STAGE=	yes
 post-patch:
 	# as.info -> ${M68_TARGET}-as.info
 	@${REINPLACE_CMD} -e 's|setfilename as.info|setfilename ${M68_TARGET}-as.info|' ${WRKSRC}/gas/doc/as.texinfo
