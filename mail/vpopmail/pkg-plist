@@ -74,12 +74,22 @@ vpopmail/etc/vlimits.default-dist
 %%LDAP%%@unexec if cmp -s %D/vpopmail/etc/vpopmail.ldap %D/vpopmail/etc/vpopmail.ldap-dist; then rm -f %D/vpopmail/etc/vpopmail.ldap; fi
 %%LDAP%%vpopmail/etc/vpopmail.ldap-dist
 %%LDAP%%@exec if [ ! -f %D/vpopmail/etc/vpopmail.ldap ] ; then cp -p %D/%F %B/vpopmail.ldap; fi
+%%LDAP%%@exec echo "You need to specify the LDAP connection settings in the %D/vpopmail/etc/vpopmail.ldap file" | /usr/bin/fmt
 %%MYSQL%%@unexec if cmp -s %D/vpopmail/etc/vpopmail.mysql %D/vpopmail/etc/vpopmail.mysql-dist; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi
 %%MYSQL%%vpopmail/etc/vpopmail.mysql-dist
 %%MYSQL%%@exec if [ ! -f %D/vpopmail/etc/vpopmail.mysql ] ; then cp -p %D/%F %B/vpopmail.mysql; fi
 @unexec if cmp -s %D/vpopmail/etc/vusagec.conf %D/vpopmail/etc/vusagec.conf-dist; then rm -f %D/vpopmail/etc/vusagec.conf; fi
 vpopmail/etc/vusagec.conf-dist
 @exec if [ ! -f %D/vpopmail/etc/vusagec.conf ] ; then cp -p %D/%F %B/vusagec.conf; fi
+%%SPAMASSASSIN%%@exec echo "***********************************************************************"
+%%SPAMASSASSIN%%@exec echo "Now you should add the following options to your spamd.sh startup file:"
+%%SPAMASSASSIN%%@exec echo "-v -u vpopmail"
+%%SPAMASSASSIN%%@exec echo "***********************************************************************"
+@exec /usr/sbin/chown -R vpopmail:vchkpw %D/vpopmail/bin %D/vpopmail/etc
+%%SUID_VCHKPW%%@exec /bin/chmod ug+s %D/vpopmail/bin/vchkpw
+@exec install -d -o vpopmail -g vchkpw %D/vpopmail/domains
+@exec install -d -o vpopmail -g vchkpw %D/vpopmail/lib
+@exec install -d -o vpopmail -g vchkpw %D/vpopmail/include
 vpopmail/include/client.h
 vpopmail/include/conf.h
 vpopmail/include/config.h

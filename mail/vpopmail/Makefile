@@ -3,7 +3,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.32
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
 PATCH_STRIP=	-p1
 
-NO_STAGE=	yes
 USES=		qmail gmake
 
 CONFLICTS=	vpopmail-devel-5.*
@@ -40,8 +39,8 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 		--enable-tcpserver-file=${VPOPMAIL_DIR}/etc/tcp.smtp \
 		--enable-non-root-build \
 		--enable-logging=${LOGLEVEL} \
-		--enable-vpopuser=${USERS} \
-		--enable-vpopgroup=${GROUPS}
+		--enable-vpopuser=nobody \
+		--enable-vpopgroup=nobody
 
 OPTIONS_DEFINE=	DOCS \
 		PASSWD \
@@ -393,57 +392,28 @@ pre-configure:
 	${MKDIR} ${VCFGDIR}
 
 post-install:
-	${MKDIR} ${VPOPMAIL_DIR}/etc
+	${MKDIR} ${STAGEDIR}${VPOPMAIL_DIR}/etc
 	if [ -e "${VCFGDIR}/tcp.smtp" ]; then \
-		${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${VPOPMAIL_DIR}/etc/tcp.smtp-dist; \
+	        ${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${STAGEDIR}${VPOPMAIL_DIR}/etc/tcp.smtp-dist; \
 	else \
-		${TOUCH} ${VPOPMAIL_DIR}/etc/tcp.smtp-dist; \
+	        ${TOUCH} ${STAGEDIR}${VPOPMAIL_DIR}/etc/tcp.smtp-dist; \
 	fi;
-	if [ ! -f ${VPOPMAIL_DIR}/etc/tcp.smtp ]; then \
-		${INSTALL_DATA} ${VPOPMAIL_DIR}/etc/tcp.smtp-dist ${VPOPMAIL_DIR}/etc/tcp.smtp; \
-	fi
-	if [ ! -f ${VPOPMAIL_DIR}/etc/vlimits.default ]; then \
-		${INSTALL_DATA} ${VPOPMAIL_DIR}/etc/vlimits.default-dist ${VPOPMAIL_DIR}/etc/vlimits.default; \
-	fi
-	if [ ! -f ${VPOPMAIL_DIR}/etc/vusagec.conf ]; then \
-		${INSTALL_DATA} ${VPOPMAIL_DIR}/etc/vusagec.conf-dist ${VPOPMAIL_DIR}/etc/vusagec.conf; \
-	fi
-.if ${PORT_OPTIONS:MMYSQL}
-	if [ ! -f ${VPOPMAIL_DIR}/etc/vpopmail.mysql ]; then \
-		${CP} ${VPOPMAIL_DIR}/etc/vpopmail.mysql-dist ${VPOPMAIL_DIR}/etc/vpopmail.mysql; \
-	fi
-.endif
-	${TOUCH} ${VPOPMAIL_DIR}/etc/defaultdomain
 .if ${PORT_OPTIONS:MLDAP}
-	@${ECHO_CMD} "# LDAP CONNECTION SETTINGS FOR VPOPMAIL" > ${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
-	@${ECHO_CMD} "# Line format:" >> ${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
-	@${ECHO_CMD} "# host|port|user|password|basedn" >> ${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
-	@${ECHO_CMD} "localhost|389|cn=vpopmailuser, o=vpopmail|vpoppasswd|o=vpopmail" >> ${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
-	if [ ! -f ${VPOPMAIL_DIR}/etc/vpopmail.ldap ]; then \
-		${CP} ${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist ${VPOPMAIL_DIR}/etc/vpopmail.ldap; \
-	fi
-	@${ECHO_CMD} "You need to specify the LDAP connection settings in the ${VPOPMAIL_DIR}/etc/vpopmail.ldap file"
-.endif
-	${CHOWN} -R vpopmail:vchkpw ${VPOPMAIL_DIR}/bin/ ${VPOPMAIL_DIR}/etc/
-.if ${PORT_OPTIONS:MSPAMASSASSIN}
-	${ECHO_CMD} "***********************************************************************"
-	${ECHO_CMD} "Now you should add the following options to your spamd.sh startup file:"
-	${ECHO_CMD} "-v -u vpopmail"
-	${ECHO_CMD} "***********************************************************************"
+	@${ECHO_CMD} "# LDAP CONNECTION SETTINGS FOR VPOPMAIL" > ${STAGEDIR}${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
+	@${ECHO_CMD} "# Line format:" >> ${STAGEDIR}${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
+	@${ECHO_CMD} "# host|port|user|password|basedn" >> ${STAGEDIR}${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
+	@${ECHO_CMD} "localhost|389|cn=vpopmailuser, o=vpopmail|vpoppasswd|o=vpopmail" >> ${STAGEDIR}${VPOPMAIL_DIR}/etc/vpopmail.ldap-dist
 .endif
 .if ${PORT_OPTIONS:MLDAP}
-	${MKDIR} ${VPOPMAIL_DIR}/ldap
-	${INSTALL_DATA} ${LDAP_FILES} ${VPOPMAIL_DIR}/ldap
+	${MKDIR} ${STAGEDIR}${VPOPMAIL_DIR}/ldap
+	${INSTALL_DATA} ${LDAP_FILES} ${STAGEDIR}${VPOPMAIL_DIR}/ldap
 .endif
 .if ${PORT_OPTIONS:MMAILDROP}
-	${MKDIR} ${VPOPMAIL_DIR}/maildrop
-	${INSTALL_DATA} ${MAILDROP_FILES} ${VPOPMAIL_DIR}/maildrop
-.endif
-.if ${PORT_OPTIONS:MSUID_VCHKPW}
-	${CHMOD} ug+s ${VPOPMAIL_DIR}/bin/vchkpw
+	${MKDIR} ${STAGEDIR}${VPOPMAIL_DIR}/maildrop
+	${INSTALL_DATA} ${MAILDROP_FILES} ${STAGEDIR}${VPOPMAIL_DIR}/maildrop
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${VPOPMAIL_DIR}/doc/
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${VPOPMAIL_DIR}/doc/
 .endif
 
 .include <bsd.port.mk>
