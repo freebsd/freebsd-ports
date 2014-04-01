@@ -1,0 +1,9 @@
+man/man1/amavis-stats.1.gz
+sbin/amavis-stats
+www/amavis-stats/index.php
+www/amavis-stats/amavis-stats.php
+www/amavis-stats/img/.keep
+@dirrm www/amavis-stats/img
+@dirrm www/amavis-stats
+@exec /usr/sbin/chown -R %%USERS%%:%%GROUPS%% %D/www/amavis-stats
+@exec /usr/sbin/chown %%WWWOWN%%:%%WWWGRP%% %D/www/amavis-stats/img
