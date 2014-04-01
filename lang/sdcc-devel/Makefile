@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	sdcc
-PORTVERSION=	3.3.2.2013.12.30
+PORTVERSION=	3.4.0.r2
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.fm/mirror/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-src-20131230-8930
+DISTNAME=	${PORTNAME}-src-20140331-8964
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Small Device C Compiler
@@ -18,8 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:${PORTSDIR}/d
 CONFLICTS_INSTALL=	sdcc-[0-9]*
 DESCR=		${PORTSDIR}/lang/sdcc/pkg-descr
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 OPTIONS_DEFINE= 	DEVLIB DOCS UCSIM
 OPTIONS_MULTI=		TARGETS
@@ -35,7 +34,7 @@ Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000, Toshiba TLCS-90
 
 CPPFLAGS+=	-idirafter ${LOCALBASE}/include
 CONFIGURE_ARGS= --disable-avr --disable-install-libbfd --disable-werror \
-		--disable-st7 docdir=${DOCSDIR}
+		--disable-st7 docdir=${DOCSDIR} sdcc_cv_c_fms_extensions=no
 CONFIGURE_ENV=	ARCH=""
 PORTDATA=	*
 PORTDOCS=	*
