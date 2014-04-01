@@ -3,6 +3,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +17,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
+USES=		libtool:oldver tar:bzip2
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
@@ -28,7 +28,7 @@ DOCS=		AUTHORS ChangeLog ChangeLog-2011 INSTALL NEWS README \
 INFO=		gcrypt
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--disable-asm
@@ -39,17 +39,10 @@ USE_GCC=	any
 .elif ${ARCH} == "i386"
 .if (${OSVERSION} < 900033)
 CONFIGURE_ARGS+=	--disable-aesni-support
-#workaround for FreeBSD 10.0
-.elif (${OSVERSION} >= 1000000)
-CONFIGURE_ARGS+=	--disable-asm
 .endif
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
-		${WRKSRC}/ltmain.sh
-
-pre-configure:
 	@${RM} -f ${WRKSRC}/doc/gcrypt.info*
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -59,6 +52,6 @@ post-install:
 .endif
 
 regression-test: build
-	cd ${WRKSRC} && ${MAKE} check
+	cd ${WRKSRC} && ${MAKE_CMD} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
