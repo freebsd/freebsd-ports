@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# PROVIDE: htpc-manager
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# htpc_manager_enable (bool):	Set to NO by default.
+#			Set it to YES to enable it.
+# htpc_manager_data_dir:	Directory where htpc-manager configuration
+#			data is stored.
+#			Default: %%PREFIX%%/etc/htpc-manager
+# htpc_manager_user:	The user account htpc-manager daemon runs as what
+#			you want it to be. It uses 'media' user by
+#			default. Do not sets it as empty or it will run
+#			as root.
+# htpc_manager_group:	The group account htpc-manager daemon runs as what
+#			you want it to be. It uses 'media' group by
+#			default. Do not sets it as empty or it will run
+#			as wheel.
+
+. /etc/rc.subr
+name="htpc_manager"
+rcvar="${name}_enable"
+load_rc_config $name
+
+: ${htpc_manager_enable:="NO"}
+: ${htpc_manager_user:="media"}
+: ${htpc_manager_group:="media"}
+: ${htpc_manager_dir:="%%PREFIX%%/share/htpc-manager"}
+: ${htpc_manager_data_dir:="%%PREFIX%%/etc/htpc-manager"}
+
+pidfile="$htpc_manager_data_dir/htpc-manager.pid"
+command="%%PREFIX%%/bin/python"
+command_args="$htpc_manager_dir/HTPC-Manager/Htpc.py --datadir $htpc_manager_data_dir --daemon --pid $pidfile"
+
+run_rc_command "$1"

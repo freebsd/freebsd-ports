@@ -1,0 +1,15 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+multimedia/sickbeard includes an RC script:
+%%PREFIX%%/etc/rc.d/sickbeard
+
+TO START SICKBEARD ON BOOT:
+echo 'sickbeard_enable="YES"' >> /etc/rc.conf
+
+START MANUALLY:
+%%PREFIX%%/etc/rc.d/sickbeard start
+
+Once started, visit the following to configure:
+http://localhost:8081/
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

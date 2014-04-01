@@ -1,0 +1,3 @@
+Sick Beard is a PVR for newsgroup users (with limited torrent support). It watches for new episodes of your favorite shows and when they are posted it downloads them, sorts and renames them, and optionally generates metadata for them. It currently supports NZBs.org, NZBMatrix, NZBs'R'Us, Bin-Req.com, Womble's Index, any newznab provider, and EZTV.it and retrieves show information from theTVDB.com and TVRage.com.
+
+WWW: http://sickbeard.com/

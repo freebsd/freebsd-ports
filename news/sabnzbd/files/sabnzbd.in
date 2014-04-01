@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+# PROVIDE: sabnzbd
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# sabnzbd_enable (bool):        Set to NO by default.
+#                       Set it to YES to enable it.
+# sabnzbd_data_dir:     Directory where sabnzbd configuration
+#                       data is stored.
+#                       Default: %%PREFIX%%/etc/sabnzbd
+# sabnzbd_user:         The user account sabnzbd daemon runs as what
+#                       you want it to be. It uses 'media' user by
+#                       default. Do not sets it as empty or it will run
+#                       as root.
+# sabnzbd_group:        The group account sabnzbd daemon runs as what
+#                       you want it to be. It uses 'media' group by
+#                       default. Do not sets it as empty or it will run
+#                       as wheel.
+
+. /etc/rc.subr
+name="sabnzbd"
+rcvar="${name}_enable"
+load_rc_config $name
+
+: ${sabnzbd_enable:="NO"}
+: ${sabnzbd_user:="media"}
+: ${sabnzbd_group:="media"}
+: ${sabnzbd_dir:="%%PREFIX%%/share/$name"}
+: ${sabnzbd_data_dir:="%%PREFIX%%/etc/$name"}
+
+if [ -f $sabnzbd_data_dir/config.ini ]; then
+	port=`grep -m 1 ^"port " $sabnzbd_data_dir/config.ini | tr -dc '[0-9]'`
+else
+	port=8080
+fi
+pidfile="$sabnzbd_data_dir/$name-$port.pid"
+command="%%PREFIX%%/bin/python"
+command_args="$sabnzbd_dir/SABnzbd/SABnzbd.py -s 0.0.0.0 -f $sabnzbd_data_dir/config.ini --pid $sabnzbd_data_dir -d -b 0"
+extra_commands="update"
+update_cmd="${name}_update"
+
+sabnzbd_update() {
+	if [ -n "$rc_pid" ]; then
+		run_rc_command onestop
+		running=true
+	else
+		running=false
+	fi
+	fetch -o $sabnzbd_dir/download.tar.gz http://sourceforge.net/projects/sabnzbdplus/files/latest/download
+	tar -xvf $sabnzbd_dir/download.tar.gz -C $sabnzbd_dir
+	if [ $? -eq 0 ]; then		
+		rm -r $sabnzbd_dir/download.tar.gz $sabnzbd_dir/SABnzbd
+		mv $sabnzbd_dir/SABnzbd-* $sabnzbd_dir/SABnzbd
+	fi
+	if $running; then
+		run_rc_command onestart
+	fi
+}
+
+run_rc_command "$1"

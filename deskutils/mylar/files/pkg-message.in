@@ -1,0 +1,15 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+deskutils/mylar includes an RC script:
+%%PREFIX%%/etc/rc.d/mylar
+
+TO START MYLAR ON BOOT:
+echo 'mylar_enable="YES"' >> /etc/rc.conf
+
+START MANUALLY:
+%%PREFIX%%/etc/rc.d/mylar start
+
+Once started, visit the following to configure:
+http://localhost:8090/
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

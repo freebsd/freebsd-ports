@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# PROVIDE: maraschino
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# maraschino_enable (bool):	Set to NO by default.
+#			Set it to YES to enable it.
+# maraschino_data_dir:	Directory where maraschino configuration
+#			data is stored.
+#			Default: %%PREFIX%%/etc/maraschino
+# maraschino_user:	The user account maraschino daemon runs as what
+#			you want it to be. It uses 'media' user by
+#			default. Do not sets it as empty or it will run
+#			as root.
+# maraschino_group:	The group account maraschino daemon runs as what
+#			you want it to be. It uses 'media' group by
+#			default. Do not sets it as empty or it will run
+#			as wheel.
+
+. /etc/rc.subr
+name="maraschino"
+rcvar="${name}_enable"
+load_rc_config $name
+
+: ${maraschino_enable:="NO"}
+: ${maraschino_user:="media"}
+: ${maraschino_group:="media"}
+: ${maraschino_dir:="%%PREFIX%%/share/$name"}
+: ${maraschino_data_dir:="%%PREFIX%%/etc/$name"}
+
+pidfile="$maraschino_data_dir/$name.pid"
+command="%%PREFIX%%/bin/python"
+command_args="$maraschino_dir/maraschino/Maraschino.py --datadir=$maraschino_data_dir -d --pidfile=$pidfile"
+
+run_rc_command "$1"

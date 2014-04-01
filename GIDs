@@ -202,6 +202,7 @@ bopm:*:717:
 openxpki:*:777:
 foreman_proxy:*:812:
 puppet:*:814:
+media:*:816:
 jenkins:*:818:
 openacs:*:820:
 dotlrn:*:821:

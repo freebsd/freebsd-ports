@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# PROVIDE: sickbeard
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# sickbeard_enable (bool):	Set to NO by default.
+#			Set it to YES to enable it.
+# sickbeard_data_dir:	Directory where sickbeard configuration
+#			data is stored.
+#			Default: %%PREFIX%%/etc/sickbeard
+# sickbeard_user:	The user account sickbeard daemon runs as what
+#			you want it to be. It uses 'media' user by
+#			default. Do not sets it as empty or it will run
+#			as root.
+# sickbeard_group:	The group account sickbeard daemon runs as what
+#			you want it to be. It uses 'media' group by
+#			default. Do not sets it as empty or it will run
+#			as wheel.
+
+. /etc/rc.subr
+name="sickbeard"
+rcvar="${name}_enable"
+load_rc_config $name
+
+: ${sickbeard_enable:="NO"}
+: ${sickbeard_user:="media"}
+: ${sickbeard_group:="media"}
+: ${sickbeard_dir:="%%PREFIX%%/share/$name"}
+: ${sickbeard_data_dir:="%%PREFIX%%/etc/$name"}
+
+pidfile="$sickbeard_data_dir/$name.pid"
+command="%%PREFIX%%/bin/python"
+command_args="$sickbeard_dir/Sick-Beard/SickBeard.py --config $sickbeard_data_dir/config.ini --datadir $sickbeard_data_dir -d --pidfile $pidfile -q --nolaunch"
+
+start_precmd="${name}_prestart"
+sickbeard_prestart() {
+	if [ -f $pidfile ]; then
+		if [ ! `pgrep -F $pidfile` ]; then
+			rm $pidfile
+			echo "Removing stale pidfile."
+		fi
+	fi
+}
+
+run_rc_command "$1"

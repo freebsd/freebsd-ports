@@ -1,0 +1,15 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+multimedia/htpc-manager includes an RC script:
+%%PREFIX%%/etc/rc.d/htpc-manager
+
+TO START HTPC-MANAGER ON BOOT:
+echo 'htpc_manager_enable="YES"' >> /etc/rc.conf
+
+START MANUALLY:
+%%PREFIX%%/etc/rc.d/htpc-manager start
+
+Once started, visit the following to configure:
+http://localhost:8085/
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

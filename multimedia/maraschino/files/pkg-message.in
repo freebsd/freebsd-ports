@@ -1,0 +1,15 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+multimedia/maraschino includes an RC script:
+%%PREFIX%%/etc/rc.d/maraschino
+
+TO START MARASCHINO ON BOOT:
+echo 'maraschino_enable="YES"' >> /etc/rc.conf
+
+START MANUALLY:
+%%PREFIX%%/etc/rc.d/maraschino start
+
+Once started, visit the following to configure:
+http://localhost:7000/
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
