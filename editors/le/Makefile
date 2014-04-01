@@ -3,6 +3,7 @@
 
 PORTNAME=	le
 PORTVERSION=	1.14.9
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/%SUBDIR%/ \
 		http://mirrors.rit.edu/zi/
@@ -34,7 +35,7 @@ do-install:
 .for file in ${STAGEDIR}${MISC_DATA}
 	cd ${WRKSRC}/misc && ${INSTALL_DATA} ${file} ${STAGEDIR}${DATADIR}
 .endfor
-	@(cd ${WRKSRC}/misc && ${COPYTREE_SHARE} syntax.d ${DATADIR})
+	@(cd ${WRKSRC}/misc && ${COPYTREE_SHARE} syntax.d ${STAGEDIR}${DATADIR})
 .for file in ${SRC_DATA}
 	cd ${WRKSRC}/src && ${INSTALL_DATA} ${file} ${STAGEDIR}${DATADIR}
 .endfor
