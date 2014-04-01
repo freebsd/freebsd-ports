@@ -13,6 +13,8 @@ share/icons/hicolor/64x64/apps/smplayer.png
 share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/input.conf
 %%DATADIR%%/shortcuts/default.keys
+%%DATADIR%%/shortcuts/euskara.keys
+%%DATADIR%%/translations/smplayer_ar.qm
 %%DATADIR%%/translations/smplayer_ar_SY.qm
 %%DATADIR%%/translations/smplayer_bg.qm
 %%DATADIR%%/translations/smplayer_ca.qm
@@ -20,6 +22,7 @@ share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/translations/smplayer_da.qm
 %%DATADIR%%/translations/smplayer_de.qm
 %%DATADIR%%/translations/smplayer_el_GR.qm
+%%DATADIR%%/translations/smplayer_en_GB.qm
 %%DATADIR%%/translations/smplayer_en_US.qm
 %%DATADIR%%/translations/smplayer_es.qm
 %%DATADIR%%/translations/smplayer_et.qm
@@ -30,6 +33,7 @@ share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/translations/smplayer_he_IL.qm
 %%DATADIR%%/translations/smplayer_hr.qm
 %%DATADIR%%/translations/smplayer_hu.qm
+%%DATADIR%%/translations/smplayer_id.qm
 %%DATADIR%%/translations/smplayer_it.qm
 %%DATADIR%%/translations/smplayer_ja.qm
 %%DATADIR%%/translations/smplayer_ka.qm
@@ -39,6 +43,7 @@ share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/translations/smplayer_mk.qm
 %%DATADIR%%/translations/smplayer_ms_MY.qm
 %%DATADIR%%/translations/smplayer_nl.qm
+%%DATADIR%%/translations/smplayer_nn_NO.qm
 %%DATADIR%%/translations/smplayer_pl.qm
 %%DATADIR%%/translations/smplayer_pt.qm
 %%DATADIR%%/translations/smplayer_pt_BR.qm
@@ -51,6 +56,7 @@ share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/translations/smplayer_th.qm
 %%DATADIR%%/translations/smplayer_tr.qm
 %%DATADIR%%/translations/smplayer_uk_UA.qm
+%%DATADIR%%/translations/smplayer_uz.qm
 %%DATADIR%%/translations/smplayer_vi_VN.qm
 %%DATADIR%%/translations/smplayer_zh_CN.qm
 %%DATADIR%%/translations/smplayer_zh_TW.qm
