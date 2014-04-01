@@ -34,6 +34,7 @@ bin/qpdldecode
 bin/slxdecode
 bin/xqxdecode
 bin/zjsdecode
+etc/devd/foo2zjs.conf
 foomatic/db/source/opt/foo2hbpl1-ColorMode.xml
 foomatic/db/source/opt/foo2hbpl1-ICM.xml
 foomatic/db/source/opt/foo2hbpl1-MediaType.xml
