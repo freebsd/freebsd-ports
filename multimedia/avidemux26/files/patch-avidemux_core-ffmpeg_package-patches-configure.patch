@@ -1,0 +1,14 @@
+--- /dev/null
++++ avidemux_core/ffmpeg_package/patches/configure.patch
+@@ -0,0 +1,11 @@
++--- configure.orig
+++++ configure
++@@ -4387,7 +4387,7 @@ ifndef MAIN_MAKEFILE
++ SRC_PATH:=\$(SRC_PATH:.%=..%)
++ endif
++ CC_IDENT=$cc_ident
++-ARCH=$arch
+++FFMPEG_ARCH=$arch
++ CC=$cc
++ CXX=$cxx
++ AS=$as
