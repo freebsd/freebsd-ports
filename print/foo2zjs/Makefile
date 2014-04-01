@@ -3,7 +3,7 @@
 
 PORTNAME=	foo2zjs
 PORTVERSION=	20140330
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S,$,bsam/${PORTNAME}/,}  \
@@ -20,8 +20,9 @@ PROJECTHOST=	bsdistfiles
 USE_GHOSTSCRIPT=yes
 USES=		gmake shebangfix
 SHEBANG_FILES=	msexpand
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message ${DEVDCONF_FILE}
 EXTRAFILES=	msexpand getweb
+DEVDCONF_FILE=	${PORTNAME}.conf
 
 OPTIONS_DEFINE=	DOCS
 
@@ -29,8 +30,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS|CFLAGS?|g' -e 's|^PREFIX|PREFIX?|g' ${WRKSRC}/icc2ps/Makefile
 
 post-install:
-	@cd ${WRKSRC} && \
+	cd ${WRKSRC} && \
 		${INSTALL_SCRIPT} ${EXTRAFILES} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}/etc/devd
+	cd ${WRKDIR} && \
+		${INSTALL_SCRIPT} ${DEVDCONF_FILE} ${STAGEDIR}${PREFIX}/etc/devd
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/foo2zjs-icc2ps
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ChangeLog INSTALL README manual.pdf
