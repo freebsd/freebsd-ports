@@ -5,3 +5,4 @@ lib/libopenconnect.la
 lib/libopenconnect.so
 lib/libopenconnect.so.2
 libdata/pkgconfig/openconnect.pc
+man/man8/openconnect.8.gz
