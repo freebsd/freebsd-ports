@@ -3045,10 +3045,9 @@ IGNORECMD=	${DO_NADA}
 IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}.;exit 1
 .endif
 
-.if !defined(NO_STAGE)
-_TARGETS=	check-sanity fetch checksum extract patch configure all build stage restage install reinstall package
-.else
 _TARGETS=	check-sanity fetch checksum extract patch configure all build install reinstall package
+.if !defined(NO_STAGE)
+_TARGETS+=	stage restage
 .endif
 .for target in ${_TARGETS}
 .if !target(${target})
