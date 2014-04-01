@@ -6,14 +6,18 @@ man/man1/fldigi.1.gz
 bin/fldigi-shell
 %%FLARQ%%share/applications/flarq.desktop
 share/applications/fldigi.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/es/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/it/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/fldigi.mo
-%%FLARQ%%share/pixmaps/flarq.xpm
-share/fldigi/NAVTEX_Stations.csv
 share/pixmaps/fldigi.xpm
+%%DATADIR%%/NAVTEX_Stations.csv
+%%DATADIR%%/ToR-Stats-SHIP.csv
+%%DATADIR%%/nsd_bbsss.txt
+%%DATADIR%%/station_table.txt
+%%FLARQ%%share/pixmaps/flarq.xpm
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/guide.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/fldigi
+@dirrm %%DATADIR%%
