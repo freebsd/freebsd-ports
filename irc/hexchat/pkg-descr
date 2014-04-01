@@ -1,8 +1,9 @@
 HexChat is an IRC chat program.
-It allows you to join multiple IRC channels (chat rooms) at the same time,
-talk publicly, private one-on-one conversations etc.
+It allows you to join multiple IRC channels (chat rooms) at
+the same time, talk publicly, private one-on-one conversations etc.
 
-HexChat is based on XChat, but unlike XChat it's completely free for both
-Windows and Unix-like systems. Since XChat is open source, it's perfectly legal.
+HexChat is based on XChat, but unlike XChat it's completely
+free for both Windows and Unix-like systems.
+Since XChat is Open Source, it's perfectly legal.
 
-WWW: http://www.hexchat.org/
+WWW: http://hexchat.github.io/

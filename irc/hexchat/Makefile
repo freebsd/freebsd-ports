@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hexchat
@@ -14,13 +14,13 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
-USE_XZ=		yes
-USES=		gmake desktop-file-utils pkgconfig
+USES=		gmake desktop-file-utils pkgconfig tar:xz
 USE_GNOME=	gtk20 libxml2
 USE_AUTOTOOLS=	automake autoconf libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-openssl --enable-gtkfe --disable-sysinfo \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
+MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 INSTALLS_ICONS=	yes
 
 LDFLAGS+=	-pthread
@@ -29,7 +29,8 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		CANBERRA DBUS DOAT DOCS FISHLIM NLS NOTIFY PERL PYTHON SOCKS TEXTFE XFT
+OPTIONS_DEFINE=		CANBERRA DBUS DOAT DOCS FISHLIM NLS NOTIFY PERL \
+			PYTHON SOCKS TEXTFE XFT
 
 OPTIONS_RADIO=		SPELL
 OPTIONS_RADIO_SPELL=	GTKSPELL LIBSEXY STATIC
@@ -102,13 +103,14 @@ USE_GNOME+=	gconf2
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/autogen.sh
 	@${REINPLACE_CMD} -e '/^appdata_DATA/s|hexchat.appdata.xml||' \
-		 ${WRKSRC}/share/misc/Makefile.am ${WRKSRC}/share/misc/Makefile.in
+		${WRKSRC}/share/misc/Makefile.am ${WRKSRC}/share/misc/Makefile.in
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
 
 post-install:
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
