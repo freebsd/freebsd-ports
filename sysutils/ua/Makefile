@@ -3,17 +3,20 @@
 PORTNAME=	ua
 PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://mirror.shatow.net/freebsd/${PORTNAME}/
+MASTER_SITES=	GITHUB
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finds sets of identical files
 
 LICENSE=	GPLv2
 
-DEPRECATED=	No upstream, unmaintained
-EXPIRATION_DATE=2014-07-01
+USE_GITHUB=	yes
+GH_ACCOUNT=	euedge
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	7a35148
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf aclocal automake autoheader
+AUTOMAKE_ARGS+=	--add-missing
 PLIST_FILES=	bin/kua bin/ua \
 		man/man1/kua.1.gz man/man1/ua.1.gz
 PORTDOCS=	README
