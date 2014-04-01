@@ -1,0 +1,5 @@
+Virtual Exim is a PHP and SQL based approach to hosting multiple email domains
+using Exim. Exim is used to collect mail for local users, and an SQL backend is
+used as a data store for users passwords, and other configuration information.
+
+WWW: http://silverwraith.com/vexim/
