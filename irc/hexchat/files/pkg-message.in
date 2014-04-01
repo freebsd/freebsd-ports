@@ -2,6 +2,10 @@
 
 HexChat has been installed.
 
-For spelling to work you must install Aspell dictionary for your Language.
+If you want spell-check to work, you need to install Aspell
+dictionary for your language.
+
+For FiSH Protection it is best to use irc/py-fishcrypt, HexChat has one
+Option FiSHLiM which doesn't work good.
 
 ===============================================================================
