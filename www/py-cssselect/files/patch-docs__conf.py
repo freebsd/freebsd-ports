@@ -1,8 +1,10 @@
---- ./docs/conf.py.orig	2012-07-16 23:28:27.000000000 +0200
-+++ ./docs/conf.py	2012-07-16 23:28:52.000000000 +0200
-@@ -247,4 +247,4 @@
+--- ./docs/conf.py.orig	2014-04-01 22:42:52.000000000 +0200
++++ ./docs/conf.py	2014-04-01 22:43:15.000000000 +0200
+@@ -244,7 +244,3 @@
  
- 
- # Example configuration for intersphinx: refer to the Python standard library.
+ # How to display URL addresses: 'footnote', 'no', or 'inline'.
+ #texinfo_show_urls = 'footnote'
+-
+-
+-# Example configuration for intersphinx: refer to the Python standard library.
 -intersphinx_mapping = {'http://docs.python.org/': None}
-+intersphinx_mapping = {'http://docs.python.org/': '%%DISTDIR%%/%%PORTNAME%%/objects.inv'}
