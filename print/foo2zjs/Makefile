@@ -3,6 +3,7 @@
 
 PORTNAME=	foo2zjs
 PORTVERSION=	20140330
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S,$,bsam/${PORTNAME}/,}  \
@@ -32,7 +33,7 @@ post-install:
 		${INSTALL_SCRIPT} ${EXTRAFILES} ${STAGEDIR}${PREFIX}/bin
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/foo2zjs-icc2ps
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for FILE in ChangeLog README manual.pdf
+.for FILE in ChangeLog INSTALL README manual.pdf
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 

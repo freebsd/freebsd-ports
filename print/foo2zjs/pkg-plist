@@ -307,6 +307,7 @@ share/cups/model/Xerox-Phaser_6121MFP.ppd.gz
 share/cups/model/Xerox-WorkCentre_3045.ppd.gz
 share/cups/model/Xerox-WorkCentre_6015.ppd.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
 share/foo2qpdl/crd/CLP-300-1200x1200cms2
