@@ -3,12 +3,15 @@
 PORTNAME=	ua
 PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
+MASTER_SITES=	http://mirror.shatow.net/freebsd/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finds sets of identical files
 
 LICENSE=	GPLv2
+
+DEPRECATED=	No upstream, unmaintained
+EXPIRATION_DATE=2014-07-01
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/kua bin/ua \
