@@ -52319,7 +52319,8 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>php5-dtc</name>
 	<name>php5-horde</name>
 	<name>php5-nms</name>
-	<range><ge>0</ge></range>
+	<range><ge>4</ge><lt>4.4.7</lt></range>
+	<range><ge>5</ge><lt>5.2.2</lt></range>
       </package>
     </affects>
     <description>
@@ -52375,7 +52376,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2007-05-03</discovery>
       <entry>2007-05-07</entry>
-      <modified>2007-05-10</modified>
+      <modified>2014-04-01</modified>
     </dates>
   </vuln>
 
@@ -53628,7 +53629,8 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>php5-dtc</name>
 	<name>php5-horde</name>
 	<name>php5-nms</name>
-	<range><ge>0</ge></range>
+	<range><ge>4</ge><lt>4.4.5</lt></range>
+	<range><ge>5</ge><lt>5.2.1_2</lt></range>
       </package>
     </affects>
     <description>
@@ -53659,7 +53661,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2007-02-09</discovery>
       <entry>2007-02-17</entry>
-      <modified>2007-03-12</modified>
+      <modified>2013-04-01</modified>
     </dates>
   </vuln>
 
@@ -55691,7 +55693,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>php5-horde</name>
 	<name>php5-nms</name>
 	<name>mod_php5</name>
-	<range><ge>0</ge></range>
+	<range><ge>5</ge><lt>5.1.6_1</lt></range>
       </package>
     </affects>
     <description>
@@ -55725,7 +55727,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2006-09-30</discovery>
       <entry>2006-10-06</entry>
-      <modified>2006-10-17</modified>
+      <modified>2013-04-01</modified>
     </dates>
   </vuln>
 
@@ -55888,7 +55890,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>php4</name>
 	<name>php5</name>
 	<range><lt>4.4.4_1</lt></range>
-	<range><ge>5.*</ge><lt>5.1.6_2</lt></range>
+	<range><ge>5</ge><lt>5.1.6_2</lt></range>
       </package>
       <package>
 	<name>php-suhosin</name>
@@ -55907,7 +55909,8 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>php5-nms</name>
 	<name>mod_php4</name>
 	<name>mod_php5</name>
-	<range><ge>0</ge></range>
+	<range><ge>4</ge><lt>4.4.4_1</lt></range>
+	<range><ge>5</ge><lt>5.1.6_2</lt></range>
       </package>
     </affects>
     <description>
@@ -55947,7 +55950,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2006-10-02</discovery>
       <entry>2006-10-05</entry>
-      <modified>2006-10-16</modified>
+      <modified>2013-04-01</modified>
     </dates>
   </vuln>
 
