@@ -1,4 +1,2 @@
-SHA256 (cssselect/cssselect-0.7.1.tar.gz) = 74f411a349fcfb676b68336fcae8799ba9fbb0a0446562f544dee019fb0e2ae7
-SIZE (cssselect/cssselect-0.7.1.tar.gz) = 30480
-SHA256 (cssselect/objects.inv) = ed23f7aa1326b6f9b9dce41f452a9a0dff6da38f6e66c8a4cf4f164553947943
-SIZE (cssselect/objects.inv) = 114160
+SHA256 (cssselect-0.9.1.tar.gz) = 0535a7e27014874b27ae3a4d33e8749e345bdfa62766195208b7996bf1100682
+SIZE (cssselect-0.9.1.tar.gz) = 32952
