@@ -3,7 +3,7 @@
 
 PORTNAME=	openconnect
 PORTVERSION=	5.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/
@@ -22,15 +22,12 @@ CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--without-openssl-version-check
 USE_AUTOTOOLS=	aclocal autoconf automake libtool
-USES=		pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 USE_OPENSSL=	yes
 ACLOCAL_ARGS=	-I .
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 PORTDOCS=	*
-
-MAN8=		openconnect.8
 
 OPTIONS_DEFINE=	PROXY GNUTLS
 
