@@ -93,6 +93,7 @@
     SUBDIR += frontbase
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
+    SUBDIR += galera
     SUBDIR += gdbm
     SUBDIR += geoserver-mysql-plugin
     SUBDIR += gigabase
