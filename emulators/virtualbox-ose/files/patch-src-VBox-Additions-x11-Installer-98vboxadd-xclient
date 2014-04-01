@@ -1,6 +1,6 @@
---- src/VBox/Additions/x11/Installer/98vboxadd-xclient.orig	2010-09-10 14:24:55.000000000 +0200
-+++ src/VBox/Additions/x11/Installer/98vboxadd-xclient	2010-12-29 20:42:00.000000000 +0100
-@@ -28,8 +28,8 @@
+--- src/VBox/Additions/x11/Installer/98vboxadd-xclient.orig	2014-03-26 15:12:42.000000000 -0400
++++ src/VBox/Additions/x11/Installer/98vboxadd-xclient	2014-04-01 13:38:20.000000000 -0400
+@@ -30,8 +30,8 @@
  xorgbin=Xorg
  found=`which Xorg | grep "no Xorg"`
  if test ! -z "$found"; then
@@ -11,7 +11,7 @@
      else
          exit 1
      fi
-@@ -40,9 +40,9 @@
+@@ -42,11 +42,11 @@
      no_display=1
  fi
  
@@ -25,3 +25,6 @@
  test -z "$no_display" &&
 -    /usr/bin/VBoxClient --seamless
 +    /usr/local/bin/VBoxClient --seamless
+ test -z "$no_display" &&
+-    /usr/bin/VBoxClient --draganddrop
++    /usr/local/bin/VBoxClient --draganddrop
