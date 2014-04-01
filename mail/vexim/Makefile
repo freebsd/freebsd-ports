@@ -29,7 +29,6 @@ OPTIONS_MULTI_DB=	MYSQL PGSQL
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	MYSQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -48,24 +47,24 @@ post-patch:
 
 do-install:
 	@${ECHO} "Installing in ${VEXIMDIR}"
-	${MKDIR} ${PREFIX}/${VEXIMDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${VEXIMDIR}
 	cd ${WRKSRC}/vexim && ${FIND} . \
-		-type d -exec ${MKDIR} ${PREFIX}/${VEXIMDIR}/{} \;  \
+		-type d -exec ${MKDIR} ${STAGEDIR}${PREFIX}/${VEXIMDIR}/{} \;  \
 		-o -type f \
-		-exec ${INSTALL_DATA} {} ${PREFIX}/${VEXIMDIR}/{} \;
-	${MKDIR} ${DATADIR}
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/${VEXIMDIR}/{} \;
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/setup && ${FIND} . \
-		-type d -exec ${MKDIR} ${DATADIR}/{} \; \
+		-type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \; \
 		-o -type f \
-		-exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${FIND} docs \
-		-type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+		-type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
 		-o -type f \
-		-exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 .for i in INSTALL README TODO
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
