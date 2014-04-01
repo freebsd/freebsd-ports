@@ -18,6 +18,11 @@
     SUBDIR += avbin
     SUBDIR += avidemux2
     SUBDIR += avidemux2-plugins
+    SUBDIR += avidemux26
+    SUBDIR += avidemux26-cli
+    SUBDIR += avidemux26-gtk
+    SUBDIR += avidemux26-plugins
+    SUBDIR += avidemux26-qt4
     SUBDIR += avinfo
     SUBDIR += bangarang
     SUBDIR += banshee

@@ -1,44 +1,49 @@
 # $FreeBSD$
-#
 
-AVIDEMUX2_VERSION=	2.5.6
-PORTREVISION=	5
-MASTER_SITES=	BERLIOS \
+AVIDEMUX2_VERSION=	2.6.8
+PORTREVISION=	0
+MASTER_SITES=	\
 		SF/avidemux/avidemux/${PORTVERSION}
 DISTNAME=	avidemux_${PORTVERSION}
 
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm \
+		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
-		liba52.so:${PORTSDIR}/audio/liba52 \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libdca.so:${PORTSDIR}/multimedia/libdca \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+		libpng15.so:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2
 
-CONFLICTS=	avidemux2-2.[0-46-9].* avidemux26-*
+CONFLICTS=	avidemux2-*
 
 USE_GNOME=	libxml2
 USE_QT4=	# empty
 
+OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options
+
+USE_SQLITE=	yes
 WANT_SDL=	yes
 USES=		cmake:outsource pkgconfig iconv gmake compiler:features
-CMAKE_USE_PTHREAD=yes
-CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:STRING="${PTHREAD_LIBS}"
-CFLAGS+=	-Wno-return-type
+USES+=		dos2unix
+DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake po/CMakeLists.txt
+CMAKE_ARGS+=	-DGNUMAKE_EXECUTABLE=gmake
+CMAKE_ARGS+=    -DAVIDEMUX_PACKAGER=none
+CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
-OPTIONS_DEFINE=	GTK2 QT4 FREETYPE FONTCONFIG OSS ESOUND JACK PULSEAUDIO XVIDEO FAAC \
-		FAAD X264 VPX XVID SDL AMR VORBIS NLS LAME
-OPTIONS_DEFAULT=	GTK2 FREETYPE FONTCONFIG OSS XVIDEO VPX XVID SDL FAAD VORBIS
+OPTIONS_DEFINE=	QT4 CLI FREETYPE FONTCONFIG OSS ESOUND JACK \
+		PULSEAUDIO XVIDEO FAAC \
+		FAAD X264 VPX XVID SDL AMR VORBIS NLS LAME VDPAU
+OPTIONS_DEFAULT=	QT4 FREETYPE FONTCONFIG OSS XVIDEO VPX XVID \
+			SDL FAAD VORBIS
+CLI_DESC=	Build CLI tool
 
 .if !defined(PACKAGE_BUILDING)
-OPTIONS_DEFAULT+=	LAME FAAC AMR
+OPTIONS_DEFAULT+=	LAME FAAC AMR X264
 .endif
 
 .include <bsd.port.options.mk>
@@ -63,27 +68,37 @@ PLIST_SUB+=	NLS="@comment " QT_NLS="@comment "
 LDFLAGS+=	-lc++
 .endif
 
-.if ${COMPILER_TYPE} == clang
+#.if ${COMPILER_TYPE} == clang
 USE_GCC=	yes
-.endif
+#.endif
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top
 # of the stack)
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fno-omit-frame-pointer
+#MAKE_ENV+=	ARCH=x86_64
+#CONFIGURE_ENV+=	ARCH=x86_64
+.endif
+.if ${OSVERSION} < 1000000
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+CMAKE_ARGS+=	-DLIBEXECINFO_INCLUDE_DIR=${LOCALBASE}/include
+CMAKE_ARGS+=	-DLIBEXECINFO_LIBRARY_DIR=${LOCALBASE}/lib/libexecinfo.so
+.else
+CMAKE_ARGS+=	-DLIBEXECINFO_INCLUDE_DIR=/usr/include
+CMAKE_ARGS+=	-DLIBEXECINFO_LIBRARY_DIR=-lexecinfo
 .endif
 
 # We haven't ALSA(Never) & Aften(Yet) on FreeBSD
 CMAKE_ARGS+=	-DARTS:BOOL=OFF -DALSA:BOOL=OFF -DAFTEN:BOOL=OFF
 
-.if empty(PORT_OPTIONS:MGTK2) && empty(PORT_OPTIONS:MQT4)
+.if empty(PORT_OPTIONS:MGTK3) && empty(PORT_OPTIONS:MQT4)
 CMAKE_ARGS+=	-DX11:BOOL=OFF
 .else
-USE_GNOME+=	libxslt desktopfileutils
+USE_GNOME+=	libxslt
 .endif
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gnomeprefix gnomehack gtk20
+.if ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=	gnomeprefix gnomehack gtk30
 PLIST_SUB+=	GTK=""
 .else
 CMAKE_ARGS+=	-DGTK:BOOL=OFF
@@ -97,6 +112,12 @@ PLIST_SUB+=	QT4=""
 .else
 CMAKE_ARGS+=	-DQT4:BOOL=OFF
 PLIST_SUB+=	QT4="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MCLI}
+PLIST_SUB+=	CLI=""
+.else
+PLIST_SUB+=	CLI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOSS}
@@ -184,8 +205,10 @@ PLIST_SUB+=	X264="@comment "
 
 .if ${PORT_OPTIONS:MVPX}
 LIB_DEPENDS+=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+PLIST_SUB+=	VPX=""
 .else
 CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF
+PLIST_SUB+=	VPX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXVID}
@@ -202,6 +225,14 @@ PLIST_SUB+=	SDL=""
 .else
 CMAKE_ARGS+=	-DSDL:BOOL=OFF
 PLIST_SUB+=	SDL="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MVDPAU}
+LIB_DEPENDS+=   libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+PLIST_SUB+=	VDPAU=""
+.else
+CMAKE_ARGS+=	-DVDPAU:BOOL=OFF
+PLIST_SUB+=	VDPAU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
@@ -227,18 +258,11 @@ PLIST_SUB+=	AMRWB="@comment "
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-post-extract:
-	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
-		${WRKSRC}/avidemux/ADM_libraries/ADM_mplex/ADM_mplexout.cpp
-
 post-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/*/*/Makefile
-	@${REINPLACE_CMD} '/--enable-shared/s,,& --cc=${CC},' ${WRKSRC}/cmake/admFFmpegBuild.cmake
-	@${REINPLACE_CMD} '/sub $$1/s,sub,subl,' ${WRKSRC}/plugins/ADM_videoFilters/FluxSmooth/ADM_vidFlux.cpp
-	@${CP} ${FILESDIR}/execinfo.cpp ${WRKSRC}/cmake_compile_check/
-	@${CP} ${FILESDIR}/*.patch ${WRKSRC}/cmake/patches/
 	@${MKDIR} ${CONFIGURE_WRKSRC}/config
 	@${LN} -s ${LOCALBASE}/include/iconv.h ${CONFIGURE_WRKSRC}/config
+	@${REINPLACE_CMD} 's|-ldl||' ${WRKSRC}/avidemux_core/CMakeLists.txt
 
 post-configure-common:
-	@${FIND} ${CONFIGURE_WRKSRC}/avidemux -name link.txt -print0 |${XARGS} -0 ${REINPLACE_CMD} 's|-ldl||'
+	@${FIND} ${CONFIGURE_WRKSRC} -name link.txt -print0 |${XARGS} -0 ${REINPLACE_CMD} 's|-ldl||g'
