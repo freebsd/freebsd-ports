@@ -9,3 +9,14 @@
  	#include <sys/byteorder.h>
  	#include <sys/types.h>
  	#include <unistd.h>
+@@ -223,7 +223,9 @@
+ 
+ 	// FreeBSD
+ 	#ifdef __FreeBSD__
+-		#include <machine/endian.h>
++		#undef ushort
++		#undef uint
++		#include <sys/types.h>
+ 	#endif
+ 
+ 	// XXX: Is there anything to include on OpenBSD/NetBSD/DragonFlyBSD/...?
