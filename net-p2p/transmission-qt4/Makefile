@@ -37,7 +37,7 @@ do-install:
 		${SETENV} INSTALL_ROOT=${STAGEDIR}${PREFIX} ${MAKE} install)
 
 post-install: general-install
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/qt/README.txt \
 		${STAGEDIR}${DOCSDIR}/README-qt4
 	@${INSTALL_DATA} ${WRKSRC}/qt/transmission-qt.desktop \
