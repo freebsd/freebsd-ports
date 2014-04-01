@@ -216,7 +216,6 @@
     SUBDIR += pdfjam
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
-    SUBDIR += pdfmod
     SUBDIR += pdftk
     SUBDIR += pdq
     SUBDIR += pear-File_PDF

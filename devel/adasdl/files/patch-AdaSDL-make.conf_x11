@@ -1,9 +1,0 @@
---- AdaSDL/make.conf_x11.orig	Wed Apr 11 03:22:12 2001
-+++ AdaSDL/make.conf_x11	Sat Dec 21 02:23:24 2002
-@@ -1,5 +1,5 @@
- #LIBS= -L/usr/lib -L/usr/local/lib ~/lib -Wl,-rpath,. -lSDL -lpthread -L/usr/lib -lGL -lGLU
--LIBS= -L/usr/lib -L/usr/local/lib -L~/lib  -lSDL -lpthread -lGL -lGLU
-+LIBS= -L/usr/lib -L${LOCALBASE}/lib -L~/lib  -lSDL -pthread -lGL -lGLU
- GNATHTML=/usr/local/bin/gnathtml.pl
- PERL=/usr/bin/perl
- EXE=

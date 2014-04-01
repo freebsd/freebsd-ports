@@ -5853,3 +5853,13 @@ www/trac-macropost||2014-03-30|Has expired: No more public distfiles
 mail/vexim||2014-03-30|Has expired: No more public distfiles
 lang/rscheme||2014-03-30|Has expired: No more public distfiles
 emulators/xmame||2014-03-30|Has expired: No more public distfiles
+devel/hyena||2014-04-01|Has expired: Broken for more than 6 month
+print/pdfmod||2014-04-01|Has expired: Depends on expired devel/hyena, unstaged, uses old standards
+security/gnutls-devel||2014-04-01|Has expired: Stale, broken and vulnerable
+sysutils/epylog||2014-04-01|Has expired: distfiles no longer fetchable
+japanese/Wnn6||2014-04-01|Has expired: Unmaintained, interactive and restricted
+japanese/srd-fpw||2014-04-01|Has expired: Unmaintained, interactive and restricted
+japanese/mypaedia-fpw||2014-04-01|Has expired: Unmaintained, interactive and restricted
+news/dnews||2014-04-01|Has expired: Unmaintained, interactive and restricted
+devel/adasdl|devel/sdl_gnat|2014-04-01|Has expired: Ancient, does not build on amd64; use devel/sdl_gnat instead
+lang/gnat|lang/gcc-aux|2014-04-01|Has expired: The Ada framework is based on lang/gcc-aux, use it instead

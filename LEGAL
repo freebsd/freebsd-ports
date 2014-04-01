@@ -75,7 +75,6 @@ djbfft-*		math/djbfft		No license -- see http://cr.yp.to/softwarelaw.html
 dlv			lang/dlv		Not sure if we can redistribute it
 dmd-*			lang/dmd		No redistribution of non validated binaries
 dn*.tgz			emulators/darcnes	Commercial use is restricted
-dnews_*			news/dnews		Only free for schools and universities, but they have to register as well.  4 weeks of free trial for everybody We currently ask for permission to put a package on the CD-ROM
 doom3-linux-*		games/linux-doom3	Redistribution is limited, see license; Requested by id Software
 doom3-linux-*		games/linux-doom3-demo	Redistribution is limited, see license; Requested by id Software
 doomsrc.zip		games/doom		Redistribution is limited, see license; Requested by id Software
@@ -185,7 +184,6 @@ mindfocus-*		games/mindfocus		Contains commercial character data
 mindterm-*		security/mindterm-binary Do not sell for profit
 molden*			biology/molden		Free for academic, non-profit usage; do not redistribute source and executable
 msql-*			databases/msql		Not free for commercial organizations
-mypaedia-*		japanese/mypaedia-fpw	The original dictionary is not free
 ncftpd-*		ftp/ncftpd		30 day evaluation license
 nero2_linux_*		games/linux-nerogame	Freeware, but license terms are unclear
 NeroDigitalAudio.zip	audio/linux-neroaaccodec Redistribution forbidden
@@ -196,7 +194,6 @@ nntpcache-*		news/nntpcache		Free for individuals and non-military, non-profit o
 nttcp-*			benchmarks/nttcp	No commercial use
 nwresources*.tar.gz	games/nwndata		Distribution not allowed
 ofb06trial.tgz		editors/softmaker-office  distribution with other products of any kind forbiden
-OMRONWnn6.tgz		japanese/Wnn6		You should buy from Omron Software Co., Ltd.
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from CARDCAPTOR SAKURA
 OptimFROG*		audio/optimfrog		No commercial use
 oracle/*		databases/jdbc-oracle10g	This software is under license and export controls
@@ -237,7 +234,6 @@ simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Not for redistribution
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
-srd-fpw*		japanese/srd-fpw	The original dictionary is not free
 stat.tar.Z		math/unixstat		License does not allow redistribution of binaries
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
 stuffit*		archivers/stuffit	Shareware -- should not redistribute

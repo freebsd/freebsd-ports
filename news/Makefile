@@ -12,7 +12,6 @@
     SUBDIR += cnews
     SUBDIR += crashmail
     SUBDIR += diablo
-    SUBDIR += dnews
     SUBDIR += fidogate
     SUBDIR += fidogate-ds
     SUBDIR += golded+

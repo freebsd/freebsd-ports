@@ -1,8 +1,0 @@
---- AdaSDL_image/make.conf_x11.orig	Wed Apr 11 03:36:30 2001
-+++ AdaSDL_image/make.conf_x11	Sat Dec 21 02:18:39 2002
-@@ -1,4 +1,4 @@
- #LIBS= -L/usr/lib -L/usr/local/lib ~/lib -Wl,-rpath,. -lSDL -lpthread -L/usr/lib -lGL -lGLU
--LIBS= -L/usr/lib -L/usr/local/lib -L~/lib  -lSDL_image -lSDL -lpthread -lGL -lGLU
-+LIBS= -L/usr/lib -L${LOCALBASE}/lib -L~/lib  -lSDL_image -lSDL -pthread -lGL -lGLU
- 
- EXE=

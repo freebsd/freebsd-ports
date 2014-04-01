@@ -213,7 +213,6 @@
     SUBDIR += enteruser
     SUBDIR += entr
     SUBDIR += env4801
-    SUBDIR += epylog
     SUBDIR += eroaster
     SUBDIR += etcmerge
     SUBDIR += etcupdate
