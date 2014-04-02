@@ -1,0 +1,15 @@
+include/qjsonrpc/json/qjson_export.h
+include/qjsonrpc/json/qjsonarray.h
+include/qjsonrpc/json/qjsondocument.h
+include/qjsonrpc/json/qjsonobject.h
+include/qjsonrpc/json/qjsonvalue.h
+include/qjsonrpc/qjsonrpc_export.h
+include/qjsonrpc/qjsonrpcmessage.h
+include/qjsonrpc/qjsonrpcservice.h
+lib/libqjsonrpc.so
+lib/libqjsonrpc.so.1
+lib/libqjsonrpc.so.1.0
+lib/libqjsonrpc.so.1.0.0
+libdata/pkgconfig/qjsonrpc.pc
+@dirrm include/qjsonrpc/json
+@dirrm include/qjsonrpc

@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 post-patch:
 	@${REINPLACE_CMD} \

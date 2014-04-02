@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-gln64
 
 COMMENT=	The glN64 graphics plugin for Mupen64
 
+BROKEN=		Fails to build
 USE_GL=		yes
 USE_SDL=	sdl
 

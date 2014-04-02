@@ -1,5 +1,5 @@
---- foo2oak-wrapper.in.orig	2011-01-15 02:21:39.000000000 +0300
-+++ foo2oak-wrapper.in	2011-06-19 21:24:46.175611255 +0400
+--- foo2oak-wrapper.in.orig	2011-08-07 20:49:30.000000000 +0400
++++ foo2oak-wrapper.in	2014-03-31 13:01:56.689807500 +0400
 @@ -35,13 +35,6 @@ PREFIX=/usr
  SHARE=$PREFIX/share/foo2oak
  PATH=$PATH:/sw/bin:/opt/local/bin
@@ -25,7 +25,7 @@
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -701,19 +694,6 @@ $PREFILTER \
+@@ -705,19 +698,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO -D$DEBUG
  
  #

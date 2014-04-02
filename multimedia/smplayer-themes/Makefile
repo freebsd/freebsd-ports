@@ -2,25 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	smplayer-themes
-PORTVERSION=	20120919
+PORTVERSION=	20131003
 CATEGORIES=	multimedia audio kde
-MASTER_SITES=	SF/smplayer/SMPlayer-themes/${PORTVERSION}
+MASTER_SITES=	SF/smplayer/SMPlayer-themes/${PORTVERSION}/
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Themes for SMPlayer
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/smplayer
 
-PORTDOCS=	Changelog
-
+PORTDOCS=	Changelog README.txt
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' \
-		${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

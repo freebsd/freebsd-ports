@@ -17,10 +17,10 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 
-CPPFLAGS+=	-I${LOCALBASE}/include -w
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README README.russian TODO
+PORTDOCS=	AUTHORS ChangeLog NEWS README README.russian
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -34,9 +34,6 @@ DESKTOP_ENTRIES="GtkBalls" "" ${PORTNAME} \
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gnome-gtkballs.png  \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-
-	${CHMOD} 664 ${STAGEDIR}${DATADIR}/gtkballs-scores
-	${CHOWN} root:games ${STAGEDIR}${DATADIR}/gtkballs-scores
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

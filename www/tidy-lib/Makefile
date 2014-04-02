@@ -12,5 +12,4 @@ MASTERDIR=	${.CURDIR}/../../www/tidy-devel
 
 WITH_SHLIB=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

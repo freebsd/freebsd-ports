@@ -1,4 +1,3 @@
-Ruby bindins for Fast Fourier Transforms by using FFTW Ver.3.
+Ruby bindings for Fast Fourier Transforms by using FFTW Ver.3.
 
-Author:	Takeshi Horinouchi <horinout _at_ ees.hokudai.ac.jp>
-WWW:	http://ruby.gfd-dennou.org/products/ruby-fftw3/
+WWW: http://ruby.gfd-dennou.org/products/ruby-fftw3/

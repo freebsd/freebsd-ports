@@ -9,4 +9,4 @@ successfully parsed, you are guaranteed an Integer when you request that
 parameter's value from your program. There's a pretty big (and growing) list of
 return types supported by JSAP.
 
-WWW:	http://www.martiansoftware.com/jsap/index.html
+WWW: http://www.martiansoftware.com/jsap/index.html

@@ -26,7 +26,6 @@ DATADIR=	${PREFIX}/share/Maelstrom
 DOCSDIR=	${PREFIX}/share/doc/Maelstrom
 
 PORTDOCS=	*
-
 OPTIONS_DEFINE=	DOCS
 
 DOCS_INSTALL_TARGET=install install_gamedocs

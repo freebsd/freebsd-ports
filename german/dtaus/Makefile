@@ -20,8 +20,11 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 do-configure:
-	 ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
+	${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
 		${WRKSRC}/bigint.c ${WRKSRC}/dtaus.c
+	${REINPLACE_CMD} -e 's|^CC =|CC?=|' \
+		 -e 's|^CFLAGS =|CFLAGS+=|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dtaus ${STAGEDIR}${PREFIX}/bin/

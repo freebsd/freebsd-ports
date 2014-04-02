@@ -19,10 +19,6 @@ INFO=		${PORTNAME}
 PORTDOCS=	gnulib.html
 PORTDATA=	*
 
-.ifdef		NOPORTDATA
-IGNORE=		gnulib requires port data, unset NOPORTDATA to install
-.endif
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

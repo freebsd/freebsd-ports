@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack intlhack ltverhack glib20
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=  libtool
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -D_IPP_PRIVATE_STRUCTURES
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

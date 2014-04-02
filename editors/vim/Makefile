@@ -37,11 +37,14 @@ REINPLACE_ARGS=	-i ''
 USES=		iconv pkgconfig shebangfix tar:bzip2
 WANT_GNOME=	yes
 
-PATCHLEVEL=	205
+PATCHLEVEL=	229
 PATCHFILES!=	/usr/bin/jot -s " " -w "%03d" ${PATCHLEVEL} 1 ${PATCHLEVEL}
-BADPATCHES=	064 087 147 # empty
-.for p in ${BADPATCHES}
+POSTPONED_PATCHES=	064 087 147	# patch files postponed to apply in post-patch:
+SKIPPED_PATCHES=	208		# patch files to be skipped
+.for p in ${POSTPONED_PATCHES}
 DISTFILES+=	${PORTVERSION:R}.${p}:patch
+.endfor
+.for p in ${POSTPONED_PATCHES} ${SKIPPED_PATCHES}
 PATCHFILES:=	${PATCHFILES:N${p}}
 .endfor
 PATCHFILES:=	${PATCHFILES:C/^/${PORTVERSION:R}./g}
@@ -139,9 +142,9 @@ MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-python3interp --disable-pythoninterp"
 post-patch:
 	@${REINPLACE_CMD} -e '/^install_normal: / s|install-icons|# &|; /cd $$(DEST_BIN); ln -s/d' ${WRKSRC}/src/Makefile
 	@${FIND} ${WRKSRC}/runtime/ -name menu\*.vim -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's,ctags -R \\.,${CTAGS_CMD},g'
-.for badpatch in ${BADPATCHES}
-	@${ECHO_MSG} "===>   Applying distribution patch ${badpatch}"
-	@${PATCH} ${PATCH_DIST_ARGS} -i ${_DISTDIR}/${PORTVERSION:R}.${badpatch}
+.for p in ${POSTPONED_PATCHES}
+	@${ECHO_MSG} "===>   Applying distribution patch ${p}"
+	@${PATCH} ${PATCH_DIST_ARGS} -i ${_DISTDIR}/${PORTVERSION:R}.${p}
 .endfor
 
 pre-configure:

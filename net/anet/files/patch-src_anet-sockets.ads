@@ -6,7 +6,7 @@
  
 +   procedure Set_Multicast_Interface
 +     (Socket : Socket_Type;
-+      IPAddr : IPv4_Addr_type);
++      IPAddr : IPv4_Addr_Type);
 +   --  Set multicast interface socket option for IPv4
 +
 +   procedure Set_Multicast_Interface

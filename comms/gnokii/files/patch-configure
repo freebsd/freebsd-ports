@@ -1,5 +1,5 @@
 --- configure.orig	2011-12-02 15:54:03.000000000 +0100
-+++ configure	2011-12-09 16:57:35.591360321 +0100
++++ configure	2014-03-28 12:32:41.264513620 +0100
 @@ -955,7 +955,7 @@
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
@@ -61,7 +61,7 @@
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lbluetooth  $LIBS"
-+LIBS="-sdp -lbluetooth  $LIBS"
++LIBS="-lsdp -lbluetooth  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  

@@ -1,0 +1,34 @@
+include/pcscada/pcsc-scard-conversion.adb
+include/pcscada/pcsc-scard-conversion.ads
+include/pcscada/pcsc-scard-monitor.adb
+include/pcscada/pcsc-scard-monitor.ads
+include/pcscada/pcsc-scard-utils.adb
+include/pcscada/pcsc-scard-utils.ads
+include/pcscada/pcsc-scard.adb
+include/pcscada/pcsc-scard.ads
+include/pcscada/pcsc-thin-ifdhandler.ads
+include/pcscada/pcsc-thin-reader.ads
+include/pcscada/pcsc-thin.adb
+include/pcscada/pcsc-thin.ads
+include/pcscada/pcsc-version.ads
+include/pcscada/pcsc.ads
+lib/gnat/pcscada.gpr
+lib/pcscada/libpcscada.a
+lib/pcscada/pcsc-scard-conversion.ali
+lib/pcscada/pcsc-scard-monitor.ali
+lib/pcscada/pcsc-scard-utils.ali
+lib/pcscada/pcsc-scard.ali
+lib/pcscada/pcsc-thin-ifdhandler.ali
+lib/pcscada/pcsc-thin-reader.ali
+lib/pcscada/pcsc-thin.ali
+lib/pcscada/pcsc-version.ali
+lib/pcscada/pcsc.ali
+%%PORTDOCS%%%%DOCSDIR%%/html/CHANGELOG.html
+%%PORTDOCS%%%%DOCSDIR%%/html/README.html
+%%PORTDOCS%%%%DOCSDIR%%/html/asciidoc.css
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm lib/pcscada
+@dirrmtry lib/gnat
+@dirrm include/pcscada

@@ -3,6 +3,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.36
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -39,10 +40,9 @@ CONFIGURE_ARGS=	--localstatedir=/var --sysconfdir=${PREFIX}/etc \
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PAM_DIR=${PAM_DIR} PAM_TARGET=${PAM_TARGET}
-USE_BZIP2=	yes
 USE_PERL5=	run
 USE_RC_SUBR=	pure-ftpd
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:bzip2
 
 PORTDOCS=	AUTHORS CONTACT COPYING HISTORY NEWS README \
 		README.Authentication-Modules README.Configuration-File \
@@ -105,6 +105,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-pgsql.conf ${STAGEDIR}${PREFIX}/etc/pureftpd-pgsql.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-ftpd.conf ${STAGEDIR}${PREFIX}/etc/pure-ftpd.conf.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/configuration-file/pure-config.pl ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${FILESDIR}/pure-alwaysfail ${STAGEDIR}${PREFIX}/sbin/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/

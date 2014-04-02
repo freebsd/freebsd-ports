@@ -1,0 +1,22 @@
+--- ./Makefile.orig	1993-04-19 01:07:07.000000000 +0200
++++ ./Makefile	2014-03-30 16:43:16.320680044 +0200
+@@ -36,8 +36,8 @@
+ # lptops program expects them to reside in files without a ".afm"
+ # suffix.
+ #
+-DEPTH=..
+-include ${DEPTH}/defs
++AFMDIR=${PREFIX}/lib/afm
++INSTALL=install
+ 
+ AFMFILES=\
+ 	AvantGarde-Book.afm \
+@@ -80,6 +80,7 @@
+ 	${NULL}
+ 
+ install: ${AFMFILES}
++	[ -d ${DESTDIR}${AFMDIR} ] || mkdir ${DESTDIR}${AFMDIR}
+ 	for i in ${AFMFILES}; do \
+-	    ${INSTALL} -F ${AFMDIR} -m 444 -src $$i -O `basename $$i .afm`; \
++	    ${INSTALL} -c -m 444 $$i  ${DESTDIR}${AFMDIR}/`basename $$i .afm`; \
+ 	done

@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A (C)SLIP/PPP emulator for users with shell accounts
 
+BROKEN=		Does not build
+
 # serious LP64 issues
 ONLY_FOR_ARCHS=	i386
 

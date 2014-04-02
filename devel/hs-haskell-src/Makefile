@@ -2,7 +2,7 @@
 
 PORTNAME=	haskell-src
 PORTVERSION=	1.0.1.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

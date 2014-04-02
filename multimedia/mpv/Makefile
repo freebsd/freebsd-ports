@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.7
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://waf.googlecode.com/files/:1
@@ -23,7 +22,7 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	76d771a
+GH_COMMIT=	2758bc4
 
 WAF_VERSION=	1.7.15
 

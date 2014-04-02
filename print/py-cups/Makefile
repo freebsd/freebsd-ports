@@ -20,10 +20,9 @@ LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PYDISTUTILS_AUTOPLIST=	yes
-USE_BZIP2=	yes
 USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
-USES=		iconv
+USES=		iconv tar:bzip2
 
 .include <bsd.port.pre.mk>
 

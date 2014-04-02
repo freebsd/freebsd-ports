@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/adopt-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/create-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/fix-broken.html
@@ -403,7 +404,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mythtv.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-aggregation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-apache.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-atm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-bluetooth.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-bridging.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-communication.html
@@ -423,6 +423,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-samba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-servers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-syslogd.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-usb-tethering.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-wireless.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/nutshell.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/one-time-passwords.html

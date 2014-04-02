@@ -8,19 +8,20 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C++ binding to the GuiLoader library
+COMMENT=	C++ binding to the GuiLoader library
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	guiloader.1:${PORTSDIR}/devel/guiloader \
-		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libguiloader.so:${PORTSDIR}/devel/guiloader \
+		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
 PROJECTHOST=	nothing-personal
-USE_BZIP2=	yes
-USES=		pathfix gettext pkgconfig
+USES=		gettext pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-hidden-visibility
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libguiloader-c++.so.1
+
 .include <bsd.port.mk>

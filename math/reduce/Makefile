@@ -31,8 +31,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-HMAN1=	redcsl.1
-
 .if ${ARCH} == "amd64"
 TARGET_SDIR=	x86_64-unknown-${OPSYS:L}${OSREL}
 .else

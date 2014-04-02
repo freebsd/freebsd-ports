@@ -1,5 +1,5 @@
 --- ./Makefile.orig	2013-12-28 17:42:18.000000000 +0100
-+++ ./Makefile	2014-01-15 20:20:49.000000000 +0100
++++ ./Makefile	2014-03-30 19:00:15.799562742 +0200
 @@ -34,9 +34,9 @@
  datadir = $(datarootdir)
  bindir = $(exec_prefix)/bin
@@ -13,9 +13,14 @@
  
  NEWD=$(PACKAGENAME)-$(VERSION)
  COMPILEDATE=$(shell date '+%Y-%m-%d')
-@@ -103,9 +103,9 @@
- 	-chgrp games $(bindir)/$(EXENAME)
- 	chmod g+s $(bindir)/$(EXENAME)
+@@ -100,12 +100,12 @@
+ install:	all
+ 	$(INSTALL) -d $(bindir) $(gamesdir)
+ 	$(INSTALL) $(EXENAME) $(bindir)
+-	-chgrp games $(bindir)/$(EXENAME)
+-	chmod g+s $(bindir)/$(EXENAME)
++#	-chgrp games $(bindir)/$(EXENAME)
++#	chmod g+s $(bindir)/$(EXENAME)
  	$(MAKE) -C data install
 -	touch $(gamesdir)/rockdodger.scores
 -	-chgrp games $(gamesdir)/rockdodger.scores

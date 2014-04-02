@@ -16,10 +16,7 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 USE_GNOME=	gtk20
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
+BROKEN=		Does not compile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

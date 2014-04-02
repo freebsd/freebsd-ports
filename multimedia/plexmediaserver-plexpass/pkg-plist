@@ -1502,6 +1502,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.revision3/URL/Revision3/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rottentomatoes/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rottentomatoes/URL/RottenTomatoes/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rt/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rt/URL/RT/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rtbf/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rtbf/URL/RTBF/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rtlxl/ServiceInfo.plist
@@ -1522,6 +1524,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.skysports/URL/SkySports/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice/URL/Slice/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sohutv/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sohutv/URL/Sohu TV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.soundcloud/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.soundcloud/URL/SoundCloud/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.southpark/ServiceInfo.plist
@@ -2018,6 +2022,7 @@
 %%DATADIR%%/Resources/Profiles/Opera.xml
 %%DATADIR%%/Resources/Profiles/Panasonic Viera 3D TV.xml
 %%DATADIR%%/Resources/Profiles/PlayStation 3.xml
+%%DATADIR%%/Resources/Profiles/Plex Home Theater-RaspberryPi.xml
 %%DATADIR%%/Resources/Profiles/Plex Home Theater.xml
 %%DATADIR%%/Resources/Profiles/Popcorn Hour.xml
 %%DATADIR%%/Resources/Profiles/Roku-3.1.xml
@@ -2736,7 +2741,7 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/usedoctest.py
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/pyOpenSSL-0.11-py2.7.egg-info
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/python_cjson-1.0.5-py2.7.egg-info
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/setuptools-0.6c11-py2.7.egg
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/setuptools-3.3-py2.7.egg
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/setuptools.pth
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-2.1.5-py2.7-freebsd-9.1-RELEASE-amd64.egg
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/site.py
@@ -2922,7 +2927,6 @@
 %%DATADIR%%/libxslt.so.2
 %%DATADIR%%/libz.so.1
 %%DATADIR%%/libzen.so.0
-%%DATADIR%%/start.sh
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/xml/sax
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/xml/parsers
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/xml/etree
@@ -3246,6 +3250,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.soundcloud/URL/SoundCloud
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.soundcloud/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.soundcloud
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sohutv/URL/Sohu TV
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sohutv/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sohutv
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice/URL/Slice
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice
@@ -3276,6 +3283,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rtbf/URL/RTBF
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rtbf/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rtbf
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rt/URL/RT
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rt/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rt
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rottentomatoes/URL/RottenTomatoes
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rottentomatoes/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rottentomatoes

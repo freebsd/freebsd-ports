@@ -1,0 +1,11 @@
+--- cmake/admCheckMiscLibs.cmake.orig
++++ cmake/admCheckMiscLibs.cmake
+@@ -67,7 +67,7 @@
+ MESSAGE(STATUS "Checking for execinfo")
+ MESSAGE(STATUS "*********************")
+ 
+-FIND_HEADER_AND_LIB(execinfo execinfo.h execinfo backtrace_symbols)
++FIND_HEADER_AND_LIB(EXECINFO execinfo.h execinfo backtrace_symbols)
+ PRINT_LIBRARY_INFO("execinfo" EXECINFO_FOUND "${LIBEXECINFO_INCLUDE_DIR}" "${LIBEXECINFO_LIBRARY_DIR}")
+ 
+ IF (LIBEXECINFO_INCLUDE_DIR)

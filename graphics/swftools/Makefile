@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.swftools.org/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SWF manipulation and generation utilities
 
 LICENSE=	GPLv2
@@ -19,8 +19,6 @@ LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-
-NO_STAGE=	yes
 
 USES=		pkgconfig gmake
 USE_GL=		glut
@@ -33,6 +31,10 @@ MAN1=		as3compile.1 font2swf.1 gif2swf.1 jpeg2swf.1 pdf2swf.1 \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+BINFILES=	as3compile font2swf gif2swf jpeg2swf pdf2swf png2swf \
+		swfbbox swfc swfcombine swfdump swfextract swfrender \
+		swfstrings wav2swf
 
 OPTIONS_DEFINE=	LAME PDF
 OPTIONS_SUB=	yes
@@ -47,6 +49,7 @@ CONFIGURE_ENV+=	ac_cv_lib_mp3lame_lame_init=no
 
 .if ${PORT_OPTIONS:MPDF}
 MAN1+=		pdf2pdf.1
+BINFILES+=	pdf2pdf
 .else
 CONFIGURE_ENV+=	ac_cv_lib_pdf_PDF_open_file=no
 .endif
@@ -58,5 +61,17 @@ post-patch:
 		 s|/usr/local/lib|${LOCALBASE}/lib|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e '/python/d ; \
 		 /avi2swf/d' ${WRKSRC}/Makefile.in
+
+do-install:
+.for i in ${BINFILES}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${i} ${STAGEDIR}${PREFIX}/bin/
+.endfor
+.for i in ${MAN1}
+	${INSTALL_DATA} ${WRKSRC}/src/${i} ${STAGEDIR}${PREFIX}/man/man1/
+.endfor
+	${MKDIR} ${STAGEDIR}${DATADIR}/swfs
+	${INSTALL_DATA} ${WRKSRC}/swfs/*.swf ${STAGEDIR}${DATADIR}/swfs/
+	${LN} -s simple_viewer.swf ${STAGEDIR}${DATADIR}/swfs/default_viewer.swf
+	${LN} -s tessel_loader.swf ${STAGEDIR}${DATADIR}/swfs/default_loader.swf
 
 .include <bsd.port.mk>

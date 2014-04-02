@@ -17,21 +17,18 @@ USE_BZIP2=	yes
 USES=		perl5
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}/help
-	@${INSTALL_DATA} ${WRKSRC}/help/* ${DATADIR}/help
-	@${MKDIR} ${DATADIR}/data
-	@${INSTALL_DATA} ${WRKSRC}/data/* ${DATADIR}/data
-	@${INSTALL_SCRIPT} ${WRKSRC}/slrnconf ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/help
+	${INSTALL_DATA} ${WRKSRC}/help/* ${STAGEDIR}${DATADIR}/help
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data
+	${INSTALL_DATA} ${WRKSRC}/data/* ${STAGEDIR}${DATADIR}/data
+	${INSTALL_SCRIPT} ${WRKSRC}/slrnconf ${STAGEDIR}${PREFIX}/bin
 .for i in preferences.pm rc_grammar.pm ui.pm
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ABOUT COPYING README
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,16 @@
+--- ./lib/Makefile.in.orig	2014-03-27 23:56:38.000000000 -0400
++++ ./lib/Makefile.in	2014-03-27 23:57:13.000000000 -0400
+@@ -363,13 +363,6 @@
+ 	  $(INSTALL_DATA) $$list2 "$(DESTDIR)$(libdir)" || exit $$?; }
+ 	@$(POST_INSTALL)
+ 	@list='$(lib_LIBRARIES)'; test -n "$(libdir)" || list=; \
+-	for p in $$list; do \
+-	  if test -f $$p; then \
+-	    $(am__strip_dir) \
+-	    echo " ( cd '$(DESTDIR)$(libdir)' && $(RANLIB) $$f )"; \
+-	    ( cd "$(DESTDIR)$(libdir)" && $(RANLIB) $$f ) || exit $$?; \
+-	  else :; fi; \
+-	done
+ 
+ uninstall-libLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)

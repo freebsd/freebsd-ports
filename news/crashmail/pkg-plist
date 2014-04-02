@@ -5,6 +5,6 @@ bin/crashmail
 bin/crashmaint
 bin/crashstats
 bin/crashwrite
-etc/crashmail/example.prefs
-etc/crashmail/areafix.help
-@dirrm etc/crashmail
+%%ETCDIR%%/example.prefs
+%%ETCDIR%%/areafix.help
+@dirrm %%ETCDIR%%

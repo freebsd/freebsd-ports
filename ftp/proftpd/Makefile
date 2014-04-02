@@ -176,7 +176,7 @@ MODULES+=		mod_memcache \
 			mod_tls_memcache
 LIB_DEPENDS+=		memcached:${PORTSDIR}/databases/libmemcached
 CONFIGURE_ARGS+=	--enable-memcache
-PROFTPD_LIBS+=		-lmemcached -lmemcachedutil
+PROFTPD_LIBS+=		-L${LOCALBASE}/lib -lmemcached -lmemcachedutil
 PLIST_SUB+=	MEMCACHE=""
 .else
 CONFIGURE_ARGS+=	--disable-memcache

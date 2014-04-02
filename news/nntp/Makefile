@@ -51,6 +51,9 @@ post-extract:
 	${CP} ${WRKSRC}/conf.h.dist ${WRKSRC}/conf.h
 
 pre-configure:
+	# fix for compiler with broken namespace
+	${REINPLACE_CMD} -e 's|\([(! 	]\)log\([)+ 	]\)|\1dolog\2|g' \
+		${WRKSRC}/server/msgidd.c
 	${REINPLACE_CMD} ${ALONE} \
 		-e "s=/usr/local/news/lib/bin/config=${NEWSBIN}/config=" \
 		-e "s=/usr/local/news/cnewsbin=${NEWSBIN}=" \

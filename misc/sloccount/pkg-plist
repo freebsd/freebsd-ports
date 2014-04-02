@@ -38,3 +38,4 @@ bin/show_filecount
 bin/sloccount
 bin/sql_count
 bin/tcl_count
+man/man1/sloccount.1.gz

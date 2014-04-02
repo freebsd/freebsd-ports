@@ -364,7 +364,6 @@
     SUBDIR += linphone-base
     SUBDIR += linux-f10-nss_ldap
     SUBDIR += linux-f10-openldap
-    SUBDIR += linux-nx-client
     SUBDIR += linuxigd
     SUBDIR += liveMedia
     SUBDIR += lla
@@ -565,6 +564,7 @@
     SUBDIR += p5-Net-Cassandra-Easy
     SUBDIR += p5-Net-DAV-Server
     SUBDIR += p5-Net-DHCP
+    SUBDIR += p5-Net-DHCP-Watch
     SUBDIR += p5-Net-DHCPClient
     SUBDIR += p5-Net-DLookup
     SUBDIR += p5-Net-Daemon
@@ -964,6 +964,7 @@
     SUBDIR += pyrad
     SUBDIR += pythondirector
     SUBDIR += qadsl
+    SUBDIR += qjsonrpc
     SUBDIR += qoauth
     SUBDIR += qt4-network
     SUBDIR += qt5-network

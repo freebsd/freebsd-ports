@@ -13,6 +13,7 @@
     SUBDIR += aide
     SUBDIR += aimsniff
     SUBDIR += amap
+    SUBDIR += amavis-stats
     SUBDIR += amavisd-milter
     SUBDIR += amavisd-new
     SUBDIR += aolserver-nsencrypt
@@ -161,7 +162,6 @@
     SUBDIR += gnupg
     SUBDIR += gnupg1
     SUBDIR += gnutls
-    SUBDIR += gnutls-devel
     SUBDIR += gnutls3
     SUBDIR += go.crypto
     SUBDIR += gorilla

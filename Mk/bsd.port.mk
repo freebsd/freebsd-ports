@@ -1132,6 +1132,22 @@ NOTPHONY?=
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
+.if defined(X_BUILD_FOR)
+BUILD_DEPENDS=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
+# Do not define CPP on purpose
+CC=		${X_BUILD_FOR}-cc
+CXX=	${X_BUILD_FOR}-c++
+LD=		${X_BUILD_FOR}-ld
+AS=		${X_BUILD_FOR}-as
+NM=		${X_BUILD_FOR}-nm
+STRIP_CMD=	${X_BUILD_FOR}-strip
+CFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
+CXXFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
+LDFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
+CONFIGURE_ENV+=	LD=${LD} AS=${AS} NM=${NM}
+MAKE_ENV+=	LD=${LD} AS=${AS} NM=${NM}
+.endif
+
 #
 # DESTDIR section to start a chrooted process if invoked with DESTDIR set
 #
@@ -1597,7 +1613,9 @@ MAKE_ENV+=	DONTSTRIP=yes
 STRIP_CMD=	${TRUE}
 DEBUG_FLAGS?=	-g
 CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}
+.if defined(INSTALL_TARGET)
 INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
+.endif
 .endif
 
 .if defined(WITH_SSP) || defined(WITH_SSP_PORTS)
@@ -2755,6 +2773,9 @@ GNU_CONFIGURE_PREFIX?=	${PREFIX}
 GNU_CONFIGURE_MANPREFIX?=	${MANPREFIX}
 CONFIG_SITE?=		${PORTSDIR}/Templates/config.site
 CONFIGURE_ARGS+=	--prefix=${GNU_CONFIGURE_PREFIX} $${_LATE_CONFIGURE_ARGS}
+.if defined(X_BUILD_FOR)
+CONFIGURE_ARGS+=	--host=${X_BUILD_FOR}
+.endif
 CONFIGURE_ENV+=		CONFIG_SITE=${CONFIG_SITE} lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
 
@@ -3043,10 +3064,9 @@ IGNORECMD=	${DO_NADA}
 IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}.;exit 1
 .endif
 
-.if !defined(NO_STAGE)
-_TARGETS=	check-sanity fetch checksum extract patch configure all build stage restage install reinstall package
-.else
 _TARGETS=	check-sanity fetch checksum extract patch configure all build install reinstall package
+.if !defined(NO_STAGE)
+_TARGETS+=	stage restage
 .endif
 .for target in ${_TARGETS}
 .if !target(${target})
@@ -5700,7 +5720,8 @@ add-plist-info:
 # If we're installing into a non-standard PREFIX, we need to remove that directory at
 # deinstall-time
 .if !target(add-plist-post)
-.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
+.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && \
+    ${PREFIX} != "/usr" && !defined(NO_PREFIX_RMDIR))
 add-plist-post:
 	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
 .endif
@@ -6418,6 +6439,9 @@ _TARGETS_STAGES=	SANITY PKG FETCH EXTRACT PATCH CONFIGURE BUILD INSTALL PACKAGE
 _TARGETS_STAGES+=	STAGE
 .endif
 
+# Define the SEQ of actions to take when each target is ran, and which targets
+# it depends on before running its SEQ.
+
 _SANITY_SEQ=	post-chroot pre-everything check-makefile \
 				show-warnings show-dev-warnings show-dev-errors \
 				check-categories check-makevars check-desktop-entries \
@@ -6530,8 +6554,17 @@ _${_t}_REAL_SUSEQ+=	${s}
 .ORDER: ${_${_t}_DEP} ${_${_t}_REAL_SEQ}
 .endfor
 
+# Define all of the main targets which depend on a sequence of other targets.
+# See above *_SEQ and *_DEP. The _DEP will run before this defined target is
+# ran. The _SEQ will run as this target once _DEP is satisfied.
+
 .for target in extract patch configure build stage install package
 
+# Check if config dialog needs to show and execute it if needed. If is it not
+# needed (_OPTIONS_OK), then just depend on the cookie which is defined later
+# to depend on the *_DEP and execute the *_SEQ.
+# If options are required, execute config-conditional and then re-execute the
+# target noting that config is no longer needed.
 .if !target(${target}) && defined(_OPTIONS_OK)
 _PHONY_TARGETS+= ${target}
 ${target}: ${${target:U}_COOKIE}
@@ -6543,38 +6576,42 @@ ${target}: config-conditional
 
 .if !exists(${${target:U}_COOKIE})
 
+# Define the real target behavior. Depend on the target's *_DEP. Execute
+# the target's *_SEQ. Also handle su and USE_SUBMAKE needs.
 .if ${UID} != 0 && defined(_${target:U}_REAL_SUSEQ) && !defined(INSTALL_AS_USER)
-.if defined(USE_SUBMAKE)
+.  if defined(USE_SUBMAKE)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
 	@cd ${.CURDIR} && ${MAKE} ${_${target:U}_REAL_SEQ}
-.else
+.  else  # !USE_SUBMAKE
 ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_REAL_SEQ}
-.endif
+.  endif # USE_SUBMAKE
 	@${ECHO_MSG} "===>  Switching to root credentials for '${target}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${_${target:U}_REAL_SUSEQ}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
-.elif defined(USE_SUBMAKE)
+.else # No SU needed
+.  if defined(USE_SUBMAKE)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
 	@cd ${.CURDIR} && \
 		${MAKE} ${_${target:U}_REAL_SEQ} ${_${target:U}_REAL_SUSEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
-.else
+.  else # !USE_SUBMAKE
 ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_REAL_SEQ} ${_${target:U}_REAL_SUSEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
-.endif
+.  endif # USE_SUBMAKE
+.endif # SU needed
 
-.else
+.else # exists(cookie)
 ${${target:U}_COOKIE}::
 	@if [ -e ${.TARGET} ]; then \
 		${DO_NADA}; \
 	else \
 		cd ${.CURDIR} && ${MAKE} ${.TARGET}; \
 	fi
-.endif
+.endif # !exists(cookie)
 
-.endfor
+.endfor # foreach(targets)
 
 .PHONY: ${_PHONY_TARGETS} check-sanity fetch pkg
 

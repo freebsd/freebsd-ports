@@ -12,7 +12,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reliable, highly configurable mail transfer agent with utilities
 
 CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-*
-NO_STAGE=	yes
+NEED_ROOT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
@@ -94,9 +94,7 @@ CONFLICTS2!=	${MAKE_PKGNAMES} | grep -v "${PORTNAME}${PKGNAMESUFFIX}-8."
 CONFLICTS+=	${CONFLICTS2}
 
 # Build site.config.m4
-.if exists(${DESTDIR}/etc/mail/mailer.conf)
 SITE+=	${FILESDIR}/site.config.m4
-.endif
 .if ${PORT_OPTIONS:MIPV6}
 SITE+=	${FILESDIR}/site.config.m4.ipv6
 .endif
@@ -111,12 +109,6 @@ SITE+=	${FILESDIR}/site.config.m4.milter
 .endif
 .if ${PORT_OPTIONS:MTLS}
 USE_OPENSSL=	yes
-.endif
-
-# install directly if no mailwrapper support
-.if ! exists(${DESTDIR}/etc/mail/mailer.conf)
-PREFIX?=	/usr
-MANPREFIX?=	/usr/share
 .endif
 
 .if ${PORT_OPTIONS:MMILTER}
@@ -203,15 +195,16 @@ do-configure:
 .endif
 
 post-build:
-	( cd ${WRKSRC}/doc/op && ${MAKE} op.txt )
+	(cd ${WRKSRC}/doc/op && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} op.txt)
 .if ${PORT_OPTIONS:MMILTER}
-	@(cd ${BUILD_WRKSRC}/libmilter; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	(cd ${BUILD_WRKSRC}/libmilter; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .if ${PORT_OPTIONS:MMILTER_SHARED}
-	@(cd ${BUILD_WRKSRC}/libsharedmilter; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	(cd ${BUILD_WRKSRC}/libsharedmilter; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .endif
 .endif
 
 pre-install:
+	${MKDIR} ${STAGEDIR}/etc/mail
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
 .if ${PORT_OPTIONS:MMILTER}
 	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
@@ -238,61 +231,57 @@ pre-install:
 # We want mail.local and rmail for our system.
 # the build install catmans only, we have to fix this.
 post-install:
-	( cd ${WRKSRC}/mail.local && ${MAKE} force-install )
-	( cd ${WRKSRC}/rmail && ${MAKE} force-install )
+	(cd ${WRKSRC}/mail.local && \
+	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} force-install)
+	(cd ${WRKSRC}/rmail && \
+	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} force-install)
 .if ${PORT_OPTIONS:MMILTER}
-	${MKDIR} ${PREFIX}/include/libmilter
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/libmilter
 	${INSTALL_DATA} ${WRKSRC}/include/libmilter/mfapi.h \
 		${WRKSRC}/include/libmilter/mfdef.h \
-		${PREFIX}/include/libmilter/
+		${STAGEDIR}${PREFIX}/include/libmilter/
 	${INSTALL_DATA} \
 	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libmilter/libmilter.a \
-	 ${PREFIX}/lib/
+	 ${STAGEDIR}${PREFIX}/lib/
 .if ${PORT_OPTIONS:MMILTER_SHARED}
 	${INSTALL_SCRIPT} \
 	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libsharedmilter/libmilter.so \
-	 ${PREFIX}/lib/libmilter.so.${MILTER_SOVER}
-	${LN} -sf libmilter.so.${MILTER_SOVER} ${PREFIX}/lib/libmilter.so
+	 ${STAGEDIR}${PREFIX}/lib/libmilter.so.${MILTER_SOVER}
+	${LN} -sf libmilter.so.${MILTER_SOVER} \
+		${STAGEDIR}${PREFIX}/lib/libmilter.so
 .endif
 .endif
-	${CHOWN} smmsp:smmsp /var/spool/clientmqueue
-	${CHMOD} 770 /var/spool/clientmqueue
 .for i in ${MAN8}
-	@${RM} -f ${MANPREFIX}/man/cat8/${i} ${MANPREFIX}/man/cat8/${i}.gz
-	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man8/
 .endfor
 .for i in ${MAN5}
-	@${RM} -f ${MANPREFIX}/man/cat5/${i} ${MANPREFIX}/man/cat5/${i}.gz
-	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man5/
 .endfor
 .for i in ${MAN1}
-	@${RM} -f ${MANPREFIX}/man/cat1/${i} ${MANPREFIX}/man/cat1/${i}.gz
-	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man1/
 .endfor
-	${MKDIR} ${PREFIX}/share/sendmail
-	@${TAR} -C ${WRKSRC} -cf - cf | \
-		${TAR} -C ${PREFIX}/share/sendmail -xf -
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/sendmail
+	${TAR} -C ${WRKSRC} -cf - cf | \
+		${TAR} -C ${STAGEDIR}${PREFIX}/share/sendmail -xf -
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/op/op.ps ${DOCSDIR}/op.ps
-	${INSTALL_DATA} ${WRKSRC}/doc/op/op.txt ${DOCSDIR}/op.txt
-	${INSTALL_DATA} ${WRKSRC}/devtools/README ${DOCSDIR}/DEVTOOLS
-	${INSTALL_DATA} ${WRKSRC}/sendmail/README ${DOCSDIR}/SENDMAIL
-	${INSTALL_DATA} ${WRKSRC}/mail.local/README ${DOCSDIR}/MAIL.LOCAL
-	${INSTALL_DATA} ${WRKSRC}/smrsh/README ${DOCSDIR}/SMRSH
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/op/op.ps ${STAGEDIR}${DOCSDIR}/op.ps
+	${INSTALL_DATA} ${WRKSRC}/doc/op/op.txt ${STAGEDIR}${DOCSDIR}/op.txt
+	${INSTALL_DATA} ${WRKSRC}/devtools/README ${STAGEDIR}${DOCSDIR}/DEVTOOLS
+	${INSTALL_DATA} ${WRKSRC}/sendmail/README ${STAGEDIR}${DOCSDIR}/SENDMAIL
+	${INSTALL_DATA} ${WRKSRC}/mail.local/README ${STAGEDIR}${DOCSDIR}/MAIL.LOCAL
+	${INSTALL_DATA} ${WRKSRC}/smrsh/README ${STAGEDIR}${DOCSDIR}/SMRSH
 .if ${PORT_OPTIONS:MMILTER}
-	${INSTALL_DATA} ${WRKSRC}/libmilter/README ${DOCSDIR}/MILTER
-	${MKDIR} ${DOCSDIR}/libmilter
-	@${TAR} -C ${WRKSRC}/libmilter/docs -cf - . | \
-		${TAR} -C ${DOCSDIR}/libmilter -xf -
+	${INSTALL_DATA} ${WRKSRC}/libmilter/README ${STAGEDIR}${DOCSDIR}/MILTER
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/libmilter
+	${TAR} -C ${WRKSRC}/libmilter/docs -cf - . | \
+		${TAR} -C ${STAGEDIR}${DOCSDIR}/libmilter -xf -
 .endif
 .if ${PORT_OPTIONS:MCYRUSLOOKUP}
-	${INSTALL_DATA} ${FILESDIR}/CYRUS_LOOKUP ${DOCSDIR}/CYRUS_LOOKUP
+	${INSTALL_DATA} ${FILESDIR}/CYRUS_LOOKUP ${STAGEDIR}${DOCSDIR}/CYRUS_LOOKUP
 .endif
 .endif
-.if exists(${DESTDIR}/etc/mail/mailer.conf)
-	@${CAT} ${PKGMESSAGE}
 
 mailer.base:
 	@${SED} \
@@ -317,7 +306,6 @@ mailer.conf:
 	 ${DESTDIR}/etc/mail/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
 	${MV} ${DESTDIR}/etc/mail/mailer.conf.new \
 		${DESTDIR}/etc/mail/mailer.conf
-.endif
 
 # create sumbit.cf on older systems
 #
@@ -379,7 +367,7 @@ SITE+=	${FILESDIR}/site.config.m4.tls
 SITE+=	${FILESDIR}/site.config.m4.local
 .endif
 
-.if exists(${DESTDIR}/etc/mail/mailer.conf) && ${PREFIX} == "/usr"
+.if ${PREFIX} == "/usr"
 pre-everything::
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# You can't override the base sendmail this way."

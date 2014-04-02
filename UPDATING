@@ -5,12 +5,47 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140402:
+  AFFECTS: users of textproc/elasticsearch
+  AUTHOR: tj@FreeBSD.org
+
+  Elasticsearch has been updated to version 1.1.0. If you are updating 
+  from a version prior to 1.0.0 you will need to do a full cluster 
+  shutdown for this update as it can not be performed in a rolling
+  fashion.
+
+20140401:
+  AFFECTS: users of security/gnutls3
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Libdane support is no longer enabled by default.  Rebuild the port with
+  the LIBDANE option if danetool is desired.
+
+20140331:
+  AFFECTS: users of print/cups-client and print/cups-image
+  AUTHOR: bsam@FreeBSD.org
+
+  CUPS ports have been updated to version 1.7.1. A file has migrated from
+  cups-image port to cups-client. Before upgrading you should force the
+  removal of cups-image port, otherwise it will conflict with the new one.
+
+  pkg users:
+  # pkg delete -f cups-image\*
+
+  other users:
+  # pkg_delete -f cups-image\*
+
+  2. Install/upgrade other cups* packages.
+
+  If cups-filters complains about a missing cups/raster.h include,
+  try reinstalling the cups-client package.
+
 20140327:
   AFFECTS: users of lang/php5 and lang/php55 with Apache module
   AUTHOR: ale@FreeBSD.org
 
-  The Apache PHP module has been splitted from main PHP port, so if you
-  are using it you should install one of www/mod_php5 or www/mod_php55.
+  The Apache PHP module has been separated from the main PHP port.
+  If it is needed, install either www/mod_php5 or www/mod_php55.
 
 20140322:
   AFFECTS: users of devel/apr1

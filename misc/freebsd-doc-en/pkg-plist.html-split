@@ -34,6 +34,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/google-analytics.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/if-in-doubt.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/kerberos-ldap.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/misc.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/non-committers.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/people.html
@@ -280,6 +281,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-sample-module.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-terms.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/trademarks.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pgpkeys/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pgpkeys/pgpkeys-core.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pgpkeys/pgpkeys-developers.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pgpkeys/pgpkeys-other.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/anatomy.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/build-maintenance.html
@@ -683,7 +688,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-inline-glossary.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backup-basics.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backups-tapebackups.html
@@ -701,10 +705,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bibliography-userguides.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bibliography.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/book-preface.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-blocks.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-boot0.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-init.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-introduction.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-shutdown.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-final-warning.html
@@ -721,12 +724,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/common-tasks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/config-network-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/config-tuning.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-appconfig.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-configfiles.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-core-configuration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-cron.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-disk.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-initial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-kernel-limits.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-rcd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-starting-services.html
@@ -738,8 +738,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-dvds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ctm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/current-stable.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvs-tags.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvsup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-browsers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-finance.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-productivity.html
@@ -826,9 +824,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-implementing.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-initial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-inline-glossary.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-modules.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-planning.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-policies.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-troubleshoot.html
@@ -863,15 +859,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ipv6.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-iscsi.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ldap.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-natd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nis.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ntp.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-pxe-nfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-routing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-samba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-servers.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-syslogd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-usb-tethering.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-wireless.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/nutshell.html
@@ -880,9 +873,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/openssl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/outgoing-only.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/permissions.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-core.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-developers.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-other.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pkgng-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-broken.html

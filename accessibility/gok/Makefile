@@ -16,7 +16,6 @@ COMMENT=	GNOME On-Screen Keyboard (GOK)
 LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
     		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gmake gettext pkgconfig
 INSTALLS_OMF=	yes

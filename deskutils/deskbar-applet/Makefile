@@ -31,7 +31,6 @@ OPTIONS_DEFINE=	EVO
 OPTIONS_DEFAULT=EVO
 EVO_DESC=	Enable evolution support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEVO}

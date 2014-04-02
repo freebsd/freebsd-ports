@@ -1326,6 +1326,7 @@
     SUBDIR += rubygem-sanitize
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-rails
+    SUBDIR += rubygem-sass32
     SUBDIR += rubygem-sax-machine
     SUBDIR += rubygem-simplecov-html
     SUBDIR += rubygem-spreadsheet
@@ -1542,6 +1543,7 @@
     SUBDIR += xstream
     SUBDIR += xsv
     SUBDIR += xt
+    SUBDIR += xwindiff
     SUBDIR += y2l
     SUBDIR += yali
     SUBDIR += yamcha

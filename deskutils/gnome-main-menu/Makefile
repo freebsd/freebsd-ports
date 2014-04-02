@@ -24,7 +24,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	application-browser.schemas slab.schemas
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|glib/gmacros.h|glib.h|g' \
 		-e 's|glib/gfileutils.h|glib.h|g' \

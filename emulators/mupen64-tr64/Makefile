@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-tr64
 
 COMMENT=	Tr64 graphics plugin for Mupen64
 
+BROKEN=		Fails to patch
 USE_SDL=	sdl
 USE_GL=		yes
 

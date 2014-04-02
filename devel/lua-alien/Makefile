@@ -14,7 +14,7 @@ COMMENT=	Lua -> C FFI
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
 USE_LUA=	5.1
 
@@ -39,6 +39,8 @@ ${p:C/:.*//:U}DIR_REL=	share/${p:C/.*://}${LUA_PKGNAMEPREFIX}${PORTNAME}
 ${p:C/:.*//:U}DIR=	${PREFIX}/${${p:C/:.*//:U}DIR_REL}
 .endfor
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-extract:	.SILENT
 	${RM} -rf ${WRKSRC}/libffi
 	${FIND} ${WRKSRC} -type f -name .git-darcs-dir -delete
@@ -50,28 +52,20 @@ post-patch:	.SILENT
 		-e '/luarocks/d' \
 		${WRKSRC}/samples/*.lua ${WRKSRC}/tests/*.lua
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${LUA_MODLIBDIR}/${PORTNAME}
-.for f in core.so struct.so
-	${INSTALL_PROGRAM} ${WRKSRC}/src/alien/${f} \
-		${LUA_MODLIBDIR}/${PORTNAME}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/src/alien.lua ${LUA_MODSHAREDIR}
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/src/constants ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}/${PORTNAME}
+	(cd ${WRKSRC}/src/alien && ${INSTALL_PROGRAM} core.so struct.so \
+		${STAGEDIR}${LUA_MODLIBDIR}/${PORTNAME})
+	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/alien.lua ${STAGEDIR}${LUA_MODSHAREDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/src/constants ${STAGEDIR}${DATADIR}
 	${TAR} cf - -C${WRKSRC} ${TESTS_EXCLUDE:S,^,--exclude ,} tests \
-		| ${TAR} xof - -C${DATADIR}
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${TAR} cf - -C${WRKSRC}/doc . | ${TAR} xof - -C${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${TAR} cf - -C${WRKSRC}/samples . | ${TAR} xof - -C${EXAMPLESDIR}
-.endif
+		| ${TAR} xof - -C${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 regression-test:	build
 	${LN} -fs ${TESTS_EXCLUDE:S,tests/,../src/,} ${WRKSRC}/tests

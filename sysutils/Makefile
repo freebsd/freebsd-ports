@@ -111,6 +111,7 @@
     SUBDIR += cfengine33
     SUBDIR += cfengine34
     SUBDIR += cfengine35
+    SUBDIR += cfengine36
     SUBDIR += chgrep
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon
@@ -159,6 +160,7 @@
     SUBDIR += daedalus
     SUBDIR += daemontools
     SUBDIR += dar
+    SUBDIR += dateutils
     SUBDIR += dc3dd
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
@@ -215,7 +217,6 @@
     SUBDIR += enteruser
     SUBDIR += entr
     SUBDIR += env4801
-    SUBDIR += epylog
     SUBDIR += eroaster
     SUBDIR += etcmerge
     SUBDIR += etcupdate
@@ -473,7 +474,6 @@
     SUBDIR += lmon
     SUBDIR += log_analysis
     SUBDIR += loganalyzer
-    SUBDIR += logmon
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash
@@ -502,6 +502,7 @@
     SUBDIR += mcelog
     SUBDIR += mcollective
     SUBDIR += mcollective-nrpe-agent
+    SUBDIR += mcollective-puppet-agent
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdcp
@@ -830,6 +831,7 @@
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
     SUBDIR += rubygem-teamocil
+    SUBDIR += rubygem-yell
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm

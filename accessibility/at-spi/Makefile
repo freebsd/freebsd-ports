@@ -18,7 +18,6 @@ USE_BZIP2=	yes
 
 RUN_DEPENDS=	at-spi2-atk>2.6.0:${PORTSDIR}/accessibility/at-spi2-atk
 
-NO_STAGE=	yes
 USES=		gmake gettext pkgconfig
 USE_GNOME=	gnomehack gnomehier intlhack gtk20 gconf2 libbonobo
 USE_XORG=	x11 xtst

@@ -27,24 +27,15 @@ PLIST_DIRS=	%%EMACS_VERSION_SITE_LISPDIR%%/yc
 
 OPTIONS_DEFINE=	ICANNA
 ICANNA_DESC=	Enable icanna support
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MICANNA}
-RUN_DEPENDS+=	icanna:${PORTSDIR}/japanese/icanna
-.endif
+ICANNA_RUN_DEPENDS=	icanna:${PORTSDIR}/japanese/icanna
 
 do-build:
 	@cd ${WRKDIR} && \
 	${EMACS_CMD} -batch -f batch-byte-compile yc.el
 
 do-install:
-	@${MKDIR} ${YC_LISPDIR}
+	@${MKDIR} ${STAGEDIR}${YC_LISPDIR}
 	@cd ${WRKDIR} && \
-	${INSTALL_SCRIPT} yc.el yc.elc ${YC_LISPDIR}
+	${INSTALL_SCRIPT} yc.el yc.elc ${STAGEDIR}${YC_LISPDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

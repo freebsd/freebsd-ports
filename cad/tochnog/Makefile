@@ -2,26 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	tochnog
-PORTVERSION=	20010211
-PORTREVISION=	9
+PORTVERSION=	20140100
 CATEGORIES=	cad
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/feb11_2001
-DISTNAME=	${PORTNAME}_feb11_2001
+MASTER_SITES=	SF/${PORTNAME}/Tochnog%20Latest%20January%202014
+DISTFILES=	Sources${EXTRACT_SUFX} gid${EXTRACT_SUFX} \
+		tools${EXTRACT_SUFX} test${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free explicit/implicit Finite Element Program
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c
 
 OPTIONS_DEFINE=	ATLAS EXAMPLES THREADS
 ATLAS_DESC=	Use ATLAS instead of BLAS/LAPACK
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
+WRKSRC=		${WRKDIR}/Sources/Tochnog-Latest-jan-2014
 MAKEFILE=	makefile
-USES=		fortran
+MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
+USES=		fortran zip dos2unix
+DOS2UNIX_FILES=	time.cc time.h tnlapack.h tnsuplu.h
 
 # You can set GIDDIR to share/gid to install the scripts to be used
 # with the cad/linux-gid port, otherwise they can be linked to the data
@@ -41,8 +43,9 @@ BLAS_LIBS=	-lptf77blas
 BLAS_LIBS=	-lf77blas
 .endif
 .else
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-BLAS_LIBS=	-lblas
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas	\
+		liblapack.so:${PORTSDIR}/math/lapack
+BLAS_LIBS=	-llapack -lblas
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -55,37 +58,45 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
 SUPERLU=	superlu
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; \
+post-extract:
+.for sup in gid tools test
+	${MV} ${WRKDIR}/${sup} ${WRKDIR}/Sources/
+.endfor
+
+pre-configure:
+.for hd in pthread.h
+	${MV} ${WRKSRC}/${hd} ${WRKSRC}/${hd}.orig
+.endfor
+	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; \
 	s,%%SUPERLU%%,${SUPERLU},g ; \
 	s,%%BLAS_LIBS%%,-L${LOCALBASE}/lib ${BLAS_LIBS},g' \
 	${WRKSRC}/makefile
 .if ${PORT_OPTIONS:MTHREADS}
-	@${REINPLACE_CMD} -e 's,SUPERLU_MT_USE 0,SUPERLU_MT_USE 1,' \
+	${REINPLACE_CMD} -e 's,SUPERLU_MT_USE 0,SUPERLU_MT_USE 1,' \
 	${WRKSRC}/tnsuplu.h
 .else	# Serial
-	@${REINPLACE_CMD} -e 's,SUPERLU_USE 0,SUPERLU_USE 1,' \
+	${REINPLACE_CMD} -e 's,SUPERLU_USE 0,SUPERLU_USE 1,' \
 	${WRKSRC}/tnsuplu.h
 .endif
 
 post-build:
-	(cd ${WRKDIR}/tochnog/tools && ${CXX} ${CXXFLAGS} -o aba2tn aba2tn.cc)
+	(cd ${WRKDIR}/Sources/tools && ${CXX} ${CXXFLAGS} -o aba2tn aba2tn.cc)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tochnog ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/tochnog/tools/aba2tn ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/tochnog/tools/*.awk ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/Sources/tools/aba2tn ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/Sources/tools/*.awk ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${GID_PTYPES}/tochnog.gid
-	${INSTALL_DATA} ${WRKDIR}/tochnog/gid/tochnog.gid/tochnog.cnd	\
+	${INSTALL_DATA} ${WRKDIR}/Sources/gid/tochnog.gid/tochnog.cnd	\
 	  ${STAGEDIR}${GID_PTYPES}/tochnog.gid
-	${INSTALL_DATA} ${WRKDIR}/tochnog/gid/tochnog.gid/tochnog.mat	\
+	${INSTALL_DATA} ${WRKDIR}/Sources/gid/tochnog.gid/tochnog.mat	\
 	  ${STAGEDIR}${GID_PTYPES}/tochnog.gid
-	${INSTALL_SCRIPT} ${WRKDIR}/tochnog/gid/tochnog.gid/tochnog.ba*	\
+	${INSTALL_SCRIPT} ${WRKDIR}/Sources/gid/tochnog.gid/tochnog.ba*	\
 	  ${STAGEDIR}${GID_PTYPES}/tochnog.gid
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${RM} -f ${WRKDIR}/tochnog/test/*.orig
-	${INSTALL_DATA} ${WRKDIR}/tochnog/test/* ${STAGEDIR}${EXAMPLESDIR}
+	${RM} -f ${WRKDIR}/Sources/test/*.orig
+	${INSTALL_DATA} ${WRKDIR}/Sources/test/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

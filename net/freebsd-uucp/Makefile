@@ -80,7 +80,7 @@ do-configure:
 		-e "s=HAVE_ENCRYPTED_PASSWORDS.*=HAVE_ENCRYPTED_PASSWORDS 1=" \
 		${WRKSRC}/uucp/common_sources/policy.h
 .endif
-	@${CAT} pkg-message > ${WRKDIR}/pkg-message
+	@${CAT} ${MASTERDIR}/pkg-message > ${WRKDIR}/pkg-message
 .if ${PORT_OPTIONS:MPAM}
 	@${ECHO_MSG} "" >> ${WRKDIR}/pkg-message
 	@${ECHO_MSG} "Add this lines to your pam.conf:" >> ${WRKDIR}/pkg-message

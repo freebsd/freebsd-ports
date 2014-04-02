@@ -1,11 +1,7 @@
 bin/xkoules
-%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/Card
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Koules.FAQ
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 libexec/koules.sndsrv.freebsd
+man/man6/xkoules.6.gz
+share/pixmaps/xkoules.png
 %%DATADIR%%/colize.raw
 %%DATADIR%%/creator1.raw
 %%DATADIR%%/creator2.raw
@@ -14,4 +10,3 @@ libexec/koules.sndsrv.freebsd
 %%DATADIR%%/end.raw
 %%DATADIR%%/start.raw
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

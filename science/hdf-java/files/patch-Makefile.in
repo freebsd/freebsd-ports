@@ -1,35 +1,33 @@
---- ./Makefile.in.orig	2011-11-29 12:19:58.000000000 -0800
-+++ ./Makefile.in	2011-12-21 15:03:05.000000000 -0800
-@@ -283,18 +283,8 @@
+--- Makefile.in.orig	2013-10-24 20:11:53.000000000 +0200
++++ Makefile.in	2014-03-30 23:19:44.000000000 +0200
+@@ -286,16 +286,8 @@
  uninstall: uninstall-jhdfview uninstall-jhdfobj uninstall-lib uninstall-jhi uninstall-jhi5 
  
  install-lib: natives
 -	-mkdir -p $(LIBDIR);
 -	-mkdir -p $(LIBDIR)/@JAVATARG@
- 	@if test -n "$(H5INC)" ; then \
--	cp $(CLASS_DIR)/@JAVATARG@/libjhdf5.$(JSLEXT) $(LIBDIR)/@JAVATARG@ ; fi
--	@if test -n "$(H5INC)/../lib" ; then \
+ 	@if test x'$(H5INC)' != x'' ; then \
+-	cp $(CLASS_DIR)/@JAVATARG@/libjhdf5.$(JSLEXT) $(LIBDIR)/@JAVATARG@ ;  \
 -	cp $(H5INC)/../lib/*.settings $(LIBDIR)/@JAVATARG@ ; fi
--	@if test -n "$(H4INC)" ; then \
--	cp $(CLASS_DIR)/@JAVATARG@/libjhdf.$(JSLEXT) $(LIBDIR)/@JAVATARG@ ; fi
--	@if test -n "$(H4INC)/../lib" ; then \
+-	@if test x'$(H4INC)' != x'' ; then \
+-	cp $(CLASS_DIR)/@JAVATARG@/libjhdf.$(JSLEXT) $(LIBDIR)/@JAVATARG@ ;  \
 -	cp $(H4INC)/../lib/*.settings $(LIBDIR)/@JAVATARG@ ; fi
--	@if test -n "$(H45INC)" ; then \
+-	@if test x'$(H45INC)' != x'' ; then \
 -	cp $(CLASS_DIR)/@JAVATARG@/libjh4toh5.$(JSLEXT) $(LIBDIR)/@JAVATARG@ ; fi
 +	INSTALL_LIB $(CLASS_DIR)/@JAVATARG@/libjhdf5.$(JSLEXT) $(LIBDIR)/ ; fi
  	@echo "Install Natives complete"
  
  install-hdflib: 
-@@ -325,7 +315,6 @@
- 	@if test -n "$(H4INC)" ; then $(MAKE) do-install-jhdf ; fi
+@@ -326,7 +318,6 @@
+ 	@if test x'$(H4INC)' != x'' ; then $(MAKE) do-install-jhdf ; fi
  
  do-install-jhdf: jhdf-packages
 -	-mkdir -p $(LIBDIR);
  	$(JAR) cf $(JH45INSTALLDIR)/lib/jhdf.jar -C $(CLASS_DIR) $(JHICLASSES)
  	@echo "Install JHI complete"
  
-@@ -333,42 +322,30 @@
- 	@if test -n "$(H5INC)" ; then $(MAKE) do-install-jhdf5 ; fi
+@@ -334,42 +325,30 @@
+ 	@if test x'$(H5INC)' != x'' ; then $(MAKE) do-install-jhdf5 ; fi
  
  do-install-jhdf5: jhdf5-packages
 -	-mkdir -p $(LIBDIR);
@@ -39,8 +37,8 @@
  install-jhdfobj: ncsa.hdf.object
 -	-mkdir -p $(LIBDIR);
  	$(JAR) cf $(JH45INSTALLDIR)/lib/jhdfobj.jar -C $(CLASS_DIR) $(HDFOBJCLASSES)
- 	@if test -n "$(H4INC)" ; then $(MAKE) do-install-jhdf4obj ; fi
- 	@if test -n "$(H5INC)" ; then $(MAKE) do-install-jhdf5obj ; fi
+ 	@if test x'$(H4INC)' != x'' ; then $(MAKE) do-install-jhdf4obj ; fi
+ 	@if test x'$(H5INC)' != x'' ; then $(MAKE) do-install-jhdf5obj ; fi
  	@echo "Install HDFOBJ complete"
  
  do-install-jhdf4obj: ncsa.hdf.object.h4
@@ -71,6 +69,6 @@
 -	cp lib/junit.jar $(LIBDIR)
 +	cp lib/netcdf.jar $(JH45INSTALLDIR)/lib
 +	cp lib/fits.jar $(JH45INSTALLDIR)/lib
+ 	cp lib/slf4j-api-1.7.5.jar $(LIBDIR)
+ 	cp lib/ext/slf4j-nop-1.7.5.jar $(LIBDIR)
  	cp bin/hdfview.sh $(BINDIR)
- 	chmod a+x $(BINDIR)/hdfview.sh
- 	@echo "Install HDFVIEW complete"

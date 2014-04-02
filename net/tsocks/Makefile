@@ -3,7 +3,7 @@
 
 PORTNAME=	tsocks
 PORTVERSION=	1.8.b5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.8%20beta%205 \
 		http://ftp1.sourceforge.net/tsocks/ \
@@ -22,16 +22,16 @@ WRKSRC=${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.b.*//}
 CONFIGURE_ARGS=	--with-conf=${PREFIX}/etc/tsocks.conf \
 		--libdir=${PREFIX}/lib
 
-OPTIONS_DEFINE=	DEBUG DOCS EXAMPLES HOSTNAMES OLDMETHOD SOCKSDNS
-OPTIONS_DEFAULT=	DEBUG HOSTNAMES
+OPTIONS_DEFINE=	DOCS EXAMPLES HOSTNAMES MUTE OLDMETHOD SOCKSDNS
+OPTIONS_DEFAULT=	HOSTNAMES
 
-DEBUG_DESC=	Output error messages to stderr
 HOSTNAMES_DESC=	Enable DNS lookups
 OLDMETHOD_DESC=	Do not use RTLD_NEXT parameter to dlsym
+MUTE_DESC=	Disable all error messages
 SOCKSDNS_DESC=	Intercept DNS requests and attempt to force them to use TCP
 
-DEBUG_CONFIGURE_OFF=	--disable-debug
 HOSTNAMES_CONFIGURE_OFF=	--disable-hostnames
+MUTE_CONFIGURE_ON=	--disable-debug
 OLDMETHOD_CONFIGURE_ON=	--enable-oldmethod
 SOCKSDNS_CONFIGURE_ON=	--enable-socksdns
 

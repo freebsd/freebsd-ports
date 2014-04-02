@@ -15,6 +15,9 @@
      cp hpclj26*.icm km2430*.icm %%PREFIX%%/share/foo2hp/icm && \
      rm *.icm *.img
 
-4) Enjoy it ;)
+4) Edit %%PREFIX%%/etc/devd/foo2zjs.conf to fit your needs
+   and restart devd.
+
+5) Enjoy it ;)
 
 ###############################################################################

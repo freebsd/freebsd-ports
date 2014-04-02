@@ -11,7 +11,7 @@ export ADA_PROJECT_PATH
 ${GNATMAKE} -P example
 
 echo
-echo "The source for the example is excel_out_test.adb"
-echo "The executable example is located in /tmp/excel_out_test"
+echo "The source for the example is excel_out_demo.adb"
+echo "The executable example is located in /tmp/excel_out_demo"
 echo "It requires no options; just run it"
 echo 'You may want to execute "rm /tmp/excel_out*" when you are done.'

@@ -270,9 +270,6 @@ do-install:
 	${ECHO} bin/${name}-${PYPY_VER} >> ${TMPPLIST}
 .endfor
 
-post-install:
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 test: patch
 .for inst in ${PYPY_INST}
 	@${WHICH} ${PYPY_${inst}_NAME} > /dev/null 2>&1 || (${ECHO} "Unable to find ${PYPY_${inst}_NAME}, please install port first!"; exit 1)

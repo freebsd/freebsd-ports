@@ -16,8 +16,6 @@ PLIST=		${.CURDIR}/pkg-plist
 
 LIBGDA5_SLAVE=	mdb
 
-NO_STAGE=	yes
-
 post-extract:
 	@${REINPLACE_CMD} -e 's|MDB_SDATETIME|MDB_DATETIME|g' \
 		${WRKSRC}/providers/mdb/gda-mdb-provider.c \

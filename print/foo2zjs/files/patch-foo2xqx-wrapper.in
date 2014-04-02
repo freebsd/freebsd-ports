@@ -1,6 +1,6 @@
---- foo2xqx-wrapper.in.orig	2011-01-15 02:21:39.000000000 +0300
-+++ foo2xqx-wrapper.in	2011-06-19 21:28:35.844620886 +0400
-@@ -41,13 +41,6 @@ PREFIX=/usr
+--- foo2xqx-wrapper.in.orig	2013-12-26 01:00:11.000000000 +0400
++++ foo2xqx-wrapper.in	2014-03-31 13:16:42.977746704 +0400
+@@ -42,13 +42,6 @@ PREFIX=/usr
  SHARE=$PREFIX/share/foo2xqx
  PATH=$PATH:/sw/bin:/opt/local/bin
  
@@ -14,7 +14,7 @@
  usage() {
  	cat <<EOF
  Usage:
-@@ -150,8 +143,8 @@ nup() {
+@@ -151,8 +144,8 @@ nup() {
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
@@ -25,7 +25,7 @@
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -666,18 +659,6 @@ $PREFILTER \
+@@ -667,18 +660,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
  
  #

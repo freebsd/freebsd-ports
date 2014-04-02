@@ -1,0 +1,8 @@
+Net::DHCP::Watch is a module to help monitor remote DHCP servers.
+It opens an udp socket to send and receive responses to and from
+a DHCP server. It stores the last connection status information.
+
+This module can help to write some simple code to implement a
+reliable DHCP service over complex or simple networks.
+
+WWW: http://search.cpan.org/dist/Net-DHCP-Watch/

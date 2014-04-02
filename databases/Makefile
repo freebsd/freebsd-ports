@@ -93,6 +93,7 @@
     SUBDIR += frontbase
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
+    SUBDIR += galera
     SUBDIR += gdbm
     SUBDIR += geoserver-mysql-plugin
     SUBDIR += gigabase
@@ -497,7 +498,6 @@
     SUBDIR += p5-Tie-LevelDB
     SUBDIR += p5-Time-Piece-MySQL
     SUBDIR += p5-TokyoCabinet
-    SUBDIR += p5-hp200lx-db
     SUBDIR += p5-mysql-genocide
     SUBDIR += p5-qdbm
     SUBDIR += p5-tokyotyrant
@@ -702,6 +702,7 @@
     SUBDIR += proftpd-mod_sql_postgres
     SUBDIR += proftpd-mod_sql_sqlite
     SUBDIR += proftpd-mod_sql_tds
+    SUBDIR += puppetdb-terminus
     SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib
@@ -832,6 +833,7 @@
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel3
+    SUBDIR += rubygem-awesome_nested_set
     SUBDIR += rubygem-bdb1
     SUBDIR += rubygem-bigrecord
     SUBDIR += rubygem-couchrest

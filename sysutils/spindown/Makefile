@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spindown
-PORTVERSION=	0.3a
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.noresult.net/freebsd/spindown/
 

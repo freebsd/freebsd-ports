@@ -1,5 +1,5 @@
---- Makefile.orig	2014-02-15 12:14:49.000000000 -0500
-+++ Makefile	2014-03-03 16:00:53.000000000 -0500
+--- ./Makefile.orig	2014-02-15 12:14:49.000000000 -0500
++++ ./Makefile	2014-03-31 20:03:46.000000000 -0400
 @@ -36,12 +36,12 @@
  ###
  # installation options
@@ -24,3 +24,12 @@
  DI_MANDIR = $(DI_MANINSTDIR)/man1
  MAN_TARGET = $(PROG).1
  MANPERM = 644
+@@ -140,7 +140,7 @@
+ 	$(TEST) -d $(INSTALL_BIN_DIR) || $(MKDIR) $(INSTALL_BIN_DIR)
+ 	$(CP) -f ./$(FROMDIR)/$(PROG)$(EXE_EXT) $(TARGET)
+ 	-$(RM) -f $(MTARGET) > /dev/null 2>&1
+-	-$(LN) -s $(PROG)$(EXE_EXT) $(MTARGET)
++	-( cd $(INSTALL_BIN_DIR) && $(LN) -s $(PROG)$(EXE_EXT) $(MPROG)$(EXE_EXT) )
+ 	@-test -f $(FROMDIR)/config.h && \
+ 		grep '^#define _enable_nls 1' $(FROMDIR)/config.h >/dev/null 2>&1 && \
+ 		(. ./$(FROMDIR)/di.env; $(MAKE) -e INST_LOCALEDIR="$(INST_LOCALEDIR)" \

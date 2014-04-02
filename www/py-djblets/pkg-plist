@@ -1,448 +1,454 @@
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/forms.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/forms.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/forms.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/util.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/util.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/util.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/views.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/views.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/views.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/grids.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/grids.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/grids.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templates/datagrid/cell.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templates/datagrid/column_header.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templates/datagrid/datagrid.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templates/datagrid/listview.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templates/datagrid/paginator.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templatetags/datagrid.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templatetags/datagrid.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templatetags/datagrid.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/tests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/tests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/tests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/admin.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/admin.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/admin.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/base.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/errors.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/errors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/errors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/forms.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/forms.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/forms.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/hooks.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/hooks.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/hooks.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/loaders.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/loaders.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/loaders.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/middleware.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/middleware.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/models.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/resources.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/resources.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/resources.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/signals.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/signals.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/signals.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templates/extensions/configure_extension.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templates/extensions/extension_dlgs.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templates/extensions/extension_list.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templatetags/djblets_extensions.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templatetags/djblets_extensions.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templatetags/djblets_extensions.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/test/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/test/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/test/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/test/admin_urls.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/test/admin_urls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/test/admin_urls.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/test/urls.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/test/urls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/test/urls.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/tests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/tests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/tests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/urls.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/urls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/urls.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/views.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/views.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/views.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templates/feedview/feed-inline.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templates/feedview/feed-page.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templatetags/feedtags.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templatetags/feedtags.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templatetags/feedtags.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/test_urls.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/test_urls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/test_urls.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/tests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/tests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/tests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/views.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/views.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/views.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars/templatetags/gravatars.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars/templatetags/gravatars.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars/templatetags/gravatars.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/handlers.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/handlers.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/handlers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/middleware.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/middleware.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/siteconfig.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/siteconfig.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/siteconfig.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/templates/log/log.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/tests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/tests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/tests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/urls.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/urls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/urls.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/views.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/views.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/views.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/css/admin.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/css/datagrid.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/css/extensions.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid/checkmark.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid/edit.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid/header_bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid/header_bg_primary.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid/sort_asc_primary.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid/sort_asc_secondary.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid/sort_desc_primary.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid/sort_desc_secondary.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid/unsort.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/extensions/box_bottom_bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/extensions/box_bottom_bg_trans.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/extensions/box_top_bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/extensions/box_top_bg_trans.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/extensions/button_bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/extensions/spinner.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/extensions/title_box_top_bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js/datagrid.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js/extensions.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js/jquery-1.8.2.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js/jquery-ui-1.8.24.custom.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js/jquery.gravy.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/compilers/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/compilers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/compilers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/compilers/bless.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/compilers/bless.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/compilers/bless.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/templates/pipeline/css.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/settings.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/settings.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/settings.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/admin.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/admin.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/admin.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/context_processors.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/context_processors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/context_processors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/django_settings.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/django_settings.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/django_settings.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/forms.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/forms.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/forms.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/managers.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/managers.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/managers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/middleware.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/middleware.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/models.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/templates/siteconfig/settings.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/templates/siteconfig/settings_field.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/tests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/tests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/tests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/views.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/views.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/views.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/css/admin.67612c83bb86.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/css/admin.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/css/datagrid.1a0aafea202a.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/css/datagrid.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/css/extensions.43c3ee635a23.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/css/extensions.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/checkmark.640aaac64ea5.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/checkmark.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/edit.4a4cf60e1815.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/edit.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/header_bg.035aafc0d7fd.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/header_bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/header_bg_primary.51e17284d97c.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/header_bg_primary.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/sort_asc_primary.4f626bb2b321.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/sort_asc_primary.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/sort_asc_secondary.5a010b10ce05.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/sort_asc_secondary.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/sort_desc_primary.5f8681cb25cc.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/sort_desc_primary.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/sort_desc_secondary.235cd483d9dd.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/sort_desc_secondary.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/unsort.d8b37af90a06.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid/unsort.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/box_bottom_bg.62df21d4a671.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/box_bottom_bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/box_bottom_bg_trans.c15846b83bbd.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/box_bottom_bg_trans.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/box_top_bg.eea86c350dcf.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/box_top_bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/box_top_bg_trans.fde1dcd86a65.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/box_top_bg_trans.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/button_bg.e277e949ce2d.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/button_bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/spinner.73e57937304d.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/spinner.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/title_box_top_bg.e6ef809b528f.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions/title_box_top_bg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/datagrid.fd44908852f4.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/datagrid.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/extensions.c11c7e3d113e.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/extensions.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery-1.8.2.min.cfa9051cc0b0.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery-1.8.2.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery-ui-1.8.24.custom.min.f6148fb67d77.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery-ui-1.8.24.custom.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery.gravy.01d571f1f7f8.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js/jquery.gravy.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/decorators.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/decorators.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/decorators.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/selenium.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/selenium.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/selenium.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/testcases.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/testcases.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/testcases.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/urls.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/urls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/urls.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/cache.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/cache.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/cache.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/context_processors.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/context_processors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/context_processors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/contextmanagers.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/contextmanagers.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/contextmanagers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/dates.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/dates.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/dates.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/db.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/db.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/db.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/dbevolution.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/dbevolution.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/dbevolution.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/decorators.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/decorators.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/decorators.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/fields.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/fields.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/fields.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/filesystem.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/filesystem.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/filesystem.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/forms.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/forms.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/forms.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/http.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/http.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/http.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/humanize.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/humanize.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/humanize.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/misc.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/misc.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/misc.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/rooturl.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/rooturl.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/rooturl.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/deco/box.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/deco/errorbox.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/js/jquery-ui.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/js/jquery.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_deco.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_deco.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_deco.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_email.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_email.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_email.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_forms.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_forms.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_forms.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_images.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_images.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_images.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_js.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_js.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_js.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_utils.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_utils.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/djblets_utils.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/testing.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/testing.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/testing.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/tests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/tests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/tests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/urlresolvers.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/urlresolvers.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/urlresolvers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/auth.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/auth.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/auth.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/core.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/core.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/core.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/decorators.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/decorators.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/decorators.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/encoders.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/encoders.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/encoders.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/errors.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/errors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/errors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/resources.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/resources.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/resources.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/tests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/tests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi/tests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/run-pyflakes.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/run-pyflakes.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/run-pyflakes.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/runtests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/runtests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/runtests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/settings.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/settings.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/settings.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/js
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/deco
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/js
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/extensions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images/datagrid
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/images
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static/css
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/static
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/templates/siteconfig
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/siteconfig
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/templates/pipeline
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline/compilers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/pipeline
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/js
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/extensions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images/datagrid
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/images
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media/css
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/media
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/templates/log
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/log
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/gravatars
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templates/feedview
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/feedview
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/test
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templates/extensions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/extensions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templates/datagrid
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PYTHON_LIBDIR%%/site-packages/djblets/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/forms.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/forms.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/forms.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/util.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/util.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/util.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/views.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/views.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/auth/views.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/grids.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/grids.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/grids.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templates/datagrid/cell.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templates/datagrid/column_header.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templates/datagrid/datagrid.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templates/datagrid/listview.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templates/datagrid/paginator.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templatetags/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templatetags/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templatetags/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templatetags/datagrid.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templatetags/datagrid.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templatetags/datagrid.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/tests.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/tests.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/tests.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/admin.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/admin.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/admin.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/base.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/base.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/base.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/errors.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/errors.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/errors.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/forms.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/forms.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/forms.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/hooks.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/hooks.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/hooks.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/loaders.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/loaders.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/loaders.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/middleware.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/middleware.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/middleware.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/models.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/models.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/models.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/resources.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/resources.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/resources.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/signals.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/signals.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/signals.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templates/extensions/configure_extension.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templates/extensions/extension_dlgs.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templates/extensions/extension_list.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templatetags/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templatetags/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templatetags/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templatetags/djblets_extensions.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templatetags/djblets_extensions.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templatetags/djblets_extensions.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/test/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/test/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/test/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/test/admin_urls.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/test/admin_urls.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/test/admin_urls.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/test/urls.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/test/urls.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/test/urls.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/tests.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/tests.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/tests.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/urls.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/urls.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/urls.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/views.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/views.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/extensions/views.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templates/feedview/feed-inline.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templates/feedview/feed-page.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templatetags/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templatetags/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templatetags/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templatetags/feedtags.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templatetags/feedtags.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templatetags/feedtags.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/test_urls.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/test_urls.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/test_urls.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/tests.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/tests.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/tests.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/views.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/views.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/feedview/views.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/gravatars/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/gravatars/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/gravatars/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/gravatars/templatetags/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/gravatars/templatetags/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/gravatars/templatetags/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/gravatars/templatetags/gravatars.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/gravatars/templatetags/gravatars.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/gravatars/templatetags/gravatars.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/handlers.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/handlers.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/handlers.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/middleware.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/middleware.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/middleware.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/siteconfig.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/siteconfig.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/siteconfig.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/templates/log/log.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/tests.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/tests.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/tests.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/urls.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/urls.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/urls.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/views.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/views.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/log/views.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/css/admin.css
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/css/datagrid.css
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/css/extensions.css
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/datagrid/checkmark.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/datagrid/edit.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/datagrid/header_bg.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/datagrid/header_bg_primary.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/datagrid/sort_asc_primary.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/datagrid/sort_asc_secondary.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/datagrid/sort_desc_primary.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/datagrid/sort_desc_secondary.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/datagrid/unsort.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/extensions/box_bottom_bg.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/extensions/box_bottom_bg_trans.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/extensions/box_top_bg.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/extensions/box_top_bg_trans.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/extensions/button_bg.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/extensions/spinner.gif
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/images/extensions/title_box_top_bg.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/js/datagrid.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/js/extensions.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/js/jquery-1.8.2.min.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/js/jquery-ui-1.8.24.custom.min.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/media/js/jquery.gravy.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/compilers/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/compilers/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/compilers/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/compilers/bless.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/compilers/bless.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/compilers/bless.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/templates/pipeline/css.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/settings.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/settings.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/settings.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/admin.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/admin.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/admin.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/context_processors.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/context_processors.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/context_processors.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/django_settings.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/django_settings.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/django_settings.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/forms.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/forms.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/forms.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/get-siteconfig.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/get-siteconfig.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/get-siteconfig.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/list-siteconfig.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/list-siteconfig.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/list-siteconfig.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/set-siteconfig.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/set-siteconfig.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands/set-siteconfig.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/managers.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/managers.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/managers.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/middleware.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/middleware.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/middleware.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/models.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/models.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/models.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/templates/siteconfig/settings.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/templates/siteconfig/settings_field.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/tests.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/tests.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/tests.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/views.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/views.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/views.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/css/admin.67612c83bb86.css
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/css/admin.css
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/css/datagrid.738320db2d8c.css
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/css/datagrid.css
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/css/extensions.43c3ee635a23.css
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/css/extensions.css
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/checkmark.640aaac64ea5.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/checkmark.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/edit.4a4cf60e1815.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/edit.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/header_bg.035aafc0d7fd.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/header_bg.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/header_bg_primary.51e17284d97c.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/header_bg_primary.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/sort_asc_primary.4f626bb2b321.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/sort_asc_primary.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/sort_asc_secondary.5a010b10ce05.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/sort_asc_secondary.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/sort_desc_primary.5f8681cb25cc.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/sort_desc_primary.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/sort_desc_secondary.235cd483d9dd.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/sort_desc_secondary.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/unsort.d8b37af90a06.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid/unsort.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/box_bottom_bg.62df21d4a671.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/box_bottom_bg.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/box_bottom_bg_trans.c15846b83bbd.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/box_bottom_bg_trans.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/box_top_bg.eea86c350dcf.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/box_top_bg.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/box_top_bg_trans.fde1dcd86a65.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/box_top_bg_trans.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/button_bg.e277e949ce2d.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/button_bg.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/spinner.73e57937304d.gif
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/spinner.gif
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/title_box_top_bg.e6ef809b528f.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions/title_box_top_bg.png
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/js/datagrid.2f5c3cc10803.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/js/datagrid.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/js/extensions.c11c7e3d113e.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/js/extensions.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/js/jquery-1.8.2.min.cfa9051cc0b0.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/js/jquery-1.8.2.min.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/js/jquery-ui-1.8.24.custom.min.f6148fb67d77.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/js/jquery-ui-1.8.24.custom.min.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/js/jquery.gravy.7c5eb3dda03b.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/static/js/jquery.gravy.js
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/decorators.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/decorators.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/decorators.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/selenium.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/selenium.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/selenium.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/testcases.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/testcases.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/testcases.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/urls.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/urls.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/testing/urls.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/cache.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/cache.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/cache.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/compat/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/compat/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/compat/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/compat/ast_compat.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/compat/ast_compat.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/compat/ast_compat.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/context_processors.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/context_processors.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/context_processors.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/contextmanagers.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/contextmanagers.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/contextmanagers.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/dates.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/dates.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/dates.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/db.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/db.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/db.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/dbevolution.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/dbevolution.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/dbevolution.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/decorators.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/decorators.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/decorators.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/fields.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/fields.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/fields.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/filesystem.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/filesystem.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/filesystem.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/forms.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/forms.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/forms.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/http.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/http.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/http.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/humanize.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/humanize.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/humanize.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/misc.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/misc.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/misc.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/rooturl.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/rooturl.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/rooturl.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templates/deco/box.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templates/deco/errorbox.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templates/js/jquery-ui.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templates/js/jquery.html
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_deco.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_deco.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_deco.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_email.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_email.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_email.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_forms.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_forms.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_forms.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_images.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_images.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_images.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_js.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_js.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_js.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_utils.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_utils.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags/djblets_utils.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/testing.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/testing.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/testing.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/tests.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/tests.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/tests.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/urlresolvers.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/urlresolvers.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/urlresolvers.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/views.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/views.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/util/views.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/auth.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/auth.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/auth.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/core.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/core.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/core.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/decorators.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/decorators.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/decorators.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/encoders.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/encoders.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/encoders.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/errors.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/errors.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/errors.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/resources.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/resources.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/resources.pyo
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/tests.py
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/tests.pyc
+%%PYTHON_LIBDIR%%/site-packages/djblets/webapi/tests.pyo
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/webapi
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/util/templatetags
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/util/templates/js
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/util/templates/deco
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/util/templates
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/util/compat
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/util
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/testing
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/static/js
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/static/images/extensions
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/static/images/datagrid
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/static/images
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/static/css
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/static
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/templates/siteconfig
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/templates
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management/commands
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig/management
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/siteconfig
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/templates/pipeline
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/templates
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/pipeline/compilers
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/pipeline
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/media/js
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/media/images/extensions
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/media/images/datagrid
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/media/images
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/media/css
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/media
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/log/templates/log
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/log/templates
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/log
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/gravatars/templatetags
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/gravatars
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templatetags
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templates/feedview
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/feedview/templates
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/feedview
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/extensions/test
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templatetags
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templates/extensions
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/extensions/templates
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/extensions
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templatetags
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templates/datagrid
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/datagrid/templates
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/datagrid
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets/auth
+@dirrm %%PYTHON_LIBDIR%%/site-packages/djblets

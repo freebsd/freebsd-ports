@@ -1,0 +1,1344 @@
+--- hotspot/test/compiler/5091921/Test7005594.sh
++++ hotspot/test/compiler/5091921/Test7005594.sh
+@@ -60,6 +60,15 @@
+   # Windows/MKS
+   MEM=`"$ROOTDIR/mksnt/sysinf" memory -v | grep "Total Physical Memory: " | sed 's/Total Physical Memory: *//g'`
+   MEM="$(($machine_memory / 1024))"
++elif [ -x "/sbin/sysctl" ]; then
++  # BSD
++  MEM=`(/sbin/sysctl -n hw.physmem64 2> /dev/null || /sbin/sysctl -n hw.physmem)`
++  if [ -z "$MEM" ]; then
++    echo "Unable to determine amount of physical memory on the machine"
++    MEM=0
++  else
++    MEM="$(($MEM / 1024 / 1024))"
++  fi
+ else
+   echo "Unable to determine amount of physical memory on the machine"
+ fi
+--- hotspot/test/compiler/6894807/Test6894807.sh
++++ hotspot/test/compiler/6894807/Test6894807.sh
+@@ -21,7 +21,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- hotspot/test/runtime/7110720/Test7110720.sh
++++ hotspot/test/runtime/7110720/Test7110720.sh
+@@ -28,7 +28,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     FS="/"
+     RM=/bin/rm
+     CP=/bin/cp
+--- hotspot/test/test_env.sh
++++ hotspot/test/test_env.sh
+@@ -53,7 +53,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/com/sun/corba/5036554/TestCorbaBug.sh
++++ jdk/test/com/sun/corba/5036554/TestCorbaBug.sh
+@@ -48,7 +48,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/com/sun/corba/cachedSocket/7056731.sh
++++ jdk/test/com/sun/corba/cachedSocket/7056731.sh
+@@ -31,7 +31,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/com/sun/jdi/ImmutableResourceTest.sh
++++ jdk/test/com/sun/jdi/ImmutableResourceTest.sh
+@@ -56,7 +56,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-   SunOS | Linux | Darwin )
++   SunOS | Linux | *BSD | Darwin )
+       PATHSEP=":"
+       ;;
+ 
+--- jdk/test/com/sun/jdi/JITDebug.sh
++++ jdk/test/com/sun/jdi/JITDebug.sh
+@@ -63,7 +63,7 @@
+ OS=`uname -s`
+ export TRANSPORT_METHOD
+ case "$OS" in
+-   SunOS | Linux | Darwin )
++   SunOS | Linux | *BSD | Darwin )
+       PATHSEP=":"
+       TRANSPORT_METHOD=dt_socket
+       ;;
+--- jdk/test/com/sun/jdi/PrivateTransportTest.sh
++++ jdk/test/com/sun/jdi/PrivateTransportTest.sh
+@@ -106,7 +106,7 @@
+     xx=`find ${jreloc}/lib -name libdt_socket.so`
+     libloc=`dirname ${xx}`
+     ;;
+-  Darwin)
++  *BSD | Darwin)
+     libloc=${jreloc}/lib
+     ;;
+   Windows*)
+--- jdk/test/com/sun/jdi/ShellScaffold.sh
++++ jdk/test/com/sun/jdi/ShellScaffold.sh
+@@ -293,7 +293,7 @@
+          psCmd=ps
+          jstack=jstack.exe
+          ;;
+-       SunOS | Linux | Darwin)
++       SunOS | Linux | *BSD | Darwin)
+          transport=dt_socket
+          address=
+          devnull=/dev/null
+--- jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh
++++ jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh
+@@ -45,7 +45,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     ;;
+   Windows* | CYGWIN*)
+--- jdk/test/java/awt/JAWT/JAWT.sh
++++ jdk/test/java/awt/JAWT/JAWT.sh
+@@ -62,6 +62,23 @@
+ 	MAKE="make"
+ 	LD_LIBRARY_PATH="."
+     ;;
++  *BSD )
++    NULL=/dev/null
++    PS=":"
++    FS="/"
++    ${TESTJAVA}${FS}bin${FS}java -version 2>&1 | grep '64-Bit' > $NULL
++    if [ $? -eq '0' ]
++    then
++        ARCH="amd64"
++    else
++        ARCH="i386"
++    fi
++    SYST="bsd"
++    MAKEFILE="Makefile.unix"
++    CC="cc"
++    MAKE="make"
++    LD_LIBRARY_PATH="."
++    ;;
+   SunOS )
+     NULL=/dev/null
+     PS=":"
+@@ -111,7 +128,7 @@
+ 	MAKE="make"
+     ;;
+   Darwin )
+-    echo "Test passed. This test is not for MacOS."
++    echo "Test passed. This test is not for BSD."
+     exit 0;
+     ;;
+   * )
+--- jdk/test/java/awt/Toolkit/AutoShutdown/ShowExitTest/ShowExitTest.sh
++++ jdk/test/java/awt/Toolkit/AutoShutdown/ShowExitTest/ShowExitTest.sh
+@@ -78,8 +78,8 @@
+       TMP="/tmp"
+       ;;
+ 
+-   Darwin )
+-      VAR="A different value for MacOSX"
++   *BSD | Darwin )
++      VAR="A different value for BSD"
+       DEFAULT_JDK=/usr
+       FILESEP="/"
+       PATHSEP=":"
+--- jdk/test/java/awt/Toolkit/Headless/WrappedToolkitTest/WrappedToolkitTest.sh
++++ jdk/test/java/awt/Toolkit/Headless/WrappedToolkitTest/WrappedToolkitTest.sh
+@@ -77,9 +77,9 @@
+       FILESEP="\\"
+       ;;
+ 
+-    Darwin)
+-      VAR="Lets not forget about Mac"
+-      DEFAULT_JDK=$(/usr/libexec/java_home)
++   *BSD | Darwin )
++      VAR="Lets not forget about BSD"
++      DEFAULT_JDK=/
+       FILESEP="/"
+       ;;
+ 
+--- jdk/test/java/awt/appletviewer/IOExceptionIfEncodedURLTest/IOExceptionIfEncodedURLTest.sh
++++ jdk/test/java/awt/appletviewer/IOExceptionIfEncodedURLTest/IOExceptionIfEncodedURLTest.sh
+@@ -111,9 +111,9 @@
+       TMP="/tmp"
+       ;;
+ 
+-   Darwin )
+-      VAR="A different value for MacOSX"
+-      DEFAULT_JDK=/usr
++   *BSD | Darwin )
++      VAR="A different value for BSD"
++      DEFAULT_JDK=/
+       FILESEP="/"
+       PATHSEP=":"
+       TMP="/tmp"
+--- jdk/test/java/io/File/GetXSpace.java
++++ jdk/test/java/io/File/GetXSpace.java
+@@ -51,7 +51,7 @@
+     private static final String dfFormat;
+     static {
+         if (name.equals("SunOS") || name.equals("Linux")
+-                || name.contains("OS X")) {
++                || name.endsWith("BSD") || name.contains("OS X")) {
+             // FileSystem Total Used Available Use% MountedOn
+             dfFormat = "([^\\s]+)\\s+(\\d+)\\s+\\d+\\s+(\\d+)\\s+\\d+%\\s+([^\\s]+)";
+         } else if (name.startsWith("Windows")) {
+--- jdk/test/java/io/File/GetXSpace.sh
++++ jdk/test/java/io/File/GetXSpace.sh
+@@ -26,7 +26,7 @@
+ # set platform-dependent variable
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux ) TMP=/tmp  ;;
++  SunOS | Linux | *BSD | Darwin ) TMP=/tmp  ;;
+   Windows_98 )    return    ;;
+   Windows* )      SID=`sid`; TMP="c:/temp"  ;;
+   * )
+--- jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh
++++ jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh
+@@ -45,7 +45,7 @@
+ # Need to determine the classpath separator and filepath separator based on the
+ # operating system.
+ case "$OS" in
+-SunOS | Linux | Darwin )
++SunOS | Linux | *BSD | Darwin )
+   PS=":"  ;;
+ Windows* | CYGWIN* )
+   PS=";"  ;;
+--- jdk/test/java/io/Serializable/serialver/classpath/run.sh
++++ jdk/test/java/io/Serializable/serialver/classpath/run.sh
+@@ -47,7 +47,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"    ;;
+   Windows* | CYGWIN* )
+     PS=";"    ;;
+--- jdk/test/java/io/Serializable/serialver/nested/run.sh
++++ jdk/test/java/io/Serializable/serialver/nested/run.sh
+@@ -47,7 +47,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"    ;;
+   Windows* | CYGWIN* )
+     PS=";"    ;;
+--- jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh
++++ jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh
+@@ -55,7 +55,7 @@
+   Linux )
+     FS="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     FS="/"
+     ;;
+   Windows*)
+--- jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh
++++ jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh
+@@ -60,7 +60,7 @@
+   Linux )
+     FS="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     FS="/"
+     ;;
+   Windows* | CYGWIN* )
+--- jdk/test/java/lang/ProcessBuilder/DestroyTest.java
++++ jdk/test/java/lang/ProcessBuilder/DestroyTest.java
+@@ -148,6 +148,9 @@
+         } else if (osName.startsWith("Linux") == true) {
+             return new UnixTest(
+                 File.createTempFile("ProcessTrap-", ".sh",null));
++        } else if (osName.endsWith("BSD")) {
++            return new UnixTest(
++                File.createTempFile("ProcessTrap-", ".sh",null));
+         } else if (osName.startsWith("Mac OS")) {
+             return new MacTest(
+                 File.createTempFile("ProcessTrap-", ".sh",null));
+--- jdk/test/java/lang/ProcessBuilder/Zombies.java
++++ jdk/test/java/lang/ProcessBuilder/Zombies.java
+@@ -34,7 +34,7 @@
+ 
+     static final String os = System.getProperty("os.name");
+ 
+-    static final String TrueCommand = os.contains("OS X")?
++    static final String TrueCommand = (os.endsWith("BSD") || os.contains("OS X")) ?
+         "/usr/bin/true" : "/bin/true";
+ 
+     public static void main(String[] args) throws Throwable {
+--- jdk/test/java/lang/StringCoding/CheckEncodings.sh
++++ jdk/test/java/lang/StringCoding/CheckEncodings.sh
+@@ -30,7 +30,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin) ;;
++  SunOS | Linux | *BSD | Darwin ) ;;
+   Windows* | CYGWIN* )
+     echo "Passed"; exit 0 ;;
+   * ) echo "Unrecognized system!" ;  exit 1 ;;
+--- jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh
++++ jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh
+@@ -48,7 +48,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin)
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/java/lang/instrument/MakeJAR2.sh
++++ jdk/test/java/lang/instrument/MakeJAR2.sh
+@@ -55,7 +55,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-   SunOS | Linux )
++   SunOS | Linux | *BSD | Darwin )
+       PATHSEP=":"
+       ;;
+ 
+--- jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh
++++ jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh
+@@ -43,7 +43,7 @@
+     PS=":"
+     FS="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java
++++ jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java
+@@ -79,8 +79,10 @@
+         System.out.println("Test passed.");
+     }
+ 
++    private static String osName = System.getProperty("os.name");
++
+     private static String LOAD_AVERAGE_TEXT
+-            = System.getProperty("os.name").contains("OS X")
++            = (osName.endsWith("BSD") || osName.contains("OS X"))
+                 ? "load averages:"
+                 : "load average:";
+ 
+@@ -99,7 +101,7 @@
+         System.out.println("Load average returned from uptime = " + output);
+         System.out.println("getSystemLoadAverage() returned " + loadavg);
+ 
+-        String[] lavg = System.getProperty("os.name").contains("OS X")
++        String[] lavg = (osName.endsWith("BSD") || osName.contains("OS X"))
+                 ? output.split(" ")
+                 : output.split(",");
+         double expected = Double.parseDouble(lavg[0]);
+--- jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh
++++ jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh
+@@ -61,7 +61,7 @@
+ while true; do
+   echo "Run $i: TestSystemLoadAvg"
+   case `uname -s` in
+-       SunOS | Linux | Darwin )
++       SunOS | Linux | *BSD | Darwin )
+          runOne GetSystemLoadAverage
+          ;;
+       * )
+--- jdk/test/java/net/Authenticator/B4933582.sh
++++ jdk/test/java/net/Authenticator/B4933582.sh
+@@ -26,7 +26,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/java/net/DatagramSocket/Send12k.java
++++ jdk/test/java/net/DatagramSocket/Send12k.java
+@@ -36,9 +36,10 @@
+ 
+     public static void main(String args[]) throws Exception {
+ 
+-         int SEND_SIZE=0;
++         String osName = System.getProperty("os.name");
++         int SEND_SIZE;
+ 
+-         if(System.getProperty("os.name").contains("Mac")) {
++         if(osName.endsWith("BSD") || osName.contains("Mac")) {
+              SEND_SIZE = 16 * 576;
+          } else {
+              SEND_SIZE = 16 * 1024;
+--- jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java
++++ jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java
+@@ -45,6 +45,8 @@
+             return (true);
+         if (p.getProperty ("os.name").equals ("Linux"))
+             return (true);
++        if (p.getProperty ("os.name").endsWith ("BSD"))
++            return (true);
+         if (p.getProperty ("os.name").startsWith ("Mac OS"))
+             return (true);
+         // Check for specific Solaris version from here
+--- jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh
++++ jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh
+@@ -27,7 +27,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Darwin )
++  SunOS | *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+--- jdk/test/java/net/Socket/OldSocketImpl.sh
++++ jdk/test/java/net/Socket/OldSocketImpl.sh
+@@ -28,7 +28,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/java/net/URL/B5086147.sh
++++ jdk/test/java/net/URL/B5086147.sh
+@@ -26,7 +26,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     exit 0
+     ;;
+   CYGWIN* )
+--- jdk/test/java/net/URLClassLoader/B5077773.sh
++++ jdk/test/java/net/URLClassLoader/B5077773.sh
+@@ -34,7 +34,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Darwin )
++  SunOS | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/java/net/URLClassLoader/sealing/checksealed.sh
++++ jdk/test/java/net/URLClassLoader/sealing/checksealed.sh
+@@ -27,7 +27,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Darwin )
++  SunOS | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/java/net/URLConnection/6212146/test.sh
++++ jdk/test/java/net/URLConnection/6212146/test.sh
+@@ -33,7 +33,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Darwin )
++  SunOS | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/java/nio/channels/FileChannel/Transfer.java
++++ jdk/test/java/nio/channels/FileChannel/Transfer.java
+@@ -228,7 +228,7 @@
+         // Windows and Linux can't handle the really large file sizes for a
+         // truncate or a positional write required by the test for 4563125
+         String osName = System.getProperty("os.name");
+-        if (!(osName.startsWith("SunOS") || osName.contains("OS X")))
++        if (!(osName.startsWith("SunOS") || osName.endsWith("BSD") || osName.contains("OS X")))
+             return;
+         File source = File.createTempFile("blah", null);
+         source.deleteOnExit();
+--- jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Launcher.c
++++ jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Launcher.c
+@@ -17,6 +17,12 @@
+ 
+ #include "Launcher.h"
+ 
++#ifdef _ALLBSD_SOURCE
++#define FD_DIR "/dev/fd"
++#else
++#define FD_DIR "/proc/self/fd"
++#endif
++
+ /*
+  * Throws the exception of the given class name and detail message
+  */
+@@ -135,7 +141,7 @@
+     }
+     close(thisFd);
+ 
+-    if ((dp = opendir("/proc/self/fd")) == NULL) {
++    if ((dp = opendir(FD_DIR)) == NULL) {
+         _exit(-1);
+     }
+ 
+--- jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh
++++ jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh
+@@ -34,7 +34,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin ) ;;
++  SunOS | Linux | *BSD | Darwin ) ;;
+   # Skip locale test for Windows
+   Windows* | CYGWIN* )
+     echo "Passed"; exit 0 ;;
+--- jdk/test/java/nio/charset/spi/basic.sh
++++ jdk/test/java/nio/charset/spi/basic.sh
+@@ -48,7 +48,7 @@
+ 
+ DIR=`pwd`
+ case `uname` in
+-  SunOS | Linux | Darwin ) CPS=':' ;;
++  SunOS | Linux | *BSD | Darwin ) CPS=':' ;;
+   Windows* )      CPS=';' ;;
+   CYGWIN*  )
+     DIR=`/usr/bin/cygpath -a -s -m $DIR`
+--- jdk/test/java/nio/file/FileSystem/Basic.java
++++ jdk/test/java/nio/file/FileSystem/Basic.java
+@@ -76,7 +76,7 @@
+             checkSupported(fs, "posix", "unix", "owner", "acl", "user");
+         if (os.equals("Linux"))
+             checkSupported(fs, "posix", "unix", "owner", "dos", "user");
+-        if (os.contains("OS X"))
++        if (os.endsWith("BSD") || os.contains("OS X"))
+             checkSupported(fs, "posix", "unix", "owner");
+         if (os.equals("Windows"))
+             checkSupported(fs, "owner", "dos", "acl", "user");
+--- jdk/test/java/nio/file/Files/CopyAndMove.java
++++ jdk/test/java/nio/file/Files/CopyAndMove.java
+@@ -651,7 +651,7 @@
+ 
+                 // check POSIX attributes are copied
+                 String os = System.getProperty("os.name");
+-                if ((os.equals("SunOS") || os.equals("Linux")) &&
++                if ((os.equals("SunOS") || os.equals("Linux") || os.endsWith("BSD")) &&
+                     testPosixAttributes)
+                 {
+                     checkPosixAttributes(
+@@ -1155,7 +1155,7 @@
+     static void randomizeAttributes(Path file) throws IOException {
+         String os = System.getProperty("os.name");
+         boolean isWindows = os.startsWith("Windows");
+-        boolean isUnix = os.equals("SunOS") || os.equals("Linux");
++        boolean isUnix = os.equals("SunOS") || os.equals("Linux") || os.endsWith("BSD");
+         boolean isDirectory = isDirectory(file, NOFOLLOW_LINKS);
+ 
+         if (isUnix) {
+--- jdk/test/java/rmi/activation/Activatable/extLoadedImpl/ext.sh
++++ jdk/test/java/rmi/activation/Activatable/extLoadedImpl/ext.sh
+@@ -33,7 +33,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     ;;
+   Windows* | CYGWIN* )
+--- jdk/test/java/rmi/registry/readTest/readTest.sh
++++ jdk/test/java/rmi/registry/readTest/readTest.sh
+@@ -34,7 +34,7 @@
+ REGARGS=""
+ 
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     FILEURL="file:"
+--- jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh
++++ jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh
+@@ -58,7 +58,7 @@
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+--- jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh
++++ jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh
+@@ -42,7 +42,7 @@
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+--- jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh
++++ jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh
+@@ -66,7 +66,7 @@
+     PATHSEP=";"
+     FILESEP="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+--- jdk/test/java/security/Security/signedfirst/Dyn.sh
++++ jdk/test/java/security/Security/signedfirst/Dyn.sh
+@@ -58,7 +58,7 @@
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+--- jdk/test/java/security/Security/signedfirst/Static.sh
++++ jdk/test/java/security/Security/signedfirst/Static.sh
+@@ -58,7 +58,7 @@
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+--- jdk/test/java/util/Currency/PropertiesTest.sh
++++ jdk/test/java/util/Currency/PropertiesTest.sh
+@@ -52,7 +52,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/java/util/PluggableLocale/ExecTest.sh
++++ jdk/test/java/util/PluggableLocale/ExecTest.sh
+@@ -62,7 +62,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/java/util/ResourceBundle/Bug6299235Test.sh
++++ jdk/test/java/util/ResourceBundle/Bug6299235Test.sh
+@@ -31,7 +31,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+--- jdk/test/java/util/ServiceLoader/basic.sh
++++ jdk/test/java/util/ServiceLoader/basic.sh
+@@ -43,9 +43,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-    SunOS | Darwin )
+-      SEP=':' ;;
+-    Linux )
++    SunOS | Linux | *BSD | Darwin )
+       SEP=':' ;;
+     * )
+       SEP='\;' ;;
+--- jdk/test/java/util/prefs/CheckUserPrefsStorage.sh
++++ jdk/test/java/util/prefs/CheckUserPrefsStorage.sh
+@@ -31,7 +31,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh
++++ jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh
+@@ -56,7 +56,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatTest.sh
++++ jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatTest.sh
+@@ -89,7 +89,7 @@
+       FILESEP="/"
+       ;;
+ 
+-   Linux | Darwin  )
++   Linux | *BSD | Darwin )
+       VAR="A different value for Linux"
+       DEFAULT_JDK=/none
+       #DEFAULT_JDK=/usr/local/java/jdk1.4/linux-i386
+--- jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatThreadTest.sh
++++ jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatThreadTest.sh
+@@ -90,7 +90,7 @@
+       FILESEP="/"
+       ;;
+ 
+-   Linux | Darwin )
++   Linux | *BSD | Darwin )
+       VAR="A different value for Linux"
+       DEFAULT_JDK=/none
+       #DEFAULT_JDK=/usr/local/java/jdk1.4/linux-i386
+--- jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh
++++ jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh
+@@ -92,7 +92,7 @@
+       TMP="/tmp"
+       ;;
+ 
+-   Darwin )
++   *BSD | Darwin )
+       VAR="A different value for MacOSX"
+       DEFAULT_JDK=/usr
+       FILESEP="/"
+--- jdk/test/javax/script/CommonSetup.sh
++++ jdk/test/javax/script/CommonSetup.sh
+@@ -36,7 +36,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/javax/security/auth/Subject/doAs/Test.sh
++++ jdk/test/javax/security/auth/Subject/doAs/Test.sh
+@@ -43,7 +43,7 @@
+     FS="/"
+     RM="/bin/rm -f"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     PS=":"
+     FS="/"
+     RM="/bin/rm -f"
+--- jdk/test/lib/security/java.policy/Ext_AllPolicy.sh
++++ jdk/test/lib/security/java.policy/Ext_AllPolicy.sh
+@@ -53,7 +53,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java
++++ jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java
+@@ -53,8 +53,13 @@
+         return isOs("linux");
+     }
+ 
++    public static boolean isBSD() {
++        return isOs("bsd");
++    }
++
+     private static boolean isOs(String osname) {
+-        return osName.toLowerCase().startsWith(osname.toLowerCase());
++        return (osName.toLowerCase().startsWith(osname.toLowerCase()) ||
++               osName.toLowerCase().endsWith(osname.toLowerCase()));
+     }
+ 
+     public static String getOsName() {
+--- jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh
++++ jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh
+@@ -42,7 +42,7 @@
+ fi
+ 
+ case $OS in
+-SunOS | Linux | Darwin)
++SunOS | Linux | *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     DFILESEP=$FILESEP
+--- jdk/test/sun/net/ftp/MarkResetTest.sh
++++ jdk/test/sun/net/ftp/MarkResetTest.sh
+@@ -28,7 +28,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/sun/net/www/http/HttpClient/RetryPost.sh
++++ jdk/test/sun/net/www/http/HttpClient/RetryPost.sh
+@@ -28,7 +28,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/sun/net/www/protocol/jar/B5105410.sh
++++ jdk/test/sun/net/www/protocol/jar/B5105410.sh
+@@ -31,7 +31,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/sun/net/www/protocol/jar/jarbug/run.sh
++++ jdk/test/sun/net/www/protocol/jar/jarbug/run.sh
+@@ -31,7 +31,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/sun/nio/ch/SelProvider.java
++++ jdk/test/sun/nio/ch/SelProvider.java
+@@ -39,7 +39,7 @@
+                 expected = "sun.nio.ch.DevPollSelectorProvider";
+             } else if ("Linux".equals(osname)) {
+                 expected = "sun.nio.ch.EPollSelectorProvider";
+-            } else if (osname.contains("OS X")) {
++            } else if (osname.endsWith("BSD") || osname.contains("OS X")) {
+                 expected = "sun.nio.ch.KQueueSelectorProvider";
+             } else {
+                 return;
+--- jdk/test/sun/security/krb5/runNameEquals.sh
++++ jdk/test/sun/security/krb5/runNameEquals.sh
+@@ -52,7 +52,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     NATIVE=true
+--- jdk/test/sun/security/mscapi/ShortRSAKey1024.sh
++++ jdk/test/sun/security/mscapi/ShortRSAKey1024.sh
+@@ -49,7 +49,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin | CYGWIN* )
++  SunOS | Linux | *BSD | Darwin | CYGWIN* )
+     FS="/"
+     ;;
+   Windows_* )
+--- jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh
++++ jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh
+@@ -66,7 +66,7 @@
+     CP="${FS}bin${FS}cp"
+     CHMOD="${FS}bin${FS}chmod"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     FS="/"
+     PS=":"
+     CP="${FS}bin${FS}cp"
+--- jdk/test/sun/security/pkcs11/Provider/Login.sh
++++ jdk/test/sun/security/pkcs11/Provider/Login.sh
+@@ -67,7 +67,7 @@
+     CP="${FS}bin${FS}cp"
+     CHMOD="${FS}bin${FS}chmod"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     FS="/"
+     PS=":"
+     CP="${FS}bin${FS}cp"
+--- jdk/test/sun/security/provider/KeyStore/DKSTest.sh
++++ jdk/test/sun/security/provider/KeyStore/DKSTest.sh
+@@ -58,7 +58,7 @@
+     PS=":"
+     FS="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh
++++ jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh
+@@ -52,7 +52,7 @@
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+-  Linux )
++  Linux | *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+--- jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh
++++ jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh
+@@ -59,7 +59,7 @@
+     PS=":"
+     FS="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh
++++ jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh
+@@ -33,7 +33,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh
++++ jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh
+@@ -46,7 +46,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-    SunOS | Linux | Darwin )
++    SunOS | Linux | *BSD | Darwin )
+         FILESEP="/"
+         PATHSEP=":"
+         ;;
+--- jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh
++++ jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh
+@@ -32,7 +32,7 @@
+ HOSTNAME=`uname -n`
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh
++++ jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh
+@@ -32,7 +32,7 @@
+ HOSTNAME=`uname -n`
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     PS=":"
+     FS="/"
+     ;;
+--- jdk/test/sun/security/tools/jarsigner/AlgOptions.sh
++++ jdk/test/sun/security/tools/jarsigner/AlgOptions.sh
+@@ -46,7 +46,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/jarsigner/PercentSign.sh
++++ jdk/test/sun/security/tools/jarsigner/PercentSign.sh
+@@ -46,7 +46,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/jarsigner/diffend.sh
++++ jdk/test/sun/security/tools/jarsigner/diffend.sh
+@@ -41,7 +41,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/jarsigner/oldsig.sh
++++ jdk/test/sun/security/tools/jarsigner/oldsig.sh
+@@ -42,7 +42,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/keytool/AltProviderPath.sh
++++ jdk/test/sun/security/tools/keytool/AltProviderPath.sh
+@@ -46,7 +46,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh
++++ jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh
+@@ -55,7 +55,7 @@
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+--- jdk/test/sun/security/tools/keytool/NoExtNPE.sh
++++ jdk/test/sun/security/tools/keytool/NoExtNPE.sh
+@@ -48,7 +48,7 @@
+   Linux )
+     FILESEP="/"
+     ;;
+-  Darwin )
++  *BSD | Darwin )
+     FILESEP="/"
+     ;;
+   CYGWIN* )
+--- jdk/test/sun/security/tools/keytool/SecretKeyKS.sh
++++ jdk/test/sun/security/tools/keytool/SecretKeyKS.sh
+@@ -45,7 +45,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/keytool/StandardAlgName.sh
++++ jdk/test/sun/security/tools/keytool/StandardAlgName.sh
+@@ -46,7 +46,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/keytool/StorePasswordsByShell.sh
++++ jdk/test/sun/security/tools/keytool/StorePasswordsByShell.sh
+@@ -54,7 +54,7 @@
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+-  Darwin ) 
++  *BSD | Darwin ) 
+     PATHSEP=":"
+     FILESEP="/"
+     ;;
+--- jdk/test/sun/security/tools/keytool/i18n.sh
++++ jdk/test/sun/security/tools/keytool/i18n.sh
+@@ -46,7 +46,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux )
++  SunOS | Linux | *BSD )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/keytool/printssl.sh
++++ jdk/test/sun/security/tools/keytool/printssl.sh
+@@ -40,7 +40,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     FS="/"
+     ;;
+   CYGWIN* )
+--- jdk/test/sun/security/tools/keytool/resource.sh
++++ jdk/test/sun/security/tools/keytool/resource.sh
+@@ -43,7 +43,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     FS="/"
+     ;;
+--- jdk/test/sun/security/tools/keytool/standard.sh
++++ jdk/test/sun/security/tools/keytool/standard.sh
+@@ -45,7 +45,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin | CYGWIN* )
++  SunOS | Linux | *BSD | Darwin | CYGWIN* )
+     FS="/"
+     ;;
+   Windows_* )
+--- jdk/test/sun/security/tools/policytool/Alias.sh
++++ jdk/test/sun/security/tools/policytool/Alias.sh
+@@ -47,7 +47,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/policytool/ChangeUI.sh
++++ jdk/test/sun/security/tools/policytool/ChangeUI.sh
+@@ -46,7 +46,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/policytool/OpenPolicy.sh
++++ jdk/test/sun/security/tools/policytool/OpenPolicy.sh
+@@ -46,7 +46,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/policytool/SaveAs.sh
++++ jdk/test/sun/security/tools/policytool/SaveAs.sh
+@@ -47,7 +47,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/policytool/UpdatePermissions.sh
++++ jdk/test/sun/security/tools/policytool/UpdatePermissions.sh
+@@ -47,7 +47,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/policytool/UsePolicy.sh
++++ jdk/test/sun/security/tools/policytool/UsePolicy.sh
+@@ -46,7 +46,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/security/tools/policytool/i18n.sh
++++ jdk/test/sun/security/tools/policytool/i18n.sh
+@@ -49,7 +49,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin )
++  SunOS | Linux | *BSD | Darwin )
+     NULL=/dev/null
+     PS=":"
+     FS="/"
+--- jdk/test/sun/tools/common/CommonSetup.sh
++++ jdk/test/sun/tools/common/CommonSetup.sh
+@@ -47,6 +47,7 @@
+ #   isLinux   - true if OS is Linux
+ #   isSolaris - true if OS is Solaris
+ #   isWindows - true if OS is Windows
++#   isBSD     - true if OS is BSD
+ #   isMacos   - true if OS is Macos X
+ 
+ 
+@@ -82,6 +83,7 @@
+ isSolaris=false
+ isUnknownOS=false
+ isWindows=false
++isBSD=false
+ isMacos=false
+ 
+ OS=`uname -s`
+@@ -105,6 +107,10 @@
+     OS="Linux"
+     isLinux=true
+     ;;
++  *BSD )
++    OS="BSD"
++    isBSD=true
++    ;;
+   Darwin )
+     OS="Mac OS X"
+     isMacos=true
+--- jdk/test/sun/tools/jconsole/ResourceCheckTest.sh
++++ jdk/test/sun/tools/jconsole/ResourceCheckTest.sh
+@@ -54,7 +54,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-   SunOS | Linux | Darwin)
++   SunOS | Linux | *BSD | Darwin )
+       PATHSEP=":"
+       ;;
+ 
+--- jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh
++++ jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh
+@@ -56,7 +56,7 @@
+ 
+ OS=`uname -s`
+ case "$OS" in
+-   SunOS | Linux | Darwin )
++   SunOS | Linux | *BSD | Darwin )
+       PATHSEP=":"
+       ;;
+ 
+--- jdk/test/tools/launcher/ExecutionEnvironment.java
++++ jdk/test/tools/launcher/ExecutionEnvironment.java
+@@ -180,7 +180,7 @@
+ 
+         Map<String, String> env = new HashMap<>();
+ 
+-        if (TestHelper.isLinux || TestHelper.isMacOSX) {
++        if (TestHelper.isLinux || TestHelper.isBSD || TestHelper.isMacOSX) {
+             for (String x : LD_PATH_STRINGS) {
+                 String pairs[] = x.split("=");
+                 env.put(pairs[0], pairs[1]);
+--- jdk/test/tools/launcher/RunpathTest.java
++++ jdk/test/tools/launcher/RunpathTest.java
+@@ -69,7 +69,7 @@
+     }
+ 
+     public static void main(String... args) throws Exception {
+-        if (isSolaris || isLinux) {
++        if (isSolaris || isLinux || isBSD) {
+             RunpathTest rp = new RunpathTest();
+             rp.testRpath();
+         }
+--- jdk/test/tools/launcher/Test7029048.java
++++ jdk/test/tools/launcher/Test7029048.java
+@@ -223,7 +223,7 @@
+         } else if (isSolaris && passes < 9) {
+             throw new Exception("Test7029048: FAIL: " +
+                     "all tests did not run, expected " + 9 + " got " + passes);
+-        } else if (isLinux && passes < 6) {
++        } else if ((isLinux || isBSD) && passes < 6) {
+              throw new Exception("Test7029048: FAIL: " +
+                     "all tests did not run, expected " + 6 + " got " + passes);
+         } else {
+--- jdk/test/tools/launcher/TestHelper.java
++++ jdk/test/tools/launcher/TestHelper.java
+@@ -92,6 +92,8 @@
+             System.getProperty("os.name", "unknown").startsWith("SunOS");
+     static final boolean isLinux =
+             System.getProperty("os.name", "unknown").startsWith("Linux");
++    static final boolean isBSD =
++            System.getProperty("os.name", "unknown").endsWith("BSD");
+     static final String LIBJVM = isWindows
+                         ? "jvm.dll"
+                         : "libjvm" + (isMacOSX ? ".dylib" : ".so");
+--- langtools/test/Makefile
++++ langtools/test/Makefile
+@@ -36,6 +36,14 @@
+     ARCH=i586
+   endif
+ endif
++ifeq ($(OSNAME), FreeBSD)
++  PLATFORM = bsd
++  JT_PLATFORM = linux
++  ARCH = $(shell uname -p)
++  ifeq ($(ARCH), i386)
++    ARCH=i586
++  endif
++endif
+ ifeq ($(OSNAME), Darwin)
+   PLATFORM = bsd
+   JT_PLATFORM = linux
+--- langtools/test/tools/javah/ReadOldClass.sh
++++ langtools/test/tools/javah/ReadOldClass.sh
+@@ -43,7 +43,7 @@
+ # set platform-dependent variables
+ OS=`uname -s`
+ case "$OS" in
+-  SunOS | Linux | Darwin | CYGWIN* )
++  SunOS | Linux | *BSD | Darwin | CYGWIN* )
+     PS=":"
+     FS="/"
+     ;;

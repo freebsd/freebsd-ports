@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	xlog
@@ -30,7 +30,7 @@ DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "${PORTNAME}.xpm" \
 	"${PORTNAME}" "Utility;" ${FALSE}
 
 post-patch:
-	${REINPLACE_CMD} -e 's/@INSTALL_DATA@/${INSTALL} -m 644/' \
+	@${REINPLACE_CMD} -e 's/@INSTALL_DATA@/${INSTALL} -m 644/' \
 		${WRKSRC}/data/desktop/Makefile.in
 
 .include <bsd.port.mk>

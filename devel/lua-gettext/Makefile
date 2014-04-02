@@ -22,7 +22,6 @@ LVER=		${PORTVERSION}
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/gettext.lua \
 		%%LUA_MODLIBDIR%%/lgettext.so
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 .for file in ${DISTFILES}
@@ -31,7 +30,9 @@ do-extract:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/gettext.lua ${LUA_MODSHAREDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/lgettext.so ${LUA_MODLIBDIR}
+	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/gettext.lua ${STAGEDIR}${LUA_MODSHAREDIR}
+	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lgettext.so ${STAGEDIR}${LUA_MODLIBDIR}
 
 .include <bsd.port.mk>

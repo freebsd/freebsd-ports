@@ -19,6 +19,26 @@ bin/extractres
 bin/includeres
 bin/psmerge
 bin/showchar
+man/man1/epsffit.1.gz
+man/man1/extractres.1.gz
+man/man1/fixdlsrps.1.gz
+man/man1/fixfmps.1.gz
+man/man1/fixmacps.1.gz
+man/man1/fixpsditps.1.gz
+man/man1/fixpspps.1.gz
+man/man1/fixscribeps.1.gz
+man/man1/fixtpps.1.gz
+man/man1/fixwfwps.1.gz
+man/man1/fixwpps.1.gz
+man/man1/fixwwps.1.gz
+man/man1/getafm.1.gz
+man/man1/includeres.1.gz
+man/man1/psbook.1.gz
+man/man1/psmerge.1.gz
+man/man1/psnup.1.gz
+man/man1/psresize.1.gz
+man/man1/psselect.1.gz
+man/man1/pstops.1.gz
 %%DATADIR%%/md68_0.ps
 %%DATADIR%%/md71_0.ps
 @dirrm %%DATADIR%%

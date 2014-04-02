@@ -4,7 +4,7 @@
 
 PORTNAME=	planner
 PORTVERSION=	0.14.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -28,24 +28,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include -DGLIB_COMPILATION
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	planner.schemas
-
-MAN1=		planner.1
-
-OPTIONS_DEFINE=	GDA
-GDA_DESC=	Enable database support (though libgda)
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGDA}
-USE_GNOME+=	libgda3
-CONFIGURE_ARGS+=--with-database=gda3
-PLIST_SUB+=	GDA=""
-.else
-PLIST_SUB+=	GDA="@comment "
-.endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>

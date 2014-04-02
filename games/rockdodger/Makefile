@@ -9,8 +9,7 @@ MASTER_SITES=	GOOGLE_CODE \
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_music${EXTRACT_SUFX}:addons \
 		${PORTNAME}.png:addons
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}_music${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Addictive rock-dodging greeblie-killing platform game
@@ -44,6 +43,8 @@ post-patch:
 		${WRKSRC}/data/Makefile
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 

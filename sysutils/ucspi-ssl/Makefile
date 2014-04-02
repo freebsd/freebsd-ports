@@ -29,7 +29,6 @@ WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 
 SCRIPTS_TO_INSTALL=	https@ sslcat sslconnect
 
-NO_STAGE=	yes
 post-patch:
 .for x in ${SCRIPTS_TO_INSTALL}
 	@${REINPLACE_CMD} -i ''	-e 's|HOME/command/|${PREFIX}/bin/|' \
@@ -50,14 +49,12 @@ do-build:
 
 do-install:
 .for x in ${SCRIPTS_TO_INSTALL}
-	${INSTALL_SCRIPT} ${WRKSRC}/command/${x} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/command/${x} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for x in sslclient sslserver sslperl
-	${INSTALL_PROGRAM} ${WRKSRC}/command/${x} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/command/${x} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/src && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/src && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

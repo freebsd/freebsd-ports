@@ -6,6 +6,16 @@ etc/s-news/newsfeeds.sample
 etc/s-news/newsgroups.sample
 etc/s-news/overview.fmt.sample
 etc/s-news/put.news
+man/man1/inews.1.gz
+man/man8/expire.8.gz
+man/man8/listactive.8.gz
+man/man8/makehistory.8.gz
+man/man8/newgroup.8.gz
+man/man8/nntpd.8.gz
+man/man8/overview.8.gz
+man/man8/qnews.8.gz
+man/man8/rmgroup.8.gz
+man/man8/rnews.8.gz
 sbin/expire
 sbin/fetchnews
 sbin/listactive

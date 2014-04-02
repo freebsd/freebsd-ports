@@ -16,6 +16,7 @@ lib/libglabels.la
 lib/libglabels.so
 lib/libglabels.so.5
 libdata/pkgconfig/libglabels.pc
+man/man1/glabels.1.gz
 share/application-registry/glabels.applications
 share/applications/glabels.desktop
 share/doc/libglabels/ch01.html

@@ -2,7 +2,7 @@
 
 PORTNAME=	shakespeare-i18n
 PORTVERSION=	1.0.0.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

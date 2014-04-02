@@ -1,0 +1,19 @@
+--- jdk/make/lib/ServiceabilityLibraries.gmk
++++ jdk/make/lib/ServiceabilityLibraries.gmk
+@@ -244,6 +244,7 @@
+     CFLAGS := $(LIBINSTRUMENT_CFLAGS), \
+     CFLAGS_debug := -DJPLIS_LOGGING, \
+     CFLAGS_release := -DNO_JPLIS_LOGGING, \
++    CFLAGS_bsd := %%ICONV_CPPFLAGS%%, \
+     MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libinstrument/mapfile-vers, \
+     LDFLAGS := $(LDFLAGS_JDKLIB) \
+         $(call SET_SHARED_LIBRARY_ORIGIN) \
+@@ -255,7 +256,7 @@
+         -framework Cocoa -framework Security -framework ApplicationServices, \
+     LDFLAGS_SUFFIX := $(LIBINSTRUMENT_LDFLAGS_SUFFIX), \
+     LDFLAGS_SUFFIX_macosx := -liconv $(LIBZ), \
+-    LDFLAGS_SUFFIX_bsd := -liconv $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli, \
++    LDFLAGS_SUFFIX_bsd := %%ICONV_LDFLAGS%% $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli, \
+     LDFLAGS_SUFFIX_solaris := $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli $(LIBDL) -lc, \
+     LDFLAGS_SUFFIX_linux := $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli $(LIBDL), \
+     VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \

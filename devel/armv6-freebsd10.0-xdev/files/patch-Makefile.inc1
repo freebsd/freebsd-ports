@@ -1,0 +1,72 @@
+--- ./Makefile.inc1.orig	2014-01-16 21:31:35.000000000 +0100
++++ ./Makefile.inc1	2014-04-02 18:02:36.525312133 +0200
+@@ -1857,21 +1857,23 @@
+ 	CPUTYPE=${XDEV_CPUTYPE}
+ 
+ XDDIR=${XDEV_ARCH}-freebsd
+-XDTP=/usr/${XDDIR}
++XDTP?=usr/${XDDIR}
+ CDBENV=MAKEOBJDIRPREFIX=${MAKEOBJDIRPREFIX}/${XDDIR} \
+ 	INSTALL="sh ${.CURDIR}/tools/install.sh"
+ CDENV= ${CDBENV} \
+ 	_SHLIBDIRPREFIX=${XDDESTDIR} \
+-	TOOLS_PREFIX=${XDDESTDIR}
++	TOOLS_PREFIX=${XDTP}
+ CD2CFLAGS=-isystem ${XDDESTDIR}/usr/include -L${XDDESTDIR}/usr/lib \
+-	-B${XDDESTDIR}/usr/lib
+-CD2ENV=${CDENV} CC="${CC} ${CD2CFLAGS}" \
++	--sysroot=${XDDESTDIR}/ -B${XDDESTDIR}/usr/bin
++CD2CXXFLAGS=-isystem ${XDDESTDIR}/usr/include -L${XDDESTDIR}/usr/lib \
++	--sysroot=${XDDESTDIR}/ -B${XDDESTDIR}/usr/bin
++CD2ENV=${CDENV} CC="${CC} ${CD2CFLAGS}" CXX="${CXX} ${CD2CXXFLAGS}"\
+ 	MACHINE=${XDEV} MACHINE_ARCH=${XDEV_ARCH}
+ 
+ CDTMP=	${MAKEOBJDIRPREFIX}/${XDDIR}/${.CURDIR}/tmp
+ CDMAKE=${CDENV} PATH=${CDTMP}/usr/bin:${PATH} ${MAKE} ${NOFUN}
+-CD2MAKE=${CD2ENV} PATH=${CDTMP}/usr/bin:${XDTP}/usr/bin:${PATH} ${MAKE} ${NOFUN}
+-XDDESTDIR=${DESTDIR}${XDTP}
++CD2MAKE=${CD2ENV} PATH=${CDTMP}/usr/bin:${XDDESTDIR}/usr/bin:${PATH} ${MAKE} ${NOFUN}
++XDDESTDIR?=${DESTDIR}/${XDTP}
+ .if !defined(OSREL)
+ OSREL!= uname -r | sed -e 's/[-(].*//'
+ .endif
+@@ -1904,11 +1906,11 @@
+ 
+ _xb-cross-tools:
+ .for _tool in \
+-    gnu/usr.bin/binutils \
+-    gnu/usr.bin/cc \
+-    usr.bin/ar \
+     ${_clang_libs} \
+-    ${_clang}
++    ${_clang} \
++    ${_binutils} \
++    ${_cc} \
++    usr.bin/ar
+ 	${_+_}@${ECHODIR} "===> xdev ${_tool} (obj,depend,all)"; \
+ 	cd ${.CURDIR}/${_tool} && \
+ 	${CDMAKE} DIRPRFX=${_tool}/ obj && \
+@@ -1932,10 +1934,11 @@
+ _xi-cross-tools:
+ 	@echo "_xi-cross-tools"
+ .for _tool in \
+-    gnu/usr.bin/binutils \
+-    gnu/usr.bin/cc \
+-    usr.bin/ar \
+-    ${_clang}
++    ${_clang_libs} \
++    ${_clang} \
++    ${_binutils} \
++    ${_cc} \
++    usr.bin/ar
+ 	${_+_}@${ECHODIR} "===> xdev ${_tool} (install)"; \
+ 	cd ${.CURDIR}/${_tool}; \
+ 	${CDMAKE} DIRPRFX=${_tool}/ install DESTDIR=${XDDESTDIR}
+@@ -1951,6 +1954,7 @@
+ 
+ _xi-links:
+ 	${_+_}cd ${XDDESTDIR}/usr/bin; \
++		mkdir -p ../../../../usr/bin; \
+ 		for i in *; do \
+ 			ln -sf ../../${XDTP}/usr/bin/$$i \
+ 			    ../../../../usr/bin/${XDDIR}-$$i; \

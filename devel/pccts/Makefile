@@ -18,58 +18,31 @@ USES=		zip
 MAKE_ENV=	COPT="${CFLAGS}"
 MAKEFILE=	makefile
 ALL_TARGET=	# empty
+CFLAGS+=	-DPCCTS_USE_STDARG
 
-MAN1=		antlr.1 dlg.1
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
 post-patch:
-	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<varargs.h>|<stdarg.h>|g'
+	@${FIND} ${WRKSRC}/testcpp -name "makefile*" | ${XARGS} ${REINPLACE_CMD} -E \
+		-e '/^CCC/ s,=.*,=$$(CXX),' \
+		-e '/^PCCTS/ s,\.\.\/\.\.,$$(PREFIX),' \
+		-e '/^(A|ANTLR)_H/ s,h,include/pccts,'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/antlr ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/dlg ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/genmk ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/sor ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/antlr/antlr.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/dlg/dlg.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/include/pccts
-.for file in ast charptr
-	${INSTALL_DATA} ${WRKSRC}/h/${file}.c ${PREFIX}/include/pccts/${file}.c
-.endfor
-.for file in AParser ASTBase ATokenBuffer BufFileInput DLexerBase PCCTSAST slist
-	${INSTALL_DATA} ${WRKSRC}/h/${file}.cpp ${PREFIX}/include/pccts/${file}.cpp
-.endfor
-.for file in AParser ASTBase ATokPtr ATokPtrImpl AToken ATokenBuffer \
-	ATokenStream BufFileInput DLG_stream_input DLexer DLexerBase \
-	PBlackBox PCCTSAST SList antlr ast charbuf charptr config dlgauto \
-	dlgdef err int pccts_assert pccts_iostream pccts_istream pccts_setjmp \
-	pccts_stdarg pccts_stdio pccts_stdlib pccts_string pcctscfg
-	${INSTALL_DATA} ${WRKSRC}/h/${file}.h ${PREFIX}/include/pccts/${file}.h
-.endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in CHANGES_FROM_131.txt CHANGES_FROM_133.txt \
-	CHANGES_FROM_133_BEFORE_MR13.txt KNOWN_PROBLEMS.txt README RIGHTS \
-	history.ps history.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file}
-.endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-.for dir in 1 2 3 4 5 6 7 8 9 10 11 12 13
-	@${MKDIR} ${EXAMPLESDIR}/${dir}
-.endfor
-.for file in makefile 1/makefile 1/test.g \
-	2/MyLexer.cpp 2/MyLexer.h 2/makefile 2/test.g \
-	3/MyLexer.cpp 3/MyLexer.h 3/makefile 3/mytokens.h 3/test.g \
-	4/makefile 4/mytokens.h 4/test.g 5/input.h 5/makefile 5/test.g \
-	6/file1 6/file2 6/main.cpp 6/makefile 6/makefile2 6/test.g 6/test2.g \
-	7/makefile 7/test.g 8/main.cpp 8/makefile 8/test.g \
-	9/makefile 9/test.g 10/makefile 10/test.g \
-	11/input.h 11/makefile 11/test.g 12/makefile 12/test.g \
-	13/makefile 13/test.g
-	${INSTALL_DATA} ${WRKSRC}/testcpp/${file} ${EXAMPLESDIR}/${file}
-.endfor
-.endif
+	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} antlr dlg genmk sor \
+		${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_MAN} ${WRKSRC}/antlr/antlr.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dlg/dlg.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/pccts
+	(cd ${WRKSRC}/h && ${INSTALL_DATA} *.c *.cpp *.h \
+		${STAGEDIR}${PREFIX}/include/pccts)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} CHANGES_FROM_131.txt \
+		CHANGES_FROM_133.txt CHANGES_FROM_133_BEFORE_MR13.txt \
+		KNOWN_PROBLEMS.txt README RIGHTS history.ps history.txt \
+		${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/testcpp && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR} "! -name *.bak")
 
 .include <bsd.port.mk>

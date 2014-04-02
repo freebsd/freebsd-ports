@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cups
-PORTVERSION=	1.5.4
+PORTVERSION=	1.7.1
 DISTVERSIONSUFFIX=	-source
 PORTREVISION=	1
 CATEGORIES=	print
@@ -19,8 +19,8 @@ CONFLICTS=	LPRng-[0-9]*
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
-USE_BZIP2=	yes
-USES+=		gmake
+USES+=		gmake pkgconfig tar:bzip2
+DESTDIRNAME=	DSTROOT
 GNU_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -30,8 +30,8 @@ CONFIGURE_ENV=	DSOFLAGS="${DSOFLAGS}"
 CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--disable-slp				\
 			--disable-gssapi			\
-			--with-cups-user=${CUPSOWN}		\
-			--with-cups-group=${CUPSGRP}		\
+			--with-cups-user=${USERS}		\
+			--with-cups-group=${GROUPS}		\
 			--with-system-groups=${CUPSSYSGRP}	\
 			--with-docdir=${DOCSDIR}		\
 			--with-icondir=${PREFIX}/share/icons	\
@@ -41,51 +41,39 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-pam-module="unix"		\
 			--enable-ssl
 
-CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_CACHEDIR?=	/var/db/cups
 CUPS_SPOOLDIR=	/var/spool/cups
 CUPS_SOCKET?=	/var/run/cups.sock
 CUPS_PDFTOPS?=	${LOCALBASE}/libexec/xpdf/pdftops
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-# file, dir ownership
-CUPSGRP=	cups
-CUPSOWN=	cups
 CUPSSYSGRP=	wheel
 # GROUPS/USERS does not work here
-#GROUPS=	cups
-#USERS=		cups
+GROUPS=	cups
+USERS=		cups
 
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 .if defined(CUPS_CLIENT)
-PORTREVISION=	1
+PORTREVISION=	0
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 OPTIONS_DEFINE=	GNUTLS
 .elif defined(CUPS_IMAGE)
-PORTREVISION=	1
+PORTREVISION=	0
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 OPTIONS_DEFINE=	GNUTLS
 .else
 INSTALLS_ICONS=	yes
-PORTREVISION=	1
+PORTREVISION=	0
 CUPS_SUFFIX=	-base
-OPTIONS_DEFINE=	GNUTLS LIBPAPER PHP PYTHON PAM LDAP DBUS LIBUSB XDG_OPEN GHOSTSCRIPT XPDF AVAHI MDNSRESPONDER
-OPTIONS_DEFAULT=	LIBPAPER GHOSTSCRIPT
+OPTIONS_DEFINE=	GNUTLS LIBPAPER PHP PYTHON PAM DBUS LIBUSB XDG_OPEN AVAHI MDNSRESPONDER
+OPTIONS_DEFAULT=	LIBPAPER
 NO_OPTIONS_SORT=	yes
 .endif
 
 LIBUSB_DESC=		USB support
-GHOSTSCRIPT_DESC=	Build pdftops with GHOSTSCRIPT
-XPDF_DESC=		Build pdftops with XPDF
 XDG_OPEN_DESC=		Build with XDG_OPEN as browser
-
-.if defined(CUPS_CLIENT) || defined(CUPS_IMAGE)
-USES+=		desthack
-.else
-NO_STAGE=	yes
-.endif
 
 .include <bsd.port.options.mk>
 
@@ -99,22 +87,21 @@ USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.client
 .elif defined(CUPS_IMAGE)
-LIB_DEPENDS+=	cups:${PORTSDIR}/${PKGCATEGORY}/cups-client \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/${PKGCATEGORY}/cups-client \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 # force build if old cups is installed.
 BUILD_DEPENDS+=	cups-client${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-client
 COMMENT2=	Library cupsimage
-CONFIGURE_ARGS+=	--disable-pdftops
 INSTALL_WRKSRC=	${WRKSRC}/filter
 PLIST=		${MASTERDIR}/pkg-plist.image
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.image
 .else
-LIB_DEPENDS+=	cups:${PORTSDIR}/${PKGCATEGORY}/cups-client
-LIB_DEPENDS+=	cupsimage:${PORTSDIR}/${PKGCATEGORY}/cups-image
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/${PKGCATEGORY}/cups-client \
+		libcupsimage.so:${PORTSDIR}/${PKGCATEGORY}/cups-image
 # force build if old cups is installed.
 BUILD_DEPENDS+=	cups-client${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-client
 BUILD_DEPENDS+=	cups-image${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-image
@@ -136,9 +123,8 @@ CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
 
 .if ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
-LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt
-LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
-USES+=		pkgconfig
+LIB_DEPENDS+=		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+			libgnutls.so:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 WITH_OPENSSL_HACK7=	yes
@@ -155,22 +141,6 @@ CONFIGURE_ARGS+=	--without-php
 PLIST_SUB+=		PHP="@comment "
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MGHOSTSCRIPT}
-.if ${PORT_OPTIONS:MXPDF}
-IGNORE=			You must select one and only one option to build pdftops
-.endif
-USE_GHOSTSCRIPT=	yes
-CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/gs
-PLIST_SUB+=		WITH_PDFTOPS=""
-.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MXPDF}
-BUILD_DEPENDS+=		${CUPS_PDFTOPS}:${PORTSDIR}/graphics/xpdf
-RUN_DEPENDS+=		${CUPS_PDFTOPS}:${PORTSDIR}/graphics/xpdf
-CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${CUPS_PDFTOPS}
-PLIST_SUB+=		WITH_PDFTOPS=""
-.else
-PLIST_SUB+=		WITH_PDFTOPS="@comment "
-.endif
-
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python
 USE_PYTHON=		yes
@@ -179,20 +149,20 @@ USE_PYTHON=		yes
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBPAPER}
 CONFIGURE_ARGS+=	--enable-libpaper
-LIB_DEPENDS+=		paper:${PORTSDIR}/print/libpaper
+LIB_DEPENDS+=		libpaper.so:${PORTSDIR}/print/libpaper
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MMDNSRESPONDER}
 .if ${PORT_OPTIONS:MAVAHI}
 IGNORE=			You must select one and only one option to build for Zeroconf
 .endif
-LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/mDNSResponder
+LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include
 PLIST_SUB+=		WITH_MDNSRESPONDER=""
 .elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-dnssd \
 			--with-dnssd-libs=${LOCALBASE}/lib/
-LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/avahi-libdns
+LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/avahi-libdns
 CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
 BROKEN=			missing function, see http://www.avahi.org/ticket/303
 .else
@@ -208,15 +178,8 @@ CONFIGURE_ARGS+=	--disable-pam
 PLIST_SUB+=		WITH_PAMD="@comment "
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--enable-ldap
-.else
-CONFIGURE_ARGS+=	--disable-ldap
-.endif
-
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=		dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=		libdbus-1.so:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-dbus
 PLIST_SUB+=		WITH_DBUS=""
 .else
@@ -231,62 +194,13 @@ RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBUSB}
 CPPFLAGS+=		-I/usr/include
 LDFLAGS+=		-L/usr/lib
+CONFIGURE_ARGS+=	--enable-libusb
 .else
 CONFIGURE_ARGS+=	--disable-libusb
 .endif
 CONFIGURE_ARGS+=	LIBS="-lssp_nonshared"
 
 .if ! defined(CUPS_CLIENT) && ! defined(CUPS_IMAGE)
-MAN1+=	cancel.1 \
-	cupstestdsc.1 \
-	cupstestppd.1 \
-	ipptool.1 \
-	lp.1 \
-	lpoptions.1 \
-	lppasswd.1 \
-	lpq.1 \
-	lprm.1 \
-	lpr.1 \
-	lpstat.1 \
-	ppdc.1 \
-	ppdhtml.1 \
-	ppdi.1 \
-	ppdmerge.1 \
-	ppdpo.1
-MAN5=	classes.conf.5 \
-	client.conf.5 \
-	cups-snmp.conf.5 \
-	cupsd.conf.5 \
-	ipptoolfile.5 \
-	mailto.conf.5 \
-	mime.convs.5 \
-	mime.types.5 \
-	ppdcfile.5 \
-	printers.conf.5 \
-	subscriptions.conf.5
-MAN7=	backend.7 \
-	filter.7 \
-	notifier.7
-MAN8=	accept.8 \
-	cupsaccept.8 \
-	cupsaddsmb.8 \
-	cupsctl.8 \
-	cupsd.8 \
-	cupsenable.8 \
-	cupsfilter.8 \
-	cups-deviced.8 \
-	cups-driverd.8 \
-	cups-lpd.8 \
-	cups-polld.8 \
-	lpadmin.8 \
-	lpinfo.8 \
-	lpmove.8 \
-	lpc.8
-
-MLINKS=	accept.8 reject.8 \
-	cupsaccept.8 cupsreject.8 \
-	cupsenable.8 cupsdisable.8
-
 SUB_FILES+=	ulpt-cupsd.conf ulpt-cupsd.sh
 .endif
 
@@ -332,10 +246,9 @@ post-patch:
 		-e 's|cups-config.$$.MAN1EXT. ||' \
 		${WRKSRC}/man/Makefile
 .endif
-
-pre-configure::
-	@${ECHO_MSG} Configuring CUPS with options:
-	@${ECHO_MSG} ${CONFIGURE_ARGS} | fmt
+.if ! ${PORT_OPTIONS:MLIBUSB}
+	@${REINPLACE_CMD} -e 's|xyes -o $$uname != Darwin||' ${WRKSRC}/configure
+.endif
 
 post-configure:
 .if defined(CUPS_CLIENT)
@@ -363,26 +276,6 @@ pre-build:
 .endif
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
-post-build:
-	cd ${WRKSRC}/filter && ${MAKE} pdftops
-.endif
-
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
-pre-su-install:
-	@${INSTALL} -d ${DESKTOPDIR}/
-	if ! pw groupshow ${CUPSGRP}; then pw groupadd ${CUPSGRP} -g 193; fi
-	if ! pw usershow ${CUPSOWN}; then pw useradd ${CUPSOWN} -g ${CUPSGRP} -u 193 \
-		-h - -d ${NONEXISTENT} -s /usr/sbin/nologin -c "CUPS Owner"; fi
-.if defined(CUPS_OVERWRITE_BASE)
-	if test -e /usr/bin/lp; then ${CHMOD} -h 0 /usr/bin/lp; fi
-	if test -e /usr/bin/lpq; then ${CHMOD} -h 0 /usr/bin/lpq; fi
-	if test -e /usr/bin/lpr; then ${CHMOD} -h 0 /usr/bin/lpr; fi
-	if test -e /usr/bin/lprm; then ${CHMOD} -h 0 /usr/bin/lprm; fi
-	if test -e /usr/sbin/lpc; then ${CHMOD} -h 0 /usr/sbin/lpc; fi
-.endif
-.endif
-
 post-install:
 .if defined(CUPS_CLIENT)
 	${INSTALL_SCRIPT} ${WRKSRC}/cups-config ${STAGEDIR}${PREFIX}/bin
@@ -392,28 +285,18 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/cups/raster.h ${STAGEDIR}${PREFIX}/include/cups
 .else
 .if  ${PORT_OPTIONS:MGHOSTSCRIPT} || ${PORT_OPTIONS:MXPDF}
-	${INSTALL_PROGRAM} ${WRKSRC}/filter/pdftops ${PREFIX}/libexec/cups/filter/
+	${INSTALL_PROGRAM} ${WRKSRC}/filter/pdftops  ${STAGEDIR}${PREFIX}/libexec/cups/filter/
 .endif
-	${LN} -sf ${PREFIX}/bin/lpr ${PREFIX}/bin/lpr-cups
-	${INSTALL} -d ${CUPS_ETCDIR}/
-	${CP} -p ${WRKSRC}/conf/snmp.conf ${WRKSRC}/conf/snmp.conf.N
+	${LN} -sf lpr ${STAGEDIR}${PREFIX}/bin/lpr-cups
+	${MKDIR} ${STAGEDIR}${ETCDIR}/
 .for f in cupsd.conf mime.convs mime.types snmp.conf
-	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${CUPS_ETCDIR}/${f}.N
-	cd ${CUPS_ETCDIR}/; if test ! -f ${f}; then ${CP} -p ${f}.N ${f}; fi
+	test -f ${STAGEDIR}${ETCDIR}/${f} && ${RM} -f ${STAGEDIR}${ETCDIR}/${f} || ${TRUE}
+	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 .endfor
-.if  ${PORT_OPTIONS:MPAM}
-	@if [ ! -f ${PREFIX}/etc/pam.d/cups ]; then \
-		${CP} -p ${PREFIX}/etc/pam.d/cups.default \
-		${PREFIX}/etc/pam.d/cups ; \
-	fi
-.endif
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/ulpt-cupsd.conf ${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/ulpt-cupsd.sh ${PREFIX}/sbin/
-	${INSTALL} -d ${CUPS_SPOOLDIR}/tmp/
-	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} ${CUPS_SPOOLDIR}/
-	${CHMOD} -R g+w ${CUPS_SPOOLDIR}/
-	${INSTALL} -d -m 775 -g ${CUPSGRP} ${CUPS_CACHEDIR}
+	@${MV} ${STAGEDIR}${ETCDIR}/cups-files.conf ${STAGEDIR}${ETCDIR}/cups-files.conf.sample
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/ulpt-cupsd.conf ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/ulpt-cupsd.sh ${STAGEDIR}${PREFIX}/sbin/
 .endif
 
 .include <bsd.port.mk>

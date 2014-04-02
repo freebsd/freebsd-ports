@@ -1,6 +1,6 @@
---- Makefile.orig	2013-11-18 20:57:48.000000000 +0400
-+++ Makefile	2013-11-24 00:25:20.393194109 +0400
-@@ -17,28 +17,26 @@
+--- Makefile.orig	2014-03-24 16:30:37.000000000 +0400
++++ Makefile	2014-03-31 13:19:31.290736089 +0400
+@@ -17,28 +17,26 @@ SYSNAME := $(shell uname -n)
  VERSION=0.0
  
  # Installation prefix...
@@ -44,7 +44,7 @@
  
  # User ID's
  LPuid=-oroot
-@@ -291,7 +289,7 @@
+@@ -295,7 +293,7 @@ endif
  
  # Compiler flags
  #CFLAGS +=	-O2 -Wall -Wno-unused-but-set-variable
@@ -53,7 +53,7 @@
  #CFLAGS +=	-g
  
  #
-@@ -599,10 +597,9 @@
+@@ -612,10 +610,9 @@ command2foo2lava-pjl.o: command2foo2lava
  #
  # Installation rules
  #
@@ -67,7 +67,7 @@
  	#
  	# If you use CUPS, then restart the spooler:
  	#	make cups
-@@ -617,6 +614,7 @@
+@@ -630,6 +627,7 @@ install: all install-test install-prog i
  	# On Ubuntu 7.10/8.x/9.x, run "system-config-printer".
  
  install-test:
@@ -75,7 +75,7 @@
  	#
  	# Installation Dependencies...
  	#
-@@ -636,19 +634,22 @@
+@@ -649,19 +647,22 @@ install-test:
  	fi
  	# ... OK!
  	#
@@ -91,9 +91,9 @@
  	# Install driver, wrapper, and development tools
  	#
  	$(INSTALL) -d $(BIN)
+-	$(INSTALL) -c $(PROGS) $(SHELLS) $(BIN)/
 +	$(INSTALL) -s -c $(PROGS) $(BIN)
 +	$(INSTALL) -c $(SHELLS) $(BIN)
--	$(INSTALL) -c $(PROGS) $(SHELLS) $(BIN)/
  	if [ "$(BINPROGS)" != "" ]; then \
  	    $(INSTALL) -d $(UDEVBIN); \
 -	    $(INSTALL) -c $(BINPROGS) $(UDEVBIN); \
@@ -101,11 +101,8 @@
  	fi
  	#
  	# Install gamma correction files.  These are just templates,
-@@ -663,25 +665,20 @@
- 	$(INSTALL) -d $(SHAREXQX)/
- 	$(INSTALL) -d $(SHARELAVA)/
+@@ -678,24 +679,16 @@ install-prog:
  	$(INSTALL) -d $(SHAREHC)/
-+	echo "install-prog: exit"
  
  install-foo:
 +	echo "install-foo:"
@@ -120,6 +117,7 @@
 -	rm -f $(FOODB)/opt/foo2zjs-Nup.xml
 -	rm -f $(FOODB)/opt/foo2zjs-NupOrient.xml
 -	rm -f $(FOODB)/opt/foo2*-Quality.xml
+-	rm -f $(FOODB)/opt/foo2hp-AlignCMYK.xml
 -	rm -f $(FOODB)/printer/KonicaMinolta*.xml
  	#
  	# Install current database files
@@ -128,11 +126,10 @@
  	@if [ -d $(FOODB) ]; then \
 -	    for dir in driver printer opt; do \
 +	    for dir in printer opt; do \
-+		mkdir -p $(FOODB)/$$dir/; \
  		echo install -d $(FOODB)/$$dir/; \
  		$(INSTALL) -d $(FOODB)/$$dir/; \
  		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
-@@ -698,28 +695,20 @@
+@@ -712,28 +705,20 @@ install-foo:
  	    echo "*** ... wherever foomatic is stashed on your machine."; \
  	    echo "***"; \
  	fi
@@ -164,7 +161,7 @@
  endif
  
  install-crd:
-@@ -833,10 +822,10 @@
+@@ -847,10 +832,10 @@ install-extra:
  	    fi; \
  	done
  
@@ -178,7 +175,7 @@
  VARPPD=/var/lp/ppd
  install-ppd:
  	#
-@@ -871,6 +860,7 @@
+@@ -885,6 +870,7 @@ install-ppd:
  	fi
  	#
  	export PATH=$$PATH:`pwd`:; \
@@ -186,7 +183,7 @@
  	if [ -d $(MODEL) ]; then \
  	    rm -f $(MODEL)/KonicaMinolta*; \
  	    cd PPD; \
-@@ -894,9 +884,9 @@
+@@ -908,9 +894,9 @@ install-ppd:
  	    done; \
  	fi
  

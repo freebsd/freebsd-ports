@@ -22,6 +22,8 @@
 #
 #	 spamd_flags="-Q"
 #
+# and remove -c (auto-create user preference files).
+#
 
 . /etc/rc.subr
 
@@ -33,11 +35,11 @@ load_rc_config $name
 
 # Set defaults
 : ${spamd_enable:="NO"}
-: ${spamd_flags="%%SQL_FLAG%% %%RUN_AS_USER%%"}
+: ${spamd_flags="-c %%SQL_FLAG%% %%RUN_AS_USER%%"}
 
 pidfile=${spamd_pidfile:-"/var/run/${name}/${name}.pid"}
 command=%%PREFIX%%/bin/${name}
-command_args="-c -d -r ${pidfile}"
+command_args="-d -r ${pidfile}"
 required_dirs=%%PREFIX%%/share/spamassassin
 
 run_rc_command "$1"

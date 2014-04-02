@@ -62,6 +62,9 @@ bin/obfsproxy
 %%PYTHON_SITELIBDIR%%/obfsproxy/network/socks.py
 %%PYTHON_SITELIBDIR%%/obfsproxy/network/socks.pyc
 %%PYTHON_SITELIBDIR%%/obfsproxy/network/socks.pyo
+%%PYTHON_SITELIBDIR%%/obfsproxy/network/socks5.py
+%%PYTHON_SITELIBDIR%%/obfsproxy/network/socks5.pyc
+%%PYTHON_SITELIBDIR%%/obfsproxy/network/socks5.pyo
 %%PYTHON_SITELIBDIR%%/obfsproxy/pyobfsproxy.py
 %%PYTHON_SITELIBDIR%%/obfsproxy/pyobfsproxy.pyc
 %%PYTHON_SITELIBDIR%%/obfsproxy/pyobfsproxy.pyo
@@ -80,6 +83,24 @@ bin/obfsproxy
 %%PYTHON_SITELIBDIR%%/obfsproxy/test/tester.py
 %%PYTHON_SITELIBDIR%%/obfsproxy/test/tester.pyc
 %%PYTHON_SITELIBDIR%%/obfsproxy/test/tester.pyo
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/test_obfs3_dh.py
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/test_obfs3_dh.pyc
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/test_obfs3_dh.pyo
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/test_socks5.py
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/test_socks5.pyc
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/test_socks5.pyo
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/__init__.py
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/__init__.pyc
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/__init__.pyo
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/test_b64.py
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/test_b64.pyc
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/test_b64.pyo
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/test_obfs3_dh.py
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/test_obfs3_dh.pyc
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/test_obfs3_dh.pyo
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/test_scramblesuit.py
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/test_scramblesuit.pyc
+%%PYTHON_SITELIBDIR%%/obfsproxy/test/transports/test_scramblesuit.pyo
 %%PYTHON_SITELIBDIR%%/obfsproxy/transports/__init__.py
 %%PYTHON_SITELIBDIR%%/obfsproxy/transports/__init__.pyc
 %%PYTHON_SITELIBDIR%%/obfsproxy/transports/__init__.pyo
@@ -146,6 +167,7 @@ bin/obfsproxy
 @dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/transports/scramblesuit
 @dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/transports
 @dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/test
+@dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/test/transports
 @dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/network
 @dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/managed
 @dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/common

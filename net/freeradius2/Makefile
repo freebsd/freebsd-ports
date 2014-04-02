@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeradius
-DISTVERSION=	2.2.3
+DISTVERSION=	2.2.4
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
@@ -332,6 +332,9 @@ MAN8=		radiusd.8 radmin.8 raddebug.8 radrelay.8 radsqlrelay.8 \
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 post-patch:
+# never try to find execinfo.h (needed until we can enable/disable backtrace
+	@${REINPLACE_CMD} -e '/execinfo.h/d' ${WRKSRC}/configure \
+		${WRKSRC}/configure.in
 # Patch Makefile / Makefile.in throughout the source tree to install raddb
 # contents in ${EXAMPLESDIR}/raddb rather than the raddbdir from configure
 	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?$$' -exec \

@@ -3003,7 +3003,7 @@ man/man1/xsubpp.1.gz
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN
 @unexec find %D/%%SITE_PERL%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
-@exec cd /usr/include && %D/bin/h2ph *.h machine/*.h sys/*.h >/dev/null
+@exec cd /usr/include && %D/bin/h2ph -d %D/%%SITE_PERL%%/%%PERL_ARCH%% *.h machine/*.h sys/*.h >/dev/null
 %%GDBM%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
 @dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads
 @dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared
@@ -3348,13 +3348,15 @@ man/man1/xsubpp.1.gz
 @exec /usr/bin/makewhatis %D/lib/perl5/%%PERL_VER%%/man
 @dirrmtry lib/perl5/%%PERL_VER%%/man
 @dirrmtry lib/perl5/%%PERL_VER%%
+@exec install -d %D/%%SITE_PERL%%/%%PERL_ARCH%%/sys
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/sys
+@exec install -d %D/%%SITE_PERL%%/%%PERL_ARCH%%/machine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/machine
 @exec install -d %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry %%SITE_PERL%%/auto
 @exec install -d %D/%%SITE_PERL%%/auto
+@dirrmtry %%SITE_PERL%%/auto
 @dirrmtry %%SITE_PERL%%
 @dirrmtry lib/perl5/site_perl
 @dirrmtry lib/perl5

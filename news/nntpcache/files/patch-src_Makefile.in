@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2014-03-29 14:09:54.000000000 -0400
++++ src/Makefile.in	2014-03-29 14:10:16.000000000 -0400
+@@ -454,7 +454,7 @@
+ 
+ 
+ install-exec-hook:
+-	cp nntpcached $(libexecdir)/nntpcached.debug && chmod a+x $(libexecdir)/nntpcached.debug
++	cp nntpcached $(DESTDIR)$(libexecdir)/nntpcached.debug && chmod a+x $(DESTDIR)$(libexecdir)/nntpcached.debug
+ 
+ nnconf.c nnconf.h : ../cf/nnconf.cf
+ 	$(top_srcdir)/confused/confused $<

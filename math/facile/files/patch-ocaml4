@@ -1,0 +1,11 @@
+--- ./src/fcl_data.ml
++++ ./src/fcl_data.ml
+@@ -16,7 +16,7 @@ end
+ 
+ module Hashtbl = struct
+   type ('a, 'b) t = ('a, 'b) Hashtbl.t
+-  let create = Hashtbl.create
++  let create n = Hashtbl.create n
+   let get h = h
+ 
+   let add h k d = 

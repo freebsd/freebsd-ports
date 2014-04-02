@@ -11,49 +11,36 @@ DISTNAME=	FujabaToolSuite_Developer${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another UML CASE tool
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Fujaba\ Tool\ Suite\ ${PORTVERSION}
 
-DATAFILES=	DTDs Templates libs plugins stylesheets\
-		GNULesserGeneralPublicLicense.txt api.zip fujaba.jar src.jar
+DATADIRS=	DTDs Templates libs plugins stylesheets
+DATAFILES=	GNULesserGeneralPublicLicense.txt api.zip fujaba.jar src.jar
 
-PLIST_FILES=	bin/fujaba %%DATADIR%%/bin/fujaba.sh
-
-.if !defined(NOPORTDOCS)
+PLIST_FILES=	bin/fujaba
+PORTDATA=	*
 PORTDOCS=	*
-PLIST_FILES+=	%%DATADIR%%/doc
-.endif
 
 SUB_FILES=	fujaba.sh
 SUB_LIST=	LOCALBASE="${LOCALBASE}" DATADIR="${DATADIR}"
 
-NO_STAGE=	yes
-do-install:
-	${MKDIR} ${DATADIR}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/fujaba.sh ${DATADIR}/bin/
-	${LN} -s ${DATADIR}/bin/fujaba.sh ${PREFIX}/bin/fujaba
-	cd ${WRKSRC}/ \
-	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${LN} -s ${DOCSDIR} ${DATADIR}/doc
-	cd ${WRKSRC}/doc/ \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-.endif
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${FIND} -s ${DATAFILES:S,^,${WRKSRC}/,} -not -type d \
-	  | ${SED} -ne 's,^${WRKSRC},${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -s -d ${DATAFILES:S,^,${WRKSRC}/,} -type d \
-	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm ${DATADIR:S,^${PREFIX}/,,}/bin" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm ${DATADIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
+.include <bsd.port.options.mk>
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/fujaba.sh ${STAGEDIR}${DATADIR}/bin
+	${LN} -s ${DATADIR}/bin/fujaba.sh ${STAGEDIR}${PREFIX}/bin/fujaba
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATADIRS}" ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DATAFILES} ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+.if ${PORT_OPTIONS:MDOCS}
+	${LN} -s ${DOCSDIR} ${STAGEDIR}${DATADIR}/doc
+.endif
 
 .include <bsd.port.mk>

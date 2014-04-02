@@ -2,7 +2,7 @@
 Please edit your Apache configuration file to enable and set
 up this module.
 
-Look at the file ${PREFIX}/etc/apache/httpd.conf.mod_ruby
+Look at the file ${PREFIX}/share/examples/mod_ruby/httpd.conf
 and the documents held in ${PREFIX}/share/doc/ruby18/mod_ruby/
 for indications on what to do.
 

@@ -94,7 +94,6 @@
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += gjs
-    SUBDIR += gnat
     SUBDIR += gnat-aux
     SUBDIR += gnat_util
     SUBDIR += gnatdroid-armv5
@@ -286,7 +285,6 @@
     SUBDIR += rexx-regutil
     SUBDIR += rexx-wrapper
     SUBDIR += rhino
-    SUBDIR += rscheme
     SUBDIR += rubinius
     SUBDIR += ruby-doc-stdlib
     SUBDIR += ruby19

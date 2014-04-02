@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD}  -e 's|/usr/include/|${LOCALBASE}/include/|; \
-		/# doc files/,+2d' \
+		/# doc files/,+2d; /"html"/,+1d' \
 		${WRKSRC}/setup.py
 	@${REINPLACE_CMD}  -e 's|"CC"|"${CC}"|; s|"gcc"|"${CC}"|' \
 		${WRKSRC}/setup.py \

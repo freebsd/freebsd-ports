@@ -1,24 +1,26 @@
 bin/bsfilter
-%%PORTDOCS%%share/examples/bsfilter/bsfilter.conf.sample
-%%PORTDOCS%%share/examples/bsfilter/dot-qmail.sample
-%%PORTDOCS%%share/examples/bsfilter/mda/maildrop/mailfilter.header
-%%PORTDOCS%%share/examples/bsfilter/mda/procmail/procmailrc.black_gray
-%%PORTDOCS%%share/examples/bsfilter/mda/procmail/procmailrc.header
-%%PORTDOCS%%share/examples/bsfilter/mda/procmail/procmailrc.status
-%%PORTDOCS%%share/examples/bsfilter/mua/mew3/bs_clean
-%%PORTDOCS%%share/examples/bsfilter/mua/mew3/bs_mark
-%%PORTDOCS%%share/examples/bsfilter/mua/mew3/bs_spam
-%%PORTDOCS%%share/examples/bsfilter/mua/mew3/mew.el
-%%PORTDOCS%%share/examples/bsfilter/mua/mew4/emacs.el
-%%PORTDOCS%%share/examples/bsfilter/mua/mew4/mew.el
-%%PORTDOCS%%share/examples/bsfilter/mua/mew5/mew.el
-%%PORTDOCS%%share/examples/bsfilter/mua/mew6/mew.el
-%%PORTDOCS%%@dirrm share/examples/bsfilter/mda/maildrop
-%%PORTDOCS%%@dirrm share/examples/bsfilter/mda/procmail
-%%PORTDOCS%%@dirrm share/examples/bsfilter/mda
-%%PORTDOCS%%@dirrm share/examples/bsfilter/mua/mew6
-%%PORTDOCS%%@dirrm share/examples/bsfilter/mua/mew5
-%%PORTDOCS%%@dirrm share/examples/bsfilter/mua/mew4
-%%PORTDOCS%%@dirrm share/examples/bsfilter/mua/mew3
-%%PORTDOCS%%@dirrm share/examples/bsfilter/mua
-%%PORTDOCS%%@dirrm share/examples/bsfilter
+%%PORTEXAMPLES%%share/examples/bsfilter/bsfilter.conf.sample
+%%PORTEXAMPLES%%share/examples/bsfilter/dot-qmail.sample
+%%PORTEXAMPLES%%share/examples/bsfilter/mda/maildrop/mailfilter.header
+%%PORTEXAMPLES%%share/examples/bsfilter/mda/procmail/procmailrc.black_gray
+%%PORTEXAMPLES%%share/examples/bsfilter/mda/procmail/procmailrc.header
+%%PORTEXAMPLES%%share/examples/bsfilter/mda/procmail/procmailrc.status
+%%PORTEXAMPLES%%share/examples/bsfilter/mua/mew3/bs_clean
+%%PORTEXAMPLES%%share/examples/bsfilter/mua/mew3/bs_mark
+%%PORTEXAMPLES%%share/examples/bsfilter/mua/mew3/bs_spam
+%%PORTEXAMPLES%%share/examples/bsfilter/mua/mew3/mew.el
+%%PORTEXAMPLES%%share/examples/bsfilter/mua/mew4/emacs.el
+%%PORTEXAMPLES%%share/examples/bsfilter/mua/mew4/mew.el
+%%PORTEXAMPLES%%share/examples/bsfilter/mua/mew5/mew.el
+%%PORTEXAMPLES%%share/examples/bsfilter/mua/mew6/mew.el
+%%PORTEXAMPLES%%share/examples/bsfilter/mua/mew6.4/mew.el
+%%PORTEXAMPLES%%@dirrm share/examples/bsfilter/mda/maildrop
+%%PORTEXAMPLES%%@dirrm share/examples/bsfilter/mda/procmail
+%%PORTEXAMPLES%%@dirrm share/examples/bsfilter/mda
+%%PORTEXAMPLES%%@dirrm share/examples/bsfilter/mua/mew6.4
+%%PORTEXAMPLES%%@dirrm share/examples/bsfilter/mua/mew6
+%%PORTEXAMPLES%%@dirrm share/examples/bsfilter/mua/mew5
+%%PORTEXAMPLES%%@dirrm share/examples/bsfilter/mua/mew4
+%%PORTEXAMPLES%%@dirrm share/examples/bsfilter/mua/mew3
+%%PORTEXAMPLES%%@dirrm share/examples/bsfilter/mua
+%%PORTEXAMPLES%%@dirrm share/examples/bsfilter

@@ -12,7 +12,7 @@ COMMENT=	Web Based Postgres Administration
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	YES
+USES=		tar:bzip2
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	pgsql pcre session
 .endif

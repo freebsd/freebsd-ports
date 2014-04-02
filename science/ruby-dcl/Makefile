@@ -17,15 +17,18 @@ COMMENT=	A Ruby interface to the scientific graphic library DCL
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
+BUILD_DEPENDS=	rubygem-narray>=0.5.5:${PORTSDIR}/math/rubygem-narray \
 		${LOCALBASE}/lib/libcdcl.so:${PORTSDIR}/science/cdcl
 RUN_DEPENDS=	${LOCALBASE}/lib/libcdcl.so:${PORTSDIR}/science/cdcl \
-		${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
-		rubygem-gdk_pixbuf2>0:${PORTSDIR}/graphics/rubygem-gdk_pixbuf2 \
-		rubygem-gtk2>0:${PORTSDIR}/x11-toolkits/rubygem-gtk2
+		rubygem-narray>=0.5.5:${PORTSDIR}/math/rubygem-narray \
+		rubygem-gdk_pixbuf2>=2.1.0:${PORTSDIR}/graphics/rubygem-gdk_pixbuf2 \
+		rubygem-gtk2>=2.1.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+RUBY_NARRAY_VERSION=    `make -C ${PORTSDIR}/math/rubygem-narray -V PORTVERSION`
+RUBY_NARRAY_PKGNAME=	narray-${RUBY_NARRAY_VERSION}
+CONFIGURE_ARGS+=	--with-narray-include=${LOCALBASE}/lib/ruby/gems/${RUBY_VER}/gems/${RUBY_NARRAY_PKGNAME}/
 
 DOCSDIR=	${RUBY_MODDOCDIR}
 EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
@@ -33,7 +36,6 @@ EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 PORTDOCS=	ChangeLog README ToDo
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
@@ -42,13 +44,13 @@ BROKEN=	Does not build on ${ARCH} (Needs to link against shared libraries)
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	(cd ${WRKSRC}/demo/ && ${COPYTREE_SHARE} \* ${RUBY_MODEXAMPLESDIR})
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	(cd ${WRKSRC}/demo/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_MODEXAMPLESDIR})
 .endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+.if !defined(PORT_OPTIONS:MDOCS)
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}
 .endfor
 .endif
 

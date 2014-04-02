@@ -1,0 +1,16 @@
+--- jdk/make/lib/SoundLibraries.gmk
++++ jdk/make/lib/SoundLibraries.gmk
+@@ -196,11 +196,11 @@
+           -DUSE_PORTS=TRUE, \
+       CFLAGS_linux := -DUSE_PLATFORM_MIDI_OUT=TRUE \
+           -DUSE_PLATFORM_MIDI_IN=TRUE, \
+-      CFLAGS_bsd := -I/usr/local/include, \
++      CFLAGS_bsd := -I%%LOCALBASE%%/include, \
+       MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libjsoundalsa/mapfile-vers, \
+       LDFLAGS := $(LDFLAGS_JDKLIB) \
+           $(call SET_SHARED_LIBRARY_ORIGIN), \
+-      LDFLAGS_bsd := -L/usr/local/lib, \
++      LDFLAGS_bsd := -L%%LOCALBASE%%/lib, \
+       LDFLAGS_SUFFIX := $(ALSA_LIBS) -ljava -ljvm, \
+       OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/libjsoundalsa, \
+       DEBUG_SYMBOLS := $(DEBUG_ALL_BINARIES)))

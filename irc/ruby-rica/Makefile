@@ -11,7 +11,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Another IRC client framework for Ruby
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_RUBY=	yes
 
 NO_BUILD=	yes

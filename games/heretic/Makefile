@@ -59,6 +59,7 @@ post-extract:
 		> ${WRKSRC}/heretic_share.wad
 .endif
 	@${FIND} ${WRKSRC} -name .depend -type f -delete
+	@${RM} ${WRKSRC}/i_ipx.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/heretic

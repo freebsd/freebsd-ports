@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat May 18 21:23:03 2002
-+++ Makefile.in	Sat Jul 17 21:03:08 2004
+--- Makefile.in.orig	2002-05-18 15:23:03.000000000 -0400
++++ Makefile.in	2014-03-29 13:01:10.000000000 -0400
 @@ -113,7 +113,7 @@
  		$(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$p;\
  	done
@@ -9,11 +9,15 @@
  	done
  	$(INSTALL_DIRECTORY) $(DESTDIR)$(mandir)/man1
  	for p in $(MAN1PAGES); do\
-@@ -125,10 +125,9 @@
+@@ -123,12 +123,11 @@
+ 	for p in $(MAN8PAGES); do\
+ 		$(INSTALL_DATA) $$p $(DESTDIR)$(mandir)/man8/$$p;\
  	done
- 	$(INSTALL_VARDIR) $(spooldir)
- 	$(INSTALL_VARDIR) $(confdir)
+-	$(INSTALL_VARDIR) $(spooldir)
+-	$(INSTALL_VARDIR) $(confdir)
 -	$(INSTALL_VARDIR) $(confdir)/suck
++	$(INSTALL_VARDIR) $(DESTDIR)$(spooldir)
++	$(INSTALL_VARDIR) $(DESTDIR)$(confdir)
  	for d in $(DATA); do\
  		if test ! -e $(DESTDIR)$(confdir)/$$d; then\
 -			$(INSTALL_VARDATA) data/$$d $(DESTDIR)$(confdir)/$$d;\
