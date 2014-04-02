@@ -1,0 +1,11 @@
+===============================================================================
+
+qBittorrent has been installed.
+
+When you have problems, please reinstall qBittorrent
+
+cd /usr/ports/net-p2p/qbittorrent && make deinstall clean reinstall
+
+Have fun!
+
+===============================================================================
