@@ -6,3 +6,11 @@ bin/printforward
 bin/printmaillist
 bin/setforward
 bin/setmaillist
+man/man1/dot-forward.1.gz
+man/man1/fastforward.1.gz
+man/man1/newaliases.1.gz
+man/man1/newinclude.1.gz
+man/man1/printforward.1.gz
+man/man1/printmaillist.1.gz
+man/man1/setforward.1.gz
+man/man1/setmaillist.1.gz
