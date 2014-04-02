@@ -43,6 +43,8 @@ include/pccts/pccts_stdlib.h
 include/pccts/pccts_string.h
 include/pccts/pcctscfg.h
 include/pccts/slist.cpp
+man/man1/antlr.1.gz
+man/man1/dlg.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES_FROM_131.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES_FROM_133.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES_FROM_133_BEFORE_MR13.txt
