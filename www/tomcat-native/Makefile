@@ -13,7 +13,7 @@ COMMENT=	Tomcat native library
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libapr-1.so.4:${PORTSDIR}/devel/apr1
+LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/jni/native
 
