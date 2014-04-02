@@ -3,6 +3,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -358,6 +359,9 @@ MAN8=		radiusd.8 radmin.8 raddebug.8 radrelay.8 radsqlrelay.8 \
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 post-patch:
+# never try to find execinfo.h (needed until we can enable/disable backtrace
+	@${REINPLACE_CMD} -e '/execinfo.h/d' ${WRKSRC}/configure \
+		${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -Ee "s:tests/all.mk ::" ${WRKSRC}/src/all.mk
 	@${CP} ${WRKSRC}/m4/ax_with_prog.m4 ${WRKSRC}
 	@${REINPLACE_CMD} -Ee "s:^make:${GMAKE}:" \
