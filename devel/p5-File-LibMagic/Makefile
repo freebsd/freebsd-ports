@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	File-LibMagic
-PORTVERSION=	0.96
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Nice wrapper for libmagic
