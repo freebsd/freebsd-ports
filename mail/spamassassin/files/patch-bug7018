@@ -1,0 +1,11 @@
+--- lib/Mail/SpamAssassin/Plugin/Razor2.pm.orig	2014/02/27 00:44:06	1572368
++++ lib/Mail/SpamAssassin/Plugin/Razor2.pm	2014/02/27 00:50:42	1572369
+@@ -115,7 +115,7 @@
+     setting => 'razor_timeout',
+     is_admin => 1,
+     default => 5,
+-    type => $Mail::SpamAssassin::Conf::CONF_TYPE_DURATIION,
++    type => $Mail::SpamAssassin::Conf::CONF_TYPE_DURATION,
+   });
+ 
+ =item razor_config filename
