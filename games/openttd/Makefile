@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
 		http://us.binaries.openttd.org/binaries/releases/${PORTVERSION}/
@@ -16,8 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2
 
-USES=		gmake pkgconfig
-USE_XZ=		yes
+USES=		gmake pkgconfig tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	STRIP="${STRIP_CMD} ${STRIP}"
 CONFIGURE_ARGS=	--prefix-dir="${PREFIX}" --data-dir="${DATADIR_REL}"
