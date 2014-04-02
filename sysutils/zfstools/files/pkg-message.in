@@ -15,4 +15,12 @@ Enable snapshotting on a dataset or top-level pool with:
 
     zfs set com.sun:auto-snapshot=true DATASET
 
+Children datasets can be disabled for snapshot with:
+
+    zfs set com.sun:auto-snapshot=false DATASET
+
+Or for specific intervals:
+
+    zfs set com.sun:auto-snapshot:frequent=false DATASET
+
 See website and command usage output for further details.
