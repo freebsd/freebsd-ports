@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	4.8.20131204
+PORTVERSION=	4.8.20140314
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.8/4.8-2013-q4-major/+download/
+MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.8/4.8-2014-q1-update/+download/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 
 BUILD_WRKSRC=	${WRKDIR}
 
-FULL_VERSION=		4_8-2013q4-20131204
+FULL_VERSION=		4_8-2014q1-20140314
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 
@@ -75,7 +75,7 @@ post-extract:
 	@${ECHO_MSG} "====>  Extracting bundled newlib"
 	@${TAR} -xf ${SRC_DIR}/newlib.tar.bz2 -C ${SRC_DIR}
 	@${ECHO_MSG} "====>  Extracting bundled newlib-nano"
-	@${TAR} -xf ${SRC_DIR}/newlib-nano-2.0.tar.bz2 -C ${SRC_DIR}
+	@${TAR} -xf ${SRC_DIR}/newlib-nano-2.1.tar.bz2 -C ${SRC_DIR}
 
 do-configure:
 	@${RM} -rf ${BUILD_DIR}
