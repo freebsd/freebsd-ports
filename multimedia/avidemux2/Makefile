@@ -40,4 +40,4 @@ post-install:
 	@${ECHO_CMD} "@unexec %D/bin/update-desktop-database 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
