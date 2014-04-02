@@ -14,6 +14,9 @@ BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		spread>=0:${PORTSDIR}/net/spread
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	Depends on expired net/spread
+EXPIRATION_DATE=2014-05-01
+
 USES=		perl5
 USE_PERL5=	modbuild
 
