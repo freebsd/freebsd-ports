@@ -14,6 +14,9 @@ COMMENT=	Perl OO wrapper for Spread messaging toolkit
 BUILD_DEPENDS=	spread>=0:${PORTSDIR}/net/spread
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	Depends on expired net/spread
+EXPIRATION_DATE=2014-05-01
+
 USES=		perl5
 USE_PERL5=	configure
 
