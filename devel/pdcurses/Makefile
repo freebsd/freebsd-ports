@@ -17,36 +17,29 @@ USE_XORG=	x11 xext sm ice xt xaw
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 
-OPTONS_DEFINE=	DEBUG LATIN1 NEXTAW XAW3D
-LATIN1_DESC=	Enable support for Latin1 keys
-NEXTAW_DESC=	Link with NeXtaw
-XAW3D_DESC=	Link with Xaw3d
+OPTIONS_DEFINE=	DEBUG LATIN1 NEXTAW XAW3D
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DEBUG_CONFIGURE_ENABLE=	debug
 
-.for opt in DEBUG LATIN1
-.   if ${PORT_OPTIONS:M${opt}}
-CONFIGURE_ARGS+=--enable-${opt:L}
-.   endif
-.endfor
+LATIN1_DESC=		Latin1 keys support
+LATIN1_CONFIGURE_ENABLE=latin1
 
-.if ${PORT_OPTIONS:MNEXTAW}
-LIB_DEPENDS+=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
-CONFIGURE_ARGS+=--with-nextaw
-.endif
+NEXTAW_DESC=		Link with NeXtaw
+NEXTAW_CONFIGURE_WITH=	nextaw
+NEXTAW_LIB_DEPENDS=	libneXtaw.so:${PORTSDIR}/x11-toolkits/neXtaw
 
-.if ${PORT_OPTIONS:MXAW3D}
-LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
-CONFIGURE_ARGS+=--with-xaw3d
-.endif
+XAW3D_DESC=		Link with Xaw3d
+XAW3D_CONFIGURE_WITH=	xaw3d
+XAW3D_LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$(libdir)/$$(SHLPRE)$$(SHLFILE)$$(SHLPST)|&.2|' \
+		-e '/ln -f -s/ s|libdir)|prefix)/lib|' \
 		${WRKSRC}/Makefile.in
 
 post-install:
-	@cd ${PREFIX}/lib && ${LN} -sf libXCurses.so.2 libXCurses.so
+	@cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libXCurses.so.2 libXCurses.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libXCurses.so.2
 
 .include <bsd.port.mk>
