@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140402:
+  AFFECTS: users of textproc/elasticsearch
+  AUTHOR: tj@FreeBSD.org
+
+  Elasticsearch has been updated to version 1.1.0. If you are updating 
+  from a version prior to 1.0.0 you will need to do a full cluster 
+  shutdown for this update as it can not be performed in a rolling
+  fashion.
+
 20140401:
   AFFECTS: users of security/gnutls3
   AUTHOR: bdrewery@FreeBSD.org
