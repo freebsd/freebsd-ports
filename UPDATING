@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140401:
+  AFFECTS: users of security/gnutls3
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Libdane support is no longer enabled by default.  Rebuild the port with
+  the LIBDANE option if danetool is desired.
+
 20140331:
   AFFECTS: users of print/cups-client and print/cups-image
   AUTHOR: bsam@FreeBSD.org
