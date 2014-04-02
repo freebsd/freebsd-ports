@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible Perl toolkit for multi-platform GUI development
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
