@@ -3,6 +3,7 @@
 
 PORTNAME=	di
 PORTVERSION=	4.35
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/ \
 		http://www.cyberbotx.com/di/
@@ -13,16 +14,10 @@ COMMENT=	Disk Information Utility
 MAKE_ENV+=	prefix="${PREFIX}"
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB=	NLS=""
-.else
-PLIST_SUB=	NLS="@comment "
-MAKE_ENV+=	DI_NO_NLS=T
-.endif
+NLS_USES=	gettext
+NLS_MAKE_ENV_OFF=	DI_NO_NLS=T
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|zoneid_t|zoneId_t|g" ${WRKSRC}/C/di.c
