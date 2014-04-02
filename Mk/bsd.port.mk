@@ -1132,6 +1132,22 @@ NOTPHONY?=
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
+.if defined(X_BUILD_FOR)
+BUILD_DEPENDS=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
+# Do not define CPP on purpose
+CC=		${X_BUILD_FOR}-cc
+CXX=	${X_BUILD_FOR}-c++
+LD=		${X_BUILD_FOR}-ld
+AS=		${X_BUILD_FOR}-as
+NM=		${X_BUILD_FOR}-nm
+STRIP_CMD=	${X_BUILD_FOR}-strip
+CFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
+CXXFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
+LDFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
+CONFIGURE_ENV+=	LD=${LD} AS=${AS} NM=${NM}
+MAKE_ENV+=	LD=${LD} AS=${AS} NM=${NM}
+.endif
+
 #
 # DESTDIR section to start a chrooted process if invoked with DESTDIR set
 #
@@ -2757,6 +2773,9 @@ GNU_CONFIGURE_PREFIX?=	${PREFIX}
 GNU_CONFIGURE_MANPREFIX?=	${MANPREFIX}
 CONFIG_SITE?=		${PORTSDIR}/Templates/config.site
 CONFIGURE_ARGS+=	--prefix=${GNU_CONFIGURE_PREFIX} $${_LATE_CONFIGURE_ARGS}
+.if defined(X_BUILD_FOR)
+CONFIGURE_ARGS+=	--host=${X_BUILD_FOR}
+.endif
 CONFIGURE_ENV+=		CONFIG_SITE=${CONFIG_SITE} lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
 
