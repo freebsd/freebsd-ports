@@ -38,8 +38,8 @@
 -	ln -s $(LIBDIR)/$(OUTPUT) lib$(LIBNAME).so.$(MAJOR_VERSION).$(MINOR_VERSION)
 -	ln -s $(LIBDIR)/$(OUTPUT) lib$(LIBNAME).so.$(MAJOR_VERSION)
 -	ln -s $(LIBDIR)/$(OUTPUT) lib$(LIBNAME).so
-+	ln -s $(LIBDIR)/$(OUTPUT) $(LIBDIR)/lib$(LIBNAME).so.$(MAJOR_VERSION)
-+	ln -s $(LIBDIR)/$(OUTPUT) $(LIBDIR)/lib$(LIBNAME).so
++	ln -s $(OUTPUT) $(LIBDIR)/lib$(LIBNAME).so.$(MAJOR_VERSION)
++	ln -s $(OUTPUT) $(LIBDIR)/lib$(LIBNAME).so
  	cp hvdi.h $(INCDIR)/hvdi.h
  	chmod 644 $(INCDIR)/hvdi.h
 -	@echo ""
