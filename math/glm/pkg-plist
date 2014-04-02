@@ -169,6 +169,8 @@ include/glm/gtx/matrix_operation.hpp
 include/glm/gtx/matrix_operation.inl
 include/glm/gtx/matrix_query.hpp
 include/glm/gtx/matrix_query.inl
+include/glm/gtx/matrix_transform_2d.hpp
+include/glm/gtx/matrix_transform_2d.inl
 include/glm/gtx/mixed_product.hpp
 include/glm/gtx/mixed_product.inl
 include/glm/gtx/multiple.hpp
