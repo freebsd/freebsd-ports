@@ -317,6 +317,7 @@ lib/calibre/calibre/ebooks/metadata/book/__init__.py
 lib/calibre/calibre/ebooks/metadata/book/base.py
 lib/calibre/calibre/ebooks/metadata/book/formatter.py
 lib/calibre/calibre/ebooks/metadata/book/json_codec.py
+lib/calibre/calibre/ebooks/metadata/book/render.py
 lib/calibre/calibre/ebooks/metadata/cli.py
 lib/calibre/calibre/ebooks/metadata/docx.py
 lib/calibre/calibre/ebooks/metadata/epub.py
@@ -365,6 +366,7 @@ lib/calibre/calibre/ebooks/metadata/topaz.py
 lib/calibre/calibre/ebooks/metadata/txt.py
 lib/calibre/calibre/ebooks/metadata/worker.py
 lib/calibre/calibre/ebooks/metadata/xisbn.py
+lib/calibre/calibre/ebooks/metadata/xmp.py
 lib/calibre/calibre/ebooks/metadata/zip.py
 lib/calibre/calibre/ebooks/mobi/__init__.py
 lib/calibre/calibre/ebooks/mobi/debug/__init__.py
@@ -429,8 +431,10 @@ lib/calibre/calibre/ebooks/oeb/polish/create.py
 lib/calibre/calibre/ebooks/oeb/polish/css.py
 lib/calibre/calibre/ebooks/oeb/polish/embed.py
 lib/calibre/calibre/ebooks/oeb/polish/errors.py
+lib/calibre/calibre/ebooks/oeb/polish/import_book.py
 lib/calibre/calibre/ebooks/oeb/polish/jacket.py
 lib/calibre/calibre/ebooks/oeb/polish/main.py
+lib/calibre/calibre/ebooks/oeb/polish/opf.py
 lib/calibre/calibre/ebooks/oeb/polish/parsing.py
 lib/calibre/calibre/ebooks/oeb/polish/pretty.py
 lib/calibre/calibre/ebooks/oeb/polish/replace.py
@@ -662,8 +666,6 @@ lib/calibre/calibre/gui2/convert/comic_input.py
 lib/calibre/calibre/gui2/convert/comic_input_ui.py
 lib/calibre/calibre/gui2/convert/debug.py
 lib/calibre/calibre/gui2/convert/debug_ui.py
-lib/calibre/calibre/gui2/convert/djvu_input.py
-lib/calibre/calibre/gui2/convert/djvu_input_ui.py
 lib/calibre/calibre/gui2/convert/docx_input.py
 lib/calibre/calibre/gui2/convert/docx_input_ui.py
 lib/calibre/calibre/gui2/convert/epub_output.py
@@ -940,11 +942,9 @@ lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebooks_com_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebooksgratuits_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebookshoppe_uk_plugin.py
-lib/calibre/calibre/gui2/store/stores/eharlequin_plugin.py
 lib/calibre/calibre/gui2/store/stores/eknigi_plugin.py
 lib/calibre/calibre/gui2/store/stores/empik_plugin.py
 lib/calibre/calibre/gui2/store/stores/feedbooks_plugin.py
-lib/calibre/calibre/gui2/store/stores/foyles_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/google_books_plugin.py
 lib/calibre/calibre/gui2/store/stores/gutenberg_plugin.py
 lib/calibre/calibre/gui2/store/stores/kobo_plugin.py
@@ -1037,6 +1037,7 @@ lib/calibre/calibre/gui2/viewer/config_ui.py
 lib/calibre/calibre/gui2/viewer/dictionary.py
 lib/calibre/calibre/gui2/viewer/documentview.py
 lib/calibre/calibre/gui2/viewer/flip.py
+lib/calibre/calibre/gui2/viewer/gestures.py
 lib/calibre/calibre/gui2/viewer/image_popup.py
 lib/calibre/calibre/gui2/viewer/inspector.py
 lib/calibre/calibre/gui2/viewer/javascript.py
@@ -1097,6 +1098,7 @@ lib/calibre/calibre/libwand.py
 lib/calibre/calibre/linux.py
 lib/calibre/calibre/plugins/_patiencediff_c.so
 lib/calibre/calibre/plugins/_regex.so
+lib/calibre/calibre/plugins/bzzdec.so
 lib/calibre/calibre/plugins/cPalmdoc.so
 lib/calibre/calibre/plugins/calibre_style.so
 lib/calibre/calibre/plugins/chm_extra.so
@@ -1106,6 +1108,7 @@ lib/calibre/calibre/plugins/hunspell.so
 lib/calibre/calibre/plugins/icu.so
 lib/calibre/calibre/plugins/lzx.so
 lib/calibre/calibre/plugins/magick.so
+lib/calibre/calibre/plugins/matcher.so
 lib/calibre/calibre/plugins/msdes.so
 lib/calibre/calibre/plugins/pictureflow.so
 lib/calibre/calibre/plugins/podofo.so
@@ -1164,7 +1167,9 @@ lib/calibre/calibre/utils/fonts/woff/__init__.py
 lib/calibre/calibre/utils/formatter.py
 lib/calibre/calibre/utils/formatter_functions.py
 lib/calibre/calibre/utils/html2text.py
+lib/calibre/calibre/utils/https.py
 lib/calibre/calibre/utils/icu.py
+lib/calibre/calibre/utils/icu_test.py
 lib/calibre/calibre/utils/imghdr.py
 lib/calibre/calibre/utils/ipc/__init__.py
 lib/calibre/calibre/utils/ipc/job.py
@@ -1182,6 +1187,7 @@ lib/calibre/calibre/utils/logging.py
 lib/calibre/calibre/utils/magick/__init__.py
 lib/calibre/calibre/utils/magick/draw.py
 lib/calibre/calibre/utils/magick/generate.py
+lib/calibre/calibre/utils/matcher.py
 lib/calibre/calibre/utils/mdns.py
 lib/calibre/calibre/utils/mem.py
 lib/calibre/calibre/utils/monotonic.py
@@ -1417,6 +1423,8 @@ share/applications/calibre-gui.desktop
 share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/builtin_recipes.xml
 %%DATADIR%%/builtin_recipes.zip
+%%DATADIR%%/calibre-ebook-root-CA.crt
+%%DATADIR%%/calibre-mimetypes.xml
 %%DATADIR%%/calibre-portable.bat
 %%DATADIR%%/calibre-portable.sh
 %%DATADIR%%/catalog/DefaultCover.jpg
@@ -1495,6 +1503,7 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/images/auto-reload.png
 %%DATADIR%%/images/auto_author_sort.png
 %%DATADIR%%/images/back.png
+%%DATADIR%%/images/beautify.png
 %%DATADIR%%/images/blank.png
 %%DATADIR%%/images/book.png
 %%DATADIR%%/images/bookmarks.png
@@ -1699,6 +1708,7 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/jacket/stylesheet.css
 %%DATADIR%%/jacket/template.xhtml
 %%DATADIR%%/jquery.simulate.js
+%%DATADIR%%/localization/iso3166.pickle
 %%DATADIR%%/localization/iso639.pickle
 %%DATADIR%%/localization/locales.zip
 %%DATADIR%%/localization/pykakasi/itaijidict2.pickle
@@ -1923,8 +1933,6 @@ share/gnome/apps/calibre-ebook-edit.desktop
 share/gnome/apps/calibre-ebook-viewer.desktop
 share/gnome/apps/calibre-gui.desktop
 share/gnome/apps/calibre-lrfviewer.desktop
-share/icons/hicolor/128x128/apps/calibre-ebook-edit.png
-share/icons/hicolor/128x128/apps/calibre-viewer.png
 share/icons/hicolor/128x128/mimetypes/application-lrf.png
 share/icons/hicolor/128x128/mimetypes/application-x-kindle-application.png
 share/icons/hicolor/128x128/mimetypes/application-x-mobi8-ebook.png
@@ -1937,7 +1945,9 @@ share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-mobipocket-ebook.
 share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-topaz-ebook.png
 share/icons/hicolor/128x128/mimetypes/gnome-mime-text-lrs.png
 share/icons/hicolor/128x128/mimetypes/text-lrs.png
+share/icons/hicolor/256x256/apps/calibre-ebook-edit.png
 share/icons/hicolor/256x256/apps/calibre-gui.png
+share/icons/hicolor/256x256/apps/calibre-viewer.png
 share/mime/application/epub+zip.xml
 share/mime/application/x-kindle-application.xml
 share/mime/application/x-mobi8-ebook.xml
