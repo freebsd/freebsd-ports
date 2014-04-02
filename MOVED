@@ -5863,3 +5863,4 @@ japanese/mypaedia-fpw||2014-04-01|Has expired: Unmaintained, interactive and res
 news/dnews||2014-04-01|Has expired: Unmaintained, interactive and restricted
 devel/adasdl|devel/sdl_gnat|2014-04-01|Has expired: Ancient, does not build on amd64; use devel/sdl_gnat instead
 lang/gnat|lang/gcc-aux|2014-04-01|Has expired: The Ada framework is based on lang/gcc-aux, use it instead
+textproc/p5-Elasticsearch|textproc/p5-Search-Elasticsearch|2014-04-02|Renamed upstream

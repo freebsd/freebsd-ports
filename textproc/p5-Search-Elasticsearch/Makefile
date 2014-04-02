@@ -1,9 +1,8 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	Elasticsearch
-PORTVERSION=	1.03
-PORTREVISION=	1
+PORTNAME=	Search-Elasticsearch
+PORTVERSION=	1.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DRTECH
