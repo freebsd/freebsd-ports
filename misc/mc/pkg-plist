@@ -86,6 +86,7 @@ man/man1/mcview.1.gz
 %%NLS%%man/pl/man1/mc.1.gz
 %%NLS%%man/ru/man1/mc.1.gz
 %%NLS%%man/sr/man1/mc.1.gz
+share/applications/mc.desktop
 %%NLS%%share/locale/az/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/be/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/mc.mo
@@ -95,12 +96,14 @@ man/man1/mcview.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/de_CH/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/el/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/et/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/fi_FI/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/mc.mo
@@ -159,6 +162,7 @@ man/man1/mcview.1.gz
 %%NLS%%%%DATADIR%%/hints/mc.hint.de
 %%NLS%%%%DATADIR%%/hints/mc.hint.de_CH
 %%NLS%%%%DATADIR%%/hints/mc.hint.el
+%%NLS%%%%DATADIR%%/hints/mc.hint.en_GB
 %%NLS%%%%DATADIR%%/hints/mc.hint.eo
 %%NLS%%%%DATADIR%%/hints/mc.hint.es
 %%NLS%%%%DATADIR%%/hints/mc.hint.et
@@ -172,6 +176,7 @@ man/man1/mcview.1.gz
 %%NLS%%%%DATADIR%%/hints/mc.hint.ia
 %%NLS%%%%DATADIR%%/hints/mc.hint.id
 %%NLS%%%%DATADIR%%/hints/mc.hint.it
+%%NLS%%%%DATADIR%%/hints/mc.hint.it_IT
 %%NLS%%%%DATADIR%%/hints/mc.hint.ja
 %%NLS%%%%DATADIR%%/hints/mc.hint.ka
 %%NLS%%%%DATADIR%%/hints/mc.hint.kk
@@ -289,6 +294,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/xml.syntax
 %%EDITOR%%%%DATADIR%%/syntax/yum-repo.syntax
 %%EDITOR%%%%DATADIR%%/syntax/yxx.syntax
+share/pixmaps/mc.png
 %%EDITOR%%@dirrm %%DATADIR%%/syntax
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/hints
@@ -304,8 +310,22 @@ man/man1/mcview.1.gz
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ia
+%%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi_FI
 %%NLS%%@dirrmtry share/locale/de_CH/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de_CH
+%%NLS%%@dirrmtry man/sr/man1
+%%NLS%%@dirrmtry man/sr
+%%NLS%%@dirrmtry man/ru/man1
+%%NLS%%@dirrmtry man/ru
+%%NLS%%@dirrmtry man/pl/man1
+%%NLS%%@dirrmtry man/pl
+%%NLS%%@dirrmtry man/it/man1
+%%NLS%%@dirrmtry man/it
+%%NLS%%@dirrmtry man/hu/man1
+%%NLS%%@dirrmtry man/hu
+%%NLS%%@dirrmtry man/es/man1
+%%NLS%%@dirrmtry man/es
 @dirrm libexec/mc/fish
 @dirrm libexec/mc/extfs.d
 @dirrm libexec/mc/ext.d

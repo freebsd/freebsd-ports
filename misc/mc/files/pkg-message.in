@@ -1,0 +1,14 @@
+===============================================================================
+
+Midnight Commander has been installed.
+
+If you have problems, please reinstall Midnight Commander
+
+cd /usr/ports/misc/mc && make deinstall clean reinstall
+
+For Screen it is best to use the default Option SLANG, with NCURSES
+you can have worse graphics.
+
+Have fun!
+
+===============================================================================
