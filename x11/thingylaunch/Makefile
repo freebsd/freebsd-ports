@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thingylaunch
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	x11
 MASTER_SITES=	http://gahr.ch/thingylaunch/
 
@@ -18,7 +18,7 @@ USES=		cmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	gahr
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	caa7e02
+GH_COMMIT=	0091b19
 
 PLIST_FILES=	bin/${PORTNAME}
 
