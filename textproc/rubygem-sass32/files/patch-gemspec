@@ -1,0 +1,13 @@
+--- ./sass-3.2.18.gemspec.orig	2014-04-03 02:37:49.625126621 +0000
++++ ./sass-3.2.18.gemspec	2014-04-03 02:37:58.207126119 +0000
+@@ -46,10 +46,6 @@
+         It's translated to well-formatted, standard CSS using the
+         command line tool or a web-framework plugin.
+ email: sass-lang@googlegroups.com
+-executables:
+-- sass
+-- sass-convert
+-- scss
+ extensions: []
+ extra_rdoc_files: []
+ files:
