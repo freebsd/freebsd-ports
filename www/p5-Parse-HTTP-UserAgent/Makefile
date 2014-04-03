@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-PORTSCOUT=	limit:^[0-9\.]*$
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 USE_PERL5=	configure
 USES=		perl5
