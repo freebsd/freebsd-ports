@@ -16,8 +16,6 @@
     SUBDIR += akonadi-googledata
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
-    SUBDIR += aolserver-nsmysql
-    SUBDIR += aolserver-nspostgres
     SUBDIR += apq
     SUBDIR += apq-mysql
     SUBDIR += apq-odbc

@@ -43,7 +43,6 @@
     SUBDIR += ampasCTL
     SUBDIR += animorph
     SUBDIR += aoi
-    SUBDIR += aolserver-nsgd
     SUBDIR += apngasm
     SUBDIR += apngdis
     SUBDIR += apvlv
