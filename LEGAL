@@ -87,6 +87,7 @@ eClient-linux-i686.run	games/atitd		Redistribution not allowed
 ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources, but sources no longer available on ERDAS website
 edith*			editors/edith		Redistribution not allowed
 eijiro*			japanese/eijiro-fpw	The original dictionary is not free
+marvel-*		textproc/elasticsearch-plugin-marvel	Free for development; license required for production use
 emc2*			math/emc2		No resale, contact author for commercial usage
 et-linux-*		games/linux-enemyterritory Redistribution limited
 etqw*			games/linux-etqw-demo-server Redistribution limited

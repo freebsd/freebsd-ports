@@ -142,6 +142,7 @@
     SUBDIR += el-aspell
     SUBDIR += el-hyphen
     SUBDIR += elasticsearch
+    SUBDIR += elasticsearch-plugin-marvel
     SUBDIR += emacs-wiki
     SUBDIR += en-aspell
     SUBDIR += en-hunspell
