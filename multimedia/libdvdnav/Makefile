@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 
-USE_XZ=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure2
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
@@ -26,7 +25,7 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--incdir="${PREFIX}/include/dvdnav" \
 		--disable-opts \
 		--cc="${CC}"
-USES=	gmake
+USES=	tar:xz gmake
 CONFLICTS=	libdvdnav-mplayer-[0-9]*
 USE_LDCONFIG=	yes
 

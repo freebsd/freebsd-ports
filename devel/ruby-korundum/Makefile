@@ -16,8 +16,7 @@ USE_KDE4=	kate kdehier kdelibs kdeprefix okular pimlibs \
 USE_QT4=	corelib network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes
-USE_XZ=		yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 
 CMAKE_ARGS+=	-DRUBY_LIBRARY=${LOCALBASE}/lib/lib${RUBY_NAME}.so \
 		-DRUBY_INCLUDE_PATH=${LOCALBASE}/lib/ruby/${RUBY_VER}/${RUBY_ARCH} \

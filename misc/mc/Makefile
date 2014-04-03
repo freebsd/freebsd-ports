@@ -3,6 +3,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.8.12
+PORTREVISION=	1
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		http://ftp.osuosl.org/pub/midnightcommander/ \
@@ -23,8 +24,6 @@ CONFLICTS=	mc-light-4*
 USES=		gmake shebangfix perl5 pkgconfig tar:xz
 SHEBANG_FILES=	misc/mcedit.menu configure configure.ac
 USE_GNOME=	glib20
-USE_PYTHON=	yes
-USE_RUBY=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZIP=${UNZIP_CMD} UNZIP=${UNZIP_CMD}
 USE_AUTOTOOLS=	libtool

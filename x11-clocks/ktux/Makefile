@@ -9,9 +9,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Tux-in-a-Spaceship screen saver
 
-USE_XZ=		yes
 USE_KDE4=	kdelibs kdeprefix kdehier workspace automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	qt3support moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

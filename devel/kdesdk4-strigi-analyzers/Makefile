@@ -9,8 +9,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Strigi analyzers for SDK related file formats
 
-USES=		cmake:outsource
-USE_XZ=		yes
+USES=		cmake:outsource tar:xz
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4 strigi
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 

@@ -10,8 +10,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plugins for Dolphin file manager
 
-USES=		cmake:outsource
-USE_XZ=		yes
+USES=		cmake:outsource tar:xz
 USE_KDE4=	kdelibs libkonq kdeprefix kdehier automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 

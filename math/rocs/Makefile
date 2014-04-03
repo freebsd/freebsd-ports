@@ -13,10 +13,9 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libgrantlee_gui.so:${PORTSDIR}/devel/grantlee
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	gui qtestlib script scripttools webkit xml \
 		moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

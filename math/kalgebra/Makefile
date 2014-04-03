@@ -14,9 +14,8 @@ LIB_DEPENDS=	libanalitza.so:${PORTSDIR}/math/analitza
 CMAKE_ARGS=	-DBUILD_mobile:BOOL=FALSE
 USE_GL=		glu
 USE_KDE4=	kdehier kdelibs kdeprefix libkdeedu automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib declarative gui opengl \
 		moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 
 .include <bsd.port.mk>

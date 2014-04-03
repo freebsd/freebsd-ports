@@ -493,6 +493,7 @@ share/locale/ro/LC_MESSAGES/kwin.mo
 share/locale/ro/LC_MESSAGES/kwin_art_clients.mo
 share/locale/ro/LC_MESSAGES/kwin_clients.mo
 share/locale/ro/LC_MESSAGES/kwin_effects.mo
+share/locale/ro/LC_MESSAGES/kwin_scripting.mo
 share/locale/ro/LC_MESSAGES/kwinshutdown.mo
 share/locale/ro/LC_MESSAGES/kwinstartmenu.mo
 share/locale/ro/LC_MESSAGES/kwordquiz.mo
@@ -561,6 +562,7 @@ share/locale/ro/LC_MESSAGES/libplasma.mo
 share/locale/ro/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/ro/LC_MESSAGES/libplasmaclock.mo
 share/locale/ro/LC_MESSAGES/libplasmaweather.mo
+share/locale/ro/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/ro/LC_MESSAGES/libtaskmanager.mo
 share/locale/ro/LC_MESSAGES/libtemplateparser.mo
 share/locale/ro/LC_MESSAGES/lokalize.mo

@@ -388,6 +388,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/th/LC_MESSAGES/qbzr.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/tr/LC_MESSAGES/qbzr.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/uk/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/setup.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/setup.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/setup.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/uk/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/uk
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/tr/LC_MESSAGES

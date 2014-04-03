@@ -277,7 +277,6 @@
     SUBDIR += kdenetwork4
     SUBDIR += kdenetwork4-filesharing
     SUBDIR += kdenetwork4-strigi-analyzers
-    SUBDIR += kdnssd
     SUBDIR += kget
     SUBDIR += kio-upnp-ms
     SUBDIR += kippo
@@ -1309,6 +1308,7 @@
     SUBDIR += yptransitd
     SUBDIR += zebra
     SUBDIR += zebra-server
+    SUBDIR += zeroconf-ioslave
     SUBDIR += zillion
     SUBDIR += zsync
 

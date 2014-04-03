@@ -12,7 +12,6 @@ COMMENT=	KDE development utilities
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		corelib designer gui qt3support xml
-USE_XZ=		yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 
 .include <bsd.port.mk>

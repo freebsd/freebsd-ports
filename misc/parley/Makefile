@@ -11,9 +11,8 @@ COMMENT=	Vocabulary trainer for KDE 4
 
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdehier kdelibs kdeprefix libkdeedu attica automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xrender
-USE_XZ=		yes
 
 .include <bsd.port.mk>

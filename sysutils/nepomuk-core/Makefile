@@ -17,9 +17,8 @@ LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
 		libepub.so:${PORTSDIR}/textproc/ebook-tools \
 		libqmobipocket.so:${PORTSDIR}/graphics/kdegraphics4-mobipocket
 
-USE_XZ=		yes
 USE_KDE4=	kdeprefix kdehier automoc4 kdelibs ontologies soprano
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib dbus gui qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null

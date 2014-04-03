@@ -16,8 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2 
 RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource compiler:c++11-lib
+USES=		cmake:outsource compiler:c++11-lib tar:xz
 USE_QT4=	opengl qmake_build moc_build rcc_build uic_build
-USE_XZ=		yes
 
 .include <bsd.port.mk>

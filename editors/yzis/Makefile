@@ -15,8 +15,7 @@ COMMENT=	Vi-like editor
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-USES=		cmake gettext perl5
-USE_BZIP2=	yes
+USES=		tar:bzip2 cmake gettext perl5
 USE_XORG=	x11 xext ice
 USE_LUA=	5.1
 LUA_COMPS=	lua

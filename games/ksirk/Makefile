@@ -12,10 +12,9 @@ COMMENT=	${${PORTNAME}_DESC}
 LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
 
 USE_KDE4=	kdehier kdelibs kdeprefix libkdegames automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib gui corelib gui network qt3support svg xml \
 		moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 
 .include <${.CURDIR}/../kdegames4/Makefile.common>

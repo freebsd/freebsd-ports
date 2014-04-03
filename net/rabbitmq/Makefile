@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.2.4
+PORTVERSION=	3.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -18,6 +18,11 @@ BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 		unzip:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+
+OPTIONS_DEFINE=	ADMIN
+OPTIONS_SUB=	yes
+
+ADMIN_DESC=	Install rabbitmqadmin script
 
 USES=		gmake shebangfix
 USE_PYTHON_BUILD=yes
@@ -38,6 +43,12 @@ MAKE_ENV+=	TARGET_DIR="${STAGEDIR}${PREFIX}/lib/erlang/lib/rabbitmq_server-${POR
 		MAN_DIR="${STAGEDIR}${PREFIX}/man" \
 		DOC_INSTALL_DIR="${STAGEDIR}${EXAMPLESDIR}"
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MADMIN}
+USE_PYTHON_RUN=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/rabbitmq|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${LOCALBASE}/bin/erl|g' \
 		${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl \
@@ -56,5 +67,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rabbitmq
 	@${MKDIR} ${STAGEDIR}/var/db/rabbitmq/mnesia
 	@${MKDIR} ${STAGEDIR}/var/log/rabbitmq
+.if ${PORT_OPTIONS:MADMIN}
+	${INSTALL} ${WRKSRC}/plugins-src/rabbitmq-management/bin/rabbitmqadmin ${STAGEDIR}${PREFIX}/bin
+.endif
 
 .include <bsd.port.mk>

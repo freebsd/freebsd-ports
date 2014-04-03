@@ -1,6 +1,7 @@
 # Created by:	marcus@FreeBSD.org
 # $FreeBSD$
 
+PORTEPOCH=	1
 CATEGORIES=	www devel
 PKGNAMEPREFIX=	mod_
 

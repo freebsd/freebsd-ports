@@ -9,16 +9,14 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		http://www.emaillab.org/djb/qmailanalog/
 
 MAINTAINER=	bdrewery@FreeBSD.org
-COMMENT=	Tools to analyze qmail-send's activity
+COMMENT=	Tools to analyze qmail-send activity
 
 USES=		qmail:run
-NO_STAGE=	yes
 
-ALL_TARGET=	it
+ALL_TARGET=	prog
 INSTALL_TARGET=	setup
 
 MANPREFIX=	${QMPREFIX}
-MAN1=		matchup.1 xqp.1 xsender.1 xrecipient.1 columnt.1
 
 PLIST_SUB+=	MYSUBDIR=${MYSUBDIR}
 
@@ -29,6 +27,7 @@ MYSUBDIR?=
 .endif
 
 PREFIX?=	${QMAIL_PREFIX}
+NO_PREFIX_RMDIR=yes
 QMPREFIX?=	${PREFIX}/${MYSUBDIR}
 
 NO_MTREE=	yes
@@ -40,12 +39,23 @@ BROKEN=	Cannot Make and Install with different PREFIX or QMAIL_PREFIX
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} "s|.usr.local.qmailanalog|${QMPREFIX}|" ${WRKSRC}/conf-home
-	@${REINPLACE_CMD} "s|-O2|${CFLAGS}|" ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${QMPREFIX}" > ${WRKSRC}/conf-home
+	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
 	@${REINPLACE_CMD} 's|02755|0755|g; /cat/d' ${WRKSRC}/hier.c
 	@${REINPLACE_CMD} 's|^man prog|prog|g' ${WRKSRC}/Makefile
 
+# Do a dance to stage and keep out of resulting binaries (see r346769
+# and r349241)
 pre-install:
-	@${MKDIR} ${QMPREFIX}
+	@${MKDIR} ${STAGEDIR}${QMPREFIX}
+	@${MV} -f ${WRKSRC}/conf-home ${WRKSRC}/conf-home.sav
+	@${ECHO_CMD} "${STAGEDIR}${QMPREFIX}" > ${WRKSRC}/conf-home
+	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o
+	@cd ${WRKSRC} ; ${MAKE_CMD} install instcheck
+	@${MV} -f ${WRKSRC}/conf-home.sav ${WRKSRC}/conf-home
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 
 .include <bsd.port.post.mk>

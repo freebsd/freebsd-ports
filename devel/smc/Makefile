@@ -16,19 +16,16 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/bin/Smc.jar ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/statemap.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/lib/statemap.jar ${JAVAJARDIR}
-	${CP} -R ${WRKSRC}/lib/statemap1.0 ${PREFIX}/include
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
-	@${FIND} ${EXAMPLESDIR} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/bin/Smc.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/statemap.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lib/statemap.jar ${STAGEDIR}${JAVAJARDIR}
+	${CP} -R ${WRKSRC}/lib/statemap1.0 ${STAGEDIR}${PREFIX}/include
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

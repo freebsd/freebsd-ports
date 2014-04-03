@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sass
-PORTVERSION=	3.2.17
+PORTVERSION=	3.2.18
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	32
@@ -15,7 +15,5 @@ LICENSE=	MIT
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-PLIST_FILES=	bin/sass bin/sass-convert bin/scss
 
 .include <bsd.port.mk>

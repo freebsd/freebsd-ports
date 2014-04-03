@@ -24,8 +24,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4 qimageblitz kactivities \
 		libkexiv2
 USE_QT4=	corelib declarative gui opengl xml \
 		qmake_build moc_build uic_build rcc_build
-USES=		cmake:outsource pkgconfig
-USE_XZ=		yes
+USES=		cmake:outsource pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DVI

@@ -34,6 +34,8 @@ SNAPSHOT_VERS=	10122
 PORTEXAMPLES=	*
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
 
+PORTSCOUT=	limit:1.3.*
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}
