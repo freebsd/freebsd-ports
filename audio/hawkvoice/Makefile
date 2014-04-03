@@ -3,6 +3,7 @@
 
 PORTNAME=	hawkvoice
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	audio devel
 MASTER_SITES=	http://www.hawksoft.com/download/files/
 DISTNAME=	HawkVoiceDI091src
