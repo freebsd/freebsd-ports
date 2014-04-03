@@ -127,13 +127,13 @@ PLIST_SUB+=	WITH_IP6="@comment "
 .endif
 
 post-patch:
-	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-	@echo "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
-	@echo "${PREFIX}" > ${WRKSRC}/conf-home
+	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/conf-home
 
 pre-install:
 	@${MV} -f ${WRKSRC}/conf-home ${WRKSRC}/conf-home.sav
-	@echo "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-home
+	@${ECHO_CMD} "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-home
 	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o
 	@cd ${WRKSRC} ; ${MAKE_CMD} install instcheck
 	@${TOUCH} ${WRKSRC}/*-conf
