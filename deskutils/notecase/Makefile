@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Hierarchical text notes manager
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_GNOME=	gtk20 gtksourceview2 gnomevfs2
 USES=		dos2unix gmake desktop-file-utils gettext pkgconfig shared-mime-info
