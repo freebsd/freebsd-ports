@@ -16,21 +16,17 @@ USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	whoson
 
-MAN3=		whoson.3 wso_login.3 wso_logout.3 wso_query.3 wso_version.3
-MAN5=		whoson.conf.5
-MAN8=		whoson.8 whosond.8
-
 PORTDOCS=	README ChangeLog
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libwhoson.so.0
 
 .include <bsd.port.mk>

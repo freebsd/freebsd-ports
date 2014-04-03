@@ -4,5 +4,13 @@ lib/libwhoson.a
 lib/libwhoson.la
 lib/libwhoson.so
 lib/libwhoson.so.0
+man/man3/whoson.3.gz
+man/man3/wso_login.3.gz
+man/man3/wso_logout.3.gz
+man/man3/wso_query.3.gz
+man/man3/wso_version.3.gz
+man/man5/whoson.conf.5.gz
+man/man8/whoson.8.gz
+man/man8/whosond.8.gz
 sbin/whoson
 sbin/whosond
