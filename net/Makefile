@@ -934,6 +934,7 @@
     SUBDIR += py-qt4-network
     SUBDIR += py-radix
     SUBDIR += py-s3cmd
+    SUBDIR += py-simplesoap
     SUBDIR += py-smb
     SUBDIR += py-smbpasswd
     SUBDIR += py-soappy
