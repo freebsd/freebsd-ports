@@ -26,7 +26,7 @@ LIB_DEPENDS=	libgnuradio-runtime.so:${PORTSDIR}/comms/gnuradio \
 		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
 USES=		pkgconfig qmake
-USE_QT5=	buildtools core gui svg network widgets
+USE_QT5=	buildtools_build core gui svg network widgets
 
 QMAKE_ARGS+=	VER="${PORTVERSION}"
 
