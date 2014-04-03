@@ -317,6 +317,7 @@
     SUBDIR += p5-DBD-Excel
     SUBDIR += p5-DBD-FrontBase
     SUBDIR += p5-DBD-Google
+    SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-LDAP
     SUBDIR += p5-DBD-Mock
     SUBDIR += p5-DBD-Multi
