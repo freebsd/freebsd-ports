@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		desktop-file-utils gmake iconv
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake iconv desktop-file-utils
 USE_GL=		gl
 USE_SDL=	mixer sdl ttf
 USE_XORG=	x11

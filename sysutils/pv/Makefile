@@ -15,9 +15,8 @@ LICENSE=	ART20
 CONFLICTS=	waon-[0-9]*
 
 PROJECTHOST=	pipeviewer
-USE_BZIP2=	yes
 
-USES=	gmake
+USES=	tar:bzip2 gmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pv man/man1/pv.1.gz
