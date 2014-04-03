@@ -31,6 +31,7 @@
 %%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-wink.gif
 %%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-yell.gif
 %%WWWDIR%%/js/tinymce/plugins/emoticons/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/example/dialog.html
 %%WWWDIR%%/js/tinymce/plugins/example/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/example_dependency/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/fullpage/plugin.min.js
@@ -65,10 +66,12 @@
 %%WWWDIR%%/js/tinymce/skins/lightgray/content.inline.min.css
 %%WWWDIR%%/js/tinymce/skins/lightgray/content.min.css
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/readme.md
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce-small.dev.svg
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce-small.eot
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce-small.svg
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce-small.ttf
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce-small.woff
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce.dev.svg
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce.eot
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce.svg
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce.ttf
