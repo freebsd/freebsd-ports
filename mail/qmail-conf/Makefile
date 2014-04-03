@@ -3,7 +3,7 @@
 
 PORTNAME=	qmail-conf
 PORTVERSION=	0.60
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.din.or.jp/~ushijima/qmail-conf/ \
 		http://cr.yp.to/djbdns/
@@ -44,10 +44,11 @@ pre-build:
 
 # Do a dance to stage and keep out of resulting binaries (see r346769
 # and r349241)
-pre-install:
+post-build:
+	@${ECHO_MSG} "===> Rebuilding DJB installer to respect STAGEDIR"
 	@${MV} -f ${WRKSRC}/conf-qmail ${WRKSRC}/conf-qmail.sav
 	@${ECHO_CMD} "${STAGEDIR}${QMAIL_PREFIX}" > ${WRKSRC}/conf-qmail
-	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o
+	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
 	@cd ${WRKSRC} ; ${MAKE_CMD} install instcheck
 	@${TOUCH} ${WRKSRC}/*-conf
 	@${MV} -f ${WRKSRC}/conf-qmail.sav ${WRKSRC}/conf-qmail

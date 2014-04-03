@@ -3,7 +3,7 @@
 
 PORTNAME=	qmail-contrib
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		${MASTER_SITE_GENTOO}
@@ -63,23 +63,24 @@ do-build:
 
 # Do a dance to stage and keep out of resulting binaries (see r346769
 # and r349241)
-pre-install:
-	${MKDIR} ${STAGEDIR}${QMAIL_PREFIX}/${DOCSDIR}
+post-build:
+	@${ECHO_MSG} "===> Rebuilding DJB installer to respect STAGEDIR"
 	@${MV} -f ${WRKFF}/conf-qmail ${WRKFF}/conf-qmail.sav
 	@${ECHO_CMD} "${STAGEDIR}${QMAIL_PREFIX}" > ${WRKFF}/conf-qmail
-	@cd ${WRKFF} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o
+	@cd ${WRKFF} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
 	@cd ${WRKFF} ; ${MAKE_CMD} install instcheck
 	@${TOUCH} ${WRKFF}/newaliases ${WRKFF}/fastforward ${WRKFF}/newinclude
 	@${MV} -f ${WRKFF}/conf-qmail.sav ${WRKFF}/conf-qmail
 
 	@${MV} -f ${WRKDF}/conf-qmail ${WRKDF}/conf-qmail.sav
 	@${ECHO_CMD} "${STAGEDIR}${QMAIL_PREFIX}" > ${WRKDF}/conf-qmail
-	@cd ${WRKDF} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o
+	@cd ${WRKDF} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
 	@cd ${WRKDF} ; ${MAKE_CMD} install instcheck
 	@${TOUCH} ${WRKDF}/dot-forward
 	@${MV} -f ${WRKDF}/conf-qmail.sav ${WRKDF}/conf-qmail
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${QMAIL_PREFIX}/${DOCSDIR}
 	@${MAKE} -C ${WRKDIR}/dot-forward-${DF_VER} ${INSTALL_TARGET}
 	@${MAKE} -C ${WRKDIR}/fastforward-${FF_VER} ${INSTALL_TARGET}
 
