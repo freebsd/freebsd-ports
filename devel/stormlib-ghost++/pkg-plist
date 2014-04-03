@@ -1,4 +1,0 @@
-include/StormLib/StormLib.h
-include/StormLib/StormPort.h
-lib/libStorm.so
-@dirrmtry include/StormLib

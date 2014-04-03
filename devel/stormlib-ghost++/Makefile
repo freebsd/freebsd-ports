@@ -15,10 +15,19 @@ PROJECTHOST=	ghostplusplus
 PROJECTVERSION=	17.1
 
 USES=		dos2unix gmake zip
+USE_LDCONFIG=	yes
+
+PLIST_FILES=	include/StormLib/StormLib.h \
+		include/StormLib/StormPort.h \
+		lib/libStorm.so
+PLIST_DIRS=	include/StormLib
 
 WRKSRC=		${WRKDIR}/ghost/StormLib/stormlib
 
-USE_LDCONFIG=	yes
+post-patch:
+	@${REINPLACE_CMD} 's|PREFIX|DESTDIR)$$(&|' ${WRKSRC}/Makefile
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libStorm.so
+
 .include <bsd.port.mk>
