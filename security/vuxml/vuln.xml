@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ffa7c6e4-bb29-11e3-8136-60a44c524f57">
+    <topic>otrs -- Clickjacking issue</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.1.21</lt></range>
+	<range><gt>3.2.*</gt><lt>3.2.16</lt></range>
+	<range><gt>3.3.*</gt><lt>3.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS Project reports:</p>
+	<blockquote cite="http://www.otrs.com/security-advisory-2014-05-clickjacking-issue/">
+	  <p>An attacker could embed OTRS in a hidden iframe tag of another
+	    page, tricking the user into clicking links in OTRS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.w3.org/1999/xhtml</url>
+      <cvename>CVE-2014-2554</cvename>
+    </references>
+    <dates>
+      <discovery>2014-04-01</discovery>
+      <entry>2014-04-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="580cc46b-bb1e-11e3-b144-2c4138874f7d">
     <topic>LibYAML input sanitization errors</topic>
     <affects>
