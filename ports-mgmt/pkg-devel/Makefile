@@ -2,6 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.3.0.a7
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
 		http://files.etoilebsd.net/pkg/ \
@@ -21,7 +22,7 @@ NO_CCACHE=	yes
 WITH_DEBUG=	yes
 CFLAGS+=	-O0 -g
 USE_LDCONFIG=	yes
-USES=		tar:xz
+USES=		tar:xz libtool
 GNU_CONFIGURE=	yes
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
