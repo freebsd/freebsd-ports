@@ -9,9 +9,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Automatic mouse click tool for KDE
 
-USE_XZ=		yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_XORG=	xtst
 

@@ -10,10 +10,9 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Activity Manager daemon
 
-USE_XZ=		yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix soprano nepomuk-core \
 		kactivities
-USES=		cmake:outsource compiler:c++11-lib
+USES=		cmake:outsource compiler:c++11-lib tar:xz
 USE_QT4=	declarative opengl script sql \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

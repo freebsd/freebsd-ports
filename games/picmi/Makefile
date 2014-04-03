@@ -9,11 +9,10 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_KDE4=	kdehier kdelibs kdeprefix libkdegames automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		svg xml
-USE_XZ=		yes
 
 .include <${.CURDIR}/../kdegames4/Makefile.common>
 .include <bsd.port.mk>

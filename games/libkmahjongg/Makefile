@@ -10,9 +10,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library for the Mahjongg Solitaire for KDE 4
 
 USE_KDE4=	kdehier kdelibs kdeprefix libkdegames automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

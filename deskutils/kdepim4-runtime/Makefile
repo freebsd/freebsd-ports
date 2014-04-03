@@ -17,11 +17,10 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 
 CONFLICTS_INSTALL=	kdepim-runtime44-4.*
 
-USE_XZ=		yes
 USE_GNOME=	libxml2 libxslt:build
 USE_KDE4=	kdehier kdelibs kdeprefix pimlibs nepomuk-core \
 		akonadi automoc4 ontologies soprano strigi
-USES=		cmake:outsource shared-mime-info
+USES=		cmake:outsource shared-mime-info tar:xz
 USE_QT4=	corelib dbus declarative designer_build gui network qtestlib \
 		script xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build

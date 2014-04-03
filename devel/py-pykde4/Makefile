@@ -30,8 +30,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix okular pimlibs \
 USE_PYTHON=	2
 USE_QT4=	corelib dbus designer_build gui network xml \
 		qmake_build moc_build uic_build rcc_build
-USE_XZ=		yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 CMAKE_ARGS+=	-DWITH_PolkitQt:BOOL=FALSE
 
 SUB_FILES=	kdebindings4.pth

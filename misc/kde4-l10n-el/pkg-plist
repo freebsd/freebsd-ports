@@ -168,6 +168,7 @@ share/locale/el/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/el/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/el/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_ical_resource.mo
@@ -188,6 +189,7 @@ share/locale/el/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/el/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_microblog_resource.mo
+share/locale/el/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/el/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/el/LC_MESSAGES/akonadi_nepomuktag_resource.mo
@@ -196,6 +198,7 @@ share/locale/el/LC_MESSAGES/akonadi_next.mo
 share/locale/el/LC_MESSAGES/akonadi_nntp_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_pop3_resource.mo
+share/locale/el/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/el/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/el/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_strigi_feeder.mo
@@ -552,6 +555,7 @@ share/locale/el/LC_MESSAGES/kscreenlocker.mo
 share/locale/el/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/el/LC_MESSAGES/kscreensaver.mo
 share/locale/el/LC_MESSAGES/ksendemail.mo
+share/locale/el/LC_MESSAGES/ksgrd.mo
 share/locale/el/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/el/LC_MESSAGES/kshisen.mo
 share/locale/el/LC_MESSAGES/kshorturifilter.mo
@@ -708,6 +712,7 @@ share/locale/el/LC_MESSAGES/okular_ooo.mo
 share/locale/el/LC_MESSAGES/okular_plucker.mo
 share/locale/el/LC_MESSAGES/okular_poppler.mo
 share/locale/el/LC_MESSAGES/okular_tiff.mo
+share/locale/el/LC_MESSAGES/okular_txt.mo
 share/locale/el/LC_MESSAGES/okular_xps.mo
 share/locale/el/LC_MESSAGES/org.kde.active.documentviewer.mo
 share/locale/el/LC_MESSAGES/pairs.mo
@@ -860,6 +865,7 @@ share/locale/el/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/el/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/el/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/el/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
+share/locale/el/LC_MESSAGES/plasma_runner_translator.mo
 share/locale/el/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/el/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/el/LC_MESSAGES/plasma_runner_windows.mo

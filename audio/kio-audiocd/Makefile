@@ -17,11 +17,10 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_KDE4=	kdehier kdelibs kdeprefix libkcddb libkcompactdisc \
 		automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	LAME

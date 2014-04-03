@@ -9,8 +9,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Mobipocket plugins for Strigi indexing and thumbnails
 
-USES=		cmake:outsource
-USE_XZ=		yes
+USES=		cmake:outsource tar:xz
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 strigi
 USE_QT4=	corelib gui qmake_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes

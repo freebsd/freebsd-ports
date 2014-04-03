@@ -12,10 +12,9 @@ COMMENT=	Memory and pairs game for KDE
 
 LICENSE=	GPLv2
 
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	declarative opengl phonon xmlpatterns \
 		moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 
 .include <bsd.port.mk>

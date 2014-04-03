@@ -1162,6 +1162,7 @@ share/locale/et/LC_MESSAGES/kate.mo
 share/locale/et/LC_MESSAGES/kate_kttsd.mo
 share/locale/et/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/et/LC_MESSAGES/katebuild-plugin.mo
+share/locale/et/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/et/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/et/LC_MESSAGES/katefiletemplates.mo
 share/locale/et/LC_MESSAGES/kategdbplugin.mo

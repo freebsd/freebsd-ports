@@ -12,9 +12,8 @@ COMMENT=	${${PORTNAME}_DESC}
 LIB_DEPENDS=	libkmahjongglib.so:${PORTSDIR}/games/libkmahjongg
 
 USE_KDE4=	kdehier kdelibs kdeprefix libkdegames automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 
 .include <${.CURDIR}/../kdegames4/Makefile.common>
 .include <bsd.port.mk>

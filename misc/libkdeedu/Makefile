@@ -10,9 +10,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries used by KDE educational applications
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib gui xml moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

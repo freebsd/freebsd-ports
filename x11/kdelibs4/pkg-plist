@@ -3690,3 +3690,14 @@ share/mime/packages/kde.xml
 @dirrm include/KDE/ConversionCheck
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg
+@comment workaround for non-standard mime files and directories
+@rmtry share/mime/all/all.xml
+@rmtry share/mime/all/allfiles.xml
+@rmtry share/mime/uri/mms.xml
+@rmtry share/mime/uri/mmst.xml
+@rmtry share/mime/uri/mmsu.xml
+@rmtry share/mime/uri/pnm.xml
+@rmtry share/mime/uri/rtspt.xml
+@rmtry share/mime/uri/rtspu.xml
+@dirrmtry share/mime/uri
+@dirrmtry share/mime/all

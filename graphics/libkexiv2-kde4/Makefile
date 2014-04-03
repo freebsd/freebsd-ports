@@ -11,9 +11,8 @@ COMMENT=	Exiv2 library interface for KDE
 
 LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 
-USE_XZ=		yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib gui xml \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

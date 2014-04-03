@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140403:
+  AFFECTS: users of net/kdnssd
+  AUTHOR: kde@FreeBSD.org
+
+  KDE SC ports have been updated to 4.12.4. kdnssd package has been renamed
+  to match upstream naming. pkgng users need to update package origin
+  manually:
+
+  # pkg set -o net/kdnssd:net/zeroconf-ioslave
+
 20140402:
   AFFECTS: users of textproc/elasticsearch
   AUTHOR: tj@FreeBSD.org

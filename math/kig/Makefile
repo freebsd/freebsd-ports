@@ -10,9 +10,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 interactive geometry application
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	gui xml moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=	PYTHON

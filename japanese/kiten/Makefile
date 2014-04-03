@@ -10,9 +10,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Japanese reference/study tool for KDE 4
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

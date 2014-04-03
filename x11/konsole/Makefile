@@ -9,9 +9,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE terminal emulator
 
-USE_XZ=		yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4 libkonq
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	xml moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xrender
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib"
