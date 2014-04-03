@@ -1,4 +1,0 @@
-%%AOLSERVERBASE%%/bin/nsopenssl.so
-%%AOLSERVERBASE%%/lib/libnsopenssl.a
-%%AOLSERVERBASE%%/lib/libnsopenssl.so
-%%AOLSERVERBASE%%/modules/tcl/https.tcl

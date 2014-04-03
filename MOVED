@@ -5864,3 +5864,16 @@ devel/adasdl|devel/sdl_gnat|2014-04-01|Has expired: Ancient, does not build on a
 lang/gnat|lang/gcc-aux|2014-04-01|Has expired: The Ada framework is based on lang/gcc-aux, use it instead
 textproc/p5-Elasticsearch|textproc/p5-Search-Elasticsearch|2014-04-02|Renamed upstream
 net/kdnssd|net/zeroconf-ioslave|2014-04-03|Renamed to match upstream naming
+www/aolserver||2014-04-03|Has expired: abandonware, messing up on clusters
+www/openacs-dotlrn||2014-04-03|Has expired: Depends on expiring www/aolserver
+www/openacs||2014-04-03|Has expired: Depends on expiring www/aolserver
+security/aolserver-nsmcrypt||2014-04-03|Has expired: abandonware, messing up on clusters
+www/aolserver-xotcl||2014-04-03|Has expired: abandonware, messing up on clusters
+graphics/aolserver-nsgd||2014-04-03|Has expired: abandonware, messing up on clusters
+security/aolserver-nsencrypt||2014-04-03|Has expired: abandonware, messing up on clusters
+security/aolserver-nsmhash||2014-04-03|Has expired: abandonware, messing up on clusters
+archivers/aolserver-nszlib||2014-04-03|Has expired: abandonware, messing up on clusters
+security/aolserver-nsopenssl||2014-04-03|Has expired: abandonware, messing up on clusters
+databases/aolserver-nspostgres||2014-04-03|Has expired: abandonware, messing up on clusters
+databases/aolserver-nsmysql||2014-04-03|Has expired: abandonware, messing up on clusters
+security/aolserver-nssha1||2014-04-03|Has expired: abandonware, messing up on clusters

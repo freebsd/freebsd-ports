@@ -18,8 +18,6 @@
     SUBDIR += analog
     SUBDIR += anyremote2html
     SUBDIR += anyterm
-    SUBDIR += aolserver
-    SUBDIR += aolserver-xotcl
     SUBDIR += apache-forrest
     SUBDIR += apache-mode.el
     SUBDIR += apache22
@@ -582,8 +580,6 @@
     SUBDIR += ojs2
     SUBDIR += ompload
     SUBDIR += oops
-    SUBDIR += openacs
-    SUBDIR += openacs-dotlrn
     SUBDIR += opencart
     SUBDIR += openx
     SUBDIR += openxmldir
