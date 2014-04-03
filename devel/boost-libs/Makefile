@@ -19,10 +19,10 @@ BJAM_ARGS+=	--without-python
 .if defined(X_BUILD_FOR)
 BJAM_ARGS+=	--without-context --without-coroutine \
 		--without-locale --without-log
-PLIST_SUB=	COROUTINE="@comment " CONTEXT="@comment " \
+PLIST_SUB+=	COROUTINE="@comment " CONTEXT="@comment " \
 		LOCALE="@comment " LOG="@comment "
 .else
-PLIST_SUB=	COROUTINE="" CONTEXT="" LOCALE="" LOG=""
+PLIST_SUB+=	COROUTINE="" CONTEXT="" LOCALE="" LOG=""
 .endif
 
 .if ${PORT_OPTIONS:MICU}
