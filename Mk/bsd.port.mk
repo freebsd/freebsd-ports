@@ -1138,17 +1138,15 @@ IGNORE=	Cross building is only compatible with stagified ports
 .endif
 BUILD_DEPENDS=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
 # Do not define CPP on purpose
-CC=		${X_BUILD_FOR}-cc
-CXX=	${X_BUILD_FOR}-c++
-LD=		${X_BUILD_FOR}-ld
-AS=		${X_BUILD_FOR}-as
+.if !defined(HCC)
+HCC:=	${CC}
+HCXX:=	${CXX}
+.endif
+CC=		${LOCALBASE}/${X_BUILD_FOR}/usr/bin/cc
+CXX=		${LOCALBASE}/${X_BUILD_FOR}/usr/bin/c++
 NM=		${X_BUILD_FOR}-nm
 STRIP_CMD=	${X_BUILD_FOR}-strip
-CFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
-CXXFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
-LDFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
-CONFIGURE_ENV+=	LD=${LD} AS=${AS} NM=${NM}
-MAKE_ENV+=	LD=${LD} AS=${AS} NM=${NM} STRIPBIN=${X_BUILD_FOR}-strip
+MAKE_ENV+=	NM=${NM} STRIPBIN=${X_BUILD_FOR}-strip
 PKG_ENV+=	ABI_FILE=${LOCALBASE}/${X_BUILD_FOR}/usr/lib/crt1.o
 .endif
 
