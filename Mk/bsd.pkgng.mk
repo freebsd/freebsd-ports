@@ -247,7 +247,7 @@ do-package: ${TMPPLIST}
 		${RM} -f ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
 	done
 	@${MKDIR} ${WRKDIR}/pkg
-	@if ${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -o ${WRKDIR}/pkg ${PKGNAME}; then \
+	@if ${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 	      if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
 	          ${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
 			      || ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
