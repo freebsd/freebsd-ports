@@ -13,21 +13,18 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Administration tool for cups
 
-LIB_DEPENDS=	gnomecups-1.0.1:${PORTSDIR}/print/libgnomecups
+LIB_DEPENDS=	libgnomecups-1.0.so:${PORTSDIR}/print/libgnomecups
 RUN_DEPENDS=	gnomesu:${PORTSDIR}/security/libgnomesu
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui \
-		desktopfileutils
-USES=		gettext gmake pkgconfig
+USE_GNOME=	gnomeprefix intlhack libgnomeprintui libgnomeui
+USES=		gettext gmake pathfix pkgconfig tar:bzip2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -D_IPP_PRIVATE_STRUCTURES
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
 		< ${FILESDIR}/gnome-cups-manager.desktop \
@@ -45,6 +42,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gnome-cups-manager.desktop \
-		${PREFIX}/share/applications
+		${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>
