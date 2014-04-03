@@ -28,6 +28,10 @@ USES=		compiler:features dos2unix gmake iconv pkgconfig shebangfix zip
 USE_AUTOTOOLS=	autoconf
 USE_XORG=	x11 xext xi xrender xt xtst
 
+.if !exists(/usr/bin/unzip)
+BUILD_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+.endif
+
 ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
