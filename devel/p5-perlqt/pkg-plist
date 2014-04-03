@@ -92,11 +92,6 @@ share/perlqt/doxsubpp.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Qsci
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QImageBlitz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Phonon
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/QtCore4
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry %%SITE_PERL%%
-@dirrmtry lib/perl5/site_perl
-@dirrmtry lib/perl5
 @dirrm include/perlqt
 @dirrmtry env

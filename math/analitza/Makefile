@@ -9,9 +9,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library from KDE Education project
 
-USE_XZ=		yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib gui opengl svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_GL=		glu

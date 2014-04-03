@@ -15,9 +15,8 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	phonon moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 
 .include <bsd.port.mk>

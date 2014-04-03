@@ -10,8 +10,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Thumbnailers for various graphics file formats
 
 USE_KDE4=	kdehier kdelibs kdeprefix libkdcraw libkexiv2 automoc4
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig tar:xz
 USE_QT4=	gui qmake_build moc_build uic_build rcc_build
-USE_XZ=		yes
 
 .include <bsd.port.mk>

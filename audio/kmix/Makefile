@@ -12,11 +12,10 @@ COMMENT=	Sound mixer for KDE
 
 LICENSE=	GPLv2
 
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	gui phonon xml \
 		moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 
 OPTIONS_DEFINE=	ALSA PULSEAUDIO
 

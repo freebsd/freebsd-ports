@@ -20,7 +20,7 @@ FILESHARING_DESC=	Network file sharing via Samba
 FILESHARING_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/sambausershareplugin.so:${PORTSDIR}/net/kdenetwork4-filesharing
 
 KDNSSD_DESC=		Network monitor for DNS-SD services (Zeroconf)
-KDNSSD_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kded_dnssdwatcher.so:${PORTSDIR}/net/kdnssd
+KDNSSD_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kded_dnssdwatcher.so:${PORTSDIR}/net/zeroconf-ioslave
 
 KGET_DESC=		Download manager
 KGET_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kget:${PORTSDIR}/net/kget

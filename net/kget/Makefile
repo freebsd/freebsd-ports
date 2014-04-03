@@ -15,12 +15,11 @@ LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
 		libqca.so:${PORTSDIR}/devel/qca \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-USE_XZ=		yes
 USE_SQLITE=     yes
 USE_KDE4=	kdelibs kdeprefix kdehier workspace libkonq \
 		nepomuk-core nepomuk-widgets automoc4 ontologies \
 		soprano
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	gui sql moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null

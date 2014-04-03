@@ -10,11 +10,10 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Perl bindings for KDE
 
-USE_XZ=		yes
 USE_KDE4=	kdehier kdeprefix perlqt smokekde automoc4
 USE_QT4=	network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
-USES=		cmake:outsource compiler:c++11-lib perl5
+USES=		cmake:outsource compiler:c++11-lib perl5 tar:xz
 
 # Respect PREFIX
 CMAKE_ARGS+=	-DCUSTOM_PERL_SITE_ARCH_DIR=${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}

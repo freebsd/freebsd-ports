@@ -17,8 +17,7 @@ USE_QT4=	corelib dbus declarative designer_build gui help \
 		multimedia network opengl phonon qtestlib script \
 		sql svg webkit xml xmlpatterns \
 		qmake_build moc_build uic_build rcc_build
-USE_XZ=		yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

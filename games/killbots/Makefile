@@ -10,10 +10,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
 USE_KDE4=	kdehier kdelibs kdeprefix libkdegames automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib gui qtestlib xml \
 		moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 
 .include <${.CURDIR}/../kdegames4/Makefile.common>
 .include <bsd.port.mk>

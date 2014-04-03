@@ -706,6 +706,9 @@ share/doc/HTML/sr@latin/ktimer/index.docbook
 share/doc/HTML/sr@latin/kwallet/common
 share/doc/HTML/sr@latin/kwallet/index.cache.bz2
 share/doc/HTML/sr@latin/kwallet/index.docbook
+share/doc/HTML/sr@latin/kwalletmanager/common
+share/doc/HTML/sr@latin/kwalletmanager/index.cache.bz2
+share/doc/HTML/sr@latin/kwalletmanager/index.docbook
 share/doc/HTML/sr@latin/lokalize/common
 share/doc/HTML/sr@latin/lokalize/index.cache.bz2
 share/doc/HTML/sr@latin/lokalize/index.docbook
@@ -1078,6 +1081,7 @@ share/locale/sr/LC_MESSAGES/kfourinline.mo
 share/locale/sr/LC_MESSAGES/kget.mo
 share/locale/sr/LC_MESSAGES/kgetplugin.mo
 share/locale/sr/LC_MESSAGES/kglobalaccel.mo
+share/locale/sr/LC_MESSAGES/kgoldrunner.mo
 share/locale/sr/LC_MESSAGES/kgpg.mo
 share/locale/sr/LC_MESSAGES/kgreet_classic.mo
 share/locale/sr/LC_MESSAGES/kgreet_generic.mo
@@ -1761,6 +1765,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kfourinline.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kget.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kgetplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kglobalaccel.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kgoldrunner.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kgpg.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kgreet_classic.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kgreet_generic.mo
@@ -2444,6 +2449,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kfourinline.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kget.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kgetplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kglobalaccel.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kgoldrunner.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kgpg.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kgreet_classic.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kgreet_generic.mo
@@ -3127,6 +3133,7 @@ share/locale/sr@latin/LC_MESSAGES/kfourinline.mo
 share/locale/sr@latin/LC_MESSAGES/kget.mo
 share/locale/sr@latin/LC_MESSAGES/kgetplugin.mo
 share/locale/sr@latin/LC_MESSAGES/kglobalaccel.mo
+share/locale/sr@latin/LC_MESSAGES/kgoldrunner.mo
 share/locale/sr@latin/LC_MESSAGES/kgpg.mo
 share/locale/sr@latin/LC_MESSAGES/kgreet_classic.mo
 share/locale/sr@latin/LC_MESSAGES/kgreet_generic.mo
@@ -3675,6 +3682,7 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/doc/HTML/sr@latin/onlinehelp
 @dirrm share/doc/HTML/sr@latin/okteta
 @dirrm share/doc/HTML/sr@latin/lokalize
+@dirrm share/doc/HTML/sr@latin/kwalletmanager
 @dirrm share/doc/HTML/sr@latin/kwallet
 @dirrm share/doc/HTML/sr@latin/ktimer
 @dirrm share/doc/HTML/sr@latin/krfb

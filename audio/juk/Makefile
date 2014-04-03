@@ -14,10 +14,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 
 CMAKE_ARGS=	-DWITH_TunePimp:BOOL=OFF
 
