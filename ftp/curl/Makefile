@@ -76,7 +76,7 @@ GNUTLS_CONFIGURE_OFF=	--without-gnutls
 GNUTLS_CONFIGURE_ON=	--with-gnutls=${LOCALBASE}
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GSSAPI_BASE_CONFIGURE_ON=	--with-gssapi=/usr
-GSSAPI_BASE_CPPFLAGS=	-I${INCLUDEDIR}/gssapi
+GSSAPI_BASE_CPPFLAGS=	-I${INCLUDEDIR}
 HEIMDAL_PORT_CONFIGURE_ON=	--with-gssapi=${HEIMDAL_HOME}
 HEIMDAL_PORT_CPPFLAGS=	-I${HEIMDAL_HOME}/include
 HEIMDAL_PORT_LDFLAGS=	-L${HEIMDAL_HOME}/lib
@@ -159,6 +159,7 @@ CONFIGURE_ARGS+=--without-gssapi
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(flags_dbg_off=\)".*"|\1""|; s|\(flags_opt_off=\)".*"|\1""|; s|lib/pkgconfig|libdata/pkgconfig|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|$$| docs|; /^DIST_SUBDIRS = / s| docs||; /cd docs &&/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|include <gssapi.h>|include <gssapi/gssapi.h>|' ${WRKSRC}/lib/curl_gssapi.h ${WRKSRC}/lib/urldata.h
 
 post-install:
 .if !defined(BUILDING_HIPHOP)
