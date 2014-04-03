@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A cgi-based Virtual Qmail Domains Administrator
+COMMENT=	CGI-based Virtual Qmail Domains Administrator
 
 BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 RUN_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
@@ -20,11 +20,10 @@ USES=		qmail:vars
 CGIBINDIR?=	www/cgi-bin-dist
 WEBDATADIR?=	www/data-dist
 
-CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR} \
-		--enable-htmldir=${PREFIX}/${WEBDATADIR} \
+CONFIGURE_ARGS=	--enable-cgibindir=${STAGEDIR}${PREFIX}/${CGIBINDIR} \
+		--enable-htmldir=${STAGEDIR}${PREFIX}/${WEBDATADIR} \
 		--enable-qmaildir=${QMAIL_PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} WEBDATADIR=${WEBDATADIR}
