@@ -3,7 +3,7 @@
 
 PORTNAME=	qmailanalog
 PORTVERSION=	0.70
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		http://www.emaillab.org/djb/qmailanalog/
@@ -47,15 +47,16 @@ post-patch:
 
 # Do a dance to stage and keep out of resulting binaries (see r346769
 # and r349241)
-pre-install:
-	@${MKDIR} ${STAGEDIR}${QMPREFIX}
+post-build:
+	@${ECHO_MSG} "===> Rebuilding DJB installer to respect STAGEDIR"
 	@${MV} -f ${WRKSRC}/conf-home ${WRKSRC}/conf-home.sav
 	@${ECHO_CMD} "${STAGEDIR}${QMPREFIX}" > ${WRKSRC}/conf-home
-	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o
+	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o auto_home.c
 	@cd ${WRKSRC} ; ${MAKE_CMD} install instcheck
 	@${MV} -f ${WRKSRC}/conf-home.sav ${WRKSRC}/conf-home
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${QMPREFIX}
 	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 
 .include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	qtools
 PORTVERSION=	0.56
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.superscript.com/qtools/
 
@@ -33,10 +33,11 @@ do-configure:
 
 # Do a dance to stage and keep out of resulting binaries (see r346769
 # and r349241)
-pre-install:
+post-build:
+	@${ECHO_MSG} "===> Rebuilding DJB installer to respect STAGEDIR"
 	@${MV} -f ${WRKSRC}/conf-home ${WRKSRC}/conf-home.sav
 	@${ECHO_CMD} "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-home
-	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o
+	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o auto_home.c
 	@cd ${WRKSRC} ; ${MAKE_CMD} install instcheck
 	@${TOUCH} ${WRKSRC}/replier-config
 	@${MV} -f ${WRKSRC}/conf-home.sav ${WRKSRC}/conf-home
