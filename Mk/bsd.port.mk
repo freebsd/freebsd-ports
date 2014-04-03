@@ -1133,6 +1133,9 @@ NOTPHONY?=
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 .if defined(X_BUILD_FOR)
+.if defined(NO_STAGE)
+IGNORE=	Cross building is only compatible with stagified ports
+.endif
 BUILD_DEPENDS=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
 # Do not define CPP on purpose
 CC=		${X_BUILD_FOR}-cc
