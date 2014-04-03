@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libyaml
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	devel textproc
 MASTER_SITES=	http://pyyaml.org/download/libyaml/
 PKGNAMEPREFIX=	mingw32-
