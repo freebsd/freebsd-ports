@@ -61,7 +61,7 @@ symlinks() {
 		esac
 	# Use heredoc to avoid losing rc from find|while subshell
 	done << EOF
-$(find ${STAGEDIR} -type l -exec stat -f "%N %R" {} +)
+$(find ${STAGEDIR} -type l -exec stat -f "%N %Y" {} +)
 EOF
 
 	return ${rc}
