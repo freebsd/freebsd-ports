@@ -17,7 +17,7 @@ USES=		qmail:vars
 ALL_TARGET=	prog
 INSTALL_TARGET=	setup check
 
-RESTRICTED=	Possibly restricted binary distribution of modified versions
+LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 EZMLM_DIR?=	${LOCALBASE}
 
