@@ -51,6 +51,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="580cc46b-bb1e-11e3-b144-2c4138874f7d">
+    <topic>LibYAML input sanitization errors</topic>
+    <affects>
+      <package>
+	<name>libyaml</name>
+	<range><lt>0.1.6</lt></range>
+      </package>
+      <package>
+	<name>mingw32-libyaml</name>
+	<range><lt>0.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2014-003.html">
+	  <p>The LibYAML project is an open source YAML 1.1 parser and
+	    emitter written in C.</p>
+	  <p>The library is affected by a heap-based buffer overflow
+	    which can lead to arbitrary code execution. The
+	    vulnerability is caused by lack of proper expansion for the
+	    string passed to the yaml_parser_scan_uri_escapes()
+	    function.</p>
+	  <p>A specially crafted YAML file, with a long sequence of
+	    percent-encoded characters in a URL, can be used to trigger
+	    the overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-2525</cvename>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2525</url>
+    </references>
+    <dates>
+      <discovery>2014-03-11</discovery>
+      <entry>2014-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e95eb4e-b737-11e3-87cd-f0def10dca57">
     <topic>Icinga -- buffer overflow in classic web interface</topic>
     <affects>
