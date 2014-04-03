@@ -3,6 +3,7 @@
 
 PORTNAME=	hotot
 PORTVERSION=	0.9.8.14
+PORTREVISION=	1
 CATEGORIES=	net-im www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -26,7 +27,6 @@ OPTIONS_DEFINE=	GTK2 QT4 KDE4
 OPTIONS_DEFAULT=	GTK2 QT4
 KDE4_DESC=	KDE 4 integration (implies Qt 4)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
@@ -66,7 +66,5 @@ post-patch:
 # Sanitize font selection list
 	@${REINPLACE_CMD} -e "/font_list/s/\[.*/['DejaVu Sans', 'Bitstream Vera Sans', 'Droid Sans', 'Verdana', 'Arial', 'Helvetica']/" \
 		${WRKSRC}/data/js/conf.js
-# Remove stale backup files (prevent pkg-plist pollution)
-	@${FIND} ${WRKSRC} -type f -name '*.bak' -delete
 
 .include <bsd.port.mk>
