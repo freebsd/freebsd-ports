@@ -1,0 +1,21 @@
+PySimpleSOAP (Python Simple SOAP) library for client and server webservices
+interfaces, aimed to be as small and easy as possible, supporting most common
+functionality. Initially it was inspired by PHP Soap Extension (mimicking it
+functionality, simplicity and ease of use), with many advanced features added.
+
+Goals:
+- Simple: less than 200LOC client/server concrete implementation for easy
+  maintainability and enhancments.
+- Flexible: adapted to several SOAP dialects (Java Axis, .Net, JBoss), with the
+  posibility of fine-tuning XML request and responses
+- Pythonic: no artifacts, no class generation, no special types, RPC calls
+  parameters and return values are simple python structures (dicts, list, etc.)
+- Dynamic: no definition (WSDL) required, dynamic generation and parsing
+  supported (cached in a pickle file for performance, supporting fixing broken
+  WSDL)
+- Easy: simple xml manipulation, including basic serialization and raw
+  object-like access to SOAP messages
+- Extensible: supports several HTTP wrappers (httplib2, pycurl, urllib2) for
+  special transport needs over SSL and proxy (ISA)
+
+WWW: https://code.google.com/p/pysimplesoap/
