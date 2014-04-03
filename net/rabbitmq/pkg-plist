@@ -1,3 +1,4 @@
+%%ADMIN%%bin/rabbitmqadmin
 sbin/rabbitmq-defaults
 sbin/rabbitmq-env
 sbin/rabbitmq-server
@@ -49,6 +50,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_amqqueue_process.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_amqqueue_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_app.in
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_backend.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_backend_dummy.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_backend_internal.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism_amqplain.beam
@@ -62,6 +64,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binary_generator.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binary_parser.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binding.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_channel.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_channel_interceptor.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_channel_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_channel_sup_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_client_sup.beam
@@ -70,6 +73,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_connection_helper_sup.bea
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_connection_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_control_main.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ctl_usage.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_dead_letter.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_direct.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_disk_monitor.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_error_logger.beam
@@ -122,9 +126,11 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_policy.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_policy_validator.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_prelaunch.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_queue_collector.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_queue_consumers.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_queue_decorator.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_queue_index.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_reader.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_recovery_terms.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_registry.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_restartable_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_router.beam
@@ -154,6 +160,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/tcp_acceptor_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/tcp_listener.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/tcp_listener_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/test_sup.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/truncate.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/vm_memory_monitor.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool_sup.beam
@@ -173,9 +180,6 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_mechanism_ssl-%
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_consistent_hash_exchange-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_federation-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_federation_management-%%VERSION%%.ez
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_jsonrpc-%%VERSION%%.ez
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_jsonrpc_channel-%%VERSION%%.ez
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_jsonrpc_channel_examples-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_management-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_management_agent-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_management_visualiser-%%VERSION%%.ez
@@ -187,7 +191,6 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_tracing-%%VERSION%%.
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_dispatch-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_stomp-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_stomp_examples-%%VERSION%%.ez
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rfc4627_jsonrpc-%%VERSION%%-git5e67120.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/sockjs-0.3.4-rmq%%VERSION%%-git3132eb9.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/webmachine-1.10.3-rmq%%VERSION%%-gite9359c7.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-defaults

@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140403:
+  AFFECTS: users of net/rabbitmq
+  AUTHOR: olgeni@FreeBSD.org
+
+  This release changes the behaviour of the default "guest" user.
+
+  Previously the guest user could be accessed from any network
+  location. In RabbitMQ 3.3.0 and later, the guest user can only
+  be accessed via localhost by default.
+
+  Any other users you create will not (by default) be restricted
+  in this way.
+
+  See http://www.rabbitmq.com/access-control.html for more information.
+
+20140403:
   AFFECTS: users of net/kdnssd
   AUTHOR: kde@FreeBSD.org
 
