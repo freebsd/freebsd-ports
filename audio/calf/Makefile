@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=LASH LV2
 OPTIONS_SUB=	yes
 LV2_DESC=	LV2 audio plugin
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig compiler:env
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -37,7 +37,7 @@ LV2_BUILD_DEPENDS=	lv2core>0:${PORTSDIR}/audio/lv2core
 LV2_RUN_DEPENDS=	lv2core>0:${PORTSDIR}/audio/lv2core
 LV2_CONFIGURE_WITH=	lv2
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} -e \
@@ -49,6 +49,11 @@ post-patch:
 		${WRKSRC}/src/calf/buffer.h
 	@${REINPLACE_CMD} -e 's|data\[(1<<IntBits)+1\]|data[]|' \
 		${WRKSRC}/src/calf/fixed_point.h
+.if ${COMPILER_TYPE} == "clang"
+	@${REINPLACE_CMD} -e 's|-finline-functions -finline-functions-called-once||' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-finline-limit=80||' ${WRKSRC}/src/Makefile.in
+.endif
 
 pre-build:
 .if ${PORT_OPTIONS:MLV2}
@@ -67,4 +72,4 @@ post-install:
 		-p ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
