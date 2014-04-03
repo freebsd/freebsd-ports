@@ -19,8 +19,12 @@ err() {
 }
 
 shebang() {
+	local IFS rc
+
 	rc=0
-	IFS="$LF" ; for f in `find ${STAGEDIR} -type f -perm +111`; do
+	IFS="$LF"
+	
+	for f in `find ${STAGEDIR} -type f -perm +111`; do
 		interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' $f)
 		case "$interp" in
 		"") ;;
@@ -38,38 +42,62 @@ shebang() {
 			;;
 		esac
 	done
+
+	return ${rc}
 }
 
 symlinks() {
+	local rc
+
 	rc=0
-	IFS="$LF" ; for l in `find ${STAGEDIR} -type l`; do
-		link=$(readlink ${l})
+
+	while read l link; do
+		[ -z "${l}" ] && continue
 		case "${link}" in
-		${STAGEDIR}*) err "Bad symlinks ${l} pointing inside the stage directory"
-			rc=1
-			;;
+			${STAGEDIR}*)
+				err "Bad symlinks ${l} pointing inside the stage directory"
+				rc=1
+				;;
 		esac
-	done
+	# Use heredoc to avoid losing rc from find|while subshell
+	done << EOF
+$(find ${STAGEDIR} -type l -exec stat -f "%N %R" {} +)
+EOF
+
+	return ${rc}
 }
 
 paths() {
+	local rc
+
 	rc=0
-	IFS="$LF" ; for f in `find ${STAGEDIR} -type f`;do
-		if grep -q ${STAGEDIR} ${f} ; then
-			err "${f} is referring to ${STAGEDIR}"
-			rc=1
-		fi
-	done
+
+	while read f; do
+		[ -z "${f}" ] && continue
+		# Ignore false-positive/harmless files
+		case "${f}" in
+			*/lib/ruby/gems/*/Makefile) continue ;;
+			*/lib/ruby/gems/*/Makefile.html) continue ;;
+			*/lib/ruby/gems/*/mkmf.log) continue ;;
+		esac
+		err "${f} is referring to ${STAGEDIR}"
+		rc=1
+	# Use heredoc to avoid losing rc from find|while subshell
+	done << EOF
+$(find ${STAGEDIR} -type f -exec grep -l "${STAGEDIR}" {} +)
+EOF
+
+	return ${rc}
 }
 
 # For now do not raise an error, just warnings
 stripped() {
 	[ -x /usr/bin/file ] || return # this is fatal
 	[ -n "${STRIP}" ] || return 0
-	IFS="$LF" ; for f in `find ${STAGEDIR} -type f`; do
-		output=`/usr/bin/file ${f}`
+	find ${STAGEDIR} -type f -exec /usr/bin/file -nNF '' {} + | while
+	    read f output; do
 		case "${output}" in
-		*:*\ ELF\ *,\ not\ stripped*) warn "${f} is not stripped consider using \${STRIP_CMD}";;
+			ELF\ *,\ not\ stripped*) warn "${f} is not stripped consider using \${STRIP_CMD}" ;;
 		esac
 	done
 }
@@ -97,6 +125,8 @@ sharedmimeinfo() {
 }
 
 suidfiles() {
+	local filelist
+
 	filelist=`find ${STAGEDIR} -type f \
 		\( -perm -u+x -or -perm -g+x -or -perm -o+x \) \
 		\( -perm -u+s -or -perm -g+s \)`
