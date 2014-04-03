@@ -497,7 +497,6 @@
     SUBDIR += p5-EBook-Tools
     SUBDIR += p5-ElasticSearch-SearchBuilder
     SUBDIR += p5-ElasticSearch-legacy
-    SUBDIR += p5-Elasticsearch
     SUBDIR += p5-Excel-Template
     SUBDIR += p5-Excel-Writer-XLSX
     SUBDIR += p5-File-Inplace
@@ -688,6 +687,7 @@
     SUBDIR += p5-SQL-Tokenizer
     SUBDIR += p5-SVG
     SUBDIR += p5-SVG-Parser
+    SUBDIR += p5-Search-Elasticsearch
     SUBDIR += p5-Search-Estraier
     SUBDIR += p5-Search-Odeum
     SUBDIR += p5-Search-Saryer
