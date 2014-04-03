@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gqrx
-PORTVERSION=	20130504
-PORTREVISION=	4
+PORTVERSION=	20140313
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -14,7 +13,11 @@ COMMENT=	Qt-based software defined radio receiver
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgnuradio-core.so:${PORTSDIR}/comms/gnuradio \
+LIB_DEPENDS=	libgnuradio-runtime.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-analog.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-blocks.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-filter.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-fft.so:${PORTSDIR}/comms/gnuradio \
 		libgnuradio-audio.so:${PORTSDIR}/comms/gnuradio \
 		libgnuradio-osmosdr.so:${PORTSDIR}/comms/gr-osmosdr \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
@@ -23,7 +26,9 @@ LIB_DEPENDS=	libgnuradio-core.so:${PORTSDIR}/comms/gnuradio \
 		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
 USES=		pkgconfig qmake
-USE_QT4=	moc_build rcc_build uic_build corelib gui svg
+USE_QT5=	buildtools core gui svg network widgets
+
+QMAKE_ARGS+=	VER="${PORTVERSION}"
 
 PLIST_FILES=	bin/gqrx
 

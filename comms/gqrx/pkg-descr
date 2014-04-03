@@ -4,4 +4,4 @@ Radio and the Qt GUI toolkit.
 It can use the Funcube Dongle, RTL2832U-based DVB-T dongles, OsmoSDR devices
 and USRP devices as input source.
 
-WWW: https://github.com/csete/gqrx
+WWW: http://gqrx.dk
