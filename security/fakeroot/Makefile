@@ -13,7 +13,7 @@ COMMENT=	Simulate the root user behaviour
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-ipc=tcp
 USE_AUTOTOOLS=		libtool

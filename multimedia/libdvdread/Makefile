@@ -14,7 +14,6 @@ COMMENT=	MPlayer version of the libdvdread project
 
 LICENSE=	GPLv2
 
-USE_XZ=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure2
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
@@ -24,7 +23,7 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--incdir="${PREFIX}/include/dvdread" \
 		--disable-opts \
 		--cc="${CC}"
-USES=	gmake
+USES=	tar:xz gmake
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DVDCSS DEBUG
