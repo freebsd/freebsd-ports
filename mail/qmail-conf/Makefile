@@ -19,7 +19,7 @@ USES=		qmail:run
 ALL_TARGET=	prog
 INSTALL_TARGET=	setup check
 
-RESTRICTED=	borrows code from djbdns, thus falls under the same restrictions as dns/djbdns
+LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 PREFIX?=	${QMAIL_PREFIX}
 NO_PREFIX_RMDIR=yes
