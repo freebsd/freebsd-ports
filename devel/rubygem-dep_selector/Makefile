@@ -12,6 +12,7 @@ COMMENT=	Find a valid assignment of package versions
 
 RUN_DEPENDS=	gecode>=3.5.0:${PORTSDIR}/devel/gecode
 
+BROKEN=		Does not build
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
