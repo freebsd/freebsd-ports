@@ -3,6 +3,7 @@
 
 PORTNAME=	gecode
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gecode.org/download/
 

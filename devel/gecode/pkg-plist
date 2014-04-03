@@ -501,6 +501,102 @@ include/gecode/support/thread/pthreads.hpp
 include/gecode/support/thread/thread.hpp
 include/gecode/support/thread/windows.hpp
 include/gecode/support/timer.hpp
+include/gecode/third-party/boost/LICENSE_1_0.txt
+include/gecode/third-party/boost/config.hpp
+include/gecode/third-party/boost/config/compiler/borland.hpp
+include/gecode/third-party/boost/config/compiler/clang.hpp
+include/gecode/third-party/boost/config/compiler/codegear.hpp
+include/gecode/third-party/boost/config/compiler/comeau.hpp
+include/gecode/third-party/boost/config/compiler/common_edg.hpp
+include/gecode/third-party/boost/config/compiler/compaq_cxx.hpp
+include/gecode/third-party/boost/config/compiler/digitalmars.hpp
+include/gecode/third-party/boost/config/compiler/gcc.hpp
+include/gecode/third-party/boost/config/compiler/gcc_xml.hpp
+include/gecode/third-party/boost/config/compiler/greenhills.hpp
+include/gecode/third-party/boost/config/compiler/hp_acc.hpp
+include/gecode/third-party/boost/config/compiler/intel.hpp
+include/gecode/third-party/boost/config/compiler/kai.hpp
+include/gecode/third-party/boost/config/compiler/metrowerks.hpp
+include/gecode/third-party/boost/config/compiler/mpw.hpp
+include/gecode/third-party/boost/config/compiler/nvcc.hpp
+include/gecode/third-party/boost/config/compiler/pathscale.hpp
+include/gecode/third-party/boost/config/compiler/pgi.hpp
+include/gecode/third-party/boost/config/compiler/sgi_mipspro.hpp
+include/gecode/third-party/boost/config/compiler/sunpro_cc.hpp
+include/gecode/third-party/boost/config/compiler/vacpp.hpp
+include/gecode/third-party/boost/config/compiler/visualc.hpp
+include/gecode/third-party/boost/config/no_tr1/cmath.hpp
+include/gecode/third-party/boost/config/no_tr1/utility.hpp
+include/gecode/third-party/boost/config/platform/aix.hpp
+include/gecode/third-party/boost/config/platform/amigaos.hpp
+include/gecode/third-party/boost/config/platform/beos.hpp
+include/gecode/third-party/boost/config/platform/bsd.hpp
+include/gecode/third-party/boost/config/platform/cygwin.hpp
+include/gecode/third-party/boost/config/platform/hpux.hpp
+include/gecode/third-party/boost/config/platform/irix.hpp
+include/gecode/third-party/boost/config/platform/linux.hpp
+include/gecode/third-party/boost/config/platform/macos.hpp
+include/gecode/third-party/boost/config/platform/qnxnto.hpp
+include/gecode/third-party/boost/config/platform/solaris.hpp
+include/gecode/third-party/boost/config/platform/symbian.hpp
+include/gecode/third-party/boost/config/platform/vms.hpp
+include/gecode/third-party/boost/config/platform/vxworks.hpp
+include/gecode/third-party/boost/config/platform/win32.hpp
+include/gecode/third-party/boost/config/posix_features.hpp
+include/gecode/third-party/boost/config/select_compiler_config.hpp
+include/gecode/third-party/boost/config/select_platform_config.hpp
+include/gecode/third-party/boost/config/select_stdlib_config.hpp
+include/gecode/third-party/boost/config/stdlib/dinkumware.hpp
+include/gecode/third-party/boost/config/stdlib/libcomo.hpp
+include/gecode/third-party/boost/config/stdlib/libcpp.hpp
+include/gecode/third-party/boost/config/stdlib/libstdcpp3.hpp
+include/gecode/third-party/boost/config/stdlib/modena.hpp
+include/gecode/third-party/boost/config/stdlib/msl.hpp
+include/gecode/third-party/boost/config/stdlib/roguewave.hpp
+include/gecode/third-party/boost/config/stdlib/sgi.hpp
+include/gecode/third-party/boost/config/stdlib/stlport.hpp
+include/gecode/third-party/boost/config/stdlib/vacpp.hpp
+include/gecode/third-party/boost/config/suffix.hpp
+include/gecode/third-party/boost/config/user.hpp
+include/gecode/third-party/boost/detail/endian.hpp
+include/gecode/third-party/boost/detail/limits.hpp
+include/gecode/third-party/boost/limits.hpp
+include/gecode/third-party/boost/non_type.hpp
+include/gecode/third-party/boost/numeric/interval.hpp
+include/gecode/third-party/boost/numeric/interval/arith.hpp
+include/gecode/third-party/boost/numeric/interval/arith2.hpp
+include/gecode/third-party/boost/numeric/interval/arith3.hpp
+include/gecode/third-party/boost/numeric/interval/checking.hpp
+include/gecode/third-party/boost/numeric/interval/compare.hpp
+include/gecode/third-party/boost/numeric/interval/compare/certain.hpp
+include/gecode/third-party/boost/numeric/interval/compare/explicit.hpp
+include/gecode/third-party/boost/numeric/interval/compare/lexicographic.hpp
+include/gecode/third-party/boost/numeric/interval/compare/possible.hpp
+include/gecode/third-party/boost/numeric/interval/compare/set.hpp
+include/gecode/third-party/boost/numeric/interval/constants.hpp
+include/gecode/third-party/boost/numeric/interval/detail/alpha_rounding_control.hpp
+include/gecode/third-party/boost/numeric/interval/detail/bcc_rounding_control.hpp
+include/gecode/third-party/boost/numeric/interval/detail/bugs.hpp
+include/gecode/third-party/boost/numeric/interval/detail/c99_rounding_control.hpp
+include/gecode/third-party/boost/numeric/interval/detail/c99sub_rounding_control.hpp
+include/gecode/third-party/boost/numeric/interval/detail/division.hpp
+include/gecode/third-party/boost/numeric/interval/detail/ia64_rounding_control.hpp
+include/gecode/third-party/boost/numeric/interval/detail/interval_prototype.hpp
+include/gecode/third-party/boost/numeric/interval/detail/msvc_rounding_control.hpp
+include/gecode/third-party/boost/numeric/interval/detail/ppc_rounding_control.hpp
+include/gecode/third-party/boost/numeric/interval/detail/sparc_rounding_control.hpp
+include/gecode/third-party/boost/numeric/interval/detail/test_input.hpp
+include/gecode/third-party/boost/numeric/interval/detail/x86_rounding_control.hpp
+include/gecode/third-party/boost/numeric/interval/detail/x86gcc_rounding_control.hpp
+include/gecode/third-party/boost/numeric/interval/hw_rounding.hpp
+include/gecode/third-party/boost/numeric/interval/interval.hpp
+include/gecode/third-party/boost/numeric/interval/policies.hpp
+include/gecode/third-party/boost/numeric/interval/rounded_arith.hpp
+include/gecode/third-party/boost/numeric/interval/rounded_transc.hpp
+include/gecode/third-party/boost/numeric/interval/rounding.hpp
+include/gecode/third-party/boost/numeric/interval/transc.hpp
+include/gecode/third-party/boost/numeric/interval/utility.hpp
+include/gecode/third-party/boost/type.hpp
 lib/libgecodedriver.so
 lib/libgecodedriver.so.36
 lib/libgecodedriver.so.36.0
@@ -584,6 +680,18 @@ lib/libgecodesupport.so.36.0
 %%DATADIR%%/mznlib/value_precede_set.mzn
 @dirrm %%DATADIR%%/mznlib
 @dirrm %%DATADIR%%
+@dirrm include/gecode/third-party/boost/numeric/interval/detail
+@dirrm include/gecode/third-party/boost/numeric/interval/compare
+@dirrm include/gecode/third-party/boost/numeric/interval
+@dirrm include/gecode/third-party/boost/numeric
+@dirrm include/gecode/third-party/boost/detail
+@dirrm include/gecode/third-party/boost/config/stdlib
+@dirrm include/gecode/third-party/boost/config/platform
+@dirrm include/gecode/third-party/boost/config/no_tr1
+@dirrm include/gecode/third-party/boost/config/compiler
+@dirrm include/gecode/third-party/boost/config
+@dirrm include/gecode/third-party/boost
+@dirrm include/gecode/third-party
 @dirrm include/gecode/support/thread
 @dirrm include/gecode/support
 @dirrm include/gecode/set/view
