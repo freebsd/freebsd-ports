@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An emacs extension to work with RDoc ri documentation
+COMMENT=	Emacs extension to work with RDoc ri documentation
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
@@ -20,20 +20,15 @@ WRKSRC=		${WRKDIR}
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
-ELISP_FILES=	ri-ruby.el
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${RUBY_ELISPDIR}/
-	${INSTALL_DATA} ${ELISP_FILES:S,^,${WRKSRC}/,} ${RUBY_ELISPDIR}/
-	${MKDIR} ${XEMACSLISPDIR}
-.for f in ${ELISP_FILES}
-	${LN} -sf ${RUBY_ELISPDIR}/${f} ${EMACSLISPDIR}/
-	${LN} -sf ${RUBY_ELISPDIR}/${f} ${XEMACSLISPDIR}/
-.endfor
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/ri-emacs.rb ${DATADIR}/
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${RUBY_ELISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/ri-ruby.el ${STAGEDIR}${RUBY_ELISPDIR}
+	@${MKDIR} ${STAGEDIR}${XEMACSLISPDIR}
+	${LN} -sf ${RUBY_ELISPDIR}/ri-ruby.el ${STAGEDIR}${EMACSLISPDIR}
+	${LN} -sf ${RUBY_ELISPDIR}/ri-ruby.el ${STAGEDIR}${XEMACSLISPDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ri-emacs.rb ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
