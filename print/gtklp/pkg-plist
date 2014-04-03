@@ -1,5 +1,7 @@
 bin/gtklp
 bin/gtklpq
+man/man1/gtklp.1.gz
+man/man1/gtklpq.1.gz
 share/locale/ca/LC_MESSAGES/gtklp.mo
 share/locale/ca_ES/LC_MESSAGES/gtklp.mo
 share/locale/chs/LC_MESSAGES/gtklp.mo
