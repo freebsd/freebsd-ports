@@ -1,5 +1,5 @@
---- areacode/make/freebsd-x.mak.orig	Tue Sep  6 09:54:20 2005
-+++ areacode/make/freebsd-x.mak	Tue Sep  6 09:54:20 2005
+--- areacode/make/freebsd-x.mak.orig	2014-03-28 16:39:11.000000000 +0100
++++ areacode/make/freebsd-x.mak	2014-03-28 16:42:03.000000000 +0100
 @@ -0,0 +1,115 @@
 +# *****************************************************************************
 +# *									      *
@@ -99,7 +99,7 @@
 +
 +depend dep:
 +	@echo "Creating dependency information"
-+	$(CC) -DFREEBSD -MM *.c > .depend
++	$(CC) $(CFLAGS) -MM *.c > .depend
 +
 +# ------------------------------------------------------------------------------
 +# clean up

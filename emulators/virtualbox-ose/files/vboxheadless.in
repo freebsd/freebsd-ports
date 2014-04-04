@@ -110,7 +110,7 @@ vboxheadless_status()
 		eval vmname="\${vboxheadless_${machine}_name:-${machine}}"
 		eval vmuser="\${vboxheadless_${machine}_user:-${vboxheadless_user}}"
 
-		/usr/bin/su ${vmuser} -c "/usr/local/bin/VBoxManage showvminfo '${vmname}' >/dev/null" 2>/dev/null
+		/usr/bin/su ${vmuser} -c "%%PREFIX%%/bin/VBoxManage showvminfo '${vmname}' >/dev/null" 2>/dev/null
 
 		if [ $? != 0 ]; then
 			/usr/bin/printf "%20s %s\n" "${vmname}" "Unknown Machine"

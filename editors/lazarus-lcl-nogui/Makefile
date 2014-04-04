@@ -13,4 +13,6 @@ LCL_INTERFACE=	nogui
 MASTERDIR=	${.CURDIR}/../../editors/lazarus
 
 NO_STAGE=	yes
+
+OPT=		#
 .include "${MASTERDIR}/Makefile"

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstract and helper classes used by all other JGoodies libs
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
@@ -28,13 +28,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
-
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadoc
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	javadoc
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's|haltonfailure="no"|haltonfailure="yes"|' \
 		${WRKSRC}/build.xml
@@ -49,12 +52,14 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/README.html ${WRKSRC}/RELEASE-NOTES.txt ${WRKSRC}/docs ${DOCSDIR}/
-	@${CP} -R ${WRKSRC}/build/docs/api ${DOCSDIR}/docs
-	# Documentation, including javadoc-generated, was installed in ${DOCSDIR}.
+	${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README.html RELEASE-NOTES.txt \
+		${STAGEDIR}${DOCSDIR})	
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/build/docs && ${COPYTREE_SHARE} api \
+		${STAGEDIR}${DOCSDIR}/docs)
 .endif
 
 .include <bsd.port.mk>

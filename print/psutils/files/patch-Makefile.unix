@@ -5,11 +5,11 @@
  OS = UNIX
  
 -BINDIR = /usr/local/bin
-+BINDIR ?= $(PREFIX)/bin
++BINDIR ?= $(DESTDIR)$(PREFIX)/bin
  SCRIPTDIR = $(BINDIR)
 -INCLUDEDIR = /usr/local/share/psutils
 -PERL = /usr/local/bin/perl
-+INCLUDEDIR ?= $(DATADIR)
++INCLUDEDIR ?= $(DESTDIR)$(DATADIR)
 +PERL ?= $(PERL5)
  
 -BINMODE = 0755
@@ -22,7 +22,7 @@
  INSTALLMAN = install -c -m $(MANMODE)
  MANEXT = 1
 -MANDIR = /usr/local/share/man/man$(MANEXT)
-+MANDIR ?= $(MANPREFIX)/man/man$(MANEXT)
++MANDIR ?= $(DESTDIR)$(MANPREFIX)/man/man$(MANEXT)
  
 -CC = gcc
 -CFLAGS = -DPAPER=\"$(PAPER)\" -DUNIX -O -Wall

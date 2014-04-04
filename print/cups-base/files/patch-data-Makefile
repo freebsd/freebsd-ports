@@ -1,0 +1,25 @@
+--- data/Makefile.orig	2013-05-29 15:51:34.000000000 +0400
++++ data/Makefile	2013-12-11 17:17:05.670284926 +0400
+@@ -86,14 +86,14 @@
+ #
+ 
+ install-data:
+-	$(INSTALL_DIR) -m 755 $(DATADIR)/banners
+-	for file in $(BANNERS); do \
+-		$(INSTALL_DATA) $$file $(DATADIR)/banners; \
+-	done
+-	$(INSTALL_DIR) -m 755 $(DATADIR)/data
+-	for file in $(DATAFILES); do \
+-		$(INSTALL_DATA) $$file $(DATADIR)/data; \
+-	done
++#	$(INSTALL_DIR) -m 755 $(DATADIR)/banners
++#	for file in $(BANNERS); do \
++#		$(INSTALL_DATA) $$file $(DATADIR)/banners; \
++#	done
++#	$(INSTALL_DIR) -m 755 $(DATADIR)/data
++#	for file in $(DATAFILES); do \
++#		$(INSTALL_DATA) $$file $(DATADIR)/data; \
++#	done
+ 	$(INSTALL_DIR) -m 755 $(DATADIR)/model
+ 	$(INSTALL_DIR) -m 755 $(DATADIR)/ppdc
+ 	for file in $(PPDCFILES); do \

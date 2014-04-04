@@ -33,7 +33,7 @@ bin/Maelstrom-netd
 %%DATADIR%%/Images/Makefile
 %%DATADIR%%/Images/Makefile.in
 @group games
-@mode 644
+@mode 664
 %%DATADIR%%/Maelstrom-Scores
 @mode
 @group

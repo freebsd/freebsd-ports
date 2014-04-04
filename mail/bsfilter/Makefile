@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	bsfilter
-PORTVERSION=	1.0.17
+PORTVERSION=	1.0.19
+PORTREVISION=	1
 CATEGORIES=	mail ruby
 MASTER_SITES=	SFJP
-MASTER_SITE_SUBDIR=	bsfilter/49795
+MASTER_SITE_SUBDIR=	bsfilter/59804
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	info@otsune.com
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Bayesian spam filter written in Ruby
 
 LICENSE=	GPLv2
@@ -17,8 +18,11 @@ RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}gdbm>=0:${PORTSDIR}/databases/ruby-gdbm
 
 NO_BUILD=	yes
 USE_RUBY=	yes
+USES=		shebangfix
+SHEBANG_FILES=	bsfilter/bsfilter
+ruby_OLD_CMD=	/usr/bin/env ruby
 
-OPTIONS_DEFINE=	DOCS MECAB
+OPTIONS_DEFINE=	EXAMPLES MECAB
 
 MECAB_DESC=	Part-of-Speech and Morphological Analyzer
 

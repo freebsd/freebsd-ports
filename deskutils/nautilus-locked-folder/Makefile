@@ -29,7 +29,6 @@ PLIST_FILES=	lib/nautilus/extensions-2.0/libnautilus-locked-folder.a \
 		lib/nautilus/extensions-2.0/libnautilus-locked-folder.la \
 		lib/nautilus/extensions-2.0/libnautilus-locked-folder.so
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/icons/hicolor/32x32/stock/data/|${LOCALBASE}/share/icons/hicolor/32x32/stock/data/|' \
 		${WRKSRC}/src/lockedfolder-extension.c

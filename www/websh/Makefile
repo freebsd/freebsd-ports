@@ -81,7 +81,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC:H:H}/doc/html/* ${STAGEDIR}${DOCSDIR}
 
-post-install:
-	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/mod_${MODULENAME}.so"
-
 .include <bsd.port.mk>

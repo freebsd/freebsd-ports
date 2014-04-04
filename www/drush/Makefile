@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drush
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	www
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -16,7 +16,8 @@ NO_BUILD=	yes
 
 GH_ACCOUNT=	${PORTNAME}-ops
 GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	d948558
+GH_TAGNAME=	${PORTVERSION}
+GH_COMMIT=	b1a8edb
 USE_GITHUB=	yes
 
 # set php requirements same as drupal itself

@@ -10,9 +10,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
 USE_KDE4=	kdehier kdelibs kdeprefix libkdegames automoc4
-USES=		cmake:outsource shared-mime-info
+USES=		cmake:outsource shared-mime-info tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 
 post-patch:
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \

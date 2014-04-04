@@ -11,9 +11,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The Oxygen icon theme for KDE
 
-USE_XZ=		yes
 USE_KDE4=	kdeprefix kdehier
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 INSTALL_TARGET=	install
 EXTRACT_AFTER_ARGS=	--exclude '${DISTNAME}/scalable'
 

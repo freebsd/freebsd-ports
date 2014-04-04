@@ -1,0 +1,5 @@
+bin/avidemux3_cli
+include/avidemux/2.6/cli/config.h
+lib/libADM_UI_Cli6.so
+lib/libADM_render6_cli.so
+@dirrm include/avidemux/2.6/cli

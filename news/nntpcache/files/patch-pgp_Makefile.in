@@ -1,0 +1,15 @@
+--- pgp/Makefile.in.orig	2014-03-29 12:21:08.000000000 -0400
++++ pgp/Makefile.in	2014-03-29 12:21:29.000000000 -0400
+@@ -236,10 +236,10 @@
+ 
+ # the trailing slash is to force symlink transversal
+ install-data-local:
+-	cd $(sysconfdir) && chmod 700 . && chown @nntpcacheUID@ . && chgrp @nntpcacheUID@ . && chmod 600 $(sysconf_DATA) && chown @nntpcacheUID@ $(sysconf_DATA) && chgrp @nntpcacheGID@ $(sysconf_DATA)
++	cd $(DESTDIR)$(sysconfdir) && chmod 700 . && chown @nntpcacheUID@ . && chgrp @nntpcacheUID@ . && chmod 600 $(sysconf_DATA) && chown @nntpcacheUID@ $(sysconf_DATA) && chgrp @nntpcacheGID@ $(sysconf_DATA)
+ 
+ install-data-hook:
+-	for f in $(sysconf_DATA); do { cd $(sysconfdir) && (orig=`basename $$f -dist`; test -e $$orig || cp $$f $$orig) ;} done
++	for f in $(sysconf_DATA); do { cd $(DESTDIR)$(sysconfdir) && (orig=`basename $$f -dist`; test -e $$orig || cp $$f $$orig) ;} done
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

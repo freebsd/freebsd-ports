@@ -20,7 +20,6 @@ LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_XORG=	x11
-NO_STAGE=	yes
 USES=		gettext gmake pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 desktopfileutils
@@ -44,8 +43,5 @@ CONFIGURE_ARGS+=--enable-notification
 .else
 CONFIGURE_ARGS+=--disable-notification
 .endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>

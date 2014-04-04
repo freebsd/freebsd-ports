@@ -21,12 +21,14 @@ LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-finline-limit=5000||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

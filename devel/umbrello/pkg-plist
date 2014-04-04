@@ -36,6 +36,7 @@ share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_sequence.png
 share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_state.png
 share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_usecase.png
 share/apps/umbrello/layouts/activity-export.desktop
+share/apps/umbrello/layouts/activity-vertical.desktop
 share/apps/umbrello/layouts/class-export.desktop
 share/apps/umbrello/layouts/class-horizontal.desktop
 share/apps/umbrello/layouts/class-vertical.desktop

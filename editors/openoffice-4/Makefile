@@ -320,12 +320,14 @@ post-install:
 	@for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
+				${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${dir}/apps/ ; \
 				${INSTALL_DATA} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
 				    ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${dir}/apps/${EXECBASE}-$${app}.png ; \
 				${ECHO_CMD} "share/icons/hicolor/$${dir}/apps/${EXECBASE}-$${app}.png" >> ${TMPPLIST} ; \
 			fi \
 		done ; \
 		for iconfile in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
+			${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${dir}/mimetypes/ ; \
 			${INSTALL_DATA} ${ICONS}/hicolor/$${dir}/mimetypes/$${iconfile} \
 			    ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${dir}/mimetypes/ ; \
 			${ECHO_CMD} "share/icons/hicolor/$${dir}/mimetypes/$${iconfile}" >> ${TMPPLIST} ; \

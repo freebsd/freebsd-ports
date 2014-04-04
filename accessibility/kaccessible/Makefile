@@ -11,9 +11,8 @@ COMMENT=	Accessibility services for KDE
 
 LIB_DEPENDS=	libspeechd.so:${PORTSDIR}/accessibility/speech-dispatcher
 
-USE_XZ=		yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib dbus gui xml \
 		qmake_build moc_build rcc_build uic_build
 

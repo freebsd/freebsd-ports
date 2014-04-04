@@ -11,12 +11,11 @@ COMMENT=	Basic applications for KDE
 
 LIB_DEPENDS=	libtidy-0.99.so:${PORTSDIR}/www/tidy-lib
 
-USE_XZ=		yes
 USE_GNOME=	glib20
 USE_KDE4=	kdehier kdelibs kdeprefix libkonq \
 		automoc4 soprano strigi nepomuk-core \
 		nepomuk-widgets kactivities
-USES=		cmake:outsource gettext
+USES=		cmake:outsource gettext tar:xz
 USE_QT4=	corelib dbus gui script xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xt

@@ -731,7 +731,6 @@ share/doc/HTML/ru/kolourpaint/common
 share/doc/HTML/ru/kolourpaint/image_balance.png
 share/doc/HTML/ru/kolourpaint/image_emboss.png
 share/doc/HTML/ru/kolourpaint/image_flatten.png
-share/doc/HTML/ru/kolourpaint/image_flip.png
 share/doc/HTML/ru/kolourpaint/image_invert.png
 share/doc/HTML/ru/kolourpaint/image_reduce_colors.png
 share/doc/HTML/ru/kolourpaint/image_resize_scale.png
@@ -740,6 +739,7 @@ share/doc/HTML/ru/kolourpaint/image_skew.png
 share/doc/HTML/ru/kolourpaint/image_soften_sharpen.png
 share/doc/HTML/ru/kolourpaint/index.cache.bz2
 share/doc/HTML/ru/kolourpaint/index.docbook
+share/doc/HTML/ru/kolourpaint/screenshot_acquiring.png
 share/doc/HTML/ru/kolourpaint/view_thumbnails.png
 share/doc/HTML/ru/kompare/common
 share/doc/HTML/ru/kompare/index.cache.bz2

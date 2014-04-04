@@ -5,5 +5,4 @@ This package has open and modular architecture with ability to write
 miscellaneous extensions (like board testers, flash memory programmers,
 and so on).
 
-Author:	Marcel Telka <marcel@telka.sk>
 WWW: http://openwince.sourceforge.net/jtag/

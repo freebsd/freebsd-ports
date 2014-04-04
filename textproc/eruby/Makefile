@@ -30,6 +30,8 @@ DOCS_JA=	README.ja
 .include <bsd.port.pre.mk>
 
 do-configure:
+	${REINPLACE_CMD} -e 's|/-freebsd.3-9./|/-freebsd/|' \
+		${WRKSRC}/configure.rb
 	cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb ${CONFIGURE_ARGS}
 	${REINPLACE_CMD} -e 's|^XLDFLAGS = .*|XLDFLAGS = -L${PREFIX}/lib|' \
 		-e 's|-Wl,$$(libdir)|-Wl,${PREFIX}/lib|' \

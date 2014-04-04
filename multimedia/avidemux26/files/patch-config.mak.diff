@@ -1,0 +1,14 @@
+--- avidemux_core/ffmpeg_package/patches/config.mak.diff.orig
++++ avidemux_core/ffmpeg_package/patches/config.mak.diff
+@@ -1,6 +1,8 @@
+---- config.mak	2011-09-29 06:10:57.072423557 +0000
+-+++ config.mak	2011-09-29 06:11:44.896423943 +0000
+-@@ -59,7 +59,7 @@
++--- config.mak.orig
+++++ config.mak
++@@ -93,7 +93,7 @@
++ EXEOBJS=
++ INSTALL=install
+  LIBTARGET=
+ -SLIBNAME=$(SLIBPREF)$(FULLNAME)$(SLIBSUF)
+ +SLIBNAME=$(SLIBPREF)ADM6$(FULLNAME)$(SLIBSUF)

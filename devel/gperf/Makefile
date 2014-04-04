@@ -23,6 +23,6 @@ INFO=		gperf
 regression-test: test
 
 test:	build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>

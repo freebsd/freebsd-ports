@@ -6,11 +6,11 @@
  {
 -	m_configDirectory = canonicalize_file_name(cPlugin::ConfigDirectory( PLUGIN_NAME_I18N ));
 +#ifdef __FreeBSD__
-+	char buf[PATH_MAX];
++	char buf[PATH_MAX], buf2[PATH_MAX];
 +
 +	m_configDirectory = realpath(cPlugin::ConfigDirectory( PLUGIN_NAME_I18N ), buf);
 +#if APIVERSNUM > 10729
-+	m_resourceDirectory = realpath(cPlugin::ResourceDirectory( PLUGIN_NAME_I18N ));
++	m_resourceDirectory = realpath(cPlugin::ResourceDirectory( PLUGIN_NAME_I18N ), buf2);
 +#endif
 +#else
 + 	m_configDirectory = canonicalize_file_name(cPlugin::ConfigDirectory( PLUGIN_NAME_I18N ));

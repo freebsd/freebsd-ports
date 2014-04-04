@@ -69,4 +69,10 @@ lib/c_icap/sys_logger.so
 lib/libicapapi.la
 lib/libicapapi.so.3
 lib/libicapapi.so
+man/man8/c-icap-client.8.gz
+man/man8/c-icap-config.8.gz
+man/man8/c-icap-libicapapi-config.8.gz
+man/man8/c-icap-mkbdb.8.gz
+man/man8/c-icap-stretch.8.gz
+man/man8/c-icap.8.gz
 @dirrmtry etc/c-icap

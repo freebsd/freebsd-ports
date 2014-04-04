@@ -33,6 +33,9 @@ LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre \
 			libopendkim.so:${PORTSDIR}/mail/opendkim
 
 .include <bsd.port.pre.mk>
+
+# Workaround to prevent bsd.milter.mk from breaking the build with the recent clang
+WITHOUT_MILTER_LDFLAGS=	yes
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 do-install:

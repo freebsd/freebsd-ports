@@ -1,9 +1,0 @@
-#!/bin/sh
-
-[ "$2" != "DEINSTALL" ] && exit 0
-
-for f in %%LOCAL_CONF_FILES%%; do
-	if cmp -s "${PKG_PREFIX}/etc/epylog/$f" "${PKG_PREFIX}/etc/epylog/$f.default"; then
-		rm -f "${PKG_PREFIX}/etc/epylog/$f"
-	fi
-done

@@ -1,14 +1,21 @@
 Before actually using it, it is necessary to prepare a word database.
 
-1.The word contained in clean mail is counted.
-% bsfilter --add-clean ~/Maildir/cur/*
- or
-% cd ~/Maildir/cur/ ; ls | xargs bsfilter -c
+1. The word contained in clean mail is counted.
 
-2.The word in spam is counted.
-% bsfilter --add-spam ~/Maildir/.spam/cur/*
- or
-% cd ~/Maildir/.spam/cur/ ; ls | xargs bsfilter -s
+  $ bsfilter --add-clean ~/Maildir/cur/*
 
-3.A database is updated for every word.
-% bsfilter -u
+ or
+
+  $ cd ~/Maildir/cur/ ; ls | xargs bsfilter -c
+
+2. The word in spam is counted.
+
+  $ bsfilter --add-spam ~/Maildir/.spam/cur/*
+
+ or
+
+  $ cd ~/Maildir/.spam/cur/ ; ls | xargs bsfilter -s
+
+3. A database is updated for every word.
+
+  $ bsfilter -u

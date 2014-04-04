@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	The Kent Retargetable occam-pi Compiler
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

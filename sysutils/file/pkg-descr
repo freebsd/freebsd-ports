@@ -6,3 +6,5 @@ tests, performed in the following order:
   - language tests
 
 The first test that succeeds causes the file type to be printed.
+
+WWW: http://darwinsys.com/file

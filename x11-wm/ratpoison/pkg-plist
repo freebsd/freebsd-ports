@@ -1,14 +1,15 @@
 bin/ratpoison
-%%PORTDATA%%bin/rpws
-%%PORTDATA%%%%DATADIR%%/allwindows.sh
-%%PORTDATA%%%%DATADIR%%/clickframe.pl
-%%PORTDATA%%%%DATADIR%%/genrpbindings
-%%PORTDATA%%%%DATADIR%%/ratpoison.el
-%%PORTDATA%%%%DATADIR%%/rpshowall.sh
-%%PORTDATA%%%%DATADIR%%/rpws
-%%PORTDATA%%%%DATADIR%%/split.sh
-%%PORTDATA%%%%DATADIR%%/sloppy.c
-%%PORTDATA%%%%DATADIR%%/unrat.c
+bin/rpws
+man/man1/ratpoison.1.gz
+%%DATADIR%%/allwindows.sh
+%%DATADIR%%/clickframe.pl
+%%DATADIR%%/genrpbindings
+%%DATADIR%%/ratpoison.el
+%%DATADIR%%/rpshowall.sh
+%%DATADIR%%/rpws
+%%DATADIR%%/split.sh
+%%DATADIR%%/sloppy.c
+%%DATADIR%%/unrat.c
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -16,4 +17,4 @@ bin/ratpoison
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%WITH_GDM%%etc/dm/Sessions/ratpoison.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDATA%%@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%

@@ -33,6 +33,7 @@
     SUBDIR += cups-bjnp
     SUBDIR += cups-client
     SUBDIR += cups-cloud-print
+    SUBDIR += cups-filters
     SUBDIR += cups-image
     SUBDIR += cups-pdf
     SUBDIR += cups-pk-helper
@@ -215,7 +216,6 @@
     SUBDIR += pdfjam
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
-    SUBDIR += pdfmod
     SUBDIR += pdftk
     SUBDIR += pdq
     SUBDIR += pear-File_PDF
@@ -266,6 +266,7 @@
     SUBDIR += rubygem-afm
     SUBDIR += rubygem-color
     SUBDIR += rubygem-colortools
+    SUBDIR += rubygem-pdf-core
     SUBDIR += rubygem-pdf-reader
     SUBDIR += rubygem-pdfwriter
     SUBDIR += rubygem-prawn

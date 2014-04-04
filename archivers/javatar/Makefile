@@ -13,7 +13,6 @@ COMMENT=	Java tar archive I/O package
 
 RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf
 
-NO_STAGE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
@@ -29,15 +28,13 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 do-install:
-	@${ECHO_MSG} -n ">> Install JAR file in ${JAVAJARDIR}..."
-	@${INSTALL_DATA} ${WRKSRC}/jars/tar.jar ${JAVAJARDIR}/
+	@${ECHO_MSG} -n ">> Install JAR file in ${STAGEDIR}${JAVAJARDIR}..."
+	@${INSTALL_DATA} ${WRKSRC}/jars/tar.jar ${STAGEDIR}${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
+	@${ECHO_MSG} -n ">> Installing documentation in ${STAGEDIR}${DOCSDIR}..."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${FIND} ${PORTDOCS} \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	  | ${CPIO} -pdmu ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [ DONE ]"
-.endif
 
 .include <bsd.port.mk>

@@ -11,9 +11,8 @@ COMMENT=	Strigi analyzers for network-related file formats
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-USE_XZ=		yes
 USE_KDE4=	kdelibs kdeprefix kdehier strigi automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

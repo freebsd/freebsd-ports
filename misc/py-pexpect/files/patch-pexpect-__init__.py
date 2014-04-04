@@ -8,7 +8,7 @@
 -        if TIOCSWINSZ == 2148037735:
 -            # Same bits, but with sign.
 -            TIOCSWINSZ = -2146929561
-+        TIOCSWINSZ = getattr(termios, 'TIOCSWINSZ', 2148037735L)
++        TIOCSWINSZ = getattr(termios, 'TIOCSWINSZ', 2148037735)
          # Note, assume ws_xpixel and ws_ypixel are zero.
          s = struct.pack('HHHH', rows, cols, 0, 0)
          fcntl.ioctl(self.fileno(), TIOCSWINSZ, s)

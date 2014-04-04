@@ -12,9 +12,8 @@ COMMENT=	SANE library interface for KDE
 LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 
 pre-configure:

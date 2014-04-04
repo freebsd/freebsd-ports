@@ -14,9 +14,8 @@ COMMENT=	Enhanced version of pyuic4
 USE_KDE4=	kdelibs automoc4 pykde4
 USE_PYTHON=	2
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 DISTINFO_FILE=	${PORTSDIR}/devel/py-pykde4/distinfo
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
 

@@ -79,6 +79,5 @@
     SUBDIR += unixbench
     SUBDIR += webbench
     SUBDIR += wrk
-    SUBDIR += xdd
 
 .include <bsd.port.subdir.mk>

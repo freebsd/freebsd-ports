@@ -8,6 +8,7 @@ COMMENT=	Glide64 graphics plugin for Mupen64
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
+BROKEN=		Fails to patch
 USE_SDL=	sdl
 USE_GL=		yes
 

@@ -1,0 +1,15 @@
+# Firmware upload for USB printers
+
+# HP Laserjet 1018
+#attach 100 {
+#	match "vendor" "0x03f0";
+#	match "product" "0x4117";
+#	action "arm2hpdl %%PREFIX%%/share/foo2zjs/firmware/sihp1018.img > /dev/$device-name";
+#};
+
+# HP Laserjet 1020
+#attach 100 {
+#	match "vendor" "0x03f0";
+#	match "product" "0x2b17";
+#	action "arm2hpdl %%PREFIX%%/share/foo2zjs/firmware/sihp1020.img > /dev/$device-name";
+#};

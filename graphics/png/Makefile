@@ -13,9 +13,8 @@ COMMENT=	Library for manipulating PNG images
 
 PORTSCOUT=	limit:^1\.5\.
 
-USE_XZ=		yes
+USES=		tar:xz cmake
 GNU_CONFIGURE=	yes
-USES=		cmake
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DPNG_MAN_DIR:STRING=man

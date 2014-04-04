@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	prawn-svg
-PORTVERSION=	0.12.0.4
+PORTVERSION=	0.15.0.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 

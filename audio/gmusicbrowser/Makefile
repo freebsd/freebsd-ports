@@ -32,10 +32,6 @@ WEBKIT_RUN_DEPENDS=	p5-Gtk2-WebKit>=0:${PORTSDIR}/www/p5-Gtk2-WebKit
 LIBNOTIFY_RUN_DEPENDS=	pt-Gtk2-Notify>=0.05:${PORTSDIR}/devel/p5-Gtk2-Notify
 OPTIONS_SUB=	yes
 
-.if defined(NOPORTDATA)
-IGNORE=		port data contain code, undefine NOPORTDATA
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${MANPREFIX}/man/man1/${MAN1}

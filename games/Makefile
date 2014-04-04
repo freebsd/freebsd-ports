@@ -268,6 +268,7 @@
     SUBDIR += flightgear-data
     SUBDIR += flightgear-mb339-pan
     SUBDIR += flobopuyo
+    SUBDIR += flukz
     SUBDIR += flyhard
     SUBDIR += flying
     SUBDIR += fmars
@@ -406,7 +407,6 @@
     SUBDIR += hinversi
     SUBDIR += hitori
     SUBDIR += hllib
-    SUBDIR += hlstats
     SUBDIR += hlstatsx
     SUBDIR += hohlin
     SUBDIR += hoichess
@@ -554,7 +554,6 @@
     SUBDIR += linux-savage
     SUBDIR += linux-skulltag
     SUBDIR += linux-sof
-    SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
     SUBDIR += linux-steam
@@ -1015,7 +1014,6 @@
     SUBDIR += untahris
     SUBDIR += uqm
     SUBDIR += urbanterror-data
-    SUBDIR += utserver
     SUBDIR += valyriatear
     SUBDIR += vamos
     SUBDIR += vavoom
@@ -1081,6 +1079,7 @@
     SUBDIR += xdesktopwaves
     SUBDIR += xdigger
     SUBDIR += xdino
+    SUBDIR += xemeraldia
     SUBDIR += xevil
     SUBDIR += xeyesplus
     SUBDIR += xfireworks

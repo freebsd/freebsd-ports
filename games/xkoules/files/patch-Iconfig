@@ -1,0 +1,15 @@
+--- ./Iconfig.orig	1998-03-04 21:29:05.000000000 +0100
++++ ./Iconfig	2014-03-30 03:11:00.569385664 +0200
+@@ -34,9 +34,9 @@
+   recomended for linux*/
+ /*#define I386ASSEMBLY*/
+ /* directories*/
+-KOULESDIR		=/usr/bin/X11
+-SOUNDDIR		=/usr/local/lib/koules
+-MANDIR			=/usr/local/man/man6
++KOULESDIR		=${DESTDIR}$(PREFIX)/libexec
++SOUNDDIR		=${DESTDIR}$(PREFIX)/share/xkoules
++MANSUFFIX		=6
+ 
+ /*You need some extra libraryes for BSD sockets compatibility?*/
+ /* TOP_INCLUDES =                       /* Sun users with GCC need this */

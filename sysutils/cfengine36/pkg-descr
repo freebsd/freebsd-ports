@@ -1,0 +1,10 @@
+Cfengine is an automated suite of programs for configuring and 
+maintaining Unix-like computers. It has been used on computing arrays 
+of between 1 and 20,000 computers since 1993 by a wide range of 
+organizations. Cfengine is supported by active research and was the 
+first autonomic, hands-free management system for Unix-like operating
+systems. Cfengine is an autonomic maintenance system not merely a
+change management roll-out tool. Cfengine has a history of security
+and adaptability. 
+
+WWW: http://www.cfengine.org/

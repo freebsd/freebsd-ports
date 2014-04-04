@@ -3,7 +3,7 @@
 
 PORTNAME=	hohlin
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 #MASTER_SITES=	http://retrospec.sgn.net/download.php?id=63&path=games/hoh/bin/
 #requires post to download
@@ -16,32 +16,29 @@ COMMENT=	Remake of the classic spectrum game Head over Heels
 
 WRKSRC=		${WRKDIR}/hoh-install-${PORTVERSION}/
 
-USE_BZIP2=	YES
+USES=	tar:bzip2
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)/\1\2/}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/data/HoH
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/data/HoH ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/HoHOriginal.dat ${DATADIR}
-	${MKDIR} ${DATADIR}/Sound
-	${INSTALL_DATA} ${WRKSRC}/data/Sound/Sound.dat ${DATADIR}/Sound/
-	${INSTALL_DATA} ${WRKSRC}/data/Sound/Game.ogg ${DATADIR}/Sound/
-	${INSTALL_DATA} ${WRKSRC}/data/Sound/Theme.ogg ${DATADIR}/Sound/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/data/HoH ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/data/HoHOriginal.dat ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/Sound
+	${INSTALL_DATA} ${WRKSRC}/data/Sound/Sound.dat ${STAGEDIR}${DATADIR}/Sound/
+	${INSTALL_DATA} ${WRKSRC}/data/Sound/Game.ogg ${STAGEDIR}${DATADIR}/Sound/
+	${INSTALL_DATA} ${WRKSRC}/data/Sound/Theme.ogg ${STAGEDIR}${DATADIR}/Sound/
 	${SED} -e 's:%%DATADIR%%:${DATADIR}:g' ${FILESDIR}/hoh.sh > \
-		${PREFIX}/bin/HoH
-	${CHMOD} +x ${PREFIX}/bin/HoH
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
-.endif
+		${STAGEDIR}${PREFIX}/bin/HoH
+	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/HoH
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -R ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

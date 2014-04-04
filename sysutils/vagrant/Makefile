@@ -3,7 +3,7 @@
 
 PORTNAME=	vagrant
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	LOCAL/swills https://codeload.github.com/mitchellh/vagrant/legacy.tar.gz/v${PORTVERSION}?dummy=/
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-main>=1.0:${PORTSDIR}/devel/rubygem-main \
 		rubygem-childprocess>=0.5.1:${PORTSDIR}/devel/rubygem-childprocess \
 		rubygem-erubis>=2.7.0:${PORTSDIR}/www/rubygem-erubis \
 		rubygem-i18n>=0.6.9:${PORTSDIR}/devel/rubygem-i18n \
-		rubygem-timers>=1.1.0:${PORTSDIR}/devel/rubygem-timers \
+		rubygem-timers1>=1.1.0:${PORTSDIR}/devel/rubygem-timers1 \
 		rubygem-celluloid>=0.15.2:${PORTSDIR}/devel/rubygem-celluloid \
 		rubygem-rb-fsevent>=0.9.4:${PORTSDIR}/devel/rubygem-rb-fsevent \
 		rubygem-rb-inotify>=0.9.3:${PORTSDIR}/devel/rubygem-rb-inotify \

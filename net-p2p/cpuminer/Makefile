@@ -3,6 +3,7 @@
 
 PORTNAME=	cpuminer
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p math
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	cpuminer
@@ -22,7 +23,7 @@ AUTOMAKE_ARGS=	--gnu --add-missing --copy
 # gcc 4.6 yields higher hashrates on newer CPUs, gcc 4.8 even better
 USE_GCC?=	yes
 
-PLIST_FILES=	bin/minerd
+PLIST_FILES=	bin/minerd man/man1/minerd.1.gz
 PORTDOCS=	NEWS README
 
 OPTIONS_DEFINE=	DOCS

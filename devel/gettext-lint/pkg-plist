@@ -11,6 +11,14 @@ bin/POFileStatus
 %%PYTHON_SITELIBDIR%%/gettext-lint/POFile.py
 %%PYTHON_SITELIBDIR%%/gettext-lint/capitalization.py
 %%PYTHON_SITELIBDIR%%/gettext-lint/util.py
+man/man1/POFileChecker.1.gz
+man/man1/POFileClean.1.gz
+man/man1/POFileConsistency.1.gz
+man/man1/POFileEquiv.1.gz
+man/man1/POFileFill.1.gz
+man/man1/POFileGlossary.1.gz
+man/man1/POFileSpell.1.gz
+man/man1/POFileStatus.1.gz
 %%DATADIR%%/count.xsl
 %%DATADIR%%/report.css
 %%DATADIR%%/report.xsl

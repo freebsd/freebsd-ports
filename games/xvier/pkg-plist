@@ -1,4 +1,0 @@
-bin/xvier
-libexec/xvier_prog
-%%PORTDOCS%%share/doc/xvier/README
-%%PORTDOCS%%@dirrm share/doc/xvier

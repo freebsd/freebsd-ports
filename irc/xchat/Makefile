@@ -107,6 +107,6 @@ post-patch:
 
 # Create plugins directory even when no plugins are installed
 post-install:
-	@${MKDIR} ${PREFIX}/lib/xchat/plugins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xchat/plugins
 
 .include <bsd.port.mk>

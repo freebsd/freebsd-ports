@@ -13,20 +13,11 @@ DISTFILES=	pty.lua?rev=1.2 pty.c?rev=1.25
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pty (pseudo-terminal) bindings for Lua 5
 
-USE_LUA?=	5.1
-
-.if ${USE_LUA} == 5.0
-LUA_COMPS=	compat51 lua
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
-COMPAT_SRC=	`(cd ${PORTSDIR}/devel/lua50-compat51 && ${MAKE} -V WRKSRC)`
-MAKE_ENV=	COMPATDIR="${COMPAT_SRC}"
-DISTFILES+=	compat-5.1r5.tar.gz:compat
-.endif
+USE_LUA=	5.1
 
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/pty.lua \
 		%%LUA_MODLIBDIR%%/lpty.so
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for file in ${DISTFILES:C,:.*,,}
@@ -35,7 +26,9 @@ do-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lpty.so ${LUA_MODLIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/pty.lua ${LUA_MODSHAREDIR}
+	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lpty.so ${STAGEDIR}${LUA_MODLIBDIR}
+	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/pty.lua ${STAGEDIR}${LUA_MODSHAREDIR}
 
 .include <bsd.port.mk>

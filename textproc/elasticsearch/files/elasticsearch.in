@@ -68,7 +68,7 @@ start_precmd="elasticsearch_precmd"
 status_cmd="elasticsearch_status"
 stop_cmd="elasticsearch_stop"
 command="/usr/sbin/daemon"
-command_args="-f %%LOCALBASE%%/bin/java -Des.pidfile=${pidfile} ${elasticsearch_props} ${java_options} org.elasticsearch.bootstrap.ElasticSearch"
+command_args="-f %%LOCALBASE%%/bin/java -Des.pidfile=${pidfile} ${elasticsearch_props} ${java_options} org.elasticsearch.bootstrap.Elasticsearch"
 
 elasticsearch_precmd() {
         touch ${pidfile}
@@ -79,7 +79,7 @@ elasticsearch_precmd() {
 }
 
 elasticsearch_console () {
-	%%LOCALBASE%%/bin/java -Des.foreground=yes ${elasticsearch_props} ${java_options} org.elasticsearch.bootstrap.ElasticSearch
+	%%LOCALBASE%%/bin/java -Des.foreground=yes ${elasticsearch_props} ${java_options} org.elasticsearch.bootstrap.Elasticsearch
 }
 
 
@@ -121,7 +121,7 @@ elasticsearch_check_pidfile() {
 		debug "pid file ($_pidfile): no pid in file."
 		return
 	fi
-	if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid org.elasticsearch.bootstrap.ElasticSearch\$"`" ]; then
+	if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid org.elasticsearch.bootstrap.Elasticsearch\$"`" ]; then
 		echo -n $_pid
 	fi
 }

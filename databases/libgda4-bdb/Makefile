@@ -15,5 +15,4 @@ PLIST=		${.CURDIR}/pkg-plist
 
 LIBGDA4_SLAVE=	bdb
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -3,6 +3,7 @@
 
 PORTNAME=	gtktetcolor
 DISTVERSION=	0.6.5pre3
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://canopus.iacp.dvo.ru/pub/Games/gtktetcolor/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:icons
@@ -16,15 +17,16 @@ COMMENT=	Game for GNOME that resembles well-known Tetris and Columns
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USE_BZIP2=	yes
-USES=		desktop-file-utils gmake pathfix pkgconfig
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+
+USES=		gmake pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -34,10 +36,6 @@ NLS_USES=	gettext
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|games.games|root.games|' \
-		-e 's|scoredir = $$(localstatedir)/games|scoredir = /var/games|' \
-		${WRKSRC}/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED||g'
 	@${REINPLACE_CMD} -e 's|^Icon.*|Icon=${PORTNAME}|' \
@@ -48,7 +46,8 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+	${STAGEDIR}${PREFIX}/share/pixmaps/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

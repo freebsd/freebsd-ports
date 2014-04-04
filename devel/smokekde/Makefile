@@ -13,8 +13,7 @@ USE_KDE4=	kate kdehier kdelibs kdeprefix okular pimlibs \
 		smokegen smokeqt akonadi automoc4 soprano
 USE_QT4=	corelib dbus designer_build gui network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
-USE_XZ=		yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ATTICA

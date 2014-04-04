@@ -29,6 +29,7 @@ include/libgda-%%VERSION%%/libgda-ui/gdaui-server-operation.h
 include/libgda-%%VERSION%%/libgda-ui/gdaui-tree-store.h
 include/libgda-%%VERSION%%/libgda-ui/libgda-ui.h
 lib/libgda-%%VERSION%%/plugins/gdaui-entry-filesel-spec.xml
+lib/libgda-%%VERSION%%/plugins/gdaui-entry-format-spec.xml
 lib/libgda-%%VERSION%%/plugins/gdaui-entry-password.xml
 lib/libgda-%%VERSION%%/plugins/gdaui-entry-pict-spec.xml
 lib/libgda-%%VERSION%%/plugins/gdaui-entry-pict-spec_string.xml
@@ -45,7 +46,6 @@ share/applications/gda-browser-%%VERSION%%.desktop
 share/applications/gda-control-center-%%VERSION%%.desktop
 share/doc/gda-browser/BrowserConnection.html
 share/doc/gda-browser/BrowserCore.html
-share/doc/gda-browser/BrowserFavorites.html
 share/doc/gda-browser/BrowserPerspective.html
 share/doc/gda-browser/BrowserWindow.html
 share/doc/gda-browser/CcGrayBar.html
@@ -60,6 +60,7 @@ share/doc/gda-browser/gda-browser-Query-Exec-perspective.html
 share/doc/gda-browser/gda-browser-Schema-Browser-perspective.html
 share/doc/gda-browser/gda-browser-Support-functions.html
 share/doc/gda-browser/gda-browser-UiFormgrid.html
+share/doc/gda-browser/gda-browser-browser-favorites.html
 share/doc/gda-browser/gda-browser-popup-container.html
 share/doc/gda-browser/gda-browser.devhelp2
 share/doc/gda-browser/home.png
@@ -446,7 +447,6 @@ share/libgda-%%VERSION%%/icons/hicolor/32x32/actions/glade.png
 share/libgda-%%VERSION%%/icons/hicolor/32x32/actions/history-view.png
 share/libgda-%%VERSION%%/icons/hicolor/32x32/actions/ldap-entries.png
 share/libgda-%%VERSION%%/icons/hicolor/32x32/actions/table-add.png
-share/libgda-%%VERSION%%/icons/hicolor/icon-theme.cache
 share/libgda-%%VERSION%%/icons/hicolor/scalable/actions/bookmark-view.svg
 share/libgda-%%VERSION%%/icons/hicolor/scalable/actions/glade.svg
 share/libgda-%%VERSION%%/icons/hicolor/scalable/actions/history-view.svg

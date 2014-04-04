@@ -14,10 +14,9 @@ LIB_DEPENDS=	libspectre.so:${PORTSDIR}/print/libspectre \
 		libanalitza.so:${PORTSDIR}/math/analitza
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig tar:xz
 USE_QT4=	corelib qtestlib_build xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 

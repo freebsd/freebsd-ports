@@ -18,19 +18,17 @@ BUNDLED_LIBPNG_DESC=	Use bundled libpng
 BUNDLED_ZLIB_DESC=	Use bundled zlib
 
 HAS_CONFIGURE=	yes
-PLIST_FILES=	bin/optipng
-MAN1=		optipng.1
+PLIST_FILES=	bin/optipng man/man1/optipng.1.gz
 PORTDOCS=	history.txt optipng.man.html optipng.man.pdf optipng.man.txt \
 		png_optimization.html todo.txt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MBUNDLED_LIBPNG)
 CONFIGURE_ARGS+=	--with-system-libpng
 CFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 .endif
 
 .if empty(PORT_OPTIONS:MBUNDLED_ZLIB)
@@ -38,13 +36,11 @@ CONFIGURE_ARGS+=	--with-system-zlib
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng/optipng ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/src/optipng/man/optipng.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng/optipng ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/src/optipng/man/optipng.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
-.endif
+	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

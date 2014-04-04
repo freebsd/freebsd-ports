@@ -25,6 +25,11 @@
 %%MYSUBDIR%%bin/zsuids
 %%MYSUBDIR%%doc/ACCOUNTING
 %%MYSUBDIR%%doc/MATCHUP
+%%MYSUBDIR%%man/man1/columnt.1.gz
+%%MYSUBDIR%%man/man1/matchup.1.gz
+%%MYSUBDIR%%man/man1/xqp.1.gz
+%%MYSUBDIR%%man/man1/xrecipient.1.gz
+%%MYSUBDIR%%man/man1/xsender.1.gz
 @dirrm %%MYSUBDIR%%man/man1
 @dirrm %%MYSUBDIR%%man
 @dirrm %%MYSUBDIR%%doc

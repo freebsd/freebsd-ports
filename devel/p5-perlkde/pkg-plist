@@ -62,8 +62,3 @@ lib/kde4/kperlpluginfactory.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KDECore4
 %%ATTICA%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Attica
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Akonadi
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry %%SITE_PERL%%
-@dirrmtry lib/perl5/site_perl
-@dirrmtry lib/perl5

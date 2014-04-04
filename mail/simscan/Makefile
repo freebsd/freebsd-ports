@@ -21,8 +21,8 @@ GROUPS=		${USERS}
 WORKDIR?=	${QMAIL_PREFIX}/${PORTNAME}
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
 
-SUB_FILES=	pkg-message \
-		pkg-install
+SUB_FILES=	pkg-message
+
 SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX} \
 		SIMSCAN_DIR=${PORTNAME}
 PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX} \
@@ -41,7 +41,6 @@ PASSTHRU_DESC=	Pass Spam Thru, Do Not Reject (required SPAMD)
 HEADERS_DESC=	Add a Received Line With Versions of Scanners
 DSPAM_DESC=	Turn on DSPAM scanning
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=--enable-clamavdb-path=/var/db/clamav \
@@ -127,6 +126,10 @@ post-patch:
 		${WRKSRC}/configure
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/cdb/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/cdb/conf-ld
+	@${ECHO_CMD} ${STAGEDIR}${PREFIX} > ${WRKSRC}/cdb/conf-home
+	@${REINPLACE_CMD} -e 's|@qmaildir@|$$(DESTDIR)@qmaildir@|' \
+	    -e 's|@workdir@|$$(DESTDIR)@workdir@|' \
+	    ${WRKSRC}/Makefile.in
 
 pre-configure:
 	@${ECHO_MSG} ""
@@ -148,17 +151,14 @@ pre-configure:
 	@${ECHO_MSG} ""
 
 pre-install:
-	@${REINPLACE_CMD} -e 's|nobody|simscan|g' ${WRKSRC}/Makefile
-	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	${MKDIR} ${STAGEDIR}${QMAIL_PREFIX}/bin
 
 post-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

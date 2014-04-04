@@ -24,7 +24,7 @@ OPERA_VER?=	12.16
 OPERA_BUILD?=	1860
 MASTER_SITES_VER_PATH=	linux/${OPERA_VER:S/.//}/
 
-USE_XZ=		yes
+USES=		tar:xz
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 

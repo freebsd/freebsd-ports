@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2014a
+DISTVERSION=	2014b
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iana.org/tz/releases/ \
 		ftp://munnari.oz.au/pub/

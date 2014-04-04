@@ -15,7 +15,7 @@ COMMENT=	Problem reporting system
 
 RUN_DEPENDS=	prepsdb_tool:${PORTSDIR}/devel/prepstools
 
-USES=        pathfix gmake pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk20 gconf2 libgnomeui
 USE_PGSQL=	yes
 INSTALLS_OMF=	yes
@@ -27,7 +27,6 @@ CONFIGURE_ARGS+=	--with-pgsqldir=${LOCALBASE} \
 			--with-libprepsdir=${LOCALBASE} \
 			--localstatedir=/var
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PACKAGE@/gnome/help|gnome/help|g' \
 		${WRKSRC}/help/C/Makefile.in

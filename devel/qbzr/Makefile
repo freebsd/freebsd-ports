@@ -3,7 +3,7 @@
 
 PORTNAME=	qbzr
 PORTVERSION=	0.23.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/109906138/ \
 		http://www.c-s.li/ports/
@@ -27,5 +27,4 @@ USE_PYDISTUTILS=	yes
 USES=		gettext
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

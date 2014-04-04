@@ -1,0 +1,6 @@
+Dateutils are a collection of tools that revolve around manipulating
+dates and times on the command line.  Commands included in the suite
+offer ways of converting dates between calendars, computing durations
+between dates, and finding dates in input streams.
+
+WWW: http://www.fresse.org/dateutils/

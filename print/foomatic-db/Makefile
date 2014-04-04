@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	db
-PORTVERSION=	20140106
+PORTVERSION=	20140331
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/ \
 		ftp://ftp.wart.ru/pub/FreeBSD/ports/distfiles/foomatic/

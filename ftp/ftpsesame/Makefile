@@ -11,11 +11,13 @@ MASTER_SITE_SUBDIR=	sem
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Helper for pf firewall to pass FTP protocol
 
-MAN8=		ftpsesame.8
-PLIST_FILES=	bin/ftpsesame
+PLIST_FILES=	bin/ftpsesame man/man8/ftpsesame.8.gz
 USE_RC_SUBR=	ftpsesame
 
-MAKE_ARGS=	PREFIX=${PREFIX} MANPREFIX=${MANPREFIX}
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX} MANPREFIX=${STAGEDIR}${MANPREFIX}
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ftpsesame ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ftpsesame.8 ${STAGEDIR}${PREFIX}/man/man8
+
 .include <bsd.port.mk>

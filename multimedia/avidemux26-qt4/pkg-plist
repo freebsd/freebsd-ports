@@ -1,0 +1,32 @@
+bin/avidemux3_jobs
+bin/avidemux3_qt4
+include/avidemux/2.6/qt4/config.h
+lib/libADM_UIQT46.so
+lib/libADM_render6_qt4.so
+share/avidemux6/i18n/avidemux_ca.qm
+share/avidemux6/i18n/avidemux_cs.qm
+share/avidemux6/i18n/avidemux_de.qm
+share/avidemux6/i18n/avidemux_el.qm
+share/avidemux6/i18n/avidemux_en.qm
+share/avidemux6/i18n/avidemux_es.qm
+share/avidemux6/i18n/avidemux_eu.qm
+share/avidemux6/i18n/avidemux_fr.qm
+share/avidemux6/i18n/avidemux_it.qm
+share/avidemux6/i18n/avidemux_ja.qm
+share/avidemux6/i18n/avidemux_pl.qm
+share/avidemux6/i18n/avidemux_pt_BR.qm
+share/avidemux6/i18n/avidemux_ru.qm
+share/avidemux6/i18n/avidemux_sr.qm
+share/avidemux6/i18n/avidemux_sr@latin.qm
+share/avidemux6/i18n/avidemux_tr.qm
+share/avidemux6/i18n/avidemux_zh_TW.qm
+share/avidemux6/i18n/qt_ca.qm
+share/avidemux6/i18n/qt_cs.qm
+share/avidemux6/i18n/qt_de.qm
+share/avidemux6/i18n/qt_eu.qm
+share/avidemux6/i18n/qt_fr.qm
+share/avidemux6/i18n/qt_it.qm
+share/avidemux6/i18n/qt_zh_TW.qm
+@dirrm share/avidemux6/i18n
+@dirrm share/avidemux6
+@dirrm include/avidemux/2.6/qt4

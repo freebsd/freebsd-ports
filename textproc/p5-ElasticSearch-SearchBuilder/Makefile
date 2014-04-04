@@ -19,7 +19,7 @@ TEST_DEPENDS=	p5-Test-Deep>=:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump
 
-DEPRECATED=	Use textproc/p5-Elasticsearch which is the official client
+DEPRECATED=	Use textproc/p5-Search-Elasticsearch which is the official client
 
 USES=		perl5
 USE_PERL5=	configure

@@ -19,7 +19,6 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -34,7 +33,7 @@ USE_XORG=	x11 xv xext xxf86vm xtst
 USE_SDL=	sdl
 USE_GL=	gl
 
-USES=		dos2unix iconv gmake pkgconfig desktop-file-utils
+USES=		tar:bzip2 dos2unix iconv gmake pkgconfig desktop-file-utils
 DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp|am)
 
 PORTDOCS=	ChangeLog README

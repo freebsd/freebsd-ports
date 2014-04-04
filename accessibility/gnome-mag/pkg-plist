@@ -9,6 +9,7 @@ lib/orbit-2.0/GNOME_Magnifier_module.la
 lib/orbit-2.0/GNOME_Magnifier_module.so
 libdata/bonobo/servers/GNOME_Magnifier.server
 libdata/pkgconfig/gnome-mag-1.0.pc
+man/man1/magnifier.1.gz
 share/dbus-1/services/org.freedesktop.gnome.Magnifier.service
 %%DATADIR%%/1_32/appstart.xpm
 %%DATADIR%%/1_32/bottom_left_corner.xpm

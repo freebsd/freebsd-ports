@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-sdlaudio
 
 COMMENT=	JttL's SDL audio plugin for Mupen64
 
+BROKEN=		Fails to build
 USE_SDL=	sdl
 
 FIXFILES=	#

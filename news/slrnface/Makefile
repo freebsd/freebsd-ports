@@ -3,7 +3,7 @@
 
 PORTNAME=	slrnface
 PORTVERSION=	2.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/s/${PORTNAME}
@@ -21,16 +21,15 @@ MAKE_ARGS=	CC="${CC}" C_FLAGS="${CFLAGS}" \
 		XF_LIB="-L${LOCALBASE}/lib -lcompface"
 USE_XORG=	xt
 
-MAN1=		slrnface.1
-PLIST_FILES=	bin/slrnface share/examples/slrnface/slrnface.sl
-PLIST_DIRS=	share/examples/slrnface
+PLIST_FILES=	bin/slrnface man/man1/slrnface.1.gz %%DATADIR%%/slrnface.sl
+PLIST_DIRS=		%%DATADIR%%
 
-NO_STAGE=	yes
+SUB_FILES=	pkg-message
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/slrnface ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/slrnface.1 ${MAN1PREFIX}/man/man1/slrnface.1
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/slrnface.sl ${EXAMPLESDIR}
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/slrnface ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/slrnface.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/slrnface.sl ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

@@ -1,40 +1,58 @@
---- depot/mod_depot.c.orig	2011-07-24 15:46:48.000000000 +0000
-+++ depot/mod_depot.c	2011-07-24 15:48:24.000000000 +0000
-@@ -274,9 +274,9 @@
+--- depot/mod_depot.c.orig	2014-03-29 18:35:17.000000000 +0100
++++ depot/mod_depot.c	2014-03-29 18:37:30.000000000 +0100
+@@ -232,7 +232,7 @@
+   const char *name;
+   int index, omode, bnum;
+   if((index = getnewindex()) == -1) myerror(DP_EMISC);
+-  name = STR2CSTR(vname);
++  name = StringValuePtr(vname);
+   FIXNUM_P(vomode);
+   omode = FIX2INT(vomode);
+   FIXNUM_P(vbnum);
+@@ -273,10 +273,10 @@
+   int index, ksiz, vsiz, dmode;
    FIXNUM_P(vindex);
    if((index = FIX2INT(vindex)) == -1) myerror(DP_EMISC);
-   kbuf = STR2CSTR(vkey);
+-  kbuf = STR2CSTR(vkey);
 -  ksiz = RSTRING(vkey)->len;
-+  ksiz = RSTRING_LEN(vkey);
-   vbuf = STR2CSTR(vval);
+-  vbuf = STR2CSTR(vval);
 -  vsiz = RSTRING(vval)->len;
++  kbuf = StringValuePtr(vkey);
++  ksiz = RSTRING_LEN(vkey);
++  vbuf = StringValuePtr(vval);
 +  vsiz = RSTRING_LEN(vval);
    FIXNUM_P(vdmode);
    dmode = FIX2INT(vdmode);
    depot = dptable[index];
-@@ -295,7 +295,7 @@
+@@ -294,8 +294,8 @@
+   int index, ksiz;
    FIXNUM_P(vindex);
    if((index = FIX2INT(vindex)) == -1) myerror(DP_EMISC);
-   kbuf = STR2CSTR(vkey);
+-  kbuf = STR2CSTR(vkey);
 -  ksiz = RSTRING(vkey)->len;
++  kbuf = StringValuePtr(vkey);
 +  ksiz = RSTRING_LEN(vkey);
    depot = dptable[index];
    if(!dpout(depot, kbuf, ksiz)){
      if(dpsltable[index] && dpecode == DP_ENOITEM) return Qfalse;
-@@ -314,7 +314,7 @@
+@@ -313,8 +313,8 @@
+   VALUE vval;
    FIXNUM_P(vindex);
    if((index = FIX2INT(vindex)) == -1) myerror(DP_EMISC);
-   kbuf = STR2CSTR(vkey);
+-  kbuf = STR2CSTR(vkey);
 -  ksiz = RSTRING(vkey)->len;
++  kbuf = StringValuePtr(vkey);
 +  ksiz = RSTRING_LEN(vkey);
    FIXNUM_P(vstart);
    start = FIX2INT(vstart);
    FIXNUM_P(vmax);
-@@ -337,7 +337,7 @@
+@@ -336,8 +336,8 @@
+   int index, ksiz, vsiz;
    FIXNUM_P(vindex);
    if((index = FIX2INT(vindex)) == -1) myerror(DP_EMISC);
-   kbuf = STR2CSTR(vkey);
+-  kbuf = STR2CSTR(vkey);
 -  ksiz = RSTRING(vkey)->len;
++  kbuf = StringValuePtr(vkey);
 +  ksiz = RSTRING_LEN(vkey);
    depot = dptable[index];
    if((vsiz = dpvsiz(depot, kbuf, ksiz)) == -1){

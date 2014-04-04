@@ -11,14 +11,18 @@ DISTNAME=	FSMGenerator${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite State Machine generating software
 
-PLIST_FILES=	bin/fsmgenerator
-USE_GMAKE=	yes
+USES=		gmake
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/fsmgenerator
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} \
 		${REINPLACE_CMD} -e "s|make$$|${GMAKE}|" \
-			-e "s|^CFLAGS[ 	]+=|CFLAGS		+=|" \
-			-e "s|/usr/local|${PREFIX}|"
+			-e "/^RCFLAGS/ s|=|= ${CFLAGS}|" \
+			-e "s|/usr/local|${STAGEDIR}${PREFIX}|" \
+			-e "s|gcc|${CC}|g"
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

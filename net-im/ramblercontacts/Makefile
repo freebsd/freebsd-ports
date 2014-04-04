@@ -5,18 +5,16 @@ PORTNAME=	ramblercontacts
 PORTVERSION=	0.3.2.1030
 PORTREVISION=	1
 CATEGORIES=	net-im russian
-MASTER_SITES=	http://developers.rambler.ru/upload/contacts/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_beta_src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, multi-service communication client from Rambler
 
-BROKEN=		Fails to dos2unix
-
 LICENSE=	GPLv3
 
 USES=		qmake dos2unix
-DOS2UNIX_FILES=	config.inc
+DOS2UNIX_FILES=	src/config.inc
 USE_XORG=	xscrnsaver
 USE_QT4=	moc_build rcc_build uic_build designer_build \
 		webkit

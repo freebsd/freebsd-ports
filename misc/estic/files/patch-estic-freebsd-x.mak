@@ -1,12 +1,11 @@
---- estic/make/freebsd-x.mak.orig	Fri Jan 31 03:57:24 1997
-+++ estic/make/freebsd-x.mak	Tue Sep  6 09:54:21 2005
-@@ -27,12 +27,13 @@
+--- estic/make/freebsd-x.mak.orig	1997-01-31 03:57:24.000000000 +0100
++++ estic/make/freebsd-x.mak	2014-03-28 17:00:36.000000000 +0100
+@@ -27,12 +27,12 @@
  AR = ar
  LD = ld
  ZIP = zip
 -CC = g++
-+CXX ?= g++
-+CC = ${CXX}
++CC?= g++
  
  LIB	= ../spunk/spunk.a
  INCDIR	= ../spunk
@@ -16,7 +15,7 @@
  
  
  # ------------------------------------------------------------------------------
-@@ -71,10 +72,10 @@
+@@ -71,10 +71,10 @@
  		icintcon.o	\
  		iclog.o		\
  		icmsgwin.o	\
@@ -29,7 +28,7 @@
  
  # ------------------------------------------------------------------------------
  #
-@@ -82,7 +83,7 @@
+@@ -82,7 +82,7 @@
  all:	xestic
  
  xestic: $(LIB) $(OBJS)
@@ -38,7 +37,16 @@
  
  
  # ------------------------------------------------------------------------------
-@@ -114,10 +115,10 @@
+@@ -90,7 +90,7 @@
+ 
+ depend dep:
+ 	@echo "Creating dependency information"
+-	$(CC) -I$(INCDIR) -DFREEBSD -MM *.cc > .depend
++	$(CC) $(CFLAGS) -MM *.cc > .depend
+ 
+ # ------------------------------------------------------------------------------
+ # Create a ZIP file
+@@ -114,9 +114,10 @@
  
  clean:
  	-rm -f *.bak *~
@@ -48,6 +56,5 @@
  zap:	clean
 -	-rm -f *.o
  	-rm -f .depend
--
  
  

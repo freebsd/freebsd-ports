@@ -7,7 +7,7 @@
 #
 # MAINTAINER: portmgr@FreeBSD.org
 
-.if !defined(_INCLUDE_USES_TAR_Mk)
+.if !defined(_INCLUDE_USES_TAR_MK)
 _INCLUDE_USES_TAR_MK=	yes
 
 tar_ARGS?=	none

@@ -1,9 +1,0 @@
-This program will monitor one or more log files, updating when more data
-is available ala 'tail -f', within a common terminal window via a "split
-window". User can scroll up/down/left/right through all the windows. A
-header displays each frames file name, and number of lines in the file.
-Very usefull when watching several log files at the same time. I've
-tested this under Linux, but it should work under other Unices. Please
-let me know if you get it working on another OS.
-
-WWW: http://www.edespot.com/logmon

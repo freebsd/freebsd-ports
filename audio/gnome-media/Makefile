@@ -19,7 +19,6 @@ LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
 CONFLICTS=	gnome-control-center-3.[0-9]* libgnome-media-profiles-3.[0-9]*
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

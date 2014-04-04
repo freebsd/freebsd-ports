@@ -5882,3 +5882,49 @@ devel/ros-documentation||2014-03-28|Has expired: Depends on expiring devel/ros_c
 devel/ros-common_msgs||2014-03-28|Has expired: Depends on expiring devel/ros_comm
 devel/ros_comm||2014-03-28|Has expired: Broken for more than 6 months
 devel/cross-gdb||2014-03-28|Has expired: No more public distfiles, unstaged
+x11-wm/fvwm2-i18n|x11-wm/fvwm2|2014-03-28|Does not differ from main fvwm2 port
+games/linux-spheresofchaos-demo||2014-03-28|Has expired: No more public distfiles
+chinese/php5-cconv|chinese/php-cconv|2014-03-30|Rename to php-
+emulators/gxmame||2014-03-30|Has expired: Depends on deprecated emulators/xmame
+emulators/pyxmame||2014-03-30|Has expired: Depends on deprecated emulators/xmame
+emulators/xmess||2014-03-30|Has expired: No more public distfiles
+benchmarks/xdd||2014-03-30|Has expired: No more public distfiles
+chinese/srecite||2014-03-30|Has expired: No more public distfiles
+games/hlstats||2014-03-30|Has expired: No more public distfiles
+audio/teamspeak_server||2014-03-30|Has expired: No more public distfiles
+games/utserver||2014-03-30|Has expired: No more public distfiles
+databases/p5-hp200lx-db||2014-03-30|Has expired: No more public distfiles
+audio/teamspeak_client||2014-03-30|Has expired: No more public distfiles
+german/vtiger||2014-03-30|Has expired: Depends on expiring www/vtiger
+www/gallery||2014-03-30|Has expired: No more public distfiles
+www/vtiger||2014-03-30|Has expired: No more public distfiles
+net/linux-nx-client||2014-03-30|Has expired: No more public distfiles
+emulators/extract-xiso||2014-03-30|Has expired: No more public distfiles
+www/trac-wantedpages||2014-03-30|Has expired: No more public distfiles
+www/trac-ldap||2014-03-30|Has expired: No more public distfiles
+www/trac-codetags||2014-03-30|Has expired: No more public distfiles
+www/trac-addcomment||2014-03-30|Has expired: No more public distfiles
+www/trac-nav||2014-03-30|Has expired: No more public distfiles
+www/baikal||2014-03-30|Has expired: No more public distfiles
+www/trac-pagetopdf||2014-03-30|Has expired: No more public distfiles
+sysutils/logmon||2014-03-30|Has expired: No more public distfiles
+www/trac-simpleticket||2014-03-30|Has expired: No more public distfiles
+www/trac-wikinegotiator||2014-03-30|Has expired: No more public distfiles
+www/trac-pagelist||2014-03-30|Has expired: No more public distfiles
+www/trac-remind||2014-03-30|Has expired: No more public distfiles
+www/trac-macropost||2014-03-30|Has expired: No more public distfiles
+mail/vexim||2014-03-30|Has expired: No more public distfiles
+lang/rscheme||2014-03-30|Has expired: No more public distfiles
+emulators/xmame||2014-03-30|Has expired: No more public distfiles
+devel/hyena||2014-04-01|Has expired: Broken for more than 6 month
+print/pdfmod||2014-04-01|Has expired: Depends on expired devel/hyena, unstaged, uses old standards
+security/gnutls-devel||2014-04-01|Has expired: Stale, broken and vulnerable
+sysutils/epylog||2014-04-01|Has expired: distfiles no longer fetchable
+japanese/Wnn6||2014-04-01|Has expired: Unmaintained, interactive and restricted
+japanese/srd-fpw||2014-04-01|Has expired: Unmaintained, interactive and restricted
+japanese/mypaedia-fpw||2014-04-01|Has expired: Unmaintained, interactive and restricted
+news/dnews||2014-04-01|Has expired: Unmaintained, interactive and restricted
+devel/adasdl|devel/sdl_gnat|2014-04-01|Has expired: Ancient, does not build on amd64; use devel/sdl_gnat instead
+lang/gnat|lang/gcc-aux|2014-04-01|Has expired: The Ada framework is based on lang/gcc-aux, use it instead
+textproc/p5-Elasticsearch|textproc/p5-Search-Elasticsearch|2014-04-02|Renamed upstream
+net/kdnssd|net/zeroconf-ioslave|2014-04-03|Renamed to match upstream naming

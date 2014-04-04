@@ -1,6 +1,6 @@
---- tn.cc	2002/06/01 13:47:34	1.1
-+++ tn.cc	2002/07/25 14:32:17	1.2
-@@ -33,40 +33,145 @@
+--- tn.cc.orig	2013-08-16 01:47:35.000000000 +0200
++++ tn.cc	2014-03-09 17:57:23.000000000 +0100
+@@ -33,6 +33,40 @@
    int PetscFinalize(void);
  #endif
  
@@ -37,14 +37,18 @@
 +  return 1;
 +}
 +
++
  int main( int argc, char* argv[] )
  
  {
+@@ -40,37 +74,107 @@
+   Time CPU;
+   CPU.firsttime=CPU.taketime();
+ 
 -  long int i=0, l=0, any_point=0;
-+
 +  extern char *optarg;
 +  extern int optind, opterr, optopt;
-+  
++
 +  int opt_index, option, error_count = 0;
 +  bool print_usage = false, print_version = false;
 +
@@ -64,13 +68,13 @@
 +	case 'h':	  // print a short help message and exit
 +	  print_usage = true;
 +	  break;
-+	case 'v':         // print the version string and exit 
++	case 'v':         // print the version string and exit
 +	  print_version = true;
 +	  break;
-+	case 'G':         // use the *flavia* for interaction with gid 
++	case 'G':         // use the *flavia* for interaction with gid
 +	  enable_gid = true;
 +	  break;
-+	case 't':         // use the *flavia* for interaction with gid 
++	case 't':         // use the *flavia* for interaction with gid
 +	  enable_test = true;
 +	  break;
 +	  // Options with 1 argument
@@ -83,7 +87,7 @@
 +  if (error_count > 0)
 +    {
 +      cerr << "Try tochnog --help for more information";
-+      exit(TN_EXIT_STATUS);      
++      exit(TN_EXIT_STATUS);
 +    }
 +
 +  if (print_usage)
@@ -166,7 +170,6 @@
 -  ofstream outdvd( "tn.dvd" );
 -  outdvd.close();
 +#endif
-+
  
      // read input file
    input();

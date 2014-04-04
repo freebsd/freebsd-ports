@@ -11,5 +11,7 @@ COMMENT=	Console network display
 
 PLIST_FILES=	bin/cnd
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
 .include <bsd.port.mk>

@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	k8048
-PORTVERSION=	2.15
+PORTVERSION=	2.17
 CATEGORIES=	devel
 MASTER_SITES=	http://dev.kewl.org/k8048/
 
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Programs Microchip PICs using Velleman K8048 board
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/Src
 

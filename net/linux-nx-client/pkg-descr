@@ -1,8 +1,0 @@
-NoMachine NX is a X Window, RDP and RFB compression protocol allowing
-thin clients to remotely access desktops running NX Server over slow
-links.
-
-This port provides NoMachine NX Client, which can access KDE, GNOME,
-Microsoft RDP, Citrix ICA and VNC desktops remotely.
-
-WWW: http://www.nomachine.com/

@@ -1,6 +1,6 @@
---- foo2hiperc-wrapper.in.orig	2011-01-31 15:23:43.000000000 +0300
-+++ foo2hiperc-wrapper.in	2011-06-19 21:16:59.468615644 +0400
-@@ -46,10 +46,6 @@ PATH=$PATH:.
+--- foo2hiperc-wrapper.in.orig	2013-12-02 00:25:17.000000000 +0400
++++ foo2hiperc-wrapper.in	2014-03-31 13:01:56.653808270 +0400
+@@ -48,10 +48,6 @@ PATH=$PATH:.
  #
  #	Log the command line, for debugging and problem reports
  #
@@ -11,7 +11,7 @@
  usage() {
  	cat <<EOF
  Usage:
-@@ -154,8 +150,8 @@ nup() {
+@@ -158,8 +154,8 @@ nup() {
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
@@ -22,7 +22,7 @@
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -676,18 +672,6 @@ $PREFILTER \
+@@ -723,18 +719,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD $COMPRESSED -D$DEBUG
  
  #

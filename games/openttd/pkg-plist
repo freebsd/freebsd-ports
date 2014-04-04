@@ -6,6 +6,7 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/ai/compat_1.1.nut
 %%DATADIR%%/ai/compat_1.2.nut
 %%DATADIR%%/ai/compat_1.3.nut
+%%DATADIR%%/ai/compat_1.4.nut
 @dirrm %%DATADIR%%/ai
 %%DATADIR%%/baseset/no_music.obm
 %%DATADIR%%/baseset/no_sound.obs

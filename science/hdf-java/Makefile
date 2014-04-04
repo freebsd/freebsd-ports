@@ -2,20 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	hdf-java
-PORTVERSION=	2.8
+PORTVERSION=	2.10
 CATEGORIES=	science java
-MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/hdf-java/src/ \
-		http://www.predatorlabs.net/dl/
-EXTRACT_SUFX=	-src.tar
+MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/releases/HDF-JAVA/hdf-java-${PORTVERSION}/src/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java interface to HDF5
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-10
-
-LIB_DEPENDS=	hdf5:${PORTSDIR}/science/hdf5-18 \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5-18 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -26,6 +22,8 @@ USES=		dos2unix gmake
 DOS2UNIX_REGEX=	.*/examples/.*Makefile.in
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_PREFIX=${STAGEDIR}${PREFIX}
+GNU_CONFIGURE_MANPREFIX=${STAGEDIR}${PREFIX}
 CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}/include,${JAVA_HOME}/jre/lib/ \
 		--with-hdf5=${LOCALBASE}/include \
 		--with-libz=/lib \
@@ -34,12 +32,9 @@ CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}/include,${JAVA_HOME}/jre/lib/ \
 		--without-h4toh5
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 OPTIONS_DEFINE=	SZIP DOCS
 SZIP_DESC=	SZIP support (must match with science/hdf5-18)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSZIP}
@@ -58,20 +53,24 @@ post-patch:
 		-e 's|$$sz_lib"/libsz."$$LLEXT|"${LOCALBASE}/lib/libsz.so.*"|' \
 		-e 's|LLEXT="a"|LLEXT="so"|g' \
 		-e 's|COPT="-shared"|COPT="-fPIC"|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|LIBDIR=$$(JH45INSTALLDIR)|LIBDIR=${PREFIX}|' \
-		-e 's|$$(JH45INSTALLDIR)/lib|${JAVAJARDIR}|g' \
+	@${REINPLACE_CMD} -e 's|$$(JH45INSTALLDIR)/lib|${STAGEDIR}${JAVAJARDIR}|g' \
 		-e 's|INSTALL_LIB |${INSTALL_LIB} |' \
 		-e 's|cp |${INSTALL_DATA} |g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e\
+	@${REINPLACE_CMD} -e \
 		's|$$HDFJAVA"/lib/freebsd:"$$HDFJAVA"/lib/ext|${PREFIX}/lib"|' \
 		-e 's|$$HDFJAVA"/lib|${JAVAJARDIR}"|g' \
 		${WRKSRC}/bin/hdfview.sh.in
 
+post-build:
+	@${REINPLACE_CMD} -e 's|${STAGEDIR}||' ${WRKSRC}/bin/hdfview.sh
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/UsersGuide
-	(cd ${WRKSRC}/docs/hdfview/ && ${COPYTREE_SHARE} "UsersGuide" ${DOCSDIR}/)
-	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} "javadocs" ${DOCSDIR}/)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/UsersGuide
+	(cd ${WRKSRC}/docs/hdfview/ && ${COPYTREE_SHARE} "UsersGuide" \
+	    ${STAGEDIR}${DOCSDIR}/)
+	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} "javadocs" \
+	    ${STAGEDIR}${DOCSDIR}/)
 .endif
 
 regression-test: build

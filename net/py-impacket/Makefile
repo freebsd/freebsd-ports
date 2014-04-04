@@ -2,18 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	impacket
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	net python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of Python classes providing access to network packets
 
-LICENSE=	AL11
-LICENSE_NAME=	Apache License version 1.1
+LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pcapy>=0:${PORTSDIR}/net/py-pcapy \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto
@@ -23,16 +21,13 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=yes
 
-PORTDOCS=	README
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/impacket && ${COPYTREE_SHARE} testcases ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

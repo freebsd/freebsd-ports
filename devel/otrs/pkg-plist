@@ -764,6 +764,7 @@ otrs/Kernel/System/Web/UploadCache/FS.pm
 otrs/Kernel/System/WebUserAgent.pm
 otrs/Kernel/System/XML.pm
 otrs/Kernel/System/YAML.pm
+otrs/ARCHIVE
 otrs/RELEASE
 otrs/bin/Cron.sh
 otrs/bin/cgi-bin/app.psgi
@@ -951,18 +952,18 @@ otrs/scripts/tools/md5sum.pl
 otrs/scripts/tools/sync-ldap2db.pl
 otrs/scripts/tools/xml2html.pl
 otrs/scripts/webform.pl
-otrs/var/cron/aaa_base.dist
-otrs/var/cron/cache.dist
-otrs/var/cron/fetchmail.dist
-otrs/var/cron/generate_dashboard_stats.dist
-otrs/var/cron/generic_agent-database.dist
-otrs/var/cron/generic_agent.dist
-otrs/var/cron/pending_jobs.dist
-otrs/var/cron/postmaster.dist
-otrs/var/cron/postmaster_mailbox.dist
-otrs/var/cron/rebuild_ticket_index.dist
-otrs/var/cron/session.dist
-otrs/var/cron/unlock.dist
+otrs/var/cron/aaa_base
+otrs/var/cron/cache
+otrs/var/cron/fetchmail
+otrs/var/cron/generate_dashboard_stats
+otrs/var/cron/generic_agent-database
+otrs/var/cron/generic_agent
+otrs/var/cron/pending_jobs
+otrs/var/cron/postmaster
+otrs/var/cron/postmaster_mailbox
+otrs/var/cron/rebuild_ticket_index
+otrs/var/cron/session
+otrs/var/cron/unlock
 otrs/var/fonts/DejaVuSans-Bold.ttf
 otrs/var/fonts/DejaVuSans-BoldOblique.ttf
 otrs/var/fonts/DejaVuSans-Oblique.ttf
@@ -2472,6 +2473,7 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrm otrs/bin/fcgi-bin
 @dirrm otrs/bin/cgi-bin
 @dirrm otrs/bin
+@dirrm otrs/doc
 @dirrm otrs/Kernel/System/Web/UploadCache
 @dirrm otrs/Kernel/System/Web
 @dirrm otrs/Kernel/System/VirtualFS

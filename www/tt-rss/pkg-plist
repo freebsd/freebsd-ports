@@ -57,10 +57,12 @@
 %%WWWDIR%%/config.php-dist
 @exec [ -f %B/config.php ] || (cp %D/%F %B/config.php && chmod go-r %B/config.php && chown %%WWWOWN%% %B/config.php)
 %%WWWDIR%%/css/cdm.css
+%%WWWDIR%%/css/dijit.css
 %%WWWDIR%%/css/layout.css
 %%WWWDIR%%/css/prefs.css
 %%WWWDIR%%/css/tt-rss.css
 %%WWWDIR%%/css/utility.css
+%%WWWDIR%%/css/zoom.css
 %%WWWDIR%%/errors.php
 %%WWWDIR%%/feed-icons/.empty
 %%WWWDIR%%/feed-icons/index.html
@@ -99,8 +101,11 @@
 %%WWWDIR%%/images/score_neutral.png
 %%WWWDIR%%/images/star.png
 %%WWWDIR%%/images/tag.png
+%%WWWDIR%%/images/tick.png
 %%WWWDIR%%/images/time.png
 %%WWWDIR%%/images/toolbar.png
+%%WWWDIR%%/images/treeExpandImages.png
+%%WWWDIR%%/images/untick.png
 %%WWWDIR%%/images/user.png
 %%WWWDIR%%/include/autoload.php
 %%WWWDIR%%/include/ccache.php
@@ -112,6 +117,7 @@
 %%WWWDIR%%/include/errorhandler.php
 %%WWWDIR%%/include/feedbrowser.php
 %%WWWDIR%%/include/functions.php
+%%WWWDIR%%/include/functions2.php
 %%WWWDIR%%/include/labels.php
 %%WWWDIR%%/include/login_form.php
 %%WWWDIR%%/include/rssfuncs.php
@@ -1519,9 +1525,9 @@
 %%WWWDIR%%/lib/gettext/gettext.php
 %%WWWDIR%%/lib/gettext/streams.php
 %%WWWDIR%%/lib/index.html
+%%WWWDIR%%/lib/jimIcon.php
 %%WWWDIR%%/lib/jshrink/Minifier.php
 %%WWWDIR%%/lib/jshrink/README.md
-%%WWWDIR%%/lib/jimIcon.php
 %%WWWDIR%%/lib/languagedetect/LanguageDetect.php
 %%WWWDIR%%/lib/languagedetect/Text/LanguageDetect/Exception.php
 %%WWWDIR%%/lib/languagedetect/Text/LanguageDetect/ISO639.php
@@ -1991,7 +1997,6 @@
 %%WWWDIR%%/lib/pubsubhubbub/publisher.php
 %%WWWDIR%%/lib/pubsubhubbub/subscriber.php
 %%WWWDIR%%/lib/scriptaculous/controls.js
-%%WWWDIR%%/lib/scriptaculous/dragdrop.js
 %%WWWDIR%%/lib/scriptaculous/effects.js
 %%WWWDIR%%/lib/scriptaculous/scriptaculous.js
 %%WWWDIR%%/lib/sphinxapi.php
@@ -2036,23 +2041,27 @@
 %%WWWDIR%%/locale/tr_TR/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
 %%WWWDIR%%/lock/.empty
 %%WWWDIR%%/lock/.htaccess
 %%WWWDIR%%/messages.pot
 %%WWWDIR%%/opml.php
-%%WWWDIR%%/plugins/af_buni/init.php
-%%WWWDIR%%/plugins/af_buttersafe/init.php
-%%WWWDIR%%/plugins/af_dilbert/init.php
-%%WWWDIR%%/plugins/af_explosm/init.php
+%%WWWDIR%%/plugins/af_comics/af_comics_template.php
+%%WWWDIR%%/plugins/af_comics/filter_base.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_cad.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_comicpress.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_dilbert.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_explosm.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_gocomics.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_pa.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_twp.php
+%%WWWDIR%%/plugins/af_comics/init.php
 %%WWWDIR%%/plugins/af_fsckportal/init.php
-%%WWWDIR%%/plugins/af_gocomics/init.php
 %%WWWDIR%%/plugins/af_natgeo/init.php
-%%WWWDIR%%/plugins/af_pennyarcade/init.php
 %%WWWDIR%%/plugins/af_redditimgur/init.php
 %%WWWDIR%%/plugins/af_sciam/init.php
-%%WWWDIR%%/plugins/af_threewordphrase/init.php
 %%WWWDIR%%/plugins/af_unburn/init.php
-%%WWWDIR%%/plugins/af_whomp/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
 %%WWWDIR%%/plugins/auth_remote/init.php
 %%WWWDIR%%/plugins/bookmarklets/init.php
@@ -2134,6 +2143,7 @@
 %%WWWDIR%%/schema/versions/mysql/121.sql
 %%WWWDIR%%/schema/versions/mysql/122.sql
 %%WWWDIR%%/schema/versions/mysql/123.sql
+%%WWWDIR%%/schema/versions/mysql/124.sql
 %%WWWDIR%%/schema/versions/mysql/13.sql
 %%WWWDIR%%/schema/versions/mysql/14.sql
 %%WWWDIR%%/schema/versions/mysql/15.sql
@@ -2255,6 +2265,7 @@
 %%WWWDIR%%/schema/versions/pgsql/121.sql
 %%WWWDIR%%/schema/versions/pgsql/122.sql
 %%WWWDIR%%/schema/versions/pgsql/123.sql
+%%WWWDIR%%/schema/versions/pgsql/124.sql
 %%WWWDIR%%/schema/versions/pgsql/13.sql
 %%WWWDIR%%/schema/versions/pgsql/14.sql
 %%WWWDIR%%/schema/versions/pgsql/15.sql
@@ -2354,9 +2365,11 @@
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
 %%WWWDIR%%/templates/generated_feed.txt
+%%WWWDIR%%/templates/resetpass_link_template.txt
 %%WWWDIR%%/templates/resetpass_template.txt
 %%WWWDIR%%/themes/.empty
 %%WWWDIR%%/themes/default.css
+%%WWWDIR%%/themes/night.css
 @mode u=rx
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
@@ -2381,8 +2394,8 @@
 @dirrm %%WWWDIR%%/plugins/shorten_expanded
 @dirrm %%WWWDIR%%/plugins/share
 @dirrm %%WWWDIR%%/plugins/nsfw
-@dirrm %%WWWDIR%%/plugins/no_url_hashes
 @dirrm %%WWWDIR%%/plugins/note
+@dirrm %%WWWDIR%%/plugins/no_url_hashes
 @dirrm %%WWWDIR%%/plugins/no_title_counters
 @dirrm %%WWWDIR%%/plugins/no_iframes
 @dirrm %%WWWDIR%%/plugins/mark_button
@@ -2398,21 +2411,17 @@
 @dirrm %%WWWDIR%%/plugins/bookmarklets
 @dirrm %%WWWDIR%%/plugins/auth_remote
 @dirrm %%WWWDIR%%/plugins/auth_internal
-@dirrm %%WWWDIR%%/plugins/af_whomp
 @dirrm %%WWWDIR%%/plugins/af_unburn
-@dirrm %%WWWDIR%%/plugins/af_threewordphrase
 @dirrm %%WWWDIR%%/plugins/af_sciam
 @dirrm %%WWWDIR%%/plugins/af_redditimgur
-@dirrm %%WWWDIR%%/plugins/af_pennyarcade
 @dirrm %%WWWDIR%%/plugins/af_natgeo
-@dirrm %%WWWDIR%%/plugins/af_gocomics
 @dirrm %%WWWDIR%%/plugins/af_fsckportal
-@dirrm %%WWWDIR%%/plugins/af_explosm
-@dirrm %%WWWDIR%%/plugins/af_dilbert
-@dirrm %%WWWDIR%%/plugins/af_buttersafe
-@dirrm %%WWWDIR%%/plugins/af_buni
+@dirrm %%WWWDIR%%/plugins/af_comics/filters
+@dirrm %%WWWDIR%%/plugins/af_comics
 @dirrm %%WWWDIR%%/plugins
 @dirrmtry %%WWWDIR%%/lock
+@dirrm %%WWWDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_TW
 @dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/zh_CN
 @dirrm %%WWWDIR%%/locale/tr_TR/LC_MESSAGES

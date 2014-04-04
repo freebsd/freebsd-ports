@@ -1,3 +1,0 @@
-bin/logmon
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logmon.conf.example
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

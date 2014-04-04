@@ -3,7 +3,7 @@
 
 PORTNAME=	loemu
 PORTVERSION=	0.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators python
 MASTER_SITES=	http://loemu.pegueroles.com/dists/
 
@@ -19,10 +19,9 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 NO_BUILD=		yes
 
-OPTIONS_DEFINE=	MAME XMAME SNES9X ZSNES
+OPTIONS_DEFINE=	MAME SNES9X ZSNES
 OPTIONS_DEFAULT=	MAME SNES9X
 MAME_DESC=	Install mame emulator
-XMAME_DESC=	Install xmame emulator
 SNES9X_DESC=	Install snes9x emulator
 ZSNES_DESC=	Install zsnes emulator
 
@@ -31,10 +30,6 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MMAME}
 RUN_DEPENDS+=	mame:${PORTSDIR}/emulators/mame
-.endif
-
-.if ${PORT_OPTIONS:MXMAME}
-RUN_DEPENDS+=	xmame:${PORTSDIR}/emulators/xmame
 .endif
 
 .if ${PORT_OPTIONS:MSNES9X}

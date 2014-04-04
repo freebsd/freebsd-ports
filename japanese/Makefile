@@ -8,7 +8,6 @@
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += VTPSfont
-    SUBDIR += Wnn6
     SUBDIR += Wnn6-lib
     SUBDIR += Wnn7-lib
     SUBDIR += a2ps
@@ -189,7 +188,6 @@
     SUBDIR += mtools
     SUBDIR += multiskkserv
     SUBDIR += mutt-devel
-    SUBDIR += mypaedia-fpw
     SUBDIR += mypaedia-fpw-package
     SUBDIR += namazu
     SUBDIR += namazu2
@@ -293,7 +291,6 @@
     SUBDIR += slimeforest
     SUBDIR += slrn
     SUBDIR += spamassassin
-    SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
     SUBDIR += suicavalue
     SUBDIR += suikyo

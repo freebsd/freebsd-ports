@@ -45,6 +45,8 @@ RFC3779_DESC?=	RFC3779 support
 GMP_DESC?=	gmp support (LGPLv3)
 EC_DESC?=	Optimize NIST elliptic curves
 
+GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+
 MAKE_JOBS_UNSAFE=	yes
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
@@ -52,7 +54,7 @@ NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
 USES=		perl5
 USE_PERL5=	build
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
-MAKE_ENV+=	LIBRPATH="${PREFIX}/lib"
+MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
 SUB_FILES=	pkg-message
 OPENSSLDIR=	${PREFIX}/openssl
 

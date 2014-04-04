@@ -11,8 +11,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Map of concentric segmented-rings representing file system
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	qmake_build moc_build rcc_build uic_build
-USE_XZ=		yes
 
 .include <bsd.port.mk>

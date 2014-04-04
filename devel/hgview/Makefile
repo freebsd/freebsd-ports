@@ -11,10 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Mercurial log navigator written in pyqt4
 
 RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
-		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/PyQt4/Qsci.so:${PORTSDIR}/devel/py-qt4-qscintilla2 \
-		${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py:${PORTSDIR}/lang/py-mx-base \
-		${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>0:${PORTSDIR}/devel/py-qt4-qscintilla2 \
+		${PYTHON_PKGNAMEPREFIX}mx-base>0:${PORTSDIR}/lang/py-mx-base \
+		${PYTHON_PKGNAMEPREFIX}docutils>0:${PORTSDIR}/textproc/py-docutils
 BUILD_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 		pyrcc4:${PORTSDIR}/textproc/py-qt4-xml \
 		xmlto:${PORTSDIR}/textproc/xmlto \
@@ -25,13 +25,7 @@ USE_PYDISTUTILS=yes
 USES=		gmake
 PORTDOCS=	*
 
-MAN1=		hgview.1
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/python-support/mercurial-common|${PYTHON_SITELIBDIR:C,^${PYTHONBASE}/,,}|' \
@@ -46,9 +40,7 @@ post-patch:
 		${WRKSRC}/setup.py
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -10,10 +10,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Touch typing tutor for KDE 4
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib declarative opengl phonon script sql xmlpatterns \
 		moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 USE_XORG=	xkbfile
 
 .include <bsd.port.mk>

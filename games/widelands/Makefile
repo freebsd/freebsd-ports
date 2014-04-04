@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	widelands
-DISTVERSION=	build17
-PORTREVISION=	2
+DISTVERSION=	build18
 CATEGORIES=	games
-MASTER_SITES=	https://launchpadlibrarian.net/102893896/ \
+MASTER_SITES=	https://launchpadlibrarian.net/167260749/ \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
@@ -17,13 +16,13 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USE_BZIP2=	yes
-USES=		cmake:outsource gettext
+USES=		tar:bzip2 cmake:outsource gettext compiler:c++11-lib
 CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
 		-DWL_INSTALL_DATADIR="share/widelands" \
 		-DWL_INSTALL_BINDIR="bin" \
-		-DWL_VERSION="${DISTVERSION}"
-USE_LUA=	5.1+
+		-DWL_VERSION="${DISTVERSION}" \
+		-DWL_COMPILERFLAG_OPTIMIZATIONS=""
+USE_LUA=	5.1
 USE_SDL=	sdl mixer image net ttf gfx
 USE_PYTHON_BUILD=yes
 
@@ -31,11 +30,11 @@ PLIST_FILES=	bin/widelands
 PORTDATA=	*
 
 DESKTOP_ENTRIES="Widelands" \
-		"Realtime strategy game inspired by Settlers II" \
+		"" \
 		"${DATADIR}/pics/wl-ico-64.png" \
 		"widelands" \
 		"Game;StrategyGame;" \
-		false
+		""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \

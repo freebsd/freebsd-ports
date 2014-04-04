@@ -11,10 +11,9 @@ COMMENT=	Printer manager for KDE 4
 
 LIB_DEPENDS=    libcups.so:${PORTSDIR}/print/cups-client
 
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	designer network \
 		qmake_build moc_build uic_build rcc_build
-USE_XZ=		yes
 
 .include <bsd.port.mk>

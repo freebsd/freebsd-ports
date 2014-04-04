@@ -1,6 +1,6 @@
---- src/logbook/lookupcall.cxx.orig	2013-11-18 09:00:51.559614995 -0500
-+++ src/logbook/lookupcall.cxx	2013-11-18 16:31:56.283748901 -0500
-@@ -1180,7 +1180,7 @@
+--- src/logbook/lookupcall.cxx.orig	2014-03-21 11:25:57.000000000 -0500
++++ src/logbook/lookupcall.cxx	2014-03-21 18:19:53.000000000 -0500
+@@ -1188,7 +1188,7 @@
  			return NULL;
  
  		size_t p;

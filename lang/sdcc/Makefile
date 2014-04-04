@@ -32,7 +32,7 @@ Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000/3000A
 
 CPPFLAGS+=	-idirafter ${LOCALBASE}/include
 CONFIGURE_ARGS= --disable-avr --disable-install-libbfd --disable-werror \
-		--enable-new-pics docdir=${DOCSDIR}
+		--enable-new-pics docdir=${DOCSDIR} sdcc_cv_c_fms_extensions=no
 CONFIGURE_ENV=	ARCH=""
 PORTDATA=	*
 PORTDOCS=	*

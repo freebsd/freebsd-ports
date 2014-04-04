@@ -18,7 +18,6 @@ COMMENT?=	Utility to clean up and pretty print HTML/XHTML/XML
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USES=		tar:bzip2
-NO_STAGE=	yes
 
 SLAVEDIRS=	www/tidy-lib
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -27,6 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 .if !defined(WITH_SHLIB)
 USES+=		gmake
 PLIST_SUB=	SHLIB="@comment " NSHLIB=""
+MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 CONFLICTS=	tidy-20000804* tidy-lib-[0-9]*
 .else
 USE_AUTOTOOLS=	automake autoconf libtool
@@ -40,11 +40,9 @@ DESCR=		${.CURDIR}/pkg-descr
 
 BIN2STRIP=	tidy tab2space
 
-.if !defined(WITH_SHLIB)
-MAN1=		tidy.1
-.endif
+.include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 . if !defined(WITH_SHLIB)
 ALL_TARGET=	all doc
 DOCFILES=	quickref.html
@@ -101,15 +99,15 @@ patch-autotools-libtool::
 
 post-install:
 .for pgm in ${BIN2STRIP}
-	${STRIP_CMD} ${PREFIX}/bin/${pgm}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${pgm}
 .endfor
 .if defined(WITH_SHLIB)
-	${STRIP_CMD} ${PREFIX}/lib/libtidy-0.99.so.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtidy-0.99.so.0
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCFILES:S|^|${WRKSRC}/htmldoc/|} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCFILES:S|^|${WRKSRC}/htmldoc/|} ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===>   Documentation installed in ${DOCSDIR}."
 .endif
 

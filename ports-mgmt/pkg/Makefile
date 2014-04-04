@@ -2,6 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.2.7
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
 		http://files.etoilebsd.net/${PORTNAME}/ \

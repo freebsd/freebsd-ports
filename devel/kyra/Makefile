@@ -12,9 +12,9 @@ COMMENT=	Simple Sprite engine written in C++
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -26,20 +26,20 @@ MAKE_ENV=	MAKE_KYRA=RELEASE KYRA_OPENGL=YES
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD="${CXX}" \
 		RELEASE_CFLAGS="${CFLAGS}" RELEASE_CXXFLAGS="${CXXFLAGS}"
 
-NO_STAGE=	yes
 do-install:
 .for i in encoder spriteed
-	(cd ${WRKSRC}/${i} && ${INSTALL_PROGRAM} kr${i} ${PREFIX}/bin)
+	(cd ${WRKSRC}/${i} && ${INSTALL_PROGRAM} kr${i} ${STAGEDIR}${PREFIX}/bin)
 .endfor
-	(cd ${WRKSRC}/engine && ${INSTALL_DATA} libkyra.a ${PREFIX}/lib)
-	@${MKDIR} ${PREFIX}/include/Kyra
-	(cd ${WRKSRC} && ${INSTALL_DATA} kyra.h ${PREFIX}/include/Kyra)
+	(cd ${WRKSRC}/engine && ${INSTALL_DATA} libkyra.a ${STAGEDIR}${PREFIX}/lib)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/Kyra
+	(cd ${WRKSRC} && ${INSTALL_DATA} kyra.h ${STAGEDIR}${PREFIX}/include/Kyra)
 .for i in engine gui guiExtended util
-	@${MKDIR} ${PREFIX}/include/Kyra/${i}
-	(cd ${WRKSRC}/${i} && ${INSTALL_DATA} *.h ${PREFIX}/include/Kyra/${i})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/Kyra/${i}
+	(cd ${WRKSRC}/${i} && ${INSTALL_DATA} *.h \
+		${STAGEDIR}${PREFIX}/include/Kyra/${i})
 .endfor
-	@${MKDIR} ${PREFIX}/include/Kyra/tinyxml
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/Kyra/tinyxml
 	(cd ${WRKSRC}/../tinyxml && ${INSTALL_DATA} *.h \
-		${PREFIX}/include/Kyra/tinyxml)
+		${STAGEDIR}${PREFIX}/include/Kyra/tinyxml)
 
 .include <bsd.port.mk>

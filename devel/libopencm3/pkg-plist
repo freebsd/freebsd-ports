@@ -87,6 +87,9 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/lpc43xx/timer.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/lpc43xx/uart.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/lpc43xx/usb.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/lpc43xx/wwdt.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam/3a/irq.json
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam/3a/memorymap.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam/3a/nvic.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam/3n/irq.json
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam/3n/memorymap.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam/3n/nvic.h
@@ -282,6 +285,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/gpio.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/i2c.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/irq.json
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/iwdg.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/lcd.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/memorymap.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/nvic.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/pwr.h
@@ -324,6 +328,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/lpc13xx/irqhan
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/lpc17xx/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/lpc43xx/m0/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/lpc43xx/m4/irqhandlers.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/sam/3a/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/sam/3n/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/sam/3s/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/sam/3u/irqhandlers.h
@@ -358,6 +363,8 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_lpc43xx.ld
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_lpc43xx_m0.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_lpc43xx_m0.ld
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_lpc43xx_rom_to_ram.ld
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_sam3a.a
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_sam3a.ld
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_sam3n.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_sam3n.ld
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_sam3s.a
@@ -395,6 +402,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/%%DATADIR%%/scripts/black_magic_pro
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/sam/3u
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/sam/3s
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/sam/3n
+@dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/sam/3a
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/sam
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/lpc43xx/m4
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/lpc43xx/m0
@@ -422,6 +430,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/%%DATADIR%%/scripts/black_magic_pro
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam/3u
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam/3s
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam/3n
+@dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam/3a
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/sam
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/lpc43xx/m4
 @dirrm gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/lpc43xx/m0

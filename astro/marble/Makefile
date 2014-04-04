@@ -10,11 +10,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource gmake shared-mime-info
+USES=		cmake:outsource gmake shared-mime-info tar:xz
 USE_QT4=	corelib dbus declarative designer_build gui network phonon \
 		qtestlib script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 CMAKE_ARGS=	-DMOBILE:BOOL=FALSE

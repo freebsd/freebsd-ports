@@ -37,10 +37,6 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.ifdef	NOPORTDATA
-IGNORE=		opemsx requires port data, unset NOPORTDATA to install
-.endif
-
 .if !${PORT_OPTIONS:MDOCS}
 # Use dummy target rather than rewriting makefile
 MAKE_ARGS+=	INSTALL_DOC_DIR=${WRKSRC}/dummy

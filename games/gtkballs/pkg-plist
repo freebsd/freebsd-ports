@@ -2,7 +2,11 @@ bin/gtkballs
 man/man6/gtkballs.6x.gz
 %%DATADIR%%/COPYING
 %%DATADIR%%/gtkballs-logo.png
+@group games
+@mode 664
 %%DATADIR%%/gtkballs-scores
+@mode
+@group
 %%DATADIR%%/gtkballs_16x16.png
 %%DATADIR%%/themes/5balls-Big/blue.xpm
 %%DATADIR%%/themes/5balls-Big/blue_destroy1.xpm

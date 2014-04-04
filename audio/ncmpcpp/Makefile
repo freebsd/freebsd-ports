@@ -3,7 +3,7 @@
 
 PORTNAME=	ncmpcpp
 PORTVERSION=	0.5.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -25,8 +25,6 @@ ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-MAN1=	ncmpcpp.1
-
 OPTIONS_DEFINE=	CURL CLOCK UTF8 TAGLIB OUTPUTS VISUALIZER
 OPTIONS_DEFAULT=	CURL CLOCK OUTPUTS VISUALIZER
 CURL_DESC=	Enable fetching lyrics from the Internet
@@ -38,6 +36,7 @@ VISUALIZER_DESC=	Enable music visualizer screen
 .include <bsd.port.options.mk>
 
 PLIST_FILES=	bin/ncmpcpp \
+		man/man1/ncmpcpp.1.gz \
 		%%DOCSDIR%%/config \
 		%%DOCSDIR%%/keys \
 		%%DOCSDIR%%/NEWS \
@@ -92,17 +91,12 @@ CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "installing additional documentation to ${STAGEDIR}${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}/NEWS
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}/AUTHORS
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}/COPYING
 	${INSTALL_DATA} ${WRKSRC}/doc/config ${STAGEDIR}${DOCSDIR}/config
 	${INSTALL_DATA} ${WRKSRC}/doc/keys ${STAGEDIR}${DOCSDIR}/keys
 .endif
-
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>

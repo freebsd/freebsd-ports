@@ -27,7 +27,6 @@ SPF_TEMPERROR?=	DEFER_IF_PERMIT
 REINPLACE=	s/%%SPF_FAIL%%/${SPF_FAIL}/g;\
 		s/%%SPF_TEMPERROR%%/${SPF_TEMPERROR}/g;
 
-NO_STAGE=	yes
 pre-patch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can change the actions returned by the server by setting the following"
@@ -43,9 +42,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '${REINPLACE}' ${WRKSRC}/postfix-policyd-spf-perl
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/postfix-policyd-spf-perl ${PREFIX}/sbin
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_SCRIPT} ${WRKSRC}/postfix-policyd-spf-perl ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

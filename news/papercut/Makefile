@@ -14,27 +14,22 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQ
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-configure:
-	@${CP} ${FILESDIR}/papercut-wrapper ${WRKDIR}/papercut-wrapper
-	@${REINPLACE_CMD} -e "s,__DATADIR__,${DATADIR}," ${WRKDIR}/papercut-wrapper
-	@${REINPLACE_CMD} -e "s,__PYTHON__,${PYTHON_CMD}," ${WRKDIR}/papercut-wrapper
-	@${REINPLACE_CMD} "s,/home/papercut,${DATADIR}," ${WRKSRC}/settings.py
+	${CP} ${FILESDIR}/papercut-wrapper ${WRKDIR}/papercut-wrapper
+	${REINPLACE_CMD} -e "s,__DATADIR__,${DATADIR}," ${WRKDIR}/papercut-wrapper
+	${REINPLACE_CMD} -e "s,__PYTHON__,${PYTHON_CMD}," ${WRKDIR}/papercut-wrapper
+	${REINPLACE_CMD} "s,/home/papercut,${DATADIR}," ${WRKSRC}/settings.py
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/*.py ${DATADIR}
-	@${MKDIR} ${DATADIR}/cache
-	@${MKDIR} ${DATADIR}/logs
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/cache
+	@${MKDIR} ${STAGEDIR}${DATADIR}/logs
 .for DIR in auth storage
-		@${MKDIR} ${DATADIR}/${DIR}
-		@${INSTALL_SCRIPT} ${WRKSRC}/${DIR}/* ${DATADIR}/${DIR}
+		@${MKDIR} ${STAGEDIR}${DATADIR}/${DIR}
+		${INSTALL_SCRIPT} ${WRKSRC}/${DIR}/* ${STAGEDIR}${DATADIR}/${DIR}
 .endfor
-	@${INSTALL_SCRIPT} ${WRKDIR}/papercut-wrapper ${PREFIX}/bin/papercut
-	@${MV} ${DATADIR}/settings.py ${DATADIR}/settings.py.sample
-
-post-install:
-	@${ECHO_MSG} "To use papercut you need to copy ${DATADIR}/settings.py.sample"
-	@${ECHO_MSG} "to ${DATADIR}/settings.py and edit it."
+	${INSTALL_SCRIPT} ${WRKDIR}/papercut-wrapper ${STAGEDIR}${PREFIX}/bin/papercut
+	${MV} ${STAGEDIR}${DATADIR}/settings.py ${STAGEDIR}${DATADIR}/settings.py.sample
 
 .include <bsd.port.mk>

@@ -9,23 +9,27 @@ MASTER_SITES=	http://networkx.lanl.gov/download/networkx/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dikshie@sfc.wide.ad.jp
-COMMENT=	Tools for complex network
+COMMENT=	Tools for complex networks
+
+LICENSE=	BSD3CLAUSE
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-PYTHON_PY3K_PLIST_HACK=yes
-PYSETUP=	setup_egg.py
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
 PLIST_SUB+=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER}
 
-NO_STAGE=	yes
-post-install:
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples \
-		&& ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/\{} \; \
-		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
-.endif
+OPTIONS_DEFINE=	EXAMPLES
+EXAMPLESDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
+PORTEXAMPLES=	*
 
+USES=	shebangfix
+
+.include <bsd.port.options.mk>
+
+post-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

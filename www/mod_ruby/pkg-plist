@@ -10,36 +10,27 @@
 %%RUBY_SITELIBDIR%%/apache/ruby-run.rb
 %%RUBY_SITELIBDIR%%/auto-reload.rb
 @dirrm %%RUBY_SITELIBDIR%%/apache
-%%LIBEXECDIR%%/mod_ruby.so
-%%SYSCONFDIR%%/httpd.conf.mod_ruby
+%%APACHEMODDIR%%/mod_ruby.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/LEGAL
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/LICENSE.apreq
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/NOTICE
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/classes.en.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes.en.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/default.css
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/directives.en.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/directives.en.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/faq.en.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/faq.en.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/index.en.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.en.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/install.en.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/install.en.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/classes.ja.euc.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/classes.ja.jis.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/default.css
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/directives.ja.euc.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/directives.ja.jis.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/faq.ja.euc.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/faq.ja.jis.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/index.ja.euc.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/index.ja.jis.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/install.ja.euc.rd
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/install.ja.jis.html
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -14,8 +14,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix pykde4 automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USE_PYTHON=	2
 DISTINFO_FILE=	${PORTSDIR}/x11/kde4-workspace/distinfo
-USE_XZ=		yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/plasma/generic/scriptengines/python
 

@@ -11,9 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}stable
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free 3D city simulator
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		tar:bzip2 gmake pkgconfig
 USE_SDL=	sdl mixer image net
 USE_GL=		gl glu
 USE_GCC=	any

@@ -1,0 +1,11 @@
+--- 3rdparty/iaxclient/lib/CMakeLists.txt.orig	2014-03-12 18:13:58.000000000 +0100
++++ 3rdparty/iaxclient/lib/CMakeLists.txt	2014-03-12 18:14:39.000000000 +0100
+@@ -88,7 +88,7 @@
+         libspeex/vq.c
+         )
+     
+-    include_directories(${PROJECT_SOURCE_DIR}/3rdparty/iaxclient/lib/libspeex/include)
++    include_directories(BEFORE ${PROJECT_SOURCE_DIR}/3rdparty/iaxclient/lib/libspeex/include)
+ endif(ENABLE_SPEXX)
+ 
+ if (ENABLE_ALSA)

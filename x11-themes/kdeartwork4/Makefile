@@ -12,9 +12,8 @@ COMMENT=	KDE Artworks Themes
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
-USE_XZ=		yes
 USE_KDE4=	kdehier kdelibs kdeprefix libkexiv2 workspace automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	corelib gui opengl \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xt

@@ -2,7 +2,7 @@
 
 PORTNAME=	cpu
 PORTVERSION=	0.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,5 +1,5 @@
---- foo2zjs-wrapper.in.orig	2011-01-15 02:21:39.000000000 +0300
-+++ foo2zjs-wrapper.in	2011-06-19 21:29:39.781636207 +0400
+--- foo2zjs-wrapper.in.orig	2012-02-24 05:25:15.000000000 +0400
++++ foo2zjs-wrapper.in	2014-03-31 13:16:42.980748747 +0400
 @@ -53,13 +53,6 @@ PREFIX=/usr
  SHARE=$PREFIX/share/foo2zjs
  PATH=$PATH:/sw/bin:/opt/local/bin
@@ -14,7 +14,7 @@
  usage() {
  	cat <<EOF
  Usage:
-@@ -187,8 +180,8 @@ nup() {
+@@ -188,8 +181,8 @@ nup() {
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
@@ -25,7 +25,7 @@
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -900,18 +893,6 @@ $PREFILTER \
+@@ -945,18 +938,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
  
  #

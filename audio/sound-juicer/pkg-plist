@@ -1,4 +1,5 @@
 bin/sound-juicer
+man/man1/sound-juicer.1.gz
 share/applications/sound-juicer.desktop
 share/gnome/help/sound-juicer/C/figures/prefs.png
 share/gnome/help/sound-juicer/C/figures/startup.png

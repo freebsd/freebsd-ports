@@ -25,4 +25,7 @@ MAKE_ARGS=	INSTALL="${INSTALL_PROGRAM}" \
 PLIST_FILES=	bin/dxpc \
 		man/man1/dxpc.1.gz
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-R$$withval/lib||' ${WRKSRC}/configure
+
 .include <bsd.port.mk>

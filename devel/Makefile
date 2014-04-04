@@ -39,7 +39,6 @@
     SUBDIR += activitymail
     SUBDIR += adabooch
     SUBDIR += adacurses
-    SUBDIR += adasdl
     SUBDIR += adime
     SUBDIR += aegis
     SUBDIR += afay
@@ -71,6 +70,7 @@
     SUBDIR += arm-eabi-binutils
     SUBDIR += arm-eabi-gcc
     SUBDIR += arm-elf-binutils
+    SUBDIR += armv6-freebsd10.0-xdev
     SUBDIR += aros-sdk
     SUBDIR += art
     SUBDIR += as31
@@ -848,7 +848,6 @@
     SUBDIR += htable
     SUBDIR += hub
     SUBDIR += hwloc
-    SUBDIR += hyena
     SUBDIR += ice
     SUBDIR += icmake
     SUBDIR += icu
@@ -1881,6 +1880,7 @@
     SUBDIR += p5-Devel-LeakTrace
     SUBDIR += p5-Devel-LeakTrace-Fast
     SUBDIR += p5-Devel-LexAlias
+    SUBDIR += p5-Devel-MAT
     SUBDIR += p5-Devel-Messenger
     SUBDIR += p5-Devel-Modlist
     SUBDIR += p5-Devel-NYTProf
@@ -3817,6 +3817,7 @@
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
     SUBDIR += py-shapely
+    SUBDIR += py-simplegeneric
     SUBDIR += py-simplejson
     SUBDIR += py-simpleparse
     SUBDIR += py-simpletal
@@ -4136,10 +4137,12 @@
     SUBDIR += rubygem-attic
     SUBDIR += rubygem-authlogic
     SUBDIR += rubygem-awesome_print
+    SUBDIR += rubygem-axiom-types
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bin_utils
+    SUBDIR += rubygem-bindata
     SUBDIR += rubygem-bioruby
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bson
@@ -4147,6 +4150,7 @@
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-builder31
     SUBDIR += rubygem-builder32
+    SUBDIR += rubygem-byebug
     SUBDIR += rubygem-caesars
     SUBDIR += rubygem-cairo-gobject
     SUBDIR += rubygem-capybara
@@ -4160,11 +4164,13 @@
     SUBDIR += rubygem-clio
     SUBDIR += rubygem-cloudfiles
     SUBDIR += rubygem-cocaine
+    SUBDIR += rubygem-coercible
     SUBDIR += rubygem-coffee-rails
     SUBDIR += rubygem-coffee-script
     SUBDIR += rubygem-coffee-script-source
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-commander
+    SUBDIR += rubygem-configatron
     SUBDIR += rubygem-configuration
     SUBDIR += rubygem-cool.io
     SUBDIR += rubygem-crack
@@ -4192,6 +4198,7 @@
     SUBDIR += rubygem-edavis10-object_daddy
     SUBDIR += rubygem-elif
     SUBDIR += rubygem-enumerize
+    SUBDIR += rubygem-equalizer
     SUBDIR += rubygem-errand
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-excon
@@ -4230,15 +4237,18 @@
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
     SUBDIR += rubygem-grape-entity
+    SUBDIR += rubygem-grape-swagger
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hike
+    SUBDIR += rubygem-hitimes
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-holidays
     SUBDIR += rubygem-i18n
     SUBDIR += rubygem-icalendar
+    SUBDIR += rubygem-ice_nine
     SUBDIR += rubygem-igraph
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-interact
@@ -4393,6 +4403,7 @@
     SUBDIR += rubygem-tilt
     SUBDIR += rubygem-tilt1
     SUBDIR += rubygem-timers
+    SUBDIR += rubygem-timers1
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-treetop

@@ -14,22 +14,21 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${PORTNAME}.pl
 
 PLIST_FILES=	bin/cvschangelogbuilder
 PORTDOCS=	*
 
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} -e '1s|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}.pl
+post-extract:
+	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
+	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} 644 {} \;
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${DOCSDIR}/images
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${STAGEDIR}${DOCSDIR}/images
 
 .include <bsd.port.mk>

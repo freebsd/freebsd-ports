@@ -2,78 +2,116 @@
 # $FreeBSD$
 
 PORTNAME=	tinymux
-PORTVERSION=	2.6.5.${PATCHLEVEL}
+PORTVERSION=	2.10.1.${PATCHLEVEL}
 CATEGORIES=	games net
-MASTER_SITES=	GOOGLE_CODE \
-		ftp://ftp.tinymux.org/TinyMUX/old/tinymux-2.6/
+MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	mux-${PORTVERSION}.unix
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Multi-Player FreeForm adventure Program
+COMMENT=	Multi-Player FreeForm adventure Program
 
-WRKSRC=		${WRKDIR}/mux2.6/src
+LICENSE=	GPLv3
 
-DEPRECATED=	Unmaintained since 2001
-EXPIRATION_DATE=	2014-04-12
-USES=		gettext
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/mux2.10/src
+
+USES=		gmake
 GNU_CONFIGURE=	yes
-
-PORTDOCS=	*
+USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PATCHLEVEL=	33
+PATCHLEVEL=	12
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PORTDOCS=	*
+
+DOCSRCDIR1=	${WRKSRC}/..
+DOC_FILES1=	ATTACK CHANGES MODULES NOTES README REALITY REALITY.SETUP SGP \
+		SQL SSL
+
+DOCSRCDIR2=	${WRKSRC}/../docs
+DOCSDIR2=	${DOCSDIR}/docs
+DOC_FILES2=	*
+
+OPTIONS_DEFINE=	DOCS FIRANMUX MEMORY_BASED REALITY_LVLS SELFCHECK SSL WOD_REALMS
+
+OPTIONS_DEFAULT=	ASYNCHRONOUS_SQL SSL REALITY_LVLS WOD_REALMS
+OPTIONS_SUB=	yes
+
+OPTIONS_RADIO=	MYSQL
+OPTIONS_RADIO_MYSQL=	ASYNCHRONOUS_SQL INLINE_SQL
+
+ASYNCHRONOUS_SQL_DESC=	MySQL asynchronous support is unique to TinyMUX
+FIRANMUX_DESC=	Firan MUX via Firan's database (need MEMORY_BASED)
+INLINE_SQL_DESC=	MySQL support compatible with PennMUSH, TinyMUSH 3.x
+MEMORY_BASED_DESC=	Memory Based Database support
+REALITY_LVLS_DESC=	Reality Levels support
+SELFCHECK_DESC=	Enable expensive self-checking
+WOD_REALMS_DESC=	World of Darkness Realms support
+
+ASYNCHRONOUS_SQL_CONFIGURE_ENABLE=	stubslave
+FIRANMUX_CONFIGURE_ENABLE=	firanmux
+INLINE_SQL_CONFIGURE_ENABLE=	inlinesql
+MEMORY_BASED_CONFIGURE_ENABLE=	memorybased
+REALITY_LVLS_CONFIGURE_ENABLE=	realitylvls
+SELFCHECK_CONFIGURE_ENABLE=	selfcheck
+SSL_CONFIGURE_ENABLE=	ssl
+WOD_REALMS_CONFIGURE_ENABLE=	wodrealms
+
+SUB_FILES=	${PORTNAME} pkg-deinstall pkg-message
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MASYNCHRONOUS_SQL} || ${PORT_OPTIONS:MINLINE_SQL}
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=	--with-mysql-include=${LOCALBASE}/include/mysql \
+			--with-mysql-libs=${LOCALBASE}/lib/mysql
+.endif
+
+.if ${PORT_OPTIONS:MFIRANMUX}
+.if ${PORT_OPTIONS:MREALITY_LVLS} || ${PORT_OPTIONS:MWOD_REALMS}
+IGNORE=	FIRANMUX is incompatible with both WOD_REALMS and REALITY_LVLS
+.endif
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/^LIBS/s|= @LIBS@|= @LDFLAGS@ @LIBS@|g ; \
-		 /^OPTIM/s|=.*|= @CPPFLAGS@|g' ${WRKSRC}/Makefile.in
+		's|@LIBS@|@LDFLAGS@ @LIBS@|; \
+		 s|^OPTIM =.*|OPTIM = @CPPFLAGS@|' ${WRKSRC}/Makefile.in
 
 do-install:
-# Binaries
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
 .for file in netmux slave
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/sbin/
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/../game/bin/dbconvert ${PREFIX}/bin
-# Configuration
-	${MKDIR} ${ETCDIR}
+	${LN} -sf ${PREFIX}/sbin/netmux ${STAGEDIR}${PREFIX}/bin/dbconvert
+	${INSTALL_DATA} ${WRKSRC}/libmux.so ${STAGEDIR}${PREFIX}/lib/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmux.so
+
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for file in alias.conf compat.conf mux.config netmux.conf
 	${INSTALL_DATA} ${WRKSRC}/../game/${file} \
-		${ETCDIR}/${file}.sample
+		${STAGEDIR}${ETCDIR}/${file}.sample
 .endfor
-# Data
-	${MKDIR} ${DATADIR}/game/netmux
-.for file in Backup Startmux _backupflat.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/../game/${file} ${DATADIR}/game/netmux/
-.endfor
-	${MKDIR} ${DATADIR}/game/netmux/data
-.for file in db_check db_load db_unload
-	${INSTALL_SCRIPT} ${WRKSRC}/../game/data/${file} \
-		${DATADIR}/game/netmux/data
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/../game/data/netmux.db \
-		${DATADIR}/game/netmux/data
-	${MKDIR} ${DATADIR}/game/netmux/text
-.for file in badsite connect create_reg down full guest help motd \
-	news newuser plushelp quit register staffhelp wizhelp wizmotd wiznews
-	${INSTALL_DATA} ${WRKSRC}/../game/text/${file}.txt \
-		${DATADIR}/game/netmux/text
-.endfor
-# Docs
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for file in ATTACK CHANGES INSTALL NOTES README SGP
-	${INSTALL_DATA} ${WRKSRC}/../${file} ${DOCSDIR}
-.endfor
-.for file in BACKUPS CONFIGURATION CONVERSION CREDITS DISTRIBUTIONS GUESTS \
-	LIMITS MEMORY PATCHES REALMS
-	${INSTALL_DATA} ${WRKSRC}/../docs/${file} ${DOCSDIR}
-.endfor
+
+.if ${PORT_OPTIONS:MSSL}
+	${INSTALL_DATA} ${WRKSRC}/../game/muxssl.conf \
+		${STAGEDIR}${ETCDIR}/muxssl.conf.sample
 .endif
 
-.include <bsd.port.post.mk>
+.for d in data text
+	@(cd ${WRKSRC}/../game && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
+	@${CHMOD} 775 ${STAGEDIR}${DATADIR}/data
+
+.for file in Backup Startmux _backupflat.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/../game/${file} \
+		${STAGEDIR}${DATADIR}
+.endfor
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+
+.include <bsd.port.mk>

@@ -15,10 +15,7 @@ LICENSE=	GPLv2 # (or later)
 BUILD_DEPENDS=	${OPENWINCE_INCLUDE_DEP}:${PORTSDIR}/devel/openwince-include
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS_DEFINE=	NLS DOCS
-
-USES=		readline
-USE_BZIP2=	yes
+USES=		readline tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -30,16 +27,11 @@ ONLY_FOR_ARCHS=	i386
 OPENWINCE_INCLUDE=${LOCALBASE}/include/openwince
 OPENWINCE_INCLUDE_DEP=${OPENWINCE_INCLUDE}/common.h
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS DOCS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
 post-extract:
 	@${REINPLACE_CMD} -E -e \
@@ -47,11 +39,8 @@ post-extract:
 		${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for f in README TODO doc/internals.xml
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README TODO doc/internals.xml \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

@@ -27,9 +27,9 @@ USE_LDCONFIG=	yes
 
 INFO=		readline rluserman history
 
-PATCHES=
+PATCHES=	1 2 3
 .for p in ${PATCHES:S/^/00/}
-PATCH_FILES+=	${PORTNAME}${PORTVERSION:R:S/.//}-${p:C/.*(...)$/\1/}
+PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S/.//}-${p:C/.*(...)$/\1/}
 .endfor
 PATCHLEVEL=	${PATCHES:M1:S/1/./}${PATCHES:Q:S/^/./:S/ /./g:E}
 

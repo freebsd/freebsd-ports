@@ -12,7 +12,7 @@ bin/tpmtool3
 include/gnutls3/gnutls/abstract.h
 include/gnutls3/gnutls/compat.h
 include/gnutls3/gnutls/crypto.h
-include/gnutls3/gnutls/dane.h
+%%LIBDANE%%include/gnutls3/gnutls/dane.h
 include/gnutls3/gnutls/dtls.h
 include/gnutls3/gnutls/gnutls.h
 %%CXX%%include/gnutls3/gnutls/gnutlsxx.h
@@ -42,10 +42,10 @@ info/gnutls3/gnutls.info-3
 info/gnutls3/gnutls.info-4
 info/gnutls3/gnutls.info-5
 info/gnutls3/pkcs11-vision.png
-lib/gnutls3/libgnutls-dane.a
-lib/gnutls3/libgnutls-dane.la
-lib/gnutls3/libgnutls-dane.so
-lib/gnutls3/libgnutls-dane.so.0
+%%LIBDANE%%lib/gnutls3/libgnutls-dane.a
+%%LIBDANE%%lib/gnutls3/libgnutls-dane.la
+%%LIBDANE%%lib/gnutls3/libgnutls-dane.so
+%%LIBDANE%%lib/gnutls3/libgnutls-dane.so.0
 lib/gnutls3/libgnutls-openssl.a
 lib/gnutls3/libgnutls-openssl.la
 lib/gnutls3/libgnutls-openssl.so
@@ -63,8 +63,8 @@ lib/gnutls3/libgnutls.so.28
 %%CXX%%lib/gnutls3/libgnutlsxx.so
 %%CXX%%lib/gnutls3/libgnutlsxx.so.28
 libdata/pkgconfig/gnutls3.pc
-libdata/pkgconfig/gnutls3-dane.pc
-man/man1/danetool3.1.gz
+%%LIBDANE%%libdata/pkgconfig/gnutls3-dane.pc
+%%LIBDANE%%man/man1/danetool3.1.gz
 man/man1/certtool3.1.gz
 man/man1/gnutls-cli-debug3.1.gz
 man/man1/gnutls-cli3.1.gz

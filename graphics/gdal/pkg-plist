@@ -35,8 +35,8 @@ include/cpl_minizip_unzip.h
 include/cpl_minizip_zip.h
 include/cpl_multiproc.h
 include/cpl_odbc.h
-include/cpl_progress.h
 include/cpl_port.h
+include/cpl_progress.h
 include/cpl_quad_tree.h
 include/cpl_spawn.h
 include/cpl_string.h

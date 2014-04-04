@@ -1,14 +1,11 @@
-Impacket is a collection of Python classes focused
-on providing access to network packets.
-Impacket allows Python developers to craft and decode
-network packets in simple and consistent manner.
-It includes support for low-level protocols such as
-IP, UDP and TCP, as well as higher-level protocols
-such as NMB and SMB. Impacket is highly effective
-when used in conjunction with a packet capture utility
-or package such as Pcapy. Packets can be constructed
-from scratch, as well as parsed from raw data. Furthermore,
-the object oriented API makes it simple to work with deep
-protocol hierarchies.
+Impacket is a collection of Python classes focused on providing access
+to network packets. Impacket allows Python developers to craft and
+decode network packets in simple and consistent manner. It includes
+support for low-level protocols such as IP, UDP and TCP, as well as
+higher-level protocols such as NMB and SMB. Impacket is highly effective
+when used in conjunction with a packet capture utility or package such
+as Pcapy. Packets can be constructed from scratch, as well as parsed
+from raw data. Furthermore, the object oriented API makes it simple to
+work with deep protocol hierarchies.
 
-WWW: http://oss.coresecurity.com/projects/impacket.html
+WWW: http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Impacket

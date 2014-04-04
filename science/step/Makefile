@@ -15,9 +15,8 @@ LIB_DEPENDS=	libqalculate.so:${PORTSDIR}/math/libqalculate \
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_QT4=	opengl moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
 
 pre-configure:
 # Avoid building translations, should the user pass

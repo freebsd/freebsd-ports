@@ -1,6 +1,6 @@
---- src/misc/newinstall.cxx.orig	2011-04-22 08:25:20.000000000 -0400
-+++ src/misc/newinstall.cxx	2011-04-22 08:25:51.000000000 -0400
-@@ -66,7 +66,7 @@
+--- src/misc/newinstall.cxx.orig	2014-03-21 11:25:57.000000000 -0500
++++ src/misc/newinstall.cxx	2014-03-21 18:19:24.000000000 -0500
+@@ -67,7 +67,7 @@
  
  label[4] = "SK @||";
  text[4] = "\n\
@@ -9,7 +9,7 @@
  <ZDT> <CALL> de <MYCALL> sk\n\
  <RX>";
  
-@@ -83,7 +83,7 @@
+@@ -84,7 +84,7 @@
  Rig:   \n\
  Pwr:   \n\
  Ant:   \n\

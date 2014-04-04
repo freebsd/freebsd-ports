@@ -21,7 +21,6 @@ LIB_DEPENDS=	libmusicbrainz3.so:${PORTSDIR}/audio/libmusicbrainz3 \
 		libbrasero-media.so:${PORTSDIR}/sysutils/brasero
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USES=		gettext gmake pathfix pkgconfig
 INSTALLS_OMF=	yes
 USE_GNOME=	intlhack gnomeprefix gconf2 libglade2 gnomedocutils
@@ -32,15 +31,11 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		sound-juicer.1
 GCONF_SCHEMAS=	sound-juicer.schemas
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = .*\)tests\(.*\)|\1\2|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|" == "|" = "|g' ${WRKSRC}/configure
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>

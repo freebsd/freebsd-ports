@@ -15,4 +15,6 @@ LCL_INTERFACE=	gtk2
 MASTERDIR=	${.CURDIR}/../../editors/lazarus
 
 NO_STAGE=	yes
+
+OPT=		#
 .include "${MASTERDIR}/Makefile"

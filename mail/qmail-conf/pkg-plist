@@ -3,5 +3,4 @@ bin/qmail-pop3d-conf
 bin/qmail-qmqpd-conf
 bin/qmail-qmtpd-conf
 bin/qmail-smtpd-conf
-@dirrmtry bin
 @dirrmtry service

@@ -15,16 +15,14 @@ COMMENT=	A QWK message packet reader and composer for FreeBSD
 RUN_DEPENDS=		zip:${PORTSDIR}/archivers/zip \
 			unzip:${PORTSDIR}/archivers/unzip
 
-USE_GMAKE=		YES
+USES=	gmake
 GNU_CONFIGURE=		YES
+SUB_FILES=	pkg-message
 
-MAN1=			atp.1 \
-			atpdiag.1 \
-			rot13.1
-MAN3=			editline.3
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
+post-patch:
+.for i in atphome bindir mandir
+	${REINPLACE_CMD} -e 's,$$($i),$$(DESTDIR)&,g' \
+		${WRKSRC}/Makefile.in
+.endfor
 
 .include <bsd.port.mk>

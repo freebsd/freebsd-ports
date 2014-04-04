@@ -15,10 +15,8 @@ LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		liblrdf.so:${PORTSDIR}/textproc/liblrdf
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
-USE_BZIP2=	yes
-NO_STAGE=	yes
 USE_GNOME=	libgnomeui libxml2
-USES=		gettext shebangfix pkgconfig
+USES=		gettext shebangfix pkgconfig tar:bzip2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

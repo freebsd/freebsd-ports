@@ -3,7 +3,6 @@ bin/hmac256
 bin/libgcrypt-config
 include/gcrypt.h
 include/gcrypt-module.h
-lib/libgcrypt.a
 lib/libgcrypt.la
 lib/libgcrypt.so
 lib/libgcrypt.so.19

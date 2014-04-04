@@ -14,14 +14,14 @@ LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
 CONFLICTS=	leafnode-[1-9]* nntp-[0-9]*
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
+CONFIGURE_ARGS+= \
 		--with-confdir=${PREFIX}/etc/s-news \
 		--with-spooldir=/var/spool/s-news
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
+USES=	gmake
+GNU_CONFIGURE=	yes
 
 MAN1=		inews.1
 MAN8=		expire.8 listactive.8 makehistory.8 newgroup.8 nntpd.8 overview.8 \
@@ -31,13 +31,8 @@ PORTDOCS=	README README.conf README.suck TODO
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

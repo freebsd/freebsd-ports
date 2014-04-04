@@ -410,6 +410,69 @@
 %%DATADIR%%/themes/Noia/video_filters.png
 %%DATADIR%%/themes/Noia/video_size.png
 %%DATADIR%%/themes/Noia/volume.png
+%%DATADIR%%/themes/Numix-uTouch/README.txt
+%%DATADIR%%/themes/Numix-uTouch/about_qt.png
+%%DATADIR%%/themes/Numix-uTouch/about_smplayer.png
+%%DATADIR%%/themes/Numix-uTouch/audio_channels.png
+%%DATADIR%%/themes/Numix-uTouch/audio_down.png
+%%DATADIR%%/themes/Numix-uTouch/audio_equalizer.png
+%%DATADIR%%/themes/Numix-uTouch/audio_track.png
+%%DATADIR%%/themes/Numix-uTouch/audio_up.png
+%%DATADIR%%/themes/Numix-uTouch/background.png
+%%DATADIR%%/themes/Numix-uTouch/brightness.png
+%%DATADIR%%/themes/Numix-uTouch/cd.png
+%%DATADIR%%/themes/Numix-uTouch/close.png
+%%DATADIR%%/themes/Numix-uTouch/delete.png
+%%DATADIR%%/themes/Numix-uTouch/down.png
+%%DATADIR%%/themes/Numix-uTouch/dvd.png
+%%DATADIR%%/themes/Numix-uTouch/edit-clear.png
+%%DATADIR%%/themes/Numix-uTouch/equalizer.png
+%%DATADIR%%/themes/Numix-uTouch/exit.png
+%%DATADIR%%/themes/Numix-uTouch/favorites_list.png
+%%DATADIR%%/themes/Numix-uTouch/flip.png
+%%DATADIR%%/themes/Numix-uTouch/forward10m.png
+%%DATADIR%%/themes/Numix-uTouch/forward10s.png
+%%DATADIR%%/themes/Numix-uTouch/forward1m.png
+%%DATADIR%%/themes/Numix-uTouch/fullscreen.png
+%%DATADIR%%/themes/Numix-uTouch/info.png
+%%DATADIR%%/themes/Numix-uTouch/mirror.png
+%%DATADIR%%/themes/Numix-uTouch/mute.png
+%%DATADIR%%/themes/Numix-uTouch/next.png
+%%DATADIR%%/themes/Numix-uTouch/ok.png
+%%DATADIR%%/themes/Numix-uTouch/open.png
+%%DATADIR%%/themes/Numix-uTouch/open_audio_cd.png
+%%DATADIR%%/themes/Numix-uTouch/open_favorites.png
+%%DATADIR%%/themes/Numix-uTouch/open_playlist.png
+%%DATADIR%%/themes/Numix-uTouch/openfolder.png
+%%DATADIR%%/themes/Numix-uTouch/pause.png
+%%DATADIR%%/themes/Numix-uTouch/play.png
+%%DATADIR%%/themes/Numix-uTouch/play_pause.png
+%%DATADIR%%/themes/Numix-uTouch/playlist.png
+%%DATADIR%%/themes/Numix-uTouch/pref_general.png
+%%DATADIR%%/themes/Numix-uTouch/prefs.png
+%%DATADIR%%/themes/Numix-uTouch/previous.png
+%%DATADIR%%/themes/Numix-uTouch/record.png
+%%DATADIR%%/themes/Numix-uTouch/repeat.png
+%%DATADIR%%/themes/Numix-uTouch/rewind10m.png
+%%DATADIR%%/themes/Numix-uTouch/rewind10s.png
+%%DATADIR%%/themes/Numix-uTouch/rewind1m.png
+%%DATADIR%%/themes/Numix-uTouch/rotate.png
+%%DATADIR%%/themes/Numix-uTouch/screenshot.png
+%%DATADIR%%/themes/Numix-uTouch/show_dialog.png
+%%DATADIR%%/themes/Numix-uTouch/show_tube_browser.png
+%%DATADIR%%/themes/Numix-uTouch/shuffle.png
+%%DATADIR%%/themes/Numix-uTouch/stereo_mode.png
+%%DATADIR%%/themes/Numix-uTouch/stop.png
+%%DATADIR%%/themes/Numix-uTouch/sub_down.png
+%%DATADIR%%/themes/Numix-uTouch/sub_up.png
+%%DATADIR%%/themes/Numix-uTouch/tips.png
+%%DATADIR%%/themes/Numix-uTouch/tv_menu.png
+%%DATADIR%%/themes/Numix-uTouch/unload.png
+%%DATADIR%%/themes/Numix-uTouch/up.png
+%%DATADIR%%/themes/Numix-uTouch/url.png
+%%DATADIR%%/themes/Numix-uTouch/url_big.png
+%%DATADIR%%/themes/Numix-uTouch/video_preview.png
+%%DATADIR%%/themes/Numix-uTouch/volume.png
 %%DATADIR%%/themes/Nuvola/README.txt
 %%DATADIR%%/themes/Nuvola/angle.png
 %%DATADIR%%/themes/Nuvola/aspect.png
@@ -1136,6 +1199,7 @@
 @dirrm %%DATADIR%%/themes/Oxygen-Air
 @dirrm %%DATADIR%%/themes/Oxygen
 @dirrm %%DATADIR%%/themes/Nuvola
+@dirrm %%DATADIR%%/themes/Numix-uTouch
 @dirrm %%DATADIR%%/themes/Noia
 @dirrm %%DATADIR%%/themes/Monochrome
 @dirrm %%DATADIR%%/themes/Gnome

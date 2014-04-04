@@ -1,0 +1,6 @@
+A Devel::MAT instance loads a heapdump file, and provides a container to store
+analysis tools to work on it. Tools may be provided that conform to the
+Devel::MAT::Tool API, which can help analyse the data and interact with the
+explorer user interface by using the methods in the Devel::MAT::UI package.
+
+WWW: http://search.cpan.org/dist/Devel-MAT/

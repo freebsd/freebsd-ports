@@ -1,0 +1,21 @@
+--- cf/Makefile.in.orig	2006-03-05 16:49:25.000000000 -0500
++++ cf/Makefile.in	2014-03-29 12:18:45.000000000 -0400
+@@ -271,15 +271,15 @@
+ 	echo @VERSION@ >$@
+ 
+ install-data-hook:
+-	for f in $(distf); do { cd $(sysconfdir) && (orig=`basename $$f -dist`; test -e $$orig || cp $$f $$orig) ;} done
++	for f in $(distf); do { cd $(DESTDIR)$(sysconfdir) && (orig=`basename $$f -dist`; test -e $$orig || cp $$f $$orig) ;} done
+ 
+ nntpcache.config-dist : nnconf.cf
+ 	sed -e 's/^ *[a-zA-Z_][a-zA-Z_]* //;s/"//g' <nnconf.cf >$@
+ 
+ # this is ugly, but more flexible than merely redefining INSTALL_DATA
+ install-data-local:
+-	cd $(sysconfdir) && chmod 700 . && chown @nntpcacheUID@ . && chgrp @nntpcacheUID@ . && chmod 600 $(sysconf_DATA) && chown @nntpcacheUID@ $(sysconf_DATA) && chgrp @nntpcacheGID@ $(sysconf_DATA)
+-	cd $(localstatedir) && chmod 700 . && chown @nntpcacheUID@ . && chgrp @nntpcacheUID@ . && chmod 600 $(localstate_DATA) && chown @nntpcacheUID@ $(localstate_DATA) && chgrp @nntpcacheGID@ $(localstate_DATA)
++	cd $(DESTDIR)$(sysconfdir) && chmod 700 . && chown @nntpcacheUID@ . && chgrp @nntpcacheUID@ . && chmod 600 $(sysconf_DATA) && chown @nntpcacheUID@ $(sysconf_DATA) && chgrp @nntpcacheGID@ $(sysconf_DATA)
++	cd $(DESTDIR)$(localstatedir) && chmod 700 . && chown @nntpcacheUID@ . && chgrp @nntpcacheUID@ . && chmod 600 $(localstate_DATA) && chown @nntpcacheUID@ $(localstate_DATA) && chgrp @nntpcacheGID@ $(localstate_DATA)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

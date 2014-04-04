@@ -46,10 +46,6 @@ SHEBANG_FILES=	packages/vfs/deb packages/vfs/mailfs \
 PLIST_SUB=	VERSION="${PORTVERSION}"
 PORTDATA=	*
 
-.ifdef	NOPORTDATA
-IGNORE=		smalltalk requires port data, unset NOPORTDATA to install
-.endif
-
 INFO=		gst gst-base gst-libs
 
 CPPFLAGS+=	-I${LOCALBASE}/include
