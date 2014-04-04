@@ -16,10 +16,7 @@ USES=		gmake
 
 PLIST_FILES=	bin/dxa65 man/man1/dxa.1.gz
 PORTDOCS=	INSTALL
-
-post-patch-script:
-	@${REINPLACE_CMD} 's|CC = |CC ?= |g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's|CFLAGS = |CFLAGS ?= |g' ${WRKSRC}/Makefile
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dxa ${STAGEDIR}${PREFIX}/bin/dxa65
