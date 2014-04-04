@@ -7,24 +7,25 @@ PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# none
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	Quick display of files inside the FreeBSD ports tree
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-MAN1=		portless.1
-MANCOMPRESSED=	no
+USES=		shebangfix
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 
-PLIST_FILES=	bin/portless
+PLIST_FILES=	bin/portless man/man1/portless.1.gz
+SHEBANG_FILES=	portless
 
-NO_STAGE=	yes
-do-build:
-	${SED} -e 's;@BASH@;${LOCALBASE}/bin/bash;g' \
-		${FILESDIR}/portless.sh >${WRKDIR}/portless
+post-extract:
+	${SED} -e 's;@BASH@;/bin/bash;g' \
+		${FILESDIR}/portless.sh > ${WRKSRC}/portless
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/portless ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/portless.1 ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/portless ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/portless.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
