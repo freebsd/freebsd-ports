@@ -91,7 +91,7 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 gal2 \
 # GNOME 3 components
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		gnomemenus3 gnomepanel3 gtk30 gtkhtml4 gtksourceview3 libgda5 \
-		libgda5-ui libwnck3 metacity3 nautilus3 pygobject3 vte3
+		libgda5-ui libwnck3 metacity nautilus3 pygobject3 vte3
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm gconfmm26 glibmm gtkmm20 gtkmm24 \
@@ -411,10 +411,9 @@ nautilus3_DETECT=	${LOCALBASE}/share/gir-1.0/Nautilus-3.0.gir
 nautilus3_USE_GNOME_IMPL=gnomedesktop3 gvfs libxml2
 nautilus3_GNOME_DESKTOP_VERSION=3
 
-metacity3_LIB_DEPENDS=	libmetacity-private.so:${PORTSDIR}/x11-wm/metacity3
-metacity3_DETECT=	${LOCALBASE}/libdata/pkgconfig/libmetacity-private.pc
-metacity3_USE_GNOME_IMPL=gconf2
-metacity3_GNOME_DESKTOP_VERSION=3
+metacity_LIB_DEPENDS=	libmetacity-private.so:${PORTSDIR}/x11-wm/metacity
+metacity_DETECT=	${LOCALBASE}/libdata/pkgconfig/libmetacity-private.pc
+metacity_GNOME_DESKTOP_VERSION=3
 
 gal2_LIB_DEPENDS=	libgal-2.4.so:${PORTSDIR}/x11-toolkits/gal2
 gal2_DETECT=		${LOCALBASE}/libdata/pkgconfig/gal-2.4.pc

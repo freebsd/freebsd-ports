@@ -1,15 +1,16 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 18985 2014-01-21 12:30:41Z gusi $
+#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 19449 2014-04-04 08:03:30Z gusi $
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gustau.perez@gmail.com
-COMMENT=	gnome-control-center replacement for Cinnamon
+COMMENT=	Control center for Cinnamon
 
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		cinnamon-settings-daemon>=0:${PORTSDIR}/sysutils/cinnamon-settings-daemon \
@@ -17,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libcheese.so:${PORTSDIR}/multimedia/cheese \
-		libkrb5support.so:${PORTSDIR}/security/krb5 \
 		libcaribou.so:${PORTSDIR}/accessibility/caribou \
 		libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 		libmuffin.so:${PORTSDIR}/x11-wm/muffin \
@@ -36,18 +36,16 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
-USE_XORG=	x11 xfixes sm
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	evolutiondataserver3 gconf2 gnomemenus3 gnomeprefix \
 		gtk30 intlhack libgnomekbd
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool autoconf automake
+USE_XORG=	x11 xfixes sm
 USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
-
+USE_AUTOTOOLS=	libtool autoconf automake
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-compile-warnings=no
-
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

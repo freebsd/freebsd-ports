@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11-fm/nemo/Makefile 18985 2014-01-21 12:30:41Z gusi $
+#    $MCom: ports/trunk/x11-fm/nemo/Makefile 19447 2014-04-03 10:27:31Z gusi $
 
 PORTNAME=	nemo
 PORTVERSION=	2.0.8
@@ -22,23 +22,33 @@ LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-INSTALLS_ICONS=	yes
 USES=		desktop-file-utils gettext gmake pathfix \
 		pkgconfig shared-mime-info
 USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libxml2 \
 		introspection:build
+INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool autoconf automake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ARGS=	--enable-static --disable-packagekit --disable-tracker
+CONFIGURE_ARGS=	--enable-static --disable-packagekit
 
 GLIB_SCHEMAS=	org.nemo.gschema.xml
+
+OPTIONS_SUB=			yes
+OPTIONS_DEFINE=			TRACKER
+OPTIONS_DEFAULT=		TRACKER
+TRACKER_CONFIGURE_ENABLE=	tracker
+TRACKER_LIB_DEPENDS=		libtracker-sparql-1.0.so:${PORTSDIR}/sysutils/tracker
+TRACKER_DESC=			Integration with tracker
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/files${PREFIX}
 
 	@${MV} ${WRKSRC}/files/usr/share ${WRKSRC}/files${PREFIX}
+
+	@${REINPLACE_CMD} -e 's|0.16|1.0|g' \
+		${WRKSRC}/configure.in
 
 	@${REINPLACE_CMD} -e 's|find|find ${WRKSRC}/files|g' \
 		${WRKSRC}/files/Makefile.in

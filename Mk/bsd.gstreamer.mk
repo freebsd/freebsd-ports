@@ -6,7 +6,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/Mk/bsd.gstreamer.mk,v 1.56 2013/01/15 21:43:45 kwm Exp $
+#    $MCom: ports/trunk/Mk/bsd.gstreamer.mk 19418 2014-03-31 08:17:36Z kwm $
 
 .if !defined(_POSTMKINCLUDED) && !defined(Gstreamer_Pre_Include)
 
@@ -62,7 +62,6 @@ GST1_MINIMAL_VERSION=	.0
 
 #
 # missing base: alsa ivorbisdec
-# missing good: pulseaudio(need newer pulse version)
 # missing ugly: -
 # missing bad: openal
 
@@ -73,7 +72,7 @@ _GSTREAMER_PLUGINS= \
 		cdparanoia dts dv faac faad flac flite \
 		gdkpixbuf gme gsm jack jpeg lame libcaca \
 		libmms libvisual mad mpeg2dec mpeg2enc neon ogg \
-		opencv opus pango resindvd schroedinger \
+		opencv opus pango pulse resindvd schroedinger \
 		shout2 sidplay soundtouch soup speex taglib \
 		theora twolame v4l2 vorbis wavpack x264
 
@@ -82,7 +81,7 @@ _GSTREAMER_PLUGINS= \
 _GSTREAMER_PLUGINS+= \
 		annodex bz2 cdaudio dvd esound ffmpeg fluendo-mp3 \
 		fluendo-mpegdemux gconf gio gl gnomevfs gnonlin hal \
-		ladspa libpng mm mp3 musepack nas pulse python qt4 \
+		ladspa libpng mm mp3 musepack nas python qt4 \
 		sdl sndfile spc vdpau vp8 xvid
 .endif
 

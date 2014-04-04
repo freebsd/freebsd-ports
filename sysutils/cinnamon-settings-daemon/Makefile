@@ -1,9 +1,10 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/cinnamon-settings-daemon/Makefile 18985 2014-01-21 12:30:41Z gusi $
+#   $MCom: ports/trunk/sysutils/cinnamon-settings-daemon/Makefile 19448 2014-04-04 07:28:02Z gusi $
 
 PORTNAME=	cinnamon-settings-daemon
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -28,16 +29,15 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 RUN_DEPENDS=	cinnamon-session:${PORTSDIR}/x11/cinnamon-session \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USE_XORG=	xxf86misc
-USE_XZ=		yes
-USE_LDCONFIG=	yes
 USE_GNOME=	gnomehier gnomeprefix intlhack libgnomekbd \
 		libxslt:build
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
+USE_XORG=	xxf86misc
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool autoconf automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gudev \
 		--disable-systemd \
 		--disable-packagekit \
