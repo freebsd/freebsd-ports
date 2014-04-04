@@ -3,6 +3,7 @@
 
 PORTNAME=	sn
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.infa.abo.fi/~patrik/sn/files/ \
 		http://home.arcor.de/teambushido/fbsd_ports/ \
@@ -13,9 +14,8 @@ COMMENT=	Small news system for small sites serving
 
 LICENSE=	GPLv2
 
-USES=		gmake
-USE_BZIP2=	yes
-MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}" LD="${CC}" CC="${CC}"
+USES=		gmake tar:bzip2
+MAKE_ARGS+=	PREFIX="${PREFIX}" LD="${CC}" CC="${CC}"
 
 PORTDOCS=	README CHANGES FAQ INSTALL INTERNALS \
 		THANKS TODO INSTALL.notes INSTALL.notes2 \
@@ -30,7 +30,7 @@ post-patch:
 		s|-g -Wall -pedantic -O|${CFLAGS} -Wall -pedantic|' \
 			${WRKSRC}/Makefile
 
-pre-su-install:
+pre-install:
 	@${MKDIR} ${STAGEDIR}/var/spool/news
 
 post-install:
