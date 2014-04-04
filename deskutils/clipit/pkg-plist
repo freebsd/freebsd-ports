@@ -1,5 +1,6 @@
 bin/clipit
 etc/xdg/autostart/clipit-startup.desktop
+man/man1/clipit.1.gz
 share/applications/clipit.desktop
 share/icons/hicolor/scalable/apps/clipit-trayicon.svg
 %%NLS%%share/locale/cs/LC_MESSAGES/clipit.mo
@@ -24,38 +25,5 @@ share/icons/hicolor/scalable/apps/clipit-trayicon.svg
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/da
-%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de
-%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es
-%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/et
-%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr
-%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hu
-%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it
-%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ja
-%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nb
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro
-%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru
-%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv
-%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tr
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
-%%NLS%%@dirrmtry share/locale
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
