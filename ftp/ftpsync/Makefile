@@ -13,19 +13,18 @@ COMMENT=	Synchronizes a local and a remote FTP directory trees
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww
 
+USES=		perl5 tar:bzip2 shebangfix
 NO_BUILD=	yes
-USE_BZIP2=	yes
-USES=		perl5
+
 PLIST_FILES=	bin/${PORTNAME}.pl
+SHEBANG_FILES=	ftpsync.pl
 PORTDOCS=	README
 
-NO_STAGE=	yes
-do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/
+OPTIONS_DEFINE=	DOCS
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
