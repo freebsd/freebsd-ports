@@ -3,7 +3,7 @@
 
 PORTNAME=	matreshka
 PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://forge.ada-ru.org/matreshka/downloads/
 
@@ -12,14 +12,14 @@ COMMENT=	Ada framework for information systems development
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild
+BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
 
 USES=		ada gmake pkgconfig
 HAS_CONFIGURE=	yes
 NO_MTREE=	yes
 
 OPTIONS_DEFINE=	SQLITE3 FIREBIRD PGSQL MYSQL ORACLE AMF
-OPTIONS_DEFAULT=SQLITE3 FIREBIRD PGSQL MYSQL
+OPTIONS_DEFAULT=SQLITE3 PGSQL
 
 AMF_DESC=	Build Ada Modeling Framework
 
