@@ -299,4 +299,12 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/ulpt-cupsd.sh ${STAGEDIR}${PREFIX}/sbin/
 .endif
 
-.include <bsd.port.mk>
+# This is just a band-aid to unbreak print/cups-client at systems with default gcc compiler,
+# should be reworked to build with blocks and libdispatch support (via options).
+#
+.include <bsd.port.pre.mk>
+.if defined(CUPS_CLIENT) && ${OPSYS} == "FreeBSD" && ${OSVERSION} > 1000000
+CFLAGS+=	-fno-blocks
+.endif
+
+.include <bsd.port.post.mk>
