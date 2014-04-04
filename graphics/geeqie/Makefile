@@ -3,6 +3,7 @@
 
 PORTNAME=	geeqie
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -11,13 +12,13 @@ COMMENT=	Lightweight image viewer forked from GQview
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 desktopfileutils
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
 		--htmldir="${DOCSDIR}/html" \
 		--with-htmldir="${DOCSDIR}/html" \
 		--with-readmedir="${DOCSDIR}"
-USES=		gettext gmake pkgconfig
 
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	${CFLAGS}
@@ -31,7 +32,7 @@ OPTIONS_DEFAULT=EXIV2 LCMS
 EXIV2_DESC=	Metadata editing
 LCMS_DESC=	Color adjusting
 LIRC_DESC=	Remote control
-GPS_DESC=	GPS map support (libchamplain) EXPERIMENTAL
+GPS_DESC=	GPS map support via libchamplain (experimental!)
 
 EXIV2_LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 EXIV2_CONFIGURE_ENABLE=	exiv2

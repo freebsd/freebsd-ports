@@ -3,9 +3,9 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.06
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 #MASTER_SITES=	http://colinf.chez.com/pinot/
 #		http://amra.dyndns.org/
 
@@ -45,11 +45,11 @@ CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-USE_XORG=	pixman
 USES=		gettext pkgconfig shebangfix
-USE_SQLITE=	3
-USE_PYTHON=	yes
 USE_OPENSSL=	yes
+USE_PYTHON=	yes
+USE_SQLITE=	3
+USE_XORG=	pixman
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
 SHEBANG_LANG=	bash
 SHEBANG_FILES=	scripts/bash/*.sh

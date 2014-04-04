@@ -3,9 +3,10 @@
 
 PORTNAME=	gexiv2
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://yorba.org/download/${PORTNAME}/${PORTVERSION:R}/
-DISTNAME=	libgexiv2_${PORTVERSION}
+DISTNAME=	lib${PORTNAME}_${PORTVERSION}
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,10 +16,9 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 
-USES=		gmake pkgconfig
-USE_XZ=		yes
+USES=		gmake pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 MAKE_ARGS=	REQUIRED_CFLAGS=""
