@@ -6,21 +6,24 @@ PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
-		${MASTER_SITE_LOCAL}
+		LOCAL
 MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	A replacement for xbiff that handles popup window with mail headers
 
 USE_XORG=	x11
-MAN1=		hbiff.1
 
-NO_STAGE=	yes
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+LDFLAGS+=	-lX11
+
+PLIST_FILES=	bin/hbiff man/man1/hbiff.1.gz
+
 do-build:
-	cd ${WRKSRC} ; cc -I${LOCALBASE}/include hbiff.c -L${LOCALBASE}/lib -lX11
+	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/hbiff.c -o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/a.out ${PREFIX}/bin/hbiff
-	@cd ${WRKSRC} ; ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
