@@ -3,6 +3,7 @@
 
 PORTNAME=	getlive
 DISTVERSION=	3_0_3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://tardisi.com/distfiles/ \
 		http://lawrencechen.net/distfiles/
@@ -18,7 +19,8 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		p5-WWW-Mechanize-GZip>=0:${PORTSDIR}/www/p5-WWW-Mechanize-GZip
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	GetLive.pl
 USE_PERL5=	run
 
 PLIST_FILES=	bin/getlive etc/getlive.conf.sample
