@@ -27,15 +27,15 @@ PF_ENABLE_FILTER_RULES_DESC=	Enable pf generation of filter rules
 
 PF_ENABLE_FILTER_RULES_EXTRA_PATCHES=	${PATCHDIR}/pf_enable_filter_rules.patch
 
-post-patch-script:
+post-patch:
 	@${REINPLACE_CMD} 's|CFLAGS ?= -pipe -Os|CFLAGS ?= -pipe|' \
 		${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/miniupnpd ${STAGEDIR}${PREFIX}/sbin
-	@${INSTALL_DATA} ${WRKDIR}/miniupnpd.conf.sample \
+	${INSTALL_PROGRAM} ${WRKSRC}/miniupnpd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKDIR}/miniupnpd.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/miniupnpd.conf.sample
-	@${INSTALL_MAN} ${WRKSRC}/miniupnpd.8 \
+	${INSTALL_MAN} ${WRKSRC}/miniupnpd.8 \
 		${STAGEDIR}${MAN8PREFIX}/man/man8/miniupnpd.8
 
 .include <bsd.port.mk>
