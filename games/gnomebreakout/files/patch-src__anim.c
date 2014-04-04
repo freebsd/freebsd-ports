@@ -1,5 +1,5 @@
---- src/anim.c.orig	Mon May 10 19:42:51 2004
-+++ src/anim.c	Thu May 20 00:26:00 2004
+--- ./src/anim.c.orig	2004-05-10 12:42:51.000000000 +0200
++++ ./src/anim.c	2014-04-04 17:49:31.971201127 +0200
 @@ -47,6 +47,7 @@
  	Animation newanim;
  	char *fullfilename;

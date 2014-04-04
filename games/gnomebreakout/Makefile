@@ -3,31 +3,47 @@
 
 PORTNAME=	gnomebreakout
 PORTVERSION=	0.5.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games gnome
-MASTER_SITES=	http://www.users.on.net/~mipearson/
+MASTER_SITES=	SF/${PORTNAME:S/eb/e-b/}/${PORTNAME:S/eb/e-b/}/${PORTVERSION}/ \
+		http://www.users.on.net/~mipearson/
 DISTNAME=	gnome-breakout-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	GNOME version of the classic breakout game
 
-DEPRECATED=	Unmaintained since 2000
-EXPIRATION_DATE=	2014-04-11
 USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
+USE_GCC=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lm
 
-NO_STAGE=	yes
+PORTDOCS=	AUTHORS ChangeLog NEWS README
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext:run
+
+.include <bsd.port.options.mk>
+
 post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e \
-		's|games.games|root:games|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|-Werror||g' ${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|@GETTEXT_PACKAGE@|@PACKAGE@|g' ${WRKSRC}/po/Makefile.in.in
+		's|@GETTEXT_PACKAGE@|@PACKAGE@|' ${WRKSRC}/po/Makefile.in.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-DGNOME_DISABLE_DEPRECATED||g ; s|-DGTK_DISABLE_DEPRECATED||g'
+		's|-DGNOME_DISABLE_DEPRECATED||; s|-DGTK_DISABLE_DEPRECATED||; \
+		 s|-DGDK_PIXBUF_DISABLE_DEPRECATED||; s|-DG_DISABLE_DEPRECATED||'
+
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -e 's|po src|src|' \
+		${WRKSRC}/Makefile.in
+.endif
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
