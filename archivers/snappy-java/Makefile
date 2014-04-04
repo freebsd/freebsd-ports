@@ -40,17 +40,14 @@ MAKE_ARGS+=	Default_CXX=${CXX}
 
 PLIST_FILES=	%%JAVAJARDIR%%/snappy-java.jar lib/libsnappyjava.so
 
-post-patch-script:
-	@${REINPLACE_CMD} -e 's|curl.*||g' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|MVN:=mvn|MVN:=mvn -Dmaven.repo.local=${WRKDIR}/repository --offline|g' \
+post-patch:
+	@${REINPLACE_CMD} -e 's|curl.*||g ; \
+		s|MVN:=mvn|MVN:=mvn -Dmaven.repo.local=${WRKDIR}/repository --offline|g' \
 		${WRKSRC}/Makefile
 
-pre-build:
+do-build:
 	@${MKDIR} ${WRKSRC}/target
 	@${CP} ${DISTDIR}/snappy-${PORTVERSION:R}.tar.gz ${WRKSRC}/target/
-
-do-build: pre-build
 	cd ${WRKSRC} && ${SETENV} JAVA_HOME=${JAVA_HOME} \
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/repository --offline test
 
