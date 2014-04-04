@@ -1,0 +1,84 @@
+--- a/bsd-user/main.c
++++ b/bsd-user/main.c
+@@ -58,7 +58,7 @@ unsigned long reserved_va;
+ #endif
+ #endif /* CONFIG_USE_GUEST_BASE */
+ 
+-static const char *interp_prefix = CONFIG_QEMU_INTERP_PREFIX;
++const char *interp_prefix = CONFIG_QEMU_INTERP_PREFIX;
+ const char *qemu_uname_release = CONFIG_UNAME_RELEASE;
+ extern char **environ;
+ enum BSDType bsd_type;
+--- a/bsd-user/qemu.h
++++ b/bsd-user/qemu.h
+@@ -110,6 +110,7 @@ typedef struct TaskState {
+ 
+ void init_task_state(TaskState *ts);
+ void stop_all_tasks(void);
++extern const char *interp_prefix;
+ extern const char *qemu_uname_release;
+ #if defined(CONFIG_USE_GUEST_BASE)
+ extern unsigned long mmap_min_addr;
+--- a/bsd-user/freebsd/os-proc.c
++++ b/bsd-user/freebsd/os-proc.c
+@@ -180,7 +180,7 @@ abi_long freebsd_exec_common(abi_ulong p
+         envc++;
+     }
+ 
+-    qarg0 = argp =  alloca((argc + 5) * sizeof(void *));
++    qarg0 = argp =  alloca((argc + 7) * sizeof(void *));
+     /* save the first agrument for the emulator */
+     *argp++ = (char *)getprogname();
+     qargp = argp;
+@@ -246,6 +246,11 @@ abi_long freebsd_exec_common(abi_ulong p
+             if (get_filename_from_fd(getpid(), (int)path_or_fd, execpath,
+                         sizeof(execpath)) != NULL) {
+                 *qarg1 = execpath;
++#ifndef DONT_INHERIT_INTERP_PREFIX
++                memmove(qarg1 + 2, qarg1, (qargend-qarg1) * sizeof(*qarg1));
++                *qarg1++ = (char *)"-L";
++                *qarg1++ = (char *)interp_prefix;
++#endif
+                 ret = get_errno(execve(qemu_proc_pathname, qargp, envp));
+             } else {
+                 /* Getting the filename path failed. */
+@@ -261,6 +266,13 @@ abi_long freebsd_exec_common(abi_ulong p
+                         sizeof(scriptpath)) != NULL) {
+                 *qargp = execpath;
+                 *qarg1 = scriptpath;
++#ifndef DONT_INHERIT_INTERP_PREFIX
++                memmove(qargp + 2, qargp, (qargend-qargp) * sizeof(*qargp));
++                qargp[0] = (char *)"-L";
++                qargp[1] = (char *)interp_prefix;
++                qarg1 += 2;
++                qargend += 2;
++#endif
+                 if (scriptargs) {
+                     memmove(qarg1 + 1, qarg1, (qargend-qarg1) * sizeof(*qarg1));
+                     *qarg1 = scriptargs;
+@@ -292,6 +304,11 @@ abi_long freebsd_exec_common(abi_ulong p
+             close(fd);
+             /* execve() as a target binary using emulator. */
+             *qarg1 = (char *)p;
++#ifndef DONT_INHERIT_INTERP_PREFIX
++            memmove(qarg1 + 2, qarg1, (qargend-qarg1) * sizeof(*qarg1));
++            *qarg1++ = (char *)"-L";
++            *qarg1++ = (char *)interp_prefix;
++#endif
+             ret = get_errno(execve(qemu_proc_pathname, qargp, envp));
+         } else if (is_target_shell_script(fd, execpath,
+                     sizeof(execpath), &scriptargs) != 0) {
+@@ -299,6 +316,13 @@ abi_long freebsd_exec_common(abi_ulong p
+             /* execve() as a target script using emulator. */
+             *qargp = execpath;
+             *qarg1 = (char *)p;
++#ifndef DONT_INHERIT_INTERP_PREFIX
++            memmove(qargp + 2, qargp, (qargend-qargp) * sizeof(*qargp));
++            qargp[0] = (char *)"-L";
++            qargp[1] = (char *)interp_prefix;
++            qarg1 += 2;
++            qargend += 2;
++#endif
+             if (scriptargs) {
+                 memmove(qarg1 + 1, qarg1, (qargend-qarg1) * sizeof(*qarg1));
+                 *qarg1 = scriptargs;
