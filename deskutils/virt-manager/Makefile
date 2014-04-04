@@ -21,19 +21,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 		gtk-vnc>=0.3.10:${PORTSDIR}/net/gtk-vnc \
 		librsvg2>=2.32.1:${PORTSDIR}/graphics/librsvg2
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 USE_GNOME=	pygnome2
 INSTALLS_ICONS=	yes
@@ -43,9 +35,7 @@ CONFIGURE_ARGS+=	--without-tui
 USES=		gmake
 USE_PYTHON=	yes
 
-MAN1=		virt-manager.1
-
-post-patch-script:
+post-patch:
 	@${REINPLACE_CMD} -e 's|itlocaledir = $$(prefix)/$$(DATADIRNAME)/locale|itlocaledir = $$(prefix)/share/locale|' \
 		${WRKSRC}/po/Makefile.in.in
 
