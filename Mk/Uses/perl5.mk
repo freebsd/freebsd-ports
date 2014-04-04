@@ -93,7 +93,7 @@ SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
-CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
+CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL} ac_cv_path_PERL_PATH=${PERL}
 
 # Define the want perl first if defined
 .if ${USE_PERL5:M5*}
