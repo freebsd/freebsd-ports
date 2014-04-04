@@ -2,7 +2,7 @@
 
 PORTNAME=	cairo-dock
 DISTVERSION=	3.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpadlibrarian.net/137290048/ \
 		http://pazzle.otdux.com.ua/
@@ -20,17 +20,16 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.2.1
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack glib20 gtk20 librsvg2 libxml2
+USE_GNOME=	glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	xrender xtst
-USES=		cmake gettext pkgconfig
+USES=		cmake gettext pathfix pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig"
+CMAKE_ARGS+=	-DROOT_PREFIX:PATH=${STAGEDIR}
 
-MAN1=		cairo-dock.1
 MANCOMPRESSED=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*" | ${XARGS} ${REINPLACE_CMD} -e \
 	    's|/usr/share/pixmaps/|${LOCALBASE}/share/pixmaps/|g; \
