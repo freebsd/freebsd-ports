@@ -1,0 +1,34 @@
+%%OCAML_SITELIBDIR%%/magic/META
+%%OCAML_SITELIBDIR%%/magic/dllmagic_stubs.so
+%%OCAML_SITELIBDIR%%/magic/libmagic_stubs.a
+%%OCAML_SITELIBDIR%%/magic/magic.a
+%%OCAML_SITELIBDIR%%/magic/magic.cma
+%%OCAML_SITELIBDIR%%/magic/magic.cmi
+%%OCAML_SITELIBDIR%%/magic/magic.cmx
+%%OCAML_SITELIBDIR%%/magic/magic.cmxa
+%%OCAML_SITELIBDIR%%/magic/magic.mli
+%%PORTDOCS%%%%DOCSDIR%%/Magic.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index_attributes.html
+%%PORTDOCS%%%%DOCSDIR%%/index_class_types.html
+%%PORTDOCS%%%%DOCSDIR%%/index_classes.html
+%%PORTDOCS%%%%DOCSDIR%%/index_exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/index_methods.html
+%%PORTDOCS%%%%DOCSDIR%%/index_module_types.html
+%%PORTDOCS%%%%DOCSDIR%%/index_modules.html
+%%PORTDOCS%%%%DOCSDIR%%/index_types.html
+%%PORTDOCS%%%%DOCSDIR%%/index_values.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/type_Magic.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file.cmi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file.cmo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file.cmx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file.ml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file.o
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.ml
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%OCAML_SITELIBDIR%%/magic
