@@ -11,28 +11,24 @@ MASTER_SITES=	http://launchpadlibrarian.net/39195019/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ library for exception handling and asset management
 
-LICENSE=	BSD
-
-OPTIONS_DEFINE=	THREADS DOCS
-OPTIONS_DEFAULT=THREADS
+LICENSE=	BSD3CLAUSE
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
+PLIST_FILES=	include/xxl.h lib/libxxl.a lib/libxxl.la lib/libxxl.so \
+		lib/libxxl.so.2
 PORTDOCS=	xxl.html xxl.pdf
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	THREADS DOCS
+OPTIONS_DEFAULT=THREADS
 
-.if !${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=--without-threads
-.endif
+THREADS_CONFIGURE_WITH=	threads
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxxl.so.2
 
 regression-test test: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \

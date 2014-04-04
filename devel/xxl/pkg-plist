@@ -1,5 +1,0 @@
-include/xxl.h
-lib/libxxl.a
-lib/libxxl.la
-lib/libxxl.so
-lib/libxxl.so.2
