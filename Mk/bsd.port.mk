@@ -1136,6 +1136,9 @@ NOTPHONY?=
 .if defined(NO_STAGE)
 IGNORE=	Cross building is only compatible with stagified ports
 .endif
+.if defined(.PARSEDIR)
+IGNORE=	Cross building can only be done when using bmake(1) as make(1)
+.endif
 BUILD_DEPENDS=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
 # Do not define CPP on purpose
 .if !defined(HCC)
@@ -1148,6 +1151,9 @@ NM=		${X_BUILD_FOR}-nm
 STRIP_CMD=	${X_BUILD_FOR}-strip
 MAKE_ENV+=	NM=${NM} STRIPBIN=${X_BUILD_FOR}-strip
 PKG_ENV+=	ABI_FILE=${LOCALBASE}/${X_BUILD_FOR}/usr/lib/crt1.o
+# only bmake support the below
+STRIPBIN=	${STRIP_CMD}
+.export.env STRIPBIN
 .endif
 
 #
