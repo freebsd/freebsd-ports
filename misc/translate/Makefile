@@ -11,16 +11,16 @@ COMMENT=	Translates string using Babelfish
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_BUILD=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+PLIST_FILES=	bin/translate man/man1/translate.1.gz
+SHEBANG_FILES=	translate
 
-MAN1=		translate.1
-PLIST_FILES=	bin/translate
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
