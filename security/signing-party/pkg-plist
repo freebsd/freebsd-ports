@@ -8,7 +8,6 @@ bin/keyanalyze
 bin/keylookup
 bin/pgp-clean
 bin/pgp-fixkey
-bin/pgppubring
 bin/process_keys
 bin/sig2dot
 bin/springgraph
@@ -22,7 +21,6 @@ man/man1/keyanalyze.1.gz
 man/man1/keylookup.1.gz
 man/man1/pgp-clean.1.gz
 man/man1/pgp-fixkey.1.gz
-man/man1/pgppubring.1.gz
 man/man1/process_keys.1.gz
 man/man1/sig2dot.1.gz
 man/man1/springgraph.1.gz
