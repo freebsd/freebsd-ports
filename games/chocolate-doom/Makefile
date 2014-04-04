@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
-post-patch-script:
+post-patch:
 	${REINPLACE_CMD} -e 's|gamesdir = $$(prefix)/games|gamesdir = $$(prefix)/bin|' \
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/src/setup/Makefile.in
 
