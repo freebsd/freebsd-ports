@@ -12,5 +12,4 @@ PLIST=	${.CURDIR}/pkg-plist
 PLIST_FILES=	lib/R/lib/libR.a
 PLIST_DIRSTRY=	lib/R/lib lib/R
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

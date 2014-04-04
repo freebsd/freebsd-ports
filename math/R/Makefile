@@ -71,7 +71,6 @@ OPTIONS_DEFAULT+=	ICU PCRE_PORT THREADS
 .if !defined(LIBR_SLAVEPORT)
 RUN_DEPENDS+=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
-NO_STAGE=	yes
 #now only used to build the R.1 manpage:
 USES+=			perl5
 USE_PERL5=		build
@@ -351,12 +350,12 @@ do-build:
 	${MAKE_ARGS} Makefile Makedeps libR.a)
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/R/lib
-	@${INSTALL_DATA} ${WRKSRC}/src/main/libR.a ${PREFIX}/lib/R/lib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/R/lib
+	@${INSTALL_LIB} ${WRKSRC}/src/main/libR.a ${STAGEDIR}${PREFIX}/lib/R/lib
 
 .else # LIBR_SLAVEPORT
 
-pre-configure-script:
+pre-configure:
 	@${FIND} ${WRKSRC} \( -name '*.orig' -o -name '*.bak' \) -delete
 
 check regression-test test: build
