@@ -1,11 +1,11 @@
---- platform_build/bsd_ant/build.xml.orig
-+++ platform_build/bsd_ant/build.xml
+--- ./platform_build/bsd_ant/build.xml.orig	2014-04-04 18:45:10.411142656 +0200
++++ ./platform_build/bsd_ant/build.xml	2014-04-04 18:51:47.021109774 +0200
 @@ -4,8 +4,8 @@
  	<property name="native" location="../../src/native"/>
  	<property name="libname32" value="liblwjgl.so"/>
  	<property name="libname64" value="liblwjgl64.so"/>
--    <property name="libs32" value="-L/usr/X11R6/lib -L/usr/X11/lib -L/usr/local/lib -lm -lX11 -lXext -lXcursor -lXrandr -pthread -L${java.home}/lib/i386 -ljawt" />
--    <property name="libs64" value="-L/usr/X11R6/lib64 -L/usr/X11/lib64 -L/usr/local/lib -lm -lX11 -lXext -lXcursor -lXrandr -lXxf86vm -pthread -L${java.home}/lib/amd64 -ljawt" />
+-    <property name="libs32" value="-L/usr/local/lib -lm -lX11 -lXext -lXcursor -lXrandr -pthread -L${java.home}/lib/i386 -ljawt" />
+-    <property name="libs64" value="-L/usr/local/lib -lm -lX11 -lXext -lXcursor -lXrandr -lXxf86vm -pthread -L${java.home}/lib/amd64 -ljawt" />
 +    <property name="libs32" value="-LPREFIX/lib -lm -lX11 -lXext -lXcursor -lXrandr -pthread -L${java.home}/lib/i386 -ljawt" />
 +    <property name="libs64" value="-LPREFIX/lib -lm -lX11 -lXext -lXcursor -lXrandr -lXxf86vm -pthread -L${java.home}/lib/amd64 -ljawt" />
      <property name="cflags32" value="-O2 -Wall -c -fPIC -std=c99 -Wunused"/>
