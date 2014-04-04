@@ -3,6 +3,7 @@
 
 PORTNAME=	IO-Socket-SSL
 PORTVERSION=	1.975
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SULLR
@@ -16,7 +17,7 @@ LICENSE=	ARTPERL10
 BUILD_DEPENDS=	p5-Net-SSLeay>=1.21:${PORTSDIR}/security/p5-Net-SSLeay
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
 CONFIGURE_ARGS=	< /dev/null
@@ -27,24 +28,16 @@ INSTALL_TARGET=	pure_install
 
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
+SHEBANG_FILES=	example/ssl_mitm.pl
 
-.if ${PORT_OPTIONS:MIDN}
-RUN_DEPENDS+=	p5-URI>=1.50:${PORTSDIR}/net/p5-URI
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-RUN_DEPENDS+=	p5-IO-Socket-IP>=0.11:${PORTSDIR}/net/p5-IO-Socket-IP \
-		p5-Socket>=1.95:${PORTSDIR}/net/p5-Socket
-.endif
+IDN_BUILD_DEPENDS=	p5-URI>=1.50:${PORTSDIR}/net/p5-URI
+IDN_RUN_DEPENDS=	${IDN_BUILD_DEPENDS}
+IPV6_BUILD_DEPENDS=	p5-IO-Socket-IP>=0.11:${PORTSDIR}/net/p5-IO-Socket-IP \
+			p5-Socket>=1.95:${PORTSDIR}/net/p5-Socket
+IPV6_RUN_DEPENDS=	${IPV6_BUILD_DEPENDS}
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/example/* ${STAGEDIR}${EXAMPLESDIR}/
-.endif
-
-regression-test: build
-	cd ${WRKSRC}/ && ${MAKE} test
 
 .include <bsd.port.mk>
