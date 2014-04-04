@@ -11,13 +11,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Base class for Sys::Info
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 USE_PERL5=	configure
 USES=		perl5
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>
