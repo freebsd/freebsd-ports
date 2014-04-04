@@ -16,8 +16,8 @@ USE_RUBY_FEATURES=	ruby18
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bsdpaste.rb ${PREFIX}/bin/bsdpaste
+	${INSTALL_SCRIPT} ${WRKSRC}/bsdpaste.rb \
+		${STAGEDIR}${PREFIX}/bin/bsdpaste
 
 .include <bsd.port.mk>
