@@ -8,13 +8,13 @@ MASTER_SITES=	SF/opentnl/TNL%20Source/${PORTVERSION}
 DISTNAME=	tnl-${PORTVERSION}-source
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A robust, secure, easy to use cross-platform C++ networking API
+COMMENT=	Robust, secure, easy to use cross-platform C++ networking API
 
+USES=		uidfix
+USE_GCC=	any
 WRKSRC=		${WRKDIR}/tnl/tnl
 USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_ARGS=	-j`${SYSCTL} -n hw.ncpu`
-NO_STAGE=	yes
 # Other arches can be added easily, provided there is hardware to test:
 ONLY_FOR_ARCHS=	i386 amd64
 .if defined(NO_PROFILE) || defined(NOPROFILE)
@@ -29,7 +29,7 @@ PLIST_SUB+=	PROFILE=''
 #
 #EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude tnl/libtomcrypt
 
-pre-su-install:
-	${MKDIR} ${PREFIX}/include/tnl
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/tnl
 
 .include <bsd.port.mk>
