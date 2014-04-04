@@ -20,13 +20,13 @@ lib/dns_balance/util.rb
 %%PORTDOCS%%%%DOCSDIR%%/README.dnsbalance+daemontools
 %%PORTDOCS%%%%DOCSDIR%%/README.dnsbalance+daemontools.eng
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/addr
-%%PORTDOCS%%%%EXAMPLESDIR%%/addr.ring
-%%PORTDOCS%%%%EXAMPLESDIR%%/addr.ring.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/make_namespace.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/makedb.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/makeringdb.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/namespace.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/namespace.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/ringupdate.sh
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addr.ring
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addr.ring.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_namespace.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/makedb.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/makeringdb.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/namespace.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/namespace.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ringupdate.sh
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
