@@ -17,17 +17,11 @@ PLIST_FILES=	bin/pargs \
 		bin/pldd \
 		bin/ptree
 
-NEED_ROOT=	yes
-
-post-patch-script:
-	@${REINPLACE_CMD} -e 's|/usr/local/bin|${STAGEDIR}${PREFIX}/bin|g' \
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local/bin|${STAGEDIR}${PREFIX}/bin|g ; \
+		s|gcc|$${CC}|g ; \
+		s|555|755|g ; \
+		s|-o root -g wheel|${STRIP}|g' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|gcc|$${CC}|g' \
-		${WRKSRC}/Makefile
-
-post-install:
-.for file in pargs pwdx pldd ptree
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
-.endfor
 
 .include <bsd.port.mk>
