@@ -2939,13 +2939,12 @@ bin/openmap
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sgml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/resources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/edu/stanford/ejalbert/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/edu/stanford/ejalbert
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/edu/stanford
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/edu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/wanderer/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/wanderer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/quadtree/class-use
@@ -2953,6 +2952,8 @@ bin/openmap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/propertyEditor/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/propertyEditor
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util/cacheHandler
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/util
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/tools/terrain/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/tools/terrain
@@ -3048,12 +3049,14 @@ bin/openmap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/shape
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/draw
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/amp/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link/amp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/link
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/learn/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/learn/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/learn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/imageTile
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/com/bbn/openmap/layer/etopo/class-use
@@ -3133,6 +3136,5 @@ bin/openmap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/Acme/JPM/Encoders
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/Acme/JPM
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/Acme
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/resources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 @dirrm %%DOCSDIR%%
