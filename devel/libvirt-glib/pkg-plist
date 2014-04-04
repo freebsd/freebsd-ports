@@ -22,6 +22,7 @@ include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-controller.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-cpu-feature.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-cpu.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-device.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-disk-driver.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-disk.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-filesys.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-graphics-desktop.h
@@ -32,6 +33,8 @@ include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-graphics-vnc.
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-graphics.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-input.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-interface-bridge.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-interface-filterref-parameter.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-interface-filterref.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-interface-network.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-interface-user.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-interface.h
@@ -46,9 +49,10 @@ include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard-hos
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard-host.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard-passthrough.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard.h
-include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-snapshot.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-snapshot-disk.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-snapshot.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-sound.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-timer-hpet.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-timer-pit.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-timer-rtc.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-timer.h
@@ -180,6 +184,26 @@ share/gtk-doc/html/Libvirt-gobject/object-tree.html
 share/gtk-doc/html/Libvirt-gobject/right.png
 share/gtk-doc/html/Libvirt-gobject/style.css
 share/gtk-doc/html/Libvirt-gobject/up.png
+share/locale/bo/LC_MESSAGES/libvirt-glib.mo
+share/locale/cs/LC_MESSAGES/libvirt-glib.mo
+share/locale/de/LC_MESSAGES/libvirt-glib.mo
+share/locale/el/LC_MESSAGES/libvirt-glib.mo
+share/locale/es/LC_MESSAGES/libvirt-glib.mo
+share/locale/fr/LC_MESSAGES/libvirt-glib.mo
+share/locale/gl/LC_MESSAGES/libvirt-glib.mo
+share/locale/ja/LC_MESSAGES/libvirt-glib.mo
+share/locale/ka/LC_MESSAGES/libvirt-glib.mo
+share/locale/kn/LC_MESSAGES/libvirt-glib.mo
+share/locale/nl/LC_MESSAGES/libvirt-glib.mo
+share/locale/pl/LC_MESSAGES/libvirt-glib.mo
+share/locale/pt/LC_MESSAGES/libvirt-glib.mo
+share/locale/ru/LC_MESSAGES/libvirt-glib.mo
+share/locale/te/LC_MESSAGES/libvirt-glib.mo
+share/locale/tr/LC_MESSAGES/libvirt-glib.mo
+share/locale/uk/LC_MESSAGES/libvirt-glib.mo
+share/locale/vi/LC_MESSAGES/libvirt-glib.mo
+share/locale/zh_CN/LC_MESSAGES/libvirt-glib.mo
+share/locale/zh_TW/LC_MESSAGES/libvirt-glib.mo
 @dirrmtry include/libvirt-gconfig-1.0/libvirt-gconfig
 @dirrmtry include/libvirt-gconfig-1.0
 @dirrmtry include/libvirt-glib-1.0/libvirt-glib
@@ -187,6 +211,10 @@ share/gtk-doc/html/Libvirt-gobject/up.png
 @dirrmtry include/libvirt-gobject-1.0/libvirt-gobject
 @dirrmtry include/libvirt-gobject-1.0
 @dirrmtry %%LIB32DIR%%/girepository-1.0
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/bo/LC_MESSAGES
+@dirrmtry share/locale/bo
 @dirrmtry share/gtk-doc/html/Libvirt-glib
 @dirrmtry share/gtk-doc/html/Libvirt-gobject
 @dirrmtry share/gtk-doc/html/Libvirt-gconfig
