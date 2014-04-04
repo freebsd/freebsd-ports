@@ -21,13 +21,16 @@ PORTDOCS=	README CHANGES FAQ INSTALL INTERNALS \
 		THANKS TODO INSTALL.notes INSTALL.notes2 \
 		INSTALL.run INSTALL.upgrade
 
+INSTALL_TARGET=	strip install
+
 OPTIONS_DEFINE=	DOCS
 
 # Try to fix parallel builds (-jX); respect CFLAGS
 post-patch:
 	${REINPLACE_CMD} -e 's|sn\.a$$|& lib/libstuff.a| ; \
 		s|snlockf\.o$$|& lib/libstuff.a| ; \
-		s|-g -Wall -pedantic -O|${CFLAGS} -Wall -pedantic|' \
+		s|-g -Wall -pedantic -O|${CFLAGS} -Wall -pedantic| ; \
+		s|strip |${STRIP_CMD} |' \
 			${WRKSRC}/Makefile
 
 pre-install:
