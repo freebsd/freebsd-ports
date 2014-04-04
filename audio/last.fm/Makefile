@@ -21,11 +21,11 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 
 WRKSRC=		${WRKDIR}/last.fm-${PORTVERSION}
 
-USE_BZIP2=	yes
-USES=		dos2unix qmake:norecursive
+USES=		dos2unix qmake:norecursive tar:bzip2
 DOS2UNIX_GLOB=	*.h *.cpp
 USE_QT4=	moc_build rcc_build uic_build \
 		gui network sql xml imageformats_run
+LDFLAGS+=	-lz -L${LOCALBASE}/lib -lX11
 QMAKE_SOURCE_PATH=	${WRKSRC}/LastFM.pro
 USE_LDCONFIG=	yes
 
