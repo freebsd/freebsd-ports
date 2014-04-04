@@ -10,30 +10,28 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Portaudio toolkit bindings for Python
 
+OPTIONS_DEFINE=	DOCS
+
 LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio2
 
 USE_PYTHON=		yes
-NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	PyAudio
+PYDISTUTILS_AUTOPLIST=	yes
 
 WRKSRC=		${WRKDIR}/PyAudio-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/setup.py
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/*.js ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/*.inv ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} _static ${DOCSDIR}/
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} _sources ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.js ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.inv ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} _static ${STAGEDIR}${DOCSDIR}/
+	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} _sources ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
