@@ -9,18 +9,18 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	nbari@dalmp.com
 COMMENT=	Database Abstraction Layer for MySQL using PHP
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_BZIP2=	YES
+USES=		tar:bzip2
 
-DEFAULT_PHP_VER=5
+DEFAULT_VERSIONS=php=5
 
-NO_BUILD=	YES
+NO_BUILD=	yes
 USE_PHP=	pcre mysql mysqli session memcache sqlite3 curl
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/ ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
