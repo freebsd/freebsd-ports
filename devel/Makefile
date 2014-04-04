@@ -4205,6 +4205,7 @@
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-fast-stemmer
+    SUBDIR += rubygem-fast_gettext
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastri
     SUBDIR += rubygem-fastthread
