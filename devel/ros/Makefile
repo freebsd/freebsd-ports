@@ -3,7 +3,7 @@
 
 PORTNAME=	ros
 PORTVERSION=	1.4.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/
 DIST_SUBDIR=	ros
@@ -11,7 +11,7 @@ DIST_SUBDIR=	ros
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - core utilities
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 STACKNAME=	${PORTNAME:S/ros-//}
 
@@ -31,9 +31,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
 		sudo:${PORTSDIR}/security/sudo \
 		wget:${PORTSDIR}/ftp/wget
 USE_PYTHON=	2
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		pkgconfig shebangfix tar:bzip2
+SHEBANG_FILES=	core/mk/make_pydev_project.py
 
 # rosmake does its own threading
 MAKE_JOBS_UNSAFE=	yes
@@ -54,7 +54,6 @@ SUB_LIST=	LOCALBASE=${LOCALBASE} \
 
 PORTDOCS=	AUTHORS README
 
-NO_STAGE=	yes
 post-patch:
 	${GREP} -l -r "^#! /usr/bin/env python" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -E -e "s|^#! /usr/bin/env python$$|#!/usr/bin/env python2|;"
@@ -75,40 +74,41 @@ post-build:
 	${MV} ${WRKSRC}/Makefile.bak ${WRKSRC}/Makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/ros/ros/bin
-	${MKDIR} ${PREFIX}/ros/stacks
+	${MKDIR} ${STAGEDIR}${PREFIX}/ros/ros/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/ros/stacks
 
 .for f in rospack rosstack
 	${LOCALBASE}/bin/chrpath -d ${WRKSRC}/bin/${f}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/ros/ros/bin
-	${LN} -s ${PREFIX}/ros/ros/bin/${f} ${PREFIX}/bin/${f}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/ros/ros/bin
+	(cd ${STAGEDIR}${PREFIX} && ${LN} -s ros/ros/bin/${f} bin/${f})
 .endfor
 .for f in rosbag rosboost-cfg rosclean rosconfig roscore roscreate-pkg \
     roscreate-stack rosdep rosgraph roslaunch roslaunch-deps roslaunch-logs \
     rosmake rosmaster rosmsg rosnode rosparam rosrun rosservice rossrv \
     rostest rostopic rosversion roswtf rxbag rxconsole rxdeps rxgraph \
     rxloggerlevel rxplot
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/ros/ros/bin
-	${LN} -s ${PREFIX}/ros/ros/bin/${f} ${PREFIX}/bin/${f}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/ros/ros/bin
+	(cd ${STAGEDIR}${PREFIX} && ${LN} -s ros/ros/bin/${f} bin/${f})
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/bin/rospack_nosubdirs ${PREFIX}/ros/ros/bin
+	${INSTALL_DATA} ${WRKSRC}/bin/rospack_nosubdirs ${STAGEDIR}${PREFIX}/ros/ros/bin
 
 .for f in CMakeLists.txt Makefile rosdep.yaml stack.xml
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/ros/ros
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/ros/ros
 .endfor
 # delete files explicitly because negation in find (for COPYTREE_SHARE) is bogus
 .for d in config core test tools
 	${FIND} ${WRKSRC}/${d} -name build -type d -or -name \*.bak -type f \
 	    -or -name .svnignore -type f -or -name .cvsignore -type f \
 	    -or -name \*.orig -type f | ${XARGS} ${RM} -rf
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/ros)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${PREFIX}/ros/ros)
 .endfor
 # strip and symlink libraries to PREFIX/lib
 .for f in core/roslib/lib/libroslib.so tools/rospack/lib/librospack.so \
     tools/rospack/lib/librosstack.so
-	${STRIP_CMD} ${PREFIX}/ros/ros/${f}
-	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/ros/${f}
-	${LN} -s ${PREFIX}/ros/ros/${f} ${PREFIX}/lib
+	${CHMOD} 0755 ${STAGEDIR}${PREFIX}/ros/ros/${f}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/ros/ros/${f}
+	${LOCALBASE}/bin/chrpath -d ${STAGEDIR}${PREFIX}/ros/ros/${f}
+	(cd ${STAGEDIR}${PREFIX} && ${LN} -s ros/ros/${f} lib)
 .endfor
 # make scripts executable
 .for f in core/mk/make_pydev_project.py \
@@ -134,17 +134,14 @@ do-install:
     tools/rosunit/scripts/pycoverage_to_html.py \
     tools/rosunit/scripts/summarize_results.py \
     tools/rosunit/scripts/test_results_dir.py
-	${CHMOD} 0555 ${PREFIX}/ros/ros/${f}
+	${CHMOD} 0555 ${STAGEDIR}${PREFIX}/ros/ros/${f}
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 post-install:
-	${PYTHON_CMD} -O -mcompileall ${PREFIX}/ros/ros/
-	${PYTHON_CMD} -mcompileall ${PREFIX}/ros/ros/
-	@${CAT} ${PKGMESSAGE}
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O -mcompileall ros/ros/)
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -mcompileall ros/ros/)
 
 .include <bsd.port.mk>
