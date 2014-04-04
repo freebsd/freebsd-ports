@@ -3,7 +3,7 @@
 @@ -1226,6 +1226,18 @@
          return ( pop_msg ( p, POP_FAILURE, HERE, ERRMSG_PW, p->user ) );
      }
- 
+
 +#    ifdef FREEBSD
 +
 +    /*
@@ -18,4 +18,4 @@
 +
      return ( POP_SUCCESS );
  }
- 
+

@@ -3,4 +3,4 @@ Qpopper is the most widely-used server for the POP3 protocol
 
 Don't forget to edit /etc/inetd.conf to enable the server after installation.
 
-WWW:	http://www.eudora.com/products/unsupported/qpopper/
+WWW: http://www.eudora.com/products/unsupported/qpopper/

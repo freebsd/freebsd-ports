@@ -1,23 +1,21 @@
 #!/bin/sh
 
-# $FreeBSD: /tmp/pcvs/ports/mail/qpopper/files/qpopper.in,v 1.1 2012-02-14 21:35:43 dougb Exp $
-#
 # PROVIDE: qpopper
-# REQUIRE: SERVERS
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
-#
-# Add the following lines to /etc/rc.conf to enable qpopper:
-# qpopper_enable="YES"
+
+# qpopper_enable (bool):	Set to NO by default.
+#				Set it to YES to enable qpopper.
+# qpopper_flags (str):		Set to "-f %%PREFIX%%/etc/qpopper.config" by default.
 
 . /etc/rc.subr
 
 name=qpopper
 rcvar=qpopper_enable
 
-load_rc_config $name
+load_rc_config ${name}
+: ${qpopper_enable:="NO"}
+: ${qpopper_flags:="110 -S -f %%PREFIX%%/etc/${name}.config"}
 
-qpopper_enable=${qpopper_enable:-"NO"}
-
-command=%%PREFIX%%/libexec/qpopper
-
+command="%%PREFIX%%/libexec/${name}"
 run_rc_command "$1"

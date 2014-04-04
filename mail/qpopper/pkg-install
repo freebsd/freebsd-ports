@@ -4,15 +4,15 @@
 # based on original from op port, written by Cyrille Lefevre
 # <clefevre@citeweb.net>
 
-[ $# != 2 ] && exit 1
+[ ! $# = 2 -a ! $# = 4 ] && exit 1
 PKGNAME=$1
 ACTION=$2
 
 CONF_DIR=${PKG_PREFIX}/etc/qpopper
 
 CONF_FILE=popusers
-CONF_OWN=pop
-CONF_GRP=daemon
+CONF_OWN=$3
+CONF_GRP=$4
 CONF_MODE=444
 
 SAMP_SUFX=.sample

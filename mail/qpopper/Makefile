@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	bc979@lafn.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
+USE_GCC=	any # -freg-struct-return only in GCC and clang-head
 USE_AUTOTOOLS=	autoconf
-USE_OPENSSL=	yes
 CONFIGURE_ENV=	LIBS="-lcrypt -lmd -lutil -L${LOCALBASE}/lib" \
 		OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"
 CONFIGURE_ARGS=	--enable-nonauth-file=${POPUSERS_FILE} \
@@ -21,28 +21,26 @@ CONFIGURE_ARGS=	--enable-nonauth-file=${POPUSERS_FILE} \
 		--enable-keep-temp-drop
 
 PLIST_SUB=	EPOPPASSD=${EPOPPASSD} \
-		POP_USER=${POP_USER} \
-		POP_GROUP=${POP_GROUP} \
+		USERS=${USERS} \
+		GROUPS=${GROUPS} \
 		POP_MODE_DIR=${POP_MODE_DIR} \
 		POP_MODE_CONF=${POP_MODE_CONF} \
 		QPOPAUTH=${QPOPAUTH}
 
-MAN8=		qpopper.8
-
 SUB_FILES=	pkg-message
 
 # internal configuration
-POP_USER=	pop
-POP_GROUP=	daemon
+USERS?=		pop
+GROUPS?=	daemon
 POP_MODE_DIR=	0711
 POP_MODE_CONF=	0444
 POPUSERS_FILE=	${ETCDIR}/popusers
 SAMPLE_EXT=	.sample
-#
+
 PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS_DEFINE=	APOP_ONLY APOP DOCUMENTATION DRAC FULL_POPD_DEBUG PAM \
-	POPPASSD QPOPAUTH_SETUID SAMPLE_POPUSERS SHY_ENABLED \
+	POPPASSD SAMPLE_POPUSERS SHY_ENABLED \
 	SSL STANDALONE_MODE U_OPTION
 
 APOP_ONLY_DESC=	build with APOP authentication only
@@ -52,24 +50,21 @@ DRAC_DESC=	build with Dynamic Relay Authorization
 FULL_POPD_DEBUG_DESC=	build with more verbose debugging
 PAM_DESC=	build with PAM authentication
 POPPASSD_DESC=	build the poppassd daemon
-QPOPAUTH_SETUID_DESC=	install qpopauth setuid to pop user
 SAMPLE_POPUSERS_DESC=	build a default reject file
 SHY_ENABLED_DESC=	hide qpopper version in POP3 banner
 SSL_DESC=	build with SSL/TLS support
 STANDALONE_MODE_DESC=	build qpopper to be run without inetd
 U_OPTION_DESC=	include support for user .qpopper-options
 
-OPTIONS_DEFAULT=	APOP QPOPAUTH_SETUID SSL U_OPTION
+OPTIONS_DEFAULT=	APOP SSL U_OPTION
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MAPOP)
 QPOPAUTH=	"@comment "
 .else
 CONFIGURE_ARGS+=	--enable-apop=${ETCDIR}/pop.auth \
-			--with-apopuid=pop
-MAN8+=		qpopauth.8
+			--with-popuid=${USERS}
 QPOPAUTH=	""
 # If WITH_APOP_ONLY variable present in the environment, qpopper builds
 # with APOP authentication only.
@@ -81,7 +76,7 @@ OS_DEFS+=	-DAPOP_ONLY
 # Do not install documentation since it is in pdf format and normally
 # not used unless user wants it.
 .if empty(PORT_OPTIONS:MDOCUMENTATION)
-NOPORTDOCS=	yes
+OPTIONS_UNSET+=	DOCS
 .endif
 
 # If WITH_DRAC variable present in the environment, qpopper builds
@@ -106,8 +101,8 @@ CONFIGURE_ARGS+=	--with-pam=pop3
 # with poppassd support.
 .if ${PORT_OPTIONS:MPOPPASSD}
 CONFIGURE_ARGS+=	--enable-poppassd
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-password::poppassd.c \
-		${FILESDIR}/extra-patch-password::auth_user.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-password__poppassd.c \
+		${FILESDIR}/extra-patch-password__auth_user.c
 EPOPPASSD=	""
 .else
 EPOPPASSD=	"@comment "
@@ -128,6 +123,7 @@ USE_RC_SUBR=	 ${PORTNAME}
 
 # The default is to build without SSL/TLS support.
 .if ${PORT_OPTIONS:MSSL}
+USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
@@ -139,11 +135,11 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\$${sbindir}/sendmail|${LOCALBASE}/sbin/sendmail|g' \
 		${WRKSRC}/configure.in
-.if defined(WITH_POPPASSD)
+.if ${PORT_OPTIONS:MPOPPASSD}
 	@${REINPLACE_CMD} -e 's|/usr/bin/smbpasswd|${LOCALBASE}/bin/smbpasswd|' \
 		${WRKSRC}/password/poppassd.c
 .endif
-.if defined(WITHOUT_U_OPTION)
+.if empty(PORT_OPTIONS:MU_OPTION)
 	@${REINPLACE_CMD} -E -e 's|(getopt \(.+)u|\1|' \
 		${WRKSRC}/popper/main.c
 .endif
@@ -152,49 +148,41 @@ pre-configure:
 	@(cd ${WRKSRC}; ${CHMOD} u+w configure*)
 
 do-install:
-.if !defined(WITHOUT_APOP)
-	@${INSTALL_PROGRAM} ${WRKSRC}/popper/popauth ${PREFIX}/bin/qpopauth
-# If WITHOUT_QPOPAUTH_SETUID variable present in the environment,
-# qpopper does not install qpopauth setuid to pop user so that
-# anyone can access the pop.auth database.
-.if !defined(WITHOUT_QPOPAUTH_SETUID)
-	@${CHOWN} pop ${PREFIX}/bin/qpopauth
-	@${CHMOD} u+s ${PREFIX}/bin/qpopauth
+.if ${PORT_OPTIONS:MAPOP}
+	@${INSTALL_PROGRAM} ${WRKSRC}/popper/popauth ${STAGEDIR}${PREFIX}/bin/qpopauth
+	@${INSTALL_MAN} ${WRKSRC}/man/popauth.8 ${STAGEDIR}${PREFIX}/man/man8/qpopauth.8
+	@${LN} -sf ${PREFIX}/bin/qpopauth ${STAGEDIR}${PREFIX}/bin/qapopauth
 .endif
-	@${INSTALL_MAN} ${WRKSRC}/man/popauth.8 ${MANPREFIX}/man/man8/qpopauth.8
-	@${LN} -sf ${PREFIX}/bin/qpopauth ${PREFIX}/bin/qapopauth
+	@${INSTALL_PROGRAM} ${WRKSRC}/popper/popper ${STAGEDIR}${PREFIX}/libexec/qpopper
+	@${INSTALL_MAN} ${WRKSRC}/man/popper.8 ${STAGEDIR}${PREFIX}/man/man8/qpopper.8
+.if ${PORT_OPTIONS:MPOPPASSD}
+	@${INSTALL_PROGRAM} ${WRKSRC}/password/poppassd ${STAGEDIR}${PREFIX}/libexec/qpoppassd
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/popper/popper ${PREFIX}/libexec/qpopper
-	@${INSTALL_MAN} ${WRKSRC}/man/popper.8 ${MANPREFIX}/man/man8/qpopper.8
-.if defined(WITH_POPPASSD)
-	@${INSTALL_PROGRAM} ${WRKSRC}/password/poppassd ${PREFIX}/libexec/qpoppassd
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/GUIDE.pdf ${STAGEDIR}${DOCSDIR}
 .endif
-	@${INSTALL} -d -o ${POP_USER} -g ${POP_GROUP} -m ${POP_MODE_DIR} \
-		${ETCDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/GUIDE.pdf ${DOCSDIR}
-.endif
-
-post-install: install-conf-file
-	@${CAT} ${PKGMESSAGE}
 
 # based on original from op port, written by Cyrille Lefevre
 # <clefevre@citeweb.net>.
-install-conf-file:
+post-install:
 	@if [ ! -f ${CONF_DIR}/${CONF_FILE}${SAMP_SUFX} ]; then \
-		if [ -f /etc/ftpusers ] && [ -n "${WITH_SAMPLE_POPUSERS}" ]; then \
-			${INSTALL} -c -o ${POP_USER} -g ${POP_GROUP} -m ${POP_MODE_CONF} \
-				/etc/ftpusers ${POPUSERS_FILE}${SAMPLE_EXT} ; \
+		${MKDIR} ${STAGEDIR}${ETCDIR} ; \
+		if [ -f /etc/ftpusers ] && [ -n "${PORT_OPTIONS:MSAMPLE_POPUSERS}" ]; then \
+			${INSTALL} -c /etc/ftpusers ${STAGEDIR}${POPUSERS_FILE}${SAMPLE_EXT} ; \
 		else \
-			${CP} /dev/null ${POPUSERS_FILE}${SAMPLE_EXT} ; \
-			${CHOWN} ${POP_USER}:${POP_GROUP} ${POPUSERS_FILE}${SAMPLE_EXT} ; \
-			${CHMOD} ${POP_MODE_CONF} ${POPUSERS_FILE}${SAMPLE_EXT} ; \
+			${CP} /dev/null ${STAGEDIR}${POPUSERS_FILE}${SAMPLE_EXT} ; \
 		fi ; \
 	fi
-	@${INSTALL} -c -m 0640 \
-		${WRKSRC}/samples/qpopper.config ${PREFIX}/etc/qpopper.config${SAMPLE_EXT}
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.if ${PORT_OPTIONS:MPOPPASSD}
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"==============================================================================="
+	@${ECHO_MSG}	"It adds for myself"
+	@${ECHO_MSG}	"/etc/devfs.conf:"
+	@${ECHO_MSG}	"link	/dev/pts/0 pty0"
+	@${ECHO_MSG}	"==============================================================================="
+	@${ECHO_MSG}	""
+.endif
 
 .include <bsd.port.post.mk>
