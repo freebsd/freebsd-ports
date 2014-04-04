@@ -355,7 +355,7 @@ do-install:
 
 .else # LIBR_SLAVEPORT
 
-pre-configure:
+pre-configure-script:
 	@${FIND} ${WRKSRC} \( -name '*.orig' -o -name '*.bak' \) -delete
 
 check regression-test test: build
