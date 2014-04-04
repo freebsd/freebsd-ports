@@ -10,17 +10,16 @@ MASTER_SITES=	http://www.luga.de/pytone/download/ \
 DISTNAME=	PyTone-${PORTVERSION}
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A music jukebox written in Python with a curses GUI
+COMMENT=	Music jukebox written in Python with a curses GUI
 
 LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
 USES=		ncurses
-NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	PyTone
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	MAD VORBIS PYAO XMMS MPG123 MPG321
 OPTIONS_DEFAULT=	MAD VORBIS
@@ -28,34 +27,16 @@ PYAO_DESC=	${AO_DESC}
 XMMS_DESC=	XMMS player engine
 MPG123_DESC=	mpg123 player engine
 MPG321_DESC=	mpg321 player engine
-
-.include <bsd.port.options.mk>
+PLIST_FILES=	etc/pytonerc.sample
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-.if ${PORT_OPTIONS:MMAD}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
-.endif
-
-.if ${PORT_OPTIONS:MPYAO}
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/aomodule.so:${PORTSDIR}/audio/py-ao
-.endif
-
-.if ${PORT_OPTIONS:MXMMS}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmms/xmmscontrol.so:${PORTSDIR}/audio/py-xmms
-.endif
-
-.if ${PORT_OPTIONS:MMPG123}
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123
-.endif
-
-.if ${PORT_OPTIONS:MMPG321}
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpg321:${PORTSDIR}/audio/mpg321
-.endif
+MAD_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
+VORBIS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
+PYAO_BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/aomodule.so:${PORTSDIR}/audio/py-ao
+XMMS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmms/xmmscontrol.so:${PORTSDIR}/audio/py-xmms
+MPG123_RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123
+MPG321_RUN_DEPENDS+=	${LOCALBASE}/bin/mpg321:${PORTSDIR}/audio/mpg321
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|src/|${PYTHON_SITELIBDIR}/pytone/|g' \
@@ -64,7 +45,6 @@ post-patch:
 		${WRKSRC}/pytonectl
 
 post-install:
-	@${CP} ${WRKSRC}/conf/pytonerc ${PREFIX}/etc/pytonerc.sample
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/conf/pytonerc ${STAGEDIR}${PREFIX}/etc/pytonerc.sample
 
 .include <bsd.port.mk>
