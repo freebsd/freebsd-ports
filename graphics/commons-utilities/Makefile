@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://devio.us/~dereckson/software/commons-utilities/
 
 MAINTAINER=	dereckson@gmail.com
-COMMENT=	Wikimedia Commons (MediaWiki) utilities for bulk uploading
+COMMENT=	Wikimedia Commons (MediaWiki) utilities for bulk image uploading
 
 LICENSE=	GPLv3
 
@@ -27,6 +27,8 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/commons-csv-creator bin/commons-upload
 PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/commons-csv-creator ${STAGEDIR}${PREFIX}/bin
