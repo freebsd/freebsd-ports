@@ -2,6 +2,7 @@
 
 PORTNAME=	clipit
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/gtkclipit/Version%201
 
@@ -15,26 +16,14 @@ USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	NLS XDOTOOL
 XDOTOOL_DESC=	Automatic paste functionality
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+NLS_USES=		gettext
+NLS_CONFIGURE_ON=	localedir=${LOCALBASE}/share/locale
+NLS_CONFIGURE_OFF=	--disable-nls
+XDOTOOL_RUN_DEPENDS+=	xdotool:${PORTSDIR}/x11/xdotool
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-CONFIGURE_ARGS+=	--localedir=${LOCALBASE}/share/locale
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MXDOTOOL}
-RUN_DEPENDS+=	xdotool:${PORTSDIR}/x11/xdotool
-.endif
-
-MAN1=	clipit.1
-
-post-patch-script:
+post-patch:
 	@${REINPLACE_CMD} -e 's|^itlocaledir =.*|itlocaledir = $$(datarootdir)/locale|' \
 		${WRKSRC}/po/Makefile.in.in
 
