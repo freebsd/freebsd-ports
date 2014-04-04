@@ -49,11 +49,18 @@ lib/libidnkitres.a
 lib/libidnkitres.la
 lib/libidnkitres.so
 lib/libidnkitres.so.1
+man/man1/idnconv.1.gz
+man/man1/runidn.1.gz
+man/man3/libidnkit.3.gz
+man/man3/libidnkitlite.3.gz
+man/man5/idn.conf.5.gz
+man/man5/idnalias.conf.5.gz
+man/man5/idnrc.5.gz
 share/idnkit/jp.map
 @dirrm share/idnkit
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ja/README.ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
