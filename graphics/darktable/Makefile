@@ -3,7 +3,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	1.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -22,8 +22,7 @@ LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE extensions
 
-USES=		cmake:outsource pkgconfig
-USE_XZ=		yes
+USES=		cmake:outsource pkgconfig tar:xz
 USE_GNOME=	librsvg2
 USE_SQLITE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -40,7 +39,7 @@ RAWSPEED_DESC=	Compile with rawspeed backend
 SLIDESHOW_DESC=	Build OpenGL/SDL slideshow viewer
 GCC_DESC=	Build with modern GCC (better OpenMP support)
 
-OPTIONS_DEFAULT=	GPHOTO RAWSPEED GCC
+OPTIONS_DEFAULT=	GPHOTO RAWSPEED #GCC
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>

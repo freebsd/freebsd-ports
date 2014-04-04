@@ -3,7 +3,7 @@
 
 PORTNAME=	exiv2
 PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	https://launchpadlibrarian.net/83595798/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,8 @@ COMMENT=	Python bindings for exiv2
 LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2\
 		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_PYTHON=	2
-USE_BZIP2=	yes
 USE_SCONS=	yes
 USE_LDCONFIG=	yes
 SCONS_ENV+=	PREFIX=${PREFIX} CPPPATH=${PREFIX}/include LIBPATH=${PREFIX}/lib

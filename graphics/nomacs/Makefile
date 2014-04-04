@@ -2,20 +2,20 @@
 
 PORTNAME=	nomacs
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/nomacs/nomacs-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	bsd@tuxproject.de
-COMMENT=	Small, fast and free image viewer
+COMMENT=	Small, fast, and free image viewer
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 		libsysinfo.so:${PORTSDIR}/devel/libsysinfo
 
-USE_BZIP2=	yes
-USES=		cmake desktop-file-utils dos2unix pkgconfig
+USES=		cmake desktop-file-utils dos2unix pkgconfig tar:bzip2
 USE_QT4=	gui network linguist_build moc_build \
 		qmake_build rcc_build uic_build
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)

@@ -1,9 +1,9 @@
-# Created by: gahr
+# Created by: Pietro Cerutti <gahr@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gegl
 PORTVERSION=	0.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.2/
 
@@ -21,14 +21,13 @@ ENSCRIPT_DESC=	Enscript support
 SPIRO_DESC=	Spiro support
 #UMFPACK_DESC=	UMFpack support
 
+USES=		gettext gmake pathfix pkgconfig shebangfix tar:bzip2
 USE_GNOME=	glib20 intltool
-USES=		gettext pathfix pkgconfig shebangfix
-USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no
-CONFIGURE_ARGS+=--without-vala --disable-docs
+CONFIGURE_ENV=	ac_cv_header_execinfo_h=no
+CONFIGURE_ARGS=	--without-vala --disable-docs
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 

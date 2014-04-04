@@ -1,13 +1,14 @@
-# Created by: cartola (Carlos E. G. Carvalho)
+# Created by: Carlos Eduardo G. Carvalho <cartola@openit.com.br>
 # $FreeBSD$
 
 PORTNAME=	hugin
 PORTVERSION=	2013.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	vd@FreeBSD.org
-COMMENT=	A GUI for Panorama Tools, to stitch panoramic images
+COMMENT=	GUI for Panorama Tools, to stitch panoramic images
 
 LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libImath.so:${PORTSDIR}/graphics/ilmbase \

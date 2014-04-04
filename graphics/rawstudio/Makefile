@@ -3,7 +3,7 @@
 
 PORTNAME=	rawstudio
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
@@ -23,13 +23,14 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 libxml2 gconf2
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, libssl,,' ${WRKSRC}/configure
