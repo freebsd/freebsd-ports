@@ -1,5 +1,4 @@
-GNOME Breakout is a clone of the classic arcade game Breakout,
-written for GNOME.  Still in development, but very playable, and
-very addictive. 
+Breakout (Arkanoid) clone for GNOME.
+Supports level customisation, powerups, and different block types.
 
-WWW: http://www.users.on.net/mipearson/
+WWW: http://sourceforge.net/projects/gnome-breakout/
