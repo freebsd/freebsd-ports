@@ -16,8 +16,6 @@ OPTIONS_DEFINE=	ZSH
 
 CONFLICTS_INSTALL=	poudriere-devel
 
-USES=		uidfix
-
 PLIST_FILES=	etc/poudriere.conf.sample \
 		bin/poudriere \
 		man/man8/poudriere.8.gz \
@@ -61,6 +59,7 @@ PLIST_DIRSTRY+=	share/zsh/
 .endif
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/poudriere/*
 .if ${PORT_OPTIONS:MZSH}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 	@${INSTALL_DATA} ${WRKSRC}/zsh-completions \
