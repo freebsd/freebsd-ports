@@ -4,12 +4,12 @@
 
 PORTNAME=	gamin
 PORTVERSION=	0.1.10
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES?=	devel
 MASTER_SITES=	http://people.gnome.org/~veillard/gamin/sources/
 
-MAINTAINER?=	gnome@FreeBSD.org
-COMMENT?=	A file and directory monitoring system
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	File and directory monitoring system
 
 USES+=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
@@ -54,6 +54,7 @@ CPPFLAGS+=	-DRUN_AS_EUID=1
 
 post-patch:
 	@${REINPLACE_CMD} "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/server/gam_conf.c
+	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/lib/Makefile.in
 
 .if !defined(GAMIN_SLAVE)
 regression-test: build
