@@ -17,11 +17,9 @@ XAE_DESC=	Build X11 version 'xae'
 
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		aee.1
-PLIST_FILES=	bin/aee bin/rae %%DATADIR%%/help.ae
+PLIST_FILES=	bin/aee bin/rae man/man1/aee.1.gz %%DATADIR%%/help.ae
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXAE}
@@ -46,14 +44,14 @@ post-patch:
 .endfor
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} aee ${PREFIX}/bin)
-	(cd ${PREFIX}/bin && ${LN} aee rae)
-	(cd ${WRKSRC} && ${INSTALL_MAN} aee.1 ${MANPREFIX}/man/man1)
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} help.ae ${DATADIR})
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} aee ${STAGEDIR}${PREFIX}/bin)
+	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} aee rae)
+	(cd ${WRKSRC} && ${INSTALL_MAN} aee.1 ${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} help.ae ${STAGEDIR}${DATADIR})
 .if ${PORT_OPTIONS:MXAE}
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xae ${PREFIX}/bin)
-	(cd ${PREFIX}/bin && ${LN} xae rxae)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xae ${STAGEDIR}${PREFIX}/bin)
+	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} xae rxae)
 .endif
 
 .include <bsd.port.mk>
