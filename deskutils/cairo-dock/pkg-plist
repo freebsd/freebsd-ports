@@ -73,6 +73,7 @@ lib/libgldi.so.3.2.1
 lib/cairo-dock/libcd-Help.so
 libdata/pkgconfig/cairo-dock.pc
 libdata/pkgconfig/gldi.pc
+man/man1/cairo-dock.1.gz
 share/applications/cairo-dock-cairo.desktop
 share/applications/cairo-dock.desktop
 %%DATADIR%%/ChangeLog.txt
@@ -280,6 +281,8 @@ share/locale/zh_TW/LC_MESSAGES/cairo-dock.mo
 share/cairo-dock/plug-ins/Help/Help.conf
 share/cairo-dock/plug-ins/Help/icon.svg
 share/pixmaps/cairo-dock.svg
+@dirrm share/locale/sr@latin/LC_MESSAGES
+@dirrm share/locale/sr@latin
 @dirrm share/locale/oc/LC_MESSAGES
 @dirrm share/locale/oc
 @dirrm share/locale/fo/LC_MESSAGES
