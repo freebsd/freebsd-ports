@@ -25,22 +25,21 @@ OPTIONS_MULTI=	MT1
 OPTIONS_MULTI_MT1=	CLIENT SERVER
 OPTIONS_DEFAULT=	CLIENT SERVER
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 CLIENT_DESC=	Install knock client
 SERVER_DESC=	Install knockd server
 
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MSERVER}
-MAN1=		knockd.1
 USE_RC_SUBR=	knockd
-PLIST_FILES+=	bin/knockd
-PLIST_FILES+=	etc/knockd.conf.sample
+PLIST_FILES+=	bin/knockd \
+		etc/knockd.conf.sample \
+		man/man1/knockd.1.gz
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
-MAN1+=		knock.1
-PLIST_FILES+=	bin/knock
+PLIST_FILES+=	bin/knock \
+		man/man1/knock.1.gz
 .endif
 
 post-patch:
@@ -57,21 +56,13 @@ post-patch:
 
 do-install:
 .if ${PORT_OPTIONS:MSERVER}
-	${INSTALL_PROGRAM} ${WRKSRC}/knockd ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/knockd.conf ${PREFIX}/etc/knockd.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/knockd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/knockd.conf ${STAGEDIR}${PREFIX}/etc/knockd.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/doc/knockd.1.in ${STAGEDIR}${MAN1PREFIX}/man/man1/knockd.1
 .endif
-
 .if ${PORT_OPTIONS:MCLIENT}
-	${INSTALL_PROGRAM} ${WRKSRC}/knock ${PREFIX}/bin
-.endif
-
-post-install-script:
-.if ${PORT_OPTIONS:MSERVER}
-	${INSTALL_MAN} ${WRKSRC}/doc/knockd.1.in ${MAN1PREFIX}/man/man1/knockd.1
-.endif
-
-.if ${PORT_OPTIONS:MCLIENT}
-	${INSTALL_MAN} ${WRKSRC}/doc/knock.1.in ${MAN1PREFIX}/man/man1/knock.1
+	${INSTALL_PROGRAM} ${WRKSRC}/knock ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/knock.1.in ${STAGEDIR}${MAN1PREFIX}/man/man1/knock.1
 .endif
 
 .include <bsd.port.mk>
