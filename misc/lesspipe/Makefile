@@ -32,20 +32,13 @@ NO_BUILD=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--default --prefix=${PREFIX}
 
-PLIST_FILES=	bin/lesspipe.sh \
-		bin/code2color
+PLIST_FILES=	bin/lesspipe.sh bin/code2color man/man1/lesspipe.1.gz
 
 SUB_FILES=	pkg-message
 
-MAN1=		lesspipe.1
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/code2color  ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/lesspipe.sh ${PREFIX}/bin
-	${INSTALL_MAN}    ${WRKSRC}/lesspipe.1  ${PREFIX}/man/man1
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/code2color  ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/lesspipe.sh ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN}    ${WRKSRC}/lesspipe.1  ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
