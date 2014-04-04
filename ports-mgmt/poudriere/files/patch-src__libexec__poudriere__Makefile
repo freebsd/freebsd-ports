@@ -1,0 +1,20 @@
+--- ./src/libexec/poudriere/Makefile.orig	2014-03-17 16:01:47.000000000 +0100
++++ ./src/libexec/poudriere/Makefile	2014-04-05 00:11:53.061289147 +0200
+@@ -16,13 +16,13 @@
+ 
+ install: dirwatch make_index dirempty cpdup/cpdup
+ 	mkdir -p ${DESTDIR}${PREFIX}/libexec/poudriere
+-	install -m 755 -o root -g wheel dirwatch \
++	install -m 755 dirwatch \
+ 	    ${DESTDIR}${PREFIX}/libexec/poudriere
+-	install -m 755 -o root -g wheel make_index \
++	install -m 755 make_index \
+ 	    ${DESTDIR}${PREFIX}/libexec/poudriere
+-	install -m 755 -o root -g wheel dirempty \
++	install -m 755 dirempty \
+ 	    ${DESTDIR}${PREFIX}/libexec/poudriere
+-	install -m 755 -o root -g wheel cpdup/cpdup \
++	install -m 755 cpdup/cpdup \
+ 	    ${DESTDIR}${PREFIX}/libexec/poudriere
+ 
+ clean:

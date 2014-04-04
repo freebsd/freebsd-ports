@@ -1,0 +1,26 @@
+--- ./Makefile.orig	2014-03-17 16:01:47.000000000 +0100
++++ ./Makefile	2014-04-05 00:10:41.888129490 +0200
+@@ -5,18 +5,18 @@
+ 	${MAKE} -C src/libexec/poudriere
+ 
+ install:
+-	install -m 755 -o root -g wheel src/bin/poudriere.sh \
++	install -m 755 src/bin/poudriere.sh \
+ 	    ${DESTDIR}${PREFIX}/bin/poudriere
+ 	mkdir -p ${DESTDIR}${PREFIX}/share/poudriere
+ 	mkdir -p ${DESTDIR}${PREFIX}/share/poudriere/awk
+ 	mkdir -p ${DESTDIR}${PREFIX}/share/poudriere/html
+-	install -m 755 -o root -g wheel src/share/poudriere/*.sh \
++	install -m 755 src/share/poudriere/*.sh \
+ 	    ${DESTDIR}${PREFIX}/share/poudriere/
+-	install -m 644 -o root -g wheel src/share/poudriere/awk/* \
++	install -m 644 src/share/poudriere/awk/* \
+ 	    ${DESTDIR}${PREFIX}/share/poudriere/awk/
+-	install -m 644 -o root -g wheel src/share/poudriere/html/* \
++	install -m 644 src/share/poudriere/html/* \
+ 	    ${DESTDIR}${PREFIX}/share/poudriere/html/
+-	install -m 644 -o root -g wheel conf/poudriere.conf.sample \
++	install -m 644 conf/poudriere.conf.sample \
+ 	    ${DESTDIR}${PREFIX}/etc/
+ 	if [ -f poudriere.8.gz ]; then rm -f poudriere.8.gz; fi
+ 	gzip -k -9 poudriere.8
