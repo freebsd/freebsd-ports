@@ -17,15 +17,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
 
 USES=	pkgconfig shebangfix
-SHEBANG_LANG=	python
 SHEBANG_FILES=	generator.py sanitytest.py setup.py
 
-USE_PYTHON_BUILD=	yes
-USE_PYTHON_RUN=		yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-post-patch-script:
+post-patch:
 	@${REINPLACE_CMD} -e 's|"python"|"${PYTHON_CMD}"|g' \
 		${WRKSRC}/setup.py
 
