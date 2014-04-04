@@ -12,12 +12,11 @@ COMMENT=	The uTorrent Transport Protocol library
 
 LICENSE=	MIT
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix uidfix
 MAKEFILE=	${FILESDIR}/BSDmakefile
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 
-pre-su-install:
-	${MKDIR} ${PREFIX}/include/libutp
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libutp
 
 .include <bsd.port.mk>
