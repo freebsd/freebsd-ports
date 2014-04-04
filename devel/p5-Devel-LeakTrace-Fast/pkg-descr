@@ -1,5 +1,0 @@
-Devel::LeakTrace::Fast is a rewrite of Devel::LeakTrace. Like
-Devel::LeakTrace it uses the pluggable runops feature found in perl 5.6
-and later in order to trace SV allocations of a running program.
-
-WWW: http://search.cpan.org/dist/Devel-LeakTrace-Fast/

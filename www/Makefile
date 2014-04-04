@@ -2108,7 +2108,6 @@
     SUBDIR += weblint
     SUBDIR += weblint++
     SUBDIR += webmachine
-    SUBDIR += webobjects
     SUBDIR += webpy
     SUBDIR += webreport
     SUBDIR += webresolve
