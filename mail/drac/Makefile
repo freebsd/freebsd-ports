@@ -14,36 +14,65 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Relay Authorization Control, a POP-before-SMTP implementation
 
-MAKE_JOBS_UNSAFE= yes
+PLIST_FILES=	sbin/rpc.dracd include/drac.h lib/libdrac.a \
+		etc/dracd.allow-sample
 
-.if defined(WITH_POSTFIX_DB3)
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
+USE_CSTD=	gnu89
+
+OPTIONS_DEFINE=		DB
+OPTIONS_RADIO=		MUA
+OPTIONS_RADIO_MUA=	POSTFIX EXIM
+POSTFIX_DESC=		Use POSTFIX
+EXIM_DESC=		Use EXIM
+DB_DESC=		Use database with POSTFIX
+
+.include <bsd.port.options.mk>
+
+DEFS=		-DWITH_TI_RPC -DFLOCK_LOCK -DGETHOST -DDASH_C
+
+.if ${PORT_OPTIONS:MPOSTFIX}
+DEFS+=		-DTERM_KD
+RUN_DEPENDS+=	postfix:${PORTSDIR}/mail/postfix
+.if ${PORT_OPTIONS:MDB}
+USE_BDB=	41+
 .endif
-.if defined(WITH_POSTFIX_DB41)
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+.elif ${PORT_OPTIONS:MEXIM}
+DEFS+=		-DTERM_KD -DREQ_HASH -DCIDR_KEY
+RUN_DEPENDS+=	exim:${PORTSDIR}/mail/exim
 .endif
 
 NO_WRKSUBDIR=	yes
 USE_RC_SUBR=	dracd
 
-.if !defined(NOPORTDOCS)
-MAN3=		dracauth.3
-MAN1=		rpc.dracd.1
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_FILES+=	man/man3/dracauth.3.gz man/man1/rpc.dracd.1.gz
 .endif
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.if defined(WITH_TI_RPC)
+DEFS+=	-DTI_RPC
+.else
+DEFS+=	-DSOCK_RPC
+.endif
 
-MAKE_ARGS+=	-DWITH_TI_RPC
+.if defined(WITH_FOREGROUND)
+DEFS+=	-DRPC_SVC_FG
+.endif
+
+MAKE_ARGS+=	DEFS="${DEFS}"
 
 pre-everything::
+.if ${PORT_OPTIONS:MIPV6}
+	@${ECHO_MSG} "============================================================="
+	@${ECHO_MSG} "It is IPv6 non-correspondence."
+	@${ECHO_MSG} "After it understands, it is possible to use it with IPv4."
+	@${ECHO_MSG} "============================================================="
+	@${ECHO_MSG}
+.endif
 	@${ECHO_MSG} "============================================================="
 	@${ECHO_MSG} "For databases compatible with other MTAs than sendmail, use:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITH_POSTFIX=yes        (Postfix)"
-	@${ECHO_MSG} "WITH_POSTFIX_DB3=yes    (Postfix with DB3 database maps)"
-	@${ECHO_MSG} "WITH_POSTFIX_DB41=yes   (Postfix with DB41 database maps)"
-	@${ECHO_MSG} "WITH_EXIM=yes           (Exim)"
+	@${ECHO_MSG} "mail/postfix"
+	@${ECHO_MSG} "mail/exim"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Define WITH_FOREGROUND to make the rpc.dracd daemon stay in"
 	@${ECHO_MSG} "foreground instead of detaching itself. This breaks the"
@@ -54,13 +83,15 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/rpc.dracd.1m
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/rpc.dracd ${PREFIX}/sbin/
-	@${INSTALL_DATA} ${WRKSRC}/drac.h ${PREFIX}/include/
-	@${INSTALL_DATA} ${WRKSRC}/libdrac.a ${PREFIX}/lib/
-	@${INSTALL_DATA} ${WRKSRC}/dracd.allow-sample ${PREFIX}/etc/
-.if !defined(NOPORTDOCS)
-	@${INSTALL_MAN} ${WRKSRC}/dracauth.3 ${PREFIX}/man/man3/
-	@${INSTALL_MAN} ${WRKSRC}/rpc.dracd.1m ${PREFIX}/man/man1/rpc.dracd.1
+	@${INSTALL_PROGRAM} ${WRKSRC}/rpc.dracd ${STAGEDIR}${PREFIX}/sbin/
+	@${INSTALL_DATA} ${WRKSRC}/drac.h ${STAGEDIR}${PREFIX}/include/
+	@${INSTALL_DATA} ${WRKSRC}/libdrac.a ${STAGEDIR}${PREFIX}/lib/
+	@${INSTALL_DATA} ${WRKSRC}/dracd.allow-sample \
+		${STAGEDIR}${PREFIX}/etc/
+.if ${PORT_OPTIONS:MDOCS}
+	@${INSTALL_MAN} ${WRKSRC}/dracauth.3 ${STAGEDIR}${PREFIX}/man/man3/
+	@${INSTALL_MAN} ${WRKSRC}/rpc.dracd.1m \
+		${STAGEDIR}${PREFIX}/man/man1/rpc.dracd.1
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
