@@ -3,50 +3,34 @@
 
 PORTNAME=	magic
 PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/ocaml-${PORTNAME}/ocaml-${PORTNAME}/0.7
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	An OCaml binding for libmagic(3)
+COMMENT=	OCaml binding for libmagic(3)
 
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
-.ifndef(NOPORTDOCS)
-ALL_TARGET+=	doc
-PORTDOCS=	*
+ALL_TARGET+=	doc examples
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
-.endif
-
-.ifndef(NOPORTEXAMPLES)
-ALL_TARGET+=	examples
-PORTEXAMPLES=	*
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
-.endif
 
 # This really is overzealous but I work this way
 .if !exists(/usr/lib/libmagic.so)
-LIB_DEPENDS+=	magic:${PORTSDIR}/sysutils/file
+LIB_DEPENDS+=	libmagic.so:${PORTSDIR}/sysutils/file
 .endif
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-install:
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}
-.endif
-.ifndef(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
