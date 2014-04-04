@@ -49,7 +49,7 @@ maketar: do-clean extract
 		cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${PORTNAME}-${MS_VERSION}.tar.xz ${PORTNAME}-${MS_VERSION}/; \
 		sudo ${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/; \
 		${SED} -i '' -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile; \
-		cd ${.CURDIR}/ && ${MAKE} makesum; \
+		cd ${.CURDIR}/ && ${MAKE_CMD} makesum; \
 		${ECHO_MSG} "*** Update from ${PORTVERSION} to ${MS_VERSION}, diff: ${MS_DIFF} ***"; \
 	else \
 		${ECHO_MSG} "*** ${MS_MASTER_SITE}${PORTNAME}.c is unchanged (${PORTVERSION}) ***"; \
