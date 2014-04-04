@@ -11,31 +11,33 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Remote firewall auditing tool
 
-LIB_DEPENDS=	dnet:${PORTSDIR}/net/libdnet \
-		net:${PORTSDIR}/net/libnet
-
-WRKSRC=		${WRKDIR}/Firewalk
+LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet \
+		libnet.so:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAN8=		firewalk.8
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/firewalk man/man8/firewalk.8.gz
+PORTDOCS=	BUGS README TODO
+
+WRKSRC=		${WRKDIR}/Firewalk
+
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/firewalk ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/firewalk.8 ${MANPREFIX}/man/man8/
-.	if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/BUGS ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.	endif
+	${INSTALL_PROGRAM} ${WRKSRC}/src/firewalk ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/firewalk.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
