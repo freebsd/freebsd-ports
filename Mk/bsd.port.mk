@@ -1136,7 +1136,7 @@ NOTPHONY?=
 .if defined(NO_STAGE)
 IGNORE=	Cross building is only compatible with stagified ports
 .endif
-.if defined(.PARSEDIR)
+.if !defined(.PARSEDIR)
 IGNORE=	Cross building can only be done when using bmake(1) as make(1)
 .endif
 BUILD_DEPENDS=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
