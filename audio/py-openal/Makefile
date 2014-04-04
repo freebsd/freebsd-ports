@@ -3,7 +3,7 @@
 
 PORTNAME=	openal
 PORTVERSION=	0.1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio python
 MASTER_SITES=	http://download.gna.org/pyopenal/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,27 +12,25 @@ DISTNAME=	PyOpenAL-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	PyOpenAL is a binding of OpenAL for Python
 
+OPTIONS_DEFINE=	EXAMPLES
+
 DIST_SUBDIR=	python
 USES=		openal:al,alut
-NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	PyOpenAL
+PYDISTUTILS_AUTOPLIST=	yes
 WRKSRC=		${WRKDIR}/PyOpenAL-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-openal
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/setup.py
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demo/* ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/demo/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
