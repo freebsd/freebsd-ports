@@ -1,4 +1,0 @@
-sbin/rpc.dracd
-include/drac.h
-lib/libdrac.a
-etc/dracd.allow-sample
