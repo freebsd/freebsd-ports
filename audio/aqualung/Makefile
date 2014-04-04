@@ -3,7 +3,7 @@
 
 PORTNAME=	aqualung
 DISTVERSION=	0.9beta11
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
  		http://wickedmachine.net/mirror/
@@ -32,33 +32,24 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libcddb.so:${PORTSDIR}/audio/libcddb \
 		libstrfunc.so:${PORTSDIR}/devel/libstrfunc
 
-NO_STAGE=	yes
-USES=		gmake pkgconfig gettext
+USES=		gmake pkgconfig gettext compiler:nestedfct
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --with-alsa=no --with-ifp=no \
 		--with-cdda=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lstrfunc
-MAN1=		${PORTNAME}.1
 
 OPTIONS_DEFINE=	JACK PULSEAUDIO DOCS
 
-.include <bsd.port.options.mk>
+JACK_CONFIGURE_OFF=	--with-jack=no
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_ON=	--with-jack=yes
 
-.if ${PORT_OPTIONS:MJACK}
-CONFIGURE_ARGS+=	--with-jack=no
-.else
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-CONFIGURE_ARGS+=	--with-jack=yes
-.endif
+PULSEAUDIO_CONFIGURE_OFF=	--with-pulse=no
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ON=	--with-pulse=yes
 
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-CONFIGURE_ARGS+=	--with-pulse=no
-.else
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=	--with-pulse=yes
-.endif
 post-patch:
 	@${REINPLACE_CMD} -e '/^docdir/s!=.*!= ${DOCSDIR}!'\
 		${WRKSRC}/doc/Makefile.in
@@ -66,9 +57,5 @@ post-patch:
 #		${WRKSRC}/configure
 	@${ECHO_CMD} "#include <sys/stat.h>" >> ${WRKSRC}/src/common.h
 	@${ECHO_CMD} "#include <sys/types.h>" >> ${WRKSRC}/src/common.h
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^install-data-am/s!install-docDATA!!'\
-		${WRKSRC}/doc/Makefile.in
-.endif
 
 .include <bsd.port.mk>
