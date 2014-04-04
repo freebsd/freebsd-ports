@@ -29,7 +29,7 @@ PORTDOCS=	CHANGELOG
 
 .include <bsd.port.options.mk>
 
-post-patch-script:
+post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX = /opt/$$$$TARGET|PREFIX = ${PREFIX}|g' \
 		${WRKSRC}/F1LT.pro
 	@${REINPLACE_CMD} -e 's|SHARE=$$$$PREFIX/share|SHARE=${PREFIX}/share/${PORTNAME}|g' \
