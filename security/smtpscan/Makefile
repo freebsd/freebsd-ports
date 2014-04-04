@@ -21,13 +21,12 @@ NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
-MAN1=		smtpscan.1
 PLIST_FILES=	bin/smtpscan \
+		man/man1/smtpscan.1.gz \
 		%%DATADIR%%/fingerprints \
 		%%DATADIR%%/tests
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^#!.*|#!${PERL}| ; \
@@ -38,10 +37,10 @@ post-patch:
 		 s|@prefix@|${PREFIX}/share|' ${WRKSRC}/docs/man/smtpscan.1
 
 do-install:
-	(cd ${WRKSRC}/src && ${INSTALL_SCRIPT} smtpscan ${PREFIX}/bin)
+	(cd ${WRKSRC}/src && ${INSTALL_SCRIPT} smtpscan ${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC}/docs/man \
-		&& ${INSTALL_MAN} smtpscan.1 ${MANPREFIX}/man/man1)
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/src && ${INSTALL_SCRIPT} fingerprints tests ${DATADIR})
+		&& ${INSTALL_MAN} smtpscan.1 ${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/src && ${INSTALL_SCRIPT} fingerprints tests ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
