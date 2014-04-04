@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	libmms
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for parsing mms:// and mmsh:// type network streams
 
-USE_GNOME=	glib20
-USES=		pathfix gettext iconv pkgconfig
+LICENSE=	LGPL21
+
+USES=		gettext libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
