@@ -4,7 +4,7 @@
 PORTNAME=	lensfun
 PORTVERSION=	0.2.8
 CATEGORIES=	graphics
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Library for fixing lens geometry distortions
@@ -13,8 +13,7 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
