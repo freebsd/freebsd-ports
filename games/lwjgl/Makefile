@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	lwjgl
-DISTVERSION=	2.9.0
+DISTVERSION=	2.9.1
 CATEGORIES=	games java
 MASTER_SITES=	SF/java-game-lib/Official%20Releases/${PORTNAME:U}%20${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-source-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Lightweight Java Game Library
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/${DISTNAME}/doc/LICENSE
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils \
 		${JAVALIBDIR}/jinput/jinput.jar:${PORTSDIR}/games/jinput
@@ -23,10 +22,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 USES=		dos2unix zip:infozip
+DOS2UNIX_REGEX= .*.[^jp][^an][^rg]$
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
-DOS2UNIX_REGEX=	.*.[^j][^a][^r]$
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_ANT=	yes
@@ -52,21 +51,24 @@ PLIST_FILES+=	lib/${PORTNAME}${PORTVERSION}/lib${PORTNAME}64.so
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,PREFIX,${PREFIX},g' \
-		-e '/executable/s/gcc/${CC}/g' \
+	@${REINPLACE_CMD} -e 's|PREFIX|${PREFIX}|g' \
+		-e '/executable/s/cc/${CC}/g' \
 		${WRKSRC}/platform_build/bsd_ant/build.xml
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
 .for _jar in ${PLIST_FILES:M*.jar}
-	${INSTALL_DATA} ${WRKSRC}/libs/${_jar:T} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/libs/${_jar:T} \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .if ${ARCH} == i386
-	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}.so \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .endif
 .if ${ARCH} == amd64
-	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}64.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}64.so \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .endif
 
 .include <bsd.port.post.mk>
