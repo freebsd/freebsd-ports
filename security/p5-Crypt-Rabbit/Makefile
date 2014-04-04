@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for Rabbit stream cipher
 
+LICENSE=	GPLv2
+
 USES=		perl5
 USE_PERL5=	configure
 
