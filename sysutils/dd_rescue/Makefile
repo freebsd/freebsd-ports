@@ -20,17 +20,11 @@ USE_AUTOTOOLS=	autoconf autoheader
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dd_rescue ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA}	${WRKSRC}/README.dd_rescue ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/dd_rescue ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/README.dd_rescue ${STAGEDIR}${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
