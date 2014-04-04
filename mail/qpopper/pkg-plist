@@ -1,11 +1,19 @@
+@owner %%USERS%%
+@mode u+s
 %%QPOPAUTH%%bin/qpopauth
+@group %%GROUP%%
+@mode 0444
+%%ETCDIR%%/popusers.sample
+@mode
+@group wheel
+@owner root
 %%QPOPAUTH%%@unexec rm -f %D/bin/qapopauth
 %%QPOPAUTH%%@exec ln -sf %D/bin/qpopauth %D/bin/qapopauth
 libexec/qpopper
+man/man8/qpopper.8.gz
+%%QPOPAUTH%%man/man8/qpopauth.8.gz
 %%EPOPPASSD%%libexec/qpoppassd
-@exec mkdir -p %%ETCDIR%% && chown %%POP_USER%%:%%POP_GROUP%% %%ETCDIR%% && chmod %%POP_MODE_DIR%% %%ETCDIR%%
-%%ETCDIR%%/popusers.sample
-etc/qpopper.config.sample
+@exec mkdir -p %%ETCDIR%% && chown %%USERS%%:%%GROUPS%% %%ETCDIR%% && chmod %%POP_MODE_DIR%% %%ETCDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/GUIDE.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%ETCDIR%%
