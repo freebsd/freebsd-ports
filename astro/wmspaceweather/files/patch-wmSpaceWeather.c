@@ -1,6 +1,6 @@
---- wmSpaceWeather.c.orig	Thu Feb 18 17:57:45 1999
-+++ wmSpaceWeather.c	Tue Apr 13 20:06:41 2004
-@@ -115,7 +115,7 @@ XEvent		event;
+--- ./wmSpaceWeather.c.orig	1999-02-18 18:57:45.000000000 +0100
++++ ./wmSpaceWeather.c	2014-04-04 21:55:15.061690087 +0200
+@@ -115,7 +115,7 @@
  int			i, n, s, k, m, dt1, dt2;
  int 		Year, Month, Day, DayOfMonth, OldDayOfMonth;
  int			Hours, Mins, Secs, OldSecs, xoff, D[10], xsize;
@@ -9,7 +9,7 @@
  int			height, UpToDate, LEDOn;
  double		UT, TU, TU2, TU3, T0, gmst, hour24();
  
-@@ -126,6 +126,7 @@ int 		Kp[8] = { -1, -1, -1, -1, -1, -1, 
+@@ -126,6 +126,7 @@
  double		E1, E2, P1, P2, P3;
  char		Xray[10], digit[2];
  FILE		*fp;
@@ -17,7 +17,7 @@
  
  
  
-@@ -249,13 +250,13 @@ FILE		*fp;
+@@ -249,13 +250,13 @@
  
  
  	/*
@@ -33,7 +33,7 @@
  	    
  	    dt2 = 0;
  
-@@ -272,13 +273,13 @@ FILE		*fp;
+@@ -272,13 +273,13 @@
  	    Secs  = Time->tm_sec;
  	    UT = (double)Hours + (double)Mins/60.0 + (double)Secs/3600.0;
  	    CurrentJD = jd(Year, Month, Day, UT);
@@ -49,7 +49,7 @@
  
      	        for (i=0; i<8; ++i){
  	    	    fscanf(fp, "%ld %d", &TimeTag[i], &Kp[i]);
-@@ -289,7 +290,7 @@ FILE		*fp;
+@@ -289,7 +290,7 @@
  	    	fscanf(fp, "%lf", &P3);
  	    	fscanf(fp, "%lf", &E1);
  	    	fscanf(fp, "%lf", &E2);
@@ -58,7 +58,7 @@
      	        fclose(fp);
  
  	    } else {
-@@ -318,7 +319,7 @@ FILE		*fp;
+@@ -318,7 +319,7 @@
  	    LatestAvailJD = jd(Year, Month, Day, UT);
  
  	    DeltaT = (CurrentJD - LatestAvailJD)*24.0;
@@ -67,7 +67,7 @@
  
  	    if (!UpToDate){
  
-@@ -560,7 +561,7 @@ void ParseCMDLine(int argc, char *argv[]
+@@ -560,7 +561,7 @@
  
          } else if ((!strcmp(argv[i], "-url"))||(!strcmp(argv[i], "-u"))){
  
@@ -76,7 +76,7 @@
  
          } else {
  
-@@ -651,7 +652,7 @@ void pressEvent(XButtonEvent *xev){
+@@ -651,7 +652,7 @@
      if (GotDoubleClick1) {
          GotFirstClick1 = 0;
          GotDoubleClick1 = 0;
