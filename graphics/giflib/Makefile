@@ -35,9 +35,6 @@ X11_CONFIGURE_ENABLE=	x11
 .if ${PORT_OPTIONS:MDOCBOOK} && ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
 	${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-xml
-PLIST_SUB+=	WITH_DOCBOOK=''
-.else
-PLIST_SUB+=	WITH_DOCBOOK='@comment '
 .endif
 
 .if ${PORT_OPTIONS:MX11}
