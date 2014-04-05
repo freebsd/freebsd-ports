@@ -10,5 +10,4 @@ LIBRMATH_SLAVEPORT=	yes
 MASTERDIR=	${.CURDIR}/../R
 PLIST=	${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
