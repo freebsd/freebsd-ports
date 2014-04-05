@@ -42,3 +42,7 @@ share/pixmaps/asunder.png
 %%NLS%%@dirrmtry share/locale/bs_BA
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/be@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/be@latin
