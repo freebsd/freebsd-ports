@@ -23,8 +23,8 @@ PLIST_FILES=	lib/kde4/krossruby.so
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} >= 2.0
-BROKEN=		Only works with Ruby 1.9
-.endif
+#.if ${RUBY_VER} >= 2.0
+#BROKEN=		Only works with Ruby 1.9
+#.endif
 
 .include <bsd.port.post.mk>
