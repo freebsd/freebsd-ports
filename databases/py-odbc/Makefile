@@ -1,4 +1,4 @@
-# Created by: April 15 2009
+# Created by: Robert Kruus <rob.kruus@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	pyodbc
@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rob.kruus@gmail.com
 COMMENT=	ODBC connections for python
+
+LICENSE=	MIT
 
 USES=		zip
 USE_PYTHON=	yes
