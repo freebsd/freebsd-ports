@@ -14,37 +14,20 @@ COMMENT=	Python module for processing ID3 tags
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:${PORTSDIR}/devel/py-setuptools
-
-USE_PYTHON=	2
-USES=		gmake
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}"
-MAKE_ENV=	SETUP_ARGS_BUILD="${PYDISTUTILS_BUILDARGS}" \
-		SETUP_ARGS_INSTALL="${PYDISTUTILS_INSTALLARGS}" \
-		SETUP_COMMAND="${PYDISTUTILS_SETUP:S,",\",g}"
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USES=			gmake
+GNU_CONFIGURE=		yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-PORTDOCS=	AUTHORS COPYING.gz ChangeLog.gz README
+PORTDOCS=	AUTHORS ChangeLog README
+PLIST_FILES+=	bin/eyeD3 man/man1/eyeD3.1.gz
 
-INSTALLS_EGGINFO=	yes
-PYDISTUTILS_PKGNAME=	eyeD3
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e 's,PYTHON="",,g' -e 's,/usr/local,${LOCALBASE},g' \
-		-e 's,2\\\.\[23456789\]\\\.,2.[23456789],g' \
-		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,\(setup.py build\),$${SETUP_COMMAND} build $${SETUP_ARGS_BUILD},g' \
-		-e 's,\(setup.py install\),$${SETUP_COMMAND} install $${SETUP_ARGS_INSTALL} ,g' \
-		-e 's,^docdir:=.*,docdir:=${STAGEDIR}${DOCSDIR},g' \
-		${WRKSRC}/Makefile.in
-.if ! ${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -e 's,.*docdir.*,#,g' \
-		${WRKSRC}/Makefile.in
-.endif
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/eyeD3.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/eyeD3 ${STAGEDIR}/${PREFIX}/bin
 
 .include <bsd.port.mk>
