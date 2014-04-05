@@ -12,8 +12,7 @@ COMMENT=	Program used to time subtitles
 LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-USES=		pkgconfig iconv gmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake pkgconfig iconv
 GNU_CONFIGURE=	yes
 
 USE_GNOME=	gtk20
