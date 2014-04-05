@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.4.13
+PORTVERSION=	2.4.15
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,10 @@ LICENSE=	PSFL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1-modules>=0:${PORTSDIR}/devel/py-asn1-modules
 
-USE_PYTHON=	2
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_OPENLDAP=	yes
+USE_OPENLDAP=		yes
 WANT_OPENLDAP_VER=	24
 
 REPLACE_ARGS=	-e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,' \
@@ -26,12 +26,13 @@ REPLACE_ARGS=	-e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,' \
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	SASL
+OPTIONS_DEFAULT=SASL
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSASL}
 WANT_OPENLDAP_SASL=	yes
-CONFLICTS+=	openldap2[34]-client-2.*
+CONFLICTS+=		openldap2[34]-client-2.*
 .endif
 
 do-configure:
