@@ -9,60 +9,54 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/ \
 		http://svn.xiph.org/releases/ezstream/
 
 MAINTAINER=	ayu@commun.jp
-COMMENT=	A command line utility for streaming to icecast servers
+COMMENT=	Command line utility for streaming to icecast servers
 
-LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2 \
+LIB_DEPENDS=	libshout.so.5:${PORTSDIR}/audio/libshout2 \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-OPTIONS_DEFINE=	TAGLIB
+OPTIONS_DEFINE=	TAGLIB DOCS EXAMPLES
 OPTIONS_DEFAULT=	TAGLIB
 
 TAGLIB_DESC=	TagLib support
 
 USES=		iconv pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	libxml2
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 
-MAN1=		ezstream.1 ezstream-file.sh.1
 PORTDOCS=	NEWS README
 PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml \
 		ezstream_reencode_mp3.xml ezstream_reencode_theora.xml \
 		ezstream_reencode_vorbis.xml ezstream_stdin_vorbis.xml \
 		ezstream_vorbis.xml meta.sh play.sh
-PLIST_FILES=	bin/ezstream bin/ezstream-file.sh etc/ezstream/ezstream.xml '@dirrm etc/ezstream'
+PLIST_FILES=	bin/ezstream bin/ezstream-file.sh etc/ezstream/ezstream.xml \
+		man/man1/ezstream-file.sh.1.gz man/man1/ezstream.1.gz
+PLIST_DIRS=	${ETCDIR}
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+TAGLIB_CONFIGURE_OFF=	--without-taglib
+TAGLIB_LIB_DEPENDS=		libtag.so:${PORTSDIR}/audio/taglib
+TAGLIB_CONFIGURE_ON=	--with-taglib=${LOCALBASE}
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTAGLIB}
-CONFIGURE_ARGS+=	--without-taglib
-.else
-LIB_DEPENDS+=		libtag.so:${PORTSDIR}/audio/taglib
-CONFIGURE_ARGS+=	--with-taglib=${LOCALBASE}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|examples||g ; \
 		s|: install-dist_docDATA|:|g' ${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 .for f in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-.endif
-	@${MKDIR} ${ETCDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/examples/ezstream_vorbis.xml ${ETCDIR}/ezstream.xml
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/ezstream_vorbis.xml ${STAGEDIR}${ETCDIR}/ezstream.xml
 
 .include <bsd.port.mk>
