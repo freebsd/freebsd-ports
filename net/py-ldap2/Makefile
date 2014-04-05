@@ -26,7 +26,6 @@ REPLACE_ARGS=	-e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,' \
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	SASL
-OPTIONS_DEFAULT=SASL
 
 .include <bsd.port.options.mk>
 
