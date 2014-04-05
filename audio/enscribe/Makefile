@@ -18,7 +18,6 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		pkgconfig
-NO_STAGE=	yes
 
 LICENSE=	GPLv2
 
@@ -26,8 +25,6 @@ PORTDOCS=	README
 PLIST_FILES=	bin/enscribe
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-build:
 	cd ${BUILD_WRKSRC}; ${CC} ${CFLAGS} \
@@ -37,10 +34,8 @@ do-build:
 		-o enscribe enscribe.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/enscribe ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/enscribe ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
