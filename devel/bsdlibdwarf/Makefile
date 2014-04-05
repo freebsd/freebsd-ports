@@ -10,6 +10,8 @@ MASTER_SITE_SUBDIR=	pub/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD licensed implementation of libdwarf
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 1000000
 BROKEN=		Does not compile with clang, outdated
 .endif
@@ -197,4 +199,4 @@ do-install:
 		${INSTALL_MAN} ${WRKSRC}/libdwarf/$$f ${MANPREFIX}/man/man3/ ; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
