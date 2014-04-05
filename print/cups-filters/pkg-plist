@@ -48,6 +48,7 @@ man/man8/cups-browsed.8.gz
 sbin/cups-browsed
 share/cups/banners/classified
 share/cups/banners/confidential
+share/cups/banners/form
 share/cups/banners/secret
 share/cups/banners/standard
 share/cups/banners/topsecret
@@ -57,6 +58,10 @@ share/cups/charsets/pdf.utf-8.heavy
 share/cups/charsets/pdf.utf-8.simple
 share/cups/data/default-testpage.pdf
 share/cups/data/default.pdf
+share/cups/data/form_english.pdf
+share/cups/data/form_english_in.odt
+share/cups/data/form_russian.pdf
+share/cups/data/form_russian_in.odt
 share/cups/data/testprint
 share/cups/drv/cupsfilters.drv
 share/cups/mime/cupsfilters.convs
@@ -68,6 +73,7 @@ share/cups/ppdc/pcl.h
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/ppd/cupsfilters/Fuji_Xerox-DocuPrint_CM305_df-PDF.ppd
 share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
 share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
