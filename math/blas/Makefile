@@ -12,5 +12,4 @@ BLAS_SLAVEPORT	=	yes
 
 MASTERDIR=	${.CURDIR}/../lapack
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
