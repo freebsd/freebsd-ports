@@ -1,0 +1,24 @@
+--- a/bsd-user/freebsd/os-sys.c
++++ b/bsd-user/freebsd/os-sys.c
+@@ -165,7 +165,9 @@ abi_long do_freebsd_sysctl(CPUArchState 
+         switch (snamep[1]) {
+         case KERN_USRSTACK:
+ #if TARGET_USRSTACK != 0
+-            (*(abi_ulong *)holdp) = tswapal(TARGET_USRSTACK);
++            if (oldlen) {
++                (*(abi_ulong *)holdp) = tswapal(TARGET_USRSTACK);
++            }
+             holdlen = sizeof(abi_ulong);
+             ret = 0;
+ #else
+@@ -175,7 +177,9 @@ abi_long do_freebsd_sysctl(CPUArchState 
+ 
+         case KERN_PS_STRINGS:
+ #if defined(TARGET_PS_STRINGS)
+-            (*(abi_ulong *)holdp) = tswapal(TARGET_PS_STRINGS);
++            if (oldlen) {
++                (*(abi_ulong *)holdp) = tswapal(TARGET_PS_STRINGS);
++            }
+             holdlen = sizeof(abi_ulong);
+             ret = 0;
+ #else
