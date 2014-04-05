@@ -39,8 +39,8 @@ WANT_GNOME=	yes
 
 PATCHLEVEL=	229
 PATCHFILES!=	/usr/bin/jot -s " " -w "%03d" ${PATCHLEVEL} 1 ${PATCHLEVEL}
-POSTPONED_PATCHES=	064 087 147	# patch files postponed to apply in post-patch:
-SKIPPED_PATCHES=	208		# patch files to be skipped
+POSTPONED_PATCHES=	064 087 147	# patch files postponed to be applied in post-patch:
+SKIPPED_PATCHES=	208		# patch files skipped
 .for p in ${POSTPONED_PATCHES}
 DISTFILES+=	${PORTVERSION:R}.${p}:patch
 .endfor
@@ -149,7 +149,7 @@ post-patch:
 
 pre-configure:
 	@${CP} ${WRKSRC}/src/config.mk.dist ${WRKSRC}/src/auto/config.mk
-	@(cd ${WRKSRC}/src/ && ${MAKE} distclean)
+	@(cd ${WRKSRC}/src/ && ${MAKE_CMD} distclean)
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g' \
 		-e 's|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g' \
@@ -159,7 +159,7 @@ pre-configure:
 .endif
 
 post-configure:
-	@(cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} scratch config)
+	@(cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} scratch config)
 	@${REINPLACE_CMD} -e 's|#define HAVE_SYSINFO 1|/* #undef HAVE_SYSINFO */|' ${WRKSRC}/src/auto/config.h
 
 post-install:
