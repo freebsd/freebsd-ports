@@ -171,8 +171,6 @@ post-install:
 	cd ${WRKSRC}/docs/examples/ && ${INSTALL_DATA} README Makefile.example makefile* *.c *.cpp ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
-# Setting LC_ALL=C is a kludge; maybe curl/libcurl shouldn't actually use
-# the user's locale when dates are sent to the server.
 x-regression-test test: build
 .if !${PORT_OPTIONS:MPROXY}
 	@${ECHO_MSG} "******************************************"
@@ -181,6 +179,6 @@ x-regression-test test: build
 	@${ECHO_MSG} "* This is being addressed.               *"
 	@${ECHO_MSG} "******************************************"
 .endif
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} LC_ALL=C ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} LC_ALL=C ${MAKE_CMD} test
 
 .include <bsd.port.mk>
