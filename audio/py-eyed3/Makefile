@@ -28,6 +28,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/eyeD3.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/eyeD3 ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/eyeD3 ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
