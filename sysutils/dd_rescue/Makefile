@@ -25,6 +25,6 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dd_rescue ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA}	${WRKSRC}/README.dd_rescue ${STAGEDIR}${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/README.dd_rescue ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
