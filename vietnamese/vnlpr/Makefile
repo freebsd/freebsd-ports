@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Shell script and set of fonts to print Vietnamese text on PostScript printer
 
+BROKEN=		Conflicts with dependency vnpstext on share/vn-fonts/initcour.ps
+
 RUN_DEPENDS=	vn7to8:${PORTSDIR}/vietnamese/vn7to8 \
 		vnpstext:${PORTSDIR}/vietnamese/vnpstext
 
