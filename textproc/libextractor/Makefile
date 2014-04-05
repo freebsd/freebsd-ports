@@ -63,7 +63,7 @@ BROKEN=	does not package
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	exiv2.12:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 PLIST_SUB+=	EXIV2=""
 .else
 PLIST_SUB+=	EXIV2="@comment "
