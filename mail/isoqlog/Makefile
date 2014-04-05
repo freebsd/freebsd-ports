@@ -9,25 +9,16 @@ MASTER_SITES=	http://www.enderunix.org/isoqlog/ \
 		http://www.trunix.org/projeler/isoqlog/ \
 		http://www.acikkod.org/softwares/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A qmail, postfix, sendmail, exim MTA log analysis program
+MAINTAINER=	dbaio@bsd.com.br
+COMMENT=	Qmail, postfix, sendmail, exim MTA log analysis program
+
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=	gmake
+
+OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.ifdef NOPORTDOCS
-post-patch:
-	@${REINPLACE_CMD} -e '/install-data-am:/s/install-${PORTNAME}_docDATA//' \
-			-e '/SUBDIRS = /s/tr//' \
-		${WRKSRC}/Makefile.in
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
