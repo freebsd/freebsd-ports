@@ -3,7 +3,7 @@
 
 PORTNAME=	gthumb
 PORTVERSION=	2.14.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -11,7 +11,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Image viewer and browser for the GNOME 2 environment
 
-LIB_DEPENDS=	unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USES=		bison gettext gmake pathfix pkgconfig tar:xz
@@ -35,12 +35,9 @@ PLIST_SUB=	GTHUMB_VER=2.14
 OPTIONS_DEFINE=	EXIV2 CLUTTER GSTREAMER OPENRAW SOUP BRASERO YELP
 OPTIONS_DEFAULT=	EXIV2 CLUTTER GSTREAMER OPENRAW SOUP BRASERO YELP
 CLUTTER_DESC=	Fancy slideshows
-GSTREAMER_DESC=	Video playback
 SOUP_DESC=	Web services uploaders
 BRASERO_DESC=	Write galleries to CD/DVD (large dependency)
 YELP_DESC=	Viewer for built-in help system
-
-NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 
@@ -54,7 +51,7 @@ PLIST_SUB+=	EXIV2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCLUTTER}
-LIB_DEPENDS+=	clutter-gtk-0.10.0:${PORTSDIR}/graphics/clutter-gtk
+LIB_DEPENDS+=	libclutter-gtk-0.10.so:${PORTSDIR}/graphics/clutter-gtk
 CONFIGURE_ARGS+=--enable-clutter
 .else
 CONFIGURE_ARGS+=--disable-clutter
@@ -78,7 +75,7 @@ CONFIGURE_ARGS+=--disable-libopenraw
 .endif
 
 .if ${PORT_OPTIONS:MSOUP}
-LIB_DEPENDS+=	soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
+LIB_DEPENDS+=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 CONFIGURE_ARGS+=--enable-libsoup --enable-gnome-keyring
 PLIST_SUB+=	SOUP=""
 GCONF_SCHEMAS+=	gthumb-facebook.schemas gthumb-picasaweb.schemas
@@ -88,7 +85,7 @@ PLIST_SUB+=	SOUP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBRASERO}
-LIB_DEPENDS+=	brasero-burn.3:${PORTSDIR}/sysutils/brasero
+LIB_DEPENDS+=	libbrasero-burn.so:${PORTSDIR}/sysutils/brasero
 CONFIGURE_ARGS+=--enable-libbrasero
 PLIST_SUB+=	BRASERO=""
 .else
