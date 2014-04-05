@@ -3,7 +3,7 @@
 
 PORTNAME=	ida
 PORTVERSION=	2.09
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kraxel.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}
@@ -13,8 +13,8 @@ COMMENT=	Small and fast motif-based image viewer and editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		exif:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libexif.so:${PORTSDIR}/graphics/libexif
 
 OPTIONS_DEFINE=	GIF PCF PNG SANE TIFF WEBP DOCS
 OPTIONS_DEFAULT=	GIF PNG TIFF
@@ -22,65 +22,38 @@ PCD_DESC=	Enable PhotoCD support
 SANE_DESC=	Enable SANE support
 
 USE_PERL5=	build
-USES=		iconv gmake motif perl5
+USES=		desktop-file-utils iconv gmake motif perl5
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	JPEG_VER=80 verbose=yes
 
 LDFLAGS+=	${ICONV_LIB}
 
-MAN1=		exiftran.1 ida.1
 PORTDOCS=	README TODO INSTALL
 PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida \
+		man/man1/exiftran.1.gz man/man1/ida.1.gz \
 		${DESKTOPDIR:S/${PREFIX}\///}/ida.desktop
-PLIST_DIRSTRY=	${DESKTOPDIR:S/${PREFIX}\///}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+GIB_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_MAKE_ARGS_OFF=	HAVE_LIBUNGIF=no
 
-.if ${PORT_OPTIONS:MGIF}
-LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
-.else
-MAKE_ARGS+=	HAVE_LIBUNGIF=no
-.endif
+PCD_LIB_DEPENDS=	libpcd.so:${PORTSDIR}/graphics/libpcd
+PCD_MAKE_ARGS_OFF=	HAVE_LIBPCD=no
 
-.if ${PORT_OPTIONS:MPCD}
-LIB_DEPENDS+=	pcd:${PORTSDIR}/graphics/libpcd
-.else
-MAKE_ARGS+=	HAVE_LIBPCD=no
-.endif
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_MAKE_ARGS_OFF=	HAVE_LIBPNG=no
 
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-.else
-MAKE_ARGS+=	HAVE_LIBPNG=no
-.endif
+SANE_LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
+SANE_MAKE_ARGS_OFF=	HAVE_LIBSANE=no
 
-.if ${PORT_OPTIONS:MSANE}
-LIB_DEPENDS+=	sane:${PORTSDIR}/graphics/sane-backends
-.else
-MAKE_ARGS+=	HAVE_LIBSANE=no
-.endif
+TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_MAKE_ARGS=		HAVE_LIBTIFF=no
 
-.if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
-.else
-MAKE_ARGS+=	HAVE_LIBTIFF=no
-.endif
-
-.if ${PORT_OPTIONS:MWEBP}
-LIB_DEPENDS+=	webp:${PORTSDIR}/graphics/webp
-.else
-MAKE_ARGS+=	HAVE_LIBWEBP=no
-.endif
+WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_MAKE_ARGS_OFF=	HAVE_LIBWEBP=no
 
 post-install:
-	${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/desktop/ida.desktop ${DESKTOPDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for a in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${a} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${WRKSRC}/desktop/ida.desktop ${STAGEDIR}${DESKTOPDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
