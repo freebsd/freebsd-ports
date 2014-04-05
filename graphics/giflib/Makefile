@@ -20,7 +20,10 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCBOOK X11
+OPTIONS_SUB=	yes
 DOCBOOK_DESC=	Generate API documentation (requires DOCS)
+
+X11_CONFIGURE_ENABLE=	x11
 
 .include <bsd.port.pre.mk>
 
@@ -33,12 +36,9 @@ PLIST_SUB+=	WITH_DOCBOOK='@comment '
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-USE_XORG=	sm x11
-PLIST_SUB+=	X11=''
+USE_XORG=	x11 sm ice
 CPPFLAGS+=	-I${LOCALBASE}/include
 .else
-PLIST_SUB+=	X11='@comment '
-CONFIGURE_ARGS+=	--with-x=no
 NOX11SUFFIX=	-nox11
 .endif
 
