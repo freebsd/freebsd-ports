@@ -2,7 +2,7 @@
 
 PORTNAME=	keybase
 PORTVERSION=	0.2.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://dist.keybase.io/pkg/files/ \
 		LOCAL/bdrewery/${PORTNAME}/:DEFAULT,deps \
@@ -20,6 +20,7 @@ RUN_DEPENDS=	node>=0:${PORTSDIR}/www/node \
 WRKSRC=		${WRKDIR}/package
 NO_ARCH=	yes
 NO_BUILD=	yes
+SUB_FILES=	pkg-message
 
 # Install it a private place instead of polluting lib/node_modules
 # which npm(1) owns and will upgrade beneath pkg(8) control.
