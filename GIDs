@@ -1,7 +1,7 @@
 # $FreeBSD$
 # Please keep this file sorted by GID!
-operator:*:5:amanda
 daemon:*:1:
+operator:*:5:amanda
 mail:*:6:postfix,clamav
 smmsp:*:25:
 bind:*:53:
