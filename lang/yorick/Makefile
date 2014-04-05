@@ -15,6 +15,8 @@ GH_ACCOUNT=	dhmunro
 GH_TAGNAME=	y_${PORTVERSION:S/./_/g}
 GH_COMMIT=	82e60dc
 
+BROKEN=		Fails to link
+
 USE_XORG=	x11
 MAKE_ARGS=	Y_HOME=relocatable Y_DOCDIR=/dev/null
 INFO=		yorick
