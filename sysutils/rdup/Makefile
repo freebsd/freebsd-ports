@@ -5,36 +5,22 @@ PORTNAME=	rdup
 PORTVERSION=	1.1.14
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://miek.nl/projects/rdup/
+MASTER_SITES=	http://archive.miek.nl/projects/rdup/
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Tool to generate (incremental) backup file list
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
-		pcre:${PORTSDIR}/devel/pcre \
-		archive:${PORTSDIR}/archivers/libarchive \
-		nettle:${PORTSDIR}/security/nettle
+LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libarchive.so:${PORTSDIR}/archivers/libarchive \
+		libnettle.so:${PORTSDIR}/security/nettle
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_AUTOTOOLS=	autoconf
 MAKEFILE=	GNUmakefile
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/rdup \
-		bin/rdup-simple \
-		bin/rdup-tr \
-		bin/rdup-up
-
-MAN1=		rdup.1 \
-		rdup-simple.1 \
-		rdup-tr.1 \
-		rdup-up.1
-
-MAN7=		rdup-backups.7
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
