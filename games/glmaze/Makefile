@@ -27,6 +27,9 @@ OPTIONS_DEFINE=	DOCS
 DESKTOP_ENTRIES="glMaze" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
+# Wrong versioning upstream
+PORTSCOUT=	ignore:1
+
 post-extract:
 	@(cd ${WRKSRC} && ${MV} ${PORTNAME}.1 ${PORTNAME}.6)
 
