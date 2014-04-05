@@ -33,10 +33,8 @@ OPENMPI_CONFIGURE_ON=	--with-mpi=${LOCALBASE}/mpi/openmpi
 OPENMPI_LIB_DEPENDS=	libmpi.so:${PORTSDIR}/net/openmpi
 
 post-install:
-.for file in ncmpidiff ncmpidump ncmpigen ncmpivalid
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
-.endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>
