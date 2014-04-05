@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.0.42
+PORTVERSION=	1.0.50
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -20,7 +20,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 
-USES=		compiler:c++11-lib pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib pathfix pkgconfig shebangfix tar:xz
+SHEBANG_FILES=	filter/textonly
 USE_GNOME=	glib20
 USE_GHOSTSCRIPT=	yes
 GNU_CONFIGURE=	yes
@@ -45,5 +46,7 @@ post-patch:
 post-install:
 	@${RM} -rf ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip \
 		${STAGEDIR}${PREFIX}/man/man1/foomatic-rip.1
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupsfilters.so.1 \
+		${STAGEDIR}${PREFIX}/lib/libfontembed.so.1
 
 .include <bsd.port.mk>
