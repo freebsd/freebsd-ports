@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.69
-PORTREVISION=	4
+PORTVERSION=	2.70
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -20,9 +19,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USE_XORG=	x11 xext xmu
 USE_GL=		glew
-USES=		cmake:outsource shebangfix
+USES=		cmake:outsource compiler:features shebangfix
 USE_PYTHON=	3.3
-
 CMAKE_ARGS+=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
 		-DWITH_PYTHON_INSTALL_NUMPY:BOOL=OFF
 
@@ -34,7 +32,7 @@ SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 
 SUB_FILES=	blender blenderplayer
 
-OUTDIR=		${INSTALL_WRKSRC}/bin/2.69
+OUTDIR=		${INSTALL_WRKSRC}/bin/2.70
 
 .include "${.CURDIR}/Makefile.options"
 
@@ -212,14 +210,12 @@ BROKEN=		SDL requires SAMPLERATE
 CMAKE_ARGS+=	-DWITH_SDL:BOOL=OFF
 .endif
 
-post-patch:
-	@cd ${WRKSRC}/intern/cycles && ${REINPLACE_CMD} \
-		-e 's/__align/cycles_align/' \
-		-e 's/__global/cycles_global/g' \
-		util/util_types.h kernel/kernel_compat_cuda.h \
-		kernel/kernel_displace.h kernel/kernel_film.h \
-		kernel/kernel_passes.h kernel/kernel_path.h \
-		kernel/kernel_random.h
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == gcc
+# gcc 4.2 does not support -msse4.1, which is needed for blender 2.70+
+USE_GCC=	yes
+.endif
 
 # We ignore MAKE_ARGS, since those would set DESTDIR for make stage,
 # which in turn would cause make install to install everything in a
@@ -287,4 +283,4 @@ post-install:
 	@${ECHO} man/man1/${PORTNAME}.1.gz >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
