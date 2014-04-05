@@ -24,6 +24,8 @@ PLIST_FILES=	bin/buildapp
 PORTDOCS=	*
 
 BROKEN=		require needs a pathname for uninstalled modules with the ASDF 3.x bundled with sbcl
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-05-05
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's|sbcl|${SBCL}|' ${WRKSRC}/Makefile
