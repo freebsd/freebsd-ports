@@ -45,7 +45,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	exiv2.12:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 CONFIGURE_ARGS+=--enable-exiv2
 PLIST_SUB+=	EXIV2=""
 .else
