@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	cython
-PORTVERSION=	0.19.1
-PORTREVISION=	1
+PORTVERSION=	0.20.1
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.cython.org/release/ \
 		CHEESESHOP
 DISTNAME=	Cython-${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Compiler for Writing C Extensions for the Python Language
+
+LICENSE=	APACHE20
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
