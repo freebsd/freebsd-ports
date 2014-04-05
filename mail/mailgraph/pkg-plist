@@ -1,12 +1,6 @@
-@owner www
-@group www
-%%DATADIR%%
-@group
-@owner
 %%CGIDIR%%/mailgraph.cgi
 %%WWWROOT%%/mailgraph/mailgraph.css
 sbin/mailgraph.pl
-@dirrmtry %%DATADIR%%
 @dirrmtry %%CGIDIR%%
 @dirrmtry %%WWWROOT%%/mailgraph
 @dirrmtry %%WWWROOT%%
