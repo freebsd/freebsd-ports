@@ -1,0 +1,10 @@
+*****************************************************************************
+
+ Just run scimark2 or scimark2 -large
+
+ The first SciMark number reported is the composite score, followed by the an
+ approximate Mflop rate for each kernel.
+
+ You may try to hack CC or CFLAGS in /etc/make.conf...
+
+*****************************************************************************
