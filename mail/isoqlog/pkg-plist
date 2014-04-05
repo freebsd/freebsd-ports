@@ -21,42 +21,42 @@ etc/isoqlog.domains-dist
 %%PORTDOCS%%%%DOCSDIR%%/tr/KOPYALAMA
 %%PORTDOCS%%%%DOCSDIR%%/tr/KURULUM
 %%PORTDOCS%%%%DOCSDIR%%/tr/YAZARLAR
-share/isoqlog/htmltemp/daily.html
-share/isoqlog/htmltemp/domain.html
-share/isoqlog/htmltemp/index.html
-share/isoqlog/htmltemp/generaldaily.html
-share/isoqlog/htmltemp/generaldomain.html
-share/isoqlog/htmltemp/generalmonthly.html
-share/isoqlog/htmltemp/generalyearly.html
-share/isoqlog/htmltemp/monthly.html
-share/isoqlog/htmltemp/yearly.html
-share/isoqlog/htmltemp/images/dot.gif
-share/isoqlog/htmltemp/images/home.gif
-share/isoqlog/htmltemp/images/isoqlog.gif
-share/isoqlog/htmltemp/images/pk.gif
-share/isoqlog/htmltemp/images/up.gif
-share/isoqlog/htmltemp/library/isoqlog.css
-share/isoqlog/lang/bulgarian
-share/isoqlog/lang/czech
-share/isoqlog/lang/danish
-share/isoqlog/lang/dutch
-share/isoqlog/lang/english
-share/isoqlog/lang/french
-share/isoqlog/lang/finnish
-share/isoqlog/lang/german
-share/isoqlog/lang/italian
-share/isoqlog/lang/norwegian
-share/isoqlog/lang/russian
-share/isoqlog/lang/polish
-share/isoqlog/lang/portuguese
-share/isoqlog/lang/romana
-share/isoqlog/lang/spanish
-share/isoqlog/lang/swedish
-share/isoqlog/lang/turkish
+%%DATADIR%%/htmltemp/daily.html
+%%DATADIR%%/htmltemp/domain.html
+%%DATADIR%%/htmltemp/index.html
+%%DATADIR%%/htmltemp/generaldaily.html
+%%DATADIR%%/htmltemp/generaldomain.html
+%%DATADIR%%/htmltemp/generalmonthly.html
+%%DATADIR%%/htmltemp/generalyearly.html
+%%DATADIR%%/htmltemp/monthly.html
+%%DATADIR%%/htmltemp/yearly.html
+%%DATADIR%%/htmltemp/images/dot.gif
+%%DATADIR%%/htmltemp/images/home.gif
+%%DATADIR%%/htmltemp/images/isoqlog.gif
+%%DATADIR%%/htmltemp/images/pk.gif
+%%DATADIR%%/htmltemp/images/up.gif
+%%DATADIR%%/htmltemp/library/isoqlog.css
+%%DATADIR%%/lang/bulgarian
+%%DATADIR%%/lang/czech
+%%DATADIR%%/lang/danish
+%%DATADIR%%/lang/dutch
+%%DATADIR%%/lang/english
+%%DATADIR%%/lang/french
+%%DATADIR%%/lang/finnish
+%%DATADIR%%/lang/german
+%%DATADIR%%/lang/italian
+%%DATADIR%%/lang/norwegian
+%%DATADIR%%/lang/russian
+%%DATADIR%%/lang/polish
+%%DATADIR%%/lang/portuguese
+%%DATADIR%%/lang/romana
+%%DATADIR%%/lang/spanish
+%%DATADIR%%/lang/swedish
+%%DATADIR%%/lang/turkish
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/isoqlog/htmltemp/images
-@dirrm share/isoqlog/htmltemp/library
-@dirrm share/isoqlog/htmltemp
-@dirrm share/isoqlog/lang
-@dirrm share/isoqlog
+@dirrm %%DATADIR%%/htmltemp/images
+@dirrm %%DATADIR%%/htmltemp/library
+@dirrm %%DATADIR%%/htmltemp
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%
