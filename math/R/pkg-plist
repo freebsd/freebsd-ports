@@ -1438,6 +1438,8 @@ lib/R/share/texmf/tex/latex/omscmtt.fd
 lib/R/share/texmf/tex/latex/ts1aer.fd
 lib/R/share/texmf/tex/latex/ts1aett.fd
 %%LIBR%%libdata/pkgconfig/libR.pc
+man/man1/R.1.gz
+man/man1/Rscript.1.gz
 %%DOCSDIR%%/html/NEWS.2.html
 %%DOCSDIR%%/manual/R-FAQ.html
 %%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-FAQ.pdf
