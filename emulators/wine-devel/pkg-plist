@@ -281,8 +281,12 @@ include/wine/windows/dxerr9.h
 include/wine/windows/dxfile.h
 include/wine/windows/dxgi.h
 include/wine/windows/dxgi.idl
+include/wine/windows/dxgi1_2.h
+include/wine/windows/dxgi1_2.idl
 include/wine/windows/dxgiformat.h
 include/wine/windows/dxgitype.h
+include/wine/windows/dxva2api.h
+include/wine/windows/dxva2api.idl
 include/wine/windows/dyngraph.idl
 include/wine/windows/endpointvolume.h
 include/wine/windows/endpointvolume.idl
@@ -317,6 +321,7 @@ include/wine/windows/gdiplusmetaheader.h
 include/wine/windows/gdipluspixelformats.h
 include/wine/windows/gdiplustypes.h
 include/wine/windows/guiddef.h
+include/wine/windows/highlevelmonitorconfigurationapi.h
 include/wine/windows/hlguids.h
 include/wine/windows/hlink.h
 include/wine/windows/hlink.idl
@@ -382,6 +387,7 @@ include/wine/windows/lmuse.h
 include/wine/windows/lmuseflg.h
 include/wine/windows/lmwksta.h
 include/wine/windows/loadperf.h
+include/wine/windows/lowlevelmonitorconfigurationapi.h
 include/wine/windows/lzexpand.h
 include/wine/windows/mapi.h
 include/wine/windows/mapicode.h
@@ -513,6 +519,7 @@ include/wine/windows/pdh.h
 include/wine/windows/pdhmsg.h
 include/wine/windows/perhist.h
 include/wine/windows/perhist.idl
+include/wine/windows/physicalmonitorenumerationapi.h
 include/wine/windows/pktdef.h
 include/wine/windows/poppack.h
 include/wine/windows/powrprof.h
@@ -975,6 +982,7 @@ lib/wine/dwrite.dll.so
 lib/wine/dxdiag.exe.so
 lib/wine/dxdiagn.dll.so
 lib/wine/dxgi.dll.so
+lib/wine/dxva2.dll.so
 lib/wine/eject.exe.so
 lib/wine/expand.exe.so
 lib/wine/explorer.exe.so
@@ -1182,6 +1190,7 @@ lib/wine/fakedlls/dwrite.dll
 lib/wine/fakedlls/dxdiag.exe
 lib/wine/fakedlls/dxdiagn.dll
 lib/wine/fakedlls/dxgi.dll
+lib/wine/fakedlls/dxva2.dll
 lib/wine/fakedlls/eject.exe
 lib/wine/fakedlls/expand.exe
 lib/wine/fakedlls/explorer.exe
