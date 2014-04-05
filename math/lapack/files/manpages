@@ -1,4 +1,4 @@
-MAN3= \
+MAN3L= \
 INSTALL_ilaver.f.3 \
 INSTALL_lsame.f.3 \
 LAPACK_version.f.3 \
