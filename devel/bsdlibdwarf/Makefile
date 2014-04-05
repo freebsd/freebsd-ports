@@ -7,8 +7,12 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.lysator.liu.se/%SUBDIR%/
 MASTER_SITE_SUBDIR=	pub/${PORTNAME}
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD licensed implementation of libdwarf
+
+.if ${OSVERSION} >= 1000000
+BROKEN=		Does not compile with clang, outdated
+.endif
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
