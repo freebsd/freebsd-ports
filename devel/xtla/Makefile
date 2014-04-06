@@ -11,7 +11,7 @@ MASTER_SITES=	http://download.gna.org/xtla-el/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Emacs front-end to tla
+COMMENT=	Emacs front-end to tla
 
 BUILD_DEPENDS+=	tla:${PORTSDIR}/devel/tla \
 		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/tree-widget/tree-widget.el:${PORTSDIR}/editors/tree-widget
@@ -19,27 +19,22 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_EMACS=	yes
 
-LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+LISPDIR=	${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-emacs=${EMACS_NAME} --with-diff=gdiff --with-patch=gpatch
-USE_GMAKE=	yes
+USES=		gmake
 INFO=		xtla
 
-NO_STAGE=	yes
-do-install:
-	${MKDIR} ${LISPDIR}
-.for i in *.el *.elc
-	${INSTALL_DATA} ${WRKSRC}/lisp/${i} ${LISPDIR}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/texinfo/xtla.info ${PREFIX}/info
+OPTIONS_DEFINE=	DOCS
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ANNOUNCEMENTS BINDINGS FEATURES HACKING TODO
-	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
-.endfor
-.endif
+do-install:
+	@${MKDIR} ${LISPDIR}
+	(cd ${WRKSRC}/lisp && ${INSTALL_DATA} *.el *.elc ${LISPDIR})
+	${INSTALL_DATA} ${WRKSRC}/texinfo/xtla.info ${STAGEDIR}${PREFIX}/info
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${INSTALL_DATA} ANNOUNCEMENTS BINDINGS FEATURES \
+		HACKING TODO ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.pre.mk>
 
