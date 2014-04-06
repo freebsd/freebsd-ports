@@ -1,4 +1,6 @@
 etc/sql-ledger-httpd.conf
+@owner www
+@group www
 sql-ledger/VERSION
 sql-ledger/admin.pl
 sql-ledger/am.pl
@@ -25,6 +27,7 @@ sql-ledger/pe.pl
 sql-ledger/ps.pl
 sql-ledger/rc.pl
 sql-ledger/rp.pl
+sql-ledger/sm.pl
 sql-ledger/vr.pl
 sql-ledger/setup.pl
 sql-ledger/bin/mozilla/sm.pl
@@ -63,6 +66,8 @@ sql-ledger/bin/lynx/aa.pl
 sql-ledger/bin/lynx/admin.pl
 sql-ledger/bin/lynx/jc.pl
 sql-ledger/bin/lynx/rp.pl
+sql-ledger/bin/lynx/rd.pl
+sql-ledger/bin/lynx/sr.pl
 sql-ledger/bin/lynx/pw.pl
 sql-ledger/bin/lynx/hr.pl
 sql-ledger/bin/lynx/ca.pl
@@ -180,6 +185,7 @@ sql-ledger/sql/Pg-upgrade-2.6.12-2.7.0.sql
 sql-ledger/sql/Norwegian_Default-chart.sql
 sql-ledger/sql/UCOA-Form990EZ-chart.sql
 sql-ledger/sql/Poland-chart.sql
+sql-ledger/sql/Poland-UTF8-chart.sql
 sql-ledger/sql/Paraguay-chart.sql
 sql-ledger/sql/Pg-upgrade-1.6.0-1.8.0.sql
 sql-ledger/sql/Pg-upgrade-2.8.2-2.8.3.sql
@@ -264,6 +270,7 @@ sql-ledger/css/sql-ledger-blue.css
 sql-ledger/css/sql-ledger-red.css
 sql-ledger/css/sql-ledger-brown.css
 sql-ledger/css/sql-ledger-purple.css
+sql-ledger/css/sql-ledger-grey.css
 sql-ledger/users/sql-ledger.eps
 sql-ledger/users/sql-ledger.png
 sql-ledger/SL/JS.pm
@@ -455,39 +462,39 @@ sql-ledger/locale/it/ct
 sql-ledger/locale/it/Num2text
 sql-ledger/locale/it/cp
 sql-ledger/locale/it/jc
-sql-ledger/locale/ca_en/hr
-sql-ledger/locale/ca_en/ps
-sql-ledger/locale/ca_en/arap
-sql-ledger/locale/ca_en/vr
-sql-ledger/locale/ca_en/login
-sql-ledger/locale/ca_en/locales.pl
-sql-ledger/locale/ca_en/io
-sql-ledger/locale/ca_en/pe
-sql-ledger/locale/ca_en/rp
-sql-ledger/locale/ca_en/im
-sql-ledger/locale/ca_en/ar
-sql-ledger/locale/ca_en/all
-sql-ledger/locale/ca_en/is
-sql-ledger/locale/ca_en/LANGUAGE
-sql-ledger/locale/ca_en/aa
-sql-ledger/locale/ca_en/gl
-sql-ledger/locale/ca_en/ca
-sql-ledger/locale/ca_en/oe
-sql-ledger/locale/ca_en/menu
-sql-ledger/locale/ca_en/ic
-sql-ledger/locale/ca_en/ir
-sql-ledger/locale/ca_en/admin
-sql-ledger/locale/ca_en/ap
-sql-ledger/locale/ca_en/pw
-sql-ledger/locale/ca_en/pos
-sql-ledger/locale/ca_en/am
-sql-ledger/locale/ca_en/rc
-sql-ledger/locale/ca_en/COPYING
-sql-ledger/locale/ca_en/arapprn
-sql-ledger/locale/ca_en/bp
-sql-ledger/locale/ca_en/ct
-sql-ledger/locale/ca_en/cp
-sql-ledger/locale/ca_en/jc
+sql-ledger/locale/caen/hr
+sql-ledger/locale/caen/ps
+sql-ledger/locale/caen/arap
+sql-ledger/locale/caen/vr
+sql-ledger/locale/caen/login
+sql-ledger/locale/caen/locales.pl
+sql-ledger/locale/caen/io
+sql-ledger/locale/caen/pe
+sql-ledger/locale/caen/rp
+sql-ledger/locale/caen/im
+sql-ledger/locale/caen/ar
+sql-ledger/locale/caen/all
+sql-ledger/locale/caen/is
+sql-ledger/locale/caen/LANGUAGE
+sql-ledger/locale/caen/aa
+sql-ledger/locale/caen/gl
+sql-ledger/locale/caen/ca
+sql-ledger/locale/caen/oe
+sql-ledger/locale/caen/menu
+sql-ledger/locale/caen/ic
+sql-ledger/locale/caen/ir
+sql-ledger/locale/caen/admin
+sql-ledger/locale/caen/ap
+sql-ledger/locale/caen/pw
+sql-ledger/locale/caen/pos
+sql-ledger/locale/caen/am
+sql-ledger/locale/caen/rc
+sql-ledger/locale/caen/COPYING
+sql-ledger/locale/caen/arapprn
+sql-ledger/locale/caen/bp
+sql-ledger/locale/caen/ct
+sql-ledger/locale/caen/cp
+sql-ledger/locale/caen/jc
 sql-ledger/locale/eg_utf/hr
 sql-ledger/locale/eg_utf/ps
 sql-ledger/locale/eg_utf/arap
@@ -555,40 +562,40 @@ sql-ledger/locale/tw_utf/bp
 sql-ledger/locale/tw_utf/ct
 sql-ledger/locale/tw_utf/cp
 sql-ledger/locale/tw_utf/jc
-sql-ledger/locale/ca_fr/hr
-sql-ledger/locale/ca_fr/ps
-sql-ledger/locale/ca_fr/arap
-sql-ledger/locale/ca_fr/vr
-sql-ledger/locale/ca_fr/login
-sql-ledger/locale/ca_fr/locales.pl
-sql-ledger/locale/ca_fr/io
-sql-ledger/locale/ca_fr/pe
-sql-ledger/locale/ca_fr/rp
-sql-ledger/locale/ca_fr/im
-sql-ledger/locale/ca_fr/ar
-sql-ledger/locale/ca_fr/all
-sql-ledger/locale/ca_fr/is
-sql-ledger/locale/ca_fr/LANGUAGE
-sql-ledger/locale/ca_fr/aa
-sql-ledger/locale/ca_fr/gl
-sql-ledger/locale/ca_fr/ca
-sql-ledger/locale/ca_fr/oe
-sql-ledger/locale/ca_fr/menu
-sql-ledger/locale/ca_fr/ic
-sql-ledger/locale/ca_fr/ir
-sql-ledger/locale/ca_fr/admin
-sql-ledger/locale/ca_fr/ap
-sql-ledger/locale/ca_fr/pw
-sql-ledger/locale/ca_fr/pos
-sql-ledger/locale/ca_fr/am
-sql-ledger/locale/ca_fr/rc
-sql-ledger/locale/ca_fr/COPYING
-sql-ledger/locale/ca_fr/arapprn
-sql-ledger/locale/ca_fr/bp
-sql-ledger/locale/ca_fr/ct
-sql-ledger/locale/ca_fr/Num2text
-sql-ledger/locale/ca_fr/cp
-sql-ledger/locale/ca_fr/jc
+sql-ledger/locale/cafr/hr
+sql-ledger/locale/cafr/ps
+sql-ledger/locale/cafr/arap
+sql-ledger/locale/cafr/vr
+sql-ledger/locale/cafr/login
+sql-ledger/locale/cafr/locales.pl
+sql-ledger/locale/cafr/io
+sql-ledger/locale/cafr/pe
+sql-ledger/locale/cafr/rp
+sql-ledger/locale/cafr/im
+sql-ledger/locale/cafr/ar
+sql-ledger/locale/cafr/all
+sql-ledger/locale/cafr/is
+sql-ledger/locale/cafr/LANGUAGE
+sql-ledger/locale/cafr/aa
+sql-ledger/locale/cafr/gl
+sql-ledger/locale/cafr/ca
+sql-ledger/locale/cafr/oe
+sql-ledger/locale/cafr/menu
+sql-ledger/locale/cafr/ic
+sql-ledger/locale/cafr/ir
+sql-ledger/locale/cafr/admin
+sql-ledger/locale/cafr/ap
+sql-ledger/locale/cafr/pw
+sql-ledger/locale/cafr/pos
+sql-ledger/locale/cafr/am
+sql-ledger/locale/cafr/rc
+sql-ledger/locale/cafr/COPYING
+sql-ledger/locale/cafr/arapprn
+sql-ledger/locale/cafr/bp
+sql-ledger/locale/cafr/ct
+sql-ledger/locale/cafr/Num2text
+sql-ledger/locale/cafr/cp
+sql-ledger/locale/cafr/jc
 sql-ledger/locale/hu/hr
 sql-ledger/locale/hu/ps
 sql-ledger/locale/hu/arap
@@ -724,40 +731,94 @@ sql-ledger/locale/mx/ct
 sql-ledger/locale/mx/Num2text
 sql-ledger/locale/mx/cp
 sql-ledger/locale/mx/jc
-sql-ledger/locale/tw_big5/hr
-sql-ledger/locale/tw_big5/ps
-sql-ledger/locale/tw_big5/arap
-sql-ledger/locale/tw_big5/vr
-sql-ledger/locale/tw_big5/login
-sql-ledger/locale/tw_big5/locales.pl
-sql-ledger/locale/tw_big5/io
-sql-ledger/locale/tw_big5/pe
-sql-ledger/locale/tw_big5/rp
-sql-ledger/locale/tw_big5/im
-sql-ledger/locale/tw_big5/ar
-sql-ledger/locale/tw_big5/all
-sql-ledger/locale/tw_big5/is
-sql-ledger/locale/tw_big5/LANGUAGE
-sql-ledger/locale/tw_big5/aa
-sql-ledger/locale/tw_big5/gl
-sql-ledger/locale/tw_big5/ca
-sql-ledger/locale/tw_big5/oe
-sql-ledger/locale/tw_big5/menu
-sql-ledger/locale/tw_big5/ic
-sql-ledger/locale/tw_big5/temp
-sql-ledger/locale/tw_big5/ir
-sql-ledger/locale/tw_big5/admin
-sql-ledger/locale/tw_big5/ap
-sql-ledger/locale/tw_big5/pw
-sql-ledger/locale/tw_big5/pos
-sql-ledger/locale/tw_big5/am
-sql-ledger/locale/tw_big5/rc
-sql-ledger/locale/tw_big5/COPYING
-sql-ledger/locale/tw_big5/arapprn
-sql-ledger/locale/tw_big5/bp
-sql-ledger/locale/tw_big5/ct
-sql-ledger/locale/tw_big5/cp
-sql-ledger/locale/tw_big5/jc
+sql-ledger/locale/mx_utf/COPYING
+sql-ledger/locale/mx_utf/LANGUAGE
+sql-ledger/locale/mx_utf/Num2text
+sql-ledger/locale/mx_utf/aa
+sql-ledger/locale/mx_utf/admin
+sql-ledger/locale/mx_utf/all
+sql-ledger/locale/mx_utf/am
+sql-ledger/locale/mx_utf/ap
+sql-ledger/locale/mx_utf/ar
+sql-ledger/locale/mx_utf/arap
+sql-ledger/locale/mx_utf/arapprn
+sql-ledger/locale/mx_utf/bp
+sql-ledger/locale/mx_utf/ca
+sql-ledger/locale/mx_utf/cp
+sql-ledger/locale/mx_utf/ct
+sql-ledger/locale/mx_utf/gl
+sql-ledger/locale/mx_utf/hr
+sql-ledger/locale/mx_utf/ic
+sql-ledger/locale/mx_utf/im
+sql-ledger/locale/mx_utf/io
+sql-ledger/locale/mx_utf/ir
+sql-ledger/locale/mx_utf/is
+sql-ledger/locale/mx_utf/jc
+sql-ledger/locale/mx_utf/js
+sql-ledger/locale/mx_utf/lib
+sql-ledger/locale/mx_utf/locales.pl
+sql-ledger/locale/mx_utf/login
+sql-ledger/locale/mx_utf/menu
+sql-ledger/locale/mx_utf/mylib
+sql-ledger/locale/mx_utf/oe
+sql-ledger/locale/mx_utf/pe
+sql-ledger/locale/mx_utf/pos
+sql-ledger/locale/mx_utf/ps
+sql-ledger/locale/mx_utf/pw
+sql-ledger/locale/mx_utf/rc
+sql-ledger/locale/mx_utf/rd
+sql-ledger/locale/mx_utf/reports
+sql-ledger/locale/mx_utf/rp
+sql-ledger/locale/mx_utf/sm
+sql-ledger/locale/mx_utf/sr
+sql-ledger/locale/mx_utf/trf
+sql-ledger/locale/mx_utf/vr
+sql-ledger/locale/pl_utf/COPYING
+sql-ledger/locale/pl_utf/LANGUAGE
+sql-ledger/locale/pl_utf/all
+sql-ledger/locale/pl_utf/am
+sql-ledger/locale/pl_utf/ic
+sql-ledger/locale/pl_utf/ir
+sql-ledger/locale/pl_utf/is
+sql-ledger/locale/pl_utf/locales.pl
+sql-ledger/locale/pl_utf/menu
+sql-ledger/locale/pl_utf/ps
+sql-ledger/locale/tw/hr
+sql-ledger/locale/tw/ps
+sql-ledger/locale/tw/arap
+sql-ledger/locale/tw/vr
+sql-ledger/locale/tw/login
+sql-ledger/locale/tw/locales.pl
+sql-ledger/locale/tw/io
+sql-ledger/locale/tw/pe
+sql-ledger/locale/tw/rp
+sql-ledger/locale/tw/im
+sql-ledger/locale/tw/ar
+sql-ledger/locale/tw/all
+sql-ledger/locale/tw/is
+sql-ledger/locale/tw/LANGUAGE
+sql-ledger/locale/tw/aa
+sql-ledger/locale/tw/gl
+sql-ledger/locale/tw/ca
+sql-ledger/locale/tw/oe
+sql-ledger/locale/tw/menu
+sql-ledger/locale/tw/ic
+sql-ledger/locale/tw/ir
+sql-ledger/locale/tw/admin
+sql-ledger/locale/tw/ap
+sql-ledger/locale/tw/pw
+sql-ledger/locale/tw/pos
+sql-ledger/locale/tw/am
+sql-ledger/locale/tw/rc
+sql-ledger/locale/tw/COPYING
+sql-ledger/locale/tw/arapprn
+sql-ledger/locale/tw/bp
+sql-ledger/locale/tw/ct
+sql-ledger/locale/tw/cp
+sql-ledger/locale/tw/jc
+sql-ledger/locale/tw_utf/rd
+sql-ledger/locale/tw_utf/sm
+sql-ledger/locale/tw_utf/sr
 sql-ledger/locale/sk_utf/hr
 sql-ledger/locale/sk_utf/ps
 sql-ledger/locale/sk_utf/arap
@@ -1063,40 +1124,40 @@ sql-ledger/locale/ee_utf/ct
 sql-ledger/locale/ee_utf/Num2text
 sql-ledger/locale/ee_utf/cp
 sql-ledger/locale/ee_utf/jc
-sql-ledger/locale/be_nl/hr
-sql-ledger/locale/be_nl/ps
-sql-ledger/locale/be_nl/arap
-sql-ledger/locale/be_nl/vr
-sql-ledger/locale/be_nl/login
-sql-ledger/locale/be_nl/locales.pl
-sql-ledger/locale/be_nl/io
-sql-ledger/locale/be_nl/pe
-sql-ledger/locale/be_nl/rp
-sql-ledger/locale/be_nl/im
-sql-ledger/locale/be_nl/ar
-sql-ledger/locale/be_nl/all
-sql-ledger/locale/be_nl/is
-sql-ledger/locale/be_nl/LANGUAGE
-sql-ledger/locale/be_nl/aa
-sql-ledger/locale/be_nl/gl
-sql-ledger/locale/be_nl/ca
-sql-ledger/locale/be_nl/oe
-sql-ledger/locale/be_nl/menu
-sql-ledger/locale/be_nl/ic
-sql-ledger/locale/be_nl/ir
-sql-ledger/locale/be_nl/admin
-sql-ledger/locale/be_nl/ap
-sql-ledger/locale/be_nl/pw
-sql-ledger/locale/be_nl/pos
-sql-ledger/locale/be_nl/am
-sql-ledger/locale/be_nl/rc
-sql-ledger/locale/be_nl/COPYING
-sql-ledger/locale/be_nl/arapprn
-sql-ledger/locale/be_nl/bp
-sql-ledger/locale/be_nl/ct
-sql-ledger/locale/be_nl/Num2text
-sql-ledger/locale/be_nl/cp
-sql-ledger/locale/be_nl/jc
+sql-ledger/locale/benl/hr
+sql-ledger/locale/benl/ps
+sql-ledger/locale/benl/arap
+sql-ledger/locale/benl/vr
+sql-ledger/locale/benl/login
+sql-ledger/locale/benl/locales.pl
+sql-ledger/locale/benl/io
+sql-ledger/locale/benl/pe
+sql-ledger/locale/benl/rp
+sql-ledger/locale/benl/im
+sql-ledger/locale/benl/ar
+sql-ledger/locale/benl/all
+sql-ledger/locale/benl/is
+sql-ledger/locale/benl/LANGUAGE
+sql-ledger/locale/benl/aa
+sql-ledger/locale/benl/gl
+sql-ledger/locale/benl/ca
+sql-ledger/locale/benl/oe
+sql-ledger/locale/benl/menu
+sql-ledger/locale/benl/ic
+sql-ledger/locale/benl/ir
+sql-ledger/locale/benl/admin
+sql-ledger/locale/benl/ap
+sql-ledger/locale/benl/pw
+sql-ledger/locale/benl/pos
+sql-ledger/locale/benl/am
+sql-ledger/locale/benl/rc
+sql-ledger/locale/benl/COPYING
+sql-ledger/locale/benl/arapprn
+sql-ledger/locale/benl/bp
+sql-ledger/locale/benl/ct
+sql-ledger/locale/benl/Num2text
+sql-ledger/locale/benl/cp
+sql-ledger/locale/benl/jc
 sql-ledger/locale/gr/hr
 sql-ledger/locale/gr/ps
 sql-ledger/locale/gr/arap
@@ -1732,40 +1793,39 @@ sql-ledger/locale/dk/bp
 sql-ledger/locale/dk/ct
 sql-ledger/locale/dk/cp
 sql-ledger/locale/dk/jc
-sql-ledger/locale/be_fr/hr
-sql-ledger/locale/be_fr/ps
-sql-ledger/locale/be_fr/arap
-sql-ledger/locale/be_fr/vr
-sql-ledger/locale/be_fr/login
-sql-ledger/locale/be_fr/locales.pl
-sql-ledger/locale/be_fr/io
-sql-ledger/locale/be_fr/pe
-sql-ledger/locale/be_fr/rp
-sql-ledger/locale/be_fr/im
-sql-ledger/locale/be_fr/ar
-sql-ledger/locale/be_fr/all
-sql-ledger/locale/be_fr/is
-sql-ledger/locale/be_fr/LANGUAGE
-sql-ledger/locale/be_fr/aa
-sql-ledger/locale/be_fr/gl
-sql-ledger/locale/be_fr/ca
-sql-ledger/locale/be_fr/oe
-sql-ledger/locale/be_fr/menu
-sql-ledger/locale/be_fr/ic
-sql-ledger/locale/be_fr/ir
-sql-ledger/locale/be_fr/admin
-sql-ledger/locale/be_fr/ap
-sql-ledger/locale/be_fr/pw
-sql-ledger/locale/be_fr/pos
-sql-ledger/locale/be_fr/am
-sql-ledger/locale/be_fr/rc
-sql-ledger/locale/be_fr/COPYING
-sql-ledger/locale/be_fr/arapprn
-sql-ledger/locale/be_fr/bp
-sql-ledger/locale/be_fr/ct
-sql-ledger/locale/be_fr/Num2text
-sql-ledger/locale/be_fr/cp
-sql-ledger/locale/be_fr/jc
+sql-ledger/locale/befr/hr
+sql-ledger/locale/befr/ps
+sql-ledger/locale/befr/arap
+sql-ledger/locale/befr/vr
+sql-ledger/locale/befr/login
+sql-ledger/locale/befr/locales.pl
+sql-ledger/locale/befr/io
+sql-ledger/locale/befr/pe
+sql-ledger/locale/befr/rp
+sql-ledger/locale/befr/im
+sql-ledger/locale/befr/ar
+sql-ledger/locale/befr/all
+sql-ledger/locale/befr/is
+sql-ledger/locale/befr/LANGUAGE
+sql-ledger/locale/befr/aa
+sql-ledger/locale/befr/gl
+sql-ledger/locale/befr/ca
+sql-ledger/locale/befr/oe
+sql-ledger/locale/befr/menu
+sql-ledger/locale/befr/ic
+sql-ledger/locale/befr/ir
+sql-ledger/locale/befr/admin
+sql-ledger/locale/befr/ap
+sql-ledger/locale/befr/pw
+sql-ledger/locale/befr/pos
+sql-ledger/locale/befr/am
+sql-ledger/locale/befr/rc
+sql-ledger/locale/befr/COPYING
+sql-ledger/locale/befr/arapprn
+sql-ledger/locale/befr/bp
+sql-ledger/locale/befr/ct
+sql-ledger/locale/befr/cp
+sql-ledger/locale/befr/jc
 sql-ledger/locale/ct/hr
 sql-ledger/locale/ct/ps
 sql-ledger/locale/ct/arap
@@ -1908,39 +1968,39 @@ sql-ledger/locale/co/ct
 sql-ledger/locale/co/Num2text
 sql-ledger/locale/co/cp
 sql-ledger/locale/co/jc
-sql-ledger/locale/en_GB/hr
-sql-ledger/locale/en_GB/ps
-sql-ledger/locale/en_GB/arap
-sql-ledger/locale/en_GB/vr
-sql-ledger/locale/en_GB/login
-sql-ledger/locale/en_GB/locales.pl
-sql-ledger/locale/en_GB/io
-sql-ledger/locale/en_GB/pe
-sql-ledger/locale/en_GB/rp
-sql-ledger/locale/en_GB/im
-sql-ledger/locale/en_GB/ar
-sql-ledger/locale/en_GB/all
-sql-ledger/locale/en_GB/is
-sql-ledger/locale/en_GB/LANGUAGE
-sql-ledger/locale/en_GB/aa
-sql-ledger/locale/en_GB/gl
-sql-ledger/locale/en_GB/ca
-sql-ledger/locale/en_GB/oe
-sql-ledger/locale/en_GB/menu
-sql-ledger/locale/en_GB/ic
-sql-ledger/locale/en_GB/ir
-sql-ledger/locale/en_GB/admin
-sql-ledger/locale/en_GB/ap
-sql-ledger/locale/en_GB/pw
-sql-ledger/locale/en_GB/pos
-sql-ledger/locale/en_GB/am
-sql-ledger/locale/en_GB/rc
-sql-ledger/locale/en_GB/COPYING
-sql-ledger/locale/en_GB/arapprn
-sql-ledger/locale/en_GB/bp
-sql-ledger/locale/en_GB/ct
-sql-ledger/locale/en_GB/cp
-sql-ledger/locale/en_GB/jc
+sql-ledger/locale/enGB/hr
+sql-ledger/locale/enGB/ps
+sql-ledger/locale/enGB/arap
+sql-ledger/locale/enGB/vr
+sql-ledger/locale/enGB/login
+sql-ledger/locale/enGB/locales.pl
+sql-ledger/locale/enGB/io
+sql-ledger/locale/enGB/pe
+sql-ledger/locale/enGB/rp
+sql-ledger/locale/enGB/im
+sql-ledger/locale/enGB/ar
+sql-ledger/locale/enGB/all
+sql-ledger/locale/enGB/is
+sql-ledger/locale/enGB/LANGUAGE
+sql-ledger/locale/enGB/aa
+sql-ledger/locale/enGB/gl
+sql-ledger/locale/enGB/ca
+sql-ledger/locale/enGB/oe
+sql-ledger/locale/enGB/menu
+sql-ledger/locale/enGB/ic
+sql-ledger/locale/enGB/ir
+sql-ledger/locale/enGB/admin
+sql-ledger/locale/enGB/ap
+sql-ledger/locale/enGB/pw
+sql-ledger/locale/enGB/pos
+sql-ledger/locale/enGB/am
+sql-ledger/locale/enGB/rc
+sql-ledger/locale/enGB/COPYING
+sql-ledger/locale/enGB/arapprn
+sql-ledger/locale/enGB/bp
+sql-ledger/locale/enGB/ct
+sql-ledger/locale/enGB/cp
+sql-ledger/locale/enGB/jc
 sql-ledger/locale/br/hr
 sql-ledger/locale/br/ps
 sql-ledger/locale/br/arap
@@ -3144,7 +3204,7 @@ sql-ledger/templates/Brazilian_Portuguese-pick_list.html
 @dirrmtry sql-ledger/locale/ua_utf
 @dirrmtry sql-ledger/locale/ua
 @dirrmtry sql-ledger/locale/tw_utf
-@dirrmtry sql-ledger/locale/tw_big5
+@dirrmtry sql-ledger/locale/tw
 @dirrmtry sql-ledger/locale/tr
 @dirrmtry sql-ledger/locale/sv
 @dirrmtry sql-ledger/locale/sk_utf
@@ -3154,10 +3214,12 @@ sql-ledger/templates/Brazilian_Portuguese-pick_list.html
 @dirrmtry sql-ledger/locale/ru
 @dirrmtry sql-ledger/locale/py
 @dirrmtry sql-ledger/locale/pt
+@dirrmtry sql-ledger/locale/pl_utf
 @dirrmtry sql-ledger/locale/pl
 @dirrmtry sql-ledger/locale/pa
 @dirrmtry sql-ledger/locale/nl
 @dirrmtry sql-ledger/locale/nb
+@dirrmtry sql-ledger/locale/mx_utf
 @dirrmtry sql-ledger/locale/mx
 @dirrmtry sql-ledger/locale/lv
 @dirrmtry sql-ledger/locale/lt
@@ -3172,7 +3234,7 @@ sql-ledger/templates/Brazilian_Portuguese-pick_list.html
 @dirrmtry sql-ledger/locale/fi
 @dirrmtry sql-ledger/locale/es_utf
 @dirrmtry sql-ledger/locale/es
-@dirrmtry sql-ledger/locale/en_GB
+@dirrmtry sql-ledger/locale/enGB
 @dirrmtry sql-ledger/locale/eg_utf
 @dirrmtry sql-ledger/locale/ee_utf
 @dirrmtry sql-ledger/locale/ee
@@ -3187,12 +3249,12 @@ sql-ledger/templates/Brazilian_Portuguese-pick_list.html
 @dirrmtry sql-ledger/locale/cn_utf
 @dirrmtry sql-ledger/locale/ch_utf
 @dirrmtry sql-ledger/locale/ch
-@dirrmtry sql-ledger/locale/ca_fr
-@dirrmtry sql-ledger/locale/ca_en
+@dirrmtry sql-ledger/locale/cafr
+@dirrmtry sql-ledger/locale/caen
 @dirrmtry sql-ledger/locale/br
 @dirrmtry sql-ledger/locale/bg_utf
-@dirrmtry sql-ledger/locale/be_nl
-@dirrmtry sql-ledger/locale/be_fr
+@dirrmtry sql-ledger/locale/benl
+@dirrmtry sql-ledger/locale/befr
 @dirrmtry sql-ledger/locale
 @dirrmtry sql-ledger/images
 @dirrmtry sql-ledger/doc
@@ -3202,3 +3264,5 @@ sql-ledger/templates/Brazilian_Portuguese-pick_list.html
 @dirrmtry sql-ledger/bin
 @dirrmtry sql-ledger/SL
 @dirrmtry sql-ledger
+@owner
+@group
