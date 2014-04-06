@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-.include "${.CURDIR}/Makefile.version"
+.include "Makefile.version"
 
 LIB_DEPENDS=		libgmp.so:${PORTSDIR}/math/gmp
 LIB_DEPENDS+=		libmpfr.so:${PORTSDIR}/math/mpfr
