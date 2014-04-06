@@ -21,7 +21,6 @@ USE_BZIP2=	YES
 WRKSRC=		${WRKDIR}/msu_ru_nsh_clunits
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 FHOME=		${PREFIX}/share/festival/lib/voices/russian/msu_ru_nsh_clunits
 
@@ -30,7 +29,7 @@ post-extract:
 	@ ${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 do-install:
-	${MKDIR} ${FHOME}
-	cd ${WRKSRC} && ${CP} -pPR * ${FHOME}
+	@${MKDIR} ${STAGEDIR}${FHOME}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${FHOME}
 
 .include <bsd.port.mk>
