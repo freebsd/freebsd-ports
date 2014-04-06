@@ -13,7 +13,6 @@ COMMENT=	Czech language support for Festival
 
 FHOME=		${PREFIX}/share/festival
 NO_BUILD=	yes
-NO_STAGE=	yes
 rulez=		czech-debug.scm czech-mbrola.scm czech-unisyn.scm czech.scm
 lexicons=	czech-lexicon.scm czech-lexicon.out
 
@@ -22,8 +21,8 @@ post-patch:
 	${SED} -e "s,@FESTIVAL_TARGET_DIR@,${FHOME}/lib/dicts," ${WRKSRC}/czech.scm.in > ${WRKSRC}/czech.scm
 
 post-install:
-	${MKDIR} ${FHOME}/lib/dicts/
-	${INSTALL} -m 644 ${rulez:C/^/${WRKSRC}\//} ${FHOME}/lib/
-	${INSTALL} -m 644 ${lexicons:C/^/${WRKSRC}\//} ${FHOME}/lib/dicts/
+	${MKDIR} ${STAGEDIR}${FHOME}/lib/dicts/
+	${INSTALL} -m 644 ${rulez:C/^/${WRKSRC}\//} ${STAGEDIR}${FHOME}/lib/
+	${INSTALL} -m 644 ${lexicons:C/^/${WRKSRC}\//} ${STAGEDIR}${FHOME}/lib/dicts/
 
 .include <bsd.port.mk>
