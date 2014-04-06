@@ -1460,7 +1460,6 @@
     SUBDIR += pound
     SUBDIR += prado
     SUBDIR += privoxy
-    SUBDIR += privoxy+ipv6
     SUBDIR += protovis
     SUBDIR += pserv
     SUBDIR += publicfile
