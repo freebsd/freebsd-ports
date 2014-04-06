@@ -14,7 +14,6 @@ COMMENT=	Czech male voice for Festival
 RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/dicts/czech-lexicon.out:${PORTSDIR}/audio/festlex-czech
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 USES=		gmake
 MAKE_ARGS=	festival_voices_path=${PREFIX}/share/festival/lib/voices
 
