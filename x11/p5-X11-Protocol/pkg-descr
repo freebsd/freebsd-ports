@@ -4,5 +4,4 @@ as the author is working on a higher-level interface that will be
 more object-oriented and easier to use, so as to allow this low
 level access to eventually be replaced by an XS interface to Xlib.
 
-Author: Stephen McCamant
 WWW: http://search.cpan.org/dist/X11-Protocol/
