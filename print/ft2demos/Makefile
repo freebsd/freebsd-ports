@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
 		RINGSERVER/graphics/freetype/freetype2
@@ -16,9 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-USE_BZIP2=	yes
 USE_XORG=	xext
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_AUTOTOOLS=	libtool:env
 MAKE_ENV=	TOP_DIR="${FREETYPE_WRKSRC}"
 MAKE_ARGS=	EXES="${FT_PROGRAMS}" X11_PATH="${LOCALBASE}"
