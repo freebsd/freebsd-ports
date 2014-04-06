@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pmw
-PORTVERSION=	4.27
+PORTVERSION=	4.28
 CATEGORIES=	print audio
 MASTER_SITES=	http://www.quercite.com/
 
@@ -22,5 +22,6 @@ SUB_FILES=	pkg-message
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ChangeLog spec.pdf ${STAGEDIR}${DOCSDIR})
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pmw
 
 .include <bsd.port.mk>
