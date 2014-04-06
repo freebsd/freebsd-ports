@@ -1,7 +1,9 @@
 @stopdaemon 3dm2
 @unexec if cmp -s %D/etc/3dm2/3dm2.conf.sample %D/etc/3dm2/3dm2.conf; then rm -f %D/etc/3dm2/3dm2.conf; fi
+@mode 0400
 etc/3dm2/3dm2.conf.sample
-@exec if [ ! -f %B/3dm2.conf ] ; then cp -p %D/%F %B/3dm2.conf && chmod 600 %B/3dm2.conf; fi
+@mode
+@exec if [ ! -f %B/3dm2.conf ] ; then cp -p %D/%F %B/3dm2.conf && chmod 0600 %B/3dm2.conf; fi
 etc/3dm2/msg/tdm_msg_en
 etc/3dm2/msg/tw_msg_en
 sbin/3dm2
@@ -378,8 +380,10 @@ share/3dm2/help/en/scripts/expand.js
 share/3dm2/help/en/scripts/seealso.js
 share/3dm2/help/en/sqbullet.gif
 share/3dm2/help/en/toc.html
-@unexec unlink /etc/3dm2/3dm2.conf
-@unexec unlink /etc/3dm2/3dm2.pem
+@cwd /
+etc/3dm2/3dm2.conf
+etc/3dm2/3dm2.pem
+@cwd
 @unexec rmdir /etc/3dm2 2>/dev/null || true
 @dirrmtry etc/3dm2/msg
 @dirrmtry etc/3dm2
