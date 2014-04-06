@@ -3,7 +3,7 @@
 
 PORTNAME=	armv5
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSION}
@@ -17,7 +17,7 @@ COMMENT=	C/Ada cross-compiler, target: Android ARMv5
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
+BUILD_DEPENDS=	gnatdroid-sysroot=19:${PORTSDIR}/lang/gnatdroid-sysroot \
 		gnatdroid-binutils>=2.21:${PORTSDIR}/lang/gnatdroid-binutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -53,7 +53,7 @@ BUILD_WRKSRC=		${WRKDIR}/build
 PATCHDIR=		${.CURDIR}/../gcc47-aux/files
 CFG_SCRIPT=		${WRKSRC}/configure
 REVFILE=		${WRKSRC}/gcc/REVISION
-SRPREFIX=		${LOCALBASE}/android9
+SRPREFIX=		${LOCALBASE}/android19
 PREFIX=			${SRPREFIX}/${ARMVERSION}
 INSTALLDIRS=		lib libexec share
 INSTALLDIRS+=		${DROID_TARGET}/lib
@@ -154,20 +154,10 @@ pre-install:
 #	Manually rename products so it doesn't rebuild them with new name
 .for X in ${CROSS}
 	${CP} -a ${BUILD_WRKSRC}/gcc/${X}-cross ${BUILD_WRKSRC}/gcc/${X}
-.endfor	
+.endfor
 
 do-install:
 	cd ${BUILD_WRKSRC} && ${GMAKE} install-strip DESTDIR=${STAGEDIR}
-	${MV} ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gcc \
-	   ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gnatgcc
-	${MV} ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gcc \
-	   ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gnatgcc
-.if ${PORT_OPTIONS:MFORT}
-	${MV} ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gfortran \
-	   ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gnatgfortran
-	${MV} ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gfortran \
-	   ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gnatgfortran
-.endif
 
 post-install:
 .for d in ${INSTALLDIRS}

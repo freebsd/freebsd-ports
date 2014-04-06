@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	sysroot
-PORTVERSION=	9
+PORTVERSION=	19
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMEPREFIX=	gnatdroid-
-DISTNAME=	android-9-arm
+DISTNAME=	android-${PORTVERSION}-arm
 
 MAINTAINER=	marino@FreeBSD.org
-COMMENT=	Android-9 sysroot for C/Ada Android cross-compiler
+COMMENT=	Android-${PORTVERSION} sysroot for C/Ada Android cross-compiler
 
-USE_BZIP2=	YES
+USES=		tar:bzip2
 NO_BUILD=	YES
 NO_MTREE=	YES
 
 WRKSRC=		${WRKDIR}/android-${PORTVERSION}-arm
-PREFIX=		${LOCALBASE}/android9
+PREFIX=		${LOCALBASE}/android${PORTVERSION}
 
 do-install:
-	(cd ${WRKSRC} && ${FIND} usr/ -type d -exec ${MKDIR} ${STAGEDIR}${PREFIX}/{} \;)
-	(cd ${WRKSRC} && ${FIND} usr/ -type f -exec \
-	   ${INSTALL} -p -o root -g wheel ${WRKSRC}/{} ${STAGEDIR}${PREFIX}/{} \;)
+	@${MKDIR} ${STAGEDIR}${PREFIX}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} usr ${STAGEDIR}${PREFIX})
 
 .include <bsd.port.mk>
