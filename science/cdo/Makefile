@@ -3,6 +3,7 @@
 
 PORTNAME=	cdo
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://code.zmaw.de/attachments/download/5824/ \
 		LOCAL/sunpoet
@@ -10,8 +11,11 @@ MASTER_SITES=	https://code.zmaw.de/attachments/download/5824/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Climate Data Operators
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	HDF5 JASPER NETCDF PROJ SZIP
 OPTIONS_DEFAULT=HDF5 NETCDF PROJ SZIP
+OPTIONS_SUB=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-cdi-lib --program-transform-name="" --with-zlib=/usr
@@ -20,56 +24,25 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 USE_LDCONFIG=	yes
 USES=		gmake pathfix
 
-HDF5_VER?=	18
-NETCDF_VER?=	4
+HDF5_CONFIGURE_ARGS=	--with-hdf5=${LOCALBASE}
+HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5-18
+JASPER_CONFIGURE_ARGS=	--with-jasper=${LOCALBASE}
+JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+NETCDF_CONFIGURE_ARGS=	--with-netcdf=${LOCALBASE}
+NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf4
+PROJ_CONFIGURE_ARGS=	--with-proj=${LOCALBASE}
+PROJ_LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
+SZIP_CONFIGURE_ARGS=	--with-szlib=${LOCALBASE}
+SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNETCDF} && ${PORT_OPTIONS:MHDF5} && ${NETCDF_VER} == 4 && ${HDF5_VER} == 16
-IGNORE=		netCDF 4 requires HDF5 1.8
+.if ${PORT_OPTIONS:MHDF5} && !${PORT_OPTIONS:MSZIP}
+IGNORE=		HDF5 option requires SZIP option
 .endif
 
-.if ${PORT_OPTIONS:MNETCDF} && (${NETCDF_VER} == 4)
-HDF5_VER=	18
-WITH_HDF5=	yes
-.endif
-
-.if ${PORT_OPTIONS:MHDF5}
-CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
-WITH_SZIP=	yes
-.if (${HDF5_VER} == 18)
-LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
-.else
-LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MJASPER}
-CONFIGURE_ARGS+=--with-jasper=${LOCALBASE}
-LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
-.endif
-
-.if ${PORT_OPTIONS:MNETCDF}
-CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE}
-.if (${NETCDF_VER} == 4)
-LIB_DEPENDS+=	netcdf.7:${PORTSDIR}/science/netcdf4
-.else
-LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
-.endif
-PLIST_SUB=	NETCDF=""
-.else
-PLIST_SUB=	NETCDF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPROJ}
-CONFIGURE_ARGS+=--with-proj=${LOCALBASE}
-LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
-.endif
-
-.if ${PORT_OPTIONS:MSZIP}
-CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
-LIB_DEPENDS+=	sz:${PORTSDIR}/science/szip
+.if ${PORT_OPTIONS:MNETCDF} && !${PORT_OPTIONS:MHDF5}
+IGNORE=		NETCDF option requires HDF5 option
 .endif
 
 .include <bsd.port.pre.mk>
@@ -91,7 +64,10 @@ post-build:
 	@cd ${WRKSRC}/src/ && ${SETENV} CDO_PATH=${WRKSRC}/src/cdo ${WRKSRC}/src/cdotest
 .endif
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcdi.so.0
+
 regression-test test: build
-	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
+	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.post.mk>
