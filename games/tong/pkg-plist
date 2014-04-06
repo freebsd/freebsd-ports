@@ -1,5 +1,6 @@
 bin/tong
 share/pixmaps/tong.png
+%%DATADIR%%/CREDITS
 %%DATADIR%%/background.png
 %%DATADIR%%/darkblot.png
 %%DATADIR%%/media/background-8bit.png
