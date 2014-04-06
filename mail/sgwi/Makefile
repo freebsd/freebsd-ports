@@ -4,7 +4,8 @@
 PORTNAME=	sgwi
 PORTVERSION=	1.1.6
 CATEGORIES=	mail www
-MASTER_SITES=	http://www.vanheusden.com/sgwi/
+MASTER_SITES=	http://www.vanheusden.com/sgwi/ \
+		http://lukasz.wasikowski.net/files/
 DISTNAME=	sqlgreywebinterface-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -25,7 +26,6 @@ PGSQL_DESC=	PostgreSQL back-end (use pgsql PHP extension)
 
 OPTIONS_DEFAULT=MYSQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -42,31 +42,14 @@ post-patch:
 		${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
-		@[ ! -f ${WRKSRC}/.htpasswd ] || ${MV} ${WRKSRC}/.htpasswd ${WRKSRC}/.htpasswd.sample
-		@[ ! -f ${WRKSRC}/.htaccess ] || ${MV} ${WRKSRC}/.htaccess ${WRKSRC}/.htaccess.sample
-		@[ ! -f ${WRKSRC}/includes/config.inc.php ] || ${MV} ${WRKSRC}/includes/config.inc.php ${WRKSRC}/includes/config.inc.php.sample
-		@${MKDIR} ${WWWDIR}
-		@${MKDIR} ${WWWDIR}/includes
-		${INSTALL_DATA} ${WRKSRC}/*.php ${WWWDIR}
-		${INSTALL_DATA} ${WRKSRC}/*.txt ${WWWDIR}
-		${INSTALL_DATA} ${WRKSRC}/*.css ${WWWDIR}
-		${INSTALL_DATA} ${WRKSRC}/.ht* ${WWWDIR}
-		${INSTALL_DATA} ${WRKSRC}/includes/*.sample ${WWWDIR}/includes/
-		${INSTALL_DATA} ${WRKSRC}/includes/*.php ${WWWDIR}/includes/
-		@if [ -f ${WWWDIR}/config.inc.php ]; then \
-			${MV} ${WWWDIR}/config.inc.php ${WWWDIR}/includes/config.inc.php; \
-		fi
-		@[ -f ${WWWDIR}/includes/config.inc.php ] || \
-			${CP} ${WWWDIR}/includes/config.inc.php.sample ${WWWDIR}/includes/config.inc.php
-		@[ -f ${WWWDIR}/.htpasswd ] || \
-			${CP} ${WWWDIR}/.htpasswd.sample ${WWWDIR}/.htpasswd
-		@[ -f ${WWWDIR}/.htaccess ] || \
-			${CP} ${WWWDIR}/.htaccess.sample ${WWWDIR}/.htaccess
-
-post-install:
-		@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
-		@${CHOWN} root ${WWWDIR}/.ht* ${WWWDIR}/includes/config.inc.php*
-		@${CHMOD} -R 0640 ${WWWDIR}/*.php ${WWWDIR}/*.txt ${WWWDIR}/*.css ${WWWDIR}/.ht* ${WWWDIR}/includes/*.php ${WWWDIR}/includes/*.sample
-		@${CAT} ${PKGMESSAGE}
+		@${MV} ${WRKSRC}/includes/config.inc.php ${WRKSRC}/includes/config.inc.php.sample
+		@${MKDIR} ${STAGEDIR}${WWWDIR}
+		@${MKDIR} ${STAGEDIR}${WWWDIR}/includes
+		${INSTALL_DATA} ${WRKSRC}/*.php ${STAGEDIR}${WWWDIR}
+		${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${WWWDIR}
+		${INSTALL_DATA} ${WRKSRC}/*.css ${STAGEDIR}${WWWDIR}
+		${INSTALL_DATA} ${WRKSRC}/.ht* ${STAGEDIR}${WWWDIR}
+		${INSTALL_DATA} ${WRKSRC}/includes/*.sample ${STAGEDIR}${WWWDIR}/includes/
+		${INSTALL_DATA} ${WRKSRC}/includes/*.php ${STAGEDIR}${WWWDIR}/includes/
 
 .include <bsd.port.mk>
