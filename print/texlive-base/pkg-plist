@@ -175,17 +175,11 @@ bin/sjispdflatex
 bin/splitindex
 bin/sty2dtx
 bin/svn-multi
-bin/t1ascii
-bin/t1asm
-bin/t1binary
-bin/t1disasm
 bin/t1dotlessj
 bin/t1lint
-bin/t1mac
 bin/t1rawafm
 bin/t1reencode
 bin/t1testpage
-bin/t1unmac
 bin/t4ht
 bin/tex4ht
 bin/texconfig
