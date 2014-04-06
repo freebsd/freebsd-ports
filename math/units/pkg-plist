@@ -1,6 +1,6 @@
 bin/gunits
-bin/gunits_cur
-share/units/currency.units
-share/units/definitions.units
+%%DATADIR%%/currency.units
+%%DATADIR%%/definitions.units
+%%DATADIR%%/locale_map.txt
 man/man1/gunits.1.gz
-@dirrm share/units
+@dirrm %%DATADIR%%
