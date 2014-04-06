@@ -19,19 +19,18 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote
 
 USES=		shebangfix perl5
-NO_STAGE=	yes
 SHEBANG_FILES=	mp32ogg
 NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	${WRKSRC}/${PORTNAME}
-NO_BUILD=	yes
 PLIST_FILES=	bin/mp32ogg
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/mp32ogg
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mp32ogg ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/mp32ogg ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
