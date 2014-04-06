@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	bisoncpp
-PORTVERSION=	4.05.00
+PORTVERSION=	4.08.00
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/bisonc%2B%2B/${PORTVERSION}
 DISTNAME=	bisonc++_${PORTVERSION}
 EXTRACT_SUFX=	.orig.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	LALR(1) parser generator that generates C++ classes
 
 LICENSE=	GPLv3
@@ -23,7 +23,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 WRKSRC=		${WRKDIR}/bisonc++-${PORTVERSION}
 
-USE_GCC=	4.7
+USE_GCC=	yes
 
 USES=		shebangfix
 
@@ -42,8 +42,6 @@ SHEBANG_FILES=	build \
 		documentation/regression/run \
 		parser/driver/build \
 		scanner/driver/build
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g; \
