@@ -12,7 +12,7 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree
 
-USE_XZ=		yes
+USES=		tar:xz
 USE_TEX=	texlive base texhash
 TEXHASHDIRS=	${TEXMFDIR} ${TEXMFDISTDIR}
 NO_BUILD=	yes
@@ -164,17 +164,16 @@ EXCLUDE_FILES=	\*/doc/man \
 
 EXTRACT_AFTER_ARGS=| ${TAR} xf - ${EXCLUDE_FILES:S,^,--exclude ${DISTNAME}/,}
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 
 do-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		${EXTRACT_AFTER_ARGS} -C ${PREFIX}/share \
-		--strip-components 1 --no-same-permission --no-same-owner
+		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
+		--strip-components 1 --no-same-permission --no-same-owner ; \
 	for D in ${TEXMFDIR} ${TEXMFDISTDIR}; do \
-		${MKDIR} ${PREFIX}/$$D/doc && \
-		${TOUCH} ${PREFIX}/$$D/doc/.keep_me; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/$$D/doc && \
+		${TOUCH} ${STAGEDIR}${PREFIX}/$$D/doc/.keep_me; \
 	done
 
 .include <bsd.port.mk>
