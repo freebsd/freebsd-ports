@@ -2,21 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	C++ class library for daemons, clients, servers, and more
 
 LICENSE=	LGPL20
 
-USES=		pkgconfig shebangfix
+USES=		libtool pkgconfig shebangfix
 SHEBANG_FILES=	doc/programming/insert.pl
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS PCRE SSL
 OPTIONS_DEFAULT=	SSL
@@ -37,5 +38,8 @@ post-patch:
 		 /INSTALL/s| $$(mandir)| $${DESTDIR}$$(mandir)| ; \
 		 /INSTALL/s| $$(libdir)| $${DESTDIR}$$(libdir)| ; \
 		 /finish/s| $$(libdir)| $${DESTDIR}$$(libdir)|'
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments-0.46.so.1
 
 .include <bsd.port.mk>
