@@ -11,27 +11,19 @@ MASTER_SITES=	SF \
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Virtual keyboard for JACK MIDI
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
-MAN1=		jack-keyboard.1
-
 USE_GNOME=	gtk20
-NO_STAGE=	yes
 USES=		cmake
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=        LASH
 OPTIONS_DEFAULT=       LASH
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLASH}
-LIB_DEPENDS+=	liblash.so:${PORTSDIR}/audio/lash
-CMAKE_ARGS+=	-DLashEnable:BOOL=On
-.else
-CMAKE_ARGS+=	-DLashEnable:BOOL=Off
-.endif
+LASH_LIB_DEPENDS=	liblash.so:${PORTSDIR}/audio/lash
+LASH_CMAKE_ON=	-DLashEnable:BOOL=On
+LASH_CMAKE_OFF=	-DLashEnable:BOOL=Off
 
 .include <bsd.port.mk>
