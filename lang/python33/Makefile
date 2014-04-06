@@ -1,31 +1,30 @@
 # $FreeBSD$
 
-PORTNAME=		python33
-PORTVERSION=		3.3.5
-CATEGORIES=		lang python ipv6
-MASTER_SITES=		PYTHON
+PORTNAME=	python33
+PORTVERSION=	3.3.5
+CATEGORIES=	lang python ipv6
+MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
-DISTFILES=		${PYTHON_DISTFILE}
-DIST_SUBDIR=		python
+DISTFILES=	${PYTHON_DISTFILE}
+DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure # must be relative
-CONFIGURE_ENV=		OPT="" SVNVERSION="echo freebsd"
-MAKE_ENV=		VPATH="${PYTHON_WRKSRC}"
+CONFIGURE_ENV=	OPT="" SVNVERSION="echo freebsd"
+MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 
-INSTALL_TARGET=		altinstall
+INSTALL_TARGET=	altinstall
 
-USES=		gmake readline
+USES=		gmake readline shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USE_XZ=		yes
 
-PYTHON_VERSION=		python3.3
+PYTHON_VERSION=	python3.3
 PYTHON_NO_DEPENDS=	yes
 
 WRKSRC=		${PYTHON_WRKSRC}/portbld.static
@@ -51,8 +50,15 @@ BIN_FILES=	python python-shared python-config python-shared-config \
 BINLINKS_SUB=	-e 's,(2to3|idle3|pydoc3),\1-${PYTHON_VER},' \
 		-e 's,(python-shared|python),\1${PYTHON_VER},'
 
+SHEBANG_FILES=	../Tools/gdb/libpython.py \
+		../Tools/pybench/Setup.py
+SHEBANG_LANG=	python2
+python_CMD=	${PYTHON_CMD}
+python2_OLD_CMD=python
+python2_CMD=	${PYTHON_CMD}
+
 OPTIONS_DEFINE=	THREADS PYMALLOC IPV6 FPECTL EXAMPLES NLS
-OPTIONS_DEFAULT=	THREADS PYMALLOC IPV6
+OPTIONS_DEFAULT=THREADS PYMALLOC IPV6
 
 NLS_DESC=	Enable Gettext support for the locale module
 
@@ -109,6 +115,9 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
+post-extract:
+	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
+
 pre-patch:
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
@@ -116,7 +125,6 @@ pre-patch:
 		${PATCH_WRKSRC}/Lib/plat-freebsd10
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd11
-	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
 .for script in ${BIN_SCRIPTS}
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
 		${PATCH_WRKSRC}/Tools/scripts/${script} \
@@ -209,8 +217,6 @@ post-install:
 	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
 		(cd ${STAGEDIR}${DATADIR}; ${TAR} -xf -)
 .endif
-
-	@${CAT} ${PKGMESSAGE}
 
 regression-test: build
 	@cd ${WRKSRC} && ${GMAKE} TESTOPTS=-j${MAKE_JOBS_NUMBER} test
