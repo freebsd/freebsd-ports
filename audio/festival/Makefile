@@ -3,6 +3,7 @@
 
 PORTNAME=	festival
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -34,7 +35,6 @@ DIST_SUBDIR=	festival
 CXXFLAGS+=	-DFTLIBDIR=${LOCALBASE}/share/festival/lib
 CONFIGURE_WRKSRC=	${WRKDIR}/festival
 USES=		gmake
-NO_STAGE=	yes
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
 MAKE_ENV+=	GCC="${CC}" \
@@ -42,7 +42,6 @@ MAKE_ENV+=	GCC="${CC}" \
 		EST_HOME=${SPEECHTOOLS} \
 		EGCS_CC="${CC}" \
 		EGCS_CXX="${CXX}"
-MAN1=		festival.1 festival_client.1
 WRKSRC=		${WRKDIR}
 
 SPT_PATCHES=	base__class_EST__TVector.cc	\
@@ -115,27 +114,27 @@ do-configure:
 		${LN} -s gcc_defaults.mak ${WRKDIR}/speech_tools/config/compilers/${CC}.mak
 
 do-install:
-	${MKDIR} ${DATADIR}/lib/voices/english/
-	${MKDIR} ${DATADIR}/lib/voices/spanish/
-	${MKDIR} ${DATADIR}/lib/dicts
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib/voices/english/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib/voices/spanish/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib/dicts
 	${CHMOD} -R u+w,a+r,og-w ${FESTIVAL}/lib
 	${FIND} ${FESTIVAL}/lib -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	cd ${FESTIVAL} && ${CP} -pPR lib examples ${DATADIR}
-	${RM} -rf ${DATADIR}/lib/etc/Makefile ${DATADIR}/lib/etc/*FreeBSD* \
-	    ${DATADIR}/lib/etc/*unknown
-	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*/audsp ${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival ${PREFIX}/libexec/festival.naked
-	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival_client ${PREFIX}/libexec/festival_client.naked
+	${FIND} ${FESTIVAL} -type f -name *.orig -delete
+	cd ${FESTIVAL} && ${CP} -pPR lib examples ${STAGEDIR}${DATADIR}
+	${RM} -rf ${STAGEDIR}${DATADIR}/lib/etc/Makefile ${STAGEDIR}${DATADIR}/lib/etc/*FreeBSD* \
+	    ${STAGEDIR}${DATADIR}/lib/etc/*unknown
+	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*/audsp ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival ${STAGEDIR}${PREFIX}/libexec/festival.naked
+	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival_client ${STAGEDIR}${PREFIX}/libexec/festival_client.naked
 	for n in festival.sh festival_client.sh sitevars.scm; \
 	do {\
 	  ${SED} "s%@PKG_FESTIVAL_LOCATION@%${DATADIR}%; \
 	       s%@PKG_PREFIX@%${PREFIX}%" <${FILESDIR}/$$n > ${WRKDIR}/$$n ;} \
 	done
-	${INSTALL_SCRIPT} ${WRKDIR}/festival.sh ${PREFIX}/bin/festival
-	${INSTALL_SCRIPT} ${WRKDIR}/festival_client.sh ${PREFIX}/bin/festival_client
-	${INSTALL_DATA} ${WRKDIR}/sitevars.scm ${DATADIR}/lib/sitevars.scm
-	${INSTALL_MAN} ${FESTIVAL}/doc/festival.1 ${PREFIX}/man/man1/festival.1
-	${INSTALL_MAN} ${FESTIVAL}/doc/festival_client.1 ${PREFIX}/man/man1/festival_client.1
-	${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKDIR}/festival.sh ${STAGEDIR}${PREFIX}/bin/festival
+	${INSTALL_SCRIPT} ${WRKDIR}/festival_client.sh ${STAGEDIR}${PREFIX}/bin/festival_client
+	${INSTALL_DATA} ${WRKDIR}/sitevars.scm ${STAGEDIR}${DATADIR}/lib/sitevars.scm
+	${INSTALL_MAN} ${FESTIVAL}/doc/festival.1 ${STAGEDIR}${PREFIX}/man/man1/festival.1
+	${INSTALL_MAN} ${FESTIVAL}/doc/festival_client.1 ${STAGEDIR}${PREFIX}/man/man1/festival_client.1
 
 .include <bsd.port.mk>
