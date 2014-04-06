@@ -1,3 +1,4 @@
 bin/jack-keyboard
+man/man1/jack-keyboard.1.gz
 share/pixmaps/jack-keyboard.png
 share/applications/jack-keyboard.desktop
