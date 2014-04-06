@@ -1,4 +1,5 @@
 bin/muttprint
+man/man1/muttprint.1.gz
 %%LANGINFO%%bin/muttprint-langinfo
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

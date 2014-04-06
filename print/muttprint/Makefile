@@ -3,7 +3,7 @@
 
 PORTNAME?=	muttprint
 PORTVERSION=	0.72d
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES?=	print mail
 MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
@@ -16,37 +16,35 @@ USES=		perl5
 PAPERSIZE=	letter
 .endif
 
+OPTIONS_DEFINE=	CUPS DOCS
+
 RUN_DEPENDS=	psnup:${PORTSDIR}/print/psutils \
 		uncompface:${PORTSDIR}/mail/faces \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
-.if defined(WITH_CUPS)
-RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-base \
-		espgs:${PORTSDIR}/print/cups-pstoraster
-.endif
+CUPS_RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-base \
+			espgs:${PORTSDIR}/print/cups-pstoraster
 
 NO_BUILD=	yes
 PLIST_SUB+=	LANGINFO="@comment "
 
 REINPLACE_ARGS=	-i ""
-USE_TEX=	latex
-USE_GMAKE=	yes
+USES=		gmake
+USE_TEX=	texlive
 
-MAN1=		muttprint.1
-MANCOMPRESSED=	yes
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CUPS)
+.if ${PORT_OPTIONS:MCUPS}
 PRINT_COMMAND=CUPS
 .else
 PRINT_COMMAND=lpr -P$$PRINTER
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=install-with-doc
 .endif
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO}
 	@${ECHO} Set PAPERSIZE=a4 if you need that paper size.
@@ -74,7 +72,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|%%PRINT_COMMAND%%|${PRINT_COMMAND}| ; \
 		s|%%PREFIX%%|${PREFIX}|' \
 		${WRKSRC}/muttprint
-.if defined(WITH_CUPS)
+.if ${PORT_OPTIONS:MCUPS}
 	@${REINPLACE_CMD} 's|lpr $$CUPS_OPTIONS|${PREFIX}/bin/lpr $$CUPS_OPTIONS|' ${WRKSRC}/muttprint
 .endif
 	@${GZIP_CMD} ${WRKSRC}/doc/manpages/*/muttprint.1

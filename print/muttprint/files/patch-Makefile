@@ -10,12 +10,12 @@
  # Change this for some distributions (current setting
  # is OK for SuSE)
 -docdir = /usr/share/doc/packages
-+docdir = ${PREFIX}/share/doc
++docdir = $(DESTDIR)${PREFIX}/share/doc
  
  # Change this to $(prefix)/man for older distributions
  # (current setting is correct according to LSB)
 -mandir = $(prefix)/share/man
-+mandir = ${PREFIX}/man
++mandir = $(DESTDIR)${PREFIX}/man
  
  #
  # Muttprint needs GNU make. If you installed GNU make
@@ -29,10 +29,10 @@
 -libdir = $(prefix)/lib
 -bindir = $(prefix)/bin
 -sysconfdir = /etc
-+sharedir = ${PREFIX}/share
-+libdir = ${PREFIX}/lib
-+bindir = ${PREFIX}/bin
-+sysconfdir = ${PREFIX}/etc
++sharedir = $(DESTDIR)${PREFIX}/share
++libdir = $(DESTDIR)${PREFIX}/lib
++bindir = $(DESTDIR)${PREFIX}/bin
++sysconfdir = $(DESTDIR)${PREFIX}/etc
  docdirname = muttprint
  
  #####################################################
