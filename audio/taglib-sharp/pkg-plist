@@ -3,9 +3,6 @@ lib/mono/gac/policy.2.0.taglib-sharp/0.0.0.0__%%VERSIONSUFX%%/policy.2.0.taglib-
 lib/mono/gac/taglib-sharp/%%PORTVERSION%%__%%VERSIONSUFX%%/taglib-sharp.dll
 lib/mono/gac/taglib-sharp/%%PORTVERSION%%__%%VERSIONSUFX%%/taglib-sharp.dll.mdb
 lib/mono/taglib-sharp/taglib-sharp.dll
-%%PORTDOCS%%lib/monodoc/sources/taglib-sharp-docs.source
-%%PORTDOCS%%lib/monodoc/sources/taglib-sharp-docs.tree
-%%PORTDOCS%%lib/monodoc/sources/taglib-sharp-docs.zip
 libdata/pkgconfig/taglib-sharp.pc
 @dirrm lib/mono/taglib-sharp
 @dirrm lib/mono/gac/taglib-sharp/%%PORTVERSION%%__%%VERSIONSUFX%%
