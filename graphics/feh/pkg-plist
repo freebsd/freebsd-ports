@@ -2,9 +2,13 @@ bin/feh
 bin/feh-cam
 bin/gen-cam-menu
 share/applications/feh.desktop
-%%EXAMPLESDIR%%/buttons
-%%EXAMPLESDIR%%/keys
-%%EXAMPLESDIR%%/themes
+man/man1/feh-cam.1.gz
+man/man1/feh.1.gz
+man/man1/gen-cam-menu.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/find-lowres
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/buttons
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keys
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes
 %%DATADIR%%/fonts/black.style
 %%DATADIR%%/fonts/menu.style
 %%DATADIR%%/fonts/yudit.ttf
@@ -16,7 +20,12 @@ share/applications/feh.desktop
 %%DATADIR%%/images/menubg_brushed.png
 %%DATADIR%%/images/menubg_default.png
 %%DATADIR%%/images/menubg_sky.png
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
