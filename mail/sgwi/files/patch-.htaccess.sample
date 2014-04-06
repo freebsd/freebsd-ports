@@ -1,5 +1,5 @@
 --- /dev/null	2008-03-11 22:05:01.000000000 +0100
-+++ .htaccess	2008-03-11 22:03:36.000000000 +0100
++++ .htaccess.sample	2008-03-11 22:03:36.000000000 +0100
 @@ -0,0 +1,8 @@
 +AuthUserFile /usr/local/www/sgwi/.htpasswd
 +AuthGroupFile /dev/null

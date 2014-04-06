@@ -7,6 +7,7 @@ WWWGRP=%%WWWGRP%%
 if [ "$2" != "POST-INSTALL" ]; then
 	exit 0
 else
-	/usr/sbin/chown ${WWWOWN}:${WWWGRP} ${WWWDIR}/includes/
-	/usr/bin/chgrp ${WWWGRP} ${WWWDIR}/.ht* ${WWWDIR}/includes/config.inc.php
+	/usr/sbin/chown -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	/usr/sbin/chown root:${WWWGRP} ${WWWDIR}/.ht* ${WWWDIR}/includes/config.inc.php*
+	/bin/chmod -R 0640 ${STAGEDIR}${WWWDIR}/*.php ${STAGEDIR}${WWWDIR}/*.txt ${STAGEDIR}${WWWDIR}/*.css ${STAGEDIR}${WWWDIR}/.ht* ${STAGEDIR}${WWWDIR}/includes/*.php ${STAGEDIR}${WWWDIR}/includes/*.sample
 fi
