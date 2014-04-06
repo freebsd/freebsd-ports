@@ -3,6 +3,7 @@
 
 PORTNAME=	c-icap
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/0.3.x/
 PKGNAMESUFFIX=	-modules
@@ -20,8 +21,6 @@ GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share/c_icap
 
 CFLAGS+=	-DHAVE_STRNSTR
-
-MAN8=		c-icap-mods-sguardDB.8
 
 CONFIGURE_ARGS+=	--enable-static \
 			--with-c-icap=${LOCALBASE} \
