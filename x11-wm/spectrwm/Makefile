@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spectrwm
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
