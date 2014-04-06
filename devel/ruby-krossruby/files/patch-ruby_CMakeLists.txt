@@ -1,0 +1,12 @@
+--- ruby/CMakeLists.txt.o	2014-04-06 15:35:45.438057866 -0400
++++ ruby/CMakeLists.txt	2014-04-06 15:36:22.078057982 -0400
+@@ -1,7 +1,7 @@
+ find_package(Ruby 1.9 QUIET)
+ 
+-if( RUBY_VERSION VERSION_GREATER "1.10" )
+-    message(STATUS "Found Ruby: ${RUBY_EXECUTABLE} (found version \"${RUBY_VERSION}\") but only 1.9.x supported")
++if( RUBY_VERSION VERSION_GREATER "2.1" )
++    message(STATUS "Found Ruby: ${RUBY_EXECUTABLE} (found version \"${RUBY_VERSION}\") but only 2.1.x supported")
+     set(RUBY_FOUND False)
+ else()
+     message(STATUS "Found Ruby: ${RUBY_EXECUTABLE} (found version \"${RUBY_VERSION}\")")
