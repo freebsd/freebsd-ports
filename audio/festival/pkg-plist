@@ -1,9 +1,10 @@
-@comment $NetBSD: PLIST,v 1.3 1999/10/27 14:20:50 hubertf Exp $
 bin/festival
 bin/festival_client
 libexec/audsp
 libexec/festival.naked
 libexec/festival_client.naked
+man/man1/festival.1.gz
+man/man1/festival_client.1.gz
 %%DATADIR%%/examples/Makefile
 %%DATADIR%%/examples/addr-mode.scm
 %%DATADIR%%/examples/apml.dtd
@@ -87,11 +88,21 @@ libexec/festival_client.naked
 %%DATADIR%%/lib/gswdurtreeZ.scm
 %%DATADIR%%/lib/holmes_phones.scm
 %%DATADIR%%/lib/hts.scm
+%%DATADIR%%/lib/hts21compat.scm
 %%DATADIR%%/lib/init.scm
 %%DATADIR%%/lib/intonation.scm
 %%DATADIR%%/lib/java.scm
 %%DATADIR%%/lib/klatt_durs.scm
 %%DATADIR%%/lib/languages.scm
+%%DATADIR%%/lib/languages/language_american_english.scm
+%%DATADIR%%/lib/languages/language_british_english.scm
+%%DATADIR%%/lib/languages/language_castillian_spanish.scm
+%%DATADIR%%/lib/languages/language_czech.scm
+%%DATADIR%%/lib/languages/language_finnish.scm
+%%DATADIR%%/lib/languages/language_italian.scm
+%%DATADIR%%/lib/languages/language_russian.scm
+%%DATADIR%%/lib/languages/language_scots_gaelic.scm
+%%DATADIR%%/lib/languages/language_welsh.scm
 %%DATADIR%%/lib/lexicons.scm
 %%DATADIR%%/lib/lts.scm
 %%DATADIR%%/lib/lts_build.scm
@@ -141,6 +152,7 @@ libexec/festival_client.naked
 @dirrmtry %%DATADIR%%/lib/voices/spanish
 @dirrmtry %%DATADIR%%/lib/voices/english
 @dirrmtry %%DATADIR%%/lib/voices
+@dirrmtry %%DATADIR%%/lib/languages
 @dirrm %%DATADIR%%/lib/multisyn
 @dirrm %%DATADIR%%/lib/etc
 @exec mkdir -p %D/%%DATADIR%%/lib/dicts
