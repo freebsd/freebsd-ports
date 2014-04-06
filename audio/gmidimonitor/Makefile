@@ -13,9 +13,7 @@ COMMENT=	GTK+ application that shows MIDI events
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		liblash.so:${PORTSDIR}/audio/lash
 
-USES=		pkgconfig
-NO_STAGE=	yes
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 USE_GNOME=	gtk20 libglade2
 
 LICENSE=	GPLv2
@@ -33,6 +31,6 @@ do-build:
 	@(cd ${WRKSRC} && ./waf ${MAKE_JOBS_ARGS})
 
 do-install:
-	@(cd ${WRKSRC} && ./waf install)
+	@(cd ${WRKSRC} && ./waf --destdir=${STAGEDIR} install)
 
 .include <bsd.port.mk>
