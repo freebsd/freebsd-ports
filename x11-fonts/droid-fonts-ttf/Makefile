@@ -49,7 +49,7 @@ maketar: do-clean extract
 	${TAR} -Jc -C ${MS_WRKSRC}/ -f ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${PORTNAME}-${MS_VERSION}/
 	sudo ${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/
 	${SED} -i '' -e 's|${PORTVERSION}|${MS_VERSION}|' ${.CURDIR}/Makefile
-	cd ${.CURDIR}/ && ${MAKE} makesum
+	cd ${.CURDIR}/ && ${MAKE_CMD} makesum
 	${ECHO_MSG} '*** Update from ${PORTVERSION} to ${MS_VERSION} ***'
 # genplist
 	${SED} 's|^|%%FONTDIR%%/|' ${MS_FONTS} > ${MS_PLIST}
