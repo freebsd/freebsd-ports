@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20120701
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMESUFFIX=	-base
@@ -21,15 +21,17 @@ LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libttf.so:${PORTSDIR}/print/freetype \
 		libpng15.so:${PORTSDIR}/graphics/png \
-		libzzip.so:${PORTSDIR}/devel/zziplib
+		libzzip.so:${PORTSDIR}/devel/zziplib \
+		libpoppler.so:${PORTSDIR}/graphics/poppler
 
 USE_TEX=	texlive web2c kpathsea ptexenc texhash-bootstrap
-USE_XZ=		yes
-USES=		gmake pkgconfig perl5
+USES=		gmake pkgconfig perl5 tar:xz
 USE_AUTOTOOLS=	autoconf
 USE_GHOSTSCRIPT=yes
 USE_PERL5=	run
 USE_LDCONFIG=	yes
+# during build phase gnu configure is run a lot
+MAKE_ENV+=	CONFIG_SITE=${CONFIG_SITE}
 USE_XORG=	x11 xmu xaw
 EXCLUDE_FILES=	${DISTNAME}/texk/web2c \
 		${DISTNAME}/texk/kpathsea \
@@ -43,18 +45,22 @@ EXCLUDE_FILES=	${DISTNAME}/texk/web2c \
 		${DISTNAME}/libs/graphite \
 		${DISTNAME}/libs/icu \
 		${DISTNAME}/libs/libpng \
+		${DISTNAME}/libs/poppler \
 		${DISTNAME}/libs/t1lib \
 		${DISTNAME}/libs/teckit \
+		${DISTNAME}/libs/xpdf \
 		${DISTNAME}/libs/zlib \
 		${DISTNAME}/libs/zziplib \
 		${DISTNAME}/utils/biber \
-		${DISTNAME}/utils/psutils
+		${DISTNAME}/utils/psutils \
+		${DISTNAME}/utils/t1utils
 EXTRACT_AFTER_ARGS=	${EXCLUDE_FILES:S,^,--exclude ,}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-native-texlive-build \
 		--disable-web-progs \
 		--disable-psutils \
 		--enable-shared \
+		--disable-t1utils \
 		--enable-build-in-source-tree \
 		--datarootdir=${LOCALBASE}/share \
 		--with-system-freetype \
@@ -75,11 +81,15 @@ CONFIGURE_ARGS= --disable-native-texlive-build \
 		--with-libgs-includes=${LOCALBASE}/include \
 		--with-libgs-libdir=${LOCALBASE}/lib \
 		--with-system-libpng \
+		--with-system-poppler \
 		--with-system-ptexenc \
 		--with-ptexenc-include=${LOCALBASE}/include/ptexenc \
 		--with-ptexenc-libdir=${LOCALBASE}/lib \
 		--with-system-t1lib \
 		--with-system-teckit \
+		--with-xpdf-includes=${LOCALBASE}/include/poppler \
+		--with-xpdf-libdir=${LOCALBASE}/lib \
+		--with-system-xpdf \
 		--with-system-zziplib \
 		--with-system-zlib
 CFLAGS+=	-I${LOCALBASE}/include \
@@ -87,29 +97,8 @@ CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/ptexenc
 PLIST_SUB=	INSTALL_DATA="${INSTALL_DATA}"
 
-NO_MANCOMPRESS=	yes
-MAN1=	afm2pl.1 allcm.1 allec.1 allneeded.1 bbox.1 bg5conv.1		\
-	cef5conv.1 cefconv.1 cefsconv.1 cfftot1.1 chktex.1 chkweb.1	\
-	context.1 ctxtools.1 detex.1 deweb.1 disdvi.1 dt2dv.1 dv2dt.1	\
-	dvi2fax.1 dvi2tty.1 dvibook.1 dviconcat.1 dvidvi.1 dvigif.1	\
-	dvihp.1 dvilj.1 dvilj2p.1 dvilj4.1 dvilj4l.1 dvilj6.1		\
-	dvipng.1 dvipos.1 dvired.1 dviselect.1 dvisvgm.1 dvitodvi.1	\
-	e2pall.1 extconv.1 fmtutil-sys.1 fmtutil.1 fontinst.1		\
-	gsftopk.1 hbf2gf.1 kpsepath.1 kpsetool.1 kpsewhere.1 kpsexpand.1\
-	lacheck.1 m-tx.1 mag.1 makeindex.1 mendex.1 mkindex.1		\
-	mktexfmt.1 mmafm.1 mmpfb.1 mptopdf.1 otfinfo.1 otftotfm.1	\
-	pdfclose.1 pdfopen.1 pfb2pfa.1 pk2bm.1 pmx2pdf.1 pmxab.1	\
-	prepmx.1 ps2eps.1 ps2frag.1 ps2pk.1 pslatex.1 pstopdf.1		\
-	rubibtex.1 rumakeindex.1 scor2prt.1 sjisconv.1 t1ascii.1	\
-	t1asm.1 t1binary.1 t1disasm.1 t1dotlessj.1 t1lint.1 t1mac.1	\
-	t1rawafm.1 t1reencode.1 t1testpage.1 t1unmac.1			\
-	texconfig-sys.1 texconfig.1 texdoctk.1 texexec.1 texlinks.1	\
-	texmfstart.1 thumbpdf.1 tpic2pdftex.1 ttf2pk.1 ttf2tfm.1	\
-	ttfdump.1 ttftotype42.1 updmap-sys.1 updmap.1 vlna.1
-MAN5=	fmtutil.cnf.5 updmap.cfg.5
 INFO=	dvipng
 
-NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && \
 		${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
@@ -118,10 +107,10 @@ post-patch:
 		texk/tetex/updmap-sys.sh
 
 post-install-fmtutil:
-	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/web2c
-	${TOUCH} ${PREFIX}/${TEXMFCONFIGDIR}/web2c/.keep_me
-	${INSTALL_DATA} ${PREFIX}/${TEXMFDIR}/web2c/fmtutil.cnf \
-		${PREFIX}/${FMTUTIL_CNF}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFCONFIGDIR}/web2c
+	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFCONFIGDIR}/web2c/.keep_me
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/${TEXMFDIR}/web2c/fmtutil.cnf \
+		${STAGEDIR}${PREFIX}/${FMTUTIL_CNF}
 
 post-install: post-install-fmtutil
 .ORDER: post-install-fmtutil do-texhash
