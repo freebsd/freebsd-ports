@@ -1,0 +1,11 @@
+--- a/bsd-user/mips/target_arch_sigtramp.h
++++ b/bsd-user/mips/target_arch_sigtramp.h
+@@ -8,7 +8,7 @@ static inline abi_long setup_sigtramp(abi_ulong offset, unsigned sigf_uc,
+ {
+     int i;
+     uint32_t sigtramp_code[TARGET_SZSIGCODE/TARGET_INSN_SIZE] = {
+-    /* 1 */ 0x27A40000 + sigf_uc,       /* daddu   $a0, $sp, (sigf_uc) */
++    /* 1 */ 0x27A40000 + sigf_uc,       /* addu   $a0, $sp, (sigf_uc) */
+     /* 2 */ 0x24020000 + sys_sigreturn, /* li      $v0, (sys_sigreturn) */
+     /* 3 */ 0x0000000C,                 /* syscall */
+     /* 4 */ 0x0000000D                  /* break */

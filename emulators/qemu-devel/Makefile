@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	1.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -71,9 +71,11 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-05ee8495804599b52a88eb36b13ea9c06b3207cd
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-mips-target_arch_vmparam.h
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-inherit-interp_prefix
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-d62553b108aa27c0c020dbb771d29f8673807a3b
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-6201cb17ad905dffee1b2eb76f58fb032e99b2a1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-syscall.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysctl-hw-availpages
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysctl-0oldlen
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-mmap.c
 .endif
 
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
