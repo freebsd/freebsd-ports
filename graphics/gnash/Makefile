@@ -19,8 +19,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 
 CONFLICTS=	gnash-devel-[0-9]*
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		tar:bzip2 pkgconfig gmake
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
