@@ -8,5 +8,4 @@ From the README file:
    The module allows you to either check if an item is spam or report certain
    comment as spam/false postivie.
 
-Author:		Nikolay Bachiyski <nbachiyski@developer.bg>
-WWW: 	http://search.cpan.org/dist/Net-Akismet/
+WWW: http://search.cpan.org/dist/Net-Akismet/
