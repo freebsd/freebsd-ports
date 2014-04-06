@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosip2
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	net
 MASTER_SITES=	GNU/osip
 
@@ -16,7 +16,9 @@ USE_LDCONFIG=	yes
 USES=		pathfix pkgconfig
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "/^SUBDIRS/s| help | |g" ${WRKSRC}/Makefile.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libosip2.so.11 ${STAGEDIR}${PREFIX}/lib/libosipparser2.so.11
 
 .include <bsd.port.mk>
