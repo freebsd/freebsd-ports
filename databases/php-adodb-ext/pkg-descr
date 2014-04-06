@@ -3,4 +3,4 @@ with C code. ADOdb will auto-detect if this extension is installed and use it
 automatically. This extension is compatible with ADOdb 3.32 or later, and
 PHP 4.3.*, 4.4.*, 5.0.* and 5.1.*.
 
-WWW:   http://adodb.sourceforge.net/
+WWW: http://adodb.sourceforge.net/
