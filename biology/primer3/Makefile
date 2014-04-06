@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	primer3
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.6
 CATEGORIES=	biology
 MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Primer3 helps to choose primers for PCR reactions
 
 LICENSE=	GPLv2
