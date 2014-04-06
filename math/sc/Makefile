@@ -3,15 +3,13 @@
 
 PORTNAME=	sc
 PORTVERSION=	7.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Curses-based spreadsheet program
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^prefix=/s,=.*,=$${PREFIX},' \
@@ -27,4 +25,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/^void/int/' ${WRKSRC}/crypt.c
 	@${REINPLACE_CMD} -e '/flag.val/s/.*/#undef is_cleared/' ${WRKSRC}/sc.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
