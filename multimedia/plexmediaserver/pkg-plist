@@ -2922,7 +2922,6 @@
 %%DATADIR%%/libxslt.so.2
 %%DATADIR%%/libz.so.1
 %%DATADIR%%/libzen.so.0
-%%DATADIR%%/start.sh
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/xml/sax
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/xml/parsers
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/xml/etree
