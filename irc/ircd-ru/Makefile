@@ -3,27 +3,29 @@
 
 PORTNAME=	ircd-ru
 PORTVERSION=	1.0.7
-PORTREVISION=	6
-CATEGORIES=	irc russian
-MASTER_SITES=	http://link.wenet.su/
+PORTREVISION=	7
+CATEGORIES=	russian irc
+MASTER_SITES=	http://m1cro.tk/ports/distfiles/
 DISTNAME=	ircd-RU-${PORTVERSION}-03-rc-20090810
 
 MAINTAINER=	rum1cro@yandex.ru
-COMMENT=	An irc daemon with translation schemes and other useful features
+COMMENT=	IRC daemon with translation schemes and other useful features
 
-USE_BZIP2=	yes
+LICENSE=	GPLv1
+
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
-SUB_FILES=	pkg-message
 USE_RC_SUBR=	ircd
 WRKSRC=		${WRKDIR}/ircd-RU-${PORTVERSION}-03-rc
 
 USERS=		ircd
 GROUPS=		${USERS}
 
-VARDIR=		/var
+VARDIR=	/var
 PLIST_SUB=	VARDIR=${VARDIR}
 
-OPTIONS_DEFINE=	WENET HUB ENCRYPTION SYSLOGFILE DRONEMODULE AUTHMODULE DNSBL SELECT DOCS
+OPTIONS_DEFINE=	WENET HUB ENCRYPTION SYSLOGFILE DRONEMODULE AUTHMODULE \
+				DNSBL SELECT DOCS
 WENET_DESC=		irc.wenet.ru specific options
 HUB_DESC=		hub support
 ENCRYPTION_DESC=	RC4 crypt (server to server connection)
@@ -33,7 +35,6 @@ AUTHMODULE_DESC=	authmodule support
 DNSBL_DESC=		DNSBL support
 SELECT_DESC=		enable select I/O
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # irc.wenet.ru specific options
@@ -49,7 +50,7 @@ CONFIGURE_ARGS+=--enable-hub
 # enable RC4 crypt (server to server connection)
 .if ${PORT_OPTIONS:MENCRYPTION}
 CONFIGURE_ARGS+=--enable-encryption
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 .endif
 
 # log to file instead of syslog
@@ -79,8 +80,16 @@ CONFIGURE_ARGS+=--enable-select
 
 post-patch:
 .if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -Ee '/(dir_HPATH)|opers.txt/d' ${WRKSRC}/tools/install_ircd.in
+	@${REINPLACE_CMD} -Ee '/(dir_HPATH)|opers.txt/d' \
+		${STAGEDIR}${WRKSRC}/tools/install_ircd.in
 .endif
+	#FIXME rene DESTDIR support is broken upstream
+	@${REINPLACE_CMD} -e 's|-d $$dir_LPATH|-d ${STAGEDIR}$$dir_LPATH|g' \
+		-e 's|-d $$dir_PPATH|-d ${STAGEDIR}$$dir_PPATH|g' \
+		-e 's|-d $$dir_EPATH|-d ${STAGEDIR}$$dir_EPATH|g' \
+		-e 's|-d $$dir_MCPATH|-d ${STAGEDIR}$$dir_MCPATH|g' \
+		-e 's|STAGE|${STAGEDIR}|g' \
+		${WRKSRC}/tools/install_ircd.in
 
 pre-build:
 	@${ECHO_MSG} ""
@@ -89,7 +98,7 @@ pre-build:
 	@${ECHO_MSG} ""
 
 post-install:
-	@${CHOWN} -R ircd:ircd ${VARDIR}/log/ircd-ru
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${VARDIR}/log/ircd-ru
+	@${MKDIR} ${STAGEDIR}${VARDIR}/run/ircd-ru
 
 .include <bsd.port.mk>

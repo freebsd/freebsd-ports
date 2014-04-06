@@ -1,32 +1,35 @@
-sbin/ircd
-bin/ircdpasswd
-%%ETCDIR%%/ircd.conf-dist
-%%ETCDIR%%/ircd.motd-dist
-%%ETCDIR%%/ircd.smotd-dist
-@unexec [ -s %D/%%ETCDIR%%/kline.conf ] || rm -f %D/%%ETCDIR%%/kline.conf
-@exec [ -f %D/%%ETCDIR%%/kline.conf ] || touch %D/%%ETCDIR%%/kline.conf
-%%ETCDIR%%/ru_RU.CP1251/ircd.motd-dist
-%%ETCDIR%%/ru_RU.CP1251/ircd.smotd-dist
-%%ETCDIR%%/ru_RU.KOI8-R/ircd.conf-dist
-%%PORTDOCS%%%%DOCSDIR%%/README.Ilines
-%%PORTDOCS%%%%DOCSDIR%%/opers.txt
-%%PORTDOCS%%%%DOCSDIR%%/ru_RU.KOI8-R/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/ru_RU.KOI8-R/README
 %%DATADIR%%/codepages/cp1251.cp
 %%DATADIR%%/codepages/cp866.cp
 %%DATADIR%%/codepages/iso8859-5.cp
 %%DATADIR%%/codepages/koi8-f.cp
 %%DATADIR%%/codepages/koi8-r.cp
 %%DATADIR%%/codepages/translit.cp
-@dirrm %%ETCDIR%%/ru_RU.CP1251
-@dirrm %%ETCDIR%%/ru_RU.KOI8-R
-@dirrm %%DATADIR%%/codepages
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README.Ilines
+%%PORTDOCS%%%%DOCSDIR%%/opers.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru_RU.KOI8-R/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/ru_RU.KOI8-R/README
+@dirrmtry %%DATADIR%%
+@dirrmtry %%DATADIR%%/codepages
+@dirrmtry %%DATADIR%%/modules
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ru_RU.KOI8-R
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -m 755 %%VARDIR%%/log/ircd-ru
-@exec chown ircd:ircd %%VARDIR%%/log/ircd-ru
-@unexec rmdir %%VARDIR%%/log/ircd-ru
-@unexec rmdir %%VARDIR%%/run/ircd-ru
-@dirrmtry %%ETCDIR%%
+@dirrmtry etc/ircd-ru
+@dirrmtry etc/ircd-ru/ru_RU.CP1251
+@dirrmtry etc/ircd-ru/ru_RU.KOI8-R
+@mode 755
+@owner ircd
+@group ircd
+%%VARDIR%%/log/ircd-ru
+%%VARDIR%%/run/ircd-ru
+@group
+@owner
+@mode
+bin/ircdpasswd
+etc/ircd-ru/ircd.conf-dist
+etc/ircd-ru/ircd.motd-dist
+etc/ircd-ru/ircd.smotd-dist
+etc/ircd-ru/kline.conf
+etc/ircd-ru/ru_RU.CP1251/ircd.motd-dist
+etc/ircd-ru/ru_RU.CP1251/ircd.smotd-dist
+etc/ircd-ru/ru_RU.KOI8-R/ircd.conf-dist
+sbin/ircd
