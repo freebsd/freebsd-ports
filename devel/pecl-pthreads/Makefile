@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pthreads
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
