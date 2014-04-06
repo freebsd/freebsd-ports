@@ -7,11 +7,14 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Turns a Class-AlzaboWrapper-Cursor object into a TT2 iterator
 
-BUILD_DEPENDS=	p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-Class-AlzaboWrapper>=0:${PORTSDIR}/devel/p5-Class-AlzaboWrapper
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Class-AlzaboWrapper>=0:${PORTSDIR}/devel/p5-Class-AlzaboWrapper \
+		p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
