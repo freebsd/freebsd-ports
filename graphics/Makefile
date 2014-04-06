@@ -870,6 +870,7 @@
     SUBDIR += py-wand
     SUBDIR += py-webcolors
     SUBDIR += py3-cairo
+    SUBDIR += pyggel
     SUBDIR += pygts
     SUBDIR += pymorph
     SUBDIR += pyro
