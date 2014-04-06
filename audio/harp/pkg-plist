@@ -8,17 +8,18 @@ bin/harp
 %%MP3%%lib/libharpmp3.a
 %%MP3%%lib/libharpmp3.la
 %%MP3%%lib/libharpmp3.so
-%%STREAM%%lib/libharpstream.a
-%%STREAM%%lib/libharpstream.la
-%%STREAM%%lib/libharpstream.so
+%%SHOUTCAST%%lib/libharpstream.a
+%%SHOUTCAST%%lib/libharpstream.la
+%%SHOUTCAST%%lib/libharpstream.so
 %%VORBIS%%lib/libharpvorbis.a
 %%VORBIS%%lib/libharpvorbis.la
 %%VORBIS%%lib/libharpvorbis.so
 %%AAC%%%%DATADIR%%/libharpaac.sql
 %%FLAC%%%%DATADIR%%/libharpflac.sql
 %%MP3%%%%DATADIR%%/libharpmp3.sql
-%%STREAM%%%%DATADIR%%/libharpstream.sql
+%%SHOUTCAST%%%%DATADIR%%/libharpstream.sql
 %%VORBIS%%%%DATADIR%%/libharpvorbis.sql
+man/man1/harp.1.gz
 %%DATADIR%%/create.sql
 %%DATADIR%%/defaults.conf
 @dirrm %%DATADIR%%
