@@ -3,7 +3,7 @@
 
 PORTNAME=	pdfjam
 PORTVERSION=	2.08
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic/firth/software/pdfjam/ \
 		ftp://ftp.stack.nl/pub/users/johans/pdfjam/
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic/firth/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Shell scripts to manipulate PDF files
 
-USE_TEX=	latex
+USE_TEX=	texlive
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PROGS=		pdf90 pdf180 pdf270 pdfbook pdfflip pdfjam \
