@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/festival
 CONFLICTS=	festvox-rab8
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 FHOME=		${PREFIX}/share/festival
 
@@ -29,10 +28,8 @@ post-extract:
 	@ ${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 do-install:
-	${MKDIR} ${FHOME}
-	cd ${WRKSRC} && ${CP} -pPR * ${FHOME}
-
-post-install:
-	${RM} ${PREFIX}/share/festival/lib/voices/spanish/el_diphone/COPYING
+	@${MKDIR} ${STAGEDIR}${FHOME}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${FHOME}
+	${RM} -f ${STAGEDIR}${PREFIX}/share/festival/lib/voices/spanish/el_diphone/COPYING
 
 .include <bsd.port.mk>
