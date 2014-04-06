@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	bcpp
-PORTVERSION=	20120318
+PORTVERSION=	20131209
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/bcpp/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Utility similar to indent for C++ code
+
+LICENSE=	MIT
 
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
+USES=		tar:tgz
 
 CFLAGS+=	-DBCPP_CONFIG_DIR=\\\"${PREFIX}/etc/${PORTNAME}\\\"
 
