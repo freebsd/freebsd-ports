@@ -3,12 +3,12 @@
 
 PORTNAME=	gwrite
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors python
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple HTML format editor
+COMMENT=	Simple HTML format editor
 
 LICENSE=	LGPL3 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -22,9 +22,9 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		${PYTHON_PKGNAMEPREFIX}jswebkit>=0:${PORTSDIR}/www/py-jswebkit \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:${PORTSDIR}/www/py-webkitgtk
 
+USES=		desktop-file-utils
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
