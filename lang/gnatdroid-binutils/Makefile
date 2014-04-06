@@ -3,7 +3,7 @@
 
 PORTNAME=		binutils
 PORTVERSION=		2.24
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -15,18 +15,19 @@ COMMENT=	Infrastructure for C/Ada Android cross-compiler
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
+BUILD_DEPENDS=	gnatdroid-sysroot=19:${PORTSDIR}/lang/gnatdroid-sysroot \
 		${LOCALBASE}/lib/libgmp.so:${PORTSDIR}/math/gmp \
 		${LOCALBASE}/lib/libmpfr.so:${PORTSDIR}/math/mpfr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake
-USE_BZIP2=	YES
-HAS_CONFIGURE=	YES
-NO_MTREE=	YES
+USES=		gmake tar:bzip2
+HAS_CONFIGURE=	yes
+NO_MTREE=	yes
+
+NO_LICENSES_INSTALL= yes
 
 WRKSRC=			${WRKDIR}/binutils-${PORTVERSION}
-PREFIX=			${LOCALBASE}/android9
+PREFIX=			${LOCALBASE}/android19
 BRANCH1=		ARMv5
 BRANCH2=		ARMv7
 BR1_PREFIX=		${PREFIX}/${BRANCH1}

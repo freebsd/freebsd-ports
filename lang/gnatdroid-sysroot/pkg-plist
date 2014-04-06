@@ -7,10 +7,17 @@ usr/include/GLES/glplatform.h
 usr/include/GLES2/gl2.h
 usr/include/GLES2/gl2ext.h
 usr/include/GLES2/gl2platform.h
+usr/include/GLES3/gl3.h
+usr/include/GLES3/gl3ext.h
+usr/include/GLES3/gl3platform.h
 usr/include/KHR/khrplatform.h
+usr/include/OMXAL/OpenMAXAL.h
+usr/include/OMXAL/OpenMAXAL_Android.h
+usr/include/OMXAL/OpenMAXAL_Platform.h
 usr/include/SLES/OpenSLES.h
 usr/include/SLES/OpenSLES_Android.h
 usr/include/SLES/OpenSLES_AndroidConfiguration.h
+usr/include/SLES/OpenSLES_AndroidMetadata.h
 usr/include/SLES/OpenSLES_Platform.h
 usr/include/alloca.h
 usr/include/android/api-level.h
@@ -29,6 +36,7 @@ usr/include/android/obb.h
 usr/include/android/rect.h
 usr/include/android/sensor.h
 usr/include/android/storage_manager.h
+usr/include/android/tts.h
 usr/include/android/window.h
 usr/include/arpa/inet.h
 usr/include/arpa/nameser.h
@@ -54,9 +62,11 @@ usr/include/asm-generic/ioctl.h
 usr/include/asm-generic/ipc.h
 usr/include/asm-generic/local.h
 usr/include/asm-generic/memory_model.h
+usr/include/asm-generic/mman-common.h
 usr/include/asm-generic/mman.h
 usr/include/asm-generic/mutex-xchg.h
 usr/include/asm-generic/percpu.h
+usr/include/asm-generic/pgtable-nopmd.h
 usr/include/asm-generic/pgtable-nopud.h
 usr/include/asm-generic/pgtable.h
 usr/include/asm-generic/poll.h
@@ -64,6 +74,8 @@ usr/include/asm-generic/resource.h
 usr/include/asm-generic/sections.h
 usr/include/asm-generic/siginfo.h
 usr/include/asm-generic/signal.h
+usr/include/asm-generic/socket.h
+usr/include/asm-generic/swab.h
 usr/include/asm-generic/tlb.h
 usr/include/asm-generic/topology.h
 usr/include/asm-generic/xor.h
@@ -186,6 +198,7 @@ usr/include/jni.h
 usr/include/lastlog.h
 usr/include/libgen.h
 usr/include/limits.h
+usr/include/link.h
 usr/include/linux/a.out.h
 usr/include/linux/aio_abi.h
 usr/include/linux/akm8976.h
@@ -303,6 +316,7 @@ usr/include/linux/ip.h
 usr/include/linux/ipc.h
 usr/include/linux/ipmi_msgdefs.h
 usr/include/linux/ipmi_smi.h
+usr/include/linux/ipv6.h
 usr/include/linux/ipx.h
 usr/include/linux/irq.h
 usr/include/linux/irq_cpustat.h
@@ -624,6 +638,7 @@ usr/include/machine/_types.h
 usr/include/machine/asm.h
 usr/include/machine/cdefs.h
 usr/include/machine/cpu-features.h
+usr/include/machine/endian.h
 usr/include/machine/exec.h
 usr/include/machine/ieee.h
 usr/include/machine/internal_types.h
@@ -636,10 +651,10 @@ usr/include/memory.h
 usr/include/mntent.h
 usr/include/mtd/mtd-abi.h
 usr/include/mtd/mtd-user.h
+usr/include/net/ethernet.h
 usr/include/net/ethertypes.h
 usr/include/net/if.h
 usr/include/net/if_arp.h
-usr/include/net/if_dl.h
 usr/include/net/if_ether.h
 usr/include/net/if_ieee1394.h
 usr/include/net/if_packet.h
@@ -647,11 +662,13 @@ usr/include/net/if_types.h
 usr/include/net/route.h
 usr/include/netdb.h
 usr/include/netinet/ether.h
+usr/include/netinet/icmp6.h
 usr/include/netinet/if_ether.h
 usr/include/netinet/in.h
 usr/include/netinet/in6.h
 usr/include/netinet/in_systm.h
 usr/include/netinet/ip.h
+usr/include/netinet/ip6.h
 usr/include/netinet/ip_icmp.h
 usr/include/netinet/tcp.h
 usr/include/netinet/udp.h
@@ -664,6 +681,85 @@ usr/include/pthread.h
 usr/include/pwd.h
 usr/include/regex.h
 usr/include/resolv.h
+usr/include/rs/cpp/RenderScript.h
+usr/include/rs/cpp/rsCppInternal.h
+usr/include/rs/cpp/rsCppStructs.h
+usr/include/rs/cpp/rsDispatch.h
+usr/include/rs/cpp/util/RefBase.h
+usr/include/rs/cpp/util/StrongPointer.h
+usr/include/rs/cpp/util/TypeHelpers.h
+usr/include/rs/rs.h
+usr/include/rs/rs.spec
+usr/include/rs/rsAdapter.h
+usr/include/rs/rsAllocation.h
+usr/include/rs/rsAnimation.h
+usr/include/rs/rsCompatibilityLib.h
+usr/include/rs/rsComponent.h
+usr/include/rs/rsContext.h
+usr/include/rs/rsCppUtils.h
+usr/include/rs/rsDebugHelper.h
+usr/include/rs/rsDefines.h
+usr/include/rs/rsDevice.h
+usr/include/rs/rsElement.h
+usr/include/rs/rsEnv.h
+usr/include/rs/rsFBOCache.h
+usr/include/rs/rsFifo.h
+usr/include/rs/rsFifoSocket.h
+usr/include/rs/rsFileA3D.h
+usr/include/rs/rsFont.h
+usr/include/rs/rsGrallocConsumer.h
+usr/include/rs/rsMatrix2x2.h
+usr/include/rs/rsMatrix3x3.h
+usr/include/rs/rsMatrix4x4.h
+usr/include/rs/rsMesh.h
+usr/include/rs/rsMutex.h
+usr/include/rs/rsObjectBase.h
+usr/include/rs/rsPath.h
+usr/include/rs/rsProgram.h
+usr/include/rs/rsProgramBase.h
+usr/include/rs/rsProgramFragment.h
+usr/include/rs/rsProgramRaster.h
+usr/include/rs/rsProgramStore.h
+usr/include/rs/rsProgramVertex.h
+usr/include/rs/rsRuntime.h
+usr/include/rs/rsSampler.h
+usr/include/rs/rsScript.h
+usr/include/rs/rsScriptC.h
+usr/include/rs/rsScriptGroup.h
+usr/include/rs/rsScriptIntrinsic.h
+usr/include/rs/rsSignal.h
+usr/include/rs/rsStream.h
+usr/include/rs/rsThreadIO.h
+usr/include/rs/rsType.h
+usr/include/rs/rsUtils.h
+usr/include/rs/rs_hal.h
+usr/include/rs/rs_native.spec
+usr/include/rs/rsg.spec
+usr/include/rs/rsgApi.cpp.rsg
+usr/include/rs/rsgApiFuncDecl.h.rsg
+usr/include/rs/rsgApiReplay.cpp.rsg
+usr/include/rs/rsgApiStructs.h.rsg
+usr/include/rs/scriptc/rs_allocation.rsh
+usr/include/rs/scriptc/rs_atomic.rsh
+usr/include/rs/scriptc/rs_cl.rsh
+usr/include/rs/scriptc/rs_core.rsh
+usr/include/rs/scriptc/rs_debug.rsh
+usr/include/rs/scriptc/rs_element.rsh
+usr/include/rs/scriptc/rs_graphics.rsh
+usr/include/rs/scriptc/rs_math.rsh
+usr/include/rs/scriptc/rs_matrix.rsh
+usr/include/rs/scriptc/rs_mesh.rsh
+usr/include/rs/scriptc/rs_object.rsh
+usr/include/rs/scriptc/rs_program.rsh
+usr/include/rs/scriptc/rs_quaternion.rsh
+usr/include/rs/scriptc/rs_sampler.rsh
+usr/include/rs/scriptc/rs_time.rsh
+usr/include/rs/scriptc/rs_types.rsh
+usr/include/rs/server/RefBase.h
+usr/include/rs/server/StrongPointer.h
+usr/include/rs/server/TypeHelpers.h
+usr/include/rs/spec.h
+usr/include/rs/spec.l
 usr/include/sched.h
 usr/include/semaphore.h
 usr/include/setjmp.h
@@ -679,13 +775,16 @@ usr/include/sys/_errdefs.h
 usr/include/sys/_sigdefs.h
 usr/include/sys/_system_properties.h
 usr/include/sys/_types.h
+usr/include/sys/_wchar_limits.h
 usr/include/sys/atomics.h
+usr/include/sys/cachectl.h
 usr/include/sys/cdefs.h
 usr/include/sys/cdefs_elf.h
 usr/include/sys/dirent.h
 usr/include/sys/endian.h
 usr/include/sys/epoll.h
 usr/include/sys/errno.h
+usr/include/sys/eventfd.h
 usr/include/sys/exec_elf.h
 usr/include/sys/file.h
 usr/include/sys/fsuid.h
@@ -696,7 +795,6 @@ usr/include/sys/ipc.h
 usr/include/sys/klog.h
 usr/include/sys/limits.h
 usr/include/sys/linux-syscalls.h
-usr/include/sys/linux-unistd.h
 usr/include/sys/mman.h
 usr/include/sys/mount.h
 usr/include/sys/param.h
@@ -753,6 +851,8 @@ usr/lib/crtend_so.o
 usr/lib/libEGL.so
 usr/lib/libGLESv1_CM.so
 usr/lib/libGLESv2.so
+usr/lib/libGLESv3.so
+usr/lib/libOpenMAXAL.so
 usr/lib/libOpenSLES.so
 usr/lib/libandroid.so
 usr/lib/libc.a
@@ -762,13 +862,23 @@ usr/lib/libjnigraphics.so
 usr/lib/liblog.so
 usr/lib/libm.a
 usr/lib/libm.so
+usr/lib/libm_hard.a
 usr/lib/libstdc++.a
 usr/lib/libstdc++.so
-usr/lib/libthread_db.a
 usr/lib/libthread_db.so
 usr/lib/libz.so
+usr/lib/rs/libRSSupport.so
+usr/lib/rs/libRScpp_static.a
+usr/lib/rs/libclcore.bc
+usr/lib/rs/libcompiler_rt.a
+@dirrm usr/lib/rs
 @dirrm usr/lib
 @dirrm usr/include/sys
+@dirrm usr/include/rs/server
+@dirrm usr/include/rs/scriptc
+@dirrm usr/include/rs/cpp/util
+@dirrm usr/include/rs/cpp
+@dirrm usr/include/rs
 @dirrm usr/include/netpacket
 @dirrm usr/include/netinet
 @dirrm usr/include/net
@@ -787,16 +897,18 @@ usr/lib/libz.so
 @dirrm usr/include/linux/hdlc
 @dirrm usr/include/linux/byteorder
 @dirrm usr/include/linux
+@dirrm usr/include/asm/arch
 @dirrm usr/include/asm-generic/bitops
 @dirrm usr/include/asm-generic
-@dirrm usr/include/asm/arch
 @dirrm usr/include/asm
 @dirrm usr/include/arpa
 @dirrm usr/include/android
 @dirrm usr/include/SLES
+@dirrm usr/include/OMXAL
 @dirrm usr/include/KHR
+@dirrm usr/include/GLES3
 @dirrm usr/include/GLES2
 @dirrm usr/include/GLES
 @dirrm usr/include/EGL
 @dirrm usr/include
-@dirrm usr/
+@dirrm usr
