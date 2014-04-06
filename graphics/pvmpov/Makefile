@@ -14,7 +14,7 @@ COMMENT=	Distributed rendering package for Persistence of Vision Ray Tracer
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/povray31:configure \
 		aimk:${PORTSDIR}/net/pvm
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	povray31:${PORTSDIR}/graphics/povray31 \
 		pvmd:${PORTSDIR}/net/pvm
 
@@ -26,33 +26,30 @@ WRKSRC=		${WRKDIR}/pvmpov3_1g_2
 BUILDBASE=	${WRKSRC}/povray31/source/pvm
 PVM_ROOT=	${LOCALBASE}/lib/pvm
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
-
 PLIST_FILES=	bin/x-pvmpov \
 		lib/pvm/bin/FREEBSD/x-pvmpov
+PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
-		@ (cd ${WRKDIRPREFIX}${.CURDIR}/../../graphics/povray31/work && \
-			 ${TAR} -c -f - povray31 ) \
-			| (cd ${WRKSRC} && ${TAR} --unlink -x -f -)
-		@ cd ${WRKSRC} && ${PATCH} -p0 -s < pvmpov.patch
-		@${REINPLACE_CMD} -i '' -e 's|%LOCALBASE%|${LOCALBASE}|' \
+	@ (cd ${WRKDIRPREFIX}${.CURDIR}/../../graphics/povray31/work && \
+		 ${TAR} -c -f - povray31 ) \
+		| (cd ${WRKSRC} && ${TAR} --unlink -x -f -)
+	@ cd ${WRKSRC} && ${PATCH} -p0 -s < pvmpov.patch
+	@${REINPLACE_CMD} -i '' -e 's|%LOCALBASE%|${LOCALBASE}|' \
+		-e '/^CC/ s|gcc|${CC}|' -e '/^CFLAGS/ s|-O6|${CXXFLAGS}|' \
 			${BUILDBASE}/Makefile.aimk
 
 do-build:
-		@ cd ${BUILDBASE} && \
-			${SETENV} PVM_ROOT=${PVM_ROOT} aimk newxwin
+	@cd ${BUILDBASE} && ${SETENV} PVM_ROOT=${PVM_ROOT} aimk newxwin
 
 do-install:
-		@ ${MKDIR} ${PVM_ROOT}/bin/FREEBSD
-		@ ${INSTALL_PROGRAM} ${BUILDBASE}/FREEBSD/x-pvmpov ${PVM_ROOT}/bin/FREEBSD
-		@ ${LN} -sf ${PVM_ROOT}/bin/FREEBSD/x-pvmpov ${PREFIX}/bin/x-pvmpov
-.if !defined(NOPORTDOCS)
-		@ ${MKDIR} ${DOCSDIR}
-		@ ${INSTALL_DATA} ${WRKSRC}/doc/PVMPOV-HOWTO.html ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${PVM_ROOT}/bin/FREEBSD
+	${INSTALL_PROGRAM} ${BUILDBASE}/FREEBSD/x-pvmpov \
+		${STAGEDIR}${PVM_ROOT}/bin/FREEBSD
+	${LN} -sf ${PVM_ROOT}/bin/FREEBSD/x-pvmpov ${STAGEDIR}${PREFIX}/bin/x-pvmpov
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/PVMPOV-HOWTO.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
