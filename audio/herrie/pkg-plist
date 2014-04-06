@@ -1,5 +1,6 @@
 bin/herrie
 etc/herrie.conf.sample
+man/man1/herrie.1.gz
 %%NLS%%share/locale/ca/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/da/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/de/LC_MESSAGES/herrie.mo
