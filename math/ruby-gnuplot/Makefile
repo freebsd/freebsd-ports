@@ -16,6 +16,8 @@ COMMENT=	A pipe-based interface to the gnuplot package for Ruby
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 USE_RUBY=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/*.rb
@@ -24,22 +26,27 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/gplot
 
-NO_STAGE=	yes
+DOCSDIR=	${RUBY_MODDOCDIR}
+EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
+
 post-patch:
 	${RUBY} -i.orig -p \
 		-e 'gsub %r:#!/bin/env:, "#!/usr/bin/env"' \
 			${WRKSRC}/Gnuplot.rb
 
 do-install:
-	${MKDIR} ${RUBY_SITELIBDIR}/gplot
-	${INSTALL_DATA} ${WRKSRC}/Gnuplot.rb ${RUBY_SITELIBDIR}/gplot/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/*_demo.rb ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/gplot
+	${INSTALL_DATA} ${WRKSRC}/Gnuplot.rb ${STAGEDIR}${RUBY_SITELIBDIR}/gplot/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*_demo.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ChangeLog.txt README
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
