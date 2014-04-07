@@ -15,6 +15,8 @@ USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 .include <bsd.port.pre.mk>
 
