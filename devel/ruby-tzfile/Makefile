@@ -10,6 +10,8 @@ DISTFILES=	ruby-${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	TZFile handling library for Ruby
 
+OPTIONS_DEFINE=	DOCS
+
 USE_RUBY=	yes
 
 NO_BUILD=	yes
@@ -20,20 +22,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOCS=		${RUBY_RD_HTML_FILES}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/tzfile.rb ${RUBY_SITELIBDIR}/
-
-post-install: doc-install
-
-doc-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/tzfile.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
