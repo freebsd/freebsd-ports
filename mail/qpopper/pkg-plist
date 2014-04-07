@@ -1,14 +1,15 @@
 @owner %%USERS%%
 @mode u+s
+%%QPOPAUTH%%bin/qapopauth
 %%QPOPAUTH%%bin/qpopauth
-@group %%GROUP%%
+@group %%GROUPS%%
 @mode 0444
+@unexec if cmp -s %D/%%ETCDIR%%/popusers %D/%%ETCDIR%%/popusers.sample ; then rm -f %D/%%ETCDIR%%/popusers ; fi
 %%ETCDIR%%/popusers.sample
+@exec if [ ! -f %D/%%ETCDIR%%/popusers ] ; then cp -p %D/%F %B/popusers ; fi
 @mode
 @group wheel
 @owner root
-%%QPOPAUTH%%@unexec rm -f %D/bin/qapopauth
-%%QPOPAUTH%%@exec ln -sf %D/bin/qpopauth %D/bin/qapopauth
 libexec/qpopper
 man/man8/qpopper.8.gz
 %%QPOPAUTH%%man/man8/qpopauth.8.gz
