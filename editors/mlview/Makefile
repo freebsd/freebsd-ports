@@ -9,11 +9,10 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tree oriented XML editor for Gnome
+COMMENT=	Tree oriented XML editor for Gnome
 
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf libtool
-USES=		pathfix gmake iconv pkgconfig
+USES=		pathfix gmake iconv pkgconfig tar:bzip2
 USE_GNOME=	eel2 gnomeprefix gtksourceview libgnomeui
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib `pkg-config --libs gnome-vfs-2.0 libgnomeui-2.0` ${ICONV_LIB}"
@@ -21,24 +20,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0 libgnomeui-
 
 GCONF_SCHEMAS=	mlview.schemas
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DBUS
 
-# Autodetect dbus
-.if exists (${LOCALBASE}/lib/libdbus-1.so.3)
-WITH_DBUS=	yes
-.endif
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_CONFIGURE_ENABLE=	dbus
 
-.if defined (WITH_DBUS)
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
-CONFIGURE_ARGS+="--enable-dbus=yes"
-.endif
-
-pre-everything::
-.if !defined (WITH_DBUS)
-	@${ECHO_CMD}
-	@${ECHO_CMD} Re-run with -DWITH_DBUS in order to enable dbus support!
-	@${ECHO_CMD}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
