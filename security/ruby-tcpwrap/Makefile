@@ -23,22 +23,19 @@ USE_RUBY_EXTCONF=	yes
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 CONFIGURE_ARGS=	--with-libwrap-dir=/usr \
 		--with-ident-dir="${LOCALBASE}"
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	README.en	doc/tcpwrap.html.en
 DOCS_JA=	README.ja	doc/tcpwrap.html.ja
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/echod.rb ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_EN} ${RUBY_MODDOCDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_JA} ${RUBY_MODDOCDIR}/ja/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/echod.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_EN} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_JA} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
 .include <bsd.port.mk>
