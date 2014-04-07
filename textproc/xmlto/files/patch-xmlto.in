@@ -1,19 +1,7 @@
-This patch serves two purposes:
-
-#1 fix "noextensions" long option (accepted by upstream)
-#2 avoid that w3m or others pollute $HOME/
+This patch makes sure that w3m or others will not pollute $HOME/
 
 --- ./xmlto.in.orig	2011-11-29 12:49:57.000000000 +0100
 +++ ./xmlto.in	2013-10-07 23:52:57.000000000 +0200
-@@ -262,7 +262,7 @@
- 
- # Process any options
- ARGS=$(${GETOPT} \
--	--longoptions=help,version,extensions,searchpath:,skip-validation,stringparam:,noclean,noautosize,with-fop,with-dblatex \
-+	--longoptions=help,version,extensions,noextensions,searchpath:,skip-validation,stringparam:,noclean,noautosize,with-fop,with-dblatex \
- 	-n xmlto -- x:m:o:p:v "$@")
- [ $? != 0 ] && { usage; exit 1; }
- eval set -- "$ARGS"
 @@ -611,4 +611,6 @@
    # Extremely verbose
    BASH="${BASH} -x"

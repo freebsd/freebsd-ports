@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlto
-PORTVERSION=	0.0.25
-PORTREVISION=	2
+PORTVERSION=	0.0.26
 CATEGORIES=	textproc
 MASTER_SITES=	https://fedorahosted.org/releases/x/m/xmlto/:xmlto \
 		LOCAL/mandree/:xmlto \
@@ -38,7 +37,7 @@ DBLATEX_DESC=		Add dependency on DBlatex (DB for DocBook)
 FOP_DESC=		Add dependency on FOP (requires Java)
 PASSIVETEX_DESC=	Add dependency on XMLTeX/PassiveTeX
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	BASH=${BASH_CMD} GETOPT=${GETOPT_CMD} PDFXMLTEX=${PDFXMLTEX_CMD}
 MAKE_ENV+=	HOME=/dev/null
