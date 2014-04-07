@@ -127,8 +127,6 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${RM} -f ${WRKSRC}/popper/md5.h
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/man/*
@@ -185,4 +183,4 @@ post-install:
 	@${ECHO_MSG}	""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
