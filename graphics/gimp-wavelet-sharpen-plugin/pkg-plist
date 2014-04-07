@@ -1,0 +1,20 @@
+%%GIMP_PLUGIN_DIR%%/wavelet-sharpen
+%%NLS%%share/locale/de/LC_MESSAGES/gimp20-wavelet-sharpen-plug-in.mo
+%%NLS%%share/locale/et/LC_MESSAGES/gimp20-wavelet-sharpen-plug-in.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gimp20-wavelet-sharpen-plug-in.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gimp20-wavelet-sharpen-plug-in.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gimp20-wavelet-sharpen-plug-in.mo
+@dirrmtry %%GIMP_PLUGIN_DIR%%
+@dirrmtry libexec/gimp/2.2
+@dirrmtry libexec/gimp
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale
