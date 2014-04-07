@@ -13,18 +13,18 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Handy FastCGI wrapper library for CGI scripts written in Ruby
 
+OPTIONS_DEFINE=	DOCS
+
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/fcgi.rb:${PORTSDIR}/www/ruby-fcgi
 
 USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/fcgiwrap.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${RUBY_MODDOCDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/fcgiwrap.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	${INSTALL} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 .include <bsd.port.mk>
