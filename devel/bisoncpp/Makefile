@@ -47,11 +47,11 @@ post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g; \
 		s|%%PORTVERSION%%|${PORTVERSION}|g' \
 		${WRKSRC}/INSTALL.im
-	@${REINPLACE_CMD} 's|"g++|"g++47|' \
+	@${REINPLACE_CMD} 's|"g++|"${CXX}|' \
 		${WRKSRC}/INSTALL.im \
 		${WRKSRC}/scanner/driver/build \
 		${WRKSRC}/parser/driver/build
-	@${REINPLACE_CMD} 's|"gcc|"gcc47|' \
+	@${REINPLACE_CMD} 's|"gcc|"${CC}|' \
 		${WRKSRC}/icmake/special
 	@${REINPLACE_CMD} 's|"cp -d |"cp -Pp | ; \
 		s|"cp -r |"cp -R | ; \
