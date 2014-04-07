@@ -11,6 +11,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library that automatically inserts form data into HTML
 
+BROKEN=		Not stage friendly, no more public distfiles
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
