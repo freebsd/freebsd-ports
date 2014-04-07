@@ -1,6 +1,8 @@
 bin/tpad
 bin/tview
 etc/tpad.conf.sample
+man/man1/tpad.1.gz
+man/man1/tview.1.gz
 %%DATADIR%%/Makefile
 %%DATADIR%%/tpad-tips
 %%DATADIR%%/tpad-tips.dat
