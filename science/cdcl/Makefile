@@ -12,19 +12,16 @@ DISTNAME=	dcl-${PORTVERSION}-C
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
 
-USES=		pkgconfig
-USE_GCC=	any
+OPTIONS_DEFINE=	DOCS
+USES=		desthack pkgconfig
 USE_XORG=	x11 xext
 USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-x --enable-shared
+CONFIGURE_ARGS=	--with-x --enable-shared
 
 PLIST_SUB=	DCL_VERSION=${PORTVERSION:S/.//g}
 
 MAKE_JOBS_UNSAFE=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 BINARIES=	cdclcmap cdclclr cdcldate cdcldbs cdclexec cdclfont \
 		cdclpara cdcltone cdcltrf cdclver
@@ -38,17 +35,13 @@ post-configure:
 
 post-install:
 .for i in ${BINARIES}
-	${STRIP_CMD} ${PREFIX}/bin/${i}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/demo/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/demo/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
