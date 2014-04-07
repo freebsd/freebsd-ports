@@ -14,7 +14,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	A multi-purpose class to handle gridded physical quantities
 
-LICENSE=	BSD
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
@@ -26,34 +28,29 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
 		${RUBY_SITELIBDIR}/numru/units.rb:${PORTSDIR}/math/ruby-numru_units \
 		${RUBY_SITEARCHLIBDIR}/rb_gsl.so:${PORTSDIR}/math/ruby-gsl
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 DOCSDIR=	${RUBY_MODDOCDIR}
 PORTEXAMPLES=	sample* test*
 PORTDOCS=	ChangeLog LICENSE.txt README TODO_ep_flux doc*
 
-NO_STAGE=	yes
 do-install:
-	cd ${WRKSRC} && ${MAKE} install
-	cd ${WRKSRC} && ${RUBY} install.rb
-
-post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} install
+	cd ${WRKSRC} && ${RUBY} install.rb -d ${STAGEDIR}${RUBY_SITELIBDIR} -b ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${PORTEXAMPLES}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${i}" ${EXAMPLESDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${i}" ${STAGEDIR}${EXAMPLESDIR})
 .endfor
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${i}" ${DOCSDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${i}" ${STAGEDIR}${DOCSDIR})
 .endfor
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
+
 .include <bsd.port.mk>
