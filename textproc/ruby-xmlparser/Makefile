@@ -24,6 +24,8 @@ USE_RUBY_EXTCONF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-perl-enc-map=${SITE_PERL}/${PERL_ARCH}/XML/Parser/Encodings
 INSTALL_TARGET=	site-install
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 post-extract:
 	${FIND} ${WRKSRC} -name CVS -type d -exec ${RM} -r {} ';' -prune
