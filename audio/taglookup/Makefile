@@ -15,9 +15,8 @@ LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb \
 		libtag.so:${PORTSDIR}/audio/taglib
 
 USES=		pkgconfig
-NO_STAGE=	yes
 
-MAN1=		taglookup.1
-PLIST_FILES=	bin/taglookup
+PLIST_FILES=	bin/taglookup \
+		man/man1/taglookup.1.gz
 
 .include <bsd.port.mk>
