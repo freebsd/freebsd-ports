@@ -5880,3 +5880,4 @@ security/aolserver-nssha1||2014-04-03|Has expired: abandonware, messing up on cl
 www/webobjects||2014-04-04|Has expired: Unmaintained, interactive and restricted
 devel/p5-Devel-LeakTrace-Fast||2014-04-04|Has expired: Broken for more than 6 months
 www/privoxy+ipv6|www/privoxy|2014-04-06|Has expired: www/privoxy natively supports ipv6
+graphics/pyggel|graphics/py-pyggel|2014-04-07|Rename to consistency with other Python ports
