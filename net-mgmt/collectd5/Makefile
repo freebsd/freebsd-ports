@@ -19,7 +19,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/gli
 
 OPTIONS_DEFINE=		CGI DEBUG GCRYPT VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
-OPTIONS_GROUP_OUTPUT=	RRDTOOL NOTIFYEMAIL NOTIFYDESKTOP
+OPTIONS_GROUP_OUTPUT=	RRDTOOL NOTIFYEMAIL NOTIFYDESKTOP RIEMANN
 OPTIONS_GROUP_INPUT=	CURL DBI JSON MEMCACHEC MODBUS MONGODB MYSQL \
 			NUTUPS PGSQL PING PYTHON RABBITMQ REDIS \
 			ROUTEROS SIGROK SNMP STATGRAB TOKYOTYRANT XML XMMS
@@ -42,6 +42,7 @@ PING_DESC=		Enable ping plugin
 PYTHON_DESC=		Enable python-based plugins
 RABBITMQ_DESC=		Enable rabbitmq-based plugins
 REDIS_DESC=		Enable redis-based plugins
+RIEMANN_DESC=		Enable write_riemann plugin (via protobuf-c)
 ROUTEROS_DESC=		Enable routeros plugin
 RRDTOOL_DESC=		Enable rrdtool plugin (also rrdcached plugin)
 SIGROK_DESC=		Enable sigrok plugin
@@ -333,6 +334,15 @@ CONFIGURE_ARGS+=--without-libcredis \
 		--disable-redis \
 		--disable-write_redis
 PLIST_SUB+=	REDIS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MRIEMANN}
+LIB_DEPENDS+=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+CONFIGURE_ARGS+=--enable-write_riemann
+PLIST_SUB+=	RIEMANN=""
+.else
+CONFIGURE_ARGS+=--disable-write_riemann
+PLIST_SUB+=	RIEMANN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MROUTEROS}
