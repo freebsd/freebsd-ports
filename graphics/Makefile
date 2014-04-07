@@ -857,6 +857,7 @@
     SUBDIR += py-poppler-qt4
     SUBDIR += py-pycha
     SUBDIR += py-pydot
+    SUBDIR += py-pyggel
     SUBDIR += py-pyglet
     SUBDIR += py-pygooglechart
     SUBDIR += py-pyproj
@@ -870,7 +871,6 @@
     SUBDIR += py-wand
     SUBDIR += py-webcolors
     SUBDIR += py3-cairo
-    SUBDIR += pyggel
     SUBDIR += pygts
     SUBDIR += pymorph
     SUBDIR += pyro
