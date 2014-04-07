@@ -12,6 +12,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby module for easy handling of XML configuration files
 
+OPTIONS_DEFINE=	DOCS
+
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	rexml
 USE_RUBY_SETUP=	yes
@@ -19,13 +21,10 @@ RUBY_SETUP=	install.rb
 
 DOCS=		docs CHANGES README TODO
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
