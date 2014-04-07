@@ -12,7 +12,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	FastCGI library for Ruby
 
-LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
+OPTIONS_DEFINE=	DOCS
+
+LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
@@ -21,13 +23,10 @@ CONFIGURE_ARGS=	-- --with-fcgi-include=${LOCALBASE}/include \
 
 DOCS=		ChangeLog README README.signals
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
