@@ -20,6 +20,7 @@ RUN_DEPENDS?=	${PREFIX}/bin/eric4:${PORTSDIR}/devel/eric4
 
 I18N_LANG?=	ru
 INSTALL_CMD?=	install-i18n.py -p ${STAGEDIR}
+MAKE_ENV+=	"HOME=${WRKDIR}"
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
