@@ -29,7 +29,7 @@ USE_PYTHON=	yes
 WAF_SCRIPT=	waf
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' -e 's|%%CXX%%|${CXX}|g' -e 
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' -e 's|%%CXX%%|${CXX}|g' -e \
 		's|version=2.9|version=${WX_VERSION}|g' ${WRKSRC}/wscript
 
 do-configure:
