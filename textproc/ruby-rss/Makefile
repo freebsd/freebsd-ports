@@ -13,6 +13,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for parsing, creating, downloading, and caching RSS
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
 
 CONFLICTS=	ruby-rss.alt-*
@@ -25,19 +27,17 @@ INSTALL_TARGET=	site-install
 RUBY_SHEBANG_FILES=	${WRKSRC}/rssdrb.rb ${WRKSRC}/samples/rsstest.rb
 DOCS=		ChangeLog README
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/rss*.rb ${RUBY_SITELIBDIR}/
-	${CHMOD} +x ${RUBY_SITELIBDIR}/rssdrb.rb
-	${LN} -fs ${RUBY_SITELIBDIR}/rssdrb.rb ${PREFIX}/sbin/
-	${LN} -fs rssdrb.rb ${PREFIX}/sbin/rssdrb
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/rss*.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${CHMOD} +x ${STAGEDIR}${RUBY_SITELIBDIR}/rssdrb.rb
+	${LN} -fs ${RUBY_SITELIBDIR}/rssdrb.rb ${STAGEDIR}${PREFIX}/sbin/
+	${LN} -fs rssdrb.rb ${STAGEDIR}${PREFIX}/sbin/rssdrb
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
