@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sylpheed
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		CRITICAL
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
-USES=		gettext iconv gmake pkgconfig tar:bzip2
+USES=		gettext iconv gmake pkgconfig tar:bzip2 desktop-file-utils
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -130,5 +130,7 @@ post-install:
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsylpheed-plugin-0.so.3
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsylph-0.so.3
 
 .include <bsd.port.mk>
