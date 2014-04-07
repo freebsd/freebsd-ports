@@ -111,7 +111,7 @@ post-patch:
 .  endif
 .  if ${PORT_OPTIONS:MHIDE_MARKUP}
 	@${REINPLACE_CMD} -e 's#<a href="[^"]*">markup</a>#markup#g' \
-			  -e 's#>markup_log.*;#>markup_log(-1,-1)#g' \
+			  -e 's#>markup_log.*;#>markup_log(-1,-1);#g' \
 		${WRKSRC}/webui/templates/*/*.tpl ${WRKSRC}/webui/index.php
 .  endif
 .endif
