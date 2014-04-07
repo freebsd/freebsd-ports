@@ -14,7 +14,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	A class to handle units of physical quantities for Ruby
 
-LICENSE=	BSD
+OPTIONS_DEFINE=	DOCS
+
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_RUBY=	yes
@@ -22,16 +24,11 @@ NO_BUILD=	yes
 
 DOCS=		ChangeLog LICENSE.txt doc/units.html doc/units.rd
 
-NO_STAGE=	yes
 do-install:
-	@cd ${WRKSRC}/ && ${RUBY} ./install.rb
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@cd ${WRKSRC}/ && ${RUBY} ./install.rb -d ${STAGEDIR}${RUBY_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
