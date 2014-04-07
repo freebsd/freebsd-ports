@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat
-PORTVERSION=	6.0.37
+PORTVERSION=	6.0.39
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-6/v${PORTVERSION}/bin
+PKGNAMESUFFIX=	6
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
@@ -38,7 +39,6 @@ TOMCAT_CONF_FILES=	catalina.policy catalina.properties context.xml \
 CONF_EXT=	sample
 PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} CONF_EXT=${CONF_EXT} \
 		WWWOWN=${TOMCAT_USER} WWWGRP=${TOMCAT_GROUP}
-LATEST_LINK=	${APP_SHORTNAME}
 
 SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		APP_HOME=${APP_HOME} \
@@ -53,7 +53,6 @@ SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		TOMCAT_VERSION=${MAJOR_VER:S/.//} \
 		USER=${TOMCAT_USER}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:
@@ -80,30 +79,17 @@ pre-install:
 
 do-install:
 	@${ECHO_MSG} -n ">> Creating destination directory..."
-	@${MKDIR} ${APP_HOME}
-	@${MKDIR} ${LOG_DIR}
-	@${MKDIR} ${APP_HOME}/endorsed
+	@${MKDIR} ${STAGEDIR}${APP_HOME}
+	@${MKDIR} ${STAGEDIR}${LOG_DIR}
+	@${MKDIR} ${STAGEDIR}${APP_HOME}/endorsed
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Copying files to destination directory..."
-	@${CP} -R ${WRKSRC}/* ${APP_HOME}
-	@${ECHO_MSG} " [ DONE ]"
-
-.for f in ${TOMCAT_CONF_FILES}
-.	if !exists(${APP_HOME}/conf/${f})
-		@${CP} ${APP_HOME}/conf/${f}.${CONF_EXT} ${APP_HOME}/conf/${f}
-.	else
-		@${ECHO_MSG} ">> Preserving local configuration file: ${f} [ DONE ]"
-.	endif
-.endfor
-
-	@${ECHO_MSG} -n ">> Fixing ownership settings..."
-	@${CHOWN} -R ${TOMCAT_USER}:${TOMCAT_GROUP} ${APP_HOME}/conf ${APP_HOME}/logs \
-		${APP_HOME}/temp ${APP_HOME}/webapps ${APP_HOME}/work
+	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${APP_HOME}
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Fixing permissions..."
-	@${FIND} ${APP_HOME} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${STAGEDIR}${APP_HOME} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.post.mk>
