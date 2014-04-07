@@ -3,4 +3,3 @@
 %%RUBY_SITELIBDIR%%/dbd/sqlite3/statement.rb
 @dirrm %%RUBY_SITELIBDIR%%/dbd/sqlite3
 @dirrmtry %%RUBY_SITELIBDIR%%/dbd
-%%PORTDOCS%%@dirrmtry %%RUBY_MODDOCDIR%%
