@@ -23,10 +23,9 @@ SHORTNAME=	${PORTNAME:S/usersguide/uguide/}
 WRKSRC=		${WRKDIR}/${SHORTNAME}
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/* ${RUBY_MODDOCDIR}
-	${LN} -fs uguide00.html ${RUBY_MODDOCDIR}/index.html
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${RUBY_MODDOCDIR}
+	${LN} -fs uguide00.html ${STAGEDIR}${RUBY_MODDOCDIR}/index.html
 
 .include <bsd.port.mk>
