@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc48
-PORTVERSION=	4.8.3.s20140220
+PORTVERSION=	4.8.3.s20140320
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -32,9 +32,8 @@ DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.s([0-9]+)/\1-\2/}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
-USES=		gmake iconv perl5
+USES=		gmake iconv perl5 tar:bzip2
 USE_BINUTILS=	yes
-USE_BZIP2=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
 
@@ -128,12 +127,15 @@ pre-configure:
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
-	cd ${WRKSRC}; ${GMAKE} -sk check
+	cd ${WRKSRC}; ${GMAKE} -sk check \
+	; ${SRCDIR}/contrib/test_summary
 .endif
 
 post-install:
 	${RM} -f ${STAGEDIR}${TARGLIB}/*.la
 	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
+	${RM} -f ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
+	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
