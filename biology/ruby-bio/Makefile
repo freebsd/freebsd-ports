@@ -12,30 +12,22 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	Integrated environment for Bioinformatics written in Ruby
 
-OPTIONS_DEFINE=	XMLPARSER BDB4 MYSQL PGSQL
+OPTIONS_DEFINE=	XMLPARSER BDB4 MYSQL PGSQL DOCS
 XMLPARSER_DESC=	xmlparser support for faster Blast processing
 BDB4_DESC=	bdb4 support for faster flat file indexing
 
 OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
 
+USES=	shebangfix
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
+SHEBANG_FILES=	sample/biofetch.rb
+ruby_OLD_CMD=	/usr/proj/bioruby/bin/ruby
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXMLPARSER}
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
-.endif
-.if ${PORT_OPTIONS:MBDB4}
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
-.endif
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/DBD/Mysql/Mysql.rb:${PORTSDIR}/databases/ruby-dbd_mysql
-.endif
-.if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/DBD/Pg/Pg.rb:${PORTSDIR}/databases/ruby-dbd_pg
-.endif
+XML_PARSER_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
+BDB4_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
+MYSQL_RUN_DEPENDS=	${RUBY_SITELIBDIR}/DBD/Mysql/Mysql.rb:${PORTSDIR}/databases/ruby-dbd_mysql
+PGSQL_RUN_DEPENDS=	${RUBY_SITELIBDIR}/DBD/Pg/Pg.rb:${PORTSDIR}/databases/ruby-dbd_pg
 
 post-patch:
 	${RUBY} -i -pe 'gsub(%r"(/etc/bioinformatics/)") { "${PREFIX}" + $$1 }' \
@@ -43,22 +35,15 @@ post-patch:
 		${WRKSRC}/lib/bio/io/registry.rb
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/bioinformatics
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bioinformatics
 .for f in etc/bioinformatics/seqdatabase.ini
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${f}.sample
-	if [ ! -f ${PREFIX}/${f} ]; then \
-		${CP} -p ${PREFIX}/${f}.sample ${PREFIX}/${f}; \
-	fi
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${f}.sample
 .endfor
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${CP} -R ${WRKSRC}/sample/ ${RUBY_MODEXAMPLESDIR}/
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README.rdoc ${RUBY_MODDOCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/*.rd ${RUBY_MODDOCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/*.rd.ja ${RUBY_MODDOCDIR}/ja/
-.endif
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${CP} -R ${WRKSRC}/sample/ ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README.rdoc ${STAGEDIR}${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.rd ${STAGEDIR}${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.rd.ja ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
 .include <bsd.port.mk>
