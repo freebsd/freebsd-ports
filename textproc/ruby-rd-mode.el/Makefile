@@ -23,19 +23,18 @@ ELISP_FILES=	rd-mode.el
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -sf `cd ${.CURDIR}/../ruby-rdtool; ${MAKE} -V WRKSRC`/utils ${WRKSRC}
 
 do-install:
-	${MKDIR} ${RUBY_ELISPDIR}/
-	${MKDIR} ${XEMACSLISPDIR}/
+	@${MKDIR} ${STAGEDIR}${RUBY_ELISPDIR}/
+	@${MKDIR} ${STAGEDIR}${XEMACSLISPDIR}/
+	@${MKDIR} ${STAGEDIR}${EMACSLISPDIR}/
 .for f in ${ELISP_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_ELISPDIR}/
-	${LN} -sf ${RUBY_ELISPDIR}/${f} ${EMACSLISPDIR}/
-	${LN} -sf ${RUBY_ELISPDIR}/${f} ${XEMACSLISPDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_ELISPDIR}/
+	${LN} -sf ${RUBY_ELISPDIR}/${f} ${STAGEDIR}${EMACSLISPDIR}/
+	${LN} -sf ${RUBY_ELISPDIR}/${f} ${STAGEDIR}${XEMACSLISPDIR}/
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
