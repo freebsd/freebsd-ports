@@ -65,7 +65,7 @@ post-patch:
 		-e 's,$$(libdir)/@PACKAGE@@VERSION@,$$(libdir)/@PACKAGE@,' \
 		${WRKSRC}/Makefile.in
 	${FIND} ${WRKSRC}/apps -type f ! -name "*.man" | ${XARGS} \
-	   ${REINPLACE_CMD} -e 's,exec tclsh,exec ${TCLSH},'
+	   ${REINPLACE_CMD} -e 's,exec tclsh,exec ${TCLSH},' -e 's,/usr/bin/env tclsh,${TCLSH},'
 #
 # 	patch(1) adds a newline at eof, so we need to remove it here
 #
