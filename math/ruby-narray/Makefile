@@ -12,12 +12,14 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Numerical N-dimensional array library for Ruby
 
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 DOC_EN=		ChangeLog	README.en	SPEC.en
 DOC_JA=		README.ja	SPEC.ja
