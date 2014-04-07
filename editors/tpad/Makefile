@@ -19,41 +19,27 @@ NO_BUILD=	yes
 
 PORTDOCS=	ChangeLog bug.html conf.html embed.html index.html intro.html \
 		keys.html log.html mouse.html tidy.html tidy.png todo tpad.html
-MAN1=		tpad.1
-MLINKS=		tpad.1 tview.1
 PLIST_SUB=	LIBDIR=lib/tpad${PORTVERSION}
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/bin/tpad ${PREFIX}/bin/tpad
-	@${MKDIR} ${PREFIX}/lib/tpad${PORTVERSION}/msgs
-	cd ${WRKDIR}/lib/tpad${PORTVERSION}; \
-	for libfile in *.tcl; do \
-		${INSTALL_DATA} $$libfile ${PREFIX}/lib/tpad${PORTVERSION}; \
-	done
-	cd ${WRKDIR}/lib/tpad${PORTVERSION}/msgs; \
-	for msgfile in *.msg; do \
-		${INSTALL_DATA} $$msgfile ${PREFIX}/lib/tpad${PORTVERSION}/msgs; \
-	done
-	@${MKDIR} ${DATADIR}
-	cd ${WRKDIR}/share/tpad/; \
-	for  datafile in *; do \
-		${INSTALL_DATA} $$datafile ${DATADIR}; \
-	done
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${TEST} -e ${PREFIX}/bin/tview || (cd ${PREFIX}/bin ; ${LN} -s tpad tview)
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKDIR}/man/man1/tpad.1 ${MANPREFIX}/man/man1
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for docfile in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/share/doc/tpad/${docfile} ${DOCSDIR}
-.endfor
-.endif
-	${INSTALL_DATA} ${WRKDIR}/etc/tpad.conf ${PREFIX}/etc/tpad.conf.sample
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/bin/tpad ${STAGEDIR}${PREFIX}/bin/tpad
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/tpad${PORTVERSION}/msgs
+	(cd ${WRKDIR}/lib/tpad${PORTVERSION} && ${INSTALL_DATA} *.tcl \
+		${STAGEDIR}${PREFIX}/lib/tpad${PORTVERSION})
+	(cd ${WRKDIR}/lib/tpad${PORTVERSION}/msgs && ${INSTALL_DATA} *.msg \
+		${STAGEDIR}${PREFIX}/lib/tpad${PORTVERSION}/msgs)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKDIR}/share/tpad && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s tpad tview)
+	${INSTALL_MAN} ${WRKDIR}/man/man1/tpad.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	(cd ${STAGEDIR}${MANPREFIX}/man/man1 && ${LN} -s tpad.1.gz tview.1.gz)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR}/share/doc/tpad && ${INSTALL_DATA} ${PORTDOCS} \
+		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKDIR}/etc/tpad.conf \
+		${STAGEDIR}${PREFIX}/etc/tpad.conf.sample
 
 .include <bsd.port.mk>
