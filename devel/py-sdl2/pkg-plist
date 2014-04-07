@@ -30,6 +30,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/modules/sdl2ext_pixelaccess.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/modules/sdl2ext_resources.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/modules/sdl2ext_sprite.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/modules/sdl2ext_surface.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/modules/sdl2ext_window.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/news.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/todos.txt
@@ -86,6 +87,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/sdl2ext_pixelaccess.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/sdl2ext_resources.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/sdl2ext_sprite.html
+%%PORTDOCS%%%%DOCSDIR%%/html/modules/sdl2ext_surface.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/sdl2ext_window.html
 %%PORTDOCS%%%%DOCSDIR%%/html/news.html
 %%PORTDOCS%%%%DOCSDIR%%/html/objects.inv
