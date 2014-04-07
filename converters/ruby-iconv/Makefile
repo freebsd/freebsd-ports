@@ -12,11 +12,13 @@ DISTFILES=	# empty
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An iconv wrapper class for Ruby
+COMMENT=	iconv wrapper class for Ruby
 
 FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 
 USES=		iconv
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -27,7 +29,6 @@ INSTALL_TARGET=	site-install
 
 PLIST_FILES=	${RUBY_ARCHLIBDIR:S,${PREFIX},,:S,^/,,}/iconv.so
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 RUBY_WRKDIR!=	cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR
