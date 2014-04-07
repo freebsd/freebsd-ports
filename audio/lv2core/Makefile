@@ -12,9 +12,7 @@ COMMENT=	LV2 Core Package
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
-NO_STAGE=	yes
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 USE_PYTHON_BUILD=	yes
 
 .include <bsd.port.pre.mk>
@@ -41,7 +39,8 @@ do-build:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} waf ${WAF_VERBOSE} ${WAF_JOBS} build)
 
 do-install:
-	@(cd ${WRKSRC} && ${PYTHON_CMD} waf ${WAF_VERBOSE} install)
-	${INSTALL_DATA} ${WRKSRC}/lv2core.pc ${PREFIX}/libdata/pkgconfig
+	@(cd ${WRKSRC} && ${PYTHON_CMD} waf --destdir=${STAGEDIR} \
+		${WAF_VERBOSE} install)
+	${INSTALL_DATA} ${WRKSRC}/lv2core.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.post.mk>
