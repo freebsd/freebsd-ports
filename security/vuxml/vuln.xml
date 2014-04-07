@@ -51,6 +51,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5631ae98-be9e-11e3-b5e3-c80aa9043978">
+    <topic>OpenSSL -- Multiple vulnerabilities - private data exposure</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL Reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20140407.txt">
+	  <p>A missing bounds check in the handling of the TLS heartbeat extension can be
+	    used to reveal up to 64k of memory to a connected client or server.</p>
+	  <p>Affected users should upgrade to OpenSSL 1.0.1g. Users unable to immediately
+	    upgrade can alternatively recompile OpenSSL with -DOPENSSL_NO_HEARTBEATS.</p>
+	</blockquote>
+	<p>This also covers:</p>
+	<blockquote cite="https://www.openssl.org/news/vulnerabilities.html#2014-0076">
+	  <p>Fix for the attack described in the paper "Recovering OpenSSL
+	    ECDSA Nonces Using the FLUSH+RELOAD Cache Side-channel Attack"</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.openssl.org/news/secadv_20140407.txt</url>
+      <url>https://www.openssl.org/news/vulnerabilities.html#2014-0076</url>
+      <cvename>CVE-2014-0160</cvename>
+      <cvename>CVE-2014-0076</cvename>
+    </references>
+    <dates>
+      <discovery>2014-04-07</discovery>
+      <entry>2014-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e95eb4e-b737-11e3-87cd-f0def10dca57">
     <topic>Icinga -- buffer overflow in classic web interface</topic>
     <affects>
