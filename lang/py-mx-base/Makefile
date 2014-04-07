@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mx-base
-PORTVERSION=	3.2.6
-PORTREVISION=	2
+PORTVERSION=	3.2.7
 CATEGORIES=	lang python
 MASTER_SITES=	https://downloads.egenix.com/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,6 @@ COMMENT=	eGenix mx-Extension Series for Python
 
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
-# PYDISTUTILS_AUTOPLIST=yes misses .py[oc] files
 PYDISTUTILS_PKGNAME=	egenix-mx-base
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}-nspkg.pth
 
