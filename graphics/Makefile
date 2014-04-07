@@ -278,6 +278,7 @@
     SUBDIR += gimp-save-for-web
     SUBDIR += gimp-wavelet-decompose-plugin
     SUBDIR += gimp-wavelet-denoise-plugin
+    SUBDIR += gimp-wavelet-sharpen-plugin
     SUBDIR += gimpfx-foundry
     SUBDIR += giram
     SUBDIR += gkrellkam2
