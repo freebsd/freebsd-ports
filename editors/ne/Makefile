@@ -11,13 +11,10 @@ COMMENT=	Nice and powerful editor
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=	DOCS
-
 BUILD_WRKSRC=	${WRKSRC}/src
 
-USES=		perl5
+USES=		gmake perl5
 USE_PERL5=	build
-USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	${PORTNAME}
 MAKE_ARGS=	CC="${CC}" \
@@ -25,10 +22,10 @@ MAKE_ARGS=	CC="${CC}" \
 		LDFLAGS="-lgnuregex" \
 		NE_GLOBAL_DIR="${DATADIR}"
 
-MAN1=		${PORTNAME}.1
 INFO=		${PORTNAME}
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz \
 		%%DATADIR%%/default.keys %%DATADIR%%/default.menus \
 		%%DATADIR%%/syntax/4gl.jsf %%DATADIR%%/syntax/ada.jsf \
 		%%DATADIR%%/syntax/asm.jsf %%DATADIR%%/syntax/awk.jsf \
@@ -55,43 +52,37 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/syntax/vhdl.jsf %%DATADIR%%/syntax/xml.jsf
 PLIST_DIRS=	%%DATADIR%%/syntax %%DATADIR%%
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DEBUG DOCS
+
 .include <bsd.port.options.mk>
 
-.if !defined(WITH_DEBUG)
+.if ! ${PORT_OPTIONS:MDEBUG}
 CFLAGS+=	-DNODEBUG
 .endif
 
 post-patch:
-.for file in actions.c
-	@${REINPLACE_CMD} -e 's|tmpnam(|mkstemp(|g' ${BUILD_WRKSRC}/${file}
-.endfor
-.for file in ne.c search.c
-	@${REINPLACE_CMD} -e 's|"regex\.h"|<gnu/regex.h>|g' ${BUILD_WRKSRC}/${file}
-.endfor
-.for file in makefile
+	@${REINPLACE_CMD} -e 's|tmpnam(|mkstemp(|g' ${BUILD_WRKSRC}/actions.c
+	@${REINPLACE_CMD} -e 's|"regex\.h"|<gnu/regex.h>|g' \
+		${BUILD_WRKSRC}/ne.c \
+		${BUILD_WRKSRC}/search.c
 	@${REINPLACE_CMD} -e '/[[:space:]]regex.o/d ; \
-		 s|regex.h||g' ${BUILD_WRKSRC}/${file}
-.endfor
+		 s|regex.h||g' ${BUILD_WRKSRC}/makefile
 
 post-build:
 	cd ${WRKSRC}/doc && makeinfo ${PORTNAME}.texinfo
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.info ${PREFIX}/${INFO_PATH}
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA}	${WRKSRC}/doc/default.* ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} syntax ${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.txt ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR})
-.endif
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.info \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA}	${WRKSRC}/doc/default.* ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} syntax ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} CHANGES NEWS README \
+		doc/${PORTNAME}.pdf doc/${PORTNAME}.txt ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
