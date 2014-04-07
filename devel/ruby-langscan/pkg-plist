@@ -56,7 +56,6 @@
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/python
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/php
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/pairmatcher
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/ocaml
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/javascript
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/java
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/elisp

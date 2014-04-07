@@ -33,9 +33,6 @@ DOCSDIR=	${RUBY_MODDOCDIR}
 OPTIONS_DEFINE=	DOCS
 OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 CFLAGS+=	-fPIC
 
 CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} \
@@ -50,13 +47,11 @@ pre-configure:
 	cd ${CONFIGURE_WRKSRC}; ${SH} autogen.sh
 
 post-install:
-	${CHMOD} ${BINMODE} ${RUBY_SITEARCHLIBDIR}/${PORTNAME}/ocaml/camlexer
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${CHMOD} ${BINMODE} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/${PORTNAME}/ocaml/camlexer
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 x-generate-plist:
 	${ECHO} %%RUBY_SITELIBDIR%%/langscan.rb > pkg-plist.new
@@ -65,4 +60,4 @@ x-generate-plist:
 	${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d -depth | ${SORT} -r | ${SED} -e 's,${RUBY_SITELIBDIR},@dirrm %%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 	${FIND} ${RUBY_SITEARCHLIBDIR}/${PORTNAME} -type d -depth | ${SORT} -r | ${SED} -e 's,${RUBY_SITEARCHLIBDIR},@dirrm %%RUBY_SITEARCHLIBDIR%%,' >> pkg-plist.new
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
