@@ -12,9 +12,10 @@ DIST_SUBDIR=		ruby
 MAINTAINER=		ruby@FreeBSD.org
 COMMENT=		Ruby implementation of Perl's Algorithm::Diff
 
+BROKEN=	Does not fetch
+
 USE_RUBY=		YES
 USE_RUBY_SETUP=		YES
 RUBY_SETUP=		install.rb
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
