@@ -273,6 +273,7 @@
     SUBDIR += gimp-lensfun-plugin
     SUBDIR += gimp-lqr-plugin
     SUBDIR += gimp-manual-html
+    SUBDIR += gimp-refocus-plugin
     SUBDIR += gimp-resynthesizer
     SUBDIR += gimp-save-for-web
     SUBDIR += gimp-wavelet-decompose-plugin
