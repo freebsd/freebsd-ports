@@ -11,6 +11,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library to manipulate HTML/XML tree data structure
 
+OPTIONS_DEFINE=	DOCS
+
 USE_RUBY=	yes
 USE_RUBY_RD2=		yes
 USE_RUBY_RDOC=		yes
@@ -20,40 +22,22 @@ LIB_FILES=	htree.rb htree
 DOCS=		README \
 		${RUBY_RD_HTML_FILES} \
 		doc
+DOCSDIR=	${RUBY_MODDOCDIR}
+PORTDOCS=	*
 
-RUBY_REQUIRE=	Ruby >= 180
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if !defined(RUBY_PROVIDED)
-IGNORE=		only works with Ruby 1.8.0 or later
-.endif
+.include <bsd.port.options.mk>
 
 do-build:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${BUILD_WRKSRC}; ${RUBY_RDOC} ${LIB_FILES}
 .endif
 
-do-install: doc-install
-	cd ${INSTALL_WRKSRC}; ${CP} -R ${LIB_FILES} ${RUBY_SITELIBDIR}/
-
-doc-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+do-install:
+	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	cd ${INSTALL_WRKSRC}; ${CP} -R ${LIB_FILES} ${STAGEDIR}${RUBY_SITELIBDIR}/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${FIND} -ds ${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
-		's,^${PREFIX}/?,,' >> ${TMPPLIST}
-	@${FIND} -ds ${RUBY_MODDOCDIR} -type d -print | ${SED} -E -e \
-		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/doc/${RUBY_NAME} \
-		2>/dev/null || true" >> ${TMPPLIST}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
