@@ -14,11 +14,11 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	lercordeiro@gmail.com
 COMMENT=	Ruby extension module to use FOX 1.6, aka FXRuby
 
-LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 \
-		png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		fxscintilla.23:${PORTSDIR}/x11-toolkits/fxscintilla
+LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libfxscintilla.so:${PORTSDIR}/x11-toolkits/fxscintilla
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}16
 
@@ -29,7 +29,6 @@ NOHARM_ARGS=	--no-harm
 USE_XORG=	xcursor xproto x11 xextproto xext xrandr
 USE_GL=		yes
 
-NO_STAGE=	yes
 install-noharm:
 	cd ${WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install ${NOHARM_ARGS} ${RUBY_INSTALL_ARGS}
