@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb
-PORTVERSION=	2.4.9
-PORTREVISION=	1
+PORTVERSION=	2.4.10
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
@@ -18,9 +17,9 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libsnappy.so:${PORTSDIR}/archivers/snappy
-# boost 1.52 from ports make mongod segfaulting with many tests
+# boost 1.52/1.55 from ports make mongod segfaulting with many tests
 # LIB_DEPENDS+=	libboost_system.so:${PORTSDIR}/devel/boost-libs
-# SCONS_ARGS+=	--use-system-boost
+# MAKE_ARGS+=	--use-system-boost
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
@@ -64,13 +63,12 @@ LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
 .if ${PORT_OPTIONS:MTEST}
 BUILD_DEPENDS=	pymongo>=2.5:${PORTSDIR}/databases/pymongo
-MAKE_TARGET=	all
-SMOKE_TESTS=	smokeAll smokeCppUnittests
+TEST_TARGET=	smokeAll smokeCppUnittests
 .	if ${PORT_OPTIONS:MSSL}
-SMOKE_TESTS+=	smokeSsl
+TEST_TARGET+=	smokeSsl
 .	endif
 .else
-MAKE_TARGET=	core tools
+ALL_TARGET=	core tools
 .endif
 
 .if ${OSVERSION} >= 1000024
@@ -86,8 +84,8 @@ post-patch:
 
 .if ${PORT_OPTIONS:MTEST}
 test: build-depends build
-	@cd ${BUILD_WRKSRC} && \
-		${SCONS_BIN} ${SCONS_ENV} ${MAKE_ARGS} ${SMOKE_TESTS}
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} ${TEST_TARGET}
 .endif
 
 .include <bsd.port.mk>
