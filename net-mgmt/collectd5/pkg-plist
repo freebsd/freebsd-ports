@@ -226,6 +226,9 @@ lib/collectd/write_graphite.la
 %%CURL%%lib/collectd/write_http.a
 %%CURL%%lib/collectd/write_http.so
 %%CURL%%lib/collectd/write_http.la
+%%MONGODB%%lib/collectd/write_mongodb.a
+%%MONGODB%%lib/collectd/write_mongodb.so
+%%MONGODB%%lib/collectd/write_mongodb.la
 %%REDIS%%lib/collectd/write_redis.a
 %%REDIS%%lib/collectd/write_redis.so
 %%REDIS%%lib/collectd/write_redis.la
