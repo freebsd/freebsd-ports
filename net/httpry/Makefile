@@ -8,15 +8,12 @@ MASTER_SITES=	http://dumpsterventures.com/jason/httpry/
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Packet sniffer designed for displaying and logging HTTP traffic
 
-MAN1=		httpry.1
-
 USE_RC_SUBR=	httpry
 
-OPTIONS_DEFINE=	EXTRASCRIPTS
+OPTIONS_DEFINE=	EXTRASCRIPTS DOCS
 EXTRASCRIPTS_DESC=	Install additional scripts
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXTRASCRIPTS}
 PLIST_SUB=	EXTRASCRIPTS=""
@@ -28,17 +25,15 @@ PLIST_SUB=	EXTRASCRIPTS="@comment "
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MEXTRASCRIPTS}
-	${MKDIR} ${PREFIX}/bin/httpry-scripts
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/httpry-scripts
 	(cd ${WRKSRC}/scripts/ && \
-		${COPYTREE_BIN} \* ${PREFIX}/bin/httpry-scripts "! -name *.bak")
+		${COPYTREE_BIN} \* ${STAGEDIR}${PREFIX}/bin/httpry-scripts "! -name *.bak")
 .endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/perl-tools ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/format-string ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/perl-tools ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/format-string ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
