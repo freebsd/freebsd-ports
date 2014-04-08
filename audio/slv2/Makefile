@@ -16,9 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:${PORTSDIR}/audio/lv2core
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		librdf.so:${PORTSDIR}/textproc/redland
 
-USES=		pkgconfig
-NO_STAGE=	yes
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=	yes
 
@@ -47,9 +45,10 @@ do-build:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} waf ${WAF_VERBOSE} ${WAF_JOBS} build)
 
 do-install:
-	@(cd ${WRKSRC} && ${PYTHON_CMD} waf ${WAF_VERBOSE} install)
+	@(cd ${WRKSRC} && ${PYTHON_CMD} waf ${WAF_VERBOSE} \
+		--destdir=${STAGEDIR} install)
 .for file in lv2_inspect lv2_jack_host lv2_list lv2_simple_jack_host
-	@${STRIP_CMD} ${PREFIX}/bin/${file}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 
 .include <bsd.port.post.mk>
