@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spideroak
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.3
 #PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://spideroak.com/getbuild?platform=slackware&arch=i386&dummy=/
@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-i686-1
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	SpiderOak Client (Linux version)
 
-LICENSE_NAME=	ToU
+LICENSE=	TOU
+LICENSE_NAME=	Terms Of Use
 LICENSE_TEXT=	http://spideroak.com/terms_of_use
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
@@ -30,6 +31,9 @@ PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,} \
 REINPLACE_ARGS=	-e 's,%%PREFIX%%,${PREFIX},1' \
 		-e 's,%%DATADIR%%,${DATADIR},1' \
 		-i.bak
+
+SUB_LIST=	LINUXBASE=${LINUXBASE}
+SUB_FILES=	pkg-message
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
