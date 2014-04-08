@@ -256,6 +256,7 @@
     SUBDIR += xfce4-notification-daemon
     SUBDIR += xfce4-notifyd
     SUBDIR += xfce4-tumbler
+    SUBDIR += xfce4-volumed
     SUBDIR += xfce4-xkb-plugin
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
