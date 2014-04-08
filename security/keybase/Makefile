@@ -1,59 +1,28 @@
 # $FreeBSD$
 
 PORTNAME=	keybase
-DISTVERSION=	v0.2.0
+PORTVERSION=	0.2.18
 CATEGORIES=	security
-MASTER_SITES=	GH \
+MASTER_SITES=	https://dist.keybase.io/pkg/files/ \
 		LOCAL/bdrewery/${PORTNAME}/:DEFAULT,deps \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,deps
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DEP_DIST}:deps
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bdrewery@freebsd.org
 COMMENT=	Keybase.io client
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	npm>=0:${PORTSDIR}/www/npm
 RUN_DEPENDS=	node>=0:${PORTSDIR}/www/node \
 		gpg:${PORTSDIR}/security/gnupg
 
-# Must bundle deps.
-# 1. They are not in ports and doing so creates a large complex task with little
-#    benefit requiring a lot of maintenance. Hopefully someday we will have
-#    an npm wrapper similar to BSDPAN.
-# 2. npm has absolutely no way to fetch dependencies without installing at the
-#    same time so this would not build on poudriere due to network restrictions
-#    outside of 'fetch' phase. See https://github.com/npm/npm/issues/2817
-# 3. A date is used as dependencies can upgrade even without keybase changing
-#    anything due to dependency patterns not binding to specific versions in
-#    package.json. I.e., even if the problem of fetching dependencies is
-#    solved, we want this package to be reproducible.
-DEP_DIST_DATE=	20140327
-DEP_DIST_DFMT=	%Y%m%d
-DEP_DIST_PRE=	${PORTNAME}-deps-${PORTVERSION}-${GH_COMMIT}-
-DEP_DIST_POST=	.txz
-DEP_DIST=	${DEP_DIST_PRE}${DEP_DIST_DATE}${DEP_DIST_POST}
+WRKSRC=		${WRKDIR}/package
+NO_ARCH=	yes
+NO_BUILD=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	keybase
-GH_PROJECT=	node-client
-GH_COMMIT=	9509986
-
+# Install it a private place instead of polluting lib/node_modules
+# which npm(1) owns and will upgrade beneath pkg(8) control.
 KEYBASE_PREFIX=	${PREFIX}/libexec/${PORTNAME}
-
-# Generate dependency distfile. This is only used by maintainer.
-makedeps: patch
-	cd ${WRKSRC} && \
-	  ${RM} -rf node_modules && \
-	  dep_fname="${DEP_DIST_PRE}`/bin/date '+${DEP_DIST_DFMT}'`${DEP_DIST_POST}" && \
-	  tar -cJf $${dep_fname} node_modules/ && \
-	  ${MV} -f $${dep_fname} ${_DISTDIR}/ && \
-	  cd ${.CURDIR} && \
-	  ${MAKE} makesum
-
-post-extract:
-	@${MV} ${WRKDIR}/node_modules ${WRKSRC}/node_modules
 
 add-plist-post: npm-auto-plist
 
@@ -66,8 +35,10 @@ npm-auto-plist:
 
 do-install:
 	@${MKDIR} ${WRKDIR}/tmp ${STAGEDIR}${KEYBASE_PREFIX}/lib
-	cd ${STAGEDIR}${KEYBASE_PREFIX}/lib && ${SETENV} HOME=${WRKDIR}/tmp \
-	  ${LOCALBASE}/bin/npm install ${WRKSRC}
+	(cd ${WRKSRC} &&	\
+	    ${COPYTREE_SHARE} \* \
+	    ${STAGEDIR}${KEYBASE_PREFIX}/lib/node_modules/${PORTNAME})
+	${CHMOD} +x ${STAGEDIR}${KEYBASE_PREFIX}/lib/node_modules/${PORTNAME}/bin/main.js
 	${LN} -s ${KEYBASE_PREFIX}/lib/node_modules/${PORTNAME}/bin/main.js \
 	  ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
