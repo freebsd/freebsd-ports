@@ -1,4 +1,19 @@
 bin/wxperl_overload
+%%PERL5_MAN3%%/Wx.3.gz
+%%PERL5_MAN3%%/Wx::Api.3.gz
+%%PERL5_MAN3%%/Wx::Loader.3.gz
+%%PERL5_MAN3%%/Wx::NewClass.3.gz
+%%PERL5_MAN3%%/Wx::Perl::Carp.3.gz
+%%PERL5_MAN3%%/Wx::Perl::SplashFast.3.gz
+%%PERL5_MAN3%%/Wx::Perl::TextValidator.3.gz
+%%PERL5_MAN3%%/Wx::Socket.3.gz
+%%PERL5_MAN3%%/Wx::Thread.3.gz
+%%PERL5_MAN3%%/Wx::XSP::Overload.3.gz
+%%PERL5_MAN3%%/Wx::build::MakeMaker.3.gz
+%%PERL5_MAN3%%/Wx::build::MakeMaker::Win32_MSVC.3.gz
+%%PERL5_MAN3%%/Wx::build::Options.3.gz
+%%PERL5_MAN3%%/Wx::build::Utils.3.gz
+man/man1/wxperl_overload.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/AUI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Api.pod
@@ -6,6 +21,7 @@ bin/wxperl_overload
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/ArtProvider.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Calendar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/DND.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/DataView.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/DateTime.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/DocView.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/DropSource.pm
@@ -14,6 +30,7 @@ bin/wxperl_overload
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Grid.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Help.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Html.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/IPC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Loader.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Locale.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/MDI.pm
@@ -28,12 +45,15 @@ bin/wxperl_overload
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Perl/TextValidator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/PerlTest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Print.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/PropertyGrid.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/RadioBox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Ribbon.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/RichText.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/STC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Socket.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Thread.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Timer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/WebView.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Wx_Exp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/XRC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Enum.pm
@@ -72,6 +92,8 @@ bin/wxperl_overload
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Calendar/Calendar.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DND/DND.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DND/DND.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DataView/DataView.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DataView/DataView.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DateTime/DateTime.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DateTime/DateTime.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DocView/DocView.bs
@@ -84,6 +106,8 @@ bin/wxperl_overload
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Help/Help.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Html/Html.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Html/Html.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/IPC/IPC.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/IPC/IPC.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/MDI/MDI.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/MDI/MDI.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Media/Media.bs
@@ -92,16 +116,27 @@ bin/wxperl_overload
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/PerlTest/PerlTest.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Print/Print.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Print/Print.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/PropertyGrid/PropertyGrid.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/PropertyGrid/PropertyGrid.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Ribbon/Ribbon.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Ribbon/Ribbon.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/RichText/RichText.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/RichText/RichText.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/STC/STC.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/STC/STC.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Socket/Socket.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Socket/Socket.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/WebView/WebView.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/WebView/WebView.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Wx.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Wx.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/XRC/XRC.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/XRC/XRC.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/WebView
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Ribbon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/PropertyGrid
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/IPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DataView
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/XRC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Socket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/STC
