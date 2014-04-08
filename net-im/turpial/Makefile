@@ -3,6 +3,7 @@
 
 PORTNAME=	turpial
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	net-im python
 MASTER_SITES=	http://files.turpial.org.ve/sources/stable/
 
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:${PORTSDIR}/devel/py-notify \
 	${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.7:${PORTSDIR}/devel/py-setproctitle \
 	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.1:${PORTSDIR}/devel/py-Jinja2 \
-	${PYTHON_PKGNAMEPREFIX}libturpial>=1.6.0:${PORTSDIR}/net-im/py-libturpial
+	${PYTHON_PKGNAMEPREFIX}libturpial>=1.7.0:${PORTSDIR}/net-im/py-libturpial
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
