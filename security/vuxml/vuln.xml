@@ -51,6 +51,76 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="963413a5-bf50-11e3-a2d6-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>34.0.1847.116</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>31 vulnerabilies fixed in this release, including:</p>
+	  <ul>
+	    <li>[354123] High CVE-2014-1716: UXSS in V8. Credit to
+	      Anonymous.</li>
+	    <li>[353004] High CVE-2014-1717: OOB access in V8. Credit to
+	      Anonymous.</li>
+	    <li>[348332] High CVE-2014-1718: Integer overflow in compositor.
+	      Credit to Aaron Staple.</li>
+	    <li>[343661] High CVE-2014-1719: Use-after-free in web workers.
+	      Credit to Collin Payne.</li>
+	    <li>[356095] High CVE-2014-1720: Use-after-free in DOM. Credit to
+	      cloudfuzzer.</li>
+	    <li>[350434] High CVE-2014-1721: Memory corruption in V8. Credit to
+	      Christian Holler.</li>
+	    <li>[330626] High CVE-2014-1722: Use-after-free in rendering.
+	      Credit to miaubiz.</li>
+	    <li>[337746] High CVE-2014-1723: Url confusion with RTL characters.
+	      Credit to George McBay.</li>
+	    <li>[327295] High CVE-2014-1724: Use-after-free in speech. Credit
+	      to Atte Kettunen of OUSPG.</li>
+	    <li>[357332] Medium CVE-2014-1725: OOB read with window property.
+	      Credit to Anonymous</li>
+	    <li>[346135] Medium CVE-2014-1726: Local cross-origin bypass.
+	      Credit to Jann Horn.</li>
+	    <li>[342735] Medium CVE-2014-1727: Use-after-free in forms. Credit
+	      to Khalil Zhani.</li>
+	    <li>[360298] CVE-2014-1728: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[345820, 347262, 348319, 350863, 352982, 355586, 358059]
+	      CVE-2014-1729: Multiple vulnerabilities in V8 fixed in version
+	      3.24.35.22.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1716</cvename>
+      <cvename>CVE-2014-1717</cvename>
+      <cvename>CVE-2014-1718</cvename>
+      <cvename>CVE-2014-1719</cvename>
+      <cvename>CVE-2014-1720</cvename>
+      <cvename>CVE-2014-1721</cvename>
+      <cvename>CVE-2014-1722</cvename>
+      <cvename>CVE-2014-1723</cvename>
+      <cvename>CVE-2014-1724</cvename>
+      <cvename>CVE-2014-1725</cvename>
+      <cvename>CVE-2014-1726</cvename>
+      <cvename>CVE-2014-1727</cvename>
+      <cvename>CVE-2014-1728</cvename>
+      <cvename>CVE-2014-1729</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-04-08</discovery>
+      <entry>2014-04-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5631ae98-be9e-11e3-b5e3-c80aa9043978">
     <topic>OpenSSL -- Multiple vulnerabilities - private data exposure</topic>
     <affects>
