@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME:L}-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for SpamAssassin which scans image attachments for spam
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		import:${PORTSDIR}/graphics/ImageMagick			\
 		gocr:${PORTSDIR}/graphics/gocr				\
@@ -27,6 +29,7 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
+PORTEXAMPLES=	*
 PORTDOCS=	FAQ samples
 PORTDOCS_F=	FAQ samples/README samples/animated-gif.eml		\
 		samples/corrupted-gif.eml samples/jpeg.eml samples/png.eml
@@ -43,11 +46,6 @@ SA_CONFIGDIR?=	etc/mail/spamassassin
 
 PLIST_FILES=	${SA_CONFIGDIR}/FuzzyOcr.pm				\
 		%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr.pm		\
-		%%EXAMPLESDIR%%/FuzzyOcr.cf %%EXAMPLESDIR%%/FuzzyOcr.words
-PLIST_DIRS=	%%EXAMPLESDIR%%
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin,${LOCALBASE}/bin,g'		\
@@ -60,19 +58,15 @@ post-patch:
 	                  ${WRKSRC}/FuzzyOcr.cf
 
 do-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.pm ${SITE_PERL}/${SA_PLUGINDIR}
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.pm ${PREFIX}/${SA_CONFIGDIR}
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.cf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.words.sample ${EXAMPLESDIR}/FuzzyOcr.words
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${SITE_PERL}/${SA_PLUGINDIR} \
+		${STAGEDIR}${PREFIX}/${SA_CONFIGDIR}
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.pm ${STAGEDIR}${SITE_PERL}/${SA_PLUGINDIR}
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.pm ${STAGEDIR}${PREFIX}/${SA_CONFIGDIR}
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.cf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.words.sample ${STAGEDIR}${EXAMPLESDIR}/FuzzyOcr.words
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/samples
+.for f in ${PORTDOCS_F}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}
+.endfor
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/samples
-.  for f in ${PORTDOCS_F}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/${f}
-.  endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
