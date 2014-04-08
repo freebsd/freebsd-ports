@@ -11,8 +11,7 @@ MASTER_SITE_SUBDIR=rene
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
-USES=		dos2unix gmake pkgconfig
-USE_XZ=		yes
+USES=		dos2unix gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 USE_LDCONFIG=	yes
@@ -58,7 +57,7 @@ MANAGER_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 MANAGER_CONFIGURE_ON=	--with-sqlite3-prefix=${LOCALBASE}
 MANAGER_CONFIGURE_OFF=	--with-wx-config=false --without-x
 MANAGER_CONFIGURE_ENABLE=manager
-MANAGER_USE=		XORG=x11 WX=2.8+
+MANAGER_USE=		XORG=x11 WX=2.8
 
 CLIENT_CONFIGURE_ENABLE=client
 CLIENT_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
@@ -78,6 +77,7 @@ X11_USE=		GL=glut XORG=xmu,xi
 .if ${PORT_OPTIONS:MMANAGER}
 #PORT_OPTIONS+=	CLIENT X11
 WX_CONF_ARGS=	absolute
+WX_UNICODE=	yes
 . if ${OSVERSION} < 900506 || (${OSVERSION} >= 1000000 && ${OSVERSION} < 1000002)
 CPPFLAGS+=	-DNO_PER_THREAD_LOCALE
 . endif
