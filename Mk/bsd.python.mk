@@ -194,7 +194,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  default: ${LOCALBASE}/bin/easy_install-${PYTHON_VER}
 
 _PYTHON_PORTBRANCH=		2.7
-_PYTHON_ALLBRANCHES=	2.7 3.3 3.2 3.1	# preferred first
+_PYTHON_ALLBRANCHES=	2.7 3.4 3.3 3.2 3.1	# preferred first
 
 # Determine version number of Python to use
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
@@ -333,8 +333,19 @@ PYTHON_PORTVERSION=	${PYTHON_DEFAULT_PORTVERSION}
 # Propagate the chosen python version to submakes.
 .MAKEFLAGS:	PYTHON_VERSION=python${_PYTHON_VERSION}
 
+# Python-3.4
+.if ${PYTHON_VERSION} == "python3.4"
+PYTHON_PORTVERSION?=	3.4.0
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python34
+PYTHON_REL=		340
+PYTHON_SUFFIX=		34
+PYTHON_VER=		3.4
+.if exists(${PYTHON_CMD}-config) && ${PORTNAME} != python34
+PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
+.endif
+
 # Python-3.3
-.if ${PYTHON_VERSION} == "python3.3"
+.elif ${PYTHON_VERSION} == "python3.3"
 PYTHON_PORTVERSION?=	3.3.5
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python33
 PYTHON_REL=		335
@@ -389,6 +400,7 @@ check-makevars::
 	@${ECHO} "  python3.1"
 	@${ECHO} "  python3.2"
 	@${ECHO} "  python3.3"
+        @${ECHO} "  python3.4"
 	@${FALSE}
 .endif
 
