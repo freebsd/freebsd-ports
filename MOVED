@@ -5880,3 +5880,5 @@ devel/p5-Devel-LeakTrace-Fast||2014-04-04|Has expired: Broken for more than 6 mo
 www/privoxy+ipv6|www/privoxy|2014-04-06|Has expired: www/privoxy natively supports ipv6
 graphics/pyggel|graphics/py-pyggel|2014-04-07|Rename to consistency with other Python ports
 games/f1lt||2014-04-06|Trademark violation: http://www.formula1.com/trademarkguidelines.html
+japanese/p5-manual||2014-04-08|Outdated manuals
+graphics/openclipart||2014-04-08|Outdated, has no real meaning as a port
