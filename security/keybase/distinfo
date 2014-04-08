@@ -1,4 +1,2 @@
-SHA256 (keybase-v0.2.0.tar.gz) = 4ca20da5e5f371e63521a838416da73ff54deeae7c71a1441670f9322ddbe723
-SIZE (keybase-v0.2.0.tar.gz) = 594085
-SHA256 (keybase-deps-v0.2.0-9509986-20140327.txz) = 886220149b109ac1face08976837259f7a021f08c02e663d637327b546adbb08
-SIZE (keybase-deps-v0.2.0-9509986-20140327.txz) = 1946868
+SHA256 (keybase-0.2.18.tgz) = fd89326a60274b64401247f2b13d5b17ca8432eb4b458a7cec997d59ccdf6ce0
+SIZE (keybase-0.2.18.tgz) = 3727320
