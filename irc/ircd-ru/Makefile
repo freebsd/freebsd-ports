@@ -3,7 +3,7 @@
 
 PORTNAME=	ircd-ru
 PORTVERSION=	1.0.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	russian irc
 MASTER_SITES=	http://m1cro.tk/ports/distfiles/
 DISTNAME=	ircd-RU-${PORTVERSION}-03-rc-20090810
