@@ -227,7 +227,6 @@
     SUBDIR += p5-Unicode-Japanese
     SUBDIR += p5-WWW-2ch
     SUBDIR += p5-WWW-MobileCarrierJP
-    SUBDIR += p5-manual
     SUBDIR += p5-nkf
     SUBDIR += pejv-fpw
     SUBDIR += php5-mecab
