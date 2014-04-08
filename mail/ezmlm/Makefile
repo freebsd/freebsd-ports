@@ -20,8 +20,6 @@ LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 USES=		qmail:run
 
-USE_GCC=	any
-
 CONFLICTS=	ezmlm-idx-*
 
 ALL_TARGET=	it
