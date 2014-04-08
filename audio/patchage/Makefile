@@ -22,13 +22,9 @@ LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 		libflowcanvas.so:${PORTSDIR}/x11-toolkits/flowcanvas
 
-USES=		pkgconfig
-NO_STAGE=	yes
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 USE_PYTHON_BUILD=yes
 INSTALLS_ICONS=	yes
-
-MAN1=		patchage.1
 
 CFLAGS+=	-I${LOCALBASE}/include
 
@@ -54,6 +50,6 @@ do-build:
 	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} ${WAF_JOBS} build)
 
 do-install:
-	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} install)
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} --destdir=${STAGEDIR} install)
 
 .include <bsd.port.post.mk>
