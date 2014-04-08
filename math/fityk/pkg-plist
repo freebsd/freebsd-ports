@@ -2,10 +2,12 @@ bin/cfityk
 bin/fityk
 bin/xyconv
 include/fityk.h
-lib/libfityk.a
 lib/libfityk.la
 lib/libfityk.so
 lib/libfityk.so.3
+lib/libfityk.so.3.0.0
+man/man1/fityk.1.gz
+man/man1/xyconv.1.gz
 share/applications/fityk.desktop
 share/mime/packages/fityk.xml
 share/pixmaps/fityk.png
