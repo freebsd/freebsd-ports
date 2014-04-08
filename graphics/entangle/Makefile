@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	entangle
+# [Non-working] update to 0.5.4: http://people.freebsd.org/~danfe/entangle.diff
 PORTREVISION=	1
 DISTVERSION=	0.5.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://entangle-photo.org/download/sources/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital camera tethered control and capture program
 
 LICENSE=	GPLv3
