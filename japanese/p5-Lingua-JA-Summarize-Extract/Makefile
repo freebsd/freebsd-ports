@@ -18,13 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Lingua::JA::Summarize::Extract::Plugin::Sentence::Base.3 \
-		Lingua::JA::Summarize::Extract::Plugin::Parser::Ngram.3 \
-		Lingua::JA::Summarize::Extract::Plugin::Parser::Trim.3 \
-		Lingua::JA::Summarize::Extract.3 \
-		Lingua::JA::Summarize::Extract::Plugin::Parser::NgramSimple.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
