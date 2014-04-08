@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Alien-wxWidgets
-PORTVERSION=	0.62
+PORTVERSION=	0.65
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,36 +10,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Perl5 module for building, finding and using wxWidgets binaries
 
-OPTIONS_DEFINE=	UNICODE
-OPTIONS_DEFAULT=	UNICODE
-UNICODE_DESC=	Build with Unicode support
-
-USE_GCC=	any
-USES=		perl5
+USES=		perl5 compiler:env
 USE_PERL5=	modbuild
-USE_WX=		2.6+
-WX_COMPS=	wx contrib
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MUNICODE}
+USE_WX=		3.0
+WX_COMPS=	wx
 WX_UNICODE=	yes
 WX_UNI=		uni_
 CONFIGURE_ARGS+=	--wxWidgets-build=0 --wxWidgets-unicode=1
-.else
-CONFIGURE_ARGS+=	--wxWidgets-build=0 --wxWidgets-unicode=0
-.endif
 
-WX_UVER=	${WX_CONFIG:T} --version | ${TR} '.' '_'
-PLIST_SUB+=	WX_UVER="$$(${WX_UVER})" WX_UNI=${WX_UNI}
-
-MAN3=		Alien::wxWidgets.3 \
-		Alien::wxWidgets::Utility.3
+WX_UVER!=	${MAKE} -C ${PORTSDIR}/x11-toolkits/wxgtk30 -V'$${PORTVERSION:C/\./_/g}'
+PLIST_SUB+=	WX_UVER=${WX_UVER} WX_UNI=${WX_UNI}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/wx-config/${WX_CONFIG:T}/' ${WRKSRC}/Build.PL
 	@${REINPLACE_CMD} -e "s/\'wx-config/\'${WX_CONFIG:T}/" -e "s/lc_r/lpthread/" \
 		${WRKSRC}/inc/My/Build/Any_wx_config.pm
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
