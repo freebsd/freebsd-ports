@@ -16,7 +16,7 @@ COMMENT=	Documentation for the Python programming language
 PORTSCOUT=	ignore:1
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=			tar:bzip2
 USE_PYTHON_BUILD=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_VERSION}
