@@ -11,7 +11,7 @@ DISTNAME=	jitsi-master-084e2b42b5
 MAINTAINER=	tzabal@it.teithe.gr
 COMMENT=	Open source IM and VoIP application
 
-MAN1=		jitsi.1
+LICENSE=	LGPL21
 
 USES=		zip
 USE_JAVA=	yes
@@ -23,59 +23,42 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 DESKTOP_ENTRIES="Jitsi" \
 		"VoIP and Instant Messenger" \
-		${PREFIX}/share/pixmaps/jitsi.png \
-		jitsi \
+		"${PREFIX}/share/pixmaps/jitsi.png" \
+		"${PORTNAME}" \
 		"Network;InstantMessaging;VideoConference;Java;" \
 		true
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
 	@${ECHO_CMD} ">> Creating Jitsi directories..."
-	@${MKDIR} ${PREFIX}/lib/jitsi/sc-bundles
-	@${MKDIR} ${PREFIX}/lib/jitsi/lib/bundle
-	@${MKDIR} ${PREFIX}/lib/jitsi/lib/native
-
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/jitsi/sc-bundles
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/jitsi/lib/bundle
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/jitsi/lib/native
 # Bundles (Jitsi modules)
 	@${ECHO_CMD} ">> Installing bundles (Jitsi modules)..."
-	@cd ${WRKSRC}/sc-bundles && ${COPYTREE_SHARE} \* \
-		${PREFIX}/lib/jitsi/sc-bundles
-	@${RM} ${PREFIX}/lib/jitsi/sc-bundles/*slick*.jar
-	@${RM} -r ${PREFIX}/lib/jitsi/sc-bundles/os-specific
-
-# Library Jars
+	@cd ${WRKSRC}/sc-bundles && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/lib/jitsi/sc-bundles
+	@${RM} ${STAGEDIR}${PREFIX}/lib/jitsi/sc-bundles/*slick*.jar
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/jitsi/sc-bundles/os-specific
+# Library JARs
 	@${ECHO_CMD} ">> Installing library jars..."
-	@cd ${WRKSRC}/lib/bundle && ${COPYTREE_SHARE} \* \
-		${PREFIX}/lib/jitsi/lib/bundle "! -name junit.jar"
+	@cd ${WRKSRC}/lib/bundle && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/lib/jitsi/lib/bundle "! -name junit.jar"
 	@cd ${WRKSRC}/lib && ${COPYTREE_SHARE} "felix.jar jdic-all.jar \
 		felix.client.run.properties logging.properties" \
-			${PREFIX}/lib/jitsi/lib
-
-# Native Libraries
-	@${ECHO_CMD} ">> Installing native libraries..."
-.if ${ARCH} != amd64
-	@cd ${WRKSRC}/lib/native/freebsd && ${COPYTREE_SHARE} \* \
-		${PREFIX}/lib/jitsi/lib/native
-.else
-	@cd ${WRKSRC}/lib/native/freebsd-64 && ${COPYTREE_SHARE} \* \
-		${PREFIX}/lib/jitsi/lib/native
-.endif
-
+			${STAGEDIR}${PREFIX}/lib/jitsi/lib
+# Native libraries
+	@${ECHO_CMD} ">> Installing native (${ARCH}) libraries..."
+	@cd ${WRKSRC}/lib/native/freebsd${ARCH:S/i386//:S/amd/-/} && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/jitsi/lib/native
 # Wrapper script to run Jitsi
 	@${ECHO_CMD} ">> Installing wrapper script..."
-	@${INSTALL_SCRIPT} ${FILESDIR}/jitsi.sh ${PREFIX}/bin/jitsi
-
+	${INSTALL_SCRIPT} ${FILESDIR}/jitsi.sh ${STAGEDIR}${PREFIX}/bin/jitsi
 # Manual page
 	@${ECHO_CMD} ">> Installing the manual page..."
-	@${INSTALL_MAN} ${FILESDIR}/jitsi.1 ${MANPREFIX}/man/man1
-
+	${INSTALL_MAN} ${FILESDIR}/jitsi.1 ${STAGEDIR}${MANPREFIX}/man/man1
 # Desktop related
 	@${ECHO_CMD} ">> Installing Jitsi's logo..."
-	@${INSTALL_DATA} ${WRKSRC}/resources/images/logo/sc_logo_128x128.png \
-		${PREFIX}/share/pixmaps/jitsi.png
+	${INSTALL_DATA} ${WRKSRC}/resources/images/logo/sc_logo_128x128.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/jitsi.png
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
