@@ -8,15 +8,11 @@ MASTER_SITES=	CPAN/Prima/KARASIK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	osa@FreeBSD.org
-COMMENT=	A Perl5 backend for fix subtitles timing
+COMMENT=	Perl5 backend for fix subtitles timing
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	subs.1
-MAN3=	Subtitles.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SUBTITLES_SUBPLAY)
