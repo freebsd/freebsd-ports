@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 
-MAINTAINER=	bitbucket63-it@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Network Audio System (NAS) output plugin for XMMS
 
 DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
