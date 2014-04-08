@@ -1,29 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	libav
-PORTVERSION=	9.10
-PORTREVISION=	3
+PORTVERSION=	10
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Realtime audio/video conversion library
 
-CONFLICTS=	ffmpeg-[0-9]*
+BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		texi2html:${PORTSDIR}/textproc/texi2html
-
-USES=		pkgconfig:build gmake
-USE_LDCONFIG=	yes
+USES=		pkgconfig:build gmake compiler:features perl5
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 HAS_CONFIGURE=	yes
 WANT_SDL=	yes
+USE_PERL5=	build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
+			--libdir="${PREFIX}/lib/${PORTNAME}" \
+			--shlibdir="${PREFIX}/lib/${PORTNAME}" \
+			--incdir="${PREFIX}/include/${PORTNAME}" \
 			--mandir="${PREFIX}/man" \
 			--datadir="${DATADIR}" \
+			--extra-ldflags="-L${LOCALBASE}/lib" \
 			--enable-pthreads \
 			--enable-shared \
 			--enable-runtime-cpudetect \
@@ -31,10 +31,11 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--cc="${CC}" \
 			--disable-avserver
 
-OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB BZIP2 CDIO FAAC FDK_AAC FREETYPE FREI0R \
-		GNUTLS GSM ILBC JACK LAME OPENCV OPENJPEG OPENSSL OPUS \
-		PULSEAUDIO RTMP SCHROEDINGER SPEEX THEORA V4L VAAPI VDPAU \
-		VO_AACENC VO_AMRWBENC VORBIS VPX X11GRAB X264 XVID ZLIB
+OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB BZIP2 CDIO FAAC FDK_AAC DOCS FREETYPE \
+		FREI0R GNUTLS GSM ILBC JACK LAME OPENCV OPENJPEG OPENSSL \
+		OPUS PULSEAUDIO RTMP SCHROEDINGER SPEEX THEORA V4L VAAPI \
+		VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX WAVPACK WEBP X11GRAB \
+		X264 XVID ZLIB
 
 OPTIONS_DEFAULT=	BZIP2 FREETYPE FREI0R GNUTLS OPENCV SCHROEDINGER \
 			THEORA VO_AACENC VORBIS VPX X264 XVID ZLIB
@@ -137,6 +138,12 @@ VORBIS_CONFIGURE_ENABLE=	libvorbis
 VPX_LIB_DEPENDS=		libvpx.so:${PORTSDIR}/multimedia/libvpx
 VPX_CONFIGURE_ENABLE=		libvpx
 
+WAVPACK_LIB_DEPENDS=		libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_CONFIGURE_ENABLE=	libwavpack
+
+WEBP_LIB_DEPENDS=		libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_CONFIGURE_ENABLE=		libwebp
+
 X11GRAB_USE=			XORG=x11,xext,xfixes
 
 X264_LIB_DEPENDS=		libx264.so:${PORTSDIR}/multimedia/x264
@@ -149,6 +156,10 @@ ZLIB_CONFIGURE_ENABLE=		zlib
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
+.endif
+
 .if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 .endif
@@ -159,7 +170,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--extra-cflags=-m32
 .endif
 
-.if ${OSVERSION} < 900000
+.if ${OSVERSION} < 900000 || ${COMPILER_TYPE} == gcc
 USE_GCC=	yes
 .endif
 
@@ -212,5 +223,10 @@ post-patch:
 		${WRKSRC}/libavcodec/libgsm.c
 	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${STAGEDIR}${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/library.mak
+
+post-configure:
+.if !${PORT_OPTIONS:MDOCS}
+	@${REINPLACE_CMD} -e 's|CONFIG_TEXI2HTML=yes|!CONFIG_TEXI2HTML=yes|' ${WRKSRC}/config.mak
+.endif
 
 .include <bsd.port.post.mk>
