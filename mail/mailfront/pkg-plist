@@ -17,12 +17,14 @@ libexec/mailfront/plugin-add-received.so
 libexec/mailfront/plugin-check-fqdn.so
 libexec/mailfront/plugin-clamav.so
 libexec/mailfront/plugin-counters.so
+libexec/mailfront/plugin-cvm-authenticate.so
 libexec/mailfront/plugin-cvm-validate.so
 %%LUA%%libexec/mailfront/plugin-lua.so
 libexec/mailfront/plugin-mailrules.so
 libexec/mailfront/plugin-patterns.so
 libexec/mailfront/plugin-qmail-validate.so
 libexec/mailfront/plugin-spamassassin.so
+libexec/mailfront/plugin-starttls-ucspi.so
 libexec/mailfront/protocol-qmqp.so
 libexec/mailfront/protocol-qmtp.so
 libexec/mailfront/protocol-smtp.so
@@ -44,6 +46,7 @@ libexec/mailfront/protocol-smtp.so
 %%PORTDOCS%%%%DOCSDIR%%/plugin-check-fqdn.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-clamav.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-counters.html
+%%PORTDOCS%%%%DOCSDIR%%/plugin-cvm-authenticate.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-cvm-validate.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-force-file.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-lua.html
@@ -54,6 +57,7 @@ libexec/mailfront/protocol-smtp.so
 %%PORTDOCS%%%%DOCSDIR%%/plugin-relayclient.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-require-auth.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-spamassassin.html
+%%PORTDOCS%%%%DOCSDIR%%/plugin-starttls-ucspi.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-template.html
 %%PORTDOCS%%%%DOCSDIR%%/pop3front.html
 %%PORTDOCS%%%%DOCSDIR%%/protocol-qmqp.html
