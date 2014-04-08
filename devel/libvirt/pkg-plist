@@ -48,6 +48,7 @@ share/augeas/lenses/libvirtd.aug
 share/augeas/lenses/virtlockd.aug
 %%QEMU%%share/augeas/lenses/libvirtd_qemu.aug
 share/augeas/lenses/tests/test_libvirtd.aug
+share/augeas/lenses/tests/test_virtlockd.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirtd_qemu.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/32favicon.png
 %%DOCSDIR%%%%PORTVERSION%%/html/404.html
