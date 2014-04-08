@@ -67,6 +67,7 @@
     SUBDIR += cagibi
     SUBDIR += callweaver
     SUBDIR += ccxstream
+    SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += clamz
     SUBDIR += click
