@@ -13,7 +13,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.nl.uu.net/pub/unix/mail/qmail/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/mail/qmail/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Easy-to-use, high-speed mailing list manager for qmail
 
 LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
@@ -28,28 +28,27 @@ ALL_TARGET=	it
 
 PROGRAMS=	ezmlm-make ezmlm-manage ezmlm-send ezmlm-reject ezmlm-return \
 		ezmlm-warn ezmlm-weed ezmlm-list ezmlm-sub ezmlm-unsub
-MAN1=		ezmlm-list.1 ezmlm-make.1 ezmlm-manage.1 ezmlm-reject.1 \
-		ezmlm-return.1 ezmlm-send.1 ezmlm-sub.1 ezmlm-unsub.1 \
-		ezmlm-warn.1 ezmlm-weed.1
-MAN5=		ezmlm.5
 DOCS=		BLURB INSTALL README THANKS TODO
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${ECHO_CMD} ${PREFIX}/bin > ${WRKSRC}/conf-bin
-	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
-	@${ECHO_CMD} ${PREFIX}/man > ${WRKSRC}/conf-man
-	@${ECHO_CMD} ${QMAIL_PREFIX} > ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} "${PREFIX}/bin" > ${WRKSRC}/conf-bin
+	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} -s" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${PREFIX}/man" > ${WRKSRC}/conf-man
+	@${ECHO_CMD} "${QMAIL_PREFIX}" > ${WRKSRC}/conf-qmail
+	@${REINPLACE_CMD} -e "s:\(/install\) \(\"\`head\):\1 ${STAGEDIR}\2:" \
+	    ${WRKSRC}/Makefile
 
 do-install:
 	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
-		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1 && \
-		${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+		${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin && \
+		${INSTALL_MAN} *.1 ${STAGEDIR}${MANPREFIX}/man/man1 && \
+		${INSTALL_MAN} *.5 ${STAGEDIR}${MANPREFIX}/man/man5
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
