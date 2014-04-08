@@ -68,6 +68,15 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Affected users should upgrade to OpenSSL 1.0.1g. Users unable to immediately
 	    upgrade can alternatively recompile OpenSSL with -DOPENSSL_NO_HEARTBEATS.</p>
 	</blockquote>
+	<blockquote cite="http://www.heartbleed.com">
+	  <p>The bug allows anyone on the Internet to read the memory of the
+	  systems protected by the vulnerable versions of the OpenSSL software.
+	  This compromises the secret keys used to identify the service
+	  providers and to encrypt the traffic, the names and passwords of the
+	  users and the actual content. This allows attackers to eavesdrop
+	  communications, steal data directly from the services and users and
+	  to impersonate services and users.</p>
+	</blockquote>
 	<p>This also covers:</p>
 	<blockquote cite="https://www.openssl.org/news/vulnerabilities.html#2014-0076">
 	  <p>Fix for the attack described in the paper "Recovering OpenSSL
