@@ -2,7 +2,7 @@
 
 PORTNAME=	apache22
 PORTVERSION=	2.2.27
-#PORTREVISION?=	1
+PORTREVISION?=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -148,6 +148,15 @@ post-patch:
 # we use devel/apr and devel/pcre
 	@${RM} -rf ${WRKSRC}/srclib
 	@${REINPLACE_CMD} -e 's/srclib//' ${WRKSRC}/Makefile.in
+
+# Fix build on FreeBSD-10+ with OpenSSL from ports
+.if ${PORT_OPTIONS:MSSL}
+. if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+.  if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
+	${REINPLACE_CMD} -e "s|(ALL_CFLAGS)|(ALL_CFLAGS) -L${OPENSSLLIB}|" ${WRKSRC}/build/rules.mk.in
+.  endif
+. endif
+.endif
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
