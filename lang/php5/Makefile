@@ -87,6 +87,11 @@ CONFIGURE_ARGS+=--enable-fpm \
 		--with-fpm-group=${WWWGRP}
 .endif
 
+.if defined(OPTIONS_FILE_SET) && ${OPTIONS_FILE_SET:MAPACHE}
+IGNORE=		doesn't install the Apache module anymore:\
+		update your OPTIONS and build www/mod_php5 port instead
+.endif
+
 .if defined(PKGNAMEPREFIX)
 USE_PHP=	yes
 PHP_DEFAULT=	5.4
