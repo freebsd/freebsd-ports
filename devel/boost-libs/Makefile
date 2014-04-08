@@ -4,6 +4,8 @@
 PORTNAME=	boost-libs
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
+PORTREVISION=	1
+
 BUILD_DEPENDS+=	bjam:${PORTSDIR}/devel/boost-jam
 
 OPTIONS_DEFINE=	VERBOSE_BUILD DEBUG ICU OPTIMIZED_CFLAGS
