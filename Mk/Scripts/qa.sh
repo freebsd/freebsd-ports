@@ -114,11 +114,18 @@ desktopfileutils() {
 }
 
 sharedmimeinfo() {
-	if [ -z "${USESSHAREDMIMEINFO}" ]; then
-		find ${STAGEDIR}${PREFIX}/share/mime/packages/*.xml ! -name "freedesktop\.org\.xml" -quit 2>/dev/null &&
+	local f found
+
+	found=0
+	for f in ${STAGEDIR}${PREFIX}/share/mime/packages/*.xml; do
+		[ "${f}" = "${STAGEDIR}${PREFIX}/share/mime/packages/*.xml" ] && break #no matches
+		[ "${f}" = "${STAGEDIR}${PREFIX}/share/mime/packages/freedesktop.org.xml" ] && continue
+		found=1
+		break
+	done
+	if [ -z "${USESSHAREDMIMEINFO}" -a ${found} -eq 1 ]; then
 		warn "you need USES=shared-mime-info"
-	else
-		find ${STAGEDIR}${PREFIX}/share/mime/packages/*.xml ! -name "freedesktop\.org\.xml" -quit 2>/dev/null ||
+	elif [ -n "${USESSHAREDMIMEINFO}" -a ${found} -eq 0 ]; then
 		warn "you may not need USES=shared-mime-info"
 	fi
 	return 0
