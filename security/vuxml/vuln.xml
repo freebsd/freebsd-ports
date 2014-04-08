@@ -58,6 +58,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>openssl</name>
 	<range><ge>1.0.1</ge><lt>1.0.1_10</lt></range>
       </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1g</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
