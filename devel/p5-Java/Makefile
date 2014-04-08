@@ -3,7 +3,7 @@
 
 PORTNAME=	Java
 PORTVERSION=	4.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel java perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,14 +17,11 @@ USE_PERL5=	configure
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-MAN3=		Java.3 JavaArray.3
-
-NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/java_server_install.pl
 
 post-install:
-	${MKDIR} ${PREFIX}/share/p5-Java
-	${INSTALL_DATA} ${WRKSRC}/JavaServer.jar ${PREFIX}/share/p5-Java
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/p5-Java
+	${INSTALL_DATA} ${WRKSRC}/JavaServer.jar ${STAGEDIR}${PREFIX}/share/p5-Java
 
 .include <bsd.port.mk>
