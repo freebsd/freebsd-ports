@@ -36,10 +36,10 @@ LIB_DEPENDS+=	libplplotd.so:${PORTSDIR}/math/plplot	\
 		libps.so:${PORTSDIR}/print/pslib	\
 		libgsl.so:${PORTSDIR}/math/gsl
 
-USE_GCC=	yes
 USE_WX=		2.8
+WX_UNICODE=	yes
 USE_XORG=	x11
-USES=		pkgconfig cmake dos2unix
+USES=		pkgconfig cmake dos2unix compiler:gcc-c++11-lib
 
 # Disable ncurses and readline from ports
 # Disable ImageMagick (does'nt work with plplot because dynamic drivers
