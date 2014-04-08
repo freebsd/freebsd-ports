@@ -15,9 +15,9 @@ COMMENT=	Perl5 module to read and write netCDF files
 NETCDF_VER?=	4
 
 .if (${NETCDF_VER} == 4)
-LIB_DEPENDS=	netcdf.7:${PORTSDIR}/science/netcdf4
+LIB_DEPENDS=	libnetcdf.so.7:${PORTSDIR}/science/netcdf4
 .else
-LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libnetcdf.so.4:${PORTSDIR}/science/netcdf
 .endif
 
 USES=		perl5
@@ -25,12 +25,12 @@ USES=		perl5
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPP_NETCDF=-I${LOCALBASE}/include LD_NETCDF=-lnetcdf \
-		PERL_MANDIR=${MAN1PREFIX}/man PERL=${PERL5}
+		PERL_MANDIR=${STAGEDIR}${MAN1PREFIX}/man PERL=${PERL5}
 
-MAN1=		netCDFPerl.1
-
-NO_STAGE=	yes
 pre-install:
 	@${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' ${WRKSRC}/perl/Makefile
+
+post-install:
+	-@[ -d ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
 
 .include <bsd.port.mk>
