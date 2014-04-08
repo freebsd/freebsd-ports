@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	1.0.1f
+PORTVERSION=	1.0.1g
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
 PKGNAMEPREFIX=	mingw32-
-DIST_SUBDIR=	${DISTNAME}2
+DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The OpenSSL library cross-compiled for MinGW32
@@ -26,13 +26,13 @@ CONFIGURE_PREFIX=	${PREFIX}/mingw32
 OPENSSLDIR=		${CONFIGURE_PREFIX}/openssl
 INSTALL_TARGET=		install_sw
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \
 		${WRKSRC}/crypto/des/Makefile
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} PERL="${PERL}" CROSS_COMPILE="${PKGNAMEPREFIX}" \
-	./Configure mingw --prefix="${CONFIGURE_PREFIX}" --openssldir="${OPENSSLDIR}"
+	./Configure mingw --prefix="${CONFIGURE_PREFIX}" --install_prefix=${STAGEDIR} \
+	--openssldir="${OPENSSLDIR}"
 
 .include <bsd.port.mk>
