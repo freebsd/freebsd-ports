@@ -13,7 +13,7 @@ SSHGUARDCONFLINE="auth.info;authpriv.info     |exec $PKG_PREFIX/sbin/sshguard"
 
 case "$2" in
     "POST-INSTALL")
-        if test "x$SSHGUARDFW" = xhosts
+        if test "$SSHGUARDFW" = hosts
         then
             touch /etc/hosts.allow
         fi
@@ -23,7 +23,7 @@ case "$2" in
 	    TMPFILE=`mktemp -q /tmp/syslogcXX`
 	    # make sure our file has the same permissions as the original, since we mv it back
 	    cp -p $SYSLOGCONF ${TMPFILE}
-	    echo > ${TMPFILE}
+	    : > ${TMPFILE}
             inheader=1
             cat "$SYSLOGCONF" | while read cline ;
             do

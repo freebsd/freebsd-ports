@@ -31,6 +31,7 @@
 
 # PROVIDE: sshguard
 # REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable sshguard:
@@ -62,14 +63,10 @@
 
 name="sshguard"
 rcvar="sshguard_enable"
-command="/usr/sbin/daemon"
-actual_command="%%PREFIX%%/sbin/${name}"
-procname="${actual_command}"
 
 load_rc_config $name
 
-: ${sshguard_enable="NO"}
-: ${sshguard_pidfile="/var/run/${name}.pid"}
+: ${sshguard_enable:="NO"}
 : ${sshguard_blacklist="40:/var/db/sshguard/blacklist.db"}
 : ${sshguard_safety_thresh="40"}
 : ${sshguard_pardon_min_interval="1200"}
@@ -77,8 +74,11 @@ load_rc_config $name
 : ${sshguard_whitelistfile="%%PREFIX%%/etc/sshguard.whitelist"}
 : ${sshguard_watch_logs="/var/log/auth.log:/var/log/maillog"}
 
-pidfile="${sshguard_pidfile}"
-sshguard_watch_params=`echo ${sshguard_watch_logs} | tr : \\\n | sed -e s/^/-l\ /g | tr \\\n \ `
+pidfile=${sshguard_pidfile:-"/var/run/${name}.pid"}
+
+command="/usr/sbin/daemon"
+actual_command="%%PREFIX%%/sbin/${name}"
+procname="${actual_command}"
 start_precmd="${name}_prestart"
 
 command_args="-cf ${actual_command} -b ${sshguard_blacklist} ${sshguard_watch_params} -a ${sshguard_safety_thresh} -p ${sshguard_pardon_min_interval} -s ${sshguard_prescribe_interval} -w ${sshguard_whitelistfile} -i ${sshguard_pidfile}"
@@ -87,6 +87,7 @@ sshguard_prestart()
 {
 	mkdir -p `dirname ${sshguard_blacklist##*:}`
 	[ -e ${sshguard_whitelistfile} ] || touch ${sshguard_whitelistfile}
+	sshguard_watch_params=`echo ${sshguard_watch_logs} | tr : \\\n | sed -e s/^/-l\ /g | tr \\\n \ `
 }
 
 run_rc_command "$1"
