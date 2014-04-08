@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -42,7 +42,6 @@ MAKE_ENV+=	INSTALL_CATPAGES=no
 INFO=		heimdal hx509
 PLIST=		${WRKDIR}/PLIST
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
@@ -50,6 +49,7 @@ CFLAGS+=	-fPIC
 .endif
 
 .if ${OSVERSION} >= 700000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc__Makefile.in
 PLIST_SUB+=	HCRYPTO="@comment "
 .else
 PLIST_SUB+=	HCRYPTO=""
@@ -168,14 +168,12 @@ pre-install:
 	@${ECHO_CMD} include/ifaddrs.h >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MCRACKLIB}
-	${INSTALL_PROGRAM} ${WRKSRC}/kpasswdd-cracklib.so ${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/kpasswdd-cracklib.so ${STAGEDIR}${PREFIX}/lib/
 	@${ECHO_CMD} lib/kpasswdd-cracklib.so >> ${PLIST}
 .endif
 
-.include "Makefile.man"
-
 post-install:
 	${SED} 's;%%PREFIX%%;${PREFIX};g' ${FILESDIR}/kdc.sh > \
-		${PREFIX}/etc/rc.d/kdc.sh.sample
+		${STAGEDIR}${PREFIX}/etc/rc.d/kdc.sh.sample
 
 .include <bsd.port.mk>
