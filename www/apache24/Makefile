@@ -2,7 +2,7 @@
 
 PORTNAME=	apache24
 PORTVERSION=	2.4.9
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -58,6 +58,9 @@ LUA_CONFIGURE_ON=		--with-lua=${LOCALBASE}
 SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
 SOCACHE_DC_LIB_DEPENDS=		distcache:${PORTSDIR}/security/distcache
 
+# Note: 
+# OpenSSL version (base/ports) depends how devel/apr1 was build
+#  apu-1-config --(includes|ldflags) and apr_rules.mk
 SSL_CFLAGS=			-I${OPENSSLINC}
 SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
 SSL_LDFLAGS=			-L${OPENSSLLIB}
