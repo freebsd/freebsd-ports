@@ -16,14 +16,6 @@
 @dirrmtry etc/ircd-ru
 @dirrmtry etc/ircd-ru/ru_RU.CP1251
 @dirrmtry etc/ircd-ru/ru_RU.KOI8-R
-@mode 755
-@owner ircd
-@group ircd
-%%VARDIR%%/log/ircd-ru
-%%VARDIR%%/run/ircd-ru
-@group
-@owner
-@mode
 bin/ircdpasswd
 etc/ircd-ru/ircd.conf-dist
 etc/ircd-ru/ircd.motd-dist
@@ -33,3 +25,6 @@ etc/ircd-ru/ru_RU.CP1251/ircd.motd-dist
 etc/ircd-ru/ru_RU.CP1251/ircd.smotd-dist
 etc/ircd-ru/ru_RU.KOI8-R/ircd.conf-dist
 sbin/ircd
+%%SYSLOGFILE%%/var/log/ircd-ru/syslog
+@unexec rmdir /var/log/ircd-ru
+@unexec rmdir /var/run/ircd-ru

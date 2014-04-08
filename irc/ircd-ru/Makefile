@@ -20,9 +20,8 @@ WRKSRC=		${WRKDIR}/ircd-RU-${PORTVERSION}-03-rc
 
 USERS=		ircd
 GROUPS=		${USERS}
-
-VARDIR=	/var
-PLIST_SUB=	VARDIR=${VARDIR}
+SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
+SUB_FILES=	pkg-install
 
 OPTIONS_DEFINE=	WENET HUB ENCRYPTION SYSLOGFILE DRONEMODULE AUTHMODULE \
 				DNSBL SELECT DOCS
@@ -56,6 +55,9 @@ LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 # log to file instead of syslog
 .if ${PORT_OPTIONS:MSYSLOGFILE}
 CONFIGURE_ARGS+=--enable-syslogfile
+PLIST_SUB+=SYSLOGFILE=""
+.else
+PLIST_SUB+=SYSLOGFILE="@comment "
 .endif
 
 # enable dronemodule support
@@ -85,9 +87,12 @@ post-patch:
 .endif
 	#FIXME rene DESTDIR support is broken upstream
 	@${REINPLACE_CMD} -e 's|-d $$dir_LPATH|-d ${STAGEDIR}$$dir_LPATH|g' \
+		-e 's|-d $$dir_FNAME_|-d ${STAGEDIR}$$dir_FNAME_|g' \
 		-e 's|-d $$dir_PPATH|-d ${STAGEDIR}$$dir_PPATH|g' \
 		-e 's|-d $$dir_EPATH|-d ${STAGEDIR}$$dir_EPATH|g' \
 		-e 's|-d $$dir_MCPATH|-d ${STAGEDIR}$$dir_MCPATH|g' \
+		-e 's|f $$FNAME_|f ${STAGEDIR}$$FNAME_|g' \
+		-e 's|h $$FNAME_|h ${STAGEDIR}$$FNAME_|g' \
 		-e 's|STAGE|${STAGEDIR}|g' \
 		${WRKSRC}/tools/install_ircd.in
 
@@ -96,9 +101,5 @@ pre-build:
 	@${ECHO_MSG} "NOTE:"
 	@${ECHO_MSG} " Edit ${WRKSRC}/include/config.h for specific settings "
 	@${ECHO_MSG} ""
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${VARDIR}/log/ircd-ru
-	@${MKDIR} ${STAGEDIR}${VARDIR}/run/ircd-ru
 
 .include <bsd.port.mk>
