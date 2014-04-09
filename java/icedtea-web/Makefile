@@ -2,7 +2,7 @@
 
 PORTNAME=	icedtea-web
 PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
@@ -23,7 +23,7 @@ JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 USE_PERL5=	build
 USE_XORG=	x11
-USES=		gmake perl5 pkgconfig shebangfix
+USES=		gmake perl5 pkgconfig shebangfix desktop-file-utils
 SHEBANG_FILES=	javac.in jrunscript.in
 
 WANT_GNOME=	yes
@@ -57,9 +57,8 @@ CONFIGURE_ARGS+=--disable-docs
 .endif
 
 .if ${PORT_OPTIONS:MPLUGIN}
-USE_GECKO=	libxul
 USE_GNOME=	glib20
-USES+=		webplugin:native
+USES+=		webplugin:native gecko
 WEBPLUGIN_DIR=	${PREFIX}/lib
 WEBPLUGIN_FILES=IcedTeaPlugin.so
 

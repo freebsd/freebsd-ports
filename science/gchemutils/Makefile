@@ -21,11 +21,10 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 
 PORTSCOUT=	limitw:1,even
 
-USE_XZ=		yes
 USE_XORG=	x11
 USE_GNOME=	gnomedocutils gtk30 intlhack libgsf libxml2
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
-		shared-mime-info
+		shared-mime-info tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -42,20 +41,16 @@ VER=		${PORTVERSION:R}
 PLIST_SUB=	VER=${VER} GOFFICE=0.10 VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	GNUMERIC XUL
+OPTIONS_SUB=	yes
 GNUMERIC_DESC=	Build gnumeric plugin
 XUL_DESC=	Build browser plugin (requires libxul)
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXUL}
-USE_GECKO=	libxul
-CONFIGURE_ARGS+=--enable-mozilla-plugin \
+XUL_USES=	gecko
+XUL_CONFIGURE_ON=--enable-mozilla-plugin \
 		--with-mozilla-libdir=${PREFIX}/lib/xulrunner
-PLIST_SUB+=	XUL=""
-.else
-CONFIGURE_ARGS+=--disable-mozilla-plugin
-PLIST_SUB+=	XUL="@comment "
-.endif
+XUL_CONFIGURE_OFF=--disable-mozilla-plugin
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUMERIC} || exists(${LOCALBASE}/lib/libspreadsheet.so)
 LIB_DEPENDS+=	libspreadsheet.so:${PORTSDIR}/math/gnumeric
