@@ -8,7 +8,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	SAVANNAH/openexr/
 DISTNAME=	openexr-${DISTVERSION}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
 
 LICENSE=	BSD3CLAUSE
