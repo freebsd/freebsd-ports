@@ -64,10 +64,6 @@ do-extract:
 	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
 	${CAT} ${PLISTD} | ${SORT} -r >> ${PLIST}
 
-.if !exists(${OPTIONSFILE}) && !defined(PACKAGE_BUILDING)
-pre-configure: config
-.endif
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${STAGEDIR}${XPI_SLDIRS_ALL}
 	cd ${WRKSRC}; ${PAX} -rw . ${STAGEDIR}${XPI_LIBDIR}
