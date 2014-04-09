@@ -17,21 +17,25 @@ PKGINSTALL=	/nonexistent
 BIND_TOOLS_SLAVE=	YES
 
 post-patch:
-	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.presed
-	@${SED} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
 		-e 's#isc-config.sh installdirs#installdirs#' \
 		-e 's#.*INSTALL.*isc-config.*##' \
 		-e 's#.*INSTALL.*bind.keys.*##' \
-		${WRKSRC}/Makefile.in.presed > ${WRKSRC}/Makefile.in
-	@${MV} ${WRKSRC}/bin/Makefile.in ${WRKSRC}/bin/Makefile.in.presed
-	@${SED} -e 's#^SUBDIRS.*#SUBDIRS = dig#' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = dig dnssec#' \
 		-e 's#^	.*check confgen ##' \
-		${WRKSRC}/bin/Makefile.in.presed > ${WRKSRC}/bin/Makefile.in
+		${WRKSRC}/bin/Makefile.in
 
 do-install:
 .for file in dig host nslookup
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/dig/${file} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/bin/dig/${file}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+.endfor
+.for file in dnssec-dsfromkey dnssec-importkey dnssec-keyfromlabel \
+	dnssec-keygen dnssec-revoke dnssec-settime dnssec-signzone \
+	dnssec-verify
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/dnssec/${file} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/bin/dnssec/${file}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 .endfor
 
 .include "${MASTERDIR}/Makefile"
