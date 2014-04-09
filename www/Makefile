@@ -1571,6 +1571,7 @@
     SUBDIR += py-mt
     SUBDIR += py-nevow
     SUBDIR += py-openssl-proxy
+    SUBDIR += py-pafy
     SUBDIR += py-paste
     SUBDIR += py-pastedeploy
     SUBDIR += py-pastescript
