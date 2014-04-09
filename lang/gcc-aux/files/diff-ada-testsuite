@@ -113,7 +113,7 @@
 +++ gcc/testsuite/gnat.dg/test_raise_from_pure.adb
 @@ -1,4 +1,4 @@
 --- { dg-do run { xfail arm*-*-* } }
-+-- { dg-do run { xfail arm*-*-* *-*-openbsd* } }
++-- { dg-do run { xfail *-*-openbsd* } }
  -- { dg-options "-O2" }
  
  -- This is an optimization test and its failure is only a missed optimization.

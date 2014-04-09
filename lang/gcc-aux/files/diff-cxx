@@ -1124,12 +1124,15 @@
        CTIME_CC=config/locale/generic/time_members.cc
 --- libstdc++-v3/configure.host.orig
 +++ libstdc++-v3/configure.host
-@@ -230,6 +230,9 @@
+@@ -230,6 +230,12 @@
      os_include_dir="os/generic"
      atomicity_dir="cpu/generic"
      ;;
 +  dragonfly*)
 +    os_include_dir="os/bsd/dragonfly"
++    ;;
++  linux-androideabi)
++    os_include_dir="os/bionic"
 +    ;;
    bsd*)
      # Plain BSD attempts to share FreeBSD files.

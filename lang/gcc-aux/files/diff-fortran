@@ -31,7 +31,7 @@
        ;;
 --- libgfortran/configure.orig
 +++ libgfortran/configure
-@@ -26337,7 +26337,7 @@
+@@ -26340,7 +26340,7 @@
  
    fi
    case "$host" in
