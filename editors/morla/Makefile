@@ -9,12 +9,12 @@ MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A RDF editor
+COMMENT=	RDF editor
 
-LIB_DEPENDS=	nxml.18:${PORTSDIR}/textproc/libnxml \
-		rdf.0:${PORTSDIR}/textproc/redland \
-		raptor2.0:${PORTSDIR}/textproc/raptor2 \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libnxml.so:${PORTSDIR}/textproc/libnxml \
+		librdf.so:${PORTSDIR}/textproc/redland \
+		libraptor2.so:${PORTSDIR}/textproc/raptor2 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
@@ -29,8 +29,6 @@ USES=		gettext pkgconfig
 USE_GNOME=	gconf2 libgtkhtml libxslt
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-MAN1=	morla.1
-
 DESKTOP_ENTRIES="morla" \
 		"Edit RDF documents" \
 		"${DATADIR}/icons/128_color.png" \
@@ -38,18 +36,12 @@ DESKTOP_ENTRIES="morla" \
 		"WebDevelopment;" \
 		true
 
-NO_STAGE=	yes
+XULRUNNER_USES=	gecko
+XULRUNNER_CONFIGURE_ON=	--with-javascript=xulrunner
+XULRUNNER_CONFIGURE_OFF=	--with-javascript=none
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXULRUNNER}
-USE_GECKO=	libxul
-CONFIGURE_ARGS+=	--with-javascript=xulrunner
-.else
-CONFIGURE_ARGS+=	--with-javascript=none
-.endif
 
 .include <bsd.port.mk>

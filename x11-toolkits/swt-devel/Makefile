@@ -45,7 +45,6 @@ MOZILLA_DESC=	Gecko browser support
 
 OPTIONS_DEFAULT=CAIRO GNOMEVFS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}
@@ -61,7 +60,7 @@ MAKE_GNOME=	make_gnome
 .endif
 
 .if ${PORT_OPTIONS:MMOZILLA}
-USE_GECKO=	libxul
+USES=		gecko
 BROKEN=		Does now work with newer libxul
 PLIST_FILES+=	lib/libswt-xulrunner-gtk-%%BUILD%%.so
 MAKE_MOZILLA=	make_xulrunner
@@ -96,8 +95,8 @@ post-patch:
 		${FILESDIR}/build.xml > ${WRKSRC}/build.xml
 
 do-install:
-	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/libswt-*.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/${OUTPUT_JAR} ${JAVAJARDIR}/
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_LIB} ${WRKSRC}/libswt-*.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/${OUTPUT_JAR} ${STAGEDIR}${JAVAJARDIR}/
 
 .include <bsd.port.post.mk>

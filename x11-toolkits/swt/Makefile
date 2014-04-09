@@ -47,11 +47,10 @@ OPTIONS_DEFAULT=	CAIRO GNOMEVFS
 GNOMEVFS_DESC=	Gnome VFS Support
 BROWSER_DESC=	Gecko Browser Support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
 PLIST_FILES+=	lib/libswt-cairo-gtk-%%BUILD%%.so
 MAKE_CAIRO=	make_cairo
 .endif
@@ -63,7 +62,7 @@ MAKE_GNOME=	make_gnome
 .endif
 
 .if ${PORT_OPTIONS:MBROWSER}
-USE_GECKO=	libxul
+USES=		gecko
 BROKEN=		Does not build with newer libxul
 PLIST_FILES+=	lib/libswt-xulrunner-gtk-%%BUILD%%.so
 MAKE_MOZILLA=	make_xulrunner
@@ -85,8 +84,8 @@ post-extract:
 	@${RM} -f ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
 
 do-install:
-	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/libswt-*.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/${OUTPUT_JAR} ${JAVAJARDIR}/
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_LIB} ${WRKSRC}/libswt-*.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/${OUTPUT_JAR} ${STAGEDIR}${JAVAJARDIR}/
 
 .include <bsd.port.mk>

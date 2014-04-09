@@ -4,7 +4,7 @@ lib/morla/index.xml
 lib/morla/libmorla_test.a
 lib/morla/libmorla_test.la
 lib/morla/libmorla_test.so
-libdata/ldconfig/morla
+man/man1/morla.1.gz
 share/locale/it/LC_MESSAGES/morla.mo
 %%DATADIR%%/bootsplash.png
 %%DATADIR%%/icons/128_BN.png
