@@ -12,10 +12,10 @@ COMMENT=	Standalone Djvu viewer and plugin based on Qt4 toolkit
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	djvulibre:${PORTSDIR}/graphics/djvulibre
+LIB_DEPENDS=	libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig webplugin:native libtool
 USE_QT4=	gui network rcc_build uic_build moc_build qmake_build
 USE_XORG=	sm ice xt
 QT_NONSTANDARD=	yes
@@ -30,16 +30,8 @@ MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 WRKSRC=		${WRKDIR}/djview4-${PORTVERSION}
 
-MAN1=	djview4.1 nsdejavu.1
-MLINKS=	djview4.1 djview.1
-
-USE_WEBPLUGINS=		gecko*
-WEBPLUGINS_DIR=		${PREFIX}/lib/djview4/plugins
-WEBPLUGINS_FILES=	nsdejavu.so
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+WEBPLUGIN_DIR=		${PREFIX}/lib/djview4/plugins
+WEBPLUGIN_FILES=	nsdejavu.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/netscape/,/djview4/,' \
@@ -47,13 +39,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,@NSDEJAVU_LIBS@,@NSDEJAVU_LIBS@ -lXt -lXext,g' \
 		${WRKSRC}/nsdejavu/Makefile.in
 
-post-install:
-	@${FIND} -ds ${PREFIX}/share/djvu/djview4/ ! -type d | \
-		${SED} 's,${PREFIX}/,,' >> ${TMPPLIST}
-
-	@${ECHO_CMD} "@dirrm share/djvu/djview4/desktop" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/djvu/djview4" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/djvu 2>/dev/null || true" \
-		>> ${TMPPLIST}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
