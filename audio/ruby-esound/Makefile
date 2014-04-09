@@ -17,6 +17,7 @@ BROKEN=	Fails to configure
 
 LIB_DEPENDS=	libesd.so:${PORTSDIR}/audio/esound
 
+BROKEN=		not staged
 USES=		pkgconfig
 NO_STAGE=	yes
 USE_RUBY=	yes

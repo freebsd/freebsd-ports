@@ -11,6 +11,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A web application server using dRuby and ERB2
 
+BROKEN=		not staged
+
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	drb erb
 

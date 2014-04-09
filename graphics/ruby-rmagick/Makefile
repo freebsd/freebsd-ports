@@ -12,6 +12,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
 
+BROKEN=		not staged
+
 OPTIONS_DEFINE=		X11
 OPTIONS_DEFAULT=	X11
 
