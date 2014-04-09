@@ -18,7 +18,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 
 USES=		gettext iconv
-NO_STAGE=	yes
 USE_GNOME=	gtk12
 USE_XORG=	x11 xau xcb xdmcp xext xi
 
@@ -28,11 +27,9 @@ do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -lncurses `xmms-config --cflags --libs` -o xmms-curses *.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xmms-curses ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
-.if !exists(${PREFIX}/etc/${PORTNAME}.conf)
-	${INSTALL_DATA}	${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/xmms-curses ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
+	    ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>

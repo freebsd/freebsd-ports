@@ -17,7 +17,6 @@ LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_LDCONFIG=	${PREFIX}/lib/xmms/Input
-NO_STAGE=	yes
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
@@ -27,6 +26,11 @@ FILES=	xmms-timidity.cpp
 PLIST_FILES=	lib/xmms/Input/libxmms-timidity.so
 
 do-build:
-	(cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -c ${FILES} -o xmms-timidity.o)
+	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -c ${FILES} -o xmms-timidity.o
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	${INSTALL_DATA} ${WRKSRC}/${FILES} \
+	    ${STAGEDIR}${PREFIX}/lib/xmms/Input/libxmms-timidity.so
 
 .include <bsd.port.mk>

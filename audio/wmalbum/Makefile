@@ -17,14 +17,13 @@ LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
 		libgdk_pixbuf_xlib.so:${PORTSDIR}/graphics/gdk-pixbuf
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 USE_CSTD=	gnu89
 
 MAN1=		wmalbum.1
 PLIST_FILES=	bin/wmalbum
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmalbum/wmalbum ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmalbum.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/wmalbum/wmalbum ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmalbum.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
