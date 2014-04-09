@@ -28,7 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DSOFLAGS=	-Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib ${LDFLAGS}
 CONFIGURE_ENV=	DSOFLAGS="${DSOFLAGS}"
 CONFIGURE_ARGS+=	--localstatedir=/var			\
-			--disable-slp				\
 			--disable-gssapi			\
 			--with-cups-user=${USERS}		\
 			--with-cups-group=${GROUPS}		\
