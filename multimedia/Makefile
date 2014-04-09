@@ -236,6 +236,7 @@
     SUBDIR += mplayer2
     SUBDIR += mplayerxp
     SUBDIR += mplex
+    SUBDIR += mps-youtube
     SUBDIR += mpv
     SUBDIR += msdl
     SUBDIR += mxflib
