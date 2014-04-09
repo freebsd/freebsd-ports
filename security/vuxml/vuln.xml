@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c0c31b27-bff3-11e3-9d09-000c2980a9f3">
+    <topic>openafs -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>openafs</name>
+	<range><ge>1.4.8</ge><lt>1.6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenAFS development team reports:</p>
+	<blockquote cite="http://openafs.org/security/OPENAFS-SA-2014-001.txt">
+	  <p>An attacker with the ability to connect to an OpenAFS fileserver can
+	    trigger a buffer overflow, crashing the server.</p>
+	  <p>The buffer overflow can be triggered by sending an unauthenticated
+	    request for file server statistical information.</p>
+	  <p>Clients are not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0159</cvename>
+      <url>http://openafs.org/security/OPENAFS-SA-2014-001.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-04-09</discovery>
+      <entry>2014-04-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="963413a5-bf50-11e3-a2d6-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
