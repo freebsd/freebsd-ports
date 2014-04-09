@@ -5,3 +5,4 @@ bin/plugger-oohelper
 etc/pluggerrc-5.1.5.sample
 man/man7/plugger.7.gz
 %%WEBPLUGIN_DIR%%/npplugger.so
+@dirrm %%WEBPLUGIN_DIR%%
