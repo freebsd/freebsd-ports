@@ -13,6 +13,7 @@ DISTNAME=	BioPerl-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A collection of Perl modules for bioinformatics
 
+BROKEN=		not staged
 BUILD_DEPENDS=	p5-Text-Tabs+Wrap>=0:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap \
 		p5-Bio-ASN1-EntrezGene>=0:${PORTSDIR}/biology/p5-Bio-ASN1-EntrezGene \
 		p5-Class-AutoClass>=0:${PORTSDIR}/devel/p5-Class-AutoClass \

@@ -12,6 +12,7 @@ DIST_SUBDIR=	openxpki
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Web interface for local openxpki daemon
 
+BROKEN=		not staged
 BUILD_DEPENDS=	\
 	p5-openxpki-client>=0:${PORTSDIR}/security/p5-openxpki-client \
 	p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \

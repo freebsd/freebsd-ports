@@ -13,6 +13,8 @@ DISTNAME=	kwiki-trunk-20070327
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Kwiki Wiki Building Framework
 
+BROKEN=		not staged
+
 KWIKIDIR?=	kwiki
 NO_BUILD=	yes
 

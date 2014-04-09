@@ -12,6 +12,7 @@ DIST_SUBDIR=	openxpki
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl based trustcenter software for PKI: i18n tools
 
+BROKEN=		not staged
 BUILD_DEPENDS=	\
 	p5-openxpki>=0:${PORTSDIR}/security/p5-openxpki
 RUN_DEPENDS:=	${BUILD_DEPENDS}

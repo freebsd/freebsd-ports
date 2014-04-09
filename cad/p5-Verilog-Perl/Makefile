@@ -12,6 +12,7 @@ COMMENT=	Building point for Verilog support in the Perl language
 
 BUILD_DEPENDS=	flex>=2.5.35:${PORTSDIR}/textproc/flex
 
+BROKEN=		not staged
 USES=		bison gmake perl5
 USE_PERL5=	configure
 

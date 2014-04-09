@@ -13,6 +13,7 @@ COMMENT=	Generate GD Images of Bio::Seq Objects
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BROKEN=		not staged
 BUILD_DEPENDS=	p5-Bio-SCF>=1.01:${PORTSDIR}/biology/p5-Bio-SCF \
 		p5-GD>=2.30:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-SVG>=0.32:${PORTSDIR}/graphics/p5-GD-SVG \

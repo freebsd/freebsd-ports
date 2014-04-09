@@ -12,6 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Perl5 module interface to Sophos AntiVirus
 
+BROKEN=		not staged
 MAN3=		SAVI.3
 
 USES=		perl5
