@@ -21,7 +21,7 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	auto-accept
 
-AFS_DISTVERSION=	1.6.6
+AFS_DISTVERSION=1.6.7
 DBVERSION=	2013-01-28
 
 USES=		kmod
@@ -29,16 +29,16 @@ USE_LDCONFIG=	yes
 PATCH_STRIP=	-p1
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX} \
-	--localstatedir=/var \
-	--mandir=${MANPREFIX}/man \
-	--with-bsd-kernel-headers=${SRC_BASE}/sys \
-	--with-bsd-kernel-build=${WRKDIR}/conf \
-	--enable-debug \
-	--enable-debug-kernel \
-	--enable-debug-lwp \
-	--includedir=${PREFIX}/include/openafs \
-	${CONFIGURE_TARGET}
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--localstatedir=/var \
+		--mandir=${MANPREFIX}/man \
+		--with-bsd-kernel-headers=${SRC_BASE}/sys \
+		--with-bsd-kernel-build=${WRKDIR}/conf \
+		--enable-debug \
+		--enable-debug-kernel \
+		--enable-debug-lwp \
+		--includedir=${PREFIX}/include/openafs \
+		${CONFIGURE_TARGET}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${AFS_DISTVERSION}
 USE_RC_SUBR=	afsd afsserver
 
@@ -58,7 +58,7 @@ PLIST_SUB+=	AFSMNTDIR=${AFSMNTDIR:C,^/,,} \
 # stack under clang; we need to pass -mstackrealign to avoid SIGBUS at
 # runtime.  gcc does not understand this flag, so we use compiler.mk to
 # figure out what type of compiler is in use.
-USES+= compiler
+USES+=		compiler
 
 OPTIONS_DEFINE=	FUSE
 FUSE_USES=	fuse
@@ -92,6 +92,7 @@ post-extract:
 post-patch:
 .if ${COMPILER_TYPE} == clang
 	${REINPLACE_CMD} -e 's/XCFLAGS="-O2 -pipe -fPIC"/XCFLAGS="${CFLAGS} -fPIC -mstackrealign"/' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's/-mno-align-long-strings//' ${WRKSRC}/src/libafs/MakefileProto.FBSD.in
 .endif
 
 create-sample-files:
