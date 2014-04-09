@@ -15,6 +15,7 @@ COMMENT=	AVL tree class for Ruby
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavl.a:${PORTSDIR}/devel/libavl
 
+BROKEN=		not staged
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

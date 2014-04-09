@@ -13,6 +13,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby extension library to access Panda
 
+BROKEN=		not staged
+
 LIB_DEPENDS=	panda.0:${PORTSDIR}/print/panda \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \

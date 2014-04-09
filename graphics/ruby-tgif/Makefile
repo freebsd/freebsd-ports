@@ -11,7 +11,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}-2
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby extension library to draw Tgif graphics
+COMMENT=	Ruby extension library to draw Tgif graphics
 
 BROKEN=		Does not compile
 
@@ -35,7 +35,6 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	README
 DOCS_JA=	ChangeLog.ja	README.ja
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

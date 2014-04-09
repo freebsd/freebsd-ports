@@ -15,6 +15,8 @@ COMMENT=	Ruby interface to the FrontBase db engine
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libFBCAccess.a:${PORTSDIR}/databases/frontbase
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
+BROKEN=		not staged
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
@@ -25,5 +27,4 @@ BUILD_WRKSRC=		${WRKSRC}
 INSTALL_WRKSRC=		${WRKSRC}
 INSTALL_TARGET=	site-install
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

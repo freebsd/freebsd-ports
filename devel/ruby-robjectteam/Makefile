@@ -13,6 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Enables the ObjectTeams paradigm to the Ruby language
 
+BROKEN=	not staged
 USE_RUBY=	yes
 
 NO_BUILD=	yes
