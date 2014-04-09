@@ -63,5 +63,4 @@ share/pixmaps/gxine.png
 @dirrmtry man/de/man1
 @dirrmtry man/de
 @dirrm lib/gxine
-%%MOZILLA_PLUGIN%%@dirrmtry lib/browser_plugins
 @dirrm %%ETCDIR%%
