@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open-source COBOL compiler
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp

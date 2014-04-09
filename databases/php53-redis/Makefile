@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/nicolasff/phpredis/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	php53-
 DISTNAME=	nicolasff-phpredis-${PORTVERSION}-0-g${GITVERSION}
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP5-Extension for Redis
 
 LICENSE=	PHP301
