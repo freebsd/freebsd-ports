@@ -19,10 +19,8 @@ USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.options"
 
-.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .include "${.CURDIR}/Makefile.dict"
@@ -64,22 +62,23 @@ do-extract:
 
 # Install the requested dictionaries
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/thunderbird/dictionaries
 .for f in ${ALLDICTS}
 .if ${PORT_OPTIONS:M${f}}
 .if ${BG_DICT}==${f}
-	@${INSTALL_DATA} \
+	${INSTALL_DATA} \
 		${WRKSRC}/${${f}_FILE}/bin/components/myspell/${${f}_FILE:S/spell-//:S/xpi//}aff \
-		${PREFIX}/lib/thunderbird/dictionaries
-	@${INSTALL_DATA} \
+		${STAGEDIR}${PREFIX}/lib/thunderbird/dictionaries
+	${INSTALL_DATA} \
 		${WRKSRC}/${${f}_FILE}/bin/components/myspell/${${f}_FILE:S/spell-//:S/xpi//}dic \
-		${PREFIX}/lib/thunderbird/dictionaries
+		${STAGEDIR}${PREFIX}/lib/thunderbird/dictionaries
 .else
-	@${INSTALL_DATA} \
+	${INSTALL_DATA} \
 		${WRKSRC}/${${f}_FILE}/${${f}_FILE:S/spell-//:S/xpi//}aff \
-		${PREFIX}/lib/thunderbird/dictionaries
-	@${INSTALL_DATA} \
+		${STAGEDIR}${PREFIX}/lib/thunderbird/dictionaries
+	${INSTALL_DATA} \
 		${WRKSRC}/${${f}_FILE}/${${f}_FILE:S/spell-//:S/xpi//}dic \
-		${PREFIX}/lib/thunderbird/dictionaries
+		${STAGEDIR}${PREFIX}/lib/thunderbird/dictionaries
 .endif
 .endif
 .endfor
