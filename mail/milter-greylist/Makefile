@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Easy-to-use greylist milter for sendmail and postfix
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	milter-greylist-devel-[1-9]*.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -19,7 +19,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAKE_JOBS_UNSAFE=	yes
 
 ##
-NO_STAGE=	yes
 # Use the following quirks to choose which sendmail to use (ports or system):
 #
 #   WITH_SENDMAIL_BASE=yes
@@ -40,8 +39,8 @@ POSTFIX_DESC=		Use Postfix instead of Sendmail
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}
-MAN5=		greylist.conf.5
-MAN8=		milter-greylist.8
+PLIST_FILES+=	man/man5/greylist.conf.5.gz \
+		man/man8/milter-greylist.8.gz
 .endif
 .if ${PORT_OPTIONS:MSPF}
 BUILD_DEPENDS+=	libspf2>=1.2.5:${PORTSDIR}/mail/libspf2
@@ -86,41 +85,24 @@ SUB_FILES+=	pkg-message
 USE_RC_SUBR=	milter-greylist
 
 do-install:
-	@${MKDIR} ${PREFIX}/etc/mail
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
 .if ${PORT_OPTIONS:MMANPAGES}
-	@${INSTALL_MAN} ${WRKSRC}/greylist.conf.5 ${PREFIX}/man/man5
-	@${INSTALL_MAN} ${WRKSRC}/milter-greylist.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/greylist.conf.5 ${STAGEDIR}${PREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/milter-greylist.8 ${STAGEDIR}${PREFIX}/man/man8/
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/milter-greylist ${PREFIX}/libexec
-	@${INSTALL_DATA} ${WRKSRC}/greylist.conf \
-			${PREFIX}/etc/mail/greylist.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/milter-greylist ${STAGEDIR}${PREFIX}/libexec/
+	${INSTALL_DATA} ${WRKSRC}/greylist.conf \
+		${STAGEDIR}${PREFIX}/etc/mail/greylist.conf.sample
 
 post-install:
-	@${MKDIR} /var/milter-greylist
-	@${CHOWN} -R mailnull:mailnull /var/milter-greylist
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/greylist.conf ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/greylist.conf ${STAGEDIR}${EXAMPLESDIR}/
 .endif
-	@${TEST} -f /var/db/milter-greylist/greylist.db && ( \
-		${ECHO} "************************************************************"; \
-		${ECHO} "************************************************************"; \
-		${ECHO} "**                                                        **"; \
-		${ECHO} "**                        WARNING                         **"; \
-		${ECHO} "**                                                        **"; \
-		${ECHO} "** The default dump file location has changed.            **"; \
-		${ECHO} "** Please move greylist.db from /var/db/milter-greylist/  **"; \
-		${ECHO} "** to /var/milter-greylist/ and update your greylist.conf **"; \
-		${ECHO} "** accordingly.                                           **"; \
-		${ECHO} "**                                                        **"; \
-		${ECHO} "************************************************************"; \
-		${ECHO} "************************************************************"; \
-	) || ${TRUE}
-	@${CAT} ${PKGMESSAGE}
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
