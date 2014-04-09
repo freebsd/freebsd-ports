@@ -1,5 +1,5 @@
---- jools/__init__.py.orig	Sat Aug 30 20:04:03 2003
-+++ jools/__init__.py	Sat Aug 30 20:04:32 2003
+--- ./jools/__init__.py.orig	2003-08-26 20:17:01.000000000 +0200
++++ ./jools/__init__.py	2014-04-09 02:36:46.095493715 +0200
 @@ -24,6 +24,7 @@
  # Primary game control loop.
  #
