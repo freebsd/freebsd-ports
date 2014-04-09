@@ -22,14 +22,13 @@ LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 LOGDIR?=	/var/log
 KRB5_CONFIG?=	/usr/bin/krb5-config --libs
 
-CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
-		freeradius-mysql-[0-9].* freeradius-[013-9].* freeradius3-3.*
+CONFLICTS_INSTALL=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
+		freeradius-mysql-[0-9].* freeradius-[^2].* freeradius3-3.*
 
 USE_RC_SUBR=	radiusd
 
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_AUTOTOOLS=	libltdl libtool autoconf
-USE_BZIP2=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
@@ -55,7 +54,6 @@ DEVELOPER_DESC=		Enable developer options
 EDIR_DESC=		Enable eDirectory support (implies LDAP)
 SSL_PORT_DESC=		Use OpenSSL from the ports collection
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Default requirements for rc script
@@ -265,6 +263,9 @@ WITH_OPENSSL_PORT=yes
 
 .include <bsd.port.pre.mk>
 
+# if we're installing, place sample configs into ${EXAMPLESDIR}
+MAKE_ARGS+=	raddbdir="${EXAMPLESDIR}/raddb" R=${STAGEDIR}
+
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
 BROKEN=		Does not build on sparc64-6
 .endif
@@ -309,51 +310,24 @@ CONFIGURE_ARGS+=--without-rlm_eap_ikev2 \
 CONFIGURE_ARGS+=	--with-pic
 .endif
 
+SUB_FILES+=	pkg-install pkg-message
 SUB_LIST+=	RADIUS_USER="${RADIUS_USER}" \
 		RADIUS_GROUP="${RADIUS_GROUP}" \
 		RADDB_WORK="${WRKSRC}/raddb" \
 		RADDB="${PREFIX}/etc/raddb" \
 		LOGDIR="${LOGDIR}" \
 		LIBDIR="${PREFIX}/${FREERADIUS_LIBDIR}"
-SUB_FILES+=	pkg-install pkg-message
-
-MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
-		radzap.1 smbencrypt.1
-MAN5=		acct_users.5 clients.conf.5 dictionary.5 radiusd.conf.5 \
-		radrelay.conf.5 rlm_acct_unique.5 rlm_always.5 \
-		rlm_attr_filter.5 rlm_attr_rewrite.5 rlm_chap.5 rlm_counter.5 \
-		rlm_detail.5 rlm_digest.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 \
-		rlm_pap.5 rlm_passwd.5 rlm_policy.5 rlm_realm.5 rlm_sql.5 \
-		rlm_sql_log.5 rlm_unix.5 unlang.5 users.5 checkrad.5
-MAN8=		radiusd.8 radmin.8 raddebug.8 radrelay.8 radsqlrelay.8 \
-		radwatch.8 rlm_ippool_tool.8 radconf2xml.8 radcrypt.8 \
-		radsniff.8 rlm_dbm_cat.8 rlm_dbm_parser.8
-
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 post-patch:
 # never try to find execinfo.h (needed until we can enable/disable backtrace
 	@${REINPLACE_CMD} -e '/execinfo.h/d' ${WRKSRC}/configure \
 		${WRKSRC}/configure.in
-# Patch Makefile / Makefile.in throughout the source tree to install raddb
-# contents in ${EXAMPLESDIR}/raddb rather than the raddbdir from configure
-	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?$$' -exec \
-		${REINPLACE_CMD} -e "s:\$$(R)\$$(raddbdir):${EXAMPLESDIR}/raddb:g" {} \;
-# Clean up after the last operation (so as not to get unwanted files when installing doc/)
-	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?\.(orig|bak)$$' -delete
-# Patch raddb/certs/bootstrap to use gmake instead of make
-	@${REINPLACE_CMD} -Ee "s:^make:${GMAKE}:" \
-		${WRKSRC}/raddb/certs/bootstrap
 # Patch raddb/certs/Makefile for the full path to the openssl binary (using
 # ports OpenSSL if installed)
 	@${REINPLACE_CMD} -E \
 		-e "s:^([[:space:]])+openssl:\1${OPENSSLBASE}/bin/openssl:g" \
 		${WRKSRC}/raddb/certs/Makefile
-# Clean up after the last two operations (so as not to get unwanted files in
-# raddb)
-	@${FIND} -E ${WRKSRC}/raddb/certs \
-		-regex '.*/(bootstrap|Makefile)\.(orig|bak)$$' \
-		-delete
 # If we're using Heimdal from base, alter the LIBS variable
 .if ${PORT_OPTIONS:MHEIMDAL} && empty(PORT_OPTIONS:MHEIMDAL_PORT)
 	@${REINPLACE_CMD} -e 's|LIBS|KRB5LIBS|g' ${WRKSRC}/src/modules/rlm_krb5/configure
@@ -364,14 +338,7 @@ post-patch:
 .if ${PORT_OPTIONS:MDHCP}
 	@${REINPLACE_CMD} -Ee 's:^#(.+ dictionary\.dhcp)$$:\1:g' \
 		${WRKSRC}/share/dictionary
-# Clean up (so as not to get an unwanted file in share)
-	@${FIND} -E ${WRKSRC}/share \
-		-regex '.*/dictionary\.(orig|bak)$$' \
-		-delete
 .endif
-# Fix PgSQL statement
-	@${REINPLACE_CMD} -i '' -e 's|ius.rad||' \
-		${WRKSRC}/raddb/sql/postgresql/admin.sql
 # Patch scripts/Makefile not to install (unnecessary) rc.radiusd
 	@${REINPLACE_CMD} -Ee 's:^(.+rc\.radiusd.+)$$:#\1:g' \
 		${WRKSRC}/scripts/Makefile
@@ -389,28 +356,5 @@ pre-configure:
 		&& ${AUTOCONF} -I ${WRKSRC}
 	@cd ${WRKSRC}/src/modules/rlm_perl && ${AUTOCONF} -I ${WRKSRC}
 	@cd ${WRKSRC}/src/modules/rlm_python && ${AUTOCONF} -I ${WRKSRC}
-
-pre-install:
-# Run pkg-install PRE-INSTALL
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
-		PRE-INSTALL
-
-post-install:
-# If ${PREFIX}/etc/raddb isn't a directory (or a symlink), make a copy
-# of ${EXAMPLESDIR}/raddb as ${PREFIX}/etc/raddb, then bootstrap the
-# certificates
-	@if ! [ -d ${PREFIX}/etc/raddb -o -L ${PREFIX}/etc/raddb ]; then \
-		${CP} -RP ${EXAMPLESDIR}/raddb ${PREFIX}/etc/raddb; \
-		${ECHO_MSG} '===> Bootstrapping default certificates, please wait...'; \
-		${PREFIX}/etc/raddb/certs/bootstrap >/dev/null 2>&1; \
-	fi
-# Set ${PREFIX}/etc/raddb and all the files and folders in it to g-w,o-rwx
-# (FreeRADIUS will probably complain if this is not done)
-	@${CHMOD} -R g-w,o-rwx ${PREFIX}/etc/raddb
-# Run pkg-install POST-INSTALL
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
-		POST-INSTALL
-# Display the contents of pkg-message
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
