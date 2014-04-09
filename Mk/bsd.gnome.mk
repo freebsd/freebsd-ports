@@ -824,6 +824,10 @@ GNOME_PRE_PATCH+=	; ${${component}_PRE_PATCH}
 .  endif
 . endfor
 .endif
+
+. if defined(GCONF_SCHEMAS) && ! defined(NO_STAGE)
+MAKE_ENV+=	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+. endif
 .endif
 
 .if defined(GNOME_PRE_PATCH)
