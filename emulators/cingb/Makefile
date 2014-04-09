@@ -9,12 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another Nintendo GameBoy(tm) emulator
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	DOCS
-
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_XORG=	x11 xext xv
 MAKE_ENV=	X11BASE="${LOCALBASE}"
 ALL_TARGET=	standard
@@ -25,7 +23,8 @@ PLIST_FILES=	bin/cingb bin/cingb_conf
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "sparc64" && ${ARCH} != "powerpc"
@@ -54,12 +53,10 @@ do-configure:
 		 s|%%%joyconf%%%|conf|g' < Makefile.templ > Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cingb ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/cingb_conf ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.FAQ ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/cingb ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cingb_conf ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.FAQ ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
