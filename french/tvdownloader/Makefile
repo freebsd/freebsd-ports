@@ -24,10 +24,12 @@ MECHA_EGG=	mechanize-${MECHA_VER}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSAR
 
 USE_PYTHON=	yes
 USES=		shebangfix
-SHEBANG_FILES=	Makefile src/Makefile doc/installdox
+SHEBANG_FILES=	doc/installdox
 ALL_TARGET=	build
 
 pre-configure:
+	${REINPLACE_CMD} -e 's|@python|${PYTHON_CMD}|'	\
+		${WRKSRC}/Makefile ${WRKSRC}/src/Makefile
 	${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|'	\
 		${WRKSRC}/tvdownloader.sh
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|'	\
