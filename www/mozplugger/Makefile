@@ -11,25 +11,15 @@ COMMENT=	Framework for loading web content in external viewers
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xt
-USES=		gmake
-MAN7=		mozplugger.7
+USES=		desthack gmake webplugin:native
 SUB_FILES=	pkg-message
 
-USE_WEBPLUGINS=	native
-WEBPLUGINS_FILES=mozplugger.so
-MAKE_ENV=	WEBPLUGINS_DIR="${WEBPLUGINS_DIR}"
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+WEBPLUGIN_FILES=mozplugger.so
+MAKE_ENV=	WEBPLUGINS_DIR="${WEBPLUGIN_DIR}"
+MAKE_ARGS=	root=${STAGEDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/etc|"${PREFIX}/etc|g' \
 		${WRKSRC}/mozplugger.c
 
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
