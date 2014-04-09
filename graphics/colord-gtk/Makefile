@@ -11,22 +11,21 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
 
 BUILD_DEPENDS=	colord>=0.1.20:${PORTSDIR}/graphics/colord
-LIB_DEPENDS=	colord:${PORTSDIR}/graphics/colord \
-		polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
-		dbus-1:${PORTSDIR}/devel/dbus \
-		lcms2:${PORTSDIR}/graphics/lcms2
+LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
-USE_XZ=		yes
 USE_GNOME=	gnomehier gtk30 intlhack introspection:build
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-gtk-doc-html=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wclobbered||g' \
 		-e 's|-Wempty-body||g' \

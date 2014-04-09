@@ -11,16 +11,15 @@ MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
 
-LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
-		dbus-1:${PORTSDIR}/devel/dbus \
-		lcms2:${PORTSDIR}/graphics/lcms2
+LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
 USERS=		colord
 GROUPS=		colord
 
-USE_XZ=		yes
 USE_GNOME=	gnomehier glib20 intlhack introspection:build
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -38,18 +37,20 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	USB_CFLAGS="-I/usr/include" \
 		USB_LIBS="-L/usr/lib -lusb"
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
 
 OPTIONS_DEFINE=	MANPAGES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml
-MAN1=		cd-create-profile.1 cd-fix-profile.1 colormgr.1
+PLIST_SUB+=	MAN=""
+.else
+PLIST_SUB+=	MAN="@comment "
 .endif
 
 post-patch:
@@ -71,6 +72,6 @@ post-patch:
 .endif
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${MKDIR} ${STAGEDIR}/var/db/colord/icc
 
 .include <bsd.port.mk>
