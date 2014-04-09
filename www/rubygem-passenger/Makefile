@@ -3,6 +3,7 @@
 
 PORTNAME=	passenger
 PORTVERSION=	4.0.41
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -102,8 +103,7 @@ pre-patch:
 
 post-build:
 .if ${PORT_OPTIONS:MAPACHE22}
-	(CC=${CC} CXX=${CXX} ${STAGE}${PREFIX}/bin/passenger-install-apache2-module --auto)
-	@${CAT} ${PKGMESSAGE}
+	(CC=${CC} CXX=${CXX} ${WRKSRC}/bin/passenger-install-apache2-module --auto)
 .endif
 
 .if ${PORT_OPTIONS:MNGINX}
