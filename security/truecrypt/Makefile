@@ -3,7 +3,7 @@
 
 PORTNAME=	truecrypt
 PORTVERSION=	7.1a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/wxwindows/${WX_VER}/:wxwidgets \
 		ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-11/v2-20/:rsa \
@@ -24,7 +24,6 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 WRKSRC=		${WRKDIR}/truecrypt-${PORTVERSION}-source
 
 USES=		fuse iconv pkgconfig
-USE_GCC=	any
 USE_GMAKE=	yes
 RESTRICTED=	May not be redistributed.  Must accept license to download.
 NO_CDROM=	May not be redistributed.  Must accept license to download.
