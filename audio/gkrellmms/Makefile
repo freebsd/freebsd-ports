@@ -21,6 +21,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	libexec/gkrellm/plugins/gkrellmms.so
 USE_GNOME=	imlib
-NO_STAGE=	yes
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm/plugins
+	${INSTALL_DATA} ${WRKSRC}/gkrellmms.so \
+	    ${STAGEDIR}${PREFIX}/libexec/gkrellm/plugins
 
 .include <bsd.port.mk>
