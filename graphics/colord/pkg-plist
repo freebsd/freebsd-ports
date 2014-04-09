@@ -48,6 +48,10 @@ lib/libcolordprivate.so.1
 libdata/pkgconfig/colord.pc
 libexec/colord
 libexec/colord-session
+%%MAN%%man/man1/cd-create-profile.1.gz
+%%MAN%%man/man1/cd-fix-profile.1.gz
+%%MAN%%man/man1/colord.conf.1.gz
+%%MAN%%man/man1/colormgr.1.gz
 share/color/icc/colord/AdobeRGB1998.icc
 share/color/icc/colord/AppleRGB.icc
 share/color/icc/colord/BestRGB.icc
