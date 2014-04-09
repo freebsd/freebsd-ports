@@ -76,8 +76,8 @@ _GECKO_INSTALLED_VER!=	${LOCALBASE}/bin/thunderbird --version 2>/dev/null
 _GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:M[0-9][0-9]*:C/([0-9][0-9]).*/\1/g}
 .endif
 
-# Dependence lines for different Seamonkey versions
-24_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+# Dependence lines for different Thunderbird versions
+24_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
 
 .else
 IGNORE=	Unknown type of gecko dependency you may specify either libxul, firefox, seamonkey or thunderbird
