@@ -6,6 +6,7 @@ bin/rhythmbox-client
 lib/librhythmbox-core.la
 lib/librhythmbox-core.so
 lib/librhythmbox-core.so.0
+lib/librhythmbox-core.so.0.0.0
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyo
@@ -242,6 +243,8 @@ lib/rhythmbox/plugins/visualizer/visualizer-controls.ui
 lib/rhythmbox/plugins/visualizer/visualizer-ui.xml
 lib/rhythmbox/plugins/visualizer/visualizer.rb-plugin
 libexec/rhythmbox-metadata
+man/man1/rhythmbox-client.1.gz
+man/man1/rhythmbox.1.gz
 share/applications/rhythmbox.desktop
 share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/RBAutoPlaylistSource.html
