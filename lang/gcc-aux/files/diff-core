@@ -328,6 +328,23 @@
 +
 +#define INTPTR_TYPE       (LONG_TYPE_SIZE == 64 ? "long int" : "int")
 +#define UINTPTR_TYPE      (LONG_TYPE_SIZE == 64 ? "long unsigned int" : "unsigned int")
+--- gcc/config/arm/arm.h.orig
++++ gcc/config/arm/arm.h
+@@ -937,13 +937,13 @@
+ 
+ #ifndef ARM_TARGET2_DWARF_FORMAT
+ #define ARM_TARGET2_DWARF_FORMAT DW_EH_PE_pcrel
++#endif
+ 
+ /* ttype entries (the only interesting data references used)
+    use TARGET2 relocations.  */
+ #define ASM_PREFERRED_EH_DATA_FORMAT(code, data) \
+   (((code) == 0 && (data) == 1 && ARM_UNWIND_INFO) ? ARM_TARGET2_DWARF_FORMAT \
+ 			       : DW_EH_PE_absptr)
+-#endif
+ 
+ /* The native (Norcroft) Pascal compiler for the ARM passes the static chain
+    as an invisible last argument (possible since varargs don't exist in
 --- /dev/null
 +++ gcc/config/i386/dragonfly.h
 @@ -0,0 +1,105 @@
@@ -1414,16 +1431,16 @@
  insn-preds.c: s-preds; @true
  tm-preds.h: s-preds-h; @true
  tm-constrs.h: s-constrs-h; @true
-@@ -3208,6 +3219,9 @@
- 	-rm -f $(DESTDIR)$(bindir)/$(target_noncanonical)-gcc-$(version)$(exeext)
- 	-( cd $(DESTDIR)$(bindir) && \
- 	   $(LN) $(GCC_INSTALL_NAME)$(exeext) $(target_noncanonical)-gcc-$(version)$(exeext) )
+@@ -3210,6 +3221,9 @@
+ 	  ( cd $(DESTDIR)$(bindir) && \
+ 	    $(LN) $(GCC_INSTALL_NAME)$(exeext) $(target_noncanonical)-gcc-$(version)$(exeext) ); \
+ 	fi
 +	-if [ -f gnat1$(exeext) ] ; then \
 +	  ( cd $(DESTDIR)$(bindir) && $(LN) $(GCC_INSTALL_NAME)$(exeext) ada$(exeext) ) \
 +	fi
- 	-if [ ! -f gcc-cross$(exeext) ] ; then \
+ 	-if [ ! -f gcc-cross$(exeext) ] \
+ 	    && [ "$(GCC_INSTALL_NAME)" != "$(GCC_TARGET_INSTALL_NAME)" ]; then \
  	  rm -f $(DESTDIR)$(bindir)/$(target_noncanonical)-gcc-tmp$(exeext); \
- 	  ( cd $(DESTDIR)$(bindir) && \
 --- libgcc/config.host.orig
 +++ libgcc/config.host
 @@ -207,6 +207,11 @@
@@ -1490,7 +1507,7 @@
  	;;
  i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	;;
-@@ -1259,6 +1281,7 @@
+@@ -1262,6 +1284,7 @@
    i[34567]86-*-solaris2* | x86_64-*-solaris2.1[0-9]* | \
    i[34567]86-*-cygwin* | x86_64-*-cygwin* | \
    i[34567]86-*-mingw* | x86_64-*-mingw* | \
