@@ -10,6 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	zaa@ulstu.ru
 COMMENT=	Perl5 module which provides Object(ish) Interface to UTMP files
 
+BROKEN=		not staged
 USES=		perl5
 USE_PERL5=	configure
 

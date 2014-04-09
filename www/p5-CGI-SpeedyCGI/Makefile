@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Speed up perl CGI scripts by running them persistently
 
+BROKEN=	not staged
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure patch

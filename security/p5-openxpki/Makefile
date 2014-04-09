@@ -15,6 +15,7 @@ COMMENT=	Perl based trustcenter software for PKI: core for server
 
 LICENSE=	ART20
 
+BROKEN=		not staged
 BUILD_DEPENDS=	\
 	p5-Workflow>=0.31:${PORTSDIR}/devel/p5-Workflow \
 	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
