@@ -6,5 +6,5 @@ You can make these changes via the interface of Jitsi:
   -> Jitsi-Tools-Options-Audio-Encodings
   -> Jitsi-Tools-Options-Video-Encodings
 
-It is recommended that all the participants of an audio/video call to use
-the same codecs.
+It is recommended that all the participants of an audio/video call use the
+same codecs.

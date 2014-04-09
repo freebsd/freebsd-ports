@@ -12,7 +12,7 @@ COMMENT=	System clock synchronization client and server
 LICENSE=	GPLv2
 
 # XXX: should theoretically work on others, but at least on PowerPC it dies
-# with ``Could not open any NTP socket'' message :(
+# with ``Could not open any NTP socket'' message on startup :(
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		gmake

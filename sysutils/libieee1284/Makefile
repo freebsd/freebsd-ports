@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://cyberelk.net/tim/data/libieee1284/stable/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	IEEE1284 communication library
+COMMENT=	IEEE 1284 communication library
 
 LICENSE=	GPLv2
 
