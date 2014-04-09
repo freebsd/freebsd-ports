@@ -58,6 +58,7 @@ man/man1/epic5.1.gz
 %%DATADIR%%/script/meta-compat
 %%DATADIR%%/script/motd
 %%DATADIR%%/script/netsplit
+%%DATADIR%%/script/new_lastlog
 %%DATADIR%%/script/newaway
 %%DATADIR%%/script/newnick
 %%DATADIR%%/script/nickcomp

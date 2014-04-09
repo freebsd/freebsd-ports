@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	epic5
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC5-PRODUCTION/ \
 		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC5-PRODUCTION/ \
 		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC5-PRODUCTION/
 
-MAINTAINER=	jpaetzel@FreeBSD.org
+MAINTAINER=	mp39590@gmail.com
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 LICENSE=	BSD3CLAUSE
@@ -21,8 +21,8 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 USE_BZIP2=	yes
 CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
-OPTIONS_DEFINE=	IPV6 TCL PERL SSL TERMCAP DOCS RUBY
-OPTIONS_DEFAULT=	TCL PERL SSL RUBY
+OPTIONS_DEFINE=	IPV6 TCL PERL TERMCAP DOCS RUBY
+OPTIONS_DEFAULT=	TCL PERL RUBY
 TERMCAP_DESC=	Refuse to use terminfo/ncurses
 
 CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
