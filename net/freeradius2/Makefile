@@ -185,6 +185,7 @@ PLIST_SUB+=	RLMPYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}
+IGNORE=		with ruby support leaks memory, breaks signal handling.  Please disable RUBY support
 USE_RUBY=	yes
 CONFIGURE_ARGS+=--with-rlm_ruby
 PLIST_SUB+=	RLMRUBY=""
