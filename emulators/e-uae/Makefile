@@ -13,14 +13,11 @@ COMMENT=	Enhanced version of UAE, the Amiga emulator
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	DOCS
-
 CONFLICTS=	uae-[0-9]*
 
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_GNOME=	gtk20
 USE_SDL=	sdl
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sdl --with-sdl-gfx
 MAKE_JOBS_UNSAFE=	yes
@@ -30,8 +27,7 @@ PORTDOCS=	ChangeLog README bsdsocket.txt cmd-line.txt \
 		joystick.txt keyboard.txt scsi.txt
 PLIST_FILES=	bin/readdisk bin/uae
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -40,20 +36,12 @@ post-patch:
 		${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/uae ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/readdisk ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/bsdsocket.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/cmd-line.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/compiling.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/configuration.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/floppies.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/joystick.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/keyboard.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/scsi.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/src/uae ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/readdisk ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog README docs/bsdsocket.txt \
+		docs/cmd-line.txt docs/compiling.txt docs/configuration.txt \
+		docs/floppies.txt docs/joystick.txt docs/keyboard.txt \
+		docs/scsi.txt ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
