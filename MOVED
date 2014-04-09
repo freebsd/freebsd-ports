@@ -5883,3 +5883,4 @@ games/f1lt||2014-04-06|Trademark violation: http://www.formula1.com/trademarkgui
 japanese/p5-manual||2014-04-08|Outdated manuals
 graphics/openclipart||2014-04-08|Outdated, has no real meaning as a port
 audio/py-xmms||2014-04-08|Has expired: Abandonware, please consider using multimedia/audacious instead
+archivers/ruby-libarchive|archivers/rubygem-libarchive|2014-04-08|Use the rubygem version instead

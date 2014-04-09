@@ -166,7 +166,6 @@
     SUBDIR += rpm4
     SUBDIR += rpm5
     SUBDIR += ruby-lha
-    SUBDIR += ruby-libarchive
     SUBDIR += ruby-zip
     SUBDIR += rubygem-archive-tar-minitar
     SUBDIR += rubygem-archive-zip
