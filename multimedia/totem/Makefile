@@ -4,7 +4,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	2.32.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -13,34 +13,34 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Gstreamer-based video player for the GNOME 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	gdata.7:${PORTSDIR}/devel/libgdata \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser
+LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
+		libtotem-plparser.so:${PORTSDIR}/multimedia/totem-pl-parser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		${PYTHON_SITELIBDIR}/atom/__init__.py:${PORTSDIR}/devel/py-gdata
 
 CONFLICTS=	totem-3.[0-9]*
 
+GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USE_BZIP2=	yes
-USES=		pathfix gettext desktop-file-utils pkgconfig
+USES=		pathfix gettext gmake desktop-file-utils libtool pkgconfig tar:bzip2 \
+		shebangfix
+SHEBANG_FILES=	data/totem-bugreport.py
 USE_GNOME=	gnomeprefix intlhack nautilus2 \
-		ltverhack pygtk2 gnomehier
+		pygtk2 gnomehier
 USE_GSTREAMER=	core gconf hal good mpeg2dec soup ugly python gio
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LIBS="-lXrandr" \
-		BROWSER_PLUGIN_DIR="${WEBPLUGINS_DIR}"
+		BROWSER_PLUGIN_DIR="${WEBPLUGIN_DIR}"
 CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 
-MAN1=		totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
 
@@ -56,15 +56,13 @@ TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
 		properties skipto youtube opensubtitles screenshot \
 		brasero-disc-recorder coherence_upnp dbus-service iplayer
 
-NO_STAGE=	yes
 # Not using:
 # TOTEM_PLUGINS= mythtv bemused jamendo
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_PUBLISH)
-LIB_DEPENDS+=	epc-1.0.2:${PORTSDIR}/www/libepc
+LIB_DEPENDS+=	libepc-1.0.so:${PORTSDIR}/www/libepc
 PLIST_SUB+=	PUBLISH=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} publish
 .else
@@ -80,7 +78,7 @@ PLIST_SUB+=	TRACKER="@comment "
 #.endif
 
 .if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	liblirc_client.so:${PORTSDIR}/comms/lirc
 PLIST_SUB+=	LIRC=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} lirc
 .else
@@ -88,7 +86,7 @@ PLIST_SUB+=	LIRC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGALAGO}
-LIB_DEPENDS+=	galago.3:${PORTSDIR}/devel/libgalago
+LIB_DEPENDS+=	libgalago.so:${PORTSDIR}/devel/libgalago
 PLIST_SUB+=	GALAGO=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} galago
 .else
@@ -101,11 +99,10 @@ CONFIGURE_ARGS+=--enable-browser-plugins \
 		--enable-narrowspace-plugin
 PLIST_SUB+=	BROWSER_PLUGINS=""
 
-USE_WEBPLUGINS=		gecko19 webkit-gtk2
-WEBPLUGINS_FILES=	libtotem-cone-plugin.so libtotem-gmp-plugin.so \
+USES+=		webplugin:native
+WEBPLUGIN_FILES=	libtotem-cone-plugin.so libtotem-gmp-plugin.so \
 			libtotem-mully-plugin.so \
 			libtotem-narrowspace-plugin.so
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .else
 CONFIGURE_ARGS+=--disable-browser-plugins \
 		--disable-basic-plugin \
@@ -131,9 +128,8 @@ post-patch:
 		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
 
 post-install:
-	${MKDIR} ${PREFIX}/share/vala/vapi
-	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vapi ${PREFIX}/share/vala/vapi
-	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.deps ${PREFIX}/share/vala/vapi
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/vala/vapi
+	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vapi ${STAGEDIR}${PREFIX}/share/vala/vapi
+	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.deps ${STAGEDIR}${PREFIX}/share/vala/vapi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
