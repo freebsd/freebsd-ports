@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- code/sprites/objrocket.py	2002/05/10 00:24:42	1.1
-+++ code/sprites/objrocket.py	2002/05/10 00:24:53
+--- ./code/sprites/objrocket.py.orig	2001-08-26 22:43:43.000000000 +0200
++++ ./code/sprites/objrocket.py	2014-04-09 22:27:18.663886283 +0200
 @@ -6,7 +6,6 @@
  import random
  import pygame
