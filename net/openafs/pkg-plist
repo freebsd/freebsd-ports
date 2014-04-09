@@ -223,6 +223,7 @@ libexec/openafs/upclient
 libexec/openafs/upserver
 libexec/openafs/vlserver
 libexec/openafs/volserver
+libexec/openafs/davolserver
 libexec/openafs/salvageserver
 libexec/openafs/dasalvager
 %%DATADIR%%/C/afszcm.cat
