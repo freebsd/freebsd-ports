@@ -12,12 +12,11 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Gnomemm puzzle game where you have to clean the caves of monsters
 
-LIB_DEPENDS=	gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
-		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
-		glademm-2.4:${PORTSDIR}/devel/libglademm24
+LIB_DEPENDS=	libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26 \
+		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
+		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24
 
-USE_BZIP2=	yes
-USES=		pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack libgnome esound
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -25,7 +24,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lesd
 
 GCONF_SCHEMAS=	monster-masher.schemas
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/pixbuf-drawing.hpp
