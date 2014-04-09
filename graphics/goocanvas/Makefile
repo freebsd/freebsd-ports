@@ -4,6 +4,7 @@
 
 PORTNAME=	goocanvas
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -12,11 +13,10 @@ COMMENT=	Canvas widget for GTK+
 
 PORTSCOUT=	ignore:1
 
-USES=		pathfix pkgconfig
-USE_GNOME=	gtk20 ltverhack
+USES=		libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -43,8 +43,8 @@ post-patch:
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|po||g' ${WRKSRC}/Makefile.in
 .endif
-
+ 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoocanvas.so.3 
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoocanvas.so.*
 
 .include <bsd.port.mk>

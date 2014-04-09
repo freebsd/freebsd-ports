@@ -4,7 +4,7 @@
 
 PORTNAME=	goocanvasmm
 PORTVERSION=	0.15.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -15,14 +15,13 @@ LIB_DEPENDS=	libgoocanvas.so:${PORTSDIR}/graphics/goocanvas
 
 PORTSCOUT=	ignore:1
 
-USES=		gmake pathfix pkgconfig
-USE_GNOME=	gtkmm24 ltverhack
+USES=		libtool gmake pathfix pkgconfig tar:bzip2
+USE_GNOME=	gtkmm24
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-documentation
-USE_BZIP2=	yes
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoocanvasmm-1.0.so.5
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoocanvasmm-1.0.so.*
 
 .include <bsd.port.mk>
