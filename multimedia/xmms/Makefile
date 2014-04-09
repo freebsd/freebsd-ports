@@ -10,13 +10,10 @@ MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		LOCAL/beech
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	naddy@FreeBSD.org
 COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
 LICENSE=	GPLv2
-
-DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
-EXPIRATION_DATE=	2014-05-01
 
 CONFLICTS?=	ru-xmms-[0-9]* zh-xmms-[0-9]*
 GNU_CONFIGURE=	yes
