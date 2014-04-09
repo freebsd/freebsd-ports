@@ -14,11 +14,7 @@ COMMENT=	Localized interface for SeaMonkey
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-PLIST?=		${WRKDIR}/plist
-PLISTD?=	${WRKDIR}/plist_dirs
-PLISTF?=	${WRKDIR}/plist_files
-
-USE_SEAMONKEY=	yes
+USES=		zip:infozip gecko:seamonkey
 USE_XPI=	seamonkey linux-seamonkey
 
 NO_ARCH=	yes
@@ -28,13 +24,17 @@ WDIR=	langpack-*@seamonkey.mozilla.org
 
 XPI_DISTNAMES=	${SEAMONKEY_I18N_}
 
+PLIST?=		${WRKDIR}/plist
+PLISTD?=	${WRKDIR}/plist_dirs
+PLISTF?=	${WRKDIR}/plist_files
+
+.include "${.CURDIR}/Makefile.option"
+.include <bsd.port.pre.mk>
+
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif
 
-NO_STAGE=	yes
-.include "${.CURDIR}/Makefile.option"
-.include <bsd.port.options.mk>
 .include "${.CURDIR}/Makefile.lang"
 
 SEAMONKEY_I18N_?=	${SEAMONKEY_I18N}
@@ -64,16 +64,23 @@ do-extract:
 	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
 	${CAT} ${PLISTD} | ${SORT} -r >> ${PLIST}
 
+.if !exists(${OPTIONSFILE}) && !defined(PACKAGE_BUILDING)
+pre-configure: config
+.endif
+
 do-install:
-	@${INSTALL} -d ${XPI_LIBDIR} ${XPI_SLDIRS_ALL}
-	@${CP} -R ${WRKSRC}/ ${XPI_LIBDIR}/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_LIBDIR}/${WDIR}/
-	@${CHMOD} -R a+rX,go-w ${XPI_LIBDIR}/${WDIR}/
-	@for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q} ; }
+	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${STAGEDIR}${XPI_SLDIRS_ALL}
+	cd ${WRKSRC}; ${PAX} -rw . ${STAGEDIR}${XPI_LIBDIR}
+	${CHMOD} -R a+rX,go-w ${STAGEDIR}${XPI_LIBDIR}/${WDIR}/
+	@for e in ${STAGEDIR}${XPI_LIBDIR}/${WDIR}; do \
+		for _dir in ${XPI_LINKFARMS} ; do \
+		${LN} -sf $${_e##*/} ${STAGEDIR}$$_dir/ ${_Q} ; \
+		done \
+	done
 	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { \
 		${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q}; }' ${_A}
-	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ${XPI_LIBDIR}; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
@@ -86,4 +93,4 @@ list-langs:
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
