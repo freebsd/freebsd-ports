@@ -13,24 +13,16 @@ COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
 OPTIONS_DEFINE=	FAM DOCS
 
-USE_GNOME=	gnomehack gtk20
-USES=		gettext gmake pkgconfig
+USE_GNOME=	gtk20
+USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
-
-MAN1=		gentoo.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFAM}
-USES+=		fam
-.else
-CONFIGURE_ARGS+=	--disable-fam
-.endif
+FAM_USES=		fam
+FAM_CONFIGURE_ENABLE=	fam
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g ; \
@@ -42,18 +34,13 @@ post-patch:
 		${WRKSRC}/src/odmultibutton.c
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${STAGEDIR}${MANPREFIX}/man/man1/gentoo.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS README.gtkrc \
 	TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${TAR} -C ${WRKSRC}/docs --exclude "gentoo.1x*" -cf - . | \
-		${TAR} -C ${DOCSDIR} --unlink -xf -
-	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${DOCSDIR} | ${XARGS} ${CHMOD} ${SHAREMODE}
-	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+x
-.endif
+	cd ${WRKSRC}/docs; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${RM} -f ${STAGEDIR}${DOCSDIR}/gentoo.1x
 
 .include <bsd.port.mk>
