@@ -210,7 +210,6 @@ include/net-snmp/varbind_api.h
 include/net-snmp/version.h
 lib/libnetsnmp.a
 lib/libnetsnmp.la
-lib/libnetsnmp.so
 lib/libnetsnmp.so.%%SHLIB_VERSION%%
 @exec ln -fs libnetsnmp.so.%%SHLIB_VERSION%% %B/libnetsnmp.so
 @unexec rm -f %B/libnetsnmp.so 2> /dev/null || true
@@ -622,3 +621,4 @@ sbin/snmptrapd
 @cwd /
 @exec mkdir -p var/agentx
 @unexec rmdir var/agentx 2>/dev/null || true
+@dirrmtry /var/agentx
