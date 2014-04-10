@@ -44,5 +44,6 @@
 %%PYTHON_SITELIBDIR%%/S3/__init__.pyc
 %%PYTHON_SITELIBDIR%%/S3/__init__.pyo
 bin/s3cmd
+man/man1/s3cmd.1.gz
 @dirrmtry %%PYTHON_SITELIBDIR%%/S3
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
