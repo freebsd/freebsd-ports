@@ -5962,7 +5962,7 @@ _CHECK_CONFIG_ERROR=	true
 .if !target(check-config)
 check-config: _check-config
 .if !empty(_CHECK_CONFIG_ERROR)
-	@exit 1
+	@${FALSE}
 .endif
 .endif # check-config
 
