@@ -9,7 +9,7 @@ MASTER_SITES=	http://kaiwitte.org/jtiger/
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Unit Test Framework and Tools for the Java2 Platform
 
-USE_JAVA=	1.5
+USE_JAVA=	1.6
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

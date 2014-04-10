@@ -13,7 +13,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Browser based client handling WMS, WFS, and proxy service
 
 USES=		zip
-USE_JAVA=	1.5+
+USE_JAVA=	1.6+
 
 NO_BUILD=	yes
 TOMCATDIR=	${PREFIX}/${TOMCATVER}
