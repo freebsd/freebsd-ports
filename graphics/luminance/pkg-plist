@@ -1,6 +1,9 @@
-bin/luminance-hdr
-bin/luminance-hdr-cli
+%%QT_BINDIR%%/luminance-hdr
+%%QT_BINDIR%%/luminance-hdr-cli
 share/applications/luminance-hdr.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/hicolor/48x48/apps/luminance-hdr.png
 %%DATADIR%%/help/en/README
 %%DATADIR%%/help/en/additional.html
@@ -60,13 +63,8 @@ share/icons/hicolor/48x48/apps/luminance-hdr.png
 %%DATADIR%%/help/en/tonemapping_cli.html
 %%DATADIR%%/help/en/tonemapping_interactive.html
 %%DATADIR%%/help/en/workflow.html
-%%DATADIR%%/help/js/jquery.js
-%%DATADIR%%/help/js/jquery.jtabs.pack.js
-@dirrm %%DATADIR%%/help/js
-@dirrm %%DATADIR%%/help/en/images
-@dirrm %%DATADIR%%/help/en
-@dirrm %%DATADIR%%/help
 %%DATADIR%%/i18n/lang_cs.qm
+%%DATADIR%%/i18n/lang_da.qm
 %%DATADIR%%/i18n/lang_de.qm
 %%DATADIR%%/i18n/lang_es.qm
 %%DATADIR%%/i18n/lang_fi.qm
@@ -93,9 +91,13 @@ share/icons/hicolor/48x48/apps/luminance-hdr.png
 %%DATADIR%%/i18n/qt_ru.qm
 %%DATADIR%%/i18n/qt_tr.qm
 %%DATADIR%%/i18n/qt_zh.qm
-@dirrm %%DATADIR%%/i18n
-@dirrm %%DATADIR%%
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/Changelog
-%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/i18n
+@dirrmtry %%DATADIR%%/help/en/images
+@dirrmtry %%DATADIR%%/help/en
+@dirrmtry %%DATADIR%%/help
+@dirrmtry %%DATADIR%%
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
