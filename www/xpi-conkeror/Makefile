@@ -20,19 +20,13 @@ FIREFOX_DESC?=	Use XULRunner from Firefox port
 LIBXUL_DESC?=	Use XULRunner from LibXUL port
 OPTIONS_DEFAULT+=	LIBXUL
 
+USES=		desktop-file-utils tar:xz
+
 WRKSRC=		${WRKDIR}/conkeror
-LIBXUL_USE=	gecko
-FIREFOX_USE=	gecko:firefox,25+
+LIBXUL_USES=	gecko
+FIREFOX_USES=	gecko:firefox,25
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBXUL}
-USE_GECKO=libxul
-.else
-USE_FIREFOX=25+
-.endif
-
-USES=		desktop-file-utils tar:xz
 
 BUILD_ID=	${ECHO_CMD} -n `whoami`@`hostname`_`date +%s`
 
