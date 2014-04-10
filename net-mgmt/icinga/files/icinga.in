@@ -105,7 +105,7 @@ start_precmd() {
            "${icinga_logdir}" \
            "${icinga_logdir}/archives"; do
     if [ ! -d "${d}" ]; then
-      install -d -o "${icinga_user}" -g "${icinga_group}" "${icinga_dir}"/checkresults
+      install -d -o "${icinga_user}" -g "${icinga_group}" "${d}"
     fi
   done
 
