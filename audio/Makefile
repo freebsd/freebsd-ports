@@ -794,6 +794,7 @@
     SUBDIR += xmms-ahx
     SUBDIR += xmms-bonk
     SUBDIR += xmms-curses
+    SUBDIR += xmms-faad
     SUBDIR += xmms-festalon
     SUBDIR += xmms-flac
     SUBDIR += xmms-gbsplay
