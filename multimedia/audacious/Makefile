@@ -86,11 +86,13 @@ post-patch:
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/audtool
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/audacious
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudclient.so.2.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudcore.so.1.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudgui.so.1.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudtag.so.1.0.0
+.if ${PORT_OPTIONS:MDBUS}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/audtool
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudclient.so.2.0.0
+.endif
 
 .include <bsd.port.mk>
