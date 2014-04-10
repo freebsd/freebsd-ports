@@ -139,7 +139,6 @@ ICON-Slick.*		x11-themes/gnome-icons-slick Themes may contain artwork not done b
 ICON-Snow-Apple.*	x11-themes/gnome-icons-snow-apple Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 ICON-Stylish.*		x11-themes/gnome-icons-stylish Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
-j2sdkee-*		java/j2sdkee13		For development and testing use only; redistribution prohibited
 jaf-*.zip		java/jaf		See the license
 jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
 jai_imageio-*-lib-linux-* java/jai-imageio	Redistribution is not permitted
