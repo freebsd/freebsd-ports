@@ -50,7 +50,7 @@ PLOT_LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
 PLOT_CONFIGURE_ON=	--with-plot=${LOCALBASE}
 PLOT_CONFIGURE_OFF=	--without-plot
 
-TEX_USE=	TEX=base,texmf,texlive
+TEX_USE=	TEX=base,texmf,latex
 TEX_CONFIGURE_ON=	--with-kpsexpand \
 			--with-texdir=${LOCALBASE}/share/texmf/tex/latex/gnuplot
 TEX_CONFIGURE_OFF=	--without-kpexpand
