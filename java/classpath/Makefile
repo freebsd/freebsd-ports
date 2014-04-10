@@ -77,7 +77,6 @@ PLIST_SUB+=		GCONF="@comment "
 ANTLR_JAR=		antlr-2.7.7.jar
 MASTER_SITES+=		http://www.antlr2.org/download/:antlr
 DISTFILES+=		${ANTLR_JAR}:antlr
-PLIST_FILES+=		man/man1/gjdoc.1.gz
 CONFIGURE_ARGS+=	--with-antlr-jar=${DISTDIR}/${ANTLR_JAR}
 PLIST_SUB+=		GJDOC=""
 .else
