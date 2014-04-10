@@ -53,7 +53,7 @@ man/man1/gcjh.1.gz
 man/man1/gjar.1.gz
 man/man1/gjarsigner.1.gz
 man/man1/gjavah.1.gz
-man/man1/gjdoc.1.gz
+%%GJDOC%%man/man1/gjdoc.1.gz
 man/man1/gkeytool.1.gz
 man/man1/gnative2ascii.1.gz
 man/man1/gorbd.1.gz
