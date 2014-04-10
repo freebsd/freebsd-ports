@@ -13,9 +13,10 @@ COMMENT=	Unix-Connect - mail+news-gateway for Zconnect (tm)
 BUILD_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 
 LICENSE_COMB=	multi
-LICENSE=	GPLv2 BSD
+LICENSE=	GPLv2 BSD3CLAUSE
 
-NO_STAGE=	yes
+MANUAL_PACKAGE_BUILD=	needs hostname
+NEED_ROOT=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 #USE_GMAKE=     yes
@@ -25,21 +26,50 @@ CONFIGURE_ARGS+=--with-group=dialer
 CONFIGURE_ARGS+=--with-execdir=${PREFIX}/libexec/uconnect
 CONFIGURE_ARGS+=--with-confdir=${PREFIX}/etc/uconnect
 CONFIGURE_ARGS+=--with-spooldir=/var/spool/uconnect
-CONFIGURE_ARGS+=--with-mail=sendmail
-CONFIGURE_ARGS+=--with-news=cnews
 CONFIGURE_ARGS+=--enable-testing
 CFLAGS+=	-g
 CFLAGS:=	${CFLAGS:S/-O[0-9]*//g}	# gcc generates broken code in uwsmtp
 
-MANUAL_PACKAGE_BUILD=	needs hostname
+DOC1=	README INSTALL TODO ChangeLog ChangeLog.configure
+
+OPTIONS_DEFINE=
+OPTIONS_SINGLE=	MAIL NEWS
+OPTIONS_SINGLE_MAIL=	SENDMAIL POSTFIX QMAIL SMAIL NO_MAIL
+OPTIONS_SINGLE_NEWS=	CNEWS INN NO_NEWS
+OPTIONS_DEFAULT=SENDMAIL CNEWS
+NO_OPTIONS_SORT=yes
+OPTIONS_SUB=	yes
+SENDMAIL_DESC=	build mail scripts for sendmail
+POSTFIX_DESC=	build mail scripts for postfix
+QMAIL_DESC=	build mail scripts for qmail
+SMAIL_DESC=	build mail scripts for smail
+NOMAIL_DESC=	no mail scripts
+CNEWS_DESC=	build news scripts for cnews
+INN_DESC=	build news scripts for inn
+NO_NEWS_DESC=	no news scripts
+SENDMAIL_CONFIGURE_ON=	--with-mail=sendmail
+POSTFIX_CONFIGURE_ON=	--with-mail=postfix
+QMAIL_CONFIGURE_ON=	--with-mail=qmail
+SMAIL_CONFIGURE_ON=	--with-mail=smail
+NOMAIL_CONFIGURE_ON=	--with-mail=no
+CNEWS_CONFIGURE_ON=	--with-news=cnews
+INN_CONFIGURE_ON=	--with-news=inn
+NO_NEWS_CONFIGURE_ON=	--with-news=no
+
+.include <bsd.port.options.mk>
+
+pre-install:
+	${MKDIR} ${STAGEDIR}/var/spool
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in README INSTALL TODO ChangeLog ChangeLog.configure
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
-.endfor
-	@${TAR} -C ${WRKSRC}/docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
+.if ${PORT_OPTIONS:MCNEWS}
+	${INSTALL_SCRIPT} ${WRKSRC}/mail-and-news/cnews/viazconnect \
+		${STAGEDIR}${PREFIX}/libexec/uconnect/
+.endif
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC1:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	${TAR} -C ${WRKSRC}/docs -cf - . | ${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -
 .endif
 
 .include <bsd.port.mk>
