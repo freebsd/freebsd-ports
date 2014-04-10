@@ -23,6 +23,7 @@ NO_CDROM=	Bungie/Microsoft do not allow charging for Marathon data files
 OPTIONS_MULTI=	AO
 OPTIONS_MULTI_AO=	MARATHON DURANDAL INFINITY
 OPTIONS_DEFAULT=	MARATHON DURANDAL INFINITY
+OPTIONS_SUB=	yes
 
 MARATHON_DESC=	Install Marathon data
 DURANDAL_DESC=	Install Marathon 2: Durandal data
@@ -30,39 +31,29 @@ INFINITY_DESC=	Install Marathon Infinity data
 
 SUB_FILES=	wrapper
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DATADIR!=	cd ${PORTSDIR}/games/alephone && ${MAKE} -V DATADIR
 
 .if ${PORT_OPTIONS:MMARATHON}
 DISTFILES+=	M1A1${EXTRACT_SUFX}
-PLIST_SUB+=	MARATHON=""
 AO_PACKS+=	marathon
 DESKTOP_ENTRIES+="Marathon" "" "" "alephone-marathon" \
 		"Game;ActionGame;" false
-.else
-PLIST_SUB+=	MARATHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDURANDAL}
 DISTFILES+=	Marathon2${EXTRACT_SUFX}
-PLIST_SUB+=	DURANDAL=""
 AO_PACKS+=	durandal
 DESKTOP_ENTRIES+="Marathon 2: Durandal" "" "" "alephone-durandal" \
 		"Game;ActionGame;" false
-.else
-PLIST_SUB+=	DURANDAL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MINFINITY}
 DISTFILES+=	MarathonInfinity${EXTRACT_SUFX}
-PLIST_SUB+=	INFINITY=""
 AO_PACKS+=	infinity
 DESKTOP_ENTRIES+="Marathon Infinity" "" "" "alephone-infinity" \
 		"Game;ActionGame;" false
-.else
-PLIST_SUB+=	INFINITY="@comment "
 .endif
 
 post-extract:
@@ -82,14 +73,10 @@ pre-install:
 .endfor
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in ${AO_PACKS}
-	${INSTALL_SCRIPT} ${WRKSRC}/alephone-${f} ${PREFIX}/bin
-	${CP} -R ${WRKSRC}/${f} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/alephone-${f} ${STAGEDIR}${PREFIX}/bin
+	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
