@@ -14,22 +14,23 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator (closed binary version of vgb)
 
-LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	libc.so.5:${PORTSDIR}/misc/compat5x
 
 IA32_BINARY_PORT=	yes
 NO_BUILD=	no
 NO_WRKSUBDIR=	no
 
-INSTALL_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP}
+PLIST_FILES=	bin/vgb
+PORTDATA=	CART.GB
+PORTDOCS=	VGB.html
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/vgb ${PREFIX}/bin
-	@${INSTALL_DIR} ${PREFIX}/share/vgb
-	@${INSTALL_DATA} ${WRKSRC}/CART.GB ${PREFIX}/share/vgb
-.if !defined(NOPORTDOCS)
-	@${INSTALL_DIR} ${PREFIX}/share/doc/vgb
-	@${INSTALL_DATA} ${WRKSRC}/VGB.html ${PREFIX}/share/doc/vgb
-.endif # !defined(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${WRKSRC}/vgb ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/CART.GB ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/VGB.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

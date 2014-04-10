@@ -1,5 +1,0 @@
-bin/vgb
-share/vgb/CART.GB
-%%PORTDOCS%%share/doc/vgb/VGB.html
-%%PORTDOCS%%@dirrm share/doc/vgb
-@dirrm share/vgb
