@@ -1,5 +1,5 @@
---- Makefile.in.orig	2013-11-22 12:27:23.000000000 -0800
-+++ Makefile.in	2013-11-22 12:28:30.000000000 -0800
+--- ./Makefile.in.orig	2012-10-10 01:28:58.000000000 +0300
++++ ./Makefile.in	2014-04-10 18:31:37.128627539 +0300
 @@ -20,7 +20,7 @@
  INCLUDESUBDIRHEADERS= aix.h bsd.h bsdi3.h bsdi4.h bsdi.h cygwin.h \
  	darwin.h darwin7.h darwin8.h darwin9.h darwin10.h dragonfly.h dynix.h \
@@ -9,3 +9,12 @@
          generic.h \
  	hpux.h irix.h linux.h mingw32.h mips.h netbsd.h osf5.h \
  	openbsd.h openbsd5.h openbsd4.h \
+@@ -229,7 +229,7 @@
+         fi
+ 
+ pythoninstall:
+-	@(dir=`pwd`; cd python; $(PYMAKE) install --basedir=$$dir) ; \
++	@(dir=`pwd`; cd python; $(PYMAKE) install --root=${STAGEDIR} --basedir=$$dir ${PYDISTUTILS_INSTALLARGS}) ; \
+         if test $$? != 0 ; then \
+            exit 1 ; \
+         fi
