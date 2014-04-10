@@ -1,38 +1,35 @@
---- Makefile.in.orig	2013-05-03 15:23:56.312803000 -0400
-+++ Makefile.in	2013-06-11 16:38:52.000000000 -0400
-@@ -233,7 +233,7 @@
+--- Makefile.in.orig	2014-04-02 06:21:18.672343000 -0400
++++ Makefile.in	2014-04-09 20:12:29.000000000 -0400
+@@ -309,9 +309,9 @@
  #end of exported autoconf copies
  
  # binary names
 -javaws := $(shell echo javaws | sed '@program_transform_name@')
 +javaws := $(shell echo itweb-javaws | sed '@program_transform_name@')
  itweb_settings := $(shell echo itweb-settings | sed '@program_transform_name@')
+-policyeditor := $(shell echo policyeditor | sed '@program_transform_name@')
++policyeditor := $(shell echo itweb-policyeditor | sed '@program_transform_name@')
  
  # the launcher needs to know $(bindir) and $(datadir) which can be different at
-@@ -739,7 +739,7 @@
- # =================
- 
- all-local: stamps/netx-dist.stamp extra-lib/about.jar stamps/plugin.stamp launcher.build/$(javaws) \
-- javaws.desktop stamps/docs.stamp launcher.build/$(itweb_settings) itweb-settings.desktop
-+ itweb-javaws.desktop stamps/docs.stamp launcher.build/$(itweb_settings) itweb-settings.desktop
- 
- check-local: $(RHINO_TESTS) $(JUNIT_TESTS)
- 
-@@ -760,24 +760,26 @@
+ # make-time from configure-time
+@@ -851,34 +851,36 @@
  @ENABLE_PLUGIN_TRUE@	${INSTALL_DATA} $(abs_top_builddir)/liveconnect/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/plugin.jar
  	${INSTALL_DATA} $(NETX_DIR)/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/netx.jar
  	${INSTALL_DATA} $(NETX_SRCDIR)/javaws_splash.png $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/javaws_splash.png
 -	${INSTALL_PROGRAM} launcher.build/$(javaws) $(DESTDIR)$(bindir)
-+	${INSTALL_SCRIPT} launcher.build/$(javaws) $(DESTDIR)$(bindir)
- 	${INSTALL_DATA} extra-lib/about.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/about.jar
 -	${INSTALL_PROGRAM} launcher.build/$(itweb_settings) $(DESTDIR)$(bindir)
+-	${INSTALL_PROGRAM} launcher.build/$(policyeditor) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} launcher.build/$(javaws) $(DESTDIR)$(bindir)
 +	${INSTALL_SCRIPT} launcher.build/$(itweb_settings) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} launcher.build/$(policyeditor) $(DESTDIR)$(bindir)
  
  install-data-local:
  	${mkinstalldirs} -d $(DESTDIR)$(mandir)/man1
 -	${INSTALL_DATA} $(NETX_SRCDIR)/javaws.1 $(DESTDIR)$(mandir)/man1
 +	${INSTALL_DATA} $(NETX_SRCDIR)/javaws.1 $(DESTDIR)$(mandir)/man1/itweb-javaws.1
- 	${INSTALL_DATA} $(NETX_RESOURCE_DIR)/about.jnlp $(DESTDIR)$(datarootdir)/$(PACKAGE_NAME)
+ 	${INSTALL_DATA} $(NETX_SRCDIR)/itweb-settings.1 $(DESTDIR)$(mandir)/man1
+-	${INSTALL_DATA} $(NETX_SRCDIR)/policyeditor.1 $(DESTDIR)$(mandir)/man1
++	${INSTALL_DATA} $(NETX_SRCDIR)/policyeditor.1 $(DESTDIR)$(mandir)/man1/itweb-policyeditor.1
  @ENABLE_DOCS_TRUE@	${mkinstalldirs} $(DESTDIR)$(htmldir)
  @ENABLE_DOCS_TRUE@	(cd ${abs_top_builddir}/docs/netx; \
  @ENABLE_DOCS_TRUE@	 for files in $$(find . -type f); \
@@ -50,27 +47,41 @@
  @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	 done)
  
  uninstall-local:
-@@ -786,7 +788,7 @@
+ 	rm -f $(DESTDIR)$(libdir)/$(BUILT_PLUGIN_LIBRARY)
+ 	rm -f $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/plugin.jar
  	rm -f $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/netx.jar
- 	rm -f $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/about.jnlp
- 	rm -f $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/about.jar
 -	rm -f $(DESTDIR)$(mandir)/man1/javaws.1
 +	rm -f $(DESTDIR)$(mandir)/man1/itweb-javaws.1
+ 	rm -f $(DESTDIR)$(mandir)/man1/itweb-settings.1
+-	rm -f $(DESTDIR)$(mandir)/man1/policyeditor.1
++	rm -f $(DESTDIR)$(mandir)/man1/itweb-policyeditor.1
  	rm -f $(DESTDIR)$(bindir)/$(javaws)
  	rm -f $(DESTDIR)$(bindir)/$(itweb_settings)
- 	rm -rf $(DESTDIR)$(htmldir)
-@@ -945,8 +947,8 @@
- 
- netx-source-files.txt:
- 	find $(NETX_SRCDIR) -name '*.java' | sort > $@
+ 	rm -f $(DESTDIR)$(bindir)/$(policyeditor)
+@@ -1041,10 +1043,10 @@
+ 	find $(NETX_SRCDIR) -name '*.java' | sort > $@ ; \
+ 	for src in $(NETX_EXCLUDE_SRCS) ; \
+ 	do \
+-	  sed -i "/$${src}/ d" $@ ; \
++	  sed -i -e "/$${src}/ d" $@ ; \
+ 	done
 -@WITH_RHINO_FALSE@	sed -i '/RhinoBasedPacEvaluator/ d' $@
 -@HAVE_JAVA7_FALSE@	sed -i '/VariableX509TrustManagerJDK7/ d' $@
 +@WITH_RHINO_FALSE@	sed -i -e '/RhinoBasedPacEvaluator/ d' $@
 +@HAVE_JAVA7_FALSE@	sed -i -e '/VariableX509TrustManagerJDK7/ d' $@
  
- stamps/netx.stamp: netx-source-files.txt stamps/bootstrap-directory.stamp
+ stamps/netx-html-gen.stamp:
+ 	(cd $$NETX_SRCDIR/..; \
+@@ -1058,7 +1060,7 @@
+ 	mkdir -p stamps
+ 	touch $@
+ 
+-stamps/netx.stamp: netx-source-files.txt stamps/bootstrap-directory.stamp stamps/netx-html-gen.stamp
++stamps/netx.stamp: netx-source-files.txt stamps/bootstrap-directory.stamp
  	mkdir -p $(NETX_DIR)
-@@ -958,7 +960,8 @@
+ 	$(BOOT_DIR)/bin/javac $(IT_JAVACFLAGS) \
+ 	    -d $(NETX_DIR) \
+@@ -1069,7 +1071,8 @@
  	(cd $(NETX_RESOURCE_DIR); \
  	 for files in $$(find . -type f); \
  	 do \
@@ -80,37 +91,34 @@
  	   $(NETX_DIR)/net/sourceforge/jnlp/resources/$${files}; \
  	 done)
  	cp -a $(NETX_SRCDIR)/net/sourceforge/jnlp/runtime/pac-funcs.js \
-@@ -986,7 +989,7 @@
- 	rm -f stamps/netx.stamp
+@@ -1099,7 +1102,7 @@
+ 	rm -f $(NETX_RESOURCE_DIR)/{NEWS,AUTHORS,COPYING,ChangeLog}.html
  
  clean-desktop-files:
 -	rm -f javaws.desktop
 +	rm -f itweb-javaws.desktop
  	rm -f itweb-settings.desktop
  
- # extras -- used to create about.jar for javaws.
-@@ -1001,7 +1004,8 @@
- 	(cd $(NETX_EXTRA_DIR); \
- 	 for files in $$(find . -type f); \
- 	 do \
--	   ${INSTALL_DATA} -D $${files} \
-+	   mkdir -p `dirname $(NETX_EXTRA_DIST_DIR)/$${files}`; \
-+	   ${INSTALL_DATA} $${files} \
- 	   $(NETX_EXTRA_DIST_DIR)/$${files}; \
- 	 done)
- 	mkdir -p stamps
-@@ -1030,8 +1034,8 @@
- 	  rmdir launcher.build ; \
+ launcher.build/$(javaws): launcher/launchers.in
+@@ -1132,7 +1135,7 @@
  	fi
  
--javaws.desktop: javaws.desktop.in
+ javaws.desktop: javaws.desktop.in
 -	sed "s#PATH_TO_JAVAWS#$(bindir)/$(javaws)#" < $(srcdir)/javaws.desktop.in > javaws.desktop
-+itweb-javaws.desktop: javaws.desktop.in
 +	sed "s#PATH_TO_JAVAWS#$(bindir)/$(javaws)#" < $(srcdir)/javaws.desktop.in > itweb-javaws.desktop
  
  itweb-settings.desktop: $(srcdir)/itweb-settings.desktop.in
  	sed "s#PATH_TO_ITWEB_SETTINGS#$(bindir)/$(itweb_settings)#" \
-@@ -1146,7 +1150,7 @@
+@@ -1140,7 +1143,7 @@
+ 
+ policyeditor.desktop: $(srcdir)/policyeditor.desktop.in
+ 	sed 's#PATH_TO_POLICYEDITOR#$(bindir)/$(policyeditor)#' \
+-	< $(srcdir)/policyeditor.desktop.in > policyeditor.desktop
++	< $(srcdir)/policyeditor.desktop.in > itweb-policyeditor.desktop
+ 
+ # documentation
+ 
+@@ -1251,7 +1254,7 @@
  	      notSrcFiles=`find . -mindepth 1 -type f \! -name "*.java" | sed "s/.\/*//"` ; \
  	      $(BOOT_DIR)/bin/javac -cp $(NETX_DIR)/lib/classes.jar:$(abs_top_builddir)/liveconnect -d "$(REPRODUCERS_BUILD_DIR)/$$dir/" $$srcFiles ; \
  	      if [ -n "$$notSrcFiles" ] ; then \
@@ -119,7 +127,7 @@
  	      fi ; \
  	      cd "$(REPRODUCERS_BUILD_DIR)/$$dir/" ; \
  	      if [ -f $(META_MANIFEST) ]; \
-@@ -1201,7 +1205,7 @@
+@@ -1306,7 +1309,7 @@
  	      path="`dirname $$slashed_dir`" ; \
  	      file="`basename $$slashed_dir`.jar" ; \
  	      echo "copying $$dir.jar to $$path as $$file" ; \
@@ -128,7 +136,7 @@
  	      cp $$dir".jar" "$$path"/"$$file" ; \
  	    fi ; \
  	  done ; \
-@@ -1308,7 +1312,7 @@
+@@ -1434,7 +1437,7 @@
  	whiteListed=`cat $(REPRODUCERS_CLASS_WHITELIST)`; \
  	cd $(TEST_EXTENSIONS_TESTS_DIR) ; \
  	class_names= ; \
@@ -137,16 +145,7 @@
  	  class_name=`echo $$test | sed -e 's|\.class$$||' -e 's|^\./||'` ; \
  	  class_name=`echo $$class_name | sed -e 's|/|.|g' ` ; \
  	  INLCUDE="NO" ; \
-@@ -1334,7 +1338,7 @@
- 	mv $(SOFTKILLER) $(TESTS_DIR)/
- 
- stamps/run-netx-dist-tests.stamp: stamps/netx-dist.stamp extra-lib/about.jar stamps/plugin.stamp launcher.build/$(javaws) \
-- javaws.desktop stamps/docs.stamp launcher.build/$(itweb_settings) itweb-settings.desktop \
-+ itweb-javaws.desktop stamps/docs.stamp launcher.build/$(itweb_settings) itweb-settings.desktop \
-  stamps/netx.stamp stamps/junit-jnlp-dist-dirs stamps/netx-dist-tests-import-cert-to-public $(TESTS_DIR)/softkiller \
-  stamps/test-extensions-compile.stamp stamps/compile-reproducers-testcases.stamp $(JUNIT_RUNNER_JAR) stamps/copy-reproducers-resources.stamp\
-  $(TESTS_DIR)/$(REPORT_STYLES_DIRNAME) $(REPRODUCERS_CLASS_NAMES) stamps/process-custom-reproducers.stamp
-@@ -1497,7 +1501,7 @@
+@@ -1624,7 +1627,7 @@
  $(UNIT_CLASS_NAMES):
  	cd $(NETX_UNIT_TEST_DIR) ; \
  	class_names= ; \
@@ -155,7 +154,7 @@
  	  class_name=`echo $$test | sed -e 's|\.class$$||' -e 's|^\./||'` ; \
  	  class_name=`echo $$class_name | sed -e 's|/|.|g' ` ; \
  	  class_names="$$class_names $$class_name" ; \
-@@ -1508,10 +1512,7 @@
+@@ -1635,10 +1638,7 @@
   $(TESTS_DIR)/$(REPORT_STYLES_DIRNAME)  $(UNIT_CLASS_NAMES)
  	filename=" " ; \
  	cd $(NETX_UNIT_TEST_SRCDIR) ; \
@@ -166,8 +165,8 @@
 +	tar -c -f - `find . -type f \! -iname "*.java"` | tar -x -f - -C $(NETX_UNIT_TEST_DIR) ; \
  	cd $(NETX_UNIT_TEST_DIR) ; \
  	class_names=`cat $(UNIT_CLASS_NAMES)` ; \
- 	CLASSPATH=$(NETX_DIR)/lib/classes.jar:$(abs_top_builddir)/liveconnect/lib/classes.jar:$(JUNIT_JAR):$(JUNIT_RUNNER_JAR):$(TEST_EXTENSIONS_DIR):.:$(TEST_EXTENSIONS_SRCDIR) \
-@@ -1995,9 +1996,7 @@
+ 	CLASSPATH=$(NETX_DIR)/lib/classes.jar:$(abs_top_builddir)/liveconnect/lib/classes.jar:$(JUNIT_JAR):$(JUNIT_RUNNER_JAR):$(TEST_EXTENSIONS_DIR):.:$(TEST_EXTENSIONS_SRCDIR):$(TAGSOUP_JAR) \
+@@ -2128,9 +2128,7 @@
  @ENABLE_PLUGIN_TRUE@	 $(PLUGIN_TEST_SRCS) ;
  @ENABLE_PLUGIN_TRUE@	$(BOOT_DIR)/bin/jar cf plugin/tests/LiveConnect/PluginTest.jar \
  @ENABLE_PLUGIN_TRUE@	  plugin/tests/LiveConnect/*.class ;
