@@ -2,6 +2,7 @@
 etc/ezb.conf.default
 @exec if [ ! -f %D/etc/ezb.conf ] ; then cp -p %D/%F %B/ezb.conf; fi
 sbin/ezbounce
+man/man1/ezbounce.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
