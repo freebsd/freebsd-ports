@@ -1,4 +1,5 @@
 bin/qemu-launcher
+man/man1/qemu-launcher.1.gz
 %%DATADIR%%/qemulauncher.png
 %%DATADIR%%/window-icon.png
 %%DATADIR%%/qemulauncher.glade
