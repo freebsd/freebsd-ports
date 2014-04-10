@@ -18,9 +18,15 @@ libexec/uconnect/rgsmtp
 libexec/uconnect/rsmtp
 libexec/uconnect/cron.d.hourly
 libexec/uconnect/logrotate.d.entry
-libexec/uconnect/mail.uuconnect
 libexec/uconnect/uurnews
-libexec/uconnect/zbatchsmtp
+%%SENDMAIL%%libexec/uconnect/mail.uuconnect
+%%SENDMAIL%%libexec/uconnect/zbatchsmtp
+%%POSTFIX%%libexec/uconnect/zbatchsmtp
+%%POSTFIX%%libexec/uconnect/run_as
+%%QMAIL%%libexec/uconnect/zbatchsmtp
+%%SMAIL%%libexec/uconnect/zbatchsmtp
+%%CNEWS%%libexec/uconnect/viazconnect
+%%INN%%libexec/uconnect/send-zcon
 @dirrm libexec/uconnect
 etc/uconnect/alias
 etc/uconnect/approved
@@ -30,6 +36,7 @@ etc/uconnect/myself.zconnect
 etc/uconnect/systems.sample
 etc/uconnect/xprogs
 etc/uconnect/zconnecthosts
+@exec mkdir %D/etc/uconnect/systems || true
 @dirrm etc/uconnect/systems
 @dirrm etc/uconnect
 @exec mkdir /var/spool/uconnect

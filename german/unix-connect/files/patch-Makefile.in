@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2001-10-01 20:27:36.000000000 +0200
++++ Makefile.in	2013-11-29 05:39:06.000000000 +0100
+@@ -56,11 +56,11 @@
+ install:
+ 	for dir in $(TARGETDIRS); do \
+ 		if test ! -d $$dir; then \
+-			mkdir $$dir; chown $(USER):$(GROUP) $$dir; fi \
++			mkdir $(DESTDIR)$$dir; chown $(USER):$(GROUP) $(DESTDIR)$$dir; fi \
+ 	done
+ 	if test ! -d $(SPOOLDIR)/netcall; then \
+-		mkdir $(SPOOLDIR)/netcall; \
+-		chown $(USER) $(SPOOLDIR)/netcall; fi
++		mkdir $(DESTDIR)$(SPOOLDIR)/netcall; \
++		chown $(USER) $(DESTDIR)$(SPOOLDIR)/netcall; fi
+ 	for dir in $(SUBDIRS); do \
+ 		(cd $$dir && $(MAKE) -$(MAKEFLAGS) install) || exit $$? ; done
+ 
