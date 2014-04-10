@@ -14,7 +14,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
-PKGNAMESUFFIX=	18
+PKGNAMESUFFIX=	1${JRE_VERSION}
 
 WRKSRC=		${WRKDIR}/jre${DL_JRE_VERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
@@ -26,7 +26,7 @@ USES=		shebangfix
 ONLY_FOR_ARCHS=	i386 amd64
 
 JRE_VERSION=		8
-JRE_INTERNAL_VERSION=	1.8.0
+JRE_INTERNAL_VERSION=	1.${JRE_VERSION}.0
 JRE_UPDATE_VERSION=	0
 DL_JRE_VERSION=		${JRE_INTERNAL_VERSION}
 DOWNLOAD_URL=		http://www.oracle.com/technetwork/java/javase/downloads/index.html
