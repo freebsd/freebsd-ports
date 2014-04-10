@@ -13,7 +13,7 @@ EXTRACT_ONLY=	yes
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firefox search plugins for the www.BSDGroup.de board
 
-USE_FIREFOX=	yes
+USES=		gecko:firefox
 
 NO_BUILD=	yes
 
