@@ -11,8 +11,7 @@ RUN_DEPENDS=	faad2>=2.7:${PORTSDIR}/audio/faad
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/plugins/xmms/src
 
-USES+=		pkgconfig
-USE_BZIP2=	yes
+USES+=		pkgconfig tar:bzip2
 WANT_GNOME=	yes
 
 DESCR=		${PORTSDIR}/audio/faad/pkg-descr
