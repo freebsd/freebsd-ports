@@ -1,7 +1,9 @@
-bin/ada
+bin/%%TARGET%%-ada
+bin/%%TARGET%%-c++
 bin/%%TARGET%%-cpp
 bin/%%TARGET%%-gcc-%%GCCVERS%%
 bin/%%TARGET%%-gcov
+bin/%%TARGET%%-g++
 bin/%%TARGET%%-gcc
 bin/%%TARGET%%-gcc-ar
 bin/%%TARGET%%-gcc-nm
@@ -19,13 +21,3 @@ bin/%%TARGET%%-gnatmake
 bin/%%TARGET%%-gnatname
 bin/%%TARGET%%-gnatprep
 bin/%%TARGET%%-gnatxref
-%%TARGET%%/bin/gcc
-%%FORT%%%%TARGET%%/bin/gfortran
-%%TARGET%%/bin/gnat
-%%TARGET%%/bin/gnatbind
-%%TARGET%%/bin/gnatchop
-%%TARGET%%/bin/gnatkr
-%%TARGET%%/bin/gnatlink
-%%TARGET%%/bin/gnatls
-%%TARGET%%/bin/gnatmake
-%%TARGET%%/bin/gnatprep
