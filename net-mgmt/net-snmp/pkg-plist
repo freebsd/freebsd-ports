@@ -636,4 +636,4 @@ sbin/snmptrapd
 @dirrm include/net-snmp/agent
 @dirrm include/net-snmp
 @exec mkdir -p /var/agentx
-@unexec rm -d /var/agentx 2>/dev/null || true
+@unexec rmdir /var/agentx 2>/dev/null || true
