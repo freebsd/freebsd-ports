@@ -22,8 +22,7 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	lib/irssi/modules/libfish.so
 PORTDOCS=	FiSH-irssi.txt FiSH-irssi_History.txt
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 ALL_TARGET=	amd64
@@ -46,13 +45,13 @@ post-patch:
 	@${REINPLACE_CMD} -e '/mirdef.lnx/d' ${WRKSRC}/Makefile
 
 do-install:
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	${MKDIR} ${PREFIX}/lib/irssi/modules
-	${INSTALL_PROGRAM} ${WRKSRC}/libfish.so ${PREFIX}/lib/irssi/modules
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi/modules
+	${INSTALL_PROGRAM} ${WRKSRC}/libfish.so ${STAGEDIR}${PREFIX}/lib/irssi/modules
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
