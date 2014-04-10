@@ -23636,6 +23636,10 @@ executed in your Internet Explorer while displaying the email.</p>
 	<range><ge>1.0.0</ge><lt>1.0.0_6</lt></range>
 	<range><ge>0.9.8</ge><lt>1.0.0</lt></range>
       </package>
+      <package>
+	<name>linux-f10-openssl</name>
+	<range><ge>0.9.8</ge><lt>0.9.8r</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -23660,6 +23664,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2011-09-06</discovery>
       <entry>2011-09-07</entry>
+      <modified>2014-04-10</modified>
     </dates>
   </vuln>
 
@@ -37675,6 +37680,10 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>openssl</name>
 	<range><ge>0.9.8</ge><lt>0.9.8k_1</lt></range>
       </package>
+      <package>
+	<name>linux-f10-openssl</name>
+	<range><ge>0.9.8f</ge><lt>0.9.8m</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -37699,7 +37708,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2009-05-18</discovery>
       <entry>2009-05-30</entry>
-      <modified>2009-12-21</modified>
+      <modified>2014-04-10</modified>
     </dates>
   </vuln>
 
