@@ -303,6 +303,7 @@ lib/liblwres.a
 %%SHARE_MAN%%man/man5/rndc.conf.5.gz
 %%SHARE_MAN%%man/man8/ddns-confgen.8.gz
 %%SHARE_MAN%%man/man8/dnssec-dsfromkey.8.gz
+%%SHARE_MAN%%man/man8/dnssec-importkey.8.gz
 %%SHARE_MAN%%man/man8/dnssec-keyfromlabel.8.gz
 %%SHARE_MAN%%man/man8/dnssec-keygen.8.gz
 %%SHARE_MAN%%man/man8/dnssec-revoke.8.gz
