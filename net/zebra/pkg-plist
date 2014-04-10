@@ -14,4 +14,11 @@ sbin/zebractl
 %%RIPNGD%%etc/zebra/ripngd.conf.sample
 %%VTYSH%%etc/zebra/vtysh.conf.sample
 etc/zebra/zebra.conf.sample
+man/man1/vtysh.1.gz
+man/man8/bgpd.8.gz
+man/man8/ospf6d.8.gz
+man/man8/ospfd.8.gz
+man/man8/ripd.8.gz
+man/man8/ripngd.8.gz
+man/man8/zebra.8.gz
 @dirrm etc/zebra

@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/ \
 		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
 		http://ftp.sunet.se/pub/network/zebra/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
 LICENSE=	GPLv2 LGPL21
@@ -28,7 +28,7 @@ USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/zebra
 
-SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}"
 
 OPTIONS_DEFINE=	IPV6 PAM OSPFNSSA SNMP TCPZEBRA BGPD OSPF6D OSPFD RIPD RIPNGD VTYSH
 
@@ -43,10 +43,22 @@ RIPNGD_DESC=	RIPNGD support
 VTYSH_DESC=	VTYSH support
 
 OPTIONS_DEFAULT=	IPV6 BGPD OSPF6D OSPFD RIPD RIPNGD VTYSH
+OPTIONS_SUB=	yes
 NO_OPTIONS_SORT=	yes
 
-MAN1=		vtysh.1
-MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
+PAM_CONFIGURE_WITH=		pam
+OSPFNSSA_CONFIGURE_ENABLE=	nssa
+SNMP_CONFIGURE_ENABLE=		snmp
+SNMP_LIB_DEPENDS+=		libsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+TCPZEBRA_CONFIGURE_ENABLE=	tcp-zebra
+BGPD_CONFIGURE_ENABLE=		bgpd
+OSPF6D_CONFIGURE_ENABLE=	ospf6d
+OSPFD_CONFIGURE_ENABLE=		ospfd
+RIPD_CONFIGURE_ENABLE=		ripd
+RIPNGD_CONFIGURE_ENABLE=	ripngd
+VTYSH_CONFIGURE_ENABLE=		vtysh
+IPV6_CONFIGURE_ENABLE=		ipv6
+
 INFO=		zebra
 
 BGPDARGS?=	-d
@@ -56,80 +68,20 @@ RIPDARGS?=	-d
 RIPNGDARGS?=	-d
 ZEBRAARGS?=	-d
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=--disable-ipv6
-WITHOUT_OSPF6D=	yes
-WITHOUT_RIPNGD=	yes
+.if !${PORT_OPTIONS:MIPV6} && ${PORT_OPTIONS:MOSPF6D}
+IGNORE=		OSPF6D requires IPV6 option.
 .endif
-
-.if ${PORT_OPTIONS:MPAM}
-CONFIGURE_ARGS+=--with-libpam
-.endif
-
-.if ${PORT_OPTIONS:MOSPFNSSA}
-CONFIGURE_ARGS+=--enable-nssa
-.endif
-
-.if ${PORT_OPTIONS:MSNMP}
-CONFIGURE_ARGS+=--enable-snmp
-LIB_DEPENDS+=	snmp:${PORTSDIR}/net-mgmt/net-snmp
-.endif
-
-.if ${PORT_OPTIONS:MTCPZEBRA}
-CONFIGURE_ARGS+=--enable-tcp-zebra
-.endif
-
-.if ${PORT_OPTIONS:MBGPD}
-PLIST_SUB+=	BGPD=""
-.else
-CONFIGURE_ARGS+=--disable-bgpd
-PLIST_SUB+=	BGPD="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOSPF6D}
-PLIST_SUB+=	OSPF6D=""
-.else
-CONFIGURE_ARGS+=--disable-ospf6d
-PLIST_SUB+=	OSPF6D="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOSPFD}
-PLIST_SUB+=	OSPF6D=""
-PLIST_SUB+=	OSPFD=""
-.else
-CONFIGURE_ARGS+=--disable-ospfd
-PLIST_SUB+=	OSPFD="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MRIPD}
-PLIST_SUB+=	RIPD=""
-.else
-CONFIGURE_ARGS+=--disable-ripd
-PLIST_SUB+=	RIPD="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MRIPNGD}
-PLIST_SUB+=	RIPNGD=""
-.else
-CONFIGURE_ARGS+=--disable-ripngd
-PLIST_SUB+=	RIPNGD="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVTYSH}
-PLIST_SUB+=	VTYSH=""
-CONFIGURE_ARGS+=--enable-vtysh
-.else
-PLIST_SUB+=	VTYSH="@comment "
+.if !${PORT_OPTIONS:MIPV6} && ${PORT_OPTIONS:MRIPNGD}
+IGNORE=		RIPNGD requires IPV6 option.
 .endif
 
 post-install:
-	@( cd ${WRKSRC}/doc; ${RM} -f zebra*info*; ${MAKE} zebra.info install )
+	@( cd ${WRKSRC}/doc; ${RM} -f zebra*info*; \
+	   ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} zebra.info install )
 	@${ECHO_MSG} "===>     installing zebra startup file..."
-	${INSTALL_SCRIPT} ${WRKDIR}/zebractl ${PREFIX}/sbin/zebractl
+	${INSTALL_SCRIPT} ${WRKDIR}/zebractl ${STAGEDIR}${PREFIX}/sbin/zebractl
 	@${ECHO_MSG} "done."
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
