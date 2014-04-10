@@ -118,6 +118,7 @@
     SUBDIR += linux-oracle-jre18
     SUBDIR += linux-sun-jdk16
     SUBDIR += linux-sun-jdk17
+    SUBDIR += linux-sun-jdk18
     SUBDIR += linux-sun-jre16
     SUBDIR += linux-sun-jre17
     SUBDIR += mmake
