@@ -211,6 +211,11 @@ lib/xsp/test/web.config
 lib/xsp/test/xsp.exe.config
 libdata/pkgconfig/xsp-2.pc
 libdata/pkgconfig/xsp-4.pc
+man/man1/asp-state.1.gz
+man/man1/dbsessmgr.1.gz
+man/man1/fastcgi-mono-server.1.gz
+man/man1/mod-mono-server.1.gz
+man/man1/xsp.1.gz
 @dirrm www/xsp
 @dirrm lib/xsp/test/controls
 @dirrm lib/xsp/test/bin
