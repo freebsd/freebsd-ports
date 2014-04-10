@@ -270,6 +270,7 @@
     SUBDIR += gimp-gap
     SUBDIR += gimp-gmic-plugin
     SUBDIR += gimp-help
+    SUBDIR += gimp-jagged-border-script
     SUBDIR += gimp-lensfun-plugin
     SUBDIR += gimp-lqr-plugin
     SUBDIR += gimp-manual-html
