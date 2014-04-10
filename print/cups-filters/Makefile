@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.0.50
+PORTVERSION=	1.0.52
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Backends, filters and other software (was part of the core CUPS)
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
@@ -26,9 +26,9 @@ USE_GNOME=	glib20
 USE_GHOSTSCRIPT=	yes
 GNU_CONFIGURE=	yes
 CUPS_SOCKET=	/var/run/cups.sock
-CONFIGURE_ARGS=	--with-domainsocket=${CUPS_SOCKET}
+CONFIGURE_ARGS=	--with-cups-domainsocket=${CUPS_SOCKET}
 CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz" \
-		LIBQPDF_CFLAGS="-I/usr/local/include" LIBQPDF_LIBS="-lqpdf"
+		LIBQPDF_CFLAGS="-I${LOCALBASE}/include" LIBQPDF_LIBS="-lqpdf"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -42,6 +42,14 @@ AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 
 post-patch:
 	@${REINPLACE_CMD} 's:-std=c++0x:-std=c++11:' ${WRKSRC}/Makefile.in
+
+post-configure:
+	@${REINPLACE_CMD} \
+		-e 's|\(BANNERTOPDF_DATADIR = \).*\(/share/cups/data\)|\1${PREFIX}\2|' \
+		-e 's|\(CUPS_DATADIR = \).*\(/share/cups\)|\1${PREFIX}\2|' \
+		-e 's|\(CUPS_SERVERBIN = \).*\(/libexec/cups\)|\1${PREFIX}\2|' \
+		-e 's|\(CUPS_SERVERROOT = \).*\(/etc/cups\)|\1${PREFIX}\2|' \
+		${WRKSRC}/Makefile
 
 post-install:
 	@${RM} -rf ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip \

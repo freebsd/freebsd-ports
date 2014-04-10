@@ -68,11 +68,11 @@ share/cups/mime/cupsfilters.convs
 share/cups/mime/cupsfilters.types
 share/cups/ppdc/escp.h
 share/cups/ppdc/pcl.h
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
 share/ppd/cupsfilters/Fuji_Xerox-DocuPrint_CM305_df-PDF.ppd
 share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
@@ -82,7 +82,7 @@ share/ppd/cupsfilters/pxlmono.ppd
 share/ppd/cupsfilters/textonly.ppd
 @dirrmtry share/ppd/cupsfilters
 @dirrmtry share/ppd
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 @dirrmtry share/cups/ppdc
 @dirrmtry share/cups/mime
 @dirrmtry share/cups/drv
