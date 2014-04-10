@@ -1147,6 +1147,7 @@
     SUBDIR += libxalloc
     SUBDIR += libxs
     SUBDIR += libytnef
+    SUBDIR += libzookeeper
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
     SUBDIR += lightning
