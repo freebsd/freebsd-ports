@@ -1403,7 +1403,6 @@ lib/node_modules/npm/test/tap/peer-deps-without-package-json.js
 lib/node_modules/npm/test/tap/peer-deps-without-package-json/.gitkeep
 lib/node_modules/npm/test/tap/publish-config.js
 lib/node_modules/npm/test/update-test.sh
-@comment @exec /bin/chmod +x %D/lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 @dirrm lib/node_modules/npm/test/tap/peer-deps-without-package-json
 @dirrm lib/node_modules/npm/test/tap/peer-deps-invalid
 @dirrm lib/node_modules/npm/test/tap/package-with-peer-dep
