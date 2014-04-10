@@ -11,22 +11,22 @@ DISTNAME=	VGBA${PORTVERSION:S/.//}-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Virtual GameBoy Advance is an emulator of Nintendo GameBoy Advance(TM)
+COMMENT=	Emulator of Nintendo GameBoy Advance(TM)
 
-LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	libc.so.5:${PORTSDIR}/misc/compat5x
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	no
 NO_WRKSUBDIR=	no
 
-INSTALL_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP}
+PLIST_FILES=	bin/vgba
+PORTDOCS=	VGBA.html
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/vgba ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${INSTALL_DIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/VGBA.html ${DOCSDIR}
-.endif # !defined(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${WRKSRC}/vgba ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/VGBA.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
