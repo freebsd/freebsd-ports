@@ -3,6 +3,7 @@
 
 PORTNAME=	gcc-aux
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	${MAIN_PR}
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		LOCAL/marino:boot ${MASTER_SITE_GCC}
@@ -46,6 +47,10 @@ BOOTSTRAP_DESC=		Create bootstrap compiler (overrides other options)
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
+USE_BINUTILS=	yes
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+EXTRA_CONFIG+=	--with-ld=${LOCALBASE}/bin/ld
+EXTRA_CONFIG+=	--with-as=${LOCALBASE}/bin/as
 .  if ${OSVERSION} < 900000
 BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.84.tar.bz2
 .  else
@@ -53,6 +58,8 @@ BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.100B.tar.bz2
 .  endif
 .endif
 .if ${OPSYS} == DragonFly
+EXTRA_CONFIG+=	--with-ld=/usr/bin/ld
+EXTRA_CONFIG+=	--with-as=/usr/bin/as
 BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.dragonfly.36A.tar.bz2
 .endif
 
