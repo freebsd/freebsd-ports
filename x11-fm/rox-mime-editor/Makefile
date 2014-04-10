@@ -13,10 +13,9 @@ COMMENT=	MIME type editor for the ROX desktop
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
@@ -27,8 +26,7 @@ pre-install:
 	@${FIND} ${WRKSRC} -name *.bak -delete
 
 do-install:
-	@${MKDIR} ${PREFIX}/apps
-	@${CP} -r ${WRKSRC}/MIME-Editor ${PREFIX}/apps/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/MIME-Editor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/apps
+	@${CP} -r ${WRKSRC}/MIME-Editor ${STAGEDIR}${PREFIX}/apps/
 
 .include <bsd.port.mk>
