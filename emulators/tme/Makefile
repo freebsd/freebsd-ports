@@ -10,24 +10,14 @@ MASTER_SITES=	http://people.csail.mit.edu/fredette/tme/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulator for Sun 2/120, 3/150, and SPARCstation 2 machines
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		cairo:${PORTSDIR}/graphics/cairo \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-
-USES=		pkgconfig gettext gmake iconv perl5
+USES=		compiler gmake gettext iconv perl5 pkgconfig
 USE_GNOME=	gdkpixbuf2 gtk20
 USE_AUTOTOOLS=	libtool libltdl
 CONFIGURE_ENV=	ac_cv_have_isinff=no
-CONFIGURE_ARGS=	--datadir=${WRKDIR}/tmproot --disable-warnings
-USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
-		xi xinerama xrandr xrender
+CONFIGURE_ARGS=	--disable-warnings
 USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
 MAKE_JOBS_UNSAFE=yes
@@ -36,11 +26,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${WRKSRC}/ic/ieee754/.libs
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang
+CFLAGS+=	-fbracket-depth=1024
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/misc_hosts/s|= no|= xno|' \
@@ -54,11 +46,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
 		${WRKSRC}/libtme/module.c
 
-post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKDIR}/tmproot/examples/tme \
-		&& ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
