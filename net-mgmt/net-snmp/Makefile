@@ -38,6 +38,7 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USES=		perl5
 
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
 CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-default-snmp-version="${DEFAULT_SNMP_VERSION}" \
@@ -121,7 +122,6 @@ CONFIGURE_ARGS+=--with-dmalloc=${LOCALBASE}
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--with-mysql
 CONFIGURE_ENV+=	MYSQLCONFIG=${LOCALBASE}/bin/mysql_config
 .endif
