@@ -53,7 +53,6 @@
     SUBDIR += eclipse-windowbuilder
     SUBDIR += icedtea-web
     SUBDIR += infobus
-    SUBDIR += j2sdkee13
     SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += jai
