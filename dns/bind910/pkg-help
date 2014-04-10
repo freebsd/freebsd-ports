@@ -1,0 +1,13 @@
+When using the NATIVE_PKCS11 option, BIND will use the PKCS#11
+engine specified by the named_pkcss11_engine variable in
+/etc/rc.conf for *all* crypto operations.
+
+This is primarily intended to be used in an authoritative
+case.
+
+If BIND will also be operating as a validating resolver,
+NATIVE_PKCS11 should not be used, because the HSM will be
+used for DNSSEC validations, and the HSM is likely to be
+slower than the CPU for this purpose.  Additionally, the HSM
+might not support all of the PKCS#11 API functions needed
+for signature verification.
