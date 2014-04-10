@@ -10,21 +10,24 @@ MASTER_SITES=	SF/ojnk/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ident server that supports user-defined ident strings
 
+LICENSE=	GPLv2
+
 USE_RC_SUBR=	oidentd
 GNU_CONFIGURE=	yes
 
-MAN5=		oidentd.conf.5 oidentd_masq.conf.5
-MAN8=		oidentd.8
 PLIST_FILES=	sbin/oidentd etc/oidentd.conf.sample \
 		etc/oidentd_masq.conf.sample
+MANPAGES=	oidentd.conf.5 oidentd_masq.conf.5 oidentd.8
+.for man in ${MANPAGES}
+PLIST_FILES+=	man/man${man:E}/${man}.gz
+.endfor
 USE_CSTD=	gnu89
 
 OPTIONS_DEFINE=	IPV6 MASQ
 OPTIONS_DEFAULT=	MASQ
 MASQ_DESC=	Enable NAT/IP masq support
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--disable-ipv6
@@ -41,14 +44,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\[5-9\]||g;s|\[4-9\]||g' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/oidentd ${PREFIX}/sbin
-	${INSTALL_DATA} ${MAN5:S,^,${FILESDIR}/,:S,5$,sample,} ${PREFIX}/etc
+	${INSTALL_PROGRAM} ${WRKSRC}/src/oidentd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${FILESDIR}/oidentd.conf.sample ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${FILESDIR}/oidentd_masq.conf.sample ${STAGEDIR}${PREFIX}/etc
 .if !defined(NO_INSTALL_MANPAGES)
-.for MANFILE in ${MAN5} ${MAN8}
+.for MANFILE in ${MANPAGES}
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/doc/${MANFILE}
+	${INSTALL_MAN} ${WRKSRC}/doc/${MANFILE} ${STAGEDIR}${PREFIX}/man/man${MANFILE:E}
 .endfor
-	${INSTALL_MAN} ${MAN5:S,^,${WRKSRC}/doc/,} ${PREFIX}/man/man5
-	${INSTALL_MAN} ${MAN8:S,^,${WRKSRC}/doc/,} ${PREFIX}/man/man8
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
