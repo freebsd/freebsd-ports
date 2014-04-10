@@ -11,7 +11,7 @@ COMMENT=	Simple session manager for the ROX desktop
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 		${PYTHON_PKGNAMEPREFIX}roxlib>=0:${PORTSDIR}/devel/py-roxlib \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus
@@ -26,12 +26,11 @@ USE_PYTHON=	yes
 
 PORTDOCS=	Changes DBUS-API README
 
-OPTIONS_DEFINE=	GDM
+OPTIONS_DEFINE=	GDM DOCS
 GDM_DESC=	Install GDM login manager
 
 SUB_FILES=	${PORTNAME} rox.desktop
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDM}
@@ -52,19 +51,19 @@ do-build:
 	@cd ${WRKSRC}/src/po && ./dist
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC} && ${CP} -r .DirIcon AppInfo.xml AppRun \
 		Environment Login Messages Options.xml ROX-Session \
 		ROX-Session.xml RunROX SetupPanel Styles browser images \
-		*.py *.pyc *.pyo ${DATADIR}
+		*.py *.pyc *.pyo ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MGDM}
-	@${INSTALL_DATA} ${WRKDIR}/rox.desktop ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKDIR}/rox.desktop ${STAGEDIR}${PREFIX}/share/applications
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/Help/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Help/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
