@@ -12,6 +12,9 @@ COMMENT=	XMMS input plugin to play bonk files
 
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
+DEPRECATED=	Obsolete experimental codec, use audio/flac or audio/wavpack
+EXPIRATION_DATE=	2014-07-15
+
 ALL_TARGET=
 
 PLIST_FILES=	lib/xmms/Input/libbonk.so
