@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: named
-# REQUIRE: FILESYSTEMS defaultroute
+# REQUIRE: FILESYSTEMS defaultroute ldconfig
 # BEFORE: NETWORKING
 # KEYWORD: shutdown
 
@@ -91,9 +91,9 @@ named_prestart()
 		warn 'named_pidfile: now determined from the conf file'
 	fi
 
-	echo ${pidfile%/pid}
-	if [ ! -d ${pidfile%/pid} ]; then
-		install -d -o ${named_uid} -g ${named_uid} ${pidfile%/pid}
+	piddir=`/usr/bin/dirname ${pidfile}`
+	if [ ! -d ${piddir} ]; then
+		install -d -o ${named_uid} -g ${named_uid} ${piddir}
 	fi
 
 	command_args="-u ${named_uid:=root} -c $named_conf $command_args"
