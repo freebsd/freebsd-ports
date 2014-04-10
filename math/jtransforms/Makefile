@@ -11,7 +11,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A multithreaded FFT library written in pure Java
 
 USE_BZIP2=	yes
-USE_JAVA=	1.5+
+USE_JAVA=	1.6+
 USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/JTransforms
