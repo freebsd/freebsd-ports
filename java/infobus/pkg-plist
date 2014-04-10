@@ -1,16 +1,1 @@
-%%EXAMPLESDIR%%/MonetaryDataItem.java
-%%EXAMPLESDIR%%/ReadMe.html
-%%EXAMPLESDIR%%/ReadRowset.html
-%%EXAMPLESDIR%%/RowsetAccessHelper.java
-%%EXAMPLESDIR%%/RowsetSource.java
-%%EXAMPLESDIR%%/SampleConsumer.java
-%%EXAMPLESDIR%%/SimpleConsumerBean.java
-%%EXAMPLESDIR%%/SimpleDataItem.java
-%%EXAMPLESDIR%%/SimpleProducerBean.java
-%%EXAMPLESDIR%%/SimpleTable.java
-%%EXAMPLESDIR%%/coffee6.gif
-%%EXAMPLESDIR%%/examples.mak
-%%EXAMPLESDIR%%/makefile
-%%EXAMPLESDIR%%/moneyman.mf
 %%JAVAJARDIR%%/infobus.jar
-@dirrm %%EXAMPLESDIR%%
