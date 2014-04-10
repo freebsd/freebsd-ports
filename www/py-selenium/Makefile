@@ -23,10 +23,6 @@ PYDISTUTILS_AUTOPLIST=	yes
 OPTIONS_DEFINE=	FIREFOX
 FIREFOX_DESC=	Install Firefox
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFIREFOX}
-USE_FIREFOX=	yes
-.endif
+FIREFOX_USES=	gecko:firefox
 
 .include <bsd.port.mk>
