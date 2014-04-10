@@ -10,12 +10,10 @@ MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GIO bindings not available in gtk-sharp
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack gtksharp20
+USES=		gmake pathfix pkgconfig tar:bzip2
+USE_GNOME=	gtksharp20
 
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
