@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	1.3.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -20,7 +21,7 @@ USES=		tar:xz
 MAKE_ARGS+=	npm_config_prefix=${STAGEDIR}${PREFIX}
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
-PLIST_SUB+=	MANPREFIX="${MANPREFIX}"
+PLIST_SUB+=	MANPREFIX="${MANPREFIX:S,${PREFIX}/,,}"
 
 .include <bsd.port.options.mk>
 
