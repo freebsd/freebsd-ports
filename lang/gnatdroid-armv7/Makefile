@@ -3,6 +3,7 @@
 
 PORTNAME=	armv7
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	${ARMV7_PR}
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSION}
@@ -38,6 +39,10 @@ DROID_TARGET=		arm-aux-linux-androideabi
 DROID_ARCH=		armv7-a
 ARMVERSION=		ARMv7
 FPU=			neon
+ALL_TARGET=		all
+GARCH=			${ARCH:S/amd64/x86_64/}
+BITS=			${GARCH:S/x86_64/64/:S/i386/32/}
+OS_LABEL4VERS=		[${OPSYS}${BITS} x Android ${ARMVERSION}]
 WRKSRC=			${WRKDIR}/${IDENTIFICATION}
 BUILD_WRKSRC=		${WRKDIR}/build
 PATCHDIR=		${.CURDIR}/../gcc-aux/files
@@ -53,15 +58,7 @@ EXTRA_PATCHES=		${FILESDIR}/acats.diff
 CROSS=			gnat gnatbind gnatchop gnatclean gnatfind gnatkr \
 			gnatlink gnatls gnatmake gnatprep gnatxref
 
-ALL_TARGET=		all
-
 .include <bsd.port.options.mk>
-
-.if ${ARCH:S/amd64/x86_64/} == x86_64
-OS_LABEL4VERS=	"[${OPSYS}64 x Android ${ARMVERSION}]"
-.else
-OS_LABEL4VERS=	"[${OPSYS}32 x Android ${ARMVERSION}]"
-.endif
 
 .if ${PORT_OPTIONS:MFORT}
 LANGS+=		fortran
@@ -74,33 +71,33 @@ LANGS+=		objc
 
 INSTALL_ENV=	${MAKE_ENV:C/^PATH=/&${SRPREFIX}\/${ARMVERSION}\/bin:/}
 
-CONFIGURE_ARGS=		--enable-languages=${LANGS:Q}
-CONFIGURE_ARGS+=	--target=${DROID_TARGET}
-CONFIGURE_ARGS+=	--program-prefix=${DROID_TARGET}-
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
-CONFIGURE_ARGS+=	--with-arch=${DROID_ARCH}
-CONFIGURE_ARGS+=	--with-system-zlib
-CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
-CONFIGURE_ARGS+=	--with-mpfr=${LOCALBASE}
-CONFIGURE_ARGS+=	--with-mpc=${LOCALBASE}
-CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
-CONFIGURE_ARGS+=	--with-sysroot=${SRPREFIX}
-CONFIGURE_ARGS+=	--with-float=soft
-CONFIGURE_ARGS+=	--with-fpu=${FPU}
-CONFIGURE_ARGS+=	--enable-target-optspace
-CONFIGURE_ARGS+=	--enable-threads=posix
-CONFIGURE_ARGS+=	--enable-cxx-flags=-frtti
-CONFIGURE_ARGS+=	--disable-bootstrap
-CONFIGURE_ARGS+=	--disable-shared
-CONFIGURE_ARGS+=	--disable-libssp
-CONFIGURE_ARGS+=	--disable-libgomp
-CONFIGURE_ARGS+=	--disable-libmudflap
-CONFIGURE_ARGS+=	--disable-libquadmath
-CONFIGURE_ARGS+=	--disable-libsanitizer
-CONFIGURE_ARGS+=	--disable-libitm
-CONFIGURE_ARGS+=	--disable-sjlj-exceptions
-CONFIGURE_ARGS+=	--disable-tls
-CONFIGURE_ARGS+=	--disable-nls
+ADA_CONFIG_ARGS=	--enable-languages=${LANGS:Q}
+ADA_CONFIG_ARGS+=	--target=${DROID_TARGET}
+ADA_CONFIG_ARGS+=	--program-prefix=${DROID_TARGET}-
+ADA_CONFIG_ARGS+=	--prefix=${PREFIX}
+ADA_CONFIG_ARGS+=	--with-arch=${DROID_ARCH}
+ADA_CONFIG_ARGS+=	--with-system-zlib
+ADA_CONFIG_ARGS+=	--with-gmp=${LOCALBASE}
+ADA_CONFIG_ARGS+=	--with-mpfr=${LOCALBASE}
+ADA_CONFIG_ARGS+=	--with-mpc=${LOCALBASE}
+ADA_CONFIG_ARGS+=	${ICONV_CONFIGURE_ARG}
+ADA_CONFIG_ARGS+=	--with-sysroot=${SRPREFIX}
+ADA_CONFIG_ARGS+=	--with-float=soft
+ADA_CONFIG_ARGS+=	--with-fpu=${FPU}
+ADA_CONFIG_ARGS+=	--enable-target-optspace
+ADA_CONFIG_ARGS+=	--enable-threads=posix
+ADA_CONFIG_ARGS+=	--enable-cxx-flags=-frtti
+ADA_CONFIG_ARGS+=	--disable-bootstrap
+ADA_CONFIG_ARGS+=	--disable-shared
+ADA_CONFIG_ARGS+=	--disable-libssp
+ADA_CONFIG_ARGS+=	--disable-libgomp
+ADA_CONFIG_ARGS+=	--disable-libmudflap
+ADA_CONFIG_ARGS+=	--disable-libquadmath
+ADA_CONFIG_ARGS+=	--disable-libsanitizer
+ADA_CONFIG_ARGS+=	--disable-libitm
+ADA_CONFIG_ARGS+=	--disable-sjlj-exceptions
+ADA_CONFIG_ARGS+=	--disable-tls
+ADA_CONFIG_ARGS+=	--disable-nls
 
 post-extract:
 	# Personalize GNAT for each different machine
@@ -116,7 +113,7 @@ post-extract:
 do-configure:
 	${MKDIR} ${BUILD_WRKSRC}
 	cd ${BUILD_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${CFG_SCRIPT} ${CONFIGURE_ARGS}
+		${CFG_SCRIPT} ${ADA_CONFIG_ARGS}
 
 do-install:
 #	Buggy makefile; seems to have forgotten this is a cross compiler
