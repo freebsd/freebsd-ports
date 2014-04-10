@@ -19,8 +19,7 @@ CONFLICTS_INSTALL=	xorp-devel-*
 
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions -s /^xorp/${DISTNAME}/
 GROUPS=		xorp
-USES=		ncurses scons shebangfix
-USE_BZIP2=	yes
+USES=		tar:bzip2 ncurses scons shebangfix compiler:env
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	2
 USE_RC_SUBR=	xorp
@@ -41,7 +40,7 @@ TCP_RPC_DESC=	Use TCP as RPC transport (defaults to AF_LOCAL)
 
 MAKE_ARGS=	prefix=${PREFIX} enable_boost=1
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZE}
 MAKE_ARGS+=	optimize=highest
@@ -77,8 +76,11 @@ MAKE_ARGS+=	transport=local
 
 post-patch:
 	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/SConstruct
+.if ${COMPILER_TYPE} == "clang"
+	${REINPLACE_CMD} 's,-Werror,& -Wno-unused-function,' ${WRKSRC}/SConstruct
+.endif
 
 post-install:
 	${CP} -p ${WRKSRC}/${XORP_SAMPLECONF} ${STAGEDIR}${PREFIX}/etc/xorp.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
