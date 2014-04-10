@@ -38,6 +38,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-patch:
 .if defined(TRF_USE_MD) || ${OSREL} > 10
+BROKEN=	Does not build, requires ancient MD2
 	#
 	# Using FreeBSD's own -lmd instead of OpenSSL's -lcrypto
 	#
