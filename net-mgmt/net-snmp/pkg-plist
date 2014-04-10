@@ -610,15 +610,30 @@ sbin/snmptrapd
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP
 %%WITH_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle
-%%WITH_PYTHON%%%%PYINSTALL%%
-%%WITH_PYTHON%%%%PYUNINSTALL%%
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/test.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/__init__.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/test.pyo
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/__init__.pyo
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/test.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/__init__.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client_intf.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/__init__.pyo
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/__init__.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client.pyo
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/__init__.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%WITH_PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg-info
+%%WITH_PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/netsnmp/tests
+%%WITH_PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/netsnmp
 @dirrm include/net-snmp/system
 @dirrm include/net-snmp/machine
 @dirrm include/net-snmp/library
 @dirrm include/net-snmp/agent
 @dirrm include/net-snmp
-@cwd /
-@exec mkdir -p var/agentx
-@unexec rmdir var/agentx 2>/dev/null || true
-@dirrmtry /var/agentx
+@exec mkdir -p /var/agentx
+@unexec rm -d /var/agentx 2>/dev/null || true
