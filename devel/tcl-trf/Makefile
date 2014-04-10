@@ -14,11 +14,9 @@ COMMENT=	Data conversion, digests, compression, error-correction for Tcl
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/Memchan2.3/pkgIndex.tcl:${PORTSDIR}/devel/tcl-memchan
 
-USE_BZIP2=	yes
-
 ALL_TARGET=	all
 
-USES+=		tcl
+USES+=		tcl tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/Trf
 DDIR=		${PREFIX}/lib/tcl${TCL_VER}/Trf
 CFLAGS+=	-Wall -Werror
@@ -33,17 +31,14 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} \
 		--enable-static-zlib --enable-static-bzlib \
 		--enable-static-md5
 
-NO_STAGE=	yes
-
 .include <bsd.port.options.mk>
 post-patch:
-.if defined(TRF_USE_MD) || ${OSREL} > 10
-BROKEN=	Does not build, requires ancient MD2
+.if defined(TRF_USE_MD)
 	#
 	# Using FreeBSD's own -lmd instead of OpenSSL's -lcrypto
 	#
 	${REINPLACE_CMD} -E -e 's,openssl/,,'		\
-		-e 's,(MD[25])_([A-Z][a-z]),\1\2,g'	\
+		-e 's,(MD[5])_([A-Z][a-z]),\1\2,g'	\
 		${WRKSRC}/generic/*.[ch]
 	${REINPLACE_CMD} 's,-lcrypto,-lmd,' ${WRKSRC}/Makefile.in
 .else
@@ -57,22 +52,16 @@ USE_OPENSSL=	yes
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/Trf
-	${INSTALL_DATA} ${WRKSRC}/libTrf${PORTVERSION}.so	\
-		${WRKSRC}/pkgIndex.tcl ${PREFIX}/lib/Trf/
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/Trf
+	${INSTALL_DATA} ${WRKSRC}/libTrf${PORTVERSION}.so \
+		${WRKSRC}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/Trf/
 	for m in ${WRKSRC}/doc/man/*.n	;	\
 	do	\
-		${INSTALL_MAN} $$m ${MANNPREFIX}/man/mann/ ;\
+		${INSTALL_MAN} $$m ${STAGEDIR}${MANNPREFIX}/man/mann/ ;\
 	done
 
 check regression-test post-build test:
 	cd ${WRKSRC}/tests && ${SETENV} TCLLIBPATH="${WRKSRC}" ${TCLSH} all
-
-MANN=	adler.n ascii85.n base64.n bin.n bz2.n crc-zlib.n crc.n	\
-	crypt.n haval.n hex.n md2.n md5.n md5_otp.n md5crypt.n	\
-	oct.n otp_words.n quoted-printable.n ripemd128.n ripemd160.n \
-	rs_ecc.n sha.n sha1.n sha1_otp.n transform.n trf.n unstack.n \
-	uuencode.n zip.n
 
 .include <bsd.port.pre.mk>
 

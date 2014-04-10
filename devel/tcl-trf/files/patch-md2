@@ -5,7 +5,7 @@
  
 -#include "loadman.h"
 +#include "transformInt.h"
-+#include <openssl/md2.h>
++#include "md2d.h"
  
  /*
 @@ -38,18 +39,8 @@
