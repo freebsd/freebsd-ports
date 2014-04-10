@@ -1,0 +1,59 @@
+----------------------------------------------------------------
+For help on using this module, please see the suPHP homepage:
+
+        http://www.suphp.org/
+
+Using suPHP can break some PHP-scripts, because of Apache's CGI 
+interface.
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+For those migrating from suPHP 0.5.x, be aware there are many
+changes since 0.6.x that can cause your current Apache environment
+to stop working or behave oddly.  Here are two migration tips:
+
+suPHP now uses a configuration file for runtime configuration.
+The file is located at:
+
+        /usr/local/etc/suphp.conf
+
+...but *has not* been created for you.  A sample configuration
+file has been installed here:
+
+        /usr/local/etc/suphp.conf-example
+
+This means that many of the make.conf(5) knobs for the
+www/suphp port are no longer used, and are modifiable in
+real-time; thus, things like WITHOUT_CHECKPATH and SUPHP_PATH
+are no longer needed.  Instead, edit the config file.
+
+Equally as important, suPHP no longer uses a static MIME type
+for determining what content get handled by suPHP.  In 0.5.x,
+you used the following Apache directives:
+
+        suPHP_Engine on
+        AddType application/x-httpd-php .php
+        AddHandler x-httpd-php .php
+
+Since suPHP 0.6.x, you should use the following:
+
+        suPHP_Engine on
+        AddType application/x-httpd-php .php
+        suPHP_AddHandler application/x-httpd-php
+
+Otherwise, Apache will begin serving PHP files as downloadable
+content, rather than parse them with the PHP interpreter.
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+For those versions upgraded from 0.6.x to 0.7.x. There are some
+new features and changes for the configuration file:
+
+    - Multiple path (with patterns) & variable substitution
+      support for docroots
+    - Double-quoted strings at section '[handlers]'
+      ex. application/x-httpd-php="php:/usr/local/bin/php-cgi"
+
+These changes may lead to internal server error if without
+modifications of the configuration file from previous version.
+-----------------------------------------------------------------
