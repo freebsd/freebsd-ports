@@ -1,18 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	virtualenv
-PORTVERSION=	1.11.2
-PORTREVISION=	1
+PORTVERSION=	1.11.4
+PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Virtual Python Environment builder
+COMMENT=	Tool for creating isolated Python environments
 
 LICENSE=	MIT
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose:${PORTSDIR}/devel/py-tox \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}mock:${PORTSDIR}/devel/py-mock
 
 OPTIONS_DEFINE=	DOCS
@@ -32,7 +32,8 @@ PYDISTUTILS_BUILD_TARGET+=	build_sphinx
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/build/sphinx/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/build/sphinx/html && \
+	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -or -name objects.inv")
 .endif
 
 regression-test: build
