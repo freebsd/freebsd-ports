@@ -18,7 +18,6 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 RESTRICTED=	Contains ROM (C) by Atari
-NO_STAGE=	yes
 
 TOSIMG?=	tos.img
 USE_XORG=	x11 sm ice xext xextproto
@@ -46,25 +45,21 @@ pre-build:
 
 post-install:
 .for f in ${ETCFILES}
-	${INSTALL_DATA} ${WRKSRC}/etc/$f ${ETCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/etc/$f ${STAGEDIR}${ETCDIR}/
 .endfor
 	@${ECHO_MSG} "===> Installing fonts"
+	${MKDIR} ${STAGEDIR}${FNTDIR}
 .for f in ${FONTS}
-	${INSTALL_DATA} ${WRKSRC}/data/$f ${FNTDIR}/
-	${GZIP_CMD} ${FNTDIR}/$f
+	${INSTALL_DATA} ${WRKSRC}/data/$f ${STAGEDIR}${FNTDIR}/
+	${GZIP_CMD} ${STAGEDIR}${FNTDIR}/$f
 .endfor
-	mkfontdir ${FNTDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/docs/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${DATA:S,^,${WRKSRC}/,} ${EXAMPLESDIR}/
-.endif
-.if (defined(DISPLAY) && ${DISPLAY} != "")
-	xset fp+ ${FNTDIR}
-	xset fp rehash
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${DATA:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .if !exists(${DISTDIR}/${TOSIMG})
