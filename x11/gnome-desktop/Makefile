@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-desktop
 PORTVERSION=	2.32.1
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,27 +12,25 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for GNOME 2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 
 USE_XORG=	xpm
-USES=		bison pathfix gettext pkgconfig gmake
+USES+=		bison pathfix gettext libtool pkgconfig gmake
 USE_GNOME=	gnomeprefix intlhack gnomedocutils gconf2 pygtk2 \
-		ltverhack referencehack
+		referencehack
 USE_PYTHON=	2
 INSTALLS_OMF=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=	gnome-about.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|xsltproc -o| xsltproc --nonet -o|g' \
 		${WRKSRC}/desktop-docs/fdl/Makefile.in \
