@@ -14,6 +14,9 @@ COMMENT=	Sun Java Runtime Environment 1.6 for Linux
 EXTRACT_DEPENDS=${LINUX_BASE_PORT}
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
+DEPRECATED=	Unsupported and known for multiple security vulnerabilities
+EXPIRATION_DATE=2014-05-10
+
 NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
 PKGNAMESUFFIX=	16
