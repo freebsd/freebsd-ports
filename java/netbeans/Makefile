@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-PORTVERSION=	7.4
+PORTVERSION=	8.0
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
     		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
-DISTNAME=	netbeans-${PORTVERSION}-201310111528
+DISTNAME=	netbeans-${PORTVERSION}-201403101706
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A full-featured integrated environment for Java
+COMMENT=	Modular, standards-based integrated development environment
 
 LICENSE=	CDDL GPLv2
-LICENSE_COMB=	multi
+LICENSE_COMB=	dual
 
 USES=		zip
 USE_JAVA=	yes
@@ -34,8 +34,6 @@ DESKTOP_ENTRIES="NetBeans" \
 post-patch:
 	@${REINPLACE_CMD} -i "" -e '57s|#||;57s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf
-	@${REINPLACE_CMD} -i "" -e 's|%%GREP%%|${GREP}|g' \
-	    ${WRKSRC}/platform/lib/nbexec
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
@@ -44,6 +42,6 @@ do-install:
 	${LN} -sf ${DATADIR}/bin/netbeans ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${PORTVERSION}
 
 post-install:
-	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/java/maven/bin/mvn
+	${FIND} ${STAGEDIR}${DATADIR} -type f -ipath "*/bin/*" | ${XARGS} ${CHMOD} ${BINMODE}
 
 .include <bsd.port.mk>
