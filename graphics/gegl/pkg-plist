@@ -290,7 +290,8 @@ lib/gegl-%%GEGL_VER%%/xor.la
 lib/gegl-%%GEGL_VER%%/xor.so
 lib/libgegl-%%GEGL_VER%%.la
 lib/libgegl-%%GEGL_VER%%.so
-lib/libgegl-%%GEGL_VER%%.so.%%GEGL_MINOR%%
+lib/libgegl-%%GEGL_VER%%.so.0
+lib/libgegl-%%GEGL_VER%%.so.0.199.1
 libdata/pkgconfig/gegl-%%GEGL_VER%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/api.html
