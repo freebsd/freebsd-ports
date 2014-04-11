@@ -40,4 +40,4 @@
 %%AMD64_ONLY%%@exec %%LDCONFIG_LIB32%% -m %D/%%LIBDIR%%/compat
 @dirrmtry %%LIBDIR%%/compat
 @comment Hardcode lib32 since we should not remove lib.
-@dirrmtry lib32
+%%AMD64_ONLY%%@dirrmtry lib32
