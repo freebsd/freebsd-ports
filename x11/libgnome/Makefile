@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnome
 PORTVERSION=	2.32.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,26 +12,25 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libraries for GNOME, a GNU desktop environment
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
-LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
+INSTALL_TARGET=	install-strip
 USE_GNOME=	gnomeprefix intlhack esound libbonobo \
-		gnomevfs2 ltverhack referencehack
-USES=		bison pathfix gettext gmake pkgconfig
+		gnomevfs2 referencehack
+USES+=		bison libtool pathfix gettext gmake pkgconfig
 USE_XORG=	xpm
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-deinstall
-
-MAN7=		gnome-options.7
 
 GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_accessibility_startup.schemas \
@@ -52,7 +51,6 @@ GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_thumbnailers.schemas \
 		desktop_gnome_typing_break.schemas
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/libgnome/libgnome-2.0.pc.in
