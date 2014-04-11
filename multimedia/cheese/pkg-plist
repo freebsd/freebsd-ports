@@ -6,6 +6,7 @@ lib/libcheese-gtk.a
 lib/libcheese-gtk.la
 lib/libcheese-gtk.so
 lib/libcheese-gtk.so.18
+lib/libcheese-gtk.so.18.0.0
 libdata/pkgconfig/cheese-gtk.pc
 libexec/cheese/cheese-bugreport.sh
 share/applications/cheese.desktop
