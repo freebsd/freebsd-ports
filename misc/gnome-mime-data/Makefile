@@ -11,19 +11,12 @@ DISTNAME=	gnome-mime-data-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A MIME and Application database for GNOME
+COMMENT=	MIME and Application database for GNOME
 
-USE_BZIP2=	yes
-USES=		gettext
-USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack
+USES=		gettext gmake pathfix tar:bzip2
+USE_GNOME=	gnomeprefix intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
 CPPFLAGS+=	-I${LOCALBASE}/include
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-	    	${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
