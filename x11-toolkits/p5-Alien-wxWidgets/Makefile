@@ -3,6 +3,7 @@
 
 PORTNAME=	Alien-wxWidgets
 PORTVERSION=	0.65
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +19,7 @@ WX_UNICODE=	yes
 WX_UNI=		uni_
 CONFIGURE_ARGS+=	--wxWidgets-build=0 --wxWidgets-unicode=1
 
-WX_UVER!=	${MAKE} -C ${PORTSDIR}/x11-toolkits/wxgtk30 -V'$${PORTVERSION:C/\./_/g}'
+WX_UVER!=	${MAKE} -C ${.CURDIR}/../../x11-toolkits/wxgtk30 -V'$${PORTVERSION:C/\./_/g}'
 PLIST_SUB+=	WX_UVER=${WX_UVER} WX_UNI=${WX_UNI}
 
 post-patch:
