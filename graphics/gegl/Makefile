@@ -124,7 +124,7 @@ PLIST_SUB+=	OPENEXR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENRAW}
-LIB_DEPENDS+=	liblibopenraw.so.so:${PORTSDIR}/graphics/libopenraw
+LIB_DEPENDS+=	libopenraw.so:${PORTSDIR}/graphics/libopenraw
 PLIST_SUB+=	OPENRAW=""
 .else
 CONFIGURE_ARGS+=--without-libopenraw
