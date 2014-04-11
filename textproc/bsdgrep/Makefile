@@ -40,7 +40,7 @@ MAKE_ENV+=	WITHOUT_GNU_COMPAT=yes
 
 pre-install:
 .if ${PORT_OPTIONS:MNLS}
-	${MKDIR} ${PREFIX}/share/nls/gl_ES.ISO8859-1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/nls/gl_ES.ISO8859-1
 .endif
 
 .include <bsd.port.mk>
