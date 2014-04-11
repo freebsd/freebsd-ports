@@ -5922,42 +5922,42 @@ sysutils/bubblemon2||2014-04-11|Has expired: gnome-panel 2.x will be updated in 
 lang/tcltutor||2014-04-11|Removed, depends on expired ports, unstaged, abandonware
 palm/gnome-pilot||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
 palm/gnome-pilot-conduits||2014-04-11|Removed (depends on gnome-pilot)
-www/p5-CGI-modules||2014-04-11|Removed
-www/p5-WWW-Link||2014-04-11|Removed
-www/sbox-dtc||2014-04-11|Removed
-sysutils/dtc||2014-04-11|Removed
-textproc/glimpse||2014-04-11|Removed
-ftp/ftplocate||2014-04-11|Removed
-misc/tkman||2014-04-11|Removed
-devel/asl||2014-04-11|Removed
-net/pcnfsd||2014-04-11|Removed
-cad/chipmunk||2014-04-11|Removed
-graphics/comix||2014-04-11|Removed
-www/mambo||2014-04-11|Removed
-devel/lua-rds-parser||2014-04-11|Removed
-editors/the||2014-04-11|Removed
-japanese/exmh2||2014-04-11|Removed
-net/freewais-sf||2014-04-11|Removed
-editors/elvis||2014-04-11|Removed
-japanese/sed||2014-04-11|Removed
-x11-fm/xfm||2014-04-11|Removed
-print/rtf2latex||2014-04-11|Removed
-graphics/fbm||2014-04-11|Removed
-devel/p5-Penguin-Easy||2014-04-11|Removed
-emulators/prodosemu||2014-04-11|Removed
-security/gtkportscan||2014-04-11|Removed
-graphics/xmfract||2014-04-11|Removed
-databases/xmbase-grok||2014-04-11|Removed
-emulators/svr4_base||2014-04-11|Removed
-math/freefem||2014-04-11|Removed
-graphics/tiff2png||2014-04-11|Removed
-math/wingz||2014-04-11|Removed
-lang/STk||2014-04-11|Removed
-graphics/kdc2tiff||2014-04-11|Removed
-math/xlispstat||2014-04-11|Removed
-databases/typhoon||2014-04-11|Removed
-graphics/dc20ctrl||2014-04-11|Removed
-www/fhttpd||2014-04-11|Removed
-graphics/xmorph||2014-04-11|Removed
-editors/axe||2014-04-11|Removed
-www/cgic||2014-04-11|Removed
+www/p5-CGI-modules||2014-04-11|Has expired: No more public distfiles
+www/p5-WWW-Link||2014-04-11|Has expired: Depends on expired www/p5-CGI-modules
+www/sbox-dtc||2014-04-11|Has expired: No more public distfiles
+sysutils/dtc||2014-04-11|Has expired: Depends on expired www/sbox-dtc
+textproc/glimpse||2014-04-11|Has expired: No more public distfiles
+ftp/ftplocate||2014-04-11|Has expired: Depends on expired textproc/glimpse
+misc/tkman||2014-04-11|Has expired: Depends on expired textproc/glimpse
+devel/asl||2014-04-11|Has expired: Unmaintained since 1997
+net/pcnfsd||2014-04-11|Has expired: Unmaintained since 1997
+cad/chipmunk||2014-04-11|Has expired: Unmaintained since 1999
+graphics/comix||2014-04-11|Has expired: Insists on installing in /usr/local, and uses nautilus2 which is deprecated.
+www/mambo||2014-04-11|Has expired: Broken for more than 6 months
+devel/lua-rds-parser||2014-04-11|Has expired: Broken for more than 6 months
+editors/the||2014-04-11|Has expired: Unmaintained since 1999
+japanese/exmh2||2014-04-11|Has expired: Unmaintained since 1999
+net/freewais-sf||2014-04-11|Has expired: Unmaintained since 1999
+editors/elvis||2014-04-11|Has expired: Unmaintained since 1999
+japanese/sed||2014-04-11|Has expired: Unmaintained since 1999
+x11-fm/xfm||2014-04-11|Has expired: Unmaintained since 1999
+print/rtf2latex||2014-04-11|Has expired: Unmaintained since 1999
+graphics/fbm||2014-04-11|Has expired: Unmaintained since 1999
+devel/p5-Penguin-Easy||2014-04-11|Has expired: Unmaintained since 2000
+emulators/prodosemu||2014-04-11|Has expired: Unmaintained since 2000
+security/gtkportscan||2014-04-11|Has expired: Unmaintained since 2000
+graphics/xmfract||2014-04-11|Has expired: Unmaintained since 2000
+databases/xmbase-grok||2014-04-11|Has expired: Unmaintained since 2000
+emulators/svr4_base||2014-04-11|Has expired: Unmaintained since 2000
+math/freefem||2014-04-11|Has expired: Unmaintained since 2000
+graphics/tiff2png||2014-04-11|Has expired: Unmaintained since 2000
+math/wingz||2014-04-11|Has expired: Unmaintained since 2000
+lang/STk||2014-04-11|Has expired: Unmaintained since 2000
+graphics/kdc2tiff||2014-04-11|Has expired: Unmaintained since 2000
+math/xlispstat||2014-04-11|Has expired: Unmaintained since 2000
+databases/typhoon||2014-04-11|Has expired: Unmaintained since 2000
+graphics/dc20ctrl||2014-04-11|Has expired: Unmaintained since 2000
+www/fhttpd||2014-04-11|Has expired: Unmaintained since 2000
+graphics/xmorph||2014-04-11|Has expired: Unmaintained since 2000
+editors/axe||2014-04-11|Has expired: Unmaintained since 2000
+www/cgic||2014-04-11|Has expired: Unmaintained since 2000
