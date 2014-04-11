@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
 		${WRKSRC}/lib/*
