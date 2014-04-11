@@ -10,6 +10,8 @@ MASTER_SITE_SUBDIR=	gnunet
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	GTK interface to GNUnet
 
+BROKEN=		Does not fetch
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	gladeui-1:${PORTSDIR}/devel/glade3 \
