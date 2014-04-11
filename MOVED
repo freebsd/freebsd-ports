@@ -5771,7 +5771,7 @@ x11-toolkits/wxgtk26|x11-toolkits/wxgtk28|2014-03-24|wxGTK 2.6 is EOLed
 x11-toolkits/wxgtk26-common|x11-toolkits/wxgtk28-common|2014-03-24|wxGTK 2.6 is EOLed
 x11-toolkits/wxgtk26-contrib|x11-toolkits/wxgtk28-contrib|2014-03-24|wxGTK 2.6 is EOLed
 x11-toolkits/wxgtk26-contrib-common|x11-toolkits/wxgtk28-contrib-common|2014-03-24|wxGTK 2.6 is EOLed
-x11-toolkits/wxgtk26-docs|x11-toolkits/wxgtk28-docs|2014-03-24|wxGTK 2.6 is EOLed
+x11-toolkits/wxgtk26-docs||2014-03-24|wxGTK 2.6 is EOLed
 x11-toolkits/wxgtk26-unicode|x11-toolkits/wxgtk28-unicode|2014-03-24|wxGTK 2.6 is EOLed
 x11-toolkits/wxgtk26-unicode-contrib|x11-toolkits/wxgtk28-unicode-contrib|2014-03-24|wxGTK 2.6 is EOLed
 x11-toolkits/wxgtk29|x11-toolkits/wxgtk30|2014-03-24|wxGTK 2.9 was a developement version superseeded by the 3.0 release
@@ -5876,8 +5876,8 @@ security/aolserver-nssha1||2014-04-03|Has expired: abandonware, messing up on cl
 www/webobjects||2014-04-04|Has expired: Unmaintained, interactive and restricted
 devel/p5-Devel-LeakTrace-Fast||2014-04-04|Has expired: Broken for more than 6 months
 www/privoxy+ipv6|www/privoxy|2014-04-06|Has expired: www/privoxy natively supports ipv6
-graphics/pyggel|graphics/py-pyggel|2014-04-07|Rename to consistency with other Python ports
 games/f1lt||2014-04-06|Trademark violation: http://www.formula1.com/trademarkguidelines.html
+graphics/pyggel|graphics/py-pyggel|2014-04-07|Rename to consistency with other Python ports
 japanese/p5-manual||2014-04-08|Outdated manuals
 graphics/openclipart||2014-04-08|Outdated, has no real meaning as a port
 audio/py-xmms||2014-04-08|Has expired: Abandonware, please consider using multimedia/audacious instead
@@ -5899,7 +5899,7 @@ databases/libgda3-postgresql||2014-04-11|Ancient version, consider using newer v
 databases/libgnomedb||2014-04-11|Superseeded by libgda starting from version 4
 databases/libgnomedb-reference||2014-04-11|Superseeded by libgda starting from version 4
 databases/mergeant||2014-04-11|Superseeded by libgda starting from version 4
-deskutils/evolution-jescs||2014-04-11||Doesn't work with newer version of evolution
+deskutils/evolution-jescs||2014-04-11|Doesn't work with newer version of evolution
 deskutils/nautilus-locked-folder||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
 www/screem||2014-04-11|Has expired: gnome-menus 2.x will be updated in the GNOME 3 import
 deskutils/nautilus-actions||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
@@ -5932,7 +5932,7 @@ misc/tkman||2014-04-11|Has expired: Depends on expired textproc/glimpse
 devel/asl||2014-04-11|Has expired: Unmaintained since 1997
 net/pcnfsd||2014-04-11|Has expired: Unmaintained since 1997
 cad/chipmunk||2014-04-11|Has expired: Unmaintained since 1999
-graphics/comix||2014-04-11|Has expired: Insists on installing in /usr/local, and uses nautilus2 which is deprecated.
+graphics/comix||2014-04-11|Has expired: Insists on installing in /usr/local, and uses nautilus2 which is deprecated
 www/mambo||2014-04-11|Has expired: Broken for more than 6 months
 devel/lua-rds-parser||2014-04-11|Has expired: Broken for more than 6 months
 editors/the||2014-04-11|Has expired: Unmaintained since 1999
