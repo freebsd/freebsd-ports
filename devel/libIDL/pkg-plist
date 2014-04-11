@@ -4,6 +4,7 @@ lib/libIDL-2.a
 lib/libIDL-2.la
 lib/libIDL-2.so
 lib/libIDL-2.so.0
+lib/libIDL-2.so.0.0.0
 libdata/pkgconfig/libIDL-2.0.pc
 @dirrm include/libIDL-2.0/libIDL
 @dirrm include/libIDL-2.0
