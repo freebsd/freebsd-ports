@@ -12,22 +12,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk flash player and thumbnailer
 
-LIB_DEPENDS=	swfdec-0.8:${PORTSDIR}/graphics/swfdec
+LIB_DEPENDS=	libswfdec-0.8.so:${PORTSDIR}/graphics/swfdec
 
-USE_GNOME=	gnomehack gnomeprefix gtk20 intlhack gconf2
-USE_BZIP2=	yes
+USE_GNOME=	gnomeprefix gtk20 intlhack gconf2
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pkgconfig
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	swfdec-thumbnailer.schemas
-
-MAN1=		swfdec-player.1 swfdec-thumbnailer.1
-
-NO_STAGE=	yes
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
