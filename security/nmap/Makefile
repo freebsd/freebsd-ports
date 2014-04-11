@@ -3,10 +3,14 @@
 
 PORTNAME=	nmap
 DISTVERSION=	6.40
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
+
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	ohauer
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-r${PATCHREV}.diff.bz2
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Port scanning utility for large networks
@@ -19,9 +23,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2 dos2unix
 GNU_CONFIGURE=	yes
+DOS2UNIX_FILES=	nselib/data/packetdecoders.lua
+
+# Upstream revision r32810: nselib, scripts
+PATCHREV=	32810
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DOCS IPV6 SSL
@@ -70,9 +77,13 @@ pre-patch:
 post-configure:
 	@${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|" ${WRKSRC}/Makefile
 
+pre-install:
+	${FIND} ${WRKSRC} -type f \( -name \*.orig -o -name \*.bak \) -delete
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 # gcc from ports is in use
 .if defined(NDCC)
