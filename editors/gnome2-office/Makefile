@@ -13,12 +13,10 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric \
 		dia:${PORTSDIR}/graphics/dia \
 		glabels:${PORTSDIR}/deskutils/glabels \
 		abiword:${PORTSDIR}/editors/abiword
-#		mergeant:${PORTSDIR}/databases/mergeant
 
 MASTERDIR=	${.CURDIR}/../../x11/gnome2
 GNOME_SLAVE=	yes
 
 DESCR=		${.CURDIR}/pkg-descr
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
