@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yabasic
-PORTVERSION=	2.763
-PORTREVISION=	3
+PORTVERSION=	2.767
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
 
