@@ -51,19 +51,19 @@ CUPSSYSGRP=	wheel
 GROUPS=	cups
 USERS=		cups
 
+USES+=		compiler
+
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 .if defined(CUPS_CLIENT)
 PORTREVISION=	0
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 OPTIONS_DEFINE=	GNUTLS
-USES+=		compiler
 .elif defined(CUPS_IMAGE)
 PORTREVISION=	0
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 OPTIONS_DEFINE=	GNUTLS
-USES+=		compiler
 .else
 INSTALLS_ICONS=	yes
 PORTREVISION=	0
