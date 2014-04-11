@@ -25,10 +25,12 @@ lib/girepository-1.0/PanelApplet-3.0.typelib
 %%BONOBO%%lib/libpanel-applet-2.la
 %%BONOBO%%lib/libpanel-applet-2.so
 %%BONOBO%%lib/libpanel-applet-2.so.0
+%%BONOBO%%lib/libpanel-applet-2.so.0.2.73
 lib/libpanel-applet-3.a
 lib/libpanel-applet-3.la
 lib/libpanel-applet-3.so
 lib/libpanel-applet-3.so.0
+lib/libpanel-applet-3.so.0.0.6
 %%BONOBO%%libdata/pkgconfig/libpanelapplet-2.0.pc
 libdata/pkgconfig/libpanelapplet-3.0.pc
 libexec/clock-applet
@@ -36,6 +38,7 @@ libexec/fish-applet
 libexec/gnome-panel-add
 libexec/notification-area-applet
 libexec/wnck-applet
+man/man1/gnome-panel.1.gz
 share/applications/gnome-panel.desktop
 share/dbus-1/services/org.gnome.panel.applet.ClockAppletFactory.service
 share/dbus-1/services/org.gnome.panel.applet.FishAppletFactory.service

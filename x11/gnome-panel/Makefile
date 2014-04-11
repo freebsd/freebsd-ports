@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-panel
 PORTVERSION=	2.32.1
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,30 +12,30 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Panel component for the GNOME 2 Desktop
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	gweather:${PORTSDIR}/net/libgweather \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		canberra-gtk:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	libgweather.so:${PORTSDIR}/net/libgweather \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
 
 CONFLICTS=	gnome-panel-3.[0-9]*
 
 USE_XORG=	ice sm x11 xau xrandr
 USE_PYTHON=	2
 INSTALLS_OMF=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USES=		pathfix gettext gmake pkgconfig
+USES+=		pathfix libtool gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomedesktop libwnck gnomemenus \
-		gnomedocutils ltverhack referencehack librsvg2
-USE_AUTOTOOLS=	libtool
+		gnomedocutils referencehack librsvg2
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-network-manager
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		gnome-panel.1
 GCONF_SCHEMAS=	clock.schemas fish.schemas \
 		panel-compatibility.schemas panel-general.schemas \
 		panel-global.schemas panel-object.schemas \
@@ -47,7 +47,6 @@ OPTIONS_DEFAULT=EVOLUTION BONOBO
 EVOLUTION_DESC=	Use the Evolution calendar
 BONOBO_DESC=	Support for bonobo applets aka Gnome 2 applets
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEVOLUTION}
@@ -75,10 +74,6 @@ post-patch:
 		${WRKSRC}/help/fish/Makefile.in
 	@${REINPLACE_CMD} -e 's|python.* python2\.0|${PYTHON_VERSION}|g' \
 		${WRKSRC}/configure
-
-post-install:
-	@${MKDIR} ${PREFIX}/lib/gnome-panel/modules
-	-${LOCALBASE}/bin/gio-querymodules ${PREFIX}/lib/gnome-panel/modules
 
 .include <bsd.port.mk>
 
