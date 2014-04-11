@@ -13,16 +13,16 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Photobooth-inspired app for taking pictures and videos from webcam
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
-		hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
+		libhal.so:${PORTSDIR}/sysutils/hal
 
 USE_XORG=	xxf86vm
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack evolutiondataserver librsvg2 \
+USE_GNOME=	gnomeprefix intlhack evolutiondataserver librsvg2 \
 		gnomedocutils gnomedesktop
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GSTREAMER=	gconf good ogg theora v4l2 vorbis
 INSTALLS_OMF=	yes
+INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -32,11 +32,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DOCS=		AUTHORS COPYING ChangeLog NEWS README
 GCONF_SCHEMAS=	cheese.schemas
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
