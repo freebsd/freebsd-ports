@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome2-reference
 PORTVERSION=	2.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -19,9 +19,6 @@ COMMENT=	The "meta-port" for GNOME 2 programming references
 
 REF_LIST=	accessibility/at-spi-reference \
 		accessibility/atk-reference \
-		databases/libgda2-reference \
-		databases/libgda3-reference \
-		databases/libgnomedb-reference \
 		devel/ORBit2-reference \
 		devel/gconf2-reference \
 		devel/glib20-reference \
