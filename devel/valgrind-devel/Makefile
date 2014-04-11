@@ -35,8 +35,7 @@ MPI_DESC=	Enable build of MPI wrappers
 MPI_LIB_DEPENDS=	mpich:${PORTSDIR}/net/mpich2
 
 OPTIONS_SUB=	yes
-USE_BZIP2=	yes
-USES=		pathfix pkgconfig gmake perl5 shebangfix
+USES=		pathfix pkgconfig gmake perl5 shebangfix tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -46,6 +45,8 @@ PORTDOCS=	html
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
+
+BROKEN_amd64=	Fails to build
 
 .include <bsd.port.options.mk>
 
