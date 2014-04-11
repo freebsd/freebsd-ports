@@ -353,7 +353,6 @@
     SUBDIR += liferea
     SUBDIR += linc
     SUBDIR += linc-reference
-    SUBDIR += link-monitor-applet
     SUBDIR += linknx
     SUBDIR += linphone
     SUBDIR += linphone-base
@@ -419,7 +418,6 @@
     SUBDIR += netscript
     SUBDIR += netsed
     SUBDIR += netselect
-    SUBDIR += netspeed_applet
     SUBDIR += netstrain
     SUBDIR += nettest
     SUBDIR += netwib
@@ -988,7 +986,6 @@
     SUBDIR += redir
     SUBDIR += relayd
     SUBDIR += remmina
-    SUBDIR += remmina-applet
     SUBDIR += remmina-plugin-gnome
     SUBDIR += remmina-plugin-i18n
     SUBDIR += remmina-plugin-nx

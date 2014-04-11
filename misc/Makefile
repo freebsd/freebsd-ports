@@ -389,7 +389,6 @@
     SUBDIR += qt4-l10n
     SUBDIR += qt4-qtconfig
     SUBDIR += qt4-qtdemo
-    SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
     SUBDIR += ree
@@ -446,7 +445,6 @@
     SUBDIR += tvbrowser
     SUBDIR += txt2regex
     SUBDIR += typetrainer
-    SUBDIR += uf-view
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
     SUBDIR += umodunpack

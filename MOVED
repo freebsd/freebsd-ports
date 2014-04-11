@@ -5900,3 +5900,22 @@ databases/libgnomedb||2014-04-11|Superseeded by libgda starting from version 4
 databases/libgnomedb-reference||2014-04-11|Superseeded by libgda starting from version 4
 databases/mergeant||2014-04-11|Superseeded by libgda starting from version 4
 deskutils/evolution-jescs||2014-04-11||Doesn't work with newer version of evolution
+deskutils/nautilus-locked-folder||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
+www/screem||2014-04-11|Has expired: gnome-menus 2.x will be updated in the GNOME 3 import
+deskutils/nautilus-actions||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
+deskutils/nautilus-sendto||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
+deskutils/nautilus-open-terminal||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
+sysutils/eiciel||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
+sysutils/nautilus-cd-burner||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
+x11-fm/py-nautilus||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
+sysutils/sensors-applet||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
+net/link-monitor-applet||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
+net/netspeed_applet||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
+net/remmina-applet||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
+misc/uf-view||2014-04-11|Has expired: gnome-desktop 2.x will be updated in the GNOME 3 import
+textproc/uim-gnome||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
+audio/istream||2014-04-11|Has expired: gnome-panel will be updated to the 3.x version which is not compatible with 2.x
+mail/contact-lookup-applet||2014-04-11|Has expired: gnome-panel will be updated to the 3.x version which is not compatible with 2.x
+security/tuntun||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
+misc/quick-lounge-applet||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
+sysutils/bubblemon2||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import

@@ -145,10 +145,6 @@
     SUBDIR += myitcrm
     SUBDIR += nagaina
     SUBDIR += narval
-    SUBDIR += nautilus-actions
-    SUBDIR += nautilus-locked-folder
-    SUBDIR += nautilus-open-terminal
-    SUBDIR += nautilus-sendto
     SUBDIR += note
     SUBDIR += notecase
     SUBDIR += notification-daemon

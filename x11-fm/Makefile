@@ -21,7 +21,6 @@
     SUBDIR += p5-PerlFM
     SUBDIR += pbi-thumbnailer
     SUBDIR += pcmanfm
-    SUBDIR += py-nautilus
     SUBDIR += qtfm
     SUBDIR += rodent
     SUBDIR += rox-filer

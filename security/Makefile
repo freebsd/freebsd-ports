@@ -991,7 +991,6 @@
     SUBDIR += truecrypt
     SUBDIR += tsshbatch
     SUBDIR += tthsum
-    SUBDIR += tuntun
     SUBDIR += umit
     SUBDIR += unhide
     SUBDIR += unicornscan
