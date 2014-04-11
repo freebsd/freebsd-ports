@@ -4,7 +4,7 @@
 
 PORTNAME=	evolution-exchange
 PORTVERSION=	2.32.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,12 +18,12 @@ RUN_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
 
 CONFLICTS=	evolution-exchange-3.[0-9]*
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_BDB=	41+
 USE_OPENLDAP=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack ltasneededhack
+USE_GNOME=	gnomeprefix intlhack
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
@@ -37,12 +37,11 @@ PLIST_SUB=	VERSION=${VERSION} EVO_VERSION=${EVO_VERSION} \
 
 GCONF_SCHEMAS=	apps_exchange_addressbook-${VERSION}.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL) || defined(NO_KERBEROS)
 HEIMDAL_HOME?=		${LOCALBASE}
-LIB_DEPENDS+=           krb5:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=           libkrb5.so:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=        --with-krb5=${HEIMDAL_HOME} \
 			--with-krb5-includes=${HEIMDAL_HOME}/include
 KRB5_LIB=		`${HEIMDAL_HOME}/bin/krb5-config gssapi --libs`
