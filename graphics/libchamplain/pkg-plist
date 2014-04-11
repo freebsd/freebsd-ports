@@ -38,10 +38,12 @@ lib/libchamplain-%%VERSION%%.a
 lib/libchamplain-%%VERSION%%.la
 lib/libchamplain-%%VERSION%%.so
 lib/libchamplain-%%VERSION%%.so.1
+lib/libchamplain-%%VERSION%%.so.1.1.2
 lib/libchamplain-gtk-%%VERSION%%.a
 lib/libchamplain-gtk-%%VERSION%%.la
 lib/libchamplain-gtk-%%VERSION%%.so
 lib/libchamplain-gtk-%%VERSION%%.so.1
+lib/libchamplain-gtk-%%VERSION%%.so.1.1.2
 libdata/pkgconfig/champlain-%%VERSION%%.pc
 libdata/pkgconfig/champlain-gtk-%%VERSION%%.pc
 share/doc/libchamplain-gtk/GtkChamplainEmbed.html
