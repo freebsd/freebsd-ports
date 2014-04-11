@@ -4,7 +4,7 @@
 
 PORTNAME=	eog
 PORTVERSION=	2.32.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,26 +12,22 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The Eye Of Gnome image viewer
 
-BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info
-RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info
+BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
+RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack librsvg2 desktopfileutils \
-		gconf2 gnomedesktop
+USE_GNOME=	gnomeprefix intlhack librsvg2 gconf2 gnomedesktop
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pkgconfig
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 GNOME_DESKTOP_VERSION=2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	eog.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 _WITH_EXIF=	no
@@ -64,8 +60,5 @@ CONFIGURE_ARGS+=--enable-python
 .else
 CONFIGURE_ARGS+=--disable-python
 .endif
-
-post-install:
-	@-update-desktop-database > /dev/null
 
 .include <bsd.port.post.mk>
