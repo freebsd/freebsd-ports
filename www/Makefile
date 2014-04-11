@@ -1887,7 +1887,6 @@
     SUBDIR += sarg
     SUBDIR += sbox-dtc
     SUBDIR += scloader
-    SUBDIR += screem
     SUBDIR += script4rss
     SUBDIR += seamonkey
     SUBDIR += seamonkey-i18n

@@ -70,7 +70,6 @@
     SUBDIR += claws-mail-vcalendar
     SUBDIR += clawsker
     SUBDIR += cone
-    SUBDIR += contact-lookup-applet
     SUBDIR += coolmail
     SUBDIR += courier
     SUBDIR += courier-authlib-vchkpw

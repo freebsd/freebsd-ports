@@ -1465,7 +1465,6 @@
     SUBDIR += uim-el-emacs21
     SUBDIR += uim-el-emacs22
     SUBDIR += uim-el-xemacs21-mule
-    SUBDIR += uim-gnome
     SUBDIR += uim-gtk
     SUBDIR += uim-gtk3
     SUBDIR += uim-kde4
