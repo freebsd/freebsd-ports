@@ -10,6 +10,9 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/ved/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small and fast screen-oriented editor
 
+DEPRECATED=	Depends on deprecated smake
+EXPIRATION_DATE=	2014-05-12
+
 BUILD_DEPENDS=	smake:${PORTSDIR}/devel/smake
 
 MAN1=		ved.1
