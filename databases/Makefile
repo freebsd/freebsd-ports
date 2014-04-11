@@ -139,17 +139,6 @@
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle
-    SUBDIR += libgda2
-    SUBDIR += libgda2-reference
-    SUBDIR += libgda3
-    SUBDIR += libgda3-firebird
-    SUBDIR += libgda3-freetds
-    SUBDIR += libgda3-ldap
-    SUBDIR += libgda3-mdb
-    SUBDIR += libgda3-mysql
-    SUBDIR += libgda3-odbc
-    SUBDIR += libgda3-postgresql
-    SUBDIR += libgda3-reference
     SUBDIR += libgda4
     SUBDIR += libgda4-bdb
     SUBDIR += libgda4-jdbc
@@ -168,8 +157,6 @@
     SUBDIR += libgda5-ui
     SUBDIR += libgdamm
     SUBDIR += libgdamm5
-    SUBDIR += libgnomedb
-    SUBDIR += libgnomedb-reference
     SUBDIR += libhsclient
     SUBDIR += libiodbc
     SUBDIR += libmemcache
@@ -201,7 +188,6 @@
     SUBDIR += memcached
     SUBDIR += memcachedb
     SUBDIR += memcacheq
-    SUBDIR += mergeant
     SUBDIR += metakit
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
