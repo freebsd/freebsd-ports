@@ -1,4 +1,5 @@
 bin/dopewars
+man/man6/dopewars.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/aiplayer.html
 %%PORTDOCS%%%%DOCSDIR%%/clientplay.html
 %%PORTDOCS%%%%DOCSDIR%%/commandline.html
