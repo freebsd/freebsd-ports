@@ -13,22 +13,24 @@ COMMENT=	Secure and fast copy utility
 
 LICENSE=	BSD
 
-BUILD_WRKSRC=	${WRKSRC}/src
+USES=		tar:xz
+USE_GCC=	yes
+
 PLIST_FILES=	bin/bbcp
 PORTDOCS=	${PORTNAME}.pdf
-USE_XZ=		yes
 
-NO_STAGE=	yes
+BUILD_WRKSRC=	${WRKSRC}/src
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|g++|$(CXX)|' -e 's|gcc|$(CC)|' \
+		${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/bbcp ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-20100818.pdf ${DOCSDIR}/${PORTNAME}.pdf
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/bbcp ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-20100818.pdf \
+		${STAGEDIR}${DOCSDIR}/${PORTNAME}.pdf
 
 .include <bsd.port.mk>
