@@ -14,12 +14,12 @@ COMMENT=	GNOME 2 version of xdm display manager
 
 BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	ck-connector:${PORTSDIR}/sysutils/consolekit \
-		polkit-gtk-1:${PORTSDIR}/sysutils/polkit-gnome \
-    		execinfo:${PORTSDIR}/devel/libexecinfo \
-		upower-glib:${PORTSDIR}/sysutils/upower \
-		xklavier:${PORTSDIR}/x11/libxklavier \
-		canberra-gtk:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
+		libpolkit-gtk-1.so:${PORTSDIR}/sysutils/polkit-gnome \
+    		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libupower-glib.so:${PORTSDIR}/sysutils/upower \
+		libxklavier.so:${PORTSDIR}/x11/libxklavier \
+		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		gnome-session:${PORTSDIR}/x11/gnome-session \
@@ -30,13 +30,12 @@ CONFLICTS=	gdm-3.[0-9]*
 USERS=		gdm
 GROUPS=		gdm
 
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 USE_XORG=	dmx dmxproto
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
-USES=		pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake pkgconfig tar:xz
 USE_GNOME=	intlhack gnomehier gconf2 librsvg2 \
 		gnomedocutils gnomeprefix gnomepanel
 GCONF_SCHEMAS=	gdm-simple-greeter.schemas
@@ -59,11 +58,10 @@ OPTIONS_DEFINE=	IPV6 KEYRING
 OPTIONS_DEFAULT=KEYRING
 KEYRING_DESC=	GnomeKeyring/PAM integration
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKEYRING}
-LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS+=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 SUB_LIST+=	PAM_KEYRING=
 .else
 SUB_LIST+=	PAM_KEYRING=\#
@@ -76,7 +74,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|root:root|root:wheel|g' \
+	@${REINPLACE_CMD} -e '/root:/d; s/1640/0640/g' \
 		${WRKSRC}/data/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    	-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -91,18 +89,16 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/gconf.path \
-	    	${PREFIX}/share/gdm/gconf.path
+	    	${STAGEDIR}${PREFIX}/share/gdm/gconf.path
 	${INSTALL_DATA} ${WRKSRC}/data/session-setup.entries \
-	    	${PREFIX}/share/gdm/session-setup.entries
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
+	    ${STAGEDIR}${PREFIX}/share/gdm/session-setup.entries
 	${INSTALL_DATA} ${WRKSRC}/data/gdm.conf-custom \
-		${PREFIX}/etc/gdm/custom.conf.default
-	${MKDIR} ${PREFIX}/share/xsessions
-	${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm
+		${STAGEDIR}${PREFIX}/etc/gdm/custom.conf.default
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
+	${INSTALL_DATA} ${WRKDIR}/gdm.pam ${STAGEDIR}${PREFIX}/etc/pam.d/gdm
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
+	${RM} -rf ${STAGEDIR}${ETCDIR}/home/.gconf*
+	${RM} -f ${STAGEDIR}${ETCDIR}/custom.conf
 
 .include <bsd.port.mk>

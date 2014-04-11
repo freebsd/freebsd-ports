@@ -8,7 +8,8 @@ include/libxklavier/xklavier.h
 lib/libxklavier.a
 lib/libxklavier.la
 lib/libxklavier.so
-lib/libxklavier.so.12
+lib/libxklavier.so.16
+lib/libxklavier.so.16.0.0
 libdata/pkgconfig/libxklavier.pc
 %%DOCSDIR%%/XklConfigItem.html
 %%DOCSDIR%%/XklConfigRec.html
