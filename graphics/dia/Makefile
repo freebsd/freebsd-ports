@@ -13,11 +13,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Diagram creation program, similar to Visio
 
+OPTIONS_DEFINE=	DOCS
+
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk20 gnomeprefix libxslt libartlgpl2 intlhack
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
@@ -25,26 +26,10 @@ CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-gnome
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-MAN1=		dia.1
-MANLANG=	"" fr
-.endif
-
-#.if !defined(WITHOUT_PYTHON)
-#USE_PYTHON=	yes
-#USE_GNOME+=	pygtk2
-#CONFIGURE_ARGS=	--with-python
-#PLIST_SUB+=	PYTHON=""
-#.else
-#PLIST_SUB+=	PYTHON="@comment "
-#.endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 LIB_DEPENDS+=		libEMF.so:${PORTSDIR}/graphics/libemf
@@ -63,10 +48,6 @@ post-patch:
 		${WRKSRC}/objects/custom/shape_typeinfo.c \
 		${WRKSRC}/tests/test-objects.c \
 		${WRKSRC}/tests/test-boundingbox.c
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/SUBDIRS/s|data doc tests|data tests|g' \
-		${WRKSRC}/Makefile.in
-.endif
 	@${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} -e \
 		's,\(^GTK_LIBS.*\),\1 ${PTHREAD_LIBS}, ; \
@@ -75,4 +56,4 @@ post-patch:
 		s|echo aout|echo elf|g ; s|/usr/include/libEMF|${LOCALBASE}/include/libEMF|g ; \
 		s|-lstdc++||g'  ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
