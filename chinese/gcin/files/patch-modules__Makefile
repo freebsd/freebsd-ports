@@ -1,6 +1,6 @@
---- modules/Makefile.orig	2012-09-05 15:46:26.000000000 +0800
-+++ modules/Makefile	2012-09-05 15:49:16.000000000 +0800
-@@ -3,15 +3,18 @@ include ../suffixes-rule
+--- ./modules/Makefile.orig	2012-04-10 13:50:44.000000000 +0800
++++ ./modules/Makefile	2014-03-28 20:45:33.000000000 +0800
+@@ -3,15 +3,18 @@
  
  CFLAGS+=-I.. -I../IMdkit/include
  GCIN_MODULE=intcode-module.so
@@ -19,7 +19,7 @@
  endif
  
  all:	$(GCIN_MODULE)
-@@ -35,6 +38,6 @@ install:
+@@ -35,6 +38,6 @@
  clean:
  	rm -f *.pico *.so *.o .depend
  .depend:
