@@ -1,5 +1,5 @@
 --- Makefile.orig	2007-12-17 23:05:00.000000000 +0100
-+++ Makefile	2013-08-19 08:57:30.000000000 +0200
++++ Makefile	2014-04-11 21:13:39.000000000 +0200
 @@ -1,8 +1,8 @@
  
 -prefix = /usr/local
@@ -22,12 +22,26 @@
  
  bitmap: $(BITMAP)
  
-@@ -50,7 +50,7 @@
+@@ -42,17 +42,17 @@
+ install: all
+ 	mkdir -p $(DESTDIR)$(gamesdir)
+ 	cp monsterz $(DESTDIR)$(gamesdir)/
+-	chown root:games $(DESTDIR)$(gamesdir)/monsterz
+-	chmod g+s $(DESTDIR)$(gamesdir)/monsterz
++	#chown root:games $(DESTDIR)$(gamesdir)/monsterz
++	#chmod g+s $(DESTDIR)$(gamesdir)/monsterz
+ 	mkdir -p $(DESTDIR)$(pkgdatadir)/graphics
+ 	mkdir -p $(DESTDIR)$(pkgdatadir)/sound
+ 	cp monsterz.py $(DESTDIR)$(pkgdatadir)/
  	cp $(BITMAP) $(DESTDIR)$(pkgdatadir)/graphics/
  	cp $(SOUND) $(MUSIC) $(DESTDIR)$(pkgdatadir)/sound/
  	mkdir -p $(DESTDIR)$(scoredir)
 -	test -f $(DESTDIR)$(scorefile) || echo "" > $(DESTDIR)$(scorefile)
+-	chown root:games $(DESTDIR)$(scorefile)
+-	chmod g+w $(DESTDIR)$(scorefile)
 +	test -f $(DESTDIR)$(scorefile) || /usr/bin/touch $(DESTDIR)$(scorefile)
- 	chown root:games $(DESTDIR)$(scorefile)
- 	chmod g+w $(DESTDIR)$(scorefile)
++	#chown root:games $(DESTDIR)$(scorefile)
++	#chmod g+w $(DESTDIR)$(scorefile)
  
+ uninstall:
+ 	rm -f $(DESTDIR)$(gamesdir)/monsterz
