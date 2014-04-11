@@ -26,5 +26,4 @@ GNOME_SLAVE=	yes
 
 DESCR=		${.CURDIR}/pkg-descr
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
