@@ -6,6 +6,7 @@ lib/libseed-gtk3.a
 lib/libseed-gtk3.la
 lib/libseed-gtk3.so
 lib/libseed-gtk3.so.0
+lib/libseed-gtk3.so.0.0.0
 lib/seed-gtk3/libseed_DynamicObject.a
 lib/seed-gtk3/libseed_DynamicObject.la
 lib/seed-gtk3/libseed_DynamicObject.so
@@ -52,6 +53,7 @@ lib/seed-gtk3/libseed_sqlite.a
 lib/seed-gtk3/libseed_sqlite.la
 lib/seed-gtk3/libseed_sqlite.so
 libdata/pkgconfig/seed.pc
+man/man1/seed.1.gz
 %%DATADIR%%/dbus.js
 %%DATADIR%%/extensions/Clutter.js
 %%DATADIR%%/extensions/GObject.js
