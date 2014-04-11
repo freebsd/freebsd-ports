@@ -4,7 +4,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.32.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,10 +15,10 @@ COMMENT=	Integrated Development Environment for C and C++
 BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		bash:${PORTSDIR}/shells/bash \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
-		gladeui-1:${PORTSDIR}/devel/glade3 \
-		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
-		gdl-1:${PORTSDIR}/x11-toolkits/gdl
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libgladeui-1.so:${PORTSDIR}/devel/glade3 \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
+		libgdl-1.so:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
 		${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools \
@@ -30,10 +30,11 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 CONFLICTS=	anjuta-3.[0-9]*
 
-USE_BZIP2=	yes
-USES=		gmake gettext pathfix perl5 pkgconfig shebangfix shared-mime-info
+USES=		desktop-file-utils gmake gettext libtool pathfix perl5 pkgconfig \
+		shebangfix shared-mime-info tar:bzip2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix vte gtksourceview2 libgda4
 USE_CSTD=	gnu89
@@ -57,21 +58,21 @@ GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
 		file-manager.schemas \
 		preferences.schemas \
 		python-plugin-properties.schemas
-SHEBANG_FILES=	scripts/builder2schema.pl
-
-MAN1=		anjuta.1 anjuta-launcher.1
+SHEBANG_FILES=	scripts/builder2schema.pl \
+		plugins/gbf-am/gbf-am-parse.in \
+		plugins/gbf-mkfile/gbf-mkfile-parse.in \
+		plugins/tools/scripts/*.pl
 
 OPTIONS_DEFINE=	SVN DEVHELP
 OPTIONS_DEFAULT=DEVHELP
 DEVHELP_DESC=	Devhelp support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSVN}
 BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
-LIB_DEPENDS+=	neon:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
+LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 PLIST_SUB+=	SVN=""
 .else
@@ -80,7 +81,7 @@ PLIST_SUB+=	SVN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDEVHELP}
-LIB_DEPENDS+=	devhelp-2:${PORTSDIR}/devel/devhelp
+LIB_DEPENDS+=	libdevhelp-2.so:${PORTSDIR}/devel/devhelp
 PLIST_SUB+=	DEVHELP=""
 .else
 CONFIGURE_ARGS+=--disable-plugin-devhelp
@@ -101,12 +102,10 @@ post-configure:
 		${WRKSRC}/plugins/symbol-db/symbol-db-prefs.h
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS COPYING ChangeLog FUTURE INSTALL NEWS README \
 	doc/ScintillaDoc.html TODO
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

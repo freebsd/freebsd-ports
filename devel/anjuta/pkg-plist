@@ -208,6 +208,7 @@ lib/anjuta/liblanguage-manager.so
 lib/anjuta/libpython_plugin.la
 lib/anjuta/libpython_plugin.so
 lib/anjuta/libpython_plugin.so.0
+lib/anjuta/libpython_plugin.so.0.0.0
 lib/anjuta/python-plugin.plugin
 lib/anjuta/sourceview.plugin
 lib/anjuta/symbol-db.plugin
@@ -216,10 +217,14 @@ lib/glade3/modules/libgladeanjuta.so
 lib/libanjuta.la
 lib/libanjuta.so
 lib/libanjuta.so.0
+lib/libanjuta.so.0.0.0
 lib/libanjuta-foocanvas.la
 lib/libanjuta-foocanvas.so
 lib/libanjuta-foocanvas.so.0
+lib/libanjuta-foocanvas.so.0.0.0
 libdata/pkgconfig/libanjuta-1.0.pc
+man/man1/anjuta-launcher.1.gz
+man/man1/anjuta.1.gz
 share/anjuta/AUTHORS
 share/anjuta/GBF/AmFiles.pm
 share/anjuta/GBF/General.pm
@@ -1188,7 +1193,6 @@ share/locale/vi/LC_MESSAGES/anjuta.mo
 share/locale/zh_CN/LC_MESSAGES/anjuta.mo
 share/locale/zh_HK/LC_MESSAGES/anjuta.mo
 share/locale/zh_TW/LC_MESSAGES/anjuta.mo
-share/mime/application/x-anjuta.xml
 share/mime/packages/anjuta.xml
 share/omf/anjuta-manual/anjuta-manual-C.omf
 share/omf/anjuta-manual/anjuta-manual-de.omf
