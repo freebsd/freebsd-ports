@@ -483,7 +483,6 @@
     SUBDIR += fuel
     SUBDIR += fujaba
     SUBDIR += funnelweb
-    SUBDIR += g-wrap
     SUBDIR += gaa
     SUBDIR += gamin
     SUBDIR += gaphor
