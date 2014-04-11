@@ -33,5 +33,4 @@ CONFLICTS=	gnome2-[0-9]*
 DESCR=		${.CURDIR}/pkg-descr
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
