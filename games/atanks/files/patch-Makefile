@@ -1,11 +1,66 @@
---- Makefile.orig	2010-06-10 10:03:35.000000000 -0300
-+++ Makefile	2010-06-10 11:00:00.000000000 -0300
-@@ -16,7 +16,7 @@
- INCOMMON=COPYING README TODO Changelog *.txt unicode.dat
+--- ./Makefile.orig	2014-03-29 16:11:25.000000000 +0100
++++ ./Makefile	2014-04-09 17:29:31.394283912 +0200
+@@ -4,27 +4,27 @@
+ BINPREFIX = $(PREFIX)
+ 
+ BINDIR = ${BINPREFIX}bin/
+-INSTALLDIR = ${PREFIX}share/games/atanks
++INSTALLDIR = ${PREFIX}share/atanks
+ 
+ export VERSION
+ export PREFIX
+ export INSTALLDIR
+ 
+ FILENAME=atanks-${VERSION}
+-INSTALL=$(PREFIX)bin/install -c
++INSTALL=install
+ DISTCOMMON=atanks/*.dat atanks/COPYING atanks/README atanks/TODO atanks/Changelog atanks/BUGS atanks/*.txt
+-INCOMMON=COPYING README TODO Changelog *.txt unicode.dat
++INCOMMON=unicode.dat
  
  all:
 -	FLAGS=-DLINUX $(MAKE) -C src
 +	FLAGS=-DMACOSX $(MAKE) -C src -f Makefile.bsd
  
  install: 
- 	mkdir -p ${BINDIR}
+ 	mkdir -p $(DESTDIR)${BINDIR}
+-	$(INSTALL) -m 755 atanks $(DESTDIR)${BINDIR}
+-	mkdir -p $(DESTDIR)/usr/share/applications
+-	$(INSTALL) -m 644 atanks.desktop $(DESTDIR)/usr/share/applications
+-	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/48x48/apps
+-	$(INSTALL) -m 644 atanks.png $(DESTDIR)/usr/share/icons/hicolor/48x48/apps
++	$(INSTALL) -m 555 atanks $(DESTDIR)${BINDIR}
++	mkdir -p $(DESTDIR)/usr/local/share/applications
++	$(INSTALL) -m 644 atanks.desktop $(DESTDIR)/usr/local/share/applications
++	mkdir -p $(DESTDIR)/usr/local/share/icons/hicolor/48x48/apps
++	$(INSTALL) -m 644 atanks.png $(DESTDIR)/usr/local/share/icons/hicolor/48x48/apps
+ 	mkdir -p $(DESTDIR)${INSTALLDIR}
+ 	mkdir -p $(DESTDIR)${INSTALLDIR}/button
+ 	mkdir -p $(DESTDIR)${INSTALLDIR}/misc
+@@ -35,16 +35,16 @@
+ 	mkdir -p $(DESTDIR)${INSTALLDIR}/tankgun
+ 	mkdir -p $(DESTDIR)${INSTALLDIR}/title
+ 	mkdir -p $(DESTDIR)${INSTALLDIR}/text
+-	$(INSTALL) -m 644 $(INCOMMON) $(DESTDIR)${INSTALLDIR}
+-	$(INSTALL) -m 644 button/* $(DESTDIR)${INSTALLDIR}/button
+-	$(INSTALL) -m 644 misc/* $(DESTDIR)${INSTALLDIR}/misc
+-	$(INSTALL) -m 644 missile/* $(DESTDIR)${INSTALLDIR}/missile
+-	$(INSTALL) -m 644 sound/* $(DESTDIR)${INSTALLDIR}/sound
+-	$(INSTALL) -m 644 stock/* $(DESTDIR)${INSTALLDIR}/stock
+-	$(INSTALL) -m 644 tank/* $(DESTDIR)${INSTALLDIR}/tank
+-	$(INSTALL) -m 644 tankgun/* $(DESTDIR)${INSTALLDIR}/tankgun
+-	$(INSTALL) -m 644 title/* $(DESTDIR)${INSTALLDIR}/title
+-	$(INSTALL) -m 644 text/* $(DESTDIR)${INSTALLDIR}/text
++	$(INSTALL) -m 444 $(INCOMMON) $(DESTDIR)${INSTALLDIR}
++	$(INSTALL) -m 444 button/* $(DESTDIR)${INSTALLDIR}/button
++	$(INSTALL) -m 444 misc/* $(DESTDIR)${INSTALLDIR}/misc
++	$(INSTALL) -m 444 missile/* $(DESTDIR)${INSTALLDIR}/missile
++	$(INSTALL) -m 444 sound/* $(DESTDIR)${INSTALLDIR}/sound
++	$(INSTALL) -m 444 stock/* $(DESTDIR)${INSTALLDIR}/stock
++	$(INSTALL) -m 444 tank/* $(DESTDIR)${INSTALLDIR}/tank
++	$(INSTALL) -m 444 tankgun/* $(DESTDIR)${INSTALLDIR}/tankgun
++	$(INSTALL) -m 444 title/* $(DESTDIR)${INSTALLDIR}/title
++	$(INSTALL) -m 444 text/* $(DESTDIR)${INSTALLDIR}/text
+ 
+ user:
+ 	INSTALLDIR=./ FLAGS=-DLINUX $(MAKE) -C src
