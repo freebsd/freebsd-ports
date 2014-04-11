@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-control-center
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -20,8 +21,7 @@ LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shared-mime-info
-USE_XZ=		yes
+		shared-mime-info tar:xz
 USE_MATE=	desktop docutils libmatekbd marco menus settingsdaemon
 USE_XORG=	x11 xcursor xext xxf86misc xft xi xrandr xscrnsaver
 USE_GNOME=	dconf glib20 gnomehier gtk20 intlhack libxml2 librsvg2 \

@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomekbd
 PORTVERSION=	2.32.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,12 +12,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME keyboard shared library
 
-LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS=	libxklavier.so:${PORTSDIR}/x11/libxklavier
 
-USE_GNOME=	gnomeprefix gnomehack ltverhack gconf2
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+USE_GNOME=	gnomeprefix gconf2
 INSTALLS_ICONS=	yes
-USES=		gettext pkgconfig gmake tar:bzip2
+INSTALL_TARGET=	install-strip
+USES=		gettext libtool pathfix pkgconfig gmake tar:bzip2
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

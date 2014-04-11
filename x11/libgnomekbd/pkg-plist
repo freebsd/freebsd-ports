@@ -11,10 +11,12 @@ lib/libgnomekbd.a
 lib/libgnomekbd.la
 lib/libgnomekbd.so
 lib/libgnomekbd.so.4
+lib/libgnomekbd.so.4.2.0
 lib/libgnomekbdui.a
 lib/libgnomekbdui.la
 lib/libgnomekbdui.so
 lib/libgnomekbdui.so.4
+lib/libgnomekbdui.so.4.2.0
 libdata/pkgconfig/libgnomekbd.pc
 libdata/pkgconfig/libgnomekbdui.pc
 share/applications/gkbd-indicator-plugins-capplet.desktop

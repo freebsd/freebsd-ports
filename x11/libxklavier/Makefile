@@ -10,19 +10,19 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An utility library to make XKB stuff easier
+COMMENT=	Utility library to make XKB stuff easier
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
-USES=		pathfix gmake pkgconfig
+USES=		libtool pathfix gmake pkgconfig tar:bzip2
 USE_XORG=	x11 xi xkbfile
-USE_BZIP2=	yes
-USE_GNOME=	libxml2 glib20 ltverhack:12
+USE_GNOME=	libxml2 glib20
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen \
 		--with-xkb-base=${LOCALBASE}/share/X11/xkb \
 		--with-xkb-bin-base=${LOCALBASE}/bin \
@@ -33,7 +33,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|== "yes|= "yes|g' \
 		${WRKSRC}/configure

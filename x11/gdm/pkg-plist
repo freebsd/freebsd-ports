@@ -220,7 +220,6 @@ share/pixmaps/nohost.png
 @dirrm %%DATADIR%%/autostart/LoginWindow
 @dirrm %%DATADIR%%/autostart
 @dirrm %%DATADIR%%
-@dirrm etc/gdm/Sessions
 @dirrm etc/gdm/PreSession
 @dirrm etc/gdm/PostSession
 @dirrm etc/gdm/PostLogin
@@ -231,10 +230,6 @@ share/pixmaps/nohost.png
 @unexec rm -rf %D/etc/gdm/home/.gconf*
 @dirrmtry etc/gdm/home
 @dirrmtry etc/gdm
-@dirrmtry etc/dm/Sessions
-@dirrmtry etc/dm
-@dirrmtry share/log/gdm
-@dirrmtry share/log
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -293,3 +288,11 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@exec install -d -o root -g gdm /var/run/gdm /var/run/gdm/greeter /var/cache/gdm /var/log/gdm /var/gdm
+@group gdm
+@dirrmtry /var/run/gdm/greeter
+@dirrmtry /var/run/gdm
+@dirrmtry /var/log/gdm
+@dirrmtry /var/cache/gdm
+@dirrmtry /var/gdm
+@group wheel

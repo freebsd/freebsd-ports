@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-applets
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -21,8 +22,7 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		libtool gettext gmake pathfix pkgconfig tar:xz
 USE_MATE=	autogen common:build desktop docutils icontheme intlhack \
 		libmateweather libmatewnck mucharmap panel \
 		polkit settingsdaemon
