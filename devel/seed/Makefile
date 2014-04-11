@@ -4,7 +4,7 @@
 
 PORTNAME=	seed
 PORTVERSION=	2.31.91
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,30 +12,27 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject JavaScriptCore bridge
 
+OPTIONS_DEFINE=	DOCS
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-js-common.pc:${PORTSDIR}/devel/gnome-js-common
-LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi \
-		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
-		girepository-1.0:${PORTSDIR}/devel/gobject-introspection \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		mpfr:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi \
+		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
+		libgirepository-1.0.so:${PORTSDIR}/devel/gobject-introspection \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libmpfr.so:${PORTSDIR}/math/mpfr
 
 CONFLICTS=	seed-3.[0-9]*
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gnomehack gtk20 intltool libxml2
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	gtk20 intltool libxml2
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+INSTALL_TARGET=	install-strip
 USE_SQLITE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lglib-2.0 -lgthread-2.0
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-gtk-doc=no --with-webkit=1.0
-
-MAN1=		seed.1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' \
@@ -49,10 +46,6 @@ post-patch:
 #	@${REINPLACE_CMD} -e 's|examples||g' \
 #		${WRKSRC}/Makefile.in
 #.endif
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's| install-seeddocDATA||g ; s|doc$$||g' \
-		${WRKSRC}/Makefile.in
-.endif
 
 pre-build:
 	cd ${WRKSRC}/extensions && ${SETENV} ${MAKE_ENV} ${GMAKE} \
@@ -63,4 +56,4 @@ pre-build:
 post-build:
 	${CP} ${WRKSRC}/extensions/Seed.js.sav ${WRKSRC}/extensions/Seed.js
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

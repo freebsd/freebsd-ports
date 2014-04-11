@@ -6,6 +6,7 @@ lib/libseed.a
 lib/libseed.la
 lib/libseed.so
 lib/libseed.so.0
+lib/libseed.so.0.0.0
 lib/seed/libseed_DynamicObject.a
 lib/seed/libseed_DynamicObject.la
 lib/seed/libseed_DynamicObject.so
@@ -52,6 +53,7 @@ lib/seed/libseed_sqlite.a
 lib/seed/libseed_sqlite.la
 lib/seed/libseed_sqlite.so
 libdata/pkgconfig/seed.pc
+man/man1/seed.1.gz
 %%DATADIR%%/dbus.js
 %%DATADIR%%/extensions/Clutter.js
 %%DATADIR%%/extensions/GObject.js
