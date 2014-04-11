@@ -7,7 +7,7 @@ CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	catone@cpan.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	XML::Atom extension for OpenSearch data
 
 BUILD_DEPENDS=	p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom
