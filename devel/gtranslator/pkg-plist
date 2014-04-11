@@ -1,5 +1,7 @@
 bin/gtranslator
 bin/pozilla.sh
+man/man1/gtranslator.1.gz
+man/man1/pozilla.sh.1.gz
 share/applications/gtranslator.desktop
 share/gnome/help/gtranslator/C/figures/mainwindow.png
 share/gnome/help/gtranslator/C/figures/prefs.png

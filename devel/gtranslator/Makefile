@@ -9,13 +9,12 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNOME application for creating GNU gettext translation files
+COMMENT=	GNOME application for creating GNU gettext translation files
 
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix gnomevfs2 libgnomeui
-USES=		gettext gmake pkgconfig
+USE_GNOME=	intlhack gnomeprefix gnomevfs2 libgnomeui
+USES=		gettext gmake pathfix pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -23,9 +22,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-compile-warnings=no
 
-MAN1=		gtranslator.1 pozilla.sh.1
-
-NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/src/Makefile.in
 
