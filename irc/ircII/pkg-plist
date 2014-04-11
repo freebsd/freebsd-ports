@@ -4,6 +4,9 @@ bin/ircbug
 bin/ircflush
 libexec/ircio
 libexec/wserv
+man/man1/irc.1.gz
+man/man1/ircII.1.gz
+man/man1/ircbug.1.gz
 share/irc/help/!
 share/irc/help/.date
 share/irc/help/:
