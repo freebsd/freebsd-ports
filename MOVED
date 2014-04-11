@@ -5919,3 +5919,4 @@ mail/contact-lookup-applet||2014-04-11|Has expired: gnome-panel will be updated 
 security/tuntun||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
 misc/quick-lounge-applet||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
 sysutils/bubblemon2||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
+lang/tcltutor||2014-04-11|Removed, depends on expired ports, unstaged, abandonware
