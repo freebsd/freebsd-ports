@@ -977,7 +977,6 @@
     SUBDIR += skencil
     SUBDIR += sketch
     SUBDIR += sng
-    SUBDIR += sodipodi
     SUBDIR += springgraph
     SUBDIR += squish
     SUBDIR += sswf
