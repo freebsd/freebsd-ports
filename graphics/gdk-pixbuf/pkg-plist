@@ -19,9 +19,11 @@ lib/gdk-pixbuf/loaders/libpixbufloader-xpm.so
 lib/libgdk_pixbuf.a
 lib/libgdk_pixbuf.so
 lib/libgdk_pixbuf.so.2
+lib/libgdk_pixbuf.so.2.0.0
 lib/libgdk_pixbuf_xlib.a
 lib/libgdk_pixbuf_xlib.so
 lib/libgdk_pixbuf_xlib.so.2
+lib/libgdk_pixbuf_xlib.so.2.0.0
 share/aclocal/gdk-pixbuf.m4
 %%DOCSDIR%%/a3696.html
 %%DOCSDIR%%/compiling.html
