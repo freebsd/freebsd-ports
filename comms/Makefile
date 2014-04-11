@@ -39,6 +39,7 @@
     SUBDIR += esmska
     SUBDIR += fl_moxgen
     SUBDIR += fldigi
+    SUBDIR += flrig
     SUBDIR += flwrap
     SUBDIR += gammu
     SUBDIR += gammu-devel
