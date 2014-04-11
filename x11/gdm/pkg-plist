@@ -227,6 +227,7 @@ share/pixmaps/nohost.png
 @exec mkdir -p %D/etc/gdm/Sessions
 @exec mkdir -p %D/etc/dm/Sessions
 @dirrm etc/dm/Sessions
+@dirrm etc/dm
 @dirrm etc/gdm/Sessions
 @dirrm etc/gdm/PreSession
 @dirrm etc/gdm/PostSession
