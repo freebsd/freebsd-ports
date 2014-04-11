@@ -5,6 +5,7 @@ lib/libgtkhex.a
 lib/libgtkhex.la
 lib/libgtkhex.so
 lib/libgtkhex.so.0
+lib/libgtkhex.so.0.0.0
 libdata/pkgconfig/gtkhex.pc
 share/applications/ghex.desktop
 share/gnome-2.0/ui/ghex-ui.xml
