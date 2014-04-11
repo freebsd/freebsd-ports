@@ -9,7 +9,7 @@ MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/ \
 DISTNAME=	p0f-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	catone@cpan.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
 
 CONFLICTS=	p0f-3.*
