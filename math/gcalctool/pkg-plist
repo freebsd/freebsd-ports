@@ -1,6 +1,7 @@
 bin/gcalccmd
 bin/gcalctool
 bin/gnome-calculator
+man/man1/gcalctool.1.gz
 share/applications/gcalctool.desktop
 %%DATADIR%%/buttons-advanced.ui
 %%DATADIR%%/buttons-basic.ui
