@@ -14,20 +14,18 @@ COMMENT=	Editor for XPilot shipshapes
 USES=		imake
 USE_XORG=	x11 xaw xmu xt
 ALL_TARGET=	editss
-MAN6=		editss.6
-NO_INSTALL_MANPAGES=	yes
+
 SUB_FILES=	editss
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|xxpms/ships2|.xpilot-shipshapes|' \
 		${WRKSRC}/editssrc
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/editss ${PREFIX}/bin/editss
-	${INSTALL_PROGRAM} ${WRKSRC}/editss ${PREFIX}/libexec
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/editssrc ${WRKSRC}/ships ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/editss.6 ${MANPREFIX}/man/man6
+	${INSTALL_SCRIPT} ${WRKDIR}/editss ${STAGEDIR}${PREFIX}/bin/editss
+	${INSTALL_PROGRAM} ${WRKSRC}/editss ${STAGEDIR}${PREFIX}/libexec
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/editssrc ${WRKSRC}/ships ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/editss.6 ${STAGEDIR}${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>
