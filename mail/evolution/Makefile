@@ -4,7 +4,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	2.32.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,18 +12,20 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
 
-LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss \
-		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
-		gtkimageview:${PORTSDIR}/x11-toolkits/gtkimageview
+LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
+		libgtkimageview.so:${PORTSDIR}/x11-toolkits/gtkimageview
 RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell
 
 CONFLICTS=	evolution-3.[0-9]*
 
-USE_BZIP2=	yes
-USES=		bison desktop-file-utils gettext pathfix gmake pkgconfig
+USES=		bison desktop-file-utils gettext pathfix gmake libtool pkgconfig tar:bzip2 \
+		perl5
+USE_PERL5=	run
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver gtkhtml3 \
-		gnomedocutils ltasneededhack gnomedesktop
-USE_AUTOTOOLS=	libtool
+		gnomedocutils gnomedesktop
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_GSTREAMER=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -55,7 +57,6 @@ OPTIONS_DEFAULT=LDAP CANBERRA
 CANBERRA_DESC=	Canberra theme audio plugin
 SPAMASSASSIN_DESC=	SpamAssassin spam filtering
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}
@@ -71,7 +72,7 @@ RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/spamassassin
 
 .if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL) || defined(NO_KERBEROS)
 HEIMDAL_HOME?=		${LOCALBASE}
-LIB_DEPENDS+=		krb5.26:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=		libkrb5.so:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} \
 			--with-krb5-includes=${HEIMDAL_HOME}/include
 KRB5_LIB=		`${HEIMDAL_HOME}/bin/krb5-config gssapi --libs`
@@ -81,7 +82,7 @@ KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
 .endif
 
 .if ${PORT_OPTIONS:MCANBERRA}
-LIB_DEPENDS+=	canberra-gtk:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS+=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
 CONFIGURE_ARGS+=--enable-canberra=yes
 PLIST_SUB+=	CANBERRA=""
 .else
