@@ -57,11 +57,13 @@ PORTREVISION=	0
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 OPTIONS_DEFINE=	GNUTLS
+USES+=		compiler
 .elif defined(CUPS_IMAGE)
 PORTREVISION=	0
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 OPTIONS_DEFINE=	GNUTLS
+USES+=		compiler
 .else
 INSTALLS_ICONS=	yes
 PORTREVISION=	0
@@ -298,11 +300,12 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/ulpt-cupsd.sh ${STAGEDIR}${PREFIX}/sbin/
 .endif
 
-# This is just a band-aid to unbreak print/cups-client at systems with default gcc compiler,
-# should be reworked to build with blocks and libdispatch support (via options).
+# This is to workaround a CUPS bug. Should be fixed by 1.7.3.
+# pfg@ filed a bug report upstream: https://www.cups.org/str.php?L4397
 #
 .include <bsd.port.pre.mk>
-.if (defined(CUPS_CLIENT) || defined(CUPS_IMAGE)) && ${OPSYS} == "FreeBSD" && ${OSVERSION} > 1000000
+.if (defined(CUPS_CLIENT) || defined(CUPS_IMAGE)) && ${OPSYS} == "FreeBSD" && \
+	${OSVERSION} > 1000000 && ${COMPILER_TYPE} == clang
 CFLAGS+=	-fno-blocks
 .endif
 
