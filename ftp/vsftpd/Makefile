@@ -14,8 +14,8 @@ COMMENT=	A FTP daemon that aims to be "very secure"
 
 LICENSE=	GPLv2
 
-NEED_ROOT=	yes
-
+#USERS=		ftp
+#GROUPS=		ftp
 ALL_TARGET=	vsftpd
 USE_RC_SUBR=	vsftpd
 DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
@@ -89,8 +89,8 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vsftpd ${STAGEDIR}${PREFIX}/libexec/
 	${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${STAGEDIR}${PREFIX}/etc/vsftpd.conf.dist
-	${INSTALL_MAN} ${WRKSRC}/vsftpd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKSRC}/vsftpd.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/vsftpd.conf.5 ${STAGEDIR}${PREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/vsftpd.8 ${STAGEDIR}${PREFIX}/man/man8/
 	${MKDIR} ${STAGEDIR}/var/ftp ${STAGEDIR}${PREFIX}/share/vsftpd/empty
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
