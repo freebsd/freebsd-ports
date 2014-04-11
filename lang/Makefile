@@ -340,7 +340,6 @@
     SUBDIR += tcl85
     SUBDIR += tcl86
     SUBDIR += tclX
-    SUBDIR += tcltutor
     SUBDIR += tinypy
     SUBDIR += tolua
     SUBDIR += tolua++
