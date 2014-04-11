@@ -15,4 +15,7 @@ LICENSE=	GPLv2
 USES=		perl5
 USE_PERL5=	configure
 
+post-patch:
+	${REINPLACE_CMD} -i '' -e '/OPTIMIZE/s/=>.*/=> "${CFLAGS}",/g' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
