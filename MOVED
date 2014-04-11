@@ -5920,3 +5920,5 @@ security/tuntun||2014-04-11|Has expired: gnome-panel 2.x will be updated in the 
 misc/quick-lounge-applet||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
 sysutils/bubblemon2||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
 lang/tcltutor||2014-04-11|Removed, depends on expired ports, unstaged, abandonware
+palm/gnome-pilot||2014-04-11|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
+palm/gnome-pilot-conduits||2014-04-11|Removed (depends on gnome-pilot)
