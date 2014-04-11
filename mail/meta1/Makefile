@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.0a.22.0
-DISTVERSION=	1.0.Alpha22.0
+PORTVERSION=	1.0.0b.0.0
+DISTVERSION=	1.0.Beta0.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/hybrid/
+MASTER_SITES=	http://www.MeTA1.org/download/.beta/proto/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -14,7 +14,6 @@ NOT_FOR_ARCHS=	ia64
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	smx-*
 NEED_ROOT=	yes
-NO_STAGE=	yes
 
 .if !defined(SENDMAIL_WITHOUT_SHMEM) && !defined(BUILDING_INDEX)
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
@@ -29,10 +28,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-dependency-tracking
 MAKE_ENV+=	META1CONFDIR="${META1CONFDIR}"
-MAN5=		meta1.conf.5
-MAN8=		createmap.8 fsperf1.8 mailq.8 mcp.8 milter-spamd.8 \
-		milter-regex.8 qmgr.8 qmgrctl.8 runas.8 meta1.8 \
-		smar.8 smtpc.8 smtps.8
 PORTDOCS=	README.dvi README.html README.pdf README.ps README.txt \
 		img1.png img2.png img3.png img4.png img5.png img6.png \
 		nx_grp_g.png overview1.eps overview1.gif overview1.pdf \
@@ -92,7 +87,6 @@ PMILTER_SUFFIX?=	-nopmilter
 .endif
 
 .if ${PORT_OPTIONS:MMSP}
-MAN8+=	sendmail.8
 CONFLICTS+=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-* sendmail-*
 .endif
 
@@ -163,19 +157,16 @@ pre-install:
 		-h - -d ${NONEXISTENT} -s ${NOLOGIN_CMD} -c "MeTA1 other"; fi
 	pw groupmod meta1c -m meta1s
 	pw groupmod meta1m -m meta1s,meta1q
-.if !defined(BATCH)
-	cd ${WRKSRC} && ${SH} ./misc/sm.setup.sh
-.endif
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/sm.check.sh ${PREFIX}/sbin/
-	${INSTALL_SCRIPT} ${WRKDIR}/sm.setup.sh ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKDIR}/sm.check.sh ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKDIR}/sm.setup.sh ${STAGEDIR}${PREFIX}/sbin/
 .for i in ${EXTRA_SBIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin/
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
