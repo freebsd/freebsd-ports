@@ -6,3 +6,4 @@ bin/cvem
 %%DATADIR%%/EOS.rom
 %%PORTDOCS%%%%DOCSDIR%%/adamem.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
