@@ -4,7 +4,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.10.2
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH?=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -14,18 +14,19 @@ COMMENT=	Vector graphics library with cross-device output support
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		png15:${PORTSDIR}/graphics/png \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
 		--enable-tee
-USES=		pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_XORG=	pixman
-USE_GNOME=	ltverhack referencehack
-USE_AUTOTOOLS=	libtool
+USE_GNOME=	referencehack
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -35,7 +36,6 @@ OPTIONS_DEFAULT=	XCB GLIB X11
 XCB_DESC=	Enable XCB (X C-language Binding) Support
 GLIB_DESC=	Enable GObject Functions Feature
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
