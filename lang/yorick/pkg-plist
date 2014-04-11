@@ -1,5 +1,5 @@
-bin/yorick
 bin/gist
+bin/yorick
 lib/yorick/LICENSE.md
 lib/yorick/Make.cfg
 lib/yorick/Makedll
@@ -7,7 +7,7 @@ lib/yorick/Makeexe
 lib/yorick/Makepkg
 lib/yorick/bin/gist
 lib/yorick/bin/yorick
-lib/yorick/doc
+%%PORTDOCS%%lib/yorick/doc
 lib/yorick/g/README
 lib/yorick/g/axes.gs
 lib/yorick/g/boxed.gs
@@ -164,14 +164,11 @@ lib/yorick/lib/hex.so
 lib/yorick/lib/install.grp
 lib/yorick/lib/install.sh
 lib/yorick/lib/libdep.sh
-lib/yorick/lib/libdrat.a
-lib/yorick/lib/libhex.a
 lib/yorick/lib/libyor.a
 lib/yorick/lib/main.o
 lib/yorick/yorick.el
-%%PORTDOCS%%lib/yorick/doc
-man/man1/yorick.1.gz
 man/man1/gist.1.gz
+man/man1/yorick.1.gz
 @dirrm lib/yorick/g
 @dirrm lib/yorick/i0
 @dirrm lib/yorick/i
