@@ -18,8 +18,12 @@ lib/libnautilus-extension.a
 lib/libnautilus-extension.la
 lib/libnautilus-extension.so
 lib/libnautilus-extension.so.1
+lib/libnautilus-extension.so.1.2.0
 libexec/nautilus-convert-metadata
 libdata/pkgconfig/libnautilus-extension.pc
+man/man1/nautilus-connect-server.1.gz
+man/man1/nautilus-file-management-properties.1.gz
+man/man1/nautilus.1.gz
 share/applications/nautilus-autorun-software.desktop
 share/applications/nautilus-browser.desktop
 share/applications/nautilus-computer.desktop
