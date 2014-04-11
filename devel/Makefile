@@ -1345,7 +1345,6 @@
     SUBDIR += openvex
     SUBDIR += openwince-include
     SUBDIR += openzz
-    SUBDIR += orbitcpp
     SUBDIR += orc
     SUBDIR += osc
     SUBDIR += oserl
