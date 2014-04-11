@@ -3,7 +3,7 @@
 
 PORTNAME=	adamem
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.komkon.org/~dekogel/files/coleco/
 DISTNAME=	${PORTNAME}
@@ -13,22 +13,24 @@ COMMENT=	ADAMEm is a portable Coleco ADAM and ColecoVision emulator
 
 NO_WRKSUBDIR=	yes
 USE_XORG=	sm x11 xau xext xfixes xi xrandr
+
+MAKE_ARGS=	CC=${CC} LD=${CC}
 ALL_TARGET=	x
 
-PROGDIR=	${PREFIX}/${PORTNAME}
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}," ${WRKSRC}/ADAMEm.c \
+		${WRKSRC}/Coleco.c
+
 do-install:
-	${MKDIR} ${PROGDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/adamem ${PROGDIR}
-	${LN} -s adamem ${PROGDIR}/cvem
-	${INSTALL_DATA} ${WRKSRC}/adamem.snd ${PROGDIR}
-	${INSTALL_DATA} ${WRKSRC}/OS7.rom ${PROGDIR}
-	${INSTALL_DATA} ${WRKSRC}/WP.rom ${PROGDIR}
-	${INSTALL_DATA} ${WRKSRC}/EOS.rom ${PROGDIR}
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/adamem.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/adamem ${STAGEDIR}${PREFIX}/bin
+	${LN} -s adamem ${STAGEDIR}${PREFIX}/bin/cvem
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+.for f in adamem.snd OS7.rom WP.rom EOS.rom
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
+.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/adamem.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
