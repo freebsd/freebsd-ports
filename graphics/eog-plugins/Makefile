@@ -13,24 +13,22 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plug-ins for the Eye of GNOME image viewer application
 
 BUILD_DEPENDS=	eog:${PORTSDIR}/graphics/eog
-LIB_DEPENDS=	gdata.7:${PORTSDIR}/devel/libgdata
+LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata
 RUN_DEPENDS=	eog:${PORTSDIR}/graphics/eog
 
-USE_BZIP2=	yes
 USE_GL=		gl
 USE_GNOME=	gnomeprefix intlhack gtk20
-WANT_GNOME=	yes
-USES=		gettext pathfix gmake pkgconfig
+USES=		gettext pathfix libtool gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_CHAMPLAIN) || \
     (exists(${LOCALBASE}/lib/libchamplain-0.8.so)) || defined(WITH_CHAMPLIAN)
-LIB_DEPENDS+=	champlain-0.8.1:${PORTSDIR}/graphics/libchamplain
+LIB_DEPENDS+=	libchamplain-0.8.so:${PORTSDIR}/graphics/libchamplain
 PLIST_SUB+=	CHAMPLAIN=""
 .else
 PLUST_SUB+=	CHAMPLAIN="@comment "
@@ -38,7 +36,7 @@ PLUST_SUB+=	CHAMPLAIN="@comment "
 
 .if !defined(WITHOUT_EXIF) || (exists(${LOCALBASE}/lib/libexif.so.12) || \
 	defined(WITH_EXIF))
-LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	libexif.so:${PORTSDIR}/graphics/libexif
 PLIST_SUB+=	EXIF=""
 .else
 PLIST_SUB+=	EXIF="@comment "
