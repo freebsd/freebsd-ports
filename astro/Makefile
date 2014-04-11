@@ -19,7 +19,6 @@
     SUBDIR += foxtrotgps
     SUBDIR += garmindev
     SUBDIR += gkrellmoon2
-    SUBDIR += glunarclock
     SUBDIR += gmapcatcher
     SUBDIR += google-earth
     SUBDIR += gpsbabel

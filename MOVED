@@ -5883,3 +5883,4 @@ graphics/openclipart||2014-04-08|Outdated, has no real meaning as a port
 audio/py-xmms||2014-04-08|Has expired: Abandonware, please consider using multimedia/audacious instead
 archivers/ruby-libarchive|archivers/rubygem-libarchive|2014-04-08|Use the rubygem version instead
 java/j2sdkee13||2014-04-10|EOLed long ago
+astro/glunarclock||2014-04-11|gnome-panel will be updated to the 3.x version which is not compatible with 2.x
