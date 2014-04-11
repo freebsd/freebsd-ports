@@ -189,7 +189,6 @@ share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.service
 %%DATADIR%%/icons/hicolor/48x48/status/user-busy.png
 %%DATADIR%%/icons/hicolor/48x48/status/user-idle.png
 %%DATADIR%%/icons/hicolor/48x48/status/user-offline.png
-%%DATADIR%%/icons/hicolor/icon-theme.cache
 %%DATADIR%%/icons/hicolor/scalable/apps/im-aim.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-ekiga.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-gadugadu.svg
