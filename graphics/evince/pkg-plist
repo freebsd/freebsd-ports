@@ -80,10 +80,12 @@ lib/libevdocument.a
 lib/libevdocument.la
 lib/libevdocument.so
 lib/libevdocument.so.3
+lib/libevdocument.so.3.0.0
 lib/libevview.a
 lib/libevview.la
 lib/libevview.so
 lib/libevview.so.3
+lib/libevview.so.3.0.0
 %%NAUTILUS%%lib/nautilus/extensions-2.0/libevince-properties-page.a
 %%NAUTILUS%%lib/nautilus/extensions-2.0/libevince-properties-page.la
 %%NAUTILUS%%lib/nautilus/extensions-2.0/libevince-properties-page.so
@@ -91,6 +93,7 @@ libdata/pkgconfig/evince-document-%%VERSION%%.pc
 libdata/pkgconfig/evince-view-%%VERSION%%.pc
 libexec/evince-convert-metadata
 libexec/evinced
+man/man1/evince.1.gz
 share/GConf/gsettings/evince.convert
 share/applications/evince.desktop
 share/dbus-1/services/org.gnome.evince.Daemon.service

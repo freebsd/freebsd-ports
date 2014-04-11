@@ -4,7 +4,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	2.32.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -14,22 +14,22 @@ COMMENT=	GNOME 2 multi-format document viewer
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		spectre:${PORTSDIR}/print/libspectre
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libspectre.so:${PORTSDIR}/print/libspectre
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		yelp:${PORTSDIR}/x11/yelp
 
 CONFLICTS=	evince-3.[0-9]*
 
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
-USES=		desktop-file-utils gettext pathfix gmake pkgconfig
-USE_GNOME=	intlhack gnomeprefix gnomedocutils ltasneededhack gconf2
+USES=		desktop-file-utils gettext pathfix gmake pkgconfig libtool tar:bzip2
+USE_GNOME=	intlhack gnomeprefix gnomedocutils gconf2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml
 GCONF_SCHEMAS=	\
@@ -37,8 +37,6 @@ GCONF_SCHEMAS=	\
 		evince-thumbnailer-ps.schemas
 
 PLIST_SUB+=	VERSION=2.32
-
-MAN1=		evince.1
 
 OPTIONS_DEFINE=	DVI T1LIB NAUTILUS KEYRING COMICS IMPRESS DJVU
 OPTIONS_DEFAULT=NAUTILUS KEYRING COMICS
@@ -50,7 +48,6 @@ COMICS_DESC=	Comic book archives support
 IMPRESS_DESC=	Impress presentations support
 DJVU_DESC=	DJVU support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVI} || ${PORT_OPTIONS:MT1LIB}
@@ -61,7 +58,7 @@ GCONF_SCHEMAS+=	evince-thumbnailer-dvi.schemas
 PLIST_SUB+=		DVI=""
 
 . if ${PORT_OPTIONS:MT1LIB}
-LIB_DEPENDS+=	t1:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS+=	libt1.so:${PORTSDIR}/devel/t1lib
 CONFIGURE_ARGS+=	--enable-t1lib
 . else
 CONFIGURE_ARGS+=	--disable-t1lib
@@ -80,7 +77,7 @@ PLIST_SUB+=		NAUTILUS=""
 BUILD_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 .if ${PORT_OPTIONS:MKEYRING}
-LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS+=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 .else
 CONFIGURE_ARGS+=	--without-keyring
 .endif
@@ -97,7 +94,7 @@ PLIST_SUB+=		IMPRESS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDJVU}
-LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre
+LIB_DEPENDS+=		libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
 CONFIGURE_ARGS+=	--enable-djvu
 GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
 PLIST_SUB+=		DJVU=""
