@@ -12,27 +12,20 @@ DIST_SUBDIR=	openxpki
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Web interface for local openxpki daemon
 
-BROKEN=		not staged
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 BUILD_DEPENDS=	\
 	p5-openxpki-client>=0:${PORTSDIR}/security/p5-openxpki-client \
 	p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \
 	p5-Data-SpreadPagination>=0:${PORTSDIR}/textproc/p5-Data-SpreadPagination
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	OpenXPKI::Client::HTML::Mason.3 \
-	OpenXPKI::Client::HTML::Mason::CRR.3 \
-	OpenXPKI::Client::HTML::Mason::Config.3 \
-	OpenXPKI::Client::HTML::Mason::Javascript.3 \
-	OpenXPKI::Client::HTML::Mason::Menu.3
-USE_GMAKE=	yes
-USES=		perl5
+USES=		gmake perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/htdocs ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -R ${WRKSRC}/htdocs ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "==================================================================="
 	@${ECHO_MSG} "===> Mason htdocs for ${DISTNAME}"
@@ -42,10 +35,8 @@ post-install:
 .if !defined(BATCH)
 	@sleep 3
 .endif
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/eg ${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/eg ${STAGEDIR}${EXAMPLESDIR}/
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "==================================================================="
 	@${ECHO_MSG} "===> Examples of simple Mason configuration via httpd.conf directives"
@@ -55,11 +46,8 @@ post-install:
 .if !defined(BATCH)
 	@sleep 3
 .endif
-.endif
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/bin ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/bin ${STAGEDIR}${DATADIR}/
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "==================================================================="
 	@${ECHO_MSG} "===> Examples of CGI scripts for ${DISTNAME}"
@@ -68,7 +56,6 @@ post-install:
 	@${ECHO_MSG} ""
 .if !defined(BATCH)
 	@sleep 3
-.endif
 .endif
 
 .include <bsd.port.mk>
