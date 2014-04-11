@@ -16,6 +16,7 @@ man/man3/cuse_dev_set_per_file_handle.3.gz
 man/man3/cuse_free_unit_number.3.gz
 man/man3/cuse_got_peer_signal.3.gz
 man/man3/cuse_init.3.gz
+man/man3/cuse_is_vmalloc_addr.3.gz
 man/man3/cuse_poll_wakeup.3.gz
 man/man3/cuse_set_local.3.gz
 man/man3/cuse_uninit.3.gz
