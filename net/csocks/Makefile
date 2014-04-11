@@ -11,24 +11,19 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	raffaele.delorenzo@libero.it
 COMMENT=	SOCKS Client v4/v5 RFC Compliant with many features
 
-PLIST_FILES=	etc/csocks.conf.sample lib/libcsocks.so lib/libcsocks.so.1 bin/csocks
+PLIST_FILES=	etc/csocks.conf.sample lib/libcsocks.so lib/libcsocks.so.1 \
+		bin/csocks man/man1/csocks.1.gz man/man5/csocks.conf.5.gz
+
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/src
-USE_LDCONFIG=	yes
-MAN1=		csocks.1
-MAN5=		csocks.conf.5
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} "s#/usr/local#${PREFIX}#" ${WRKDIR}/src/Makefile
 
 do-install:
-	${CP} -p ${WRKDIR}/src/libcsocks.so.1 ${PREFIX}/lib/
-	${LN} -fs ${PREFIX}/lib/libcsocks.so.1 ${PREFIX}/lib/libcsocks.so
-	${CP} -p ${WRKDIR}/freebsd/csocks ${PREFIX}/bin
-	${CP} -p ${WRKDIR}/csocks.conf ${PREFIX}/etc/csocks.conf.sample
-	${CP} -p ${WRKDIR}/man/csocks.1.gz ${MANPREFIX}/man/man1
-	${CP} -p ${WRKDIR}/man/csocks.conf.5.gz ${MANPREFIX}/man/man5
+	${INSTALL_SCRIPT} ${WRKDIR}/freebsd/csocks ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${WRKDIR}/src/libcsocks.so.1 ${STAGEDIR}${PREFIX}/lib
+	${LN} -s libcsocks.so.1 ${STAGEDIR}${PREFIX}/lib/libcsocks.so
+	${INSTALL_DATA} ${WRKDIR}/csocks.conf ${STAGEDIR}${PREFIX}/etc/csocks.conf.sample
+	${INSTALL_MAN} ${WRKDIR}/man/csocks.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/man/csocks.conf.5.gz ${STAGEDIR}${MANPREFIX}/man/man5
 
 .include <bsd.port.mk>
