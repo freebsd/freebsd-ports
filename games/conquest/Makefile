@@ -18,41 +18,32 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc/conquest \
 		--localstatedir=/var/games
 CFLAGS+=	-Wno-return-type
 GROUPS=		${PORTNAME}
-BINGRP=		conquest
-SHAREGRP=	conquest
 MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	README
 
+SUB_FILES=	pkg-message
+
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} "s|^.*@chgrp .(CONQGROUP) conq.*||g; \
 		s|^.*@chmod 2771 conq.*||g;" ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} "s/# include <termio.h>//g" ${WRKSRC}/c_defs.h
 	${REINPLACE_CMD} "s/-O2 -fPIC//g" ${WRKSRC}/configure
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} -m 2550 ${WRKSRC}/conqai ${PREFIX}/sbin
-	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conqdriv ${PREFIX}/libexec
-	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conqoper ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/conqstrat ${PREFIX}/sbin
-	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conquest ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/etc/conquest
-	${INSTALL_DATA} ${WRKSRC}/conqrule \
-		${PREFIX}/etc/conquest/conqrule.sample
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/conqnews.doc ${DATADIR}/conqnews.doc.sample
-	${INSTALL_DATA} ${WRKSRC}/conquest.doc ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	@${SH} pkg-install ${PORTNAME} POST-INSTALL
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} -m 2550 ${WRKSRC}/conqai ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conqdriv ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conqoper ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/conqstrat ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conquest ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/conqrule ${STAGEDIR}${ETCDIR}/conqrule.sample
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/conqnews.doc \
+		${STAGEDIR}${DATADIR}/conqnews.doc.sample
+	${INSTALL_DATA} ${WRKSRC}/conquest.doc ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
