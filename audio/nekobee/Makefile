@@ -18,7 +18,6 @@ LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
 		libjack.so:${PORTSDIR}/audio/jack
 
 USE_GITHUB=	yes
-NO_STAGE=	yes
 GH_ACCOUNT=	gordonjcp
 GH_COMMIT=	3f4737f
 
@@ -32,6 +31,7 @@ MAKE_JOBS_ARGS=	-j${MAKE_JOBS_NUMBER}
 .endif
 
 do-configure:
+	@${REINPLACE_CMD} '/LINKFLAGS/d' ${WRKSRC}/wscript
 	@(cd ${WRKSRC} && ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
 		LINKFLAGS="-lm" \
 		CPPFLAGS="${CPPFLAGS}" ./waf configure --prefix=${PREFIX})
@@ -40,6 +40,6 @@ do-build:
 	@(cd ${WRKSRC} && ./waf build -vvv ${MAKE_JOBS_ARGS})
 
 do-install:
-	@(cd ${WRKSRC} && ./waf install)
+	@(cd ${WRKSRC} && ./waf install --destdir=${STAGEDIR})
 
 .include <bsd.port.mk>
