@@ -11,14 +11,13 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Applet that swallows any X11 application into the GNOME 2 panel
 
 USE_XORG=	x11
-USES=		gmake pkgconfig
-USE_GNOME=	gnomeprefix gnomehack gnomepanel libgnomeui
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	gnomeprefix gnomepanel libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
