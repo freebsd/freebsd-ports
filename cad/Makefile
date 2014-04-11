@@ -14,7 +14,6 @@
     SUBDIR += brlcad
     SUBDIR += calculix
     SUBDIR += cascade
-    SUBDIR += chipmunk
     SUBDIR += chipvault
     SUBDIR += cider
     SUBDIR += dinotrace

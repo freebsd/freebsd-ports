@@ -1,8 +1,0 @@
-bin/tkman
-bin/tkmanclient
-bin/retkman
-etc/periodic/weekly/310.index_manpages
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/periodic/weekly
-@dirrm etc/periodic

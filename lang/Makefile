@@ -4,7 +4,6 @@
     COMMENT = Programming languages
 
     SUBDIR += Gofer
-    SUBDIR += STk
     SUBDIR += Sather
     SUBDIR += abcl
     SUBDIR += adacontrol

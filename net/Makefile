@@ -151,7 +151,6 @@
     SUBDIR += freeswitch-core-devel
     SUBDIR += freeswitch-devel
     SUBDIR += freevrrpd
-    SUBDIR += freewais-sf
     SUBDIR += frickin
     SUBDIR += fspclient
     SUBDIR += fspd
@@ -789,7 +788,6 @@
     SUBDIR += pathneck
     SUBDIR += pbnc
     SUBDIR += pchar
-    SUBDIR += pcnfsd
     SUBDIR += pdb
     SUBDIR += pear-Auth_RADIUS
     SUBDIR += pear-File_Bittorrent2

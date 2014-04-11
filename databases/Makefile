@@ -896,7 +896,6 @@
     SUBDIR += tokyotyrant
     SUBDIR += tora
     SUBDIR += tuning-primer
-    SUBDIR += typhoon
     SUBDIR += unixODBC
     SUBDIR += useracc
     SUBDIR += usogres
@@ -908,7 +907,6 @@
     SUBDIR += xapian-bindings
     SUBDIR += xapian-core
     SUBDIR += xapian-core10
-    SUBDIR += xmbase-grok
     SUBDIR += xtrabackup
     SUBDIR += yasql
     SUBDIR += zodb3

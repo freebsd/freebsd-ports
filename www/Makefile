@@ -77,7 +77,6 @@
     SUBDIR += cblog
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
-    SUBDIR += cgic
     SUBDIR += cgicc
     SUBDIR += cgichk
     SUBDIR += cgihtml
@@ -203,7 +202,6 @@
     SUBDIR += feedjack
     SUBDIR += feedonfeeds
     SUBDIR += ffproxy
-    SUBDIR += fhttpd
     SUBDIR += fira-webfont
     SUBDIR += firefox
     SUBDIR += firefox-esr
@@ -420,7 +418,6 @@
     SUBDIR += lynx-current
     SUBDIR += magento
     SUBDIR += mahara
-    SUBDIR += mambo
     SUBDIR += man2web
     SUBDIR += mathjax
     SUBDIR += mathopd
@@ -703,7 +700,6 @@
     SUBDIR += p5-CGI-Upload
     SUBDIR += p5-CGI-Utils
     SUBDIR += p5-CGI-XMLApplication
-    SUBDIR += p5-CGI-modules
     SUBDIR += p5-CGI.pm
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-CIF-Client
@@ -1255,7 +1251,6 @@
     SUBDIR += p5-WWW-HatenaStar
     SUBDIR += p5-WWW-IMDb
     SUBDIR += p5-WWW-Instapaper-Client
-    SUBDIR += p5-WWW-Link
     SUBDIR += p5-WWW-LongURL
     SUBDIR += p5-WWW-Mechanize
     SUBDIR += p5-WWW-Mechanize-CGI
@@ -1885,7 +1880,6 @@
     SUBDIR += samidare
     SUBDIR += sams
     SUBDIR += sarg
-    SUBDIR += sbox-dtc
     SUBDIR += scloader
     SUBDIR += script4rss
     SUBDIR += seamonkey

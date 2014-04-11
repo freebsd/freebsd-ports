@@ -120,7 +120,6 @@
     SUBDIR += pcemu
     SUBDIR += pcsxr
     SUBDIR += pearpc
-    SUBDIR += prodosemu
     SUBDIR += psim-freebsd
     SUBDIR += q4wine
     SUBDIR += qemu
@@ -140,7 +139,6 @@
     SUBDIR += spim
     SUBDIR += stella
     SUBDIR += stonx
-    SUBDIR += svr4_base
     SUBDIR += swine
     SUBDIR += tiemu3
     SUBDIR += tilem

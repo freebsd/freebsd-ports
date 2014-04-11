@@ -114,7 +114,6 @@ gamess.*/gamess*	science/gamess		No Redistribution
 giac-*			math/giacxcas		The french documentation is for non commercial only use
 giftool*		graphics/giftool	Do not redistribute for profit
 gishdemo-*		games/gish-demo		(c) Copyright 2004 Chronic Logic All rights reserved
-glimpse-*		textproc/glimpse	Do not sell for profit
 gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may contain artwork not done by the author.  Keep FreeBSD safe if the theme author violated copyrights
 GoogleEarthLinux-*	astro/google-earth	Not really sure about the redistribution terms
 gorky17_demo*		games/linux-gorky17-demo	Redistribution is limited, see license
@@ -207,7 +206,6 @@ PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distributi
 platon*			biology/platon		$5000 USD for commercial users, free for academic
 poseidonCE-*		java/poseidon		Redistribution is not permitted
 ppsmall-*		archivers/ppunpack	No commercial redistribution
-prodosemu.*		emulators/prodosemu	Restrictive copyright on the ROM image
 qtools-*		mail/qtools		No license -- see http://cr.yp.to/softwarelaw.html
 quake4-linux-*		games/linux-quake4	Redistribution is limited; see the license
 quake4-linux-*		games/linux-quake4-demo	Redistribution is limited; see the license

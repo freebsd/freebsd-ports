@@ -170,7 +170,6 @@
     SUBDIR += gss
     SUBDIR += gtk-knocker
     SUBDIR += gtkpasman
-    SUBDIR += gtkportscan
     SUBDIR += gwee
     SUBDIR += hackbot
     SUBDIR += hamachi

@@ -1,7 +1,0 @@
-XLISP-STAT is a statistical environment based on a dialect of the Lisp
-language called XLISP. To facilitate statistical computations, standard
-Lisp functions for addition, logarithms, etc., have been modified to
-operate on lists and arrays of numbers, and a number of basic
-statistical functions have been added.
-
-WWW: http://homepage.stat.uiowa.edu/~luke/xls/xlsinfo/xlsinfo.html
