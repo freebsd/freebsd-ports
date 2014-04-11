@@ -14,7 +14,7 @@ COMMENT=	Python bindings for chromium compact language detector library
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	cld:${PORTSDIR}/devel/cld
+LIB_DEPENDS=	libcld.so:${PORTSDIR}/devel/cld
 
 USES=		pkgconfig
 USE_PYTHON=	yes
@@ -23,5 +23,4 @@ PYDISTUTILS_PKGNAME=	chromium_compact_language_detector
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cld.so
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
