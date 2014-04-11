@@ -15,29 +15,25 @@ COMMENT=	Session component for the GNOME 2 desktop
 CONFLICTS=	gnome-session-2.31.* gnome-session-2.90.* gnome-session-3.*
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
-		notify.4:${PORTSDIR}/devel/libnotify \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		upower-glib.1:${PORTSDIR}/sysutils/upower
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libupower-glib.so:${PORTSDIR}/sysutils/upower
 RUN_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
     		${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
 		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gettext gmake pathfix pkgconfig tar:bzip2
 USE_XORG=	ice sm xau xrandr
-USE_GNOME=	gnomeprefix gnomehack intlhack gconf2
+USE_GNOME=	gnomeprefix intlhack gconf2
 GNOME_DESKTOP_VERSION=2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docbook-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gnome-session.1 gnome-wm.1 gnome-session-properties.1 \
-		gnome-session-save.1
 GCONF_SCHEMAS=	gnome-session.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
