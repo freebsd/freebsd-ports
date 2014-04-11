@@ -11,19 +11,18 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Extra anjuta plugins
 
-LIB_DEPENDS=	anjuta.0:${PORTSDIR}/devel/anjuta
+LIB_DEPENDS=	libanjuta.so:${PORTSDIR}/devel/anjuta
 		
-USE_BZIP2=	yes
+USES=		gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+INSTALL_TARGET=	install-strip
 USE_GNOME=	intltool
-CPPFLAGS+=	-I${LOCALBASE}/include 
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--disable-plugin-valgrind \
 		--localedir=${PREFIX}/share
 
 GCONF_SCHEMAS=	anjuta-editor-scintilla.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
