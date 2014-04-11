@@ -27,7 +27,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  number (used for dependencies).
 #					  default: ${PYTHONBASE}/bin/${PYTHON_VERSION}
 #
-# PYTHON_DISTFILE	- The ${DISTFILE} for your python version. Needed for
+# PYTHON_DISTNAME	- The ${DISTNAME} for your python version. Needed for
 #					  extensions like bsddb, gdbm, sqlite3 and tkinter, which
 #					  are built from sources contained in the Python
 #					  distribution.
@@ -408,7 +408,7 @@ PYTHON_MAJOR_VER=	${PYTHON_VER:R}
 
 PYTHON_MASTER_SITES=		${MASTER_SITE_PYTHON}
 PYTHON_MASTER_SITE_SUBDIR=	ftp/python/${PYTHON_PORTVERSION:C/rc[0-9]//}
-PYTHON_DISTFILE=		Python-${PYTHON_PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX}
+PYTHON_DISTNAME=		Python-${PYTHON_PORTVERSION:S/.rc/rc/}
 PYTHON_WRKSRC=				${WRKDIR}/Python-${PYTHON_PORTVERSION:S/.rc/rc/}
 
 PYTHON_ABIVER?=			# empty
