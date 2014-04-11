@@ -16,11 +16,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		imake tk
 USE_XORG=	x11
+MAKE_ARGS=	AWELE_DIR=${STAGEDIR}${PREFIX}/bin
 
-MAN6=		xawele.6
-PLIST_FILES=	bin/awelewish bin/xawele
+PLIST_FILES=	bin/awelewish bin/xawele man/man6/xawele.6.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|; \
@@ -28,10 +27,5 @@ post-patch:
 		 s|%%TCL_VER%%|${TCL_VER:S/.//}|; \
 		 s|%%TK_INCLUDEDIR%%|${TK_INCLUDEDIR}|; \
 		 s|%%TCL_INCLUDEDIR%%|${TCL_INCLUDEDIR}|' ${WRKSRC}/Imakefile
-
-post-install:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Use xawele to start awele"
-	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
