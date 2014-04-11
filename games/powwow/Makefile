@@ -12,23 +12,20 @@ COMMENT=	Client to play MUDs
 
 GNU_CONFIGURE=	yes
 
-MAN6=		powwow.6
-
-NO_STAGE=	yes
 pre-build:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/defines.h \
 		${WRKSRC}/list.c ${WRKSRC}/main.c ${WRKSRC}/cmd2.c ${WRKSRC}/beam.c
 	@${REINPLACE_CMD} -e 's|^DEFS = |DEFS = -DPOSIX |' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/powwow ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/powwow-movieplay ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/powwow-muc ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/catrw ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/follow ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/powwow.6 ${PREFIX}/man/man6
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/powwow.doc ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/powwow.help ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/powwow ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/powwow-movieplay ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/powwow-muc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/catrw ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/follow ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/powwow.6 ${STAGEDIR}${PREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/powwow.doc ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/powwow.help ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
