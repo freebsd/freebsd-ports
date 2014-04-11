@@ -146,7 +146,6 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-indexing.xml
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-kit.xml
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-lexer.xml
-%%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-litemodel.xml
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-makeproject-source-bridge.xml
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-makeproject.xml
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-model-services.xml
@@ -260,10 +259,6 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-lexer_pt_BR.jar
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-lexer_ru.jar
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-lexer_zh_CN.jar
-%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-litemodel_ja.jar
-%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-litemodel_pt_BR.jar
-%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-litemodel_ru.jar
-%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-litemodel_zh_CN.jar
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-makeproject-source-bridge_ja.jar
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-makeproject-source-bridge_pt_BR.jar
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-makeproject-source-bridge_ru.jar
@@ -382,7 +377,6 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-indexing.jar
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-kit.jar
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-lexer.jar
-%%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-litemodel.jar
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-makeproject-source-bridge.jar
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-makeproject.jar
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-model-services.jar
@@ -429,7 +423,6 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-indexing.xml
 %%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-kit.xml
 %%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-lexer.xml
-%%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-litemodel.xml
 %%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-makeproject-source-bridge.xml
 %%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-makeproject.xml
 %%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-model-services.xml
@@ -456,6 +449,12 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/cnd/update_tracking/org-netbeans-modules-jellytools-cnd.xml
 %%DATADIR%%/dlight/.lastModified
 %%DATADIR%%/dlight/VERSION.txt
+%%DATADIR%%/dlight/bin/FreeBSD-x86/fs_server
+%%DATADIR%%/dlight/bin/Linux-x86/fs_server
+%%DATADIR%%/dlight/bin/Linux-x86_64/fs_server
+%%DATADIR%%/dlight/bin/MacOSX-x86/fs_server
+%%DATADIR%%/dlight/bin/SunOS-sparc/fs_server
+%%DATADIR%%/dlight/bin/SunOS-x86/fs_server
 %%DATADIR%%/dlight/config/Modules/org-netbeans-modules-dlight-kit.xml
 %%DATADIR%%/dlight/config/Modules/org-netbeans-modules-dlight-libs-common.xml
 %%DATADIR%%/dlight/config/Modules/org-netbeans-modules-dlight-remote-impl.xml
@@ -551,6 +550,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-maven-j2ee.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-maven-jaxws.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-maven-samples.xml
+%%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-performance-javaee.xml
+%%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-performance-scripting.xml
+%%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-performance-web.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-profiler-j2ee.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-projectimport-eclipse-web.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-servletjspapi.xml
@@ -703,12 +705,11 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/modules/ext/metro/webservices-rt.jar
 %%DATADIR%%/enterprise/modules/ext/metro/webservices-tools.jar
 %%DATADIR%%/enterprise/modules/ext/org-netbeans-modules-web-httpmonitor.jar
-%%DATADIR%%/enterprise/modules/ext/primefaces/primefaces-3.5.jar
+%%DATADIR%%/enterprise/modules/ext/primefaces/primefaces-4.0.jar
 %%DATADIR%%/enterprise/modules/ext/servlet3.1-jsp2.3-api.jar
-%%DATADIR%%/enterprise/modules/ext/spring/spring-webmvc-2.5.6.SEC03.jar
 %%DATADIR%%/enterprise/modules/ext/struts/antlr-2.7.2.jar
 %%DATADIR%%/enterprise/modules/ext/struts/bsf-2.3.0.jar
-%%DATADIR%%/enterprise/modules/ext/struts/commons-beanutils-1.8.0.jar
+%%DATADIR%%/enterprise/modules/ext/struts/commons-beanutils-1.%%PORTVERSION%%.jar
 %%DATADIR%%/enterprise/modules/ext/struts/commons-chain-1.2.jar
 %%DATADIR%%/enterprise/modules/ext/struts/commons-digester-1.8.jar
 %%DATADIR%%/enterprise/modules/ext/struts/commons-fileupload-1.1.1.jar
@@ -926,6 +927,18 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-maven-samples_pt_BR.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-maven-samples_ru.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-maven-samples_zh_CN.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-javaee_ja.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-javaee_pt_BR.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-javaee_ru.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-javaee_zh_CN.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-scripting_ja.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-scripting_pt_BR.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-scripting_ru.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-scripting_zh_CN.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-web_ja.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-web_pt_BR.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-web_ru.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-performance-web_zh_CN.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-profiler-j2ee_ja.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-profiler-j2ee_pt_BR.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-profiler-j2ee_ru.jar
@@ -1204,6 +1217,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-maven-j2ee.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-maven-jaxws.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-maven-samples.jar
+%%DATADIR%%/enterprise/modules/org-netbeans-modules-performance-javaee.jar
+%%DATADIR%%/enterprise/modules/org-netbeans-modules-performance-scripting.jar
+%%DATADIR%%/enterprise/modules/org-netbeans-modules-performance-web.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-profiler-j2ee.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-projectimport-eclipse-web.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-servletjspapi.jar
@@ -1311,6 +1327,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-maven-j2ee.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-maven-jaxws.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-maven-samples.xml
+%%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-performance-javaee.xml
+%%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-performance-scripting.xml
+%%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-performance-web.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-profiler-j2ee.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-projectimport-eclipse-web.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-servletjspapi.xml
@@ -1371,9 +1390,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ergonomics/.lastModified
 %%DATADIR%%/ergonomics/config/Modules/org-apache-tools-ant-module.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-api-mobility.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-libs-aguiswinglayout.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-libs-jstl.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-libs-ppawtlayout.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-ant-browsetask.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-ant-debugger.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-ant-freeform.xml
@@ -1430,6 +1447,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-cordova-platforms-ios.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-cordova.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-dbschema.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-debugger-jpda-js.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-debugger-jpda-kit.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-debugger-jpda-ui.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-debugger-jpda-visual.xml
@@ -1477,19 +1495,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2ee-sun-appsrv.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2ee-sun-ddui.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2ee-weblogic9.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-kit.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-platform-nokias80.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-platform-semc.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-platform-sjmc.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-platform-sun.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-platform.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-project-execui.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-project-execuiimpl.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-project-nokiaS80.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-project-savaje.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-project-semc.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-project-sjmc.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-cdc-project.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-common-ant.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-keystore.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-kit.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-j2me-project.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-java-debug.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-java-editor-lib.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-java-editor.xml
@@ -1499,6 +1508,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-java-hints-ui.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-java-hints.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-java-j2sedeploy.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-java-j2seembedded.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-java-j2seplatform.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-java-j2seprofiles.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-java-j2seproject.xml
@@ -1529,6 +1539,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javafx2-samples.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javafx2-scenebuilder.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javascript-jstestdriver.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javascript-karma.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javawebstart.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-junit.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-languages-apacheconf.xml
@@ -1542,22 +1553,13 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-maven-refactoring.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-maven-repository.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-maven.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-antext.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-cldcplatform-catalog.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-cldcplatform.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-deployment-ftpscp.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-deployment-sonyericsson.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-deployment-webdav.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-editor.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-j2meunit.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-kit.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-databindingme.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-licensing.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-plugins-mpowerplayer.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-project-ant.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-project-bridge.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-project.xml
-%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-mobility-svgcore.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-nashorn-execution.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-options-java.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-performance-ergonomics.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-php-apigen.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-php-atoum.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-php-code-analysis.xml
@@ -1567,6 +1569,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-php-editor.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-php-kit.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-php-latte.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-php-nette-tester.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-php-nette2.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-php-phpdoc-documentation.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-php-phpunit.xml
@@ -1661,11 +1664,17 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ergonomics/modules/locale/org-netbeans-modules-ide-ergonomics_pt_BR.jar
 %%DATADIR%%/ergonomics/modules/locale/org-netbeans-modules-ide-ergonomics_ru.jar
 %%DATADIR%%/ergonomics/modules/locale/org-netbeans-modules-ide-ergonomics_zh_CN.jar
+%%DATADIR%%/ergonomics/modules/locale/org-netbeans-modules-performance-ergonomics_ja.jar
+%%DATADIR%%/ergonomics/modules/locale/org-netbeans-modules-performance-ergonomics_pt_BR.jar
+%%DATADIR%%/ergonomics/modules/locale/org-netbeans-modules-performance-ergonomics_ru.jar
+%%DATADIR%%/ergonomics/modules/locale/org-netbeans-modules-performance-ergonomics_zh_CN.jar
 %%DATADIR%%/ergonomics/modules/org-netbeans-modules-ide-ergonomics.jar
+%%DATADIR%%/ergonomics/modules/org-netbeans-modules-performance-ergonomics.jar
 %%DATADIR%%/ergonomics/update_tracking/org-netbeans-modules-ide-ergonomics.xml
-%%DATADIR%%/etc/netbeans.clusters
-%%DATADIR%%/etc/netbeans.conf
-%%DATADIR%%/etc/netbeans.import
+%%DATADIR%%/ergonomics/update_tracking/org-netbeans-modules-performance-ergonomics.xml
+%%DATADIR%%/%%ETCDIR%%.clusters
+%%DATADIR%%/%%ETCDIR%%.conf
+%%DATADIR%%/%%ETCDIR%%.import
 %%DATADIR%%/extide/.lastModified
 %%DATADIR%%/extide/VERSION.txt
 %%DATADIR%%/extide/ant/bin/ant
@@ -2040,6 +2049,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/config/ModuleAutoDeps/org-netbeans-spi-palette.xml
 %%DATADIR%%/ide/config/Modules/com-jcraft-jsch.xml
 %%DATADIR%%/ide/config/Modules/com-jcraft-jzlib.xml
+%%DATADIR%%/ide/config/Modules/javaewah-dummy.xml
 %%DATADIR%%/ide/config/Modules/org-apache-commons-codec.xml
 %%DATADIR%%/ide/config/Modules/org-apache-commons-httpclient.xml
 %%DATADIR%%/ide/config/Modules/org-apache-commons-io.xml
@@ -2095,6 +2105,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/config/Modules/org-netbeans-libs-swingx.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-libs-xerces.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-bugtracking-bridge.xml
+%%DATADIR%%/ide/config/Modules/org-netbeans-modules-bugtracking-commons.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-bugtracking.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-bugzilla.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-code-analysis.xml
@@ -2155,6 +2166,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-gsf-codecoverage.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-gsf-testrunner.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-html-angular.xml
+%%DATADIR%%/ide/config/Modules/org-netbeans-modules-html-custom.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-html-editor-lib.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-html-editor.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-html-knockout.xml
@@ -2171,6 +2183,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-hudson.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-ide-kit.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-image.xml
+%%DATADIR%%/ide/config/Modules/org-netbeans-modules-javascript2-debug.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-javascript2-editor.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-javascript2-extjs.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-javascript2-jquery.xml
@@ -2185,6 +2198,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-lexer-nbbridge.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-lexer.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-localhistory.xml
+%%DATADIR%%/ide/config/Modules/org-netbeans-modules-localtasks.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-mercurial.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-mylyn-util.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-notifications.xml
@@ -2286,7 +2300,6 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/ext/asm-all-4.0.jar
 %%DATADIR%%/ide/modules/ext/bytelist-0.1.jar
 %%DATADIR%%/ide/modules/ext/commons-net-3.3.jar
-%%DATADIR%%/ide/modules/ext/core.browser.webview-ext.jar
 %%DATADIR%%/ide/modules/ext/ddl.jar
 %%DATADIR%%/ide/modules/ext/derbysampledb.zip
 %%DATADIR%%/ide/modules/ext/freemarker-2.3.19.jar
@@ -2316,14 +2329,14 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/ext/locale/ValidationAPI_pt_BR.jar
 %%DATADIR%%/ide/modules/ext/locale/ValidationAPI_ru.jar
 %%DATADIR%%/ide/modules/ext/locale/ValidationAPI_zh_CN.jar
-%%DATADIR%%/ide/modules/ext/locale/core.browser.webview-ext_ja.jar
-%%DATADIR%%/ide/modules/ext/locale/core.browser.webview-ext_pt_BR.jar
-%%DATADIR%%/ide/modules/ext/locale/core.browser.webview-ext_ru.jar
-%%DATADIR%%/ide/modules/ext/locale/core.browser.webview-ext_zh_CN.jar
 %%DATADIR%%/ide/modules/ext/locale/ddl_ja.jar
 %%DATADIR%%/ide/modules/ext/locale/ddl_pt_BR.jar
 %%DATADIR%%/ide/modules/ext/locale/ddl_ru.jar
 %%DATADIR%%/ide/modules/ext/locale/ddl_zh_CN.jar
+%%DATADIR%%/ide/modules/ext/locale/freemarker-2.3.19_ja.jar
+%%DATADIR%%/ide/modules/ext/locale/freemarker-2.3.19_pt_BR.jar
+%%DATADIR%%/ide/modules/ext/locale/freemarker-2.3.19_ru.jar
+%%DATADIR%%/ide/modules/ext/locale/freemarker-2.3.19_zh_CN.jar
 %%DATADIR%%/ide/modules/ext/locale/org-netbeans-tax_ja.jar
 %%DATADIR%%/ide/modules/ext/locale/org-netbeans-tax_pt_BR.jar
 %%DATADIR%%/ide/modules/ext/locale/org-netbeans-tax_ru.jar
@@ -2335,7 +2348,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/ext/non-schema.jar
 %%DATADIR%%/ide/modules/ext/org-netbeans-tax.jar
 %%DATADIR%%/ide/modules/ext/postgresql-9.2-1002.jdbc4.jar
-%%DATADIR%%/ide/modules/ext/processtreekiller-1.0.1.jar
+%%DATADIR%%/ide/modules/ext/processtreekiller-1.0.2.jar
 %%DATADIR%%/ide/modules/ext/resolver-1.2.jar
 %%DATADIR%%/ide/modules/ext/saxon9B.jar
 %%DATADIR%%/ide/modules/ext/servlet-2.2.jar
@@ -2352,7 +2365,8 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/ext/validator.jar
 %%DATADIR%%/ide/modules/ext/webserver.jar
 %%DATADIR%%/ide/modules/ext/winp-1.14-patched.jar
-%%DATADIR%%/ide/modules/ext/xerces-2.8.0.jar
+%%DATADIR%%/ide/modules/ext/xerces-2.%%PORTVERSION%%.jar
+%%DATADIR%%/ide/modules/javaewah-dummy.jar
 %%DATADIR%%/ide/modules/lib/extbrowser.dll
 %%DATADIR%%/ide/modules/lib/extbrowser64.dll
 %%DATADIR%%/ide/modules/locale/org-apache-xml-resolver_ja.jar
@@ -2467,6 +2481,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-bugtracking-bridge_pt_BR.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-bugtracking-bridge_ru.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-bugtracking-bridge_zh_CN.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-bugtracking-commons_ja.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-bugtracking-commons_pt_BR.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-bugtracking-commons_ru.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-bugtracking-commons_zh_CN.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-bugtracking_ja.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-bugtracking_pt_BR.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-bugtracking_ru.jar
@@ -2707,6 +2725,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-html-angular_pt_BR.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-html-angular_ru.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-html-angular_zh_CN.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-html-custom_ja.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-html-custom_pt_BR.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-html-custom_ru.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-html-custom_zh_CN.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-html-editor-lib_ja.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-html-editor-lib_pt_BR.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-html-editor-lib_ru.jar
@@ -2771,6 +2793,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-image_pt_BR.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-image_ru.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-image_zh_CN.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-debug_ja.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-debug_pt_BR.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-debug_ru.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-debug_zh_CN.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-editor_ja.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-editor_pt_BR.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-editor_ru.jar
@@ -2827,6 +2853,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-localhistory_pt_BR.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-localhistory_ru.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-localhistory_zh_CN.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-localtasks_ja.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-localtasks_pt_BR.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-localtasks_ru.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-localtasks_zh_CN.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-mercurial_ja.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-mercurial_pt_BR.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-mercurial_ru.jar
@@ -3190,6 +3220,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/org-netbeans-libs-swingx.jar
 %%DATADIR%%/ide/modules/org-netbeans-libs-xerces.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-bugtracking-bridge.jar
+%%DATADIR%%/ide/modules/org-netbeans-modules-bugtracking-commons.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-bugtracking.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-bugzilla.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-code-analysis.jar
@@ -3250,6 +3281,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/org-netbeans-modules-gsf-codecoverage.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-gsf-testrunner.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-html-angular.jar
+%%DATADIR%%/ide/modules/org-netbeans-modules-html-custom.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-html-editor-lib.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-html-editor.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-html-knockout.jar
@@ -3266,6 +3298,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/org-netbeans-modules-hudson.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-ide-kit.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-image.jar
+%%DATADIR%%/ide/modules/org-netbeans-modules-javascript2-debug.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-javascript2-editor.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-javascript2-extjs.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-javascript2-jquery.jar
@@ -3280,6 +3313,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/org-netbeans-modules-lexer-nbbridge.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-lexer.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-localhistory.jar
+%%DATADIR%%/ide/modules/org-netbeans-modules-localtasks.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-mercurial.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-mylyn-util.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-notifications.jar
@@ -3359,6 +3393,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/org-openidex-util.jar
 %%DATADIR%%/ide/update_tracking/com-jcraft-jsch.xml
 %%DATADIR%%/ide/update_tracking/com-jcraft-jzlib.xml
+%%DATADIR%%/ide/update_tracking/javaewah-dummy.xml
 %%DATADIR%%/ide/update_tracking/org-apache-commons-codec.xml
 %%DATADIR%%/ide/update_tracking/org-apache-commons-httpclient.xml
 %%DATADIR%%/ide/update_tracking/org-apache-commons-io.xml
@@ -3414,6 +3449,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/update_tracking/org-netbeans-libs-swingx.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-libs-xerces.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-bugtracking-bridge.xml
+%%DATADIR%%/ide/update_tracking/org-netbeans-modules-bugtracking-commons.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-bugtracking.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-bugzilla.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-code-analysis.xml
@@ -3474,6 +3510,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-gsf-codecoverage.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-gsf-testrunner.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-html-angular.xml
+%%DATADIR%%/ide/update_tracking/org-netbeans-modules-html-custom.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-html-editor-lib.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-html-editor.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-html-knockout.xml
@@ -3490,6 +3527,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-hudson.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-ide-kit.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-image.xml
+%%DATADIR%%/ide/update_tracking/org-netbeans-modules-javascript2-debug.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-javascript2-editor.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-javascript2-extjs.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-javascript2-jquery.xml
@@ -3504,6 +3542,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-lexer-nbbridge.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-lexer.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-localhistory.xml
+%%DATADIR%%/ide/update_tracking/org-netbeans-modules-localtasks.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-mercurial.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-mylyn-util.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-notifications.xml
@@ -3609,6 +3648,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-classfile.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-dbschema.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-debugger-jpda-ant.xml
+%%DATADIR%%/java/config/Modules/org-netbeans-modules-debugger-jpda-js.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-debugger-jpda-kit.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-debugger-jpda-projects.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-debugger-jpda-ui.xml
@@ -3622,7 +3662,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-form-refactoring.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-form.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-hibernate.xml
-%%DATADIR%%/java/config/Modules/org-netbeans-modules-hibernatelib.xml
+%%DATADIR%%/java/config/Modules/org-netbeans-modules-hibernate4lib.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-hudson-ant.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-hudson-maven.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-i18n-form.xml
@@ -3651,6 +3691,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-java-hints-ui.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-java-hints.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-java-j2sedeploy.xml
+%%DATADIR%%/java/config/Modules/org-netbeans-modules-java-j2seembedded.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-java-j2seplatform.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-java-j2seprofiles.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-java-j2seproject.xml
@@ -3689,6 +3730,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-maven-search.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-maven-spring.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-maven.xml
+%%DATADIR%%/java/config/Modules/org-netbeans-modules-nashorn-execution.xml
+%%DATADIR%%/java/config/Modules/org-netbeans-modules-performance-java.xml
+%%DATADIR%%/java/config/Modules/org-netbeans-modules-performance.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-projectimport-eclipse-core.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-projectimport-eclipse-j2se.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-modules-refactoring-java.xml
@@ -3754,27 +3798,33 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/ext/cglib-2.2.jar
 %%DATADIR%%/java/modules/ext/eclipselink/eclipselink.jar
 %%DATADIR%%/java/modules/ext/eclipselink/javax.persistence_2.1.0.v201304241213.jar
-%%DATADIR%%/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.jpql_2.5.0.v20130507-3faac2b.jar
-%%DATADIR%%/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.modelgen_2.5.0.v20130507-3faac2b.jar
-%%DATADIR%%/java/modules/ext/hibernate/antlr-2.7.6.jar
-%%DATADIR%%/java/modules/ext/hibernate/asm-3.3.1.jar
-%%DATADIR%%/java/modules/ext/hibernate/asm-commons-3.3.1.jar
-%%DATADIR%%/java/modules/ext/hibernate/c3p0-0.9.1.jar
-%%DATADIR%%/java/modules/ext/hibernate/cglib-2.2.jar
-%%DATADIR%%/java/modules/ext/hibernate/commons-collections-3.1.jar
-%%DATADIR%%/java/modules/ext/hibernate/dom4j-1.6.1.jar
-%%DATADIR%%/java/modules/ext/hibernate/hibernate-commons-annotations-3.2.0.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate/hibernate-core-3.6.10.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate/hibernate-entitymanager-3.6.10.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate/hibernate-jpamodelgen-1.1.1.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate/hibernate-tools-3.6.0.CR1.jar
-%%DATADIR%%/java/modules/ext/hibernate/javassist-3.12.0.GA.jar
-%%DATADIR%%/java/modules/ext/hibernate/jta-1.1.jar
-%%DATADIR%%/java/modules/ext/hibernate/jtidy-r8-20060801.jar
-%%DATADIR%%/java/modules/ext/hibernate/oscache-2.1.jar
-%%DATADIR%%/java/modules/ext/hibernate/slf4j-api-1.6.1.jar
-%%DATADIR%%/java/modules/ext/hibernate/slf4j-simple-1.6.1.jar
+%%DATADIR%%/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.jpql_2.5.1.v20130918-f2b9fc5.jar
+%%DATADIR%%/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.modelgen_2.5.1.v20130918-f2b9fc5.jar
+%%DATADIR%%/java/modules/ext/hibernate4/antlr-2.7.7.jar
+%%DATADIR%%/java/modules/ext/hibernate4/asm-3.3.1.jar
+%%DATADIR%%/java/modules/ext/hibernate4/asm-commons-3.3.1.jar
+%%DATADIR%%/java/modules/ext/hibernate4/c3p0-0.9.2.1.jar
+%%DATADIR%%/java/modules/ext/hibernate4/cglib-2.2.jar
+%%DATADIR%%/java/modules/ext/hibernate4/commons-collections-3.2.1.jar
+%%DATADIR%%/java/modules/ext/hibernate4/dom4j-1.6.1.jar
+%%DATADIR%%/java/modules/ext/hibernate4/ehcache-core-2.4.3.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-c3p0-4.2.6.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-commons-annotations-4.0.2.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-core-3.6.10.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-core-4.2.6.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-ehcache-4.2.6.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-entitymanager-4.2.6.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-jpa-2.0-api-1.0.1.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-jpamodelgen-1.3.0.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-tools-3.6.0.CR1.jar
+%%DATADIR%%/java/modules/ext/hibernate4/javassist-3.15.0-GA.jar
+%%DATADIR%%/java/modules/ext/hibernate4/jboss-logging-3.1.0.GA.jar
+%%DATADIR%%/java/modules/ext/hibernate4/jboss-transaction-api_1.1_spec-1.0.1.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/jtidy-r8-20060801.jar
+%%DATADIR%%/java/modules/ext/hibernate4/log4j-1.2.16.jar
+%%DATADIR%%/java/modules/ext/hibernate4/slf4j-api-1.6.1.jar
+%%DATADIR%%/java/modules/ext/hibernate4/slf4j-log4j12-1.6.1.jar
+%%DATADIR%%/java/modules/ext/hibernate4/slf4j-simple-1.6.1.jar
 %%DATADIR%%/java/modules/ext/jaxws22/FastInfoset.jar
 %%DATADIR%%/java/modules/ext/jaxws22/api/javax.annotation.jar
 %%DATADIR%%/java/modules/ext/jaxws22/api/jaxws-api.jar
@@ -3802,29 +3852,53 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/ext/maven/rootpackage/default-report.xml
 %%DATADIR%%/java/modules/ext/nb-javac-api.jar
 %%DATADIR%%/java/modules/ext/nb-javac-impl.jar
+%%DATADIR%%/java/modules/ext/org-netbeans-modules-java-j2seembedded-probe.jar
 %%DATADIR%%/java/modules/ext/org-netbeans-modules-java-j2seplatform-probe.jar
 %%DATADIR%%/java/modules/ext/spring-3.0/license.txt
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-aop-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-aspects-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-beans-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-build-src-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-context-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-context-support-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-core-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-expression-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-instrument-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-instrument-tomcat-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-jdbc-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-jms-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-orm-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-oxm-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-struts-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-test-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-tx-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-web-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-webmvc-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring-3.0/spring-webmvc-portlet-3.2.3.RELEASE.jar
-%%DATADIR%%/java/modules/ext/spring/spring-2.5.6.SEC03.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-aop-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-aspects-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-beans-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-build-src-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-context-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-context-support-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-core-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-expression-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-framework-bom-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-instrument-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-instrument-tomcat-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-jdbc-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-jms-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-orm-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-oxm-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-struts-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-test-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-tx-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-web-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-webmvc-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-3.0/spring-webmvc-portlet-3.2.7.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/license.txt
+%%DATADIR%%/java/modules/ext/spring-4/spring-aop-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-aspects-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-beans-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-build-src-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-context-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-context-support-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-core-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-expression-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-framework-bom-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-instrument-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-instrument-tomcat-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-jdbc-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-jms-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-messaging-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-orm-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-oxm-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-test-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-tx-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-web-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-webmvc-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-webmvc-portlet-4.0.1.RELEASE.jar
+%%DATADIR%%/java/modules/ext/spring-4/spring-websocket-4.0.1.RELEASE.jar
 %%DATADIR%%/java/modules/locale/org-jdesktop-beansbinding_ja.jar
 %%DATADIR%%/java/modules/locale/org-jdesktop-beansbinding_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-jdesktop-beansbinding_ru.jar
@@ -3893,6 +3967,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-debugger-jpda-ant_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-debugger-jpda-ant_ru.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-debugger-jpda-ant_zh_CN.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-debugger-jpda-js_ja.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-debugger-jpda-js_pt_BR.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-debugger-jpda-js_ru.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-debugger-jpda-js_zh_CN.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-debugger-jpda-kit_ja.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-debugger-jpda-kit_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-debugger-jpda-kit_ru.jar
@@ -3941,14 +4019,14 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-form_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-form_ru.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-form_zh_CN.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernate4lib_ja.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernate4lib_pt_BR.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernate4lib_ru.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernate4lib_zh_CN.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernate_ja.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernate_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernate_ru.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernate_zh_CN.jar
-%%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernatelib_ja.jar
-%%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernatelib_pt_BR.jar
-%%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernatelib_ru.jar
-%%DATADIR%%/java/modules/locale/org-netbeans-modules-hibernatelib_zh_CN.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-hudson-ant_ja.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-hudson-ant_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-hudson-ant_ru.jar
@@ -4061,6 +4139,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-java-j2sedeploy_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-java-j2sedeploy_ru.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-java-j2sedeploy_zh_CN.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-java-j2seembedded_ja.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-java-j2seembedded_pt_BR.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-java-j2seembedded_ru.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-java-j2seembedded_zh_CN.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-java-j2seplatform_ja.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-java-j2seplatform_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-java-j2seplatform_ru.jar
@@ -4213,6 +4295,18 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-maven_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-maven_ru.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-maven_zh_CN.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-nashorn-execution_ja.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-nashorn-execution_pt_BR.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-nashorn-execution_ru.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-nashorn-execution_zh_CN.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-performance-java_ja.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-performance-java_pt_BR.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-performance-java_ru.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-performance-java_zh_CN.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-performance_ja.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-performance_pt_BR.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-performance_ru.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-modules-performance_zh_CN.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-projectimport-eclipse-core_ja.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-projectimport-eclipse-core_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-modules-projectimport-eclipse-core_ru.jar
@@ -4290,6 +4384,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/org-netbeans-modules-classfile.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-dbschema.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-debugger-jpda-ant.jar
+%%DATADIR%%/java/modules/org-netbeans-modules-debugger-jpda-js.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-debugger-jpda-kit.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-debugger-jpda-projects.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-debugger-jpda-ui.jar
@@ -4303,7 +4398,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/org-netbeans-modules-form-refactoring.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-form.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-hibernate.jar
-%%DATADIR%%/java/modules/org-netbeans-modules-hibernatelib.jar
+%%DATADIR%%/java/modules/org-netbeans-modules-hibernate4lib.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-hudson-ant.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-hudson-maven.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-i18n-form.jar
@@ -4332,6 +4427,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/org-netbeans-modules-java-hints-ui.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-java-hints.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-java-j2sedeploy.jar
+%%DATADIR%%/java/modules/org-netbeans-modules-java-j2seembedded.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-java-j2seplatform.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-java-j2seprofiles.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-java-j2seproject.jar
@@ -4370,6 +4466,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/org-netbeans-modules-maven-search.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-maven-spring.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-maven.jar
+%%DATADIR%%/java/modules/org-netbeans-modules-nashorn-execution.jar
+%%DATADIR%%/java/modules/org-netbeans-modules-performance-java.jar
+%%DATADIR%%/java/modules/org-netbeans-modules-performance.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-projectimport-eclipse-core.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-projectimport-eclipse-j2se.jar
 %%DATADIR%%/java/modules/org-netbeans-modules-refactoring-java.jar
@@ -4405,6 +4504,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-classfile.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-dbschema.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-debugger-jpda-ant.xml
+%%DATADIR%%/java/update_tracking/org-netbeans-modules-debugger-jpda-js.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-debugger-jpda-kit.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-debugger-jpda-projects.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-debugger-jpda-ui.xml
@@ -4418,7 +4518,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-form-refactoring.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-form.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-hibernate.xml
-%%DATADIR%%/java/update_tracking/org-netbeans-modules-hibernatelib.xml
+%%DATADIR%%/java/update_tracking/org-netbeans-modules-hibernate4lib.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-hudson-ant.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-hudson-maven.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-i18n-form.xml
@@ -4447,6 +4547,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-java-hints-ui.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-java-hints.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-java-j2sedeploy.xml
+%%DATADIR%%/java/update_tracking/org-netbeans-modules-java-j2seembedded.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-java-j2seplatform.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-java-j2seprofiles.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-java-j2seproject.xml
@@ -4485,6 +4586,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-maven-search.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-maven-spring.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-maven.xml
+%%DATADIR%%/java/update_tracking/org-netbeans-modules-nashorn-execution.xml
+%%DATADIR%%/java/update_tracking/org-netbeans-modules-performance-java.xml
+%%DATADIR%%/java/update_tracking/org-netbeans-modules-performance.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-projectimport-eclipse-core.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-projectimport-eclipse-j2se.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-modules-refactoring-java.xml
@@ -5260,324 +5364,108 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/javafx/update_tracking/org-netbeans-modules-javafx2-scenebuilder.xml
 %%DATADIR%%/mobility/.lastModified
 %%DATADIR%%/mobility/VERSION.txt
+%%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-j2me-keystore_ja.jar
+%%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-j2me-keystore_pt_BR.jar
+%%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-j2me-keystore_ru.jar
+%%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-j2me-keystore_zh_CN.jar
 %%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-mobility-project-ant_ja.jar
 %%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-mobility-project-ant_pt_BR.jar
 %%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-mobility-project-ant_ru.jar
 %%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-mobility-project-ant_zh_CN.jar
-%%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-mobility-project_ja.jar
-%%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-mobility-project_pt_BR.jar
-%%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-mobility-project_ru.jar
-%%DATADIR%%/mobility/ant/nblib/locale/org-netbeans-modules-mobility-project_zh_CN.jar
-%%DATADIR%%/mobility/ant/nblib/org-netbeans-modules-deployment-deviceanywhere.jar
+%%DATADIR%%/mobility/ant/nblib/org-netbeans-modules-j2me-keystore.jar
 %%DATADIR%%/mobility/ant/nblib/org-netbeans-modules-mobility-project-ant.jar
-%%DATADIR%%/mobility/ant/nblib/org-netbeans-modules-mobility-project.jar
 %%DATADIR%%/mobility/config/Modules/org-netbeans-api-mobility.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-libs-aguiswinglayout.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-libs-ppawtlayout.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-deployment-deviceanywhere.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-kit.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-platform-nokias80.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-platform-ojec.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-platform-semc.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-platform-sjmc.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-platform-sun.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-platform.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-project-execui.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-project-execuiimpl.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-project-nokiaS80.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-project-ojec.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-project-savaje.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-project-semc.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-project-sjmc.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-cdc-project.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-antext.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-cldcplatform-catalog.xml
+%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-common-ant.xml
+%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-keystore.xml
+%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-kit.xml
+%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-j2me-project.xml
 %%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-cldcplatform.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-deployment-ftpscp.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-deployment-nokia.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-deployment-sonyericsson.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-deployment-webdav.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-editor.xml
+%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-databindingme.xml
 %%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-end2end.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-j2meunit.xml
 %%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-jsr172.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-kit.xml
 %%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-licensing.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-plugins-mpowerplayer.xml
 %%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-project-ant.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-project-bridge-impl.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-project-bridge.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-project.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-mobility-svgcore.xml
-%%DATADIR%%/mobility/config/Modules/org-netbeans-modules-svg-perseus.xml
-%%DATADIR%%/mobility/modules/docs/jmunit-1.2.1-api.zip
-%%DATADIR%%/mobility/modules/ext/ant-contrib-1.0b3.jar
-%%DATADIR%%/mobility/modules/ext/cdc-agui-swing-layout.jar
-%%DATADIR%%/mobility/modules/ext/cdc-pp-awt-layout.jar
-%%DATADIR%%/mobility/modules/ext/commons-httpclient-3.0.1.jar
-%%DATADIR%%/mobility/modules/ext/jakarta-slide-ant-webdav-2.1.jar
-%%DATADIR%%/mobility/modules/ext/jakarta-slide-webdavlib-2.1.jar
-%%DATADIR%%/mobility/modules/ext/jdom-1.0.jar
-%%DATADIR%%/mobility/modules/ext/jmunit4cldc10-1.2.1.jar
-%%DATADIR%%/mobility/modules/ext/jmunit4cldc11-1.2.1.jar
-%%DATADIR%%/mobility/modules/ext/org-netbeans-modules-deployment-deviceanywhere.jar
-%%DATADIR%%/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-nokiaS80.jar
-%%DATADIR%%/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-ojec.jar
-%%DATADIR%%/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-savaje.jar
-%%DATADIR%%/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-semc.jar
-%%DATADIR%%/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-sjmc.jar
-%%DATADIR%%/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project.jar
-%%DATADIR%%/mobility/modules/ext/perseus-nb-1.0.1.jar
-%%DATADIR%%/mobility/modules/lib/ConnJNI.dll
-%%DATADIR%%/mobility/modules/lib/ConnJNI64.dll
+%%DATADIR%%/mobility/modules/docs/netbeans_databindingme-api.zip
+%%DATADIR%%/mobility/modules/docs/netbeans_databindingme_pim-api.zip
+%%DATADIR%%/mobility/modules/docs/netbeans_databindingme_svg-api.zip
+%%DATADIR%%/mobility/modules/ext/netbeans_databindingme.jar
+%%DATADIR%%/mobility/modules/ext/netbeans_databindingme_pim.jar
+%%DATADIR%%/mobility/modules/ext/netbeans_databindingme_svg.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-api-mobility_ja.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-api-mobility_pt_BR.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-api-mobility_ru.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-api-mobility_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-libs-aguiswinglayout_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-libs-aguiswinglayout_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-libs-aguiswinglayout_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-libs-aguiswinglayout_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-libs-ppawtlayout_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-libs-ppawtlayout_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-libs-ppawtlayout_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-libs-ppawtlayout_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-deployment-deviceanywhere_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-deployment-deviceanywhere_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-deployment-deviceanywhere_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-deployment-deviceanywhere_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-kit_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-kit_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-kit_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-kit_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-nokias80_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-nokias80_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-nokias80_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-nokias80_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-ojec_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-ojec_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-ojec_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-ojec_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-semc_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-semc_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-semc_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-semc_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-sjmc_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-sjmc_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-sjmc_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-sjmc_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-sun_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-sun_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-sun_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform-sun_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-platform_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-execui_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-execui_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-execui_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-execui_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-execuiimpl_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-execuiimpl_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-execuiimpl_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-execuiimpl_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-nokiaS80_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-nokiaS80_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-nokiaS80_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-nokiaS80_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-ojec_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-ojec_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-ojec_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-ojec_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-savaje_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-savaje_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-savaje_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-savaje_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-semc_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-semc_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-semc_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-semc_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-sjmc_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-sjmc_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-sjmc_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project-sjmc_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-cdc-project_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-antext_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-antext_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-antext_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-antext_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-cldcplatform-catalog_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-cldcplatform-catalog_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-cldcplatform-catalog_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-cldcplatform-catalog_zh_CN.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-common-ant_ja.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-common-ant_pt_BR.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-common-ant_ru.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-common-ant_zh_CN.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-keystore_ja.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-keystore_pt_BR.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-keystore_ru.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-keystore_zh_CN.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-kit_ja.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-kit_pt_BR.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-kit_ru.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-kit_zh_CN.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-project_ja.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-project_pt_BR.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-project_ru.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-j2me-project_zh_CN.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-cldcplatform_ja.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-cldcplatform_pt_BR.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-cldcplatform_ru.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-cldcplatform_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-ftpscp_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-ftpscp_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-ftpscp_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-ftpscp_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-nokia_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-nokia_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-nokia_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-nokia_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-sonyericsson_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-sonyericsson_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-sonyericsson_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-sonyericsson_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-webdav_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-webdav_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-webdav_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-deployment-webdav_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-editor_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-editor_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-editor_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-editor_zh_CN.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-databindingme_ja.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-databindingme_pt_BR.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-databindingme_ru.jar
+%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-databindingme_zh_CN.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-end2end_ja.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-end2end_pt_BR.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-end2end_ru.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-end2end_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-j2meunit_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-j2meunit_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-j2meunit_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-j2meunit_zh_CN.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-jsr172_ja.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-jsr172_pt_BR.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-jsr172_ru.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-jsr172_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-kit_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-kit_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-kit_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-kit_zh_CN.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-licensing_ja.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-licensing_pt_BR.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-licensing_ru.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-licensing_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-plugins-mpowerplayer_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-plugins-mpowerplayer_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-plugins-mpowerplayer_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-plugins-mpowerplayer_zh_CN.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-ant_ja.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-ant_pt_BR.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-ant_ru.jar
 %%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-ant_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-bridge-impl_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-bridge-impl_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-bridge-impl_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-bridge-impl_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-bridge_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-bridge_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-bridge_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project-bridge_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-project_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-svgcore_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-svgcore_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-svgcore_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-mobility-svgcore_zh_CN.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-svg-perseus_ja.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-svg-perseus_pt_BR.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-svg-perseus_ru.jar
-%%DATADIR%%/mobility/modules/locale/org-netbeans-modules-svg-perseus_zh_CN.jar
 %%DATADIR%%/mobility/modules/org-netbeans-api-mobility.jar
-%%DATADIR%%/mobility/modules/org-netbeans-libs-aguiswinglayout.jar
-%%DATADIR%%/mobility/modules/org-netbeans-libs-ppawtlayout.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-deployment-deviceanywhere.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-kit.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-platform-nokias80.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-platform-ojec.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-platform-semc.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-platform-sjmc.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-platform-sun.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-platform.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-project-execui.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-project-execuiimpl.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-project-nokiaS80.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-project-ojec.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-project-savaje.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-project-semc.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-project-sjmc.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-cdc-project.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-antext.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-cldcplatform-catalog.jar
+%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-common-ant.jar
+%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-keystore.jar
+%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-kit.jar
+%%DATADIR%%/mobility/modules/org-netbeans-modules-j2me-project.jar
 %%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-cldcplatform.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-deployment-ftpscp.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-deployment-nokia.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-deployment-sonyericsson.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-deployment-webdav.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-editor.jar
+%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-databindingme.jar
 %%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-end2end.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-j2meunit.jar
 %%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-jsr172.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-kit.jar
 %%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-licensing.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-plugins-mpowerplayer.jar
 %%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-project-ant.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-project-bridge-impl.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-project-bridge.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-project.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-mobility-svgcore.jar
-%%DATADIR%%/mobility/modules/org-netbeans-modules-svg-perseus.jar
-%%DATADIR%%/mobility/modules/scr/deploy-copy-impl.xml
-%%DATADIR%%/mobility/modules/scr/deploy-deviceanywhere-impl.xml
-%%DATADIR%%/mobility/modules/scr/deploy-ftp-impl.xml
-%%DATADIR%%/mobility/modules/scr/deploy-nokia-impl.xml
-%%DATADIR%%/mobility/modules/scr/deploy-scp-impl.xml
-%%DATADIR%%/mobility/modules/scr/deploy-sonyericsson-impl.xml
-%%DATADIR%%/mobility/modules/scr/deploy-webdav-impl.xml
-%%DATADIR%%/mobility/sources/cdc-agui-swing-layout-src.zip
-%%DATADIR%%/mobility/sources/cdc-pp-awt-layout-src.zip
+%%DATADIR%%/mobility/sources/netbeans_databindingme-src.zip
+%%DATADIR%%/mobility/sources/netbeans_databindingme_pim-src.zip
+%%DATADIR%%/mobility/sources/netbeans_databindingme_svg-src.zip
 %%DATADIR%%/mobility/update_tracking/org-netbeans-api-mobility.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-libs-aguiswinglayout.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-libs-ppawtlayout.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-deployment-deviceanywhere.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-kit.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-platform-nokias80.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-platform-ojec.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-platform-semc.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-platform-sjmc.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-platform-sun.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-platform.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-project-execui.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-project-execuiimpl.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-project-nokiaS80.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-project-ojec.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-project-savaje.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-project-semc.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-project-sjmc.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-cdc-project.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-antext.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-cldcplatform-catalog.xml
+%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-common-ant.xml
+%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-keystore.xml
+%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-kit.xml
+%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-j2me-project.xml
 %%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-cldcplatform.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-deployment-ftpscp.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-deployment-nokia.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-deployment-sonyericsson.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-deployment-webdav.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-editor.xml
+%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-databindingme.xml
 %%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-end2end.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-j2meunit.xml
 %%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-jsr172.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-kit.xml
 %%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-licensing.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-plugins-mpowerplayer.xml
 %%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-project-ant.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-project-bridge-impl.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-project-bridge.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-project.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-mobility-svgcore.xml
-%%DATADIR%%/mobility/update_tracking/org-netbeans-modules-svg-perseus.xml
 %%DATADIR%%/nb/.lastModified
 %%DATADIR%%/nb/VERSION.txt
 %%DATADIR%%/nb/build_info
 %%DATADIR%%/nb/config/Modules/org-netbeans-modules-autoupdate-pluginimporter.xml
 %%DATADIR%%/nb/config/Modules/org-netbeans-modules-bugzilla-exceptionreporter.xml
+%%DATADIR%%/nb/config/Modules/org-netbeans-modules-deadlock-detector.xml
 %%DATADIR%%/nb/config/Modules/org-netbeans-modules-ide-branding-kit.xml
 %%DATADIR%%/nb/config/Modules/org-netbeans-modules-ide-branding.xml
 %%DATADIR%%/nb/config/Modules/org-netbeans-modules-uihandler-exceptionreporter.xml
@@ -5638,6 +5526,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/nb/modules/locale/org-netbeans-modules-bugzilla-exceptionreporter_pt_BR.jar
 %%DATADIR%%/nb/modules/locale/org-netbeans-modules-bugzilla-exceptionreporter_ru.jar
 %%DATADIR%%/nb/modules/locale/org-netbeans-modules-bugzilla-exceptionreporter_zh_CN.jar
+%%DATADIR%%/nb/modules/locale/org-netbeans-modules-deadlock-detector_ja.jar
+%%DATADIR%%/nb/modules/locale/org-netbeans-modules-deadlock-detector_pt_BR.jar
+%%DATADIR%%/nb/modules/locale/org-netbeans-modules-deadlock-detector_ru.jar
+%%DATADIR%%/nb/modules/locale/org-netbeans-modules-deadlock-detector_zh_CN.jar
 %%DATADIR%%/nb/modules/locale/org-netbeans-modules-ide-branding-kit_ja.jar
 %%DATADIR%%/nb/modules/locale/org-netbeans-modules-ide-branding-kit_pt_BR.jar
 %%DATADIR%%/nb/modules/locale/org-netbeans-modules-ide-branding-kit_ru.jar
@@ -5671,6 +5563,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/nb/modules/locale/uihandler_nb_zh_CN.jar
 %%DATADIR%%/nb/modules/org-netbeans-modules-autoupdate-pluginimporter.jar
 %%DATADIR%%/nb/modules/org-netbeans-modules-bugzilla-exceptionreporter.jar
+%%DATADIR%%/nb/modules/org-netbeans-modules-deadlock-detector.jar
 %%DATADIR%%/nb/modules/org-netbeans-modules-ide-branding-kit.jar
 %%DATADIR%%/nb/modules/org-netbeans-modules-ide-branding.jar
 %%DATADIR%%/nb/modules/org-netbeans-modules-uihandler-exceptionreporter.jar
@@ -5682,6 +5575,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/nb/shortcuts_mac.pdf
 %%DATADIR%%/nb/update_tracking/org-netbeans-modules-autoupdate-pluginimporter.xml
 %%DATADIR%%/nb/update_tracking/org-netbeans-modules-bugzilla-exceptionreporter.xml
+%%DATADIR%%/nb/update_tracking/org-netbeans-modules-deadlock-detector.xml
 %%DATADIR%%/nb/update_tracking/org-netbeans-modules-ide-branding-kit.xml
 %%DATADIR%%/nb/update_tracking/org-netbeans-modules-ide-branding.xml
 %%DATADIR%%/nb/update_tracking/org-netbeans-modules-uihandler-exceptionreporter.xml
@@ -5693,6 +5587,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/VERSION.txt
 %%DATADIR%%/php/config/Modules/org-netbeans-libs-javacup.xml
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-hudson-php.xml
+%%DATADIR%%/php/config/Modules/org-netbeans-modules-languages-neon.xml
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-php-api-annotation.xml
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-php-api-documentation.xml
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-php-api-editor.xml
@@ -5710,6 +5605,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-php-editor.xml
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-php-kit.xml
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-php-latte.xml
+%%DATADIR%%/php/config/Modules/org-netbeans-modules-php-nette-tester.xml
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-php-nette2.xml
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-php-phpdoc-documentation.xml
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-php-phpunit.xml
@@ -5725,7 +5621,6 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/config/Modules/org-netbeans-modules-websvc-saas-codegen-php.xml
 %%DATADIR%%/php/docs/phpdocdesc.zip
 %%DATADIR%%/php/docs/predefined_vars.zip
-%%DATADIR%%/php/hudson/config.xml
 %%DATADIR%%/php/modules/ext/java-cup-11a.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-libs-javacup_ja.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-libs-javacup_pt_BR.jar
@@ -5735,6 +5630,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-hudson-php_pt_BR.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-hudson-php_ru.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-hudson-php_zh_CN.jar
+%%DATADIR%%/php/modules/locale/org-netbeans-modules-languages-neon_ja.jar
+%%DATADIR%%/php/modules/locale/org-netbeans-modules-languages-neon_pt_BR.jar
+%%DATADIR%%/php/modules/locale/org-netbeans-modules-languages-neon_ru.jar
+%%DATADIR%%/php/modules/locale/org-netbeans-modules-languages-neon_zh_CN.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-php-api-annotation_ja.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-php-api-annotation_pt_BR.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-php-api-annotation_ru.jar
@@ -5803,6 +5702,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-php-latte_pt_BR.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-php-latte_ru.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-php-latte_zh_CN.jar
+%%DATADIR%%/php/modules/locale/org-netbeans-modules-php-nette-tester_ja.jar
+%%DATADIR%%/php/modules/locale/org-netbeans-modules-php-nette-tester_pt_BR.jar
+%%DATADIR%%/php/modules/locale/org-netbeans-modules-php-nette-tester_ru.jar
+%%DATADIR%%/php/modules/locale/org-netbeans-modules-php-nette-tester_zh_CN.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-php-nette2_ja.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-php-nette2_pt_BR.jar
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-php-nette2_ru.jar
@@ -5857,6 +5760,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/modules/locale/org-netbeans-modules-websvc-saas-codegen-php_zh_CN.jar
 %%DATADIR%%/php/modules/org-netbeans-libs-javacup.jar
 %%DATADIR%%/php/modules/org-netbeans-modules-hudson-php.jar
+%%DATADIR%%/php/modules/org-netbeans-modules-languages-neon.jar
 %%DATADIR%%/php/modules/org-netbeans-modules-php-api-annotation.jar
 %%DATADIR%%/php/modules/org-netbeans-modules-php-api-documentation.jar
 %%DATADIR%%/php/modules/org-netbeans-modules-php-api-editor.jar
@@ -5874,6 +5778,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/modules/org-netbeans-modules-php-editor.jar
 %%DATADIR%%/php/modules/org-netbeans-modules-php-kit.jar
 %%DATADIR%%/php/modules/org-netbeans-modules-php-latte.jar
+%%DATADIR%%/php/modules/org-netbeans-modules-php-nette-tester.jar
 %%DATADIR%%/php/modules/org-netbeans-modules-php-nette2.jar
 %%DATADIR%%/php/modules/org-netbeans-modules-php-phpdoc-documentation.jar
 %%DATADIR%%/php/modules/org-netbeans-modules-php-phpunit.jar
@@ -5894,7 +5799,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/phpstubs/phpruntime/Reflection.php
 %%DATADIR%%/php/phpstubs/phpruntime/SPL.php
 %%DATADIR%%/php/phpstubs/phpruntime/SimpleXML.php
+%%DATADIR%%/php/phpstubs/phpruntime/Zend-OPcache.php
 %%DATADIR%%/php/phpstubs/phpruntime/apc.php
+%%DATADIR%%/php/phpstubs/phpruntime/apcu.php
 %%DATADIR%%/php/phpstubs/phpruntime/basic.php
 %%DATADIR%%/php/phpstubs/phpruntime/bcmath.php
 %%DATADIR%%/php/phpstubs/phpruntime/bz2.php
@@ -5972,6 +5879,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/phpunit/NetBeansSuite.php
 %%DATADIR%%/php/update_tracking/org-netbeans-libs-javacup.xml
 %%DATADIR%%/php/update_tracking/org-netbeans-modules-hudson-php.xml
+%%DATADIR%%/php/update_tracking/org-netbeans-modules-languages-neon.xml
 %%DATADIR%%/php/update_tracking/org-netbeans-modules-php-api-annotation.xml
 %%DATADIR%%/php/update_tracking/org-netbeans-modules-php-api-documentation.xml
 %%DATADIR%%/php/update_tracking/org-netbeans-modules-php-api-editor.xml
@@ -5989,6 +5897,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/update_tracking/org-netbeans-modules-php-editor.xml
 %%DATADIR%%/php/update_tracking/org-netbeans-modules-php-kit.xml
 %%DATADIR%%/php/update_tracking/org-netbeans-modules-php-latte.xml
+%%DATADIR%%/php/update_tracking/org-netbeans-modules-php-nette-tester.xml
 %%DATADIR%%/php/update_tracking/org-netbeans-modules-php-nette2.xml
 %%DATADIR%%/php/update_tracking/org-netbeans-modules-php-phpdoc-documentation.xml
 %%DATADIR%%/php/update_tracking/org-netbeans-modules-php-phpunit.xml
@@ -6035,6 +5944,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/config/Modules/org-netbeans-core.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-lib-uihandler.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-libs-felix.xml
+%%DATADIR%%/platform/config/Modules/org-netbeans-libs-javafx.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-libs-jna-platform.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-libs-jna.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-libs-jsr223.xml
@@ -6054,7 +5964,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-keyring.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs-linux.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs-macosx.xml
-%%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs-solaris.xml
+%%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs-nio2.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs-windows.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-netbinox.xml
@@ -6067,6 +5977,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-sendopts.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-settings.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-spi-actions.xml
+%%DATADIR%%/platform/config/Modules/org-netbeans-modules-templates.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-uihandler.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-spi-quicksearch.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-swing-outline.xml
@@ -6123,7 +6034,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/lib/org-openide-modules.jar
 %%DATADIR%%/platform/lib/org-openide-util-lookup.jar
 %%DATADIR%%/platform/lib/org-openide-util.jar
-%%DATADIR%%/platform/modules/ext/felix-4.0.2.jar
+%%DATADIR%%/platform/modules/ext/felix-4.2.1.jar
 %%DATADIR%%/platform/modules/ext/jhall-2.0_05.jar
 %%DATADIR%%/platform/modules/ext/jna-3.4.0.jar
 %%DATADIR%%/platform/modules/ext/locale/updater_ja.jar
@@ -6131,7 +6042,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/modules/ext/locale/updater_ru.jar
 %%DATADIR%%/platform/modules/ext/locale/updater_zh_CN.jar
 %%DATADIR%%/platform/modules/ext/nsProxyAutoConfig.js
-%%DATADIR%%/platform/modules/ext/org.eclipse.osgi_3.8.0.v20120529-1548.jar
+%%DATADIR%%/platform/modules/ext/org.eclipse.osgi_3.%%PORTVERSION%%.v20120529-1548.jar
 %%DATADIR%%/platform/modules/ext/osgi.cmpn-4.2.jar
 %%DATADIR%%/platform/modules/ext/osgi.core-5.0.0.jar
 %%DATADIR%%/platform/modules/ext/platform-3.4.0.jar
@@ -6219,6 +6130,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-felix_pt_BR.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-felix_ru.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-felix_zh_CN.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-libs-javafx_ja.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-libs-javafx_pt_BR.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-libs-javafx_ru.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-libs-javafx_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-jna-platform_ja.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-jna-platform_pt_BR.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-jna-platform_ru.jar
@@ -6295,10 +6210,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-macosx_pt_BR.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-macosx_ru.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-macosx_zh_CN.jar
-%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-solaris_ja.jar
-%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-solaris_pt_BR.jar
-%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-solaris_ru.jar
-%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-solaris_zh_CN.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-nio2_ja.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-nio2_pt_BR.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-nio2_ru.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-nio2_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-windows_ja.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-windows_pt_BR.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-windows_ru.jar
@@ -6347,6 +6262,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-spi-actions_pt_BR.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-spi-actions_ru.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-spi-actions_zh_CN.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-templates_ja.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-templates_pt_BR.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-templates_ru.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-templates_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-uihandler_ja.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-uihandler_pt_BR.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-uihandler_ru.jar
@@ -6438,6 +6357,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/modules/org-netbeans-core.jar
 %%DATADIR%%/platform/modules/org-netbeans-lib-uihandler.jar
 %%DATADIR%%/platform/modules/org-netbeans-libs-felix.jar
+%%DATADIR%%/platform/modules/org-netbeans-libs-javafx.jar
 %%DATADIR%%/platform/modules/org-netbeans-libs-jna-platform.jar
 %%DATADIR%%/platform/modules/org-netbeans-libs-jna.jar
 %%DATADIR%%/platform/modules/org-netbeans-libs-jsr223.jar
@@ -6457,7 +6377,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/modules/org-netbeans-modules-keyring.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-masterfs-linux.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-masterfs-macosx.jar
-%%DATADIR%%/platform/modules/org-netbeans-modules-masterfs-solaris.jar
+%%DATADIR%%/platform/modules/org-netbeans-modules-masterfs-nio2.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-masterfs-windows.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-masterfs.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-netbinox.jar
@@ -6470,6 +6390,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/modules/org-netbeans-modules-sendopts.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-settings.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-spi-actions.jar
+%%DATADIR%%/platform/modules/org-netbeans-modules-templates.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-uihandler.jar
 %%DATADIR%%/platform/modules/org-netbeans-spi-quicksearch.jar
 %%DATADIR%%/platform/modules/org-netbeans-swing-outline.jar
@@ -6509,6 +6430,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/update_tracking/org-netbeans-core.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-lib-uihandler.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-libs-felix.xml
+%%DATADIR%%/platform/update_tracking/org-netbeans-libs-javafx.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-libs-jna-platform.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-libs-jna.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-libs-jsr223.xml
@@ -6528,7 +6450,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-keyring.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs-linux.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs-macosx.xml
-%%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs-solaris.xml
+%%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs-nio2.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs-windows.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-netbinox.xml
@@ -6541,6 +6463,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-sendopts.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-settings.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-spi-actions.xml
+%%DATADIR%%/platform/update_tracking/org-netbeans-modules-templates.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-uihandler.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-spi-quicksearch.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-swing-outline.xml
@@ -6615,6 +6538,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/profiler/lib/deployed/jdk16/hpux-pa_risc2.0/libprofilerinterface.sl
 %%DATADIR%%/profiler/lib/deployed/jdk16/hpux-pa_risc2.0w/libprofilerinterface.sl
 %%DATADIR%%/profiler/lib/deployed/jdk16/linux-amd64/libprofilerinterface.so
+%%DATADIR%%/profiler/lib/deployed/jdk16/linux-arm-vfp-hflt/libprofilerinterface.so
 %%DATADIR%%/profiler/lib/deployed/jdk16/linux-arm/libprofilerinterface.so
 %%DATADIR%%/profiler/lib/deployed/jdk16/linux/libprofilerinterface.so
 %%DATADIR%%/profiler/lib/deployed/jdk16/mac/libprofilerinterface.jnilib
@@ -6785,6 +6709,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/profiler/remote-pack-defs/profile-linuxamd64-15.sh
 %%DATADIR%%/profiler/remote-pack-defs/profile-linuxamd64-16.sh
 %%DATADIR%%/profiler/remote-pack-defs/profile-linuxarm-16.sh
+%%DATADIR%%/profiler/remote-pack-defs/profile-linuxarmvfphflt-16.sh
 %%DATADIR%%/profiler/remote-pack-defs/profile-mac-15.sh
 %%DATADIR%%/profiler/remote-pack-defs/profile-mac-16.sh
 %%DATADIR%%/profiler/remote-pack-defs/profile-solamd64-15.sh
@@ -6843,9 +6768,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-cordova.xml
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-extbrowser-chrome.xml
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-javascript-jstestdriver.xml
+%%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-javascript-karma.xml
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-languages-apacheconf.xml
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-languages-ini.xml
-%%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-languages-neon.xml
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-netserver.xml
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-web-client-kit.xml
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-web-client-samples.xml
@@ -6854,6 +6779,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-web-inspect.xml
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-web-javascript-debugger.xml
 %%DATADIR%%/webcommon/config/Modules/org-netbeans-modules-web-webkit-tooling.xml
+%%DATADIR%%/webcommon/karma/karma-netbeans-reporter/index.js
+%%DATADIR%%/webcommon/karma/karma-netbeans-reporter/package.json
+%%DATADIR%%/webcommon/karma/karma-netbeans.conf.js
 %%DATADIR%%/webcommon/modules/ext/cdnjs.zip
 %%DATADIR%%/webcommon/modules/ext/dd-plist.jar
 %%DATADIR%%/webcommon/modules/ext/libs.jstestdriver-ext.jar
@@ -6890,6 +6818,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-javascript-jstestdriver_pt_BR.jar
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-javascript-jstestdriver_ru.jar
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-javascript-jstestdriver_zh_CN.jar
+%%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-javascript-karma_ja.jar
+%%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-javascript-karma_pt_BR.jar
+%%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-javascript-karma_ru.jar
+%%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-javascript-karma_zh_CN.jar
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-languages-apacheconf_ja.jar
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-languages-apacheconf_pt_BR.jar
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-languages-apacheconf_ru.jar
@@ -6898,10 +6830,6 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-languages-ini_pt_BR.jar
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-languages-ini_ru.jar
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-languages-ini_zh_CN.jar
-%%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-languages-neon_ja.jar
-%%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-languages-neon_pt_BR.jar
-%%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-languages-neon_ru.jar
-%%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-languages-neon_zh_CN.jar
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-netserver_ja.jar
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-netserver_pt_BR.jar
 %%DATADIR%%/webcommon/modules/locale/org-netbeans-modules-netserver_ru.jar
@@ -6942,9 +6870,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/webcommon/modules/org-netbeans-modules-cordova.jar
 %%DATADIR%%/webcommon/modules/org-netbeans-modules-extbrowser-chrome.jar
 %%DATADIR%%/webcommon/modules/org-netbeans-modules-javascript-jstestdriver.jar
+%%DATADIR%%/webcommon/modules/org-netbeans-modules-javascript-karma.jar
 %%DATADIR%%/webcommon/modules/org-netbeans-modules-languages-apacheconf.jar
 %%DATADIR%%/webcommon/modules/org-netbeans-modules-languages-ini.jar
-%%DATADIR%%/webcommon/modules/org-netbeans-modules-languages-neon.jar
 %%DATADIR%%/webcommon/modules/org-netbeans-modules-netserver.jar
 %%DATADIR%%/webcommon/modules/org-netbeans-modules-web-client-kit.jar
 %%DATADIR%%/webcommon/modules/org-netbeans-modules-web-client-samples.jar
@@ -6961,9 +6889,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/webcommon/update_tracking/org-netbeans-modules-cordova.xml
 %%DATADIR%%/webcommon/update_tracking/org-netbeans-modules-extbrowser-chrome.xml
 %%DATADIR%%/webcommon/update_tracking/org-netbeans-modules-javascript-jstestdriver.xml
+%%DATADIR%%/webcommon/update_tracking/org-netbeans-modules-javascript-karma.xml
 %%DATADIR%%/webcommon/update_tracking/org-netbeans-modules-languages-apacheconf.xml
 %%DATADIR%%/webcommon/update_tracking/org-netbeans-modules-languages-ini.xml
-%%DATADIR%%/webcommon/update_tracking/org-netbeans-modules-languages-neon.xml
 %%DATADIR%%/webcommon/update_tracking/org-netbeans-modules-netserver.xml
 %%DATADIR%%/webcommon/update_tracking/org-netbeans-modules-web-client-kit.xml
 %%DATADIR%%/webcommon/update_tracking/org-netbeans-modules-web-client-samples.xml
@@ -7078,6 +7006,8 @@ bin/netbeans-%%PORTVERSION%%
 @dirrm %%DATADIR%%/webcommon/modules/lib
 @dirrm %%DATADIR%%/webcommon/modules/ext
 @dirrm %%DATADIR%%/webcommon/modules
+@dirrm %%DATADIR%%/webcommon/karma/karma-netbeans-reporter
+@dirrm %%DATADIR%%/webcommon/karma
 @dirrm %%DATADIR%%/webcommon/config/Modules
 @dirrm %%DATADIR%%/webcommon/config
 @dirrm %%DATADIR%%/webcommon/bin
@@ -7096,6 +7026,7 @@ bin/netbeans-%%PORTVERSION%%
 @dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/solaris-i386
 @dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/solaris-amd64
 @dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/mac
+@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/linux-arm-vfp-hflt
 @dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/linux-arm
 @dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/linux-amd64
 @dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/linux
@@ -7152,7 +7083,6 @@ bin/netbeans-%%PORTVERSION%%
 @dirrm %%DATADIR%%/php/modules/locale
 @dirrm %%DATADIR%%/php/modules/ext
 @dirrm %%DATADIR%%/php/modules
-@dirrm %%DATADIR%%/php/hudson
 @dirrm %%DATADIR%%/php/docs
 @dirrm %%DATADIR%%/php/config/Modules
 @dirrm %%DATADIR%%/php/config
@@ -7171,9 +7101,7 @@ bin/netbeans-%%PORTVERSION%%
 @dirrm %%DATADIR%%/nb
 @dirrm %%DATADIR%%/mobility/update_tracking
 @dirrm %%DATADIR%%/mobility/sources
-@dirrm %%DATADIR%%/mobility/modules/scr
 @dirrm %%DATADIR%%/mobility/modules/locale
-@dirrm %%DATADIR%%/mobility/modules/lib
 @dirrm %%DATADIR%%/mobility/modules/ext
 @dirrm %%DATADIR%%/mobility/modules/docs
 @dirrm %%DATADIR%%/mobility/modules
@@ -7342,13 +7270,13 @@ bin/netbeans-%%PORTVERSION%%
 @dirrm %%DATADIR%%/java/sources/org
 @dirrm %%DATADIR%%/java/sources
 @dirrm %%DATADIR%%/java/modules/locale
+@dirrm %%DATADIR%%/java/modules/ext/spring-4
 @dirrm %%DATADIR%%/java/modules/ext/spring-3.0
-@dirrm %%DATADIR%%/java/modules/ext/spring
 @dirrm %%DATADIR%%/java/modules/ext/maven/rootpackage
 @dirrm %%DATADIR%%/java/modules/ext/maven
 @dirrm %%DATADIR%%/java/modules/ext/jaxws22/api
 @dirrm %%DATADIR%%/java/modules/ext/jaxws22
-@dirrm %%DATADIR%%/java/modules/ext/hibernate
+@dirrm %%DATADIR%%/java/modules/ext/hibernate4
 @dirrm %%DATADIR%%/java/modules/ext/eclipselink
 @dirrm %%DATADIR%%/java/modules/ext
 @dirrm %%DATADIR%%/java/modules
@@ -7482,7 +7410,6 @@ bin/netbeans-%%PORTVERSION%%
 @dirrm %%DATADIR%%/enterprise/update_tracking
 @dirrm %%DATADIR%%/enterprise/modules/locale
 @dirrm %%DATADIR%%/enterprise/modules/ext/struts
-@dirrm %%DATADIR%%/enterprise/modules/ext/spring
 @dirrm %%DATADIR%%/enterprise/modules/ext/primefaces
 @dirrm %%DATADIR%%/enterprise/modules/ext/metro
 @dirrm %%DATADIR%%/enterprise/modules/ext/locale
@@ -7517,6 +7444,13 @@ bin/netbeans-%%PORTVERSION%%
 @dirrm %%DATADIR%%/dlight/modules
 @dirrm %%DATADIR%%/dlight/config/Modules
 @dirrm %%DATADIR%%/dlight/config
+@dirrm %%DATADIR%%/dlight/bin/SunOS-x86
+@dirrm %%DATADIR%%/dlight/bin/SunOS-sparc
+@dirrm %%DATADIR%%/dlight/bin/MacOSX-x86
+@dirrm %%DATADIR%%/dlight/bin/Linux-x86_64
+@dirrm %%DATADIR%%/dlight/bin/Linux-x86
+@dirrm %%DATADIR%%/dlight/bin/FreeBSD-x86
+@dirrm %%DATADIR%%/dlight/bin
 @dirrm %%DATADIR%%/dlight
 @dirrm %%DATADIR%%/cnd/update_tracking
 @dirrm %%DATADIR%%/cnd/modules/locale
