@@ -4,7 +4,7 @@
 
 PORTNAME=	gedit-plugins
 PORTVERSION=	2.32.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,20 +20,18 @@ RUN_DEPENDS=	gedit:${PORTSDIR}/editors/gedit \
 CONFLICTS=	gedit-plugins-3.[0-9]*
 
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
-USES=		pathfix gettext gmake pkgconfig
+GNU_CONFIGURE=	yes
+USES=		libtool pathfix gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gnomevfs2
-WANT_GNOME=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	gedit-show-tabbar-plugin.schemas \
 		gedit-drawspaces.schemas
 
 OPTIONS_DEFINE=	PYTHON
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
