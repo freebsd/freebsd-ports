@@ -64,19 +64,19 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 #								(e.g. 'FreeBSD Foundation')
 #
 # JAVA_HOME			Path to the installation directory of the JDK. (e.g.
-#					'/usr/local/jdk1.6.0')
+#					'/usr/local/openjdk6')
 #
 # JAVAC				Path to the Java compiler to use. (e.g.
-#					'/usr/local/jdk1.6.0/bin/javac' or '/usr/local/bin/javac')
+#					'/usr/local/openjdk6/bin/javac' or '/usr/local/bin/javac')
 #
 # JAR				Path to the JAR tool to use. (e.g.
-#					'/usr/local/jdk1.6.0/bin/jar' or '/usr/local/bin/fastjar')
+#					'/usr/local/openjdk6/bin/jar' or '/usr/local/bin/fastjar')
 #
 # APPLETVIEWER		Path to the appletviewer utility. (e.g.
 #					'/usr/local/linux-jdk1.6.0/bin/appletviewer')
 #
 # JAVA				Path to the java executable. Use this for executing Java
-#					programs. (e.g. '/usr/local/jdk1.6.0/bin/java')
+#					programs. (e.g. '/usr/local/openjdk6/bin/java')
 #
 # JAVADOC			Path to the javadoc utility program.
 #
@@ -159,7 +159,7 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 __JAVA_VERSION_LIST=	1.6 1.7 1.8
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
-_JAVA_VENDOR_LIST=		sun openjdk oracle
+_JAVA_VENDOR_LIST=		openjdk oracle sun
 
 # Set all meta-information about JDK ports:
 # port location, corresponding JAVA_HOME, JDK version, OS, vendor
@@ -169,15 +169,15 @@ _JAVA_PORT_NATIVE_OPENJDK_JDK_1_7_INFO=		PORT=java/openjdk7			HOME=${LOCALBASE}/
 											VERSION=1.7.0	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_1_6_INFO=		PORT=java/openjdk6			HOME=${LOCALBASE}/openjdk6 \
 											VERSION=1.6.0	OS=native	VENDOR=openjdk
-_JAVA_PORT_LINUX_SUN_JDK_1_7_INFO=			PORT=java/linux-sun-jdk17		HOME=${LOCALBASE}/linux-sun-jdk1.7.0 \
+_JAVA_PORT_LINUX_ORACLE_JDK_1_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
+											VERSION=1.8.0	OS=linux	VENDOR=oracle
+_JAVA_PORT_LINUX_SUN_JDK_1_7_INFO=			PORT=java/linux-sun-jdk17	HOME=${LOCALBASE}/linux-sun-jdk1.7.0 \
 											VERSION=1.7.0	OS=linux	VENDOR=sun
-_JAVA_PORT_LINUX_ORACLE_JDK_1_8_INFO=		PORT=java/linux-oracle-jdk18		HOME=${LOCALBASE}/linux-sun-jdk1.8.0 \
-											VERSION=1.7.0	OS=linux	VENDOR=oracle
 
 # Verbose description for each VENDOR
 _JAVA_VENDOR_openjdk=		"OpenJDK BSD Porting Team"
-_JAVA_VENDOR_sun=			Sun
 _JAVA_VENDOR_oracle=		Oracle
+_JAVA_VENDOR_sun=			Sun
 
 # Verbose description for each OS
 _JAVA_OS_native=	Native
