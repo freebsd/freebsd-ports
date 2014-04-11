@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	2.24.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,18 +12,19 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Virtual File System
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
-USES=		pathfix gettext gmake pkgconfig
+USES+=		libtool pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomemimedata gconf2 \
-		ltverhack referencehack
-USE_AUTOTOOLS=	libtool
+		referencehack
+INSTALL_TARGET=	install-strip
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-openssl \
 		--disable-gnutls \
 		--disable-howl \
@@ -44,7 +45,6 @@ OPTIONS_DEFAULT=SAMBA MDNS HAL
 SAMBA_DESC=	Enable SMB volume support
 MDNS_DESC=	Enable Bonjour/Rendezvous support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libfam.so) || !defined(WITHOUT_FAM)
@@ -52,18 +52,18 @@ USES+=		fam
 .endif
 
 .if exists(${LOCALBASE}/lib/libkrb5.so)
-LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/heimdal
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
 CONFIGURE_ARGS+=--enable-hal
-LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=--disable-hal
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-LIB_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-libsmbclient
+LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	SAMBA=""
 .else
 PLIST_SUB+=	SAMBA="@comment "
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=--disable-samba
 .endif
 
 .if ${PORT_OPTIONS:MMDNS}
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=--disable-avahi
 .endif

@@ -104,6 +104,7 @@ lib/libgnomevfs-2.a
 lib/libgnomevfs-2.la
 lib/libgnomevfs-2.so
 lib/libgnomevfs-2.so.0
+lib/libgnomevfs-2.so.0.2400.4
 libdata/pkgconfig/gnome-vfs-2.0.pc
 libdata/pkgconfig/gnome-vfs-module-2.0.pc
 libexec/gnome-vfs-daemon
