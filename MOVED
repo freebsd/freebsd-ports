@@ -5962,3 +5962,4 @@ graphics/xmorph||2014-04-11|Has expired: Unmaintained since 2000
 editors/axe||2014-04-11|Has expired: Unmaintained since 2000
 www/cgic||2014-04-11|Has expired: Unmaintained since 2000
 devel/orbitcpp||2014-04-11|Unused anymore, not libc++ friendly
+graphics/sodipodi|graphics/inkscape|2014-04-11|Sodipodi did not survive the Inkscape fork
