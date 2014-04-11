@@ -2,6 +2,10 @@ bin/gnome-session
 bin/gnome-session-properties
 bin/gnome-session-save
 bin/gnome-wm
+man/man1/gnome-session-properties.1.gz
+man/man1/gnome-session-save.1.gz
+man/man1/gnome-session.1.gz
+man/man1/gnome-wm.1.gz
 share/applications/session-properties.desktop
 %%DATADIR%%/gsm-inhibit-dialog.ui
 %%DATADIR%%/session-properties.ui
