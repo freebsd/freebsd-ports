@@ -11,20 +11,16 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
+COMMENT=	GNOME 2 calculator tool based on the old calctool for OpenWindows
 
 CONFLICTS=	gcalctool-2.31.*
 
-USE_BZIP2=	yes
-USES=		bison gettext pkgconfig
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gnomedocutils gtk20
+USES=		bison gettext gmake libtool pathfix pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
+USE_GNOME=	gnomeprefix intlhack gconf2 gnomedocutils gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gcalctool.1
 GLIB_SCHEMAS=	org.gnome.gcalctool.gschema.xml
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
