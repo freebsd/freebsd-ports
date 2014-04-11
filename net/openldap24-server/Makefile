@@ -344,8 +344,7 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 .else
 
 WITH_BDB_VER?=		46
-INVALID_BDB_VER=	42
-USE_BDB=		yes
+USE_BDB=		44+
 
 # XXX Can BDB 5.x use XY instead of X as version?
 .if ${WITH_BDB_VER} >= 43 || ${WITH_BDB_VER} == 5 || ${WITH_BDB_VER} == 6
