@@ -64,11 +64,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <system>
 	<name>FreeBSD</name>
-	<range><gt>8.3</gt><lt>8.3_15</lt></range>
-	<range><gt>8.4</gt><lt>8.4_8</lt></range>
-	<range><gt>9.1</gt><lt>9.1_11</lt></range>
-	<range><gt>9.2</gt><lt>9.2_4</lt></range>
-	<range><gt>10.0</gt><lt>10.0_1</lt></range>
+	<range><ge>8.3</ge><lt>8.3_15</lt></range>
+	<range><ge>8.4</ge><lt>8.4_8</lt></range>
+	<range><ge>9.1</ge><lt>9.1_11</lt></range>
+	<range><ge>9.2</ge><lt>9.2_4</lt></range>
+	<range><ge>10.0</ge><lt>10.0_1</lt></range>
       </system>
     </affects>
     <description>
@@ -206,7 +206,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <system>
 	<name>FreeBSD</name>
-	<range><gt>10.0</gt><lt>10.0_1</lt></range>
+	<range><ge>10.0</ge><lt>10.0_1</lt></range>
       </system>
     </affects>
     <description>
