@@ -11,32 +11,18 @@ PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A user interface builder for GTK+/GNOME
+COMMENT=	User interface builder for GTK+
 
-LIB_DEPENDS=	rarian.0:${PORTSDIR}/textproc/rarian
+LIB_DEPENDS=	librarian.so:${PORTSDIR}/textproc/rarian
 
-USE_BZIP2=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix gettext gmake pkgconfig
-USE_GNOME=	gnomeprefix intlhack gtk20 desktopfileutils
+USES=		pathfix gettext gmake pkgconfig desktop-file-utils \
+		tar:bzip2
+USE_GNOME=	gnomeprefix intlhack gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	GNOME
-OPTIONS_DEFAULT=GNOME
-GNOME_DESC=	Gnome support
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNOME}
-USE_GNOME+=		libgailgnome libgnomeui
-CONFIGURE_ARGS+=	--enable-gnome
-.else
-CONFIGURE_ARGS+=	--disable-gnome
-.endif
-
-CONFIGURE_ARGS+=	--disable-gnome-db
+CONFIGURE_ARGS+=	--disable-gnome-db --disable-nome
 
 .include <bsd.port.mk>
