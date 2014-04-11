@@ -12,23 +12,20 @@ COMMENT=	GNOME 2 frontend for rdesktop and vncviewer
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
-USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 CONFIGURE_ARGS=	--disable-gnome
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		tsclient.1
 PORTDOCS=	COPYING NEWS README
 
 OPTIONS_DEFINE=	TIGHTVNC XNEST DOCS
 TIGHTVNC_DESC=	vncviewer support
 XNEST_DESC=	X via Xnest support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTIGHTVNC}
@@ -46,12 +43,12 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	@${LN} -sf ${PREFIX}/share/pixmaps/tsclient/tsclient.png \
-		${PREFIX}/share/pixmaps/tsclient.png
+	@${LN} -sf tsclient.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/tsclient.png
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 . endfor
 .endif
 
