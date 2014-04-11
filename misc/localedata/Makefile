@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	sf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Legacy locale data for FreeBSD 6+
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	amd64 alpha ia64 i386 pc98 sparc64
