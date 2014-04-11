@@ -98,9 +98,6 @@ do-install:
 	${LN} -sf ${lib}.compat4x ${STAGEDIR}${TARGET_DIR}/${lib}
 .endfor
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 pre-clean:
 	@[ -w ${WRKDIR}/var ] && chflags -R noschg ${WRKDIR}/var || ${TRUE}
 
