@@ -10,7 +10,11 @@ MASTER_SITES=	http://www.bastoul.net/cloog/pages/download/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Code generator in the polyhedral model
 
+LICENSE=	LGPL21
+
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+
+PORTSCOUT=	ignore:0.18.2
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
