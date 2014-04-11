@@ -4,7 +4,7 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	2.32.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -13,31 +13,28 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	File manager for the GNOME desktop
 
 BUILD_DEPENDS=	g-ir-compiler:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
-		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
-		exempi:${PORTSDIR}/textproc/exempi
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
+		libexempi.so:${PORTSDIR}/textproc/exempi
 
 CONFLICTS=	nautilus-3.[0-9]*
 
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
-USES=		gettext desktop-file-utils shared-mime-info gmake pkgconfig
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
-		librsvg2 ltverhack gvfs ltasneededhack
+USES=		gettext desktop-file-utils shared-mime-info gmake pkgconfig \
+		tar:bzip2 libtool pathfix
+USE_GNOME=	gnomeprefix intlhack gnomedesktop \
+		librsvg2 gvfs
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib ${ICONV_LIB}" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--enable-static --disable-packagekit
+CONFIGURE_ARGS=	--enable-static --disable-packagekit --disable-update-mimedb
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 GCONF_SCHEMAS=	apps_nautilus_preferences.schemas
 
-MAN1=		nautilus-connect-server.1 nautilus-file-management-properties.1 \
-		nautilus.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|G_CONST_RETURN|const|g' \
 		${WRKSRC}/eel/eel-*.[ch] \
@@ -47,6 +44,6 @@ post-patch:
 		${WRKSRC}/configure ${WRKSRC}/eel/Makefile.in
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/nautilus/extensions-2.0
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-2.0
 
 .include <bsd.port.mk>
