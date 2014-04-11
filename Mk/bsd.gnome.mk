@@ -81,10 +81,10 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 evolutiondataserver gal2 
 		gnomedesktopsharp20 gnomedocutils gnomemenus gnomepanel gnomesharp20 \
 		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 gtksharp10 \
 		gtksharp20 gtksourceview gtksourceview2 gvfs libartlgpl2 libbonobo \
-		libbonoboui libgailgnome libgda2 libgda3 libgda4 libglade2 libgnome \
+		libbonoboui libgailgnome libgda4 libglade2 libgnome \
 		libgnomecanvas libgnomedb libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
-		libxml2 libxslt libzvt linc metacity nautilus2 nautiluscdburner \
+		libxml2 libxslt libzvt linc metacity nautilus2 \
 		orbit2 pango pangox-compat pygnome2 pygnomedesktop pygnomeextras pygobject pygtk2 \
 		pygtksourceview vte
 
@@ -369,7 +369,7 @@ gnomedesktop_USE_GNOME_IMPL=	gconf2 gnomedocutils pygtk2
 gnomedesktopsharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-sharp-2.0.pc
 gnomedesktopsharp20_BUILD_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
 gnomedesktopsharp20_RUN_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
-gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gnomepanel gtkhtml3 librsvg2 vte libgnomeprintui gtksourceview2 libwnck nautiluscdburner
+gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gnomepanel gtkhtml3 librsvg2 vte libgnomeprintui gtksourceview2 libwnck
 gnomedesktopsharp20_GNOME_DESKTOP_VERSION=2
 
 libwnck_LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck
@@ -420,14 +420,6 @@ gnomecontrolcenter2_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-window-settings
 gnomecontrolcenter2_LIB_DEPENDS=libgnome-window-settings.so:${PORTSDIR}/sysutils/gnome-control-center
 gnomecontrolcenter2_USE_GNOME_IMPL=metacity gnomemenus libgnomekbd gnomedesktop librsvg2
 gnomecontrolcenter2_GNOME_DESKTOP_VERSION=2
-
-libgda2_LIB_DEPENDS=	libgda-2.so:${PORTSDIR}/databases/libgda2
-libgda2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda.pc
-libgda2_USE_GNOME_IMPL=	glib20 libxslt
-
-libgda3_LIB_DEPENDS=	libgda-3.0.so:${PORTSDIR}/databases/libgda3
-libgda3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda-3.0.pc
-libgda3_USE_GNOME_IMPL=	glib20 libxslt
 
 libgda4_LIB_DEPENDS=	libgda-4.0.so:${PORTSDIR}/databases/libgda4
 libgda4_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda-4.0.pc
@@ -508,11 +500,6 @@ desktopfileutils_BUILD_DEPENDS=update-desktop-database:${PORTSDIR}/devel/desktop
 desktopfileutils_RUN_DEPENDS=update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 desktopfileutils_DETECT=	${LOCALBASE}/bin/update-desktop-database
 desktopfileutils_USE_GNOME_IMPL=glib20
-
-nautiluscdburner_LIB_DEPENDS=libnautilus-burn.so:${PORTSDIR}/sysutils/nautilus-cd-burner
-nautiluscdburner_DETECT=	${LOCALBASE}/libdata/pkgconfig/libnautilus-burn.pc
-nautiluscdburner_USE_GNOME_IMPL=nautilus2 desktopfileutils
-nautiluscdburner_GNOME_DESKTOP_VERSION=2
 
 gnomemenus_BUILD_DEPENDS=	gnome-menus<=2.39.0:${PORTSDIR}/x11/gnome-menus
 gnomemenus_RUN_DEPENDS=		gnome-menus<=2.39.0:${PORTSDIR}/x11/gnome-menus
