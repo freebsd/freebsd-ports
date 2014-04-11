@@ -188,7 +188,6 @@
     SUBDIR += downtime
     SUBDIR += downtimed
     SUBDIR += dt
-    SUBDIR += dtc
     SUBDIR += dtpstree
     SUBDIR += du2ps
     SUBDIR += duff

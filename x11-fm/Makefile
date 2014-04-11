@@ -35,7 +35,6 @@
     SUBDIR += xcruise
     SUBDIR += xdiskusage
     SUBDIR += xfe
-    SUBDIR += xfm
     SUBDIR += xplore
 
 .include <bsd.port.subdir.mk>

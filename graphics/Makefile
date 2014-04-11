@@ -93,7 +93,6 @@
     SUBDIR += colord
     SUBDIR += colord-gtk
     SUBDIR += comical
-    SUBDIR += comix
     SUBDIR += commons-utilities
     SUBDIR += compupic
     SUBDIR += converseen
@@ -108,7 +107,6 @@
     SUBDIR += darknock
     SUBDIR += darktable
     SUBDIR += dataplot
-    SUBDIR += dc20ctrl
     SUBDIR += dc20pack
     SUBDIR += dcraw
     SUBDIR += dcraw-m
@@ -190,7 +188,6 @@
     SUBDIR += exiftran
     SUBDIR += exiv2
     SUBDIR += exrtools
-    SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += ffff
     SUBDIR += fig2sxd
@@ -420,7 +417,6 @@
     SUBDIR += kamera-kde4
     SUBDIR += kcolorchooser
     SUBDIR += kcoloredit
-    SUBDIR += kdc2tiff
     SUBDIR += kdegraphics4
     SUBDIR += kdegraphics4-mobipocket
     SUBDIR += kdegraphics4-strigi-analyzer
@@ -1004,7 +1000,6 @@
     SUBDIR += tgif
     SUBDIR += tif22pnm
     SUBDIR += tiff
-    SUBDIR += tiff2png
     SUBDIR += tifmerge
     SUBDIR += tilecache
     SUBDIR += tiled
@@ -1049,9 +1044,7 @@
     SUBDIR += xli
     SUBDIR += xmandel
     SUBDIR += xmedcon
-    SUBDIR += xmfract
     SUBDIR += xmlgraphics-commons
-    SUBDIR += xmorph
     SUBDIR += xmountains
     SUBDIR += xnview
     SUBDIR += xoris

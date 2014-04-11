@@ -435,7 +435,6 @@
     SUBDIR += tet
     SUBDIR += tkcron
     SUBDIR += tkinfo
-    SUBDIR += tkman
     SUBDIR += tkregexp
     SUBDIR += tkrunit
     SUBDIR += toilet

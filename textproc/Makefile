@@ -189,7 +189,6 @@
     SUBDIR += gl-aspell
     SUBDIR += gladtex
     SUBDIR += glark
-    SUBDIR += glimpse
     SUBDIR += glpi-plugins-AdditionalReports
     SUBDIR += glpi-plugins-DataInjection
     SUBDIR += gmetadom

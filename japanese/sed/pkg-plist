@@ -1,4 +1,0 @@
-bin/sed
-%%PORTDOCS%%share/doc/ja-sed/OREADME.MB
-%%PORTDOCS%%share/doc/ja-sed/README.MB
-%%PORTDOCS%%@dirrm share/doc/ja-sed

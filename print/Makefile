@@ -260,7 +260,6 @@
     SUBDIR += qt5-printsupport
     SUBDIR += rlpr
     SUBDIR += rprint
-    SUBDIR += rtf2latex
     SUBDIR += rtf2latex2e
     SUBDIR += ruby-panda
     SUBDIR += rubygem-afm
