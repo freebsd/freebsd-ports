@@ -3,7 +3,7 @@
 
 PORTNAME=	spamd
 PORTVERSION=	4.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=freebsdspamd/spamd
@@ -41,8 +41,10 @@ PLIST_SUB=	SPAMDUSER=${USERS} \
 # be adjusted. Man page and pid file will not be renamed!
 .if !defined(CPANEL)
 PLIST_FILES+=	libexec/spamd
+PLIST_SUB+=	SPAMDBIN=spamd
 .else
 PLIST_FILES+=	libexec/obspamd
+PLIST_SUB+=	SPAMDBIN=obspamd
 .endif
 
 SUB_FILES=	pkg-install \
