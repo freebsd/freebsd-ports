@@ -17,10 +17,10 @@ include/devhelp-2.0/devhelp/dh-window.h
 %%GEDIT%%lib/gedit-2/plugins/devhelp/devhelp.py
 %%GEDIT%%lib/gedit-2/plugins/devhelp/devhelp.pyc
 %%GEDIT%%lib/gedit-2/plugins/devhelp/devhelp.pyo
-lib/libdevhelp-2.a
 lib/libdevhelp-2.la
 lib/libdevhelp-2.so
 lib/libdevhelp-2.so.1
+lib/libdevhelp-2.so.1.0.0
 libdata/pkgconfig/libdevhelp-2.0.pc
 share/applications/devhelp.desktop
 share/devhelp/assistant/assistant.css
@@ -130,6 +130,8 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
 @dirrmtry share/locale/eo/LC_MESSAGES
 @dirrmtry share/locale/eo
 @dirrmtry share/locale/en@shaw/LC_MESSAGES

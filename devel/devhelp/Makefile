@@ -4,7 +4,7 @@
 
 PORTNAME=	devhelp
 PORTVERSION=	2.32.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
@@ -13,18 +13,17 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Developer help browser for GNOME 2
 
-LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
-		unique-1.0:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 CONFLICTS=	devhelp-3.[0-9]*
 
-USE_BZIP2=	yes
 USE_XORG=	x11
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	intlhack gnomeprefix libgnomeui libwnck
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	devhelp.schemas
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
@@ -33,7 +32,6 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 OPTIONS_DEFINE=	GEDIT
 GEDIT_DESC=	Enable GEdit plug-in support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGEDIT}
