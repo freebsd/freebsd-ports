@@ -13,6 +13,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject JavaScriptCore bridge
 
+OPTIONS_DEFINE=	DOCS
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-js-common.pc:${PORTSDIR}/devel/gnome-js-common
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
