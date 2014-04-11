@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.92 2007/10/18 23:45:20 marcus Exp $
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-fifth-toe
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		liferea:${PORTSDIR}/net/liferea \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
 		${LOCALBASE}/share/gnome-games/glines/pixmaps/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
-		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
 		inkscape:${PORTSDIR}/graphics/inkscape \
 		atomix:${PORTSDIR}/games/atomix \
 		${LOCALBASE}/share/gnome/help/gdp-handbook/C/builddocs.xml:${PORTSDIR}/misc/gnome-devel-docs
@@ -30,5 +29,4 @@ GNOME_SLAVE=	yes
 
 DESCR=		${.CURDIR}/pkg-descr
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -57,6 +57,8 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		${LOCALBASE}/share/sounds/freedesktop/index.theme:${PORTSDIR}/audio/freedesktop-sound-theme
 
 NO_BUILD=	yes
+NO_MTREE=	yes
+NO_INSTALL=	yes
 
 .if !defined(GNOME_SLAVE)
 USE_PYTHON=	yes
@@ -68,9 +70,6 @@ XSCREENSAVER_DESC=	Use xscreensaver as screen saver app
 #		MAPI "Depend on evolution-mapi (pulls in samba4)
 .endif
 
-do-install:	# empty
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(GNOME_SLAVE)
