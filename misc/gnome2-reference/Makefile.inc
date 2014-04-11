@@ -1,9 +1,6 @@
 _PORT_REF_LIST= \
 accessibility/at-spi-reference:at-spi-reference \
 accessibility/atk-reference:atk-reference \
-databases/libgda2-reference:libgda2-reference \
-databases/libgda3-reference:libgda3-reference \
-databases/libgnomedb-reference:libgnomedb-reference \
 devel/ORBit2-reference:ORBit2-reference \
 devel/gconf2-reference:gconf2-reference \
 devel/glib20-reference:glib-reference \
