@@ -37,8 +37,8 @@ shebang() {
 		/bin/csh) ;;
 		/bin/sh) ;;
 		*)
-			err "${interp} is an invalid shebang you need USES=shebangfix for ${f#${STAGEDIR}${PREFIX}/}"
-			rc=1
+			warn "${interp} is an invalid shebang you need USES=shebangfix for ${f#${STAGEDIR}${PREFIX}/}"
+			rc=0
 			;;
 		esac
 	done
