@@ -1,11 +1,10 @@
 bin/empathy
 bin/empathy-accounts
 bin/empathy-debugger
-%%NST%%lib/nautilus-sendto/plugins/libnstempathy.a
-%%NST%%lib/nautilus-sendto/plugins/libnstempathy.la
-%%NST%%lib/nautilus-sendto/plugins/libnstempathy.so
 libexec/empathy-auth-client
 libexec/empathy-av
+man/man1/empathy-accounts.1.gz
+man/man1/empathy.1.gz
 share/GConf/gsettings/empathy.convert
 share/applications/empathy-accounts.desktop
 share/applications/empathy.desktop
@@ -1222,6 +1221,8 @@ share/telepathy/clients/Empathy.client
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
