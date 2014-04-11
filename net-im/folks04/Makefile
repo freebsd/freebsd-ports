@@ -4,7 +4,7 @@
 
 PORTNAME=	folks
 PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
@@ -13,21 +13,20 @@ COMMENT=	library to aggregates people from multiple sources
 
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee06 \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06 \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 CONFLICTS=	folks-0.[6-9].[0-9]*
 
 PKGNAMESUFFIX=	04
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake pkgconfig tar:bzip2 libtool
 USE_GNOME=	intlhack gnomehier
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=22
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
