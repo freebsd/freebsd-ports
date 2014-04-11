@@ -11,7 +11,6 @@ COMMENT=	Additional GNOME 2 applications not included in the core desktop
 RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		xchat:${PORTSDIR}/irc/xchat \
 		gimp>0:${PORTSDIR}/graphics/gimp \
-		sodipodi:${PORTSDIR}/graphics/sodipodi \
 		gthumb:${PORTSDIR}/graphics/gthumb \
 		pidgin:${PORTSDIR}/net-im/pidgin \
 		tsclient:${PORTSDIR}/net/tsclient \
