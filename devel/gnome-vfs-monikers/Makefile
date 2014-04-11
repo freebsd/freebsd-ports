@@ -12,10 +12,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome-vfs monikers module
 
 USE_GNOME=	gnomevfs2 libbonobo
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
+INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib #-pthread
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
