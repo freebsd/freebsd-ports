@@ -10,16 +10,16 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A bug reporting tool for GNOME 2
+COMMENT=	Bug reporting tool for GNOME 2
 
-LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libbonobo \
+INSTALL_TARGET=	install-strip
+USE_GNOME=	gnomeprefix intlhack libbonobo \
 		gnomedocutils evolutiondataserver
 GNOME_DESKTOP_VERSION=2
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -27,9 +27,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	bug-buddy.schemas
 
-MAN1=		bug-buddy.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|applications.menu|gnome-applications.menu|' \
 		${WRKSRC}/src/bugzilla.c
@@ -38,7 +35,7 @@ post-patch:
 	    	${WRKSRC}/configure
 
 post-install:
-	@${LN} -fs ${PREFIX}/lib/gtk-2.0/modules/libgnomesegvhandler.so \
-		${PREFIX}/lib/gtk-2.0/modules/libgnomebreakpad.so
+	@${LN} -fs libgnomesegvhandler.so \
+		${STAGEDIR}${PREFIX}/lib/gtk-2.0/modules/libgnomebreakpad.so
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@ bin/bug-buddy
 lib/gtk-2.0/modules/libgnomebreakpad.so
 lib/gtk-2.0/modules/libgnomesegvhandler.la
 lib/gtk-2.0/modules/libgnomesegvhandler.so
+man/man1/bug-buddy.1.gz
 share/applications/bug-buddy.desktop
 %%DATADIR%%/bug-buddy.gtkbuilder
 %%DATADIR%%/gdb-cmd
