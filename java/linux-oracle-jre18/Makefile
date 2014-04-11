@@ -5,7 +5,7 @@ PORTVERSION=	${JRE_VERSION}.${JRE_UPDATE_VERSION}
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-oracle-
-DISTNAME=	jre-8-linux-i586
+DISTNAME=	jre-${JRE_VERSION}-linux-i586
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JRE_VERSION} Runtime Environment for Linux
