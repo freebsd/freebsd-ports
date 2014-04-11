@@ -17,5 +17,4 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lm
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
