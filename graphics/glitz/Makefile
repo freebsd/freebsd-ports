@@ -4,7 +4,7 @@
 
 PORTNAME=	glitz
 PORTVERSION=	0.5.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
@@ -13,12 +13,12 @@ COMMENT=	OpenGL image compositing library
 
 USE_GL=		yes
 USE_XORG=	xt
-USES=	pathfix
+USES=	pathfix libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
