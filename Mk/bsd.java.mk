@@ -31,7 +31,7 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 #					for the port. (allowed values: native linux)
 #
 # JAVA_VENDOR		List of space-separated suitable JDK port vendors for the
-#					port. (allowed values: freebsd bsdjava sun openjdk)
+#					port. (allowed values: openjdk oracle sun)
 #
 # JAVA_BUILD		When set, it means that the selected JDK port should be
 #					added to build dependencies for the port.
@@ -49,7 +49,7 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 #-------------------------------------------------------------------------------
 # Variables defined for the port:
 #
-# JAVA_PORT			The name of the JDK port. (e.g. 'java/jdk16')
+# JAVA_PORT			The name of the JDK port. (e.g. 'java/openjdk6')
 #
 # JAVA_PORT_VERSION	The version of the JDK port. (e.g. '1.6')
 #
@@ -61,7 +61,7 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 #								JDK port. (e.g. 'Linux')
 #
 # JAVA_PORT_VENDOR_DESCRIPTION	Description of the vendor of the JDK port.
-#								(e.g. 'FreeBSD Foundation')
+#								(e.g. 'OpenJDK BSD Porting Team')
 #
 # JAVA_HOME			Path to the installation directory of the JDK. (e.g.
 #					'/usr/local/openjdk6')
@@ -73,7 +73,7 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 #					'/usr/local/openjdk6/bin/jar' or '/usr/local/bin/fastjar')
 #
 # APPLETVIEWER		Path to the appletviewer utility. (e.g.
-#					'/usr/local/linux-jdk1.6.0/bin/appletviewer')
+#					'/usr/local/linux-jdk1.7.0/bin/appletviewer')
 #
 # JAVA				Path to the java executable. Use this for executing Java
 #					programs. (e.g. '/usr/local/openjdk6/bin/java')
