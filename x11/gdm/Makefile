@@ -100,5 +100,6 @@ post-install:
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 	${RM} -rf ${STAGEDIR}${ETCDIR}/home/.gconf*
 	${RM} -f ${STAGEDIR}${ETCDIR}/custom.conf
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/gdm/Sessions ${STAGEDIR}${PREFIX}/etc/dm/Sessions
 
 .include <bsd.port.mk>
