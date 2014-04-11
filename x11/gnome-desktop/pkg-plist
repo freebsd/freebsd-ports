@@ -11,7 +11,9 @@ lib/libgnome-desktop-2.a
 lib/libgnome-desktop-2.la
 lib/libgnome-desktop-2.so
 lib/libgnome-desktop-2.so.17
+lib/libgnome-desktop-2.so.17.1.5
 libdata/pkgconfig/gnome-desktop-2.0.pc
+man/man1/gnome-about.1.gz
 share/applications/gnome-about.desktop
 share/gnome-about/contributors.list
 share/gnome-about/foundation-members.list
