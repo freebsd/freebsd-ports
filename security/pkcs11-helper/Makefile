@@ -3,6 +3,7 @@
 
 PORTNAME=	pkcs11-helper
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	SF/opensc/pkcs11-helper/
 
