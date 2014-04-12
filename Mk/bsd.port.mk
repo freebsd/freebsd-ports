@@ -1130,6 +1130,7 @@ USESDIR?=		${PORTSDIR}/Mk/Uses
 SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 NOTPHONY?=
+PKG_ENV+=		PORTSDIR=${PORTSDIR}
 
 .if defined(FORCE_STAGE)
 .undef NO_STAGE
