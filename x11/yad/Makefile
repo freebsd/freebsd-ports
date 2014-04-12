@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	yad
-PORTVERSION=	0.25.1
+PORTVERSION=	0.26.1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF/${PORTNAME}-dialog/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Display GNOME dialogs from the command line
 
-USES=		gmake pkgconfig
-USE_XZ=		yes
+LICENSE=	GPLv3
+
+USES=		gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
