@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	An electronic structure programs for high-accuracy computations
 
+BROKEN=		Fails to build
+
 .if exists(${LOCALBASE}/lib/libgoto2.so)
 WITH_BLAS?=     gotoblas
 .elif exists(${LOCALBASE}/lib/libatlas.so)
