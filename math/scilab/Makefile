@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}-src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific software package for numerical computations
 
+BROKEN=		Fails to configure
+
 EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
