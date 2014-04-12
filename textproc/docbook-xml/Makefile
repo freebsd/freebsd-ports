@@ -2,7 +2,7 @@
 
 PORTNAME=	docbook
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${DBFILES:C,(.*):(.*),http://www.docbook.org/xml/\1/:\2,:C,:docbook-xml-([0-9]+).([0-9]+).?([0-9]*),:db\1\2\3,:C,:docbook-([0-9]+).([0-9]+).?([0-9]*),:db\1\2\3,}
 PKGNAMESUFFIX=	-xml
@@ -57,7 +57,7 @@ do-install-${D:S/./_/g}:
 	    ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${DBKDIR}/$D
 	${XMLCATMGR_CMD} -c ${STAGEDIR}${DBCAT_XML} \
 	    add nextCatalog "${PREFIX}/${DBKDIR}/$D/catalog.xml"
-	test "$D" = 5.0 || \
+	test "$D" = 5.0 || test "$D" = 4.1.2 || \
 	    ${ECHO_CMD} "CATALOG \"${PREFIX}/${DBKDIR}/$D/docbook.cat\"" \
 	    >> ${STAGEDIR}${DBCAT_SGML}
 do-install: do-install-${D:S/./_/g}
