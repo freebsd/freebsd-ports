@@ -8,22 +8,21 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Twitch/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An overhead 2-d shooter, reminiscent of games like Robotron
+COMMENT=	Overhead 2-d shooter, reminiscent of games like Robotron
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+RUN_DEPENDS=	${PYGAME}
 
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
 do-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/twitch
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/twitch
 	(cd ${WRKSRC}; ${TAR} cf - images sound levels twitch.*) | \
-		(cd ${PREFIX}/share/twitch; ${TAR} xf -)
+		(cd ${STAGEDIR}${PREFIX}/share/twitch; ${TAR} xf -)
 	@printf "#!/bin/sh\ncd ${PREFIX}/share/twitch && \
 		${PYTHON_CMD} ${PREFIX}/share/twitch/twitch.py\n" > ${WRKDIR}/twitch.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/twitch.sh ${PREFIX}/bin/twitch
+	${INSTALL_SCRIPT} ${WRKDIR}/twitch.sh ${STAGEDIR}${PREFIX}/bin/twitch
 
 .include <bsd.port.mk>
