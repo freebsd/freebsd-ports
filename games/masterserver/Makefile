@@ -9,8 +9,10 @@ MASTER_SITES=	SF/lasange-system/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Masterserver for IdSoftware games (D3, EF, H2, Q2, Q3, QW)
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} 's|bindir|DESTDIR)$$(&|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|libdir|DESTDIR)$$(&|' ${WRKSRC}/plugins/Makefile
+
 .include <bsd.port.mk>
