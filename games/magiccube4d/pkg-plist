@@ -1,7 +1,0 @@
-bin/magiccube4d
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Intro.txt
-%%PORTDOCS%%%%DOCSDIR%%/MagicCube4D-unix.txt
-%%PORTDOCS%%%%DOCSDIR%%/ideas.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme-unix.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
