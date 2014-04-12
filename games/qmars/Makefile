@@ -11,17 +11,16 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quicker Mars - heavily optimized mars simulator
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|$${CXX}| ; \
 		s|-O3|$${CXXFLAGS}|' ${WRKSRC}/${MAKEFILE}
@@ -31,11 +30,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|Parser::||' ${WRKSRC}/parser.hpp
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
-	@${MKDIR} ${DATADIR}
-.for i in bench.exhaust bench.exmars bench.pmars bench.qmars
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${i} ${DATADIR})
-.endfor
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} warriors ${DATADIR})
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} bench.exhaust bench.exmars \
+		bench.pmars bench.qmars ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} warriors ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
