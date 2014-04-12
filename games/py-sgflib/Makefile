@@ -10,15 +10,15 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Smart Game Format Parser Library for Python
+COMMENT=	Smart Game Format parser library for Python
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/sgflib.py ${PYTHON_SITELIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/typelib.py ${PYTHON_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} sgflib.py typelib.py \
+		${STAGEDIR}${PYTHON_SITELIBDIR})
 
 .include <bsd.port.mk>
