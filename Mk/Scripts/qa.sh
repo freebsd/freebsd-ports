@@ -123,7 +123,9 @@ stripped() {
 	find ${STAGEDIR} -type f -exec /usr/bin/file -nNF '' {} + | while
 	    read f output; do
 		case "${output}" in
-			ELF\ *,\ not\ stripped*) warn "${f} is not stripped consider using \${STRIP_CMD}" ;;
+			ELF\ *\ executable,\ *,\ not\ stripped*|ELF\ *\ shared\ object,\ *,\ not\ stripped*)
+				warn "${f} is not stripped consider using \${STRIP_CMD}"
+				;;
 		esac
 	done
 }
