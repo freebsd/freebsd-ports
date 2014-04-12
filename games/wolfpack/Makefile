@@ -11,6 +11,8 @@ DISTNAME=	empire-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Long term multiplayer strategy game
 
+BROKEN=		Fails to install
+
 MAKEFILE=	GNUmakefile
 USES=		gmake perl5
 USE_PERL5=	build
