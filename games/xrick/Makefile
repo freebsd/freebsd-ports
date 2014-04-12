@@ -9,25 +9,26 @@ MASTER_SITES=	http://www.bigorno.net/xrick/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A clone of Rick Dangerous
+COMMENT=	Clone of Rick Dangerous
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 RESTRICTED=	Copyright status of the graphics and sounds is uncertain
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl
 
-MAN6=		xrick.6
-MANCOMPRESSED=	yes
+PLIST_FILES=	bin/xrick man/man6/xrick.6.gz share/xrick/data.zip
+PLIST_DIRS=	share/xrick
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|sysarg_args_data = NULL|sysarg_args_data = "${PREFIX}/share/xrick/data.zip"|' ${WRKSRC}/src/sysarg.c
+	@${REINPLACE_CMD} 's|gcc|${CC}|; s|-g||; s|-O2|${CFLAGS}|' \
+		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xrick ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xrick.6.gz ${PREFIX}/man/man6/xrick.6.gz
-	${MKDIR} ${PREFIX}/share/xrick
-	${INSTALL_DATA} ${WRKSRC}/data.zip ${PREFIX}/share/xrick/data.zip
+	${INSTALL_PROGRAM} ${WRKSRC}/xrick ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xrick.6.gz ${STAGEDIR}${PREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xrick
+	${INSTALL_DATA} ${WRKSRC}/data.zip ${STAGEDIR}${PREFIX}/share/xrick
 
 .include <bsd.port.mk>
