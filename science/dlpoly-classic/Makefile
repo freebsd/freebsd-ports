@@ -27,15 +27,10 @@ BUILD_WRKSRC=	${WRKSRC}/source
 
 MPIF90=		${LOCALBASE}/mpi/openmpi/bin/mpif90
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-USE_JAVA=	yes
-PLIST_FILES+=	bin/dlpoly-gui \
-		${DATADIR_REL}/GUI.jar
-PLIST_DIRS+=	${DATADIR_REL}
-.endif
+GUI_USE=		JAVA=yes
+GUI_PLIST_FILES=	bin/dlpoly-gui \
+			${DATADIR_REL}/GUI.jar
+GUI_PLIST_DIRS=		${DATADIR_REL}
 
 post-patch:
 	${CP} ${WRKSRC}/build/MakePAR ${WRKSRC}/build/MakeSEQ ${BUILD_WRKSRC}
@@ -55,25 +50,20 @@ do-build:
 		${CP} -f MakePAR Makefile && \
 		${MAKE} gfortran)
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/execute/dlpoly-classic ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/execute/dlpoly-classic-mpi ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/manual/* ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/execute ${EXAMPLESDIR}
-	${RM} ${EXAMPLESDIR}/execute/dlpoly*
-.endif
-.if ${PORT_OPTIONS:MGUI}
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/java/GUI.jar ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/dlpoly-gui ${PREFIX}/bin
-.endif
+.include <bsd.port.options.mk>
 
-post-install:
-	@${CAT} pkg-message
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/execute/dlpoly-classic ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/execute/dlpoly-classic-mpi ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/manual/* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/execute ${STAGEDIR}${EXAMPLESDIR}
+	${RM} ${STAGEDIR}${EXAMPLESDIR}/execute/dlpoly*
+.if ${PORT_OPTIONS:MGUI}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/java/GUI.jar ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/dlpoly-gui ${STAGEDIR}${PREFIX}/bin
+.endif
 
 .include <bsd.port.mk>
