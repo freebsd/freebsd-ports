@@ -4,4 +4,4 @@ Python/PostgreSQL interface. It provides implementations of all of the
 OpenGIS/PostGIS classes, except (x,y,m) and (x,y,z,m). It currently
 supports the EWKB, HEXEWKB, WKB, and WKT formats.
 
-WWW:   http://freshmeat.net/projects/geotypes/
+WWW: http://freecode.com/projects/geotypes
