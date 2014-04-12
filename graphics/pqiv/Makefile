@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pqiv
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	GH
-
 DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -18,15 +17,14 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USE_GITHUB=	yes
 GH_ACCOUNT=	phillipberndt
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-184ef87
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-7a10aba
 
 OPTIONS_SINGLE=		GTK
 OPTIONS_SINGLE_GTK=	GTK2 GTK3
 OPTIONS_DEFAULT=	GTK2
 
-USES=		gmake pkgconfig shebangfix
+USES=		gmake pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	configure
-USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 
 GTK2_CONFIGURE_ON=	--gtk-version=2
