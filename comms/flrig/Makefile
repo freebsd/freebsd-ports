@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flrig
-PORTVERSION=	1.3.13
+PORTVERSION=	1.3.15
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/flrig/ \
 		${MASTER_SITE_LOCAL}
@@ -24,12 +24,7 @@ OPTIONS_DEFINE=	NATIVE_OPT
 
 NATIVE_OPT_DESC=	Enable Native Optimizations
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MNATIVE_OPT}
-CONFIGURE_ARGS+=--enable-optimizations=native
-.else
-CONFIGURE_ARGS+=--enable-optimizations=none
-.endif
+NATIVE_OPT_CONFIGURE_ON+=	--enable-optimizations=native
+NATIVE_OPT_CONFIGURE_OFF+=	--enable-optimizations=none
 
 .include <bsd.port.mk>
