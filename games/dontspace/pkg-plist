@@ -1,4 +1,5 @@
 bin/dontspace
+man/man6/dontspace.6.gz
 share/games/dontspace/dontspaceMenus.tcl
 share/games/dontspace/dontspaceRules.tcl
 share/games/dontspace/help.tcl
@@ -69,4 +70,4 @@ share/games/dontspace/CARDS/c_warnspace.xbm
 @dirrm share/games/dontspace/CARDS
 @dirrm share/games/dontspace/SCORES
 @dirrm share/games/dontspace
-@dirrm share/games
+@dirrmtry share/games
