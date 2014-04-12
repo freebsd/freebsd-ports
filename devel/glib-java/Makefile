@@ -4,7 +4,7 @@
 
 PORTNAME=	glib-java
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,15 +12,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper GLib 2
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+OPTIONS_DEFINE=	DOCS
+
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
-USE_GNOME=	gnomehack glib20
-USES=		pkgconfig
+USE_GNOME=	glib20
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 GLIB_API_VERSION=	0.4
@@ -31,7 +31,6 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 CONFIGURE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 MAKE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -39,37 +38,32 @@ post-patch:
 		${WRKSRC}/configure
 
 do-install:
-	${MKDIR} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/.libs/libglibjni-${GLIB_API_VERSION}.so \
-		${PREFIX}/lib/libglibjni-${GLIB_API_VERSION}.so.1
-	${LN} -sf ${PREFIX}/lib/libglibjni-${GLIB_API_VERSION}.so.1 \
-		${PREFIX}/lib/libglibjni-${GLIB_API_VERSION}.so
-	${MKDIR} ${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/glib-java.pc ${PREFIX}/libdata/pkgconfig
-	${MKDIR} ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/jni/jg_jnu.h ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/jni/glib_java.h ${PREFIX}/include/${PORTNAME}
-	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/glib${GLIB_API_VERSION}.jar ${JAVAJARDIR}
-	${MKDIR} ${PREFIX}/share/${PORTNAME}/macros
-	${INSTALL_DATA} ${WRKSRC}/macros/* ${PREFIX}/share/${PORTNAME}/macros
-
-post-install:
+		${STAGEDIR}${PREFIX}/lib/libglibjni-${GLIB_API_VERSION}.so.1
+	${LN} -sf libglibjni-${GLIB_API_VERSION}.so.1 \
+		${STAGEDIR}${PREFIX}/lib/libglibjni-${GLIB_API_VERSION}.so
+	${INSTALL_DATA} ${WRKSRC}/glib-java.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/jni/jg_jnu.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/jni/glib_java.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/glib${GLIB_API_VERSION}.jar ${STAGEDIR}${JAVAJARDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/macros
+	${INSTALL_DATA} ${WRKSRC}/macros/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/macros
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/api
-	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
-	${TOUCH} ${DOCSDIR}/api/packages.html
-	${TOUCH} ${DOCSDIR}/api/serialized-form.html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/api
+	cd ${WRKSRC}/doc/api && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/api
+	${TOUCH} ${STAGEDIR}${DOCSDIR}/api/packages.html
+	${TOUCH} ${STAGEDIR}${DOCSDIR}/api/serialized-form.html
 .endif
 	@${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%GLIB_API_VERSION%%|${GLIB_API_VERSION}|g' \
 		 < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
