@@ -5,27 +5,29 @@ PORTNAME=	durus
 PORTVERSION=	3.9
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.mems-exchange.org/software/durus/
+MASTER_SITES=	CHEESESHOP \
+		http://www.mems-exchange.org/software/durus/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Durus-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
-COMMENT=	A persistent object storage system for Python
+MAINTAINER=	ports@robakdesign.com
+COMMENT=	Persistent object storage system for Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_ARCHDEP=	yes
+LICENSE=	MIT
+
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	Durus
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ACKS.txt CHANGES.txt INSTALL.txt LICENSE.txt README.txt doc/FAQ.txt
-	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
