@@ -2,15 +2,9 @@ bin/askmara
 bin/duende
 bin/fetchzone
 bin/getzone
-@unexec if cmp -s %D/%%ETCDIR%%/csv2.sample %D/%%ETCDIR%%/csv2; then rm -f %D/%%ETCDIR%%/csv2; fi
-%%ETCDIR%%/csv2.sample
-@exec if [ ! -f %D/%%ETCDIR%%/csv2 ] ; then cp -p %D/%F %B/csv2; fi
-@unexec if cmp -s %D/%%ETCDIR%%/dwood3rc.sample %D/%%ETCDIR%%/dwood3rc; then rm -f %D/%%ETCDIR%%/dwood3rc; fi
-%%ETCDIR%%/dwood3rc.sample
-@exec if [ ! -f %D/%%ETCDIR%%/dwood3rc ] ; then cp -p %D/%F %B/dwood3rc; fi
-@unexec if cmp -s %D/%%ETCDIR%%/mararc.sample %D/%%ETCDIR%%/mararc; then rm -f %D/%%ETCDIR%%/mararc; fi
-%%ETCDIR%%/mararc.sample
-@exec if [ ! -f %D/%%ETCDIR%%/mararc ] ; then cp -p %D/%F %B/mararc; fi
+@sample %%ETCDIR%%/csv2.sample
+@sample %%ETCDIR%%/dwood3rc.sample
+@sample %%ETCDIR%%/mararc.sample
 man/man1/Deadwood.1.gz
 man/man1/askmara.1.gz
 man/man1/fetchzone.1.gz

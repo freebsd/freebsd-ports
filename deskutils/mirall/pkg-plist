@@ -1,8 +1,6 @@
 bin/owncloud
 bin/owncloudcmd
-@unexec if cmp -s %D/etc/ownCloud/sync-exclude.lst.sample %D/etc/ownCloud/sync-exclude.lst; then rm -f %D/etc/ownCloud/sync-exclude.lst; fi
-etc/ownCloud/sync-exclude.lst.sample
-@exec if [ ! -f %D/etc/ownCloud/sync-exclude.lst ] ; then cp -p %D/%F %B/sync-exclude.lst; fi
+@sample etc/ownCloud/sync-exclude.lst.sample
 include/owncloudsync/creds/abstractcredentials.h
 include/owncloudsync/creds/httpcredentials.h
 include/owncloudsync/mirall/account.h
