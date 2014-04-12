@@ -400,7 +400,7 @@ check-makevars::
 	@${ECHO} "  python3.1"
 	@${ECHO} "  python3.2"
 	@${ECHO} "  python3.3"
-        @${ECHO} "  python3.4"
+	@${ECHO} "  python3.4"
 	@${FALSE}
 .endif
 
