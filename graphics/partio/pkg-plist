@@ -35,9 +35,9 @@ lib/libpartio.a
 %%PORTDOCS%%%%DOCSDIR%%/closed.png
 %%PORTDOCS%%%%DOCSDIR%%/cpptut.html
 %%PORTDOCS%%%%DOCSDIR%%/cpptut_8txt.html
-%%PORTDOCS%%%%DOCSDIR%%/dir_56764cded5a002c3f242069ae9b8ada5.html
-%%PORTDOCS%%%%DOCSDIR%%/dir_7524dcdf2b80aeb1f0178df7bece5e69.html
-%%PORTDOCS%%%%DOCSDIR%%/dir_a14c72e9508914f52e3a23f68290c4ed.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_572c7c46dd83879a405859aee6b8d533.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_5fab038ad9b8a9ea932fd735f3318cfd.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_bf245e0b9dec1033d847b880f248ab46.html
 %%PORTDOCS%%%%DOCSDIR%%/doc_2CMakeLists_8txt.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.png
