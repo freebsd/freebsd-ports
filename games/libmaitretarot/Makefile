@@ -11,9 +11,10 @@ MASTER_SITE_SUBDIR=	maitretarot
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Core library of MaitreTarot, a Tarot card game
 
-USES=		pkgconfig
+LICENSE=	GPLv2
+
+USES=		pkgconfig tar:bzip2
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 libxml2 lthack
 USE_LDCONFIG=	yes
