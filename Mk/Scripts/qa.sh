@@ -18,30 +18,56 @@ err() {
 	echo "Error: $@" >&2
 }
 
+shebangonefile() {
+	local f interp rc
+
+	f="$@"
+	rc=0
+	interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' "$f")
+	case "$interp" in
+	"") ;;
+	/usr/bin/env) ;;
+	${LOCALBASE}/*) ;;
+	${PREFIX}/*) ;;
+	/usr/bin/awk) ;;
+	/usr/bin/sed) ;;
+	/usr/bin/nawk) ;;
+	/bin/csh) ;;
+	/bin/sh) ;;
+	*)
+		err "${interp} is an invalid shebang you need USES=shebangfix for ${f#${STAGEDIR}${PREFIX}/}"
+		rc=1
+		;;
+	esac
+
+	return ${rc}
+}
+
 shebang() {
-	local IFS rc
+	local f l link rc
 
 	rc=0
-	IFS="$LF"
 	
-	for f in `find ${STAGEDIR} -type f -perm +111`; do
-		interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' $f)
-		case "$interp" in
-		"") ;;
-		/usr/bin/env) ;;
-		${LOCALBASE}/*) ;;
-		${PREFIX}/*) ;;
-		/usr/bin/awk) ;;
-		/usr/bin/sed) ;;
-		/usr/bin/nawk) ;;
-		/bin/csh) ;;
-		/bin/sh) ;;
-		*)
-			warn "${interp} is an invalid shebang you need USES=shebangfix for ${f#${STAGEDIR}${PREFIX}/}"
-			rc=0
-			;;
+	while read f; do
+		[ -z "${f}" ] && continue
+		shebangonefile "${f}" || rc=1
+	# Use heredoc to avoid losing rc from find|while subshell
+	done << EOF
+$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${PREFIX}/libexec -type f -perm +111 2>/dev/null)
+EOF
+	while read l link; do
+		[ -z "${l}" ] && continue
+		case "${link}" in
+		/*) f="${STAGEDIR}${link}" ;;
+		*) f="${l%/*}/${link}" ;;
 		esac
-	done
+		if [ -f "${f}" ]; then
+			shebangonefile "${f}" || rc=1
+		fi
+	# Use heredoc to avoid losing rc from find|while subshell
+	done << EOF
+$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${PREFIX}/libexec -type l -exec stat -f "%N %Y" {} + 2>/dev/null)
+EOF
 
 	return ${rc}
 }
