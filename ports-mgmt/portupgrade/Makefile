@@ -13,14 +13,14 @@ DISTNAME=	pkgtools-${PORTVERSION}
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	DOCS
 
 CONFLICTS_INSTALL=	portupgrade-devel-*
 
 DIST_SUBDIR=	${PORTNAME}
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_RUBY=	yes
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
