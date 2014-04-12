@@ -1405,6 +1405,7 @@ ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/Templates
+KEYWORDS?=		${PORTSDIR}/Keywords
 
 PATCHDIR?=		${MASTERDIR}/files
 FILESDIR?=		${MASTERDIR}/files
@@ -5625,6 +5626,8 @@ generate-plist:
 .endif
 .if !defined(WITH_PKGNG)
 	@cd ${.CURDIR} && { ${MAKE} pretty-print-config | fold -sw 120 | ${SED} -e 's/^/@comment OPTIONS:/'; } >> ${TMPPLIST}
+	@${AWK} -f ${KEYWORDS}/pkg_install.awk ${TMPPLIST} > ${TMPPLIST}.keyword && \
+	    ${MV} -f ${TMPPLIST}.keyword ${TMPPLIST}
 .endif
 .endif
 

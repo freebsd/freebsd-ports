@@ -10,6 +10,23 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140411:
+AUTHOR: bdrewery@FreeBSD.org
+
+  A new plist keyword has been added, @sample. It accepts a file (must end in
+  .sample):
+
+    @sample file.conf.sample
+
+  This will install file.conf.sample and copy it to file.conf. The file.conf
+  will be removed if it matches file.conf.sample on deinstall.
+
+  This replaces older patterns of:
+
+    @unexec if cmp -s %D/etc/pkgtools.conf %D/etc/pkgtools.conf.sample; then rm -f %D/etc/pkgtools.conf; fi
+    etc/pkgtools.conf.sample
+    @exec [ -f %B/pkgtools.conf ] || cp %B/%f %B/pkgtools.conf
+
 20140312:
 AUTHOR: bapt@FreeBSD.org
 
