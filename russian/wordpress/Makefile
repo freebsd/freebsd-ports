@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.2
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ru_RU
@@ -38,8 +38,6 @@ pre-install:
 		${FIND} -d . -type d | ${SED} -e 's|^\.|@dirrm %%WWWDIR%%|') > ${PLIST}
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL} -d -g ${WWWGRP} -m 755 -o ${WWWOWN} ${STAGEDIR}${WWWDIR}/
