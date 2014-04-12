@@ -9,16 +9,18 @@ MASTER_SITES=	CHEESESHOP \
 		http://deron.meranda.us/python/demjson/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@robakdesign.com
 COMMENT=	Encoder, Decoder, and Lint/Validator for JSON
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+LICENSE=	LGPL3
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
+PLIST_FILES=		bin/jsonlint
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/jsonlint ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/jsonlint ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
