@@ -3,7 +3,7 @@
 
 PORTNAME=		mt_gtk_client
 PORTVERSION=		0.1.98
-PORTREVISION=	10
+PORTREVISION=		10
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	maitretarot
@@ -11,12 +11,13 @@ MASTER_SITE_SUBDIR=	maitretarot
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		GTK+ client for MaitreTarot, a Tarot card game
 
-LIB_DEPENDS=		mt_client.0:${PORTSDIR}/games/libmt_client
+LICENSE=		GPLv2
+
+LIB_DEPENDS=		libmt_client.so:${PORTSDIR}/games/libmt_client
 RUN_DEPENDS=		${LOCALBASE}/share/cardpics/images/78.png:${PORTSDIR}/games/cardpics
 
-USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
-USES=		gettext pkgconfig
+USES=			gettext pkgconfig tar:bzip2
 USE_GNOME=		glib20 gtk20 libxml2
 
 .if !defined(WITHOUT_SERVER)
@@ -26,5 +27,4 @@ RUN_DEPENDS+=		${LOCALBASE}/bin/maitretarot_server:${PORTSDIR}/games/maitretarot
 RUN_DEPENDS+=		${LOCALBASE}/bin/mt_dolphin_ia:${PORTSDIR}/games/mt_dolphin_ia
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

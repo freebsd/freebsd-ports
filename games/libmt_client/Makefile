@@ -11,11 +11,12 @@ MASTER_SITE_SUBDIR=	maitretarot
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Client-side library of MaitreTarot, a Tarot card game
 
-LIB_DEPENDS=	maitretarot.0:${PORTSDIR}/games/libmaitretarot
+LICENSE=	GPLv2
 
-USES=		pkgconfig
+LIB_DEPENDS=	libmaitretarot.so:${PORTSDIR}/games/libmaitretarot
+
+USES=		pkgconfig tar:bzip2
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 libxml2 lthack
 USE_LDCONFIG=	yes
