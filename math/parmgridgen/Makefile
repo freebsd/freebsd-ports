@@ -15,29 +15,27 @@ COMMENT=	Library for obtaining a sequence of successive coarse grids
 
 ALL_TARGET=	parallel
 
-LIB_DEPENDS+=	mpi.1:${PORTSDIR}/net/openmpi
+LIB_DEPENDS+=	libmpi.so:${PORTSDIR}/net/openmpi
 USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 post-patch:
-		@${REINPLACE_CMD} 's|make|$$(MAKE)|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|make|$$(MAKE)|g' ${WRKSRC}/Makefile
 #respect CFLAGS
-.		for f in IMlib Lib Programs
-		    @${REINPLACE_CMD} 's|CFLAGS =|CFLAGS+=|g' ${WRKSRC}/MGridGen/${f}/Makefile
-.		endfor
-.		for f in IMParMetis-2.0 ParLib Programs
-		    @${REINPLACE_CMD} 's|CFLAGS =|CFLAGS+=|g' ${WRKSRC}/ParMGridGen/${f}/Makefile
-.		endfor
+.	for f in IMlib Lib Programs
+	    @${REINPLACE_CMD} 's|CFLAGS =|CFLAGS+=|g' ${WRKSRC}/MGridGen/${f}/Makefile
+.	endfor
+.	for f in IMParMetis-2.0 ParLib Programs
+	    @${REINPLACE_CMD} 's|CFLAGS =|CFLAGS+=|g' ${WRKSRC}/ParMGridGen/${f}/Makefile
+.	endfor
+
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/mgridgen ${PREFIX}/bin/mgridgen
-		${INSTALL_PROGRAM} ${WRKSRC}/parmgridgen ${PREFIX}/bin/parmgridgen
-		${INSTALL_PROGRAM} ${WRKSRC}/libmgrid.a ${PREFIX}/lib/libmgrid.a
-		${INSTALL_PROGRAM} ${WRKSRC}/libparmgrid.a ${PREFIX}/lib/libparmgrid.a
-		${INSTALL_DATA} ${WRKSRC}/mgridgen.h ${PREFIX}/include/mgridgen.h
-.if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/mgridgen ${STAGEDIR}${PREFIX}/bin/mgridgen
+	${INSTALL_PROGRAM} ${WRKSRC}/parmgridgen ${STAGEDIR}${PREFIX}/bin/parmgridgen
+	${INSTALL_PROGRAM} ${WRKSRC}/libmgrid.a ${STAGEDIR}${PREFIX}/lib/libmgrid.a
+	${INSTALL_PROGRAM} ${WRKSRC}/libparmgrid.a ${STAGEDIR}${PREFIX}/lib/libparmgrid.a
+	${INSTALL_DATA} ${WRKSRC}/mgridgen.h ${STAGEDIR}${PREFIX}/include/mgridgen.h
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
 
 .include <bsd.port.mk>
