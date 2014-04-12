@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		fsh94draft01.zip
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Core War optimizer written in Perl
+COMMENT=	Core War optimizer written in Perl
 
 RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 
@@ -23,7 +23,8 @@ WRKSRC=		${WRKDIR}/publish_${PORTVERSION:S/.//}
 BUILD_WRKSRC=	${WRKSRC}/optimars/optimars_0.1
 ALL_TARGET=	exmars
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${RM} -rf ${WRKSRC}/fsh94nop0.2
 	@${MV} ${WRKDIR}/fsh* ${WRKDIR}/optimax/fsh* ${WRKSRC}
@@ -34,16 +35,16 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|^#!/.*|#!${PERL}|' ${WRKSRC}/*.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/opti06_3.pl ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/remote.pl ${PREFIX}/bin/${PORTNAME}-remote
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/optimars ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/optitools.pm ${SITE_PERL}
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${CP} -r *.red fsh* templates phase3.lst tables \
-		${DATADIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.unix ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/opti06_3.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/remote.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-remote
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/optimars ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}
+	${INSTALL_DATA} ${WRKSRC}/optitools.pm ${STAGEDIR}${SITE_PERL}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${CP} -r *.red fsh* templates phase3.lst tables \
+		${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.unix ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
