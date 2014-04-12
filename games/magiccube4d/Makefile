@@ -15,19 +15,19 @@ COMMENT=	MagicCube4D is a four-dimensional analog of Rubik's cube
 USE_XORG=	x11 xext xt sm ice xaw
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION:S/./_/}
-DOCS=		ChangeLog Intro.txt MagicCube4D-unix.txt \
+
+PLIST_FILES=	bin/magiccube4d
+PORTDOCS=	ChangeLog Intro.txt MagicCube4D-unix.txt \
 		ideas.txt readme-unix.txt
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} 's|@DFLAGS@|${CXXFLAGS}|' ${WRKSRC}/Makefile.in
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/magiccube4d ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/magiccube4d ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
