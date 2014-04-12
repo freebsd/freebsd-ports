@@ -1,45 +1,47 @@
---- Makefile.orig	2009-12-21 18:58:35.000000000 -0800
-+++ Makefile	2012-05-16 00:49:03.000000000 -0700
-@@ -32,10 +32,10 @@
+--- Makefile.orig	2013-07-20 02:05:36.000000000 -0700
++++ Makefile	2014-04-12 16:35:40.000000000 -0700
+@@ -32,10 +32,11 @@
  # BINDIR directory.  Files needed at run time will
  # be installed in the SHAREDIR directory.
  
 -BINDIR=/usr/local/bin
 +BINDIR=%%PREFIX%%/bin
  #BINDIR=/usr/bin
++INSTALLDIR=%%STAGEDIR%%
  
 -SHAREDIR=/usr/local/share/fl_moxgen
 +SHAREDIR=%%DATADIR%%
  #SHAREDIR=/usr/share/fl_moxgen
  
  # If libHaru is installed, be sure that LIBHARU_INC
-@@ -44,30 +44,24 @@
+@@ -44,14 +45,8 @@
  # accordingly.  If libHaru is not installed, 
  # comment out both lines.
  
--LIBHARU_INC = /usr/local/include
-+LIBHARU_INC = %%LOCALBASE%%/include
- #LIBHARU_INC = /usr/include
- 
+-#LIBHARU_INC = /usr/local/include
+-LIBHARU_INC = /usr/include
+-
 -# Set the FLTK_INC variable to be the location of the 
 -# include files for FLTK.
 -
 -FLTK_INC = /usr/include
 -#FLTK_INC = /usr/local/include
--
++LIBHARU_INC = %%LOCALBASE%%/include
++#LIBHARU_INC = /usr/include
+ 
  all:
- 	@if [ -f $(LIBHARU_INC)/hpdf.h ]; \
- 	then $(MAKE) fl_moxgen; \
+ 	@rm -f fl_moxgen_defines.h
+@@ -60,30 +55,28 @@
  	else $(MAKE) fl_moxgen_no_pdf; fi
  
  write_pdf.o: write_pdf.c
 -	@$(CC) -c -o write_pdf.o write_pdf.c
-+	@$(CC) -c -o write_pdf.o write_pdf.c -I$(LIBHARU_INC)
++	@$(CC) -c -o write_pdf.o write_pdf.c -I%%LOCALBASE%%/include
  
  fl_moxgen: fl_moxgen.cxx fl_moxgen_defines.h write_pdf.o
  	@echo "Building Fl_MoxGen with PDF support"
 -	$(CXX) -o fl_moxgen fl_moxgen.cxx write_pdf.o -I$(FLTK_INC) -I. -lfltk -lfltk_images -lhpdf
-+	$(CXX) -o fl_moxgen fl_moxgen.cxx write_pdf.o -I. `fltk-config --use-images --cxxflags --ldflags` -lhpdf
++	$(CXX) -o fl_moxgen fl_moxgen.cxx write_pdf.o -DUSING_LIB_HARU `fltk-config --use-images --cxxflags --ldflags` -I. -lhpdf
  
  fl_moxgen_no_pdf: fl_moxgen.cxx fl_moxgen_defines.h
  	@echo "Building Fl_MoxGen without PDF support"
@@ -48,3 +50,24 @@
  
  fl_moxgen_defines.h:
  	@rm -f fl_moxgen_defines.h
+ 	@echo "#define SHAREDIR \"$(SHAREDIR)\"" > fl_moxgen_defines.h
+-	@if [ -f $(LIBHARU_INC)/hpdf.h ]; \
+-		then echo "#define USING_LIB_HARU" >> fl_moxgen_defines.h; fi
+ install:
+-	mkdir -p $(SHAREDIR)
+-	cp fl_moxgen $(BINDIR)
+-	cp moxgen.png $(SHAREDIR)
++	mkdir -p $(INSTALLDIR)$(SHAREDIR)
++	cp fl_moxgen $(INSTALLDIR)$(BINDIR)
++	cp moxgen.png $(INSTALLDIR)$(SHAREDIR)
+ 
+ uninstall:
+-	rm $(BINDIR)/fl_moxgen
+-	rm $(SHAREDIR)/moxgen.png
+-	rmdir $(SHAREDIR)
++	rm $(INSTALLDIR)$(BINDIR)/fl_moxgen
++	rm $(INSTALLDIR)$(SHAREDIR)/moxgen.png
++	rmdir $(INSTALLDIR)$(SHAREDIR)
+ 
+ clean:
+ 	@rm -fr *~ fl_moxgen *.o fl_moxgen_defines.h *.nec *.pdf
