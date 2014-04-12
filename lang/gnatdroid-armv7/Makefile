@@ -109,6 +109,8 @@ post-extract:
 	@${ECHO} "Applying composite patch diff-${suffix}"
 	@${PATCH} -d ${WRKSRC} -s -E < ${PATCHDIR}/diff-${suffix}
 .endfor
+	@(cd ${WRKSRC}/gcc/testsuite/ada/acats && \
+		${CP} run_remote.sh run_all.sh)
 
 do-configure:
 	${MKDIR} ${BUILD_WRKSRC}
@@ -145,4 +147,9 @@ acats: build
 	   PATH=${LOCALBASE}/gcc-aux/bin:${PATH}:${PREFIX}/bin \
 	   gmake -sk check-acats
 
+gnatdg: build
+	cd ${BUILD_WRKSRC}/gcc && ${SETENV} \
+	   PATH=${LOCALBASE}/gcc-aux/bin:${PATH}:${PREFIX}/bin \
+	   gmake -sk check-gnat RUNTESTFLAGS=--target_board=gnatdroid
+	
 .include <bsd.port.mk>
