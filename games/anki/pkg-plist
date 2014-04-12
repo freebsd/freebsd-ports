@@ -522,6 +522,7 @@ man/man1/anki.1.gz
 %%NLS%%%%DATADIR%%/locale/qt_gl.qm
 %%NLS%%%%DATADIR%%/locale/qt_he.qm
 %%NLS%%%%DATADIR%%/locale/qt_hu.qm
+%%NLS%%%%DATADIR%%/locale/qt_it.qm
 %%NLS%%%%DATADIR%%/locale/qt_ja.qm
 %%NLS%%%%DATADIR%%/locale/qt_ko.qm
 %%NLS%%%%DATADIR%%/locale/qt_lt.qm
