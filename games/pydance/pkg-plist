@@ -1,19 +1,33 @@
-@unexec rm -f %D/share/games/pydance/*.py[co]
-%%SONGS%%share/games/pydance/songs/6jan-banner.png
-%%SONGS%%share/games/pydance/songs/6jan-bg.jpg
-%%SONGS%%share/games/pydance/songs/6jan.dance
-%%SONGS%%share/games/pydance/songs/6jan.ogg
-%%SONGS%%share/games/pydance/songs/forkbomb-banner.png
-%%SONGS%%share/games/pydance/songs/forkbomb-bg.jpg
-%%SONGS%%share/games/pydance/songs/forkbomb.dance
-%%SONGS%%share/games/pydance/songs/forkbomb.ogg
-%%SONGS%%share/games/pydance/songs/pydance.png
-%%SONGS%%share/games/pydance/songs/synrg-bg.png
-%%SONGS%%share/games/pydance/songs/synrg.dance
-%%SONGS%%share/games/pydance/songs/synrg.ogg
 bin/findbpm
 bin/pydance
 etc/pydance.cfg.sample
+man/man1/findbpm.1.gz
+man/man6/pydance.6.gz
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/dance-spec.txt
+%%PORTDOCS%%%%DOCSDIR%%/dwi-hall-of-shame.txt
+%%PORTDOCS%%%%DOCSDIR%%/images/cheappad.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/diff-indicator.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/emsusb2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/endless.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/gameselect.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/joe-sis.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/keymap.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/menu.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/nonstop-picks.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/nonstop.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/options.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/ss-folder.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/ss-song.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ksf-format.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
 share/games/pydance/announcer.py
 share/games/pydance/arrows.py
 share/games/pydance/colors.py
@@ -86,6 +100,18 @@ share/games/pydance/player.py
 share/games/pydance/pydance.py
 share/games/pydance/records.py
 share/games/pydance/scores.py
+share/games/pydance/songs/6jan-banner.png
+share/games/pydance/songs/6jan-bg.jpg
+share/games/pydance/songs/6jan.dance
+share/games/pydance/songs/6jan.ogg
+share/games/pydance/songs/forkbomb-banner.png
+share/games/pydance/songs/forkbomb-bg.jpg
+share/games/pydance/songs/forkbomb.dance
+share/games/pydance/songs/forkbomb.ogg
+share/games/pydance/songs/pydance.png
+share/games/pydance/songs/synrg-bg.png
+share/games/pydance/songs/synrg.dance
+share/games/pydance/songs/synrg.ogg
 share/games/pydance/songselect.py
 share/games/pydance/sound/assist-d.ogg
 share/games/pydance/sound/assist-l.ogg
@@ -132,9 +158,9 @@ share/games/pydance/themes/dj/djenzay/rankings/secondchances.ogg
 share/games/pydance/themes/dj/djenzay/rankings/sure.ogg
 share/games/pydance/themes/dj/djenzay/rankings/tobe.ogg
 share/games/pydance/themes/dj/none/djtheme.cfg
-share/games/pydance/themes/font/default.cfg
-share/games/pydance/themes/font/VL-PGothic-Regular.ttf
 share/games/pydance/themes/font/VL PGothic.cfg
+share/games/pydance/themes/font/VL-PGothic-Regular.ttf
+share/games/pydance/themes/font/default.cfg
 share/games/pydance/themes/gfx/32x32/ddresque.zip
 share/games/pydance/themes/gfx/32x32/default/arr_c_c_0.png
 share/games/pydance/themes/gfx/32x32/default/arr_c_c_1.png
@@ -385,30 +411,6 @@ share/games/pydance/util.py
 @dirrm share/games/pydance/images
 @dirrm share/games/pydance
 @dirrmtry share/games
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/dance-spec.txt
-%%PORTDOCS%%%%DOCSDIR%%/dwi-hall-of-shame.txt
-%%PORTDOCS%%%%DOCSDIR%%/images/cheappad.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/diff-indicator.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/emsusb2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/endless.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/gameselect.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/joe-sis.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/keymap.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/menu.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/nonstop-picks.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/nonstop.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/options.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/ss-folder.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/ss-song.jpg
-%%PORTDOCS%%%%DOCSDIR%%/ksf-format.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rm -f %D/share/games/pydance/*.py[co]
