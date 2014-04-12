@@ -1,4 +1,4 @@
 ***********************************************************************
-Edit %%PREFIX%%/etc/%%MTADIRE%%/mtaserver.conf before using
-%%NOTEWORK%%
+Edit %%ETCDIR%%/mtaserver.conf before using
+Read %%DOCSDIR%%/README for details
 ***********************************************************************
