@@ -3,7 +3,7 @@
 
 PORTNAME=	${MTANAME:L}
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://files.gonnaplay.com/201/:main \
 		http://www.trancevibez.com/mta/:both \
@@ -20,44 +20,26 @@ NO_WRKSUBDIR=	yes
 
 USE_RC_SUBR=	mtad
 MTANAME=	MTAServer
-MTADIR=		${PREFIX}/lib/${PORTNAME}
 PORTDOCS=	CHANGELOG LICENSE README
-PLIST_SUB=	MTADIR=${MTADIR:S,^${PREFIX}/,,} MTADIRE=${PORTNAME}
 SUB_FILES=	pkg-message
-SUB_LIST=	MTADIR=${MTADIR} MTADIRE=${PORTNAME}
-.if !defined(NOPORTDOCS)
-SUB_LIST+=	NOTEWORK="Read ${DOCSDIR}/README for details"
-.else
-SUB_LIST+=	NOTEWORK=""
-.endif
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${MV} ${WRKSRC}/${MTANAME} ${WRKSRC}/${PORTNAME}
 	@${CHMOD} 600 ${WRKSRC}/${PORTNAME}.conf
 
 post-patch:
-	@${REINPLACE_CMD} "s|banned.lst|${PREFIX}/etc/${PORTNAME}/banned.lst|" ${WRKSRC}/${PORTNAME}.conf
+	@${REINPLACE_CMD} "s|banned.lst|${ETCDIR}/&|" ${WRKSRC}/${PORTNAME}.conf
 
 do-install:
-	${MKDIR} ${MTADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${BRANDELF} -t Linux ${WRKSRC}/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${MTADIR}
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}
-.if !exists(${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf)
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}
-.endif
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf.dist
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
+		${STAGEDIR}/${ETCDIR}/${PORTNAME}.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
