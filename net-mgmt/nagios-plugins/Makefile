@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Plugins for Nagios
 
 USES=		charsetfix gmake perl5
