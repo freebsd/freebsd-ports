@@ -12,14 +12,20 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jigsaw puzzle game for X11
 
+USES=		compiler
 USE_XORG=	x11 xproto xext
 MAKEFILE=	Makefile.Linux
-MAN1=		xjig.1
-PLIST_FILES=	bin/xjig
+PLIST_FILES=	bin/xjig man/man1/xjig.1.gz
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${COMPILER_TYPE} == clang
+	@${REINPLACE_CMD} 's|-fpcc-struct-return||' ${WRKSRC}/Makefile.Linux
+.endif
+
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xjig ${PREFIX}/bin/xjig
-	@ ${INSTALL_MAN} ${WRKSRC}/xjig.man ${PREFIX}/man/man1/xjig.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xjig ${STAGEDIR}${PREFIX}/bin/xjig
+	${INSTALL_MAN} ${WRKSRC}/xjig.man ${STAGEDIR}${PREFIX}/man/man1/xjig.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
