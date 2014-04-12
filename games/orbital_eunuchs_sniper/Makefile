@@ -9,7 +9,7 @@ MASTER_SITES=	http://offload2.icculus.org:9090/oes/ \
 		http://offload1.icculus.org:9090/oes/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An overhead shooting game
+COMMENT=	Overhead shooting game
 
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
@@ -20,13 +20,10 @@ PORTDOCS=	AUTHORS ChangeLog README TODO readme.txt
 CPPFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs`
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
