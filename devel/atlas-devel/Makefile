@@ -23,7 +23,8 @@ CONFIGURE_ARGS+=--program-transform-name=
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^static const bool debug_flag = false;$$||' \
-		${WRKSRC}/Atlas/Message/DecoderBase.cpp
+		${WRKSRC}/Atlas/Message/DecoderBase.cpp \
+		${WRKSRC}/Atlas/Codecs/Bach.cpp
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
