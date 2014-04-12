@@ -8,7 +8,7 @@ CATEGORIES=	biology
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	staden/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose trace file (and Experiment File) reading interface
 
 LICENSE=	BSD3CLAUSE
