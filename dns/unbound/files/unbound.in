@@ -35,7 +35,11 @@ start_precmd()
 {
 	%%PREFIX%%/sbin/unbound-checkconf > /dev/null && \
 	echo -n "Obtaining a trust anchor:" && \
-	su -m unbound -c "%%PREFIX%%/sbin/unbound-anchor ${unbound_anchorflags}" && \
+	if [ "${unbound_anchorflags}T" = "T" ]; then \
+		su -m unbound -c %%PREFIX%%/sbin/unbound-anchor; \
+	else
+		su -m unbound -c "%%PREFIX%%/sbin/unbound-anchor ${unbound_anchorflags}"; \
+	fi &&
 	echo .
 }
 
