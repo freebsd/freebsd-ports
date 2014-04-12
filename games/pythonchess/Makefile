@@ -16,17 +16,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
 do-build:
 	@(${ECHO_CMD} "#!${SH}"; \
 	  ${ECHO_CMD} "cd ${DATADIR} && ${PYTHON_CMD} board.py") \
 	  > ${WRKDIR}/${PORTNAME}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-.for f in *.gif *.py *.txt
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
-.endfor
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.gif *.py *.txt ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
