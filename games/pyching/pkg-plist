@@ -35,6 +35,7 @@ bin/pyching
 %%PYTHON_SITELIBDIR%%/pyching/smgHtmlView.py
 %%PYTHON_SITELIBDIR%%/pyching/smgHtmlView.pyc
 %%PYTHON_SITELIBDIR%%/pyching/smgHtmlView.pyo
+man/man1/pyching.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
