@@ -2,16 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	javavmwrapper
-PORTVERSION=	2.4
-PORTREVISION=	3
+PORTVERSION=	2.5
 CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Wrapper script for various Java Virtual Machines
-
-CONFLICTS=	kaffe-1.* kaffe-devel-1.*
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
