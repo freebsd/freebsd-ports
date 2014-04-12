@@ -343,12 +343,8 @@ sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
 %%BASE%%@unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
-%%NOBASE%%@unexec if cmp -s %D/%%ETCDIR%%/rndc.conf.sample %D/%%ETCDIR%%/rndc.conf; then rm -f %D/%%ETCDIR%%/rndc.conf; fi
-%%NOBASE%%%%ETCDIR%%/rndc.conf.sample
-%%NOBASE%%@exec if [ ! -f %D/%%ETCDIR%%/rndc.conf ] ; then cp -p %D/%F %B/rndc.conf; fi
-%%NOBASE%%@unexec if cmp -s %D/%%ETCDIR%%/named.conf.sample %D/%%ETCDIR%%/named.conf; then rm -f %D/%%ETCDIR%%/named.conf; fi
-%%NOBASE%%%%ETCDIR%%/named.conf.sample
-%%NOBASE%%@exec if [ ! -f %D/%%ETCDIR%%/named.conf ] ; then cp -p %D/%F %B/named.conf; fi
+%%NOBASE%%@sample %%ETCDIR%%/rndc.conf.sample
+%%NOBASE%%@sample %%ETCDIR%%/named.conf.sample
 %%NOBASE%%%%ETCDIR%%/named.root
 %%NOBASE%%%%ETCDIR%%/master/empty.db
 %%NOBASE%%%%ETCDIR%%/master/localhost-forward.db
