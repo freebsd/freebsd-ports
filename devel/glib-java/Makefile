@@ -38,7 +38,7 @@ post-patch:
 		${WRKSRC}/configure
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/.libs/libglibjni-${GLIB_API_VERSION}.so \
+	${INSTALL_LIB} ${WRKSRC}/.libs/libglibjni-${GLIB_API_VERSION}.so \
 		${STAGEDIR}${PREFIX}/lib/libglibjni-${GLIB_API_VERSION}.so.1
 	${LN} -sf libglibjni-${GLIB_API_VERSION}.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libglibjni-${GLIB_API_VERSION}.so
