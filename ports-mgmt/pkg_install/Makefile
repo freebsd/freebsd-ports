@@ -19,7 +19,7 @@ MANCOMPRESSED=		yes
 MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
 			pkg_info.1 pkg_updating.1 pkg_version.1
 
-MAKE_ARGS=		-DNO_OBJ -DNO_CRYPT -DNO_OPENSSL
+MAKE_ARGS=		-DNO_OBJ -DNO_CRYPT -DNO_OPENSSL WARNS=0
 
 OPTIONS_DEFINE=	WRAPPER
 OPTIONS_DEFAULT=	WRAPPER
