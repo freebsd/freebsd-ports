@@ -11,10 +11,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jhein@symmetricom.com
 COMMENT=	Secure and fast copy utility
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz
-USE_GCC=	yes
 
 PLIST_FILES=	bin/bbcp
 PORTDOCS=	${PORTNAME}.pdf
