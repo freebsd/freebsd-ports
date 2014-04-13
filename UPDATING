@@ -5,6 +5,33 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140413:
+  AFFECTS: Users of Python and pkg >= 1.2.7_1
+  AUTHOR: koobs@FreeBSD.org
+
+  There have been reports of the following error when upgrading Python ports:
+
+    pkg-static: Plist error, directory listed as a file: <name>.egg-info
+
+  The cause is an outdated or unpatched version of setuptools or distribute
+  installed by the user, or leftover from previous upgrades being used during
+  the `setup.py install` phase. pkg >= 1.2.7_1 now generates an error where
+  previously it did not.
+
+  Users should inspect their ${LOCALBASE}/lib/pythonX.Y/site-packages
+  directory, and remove any entries that reference versions of
+  setuptools or distribute *not* provided by ports or packages.
+
+  Examples of entries that may be removed are:
+
+    1) distribute-0.6.35-py2.7.egg
+    2) setuptools-0.6c11-py2.7.egg
+    3) *Any* version of setuptools directly from PyPi via pip or easy_install
+
+  More information is available here:
+
+    http://lists.freebsd.org/pipermail/freebsd-ports/2014-April/091618.html
+
 20140410:
   AFFECTS: users of mail/vpopmail
   AUTHOR: bdrewery@FreeBSD.org
