@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	chasen
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=     chasen-legacy/32224
+MASTER_SITE_SUBDIR=     chasen-legacy/56305
 PKGNAMESUFFIX=	-base
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,13 +19,9 @@ CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include ${ICONV_CONFIGURE_BASE}
 USES=		iconv
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-install:
-	${RM} -f ${PREFIX}/lib/libchasen.la
-	${MKDIR} ${PREFIX}/share/chasen/dic
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/manual* ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/chasen/dic
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/manual* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
