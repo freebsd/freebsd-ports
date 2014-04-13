@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmpi
-DISTVERSION=	1.7.3
-PORTREVISION=	1
+DISTVERSION=	1.7.5
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.7/downloads/
 PKGNAMESUFFIX=	-devel
@@ -15,11 +14,10 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
 		libltdl.so:${PORTSDIR}/devel/libltdl
 
-CONFLICTS=	openmpi-1.6.*
+CONFLICTS=	openmpi-1.8
 
-USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-USES=		fortran gmake pkgconfig
+USES=		fortran gmake pkgconfig tar:bzip2
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}${PKGNAMESUFFIX}
