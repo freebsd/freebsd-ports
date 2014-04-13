@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.8.10
+PORTVERSION=	1.8.11
 PORTEPOCH=	2
 CATEGORIES=	devel security
-#MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3963/
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	arved
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3991/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
@@ -27,6 +25,12 @@ CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+DISABLE_SIZE=	yes
+FETCH_CMD=	${LOCALBASE}/bin/wget -c -nc --no-check-certificate
+.endif
 
 .if !defined(WITHOUT_USB) && ${OSVERSION} >= 800069
 CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb"
