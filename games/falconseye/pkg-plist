@@ -256,11 +256,9 @@ share/falconseyedir/wizard1.lev
 share/falconseyedir/wizard2.lev
 share/falconseyedir/wizard3.lev
 share/falconseyedir/wizhelp
-man/man6/falconseye.6
-man/man6/frecover.6
-@mode 2555
+man/man6/falconseye.6.gz
+man/man6/frecover.6.gz
 share/falconseyedir/falconseye
-@exec chmod 775 %B
 @exec install -g games -m 0664 /dev/null %B/logfile
 @exec install -g games -m 0664 /dev/null %B/perm
 @exec install -g games -m 0664 /dev/null %B/record
