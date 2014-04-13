@@ -1,6 +1,7 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
+PORTREVISION=	2
 PKGNAMESUFFIX=	-mpi
 
 MAINTAINER=	jwbacon@tds.net
