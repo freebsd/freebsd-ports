@@ -32,7 +32,9 @@ SUB_LIST=	TOUCH="${TOUCH}" RM="${RM}" CHOWN="${CHOWN}" \
 		USER="${USERS}" GROUP="${GROUPS}" INSTALL="${INSTALL}"
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's|CC = gcc |CC = ${CC}|g' \
+		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/pwhois/|${ETCDIR}/|g' \
 	    	-e 's|/var/pwhois/|/var/db/pwhois/|g' \
 	    	-e 's|/var/log/|/var/log/pwhois/|g' \
