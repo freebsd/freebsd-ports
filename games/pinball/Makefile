@@ -3,54 +3,48 @@
 
 PORTNAME=	pinball
 PORTVERSION=	0.3.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Emilia Pinball is a free pinball game
 
-.if !defined(WITH_ALLEGRO)
-BUILD_DEPENDS=	${SDL_CONFIG}:${PORTSDIR}/devel/sdl12
-.else
-BROKEN=		support with Allegro is (temporarily) broken as of version 0.3.1
-BUILD_DEPENDS=	${ALLEGRO_CONFIG}:${PORTSDIR}/devel/allegro
-LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
-.endif
+LICENSE=	GPLv2
 
-USE_SDL=	image mixer sdl
-USE_GMAKE=	yes
+USES=		gmake libtool
 USE_GL=		gl
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-debug
+
 .if defined(WITH_ALLEGRO)
+BROKEN=		support with Allegro is (temporarily?) broken as of version 0.3.1
+LIB_DEPENDS+=	liballeg.so:${PORTSDIR}/devel/allegro
 CONFIGURE_ARGS+=	--with-allegro
-EXTRA_LIBS=	-lGL -lGLU
+USE_GL+=	glu
+.else
+USE_SDL=	image mixer sdl
 .endif
+
 CPPFLAGS+=	-I${LOCALBASE}/include -DRZR_LIBSTATIC
-LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
-MAKE_JOBS_UNSAFE=	yes
-ALLEGRO_CONFIG=	${LOCALBASE}/bin/allegro-config
+LDFLAGS+=	-L${LOCALBASE}/lib
+#MAKE_JOBS_UNSAFE=	yes
 
 DOCS=		README
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-# For gmake>=3.82
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in -print | ${XARGS} \
-		${REINPLACE_CMD} -e 's,^dnl,# dnl,'
+# For gmake>=3.82 + ranlib runs twice
+pre-configure:
+	${FIND} ${WRKSRC} -name Makefile.in -print | ${XARGS} \
+		${REINPLACE_CMD} -e 's,^dnl,# dnl,;/echo.*RANLIB/,+1d'
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO_MSG} "===>   Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
