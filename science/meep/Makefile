@@ -27,6 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LD_LIBRARY_PATH=	-L${LOCALBASE}/lib -L/usr/lib
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
+MAKE_ARGS+=	CC=${CC} CXX=${CXX}
 
 OPTIONS_DEFINE=		OPENMPI
 OPTIONS_DEFAULT=	OPENMPI
@@ -47,7 +48,7 @@ PLIST_SUB+=	MPI="@comment " NOMPI=""
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's+\#\! /bin/sh+\#\! ${PREFIX}/bin/bash+' \
+	@${REINPLACE_CMD} -e 's+\#\! /bin/sh+\#\! ${PREFIX}/bin/bash+' \
 		-e s+\$$\(SHELL\)+${PREFIX}/bin/bash+ ${WRKSRC}/configure
 
 .include <bsd.port.mk>
