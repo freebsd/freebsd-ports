@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.70
+PORTVERSION=	2.70a
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -32,6 +32,7 @@ SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 
 SUB_FILES=	blender blenderplayer
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 OUTDIR=		${INSTALL_WRKSRC}/bin/2.70
 
 .include "${.CURDIR}/Makefile.options"
@@ -91,7 +92,10 @@ LIBMV_CMAKE_OFF=		-DWITH_LIBMV:BOOL=OFF
 MENU_USES=			desktop-file-utils
 NLS_CMAKE_ON=			-DWITH_INTERNATIONAL:BOOL=ON
 NLS_CMAKE_OFF=			-DWITH_INTERNATIONAL:BOOL=OFF
-NLS_USES=			gettext iconv
+# Use iconv:wchar_t to force the usage of iconv from ports.
+# libboost_locale.so uses libiconv_open, while we only provide
+# iconv_open in 10.x+
+NLS_USES=			gettext iconv:lib,wchar_t
 OPENCOLORIO_CMAKE_ON=		-DWITH_OPENCOLORIO:BOOL=ON
 OPENCOLORIO_CMAKE_OFF=		-DWITH_OPENCOLORIO:BOOL=OFF
 OPENCOLORIO_LIB_DEPENDS=	libOpenColorIO.so:${PORTSDIR}/graphics/opencolorio
