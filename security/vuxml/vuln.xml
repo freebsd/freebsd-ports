@@ -52,7 +52,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="972837fc-c304-11e3-8758-00262d5ed8ee">
-    <topic>ChaSen -- bufer overflow</topic>
+    <topic>ChaSen -- buffer overflow</topic>
     <affects>
       <package>
 	<name>chasen-base</name>
