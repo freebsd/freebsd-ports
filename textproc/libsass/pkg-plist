@@ -1,0 +1,7 @@
+include/sass.h
+include/sass_interface.h
+lib/libsass.a
+lib/libsass.la
+lib/libsass.so
+lib/libsass.so.0
+libdata/pkgconfig/libsass.pc

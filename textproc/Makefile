@@ -365,6 +365,7 @@
     SUBDIR += libodfgen
     SUBDIR += libparsifal
     SUBDIR += libroxml
+    SUBDIR += libsass
     SUBDIR += libsoldout
     SUBDIR += libsphinxclient
     SUBDIR += libstree
