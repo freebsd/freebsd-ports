@@ -1,0 +1,44 @@
+--- ./Makefile.in.orig	2014-04-11 23:01:28.000000000 +0000
++++ ./Makefile.in	2014-04-12 13:01:19.000000000 +0000
+@@ -612,7 +612,6 @@
+ am__quote = @am__quote@
+ am__tar = @am__tar@
+ am__untar = @am__untar@
+-appdataxmldir = @appdataxmldir@
+ bindir = @bindir@
+ build = @build@
+ build_alias = @build_alias@
+@@ -657,7 +656,7 @@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4
+ DISTCHECK_CONFIGURE_FLAGS = \
+-	--enable-appdata-check \
++	--disable-appdata-check \
+ 	--enable-flac \
+ 	--enable-id3v23 \
+ 	--enable-ogg \
+@@ -783,8 +782,6 @@
+ @WINDOWS_HOST_TRUE@easytag_LDFLAGS = \
+ @WINDOWS_HOST_TRUE@	-Wl,--subsystem,windows
+ 
+-appdata_in_files = data/easytag.appdata.xml.in
+-appdata_XML = $(appdata_in_files:.appdata.xml.in=.appdata.xml)
+ desktopdir = $(datadir)/applications
+ desktop_in_files = data/easytag.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+@@ -844,7 +841,6 @@
+ 
+ UPDATE_ICON_CACHE = gtk-update-icon-cache --ignore-theme-index --force
+ dist_noinst_DATA = \
+-	$(appdata_in_files) \
+ 	$(desktop_in_files) \
+ 	$(easytag_headers) \
+ 	src/id3lib/patch_id3lib_3.8.3_UTF16_writing_bug.diff \
+@@ -895,7 +891,6 @@
+ @EASYTAG_ENABLE_TESTS_TRUE@	$(check_SCRIPTS)
+ 
+ CLEANFILES = \
+-	$(appdata_XML) \
+ 	$(check_SCRIPTS) \
+ 	$(desktop_DATA) \
+ 	$(easytag_rc) \
