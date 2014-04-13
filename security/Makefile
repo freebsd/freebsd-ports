@@ -54,7 +54,6 @@
     SUBDIR += ccrypt
     SUBDIR += ccsrch
     SUBDIR += cfs
-    SUBDIR += cfv
     SUBDIR += chaosreader
     SUBDIR += checkpassword
     SUBDIR += checkpassword-pam

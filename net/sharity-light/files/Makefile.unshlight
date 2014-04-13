@@ -1,4 +1,0 @@
-PROG=unshlight
-NO_MAN=sorry
-
-.include <bsd.prog.mk>

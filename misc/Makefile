@@ -442,7 +442,6 @@
     SUBDIR += translate
     SUBDIR += ttyrec
     SUBDIR += tvbrowser
-    SUBDIR += txt2regex
     SUBDIR += typetrainer
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes

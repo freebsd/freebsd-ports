@@ -435,7 +435,6 @@
     SUBDIR += flex_compiler_shell
     SUBDIR += flexdock
     SUBDIR += flexjson
-    SUBDIR += flick
     SUBDIR += flickrnet
     SUBDIR += florist-gpl
     SUBDIR += flowdesigner
@@ -633,7 +632,6 @@
     SUBDIR += hachoir-parser
     SUBDIR += hachoir-regex
     SUBDIR += hadoop
-    SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hcs12mem
     SUBDIR += hexcompare
@@ -860,7 +858,6 @@
     SUBDIR += ipython
     SUBDIR += ireport
     SUBDIR += itext
-    SUBDIR += ixlib
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io

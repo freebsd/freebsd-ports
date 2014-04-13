@@ -1,4 +1,0 @@
-bin/cfv
-%%PYTHON_SITELIBDIR%%/cfv.py
-%%PYTHON_SITELIBDIR%%/cfv.pyc
-%%PYTHON_SITELIBDIR%%/cfv.pyo

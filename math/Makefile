@@ -650,7 +650,6 @@
     SUBDIR += truthtable
     SUBDIR += tvmet
     SUBDIR += ufc
-    SUBDIR += umatrix
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += unixstat

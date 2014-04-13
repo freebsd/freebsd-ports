@@ -1,5 +1,0 @@
-bin/camediaplay
-%%PORTDOCS%%share/doc/camediaplay/PROTOCOL
-%%PORTDOCS%%share/doc/camediaplay/README.english
-%%PORTDOCS%%share/doc/camediaplay/README.japanese
-%%PORTDOCS%%@dirrm share/doc/camediaplay

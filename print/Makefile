@@ -27,7 +27,6 @@
     SUBDIR += cdlabelgen
     SUBDIR += cloudprint
     SUBDIR += cm-super
-    SUBDIR += cpp2latex
     SUBDIR += cups
     SUBDIR += cups-base
     SUBDIR += cups-bjnp
@@ -98,7 +97,6 @@
     SUBDIR += gspdf
     SUBDIR += gsview
     SUBDIR += gtklp
-    SUBDIR += guitartex
     SUBDIR += gutenprint
     SUBDIR += gutenprint-base
     SUBDIR += gutenprint-cups
@@ -235,7 +233,6 @@
     SUBDIR += pkipplib
     SUBDIR += pkpgcounter
     SUBDIR += pmw
-    SUBDIR += pnm2ppa
     SUBDIR += poster
     SUBDIR += ps2eps
     SUBDIR += pscal
