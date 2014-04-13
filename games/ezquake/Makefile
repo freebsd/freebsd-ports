@@ -18,9 +18,9 @@ COMMENT=	Modern QuakeWorld client
 
 EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
 		7z:${PORTSDIR}/archivers/p7zip
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		gmake tcl dos2unix
 DOS2UNIX_GLOB=	*.[ch] Makefile*
@@ -35,31 +35,25 @@ OPTIONS_MULTI=	OUTPUT
 OPTIONS_MULTI_OUTPUT=	X11 OPENGL
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPENGL X11 OPTIMIZED_CFLAGS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+OPENGL_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+OPENGL_USE=		GL=yes
+
+X11_USE=		XORG=xxf86dga
+
+BROKEN_powerpc=		Does not install on powerpc: signal 2
+
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not install on powerpc: signal 2
-.endif
-
 .if ${PORT_OPTIONS:MOPENGL}
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-USE_GL=		yes
 ALL_TARGET+=	glx
-PLIST_SUB+=	GLX=""
-.else
-PLIST_SUB+=	GLX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-USE_XORG=	xxf86dga
 ALL_TARGET+=	x11
-PLIST_SUB+=	X11=""
-.else
-PLIST_SUB+=	X11="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -81,17 +75,15 @@ post-patch:
 		${WRKSRC}/embed_tcl.h
 
 do-install:
-.for dir in ezquake qw
-	${MKDIR} ${DATADIR}/${dir}
-	${CP} -r ${WRKDIR}/${dir}/* ${DATADIR}/${dir}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKDIR} && ${COPYTREE_SHARE} "ezquake qw" ${STAGEDIR}${DATADIR})
 .if ${PORT_OPTIONS:MOPENGL}
 	${INSTALL_PROGRAM} ${WRKSRC}/release/ezquake-gl.glx \
-		${PREFIX}/bin/ezquake-glx
+		${STAGEDIR}${PREFIX}/bin/ezquake-glx
 .endif
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/release/ezquake.x11 \
-		${PREFIX}/bin/ezquake-x11
+		${STAGEDIR}${PREFIX}/bin/ezquake-x11
 .endif
 
 .include <bsd.port.post.mk>
