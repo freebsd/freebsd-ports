@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- docs/Makefile.in.orig	2013-03-22 09:33:00.000000000 -0700
-+++ docs/Makefile.in	2013-04-21 09:35:41.000000000 -0700
+--- docs/Makefile.in.orig	2013-09-23 16:16:41.000000000 -0700
++++ docs/Makefile.in	2014-04-12 20:11:45.000000000 -0700
 @@ -395,15 +395,15 @@
  # Thanks to Bruce Ravel for doc2texi.el!
  gnuplot.texi $(srcdir)/gnuplot-eldoc.el $(srcdir)/gnuplot-eldoc.elc: $(srcdir)/doc2texi.el $(srcdir)/gnuplot.doc
@@ -9,25 +9,25 @@ $FreeBSD$
 -	@if test "$(EMACS)" != no; then \
 -	   test "$(top_srcdir)" = "$(top_builddir)" || echo "COPYING GNUPLOT.DOC" ; \
 -	   test "$(top_srcdir)" = "$(top_builddir)" || cp $(srcdir)/gnuplot.doc . ; \
--	   $(EMACS) -batch -l $(srcdir)/doc2texi.el -f d2t-doc-to-texi ; \
+-	   $(EMACS) -batch -q --no-site-file -l $(srcdir)/doc2texi.el -f d2t-doc-to-texi ; \
 -	   echo "Compiling gnuplot-eldoc.el" ; \
--	   $(EMACS) -batch --eval='(byte-compile-file "gnuplot-eldoc.el")' ; \
+-	   $(EMACS) -batch -q --no-site-file -f batch-byte-compile gnuplot-eldoc.el ; \
 -	else \
 -	   echo "No emacs found - cannot create texinfo file" ; \
 -	fi
 +#	@if test "$(EMACS)" != no; then \
 +#	   test "$(top_srcdir)" = "$(top_builddir)" || echo "COPYING GNUPLOT.DOC" ; \
 +#	   test "$(top_srcdir)" = "$(top_builddir)" || cp $(srcdir)/gnuplot.doc . ; \
-+#	   $(EMACS) -batch -l $(srcdir)/doc2texi.el -f d2t-doc-to-texi ; \
++#	   $(EMACS) -batch -q --no-site-file -l $(srcdir)/doc2texi.el -f d2t-doc-to-texi ; \
 +#	   echo "Compiling gnuplot-eldoc.el" ; \
-+#	   $(EMACS) -batch --eval='(byte-compile-file "gnuplot-eldoc.el")' ; \
++#	   $(EMACS) -batch -q --no-site-file -f batch-byte-compile gnuplot-eldoc.el ; \
 +#	else \
 +#	   echo "No emacs found - cannot create texinfo file" ; \
 +#	fi
  
  
  # this is how to make OS/2 ipfc documentation
-@@ -461,18 +461,18 @@
+@@ -463,18 +463,18 @@
  	    $(INSTALL_DATA) gnuplot.pdf $(DESTDIR)$(GIHDIR)/gnuplot.pdf; \
  	fi
  
