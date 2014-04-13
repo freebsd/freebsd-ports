@@ -17,9 +17,9 @@ CONFIGURE_ARGS=	--with-dicdir=${PREFIX}/share/chasen/dic
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
-post-install:
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/chasen/dic/ipadic
 	${INSTALL_DATA} ${WRKSRC}/chasenrc \
-		${PREFIX}/share/chasen/dic/ipadic/chasenrc.example
+		${STAGEDIR}${PREFIX}/share/chasen/dic/ipadic/chasenrc.sample
 
 .include <bsd.port.mk>

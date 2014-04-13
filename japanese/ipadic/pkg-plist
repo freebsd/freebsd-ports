@@ -5,9 +5,7 @@ share/chasen/dic/ipadic/chadic.da
 share/chasen/dic/ipadic/chadic.dat
 share/chasen/dic/ipadic/chadic.lex
 share/chasen/dic/ipadic/chasenrc
-@unexec if cmp -s %D/etc/chasenrc %D/share/chasen/dic/ipadic/chasenrc.example; then rm -f %D/etc/chasenrc; else true; fi
-share/chasen/dic/ipadic/chasenrc.example
-@exec if [ ! -f %D/etc/chasenrc ]; then cp %F %D/etc/chasenrc; fi
+@sample share/chasen/dic/ipadic/chasenrc.sample
 share/chasen/dic/ipadic/connect.cha
 share/chasen/dic/ipadic/ctypes.cha
 share/chasen/dic/ipadic/grammar.cha
