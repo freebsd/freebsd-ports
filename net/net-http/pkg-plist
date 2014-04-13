@@ -1,7 +1,0 @@
-share/guile/%%GUILE_VER%%/net/http.scm
-share/guile/%%GUILE_VER%%/net/http/client.scm
-share/guile/%%GUILE_VER%%/net/http/message.scm
-share/guile/%%GUILE_VER%%/net/http/server.scm
-share/guile/%%GUILE_VER%%/net/http/util.scm
-@dirrm share/guile/%%GUILE_VER%%/net/http
-@dirrm share/guile/%%GUILE_VER%%/net

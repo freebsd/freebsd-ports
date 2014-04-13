@@ -74,7 +74,6 @@
     SUBDIR += cairomm
     SUBDIR += cal3d
     SUBDIR += cal3d-devel
-    SUBDIR += camediaplay
     SUBDIR += camera
     SUBDIR += camerakit
     SUBDIR += cbrpager
@@ -86,7 +85,6 @@
     SUBDIR += chbg
     SUBDIR += cimg
     SUBDIR += cinepaint
-    SUBDIR += claraocr
     SUBDIR += clutter
     SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
@@ -578,7 +576,6 @@
     SUBDIR += mapyrus
     SUBDIR += mate-document-viewer
     SUBDIR += mate-image-viewer
-    SUBDIR += maverik
     SUBDIR += megapov
     SUBDIR += mesa-demos
     SUBDIR += meshviewer
@@ -618,7 +615,6 @@
     SUBDIR += opencv
     SUBDIR += opencv-core
     SUBDIR += opencv-java
-    SUBDIR += opendis
     SUBDIR += opendx
     SUBDIR += opengl-man
     SUBDIR += opengtl
@@ -781,7 +777,6 @@
     SUBDIR += pixie
     SUBDIR += pixmap
     SUBDIR += plasma-kmod
-    SUBDIR += plotmtv
     SUBDIR += plotutils
     SUBDIR += png
     SUBDIR += png2html
@@ -896,7 +891,6 @@
     SUBDIR += quat-gui
     SUBDIR += quesa
     SUBDIR += quesoglc
-    SUBDIR += qvplay
     SUBDIR += qxv
     SUBDIR += radius-engine
     SUBDIR += raster3d
@@ -984,7 +978,6 @@
     SUBDIR += structuresynth
     SUBDIR += svg2pdf
     SUBDIR += svg2png
-    SUBDIR += svg2swf
     SUBDIR += svgalib
     SUBDIR += svgfig
     SUBDIR += swfdec

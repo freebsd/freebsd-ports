@@ -1,9 +1,0 @@
-PLOTMTV's capabilities include 2D line and scatter plots (x-vs-y), 
-contour plots, 3D surface, line and scatter plots as well as vector plots.
-The program has an rough but functional Graphical User Interface, through
-which it is possible to zoom in, zoom out, pan, toggle between 2D and 3D
-plots, and rotate 3D plots. Both color and grayscale postscript output are
-supported.
-
-Written by Kenny Toh (ktoh@td2cad.intel.com), software developer for
-the Technology CAD Department, Intel Corp, Santa Clara.

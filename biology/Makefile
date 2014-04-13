@@ -24,7 +24,6 @@
     SUBDIR += finchtv
     SUBDIR += fluctuate
     SUBDIR += garlic
-    SUBDIR += genpak
     SUBDIR += gff2ps
     SUBDIR += gmap
     SUBDIR += gperiodic
@@ -79,7 +78,6 @@
     SUBDIR += pyfasta
     SUBDIR += pymol
     SUBDIR += python-nexus
-    SUBDIR += rasmol
     SUBDIR += recombine
     SUBDIR += ruby-bio
     SUBDIR += seaview

@@ -299,7 +299,6 @@
     SUBDIR += info2man
     SUBDIR += info_to_html
     SUBDIR += intltool
-    SUBDIR += ipdf
     SUBDIR += irstlm
     SUBDIR += is-aspell
     SUBDIR += is-hyphen
@@ -1043,7 +1042,6 @@
     SUBDIR += p5-xmltv
     SUBDIR += pa-aspell
     SUBDIR += par
-    SUBDIR += pardiff
     SUBDIR += pcrs
     SUBDIR += pdfgrep
     SUBDIR += pdfoutline
