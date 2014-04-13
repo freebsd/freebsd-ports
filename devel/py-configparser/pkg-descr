@@ -1,0 +1,6 @@
+The ancient ConfigParser module available in the standard
+library 2.x has seen a major update in Python 3.2. This
+is a backport of those changes so that they can be used
+directly in Python 2.6 - 2.7
+
+WWW: https://pypi.python.org/pypi/configparser
