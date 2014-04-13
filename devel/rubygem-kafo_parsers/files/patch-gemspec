@@ -1,5 +1,5 @@
---- kafo_parsers-0.0.1.gemspec.orig	2014-03-19 14:32:20.000000000 +0100
-+++ kafo_parsers-0.0.1.gemspec	2014-03-19 14:32:49.000000000 +0100
+--- kafo_parsers-0.0.2.gemspec.orig	2014-04-05 03:12:23.000000000 +0200
++++ kafo_parsers-0.0.2.gemspec	2014-04-05 03:12:42.000000000 +0200
 @@ -81,20 +81,6 @@
        - !ruby/object:Gem::Version
          version: '0'
