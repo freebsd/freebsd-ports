@@ -51,6 +51,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="972837fc-c304-11e3-8758-00262d5ed8ee">
+    <topic>ChaSen -- bufer overflow</topic>
+    <affects>
+      <package>
+	<name>chasen-base</name>
+	<range><lt>2.4.5</lt></range>
+      </package>
+      <package>
+	<name>chasen</name>
+	<range><lt>2.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>JVN iPedia reports:</p>
+	<blockquote cite="http://jvn.jp/en/jp/JVN16901583/index.html">
+	  <p>ChaSen provided by Nara Institute of Science and Technology is a
+	    software for morphologically analyzing Japanese. ChaSen contains an
+	    issue when reading in strings, which may lead to a buffer
+	    overflow.</p>
+	  <p>An arbitrary script may be executed by an attacker with access to
+	    a system that is running a product listed in "Products
+	    Affected."</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4000</cvename>
+      <url>http://jvn.jp/en/jp/JVN16901583/index.html</url>
+    </references>
+    <dates>
+      <discovery>2011-11-08</discovery>
+      <entry>2014-04-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7ccd4def-c1be-11e3-9d09-000c2980a9f3">
     <topic>OpenSSL -- Local Information Disclosure</topic>
     <affects>
