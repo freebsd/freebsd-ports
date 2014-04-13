@@ -3,30 +3,33 @@
 
 PORTNAME=	nwserver
 PORTVERSION=	1.32
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/${PORTVERSION:S/.//}/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	linuxserver${PORTVERSION:S/.//}
 
-MAINTAINER=	apeiron@coitusmentis.info
-COMMENT=	Neverwinter Nights Linux (x86) Dedicated Server
+MAINTAINER=	ports@freebsd.org
+COMMENT=	Neverwinter Nights Linux Dedicated Server
+
+OPTIONS_DEFINE=	DOCS
 
 USE_LINUX=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-build:
 	${BRANDELF} -t Linux ${WRKDIR}/nwserver
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/fixinstall ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/nwserver ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/fixinstall ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/nwserver ${STAGEDIR}${PREFIX}/bin
 
-.ifndef (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/readme.linuxserver.txt ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/readme.linuxserver.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:
