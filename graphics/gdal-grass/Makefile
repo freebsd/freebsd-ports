@@ -10,6 +10,8 @@ MASTER_SITES=	http://download.osgeo.org/gdal/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GDAL drivers for GRASS raster and vector files
 
+BROKEN=		Fails to configure
+
 BUILD_DEPENDS=	grass>6:${PORTSDIR}/databases/grass
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 RUN_DEPENDS=	grass>6:${PORTSDIR}/databases/grass
