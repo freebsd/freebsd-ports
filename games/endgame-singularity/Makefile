@@ -24,13 +24,7 @@ PROJECTHOST=	${PKGNAMEPREFIX}${PORTNAME}
 OPTIONS_DEFINE=	MUSIC DOCS
 OPTIONS_DEFAULT=	MUSIC
 MUSIC_DESC=	Install original music pack
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMUSIC}
-RUN_DEPENDS+=	endgame-singularity-music>=006:${PORTSDIR}/games/endgame-singularity-music
-.endif
+MUSIC_RUN_DEPENDS=	endgame-singularity-music>=006:${PORTSDIR}/games/endgame-singularity-music
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.pyc' -delete
@@ -67,11 +61,9 @@ post-build:
 	@${ECHO_CMD} 'import ${PORTNAME}.${PORTNAME}' >> ${WRKSRC}/${PORTNAME}.py
 
 post-install:
-	@cd ${WRKSRC}/data/&&${COPYTREE_SHARE} . ${DATADIR}/
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
