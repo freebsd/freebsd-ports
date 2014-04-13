@@ -1,5 +1,7 @@
 bin/instant-clean
 bin/instant-showcache
+man/man1/instant-clean.1.gz
+man/man1/instant-showcache.1.gz
 %%PYTHON_SITELIBDIR%%/instant/__init__.py
 %%PYTHON_SITELIBDIR%%/instant/__init__.pyc
 %%PYTHON_SITELIBDIR%%/instant/__init__.pyo
