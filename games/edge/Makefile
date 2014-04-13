@@ -17,16 +17,15 @@ COMMENT=	DOOM style engine aimed at the Total Conversion developer
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		GLEW.1:${PORTSDIR}/graphics/glew \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libGLEW.so:${PORTSDIR}/graphics/glew \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/Edge-${PORTVERSION}-source
 
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_SDL=	sdl
-USE_GMAKE=	yes
 MAKEFILE=	Makefile.linux
 
 PORTDOCS=	*
@@ -35,7 +34,8 @@ PLIST_DIRSTRY=	%%DMDIR%%
 
 CFLAGS+=	-ffast-math
 
-NO_STAGE=	yes
+DEFINE_OPTIONS=	DOCS
+
 post-extract:
 	@${TAR} -C ${WRKDIR} \
 		--exclude "License.txt" \
@@ -54,13 +54,11 @@ post-patch:
 		's|%%DMDIR%%|${DMDIR}|' ${WRKSRC}/src/e_main.cc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/edge.linux ${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${DMDIR}
-	${INSTALL_DATA} ${WRKDIR}/Edge-${PORTVERSION}/edge.wad ${DMDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/Edge-${PORTVERSION}/*.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/edge.linux ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DMDIR}
+	${INSTALL_DATA} ${WRKDIR}/Edge-${PORTVERSION}/edge.wad ${STAGEDIR}${DMDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/Edge-${PORTVERSION}/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
