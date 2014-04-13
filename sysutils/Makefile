@@ -517,6 +517,7 @@
     SUBDIR += mkfwimage
     SUBDIR += mkntpwd
     SUBDIR += mksunbootcd
+    SUBDIR += mnrpes
     SUBDIR += modules
     SUBDIR += monit
     SUBDIR += monitord
