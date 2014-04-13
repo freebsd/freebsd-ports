@@ -19,13 +19,11 @@ OCAML_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/lablgtk2/gtk.ml:${PORTSDIR}/x11-t
 		${LOCALBASE}/lib/ocaml/lablGL/gl.ml:${PORTSDIR}/graphics/ocaml-lablgl \
 		${LOCALBASE}/lib/ocaml/site-lib/sdl/sdl.mli:${PORTSDIR}/devel/ocaml-sdl
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
-PLIST=		${WRKDIR}/pkg-plist
 PLIST_FILES=	bin/freetennis
-PLIST_DIRS=	%%DATADIR%%
+PORTDATA=	*
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|sfxDir = "sfx"|sfxDir = "${DATADIR}/sfx"|; \
 		s|gfxDir = "graphics"|gfxDir = "${DATADIR}/graphics"|' \
@@ -33,20 +31,8 @@ post-patch:
 	@${REINPLACE_CMD} -Ee 's@(\+)(lablgtk2)@\1site-lib/\2@' \
 		${WRKSRC}/Makefile
 
-pre-install:
-	@${RM} -f ${PLIST}
-	@cd ${WRKSRC} && \
-	${FIND} graphics sfx -type f | ${SORT} \
-		| ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-	${FIND} graphics sfx -type d | ${SORT} -r \
-		| ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/freetennis ${PREFIX}/bin
-	cd ${WRKSRC} && \
-	${FIND} graphics sfx -type d -exec \
-		${MKDIR} "${DATADIR}/{}" \; && \
-	${FIND} graphics sfx -type f -exec \
-		${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	${INSTALL_PROGRAM} ${WRKSRC}/freetennis ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "graphics sfx" ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
