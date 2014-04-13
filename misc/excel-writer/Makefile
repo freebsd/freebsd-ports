@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	excel-writer
-PORTVERSION=	12
+PORTVERSION=	13
 CATEGORIES=	misc
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	excel_writer_${PORTVERSION}
@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 post-extract:
 	${CP} ${FILESDIR}/construct.gpr ${FILESDIR}/biff_dump.gpr ${WRKSRC}
 	${MKDIR} ${WRKSRC}/src ${WRKDIR}/data
-	${MV} "${WRKSRC}/Big [BIFF3].xls" ${WRKDIR}/data/Big.xls
+	${MV} "${WRKSRC}/Big [BIFF4].xls" ${WRKDIR}/data/Big.xls
 	(cd ${WRKSRC}; ${MV} excel_out.ad[bs] ieee* extras/csv.* src)
 	${SED} -e "s,@PREFIX@,${LOCALBASE},g" ${FILESDIR}/runme.sh.in \
 		> ${WRKSRC}/runme.sh
