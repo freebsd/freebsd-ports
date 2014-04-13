@@ -26,17 +26,14 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
-CONFLICTS=	gcc-4.6.*
-
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.
 DISTVERSION=	${PORTVERSION}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
-USES=		gmake iconv perl5
+USES=		gmake iconv perl5 tar:bzip2
 USE_BINUTILS=	yes
-USE_BZIP2=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
 
@@ -124,12 +121,15 @@ pre-configure:
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
-	cd ${WRKSRC}; ${GMAKE} -sk check
+	cd ${WRKSRC}; ${GMAKE} -sk check \
+	; ${SRCDIR}/contrib/test_summary
 .endif
 
 post-install:
 	${RM} -f ${STAGEDIR}${TARGLIB}/*.la
 	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
+	${RM} -f ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
+	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
