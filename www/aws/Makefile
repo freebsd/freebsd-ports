@@ -3,7 +3,7 @@
 
 PORTNAME=	aws
 PORTVERSION=	3.1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
@@ -13,15 +13,14 @@ COMMENT=	Adacore Ada Web Server and framework
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
+BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild \
 		xmlada>=3.2:${PORTSDIR}/textproc/xmlada \
 		gnatpython>=20101207:${PORTSDIR}/devel/gnatpython
 
 USE_PYTHON=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
-USES=		ada gmake
+USES=		ada gmake tar:bzip2
 DOTBUILD=	release
 ADDL_RPATH=	${LOCALBASE}/lib:${LOCALBASE}/lib/aws/native/relocatable
 
