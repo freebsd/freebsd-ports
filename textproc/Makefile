@@ -1350,6 +1350,7 @@
     SUBDIR += sagasu
     SUBDIR += sarep
     SUBDIR += sary
+    SUBDIR += sassc
     SUBDIR += saxon
     SUBDIR += saxon-devel
     SUBDIR += saxon-he
