@@ -29,15 +29,15 @@ IGNORE=	You must manually fetch the distribution from http://java.sun.com/produc
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/infobus.jar ${TAGEDIR}${JAVAJARDIR}/
-	${MKDIR} ${TAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.java ${TAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/infobus.jar ${STAGEDIR}${JAVAJARDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.java ${STAGEDIR}${EXAMPLESDIR}
 .for i in examples.mak makefile moneyman.mf ReadMe.html ReadRowset.html coffee6.gif
-	${INSTALL_DATA} ${WRKSRC}/${i} ${TAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	${MKDIR} ${TAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in LICENSE.HTML ReadMe.html coffee6.gif
-	${INSTALL_DATA} ${WRKSRC}/${i} ${TAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 	cd ${WRKSRC}/doc && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
