@@ -1,0 +1,52 @@
+# $FreeBSD$
+
+PORTNAME=	mnrpes
+PORTVERSION=	2014033101
+CATEGORIES=	sysutils
+
+MAINTAINER=	ports@robakdesign.com
+COMMENT=	MCollective and Rufus scheduler wrapper
+
+LICENSE=	APACHE20
+
+RUN_DEPENDS=	mcollective>=2:${PORTSDIR}/sysutils/mcollective \
+		rubygem-rufus-scheduler>=0.1:${PORTSDIR}/devel/rubygem-rufus-scheduler
+
+USE_RUBY=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	nullDowntimeLtd
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	0b67031
+
+USE_RC_SUBR=	mnrpes_receiver \
+		mnrpes_scheduler
+
+RESETPREFIX=	${PREFIX}
+
+PLIST_SUB+=	PORTNAME=${PORTNAME} \
+		RESETPREFIX=${RESETPREFIX}
+
+NO_BUILD=	yes
+
+do-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME}/output
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/mnrpes-receiver.rb ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/mnrpes-scheduler.rb ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/mnrpes.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/mnrpes/receiver.rb ${STAGEDIR}${RUBY_SITELIBDIR}/mnrpes/
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/mnrpes/scheduler.rb ${STAGEDIR}${RUBY_SITELIBDIR}/mnrpes/
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/mnrpes/output/flapjack.rb ${STAGEDIR}${RUBY_SITELIBDIR}/mnrpes/output/
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/mnrpes/output/nagios.rb ${STAGEDIR}${RUBY_SITELIBDIR}/mnrpes/output/
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/mnrpes/output/redis_status.rb ${STAGEDIR}${RUBY_SITELIBDIR}/mnrpes/output/
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/mnrpes/output/stdout.rb ${STAGEDIR}${RUBY_SITELIBDIR}/mnrpes/output/
+	${INSTALL_DATA} ${WRKSRC}/etc/checks.txt.dist ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/mnrpes-receiver.cfg.dist ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/mnrpes-scheduler.cfg.dist ${STAGEDIR}${ETCDIR}
+
+post-install:
+	${MKDIR} ${STAGEDIR}/var/run/${PORTNAME}
+	${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
+
+.include <bsd.port.mk>

@@ -1,0 +1,119 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# mnrpes_scheduler startup script
+#
+# PROVIDE: mnrpes_scheduler
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# mnrpes_scheduler_enable="YES"
+#
+# You can fine tune others variables too:
+# mnrpes_scheduler_config=
+# mnrpes_scheduler_checks=
+# Use mnrpes_scheduler_user to run mnrpes_scheduler as user
+
+# mnrpes_scheduler rc.d script supports multiple profiles (a-la rc.d/nginx)
+# When profiles are specified, the non-profile specific parameters become defaults.
+#
+# Example:
+#
+# mnrpes_scheduler_enable="YES"
+# mnrpes_scheduler_profiles="myserver myotherserver"
+# mnrpes_scheduler_config="/usr/local/etc/mnrpes/mnrpes-scheduler.cfg"
+# mnrpes_scheduler_checks="/usr/local/etc/mnrpes/checks.txt"
+# mnrpes_scheduler_myserver_user="myuser"
+# mnrpes_scheduler_myotherserver_user="myotheruser"
+# mnrpes_scheduler_myotherserver_config="/usr/local/etc/mnrpes/mnrpes-scheduler-myotherserver.cfg"
+# mnrpes_scheduler_myotherserver_checks="/usr/local/etc/mnrpes/checks-myotherserver.txt"
+
+. /etc/rc.subr
+
+name="mnrpes_scheduler"
+rcvar=mnrpes_scheduler_enable
+
+mnrpes_scheduler_setfib() {
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
+	
+	${SYSCTL} net.fibs >/dev/null 2>&1 || return 0
+
+	mnrpes_scheduler_fib=${mnrpes_scheduler_fib:-"NONE"}
+	case "$mnrpes_scheduler_fib" in
+	[Nn][Oo][Nn][Ee])
+		;;
+	*)
+		command="setfib -F ${mnrpes_scheduler_fib} ${command}"
+		;;
+	esac
+} 
+
+mnrpes_scheduler_precmd() {
+        user="$1"
+        piddir="$2"
+        logdir="$3"
+	mnrpes_scheduler_setfib
+        install -d -o $user -g wheel -m 1750 "${piddir}"
+        install -d -o $user -g wheel -m 1750 "${logdir}"
+}
+
+command_interpreter="ruby"
+
+piddir="/var/run/mnrpes/scheduler"
+pidname="scheduler"
+logdir="/var/log/mnrpes/scheduler"
+
+load_rc_config $name
+
+# These are just the defaults, they might get overriden for a specific profile.
+mnrpes_scheduler_enable=${mnrpes_scheduler_enable:-"NO"}
+mnrpes_scheduler_user=${mnrpes_scheduler_user:-"nobody"}
+mnrpes_scheduler_config=${mnrpes_scheduler_config:-"/usr/local/etc/mnrpes/mnrpes-scheduler.cfg"}
+mnrpes_scheduler_checks=${mnrpes_scheduler_checks:-"/usr/local/etc/mnrpes/checks.txt"}
+
+# This handles profile specific vars.
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ -n "${mnrpes_scheduler_profiles}" ]; then
+		piddir="${piddir}.${profile}"
+		pidname="${pidname}.${profile}"
+		logdir="${logdir}.${profile}"
+		eval mnrpes_scheduler_enable="\${mnrpes_scheduler_${profile}_enable:-${mnrpes_scheduler_enable}}"
+		eval mnrpes_scheduler_fib="\${mnrpes_scheduler_${profile}_fib:-${mnrpes_scheduler_fib}}"
+		eval mnrpes_scheduler_user="\${mnrpes_scheduler_${profile}_user:-${mnrpes_scheduler_user}}"
+		eval mnrpes_scheduler_config="\${mnrpes_scheduler_${profile}_config:-${mnrpes_scheduler_config}}"
+		eval mnrpes_scheduler_checks="\${mnrpes_scheduler_${profile}_checks:-${mnrpes_scheduler_checks}}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ -n "${mnrpes_scheduler_profiles}" -a -n "$1" ]; then
+		for profile in ${mnrpes_scheduler_profiles}; do
+			echo "===> mnrpes_scheduler profile: ${profile}"
+			/usr/local/etc/rc.d/mnrpes_scheduler $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		# It exits so that non-profile rc.d is not started when there are profiles.
+		exit 0
+	fi
+fi
+
+pidfile="${piddir}/${pidname}.pid"
+
+command="/usr/local/bin/mnrpes-scheduler.rb"
+
+start_precmd="mnrpes_scheduler_precmd ${mnrpes_scheduler_user} ${piddir} ${logdir}"
+
+command_args="--pid ${pidfile} --config ${mnrpes_scheduler_config} --checks ${mnrpes_scheduler_checks}"
+
+run_rc_command "$1"

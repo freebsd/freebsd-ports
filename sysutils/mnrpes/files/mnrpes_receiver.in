@@ -1,0 +1,114 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# mnrpes_receiver startup script
+#
+# PROVIDE: mnrpes_receiver
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# mnrpes_receiver_enable="YES"
+#
+# You can fine tune others variables too:
+# mnrpes_receiver_config=
+# Use mnrpes_receiver_user to run mnrpes_receiver as user
+
+# mnrpes_receiver rc.d script supports multiple profiles (a-la rc.d/nginx)
+# When profiles are specified, the non-profile specific parameters become defaults.
+#
+# Example:
+#
+# mnrpes_receiver_enable="YES"
+# mnrpes_receiver_profiles="myserver myotherserver"
+# mnrpes_receiver_config="/usr/local/etc/mnrpes/mnrpes-receiver.cfg"
+# mnrpes_receiver_myserver_user="myuser"
+# mnrpes_receiver_myotherserver_user="myotheruser"
+# mnrpes_receiver_myotherserver_config="/usr/local/etc/mnrpes/mnrpes-receiver-myotherserver.cfg"
+
+. /etc/rc.subr
+
+name="mnrpes_receiver"
+rcvar=mnrpes_receiver_enable
+
+mnrpes_receiver_setfib() {
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
+	
+	${SYSCTL} net.fibs >/dev/null 2>&1 || return 0
+
+	mnrpes_receiver_fib=${mnrpes_receiver_fib:-"NONE"}
+	case "$mnrpes_receiver_fib" in
+	[Nn][Oo][Nn][Ee])
+		;;
+	*)
+		command="setfib -F ${mnrpes_receiver_fib} ${command}"
+		;;
+	esac
+} 
+
+mnrpes_receiver_precmd() {
+        user="$1"
+        piddir="$2"
+        logdir="$3"
+	mnrpes_receiver_setfib
+        install -d -o $user -g wheel -m 1750 "${piddir}"
+        install -d -o $user -g wheel -m 1750 "${logdir}"
+}
+
+command_interpreter="ruby"
+
+piddir="/var/run/mnrpes/receiver"
+pidname="receiver"
+logdir="/var/log/mnrpes/receiver"
+
+load_rc_config $name
+
+# These are just the defaults, they might get overriden for a specific profile.
+mnrpes_receiver_enable=${mnrpes_receiver_enable:-"NO"}
+mnrpes_receiver_user=${mnrpes_receiver_user:-"nobody"}
+mnrpes_receiver_config=${mnrpes_receiver_config:-"/usr/local/etc/mnrpes/mnrpes-receiver.cfg"}
+
+# This handles profile specific vars.
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ -n "${mnrpes_receiver_profiles}" ]; then
+		piddir="${piddir}.${profile}"
+		pidname="${pidname}.${profile}"
+		logdir="${logdir}.${profile}"
+		eval mnrpes_receiver_enable="\${mnrpes_receiver_${profile}_enable:-${mnrpes_receiver_enable}}"
+		eval mnrpes_receiver_fib="\${mnrpes_receiver_${profile}_fib:-${mnrpes_receiver_fib}}"
+		eval mnrpes_receiver_user="\${mnrpes_receiver_${profile}_user:-${mnrpes_receiver_user}}"
+		eval mnrpes_receiver_config="\${mnrpes_receiver_${profile}_config:-${mnrpes_receiver_config}}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ -n "${mnrpes_receiver_profiles}" -a -n "$1" ]; then
+		for profile in ${mnrpes_receiver_profiles}; do
+			echo "===> mnrpes_receiver profile: ${profile}"
+			/usr/local/etc/rc.d/mnrpes_receiver $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		# It exits so that non-profile rc.d is not started when there are profiles.
+		exit 0
+	fi
+fi
+
+pidfile="${piddir}/${pidname}.pid"
+
+command="/usr/local/bin/mnrpes-receiver.rb"
+
+start_precmd="mnrpes_receiver_precmd ${mnrpes_receiver_user} ${piddir} ${logdir}"
+
+command_args="--pid ${pidfile} --config ${mnrpes_receiver_config}"
+
+run_rc_command "$1"

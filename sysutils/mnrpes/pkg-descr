@@ -1,0 +1,5 @@
+Mnrpes is a system that uses MCollective and the Rufus scheduler
+to build a distributed async scheduler and checker for Nagios
+based on the Passive mode.
+
+WWW: https://github.com/nullDowntimeLtd/mnrpes
