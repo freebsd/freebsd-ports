@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	afuse
-PORTVERSION=	0.2
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	File system automounting implemented in user-space using FUSE
 
 LICENSE=	GPLv2
@@ -15,21 +15,16 @@ LICENSE=	GPLv2
 USES=		fuse pkgconfig
 GNU_CONFIGURE=	yes
 
+SUB_FILES=	pkg-message
+
 PORTDOCS=	AUTHORS ChangeLog README
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		afuse.1
+PLIST_FILES=	bin/${PORTNAME} man/man1/afuse.1.gz
+
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-	@${CAT} ${PKGMESSAGE}
-SUB_FILES=	pkg-message
-.endif
+	${INSTALL_MAN} ${WRKSRC}/afuse.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
