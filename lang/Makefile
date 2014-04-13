@@ -65,7 +65,6 @@
     SUBDIR += expect
     SUBDIR += ezm3
     SUBDIR += f2c
-    SUBDIR += f77
     SUBDIR += fasm
     SUBDIR += ferite
     SUBDIR += ficl
