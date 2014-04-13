@@ -11,22 +11,20 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wolfenstein 3D levels ported to Doom II
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${DMDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKDIR}/${PORTNAME}
 	${FIND} ${WRKDIR}/${PORTNAME} ! -type d -exec ${CHMOD} 0644 {} \;
 	${FIND} ${WRKDIR}/${PORTNAME} -type d -exec ${CHMOD} 0755 {} \;
-	${MKDIR} ${DATADIR}
-	${TAR} -cf - -C ${WRKDIR}/${PORTNAME} . | ${TAR} -xpvf - -C ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${TAR} -cf - -C ${WRKDIR}/${PORTNAME} . | ${TAR} -xpvf - -C ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>
