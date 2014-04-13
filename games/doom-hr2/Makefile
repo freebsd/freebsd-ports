@@ -21,14 +21,13 @@ PLIST_FILES=	%%DATADIR%%/hr2final.wad
 PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	hr2final.txt
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/hr2final.wad ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/hr2final.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/hr2final.wad ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/hr2final.txt ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
