@@ -2,6 +2,7 @@
 
 PORTNAME=	qsstv
 PORTVERSION=	8.2.7
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -25,7 +26,6 @@ BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
 
 USES=		qmake
 USE_QT4=	gui network xml moc_build rcc_build uic_build
-USE_GCC=	any
 
 .if defined(WITH_DEBUG)
 IGNORE=		sources need more patching for debug build
