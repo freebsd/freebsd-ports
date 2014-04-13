@@ -21,25 +21,12 @@ PLIST_SUB+=	QQDIR=${QQDIR}
 SUB_FILES=	qq.sh
 SUB_LIST+=	QQDIR=${QQDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-pre-fetch:
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"==============================================="
-	@${ECHO_MSG}    "QQ requires linux_base-f8 ports infrastructure."
-	@${ECHO_MSG}	"Press 'Ctrl-C' to stop now if you dont't have  "
-	@${ECHO_MSG}	"the right version installed.                   "
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"Please read ${PORTSDIR}/UPDATING for how to    "
-	@${ECHO_MSG}	"install the linux_base-f8 ports.               "
-	@${ECHO_MSG}	"==============================================="
-	@${ECHO_MSG}	""
-
 do-install:
-	@${MKDIR} ${PREFIX}/${QQDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/qq ${PREFIX}/${QQDIR}/
-	${INSTALL_DATA} ${WRKSRC}/res.db ${PREFIX}/${QQDIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/qq.sh ${PREFIX}/bin/qq
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${QQDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/qq ${STAGEDIR}${PREFIX}/${QQDIR}/
+	${INSTALL_DATA} ${WRKSRC}/res.db ${STAGEDIR}${PREFIX}/${QQDIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/qq.sh ${STAGEDIR}${PREFIX}/bin/qq
 
 .include <bsd.port.post.mk>
