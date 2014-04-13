@@ -3,4 +3,5 @@ of the necessary run-time libraries, you may want to link using
 
   -Wl,-rpath=%%TARGLIB%%
 
-For ports leveraging USE_GCC or USES=compiler this happens transparently.
+For ports leveraging USE_GCC, USES=compiler, or USES=fortran this happens
+transparently.
