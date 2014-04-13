@@ -3,6 +3,7 @@ bin/chasen
 bin/chasen-config
 include/chasen.h
 lib/libchasen.a
+lib/libchasen.la
 lib/libchasen.so
 lib/libchasen.so.2
 libexec/chasen/makeda
