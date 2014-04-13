@@ -14,10 +14,6 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/help-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/index-all.html
 %%PORTDOCS%%%%DOCSDIR%%/api/index.html
-%%PORTDOCS%%%%DOCSDIR%%/api/resources/background.gif
-%%PORTDOCS%%%%DOCSDIR%%/api/resources/tab.gif
-%%PORTDOCS%%%%DOCSDIR%%/api/resources/titlebar.gif
-%%PORTDOCS%%%%DOCSDIR%%/api/resources/titlebar_end.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Boxed.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Config.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Enum.html
@@ -51,6 +47,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/package-list
 %%PORTDOCS%%%%DOCSDIR%%/api/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/api/resources/inherit.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/api/stylesheet.css
 %%DATADIR%%/macros/ac_prog_jar.m4
