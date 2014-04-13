@@ -3567,6 +3567,7 @@
     SUBDIR += py-colorama
     SUBDIR += py-conditional
     SUBDIR += py-configobj
+    SUBDIR += py-configparser
     SUBDIR += py-construct
     SUBDIR += py-country
     SUBDIR += py-coverage
