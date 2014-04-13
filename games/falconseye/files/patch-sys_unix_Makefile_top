@@ -1,6 +1,6 @@
---- sys/unix/Makefile.top.orig	Sun Jun 24 18:57:24 2001
-+++ sys/unix/Makefile.top	Fri Aug 24 03:27:56 2001
-@@ -15,18 +15,17 @@
+--- sys/unix/Makefile.top.orig	2001-06-24 18:57:24.000000000 +0200
++++ sys/unix/Makefile.top	2014-04-13 18:56:38.000000000 +0200
+@@ -15,11 +15,10 @@
  
  # make NetHack
  #PREFIX	 = /usr
@@ -15,16 +15,6 @@
  
  # Permissions - some places use setgid instead of setuid, for instance
  # See also the option "SECURE" in include/config.h
--GAMEPERM = 04755
--FILEPERM = 0644
-+GAMEPERM = 02755
-+FILEPERM = 0664
- EXEPERM  = 0755
--DIRPERM  = 0755
-+DIRPERM  = 0775
- 
- # GAMEDIR also appears in config.h as "HACKDIR".
- # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
 @@ -36,12 +35,13 @@
  # therefore there should not be anything in GAMEDIR that you want to keep
  # (if there is, you'll have to do the installation by hand or modify the
@@ -42,17 +32,15 @@
  # VARDATND = x11tiles pet_mark.xbm
  # VARDATND = x11tiles pet_mark.xbm rip.xpm
  # for Atari/Gem
-@@ -67,8 +67,8 @@
- # will only work if setuid (or setgid) behavior is not desired or required.
- # CHOWN = chown
- # CHGRP = chgrp
--CHOWN = true
--CHGRP = true
-+CHOWN = chown
-+CHGRP = chgrp
- 
- # ----------------------------------------------
- # Extra configuration for NetHack - Falcon's Eye
+@@ -78,7 +78,7 @@
+ # in order to e.g. access the Xlib server. In particular, we need to
+ # setgid instead of setuid. Therefore we must also allow group writing 
+ # for the files and directories.
+-GAMEPERM = 02755
++GAMEPERM = 02555
+ FILEPERM = 0664
+ EXEPERM = 0755
+ DIRPERM = 0775
 @@ -119,12 +119,15 @@
  $(GAME):
  	( cd src ; $(MAKE) )
