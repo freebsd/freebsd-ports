@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ec2-cli-tools
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Helpful CLI utilities for querying and connecting to EC2 instances
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=1.0:${PORTSDIR}/devel/py-boto \
 		bash>=0:${PORTSDIR}/shells/bash
