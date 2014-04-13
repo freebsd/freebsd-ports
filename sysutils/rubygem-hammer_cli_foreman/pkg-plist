@@ -1,0 +1,3 @@
+@unexec if cmp -s %D/etc/hammer/cli.modules.d/foreman.yml.sample %D/etc/hammer/cli.modules.d/foreman.yml; then rm -f %D/etc/hammer/cli.modules.d/foreman.yml; fi
+etc/hammer/cli.modules.d/foreman.yml.sample
+@exec if [ ! -f %D/etc/hammer/cli.modules.d/foreman.yml ] ; then cp -p %D/etc/hammer/cli.modules.d/foreman.yml.sample %D/etc/hammer/cli.modules.d/foreman.yml; fi

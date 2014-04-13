@@ -2,20 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	hammer_cli_foreman
-PORTVERSION=	0.0.18
+PORTVERSION=	0.1.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	kvedulv@kvedulv.de
 COMMENT=	Foreman commands for Hammer CLI
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	rubygem-foreman_api>=0.1.11:${PORTSDIR}/devel/rubygem-foreman_api \
-		rubygem-hammer_cli>=0.0.18:${PORTSDIR}/sysutils/rubygem-hammer_cli
+RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.6:${PORTSDIR}/devel/rubygem-apipie-bindings \
+		rubygem-hammer_cli=0.1.0:${PORTSDIR}/sysutils/rubygem-hammer_cli
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-install:
+		${MKDIR} ${STAGEDIR}${PREFIX}/etc/hammer
+		${MKDIR} ${STAGEDIR}${PREFIX}/etc/hammer/cli.modules.d
+		${INSTALL_DATA} ${FILESDIR}/foreman.yml.sample ${STAGEDIR}${PREFIX}/etc/hammer/cli.modules.d/foreman.yml.sample
+
+.include <bsd.port.post.mk>
