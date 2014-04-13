@@ -1,0 +1,4 @@
+Lasem aims to be a C/GObject based SVG/MathML renderer and editor. It uses
+cairo and pango as it's rendering abstraction layer.
+
+WWW: https://wiki.gnome.org/Projects/Lasem
