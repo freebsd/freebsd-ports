@@ -340,6 +340,7 @@
     SUBDIR += l2a
     SUBDIR += la-aspell
     SUBDIR += lacheck
+    SUBDIR += lasem
     SUBDIR += latex-service
     SUBDIR += latex2html
     SUBDIR += lemmatizer2
