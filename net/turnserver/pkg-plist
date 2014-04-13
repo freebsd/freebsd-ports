@@ -33,6 +33,7 @@ etc/turnuserdb.conf.default
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/loadbalance/tcp_c2c_tcp_relay.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_dtls_client.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_dtls_client_cert.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_tls_client_cert.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_relay.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_relay_cert.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_tcp_client_c2c_tcp_relay.sh
@@ -74,3 +75,4 @@ include/turn/client/ns_turn_msg_defs.h
 @dirrmtry include/turn/client/
 @dirrmtry include/turn
 @stopdaemon turnserver
+@dirrmtry include/turn/client
