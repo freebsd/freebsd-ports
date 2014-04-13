@@ -18,13 +18,8 @@ USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	instant
 
-MAN1=		instant-clean.1 \
-		instant-showcache.1
-MANCOMPRESSED=	yes
-
 MMVERSION=	1.2
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|\[(join("share", "man", "man1"),|\[(join("man", "man1"),|' \
