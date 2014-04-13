@@ -13,10 +13,10 @@ COMMENT=	FDTD simulation software to model electromagnetic systems
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 		harminv:${PORTSDIR}/science/harminv \
 		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile \
-		blas.2:${PORTSDIR}/math/blas \
-		ctl.5:${PORTSDIR}/science/libctl \
-		hdf5.7:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile \
+		libblas.so:${PORTSDIR}/math/blas \
+		libctl.so:${PORTSDIR}/science/libctl \
+		libhdf5.so:${PORTSDIR}/science/hdf5-18
 RUN_DEPENDS+=	harminv:${PORTSDIR}/science/harminv
 
 GNU_CONFIGURE=	yes
@@ -32,7 +32,6 @@ OPTIONS_DEFINE=		OPENMPI
 OPTIONS_DEFAULT=	OPENMPI
 OPENMPI_DESC=		MPI support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMPI}
@@ -40,6 +39,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 CONFIGURE_ARGS+=--with-mpi
 CONFIGURE_ENV+=	MPICXX=${LOCALBASE}/mpi/openmpi/bin/mpiCC
+CFLAGS+=	-I${LOCALBASE}/mpi/openmpi/include
 PLIST_SUB+=	MPI="" NOMPI="@comment "
 .else
 CONFIGURE_ARGS+=--without-mpi
