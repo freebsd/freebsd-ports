@@ -1,4 +1,4 @@
-%%GLX%%bin/ezquake-glx
+%%OPENGL%%bin/ezquake-glx
 %%X11%%bin/ezquake-x11
 %%DATADIR%%/ezquake/cfg/cams.cfg
 %%DATADIR%%/ezquake/cfg/cams.tcl

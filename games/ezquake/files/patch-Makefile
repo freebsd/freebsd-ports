@@ -1,5 +1,5 @@
---- Makefile.orig	2008-04-27 17:51:52.000000000 -0300
-+++ Makefile	2008-04-29 22:27:42.000000000 -0300
+--- Makefile.orig	2014-04-13 13:48:18.000000000 +0200
++++ Makefile	2014-04-13 13:49:38.000000000 +0200
 @@ -6,7 +6,7 @@
  
  # compilation tool and detection of targets/achitecture
@@ -93,3 +93,12 @@
  
  ifeq ($(OS),freebsd)
  X11BASE ?= /usr/X11R6
+@@ -149,7 +141,7 @@
+ GLX_C_OBJS = $(addprefix $(GLX_DIR)/, $(addsuffix .o, $(GLX_C_FILES)))
+ GLX_S_OBJS = $(addprefix $(GLX_DIR)/, $(addsuffix .o, $(GLX_S_FILES)))
+ GLX_CFLAGS = $(CFLAGS) $(GLCFLAGS)
+-GLX_LDFLAGS = $(LDFLAGS) -lGL -lXxf86dga -lXxf86vm
++GLX_LDFLAGS = $(LDFLAGS) -lGL -lXxf86dga -lXxf86vm -lX11
+ 
+ glx: _DIR = $(GLX_DIR)
+ glx: _OBJS = $(GLX_C_OBJS) $(GLX_S_OBJS) $(COMMON_LIBS) $(GL_LIBS)
