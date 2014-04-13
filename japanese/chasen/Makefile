@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chasen
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	japanese textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -18,7 +18,6 @@ DEPRECATED=	Unmaintained since 2001
 EXPIRATION_DATE=	2014-04-12
 NO_BUILD=	YES
 
-NO_STAGE=	yes
 do-install:
 
 .include <bsd.port.mk>
