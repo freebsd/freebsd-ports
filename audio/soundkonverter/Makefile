@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	soundkonverter
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	audio kde
 MASTER_SITES=	GH LOCAL/dbn/${PORTNAME}
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 
 GH_ACCOUNT=	HessiJames
 GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	6e77f54
+GH_COMMIT=	b2c3436
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build
