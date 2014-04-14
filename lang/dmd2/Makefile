@@ -3,7 +3,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.064.2
+PORTVERSION=	2.065.0
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -13,9 +13,9 @@ COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
 
 USES=		gmake zip
 MAKEFILE=	posix.mak
-EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
-DOCSDIR=	${PREFIX}/share/doc/dmd2
-PORTDOCS=	*.txt druntime/ html/ phobos/
+EXAMPLESDIR=	${PREFIX}/share/examples/dmd
+DOCSDIR=	${PREFIX}/share/doc/dmd
+PORTDOCS=	*.txt druntime/ html/
 WRKSRC=		${WRKDIR}/dmd2/src/${PORTNAME}
 LICENSE_COMB=	multi
 LICENSE=	ART10 DMD BSL
@@ -58,9 +58,8 @@ post-patch:
 			  -e "s|\(dmd\)|\12|gI"		\
 			  -e "s|\\\BR|.BR|"		\
 		${WRKDIR}/dmd2/man/man1/dmd.1		\
-		${WRKDIR}/dmd2/man/man1/dmd.conf.5
+		${WRKDIR}/dmd2/man/man5/dmd.conf.5
 	@${REINPLACE_CMD} -e 's|"/etc/"|"${PREFIX}/etc/"|' ${WRKSRC}/inifile.c
-	@${REINPLACE_CMD} -e 's|dmd.conf|dmd2.conf|' ${WRKSRC}/mars.c
 	@${REINPLACE_CMD} -e "s|%@P%/../../src/phobos|${MODULEDIR}|"	\
 			  -e "s|%@P%/../lib|${PREFIX}/lib|"		\
 			  -e "s|%@P%/../../src/druntime|${PREFIX}/include/d/druntime|"	\
@@ -73,19 +72,19 @@ post-build:
 		${SETENV} PATH=${WRKSRC}:${PATH} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${BUILD}
 
 do-install:
-	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd2.1
-	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/dmd2.conf.5
-.if !exists(${STAGEDIR}${PREFIX}/etc/dmd2.conf)
-	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${STAGEDIR}${PREFIX}/etc/dmd2.conf
+	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd.1
+	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man5/dmd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/dmd.conf.5
+.if !exists(${STAGEDIR}${PREFIX}/etc/dmd.conf)
+	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${STAGEDIR}${PREFIX}/etc/dmd.conf
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${STAGEDIR}${PREFIX}/bin/dmd2
+	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${STAGEDIR}${PREFIX}/bin/dmd
 .if ${ARCH} == "amd64"
 	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/${BUILD}/64/libphobos2.a ${STAGEDIR}${PREFIX}/lib
 .else
 	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/${BUILD}/32/libphobos2.a ${STAGEDIR}${PREFIX}/lib
 .endif
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd2.conf
+	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd.conf
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} samples ${STAGEDIR}${EXAMPLESDIR}
 	${MKDIR} ${STAGEDIR}${MODULEDIR}/etc/c
 	${INSTALL_DATA} ${WRKSRC}/../phobos/*.d ${STAGEDIR}${MODULEDIR}
@@ -101,10 +100,8 @@ do-install:
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/druntime
 	${INSTALL_DATA} ${WRKSRC}/../druntime/LICENSE ${STAGEDIR}${DOCSDIR}/druntime
-	${INSTALL_DATA} ${WRKSRC}/../druntime/README ${STAGEDIR}${DOCSDIR}/druntime
+	${INSTALL_DATA} ${WRKSRC}/../druntime/README.md ${STAGEDIR}${DOCSDIR}/druntime
 	cd ${WRKSRC}/../druntime && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}/druntime
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/phobos
-	${INSTALL_DATA} ${WRKSRC}/../phobos/std.ddoc ${STAGEDIR}${DOCSDIR}/phobos
 .endif
 
 .include <bsd.port.post.mk>
