@@ -1,0 +1,7 @@
+
+                        ** JAIL **
+If you are building nagios-plugins from within a jail that
+doesn't have 127.0.0.1 and ::1, and you want check_ping to
+be built, you have to set NAGIOSPOLLIP and NAGIOSPOLLIP6 to
+an IPV4 and an IPV6 address that can be pinged from the jail.
+

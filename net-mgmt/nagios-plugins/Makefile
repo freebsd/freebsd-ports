@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	2.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/
@@ -20,6 +19,7 @@ AUTOMAKE_ARGS=	--add-missing
 
 OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS DBI EXTRAOPTS
 OPTIONS_DEFAULT=IPV6 EXTRAOPTS
+OPTIONS_SUB=	yes
 
 QSTAT_DESC=	Game server query support (check_game)
 FPING_DESC=	Support for non-flooding fast ping (check_fping)
@@ -28,7 +28,7 @@ RADIUS_DESC=	Radius support (check_radius)
 MYSQL_DESC=	MySQL support (check_mysql)
 PGSQL_DESC=	PostgreSQL support (check_pgsql)
 LDAP_DESC=	OpenLDAP support (check_ldap)
-JAIL_DESC=	Compilation within jail(8) (see Makefile)
+JAIL_DESC=	Compilation within jail(8) (see help)
 DBI_DESC=	Check database using DBI
 EXTRAOPTS_DESC=	Parsing of plugins ini config files for extra options
 
@@ -47,13 +47,13 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 NAGIOSPOLLIP?=	127.0.0.1
 NAGIOSPOLLIP6?=	::1
 
-.include <bsd.port.options.mk>
+PLUGINS_DIR=	${PREFIX}/libexec/nagios
 
 CONFIGURE_ARGS+=--with-nagios-user=${NAGIOSUSER} \
 		--with-nagios-group=${NAGIOSGROUP} \
 		--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
-		--libexecdir=${PREFIX}/libexec/nagios \
+		--libexecdir=${PLUGINS_DIR} \
 		--datadir=${PREFIX}/share \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${NAGIOSDIR} \
@@ -64,103 +64,57 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-.if ${PORT_OPTIONS:MQSTAT}
-BUILD_DEPENDS+=	qstat:${PORTSDIR}/games/qstat
-RUN_DEPENDS+=	qstat:${PORTSDIR}/games/qstat
-CONFIGURE_ARGS+=	--enable-qstat
-PLIST_SUB+=	SUB_QSTAT=""
-.else
-PLIST_SUB+=	SUB_QSTAT="@comment "
-.endif
+QSTAT_BUILD_DEPENDS=	qstat:${PORTSDIR}/games/qstat
+QSTAT_RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
+QSTAT_CONFIGURE_ENABLE=	qstat
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--with-ipv6
-.else
-CONFIGURE_ARGS+=	--without-ipv6
-.endif
+IPV6_CONFIGURE_WITH=	ipv6
 
-.if ${PORT_OPTIONS:MFPING}
-BUILD_DEPENDS+=	fping:${PORTSDIR}/net/fping
-RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
-CONFIGURE_ARGS+=	--enable-fping
-PLIST_SUB+=	SUB_FPING=""
-.else
-PLIST_SUB+=	SUB_FPING="@comment "
-.endif
+FPING_BUILD_DEPENDS=	fping:${PORTSDIR}/net/fping
+FPING_RUN_DEPENDS=	fping:${PORTSDIR}/net/fping
+FPING_CONFIGURE_ENABLE=	fping
 
-.if ${PORT_OPTIONS:MNETSNMP}
-BUILD_DEPENDS+=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp \
+NETSNMP_BUILD_DEPENDS=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-RUN_DEPENDS+=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp \
+NETSNMP_RUN_DEPENDS=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-CONFIGURE_ARGS+=	--enable-snmp
-PLIST_SUB+=	SUB_SNMP=""
-.else
-PLIST_SUB+=	SUB_SNMP="@comment "
-.endif
+NETSNMP_CONFIGURE_ENABLE=	snmp
 
-.if ${PORT_OPTIONS:MRADIUS}
-LIB_DEPENDS+=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
-PLIST_SUB+=	SUB_RADIUS=""
-.else
-CONFIGURE_ARGS+=	--without-radius
-PLIST_SUB+=	SUB_RADIUS="@comment "
-.endif
+RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
+RADIUS_CONFIGURE_WITH=	radius
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	YES
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-PLIST_SUB+=	SUB_MYSQL=""
-.else
-CONFIGURE_ARGS+=	--without-mysql
-PLIST_SUB+=	SUB_MYSQL="@comment "
-.endif
+MYSQL_USE=	mysql=yes
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
+MYSQL_CONFIGURE_OFF=	--without-mysql
 
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	YES
-CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
-PLIST_SUB+=	SUB_PGSQL=""
-.else
-CONFIGURE_ARGS+=	--without-pgsql
-PLIST_SUB+=	SUB_PGSQL="@comment "
-.endif
+PGSQL_USE=	pgsql=yes
+PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
+PGSQL_CONFIGURE_OFF=	--without-pgsql
 
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	YES
-PLIST_SUB+=	SUB_LDAP=""
-.else
-CONFIGURE_ARGS+=	--without-ldap
-PLIST_SUB+=	SUB_LDAP="@comment "
-.endif
+LDAP_USE=	openldap=yes
+LDAP_CONFIGURE_WITH=	ldap
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
-.if ${PORT_OPTIONS:MDBI}
-PLIST_SUB+=	SUB_DBI=""
-LIB_DEPENDS+=	libdbi.so:${PORTSDIR}/databases/libdbi
-.else
-CONFIGURE_ARGS+=	--without-dbi
-PLIST_SUB+=	SUB_DBI="@comment "
-.endif
+DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
+DBI_CONFIGURE_WITH=	dbi
+
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 1000055
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-dig-to-drill.diff
-CONFIGURE_ARGS+=--with-dig-command=/usr/bin/drill
-PLIST_SUB+=	SUB_DNS="@comment "
+BUILD_DEPENDS+=		${LOCALBASE}/bin/dig:${PORTSDIR}/dns/bind-tools
+CONFIGURE_ARGS+=	--with-dig-command=${PLUGINS_DIR}/nagios-dig \
+			--with-nslookup-command=${PLUGINS_DIR}/nagios-nslookup
+PLIST_SUB+=	BIND=""
 .else
-PLIST_SUB+=	SUB_DNS=""
+PLIST_SUB+=	BIND="@comment "
 .endif
 
 .if !exists(/usr/bin/ssh)
-PLIST_SUB+=	SUB_SSH="@comment "
+PLIST_SUB+=	SSH="@comment "
 .else
-PLIST_SUB+=	SUB_SSH=""
+PLIST_SUB+=	SSH=""
 .endif
 
 post-patch:
@@ -174,6 +128,13 @@ post-patch:
 .if ${PORT_OPTIONS:MJAIL}
 	@${REINPLACE_CMD} -e 's# 127.0.0.1 # ${NAGIOSPOLLIP} #g' ${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's# ::1 # ${NAGIOSPOLLIP6} #g' ${WRKSRC}/configure.in
+.endif
+
+.if ${OSVERSION} > 1000055
+post-install:
+.for f in dig nslookup
+	${INSTALL_PROGRAM} ${LOCALBASE}/bin/${f} ${STAGEDIR}${PLUGINS_DIR}/nagios-${f}
+.endfor
 .endif
 
 .include <bsd.port.mk>
