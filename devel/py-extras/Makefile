@@ -1,0 +1,17 @@
+# $FreeBSD$
+
+PORTNAME=	extras
+PORTVERSION=	0.0.3
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	cs@FreeBSD.org
+COMMENT=	Useful extra bits for Python
+
+LICENSE=	MIT
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+
+.include <bsd.port.mk>
