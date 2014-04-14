@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-DISTVERSION=	3.0.0milestone5
+PORTVERSION=	3.0.1
 CATEGORIES=	textproc www
 MASTER_SITES=	http://download.elasticsearch.org/kibana/kibana/
 
