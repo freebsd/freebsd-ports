@@ -5,11 +5,16 @@ bin/gnome-screensaver-preferences
 etc/xdg/autostart/gnome-screensaver.desktop
 etc/xdg/menus/gnome-screensavers.menu
 libdata/pkgconfig/gnome-screensaver.pc
+@mode 4555
 libexec/gnome-screensaver-dialog
+@mode
 libexec/gnome-screensaver-gl-helper
 libexec/gnome-screensaver/floaters
 libexec/gnome-screensaver/popsquares
 libexec/gnome-screensaver/slideshow
+man/man1/gnome-screensaver-command.1.gz
+man/man1/gnome-screensaver-preferences.1.gz
+man/man1/gnome-screensaver.1.gz
 share/applications/gnome-screensaver-preferences.desktop
 share/applications/screensavers/cosmos-slideshow.desktop
 share/applications/screensavers/footlogo-floaters.desktop

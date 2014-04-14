@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-screensaver
 PORTVERSION=	2.30.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,15 +12,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen saver and locker
 
-LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	xscreensaver-gl-helper:${PORTSDIR}/x11/xscreensaver-gnome-hacks
 
 CONFLICTS=	gnome-screensaver-3.[0-9]*
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	xtst xxf86vm
-USES=		pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gnomemenus libgnomekbd gnomedesktop
 CONFIGURE_ARGS=	--with-gdm-config=${LOCALBASE}/etc/gdm/custom.conf \
 		--with-xscreensaverdir=${XSCREENSAVER_DIR} \
@@ -45,7 +44,6 @@ OPTIONS_DEFAULT=PAM KEYRING
 PAM_DESC=	Pluggable Authentication Module support
 KEYRING_DESC=	GnomeKeyring integration (needs PAM)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPAM}
@@ -85,15 +83,14 @@ pre-install:
 	@${ECHO_CMD} @dirrm ${SCREENSAVER_DIR} >> ${PLIST}
 
 post-install:
-	${CHOWN} root ${PREFIX}/libexec/gnome-screensaver-dialog
-	${CHMOD} +s ${PREFIX}/libexec/gnome-screensaver-dialog
-	${MKDIR} ${PREFIX}/${SCREENSAVER_DIR}
-	cd ${PREFIX}/${SCREENSAVER_DIR} && \
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SCREENSAVER_DIR}
+	cd ${STAGEDIR}${PREFIX}/${SCREENSAVER_DIR} && \
 		${FIND} -s ${XSCREENSAVER_DIR} -maxdepth 1 -type f -name "*.xml" | \
 			${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
 			${XARGS} ${WRKSRC}/data/migrate-xscreensaver-config.sh
 .if ${PORT_OPTIONS:MPAM}
-	${INSTALL_DATA} ${WRKDIR}/gnome-screensaver.pam ${PREFIX}/etc/pam.d/gnome-screensaver
+	${INSTALL_DATA} ${WRKDIR}/gnome-screensaver.pam \
+		${STAGEDIR}${PREFIX}/etc/pam.d/gnome-screensaver
 .endif
 
 .include <bsd.port.mk>

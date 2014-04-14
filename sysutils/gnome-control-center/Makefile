@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	2.32.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,21 +12,20 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for GNOME 2 project
 
-LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:bzip2
 GNOME_DESKTOP_VERSION=2
 USE_GSTREAMER=	good
 WANT_GNOME=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack metacity gnomemenus \
-		desktopfileutils libgnomekbd gnomedesktop librsvg2 gconf2
+USE_GNOME=	gnomeprefix intlhack metacity gnomemenus libgnomekbd \
+		gnomedesktop librsvg2 gconf2
 USE_XORG=	xscrnsaver
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
@@ -43,7 +42,6 @@ GCONF_SCHEMAS=	control-center.schemas fontilus.schemas \
 WITH_GNOME=	yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mevolutiondataserver}!=""
@@ -62,8 +60,5 @@ post-patch:
 		${WRKSRC}/capplets/display/org.gnome.randr.policy.in
 	@${REINPLACE_CMD} -e 's|"libslab"|"libnoslab"|g' \
 		${WRKSRC}/configure
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.post.mk>
