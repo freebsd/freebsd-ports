@@ -3,6 +3,7 @@
 
 PORTNAME=	soundkonverter
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	GH LOCAL/dbn/${PORTNAME}
 
@@ -68,10 +69,8 @@ FLUIDSYNTH_RUN_DEPENDS=	fluidsynth:${PORTSDIR}/audio/fluidsynth
 
 LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
 
-.if defined(NOT_IMPLEMENTED)
 LIBAV_DESCR=		LibAV support (WMA, AIFF, AC3, APE...)
-LIBAV_RUN_DEPENDS=	avconv:${PORTSDIR}/audio/libav
-.endif
+LIBAV_RUN_DEPENDS=	avconv:${PORTSDIR}/multimedia/libav
 
 MAC_DESC=		Monkey's Audio lossless codec
 MAC_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
