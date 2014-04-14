@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	shoutcast
-PORTVERSION=	2.0.0.29
-PORTREVISION=	1
+PORTVERSION=	2.2.1.109
 CATEGORIES=	audio net
 MASTER_SITES=	http://download.nullsoft.com/shoutcast/tools/
-DISTNAME=	sc_serv2_bsd_8_x_07_31_2011
+DISTNAME=	sc_serv2_bsd_8_x_11_29_2013
 
 MAINTAINER=	jarrod@downtools.com.au
 COMMENT=	SHOUTcast Distributed Network Audio Server
@@ -14,8 +13,7 @@ COMMENT=	SHOUTcast Distributed Network Audio Server
 RESTRICTED=	redistribution of software is not permitted
 IA32_BINARY_PORT=	yes
 
-USES=		dos2unix
-NO_STAGE=	yes
+USES=	dos2unix
 DOS2UNIX_REGEX=	.*\.(conf|css|html|js|txt|xml)
 
 USE_RC_SUBR=	shoutcast
@@ -24,11 +22,14 @@ CONFLICTS=	linux-shoutcast-[0-9]*
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+OPTIONS_DEFAULT= CONFIG_BUILDER EXAMPLES
 OPTIONS_DEFINE=	CONFIG_BUILDER DOCS EXAMPLES
 CONFIG_BUILDER_DESC=	SHOUTcast Configuration Builder
+EXAMPLE_DESC=	SHOUTcast Server Example Configuration Files
 
 SHOUTCASTUSER=	${PORTNAME}
 SHOUTCASTGROUP=	${PORTNAME}
+
 SHOUTCASTLDIR=	/var/log/${PORTNAME}
 SHOUTCASTDIR=	/var/run/${PORTNAME}
 
@@ -48,6 +49,14 @@ GROUPS=		${SHOUTCASTGROUP}
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} >= 1000010
+.if ${ARCH} == "i386"
+RUN_DEPENDS+=   ${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+.else
+RUN_DEPENDS+=   ${LOCALBASE}/lib32/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+.endif
+.endif
+
 .if ${PORT_OPTIONS:MCONFIG_BUILDER}
 PLIST_SUB+=	CONFIG_BUILDER=""
 .else
@@ -58,63 +67,82 @@ post-patch:
 .for _file in basic debug public relay simple
 	@${REINPLACE_CMD} -e '/sc_serv2 directory/d' \
 		-e 's#=.*/\([^\.]*.log\)#=${SHOUTCASTLDIR}/\1#g' \
-		-e 's#=control/#=${SHOUTCASTDIR}/#g' ${WRKSRC}/sc_serv_${_file}.conf
+		-e 's#=control/#=${SHOUTCASTDIR}/#g' ${WRKSRC}/examples/sc_serv_${_file}.conf
 .endfor
 .if ${PORT_OPTIONS:MCONFIG_BUILDER}
 	@${REINPLACE_CMD} -e 's#<[^>]*>Windows<[^>]*>##g' \
 		-e 's#<[^>]*>Macintosh<[^>]*>##g' ${WRKSRC}/config_builder/config_builder.html
 	@${REINPLACE_CMD} -e 's#\(LogFile="\)\([^"/]*\)#\1${SHOUTCASTLDIR}/\2#g' \
-		-e 's#\(ConfFile="\)\([^"/]*\)#\1${ETCDIR}/\2#g' \
+		-e 's#\(ConfFile="\)\([^"/]*\)#\1${STAGEDIR}${ETCDIR}/\2#g' \
 		-e 's#\(BanFile="\)\([^"/]*\)#\1${SHOUTCASTDIR}/\2#g' \
-		-e 's#\(RipFile="\)\([^"/]*\)#\1${SHOUTCASTDIR}/\2#g' ${WRKSRC}/config_builder/js/config_builder.js
+		-e 's#\(RipFile="\)\([^"/]*\)#\1${SHOUTCASTDIR}/\2#g' ${WRKSRC}/config_builder/config_builder.js
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${PREFIX}/sbin
-	${MKDIR} ${ETCDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${SHOUTCASTLDIR}
+	${MKDIR} ${STAGEDIR}${SHOUTCASTDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/changes.txt ${DOCSDIR}/changes.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/getting_started.txt ${DOCSDIR}/getting_started.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/sc_serv2.txt ${DOCSDIR}/sc_serv2.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/sc_serv2_authhash.txt ${DOCSDIR}/sc_serv2_authhash.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/sc_serv2_xml_responses.txt ${DOCSDIR}/sc_serv2_xml_responses.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/shoutcast_system_overview.txt ${DOCSDIR}/shoutcast_system_overview.txt
-	${INSTALL_DATA} ${WRKSRC}/tos.txt ${DOCSDIR}/tos.txt
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/DNAS_Server_Changelog.html ${STAGEDIR}${DOCSDIR}/DNAS_Server_Changelog.html
+	${INSTALL_DATA} ${WRKSRC}/Readme_DNAS_Server.html ${STAGEDIR}${DOCSDIR}/Readme_DNAS_Server.html
+	${INSTALL_DATA} ${WRKSRC}/tos.txt ${STAGEDIR}${DOCSDIR}/tos.txt
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/docs
+	${INSTALL_DATA} ${WRKSRC}/docs/DNAS_Server_XML_Responses.html ${STAGEDIR}${DOCSDIR}/docs/DNAS_Server_XML_Responses.html
+	${INSTALL_DATA} ${WRKSRC}/docs/DNAS_Server_Authhash_Management.html ${STAGEDIR}${DOCSDIR}/docs/DNAS_Server_Authhash_Management.html
+	${INSTALL_DATA} ${WRKSRC}/docs/DNAS_Server.html ${STAGEDIR}${DOCSDIR}/docs/DNAS_Server.html
+	${INSTALL_DATA} ${WRKSRC}/docs/Getting_Started.html ${STAGEDIR}${DOCSDIR}/docs/Getting_Started.html
+	${INSTALL_DATA} ${WRKSRC}/docs/DNAS_Server_JSON_Responses.html ${STAGEDIR}${DOCSDIR}/docs/DNAS_Server_JSON_Responses.html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/docs/res
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Linux_Console.png ${STAGEDIR}${DOCSDIR}/docs/res/Linux_Console.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Output_tag_configuration_error.png ${STAGEDIR}${DOCSDIR}/docs/res/Output_tag_configuration_error.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Stream_Ban_List_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Stream_Ban_List_Page.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Start.png ${STAGEDIR}${DOCSDIR}/docs/res/Start.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Server_Bandwidth_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Server_Bandwidth_Page.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Manual.png ${STAGEDIR}${DOCSDIR}/docs/res/Manual.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Completed.png ${STAGEDIR}${DOCSDIR}/docs/res/Completed.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Simple.png ${STAGEDIR}${DOCSDIR}/docs/res/Simple.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Console_Error.png ${STAGEDIR}${DOCSDIR}/docs/res/Console_Error.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Server_Log_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Server_Log_Page.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Console_Builder_Mode.png ${STAGEDIR}${DOCSDIR}/docs/res/Console_Builder_Mode.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Select_Source_DSP_in_Winamp.png ${STAGEDIR}${DOCSDIR}/docs/res/Select_Source_DSP_in_Winamp.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Removed.png ${STAGEDIR}${DOCSDIR}/docs/res/Removed.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Console_Linux.png ${STAGEDIR}${DOCSDIR}/docs/res/Console_Linux.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Windows_Service_Install_Failure.png ${STAGEDIR}${DOCSDIR}/docs/res/Windows_Service_Install_Failure.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Stream_Summary_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Stream_Summary_Page.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Stream_Admin_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Stream_Admin_Page.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Console_Setup_Mode.png ${STAGEDIR}${DOCSDIR}/docs/res/Console_Setup_Mode.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Invalid_Configuration_Item.png ${STAGEDIR}${DOCSDIR}/docs/res/Invalid_Configuration_Item.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Server_Summary_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Server_Summary_Page.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Example_Windows_Console.png ${STAGEDIR}${DOCSDIR}/docs/res/Example_Windows_Console.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Server_Source_Login_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Server_Source_Login_Page.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Streams_Summary_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Streams_Summary_Page.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Example_Linux_Console.png ${STAGEDIR}${DOCSDIR}/docs/res/Example_Linux_Console.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Linux_Daemon_Mode.png ${STAGEDIR}${DOCSDIR}/docs/res/Linux_Daemon_Mode.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Admin_Config_Reload.png ${STAGEDIR}${DOCSDIR}/docs/res/Admin_Config_Reload.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Windows_Console.png ${STAGEDIR}${DOCSDIR}/docs/res/Windows_Console.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Stream_Reserved_List_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Stream_Reserved_List_Page.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Summary.png ${STAGEDIR}${DOCSDIR}/docs/res/Summary.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Setup_Mode_Error.png ${STAGEDIR}${DOCSDIR}/docs/res/Setup_Mode_Error.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Editing.png ${STAGEDIR}${DOCSDIR}/docs/res/Editing.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Console_Windows.png ${STAGEDIR}${DOCSDIR}/docs/res/Console_Windows.png
+
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/crossdomain.xml ${EXAMPLESDIR}/crossdomain.xml
-	${INSTALL_DATA} ${WRKSRC}/sc_serv_basic.conf ${EXAMPLESDIR}/sc_serv_basic.conf
-	${INSTALL_DATA} ${WRKSRC}/sc_serv_debug.conf ${EXAMPLESDIR}/sc_serv_debug.conf
-	${INSTALL_DATA} ${WRKSRC}/sc_serv_public.conf ${EXAMPLESDIR}/sc_serv_public.conf
-	${INSTALL_DATA} ${WRKSRC}/sc_serv_relay.conf ${EXAMPLESDIR}/sc_serv_relay.conf
-	${INSTALL_DATA} ${WRKSRC}/sc_serv_simple.conf ${EXAMPLESDIR}/sc_serv_simple.conf
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/sc_serv_basic.conf ${STAGEDIR}${EXAMPLESDIR}/sc_serv_basic.conf
+	${INSTALL_DATA} ${WRKSRC}/examples/sc_serv_debug.conf ${STAGEDIR}${EXAMPLESDIR}/sc_serv_debug.conf
+	${INSTALL_DATA} ${WRKSRC}/examples/sc_serv_public.conf ${STAGEDIR}${EXAMPLESDIR}/sc_serv_public.conf
+	${INSTALL_DATA} ${WRKSRC}/examples/sc_serv_relay.conf ${STAGEDIR}${EXAMPLESDIR}/sc_serv_relay.conf
+	${INSTALL_DATA} ${WRKSRC}/examples/sc_serv_simple.conf ${STAGEDIR}${EXAMPLESDIR}/sc_serv_simple.conf
 .endif
 .if ${PORT_OPTIONS:MCONFIG_BUILDER}
-	${MKDIR} ${WWWDIR}/config_builder
-	${INSTALL_DATA} ${WRKSRC}/config_builder/config_builder.html ${WWWDIR}/config_builder/config_builder.html
-	${MKDIR} ${WWWDIR}/config_builder/db
-	${INSTALL_DATA} ${WRKSRC}/config_builder/db/config_builder_help.txt ${WWWDIR}/config_builder/db/config_builder_help.txt
-	${MKDIR} ${WWWDIR}/config_builder/js
-	${INSTALL_DATA} ${WRKSRC}/config_builder/js/config_builder.js ${WWWDIR}/config_builder/js/config_builder.js
-	${INSTALL_DATA} ${WRKSRC}/config_builder/js/downloadify.js ${WWWDIR}/config_builder/js/downloadify.js
-	${INSTALL_DATA} ${WRKSRC}/config_builder/js/mootools-1.3.js ${WWWDIR}/config_builder/js/mootools-1.3.js
-	${INSTALL_DATA} ${WRKSRC}/config_builder/js/swfobject.js ${WWWDIR}/config_builder/js/swfobject.js
-	${MKDIR} ${WWWDIR}/config_builder/res
-	${INSTALL_DATA} ${WRKSRC}/config_builder/res/collapse.png ${WWWDIR}/config_builder/res/collapse.png
-	${INSTALL_DATA} ${WRKSRC}/config_builder/res/config_builder.css ${WWWDIR}/config_builder/res/config_builder.css
-	${INSTALL_DATA} ${WRKSRC}/config_builder/res/dl_button.png ${WWWDIR}/config_builder/res/dl_button.png
-	${INSTALL_DATA} ${WRKSRC}/config_builder/res/downloadify.swf ${WWWDIR}/config_builder/res/downloadify.swf
-	${INSTALL_DATA} ${WRKSRC}/config_builder/res/expand.png ${WWWDIR}/config_builder/res/expand.png
-	${INSTALL_DATA} ${WRKSRC}/config_builder/res/sc_logo.png ${WWWDIR}/config_builder/res/sc_logo.png
+	${MKDIR} ${STAGEDIR}${WWWDIR}/config_builder
+	${INSTALL_DATA} ${WRKSRC}/config_builder/config_builder.html ${STAGEDIR}${WWWDIR}/config_builder/config_builder.html
+	${INSTALL_DATA} ${WRKSRC}/config_builder/config_builder.txt ${STAGEDIR}${WWWDIR}/config_builder/config_builder.txt
+	${INSTALL_DATA} ${WRKSRC}/config_builder/config_builder.js ${STAGEDIR}${WWWDIR}/config_builder/config_builder.js
+	${INSTALL_DATA} ${WRKSRC}/config_builder/config_builder.css ${STAGEDIR}${WWWDIR}/config_builder/config_builder.css
 .endif
-
-post-install:
-	${MKDIR} ${SHOUTCASTDIR} ${SHOUTCASTLDIR}
-	@${CHMOD} 0750 ${SHOUTCASTDIR} ${SHOUTCASTLDIR}
-	@${CHOWN} ${SHOUTCASTUSER}:${SHOUTCASTGROUP} ${SHOUTCASTDIR}
-	@${CHOWN} ${SHOUTCASTUSER}:wheel ${SHOUTCASTLDIR}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
