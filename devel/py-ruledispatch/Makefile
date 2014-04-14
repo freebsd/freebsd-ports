@@ -2,26 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	RuleDispatch
-PORTVERSION=	0.5.a1.r2506
-PORTREVISION=	2
+PORTVERSION=	0.5.a1.r2717
+PORTREVISION=	0
 CATEGORIES=	devel python
-MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
-		http://peak.telecommunity.com/snapshots/
+MASTER_SITES=	http://peak.telecommunity.com/snapshots/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-0.5a1.dev-r2506
+DISTNAME=	${PORTNAME}-0.5a1.dev-r2717
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Rule-based Dispatching and Generic Functions
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:${PORTSDIR}/devel/py-protocols-devel \
-		${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:${PORTSDIR}/devel/py-extremes
+LICENSE=	PSFL ZPL21
+LICENSE_COMB=	dual
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:${PORTSDIR}/devel/py-extremes \
+		${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:${PORTSDIR}/devel/py-protocols-devel
+
+PYDISTUTILS_AUTOPLIST=	yes
+PYDISTUTILS_PKGVERSION=	0.5a1.dev_r2717
+
+USE_PYDISTUTILS=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGVERSION=	0.5a1.dev_r2506
-PYEASYINSTALL_ARCHDEP=	yes
 
-PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+# to have a platform/release indipendent directory (necessary for strip cmd)
+pre-build:
+	@(cd ${BUILD_WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-platlib -s FreeBSD.build)
 
-NO_STAGE=	yes
+pre-install:
+	@${STRIP_CMD} ${WRKSRC}/FreeBSD.build/dispatch/_d_speedups.so
+
 .include <bsd.port.mk>
