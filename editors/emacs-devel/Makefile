@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-PORTVERSION=	${EMACS_VER}.${EMACS_REV}
+PORTVERSION=	${EMACS_VER}
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
-MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ashish
+MASTER_SITES=	GNU_ALPHA
+MASTER_SITE_SUBDIR=	emacs/pretest	
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -21,17 +20,16 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 
-EMACS_VER=	24.3.50
-EMACS_REV=	116732
+EMACS_VER=	24.3.90
 GNU_CONFIGURE=	yes
-USES=		ncurses pkgconfig
-USE_GMAKE=	yes
-USE_XZ=		yes
+USES=		ncurses pkgconfig gmake shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO_PATH=	${DATADIR_REL}/info
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env
+USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env autoheader:env
+
+SHEBANG_FILES=	${WRKSRC}/lib-src/grep-changelog
 
 # Append --without-compress-install to prevent emacs from compressing info
 # which bsd.port.mk is not able to detect
@@ -46,8 +44,8 @@ MAKE_ENV=	LC_ALL=C
 
 INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 		ebrowse ede ediff edt efaq eieio eintr elisp emacs-mime emacs-gnutls emacs epa \
-		erc ert eshell eudc flymake forms gnus htmlfontify idlwave ido info \
-		mairix-el message mh-e newsticker nxml-mode \
+		erc ert eshell eudc eww flymake forms gnus htmlfontify idlwave ido info \
+		mairix-el message mh-e newsticker nxml-mode octave-mode \
 		org pcl-cvs pgg rcirc reftex remember sasl sc semantic ses sieve \
 		smtpmail speedbar srecode todo-mode tramp url vip viper widget wisent woman
 
@@ -84,13 +82,13 @@ SOUND_CONFIGURE_OFF=	--with-sound=no
 ALSA_CONFIGURE_ON=		--with-sound=alsa
 OSS_CONFIGURE_ON=		--with-sound=oss
 
-DBUS_LIB_DEPENDS=		dbus-1:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=		libdbus-1.so:${PORTSDIR}/devel/dbus
 DBUS_CONFIGURE_WITH=		dbus
 
 GNUTLS_CONFIGURE_WITH=	gnutls
 
-GNUTLS3_LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls3
-GNUTLS2_LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
+GNUTLS3_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls3
+GNUTLS2_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
 XML_USE=		GNOME=libxml2
 XML_CONFIGURE_WITH=	xml2
@@ -107,7 +105,7 @@ GTK2_CONFIGURE_ON=	--with-x-toolkit=gtk2
 GTK3_USE=	GNOME=gtk30
 GTK3_CONFIGURE_ON=	--with-x-toolkit=gtk3
 
-XAW3D_LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 XAW3D_CONFIGURE_ON=	--with-x-toolkit=athena
 
 XAW_USE=	XORG=xaw
@@ -120,32 +118,32 @@ SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 
 SYNC_INPUT_CONFIGURE_WITH=	sync-input
 
-JPEG_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 JPEG_CONFIGURE_WITH=	jpeg
 
-TIFF_LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 TIFF_CONFIGURE_WITH=	tiff
 
-GIF_LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib
+GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 GIF_CONFIGURE_WITH=	gif
 
-PNG_LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 PNG_CONFIGURE_WITH=	png
 
 XPM_USE=		XORG=xpm
 XPM_CONFIGURE_WITH=	xpm
 
 XFT_USE=		XORG=xft
-XFT_LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+XFT_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 XFT_CONFIGURE_WITH=	xft
 
-M17N_LIB_DEPENDS=	m17n:${PORTSDIR}/devel/m17n-lib
+M17N_LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib
 M17N_CONFIGURE_WITH=	m17n-flt
 
-OTF_LIB_DEPENDS=	otf:${PORTSDIR}/print/libotf
+OTF_LIB_DEPENDS=	libotf.so:${PORTSDIR}/print/libotf
 OTF_CONFIGURE_WITH=	libotf
 
-MAGICK_LIB_DEPENDS=	MagickCore:${PORTSDIR}/graphics/ImageMagick
+MAGICK_LIB_DEPENDS=	libMagickCore.so:${PORTSDIR}/graphics/ImageMagick
 MAGICK_CONFIGURE_WITH=	imagemagick
 
 GSETTINGS_USE=			gnome=glib20
