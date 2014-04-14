@@ -13,8 +13,8 @@ COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
 
 USES=		gmake zip
 MAKEFILE=	posix.mak
-EXAMPLESDIR=	${PREFIX}/share/examples/dmd
-DOCSDIR=	${PREFIX}/share/doc/dmd
+EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
+DOCSDIR=	${PREFIX}/share/doc/dmd2
 PORTDOCS=	*.txt druntime/ html/
 WRKSRC=		${WRKDIR}/dmd2/src/${PORTNAME}
 LICENSE_COMB=	multi
