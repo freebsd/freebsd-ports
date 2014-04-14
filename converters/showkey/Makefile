@@ -7,7 +7,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://catb.org/~esr/showkey/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prints its input, with escapes such as "<NUL>"
 
 LICENSE=	MIT
