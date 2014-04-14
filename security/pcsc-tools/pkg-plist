@@ -2,5 +2,9 @@ bin/pcsc_scan
 bin/ATR_analysis
 bin/gscriptor
 bin/scriptor
+man/man1/ATR_analysis.1p.gz
+man/man1/gscriptor.1p.gz
+man/man1/pcsc_scan.1.gz
+man/man1/scriptor.1p.gz
 share/pcsc/smartcard_list.txt
 @dirrm share/pcsc
