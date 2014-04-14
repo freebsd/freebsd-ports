@@ -1,0 +1,20 @@
+===============================================================================
+
+Twitch has been installed.
+
+All options are given only in the command line
+
+
+You can use executable
+
+    %%DATADIR%%/twitch.py --help
+
+
+Or can use desktop file
+
+    %%LOCALBASE%%/share/applications/twitch.desktop
+
+
+Have fun!
+
+===============================================================================
