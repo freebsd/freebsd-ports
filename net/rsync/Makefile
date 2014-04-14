@@ -3,7 +3,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -24,7 +24,7 @@ USE_RC_SUBR=	rsyncd
 SUB_LIST=	NAME=rsyncd
 
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
-		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
+		--with-rsyncd-conf=${ETCDIR}/rsyncd.conf
 
 PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 
@@ -51,7 +51,7 @@ ACL_DESC=	Add backward-compatibility for the --acls option
 RENFL_DESC=	Renamed and flags options combined
 
 # define default options
-OPTIONS_DEFAULT=SSH ZLIB_BASE
+OPTIONS_DEFAULT=SSH ZLIB_BASE FLAGS
 
 .include <bsd.port.options.mk>
 
@@ -69,7 +69,7 @@ PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/atimes.diff
 .endif
 
-.if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED} || ${PORT_OPTIONS:MRENFL} 
+.if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED} || ${PORT_OPTIONS:MRENFL}
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
@@ -128,12 +128,13 @@ CONFIGURE_ARGS+=ac_cv_search_libiconv_open=no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|perl.*|${DO_NADA}|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's:/etc/:${PREFIX}/etc/:g'  \
+	@${REINPLACE_CMD} -e 's:/etc/:${ETCDIR}/:g'  \
 		${WRKSRC}/rsync.h ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rsync
-	${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${STAGEDIR}${ETCDIR}/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
