@@ -3,26 +3,54 @@
 
 PORTNAME=	twitch
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Twitch/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Twitch/${PORTVERSION}/ \
+                SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=      ${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+                ${PORTNAME}.png:icons
+EXTRACT_ONLY=   ${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Overhead 2-d shooter, reminiscent of games like Robotron
+
+LICENSE=        GPLv2
 
 RUN_DEPENDS=	${PYGAME}
 
 USE_PYTHON=	yes
 
+PORTDOCS=	AUTHORS BUGS README
+OPTIONS_DEFINE=	DOCS
+
+SUB_FILES=	${PORTNAME} pkg-message
+
+DESKTOP_ENTRIES="Twitch" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ActionGame;" ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^.*#!.*python.*$$|#!${PYTHON_CMD}|; \
+		s|whrandom|random|' \
+		${WRKSRC}/${PORTNAME}.py
+	@(cd ${WRKSRC} && ${RM} *.py.bak)
+
 do-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${WRKSRC}
+	@${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/twitch
-	(cd ${WRKSRC}; ${TAR} cf - images sound levels twitch.*) | \
-		(cd ${STAGEDIR}${PREFIX}/share/twitch; ${TAR} xf -)
-	@printf "#!/bin/sh\ncd ${PREFIX}/share/twitch && \
-		${PYTHON_CMD} ${PREFIX}/share/twitch/twitch.py\n" > ${WRKDIR}/twitch.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/twitch.sh ${STAGEDIR}${PREFIX}/bin/twitch
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+		${WRKDIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "images levels sound" \
+		${STAGEDIR}${DATADIR})
+.for f in *.py *.pyc *.pyo
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
+.endfor
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
