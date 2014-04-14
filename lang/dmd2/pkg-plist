@@ -1,8 +1,8 @@
-bin/dmd2
+bin/dmd
 lib/libphobos2.a
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/dmd2.conf %D/etc/dmd2.conf; then rm -f %D/etc/dmd2.conf; fi
-%%EXAMPLESDIR%%/dmd2.conf
-@exec if [ ! -f %D/etc/dmd2.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dmd2.conf %D/etc/dmd2.conf; fi
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/dmd.conf %D/etc/dmd.conf; then rm -f %D/etc/dmd.conf; fi
+%%EXAMPLESDIR%%/dmd.conf
+@exec if [ ! -f %D/etc/dmd.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dmd.conf %D/etc/dmd.conf; fi
 %%EXAMPLESDIR%%/samples/d/all.sh
 %%EXAMPLESDIR%%/samples/d/build.bat
 %%EXAMPLESDIR%%/samples/d/chello.d
@@ -33,6 +33,8 @@ include/d/druntime/import/core/atomic.d
 include/d/druntime/import/core/bitop.d
 include/d/druntime/import/core/cpuid.d
 include/d/druntime/import/core/demangle.d
+include/d/druntime/import/core/internal/convert.d
+include/d/druntime/import/core/internal/hash.d
 include/d/druntime/import/core/exception.d
 include/d/druntime/import/core/math.d
 include/d/druntime/import/core/memory.d
@@ -85,6 +87,7 @@ include/d/druntime/import/core/sys/linux/sys/inotify.d
 include/d/druntime/import/core/sys/linux/sys/mman.d
 include/d/druntime/import/core/sys/linux/sys/signalfd.d
 include/d/druntime/import/core/sys/linux/sys/xattr.d
+include/d/druntime/import/core/sys/linux/termios.d
 include/d/druntime/import/core/sys/osx/execinfo.d
 include/d/druntime/import/core/sys/osx/mach/kern_return.d
 include/d/druntime/import/core/sys/osx/mach/port.d
@@ -141,7 +144,6 @@ include/d/druntime/import/core/time.d
 include/d/druntime/import/core/vararg.d
 include/d/druntime/import/etc/linux/memoryerror.d
 include/d/druntime/import/object.di
-include/d/phobos2/crc32.d
 include/d/phobos2/etc/c/curl.d
 include/d/phobos2/etc/c/sqlite3.d
 include/d/phobos2/etc/c/zlib.d
@@ -155,6 +157,7 @@ include/d/phobos2/std/bitmanip.d
 include/d/phobos2/std/c/fenv.d
 include/d/phobos2/std/c/freebsd/socket.d
 include/d/phobos2/std/c/linux/linux.d
+include/d/phobos2/std/c/linux/linuxextern.d
 include/d/phobos2/std/c/linux/pthread.d
 include/d/phobos2/std/c/linux/socket.d
 include/d/phobos2/std/c/linux/termios.d
@@ -212,7 +215,6 @@ include/d/phobos2/std/internal/windows/advapi32.d
 include/d/phobos2/std/json.d
 include/d/phobos2/std/math.d
 include/d/phobos2/std/mathspecial.d
-include/d/phobos2/std/md5.d
 include/d/phobos2/std/metastrings.d
 include/d/phobos2/std/mmfile.d
 include/d/phobos2/std/net/curl.d
@@ -237,6 +239,7 @@ include/d/phobos2/std/syserror.d
 include/d/phobos2/std/system.d
 include/d/phobos2/std/traits.d
 include/d/phobos2/std/typecons.d
+include/d/phobos2/std/typelist.d
 include/d/phobos2/std/typetuple.d
 include/d/phobos2/std/uni.d
 include/d/phobos2/std/uri.d
@@ -251,8 +254,8 @@ include/d/phobos2/std/xml.d
 include/d/phobos2/std/zip.d
 include/d/phobos2/std/zlib.d
 include/d/phobos2/unittest.d
-man/man1/dmd2.1.gz
-man/man5/dmd2.conf.5.gz
+man/man1/dmd.1.gz
+man/man5/dmd.conf.5.gz
 @dirrm %%EXAMPLESDIR%%/samples/d/mydll
 @dirrm %%EXAMPLESDIR%%/samples/d
 @dirrm %%EXAMPLESDIR%%/samples
@@ -290,6 +293,7 @@ man/man5/dmd2.conf.5.gz
 @dirrm include/d/druntime/import/core/sys
 @dirrm include/d/druntime/import/core/sync
 @dirrm include/d/druntime/import/core/stdc
+@dirrm include/d/druntime/import/core/internal
 @dirrm include/d/druntime/import/core
 @dirrm include/d/druntime/import
 @dirrm include/d/druntime
