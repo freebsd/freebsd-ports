@@ -247,7 +247,6 @@
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
     SUBDIR += l5
-    SUBDIR += labrea
     SUBDIR += lasso
     SUBDIR += libassuan
     SUBDIR += libbf
