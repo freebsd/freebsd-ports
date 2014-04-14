@@ -12,8 +12,6 @@ COMMENT=	Official compiler for the D 1.0 programming language
 
 NO_PACKAGE=	Packages are not validation-tested by the developer
 USES=		gmake zip
-MAN1=		dmd.1
-MAN5=		dmd.conf.5
 PORTDOCS=	*.txt html/ phobos/
 WRKSRC=		${WRKDIR}/${PORTNAME}/src/${PORTNAME}
 LICENSE_COMB=	multi
@@ -25,7 +23,6 @@ LICENSE_PERMS_DMD=	no-pkg-mirror auto-accept
 OPTIONS_DEFINE=	SOURCE DOCS
 SOURCE_DESC=	Compile dmd and phobos from source
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MODULEDIR=	${PREFIX}/include/d/phobos
@@ -54,6 +51,7 @@ post-patch:
 		${WRKDIR}/dmd/man/man1/dmd.1		\
 		${WRKDIR}/dmd/man/man1/dmd.conf.5
 	@${REINPLACE_CMD} -e 's|"/etc/"|"${PREFIX}/etc/"|' ${WRKSRC}/inifile.c
+	@${REINPLACE_CMD} -e 's|dmd.conf|dmd2.conf|' ${WRKSRC}/mars.c
 .endif
 	@${REINPLACE_CMD} -e "s|%@P%/../../src/phobos|${MODULEDIR}|" ${WRKDIR}/dmd/freebsd/bin32/dmd.conf
 	@${CP} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${WRKDIR}/dmd/freebsd/bin32/dmd.conf.tango
@@ -67,31 +65,31 @@ post-build:
 	@${REINPLACE_CMD} -e "s| etc/c/zlib/gzio.o||" ${WRKSRC}/../phobos/freebsd.mak
 
 do-install:
-	${INSTALL_MAN} ${WRKDIR}/dmd/man/man1/dmd.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/dmd/man/man1/dmd.conf.5 ${MANPREFIX}/man/man5
-.if !exists(${PREFIX}/etc/dmd.conf)
-	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKDIR}/dmd/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd1.1
+	${INSTALL_MAN} ${WRKDIR}/dmd/man/man1/dmd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/dmd1.conf.5
+.if !exists(${STAGEDIR}${PREFIX}/etc/dmd.conf)
+	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${STAGEDIR}${PREFIX}/etc
 .endif
-	${INSTALL_PROGRAM} ${WRKDIR}/dmd/freebsd/bin32/dmd ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/lib32/libphobos.a ${PREFIX}/lib
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf.tango ${EXAMPLESDIR}
-	cd ${WRKDIR}/dmd && ${COPYTREE_SHARE} samples ${EXAMPLESDIR}
-	${MKDIR} ${MODULEDIR}
-	${INSTALL_DATA} ${WRKSRC}/../phobos/*.d ${MODULEDIR}
-	${MKDIR} ${MODULEDIR}/etc
-	${INSTALL_DATA} ${WRKSRC}/../phobos/etc/gamma.d ${MODULEDIR}/etc
-	${MKDIR} ${MODULEDIR}/etc/c
-	${INSTALL_DATA} ${WRKSRC}/../phobos/etc/c/zlib.d ${MODULEDIR}/etc/c
-	cd ${WRKSRC}/../phobos && ${COPYTREE_SHARE} std ${MODULEDIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/dmd/freebsd/bin32/dmd ${STAGEDIR}${PREFIX}/bin/dmd1
+	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/lib32/libphobos.a ${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd1.conf
+	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf.tango ${STAGEDIR}${EXAMPLESDIR}/dmd1.conf.tango
+	cd ${WRKDIR}/dmd && ${COPYTREE_SHARE} samples ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${MODULEDIR}
+	${INSTALL_DATA} ${WRKSRC}/../phobos/*.d ${STAGEDIR}${MODULEDIR}
+	${MKDIR} ${STAGEDIR}${MODULEDIR}/etc
+	${INSTALL_DATA} ${WRKSRC}/../phobos/etc/gamma.d ${STAGEDIR}${MODULEDIR}/etc
+	${MKDIR} ${STAGEDIR}${MODULEDIR}/etc/c
+	${INSTALL_DATA} ${WRKSRC}/../phobos/etc/c/zlib.d ${STAGEDIR}${MODULEDIR}/etc/c
+	cd ${WRKSRC}/../phobos && ${COPYTREE_SHARE} std ${STAGEDIR}${MODULEDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-	cd ${WRKDIR}/dmd && ${COPYTREE_SHARE} html ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/phobos
-	${INSTALL_DATA} ${WRKSRC}/../phobos/phoboslicense.txt ${DOCSDIR}/phobos
-	${INSTALL_DATA} ${WRKSRC}/../phobos/std.ddoc ${DOCSDIR}/phobos
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/dmd && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/phobos
+	${INSTALL_DATA} ${WRKSRC}/../phobos/phoboslicense.txt ${STAGEDIR}${DOCSDIR}/phobos
+	${INSTALL_DATA} ${WRKSRC}/../phobos/std.ddoc ${STAGEDIR}${DOCSDIR}/phobos
 .endif
 
 .include <bsd.port.mk>
