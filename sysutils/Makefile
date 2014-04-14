@@ -709,6 +709,7 @@
     SUBDIR += pp
     SUBDIR += pprotectd
     SUBDIR += prelink
+    SUBDIR += preload
     SUBDIR += prips
     SUBDIR += procenv
     SUBDIR += procmap

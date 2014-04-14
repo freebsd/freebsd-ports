@@ -1,0 +1,21 @@
+--- src/preload.8.orig	2014-04-11 10:37:42.730280297 -0400
++++ src/preload.8	2014-04-11 10:38:36.390585699 -0400
+@@ -17,15 +17,15 @@
+ .TP
+ \fB\-c\fR, \fB\-\-conffile\fR
+ Set configuration file. Empty string means no conf file.
+-(default is /home/behdad/.local/etc/preload.conf)
++(default is /usr/local/etc/preload.conf)
+ .TP
+ \fB\-s\fR, \fB\-\-statefile\fR
+ Set state file to load/save. Empty string means no state.
+-(default is /home/behdad/.local/var/lib/preload/preload.state)
++(default is /var/lib/preload/preload.state)
+ .TP
+ \fB\-l\fR, \fB\-\-logfile\fR
+ Set log file. Empty string means to log to stderr.
+-(default is /home/behdad/.local/var/log/preload.log)
++(default is /var/log/preload.log)
+ .TP
+ \fB\-f\fR, \fB\-\-foreground\fR
+ Run in foreground, do not daemonize.

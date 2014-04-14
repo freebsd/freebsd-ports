@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	2009-04-15 17:49:28.000000000 -0400
++++ src/Makefile.in	2014-04-10 15:18:55.150886321 -0400
+@@ -605,7 +605,7 @@
+ 
+ install-data-am: install-man
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
++	$(MAKE) $(AM_MAKEFLAGS)
+ 
+ install-dvi: install-dvi-am
+ 
+@@ -684,9 +684,6 @@
+ 	      echo Failed to update preload.8, the man page may be outdated >&2; \
+ 	      (test -f "$@" || echo help2man is required to generate this file. >> "$@"));
+ 
+-install-data-hook:
+-	@cd "$(DESTDIR)$(man8dir)" && gzip -c preload.8 > preload.8.gz.tmp && mv preload.8.gz.tmp preload.8.gz && $(RM) preload.8
+-
+ uninstall-hook:
+ 	$(RM) "$(DESTDIR)$(man8dir)/preload.8.gz"
+ 

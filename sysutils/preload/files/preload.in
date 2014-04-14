@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# PROVIDE: preload
+# REQUIRE: DAEMON
+# KEYWORD: nojail shutdown
+
+. /etc/rc.subr
+
+name=preload
+rcvar=preload_enable
+command="/usr/local/sbin/${name}"
+command_args="-s /var/lib/preload/preload.state -c /usr/local/etc/preload.conf"
+load_rc_config $name
+run_rc_command "$1"
