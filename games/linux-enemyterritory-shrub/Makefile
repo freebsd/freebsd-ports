@@ -26,7 +26,6 @@ PLIST_FILES=	bin/et-${PORTNAME} \
 		%%DATADIR%%/qagame.mp.i386.so
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-build:
 .for f in et etded
 	@(${ECHO} "#!/bin/sh"; \
@@ -36,9 +35,9 @@ do-build:
 
 do-install:
 .for f in et etded
-	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
