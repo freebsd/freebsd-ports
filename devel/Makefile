@@ -3597,6 +3597,7 @@
     SUBDIR += py-epsilon
     SUBDIR += py-event
     SUBDIR += py-experimental.cssselect
+    SUBDIR += py-extras
     SUBDIR += py-extremes
     SUBDIR += py-ezpyinline
     SUBDIR += py-fabric
