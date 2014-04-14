@@ -178,7 +178,10 @@ post-patch:
 .if ${PORT_OPTIONS:MCMAKE}
 post-configure:
 	${MKDIR} ${WRKDIR}/cmake
-	cd ${WRKDIR}/cmake && cmake -G "Unix Makefiles" ${WRKSRC}
+	cd ${WRKDIR}/cmake && cmake -G "Unix Makefiles" \
+	    -DCMAKE_C_COMPILER:STRING="${CC}" \
+	    -DCMAKE_CXX_COMPILER:STRING="${CXX}" \
+	    ${WRKSRC}
 	${REINPLACE_CMD} -e 's|${WRKDIR}/cmake|${LLVM_PREFIX}|' \
 	    -e 's|${WRKSRC}/cmake/modules|${DATADIR}/cmake|' \
 	    ${WRKDIR}/cmake/share/llvm/cmake/LLVMConfig.cmake
