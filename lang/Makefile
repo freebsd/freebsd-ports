@@ -47,7 +47,7 @@
     SUBDIR += cython
     SUBDIR += diveintopython
     SUBDIR += dlv
-    SUBDIR += dmd
+    SUBDIR += dmd1
     SUBDIR += dmd2
     SUBDIR += dragonegg-devel46
     SUBDIR += dragonegg46-33

@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140414:
+  AFFECTS: Users of dmd 1.X and dmd 2.x.
+  AUTHOR: cy@FreeBSD.org
+
+  lang/dmd and lang/dmd2 have switched places. Dmd 1.x is no longer supported
+  by digitalmars.com and is now the secondary dmd port in the collection.
+  Dmd2 is the primary port. What this means to dmd users is that dmd1 is now
+  used to invoke dmd 1.x and the dmd command (instead of dmd2) now invokes
+  dmd 2.x.
+
 20140413:
   AFFECTS: Users of Python and pkg >= 1.2.7_1
   AUTHOR: koobs@FreeBSD.org
