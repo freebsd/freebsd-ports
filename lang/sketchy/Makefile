@@ -6,7 +6,7 @@ PORTVERSION=	20070218
 CATEGORIES=	lang devel lisp scheme
 MASTER_SITES=	http://www.t3x.org/files/
 
-MAINTAINER=	nmh@t3x.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interpreter for purely applicative Scheme
 
 USE_LDCONFIG=	yes
