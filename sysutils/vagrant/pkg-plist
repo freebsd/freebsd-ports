@@ -721,6 +721,22 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.travis.yml
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.vimrc
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.yardopts
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/omnios/cap/mount_nfs_folder.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/config.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/guest.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/plugin.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap/change_host_name.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap/configure_networks.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap/halt.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap/mount_nfs.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap/rsync.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/suse/cap/halt.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/synced_folders/smb/scripts/ps_version.ps1
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/change_host_name_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/configure_networks_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/halt_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/mount_nfs_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/rsync_test.rb
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/util
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/plugin/v2
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/plugin/v1
@@ -755,6 +771,10 @@ bin/vagrant
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/kernel_v2
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/ubuntu/cap
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/ubuntu
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/support/shared
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/support
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/redhat/cap
@@ -969,3 +989,10 @@ bin/vagrant
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/contrib
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/bin
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%
+@unexec rmdir %D/%%GEMS_DIR%%/doc 2>/dev/null || true
+@unexec rmdir %D/%%GEMS_DIR%%/specifications 2>/dev/null || true
+@unexec rmdir %D/%%GEMS_DIR%%/gems 2>/dev/null || true
+@unexec rmdir %D/%%GEMS_DIR%%/cache 2>/dev/null || true
+@unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%% 2>/dev/null || true
+@unexec rmdir %D/lib/ruby/gems 2>/dev/null || true
+@unexec rmdir %D/lib/ruby 2>/dev/null || true
