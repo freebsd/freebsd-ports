@@ -5997,3 +5997,4 @@ graphics/camediaplay||2014-04-13|Has expired: Unmaintained since 2001
 math/umatrix||2014-04-13|Has expired: Unmaintained since 2001
 lang/f77||2014-04-13|Has expired: Unmaintained since 2001
 security/labrea||2014-04-14|Has expired: Unmaintained since 2003
+lang/dmd|lang/dmd1|2014-04-14|Upline no longer supports dmd 1.X, it is now the secondary dmd port.
