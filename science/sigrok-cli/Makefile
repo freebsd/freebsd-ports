@@ -12,9 +12,6 @@ COMMENT=	Framework for hardware logic analyzers, CLI client
 
 LICENSE=	GPLv3
 
-DEPRECATED=		Depends on expiring lang/python31
-EXPIRATION_DATE=	2014-06-01
-
 LIB_DEPENDS=	libsigrok.so:${PORTSDIR}/devel/libsigrok \
 		libsigrokdecode.so:${PORTSDIR}/devel/libsigrokdecode
 

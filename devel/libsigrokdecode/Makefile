@@ -3,6 +3,7 @@
 
 PORTNAME=	libsigrokdecode
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrokdecode/
 
@@ -11,12 +12,9 @@ COMMENT=	Framework for hardware logic analyzers, protocol decoders library
 
 LICENSE=	GPLv3
 
-DEPRECATED=		Depends on expiring lang/python31
-EXPIRATION_DATE=	2014-06-01
-
-USE_PYTHON=	3.1
+USE_PYTHON=	3
 GNU_CONFIGURE=	yes
-USES=	gmake pkgconfig pathfix
+USES=		gmake pkgconfig pathfix
 USE_GNOME=	gtk20
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
