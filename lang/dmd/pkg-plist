@@ -1,8 +1,8 @@
-bin/dmd
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/dmd.conf %D/etc/dmd.conf; then rm -f %D/etc/dmd.conf; fi
-%%EXAMPLESDIR%%/dmd.conf
-@exec if [ ! -f %D/etc/dmd.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dmd.conf %D/etc/dmd.conf; fi
-%%EXAMPLESDIR%%/dmd.conf.tango
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/dmd1.conf %D/etc/dmd1.conf; then rm -f %D/etc/dmd1.conf; fi
+%%EXAMPLESDIR%%/dmd1.conf
+@exec if [ ! -f %D/etc/dmd1.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dmd1.conf %D/etc/dmd1.conf; fi
+bin/dmd1
+%%EXAMPLESDIR%%/dmd1.conf.tango
 %%EXAMPLESDIR%%/samples/d/all.sh
 %%EXAMPLESDIR%%/samples/d/chello.d
 %%EXAMPLESDIR%%/samples/d/d2html.d
@@ -164,6 +164,8 @@ include/d/phobos/std/windows/syserror.d
 include/d/phobos/std/zip.d
 include/d/phobos/std/zlib.d
 include/d/phobos/unittest.d
+man/man1/dmd1.1.gz
+man/man5/dmd1.conf.5.gz
 @dirrm %%EXAMPLESDIR%%/samples/d/mydll
 @dirrm %%EXAMPLESDIR%%/samples/d
 @dirrm %%EXAMPLESDIR%%/samples
