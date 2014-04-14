@@ -41,6 +41,9 @@
 %%WWWDIR%%/app/panels/filtering/meta.html
 %%WWWDIR%%/app/panels/filtering/module.html
 %%WWWDIR%%/app/panels/filtering/module.js
+%%WWWDIR%%/app/panels/goal/editor.html
+%%WWWDIR%%/app/panels/goal/module.html
+%%WWWDIR%%/app/panels/goal/module.js
 %%WWWDIR%%/app/panels/histogram/editor.html
 %%WWWDIR%%/app/panels/histogram/module.html
 %%WWWDIR%%/app/panels/histogram/module.js
@@ -55,9 +58,6 @@
 %%WWWDIR%%/app/panels/map/lib/map.world.js
 %%WWWDIR%%/app/panels/map/module.html
 %%WWWDIR%%/app/panels/map/module.js
-%%WWWDIR%%/app/panels/pie/editor.html
-%%WWWDIR%%/app/panels/pie/module.html
-%%WWWDIR%%/app/panels/pie/module.js
 %%WWWDIR%%/app/panels/query/editor.html
 %%WWWDIR%%/app/panels/query/editors/lucene.html
 %%WWWDIR%%/app/panels/query/editors/regex.html
@@ -109,9 +109,7 @@
 %%WWWDIR%%/app/partials/querySelect.html
 %%WWWDIR%%/app/partials/roweditor.html
 %%WWWDIR%%/build.txt
-@unexec if cmp -s %D/%%WWWDIR%%/config.js %D/%%WWWDIR%%/config.js.sample; then rm -f %D/%%WWWDIR%%/config.js; fi
-%%WWWDIR%%/config.js.sample
-@exec if [ ! -f %B/config.js ]; then cp -p %B/%f %B/config.js; fi
+@sample %%WWWDIR%%/config.js.sample
 %%WWWDIR%%/css/animate.min.css
 %%WWWDIR%%/css/bootstrap-responsive.min.css
 %%WWWDIR%%/css/bootstrap.dark.less
@@ -121,11 +119,13 @@
 %%WWWDIR%%/css/font-awesome.min.css
 %%WWWDIR%%/css/normalize.min.css
 %%WWWDIR%%/css/timepicker.css
+%%WWWDIR%%/favicon.ico
 %%WWWDIR%%/font/FontAwesome.otf
 %%WWWDIR%%/font/fontawesome-webfont.eot
 %%WWWDIR%%/font/fontawesome-webfont.svg
 %%WWWDIR%%/font/fontawesome-webfont.ttf
 %%WWWDIR%%/font/fontawesome-webfont.woff
+%%WWWDIR%%/img/annotation-icon.png
 %%WWWDIR%%/img/cubes.png
 %%WWWDIR%%/img/glyphicons-halflings-white.png
 %%WWWDIR%%/img/glyphicons-halflings.png
@@ -167,11 +167,11 @@
 @dirrm %%WWWDIR%%/app/panels/query/help
 @dirrm %%WWWDIR%%/app/panels/query/editors
 @dirrm %%WWWDIR%%/app/panels/query
-@dirrm %%WWWDIR%%/app/panels/pie
 @dirrm %%WWWDIR%%/app/panels/map/lib
 @dirrm %%WWWDIR%%/app/panels/map
 @dirrm %%WWWDIR%%/app/panels/hits
 @dirrm %%WWWDIR%%/app/panels/histogram
+@dirrm %%WWWDIR%%/app/panels/goal
 @dirrm %%WWWDIR%%/app/panels/filtering
 @dirrm %%WWWDIR%%/app/panels/fields
 @dirrm %%WWWDIR%%/app/panels/derivequeries
