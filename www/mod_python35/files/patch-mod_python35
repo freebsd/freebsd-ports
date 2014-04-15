@@ -1,0 +1,341 @@
+diff -nru ./Doc/Makefile.in ./Doc/Makefile.in
+--- ./Doc/Makefile.in	2013-11-12 04:21:34.000000000 +0100
++++ ./Doc/Makefile.in	2014-04-15 17:27:39.000000000 +0200
+@@ -16,7 +16,7 @@
+                 $(SPHINXOPTS) . build/$(BUILDER) $(SOURCES)
+ 
+ .PHONY: help checkout update build html htmlhelp latex text changes linkcheck \
+-	suspicious coverage htmlview distclean clean dist check serve \
++	suspicious coverage htmlview clean dist check serve \
+ 	autobuild-dev autobuild-stable
+ 
+ help:
+@@ -102,8 +102,6 @@
+ htmlview: html
+ 	 $(PYTHON) -c "import webbrowser; webbrowser.open('build/html/index.html')"
+ 
+-distclean: clean
+-
+ clean:
+ 	-rm -rf build/*
+ 	-rm -rf tools/sphinx
+diff -nru ./Doc/changes.rst ./Doc/changes.rst
+--- ./Doc/changes.rst	2013-11-12 04:21:34.000000000 +0100
++++ ./Doc/changes.rst	2014-04-15 17:27:39.000000000 +0200
+@@ -5,22 +5,6 @@
+ Changes
+ *******
+ 
+-.. _changes_from_3_4_1:
+-
+-Changes from version 3.4.1
+-==========================
+-
+-New Features
+-------------
+-
+-* Support for Python 3.3
+-
+-Improvements
+-------------
+-
+-* Simpler, faster and up-to-date with latest Python code for creating/maintaining interpreter and thread state.
+-* A much faster WSGI implementation (start_response now implemented in C)
+-
+ .. _changes_from_3_3_1:
+ 
+ Changes from version 3.3.1
+diff -nru ./NEWS ./NEWS
+--- ./NEWS	2013-11-12 04:21:34.000000000 +0100
++++ ./NEWS	2014-04-15 17:27:39.000000000 +0200
+@@ -1,3 +1,5 @@
++Nov  13 2013 -  3.5.0 released
++
+ Oct  22 2013 -  3.4.1 released
+ 
+ Jan  29 2007 -  3.3.1 is being tagged
+diff -nru ./configure ./configure
+--- ./configure	2013-11-12 04:21:34.000000000 +0100
++++ ./configure	2014-04-15 17:27:39.000000000 +0200
+@@ -3340,11 +3340,7 @@
+ PyMINVERSION=`$PYTHON_BIN -c 'import sys; print(sys.version.split(".")[1])'`
+ { $as_echo "$as_me:$LINENO: result: $PyVERSION" >&5
+ $as_echo "$PyVERSION" >&6; }
+-if test -z "$PyMAJVERSION"; then
+-  { { $as_echo "$as_me:$LINENO: error: Unable to get Python version - is your Python working?" >&5
+-$as_echo "$as_me: error: Unable to get Python version - is your Python working?" >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
++
+ # make sure Python version is >= 2.6 for 2 and >= 3.3 for 3
+ if test "$PyMAJVERSION" -lt "2"; then
+   { { $as_echo "$as_me:$LINENO: error: This version of mod_python only works with Python major version 2 or higher. The one you have seems to be $PyVERSION." >&5
+@@ -3395,8 +3391,7 @@
+     LDFLAGS="${LDFLAGS1} ${LDFLAGS2}"
+ 
+     if test "$PyMAJVERSION" -eq "3"; then
+-        PyLDVERSION=`$PYTHON_BIN -c 'from distutils import sysconfig; print(sysconfig.get_config_var("LDVERSION"))'`
+-        LDLIBS1="-lpython${PyLDVERSION}"
++        LDLIBS1="-lpython${PyMAJVERSION}"
+     else
+         LDLIBS1="-lpython${PyVERSION}"
+     fi
+diff -nru ./configure.in ./configure.in
+--- ./configure.in	2013-11-12 04:21:34.000000000 +0100
++++ ./configure.in	2014-04-15 17:27:39.000000000 +0200
+@@ -171,9 +171,7 @@
+ PyMAJVERSION=`$PYTHON_BIN -c ['import sys; print(sys.version[:1])'`]
+ PyMINVERSION=`$PYTHON_BIN -c ['import sys; print(sys.version.split(".")[1])'`]
+ AC_MSG_RESULT($PyVERSION)
+-if test -z "$PyMAJVERSION"; then
+-  AC_MSG_ERROR([Unable to get Python version - is your Python working?])
+-fi
++
+ # make sure Python version is >= 2.6 for 2 and >= 3.3 for 3
+ if test "$PyMAJVERSION" -lt "2"; then
+   AC_MSG_ERROR([This version of mod_python only works with Python major version 2 or higher. The one you have seems to be $PyVERSION.])
+@@ -218,8 +216,7 @@
+     LDFLAGS="${LDFLAGS1} ${LDFLAGS2}"
+ 
+     if test "$PyMAJVERSION" -eq "3"; then
+-        PyLDVERSION=`$PYTHON_BIN -c ['from distutils import sysconfig; print(sysconfig.get_config_var("LDVERSION"))'`]
+-        LDLIBS1="-lpython${PyLDVERSION}"
++        LDLIBS1="-lpython${PyMAJVERSION}"
+     else
+         LDLIBS1="-lpython${PyVERSION}"
+     fi
+@@ -326,9 +323,9 @@
+ 
+   AC_MSG_CHECKING(flex version)
+   FlexVERSION=`$LEX --version | sed 's/version//g' | awk '/flex/ {print $2}'`
+-  Flex_MAJOR=`echo $FlexVERSION| awk -F .  '{print $1}'`
+-  Flex_MINOR=`echo $FlexVERSION| awk -F .  '{print $2}'`
+-  Flex_PATCH=`echo $FlexVERSION| awk -F .  '{print $3}'`
++  Flex_MAJOR=`echo $FlexVERSION| awk -F.  '{print $1}'`
++  Flex_MINOR=`echo $FlexVERSION| awk -F.  '{print $2}'`
++  Flex_PATCH=`echo $FlexVERSION| awk -F.  '{print $3}'`
+ 
+   if test "$Flex_MAJOR" -eq "2" && test "$Flex_MINOR" -eq "5" && test "$Flex_PATCH" -ge "31"; then
+     AC_MSG_RESULT([$FlexVERSION. Good])
+diff -nru ./dist/version.sh ./dist/version.sh
+--- ./dist/version.sh	2013-11-12 04:21:34.000000000 +0100
++++ ./dist/version.sh	2014-04-15 17:27:39.000000000 +0200
+@@ -5,6 +5,17 @@
+ MAJ=`awk '/MP_VERSION_MAJOR/ {print $3}' $MPV_PATH`
+ MIN=`awk '/MP_VERSION_MINOR/ {print $3}' $MPV_PATH`
+ PCH=`awk '/MP_VERSION_PATCH/ {print $3}' $MPV_PATH`
+-GIT=`git describe --always`
+ 
+-echo $MAJ.$MIN.$PCH-$GIT
++# if git exists in path
++if type git >/dev/null 2>&1; then
++    # and we are in a checkout
++    if git rev-parse 2>/dev/null; then
++        # but not on a tag (which means this is a release)
++        if test -z "`git log 'HEAD^!' --format=%d 2>/dev/null | grep 'tag: '`"; then
++            # append git revision hash to version
++            GIT="-`git describe --always`"
++        fi
++    fi
++fi
++
++echo $MAJ.$MIN.$PCH$GIT
+Only in ./: doc-html
+diff -nru ./lib/python/mod_python/Cookie.py ./lib/python/mod_python/Cookie.py
+--- ./lib/python/mod_python/Cookie.py	2013-11-12 04:21:34.000000000 +0100
++++ ./lib/python/mod_python/Cookie.py	2014-04-15 17:27:39.000000000 +0200
+@@ -59,7 +59,7 @@
+ 
+         _valid_attr = (
+             "version", "path", "domain", "secure",
+-            "comment", "max_age",
++            "comment", "expires", "max_age",
+             # RFC 2965
+             "commentURL", "discard", "port",
+             # Microsoft Extension
+diff -nru ./scripts/mod_python.in ./scripts/mod_python.in
+--- ./scripts/mod_python.in	2013-11-12 04:21:34.000000000 +0100
++++ ./scripts/mod_python.in	2014-04-15 17:27:39.000000000 +0200
+@@ -26,7 +26,7 @@
+ import sys
+ import os
+ import platform
+-import io
++import StringIO
+ import mod_python
+ from mod_python import httpdconf
+ 
+@@ -64,7 +64,7 @@
+     if len(args) != 1:
+         parser.error("Must specify <src>")
+ 
+-    exec(compile(open(args[0]).read(), args[0], 'exec'))
++    execfile(args[0])
+ 
+ def cmd_create():
+ 
+@@ -105,7 +105,7 @@
+ 
+     version =  "\n"
+     version += "mod_python:  %s\n" % mod_python.mp_version
+-    version += "             %s\n\n" % repr(os.path.join(mod_python.version.LIBEXECDIR, "mod_python.so"))
++    version += "             %s\n\n" % repr(s.path.join(mod_python.version.LIBEXECDIR, "mod_python.so"))
+     version += "python:      %s\n" % ''.join(sys.version.splitlines())
+     version += "             %s\n\n" % repr(mod_python.version.PYTHON_BIN)
+     version += "httpd:       %s\n" % mod_python.version.HTTPD_VERSION
+diff -nru ./src/Makefile.in ./src/Makefile.in
+--- ./src/Makefile.in	2013-11-12 04:21:34.000000000 +0100
++++ ./src/Makefile.in	2014-04-15 17:27:39.000000000 +0200
+@@ -50,7 +50,7 @@
+ 
+ dso:	mod_python.so
+ 
+-mod_python.so: $(SRCS) @SOLARIS_HACKS@ 
++mod_python.so: $(SRCS) @SOLARIS_HACKS@
+ 	@echo
+ 	@echo 'Building mod_python.so.'
+ 	@echo
+@@ -64,21 +64,17 @@
+ 	rm -f Makefile .depend
+ 
+ version.c:
+-	@MP_GIT_SHA=$$(git describe --always); \
+-	echo > version.c ; \
++	@echo > version.c ; \
+ 	echo "/* THIS FILE IS AUTO-GENERATED BY Makefile */" >> version.c ; \
+ 	echo "#include \"mp_version.h\"" >> version.c ; \
+-	echo "const char * const mp_git_sha = \"$${MP_GIT_SHA}\";" >> version.c ; \
+ 	echo "const int mp_version_major = MP_VERSION_MAJOR;" >> version.c ; \
+ 	echo "const int mp_version_minor = MP_VERSION_MINOR;" >> version.c ; \
+ 	echo "const int mp_version_patch = MP_VERSION_PATCH;" >> version.c ; \
+-	echo "const char * const mp_version_string = MP_VERSION_STRING(MP_VERSION_MAJOR,MP_VERSION_MINOR,MP_VERSION_PATCH) \"-$${MP_GIT_SHA}\";" >> version.c ; \
+-	echo "const char * const mp_version_component = \"mod_python/\" MP_VERSION_STRING(MP_VERSION_MAJOR,MP_VERSION_MINOR,MP_VERSION_PATCH) \"-$${MP_GIT_SHA}\";" >> version.c
+-
+-#	echo "const char * const mp_version_component = \"mod_python/\" #MP_VERSION_MAJOR \".\" #MP_VERSION_MINOR \".\" #MP_VERSION_PATCH \"-$${MP_GIT_SHA}\";" >> version.c
++	echo "const char * const mp_version_string = \"`../dist/version.sh`\";" >> version.c ; \
++	echo "const char * const mp_version_component = \"mod_python/\" \"`../dist/version.sh`\";" >> version.c
+ 
+ # this is a hack to help avoid a gcc/solaris problem
+-# python uses assert() which needs _eprintf(). See 
++# python uses assert() which needs _eprintf(). See
+ # SOLARIS_HACKS above
+ _eprintf.o:
+ 	ar -x `gcc -print-libgcc-file-name` _eprintf.o
+diff -nru ./src/include/mod_python.h ./src/include/mod_python.h
+--- ./src/include/mod_python.h	2013-11-12 04:21:34.000000000 +0100
++++ ./src/include/mod_python.h	2014-04-15 17:27:39.000000000 +0200
+@@ -156,7 +156,6 @@
+ #define MUTEX_DIR "/tmp"
+ 
+ /* version stuff */
+-extern const char * const mp_git_sha;
+ extern const int mp_version_major;
+ extern const int mp_version_minor;
+ extern const int mp_version_patch;
+@@ -267,7 +266,7 @@
+             if (PY_MAJOR_VERSION >= 3 && PY_MINOR_VERSION >= 3 &&       \
+                 PyUnicode_KIND(obj) == PyUnicode_1BYTE_KIND) {          \
+                 if (obj_is_borrowed) Py_INCREF(obj); /* so DECREF ok */ \
+-                str = (char *)PyUnicode_1BYTE_DATA(obj);                \
++                str = PyUnicode_1BYTE_DATA(obj);                        \
+             } else {                                                    \
+                 PyObject *latin = PyUnicode_AsLatin1String(obj);        \
+                 if (latin) {                                            \
+@@ -292,11 +291,11 @@
+     PyObject *result;
+     PyObject *ucode = PyObject_Repr(o);
+     /* we can do this because repr() should never have non-ascii characters XXX (really?) */
+-    char *c = (char *)PyUnicode_1BYTE_DATA(ucode);
++    char *c = PyUnicode_1BYTE_DATA(ucode);
+     if (c[0] == 'b')
+-        result = PyBytes_FromStringAndSize((char *)PyUnicode_1BYTE_DATA(ucode)+1, PyUnicode_GET_LENGTH(ucode)-1);
++        result = PyBytes_FromStringAndSize(PyUnicode_1BYTE_DATA(ucode)+1, PyUnicode_GET_LENGTH(ucode)-1);
+     else
+-        result = PyBytes_FromStringAndSize((char *)PyUnicode_1BYTE_DATA(ucode), PyUnicode_GET_LENGTH(ucode));
++        result = PyBytes_FromStringAndSize(PyUnicode_1BYTE_DATA(ucode), PyUnicode_GET_LENGTH(ucode));
+     Py_DECREF(ucode);
+     return result;
+ }
+diff -nru ./src/include/mod_python.h.in ./src/include/mod_python.h.in
+--- ./src/include/mod_python.h.in	2013-11-12 04:21:34.000000000 +0100
++++ ./src/include/mod_python.h.in	2014-04-15 17:27:39.000000000 +0200
+@@ -156,7 +156,6 @@
+ #define MUTEX_DIR "@MUTEX_DIR@"
+ 
+ /* version stuff */
+-extern const char * const mp_git_sha;
+ extern const int mp_version_major;
+ extern const int mp_version_minor;
+ extern const int mp_version_patch;
+@@ -267,7 +266,7 @@
+             if (PY_MAJOR_VERSION >= 3 && PY_MINOR_VERSION >= 3 &&       \
+                 PyUnicode_KIND(obj) == PyUnicode_1BYTE_KIND) {          \
+                 if (obj_is_borrowed) Py_INCREF(obj); /* so DECREF ok */ \
+-                str = (char *)PyUnicode_1BYTE_DATA(obj);                \
++                str = PyUnicode_1BYTE_DATA(obj);                        \
+             } else {                                                    \
+                 PyObject *latin = PyUnicode_AsLatin1String(obj);        \
+                 if (latin) {                                            \
+@@ -292,11 +291,11 @@
+     PyObject *result;
+     PyObject *ucode = PyObject_Repr(o);
+     /* we can do this because repr() should never have non-ascii characters XXX (really?) */
+-    char *c = (char *)PyUnicode_1BYTE_DATA(ucode);
++    char *c = PyUnicode_1BYTE_DATA(ucode);
+     if (c[0] == 'b')
+-        result = PyBytes_FromStringAndSize((char *)PyUnicode_1BYTE_DATA(ucode)+1, PyUnicode_GET_LENGTH(ucode)-1);
++        result = PyBytes_FromStringAndSize(PyUnicode_1BYTE_DATA(ucode)+1, PyUnicode_GET_LENGTH(ucode)-1);
+     else
+-        result = PyBytes_FromStringAndSize((char *)PyUnicode_1BYTE_DATA(ucode), PyUnicode_GET_LENGTH(ucode));
++        result = PyBytes_FromStringAndSize(PyUnicode_1BYTE_DATA(ucode), PyUnicode_GET_LENGTH(ucode));
+     Py_DECREF(ucode);
+     return result;
+ }
+diff -nru ./src/include/mp_version.h ./src/include/mp_version.h
+--- ./src/include/mp_version.h	2013-11-12 04:21:34.000000000 +0100
++++ ./src/include/mp_version.h	2014-04-15 17:27:39.000000000 +0200
+@@ -10,5 +10,3 @@
+ #define MP_VERSION_MINOR 5
+ #define MP_VERSION_PATCH 0
+ 
+-#define STR(x) #x
+-#define MP_VERSION_STRING(maj, min, p) STR(maj) "." STR(min) "." STR(p)
+diff -nru ./src/mod_python.c ./src/mod_python.c
+--- ./src/mod_python.c	2013-11-12 04:21:34.000000000 +0100
++++ ./src/mod_python.c	2014-04-15 17:27:39.000000000 +0200
+@@ -748,10 +748,10 @@
+                      py_compile_version, py_dynamic_version);
+         ap_log_error(APLOG_MARK, APLOG_ERR, 0, s,
+                      "python_init: Python executable found '%s'.",
+-                     (char *)Py_GetProgramFullPath());
++                     Py_GetProgramFullPath());
+         ap_log_error(APLOG_MARK, APLOG_ERR, 0, s,
+                      "python_init: Python path being used '%s'.",
+-                     (char *)Py_GetPath());
++                     Py_GetPath());
+     }
+ 
+     /* Python version */
+@@ -1795,7 +1795,7 @@
+     }
+ 
+     /* are we in transparent mode? transparent mode is on after an error,
+-       so a fitler can spit out an error without causing infinite loop */
++       so a filter can spit out an error without causing infinite loop */
+     if (ctx->transparent) {
+         if (is_input)
+             return ap_get_brigade(f->next, bb, mode, block, readbytes);
+diff -nru ./src/requestobject.c ./src/requestobject.c
+--- ./src/requestobject.c	2013-11-12 04:21:34.000000000 +0100
++++ ./src/requestobject.c	2014-04-15 17:27:39.000000000 +0200
+@@ -1967,6 +1967,10 @@
+         return 0;
+     }
+     else if (strcmp(name, "args") == 0) {
++        if (val == Py_None) {
++            self->request_rec->args = 0;
++            return 0;
++        }
+         MP_ANYSTR_AS_STR(v, val, 1);
+         if (!v) {
+             Py_DECREF(val); /* MP_ANYSTR_AS_STR */
