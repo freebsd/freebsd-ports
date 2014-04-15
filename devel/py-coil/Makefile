@@ -8,7 +8,7 @@ MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ghostonthewire@gmail.com
-COMMENT=	A powerful configuration language for Python
+COMMENT=	Powerful configuration language for Python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -19,18 +19,17 @@ USE_PYDISTUTILS=	yes
 PORTDOCS=	README.txt \
 		TODO.txt
 
-NO_STAGE=	yes
 post-install:
 # docs
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
 # permission safeness
-	@${CHMOD} -R ${SHAREMODE} ${PYTHONPREFIX_SITELIBDIR}/coil/*
-	@${CHMOD} -R a+X ${PYTHONPREFIX_SITELIBDIR}/coil/*
+	@${CHMOD} -R ${SHAREMODE} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/coil/*
+	@${CHMOD} -R a+X ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/coil/*
 
 .include <bsd.port.mk>
