@@ -17,6 +17,7 @@ etc/nagios/objects/switch.cfg-sample
 etc/nagios/objects/templates.cfg-sample
 etc/nagios/objects/timeperiods.cfg-sample
 etc/nagios/resource.cfg-sample
+%%NAGIOSWWWDIR%%/cgi-bin/archivejson.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/avail.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/cmd.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/config.cgi
@@ -24,9 +25,11 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/cgi-bin/histogram.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/history.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/notifications.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/objectjson.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/outages.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/showlog.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/status.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/statusjson.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/statusmap.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/statuswml.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/summary.cgi
@@ -348,15 +351,17 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/images/weblogo1.png
 %%NAGIOSWWWDIR%%/images/zoom1.gif
 %%NAGIOSWWWDIR%%/images/zoom2.gif
+%%NAGIOSWWWDIR%%/includes/jquery-1.7.1.min.js
 %%NAGIOSWWWDIR%%/includes/rss/extlib/Snoopy.class.inc
 %%NAGIOSWWWDIR%%/includes/rss/rss_cache.inc
 %%NAGIOSWWWDIR%%/includes/rss/rss_fetch.inc
 %%NAGIOSWWWDIR%%/includes/rss/rss_parse.inc
 %%NAGIOSWWWDIR%%/includes/rss/rss_utils.inc
-%%NAGIOSWWWDIR%%/includes/jquery-1.7.1.min.js
 %%NAGIOSWWWDIR%%/includes/utils.inc.php
 %%NAGIOSWWWDIR%%/index.php
 %%NAGIOSWWWDIR%%/js/jquery-1.7.1.min.js
+%%NAGIOSWWWDIR%%/js/jsonquery.js
+%%NAGIOSWWWDIR%%/jsonquery.html
 %%NAGIOSWWWDIR%%/main.php
 %%NAGIOSWWWDIR%%/robots.txt
 %%NAGIOSWWWDIR%%/rss-corefeed.php
@@ -370,6 +375,7 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/stylesheets/extinfo.css
 %%NAGIOSWWWDIR%%/stylesheets/histogram.css
 %%NAGIOSWWWDIR%%/stylesheets/history.css
+%%NAGIOSWWWDIR%%/stylesheets/jsonquery.css
 %%NAGIOSWWWDIR%%/stylesheets/ministatus.css
 %%NAGIOSWWWDIR%%/stylesheets/notifications.css
 %%NAGIOSWWWDIR%%/stylesheets/outages.css
@@ -379,6 +385,7 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/stylesheets/summary.css
 %%NAGIOSWWWDIR%%/stylesheets/tac.css
 %%NAGIOSWWWDIR%%/stylesheets/trends.css
+@dirrmtry libexec/nagios
 @dirrmtry etc/nagios/objects
 @dirrmtry etc/nagios
 @dirrm %%NAGIOSWWWDIR%%/cgi-bin

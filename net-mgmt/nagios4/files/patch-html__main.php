@@ -1,10 +1,10 @@
---- ./html/main.php.orig	2014-03-14 18:24:57.000000000 +0100
-+++ ./html/main.php	2014-03-15 20:45:27.000000000 +0100
+--- ./html/main.php.orig	2014-04-11 20:37:42.000000000 +0200
++++ ./html/main.php	2014-04-15 15:20:13.000000000 +0200
 @@ -40,38 +40,10 @@
  <div class="product">Nagios<sup><span style="font-size: small;">&reg;</span></sup> Core<sup><span style="font-size: small;">&trade;</span></sup></div>
- <div class="version">Version 4.0.4</div>
- <div class="releasedate">March 14, 2014</div>
--<div class="checkforupdates"><a href="http://www.nagios.org/checkforupdates/?version=4.0.4&product=nagioscore" target="_blank">Check for updates</a></div>
+ <div class="version">Version 4.0.5</div>
+ <div class="releasedate">April 11, 2014</div>
+-<div class="checkforupdates"><a href="http://www.nagios.org/checkforupdates/?version=4.0.5&product=nagioscore" target="_blank">Check for updates</a></div>
  <!--<div class="whatsnew"><a href="http://go.nagios.com/nagioscore/whatsnew">Read what's new in Nagios Core 3</a></div>-->
  </div>
  
