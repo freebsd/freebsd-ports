@@ -1,5 +1,4 @@
 bin/highmoon
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/gfx/c_shooting.gif
 %%DATADIR%%/gfx/c_thinking.gif
 %%DATADIR%%/gfx/cpktblue.gif
@@ -30,6 +29,7 @@ bin/highmoon
 %%DATADIR%%/gfx/ufoblue.gif
 %%DATADIR%%/gfx/ufored.gif
 %%DATADIR%%/gfx/venus.gif
+%%DATADIR%%/icon.png
 %%DATADIR%%/snd/applause.wav
 %%DATADIR%%/snd/click.wav
 %%DATADIR%%/snd/curve.wav
@@ -38,7 +38,7 @@ bin/highmoon
 %%DATADIR%%/snd/laser.wav
 %%DATADIR%%/snd/pluck.wav
 %%DATADIR%%/snd/strom.wav
+share/pixmaps/highmoon.png
 @dirrm %%DATADIR%%/snd
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

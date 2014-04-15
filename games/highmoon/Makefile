@@ -3,39 +3,56 @@
 
 PORTNAME=	highmoon
 PORTVERSION=	1.2.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://highmoon.gerdsmeier.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Duel in the universe
+
+LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/HighMoon
 
-USE_SDL=	image sdl
 USES=		gmake
+USE_SDL=	image sdl
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
 
 CXXFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs` -lSDL_image
 
+PORTDOCS=	AUTHORS NEWS README
 OPTIONS_DEFINE=	DOCS
+
+SUB_FILES=	pkg-message
+
+DESKTOP_ENTRIES="HighMoon" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
 	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} -e \
-		's|SDL/SDL|SDL|g ; \
-		 s|^#define __ENV|//#define __ENV|g ; \
-		 s|"gfx/|"${DATADIR}/gfx/|g ; \
-		 s|"snd/|"${DATADIR}/snd/|g ; \
-		 s|-round(|-rint(|g'
+		's|SDL/SDL|SDL|; \
+		 s|^#define __ENV|//#define __ENV|; \
+		 s|"gfx/|(char\*)"${DATADIR}/gfx/|; \
+		 s|"snd/|(char\*)"${DATADIR}/snd/|; \
+		 s|-round(|-rint(|'
+	${REINPLACE_CMD} -e \
+		's|planet_filename = ""|planet_filename = (char\*)""|; \
+		 s|u_filename = ""|u_filename = (char\*)""|; \
+		 s|c_filename = ""|c_filename = (char\*)""|' \
+		${WRKSRC}/src/galaxy.cpp
+	${REINPLACE_CMD} -e 's|"HighMoon -|(char\*)"HighMoon -|; \
+		s|"Highmoon -|(char\*)"HighMoon -|' \
+		${WRKSRC}/src/language.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ufo ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${DATADIR}/gfx
-	${INSTALL_DATA} ${WRKSRC}/gfx/* ${STAGEDIR}${DATADIR}/gfx
-	@${MKDIR} ${STAGEDIR}${DATADIR}/snd
-	${INSTALL_DATA} ${WRKSRC}/snd/* ${STAGEDIR}${DATADIR}/snd
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "gfx snd" ${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}${DATADIR}
+	${LN} -sf ${DATADIR}/icon.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
