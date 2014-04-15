@@ -8,16 +8,21 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Library to Allow Python Applications to Use CouchDB
+
+LICENSE=	MIT
+
+DEPRECATED=	Obsolete, abandoned
+EXPIRATION_DATE=2014-07-15
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>0:${PORTSDIR}/www/py-httplib2 \
 		${PYTHON_PKGNAMEPREFIX}py-restclient>0:${PORTSDIR}/www/py-py-restclient
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	py_${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
