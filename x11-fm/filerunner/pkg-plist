@@ -1,5 +1,28 @@
 bin/fr
 %%DATADIR%%/FontControl.tcl
+%%DATADIR%%/LnkFile.tcl
+%%DATADIR%%/Makefiles/INSTALL
+%%DATADIR%%/Makefiles/alien.tcl
+%%DATADIR%%/Makefiles/buildColorList.tcl
+%%DATADIR%%/Makefiles/buildRPM.tcl
+%%DATADIR%%/Makefiles/build_inotify
+%%DATADIR%%/Makefiles/buildindex
+%%DATADIR%%/Makefiles/expand.tcl
+%%DATADIR%%/Makefiles/extras
+%%DATADIR%%/Makefiles/filerunner.desktop
+%%DATADIR%%/Makefiles/filerunner.spec
+%%DATADIR%%/Makefiles/make_icons
+%%DATADIR%%/Makefiles/makeiconfile.tcl
+%%DATADIR%%/Makefiles/makepackagelinks.tcl
+%%DATADIR%%/Makefiles/makerelease
+%%DATADIR%%/Makefiles/pack
+%%DATADIR%%/Makefiles/release.awk
+%%DATADIR%%/Makefiles/strip.awk
+%%DATADIR%%/Makefiles/tcl-inotify-1.4.1.tar.gz
+%%DATADIR%%/Makefiles/tip_index.tcl
+%%DATADIR%%/Makefiles/trim-inotify.tcl
+%%DATADIR%%/Makefiles/wrapfilelist.txt
+%%DATADIR%%/Makefiles/wrapwindows
 %%DATADIR%%/aftp.tcl
 %%DATADIR%%/balloon.tcl
 %%DATADIR%%/bitmaps/bitmapeditor
@@ -28,33 +51,7 @@ bin/fr
 %%DATADIR%%/colorList.tcl
 %%DATADIR%%/config.tcl
 %%DATADIR%%/cript.tcl
-%%DATADIR%%/editfont.tcl
-%%DATADIR%%/entrydialog.tcl
-%%DATADIR%%/font.tcl
-%%DATADIR%%/fr
-%%DATADIR%%/frcolor.tcl
-%%DATADIR%%/frftp
-%%DATADIR%%/frputs.tcl
-%%DATADIR%%/frutils.tcl
-%%DATADIR%%/ftp.tcl
-%%DATADIR%%/ftp_control.tcl
-%%DATADIR%%/http.tcl
-%%DATADIR%%/packages/expect/expect.tcl
-%%DATADIR%%/packages/expect/pkgIndex.tcl
-%%DATADIR%%/packages/ftp/ftp.tcl
-%%DATADIR%%/packages/ftp/pkgIndex.tcl
-%%DATADIR%%/packages/inotify/i686/libinotify1.4.1.so
-%%DATADIR%%/packages/inotify/i686/pkgIndex.tcl
-%%DATADIR%%/packages/inotify/x86_64/libinotify1.4.1.so
-%%DATADIR%%/packages/inotify/x86_64/pkgIndex.tcl
-%%DATADIR%%/packages/log/log.tcl
-%%DATADIR%%/packages/log/pkgIndex.tcl
-%%DATADIR%%/replacetearoff.tcl
-%%DATADIR%%/sftp.tcl
-%%DATADIR%%/smart_dialog.tcl
-%%DATADIR%%/tclIndex
-%%DATADIR%%/tclmultilistbox.tcl
-%%DATADIR%%/textsearch.tcl
+%%DATADIR%%/doc/COPYING
 %%DATADIR%%/doc/FAQ
 %%DATADIR%%/doc/HISTORY
 %%DATADIR%%/doc/KnownBugs.txt
@@ -62,13 +59,61 @@ bin/fr
 %%DATADIR%%/doc/README
 %%DATADIR%%/doc/Tips.txt
 %%DATADIR%%/doc/Users_Guide.txt
+%%DATADIR%%/editfont.tcl
+%%DATADIR%%/entrydialog.tcl
+%%DATADIR%%/font.tcl
+%%DATADIR%%/fr
+%%DATADIR%%/fr-inotify.tcl
+%%DATADIR%%/fr.bak
+%%DATADIR%%/frcolor.tcl
+%%DATADIR%%/frftp
+%%DATADIR%%/frputs.tcl
+%%DATADIR%%/frutils.tcl
+%%DATADIR%%/ftp.tcl
+%%DATADIR%%/ftp_control.tcl
+%%DATADIR%%/http.tcl
+%%DATADIR%%/icons/filerunner-128x128.png
+%%DATADIR%%/icons/filerunner-16x16.png
+%%DATADIR%%/icons/filerunner-22x22.png
+%%DATADIR%%/icons/filerunner-24x24.png
+%%DATADIR%%/icons/filerunner-256x256.png
+%%DATADIR%%/icons/filerunner-32x32.png
+%%DATADIR%%/icons/filerunner-48x48.png
+%%DATADIR%%/icons/filerunner-64x64.png
+%%DATADIR%%/icons/filerunner-icons.ico
+%%DATADIR%%/packageLinks.tcl
+%%DATADIR%%/packages/expect/expect.tcl
+%%DATADIR%%/packages/expect/pkgIndex.tcl
+%%DATADIR%%/packages/ftp/ftp.tcl
+%%DATADIR%%/packages/ftp/pkgIndex.tcl
+%%DATADIR%%/packages/inotify/i386/libinotify1.4.1.so
+%%DATADIR%%/packages/inotify/i386/pkgIndex.tcl
+%%DATADIR%%/packages/inotify/i686/libinotify1.4.1.so
+%%DATADIR%%/packages/inotify/i686/pkgIndex.tcl
+%%DATADIR%%/packages/inotify/x86_64/libinotify1.4.1.so
+%%DATADIR%%/packages/inotify/x86_64/pkgIndex.tcl
+%%DATADIR%%/packages/log/log.tcl
+%%DATADIR%%/packages/log/pkgIndex.tcl
+%%DATADIR%%/patternListSearch.tcl
+%%DATADIR%%/replacetearoff.tcl
+%%DATADIR%%/sftp.tcl
+%%DATADIR%%/smart_dialog.tcl
+%%DATADIR%%/spell_check.tcl
+%%DATADIR%%/spell_filters.tcl
+%%DATADIR%%/tclIndex
+%%DATADIR%%/tclmultilistbox.tcl
+%%DATADIR%%/textsearch.tcl
+%%DATADIR%%/updateinplace.tcl
 @dirrm %%DATADIR%%/packages/log
 @dirrm %%DATADIR%%/packages/inotify/x86_64
 @dirrm %%DATADIR%%/packages/inotify/i686
+@dirrm %%DATADIR%%/packages/inotify/i386
 @dirrm %%DATADIR%%/packages/inotify
 @dirrm %%DATADIR%%/packages/ftp
 @dirrm %%DATADIR%%/packages/expect
 @dirrm %%DATADIR%%/packages
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/bitmaps
+@dirrm %%DATADIR%%/Makefiles
 @dirrm %%DATADIR%%
