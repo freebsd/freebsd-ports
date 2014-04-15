@@ -8,7 +8,7 @@ libexec/nagios/check_dhcp
 libexec/nagios/check_dig
 libexec/nagios/check_disk
 libexec/nagios/check_disk_smb
-libexec/nagios/check_dns
+%%CHECK_DNS%%libexec/nagios/check_dns
 libexec/nagios/check_dummy
 libexec/nagios/check_file_age
 libexec/nagios/check_flexlm
@@ -64,8 +64,6 @@ libexec/nagios/check_ups
 libexec/nagios/check_users
 libexec/nagios/check_wave
 libexec/nagios/negate
-%%BIND%%libexec/nagios/nagios-dig
-%%BIND%%libexec/nagios/nagios-nslookup
 libexec/nagios/urlize
 libexec/nagios/utils.pm
 libexec/nagios/utils.sh

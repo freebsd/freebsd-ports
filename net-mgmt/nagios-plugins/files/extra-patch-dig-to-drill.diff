@@ -1,0 +1,13 @@
+--- ./plugins/check_dig.c.orig	2014-03-04 20:21:36.000000000 +0100
++++ ./plugins/check_dig.c	2014-04-15 11:42:41.000000000 +0200
+@@ -94,8 +94,8 @@
+   timeout_interval_dig = ceil((double) timeout_interval / (double) number_tries);
+ 
+   /* get the command to run */
+-  xasprintf (&command_line, "%s @%s -p %d %s -t %s %s %s +tries=%d +time=%d",
+-            PATH_TO_DIG, dns_server, server_port, query_address, record_type, dig_args, query_transport, number_tries, timeout_interval_dig);
++  xasprintf (&command_line, "%s %s @%s -z -p %d %s %s %s",
++            PATH_TO_DIG, dig_args, dns_server, server_port, query_address, record_type, query_transport);
+ 
+   alarm (timeout_interval);
+   gettimeofday (&tv, NULL);
