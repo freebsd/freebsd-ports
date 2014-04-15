@@ -85,14 +85,6 @@ create-manifest:
 .endfor
 .undef opt
 	@${ECHO_CMD} "}" >> ${MANIFESTF}
-.if defined(DEPRECATED)
-	@${ECHO_CMD} -n "annotations: {" >> ${MANIFESTF}
-	@${ECHO_CMD} -n "deprecated: \"${DEPRECATED:Q}\"," >> ${MANIFESTF}
-.if defined(EXPIRATION_DATE)
-	@${ECHO_CMD} -n "expiration: ${EXPIRATION_DATE}" >> ${MANIFESTF}
-.endif
-	@${ECHO_CMD} " }" >> ${MANIFESTF}
-.endif
 	@[ -f ${PKGINSTALL} ] && ${CP} ${PKGINSTALL} ${METADIR}/+INSTALL; \
 	${RM} -f ${METADIR}/+PRE_INSTALL ; \
 	for a in ${PKGPREINSTALL}; do \
