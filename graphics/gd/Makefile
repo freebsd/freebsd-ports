@@ -3,7 +3,7 @@
 
 PORTNAME=	libgd
 PORTVERSION=	2.1.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://cdn.bitbucket.org/libgd/gd-libgd/downloads/
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	bazaar-1.*
 
-USES=		tar:xz pkgconfig
+USES=		tar:xz pkgconfig shebangfix
+SHEBANG_FILES=	${WRKSRC}/src/bdftogd
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_ENV=	PKG_CONFIG_LIBDIR=${LOCALBASE}/libdata/pkgconfig
 GNU_CONFIGURE_ARGS=
@@ -105,5 +106,6 @@ pre-build:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/gdhelpers.h \
 		${STAGEDIR}${PREFIX}/include/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgd.so.5
 
 .include <bsd.port.mk>
