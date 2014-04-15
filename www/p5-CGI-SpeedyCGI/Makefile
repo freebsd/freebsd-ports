@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Speed up perl CGI scripts by running them persistently
 
-BROKEN=	not staged
+LICENSE=	GPLv2
+
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure patch
@@ -20,18 +21,11 @@ OPTIONS_DEFINE=	APACHE
 OPTIONS_DEFAULT=APACHE
 APACHE_DESC=	Build mod_speedycgi
 
-NO_STAGE=	yes
+OPTIONS_SUB=	yes
+APACHE_USE=	APACHE=22
+APACHE_CONFIGURE_ENV_OFF=	WITHOUT_APACHE=yes
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE=	22
-PLIST_SUB+=	APACHE=""
-.else
-PLIST_SUB+=	APACHE="@comment "
-CONFIGURE_ENV+=	WITHOUT_APACHE=yes
-.endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/__inline__//g' \
@@ -41,23 +35,26 @@ post-patch:
 	@${PERL} -pi -e 's,APXS=apxs,APXS=${APXS},;' \
 		${WRKSRC}/mod_speedycgi/Makefile.tmpl
 	${CP} ${FILESDIR}/speedy_dump.c ${WRKSRC}/speedy_dump/
-.if ${PERL_LEVEL} >= 501000
 	@${REINPLACE_CMD} -i '' -e 's=New(123,=Newx(=g' \
 		${WRKSRC}/src/speedy_backend_main.h
-.endif
+	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
+		${WRKSRC}/mod_speedycgi/Makefile.tmpl
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 
 post-configure:
 	@${PERL} -pi -e 's,^PREFIX = /usr$$,PREFIX = ${PREFIX},g;' \
 		${WRKSRC}/Makefile ${WRKSRC}/*/Makefile
 
 post-build:
-	@cd ${WRKSRC}/speedy_dump && ${CC} ${CFLAGS} -o speedy_dump \
-		-I../src speedy_dump.c
+	@(cd ${WRKSRC}/speedy_dump && ${CC} ${CFLAGS} -o speedy_dump \
+		-I../src speedy_dump.c)
 
 post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/speedy/speedy ${PREFIX}/bin/speedy_suidperl
-	@${CHMOD} 4755 ${PREFIX}/bin/speedy_suidperl
+	@${INSTALL_PROGRAM} ${WRKSRC}/speedy/speedy ${STAGEDIR}${PREFIX}/bin/speedy_suidperl
+	@${CHMOD} 4755 ${STAGEDIR}${PREFIX}/bin/speedy_suidperl
 	@${INSTALL_PROGRAM} ${WRKSRC}/speedy_dump/speedy_dump \
-		${PREFIX}/bin/speedy_dump
+		${STAGEDIR}${PREFIX}/bin/speedy_dump
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
