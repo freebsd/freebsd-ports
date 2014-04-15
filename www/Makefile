@@ -512,7 +512,8 @@
     SUBDIR += mod_proxy_html
     SUBDIR += mod_proxy_uwsgi
     SUBDIR += mod_proxy_xml
-    SUBDIR += mod_python3
+    SUBDIR += mod_python33
+    SUBDIR += mod_python35
     SUBDIR += mod_qos
     SUBDIR += mod_remoteip
     SUBDIR += mod_reproxy
