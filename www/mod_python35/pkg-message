@@ -1,0 +1,12 @@
+================================================================================
+
+Also remember to add to your Apache configuration in the appropriate context:
+
+PythonPath "['/path/to/foo', '/path/to/bar']"
+AddHandler python-program .py
+PythonHandler foobar
+PythonDebug On
+
+For more information, see http://www.modpython.org/.
+
+================================================================================
