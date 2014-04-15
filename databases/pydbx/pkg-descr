@@ -3,4 +3,4 @@ of dbx is to make using a SQL database as simple as possible while
 providing a consistent API across different databases.
 
 Author:	David Phillips <david@acz.org>
-WWW:	http://david.acz.org/pydbx/
+WWW: http://david.acz.org/pydbx/
