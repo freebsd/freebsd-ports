@@ -11,57 +11,39 @@ DISTFILES=	${DISTNAME}_data-tileset-absurd${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addons (tilesets and sound themes) for noeGNUd
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
+NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
-OPTIONS_DEFINE=	ABSURD ITAKURA ITAKURA ABIGABI GEODUCK LAGGED AOKI TFALCONSEYE NHS SFALCONSEYE
+
+OPTIONS_DEFINE=	ABSURD ITAKURA ITAKURA ABIGABI GEODUCK LAGGED AOKI \
+		TFALCONSEYE NHS SFALCONSEYE
 ABSURD_DESC=	absurd tileset
 ITAKURA_DESC=	itakura tileset
+ITAKURA_DISTFILES=	${DISTNAME}_data-tileset-itakura${EXTRACT_SUFX}
 MAZKO_DESC=	mazko tileset
+MAZKO_DISTFILES=	${DISTNAME}_data-tileset-mazko${EXTRACT_SUFX}
 ABIGABI_DESC=	abigabi tileset
+ABIGABI_DISTFILES=	${DISTNAME}_data-tileset-abigabi${EXTRACT_SUFX}
 GEODUCK_DESC=	geoduck tileset
+GEODUCK_DISTFILES=	${DISTNAME}_data-tileset-geoduck${EXTRACT_SUFX}
 LAGGED_DESC=	lagged tileset
+LAGGED_DISTFILES=	${DISTNAME}_data-tileset-lagged${EXTRACT_SUFX}
 AOKI_DESC=	aoki tileset
+AOKI_DISTFILES=		${DISTNAME}_data-tileset-aoki${EXTRACT_SUFX}
 TFALCONSEYE_DESC=	falcons eye tileset
+TFALCONSEYE_DISTFILES=	${DISTNAME}_data-tileset-falconseye${EXTRACT_SUFX}
 NHS_DESC=	nhs (qt) sound theme
+NHS_DISTFILES=		${DISTNAME}_data-sound-nhs${EXTRACT_SUFX}
 SFALCONSEYE_DESC=	falcons eye sound theme
+SFALCONSEYE_DISTFILES=	${DISTNAME}_data-sound-falconseye${EXTRACT_SUFX}
 
 OPTIONS_DEFAULT=	ABSURD
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MABSURD}
 DISTFILES=
 .endif
-.if ${PORT_OPTIONS:MITAKURA}
-DISTFILES+=	${DISTNAME}_data-tileset-itakura${EXTRACT_SUFX}
-.endif
-.if ${PORT_OPTIONS:MMAZKO}
-DISTFILES+=	${DISTNAME}_data-tileset-mazko${EXTRACT_SUFX}
-.endif
-.if ${PORT_OPTIONS:MABIGABI}
-DISTFILES+=	${DISTNAME}_data-tileset-abigabi${EXTRACT_SUFX}
-.endif
-.if ${PORT_OPTIONS:MGEODUCK}
-DISTFILES+=	${DISTNAME}_data-tileset-geoduck${EXTRACT_SUFX}
-.endif
-.if ${PORT_OPTIONS:MLAGGED}
-DISTFILES+=	${DISTNAME}_data-tileset-lagged${EXTRACT_SUFX}
-.endif
-.if ${PORT_OPTIONS:MAOKI}
-DISTFILES+=	${DISTNAME}_data-tileset-aoki${EXTRACT_SUFX}
-.endif
-.if ${PORT_OPTIONS:MTFALCONSEYE}
-DISTFILES+=	${DISTNAME}_data-tileset-falconseye${EXTRACT_SUFX}
-.endif
-.if ${PORT_OPTIONS:MNHS}
-DISTFILES+=	${DISTNAME}_data-sound-nhs${EXTRACT_SUFX}
-.endif
-.if ${PORT_OPTIONS:MSFALCONSEYE}
-DISTFILES+=	${DISTNAME}_data-sound-falconseye${EXTRACT_SUFX}
-.endif
-
-NO_BUILD=	yes
 
 pre-install:
 	@${TOUCH} ${PLIST}
@@ -69,6 +51,6 @@ pre-install:
 	@(cd ${WRKDIR} && ${FIND} ${DISTNAME} -type d) | ${SORT} -r | ${SED} -e 's:^:@unexec rmdir %D/share/:' | ${SED} -e 's:$$: 2>/dev/null || true:' >> ${PLIST}
 
 do-install:
-	${CP} -R ${WRKSRC} ${PREFIX}/share
+	${CP} -R ${WRKSRC} ${STAGEDIR}${PREFIX}/share
 
 .include <bsd.port.mk>
