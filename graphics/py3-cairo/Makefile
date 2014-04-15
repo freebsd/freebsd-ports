@@ -23,6 +23,8 @@ python_OLD_CMD?=	/usr/bin/env python
 python_CMD?=		${LOCALBASE}/bin/python${PYTHON_VER}
 SHEBANG_FILES=		examples/*.py examples/*/*.py test/*.py
 
+PLIST_SUB+=	PYTVER=${PYTHON_VER:S/.//}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|python %s|${PYTHON_CMD} %s|g' \
 		${WRKSRC}/test/examples_test.py
