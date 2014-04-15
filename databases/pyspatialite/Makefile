@@ -23,7 +23,6 @@ PYDISTUTILS_PKGNAME=	pyspatialite
 
 AMALGAMATION_NAME=	libspatialite-amalgamation-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)
