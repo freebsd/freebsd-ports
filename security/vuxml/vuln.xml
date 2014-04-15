@@ -51,6 +51,160 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="abad20bf-c1b4-11e3-a5ac-001b21614864">
+    <topic>OpenLDAP -- incorrect handling of NULL in certificate Common Name</topic>
+    <affects>
+      <package>
+	<name>openldap24-client</name>
+	<name>linux-f10-openldap</name>
+	<range><lt>2.4.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jan Lieskovsky reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2009-3767">
+	  <p>OpenLDAP does not properly handle a '\0' character in a domain name
+	    in the subject's Common Name (CN) field of an X.509 certificate,
+	    which allows man-in-the-middle attackers to spoof arbitrary SSL
+	    servers via a crafted certificate issued by a legitimate
+	    Certification Authority</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3767</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2009-3767</url>
+    </references>
+    <dates>
+      <discovery>2009-08-07</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9aecb94c-c1ad-11e3-a5ac-001b21614864">
+    <topic>cURL -- inappropriate GSSAPI delegation</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<name>linux-f10-curl</name>
+	<range><ge>7.10.6</ge><le>7.21.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20110623.html">
+	  <p>When doing GSSAPI authentication, libcurl unconditionally performs
+	    credential delegation. This hands the server a copy of the client's
+	    security credentials, allowing the server to impersonate the client
+	    to any other using the same GSSAPI mechanism.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2192</cvename>
+      <url>http://curl.haxx.se/docs/adv_20110623.html</url>
+    </references>
+    <dates>
+      <discovery>2011-06-23</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="77bb0541-c1aa-11e3-a5ac-001b21614864">
+    <topic>dbus-glib -- privledge escalation</topic>
+    <affects>
+      <package>
+	<name>dbus-glib</name>
+	<name>linux-f10-dbus-glib</name>
+	<range><lt>0.100.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sebastian Krahmer reports:</p>
+	<blockquote cite="https://bugs.freedesktop.org/show_bug.cgi?id=60916">
+	  <p>A privilege escalation flaw was found in the way dbus-glib, the
+	    D-Bus add-on library to integrate the standard D-Bus library with
+	    the GLib thread abstraction and main loop, performed filtering of
+	    the message sender (message source subject), when the
+	    NameOwnerChanged signal was received. A local attacker could use
+	    this flaw to escalate their privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0292</cvename>
+      <url>https://bugs.freedesktop.org/show_bug.cgi?id=60916</url>
+    </references>
+    <dates>
+      <discovery>2013-02-15</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bf7912f5-c1a8-11e3-a5ac-001b21614864">
+    <topic>nas -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>nas</name>
+	<name>linux-f10-nas-libs</name>
+	<range><lt>1.9.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hamid Zamani reports:</p>
+	<blockquote cite="http://radscan.com/pipermail/nas/2013-August/001270.html">
+	  <p>multiple security problems (buffer overflows, format string
+	    vulnerabilities and missing input sanitising), which could lead to
+	    the execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4256</cvename>
+      <cvename>CVE-2013-4257</cvename>
+      <cvename>CVE-2013-4258</cvename>
+      <url>http://radscan.com/pipermail/nas/2013-August/001270.html</url>
+    </references>
+    <dates>
+      <discovery>2013-08-07</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="09f47c51-c1a6-11e3-a5ac-001b21614864">
+    <topic>libaudiofile -- heap-based overflow in Microsoft ADPCM compression module</topic>
+    <affects>
+      <package>
+	<name>libaudiofile</name>
+	<name>linux-f10-libaudiofile</name>
+	<range><lt>0.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian reports:</p>
+	<blockquote cite="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=510205">
+	  <p>Heap-based buffer overflow in msadpcm.c in libaudiofile in audiofile
+	    0.2.6 allows context-dependent attackers to cause a denial of service
+	    (application crash) or possibly execute arbitrary code via a crafted
+	    WAV file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0159</cvename>
+      <url>https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=510205</url>
+    </references>
+    <dates>
+      <discovery>2008-12-30</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="972837fc-c304-11e3-8758-00262d5ed8ee">
     <topic>ChaSen -- buffer overflow</topic>
     <affects>
@@ -1120,6 +1274,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gnutls</name>
+	<name>linux-f10-gnutls</name>
 	<range><lt>2.12.23_4</lt></range>
       </package>
       <package>
@@ -4680,6 +4835,7 @@ affected..</p>
     <affects>
       <package>
 	<name>libgcrypt</name>
+	<name>linux-f10-libgcrypt</name>
 	<range><lt>1.5.3</lt></range>
       </package>
     </affects>
@@ -4696,6 +4852,7 @@ affected..</p>
       </body>
     </description>
     <references>
+    <cvename>CVE-2013-4242</cvename>
     <url>http://eprint.iacr.org/2013/448</url>
     <url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000329.html</url>
     <url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000330.html</url>
@@ -17622,6 +17779,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>libxml2</name>
+	<name>linux-f10-libxml2</name>
 	<range><lt>2.7.8_3</lt></range>
       </package>
     </affects>
@@ -18924,6 +19082,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>png</name>
+	<name>linux-f10-png</name>
 	<range><lt>1.4.11</lt></range>
       </package>
     </affects>
@@ -19965,6 +20124,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>libxml2</name>
+	<name>linux-f10-libxml2</name>
 	<range><lt>2.7.8_2</lt></range>
       </package>
     </affects>
@@ -22742,6 +22902,7 @@ executed in your Internet Explorer while displaying the email.</p>
       </package>
       <package>
 	<name>libxml2</name>
+	<name>linux-f10-libxml2</name>
 	<range><lt>2.7.8</lt></range>
       </package>
     </affects>
@@ -32391,6 +32552,7 @@ executed in your Internet Explorer while displaying the email.</p>
       </package>
       <package>
 	<name>linux-tiff</name>
+	<name>linux-f10-tiff</name>
 	<range><lt>3.9.4</lt></range>
       </package>
     </affects>
@@ -33575,6 +33737,11 @@ executed in your Internet Explorer while displaying the email.</p>
       <package>
 	<name>linux-firefox-devel</name>
 	<range><lt>3.5.9</lt></range>
+      </package>
+      <package>
+	<name>nss</name>
+	<name>linux-f10-nss</name>
+	<range><lt>3.12.5</lt></range>
       </package>
     </affects>
     <description>
@@ -35105,6 +35272,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>expat2</name>
+	<name>linux-f10-expat</name>
 	<range><lt>2.0.1_1</lt></range>
       </package>
     </affects>
