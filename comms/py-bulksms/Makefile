@@ -17,16 +17,14 @@ PYDISTUTILS_PKGVERSION=	1.0
 
 WRKSRC=		${WRKDIR}/bulksms
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README.html ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
