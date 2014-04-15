@@ -1,3 +1,5 @@
+@owner games
+@group bin
 share/noegnud-0.8.0/data/char/DeeT.png
 share/noegnud-0.8.0/data/char/anethack.png
 share/noegnud-0.8.0/data/char/deco.png
@@ -1564,3 +1566,4 @@ share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_window.theme
 @dirrmtry share/noegnud-0.8.0/data/char
 @dirrmtry share/noegnud-0.8.0/data
 @dirrmtry share/noegnud-0.8.0
+@exec chown root:wheel %D/%%DATADIR%%
