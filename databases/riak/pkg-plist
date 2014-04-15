@@ -2,6 +2,10 @@ sbin/riak
 sbin/riak-admin
 sbin/riak-debug
 sbin/search-cmd
+man/man1/riak-admin.1.gz
+man/man1/riak-debug.1.gz
+man/man1/riak.1.gz
+man/man1/search-cmd.1.gz
 @exec mkdir -p %%RIAK_CONFDIR%%
 @exec mkdir -p %%RIAK_LOGDIR%%
 @exec mkdir -p %%RIAK_DBDIR%%
