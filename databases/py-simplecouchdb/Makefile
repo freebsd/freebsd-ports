@@ -3,6 +3,7 @@
 
 PORTNAME=	simplecouchdb
 PORTVERSION=	0.9.26
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,5 +25,8 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	py_${PORTNAME}
+
+post-extract:
+	${MV} ${WRKSRC}/tests ${WRKSRC}/simplecouchdb/
 
 .include <bsd.port.mk>
