@@ -1,8 +1,9 @@
 include/pycairo/py3cairo.h
+%%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__.cpython-33.pyo
 %%PYTHON_SITELIBDIR%%/cairo/__init__.py
-%%PYTHON_SITELIBDIR%%/cairo/__init__.pyc
-%%PYTHON_SITELIBDIR%%/cairo/__init__.pyo
 %%PYTHON_SITELIBDIR%%/cairo/_cairo.so
 libdata/pkgconfig/py3cairo.pc
+@dirrm %%PYTHON_SITELIBDIR%%/cairo/__pycache__
 @dirrm %%PYTHON_SITELIBDIR%%/cairo
 @dirrmtry include/pycairo

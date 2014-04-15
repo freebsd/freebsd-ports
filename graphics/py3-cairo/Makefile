@@ -4,7 +4,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,27 +13,36 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python 3 bindings for Cairo
 
-USE_BZIP2=	yes
 USE_PYTHON=	3
-USES=		pkgconfig shebangfix
+USES=		pkgconfig shebangfix tar:bzip2
 USE_GNOME=	cairo
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	PYTHON=${LOCALBASE}/bin/python3 \
-		PREFIX=${PREFIX}
 
-NO_STAGE=	yes
 python_OLD_CMD?=	/usr/bin/env python
-python_CMD?=		${LOCALBASE}/bin/python3
-SHEBANG_FILES=		examples/*.py examples/*/*.py waf test/*.py
+python_CMD?=		${LOCALBASE}/bin/python${PYTHON_VER}
+SHEBANG_FILES=		examples/*.py examples/*/*.py test/*.py
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|python %s|${PYTHON_CMD} %s|g' \
+		${WRKSRC}/test/examples_test.py
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./waf configure
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
+		./waf configure
 
 do-build:
-	@cd ${WRKSRC} && ./waf
+	@cd ${WRKSRC} && ${PYTHON_CMD} ./waf
 
 do-install:
-	@cd ${WRKSRC} && ./waf install
+	@cd ${WRKSRC} && ${PYTHON_CMD} ./waf install --destdir=${STAGEDIR}
+
+post-install:
+	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/cairo/__init__.py[co]
+	@cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+	@cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cairo/_cairo.so
 
 .include <bsd.port.mk>
