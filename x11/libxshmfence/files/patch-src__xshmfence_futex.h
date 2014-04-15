@@ -1,19 +1,20 @@
---- src/xshmfence_futex.h	2013-11-20 17:13:08.000000000 -0500
-+++ src/xshmfence_futex.h	2013-12-09 15:52:29.000000000 -0500
+--- src/xshmfence_futex.h
++++ src/xshmfence_futex.h
 @@ -1,5 +1,6 @@
  /*
   * Copyright © 2013 Keith Packard
-+ * Copyright © 2013 Jung-uk Kim <jkim@FreeBSD.org>
++ * Copyright © 2013-2014 Jung-uk Kim <jkim@FreeBSD.org>
   *
   * Permission to use, copy, modify, distribute, and sell this software and its
   * documentation for any purpose is hereby granted without fee, provided that
-@@ -24,6 +25,27 @@
+@@ -24,6 +25,28 @@
  #define _XSHMFENCE_FUTEX_H_
  
  #include <errno.h>
 +
 +#ifdef HAVE_UMTX
 +
++#include <sys/limits.h>
 +#include <sys/types.h>
 +#include <sys/umtx.h>
 +
@@ -35,7 +36,7 @@
  #include <stdint.h>
  #include <values.h>
  #include <linux/futex.h>
-@@ -43,6 +65,8 @@
+@@ -43,6 +66,8 @@
  	return sys_futex(addr, FUTEX_WAIT, value, NULL, NULL, 0);
  }
  
