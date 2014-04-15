@@ -12,18 +12,19 @@ DISTNAME=	pythondialog-${PORTVERSION}
 MAINTAINER=	mek@mek.uz.ua
 COMMENT=	Python interface to dialog(3)
 
+LICENSE=	LGPL20
+
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pythondialog
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-dialog
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demo.py ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/demo.py ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
