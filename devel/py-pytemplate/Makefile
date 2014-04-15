@@ -20,12 +20,11 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-pytemplate
 
 EXAMPLES=	daemonexample.py example.py threadexample.py
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 
