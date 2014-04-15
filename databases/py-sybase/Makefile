@@ -3,14 +3,16 @@
 
 PORTNAME=	sybase
 PORTVERSION=	0.37
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases python
 MASTER_SITES=	http://object-craft.com.au/projects/sybase/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-html${EXTRACT_SUFX}
 
 MAINTAINER=	gnb@itga.com.au
-COMMENT=	A Python Database API interface to the Sybase RDBMS
+COMMENT=	Python Database API interface to the Sybase RDBMS
+
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libtds.so:${PORTSDIR}/databases/freetds
 
@@ -20,9 +22,9 @@ USE_PYDISTUTILS=	yes
 .if defined(TDS_VERSION)
 TDS_SUF="=${TDS_VERSION}"
 .else
-NO_STAGE=	yes
-pre-fetch:
-	@V=`${PKG_INFO} | sed -ne 's/^freetds-0.\(..\).*/\1/p'` ; \
+
+pre-build:
+	@V=`${PKG_INFO} | ${SED} -ne 's/^freetds-0.\(..\).*/\1/p'` ; \
 	if [ $$V -le 60 ]; then \
 		${ECHO_MSG} "Suggest you update your FreeTDS port to at least version 0.61" ; \
 		${ECHO_MSG} "Otherwise, you will need to add TDS_VERSION=$$V to the Make command" ; \
@@ -45,9 +47,9 @@ do-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR} ${DOCSDIR}
-	@${TAR} -cf - -C ${WRKSRC}/examples . | ${TAR} -xf - -C ${EXAMPLESDIR}
-	@${TAR} -cf - -C ${WRKDIR}/${PORTNAME} . | ${TAR} -xf - -C ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR}
+	@${TAR} -cf - -C ${WRKSRC}/examples . | ${TAR} -xf - -C ${STAGEDIR}${EXAMPLESDIR}
+	@${TAR} -cf - -C ${WRKDIR}/${PORTNAME} . | ${TAR} -xf - -C ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
