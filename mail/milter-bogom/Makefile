@@ -14,8 +14,6 @@ COMMENT=	Simple sendmail milter to interface bogofilter
 
 RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
 
-MAN8=		bogom.8
-
 MAKE_ARGS=	CPPFLAGS="-DDEF_CONF=\\\"${PREFIX}/etc/bogom.conf\\\" ${PTHREAD_CFLAGS}" \
 		LIBS="-lmilter ${PTHREAD_LIBS}"
 
@@ -23,31 +21,30 @@ USE_RC_SUBR=	milter-bogom
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	sbin/bogom \
+		man/man8/bogom.8.gz \
 		etc/bogom.conf-example
 
 PORTDOCS=	README CHANGELOG
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/bogom.8
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/bogom.8
+	${REINPLACE_CMD} -e \
 		's|/usr/local/bin/bogofilter|${LOCALBASE}/bin/bogofilter|g' \
 		${WRKSRC}/bogom.8 \
 		${WRKSRC}/bogom.conf-example \
 		${WRKSRC}/milter.c
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bogom ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/bogom.8 ${MAN8PREFIX}/man/man8
-	@${INSTALL_DATA} ${WRKSRC}/bogom.conf-example ${PREFIX}/etc
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bogom ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/bogom.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_DATA} ${WRKSRC}/bogom.conf-example ${STAGEDIR}${PREFIX}/etc/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
