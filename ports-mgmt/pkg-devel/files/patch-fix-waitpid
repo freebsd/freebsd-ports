@@ -1,0 +1,25 @@
+diff --git src/main.c src/main.c
+index ad44520..b5c5320 100644
+--- src/main.c
++++ src/main.c
+@@ -38,6 +38,7 @@
+ 
+ #include <assert.h>
+ #include <err.h>
++#include <errno.h>
+ #include <inttypes.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -434,8 +435,10 @@ start_process_worker(void)
+ 			if (child_pid == -1)
+ 				err(EX_OSERR, "Failed to fork worker process");
+ 
+-			if (waitpid(child_pid, &status, WEXITED) == -1)
+-				err(EX_OSERR, "Child process pid=%d", child_pid); 
++			while (waitpid(child_pid, &status, 0) == -1) {
++				if (errno != EINTR)
++					err(EX_OSERR, "Child process pid=%d", child_pid);
++			}
+ 
+ 			ret = WEXITSTATUS(status);
+ 
