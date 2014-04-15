@@ -1,4 +1,5 @@
 bin/macopix
+man/man1/macopix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NKR.README.ja
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.ja

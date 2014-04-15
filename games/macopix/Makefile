@@ -11,9 +11,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window sitter for X11
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 RESTRICTED=	'contains commercial character data'
 
@@ -33,77 +33,81 @@ WANT_GNOME=	yes
 USES=		gettext gmake iconv pkgconfig
 GNU_CONFIGURE=	yes
 
-MAN1=		macopix.1
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
-.if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-gnutls
-.else
+OPTIONS_DEFINE=	DOCS GNUTLS GTK1
+
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_ON=	--with-gnutls
+
+GTK1_USE=		GNOME=gtk12,gdkpixbuf
+GTK1_CONFIGURE_ON=	--with-gtk1
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MGNUTLS}
 USE_OPENSSL=	yes
 .endif
 
-.if defined(WITH_GTK1)
+.if ${PORT_OPTIONS:MGTK1}
 PKGNAMESUFFIX=	-gtk1
-USE_GNOME+=	gtk12 gdkpixbuf
-CONFIGURE_ARGS+=	--with-gtk1
 .else
 USE_GNOME+=	gtk20
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/_MAIL } MailStatus/_MAIL } MailStatus2/' ${WRKSRC}/src/main.h
+.if ${PORT_OPTIONS:MGTK1}
+	@${REINPLACE_CMD} 's|png_ptr->jmpbuf|png_jmpbuf(png_ptr)|' \
+		${WRKSRC}/src/nokkari.c
+.endif
 
 post-install:
 # install mascot file
-	${MKDIR} ${DATADIR}/pixmap
+	@${MKDIR} ${STAGEDIR}${DATADIR}/pixmap
 	cd ${WRKDIR}/macopix-mascot-comic_party-euc-ja-1.02 \
-		&& ${INSTALL_DATA} *.png ${DATADIR}/pixmap \
-		&& ${INSTALL_DATA} *.mcpx *.menu ${DATADIR} \
-		&& ${INSTALL_DATA} README.jp ${DATADIR}/README.comipa.jp
+		&& ${INSTALL_DATA} *.png ${STAGEDIR}${DATADIR}/pixmap \
+		&& ${INSTALL_DATA} *.mcpx *.menu ${STAGEDIR}${DATADIR} \
+		&& ${INSTALL_DATA} README.jp ${STAGEDIR}${DATADIR}/README.comipa.jp
 	cd ${WRKDIR}/macopix-mascot-cosmos-euc-ja-1.02 \
-		&& ${INSTALL_DATA} *.png ${DATADIR}/pixmap \
-		&& ${INSTALL_DATA} *.mcpx *.menu ${DATADIR} \
-		&& ${INSTALL_DATA} README.jp ${DATADIR}/README.cosmos.jp
+		&& ${INSTALL_DATA} *.png ${STAGEDIR}${DATADIR}/pixmap \
+		&& ${INSTALL_DATA} *.mcpx *.menu ${STAGEDIR}${DATADIR} \
+		&& ${INSTALL_DATA} README.jp ${STAGEDIR}${DATADIR}/README.cosmos.jp
 	cd ${WRKDIR}/macopix-mascot-kanon-euc-ja-1.02 \
-		&& ${INSTALL_DATA} *.png ${DATADIR}/pixmap \
-		&& ${INSTALL_DATA} *.mcpx *.menu ${DATADIR} \
-		&& ${INSTALL_DATA} README.jp ${DATADIR}/README.kanon.jp
+		&& ${INSTALL_DATA} *.png ${STAGEDIR}${DATADIR}/pixmap \
+		&& ${INSTALL_DATA} *.mcpx *.menu ${STAGEDIR}${DATADIR} \
+		&& ${INSTALL_DATA} README.jp ${STAGEDIR}${DATADIR}/README.kanon.jp
 	cd ${WRKDIR}/macopix-mascot-mizuiro-euc-ja-1.02 \
-		&& ${INSTALL_DATA} *.png ${DATADIR}/pixmap \
-		&& ${INSTALL_DATA} *.mcpx *.menu ${DATADIR} \
-		&& ${INSTALL_DATA} README.jp ${DATADIR}/README.mizuiro.jp
+		&& ${INSTALL_DATA} *.png ${STAGEDIR}${DATADIR}/pixmap \
+		&& ${INSTALL_DATA} *.mcpx *.menu ${STAGEDIR}${DATADIR} \
+		&& ${INSTALL_DATA} README.jp ${STAGEDIR}${DATADIR}/README.mizuiro.jp
 	cd ${WRKDIR}/macopix-mascot-one-euc-ja-1.02 \
-		&& ${INSTALL_DATA} *.png ${DATADIR}/pixmap \
-		&& ${INSTALL_DATA} *.mcpx *.menu ${DATADIR} \
-		&& ${INSTALL_DATA} README.jp ${DATADIR}/README.one.jp
+		&& ${INSTALL_DATA} *.png ${STAGEDIR}${DATADIR}/pixmap \
+		&& ${INSTALL_DATA} *.mcpx *.menu ${STAGEDIR}${DATADIR} \
+		&& ${INSTALL_DATA} README.jp ${STAGEDIR}${DATADIR}/README.one.jp
 	cd ${WRKDIR}/macopix-mascot-pia2-euc-ja-1.02 \
-		&& ${INSTALL_DATA} *.png ${DATADIR}/pixmap \
-		&& ${INSTALL_DATA} *.mcpx *.menu ${DATADIR} \
-		&& ${INSTALL_DATA} README.jp ${DATADIR}/README.pia2.jp
+		&& ${INSTALL_DATA} *.png ${STAGEDIR}${DATADIR}/pixmap \
+		&& ${INSTALL_DATA} *.mcpx *.menu ${STAGEDIR}${DATADIR} \
+		&& ${INSTALL_DATA} README.jp ${STAGEDIR}${DATADIR}/README.pia2.jp
 	cd ${WRKDIR}/macopix-mascot-triangle_heart-euc-ja-1.02 \
-		&& ${INSTALL_DATA} *.png ${DATADIR}/pixmap \
-		&& ${INSTALL_DATA} *.mcpx *.menu ${DATADIR} \
-		&& ${INSTALL_DATA} README.jp ${DATADIR}/README.trh.jp
+		&& ${INSTALL_DATA} *.png ${STAGEDIR}${DATADIR}/pixmap \
+		&& ${INSTALL_DATA} *.mcpx *.menu ${STAGEDIR}${DATADIR} \
+		&& ${INSTALL_DATA} README.jp ${STAGEDIR}${DATADIR}/README.trh.jp
 	cd ${WRKDIR}/macopix-mascot-tsukihime-euc-ja-1.02 \
-		&& ${INSTALL_DATA} *.png ${DATADIR}/pixmap \
-		&& ${INSTALL_DATA} *.mcpx *.menu ${DATADIR} \
-		&& ${INSTALL_DATA} README.jp ${DATADIR}/README.tsuki.jp
+		&& ${INSTALL_DATA} *.png ${STAGEDIR}${DATADIR}/pixmap \
+		&& ${INSTALL_DATA} *.mcpx *.menu ${STAGEDIR}${DATADIR} \
+		&& ${INSTALL_DATA} README.jp ${STAGEDIR}${DATADIR}/README.tsuki.jp
 	cd ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.20 \
-		&& ${INSTALL_DATA} *.png ${DATADIR}/pixmap \
-		&& ${INSTALL_DATA} *.mcpx *.menu ${DATADIR} \
-		&& ${INSTALL_DATA} README.jp ${DATADIR}/README.marimite.jp
+		&& ${INSTALL_DATA} *.png ${STAGEDIR}${DATADIR}/pixmap \
+		&& ${INSTALL_DATA} *.mcpx *.menu ${STAGEDIR}${DATADIR} \
+		&& ${INSTALL_DATA} README.jp ${STAGEDIR}${DATADIR}/README.marimite.jp
 	cd ${WRKDIR}/macopix-mascot-HxB-euc-ja-0.30 \
-		&& ${INSTALL_DATA} *.png ${DATADIR}/pixmap \
-		&& ${INSTALL_DATA} *.mcpx *.menu ${DATADIR} \
-		&& ${INSTALL_DATA} README.jp ${DATADIR}/README.HxB.jp
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} \
-		&& ${INSTALL_MAN} NKR.README.ja README README.ja ${DOCSDIR}
-.endif
+		&& ${INSTALL_DATA} *.png ${STAGEDIR}${DATADIR}/pixmap \
+		&& ${INSTALL_DATA} *.mcpx *.menu ${STAGEDIR}${DATADIR} \
+		&& ${INSTALL_DATA} README.jp ${STAGEDIR}${DATADIR}/README.HxB.jp
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_MAN} NKR.README.ja README README.ja \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
