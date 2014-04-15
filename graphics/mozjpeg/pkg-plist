@@ -12,7 +12,7 @@ include/%%PORTNAME%%/jpeglib.h
 %%STATIC%%lib/%%PORTNAME%%/libjpeg.a
 lib/%%PORTNAME%%/libjpeg.la
 %%SHARED%%lib/%%PORTNAME%%/libjpeg.so
-%%SHARED%%lib/%%PORTNAME%%/libjpeg.so.%%SOMAJORVERSION%%
+%%SHARED%%lib/%%PORTNAME%%/libjpeg.so.%%VER%%
 %%STATIC%%%%TURBOJPEG%%lib/%%PORTNAME%%/libturbojpeg.a
 %%TURBOJPEG%%lib/%%PORTNAME%%/libturbojpeg.la
 %%SHARED%%%%TURBOJPEG%%lib/%%PORTNAME%%/libturbojpeg.so
