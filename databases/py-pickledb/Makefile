@@ -8,9 +8,9 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	A lightweight, fast, and simple key-value store
+COMMENT=	Lightweight, fast, and simple key-value store
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -19,5 +19,4 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pickledb.py \
 		%%PYTHON_SITELIBDIR%%/pickledb.pyc \
 		%%PYTHON_SITELIBDIR%%/pickledb.pyo
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
