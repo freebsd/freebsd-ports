@@ -1,4 +1,2 @@
-SHA256 (nmap-6.40.tar.bz2) = 491f77d8b3fb3bb38ba4e3850011fe6fb43bbe197f9382b88cb59fa4e8f7a401
-SIZE (nmap-6.40.tar.bz2) = 7871636
-SHA256 (nmap-6.40-r32810.diff.bz2) = 262ca2dc6a09e2388199d549cce8dd98ce13e3ce66fa17519ab582e4cdeba105
-SIZE (nmap-6.40-r32810.diff.bz2) = 1305713
+SHA256 (nmap-6.45.tar.bz2) = 13e595cbceb97f5281c43aa7ad56059a27d9a8b01ba97f199c4b9c826fcb5764
+SIZE (nmap-6.45.tar.bz2) = 7911456

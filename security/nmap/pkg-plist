@@ -35,6 +35,8 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/asn1.lua
 %%DATADIR%%/nselib/base32.lua
 %%DATADIR%%/nselib/base64.lua
+%%DATADIR%%/nselib/bin.luadoc
+%%DATADIR%%/nselib/bit.luadoc
 %%DATADIR%%/nselib/bitcoin.lua
 %%DATADIR%%/nselib/bittorrent.lua
 %%DATADIR%%/nselib/bjnp.lua
@@ -111,6 +113,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/jdwp.lua
 %%DATADIR%%/nselib/json.lua
 %%DATADIR%%/nselib/ldap.lua
+%%DATADIR%%/nselib/lfs.luadoc
 %%DATADIR%%/nselib/listop.lua
 %%DATADIR%%/nselib/match.lua
 %%DATADIR%%/nselib/membase.lua
@@ -125,11 +128,14 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/ncp.lua
 %%DATADIR%%/nselib/ndmp.lua
 %%DATADIR%%/nselib/netbios.lua
+%%DATADIR%%/nselib/nmap.luadoc
 %%DATADIR%%/nselib/nrpc.lua
 %%DATADIR%%/nselib/nsedebug.lua
 %%DATADIR%%/nselib/omp2.lua
+%%DATADIR%%/nselib/openssl.luadoc
 %%DATADIR%%/nselib/ospf.lua
 %%DATADIR%%/nselib/packet.lua
+%%DATADIR%%/nselib/pcre.luadoc
 %%DATADIR%%/nselib/pgsql.lua
 %%DATADIR%%/nselib/pop3.lua
 %%DATADIR%%/nselib/pppoe.lua
