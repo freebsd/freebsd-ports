@@ -1,0 +1,15 @@
+--- ./dnsmasq.conf.example.orig	2014-04-09 21:36:53.000000000 +0200
++++ ./dnsmasq.conf.example	2014-04-15 19:32:54.000000000 +0200
+@@ -123,6 +123,12 @@
+ # running another nameserver on the same machine.
+ #bind-interfaces
+ 
++# Accept DNS queries only from hosts whose address is on a local
++# subnet, ie a subnet for which an interface exists on the server.
++# This option only has effect if there are no --interface
++# --except-interface, --listen-address or --auth-server options.
++local-service
++
+ # If you don't want dnsmasq to read /etc/hosts, uncomment the
+ # following line.
+ #no-hosts

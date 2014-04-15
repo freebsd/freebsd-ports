@@ -4,6 +4,7 @@
 PORTNAME=	dnsmasq
 DISTVERSION=	2.69
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		LOCAL/mandree/
