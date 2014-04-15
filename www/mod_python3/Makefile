@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that embeds the Python interpreter within the server
 
+LICENSE=	APACHE20
+
 USE_APACHE=	22
 USE_PYTHON=	yes
 
@@ -28,12 +30,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS+=	APXS=${APXS}
 MAKE_ENV=	EXPR_COMPAT=yes
 
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 # You need to install apache & mod_python before you run this
 regression-test: build
-	@cd ${WRKSRC} && ${MAKE} check
+	-@${MAKE} check -C ${WRKSRC}
 
 .include <bsd.port.mk>
