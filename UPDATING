@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140415:
+  AFFECTS: Users of mod_python3
+  AUTHOR: ohauer@FreeBSD.org
+
+  www/mod_python3 was renamed to www/mod_python33, additional www/mod_python35
+  with support for apache24 was added to the portstree.
+
+  To reflect the new port location use:
+
+  pkgng users:
+  # pkg set -o www/mod_python3:www/mod_python33
+
+  portmaster users:
+  # portmaster -o www/mod_python33 www/mod_python3
+
+  portupgrade users:
+  # portugrade -o www/mod_python33 www/mod_python3
+
 20140414:
   AFFECTS: Users of dmd 1.X and dmd 2.x.
   AUTHOR: cy@FreeBSD.org
@@ -83,8 +101,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of textproc/elasticsearch
   AUTHOR: tj@FreeBSD.org
 
-  Elasticsearch has been updated to version 1.1.0. If you are updating 
-  from a version prior to 1.0.0 you will need to do a full cluster 
+  Elasticsearch has been updated to version 1.1.0. If you are updating
+  from a version prior to 1.0.0 you will need to do a full cluster
   shutdown for this update as it can not be performed in a rolling
   fashion.
 
