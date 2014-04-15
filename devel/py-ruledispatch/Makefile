@@ -5,7 +5,8 @@ PORTNAME=	RuleDispatch
 PORTVERSION=	0.5.a1.r2717
 PORTREVISION=	0
 CATEGORIES=	devel python
-MASTER_SITES=	http://peak.telecommunity.com/snapshots/
+MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/ \
+		http://peak.telecommunity.com/snapshots/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-0.5a1.dev-r2717
 
