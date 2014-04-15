@@ -3,32 +3,38 @@
 PORTNAME=	doscmd
 PORTVERSION=	20110826
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	doscmd
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	shurd@sasktel.net
 COMMENT=	DOS emulator
 
 ONLY_FOR_ARCHS=	i386
-.ifdef WITHOUT_X11
-MAKE_ARGS+=	-DNO_X
-PLIST_SUB+=	X11="@comment "
-.else
-USE_XORG=	x11
-PLIST_SUB+=	X11=""
-MAKE_ARGS+=	X11BASE=${LOCALBASE}
-.endif
-MAKE_ARGS+=	MANDIR="${PREFIX}/man/man"
-MAN1=		doscmd.1
-MANCOMPRESSED=	yes
 
-NO_STAGE=	yes
-post-install:
-	@${ECHO_MSG} NOTE:
-	@${ECHO_MSG} =====
-	@${ECHO_MSG} For security reasons, FreeBSD no longer allows mmap\(\) at zero.
-	@${ECHO_MSG} To remove this security protection and allow doscmd to work, you will need
-	@${ECHO_MSG} to set sysctl security.bsd.map_at_zero=1 either before running doscmd or
-	@${ECHO_MSG} in /etc/sysctl.conf.
+FONTFILES=	cp437-8x8.pcf.gz cp437-8x14.pcf.gz cp437-8x16.pcf.gz
+PORTDOCS=	PROBLEMS README*
+
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=	X11
+OPTIONS_SUB=	yes
+
+X11_USE=	XORG=x11
+X11_MAKE_ARGS=	X11BASE=${LOCALBASE}
+X11_MAKE_ARGS_OFF=	-DNO_X
+
+.include <bsd.port.options.mk>
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/emsdriv.sys ${WRKSRC}/redir.com \
+		${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+.if ${PORT_OPTIONS:MX11}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/fonts
+	${INSTALL_DATA} ${FONTFILES:S,^,${WRKSRC}/,} ${WRKSRC}/fonts.dir \
+		${STAGEDIR}${DATADIR}/fonts
+.endif
 
 .include <bsd.port.mk>
