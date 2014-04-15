@@ -5,7 +5,7 @@
  # of your perl interpreter
  
 -PERLBIN = /usr/local/bin/perl
-+PERLBIN = $(PERL5)
++PERLBIN = $(PERL)
  
  # and here are a some commands that may be system-dependent
  
