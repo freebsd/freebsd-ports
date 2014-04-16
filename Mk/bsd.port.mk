@@ -3823,13 +3823,19 @@ do-package: ${TMPPLIST}
 		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -D ${PKGMESSAGE}"; \
 	fi; \
 	${MKDIR} ${WRKDIR}/pkg; \
+	if ! [ -d "${PREFIX}" ]; then \
+	    made_prefix=1; \
+	    ${MKDIR} ${PREFIX}; \
+	fi; \
 	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}; then \
+		[ -n "$${made_prefix}" ] && ${RMDIR} ${PREFIX}; \
 		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
 			${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null || \
 			    ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
 			cd ${.CURDIR} && eval ${MAKE} package-links; \
 		fi; \
 	else \
+		[ -n "$${made_prefix}" ] && ${RMDIR} ${PREFIX}; \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
 		exit 1; \
 	fi
