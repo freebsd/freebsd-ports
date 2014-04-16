@@ -3165,7 +3165,11 @@ all:
 .endif
 
 .if !target(all)
+.  if defined(NO_STAGE)
 all: build
+.  else
+all: stage
+.  endif
 .endif
 
 .if !defined(DEPENDS_TARGET)
