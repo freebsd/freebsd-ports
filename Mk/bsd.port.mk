@@ -3824,8 +3824,12 @@ do-package: ${TMPPLIST}
 	fi; \
 	${MKDIR} ${WRKDIR}/pkg; \
 	if ! [ -d "${PREFIX}" ]; then \
+	    if ! ${MKDIR} ${PREFIX}; then \
+		    ${ECHO_MSG} "=> Unable to create PREFIX. PREFIX must exist to create a package with pkg_install." >&2; \
+		    ${ECHO_MSG} "=> Manually create ${PREFIX} first." >&2; \
+		    exit 1; \
+		fi; \
 	    made_prefix=1; \
-	    ${MKDIR} ${PREFIX}; \
 	fi; \
 	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}; then \
 		[ -n "$${made_prefix}" ] && ${RMDIR} ${PREFIX}; \
