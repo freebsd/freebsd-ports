@@ -2,28 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	chef
-PORTVERSION=	11.10.4
+PORTVERSION=	11.12.2
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Systems integration framework. Client part
 
-RUN_DEPENDS=	rubygem-chef-zero>=0.0.0:${PORTSDIR}/sysutils/rubygem-chef-zero \
+RUN_DEPENDS=	rubygem-chef-zero>=2.0.2:${PORTSDIR}/sysutils/rubygem-chef-zero \
 		rubygem-diff-lcs>=0.0.0:${PORTSDIR}/textproc/rubygem-diff-lcs \
 		rubygem-erubis>=0:${PORTSDIR}/www/rubygem-erubis \
 		rubygem-highline>=1.6.9:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-json>=1.8.1:${PORTSDIR}/devel/rubygem-json \
+		rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-mixlib-authentication>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-authentication \
 		rubygem-mixlib-cli>=1.4.0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-mixlib-config>=2.1.0:${PORTSDIR}/devel/rubygem-mixlib-config \
 		rubygem-mixlib-log>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-log \
-		rubygem-mixlib-shellout>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-shellout \
+		rubygem-mixlib-shellout>=1.4.0:${PORTSDIR}/devel/rubygem-mixlib-shellout \
 		rubygem-net-ssh>=2.6:${PORTSDIR}/security/rubygem-net-ssh \
 		rubygem-net-ssh-multi>=1.1.0:${PORTSDIR}/security/rubygem-net-ssh-multi \
-		rubygem-ohai>=6.0.0:${PORTSDIR}/sysutils/rubygem-ohai \
+		rubygem-ohai>=7.0.0:${PORTSDIR}/sysutils/rubygem-ohai \
 		rubygem-pry>=0.9.0:${PORTSDIR}/devel/rubygem-pry \
-		rubygem-puma16>=1.6.0:${PORTSDIR}/www/rubygem-puma16 \
 		rubygem-rest-client>=1.0.4:${PORTSDIR}/www/rubygem-rest-client \
 		rubygem-yajl-ruby>=1.1.0:${PORTSDIR}/devel/rubygem-yajl-ruby
 
