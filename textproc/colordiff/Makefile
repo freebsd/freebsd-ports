@@ -22,7 +22,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/colordiffrc ${STAGEDIR}${PREFIX}/etc/colordiffrc.default
+	${INSTALL_DATA} ${WRKSRC}/colordiffrc ${STAGEDIR}${PREFIX}/etc/colordiffrc.sample
 .if !exists(${STAGEDIR}${PREFIX}/etc/colordiffrc)
 	${INSTALL_DATA} ${WRKSRC}/colordiffrc ${STAGEDIR}${PREFIX}/etc
 .endif
