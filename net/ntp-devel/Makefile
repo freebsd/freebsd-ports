@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p433
+PORTVERSION=	4.2.7p440
 CATEGORIES=	net ipv6
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
@@ -17,8 +17,10 @@ COMMENT=	The Network Time Protocol Distribution
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
 AUTOMAKE_ARGS=	--add-missing
-USES=		pathfix
+USES=		pathfix perl5 shebangfix
 LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
+
+NTP_SHEBANG_FILES=	sbin/ntp-wait sbin/ntptrace
 
 .include "Makefile.inc"
 
@@ -89,5 +91,7 @@ post-install:
 	@cd ${WRKSRC}/html && ${FIND} . -print | \
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${STAGEDIR}${DOCSDIR}
 .endif
+	@cd ${STAGEDIR}${PREFIX}; \
+		${ECHO_CMD} ${NTP_SHEBANG_FILES} | ${XARGS} ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS}
 
 .include <bsd.port.post.mk>
