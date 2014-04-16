@@ -12,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program to create labels and business cards
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui \
+USE_GNOME=	gnomehack gnomeprefix libgnomeui gnomedocutils \
 		desktopfileutils intlhack ltverhack
 WANT_GNOME=	yes
 USES=		gettext gmake pkgconfig
