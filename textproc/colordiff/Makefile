@@ -3,6 +3,7 @@
 
 PORTNAME=	colordiff
 PORTVERSION=	1.0.13
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.colordiff.org/ CRITICAL
 
