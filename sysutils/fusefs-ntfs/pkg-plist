@@ -77,4 +77,3 @@ sbin/ntfsundelete
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/ntfs-3g
-@dirrmtry tests
