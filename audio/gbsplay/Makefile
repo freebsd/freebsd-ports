@@ -3,7 +3,7 @@
 
 PORTNAME=	gbsplay
 PORTVERSION=	0.0.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	CRITICAL
 PKGNAMEPREFIX?=
@@ -78,7 +78,7 @@ do-install:
 		${STAGEDIR}${EXAMPLESDIR}
 
 	${INSTALL_DATA} ${WRKSRC}/examples/gbsplayrc_sample \
-		${STAGEDIR}${PREFIX}/etc/gbsplayrc.default
+		${STAGEDIR}${PREFIX}/etc/gbsplayrc.sample
 .if !exists(${STAGEDIR}${PREFIX}/etc/gbsplayrc)
 	${INSTALL_DATA} ${WRKSRC}/examples/gbsplayrc_sample \
 		${STAGEDIR}${PREFIX}/etc/gbsplayrc
