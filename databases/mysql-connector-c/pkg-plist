@@ -66,7 +66,6 @@ lib/mysql-connector-c/libmysqlclient.so.18
 lib/mysql-connector-c/libmysqlclient_r.a
 lib/mysql-connector-c/libmysqlclient_r.so
 lib/mysql-connector-c/libmysqlclient_r.so.18
-libdata/ldconfig/mysql-connector-c
 @dirrm lib/mysql-connector-c
 @dirrm bin/mysql-connector-c
 @dirrm include/mysql-connector-c/mysql/psi
