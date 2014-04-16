@@ -1,25 +1,25 @@
-%%DATADIR%%/koruri-bold.ttf
-%%DATADIR%%/koruri-extrabold.ttf
-%%DATADIR%%/koruri-light.ttf
-%%DATADIR%%/koruri-semibold.ttf
-%%DATADIR%%/koruri-regular.ttf
+%%DATADIR%%/Koruri-Bold.ttf
+%%DATADIR%%/Koruri-Extrabold.ttf
+%%DATADIR%%/Koruri-Light.ttf
+%%DATADIR%%/Koruri-Semibold.ttf
+%%DATADIR%%/Koruri-Regular.ttf
 @dirrmtry %%DATADIR%%
-%%LOCAL_FONTSDIR%%/TTF/koruri-bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/koruri-extrabold.ttf
-%%LOCAL_FONTSDIR%%/TTF/koruri-light.ttf
-%%LOCAL_FONTSDIR%%/TTF/koruri-semibold.ttf
-%%LOCAL_FONTSDIR%%/TTF/koruri-regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/Koruri-Bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/Koruri-Extrabold.ttf
+%%LOCAL_FONTSDIR%%/TTF/Koruri-Light.ttf
+%%LOCAL_FONTSDIR%%/TTF/Koruri-Semibold.ttf
+%%LOCAL_FONTSDIR%%/TTF/Koruri-Regular.ttf
 @dirrmtry %%LOCAL_FONTSDIR%%/TTF
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-koruri.conf
 etc/fonts/conf.avail/62-fonts-koruri.conf
 etc/fonts/conf.d/20-unhint-koruri.conf
 etc/fonts/conf.d/62-fonts-koruri.conf
-%%X_FONTSDIR%%/TTF/koruri-bold.ttf
-%%X_FONTSDIR%%/TTF/koruri-extrabold.ttf
-%%X_FONTSDIR%%/TTF/koruri-light.ttf
-%%X_FONTSDIR%%/TTF/koruri-semibold.ttf
-%%X_FONTSDIR%%/TTF/koruri-regular.ttf
+%%X_FONTSDIR%%/TTF/Koruri-Bold.ttf
+%%X_FONTSDIR%%/TTF/Koruri-Extrabold.ttf
+%%X_FONTSDIR%%/TTF/Koruri-Light.ttf
+%%X_FONTSDIR%%/TTF/Koruri-Semibold.ttf
+%%X_FONTSDIR%%/TTF/Koruri-Regular.ttf
 @exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1
