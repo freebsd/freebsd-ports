@@ -3,7 +3,7 @@
 
 PORTNAME=	midori
 PORTVERSION=	0.5.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www xfce
 MASTER_SITES=	http://www.midori-browser.org/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_all_
@@ -17,8 +17,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2 \
 		valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
+LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
@@ -33,6 +32,7 @@ USE_XORG=	xscrnsaver
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USES=		desktop-file-utils pkgconfig cmake gettext tar:bzip2
+USE_SQLITE=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
