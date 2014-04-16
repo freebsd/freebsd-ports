@@ -3,7 +3,7 @@
 
 PORTNAME=	xcb-util
 PORTVERSION=	0.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
@@ -11,13 +11,10 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A module with libxcb/libX11 extension/replacement libraries
 
+XORG_CAT=	lib
 USE_BZIP2=	yes
-USES=		gmake pathfix pkgconfig
-USE_LDCONFIG=	yes
-USE_XORG=	xau xcb xdmcp xorg-macros
-USE_AUTOTOOLS=	libtool
-
-GNU_CONFIGURE=	yes
+USES=		gmake
+USE_XORG=	xau xcb xdmcp
 
 post-patch:
 	@${REINPLACE_CMD} -e \

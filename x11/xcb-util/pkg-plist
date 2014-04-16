@@ -1,7 +1,8 @@
-lib/libxcb-util.so.1
-lib/libxcb-util.so
-lib/libxcb-util.la
 lib/libxcb-util.a
+lib/libxcb-util.la
+lib/libxcb-util.so
+lib/libxcb-util.so.1
+lib/libxcb-util.so.1.0.0
 libdata/pkgconfig/xcb-atom.pc
 libdata/pkgconfig/xcb-aux.pc
 libdata/pkgconfig/xcb-event.pc

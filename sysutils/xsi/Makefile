@@ -3,6 +3,7 @@
 
 PORTNAME=	xsi
 PORTVERSION=	1.0.b2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/xmlsysinfo/xmlsysinfo/1.0-beta2/
 DISTNAME=	${PORTNAME}-1.0-beta2
@@ -10,8 +11,7 @@ DISTNAME=	${PORTNAME}-1.0-beta2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System monitor that provides XML encoded stats
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-user=_xsi
 

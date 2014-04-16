@@ -3,7 +3,7 @@
 
 PORTNAME=	xmlroff
 PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://xmlroff.org/download/
 

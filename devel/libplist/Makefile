@@ -2,7 +2,7 @@
 
 PORTNAME=	libplist
 PORTVERSION=	1.10
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	spectrwm
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
 EXTRACT_SUFX=	.tgz

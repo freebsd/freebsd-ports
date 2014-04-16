@@ -3,7 +3,7 @@
 
 PORTNAME=	libreatlas
 PORTVERSION=	1.0.0a
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=	mspack:${PORTSDIR}/archivers/libmspack \
 		png15:${PORTSDIR}/graphics/png \
 		proj:${PORTSDIR}/graphics/proj \
 		tiff:${PORTSDIR}/graphics/tiff \
-		freetype:${PORTSDIR}/print/freetype2 \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
 		freexl:${PORTSDIR}/textproc/freexl \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig

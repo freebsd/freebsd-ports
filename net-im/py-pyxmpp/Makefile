@@ -3,7 +3,7 @@
 
 PORTNAME=	pyxmpp
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im python
 MASTER_SITES=	http://cloud.github.com/downloads/Jajcus/pyxmpp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

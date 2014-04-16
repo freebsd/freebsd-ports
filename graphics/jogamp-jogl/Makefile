@@ -3,6 +3,7 @@
 
 PORTNAME=	jogamp-jogl
 PORTVERSION=	2.0.20100914
+PORTREVISION=	1
 CATEGORIES=	graphics devel java
 MASTER_SITES=	http://www.potion-studios.com/ \
 		LOCAL/makc

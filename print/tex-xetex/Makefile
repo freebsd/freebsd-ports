@@ -2,7 +2,7 @@
 
 PORTNAME=	xetex
 PORTVERSION=	0.9999
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://people.allbsd.org/~hrs/FreeBSD/:web2c \
 		ftp://tug.org/historic/systems/texlive/2012/:texmf

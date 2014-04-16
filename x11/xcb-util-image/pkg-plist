@@ -1,8 +1,9 @@
 include/xcb/xcb_bitops.h
 include/xcb/xcb_image.h
 include/xcb/xcb_pixel.h
-lib/libxcb-image.so.0
-lib/libxcb-image.so
-lib/libxcb-image.la
 lib/libxcb-image.a
+lib/libxcb-image.la
+lib/libxcb-image.so
+lib/libxcb-image.so.0
+lib/libxcb-image.so.0.0.0
 libdata/pkgconfig/xcb-image.pc

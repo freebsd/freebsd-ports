@@ -3,7 +3,7 @@
 
 PORTNAME=	eyeclock
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/personal/tokei/
 DISTNAME=	eyeclk20

@@ -3,6 +3,7 @@
 
 PORTNAME=	fltk
 DISTVERSION=	1.3.x-r${SNAPSHOT_VERS}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fltk.org/pub/${PORTNAME}/snapshots/
 PKGNAMESUFFIX=	-devel

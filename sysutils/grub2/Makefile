@@ -3,7 +3,7 @@
 
 PORTNAME=	grub2
 PORTVERSION=	2.00
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/grub
 DISTNAME=	grub-${PORTVERSION}
@@ -45,7 +45,7 @@ EFIEMU=		"@comment "
 PLIST_SUB+=	EFIEMU=${EFIEMU}
 
 .if ${PORT_OPTIONS:MMKFONT}
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 MAN1+=		grub-mkfont.1
 .else

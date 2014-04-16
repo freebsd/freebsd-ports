@@ -3,6 +3,7 @@
 
 PORTNAME=	libXtst
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -13,7 +14,6 @@ LICENSE=	MIT
 XORG_CAT=	lib
 USE_XORG=	x11 xext recordproto:both xextproto inputproto:both \
 		xi
-USE_AUTOTOOLS=	libtool
 
 CONFIGURE_ARGS+=--disable-specs --without-xmlto
 

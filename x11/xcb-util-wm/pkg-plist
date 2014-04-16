@@ -1,13 +1,15 @@
 include/xcb/xcb_icccm.h
 include/xcb/xcb_ewmh.h
-lib/libxcb-icccm.so.4
-lib/libxcb-icccm.so
-lib/libxcb-icccm.la
 lib/libxcb-icccm.a
-lib/libxcb-ewmh.so.2
-lib/libxcb-ewmh.so
-lib/libxcb-ewmh.la
+lib/libxcb-icccm.la
+lib/libxcb-icccm.so
+lib/libxcb-icccm.so.4
+lib/libxcb-icccm.so.4.0.0
 lib/libxcb-ewmh.a
+lib/libxcb-ewmh.la
+lib/libxcb-ewmh.so
+lib/libxcb-ewmh.so.2
+lib/libxcb-ewmh.so.2.0.0
 libdata/pkgconfig/xcb-icccm.pc
 libdata/pkgconfig/xcb-ewmh.pc
 @dirrmtry include/xcb

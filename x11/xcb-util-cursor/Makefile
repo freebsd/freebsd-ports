@@ -2,6 +2,7 @@
 
 PORTNAME=	xcb-util-cursor
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -17,12 +18,10 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-util.pc:${PORTSDIR}/x11/xcb-util
 		${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util-renderutil \
 		${LOCALBASE}/libdata/pkgconfig/xcb-image.pc:${PORTSDIR}/x11/xcb-util-image
 
-USE_BZIP2=	yes
-USE_LDCONFIG=	yes
-USE_XORG=	xcb xorg-macros
-USES=		gmake pkgconfig
+XORG_CAT=	lib
+USE_XORG=	xcb
+USES=		gmake
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf"
 
 post-patch:

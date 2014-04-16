@@ -3,7 +3,7 @@
 
 PORTNAME=	tulip
 PORTVERSION=	3.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
    		gzstream.0:${PORTSDIR}/devel/gzstream \
 		ftgl.2:${PORTSDIR}/graphics/ftgl \
 		qscintilla2:${PORTSDIR}/devel/qscintilla2 \

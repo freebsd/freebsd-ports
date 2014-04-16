@@ -3,7 +3,7 @@
 
 PORTNAME=	qxv
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	graphics
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/422/
 
@@ -21,12 +21,11 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libintl.so:${PORTSDIR}/devel/gettext \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libxcb.so:${PORTSDIR}/x11/xcb
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 USES=		iconv qmake
 USE_BZIP2=	yes
-USE_XORG=	sm xrender xext x11 xau xdmcp ice
+USE_XORG=	sm xrender xext x11 xau xdmcp ice xcb
 USE_QT4=	corelib gui moc_build uic_build rcc_build
 MAKE_JOBS_UNSAFE=	yes
 

@@ -5,6 +5,7 @@ lib/libXft.a
 lib/libXft.la
 lib/libXft.so
 lib/libXft.so.2
+lib/libXft.so.2.3.1
 libdata/pkgconfig/xft.pc
 man/man3/Xft.3.gz
 @dirrm include/X11/Xft

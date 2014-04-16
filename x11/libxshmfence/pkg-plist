@@ -3,4 +3,5 @@ lib/libxshmfence.a
 lib/libxshmfence.la
 lib/libxshmfence.so
 lib/libxshmfence.so.1
+lib/libxshmfence.so.1.0.0
 libdata/pkgconfig/xshmfence.pc

@@ -5,6 +5,58 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140416:
+  AFFECTS: users of x11/xorg graphics/dri graphics/libGL and related ports
+  AUTHOR: x11@FreeBSD.org
+
+  The default xorg version has been switched on FreeBSD 10-STABLE and
+  FreeBSD 9-STABLE.
+
+  To upgrade graphics/libGL, graphics/dri and related MESA ports, it is
+  necessary to first remove the old versions of those ports.
+  No special upgrade procedure is needed for xorg ports but it is
+  necessary to recompile all xorg drivers (xf86-*) and other ports that
+  depend on the xserver version, including
+  emulators/virtualbox-ose-additions.  Portrevisions have been bumped
+  where needed, but users of drivers not in the ports tree will need to
+  recompile those.
+
+  If it is important to stay on the old versions, it is possible to
+  specify WITHOUT_NEW_XORG= in /etc/make.conf to get the old xorg
+  distribution.
+
+  For users in need of working console when using KMS drivers (intel and
+  radeon graphics cards) please use the new vt(9) console driver.
+  For more information, see https://wiki.freebsd.org/Graphics and
+  https://wiki.freebsd.org/Newcons .
+
+  To update:
+
+  # pkg_delete -f libGL-\* dri-\*
+    or
+  # pkg delete -f libGL dri
+    followed by
+  # portmaster graphics/dri graphics/libGL
+    or
+  # portupgrade graphics/dri graphics/libGL
+    and then
+  # portmaster -a
+    or
+  # portupgrade -a
+
+20140416:
+  AFFECTS: users of print/freetype2 textproc/libxml2 x11/pixman and
+           graphics/freeglut
+  AUTHOR: x11@FreeBSD.org and gnome@FreeBSD.org
+
+  The library version of the above libraries has been brought in line
+  with what upstream expects. To do this all users of these ports need
+  to be rebuilt. Portrevisions have been bumped as a consequence.
+
+  # portmaster -r freetype2 -r libxml2 -r pixman -r freeglut
+  or
+  # portupgrade -rf freetype2 libxml2 pixman freeglut
+
 20140415:
   AFFECTS: Users of mod_python3
   AUTHOR: ohauer@FreeBSD.org

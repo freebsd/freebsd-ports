@@ -3,7 +3,7 @@
 
 PORTNAME=	knightcap
 PORTVERSION=	3.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.samba.org/pub/KnightCap/
 DISTNAME=	KnightCap-${PORTVERSION}

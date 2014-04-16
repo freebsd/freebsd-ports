@@ -2,6 +2,7 @@
 
 PORTNAME=	telepathy-logger-qt4
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/kde-telepathy/${PORTVERSION}/src

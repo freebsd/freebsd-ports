@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_authnz_crowd
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.atlassian.com/software/crowd/downloads/cwdapache/
 DIST_SUBDIR=	apache2

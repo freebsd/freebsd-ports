@@ -21,7 +21,7 @@ USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 # We only care for 9.x and 8.x, not for old pre-clang default current.
 # This is for 0b0000 binary which gcc 4.3+ understands and is in the i965 driver.
 .if defined(WITH_NEW_XORG)
-. if ${OSVERSION} >= 901000 && ${OSVERSION} < 902502 \
+. if ${OSVERSION} >= 901500 && ${OSVERSION} < 902502 \
 		&& (${ARCH} == i386 || ${ARCH} == amd64)
 CC=clang
 CXX=clang++

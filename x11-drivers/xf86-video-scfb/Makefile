@@ -3,6 +3,7 @@
 
 PORTNAME=	xf86-video-scfb
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ \
 		LOCAL/rene 

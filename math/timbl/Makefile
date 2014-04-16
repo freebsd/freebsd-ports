@@ -3,6 +3,7 @@
 
 PORTNAME=	timbl
 PORTVERSION=	6.4.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ilk.uvt.nl/downloads/pub/software/
 

@@ -20,14 +20,10 @@ CONFIGURE_ARGS=	--disable-dmx --disable-xnest \
 		--localstatedir=/var --without-dtrace
 
 SLAVE_PORT=	yes
-PLIST_FILES=	bin/Xvfb man/man1/Xvfb.1.gz
+PLIST_FILES=	bin/Xvfb \
+		man/man1/Xvfb.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hw/vfb/Xvfb ${STAGEDIR}${PREFIX}/bin/
-	if [ -f ${WRKSRC}/hw/vfb/man/Xvfb.1 ] ; then \
-		${INSTALL_MAN} ${WRKSRC}/hw/vfb/man/Xvfb.1 ${STAGEDIR}${PREFIX}/man/man1/ ; \
-	else \
-		${INSTALL_MAN} ${WRKSRC}/hw/vfb/Xvfb.1 ${STAGEDIR}${PREFIX}/man/man1/ ; \
-	fi
+	cd ${WRKSRC}/hw/vfb; DESTDIR=${STAGEDIR} ${MAKE} install
 
 .include "${MASTERDIR}/Makefile"

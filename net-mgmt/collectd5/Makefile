@@ -3,6 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.4.1
+PORTREVISION=	1
 PKGNAMESUFFIX=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/

@@ -3,19 +3,19 @@
 
 PORTNAME=	liblouisxml
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Library Provide Complete Braille Transcription Services
 
-LIB_DEPENDS=	louis.2:${PORTSDIR}/devel/liblouis \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	louis.2:${PORTSDIR}/devel/liblouis
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 USE_LDCONFIG=	yes
+USE_GNOME=	libxml2
 
 INFO=		liblouisxml-guide
 MAN1=		msword2brl.1 xml2brl.1

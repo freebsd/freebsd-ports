@@ -1,9 +1,11 @@
 lib/libI810XvMC.la
 lib/libI810XvMC.so
 lib/libI810XvMC.so.1
+lib/libI810XvMC.so.1.0.0
 lib/libIntelXvMC.la
 lib/libIntelXvMC.so.1
 lib/libIntelXvMC.so
+lib/libIntelXvMC.so.1.0.0
 %%OLD%%lib/xorg/modules/drivers/ch7017.la
 %%OLD%%lib/xorg/modules/drivers/ch7017.so
 %%OLD%%lib/xorg/modules/drivers/ch7xxx.la

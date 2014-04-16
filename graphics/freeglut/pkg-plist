@@ -5,7 +5,8 @@ include/GL/glut.h
 lib/libglut.a
 lib/libglut.la
 lib/libglut.so
-lib/libglut.so.12
+lib/libglut.so.3
+lib/libglut.so.3.9.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/callbackmaker
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fractals
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fractals_random

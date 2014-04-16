@@ -3,6 +3,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.8.26.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/

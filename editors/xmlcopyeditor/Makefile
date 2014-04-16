@@ -3,6 +3,7 @@
 
 PORTNAME=	xmlcopyeditor
 PORTVERSION=	1.2.0.11
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF/xml-copy-editor/${PORTNAME}-linux/${PORTVERSION}
 

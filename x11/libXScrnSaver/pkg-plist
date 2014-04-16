@@ -1,8 +1,9 @@
 include/X11/extensions/scrnsaver.h
-lib/libXss.so.1
-lib/libXss.so
-lib/libXss.la
 lib/libXss.a
+lib/libXss.la
+lib/libXss.so
+lib/libXss.so.1
+lib/libXss.so.1.0.0
 libdata/pkgconfig/xscrnsaver.pc
 man/man3/Xss.3.gz
 man/man3/XScreenSaverAllocInfo.3.gz

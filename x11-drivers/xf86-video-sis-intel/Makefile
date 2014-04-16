@@ -3,7 +3,7 @@
 
 PORTNAME=	xf86-video-sis-intel
 PORTVERSION=	300407
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://downloadmirror.intel.com/15443/eng/
 DISTNAME=	sis_drv_src_300407
@@ -12,6 +12,8 @@ MAINTAINER=	littlesavage@orionet.ru
 COMMENT=	X.Org sis display driver provided by Intel
 
 IGNORE=		requires pciVideoPtr typedef
+DEPRECATED=	requires pciVideoPtr typedef
+EXPIRATION_DATE=2014-05-01
 
 CONFLICTS=	xf86-video-sis-[0-9]*
 WRKSRC=		${WRKDIR}/2d-driver

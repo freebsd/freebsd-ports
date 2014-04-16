@@ -52,7 +52,8 @@ include/libxml2/libxml/xpointer.h
 lib/libxml2.a
 lib/libxml2.la
 lib/libxml2.so
-lib/libxml2.so.5
+lib/libxml2.so.2
+lib/libxml2.so.%%LIBVERSION%%
 libdata/pkgconfig/libxml-2.0.pc
 share/aclocal/libxml.m4
 man/man1/xml2-config.1.gz

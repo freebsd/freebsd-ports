@@ -3,6 +3,7 @@
 
 PORTNAME=	yaz
 PORTVERSION=	5.0.21
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 

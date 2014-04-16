@@ -1,6 +1,7 @@
 include/xcb/xcb_keysyms.h
-lib/libxcb-keysyms.so.1
-lib/libxcb-keysyms.so
-lib/libxcb-keysyms.la
 lib/libxcb-keysyms.a
+lib/libxcb-keysyms.la
+lib/libxcb-keysyms.so
+lib/libxcb-keysyms.so.1
+lib/libxcb-keysyms.so.1.0.0
 libdata/pkgconfig/xcb-keysyms.pc

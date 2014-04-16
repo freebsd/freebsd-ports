@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_xml2enc
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/mod_proxy_html/
 DISTNAME=	mod_proxy_html

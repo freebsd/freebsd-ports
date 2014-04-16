@@ -199,10 +199,12 @@ lib/libX11-xcb.a
 lib/libX11-xcb.la
 lib/libX11-xcb.so
 lib/libX11-xcb.so.1
+lib/libX11-xcb.so.1.0.0
 lib/libX11.a
 lib/libX11.la
 lib/libX11.so
 lib/libX11.so.6
+lib/libX11.so.6.3.0
 libdata/pkgconfig/x11-xcb.pc
 libdata/pkgconfig/x11.pc
 man/man3/AllPlanes.3.gz

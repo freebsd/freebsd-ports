@@ -3,6 +3,7 @@
 
 PORTNAME=	libfvde
 PORTVERSION=	20130305
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSLUVJYl9XRWhKSjg/
 DISTFILES=	${PORTNAME}-experimental-${PORTVERSION}${EXTRACT_SUFX}

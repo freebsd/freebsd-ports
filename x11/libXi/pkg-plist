@@ -4,6 +4,7 @@ lib/libXi.a
 lib/libXi.la
 lib/libXi.so
 lib/libXi.so.6
+lib/libXi.so.6.1.0
 libdata/pkgconfig/xi.pc
 man/man3/XAllowDeviceEvents.3.gz
 man/man3/XChangeDeviceControl.3.gz
