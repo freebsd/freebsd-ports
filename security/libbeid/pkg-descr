@@ -1,0 +1,4 @@
+Support libraries for Belgian government-issued electronic identity cards.
+A PKCS #11 module is included that can be used with Mozilla Firefox.
+
+WWW: https://code.google.com/p/eid-mw/
