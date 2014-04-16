@@ -3,7 +3,7 @@
 
 PORTNAME=	eruby
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
