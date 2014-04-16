@@ -737,6 +737,14 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/halt_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/mount_nfs_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/rsync_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/coreos/cap/docker.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/fedora/cap/change_host_name.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/hyperv/action/check_enabled.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/hyperv/scripts/check_hyperv.ps1
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/docker/cap/linux/docker_daemon_running.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/ansible/config_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/ansible/provisioner_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/support/shared/config.rb
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/util
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/plugin/v2
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/plugin/v1
@@ -759,6 +767,9 @@ bin/vagrant
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/docker
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/chef/provisioner
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/chef
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/support/shared
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/support
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/ansible
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/providers/virtualbox/support/shared
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/providers/virtualbox/support
@@ -989,10 +1000,3 @@ bin/vagrant
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/contrib
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/bin
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%
-@unexec rmdir %D/%%GEMS_DIR%%/doc 2>/dev/null || true
-@unexec rmdir %D/%%GEMS_DIR%%/specifications 2>/dev/null || true
-@unexec rmdir %D/%%GEMS_DIR%%/gems 2>/dev/null || true
-@unexec rmdir %D/%%GEMS_DIR%%/cache 2>/dev/null || true
-@unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%% 2>/dev/null || true
-@unexec rmdir %D/lib/ruby/gems 2>/dev/null || true
-@unexec rmdir %D/lib/ruby 2>/dev/null || true
