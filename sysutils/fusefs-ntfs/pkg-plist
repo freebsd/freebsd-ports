@@ -48,7 +48,7 @@ include/ntfs-3g/xattrs.h
 lib/libntfs-3g.a
 lib/libntfs-3g.la
 lib/libntfs-3g.so
-lib/libntfs-3g.so.83
+lib/libntfs-3g.so.85
 libdata/pkgconfig/libntfs-3g.pc
 man/man8/mkntfs.8.gz
 man/man8/ntfs-3g.8.gz
@@ -77,3 +77,4 @@ sbin/ntfsundelete
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/ntfs-3g
+@dirrmtry tests
