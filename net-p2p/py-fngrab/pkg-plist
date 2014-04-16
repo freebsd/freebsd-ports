@@ -1,4 +1,7 @@
 bin/fngrab
+%%PYTHON_LIBDIR%%/site-packages/FreenetGrab/setup.py
+%%PYTHON_LIBDIR%%/site-packages/FreenetGrab/setup.pyc
+%%PYTHON_LIBDIR%%/site-packages/FreenetGrab/setup.pyo
 %%PYTHON_SITELIBDIR%%/FreenetGrab/__init__.py
 %%PYTHON_SITELIBDIR%%/FreenetGrab/__init__.pyc
 %%PYTHON_SITELIBDIR%%/FreenetGrab/__init__.pyo

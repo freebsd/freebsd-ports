@@ -8,7 +8,7 @@ MASTER_SITES=	SF/freebbs/${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A replacement for the official Freenet Project's freenet_request
+COMMENT=	Replacement for the official Freenet Project's freenet_request
 
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -19,8 +19,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	FreenetGrab
 
-NO_STAGE=	yes
 post-install:
-	@${MV} ${PREFIX}/bin/fngrab.py ${PREFIX}/bin/fngrab
+	@${MV} ${STAGEDIR}${PREFIX}/bin/fngrab.py ${STAGEDIR}${PREFIX}/bin/fngrab
 
 .include <bsd.port.mk>
