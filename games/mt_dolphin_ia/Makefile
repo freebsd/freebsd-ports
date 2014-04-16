@@ -3,7 +3,7 @@
 
 PORTNAME=		mt_dolphin_ia
 PORTVERSION=		0.1.98
-PORTREVISION=	3
+PORTREVISION=		3
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	maitretarot
@@ -11,10 +11,11 @@ MASTER_SITE_SUBDIR=	maitretarot
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		A basic AI for MaitreTarot, a Tarot card game
 
-LIB_DEPENDS=		mt_client.0:${PORTSDIR}/games/libmt_client
+LICENSE=		GPLv2
 
-USES=			pkgconfig
-USE_BZIP2=		yes
+LIB_DEPENDS=		libmt_client.so:${PORTSDIR}/games/libmt_client
+
+USES=			pkgconfig tar:bzip2
 GNU_CONFIGURE=		yes
 USE_GNOME=		glib20 libxml2
 

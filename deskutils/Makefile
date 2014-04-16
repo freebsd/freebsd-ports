@@ -44,7 +44,6 @@
     SUBDIR += epoch
     SUBDIR += etask
     SUBDIR += everygui
-    SUBDIR += evolution-jescs
     SUBDIR += fbreader
     SUBDIR += fengoffice
     SUBDIR += fet
@@ -155,10 +154,6 @@
     SUBDIR += myitcrm
     SUBDIR += nagaina
     SUBDIR += narval
-    SUBDIR += nautilus-actions
-    SUBDIR += nautilus-locked-folder
-    SUBDIR += nautilus-open-terminal
-    SUBDIR += nautilus-sendto
     SUBDIR += nemo-extensions
     SUBDIR += note
     SUBDIR += notecase
@@ -266,6 +261,7 @@
     SUBDIR += xfce4-notification-daemon
     SUBDIR += xfce4-notifyd
     SUBDIR += xfce4-tumbler
+    SUBDIR += xfce4-volumed
     SUBDIR += xfce4-xkb-plugin
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary

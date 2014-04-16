@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php55
-PORTVERSION=	5.5.10
+PORTVERSION=	5.5.11
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
@@ -85,6 +85,11 @@ USE_RC_SUBR+=	php-fpm
 CONFIGURE_ARGS+=--enable-fpm \
 		--with-fpm-user=${WWWOWN} \
 		--with-fpm-group=${WWWGRP}
+.endif
+
+.if defined(OPTIONS_FILE_SET) && ${OPTIONS_FILE_SET:MAPACHE}
+IGNORE=		doesn't install the Apache module anymore:\
+		update your OPTIONS and build www/mod_php55 port instead 
 .endif
 
 .if defined(PKGNAMEPREFIX)

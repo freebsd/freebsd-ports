@@ -10,7 +10,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Free cards for your free card games!
 
-USE_BZIP2=		yes
+LICENSE=		GPLv2
+
+USES=			tar:bzip2
+NO_ARCH=		yes
 GNU_CONFIGURE=		yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,18 @@
+[ edited excerpt from developer's www site ]
+
+During image processing operations such as scanning and scaling,
+images tend to get blurry.
+
+The blurred impression of these images is due to the fact that image
+pixels are averaged with their neighbors. Blurred images don't have
+sharp boundaries and look as though they have been taken with an
+unfocussed camera.
+
+Refocus is a GIMP plug-in to "refocus" the image, using a technique
+called FIR Wiener filtering. The traditional technique for sharpening
+images is to use unsharp masking. Refocus generally produces better
+results than unsharp masking.
+
+The plugin can be found under "Filters > Enhance > Refocus"
+
+WWW: http://refocus.sourceforge.net/

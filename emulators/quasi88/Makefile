@@ -12,25 +12,25 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC-8801 emulator for X
 
 USE_XORG=	x11 xext
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV=	DATADIR="${DATADIR}" _CC="${CC}" _CFLAGS="${CFLAGS}" \
 		_CXX="${CXX}" LD="${CXX}" PROGRAM="${PORTNAME}"
 MAKE_ARGS=	ARCH="freebsd"
 
 PORTDOCS=	FAQ.TXT FORMAT.TXT GET-IMAGE.TXT HISTORY.TXT MANUAL.TXT \
 		QUASI88.TXT
-PLIST_FILES=	bin/quasi88 %%EXAMPLESDIR%%/keyconf.rc \
-		%%EXAMPLESDIR%%/quasi88.rc
-PLIST_DIRS=	%%EXAMPLESDIR%%
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/quasi88
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES SDL
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 MAKE_ENV+=	LSB_FIRST=1
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 MAKE_ENV+=	SDL_VERSION=1 JOYSTICK="joy_sdl"
 .else
@@ -52,14 +52,11 @@ post-patch:
 		 s|^PROGRAM|# PROGRAM|g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/quasi88 ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.rc ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/document/${file} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/quasi88 ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.rc ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/document && ${INSTALL_DATA} ${PORTDOCS} \
+		${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

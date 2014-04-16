@@ -10,48 +10,47 @@ MASTER_SITES=	http://www.la-samhna.de/nightfall/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive binary star application
 
-OPTIONS_DEFINE=	GNOME PGPLOT OPENGL
-OPTIONS_DEFAULT=	PGPLOT OPENGL
-PGPLOT_DESC=	Enable PGPLOT support
-
-USES=		gmake pathfix gettext perl5
+USES=		compiler gettext gmake pathfix perl5 pkgconfig
 USE_GNOME=	gnomehier gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-locale-prefix=${PREFIX}/share/locale
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		GNOME PGPLOT OPENGL
+OPTIONS_DEFAULT=	PGPLOT OPENGL
+OPTIONS_SUB=		yes
+
+GNOME_CONFIGURE_ON=	--with-gnomedoc-prefix=${PREFIX}/share
+GNOME_CONFIGURE_OFF=	--disable-gnome
+GNOME_USE=		GNOME=gnomeprefix,libgnomeui
+
+OPENGL_CONFIGURE_ON=	--with-lib-GL
+OPENGL_CONFIGURE_OFF=	--disable-opengl
+OPENGL_LIB_DEPENDS=	libgtkgl-2.0.so:${PORTSDIR}/x11-toolkits/gtkglarea2
+OPENGL_USE=		GL=glut
+
+PGPLOT_DESC=		PGPLOT support
+PGPLOT_CONFIGURE_ON=	--with-pgplot-include=${LOCALBASE}/include \
+			--with-pgplot-lib=${LOCALBASE}/lib
+PGPLOT_CONFIGURE_OFF=	--with-gnuplot
+PGPLOT_LIB_DEPENDS=	libpgplot.so:${PORTSDIR}/graphics/pgplot
+PGPLOT_USES=		fortran
+
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGNOMEUI}
-USE_GNOME+=	gnomeprefix libgnomeui
-CONFIGURE_ARGS+=	--with-gnomedoc-prefix=${PREFIX}/share
 INSTALLS_OMF=	yes
-PLIST_SUB+=	GNOMEUI=""
-.else
-CONFIGURE_ARGS+=	--disable-gnome
-PLIST_SUB+=	GNOMEUI="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MPGPLOT}
-LIB_DEPENDS+=	libpgplot.so:${PORTSDIR}/graphics/pgplot
-USES+=		fortran
-CONFIGURE_ARGS+=	--with-pgplot-include=${LOCALBASE}/include \
-			--with-pgplot-lib=${LOCALBASE}/lib
-.else
+.if ! ${PORT_OPTIONS:MPGPLOT}
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
-CONFIGURE_ARGS+=	--with-gnuplot
-.endif
-
-.if ${PORT_OPTIONS:MOPENGL}
-LIB_DEPENDS+=	libgtkgl-2.0.so:${PORTSDIR}/x11-toolkits/gtkglarea2
-USE_GL=		glut
-CONFIGURE_ARGS+=	--with-lib-GL
-.else
-CONFIGURE_ARGS+=	--disable-opengl
 .endif
 
 post-patch:
+.if ${COMPILER_TYPE} == clang
+	@${REINPLACE_CMD} -e 's|-fforce-addr||' ${WRKSRC}/configure
+.endif
 	@${REINPLACE_CMD} -e 's|CFLAGS -O3|CFLAGS|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^Icon=gnome|Icon=${DATADIR}/pixmaps|g' \
 		${WRKSRC}/nightfall.desktop
@@ -60,4 +59,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/nightfall.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

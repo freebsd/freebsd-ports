@@ -7,7 +7,9 @@ MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak/${PORTVERSION:R}/
 		http://downloads.basho.com.s3.amazonaws.com/riak/${PORTVERSION:R}/${PORTVERSION}/
 
 MAINTAINER=	ports@robakdesign.com
-COMMENT=	Riak is an open source, distributed database
+COMMENT=	Riak is an open source, distributed, noSQL database
+
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang15/bin/erlc:${PORTSDIR}/lang/erlang-runtime15
 
@@ -35,13 +37,14 @@ MANCOMPRESSED=	yes
 ALL_TARGET=	rel
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang15/bin:${PATH}
-NO_STAGE=	yes
 
 .include <bsd.port.pre.mk>
 
 pre-install:
 	${RM} -f ${PLIST}
 	${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
+	${ECHO} "@owner ${USERS}" >> ${PLIST}
+	${ECHO} "@group ${GROUPS}" >> ${PLIST}
 	cd ${WRKSRC}/rel/${PORTNAME}; ${FIND} releases -type f \
 		| ${AWK} '{print length, $$0}' | ${SORT} -rn | ${SED} -e 's/^/lib\//' \
 		| ${AWK} '{print "lib/riak/"$$2 }' >> ${PLIST}
@@ -67,35 +70,34 @@ pre-install:
 
 do-install:
 .for d in ${RIAK_CONFDIR} ${RIAK_LOGDIR} ${RIAK_DBDIR} ${RIAK_LIBDIR} ${RIAK_HOMEDIR}
-	[ -d ${d} ] || ${MKDIR} ${d} && ${CHOWN} ${USERS}:${GROUPS} ${d}
+	[ -d ${STAGEDIR}${d} ] || ${MKDIR} ${STAGEDIR}${d}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/vm.args ${RIAK_CONFDIR}/vm.args.sample
-	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/app.config ${RIAK_CONFDIR}/app.config.sample
-	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/cert.pem ${RIAK_CONFDIR}/cert.pem.sample
-	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/key.pem ${RIAK_CONFDIR}/key.pem.sample
-	(cd ${WRKSRC}/rel/riak/lib/ && ${COPYTREE_BIN} . ${RIAK_LIBDIR})
-	(cd ${WRKSRC}/rel/riak/bin/ && ${COPYTREE_BIN} . ${PREFIX}/sbin/)
-	(cd ${WRKSRC}/rel/riak/lib/basho-patches && ${COPYTREE_SHARE} . ${RIAK_LIBDIR}/basho-patches)
-	(cd ${WRKSRC}/rel/riak/releases && ${COPYTREE_SHARE} . ${RIAK_HOMEDIR}/releases)
-	${CP} -R ${WRKSRC}/rel/riak/erts-* ${RIAK_HOMEDIR}
-	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/lib/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/riak.1.gz ${MANPREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/riak-admin.1.gz ${MANPREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/riak-debug.1.gz ${MANPREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/search-cmd.1.gz ${MANPREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/vm.args ${STAGEDIR}${RIAK_CONFDIR}/vm.args.sample
+	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/app.config ${STAGEDIR}${RIAK_CONFDIR}/app.config.sample
+	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/cert.pem ${STAGEDIR}${RIAK_CONFDIR}/cert.pem.sample
+	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/key.pem ${STAGEDIR}${RIAK_CONFDIR}/key.pem.sample
+	(cd ${WRKSRC}/rel/riak/lib/ && ${COPYTREE_BIN} . ${STAGEDIR}${RIAK_LIBDIR})
+	(cd ${WRKSRC}/rel/riak/bin/ && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/sbin/)
+	(cd ${WRKSRC}/rel/riak/lib/basho-patches && ${COPYTREE_SHARE} . ${STAGEDIR}${RIAK_LIBDIR}/basho-patches)
+	(cd ${WRKSRC}/rel/riak/releases && ${COPYTREE_SHARE} . ${STAGEDIR}${RIAK_HOMEDIR}/releases)
+	${CP} -R ${WRKSRC}/rel/riak/erts-* ${STAGEDIR}${RIAK_HOMEDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/riak.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/riak-admin.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/riak-debug.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/search-cmd.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/
 
 post-install:
-	@if [ ! -f ${RIAK_CONFDIR}/vm.args ]; then \
-		${CP} -p ${RIAK_CONFDIR}/vm.args.sample ${RIAK_CONFDIR}/vm.args; \
+	@if [ ! -f ${STAGEDIR}${RIAK_CONFDIR}/vm.args ]; then \
+		${CP} -p ${STAGEDIR}${RIAK_CONFDIR}/vm.args.sample ${STAGEDIR}${RIAK_CONFDIR}/vm.args; \
 	fi
-	@if [ ! -f ${RIAK_CONFDIR}/app.config ]; then \
-		${CP} -p ${RIAK_CONFDIR}/app.config.sample ${RIAK_CONFDIR}/app.config; \
+	@if [ ! -f ${STAGEDIR}${RIAK_CONFDIR}/app.config ]; then \
+		${CP} -p ${STAGEDIR}${RIAK_CONFDIR}/app.config.sample ${STAGEDIR}${RIAK_CONFDIR}/app.config; \
 	fi
-	@if [ ! -f ${RIAK_CONFDIR}/cert.pem ]; then \
-		${CP} -p ${RIAK_CONFDIR}/cert.pem.sample ${RIAK_CONFDIR}/cert.pem; \
+	@if [ ! -f ${STAGEDIR}${RIAK_CONFDIR}/cert.pem ]; then \
+		${CP} -p ${STAGEDIR}${RIAK_CONFDIR}/cert.pem.sample ${STAGEDIR}${RIAK_CONFDIR}/cert.pem; \
 	fi
-	@if [ ! -f ${RIAK_CONFDIR}/key.pem ]; then \
-		${CP} -p ${RIAK_CONFDIR}/key.pem.sample ${RIAK_CONFDIR}/key.pem; \
+	@if [ ! -f ${STAGEDIR}${RIAK_CONFDIR}/key.pem ]; then \
+		${CP} -p ${STAGEDIR}${RIAK_CONFDIR}/key.pem.sample ${STAGEDIR}${RIAK_CONFDIR}/key.pem; \
 	fi
 
 .include <bsd.port.post.mk>

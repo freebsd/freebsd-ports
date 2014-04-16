@@ -2,32 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	atanks
-PORTVERSION=	5.1
+PORTVERSION=	5.9
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
-COMMENT=	A 2D tank game with large, cartoonish weapons
+COMMENT=	2D tank game with large, cartoonish weapons
 
-LIB_DEPENDS=	alleg:${PORTSDIR}/devel/allegro
+LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
+
+USES=		gmake
 MAKE_ARGS+=	PREFIX=${PREFIX}/
 PATCH_DEBUG=	1
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PORTDOCS=	Changelog README README_ru.txt credits.txt
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-		${REINPLACE_CMD} \
-		    -e 's}^INSTALL[ 	]*=.*}INSTALL=${INSTALL} ${COPY}};' \
-		    -e 's/-m *755/-m555 ${STRIP}/;' \
-		    -e 's/-m *644/-m444/;' \
-		    ${WRKSRC}/Makefile
-.if ${OSVERSION} >= 800501
-		${REINPLACE_CMD} \
-		    -e 's/int Filter_File( struct dirent/int Filter_File( const struct dirent/' \
-		    ${WRKSRC}/src/files.cpp
-.endif
+	@${REINPLACE_CMD} -e \
+		's/int Filter_File( struct dirent/int Filter_File( const struct dirent/' \
+		${WRKSRC}/src/files.cpp
 
-.include <bsd.port.post.mk>
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${LN} -sf ${DOCSDIR}/credits.txt ${STAGEDIR}${DATADIR}
+
+.include <bsd.port.mk>

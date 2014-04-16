@@ -6,7 +6,8 @@ CATEGORIES=
 MAINTAINER=	dinoex@FreeBSD.org
 
 MASTERDIR?=	${.CURDIR}/../webalizer
-OPTIONS_SET+=	GEOIP
+
+OPTIONS_DEFAULT=GEOIP
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"

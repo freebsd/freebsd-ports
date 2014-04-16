@@ -721,6 +721,30 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.travis.yml
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.vimrc
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.yardopts
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/omnios/cap/mount_nfs_folder.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/config.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/guest.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/plugin.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap/change_host_name.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap/configure_networks.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap/halt.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap/mount_nfs.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap/rsync.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/suse/cap/halt.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/synced_folders/smb/scripts/ps_version.ps1
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/change_host_name_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/configure_networks_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/halt_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/mount_nfs_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap/rsync_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/coreos/cap/docker.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/fedora/cap/change_host_name.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/hyperv/action/check_enabled.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/hyperv/scripts/check_hyperv.ps1
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/docker/cap/linux/docker_daemon_running.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/ansible/config_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/ansible/provisioner_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/support/shared/config.rb
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/util
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/plugin/v2
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/plugin/v1
@@ -743,6 +767,9 @@ bin/vagrant
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/docker
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/chef/provisioner
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/chef
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/support/shared
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/support
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/ansible
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/providers/virtualbox/support/shared
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/providers/virtualbox/support
@@ -755,6 +782,10 @@ bin/vagrant
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/kernel_v2
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/ubuntu/cap
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/ubuntu
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos/cap
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/smartos
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos/cap
+@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/smartos
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/support/shared
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/support
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/redhat/cap

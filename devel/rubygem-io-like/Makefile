@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems \
 		rdoc:${PORTSDIR}/devel/rubygem-rdoc
 RUN_DEPENDS=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
 
+NROKEN=		not staged
 USE_RUBY=	yes
 USE_RAKE=	yes
 

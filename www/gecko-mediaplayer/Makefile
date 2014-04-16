@@ -23,23 +23,20 @@ OPTIONS_DEFAULT=CACHE
 CACHE_DESC=	Enable caching of remote media to local storage
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang pkgconfig
+USES=		compiler:c++11-lang pkgconfig gecko webplugin:native
 USE_GNOME=	glib20
-USE_GECKO=	libxul
-USE_WEBPLUGINS=	native
 
-WEBPLUGINS_FILES=	${PORTNAME}.so
+WEBPLUGIN_FILES=	${PORTNAME}.so
 .for p in dvx rm qt wmp
-WEBPLUGINS_FILES+=	${PORTNAME}-${p}.so
+WEBPLUGIN_FILES+=	${PORTNAME}-${p}.so
 .endfor
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=--with-plugin_dir="${WEBPLUGINS_DIR}"
+CONFIGURE_ARGS+=--with-plugin_dir="${WEBPLUGIN_DIR}"
 
 PORTDOCS=	README COPYING AUTHORS ChangeLog INSTALL NEWS javascript.txt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCACHE}
@@ -70,5 +67,4 @@ post-patch:
 	    ${WRKSRC}/configure
 .endif
 
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .include <bsd.port.mk>

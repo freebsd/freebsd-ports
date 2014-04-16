@@ -1,0 +1,19 @@
+--- ./mod_speedycgi/Makefile.tmpl.orig	2014-04-15 15:09:03.000000000 +0200
++++ ./mod_speedycgi/Makefile.tmpl	2014-04-15 15:10:36.000000000 +0200
+@@ -26,6 +26,7 @@
+ #   the used tools
+ APXS=apxs
+ APACHECTL=apachectl
++APXS_STAGE=@APXS_STAGE@
+ 
+ #   additional defines, includes and libraries
+ INC=-I../src -I.
+@@ -37,7 +38,7 @@
+ 
+ #   install the shared object file into Apache 
+ install: all
+-	$(APXS) -i -a -n 'speedycgi' $(SHARED_OBJ_TARGET)
++	$(APXS) $(APXS_STAGE) -i -n 'speedycgi' $(SHARED_OBJ_TARGET)
+ 
+ #   cleanup
+ clean:

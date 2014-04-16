@@ -13,7 +13,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Deegree Web Feature Service(WFS)
 
 USES=		zip
-USE_JAVA=	1.5+
+USE_JAVA=	1.6+
 
 NO_BUILD=	yes
 TOMCATDIR=	${PREFIX}/${TOMCATVER}

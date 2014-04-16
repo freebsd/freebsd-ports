@@ -9,10 +9,12 @@ lib/libmatekbd.a
 lib/libmatekbd.la
 lib/libmatekbd.so
 lib/libmatekbd.so.4
+lib/libmatekbd.so.4.2.0
 lib/libmatekbdui.a
 lib/libmatekbdui.la
 lib/libmatekbdui.so
 lib/libmatekbdui.so.4
+lib/libmatekbdui.so.4.2.0
 libdata/pkgconfig/libmatekbd.pc
 libdata/pkgconfig/libmatekbdui.pc
 share/MateConf/gsettings/matekbd.convert

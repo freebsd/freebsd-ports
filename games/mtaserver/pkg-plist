@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/%%MTADIRE%%/mtaserver.conf %D/etc/%%MTADIRE%%/mtaserver.conf.dist; then rm -f %D/etc/%%MTADIRE%%/mtaserver.conf; fi
-%%MTADIR%%/mtaserver
-etc/%%MTADIRE%%/mtaserver.conf.dist
-@exec [ -f %B/mtaserver.conf ] || cp %B/%f %B/mtaserver.conf
-@dirrmtry %%MTADIR%%
-@dirrmtry etc/%%MTADIRE%%
+%%DATADIR%%/mtaserver
+@sample %%ETCDIR%%/mtaserver.conf.sample
+@dirrmtry %%DATADIR%%
+@dirrmtry %%ETCDIR%%

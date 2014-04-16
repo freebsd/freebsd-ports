@@ -1,4 +1,5 @@
 man/man3/vtk.3.gz
+%%WRAPPING%%bin/vtkWrapHierarchy
 %%GL2PS%%include/vtk-%%VER2%%/vtkGL2PSExporter.h
 %%MPEG%%include/vtk-%%VER2%%/vtkMPEG2Writer.h
 %%THEORA%%include/vtk-%%VER2%%/vtkOggTheoraWriter.h
@@ -121,7 +122,6 @@ man/man3/vtk.3.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/wx/wxVTKRenderWindow.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/wx/wxVTKRenderWindowInteractor.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/wx/wxVTKRenderWindowInteractor.pyc
-%%PYTHON%%bin/vtkWrapHierarchy
 %%PYTHON%%bin/vtkWrapPython
 %%PYTHON%%bin/vtkWrapPythonInit
 %%PYTHON%%bin/vtkpython

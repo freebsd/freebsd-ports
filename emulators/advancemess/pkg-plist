@@ -1,5 +1,6 @@
 @exec for i in artwork crc image rom sample; do mkdir -p %D/%%DATADIR%%/${i}; done
 bin/advmess
+man/man1/advmess.1.gz
 %%DATADIR%%/sysinfo.dat
 @dirrm %%DATADIR%%/sample
 @dirrm %%DATADIR%%/rom

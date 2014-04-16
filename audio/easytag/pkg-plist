@@ -1,21 +1,22 @@
 bin/easytag
 man/man1/easytag.1.gz
 share/applications/easytag.desktop
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/icons/hicolor/128x128/apps/easytag.png
 share/icons/hicolor/16x16/apps/easytag.png
+share/icons/hicolor/22x22/apps/easytag.png
+share/icons/hicolor/24x24/apps/easytag.png
 share/icons/hicolor/256x256/apps/easytag.png
 share/icons/hicolor/32x32/apps/easytag.png
 share/icons/hicolor/48x48/apps/easytag.png
 share/icons/hicolor/64x64/apps/easytag.png
 share/icons/hicolor/scalable/apps/easytag.svg
 %%NLS%%share/locale/bg/LC_MESSAGES/easytag.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/da/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/de/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/el/LC_MESSAGES/easytag.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/es/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/he/LC_MESSAGES/easytag.mo
@@ -30,12 +31,15 @@ share/icons/hicolor/scalable/apps/easytag.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/easytag.mo
-%%NLS%%share/locale/sr@Latn/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/easytag.mo
+%%NLS%%share/locale/te/LC_MESSAGES/easytag.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/easytag.mo
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
 @dirrmtry share/icons/hicolor/scalable/apps
@@ -48,10 +52,13 @@ share/icons/hicolor/scalable/apps/easytag.svg
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor/256x256/apps
 @dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/128x128/apps
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

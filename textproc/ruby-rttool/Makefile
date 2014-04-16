@@ -12,6 +12,8 @@ DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	RT into HTML and plain text converter
 
+BROKEN=		not staged
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 USE_RUBY_RDTOOL=	yes

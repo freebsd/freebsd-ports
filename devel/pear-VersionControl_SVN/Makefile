@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	VersionControl_SVN
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Wrapper interface for the Subversion command-line client
+
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
 		pear-XML_Parser>=1.3.4:${PORTSDIR}/devel/pear-XML_Parser

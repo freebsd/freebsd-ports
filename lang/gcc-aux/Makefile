@@ -3,6 +3,7 @@
 
 PORTNAME=	gcc-aux
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	${MAIN_PR}
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		LOCAL/marino:boot ${MASTER_SITE_GCC}
@@ -25,6 +26,7 @@ BOOTSTRAP_COMPILER=	gnat-bootstrap.${GARCH}.${OPSYS:L}.tar.bz2
 BLD_TARGET=		${GARCH}-aux-${OPSYS:L}${OSREL}
 FULL_GNATGCC=		NOT_SET
 OS_LABEL4VERS=		[${OPSYS}${GARCH:M*64:S/amd_//:S/x86_//}]
+NO_MTREE=		yes
 
 OPTIONS_GROUP=		Standard Bootstrap
 OPTIONS_GROUP_Standard= FORT OBJC NLS TESTSUITE STATIC
@@ -46,6 +48,10 @@ BOOTSTRAP_DESC=		Create bootstrap compiler (overrides other options)
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
+USE_BINUTILS=	yes
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+EXTRA_CONFIG+=	--with-ld=${LOCALBASE}/bin/ld
+EXTRA_CONFIG+=	--with-as=${LOCALBASE}/bin/as
 .  if ${OSVERSION} < 900000
 BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.84.tar.bz2
 .  else
@@ -53,6 +59,8 @@ BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.100B.tar.bz2
 .  endif
 .endif
 .if ${OPSYS} == DragonFly
+EXTRA_CONFIG+=	--with-ld=/usr/bin/ld
+EXTRA_CONFIG+=	--with-as=/usr/bin/as
 BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.dragonfly.36A.tar.bz2
 .endif
 
@@ -173,6 +181,16 @@ post-extract:
 	@${ECHO} "Applying composite patch diff-${suffix}"
 	@${PATCH} -d ${WRKSRC} -s -E < ${FILESDIR}/diff-${suffix}
 .endfor
+	@(cd ${WRKSRC}/libstdc++-v3/testsuite && ${REINPLACE_CMD} \
+	  -e 's|\*-\*-freebsd\*|*-*-dragonfly *-*-freebsd*|' ${CXXTS4DF})
+	@(cd ${WRKSRC}/libstdc++-v3/testsuite/22_locale && ${REINPLACE_CMD} \
+	  -e 's|ISO-8859|ISO8859|g' \
+	  -e 's|ja_JP.eucjp|ja_JP.eucJP|g' \
+	  -e 's|en_HK|zh_HK|g' \
+	  -e 's|en_PH|en_NZ|g' \
+	  -e 's|se_NO|no_NO|g' \
+	  -e 's|es_MX|es_ES|g' \
+	  -e 's|ru_RU.UTF8|ru_RU.UTF-8|g' ${LOCALE22FIX})
 .if ${PORT_OPTIONS:MSTATIC} || ${PORT_OPTIONS:MBOOTSTRAP}
 	# Ensure GNAT tools are built statically
 	${REINPLACE_CMD} -e 's/^GCC_LINK_FLAGS=.*/GCC_LINK_FLAGS=-static/' \
@@ -233,17 +251,25 @@ test-objc:
 do-install:
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} install-strip ${MAKE_ARGS}
-	${RM} -rf ${STAGEDIR}${PKG_PREFIX}/share/info
+	${MV} ${STAGEDIR}${PKG_PREFIX}/share ${WRKDIR}/moved_share
+	${MKDIR} -p ${STAGEDIR}${PREFIX}/share/dejagnu/baseboards \
+		${STAGEDIR}${PREFIX}/share/dejagnu/config
+	${INSTALL_DATA} ${FILESDIR}/android.exp \
+		${STAGEDIR}${PREFIX}/share/dejagnu/config
+	${INSTALL_DATA} ${FILESDIR}/gnatdroid.exp \
+		${STAGEDIR}${PREFIX}/share/dejagnu/baseboards
 
 post-install:
 	cd ${STAGEDIR}${PKG_PREFIX}; ${FIND} * -type d -empty | \
 	   ${SORT} -dr | ${XARGS} ${RMDIR}
-	cd ${STAGEDIR}${PREFIX}; \
-	   ${FIND} ${PORTNAME} \( -type f -or -type l \) | \
-	   ${SORT} | ${SED} -e 's/\/man\/man[1578]\/.*[1578]$$/&.gz/' \
-	    >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} share \
+	   \( -type f -or -type l \) | ${SORT} | \
+	   ${SED} -e 's/\/man\/man[1578]\/.*[1578]$$/&.gz/' >> ${TMPPLIST}
 	cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} -type d | ${SORT} -r | \
-	   ${SED} -e '/^share/d' -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	   ${SED} -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX}; ${FIND} share -type d | ${SORT} -r | \
+	   ${SED} -e 's/\(.*\)/@unexec rmdir %D\/\1 2>\/dev\/null || true/g' \
+	   >> ${TMPPLIST}
 
 .if ${PORT_OPTIONS:MBOOTSTRAP}
 post-stage:

@@ -21,12 +21,13 @@ RESTRICTED=	Redistribution forbidden by license
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-oss
 
-MAN1=		xzx.1
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-pro
+
+pre-configure:
+	@${REINPLACE_CMD} 's,(pkglibdir),(datadir)/doc/@PACKAGE@,' ${WRKSRC}/doc/Makefile.in
 
 # Prevent configure from trying to run auto* since it's not needed and will
 # error if auto* < 2.54
-NO_STAGE=	yes
 post-configure:
 		@${REINPLACE_CMD} 's@autoheader@${TRUE}@g' ${WRKSRC}/Makefile
 		@${REINPLACE_CMD} 's@autoconf@${TRUE}@g' ${WRKSRC}/Makefile

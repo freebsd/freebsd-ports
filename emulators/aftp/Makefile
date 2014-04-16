@@ -9,16 +9,14 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A ftp-like shell for accessing Apple II disk images
+COMMENT=	Ftp-like shell for accessing Apple II disk images
 
-MAN1=		aftp.1
-PLIST_FILES=	bin/aftp
+PLIST_FILES=	bin/aftp man/man1/aftp.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|^CC=.*|CC=${CC} ${CPPFLAGS} ${CFLAGS}|' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/aftp.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/aftp.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

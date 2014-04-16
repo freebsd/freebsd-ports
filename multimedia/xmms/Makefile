@@ -3,26 +3,21 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
-PORTREVISION?=	20	# Also chinese/xmms and russian/xmms
-CATEGORIES+=	multimedia audio ipv6
+PORTREVISION=	22
+CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		http://legacy.xmms2.org/ \
 		LOCAL/beech
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
+MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	X Multimedia System -- audio player with Winamp GUI
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
-FORBIDDEN=	Vulnerable: CVE-2007-0653 CVE-2007-0654
-EXPIRATION_DATE=	2014-05-01
-
 CONFLICTS?=	ru-xmms-[0-9]* zh-xmms-[0-9]*
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils pathfix gmake iconv
-USE_BZIP2=	yes
+USES=		desktop-file-utils pathfix gmake iconv tar:bzip2
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 USE_XORG=	sm x11 xxf86vm
@@ -38,11 +33,14 @@ INPUT_PLUGINS=	cdaudio mpg123 tonegen wav
 OUTPUT_PLUGINS=	OSS disk_writer
 VISUALIZATION_PLUGINS=	blur_scope sanalyzer
 
-OPTIONS_DEFINE=	IPV6 MIKMOD NLS SPEC VFILEINFO VORBIS RUSXMMS_PATCHES
+OPTIONS_DEFINE=	ESOUND IPV6 MIKMOD NLS SPEC VFILEINFO VORBIS RUSXMMS_PATCHES
 OPTIONS_DEFAULT=MIKMOD VORBIS
 OPTIONS_DEFINE_i386=	SIMD
 OPTIONS_DEFAULT_i386=	SIMD
 OPTIONS_SUB=	yes
+
+ESOUND_CONFIGURE_ENABLE=esd
+ESOUND_USE=		GNOME=esound
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
@@ -87,6 +85,10 @@ AUTOMAKE_ARGS=	--add-missing --force-missing
 USE_OPENSSL=	yes
 .endif
 
+.if ${PORT_OPTIONS:MESOUND}
+OUTPUT_PLUGINS+=	esd
+.endif
+
 .if ${PORT_OPTIONS:MMIKMOD}
 INPUT_PLUGINS+=	mikmod
 .endif
@@ -100,23 +102,6 @@ VISUALIZATION_PLUGINS+=	opengl_spectrum
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mesound}!=""
-USE_GNOME+=	esound
-OUTPUT_PLUGINS+=	esd
-PLIST_SUB+=	ESDPLUGIN:=""
-.else
-CONFIGURE_ARGS+=	--disable-esd
-PLIST_SUB+=	ESDPLUGIN:="@comment "
-.endif
-
-pre-everything::
-.if ${HAVE_GNOME:Mesound}!=""
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You can disable support for esound by defining"
-	@${ECHO_MSG} "WITHOUT_GNOME=esound."
-	@${ECHO_MSG} ""
-.endif
 
 post-patch:
 .if ${PORT_OPTIONS:MRUSXMMS_PATCHES}

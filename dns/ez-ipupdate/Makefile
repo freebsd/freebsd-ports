@@ -15,14 +15,10 @@ COMMENT=	Update your host name on any dynamic DNS service
 USE_RC_SUBR=	ez-ipupdate
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	for f in ${WRKSRC}/example-*.conf; \
-	do \
-		${INSTALL_DATA} $$f ${PREFIX}/share/examples/${PORTNAME}/; \
-	done
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} example-*.conf ${STAGEDIR}${EXAMPLESDIR})
 	${INSTALL_DATA} ${WRKSRC}/example.conf \
-			${PREFIX}/etc/${PORTNAME}.conf.sample
+			${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>

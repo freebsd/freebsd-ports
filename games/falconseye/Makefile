@@ -25,7 +25,6 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I${LOCALBASE}/include/SDL11 
 NO_WRKSUBDIR=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s|<malloc.h>|<stdlib.h>|" \
 	${WRKSRC}/include/jtp_gen.h ${WRKSRC}/win/jtp/jtp_dirx.c \
@@ -41,10 +40,10 @@ post-build:
 	@cd ${WRKSRC}/doc && ${PERL} -p ${FILESDIR}/substitute <recover.6 >frecover.6
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/util/recover ${PREFIX}/bin/frecover
-	@cd ${WRKSRC}/doc && \
-		${INSTALL_MAN} recover.6 ${PREFIX}/man/man6/frecover.6
-	@cd ${WRKSRC}/doc && \
-		${INSTALL_MAN} nethack.6 ${PREFIX}/man/man6/falconseye.6
+	${INSTALL_PROGRAM} ${WRKSRC}/util/recover ${STAGEDIR}${PREFIX}/bin/frecover
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} recover.6 \
+		${STAGEDIR}${PREFIX}/man/man6/frecover.6
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} nethack.6 \
+		${STAGEDIR}${PREFIX}/man/man6/falconseye.6
 
 .include <bsd.port.mk>

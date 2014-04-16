@@ -1,12 +1,12 @@
+bin/speedy
+bin/speedy_backend
+bin/speedy_dump
+bin/speedy_suidperl
+%%SITE_PERL%%/CGI/SpeedyCGI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/SpeedyCGI/.packlist
 %%APACHE%%%%APACHEMODDIR%%/mod_speedycgi.so
 %%APACHE%%@exec %D/sbin/apxs -e -a -n speedycgi %D/%F
 %%APACHE%%@unexec %D/sbin/apxs -e -A -n speedycgi %D/%F
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/SpeedyCGI/.packlist
-%%SITE_PERL%%/CGI/SpeedyCGI.pm
-bin/speedy
-bin/speedy_backend
-bin/speedy_suidperl
-bin/speedy_dump
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/SpeedyCGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI

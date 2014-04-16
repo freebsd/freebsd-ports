@@ -3,23 +3,23 @@
 
 PORTNAME=	scorched3d
 PORTVERSION=	0.${SCORCH_VERSION}${SCORCH_REVISION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${SCORCH_VERSION}
 DISTNAME=	Scorched3D-${SCORCH_VERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 3D version of the classic DOS game Scorched Earth
+COMMENT=	3D version of the classic DOS game Scorched Earth
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		fftw3.6:${PORTSDIR}/math/fftw3 \
-		fftw3f.6:${PORTSDIR}/math/fftw3-float \
-		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libGLEW.so:${PORTSDIR}/graphics/glew \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 OPTIONS_DEFINE=	MYSQL
 
@@ -27,8 +27,9 @@ WRKSRC=		${WRKDIR}/scorched
 
 USE_GL=		glu
 USE_SDL=	mixer net sdl
-USE_WX=		2.4+
+USE_WX=		2.8
 WX_CONF_ARGS=	absolute
+WX_UNICODE=	yes
 USES=		dos2unix gmake iconv openal:al,alut perl5 pkgconfig
 USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
@@ -44,13 +45,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 SCORCH_VERSION=		43.3d
 SCORCH_REVISION=	# none
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql
-.endif
+MYSQL_USE=	MYSQL=yes
+MYSQL_CONFIGURE_ON=	--with-mysql
 
 post-extract:
 	@${RM} -f ${WRKSRC}/src/client/GLEXT/[a-z]*

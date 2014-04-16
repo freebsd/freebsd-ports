@@ -65,7 +65,6 @@
     SUBDIR += esecanna-module-vje30
     SUBDIR += esecanna-module-wnn6
     SUBDIR += eterm
-    SUBDIR += exmh2
     SUBDIR += fcitx-anthy
     SUBDIR += fcitx-mozc
     SUBDIR += flex-sdk
@@ -227,7 +226,6 @@
     SUBDIR += p5-Unicode-Japanese
     SUBDIR += p5-WWW-2ch
     SUBDIR += p5-WWW-MobileCarrierJP
-    SUBDIR += p5-manual
     SUBDIR += p5-nkf
     SUBDIR += pejv-fpw
     SUBDIR += php5-mecab
@@ -277,7 +275,6 @@
     SUBDIR += scim-tomoe
     SUBDIR += scim-uim
     SUBDIR += seaside
-    SUBDIR += sed
     SUBDIR += sj3-lib
     SUBDIR += sj3-server
     SUBDIR += skk

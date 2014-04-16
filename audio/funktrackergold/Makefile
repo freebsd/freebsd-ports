@@ -11,12 +11,13 @@ DISTNAME=	funktrackergold-1.5-2
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A curses MOD/FNK music tracker
+COMMENT=	Curses MOD/FNK music tracker
+
+OPTIONS_DEFINE=	DOCS
 
 LICENSE=	GPLv2
 
-USE_GCC=	any
-NO_STAGE=	yes
+USES=		compiler:nestedfct
 
 WRKSRC=		${WRKDIR}/funkgold
 MAKE_ARGS=	EXTRA_CFLAGS="${PTHREAD_CFLAGS}" \
@@ -27,15 +28,11 @@ PLIST_FILES=	bin/funkgold
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/funkgold ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/funkgold ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

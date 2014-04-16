@@ -19,7 +19,6 @@ FILES=			kqsyscallmodule.so KQueue.py KQueue.pyc
 PLIST_FILES=		${FILES:S+^+%%PYTHON_SITELIBDIR%%/+g}
 MAKE_ENV=		MAINCC=${CC}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -37,9 +36,9 @@ post-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${MKDIR} ${PYTHON_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/kqsyscallmodule.so ${PYTHON_SITELIBDIR}/
-	${INSTALL_DATA} ${WRKSRC}/KQueue.py ${PYTHON_SITELIBDIR}/
-	${INSTALL_DATA} ${WRKSRC}/KQueue.pyc ${PYTHON_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/kqsyscallmodule.so ${STAGEDIR}${PYTHON_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/KQueue.py ${STAGEDIR}${PYTHON_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/KQueue.pyc ${STAGEDIR}${PYTHON_SITELIBDIR}/
 
 .include <bsd.port.post.mk>

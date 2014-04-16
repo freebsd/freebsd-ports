@@ -1,7 +1,8 @@
 %%SITE_PERL%%/Java.pm
 %%SITE_PERL%%/JavaArray.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Java/.packlist
-@exec mkdir -p %D/share/p5-Java
+%%PERL5_MAN3%%/Java.3.gz
+%%PERL5_MAN3%%/JavaArray.3.gz
 share/p5-Java/JavaServer.jar
 @dirrm share/p5-Java
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Java

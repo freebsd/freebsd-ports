@@ -22,21 +22,4 @@ USES=		perl5
 USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 
-MAN1=		s4.1
-MAN3=		SVN::S4.3 \
-		SVN::S4::CatOrMods.3 \
-		SVN::S4::Config.3 \
-		SVN::S4::Debug.3 \
-		SVN::S4::FixProp.3 \
-		SVN::S4::Getopt.3 \
-		SVN::S4::Info.3 \
-		SVN::S4::Path.3 \
-		SVN::S4::QuickCommit.3 \
-		SVN::S4::Scrub.3 \
-		SVN::S4::Snapshot.3 \
-		SVN::S4::Update.3 \
-		SVN::S4::ViewSpec.3 \
-		SVN::S4::WorkProp.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

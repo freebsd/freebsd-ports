@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httrack
-PORTVERSION=	3.47.27
+PORTVERSION=	3.48.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.httrack.com/ \
 		http://mirror.httrack.com/historical/ \
@@ -16,8 +16,6 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	DOCS
 
-PORTSCOUT=	skipv:3.47.99
-
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -25,19 +23,15 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USES=		gmake iconv
 
-.include <bsd.port.options.mk>
+PORTDATA=	*
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/ s|-O -g3 ||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/ install-data-hook/d' ${WRKSRC}/html/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/html/server/div/WebHTTrack*
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| html||' ${WRKSRC}/Makefile.in
-.endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${STAGEDIR}${DOCSDIR}/httrack.css
-.endif
 
 .include <bsd.port.mk>

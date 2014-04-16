@@ -19,5 +19,4 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${PORTSDIR}/databases/ruby-dbi \
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

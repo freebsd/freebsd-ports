@@ -1,0 +1,4 @@
+A simple, fast, memory-efficient and threadsafe implementation of GetText
+for Ruby that supports multiple backends and can easily be extended.
+
+WWW: https://github.com/grosser/fast_gettext

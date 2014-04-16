@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	bkoenig@cs.tu-berlin.de
 COMMENT=	The OPAL Compilation System
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

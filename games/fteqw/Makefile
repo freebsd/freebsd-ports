@@ -28,7 +28,6 @@ GLCLIENT_DESC=	Build OpenGL client
 SDLCLIENT_DESC=	Build SDL client
 SERVER_DESC=	Build dedicated server
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.options.mk>
 
@@ -38,9 +37,9 @@ PLIST_FILES+=	bin/fteqw-sv
 .endif
 
 .if ${PORT_OPTIONS:MGLCLIENT} || !empty(PORT_OPTIONS:MSDLCLIENT)
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 .endif
 
@@ -70,12 +69,7 @@ post-patch:
 
 do-install:
 .for f in ${PLIST_FILES:T}
-	${INSTALL_PROGRAM} ${WRKSRC}/release/${f:S/-/./} ${PREFIX}/bin/${f}
+	${INSTALL_PROGRAM} ${WRKSRC}/release/${f:S/-/./} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>

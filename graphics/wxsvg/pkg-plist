@@ -36,6 +36,7 @@ include/wxSVG/SVGAnimatedPreserveAspectRatio.h
 include/wxSVG/SVGAnimatedRect.h
 include/wxSVG/SVGAnimatedString.h
 include/wxSVG/SVGAnimatedTransformList.h
+include/wxSVG/SVGAnimatedType.h
 include/wxSVG/SVGAnimationElement.h
 include/wxSVG/SVGCSSRule.h
 include/wxSVG/SVGCanvas.h
@@ -189,7 +190,7 @@ include/wxSVGXML/svgxmlhelpr.h
 lib/libwxsvg.a
 lib/libwxsvg.la
 lib/libwxsvg.so
-lib/libwxsvg.so.8
+lib/libwxsvg.so.9
 libdata/pkgconfig/libwxsvg.pc
 @dirrmtry include/wxSVGXML
 @dirrmtry include/wxSVG

@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.lysator.liu.se/%SUBDIR%/
 MASTER_SITE_SUBDIR=	pub/${PORTNAME}
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD licensed implementation of libdwarf
 
 USE_BZIP2=	yes
@@ -181,6 +181,14 @@ MLINKS+=	dwarf_attrval_signed.3	dwarf_attrval_flag.3	\
 		dwarf_set_frame_cfa_value.3 dwarf_set_frame_undefined_value.3
 
 NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000000
+BROKEN=		Does not compile with clang, outdated
+.endif
+DEPRECATED=	Outdated, included in all supported versions of FreeBSD
+EXPIRATION_DATE=	2014-05-06
+
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/libdwarf/libdwarf.so.3 ${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/libdwarf/libdwarf.a ${PREFIX}/lib/
@@ -193,4 +201,4 @@ do-install:
 		${INSTALL_MAN} ${WRKSRC}/libdwarf/$$f ${MANPREFIX}/man/man3/ ; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

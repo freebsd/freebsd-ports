@@ -15,12 +15,12 @@ COMMENT=	3ware RAID controller monitoring daemon and web server
 
 USE_RC_SUBR=	3dm2
 
+SUB_FILES=	pkg-message
+
 OPTIONS_DEFINE=	SSLFIX
 SSLFIX_DESC=	Install KB16625-patched binaries
-
 OPTIONS_DEFAULT=	SSLFIX
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !empty(PORT_OPTIONS:MSSLFIX)
@@ -30,84 +30,48 @@ BINPREFIX=	${WRKSRC}/kb16625
 BINPREFIX=	${WRKSRC}
 .endif
 
-.include <bsd.port.pre.mk>
-
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
-
 NO_WRKSUBDIR=	yes
 
-.if ${OSVERSION} > 700000
 BINSRC=		${BINPREFIX}/7x
-.else
-BINSRC=		${BINPREFIX}/6x
-.endif
-
-.if ${ARCH} == "i386"
-BINSUFFIX=	x86
-.elif ${ARCH} == "amd64"
-BINSUFFIX=	x86_64
-.endif
-
 HELPSRC=	${WRKSRC}/en
-
 HELPDIR=	${PREFIX}/share/3dm2/help/en
 ETCDIR=		${PREFIX}/etc/3dm2
 MSGDIR=		${ETCDIR}/msg
 
 post-extract:
-	${TAR} zxf ${WRKSRC}/tdm2Help.tgz -C ${WRKSRC}
-	${TAR} zxf ${WRKSRC}/tdm2Msg.tgz -C ${WRKSRC}
+	@${TAR} zxf ${WRKSRC}/tdm2Help.tgz -C ${WRKSRC}
+	@${TAR} zxf ${WRKSRC}/tdm2Msg.tgz -C ${WRKSRC}
 
 post-configure:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 	< ${FILESDIR}/3dm2.conf.sample > ${WRKSRC}/3dm2.conf.sample
 
 do-install:
-.for i in ${ETCDIR} ${MSGDIR} ${HELPDIR}/css ${HELPDIR}/images ${HELPDIR}/scripts
-.if !exists(${i})
-	${MKDIR} ${i}
-.endif
+.for i in ${ETCDIR} ${MSGDIR} ${HELPDIR} \
+    ${HELPDIR}/css ${HELPDIR}/images ${HELPDIR}/scripts
+	${MKDIR} ${STAGEDIR}${PREFIX}${i}
+	# XXX rene not sure why ${PREFIX} is ommitted from ${i} here
 .endfor
+	${INSTALL_DATA} ${HELPSRC}/*.html ${STAGEDIR}${HELPDIR}
+	${INSTALL_DATA} ${HELPSRC}/*.gif ${STAGEDIR}${HELPDIR}
+	${INSTALL_DATA} ${HELPSRC}/*.jpg ${STAGEDIR}${HELPDIR}
+	${INSTALL_DATA} ${HELPSRC}/css/* ${STAGEDIR}${HELPDIR}/css
+	${INSTALL_DATA} ${HELPSRC}/images/* ${STAGEDIR}${HELPDIR}/images
+	${INSTALL_DATA} ${HELPSRC}/scripts/* ${STAGEDIR}${HELPDIR}/scripts
 
-	${INSTALL_DATA} ${HELPSRC}/*.html ${HELPDIR}
-	${INSTALL_DATA} ${HELPSRC}/*.gif ${HELPDIR}
-	${INSTALL_DATA} ${HELPSRC}/*.jpg ${HELPDIR}
-	${INSTALL_DATA} ${HELPSRC}/css/* ${HELPDIR}/css
-	${INSTALL_DATA} ${HELPSRC}/images/* ${HELPDIR}/images
-	${INSTALL_DATA} ${HELPSRC}/scripts/* ${HELPDIR}/scripts
+	${INSTALL_PROGRAM} ${BINSRC}/3dm2.${ARCH:S,i386,x86,:S,amd64,x86_64,}\
+		${STAGEDIR}${PREFIX}/sbin/3dm2
 
-	${INSTALL_PROGRAM} ${BINSRC}/3dm2.${BINSUFFIX} ${PREFIX}/sbin/3dm2
-
-	${INSTALL_DATA} ${WRKSRC}/tdm_msg_en ${MSGDIR}
-	${INSTALL_DATA} ${WRKSRC}/tw_msg_en ${MSGDIR}
-
-	${INSTALL_DATA} ${WRKSRC}/3dm2.conf.sample ${ETCDIR}
-	${CHMOD} 400 ${ETCDIR}/3dm2.conf.sample
-
-post-install:
-.if !exists(${PREFIX}/etc/3dm2/3dm2.conf)
-	${INSTALL_DATA} ${WRKSRC}/3dm2.conf.sample ${PREFIX}/etc/3dm2/3dm2.conf
-	${CHMOD} 600 ${PREFIX}/etc/3dm2/3dm2.conf
-	@${ECHO} ""
-	@${ECHO} ""
-	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} "        Don't forget to edit '${PREFIX}/etc/3dm2/3dm2.conf'"
-	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} "             Visit https://`hostname`:888/"
-	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} ""
-	@${ECHO} ""
-.endif
+	${INSTALL_DATA} ${WRKSRC}/tdm_msg_en ${STAGEDIR}${MSGDIR}
+	${INSTALL_DATA} ${WRKSRC}/tw_msg_en ${STAGEDIR}${MSGDIR}
+	${INSTALL_DATA} ${WRKSRC}/3dm2.conf.sample ${STAGEDIR}${ETCDIR}
 
 # 3ware uses a hardcoded config dir location that doesn't match hier(9)
 
-.if !exists(/etc/3dm2)
-	@${MKDIR} /etc/3dm2
-.endif
-	@${LN} -s ${PREFIX}/etc/3dm2/3dm2.conf /etc/3dm2/3dm2.conf
-	@${LN} -s ${PREFIX}/etc/3dm2/3dm2.pem /etc/3dm2/3dm2.pem
+	${MKDIR} ${STAGEDIR}/etc/3dm2
+	(cd ${STAGEDIR} && ${LN} -s ${PREFIX}/etc/3dm2/3dm2.conf etc/3dm2/3dm2.conf)
+	(cd ${STAGEDIR} && ${LN} -s ${PREFIX}/etc/3dm2/3dm2.pem etc/3dm2/3dm2.pem)
 
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

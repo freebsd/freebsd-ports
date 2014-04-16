@@ -3,6 +3,7 @@
 
 PORTNAME=	localedata
 PORTVERSION=	5.4
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sf
@@ -10,7 +11,7 @@ MASTER_SITE_SUBDIR=	sf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Legacy locale data for FreeBSD 6+
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	amd64 alpha ia64 i386 pc98 sparc64

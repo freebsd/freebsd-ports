@@ -3,6 +3,7 @@
 
 PORTNAME=	cscout
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.spinellis.gr/cscout/ \
 		http://www.dmst.aueb.gr/dds/cscout/
@@ -12,6 +13,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-neutral${EXTRACT_SUFX} \
 MAINTAINER=	dds@FreeBSD.org
 COMMENT=	Source code analyzer and refactoring browser for C program collections
 
+LIB_DEPENDS+=	libc.so.6:${PORTSDIR}/misc/compat6x
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -19,9 +22,8 @@ ONLY_FOR_ARCHS_REASON=	The port fetches and installs precompiled binaries
 USES=		perl5
 USE_PERL5=	run
 
-MAN1=	cscout.1 cswc.1
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
 post-patch:
 .if exists(/usr/include/g++/)
 	${REINPLACE_CMD} -i "" -e 's:g++-3:g++:g' \
@@ -36,27 +38,21 @@ post-patch:
 	${CP} ${WRKDIR}/cscout_defs.h ${WRKSRC}/etc/cscout_defs.FBSD_GCC
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/cscout ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/cswc ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/csmake ${PREFIX}/bin
-	cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${PREFIX}/etc/${PORTNAME}
-# don't overwrite an existing config
-.if !exists(${PREFIX}/etc/${PORTNAME}/cscout_incs.h)
-	${INSTALL_DATA} ${WRKSRC}/etc/cscout_incs.FBSD_GCC ${PREFIX}/etc/${PORTNAME}/cscout_incs.h
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/cscout ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/cswc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/csmake ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/etc/cscout_incs.FBSD_GCC ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/etc/cscout_defs.FBSD_GCC ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/
+.if ${PORT_OPTIONS:MEXAMPLES}
+	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 .endif
-.if !exists(${PREFIX}/etc/${PORTNAME}/cscout_defs.h)
-	${INSTALL_DATA} ${WRKDIR}/cscout_defs.h ${PREFIX}/etc/${PORTNAME}/cscout_defs.h
-.endif
-.if !defined(NOPORTEXAMPLES)
-	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 .if !defined(NO_INSTALL_MANPAGES)
-.for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man1
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/man/cscout.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/cswc.1 ${STAGEDIR}${PREFIX}/man/man1
 .endif
 
 .include <bsd.port.mk>

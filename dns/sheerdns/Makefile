@@ -7,14 +7,12 @@ CATEGORIES=	dns
 MASTER_SITES=	http://threading.2038bug.com/sheerdns/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lightweight, simple, and fast master DNS server
+COMMENT=	Lightweight, simple, and fast master DNS server
 
-USE_GMAKE=	yes
+USES=		gmake
 
-MAN8=		sheerdns.8
-PLIST_FILES=	sbin/sheerdns sbin/sheerdnshash
+PLIST_FILES=	man/man8/sheerdns.8.gz sbin/sheerdns sbin/sheerdnshash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,15 +10,14 @@ MASTER_SITES=	GNOME
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GNOME desktop interfaces for the .NET runtime
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake perl5 pkgconfig
+INSTALL_TARGET=	install-strip
+USES=		gmake perl5 pathfix pkgconfig tar:bzip2
 USE_PERL5=	run
-USE_GNOME=	gnomehack gnomepanel gtkhtml3 gtksharp20 gnomesharp20 librsvg2 vte \
-		libgnomeprintui gtksourceview2 gnomepanel libwnck nautiluscdburner
+USE_GNOME=	gnomepanel gtkhtml3 gtksharp20 gnomesharp20 librsvg2 vte \
+		libgnomeprintui gtksourceview2 gnomepanel libwnck
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'

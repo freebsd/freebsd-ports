@@ -1,14 +1,32 @@
 include/itcl%%VERSION%%/itcl.h
-include/itcl%%VERSION%%/itclInt.h
 include/itcl%%VERSION%%/itclDecls.h
+include/itcl%%VERSION%%/itclInt.h
 include/itcl%%VERSION%%/itclIntDecls.h
-lib/libitcl.so.%%MAJOR%%
-lib/libitcl.so
-lib/itcl%%VERSION%%/libitcl.so.1
-lib/itcl%%VERSION%%/libitcl%%SHORT%%.so
 lib/itcl%%VERSION%%/itcl.tcl
 lib/itcl%%VERSION%%/itclConfig.sh
+lib/itcl%%VERSION%%/libitcl.so.1
+lib/itcl%%VERSION%%/libitcl%%SHORT%%.so
 lib/itcl%%VERSION%%/libitclstub.a
 lib/itcl%%VERSION%%/pkgIndex.tcl
-@dirrm include/itcl%%VERSION%%
+lib/libitcl.so
+lib/libitcl.so.%%MAJOR%%
+man/man3/Itcl_Class.3.gz
+man/man3/Itcl_List.3.gz
+man/man3/Itcl_Object.3.gz
+man/man3/Itcl_Preserve.3.gz
+man/man3/Itcl_RegisterC.3.gz
+man/man3/Itcl_Stack.3.gz
+man/mann/body.itcl.gz
+man/mann/class.itcl.gz
+man/mann/code.itcl.gz
+man/mann/configbody.itcl.gz
+man/mann/delete.itcl.gz
+man/mann/ensemble.itcl.gz
+man/mann/find.itcl.gz
+man/mann/is.itcl.gz
+man/mann/itcl.itcl.gz
+man/mann/itclvars.itcl.gz
+man/mann/local.itcl.gz
+man/mann/scope.itcl.gz
 @dirrm lib/itcl%%VERSION%%
+@dirrm include/itcl%%VERSION%%

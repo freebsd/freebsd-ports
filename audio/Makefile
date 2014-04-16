@@ -310,7 +310,6 @@
     SUBDIR += id3v2
     SUBDIR += ifp-line
     SUBDIR += ipod-sharp
-    SUBDIR += istream
     SUBDIR += jack
     SUBDIR += jack-keyboard
     SUBDIR += jack-rack
@@ -490,6 +489,7 @@
     SUBDIR += mpg123.el
     SUBDIR += mpg321
     SUBDIR += mpiosh
+    SUBDIR += mps
     SUBDIR += msilbc
     SUBDIR += muine
     SUBDIR += mumble
@@ -614,7 +614,6 @@
     SUBDIR += py-speex
     SUBDIR += py-tagpy
     SUBDIR += py-vorbis
-    SUBDIR += py-xmms
     SUBDIR += py-xmms2
     SUBDIR += pytone
     SUBDIR += qjackctl
@@ -795,6 +794,7 @@
     SUBDIR += xmms-ahx
     SUBDIR += xmms-bonk
     SUBDIR += xmms-curses
+    SUBDIR += xmms-faad
     SUBDIR += xmms-festalon
     SUBDIR += xmms-flac
     SUBDIR += xmms-gbsplay

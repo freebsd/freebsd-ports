@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dgd
-PORTVERSION=	1.4.21
+PORTVERSION=	1.4.22
 CATEGORIES=	net lang games
 MASTER_SITES=	https://github.com/dworkin/dgd/archive/
 DISTNAME=	${PORTVERSION}

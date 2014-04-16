@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	patapizza-tetris
@@ -25,7 +25,6 @@ USES=		gmake
 USE_SDL=	sdl image gfx ttf
 
 PORTDOCS=	README.md
-
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}
@@ -34,8 +33,8 @@ DESKTOP_ENTRIES="Patapizza Tetris" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;LogicGame;" ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|CC = gcc|CC = ${CC}| ; \
-	s|/usr|${PREFIX}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|CC =|CC ?=|; \
+		s|/usr|${PREFIX}|' ${WRKSRC}/Makefile
 
 do-build:
 	cd ${WRKSRC} && ${CC} -o ${PORTNAME} ${CFLAGS} \

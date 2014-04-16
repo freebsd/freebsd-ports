@@ -4,4 +4,4 @@ elements normally aggregated in different files, like users, cron jobs, and
 hosts, along with obviously discrete elements like packages, services, and
 files.
 
-WWW:	http://www.puppetlabs.com
+WWW: http://www.puppetlabs.com

@@ -13,11 +13,10 @@ COMMENT=	The noeGNUd Data Files
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
 DATADIR=	${PREFIX}/share/${NOEGNUDVERSION}
-USE_BZIP2=	yes
+USES=		tar:bzip2
 MAKE_ENV+=	DATADIR="${DATADIR}"
 WRKSRC=		${WRKDIR}/${DISTNAME}/variants
 ALL_TARGET=	data
 INSTALL_TARGET=	install_data
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,10 +23,9 @@ SHEBANG_FILES=	src/*.pl.in src/tsung-plotter/tsung/tsung.py
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-post-patch-script:
-	@${REINPLACE_CMD} -e 's|MAN_DIR   = $$(datadir)/man/man1/|MAN_DIR   = $$(prefix)/man/man1/|' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|CONFDIR   = $$(docdir)/examples|CONFDIR   = $$(prefix)/share/examples/tsung|' \
+post-patch:
+	@${REINPLACE_CMD} -e 's|MAN_DIR   = $$(datadir)/man/man1/|MAN_DIR   = $$(prefix)/man/man1/| ; \
+		s|CONFDIR   = $$(docdir)/examples|CONFDIR   = $$(prefix)/share/examples/tsung|' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

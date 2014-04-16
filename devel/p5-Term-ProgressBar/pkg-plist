@@ -1,5 +1,7 @@
 %%PERL5_MAN3%%/Term::ProgressBar.3.gz
+%%PERL5_MAN3%%/Term::ProgressBar::IO.3.gz
 %%SITE_PERL%%/Term/ProgressBar.pm
+%%SITE_PERL%%/Term/ProgressBar/IO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ProgressBar/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/powers
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/powers2
@@ -11,4 +13,5 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ProgressBar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
+@dirrm %%SITE_PERL%%/Term/ProgressBar
 @dirrmtry %%SITE_PERL%%/Term

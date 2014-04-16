@@ -13,14 +13,11 @@ COMMENT=	Module to write mail filters in Perl using sendmail's mail filter API
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Sendmail::Milter.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${PERL5})
-PERLTHREADS!=	${PERL5} -V:usethreads | ${AWK} '/define/ { print "define"; exit } END { exit 1 }' || ${ECHO_CMD}
-.if ${PERLTHREADS} != "define"
+PERLTHREADS!=	${PERL} -V::usethreads
+.if ${PERLTHREADS} != "'define';"
 IGNORE=	requires perl to be built with -DWITH_THREADS
 .endif
 .else

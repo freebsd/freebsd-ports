@@ -15,8 +15,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USES=		zip:infozip
-#USE_FIREFOX=	24
+USES=		zip:infozip gecko:firefox
 USE_XPI=	firefox
 
 NO_ARCH=	yes
@@ -30,7 +29,6 @@ PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.option"
 .include <bsd.port.pre.mk>
 
@@ -67,20 +65,19 @@ do-extract:
 	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
 	${CAT} ${PLISTD} | ${SORT} -r >> ${PLIST}
 
-.if !exists(${OPTIONSFILE}) && !defined(PACKAGE_BUILDING)
-pre-configure: config
-.endif
-
 do-install:
-	@${INSTALL} -d ${XPI_LIBDIR} ${XPI_SLDIRS_ALL}
-	@${CP} -R ${WRKSRC}/ ${XPI_LIBDIR}/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_LIBDIR}/${WDIR}/
-	@${CHMOD} -R a+rX,go-w ${XPI_LIBDIR}/${WDIR}/
-	@for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q} ; }
+	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${STAGEDIR}${XPI_SLDIRS_ALL}
+	cd ${WRKSRC}; ${PAX} -rw . ${STAGEDIR}${XPI_LIBDIR}
+	${CHMOD} -R a+rX,go-w ${STAGEDIR}${XPI_LIBDIR}/${WDIR}/
+	@for e in ${STAGEDIR}${XPI_LIBDIR}/${WDIR}; do \
+		for _dir in ${XPI_LINKFARMS} ; do \
+		${LN} -sf $${_e##*/} ${STAGEDIR}$$_dir/ ${_Q} ; \
+		done \
+	done
 	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { \
 		${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q}; }' ${_A}
-	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ${XPI_LIBDIR}; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \

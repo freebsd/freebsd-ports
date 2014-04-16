@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icedtea-web
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
@@ -20,11 +19,10 @@ GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
-JAVA_VERSION=	1.6+
 USE_PERL5=	build
 USE_XORG=	x11
-USES=		gmake perl5 pkgconfig shebangfix
-SHEBANG_FILES=	javac.in jrunscript.in
+USES=		desktop-file-utils gmake perl5 pkgconfig shebangfix
+SHEBANG_FILES=	javac.in jrunscript.in launcher/launchers.in
 
 WANT_GNOME=	yes
 
@@ -32,16 +30,22 @@ EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SETENV} LC_ALL=en_US.UTF-8 ${TAR} -xf -
 
-PLIST_FILES=	bin/itweb-javaws bin/itweb-settings \
+PLIST_FILES=	bin/itweb-javaws \
+		bin/itweb-policyeditor \
+		bin/itweb-settings \
 		man/man1/itweb-javaws.1.gz \
+		man/man1/itweb-policyeditor.1.gz \
+		man/man1/itweb-settings.1.gz \
 		share/applications/itweb-javaws.desktop \
+		share/applications/itweb-policyeditor.desktop \
 		share/applications/itweb-settings.desktop \
 		share/pixmaps/itweb-javaws.png
-PORTDATA=	about.jar about.jnlp javaws_splash.png netx.jar
+PORTDATA=	javaws_splash.png netx.jar
 PORTDOCS=	netx
 
 CONFIGURE_ARGS=	--with-asm=no --with-ecj=no --with-emma=no --with-jacoco=no
 CONFIGURE_ARGS+=--with-jdk-home="${JAVA_HOME}"
+CONFIGURE_ENV=	ac_cv_path_BIN_BASH=${bash_CMD}
 SH=		${bash_CMD}
 
 OPTIONS_DEFINE=	PLUGIN RHINO TEST
@@ -50,39 +54,26 @@ PLUGIN_DESC=	Enable the browser plug-in
 RHINO_DESC=	Add support for Proxy Auto Config files
 TEST_DESC=	Add support for running regression test
 
+DOCS_CONFIGURE_ENABLE=	docs
+PLUGIN_CONFIGURE_ENABLE=plugin
+RHINO_BUILD_DEPENDS=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
+RHINO_RUN_DEPENDS=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
+RHINO_CONFIGURE_OFF=	--with-rhino=no
+RHINO_CONFIGURE_ON=	--with-rhino=${JAVASHAREDIR}/rhino/rhino.jar
+TEST_BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
+TEST_CONFIGURE_OFF=	--with-junit=no
+TEST_CONFIGURE_ON=	--with-junit=${JAVALIBDIR}/junit.jar
+PLUGIN_PLIST_FILES=	lib/IcedTeaPlugin.so
+PLUGIN_USE=		GNOME=glib20
+PLUGIN_USES=		gecko webplugin:native
+
 .include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:MDOCS)
-CONFIGURE_ARGS+=--disable-docs
-.endif
-
 .if ${PORT_OPTIONS:MPLUGIN}
-USE_GECKO=	libxul
-USE_GNOME=	glib20
-USES+=		webplugin:native
-WEBPLUGIN_DIR=	${PREFIX}/lib
-WEBPLUGIN_FILES=IcedTeaPlugin.so
-
-PLIST_FILES+=	lib/IcedTeaPlugin.so
 PORTDATA+=	plugin.jar
 PORTDOCS+=	plugin
-.else
-CONFIGURE_ARGS+=--disable-plugin
-.endif
-
-.if ${PORT_OPTIONS:MRHINO}
-BUILD_DEPENDS+=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
-RUN_DEPENDS+=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
-CONFIGURE_ARGS+=--with-rhino=${JAVASHAREDIR}/rhino/rhino.jar
-.else
-CONFIGURE_ARGS+=--with-rhino=no
-.endif
-
-.if ${PORT_OPTIONS:MTEST}
-BUILD_DEPENDS+=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
-CONFIGURE_ARGS+=--with-junit=${JAVALIBDIR}/junit.jar
-.else
-CONFIGURE_ARGS+=--with-junit=no
+WEBPLUGIN_DIR=	${PREFIX}/lib
+WEBPLUGIN_FILES=IcedTeaPlugin.so
 .endif
 
 .include <bsd.port.pre.mk>
@@ -99,12 +90,8 @@ pre-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|^Icon=javaws|Icon=itweb-javaws|' \
 	    ${WRKSRC}/*.desktop.in
-	${REINPLACE_CMD} -E 's|/bin/(ba)?sh|${bash_CMD}|' \
-	    ${WRKSRC}/launcher/*.in \
-	    ${WRKSRC}/plugin/tests/LiveConnect/build \
-	    ${WRKSRC}/tests/netx/unit/net/sourceforge/jnlp/runtime/JNLPClassLoaderTest.java
-	${REINPLACE_CMD} -e 's|%%JAR%%|${JAR}|' \
-	    ${WRKSRC}/tests/netx/unit/net/sourceforge/jnlp/runtime/JNLPClassLoaderTest.java
+	${CP} -fp ${FILESDIR}/*.html \
+	    ${WRKSRC}/netx/net/sourceforge/jnlp/resources
 
 .if ${PORT_OPTIONS:MTEST}
 post-build:

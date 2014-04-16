@@ -1,8 +1,13 @@
+# Created by: Nikolai Lifanov <lifanov@mail.lifanov.com>
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	sysutils python
+MASTER_SITES=	SF/lifanov-ports-distfiles/sysutils/${PORTNAME}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Simple ssh-based configuration management and orchestration system
@@ -21,9 +26,10 @@ ACCELERATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/p
 			${PYTHON_PKGNAMEPREFIX}keyczar>0:${PORTSDIR}/security/py-keyczar
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ansible
-GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	6ae58a9
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	036c819
 
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
@@ -34,32 +40,32 @@ SHEBANG_FILES=	library/*/* \
 		lib/ansible/runner/action_plugins/synchronize.py
 
 SUB_FILES=	pkg-message
+
 PLIST_FILES+=	man/man1/ansible-doc.1.gz \
+		man/man1/ansible-galaxy.1.gz \
 		man/man1/ansible-playbook.1.gz \
 		man/man1/ansible-pull.1.gz \
-		man/man1/ansible.1.gz
+		man/man1/ansible-vault.1.gz \
+		man/man1/ansible.1.gz \
+		${DESKTOPDIR}/${PORTNAME}.desktop \
+		share/pixmaps/${PORTNAME}.png
 
 PORTEXAMPLES=	ansible.cfg hosts
 
 post-patch:
-	@${REINPLACE_CMD} -i -e "s|/etc/ansible|${ETCDIR}|" \
-		${WRKSRC}/bin/ansible-galaxy \
-		${WRKSRC}/docs/man/man1/ansible-playbook.1 \
-		${WRKSRC}/docs/man/man1/ansible.1 \
-		${WRKSRC}/examples/ansible.cfg \
-		${WRKSRC}/examples/hosts \
-		${WRKSRC}/lib/ansible/constants.py \
-		${WRKSRC}/lib/ansible/playbook/__init__.py \
-		${WRKSRC}/lib/ansible/runner/__init__.py \
-		${WRKSRC}/library/system/setup
-	@${REINPLACE_CMD} -i -e "s|/usr/share/ansible|${DATADIR}|" \
-		${WRKSRC}/docs/man/man1/ansible-playbook.1 \
-		${WRKSRC}/docs/man/man1/ansible.1 \
-		${WRKSRC}/examples/ansible.cfg \
-		${WRKSRC}/lib/ansible/constants.py \
-		${WRKSRC}/lib/ansible/playbook/__init__.py \
-		${WRKSRC}/lib/ansible/runner/__init__.py
-	@${RM}	${WRKSRC}/library/system/setup-e
+.for f in bin/ansible-galaxy docs/man/man1/ansible-playbook.1 \
+	docs/man/man1/ansible.1 examples/ansible.cfg \
+	examples/hosts lib/ansible/constants.py \
+	lib/ansible/playbook/__init__.py lib/ansible/runner/__init__.py \
+	library/system/setup
+	@${REINPLACE_CMD} -e 's|/etc/ansible|${ETCDIR}|' ${WRKSRC}/${f}
+.endfor
+
+.for f in docs/man/man1/ansible-playbook.1 docs/man/man1/ansible.1 \
+	examples/ansible.cfg lib/ansible/constants.py \
+	lib/ansible/playbook/__init__.py lib/ansible/runner/__init__.py
+	@${REINPLACE_CMD} -e 's|/usr/share/ansible|${DATADIR}|' ${WRKSRC}/${f}
+.endfor
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
@@ -68,5 +74,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/ansible.cfg ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/hosts ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop \
+		${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>

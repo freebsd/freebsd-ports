@@ -1,7 +1,7 @@
 # $FreeBSD$
 #
-# Lookup in Makefile.in and configure for common incorrect paths and set them
-# to respect FreeBSD hier
+# Lookup common paths in Makefile.in, configure and similar files, and replace
+# their values to respect FreeBSD hier(7) for file installation.
 #
 # Feature:	pathfix
 # Usage:	USES=pathfix
@@ -22,7 +22,9 @@ pathfix-pre-patch:
 	@${FIND} ${WRKSRC} -name "${PATHFIX_MAKEFILEIN}" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/locale|(prefix)/share/locale|g ; \
 		s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
+		s|[(]LIBDIR[)]/pkgconfig|(PREFIX)/libdata/pkgconfig|g ; \
 		s|[{]libdir[}]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
+		s|[{]LIBDIR[}]/pkgconfig|(PREFIX)/libdata/pkgconfig|g ; \
 		s|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[$$][(]localstatedir[)]/scrollkeeper|${SCROLLKEEPER_DIR}|g ; \

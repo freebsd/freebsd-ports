@@ -28,10 +28,4 @@ USERS=		fluentd
 GROUPS=		fluentd
 SUB_LIST+=	USER=${USERS} GROUP=${GROUPS}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-install:
-	${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 775 /var/run/fluentd
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

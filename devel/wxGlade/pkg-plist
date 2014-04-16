@@ -481,6 +481,7 @@ bin/wxglade
 %%PYTHON_SITELIBDIR%%/wxglade/xml_parse.pyc
 %%PYTHON_SITELIBDIR%%/wxglade/xrc2wxg.py
 %%PYTHON_SITELIBDIR%%/wxglade/xrc2wxg.pyc
+man/man1/wxglade.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt

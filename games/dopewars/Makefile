@@ -10,8 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNIX rewrite of a game originally based on "Drug Wars"
 
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gmake gettext
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 
@@ -20,9 +19,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL LICENCE NEWS README TODO
-MAN6=	dopewars.6
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's!/pixmaps!/dopewars/pixmaps!' \
 		${WRKSRC}/src/Makefile.in
@@ -32,12 +31,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!install-recursive!!g' ${WRKSRC}/doc/Makefile.in
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/doc/dopewars.6 ${MAN6PREFIX}/man/man6
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/help
-	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${WRKSRC}/doc/example* ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/help/*html ${DOCSDIR}/help/
-	@${INSTALL_DATA} ${PORTDOCS:S.^.${WRKSRC}/.} ${DOCSDIR}/
-.endif
+	${INSTALL_MAN} ${WRKSRC}/doc/dopewars.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/help
+	${INSTALL_DATA} ${WRKSRC}/doc/*html ${WRKSRC}/doc/example* \
+		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/help/*html ${STAGEDIR}${DOCSDIR}/help
+	${INSTALL_DATA} ${PORTDOCS:S.^.${WRKSRC}/.} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,9 +1,14 @@
 @unexec if cmp -s %D/etc/upclient.conf %D/etc/upclient.conf.sample; then rm -f %D/etc/upclient.conf; fi
+@group kmem
 etc/upclient.conf.sample
+@group wheel
 @exec [ -f %D/etc/upclient.conf ] || cp -p %D/etc/upclient.conf.sample %D/etc/upclient.conf
+man/man8/upclient.8.gz
 sbin/clientchk
 sbin/upchk
+@group kmem
 sbin/upclient
+@group wheel
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/FAQ

@@ -23,8 +23,10 @@ lib/libgnome-2.a
 lib/libgnome-2.la
 lib/libgnome-2.so
 lib/libgnome-2.so.0
+lib/libgnome-2.so.0.3200.0
 libdata/bonobo/servers/GNOME_Moniker_std.server
 libdata/pkgconfig/libgnome-2.0.pc
+man/man7/gnome-options.7.gz
 share/gnome-background-properties/gnome-default.xml
 share/locale/am/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnome-2.0.mo

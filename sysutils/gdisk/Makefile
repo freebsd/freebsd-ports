@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdisk
-PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTVERSION=	0.8.10
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/gptfdisk/gptfdisk/${PORTVERSION}
 DISTNAME=	gptfdisk-${PORTVERSION}
@@ -22,7 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_DEFINE=	CGDISK UTF16
 OPTIONS_SUB=	yes
-CGDISK_DESC=	A curses-based interactive program
+CGDISK_DESC=	Curses-based interactive program
 UTF16_DESC=	Support for Unicode partition names
 
 MAKEFILE=	Makefile.freebsd

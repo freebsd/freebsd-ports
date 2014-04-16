@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cuse4bsd-kmod
-PORTVERSION=	0.1.30
+PORTVERSION=	0.1.33
 PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
@@ -11,8 +11,6 @@ MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Cuse4BSD character device loopback driver for userspace
 
 CONFLICTS=	video4bsd-kmod*
-
-USE_BZIP2=	yes
 
 KMODNAME=	cuse4bsd
 LIBDIR=		${PREFIX}/lib
@@ -27,7 +25,8 @@ PLIST_SUB=	KMODNAME="${KMODNAME}" \
 
 OPTIONS_DEFINE=	DEBUG
 
-USES=		kmod uidfix
+USES=		kmod tar:bzip2 uidfix
+
 .include <bsd.port.options.mk>
 
 MAKE_ARGS+=" PTHREAD_LIBS=${PTHREAD_LIBS}"

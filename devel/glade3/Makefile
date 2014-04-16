@@ -4,25 +4,24 @@
 
 PORTNAME=	glade3
 PORTVERSION=	3.8.3
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A user interface builder for GTK+/GNOME
+COMMENT=	User interface builder for GTK+/GNOME
 
 CONFLICTS=	glade-3.*
 PORTSCOUT=	ignore
 
-LATEST_LINK=	glade3
 INSTALLS_ICONS=	yes
-USE_XZ=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gtk20 libxml2 gnomeprefix gnomedocutils ltverhack:10
-USES=		gettext pathfix desktop-file-utils pkgconfig
+USE_GNOME=	gtk20 libxml2 gnomeprefix gnomedocutils
+USES=		gmake gettext libtool pathfix desktop-file-utils pkgconfig tar:xz
 INSTALLS_OMF=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -32,7 +31,6 @@ OPTIONS_DEFINE=	GNOME PYTHON
 OPTIONS_DEFAULT=PYTHON
 GNOME_DESC=	GNOME UI widget support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}
@@ -56,6 +54,6 @@ PLIST_SUB+=	PYTHON:="@comment "
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/glade3/bindings
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/glade3/bindings
 
 .include <bsd.port.mk>

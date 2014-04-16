@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	javatari
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	emulators java
 MASTER_SITES=	http://javatari.org/files/
-DISTNAME=	${PORTNAME}40
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
@@ -26,7 +26,7 @@ SUB_LIST+=	JARFILE="${JARFILE}"
 JARFILE=	${DISTNAME}${EXTRACT_SUFX}
 
 DESKTOP_ENTRIES=	"Javatari" "${COMMENT}" "${PORTNAME}" "${PORTNAME}"  \
-			"Application;Game;" false
+			"Game;" false
 PLIST_FILES+=	share/pixmaps/${PORTNAME}.png
 
 post-extract:

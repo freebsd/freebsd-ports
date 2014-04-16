@@ -127,7 +127,6 @@
     SUBDIR += fpc-fftw
     SUBDIR += fpc-gmp
     SUBDIR += fpc-numlib
-    SUBDIR += freefem
     SUBDIR += freemat
     SUBDIR += fricas
     SUBDIR += fxt
@@ -651,7 +650,6 @@
     SUBDIR += truthtable
     SUBDIR += tvmet
     SUBDIR += ufc
-    SUBDIR += umatrix
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += unixstat
@@ -661,7 +659,6 @@
     SUBDIR += vtk6
     SUBDIR += wcalc
     SUBDIR += wfmath
-    SUBDIR += wingz
     SUBDIR += wingz3
     SUBDIR += wxMaxima
     SUBDIR += x12arima
@@ -670,7 +667,6 @@
     SUBDIR += xgraph
     SUBDIR += xlapack
     SUBDIR += xldlas
-    SUBDIR += xlispstat
     SUBDIR += xplot
     SUBDIR += xppaut
     SUBDIR += xspread

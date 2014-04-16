@@ -329,7 +329,6 @@ bin/br_biofetch
 bin/br_bioflat
 bin/br_biogetseq
 bin/br_pmfetch
-etc/bioinformatics/seqdatabase.ini
 etc/bioinformatics/seqdatabase.ini.sample
 @dirrm etc/bioinformatics
 @dirrm %%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/single_strand

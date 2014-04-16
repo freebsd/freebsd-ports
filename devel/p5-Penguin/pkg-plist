@@ -13,10 +13,14 @@
 %%SITE_PERL%%/Penguin/Wrapper/Transparent.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Penguin/.packlist
 lib/perl5/site_perl/Penguin/bin/.pen
+@owner root
+@group wheel
 lib/perl5/site_perl/Penguin/bin/makeapplet
 lib/perl5/site_perl/Penguin/bin/pclient
 lib/perl5/site_perl/Penguin/bin/penguind
 lib/perl5/site_perl/Penguin/bin/runapplet
+@owner
+@group
 lib/perl5/site_perl/Penguin/misc/HOW_TO_PLAY
 lib/perl5/site_perl/Penguin/misc/codefile
 lib/perl5/site_perl/Penguin/misc/codefile.pen

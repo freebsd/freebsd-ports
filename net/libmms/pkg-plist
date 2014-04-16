@@ -7,5 +7,6 @@ lib/libmms.a
 lib/libmms.la
 lib/libmms.so
 lib/libmms.so.0
+lib/libmms.so.0.0.2
 libdata/pkgconfig/libmms.pc
 @dirrm include/libmms

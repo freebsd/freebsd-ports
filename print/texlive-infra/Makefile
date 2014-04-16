@@ -12,19 +12,18 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Basic TeXLive infrastructure
 
-USES=		perl5
+USES=		perl5 tar:xz
 USE_PERL5=	run
-USE_XZ=		yes
 USE_TEX=	texlive texmf
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${SITE_PERL}/TeXLive
-	${INSTALL_DATA} ${WRKSRC}/tlpkg/TeXLive/*.pm ${SITE_PERL}/TeXLive
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}/TeXLive
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDIR}/web2c/
+	${INSTALL_DATA} ${WRKSRC}/tlpkg/TeXLive/*.pm ${STAGEDIR}${SITE_PERL}/TeXLive
 	${INSTALL_DATA} ${WRKSRC}/texmf/web2c/fmtutil-hdr.cnf \
 			${WRKSRC}/texmf/web2c/updmap-hdr.cfg \
-			${PREFIX}/${TEXMFDIR}/web2c/
+			${STAGEDIR}${PREFIX}/${TEXMFDIR}/web2c/
 
 .include <bsd.port.mk>

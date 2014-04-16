@@ -20,6 +20,5 @@ USES=		gmake
 USE_XORG=	xi xext x11
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-CFLAGS+=	-ffriend-injection
 
 .include <bsd.port.mk>

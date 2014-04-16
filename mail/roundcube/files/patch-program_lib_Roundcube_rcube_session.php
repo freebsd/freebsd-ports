@@ -1,23 +1,23 @@
---- program/lib/Roundcube/rcube_session.php.orig	2013-05-16 20:06:31.000000000 +0200
-+++ program/lib/Roundcube/rcube_session.php	2013-05-27 15:46:41.000000000 +0200
-@@ -33,7 +33,6 @@
-     private $start;
-     private $changed;
+--- program/lib/Roundcube/rcube_session.php.orig	2014-04-06 14:13:10.000000000 +0000
++++ program/lib/Roundcube/rcube_session.php	2014-04-10 09:21:36.955091803 +0000
+@@ -35,7 +35,6 @@
+     private $time_diff = 0;
      private $reloaded = false;
+     private $appends = array();
 -    private $unsets = array();
      private $gc_handlers = array();
      private $cookiename = 'roundcube_sessauth';
      private $vars;
-@@ -131,7 +130,7 @@
-         if ($sql_result && ($sql_arr = $this->db->fetch_assoc($sql_result))) {
-             $this->changed = strtotime($sql_arr['changed']);
-             $this->ip      = $sql_arr['ip'];
--            $this->vars    = base64_decode($sql_arr['vars']);
-+            $this->vars    = $sql_arr['vars'];
-             $this->key     = $key;
+@@ -176,7 +175,7 @@
+             $this->time_diff = time() - strtotime($sql_arr['ts']);
+             $this->changed   = strtotime($sql_arr['changed']);
+             $this->ip        = $sql_arr['ip'];
+-            $this->vars      = base64_decode($sql_arr['vars']);
++            $this->vars      = $sql_arr['vars'];
+             $this->key       = $key;
  
              return !empty($this->vars) ? (string) $this->vars : '';
-@@ -168,13 +167,13 @@
+@@ -214,12 +213,12 @@
          }
  
          if ($oldvars !== null) {
@@ -25,24 +25,23 @@
 +            $newvars = $vars;
  
              if ($newvars !== $oldvars) {
-                 $this->db->query(
-                     sprintf("UPDATE %s SET vars=?, changed=%s WHERE sess_id=?",
-                         $this->db->table_name('session'), $now),
--                        base64_encode($newvars), $key);
-+                        $newvars, $key);
+                 $this->db->query("UPDATE $table "
+                     . "SET changed = $now, vars = ? WHERE sess_id = ?",
+-                    base64_encode($newvars), $key);
++                    $newvars, $key);
              }
-             else if ($ts - $this->changed > $this->lifetime / 2) {
-                 $this->db->query("UPDATE ".$this->db->table_name('session')
-@@ -186,7 +185,7 @@
-                 sprintf("INSERT INTO %s (sess_id, vars, ip, created, changed) ".
-                     "VALUES (?, ?, ?, %s, %s)",
-                     $this->db->table_name('session'), $now, $now),
--                    $key, base64_encode($vars), (string)$this->ip);
-+                    $key, $vars, (string)$this->ip);
+             else if ($ts - $this->changed + $this->time_diff > $this->lifetime / 2) {
+                 $this->db->query("UPDATE $table SET changed = $now"
+@@ -229,7 +228,7 @@
+         else {
+             $this->db->query("INSERT INTO $table (sess_id, vars, ip, created, changed)"
+                 . " VALUES (?, ?, ?, $now, $now)",
+-                $key, base64_encode($vars), (string)$this->ip);
++                $key, $vars, (string)$this->ip);
          }
  
          return true;
-@@ -194,40 +193,6 @@
+@@ -237,40 +236,6 @@
  
  
      /**
@@ -83,16 +82,16 @@
       * Handler for session_destroy()
       *
       * @param string Session ID
-@@ -308,7 +273,7 @@
+@@ -332,7 +297,7 @@
          else // else read data again
              $oldvars = $this->mc_read($key);
  
 -        $newvars = $oldvars !== null ? $this->_fixvars($vars, $oldvars) : $vars;
 +        $newvars = $vars;
  
-         if ($newvars !== $oldvars || $ts - $this->changed > $this->lifetime / 2) {
+         if ($newvars !== $oldvars || $ts - $this->changed > $this->lifetime / 3) {
              return $this->memcache->set($key, serialize(array('changed' => time(), 'ip' => $this->ip, 'vars' => $newvars)),
-@@ -416,8 +381,6 @@
+@@ -470,8 +435,6 @@
              return $this->destroy(session_id());
          }
  

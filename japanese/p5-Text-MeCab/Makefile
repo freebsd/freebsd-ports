@@ -16,13 +16,9 @@ BUILD_DEPENDS=		p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort \
 RUN_DEPENDS=		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 			p5-Encode>0:${PORTSDIR}/converters/p5-Encode\
 			p5-XSLoader>0.1:${PORTSDIR}/devel/p5-XSLoader
-LIB_DEPENDS=		mecab:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS=		libmecab.so:${PORTSDIR}/japanese/mecab
 
 MAKE_JOBS_UNSAFE=	yes
-
-MAN3=			Text::MeCab.3 \
-			Text::MeCab::Dict.3 \
-			Text::MeCab::Node.3
 
 USES=		perl5
 USE_PERL5=	configure
@@ -31,7 +27,6 @@ CONFIGURE_ARGS=	</dev/null
 # dictionary encoding (euc-jp, shift_jis, utf-8)
 ENCODING?=	euc-jp
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "/default_encoding = /s/euc-jp/${ENCODING}/" \
 		${WRKSRC}/tools/probe_mecab.pl

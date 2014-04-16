@@ -1,0 +1,90 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# fossil startup script
+#
+# PROVIDE: fossil
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# fossil_enable="YES"
+#
+# You can fine tune others variables too:
+# fossil_port="8080"
+# fossil_directory="/nonexistent"
+# fossil_baseurl=""
+# fossil_proto="http"
+# fossil_listenall=""
+# fossil_files="" # comma separated globing patterns of files to serve
+# fossil_notfound="" # URI to redirect to in case of 404
+# Use fossil_user to run fossil as user
+
+. /etc/rc.subr
+
+name="fossil"
+rcvar=fossil_enable
+load_rc_config $name
+pidprefix="/var/run/fossil/fossil"
+pidfile="${pidprefix}.pid"
+
+procname="%%PREFIX%%/bin/fossil"
+command="/usr/sbin/daemon"
+start_precmd="fossil_precmd"
+stop_postcmd="fossil_postcmd"
+
+fossil_enable=${fossil_enable:-"NO"}
+fossil_user=${fossil_user:-"nobody"}
+fossil_port=${fossil_port:-"8080"}
+fossil_proto=${fossil_proto:-"http"}
+fossil_directory=${fossil_directory:-"/nonexistent"}
+
+case "${fossil_proto}" in
+http);;
+scgi) fossil_args="--scgi" ;;
+*) 
+	echo "unsupported protocol: ${fossil_proto}, only scgi and http are supported" >&2
+
+	exit 1
+	;;
+esac
+
+[ -n "${fossil_baseurl}" ] && fossil_args="${fossil_args} --baseurl ${fossil_baseurl}"
+[ -z "${fossil_listenall}" ] && fossil_args="${fossil_args} --localhost"
+[ -n "${fossil_files}" ] && fossil_args="${fossil_args} --files '${fossil_files}'"
+[ -n "${fossil_notfound}" ] && fossil_args="${fossil_args} --notfound \"${fossil_notfound}\""
+
+command_args="-f -p ${pidfile} ${procname} server -P ${fossil_port} ${fossil_args} ${fossil_directory}"
+
+fossil_setfib()
+{
+        if command -v check_namevarlist > /dev/null 2>&1; then
+                check_namevarlist fib && return 0
+        fi
+
+        ${SYSCTL} net.fibs >/dev/null 2>&1 || return 0
+
+        fossil_fib=${fossil_fib:-"NONE"}
+        case "$fossil_fib" in
+        [Nn][Oo][Nn][Ee])
+                ;;
+        *)
+                command="setfib -F ${fossil_fib} ${command}"
+                ;;
+        esac
+}
+
+fossil_precmd()
+{
+        fossil_setfib
+        install -d -o root -g wheel -m 1777 /var/run/fossil
+}
+
+fossil_postcmd()
+{
+	rm -rf /var/run/fossil
+}
+
+run_rc_command "$1"

@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	VIM:source \
 		${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|}:patch \
@@ -17,6 +17,8 @@ PATCH_SITES=	${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|} \
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT?=	Improved version of the vi editor
+
+PATCH_DEPENDS=	${LOCALBASE}/bin/gpatch:${PORTSDIR}/devel/patch
 
 OPTIONS_DEFINE=	CSCOPE EXUBERANT_CTAGS LUA NLS PERL PYTHON RUBY TCL XTERM_SAVE
 OPTIONS_SINGLE=	UI
@@ -32,15 +34,16 @@ XTERM_SAVE_DESC=	Restore xterm screen after exit
 ALL_TARGET=	# empty
 MAKE_ARGS+=	CC=${CC} CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP=${STRIP_CMD} CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=termlib
 MAKE_JOBS_UNSAFE=	yes
+PATCH=		${LOCALBASE}/bin/gpatch
 PATCH_DIST_ARGS=--batch --directory ${WRKSRC} --forward --quiet --remove-empty-files ${PATCH_DIST_STRIP}
 REINPLACE_ARGS=	-i ''
 USES=		iconv pkgconfig shebangfix tar:bzip2
 WANT_GNOME=	yes
 
-PATCHLEVEL=	229
+PATCHLEVEL=	256
 PATCHFILES!=	/usr/bin/jot -s " " -w "%03d" ${PATCHLEVEL} 1 ${PATCHLEVEL}
-POSTPONED_PATCHES=	064 087 147	# patch files postponed to apply in post-patch:
-SKIPPED_PATCHES=	208		# patch files to be skipped
+#POSTPONED_PATCHES=	064 087 147	# patch files postponed to be applied in post-patch:
+SKIPPED_PATCHES=	208		# patch files skipped
 .for p in ${POSTPONED_PATCHES}
 DISTFILES+=	${PORTVERSION:R}.${p}:patch
 .endfor
@@ -149,7 +152,7 @@ post-patch:
 
 pre-configure:
 	@${CP} ${WRKSRC}/src/config.mk.dist ${WRKSRC}/src/auto/config.mk
-	@(cd ${WRKSRC}/src/ && ${MAKE} distclean)
+	@(cd ${WRKSRC}/src/ && ${MAKE_CMD} distclean)
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g' \
 		-e 's|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g' \
@@ -159,7 +162,7 @@ pre-configure:
 .endif
 
 post-configure:
-	@(cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} scratch config)
+	@(cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} scratch config)
 	@${REINPLACE_CMD} -e 's|#define HAVE_SYSINFO 1|/* #undef HAVE_SYSINFO */|' ${WRKSRC}/src/auto/config.h
 
 post-install:

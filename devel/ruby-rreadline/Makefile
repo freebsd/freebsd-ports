@@ -9,27 +9,27 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A pure Ruby implementation of the Readline library
+COMMENT=	Pure Ruby implementation of the Readline library
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 post-extract:
 	${ECHO_CMD} '#!/bin/sh' > ${WRKSRC}/rbsh
 	${ECHO_CMD} 'ruby RubyShell.rb' >> ${WRKSRC}/rbsh
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/*.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/rbsh
-	${INSTALL_SCRIPT} ${WRKSRC}/rbsh ${RUBY_MODEXAMPLESDIR}/rbsh/
-	${INSTALL_DATA}  ${WRKSRC}/samples/rbsh/*.rb ${RUBY_MODEXAMPLESDIR}/rbsh/
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
-	${INSTALL_DATA}  ${WRKSRC}/README ${RUBY_MODDOCDIR}/
-	${INSTALL_DATA}  ${WRKSRC}/README.ja ${RUBY_MODDOCDIR}/ja/
-.endif
+	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/*.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/rbsh
+	${INSTALL_SCRIPT} ${WRKSRC}/rbsh ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/rbsh/
+	${INSTALL_DATA}  ${WRKSRC}/samples/rbsh/*.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/rbsh/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
+	${INSTALL_DATA}  ${WRKSRC}/README ${STAGEDIR}${RUBY_MODDOCDIR}/
+	${INSTALL_DATA}  ${WRKSRC}/README.ja ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
 .include <bsd.port.mk>

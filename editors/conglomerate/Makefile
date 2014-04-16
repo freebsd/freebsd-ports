@@ -3,7 +3,7 @@
 
 PORTNAME=	conglomerate
 PORTVERSION=	0.9.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/Conglomerate%20XML%20Editor/${PORTVERSION}
 
@@ -11,17 +11,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME2 visual XML editor with emphasis on DocBook editing
 
 INSTALLS_OMF=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	libgnomeui gtksourceview gnomeprefix gnomehack intlhack
+USES=		desktop-file-utils gmake pathfix pkgconfig
+USE_GNOME=	libgnomeui gtksourceview gnomeprefix intlhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	ENCHANT
 
-.if exists(${LOCALBASE}/libdata/pkgconfig/enchant.pc) || defined(WITH_ENCHANT)
-LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
-.endif
+ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

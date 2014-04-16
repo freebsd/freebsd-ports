@@ -30,19 +30,4 @@ USE_PERL5=	configure
 USE_RC_SUBR=	tstatd
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
-MAN1=		tstatd.1
-
-MAN3=		Tail::Stat.3 \
-		Tail::Stat::Plugin.3 \
-		Tail::Stat::Plugin::apache.3 \
-		Tail::Stat::Plugin::clamd.3 \
-		Tail::Stat::Plugin::cvsupd.3 \
-		Tail::Stat::Plugin::icecast.3 \
-		Tail::Stat::Plugin::nginx.3 \
-		Tail::Stat::Plugin::spamd.3
-
-NO_STAGE=	yes
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 .include <bsd.port.mk>

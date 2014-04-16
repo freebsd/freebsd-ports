@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplejson
-PORTVERSION=	3.3.3
+PORTVERSION=	3.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Simple, fast, extensible JSON encoder/decoder
 
-LICENSE_COMB=	dual
-LICENSE=	MIT PSFL
+# dual-licensed under MIT and Academic Free License version 2.1
+LICENSE=	MIT
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

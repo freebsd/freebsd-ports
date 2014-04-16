@@ -1,0 +1,20 @@
+===============================================================================
+
+HighMoon has been installed.
+
+All options are given in the command line or GUI shortcuts
+
+
+You can use executable to start and see shortcuts
+
+    highmoon --help
+
+
+Or can use desktop file with shortcuts
+
+    %%LOCALBASE%%/share/applications/highmoon.desktop
+
+
+Have fun!
+
+===============================================================================

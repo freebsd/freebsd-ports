@@ -389,7 +389,6 @@
     SUBDIR += qt4-l10n
     SUBDIR += qt4-qtconfig
     SUBDIR += qt4-qtdemo
-    SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
     SUBDIR += ree
@@ -436,7 +435,6 @@
     SUBDIR += tet
     SUBDIR += tkcron
     SUBDIR += tkinfo
-    SUBDIR += tkman
     SUBDIR += tkregexp
     SUBDIR += tkrunit
     SUBDIR += toilet
@@ -444,9 +442,7 @@
     SUBDIR += translate
     SUBDIR += ttyrec
     SUBDIR += tvbrowser
-    SUBDIR += txt2regex
     SUBDIR += typetrainer
-    SUBDIR += uf-view
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
     SUBDIR += umodunpack

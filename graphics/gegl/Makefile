@@ -1,16 +1,16 @@
-# Created by: gahr
+# Created by: Pietro Cerutti <gahr@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gegl
 PORTVERSION=	0.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.2/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
 
-LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl
+LIB_DEPENDS=	libbabl-0.1.so:${PORTSDIR}/x11/babl
 
 OPTIONS_DEFINE=	CAIRO ENSCRIPT EXIV2 FFMPEG PIXBUF GRAPHVIZ JASPER JPEG \
 		LUA OPENEXR OPENRAW SIMD PANGO PNG LIBRSVG2 SDL SPIRO V4L
@@ -21,14 +21,14 @@ ENSCRIPT_DESC=	Enscript support
 SPIRO_DESC=	Spiro support
 #UMFPACK_DESC=	UMFpack support
 
+USES=		gettext gmake libtool pathfix pkgconfig shebangfix tar:bzip2
 USE_GNOME=	glib20 intltool
-USES=		gettext pathfix pkgconfig shebangfix
-USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no
-CONFIGURE_ARGS+=--without-vala --disable-docs
+CONFIGURE_ENV=	ac_cv_header_execinfo_h=no
+CONFIGURE_ARGS=	--without-vala --disable-docs
+INSTALL_TARGET=	install-strip
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
@@ -42,7 +42,6 @@ EXAMPLES=	2geglbuffer csugar float-lookup \
 
 SHEBANG_FILES=	tools/xml_insert.sh
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPIXBUF}
@@ -54,7 +53,7 @@ PLIST_SUB+=	GDK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
 PLIST_SUB+=	CAIRO=""
 .else
 CONFIGURE_ARGS+=--without-cairo
@@ -81,7 +80,7 @@ BUILD_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	FFMPEG=""
 .else
 CONFIGURE_ARGS+=--without-libavformat
@@ -89,13 +88,13 @@ PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGRAPHVIZ}
-LIB_DEPENDS+=	cgraph:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS+=	libcgraph.so:${PORTSDIR}/graphics/graphviz
 .else
 CONFIGURE_ARGS+=--without-graphviz
 .endif
 
 .if ${PORT_OPTIONS:MJASPER}
-LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
+LIB_DEPENDS+=	libjasper.so:${PORTSDIR}/graphics/jasper
 PLIST_SUB+=	JP2=""
 .else
 CONFIGURE_ARGS+=--without-jasper
@@ -103,7 +102,7 @@ PLIST_SUB+=	JP2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	JPEG=""
 .else
 CONFIGURE_ARGS+=--without-libjpeg
@@ -117,7 +116,7 @@ CONFIGURE_ARGS+=--without-lua
 .endif
 
 .if ${PORT_OPTIONS:MOPENEXR}
-LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 PLIST_SUB+=	OPENEXR=""
 .else
 CONFIGURE_ARGS+=--without-openexr
@@ -138,7 +137,7 @@ CONFIGURE_ARGS+=--disable-mmx \
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
 CONFIGURE_ARGS+=--without-libpng
@@ -146,7 +145,7 @@ PLIST_SUB+=	PNG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBRSVG2}
-LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
+LIB_DEPENDS+=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 PLIST_SUB+=	RSVG=""
 .else
 CONFIGURE_ARGS+=--without-librsvg
@@ -162,7 +161,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSPIRO}
-LIB_DEPENDS+=	spiro:${PORTSDIR}/graphics/libspiro
+LIB_DEPENDS+=	libspiro.so:${PORTSDIR}/graphics/libspiro
 .else
 CONFIGURE_ARGS+=--without-libspiro
 .endif
@@ -185,7 +184,7 @@ PLIST_SUB+=	UMFPACK="@comment "
 #.endif
 
 .if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 PLIST_SUB+=	EXIV2=""
 .else
 CONFIGURE_ARGS+=--without-exiv2
@@ -226,20 +225,21 @@ post-build:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/gallery
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/gallery
 	(cd ${WRKSRC}/docs && \
-	    ${COPYTREE_SHARE} \*.html ${DOCSDIR} && \
-	    ${INSTALL_DATA} ChangeLog gegl.css gegl.devhelp devhelp.css ${DOCSDIR} && \
-	    ${INSTALL_DATA} gallery/OpenRaster* ${DOCSDIR}/gallery && \
-	    ${INSTALL_DATA} gallery/clones* ${DOCSDIR}/gallery && \
-	    ${INSTALL_DATA} gallery/index.html ${DOCSDIR}/gallery )
+	    ${COPYTREE_SHARE} \*.html ${STAGEDIR}${DOCSDIR} && \
+	    ${INSTALL_DATA} ChangeLog gegl.css gegl.devhelp devhelp.css ${STAGEDIR}${DOCSDIR} && \
+	    ${INSTALL_DATA} gallery/OpenRaster* ${STAGEDIR}${DOCSDIR}/gallery && \
+	    ${INSTALL_DATA} gallery/clones* ${STAGEDIR}${DOCSDIR}/gallery && \
+	    ${INSTALL_DATA} gallery/index.html ${STAGEDIR}${DOCSDIR}/gallery )
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/data
-	${INSTALL_DATA} ${WRKSRC}/examples/data/surfer.png ${EXAMPLESDIR}/data
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/data
+	${INSTALL_DATA} ${WRKSRC}/examples/data/surfer.png ${STAGEDIR}${EXAMPLESDIR}/data
 .for ex in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${ex}.c ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${ex}.c ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gegl-0.2/*.so
 
 .include <bsd.port.mk>

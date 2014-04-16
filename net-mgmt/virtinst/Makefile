@@ -15,11 +15,10 @@ LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.9.1:${PORTSDIR}/www/py-urlgrabber
 
 USES=		gettext
-USE_PYTHON_RUN=	yes
-USE_PYTHON_BUILD=	yes
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-post-patch-script:
+post-patch:
 	${REINPLACE_CMD} 's|share/man|man|g' \
 		${WRKSRC}/setup.py
 

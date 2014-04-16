@@ -28,7 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DSOFLAGS=	-Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib ${LDFLAGS}
 CONFIGURE_ENV=	DSOFLAGS="${DSOFLAGS}"
 CONFIGURE_ARGS+=	--localstatedir=/var			\
-			--disable-slp				\
 			--disable-gssapi			\
 			--with-cups-user=${USERS}		\
 			--with-cups-group=${GROUPS}		\
@@ -51,6 +50,8 @@ CUPSSYSGRP=	wheel
 # GROUPS/USERS does not work here
 GROUPS=	cups
 USERS=		cups
+
+USES+=		compiler
 
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 .if defined(CUPS_CLIENT)
@@ -299,4 +300,13 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/ulpt-cupsd.sh ${STAGEDIR}${PREFIX}/sbin/
 .endif
 
-.include <bsd.port.mk>
+# This is to workaround a CUPS bug. Should be fixed by 1.7.3.
+# pfg@ filed a bug report upstream: https://www.cups.org/str.php?L4397
+#
+.include <bsd.port.pre.mk>
+.if (defined(CUPS_CLIENT) || defined(CUPS_IMAGE)) && ${OPSYS} == "FreeBSD" && \
+	${OSVERSION} > 1000000 && ${COMPILER_TYPE} == clang
+CFLAGS+=	-fno-blocks
+.endif
+
+.include <bsd.port.post.mk>

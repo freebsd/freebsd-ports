@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpuv
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -14,7 +13,7 @@ LICENSE=	GPLv3 NODE
 LICENSE_COMB=	multi
 LICENSE_NAME_NODE=	Node's license
 LICENSE_FILE_NODE=	${WRKSRC}/LICENSE
-LICENSE_PERMS_NODE=	auto-accept
+LICENSE_PERMS_NODE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	R-cran-Rcpp>=0.11.0:${PORTSDIR}/devel/R-cran-Rcpp
 

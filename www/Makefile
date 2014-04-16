@@ -18,8 +18,6 @@
     SUBDIR += analog
     SUBDIR += anyremote2html
     SUBDIR += anyterm
-    SUBDIR += aolserver
-    SUBDIR += aolserver-xotcl
     SUBDIR += apache-forrest
     SUBDIR += apache-mode.el
     SUBDIR += apache22
@@ -79,7 +77,6 @@
     SUBDIR += cblog
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
-    SUBDIR += cgic
     SUBDIR += cgicc
     SUBDIR += cgichk
     SUBDIR += cgihtml
@@ -205,7 +202,6 @@
     SUBDIR += feedjack
     SUBDIR += feedonfeeds
     SUBDIR += ffproxy
-    SUBDIR += fhttpd
     SUBDIR += fira-webfont
     SUBDIR += firefox
     SUBDIR += firefox-esr
@@ -424,7 +420,6 @@
     SUBDIR += lynx-current
     SUBDIR += magento
     SUBDIR += mahara
-    SUBDIR += mambo
     SUBDIR += man2web
     SUBDIR += mathjax
     SUBDIR += mathopd
@@ -519,7 +514,8 @@
     SUBDIR += mod_proxy_html
     SUBDIR += mod_proxy_uwsgi
     SUBDIR += mod_proxy_xml
-    SUBDIR += mod_python3
+    SUBDIR += mod_python33
+    SUBDIR += mod_python35
     SUBDIR += mod_qos
     SUBDIR += mod_remoteip
     SUBDIR += mod_reproxy
@@ -584,8 +580,6 @@
     SUBDIR += ojs2
     SUBDIR += ompload
     SUBDIR += oops
-    SUBDIR += openacs
-    SUBDIR += openacs-dotlrn
     SUBDIR += opencart
     SUBDIR += openx
     SUBDIR += openxmldir
@@ -709,7 +703,6 @@
     SUBDIR += p5-CGI-Upload
     SUBDIR += p5-CGI-Utils
     SUBDIR += p5-CGI-XMLApplication
-    SUBDIR += p5-CGI-modules
     SUBDIR += p5-CGI.pm
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-CIF-Client
@@ -1261,7 +1254,6 @@
     SUBDIR += p5-WWW-HatenaStar
     SUBDIR += p5-WWW-IMDb
     SUBDIR += p5-WWW-Instapaper-Client
-    SUBDIR += p5-WWW-Link
     SUBDIR += p5-WWW-LongURL
     SUBDIR += p5-WWW-Mechanize
     SUBDIR += p5-WWW-Mechanize-CGI
@@ -1466,7 +1458,6 @@
     SUBDIR += pound
     SUBDIR += prado
     SUBDIR += privoxy
-    SUBDIR += privoxy+ipv6
     SUBDIR += protovis
     SUBDIR += pserv
     SUBDIR += publicfile
@@ -1578,6 +1569,7 @@
     SUBDIR += py-mt
     SUBDIR += py-nevow
     SUBDIR += py-openssl-proxy
+    SUBDIR += py-pafy
     SUBDIR += py-paste
     SUBDIR += py-pastedeploy
     SUBDIR += py-pastescript
@@ -1891,9 +1883,7 @@
     SUBDIR += samidare
     SUBDIR += sams
     SUBDIR += sarg
-    SUBDIR += sbox-dtc
     SUBDIR += scloader
-    SUBDIR += screem
     SUBDIR += script4rss
     SUBDIR += seamonkey
     SUBDIR += seamonkey-i18n
@@ -1933,6 +1923,7 @@
     SUBDIR += squirm
     SUBDIR += srg
     SUBDIR += subsonic
+    SUBDIR += suphp
     SUBDIR += surf
     SUBDIR += surfraw
     SUBDIR += sventon
@@ -2114,7 +2105,6 @@
     SUBDIR += weblint
     SUBDIR += weblint++
     SUBDIR += webmachine
-    SUBDIR += webobjects
     SUBDIR += webpy
     SUBDIR += webreport
     SUBDIR += webresolve

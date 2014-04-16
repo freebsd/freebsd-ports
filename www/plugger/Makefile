@@ -10,17 +10,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia front-end plugin for Mozilla or Opera
 
 USE_XORG=	xext xt sm ice xext x11
+USES=		webplugin:native
 GNU_CONFIGURE=	yes
 
-MAN7=		plugger.7
 PKGDEINSTALL=	${PKGINSTALL}
 
-USE_WEBPLUGINS=	native
-WEBPLUGINS_FILES=npplugger.so
+WEBPLUGIN_FILES=npplugger.so
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -28,27 +24,19 @@ post-patch:
 	s|+useFrontEndProgram||g' \
 		${WRKSRC}/pluggerrc
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
-		${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-controller \
-		${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/plugger-oohelper \
-		${PREFIX}/bin
-	@${MKDIR} ${WEBPLUGINS_DIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
-		${WEBPLUGINS_DIR}/npplugger.so
-	@if [ -f ${PREFIX}/etc/pluggerrc-${PORTVERSION} ]; then \
-		${MV} ${PREFIX}/etc/pluggerrc-${PORTVERSION} \
-			${PREFIX}/etc/pluggerrc-${PORTVERSION}.old; \
-	fi
-	@${INSTALL_DATA} ${WRKSRC}/pluggerrc \
-		${PREFIX}/etc/pluggerrc-${PORTVERSION}.sample
-	@${INSTALL_MAN} ${WRKSRC}/plugger.7 ${MANPREFIX}/man/man7
+	${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/plugger-controller \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/plugger-oohelper \
+		${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}
+	${INSTALL_LIB} ${WRKSRC}/plugger.so \
+		${STAGEDIR}${WEBPLUGIN_DIR}/npplugger.so
+	${INSTALL_DATA} ${WRKSRC}/pluggerrc \
+		${STAGEDIR}${PREFIX}/etc/pluggerrc-${PORTVERSION}.sample
+	${INSTALL_MAN} ${WRKSRC}/plugger.7 ${STAGEDIR}${MANPREFIX}/man/man7
 
 local-install:
 	@${MKDIR} ${HOME}/.plugger
@@ -75,8 +63,4 @@ local-opera-install: local-install
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
 		${HOME}/.opera/plugins/npplugger.so
 
-post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	transmission-remote-gui
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	transgui-${PORTVERSION}-src
@@ -38,12 +39,11 @@ QT4_DESC=		Use qt4 interface
 
 OPTIONS_DEFAULT=	GTK2
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
-USE_GNOME=	gtk20 gdkpixbuf
+USE_GNOME=	gtk20
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
 .endif
@@ -67,9 +67,6 @@ do-build:
 
 do-install:
 	@cd ${WRKSRC}/units && \
-		${INSTALL_PROGRAM} transgui ${PREFIX}/bin
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${INSTALL_PROGRAM} transgui ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>

@@ -93,7 +93,7 @@ SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
-CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
+CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL} ac_cv_path_PERL_PATH=${PERL}
 
 # Define the want perl first if defined
 .if ${USE_PERL5:M5*}
@@ -171,10 +171,8 @@ CONFIGURE_ARGS+=--install_path lib="${PREFIX}/${SITE_PERL_REL}" \
 				--install_path bindoc="${MAN1PREFIX}/man/man1"
 CONFIGURE_SCRIPT?=	Build.PL
 PL_BUILD?=	Build
-.if !defined(NO_STAGE)
 CONFIGURE_ARGS+=--destdir ${STAGEDIR}
 DESTDIRNAME=	--destdir
-.endif
 .if ${_USE_PERL5:Mmodbuild}
 .if ${PORTNAME} != Module-Build
 BUILD_DEPENDS+=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build

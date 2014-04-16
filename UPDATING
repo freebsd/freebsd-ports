@@ -5,6 +5,73 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140415:
+  AFFECTS: Users of mod_python3
+  AUTHOR: ohauer@FreeBSD.org
+
+  www/mod_python3 was renamed to www/mod_python33, additional www/mod_python35
+  with support for apache24 was added to the portstree.
+
+  To reflect the new port location use:
+
+  pkgng users:
+  # pkg set -o www/mod_python3:www/mod_python33
+
+  portmaster users:
+  # portmaster -o www/mod_python33 www/mod_python3
+
+  portupgrade users:
+  # portugrade -o www/mod_python33 www/mod_python3
+
+20140414:
+  AFFECTS: Users of dmd 1.X and dmd 2.x.
+  AUTHOR: cy@FreeBSD.org
+
+  lang/dmd and lang/dmd2 have switched places. Dmd 1.x is no longer supported
+  by digitalmars.com and is now the secondary dmd port in the collection.
+  Dmd2 is the primary port. What this means to dmd users is that dmd1 is now
+  used to invoke dmd 1.x and the dmd command (instead of dmd2) now invokes
+  dmd 2.x.
+
+20140413:
+  AFFECTS: Users of Python and pkg >= 1.2.7_1
+  AUTHOR: koobs@FreeBSD.org
+
+  There have been reports of the following error when upgrading Python ports:
+
+    pkg-static: Plist error, directory listed as a file: <name>.egg-info
+
+  The cause is an outdated or unpatched version of setuptools or distribute
+  installed by the user, or leftover from previous upgrades being used during
+  the `setup.py install` phase. pkg >= 1.2.7_1 now generates an error where
+  previously it did not.
+
+  Users should inspect their ${LOCALBASE}/lib/pythonX.Y/site-packages
+  directory, and remove any entries that reference versions of
+  setuptools or distribute *not* provided by ports or packages.
+
+  Examples of entries that may be removed are:
+
+    1) distribute-0.6.35-py2.7.egg
+    2) setuptools-0.6c11-py2.7.egg
+    3) *Any* version of setuptools directly from PyPi via pip or easy_install
+
+  More information is available here:
+
+    http://lists.freebsd.org/pipermail/freebsd-ports/2014-April/091618.html
+
+20140410:
+  AFFECTS: users of mail/vpopmail
+  AUTHOR: bdrewery@FreeBSD.org
+
+  If you are storing limits in MySQL, the following schema changes must be made:
+
+  ALTER TABLE `limits` ADD `disable_maildrop` TINYINT(1) DEFAULT '0' NOT NULL AFTER `disable_spamassassin`;
+  ALTER TABLE `limits` MODIFY `diskquota` BIGINT UNSIGNED NOT NULL DEFAULT 0;
+  ALTER TABLE `limits` MODIFY `maxmsgcount` BIGINT UNSIGNED NOT NULL DEFAULT 0;
+  ALTER TABLE `limits` MODIFY `defaultquota` BIGINT UNSIGNED NOT NULL DEFAULT 0;
+  ALTER TABLE `limits` MODIFY `defaultmaxmsgcount` BIGINT UNSIGNED NOT NULL DEFAULT 0;
+
 20140403:
   AFFECTS: users of net/rabbitmq
   AUTHOR: olgeni@FreeBSD.org
@@ -34,8 +101,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of textproc/elasticsearch
   AUTHOR: tj@FreeBSD.org
 
-  Elasticsearch has been updated to version 1.1.0. If you are updating 
-  from a version prior to 1.0.0 you will need to do a full cluster 
+  Elasticsearch has been updated to version 1.1.0. If you are updating
+  from a version prior to 1.0.0 you will need to do a full cluster
   shutdown for this update as it can not be performed in a rolling
   fashion.
 

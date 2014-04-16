@@ -21,5 +21,4 @@ USES=		gettext gmake perl5
 ### even to use English language.
 ALL_TARGET=	default
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

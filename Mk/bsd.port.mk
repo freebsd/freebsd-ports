@@ -587,6 +587,16 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # INSTALL_DATA	- A command to install sharable data.
 # INSTALL_MAN	- A command to install manpages.  May or not compress,
 #				  depending on the value of MANCOMPRESSED (see below).
+# COPYTREE_BIN
+# COPYTREE_SHARE
+#				- Similiar to INSTALL commands but working on whole
+#				  trees of directories, takes 3 arguments, last one is
+#				  find(1) arguments and optional.
+#				  Example use: 
+#				  cd ${WRKSRC}/doc && ${COPYTREE} . ${DOCSDIR} "! -name *.bak"
+#
+#				  Installs all directories and files from ${WRKSRC}/doc
+#				  to ${DOCSDIR} except sed backup files.
 #
 # Boolean to control whether manpages are installed.
 #
@@ -1120,6 +1130,7 @@ USESDIR?=		${PORTSDIR}/Mk/Uses
 SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 NOTPHONY?=
+PKG_ENV+=		PORTSDIR=${PORTSDIR}
 
 .if defined(FORCE_STAGE)
 .undef NO_STAGE
@@ -1133,19 +1144,33 @@ NOTPHONY?=
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 .if defined(X_BUILD_FOR)
+.if defined(NO_STAGE)
+IGNORE=	Cross building is only compatible with stagified ports
+.endif
+.if !defined(.PARSEDIR)
+IGNORE=	Cross building can only be done when using bmake(1) as make(1)
+.endif
 BUILD_DEPENDS=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
 # Do not define CPP on purpose
-CC=		${X_BUILD_FOR}-cc
-CXX=	${X_BUILD_FOR}-c++
-LD=		${X_BUILD_FOR}-ld
-AS=		${X_BUILD_FOR}-as
+.if !defined(HCC)
+HCC:=	${CC}
+HCXX:=	${CXX}
+.endif
+.if !exists(/usr/${X_BUILD_FOR}/usr/bin/cc)
+CC=		${LOCALBASE}/${X_BUILD_FOR}/usr/bin/cc
+CXX=		${LOCALBASE}/${X_BUILD_FOR}/usr/bin/c++
+PKG_ENV+=	ABI_FILE=${LOCALBASE}/${X_BUILD_FOR}/usr/lib/crt1.o
+.else
+CC=		/usr/${X_BUILD_FOR}/usr/bin/cc
+CXX=	/usr/${X_BUILD_FOR}/usr/bin/c++
+PKG_ENV+=	ABI_FILE=/usr/${X_BUILD_FOR}/usr/lib/crt1.o
+.endif
 NM=		${X_BUILD_FOR}-nm
 STRIP_CMD=	${X_BUILD_FOR}-strip
-CFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
-CXXFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
-LDFLAGS+=	-B${LOCALBASE}/${X_BUILD_FOR}/usr/bin
-CONFIGURE_ENV+=	LD=${LD} AS=${AS} NM=${NM}
-MAKE_ENV+=	LD=${LD} AS=${AS} NM=${NM}
+MAKE_ENV+=	NM=${NM} STRIPBIN=${X_BUILD_FOR}-strip
+# only bmake support the below
+STRIPBIN=	${STRIP_CMD}
+.export.env STRIPBIN
 .endif
 
 #
@@ -1381,6 +1406,7 @@ ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/Templates
+KEYWORDS?=		${PORTSDIR}/Keywords
 
 PATCHDIR?=		${MASTERDIR}/files
 FILESDIR?=		${MASTERDIR}/files
@@ -1460,7 +1486,7 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .endif
 
-.if defined(WANT_GECKO) || defined(USE_GECKO) || defined(USE_FIREFOX) || defined(USE_FIREFOX_BUILD) || defined(USE_SEAMONKEY) || defined(USE_SEAMONKEY_BUILD) || defined(USE_THUNDERBIRD) || defined(USE_THUNDERBIRD_BUILD)
+.if defined(WANT_GECKO) || defined(USE_GECKO)
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
 
@@ -5600,6 +5626,8 @@ generate-plist:
 .endif
 .if !defined(WITH_PKGNG)
 	@cd ${.CURDIR} && { ${MAKE} pretty-print-config | fold -sw 120 | ${SED} -e 's/^/@comment OPTIONS:/'; } >> ${TMPPLIST}
+	@${AWK} -f ${KEYWORDS}/pkg_install.awk ${TMPPLIST} > ${TMPPLIST}.keyword && \
+	    ${MV} -f ${TMPPLIST}.keyword ${TMPPLIST}
 .endif
 .endif
 
@@ -5937,7 +5965,7 @@ _CHECK_CONFIG_ERROR=	true
 .if !target(check-config)
 check-config: _check-config
 .if !empty(_CHECK_CONFIG_ERROR)
-	@exit 1
+	@${FALSE}
 .endif
 .endif # check-config
 

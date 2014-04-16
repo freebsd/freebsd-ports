@@ -28,7 +28,6 @@ SHAREWARE_DESC=	Install shareware game data version 1.3
 
 DATADIR=	${DN3DDIR}
 
-NO_STAGE=	yes
 .include "Makefile.include"
 
 .include <bsd.port.options.mk>
@@ -47,15 +46,9 @@ post-extract:
 .endif
 
 do-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MSHAREWARE}
-	${INSTALL_DATA} ${WRKSRC}/DUKE3D.GRP ${DATADIR}/duke3d.grp
-.else
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	${INSTALL_DATA} ${WRKSRC}/DUKE3D.GRP ${STAGEDIR}${DATADIR}/duke3d.grp
 .endif
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mozjpeg
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics
 
 MAINTAINER=	horia@racoviceanu.com
@@ -10,24 +10,22 @@ COMMENT=	Fork of libjpeg-turbo with 'jpgcrush' functionality
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	febf346
+GH_COMMIT=	0c7449c
 
-USE_AUTOTOOLS=	aclocal:env autoconf automake libtool
+USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtool libtoolize
 USE_LDCONFIG=	${PREFIX}/include/${PORTNAME} ${PREFIX}/lib/${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${PREFIX}/share/doc/${PORTNAME} \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--libdir=${PREFIX}/lib/${PORTNAME}
-LIBTOOL_ARGS+=	--finish ${PREFIX}/lib/${PORTNAME}
+AUTOMAKE_ARGS+=	-fiv --add-missing
 LDFLAGS+=	-L${PREFIX}/lib/${PORTNAME}
 
 PLIST_SUB=	PORTNAME=${PORTNAME} \
-		SOMAJORVERSION=${SOMAJORVERSION}
+		VER=${VER}
 
 PORTDOCS=	*
 
@@ -52,7 +50,7 @@ OPTIONS_MULTI_LIBRARIES=	SHARED STATIC
 OPTIONS_SINGLE=	API_ABI_EMULATION
 OPTIONS_SINGLE_API_ABI_EMULATION=	JPEG6B JPEG7 JPEG8
 
-OPTIONS_DEFAULT=	DECODING ENCODING GCC JPEG6B SHARED SIMD STATIC TURBOJPEG
+OPTIONS_DEFAULT=	DECODING ENCODING GCC JPEG8 SHARED STATIC TURBOJPEG
 
 OPTIONS_SUB=	yes
 
@@ -70,8 +68,9 @@ JPEG6B_DESC=	API/ABI-compatible with libjpeg v6b
 JPEG7_DESC=	API/ABI-compatible with libjpeg v7 (implies arith-coding)
 JPEG8_DESC=	API/ABI-compatible with libjpeg v8 (implies arith-coding)
 
-GCC_USE=	GCC=any
+GCC_USE=	GCC=yes
 SIMD_CONFIGURE_WITH=	simd
+SIMD_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 TURBOJPEG_CONFIGURE_WITH=	turbojpeg
 
 JPEG7_CONFIGURE_WITH=	jpeg7
@@ -89,28 +88,27 @@ CONFIGURE_ARGS+=	--without-arith-enc
 . if ! ${PORT_OPTIONS:MDECODING}
 CONFIGURE_ARGS+=	--without-arith-dec
 . endif
-SOMAJORVERSION=	63
+VER=	63
 .else
-SOMAJORVERSION=	8
+VER=	8
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|docdir = \$$(datadir)/doc|&/mozjpeg|; \
-		s|exampledir = \$$(datadir)/doc|exampledir = ${EXAMPLESDIR}|" \
- 			${WRKSRC}/Makefile.am
-
-run-autotools:	run-autotools-autoreconf
-
-run-autotools-autoreconf:
-	cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -fiv
+	@${REINPLACE_CMD} -e 's|docdir = $$(datadir)/doc|&/mozjpeg|; \
+		/^exampledir/s|=.*|= ${EXAMPLESDIR}|' \
+			${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|__attribute__((always_inline))",|inline &|' \
+			${WRKSRC}/configure.ac
 
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR1}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+.endif
 
 .if ${PORT_OPTIONS:MSHARED}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/libjpeg.so.${SOMAJORVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/libjpeg.so.${VER}
 .endif
 
 .if ${PORT_OPTIONS:MSHARED} && ${PORT_OPTIONS:MTURBOJPEG}

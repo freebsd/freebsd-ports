@@ -48,6 +48,19 @@ lib/classpath/libjavautil.so.0
 %%QT4%%lib/classpath/libqtpeer.la
 lib/logging.properties
 lib/security/classpath.security
+man/man1/gappletviewer.1.gz
+man/man1/gcjh.1.gz
+man/man1/gjar.1.gz
+man/man1/gjarsigner.1.gz
+man/man1/gjavah.1.gz
+%%GJDOC%%man/man1/gjdoc.1.gz
+man/man1/gkeytool.1.gz
+man/man1/gnative2ascii.1.gz
+man/man1/gorbd.1.gz
+man/man1/grmid.1.gz
+man/man1/grmiregistry.1.gz
+man/man1/gserialver.1.gz
+man/man1/gtnameserv.1.gz
 @dirrm lib/classpath
 @dirrmtry lib/security
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.java2d

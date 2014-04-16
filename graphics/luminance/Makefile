@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	luminance-hdr
-PORTREVISION=	5
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
 
@@ -13,21 +12,20 @@ COMMENT=	Complete open source solution for HDR photography
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
-		exiv2:${PORTSDIR}/graphics/exiv2 \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		tiff:${PORTSDIR}/graphics/tiff \
-		gsl:${PORTSDIR}/math/gsl \
-		raw_r:${PORTSDIR}/graphics/libraw
+LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libgsl.so:${PORTSDIR}/math/gsl \
+		libraw_r.so:${PORTSDIR}/graphics/libraw \
+		libboost_system.so:${PORTSDIR}/devel/boost-libs
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 USE_QT4=	gui sql webkit xml linguist_build moc_build qmake_build \
 		rcc_build uic_build imageformats_run
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 post-patch:
 # Do not install yet another copy of GPL (we use license framework instead)
 # and fix installation path for docs (but not for internal help files)
@@ -44,5 +42,21 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's,@GIT_SHA1@,be5409f2ed028b0a509d3f4cd44a970a09d2ef6c,' \
 			${WRKSRC}/src/Common/GitSHA1.cpp.in
+
+# Include <string> in addition to <string.h> where necessary, as this
+# is required for building with libc++
+	@${REINPLACE_CMD} -E '1s|^|#include \<string\>|;' \
+	${WRKSRC}/src/TonemappingOperators/drago03/pfstmo_drago03.cpp \
+	${WRKSRC}/src/TonemappingOperators/reinhard02/pfstmo_reinhard02.cpp \
+	${WRKSRC}/src/TonemappingOperators/reinhard05/pfstmo_reinhard05.cpp \
+	${WRKSRC}/src/TonemappingOperators/mantiuk08/display_function.cpp \
+	${WRKSRC}/src/TonemappingOperators/mantiuk08/display_size.cpp \
+	${WRKSRC}/src/TonemappingOperators/mantiuk08/pfstmo_mantiuk08.cpp \
+	${WRKSRC}/src/TonemappingOperators/fattal02/pfstmo_fattal02.cpp \
+	${WRKSRC}/src/TonemappingOperators/durand02/pfstmo_durand02.cpp \
+	${WRKSRC}/src/TonemappingOperators/pattanaik00/pfstmo_pattanaik00.cpp \
+	${WRKSRC}/src/Libpfs/io/pfsreader.cpp \
+	${WRKSRC}/src/Libpfs/io/rgbereader.cpp \
+	${WRKSRC}/src/Libpfs/colorspace/colorspace.cpp
 
 .include <bsd.port.mk>

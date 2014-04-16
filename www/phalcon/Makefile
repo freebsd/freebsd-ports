@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phalcon
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/phalcon/cphalcon/archive/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

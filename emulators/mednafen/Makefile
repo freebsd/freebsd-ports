@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mednafen
-PORTVERSION=	0.8.D.3
+PORTVERSION=	0.9.33.2
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	SF/${PORTNAME}/Mednafen/${PORTVERSION}
@@ -31,18 +31,21 @@ USES=		iconv pkgconfig:build
 
 OPTIONS_DEFINE=	NLS DOCS JACK
 OPTIONS_MULTI=	EMU
-OPTIONS_MULTI_EMU=	GB GBA LINX NES NGP PCE PCFX SMS SWAN
-OPTIONS_DEFAULT=	GB GBA LINX NES NGP PCE PCFX SMS SWAN
+OPTIONS_MULTI_EMU=	GB GBA LINX MD NES NGP PCE PCFX PSX SMS SWAN VB
+OPTIONS_DEFAULT=	GB GBA LINX MD NES NGP PCE PCFX PSX SMS SWAN VB
 
 GB_DESC=	build with GameBoy emulation
 GBA_DESC=	build with GameBoy Advance emulation
 LINX_DESC=	build with Atari Lynx emulation
+MD_DESC=	build with Sega Genesis/MegaDrive emulation
 NES_DESC=	build with Nintendo Entertainment System emulation
 NGP_DESC=	build with Neo Geo Pocket emulation
 PCE_DESC=	build with PC Engine (TurboGrafx 16) emulation
 PCFX_DESC=	build with PC-FX emulation
+PSX_DESC=	build with Playstation emulation
 SMS_DESC=	build with SMS+GG emulation
 SWAN_DESC=	build with WonderSWan emulation
+VB_DESC=	build with Virtual Boy emulation
 JACK_DESC=	support the JACK audio API
 
 OPTIONS_SUB=	yes
@@ -56,12 +59,15 @@ JACK_CONFIGURE_ENABLE=jack
 GB_CONFIGURE_ENABLE=gb
 GBA_CONFIGURE_ENABLE=gba
 LINX_CONFIGURE_ENABLE=lynx
+MD_CONFIGURE_ENABLE=md
 NES_CONFIGURE_ENABLE=nes
 NGP_CONFIGURE_ENABLE=ngp
 PCE_CONFIGURE_ENABLE=pce
 PCFX_CONFIGURE_ENABLE=pcfx
+PSX_CONFIGURE_ENABLE=psx
 SMS_CONFIGURE_ENABLE=sms
 SWAN_CONFIGURE_ENABLE=wswan
+VB_CONFIGURE_ENABLE=vb
 
 BROKEN_sparc64=	does not compile due to internal compiler error
 

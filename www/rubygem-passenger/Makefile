@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	4.0.35
+PORTVERSION=	4.0.41
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -15,7 +16,7 @@ OPTIONS_SINGLE=	SERVER
 OPTIONS_SINGLE_SERVER=	APACHE22 NGINX
 APACHE22_DESC=	Build with apache22 support
 NGINX_DESC=	Build with nginx support
-SYMLINK_DESC= 	Create passenger symlink
+SYMLINK_DESC=	Create passenger symlink
 OPTIONS_DEFAULT=	APACHE22
 
 USE_RUBY=	yes
@@ -23,7 +24,6 @@ USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE22}
@@ -44,7 +44,7 @@ LIB_DEPENDS+=	eio:${PORTSDIR}/devel/libeio \
 		curl:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
 		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
-		rubygem-daemon_controller>=1.1.0:${PORTSDIR}/devel/rubygem-daemon_controller
+		rubygem-daemon_controller>=1.2.0:${PORTSDIR}/devel/rubygem-daemon_controller
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
@@ -72,7 +72,6 @@ pre-patch:
 	@${ECHO_CMD}
 .endif
 
-post-install:
 	@${REINPLACE_CMD} \
 		's!-Wall!!g; \
 		s!gcc!${CC}!g; \
@@ -81,15 +80,15 @@ post-install:
 		s!-O2!!g; \
 		s! -feliminate-unused-debug-symbols -feliminate-unused-debug-types!!g; \
 		201,203s!true!false!' \
-		${PREFIX}/${GEM_LIB_DIR}/build/basics.rb
+		${WRKSRC}/build/basics.rb
 .if ${PORT_OPTIONS:NDEBUG}
 	@${REINPLACE_CMD} \
 		's!-DPASSENGER_DEBUG!-DNDEBUG!g' \
-		${PREFIX}/${GEM_LIB_DIR}/build/basics.rb
+		${WRKSRC}/build/basics.rb
 .endif
 	@${REINPLACE_CMD} \
 		's!#{LIBEV_LIBS}!-L${LOCALBASE}/lib -lev!g' \
-		${PREFIX}/${GEM_LIB_DIR}/build/agents.rb
+		${WRKSRC}/build/agents.rb
 	@${REINPLACE_CMD} \
 		's!-Iext/libev!!; \
 		s!/usr/include/libev!${LOCALBASE}/include!; \
@@ -97,23 +96,24 @@ post-install:
 		s!-Iext/libeio!!; \
 		s!/usr/include/libeio!${LOCALBASE}/include!; \
 		s!-leio!-L${LOCALBASE}/lib -leio!' \
-		${PREFIX}/${GEM_LIB_DIR}/build/common_library.rb
+		${WRKSRC}/build/common_library.rb
 	@${REINPLACE_CMD} \
 		's!-lpthread!${PTHREAD_LIBS}!g' \
-		${PREFIX}/${GEM_LIB_DIR}/lib/phusion_passenger/platform_info/cxx_portability.rb
+		${WRKSRC}/lib/phusion_passenger/platform_info/cxx_portability.rb
+
+post-build:
 .if ${PORT_OPTIONS:MAPACHE22}
-	(CC=${CC} CXX=${CXX} ${PREFIX}/bin/passenger-install-apache2-module --auto)
-	@${CAT} ${PKGMESSAGE}
+	(CC=${CC} CXX=${CXX} ${WRKSRC}/bin/passenger-install-apache2-module --auto)
 .endif
 
 .if ${PORT_OPTIONS:MNGINX}
-	(cd ${PREFIX}/${GEM_LIB_DIR} && CC=${CC} CXX=${CXX} ${RAKE_BIN} nginx)
+	(cd ${WRKSRC} && CC=${CC} CXX=${CXX} ${RAKE_BIN} nginx)
+.endif
+.if ${PORT_OPTIONS:MSYMLINK}
+	${LN} -s ${GEM_LIB_DIR} ${STAGE}${PREFIX}/${GEMS_DIR}/${PORTNAME}
 .endif
 
-	${FIND} ${PREFIX}/${GEM_LIB_DIR} -name '*.o' -delete
-	${FIND} ${PREFIX}/${GEM_LIB_DIR} -name '*.bak' -delete
-.if ${PORT_OPTIONS:MSYMLINK}
-	${LN} -s ${PREFIX}/${GEM_LIB_DIR} ${PREFIX}/${GEMS_DIR}/${PORTNAME}
-.endif
+	${FIND} ${WRKSRC} -name '*.o' -delete
+	${FIND} ${WRKSRC} -name '*.bak' -delete
 
 .include <bsd.port.mk>

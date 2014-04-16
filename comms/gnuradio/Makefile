@@ -68,7 +68,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .if ${OSVERSION} <= 1000510 && ${OSVERSION} > 1000000
 # Debug hack
 #.if ${OSVERSION} <= 1200000
-BUILD_DEPENDS=	clang34:${PORTSDIR}/lang/clang34
+BUILD_DEPENDS+=	clang34:${PORTSDIR}/lang/clang34
 CC=		clang34
 CXX=		clang++34
 .endif

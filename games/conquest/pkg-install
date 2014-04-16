@@ -1,7 +1,0 @@
-#!/bin/sh
-
-case "$2" in
-	POST-INSTALL)
-		install -d -o root -g conquest -m 770 /var/games/conquest
-	;;
-esac

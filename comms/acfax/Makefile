@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake
 USE_XORG=	x11 xext xmu xt sm ice
 
-NO_STAGE=	yes
 post-extract:
 	@${TOUCH} ${WRKSRC}/acfax.man
 
@@ -32,6 +31,6 @@ post-patch:
 		 s|-lm|-lm -lgnuregex|' ${WRKSRC}/Imakefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/acfax ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/acfax ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

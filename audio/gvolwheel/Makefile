@@ -17,7 +17,6 @@ BUILD_DEPENDS=	intltoolize:${PORTSDIR}/textproc/intltool
 CONFIGURE_ARGS+=--enable-oss
 GNU_CONFIGURE=	yes
 USES=		gmake iconv pathfix pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	gtk30
 
 PORTDOCS=	AUTHORS ChangeLog README
@@ -33,21 +32,13 @@ SUB_FILES=	pkg-message
 DESKTOP_ENTRIES="GVolWheel" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "GTK;AudioVideo;Audio;Mixer;" true
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e 's|linux/soundcard|sys/soundcard|g' \
 		${WRKSRC}/src/callbacks.c ${WRKSRC}/src/actions.c
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-	${LN} -sf ${PREFIX}/share/pixmaps/gvolwheel/audio-volume-high.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${LN} -sf ${PREFIX}/share/pixmaps/gvolwheel/audio-volume-high.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>

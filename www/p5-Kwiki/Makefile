@@ -3,6 +3,7 @@
 
 PORTNAME=	Kwiki
 PORTVERSION=	0.39
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.kwiki.org/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -15,19 +16,10 @@ COMMENT=	The Kwiki Wiki Building Framework
 
 KWIKIDIR?=	kwiki
 NO_BUILD=	yes
+PLIST_SUB=	KWIKIDIR=${KWIKIDIR}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/${KWIKIDIR}
-	${CP} -RH ${WRKSRC}/ ${PREFIX}/${KWIKIDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${KWIKIDIR}
-
-post-install:
-	@${FIND} ${WRKSRC}/${file} -not -type d \
-		| ${SED} -ne 's,^${WRKSRC},${KWIKIDIR},p' >> ${TMPPLIST}
-	@${FIND} -d ${WRKSRC}/${file} -type d \
-		| ${SED} -ne 's,^${WRKSRC},@dirrm ${KWIKIDIR},p' >> ${TMPPLIST}
-	@${SED} -e 's|%%KWIKIDIR%%|${PREFIX}/${KWIKIDIR}|' ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${KWIKIDIR}
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${KWIKIDIR}
 
 .include <bsd.port.mk>

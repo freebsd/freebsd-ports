@@ -1,5 +1,5 @@
---- eruby_main.c.orig	2010-02-17 16:59:10.000000000 +0100
-+++ eruby_main.c	2010-02-17 17:11:08.000000000 +0100
+--- eruby_main.c.orig	2013-12-01 21:58:55.000000000 +0100
++++ eruby_main.c	2014-04-15 17:33:49.000000000 +0200
 @@ -29,20 +29,37 @@
  #endif
  
@@ -92,7 +92,15 @@
      if (eclass == rb_eRuntimeError && RSTRING_LEN(einfo) == 0) {
  	fprintf(out, ": unhandled exception\n");
      }
-@@ -540,7 +564,7 @@
+@@ -455,6 +479,7 @@
+     rb_ary_push(rb_load_path, rb_str_new2("."));
+ #endif
+ #endif
++    rb_enc_find_index("encdb");
+     if (eruby_mode == MODE_CGI || eruby_mode == MODE_NPHCGI)
+ 	rb_set_safe_level(1);
+     eruby_init();
+@@ -540,7 +565,7 @@
  
  static void error(int state, VALUE code)
  {

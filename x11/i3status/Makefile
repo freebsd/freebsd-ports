@@ -2,6 +2,7 @@
 
 PORTNAME=	i3status
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/i3status/
 
@@ -15,8 +16,7 @@ LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/i3status.c

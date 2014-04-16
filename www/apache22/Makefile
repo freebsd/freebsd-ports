@@ -2,7 +2,7 @@
 
 PORTNAME=	apache22
 PORTVERSION=	2.2.27
-#PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -123,11 +123,6 @@ IGNORE=		suEXEC UserDir patch requires mod_suexec.\
 .include <bsd.port.pre.mk>
 .include "${APACHEDIR}/Makefile.modules"
 
-pre-configure::
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"  You can check your modules configuration by using make show-modules"
-	@${ECHO_MSG}	""
-
 show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
@@ -148,6 +143,22 @@ post-patch:
 # we use devel/apr and devel/pcre
 	@${RM} -rf ${WRKSRC}/srclib
 	@${REINPLACE_CMD} -e 's/srclib//' ${WRKSRC}/Makefile.in
+
+pre-configure::
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"  You can check your modules configuration by using make show-modules"
+	@${ECHO_MSG}	""
+
+# Fix build on FreeBSD-10+ with OpenSSL from ports
+.if ${PORT_OPTIONS:MSSL}
+. if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+.  if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
+	@${ECHO_MSG}	"===>  apply fix for FreeBSD-${OSREL} (${OSVERSION}) for usage with ${OPENSSL_INSTALLED}"
+	@${ECHO_MSG}	""
+	${REINPLACE_CMD} -e "s|(ALL_CFLAGS)|(ALL_CFLAGS) -L${OPENSSLLIB}|" ${WRKSRC}/build/rules.mk.in
+.  endif
+. endif
+.endif
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\

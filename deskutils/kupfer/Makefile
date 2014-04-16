@@ -3,6 +3,7 @@
 
 PORTNAME=	kupfer
 PORTVERSION=	208
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	nemysis@FreeBSD.org
@@ -39,16 +40,14 @@ DOCSRCDIR2=	${WRKSRC}/Documentation
 DOCSDIR2=	${DOCSDIR}/Documentation
 DOC_FILES2=	Contributing.rst GTKTheming.rst PluginAPI.rst VersionHistory.rst
 
-OPTIONS_DEFINE=	DOCS NAUTILUS NLS RHYTHMBOX
+OPTIONS_DEFINE=	DOCS NLS RHYTHMBOX
 
 OPTIONS_SUB=	yes
 
-NAUTILUS_DESC=	Enable Nautilus support
 RHYTHMBOX_DESC=	Enable Rhythmbox plugins support
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
-NAUTILUS_RUN_DEPENDS=	${LOCALBASE}/lib/nautilus-python/nautilus:${PORTSDIR}/x11-fm/py-nautilus
 RHYTHMBOX_RUN_DEPENDS=	rhythmbox:${PORTSDIR}/audio/rhythmbox
 
 .include <bsd.port.options.mk>

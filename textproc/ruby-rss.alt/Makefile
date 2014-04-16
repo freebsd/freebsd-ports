@@ -12,6 +12,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for handling RSS (alternative impl.)
 
+OPTIONS_DEFINE=	DOCS
+
 RUN_DEPENDS=	${LOCALBASE}/${SADIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 
 CONFLICTS=	ruby-rss-*
@@ -24,12 +26,9 @@ SADIR=	lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 DOCS_EN=	README.en Tutorial.en
 DOCS_JA=	README.ja Tutorial.ja
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
-	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
-	${INSTALL_DATA} ${DOCS_JA:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/ja/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
+	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${DOCS_JA:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
 .include <bsd.port.mk>

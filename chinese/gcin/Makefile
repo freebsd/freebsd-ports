@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcin
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.8.2
+PORTREVISION=	0
 CATEGORIES=	chinese textproc gnome
-MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
+MASTER_SITES=	http://hyperrate.com/gcin-source/
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -14,15 +13,13 @@ COMMENT=	Traditional Chinese input utility in X
 
 LICENSE=	LGPL21
 
-USE_XZ=		YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--use_gtk3=N --use_qt3=N
 USE_GNOME=	gtk20
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:xz
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
-MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	ANTHY QT_IM_MODULE
 ANTHY_DESC=	Japanese anthy IM module
 QT_IM_MODULE_DESC=	QT IM module
@@ -57,7 +54,8 @@ post-patch:
 		s,/usr/bin/moc,${LOCALBASE}/bin/moc-qt4,; \
 		1, 300 s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,; \
 		/GCIN_DEBUG/ d' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,;' \
+	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,; \
+		s,%%PREFIX%%,${PREFIX},;' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '94 s/gcin/gcin-setup/' ${WRKSRC}/gcin-common.cpp
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \

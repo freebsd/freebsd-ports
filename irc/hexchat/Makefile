@@ -3,7 +3,7 @@
 
 PORTNAME=	hexchat
 PORTVERSION=	2.9.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://dl.hexchat.org/${PORTNAME}/
 
@@ -29,16 +29,18 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		CANBERRA DBUS DOAT DOCS FISHLIM NLS NOTIFY PERL \
-			PYTHON SOCKS TEXTFE XFT
+OPTIONS_DEFINE=		CA_BUNDLE CANBERRA DBUS DOAT DOCS FISHLIM NLS NOTIFY \
+			PERL PYTHON SOCKS TEXTFE XFT
 
 OPTIONS_RADIO=		SPELL
 OPTIONS_RADIO_SPELL=	GTKSPELL LIBSEXY STATIC
 
-OPTIONS_DEFAULT=	CANBERRA DBUS NOTIFY LIBSEXY PERL PYTHON SOCKS XFT
+OPTIONS_DEFAULT=	CA_BUNDLE CANBERRA DBUS NOTIFY LIBSEXY PERL PYTHON \
+			SOCKS XFT
 
 OPTIONS_SUB=	yes
 
+CA_BUNDLE_DESC=		Include CA bundle for SSL verification
 CANBERRA_DESC=		Audio support via Libcanberra
 DOAT_DESC=		Do At plugin
 GTKSPELL_DESC=		Spell checking support via GTKSpell
@@ -47,6 +49,7 @@ LIBSEXY_DESC=		Spell checking support via Libsexy
 STATIC_DESC=		Spell checking embedded in the binary
 TEXTFE_DESC=		Text frontend
 
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 CANBERRA_LIB_DEPENDS=	libcanberra.so:${PORTSDIR}/audio/libcanberra
 CANBERRA_CONFIGURE_ENABLE=	libcanberra
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
@@ -84,6 +87,12 @@ CONFIGURE_ARGS+=--enable-spell=libsexy
 CONFIGURE_ARGS+=--enable-spell=static
 .endif
 
+.if ${PORT_OPTIONS:MCA_BUNDLE}
+CA_BUNDLE=	"${LOCALBASE}/share/certs/ca-root-nss.crt"
+.else
+CA_BUNDLE=	NULL
+.endif
+
 .if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
 .endif
@@ -104,6 +113,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/autogen.sh
 	@${REINPLACE_CMD} -e '/^appdata_DATA/s|hexchat.appdata.xml||' \
 		${WRKSRC}/share/misc/Makefile.am ${WRKSRC}/share/misc/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%CA_BUNDLE%%|${CA_BUNDLE}|' \
+		${WRKSRC}/src/common/server.c
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)

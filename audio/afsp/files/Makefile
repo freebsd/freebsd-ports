@@ -113,16 +113,16 @@ all:
 	done
 
 install: ${LIBRARIES} ${BINARIES}
-	${BSD_INSTALL_DATA} ${LIBRARIES} ${PREFIX}/lib/
-	${BSD_INSTALL_PROGRAM} ${BINARIES} ${PREFIX}/bin/
-	${BSD_INSTALL_DATA} ${MAINHEADERS} ${PREFIX}/include/
-	mkdir -p ${PREFIX}/include/libtsp/
-	${BSD_INSTALL_DATA} ${SUBHEADERS} ${PREFIX}/include/libtsp/
-	${BSD_INSTALL_MAN} ${MAN1FILES} ${PREFIX}/man/man1/
-	${BSD_INSTALL_MAN} ${MAN3FILES} ${PREFIX}/man/man3/
-	mkdir -p ${PREFIX}/share/doc/afsp/audio/
-	${BSD_INSTALL_DATA} ${HTMLFILES1} ${PREFIX}/share/doc/afsp/audio/
-	mkdir -p ${PREFIX}/share/doc/afsp/libtsp/AF/
-	${BSD_INSTALL_DATA} ${HTMLFILES3} ${PREFIX}/share/doc/afsp/libtsp/AF/
-	mkdir -p ${PREFIX}/share/afsp/filters/
-	${BSD_INSTALL_DATA} ${FILTERFILES} ${PREFIX}/share/afsp/filters/
+	${BSD_INSTALL_DATA} ${LIBRARIES} ${DESTDIR}${PREFIX}/lib/
+	${BSD_INSTALL_PROGRAM} ${BINARIES} ${DESTDIR}${PREFIX}/bin/
+	${BSD_INSTALL_DATA} ${MAINHEADERS} ${DESTDIR}${PREFIX}/include/
+	mkdir -p ${DESTDIR}${PREFIX}/include/libtsp/
+	${BSD_INSTALL_DATA} ${SUBHEADERS} ${DESTDIR}${PREFIX}/include/libtsp/
+	${BSD_INSTALL_MAN} ${MAN1FILES} ${DESTDIR}${PREFIX}/man/man1/
+	${BSD_INSTALL_MAN} ${MAN3FILES} ${DESTDIR}${PREFIX}/man/man3/
+	mkdir -p ${DESTDIR}${PREFIX}/share/doc/afsp/audio/
+	${BSD_INSTALL_DATA} ${HTMLFILES1} ${DESTDIR}${PREFIX}/share/doc/afsp/audio/
+	mkdir -p ${DESTDIR}${PREFIX}/share/doc/afsp/libtsp/AF/
+	${BSD_INSTALL_DATA} ${HTMLFILES3} ${DESTDIR}${PREFIX}/share/doc/afsp/libtsp/AF/
+	mkdir -p ${DESTDIR}${PREFIX}/share/afsp/filters/
+	${BSD_INSTALL_DATA} ${FILTERFILES} ${DESTDIR}${PREFIX}/share/afsp/filters/

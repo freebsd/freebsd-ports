@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmc2
-PORTVERSION=	0.42
-PORTREVISION=	1
+PORTVERSION=	0.43
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -17,8 +16,7 @@ OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_XORG=	xmu
 USE_GL=		glu
 USE_QT4=	gui opengl phonon qtestlib webkit xml \

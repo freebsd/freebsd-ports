@@ -3,13 +3,12 @@
 
 PORTNAME=	armv5
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
+PORTREVISION=	${ARMV5_PR}
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSION}
 PKGNAMEPREFIX=	gnatdroid-
-DISTNAME=	arm-gnat-${PORTVERSION}
-DISTFILES=	gcc-${GCC_VERSION}.tar.bz2
+DISTFILES=	${IDENTIFICATION}.tar.bz2
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	C/Ada cross-compiler, target: Android ARMv5
@@ -17,125 +16,96 @@ COMMENT=	C/Ada cross-compiler, target: Android ARMv5
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
+BUILD_DEPENDS=	gnatdroid-sysroot>=19:${PORTSDIR}/lang/gnatdroid-sysroot \
 		gnatdroid-binutils>=2.21:${PORTSDIR}/lang/gnatdroid-binutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+IGNORE=		due to sigtramp-armdroid.c, ARMv7 is the minimum required CPU
+
 NO_LICENSES_INSTALL= yes
 
-.include "${.CURDIR}/../gcc47-aux/Makefile.common"
+.include "${.CURDIR}/../gcc-aux/Makefile.common"
 
-# DELETE NEXT LINE AFTER NEXT UPDATE TO GCC-AUX 4.7 TO AVOID PORTEPOCH
-# Without it, this port version regresses by a day
-SNAPSHOT:=	20130413 	# last portversion + 1
-
-USES+=		ada:47 gmake
-LANGS=		c ada
-APPLY_DIFFS=	core ada ada-testsuite gcc-testsuite
+USES+=		ada gmake
+LANGS=		c c++ ada
+APPLY_DIFFS=	core ada cxx ada-testsuite
 NO_MTREE=	YES
-DISTINFO_FILE=	${.CURDIR}/../gcc47-aux/distinfo
+DISTINFO_FILE=	${.CURDIR}/../gcc-aux/distinfo
 
-# Disable C++ until arm.cc/no-rtti issue resolved for libsupc++
-
-OPTIONS_DEFINE=		FORT OBJC #CXX
-OPTIONS_DEFAULT=
+OPTIONS_DEFINE=		FORT OBJC
 OPTIONS_SUB=		yes
-CXX_DESC=		Also build c++ language
 FORT_DESC=		Also build Fortran language
 OBJC_DESC=		Also build Objective-C language
 
-DROID_TARGET=		arm-android-eabi
+DROID_TARGET=		arm-aux-linux-androideabi
 DROID_ARCH=		armv5te
 ARMVERSION=		ARMv5
 FPU=			vfp
-WRKSRC=			${WRKDIR}/gcc-${GCC_VERSION}
+ALL_TARGET=		all
+GARCH=			${ARCH:S/amd64/x86_64/}
+BITS=			${GARCH:S/x86_64/64/:S/i386/32/}
+OS_LABEL4VERS=		[${OPSYS}${BITS} x Android ${ARMVERSION}]
+WRKSRC=			${WRKDIR}/${IDENTIFICATION}
 BUILD_WRKSRC=		${WRKDIR}/build
-PATCHDIR=		${.CURDIR}/../gcc47-aux/files
+PATCHDIR=		${.CURDIR}/../gcc-aux/files
 CFG_SCRIPT=		${WRKSRC}/configure
 REVFILE=		${WRKSRC}/gcc/REVISION
-SRPREFIX=		${LOCALBASE}/android9
+SRPREFIX=		${LOCALBASE}/android
 PREFIX=			${SRPREFIX}/${ARMVERSION}
-INSTALLDIRS=		lib libexec share
-INSTALLDIRS+=		${DROID_TARGET}/lib
 PLIST_SUB+=		TARGET="${DROID_TARGET}"
 PLIST_SUB+=		GCCVERS="${GCC_VERSION}"
 SUB_FILES=		pkg-message
 SUB_LIST=		TARGET="${DROID_TARGET}"
+EXTRA_PATCHES=		${FILESDIR}/acats.diff
 CROSS=			gnat gnatbind gnatchop gnatclean gnatfind gnatkr \
 			gnatlink gnatls gnatmake gnatprep gnatxref
 
-ALL_TARGET=		all
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:S/amd64/x86_64/} == x86_64
-OS_LABEL4VERS=	"[${OPSYS}64 x Android ${ARMVERSION}]"
-.else
-OS_LABEL4VERS=	"[${OPSYS}32 x Android ${ARMVERSION}]"
-.endif
-
-###########
-##  C++  ##
-###########
-
-.if ${PORT_OPTIONS:MCXX}
-LANGS+=		c++
-APPLY_DIFFS+=	cxx cxx-testsuite
-INSTALLDIRS+=	include/c++/${GCC_VERSION}
-.endif
-
-###############
-##  Fortran  ##
-###############
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFORT}
 LANGS+=		fortran
 APPLY_DIFFS+=	fortran
 .endif
 
-###################
-##  Objective-C  ##
-###################
-
 .if ${PORT_OPTIONS:MOBJC}
 LANGS+=		objc
 .endif
 
-CONFIGURE_ARGS=		--enable-languages=${LANGS:Q}
-CONFIGURE_ARGS+=	--target=${DROID_TARGET}
-CONFIGURE_ARGS+=	--program-prefix=${DROID_TARGET}-
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
-CONFIGURE_ARGS+=	--with-arch=${DROID_ARCH}
-CONFIGURE_ARGS+=	--with-system-zlib
-CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
-CONFIGURE_ARGS+=	--with-mpfr=${LOCALBASE}
-CONFIGURE_ARGS+=	--with-mpc=${LOCALBASE}
-CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
-CONFIGURE_ARGS+=	--with-sysroot=${SRPREFIX}
-CONFIGURE_ARGS+=	--with-float=soft
-CONFIGURE_ARGS+=	--with-fpu=${FPU}
-CONFIGURE_ARGS+=	--enable-target-optspace
-CONFIGURE_ARGS+=	--enable-threads=posix
-CONFIGURE_ARGS+=	--disable-bootstrap
-CONFIGURE_ARGS+=	--disable-shared
-CONFIGURE_ARGS+=	--disable-libssp
-CONFIGURE_ARGS+=	--disable-libgomp
-CONFIGURE_ARGS+=	--disable-libmudflap
-CONFIGURE_ARGS+=	--disable-libquadmath
-CONFIGURE_ARGS+=	--disable-sjlj-exceptions
-CONFIGURE_ARGS+=	--disable-tls
-CONFIGURE_ARGS+=	--disable-nls
+INSTALL_ENV=	${MAKE_ENV:C/^PATH=/&${SRPREFIX}\/${ARMVERSION}\/bin:/}
+
+ADA_CONFIG_ARGS=	--enable-languages=${LANGS:Q}
+ADA_CONFIG_ARGS+=	--target=${DROID_TARGET}
+ADA_CONFIG_ARGS+=	--program-prefix=${DROID_TARGET}-
+ADA_CONFIG_ARGS+=	--prefix=${PREFIX}
+ADA_CONFIG_ARGS+=	--with-arch=${DROID_ARCH}
+ADA_CONFIG_ARGS+=	--with-system-zlib
+ADA_CONFIG_ARGS+=	--with-gmp=${LOCALBASE}
+ADA_CONFIG_ARGS+=	--with-mpfr=${LOCALBASE}
+ADA_CONFIG_ARGS+=	--with-mpc=${LOCALBASE}
+ADA_CONFIG_ARGS+=	${ICONV_CONFIGURE_ARG}
+ADA_CONFIG_ARGS+=	--with-sysroot=${SRPREFIX}
+ADA_CONFIG_ARGS+=	--with-float=soft
+ADA_CONFIG_ARGS+=	--with-fpu=${FPU}
+ADA_CONFIG_ARGS+=	--enable-target-optspace
+ADA_CONFIG_ARGS+=	--enable-threads=posix
+ADA_CONFIG_ARGS+=	--enable-cxx-flags=-frtti
+ADA_CONFIG_ARGS+=	--disable-bootstrap
+ADA_CONFIG_ARGS+=	--disable-shared
+ADA_CONFIG_ARGS+=	--disable-libssp
+ADA_CONFIG_ARGS+=	--disable-libgomp
+ADA_CONFIG_ARGS+=	--disable-libmudflap
+ADA_CONFIG_ARGS+=	--disable-libquadmath
+ADA_CONFIG_ARGS+=	--disable-libsanitizer
+ADA_CONFIG_ARGS+=	--disable-libitm
+ADA_CONFIG_ARGS+=	--disable-sjlj-exceptions
+ADA_CONFIG_ARGS+=	--disable-tls
+ADA_CONFIG_ARGS+=	--disable-nls
 
 post-extract:
 	# Personalize GNAT for each different machine
 	@${ECHO} "-=> GNAT AUX ${OS_LABEL4VERS}" > ${REVFILE}
-
-	# Create new directories in preparation of applying diff files
-.if ${PORT_OPTIONS:MCXX}
 	${MKDIR} ${WRKSRC}/libstdc++-v3/config/locale/dragonfly
 	${MKDIR} ${WRKSRC}/libstdc++-v3/config/os/bsd/dragonfly
-.endif
-
 	# Apply required composite diff files
 .for suffix in ${APPLY_DIFFS}
 	@${ECHO} "Applying composite patch diff-${suffix}"
@@ -145,44 +115,36 @@ post-extract:
 do-configure:
 	${MKDIR} ${BUILD_WRKSRC}
 	cd ${BUILD_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-	${CFG_SCRIPT} ${CONFIGURE_ARGS}
+		${CFG_SCRIPT} ${ADA_CONFIG_ARGS}
 
-pre-install:
-#	The "native tools" won't install unless a directory exists
-	${MKDIR} ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin
+do-install:
 #	Buggy makefile; seems to have forgotten this is a cross compiler
 #	Manually rename products so it doesn't rebuild them with new name
 .for X in ${CROSS}
+.  if !exists(${BUILD_WRKSRC}/gcc/${X})
 	${CP} -a ${BUILD_WRKSRC}/gcc/${X}-cross ${BUILD_WRKSRC}/gcc/${X}
-.endfor	
-
-do-install:
-	cd ${BUILD_WRKSRC} && ${GMAKE} install-strip DESTDIR=${STAGEDIR}
-	${MV} ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gcc \
-	   ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gnatgcc
-	${MV} ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gcc \
-	   ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gnatgcc
-.if ${PORT_OPTIONS:MFORT}
-	${MV} ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gfortran \
-	   ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gnatgfortran
-	${MV} ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gfortran \
-	   ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gnatgfortran
-.endif
+.  endif
+.endfor
+	cd ${BUILD_WRKSRC} && ${SETENV} ${INSTALL_ENV} \
+		${MAKE_CMD} install-strip DESTDIR=${STAGEDIR}
+	${MV} ${STAGEDIR}${PREFIX}/bin/ada \
+		${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-ada
 
 post-install:
-.for d in ${INSTALLDIRS}
-	cd ${STAGEDIR}${PREFIX}; ${FIND} $d \( -type f -or -type l \) | \
-		${SORT} >> ${TMPPLIST}
-.endfor
 .for loop in A B
 	cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d -empty | \
 		${SORT} -dr | ${XARGS} ${RMDIR}
 .endfor
+	cd ${STAGEDIR}${PREFIX}; \
+	   ${FIND} * \( -type f -or -type l \) | ${SORT} | \
+	   ${SED} -e '/^bin\//d' -e '/^${DROID_TARGET}\/bin\//d' \
+	   >> ${TMPPLIST}
 	cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${SORT} -dr | \
-	   ${SED} -e '/^bin$$/d' \
-	   -e '/^${DROID_TARGET}\/bin$$/d' \
-	   -e '/^${DROID_TARGET}\/lib$$/d' \
-	   -e '/^${DROID_TARGET}$$/d' \
-	   -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	   ${SED} -e 's/^/@dirrmtry /g' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+acats: build
+	cd ${BUILD_WRKSRC}/gcc && ${SETENV} \
+	   PATH=${LOCALBASE}/gcc-aux/bin:${PATH}:${PREFIX}/bin \
+	   gmake -sk check-acats
+
+.include <bsd.port.mk>

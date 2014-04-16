@@ -3,7 +3,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libgif.so:${PORTSDIR}/graphics/giflib \
-		libmp3lame.so:${PORTSDIR}/audio/lame
+		libmp3lame.so:${PORTSDIR}/audio/lame \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 
@@ -41,7 +42,7 @@ CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 \
 #CONFIGURE_ARGS+=	--enable-parsid
 #CONFIGURE_ARGS+=	--enable-memmap
 
-MLINKS=		vice.1 x64.1 \
+LMLINKS=	vice.1 x64.1 \
 		vice.1 x128.1 \
 		vice.1 xvic.1 \
 		vice.1 xpet.1 \
@@ -89,7 +90,7 @@ PULSE_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 .include <bsd.port.options.mk>
 
 .if !defined(BUILDING_INDEX)
-__pmlinks1!= ${ECHO_CMD} '${MLINKS:S/    / /}' | ${AWK} \
+__pmlinks1!= ${ECHO_CMD} '${LMLINKS:S/    / /}' | ${AWK} \
 	'{ if (NF % 2 != 0) { print "broken"; exit; } \
 	for (i=1; i<=NF; i++) { \
 		if ( i % 2 == 0) { print " " $$i " ;"; } \
@@ -119,11 +120,6 @@ PLIST_SUB+=		NOFCCACHE="@comment "
 .else
 PLIST_SUB+=		FCCACHE="@comment "
 PLIST_SUB+=		NOFCCACHE=""
-.endif
-
-# will be picked up by configure
-.if exists(${LOCALBASE}/include/ffmpeg/avformat.h)
-LIB_DEPENDS+=		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MNLS}

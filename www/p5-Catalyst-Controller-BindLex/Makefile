@@ -8,8 +8,11 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NUFFIN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Stash your lexical goodness
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Array-RefElem>=0:${PORTSDIR}/misc/p5-Array-RefElem \

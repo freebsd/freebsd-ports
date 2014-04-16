@@ -1,5 +1,18 @@
 bin/djview
 bin/djview4
 lib/djview4/plugins/nsdejavu.so
+man/man1/djview.1.gz
+man/man1/djview4.1.gz
+man/man1/nsdejavu.1.gz
+share/djvu/djview4/desktop/djvulibre-djview4.desktop
+share/djvu/djview4/desktop/hi-djview4.svgz
+share/djvu/djview4/desktop/hi32-djview4.png
+share/djvu/djview4/desktop/hi64-djview4.png
+share/djvu/djview4/desktop/prebuilt-hi32-djview4.png
+share/djvu/djview4/desktop/prebuilt-hi64-djview4.png
+share/djvu/djview4/desktop/register-djview-menu
+@dirrm share/djvu/djview4/desktop
+@dirrm share/djvu/djview4
+@dirrm share/djvu
 @dirrm lib/djview4/plugins
 @dirrm lib/djview4

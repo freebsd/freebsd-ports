@@ -1,0 +1,18 @@
+# $FreeBSD$
+
+PORTNAME=	configparser
+PORTVERSION=	3.3.0r2
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	ports@robakdesign.com
+COMMENT=	INI style configuration file parser
+
+LICENSE=	MIT
+
+USE_PYTHON=	2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
+.include <bsd.port.mk>

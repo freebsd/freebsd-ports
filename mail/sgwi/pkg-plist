@@ -7,6 +7,7 @@ www/sgwi/.htpasswd.sample
 www/sgwi/awl.php
 www/sgwi/connect.php
 www/sgwi/includes/awl.inc.php
+@exec [ -f %D/www/sgwi/config.inc.php ] && mv -f %D/www/sgwi/config.inc.php %D/www/sgwi/includes/config.inc.php
 @unexec if cmp -s %D/www/sgwi/includes/config.inc.php %D/www/sgwi/includes/config.inc.php.sample; then rm -f %D/www/sgwi/includes/config.inc.php; fi
 www/sgwi/includes/config.inc.php.sample
 @exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php

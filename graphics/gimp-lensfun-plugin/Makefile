@@ -3,6 +3,7 @@
 
 PORTNAME=	lensfun
 DISTVERSION=	0.2.4-dev
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
@@ -15,17 +16,15 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/exiv2.pc:${PORTSDIR}/graphics/exiv2 \
 		${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gimp-app \
 		${LOCALBASE}/libdata/pkgconfig/lensfun.pc:${PORTSDIR}/graphics/lensfun
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/exiv2.pc:${PORTSDIR}/graphics/exiv2 \
-		${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gimp-app \
-		${LOCALBASE}/libdata/pkgconfig/lensfun.pc:${PORTSDIR}/graphics/lensfun
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USES=		gmake pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	seebk
 GH_PROJECT=	GIMP-Lensfun
 GH_COMMIT=	d0a0bd2
 GH_TAGNAME=	${GH_COMMIT}
-
-USES=		gmake pkgconfig
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins/
 PLUGINS=	gimp-lensfun

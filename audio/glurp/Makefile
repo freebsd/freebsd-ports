@@ -14,7 +14,6 @@ LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	gtk20 glib20 libglade2
 MAKE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic" \

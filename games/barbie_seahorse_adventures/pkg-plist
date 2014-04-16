@@ -1,7 +1,6 @@
 bin/barbie_seahorse_adventures
 %%DATADIR%%/create-upload.py
 %%DATADIR%%/data/6x12.png
-%%DATADIR%%/data/REMOVE_ME.txt
 %%DATADIR%%/data/bkgr.png
 %%DATADIR%%/data/bkgr/1.png
 %%DATADIR%%/data/bkgr/2.png
@@ -144,7 +143,6 @@ bin/barbie_seahorse_adventures
 %%DATADIR%%/data/music/lvlwin.ogg
 %%DATADIR%%/data/music/title.ogg
 %%DATADIR%%/data/pal.png
-%%DATADIR%%/data/sample.txt
 %%DATADIR%%/data/sfx/boss_explode.wav
 %%DATADIR%%/data/sfx/bubble.wav
 %%DATADIR%%/data/sfx/capsule.wav
@@ -415,24 +413,10 @@ bin/barbie_seahorse_adventures
 %%DATADIR%%/run_game.py
 %%DATADIR%%/setup.py
 %%DATADIR%%/tileedit.py
+share/icons/hicolor/128x128/apps/barbie_seahorse_adventures.png
 share/icons/hicolor/32x32/apps/barbie_seahorse_adventures.png
-share/icons/hicolor/48x48/apps/barbie_seahorse_adventures.png
 share/icons/hicolor/64x64/apps/barbie_seahorse_adventures.png
-share/icons/hicolor/72x72/apps/barbie_seahorse_adventures.png
-share/icons/hicolor/96x96/apps/barbie_seahorse_adventures.png
 share/pixmaps/barbie_seahorse_adventures.png
-@dirrmtry share/icons/hicolor/96x96/apps
-@dirrmtry share/icons/hicolor/96x96
-@dirrmtry share/icons/hicolor/72x72/apps
-@dirrmtry share/icons/hicolor/72x72
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm %%DATADIR%%/lib/pgu/gui
 @dirrm %%DATADIR%%/lib/pgu
 @dirrm %%DATADIR%%/lib

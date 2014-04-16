@@ -4330,7 +4330,7 @@
  	$(PORTFILES_export)
  
 +ifeq ($(PLATFORM), bsd)
-+LDFLAGS  += -L$(PACKAGE_PATH)/lib -lasound
++OTHER_LDLIBS  += -L$(PACKAGE_PATH)/lib -lasound
 +
 +CPPFLAGS += \
 +	-DUSE_DAUDIO=TRUE \
@@ -4338,7 +4338,7 @@
 +	-I$(PACKAGE_PATH)/include \
 +	-I$(SHARE_SRC)/native/com/sun/media/sound
 +else
- LDFLAGS += -lasound
+ OTHER_LDLIBS += -lasound
  
  CPPFLAGS += \
 @@ -73,6 +82,7 @@
@@ -5601,17 +5601,6 @@
              /* There can't be more than 64K labels because of the limit
               * on per-method byte code length.
               */
---- jdk/src/share/native/common/jdk_util.c
-+++ jdk/src/share/native/common/jdk_util.c
-@@ -76,7 +76,7 @@
-     }
- 
- 
--    memset(info, 0, sizeof(info_size));
-+    memset(info, 0, info_size);
-     info->jdk_version = ((jdk_major_version & 0xFF) << 24) |
-                         ((jdk_minor_version & 0xFF) << 16) |
-                         ((jdk_micro_version & 0xFF) << 8)  |
 --- jdk/src/share/native/java/io/io_util.h
 +++ jdk/src/share/native/java/io/io_util.h
 @@ -29,7 +29,15 @@
@@ -8260,6 +8249,17 @@
  #include <math.h>
  #include <jlong.h>
  
+--- jdk/src/share/native/sun/management/GcInfoBuilder.c
++++ jdk/src/share/native/sun/management/GcInfoBuilder.c
+@@ -190,7 +190,7 @@
+ 
+     if (ext_att_count <= 0) {
+         JNU_ThrowIllegalArgumentException(env, "Invalid ext_att_count");
+-        return;
++        return 0;
+     }
+ 
+     gc_stat.usage_before_gc = usageBeforeGC;
 --- jdk/src/share/transport/socket/socketTransport.c
 +++ jdk/src/share/transport/socket/socketTransport.c
 @@ -65,6 +65,9 @@
@@ -13628,15 +13628,7 @@
  #include <string.h>
  #endif /* __linux__ */
  #include <stdio.h>
-@@ -40,6 +40,7 @@
- 
- #include <jni.h>
- #include <jni_util.h>
-+#include <jvm_md.h>
- #include <sun_font_FontManager.h>
- #ifndef HEADLESS
- #include <X11/Xlib.h>
-@@ -58,10 +59,24 @@
+@@ -59,10 +59,24 @@
  extern Display *awt_display;
  #endif /* !HEADLESS */
  
@@ -13662,7 +13654,7 @@
  /*
   * This can be set in the makefile to "/usr/X11" if so desired.
   */
-@@ -111,24 +126,40 @@
+@@ -112,24 +126,40 @@
      NULL, /* terminates the list */
  };
  
@@ -13715,7 +13707,7 @@
      NULL, /* terminates the list */
  };
  #endif
-@@ -351,7 +382,7 @@
+@@ -357,7 +387,7 @@
  
  #endif /* !HEADLESS */
  
@@ -13724,7 +13716,7 @@
  /* from awt_LoadLibrary.c */
  JNIEXPORT jboolean JNICALL AWTIsHeadless();
  #endif
-@@ -476,8 +507,10 @@
+@@ -482,8 +512,10 @@
       */
      fcdirs = getFontConfigLocations();
  
@@ -13736,7 +13728,7 @@
  #else /* IF SOLARIS */
      knowndirs = fullSolarisFontPath;
  #endif
-@@ -488,7 +521,8 @@
+@@ -494,7 +526,8 @@
       * be initialised.
       */
  #ifndef HEADLESS
@@ -13746,7 +13738,7 @@
      if (!AWTIsHeadless()) { /* .. so need to call a function to check */
  #endif
      AWT_LOCK();
-@@ -496,7 +530,7 @@
+@@ -502,7 +535,7 @@
          x11dirs = getX11FontPath();
      }
      AWT_UNLOCK();
@@ -13755,7 +13747,7 @@
      }
  #endif
  #endif /* !HEADLESS */
-@@ -608,7 +642,7 @@
+@@ -614,7 +647,7 @@
  }
  
  #include <dlfcn.h>
@@ -13764,7 +13756,7 @@
  #include <link.h>
  #endif
  
-@@ -654,9 +688,9 @@
+@@ -660,9 +693,9 @@
       * certain symbols - and functionality - to be available.
       * Also add explicit search for .so.1 in case .so symlink doesn't exist.
       */
@@ -13778,14 +13770,12 @@
          }
 --- jdk/src/solaris/native/sun/awt/gtk2_interface.c
 +++ jdk/src/solaris/native/sun/awt/gtk2_interface.c
-@@ -30,8 +30,9 @@
- #include <string.h>
- #include "gtk2_interface.h"
+@@ -32,7 +32,7 @@
  #include "java_awt_Transparency.h"
-+#include "jvm_md.h"
+ #include "sizecalc.h"
  
 -#define GTK2_LIB "libgtk-x11-2.0.so.0"
-+#define GTK2_LIB VERSIONED_JNI_LIB_NAME("gtk-x11-2.0", "0")
++#define GTK2_LIB VERSIONED_JNI_LIB_NAME("libgtk-x11-2.0.so", "0")
  
  #define G_TYPE_INVALID                  G_TYPE_MAKE_FUNDAMENTAL (0)
  #define G_TYPE_NONE                     G_TYPE_MAKE_FUNDAMENTAL (1)

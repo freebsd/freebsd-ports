@@ -1,3 +1,4 @@
-This storage module will store session data in a database using DBIx::Class.
+This store plugins makes delegating session storage to a first class object
+model easy.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Session-Store-DBIC/
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Session-Store-Delegate/

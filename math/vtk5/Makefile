@@ -3,7 +3,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/
 PKGNAMESUFFIX=	5
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-BROKEN=		Violates stage and fails to package
 WRKSRC=		${WRKDIR}/VTK${PORTVERSION}
 
 CONFLICTS=	vtk-4*
@@ -33,7 +32,7 @@ CXXFLAGS+=	-DUSE_INTERP_ERRORLINE
 
 OPTIONS_DEFINE=	SHARED THEORA VTKMPEG2 GL2PS OSMESA QT4 JAVA \
 		PYTHON TCLTK DBGLEAKS LEGACY
-OPTIONS_DEFAULT=SHARED GL2PS QT4 PYTHON TCLTK LEGACY
+OPTIONS_DEFAULT=SHARED GL2PS QT4 TCLTK LEGACY
 
 SHARED_DESC=	Build shared libraries
 VTKMPEG2_DESC=	Patented MPEG2 encoder module
@@ -140,6 +139,7 @@ PLIST_SUB+=	QT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
+IGNORE=		python wrapping does not stage properly
 .if ${PORT_OPTIONS:MSHARED} == ""
 IGNORE=		python wrapping requires shared libraries.\
 		Run make config again and enable the SHARED option
@@ -148,7 +148,7 @@ USE_PYTHON=	yes
 PYDISTUTILS_PKGNAME=	VTK
 INSTALLS_EGGINFO=	yes
 CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=ON \
-   		-DVTK_PYTHON_SETUP_ARGS:STRING='--prefix="${PREFIX}"'
+    		-DVTK_PYTHON_SETUP_ARGS:STRING='--prefix="${PREFIX}"'
 PLIST_SUB+=	PYTHON=""
 .else
 CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=OFF
@@ -274,6 +274,7 @@ post-install:
 	done
 .endif
 .endif
+
 .if ${PORT_OPTIONS:MVTKMPEG2}
 	@${ECHO_CMD}
 	@${ECHO_CMD} "This port uses the patented MPEG2 encoder."

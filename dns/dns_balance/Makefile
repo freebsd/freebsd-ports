@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 DISTNAME=	DNS-Balance-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dynamic load-balancing DNS server
+COMMENT=	Dynamic load-balancing DNS server
 
 USE_RUBY=	yes
 USE_RC_SUBR=	dns_balance
@@ -21,7 +21,6 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/dns_balance.rb \
 
 ETCS=		addrdb.rb \
 		namespace.rb
-ETCDIR=		${PREFIX}/etc/${PORTNAME}
 LIBS=		as_search.rb \
 		cache.rb \
 		datatype.rb \
@@ -32,7 +31,8 @@ LIBS=		as_search.rb \
 PLIST_SUB+=	ETCDIR=${ETCDIR}
 SUB_LIST+=	RUBY=${RUBY}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	${SED} -E -e "s,%%PREFIX%%,${PREFIX},g" \
 		-e "s,%%PORTNAME%%,${PORTNAME},g" \
@@ -40,38 +40,17 @@ post-patch:
 		${WRKSRC}/dns_balance.rb > ${WRKSRC}/dns_balance
 
 do-install:
-#
-# Install main executable
-#
-	${INSTALL_SCRIPT} ${WRKSRC}/dns_balance ${PREFIX}/sbin/
-#
-# Install sample configuration files
-#
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/dns_balance ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for FILE in ${ETCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${ETCDIR}/${FILE}.dist
-. if !exists(${ETCDIR}/${FILE})
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${ETCDIR}/${FILE}
-. endif
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${ETCDIR}/${FILE}.dist
 .endfor
-
-#
-# Install library files
-#
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-.for FILE in ${LIBS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/lib/${PORTNAME}/
-.endfor
-
-#
-# Install port's documentation
-#
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}
-
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README* ${WRKSRC}/Q_and_A* ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${LIBS} \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README* ${WRKSRC}/Q_and_A* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -10,11 +10,6 @@
 @exec if ! pw usershow meta1 2>/dev/null; then pw useradd meta1 -g meta1 -u 264 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 other"; fi
 @exec pw groupmod meta1c -m meta1s
 @exec pw groupmod meta1m -m meta1s,meta1q
-@unexec if pw usershow meta1s; then pw userdel meta1s; fi
-@unexec if pw usershow meta1q; then pw userdel meta1q; fi
-@unexec if pw usershow meta1c; then pw userdel meta1c; fi
-@unexec if pw usershow meta1m; then pw userdel meta1m; fi
-@unexec if pw usershow meta1; then pw userdel meta1; fi
 %%WITH_BDBINT%%bin/db_archive
 %%WITH_BDBINT%%bin/db_checkpoint
 %%WITH_BDBINT%%bin/db_deadlock
@@ -63,6 +58,21 @@ libexec/qmgr
 libexec/smar
 libexec/smtpc
 libexec/smtps
+man/man5/meta1.conf.5.gz
+man/man8/createmap.8.gz
+man/man8/fsperf1.8.gz
+man/man8/mailq.8.gz
+man/man8/mcp.8.gz
+man/man8/milter-spamd.8.gz
+man/man8/milter-regex.8.gz
+man/man8/qmgr.8.gz
+man/man8/qmgrctl.8.gz
+man/man8/runas.8.gz
+man/man8/meta1.8.gz
+%%MSP%%man/man8/sendmail.8.gz
+man/man8/smar.8.gz
+man/man8/smtpc.8.gz
+man/man8/smtps.8.gz
 sbin/greyprint
 sbin/greyrm
 sbin/mcp

@@ -16,11 +16,6 @@
     SUBDIR += amavis-stats
     SUBDIR += amavisd-milter
     SUBDIR += amavisd-new
-    SUBDIR += aolserver-nsencrypt
-    SUBDIR += aolserver-nsmcrypt
-    SUBDIR += aolserver-nsmhash
-    SUBDIR += aolserver-nsopenssl
-    SUBDIR += aolserver-nssha1
     SUBDIR += apache-xml-security-c
     SUBDIR += apg
     SUBDIR += arirang
@@ -176,7 +171,6 @@
     SUBDIR += gss
     SUBDIR += gtk-knocker
     SUBDIR += gtkpasman
-    SUBDIR += gtkportscan
     SUBDIR += gwee
     SUBDIR += hackbot
     SUBDIR += hamachi
@@ -255,7 +249,6 @@
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
     SUBDIR += l5
-    SUBDIR += labrea
     SUBDIR += lasso
     SUBDIR += libassuan
     SUBDIR += libbf
@@ -763,6 +756,7 @@
     SUBDIR += py-ecdsa
     SUBDIR += py-ed25519ll
     SUBDIR += py-fail2ban
+    SUBDIR += py-fchksum
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
     SUBDIR += py-htpasswd
@@ -998,7 +992,6 @@
     SUBDIR += truecrypt
     SUBDIR += tsshbatch
     SUBDIR += tthsum
-    SUBDIR += tuntun
     SUBDIR += umit
     SUBDIR += unhide
     SUBDIR += unicornscan

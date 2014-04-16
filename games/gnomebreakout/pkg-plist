@@ -1,6 +1,6 @@
 bin/gnome-breakout
-share/gnome/apps/Games/gnome-breakout.desktop
-share/games/gnome-breakout.scores
+share/applications/gnome-breakout.desktop
+share/gnome-breakout/gnome-breakout.scores
 share/gnome-breakout/levels/alcaron.gbl
 share/gnome-breakout/levels/mdutour.gbl
 share/gnome-breakout/levels/mmack.gbl
@@ -67,11 +67,10 @@ share/gnome-breakout/pixmaps/powerup.slow.0.png
 share/gnome-breakout/pixmaps/powerup.widebat.0.png
 share/gnome-breakout/pixmaps/title.png
 share/pixmaps/gnome-breakout.png
-share/locale/de/LC_MESSAGES/gnome-breakout.mo
-share/locale/ru/LC_MESSAGES/gnome-breakout.mo
-share/locale/sv/LC_MESSAGES/gnome-breakout.mo
-share/locale/tr/LC_MESSAGES/gnome-breakout.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gnome-breakout.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gnome-breakout.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gnome-breakout.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/gnome-breakout.mo
 @dirrm share/gnome-breakout/pixmaps
 @dirrm share/gnome-breakout/levels
 @dirrm share/gnome-breakout
-@dirrmtry share/games

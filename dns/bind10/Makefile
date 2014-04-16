@@ -43,10 +43,10 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ETCDIR}
 	${INSTALL_DATA} -m 640 ${WRKSRC}/src/bin/cmdctl/cmdctl-certfile.pem \
-		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/cmdctl-certfile.pem.sample
+		${STAGEDIR}${PREFIX}/${ETCDIR}/cmdctl-certfile.pem.sample
 	${INSTALL_DATA} -m 640 ${WRKSRC}/src/bin/cmdctl/cmdctl-keyfile.pem \
-		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/cmdctl-keyfile.pem.sample
+		${STAGEDIR}${PREFIX}/${ETCDIR}/cmdctl-keyfile.pem.sample
 
 .include <bsd.port.mk>

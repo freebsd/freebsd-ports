@@ -66,7 +66,7 @@ PLIST_SUB+=	LIRC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMTP}
-LIB_DEPENDS+=	libmtp.so:${PORTSDIR}/multimedia/libmtp \
+LIB_DEPENDS+=	libmtp.so:${PORTSDIR}/audio/libmtp \
 		libhal.so:${PORTSDIR}/sysutils/hal
 PLIST_SUB+=	MTP=""
 CONFIGURE_ARGS+=--with-mtp

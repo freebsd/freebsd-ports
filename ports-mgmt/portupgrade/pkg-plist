@@ -53,9 +53,7 @@ sbin/portversion
 %%SCRIPT%%@exec mkdir -p %D/libexec/pkgtools 2> /dev/null
 %%SCRIPT%%libexec/pkgtools/script
 %%SCRIPT%%@dirrm libexec/pkgtools
-@unexec if cmp -s %D/etc/pkgtools.conf %D/etc/pkgtools.conf.sample; then rm -f %D/etc/pkgtools.conf; fi
-etc/pkgtools.conf.sample
-@exec [ -f %B/pkgtools.conf ] || cp %B/%f %B/pkgtools.conf
+@sample etc/pkgtools.conf.sample
 etc/pkgtools.status-pkg.sh
 share/zsh/site-functions/_pkgtools
 @unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true

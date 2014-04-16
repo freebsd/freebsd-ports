@@ -3,5 +3,6 @@ bin/mozplugger-helper
 bin/mozplugger-linker
 bin/mozplugger-update
 etc/mozpluggerrc
-%%WEBPLUGINS_DIR%%/mozplugger.so
-@dirrmtry %%WEBPLUGINS_DIR%%
+man/man7/mozplugger.7.gz
+%%WEBPLUGIN_DIR%%/mozplugger.so
+@dirrm %%WEBPLUGIN_DIR%%

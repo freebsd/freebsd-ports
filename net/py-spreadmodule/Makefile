@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Python extension module for the Spread group communications package
 
+DEPRECATED=	Depends on expired net/spread
+EXPIRATION_DATE=2014-05-01
+
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/spread.so

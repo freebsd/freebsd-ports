@@ -9,6 +9,9 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unique standard tape archiver with many enhancements
 
+DEPRECATED=	Depends on deprecated smake
+EXPIRATION_DATE=	2014-05-12
+
 BUILD_DEPENDS=	smake:${PORTSDIR}/devel/smake
 
 NO_STAGE=	yes

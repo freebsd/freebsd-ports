@@ -1,22 +1,47 @@
 @stopdaemon radiusd
+@unexec different=0 ; for i in `find %D/%%EXAMPLESDIR%%/raddb/certs/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/certs/::g'`; do if ! cmp -hsz %D/%%EXAMPLESDIR%%/raddb/certs/${i} %D/etc/raddb/certs/${i}; then different=1; break; fi; done; if [ ${different} -eq 0 ] && diff -rq --exclude=certs %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb >/dev/null 2>&1; then rm -rf %D/etc/raddb; fi
+@unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it any more."; fi
 bin/dhcpclient
-bin/radcrypt
+bin/rad_counter
+bin/radattr
 bin/radclient
 bin/radconf2xml
+bin/radcrypt
 bin/radlast
-bin/radattr
 bin/radsniff
 bin/radsqlrelay
 bin/radtest
 bin/radwho
 bin/radzap
-bin/rad_counter
 bin/rlm_ippool_tool
 bin/smbencrypt
-@unexec different=0 ; for i in `find %D/%%EXAMPLESDIR%%/raddb/certs/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/certs/::g'`; do if ! cmp -hsz %D/%%EXAMPLESDIR%%/raddb/certs/${i} %D/etc/raddb/certs/${i}; then different=1; break; fi; done; if [ ${different} -eq 0 ] && diff -rq --exclude=certs %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb >/dev/null 2>&1; then rm -rf %D/etc/raddb; fi
-@unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it any more."; fi
-@exec if ! [ -d %D/etc/raddb -o -L %D/etc/raddb ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb; echo '===> Bootstrapping default certificates, please wait...'; %D/etc/raddb/certs/bootstrap >/dev/null 2>&1; fi
-@exec chmod -R g-w,o-rwx %D/etc/raddb
+include/freeradius/base64.h
+include/freeradius/conf.h
+include/freeradius/conffile.h
+include/freeradius/detail.h
+include/freeradius/event.h
+include/freeradius/features.h
+include/freeradius/hash.h
+include/freeradius/heap.h
+include/freeradius/libradius.h
+include/freeradius/map.h
+include/freeradius/md4.h
+include/freeradius/md5.h
+include/freeradius/missing.h
+include/freeradius/modcall.h
+include/freeradius/modules.h
+include/freeradius/packet.h
+include/freeradius/rad_assert.h
+include/freeradius/radius.h
+include/freeradius/radiusd.h
+include/freeradius/radpaths.h
+include/freeradius/radutmp.h
+include/freeradius/realms.h
+include/freeradius/sha1.h
+include/freeradius/stats.h
+include/freeradius/sysutmp.h
+include/freeradius/token.h
+include/freeradius/udpfromto.h
 %%LIBDIR%%/libfreeradius-eap.a
 %%LIBDIR%%/libfreeradius-eap.la
 %%LIBDIR%%/libfreeradius-eap.so
@@ -92,9 +117,6 @@ bin/smbencrypt
 %%LIBDIR%%/rlm_eap_sim.a
 %%LIBDIR%%/rlm_eap_sim.la
 %%LIBDIR%%/rlm_eap_sim.so
-%%LIBDIR%%/rlm_sometimes.a
-%%LIBDIR%%/rlm_sometimes.la
-%%LIBDIR%%/rlm_sometimes.so
 %%LIBDIR%%/rlm_eap_tls.a
 %%LIBDIR%%/rlm_eap_tls.la
 %%LIBDIR%%/rlm_eap_tls.so
@@ -161,27 +183,30 @@ bin/smbencrypt
 %%LIBDIR%%/rlm_realm.a
 %%LIBDIR%%/rlm_realm.la
 %%LIBDIR%%/rlm_realm.so
-%%LIBDIR%%/rlm_soh.so
-%%LIBDIR%%/rlm_soh.la
+%%LIBDIR%%/rlm_replicate.a
+%%LIBDIR%%/rlm_replicate.la
+%%LIBDIR%%/rlm_replicate.so
+%%EXPM%%%%LIBDIR%%/rlm_smsotp.a
+%%EXPM%%%%LIBDIR%%/rlm_smsotp.la
+%%EXPM%%%%LIBDIR%%/rlm_smsotp.so
 %%LIBDIR%%/rlm_soh.a
+%%LIBDIR%%/rlm_soh.la
+%%LIBDIR%%/rlm_soh.so
+%%LIBDIR%%/rlm_sometimes.a
+%%LIBDIR%%/rlm_sometimes.la
+%%LIBDIR%%/rlm_sometimes.so
 %%EXPM%%%%RLMREDIS%%%%LIBDIR%%/rlm_redis.a
 %%EXPM%%%%RLMREDIS%%%%LIBDIR%%/rlm_redis.la
 %%EXPM%%%%RLMREDIS%%%%LIBDIR%%/rlm_redis.so
 %%EXPM%%%%RLMREDIS%%%%LIBDIR%%/rlm_rediswho.a
 %%EXPM%%%%RLMREDIS%%%%LIBDIR%%/rlm_rediswho.la
 %%EXPM%%%%RLMREDIS%%%%LIBDIR%%/rlm_rediswho.so
-%%LIBDIR%%/rlm_replicate.so
-%%LIBDIR%%/rlm_replicate.la
-%%LIBDIR%%/rlm_replicate.a
 %%EXPM%%%%RLMRUBY%%%%LIBDIR%%/rlm_ruby.a
 %%EXPM%%%%RLMRUBY%%%%LIBDIR%%/rlm_ruby.la
 %%EXPM%%%%RLMRUBY%%%%LIBDIR%%/rlm_ruby.so
 %%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.a
 %%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.la
 %%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.so
-%%EXPM%%%%LIBDIR%%/rlm_smsotp.a
-%%EXPM%%%%LIBDIR%%/rlm_smsotp.la
-%%EXPM%%%%LIBDIR%%/rlm_smsotp.so
 %%LIBDIR%%/rlm_sql.a
 %%LIBDIR%%/rlm_sql.la
 %%LIBDIR%%/rlm_sql.so
@@ -227,39 +252,48 @@ bin/smbencrypt
 %%LIBDIR%%/rlm_wimax.a
 %%LIBDIR%%/rlm_wimax.la
 %%LIBDIR%%/rlm_wimax.so
-@dirrm %%LIBDIR%%
+man/man1/radclient.1.gz
+man/man1/radeapclient.1.gz
+man/man1/radlast.1.gz
+man/man1/radtest.1.gz
+man/man1/radwho.1.gz
+man/man1/radzap.1.gz
+man/man1/smbencrypt.1.gz
+man/man5/checkrad.5.gz
+man/man5/clients.conf.5.gz
+man/man5/dictionary.5.gz
+man/man5/radiusd.conf.5.gz
+man/man5/radrelay.conf.5.gz
+man/man5/rlm_always.5.gz
+man/man5/rlm_attr_filter.5.gz
+man/man5/rlm_chap.5.gz
+man/man5/rlm_counter.5.gz
+man/man5/rlm_detail.5.gz
+man/man5/rlm_digest.5.gz
+man/man5/rlm_expr.5.gz
+man/man5/rlm_files.5.gz
+man/man5/rlm_idn.5.gz
+man/man5/rlm_mschap.5.gz
+man/man5/rlm_pap.5.gz
+man/man5/rlm_passwd.5.gz
+man/man5/rlm_realm.5.gz
+man/man5/rlm_sql.5.gz
+man/man5/rlm_unix.5.gz
+man/man5/unlang.5.gz
+man/man5/users.5.gz
+man/man8/radconf2xml.8.gz
+man/man8/radcrypt.8.gz
+man/man8/raddebug.8.gz
+man/man8/radiusd.8.gz
+man/man8/radmin.8.gz
+man/man8/radrelay.8.gz
+man/man8/radsniff.8.gz
+man/man8/radsqlrelay.8.gz
+man/man8/rlm_ippool_tool.8.gz
 sbin/checkrad
 sbin/raddebug
 sbin/radiusd
 sbin/radmin
-include/freeradius/base64.h
-include/freeradius/conf.h
-include/freeradius/conffile.h
-include/freeradius/detail.h
-include/freeradius/event.h
-include/freeradius/features.h
-include/freeradius/hash.h
-include/freeradius/heap.h
-include/freeradius/libradius.h
-include/freeradius/map.h
-include/freeradius/md4.h
-include/freeradius/md5.h
-include/freeradius/missing.h
-include/freeradius/modcall.h
-include/freeradius/modules.h
-include/freeradius/packet.h
-include/freeradius/rad_assert.h
-include/freeradius/radius.h
-include/freeradius/radiusd.h
-include/freeradius/radpaths.h
-include/freeradius/radutmp.h
-include/freeradius/realms.h
-include/freeradius/sha1.h
-include/freeradius/stats.h
-include/freeradius/sysutmp.h
-include/freeradius/token.h
-include/freeradius/udpfromto.h
-@dirrm include/freeradius
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Makefile.sphinx
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -385,16 +419,236 @@ include/freeradius/udpfromto.h
 %%PORTDOCS%%%%DOCSDIR%%/vendor/bay
 %%PORTDOCS%%%%DOCSDIR%%/vendor/cisco.rst
 %%PORTDOCS%%%%DOCSDIR%%/vendor/proxim
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/concepts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/configuration
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/deployment
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/developer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/vendor
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/raddb/README.rst
+%%EXAMPLESDIR%%/raddb/certs/01.pem
+%%EXAMPLESDIR%%/raddb/certs/02.pem
+%%EXAMPLESDIR%%/raddb/certs/Makefile
+%%EXAMPLESDIR%%/raddb/certs/README
+%%EXAMPLESDIR%%/raddb/certs/bootstrap
+%%EXAMPLESDIR%%/raddb/certs/ca.cnf
+%%EXAMPLESDIR%%/raddb/certs/ca.der
+%%EXAMPLESDIR%%/raddb/certs/ca.key
+%%EXAMPLESDIR%%/raddb/certs/ca.pem
+%%EXAMPLESDIR%%/raddb/certs/client.cnf
+%%EXAMPLESDIR%%/raddb/certs/client.crt
+%%EXAMPLESDIR%%/raddb/certs/client.csr
+%%EXAMPLESDIR%%/raddb/certs/client.key
+%%EXAMPLESDIR%%/raddb/certs/client.p12
+%%EXAMPLESDIR%%/raddb/certs/client.pem
+%%EXAMPLESDIR%%/raddb/certs/dh
+%%EXAMPLESDIR%%/raddb/certs/index.txt
+%%EXAMPLESDIR%%/raddb/certs/index.txt.attr
+%%EXAMPLESDIR%%/raddb/certs/index.txt.attr.old
+%%EXAMPLESDIR%%/raddb/certs/index.txt.old
+%%EXAMPLESDIR%%/raddb/certs/random
+%%EXAMPLESDIR%%/raddb/certs/serial
+%%EXAMPLESDIR%%/raddb/certs/serial.old
+%%EXAMPLESDIR%%/raddb/certs/server.cnf
+%%EXAMPLESDIR%%/raddb/certs/server.crt
+%%EXAMPLESDIR%%/raddb/certs/server.csr
+%%EXAMPLESDIR%%/raddb/certs/server.key
+%%EXAMPLESDIR%%/raddb/certs/server.p12
+%%EXAMPLESDIR%%/raddb/certs/server.pem
+%%EXAMPLESDIR%%/raddb/certs/user@example.com.pem
+%%EXAMPLESDIR%%/raddb/certs/xpextensions
+%%EXAMPLESDIR%%/raddb/clients.conf
+%%EXAMPLESDIR%%/raddb/dictionary
+%%EXAMPLESDIR%%/raddb/experimental.conf
+%%EXAMPLESDIR%%/raddb/hints
+%%EXAMPLESDIR%%/raddb/huntgroups
+%%EXAMPLESDIR%%/raddb/mods-available/README.rst
+%%EXAMPLESDIR%%/raddb/mods-available/always
+%%EXAMPLESDIR%%/raddb/mods-available/attr_filter
+%%EXAMPLESDIR%%/raddb/mods-available/cache
+%%EXAMPLESDIR%%/raddb/mods-available/cache_eap
+%%EXAMPLESDIR%%/raddb/mods-available/chap
+%%EXAMPLESDIR%%/raddb/mods-available/counter
+%%EXAMPLESDIR%%/raddb/mods-available/cui
+%%EXAMPLESDIR%%/raddb/mods-available/date
+%%EXAMPLESDIR%%/raddb/mods-available/detail
+%%EXAMPLESDIR%%/raddb/mods-available/detail.example.com
+%%EXAMPLESDIR%%/raddb/mods-available/detail.log
+%%EXAMPLESDIR%%/raddb/mods-available/dhcp
+%%EXAMPLESDIR%%/raddb/mods-available/dhcp_sqlippool
+%%EXAMPLESDIR%%/raddb/mods-available/digest
+%%EXAMPLESDIR%%/raddb/mods-available/dynamic_clients
+%%EXAMPLESDIR%%/raddb/mods-available/eap
+%%EXAMPLESDIR%%/raddb/mods-available/echo
+%%EXAMPLESDIR%%/raddb/mods-available/etc_group
+%%EXAMPLESDIR%%/raddb/mods-available/exec
+%%EXAMPLESDIR%%/raddb/mods-available/expiration
+%%EXAMPLESDIR%%/raddb/mods-available/expr
+%%EXAMPLESDIR%%/raddb/mods-available/files
+%%EXAMPLESDIR%%/raddb/mods-available/idn
+%%EXAMPLESDIR%%/raddb/mods-available/inner-eap
+%%EXAMPLESDIR%%/raddb/mods-available/ippool
+%%EXAMPLESDIR%%/raddb/mods-available/krb5
+%%EXAMPLESDIR%%/raddb/mods-available/ldap
+%%EXAMPLESDIR%%/raddb/mods-available/linelog
+%%EXAMPLESDIR%%/raddb/mods-available/logintime
+%%EXAMPLESDIR%%/raddb/mods-available/mac2ip
+%%EXAMPLESDIR%%/raddb/mods-available/mac2vlan
+%%EXAMPLESDIR%%/raddb/mods-available/mschap
+%%EXAMPLESDIR%%/raddb/mods-available/ntlm_auth
+%%EXAMPLESDIR%%/raddb/mods-available/opendirectory
+%%EXAMPLESDIR%%/raddb/mods-available/otp
+%%EXAMPLESDIR%%/raddb/mods-available/pam
+%%EXAMPLESDIR%%/raddb/mods-available/pap
+%%EXAMPLESDIR%%/raddb/mods-available/passwd
+%%EXAMPLESDIR%%/raddb/mods-available/perl
+%%EXAMPLESDIR%%/raddb/mods-available/preprocess
+%%EXAMPLESDIR%%/raddb/mods-available/python
+%%EXAMPLESDIR%%/raddb/mods-available/radutmp
+%%EXAMPLESDIR%%/raddb/mods-available/realm
+%%EXAMPLESDIR%%/raddb/mods-available/redis
+%%EXAMPLESDIR%%/raddb/mods-available/rediswho
+%%EXAMPLESDIR%%/raddb/mods-available/replicate
+%%EXAMPLESDIR%%/raddb/mods-available/rest
+%%EXAMPLESDIR%%/raddb/mods-available/smbpasswd
+%%EXAMPLESDIR%%/raddb/mods-available/smsotp
+%%EXAMPLESDIR%%/raddb/mods-available/soh
+%%EXAMPLESDIR%%/raddb/mods-available/sometimes
+%%EXAMPLESDIR%%/raddb/mods-available/sql
+%%EXAMPLESDIR%%/raddb/mods-available/sqlcounter
+%%EXAMPLESDIR%%/raddb/mods-available/sqlippool
+%%EXAMPLESDIR%%/raddb/mods-available/sradutmp
+%%EXAMPLESDIR%%/raddb/mods-available/unix
+%%EXAMPLESDIR%%/raddb/mods-available/unpack
+%%EXAMPLESDIR%%/raddb/mods-available/utf8
+%%EXAMPLESDIR%%/raddb/mods-available/wimax
+%%EXAMPLESDIR%%/raddb/mods-available/yubikey
+%%EXAMPLESDIR%%/raddb/mods-config/README.rst
+%%EXAMPLESDIR%%/raddb/mods-config/attr_filter/access_challenge
+%%EXAMPLESDIR%%/raddb/mods-config/attr_filter/access_reject
+%%EXAMPLESDIR%%/raddb/mods-config/attr_filter/accounting_response
+%%EXAMPLESDIR%%/raddb/mods-config/attr_filter/post-proxy
+%%EXAMPLESDIR%%/raddb/mods-config/attr_filter/pre-proxy
+%%EXAMPLESDIR%%/raddb/mods-config/files/accounting
+%%EXAMPLESDIR%%/raddb/mods-config/files/authorize
+%%EXAMPLESDIR%%/raddb/mods-config/files/pre-proxy
+%%EXAMPLESDIR%%/raddb/mods-config/perl/example.pl
+%%EXAMPLESDIR%%/raddb/mods-config/preprocess/hints
+%%EXAMPLESDIR%%/raddb/mods-config/preprocess/huntgroups
+%%RLMPYTHON%%%%EXAMPLESDIR%%/raddb/mods-config/python/example.py
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/dailycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/expire_on_login.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/monthlycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/noresetcounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/dailycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/expire_on_login.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/monthlycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/noresetcounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/dailycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/expire_on_login.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/monthlycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/noresetcounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/mysql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/mysql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/postgresql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/postgresql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/procedures.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mssql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mssql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/extras/wimax/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/extras/wimax/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/setup.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/ndb/README
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/ndb/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/ndb/setup.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/oracle/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/oracle/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras/cisco_h323_db_schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras/update_radacct_group.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras/voip-postpaid.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/setup.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-enabled/always
+%%EXAMPLESDIR%%/raddb/mods-enabled/attr_filter
+%%EXAMPLESDIR%%/raddb/mods-enabled/cache_eap
+%%EXAMPLESDIR%%/raddb/mods-enabled/chap
+%%EXAMPLESDIR%%/raddb/mods-enabled/detail
+%%EXAMPLESDIR%%/raddb/mods-enabled/detail.log
+%%EXAMPLESDIR%%/raddb/mods-enabled/dhcp
+%%EXAMPLESDIR%%/raddb/mods-enabled/digest
+%%EXAMPLESDIR%%/raddb/mods-enabled/dynamic_clients
+%%EXAMPLESDIR%%/raddb/mods-enabled/eap
+%%EXAMPLESDIR%%/raddb/mods-enabled/echo
+%%EXAMPLESDIR%%/raddb/mods-enabled/exec
+%%EXAMPLESDIR%%/raddb/mods-enabled/expiration
+%%EXAMPLESDIR%%/raddb/mods-enabled/expr
+%%EXAMPLESDIR%%/raddb/mods-enabled/files
+%%EXAMPLESDIR%%/raddb/mods-enabled/linelog
+%%EXAMPLESDIR%%/raddb/mods-enabled/logintime
+%%EXAMPLESDIR%%/raddb/mods-enabled/mschap
+%%EXAMPLESDIR%%/raddb/mods-enabled/ntlm_auth
+%%EXAMPLESDIR%%/raddb/mods-enabled/pap
+%%EXAMPLESDIR%%/raddb/mods-enabled/passwd
+%%EXAMPLESDIR%%/raddb/mods-enabled/preprocess
+%%EXAMPLESDIR%%/raddb/mods-enabled/radutmp
+%%EXAMPLESDIR%%/raddb/mods-enabled/realm
+%%EXAMPLESDIR%%/raddb/mods-enabled/replicate
+%%EXAMPLESDIR%%/raddb/mods-enabled/soh
+%%EXAMPLESDIR%%/raddb/mods-enabled/sradutmp
+%%EXAMPLESDIR%%/raddb/mods-enabled/unix
+%%EXAMPLESDIR%%/raddb/mods-enabled/unpack
+%%EXAMPLESDIR%%/raddb/mods-enabled/utf8
+%%EXAMPLESDIR%%/raddb/panic.gdb
+%%EXAMPLESDIR%%/raddb/policy.d/accounting
+%%EXAMPLESDIR%%/raddb/policy.d/canonicalization
+%%EXAMPLESDIR%%/raddb/policy.d/control
+%%EXAMPLESDIR%%/raddb/policy.d/cui
+%%EXAMPLESDIR%%/raddb/policy.d/dhcp
+%%EXAMPLESDIR%%/raddb/policy.d/eap
+%%EXAMPLESDIR%%/raddb/policy.d/filter
+%%EXAMPLESDIR%%/raddb/policy.d/operator-name
+%%EXAMPLESDIR%%/raddb/proxy.conf
+%%EXAMPLESDIR%%/raddb/radiusd.conf
+%%EXAMPLESDIR%%/raddb/sites-available/README
+%%EXAMPLESDIR%%/raddb/sites-available/buffered-sql
+%%EXAMPLESDIR%%/raddb/sites-available/check-eap-tls
+%%EXAMPLESDIR%%/raddb/sites-available/coa
+%%EXAMPLESDIR%%/raddb/sites-available/control-socket
+%%EXAMPLESDIR%%/raddb/sites-available/copy-acct-to-home-server
+%%EXAMPLESDIR%%/raddb/sites-available/decoupled-accounting
+%%EXAMPLESDIR%%/raddb/sites-available/default
+%%EXAMPLESDIR%%/raddb/sites-available/dhcp
+%%EXAMPLESDIR%%/raddb/sites-available/dhcp.relay
+%%EXAMPLESDIR%%/raddb/sites-available/dynamic-clients
+%%EXAMPLESDIR%%/raddb/sites-available/example
+%%EXAMPLESDIR%%/raddb/sites-available/inner-tunnel
+%%EXAMPLESDIR%%/raddb/sites-available/originate-coa
+%%EXAMPLESDIR%%/raddb/sites-available/proxy-inner-tunnel
+%%EXAMPLESDIR%%/raddb/sites-available/robust-proxy-accounting
+%%EXAMPLESDIR%%/raddb/sites-available/soh
+%%EXAMPLESDIR%%/raddb/sites-available/status
+%%EXAMPLESDIR%%/raddb/sites-available/tls
+%%EXAMPLESDIR%%/raddb/sites-available/virtual.example.com
+%%EXAMPLESDIR%%/raddb/sites-available/vmps
+%%EXAMPLESDIR%%/raddb/sites-enabled/default
+%%EXAMPLESDIR%%/raddb/sites-enabled/inner-tunnel
+%%EXAMPLESDIR%%/raddb/templates.conf
+%%EXAMPLESDIR%%/raddb/trigger.conf
+%%EXAMPLESDIR%%/raddb/users
 %%DATADIR%%/dictionary
 %%DATADIR%%/dictionary.3com
 %%DATADIR%%/dictionary.3gpp
@@ -405,9 +659,9 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.aerohive
 %%DATADIR%%/dictionary.airespace
 %%DATADIR%%/dictionary.alcatel
+%%DATADIR%%/dictionary.alcatel-lucent.aaa
 %%DATADIR%%/dictionary.alcatel.esam
 %%DATADIR%%/dictionary.alcatel.sr
-%%DATADIR%%/dictionary.alcatel-lucent.aaa
 %%DATADIR%%/dictionary.alteon
 %%DATADIR%%/dictionary.altiga
 %%DATADIR%%/dictionary.alvarion
@@ -418,9 +672,9 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.ascend
 %%DATADIR%%/dictionary.ascend.illegal
 %%DATADIR%%/dictionary.asn
+%%DATADIR%%/dictionary.audiocodes
 %%DATADIR%%/dictionary.avaya
 %%DATADIR%%/dictionary.azaire
-%%DATADIR%%/dictionary.audiocodes
 %%DATADIR%%/dictionary.bay
 %%DATADIR%%/dictionary.bintec
 %%DATADIR%%/dictionary.bluecoat
@@ -447,12 +701,12 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.digium
 %%DATADIR%%/dictionary.dlink
 %%DATADIR%%/dictionary.efficientip
-%%DATADIR%%/dictionary.epygi
 %%DATADIR%%/dictionary.eltex
+%%DATADIR%%/dictionary.epygi
+%%DATADIR%%/dictionary.equallogic
 %%DATADIR%%/dictionary.ericsson
 %%DATADIR%%/dictionary.erx
 %%DATADIR%%/dictionary.extreme
-%%DATADIR%%/dictionary.equallogic
 %%DATADIR%%/dictionary.f5
 %%DATADIR%%/dictionary.fdxtended
 %%DATADIR%%/dictionary.fortinet
@@ -468,9 +722,9 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.hp
 %%DATADIR%%/dictionary.huawei
 %%DATADIR%%/dictionary.iana
-%%DATADIR%%/dictionary.infonet
 %%DATADIR%%/dictionary.iea
 %%DATADIR%%/dictionary.infoblox
+%%DATADIR%%/dictionary.infonet
 %%DATADIR%%/dictionary.ipunplugged
 %%DATADIR%%/dictionary.issanni
 %%DATADIR%%/dictionary.itk
@@ -577,243 +831,13 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.yubico
 %%DATADIR%%/dictionary.zeus
 %%DATADIR%%/dictionary.zyxel
+@unexec rmdir >/dev/null 2>&1 /var/run/radiusd || :
+@unexec rmdir >/dev/null 2>&1 /var/log/radacct || :
 @dirrm %%DATADIR%%
-%%EXAMPLESDIR%%/raddb/mods-config/perl/example.pl
-%%EXAMPLESDIR%%/raddb/mods-config/attr_filter/access_challenge
-%%EXAMPLESDIR%%/raddb/mods-config/attr_filter/access_reject
-%%EXAMPLESDIR%%/raddb/mods-config/attr_filter/accounting_response
-%%EXAMPLESDIR%%/raddb/mods-config/attr_filter/post-proxy
-%%EXAMPLESDIR%%/raddb/mods-config/attr_filter/pre-proxy
-%%EXAMPLESDIR%%/raddb/mods-config/files/accounting
-%%EXAMPLESDIR%%/raddb/mods-config/files/authorize
-%%EXAMPLESDIR%%/raddb/mods-config/files/pre-proxy
-%%EXAMPLESDIR%%/raddb/mods-config/preprocess/hints
-%%EXAMPLESDIR%%/raddb/mods-config/preprocess/huntgroups
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/dailycounter.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/expire_on_login.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/monthlycounter.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/noresetcounter.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/dailycounter.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/expire_on_login.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/monthlycounter.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/noresetcounter.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/dailycounter.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/expire_on_login.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/monthlycounter.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/noresetcounter.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/mysql/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/mysql/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/postgresql/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/postgresql/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/procedures.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mssql/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mssql/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/extras/wimax/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/extras/wimax/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/setup.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/ndb/README
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/ndb/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/ndb/setup.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/oracle/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/oracle/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras/cisco_h323_db_schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras/update_radacct_group.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras/voip-postpaid.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/setup.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/README.rst
-%%EXAMPLESDIR%%/raddb/certs/Makefile
-%%EXAMPLESDIR%%/raddb/certs/README
-%%EXAMPLESDIR%%/raddb/certs/index.txt
-%%EXAMPLESDIR%%/raddb/certs/serial
-%%EXAMPLESDIR%%/raddb/certs/dh
-%%EXAMPLESDIR%%/raddb/certs/random
-%%EXAMPLESDIR%%/raddb/certs/server.key
-%%EXAMPLESDIR%%/raddb/certs/server.csr
-%%EXAMPLESDIR%%/raddb/certs/ca.cnf
-%%EXAMPLESDIR%%/raddb/certs/ca.key
-%%EXAMPLESDIR%%/raddb/certs/ca.pem
-%%EXAMPLESDIR%%/raddb/certs/server.crt
-%%EXAMPLESDIR%%/raddb/certs/index.txt.attr
-%%EXAMPLESDIR%%/raddb/certs/server.p12
-%%EXAMPLESDIR%%/raddb/certs/server.pem
-%%EXAMPLESDIR%%/raddb/certs/01.pem
-%%EXAMPLESDIR%%/raddb/certs/serial.old
-%%EXAMPLESDIR%%/raddb/certs/server.cnf
-%%EXAMPLESDIR%%/raddb/certs/index.txt.old
-%%EXAMPLESDIR%%/raddb/certs/ca.der
-%%EXAMPLESDIR%%/raddb/certs/client.cnf
-%%EXAMPLESDIR%%/raddb/certs/client.key
-%%EXAMPLESDIR%%/raddb/certs/client.csr
-%%EXAMPLESDIR%%/raddb/certs/client.crt
-%%EXAMPLESDIR%%/raddb/certs/index.txt.attr.old
-%%EXAMPLESDIR%%/raddb/certs/client.p12
-%%EXAMPLESDIR%%/raddb/certs/client.pem
-%%EXAMPLESDIR%%/raddb/certs/02.pem
-%%EXAMPLESDIR%%/raddb/certs/bootstrap
-%%EXAMPLESDIR%%/raddb/certs/user@example.com.pem
-%%EXAMPLESDIR%%/raddb/certs/xpextensions
-%%EXAMPLESDIR%%/raddb/mods-available/date
-%%EXAMPLESDIR%%/raddb/mods-available/sqlcounter
-%%EXAMPLESDIR%%/raddb/mods-available/perl
-%%EXAMPLESDIR%%/raddb/mods-available/utf8
-%%EXAMPLESDIR%%/raddb/mods-available/exec
-%%EXAMPLESDIR%%/raddb/mods-available/rest
-%%EXAMPLESDIR%%/raddb/mods-available/inner-eap
-%%EXAMPLESDIR%%/raddb/mods-available/python
-%%EXAMPLESDIR%%/raddb/mods-available/files
-%%EXAMPLESDIR%%/raddb/mods-available/dhcp
-%%EXAMPLESDIR%%/raddb/mods-available/wimax
-%%EXAMPLESDIR%%/raddb/mods-available/echo
-%%EXAMPLESDIR%%/raddb/mods-available/eap
-%%EXAMPLESDIR%%/raddb/mods-available/detail.log
-%%EXAMPLESDIR%%/raddb/mods-available/chap
-%%EXAMPLESDIR%%/raddb/mods-available/detail
-%%EXAMPLESDIR%%/raddb/mods-available/attr_filter
-%%EXAMPLESDIR%%/raddb/mods-available/linelog
-%%EXAMPLESDIR%%/raddb/mods-available/replicate
-%%EXAMPLESDIR%%/raddb/mods-available/always
-%%EXAMPLESDIR%%/raddb/mods-available/expr
-%%EXAMPLESDIR%%/raddb/mods-available/mschap
-%%EXAMPLESDIR%%/raddb/mods-available/digest
-%%EXAMPLESDIR%%/raddb/mods-available/dynamic_clients
-%%EXAMPLESDIR%%/raddb/mods-available/preprocess
-%%EXAMPLESDIR%%/raddb/mods-available/pap
-%%EXAMPLESDIR%%/raddb/mods-available/detail.example.com
-%%EXAMPLESDIR%%/raddb/mods-available/cache
-%%EXAMPLESDIR%%/raddb/mods-available/smsotp
-%%EXAMPLESDIR%%/raddb/mods-available/mac2vlan
-%%EXAMPLESDIR%%/raddb/mods-available/sqlippool
-%%EXAMPLESDIR%%/raddb/mods-available/sometimes
-%%EXAMPLESDIR%%/raddb/mods-available/opendirectory
-%%EXAMPLESDIR%%/raddb/mods-available/radutmp
-%%EXAMPLESDIR%%/raddb/mods-available/ippool
-%%EXAMPLESDIR%%/raddb/mods-available/counter
-%%EXAMPLESDIR%%/raddb/mods-available/mac2ip
-%%EXAMPLESDIR%%/raddb/mods-available/cache_eap
-%%EXAMPLESDIR%%/raddb/mods-available/redis
-%%EXAMPLESDIR%%/raddb/mods-available/dhcp_sqlippool
-%%EXAMPLESDIR%%/raddb/mods-available/pam
-%%EXAMPLESDIR%%/raddb/mods-available/rediswho
-%%EXAMPLESDIR%%/raddb/mods-available/etc_group
-%%EXAMPLESDIR%%/raddb/mods-available/sql
-%%EXAMPLESDIR%%/raddb/mods-available/passwd
-%%EXAMPLESDIR%%/raddb/mods-available/otp
-%%EXAMPLESDIR%%/raddb/mods-available/ldap
-%%EXAMPLESDIR%%/raddb/mods-available/logintime
-%%EXAMPLESDIR%%/raddb/mods-available/README.rst
-%%EXAMPLESDIR%%/raddb/mods-available/soh
-%%EXAMPLESDIR%%/raddb/mods-available/krb5
-%%EXAMPLESDIR%%/raddb/mods-available/smbpasswd
-%%EXAMPLESDIR%%/raddb/mods-available/sradutmp
-%%EXAMPLESDIR%%/raddb/mods-available/yubikey
-%%EXAMPLESDIR%%/raddb/mods-available/ntlm_auth
-%%EXAMPLESDIR%%/raddb/mods-available/realm
-%%EXAMPLESDIR%%/raddb/mods-available/unix
-%%EXAMPLESDIR%%/raddb/mods-available/unpack
-%%EXAMPLESDIR%%/raddb/mods-available/cui
-%%EXAMPLESDIR%%/raddb/mods-available/idn
-%%EXAMPLESDIR%%/raddb/mods-available/expiration
-%%EXAMPLESDIR%%/raddb/mods-enabled/always
-%%EXAMPLESDIR%%/raddb/mods-enabled/attr_filter
-%%EXAMPLESDIR%%/raddb/mods-enabled/cache_eap
-%%EXAMPLESDIR%%/raddb/mods-enabled/chap
-%%EXAMPLESDIR%%/raddb/mods-enabled/detail
-%%EXAMPLESDIR%%/raddb/mods-enabled/detail.log
-%%EXAMPLESDIR%%/raddb/mods-enabled/digest
-%%EXAMPLESDIR%%/raddb/mods-enabled/dhcp
-%%EXAMPLESDIR%%/raddb/mods-enabled/dynamic_clients
-%%EXAMPLESDIR%%/raddb/mods-enabled/eap
-%%EXAMPLESDIR%%/raddb/mods-enabled/echo
-%%EXAMPLESDIR%%/raddb/mods-enabled/exec
-%%EXAMPLESDIR%%/raddb/mods-enabled/expiration
-%%EXAMPLESDIR%%/raddb/mods-enabled/expr
-%%EXAMPLESDIR%%/raddb/mods-enabled/files
-%%EXAMPLESDIR%%/raddb/mods-enabled/linelog
-%%EXAMPLESDIR%%/raddb/mods-enabled/logintime
-%%EXAMPLESDIR%%/raddb/mods-enabled/mschap
-%%EXAMPLESDIR%%/raddb/mods-enabled/ntlm_auth
-%%EXAMPLESDIR%%/raddb/mods-enabled/pap
-%%EXAMPLESDIR%%/raddb/mods-enabled/passwd
-%%EXAMPLESDIR%%/raddb/mods-enabled/preprocess
-%%EXAMPLESDIR%%/raddb/mods-enabled/radutmp
-%%EXAMPLESDIR%%/raddb/mods-enabled/realm
-%%EXAMPLESDIR%%/raddb/mods-enabled/replicate
-%%EXAMPLESDIR%%/raddb/mods-enabled/soh
-%%EXAMPLESDIR%%/raddb/mods-enabled/sradutmp
-%%EXAMPLESDIR%%/raddb/mods-enabled/unix
-%%EXAMPLESDIR%%/raddb/mods-enabled/unpack
-%%EXAMPLESDIR%%/raddb/mods-enabled/utf8
-%%EXAMPLESDIR%%/raddb/policy.d/accounting
-%%EXAMPLESDIR%%/raddb/policy.d/canonicalization
-%%EXAMPLESDIR%%/raddb/policy.d/control
-%%EXAMPLESDIR%%/raddb/policy.d/cui
-%%EXAMPLESDIR%%/raddb/policy.d/dhcp
-%%EXAMPLESDIR%%/raddb/policy.d/eap
-%%EXAMPLESDIR%%/raddb/policy.d/filter
-%%EXAMPLESDIR%%/raddb/policy.d/operator-name
-%%EXAMPLESDIR%%/raddb/sites-available/vmps
-%%EXAMPLESDIR%%/raddb/sites-available/proxy-inner-tunnel
-%%EXAMPLESDIR%%/raddb/sites-available/dhcp
-%%EXAMPLESDIR%%/raddb/sites-available/buffered-sql
-%%EXAMPLESDIR%%/raddb/sites-available/dynamic-clients
-%%EXAMPLESDIR%%/raddb/sites-available/virtual.example.com
-%%EXAMPLESDIR%%/raddb/sites-available/copy-acct-to-home-server
-%%EXAMPLESDIR%%/raddb/sites-available/control-socket
-%%EXAMPLESDIR%%/raddb/sites-available/README
-%%EXAMPLESDIR%%/raddb/sites-available/example
-%%EXAMPLESDIR%%/raddb/sites-available/status
-%%EXAMPLESDIR%%/raddb/sites-available/originate-coa
-%%EXAMPLESDIR%%/raddb/sites-available/inner-tunnel
-%%EXAMPLESDIR%%/raddb/sites-available/default
-%%EXAMPLESDIR%%/raddb/sites-available/robust-proxy-accounting
-%%EXAMPLESDIR%%/raddb/sites-available/soh
-%%EXAMPLESDIR%%/raddb/sites-available/dhcp.relay
-%%EXAMPLESDIR%%/raddb/sites-available/decoupled-accounting
-%%EXAMPLESDIR%%/raddb/sites-available/coa
-%%EXAMPLESDIR%%/raddb/sites-available/check-eap-tls
-%%EXAMPLESDIR%%/raddb/sites-available/tls
-%%EXAMPLESDIR%%/raddb/sites-enabled/default
-%%EXAMPLESDIR%%/raddb/sites-enabled/inner-tunnel
-%%EXAMPLESDIR%%/raddb/README.rst
-%%EXAMPLESDIR%%/raddb/trigger.conf
-%%EXAMPLESDIR%%/raddb/users
-%%EXAMPLESDIR%%/raddb/clients.conf
-%%EXAMPLESDIR%%/raddb/dictionary
-%%EXAMPLESDIR%%/raddb/templates.conf
-%%EXAMPLESDIR%%/raddb/experimental.conf
-%%EXAMPLESDIR%%/raddb/panic.gdb
-%%EXAMPLESDIR%%/raddb/proxy.conf
-%%EXAMPLESDIR%%/raddb/radiusd.conf
-%%EXAMPLESDIR%%/raddb/huntgroups
-%%EXAMPLESDIR%%/raddb/hints
-@dirrm %%EXAMPLESDIR%%/raddb/certs
-@dirrm %%EXAMPLESDIR%%/raddb/sites-available
 @dirrm %%EXAMPLESDIR%%/raddb/sites-enabled
+@dirrm %%EXAMPLESDIR%%/raddb/sites-available
 @dirrm %%EXAMPLESDIR%%/raddb/policy.d
-@dirrm %%EXAMPLESDIR%%/raddb/mods-available
 @dirrm %%EXAMPLESDIR%%/raddb/mods-enabled
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/attr_filter
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql
@@ -829,31 +853,43 @@ include/freeradius/udpfromto.h
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/postgresql
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/mysql
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql
+%%RLMPYTHON%%@dirrm %%EXAMPLESDIR%%/raddb/mods-config/python
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/preprocess
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/perl
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/files
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/attr_filter
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config
-@dirrmtry share/freeradius
-@dirrmtry share/examples/freeradius/raddb/sites-available
-@dirrmtry share/examples/freeradius/raddb/modules
-@dirrmtry share/examples/freeradius/raddb
-@dirrmtry share/examples/freeradius
-@dirrmtry share/doc/freeradius/rfc
-@dirrmtry share/doc/freeradius
+@dirrm %%EXAMPLESDIR%%/raddb/mods-available
+@dirrm %%EXAMPLESDIR%%/raddb/certs
+@dirrm %%EXAMPLESDIR%%/raddb
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/vendor
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/developer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/deployment
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/configuration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/concepts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%LIBDIR%%
+@dirrm include/freeradius
+@exec if ! [ -d %D/etc/raddb -o -L %D/etc/raddb ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb; echo '===> Bootstrapping default certificates, please wait...'; %D/etc/raddb/certs/bootstrap >/dev/null 2>&1; fi
+@exec chmod -R g-w,o-rwx %D/etc/raddb
 @exec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi
 @exec for i in /var/log/radius.log /var/log/radutmp /var/log/radwtmp; do if [ ! -f ${i} ]; then touch ${i}; chmod go= ${i}; fi; done
 @exec mkdir -p /var/run/radiusd
-@unexec rm -fr /var/run/radiusd

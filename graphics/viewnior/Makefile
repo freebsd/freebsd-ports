@@ -3,6 +3,7 @@
 
 PORTNAME=	viewnior
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	nemysis@FreeBSD.org

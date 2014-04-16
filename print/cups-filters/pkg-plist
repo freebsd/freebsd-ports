@@ -48,6 +48,7 @@ man/man8/cups-browsed.8.gz
 sbin/cups-browsed
 share/cups/banners/classified
 share/cups/banners/confidential
+share/cups/banners/form
 share/cups/banners/secret
 share/cups/banners/standard
 share/cups/banners/topsecret
@@ -57,17 +58,22 @@ share/cups/charsets/pdf.utf-8.heavy
 share/cups/charsets/pdf.utf-8.simple
 share/cups/data/default-testpage.pdf
 share/cups/data/default.pdf
+share/cups/data/form_english.pdf
+share/cups/data/form_english_in.odt
+share/cups/data/form_russian.pdf
+share/cups/data/form_russian_in.odt
 share/cups/data/testprint
 share/cups/drv/cupsfilters.drv
 share/cups/mime/cupsfilters.convs
 share/cups/mime/cupsfilters.types
 share/cups/ppdc/escp.h
 share/cups/ppdc/pcl.h
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+share/ppd/cupsfilters/Fuji_Xerox-DocuPrint_CM305_df-PDF.ppd
 share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
 share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
@@ -76,7 +82,7 @@ share/ppd/cupsfilters/pxlmono.ppd
 share/ppd/cupsfilters/textonly.ppd
 @dirrmtry share/ppd/cupsfilters
 @dirrmtry share/ppd
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 @dirrmtry share/cups/ppdc
 @dirrmtry share/cups/mime
 @dirrmtry share/cups/drv

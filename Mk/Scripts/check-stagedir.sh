@@ -23,7 +23,7 @@ esac
 
 # validate environment
 envfault=
-for i in STAGEDIR PREFIX LOCALBASE WRKDIR WRKSRC MTREE_FILE \
+for i in STAGEDIR PREFIX LOCALBASE WRKDIR WRKSRC MTREE_FILE GNOME_MTREE_FILE \
     TMPPLIST DOCSDIR EXAMPLESDIR PLIST_SUB
 do
     if ! ( eval ": \${${i}?}" ) 2>/dev/null ; then
@@ -89,6 +89,10 @@ fi
 
 	if [ -n "${MTREE_FILE}" ]; then
 		listmtree "${MTREE_FILE}" "${PREFIX}"
+	fi
+
+	if [ -n "${GNOME_MTREE_FILE}" ]; then
+		listmtree "${GNOME_MTREE_FILE}" "${PREFIX}"
 	fi
 
 	a=${PREFIX}

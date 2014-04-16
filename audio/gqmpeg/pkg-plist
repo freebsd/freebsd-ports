@@ -1,7 +1,6 @@
 bin/gqmpeg
 bin/gqmpeg-shoutcast-plugin.sh
-%%GNOME:%%share/gnome/apps/Multimedia/gqmpeg.desktop
-%%GNOME:%%share/pixmaps/gqmpeg.png
+man/man1/gqmpeg.1.gz
 share/gqmpeg/skins/README
 share/gqmpeg/skins/SKIN-SPECS
 share/gqmpeg/skins/mrclean/blue-handle-24.png

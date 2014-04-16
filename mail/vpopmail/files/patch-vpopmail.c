@@ -9,9 +9,9 @@ Author: Peter Pentchev <roam@FreeBSD.org>,
 	Alex Dupre <ale@FreeBSD.org>
 Last-Update: 2009-11-26
 
---- a/vpopmail.c
-+++ b/vpopmail.c
-@@ -945,6 +945,7 @@
+--- vpopmail.c.orig	2011-02-28 11:00:45.000000000 -0600
++++ vpopmail.c	2014-04-10 11:20:59.892641589 -0500
+@@ -981,6 +981,7 @@ int vdelfiles(char *dir)
  
            /* print error message and return and error */
            fprintf (stderr, "Failed to delete directory %s", mydirent->d_name);
@@ -19,7 +19,7 @@ Last-Update: 2009-11-26
            return(-1);
          }
        }
-@@ -1563,7 +1564,7 @@
+@@ -1603,7 +1604,7 @@ while(( s[i]==' ')||(s[i]=='\t')) {
     i++;
     }
  
@@ -28,7 +28,7 @@ Last-Update: 2009-11-26
  
  if( i>0 ) {
     for( j=0; j<k; j++ )  {
-@@ -1575,7 +1576,7 @@
+@@ -1615,7 +1616,7 @@ if( i>0 ) {
  
  //  trim spaces and tabs from end
  i = strlen(s) - 1;
@@ -37,8 +37,8 @@ Last-Update: 2009-11-26
     i--;
     }
  
-@@ -2348,7 +2349,12 @@
-  char calling_dir[MAX_BUFF];
+@@ -2387,7 +2388,12 @@ char *make_user_dir(char *username, char
+  int call_dir;
   char domain_dir[MAX_BUFF];
   const char *dirnames[] = {"Maildir", "Maildir/new", "Maildir/cur", 
 -	"Maildir/tmp"};
@@ -51,21 +51,21 @@ Last-Update: 2009-11-26
   int i;
  
    verrori = 0;
-@@ -3114,6 +3120,13 @@
-   if (mkdir("cur",VPOPMAIL_DIR_MODE) == -1) { chdir(calling_dir); return(-1); }
-   if (mkdir("new",VPOPMAIL_DIR_MODE) == -1) { chdir(calling_dir); return(-1); }
-   if (mkdir("tmp",VPOPMAIL_DIR_MODE) == -1) { chdir(calling_dir); return(-1); }
+@@ -3154,6 +3160,13 @@ int vmake_maildir(char *domain, char *di
+   if (mkdir("cur",VPOPMAIL_DIR_MODE) == -1) { fchdir(call_dir); close(call_dir); return(-1); }
+   if (mkdir("new",VPOPMAIL_DIR_MODE) == -1) { fchdir(call_dir); close(call_dir); return(-1); }
+   if (mkdir("tmp",VPOPMAIL_DIR_MODE) == -1) { fchdir(call_dir); close(call_dir); return(-1); }
 +#ifdef SPAM_JUNKFOLDER
-+  if (mkdir(".Junk",VPOPMAIL_DIR_MODE) == -1) { chdir(calling_dir); return(-1); }
-+  if (chdir(".Junk") == -1) { chdir(calling_dir); return(-1); }
-+  if (mkdir("cur",VPOPMAIL_DIR_MODE) == -1) { chdir(calling_dir); return(-1); }
-+  if (mkdir("new",VPOPMAIL_DIR_MODE) == -1) { chdir(calling_dir); return(-1); }
-+  if (mkdir("tmp",VPOPMAIL_DIR_MODE) == -1) { chdir(calling_dir); return(-1); }
++  if (mkdir(".Junk",VPOPMAIL_DIR_MODE) == -1) { fchdir(call_dir); close(call_dir); return(-1); }
++  if (chdir(".Junk") == -1) { fchdir(call_dir); close(call_dir); return(-1); }
++  if (mkdir("cur",VPOPMAIL_DIR_MODE) == -1) { fchdir(call_dir); close(call_dir); return(-1); }
++  if (mkdir("new",VPOPMAIL_DIR_MODE) == -1) { fchdir(call_dir); close(call_dir); return(-1); }
++  if (mkdir("tmp",VPOPMAIL_DIR_MODE) == -1) { fchdir(call_dir); close(call_dir); return(-1); }
 +#endif
  
    /* set permissions on the user's dir */
    chdir(dir);
-@@ -4163,11 +4176,19 @@
+@@ -4220,12 +4233,20 @@ int call_onchange ( const char *cmd )
  	}
  	else if ( pid > 0 )
  	{
@@ -89,3 +89,4 @@ Last-Update: 2009-11-26
 +	return(rv);
  }
  #endif
+ 

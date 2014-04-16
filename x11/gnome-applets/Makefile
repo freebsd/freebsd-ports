@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-applets
 PORTVERSION=	2.32.1.1
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -14,19 +14,18 @@ COMMENT=	Applets components for the GNOME 2 Desktop Environment
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends-2.0.pc:${PORTSDIR}/sysutils/system-tools-backends \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
-LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop \
-		gweather:${PORTSDIR}/net/libgweather \
-		polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
-		xklavier:${PORTSDIR}/x11/libxklavier \
-		gucharmap:${PORTSDIR}/deskutils/gucharmap
+LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
+		libgweather.so:${PORTSDIR}/net/libgweather \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
+		libxklavier.so:${PORTSDIR}/x11/libxklavier \
+		libgucharmap.so:${PORTSDIR}/deskutils/gucharmap
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends-2.0.pc:${PORTSDIR}/sysutils/system-tools-backends \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 
-USE_BZIP2=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix gettext gmake pkgconfig
+USES=		libtool pathfix gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gnomepanel gnomedocutils libgnomekbd
 WANT_GNOME=	yes
 USE_GSTREAMER=	yes
@@ -43,12 +42,11 @@ GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 OPTIONS_DEFINE=	MINI_COMMANDER NOTIFY
 MINI_COMMANDER_DESC=	Mini-commander applet
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/libnotify.pc) || \
 	${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 .endif
 
 .if ${PORT_OPTIONS:MMINI_COMMANDER}

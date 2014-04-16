@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Jan 13 05:45:12 2003
-+++ Makefile	Wed Mar  1 10:27:04 2006
-@@ -5,9 +5,10 @@
+--- Makefile.orig	2003-01-12 21:45:12.000000000 +0100
++++ Makefile	2014-04-04 23:35:46.000000000 +0200
+@@ -5,9 +5,11 @@
  
  # Paths
  
@@ -11,31 +11,16 @@
 +EBIN = ${PREFIX}/sbin
 +MAN = ${PREFIX}/man/man
 +ETC_DIR = ${PREFIX}/etc
++DEFS = ${DEFS}
  
  # OS-Dependant settings
  
-@@ -33,22 +34,46 @@
+@@ -33,22 +35,19 @@
  # -DCIDR_KEY	# keys in CIDR format
  # -DTERM_KD	# keys and data nul-terminated
  
 -DEFS = -DTI_RPC -DFCNTL_LOCK -DSYSINFO
-+.if defined(WITH_TI_RPC)
-+DEFS+=	-DTI_RPC
-+.else
-+DEFS+=	-DSOCK_RPC
-+.endif
-+
-+.if defined(WITH_POSTFIX) || defined(WITH_POSTFIX_DB3) || defined(WITH_POSTFIX_DB41)
-+DEFS+=	-DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD
-+.elif defined(WITH_EXIM)
-+DEFS+=	-DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD -DREQ_HASH -DCIDR_KEY
-+.else
-+DEFS+=	-DFLOCK_LOCK -DGETHOST -DDASH_C
-+.endif
-+.if defined(WITH_FOREGROUND)
-+DEFS+=	-DRPC_SVC_FG
-+.endif
- 
+-
  # Compiler flags 
 -CC = cc
 +CC? = cc
@@ -54,17 +39,7 @@
 -RPCGENFLAGS = 
 -#RPCGENFLAGS = -C
 +TSTLIBS = -L. -ldrac
-+#RPCGENFLAGS = 
 +RPCGENFLAGS = -C -I
-+
-+.if defined(WITH_POSTFIX_DB3)
-+CFLAGS+=	-I${LOCALBASE}/include/db3
-+LDLIBS+=	-L${LOCALBASE}/lib -ldb3
-+.endif
-+.if defined(WITH_POSTFIX_DB41)
-+CFLAGS+=	-I${LOCALBASE}/include/db41
-+LDLIBS+=	-L${LOCALBASE}/lib -ldb41
-+.endif
  
  # Man sections
  MANLIB = 3

@@ -15,28 +15,20 @@ BUILD_DEPENDS=	pyrex>=0.9.4:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
 
 USE_PYTHON=		yes
-NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-MAN1=	dump_osc.1 send_osc.1
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' ${WRKSRC}/setup.py
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/scripts/dump_osc.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/scripts/send_osc.1 ${PREFIX}/man/man1
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/API.html ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/examples.html ${DOCSDIR}
-.endif
+	${INSTALL_MAN} ${WRKSRC}/scripts/dump_osc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/scripts/send_osc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/API.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/examples.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

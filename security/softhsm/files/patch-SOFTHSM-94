@@ -1,0 +1,119 @@
+From 39b1e1115501a042597ce0c2bc17659c4082fc9e Mon Sep 17 00:00:00 2001
+From: Rickard Bellgrim <rickard@opendnssec.org>
+Date: Thu, 3 Apr 2014 13:19:02 +0200
+Subject: [PATCH] SOFTHSM-94: umask affecting the calling application.
+
+---
+ NEWS                      |  6 ++++++
+ src/lib/SoftDatabase.cpp  | 20 +++++++++++++++-----
+ src/lib/tokenhandling.cpp | 21 ++++++++++++++++-----
+ 3 files changed, 37 insertions(+), 10 deletions(-)
+
+diff --git NEWS NEWS
+index a69e16f..04473dd 100644
+--- NEWS
++++ NEWS
+@@ -1,5 +1,11 @@
+ NEWS for SoftHSM -- History of user visible changes
+ 
++SoftHSM 1.3 develop
++
++Bugfixes:
++* SOFTHSM-94: umask affecting the calling application.
++
++
+ SoftHSM 1.3.6 - 2014-02-24
+ 
+ * SOFTHSM-51: Call umask to restrict created files.
+diff --git src/lib/SoftDatabase.cpp src/lib/SoftDatabase.cpp
+index 492883e..aac5fe1 100644
+--- src/lib/SoftDatabase.cpp
++++ src/lib/SoftDatabase.cpp
+@@ -40,6 +40,9 @@
+ #include <sched.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <fcntl.h>
++#include <unistd.h>
++#include <errno.h>
+ 
+ using std::string;
+ 
+@@ -115,15 +118,22 @@ static int db_is_locked(void* /*data*/, int /*retry*/) {
+ }
+ 
+ CK_RV SoftDatabase::init(char *dbPath) {
+-  // Circumvent the sqlite3 reliance on umask to enforce secure permissions
+-  mode_t saved_umask = umask(S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
++  // Create and set file permissions if the DB does not exist.
++  int fd = open(dbPath, O_CREAT, S_IRUSR | S_IWUSR);
++  if(fd == -1) {
++    char warnMsg[1024];
++    snprintf(warnMsg, sizeof(warnMsg), "Could not open the token database. errno=%i. "
++                                       "Probably wrong privileges: %s", errno, dbPath);
++    ERROR_MSG("init", warnMsg);
++    return CKR_TOKEN_NOT_PRESENT;
++  }
++  close(fd);
++
+   // Open the database
+   int result = sqlite3_open(dbPath, &db);
+-  // Restore umask to avoid side effects
+-  (void) umask(saved_umask);
+   if(result) {
+     char warnMsg[1024];
+-    snprintf(warnMsg, sizeof(warnMsg), "Could not open token database. Probably wrong privileges: %s", dbPath);
++    snprintf(warnMsg, sizeof(warnMsg), "Could not open the token database: %s", dbPath);
+     ERROR_MSG("init", warnMsg);
+     return CKR_TOKEN_NOT_PRESENT;
+   }
+diff --git src/lib/tokenhandling.cpp src/lib/tokenhandling.cpp
+index 8857574..ac3d7ed 100644
+--- src/lib/tokenhandling.cpp
++++ src/lib/tokenhandling.cpp
+@@ -40,6 +40,9 @@
+ #include <sqlite3.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <fcntl.h>
++#include <unistd.h>
++#include <errno.h>
+ 
+ #define EXEC_DB(db, sql) \
+   if(sqlite3_exec(db, sql, NULL, NULL, NULL)) { \
+@@ -99,19 +102,27 @@ CK_RV softInitToken(SoftSlot *currentSlot, CK_UTF8CHAR_PTR pPin, CK_ULONG ulPinL
+     }
+   }
+ 
+-  // Circumvent the sqlite3 reliance on umask to enforce secure permissions
+-  mode_t saved_umask = umask(S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
++  // Create and set file permissions if the DB does not exist.
++  int fd = open(currentSlot->dbPath, O_CREAT, S_IRUSR | S_IWUSR);
++  if(fd == -1) {
++    free(soPIN);
++    char warnMsg[1024];
++    snprintf(warnMsg, sizeof(warnMsg), "Could not open the token database. errno=%i. "
++                                       "Probably wrong privileges: %s", errno, currentSlot->dbPath);
++    DEBUG_MSG("C_InitToken", warnMsg);
++    return CKR_DEVICE_ERROR;
++  }
++  close(fd);
++
+   // Open the database
+   sqlite3 *db = NULL;
+   int result = sqlite3_open(currentSlot->dbPath, &db);
+-  // Restore umask to avoid side effects
+-  (void) umask(saved_umask);
+   if(result){
+     if(db != NULL) {
+       sqlite3_close(db);
+     }
+     free(soPIN);
+-    DEBUG_MSG("C_InitToken", "Could not open the token database file");
++    DEBUG_MSG("C_InitToken", "Could not open the token database");
+     return CKR_DEVICE_ERROR;
+   }
+ 
+-- 
+1.9.1
+

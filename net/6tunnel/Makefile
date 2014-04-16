@@ -2,23 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	6tunnel
-DISTVERSION=	0.11rc2
-PORTREVISION=	2
+DISTVERSION=	0.11rc2.20130525
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://toxygen.net/6tunnel/
+MASTER_SITES=	GH \
+		LOCAL/bdrewery/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	TCP proxy for applications that don't speak IPv6
+MAINTAINER=	bdrewery@FreeBSD.org
+COMMENT=	TCP proxy for applications that do not speak IPv6
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}rc2
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 ALL_TARGET=	default
 
-MAN1=		6tunnel.1
-MANCOMPRESSED=	no
-PLIST_FILES=	bin/6tunnel
+USE_GITHUB=	yes
+GH_ACCOUNT=	wojtekka
+GH_PROJECT=	${PORTNAME}
+GH_COMMIT=	2d33461
+GH_TAGNAME=	${GH_COMMIT}
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/6tunnel \
+		man/man1/6tunnel.1.gz
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
+
 .include <bsd.port.mk>

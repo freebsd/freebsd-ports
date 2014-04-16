@@ -1,5 +1,7 @@
 bin/liferea
 bin/liferea-add-feed
+man/man1/liferea.1.gz
+man/pl/man1/liferea.1.gz
 share/applications/liferea.desktop
 share/liferea/auth.ui
 share/liferea/google_source.ui

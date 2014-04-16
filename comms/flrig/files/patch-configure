@@ -1,0 +1,11 @@
+--- configure.orig	2014-04-08 22:42:56.000000000 -0700
++++ configure	2014-04-08 22:43:21.000000000 -0700
+@@ -7205,7 +7205,7 @@
+           FLTK_LIBS=`$FLTK_CONFIG --ldflags --use-images`
+           if test "x$target_mingw32" != "xyes"; then
+               if test "x$target_darwin" != "xyes"; then
+-                  if grep -q "lX11" <<< "$FLTK_LIBS"; then
++                  if echo "$FLTK_LIBS" | grep -q "lX11"; then
+                       FLTK_LIBS="$FLTK_LIBS";
+                   else
+                       FLTK_LIBS="$FLTK_LIBS -lm -lX11";

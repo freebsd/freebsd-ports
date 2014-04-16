@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTVERSION=	1.5.3
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	LOCAL/swills https://codeload.github.com/mitchellh/vagrant/legacy.tar.gz/v${PORTVERSION}?dummy=/
 
@@ -31,9 +30,9 @@ RUN_DEPENDS=	rubygem-main>=1.0:${PORTSDIR}/devel/rubygem-main \
 		rubygem-rb-kqueue>=0.2.2:${PORTSDIR}/devel/rubygem-rb-kqueue \
 		rubygem-wdm>=0.1.0:${PORTSDIR}/devel/rubygem-wdm
 
-WRKSRC=		${WRKDIR}/mitchellh-vagrant-6977e93
+WRKSRC=		${WRKDIR}/mitchellh-vagrant-8c05b08
 USE_RUBY=	yes
-GEMFILES=	vagrant-1.5.1.gem
+GEMFILES=	vagrant-${PORTVERSION}.gem
 RUBYGEMBIN=	gem${RUBY_SUFFIX}
 PLIST_SUB+=	GEMS_DIR="lib/ruby/gems/${RUBY_VER}/" \
 		GEM_BASE_DIR="lib/ruby/gems/${RUBY_VER}/gems" \
@@ -45,7 +44,6 @@ GEM_ENV+=	RB_USER_INSTALL=yes
 
 post-patch:
 	@${RM} ${WRKSRC}/bin/vagrant.orig
-	@${RM} ${WRKSRC}/vagrant.gemspec.orig
 
 do-build:
 	@(cd ${WRKSRC}; (${ECHO_CMD} -e "install:\n\techo\n") > Makefile)

@@ -3,6 +3,7 @@
 
 PORTNAME=	sn
 PORTVERSION=	0.3.8
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	http://www.infa.abo.fi/~patrik/sn/files/ \
 		http://home.arcor.de/teambushido/fbsd_ports/ \
@@ -13,13 +14,16 @@ COMMENT=	Small news system for small sites serving
 
 LICENSE=	GPLv2
 
-USES=		gmake
-USE_BZIP2=	yes
-MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}" LD="${CC}" CC="${CC}"
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+USES=		gmake tar:bzip2
+MAKE_ARGS+=	PREFIX="${PREFIX}" LD="${CC}" CC="${CC}"
 
 PORTDOCS=	README CHANGES FAQ INSTALL INTERNALS \
 		THANKS TODO INSTALL.notes INSTALL.notes2 \
 		INSTALL.run INSTALL.upgrade
+
+INSTALL_TARGET=	strip install
 
 OPTIONS_DEFINE=	DOCS
 
@@ -27,10 +31,12 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	${REINPLACE_CMD} -e 's|sn\.a$$|& lib/libstuff.a| ; \
 		s|snlockf\.o$$|& lib/libstuff.a| ; \
-		s|-g -Wall -pedantic -O|${CFLAGS} -Wall -pedantic|' \
+		s|-g -Wall -pedantic -O|${CFLAGS} -Wall -pedantic| ; \
+		s|strip |${STRIP_CMD} | ; \
+		s|/bin/bash|${LOCALBASE}/bin/bash|' \
 			${WRKSRC}/Makefile
 
-pre-su-install:
+pre-install:
 	@${MKDIR} ${STAGEDIR}/var/spool/news
 
 post-install:

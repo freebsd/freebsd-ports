@@ -1,6 +1,0 @@
-LaBrea takes over unused IP addresses, and creates virtual servers that
-are attractive to worms, hackers, and other denizens of the Internet.
-The program answers connection attempts in such a way that the machine
-at the other end gets "stuck", sometimes for a very long time. 
-
-WWW: http://www.hackbusters.net

@@ -6,7 +6,7 @@ PORTVERSION=	20060917
 CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://t3x.org/files/
 
-MAINTAINER=	nmh@t3x.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interpreter for purely symbolic LISP
 
 MAN7=		alisp.7

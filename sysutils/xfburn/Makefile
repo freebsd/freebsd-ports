@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfburn
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -17,11 +17,10 @@ LIB_DEPENDS=	libburn.so:${PORTSDIR}/devel/libburn \
 		libisofs.so:${PORTSDIR}/devel/libisofs
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool intlhack glib20 gtk20
 USE_XFCE=	configenv libexo libmenu
-USES=		pkgconfig gmake desktop-file-utils
+USES=		pkgconfig gmake desktop-file-utils tar:bzip2
 INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS=--disable-gudev

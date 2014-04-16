@@ -12,6 +12,7 @@ DIST_SUBDIR=	openxpki
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl based enterprise class trustcenter software for PKI
 
+BROKEN=		not staged
 BUILD_DEPENDS=	\
 	p5-openxpki-client>=0:${PORTSDIR}/security/p5-openxpki-client \
 	p5-Config-Std>=0:${PORTSDIR}/devel/p5-Config-Std \

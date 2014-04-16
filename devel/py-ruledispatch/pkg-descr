@@ -1,3 +1,6 @@
-Rule-based Dispatching and Generic Functions
+RuleDispatch is a prototype implementation of the Chambers and Chen
+"efficient multiple and predicate dispatch" algorithm for Python.
+It lets youspecify a function in terms of a collection of arbitrary
+rules, including Lisp-style "before/after/around" methods.
 
-Author:	Phillip J. Eby <peak@eby-sarna.com>
+WWW: http://peak.telecommunity.com/

@@ -9,14 +9,14 @@ MASTER_SITES=	http://ircii.warped.com/
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	The 'Internet Relay Chat' and 'Internet Citizens Band' Client
 
+LICENSE=	BSD3CLAUSE
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc
+USE_AUTOTOOLS=	autoconf213 autoheader213
 
-USE_BZIP2=	yes
-
-MAN1=		irc.1 ircII.1 ircbug.1
+USES=		tar:bzip2
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

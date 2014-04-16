@@ -32,19 +32,6 @@ CONFIGURE_ENV=	JAVA="${JAVA}" JAVAC="${JAVAC}"
 CONFIGURE_ENV+=	JAVACFLAGS="${JAVACFLAGS}"
 MAKE_ENV+=	JAVACFLAGS="${JAVACFLAGS}"
 
-MAN1=		gappletviewer.1 \
-		gcjh.1 \
-		gjar.1 \
-		gjarsigner.1 \
-		gjavah.1 \
-		gkeytool.1 \
-		gnative2ascii.1 \
-		gorbd.1 \
-		grmid.1 \
-		grmiregistry.1 \
-		gserialver.1 \
-		gtnameserv.1
-
 INFO=		cp-hacking cp-tools cp-vmintegration
 
 CONFLICTS=	sablevm-classpath-1.13 sablevm-classpath-1.13_[1-9]
@@ -58,7 +45,6 @@ GMP_DESC=	Enable native java.math.BigInteger
 GTK2_DESC=	Enable Gtk+ AWT peer
 QT4_DESC=	Enable Qt AWT peer
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MECJ}
@@ -91,7 +77,6 @@ PLIST_SUB+=		GCONF="@comment "
 ANTLR_JAR=		antlr-2.7.7.jar
 MASTER_SITES+=		http://www.antlr2.org/download/:antlr
 DISTFILES+=		${ANTLR_JAR}:antlr
-MAN1+=			gjdoc.1
 CONFIGURE_ARGS+=	--with-antlr-jar=${DISTDIR}/${ANTLR_JAR}
 PLIST_SUB+=		GJDOC=""
 .else
@@ -100,7 +85,7 @@ PLIST_SUB+=		GJDOC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=		gmp:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=		libgmp.so:${PORTSDIR}/math/gmp
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 PLIST_SUB+=		GMP=""
 .else

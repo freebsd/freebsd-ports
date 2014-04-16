@@ -1,12 +1,11 @@
-# Created by: kevlo@FreeBSD.org
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libextractor
 PORTVERSION=	0.6.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Library for keyword extraction
@@ -64,7 +63,7 @@ BROKEN=	does not package
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	exiv2.12:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 PLIST_SUB+=	EXIV2=""
 .else
 PLIST_SUB+=	EXIV2="@comment "

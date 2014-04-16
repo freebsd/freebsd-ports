@@ -1,0 +1,63 @@
+--- Makefile.in.orig	2004-08-15 16:35:04.000000000 +0200
++++ Makefile.in	2014-04-11 20:36:37.000000000 +0200
+@@ -19,7 +19,7 @@
+ exec_prefix = @exec_prefix@
+ SYSCONFDIR = @sysconfdir@/stonx
+ STONXDIR=@datadir@/stonx
+-INSTBIN=@bindir@
++INSTBIN=${DESTDIR}@bindir@
+ DISTDIR=STonX-@version@
+ 
+ 
+@@ -199,32 +199,32 @@
+ 
+ install:
+ 	install -d -m 755 $(INSTBIN)
+-	install -d -m 755 $(SYSCONFDIR)
+-	install -d -m 755 $(STONXDIR)
+-	install -d -m 755 $(STONXDIR)/gemdos_c
+-	install -d -m 755 $(STONXDIR)/gemdos_c/mint
++	install -d -m 755 ${DESTDIR}$(SYSCONFDIR)
++	install -d -m 755 ${DESTDIR}$(STONXDIR)
++	install -d -m 755 ${DESTDIR}$(STONXDIR)/gemdos_c
++	install -d -m 755 ${DESTDIR}$(STONXDIR)/gemdos_c/mint
+ 	install -c -s stonx $(INSTBIN)/stonx
+ 	@if test -f stonvga ; then \
+ 	  install -c -s -m 755 stonvga $(INSTBIN)/stonvga; \
+ 	fi  
+-	install -c -m 0644 cartridge/cartridge.img $(STONXDIR)/cartridge.img
+-	install -c -m 0644 mint/atari/stonx.xfs $(STONXDIR)/gemdos_c/mint/stonx.xfs
+-	install -c -m 0644 atari/bench1.prg $(STONXDIR)/gemdos_c/bench1.prg
+-	install -c -m 0644 atari/final.tos $(STONXDIR)/gemdos_c/final.tos
+-	install -c -m 0644 etc/keysyms $(SYSCONFDIR)/keysyms
+-	@if test -f $(SYSCONFDIR)/stonxrc; then \
+-	echo "$(SYSCONFDIR)/stonxrc already exists: Not creating a new one!" >&2; \
++	install -c -m 0644 cartridge/cartridge.img ${DESTDIR}$(STONXDIR)/cartridge.img
++	install -c -m 0644 mint/atari/stonx.xfs ${DESTDIR}$(STONXDIR)/gemdos_c/mint/stonx.xfs
++	install -c -m 0644 atari/bench1.prg ${DESTDIR}$(STONXDIR)/gemdos_c/bench1.prg
++	install -c -m 0644 atari/final.tos ${DESTDIR}$(STONXDIR)/gemdos_c/final.tos
++	install -c -m 0644 etc/keysyms ${DESTDIR}$(SYSCONFDIR)/keysyms
++	@if test -f ${DESTDIR}$(SYSCONFDIR)/stonxrc; then \
++	echo "${DESTDIR}$(SYSCONFDIR)/stonxrc already exists: Not creating a new one!" >&2; \
+ 	else \
+-	echo "Creating $(SYSCONFDIR)/stonxrc" >&2; \
+-	echo "cartridge $(STONXDIR)/cartridge.img" > $(SYSCONFDIR)/stonxrc ; \
+-	echo "tos $(STONXDIR)/tos.img" >> $(SYSCONFDIR)/stonxrc ; \
+-	echo "fs C:$(STONXDIR)/gemdos_c" >> $(SYSCONFDIR)/stonxrc ; \
+-	echo "vbl 2 refresh 2 chunky" >> $(SYSCONFDIR)/stonxrc ; \
+-	echo "boot c" >> $(SYSCONFDIR)/stonxrc ; \
++	echo "Creating ${DESTDIR}$(SYSCONFDIR)/stonxrc" >&2; \
++	echo "cartridge $(STONXDIR)/cartridge.img" > ${DESTDIR}$(SYSCONFDIR)/stonxrc ; \
++	echo "tos $(STONXDIR)/tos.img" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc ; \
++	echo "fs C:$(STONXDIR)/gemdos_c" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc ; \
++	echo "vbl 2 refresh 2 chunky" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc ; \
++	echo "boot c" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc ; \
+ 	fi
+ 	@if test -f data/tos.img ; then \
+-	  echo "install -c -m 0644  data/tos.img" $(STONXDIR)/tos.img ; \
+-	  install -c -m 0644  data/tos.img $(STONXDIR)/tos.img ; \
++	  echo "install -c -m 0644  data/tos.img" ${DESTDIR}$(STONXDIR)/tos.img ; \
++	  install -c -m 0644  data/tos.img ${DESTDIR}$(STONXDIR)/tos.img ; \
+ 	else \
+ 	  echo "To complete installation you should copy a tos.img to:" ; \
+ 	  echo "  " $(STONXDIR) ; \

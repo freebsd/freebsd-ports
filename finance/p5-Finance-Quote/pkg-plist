@@ -55,6 +55,7 @@
 %%SITE_PERL%%/Finance/Quote/Yahoo/USA.pm
 %%SITE_PERL%%/Finance/Quote/YahooJSON.pm
 %%SITE_PERL%%/Finance/Quote/ZA.pm
+%%SITE_PERL%%/Finance/Quote/za_unittrusts.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote/.packlist
 %%PERL5_MAN3%%/Finance::Quote.3.gz
 %%PERL5_MAN3%%/Finance::Quote::AEX.3.gz
@@ -109,6 +110,7 @@
 %%PERL5_MAN3%%/Finance::Quote::Yahoo::USA.3.gz
 %%PERL5_MAN3%%/Finance::Quote::YahooJSON.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ZA.3.gz
+%%PERL5_MAN3%%/Finance::Quote::za_unittrusts.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
 @dirrm %%SITE_PERL%%/Finance/Quote/Yahoo

@@ -3,6 +3,7 @@
 
 PORTNAME=	asunder
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -18,49 +19,25 @@ RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:${PORTSDIR}/audio/cdparanoia
 OPTIONS_DEFINE=	LAME OGG FLAC OPUS WAVPACK APE WINDOWS_CHARS NLS DOCS
 OPUS_DESC=	OPUS support
 OPTIONS_DEFAULT=	LAME OGG FLAC
+OPTIONS_SUB=	yes
 
 WINDOWS_CHARS_DESC=	Allow Windows special chars in filenames
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake desktop-file-utils pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
+LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
+OGG_RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
+FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
+OPUS_RUN_DEPENDS=	opusenc:${PORTSDIR}/audio/opus-tools
+WAVPACK_RUN_DEPENDS=	wavpack:${PORTSDIR}/audio/wavpack
+APE_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
+NLS_CONFIGURE_ENABLE=	yes
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLAME}
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-
-.if ${PORT_OPTIONS:MOGG}
-RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
-.endif
-
-.if ${PORT_OPTIONS:MOPUS}
-RUN_DEPENDS+=	opusenc:${PORTSDIR}/audio/opus-tools
-.endif
-
-.if ${PORT_OPTIONS:MWAVPACK}
-RUN_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
-.endif
-
-.if ${PORT_OPTIONS:MAPE}
-RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=''
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS='@comment '
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^itlocaledir = .*/itlocaledir = @datarootdir@\/locale/' ${WRKSRC}/po/Makefile.in.in
@@ -70,8 +47,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

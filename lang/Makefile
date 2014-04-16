@@ -4,7 +4,6 @@
     COMMENT = Programming languages
 
     SUBDIR += Gofer
-    SUBDIR += STk
     SUBDIR += Sather
     SUBDIR += abcl
     SUBDIR += adacontrol
@@ -49,7 +48,7 @@
     SUBDIR += cython
     SUBDIR += diveintopython
     SUBDIR += dlv
-    SUBDIR += dmd
+    SUBDIR += dmd1
     SUBDIR += dmd2
     SUBDIR += dragonegg-devel46
     SUBDIR += dragonegg46-33
@@ -62,11 +61,11 @@
     SUBDIR += erlang
     SUBDIR += erlang-runtime15
     SUBDIR += erlang-runtime16
+    SUBDIR += erlang-runtime17
     SUBDIR += execline
     SUBDIR += expect
     SUBDIR += ezm3
     SUBDIR += f2c
-    SUBDIR += f77
     SUBDIR += fasm
     SUBDIR += ferite
     SUBDIR += ficl
@@ -133,7 +132,6 @@
     SUBDIR += js_of_ocaml
     SUBDIR += jython
     SUBDIR += kawa
-    SUBDIR += klone
     SUBDIR += kroc
     SUBDIR += kturtle
     SUBDIR += lafontaine
@@ -273,6 +271,7 @@
     SUBDIR += python31
     SUBDIR += python32
     SUBDIR += python33
+    SUBDIR += python34
     SUBDIR += qore
     SUBDIR += qscheme
     SUBDIR += qt5-qml
@@ -339,7 +338,6 @@
     SUBDIR += tcl85
     SUBDIR += tcl86
     SUBDIR += tclX
-    SUBDIR += tcltutor
     SUBDIR += tinypy
     SUBDIR += tolua
     SUBDIR += tolua++

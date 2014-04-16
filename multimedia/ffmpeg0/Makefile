@@ -21,7 +21,6 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils \
 		${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html
 
-CONFLICTS=	libav-[0-9]*
 PORTSCOUT=	limit:^0\.7.*
 
 HAS_CONFIGURE=	yes

@@ -1,5 +1,6 @@
 bin/virt-manager
 libexec/virt-manager-launch
+man/man1/virt-manager.1.gz
 share/applications/virt-manager.desktop
 share/dbus-1/services/virt-manager.service
 share/icons/hicolor/16x16/apps/virt-manager.png

@@ -1,12 +1,16 @@
 @unexec rm -f %D/etc/rc.d/rplayd.sh*
-@unexec if cmp %D/etc/rplay.hosts.sample %D/etc/rplay.hosts 2>/dev/null; then rm -f %D/etc/rplay.hosts; fi
+@unexec if cmp -s %D/etc/rplay.hosts.sample %D/etc/rplay.hosts 2>/dev/null; then rm -f %D/etc/rplay.hosts; fi
 etc/rplay.hosts.sample
-@unexec if cmp %D/etc/rplay.conf.sample %D/etc/rplay.conf 2>/dev/null; then rm -f %D/etc/rplay.conf; fi
+@exec if [ ! -f %D/etc/rplay.hosts ]; then cp -p %D/%F %D/etc/rplay.hosts; fi
+@unexec if cmp -s %D/etc/rplay.conf.sample %D/etc/rplay.conf 2>/dev/null; then rm -f %D/etc/rplay.conf; fi
 etc/rplay.conf.sample
-@unexec if cmp %D/etc/rplay.helpers.sample %D/etc/rplay.helpers 2>/dev/null; then rm -f %D/etc/rplay.helpers; fi
+@exec if [ ! -f %D/etc/rplay.conf ]; then cp -p %D/%F %D/etc/rplay.conf; fi
+@unexec if cmp -s %D/etc/rplay.helpers.sample %D/etc/rplay.helpers 2>/dev/null; then rm -f %D/etc/rplay.helpers; fi
 etc/rplay.helpers.sample
-@unexec if cmp %D/etc/rplay.servers.sample %D/etc/rplay.servers 2>/dev/null; then rm -f %D/etc/rplay.servers; fi
+@exec if [ ! -f %D/etc/rplay.helpers ]; then cp -p %D/%F %D/etc/rplay.helpers; fi
+@unexec if cmp -s %D/etc/rplay.servers.sample %D/etc/rplay.servers 2>/dev/null; then rm -f %D/etc/rplay.servers; fi
 etc/rplay.servers.sample
+@exec if [ ! -f %D/etc/rplay.servers ]; then cp -p %D/%F %D/etc/rplay.servers; fi
 bin/rplay
 bin/rptp
 sbin/rplayd
@@ -14,3 +18,10 @@ include/rplay.h
 lib/librplay.a
 lib/librplay.so
 lib/librplay.so.1
+man/man1/rplay.1.gz
+man/man1/rptp.1.gz
+man/man5/rplay.conf.5.gz
+man/man5/rplay.helpers.5.gz
+man/man5/rplay.hosts.5.gz
+man/man5/rplay.servers.5.gz
+man/man8/rplayd.8.gz

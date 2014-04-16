@@ -4,10 +4,9 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.6.5
-PORTREVISION=	3
+DISTVERSION=	1.8
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.6/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.8/downloads/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
@@ -18,9 +17,8 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 CONFLICTS=	openmpi-devel-1.7.*
 
-USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-USES=		fortran gmake pkgconfig
+USES=		fortran gmake pkgconfig tar:bzip2
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}
@@ -64,8 +62,6 @@ SLURM_CONFIGURE_WITH=	slurm
 SLURM_LIB_DEPENDS=	libslurm.so:${PORTSDIR}/sysutils/slurm-hpc
 SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_ess_slurm.so \
-			${MPIDIR}/lib/openmpi/mca_ess_slurmd.la \
-			${MPIDIR}/lib/openmpi/mca_ess_slurmd.so \
 			${MPIDIR}/lib/openmpi/mca_plm_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_plm_slurm.so \
 			${MPIDIR}/lib/openmpi/mca_ras_slurm.la \

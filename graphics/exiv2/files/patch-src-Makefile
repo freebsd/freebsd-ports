@@ -1,11 +1,11 @@
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -249,7 +249,7 @@
- 	@$(LIBTOOL) --mode=link $(LINK.cc) -o $@ $(LIBRARY) $@.o -rpath $(libdir)
+@@ -231,7 +231,7 @@ lib: $(OBJ)
  
  $(EXIV2BIN): lib $(EXIV2OBJ) $(EXIV2COBJ)
+ 	-mkdir ../bin >/dev/null 2>&1
 -	@$(LIBTOOL) --mode=link $(LINK.cc) -o $@ $(LIBRARY) $(EXIV2OBJ) $(EXIV2COBJ) -rpath $(libdir)
 +	@$(LIBTOOL) --mode=link $(LINK.cc) -o $@ $(LIBRARY) $(EXIV2OBJ) $(EXIV2COBJ) -rpath $(libdir) $(LIBS)
  
- $(MCBIN): lib $(MCOBJ)
- 	@$(LIBTOOL) --mode=link $(LINK.cc) -o $@ $(LIBRARY) $(MCOBJ) -rpath $(libdir)
+ install-header:
+ 	$(INSTALL_DIRS) $(DESTDIR)$(incdir)

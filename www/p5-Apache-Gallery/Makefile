@@ -15,6 +15,7 @@ COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
 LICENSE=	ART10
 
+BROKEN=		not staged
 BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
 		p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info \

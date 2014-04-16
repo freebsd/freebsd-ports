@@ -11,7 +11,7 @@ EXTRACT_SUFX=	# none
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A binary data dumper module for Ruby
+COMMENT=	Binary data dumper module for Ruby
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
@@ -23,8 +23,8 @@ EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# none
 EXTRACT_AFTER_ARGS=	.
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} ${RUBY_SITELIBDIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -1,0 +1,15 @@
+--- Makefile.orig	2014-04-11 23:48:26.646982600 +0200
++++ Makefile	2014-04-11 23:49:46.629977600 +0200
+@@ -1,9 +1,9 @@
+ # Compiler/Linker/dynamic linker
+-CC = gcc
+-LD = gcc
++CC ?= gcc
++LD = $(CC)
+ 
+ # flags to compile object files that can be used in a dynamic library
+-CFLAGS = -fPIC -Wall -g -c -O2 -fno-strict-aliasing -pipe -Wall -std=c99 -D'CSOCKS_CONF="/usr/local/etc/csocks.conf"'
++CFLAGS += -fPIC -c -std=c99 -D'CSOCKS_CONF="$(PREFIX)/etc/csocks.conf"'
+ # on some platforms, use '-fpic' instead.
+ 
+ # Flags to create a dynamic library.

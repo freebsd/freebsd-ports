@@ -71,12 +71,9 @@ OPTIONS_DEFAULT+=	ICU PCRE_PORT THREADS
 .if !defined(LIBR_SLAVEPORT)
 RUN_DEPENDS+=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
-NO_STAGE=	yes
 #now only used to build the R.1 manpage:
 USES+=			perl5
 USE_PERL5=		build
-
-MAN1=			R.1 Rscript.1
 
 OPTIONS_DEFINE+=	GHOSTSCRIPT INFO_MANUALS JPEG LETTER_PAPER LIBR \
 			PANGOCAIRO PDF_MANUALS PNG TCLTK TIFF X11
@@ -351,8 +348,8 @@ do-build:
 	${MAKE_ARGS} Makefile Makedeps libR.a)
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/R/lib
-	@${INSTALL_DATA} ${WRKSRC}/src/main/libR.a ${PREFIX}/lib/R/lib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/R/lib
+	@${INSTALL_LIB} ${WRKSRC}/src/main/libR.a ${STAGEDIR}${PREFIX}/lib/R/lib
 
 .else # LIBR_SLAVEPORT
 
@@ -371,25 +368,24 @@ check-all: build
 
 post-install:
 .for L in R Rblas Rlapack
-	@(cd ${PREFIX}/lib/R/lib; if [ -f lib${L}.so ] ; then \
+	@(cd ${STAGEDIR}${PREFIX}/lib/R/lib; if [ -f lib${L}.so ] ; then \
 	${LN} -sf lib${L}.so lib${L}.so.${${L:U}_SOVERSION} ; fi)
 .endfor
 .if ${PORT_OPTIONS:MINFO_MANUALS} && ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/doc/manual; \
 	for infofile in ${INFO}; do \
-		${INSTALL_DATA} $${infofile}.info* ${PREFIX}/${INFO_PATH}/; \
+		${INSTALL_DATA} $${infofile}.info* ${STAGEDIR}${PREFIX}/${INFO_PATH}/; \
 	done)
 .endif
 
 .endif # LIBR_SLAVEPORT
 .else # !LIBRMATH_SLAVEPORT
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${PREFIX}/include
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.a ${PREFIX}/lib
-	@${STRIP_CMD} ${BUILD_WRKSRC}/libRmath.so
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.so \
-	${PREFIX}/lib/libRmath.so.${RMATH_SOVERSION}
-	@(cd ${PREFIX}/lib; ${LN} -sf libRmath.so.${RMATH_SOVERSION} libRmath.so)
+	@${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${STAGEDIR}${PREFIX}/include
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.a ${STAGEDIR}${PREFIX}/lib
+	@${INSTALL_LIB} ${BUILD_WRKSRC}/libRmath.so \
+	${STAGEDIR}${PREFIX}/lib/libRmath.so.${RMATH_SOVERSION}
+	@(cd ${STAGEDIR}${PREFIX}/lib; ${LN} -sf libRmath.so.${RMATH_SOVERSION} libRmath.so)
 
 check regression-test test: build
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} LANGUAGE=en \

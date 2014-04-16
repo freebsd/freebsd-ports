@@ -11,25 +11,22 @@ DISTNAME=	gltext-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable font rendering library for C++
 
-BROKEN=		Fails to install
-
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	libtool
+USES=		gmake
 USE_GL=		glu
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	EXAMPLES
 EXAMPLES_DESC=	Compile examples, need libglut
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-USE_GL=	glut
+USE_GL+=	glut
+USE_XORG=	xmu
 FLAG_EXAMPLES=	true
 PLIST_SUB+=	EXAMPLES=""
 .else
@@ -38,30 +35,30 @@ PLIST_SUB+=	EXAMPLES="@comment "
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/${PORTNAME}-${PORTVERSION}.so \
-		${PREFIX}/lib/${PORTNAME}.so.0
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.0
 	${INSTALL_DATA} ${WRKSRC}/src/.libs/${PORTNAME}.a \
-		${PREFIX}/lib
+		${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.la \
-		${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/src/gltext.h ${PREFIX}/include
+		${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/src/gltext.h ${STAGEDIR}${PREFIX}/include
 
-	@cd ${PREFIX}/lib && \
+	@cd ${STAGEDIR}${PREFIX}/lib && \
 		${LN} -s ${PORTNAME}.so.0 ${PORTNAME}.so
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/tutorial.txt ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/tutorial.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .if defined(FLAG_EXAMPLES)
 .for DIRE in alpha fps simple sizes
-	@${MKDIR} ${EXAMPLESDIR}/${DIRE}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${DIRE}
 	@cd ${WRKSRC}/examples && \
-		${INSTALL_DATA} ${DIRE}/${DIRE} ${DIRE}/${DIRE}.cpp ${EXAMPLESDIR}/${DIRE}
+		${INSTALL_DATA} ${DIRE}/${DIRE} ${DIRE}/${DIRE}.cpp ${STAGEDIR}${EXAMPLESDIR}/${DIRE}
 .endfor
 	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"		Examples source and binary on ${EXAMPLESDIR}"
+	@${ECHO_MSG}	"		Examples source and binary on ${STAGEDIR}${EXAMPLESDIR}"
 	@${ECHO_MSG}	""
 .endif
 

@@ -124,10 +124,7 @@ post-patch:
 	/[^\]$$/s/[^[:blank:]]*fftw-wisdom-to-conf[^[:blank:]]*//' \
 		${WRKSRC}/tools/Makefile.in
 .endif
-
-post-patch-script:
-	@${FIND} ${WRKSRC} -type f \( -name \*.bak -or -name \*.orig \) \
-	-exec ${RM} -f {} \;
+	@${FIND} ${WRKSRC} -type f \( -name \*.bak -or -name \*.orig \) -delete
 
 post-configure:
 #After issuing --disable-fortran in order to avoid using a Fortran compiler

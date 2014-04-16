@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	# http://www.t3x.org/files/
 DISTNAME=	tide-${PORTVERSION:S/.//g}
 
-MAINTAINER=	nmh@t3x.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of classes for the T3X language
 
 LICENSE=	BSD

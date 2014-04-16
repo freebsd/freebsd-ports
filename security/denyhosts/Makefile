@@ -3,7 +3,7 @@
 
 PORTNAME=	denyhosts
 PORTVERSION=	2.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	DenyHosts-${PORTVERSION}
@@ -11,9 +11,19 @@ DISTNAME=	DenyHosts-${PORTVERSION}
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Script to thwart ssh attacks
 
+LICENSE=	GPLv2
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	DenyHosts
+PYDISTUTILS_AUTOPLIST=	yes
+
+USES=		shebangfix
+env_OLD_CMD=	/bin/env
+env_CMD=	${SETENV}
+SHEBANG_LANG=	python env
+SHEBANG_FILES=	plugins/test_deny.py \
+		scripts/restricted_from_invalid.py \
+		scripts/restricted_from_passwd.py
 
 USE_RC_SUBR=	denyhosts
 SUB_LIST+=	PYTHON=${PYTHON_CMD}
@@ -21,24 +31,20 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	CHANGELOG.txt LICENSE.txt README.txt
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/daemon-control-dist \
 		${WRKSRC}/denyhosts.cfg-dist \
 		${WRKSRC}/setup.py
-	@${RM} ${WRKSRC}/scripts/restricted_from_passwd.py.orig
+
+pre-install:
+	@${FIND} ${WRKSRC} -type f \( -name \*.bak -o -name \*.orig \) -delete
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist ${PREFIX}/etc/denyhosts.conf-dist
-	[ -f ${PREFIX}/etc/denyhosts.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist ${PREFIX}/etc/denyhosts.conf
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-. for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-. endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist \
+		${STAGEDIR}${PREFIX}/etc/denyhosts.conf-dist
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sg3_utils
-PORTVERSION=	1.37
+PORTVERSION=	1.38
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 EXTRACT_SUFX=	.tgz

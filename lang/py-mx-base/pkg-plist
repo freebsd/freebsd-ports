@@ -29,6 +29,9 @@
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/__init__.pyo
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/btr.h
+%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/calc-sectorsize.py
+%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/calc-sectorsize.pyc
+%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/calc-sectorsize.pyo
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/mxBeeBase.h
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/mxBeeBase.so
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/mxh.h

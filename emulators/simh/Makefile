@@ -27,7 +27,8 @@ PORTDOCS=	0readme_${PORTVERSION:R:S/.//}.txt 0readme_ethernet.txt
 PLIST_FILES=	${BIN_FILES:S/^/bin\//g} bin/simh-eclipse %%DATADIR%%/ka655x.bin
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN
 
@@ -40,19 +41,14 @@ post-patch:
 		's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/VAX/vax_sysdev.c
 
 do-install:
-.for file in ${BIN_FILES}
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/${file} ${PREFIX}/bin
-.endfor
+	(cd ${WRKDIR}/BIN && ${INSTALL_PROGRAM} ${BIN_FILES} \
+		${STAGEDIR}${PREFIX}/bin)
 # eclipse conflicts with java/eclipse, install it as simh-eclipse
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/eclipse ${PREFIX}/bin/simh-eclipse
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/VAX/ka655x.bin ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/${file} ${DOCSDIR}
-.endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKDIR}/BIN/eclipse \
+		${STAGEDIR}${PREFIX}/bin/simh-eclipse
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/VAX/ka655x.bin ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

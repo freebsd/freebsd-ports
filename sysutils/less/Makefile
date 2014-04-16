@@ -5,7 +5,7 @@ PORTNAME=	less
 PORTVERSION=	458
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.greenwoodsoftware.com/%SUBDIR%/ \
-		${MASTER_SITE_GNU}
+	http://bitrote.org/distfiles/
 MASTER_SITE_SUBDIR=	less
 
 MAINTAINER=	jharris@widomaker.com

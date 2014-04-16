@@ -3,5 +3,7 @@ lib/libident.a
 lib/libident.la
 lib/libident.so
 lib/libident.so.0
+lib/libident.so.0.0.0
+man/man3/ident.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

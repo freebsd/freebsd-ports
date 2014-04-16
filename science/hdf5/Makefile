@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current16/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/ \
 		LOCAL/chinsan
 
-MAINTAINER=	koziol@hdfgroup.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
 CONFLICTS=	hdf5-1.8.*

@@ -7,8 +7,11 @@ CATEGORIES=	www perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Servlet API for Perl
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}

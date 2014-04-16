@@ -1,9 +1,5 @@
-man/man1/xmp.1.gz
-@unexec if cmp -s %D/%%ETCDIR%%/xmp.conf %D/%%ETCDIR%%/xmp.conf.sample; then rm -f %D/%%ETCDIR%%/xmp.conf; fi
-%%ETCDIR%%/xmp.conf.sample
-@exec [ -f %B/xmp.conf ] || cp %B/%f %B/xmp.conf
 bin/xmp
-@unexec if cmp -s %D/%%ETCDIR%%/modules.conf %D/%%ETCDIR%%/modules.conf.sample; then rm -f %D/%%ETCDIR%%/modules.conf; fi
-%%ETCDIR%%/modules.conf.sample
-@exec [ -f %B/modules.conf ] || cp %B/%f %B/modules.conf
+man/man1/xmp.1.gz
+@sample %%ETCDIR%%/xmp.conf.sample
+@sample %%ETCDIR%%/modules.conf.sample
 @dirrmtry %%ETCDIR%%

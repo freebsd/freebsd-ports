@@ -48,6 +48,7 @@ share/augeas/lenses/libvirtd.aug
 share/augeas/lenses/virtlockd.aug
 %%QEMU%%share/augeas/lenses/libvirtd_qemu.aug
 share/augeas/lenses/tests/test_libvirtd.aug
+share/augeas/lenses/tests/test_virtlockd.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirtd_qemu.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/32favicon.png
 %%DOCSDIR%%%%PORTVERSION%%/html/404.html
@@ -159,6 +160,9 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/uri.html
 %%DOCSDIR%%%%PORTVERSION%%/html/virshcmdref.html
 %%DOCSDIR%%%%PORTVERSION%%/html/windows.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvbhyve.html
+%%DOCSDIR%%%%PORTVERSION%%/html/governance.html
+%%DOCSDIR%%%%PORTVERSION%%/html/internals/oomtesting.html
 share/gtk-doc/html/libvirt/general.html
 share/gtk-doc/html/libvirt/home.png
 share/gtk-doc/html/libvirt/index.html
@@ -266,6 +270,8 @@ share/gtk-doc/html/libvirt/up.png
 %%NLS%%share/locale/zu/LC_MESSAGES/libvirt.mo
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.so
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.la
+%%BHYVE%%lib/libvirt/connection-driver/libvirt_driver_bhyve.la
+%%BHYVE%%lib/libvirt/connection-driver/libvirt_driver_bhyve.so
 lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_secret.la
 lib/libvirt/connection-driver/libvirt_driver_storage.so

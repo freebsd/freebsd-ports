@@ -3,6 +3,7 @@
 
 PORTNAME=	Wx-Perl-ProcessStream
 PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +14,8 @@ COMMENT=	Perl5 module to access IO of external processes via events
 BUILD_DEPENDS=	p5-Wx>=0.50:${PORTSDIR}/x11-toolkits/p5-Wx
 RUN_DEPENDS=	p5-Wx>=0.50:${PORTSDIR}/x11-toolkits/p5-Wx
 
-USE_WX=		2.6+
-WX_COMPS=	wx contrib
+USE_WX=		3.0
+WX_COMPS=	wx
 WX_UNICODE=	yes
 USES=		perl5
 USE_PERL5=	configure

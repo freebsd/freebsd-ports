@@ -3,6 +3,7 @@
 
 PORTNAME=	moodle
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable26/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
@@ -61,7 +62,7 @@ MOODLEDATADIR?=	moodledata
 pre-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
 	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
-	@${ECHO_CMD} "@mode 755" >> ${TMPPLIST}
+	@${ECHO_CMD} "@mode 755" >> ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >>${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${MOODLEDIR}?g" >> ${PLIST}
 	@${ECHO} @dirrm ${MOODLEDATADIR} >> ${PLIST}

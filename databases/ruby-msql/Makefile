@@ -15,6 +15,8 @@ COMMENT=	Ruby API for mSQL
 
 LIB_DEPENDS=	libmsql.so:${PORTSDIR}/databases/msql
 
+BROKEN=		not staged
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

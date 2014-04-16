@@ -51,6 +51,393 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="abad20bf-c1b4-11e3-a5ac-001b21614864">
+    <topic>OpenLDAP -- incorrect handling of NULL in certificate Common Name</topic>
+    <affects>
+      <package>
+	<name>openldap24-client</name>
+	<name>linux-f10-openldap</name>
+	<range><lt>2.4.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jan Lieskovsky reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2009-3767">
+	  <p>OpenLDAP does not properly handle a '\0' character in a domain name
+	    in the subject's Common Name (CN) field of an X.509 certificate,
+	    which allows man-in-the-middle attackers to spoof arbitrary SSL
+	    servers via a crafted certificate issued by a legitimate
+	    Certification Authority</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-3767</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2009-3767</url>
+    </references>
+    <dates>
+      <discovery>2009-08-07</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9aecb94c-c1ad-11e3-a5ac-001b21614864">
+    <topic>cURL -- inappropriate GSSAPI delegation</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<name>linux-f10-curl</name>
+	<range><ge>7.10.6</ge><le>7.21.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20110623.html">
+	  <p>When doing GSSAPI authentication, libcurl unconditionally performs
+	    credential delegation. This hands the server a copy of the client's
+	    security credentials, allowing the server to impersonate the client
+	    to any other using the same GSSAPI mechanism.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2192</cvename>
+      <url>http://curl.haxx.se/docs/adv_20110623.html</url>
+    </references>
+    <dates>
+      <discovery>2011-06-23</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="77bb0541-c1aa-11e3-a5ac-001b21614864">
+    <topic>dbus-glib -- privledge escalation</topic>
+    <affects>
+      <package>
+	<name>dbus-glib</name>
+	<name>linux-f10-dbus-glib</name>
+	<range><lt>0.100.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sebastian Krahmer reports:</p>
+	<blockquote cite="https://bugs.freedesktop.org/show_bug.cgi?id=60916">
+	  <p>A privilege escalation flaw was found in the way dbus-glib, the
+	    D-Bus add-on library to integrate the standard D-Bus library with
+	    the GLib thread abstraction and main loop, performed filtering of
+	    the message sender (message source subject), when the
+	    NameOwnerChanged signal was received. A local attacker could use
+	    this flaw to escalate their privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0292</cvename>
+      <url>https://bugs.freedesktop.org/show_bug.cgi?id=60916</url>
+    </references>
+    <dates>
+      <discovery>2013-02-15</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bf7912f5-c1a8-11e3-a5ac-001b21614864">
+    <topic>nas -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>nas</name>
+	<name>linux-f10-nas-libs</name>
+	<range><lt>1.9.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hamid Zamani reports:</p>
+	<blockquote cite="http://radscan.com/pipermail/nas/2013-August/001270.html">
+	  <p>multiple security problems (buffer overflows, format string
+	    vulnerabilities and missing input sanitising), which could lead to
+	    the execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4256</cvename>
+      <cvename>CVE-2013-4257</cvename>
+      <cvename>CVE-2013-4258</cvename>
+      <url>http://radscan.com/pipermail/nas/2013-August/001270.html</url>
+    </references>
+    <dates>
+      <discovery>2013-08-07</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="09f47c51-c1a6-11e3-a5ac-001b21614864">
+    <topic>libaudiofile -- heap-based overflow in Microsoft ADPCM compression module</topic>
+    <affects>
+      <package>
+	<name>libaudiofile</name>
+	<name>linux-f10-libaudiofile</name>
+	<range><lt>0.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian reports:</p>
+	<blockquote cite="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=510205">
+	  <p>Heap-based buffer overflow in msadpcm.c in libaudiofile in audiofile
+	    0.2.6 allows context-dependent attackers to cause a denial of service
+	    (application crash) or possibly execute arbitrary code via a crafted
+	    WAV file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0159</cvename>
+      <url>https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=510205</url>
+    </references>
+    <dates>
+      <discovery>2008-12-30</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="972837fc-c304-11e3-8758-00262d5ed8ee">
+    <topic>ChaSen -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>chasen-base</name>
+	<range><lt>2.4.5</lt></range>
+      </package>
+      <package>
+	<name>chasen</name>
+	<range><lt>2.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>JVN iPedia reports:</p>
+	<blockquote cite="http://jvn.jp/en/jp/JVN16901583/index.html">
+	  <p>ChaSen provided by Nara Institute of Science and Technology is a
+	    software for morphologically analyzing Japanese. ChaSen contains an
+	    issue when reading in strings, which may lead to a buffer
+	    overflow.</p>
+	  <p>An arbitrary script may be executed by an attacker with access to
+	    a system that is running a product listed in "Products
+	    Affected."</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4000</cvename>
+      <url>http://jvn.jp/en/jp/JVN16901583/index.html</url>
+    </references>
+    <dates>
+      <discovery>2011-11-08</discovery>
+      <entry>2014-04-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7ccd4def-c1be-11e3-9d09-000c2980a9f3">
+    <topic>OpenSSL -- Local Information Disclosure</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_10</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1g</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>8.3</ge><lt>8.3_15</lt></range>
+	<range><ge>8.4</ge><lt>8.4_8</lt></range>
+	<range><ge>9.1</ge><lt>9.1_11</lt></range>
+	<range><ge>9.2</ge><lt>9.2_4</lt></range>
+	<range><ge>10.0</ge><lt>10.0_1</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL reports:</p>
+	<blockquote cite="https://www.openssl.org/news/vulnerabilities.html#2014-0076">
+	  <p>A flaw in the implementation of Montgomery Ladder Approach would
+	    create a side-channel that leaks sensitive timing information.</p>
+	  <p>A local attacker might be able to snoop a signing process and
+	    might recover the signing key from it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0076</cvename>
+      <freebsdsa>FreeBSD-SA-14:06.openssl</freebsdsa>
+      <url>https://www.openssl.org/news/vulnerabilities.html#2014-0076</url>
+    </references>
+    <dates>
+      <discovery>2014-04-07</discovery>
+      <entry>2014-04-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c0c31b27-bff3-11e3-9d09-000c2980a9f3">
+    <topic>openafs -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>openafs</name>
+	<range><ge>1.4.8</ge><lt>1.6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenAFS development team reports:</p>
+	<blockquote cite="http://openafs.org/security/OPENAFS-SA-2014-001.txt">
+	  <p>An attacker with the ability to connect to an OpenAFS fileserver can
+	    trigger a buffer overflow, crashing the server.</p>
+	  <p>The buffer overflow can be triggered by sending an unauthenticated
+	    request for file server statistical information.</p>
+	  <p>Clients are not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0159</cvename>
+      <url>http://openafs.org/security/OPENAFS-SA-2014-001.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-04-09</discovery>
+      <entry>2014-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="963413a5-bf50-11e3-a2d6-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>34.0.1847.116</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>31 vulnerabilies fixed in this release, including:</p>
+	  <ul>
+	    <li>[354123] High CVE-2014-1716: UXSS in V8. Credit to
+	      Anonymous.</li>
+	    <li>[353004] High CVE-2014-1717: OOB access in V8. Credit to
+	      Anonymous.</li>
+	    <li>[348332] High CVE-2014-1718: Integer overflow in compositor.
+	      Credit to Aaron Staple.</li>
+	    <li>[343661] High CVE-2014-1719: Use-after-free in web workers.
+	      Credit to Collin Payne.</li>
+	    <li>[356095] High CVE-2014-1720: Use-after-free in DOM. Credit to
+	      cloudfuzzer.</li>
+	    <li>[350434] High CVE-2014-1721: Memory corruption in V8. Credit to
+	      Christian Holler.</li>
+	    <li>[330626] High CVE-2014-1722: Use-after-free in rendering.
+	      Credit to miaubiz.</li>
+	    <li>[337746] High CVE-2014-1723: Url confusion with RTL characters.
+	      Credit to George McBay.</li>
+	    <li>[327295] High CVE-2014-1724: Use-after-free in speech. Credit
+	      to Atte Kettunen of OUSPG.</li>
+	    <li>[357332] Medium CVE-2014-1725: OOB read with window property.
+	      Credit to Anonymous</li>
+	    <li>[346135] Medium CVE-2014-1726: Local cross-origin bypass.
+	      Credit to Jann Horn.</li>
+	    <li>[342735] Medium CVE-2014-1727: Use-after-free in forms. Credit
+	      to Khalil Zhani.</li>
+	    <li>[360298] CVE-2014-1728: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[345820, 347262, 348319, 350863, 352982, 355586, 358059]
+	      CVE-2014-1729: Multiple vulnerabilities in V8 fixed in version
+	      3.24.35.22.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1716</cvename>
+      <cvename>CVE-2014-1717</cvename>
+      <cvename>CVE-2014-1718</cvename>
+      <cvename>CVE-2014-1719</cvename>
+      <cvename>CVE-2014-1720</cvename>
+      <cvename>CVE-2014-1721</cvename>
+      <cvename>CVE-2014-1722</cvename>
+      <cvename>CVE-2014-1723</cvename>
+      <cvename>CVE-2014-1724</cvename>
+      <cvename>CVE-2014-1725</cvename>
+      <cvename>CVE-2014-1726</cvename>
+      <cvename>CVE-2014-1727</cvename>
+      <cvename>CVE-2014-1728</cvename>
+      <cvename>CVE-2014-1729</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-04-08</discovery>
+      <entry>2014-04-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5631ae98-be9e-11e3-b5e3-c80aa9043978">
+    <topic>OpenSSL -- Remote Information Disclosure</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_10</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1g</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>10.0</ge><lt>10.0_1</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL Reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20140407.txt">
+	  <p>A missing bounds check in the handling of the TLS heartbeat extension can be
+	    used to reveal up to 64k of memory to a connected client or server.</p>
+	  <p>Affected users should upgrade to OpenSSL 1.0.1g. Users unable to immediately
+	    upgrade can alternatively recompile OpenSSL with -DOPENSSL_NO_HEARTBEATS.</p>
+	</blockquote>
+	<blockquote cite="http://www.heartbleed.com">
+	  <p>The bug allows anyone on the Internet to read the memory of the
+	  systems protected by the vulnerable versions of the OpenSSL software.
+	  This compromises the secret keys used to identify the service
+	  providers and to encrypt the traffic, the names and passwords of the
+	  users and the actual content. This allows attackers to eavesdrop
+	  communications, steal data directly from the services and users and
+	  to impersonate services and users.</p>
+	</blockquote>
+	<blockquote cite="http://www.freebsd.org/security/advisories/FreeBSD-SA-14:06.openssl.asc">
+	  <p>The code used to handle the Heartbeat Extension does not do
+	    sufficient boundary checks on record length, which allows reading
+	    beyond the actual payload.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0160</cvename>
+      <freebsdsa>FreeBSD-SA-14:06.openssl</freebsdsa>
+      <url>https://www.openssl.org/news/secadv_20140407.txt</url>
+      <url>https://www.openssl.org/news/vulnerabilities.html#2014-0076</url>
+      <url>http://www.heartbleed.com</url>
+    </references>
+    <dates>
+      <discovery>2014-04-07</discovery>
+      <entry>2014-04-07</entry>
+      <modified>2014-04-11</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="ffa7c6e4-bb29-11e3-8136-60a44c524f57">
     <topic>otrs -- Clickjacking issue</topic>
     <affects>
@@ -887,6 +1274,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gnutls</name>
+	<name>linux-f10-gnutls</name>
 	<range><lt>2.12.23_4</lt></range>
       </package>
       <package>
@@ -4447,6 +4835,7 @@ affected..</p>
     <affects>
       <package>
 	<name>libgcrypt</name>
+	<name>linux-f10-libgcrypt</name>
 	<range><lt>1.5.3</lt></range>
       </package>
     </affects>
@@ -4463,6 +4852,7 @@ affected..</p>
       </body>
     </description>
     <references>
+    <cvename>CVE-2013-4242</cvename>
     <url>http://eprint.iacr.org/2013/448</url>
     <url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000329.html</url>
     <url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000330.html</url>
@@ -17389,6 +17779,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>libxml2</name>
+	<name>linux-f10-libxml2</name>
 	<range><lt>2.7.8_3</lt></range>
       </package>
     </affects>
@@ -18691,6 +19082,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>png</name>
+	<name>linux-f10-png</name>
 	<range><lt>1.4.11</lt></range>
       </package>
     </affects>
@@ -19732,6 +20124,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>libxml2</name>
+	<name>linux-f10-libxml2</name>
 	<range><lt>2.7.8_2</lt></range>
       </package>
     </affects>
@@ -22509,6 +22902,7 @@ executed in your Internet Explorer while displaying the email.</p>
       </package>
       <package>
 	<name>libxml2</name>
+	<name>linux-f10-libxml2</name>
 	<range><lt>2.7.8</lt></range>
       </package>
     </affects>
@@ -23486,6 +23880,10 @@ executed in your Internet Explorer while displaying the email.</p>
 	<range><ge>1.0.0</ge><lt>1.0.0_6</lt></range>
 	<range><ge>0.9.8</ge><lt>1.0.0</lt></range>
       </package>
+      <package>
+	<name>linux-f10-openssl</name>
+	<range><ge>0.9.8</ge><lt>0.9.8r</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -23510,6 +23908,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2011-09-06</discovery>
       <entry>2011-09-07</entry>
+      <modified>2014-04-10</modified>
     </dates>
   </vuln>
 
@@ -32153,6 +32552,7 @@ executed in your Internet Explorer while displaying the email.</p>
       </package>
       <package>
 	<name>linux-tiff</name>
+	<name>linux-f10-tiff</name>
 	<range><lt>3.9.4</lt></range>
       </package>
     </affects>
@@ -33337,6 +33737,11 @@ executed in your Internet Explorer while displaying the email.</p>
       <package>
 	<name>linux-firefox-devel</name>
 	<range><lt>3.5.9</lt></range>
+      </package>
+      <package>
+	<name>nss</name>
+	<name>linux-f10-nss</name>
+	<range><lt>3.12.5</lt></range>
       </package>
     </affects>
     <description>
@@ -34867,6 +35272,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>expat2</name>
+	<name>linux-f10-expat</name>
 	<range><lt>2.0.1_1</lt></range>
       </package>
     </affects>
@@ -37525,6 +37931,10 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>openssl</name>
 	<range><ge>0.9.8</ge><lt>0.9.8k_1</lt></range>
       </package>
+      <package>
+	<name>linux-f10-openssl</name>
+	<range><ge>0.9.8f</ge><lt>0.9.8m</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -37549,7 +37959,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2009-05-18</discovery>
       <entry>2009-05-30</entry>
-      <modified>2009-12-21</modified>
+      <modified>2014-04-10</modified>
     </dates>
   </vuln>
 

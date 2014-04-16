@@ -14,7 +14,7 @@ COMMENT=	A computer game visualizing quantum mechanics
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libfftw3.so:${PORTSDIR}/math/fftw3
 
-USES=		gmake
+USES=		gmake compiler:env
 USE_SDL=	sdl ttf
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -31,11 +31,11 @@ DESKTOP_ENTRIES="Quantum Minigolf" \
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
 OPTIONS_DEFAULT=OPTIMIZED_CFLAGS
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CXXFLAGS+=	-O3 -fomit-frame-pointer -finline-functions -funroll-all-loops
-.	if ${ARCH} == "i386"
+.	if ${ARCH} == "i386" && ${COMPILER_TYPE} != "clang"
 CXXFLAGS+=	-malign-double
 .	endif
 .endif
@@ -54,12 +54,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.ttf ${STAGEDIR}${DATADIR}/fonts
 	${INSTALL_DATA} ${WRKSRC}/tracks/*.bmp ${WRKSRC}/tracks/*.cfg \
 		${STAGEDIR}${DATADIR}/tracks
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

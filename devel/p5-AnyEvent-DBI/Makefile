@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	AnyEvent-DBI
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	catone@cpan.org
-COMMENT=	AnyEvent::DBI - asynchronous DBI access
+MAINTAINER=	culot@FreeBSD.org
+COMMENT=	Asynchronous DBI access
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-AnyEvent>=4.15:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-DBI>=1.0:${PORTSDIR}/databases/p5-DBI \

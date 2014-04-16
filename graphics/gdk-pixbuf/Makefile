@@ -2,38 +2,34 @@
 # $FreeBSD$
 #    $MCom: ports/graphics/gdk-pixbuf/Makefile,v 1.2 2006/09/10 00:51:10 mezz Exp $
 
-PORTNAME?=	gdk-pixbuf
+PORTNAME=	gdk-pixbuf
 PORTVERSION=	0.22.0
-PORTREVISION=	12
-CATEGORIES?=	graphics
+PORTREVISION=	15
+CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gdk-pixbuf/0.22
 DISTNAME=	gdk-pixbuf-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT?=	A graphic library for GTK+
+COMMENT=	Graphic library for GTK+
 
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake libtool pathfix tar:bzip2
 USE_XORG=	xt xi x11
-USE_GNOME+=	gnomehack gtk12
+USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		BUILD_CANVAS="${BUILD_CANVAS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${STAGEDIR}${PREFIX}/lib -L${LOCALBASE}/lib
 
-BUILD_CANVAS?=	no
-
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} '/confexecdir =/s/=.*/= $$(sysconfdir)/' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

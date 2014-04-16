@@ -10,7 +10,7 @@
 # dracd_enable (bool):		Set it to "YES" to enable rpc.dracd.
 #				Default is "NO".
 # dracd_flags (str):		Set to "" by default.
-#                               Extra flags passed to rpc.dracd.
+#				Extra flags passed to rpc.dracd.
 #
 
 . /etc/rc.subr

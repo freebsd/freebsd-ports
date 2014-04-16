@@ -12,7 +12,7 @@ DISTNAME=	chasen-${CHASEN_VERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ChaSen library module for Perl5
 
-LIB_DEPENDS=	chasen.2:${PORTSDIR}/japanese/chasen-base
+LIB_DEPENDS=	libchasen.so:${PORTSDIR}/japanese/chasen-base
 
 DISTINFO_FILE=	${.CURDIR}/../chasen-base/distinfo
 
@@ -22,18 +22,16 @@ WRKSRC=		${WRKDIR}/chasen-${CHASEN_VERSION}/perl
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
-MAN3=		Text::ChaSen.3
 DOCSDIR=	${PREFIX}/share/doc/chasen
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README.perl
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README.perl
 .endif
 
 .include <bsd.port.post.mk>

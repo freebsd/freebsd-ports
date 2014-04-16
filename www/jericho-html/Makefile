@@ -10,7 +10,7 @@ MAINTAINER=	saper@saper.info
 COMMENT=	Java library to analyse and manipulate HTML
 
 USES=		zip
-USE_JAVA=	1.5+
+USE_JAVA=	1.6+
 
 INTERFACES:=	"compile-time-dependencies/slf4j-api-1.6.1.jar:\
 		compile-time-dependencies/commons-logging-api-1.1.1.jar:\

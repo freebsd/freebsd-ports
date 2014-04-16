@@ -11,13 +11,10 @@ COMMENT=	SDL MAME port with advanced TV and monitor video support
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
-
-OPTIONS_DEFINE=	FREETYPE DOCS
-OPTIONS_DEFAULT=FREETYPE
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_SDL=	sdl
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-asm --disable-svgalib --disable-fb \
 		--disable-alsa --enable-oss --disable-slang \
@@ -28,44 +25,16 @@ DATADIR=	${PREFIX}/share/advance
 CFLAGS+=	-idirafter ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		advdev.1 advj.1 advk.1 advm.1 advmame.1 advs.1
+MAN_FILES=	advdev.1 advj.1 advk.1 advm.1 advmame.1 advs.1
 PORTDOCS=	*
-PLIST_FILES=	bin/advj \
-		bin/advk \
-		bin/advm \
-		bin/advmame \
-		bin/advs \
-		%%DATADIR%%/artwork/.keep_me \
-		%%DATADIR%%/diff/.keep_me \
-		%%DATADIR%%/event.dat \
-		%%DATADIR%%/history.dat \
-		%%DATADIR%%/hiscore.dat \
-		%%DATADIR%%/image/.keep_me \
-		%%DATADIR%%/rom/.keep_me \
-		%%DATADIR%%/sample/.keep_me \
-		%%DATADIR%%/snap/.keep_me
-PLIST_DIRS=	%%DATADIR%%/snap \
-		%%DATADIR%%/sample \
-		%%DATADIR%%/rom \
-		%%DATADIR%%/image \
-		%%DATADIR%%/diff \
-		%%DATADIR%%/artwork \
-		%%DATADIR%%
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	FREETYPE DOCS
+OPTIONS_DEFAULT=FREETYPE
 
-.if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
-.else
-CONFIGURE_ARGS+=--disable-freetype
-.endif
+FREETYPE_CONFIGURE_ENABLE=	freetype
+FREETYPE_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
+BROKEN_powerpc=		Does not compile on powerpc
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -80,24 +49,19 @@ post-patch:
 		's|-lpthread|-pthread|' ${WRKSRC}/advance/emu.mak
 
 do-install:
-.for i in advj advk advm advmame advs
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${i} ${PREFIX}/bin)
-.endfor
-.for i in ${MAN1}
-	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${i} ${MANPREFIX}/man/man1)
-.endfor
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/support && ${INSTALL_DATA} *.dat ${DATADIR})
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} advj advk advm advmame advs \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN_FILES} \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/support && ${INSTALL_DATA} *.dat ${STAGEDIR}${DATADIR})
 .for i in artwork diff image rom sample snap
-	@${MKDIR} ${DATADIR}/${i}
-	@${ECHO_CMD} -n > ${DATADIR}/${i}/.keep_me
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${i}
+	@${ECHO_CMD} -n > ${STAGEDIR}${DATADIR}/${i}/.keep_me
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for i in HISTORY README RELEASE
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
-.endfor
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.[ht]* ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} HISTORY README RELEASE \
+		${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.[ht]* ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

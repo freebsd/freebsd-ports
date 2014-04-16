@@ -141,7 +141,7 @@ lib/jitsi/sc-bundles/util.jar
 lib/jitsi/sc-bundles/version-impl.jar
 lib/jitsi/sc-bundles/yahooaccregwizz.jar
 lib/jitsi/sc-bundles/zrtp4j.jar
-share/applications/jitsi.desktop
+man/man1/jitsi.1.gz
 share/pixmaps/jitsi.png
 @dirrm lib/jitsi/sc-bundles
 @dirrm lib/jitsi/lib/native

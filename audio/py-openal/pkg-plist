@@ -1,8 +1,0 @@
-%%PYTHON_SITELIBDIR%%/pyopenal/__init__.py
-%%PYTHON_SITELIBDIR%%/pyopenal/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pyopenal/__init__.pyo
-%%PYTHON_SITELIBDIR%%/_openal.so
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/sword.wav
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/pyopenal

@@ -32,24 +32,25 @@ PLIST_SUB=	SCOREDIR=${SCOREDIR}
 DESKTOP_ENTRIES="Monsterz" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 post-install:
 .for d in graphics sound
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${DATADIR}
-	@${PYTHON_CMD} -m compileall ${DATADIR}
-	@${PYTHON_CMD} -O -m compileall ${DATADIR}
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
-
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${DATADIR}
+	(cd ${STAGEDIR}${PREFIX}	\
+	&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${DATADIR}	\
+		-f ${DATADIR:S;${PREFIX}/;;}	\
+	&& ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d ${DATADIR}\
+		-f ${DATADIR:S;${PREFIX}/;;})
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/monsterz
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

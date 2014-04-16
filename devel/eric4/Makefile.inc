@@ -6,7 +6,7 @@
 # french/eric4, german/eric4, russian/eric4
 
 PORTNAME=	eric4
-PORTVERSION=	4.5.20
+PORTVERSION=	4.5.21
 MASTER_SITES=	SF/eric-ide/${PORTNAME}/stable/${PORTVERSION}
 DISTNAME?=	${PORTNAME}-i18n-${I18N_LANG}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -20,6 +20,7 @@ RUN_DEPENDS?=	${PREFIX}/bin/eric4:${PORTSDIR}/devel/eric4
 
 I18N_LANG?=	ru
 INSTALL_CMD?=	install-i18n.py -p ${STAGEDIR}
+MAKE_ENV+=	"HOME=${WRKDIR}"
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

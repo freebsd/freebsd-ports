@@ -20,6 +20,7 @@ GH_COMMIT=	42067ac
 OPTIONS_DEFINE=	DOCCOMM
 
 DOCCOMM_DESC=	Retain doc-comments in internal php structures
+DOCCOMM_CONFIGURE_WITH=	eaccelerator-doc-comment-inclusion
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
@@ -33,27 +34,21 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCCOMM}
-CONFIGURE_ARGS+=--with-eaccelerator-doc-comment-inclusion
-.endif
-
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 	${INSTALL_DATA} ${WRKSRC}/modules/${PORTNAME}.so \
-	       ${PREFIX}/lib/php/${PHP_EXT_DIR}
+	       ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/control.php ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/dasm.php ${EXAMPLESDIR}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/control.php ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/dasm.php ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

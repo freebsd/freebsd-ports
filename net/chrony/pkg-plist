@@ -1,0 +1,10 @@
+bin/chronyc
+etc/chrony.conf.example
+etc/chrony.conf.example2
+etc/chrony.keys.example
+man/man1/chrony.1.gz
+man/man1/chronyc.1.gz
+man/man5/chrony.conf.5.gz
+man/man8/chronyd.8.gz
+@mode 4755
+sbin/chronyd

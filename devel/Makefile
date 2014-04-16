@@ -75,7 +75,6 @@
     SUBDIR += art
     SUBDIR += as31
     SUBDIR += asdlgen
-    SUBDIR += asl
     SUBDIR += asmutils
     SUBDIR += asmx
     SUBDIR += astah-community
@@ -436,7 +435,6 @@
     SUBDIR += flex_compiler_shell
     SUBDIR += flexdock
     SUBDIR += flexjson
-    SUBDIR += flick
     SUBDIR += flickrnet
     SUBDIR += florist-gpl
     SUBDIR += flowdesigner
@@ -484,7 +482,6 @@
     SUBDIR += fuel
     SUBDIR += fujaba
     SUBDIR += funnelweb
-    SUBDIR += g-wrap
     SUBDIR += gaa
     SUBDIR += gamin
     SUBDIR += gaphor
@@ -635,7 +632,6 @@
     SUBDIR += hachoir-parser
     SUBDIR += hachoir-regex
     SUBDIR += hadoop
-    SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hcs12mem
     SUBDIR += hexcompare
@@ -862,7 +858,6 @@
     SUBDIR += ipython
     SUBDIR += ireport
     SUBDIR += itext
-    SUBDIR += ixlib
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io
@@ -1148,6 +1143,7 @@
     SUBDIR += libxalloc
     SUBDIR += libxs
     SUBDIR += libytnef
+    SUBDIR += libzookeeper
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
     SUBDIR += lightning
@@ -1197,7 +1193,6 @@
     SUBDIR += lua-lunit
     SUBDIR += lua-posix
     SUBDIR += lua-pty
-    SUBDIR += lua-rds-parser
     SUBDIR += lua-redis-parser
     SUBDIR += lua-sysctl
     SUBDIR += luabind
@@ -1347,7 +1342,6 @@
     SUBDIR += openvex
     SUBDIR += openwince-include
     SUBDIR += openzz
-    SUBDIR += orbitcpp
     SUBDIR += orc
     SUBDIR += osc
     SUBDIR += oserl
@@ -1878,7 +1872,6 @@
     SUBDIR += p5-Devel-Leak-Object
     SUBDIR += p5-Devel-LeakGuard-Object
     SUBDIR += p5-Devel-LeakTrace
-    SUBDIR += p5-Devel-LeakTrace-Fast
     SUBDIR += p5-Devel-LexAlias
     SUBDIR += p5-Devel-MAT
     SUBDIR += p5-Devel-Messenger
@@ -2561,7 +2554,6 @@
     SUBDIR += p5-Path-Tiny
     SUBDIR += p5-PathTools
     SUBDIR += p5-Penguin
-    SUBDIR += p5-Penguin-Easy
     SUBDIR += p5-Perl-Critic-Deprecated
     SUBDIR += p5-Perl-Metrics-Lite
     SUBDIR += p5-Perl-Metrics-Simple
@@ -3345,6 +3337,7 @@
     SUBDIR += pecl-statgrab
     SUBDIR += pecl-svn
     SUBDIR += pecl-test_helpers
+    SUBDIR += pecl-uopz
     SUBDIR += pecl-uploadprogress
     SUBDIR += pecl-uri_template
     SUBDIR += pecl-uuid
@@ -3573,6 +3566,7 @@
     SUBDIR += py-colorama
     SUBDIR += py-conditional
     SUBDIR += py-configobj
+    SUBDIR += py-configparser
     SUBDIR += py-construct
     SUBDIR += py-country
     SUBDIR += py-coverage
@@ -3605,6 +3599,7 @@
     SUBDIR += py-epsilon
     SUBDIR += py-event
     SUBDIR += py-experimental.cssselect
+    SUBDIR += py-extras
     SUBDIR += py-extremes
     SUBDIR += py-ezpyinline
     SUBDIR += py-fabric
@@ -3814,6 +3809,7 @@
     SUBDIR += py-setuptools27
     SUBDIR += py-setuptools32
     SUBDIR += py-setuptools33
+    SUBDIR += py-setuptools34
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
     SUBDIR += py-shapely
@@ -4129,6 +4125,7 @@
     SUBDIR += rubygem-analogger
     SUBDIR += rubygem-annoy
     SUBDIR += rubygem-ansi
+    SUBDIR += rubygem-apipie-bindings
     SUBDIR += rubygem-app_config
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-ascii85
@@ -4206,6 +4203,7 @@
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-fast-stemmer
+    SUBDIR += rubygem-fast_gettext
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastri
     SUBDIR += rubygem-fastthread

@@ -48,7 +48,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Plex\ DLNA\ Server ${STAGEDIR}/${SCRIPT_PATH}
 	${INSTALL_PROGRAM} ${WRKSRC}/Plex\ Media\ Scanner ${STAGEDIR}/${SCRIPT_PATH}
 	${INSTALL_PROGRAM} ${WRKSRC}/Plex\ Media\ Server ${STAGEDIR}/${SCRIPT_PATH}
-	${INSTALL_SCRIPT} ${WRKSRC}/start.sh ${STAGEDIR}/${SCRIPT_PATH}
 	${INSTALL_LIB} ${WRKSRC}/lib* ${STAGEDIR}/${SCRIPT_PATH}
 	# Fix permissions to programs and db
 	@${CHMOD} a+x ${STAGEDIR}/${SCRIPT_PATH}/Resources/rsync

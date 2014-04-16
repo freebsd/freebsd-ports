@@ -23,7 +23,6 @@ NO_WRKSUBDIR=	yes
 
 DATADIR=	${DMDIR}
 
-NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR} && ${TAR} xzf linuxdoom-1.10.src.tgz && ${TAR} xzf sndserv.tgz
 
@@ -50,16 +49,20 @@ post-patch:
 		-E -e 's|#include +<malloc.h>|#include <stdlib.h>|g'
 
 do-build:
-	@cd ${WRKDIR}/linuxdoom-1.10 && ${GMAKE} X11BASE=${LOCALBASE}
-	@cd ${WRKDIR}/sndserv && ${GMAKE}
+	@cd ${WRKDIR}/linuxdoom-1.10 && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} X11BASE=${LOCALBASE}
+	@cd ${WRKDIR}/sndserv && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/doom
-	@${INSTALL_PROGRAM} ${WRKDIR}/linuxdoom-1.10/linux/linuxxdoom ${PREFIX}/libexec/doom/xdoom
-	@${INSTALL_PROGRAM} ${WRKDIR}/sndserv/linux/sndserver ${PREFIX}/libexec/doom/sndserver
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/doom
+	${INSTALL_PROGRAM} ${WRKDIR}/linuxdoom-1.10/linux/linuxxdoom \
+		${STAGEDIR}${PREFIX}/libexec/doom/xdoom
+	${INSTALL_PROGRAM} ${WRKDIR}/sndserv/linux/sndserver \
+		${STAGEDIR}${PREFIX}/libexec/doom/sndserver
 	@(${ECHO_CMD} "#!${SH}"; ${ECHO_CMD} "cd ${PREFIX}/libexec/doom"; \
-	  ${ECHO_CMD} 'export PATH=.:$$PATH';${ECHO_CMD} "export DOOMWADDIR=${DATADIR}"; ${ECHO_CMD} "./xdoom $$*") > ${PREFIX}/bin/doom
-	@${CHMOD} ugo+x ${PREFIX}/bin/doom
+	  ${ECHO_CMD} 'export PATH=.:$$PATH';${ECHO_CMD} "export DOOMWADDIR=${DATADIR}"; \
+	  ${ECHO_CMD} "./xdoom $$*") > ${STAGEDIR}${PREFIX}/bin/doom
+	@${CHMOD} ugo+x ${STAGEDIR}${PREFIX}/bin/doom
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 

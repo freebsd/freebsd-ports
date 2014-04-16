@@ -1,6 +1,5 @@
 bin/tvdownloader
 share/applications/tvdownload.desktop
-share/pixmaps/tvdownloader.png
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/classAPI_1_1API-members.html
@@ -70,6 +69,7 @@ share/pixmaps/tvdownloader.png
 %%PORTDOCS%%%%DOCSDIR%%/tab_h.png
 %%PORTDOCS%%%%DOCSDIR%%/tab_s.png
 %%PORTDOCS%%%%DOCSDIR%%/tabs.css
+share/pixmaps/tvdownloader.png
 %%DATADIR%%/API.py
 %%DATADIR%%/API.pyc
 %%DATADIR%%/APIPrive.py

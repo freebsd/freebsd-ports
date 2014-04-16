@@ -1,6 +1,6 @@
---- plugins-scripts/check_ntp.pl.orig	Wed Nov 30 11:19:47 2005
-+++ plugins-scripts/check_ntp.pl	Fri May 12 23:39:15 2006
-@@ -314,7 +314,6 @@
+--- ./plugins-scripts/check_ntp.pl.orig	2014-03-04 20:21:36.000000000 +0100
++++ ./plugins-scripts/check_ntp.pl	2014-04-14 10:22:50.000000000 +0200
+@@ -313,7 +313,6 @@
  				}
  			} else {
  				print "No match!\n" if $verbose;
@@ -8,7 +8,7 @@
  			}
  			
  		}
-@@ -428,7 +427,7 @@
+@@ -427,7 +426,7 @@
  foreach my $key (keys %ERRORS) {
  	if ($state==$ERRORS{$key}) {
  #		print ("NTP $key: $answer");

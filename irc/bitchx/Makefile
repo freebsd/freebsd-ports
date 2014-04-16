@@ -25,7 +25,6 @@ PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 DOCSDIR=	${PREFIX}/share/bx/help
 PORTDOCS=	*
 DATADIR=	${PREFIX}/share/bx
-MAN1=		BitchX.1
 
 OPTIONS_DEFINE=	IPV6 LATIN PLUGINS SSL DOCS
 
@@ -34,7 +33,6 @@ PLUGINS_DESC=	Build a handful of BitchX plugins
 
 OPTIONS_DEFAULT=PLUGINS SSL
 
-NO_STAGE=	yes
 MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.options.mk>
 
@@ -68,11 +66,11 @@ post-patch:
 	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/BitchX
-	${STRIP_CMD} ${PREFIX}/bin/scr-bx
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/BitchX
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/scr-bx
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/bitchx-docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/bitchx-docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 
 # Ensure that `@dirrm share/bx' will be appended last (after PORTDOCS stuff)

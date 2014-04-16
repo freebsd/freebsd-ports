@@ -3,30 +3,33 @@
 
 PORTNAME=	spamd
 PORTVERSION=	4.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=freebsdspamd.berlios
+MASTER_SITE_SUBDIR=freebsdspamd/spamd
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_RC_SUBR?=	obspamd obspamlogd
 
 USERS=		_spamd
 GROUPS=		_spamd
 
-MAN5=		spamd.conf.5
-MAN8=		spamd.8 spamd-setup.8 spamdb.8 spamlogd.8
 PORTDOCS=	ipfw-spamd.txt spamdb.txt
 
 PLIST_DIRSTRY=	%%ETCDIR%%
 PLIST_FILES=	%%ETCDIR%%/spamd.conf.sample \
 		libexec/spamlogd \
 		sbin/spamd-setup \
-		sbin/spamdb
+		sbin/spamdb \
+		man/man5/spamd.conf.5.gz \
+		man/man8/spamd-setup.8.gz \
+		man/man8/spamd.8.gz \
+		man/man8/spamdb.8.gz \
+		man/man8/spamlogd.8.gz
 
 PLIST_SUB=	SPAMDUSER=${USERS} \
 		SPAMDGROUP=${GROUPS}
@@ -50,40 +53,28 @@ SUB_FILES=	pkg-install \
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-pre-install:
-	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
-
 do-install:
 .if !defined(CPANEL)
-	@${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${STAGEDIR}${PREFIX}/libexec
 .else
-	@${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${PREFIX}/libexec/obspamd
+	${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${STAGEDIR}${PREFIX}/libexec/obspamd
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/spamlogd/spamlogd ${PREFIX}/libexec
-	@${INSTALL_PROGRAM} ${WRKSRC}/spamd-setup/spamd-setup ${PREFIX}/sbin
-	@${INSTALL_PROGRAM} ${WRKSRC}/spamdb/spamdb ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/etc/spamd.conf.5 ${PREFIX}/man/man5
-	@${INSTALL_MAN} ${WRKSRC}/spamd/spamd.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/spamd-setup/spamd-setup.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/spamdb/spamdb.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/spamlogd/spamlogd.8 ${PREFIX}/man/man8
-	@${INSTALL} -d ${ETCDIR}
-	@${INSTALL_DATA} -m 644 ${WRKSRC}/etc/spamd.conf ${ETCDIR}/spamd.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/spamlogd/spamlogd ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/spamd-setup/spamd-setup ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/spamdb/spamdb ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/etc/spamd.conf.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/spamd/spamd.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/spamd-setup/spamd-setup.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/spamdb/spamdb.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/spamlogd/spamlogd.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL} -d ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} -m 644 ${WRKSRC}/etc/spamd.conf ${STAGEDIR}${ETCDIR}/spamd.conf.sample
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/ipfw-spamd.txt ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/spamdb.txt ${DOCSDIR}/
-.endif
-
-post-install:
-	@${SH} ${PKGINSTALL} ${DISTNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.4.0
-PORTREVISION=	3
+PORTVERSION=	5.4.1
 PKGNAMESUFFIX=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
@@ -11,8 +10,7 @@ MASTER_SITES=	http://collectd.org/files/
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libltdl libtool
 
@@ -21,8 +19,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/gli
 
 OPTIONS_DEFINE=		CGI DEBUG GCRYPT VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
-OPTIONS_GROUP_OUTPUT=	RRDTOOL NOTIFYEMAIL NOTIFYDESKTOP
-OPTIONS_GROUP_INPUT=	CURL DBI JSON MEMCACHEC MODBUS MYSQL \
+OPTIONS_GROUP_OUTPUT=	RRDTOOL NOTIFYEMAIL NOTIFYDESKTOP RIEMANN
+OPTIONS_GROUP_INPUT=	CURL DBI JSON MEMCACHEC MODBUS MONGODB MYSQL \
 			NUTUPS PGSQL PING PYTHON RABBITMQ REDIS \
 			ROUTEROS SIGROK SNMP STATGRAB TOKYOTYRANT XML XMMS
 
@@ -34,6 +32,7 @@ GCRYPT_DESC=		Build with libgcrypt
 JSON_DESC=		Enable JSON plugins
 MEMCACHEC_DESC=		Enable memcachec plugin
 MODBUS_DESC=		Enable modbus plugin
+MONGODB_DESC=		Enable MongoDB-based plugins
 MYSQL_DESC=		Enable mysql-based plugins
 NOTIFYEMAIL_DESC=	Enable notifications via email
 NOTIFYDESKTOP_DESC=	Enable desktop notifications
@@ -43,6 +42,7 @@ PING_DESC=		Enable ping plugin
 PYTHON_DESC=		Enable python-based plugins
 RABBITMQ_DESC=		Enable rabbitmq-based plugins
 REDIS_DESC=		Enable redis-based plugins
+RIEMANN_DESC=		Enable write_riemann plugin (via protobuf-c)
 ROUTEROS_DESC=		Enable routeros plugin
 RRDTOOL_DESC=		Enable rrdtool plugin (also rrdcached plugin)
 SIGROK_DESC=		Enable sigrok plugin
@@ -68,13 +68,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-all-plugins \
 		--disable-static \
+		--without-amqp \
 		--without-java \
+		--without-libaquaero5 \
 		--without-libganglia \
 		--without-libiptc \
 		--without-libjvm \
 		--without-libkstat \
 		--without-libmodbus \
-		--without-libmongoc \
 		--without-libnetlink \
 		--without-libnetapp \
 		--without-libopenipmi \
@@ -83,6 +84,8 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-libperl \
 		--without-libsensors \
 		--without-libvarnish \
+		--without-lvm \
+		--without-mic \
 		--without-oracle \
 		--without-perl-bindings
 
@@ -233,6 +236,17 @@ PLIST_SUB+=	MODBUS=""
 PLIST_SUB+=	MODBUS="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MMONGODB}
+LIB_DEPENDS+=	libmongoc.so:${PORTSDIR}/devel/mongo-c-driver
+CONFIGURE_ARGS+=--with-libmongoc=${LOCALBASE} \
+		--enable-write_mongodb
+PLIST_SUB+=	MONGODB=""
+.else
+CONFIGURE_ARGS+=--without-libcmongoc \
+		--disable-write_mongodb
+PLIST_SUB+=	MONGODB="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-libmysql=${LOCALBASE} --enable-mysql
@@ -320,6 +334,15 @@ CONFIGURE_ARGS+=--without-libcredis \
 		--disable-redis \
 		--disable-write_redis
 PLIST_SUB+=	REDIS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MRIEMANN}
+LIB_DEPENDS+=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+CONFIGURE_ARGS+=--enable-write_riemann
+PLIST_SUB+=	RIEMANN=""
+.else
+CONFIGURE_ARGS+=--disable-write_riemann
+PLIST_SUB+=	RIEMANN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MROUTEROS}
@@ -441,9 +464,6 @@ post-patch:
 		-e 's;/opt/collectd/var/lib;/var/db;' \
 		-e 's;/opt/collectd/lib;${PREFIX}/lib;' \
 		${WRKSRC}/contrib/collection.conf
-	@${REINPLACE_CMD} \
-		-e 's;{libdir}/pkgconfig;{prefix}/libdata/pkgconfig;' \
-		${WRKSRC}/configure.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/db/collectd

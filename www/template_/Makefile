@@ -18,16 +18,11 @@ WANT_PHP_WEB=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/tpl_plugin
 .for f in Template_.class.php Template_.compiler.php
-	${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
-	${MKDIR} ${DATADIR}/tpl_plugin
-	${INSTALL_DATA} ${WRKSRC}/tpl_plugin/* ${DATADIR}/tpl_plugin
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/tpl_plugin/* ${STAGEDIR}${DATADIR}/tpl_plugin
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Alternative implementation of skkserv written in Ruby
 
+BROKEN=		not staged
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tcpwrap.so:${PORTSDIR}/security/ruby-tcpwrap \
 		${SKKJISYO_BASE}/${SKKJISYO}:${SKK_MASTERDIR}
 

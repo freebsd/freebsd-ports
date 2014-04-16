@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	proler@gmail.com
 COMMENT=	Perl Direct Connect TigerHash module
 
+BROKEN=		Does not build with any modern compile
+
 USES=		perl5
 USE_PERL5=	configure
 CC=		${CXX}

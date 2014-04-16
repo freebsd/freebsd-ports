@@ -2,6 +2,7 @@
 
 PORTNAME=	cairo-dock-plugins
 DISTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpadlibrarian.net/137290159/ \
 		http://pazzle.otdux.com.ua/

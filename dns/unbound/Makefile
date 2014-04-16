@@ -3,17 +3,17 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.4.22
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A validating, recursive, and caching DNS resolver
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GMAKE=	yes
+USES+=		gmake
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE} --with-libexpat=${LOCALBASE}
@@ -44,8 +44,11 @@ MUNIN_DESC=	Install Munin plugin
 
 .include <bsd.port.options.mk>
 
-LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2 \
-		ldns:${PORTSDIR}/dns/ldns
+LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libldns.so:${PORTSDIR}/dns/ldns
+
+STRIP_FILES=	.libs/libunbound.so.4 unbound-checkconf unbound \
+		unbound-control .libs/unbound-host .libs/unbound-anchor
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
@@ -81,10 +84,10 @@ MUNIN=		"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBEVENT14}
-LIB_DEPENDS+=	event-1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS+=	libevent-1.4:${PORTSDIR}/devel/libevent
 CONFIGURE_ARGS+=--with-libevent=${LOCALBASE}
 .elif ${PORT_OPTIONS:MLIBEVENT20}
-LIB_DEPENDS+=	event-2:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS+=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
 USES+=		pkgconfig
 CONFIGURE_ARGS+=--with-libevent=${NONEXISTENT}
 CONFIGURE_ENV+=	found_libevent=yes
@@ -101,6 +104,9 @@ CONFIGURE_ARGS+=--without-pthreads
 post-patch:
 	@${MKDIR} ${WRKSRC}/balancer
 	@${RM} ${WRKSRC}/util/configlexer.c
+
+post-build:
+	@for s in ${STRIP_FILES}; do ${STRIP_CMD} ${WRKSRC}/$$s; done
 
 post-install:
 .if ${PORT_OPTIONS:MMUNIN}

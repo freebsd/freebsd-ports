@@ -1,0 +1,297 @@
+lib/elasticsearch/plugins/marvel/marvel-1.1.0.jar
+lib/elasticsearch/plugins/marvel/_site/index.html
+lib/elasticsearch/plugins/marvel/_site/common/marvelLinks.json
+lib/elasticsearch/plugins/marvel/_site/kibana/build.txt
+lib/elasticsearch/plugins/marvel/_site/kibana/config.js
+lib/elasticsearch/plugins/marvel/_site/kibana/favicon.ico
+lib/elasticsearch/plugins/marvel/_site/kibana/index.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/app.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/components/require.config.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/blank.json
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/default.json
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/guided.json
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/logstash.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/logstash.json
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/noted.json
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/marvel/cluster_pulse.json
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/marvel/indices_stats.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/marvel/nodes_stats.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/marvel/overview.json
+lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/marvel/shards.json
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/module.css
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/leaflet.css
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/leaflet.ie.css
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/leaflet.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/plugins.css
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/plugins.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/images/layers-2x.png
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/images/layers.png
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/images/marker-icon-2x.png
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/images/marker-icon.png
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/images/marker-shadow.png
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/column/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/column/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/column/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/column/panelgeneral.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/dashcontrol/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/dashcontrol/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/dashcontrol/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/derivequeries/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/derivequeries/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/derivequeries/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/fields/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/fields/micropanel.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/fields/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/fields/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/filtering/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/filtering/meta.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/filtering/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/filtering/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/goal/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/goal/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/goal/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/histogram/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/histogram/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/histogram/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/histogram/queriesEditor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/histogram/styleEditor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/hits/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/hits/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/hits/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/map/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/map/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/map/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/map/lib/map.europe.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/map/lib/map.usa.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/map/lib/map.world.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/cluster/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/cluster/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/cluster/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/cluster/optin.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/navigation/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/navigation/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/stats_table/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/stats_table/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/stats_table/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/helpModal.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/meta.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/query.css
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/editors/lucene.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/editors/regex.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/editors/topN.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/help/lucene.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/help/regex.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/help/topN.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/sparklines/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/sparklines/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/sparklines/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/stats/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/stats/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/stats/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/table/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/table/micropanel.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/table/modal.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/table/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/table/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/table/pagination.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/terms/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/terms/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/terms/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/text/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/text/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/text/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/timepicker/custom.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/timepicker/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/timepicker/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/timepicker/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/timepicker/refreshctrl.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/trends/editor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/trends/module.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/trends/module.js
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/dashLoader.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/dashLoaderShare.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/dashboard.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/dasheditor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/inspector.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/load.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/modal.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/paneladd.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/paneleditor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/panelgeneral.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/querySelect.html
+lib/elasticsearch/plugins/marvel/_site/kibana/app/partials/roweditor.html
+lib/elasticsearch/plugins/marvel/_site/kibana/css/animate.min.css
+lib/elasticsearch/plugins/marvel/_site/kibana/css/bootstrap-responsive.min.css
+lib/elasticsearch/plugins/marvel/_site/kibana/css/bootstrap.dark.less
+lib/elasticsearch/plugins/marvel/_site/kibana/css/bootstrap.dark.min.css
+lib/elasticsearch/plugins/marvel/_site/kibana/css/bootstrap.light.less
+lib/elasticsearch/plugins/marvel/_site/kibana/css/bootstrap.light.min.css
+lib/elasticsearch/plugins/marvel/_site/kibana/css/font-awesome.min.css
+lib/elasticsearch/plugins/marvel/_site/kibana/css/normalize.min.css
+lib/elasticsearch/plugins/marvel/_site/kibana/css/timepicker.css
+lib/elasticsearch/plugins/marvel/_site/kibana/font/FontAwesome.otf
+lib/elasticsearch/plugins/marvel/_site/kibana/font/fontawesome-webfont.eot
+lib/elasticsearch/plugins/marvel/_site/kibana/font/fontawesome-webfont.svg
+lib/elasticsearch/plugins/marvel/_site/kibana/font/fontawesome-webfont.ttf
+lib/elasticsearch/plugins/marvel/_site/kibana/font/fontawesome-webfont.woff
+lib/elasticsearch/plugins/marvel/_site/kibana/img/annotation-icon.png
+lib/elasticsearch/plugins/marvel/_site/kibana/img/cubes.png
+lib/elasticsearch/plugins/marvel/_site/kibana/img/glyphicons-halflings-white.png
+lib/elasticsearch/plugins/marvel/_site/kibana/img/glyphicons-halflings.png
+lib/elasticsearch/plugins/marvel/_site/kibana/img/kibana.png
+lib/elasticsearch/plugins/marvel/_site/kibana/img/light.png
+lib/elasticsearch/plugins/marvel/_site/kibana/img/load.gif
+lib/elasticsearch/plugins/marvel/_site/kibana/img/load_big.gif
+lib/elasticsearch/plugins/marvel/_site/kibana/img/small.png
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/LICENSE.json
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/timezone.js
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap/less/tests/buttons.html
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap/less/tests/css-tests.css
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap/less/tests/css-tests.html
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap/less/tests/forms-responsive.html
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap/less/tests/forms.html
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap/less/tests/navbar-fixed-top.html
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap/less/tests/navbar-static-top.html
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap/less/tests/navbar.html
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/require/css-build.js
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/require/require.js
+lib/elasticsearch/plugins/marvel/_site/kibana/vendor/require/tmpl.js
+lib/elasticsearch/plugins/marvel/_site/sense/README.md
+lib/elasticsearch/plugins/marvel/_site/sense/build.txt
+lib/elasticsearch/plugins/marvel/_site/sense/favicon.ico
+lib/elasticsearch/plugins/marvel/_site/sense/index.html
+lib/elasticsearch/plugins/marvel/_site/sense/app/app.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/require.config.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/welcome_popup.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/aliases.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/cluster.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/document.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/facets.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/filter.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/globals.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/indices.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/mappings.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/misc.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/query.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/search.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/settings.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/templates.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90/warmers.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/aggregations.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/aliases.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/cat.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/cluster.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/document.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/facets.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/filter.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/globals.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/indices.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/mappings.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/misc.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/nodes.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/query.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/search.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/settings.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/snapshot_restore.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/templates.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0/warmers.js
+lib/elasticsearch/plugins/marvel/_site/sense/app/sense_editor/mode/worker.js
+lib/elasticsearch/plugins/marvel/_site/sense/css/sense.css
+lib/elasticsearch/plugins/marvel/_site/sense/css/sense.dark.css
+lib/elasticsearch/plugins/marvel/_site/sense/css/sense.light.css
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/ace/ace.js
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/ace/mode-yaml.js
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/ace/worker-json.js
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/bootstrap/css/bootstrap.dark.min.css
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/bootstrap/css/bootstrap.light.min.css
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/bootstrap/css/bootstrap.min.css
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/bootstrap/img/glyphicons-halflings-white.png
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/bootstrap/img/glyphicons-halflings.png
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/font-awesome/css/font-awesome.min.css
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/font-awesome/fonts/FontAwesome.otf
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/font-awesome/fonts/fontawesome-webfont.eot
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/font-awesome/fonts/fontawesome-webfont.svg
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/font-awesome/fonts/fontawesome-webfont.ttf
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/font-awesome/fonts/fontawesome-webfont.woff
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/jquery/jquery-ui-1.9.2.custom.min.css
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/require/almond.js
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/require/require.js
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/require/css/LICENSE
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/require/css/README.md
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/require/css/css-builder.js
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/require/css/css.min.js
+lib/elasticsearch/plugins/marvel/_site/sense/vendor/zero_clipboard/zero_clipboard.swf
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/zero_clipboard
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/require/css
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/require
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/jquery
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/font-awesome/fonts
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/font-awesome/css
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/font-awesome
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/bootstrap/img
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/bootstrap/css
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/bootstrap
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor/ace
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/vendor
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/css
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/app/sense_editor/mode
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/app/sense_editor
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_1_0
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/app/kb/api_0_90
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/app/kb
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense/app
+@dirrm lib/elasticsearch/plugins/marvel/_site/sense
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/vendor/require
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap/less/tests
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap/less
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/vendor/bootstrap
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/vendor
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/img
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/font
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/css
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/partials
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/trends
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/timepicker
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/text
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/terms
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/table
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/stats
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/sparklines
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/help
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query/editors
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/query
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/stats_table
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/navigation
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel/cluster
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/marvel
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/map/lib
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/map
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/hits
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/histogram
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/goal
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/filtering
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/fields
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/derivequeries
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/dashcontrol
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/column
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet/images
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap/leaflet
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels/bettermap
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/panels
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards/marvel
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/dashboards
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app/components
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana/app
+@dirrm lib/elasticsearch/plugins/marvel/_site/kibana
+@dirrm lib/elasticsearch/plugins/marvel/_site/common
+@dirrm lib/elasticsearch/plugins/marvel/_site
+@dirrm lib/elasticsearch/plugins/marvel
+@dirrmtry lib/elasticsearch/plugins

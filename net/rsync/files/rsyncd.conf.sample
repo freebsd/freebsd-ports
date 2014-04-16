@@ -32,4 +32,4 @@ pid file = /var/run/rsyncd.pid
 #	path = /data/cvs
 #	comment = CVS repository (requires authentication)
 #	auth users = tridge, susan
-#	secrets file = /usr/local/etc/rsyncd.secrets
+#	secrets file = /usr/local/etc/rsync/rsyncd.secrets

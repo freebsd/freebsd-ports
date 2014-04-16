@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	1.3.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -15,35 +16,12 @@ OPTIONS_DEFINE=	NODE_DEVEL
 NODE_DEVEL_DESC=Use www/node-devel instead of www/node
 
 NO_BUILD=	yes
-NO_MANCOMPRESS=	yes
-NO_STAGE=	yes
-USE_XZ=		yes
+USES=		tar:xz
 
-MAN1=		npm.1 npm-README.1 npm-adduser.1 npm-bin.1 npm-bugs.1 \
-		npm-build.1 npm-bundle.1 npm-cache.1 npm-completion.1 \
-		npm-config.1 npm-dedupe.1 npm-deprecate.1 npm-docs.1 \
-		npm-edit.1 npm-explore.1 npm-help-search.1 npm-help.1 \
-		npm-init.1 npm-install.1 npm-link.1 npm-ls.1 npm-outdated.1 \
-		npm-owner.1 npm-pack.1 npm-prefix.1 npm-prune.1 npm-publish.1 \
-		npm-rebuild.1 npm-restart.1 npm-rm.1 npm-root.1 \
-		npm-run-script.1 npm-search.1 npm-shrinkwrap.1 npm-star.1 \
-		npm-stars.1 npm-start.1 npm-stop.1 npm-submodule.1 npm-tag.1 \
-		npm-test.1 npm-uninstall.1 npm-unpublish.1 npm-update.1 \
-		npm-version.1 npm-view.1 npm-whoami.1 repo.1
-MAN3=		npm.3 npm-bin.3 npm-bugs.3 npm-commands.3 npm-config.3 \
-		npm-deprecate.3 npm-docs.3 npm-edit.3 npm-explore.3 \
-		npm-help-search.3 npm-init.3 npm-install.3 npm-link.3 \
-		npm-load.3 npm-ls.3 npm-outdated.3 npm-owner.3 npm-pack.3 \
-		npm-prefix.3 npm-prune.3 npm-publish.3 npm-rebuild.3 \
-		npm-restart.3 npm-root.3 npm-run-script.3 npm-search.3 \
-		npm-shrinkwrap.3 npm-start.3 npm-stop.3 npm-submodule.3 \
-		npm-tag.3 npm-test.3 npm-uninstall.3 npm-unpublish.3 \
-		npm-update.3 npm-version.3 npm-view.3 npm-whoami.3 repo.3
-MAN5=		npm-folders.5 npm-global.5 npm-json.5 npmrc.5 package.json.5
-MAN7=		npm-coding-style.7 npm-config.7 npm-developers.7 \
-		npm-disputes.7 npm-faq.7 npm-index.7 npm-registry.7 \
-		npm-scripts.7 removing-npm.7 semver.7
+MAKE_ARGS+=	npm_config_prefix=${STAGEDIR}${PREFIX}
+
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
+PLIST_SUB+=	MANPREFIX="${MANPREFIX:S,${PREFIX}/,,}"
 
 .include <bsd.port.options.mk>
 
@@ -56,11 +34,11 @@ RUN_DEPENDS+=	node>=0.8.0:${PORTSDIR}/www/node
 post-patch:
 	@${SED} -i '' -e 's|node cli.js|& --cache ${WRKDIR}/.cache|; /^install: / s| docclean||' ${WRKSRC}/Makefile
 	@${SED} -i '' -e 's|linkBins, linkMans|linkBins|' ${WRKSRC}/lib/build.js
-	@${ECHO_CMD} "MANPATH ${PREFIX}/lib/node_modules/npm/man" > ${WRKDIR}/npm.conf
+	@${ECHO_CMD} "MANPATH ${MANPREFIX}/man" > ${WRKDIR}/npm.conf
 
 post-install:
-	@${INSTALL_DATA} ${WRKDIR}/npm.conf ${PREFIX}/etc/man.d/npm.conf
-	@${CHMOD} +x ${PREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp
+	@${INSTALL_DATA} ${WRKDIR}/npm.conf ${STAGEDIR}${PREFIX}/etc/man.d/npm.conf
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 
 # maintainer section:
 # require: bash, git, gmake, node

@@ -18,7 +18,14 @@ rcvar=mailgraph_enable
 command=%%PREFIX%%/sbin/${name}.pl
 command_args='> /dev/null 2>&1'
 command_interpreter=/usr/bin/perl
+start_precmd=start_precmd
 stop_postcmd=stop_postcmd
+
+start_precmd()
+{
+    mkdir -p "%%DATADIR%%"
+    chown "%%MAILGRAPH_USER%%" "%%DATADIR%%"
+}
 
 stop_postcmd()
 {

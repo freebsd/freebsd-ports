@@ -3,6 +3,7 @@
 
 PORTNAME=	sextractor
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.iap.fr/pub/from_users/bertin/sextractor/ \
 		http://download.gna.org/kanicule/freebsd/distfiles/
@@ -12,18 +13,10 @@ COMMENT=	Catalogue of objects builder from astronomical images
 
 GNU_CONFIGURE=	yes
 USES=		gmake
-NO_STAGE=	yes
-
-MAN1=	sex.1
-MANX=	sex.x
 
 OPTIONS_DEFINE=	STATIC
 OPTIONS_DEFAULT=	STATIC
 
-.include <bsd.port.pre.mk>
+STATIC_CONFIGURE_ENABLE=	static
 
-.if ${PORT_OPTIONS:MSTATIC}
-CONFIGURE_ARGS+=	--enable-static
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

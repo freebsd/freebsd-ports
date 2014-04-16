@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	catone@cpan.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	XS wrapper and C library plug-in for Date::Calc
 
 BUILD_DEPENDS=	p5-Date-Calc>=6.2:${PORTSDIR}/devel/p5-Date-Calc \

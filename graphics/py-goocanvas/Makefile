@@ -14,19 +14,18 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GooCanvas python bindings
 
-LIB_DEPENDS=	goocanvas.3:${PORTSDIR}/graphics/goocanvas
+LIB_DEPENDS=	libgoocanvas.so:${PORTSDIR}/graphics/goocanvas
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/goocanvasmodule.la \
 		%%PYTHON_SITELIBDIR%%/goocanvasmodule.so \
 		libdata/pkgconfig/pygoocanvas.pc
 USE_PYTHON=	yes
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack pygtk2
+USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs
-USES=		gmake pkgconfig
+USES=		gmake pathfix pkgconfig tar:bzip2
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(PYGOBJECT_PYGDOCS)/style.css||; \
 		s|demo docs|demo|' \

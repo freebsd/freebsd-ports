@@ -66,14 +66,17 @@ lib/pinball/libModuleProfessor.a
 lib/pinball/libModuleProfessor.la
 lib/pinball/libModuleProfessor.so
 lib/pinball/libModuleProfessor.so.0
+lib/pinball/libModuleProfessor.so.0.0.0
 lib/pinball/libModuleTest.a
 lib/pinball/libModuleTest.la
 lib/pinball/libModuleTest.so
 lib/pinball/libModuleTest.so.0
+lib/pinball/libModuleTest.so.0.0.0
 lib/pinball/libModuleTux.a
 lib/pinball/libModuleTux.la
 lib/pinball/libModuleTux.so
 lib/pinball/libModuleTux.so.0
+lib/pinball/libModuleTux.so.0.0.0
 lib/pinball/libemilia_addon.a
 lib/pinball/libemilia_base.a
 lib/pinball/libemilia_pin.a
@@ -119,9 +122,16 @@ lib/pinball/libemilia_pin.a
 %%DATADIR%%/tux/tiles.png
 %%DATADIR%%/tux/tiles.png.pcx
 %%DATADIR%%/tux/up.wav
-@dirrm include/pinball
-@dirrm lib/pinball
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/tux
 @dirrm %%DATADIR%%/professor
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/pinball
+@dirrm include/pinball
+@group games
+@unexec rmdir >/dev/null 2>&1 /var/games/pinball/tux || :
+@unexec rmdir >/dev/null 2>&1 /var/games/pinball/professor || :
+@unexec rmdir >/dev/null 2>&1 /var/games/pinball || :
+/var/games/pinball/professor/highscores
+/var/games/pinball/tux/highscores
+@group

@@ -10,39 +10,28 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based Sudoku games
 
-USE_BZIP2=	yes
-USES=		ncurses
+USES=		ncurses tar:bzip2
 PLIST_FILES=	bin/sudoku \
+		man/man6/sudoku.6.gz \
 		share/sudoku/template
 PLIST_DIRS=	share/sudoku
-
-MAN6=	sudoku.6
-
-NO_STAGE=	yes
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.endif
 
 post-patch:
 	@${GREP} -lR "/usr/lib/sudoku" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e "s,/usr/lib/sudoku,${DATADIR},"
 
 do-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} sudoku.c -lcurses
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} sudoku.c -lcurses
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MAN6PREFIX}/man/man6
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/template ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/sudoku.html ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/sudoku.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/template ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/sudoku.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

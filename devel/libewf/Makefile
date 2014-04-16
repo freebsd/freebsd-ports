@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libewf
-PORTVERSION=	20140227
+PORTVERSION=	20140406
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSMTdoaVExWWNsRjg/ \
 		LOCAL/antoine
@@ -21,6 +21,7 @@ USE_OPENSSL=	yes
 USE_PYTHON=	2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} --with-libuuid=${LOCALBASE} ${ICONV_CONFIGURE_ARG}
+CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} --with-libuuid=${LOCALBASE} ${ICONV_CONFIGURE_ARG} --with-libsmdev=no
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

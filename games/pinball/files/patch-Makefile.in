@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu May 29 06:47:43 2003
-+++ Makefile.in	Thu Jun  5 22:12:54 2003
+--- Makefile.in.orig	2003-12-10 12:35:31.000000000 +0100
++++ Makefile.in	2014-04-13 21:03:05.000000000 +0200
 @@ -107,7 +107,7 @@
  install_sh = @install_sh@
  AUTOMAKE_OPTIONS = gnu
@@ -7,5 +7,14 @@
 -SUBDIRS = libltdl addon base data src test
 +SUBDIRS = addon base data src test
  
- EXTRA_DIST = bootstrap pinball.spec clean
+ EXTRA_DIST = bootstrap pinball.spec clean pinball.desktop
  
+@@ -243,7 +243,7 @@
+ 	  else \
+ 	    local_target="$$target"; \
+ 	  fi; \
+-	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
++	  ($(MAKE) -C $$subdir $(AM_MAKEFLAGS) $$local_target) \
+ 	   || case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
+ 	done; \
+ 	if test "$$dot_seen" = "no"; then \

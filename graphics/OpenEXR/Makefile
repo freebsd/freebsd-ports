@@ -3,12 +3,12 @@
 
 PORTNAME=	OpenEXR
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SAVANNAH/openexr/
 DISTNAME=	openexr-${DISTVERSION}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
 
 LICENSE=	BSD3CLAUSE
@@ -17,13 +17,12 @@ LIB_DEPENDS=	libImath.so:${PORTSDIR}/graphics/ilmbase
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-ilmbasetest --enable-imfexamples
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-# must be explicitely linked with -l{thr|pthread}
+# must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	${PTHREAD_LIBS}
 
 PORTDOCS=	*

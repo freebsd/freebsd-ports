@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Open source driving simulation
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 		${LOCALBASE}/lib/libBulletCollision.a:${PORTSDIR}/devel/bullet \
 		${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio

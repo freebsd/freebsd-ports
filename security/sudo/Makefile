@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-long-otp-prompt
 
 OPTIONS_DEFINE=	LDAP INSULTS DISABLE_ROOT_SUDO DISABLE_AUTH NOARGS_SHELL \
-		AUDIT OPIE NLS
+		AUDIT OPIE NLS SSSD
 OPTIONS_DEFAULT=	AUDIT
 OPTIONS_SUB=	yes
 
@@ -36,6 +36,7 @@ DISABLE_AUTH_DESC=	Do not require authentication by default
 NOARGS_SHELL_DESC=	Run a shell if no arguments are given
 AUDIT_DESC=	Enable BSM audit support
 OPIE_DESC=	Enable one-time passwords (no PAM support)
+SSSD_DESC=	Enable SSSD backend support.
 
 LOGFAC?=	authpriv
 CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
@@ -66,6 +67,8 @@ NOARGS_SHELL_CONFIGURE_ENABLE=	noargs-shell
 AUDIT_CONFIGURE_WITH=	bsm-audit
 OPIE_CONFIGURE_ON=	--with-opie
 OPIE_CONFIGURE_OFF=	--with-pam
+SSSD_CONFIGURE_ON=	--with-sssd
+SSSD_RUN_DEPENDS=	sssd:${PORTSDIR}/security/sssd
 
 .include <bsd.port.options.mk>
 

@@ -15,21 +15,22 @@ CFLAGS+=	-DPREFIX=\"${PREFIX}\"
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 WRKSRC=		${WRKDIR}/portsentry_beta
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/psionic/portsentry,${PREFIX}/etc,g' \
 		${WRKSRC}/portsentry.conf ${WRKSRC}/portsentry_config.h
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/portsentry.conf ${PREFIX}/etc/portsentry.conf.default
-	${INSTALL_DATA} ${WRKSRC}/portsentry.ignore ${PREFIX}/etc/portsentry.ignore.default
-	${INSTALL_PROGRAM} ${WRKSRC}/portsentry ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/portsentry.sh ${PREFIX}/etc/rc.d/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.install ${WRKSRC}/README.methods ${WRKSRC}/README.stealth \
-	  ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/portsentry.conf \
+		${STAGEDIR}${PREFIX}/etc/portsentry.conf.default
+	${INSTALL_DATA} ${WRKSRC}/portsentry.ignore \
+		${STAGEDIR}${PREFIX}/etc/portsentry.ignore.default
+	${INSTALL_PROGRAM} ${WRKSRC}/portsentry \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/portsentry.sh ${STAGEDIR}${PREFIX}/etc/rc.d/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.install ${WRKSRC}/README.methods \
+		${WRKSRC}/README.stealth ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

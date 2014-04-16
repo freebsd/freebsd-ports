@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-tools
-PORTVERSION=	1.4.21
-PORTREVISION=	1
+PORTVERSION=	1.4.22
 CATEGORIES=	security
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
 
@@ -18,15 +17,22 @@ RUN_DEPENDS=	p5-PCSC-Card>=0:${PORTSDIR}/devel/p5-PCSC-Card \
 
 USES=		gmake pkgconfig
 
-MAN1=		pcsc_scan.1 gscriptor.1p scriptor.1p ATR_analysis.1p
+.include <bsd.port.pre.mk>
 
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} -e "s,DESTDIR,PREFIX,g" ${WRKSRC}/Makefile
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pcsc_scan \
+		${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/ATR_analysis \
+		${WRKSRC}/gscriptor \
+		${WRKSRC}/scriptor \
+		${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/pcsc_scan.1 \
+		${WRKSRC}/gscriptor.1p \
+		${WRKSRC}/scriptor.1p \
+		${WRKSRC}/ATR_analysis.1p \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}/${PREFIX}/share/pcsc
+	${INSTALL_DATA} ${WRKSRC}/smartcard_list.txt \
+		${STAGEDIR}/${PREFIX}/share/pcsc
 
-post-install:
-.for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/$i ${MAN1PREFIX}/man/man1
-.endfor
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

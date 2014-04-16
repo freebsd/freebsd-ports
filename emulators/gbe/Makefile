@@ -20,8 +20,7 @@ PLIST_FILES=	bin/gbe
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gbe ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gbe ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

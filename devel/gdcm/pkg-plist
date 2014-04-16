@@ -394,6 +394,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/socketxx/sockstream.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/socketxx/sockunix.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/zipstreamimpl.h
 %%VTK%%include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/vtkGDCMImageReader.h
+%%VTK%%include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/vtkGDCMImageReader2.h
 %%VTK%%include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/vtkGDCMImageWriter.h
 %%VTK%%include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/vtkGDCMMedicalImageProperties.h
 %%VTK%%include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/vtkGDCMPolyDataReader.h

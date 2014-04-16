@@ -1,38 +1,61 @@
---- Makefile.orig	Mon Jul 22 01:24:47 2002
-+++ Makefile	Fri Sep  3 14:53:40 2004
-@@ -8,13 +8,13 @@
- # The MOUNT_TYPE definition sets the default file system type for -mount.
+--- Makefile.orig	2014-03-05 18:56:53.000000000 +0900
++++ Makefile	2014-03-13 03:27:58.000000000 +0900
+@@ -19,17 +19,17 @@
  #
+ 
  HAVE_GZIP		= 1
 -HAVE_LINUX_ATTR		= 1
+-HAVE_LINUX_CHROOT	= 1
+-HAVE_LINUX_LOSETUP	= 1
+-HAVE_LINUX_PIVOT	= 1
 -HAVE_LINUX_MOUNT	= 1
 -HAVE_BSD_MOUNT		= 0
 -MOUNT_TYPE		= '"ext3"'
 +HAVE_LINUX_ATTR		= 0
++HAVE_LINUX_CHROOT	= 0
++HAVE_LINUX_LOSETUP	= 0
++HAVE_LINUX_PIVOT	= 0
 +HAVE_LINUX_MOUNT	= 0
 +HAVE_BSD_MOUNT		= 1
 +MOUNT_TYPE		= '"ufs"'
  
+ OPT = -O3
  
--CFLAGS = -O3 -Wall -Wmissing-prototypes \
+-CFLAGS = $(OPT) -Wall -Wmissing-prototypes \
 +CFLAGS += -Wall -Wmissing-prototypes \
  	-DHAVE_GZIP=$(HAVE_GZIP) \
  	-DHAVE_LINUX_ATTR=$(HAVE_LINUX_ATTR) \
- 	-DHAVE_LINUX_MOUNT=$(HAVE_LINUX_MOUNT) \
-@@ -25,13 +25,14 @@
+  	-DHAVE_LINUX_CHROOT=$(HAVE_LINUX_CHROOT) \
+@@ -43,24 +43,26 @@
  LIBS = -lz
  
  
+-DESTDIR =
 -BINDIR = /bin
--MANDIR = /usr/man/man1
+-MANDIR = /usr/man
++#DESTDIR =
++PREFIX ?= /usr/local
++MANPREFIX ?= $(PREFIX)
 +BINDIR = $(PREFIX)/bin
-+MANDIR = $(MANPREFIX)/man/man1
++MANDIR = $(MANPREFIX)/man
  
  
  OBJS = sash.o cmds.o cmd_dd.o cmd_ed.o cmd_grep.o cmd_ls.o cmd_tar.o \
  	cmd_gzip.o cmd_find.o cmd_file.o cmd_chattr.o cmd_ar.o utils.o
  
-+all: sash
++all:	sash
  
  sash:	$(OBJS)
  	$(CC) $(LDFLAGS) -o sash $(OBJS) $(LIBS)
+-	strip sash
+ 
+ clean:
+ 	rm -f $(OBJS) sash
+ 
+ install: sash
+-	cp sash $(DESTDIR)/$(BINDIR)/sash
+-	cp sash.1 $(DESTDIR)/$(MANDIR)/man1/sash.1
++	${BSD_INSTALL_PROGRAM} sash $(DESTDIR)$(BINDIR)/sash
++	${BSD_INSTALL_MAN} sash.1 $(DESTDIR)$(MANDIR)/man1/sash.1
+ 
+ $(OBJS):	sash.h

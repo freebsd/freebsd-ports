@@ -15,25 +15,15 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS LIBDSK
-
-LIBDSK_DESC=	Include LibDSK support (recommended)
-
 OPTIONS_DEFAULT=	LIBDSK
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBDSK}
-CONFIGURE_ARGS+=	--with-libdsk --with-libdsk-path=${LOCALBASE}
-LIB_DEPENDS+=		dsk:${PORTSDIR}/emulators/libdsk
-.else
-CONFIGURE_ARGS+=	--without-libdsk
-.endif
+LIBDSK_DESC=	Include LibDSK support (recommended)
+LIBDSK_CONFIGURE_ON=	--with-libdsk --with-libdsk-path=${LOCALBASE}
+LIBDSK_CONFIGURE_OFF=	--without-libdsk
+LIBDSK_LIB_DEPENDS=	libdsk.so:${PORTSDIR}/emulators/libdsk
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog doc/765.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog doc/765.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

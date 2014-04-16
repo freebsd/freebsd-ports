@@ -29,4 +29,3 @@ man/man1/tint2.1.gz
 %%PYCONF%%share/applications/tint2conf.desktop
 %%PYCONF%%share/pixmaps/tint2conf.png
 %%PYCONF%%share/pixmaps/tint2conf.svg
-%%PYCONF%%@dirrmtry share/applications

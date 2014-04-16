@@ -1,9 +1,9 @@
-adamem/adamem
-adamem/cvem
-adamem/adamem.snd
-adamem/OS7.rom
-adamem/WP.rom
-adamem/EOS.rom
-@dirrm adamem
-%%PORTDOCS%%share/doc/adamem/adamem.txt
-%%PORTDOCS%%@dirrm share/doc/adamem
+bin/adamem
+bin/cvem
+%%DATADIR%%/adamem.snd
+%%DATADIR%%/OS7.rom
+%%DATADIR%%/WP.rom
+%%DATADIR%%/EOS.rom
+%%PORTDOCS%%%%DOCSDIR%%/adamem.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

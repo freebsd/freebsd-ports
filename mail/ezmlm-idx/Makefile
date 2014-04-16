@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.ezmlm.org/archive/${PORTVERSION}/ \
 		http://ezmlm.sericyb.com.au/archive/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Improved version of the ezmlm mailing list manager
 
 MAKE_JOBS_UNSAFE=	yes
@@ -31,7 +31,6 @@ PGSQL_DESC=		Build the PostgreSQL extension
 SQLITE_DESC=		Build the SQLite3 extension
 
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ALL_TARGET=	it
@@ -64,52 +63,44 @@ PLIST_SUB+=	MYSQL="@comment " PGSQL="@comment " SQLITE="@comment "
 
 CONFIG=		ezmlmglrc ezmlmrc ezmlmsubrc
 
-MAN1=	ezmlm-accept.1 ezmlm-archive.1 ezmlm-check.1 ezmlm-dispatch.1 \
-	ezmlm-clean.1 ezmlm-cron.1 ezmlm-gate.1 ezmlm-get.1 \
-	ezmlm-glconf.1 ezmlm-idx.1 ezmlm-issubn.1 ezmlm-limit.1 \
-	ezmlm-list.1 ezmlm-make.1 ezmlm-manage.1 ezmlm-confirm.1 \
-	ezmlm-moderate.1 ezmlm-reject.1 ezmlm-request.1 \
-	ezmlm-return.1 ezmlm-send.1 ezmlm-split.1 ezmlm-store.1 \
-	ezmlm-sub.1 ezmlm-tstdig.1 ezmlm-unsub.1 ezmlm-checksub.1 \
-	ezmlm-warn.1 ezmlm-weed.1
-MAN5=	ezmlm.5 ezmlmglrc.5 ezmlmrc.5 ezmlmsubrc.5
 DOCS=	BLURB CHANGES ChangeLog DOWNGRADE FAQ HISTORY INSTALL README \
 	README.mysql README.pgsql README.std TODO UPGRADE
 
 post-patch:
-	@${ECHO_CMD} /usr/sbin > ${WRKSRC}/conf-cron
-	@${ECHO_CMD} ${PREFIX}/bin > ${WRKSRC}/conf-bin
-	@${ECHO_CMD} ${PREFIX}/etc/ezmlm > ${WRKSRC}/conf-etc
-	@${ECHO_CMD} ${PREFIX}/lib/ezmlm > ${WRKSRC}/conf-lib
-	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
-.if defined(WITH_MYSQL)
-	@${ECHO_CMD} ${CC} ${CFLAGS} ${EXTRACT_INCLUDE} > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} ${CC} -s ${EXTRACT_LIB} > ${WRKSRC}/conf-ld
-.elif defined(WITH_PGSQL)
-	@${ECHO_CMD} ${CC} ${CFLAGS} ${EXTRACT_INCLUDE} > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} ${CC} -s ${EXTRACT_LIB} > ${WRKSRC}/conf-ld
-.elif defined(WITH_SQLITE)
-	@${ECHO_CMD} ${CC} ${CFLAGS} ${EXTRACT_INCLUDE} > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} ${CC} -s ${EXTRACT_LIB} > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "/usr/sbin" > ${WRKSRC}/conf-cron
+	@${ECHO_CMD} "${PREFIX}/bin" > ${WRKSRC}/conf-bin
+	@${ECHO_CMD} "${PREFIX}/etc/ezmlm" > ${WRKSRC}/conf-etc
+	@${ECHO_CMD} "${PREFIX}/lib/ezmlm" > ${WRKSRC}/conf-lib
+	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} -s" > ${WRKSRC}/conf-ld
+.if ${PORT_OPTIONS:MMYSQL}
+	@${ECHO_CMD} "${CC} ${CFLAGS} ${EXTRACT_INCLUDE}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} -s ${EXTRACT_LIB}" > ${WRKSRC}/conf-ld
+.elif ${PORT_OPTIONS:MPGSQL}
+	@${ECHO_CMD} "${CC} ${CFLAGS} ${EXTRACT_INCLUDE}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} -s ${EXTRACT_LIB}" > ${WRKSRC}/conf-ld
+.elif ${PORT_OPTIONS:MSQLITE}
+	@${ECHO_CMD} "${CC} ${CFLAGS} ${EXTRACT_INCLUDE}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} -s ${EXTRACT_LIB}" > ${WRKSRC}/conf-ld
 .endif
-	@${ECHO_CMD} ${PREFIX}/man > ${WRKSRC}/conf-man
-	@${ECHO_CMD} ${QMAIL_PREFIX} > ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} "${MANPREFIX}/man" > ${WRKSRC}/conf-man
+	@${ECHO_CMD} "${QMAIL_PREFIX}" > ${WRKSRC}/conf-qmail
 	@${REINPLACE_CMD} -e 's,/etc/ezmlm/,${PREFIX}/etc/ezmlm/,' \
 		${WRKSRC}/idx.h
-
+	@${REINPLACE_CMD} -e "s:\(/installer\) \(\"\`head\):\1 ${STAGEDIR}\2:" \
+	    -e "s:\(\"\`head -n 1 conf-etc\`\"/default\):${STAGEDIR}\1:" \
+	    ${WRKSRC}/Makefile
 pre-install:
 	@${REINPLACE_CMD} -e '/\/cat/d' ${WRKSRC}/MAN
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/ezmlm
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ezmlm
 .for file in ${CONFIG}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/etc/ezmlm/${file}.sample
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/etc/ezmlm/${file}.sample
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

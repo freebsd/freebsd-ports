@@ -95,7 +95,6 @@ man/man1/tslearn.1.gz
 %%DATADIR%%/table/tsin32
 %%DATADIR%%/table/tsin32.idx
 %%DATADIR%%/table/vims.gtab
-%%DATADIR%%/table/vocabulary.gtab
 %%DATADIR%%/table/zo.kbm
 %%PORTDOCS%%%%DOCSDIR%%/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/README.html
@@ -158,7 +157,7 @@ share/icons/gcin/vietnam.png
 share/icons/gcin/vocabulary.png
 share/icons/gcin/wm2.png
 share/icons/gcin/wubi.png
-share/icons/gcin.png
+share/icons/hicolor/64x64/apps/gcin.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/icons/gcin
 @dirrmtry share/icons

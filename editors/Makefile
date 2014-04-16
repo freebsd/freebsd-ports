@@ -12,7 +12,6 @@
     SUBDIR += apel-emacs21
     SUBDIR += apel-emacs22
     SUBDIR += asedit
-    SUBDIR += axe
     SUBDIR += beav
     SUBDIR += biew
     SUBDIR += bitedit
@@ -58,7 +57,6 @@
     SUBDIR += e93
     SUBDIR += edith
     SUBDIR += editorconfig-core-c
-    SUBDIR += elvis
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += emacs-nox11
@@ -265,7 +263,6 @@
     SUBDIR += textedit
     SUBDIR += textroom
     SUBDIR += texworks
-    SUBDIR += the
     SUBDIR += thoteditor
     SUBDIR += tpad
     SUBDIR += tree-widget

@@ -1,0 +1,54 @@
+Index: qmailadmin.h
+===================================================================
+--- qmailadmin.h.orig
++++ qmailadmin.h
+@@ -59,8 +59,3 @@
+ void del_id_files( char *);
+ void init_globals();
+ void quickAction (char *username, int action);
+-
+-/* copied from maildirquota.c in vpopmail
+- * it really needs to get into vpopmail.h somehow
+- */
+-int readuserquota(const char* dir, long *sizep, int *cntp);
+Index: template.c
+===================================================================
+--- template.c.orig
++++ template.c
+@@ -426,8 +426,8 @@ int send_template_now(char *filename)
+           case 'Q':
+             vpw = vauth_getpw(ActionUser, Domain);
+             if (strncmp(vpw->pw_shell, "NOQUOTA", 2) != 0) {
+-              long diskquota = 0;
+-              int maxmsg = 0;
++              storage_t diskquota = 0;
++              storage_t maxmsg = 0;
+               char path[256];
+ 
+               quota_to_megabytes(qconvert, vpw->pw_shell);
+@@ -547,8 +547,8 @@ int send_template_now(char *filename)
+                * then again, with recent changes, the non-admin shouldn't
+                * even get to this page.
+                */
+-              long diskquota = 0;
+-              int maxmsg = 0;
++              storage_t diskquota = 0;
++              storage_t maxmsg = 0;
+ 	      char path[256];
+               vpw = vauth_getpw(Username, Domain);
+ 
+Index: user.c
+===================================================================
+--- user.c.orig
++++ user.c
+@@ -170,8 +170,8 @@ int show_user_lines(char *user, char *do
+               (AdminType==USER_ADMIN && strcmp(pw->pw_name,Username)==0)))) {
+         if (AdminType==DOMAIN_ADMIN || 
+             (AdminType==USER_ADMIN && strcmp(pw->pw_name,Username)==0)) {
+-          long diskquota = 0;
+-          int maxmsg = 0;
++          storage_t diskquota = 0;
++          storage_t maxmsg = 0;
+ 
+           /* display account name and user name */
+           printf ("<tr bgcolor=%s>", get_color_text("000"));

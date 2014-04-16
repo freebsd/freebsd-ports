@@ -14,12 +14,11 @@ COMMENT=	Unix-like tools to manipulate stored files from the command line
 USE_PYDISTUTILS=	yes
 USE_PYTHON=	2
 
-MAN1=		s3cmd.1
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,share/man,man,' ${WRKSRC}/setup.py
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's,doc/packages,doc,' ${WRKSRC}/setup.py
 .else
 	${REINPLACE_CMD} -e '/(doc_path+/d' ${WRKSRC}/setup.py

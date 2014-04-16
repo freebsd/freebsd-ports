@@ -13,6 +13,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby extension library to use ODBC data sources
 
+OPTIONS_DEFINe=	DOCS EXAMPLES
+
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
 USE_RUBY=	yes
@@ -23,33 +25,29 @@ INSTALL_WRKSRC=		${WRKSRC}/ext
 
 INSTALL_TARGET=	site-install
 
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
+
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/odbc.so \
 		%%RUBY_SITELIBDIR%%/cqgen.rb
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if !defined(NOPORTDOCS)
 EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 PORTEXAMPLES=	test
 
 DOCSDIR=	${RUBY_MODDOCDIR}
 PORTDOCS=	COPYING ChangeLog README doc
-.endif
 
 post-extract:
 	cd ${WRKSRC} && ${MV} lib ext/
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${EXAMPLESDIR}/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${DOCSDIR}/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

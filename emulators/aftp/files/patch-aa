@@ -20,8 +20,6 @@
 ! OBJS=		aftp.o pro.o dos.o
 ! #CC_OPTS=	-DDIRECTORY_COMMANDS
 ! CC=		gcc ${CC_OPTS}
-! INSTALL=	install -c
-! INSTALL_BIN=	${INSTALL} -s -o bin -g bin
 ! PREFIX?=		/usr/local
 ! 
 ! all:	aftp
@@ -33,7 +31,7 @@
 ! 	${CC} -c ${CFLAGS} $<
 ! 
 ! install: all
-! 	${INSTALL_BIN} aftp ${PREFIX}/bin/
+! 	${BSD_INSTALL_PROGRAM} aftp ${DESTDIR}${PREFIX}/bin
   
   clean:
   	rm -f $(OBJS) aftp

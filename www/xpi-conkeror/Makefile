@@ -14,25 +14,19 @@ COMMENT=	Keyboard-oriented, customizable web browser based on Mozilla XULRunner
 LICENSE=	GPLv1 GPLv2 MPL
 LICENSE_COMB=	multi
 
-USE_XZ=		yes
-
 OPTIONS_SINGLE+=	XULRUNNER
 OPTIONS_SINGLE_XULRUNNER=	FIREFOX LIBXUL
 FIREFOX_DESC?=	Use XULRunner from Firefox port
 LIBXUL_DESC?=	Use XULRunner from LibXUL port
 OPTIONS_DEFAULT+=	LIBXUL
 
+USES=		desktop-file-utils tar:xz
+
 WRKSRC=		${WRKDIR}/conkeror
+LIBXUL_USES=	gecko
+FIREFOX_USES=	gecko:firefox,25
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBXUL}
-USE_GECKO=libxul
-.else
-USE_FIREFOX=25+
-.endif
-
-USES=		desktop-file-utils
 
 BUILD_ID=	${ECHO_CMD} -n `whoami`@`hostname`_`date +%s`
 
@@ -71,8 +65,5 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/conkeror-spawn-helper ${STAGEDIR}${PREFIX}/libexec/conkeror/
 		${LN} -sf ${PREFIX}/libexec/conkeror/conkeror-spawn-helper ${STAGEDIR}${DATADIR}/
 		${INSTALL_MAN} ${WRKSRC}/conkeror.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-
-post-install:
-		@-update-desktop-database
 
 .include <bsd.port.mk>

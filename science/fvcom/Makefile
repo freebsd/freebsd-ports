@@ -3,7 +3,7 @@
 
 PORTNAME=	fvcom
 PORTVERSION=	2.7.1
-PORTREVISION=	2
+PORTREVISION?=	2
 CATEGORIES=	science
 MASTER_SITES=	http://fvcom.smast.umassd.edu/FVCOM/index.html/
 DISTNAME=	sourcecode1
@@ -13,9 +13,9 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
 
 # Check netcdf lib for Fortran support!
-LIB_DEPENDS+=	netcdff:${PORTSDIR}/science/netcdf-ftn \
-		lapack:${PORTSDIR}/math/lapack \
-		blas:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libnetcdff.so:${PORTSDIR}/science/netcdf-ftn \
+		liblapack.so:${PORTSDIR}/math/lapack \
+		libblas.so:${PORTSDIR}/math/lapack
 
 USES=		fortran
 WRKSRC=		${WRKDIR}/FVCOM2.7.1/FVCOM_source
@@ -24,7 +24,6 @@ PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}
 
 RESTRICTED=	may not be redistributed because of licensing reasons
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})
@@ -42,6 +41,6 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fvcom \
-		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.post.mk>

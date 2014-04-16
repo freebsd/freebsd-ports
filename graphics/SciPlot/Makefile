@@ -26,25 +26,22 @@ PORTDOCS=	README SciPlot.html SciPlotDemo.html SciPlotProg.html
 EXDATA=		data.txt
 EXBINS=		realtime sciplot
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${INCLUDES:S|^|${WRKSRC}/|} ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${LIBNAME}.a ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/${LIBNAME}.so.0 ${PREFIX}/lib
-	(cd ${PREFIX}/lib; ${LN} -sf ${LIBNAME}.so.0 ${LIBNAME}.so)
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${INCLUDES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${LIBNAME}.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/${LIBNAME}.so.0 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf ${LIBNAME}.so.0 ${STAGEDIR}${PREFIX}/lib/${LIBNAME}.so
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXDATA:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${EXBINS:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXDATA:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${EXBINS:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

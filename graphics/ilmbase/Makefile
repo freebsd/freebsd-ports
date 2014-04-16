@@ -7,7 +7,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	SAVANNAH/openexr/
 DISTNAME=	ilmbase-${PORTVERSION}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	ILM Base libraries a.k.a. Half, IlmThread, Imath, and Iex
 
 LICENSE=	BSD3CLAUSE

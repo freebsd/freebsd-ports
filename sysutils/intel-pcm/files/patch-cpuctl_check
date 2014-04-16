@@ -1,0 +1,60 @@
+commit f87e1f30a39055cdb3b10964a805a9b5e41e6a77
+Author: Jim Harris <james.r.harris@intel.com>
+Date:   Mon Apr 14 22:59:44 2014 -0700
+
+    FreeBSD: ensure cpuctl(4) driver is loaded.
+    
+    Also do a couple of sanity checks on some of the apic cpuid parsing.
+    This just ensures we get a sensible error messages rather than an
+    FPE if some logic bug is found in the apic parsing code.
+
+diff --git cpucounters.cpp cpucounters.cpp
+index df8a802..0a9fc26 100644
+--- cpucounters.cpp
++++ cpucounters.cpp
+@@ -63,6 +63,8 @@ int convertUnknownToInt(size_t size, char* value);
+ #endif
+ 
+ #if defined (__FreeBSD__)
++#include <sys/param.h>
++#include <sys/module.h>
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+ #include <sys/sem.h>
+@@ -735,11 +737,23 @@ PCM::PCM() :
+         std::cerr << "Unable to get kern.smp.cpus from sysctl." << std::endl;
+         return;
+     }
++
++    if (modfind("cpuctl") == -1)
++    {
++        std::cout << "cpuctl(4) not loaded." << std::endl;
++        return;
++    }
+  
+     do_cpuid(1, cpuid_args.data);
+ 
+     apic_ids_per_package = (cpuid_args.data[1] & 0x00FF0000) >> 16;
+ 
++    if (apic_ids_per_package == 0)
++    {
++        std::cout << "apic_ids_per_package == 0" << std::endl;
++        return;
++    }
++
+     cpuid_count(0xb, 0x0, cpuid_args.data);
+ 
+     if ((cpuid_args.data[2] & 0xFF00) == 0x100)
+@@ -747,6 +761,12 @@ PCM::PCM() :
+     else
+         apic_ids_per_core = 1;
+ 
++    if (apic_ids_per_core == 0)
++    {
++        std::cout << "apic_ids_per_core == 0" << std::endl;
++        return;
++    }
++
+     for (int i = 0; i < num_cores; i++)
+     {
+         char cpuctl_name[64];

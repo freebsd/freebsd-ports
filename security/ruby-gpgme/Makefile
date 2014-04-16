@@ -16,6 +16,8 @@ COMMENT=	A Ruby interface to GnuPG Made Easy (GPGME)
 
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=	yes
@@ -24,31 +26,30 @@ INSTALL_TARGET=	site-install
 
 DOCS=		doc
 EXAMPLES=	examples/*
+EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
+DOCSDIR=	${RUBY_MODDOCDIR}
+PORTEXAMPLES=	*
+PORTDOCS=	*
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-build:
-.if !defined(NOPORTDOCS)
 	cd ${BUILD_WRKSRC}; ${RUBY_RDOC} lib
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} ${DOCS} ${RUBY_MODDOCDIR}/)
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/)
 
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 .endfor
-	@${FIND} -ds ${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
-		's,^${PREFIX}/?,,' >> ${TMPPLIST}
-	@${FIND} -ds ${RUBY_MODDOCDIR} -type d -print | ${SED} -E -e \
-		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/doc/ruby19/ 2>/dev/null || true" \
-		>> ${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	fityk
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/xylib:xylib
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
@@ -18,20 +19,20 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/include/classic_core.hpp:${PORT
 		gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
+USES=		gmake libtool tar:bzip2 desktop-file-utils shared-mime-info
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LDFLAGS+=	-lbz2 -lz
 USE_GITHUB=	yes
 GH_ACCOUNT=	wojdyr
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_WX=		2.8+
+USE_WX=		3.0
 WX_CONF_ARGS=	absolute
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
+WX_UNICODE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-doc --disable-xyconvert
 USE_LDCONFIG=	yes
-USE_GCC=	any
+INSTALL_TARGET=	install-strip
 
-MAN1=		fityk.1 xyconv.1
 PORTDOCS=	*
 
 CFLAGS+=	-D_GNU_SOURCE
@@ -42,11 +43,7 @@ LDFLAGS+=	-L${WRKDIR}/${XYLIB_DISTNAME}/xylib/.libs \
 
 XYLIB_DISTNAME=	xylib-1.1
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/HELP_DEF/s|pkgdatadir|docdir|g' \
@@ -68,13 +65,10 @@ pre-build:
 			${ALL_TARGET}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/fityk.1 ${MANPREFIX}/man/man1
-	${INSTALL_PROGRAM} ${WRKDIR}/${XYLIB_DISTNAME}/xyconv ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/${XYLIB_DISTNAME}/xyconv.1 ${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR})
-.endif
-	@-update-mime-database ${PREFIX}/share/mime
+	${INSTALL_MAN} ${WRKSRC}/doc/fityk.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKDIR}/${XYLIB_DISTNAME}/xyconv ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/${XYLIB_DISTNAME}/xyconv.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

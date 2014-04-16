@@ -1,11 +1,11 @@
---- plugins/Makefile.am.orig	Thu Jan 25 09:48:05 2007
-+++ plugins/Makefile.am	Thu Feb 22 19:32:15 2007
-@@ -2,7 +2,7 @@
+--- ./plugins/Makefile.am.orig	2014-04-16 00:19:03.000000000 +0200
++++ ./plugins/Makefile.am	2014-04-16 11:38:18.000000000 +0200
+@@ -14,7 +14,7 @@
+ VPATH = $(top_srcdir) $(top_srcdir)/lib $(top_srcdir)/plugins $(top_srcdir)/plugins/t
  
- VPATH = $(top_srcdir) $(top_srcdir)/lib $(top_srcdir)/plugins $(top_srcdir)/plugins/t 
+ AM_CPPFLAGS = -I.. -I$(top_srcdir)/lib -I$(top_srcdir)/gl -I$(top_srcdir)/intl \
+-	@LDAPINCLUDE@ @PGINCLUDE@ @SSLINCLUDE@
++	@LDAPINCLUDE@ @PGINCLUDE@ @SSLINCLUDE@ @RADIUSINCLUDE@
  
--INCLUDES = -I.. -I$(top_srcdir)/lib -I$(top_srcdir)/gl -I$(top_srcdir)/intl @LDAPINCLUDE@ @PGINCLUDE@ @SSLINCLUDE@
-+INCLUDES = -I.. -I$(top_srcdir)/lib -I$(top_srcdir)/gl -I$(top_srcdir)/intl @LDAPINCLUDE@ @PGINCLUDE@ @SSLINCLUDE@ @RADIUSINCLUDE@
- 
- datadir = @datadir@
  localedir = $(datadir)/locale
+ # gettext docs say to use AM_CPPFLAGS, but per module_CPPFLAGS override this

@@ -6,7 +6,7 @@ TARGET_DIR=${PKG_PREFIX}/share/compat/locale
 cd ${TARGET_DIR}
 
 while read dir; do
-	mkdir $dir
+	mkdir -p $dir
 done << EOF
 af_ZA.ISO8859-15
 af_ZA.UTF-8

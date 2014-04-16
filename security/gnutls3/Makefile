@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.1.22
-PORTREVISION=	1
+PORTVERSION=	3.1.23
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v3.1/
 PKGNAMESUFFIX=	${GNUTLS_SUFFIX}
@@ -20,11 +19,10 @@ LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 
 GNUTLS_SUFFIX=	3
 
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv pkgconfig tar:xz
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
 USE_LDCONFIG=	${PREFIX}/lib/gnutls3
-USE_XZ=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes

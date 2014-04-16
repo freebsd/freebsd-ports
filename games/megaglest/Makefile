@@ -3,7 +3,7 @@
 
 PORTNAME=	megaglest
 PORTVERSION=	3.9.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_3.9.0/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
@@ -23,12 +23,11 @@ RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:${PORTSD
 
 SUB_FILES=	pkg-message
 
-USE_XZ=		yes
-USES=		cmake dos2unix openal:al,alut pkgconfig
+USES=		cmake display:build dos2unix lua openal:al,alut pkgconfig tar:xz
 USE_GL=		glew gl glu
-USE_LUA=	5.1
 USE_SDL=	yes
-USE_WX=		2.8+
+USE_WX=		3.0
+WX_UNICODE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.9.0
@@ -38,6 +37,12 @@ OPTIONS_SUB=	yes
 EDITOR_DESC=	Install MegaGlest Editor
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local/include/lua51,${LUA_INCDIR},g ; \
+		s,/usr/local/lib/lua51,${LUA_LIBDIR},g ; \
+		s,lua5.2,lua-${LUA_VER},g' \
+		${WRKSRC}/mk/cmake/Modules/FindLUA.cmake
 
 do-install:
 	${STRIP_CMD} ${WRKSRC}/source/glest_game/megaglest

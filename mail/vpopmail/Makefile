@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.4.32
-PORTREVISION=	5
+PORTVERSION=	5.4.33
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
@@ -47,14 +46,8 @@ OPTIONS_DEFINE=	DOCS \
 		MD5_PASSWORDS \
 		CLEAR_PASSWD \
 		LEARN_PASSWORDS \
-		MYSQL \
 		MYSQL_REPLICATION \
 		MYSQL_LIMITS \
-		PGSQL \
-		SYBASE \
-		ORACLE \
-		LDAP \
-		LDAP_SASL \
 		VALIAS \
 		ROAMING \
 		IP_ALIAS \
@@ -75,8 +68,11 @@ OPTIONS_DEFINE=	DOCS \
 		AUTH_LOG \
 		SQL_LOG \
 		SQL_LOG_TRIM
+OPTIONS_SINGLE=	AUTH
+OPTIONS_SINGLE_AUTH= CDB MYSQL PGSQL LDAP LDAP_SASL ORACLE SYBASE
 
 OPTIONS_DEFAULT=MD5_PASSWORDS \
+		CDB \
 		ROAMING \
 		FILE_LOCKING \
 		USERS_BIG_DIR \
@@ -84,7 +80,8 @@ OPTIONS_DEFAULT=MD5_PASSWORDS \
 		FPIC \
 		AUTH_LOG
 
-PASSWD_DESC=			Auth via /etc/passwd
+CDB_DESC=			Auth via CDB
+PASSWD_DESC=			/etc/passwd account support
 MYSQL_DESC=			Auth via MySQL
 PGSQL_DESC=			Auth via PostgreSQL
 SYBASE_DESC=			Auth via Sybase
@@ -96,7 +93,7 @@ MYSQL_LIMITS_DESC=		MySQL mailbox limitations support
 ORACLE_DESC=			Auth via Oracle
 LDAP_DESC=			Auth via LDAP
 LDAP_SASL_DESC=			Auth via LDAP SASL
-VALIAS_DESC=			valias processing
+VALIAS_DESC=			Store aliases in DB instead of .qmail files
 ROAMING_DESC=			roaming users support
 IP_ALIAS_DESC=			IP alias support
 QMAIL_EXT_DESC=			qmail-like user-* address support

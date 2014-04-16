@@ -6,7 +6,6 @@ bin/evolver
 bin/pamp
 bin/yn00
 %%PORTDOCS%%%%DOCSDIR%%/pamlDOC.pdf
-%%PORTDOCS%%%%DOCSDIR%%/MCMCtreeDoc.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pamlFAQs.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pamlHistory.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

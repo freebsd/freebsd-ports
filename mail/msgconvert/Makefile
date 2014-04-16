@@ -20,15 +20,17 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 USES=		shebangfix perl5
-USE_BZIP2=	yes
+
 EXTRACT_CMD=	${BZCAT}
-EXTRACT_BEFORE_ARGS=	
+EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	> ${PORTNAME}.pl
+
+PLIST_FILES=	bin/msgconvert.pl bin/msgconvert
 SHEBANG_FILES=	${PORTNAME}.pl
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}.pl
-	${LN} -s ${PREFIX}/bin/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}.pl
+	${LN} -s ${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

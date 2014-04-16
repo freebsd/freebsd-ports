@@ -1,0 +1,27 @@
+bin/advj 
+bin/advk
+bin/advm
+bin/advmame
+bin/advs
+man/man1/advdev.1.gz
+man/man1/advj.1.gz
+man/man1/advk.1.gz
+man/man1/advm.1.gz
+man/man1/advmame.1.gz
+man/man1/advs.1.gz
+%%DATADIR%%/artwork/.keep_me
+%%DATADIR%%/diff/.keep_me
+%%DATADIR%%/event.dat
+%%DATADIR%%/history.dat
+%%DATADIR%%/hiscore.dat
+%%DATADIR%%/image/.keep_me
+%%DATADIR%%/rom/.keep_me
+%%DATADIR%%/sample/.keep_me
+%%DATADIR%%/snap/.keep_me
+@dirrm %%DATADIR%%/snap
+@dirrm %%DATADIR%%/sample
+@dirrm %%DATADIR%%/rom
+@dirrm %%DATADIR%%/image
+@dirrm %%DATADIR%%/diff
+@dirrm %%DATADIR%%/artwork
+@dirrm %%DATADIR%%

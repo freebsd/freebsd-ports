@@ -49,7 +49,6 @@
     SUBDIR += euler
     SUBDIR += fastcap
     SUBDIR += fasthenry
-    SUBDIR += felt
     SUBDIR += fisicalab
     SUBDIR += flounder
     SUBDIR += fvcom

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuplot
-PORTVERSION=	4.6.3
-PORTREVISION=	2
+PORTVERSION=	4.6.5
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -62,7 +61,8 @@ X11_USE=	XORG=x11
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWX}
-USE_WX=			2.5-2.8
+USE_WX=			3.0
+WX_UNICODE=		yes
 WX_CONF_ARGS=		absolute
 .else
 CONFIGURE_ARGS+=	--disable-wxwidgets

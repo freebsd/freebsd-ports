@@ -1,0 +1,85 @@
+--- configure.in.orig	2003-01-30 19:29:29.000000000 -0200
++++ configure.in	2014-04-01 22:37:57.000000000 -0300
+@@ -1,8 +1,8 @@
+ dnl Process this file with autoconf to produce a configure script.
+ 
+-AC_INIT(README)
+-
+-AM_INIT_AUTOMAKE(refocus, 0.9.0)
++AC_INIT([refocus],[0.9.0])
++AC_CONFIG_SRCDIR(README)
++AM_INIT_AUTOMAKE
+ 
+ AC_PROG_CC
+ AC_CHECK_PROG(GCC3, gcc3, gcc3)
+@@ -12,31 +12,32 @@
+    AC_MSG_RESULT([using $CC as compiler])
+ fi
+ 
+-AC_STDC_HEADERS
++AC_HEADER_STDC([])
+ AC_PROG_RANLIB
+ 
+-# Check if the user has ATLAS installed in ./lib-atlas
+-fw_save_LIBS=$LIBS
+-LIBS=-L./lib-atlas/lib ${LDFLAGS}
+-AC_CHECK_LIB(lapack, clapack_dgesv, 
+-AC_MSG_RESULT([using atlas in lib-atlas/lib])
+-AC_DEFINE(HAVE_ATLAS)
+-have_atlas=yes
+-LAPACK_LIB_DIR='${top_srcdir}/lib-atlas/lib'
+-LAPACK_INCLUDE_DIR='${top_srcdir}/lib-atlas/include'
+-,
+-AC_MSG_RESULT([using unoptimized lapack in lib])
++BUNDLED_LAPACK_LIB_DIR='${top_srcdir}/lib'
++AC_SUBST(BUNDLED_LAPACK_LIB_DIR)
++
+ have_atlas=no
+-LAPACK_LIB_DIR='${top_srcdir}/lib'
+-LAPACK_INCLUDE_DIR='${top_srcdir}/lib'
+-,
+-[-lcblas -latlas])
+-LIBS=$fw_save_LIBS
+-AC_SUBST(LAPACK_LIB_DIR)
+-AC_SUBST(LAPACK_INCLUDE_DIR)
++AC_ARG_WITH(lapack-libs, [  --with-lapack-libs=LIBS ])
++if test "x$with_lapack_libs" = "x" ; then
++  LAPACK_LIBS='-L${top_srcdir}/lib -latlas -lcblas -llapack'
++else
++  LAPACK_LIBS="$with_lapack_libs"
++  have_atlas=yes
++fi
++AC_SUBST(LAPACK_LIBS)
+ AM_CONDITIONAL(HAVE_ATLAS, test x${have_atlas} = xyes)
+ 
+-AM_PATH_GIMP(1.2.0)
++AC_ARG_WITH(lapack-includes, [  --with-lapack-includes=INCLUDES ])
++if test "x$with_lapack_includes" = "x" ; then
++  LAPACK_INCLUDES='-I ${top_srcdir}/lib'
++else
++  LAPACK_INCLUDES="$with_lapack_includes"
++fi
++AC_SUBST(LAPACK_INCLUDES)
++
++AM_PATH_GIMP_2_0(2.0.0)
+ AM_PATH_GTK_2_0(2.0.0)
+ AM_PATH_GLIB_2_0(2.0.0)
+ 
+@@ -96,15 +97,9 @@
+    AC_DEFINE(PREVIEW_DEBUG)
+ fi
+ 
+-# If we have gcc set the CFLAGS
+-# This is done here because otherwise configure would use
+-# these flags for compiling test-programs.
+-if test "$GCC" = yes; then
+-   CFLAGS="-Wall -ansi -pedantic -ggdb -fomit-frame-pointer -O3 -funroll-all-loops"
+-fi
+-
+ #Check if erf is defined in the mathlibrary
+ AC_CHECK_LIB(m, erf, AC_DEFINE(HAVE_ERF))
+ 
+-AC_OUTPUT([Makefile src/Makefile lib/Makefile doc/Makefile gtk-doc/Makefile ])
++AC_CONFIG_FILES([Makefile src/Makefile lib/Makefile doc/Makefile gtk-doc/Makefile ])
++AC_OUTPUT
+ 

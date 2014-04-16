@@ -1,0 +1,9 @@
+bin/rdup
+bin/rdup-simple
+bin/rdup-tr
+bin/rdup-up
+man/man1/rdup.1.gz
+man/man1/rdup-simple.1.gz
+man/man1/rdup-tr.1.gz
+man/man1/rdup-up.1.gz
+man/man7/rdup-backups.7.gz

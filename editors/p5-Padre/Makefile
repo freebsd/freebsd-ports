@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Application Development and Refactoring Environment
 
+BROKEN=		not staged
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 

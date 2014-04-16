@@ -10,10 +10,10 @@ MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL MESS port with advanced TV and monitor video support
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_GL=		yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -22,33 +22,21 @@ CFLAGS+=	-idirafter ${LOCALBASE}/include
 OPTIONS_DEFINE=	FREETYPE SLANG
 SLANG_DESC=	Enable sLang support (for video driver)
 
-MAN1=		advmess.1
+FREETYPE_CONFIGURE_ENABLE=	freetype
+FREETYPE_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
 
-NO_STAGE=	yes
+SLANG_CONFIGURE_ENABLE=	slang
+SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
-.if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-.else
-CONFIGURE_ARGS+=--disable-freetype
-.endif
-
-.if ${PORT_OPTIONS:MSLANG}
-LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
-.else
-CONFIGURE_ARGS+=--disable-slang
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e '/pkgdocdir/d' ${WRKSRC}/advance/advance.mak
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${REINPLACE_CMD} -E -e '/pkgdocdir/d' \
+		-e 's,(bin|man|pkg)dir),DESTDIR)$$(&,' \
+		${WRKSRC}/advance/advance.mak
 
 .include <bsd.port.post.mk>

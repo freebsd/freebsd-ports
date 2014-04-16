@@ -1,0 +1,5 @@
+Mod_python allows embedding Python within the Apache http server
+for a considerable boost in performance and added flexibility
+in designing web based applications.
+
+WWW: http://www.modpython.org/

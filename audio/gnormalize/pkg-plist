@@ -1,4 +1,5 @@
 bin/gnormalize
+man/man1/gnormalize.1.gz
 %%DATADIR%%/animations/dancing_penguin.gif
 %%DATADIR%%/animations/penguin_cold.gif
 %%DATADIR%%/animations/penguin_ice.gif

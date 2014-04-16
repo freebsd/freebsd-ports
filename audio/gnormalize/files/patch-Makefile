@@ -1,52 +1,67 @@
---- Makefile.orig	2008-06-11 09:03:39.000000000 +0800
-+++ Makefile	2008-08-26 02:44:33.000000000 +0800
-@@ -7,9 +7,12 @@
+--- ./Makefile.orig	2008-06-11 03:03:39.000000000 +0200
++++ ./Makefile	2014-04-06 19:58:34.694394244 +0200
+@@ -1,15 +1,18 @@
+-PREFIX=/usr
++PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+ DOCDIR=$(PREFIX)/share/doc/gnormalize
+ ICONDIR=$(PREFIX)/share/icons
+ ICONDIR2=$(PREFIX)/share/pixmaps
+ LICONDIR=$(ICONDIR)/large
  MICONDIR=$(ICONDIR)/mini
- BASE=$(PREFIX)/share/gnormalize
+-BASE=$(PREFIX)/share/gnormalize
++BASE=/usr/local/share/gnormalize
  ANIMDIR=$(BASE)/animations
 -MANDIR=$(PREFIX)/share/man
-+MANDIR=$(PREFIX)/man
-+INSTALL_PROG=install -m 755 -o root -g wheel
-+INSTALL_DATA=install -m 444 -o root -g wheel
++MANDIR=/usr/local/man
++INSTALL_PROG=install -m 755
++INSTALL_DATA=install -m 444
  
  DOCS=README
 +MAN_PAGE=gnormalize.1
  
  all:
  clean:
-@@ -17,21 +20,22 @@
+@@ -17,29 +20,30 @@
  
  
  install: all
-+	cat "$(MAN_PAGE).lzma" | lzma -d -- > "$(MAN_PAGE)"
- 	mkdir -p "$(BINDIR)"
- 	mkdir -p "$(ICONDIR)"
- 	mkdir -p "$(ICONDIR2)"
-+	mkdir -p "$(LICONDIR)"
-+	mkdir -p "$(MICONDIR)"
- 	mkdir -p "$(ANIMDIR)"
+-	mkdir -p "$(BINDIR)"
+-	mkdir -p "$(ICONDIR)"
+-	mkdir -p "$(ICONDIR2)"
+-	mkdir -p "$(ANIMDIR)"
 -	mkdir -p "$(DOCDIR)"
- 	mkdir -p "$(MANDIR)/man1/"
+-	mkdir -p "$(MANDIR)/man1/"
 -	install -Dm 0755 gnormalize "$(BINDIR)/gnormalize"
 -	install -m 0644 $(DOCS) "$(DOCDIR)/"
 -	install -m 0644 $(DOCS) "$(BASE)/"
 -	install -m 0644 gnormalize.1.lzma "$(MANDIR)/man1/gnormalize.1.lzma"
-+	$(INSTALL_PROG) gnormalize "$(BINDIR)/gnormalize"
-+	$(INSTALL_DATA) $(DOCS) "$(BASE)/"
-+	$(INSTALL_DATA) $(MAN_PAGE) "$(MANDIR)/man1/$(MAN_PAGE)"
- 	install -d "$(ANIMDIR)"
+-	install -d "$(ANIMDIR)"
 -	install -m 0644 animations/*.gif "$(ANIMDIR)/"	
 -	install -Dm 0644 icons/gnormalize-32.png "$(ICONDIR)/gnormalize.png"
 -	install -Dm 0644 icons/gnormalize-48.png "$(LICONDIR)/gnormalize.png"
 -	install -Dm 0644 icons/gnormalize-16.png "$(MICONDIR)/gnormalize.png"
-+	$(INSTALL_DATA) animations/*.gif "$(ANIMDIR)/"	
-+	$(INSTALL_DATA) icons/gnormalize-32.png "$(ICONDIR)/gnormalize.png"
-+	$(INSTALL_DATA) icons/gnormalize-48.png "$(LICONDIR)/gnormalize.png"
-+	$(INSTALL_DATA) icons/gnormalize-16.png "$(MICONDIR)/gnormalize.png"
- 	ln -sf "$(ICONDIR)/gnormalize.png" "$(ICONDIR2)/gnormalize.png"
+-	ln -sf "$(ICONDIR)/gnormalize.png" "$(ICONDIR2)/gnormalize.png"
++	cat "$(MAN_PAGE).lzma" | lzma -d -- > "$(MAN_PAGE)"
++	mkdir -p "$(DESTDIR)$(BINDIR)"
++	mkdir -p "$(DESTDIR)$(ICONDIR)"
++	mkdir -p "$(DESTDIR)$(ICONDIR2)"
++	mkdir -p "$(DESTDIR)$(LICONDIR)"
++	mkdir -p "$(DESTDIR)$(MICONDIR)"
++	mkdir -p "$(DESTDIR)$(ANIMDIR)"
++	mkdir -p "$(DESTDIR)$(MANDIR)/man1/"
++	$(INSTALL_PROG) gnormalize "$(DESTDIR)$(BINDIR)/gnormalize"
++	$(INSTALL_DATA) $(DOCS) "$(DESTDIR)$(BASE)/"
++	$(INSTALL_DATA) $(MAN_PAGE) "$(DESTDIR)$(MANDIR)/man1/$(MAN_PAGE)"
++	install -d "$(DESTDIR)$(ANIMDIR)"
++	$(INSTALL_DATA) animations/*.gif "$(DESTDIR)$(ANIMDIR)/"
++	$(INSTALL_DATA) icons/gnormalize-32.png "$(DESTDIR)$(ICONDIR)/gnormalize.png"
++	$(INSTALL_DATA) icons/gnormalize-48.png "$(DESTDIR)$(LICONDIR)/gnormalize.png"
++	$(INSTALL_DATA) icons/gnormalize-16.png "$(DESTDIR)$(MICONDIR)/gnormalize.png"
++	ln -sf "$(ICONDIR)/gnormalize.png" "$(DESTDIR)$(ICONDIR2)/gnormalize.png"
  
  postinstall:
-@@ -39,7 +43,7 @@
+ 	update-menus
  
  uninstall:
  	rm -f "$(BINDIR)/gnormalize"

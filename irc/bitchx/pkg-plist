@@ -2,6 +2,7 @@
 bin/BitchX
 bin/BitchX-%%DISTVERSION%%
 bin/scr-bx
+man/man1/BitchX.1.gz
 %%DATADIR%%/BitchX.help
 %%DATADIR%%/BitchX.ircnames
 %%DATADIR%%/BitchX.quit

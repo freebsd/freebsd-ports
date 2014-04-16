@@ -19,13 +19,14 @@ CONFIGURE_ARGS=	--program-transform-name=""
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
 post-patch:
 # Fix path to ${DATADIR}
 	${REINPLACE_CMD} -e 's|\(GAME_INSTALLDIR=\).*|\1"${DATADIR}"|' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # Fix install target to use gmake
 	${REINPLACE_CMD} -e '/^install:/,/^$$/s/make/$$(MAKE)/' \
+		-e '/install_gamedata/ s|target=|&$$(DESTDIR)|' \
 		${WRKSRC}/Makefile.in
 
 # Fix SDL include statement
@@ -35,12 +36,9 @@ post-patch:
 		's|\(#include.*\)SDL/\(SDL.*\)|\1\2|'
 .endfor
 
-.if !defined(NOPORTDOCS)
 post-install:
-# Install documentation (optional)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${RM} -f ${WRKSRC}/Docs/Makefile*
-	@${CP} -R ${WRKSRC}/Docs/* ${DOCSDIR}
-.endif
+	${CP} -R ${WRKSRC}/Docs/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ DISTNAME=		fidogate${PORTVERSION}ds
 MAINTAINER=		5u623l20@gmail.com
 COMMENT=		Fido-Internet Gateway and Tosser
 
+BROKEN=			Fails to configure
+
 PORTSCOUT=		limit:^5\.[^2] # 5.2.X is development branch
 
 USE_AUTOTOOLS=	libtool

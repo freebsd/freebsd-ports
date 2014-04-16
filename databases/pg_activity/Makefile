@@ -26,7 +26,7 @@ PYDISTUTILS_NOEGGINFO=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-post-patch-script:
+post-patch:
 	${REINPLACE_CMD} -e 's|\/usr\/share|${MAN1PREFIX}|g' \
 		${WRKSRC}/setup.py
 

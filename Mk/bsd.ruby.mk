@@ -152,14 +152,14 @@ RUBY_VER?=		${RUBY_DEFAULT_VER}
 IGNORE=	cannot install: you set the variable RUBY to "${RUBY}", but it does not seem to exist.  Please specify an already installed ruby executable.
 .endif
 
-_RUBY_TEST!=		${RUBY} -e 'begin; require "rbconfig"; rescue LoadError; puts "error"; end'
-.if !empty(_RUBY_TEST)
+_RUBY_TEST!=		${RUBY} -e 'begin; require "rbconfig"; puts "ok" ; rescue LoadError; puts "error"; end'
+.if !empty(_RUBY_TEST) && ${_RUBY_TEST} != "ok"
 IGNORE=	cannot install: you set the variable RUBY to "${RUBY}", but it failed to include rbconfig.  Please specify a properly installed ruby executable.
 .endif
 
-_RUBY_CONFIG=		${RUBY} -r rbconfig -e 'C = Config::CONFIG' -e
+_RUBY_CONFIG=		${RUBY} -r rbconfig -e 'C = RbConfig::CONFIG' -e
 
-RUBY_VERSION!=		${_RUBY_CONFIG} 'puts VERSION'
+RUBY_VERSION!=		${_RUBY_CONFIG} 'puts C["ruby_version"]'
 RUBY_SUFFIX?=		# empty
 
 RUBY_ARCH!=		${_RUBY_CONFIG} 'puts C["target"]'
@@ -463,12 +463,8 @@ GEMFILES=	${DISTFILES:C/:[^:]+$//}
 GEMFILES=	${DISTNAME}${EXTRACT_SUFX}
 . endif
 
-.if defined(NO_STAGE)
-RUBYGEM_ARGS=-l --no-update-sources --no-ri --install-dir ${PREFIX}/lib/ruby/gems/${RUBY_VER}
-.else
 RUBYGEM_ARGS=-l --no-update-sources --no-ri --install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} --ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
 GEM_ENV+=	RB_USER_INSTALL=yes
-.endif
 .if defined(NOPORTDOCS)
 RUBYGEM_ARGS+=	--no-rdoc
 .endif
@@ -567,13 +563,8 @@ do-install:	ruby-setup-install
 
 ruby-setup-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
-.  if defined(NO_STAGE)
-	@cd ${INSTALL_WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install
-.  else
 	@cd ${INSTALL_WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install --prefix=${STAGEDIR}
-.  endif
 .endif
 
 .if defined(USE_LIBRUBY)

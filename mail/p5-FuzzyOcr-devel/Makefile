@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME:L}-${DISTVERSION}
 MAINTAINER=	ismail.yenigul@endersys.com.tr
 COMMENT=	Plugin for SpamAssassin which scans image attachments for spam
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		gifsicle:${PORTSDIR}/graphics/gifsicle			\
 		gocr:${PORTSDIR}/graphics/gocr				\
@@ -32,6 +34,7 @@ PORTDOCS=	samples
 PORTDOCS_F=	samples/README samples/ocr-animated.eml			\
 		samples/ocr-gif.eml samples/ocr-jpg.eml samples/ocr-multi.eml	\
 		samples/ocr-obfuscated.eml samples/ocr-png.eml samples/ocr-wrongext.eml
+PORTEXAMPLES=	*
 
 SUB_FILES=	pkg-message
 
@@ -46,13 +49,8 @@ PLIST_FILES=	%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr.pm		\
 		%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr/Misc.pm \
 		%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr/Preprocessor.pm \
 		%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr/Scanset.pm \
-		%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr/Scoring.pm \
-		%%EXAMPLESDIR%%/FuzzyOcr.cf %%EXAMPLESDIR%%/FuzzyOcr.words %%EXAMPLESDIR%%/FuzzyOcr.scansets \
-		%%EXAMPLESDIR%%/FuzzyOcr.preps %%EXAMPLESDIR%%/FuzzyOcr.mysql
-PLIST_DIRS=	%%EXAMPLESDIR%% %%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+		%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr/Scoring.pm
+PLIST_DIRS=	%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr
 
 #.if defined(WITH_OCRAD)
 #RUN_DEPENDS+=	ocrad:${PORTSDIR}/graphics/ocrad
@@ -75,22 +73,17 @@ post-patch:
 	                  ${WRKSRC}/FuzzyOcr.pm
 
 do-install:
-	@${MKDIR} ${EXAMPLESDIR} ${SITE_PERL}/${SA_PLUGINDIR}/FuzzyOcr
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.pm ${SITE_PERL}/${SA_PLUGINDIR}
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr/*.pm ${SITE_PERL}/${SA_PLUGINDIR}/FuzzyOcr
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.cf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.words ${EXAMPLESDIR}/FuzzyOcr.words
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.scansets ${EXAMPLESDIR}/FuzzyOcr.scansets
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.preps ${EXAMPLESDIR}/FuzzyOcr.preps
-	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.mysql ${EXAMPLESDIR}/FuzzyOcr.mysql
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${SITE_PERL}/${SA_PLUGINDIR}/FuzzyOcr
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.pm ${STAGEDIR}${SITE_PERL}/${SA_PLUGINDIR}
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr/*.pm ${STAGEDIR}${SITE_PERL}/${SA_PLUGINDIR}/FuzzyOcr
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.cf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.words ${STAGEDIR}${EXAMPLESDIR}/FuzzyOcr.words
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.scansets ${STAGEDIR}${EXAMPLESDIR}/FuzzyOcr.scansets
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.preps ${STAGEDIR}${EXAMPLESDIR}/FuzzyOcr.preps
+	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.mysql ${STAGEDIR}${EXAMPLESDIR}/FuzzyOcr.mysql
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/samples
+.for f in ${PORTDOCS_F}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}
+.endfor
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/samples
-.  for f in ${PORTDOCS_F}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/${f}
-.  endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

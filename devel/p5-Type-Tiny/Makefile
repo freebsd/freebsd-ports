@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Type-Tiny
-PORTVERSION=	0.040
+PORTVERSION=	0.042
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -34,7 +34,7 @@ TEST_DEPENDS=	p5-Class-InsideOut>=0:${PORTSDIR}/devel/p5-Class-InsideOut \
 		p5-Validation-Class>=0:${PORTSDIR}/devel/p5-Validation-Class \
 		p5-match-simple>=0:${PORTSDIR}/devel/p5-match-simple
 
-PORTSCOUT=	limit:[^_]*
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 USE_PERL5=	configure
 USES=		perl5

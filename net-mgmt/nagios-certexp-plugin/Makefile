@@ -15,18 +15,19 @@ RUN_DEPENDS+=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+
+SHEBANG_FILES=	check_certexp.pl
 PLIST_FILES=	${NAGIOS_PLUGIN_DIR}/check_certexp.pl
 PLIST_DIRS=	${NAGIOS_PLUGIN_DIR}
 
 NAGIOS_PLUGIN_DIR=	libexec/nagios
 
-NO_STAGE=	yes
 do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/check_certexp.pl
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/check_certexp.pl
 
 post-patch:
 	${REINPLACE_CMD} -e \
@@ -34,7 +35,7 @@ post-patch:
 		${WRKSRC}/check_certexp.pl
 
 do-install:
-	${MKDIR} ${PREFIX}/${NAGIOS_PLUGIN_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/check_certexp.pl ${PREFIX}/${NAGIOS_PLUGIN_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${NAGIOS_PLUGIN_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/check_certexp.pl ${STAGEDIR}${PREFIX}/${NAGIOS_PLUGIN_DIR}
 
 .include <bsd.port.mk>

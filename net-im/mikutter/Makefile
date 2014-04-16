@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	0.2.2.1476
+PORTVERSION=	0.2.2.1537
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -39,7 +39,7 @@ SUB_LIST=	RUBY_SITELIBDIR=${RUBY_SITELIBDIR}
 
 REINPLACE_ARGS=	-i ''
 
-OPTIONS_DEFINE=		HTTPCLIENT NOTIFY
+OPTIONS_DEFINE=		DOCS HTTPCLIENT NOTIFY
 HTTPCLIENT_DESC=	httpclient support
 NOTIFY_DESC=		notify-send support
 
@@ -66,10 +66,8 @@ do-install:
 		&& ${COPYTREE_SHARE} core ${STAGEDIR}${RUBY_SITELIBDIR}/mikutter \
 		&& ${COPYTREE_SHARE} plugin ${STAGEDIR}${RUBY_SITELIBDIR}/mikutter
 	${INSTALL_DATA} ${WRKDIR}/${SUB_FILES} ${STAGEDIR}${PREFIX}/share/applications/
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 x-generate-plist: stage
 	${ECHO} bin/mikutter > pkg-plist.new

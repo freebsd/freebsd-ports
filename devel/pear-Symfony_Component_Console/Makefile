@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Console
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.3
 CATEGORIES=	devel pear
 PKGNAMEPREFIX=	pear-Symfony_Component_
 

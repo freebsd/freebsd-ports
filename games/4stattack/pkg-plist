@@ -239,15 +239,19 @@ bin/4stattack
 %%DATADIR%%/themeresizer.pyo
 %%DATADIR%%/themeresizer.sh
 %%DATADIR%%/version
-%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
-%%PORTDOCS%%%%DOCSDIR%%/credits.txt
-@dirrm %%DATADIR%%/data/music
+share/applications/4stattack.desktop
+share/icons/hicolor/16x16/apps/4stattack.png
+share/icons/hicolor/22x22/apps/4stattack.png
+share/icons/hicolor/32x32/apps/4stattack.png
+share/icons/hicolor/48x48/apps/4stattack.png
+share/icons/hicolor/64x64/apps/4stattack.png
+share/pixmaps/4stattack.png
+@dirrm %%DATADIR%%/players
+@dirrm %%DATADIR%%/gui/dialogs
+@dirrm %%DATADIR%%/gui
 @dirrm %%DATADIR%%/data/themes/clean/1024x768
 @dirrm %%DATADIR%%/data/themes/clean
 @dirrm %%DATADIR%%/data/themes
+@dirrm %%DATADIR%%/data/music
 @dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/gui/dialogs
-@dirrm %%DATADIR%%/gui
-@dirrm %%DATADIR%%/players
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

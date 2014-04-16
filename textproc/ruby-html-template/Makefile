@@ -11,6 +11,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library to use HTML as a template file from CGI scripts
 
+BROKEN=		Not stage friendly, no more public distfiles
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb

@@ -12,19 +12,21 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Classes to allow a Java applet access to JavaScript objects
 
+LICENSE=	Netscape
+LICENSE_NAME=	Netscape
+LICENSE_FILE=	${WRKSRC}/License
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror auto-accept
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
-JARFILES=	java40.jar LICENSE.java40.txt
+JARFILES=	java40.jar
 
 PLIST_FILES=	${JARFILES:S|^|%%JAVAJARDIR%%/|}
 
-NO_STAGE=	yes
-post-extract:
-	${MV} ${WRKSRC}/License ${WRKSRC}/LICENSE.java40.txt
-
 do-install:
-	${INSTALL_DATA} ${JARFILES:S|^|${WRKSRC}/|} ${JAVAJARDIR}
+	${INSTALL_DATA} ${JARFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${JAVAJARDIR}
 
 .include <bsd.port.mk>

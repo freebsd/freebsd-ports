@@ -3,7 +3,7 @@
 
 PORTNAME=	chrpath
 PORTVERSION=	0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel sysutils
 MASTER_SITES=	http://ftp.tux.org/pub/X-Windows/ftp.hungry.com/chrpath/
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	signing-party
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
@@ -28,8 +28,7 @@ CONFLICTS_INSTALL=sig2dot-[0-9]* springgraph-[0-9]*
 USES=		perl5 gmake shebangfix
 SHEBANG_FILES=	${SCRIPTS}
 
-BINS=		keyanalyze/keyanalyze keyanalyze/process_keys \
-		keyanalyze/pgpring/pgppubring
+BINS=		keyanalyze/keyanalyze keyanalyze/process_keys
 SCRIPTS=	caff/caff caff/pgp-clean caff/pgp-fixkey gpglist/gpglist \
 		gpgsigs/gpgsigs gpg-key2ps/gpg-key2ps \
 		gpg-mailkeys/gpg-mailkeys keylookup/keylookup \
@@ -46,15 +45,11 @@ post-patch:
 		${WRKSRC}/caff/caff
 	@${REINPLACE_CMD} -e 's|/usr/bin/pinentry-gtk-2|${LOCALBASE}/bin/pinentry-gtk-2|' \
 		${WRKSRC}/caff/README.gpg-agent
-	@${REINPLACE_CMD} -e 's|make|${GMAKE}|' \
-			-e 's|make pgpring|make|' \
+	@${REINPLACE_CMD} -e 's|[[:<:]]make|${GMAKE}|' \
+			-e '/^all/s|pgpring/pgpring||' \
 		${WRKSRC}/gpgwrap/Makefile \
 		${WRKSRC}/keyanalyze/Makefile
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/gpgwrap/src/Makefile
-	# Rename pgpring to pgppubring to avoid conflict with mail/mutt
-	@${REINPLACE_CMD} -e 's|pgpring|pgppubring|g' \
-		${WRKSRC}/keyanalyze/pgpring/Makefile.in
-	@cd ${WRKSRC}/keyanalyze/pgpring && ${MV} pgpring.1 pgppubring.1
 
 do-install:
 	@${INSTALL_PROGRAM} ${BINS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin

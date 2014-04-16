@@ -70,7 +70,7 @@ dcl-*-C.tar.gz		science/cdcl		No commercial use
 dcl-*.tar.gz		science/dcl		No commercial use
 defcon*			games/linux-defcon	Redistribution is limited, see license
 djbdns*			dns/djbdns		No license -- see http://cr.yp.to/softwarelaw.html
-djbdns-1.05.tar.gz	mail/qmail-conf		Borrows code from djbdns, thus falls under the same restrictions as dns/djbdns
+djbdns-1.05.tar.gz	mail/qmail-conf		No license -- see http://cr.yp.to/softwarelaw.html
 djbfft-*		math/djbfft		No license -- see http://cr.yp.to/softwarelaw.html
 dlv			lang/dlv		Not sure if we can redistribute it
 dmd-*			lang/dmd		No redistribution of non validated binaries
@@ -87,6 +87,7 @@ eClient-linux-i686.run	games/atitd		Redistribution not allowed
 ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources, but sources no longer available on ERDAS website
 edith*			editors/edith		Redistribution not allowed
 eijiro*			japanese/eijiro-fpw	The original dictionary is not free
+marvel-*		textproc/elasticsearch-plugin-marvel	Free for development; license required for production use
 emc2*			math/emc2		No resale, contact author for commercial usage
 et-linux-*		games/linux-enemyterritory Redistribution limited
 etqw*			games/linux-etqw-demo-server Redistribution limited
@@ -113,7 +114,6 @@ gamess.*/gamess*	science/gamess		No Redistribution
 giac-*			math/giacxcas		The french documentation is for non commercial only use
 giftool*		graphics/giftool	Do not redistribute for profit
 gishdemo-*		games/gish-demo		(c) Copyright 2004 Chronic Logic All rights reserved
-glimpse-*		textproc/glimpse	Do not sell for profit
 gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may contain artwork not done by the author.  Keep FreeBSD safe if the theme author violated copyrights
 GoogleEarthLinux-*	astro/google-earth	Not really sure about the redistribution terms
 gorky17_demo*		games/linux-gorky17-demo	Redistribution is limited, see license
@@ -138,7 +138,6 @@ ICON-Slick.*		x11-themes/gnome-icons-slick Themes may contain artwork not done b
 ICON-Snow-Apple.*	x11-themes/gnome-icons-snow-apple Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 ICON-Stylish.*		x11-themes/gnome-icons-stylish Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
-j2sdkee-*		java/j2sdkee13		For development and testing use only; redistribution prohibited
 jaf-*.zip		java/jaf		See the license
 jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
 jai_imageio-*-lib-linux-* java/jai-imageio	Redistribution is not permitted
@@ -207,8 +206,7 @@ PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distributi
 platon*			biology/platon		$5000 USD for commercial users, free for academic
 poseidonCE-*		java/poseidon		Redistribution is not permitted
 ppsmall-*		archivers/ppunpack	No commercial redistribution
-prodosemu.*		emulators/prodosemu	Restrictive copyright on the ROM image
-qtools-*		mail/qtools		Possibly restricted binary distribution of modified versions
+qtools-*		mail/qtools		No license -- see http://cr.yp.to/softwarelaw.html
 quake4-linux-*		games/linux-quake4	Redistribution is limited; see the license
 quake4-linux-*		games/linux-quake4-demo	Redistribution is limited; see the license
 Radiator/*		net/radiator		Commercial software

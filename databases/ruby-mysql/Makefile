@@ -14,7 +14,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby module for accessing MySQL databases with a C API like interface
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
 
 USE_MYSQL=	yes
 USE_RUBY=	yes
@@ -22,23 +22,19 @@ USE_RUBY_EXTCONF=	yes
 
 CONFIGURE_ARGS=	--with-mysql-config
 INSTALL_TARGET=	site-install
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/mysql.so
 
-.include <bsd.port.pre.mk>
-
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${RUBY_MODDOCDIR}
 PORTDOCS=	*
-.endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/ja
-	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/tommy.css ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README_ja.html ${DOCSDIR}/ja/
-	${LN} -fs ../tommy.css ${DOCSDIR}/ja/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/README.html ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/tommy.css ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README_ja.html ${STAGEDIR}${DOCSDIR}/ja/
+	${LN} -fs ../tommy.css ${STAGEDIR}${DOCSDIR}/ja/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

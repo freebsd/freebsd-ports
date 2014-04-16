@@ -11,13 +11,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bell Laboratories cardiac computer emulator
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/cinc \
 		bin/casm
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} 's|-I-||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-I-||g; s|bindir)|DESTDIR)$$(&|' \
+		-e 's|/usr/bin/install|${INSTALL_PROGRAM}|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Audio-M4P
-PORTVERSION=	0.53
+PORTVERSION=	0.55
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +21,5 @@ TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
 USES=		perl5
 USE_PERL5=	configure
-
-regression-test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>

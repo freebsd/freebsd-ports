@@ -3,13 +3,15 @@
 
 PORTNAME=	dpsearch
 PORTVERSION=	4.53
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.googlecode.com/files/ \
 		http://www.dataparksearch.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source search engine for Internet and Intranet sites
+
+BROKEN=		Does not link
 
 USE_LDCONFIG=	yes
 USES=		gmake tar:bzip2
@@ -23,7 +25,7 @@ CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/dpsearch \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	THREADS SSL CHINESE JAPANESE MECAB CHASEN APACHE IDN ASPELL \
+OPTIONS_DEFINE=	THREADS SSL CHINESE JAPANESE MECAB APACHE IDN ASPELL \
 		EXTRACT DOCS
 OPTIONS_DEFAULT=	THREADS SSL PGSQL
 OPTIONS_SINGLE=	DB
@@ -31,84 +33,50 @@ OPTIONS_SINGLE_DB=	PGSQL MYSQL SQLITE
 CHINESE_DESC=	Enable chinese charsets
 JAPANESE_DESC=	Enable japanese charsets
 MECAB_DESC=	Enable MeCab japanese analyzer
-CHASEN_DESC=	Enable ChaSen japanese analyzer
 EXTRACT_DESC=	Enable libextractor support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ENV+=	PORTNAME="${PORTNAME}"
 
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=--enable-pthreads
-CONFIGURE_ENV+=	LIBS="-pthread"
-.else
-CONFIGURE_ARGS+=--disable-pthreads
-.endif
+THREADS_CONFIGURE_ENABLE=	pthreads
+THREADS_CONFIGURE_ENV=	LIBS="-pthread"
 
-.if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
-.else
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+#ASPELL_CONFIGURE_WITH=	aspell
+.if ! ${PORT_OPTIONS:MASPELL}
 CONFIGURE_ARGS+=--without-aspell
 .endif
 
-.if ${PORT_OPTIONS:MEXTRACT}
-LIB_DEPENDS+=	extractor.3:${PORTSDIR}/textproc/libextractor
-.endif
+EXTRACT_LIB_DEPENDS=	libextractor.so:${PORTSDIR}/textproc/libextractor
 
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
-.endif
+SSL_CONFIGURE_WITH=	openssl=${OPENSSLBASE}
 
-.if ${PORT_OPTIONS:MCHARSETS}
-CONFIGURE_ARGS+=--with-extra-charsets=all
-.endif
+CHARSETS_CONFIGURE_WITH=	extra-charsets=all
 
-.if ${PORT_OPTIONS:MCHINESE}
-CONFIGURE_ARGS+=--with-extra-charsets=chinese
-.endif
+CHINESE_CONFIGURE_WITH=	extra-charsets=chinese
 
-.if ${PORT_OPTIONS:MJAPANESE}
-CONFIGURE_ARGS+=--with-extra-charsets=japanese
-.endif
+JAPANESE_CONFIGURE_WITH=	extra-charsets=japanese
 
-.if ${PORT_OPTIONS:MMECAB}
-LIB_DEPENDS+=	mecab.1:${PORTSDIR}/japanese/mecab
-CONFIGURE_ARGS+=--enable-mecab
-.endif
+MECAB_LIB_DEPENDS=	libmecab.so:${PORTSDIR}/japanese/mecab
+MECAB_CONFIGURE_ENABLE=	mecab
 
-.if ${PORT_OPTIONS:MCHASEN}
-LIB_DEPENDS+=	chasen.2:${PORTSDIR}/japanese/chasen
-CONFIGURE_ARGS+=--enable-chasen
-.endif
+IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_CONFIGURE_ENABLE=	idn
 
-.if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
-CONFIGURE_ARGS+=--enable-idn
-.endif
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE=	22+
-PLIST_SUB+=	APACHE=""
-CONFIGURE_ARGS+=--enable-apache-module
-.else
-PLIST_SUB+=	APACHE="@comment "
-.endif
+APACHE_USE=	APACHE=22+
+APACHE_CONFIGURE_ENABLE=	apache-module
 
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		yes
-CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
-.endif
+PGSQL_USE=	PGSQL=yes
+PGSQL_CONFIGURE_WITH=	pgsql=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-.endif
+MYSQL_USE=	MYSQL=yes
+MYSQL_CONFIGURE_WITH=	mysql=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
-CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
-.endif
+SQLITE_LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2
+SQLITE_CONFIGURE_WITH=	sqlite=${LOCALBASE}
 
 post-extract:
 .if ! ${PORT_OPTIONS:MDOCS}
@@ -121,13 +89,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 pre-install:
-	@${INSTALL} -d ${DATADIR}
+	@${INSTALL} -d ${STAGEDIR}${DATADIR}
 
 post-install:
-	@${CHMOD} 700 /var/dpsearch/cache
 	@${ECHO_CMD} '@exec ${CHMOD} 700 /var/dpsearch/cache' >> ${TMPPLIST}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/dpsearch/
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/dpsearch/' >> ${TMPPLIST}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

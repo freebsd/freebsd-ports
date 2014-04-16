@@ -10,10 +10,10 @@ DISTNAME=	bonk-xmms-${PORTVERSION}
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS input plugin to play bonk files
 
-DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
-EXPIRATION_DATE=	2014-04-27
-
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
+
+DEPRECATED=	Obsolete experimental codec, use audio/flac or audio/wavpack
+EXPIRATION_DATE=	2014-07-15
 
 ALL_TARGET=
 

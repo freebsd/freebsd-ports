@@ -3,6 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	6.6p1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -87,9 +88,10 @@ X509_PATCHFILES=	${PORTNAME}-6.6p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 SCTP_PATCHFILES=	${PORTNAME}-6.6p1-sctp-2329.patch.gz
 SCTP_CONFIGURE_WITH=	sctp
 
-# Adapated from 5.7 patch at http://www.sxw.org.uk/computing/patches/
-KERB_GSSAPI_PATCHFILES=	openssh-6.5p1-gsskex-all-20110125.patch.gz
-
+# 6.6 patch taken from http://www.stacken.kth.se/~haba/ which was originally
+# based on 5.7 patch at http://www.sxw.org.uk/computing/patches/
+KERB_GSSAPI_PATCHFILES=	openssh-6.6p1-gsskex-all-20140318.patch.gz:-p1:gsskex
+#KERB_GSSAPI_PATCH_SITES=http://www.stacken.kth.se/~haba/:gsskex
 
 MIT_LIB_DEPENDS=		libkrb5.so.3:${PORTSDIR}/security/krb5
 HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:${PORTSDIR}/security/heimdal
@@ -102,10 +104,6 @@ BSM_CONFIGURE_ON=	--with-audit=bsm
 
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MKERB_GSSAPI}
-BROKEN=		KERB_GSSAPI Patch is not updated for 6.5 and upstream has not been active since 2001.
-.endif
 
 # http://www.psc.edu/index.php/hpn-ssh
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
@@ -122,7 +120,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn-no-hpn
 .  endif
 .endif
 
-PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn
+PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gsskex
 
 .if ${OSVERSION} >= 900000
 CONFIGURE_LIBS+=	-lutil

@@ -3,7 +3,7 @@
 
 PORTNAME=	compat4x
 PORTVERSION=	${COMPAT4X_PORTVERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc
 MASTER_SITES=	${COMPAT4X_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${COMPAT4X_MASTER_SITE_SUBDIR}
@@ -97,9 +97,6 @@ do-install:
 .for lib in ${FREEBSD4_LIBS}
 	${LN} -sf ${lib}.compat4x ${STAGEDIR}${TARGET_DIR}/${lib}
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 pre-clean:
 	@[ -w ${WRKDIR}/var ] && chflags -R noschg ${WRKDIR}/var || ${TRUE}

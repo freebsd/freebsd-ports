@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	2003-12-10 12:34:47.000000000 +0100
++++ src/Makefile.in	2014-04-13 21:22:52.000000000 +0200
+@@ -116,7 +116,7 @@
+ 
+ INCLUDES = -I../base -I../addon @INCLTDL@
+ 
+-pinball_LDADD = ../src/libemilia_pin.a ../addon/libemilia_addon.a ../base/libemilia_base.a @LIBLTDL@
++pinball_LDADD = libemilia_pin.a ../addon/libemilia_addon.a ../base/libemilia_base.a @LIBLTDL@
+ pinball_LDFLAGS = -export-dynamic
+ 
+ pinball_SOURCES = Pinball.cpp
+@@ -174,7 +174,7 @@
+ 
+ am_pinball_OBJECTS = Pinball.$(OBJEXT)
+ pinball_OBJECTS = $(am_pinball_OBJECTS)
+-pinball_DEPENDENCIES = ../src/libemilia_pin.a ../addon/libemilia_addon.a \
++pinball_DEPENDENCIES = libemilia_pin.a ../addon/libemilia_addon.a \
+ 	../base/libemilia_base.a
+ 
+ DEFS = @DEFS@

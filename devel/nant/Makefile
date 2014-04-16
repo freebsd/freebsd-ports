@@ -26,21 +26,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DATADIR=	${PREFIX}/share/NAnt
 DOCSDIR=	${PREFIX}/share/doc/NAnt
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/NAnt.build
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '851,858 d' ${WRKSRC}/NAnt.build
-.endif
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} run-test
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} run-test
 
 .include <bsd.port.mk>

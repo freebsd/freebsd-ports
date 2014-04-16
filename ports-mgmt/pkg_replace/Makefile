@@ -3,7 +3,7 @@
 
 PORTNAME=	pkg_replace
 PORTVERSION=	0.8.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	portutil/22116
@@ -15,6 +15,8 @@ MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
 COMMENT=	Utility for upgrading installed packages
 
 USES=	tar:bzip2
+NO_ARCH=	yes
+
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		PORTSDIR="${PORTSDIR}" PKG_DBDIR="${PKG_DBDIR}"
 

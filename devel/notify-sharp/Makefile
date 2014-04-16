@@ -15,8 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}/d
 		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack gtksharp20
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	gtksharp20
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

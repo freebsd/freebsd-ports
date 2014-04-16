@@ -32,8 +32,7 @@ post-install::
 	${SPHINX_BUILD} -N -a -b html ${WRKSRC}/docs ${WRKSRC}/docs.html
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs.html && \
-		${COPYTREE_SHARE:S,\$2,& \! -name .buildinfo -and \! -path *doctrees*,g} \
-		. ${STAGEDIR}${DOCSDIR})
+	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -path *doctrees*")
 .endif
 
 .include <bsd.port.mk>

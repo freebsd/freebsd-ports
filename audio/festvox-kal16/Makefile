@@ -20,11 +20,10 @@ ${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:${PORTSDIR}/audio/festlex-c
 CONFLICTS=	festvox-kal8-*
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 FHOME=		${PREFIX}/share/festival
 
 do-install:
-	${TAR} -C ${FHOME:H} -xvzpf ${_DISTDIR}/${_DISTFILES}
+	${TAR} -C ${STAGEDIR}${FHOME:H} -xzpf ${_DISTDIR}/${_DISTFILES}
 
 .include <bsd.port.mk>

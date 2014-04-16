@@ -1,5 +1,5 @@
---- build.xml.orig
-+++ build.xml
+--- ./build.xml.orig	2014-04-04 18:45:10.000000000 +0200
++++ ./build.xml	2014-04-04 18:52:45.323108911 +0200
 @@ -7,7 +7,6 @@
  	<import file="platform_build/build-applet.xml"/>
  	<import file="platform_build/build-webstart.xml"/>

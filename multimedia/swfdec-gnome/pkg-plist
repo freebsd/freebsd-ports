@@ -1,5 +1,7 @@
 bin/swfdec-player
 bin/swfdec-thumbnailer
+man/man1/swfdec-player.1.gz
+man/man1/swfdec-thumbnailer.1.gz
 share/applications/swfdec-player.desktop
 share/icons/hicolor/16x16/apps/swfdec-gnome.png
 share/icons/hicolor/22x22/apps/swfdec-gnome.png
@@ -77,8 +79,6 @@ share/locale/zh_HK/LC_MESSAGES/swfdec-gnome.mo
 share/locale/zh_TW/LC_MESSAGES/swfdec-gnome.mo
 %%DATADIR%%/swfdec-player.ui
 @dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES

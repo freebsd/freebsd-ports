@@ -19,8 +19,7 @@ LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr \
 OPTIONS_DEFINE=	MOZILLA_PLUGIN GNOME LIRC
 MOZILLA_PLUGIN_DESC=	Mozilla plugin
 
-USE_XZ=		yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
@@ -34,10 +33,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${PORT_OPTIONS:MMOZILLA_PLUGIN}
 USE_XORG+=	xaw
-USE_WEBPLUGINS=	native
-WEBPLUGINS_DIR=	${PREFIX}/lib/gxine
-WEBPLUGINS_FILES=gxineplugin.so
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+USES+=		webplugin:native
+WEBPLUGIN_DIR=	${PREFIX}/lib/gxine
+WEBPLUGIN_FILES=gxineplugin.so
 PLIST_SUB+=	MOZILLA_PLUGIN=""
 .else
 CONFIGURE_ARGS+=--without-browser-plugin

@@ -11,12 +11,12 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Pure-ruby implementation of popular encryption algorithms
 
+BROKEN=		not staged
 USE_RUBY=	yes
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
-NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC}; ${RUBY} install.rb
 

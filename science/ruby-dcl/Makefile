@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	murashin@gfd-dennou.org
-COMMENT=	A Ruby interface to the scientific graphic library DCL
+COMMENT=	Ruby interface to the scientific graphic library DCL
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	rubygem-narray>=0.5.5:${PORTSDIR}/math/rubygem-narray \
@@ -29,6 +29,8 @@ USE_RUBY_EXTCONF=	yes
 RUBY_NARRAY_VERSION=    `make -C ${PORTSDIR}/math/rubygem-narray -V PORTVERSION`
 RUBY_NARRAY_PKGNAME=	narray-${RUBY_NARRAY_VERSION}
 CONFIGURE_ARGS+=	--with-narray-include=${LOCALBASE}/lib/ruby/gems/${RUBY_VER}/gems/${RUBY_NARRAY_PKGNAME}/
+MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 DOCSDIR=	${RUBY_MODDOCDIR}
 EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}

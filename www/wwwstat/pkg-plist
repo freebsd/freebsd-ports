@@ -6,3 +6,5 @@ bin/wwwstat
 %%SITE_PERL%%/domains.pl
 %%SITE_PERL%%/splitlog.rc
 %%SITE_PERL%%/wwwstat.rc
+man/man1/splitlog.1.gz
+man/man1/wwwstat.1.gz
