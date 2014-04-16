@@ -3,4 +3,5 @@ lib/liboldX.a
 lib/liboldX.la
 lib/liboldX.so
 lib/liboldX.so.6
+lib/liboldX.so.6.0.0
 libdata/pkgconfig/oldx.pc

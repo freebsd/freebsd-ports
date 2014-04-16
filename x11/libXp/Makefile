@@ -3,6 +3,7 @@
 
 PORTNAME=	libXp
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -13,6 +14,5 @@ LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto xau printproto:both
-USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.mk>

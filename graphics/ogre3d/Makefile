@@ -3,6 +3,7 @@
 
 PORTNAME=	ogre3d
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=   https://bitbucket.org/sinbad/ogre/get/
 DISTNAME=	v1-9-0
@@ -12,7 +13,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A scene-oriented, flexible 3D engine written in C++
 
 LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
-		freetype.9:${PORTSDIR}/print/freetype2 \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		freeimage.3:${PORTSDIR}/graphics/freeimage
 
 OPTIONS_DEFINE=	BOOST

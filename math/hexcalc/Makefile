@@ -3,7 +3,7 @@
 
 PORTNAME=	hexcalc
 PORTVERSION=	1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.berklix.com/~jhs/ftp/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}

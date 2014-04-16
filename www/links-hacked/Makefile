@@ -3,7 +3,7 @@
 
 PORTNAME=	links-hacked
 DISTVERSION=	101110
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	www
 MASTER_SITES=	http://xray.sai.msu.ru/~karpov/links-hacked/downloads/ http://links-hacked.nm.ru/
 
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	--without-x
 .endif
 
 .if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=		libfreetype.so:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-freetype
 .else
 CONFIGURE_ARGS+=	--without-freetype

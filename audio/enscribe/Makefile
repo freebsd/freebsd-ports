@@ -3,7 +3,7 @@
 
 PORTNAME=	enscribe
 PORTVERSION=	0.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio graphics
 MASTER_SITES=	http://www.coppercloudmusic.com/enscribe/
 EXTRACT_SUFX=	.tgz

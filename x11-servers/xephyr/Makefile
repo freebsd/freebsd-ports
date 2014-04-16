@@ -21,6 +21,8 @@ CONFIGURE_ARGS=	--enable-kdrive --enable-xephyr	--disable-dmx --disable-xvfb \
 SLAVE_PORT=	yes
 PLIST_FILES=	bin/Xephyr man/man1/Xephyr.1.gz
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hw/kdrive/ephyr/Xephyr ${STAGEDIR}${PREFIX}/bin/
 .if defined(WITH_NEW_XORG)

@@ -4,6 +4,7 @@
 
 PORTNAME=	librsvg
 PORTVERSION=	2.36.4
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -12,7 +13,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		croco-0.6:${PORTSDIR}/textproc/libcroco
 RUN_DEPENDS=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
 

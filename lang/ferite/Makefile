@@ -3,7 +3,7 @@
 
 PORTNAME=	ferite
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An embeddable scripting language
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

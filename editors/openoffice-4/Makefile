@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	4.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors java
 MASTER_SITES=	http://www.apache.org/dist/openoffice/${PORTVERSION}/source/ \
 		ftp://ftp.riken.jp/net/apache/openoffice/${PORTVERSION}/source/ \

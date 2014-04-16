@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	1.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot

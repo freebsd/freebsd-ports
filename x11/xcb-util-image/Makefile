@@ -2,6 +2,7 @@
 
 PORTNAME=	xcb-util-image
 PORTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -10,12 +11,9 @@ COMMENT=	A port of Xlib's XImage and XShmImage functions
 
 LIB_DEPENDS=	libxcb-util.so:${PORTSDIR}/x11/xcb-util
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
-USE_LDCONFIG=	yes
-USE_XORG=	xcb xorg-macros
-
-GNU_CONFIGURE=	yes
+XORG_CAT=	lib
+USES=		gmake
+USE_XORG=	xcb
 
 post-patch:
 	@${REINPLACE_CMD} -e \

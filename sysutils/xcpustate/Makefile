@@ -3,7 +3,7 @@
 
 PORTNAME=	xcpustate
 PORTVERSION=	2.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cs.toronto.edu/pub/jdd/xcpustate/
 EXTRACT_SUFX=	.shar

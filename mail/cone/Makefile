@@ -3,7 +3,7 @@
 
 PORTNAME=	cone
 PORTVERSION=	0.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 NO_STAGE=	yes
 # This is for beta versions, leave it in please:

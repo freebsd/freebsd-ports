@@ -14,8 +14,10 @@ USES=		pathfix
 USE_XORG=	x11 xtst
 XORG_CAT=	driver
 
+.include <bsd.port.options.mk>
+
 .if defined(WITH_NEW_XORG)
-SYNAPTICS_VERSION=	1.7.2
+SYNAPTICS_VERSION=	1.7.4
 SYNAPTICS_REVISION=	0
 PLIST_SUB+=	NEW="" OLD="@comment "
 .else

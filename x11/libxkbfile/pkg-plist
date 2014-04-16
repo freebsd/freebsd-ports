@@ -8,5 +8,6 @@ lib/libxkbfile.a
 lib/libxkbfile.la
 lib/libxkbfile.so
 lib/libxkbfile.so.1
+lib/libxkbfile.so.1.0.2
 libdata/pkgconfig/xkbfile.pc
 @dirrmtry include/X11/extensions

@@ -3,6 +3,7 @@
 
 PORTNAME=	ruby-augeas
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	http://download.augeas.net/ruby/
 

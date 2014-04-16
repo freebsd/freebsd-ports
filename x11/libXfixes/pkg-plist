@@ -3,5 +3,6 @@ lib/libXfixes.a
 lib/libXfixes.la
 lib/libXfixes.so
 lib/libXfixes.so.3
+lib/libXfixes.so.3.1.0
 libdata/pkgconfig/xfixes.pc
 man/man3/Xfixes.3.gz

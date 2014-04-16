@@ -4,6 +4,7 @@ lib/libXinerama.a
 lib/libXinerama.la
 lib/libXinerama.so
 lib/libXinerama.so.1
+lib/libXinerama.so.1.0.0
 libdata/pkgconfig/xinerama.pc
 man/man3/Xinerama.3.gz
 man/man3/XineramaQueryExtension.3.gz

@@ -3,6 +3,7 @@
 
 PORTNAME=	gimp-help
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES?=	misc graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \

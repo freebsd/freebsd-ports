@@ -3,7 +3,7 @@
 
 PORTNAME=	loemu
 PORTVERSION=	0.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators python
 MASTER_SITES=	http://loemu.pegueroles.com/dists/
 

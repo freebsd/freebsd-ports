@@ -3,7 +3,7 @@
 
 PORTNAME=	wmtimer
 PORTVERSION=	2.92
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.darkops.net/wmtimer/ \
 		${MASTER_SITE_LOCAL}

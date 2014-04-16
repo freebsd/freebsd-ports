@@ -3,6 +3,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/warsow.mirror/Warsow%201.02 \
 		http://www.warsow.net:1337/~warsow/${PORTVERSION:R}${PORTVERSION:E}/

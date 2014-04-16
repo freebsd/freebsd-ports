@@ -3,6 +3,7 @@
 
 PORTNAME=	freeglut
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -13,7 +14,7 @@ LICENSE=	MIT
 
 CONFLICTS=	libglut-[0-9].*
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	ice xi xxf86vm xrandr

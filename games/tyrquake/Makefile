@@ -3,7 +3,7 @@
 
 PORTNAME=	tyrquake
 PORTVERSION=	0.59
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://disenchant.net/files/engine/
 

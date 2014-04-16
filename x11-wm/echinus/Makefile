@@ -3,6 +3,7 @@
 
 PORTNAME=	echinus
 PORTVERSION=	0.4.9
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://plhk.ru/static/echinus/
 

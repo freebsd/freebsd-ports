@@ -4,6 +4,7 @@
 
 PORTNAME=	freetype2
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
 		SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
@@ -18,12 +19,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Free and portable TrueType font rendering engine
 
 USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake libtool
 MAKE_ENV=	TOP=""
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	ltverhack:9
-ltverhack_PATCH_FILES=	builds/unix/ltmain.sh
 CONFIGURE_ARGS=	--without-harfbuzz
 CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
 

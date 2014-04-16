@@ -2,6 +2,7 @@
 
 PORTNAME=	gtkevemon
 DISTVERSION=	1.8-135
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/BattleClinic/${PORTNAME}/get/
 DISTNAME=	Version%20${DISTVERSION}

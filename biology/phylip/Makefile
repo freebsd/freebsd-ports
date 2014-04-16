@@ -3,7 +3,7 @@
 
 PORTNAME=	phylip
 PORTVERSION=	3.695
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://evolution.gs.washington.edu/phylip/download/

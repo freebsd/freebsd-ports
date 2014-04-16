@@ -11,15 +11,6 @@
  DIST_SUBDIRS = include . doc example python xstc
  INCLUDES = -I$(top_builddir)/include -I@srcdir@/include @THREAD_CFLAGS@ @Z_CFLAGS@ @LZMA_CFLAGS@
  bin_SCRIPTS = xml2-config
-@@ -596,7 +596,7 @@
- @USE_VERSION_SCRIPT_TRUE@LIBXML2_VERSION_SCRIPT = $(VERSION_SCRIPT_FLAGS)$(srcdir)/libxml2.syms
- libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ \
-                      $(LIBXML2_VERSION_SCRIPT) \
--		     -version-info @LIBXML_VERSION_INFO@ \
-+		     -version-info 5:0:0 \
- 		     @MODULE_PLATFORM_LIBS@
- 
- @WITH_TRIO_SOURCES_FALSE@libxml2_la_SOURCES = SAX.c entities.c encoding.c error.c parserInternals.c  \
 @@ -712,7 +712,7 @@
  runxmlconf_DEPENDENCIES = $(DEPS)
  runxmlconf_LDADD = $(LDADDS)

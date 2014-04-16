@@ -4,6 +4,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	1.6.18
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 

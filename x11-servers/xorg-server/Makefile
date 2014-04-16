@@ -35,14 +35,14 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 
 .if defined(WITH_NEW_XORG)
 XORG_VERSION=	1.12.4
-XORG_REVISION=	4
+XORG_REVISION=	5
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang \
 		${FILESDIR}/extra-configure \
 		${FILESDIR}/extra-new-dix_dixfonts.c
 .else
 XORG_VERSION=	1.7.7
-XORG_REVISION=	11
+XORG_REVISION=	12
 PLIST_SUB+=	OLD="" NEW="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-Xserver-os-xprintf.c \
@@ -54,7 +54,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 .endif
 
 USE_BZIP2=	yes
-USES=		gmake perl5
+USES=		gmake perl5 libtool
 USE_PERL5=	build
 USE_GL=		gl
 USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
@@ -65,7 +65,6 @@ USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		videoproto compositeproto trapproto recordproto xineramaproto \
 		xinerama evieproto xfont fontenc xkbui pixman pciaccess
 
-MAKE_JOBS_UNSAFE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS?=--disable-dmx --disable-xvfb --disable-xnest \
 		--without-xmlto --disable-docs --disable-devel-docs \

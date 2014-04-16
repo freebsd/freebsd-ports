@@ -3,6 +3,7 @@
 
 PORTNAME=	silgraphite
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 
@@ -20,7 +21,7 @@ CONFIGURE_ARGS=	--without-xft --without-pangographite
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 USES+=		iconv
 CONFIGURE_ARGS+=	--with-freetype
 PLIST_SUB+=	WITH_FREETYPE=""

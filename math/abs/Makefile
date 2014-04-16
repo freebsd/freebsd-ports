@@ -3,7 +3,7 @@
 
 PORTNAME=	abs
 PORTVERSION=	0908
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/

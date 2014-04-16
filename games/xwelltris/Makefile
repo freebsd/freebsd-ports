@@ -3,7 +3,7 @@
 
 PORTNAME=	xwelltris
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.xnc.dubna.su/xwelltris/src/ \
 		http://freebsd.unixfreunde.de/sources/

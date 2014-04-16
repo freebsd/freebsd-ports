@@ -27,10 +27,10 @@ USE_XORG=	glproto \
 
 .if defined(WITH_NEW_XORG)
 INTEL_VERSION=	2.21.15
-INTEL_REVISION=	1
+INTEL_REVISION=	2
 CONFIGURE_ENV+=	xorg_cv_cc_flag__Wno_maybe_uninitialized=no
 CONFIGURE_ARGS+=	--enable-sna
-MAKE_JOBS_UNSAFE=yes
+CONFIGURE_ARGS+=	--disable-glamor
 PLIST_SUB+=	OLD="@comment "
 EXTRA_PATCHES+=	${PATCHDIR}/extra-src__sna__sna_threads.c \
 		${PATCHDIR}/extra-src_sna_kgem.c \
@@ -39,7 +39,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-src__sna__sna_threads.c \
 LIB_DEPENDS+=	libxcb-util.so:${PORTSDIR}/x11/xcb-util
 .else
 INTEL_VERSION=	2.7.1
-INTEL_REVISION=	6
+INTEL_REVISION=	7
 PLIST_SUB+=	OLD=""
 
 EXTRA_PATCHES+=	${PATCHDIR}/extra-src_ch7017_ch7017.c \

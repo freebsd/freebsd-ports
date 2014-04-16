@@ -3,6 +3,7 @@ lib/libXv.a
 lib/libXv.la
 lib/libXv.so
 lib/libXv.so.1
+lib/libXv.so.1.0.0
 libdata/pkgconfig/xv.pc
 man/man3/Xv.3.gz
 man/man3/XvFreeAdaptorInfo.3.gz

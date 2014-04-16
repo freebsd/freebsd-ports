@@ -3,7 +3,7 @@
 
 PORTNAME=	starfighter
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/pr-${PORTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

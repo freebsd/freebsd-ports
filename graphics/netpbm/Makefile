@@ -3,6 +3,7 @@
 
 PORTNAME=	netpbm
 PORTVERSION=	10.35.89
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION} \
 		${MASTER_SITE_LOCAL:S/$/:man/}

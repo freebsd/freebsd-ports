@@ -3,4 +3,5 @@ lib/libXdmcp.a
 lib/libXdmcp.la
 lib/libXdmcp.so
 lib/libXdmcp.so.6
+lib/libXdmcp.so.6.0.0
 libdata/pkgconfig/xdmcp.pc

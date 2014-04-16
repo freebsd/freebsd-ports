@@ -4,7 +4,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.8.0
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \
@@ -17,13 +17,16 @@ COMMENT?=	XML parser library for GNOME
 .if !defined(REFERENCE_PORT)
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-USES=		pathfix gmake iconv pkgconfig
+USES=		gmake iconv libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-iconv=${ICONV_PREFIX} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
 		--with-lzma=/usr \
 		--without-python
+
+LIBVERSION=	${PORTVERSION}
+PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 .if !defined(MASTERDIR)
 OPTIONS_DEFINE= SCHEMA THREADS MEM_DEBUG XMLLINT_HIST THREAD_ALLOC
@@ -59,6 +62,11 @@ post-patch:
 		${SED} -i '.batman' -e 's|freebsd1\*)|freebsd1.\*)|g' \
 		-e 's|freebsd\[123\]\*)|freebsd[123].*)|g' \$$0; \
 		touch -mt \$$mtime \$$0" {} \; || /usr/bin/true
+
+.if !defined(MASTERDIR)
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxml2.so.${LIBVERSION}
+.endif # !defined(MASTERDIR)
 
 .include <bsd.port.mk>
 

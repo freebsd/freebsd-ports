@@ -3,6 +3,7 @@
 
 PORTNAME=	xwrits
 PORTVERSION=	2.26
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lcdf.org/${PORTNAME}/
 

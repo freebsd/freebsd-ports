@@ -3,6 +3,7 @@
 
 PORTNAME=	spdylay
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
