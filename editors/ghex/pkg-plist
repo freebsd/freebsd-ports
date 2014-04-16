@@ -6,6 +6,7 @@ lib/libgtkhex-3.so
 lib/libgtkhex-3.so.0
 libdata/pkgconfig/gtkhex-3.pc
 share/GConf/gsettings/ghex.convert
+share/appdata/ghex.appdata.xml
 share/applications/ghex.desktop
 share/help/C/ghex/index.docbook
 share/help/C/ghex/legal.xml
@@ -19,6 +20,10 @@ share/help/de/ghex/index.docbook
 share/help/de/ghex/legal.xml
 share/help/de/ghex/figures/ghex_window_empty.png
 share/help/de/ghex/figures/ghex_window_open.png
+share/help/el/ghex/index.docbook
+share/help/el/ghex/legal.xml
+share/help/el/ghex/figures/ghex_window_empty.png
+share/help/el/ghex/figures/ghex_window_open.png
 share/help/es/ghex/index.docbook
 share/help/es/ghex/legal.xml
 share/help/es/ghex/figures/ghex_window_empty.png
@@ -47,6 +52,10 @@ share/help/oc/ghex/index.docbook
 share/help/oc/ghex/legal.xml
 share/help/oc/ghex/figures/ghex_window_empty.png
 share/help/oc/ghex/figures/ghex_window_open.png
+share/help/pt_BR/ghex/index.docbook
+share/help/pt_BR/ghex/legal.xml
+share/help/pt_BR/ghex/figures/ghex_window_empty.png
+share/help/pt_BR/ghex/figures/ghex_window_open.png
 share/help/sl/ghex/index.docbook
 share/help/sl/ghex/legal.xml
 share/help/sl/ghex/figures/ghex_window_empty.png
@@ -156,6 +165,8 @@ share/locale/zh_TW/LC_MESSAGES/ghex-3.0.mo
 @dirrmtry share/icons/HighContrast/22x22/apps
 @dirrmtry share/icons/HighContrast/22x22
 @dirrmtry share/icons/HighContrast/16x16/apps
+@dirrmtry share/icons/HighContrast/16x16
+@dirrmtry share/icons/HighContrast
 @dirrm share/help/zh_TW/ghex/figures
 @dirrm share/help/zh_TW/ghex
 @dirrmtry share/help/zh_TW
@@ -171,6 +182,9 @@ share/locale/zh_TW/LC_MESSAGES/ghex-3.0.mo
 @dirrm share/help/sl/ghex/figures
 @dirrm share/help/sl/ghex
 @dirrmtry share/help/sl
+@dirrm share/help/pt_BR/ghex/figures
+@dirrm share/help/pt_BR/ghex
+@dirrmtry share/help/pt_BR
 @dirrm share/help/oc/ghex/figures
 @dirrm share/help/oc/ghex
 @dirrmtry share/help/oc
@@ -192,6 +206,9 @@ share/locale/zh_TW/LC_MESSAGES/ghex-3.0.mo
 @dirrm share/help/es/ghex/figures
 @dirrm share/help/es/ghex
 @dirrmtry share/help/es
+@dirrm share/help/el/ghex/figures
+@dirrm share/help/el/ghex
+@dirrmtry share/help/el
 @dirrm share/help/de/ghex/figures
 @dirrm share/help/de/ghex
 @dirrmtry share/help/de
@@ -202,4 +219,5 @@ share/locale/zh_TW/LC_MESSAGES/ghex-3.0.mo
 @dirrm share/help/C/ghex
 @dirrmtry share/help/C
 @dirrmtry share/help
+@dirrmtry share/appdata
 @dirrm include/gtkhex-3

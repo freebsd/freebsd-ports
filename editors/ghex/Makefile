@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/editors/ghex3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/editors/ghex/Makefile 19521 2014-04-14 22:48:27Z gusi $
 
 PORTNAME=	ghex
-PORTVERSION=	3.8.1
+PORTVERSION=	3.10.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,9 +13,8 @@ COMMENT=	GNOME 3 hex editor
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
-USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack libxml2:build
-USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
