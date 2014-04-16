@@ -1,0 +1,171 @@
+--- pkcs11/src/asn1.c.orig
++++ pkcs11/src/asn1.c
+@@ -253,7 +253,7 @@
+    /* check if we are decoding inside a BIT STRING: iNumTag == parent_tag */
+    /* first octet of bit string is the number of unused bits at the end of the bitstring */
+    /* in CER/DER: unused bits are always zero. And if they aren't zero, we still don't need to know the nr. of unused bits */
+-   if ((iNumTag == 0x03) )
++   if (iNumTag == 0x03)
+       {
+       p_cDat++;
+       iLen--;
+--- pkcs11/src/cal.cpp.orig
++++ pkcs11/src/cal.cpp
+@@ -865,7 +865,7 @@
+ 	std::string szReader;
+ 	//	char cBuffer[250];
+ 	//	unsigned char ucBuffer[250];
+-	char* plabel = NULL;
++	char const *plabel = NULL;
+ 	CTLVBuffer oTLVBuffer;
+ 	P11_SLOT *pSlot = NULL;
+ 	CK_ATTRIBUTE ID_DATA[]= BEID_TEMPLATE_ID_DATA;
+@@ -1026,8 +1026,8 @@
+ 	std::string szReader;
+ 	char cBuffer[250];
+ 	//	unsigned char ucBuffer[250];
+-	char* plabel = NULL;
+-	char* pobjectID = NULL;
++	char const *plabel = NULL;
++	char const *pobjectID = NULL;
+ 	unsigned long ulLen=0;
+ 	CTLVBuffer oTLVBuffer;
+ 	CTLVBuffer oTLVBufferAddress;//need second buffer object, as memory is only freed when this object is destructed
+@@ -1061,7 +1061,7 @@
+ 			pobjectID = BEID_OBJECTID_ID;
+ 			ret = p11_add_slot_ID_object(pSlot, ID_DATA, sizeof(ID_DATA)/sizeof(CK_ATTRIBUTE), CK_TRUE, CKO_DATA, CK_FALSE, &hObject,
+ 				(CK_VOID_PTR)plabel, (CK_ULONG)strlen(plabel),(CK_VOID_PTR) oFileData.GetBytes(),(CK_ULONG)oFileData.Size(),
+-				pobjectID, (CK_ULONG)strlen(pobjectID));
++				(CK_VOID_PTR)pobjectID, (CK_ULONG)strlen(pobjectID));
+ 			if (ret) goto cleanup;
+ 
+ 			oTLVBuffer.ParseTLV(oFileData.GetBytes(), oFileData.Size());
+@@ -1075,7 +1075,7 @@
+ 				oTLVBuffer.FillUTF8Data(ID_LABELS[i].tag, cBuffer, &ulLen);
+ 				plabel = ID_LABELS[i].name;
+ 				ret = p11_add_slot_ID_object(pSlot, ID_DATA, sizeof(ID_DATA)/sizeof(CK_ATTRIBUTE), CK_TRUE, CKO_DATA, CK_FALSE, &hObject,
+-					(CK_VOID_PTR)plabel, (CK_ULONG)strlen(plabel),(CK_VOID_PTR) cBuffer,ulLen,pobjectID, (CK_ULONG)strlen(pobjectID));
++					(CK_VOID_PTR)plabel, (CK_ULONG)strlen(plabel),(CK_VOID_PTR) cBuffer,ulLen,(CK_VOID_PTR)pobjectID, (CK_ULONG)strlen(pobjectID));
+ 				if (ret) goto cleanup;
+ 			}
+ 			if(dataType != CACHED_DATA_TYPE_ALL){
+@@ -1087,7 +1087,7 @@
+ 			pobjectID = BEID_OBJECTID_ADDRESS;
+ 			ret = p11_add_slot_ID_object(pSlot, ID_DATA, sizeof(ID_DATA)/sizeof(CK_ATTRIBUTE), CK_TRUE, CKO_DATA, CK_FALSE, &hObject,
+ 				(CK_VOID_PTR)plabel, (CK_ULONG)strlen(plabel),(CK_VOID_PTR) oFileData.GetBytes(),(CK_ULONG)oFileData.Size(),
+-				pobjectID, (CK_ULONG)strlen(pobjectID));
++				(CK_VOID_PTR)pobjectID, (CK_ULONG)strlen(pobjectID));
+ 			if (ret) goto cleanup;
+ 			oTLVBufferAddress.ParseTLV(oFileData.GetBytes(), oFileData.Size());
+ 			nrOfItems = sizeof(ADDRESS_LABELS)/sizeof(BEID_DATA_LABELS_NAME);
+@@ -1099,7 +1099,7 @@
+ 				plabel = ADDRESS_LABELS[i].name;
+ 				ret = p11_add_slot_ID_object(pSlot, ID_DATA, sizeof(ID_DATA)/sizeof(CK_ATTRIBUTE), CK_TRUE, CKO_DATA, CK_FALSE, &hObject,
+ 					(CK_VOID_PTR)plabel, (CK_ULONG)strlen(plabel),(CK_VOID_PTR) cBuffer,ulLen,
+-					pobjectID, (CK_ULONG)strlen(pobjectID));
++					(CK_VOID_PTR)pobjectID, (CK_ULONG)strlen(pobjectID));
+ 				if (ret) goto cleanup;
+ 			}
+ 			if(dataType != CACHED_DATA_TYPE_ALL){
+@@ -1111,7 +1111,7 @@
+ 			oFileData = oReader.ReadFile(BEID_FILE_PHOTO);
+ 			ret = p11_add_slot_ID_object(pSlot, ID_DATA, sizeof(ID_DATA)/sizeof(CK_ATTRIBUTE), CK_TRUE, CKO_DATA, CK_FALSE, &hObject,
+ 				(CK_VOID_PTR)plabel, (CK_ULONG)strlen(plabel),(CK_VOID_PTR) oFileData.GetBytes(),(CK_ULONG)oFileData.Size(),
+-				pobjectID, (CK_ULONG)strlen(BEID_OBJECTID_PHOTO));
++				(CK_VOID_PTR)pobjectID, (CK_ULONG)strlen(BEID_OBJECTID_PHOTO));
+ 			if (ret) goto cleanup;
+ 			if(dataType != CACHED_DATA_TYPE_ALL){
+ 				break;
+--- pkcs11/src/cal.h.orig
++++ pkcs11/src/cal.h
+@@ -179,7 +179,7 @@
+ 
+ typedef struct BEID_DATA_LABELS_NAME {
+ 	unsigned char	tag;
+-	char*			name;
++	char const *	name;
+ }BEID_DATA_LABELS_NAME;
+ 
+ #define BEID_LABEL_DATA_FILE		"DATA_FILE"
+--- pkcs11/src/log.h.orig
++++ pkcs11/src/log.h
+@@ -60,42 +60,42 @@
+ 
+ static P11_MAP_TYPE const P11_CLASS_TYPES[]= 
+ {  
+-   { CKO_DATA,              "CKO_DATA"                }, 
+-   { CKO_CERTIFICATE,       "CKO_CERTIFICATE"         },  
+-   { CKO_PUBLIC_KEY,        "CKO_PUBLIC_KEY"          },  
+-   { CKO_PRIVATE_KEY,       "CKO_PRIVATE_KEY"         },  
+-   { CKO_SECRET_KEY,        "CKO_SECRET_KEY"          },  
+-   { CKO_HW_FEATURE,        "CKO_HW_FEATURE"          },  
+-   { CKO_DOMAIN_PARAMETERS, "CKO_DOMAIN_PARAMETERS"   },  
+-   { CKO_VENDOR_DEFINED,    "CKO_VENDOR_DEFINED"      },
+-   {0,0}  
++   { CKO_DATA,              "CKO_DATA",              0 },
++   { CKO_CERTIFICATE,       "CKO_CERTIFICATE",       0 },
++   { CKO_PUBLIC_KEY,        "CKO_PUBLIC_KEY",        0 },
++   { CKO_PRIVATE_KEY,       "CKO_PRIVATE_KEY",       0 },
++   { CKO_SECRET_KEY,        "CKO_SECRET_KEY",        0 },
++   { CKO_HW_FEATURE,        "CKO_HW_FEATURE",        0 },
++   { CKO_DOMAIN_PARAMETERS, "CKO_DOMAIN_PARAMETERS", 0 },
++   { CKO_VENDOR_DEFINED,    "CKO_VENDOR_DEFINED",    0 },
++   {0,0,0}
+ };
+ 
+ static P11_MAP_TYPE const P11_CERTIFICATE_TYPES[]= 
+ {   
+-   { CKC_X_509,            "CKC_X_509"             },  
+-   { CKC_X_509_ATTR_CERT,  "CKC_X_509_ATTR_CERT"   },  
+-   {0,0}
++   { CKC_X_509,            "CKC_X_509",           0 },
++   { CKC_X_509_ATTR_CERT,  "CKC_X_509_ATTR_CERT", 0 },
++   {0,0,0}
+ };
+ 
+ static P11_MAP_TYPE const P11_KEY_TYPES[]= 
+ {  
+-   { CKK_RSA,        "CKK_RSA"      },  
+-	{ CKK_DSA,        "CKK_DSA"      },  
+-	{ CKK_DH,         "CKK_DH"       },  
+-	{ CKK_ECDSA,      "CKK_ECDSA"    },  
+-	{ CKK_EC,         "CKK_EC"       },  
+-	{ CKK_RC2,        "CKK_RC2"      },  
+-	{ CKK_RC4,        "CKK_RC4"      },  
+-	{ CKK_RC5,        "CKK_RC5"      },  
+-	{ CKK_DES,        "CKK_DES"      },  
+-	{ CKK_DES3,       "CKK_DES3"     },  
+-	{ CKK_CAST,       "CKK_CAST"     },  
+-	{ CKK_CAST3,      "CKK_CAST3"    },  
+-	{ CKK_CAST128,    "CKK_CAST128"  },  
+-	{ CKK_IDEA,       "CKK_IDEA"     },  
+-	{ CKK_AES,        "CKK_AES"      },  
+-	{0,0}
++	{ CKK_RSA,        "CKK_RSA",     0 },
++	{ CKK_DSA,        "CKK_DSA",     0 },
++	{ CKK_DH,         "CKK_DH",      0 },
++	{ CKK_ECDSA,      "CKK_ECDSA",   0 },
++	{ CKK_EC,         "CKK_EC",      0 },
++	{ CKK_RC2,        "CKK_RC2",     0 },
++	{ CKK_RC4,        "CKK_RC4",     0 },
++	{ CKK_RC5,        "CKK_RC5",     0 },
++	{ CKK_DES,        "CKK_DES",     0 },
++	{ CKK_DES3,       "CKK_DES3",    0 },
++	{ CKK_CAST,       "CKK_CAST",    0 },
++	{ CKK_CAST3,      "CKK_CAST3",   0 },
++	{ CKK_CAST128,    "CKK_CAST128", 0 },
++	{ CKK_IDEA,       "CKK_IDEA",    0 },
++	{ CKK_AES,        "CKK_AES",     0 },
++	{0,0,0}
+ };
+ 
+ static P11_MAP_TYPE const P11_ATTR_TYPES[]= {  
+@@ -159,7 +159,7 @@
+ 	{ CKA_RESET_ON_INIT,    "CKA_RESET_ON_INIT",       0            },  
+ 	{ CKA_HAS_RESET,        "CKA_HAS_RESET",           0            },  
+ 	{ CKA_VENDOR_DEFINED,   "CKA_VENDOR_DEFINED",      0            },  
+-	{0,0}  
++	{0,0,0}
+ };
+ 
+ 

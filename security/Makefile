@@ -250,6 +250,7 @@
     SUBDIR += l5
     SUBDIR += lasso
     SUBDIR += libassuan
+    SUBDIR += libbeid
     SUBDIR += libbf
     SUBDIR += libecc
     SUBDIR += libfprint

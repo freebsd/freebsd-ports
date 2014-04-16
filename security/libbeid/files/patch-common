@@ -1,0 +1,183 @@
+--- common/src/bytearrayreader.cpp.orig
++++ common/src/bytearrayreader.cpp
+@@ -24,7 +24,6 @@
+ #include "bytearrayreader.h"
+ #include "bytearray.h"
+ 
+-const static unsigned long EXTRA_INCREMENT_LEN = 10;
+ 
+ /***************** ByteArray **************************/
+ 
+--- common/src/datafile.cpp.orig
++++ common/src/datafile.cpp
+@@ -243,8 +243,7 @@
+   while ( !bDone )
+     {
+       memset(buffer, 0, MAX_BUFFER_LEN);
+-      wchar_t* tmp = fgetws( buffer, MAX_BUFFER_LEN, m_stream);
+-      tmp=tmp;		// avoid warning
++      (void)fgetws( buffer, MAX_BUFFER_LEN, m_stream);
+ 
+       szLine = buffer;
+       Trim(szLine);
+@@ -1004,8 +1003,7 @@
+ 	if ( buf[nLength] != '\n' && buf[nLength] != '\r' )
+ 		buf[nLength++] = '\n';
+ 
+-    size_t tmp = fwrite(buf, sizeof( wchar_t ), nLength, stream);
+-    tmp = tmp;	// avoid warning
++    (void)fwrite(buf, sizeof( wchar_t ), nLength, stream);
+ 
+ 	return nLength;
+ }
+--- common/src/dynamiclib.cpp.orig
++++ common/src/dynamiclib.cpp
+@@ -42,7 +42,7 @@
+ 
+ void * CDynamicLib::GetAddress(const std::string & csFunctionName)
+ {
+-	if (m_module != m_module)
++	if (m_module == NULL)
+ 		return NULL;
+ 
+ 	return PlatformGetAddress(csFunctionName.c_str());
+@@ -50,7 +50,7 @@
+ 
+ void CDynamicLib::Close()
+ {
+-	if (m_module != m_module)
++	if (m_module != NULL)
+ 		return PlatformClose();
+ 
+ 	m_module = NULL;
+--- common/src/logbase.cpp.orig
++++ common/src/logbase.cpp
+@@ -29,11 +29,7 @@
+ #include "mw_util.h"
+ 
+ #ifndef WIN32
+-#ifdef LINUX
+ #include "wintypes.h"
+-#else
+-#include "PCSC/wintypes.h"
+-#endif
+ #include "sys/stat.h"
+ #include "util.h"
+ 
+@@ -567,6 +563,7 @@
+ 		else
+ 			err  = fopen_s(&m_f,utilStringNarrow(filename).c_str(),"a");
+ #else
++		(void)bWchar;
+ 		m_f = fopen(utilStringNarrow(filename).c_str(),"a, ccs=UTF-8");
+ 		if (m_f == NULL) err=errno;	
+ #endif
+--- common/src/mw_util.cpp.orig
++++ common/src/mw_util.cpp
+@@ -271,7 +271,7 @@
+ 
+ 	if (r != -1 && csTmp != NULL)
+ 	{
+-		r = fprintf(stream, csTmp);
++		r = fputs(csTmp, stream);
+ 		free(csTmp);
+ 	}
+ 
+@@ -289,7 +289,7 @@
+ 
+ 	if (r != -1 && csTmp != NULL)
+ 	{
+-		r = fprintf(stream, csTmp);
++		r = fputs(csTmp, stream);
+ 		free(csTmp);
+ 	}
+ 
+@@ -306,7 +306,7 @@
+ 
+ 	if (r != -1 && csTmp != NULL)
+ 	{
+-		r = fprintf(stream, csTmp);
++		r = fputs(csTmp, stream);
+ 		free(csTmp);
+ 	}
+ 
+--- common/src/mw_util.h.orig
++++ common/src/mw_util.h
+@@ -38,7 +38,6 @@
+ #endif
+ 
+ #if !defined __APPLE__ && !defined USE_WINERROR
+-#include "error.h"
+ #endif
+ 
+ #ifndef HAVE_ERRNO_T
+--- common/src/mwexception.cpp.orig
++++ common/src/mwexception.cpp
+@@ -34,14 +34,14 @@
+ 
+ // CMWEXCEPTION::CMWEXCEPTION(long lError, const char *cpFile, long lLine)
+ CMWException::CMWException(long lError, const char *cpFile, long lLine)
+-: m_lError(lError),
+-  m_sFile(cpFile),
++: m_sFile(cpFile),
++  m_lError(lError),
+   m_lLine(lLine)
+ 
+ {
+ }
+ 
+-const char* CMWException::what() throw()
++const char* CMWException::what() const throw()
+ {
+ 	return "CMWException, error code strings to be implemented";
+ }
+--- common/src/mwexception.h.orig
++++ common/src/mwexception.h
+@@ -37,7 +37,7 @@
+     //CMWException(long lError);
+     CMWException(long lError, const char *cpFile, long lLine);
+     ~CMWException () throw(){};
+-    virtual const char* what() throw();
++    virtual const char* what() const throw();
+ 
+     long GetError() const {return m_lError;};
+     std::string GetFile() const {return m_sFile;};
+--- common/src/socket/socketclient.cpp.orig
++++ common/src/socket/socketclient.cpp
+@@ -23,6 +23,7 @@
+ #include "../util.h"
+ 
+ #ifndef WIN32
++#include <netinet/in.h>
+ #include <errno.h>
+ #endif
+ 
+--- common/src/util.cpp.orig
++++ common/src/util.cpp
+@@ -348,7 +348,7 @@
+ 	/* Get our PID and build the name of the link in /proc */
+ 	pid = getpid();
+ 	
+-	if (snprintf(linkname, sizeof(linkname), "/proc/%i/exe", pid) < 0)
++	if (snprintf(linkname, sizeof(linkname), "/proc/%i/file", pid) < 0)
+ 	{
+ 		/* This should only happen on large word systems. I'm not sure
+ 		   what the proper response is here.
+@@ -474,7 +474,7 @@
+ 
+ 	if (r != -1 && csTmp != NULL)
+ 	{
+-		r = fprintf(stream, csTmp);
++		r = fputs(csTmp, stream);
+ 		free(csTmp);
+ 	}
+ 
+@@ -490,7 +490,7 @@
+ 
+ 	if (r != -1 && csTmp != NULL)
+ 	{
+-		r = fprintf(stream, csTmp);
++		r = fputs(csTmp, stream);
+ 		free(csTmp);
+ 	}
+ 
