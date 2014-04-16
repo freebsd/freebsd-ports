@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	polib
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://cdn.bitbucket.org/izi/polib/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,5 +12,6 @@ COMMENT=	Python library to parse and manage gettext catalogs
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
