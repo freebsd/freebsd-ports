@@ -16,6 +16,7 @@ load_rc_config $name
 : ${cbsdd_enable="NO"}
 
 export workdir="${cbsd_workdir}"
+export NO_CBSD_HISTORY=yes
 globalconf=${cbsd_globalconf:-"${workdir}/cbsd.conf"}
 
 if [ ! -f ${globalconf} ]; then
@@ -59,6 +60,7 @@ pidfile="/var/run/$name.pid"
 cbsdd_prestart() {
     find ${ftmpdir} -depth 1 -maxdepth 1 -type f -exec rm -f {} \;
     %%PREFIX%%/bin/cbsd sysinv mode=update
+    %%PREFIX%%/bin/cbsd netinv
 
     . ${inventory}
 
