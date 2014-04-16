@@ -3,6 +3,7 @@
 
 PORTNAME=	nimrod
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://nimrod-code.org/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
