@@ -7,10 +7,10 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A graphical network traffic visualization tool for gnome
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Graphical network traffic visualization tool for gnome
 
-USE_GNOME=	libglade2 libgnomeui gnomehack gnomeprefix
+USE_GNOME=	libglade2 libgnomeui gnomehack gnomeprefix gnomedocutils
 USES=		gmake pkgconfig
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
