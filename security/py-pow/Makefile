@@ -24,7 +24,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|licence|license|' ${WRKSRC}/setup.py
 
 do-build:
-	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext -D NO_IDEA ${PYDISTUTILS_BUILD_TARGET}
+	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext -D NO_IDEA -D NO_RC5_32_12_16 ${PYDISTUTILS_BUILD_TARGET}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
