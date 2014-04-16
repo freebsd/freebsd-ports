@@ -5,7 +5,7 @@ For the first time please run:
 
  env workdir="/path" %%PREFIX%%/cbsd/sudoexec/initenv
 
-where /path is path for cbsd workdir, e.g.: /usr/jails 
+where /path is path for cbsd workdir, e.g.: /usr/jails
 
 For upgrade an existing installation:
 
