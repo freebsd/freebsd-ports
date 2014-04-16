@@ -5998,3 +5998,4 @@ lang/f77||2014-04-13|Has expired: Unmaintained since 2001
 security/labrea||2014-04-14|Has expired: Unmaintained since 2003
 lang/dmd|lang/dmd1|2014-04-14|Upline no longer supports dmd 1.X, it is now the secondary dmd port.
 www/mod_python3|www/mod_python33|2014-04-15|Port moved to reflect PKGNAMESUFFIX
+lang/dragonegg-devel46||2014-04-16|C++ library incompatibilities, unmainteined upstream
