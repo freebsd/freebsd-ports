@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140416:
+AUTHOR: bdrewery@FreeBSD.org
+
+  The default target for 'make' now runs 'make stage' if the port supports
+  it, otherwise 'make build' as before.
+
 20140411:
 AUTHOR: bdrewery@FreeBSD.org
 
