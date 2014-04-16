@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef-zero
-PORTVERSION=	1.7.3
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ COMMENT=	Self-contained, easy-setup, fast-start in-memory Chef server
 
 RUN_DEPENDS=	rubygem-hashie>=2.0.0:${PORTSDIR}/devel/rubygem-hashie \
 		rubygem-json>=1.8.1:${PORTSDIR}/devel/rubygem-json \
-		rubygem-moneta06>=0.0.0:${PORTSDIR}/devel/rubygem-moneta06 \
 		rubygem-mixlib-log>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-rack>=0.0.0:${PORTSDIR}/www/rubygem-rack
 
