@@ -1,9 +1,11 @@
 man/man5/ntp.conf.5.gz
 man/man5/ntp.keys.5.gz
 man/man8/ntp-keygen.8.gz
+man/man8/ntp-wait.8.gz
 man/man8/ntpd.8.gz
 man/man8/ntpdc.8.gz
 man/man8/ntpq.8.gz
+man/man8/ntptrace.8.gz
 %%NTPSNMPD%%man/man8/ntpsnmpd.8.gz
 man/man8/sntp.8.gz
 %%SSL%%sbin/ntp-keygen
@@ -66,6 +68,7 @@ share/ntp/lib/NTP/Util.pm
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver43.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver44.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver45.html
+%%PORTDOCS%%%%DOCSDIR%%/drivers/driver46.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver5.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver6.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver7.html
@@ -161,6 +164,7 @@ share/ntp/lib/NTP/Util.pm
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver43.html
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver44.html
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver45.html
+%%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver46.html
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver6.html
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver7.html
@@ -301,8 +305,10 @@ share/ntp/lib/NTP/Util.pm
 %%PORTDOCS%%%%DOCSDIR%%/html/pic/radio2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/pic/sheepb.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/pic/stack1a.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/pic/stats.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pic/sx5.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pic/thunderbolt.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/pic/time1.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pic/tonea.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pic/tribeb.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pic/wingdorothy.gif
@@ -439,8 +445,10 @@ share/ntp/lib/NTP/Util.pm
 %%PORTDOCS%%%%DOCSDIR%%/pic/radio2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/sheepb.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/stack1a.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pic/stats.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/sx5.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/thunderbolt.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pic/time1.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/tonea.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/tribeb.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/wingdorothy.gif
