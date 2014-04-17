@@ -17,7 +17,6 @@ libexec/opensmtpd/filter-dnsbl
 libexec/opensmtpd/filter-monkey
 libexec/opensmtpd/filter-stub
 libexec/opensmtpd/filter-trace
-libexec/opensmtpd/filter-void
 libexec/opensmtpd/encrypt
 sbin/smtpctl
 sbin/smtpd
