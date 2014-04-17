@@ -1,5 +1,5 @@
---- Makefile.orig	2013-09-20 03:13:32.533531973 +0800
-+++ Makefile	2013-09-20 03:13:40.954532152 +0800
+--- ./Makefile.orig	2012-08-21 19:24:15.000000000 +0200
++++ ./Makefile	2014-04-17 15:33:06.454854016 +0200
 @@ -5,7 +5,7 @@
  # http://miniupnp.free.fr/libnatpmp.html
  
@@ -9,3 +9,26 @@
  INSTALL = install
  
  # APIVERSION is used in soname
+@@ -61,14 +61,14 @@
+ 	makedepend -f$(MAKEFILE_LIST) -Y $(OBJS:.o=.c) 2>/dev/null
+ 
+ install:	$(HEADERS) $(STATICLIB) $(SHAREDLIB) natpmpc-shared
+-	$(INSTALL) -d $(INSTALLDIRINC)
+-	$(INSTALL) -m 644 $(HEADERS) $(INSTALLDIRINC)
+-	$(INSTALL) -d $(INSTALLDIRLIB)
+-	$(INSTALL) -m 644 $(STATICLIB) $(INSTALLDIRLIB)
+-	$(INSTALL) -m 644 $(SHAREDLIB) $(INSTALLDIRLIB)/$(SONAME)
+-	$(INSTALL) -d $(INSTALLDIRBIN)
+-	$(INSTALL) -m 755 natpmpc-shared $(INSTALLDIRBIN)/natpmpc
+-	ln -s -f $(SONAME) $(INSTALLDIRLIB)/$(SHAREDLIB)
++	$(INSTALL) -d $(DESTDIR)$(INSTALLDIRINC)
++	$(INSTALL) -m 644 $(HEADERS) $(DESTDIR)$(INSTALLDIRINC)
++	$(INSTALL) -d $(DESTDIR)$(INSTALLDIRLIB)
++	$(INSTALL) -m 644 $(STATICLIB) $(DESTDIR)$(INSTALLDIRLIB)
++	$(INSTALL) -m 644 $(SHAREDLIB) $(DESTDIR)$(INSTALLDIRLIB)/$(SONAME)
++	$(INSTALL) -d $(DESTDIR)$(INSTALLDIRBIN)
++	$(INSTALL) -m 755 natpmpc-shared $(DESTDIR)$(INSTALLDIRBIN)/natpmpc
++	ln -s -f $(SONAME) $(DESTDIR)$(INSTALLDIRLIB)/$(SHAREDLIB)
+ 
+ cleaninstall:
+ 	$(RM) $(addprefix $(INSTALLDIRINC), $(HEADERS))
