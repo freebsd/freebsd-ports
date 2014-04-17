@@ -3,6 +3,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.12.1
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
@@ -40,15 +41,14 @@ LDAP=			Enable LDAP support
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
-CFLAGS+=		-rpath=${KRB5_HOME}/lib
-LDFLAGS+=		-rpath=${KRB5_HOME}/lib
+CFLAGS+=		-Wl,-rpath=${KRB5_HOME}/lib
+LDFLAGS+=		-Wl,-rpath=${KRB5_HOME}/lib
 .endif
 LDFLAGS+=		-L${LOCALBASE}/lib
 CFLAGS+=		-I${LOCALBASE}/include
 
 USE_OPENSSL=		yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDNS_FOR_REALM}
@@ -96,13 +96,13 @@ post-extract:
 .endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/krb5
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/krb5
 # html documentation
 .if ${PORT_OPTIONS:MKRB5_PDF}
 	pdf_files=`${FIND} ${PDF_DOC_DIR} ! -type d`
 	pdf_dirs=`${FIND} ${PDF_DOC_DIR} -type d`
 	for i in $${pdf_dirs}; do \
-		${MKDIR} ${PREFIX}/share/doc/krb5/$${i}; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/krb5/$${i}; \
 	done; \
 	for i in $${pdf_files}; do \
 		${INSTALL_MAN} $${pdf} ${PREFIX}/share/doc/krb5/$${i}; \
@@ -131,8 +131,8 @@ post-install:
 	done | ${TAIL} -r >> ${TMPPLIST}
 .endif
 	${ECHO_CMD} @dirrm share/doc/krb5 >> ${TMPPLIST}
-	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR}/README.FreeBSD > ${PREFIX}/share/doc/krb5/README.FreeBSD
-	@${CHMOD} 444 ${PREFIX}/share/doc/krb5/README.FreeBSD
+	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR}/README.FreeBSD > ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
+	@${CHMOD} 444 ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${ECHO} "------------------------------------------------------"
 	@${ECHO} "This port of MIT Kerberos 5 includes remote login     "
 	@${ECHO} "daemons (telnetd and klogind).  These daemons default "
