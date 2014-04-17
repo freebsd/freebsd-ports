@@ -1,11 +1,12 @@
 # Created by: Sean Bruno <sbruno@freebsd.org>
 # $FreeBSD$
 
-PORTNAME=	libshout
+PORTNAME=	libshout-idjc
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	SF/idjc/libshout-idjc/
-DISTNAME=	${PORTNAME}-idjc-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Shoutcast/Icecast Library for audio/idjc

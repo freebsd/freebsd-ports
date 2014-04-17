@@ -4,9 +4,9 @@ lib/libshout-idjc.la
 lib/libshout-idjc.so
 lib/libshout-idjc.so.5
 libdata/pkgconfig/shout-idjc.pc
-%%DOCSDIR%%-idjc/COPYING
-%%DOCSDIR%%-idjc/NEWS
-%%DOCSDIR%%-idjc/README
-@dirrmtry %%DOCSDIR%%-idjc
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+@dirrmtry %%DOCSDIR%%
 @dirrmtry libdata/pkgconfig
 @dirrmtry include/shoutidjc
