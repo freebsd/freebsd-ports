@@ -189,7 +189,16 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: ale@FreeBSD.org
 
   The Apache PHP module has been separated from the main PHP port.
-  If it is needed, install either www/mod_php5 or www/mod_php55.
+  If you had the APACHE OPTION selected, you have to perform the
+  following steps:
+
+  1) update your lang/php* options (i.e. 'make config')
+  2) rebuild lang/php* port
+  3) install www/mod_php* port
+
+  It is *mandatory* to build both ports with the same DEBUG and ZTS
+  options, so if you have a threaded Apache (i.e. worker or event MPM)
+  you have to select the ZTS option in lang/php* port.
 
 20140322:
   AFFECTS: users of devel/apr1
