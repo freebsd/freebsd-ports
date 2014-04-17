@@ -10,7 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FormAlchemy-${DISTVERSION}
 
 MAINTAINER=	ghostonthewire@gmail.com
-COMMENT=	Toolkit for creating HTML form elements manually or from SQLAlchemy mapped classes
+COMMENT=	Toolkit for creating HTML form elements
+
+LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.4.5:${PORTSDIR}/databases/py-sqlalchemy06 \
 		${PYTHON_PKGNAMEPREFIX}Tempita>=0.4:${PORTSDIR}/textproc/py-Tempita \
@@ -18,9 +20,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.4.5:${PORTSDIR}/databases/
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	FormAlchemy
-PYDISTUTILS_NOEGGINFO=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
