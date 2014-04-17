@@ -24,7 +24,7 @@ do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 
 do-build:
-	cd ${WRKSRC} && package/compile
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} package/compile
 
 do-install:
 .for x in ipccat ipcconnect ipcdo ipcrun
