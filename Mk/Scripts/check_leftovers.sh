@@ -19,6 +19,9 @@
 # stdout:
 #  same -/+/M format, but with files substituted, without approved
 #  whitelisted files, and hides any directories already in plist.
+#
+# The PLIST_SUB feature can be disabled by setting PLIST_SUB_SED=
+# in environment.
 
 origin="$1"
 [ $# -eq 1 ] || { echo "Must supply ORIGIN as parameter" >&2; exit 1; }
@@ -42,11 +45,6 @@ plistsub_sed=$(make -C ${portdir} -VPLIST_SUB_SED)
 tmpplist=$(make -C ${portdir} -VTMPPLIST)
 
 while read modtype path extra; do
-	ignore_path=0
-	sub_path=$(echo "$path" | sed -e "s|^${PREFIX}/||" -e "${plistsub_sed}")
-	# If this is a directory, use @dirrm in output
-	[ -d "${path}" ] && sub_path="@dirrm ${sub_path}"
-
 	# Ignore everything from these files/directories
 	case "${path}" in
 		${HOME:-/root}/.ccache/*|\
@@ -64,9 +62,26 @@ while read modtype path extra; do
 		# fc-cache - skip for now
 		/var/db/fontconfig/*) continue ;;
 	esac
+
+	ignore_path=0
+	sub_path=$(echo "$path" | sed -e "s|^${PREFIX}/||" -e "${plistsub_sed}")
+	orig_sub_path="${sub_path}"
+	# If this is a directory, use @dirrm in output
+	is_dir=0
+	if [ -d "${path}" ]; then
+		is_dir=1
+		sub_path="@dirrm ${sub_path}"
+	fi
+
+	# Handle PORTDOCS/PORTEXAMPLES/etc
+	case "${orig_sub_path}" in
+		%%DOCSDIR%%*) sub_path="%%PORTDOCS%%${sub_path}" ;;
+		%%EXAMPLESDIR%%*) sub_path="%%PORTEXAMPLES%%${sub_path}" ;;
+	esac
+
 	case $modtype in
 	+)
-		if [ -d "${path}" ]; then
+		if [ ${is_dir} -eq 1 ]; then
 			# home directory of users created
 			case " ${homedirs} " in
 			*\ ${path}\ *) continue ;;
