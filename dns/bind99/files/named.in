@@ -19,7 +19,7 @@ extra_commands=reload
 
 start_precmd=named_prestart
 start_postcmd=named_poststart
-reload_cmd="${command%/named}/rndc reload"
+reload_cmd=named_reload
 stop_cmd=named_stop
 
 named_enable=${named_enable:-"NO"}		# Run named, the DNS server (or NO).
@@ -41,6 +41,13 @@ named_poststart()
 			sleep 1
 		done
 	fi
+}
+
+named_reload()
+{
+	# This is a one line function, but ${command} is not defined early
+	# enough to be there when the reload_cmd variable is defined up there.
+	${command%/named}/rndc reload
 }
 
 find_pidfile()
