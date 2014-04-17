@@ -3,23 +3,24 @@
 
 PORTNAME=	qstat
 PORTVERSION=	2.11
+PORTREVISION=	1
 CATEGORIES=	games net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Command-line program to query game servers on the net
 
-GNU_CONFIGURE=	yes
-
 CONFLICTS_INSTALL=	torque-[0-9]*
+
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${MV} ${WRKSRC}/qstat.cfg ${WRKSRC}/qstat.cfg.default
+	@${MV} ${WRKSRC}/qstat.cfg ${WRKSRC}/qstat.cfg.sample
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|qstat\.cfg|&.default|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|qstat\.cfg|&.sample|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|' ${WRKSRC}/qstat.c
 
 post-install:
