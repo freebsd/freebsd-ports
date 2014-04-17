@@ -28,9 +28,10 @@ TOOL_DESC=	Build EasyQuantis application
 GUI_DESC=	Build QT4 GUI for EasyQuantis application
 
 EXTRACT_BEFORE_ARGS=	-aqo
-USES=		cmake zip:infozip
+USES=		cmake compiler:c++11-lang zip:infozip
 USE_QT4=	# empty but required
 USE_LDCONFIG=	yes
+SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/Quantis-${DISTVERSION}/Libs-Apps
 
