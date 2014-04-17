@@ -25,8 +25,7 @@ PORTSCOUT=	limit:^0\.7.*
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
-USES=		gmake perl5 pkgconfig
-USE_BZIP2=	yes
+USES=		gmake perl5 pkgconfig tar:bzip2
 WANT_SDL=	yes
 USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 USE_PERL5=	build
@@ -417,7 +416,7 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL5}|g' \
 		${WRKSRC}/doc/texi2pod.pl
-.if ${PORT_OPTIONS:MDSL}
+.if ${PORT_OPTIONS:MSDL}
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -464,5 +463,10 @@ post-install:
 	@${REINPLACE_CMD} \
 		-e 's|libavformat|libavformat0|' \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libavdevice0.pc
+	@${RM}	${STAGEDIR}${PREFIX}/libdata/pkgconfig/libavcodec0.pc.bak \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libpostproc0.pc.bak \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libswscale0.pc.bak \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libavformat0.pc.bak \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libavdevice0.pc.bak
 
 .include <bsd.port.post.mk>
