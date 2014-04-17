@@ -45,7 +45,7 @@ do-configure:
 	${ECHO_CMD} "/etc/ssl/dh1024.pem" > ${WRKSRC}/src/conf-dhfile
 
 do-build:
-	cd ${WRKSRC} && package/compile
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} package/compile
 
 do-install:
 .for x in ${SCRIPTS_TO_INSTALL}
