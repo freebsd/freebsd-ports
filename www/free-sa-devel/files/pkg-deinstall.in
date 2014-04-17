@@ -1,0 +1,20 @@
+#! /bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+echo
+echo "======================================================================"
+echo " If you are permanently removing Free-SA, you should manually delete:"
+if [ -d %%ETCDIR%% ]; then
+    echo "  - Free-SA configuration:	rm -r %%ETCDIR%%"
+fi
+if [ -d %%WWWDIR%% ]; then
+    echo "  - Free-SA www directory:	rm -r %%WWWDIR%%"
+fi
+if [ -d %%CACHEDIR%% ]; then
+    echo "  - Free-SA cache directory:	rm -r %%CACHEDIR%%"
+fi
+echo "======================================================================"
+echo
