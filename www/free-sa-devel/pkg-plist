@@ -1,24 +1,32 @@
-@unexec /bin/rm -f %D/%%WWWDIR%%/themes/default
 bin/free-sa
-%%ETCDIR%%/HTTP_CONNECT_method.filter.sample
-%%ETCDIR%%/HTTP_PUT+POST_method.filter.sample
-%%ETCDIR%%/HTTP_downloads.filter.sample
-%%ETCDIR%%/HTTP_downloads_archives.filter.sample
-%%ETCDIR%%/HTTP_downloads_audio.filter.sample
-%%ETCDIR%%/HTTP_downloads_cddvd.filter.sample
-%%ETCDIR%%/HTTP_downloads_code.filter.sample
-%%ETCDIR%%/HTTP_downloads_office.filter.sample
-%%ETCDIR%%/HTTP_downloads_video.filter.sample
-%%ETCDIR%%/HTTP_proxy_auth_failures.filter.sample
-%%ETCDIR%%/HTTP_proxy_denied.filter.sample
-%%ETCDIR%%/HTTP_site_auth_failures.filter.sample
-%%ETCDIR%%/HTTP_site_denied.filter.sample
-%%ETCDIR%%/HTTP_unusual_codes.filter.sample
-%%ETCDIR%%/HTTP_unusual_methods.filter.sample
-%%ETCDIR%%/SMTP_delivery_rejected.filter.sample
-%%ETCDIR%%/SMTP_receiving_rejected.filter.sample
-%%ETCDIR%%/free-sa.conf.sample
-%%ETCDIR%%/users.filter.sample
+etc/free-sa/HTTP_CONNECT_method.filter.sample
+etc/free-sa/HTTP_PUT+POST_method.filter.sample
+etc/free-sa/HTTP_downloads.filter.sample
+etc/free-sa/HTTP_downloads_archives.filter.sample
+etc/free-sa/HTTP_downloads_audio.filter.sample
+etc/free-sa/HTTP_downloads_cddvd.filter.sample
+etc/free-sa/HTTP_downloads_code.filter.sample
+etc/free-sa/HTTP_downloads_office.filter.sample
+etc/free-sa/HTTP_downloads_video.filter.sample
+etc/free-sa/HTTP_proxy_auth_failures.filter.sample
+etc/free-sa/HTTP_proxy_denied.filter.sample
+etc/free-sa/HTTP_site_auth_failures.filter.sample
+etc/free-sa/HTTP_site_denied.filter.sample
+etc/free-sa/HTTP_unusual_codes.filter.sample
+etc/free-sa/HTTP_unusual_methods.filter.sample
+etc/free-sa/SMTP_delivery_rejected.filter.sample
+etc/free-sa/SMTP_receiving_rejected.filter.sample
+etc/free-sa/free-sa.conf.sample
+etc/free-sa/users.filter.sample
+man/man1/free-sa.1.gz
+man/man5/free-sa.conf.5.gz
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.DEV
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%DATADIR%%/be.cp1251
 %%DATADIR%%/cs.iso88592
 %%DATADIR%%/de.iso88591
@@ -48,6 +56,7 @@ bin/free-sa
 %%WWWDIR%%/themes/blues/lsa.css
 %%WWWDIR%%/themes/blues/rsa.css
 %%WWWDIR%%/themes/blues/s.png
+%%WWWDIR%%/themes/default
 %%WWWDIR%%/themes/qbiq/c.png
 %%WWWDIR%%/themes/qbiq/d.png
 %%WWWDIR%%/themes/qbiq/g.png
@@ -66,17 +75,17 @@ bin/free-sa
 %%WWWDIR%%/themes/sarg/c.png
 %%WWWDIR%%/themes/sarg/d.png
 %%WWWDIR%%/themes/sarg/g.png
-%%WWWDIR%%/themes/sarg/s.png
 %%WWWDIR%%/themes/sarg/gsa.css
 %%WWWDIR%%/themes/sarg/lsa.css
 %%WWWDIR%%/themes/sarg/rsa.css
-%%WWWDIR%%/themes/silver/s.png
+%%WWWDIR%%/themes/sarg/s.png
 %%WWWDIR%%/themes/silver/c.png
 %%WWWDIR%%/themes/silver/d.png
 %%WWWDIR%%/themes/silver/g.png
 %%WWWDIR%%/themes/silver/gsa.css
 %%WWWDIR%%/themes/silver/lsa.css
 %%WWWDIR%%/themes/silver/rsa.css
+%%WWWDIR%%/themes/silver/s.png
 @dirrm %%WWWDIR%%/themes/silver
 @dirrm %%WWWDIR%%/themes/sarg
 @dirrm %%WWWDIR%%/themes/rbsec
@@ -86,4 +95,8 @@ bin/free-sa
 @dirrm %%WWWDIR%%/cgi-bin
 @dirrmtry %%WWWDIR%%
 @dirrm %%DATADIR%%
-@dirrmtry %%ETCDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/free-sa
+@cwd /
+@dirrmtry var/cache/free-sa
+@cwd %%RESETPREFIX%%
