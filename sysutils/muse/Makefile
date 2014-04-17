@@ -9,9 +9,6 @@ MASTER_SITES=	http://www.spatula.net/muse/
 MAINTAINER=	freebsd@spatula.net
 COMMENT=	Shows memory usage data
 
-MAN1=		muse.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/muse
+PLIST_FILES=	bin/muse man/man1/muse.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
