@@ -45,17 +45,17 @@ you update your ports collection, before attempting any port upgrades.
   # portupgrade -a
 
 20140416:
-  AFFECTS: users of print/freetype2 textproc/libxml2 x11/pixman and
-           graphics/freeglut
+  AFFECTS: users of print/freetype2 textproc/libxml2 x11/pixman 
+           x11/libxcb and graphics/freeglut
   AUTHOR: x11@FreeBSD.org and gnome@FreeBSD.org
 
   The library version of the above libraries has been brought in line
   with what upstream expects. To do this all users of these ports need
   to be rebuilt. Portrevisions have been bumped as a consequence.
 
-  # portmaster -r freetype2 -r libxml2 -r pixman -r freeglut
+  # portmaster -r freetype2 -r libxml2 -r pixman -r freeglut -r libxcb
   or
-  # portupgrade -rf freetype2 libxml2 pixman freeglut
+  # portupgrade -rf freetype2 libxml2 pixman freeglut libxcb
 
 20140415:
   AFFECTS: Users of mod_python3
