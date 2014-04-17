@@ -40,7 +40,7 @@ if [ -n "${LOCALBASE}" ]; then
 else
 	LOCALBASE=$(make -C ${portdir} -VLOCALBASE)
 fi
-homedirs=$(awk -F: -v users=$(make -C ${portdir} -V USERS|sed -e 's, ,|,g;/^$/d') '$1 ~ users {print $9}' ${PORTSDIR}/UIDs|sort -u|sed -e "s|/usr/local|${PREFIX}|")
+homedirs=$(awk -F: -v users=$(make -C ${portdir} -V USERS|sed -e 's, ,|,g;/^$/d') 'users && $1 ~ users {print $9}' ${PORTSDIR}/UIDs|sort -u|sed -e "s|/usr/local|${PREFIX}|")
 plistsub_sed=$(make -C ${portdir} -VPLIST_SUB_SED)
 tmpplist=$(make -C ${portdir} -VTMPPLIST)
 
