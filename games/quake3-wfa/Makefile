@@ -23,21 +23,15 @@ DATADIR=	${Q3DIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../quake3-data/Makefile.include"
-.include <bsd.port.options.mk>
 
 post-extract:
 	@${RM} ${WRKSRC}/help/BobWFACfgV236.exe
 
 do-install:
-	@${MKDIR} ${DATADIR}
-.for f in *.cfg *.pk3
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
-.endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${CP} -a ${WRKSRC}/EnglishRadioHelp ${WRKSRC}/help ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.cfg *.pk3 ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -a ${WRKSRC}/EnglishRadioHelp ${WRKSRC}/help ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
