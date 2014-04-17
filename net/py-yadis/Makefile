@@ -12,6 +12,8 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Python support for the Yadis service discovery protocol
 
+BROKEN=		fails checksum
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	python-yadis
