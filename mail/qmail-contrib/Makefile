@@ -68,14 +68,14 @@ post-build:
 	@${MV} -f ${WRKFF}/conf-qmail ${WRKFF}/conf-qmail.sav
 	@${ECHO_CMD} "${STAGEDIR}${QMAIL_PREFIX}" > ${WRKFF}/conf-qmail
 	@cd ${WRKFF} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
-	@cd ${WRKFF} ; ${MAKE_CMD} install instcheck
+	@cd ${WRKFF} ; ${DO_MAKE_BUILD} install instcheck
 	@${TOUCH} ${WRKFF}/newaliases ${WRKFF}/fastforward ${WRKFF}/newinclude
 	@${MV} -f ${WRKFF}/conf-qmail.sav ${WRKFF}/conf-qmail
 
 	@${MV} -f ${WRKDF}/conf-qmail ${WRKDF}/conf-qmail.sav
 	@${ECHO_CMD} "${STAGEDIR}${QMAIL_PREFIX}" > ${WRKDF}/conf-qmail
 	@cd ${WRKDF} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
-	@cd ${WRKDF} ; ${MAKE_CMD} install instcheck
+	@cd ${WRKDF} ; ${DO_MAKE_BUILD} install instcheck
 	@${TOUCH} ${WRKDF}/dot-forward
 	@${MV} -f ${WRKDF}/conf-qmail.sav ${WRKDF}/conf-qmail
 
