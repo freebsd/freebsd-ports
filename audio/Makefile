@@ -307,6 +307,7 @@
     SUBDIR += id3ren
     SUBDIR += id3tool
     SUBDIR += id3v2
+    SUBDIR += idjc
     SUBDIR += ifp-line
     SUBDIR += ipod-sharp
     SUBDIR += jack
