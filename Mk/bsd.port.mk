@@ -1614,6 +1614,15 @@ PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE}
 SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 		DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
 		WWWDIR=${WWWDIR} ETCDIR=${ETCDIR}
+# This is used for check-stagedir.sh and check_leftover.sh to replace
+# directories/files with PLIST_SUB %%KEYS%%.
+#  Remove VARS that are too generic
+#  Remove empty values
+#  Remove @comment values
+#  Remove quotes
+#  Replace . with \. for later sed(1) usage
+PLIST_SUB_SED_MIN?=	2
+PLIST_SUB_SED?= ${PLIST_SUB:C/.*=.{1,${PLIST_SUB_SED_MIN}}$//g:NEXTRACT_SUFX=*:NOSREL=*:NLIB32DIR=*:NPREFIX=*:NLOCALBASE=*:N*="":N*="@comment*:C/(.*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\./\\./g}
 
 PLIST_REINPLACE+=	dirrmtry stopdaemon rmtry
 PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir "%D/\1" 2>/dev/null || true!
