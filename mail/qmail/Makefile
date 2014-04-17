@@ -3,7 +3,7 @@
 
 PORTNAME=	qmail
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES=	mail
 MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
@@ -19,12 +19,16 @@ CONFLICTS?=	qmail-ldap-[0-9]* qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]* qmail-
 CONFLICTS+=	qmail-vida-[0-9]*
 
 USES=		qmail:vars
-NO_STAGE=	yes
 PREFIX?=	${QMAIL_PREFIX}
+PLIST_SUB+=	QMAIL_PREFIX="${PREFIX}"
 
 MAKE_JOBS_UNSAFE=	yes
 
 PORTSCOUT=	skipv:1.04
+
+# Need root for build for now due to all of the users/dirs/chmod. Can cleanup
+# once pkg_install is EOL.
+NEED_ROOT=	yes
 
 USERS=		alias
 .for usersuffix in d l p q r s
@@ -231,17 +235,19 @@ OPTIONS_DEFINE+=RCDLINK
 OPTIONS_DEFAULT+=	RCDLINK
 .endif
 
+OPTIONS_SUB=	yes
+
 ALL_TARGET+=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
 		qmail-limits.7 qmail-newmrh.8 qmail-newu.8 qmail-pw2u.8 \
 		qmail-send.8 qmail-start.8 qmail-users.5
 
-MAN1+=	forward.1 condredirect.1 bouncesaying.1 except.1 maildirmake.1 \
+MMAN1+=	forward.1 condredirect.1 bouncesaying.1 except.1 maildirmake.1 \
 	maildir2mbox.1 maildirwatch.1 mailsubj.1 qreceipt.1 qbiff.1 preline.1 \
 	tcp-env.1
-MAN5+=	addresses.5 envelopes.5 maildir.5 mbox.5 dot-qmail.5 qmail-control.5 \
+MMAN5+=	addresses.5 envelopes.5 maildir.5 mbox.5 dot-qmail.5 qmail-control.5 \
 	qmail-header.5 qmail-log.5 qmail-users.5 tcp-environ.5
-MAN7+=	forgeries.7 qmail-limits.7 qmail.7
-MAN8+=	qmail-local.8 qmail-lspawn.8 qmail-getpw.8 qmail-remote.8 \
+MMAN7+=	forgeries.7 qmail-limits.7 qmail.7
+MMAN8+=	qmail-local.8 qmail-lspawn.8 qmail-getpw.8 qmail-remote.8 \
 	qmail-rspawn.8 qmail-clean.8 qmail-send.8 qmail-start.8 splogger.8 \
 	qmail-queue.8 qmail-inject.8 qmail-showctl.8 qmail-newmrh.8 \
 	qmail-newu.8 qmail-pw2u.8 qmail-qread.8 qmail-qstat.8 qmail-tcpok.8 \
@@ -256,16 +262,17 @@ PKGMESSAGE_SUFFIX=	mysql
 EXTRA_MAN8=	qmail-badloadertypes.8 qmail-badmimetypes.8 qmail-mfrules.8 \
 		qmail-recipients.8
 ALL_TARGET+=	${EXTRA_MAN8}
-MAN8+=		${EXTRA_MAN8}
+MMAN8+=		${EXTRA_MAN8}
 USES+=		perl5
 USE_PERL5=	patch build
 .endif
 
 .if defined(SLAVE_LDAP)
 PKGMESSAGE_SUFFIX=	ldap
-PLIST_SUB+=	LDAP="" NOT_LDAP="@comment "
+PLIST_SUB+=	LDAP="" NO_LDAP="@comment "
 .else
-PLIST_SUB+=	LDAP="@comment " NOT_LDAP=""
+PLIST_SUB+=	LDAP="@comment " NO_LDAP=""
+PLIST_SUB+=	SRS="@comment "
 .endif
 
 .if defined(SLAVE_SPAMCONTROL)
@@ -284,7 +291,7 @@ SLAVEPORT_LINE=	${PKGMESSAGE_SUFFIX}
 SLAVEPORT_LINE=	spamcontrol
 .endif
 
-SUB_FILES+=	mailer.conf.sample bootfiles.sed enable-qmail pkg-install
+SUB_FILES+=	mailer.conf.sample bootfiles.sed enable-qmail
 SUB_LIST+=	ECHO_CMD=${ECHO_CMD} RCDLINK=${RCDLINK}
 
 .if defined(PKGMESSAGE_SUFFIX)
@@ -338,14 +345,20 @@ BOOTFILES=	home home+df proc proc+df binm1 binm1+df \
 		binm2 binm2+df binm3 binm3+df maildir
 .endif
 
-CONFIGUREPROGRAMS=	install dnsfq hostname dnsip ipmeprint dnsptr
+CONFIGUREPROGRAMS=	dnsfq hostname dnsip ipmeprint dnsptr
 CONFIGURESCRIPTS=	config config-fast
 
-.include <bsd.port.options.mk>
-
-.if defined(SLAVE_LDAP) && ${PORT_OPTIONS:MTLS}
-USE_OPENSSL=	yes
+.if defined(SLAVE_LDAP)
+TLS_USE=	OPENSSL=yes
 .endif
+
+# Port will control all PREFIX handling.
+install-mtree:
+	@${DO_NADA}
+NO_MTREE=	yes
+NO_PREFIX_RMDIR=yes
+
+.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
@@ -353,14 +366,15 @@ USE_OPENSSL=	yes
 DOCSDIR=	${PREFIX}/doc
 .endif
 
-NO_MTREE=	yes
-
 .if ${OSVERSION} >= 900007
+SUB_LIST+=	MANPATH="@comment "
 . if defined(SLAVE_LDAP)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx-ldap
 . else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx
 . endif
+.else
+SUB_LIST+=	MANPATH=""
 .endif
 
 .if defined(SLAVE_TLS)
@@ -378,14 +392,8 @@ LDAPFLAGS+=	-D${param}
 .  endif
 . endfor
 
-. if ${PORT_OPTIONS:MEXTERNAL_TODO}
-PLIST_SUB+=	EXTERNAL_TODO=""
-. else
-PLIST_SUB+=	EXTERNAL_TODO="@comment "
-. endif
-
 . if ${PORT_OPTIONS:MSRS}
-BUILD_DEPENDS=	srs:${PORTSDIR}/mail/libsrs2
+BUILD_DEPENDS+=	srs:${PORTSDIR}/mail/libsrs2
 MASTER_SITES+=	http://qmail-ldap-smtpauthuser.googlecode.com/svn/trunk/:srs_ldap
 SRS_LDAP_PATCH =	qmail-ldap-1.03-20060201-SRS.patch
 DISTFILES+=	${SRS_LDAP_PATCH}:srs_ldap
@@ -524,6 +532,7 @@ PATCHFILES+=	tarpit.patch:tarpit
     ( defined(SLAVE_SPAMCONTROL) || defined(SLAVE_LDAP) )
 . if defined(SLAVE_SPAMCONTROL)
 SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-2519.patch
+CFLAGS+=		-Wno-return-type
 . else
 SMTPEXTFORK_PATCH=	smtpextfork-ldap-${LDAP_PATCH_DATE}_4.patch
 . endif
@@ -701,7 +710,7 @@ post-patch:
 	${ECHO_CMD} "/etc/ssl" > ${UCSPISRC}/src/conf-cadir
 	${ECHO_CMD} "/etc/ssl/cert.pem" > ${UCSPISRC}/src/conf-cafile
 	${ECHO_CMD} "/etc/ssl/dh1024.pem" > ${UCSPISRC}/src/conf-dhfile
-	@cd ${UCSPISRC} && package/compile
+	@cd ${UCSPISRC} && ${SETENV} ${MAKE_ENV} package/compile
 	@cd ${WRKSRC} && ./install_spamcontrol.sh
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-qmail-smtpd.c
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-qmail-remote.c
@@ -791,6 +800,7 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e "s/void *main/int main/g" ${WRKSRC}/*.c
 	@${REINPLACE_CMD} -e "/int main/ s/argc, *argv/int argc, char **argv/" ${WRKSRC}/install.c
+	@${ECHO_CMD} "MANPATH ${MANPREFIX}/man" > ${WRKDIR}/qmail.conf
 
 do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
@@ -804,6 +814,15 @@ do-configure:
 	fi
 .endif
 
+post-build:
+	@${ECHO_MSG} "===> Rebuilding DJB installer to respect STAGEDIR"
+	@${MV} -f ${WRKSRC}/conf-qmail ${WRKSRC}/conf-qmail.sav
+	@${ECHO_CMD} "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-qmail
+	@${MV} -f ${WRKSRC}/install ${WRKSRC}/install.nostage
+	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
+	@cd ${WRKSRC} ; ${DO_MAKE_BUILD} install instcheck
+	@${MV} -f ${WRKSRC}/conf-qmail.sav ${WRKSRC}/conf-qmail
+
 do-install:
 .for i in ${BOOTFILES}
 	@if  [ -f ${WRKSRC}/${i}.sh ] ; then \
@@ -812,54 +831,52 @@ do-install:
 		${SED} -f ${WRKDIR}/bootfiles.sed ${FILESDIR}/$i > ${WRKDIR}/${i} ; \
 	fi
 .endfor
-	@${MKDIR} ${PREFIX}/configure
+	@${MKDIR} ${STAGEDIR}${PREFIX}/configure
 	@cd ${WRKSRC} ; ./install
 .for f in ${CONFIGUREPROGRAMS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/configure
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/configure
 .endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/install.nostage ${STAGEDIR}${PREFIX}/configure/install
 .for f in ${CONFIGURESCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/configure
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/configure
 .endfor
 .for i in ${BOOTFILES}
-	${INSTALL_SCRIPT} ${WRKDIR}/${i:T} ${PREFIX}/boot
+	${INSTALL_SCRIPT} ${WRKDIR}/${i:T} ${STAGEDIR}${PREFIX}/boot
 .endfor
 .if !defined(SLAVE_LDAP)
-	${INSTALL_SCRIPT} ${WRKDIR}/qmailsmtpd ${PREFIX}/boot
+	${INSTALL_SCRIPT} ${WRKDIR}/qmailsmtpd ${STAGEDIR}${PREFIX}/boot
 .endif
 .for i in 1 5 7 8
-	@${MKDIR} ${PREFIX}/man/man$i
-. for j in ${MAN${i}}
-	${INSTALL_MAN} ${WRKSRC}/$j ${PREFIX}/man/man${i}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/man/man$i
+. for j in ${MMAN${i}}
+	${INSTALL_MAN} ${WRKSRC}/$j ${STAGEDIR}${PREFIX}/man/man${i}
 . endfor
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for sub in WRKSRC WRKDIR WRKDIR_doc
 .  for doc in ${DOCFILES_${sub}}
-	${INSTALL_DATA} ${${sub}}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${${sub}}/${doc} ${STAGEDIR}${DOCSDIR}
 .  endfor
 . endfor
 . if ${PORT_OPTIONS:MSMTPEXTFORK} && ( defined(SLAVE_SPAMCONTROL) || defined(SLAVE_LDAP) )
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/README.smtpextfork ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/README.smtpextfork ${STAGEDIR}${DOCSDIR}
 . endif
 . if defined(PACKAGE_BUILDING)
 	@${ECHO_CMD} "FreeBSD Binary package qmail installation" \
-		> ${DOCSDIR}/SYSDEPS
+		> ${STAGEDIR}${DOCSDIR}/SYSDEPS
 . else
 	@cd ${WRKSRC} && ${CAT} `${CAT} SYSDEPS` \
-		> ${DOCSDIR}/SYSDEPS
+		> ${STAGEDIR}${DOCSDIR}/SYSDEPS
 . endif
 .endif
-	@${MKDIR} ${PREFIX}/scripts
-	${INSTALL_SCRIPT} ${FILESDIR}/mkaliasdir ${PREFIX}/scripts
-	${INSTALL_SCRIPT} ${WRKDIR}/enable-qmail ${PREFIX}/scripts
+	@${MKDIR} ${STAGEDIR}${PREFIX}/scripts
+	${INSTALL_SCRIPT} ${FILESDIR}/mkaliasdir ${STAGEDIR}${PREFIX}/scripts
+	${INSTALL_SCRIPT} ${WRKDIR}/enable-qmail ${STAGEDIR}${PREFIX}/scripts
 .for script in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKDIR}/scripts/${script} ${PREFIX}/scripts
+	${INSTALL_SCRIPT} ${WRKDIR}/scripts/${script} ${STAGEDIR}${PREFIX}/scripts
 .endfor
-	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+#	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if defined(SLAVEPORT_LINE)
 	@${ECHO_CMD} "============================================="
 	@${ECHO_CMD}
@@ -871,6 +888,27 @@ do-install:
 	@${ECHO_CMD} "============================================="
 	@${ECHO_CMD}
 .endif
+
+post-install:
+.if defined(SLAVE_LDAP)
+.for file in qmail-imapd qmail-pop3d qmail-qmqpd qmail-smtpd
+	@${MV} ${STAGEDIR}${PREFIX}/control/${file}.rules \
+	    ${STAGEDIR}${PREFIX}/control/${file}.rules.sample
+.endfor
+	@${MV} ${STAGEDIR}${PREFIX}/control/signatures \
+	    ${STAGEDIR}${PREFIX}/control/signatures.sample
+	@${FIND} ${WRKDIR} -type f -name run -exec ${SED} -i "" \
+	    -e 's|${STAGEDIR}|${PREFIX}|' {} +
+.endif
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/man.d
+	${INSTALL_DATA} ${WRKDIR}/qmail.conf ${STAGEDIR}${LOCALBASE}/etc/man.d/qmail.conf
+	@${ECHO_CMD} "===> Fixing plist for ${PREFIX} ownership"
+	@{ \
+	  ${ECHO_CMD} "@owner root"; \
+	  ${ECHO_CMD} "@group qmail"; \
+	  ${ECHO_CMD} "@exec install -d -o root -g qmail ${PREFIX}"; \
+	  ${ECHO_CMD} "@unexec rmdir ${QMAIL_PREFIX} 2>/dev/null || :"; \
+	} >> ${TMPPLIST}
 
 certificate:
 .if defined(SLAVE_TLS) || defined(SLAVE_LDAP)

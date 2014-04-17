@@ -2,7 +2,7 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${SPAMCONTROL_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES+=	http://www.fehcom.de/qmail/spamcontrol/:spamcontrol \
 		${MASTER_SITE_LOCAL:S/$/:spamcontrol/}
@@ -14,8 +14,6 @@ EXTRACT_ONLY=	${QMAIL_DIST}
 COMMENT=	Qmail MTA with SpamControl patches
 
 CONFLICTS=	qmail-[0-9]* qmail-ldap-[0-9]* qmail-mysql-[0-9]* qmail-tls-[0-9]*
-
-NO_STAGE=	yes
 
 EXTRA_PATCHES+=	${MASTERDIR}/files/patch-install.c \
 		${MASTERDIR}/files/patch-Makefile \
