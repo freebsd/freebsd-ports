@@ -15,9 +15,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw	\
 		bash:${PORTSDIR}/shells/bash					\
 		${PYNUMPY}
 
-BROKEN=		ImportError in numpy: cannot import name scimath
-
 USES=		shebangfix
+USE_GCC=	yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
 USE_PYTHON=	yes
 SHEBANG_FILES=	eficas eficasQt
 REINPLACE_ARGS=	-i ""
@@ -50,7 +49,8 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/${FILE}
 .endfor
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|;s|%%PREFIX%%|${PREFIX}|'	\
-		-e 's|%%EFICASDIR%%|${EFICASDIR}|' ${WRKSRC}/eficasQt
+		-e 's|%%EFICASDIR%%|${EFICASDIR}|;s|%%GCC_RUNTIME%%|${_GCC_RUNTIME}|'	\
+		${WRKSRC}/eficasQt
 
 do-install:
 	${MKDIR} ${STAGEDIR}${EFICASDIR}
