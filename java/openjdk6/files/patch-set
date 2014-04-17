@@ -13628,7 +13628,15 @@
  #include <string.h>
  #endif /* __linux__ */
  #include <stdio.h>
-@@ -59,10 +59,24 @@
+@@ -40,6 +40,7 @@
+ 
+ #include <jni.h>
+ #include <jni_util.h>
++#include <jvm_md.h>
+ #include <sizecalc.h>
+ #include <sun_font_FontManager.h>
+ #ifndef HEADLESS
+@@ -59,10 +60,24 @@
  extern Display *awt_display;
  #endif /* !HEADLESS */
  
@@ -13654,7 +13662,7 @@
  /*
   * This can be set in the makefile to "/usr/X11" if so desired.
   */
-@@ -112,24 +126,40 @@
+@@ -112,24 +127,40 @@
      NULL, /* terminates the list */
  };
  
@@ -13707,7 +13715,7 @@
      NULL, /* terminates the list */
  };
  #endif
-@@ -357,7 +387,7 @@
+@@ -357,7 +388,7 @@
  
  #endif /* !HEADLESS */
  
@@ -13716,7 +13724,7 @@
  /* from awt_LoadLibrary.c */
  JNIEXPORT jboolean JNICALL AWTIsHeadless();
  #endif
-@@ -482,8 +512,10 @@
+@@ -482,8 +513,10 @@
       */
      fcdirs = getFontConfigLocations();
  
@@ -13728,7 +13736,7 @@
  #else /* IF SOLARIS */
      knowndirs = fullSolarisFontPath;
  #endif
-@@ -494,7 +526,8 @@
+@@ -494,7 +527,8 @@
       * be initialised.
       */
  #ifndef HEADLESS
@@ -13738,7 +13746,7 @@
      if (!AWTIsHeadless()) { /* .. so need to call a function to check */
  #endif
      AWT_LOCK();
-@@ -502,7 +535,7 @@
+@@ -502,7 +536,7 @@
          x11dirs = getX11FontPath();
      }
      AWT_UNLOCK();
@@ -13747,7 +13755,7 @@
      }
  #endif
  #endif /* !HEADLESS */
-@@ -614,7 +647,7 @@
+@@ -614,7 +648,7 @@
  }
  
  #include <dlfcn.h>
@@ -13756,7 +13764,7 @@
  #include <link.h>
  #endif
  
-@@ -660,9 +693,9 @@
+@@ -660,9 +694,9 @@
       * certain symbols - and functionality - to be available.
       * Also add explicit search for .so.1 in case .so symlink doesn't exist.
       */
@@ -13770,8 +13778,11 @@
          }
 --- jdk/src/solaris/native/sun/awt/gtk2_interface.c
 +++ jdk/src/solaris/native/sun/awt/gtk2_interface.c
-@@ -32,7 +32,7 @@
+@@ -30,9 +30,10 @@
+ #include <string.h>
+ #include "gtk2_interface.h"
  #include "java_awt_Transparency.h"
++#include "jvm_md.h"
  #include "sizecalc.h"
  
 -#define GTK2_LIB "libgtk-x11-2.0.so.0"
