@@ -665,6 +665,7 @@
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
+    SUBDIR += shout-idjc
     SUBDIR += shoutcast
     SUBDIR += sidplay
     SUBDIR += sidplay2
