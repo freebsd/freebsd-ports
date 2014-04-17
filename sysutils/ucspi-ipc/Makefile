@@ -13,8 +13,6 @@ USES=		perl5
 
 DISABLE_SIZE=	yes
 
-RESTRICTED=	Non-explicit licensing terms
-
 DOCS=		CHANGES
 
 WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
