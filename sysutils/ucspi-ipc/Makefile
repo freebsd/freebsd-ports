@@ -17,24 +17,26 @@ DOCS=		CHANGES
 
 WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
+	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-ld
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} package/compile
 
 do-install:
 .for x in ipccat ipcconnect ipcdo ipcrun
-	${INSTALL_SCRIPT} ${WRKSRC}/command/${x} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/command/${x} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for x in ipcclient ipccommand ipcconnect-io ipcexec ipcexec-config \
 	ipcexecrules ipcexecrulescheck ipcperl ipcrules ipcrulescheck ipcserver
-	${INSTALL_PROGRAM} ${WRKSRC}/command/${x} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/command/${x} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/src && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/src && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
