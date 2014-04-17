@@ -9,7 +9,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}_${PORTVERSION}-1
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	A generic notifier/event scheduler abstraction
+COMMENT=	Generic notifier/event scheduler abstraction
+
+LICENSE=	LGPL20
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -20,10 +22,9 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}
 
 .if !defined(NOPORTEXAMPLES)
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} ${WRKSRC}/examples/*.py ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
