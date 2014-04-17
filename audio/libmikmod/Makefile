@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libmikmod
-PORTVERSION=	3.1.16
-PORTREVISION=	1
+PORTVERSION=	3.3.6
 CATEGORIES=	audio
-MASTER_SITES=	SF/mikmod/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF/mikmod/libmikmod/${PORTVERSION}/
 
 MAINTAINER=	neuroworker@gmail.com
 COMMENT=	MikMod Sound Library
