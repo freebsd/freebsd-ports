@@ -1,5 +1,4 @@
 bin/minecraft-client
-%%NATIVE%%%%DATADIR%%/lwjgl-native-libs.jar
 %%DATADIR%%/Minecraft.jar
 share/pixmaps/minecraft-client.png
 @dirrm %%DATADIR%%
