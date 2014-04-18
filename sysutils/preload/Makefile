@@ -17,6 +17,8 @@ BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
 GNU_CONFIGURE=	yes
 CONFIG_ARGS=+
 USE_RC_SUBR=	preload
+USES=		pkgconfig
+USE_GNOME=	glib20
 
 PLIST_FILES=	sbin/preload man/man8/preload.8.gz etc/preload.conf.dist
 MAN8=		preload.8.gz
