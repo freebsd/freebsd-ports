@@ -71,12 +71,14 @@ PLIST_SUB+=		TELNET_PROG="telnet"
 
 .if ${PORT_OPTIONS:MKRB5_RENAME_RLOGIN}
 PLIST_SUB+=		RLOGIN_PROG="krlogin"
+PROGRAM_TRANSFORM_NAME+=	s/^rlogin/krlogin/;
 .else
 PLIST_SUB+=		RLOGIN_PROG="rlogin"
 .endif
 
 .if ${PORT_OPTIONS:MKRB5_RENAME_RSH}
 PLIST_SUB+=		RSH_PROG="krsh"
+PROGRAM_TRANSFORM_NAME+=	s/^rsh/krsh/;
 .else
 PLIST_SUB+=		RSH_PROG="rsh"
 .endif
