@@ -1,3 +1,14 @@
+From nox Mon Sep 17 00:00:00 2001
+From: Juergen Lock <nox@jelal.kn-bremen.de>
+Date: 22 Mar 2014 00:21:00 +0100
+Subject: Fix bsd-user targets running scripts with shebang args
+
+This fixes running scripts starting like:
+
+	#! /usr/bin/perl -w
+
+Signed-off-by: Juergen Lock <nox@jelal.kn-bremen.de>
+
 --- a/bsd-user/freebsd/os-proc.c
 --- b/bsd-user/freebsd/os-proc.c
 @@ -83,7 +83,7 @@ out:

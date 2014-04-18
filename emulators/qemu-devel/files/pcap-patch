@@ -1,16 +1,16 @@
 --- configure.orig
 +++ configure
-@@ -261,6 +261,9 @@ gtkabi="2.0"
- tpm="no"
+@@ -324,6 +324,9 @@ tpm="no"
  libssh2=""
  vhdx=""
+ quorum="no"
 +pcap="no"
 +pcap_create="no"
 +bpf="no"
  
  # parse CC options first
  for opt do
-@@ -787,6 +790,10 @@ for opt do
+@@ -865,6 +868,10 @@ for opt do
    ;;
    --enable-vnc-ws) vnc_ws="yes"
    ;;
@@ -21,7 +21,7 @@
    --disable-slirp) slirp="no"
    ;;
    --disable-uuid) uuid="no"
-@@ -1884,6 +1891,51 @@ EOF
+@@ -2130,6 +2137,51 @@ EOF
  fi
  
  ##########################################
@@ -73,7 +73,7 @@
  # VNC TLS/WS detection
  if test "$vnc" = "yes" -a \( "$vnc_tls" != "no" -o "$vnc_ws" != "no" \) ; then
    cat > $TMPC <<EOF
-@@ -3747,6 +3799,7 @@ echo "Audio drivers     $audio_drv_list"
+@@ -4133,6 +4185,7 @@ echo "Audio drivers     $audio_drv_list"
  echo "Block whitelist (rw) $block_drv_rw_whitelist"
  echo "Block whitelist (ro) $block_drv_ro_whitelist"
  echo "VirtFS support    $virtfs"
@@ -81,7 +81,7 @@
  echo "VNC support       $vnc"
  if test "$vnc" = "yes" ; then
      echo "VNC TLS support   $vnc_tls"
-@@ -3897,6 +3950,15 @@ fi
+@@ -4297,6 +4350,15 @@ fi
  if test "$profiler" = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi

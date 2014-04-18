@@ -9,16 +9,16 @@
  datadir="\${prefix}/share"
  qemu_docdir="\${prefix}/share/doc/qemu"
  bindir="\${prefix}/bin"
-@@ -1749,7 +1749,7 @@ if test "$gtk" != "no"; then
- 	gtk_libs=`$pkg_config --libs $gtkpackage`
- 	vte_cflags=`$pkg_config --cflags $vtepackage`
- 	vte_libs=`$pkg_config --libs $vtepackage`
--	libs_softmmu="$gtk_libs $vte_libs $libs_softmmu"
-+	libs_softmmu="$gtk_libs -lintl $vte_libs $libs_softmmu"
- 	gtk="yes"
-     fi
- fi
-@@ -2956,15 +2956,18 @@ if compile_prog "" "" ; then
+@@ -1980,7 +1980,7 @@ if test "$gtk" != "no"; then
+     if $pkg_config --exists "$gtkpackage >= $gtkversion"; then
+         gtk_cflags=`$pkg_config --cflags $gtkpackage`
+         gtk_libs=`$pkg_config --libs $gtkpackage`
+-        libs_softmmu="$gtk_libs $libs_softmmu"
++        libs_softmmu="$gtk_libs -lintl $libs_softmmu"
+         gtk="yes"
+     elif test "$gtk" = "yes"; then
+         feature_not_found "gtk" "Install gtk2 or gtk3 (requires --with-gtkabi=3.0 option to configure) devel"
+@@ -3320,15 +3320,18 @@ if compile_prog "" "" ; then
  fi
  
  # Check if tools are available to build documentation.
@@ -27,7 +27,7 @@
 +#    docs=yes
 +#  else
 +#    if test "$docs" = "yes" ; then
-+#      feature_not_found "docs"
++#      feature_not_found "docs" "Install texinfo and Perl/perl-podlators"
 +#    fi
 +#    docs=no
 +#  fi
@@ -37,7 +37,7 @@
 -    docs=yes
 -  else
 -    if test "$docs" = "yes" ; then
--      feature_not_found "docs"
+-      feature_not_found "docs" "Install texinfo and Perl/perl-podlators"
 -    fi
 -    docs=no
 -  fi
@@ -45,15 +45,10 @@
  fi
  
  # Search for bswap_32 function
-@@ -3121,17 +3124,30 @@ fi
+@@ -3498,6 +3501,17 @@ fi
  
  # check for libusb
  if test "$libusb" != "no" ; then
--    if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
--        libusb="yes"
--        libusb_cflags=$($pkg_config --cflags libusb-1.0)
--        libusb_libs=$($pkg_config --libs libusb-1.0)
--        QEMU_CFLAGS="$QEMU_CFLAGS $libusb_cflags"
 +    cat > $TMPC << EOF
 +#include <libusb.h>
 +
@@ -63,24 +58,16 @@
 +        libusb="yes"
 +        libusb_cflags=""
 +        libusb_libs=-lusb
-         libs_softmmu="$libs_softmmu $libusb_libs"
-     else
--        if test "$libusb" = "yes"; then
--            feature_not_found "libusb"
-+        if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
-+            libusb="yes"
-+            usb="libusb"
-+            libusb_cflags=$($pkg_config --cflags libusb-1.0)
-+            libusb_libs=$($pkg_config --libs libusb-1.0)
-+            QEMU_CFLAGS="$QEMU_CFLAGS $libusb_cflags"
-+            libs_softmmu="$libs_softmmu $libusb_libs"
-+        else
-+            if test "$libusb" = "yes"; then
-+                feature_not_found "libusb"
-+            fi
-+            libusb="no"
++        libs_softmmu="$libs_softmmu $libusb_libs"
++    else
+     if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
+         libusb="yes"
+         libusb_cflags=$($pkg_config --cflags libusb-1.0)
+@@ -3510,6 +3524,7 @@ if test "$libusb" != "no" ; then
          fi
--        libusb="no"
+         libusb="no"
      fi
++    fi
  fi
  
+ # check for usbredirparser for usb network redirection support
