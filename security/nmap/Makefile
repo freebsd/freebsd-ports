@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmap
-DISTVERSION=	6.45
+DISTVERSION=	6.46
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -10,6 +10,7 @@ MASTER_SITES=	http://nmap.org/dist/ \
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Port scanning utility for large networks
 
+# nmap-6.46 => r32840
 # http://nmap.org/book/man-legal.html
 # Install the nmap modified license because of
 # http://insecure.org/news/download-com-fiasco.html
