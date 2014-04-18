@@ -3,6 +3,7 @@
 
 PORTNAME=	sampsvr
 PORTVERSION=	0.3c
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://files.sa-mp.com/
 DISTNAME=	samp${PORTVERSION:S,.,,}svr
@@ -21,44 +22,29 @@ PORTDOCS=	LICENSE README
 PLIST_SUB=	SAMPDIR="${SAMPDIR:S,^${PREFIX}/,,}"
 SUB_FILES=	pkg-message
 SUB_LIST=	SAMPDIR="${SAMPDIR}" SAMPBIN=samp03svr
-.if !defined(NOPORTDOCS)
-SUB_LIST+=	NOTEWORK="Read ${DOCSDIR}/README to configure SA-MP Server"
-.else
-SUB_LIST+=	NOTEWORK=""
-.endif
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${SAMPDIR}
+	@${MKDIR} ${STAGEDIR}${SAMPDIR}
 .for i in announce samp-npc samp03svr
 	${BRANDELF} -t Linux ${WRKSRC}/${i}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${SAMPDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${SAMPDIR}
 .endfor
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && \
 	${FIND} . -type d ! -empty -exec \
-		${MKDIR} "${DATADIR}/{}" \;
+		${MKDIR} "${STAGEDIR}${DATADIR}/{}" \;
 .for i in filterscripts gamemodes include npcmodes scriptfiles
 	cd ${WRKSRC} && \
 	${FIND} ${i} -type f -exec \
-		${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-	${LN} -sf ${DATADIR}/${i}/ ${SAMPDIR}/${i}
+		${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+	${LN} -sf ${DATADIR}/${i} ${STAGEDIR}${SAMPDIR}/${i}
 .endfor	
-.if !exists(${PREFIX}/etc/${PORTNAME}.cfg)
-	${INSTALL_DATA} ${WRKSRC}/server.cfg ${PREFIX}/etc/${PORTNAME}.cfg
-.endif
-	${INSTALL_DATA} ${WRKSRC}/server.cfg ${PREFIX}/etc/${PORTNAME}.cfg.dist
-	${LN} -sf ${PREFIX}/etc/${PORTNAME}.cfg ${SAMPDIR}/server.cfg
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${WRKSRC}/server.cfg \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg.sample
+	${LN} -sf ${PREFIX}/etc/${PORTNAME}.cfg ${STAGEDIR}${SAMPDIR}/server.cfg
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
