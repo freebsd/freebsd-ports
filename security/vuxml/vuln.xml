@@ -51,6 +51,76 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="608ed765-c700-11e3-848c-20cf30e32f6d">
+    <topic>bugzilla -- Cross-Site Request Forgery</topic>
+    <affects>
+      <package>
+	<name>bugzilla40</name>
+	<name>bugzilla42</name>
+	<name>bugzilla44</name>
+	<range><ge>2.0.0</ge><lt>4.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.11/">
+	  <p>The login form had no CSRF protection, meaning that
+	    an attacker could force the victim to log in using the
+	    attacker's credentials. If the victim then reports a new
+	    security sensitive bug, the attacker would get immediate
+	    access to this bug.</p>
+	  <p>
+	    Due to changes involved in the Bugzilla API, this fix is
+	    not backported to the 4.0 and 4.2 branches, meaning that
+	    Bugzilla 4.0.12 and older, and 4.2.8 and older, will
+	    remain vulnerable to this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1517</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=713926</url>
+    </references>
+    <dates>
+      <discovery>2014-04-17</discovery>
+      <entry>2014-04-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60bfa396-c702-11e3-848c-20cf30e32f6d">
+    <topic>bugzilla -- Social Engineering</topic>
+    <affects>
+      <package>
+	<name>bugzilla40</name>
+	<name>bugzilla42</name>
+	<name>bugzilla44</name>
+	<range><ge>2.0.0</ge><lt>4.0.12</lt></range>
+	<range><ge>4.1.1</ge><lt>4.2.8</lt></range>
+	<range><ge>4.4.0</ge><lt>4.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.11/">
+	  <p>Dangerous control characters can be inserted into
+	    Bugzilla, notably into bug comments. If the text, which
+	    may look safe, is copied into a terminal such as xterm or
+	    gnome-terminal, then unexpected commands could be executed
+	    on the local machine.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=968576</url>
+    </references>
+    <dates>
+      <discovery>2014-04-17</discovery>
+      <entry>2014-04-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="abad20bf-c1b4-11e3-a5ac-001b21614864">
     <topic>OpenLDAP -- incorrect handling of NULL in certificate Common Name</topic>
     <affects>
