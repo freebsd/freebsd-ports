@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc49
-PORTVERSION=	4.9.0.20140406
+PORTVERSION=	4.9.0.20140416
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -129,7 +129,8 @@ pre-configure:
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
-	cd ${WRKSRC}; ${GMAKE} -sk check
+	cd ${WRKSRC}; ${GMAKE} -sk check \
+	; ${SRCDIR}/contrib/test_summary
 .endif
 
 post-install:
