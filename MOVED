@@ -5999,3 +5999,37 @@ security/labrea||2014-04-14|Has expired: Unmaintained since 2003
 lang/dmd|lang/dmd1|2014-04-14|Upline no longer supports dmd 1.X, it is now the secondary dmd port.
 www/mod_python3|www/mod_python33|2014-04-15|Port moved to reflect PKGNAMESUFFIX
 lang/dragonegg-devel46||2014-04-16|C++ library incompatibilities, unmainteined upstream
+ports-mgmt/pkgsearch||2014-04-18|Has expired: Upstream disappeared
+science/flounder||2014-04-18|Has expired: Unmaintained since 2002
+security/nbaudit||2014-04-18|Has expired: Unmaintained since 2002
+security/saint||2014-04-18|Has expired: Unmaintained since 2002
+graphics/gozer||2014-04-18|Has expired: Unmaintained since 2002
+misc/pdfmap||2014-04-18|Has expired: Unmaintained since 2002
+devel/showgrammar||2014-04-18|Has expired: Unmaintained since 2002
+biology/libgenome||2014-04-18|Has expired: Unmaintained since 2002
+deskutils/narval||2014-04-18|Has expired: Unmaintained since 2002
+devel/fampp||2014-04-18|Has expired: Unmaintained since 2002
+net-p2p/py-fngrab||2014-04-18|Has expired: Unmaintained since 2002
+misc/wmfirew||2014-04-18|Has expired: Unmaintained since 2002
+x11-wm/e16utils||2014-04-18|Has expired: Unmaintained since 2002
+misc/salias||2014-04-18|Has expired: Unmaintained since 2002
+print/latex2slides||2014-04-18|Has expired: Unmaintained since 2002
+lang/sxm||2014-04-18|Has expired: Unmaintained since 2002
+textproc/pybook||2014-04-18|Has expired: Unmaintained since 2002
+mail/mailcrypt||2014-04-18|Has expired: Unmaintained since 2002
+japanese/elvis||2014-04-18|Has expired: Unmaintained since 2002
+devel/prototype||2014-04-18|Has expired: Unmaintained since 2002
+print/wprint||2014-04-18|Has expired: Unmaintained since 2002
+science/euler||2014-04-18|Has expired: Unmaintained since 2002
+multimedia/gopchop||2014-04-18|Has expired: Unmaintained since 2002
+science/gdis||2014-04-18|Has expired: Unmaintained since 2002
+net/googolplex||2014-04-18|Has expired: Unmaintained since 2002
+lang/logo||2014-04-18|Has expired: Unmaintained since 2002
+textproc/roap||2014-04-18|Has expired: Unmaintained since 2002
+x11-wm/afterstep-i18n||2014-04-18|Has expired: Unmaintained since 2002
+games/yamsweeper||2014-04-18|Has expired: Unmaintained since 2002
+net-mgmt/echolot||2014-04-18|Has expired: Unmaintained since 2002
+security/pam_smb||2014-04-18|Has expired: Unmaintained since 2002
+devel/lua-redis-parser||2014-04-18|Has expired: Broken for more than 6 months
+biology/finchtv||2014-04-18|Has expired: Broken for more than 6 months
+net-im/ari-yahoo||2014-04-18|Has expired: Broken for more than 1 year (http://www.icculus.org/ari-yahoo/)

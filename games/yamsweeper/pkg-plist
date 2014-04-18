@@ -1,5 +1,0 @@
-bin/yamsweeper
-lib/X11/yamsweeper/yams.hi
-lib/X11/yamsweeper/yams.log
-lib/X11/app-defaults/Yamsweeper
-@dirrm lib/X11/yamsweeper

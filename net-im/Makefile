@@ -3,7 +3,6 @@
 
     COMMENT = Instant messaging
 
-    SUBDIR += ari-yahoo
     SUBDIR += ayttm
     SUBDIR += bsflite
     SUBDIR += centericq

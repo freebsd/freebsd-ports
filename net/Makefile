@@ -172,7 +172,6 @@
     SUBDIR += gofish
     SUBDIR += gogoc
     SUBDIR += googlecl
-    SUBDIR += googolplex
     SUBDIR += gopher
     SUBDIR += gotthard
     SUBDIR += gpxe
