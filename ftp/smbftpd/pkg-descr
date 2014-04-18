@@ -3,4 +3,4 @@ original FreeBSD ftpd features, it enhances the user permission control,
 integrate configuration files, and more useful features.  SmbFTPD also support
 SSL/TLS encryption.
 
-WWW:	http://www.twbsd.org/enu/smbftpd/index.php
+WWW: http://www.twbsd.org/enu/smbftpd/index.php
