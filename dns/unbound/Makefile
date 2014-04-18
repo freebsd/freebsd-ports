@@ -84,7 +84,7 @@ MUNIN=		"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBEVENT14}
-LIB_DEPENDS+=	libevent-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS+=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 CONFIGURE_ARGS+=--with-libevent=${LOCALBASE}
 .elif ${PORT_OPTIONS:MLIBEVENT20}
 LIB_DEPENDS+=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
