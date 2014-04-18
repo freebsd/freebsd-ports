@@ -1,0 +1,11 @@
+--- ./src/game/CMakeLists.txt.orig	2014-04-05 14:09:28.680493168 +0000
++++ ./src/game/CMakeLists.txt	2014-04-05 14:09:35.694483369 +0000
+@@ -129,7 +129,7 @@
+ endif()
+ 
+ # Copy desktop file
+-if(ReleaseBuild AND ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(ReleaseBuild AND UNIX)
+     set(DesktopFileSourcePath)
+     if(USC)
+         set(DesktopFileSourcePath ${CMAKE_SOURCE_DIR}/src/dustrac-game.desktop.opt.in)

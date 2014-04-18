@@ -215,6 +215,7 @@
     SUBDIR += duke3d-data
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
+    SUBDIR += dustrac
     SUBDIR += eboard
     SUBDIR += edge
     SUBDIR += editss

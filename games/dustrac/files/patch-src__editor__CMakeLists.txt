@@ -1,0 +1,11 @@
+--- ./src/editor/CMakeLists.txt.orig	2014-04-05 14:09:43.520483380 +0000
++++ ./src/editor/CMakeLists.txt	2014-04-05 14:10:03.847483124 +0000
+@@ -75,7 +75,7 @@
+ endif()
+ 
+ # Copy desktop file
+-if(ReleaseBuild AND ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(ReleaseBuild AND UNIX)
+     set(DesktopFileSourcePath)
+     if(USC)
+         set(DesktopFileSourcePath ${CMAKE_SOURCE_DIR}/src/dustrac-editor.desktop.opt.in)
