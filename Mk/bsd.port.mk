@@ -1194,6 +1194,7 @@ makepatch:
 		for i in `find . -type f -name '*.orig'`; do \
 			ORG=$$i; \
 			NEW=$${i%.orig}; \
+			cmp -s $${ORG} $${NEW} && continue; \
 			OUT=${FILESDIR}`${ECHO} $${NEW} | \
 				${SED} -e 's|/|__|g' \
 					-e 's|^\.__|/patch-|'`; \
