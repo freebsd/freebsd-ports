@@ -1,3 +1,13 @@
+From nox Mon Sep 17 00:00:00 2001
+From: Juergen Lock <nox@jelal.kn-bremen.de>
+Date: 05 Apr 2014 23:36:00 +0200
+Subject: Fix FreeBSD sysctls kern.usrstack and kern.ps_strings
+
+Fix FreeBSD sysctls kern.usrstack and kern.ps_strings invoked with
+oidlen zero. (like from sysctl(8))
+
+Signed-off-by: Juergen Lock <nox@jelal.kn-bremen.de>
+
 --- a/bsd-user/freebsd/os-sys.c
 +++ b/bsd-user/freebsd/os-sys.c
 @@ -165,7 +165,9 @@ abi_long do_freebsd_sysctl(CPUArchState 

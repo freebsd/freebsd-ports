@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	1.7.1
-PORTREVISION=	5
+PORTVERSION=	2.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -45,27 +44,14 @@ OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBSD_USER}
-PATCH_SITES=	http://people.freebsd.org/~sson/qemu/qemu-bsd-user/
-PATCHFILES= \
-	0001-bsd-user-refresh-freebsd-system-call-numbers.patch \
-	0002-bsd-user-add-HOST_VARIANT_DIR-for-various-BSD-depend.patch \
-	0003-bsd-user-move-strace-OS-arch-dependent-code-to-host-.patch \
-	0004-bsd-user-move-arch-OS-dependent-code-out-of-main.c.patch \
-	0005-bsd-user-move-arch-OS-dependent-code-out-of-syscall..patch \
-	0006-bsd-user-add-support-for-freebsd-time-related-system.patch \
-	0007-bsd-user-add-support-for-freebsd-signal-related-syst.patch \
-	0008-bsd-user-move-arch-OS-dependent-code-out-of-elfload..patch \
-	0009-bsd-user-add-support-for-freebsd-process-related-sys.patch \
-	0010-bsd-user-add-support-for-file-system-related-system-.patch \
-	0011-bsd-user-add-support-for-stat-dir-and-fcntl-related-.patch \
-	0012-bsd-user-add-support-for-memory-management-related-s.patch \
-	0013-bsd-user-add-support-for-socket-related-system-calls.patch \
-	0014-bsd-user-add-support-for-thread-related-system-calls.patch \
-	0015-bsd-user-add-support-for-the-ioctl-system-call.patch \
-	0016-bsd-user-add-support-for-extattr-and-ACL-related-sys.patch \
-	0017-bsd-user-add-support-for-miscellaneous-system-calls.patch \
-	0018-bsd-user-add-arm-mips-and-mips64-options-to-configur.patch
-PATCH_DIST_STRIP=	-p1
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-790d0ef625d22ff3f1a895d266a48e2bacd63776
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-3d175d6ed5b809976662135369c639f53780ca5c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-a3129eea10f188bfd39ce83b18b25dcefbc5bffc
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fd7ec8e06cd1876ef478975f052ff64134d19c6c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-9ac2c49c734a49025fe1647ce84728d3988ea5d2
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-38f8d5aaebdb4b1624bae86b374b5265c9f01b54
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-c13_tls2
+#
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-freebsd-os-proc.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-05ee8495804599b52a88eb36b13ea9c06b3207cd
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-mips-target_arch_vmparam.h
@@ -97,7 +83,7 @@ CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
 CONFIGURE_ARGS+=	--disable-bsd-user
 .else
 .if ${ARCH} != "amd64"
-CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,alpha-softmmu,arm-softmmu,cris-softmmu,lm32-softmmu,m68k-softmmu,microblaze-softmmu,microblazeel-softmmu,mips-softmmu,mipsel-softmmu,mips64-softmmu,mips64el-softmmu,or32-softmmu,ppc-softmmu,ppcemb-softmmu,ppc64-softmmu,sh4-softmmu,sh4eb-softmmu,sparc-softmmu,sparc64-softmmu,s390x-softmmu,xtensa-softmmu,xtensaeb-softmmu,unicore32-softmmu,moxie-softmmu,i386-bsd-user,sparc-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,aarch64-softmmu,alpha-softmmu,arm-softmmu,cris-softmmu,lm32-softmmu,m68k-softmmu,microblaze-softmmu,microblazeel-softmmu,mips-softmmu,mipsel-softmmu,mips64-softmmu,mips64el-softmmu,or32-softmmu,ppc-softmmu,ppcemb-softmmu,ppc64-softmmu,sh4-softmmu,sh4eb-softmmu,sparc-softmmu,sparc64-softmmu,s390x-softmmu,xtensa-softmmu,xtensaeb-softmmu,unicore32-softmmu,moxie-softmmu,i386-bsd-user,sparc-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user
 .endif
 .endif
 .endif
@@ -144,7 +130,7 @@ USE_SDL=	sdl
 .endif
 
 .if empty(PORT_OPTIONS:MGTK2)
-CONFIGURE_ARGS+=	--disable-gtk
+CONFIGURE_ARGS+=	--disable-gtk --disable-vte
 PLIST_SUB+=	GTK2="@comment "
 .else
 USE_GNOME+=	gtk20 vte
@@ -240,11 +226,6 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 CONFIGURE_ARGS+= --python=${PYTHON_CMD}
-
-.if ${PORT_OPTIONS:MBSD_USER}
-pre-patch:
-	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/prepatch-configure
-.endif
 
 # -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
 # but it shouldn't matter much

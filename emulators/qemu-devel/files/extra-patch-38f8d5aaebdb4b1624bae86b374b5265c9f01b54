@@ -1,0 +1,29 @@
+diff --git a/bsd-user/freebsd/os-thread.c b/bsd-user/freebsd/os-thread.c
+index 6bf2a9f..bcd2445 100644
+--- a/bsd-user/freebsd/os-thread.c
++++ b/bsd-user/freebsd/os-thread.c
+@@ -899,11 +899,13 @@ abi_long do_freebsd_thr_new(CPUArchState *env,
+     pthread_attr_t attr;
+     TaskState *ts;
+     CPUArchState *new_env;
++    CPUState *new_cpu;
+     struct target_freebsd_thr_param *target_param;
+     abi_ulong target_rtp_addr;
+     struct target_freebsd_rtprio *target_rtp;
+     struct rtprio *rtp_ptr, rtp;
+-    TaskState *parent_ts = (TaskState *)env->opaque;
++    CPUState *parent_cpu = ENV_GET_CPU(env);
++    TaskState *parent_ts = parent_cpu->opaque;
+     sigset_t sigmask;
+     struct sched_param sched_param;
+     int sched_policy;
+@@ -948,7 +950,8 @@ abi_long do_freebsd_thr_new(CPUArchState *env,
+ 
+     /* init regs that differ from the parent thread. */
+     target_cpu_clone_regs(new_env, info.param.stack_base);
+-    new_env->opaque = ts;
++    new_cpu = ENV_GET_CPU(new_env);
++    new_cpu->opaque = ts;
+     ts->bprm = parent_ts->bprm;
+     ts->info = parent_ts->info;
+ 
