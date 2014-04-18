@@ -1,6 +1,6 @@
 %%DEDICATED%%bin/q3celded
 %%CLIENT%%bin/quake3cel
-%%SMP%%bin/quake3cel-smp
+%%SMP_CLIENT%%bin/quake3cel-smp
 %%GAMELIBS%%%%LIBDIR%%/baseq3/cgame.so
 %%GAMELIBS%%%%LIBDIR%%/baseq3/qagame.so
 %%GAMELIBS%%%%LIBDIR%%/baseq3/ui.so
