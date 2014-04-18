@@ -18,18 +18,16 @@ COMMENT=	The noeGNUd UI for the SLASH'EM variant of Nethack
 RUN_DEPENDS=	${LOCALBASE}/share/${NOEGNUDVERSION}/data/gui:${PORTSDIR}/games/noegnud-data
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
-USES=		bison gmake
+USES=		bison gmake tar:bzip2
 USE_GL=		yes
 WANT_SDL=	yes
 USE_SDL=	sdl image mixer
-USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/variants
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 ALL_TARGET=	se006e4f8
 INSTALL_TARGET=	install_se006e4f8
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -46,6 +44,13 @@ post-extract:
 post-patch:
 	(cd ${WRKSRC} && ${MAKE} ${NOEGNUDVERSION}-slashem-0.0.6E4F8)
 	@(${PATCH} ${PATCH_ARGS} < ${FILESDIR}/noegnud-slashem.patch)
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|make|${MAKE_CMD}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E -e 's,ch(grp|own),true,' \
+		-e '/(^FILE_AREA|^VARDIR|ln -s|sed)/! s,(GAME|SHELL|VAR)DIR),DESTDIR)$$(&,g' \
+		-e '/sed/! s,FILE_AREA_(BONES|DOC|LEVL|SAVE|SHARE|UNSHARE|VAR)),DESTDIR)$$(&,g' \
+		-e '/ln -s/ s,SHELLDIR,DESTDIR)$$(&,2' \
+		${WRKSRC}/${NOEGNUDVERSION}-slashem-0.0.6E4F8/sys/unix/Makefile.top
 
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} ${NOEGNUDVERSION}-slashem-0.0.6E4F8/Makefile)
