@@ -18,18 +18,16 @@ COMMENT=	The noeGNUd UI for Nethack with DeeT's hack font patch
 RUN_DEPENDS=	${LOCALBASE}/share/${NOEGNUDVERSION}/data/gui:${PORTSDIR}/games/noegnud-data
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
-USES=		bison fmake
+USES=		bison tar:bzip2
 USE_GL=		yes
 WANT_SDL=	yes
 USE_SDL=	sdl image mixer
-USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/variants
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 ALL_TARGET=	nh342-dt
 INSTALL_TARGET=	install_nh342-dt
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -46,6 +44,11 @@ post-extract:
 post-patch:
 	(cd ${WRKSRC} && ${MAKE} ${NOEGNUDVERSION}-nethack-3.4.2-deet)
 	@(${PATCH} ${PATCH_ARGS} < ${FILESDIR}/noegnud-nethack-deet.patch)
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E -e 's,ch(grp|own),true,' \
+		-e '/(^VARDIR|ln -s|sed)/! s,(GAME|SHELL|VAR)DIR),DESTDIR)$$(&,g' \
+		-e '/ln -s/ s,SHELLDIR,DESTDIR)$$(&,2' \
+		${WRKSRC}/${NOEGNUDVERSION}-nethack-3.4.2-deet/sys/unix/Makefile.top
 
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} ${NOEGNUDVERSION}-nethack-3.4.2-deet/Makefile)
