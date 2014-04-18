@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.3
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -27,8 +27,6 @@ RUN_DEPENDS=	\
 
 USES=		perl5
 USE_PERL5=	patch build run
-
-BINMODE=	700
 
 SUB_FILES=	pkg-message
 
@@ -69,7 +67,7 @@ RUN_DEPENDS+=	p5-GD>=1.20:${PORTSDIR}/graphics/p5-GD \
 .endif
 
 .if ${PORT_OPTIONS:MCHARTING_MODULES}
-RUN_DEPENDS+=	p5-Chart>=2.1:${PORTSDIR}/graphics/p5-Chart
+RUN_DEPENDS+=	p5-Chart>=2.1.0:${PORTSDIR}/graphics/p5-Chart
 .endif
 
 .if ${PORT_OPTIONS:MPATCH_VIEWER}
@@ -168,9 +166,8 @@ post-patch:
 		-e 's!/usr/lib/sendmail!/usr/sbin/sendmail!g; s=/usr/bin/perl=${PERL}=g' {} \+
 	@${FIND} ${WRKSRC}/docs -type f | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e "s!/var/www/html/bugzilla!${WWWDIR}!"
-	@${FIND} ${WRKSRC} \( -name "CVS" -or -name ".cvsignore" -or -name "*.orig" \
-		-or -name "*.bak" -or -name ".bzr*" -or -name "README.docs" \) \
-		| ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} \( -name ".git*" -or -name "*.orig" -or -name "*.bak" \
+		-or -name ".bzr*" -or -name "README.docs" \) | ${XARGS} ${RM} -rf
 # empty leftover	
 	@${RM} ${WRKSRC}/docs/en/html/Bugzilla-Guide.proc
 

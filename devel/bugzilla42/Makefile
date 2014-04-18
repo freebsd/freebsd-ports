@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.2.7
+PORTVERSION=	4.2.8
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -27,8 +27,6 @@ RUN_DEPENDS=	\
 
 USES=		perl5
 USE_PERL5=	patch run build
-
-BINMODE=	700
 
 SUB_FILES=	pkg-message
 
@@ -154,9 +152,8 @@ post-patch:
 		-e 's!/usr/lib/sendmail!/usr/sbin/sendmail!g; s=/usr/bin/perl=${PERL}=g' {} \+
 	@${FIND} ${WRKSRC}/docs -type f | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e "s!/var/www/html/bugzilla!${WWWDIR}!"
-	@${FIND} ${WRKSRC} \( -name "CVS" -or -name ".cvsignore" -or -name "*.orig" \
-		-or -name "*.bak" -or -name ".bzr*" -or -name "README.docs" \) \
-		| ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} \( -name ".git*" -or -name "*.orig" -or -name "*.bak" \
+		-or -name ".bzr*" -or -name "README.docs" \) | ${XARGS} ${RM} -rf
 
 do-install:	.SILENT
 	${MKDIR} ${STAGEDIR}${WWWDIR}
