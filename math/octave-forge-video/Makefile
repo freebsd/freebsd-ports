@@ -13,6 +13,7 @@ LICENSE=	BSD2CLAUSE
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	HOME=${WRKSRC}
 
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 
