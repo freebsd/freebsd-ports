@@ -23,7 +23,7 @@ Usage: $0 [options] [<category>/]<portname>
     -u <username>   - Your freebsd.org username. Defaults to \$ENV{USER}.
     -i <filename>   - Use this for INDEX name. Defaults to /usr/ports/INDEX.
 
-Questions, suggestions etc -> edwin\@freebsd.org
+Improvements, suggestions,questions -> gerald\@FreeBSD.org
 EOF
 	exit 1;
 }
