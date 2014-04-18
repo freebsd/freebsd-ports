@@ -5,11 +5,11 @@ PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	#
-PKGNAMEPREFIX=	linux-sun-
-DISTNAME=	jdk-7u${JDK_UPDATE_VERSION}-linux-i586
+PKGNAMEPREFIX=	linux-${JDK_VENDOR}-
+DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VERSION}-linux-i586
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	Oracle Java 7 Development Kit for Linux
+COMMENT=	Oracle Java ${JDK_VERSION} Development Kit for Linux
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
@@ -18,10 +18,10 @@ DEMO_DESC=	Install demos and samples
 
 NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
-PKGNAMESUFFIX=	17
+PKGNAMESUFFIX=	1${JDK_VERSION}
 
 WRKSRC=		${WRKDIR}/jdk${DL_JDK_VERSION}
-PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
+PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
@@ -29,8 +29,9 @@ USE_LINUX_APPS=	xorglibs
 USES=		shebangfix
 ONLY_FOR_ARCHS=	i386 amd64
 
+JDK_VENDOR=		sun
 JDK_VERSION=		7
-JDK_INTERNAL_VERSION=	1.7.0
+JDK_INTERNAL_VERSION=	1.${JDK_VERSION}.0
 JDK_UPDATE_VERSION=	55
 DL_JDK_VERSION=		${JDK_INTERNAL_VERSION}_${JDK_UPDATE_VERSION}
 DOWNLOAD_URL=		http://www.oracle.com/technetwork/java/javase/downloads/index.html
@@ -52,7 +53,7 @@ IGNORE?=You must manually fetch the J2SE SDK download for the Linux platform (${
 .if ${PORT_OPTIONS:MDEMO}
 DEMO_UPDATE_VERSION=	${JDK_UPDATE_VERSION}
 .if ${DEMO_UPDATE_VERSION} != ${JDK_UPDATE_VERSION}
-DEMO_DISTNAME=	jdk-7u${DEMO_UPDATE_VERSION}-linux-i586-demos
+DEMO_DISTNAME=	jdk-${JDK_VERSION}u${DEMO_UPDATE_VERSION}-linux-i586-demos
 DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_INTERNAL_VERSION}_${DEMO_UPDATE_VERSION}
 .else
 DEMO_DISTNAME=	${DISTNAME}-demos
@@ -67,17 +68,13 @@ PLIST_SUB+=	DEMO=""
 PLIST_SUB+=	DEMO="@comment "
 .endif
 
-pre-everything::
-	@${CAT} ${PKGMESSAGE}
-
 .if ${PORT_OPTIONS:MDEMO} && ${DEMO_WRKSRC} != ${WRKSRC}
 post-extract:
-	@${MV} ${DEMO_WRKSRC}/demo ${WRKSRC}/
-	@${MV} ${DEMO_WRKSRC}/sample ${WRKSRC}/
+	@cd ${DEMO_WRKSRC} && ${MV} demo sample ${WRKSRC}
 .endif
 
 post-patch:
-	@(cd ${WRKSRC}/include; ${LN} -s linux freebsd)
+	@cd ${WRKSRC}/include && ${LN} -s linux freebsd
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${APP_HOME}
