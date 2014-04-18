@@ -56,7 +56,13 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>bugzilla40</name>
+	<range><ge>2.0.0</ge><lt>4.4.3</lt></range>
+      </package>
+      <package>
 	<name>bugzilla42</name>
+	<range><ge>2.0.0</ge><lt>4.4.3</lt></range>
+      </package>
+      <package>
 	<name>bugzilla44</name>
 	<range><ge>2.0.0</ge><lt>4.4.3</lt></range>
       </package>
@@ -85,6 +91,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-04-17</discovery>
       <entry>2014-04-18</entry>
+      <modified>2014-04-18</modified>
     </dates>
   </vuln>
 
@@ -93,10 +100,14 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>bugzilla40</name>
-	<name>bugzilla42</name>
-	<name>bugzilla44</name>
 	<range><ge>2.0.0</ge><lt>4.0.12</lt></range>
+      </package>
+      <package>
+	<name>bugzilla42</name>
 	<range><ge>4.1.1</ge><lt>4.2.8</lt></range>
+      </package>
+      <package>
+	<name>bugzilla44</name>
 	<range><ge>4.4.0</ge><lt>4.4.3</lt></range>
       </package>
     </affects>
@@ -118,6 +129,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-04-17</discovery>
       <entry>2014-04-18</entry>
+      <modified>2014-04-18</modified>
     </dates>
   </vuln>
 
