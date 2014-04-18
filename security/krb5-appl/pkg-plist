@@ -3,6 +3,16 @@ bin/%%RCP_PROG%%
 bin/%%RLOGIN_PROG%%
 bin/%%RSH_PROG%%
 bin/%%TELNET_PROG%%
+man/man1/%%RSH_PROG%%.1.gz
+man/man1/%%RCP_PROG%%.1.gz
+man/man1/%%RLOGIN_PROG%%.1.gz
+man/man1/%%FTP_PROG%%.1.gz
+man/man1/%%TELNET_PROG%%.1.gz
+man/man8/kshd.8.gz
+man/man8/klogind.8.gz
+man/man8/login.krb5.8.gz
+man/man8/%%FTP_PROG%%d.8.gz
+man/man8/%%TELNET_PROG%%d.8.gz
 sbin/%%FTP_PROG%%d
 sbin/klogind
 sbin/kshd
