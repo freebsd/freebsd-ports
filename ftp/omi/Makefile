@@ -22,7 +22,7 @@ pre-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/omi ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in README.txt README.html CHANGES BSD_COPYRIGHT
+.for file in README.txt README.html CHANGES BSD-COPYRIGHT
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
