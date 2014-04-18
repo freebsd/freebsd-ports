@@ -26,6 +26,7 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
+USES=		shebangfix
 ONLY_FOR_ARCHS=	i386 amd64
 
 JDK_VERSION=		7
@@ -35,8 +36,10 @@ DL_JDK_VERSION=		${JDK_INTERNAL_VERSION}_${JDK_UPDATE_VERSION}
 DOWNLOAD_URL=		http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_INTERNAL_VERSION}
-SCRIPT_FILES=	bin/jcontrol jre/bin/jcontrol
 BIN_DIRS=	bin jre/bin
+LIB_DIRS=	${BIN_DIRS:S|bin$|lib|}
+SHEBANG_FILES=	${BIN_DIRS:S|$|/jcontrol|}
+bash_CMD=	${SH}
 
 .include <bsd.port.pre.mk>
 
@@ -74,19 +77,13 @@ post-extract:
 .endif
 
 post-patch:
-.for script in ${SCRIPT_FILES}
-	@${REINPLACE_CMD} -i.orig -e 's:^#!/bin/bash:#!/bin/sh:' ${WRKSRC}/${script}
-.endfor
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@(cd ${WRKSRC}/include; ${LN} -s linux freebsd)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${APP_HOME}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${APP_HOME}
-.for dir in ${BIN_DIRS}
-	@${CHOWN} -R ${BINOWN}:${BINGRP} "${STAGEDIR}${APP_HOME}/${dir}"
-	@${FIND} ${STAGEDIR}${APP_HOME}/${dir} -type f -exec "${CHMOD}" ${BINMODE} "{}" \;
-.endfor
+	@cd ${STAGEDIR}${APP_HOME} && \
+	    ${CHMOD} ${BINMODE} ${BIN_DIRS:S|$|/*|} ${LIB_DIRS:S|$|/jexec|}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${APP_HOME}/jre/.systemPrefs

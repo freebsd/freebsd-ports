@@ -22,6 +22,7 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
+USES=		shebangfix
 ONLY_FOR_ARCHS=	i386 amd64
 
 JRE_VERSION=		7
@@ -31,8 +32,10 @@ DL_JRE_VERSION=		${JRE_INTERNAL_VERSION}_${JRE_UPDATE_VERSION}
 DOWNLOAD_URL=		http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JRE_INTERNAL_VERSION}
-SCRIPT_FILES=	bin/jcontrol
 BIN_DIRS=	bin
+LIB_DIRS=	${BIN_DIRS:S|bin$|lib|}
+SHEBANG_FILES=	${BIN_DIRS:S|$|/jcontrol|}
+bash_CMD=	${SH}
 
 .include <bsd.port.pre.mk>
 
@@ -43,19 +46,11 @@ IGNORE?=You must manually fetch the J2SE RE download for the Linux platform (${D
 pre-everything::
 	@${CAT} ${PKGMESSAGE}
 
-post-patch:
-.for script in ${SCRIPT_FILES}
-	@${REINPLACE_CMD} -i.orig -e 's:^#!/bin/bash:#!/bin/sh:' ${WRKSRC}/${script}
-.endfor
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${APP_HOME}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${APP_HOME}
-.for dir in ${BIN_DIRS}
-	@${CHOWN} -R ${BINOWN}:${BINGRP} "${STAGEDIR}${APP_HOME}/${dir}"
-	@${FIND} ${STAGEDIR}${APP_HOME}/${dir} -type f -exec "${CHMOD}" ${BINMODE} "{}" \;
-.endfor
+	@cd ${STAGEDIR}${APP_HOME} && \
+	    ${CHMOD} ${BINMODE} ${BIN_DIRS:S|$|/*|} ${LIB_DIRS:S|$|/jexec|}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${APP_HOME}/.systemPrefs
