@@ -9,12 +9,10 @@ lib/libtotem-plparser-mini.a
 lib/libtotem-plparser-mini.la
 lib/libtotem-plparser-mini.so
 lib/libtotem-plparser-mini.so.17
-lib/libtotem-plparser-mini.so.17.0.1
 lib/libtotem-plparser.a
 lib/libtotem-plparser.la
 lib/libtotem-plparser.so
 lib/libtotem-plparser.so.17
-lib/libtotem-plparser.so.17.0.1
 libdata/pkgconfig/totem-plparser-mini.pc
 libdata/pkgconfig/totem-plparser.pc
 %%DOCSDIR%%/TotemPlParser.html
