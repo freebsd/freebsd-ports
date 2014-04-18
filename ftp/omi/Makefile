@@ -15,19 +15,15 @@ COMMENT=	"mirror" subtrees of FTP servers
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	freebsd
 
-NO_STAGE=	yes
 pre-patch:
 	${REINPLACE_CMD} -E -e "s@^(OPTFLAGS).*@\1=${CFLAGS}@" \
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/omi ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d -m 755 -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/BSD-COPYRIGHT ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/omi ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for file in README.txt README.html CHANGES BSD_COPYRIGHT
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
