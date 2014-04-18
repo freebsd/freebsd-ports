@@ -140,6 +140,7 @@
     SUBDIR += powerdns-devel
     SUBDIR += powerdns-recursor
     SUBDIR += py-adns
+    SUBDIR += py-bonjour
     SUBDIR += py-dns
     SUBDIR += py-dns3
     SUBDIR += py-dnspython
