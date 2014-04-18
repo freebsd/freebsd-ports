@@ -158,6 +158,7 @@
     SUBDIR += gnutls
     SUBDIR += gnutls3
     SUBDIR += go.crypto
+    SUBDIR += goptlib
     SUBDIR += gorilla
     SUBDIR += gpa
     SUBDIR += gpasman
