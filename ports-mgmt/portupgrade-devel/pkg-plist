@@ -47,9 +47,6 @@ sbin/portversion
 %%RUBY_SITELIBDIR%%/pkgtools/revision.rb
 %%RUBY_SITELIBDIR%%/pkgtools.rb
 @dirrm %%RUBY_SITELIBDIR%%/pkgtools
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby
 %%SCRIPT%%@exec mkdir -p %D/libexec/pkgtools 2> /dev/null
 %%SCRIPT%%libexec/pkgtools/script
 %%SCRIPT%%@dirrm libexec/pkgtools
