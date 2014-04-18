@@ -21,7 +21,7 @@ lib/cmake/Akonadi/AkonadiTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Akonadi/AkonadiTargetsWithPrefix.cmake
 lib/libakonadiprotocolinternals.so
 lib/libakonadiprotocolinternals.so.1
-lib/libakonadiprotocolinternals.so.1.12.0
+lib/libakonadiprotocolinternals.so.1.12.1
 libdata/pkgconfig/akonadi.pc
 share/config/akonadi/mysql-global-mobile.conf
 share/config/akonadi/mysql-global.conf

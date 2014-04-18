@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	akonadi
-PORTVERSION=	1.12.0
+PORTVERSION=	1.12.1
 CATEGORIES=	databases kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=	KDE
@@ -19,10 +19,9 @@ LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_KDE4=	kdehier kdeprefix automoc4 soprano
-USES=		cmake:outsource shared-mime-info compiler:c++11-lang
+USES=		cmake:outsource shared-mime-info compiler:c++11-lang tar:bzip2
 USE_QT4=	corelib dbus gui network qtestlib_build sql xml \
 		moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
 CMAKE_ARGS+=	-DAKONADI_BUILD_TESTS:BOOL=FALSE \
 		-DINSTALL_QSQLITE_IN_QT_PREFIX:BOOL=TRUE \
 		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
