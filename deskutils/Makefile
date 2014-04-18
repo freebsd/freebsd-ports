@@ -144,7 +144,6 @@
     SUBDIR += multisync-syncml
     SUBDIR += myitcrm
     SUBDIR += nagaina
-    SUBDIR += narval
     SUBDIR += note
     SUBDIR += notecase
     SUBDIR += notification-daemon

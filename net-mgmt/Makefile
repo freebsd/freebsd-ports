@@ -59,7 +59,6 @@
     SUBDIR += disco
     SUBDIR += docsis
     SUBDIR += driftnet
-    SUBDIR += echolot
     SUBDIR += ehnt
     SUBDIR += etherape
     SUBDIR += ettercap

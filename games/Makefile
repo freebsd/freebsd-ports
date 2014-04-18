@@ -1162,7 +1162,6 @@
     SUBDIR += xzip
     SUBDIR += yadex
     SUBDIR += yahtzee
-    SUBDIR += yamsweeper
     SUBDIR += zangband
     SUBDIR += zatacka
     SUBDIR += zaz

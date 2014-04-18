@@ -5,7 +5,6 @@
 
     SUBDIR += aewm
     SUBDIR += afterstep
-    SUBDIR += afterstep-i18n
     SUBDIR += afterstep-stable
     SUBDIR += amiwm
     SUBDIR += antiwm
@@ -30,7 +29,6 @@
     SUBDIR += devilspie
     SUBDIR += dwm
     SUBDIR += e16
-    SUBDIR += e16utils
     SUBDIR += e17-module-alarm
     SUBDIR += e17-module-comp-scale
     SUBDIR += e17-module-cpu

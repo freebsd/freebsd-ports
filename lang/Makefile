@@ -141,7 +141,6 @@
     SUBDIR += linux-f10-libg2c
     SUBDIR += linux-f10-tcl85
     SUBDIR += linux-j
-    SUBDIR += logo
     SUBDIR += lua
     SUBDIR += lua-mode.el
     SUBDIR += lua52
@@ -327,7 +326,6 @@
     SUBDIR += stklos
     SUBDIR += stldoc
     SUBDIR += swi-pl
-    SUBDIR += sxm
     SUBDIR += t3x
     SUBDIR += tcc
     SUBDIR += tcl-manual
