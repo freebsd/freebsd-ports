@@ -1,0 +1,13 @@
+================================================================================
+If you are using meek with tor, here are some instructions:
+
+As a client, add the following to %%PREFIX%%/etc/tor/torrc:
+
+	UseBridges 1
+	Bridge meek x.x.x.x:yyyy FINGERPRINT-OF-BRIDGE
+	ClientTransportPlugin meek exec ./meek-client \
+	  --url=https://meek-reflect.example.com \
+	  --front=www.example.com \
+	  --log meek-client.log
+
+================================================================================
