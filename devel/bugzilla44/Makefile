@@ -2,6 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -118,7 +119,7 @@ RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI
 .endif
 
-.if ${PORT_OPTIONS:MWITH_GRAPHVIZ}
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 

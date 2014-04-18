@@ -2,6 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.2.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -24,6 +25,10 @@ RUN_DEPENDS=	\
 		p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-TimeDate>=1.19:${PORTSDIR}/devel/p5-TimeDate \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI
+
+FORBIDDEN=	no upstream fixes for CVE-2014-1517, see\
+		http://www.bugzilla.org/security/4.0.11/
+EXPIRATION_DATE=2014-06-21
 
 USES=		perl5
 USE_PERL5=	patch run build
@@ -117,7 +122,7 @@ RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI
 .endif
 
-.if ${PORT_OPTIONS:MWITH_GRAPHVIZ}
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
