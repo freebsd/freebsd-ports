@@ -36,9 +36,11 @@ man/man3/zip_file_extra_field_set.3.gz
 man/man3/zip_file_extra_fields_count.3.gz
 man/man3/zip_file_extra_fields_count_by_id.3.gz
 man/man3/zip_file_get_comment.3.gz
+man/man3/zip_file_get_external_attributes.3.gz
 man/man3/zip_file_rename.3.gz
 man/man3/zip_file_replace.3.gz
 man/man3/zip_file_set_comment.3.gz
+man/man3/zip_file_set_external_attributes.3.gz
 man/man3/zip_file_strerror.3.gz
 man/man3/zip_fopen.3.gz
 man/man3/zip_fopen_encrypted.3.gz
