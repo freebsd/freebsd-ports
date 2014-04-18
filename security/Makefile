@@ -313,6 +313,7 @@
     SUBDIR += md5deep
     SUBDIR += mdcrack
     SUBDIR += medusa
+    SUBDIR += meek
     SUBDIR += metasploit
     SUBDIR += mhash
     SUBDIR += mindterm-binary
