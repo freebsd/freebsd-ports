@@ -61,8 +61,8 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
 		--with-spooldir=/var/spool/${PORTNAME}
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
-SUB_FILES=	pkg-install
-SUB_LIST=	DB_TYPE=${DB_TYPE:L} WITH_FASTCGI=${PORT_OPTIONS:MFASTCGI}
+SUB_FILES=	pkg-install pkg-message
+SUB_LIST=	DB_TYPE=${DB_TYPE:L}
 PORTEXAMPLES=	*
 
 USE_RC_SUBR=	sympa
@@ -98,10 +98,13 @@ PLIST_SUB+=	NLS="@comment "
 
 .if ${PORT_OPTIONS:MFASTCGI}
 RUN_DEPENDS+=	p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
+SUB_LIST+=	FCGI=""
 . if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 . endif
+.else
+SUB_LIST+=	FCGI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MORACLE}
