@@ -275,6 +275,8 @@ include/wine/windows/dwrite.h
 include/wine/windows/dwrite.idl
 include/wine/windows/dwrite_1.h
 include/wine/windows/dwrite_1.idl
+include/wine/windows/dwrite_2.h
+include/wine/windows/dwrite_2.idl
 include/wine/windows/dxdiag.h
 include/wine/windows/dxerr8.h
 include/wine/windows/dxerr9.h
@@ -472,6 +474,8 @@ include/wine/windows/netcon.h
 include/wine/windows/netcon.idl
 include/wine/windows/netfw.h
 include/wine/windows/netfw.idl
+include/wine/windows/netlistmgr.h
+include/wine/windows/netlistmgr.idl
 include/wine/windows/nldef.h
 include/wine/windows/npapi.h
 include/wine/windows/nspapi.h
@@ -1336,6 +1340,7 @@ lib/wine/fakedlls/nddeapi.dll
 lib/wine/fakedlls/net.exe
 lib/wine/fakedlls/netapi32.dll
 lib/wine/fakedlls/netcfgx.dll
+lib/wine/fakedlls/netprofm.dll
 lib/wine/fakedlls/netsh.exe
 lib/wine/fakedlls/netstat.exe
 lib/wine/fakedlls/newdev.dll
@@ -1419,6 +1424,7 @@ lib/wine/fakedlls/schedsvc.dll
 lib/wine/fakedlls/schtasks.exe
 lib/wine/fakedlls/scrrun.dll
 lib/wine/fakedlls/scsiport.sys
+lib/wine/fakedlls/sdbinst.exe
 lib/wine/fakedlls/secedit.exe
 lib/wine/fakedlls/secur32.dll
 lib/wine/fakedlls/security.dll
@@ -1888,6 +1894,7 @@ lib/wine/nddeapi.dll.so
 lib/wine/net.exe.so
 lib/wine/netapi32.dll.so
 lib/wine/netcfgx.dll.so
+lib/wine/netprofm.dll.so
 lib/wine/netsh.exe.so
 lib/wine/netstat.exe.so
 lib/wine/newdev.dll.so
@@ -1971,6 +1978,7 @@ lib/wine/schedsvc.dll.so
 lib/wine/schtasks.exe.so
 lib/wine/scrrun.dll.so
 lib/wine/scsiport.sys.so
+lib/wine/sdbinst.exe.so
 lib/wine/secedit.exe.so
 lib/wine/secur32.dll.so
 lib/wine/security.dll.so
