@@ -1,0 +1,11 @@
+Naludump is a tool to delete NALU fill data from h.264 streams embedded into
+TS files. The overall file structure isn't modified, only complete TS packets
+of NALU fill data are removed.
+
+Naludump contains lots of code of Klaus Schmidinger's VDR, and is based on
+cocepts from Marten Richter's Nalustripper.
+
+Usage:
+naludump inputfile.ts [outputfile.ts]
+
+WWW: http://www.udo-richter.de/vdr/naludump.en.html
