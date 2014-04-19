@@ -241,6 +241,7 @@
     SUBDIR += mxflib
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
+    SUBDIR += naludump
     SUBDIR += nxtvepg
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
