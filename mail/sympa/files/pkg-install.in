@@ -2,55 +2,12 @@
 # $FreeBSD$
 #
 
-DB_TYPE=%%DB_TYPE%%
-WITH_FASTCGI=%%WITH_FASTCGI%%
+[ "$2" = "POST_INSTALL" ] || exit 0
 
-case $2 in
-POST-INSTALL)
-        echo "======================================================"
-   if [ -n "${DB_TYPE}" ]; then
-        echo "If this is your first installation of sympa, please load"
-        echo "this file with your ${DB_TYPE} database client:"
-	echo "    %%PREFIX%%/libexec/sympa/create_db.${DB_TYPE}"
-	echo ""
-   fi
-	echo "To configure sympa interactively, please run:"
-	echo "    perl %%PREFIX%%/libexec/sympa/sympa_wizard.pl"
-	echo ""
-
-   for conf in sympa.conf wwsympa.conf
-   do	[ ! -f ${PKG_PREFIX}/etc/${conf} ] \
-	 && cp -p ${PKG_PREFIX}/etc/${conf}.sample ${PKG_PREFIX}/etc/${conf} \
-	 && chmod u+w ${PKG_PREFIX}/etc/${conf}
-   done
-
-	echo "You may also manually edit the two configuration files:"
-	echo "    ${PKG_PREFIX}/etc/sympa.conf"
-	echo "    ${PKG_PREFIX}/etc/wwsympa.conf"
-        echo "======================================================"
-        echo "To set up the wwsympa server, add something like this to"
-        echo "your Apache configuration file:"
-	echo ""
-        echo "    DocumentRoot \"%%DATADIR%%\""
-        echo "    AddDefaultCharset UTF-8"
-        echo "    DirectoryIndex wws"
-        echo "    Options +Indexes"
-   if [ -n "${WITH_FASTCGI}" ]; then
-        echo "    LoadModule fastcgi_module libexec/apache2/mod_fastcgi.so"
-	echo "    <Location /wws>"
-	echo "        SetHandler fastcgi-script"
-        echo "    </Location>"
-   fi
-        echo "    <Directory \"%%DATADIR%%\">"
-        echo "        Allow from all"
-        echo "    </Directory>"
-        echo "    ScriptAlias /wws %%PREFIX%%/libexec/sympa/wwsympa-wrapper"
-        echo "======================================================"
-	exit 0
-	;;
-PRE-INSTALL)
-	exit 0
-	;;
-esac
+for conf in sympa.conf wwsympa.conf
+do	[ ! -f ${PKG_PREFIX}/etc/${conf} ] && \
+	 cp -p ${PKG_PREFIX}/etc/${conf}.sample ${PKG_PREFIX}/etc/${conf} && \
+	 chmod u+w ${PKG_PREFIX}/etc/${conf}
+done
 
 exit 0
