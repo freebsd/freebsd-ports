@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	traingame
-PORTVERSION=	0.2.2
-PORTREVISION=	5
+PORTVERSION=	0.3
 CATEGORIES=	games
 MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Game about Trains
@@ -19,13 +17,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nickg
 GH_PROJECT=	traingame
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	83abcc9
+GH_COMMIT=	eacfbc3
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
-USES=		cmake compiler:c++11-lib pkgconfig
+USES=		cmake compiler:c++11-lib dos2unix pkgconfig
+DOS2UNIX_GLOB=	*.mtl *.obj
 USE_CXXSTD=	c++11
 USE_SDL=	sdl image
 USE_GL=		glew
