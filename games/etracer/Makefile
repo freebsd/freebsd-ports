@@ -12,7 +12,7 @@ MAINTAINER=		peter_dunning@dsl.pipex.com
 COMMENT=		The latest and greatest fork of the classic Tux Racer
 
 LIB_DEPENDS=		libpng15.so:${PORTSDIR}/graphics/png \
-			libfreetype.so.9:${PORTSDIR}/print/freetype2
+			libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_SDL=		mixer sdl
 USE_XORG=		x11 xi xext xmu xt
