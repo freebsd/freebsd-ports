@@ -5,6 +5,8 @@ etc/sympa.conf.sample
 etc/wwsympa.conf.sample
 %%ETCDIR%%/data_structure.version
 %%ETCDIR%%/etc_README
+@owner sympa
+@group sympa
 libexec/sympa/Archive.pm
 libexec/sympa/Auth.pm
 libexec/sympa/Bounce.pm
@@ -79,6 +81,8 @@ libexec/sympa/tt2.pm
 libexec/sympa/wwslib.pm
 libexec/sympa/wwsympa-wrapper.fcgi
 libexec/sympa/wwsympa.fcgi
+@owner
+@group
 man/man1/sympa_newaliases.1.gz
 man/man8/alias_manager.8.gz
 man/man8/archived.8.gz
