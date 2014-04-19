@@ -3,7 +3,7 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${LDAP_PATCH_DATE}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-ldap
 
@@ -18,7 +18,6 @@ CONFLICTS=	emboss-[0-9]* digest-[0-9]* qmail-[0-9]* qmail-mysql-[0-9]* \
 EXTRA_PATCHES+=	${MASTERDIR}/files/patch-Makefile \
 		${MASTERDIR}/files/patch-auto_uids-c-dist
 
-NO_STAGE=	yes
 USE_OPENLDAP=	yes
 SLAVE_LDAP=	yes
 
