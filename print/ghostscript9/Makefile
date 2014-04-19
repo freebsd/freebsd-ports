@@ -162,7 +162,6 @@ post-install-docs:
 		( cd ${STAGEDIR}${DOCSDIR} && ${TAR} -xof - )
 
 post-install:
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/${PORTVERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gsc ${STAGEDIR}${PREFIX}/bin/gsx
 	${LN} -sf gsc ${STAGEDIR}${PREFIX}/bin/gs
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont \
