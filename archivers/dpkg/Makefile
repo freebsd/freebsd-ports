@@ -3,6 +3,7 @@
 
 PORTNAME=	dpkg
 PORTVERSION=	1.17.6
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
@@ -18,8 +19,10 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 		gmd5sum:${PORTSDIR}/sysutils/coreutils
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv perl5 pkgconfig tar:xz
+USES=		gmake iconv perl5 pkgconfig tar:xz shebangfix
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
+SHEBANG_FILES=	dselect/methods/ftp/update dselect/methods/ftp/install \
+		dselect/methods/ftp/setup
 
 DPKGDIR?=	/var/db/dpkg
 PLIST_SUB+=	DPKGDIR=${DPKGDIR:C,^/,,}
