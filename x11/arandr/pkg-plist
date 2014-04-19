@@ -58,33 +58,7 @@ share/locale/sv/LC_MESSAGES/arandr.mo
 share/locale/tr/LC_MESSAGES/arandr.mo
 share/locale/uk/LC_MESSAGES/arandr.mo
 share/locale/zh_CN/LC_MESSAGES/arandr.mo
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/tr/LC_MESSAGES
-@dirrmtry share/locale/sv/LC_MESSAGES
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/ru/LC_MESSAGES
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/pt_BR/LC_MESSAGES
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/nl/LC_MESSAGES
-@dirrmtry share/locale/lt/LC_MESSAGES
 @dirrmtry share/locale/ko_KR/LC_MESSAGES
 @dirrmtry share/locale/ko_KR
-@dirrmtry share/locale/kn/LC_MESSAGES
-@dirrmtry share/locale/ja/LC_MESSAGES
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/hu/LC_MESSAGES
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fa/LC_MESSAGES
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/da/LC_MESSAGES
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/bs/LC_MESSAGES
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/ar/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/screenlayout/data
 @dirrm %%PYTHON_SITELIBDIR%%/screenlayout
