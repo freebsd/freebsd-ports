@@ -15,4 +15,19 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
+OPTIONS_SINGLE=	ZEROCONF
+OPTIONS_SINGLE_ZEROCONF=	AVAHI MDNSRESPONDER
+OPTIONS_DEFAULT=	MDNSRESPONDER
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAVAHI}
+BUILD_DEPENDS+=           libdns_sd.so:${PORTSDIR}/net/avahi-libdns
+.endif
+.if ${PORT_OPTIONS:MMDNSRESPONDER}
+BUILD_DEPENDS+=           libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+.endif
+
+RUN_DEPENDS:=   ${BUILD_DEPENDS}
+
 .include <bsd.port.mk>
