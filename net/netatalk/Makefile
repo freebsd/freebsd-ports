@@ -27,8 +27,8 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-bdb=${LOCALBASE}
 
 OPTIONS_DEFINE=	APPLETALK SRVLOC PAM TIMELORD KRB5 ZEROCONF LDAP SENDFILE
-OPTIONS_DEFAULT=	APPLETALK
-APPLETALK_DESC=	AppleTalk protocol support
+OPTIONS_DEFAULT=APPLETALK
+APPLETALK_DESC=	AppleTalk protocol support (where supported)
 SRVLOC_DESC=	Service Location Protocol support
 TIMELORD_DESC=	Timelord network time service
 KRB5_DESC=	Kerberos V UAM
@@ -38,18 +38,9 @@ SENDFILE_DESC=	sendfile support
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf netatalk.conf
 LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
 		binheader nadheader
-MAN1=		ad.1 afpldaptest.1 afppasswd.1 apple_dump.1 asip-status.pl.1 \
-		dbd.1 hqx2bin.1 macbinary.1 macusers.1 megatron.1 \
-		netatalk-config.1 single2bin.1 unbin.1 unhex.1 uniconv.1 \
-		unsingle.1
-MAN5=		AppleVolumes.5 AppleVolumes.default.5 \
-		AppleVolumes.system.5 afp_ldap.conf.5 afp_signature.conf.5 \
-		afp_voluuid.conf.5 afpd.conf.5 netatalk.conf.5
-MAN8=		afpd.8 cnid_dbd.8 cnid_metad.8 timelord.8
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-1* yudit-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKRB5}
@@ -59,15 +50,9 @@ PLIST_SUB+=		NETATALKKRB5=""
 PLIST_SUB+=		NETATALKKRB5="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MAPPLETALK}
+.if ${OSVERSION} < 1100013 && ${PORT_OPTIONS:MAPPLETALK}
 CONFIGURE_ARGS+=	--enable-ddp
 PLIST_SUB+=		APPLETALK=""
-MAN1+=			aecho.1 getzones.1 nbp.1 nbplkup.1 nbprgstr.1 \
-			nbpunrgstr.1 pap.1 papstatus.1 psorder.1
-MAN3+=			atalk_aton.3 nbp_name.3
-MAN4+=			atalk.4
-MAN5+=			atalkd.conf.5 papd.conf.5
-MAN8+=			atalkd.8 papd.8 papstatus.8 psf.8
 FILES+=			atalkd.conf papd.conf
 .else
 PLIST_SUB+=		APPLETALK="@comment "
@@ -128,17 +113,17 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	@${RM} -f ${PREFIX}/bin/nu ${PREFIX}/bin/lp2pap.sh \
-		${PREFIX}/bin/test_parse_mtab \
-		${PREFIX}/bin/afpd-mtab.pl
+	@${RM} -f ${STAGEDIR}${PREFIX}/bin/nu ${STAGEDIR}${PREFIX}/bin/lp2pap.sh \
+		${STAGEDIR}${PREFIX}/bin/test_parse_mtab \
+		${STAGEDIR}${PREFIX}/bin/afpd-mtab.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
-		${PREFIX}/bin/macusers
+		${STAGEDIR}${PREFIX}/bin/macusers
 .for i in ${FILES}
-	[ -f ${PREFIX}/etc/${i} ] || \
-		${INSTALL_DATA} -c ${PREFIX}/etc/${i}.dist ${PREFIX}/etc/${i}
+	[ -f ${STAGEDIR}${PREFIX}/etc/${i} ] || \
+		${INSTALL_DATA} -c ${STAGEDIR}${PREFIX}/etc/${i}.dist ${STAGEDIR}${PREFIX}/etc/${i}
 .endfor
 .for i in ${LINKS}
-	( cd ${PREFIX}/bin && ${LN} -sf megatron ${i} )
+	( cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf megatron ${i} )
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
