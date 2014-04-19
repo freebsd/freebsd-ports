@@ -635,6 +635,34 @@ sbin/start-stop-daemon
 @dirrmtry etc/dpkg/dpkg.cfg.d
 @dirrmtry etc/dpkg
 @dirrmtry etc/alternatives
+%%NLS%%@dirrmtry man/sv/man8
+%%NLS%%@dirrmtry man/sv/man5
+%%NLS%%@dirrmtry man/sv/man1
+%%NLS%%@dirrmtry man/sv
+%%NLS%%@dirrmtry man/pl/man8
+%%NLS%%@dirrmtry man/pl/man5
+%%NLS%%@dirrmtry man/pl/man1
+%%NLS%%@dirrmtry man/pl
+%%NLS%%@dirrmtry man/it/man8
+%%NLS%%@dirrmtry man/it/man5
+%%NLS%%@dirrmtry man/it/man1
+%%NLS%%@dirrmtry man/it
+%%NLS%%@dirrmtry man/hu/man8
+%%NLS%%@dirrmtry man/hu/man5
+%%NLS%%@dirrmtry man/hu/man1
+%%NLS%%@dirrmtry man/hu
+%%NLS%%@dirrmtry man/fr/man8
+%%NLS%%@dirrmtry man/fr/man5
+%%NLS%%@dirrmtry man/fr/man1
+%%NLS%%@dirrmtry man/fr
+%%NLS%%@dirrmtry man/es/man8
+%%NLS%%@dirrmtry man/es/man5
+%%NLS%%@dirrmtry man/es/man1
+%%NLS%%@dirrmtry man/es
+%%NLS%%@dirrmtry man/de/man8
+%%NLS%%@dirrmtry man/de/man5
+%%NLS%%@dirrmtry man/de/man1
+%%NLS%%@dirrmtry man/de
 @cwd /
 @exec mkdir -p %%DPKGDIR%%/alternatives
 @exec mkdir -p %%DPKGDIR%%/info
