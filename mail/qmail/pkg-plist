@@ -227,7 +227,6 @@ scripts/mkaliasdir
 @dirrm scripts
 @dirrmtry control
 @dirrmtry alias
-@dirrmtry queue
 @dirrmtry users
 @unexec echo "1) If you are permanently removing qmail, you should also 'rm -rf ${PKG_PREFIX}' and remove the qmail users/groups." | /usr/bin/fmt
 @unexec echo "2) Do not forget to reconfigure your /etc/mail/mailer.conf to use your older MTA, or reconfigure your old MTA binaries if you decided to replace them." | /usr/bin/fmt

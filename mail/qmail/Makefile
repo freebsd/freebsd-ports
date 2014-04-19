@@ -3,7 +3,7 @@
 
 PORTNAME=	qmail
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES=	mail
 MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
@@ -909,6 +909,8 @@ post-install:
 	  ${ECHO_CMD} "@exec install -d -o root -g qmail ${PREFIX}"; \
 	  ${ECHO_CMD} "@unexec rmdir ${QMAIL_PREFIX} 2>/dev/null || :"; \
 	} >> ${TMPPLIST}
+# Stop check-orphans finding the queue dir
+	${RM} -rf ${STAGEDIR}${PREFIX}/queue/
 
 certificate:
 .if defined(SLAVE_TLS) || defined(SLAVE_LDAP)
