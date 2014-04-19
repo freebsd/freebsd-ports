@@ -24,9 +24,23 @@ CO_ENV+=	STAGEDIR=${STAGEDIR} \
 		MTREE_FILE=${MTREE_FILE} \
 		GNOME_MTREE_FILE=${GNOME_MTREE_FILE} \
 		TMPPLIST=${TMPPLIST} \
-		DOCSDIR=${DOCSDIR} \
-		EXAMPLESDIR=${EXAMPLESDIR} \
-		PLIST_SUB='${PLIST_SUB:NPREFIX=*:NLOCALBASE=*:NOSREL=*:NLIB32DIR=*:NDOCSDIR=*:NEXAMPLESDIR=*:N*="* *"}'
+		SCRIPTSDIR=${SCRIPTSDIR} \
+		WITH_PKGNG=${WITH_PKGNG} \
+		PLIST_SUB_SED="${PLIST_SUB_SED}" \
+		PORT_OPTIONS="${PORT_OPTIONS}" \
+		PORTSDIR="${PORTSDIR}"
+.if defined(WITH_PKGNG)
+CO_ENV+=	PACKAGE_DEPENDS="${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,}" \
+		PKG_QUERY="${PKG_QUERY}"
+.else
+CO_ENV+=	PACKAGE_DEPENDS=${ACTUAL-PACKAGE-DEPENDS:Q} \
+		PKG_QUERY="${PKG_INFO}"
+.endif
+.if defined(NO_PREFIX_RMDIR)
+CO_ENV+=	NO_PREFIX_RMDIR=1
+.else
+CO_ENV+=	NO_PREFIX_RMDIR=0
+.endif
 
 .if !target(stage-dir)
 stage-dir:
@@ -74,10 +88,15 @@ makeplist: stage
 	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh makeplist
 .endif
 
+.if !target(check-plist)
+check-plist: stage
+	@${ECHO_MSG} "====> Checking for pkg-plist issues (check-plist)"
+	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh checkplist
+	@${ECHO_MSG} "===> No pkg-plist issues found (check-plist)"
+.endif
+
 .if !target(check-orphans)
-check-orphans: stage
-	@${ECHO_MSG} "====> Items missing from pkg-plist (check-orphans)"
-	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh orphans
+check-orphans: check-plist
 .endif
 
 .if !target(stage-qa)

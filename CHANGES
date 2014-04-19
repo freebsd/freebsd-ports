@@ -10,6 +10,22 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140419:
+AUTHOR: bdrewery@FreeBSD.org
+
+  check-orphans has been renamed to check-plist. It now checks:
+    A. Files in STAGEDIR that are missing from plist.
+       To make check-plist ignore a file *as an orphan* do one of the
+       following:
+        1. Install it
+        2. post-install: ${RM} ${STAGEDIR}file
+        3. Put the file behind an OPTION with a PLIST_SUB: %%OPTION%%file
+        4. Add to plist as a @comment
+           @comment file
+           @comment @dirrmtry dir
+    B. Files in plist missing from STAGEDIR
+    C. Files in plist which are owned by dependencies/MTREEs
+
 20140416:
 AUTHOR: bdrewery@FreeBSD.org
 
