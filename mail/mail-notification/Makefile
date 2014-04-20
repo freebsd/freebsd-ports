@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	mailnotify
 MAINTAINER=	mwisnicki+freebsd@gmail.com
 COMMENT=	A mail notification for freedesktop.org-compliant system trays
 
+BROKEN=		Violates stagedir and fails to package
+
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libgnome-keyring.so:${PORTSDIR}/security/gnome-keyring \
 		libnotify.so:${PORTSDIR}/devel/libnotify
