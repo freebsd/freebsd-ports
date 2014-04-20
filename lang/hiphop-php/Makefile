@@ -16,6 +16,8 @@ PATCH_SITES=	http://cpp.in/dev/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HipHop Virtual Machine for PHP (HHVM)
 
+BROKEN=		Fails to configure
+
 LICENSE=	PHP301 ZEND200 UNICODE
 LICENSE_COMB=	multi
 LICENSE_NAME_UNICODE=	Unicode, Inc. License Agreement
