@@ -12,6 +12,8 @@ COMMENT=	LLVM based ruby language implementation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:${PORTSDIR}/sysutils/rubygem-bundler \
 		${LOCALBASE}/bin/llvm-config34:${PORTSDIR}/devel/llvm34 \
 		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
