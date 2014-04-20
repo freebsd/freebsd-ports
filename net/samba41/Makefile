@@ -16,9 +16,11 @@ LICENSE=		GPLv3
 
 CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.*
 
+SAMBA4_PORT=		${PORTNAME}
+
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.1.6
+SAMBA4_VERSION=		4.1.7
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -63,7 +65,7 @@ CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 
 USE_PYTHON=		2
-USES=			compiler perl5 pkgconfig iconv
+USES=			shebangfix compiler perl5 pkgconfig iconv readline
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 WAF_TOOL=		buildtools/bin/waf
@@ -90,8 +92,8 @@ LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
 # IDL compiler
 BUILD_DEPENDS+=		p5-Parse-Pidl>=4.0.0:${PORTSDIR}/devel/p5-Parse-Pidl
 # talloc
-BUILD_DEPENDS+=		talloc>=2.0.8:${PORTSDIR}/devel/talloc
-RUN_DEPENDS+=		talloc>=2.0.8:${PORTSDIR}/devel/talloc
+BUILD_DEPENDS+=		talloc>=2.1.0:${PORTSDIR}/devel/talloc
+RUN_DEPENDS+=		talloc>=2.1.0:${PORTSDIR}/devel/talloc
 SAMBA4_BUNDLED_LIBS+=	!talloc
 # tevent
 BUILD_DEPENDS+=		tevent>=0.9.18:${PORTSDIR}/devel/tevent
@@ -101,6 +103,10 @@ SAMBA4_BUNDLED_LIBS+=	!tevent
 BUILD_DEPENDS+=		tdb>=1.2.11:${PORTSDIR}/databases/tdb
 RUN_DEPENDS+=		tdb>=1.2.11:${PORTSDIR}/databases/tdb
 SAMBA4_BUNDLED_LIBS+=	!tdb
+# ntdb
+BUILD_DEPENDS+=		ntdb>=1.0:${PORTSDIR}/databases/ntdb
+RUN_DEPENDS+=		ntdb>=1.0:${PORTSDIR}/databases/ntdb
+SAMBA4_BUNDLED_LIBS+=	!ntdb
 # ldb
 BUILD_DEPENDS+=		ldb>=1.1.15:${PORTSDIR}/databases/ldb
 RUN_DEPENDS+=		ldb>=1.1.15:${PORTSDIR}/databases/ldb
@@ -324,6 +330,7 @@ CONFIGURE_ARGS+=	--without-ads
 
 .if defined(SAMBA4_WANT_LDAP)
 USE_OPENLDAP=		yes
+WANT_OPENLDAP_SASL=	yes
 CONFIGURE_ARGS+=	--with-ldap
 PLIST_SUB+=		LDAP=""
 .else
@@ -373,7 +380,11 @@ SUB_LIST+=		${SAMBA4_SUB}
 
 USE_RC_SUBR=		samba_server
 SUB_FILES=		pkg-message README.FreeBSD
-
+# Make sure that the right version of Python is used by the tools
+# https://bugzilla.samba.org/show_bug.cgi?id=7305
+python_CMD=		${PYTHON_CMD}
+python_OLD_CMD=		${SETENV} python
+SHEBANG_FILES=		${PATCH_WRKSRC}/source4/scripting/bin/*
 # No fancy color error messages
 .if ${COMPILER_TYPE} == "clang"
 CFLAGS+=		-fno-color-diagnostics
@@ -394,8 +405,6 @@ SAMBA_MAN1+=		dbwrap_tool.1 findsmb.1 gentest.1 locktest.1 \
 			smbclient.1 smbcontrol.1 smbcquotas.1 smbget.1 \
 			smbstatus.1 smbtar.1 smbtorture.1 smbtree.1 \
 			testparm.1 vfstest.1 wbinfo.1
-
-SAMBA_MAN3+=		ntdb.3
 
 SAMBA_MAN5+=		lmhosts.5 smbgetrc.5 smbpasswd.5 pam_winbind.conf.5 \
 			smb.conf.5
@@ -418,14 +427,13 @@ SAMBA_MAN8+=		eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 			vfs_shadow_copy2.8 vfs_smb_traffic_analyzer.8 \
 			vfs_streams_depot.8 vfs_streams_xattr.8 vfs_syncops.8 vfs_time_audit.8 \
 			vfs_tsmsm.8 vfs_xattr_tdb.8 winbindd.8 \
-			vfs_linux_xfs_sgid.8 vfs_btrfs.8 \
-			ntdbbackup.8 ntdbdump.8 ntdbrestore.8 ntdbtool.8
+			vfs_linux_xfs_sgid.8 vfs_btrfs.8
 
 PORTDOCS=		README.FreeBSD
 
+CONFIGURE_TARGET=	configure
 ALL_TARGET=		build
 INSTALL_TARGET=		install
-CONFIGURE_TARGET=	configure
 
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
@@ -442,11 +450,6 @@ post-patch:
 				${PATCH_WRKSRC}/buildtools/scripts/abi_gen.sh
 			@${REINPLACE_CMD} -e 's|%%SAMBA4_CONFIG%%|${SAMBA4_CONFIG}|g' \
 				${PATCH_WRKSRC}/dynconfig/wscript
-# Make sure that the right version of Python is used by the tools
-# https://bugzilla.samba.org/show_bug.cgi?id=7305
-			@for f in ${PATCH_WRKSRC}/source4/scripting/bin/*; do \
-				${REINPLACE_CMD} -e '1,1 s|.*python.*|#!${PYTHON_CMD}|' $${f}; \
-			done
 
 # Use threading (or multiprocessing) but not thread (renamed in python 3+).
 pre-configure:
@@ -474,6 +477,13 @@ do-configure:
 						${FALSE}; \
 				fi)
 
+# XXX: Gross hack to allow build newer Samba while old one is installed.
+# This implies that LINKFLAGS_PYEMBED contains flags which are already
+# used in other parts of LINKFLAGS, namely -L$(LOCALBASE)/lib and -pthread
+post-configure:
+	-${REINPLACE_CMD} -e 's|LINKFLAGS_PYEMBED.*|LINKFLAGS_PYEMBED = []|' \
+		${CONFIGURE_WRKSRC}/bin/c4che/default.cache.py
+
 pre-build:
 .if ! ${PORT_OPTIONS:MMANPAGES}
 .	for man in	libcli/nbt/man/nmblookup4.1 \
@@ -487,17 +497,12 @@ pre-build:
 			source4/torture/man/masktest.1 \
 			source4/torture/man/smbtorture.1 \
 			source4/utils/man/ntlm_auth4.1 \
-			source4/utils/man/oLschema2ldif.1 \
-			lib/ntdb/man/ntdb.3 \
-			lib/ntdb/man/ntdbbackup.8 \
-			lib/ntdb/man/ntdbdump.8 \
-			lib/ntdb/man/ntdbrestore.8 \
-			lib/ntdb/man/ntdbtool.8
+			source4/utils/man/oLschema2ldif.1
 			-@${MKDIR} `dirname ${BUILD_WRKSRC}/bin/default/${man}`
 			@${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
 .	endfor
 			-@${MKDIR} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
-.	for man in ${SAMBA_MAN1} ${SAMBA_MAN3} ${SAMBA_MAN5} ${SAMBA_MAN7} ${SAMBA_MAN8}
+.	for man in ${SAMBA_MAN1} ${SAMBA_MAN5} ${SAMBA_MAN7} ${SAMBA_MAN8}
 			-@${INSTALL_MAN} ${BUILD_WRKSRC}/docs/manpages/${man} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
 .	endfor
 .endif
@@ -516,12 +521,12 @@ do-install:
 			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 post-install:
-			@${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz
 .if ${PORT_OPTIONS:MDOCS}
 			@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for doc in ${PORTDOCS}
 			@${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
 .	endfor
+			@${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz
 .endif
 # Run post-install script
 .for dir in ${SAMBA4_LOGDIR} ${SAMBA4_RUNDIR} ${SAMBA4_LOCKDIR} ${STAGEDIR}${SAMBA4_MODULEDIR} ${SAMBA4_PRIVATEDIR}
