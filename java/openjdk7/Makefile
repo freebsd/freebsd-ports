@@ -30,7 +30,6 @@ USES=		dos2unix iconv gmake zip
 USE_XORG+=	x11 xext xi xrender xt xtst
 MAKE_ARGS=	CC=${CC} CXX=${CXX} HOST_CC=${CC}
 MAKE_JOBS_UNSAFE=	yes
-USE_GCC=	any
 
 OPTIONS_DEFINE=		DEBUG POLICY TZUPDATE
 OPTIONS_DEFAULT=	POLICY TZUPDATE
@@ -38,7 +37,7 @@ DEBUG_DESC=		Enable extra debugging info
 POLICY_DESC=		Install the Unlimited Strength Policy Files
 TZUPDATE_DESC=		Update the time zone data
 
-PORT_MINOR_VERSION=	51
+PORT_MINOR_VERSION=	55
 PORT_BUILD_NUMBER=	13
 JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	40
@@ -47,7 +46,7 @@ JDK_BUILD_DATE=		26_aug_2013
 JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
-ANT_VERSION=		1.8.4
+ANT_VERSION=		1.9.3
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
 LATEST_LINK=		openjdk7
@@ -86,6 +85,7 @@ MAKE_ENV+=	LANG="C" \
 		JAVACMD=${BOOTSTRAPJDKDIR}/bin/java \
 		X11DIR="${LOCALBASE}" \
 		LOCALDIR="${LOCALBASE}" \
+		COMPILER_WARNINGS_FATAL="false" \
 		NO_DOCS="true" \
 		SKIP_COMPARE_IMAGES="true" \
 		SKIP_FASTDEBUG_BUILD="true" \
