@@ -1,7 +1,5 @@
 ===============================================================================
 
-This port is *STILL* experimental, use it at your own risk.
-
 How to start: http://wiki.samba.org/index.php/Samba4/HOWTO
 
 * Your configuration is: %%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%

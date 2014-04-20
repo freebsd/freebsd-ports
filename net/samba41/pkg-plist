@@ -1,12 +1,3 @@
-@comment ntdb begin
-bin/ntdbbackup
-bin/ntdbdump
-bin/ntdbrestore
-bin/ntdbtool
-lib/samba/libntdb.so.0
-lib/samba/libutil_ntdb.so
-%%PYTHON_SITELIBDIR%%/ntdb.so
-@comment ntdb end
 bin/cifsdd
 bin/dbwrap_tool
 bin/eventlogadm
@@ -315,6 +306,7 @@ lib/samba/libtdb-wrap.so
 lib/samba/libtdb_compat.so
 lib/samba/libtrusts_util.so
 lib/samba/libutil_cmdline.so
+lib/samba/libutil_ntdb.so
 lib/samba/libutil_reg.so
 lib/samba/libutil_setid.so
 lib/samba/libutil_tdb.so
@@ -964,7 +956,6 @@ man/man1/smbtree.1.gz
 man/man1/testparm.1.gz
 man/man1/vfstest.1.gz
 man/man1/wbinfo.1.gz
-man/man3/ntdb.3.gz
 man/man5/lmhosts.5.gz
 man/man5/pam_winbind.conf.5.gz
 man/man5/smb.conf.5.gz
@@ -985,10 +976,6 @@ man/man8/idmap_tdb.8.gz
 man/man8/idmap_tdb2.8.gz
 man/man8/net.8.gz
 man/man8/nmbd.8.gz
-man/man8/ntdbbackup.8.gz
-man/man8/ntdbdump.8.gz
-man/man8/ntdbrestore.8.gz
-man/man8/ntdbtool.8.gz
 man/man8/pam_winbind.8.gz
 man/man8/pdbedit.8.gz
 man/man8/samba-regedit.8.gz
