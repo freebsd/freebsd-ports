@@ -3,7 +3,7 @@
 
 PORTNAME=	abcde
 PORTVERSION=	2.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia \
-		eyeD3:${PORTSDIR}/audio/py-eyed3 \
+		${PYTHON_PKGNAMEPREFIX}eyed3-06>0:${PORTSDIR}/audio/py-eyed3-06 \
 		lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		bash:${PORTSDIR}/shells/bash
