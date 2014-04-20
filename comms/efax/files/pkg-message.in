@@ -1,0 +1,5 @@
+Edit %%PREFIX%%/etc/efax.rc (or replace it with
+%%PREFIX%%/etc/efax.rc.ja first) before using
+efax.
+
+You should at least modify DEV=, FROM=, and NAME=.
