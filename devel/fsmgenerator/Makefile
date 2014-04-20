@@ -11,6 +11,8 @@ DISTNAME=	FSMGenerator${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite State Machine generating software
 
+BROKEN=		Fails to link
+
 USES=		gmake
 
 PLIST_FILES=	bin/fsmgenerator
