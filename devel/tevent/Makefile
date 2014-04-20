@@ -64,6 +64,9 @@ CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
 _MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
 .endif
 
+.if defined(NO_PYTHON)
+CONFIGURE_ARGS+=	--disable-python
+.else
 USE_PYTHON_RUN=		yes
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/_tevent.so \
 			%%PYTHON_SITELIBDIR%%/tevent.py  \
@@ -71,6 +74,7 @@ PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/_tevent.so \
 			%%PYTHON_SITELIBDIR%%/tevent.pyo
 PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
 			%%PYTHON_LIBDIR%%
+.endif
 
 CONFIGURE_TARGET=	configure
 ALL_TARGET=		build

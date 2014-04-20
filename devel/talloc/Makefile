@@ -59,6 +59,9 @@ CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
 _MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
 .endif
 
+.if defined(NO_PYTHON)
+CONFIGURE_ARGS+=	--disable-python
+.else
 USE_PYTHON_RUN=		yes
 PLIST_FILES+=		include/pytalloc.h \
 			lib/libpytalloc-util.so \
@@ -67,6 +70,7 @@ PLIST_FILES+=		include/pytalloc.h \
 			%%PKGCONFIGDIR%%/pytalloc-util.pc
 PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
 			%%PYTHON_LIBDIR%%
+.endif
 
 TALLOC_MAN3=		man/man3/talloc.3.gz
 
