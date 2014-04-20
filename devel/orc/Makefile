@@ -2,27 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	orc
-PORTVERSION=	0.4.18
+PORTVERSION=	0.4.19
 CATEGORIES=	devel
 MASTER_SITES= 	http://gstreamer.freedesktop.org/data/src/orc/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library and toolset to operate arrays of data
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE BSD3CLAUSE
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pkgconfig
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-CONFIGURE_ARGS+=	--disable-gtk-doc
+CONFIGURE_ARGS+=--disable-gtk-doc
+INSTALL_TARGET=	install-strip
 
 SUBDIRS=	orc orc-test tools
 
 EXAMPLES_DATA=	example1orc.orc example2orc.orc example3orc.orc \
 		mt19937arorc.orc
-EXAMPLES_EXEC=	example1 example2 example3 mt19937ar volscale
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_DESC=	Include gtk-doc documentation
