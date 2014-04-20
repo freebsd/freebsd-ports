@@ -25,14 +25,11 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/config/.htaccess
 %%SQUIRRELDIR%%/config/conf.pl
 %%SQUIRRELDIR%%/config/config_default.php
-@unexec if cmp -s %D/www/squirrelmail/config/config_local.php %D/www/squirrelmail/config/config_local.php.sample; then rm -f %D/www/squirrelmail/config/config_local.php; fi
-%%SQUIRRELDIR%%/config/config_local.php.sample
+@sample %%SQUIRRELDIR%%/config/config_local.php.sample
 %%SQUIRRELDIR%%/config/index.php
 %%SQUIRRELDIR%%/configure
 %%SQUIRRELDIR%%/data/.htaccess
-@unexec if cmp -s %D/www/squirrelmail/data/default_pref-dist %D/www/squirrelmail/data/default_pref; then rm -f %D/www/squirrelmail/data/default_pref; fi
-%%SQUIRRELDIR%%/data/default_pref-dist
-@exec if [ ! -f %D/www/squirrelmail/data/default_pref ]; then cp -p %D/%F %B/default_pref; fi
+@sample %%SQUIRRELDIR%%/data/default_pref.sample
 %%SQUIRRELDIR%%/data/index.php
 @exec chown %%SMUSER%%:%%SMGROUP%% %B
 @exec chmod 750 %B

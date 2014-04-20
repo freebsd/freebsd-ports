@@ -2956,8 +2956,6 @@
 @dirrmtry %%SQUIRRELDIR%%/locale/ar/LC_MESSAGES/plugins
 @dirrmtry %%SQUIRRELDIR%%/locale/ar/LC_MESSAGES
 @dirrmtry %%SQUIRRELDIR%%/locale/ar
-@dirrmtry %%SQUIRRELDIR%%/locale
-@dirrmtry %%SQUIRRELDIR%%/images
 @dirrmtry %%SQUIRRELDIR%%/help/zh_CN
 @dirrmtry %%SQUIRRELDIR%%/help/uk_UA
 @dirrmtry %%SQUIRRELDIR%%/help/th_TH
@@ -2986,5 +2984,3 @@
 @dirrmtry %%SQUIRRELDIR%%/help/cs_CZ
 @dirrmtry %%SQUIRRELDIR%%/help/ca_ES
 @dirrmtry %%SQUIRRELDIR%%/help/bg_BG
-@dirrmtry %%SQUIRRELDIR%%/help
-@dirrmtry %%SQUIRRELDIR%%
