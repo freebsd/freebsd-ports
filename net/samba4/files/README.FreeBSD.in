@@ -68,12 +68,12 @@ option would be to start from scratch.
 %%NSUPDATE%%
 %%NSUPDATE%%      nsupdate command = %%PREFIX%%/bin/samba-nsupdate -g
 %%NSUPDATE%%
-2. Put string 'samba4_enable="YES"' into your /etc/rc.conf.
+2. Put string 'samba_server_enable="YES"' into your /etc/rc.conf.
 
 3. Make sure that your server doesn't run Samba3, OpenLDAP and named.
 Stop them, if necessary.
 
-4. Run '%%PREFIX%%/etc/rc.d/samba4 start' or reboot.
+4. Run '%%PREFIX%%/etc/rc.d/samba_server start' or reboot.
 
 WARNING! This port is still experimental and if you need any asistance,
 please, check archives of samba@lists.samba.org and ask there for help.
