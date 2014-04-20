@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multimarkdown
-PORTVERSION=	4.5.2
+PORTVERSION=	4.5.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://codeload.github.com/fletcher/MultiMarkdown-4/legacy.tar.gz/${MM4_COMMIT}?dummy=/:MM4 \
 				https://codeload.github.com/fletcher/MMD-Support/legacy.tar.gz/${SUPPORT_COMMIT}?dummy=/:support \
@@ -17,7 +17,7 @@ COMMENT=	Extended Markdown processor with more features, written in C
 
 LICENSE=	MIT
 
-MM4_COMMIT=		d11e8b9
+MM4_COMMIT=		b891584
 SUPPORT_COMMIT=	685c95c
 CHEAT_COMMIT=	199dae8
 GREG_COMMIT=	3f11f56
