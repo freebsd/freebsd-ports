@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	tcrimi@gmail.com
 COMMENT=	An OCaml interface to PostgreSQL
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/extlib:${PORTSDIR}/devel/ocaml-extlib \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/pcre:${PORTSDIR}/devel/ocaml-pcre \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/calendar:${PORTSDIR}/devel/ocaml-calendar \
