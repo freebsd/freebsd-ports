@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.3
-PORTREVISION=	1
+PORTVERSION=	4.4.4
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -155,6 +154,11 @@ RUN_DEPENDS+=	p5-File-MimeInfo>=0.16:${PORTSDIR}/devel/p5-File-MimeInfo \
 		p5-IO-stringy>=2.110:${PORTSDIR}/devel/p5-IO-stringy
 .endif
 
+post-extract:
+	@${RM} -rf ${WRKSRC}/.bzr
+	@${RM} -f ${WRKSRC}/.bzrignore ${WRKSRC}/.gitignore ${WRKSRC}/.gitrev \
+		${WRKSRC}/docs/en/README.docs ${WRKSRC}/docs/en/html/Bugzilla-Guide.proc
+
 post-patch:
 	@${PERL} -pi -e 's/(default => ON_WINDOWS.+)apache/$$1www/' \
 		${WRKSRC}/Bugzilla/Install/Localconfig.pm
@@ -167,10 +171,9 @@ post-patch:
 		-e 's!/usr/lib/sendmail!/usr/sbin/sendmail!g; s=/usr/bin/perl=${PERL}=g' {} \+
 	@${FIND} ${WRKSRC}/docs -type f | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e "s!/var/www/html/bugzilla!${WWWDIR}!"
-	@${FIND} ${WRKSRC} \( -name ".git*" -or -name "*.orig" -or -name "*.bak" \
-		-or -name ".bzr*" -or -name "README.docs" \) | ${XARGS} ${RM} -rf
-# empty leftover	
-	@${RM} ${WRKSRC}/docs/en/html/Bugzilla-Guide.proc
+
+pre-install:
+	@${FIND} ${WRKSRC} -type f \( -name "*.orig" -or -name "*.bak" \) -delete
 
 do-install:	.SILENT
 	${MKDIR} ${STAGEDIR}${WWWDIR}
@@ -182,16 +185,13 @@ do-install:	.SILENT
 .endfor
 	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
 	@${MKDIR} ${EMPTY_DIRS_LIST:S!^!${STAGEDIR}${WWWDIR}/!}
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/)
-.endif
 
 .if ${PORT_OPTIONS:MCONTRIB}
-	@cd ${WRKSRC}/contrib && \
+	@(cd ${WRKSRC}/contrib && \
 		${FIND} . -type d -exec ${MKDIR} "${STAGEDIR}${WWWDIR}/contrib/{}" \; && \
-		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${WWWDIR}/contrib/{}" \;
+		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${WWWDIR}/contrib/{}" \;)
 .endif
 
 .include <bsd.port.mk>
