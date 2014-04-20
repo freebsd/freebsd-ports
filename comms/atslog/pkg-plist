@@ -1,12 +1,9 @@
-@unexec if cmp -s %D/etc/atslog.conf %D/etc/atslog.conf.default; then rm -f %D/etc/atslog.conf; fi
-%%WWW%%@unexec if cmp -s %D/www/atslog/include/config.inc.php %D/www/atslog/include/config.inc.php.default; then rm -f %D/www/atslog/include/config.inc.php; fi
 bin/atslogcleardb.pl
 bin/atslogd
 bin/atslogdb.pl
 bin/atslogmaster
-etc/atslog.conf.default
-@exec [ -f %B/atslog.conf ] || cp %B/%f %B/atslog.conf
-etc/atslog.conf.default.rus
+@sample etc/atslog.conf.sample
+@sample etc/atslog.conf.rus.sample
 libexec/atslog/4200e.lib
 libexec/atslog/bp-250.lib
 libexec/atslog/gd-320.lib
@@ -29,6 +26,8 @@ libexec/atslog/neax-2000.lib
 libexec/atslog/nx-820.lib
 libexec/atslog/officeserv-7200.lib
 libexec/atslog/skp-816.lib
+man/man8/atslogd.8.gz
+man/man8/atslogmaster.8.gz
 %%DATADIR%%/lang/en_US
 %%DATADIR%%/lang/ru_RU.CP1251
 %%DATADIR%%/lang/ru_RU.KOI8-R
@@ -37,305 +36,304 @@ libexec/atslog/skp-816.lib
 %%DATADIR%%/sql/createsqltables.mysql.sql
 %%DATADIR%%/sql/data.sql
 %%DATADIR%%/sql/install-sql.pl
-%%EXAMPLESDIR%%/textlogs/Alcatel 4200.txt
-%%EXAMPLESDIR%%/textlogs/Definity.txt
-%%EXAMPLESDIR%%/textlogs/Ericsson BP 250.txt
-%%EXAMPLESDIR%%/textlogs/GoldStar GPS-6A.txt
-%%EXAMPLESDIR%%/textlogs/Hybrex GD-320.txt
-%%EXAMPLESDIR%%/textlogs/LG GDK-100.txt
-%%EXAMPLESDIR%%/textlogs/LG GDK-162.txt
-%%EXAMPLESDIR%%/textlogs/LG GHX-46 (variant 1).txt
-%%EXAMPLESDIR%%/textlogs/LG GHX-46 (variant 2).txt
-%%EXAMPLESDIR%%/textlogs/LG GMX-1232.TXT
-%%EXAMPLESDIR%%/textlogs/LG LDK-100 (variant 1).txt
-%%EXAMPLESDIR%%/textlogs/LG LDK-100 (variant 2).txt
-%%EXAMPLESDIR%%/textlogs/LG LDK-300 with CID.txt
-%%EXAMPLESDIR%%/textlogs/LG LDK-300.txt
-%%EXAMPLESDIR%%/textlogs/Meridian-1 (variant 1).txt
-%%EXAMPLESDIR%%/textlogs/Meridian-1 (variant 2).txt
-%%EXAMPLESDIR%%/textlogs/Multicom A416 (A632).txt
-%%EXAMPLESDIR%%/textlogs/Multicom BS-24100.txt
-%%EXAMPLESDIR%%/textlogs/Multicom C1248.txt
-%%EXAMPLESDIR%%/textlogs/Multicom G1260.txt
-%%EXAMPLESDIR%%/textlogs/Multicom MAXICOM MP80.TXT
-%%EXAMPLESDIR%%/textlogs/Multicom Maxicom MXM300.txt
-%%EXAMPLESDIR%%/textlogs/NEC NEAX2000 IPS.txt
-%%EXAMPLESDIR%%/textlogs/NEC NEAX7400 ICS m100.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic 816.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic DBS-90.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-T1232-RU.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-T1232.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-T336100b.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TA308.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TA308RU 2.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TA616.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TA616RU.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD-500.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD1232 (P231C).txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD1232 (P271F).txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD1232 (P271F)_2.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD1232.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD500 Type A.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD500 Type B.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD500 Type C.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD500 Type D.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD816RU.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 A.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 B.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 C.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA600.txt
-%%EXAMPLESDIR%%/textlogs/Panasonic KX-TEM824.txt
-%%EXAMPLESDIR%%/textlogs/Samsung DCS Compact II.txt
-%%EXAMPLESDIR%%/textlogs/Samsung DCS.txt
-%%EXAMPLESDIR%%/textlogs/Samsung NX-1232.txt
-%%EXAMPLESDIR%%/textlogs/Samsung NX-820(variant 1).txt
-%%EXAMPLESDIR%%/textlogs/Samsung NX-820(variant 2).txt
-%%EXAMPLESDIR%%/textlogs/Samsung OfficeServ 500.txt
-%%EXAMPLESDIR%%/textlogs/Samsung OfficeServ 7200.txt
-%%EXAMPLESDIR%%/textlogs/Samsung SKP 56_120.txt
-%%EXAMPLESDIR%%/textlogs/Samsung SKP-36HX.txt
-%%EXAMPLESDIR%%/textlogs/Samsung SKP-816.txt
-%%EXAMPLESDIR%%/textlogs/Samsung iDCS 500.txt
-%%EXAMPLESDIR%%/textlogs/Siemens HIPATH-3750.txt
-%%EXAMPLESDIR%%/textlogs/Siemens Hicom 118.txt
-%%EXAMPLESDIR%%/textlogs/Siemens Hicom 150 OfficeCom (Wide).txt
-%%EXAMPLESDIR%%/textlogs/Siemens Hicom-250.txt
-%%EXAMPLESDIR%%/textlogs/Siemens Hicom-350H.txt
-%%EXAMPLESDIR%%/textlogs/Telrad.txt
-%%WWW%%www/atslog/phonebook/index.html
-%%WWW%%www/atslog/phonebook/index.php
-%%WWW%%www/atslog/intern/index.html
-%%WWW%%www/atslog/intern/index.php
-%%WWW%%www/atslog/settings/index.html
-%%WWW%%www/atslog/settings/index.php
-%%WWW%%www/atslog/users/index.html
-%%WWW%%www/atslog/users/index.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-uk1251.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-pl.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-it.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-hu.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-cz.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-ro.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-ca.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-da.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-pt-br.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-de.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-bg.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-sv.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-bgutf8.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-ru1251.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-esperanto.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-cn.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-en.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-ar.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-fr.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-es.inc.php
-%%WWW%%www/atslog/include/adodb/lang/adodb-nl.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-firebird.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-postgres.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-sybase.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-db2.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-sapdb.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-informix.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-generic.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-mssql.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-access.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-oci8.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-ibase.inc.php
-%%WWW%%www/atslog/include/adodb/datadict/datadict-mysql.inc.php
-%%WWW%%www/atslog/include/adodb/drivers/adodb-postgres64.inc.php
-%%WWW%%www/atslog/include/adodb/drivers/adodb-postgres7.inc.php
-%%WWW%%www/atslog/include/adodb/drivers/adodb-mysqli.inc.php
-%%WWW%%www/atslog/include/adodb/drivers/adodb-postgres8.inc.php
-%%WWW%%www/atslog/include/adodb/drivers/adodb-postgres.inc.php
-%%WWW%%www/atslog/include/adodb/drivers/adodb-mysql.inc.php
-%%WWW%%www/atslog/include/adodb/drivers/adodb-pdo_mysql.inc.php
-%%WWW%%www/atslog/include/adodb/drivers/adodb-mysqlt.inc.php
-%%WWW%%www/atslog/include/adodb/xsl/convert-0.1-0.3.xsl
-%%WWW%%www/atslog/include/adodb/xsl/remove-0.2.xsl
-%%WWW%%www/atslog/include/adodb/xsl/remove-0.3.xsl
-%%WWW%%www/atslog/include/adodb/xsl/convert-0.1-0.2.xsl
-%%WWW%%www/atslog/include/adodb/xsl/convert-0.2-0.1.xsl
-%%WWW%%www/atslog/include/adodb/xsl/convert-0.2-0.3.xsl
-%%WWW%%www/atslog/include/adodb/session/old/adodb-cryptsession.php
-%%WWW%%www/atslog/include/adodb/session/old/adodb-session.php
-%%WWW%%www/atslog/include/adodb/session/old/crypt.inc.php
-%%WWW%%www/atslog/include/adodb/session/old/adodb-session-clob.php
-%%WWW%%www/atslog/include/adodb/session/adodb-sessions.oracle.sql
-%%WWW%%www/atslog/include/adodb/session/adodb-sessions.mysql.sql
-%%WWW%%www/atslog/include/adodb/session/adodb-session-clob2.php
-%%WWW%%www/atslog/include/adodb/session/adodb-session.php
-%%WWW%%www/atslog/include/adodb/session/adodb-cryptsession2.php
-%%WWW%%www/atslog/include/adodb/session/adodb-encrypt-mcrypt.php
-%%WWW%%www/atslog/include/adodb/session/adodb-session-clob.php
-%%WWW%%www/atslog/include/adodb/session/adodb-compress-gzip.php
-%%WWW%%www/atslog/include/adodb/session/crypt.inc.php
-%%WWW%%www/atslog/include/adodb/session/adodb-session2.php
-%%WWW%%www/atslog/include/adodb/session/adodb-sess.txt
-%%WWW%%www/atslog/include/adodb/session/adodb-cryptsession.php
-%%WWW%%www/atslog/include/adodb/session/adodb-encrypt-secret.php
-%%WWW%%www/atslog/include/adodb/session/adodb-encrypt-md5.php
-%%WWW%%www/atslog/include/adodb/session/adodb-encrypt-sha1.php
-%%WWW%%www/atslog/include/adodb/session/adodb-compress-bzip2.php
-%%WWW%%www/atslog/include/adodb/session/adodb-sessions.oracle.clob.sql
-%%WWW%%www/atslog/include/adodb/perf/perf-postgres.inc.php
-%%WWW%%www/atslog/include/adodb/perf/perf-mysql.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-csvlib.inc.php
-%%WWW%%www/atslog/include/adodb/rsfilter.inc.php
-%%WWW%%www/atslog/include/adodb/xmlschema.dtd
-%%WWW%%www/atslog/include/adodb/adodb-pear.inc.php
-%%WWW%%www/atslog/include/adodb/server.php
-%%WWW%%www/atslog/include/adodb/tohtml.inc.php
-%%WWW%%www/atslog/include/adodb/.htaccess
-%%WWW%%www/atslog/include/adodb/adodb-iterator.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-errorpear.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-error.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-perf.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-time.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-pager.inc.php
-%%WWW%%www/atslog/include/adodb/adodb.inc.php
-%%WWW%%www/atslog/include/adodb/pivottable.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-lib.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-exceptions.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-datadict.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-php4.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-xmlschema.inc.php
-%%WWW%%www/atslog/include/adodb/toexport.inc.php
-%%WWW%%www/atslog/include/adodb/adodb-errorhandler.inc.php
-%%WWW%%www/atslog/include/colors/whitewood.php
-%%WWW%%www/atslog/include/colors/standart.php
-%%WWW%%www/atslog/include/colors/classic.php
-%%WWW%%www/atslog/include/colors/.htaccess
-%%WWW%%www/atslog/include/export/2excel.php
-%%WWW%%www/atslog/include/export/.htaccess
-%%WWW%%www/atslog/include/lang/ru_KOI8-R.php
-%%WWW%%www/atslog/include/lang/en_US.php
-%%WWW%%www/atslog/include/lang/ru_1251.php
-%%WWW%%www/atslog/include/lang/.htaccess
-%%WWW%%www/atslog/include/phplot/phplot_data.php
-%%WWW%%www/atslog/include/phplot/LICENSE.GPL
-%%WWW%%www/atslog/include/phplot/rgb.inc.php
-%%WWW%%www/atslog/include/phplot/.htaccess
-%%WWW%%www/atslog/include/phplot/phplot.php
-%%WWW%%www/atslog/include/phplot/LICENSE.PHP_3_0
-%%WWW%%www/atslog/include/set/printfooter.html
-%%WWW%%www/atslog/include/set/menuTable.html
-%%WWW%%www/atslog/include/set/footer.html
-%%WWW%%www/atslog/include/config.inc.php.default
-%%WWW%%@exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
-%%WWW%%www/atslog/include/set/functions.js
-%%WWW%%www/atslog/include/set/commonData.php
-%%WWW%%www/atslog/include/set/.htaccess
-%%WWW%%www/atslog/include/set/header.html
-%%WWW%%www/atslog/include/set/functions.php
-%%WWW%%www/atslog/include/img/colors/standart/arrows/next_right.gif
-%%WWW%%www/atslog/include/img/colors/standart/arrows/pages_right.gif
-%%WWW%%www/atslog/include/img/colors/standart/arrows/end_right.gif
-%%WWW%%www/atslog/include/img/colors/standart/arrows/next_left.gif
-%%WWW%%www/atslog/include/img/colors/standart/arrows/pages_left.gif
-%%WWW%%www/atslog/include/img/colors/standart/arrows/end_left.gif
-%%WWW%%www/atslog/include/img/colors/classic/arrows/next_right.gif
-%%WWW%%www/atslog/include/img/colors/classic/arrows/pages_right.gif
-%%WWW%%www/atslog/include/img/colors/classic/arrows/end_right.gif
-%%WWW%%www/atslog/include/img/colors/classic/arrows/next_left.gif
-%%WWW%%www/atslog/include/img/colors/classic/arrows/pages_left.gif
-%%WWW%%www/atslog/include/img/colors/classic/arrows/end_left.gif
-%%WWW%%www/atslog/include/img/colors/whitewood/arrows/next_right.gif
-%%WWW%%www/atslog/include/img/colors/whitewood/arrows/pages_right.gif
-%%WWW%%www/atslog/include/img/colors/whitewood/arrows/end_right.gif
-%%WWW%%www/atslog/include/img/colors/whitewood/arrows/next_left.gif
-%%WWW%%www/atslog/include/img/colors/whitewood/arrows/pages_left.gif
-%%WWW%%www/atslog/include/img/colors/whitewood/arrows/end_left.gif
-%%WWW%%www/atslog/include/img/dot.colorthree.gif
-%%WWW%%www/atslog/include/img/button_drop.png
-%%WWW%%www/atslog/include/img/rowselected.gif
-%%WWW%%www/atslog/include/img/arrowAsc.gif
-%%WWW%%www/atslog/include/img/rownew.gif
-%%WWW%%www/atslog/include/img/icon.print.gif
-%%WWW%%www/atslog/include/img/cancel.gif
-%%WWW%%www/atslog/include/img/arrow.0.gif
-%%WWW%%www/atslog/include/img/home.gif
-%%WWW%%www/atslog/include/img/key.gif
-%%WWW%%www/atslog/include/img/heart_w_01.gif
-%%WWW%%www/atslog/include/img/arrowDesc.gif
-%%WWW%%www/atslog/include/img/new.gif
-%%WWW%%www/atslog/include/img/heart_w_02.gif
-%%WWW%%www/atslog/include/img/dot.colortwo.gif
-%%WWW%%www/atslog/include/img/heart_w_03.gif
-%%WWW%%www/atslog/include/img/button_edit.png
-%%WWW%%www/atslog/include/img/save.gif
-%%WWW%%www/atslog/include/img/dot.free.gif
-%%WWW%%www/atslog/include/img/arrow.x.gif
-%%WWW%%www/atslog/include/img/arrow.y.gif
-%%WWW%%www/atslog/include/img/open.gif
-%%WWW%%www/atslog/include/img/delete.gif
-%%WWW%%www/atslog/include/img/undo.gif
-%%WWW%%www/atslog/include/img/row.gif
-%%WWW%%www/atslog/include/img/ok.gif
-%%WWW%%www/atslog/include/img/dot.colorone.gif
-%%WWW%%www/atslog/include/img/dot.colorblack.gif
-%%WWW%%www/atslog/include/index.html
-%%WWW%%www/atslog/include/index.php
-%%WWW%%www/atslog/diagram/diagram_bars_dur.php
-%%WWW%%www/atslog/diagram/diagram_bars.php
-%%WWW%%www/atslog/diagram/diagram_pie.php
-%%WWW%%www/atslog/diagram/index.html
-%%WWW%%www/atslog/diagram/index.php
-%%WWW%%www/atslog/lines/index.html
-%%WWW%%www/atslog/lines/index.php
-%%WWW%%www/atslog/calls/query/IntNumDetail.php
-%%WWW%%www/atslog/calls/query/IntCoDetail.php
-%%WWW%%www/atslog/calls/query/CoAll.php
-%%WWW%%www/atslog/calls/query/CoIntDetail.php
-%%WWW%%www/atslog/calls/query/diagram.php
-%%WWW%%www/atslog/calls/query/CoNumDetail.php
-%%WWW%%www/atslog/calls/query/IntNum.php
-%%WWW%%www/atslog/calls/query/IntDetail.php
-%%WWW%%www/atslog/calls/query/CoNum.php
-%%WWW%%www/atslog/calls/query/NumDetail.php
-%%WWW%%www/atslog/calls/query/IntAll.php
-%%WWW%%www/atslog/calls/query/CoDetail.php
-%%WWW%%www/atslog/calls/query/.htaccess
-%%WWW%%www/atslog/calls/query/AllCalls.php
-%%WWW%%www/atslog/calls/query/NumAll.php
-%%WWW%%www/atslog/calls/index.html
-%%WWW%%www/atslog/calls/index.php
-%%WWW%%www/atslog/index.html
-%%WWW%%www/atslog/index.php
-%%WWW%%@dirrmtry www/atslog/users
-%%WWW%%@dirrmtry www/atslog/settings
-%%WWW%%@dirrmtry www/atslog/phonebook
-%%WWW%%@dirrmtry www/atslog/lines
-%%WWW%%@dirrmtry www/atslog/intern
-%%WWW%%@dirrmtry www/atslog/include/set
-%%WWW%%@dirrmtry www/atslog/include/phplot
-%%WWW%%@dirrmtry www/atslog/include/lang
-%%WWW%%@dirrmtry www/atslog/include/img/colors/whitewood/arrows
-%%WWW%%@dirrmtry www/atslog/include/img/colors/whitewood
-%%WWW%%@dirrmtry www/atslog/include/img/colors/standart/arrows
-%%WWW%%@dirrmtry www/atslog/include/img/colors/standart
-%%WWW%%@dirrmtry www/atslog/include/img/colors/classic/arrows
-%%WWW%%@dirrmtry www/atslog/include/img/colors/classic
-%%WWW%%@dirrmtry www/atslog/include/img/colors
-%%WWW%%@dirrmtry www/atslog/include/img
-%%WWW%%@dirrmtry www/atslog/include/export
-%%WWW%%@dirrmtry www/atslog/include/colors
-%%WWW%%@dirrmtry www/atslog/include/adodb/xsl
-%%WWW%%@dirrmtry www/atslog/include/adodb/session/old
-%%WWW%%@dirrmtry www/atslog/include/adodb/session
-%%WWW%%@dirrmtry www/atslog/include/adodb/perf
-%%WWW%%@dirrmtry www/atslog/include/adodb/lang
-%%WWW%%@dirrmtry www/atslog/include/adodb/drivers
-%%WWW%%@dirrmtry www/atslog/include/adodb/datadict
-%%WWW%%@dirrmtry www/atslog/include/adodb
-%%WWW%%@dirrmtry www/atslog/include
-%%WWW%%@dirrmtry www/atslog/diagram
-%%WWW%%@dirrmtry www/atslog/calls/query
-%%WWW%%@dirrmtry www/atslog/calls
-%%WWW%%@dirrmtry www/atslog
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Alcatel 4200.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Definity.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Ericsson BP 250.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/GoldStar GPS-6A.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Hybrex GD-320.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/LG GDK-100.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/LG GDK-162.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/LG GHX-46 (variant 1).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/LG GHX-46 (variant 2).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/LG GMX-1232.TXT
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/LG LDK-100 (variant 1).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/LG LDK-100 (variant 2).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/LG LDK-300 with CID.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/LG LDK-300.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Meridian-1 (variant 1).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Meridian-1 (variant 2).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Multicom A416 (A632).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Multicom BS-24100.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Multicom C1248.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Multicom G1260.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Multicom MAXICOM MP80.TXT
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Multicom Maxicom MXM300.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/NEC NEAX2000 IPS.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/NEC NEAX7400 ICS m100.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic 816.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic DBS-90.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-T1232-RU.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-T1232.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-T336100b.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TA308.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TA308RU 2.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TA616.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TA616RU.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD-500.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD1232 (P231C).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD1232 (P271F).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD1232 (P271F)_2.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD1232.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD500 Type A.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD500 Type B.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD500 Type C.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD500 Type D.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TD816RU.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 A.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 B.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 C.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA600.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Panasonic KX-TEM824.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung DCS Compact II.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung DCS.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung NX-1232.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung NX-820(variant 1).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung NX-820(variant 2).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung OfficeServ 500.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung OfficeServ 7200.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung SKP 56_120.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung SKP-36HX.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung SKP-816.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Samsung iDCS 500.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Siemens HIPATH-3750.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Siemens Hicom 118.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Siemens Hicom 150 OfficeCom (Wide).txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Siemens Hicom-250.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Siemens Hicom-350H.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Telrad.txt
+%%WWW%%%%WWWDIR%%/phonebook/index.html
+%%WWW%%%%WWWDIR%%/phonebook/index.php
+%%WWW%%%%WWWDIR%%/intern/index.html
+%%WWW%%%%WWWDIR%%/intern/index.php
+%%WWW%%%%WWWDIR%%/settings/index.html
+%%WWW%%%%WWWDIR%%/settings/index.php
+%%WWW%%%%WWWDIR%%/users/index.html
+%%WWW%%%%WWWDIR%%/users/index.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-uk1251.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-pl.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-it.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-hu.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-cz.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-ro.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-ca.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-da.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-pt-br.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-de.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-bg.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-sv.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-bgutf8.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-ru1251.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-esperanto.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-cn.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-en.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-ar.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-fr.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-es.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/lang/adodb-nl.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-firebird.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-postgres.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-sybase.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-db2.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-sapdb.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-informix.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-generic.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-mssql.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-access.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-oci8.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-ibase.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/datadict/datadict-mysql.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/drivers/adodb-postgres64.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/drivers/adodb-postgres7.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/drivers/adodb-mysqli.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/drivers/adodb-postgres8.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/drivers/adodb-postgres.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/drivers/adodb-mysql.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/drivers/adodb-pdo_mysql.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/drivers/adodb-mysqlt.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/xsl/convert-0.1-0.3.xsl
+%%WWW%%%%WWWDIR%%/include/adodb/xsl/remove-0.2.xsl
+%%WWW%%%%WWWDIR%%/include/adodb/xsl/remove-0.3.xsl
+%%WWW%%%%WWWDIR%%/include/adodb/xsl/convert-0.1-0.2.xsl
+%%WWW%%%%WWWDIR%%/include/adodb/xsl/convert-0.2-0.1.xsl
+%%WWW%%%%WWWDIR%%/include/adodb/xsl/convert-0.2-0.3.xsl
+%%WWW%%%%WWWDIR%%/include/adodb/session/old/adodb-cryptsession.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/old/adodb-session.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/old/crypt.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/old/adodb-session-clob.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-sessions.oracle.sql
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-sessions.mysql.sql
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-session-clob2.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-session.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-cryptsession2.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-encrypt-mcrypt.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-session-clob.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-compress-gzip.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/crypt.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-session2.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-sess.txt
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-cryptsession.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-encrypt-secret.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-encrypt-md5.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-encrypt-sha1.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-compress-bzip2.php
+%%WWW%%%%WWWDIR%%/include/adodb/session/adodb-sessions.oracle.clob.sql
+%%WWW%%%%WWWDIR%%/include/adodb/perf/perf-postgres.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/perf/perf-mysql.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-csvlib.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/rsfilter.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/xmlschema.dtd
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-pear.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/server.php
+%%WWW%%%%WWWDIR%%/include/adodb/tohtml.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/.htaccess
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-iterator.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-errorpear.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-error.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-perf.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-time.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-pager.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/pivottable.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-lib.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-exceptions.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-datadict.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-php4.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-xmlschema.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/toexport.inc.php
+%%WWW%%%%WWWDIR%%/include/adodb/adodb-errorhandler.inc.php
+%%WWW%%%%WWWDIR%%/include/colors/whitewood.php
+%%WWW%%%%WWWDIR%%/include/colors/standart.php
+%%WWW%%%%WWWDIR%%/include/colors/classic.php
+%%WWW%%%%WWWDIR%%/include/colors/.htaccess
+%%WWW%%@sample %%WWWDIR%%/include/config.inc.php.sample
+%%WWW%%%%WWWDIR%%/include/export/2excel.php
+%%WWW%%%%WWWDIR%%/include/export/.htaccess
+%%WWW%%%%WWWDIR%%/include/lang/ru_KOI8-R.php
+%%WWW%%%%WWWDIR%%/include/lang/en_US.php
+%%WWW%%%%WWWDIR%%/include/lang/ru_1251.php
+%%WWW%%%%WWWDIR%%/include/lang/.htaccess
+%%WWW%%%%WWWDIR%%/include/phplot/phplot_data.php
+%%WWW%%%%WWWDIR%%/include/phplot/LICENSE.GPL
+%%WWW%%%%WWWDIR%%/include/phplot/rgb.inc.php
+%%WWW%%%%WWWDIR%%/include/phplot/.htaccess
+%%WWW%%%%WWWDIR%%/include/phplot/phplot.php
+%%WWW%%%%WWWDIR%%/include/phplot/LICENSE.PHP_3_0
+%%WWW%%%%WWWDIR%%/include/set/printfooter.html
+%%WWW%%%%WWWDIR%%/include/set/menuTable.html
+%%WWW%%%%WWWDIR%%/include/set/footer.html
+%%WWW%%%%WWWDIR%%/include/set/functions.js
+%%WWW%%%%WWWDIR%%/include/set/commonData.php
+%%WWW%%%%WWWDIR%%/include/set/.htaccess
+%%WWW%%%%WWWDIR%%/include/set/header.html
+%%WWW%%%%WWWDIR%%/include/set/functions.php
+%%WWW%%%%WWWDIR%%/include/img/colors/standart/arrows/next_right.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/standart/arrows/pages_right.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/standart/arrows/end_right.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/standart/arrows/next_left.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/standart/arrows/pages_left.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/standart/arrows/end_left.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/classic/arrows/next_right.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/classic/arrows/pages_right.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/classic/arrows/end_right.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/classic/arrows/next_left.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/classic/arrows/pages_left.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/classic/arrows/end_left.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/whitewood/arrows/next_right.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/whitewood/arrows/pages_right.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/whitewood/arrows/end_right.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/whitewood/arrows/next_left.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/whitewood/arrows/pages_left.gif
+%%WWW%%%%WWWDIR%%/include/img/colors/whitewood/arrows/end_left.gif
+%%WWW%%%%WWWDIR%%/include/img/dot.colorthree.gif
+%%WWW%%%%WWWDIR%%/include/img/button_drop.png
+%%WWW%%%%WWWDIR%%/include/img/rowselected.gif
+%%WWW%%%%WWWDIR%%/include/img/arrowAsc.gif
+%%WWW%%%%WWWDIR%%/include/img/rownew.gif
+%%WWW%%%%WWWDIR%%/include/img/icon.print.gif
+%%WWW%%%%WWWDIR%%/include/img/cancel.gif
+%%WWW%%%%WWWDIR%%/include/img/arrow.0.gif
+%%WWW%%%%WWWDIR%%/include/img/home.gif
+%%WWW%%%%WWWDIR%%/include/img/key.gif
+%%WWW%%%%WWWDIR%%/include/img/heart_w_01.gif
+%%WWW%%%%WWWDIR%%/include/img/arrowDesc.gif
+%%WWW%%%%WWWDIR%%/include/img/new.gif
+%%WWW%%%%WWWDIR%%/include/img/heart_w_02.gif
+%%WWW%%%%WWWDIR%%/include/img/dot.colortwo.gif
+%%WWW%%%%WWWDIR%%/include/img/heart_w_03.gif
+%%WWW%%%%WWWDIR%%/include/img/button_edit.png
+%%WWW%%%%WWWDIR%%/include/img/save.gif
+%%WWW%%%%WWWDIR%%/include/img/dot.free.gif
+%%WWW%%%%WWWDIR%%/include/img/arrow.x.gif
+%%WWW%%%%WWWDIR%%/include/img/arrow.y.gif
+%%WWW%%%%WWWDIR%%/include/img/open.gif
+%%WWW%%%%WWWDIR%%/include/img/delete.gif
+%%WWW%%%%WWWDIR%%/include/img/undo.gif
+%%WWW%%%%WWWDIR%%/include/img/row.gif
+%%WWW%%%%WWWDIR%%/include/img/ok.gif
+%%WWW%%%%WWWDIR%%/include/img/dot.colorone.gif
+%%WWW%%%%WWWDIR%%/include/img/dot.colorblack.gif
+%%WWW%%%%WWWDIR%%/include/index.html
+%%WWW%%%%WWWDIR%%/include/index.php
+%%WWW%%%%WWWDIR%%/diagram/diagram_bars_dur.php
+%%WWW%%%%WWWDIR%%/diagram/diagram_bars.php
+%%WWW%%%%WWWDIR%%/diagram/diagram_pie.php
+%%WWW%%%%WWWDIR%%/diagram/index.html
+%%WWW%%%%WWWDIR%%/diagram/index.php
+%%WWW%%%%WWWDIR%%/lines/index.html
+%%WWW%%%%WWWDIR%%/lines/index.php
+%%WWW%%%%WWWDIR%%/calls/query/IntNumDetail.php
+%%WWW%%%%WWWDIR%%/calls/query/IntCoDetail.php
+%%WWW%%%%WWWDIR%%/calls/query/CoAll.php
+%%WWW%%%%WWWDIR%%/calls/query/CoIntDetail.php
+%%WWW%%%%WWWDIR%%/calls/query/diagram.php
+%%WWW%%%%WWWDIR%%/calls/query/CoNumDetail.php
+%%WWW%%%%WWWDIR%%/calls/query/IntNum.php
+%%WWW%%%%WWWDIR%%/calls/query/IntDetail.php
+%%WWW%%%%WWWDIR%%/calls/query/CoNum.php
+%%WWW%%%%WWWDIR%%/calls/query/NumDetail.php
+%%WWW%%%%WWWDIR%%/calls/query/IntAll.php
+%%WWW%%%%WWWDIR%%/calls/query/CoDetail.php
+%%WWW%%%%WWWDIR%%/calls/query/.htaccess
+%%WWW%%%%WWWDIR%%/calls/query/AllCalls.php
+%%WWW%%%%WWWDIR%%/calls/query/NumAll.php
+%%WWW%%%%WWWDIR%%/calls/index.html
+%%WWW%%%%WWWDIR%%/calls/index.php
+%%WWW%%%%WWWDIR%%/index.html
+%%WWW%%%%WWWDIR%%/index.php
+%%WWW%%@dirrmtry %%WWWDIR%%/users
+%%WWW%%@dirrmtry %%WWWDIR%%/settings
+%%WWW%%@dirrmtry %%WWWDIR%%/phonebook
+%%WWW%%@dirrmtry %%WWWDIR%%/lines
+%%WWW%%@dirrmtry %%WWWDIR%%/intern
+%%WWW%%@dirrmtry %%WWWDIR%%/include/set
+%%WWW%%@dirrmtry %%WWWDIR%%/include/phplot
+%%WWW%%@dirrmtry %%WWWDIR%%/include/lang
+%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/whitewood/arrows
+%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/whitewood
+%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/standart/arrows
+%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/standart
+%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/classic/arrows
+%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/classic
+%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors
+%%WWW%%@dirrmtry %%WWWDIR%%/include/img
+%%WWW%%@dirrmtry %%WWWDIR%%/include/export
+%%WWW%%@dirrmtry %%WWWDIR%%/include/colors
+%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/xsl
+%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/session/old
+%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/session
+%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/perf
+%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/lang
+%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/drivers
+%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/datadict
+%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb
+%%WWW%%@dirrmtry %%WWWDIR%%/include
+%%WWW%%@dirrmtry %%WWWDIR%%/diagram
+%%WWW%%@dirrmtry %%WWWDIR%%/calls/query
+%%WWW%%@dirrmtry %%WWWDIR%%/calls
+%%WWW%%@dirrmtry %%WWWDIR%%
 @dirrmtry libexec/atslog
 @dirrmtry %%DATADIR%%/lang
 @dirrmtry %%DATADIR%%/sql
 @dirrmtry %%DATADIR%%
-@dirrmtry %%EXAMPLESDIR%%/textlogs
-@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/textlogs
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
