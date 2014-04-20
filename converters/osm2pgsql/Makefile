@@ -3,7 +3,7 @@
 
 PORTNAME=	osm2pgsql
 PORTVERSION=	0.84.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -19,15 +19,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 GH_COMMIT=	237b125
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf automake libtool aclocal autoheader libtoolize
 CONFIGURE_ARGS=	LUA="${LUA_CMD}" \
 		LUA_INCLUDE="-I${LUA_INCDIR}" \
-		LUA_LIB="-L${LUA_LIBDIR} -llua"
-USES=		gmake
+		LUA_LIB="-L${LUA_LIBDIR} -llua-${LUA_VER}"
+USES=		gmake lua tar:bzip2
 USE_PGSQL=	yes
-USE_LUA=	5.0+
 USE_GNOME=	libxml2
 
 PLIST_FILES=	bin/nodecachefilereader \
