@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.0.12
-PORTREVISION=	1
+PORTVERSION=	4.0.13
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -30,7 +29,7 @@ FORBIDDEN=	no upstream fixes for CVE-2014-1517, see\
 EXPIRATION_DATE=2014-06-21
 
 USES=		perl5
-USE_PERL5=	patch run build
+USE_PERL5=	patch build run
 
 SUB_FILES=	pkg-message
 
@@ -65,7 +64,7 @@ RUN_DEPENDS+=	p5-GD>=1.20:${PORTSDIR}/graphics/p5-GD \
 .endif
 
 .if ${PORT_OPTIONS:MCHARTING_MODULES}
-RUN_DEPENDS+=	p5-Chart>=2.1:${PORTSDIR}/graphics/p5-Chart
+RUN_DEPENDS+=	p5-Chart>=2.1.0:${PORTSDIR}/graphics/p5-Chart
 .endif
 
 .if ${PORT_OPTIONS:MPATCH_VIEWER}
@@ -138,6 +137,11 @@ RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 RUN_DEPENDS+=	p5-Authen-Radius>=0:${PORTSDIR}/security/p5-Authen-Radius
 .endif
 
+post-extract:
+	@${RM} -rf ${WRKSRC}/.bzr
+	@${RM} -f ${WRKSRC}/.bzrignore ${WRKSRC}/.gitignore ${WRKSRC}/.gitrev \
+		${WRKSRC}/docs/en/README.docs ${WRKSRC}/docs/en/html/Bugzilla-Guide.proc
+
 post-patch:
 	@${PERL} -pi -e 's/(default => ON_WINDOWS.+)apache/$$1www/' \
 		${WRKSRC}/Bugzilla/Install/Localconfig.pm
@@ -150,8 +154,9 @@ post-patch:
 		-e 's!/usr/lib/sendmail!/usr/sbin/sendmail!g; s=/usr/bin/perl=${PERL}=g' {} \+
 	@${FIND} ${WRKSRC}/docs -type f | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e "s!/var/www/html/bugzilla!${WWWDIR}!"
-	@${FIND} ${WRKSRC} \( -name ".git*" -or -name "*.orig" -or -name "*.bak" \
-		-or -name ".bzr*" -or -name "README.docs" \) | ${XARGS} ${RM} -rf
+
+pre-install:
+	@${FIND} ${WRKSRC} -type f \( -name "*.orig" -or -name "*.bak" \) -delete
 
 do-install:	.SILENT
 	${MKDIR} ${STAGEDIR}${WWWDIR}
@@ -163,16 +168,13 @@ do-install:	.SILENT
 .endfor
 	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
 	@${MKDIR} ${EMPTY_DIRS_LIST:S!^!${STAGEDIR}${WWWDIR}/!}
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/)
-.endif
 
 .if ${PORT_OPTIONS:MCONTRIB}
-	@cd ${WRKSRC}/contrib && \
+	@(cd ${WRKSRC}/contrib && \
 		${FIND} . -type d -exec ${MKDIR} "${STAGEDIR}${WWWDIR}/contrib/{}" \; && \
-		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${WWWDIR}/contrib/{}" \;
+		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${WWWDIR}/contrib/{}" \;)
 .endif
 
 .include <bsd.port.mk>
