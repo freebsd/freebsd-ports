@@ -33,6 +33,7 @@ man/man1/igawk.1.gz
 man/man3/filefuncs.3am.gz
 man/man3/fnmatch.3am.gz
 man/man3/fork.3am.gz
+man/man3/inplace.3am.gz
 man/man3/ordchr.3am.gz
 man/man3/readdir.3am.gz
 man/man3/readfile.3am.gz
@@ -56,11 +57,13 @@ share/awk/ord.awk
 share/awk/passwd.awk
 share/awk/quicksort.awk
 share/awk/readable.awk
+share/awk/readfile.awk
 share/awk/rewind.awk
 share/awk/round.awk
 share/awk/strtonum.awk
 share/awk/walkarray.awk
 share/awk/zerofile.awk
+%%NLS%%share/locale/ca/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gawk.mo
