@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cimg
-PORTVERSION=	1.5.7
-PORTREVISION=	3
+PORTVERSION=	1.5.8
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -31,7 +30,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
 BUILD_WRKSRC=	${WRKSRC}/examples
 MAKE_ENV=	X11PATH=${LOCALBASE} LOCALBASE=${LOCALBASE}
 CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS} -Wl,--verbose
+LDFLAGS+=	${PTHREAD_LIBS}
 
 .if !defined(NOPORTDOCS)
 USES+=		gmake
@@ -45,8 +44,9 @@ LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png		\
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR	\
 		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app	\
 		libfftw3.so:${PORTSDIR}/math/fftw3		\
+		libopencv_legacy.so:${PORTSDIR}/graphics/opencv	\
+		libopencv_core.so:${PORTSDIR}/graphics/opencv-core\
 		libGraphicsMagick.so.14:${PORTSDIR}/graphics/GraphicsMagick13
-#		libopencv_legacy.so:${PORTSDIR}/graphics/opencv
 ALL_TARGET=	Mlinux
 . else
 ALL_TARGET=	dlinux

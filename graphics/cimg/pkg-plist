@@ -445,6 +445,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/screenshots.shtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CImg_demo.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CMakeLists.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/captcha.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/curve_editor2d.cpp
