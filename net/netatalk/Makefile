@@ -26,9 +26,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-uams-path=${PREFIX}/libexec/netatalk-uams \
 			--with-bdb=${LOCALBASE}
 
-OPTIONS_DEFINE=	APPLETALK SRVLOC PAM TIMELORD KRB5 ZEROCONF LDAP SENDFILE
-OPTIONS_DEFAULT=APPLETALK
-APPLETALK_DESC=	AppleTalk protocol support (where supported)
+OPTIONS_DEFINE=	SRVLOC PAM TIMELORD KRB5 ZEROCONF LDAP SENDFILE
 SRVLOC_DESC=	Service Location Protocol support
 TIMELORD_DESC=	Timelord network time service
 KRB5_DESC=	Kerberos V UAM
@@ -41,6 +39,12 @@ LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-1* yudit-[0-9]*
 
+.if exists(/usr/include/netatalk/ddp.h)
+OPTIONS_DEFINE+=APPLETALK
+OPTIONS_DEFAULT=APPLETALK
+APPLETALK_DESC=	AppleTalk protocol support
+.endif
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKRB5}
@@ -50,7 +54,7 @@ PLIST_SUB+=		NETATALKKRB5=""
 PLIST_SUB+=		NETATALKKRB5="@comment "
 .endif
 
-.if ${OSVERSION} < 1100013 && ${PORT_OPTIONS:MAPPLETALK}
+.if ${PORT_OPTIONS:MAPPLETALK}
 CONFIGURE_ARGS+=	--enable-ddp
 PLIST_SUB+=		APPLETALK=""
 FILES+=			atalkd.conf papd.conf
