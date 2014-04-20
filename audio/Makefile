@@ -595,6 +595,7 @@
     SUBDIR += py-cddb
     SUBDIR += py-discogs-client
     SUBDIR += py-eyed3
+    SUBDIR += py-eyed3-06
     SUBDIR += py-fastaudio
     SUBDIR += py-id3
     SUBDIR += py-karaoke
