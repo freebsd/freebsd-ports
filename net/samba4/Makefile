@@ -1,7 +1,7 @@
 # Created by: timur@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME?=		${SAMBA4_PORTNAME}
+PORTNAME?=		${SAMBA4_BASENAME}4
 PORTVERSION?=		${SAMBA4_VERSION}
 PORTREVISION?=		0
 CATEGORIES?=		net
@@ -14,11 +14,13 @@ COMMENT?=		A free SMB/CIFS and AD/DC server and client for UNIX
 
 LICENSE=		GPLv3
 
-CONFLICTS?=		*samba3[2-6]-3.*
+CONFLICTS?=		*samba3[2-6]-3.* samba41-4.1.*
+
+SAMBA4_PORT=		${PORTNAME}
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.0.16
+SAMBA4_VERSION=		4.0.17
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -56,23 +58,18 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--with-cachedir="${SAMBA4_LOCKDIR}" \
 			--with-privatedir="${SAMBA4_PRIVATEDIR}" \
 			--with-logfilebase="${SAMBA4_LOGDIR}"
-
+# Support staging
 DESTDIRNAME=		--destdir
-
-WAF_TOOL=		buildtools/bin/waf
-HAS_CONFIGURE=		yes
-CONFIGURE_SCRIPT=	${WAF_TOOL} configure
-CONFIGURE_LOG=		bin/config.log
 # Flags
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 
-USE_PYTHON_BUILD=	2
-
-USE_PYTHON=		yes
-USES=			compiler perl5 pkgconfig iconv
+USE_PYTHON=		2
+USES=			shebangfix compiler perl5 pkgconfig iconv readline
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
+WAF_TOOL=		buildtools/bin/waf
+CONFIGURE_LOG=		bin/config.log
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
@@ -95,8 +92,8 @@ LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
 # IDL compiler
 BUILD_DEPENDS+=		p5-Parse-Pidl>=4.0.0:${PORTSDIR}/devel/p5-Parse-Pidl
 # talloc
-BUILD_DEPENDS+=		talloc>=2.0.8:${PORTSDIR}/devel/talloc
-RUN_DEPENDS+=		talloc>=2.0.8:${PORTSDIR}/devel/talloc
+BUILD_DEPENDS+=		talloc>=2.1.0:${PORTSDIR}/devel/talloc
+RUN_DEPENDS+=		talloc>=2.1.0:${PORTSDIR}/devel/talloc
 SAMBA4_BUNDLED_LIBS+=	!talloc
 # tevent
 BUILD_DEPENDS+=		tevent>=0.9.18:${PORTSDIR}/devel/tevent
@@ -116,7 +113,7 @@ SAMBA4_BUNDLED_LIBS+=	com_err
 # Options
 OPTIONS_DEFINE=		ACL_SUPPORT ADS AIO_SUPPORT CUPS DEBUG \
 			DNSUPDATE FAM_SUPPORT LDAP PAM_SMBPASS \
-			PTHREADPOOL QUOTAS SWAT SYSLOG UTMP WINBIND
+			PTHREADPOOL QUOTAS SWAT SYSLOG UTMP
 
 OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
 
@@ -132,9 +129,6 @@ PTHREADPOOL_DESC=	Pthread pool
 QUOTAS_DESC=		Disk quota support
 SWAT_DESC=		SWAT WebGUI
 UTMP_DESC=		UTMP accounting support
-WINBIND_DESC=		WinBIND support
-
-FAM_SUPPORT_USES=	fam
 ##############################################################################
 OPTIONS_DEFINE+=	DEVELOPER MANPAGES EXP_MODULES
 
@@ -154,25 +148,15 @@ OPTIONS_DEFAULT+=	AVAHI
 
 .include <bsd.port.options.mk>
 
-# !SAMBA4_SUBPORT
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if !defined(SAMBA4_SUBPORT)
-
 CONFIGURE_ARGS+=	\
 			--with-pam \
 			--with-iconv \
+			--with-winbind \
 			--without-gettext \
 			--with-sendfile-support \
 			--builtin-libraries=smbclient \
 			${ICONV_CONFIGURE_BASE}
 
-# No fancy error messages
-.if ${COMPILER_TYPE} == "clang"
-CFLAGS+=		-fno-color-diagnostics
-.endif
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
 .if ${ARCH} == "amd64"
 CFLAGS+=		-fno-omit-frame-pointer
@@ -290,6 +274,7 @@ CONFIGURE_ARGS+=	--without-dnsupdate
 
 # https://bugzilla.samba.org/show_bug.cgi?id=9545
 .if ${PORT_OPTIONS:MFAM_SUPPORT}
+USES+=			fam
 CONFIGURE_ARGS+=	--with-fam
 WANT_EXP_MODULES+=	vfs_notify_fam
 SAMBA4_MODULES+=	vfs_notify_fam
@@ -342,14 +327,6 @@ CONFIGURE_ARGS+=	--with-utmp
 CONFIGURE_ARGS+=	--without-utmp
 .endif
 
-.if ${PORT_OPTIONS:MWINBIND}
-CONFIGURE_ARGS+=	--with-winbind
-PLIST_SUB+=		WINBIND=""
-.else
-CONFIGURE_ARGS+=	--without-winbind
-PLIST_SUB+=		WINBIND="@comment "
-.endif
-
 .if defined(SAMBA4_WANT_ADS)
 CONFIGURE_ARGS+=	--with-ads
 .else
@@ -358,11 +335,19 @@ CONFIGURE_ARGS+=	--without-ads
 
 .if defined(SAMBA4_WANT_LDAP)
 USE_OPENLDAP=		yes
+#WANT_OPENLDAP_SASL=	yes
 CONFIGURE_ARGS+=	--with-ldap
 PLIST_SUB+=		LDAP=""
 .else
 CONFIGURE_ARGS+=	--without-ldap
 PLIST_SUB+=		LDAP="@comment "
+.endif
+
+.if ! ${PORT_OPTIONS:MMANPAGES}
+CONFIGURE_ENV+=		XSLTPROC="true"
+.else
+BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+			xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
@@ -380,12 +365,12 @@ PLIST_REINPLACE+=	${m}
 PLIST_REINPLACE_${m:U}=	s|^@comment ${m} ||g
 .endfor
 ##############################################################################
-.if ! ${PORT_OPTIONS:MMANPAGES}
-CONFIGURE_ENV+=		XSLTPROC="true"
-.else
-BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-			xsltproc:${PORTSDIR}/textproc/libxslt
+# !SAMBA4_SUBPORT
 .endif
+
+.include <bsd.port.pre.mk>
+
+.if !defined(SAMBA4_SUBPORT)
 
 SAMBA4_SUB=		SAMBA4_LOGDIR="${SAMBA4_LOGDIR}" \
 			SAMBA4_RUNDIR="${SAMBA4_RUNDIR}" \
@@ -398,9 +383,17 @@ SAMBA4_SUB=		SAMBA4_LOGDIR="${SAMBA4_LOGDIR}" \
 PLIST_SUB+=		${SAMBA4_SUB}
 SUB_LIST+=		${SAMBA4_SUB}
 
-USE_RC_SUBR=		${SAMBA4_PORTNAME}
-SUB_FILES=		pkg-install pkg-message README.FreeBSD
-
+USE_RC_SUBR=		samba_server
+SUB_FILES=		pkg-message README.FreeBSD
+# Make sure that the right version of Python is used by the tools
+# https://bugzilla.samba.org/show_bug.cgi?id=7305
+python_CMD=		${PYTHON_CMD}
+python_OLD_CMD=		${SETENV} python
+SHEBANG_FILES=		${PATCH_WRKSRC}/source4/scripting/bin/*
+# No fancy color error messages
+.if ${COMPILER_TYPE} == "clang"
+CFLAGS+=		-fno-color-diagnostics
+.endif
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
 
@@ -442,6 +435,7 @@ SAMBA_MAN8+=		eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 
 PORTDOCS=		README.FreeBSD
 
+CONFIGURE_TARGET=	configure
 ALL_TARGET=		build
 INSTALL_TARGET=		install
 
@@ -449,15 +443,6 @@ IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with 
 
 post-extract:
 			@${RM} -rf ${WRKSRC}/pidl
-
-# Use threading (or multiprocessing) but not thread (renamed in python 3+).
-pre-configure:
-			@if ! ${PYTHON_CMD} -c "import multiprocessing;" 2>/dev/null; then \
-				${ECHO_CMD}; \
-				${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE_NONTHREAD_PYTHON:Q}.; \
-				${ECHO_CMD}; \
-				${FALSE}; \
-			fi
 
 post-patch:
 			@${REINPLACE_CMD} -e 's|$${PKGCONFIGDIR}|${PKGCONFIGDIR}|g' \
@@ -468,13 +453,40 @@ post-patch:
 			@${REINPLACE_CMD} -e 's|%%GDB_CMD%%|${GDB_CMD}|g' \
 				${PATCH_WRKSRC}/buildtools/scripts/abi_gen.sh
 			@${REINPLACE_CMD} -e 's|%%SAMBA4_CONFIG%%|${SAMBA4_CONFIG}|g' \
-				${PATCH_WRKSRC}/dynconfig/wscript \
-				${PATCH_WRKSRC}/dynconfig/config.m4
-# Make sure that the right version of Python is used by the tools
-# https://bugzilla.samba.org/show_bug.cgi?id=7305
-			@for f in ${PATCH_WRKSRC}/source4/scripting/bin/* ${WRKSRC}/${WAF_TOOL}; do \
-				${REINPLACE_CMD} -e '1,1 s|.*python.*|#!${PYTHON_CMD}|' $${f}; \
-			done
+				${PATCH_WRKSRC}/dynconfig/wscript
+
+# Use threading (or multiprocessing) but not thread (renamed in python 3+).
+pre-configure:
+			@if ! ${PYTHON_CMD} -c "import multiprocessing;" 2>/dev/null; then \
+				${ECHO_CMD}; \
+				${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE_NONTHREAD_PYTHON:Q}.; \
+				${ECHO_CMD}; \
+				${FALSE}; \
+			fi
+
+do-configure:
+			@(cd ${CONFIGURE_WRKSRC} && \
+			    ${SET_LATE_CONFIGURE_ARGS} \
+				if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+					CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+					LDFLAGS="${LDFLAGS}" \
+					INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+					INSTALL_DATA="${INSTALL_DATA}" \
+					INSTALL_LIB="${INSTALL_LIB}" \
+					INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+					INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+					${CONFIGURE_ENV} ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/${WAF_TOOL} ${CONFIGURE_ARGS} ${CONFIGURE_TARGET}; then \
+						${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
+						(${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+						${FALSE}; \
+				fi)
+
+# XXX: Gross hack to allow build newer Samba while old one is installed.
+# This implies that LINKFLAGS_PYEMBED contains flags which are already
+# used in other parts of LINKFLAGS, namely -L$(LOCALBASE)/lib and -pthread
+post-configure:
+	-${REINPLACE_CMD} -e 's|LINKFLAGS_PYEMBED.*|LINKFLAGS_PYEMBED = []|' \
+		${CONFIGURE_WRKSRC}/bin/c4che/default.cache.py
 
 pre-build:
 .if ! ${PORT_OPTIONS:MMANPAGES}
@@ -521,7 +533,12 @@ post-install:
 			@${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz
 .endif
 # Run post-install script
-			@${SETENV} STAGEDIR=${STAGEDIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.for dir in ${SAMBA4_LOGDIR} ${SAMBA4_RUNDIR} ${SAMBA4_LOCKDIR} ${STAGEDIR}${SAMBA4_MODULEDIR} ${SAMBA4_PRIVATEDIR}
+			@${MKDIR} "${STAGEDIR}${dir}"
+.endfor
+.for dir in auth bind9 gensec gpext idmap ldb nss_info pdb perfcount process_model service vfs
+			@${MKDIR} "${STAGEDIR}${SAMBA4_MODULEDIR}/${dir}"
+.endfor
 
 .if ${PORT_OPTIONS:MDEVELOPER}
 test: build
