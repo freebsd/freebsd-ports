@@ -3,7 +3,7 @@
 #    $MCom: ports/multimedia/gstreamer1-libav/Makefile,v 1.4 2013/01/15 21:43:45 kwm Exp $
 
 PORTNAME=	gstreamer1-libav
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${PORTVERSION}
@@ -17,11 +17,12 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		orc>=0.4.16:${PORTSDIR}/devel/orc
 LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
 
-USES=		compiler gmake pkgconfig tar:xz
+USES=		compiler gmake libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
-PLIST_SUB=	VERSION="1.0"
+INSTALL_TARGET=	install-strip
+PLIST_FILES=	lib/gstreamer-1.0/libgstlibav.so
 
 .include <bsd.port.pre.mk>
 
@@ -43,8 +44,5 @@ post-patch:
 		${WRKSRC}/gst-libs/ext/libav/library.mak
 	@${REINPLACE_CMD} '/libgstlibav_la_LDFLAGS =/s/$$/ -Wl,-Bsymbolic/' \
 		${WRKSRC}/ext/libav/Makefile.in
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0/libgstlibav.so
 
 .include <bsd.port.post.mk>
