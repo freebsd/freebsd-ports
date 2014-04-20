@@ -2,30 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	pllua
-PORTVERSION=	0.3.2
+PORTVERSION=	1.0
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2401/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/3481/
 PKGNAMEPREFIX=	postgresql-
 
 MAINTAINER=	sunghyuk@gmail.com
 COMMENT=	PL/Lua procedural language for PostgreSQL database
 
-USES=		gmake
+USES=		gmake lua
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	91-
-USE_LUA=	5.1+
+INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|%LUA_INC%|${LUA_INCDIR}|g' \
-			-e 's|%LUA_LIB%|${LUA_LIBDIR}|g' \
-			${WRKSRC}/Makefile
-post-install:
-	@${ECHO_MSG} ''
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ''
+MAKE_ARGS=	LUAINC=-I${LUA_INCDIR} \
+		LUALIB="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 
 .include <bsd.port.mk>
