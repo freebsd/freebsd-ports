@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Searches for files with equal content
 
 USES=		zip
