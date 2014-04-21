@@ -6034,3 +6034,4 @@ security/pam_smb||2014-04-18|Has expired: Unmaintained since 2002
 devel/lua-redis-parser||2014-04-18|Has expired: Broken for more than 6 months
 biology/finchtv||2014-04-18|Has expired: Broken for more than 6 months
 net-im/ari-yahoo||2014-04-18|Has expired: Broken for more than 1 year (http://www.icculus.org/ari-yahoo/)
+www/sams||2014-04-21|Depends on PHP 4 which was removed two years ago
