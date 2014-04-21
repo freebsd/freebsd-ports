@@ -1,3 +1,4 @@
+etc/%%SAMBA_CONFIG%%.sample
 bin/eventlogadm
 bin/findsmb
 bin/make_smbpasswd
@@ -247,3 +248,9 @@ sbin/nmbd
 %%PORTDOCS%%%%DOCSDIR%%/registry/WindowsTerminalServer.reg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/registry
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%SAMBA_PRIVATEDIR%%
+@dirrmtry %%SAMBA_LOCKDIR%%
+@dirrmtry %%SAMBA_LOGDIR%%
+@dirrmtry %%SAMBA_SPOOL%%
+@dirrmtry %%SAMBA_RUNDIR%%/nmbd
+@dirrmtry %%SAMBA_RUNDIR%%

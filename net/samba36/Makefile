@@ -37,7 +37,7 @@ USE_LDCONFIG=		${SAMBA_LIBDIR}
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
 # directories
-VARDIR?=		${DESTDIR}/var
+VARDIR?=		/var
 SAMBA_SPOOL?=		${VARDIR}/spool/${SAMBA_BASENAME}
 SAMBA_LOGDIR=		${VARDIR}/log/${SAMBA_BASENAME}
 SAMBA_RUNDIR=		${VARDIR}/run/${SAMBA_BASENAME}
@@ -125,7 +125,6 @@ WINBIND_DESC=		WinBIND support
 # !SAMBA_SUBPORT
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # There are reports that on ARM PIE makes binaries to core dump(#149186)
@@ -142,7 +141,7 @@ CONFIGURE_ARGS+=	--disable-cups --disable-fam --without-winbind \
 .else
 # Samba server itself
 USE_RC_SUBR=		${SAMBA_BASENAME}
-SUB_FILES=		pkg-install pkg-message pkg-deinstall smb.conf.sample
+SUB_FILES=		pkg-message smb.conf.sample
 
 PLIST=			${WRKDIR}/.PLIST
 # We don't (yet) have clustered FS for cluster support
@@ -364,13 +363,13 @@ post-patch:
 
 .if !defined(SAMBA_SUBPORT)
 # Samba server only
-MAN1=		dbwrap_tool.1 findsmb.1 \
+SAMBA_MAN1=	dbwrap_tool.1 findsmb.1 \
 		log2pcap.1 nmblookup.1 ntlm_auth.1 profiles.1 rpcclient.1 \
 		sharesec.1 smbcacls.1 smbclient.1 smbcontrol.1 smbcquotas.1 \
 		smbget.1 smbstatus.1 smbtar.1 smbtree.1 testparm.1 vfstest.1
-MAN5=		lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
-MAN7=		samba.7
-MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
+SAMBA_MAN5=	lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
+SAMBA_MAN7=	samba.7
+SAMBA_MAN8=	eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
 		smbspool.8 idmap_nss.8 idmap_tdb.8 idmap_tdb2.8 \
 		vfs_acl_tdb.8 vfs_acl_xattr.8 \
 		vfs_audit.8 vfs_cap.8 vfs_default_quota.8 vfs_extd_audit.8 \
@@ -381,62 +380,62 @@ MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
 		vfs_streams_xattr.8 vfs_xattr_tdb.8
 
 .if ${PORT_OPTIONS:MWINBIND}
-MAN1+=		wbinfo.1
-MAN5+=		pam_winbind.conf.5
-MAN7+=		winbind_krb5_locator.7
-MAN8+=		pam_winbind.8 winbindd.8
+SAMBA_MAN1+=	wbinfo.1
+SAMBA_MAN5+=	pam_winbind.conf.5
+SAMBA_MAN7+=	winbind_krb5_locator.7
+SAMBA_MAN8+=	pam_winbind.8 winbindd.8
 .endif
 
 .if ${PORT_OPTIONS:MSWAT}
-MAN8+=		swat.8
+SAMBA_MAN8+=	swat.8
 .endif
 
 .if ${PORT_OPTIONS:MFAM_SUPPORT}
-MAN8+=		vfs_notify_fam.8
+SAMBA_MAN8+=	vfs_notify_fam.8
 .endif
 
 .if ${PORT_OPTIONS:MPTHREADPOOL}
-MAN8+=		vfs_aio_pthread.8
+SAMBA_MAN8+=	vfs_aio_pthread.8
 .endif
 
 .if defined(SAMBA_WANT_LDAP)
-MAN8+=		idmap_ldap.8
+SAMBA_MAN8+=	idmap_ldap.8
 .endif
 
 .if !empty(WANT_EXP_MODULES:Midmap_ad)
-MAN8+=		idmap_ad.8
+SAMBA_MAN8+=	idmap_ad.8
 .endif
 
 .if !empty(WANT_EXP_MODULES:Midmap_adex)
-MAN8+=		idmap_adex.8
+SAMBA_MAN8+=	idmap_adex.8
 .endif
 
 .if !empty(WANT_EXP_MODULES:Midmap_hash)
-MAN8+=		idmap_hash.8
+SAMBA_MAN8+=	idmap_hash.8
 .endif
 
 .if !empty(WANT_EXP_MODULES:Midmap_rid)
-MAN8+=		idmap_rid.8
+SAMBA_MAN8+=	idmap_rid.8
 .endif
 
 .if !empty(WANT_EXP_MODULES:Mvfs_cacheprime)
-MAN8+=		vfs_cacheprime.8
+SAMBA_MAN8+=	vfs_cacheprime.8
 .endif
 
 .if !empty(WANT_EXP_MODULES:Mvfs_catia)
-MAN8+=		vfs_catia.8
+SAMBA_MAN8+=	vfs_catia.8
 .endif
 
 .if !empty(WANT_EXP_MODULES:Mvfs_commit)
-MAN8+=		vfs_commit.8
+SAMBA_MAN8+=	vfs_commit.8
 .endif
 
 .if !empty(WANT_EXP_MODULES:Mvfs_dirsort)
-MAN8+=		vfs_dirsort.8
+SAMBA_MAN8+=	vfs_dirsort.8
 .endif
 
 .if !empty(WANT_EXP_MODULES:Mvfs_streams_depot)
-MAN8+=		vfs_streams_depot.8
+SAMBA_MAN8+=	vfs_streams_depot.8
 .endif
 
 SAMBA_SUB=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
@@ -475,7 +474,7 @@ post-configure:
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
 
 pre-install:
-	-@${FIND} "${SAMBA_MODULEDIR}" -type f -o -type l 2>/dev/null | ${SORT} | ${SED} -E 's|^${PREFIX}/?||;' > ${WRKDIR}/.PLIST.exclude
+	-@${FIND} "${STAGEDIR}${SAMBA_MODULEDIR}" -type f -o -type l 2>/dev/null | ${SORT} | ${SED} -E 's|^${STAGEDIR}${PREFIX}/?||;' > ${WRKDIR}/.PLIST.exclude
 	@${CAT} ${PKGDIR}/pkg-plist > ${PLIST}
 .if ${PORT_OPTIONS:MSWAT}
 	@${CAT} ${PKGDIR}/pkg-plist.swat >> ${PLIST}
@@ -483,53 +482,59 @@ pre-install:
 
 post-install:
 .for sect in 1 3 5 7 8
-	@${MKDIR} ${MAN${sect}PREFIX}/man/man${sect}
-.	for man in ${MAN${sect}}
-	    @${INSTALL_MAN} "${WRKDIR}/${DISTNAME}/docs/manpages/${man}" "${MAN${sect}PREFIX}/man/man${sect}"
+	@${MKDIR} ${STAGEDIR}${MAN${sect}PREFIX}/man/man${sect}
+.	for man in ${SAMBA_MAN${sect}}
+	    @${INSTALL_MAN} "${WRKDIR}/${DISTNAME}/docs/manpages/${man}" "${STAGEDIR}${MAN${sect}PREFIX}/man/man${sect}"
+	    ${ECHO_CMD} "man/man${sect}/${man}.gz" >> ${TMPPLIST}
 .	endfor
 .endfor
 # Put examples in place
-	@${MKDIR} "${EXAMPLESDIR}"
-	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/* "${EXAMPLESDIR}"
+	@${MKDIR} "${STAGEDIR}${EXAMPLESDIR}"
+	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/* "${STAGEDIR}${EXAMPLESDIR}"
 .if ${PORT_OPTIONS:MPAM_SMBPASS}
-	@${MKDIR} "${EXAMPLESDIR}/pam_smbpass"
-	@${CP} -Rp ${WRKSRC}/pam_smbpass/samples/* "${EXAMPLESDIR}/pam_smbpass"
+	@${MKDIR} "${STAGEDIR}${EXAMPLESDIR}/pam_smbpass"
+	@${CP} -Rp ${WRKSRC}/pam_smbpass/samples/* "${STAGEDIR}${EXAMPLESDIR}/pam_smbpass"
 .endif
-	${INSTALL_DATA} "${WRKDIR}/smb.conf.sample" "${EXAMPLESDIR}/${SAMBA_CONFIG}.sample"
-	${INSTALL_SCRIPT} "${WRKSRC}/script/mksmbpasswd.sh" "${PREFIX}/bin/make_smbpasswd"
+	${INSTALL_DATA} "${WRKDIR}/smb.conf.sample" "${STAGEDIR}${EXAMPLESDIR}/${SAMBA_CONFIG}.sample"
+	${INSTALL_DATA} "${WRKDIR}/smb.conf.sample" "${STAGEDIR}${SAMBA_CONFDIR}/${SAMBA_CONFIG}.sample"
+	${INSTALL_SCRIPT} "${WRKSRC}/script/mksmbpasswd.sh" "${STAGEDIR}${PREFIX}/bin/make_smbpasswd"
 # Winbind
 .if ${PORT_OPTIONS:MWINBIND}
-	${INSTALL_PROGRAM} "${WRKDIR}/${DISTNAME}/nsswitch/nss_winbind.so" "${SAMBA_LIBDIR}/nss_winbind.so.1"
-	${INSTALL_PROGRAM} "${WRKDIR}/${DISTNAME}/nsswitch/nss_wins.so" "${SAMBA_LIBDIR}/nss_wins.so.1"
-	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_winbind.so" "${SAMBA_LIBDIR}"
+	${INSTALL_PROGRAM} "${WRKDIR}/${DISTNAME}/nsswitch/nss_winbind.so" "${STAGEDIR}${SAMBA_LIBDIR}/nss_winbind.so.1"
+	${INSTALL_PROGRAM} "${WRKDIR}/${DISTNAME}/nsswitch/nss_wins.so" "${STAGEDIR}${SAMBA_LIBDIR}/nss_wins.so.1"
+	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_winbind.so" "${STAGEDIR}${SAMBA_LIBDIR}"
 .endif
 .if ${PORT_OPTIONS:MPAM_SMBPASS}
-	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_smbpass.so" "${SAMBA_LIBDIR}"
+	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_smbpass.so" "${STAGEDIR}${SAMBA_LIBDIR}"
 .endif
 # smbtorture
 .if ${PORT_OPTIONS:MSMBTORTURE}
-	${INSTALL_PROGRAM} "${WRKSRC}/bin/smbtorture" "${PREFIX}/bin"
+	${INSTALL_PROGRAM} "${WRKSRC}/bin/smbtorture" "${STAGEDIR}${PREFIX}/bin"
 .endif
 # Lib
-	@${FIND} "${SAMBA_MODULEDIR}" -type f -o -type l | ${SED} -E 's|^${PREFIX}/?||;' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}
-	@for d in `${FIND} "${SAMBA_MODULEDIR}" -type d | ${SORT} -r`; do \
-	    ${ECHO_CMD} "@unexec ${RMDIR} \"$$d\" 2>/dev/null || true" >> ${TMPPLIST}; \
+	@${FIND} "${STAGEDIR}${SAMBA_MODULEDIR}" -type f -o -type l | ${SED} -E 's|^${STAGEDIR}${PREFIX}/?||;' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}
+	@for d in `${FIND} "${STAGEDIR}${SAMBA_MODULEDIR}" -type d | ${SORT} -r | ${SED} -E 's|^${STAGEDIR}${PREFIX}/?||;'`; do \
+	    ${ECHO_CMD} "@unexec rmdir >/dev/null 2>&1 \"%D/$$d\" || true" >> ${TMPPLIST}; \
 	done
 # Documentation
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -Rp "${WRKDIR}/${DISTNAME}/docs/registry" "${DOCSDIR}"
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${CP} -Rp "${WRKDIR}/${DISTNAME}/docs/registry" "${STAGEDIR}${DOCSDIR}"
 .	for f in Samba3-ByExample.pdf Samba3-HOWTO.pdf Samba3-Developers-Guide.pdf
-	    @${INSTALL_DATA} "${WRKDIR}/${DISTNAME}/docs/${f}" "${DOCSDIR}"
+	    @${INSTALL_DATA} "${WRKDIR}/${DISTNAME}/docs/${f}" "${STAGEDIR}${DOCSDIR}"
 .	endfor
 .	for f in README COPYING MAINTAINERS.txt PFIF.txt Manifest Roadmap \
 		WHATSNEW.txt docs/THANKS docs/history
-	    @${INSTALL_DATA} "${WRKDIR}/${DISTNAME}/${f}" "${DOCSDIR}"
+	    @${INSTALL_DATA} "${WRKDIR}/${DISTNAME}/${f}" "${STAGEDIR}${DOCSDIR}"
 .	endfor
-	@${INSTALL_DATA} "${FILESDIR}/README.FreeBSD" "${DOCSDIR}"
+	@${INSTALL_DATA} "${FILESDIR}/README.FreeBSD" "${STAGEDIR}${DOCSDIR}"
 .endif
 # Run post-install script
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.for dir in ${SAMBA_SPOOL} ${SAMBA_LOGDIR} ${SAMBA_RUNDIR} ${SAMBA_LOCKDIR} ${SAMBA_PRIVATEDIR}
+	@${MKDIR} "${STAGEDIR}${dir}"
+.endfor
+	@${CHMOD} 1777 ${STAGEDIR}${SAMBA_SPOOL}
+	@${CHMOD} 0700 ${STAGEDIR}${SAMBA_PRIVATEDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .if ${PORT_OPTIONS:MMAX_DEBUG}
