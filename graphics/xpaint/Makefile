@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xpaint
-PORTVERSION=	2.9.10
-PORTREVISION=	1
+PORTVERSION=	2.9.10.2
 CATEGORIES=	graphics
-MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Simple paint program
@@ -22,12 +21,11 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	psselect:${PORTSDIR}/print/psutils \
 		bash:${PORTSDIR}/shells/bash
 
-USE_BZIP2=	yes
 USE_XORG=	xft xmu xpm
 USE_AUTOTOOLS=	libtool
 USE_GHOSTSCRIPT_RUN=yes
 GNU_CONFIGURE=	yes
-USES=		shebangfix
+USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	share/bin/imgmerge share/bin/xpaint_ocr
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
