@@ -245,6 +245,8 @@ man/man1/lxpanelctl.1.gz
 @dirrm %%DATADIR%%/images/xkb-flags
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fo
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES

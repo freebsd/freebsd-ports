@@ -3,12 +3,12 @@
 
 PORTNAME=	lxde-meta
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	#none
 DISTFILES=	#none
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	"meta-port" of the LXDE desktop slimmed down for FreeBSD releases
 
 RUN_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox \

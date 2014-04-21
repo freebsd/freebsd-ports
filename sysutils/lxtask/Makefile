@@ -3,11 +3,11 @@
 
 PORTNAME=	lxtask
 PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SF/lxde/LXTask%20%28task%20manager%29/LXTask%20${PORTVERSION}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Lightweight desktop-independent task manager
 
 LICENSE=	GPLv2
@@ -17,7 +17,7 @@ USE_GNOME=	gtk20 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS README TODO
+PORTDOCS=	AUTHORS README
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

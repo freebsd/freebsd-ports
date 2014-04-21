@@ -45,4 +45,3 @@ share/pixmaps/xdg-menu.png
 @dirrm apps/XDG-Menu/python
 @dirrm apps/XDG-Menu/Messages
 @dirrm apps/XDG-Menu
-@dirrmtry apps

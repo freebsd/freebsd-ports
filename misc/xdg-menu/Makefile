@@ -1,9 +1,9 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xdg-menu
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -12,7 +12,7 @@ DISTFILES=	XDG-Menu-${DISTVERSION}.tgz \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	XDG-Menu-${DISTVERSION}.tgz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	ROX panel applet that displays an applications menu button
 
 LICENSE=	GPLv2
@@ -29,10 +29,10 @@ INSTALLS_ICONS=	yes
 
 PORTDOCS=	*
 
-DESKTOP_ENTRIES="XDG-Menu" "${COMMENT}" ${PORTNAME} \
-		"${PORTNAME}" "Application;System;" false
+DESKTOP_ENTRIES="XDG-Menu" "" ${PORTNAME} \
+		"${PORTNAME}" "Application;System;" ""
 
-OPTIONS_DEFINE=	ROX
+OPTIONS_DEFINE=	DOCS ROX
 ROX_DESC=	Enable ROX panel applet support
 
 SUB_FILES=	${PORTNAME}
@@ -43,7 +43,8 @@ post-patch:
 	@${REINPLACE_CMD} -i '' 's|/usr/lib|../../lib|' ${WRKSRC}/findrox.py
 
 .if ! ${PORT_OPTIONS:MROX}
-	@${REINPLACE_CMD} -i '' '/if not rox.confirm/,/sys.exit/s/^/#/' ${WRKSRC}/AppRun
+	@${REINPLACE_CMD} -i '' '/if not rox.confirm/,/sys.exit/s/^/#/' \
+		${WRKSRC}/AppRun
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You have not enabled ROX panel applet support"
 	@${ECHO_MSG}
