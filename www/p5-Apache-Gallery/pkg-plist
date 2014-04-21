@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Apache/Gallery.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery/.packlist
+%%PERL5_MAN3%%/Apache::Gallery.3.gz
 %%DATADIR%%/templates/bright/README
 %%DATADIR%%/templates/bright/dircomment.tpl
 %%DATADIR%%/templates/bright/directory.tpl
