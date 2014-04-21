@@ -9,15 +9,13 @@ MASTER_SITES=	http://etherboot.org/rel/gpxe/ \
 		http://slackware.cs.utah.edu/pub/kernel.org/pub/software/utils/boot/gpxe/
 
 MAINTAINER=	gk.freebsd@googlemail.com
-COMMENT=	Create an open-source PXE implementation and bootloader
-
-BROKEN=		Fails to build
+COMMENT=	Open Source (GPL) gPXE network bootloader
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux
+BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux \
+		mkisofs:${PORTSDIR}/sysutils/cdrtools
 
-USE_CDRTOOLS=	yes
 USES=		gmake perl5
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
@@ -28,26 +26,32 @@ PLIST_FILES=	%%DATADIR%%/gpxe.dsk \
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64/i386
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=	does not build on FreeBSD 10.x and later
+.endif
+
 .if ${ARCH} == "amd64"
 MAKE_ARGS+=	ARCH=i386
 .endif
 
+ISOLINUX_BIN?=	${LOCALBASE}/share/syslinux/bios/core/isolinux.bin
+
 post-patch:
-	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/arch/i386/Makefile
+	@${REINPLACE_CMD} "s|%%WRKSRC%%|${WRKSRC}|" ${WRKSRC}/arch/i386/Makefile
+
+pre-build:
+# ISO creation fails if isolinux.bin is read only
+	${INSTALL} -m 644 ${ISOLINUX_BIN} ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/src/bin/gpxe.dsk ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/src/bin/gpxe.usb ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/src/bin/gpxe.iso ${DATADIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/src/bin/gpxe.dsk ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/src/bin/gpxe.usb ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/src/bin/gpxe.iso ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
