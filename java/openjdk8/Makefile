@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk
-PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER:S/^0//}
-PORTREVISION=	1
+PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
 		LOCAL/jkim:jdk,jtreg
 PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}
-DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
+DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-src-b132-03_mar_2014
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:jdk
 
 MAINTAINER=	java@FreeBSD.org
@@ -54,18 +53,16 @@ INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_BUILD_NUMBER=	132
-JDK_BUILD_DATE=		03_mar_2014
+JDK_UPDATE_VERSION=	5
+JDK_BUILD_NUMBER=	13
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
 JTREG_JENKINS_BUILD=	77
-PORT_MINOR_VERSION=	0
-PORT_BUILD_NUMBER=	${JDK_BUILD_NUMBER}
 
 CONFIGURE_ARGS=		--with-boot-jdk=${BOOTSTRAPJDKDIR}
-CONFIGURE_ARGS+=	--with-build-number="b${PORT_BUILD_NUMBER}"
-.if ${PORT_MINOR_VERSION} > 0
-CONFIGURE_ARGS+=	--with-update-version=${PORT_MINOR_VERSION}
+CONFIGURE_ARGS+=	--with-build-number="b${JDK_BUILD_NUMBER}"
+.if ${JDK_UPDATE_VERSION} > 0
+CONFIGURE_ARGS+=	--with-update-version=${JDK_UPDATE_VERSION}
 .endif
 CONFIGURE_ARGS+=	--disable-freetype-bundling \
 			--disable-zip-debug-info \
@@ -144,6 +141,8 @@ ICONV_LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 .endif
 
 post-extract:
+	@${CP} ${FILESDIR}/jdk-test-javax-imageio-plugins-jpeg-truncated.jpg \
+	    ${WRKSRC}/jdk/test/javax/imageio/plugins/jpeg/truncated.jpg
 	@${MKDIR} ${WRKSRC}/jdk/src/bsd/classes/java/net \
 	    ${WRKSRC}/jdk/src/bsd/classes/sun/nio/ch
 	@${MV} -f ${WRKSRC}/jdk/src/macosx/classes/java/net/DefaultInterface.java \
