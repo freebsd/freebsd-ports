@@ -275,17 +275,29 @@ sort -u ${WRKDIR}/.plist-dirs-unsorted-no-comments \
 
 # Anything listed in plist and in restricted-dirs is a failure. I.e.,
 # it's owned by a run-time dependency or one of the MTREEs.
-echo "===> Checking for directories owned by dependencies or MTREEs"
-cat ${WRKDIR}/.mtree ${WRKDIR}/.run-depends-dirs | sort -u \
-    >${WRKDIR}/.restricted-dirs
+echo "===> Checking for directories owned by MTREEs"
+cat ${WRKDIR}/.mtree | sort -u >${WRKDIR}/.restricted-dirs
+: >${WRKDIR}/.invalid-plist-mtree
+comm -12 ${WRKDIR}/.plist-dirs-sorted-no-comments ${WRKDIR}/.restricted-dirs \
+    | sort_dfs | sed "${sed_dirs}" \
+    >>${WRKDIR}/.invalid-plist-mtree || :
+if [ -s "${WRKDIR}/.invalid-plist-mtree" ]; then
+	ret=1
+	while read line; do
+		echo "Error: Owned by MTREE: ${line}" >&2
+	done < ${WRKDIR}/.invalid-plist-mtree
+fi
+
+echo "===> Checking for directories handled by dependencies"
+cat ${WRKDIR}/.run-depends-dirs | sort -u >${WRKDIR}/.restricted-dirs
 : >${WRKDIR}/.invalid-plist-dependencies
 comm -12 ${WRKDIR}/.plist-dirs-sorted-no-comments ${WRKDIR}/.restricted-dirs \
     | sort_dfs | sed "${sed_dirs}" \
     >>${WRKDIR}/.invalid-plist-dependencies || :
 if [ -s "${WRKDIR}/.invalid-plist-dependencies" ]; then
-	ret=1
+#	ret=1
 	while read line; do
-		echo "Error: Owned by dependency: ${line}" >&2
+		echo "Warning: Possibly owned by dependency: ${line}" >&2
 	done < ${WRKDIR}/.invalid-plist-dependencies
 fi
 
