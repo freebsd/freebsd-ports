@@ -1,0 +1,22 @@
+--- configure.orig	2009-07-17 16:03:06.000000000 -0500
++++ configure
+@@ -1843,7 +1843,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ ac_config_headers="$ac_config_headers include/config.h"
+ 
+ 
+-OS=`uname -s`
++OS=FreeBSD
+ 
+ if test "$OS" = "FreeBSD"; then
+    lib_path_base="/usr/local/lib"
+@@ -6430,8 +6430,8 @@ if test "$OS" = "SunOS"; then
+    LIBS="-lsocket -lnsl -lssl -ldl -lldap -lpam"
+ fi;
+ if test "$OS" = "FreeBSD"; then
+-   CFLAGS="$CFLAGS -DFREEBSD -pthread -export-dynamic -I/usr/local/include"
+-   LIBS="-lpam -lldap -lc -L /usr/local/lib"
++   CFLAGS="$CFLAGS -DFREEBSD -pthread -I/usr/local/include"
++   LIBS="-lpam -lcrypto -lldap -lc -L /usr/local/lib -Wl,-export-dynamic"
+    CPP="g++"
+ fi;
+ 
