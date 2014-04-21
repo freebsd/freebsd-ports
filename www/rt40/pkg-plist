@@ -1466,12 +1466,12 @@ sbin/standalone_httpd
 @exec mkdir -p /var/run/rt40/mason_data/cache
 @exec chmod -R 0750 /var/run/rt40/session_data /var/run/rt40/mason_data
 @exec chown -R www:www /var/run/rt40/session_data /var/run/rt40/mason_data
-@unexec rmdir >/dev/null 2>&1 /var/run/rt40/session_data || :
-@unexec rmdir >/dev/null 2>&1 /var/run/rt40/mason_data/obj || :
-@unexec rmdir >/dev/null 2>&1 /var/run/rt40/mason_data/etc || :
-@unexec rmdir >/dev/null 2>&1 /var/run/rt40/mason_data/cache || :
-@unexec rmdir >/dev/null 2>&1 /var/run/rt40/mason_data || :
-@unexec rmdir >/dev/null 2>&1 /var/run/rt40 || :
+@unexec rmdir "/var/run/rt40/session_data" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/rt40/mason_data/obj" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/rt40/mason_data/etc" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/rt40/mason_data/cache" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/rt40/mason_data" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/rt40" >/dev/null 2>&1 || :
 @dirrmtry www/rt40
 @dirrm %%DATADIR%%/po
 @exec mkdir -p %D/%%DATADIR%%/etc

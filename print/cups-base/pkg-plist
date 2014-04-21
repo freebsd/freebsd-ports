@@ -897,13 +897,13 @@ share/locale/fr/cups_fr.po
 share/locale/it/cups_it.po
 share/locale/ja/cups_ja.po
 share/locale/ru/cups_ru.po
-@unexec rmdir >/dev/null 2>&1 /var/spool/cups/tmp || :
-@unexec rmdir >/dev/null 2>&1 /var/spool/cups || :
-@unexec rmdir >/dev/null 2>&1 /var/run/cups/certs || :
-@unexec rmdir >/dev/null 2>&1 /var/run/cups || :
-@unexec rmdir >/dev/null 2>&1 /var/log/cups || :
-@unexec rmdir >/dev/null 2>&1 /var/db/cups/rss || :
-@unexec rmdir >/dev/null 2>&1 /var/db/cups || :
+@unexec rmdir "/var/spool/cups/tmp" >/dev/null 2>&1 || :
+@unexec rmdir "/var/spool/cups" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/cups/certs" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/cups" >/dev/null 2>&1 || :
+@unexec rmdir "/var/log/cups" >/dev/null 2>&1 || :
+@unexec rmdir "/var/db/cups/rss" >/dev/null 2>&1 || :
+@unexec rmdir "/var/db/cups" >/dev/null 2>&1 || :
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/32x32/apps

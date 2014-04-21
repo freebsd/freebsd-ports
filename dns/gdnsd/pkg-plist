@@ -79,7 +79,7 @@ sbin/gdnsd
 %%PORTDOCS%%%%DOCSDIR%%/gdnsd_manual.pod
 %%PORTDOCS%%%%DOCSDIR%%/gdnsd_manual.txt
 @exec mkdir -p %%ETCDIR%%/zones
-@unexec rmdir >/dev/null 2>&1 /var/run/gdnsd || :
+@unexec rmdir "/var/run/gdnsd" >/dev/null 2>&1 || :
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry libexec/gdnsd
 @dirrmtry lib/gdnsd
