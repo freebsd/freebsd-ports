@@ -1,0 +1,12 @@
+--- extension/Makefile.in.orig	2014-04-08 18:13:03.000000000 +0200
++++ extension/Makefile.in	2014-04-21 14:26:04.000000000 +0200
+@@ -1230,9 +1230,6 @@ uninstall-man: uninstall-man3
+ 
+ 
+ install-data-hook:
+-	for i in $(pkgextension_LTLIBRARIES) ; do \
+-		$(RM) $(pkgextensiondir)/$$i ; \
+-	done
+ 
+ # Keep the uninstall check working:
+ uninstall-so:
