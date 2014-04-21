@@ -3,15 +3,20 @@
 
 PORTNAME=	xbattle
 PORTVERSION=	5.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	GENTOO/distfiles \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Concurrent multi-player battle strategy game
+
+LICENSE=	XBATTLE_LICENSE
+LICENSE_NAME=	XBATTLE License
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	xdialog>0:${PORTSDIR}/x11/xdialog
 
