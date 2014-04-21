@@ -28,6 +28,8 @@ libexec/atslog/officeserv-7200.lib
 libexec/atslog/skp-816.lib
 man/man8/atslogd.8.gz
 man/man8/atslogmaster.8.gz
+man/ru.KOI8-R/man8/atslogd.8.gz
+man/ru.KOI8-R/man8/atslogmaster.8.gz
 %%DATADIR%%/lang/en_US
 %%DATADIR%%/lang/ru_RU.CP1251
 %%DATADIR%%/lang/ru_RU.KOI8-R
