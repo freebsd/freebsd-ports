@@ -3,6 +3,7 @@
 
 PORTNAME=	libzdb
 PORTVERSION=	2.11.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/ \
 		http://www.c-s.li/ports/
@@ -18,10 +19,9 @@ OPTIONS_DEFINE=	MYSQL \
 
 OPTIONS_DEFAULT=MYSQL SQLITE PGSQL
 
-NO_STAGE=	yes
-
-USES=	gmake pathfix
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=	gmake libtool pathfix
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
