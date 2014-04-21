@@ -3,6 +3,7 @@
 
 PORTNAME=	orc
 PORTVERSION=	0.4.19
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES= 	http://gstreamer.freedesktop.org/data/src/orc/
 
