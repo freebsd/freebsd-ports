@@ -110,7 +110,7 @@ PLIST_SUB+=	JPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.1
+USES+=		lua
 .else
 CONFIGURE_ARGS+=--without-lua
 .endif
@@ -202,6 +202,7 @@ CONFIGURE_ARGS+=--disable-docs
 .endif
 
 post-patch:
+	${REINPLACE_CMD} "s/lua >/lua-${LUA_VER} >/g" ${WRKSRC}/configure
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|tools examples|tools|g' \
 		${WRKSRC}/Makefile.in
