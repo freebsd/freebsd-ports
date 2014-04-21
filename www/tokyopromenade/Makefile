@@ -3,38 +3,32 @@
 
 PORTNAME=	tokyopromenade
 PORTVERSION=	0.9.22
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/
 
 MAINTAINER=	qingfeng@douban.com
-COMMENT=	A content management system
+COMMENT=	Content management system
 
 BUILD_DEPENDS=	tokyocabinet>=1.4.31:${PORTSDIR}/databases/tokyocabinet \
 		fcgi-devkit>=0:${PORTSDIR}/www/fcgi
-LIB_DEPENDS=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 RUN_DEPENDS=	spawn-fcgi>=0:${PORTSDIR}/www/spawn-fcgi
 
 OPTIONS_DEFINE=	LUA
 
 CONFIGURE_ARGS=	--enable-fcgi
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake lua
+CFLAGS=		-Wno-incompatible-pointer-types-discards-qualifiers
 
 SUB_FILES=	pkg-message
 
-MAN1=		prommgr.1
+LUA_CONFIGURE_ENABLE+=	lua
+LUA_LDFLAGS+=	-L${LUA_LIBDIR}
+LUA_CFLAGS+=	-I${LUA_INCDIR}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLUA}
-CONFIGURE_ARGS+=	--enable-lua
-LDFLAGS+=	-L${LUA_LIBDIR}
-CFLAGS+=	-I${LUA_INCDIR}
-USE_LUA=	yes
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+post-patch:
+	${REINPLACE_CMD} -e "s/llua/llua-${LUA_VER}/g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
