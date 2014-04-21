@@ -18,8 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-static \
 			--enable-libxml2 \
 			--disable-gl
-USES=		pkgconfig pathfix iconv
-USE_BZIP2=	yes
+USES=		pkgconfig pathfix iconv tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
