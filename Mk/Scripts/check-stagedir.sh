@@ -261,7 +261,22 @@ while read path; do
 	case "${path}" in
 	*.bak) ;;
 	*.orig) ;;
-	#*/info/dir|info/dir) ;;
+	*/info/dir|info/dir) ;;
+	lib/X11/fonts/*/fonts.dir) ;;
+	lib/X11/fonts/*/fonts.scale) ;;
+	share/applications/mimeinfo.cache) ;;
+	share/mime/XMLnamespaces) ;;
+	share/mime/aliases) ;;
+	share/mime/generic-icons) ;;
+	share/mime/globs) ;;
+	share/mime/globs2) ;;
+	share/mime/icons) ;;
+	share/mime/magic) ;;
+	share/mime/mime.cache) ;;
+	share/mime/subclasses) ;;
+	share/mime/treemagic) ;;
+	share/mime/types) ;;
+	share/mime/version) ;;
 	*)
 		# An orphan was found, return non-zero status
 		ret=1
