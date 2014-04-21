@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.2.7
+PORTVERSION=	4.2.9
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/4.2/ \
 		LOCAL
@@ -17,7 +17,7 @@ NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../../devel/bugzilla42/Makefile.common"
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 LANGDIR=	${WWWDIR}/template/ja
 
