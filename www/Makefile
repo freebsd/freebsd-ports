@@ -1879,7 +1879,6 @@
     SUBDIR += sahi
     SUBDIR += sakai
     SUBDIR += samidare
-    SUBDIR += sams
     SUBDIR += sarg
     SUBDIR += scloader
     SUBDIR += script4rss
