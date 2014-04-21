@@ -57,6 +57,15 @@ sbin/opendkim-genzone
 %%REPUTE%%sbin/opendkim-rephistory
 %%STATS%%sbin/opendkim-reportstats
 %%STATS%%sbin/opendkim-stats
+%%LUA%%%%FILTER%%man/man3/opendkim-lua.3.gz
+%%FILTER%%man/man5/opendkim.conf.5.gz
+%%LUA%%man/man8/miltertest.8.gz
+man/man8/opendkim-genkey.8.gz
+man/man8/opendkim-genzone.8.gz
+man/man8/opendkim-testadsp.8.gz
+man/man8/opendkim-testkey.8.gz
+man/man8/opendkim-testmsg.8.gz
+man/man8/opendkim.8.gz
 sbin/opendkim-testadsp
 sbin/opendkim-testkey
 sbin/opendkim-testmsg

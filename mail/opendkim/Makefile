@@ -3,6 +3,7 @@
 
 PORTNAME=		opendkim
 PORTVERSION=		2.8.3
+PORTREVISION=		1
 CATEGORIES=		mail security
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	${PORTNAME} \
@@ -11,7 +12,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME} \
 MAINTAINER=		umq@ueo.co.jp
 COMMENT=		DKIM library and milter implementation
 
-LICENSE=		BSD SENDMAIL
+LICENSE=		BSD3CLAUSE SENDMAIL
 LICENSE_COMB=		multi
 
 LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
@@ -21,12 +22,12 @@ LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 NO_OPTIONS_SORT=yes
-USES=		pkgconfig:build
+USES=		pkgconfig perl5 shebangfix
+USE_PERL5=	run
+SHEBANG_FILES=	opendkim/opendkim-genkey.in
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-MAN8=		opendkim-genkey.8 opendkim-genzone.8 opendkim-testadsp.8 \
-		opendkim-testkey.8 opendkim-testmsg.8
 PORTDOCS=	*
 
 OPTIONS_SINGLE=		RESOLV
@@ -50,14 +51,11 @@ STATS_DESC=		Setup statistics tools
 
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.options"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFILTER}
 USE_RC_SUBR=		milter-opendkim
-MAN5+=			opendkim.conf.5
-MAN8+=			opendkim.8
 PLIST_SUB+=		FILTER=""
 SUB_FILES=		pkg-message
 WITHOUT_MILTER_CFLAGS=	yes
@@ -70,7 +68,7 @@ PLIST_SUB+=		FILTER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
@@ -114,7 +112,7 @@ USE_BDB=		40+
 .endif
 .if ${PORT_OPTIONS:MUNBOUND}
 CONFIGURE_ARGS+=	--with-unbound
-LIB_DEPENDS+=		unbound:${PORTSDIR}/dns/unbound
+LIB_DEPENDS+=		libunbound.so:${PORTSDIR}/dns/unbound
 .endif
 .if ${PORT_OPTIONS:MPOPAUTH}
 CONFIGURE_ARGS+=	--enable-popauth
@@ -124,13 +122,13 @@ CONFIGURE_ARGS+=	--enable-query_cache
 .endif
 .if ${PORT_OPTIONS:MMEMCACHED}
 CONFIGURE_ARGS+=	--with-libmemcached
-LIB_DEPENDS+=		memcached:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=		libmemcached.so:${PORTSDIR}/databases/libmemcached
 .else
 CONFIGURE_ARGS+=	--without-libmemcached
 .endif
 .if ${PORT_OPTIONS:MOPENDBX}
 CONFIGURE_ARGS+=	--with-odbx
-LIB_DEPENDS+=		opendbx:${PORTSDIR}/databases/opendbx
+LIB_DEPENDS+=		libopendbx.so:${PORTSDIR}/databases/opendbx
 PLIST_SUB+=		ODBX=""
 .else
 CONFIGURE_ARGS+=	--without-odbx
@@ -138,25 +136,21 @@ PLIST_SUB+=		ODBX="@comment "
 .endif
 .if ${PORT_OPTIONS:MOPENLDAP}
 CONFIGURE_ARGS+=	--with-openldap
-LIB_DEPENDS+=		ldap:${PORTSDIR}/net/openldap24-sasl-client
+LIB_DEPENDS+=		libldap.so:${PORTSDIR}/net/openldap24-sasl-client
 USE_OPENLDAP=		yes
 .else
 CONFIGURE_ARGS+=	--without-openldap
 .endif
 .if ${PORT_OPTIONS:MLUA}
 CONFIGURE_ARGS+=	--with-lua
-. if ${PORT_OPTIONS:MFILTER}
-MAN3+=			opendkim-lua.3
-. endif
-MAN8+=			miltertest.8
 PLIST_SUB+=		LUA=""
-USE_LUA=		5.1
+USES+=			lua
 .else
 PLIST_SUB+=		LUA="@comment "
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e '/PKG_CONFIG/s/lua5/lua-5/' \
+	${REINPLACE_CMD} -e '/PKG_CONFIG/s/lua5\.2/lua-${LUA_VER}/' \
 	-e '/PKG_CONFIG/s/cyrussasl/libsasl2/' \
 	${WRKSRC}/configure
 
@@ -169,13 +163,11 @@ post-patch:
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG} && ${PORT_OPTIONS:MFILTER}
-	@${STRIP_CMD} ${PREFIX}/sbin/opendkim
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/opendkim
 .endif
-	@${MKDIR} ${PREFIX}/etc/mail
-	${INSTALL_DATA} ${WRKSRC}/opendkim/opendkim.conf.sample ${PREFIX}/etc/mail/
-.if ${PORT_OPTIONS:MFILTER}
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopendkim.so.9
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
+	${INSTALL_DATA} ${WRKSRC}/opendkim/opendkim.conf.sample ${STAGEDIR}${PREFIX}/etc/mail/
 
 regression-test: build
 	cd ${WRKSRC} ; ${MAKE} check
