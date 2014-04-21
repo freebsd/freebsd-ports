@@ -2,35 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	subtools
-PORTVERSION=	20060508
-DISTVERSIONSUFFIX=	alpha
+PORTVERSION=	20081026
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}alpha
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tools for movie subtitles in SubRipper format
 
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
+
+USES=		tar:bzip2
+USE_PYTHON=	yes
+
+PLIST_FILES=	bin/srtshift bin/srtrate bin/udvd2srt.py bin/udvdshift.py
+
+PORTDOCS=	CHANGELOG.TXT README.TXT
 OPTIONS_DEFINE=	DOCS
 
-USE_PYTHON=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
-EXECS=		srtshift srtrate
-PYEXECS=	udvd2srt.py udvdshift.py
-PORTDOCS=	CHANGELOG.TXT LICENSE.TXT README.TXT TODO.TXT
-PLIST_FILES=	${EXECS:S/^/bin\//} ${PYEXECS:S/^/bin\//}
-
 post-patch:
-	@${REINPLACE_CMD} -e 's,,,g;s,^.*#!.*python.*$$,#!${PYTHON_CMD},' ${WRKSRC}/*
+	@${REINPLACE_CMD} -e 's|^.*#!.*python.*$$|#!${PYTHON_CMD}|' \
+		${WRKSRC}/*.py
 
 do-build:
-.for EXEC in ${EXECS}
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -D${EXEC:U} -o ${EXEC} ${PORTNAME}.c
+.for f in srtshift srtrate
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -D${f:U} -o ${f} ${PORTNAME}.c
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${EXECS:S/^/${WRKSRC}\//} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${PYEXECS:S/^/${WRKSRC}\//} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S/^/${WRKSRC}\//} ${STAGEDIR}${DOCSDIR}/
+.for f in srtshift srtrate
+	@(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${f} ${STAGEDIR}${PREFIX}/bin/)
+.endfor
+.for f in *.py
+	@(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${f} ${STAGEDIR}${PREFIX}/bin/)
+.endfor
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/../|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
