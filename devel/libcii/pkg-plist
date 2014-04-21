@@ -1,3 +1,5 @@
+include/cii
+lib/libcii.a
 lib/cii/%%CIIMAJOR%%/examples/double
 lib/cii/%%CIIMAJOR%%/examples/calc
 lib/cii/%%CIIMAJOR%%/examples/ids
@@ -43,10 +45,6 @@ lib/cii/%%CIIMAJOR%%/libcii.a
 @dirrm lib/cii/%%CIIMAJOR%%/examples
 @dirrm lib/cii/%%CIIMAJOR%%
 @dirrm lib/cii
-@unexec /bin/rm %D/lib/libcii.a
-@unexec /bin/rm %D/include/cii
-@exec /bin/ln -sf %D/lib/cii/%%CIIMAJOR%%/include %D/include/cii
-@exec /bin/ln -sf %D/lib/cii/%%CIIMAJOR%%/libcii.a %D/lib/libcii.a
 %%PORTDOCS%%share/doc/cii/CPYRIGHT
 %%PORTDOCS%%share/doc/cii/README
 %%PORTDOCS%%share/doc/cii/examples/basename.c
