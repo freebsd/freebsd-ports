@@ -1,11 +1,12 @@
 --- hotspot/make/bsd/makefiles/gcc.make
 +++ hotspot/make/bsd/makefiles/gcc.make
-@@ -216,8 +216,11 @@
+@@ -216,8 +216,12 @@
  endif
  
  # Flags for generating make dependency flags.
++DEPFLAGS =
 +ifeq (,$(findstring clang,$(shell $(CC) -v 2>&1)))
-+DEPFLAGS = -fpch-deps
++DEPFLAGS += -fpch-deps
 +endif
  ifneq ("${CC_VER_MAJOR}", "2")
 -DEPFLAGS = -fpch-deps -MMD -MP -MF $(DEP_DIR)/$(@:%=%.d)
