@@ -27,7 +27,7 @@ LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110 \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
-USE_PYTHON=	3.3
+USE_PYTHON=	3
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USES=	compiler:c++11-lang pathfix pkgconfig
@@ -47,4 +47,10 @@ post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem.sample
 	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-keyfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-keyfile.pem.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE=	You have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
+.endif
+
+.include <bsd.port.post.mk>
