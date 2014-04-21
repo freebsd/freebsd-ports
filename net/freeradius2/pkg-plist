@@ -872,8 +872,8 @@ sbin/radwatch
 %%DATADIR%%/dictionary.xylan
 %%DATADIR%%/dictionary.zeus
 %%DATADIR%%/dictionary.zyxel
-@unexec rmdir >/dev/null 2>&1 /var/run/radiusd || :
-@unexec rmdir >/dev/null 2>&1 /var/log/radacct || :
+@unexec rmdir "/var/run/radiusd" >/dev/null 2>&1 || :
+@unexec rmdir "/var/log/radacct" >/dev/null 2>&1 || :
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%/raddb/sql/postgresql
 @dirrm %%EXAMPLESDIR%%/raddb/sql/oracle
