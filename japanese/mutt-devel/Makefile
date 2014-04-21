@@ -44,7 +44,6 @@ COMMENT=	Text-based mail client (Japanised development version)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libslang.so:${PORTSDIR}/japanese/libslang
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
@@ -65,8 +64,8 @@ AUTOMAKE_ARGS=	--add-missing
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/mutt-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib -ltinfow
-CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ -D_XLOCALE_CTYPE_H ${DB_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang"
-CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
+CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ -D_XLOCALE_CTYPE_H ${DB_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ncurses"
+CONFIGURE_ARGS=	--with-ncurses --enable-locales-fix \
 		${ICONV_CONFIGURE_ARG} \
 		--without-wc-funcs \
 		--enable-flock --disable-fcntl \
