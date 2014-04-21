@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	composer
-DISTVERSION=	1.0.0-alpha8.20140223
+DISTVERSION=	1.0.0-alpha8.20140419
 CATEGORIES=	devel
 MASTER_SITES=	http://getcomposer.org/download/${DISTVERSION}/ \
 		http://freebsd.cs.nctu.edu.tw/~gslin/files/${PORTNAME}/${DISTVERSION}/
@@ -18,7 +18,7 @@ LICENSE=	MIT
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PHP=	yes
+USE_PHP=	intl openssl phar
 
 PLIST_FILES=	bin/composer \
 		bin/composer.phar
