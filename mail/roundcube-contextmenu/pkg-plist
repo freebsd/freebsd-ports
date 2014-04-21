@@ -1,46 +1,49 @@
-%%WWWDIR%%/CHANGELOG
-%%WWWDIR%%/README.md
-%%WWWDIR%%/contextmenu.js
-%%WWWDIR%%/contextmenu.php
-%%WWWDIR%%/jquery.contextMenu.js
-%%WWWDIR%%/jquery.mousewheel.js
-%%WWWDIR%%/localization/ca_ES.inc
-%%WWWDIR%%/localization/cs_CZ.inc
-%%WWWDIR%%/localization/da_DK.inc
-%%WWWDIR%%/localization/de_CH.inc
-%%WWWDIR%%/localization/de_DE.inc
-%%WWWDIR%%/localization/en_GB.inc
-%%WWWDIR%%/localization/en_US.inc
-%%WWWDIR%%/localization/es_ES.inc
-%%WWWDIR%%/localization/fr_FR.inc
-%%WWWDIR%%/localization/gl_ES.inc
-%%WWWDIR%%/localization/hu_HU.inc
-%%WWWDIR%%/localization/it_IT.inc
-%%WWWDIR%%/localization/nl_NL.inc
-%%WWWDIR%%/localization/pl_PL.inc
-%%WWWDIR%%/localization/pt_BR.inc
-%%WWWDIR%%/localization/ro_RO.inc
-%%WWWDIR%%/localization/ru_RU.inc
-%%WWWDIR%%/localization/sv_SE.inc
-%%WWWDIR%%/localization/tr_TR.inc
-%%WWWDIR%%/localization/uk_UA.inc
-%%WWWDIR%%/localization/zh_TW.inc
-%%WWWDIR%%/package.xml
-%%WWWDIR%%/skins/classic/contexticons.gif
-%%WWWDIR%%/skins/classic/contexticons.png
-%%WWWDIR%%/skins/classic/contextmenu.css
-%%WWWDIR%%/skins/classic/folders.gif
-%%WWWDIR%%/skins/classic/folders.png
-%%WWWDIR%%/skins/classic/ie6hacks.css
-%%WWWDIR%%/skins/classic/messageactions.gif
-%%WWWDIR%%/skins/classic/messageactions.png
-%%WWWDIR%%/skins/larry/contexticons.png
-%%WWWDIR%%/skins/larry/contextmenu.css
-%%WWWDIR%%/skins/larry/folders.png
-%%WWWDIR%%/skins/larry/ie6hacks.css
-%%WWWDIR%%/skins/larry/messageactions.png
-@dirrm %%WWWDIR%%/skins/larry
-@dirrm %%WWWDIR%%/skins/classic
-@dirrm %%WWWDIR%%/skins
-@dirrm %%WWWDIR%%/localization
-@dirrmtry %%WWWDIR%%
+%%RCDIR_REL%%/plugins/contextmenu/CHANGELOG
+%%RCDIR_REL%%/plugins/contextmenu/README.md
+%%RCDIR_REL%%/plugins/contextmenu/composer.json
+%%RCDIR_REL%%/plugins/contextmenu/contextmenu.js
+%%RCDIR_REL%%/plugins/contextmenu/contextmenu.php
+%%RCDIR_REL%%/plugins/contextmenu/jquery.contextmenu.min.js
+%%RCDIR_REL%%/plugins/contextmenu/localization/ca_ES.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/cs_CZ.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/da_DK.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/de_CH.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/de_DE.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/en_GB.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/en_US.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/es_ES.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/fr_FR.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/gl_ES.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/hu_HU.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/it_IT.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/ja_JP.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/nl_NL.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/pl_PL.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/pt_BR.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/pt_PT.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/ro_RO.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/ru_RU.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/sv_SE.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/tr_TR.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/uk_UA.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/zh_TW.inc
+%%RCDIR_REL%%/plugins/contextmenu/skins/classic/contextmenu.css
+%%RCDIR_REL%%/plugins/contextmenu/skins/classic/ie6hacks.css
+%%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/contexticons.gif
+%%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/contexticons.png
+%%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/folders.gif
+%%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/folders.png
+%%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/messageactions.gif
+%%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/messageactions.png
+%%RCDIR_REL%%/plugins/contextmenu/skins/larry/contextmenu.css
+%%RCDIR_REL%%/plugins/contextmenu/skins/larry/ie6hacks.css
+%%RCDIR_REL%%/plugins/contextmenu/skins/larry/images/contexticons.png
+%%RCDIR_REL%%/plugins/contextmenu/skins/larry/images/folders.png
+%%RCDIR_REL%%/plugins/contextmenu/skins/larry/images/messageactions.png
+@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/larry/images
+@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/larry
+@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/classic/images
+@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/classic
+@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins
+@dirrm %%RCDIR_REL%%/plugins/contextmenu/localization
+@dirrm %%RCDIR_REL%%/plugins/contextmenu
