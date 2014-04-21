@@ -3,11 +3,11 @@
 
 PORTNAME=	xwrits
 PORTVERSION=	2.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lcdf.org/${PORTNAME}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reminds you to take wrist breaks
 
 LICENSE=	GPLv2
@@ -20,7 +20,6 @@ PLIST_FILES=	bin/xwrits \
 		man/man1/xwrits.1.gz
 
 PORTDOCS=	GESTURES NEWS README TODO
-
 OPTIONS_DEFINE=	DOCS
 
 post-install:
