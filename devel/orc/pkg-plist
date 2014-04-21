@@ -60,6 +60,7 @@ share/aclocal/orc.m4
 %%PORTDOCS%%share/gtk-doc/html/orc/home.png
 %%PORTDOCS%%share/gtk-doc/html/orc/index.html
 %%PORTDOCS%%share/gtk-doc/html/orc/index.sgml
+%%PORTDOCS%%share/gtk-doc/html/orc/left-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/orc/left.png
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-ARM.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-MMX.html
@@ -82,8 +83,10 @@ share/aclocal/orc.m4
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-tutorial.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-x86.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc.devhelp2
+%%PORTDOCS%%share/gtk-doc/html/orc/right-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/orc/right.png
 %%PORTDOCS%%share/gtk-doc/html/orc/style.css
+%%PORTDOCS%%share/gtk-doc/html/orc/up-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/orc/up.png
 @dirrm include/orc-0.4/orc
 @dirrm include/orc-0.4/orc-test
