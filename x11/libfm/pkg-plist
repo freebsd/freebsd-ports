@@ -169,8 +169,6 @@ share/applications/lxshortcut.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libfm.mo
 share/mime/packages/libfm.xml
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES
@@ -184,4 +182,3 @@ share/mime/packages/libfm.xml
 @dirrm lib/libfm
 @dirrm include/libfm-%%MAJORVER%%
 @dirrmtry etc/xdg/libfm
-@dirrmtry etc/xdg

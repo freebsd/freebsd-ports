@@ -3,11 +3,11 @@
 
 PORTNAME=	lxpanel
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Lightweight X11 desktop panel
 
 LICENSE=	GPLv2 MIT
@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache
 RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data
 
+PORTDOCS=	AUTHORS README
 OPTIONS_DEFINE=	ALSA DOCS NLS
 
 OPTIONS_SUB=	yes
@@ -37,8 +38,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 CFLAGS+=	-I${WRKSRC} -Wno-return-type
 USE_CSTD=	gnu89
 
-PORTDOCS=	AUTHORS README
-
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -53,6 +52,10 @@ post-patch:
 .endif
 
 post-install:
+.for l in volume xkb deskno batt kbled
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lxpanel/plugins/${l}.so
+.endfor
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

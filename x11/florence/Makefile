@@ -3,10 +3,11 @@
 
 PORTNAME=	florence
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/florence/florence/${PORTVERSION}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Extensible scalable virtual keyboard
 
 LICENSE=	GPLv2 GFDL
@@ -16,8 +17,7 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 BUILD_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at-spi2-core
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_BZIP2=	yes
-USES=		desktop-file-utils gmake iconv pathfix pkgconfig
+USES=		gmake iconv pathfix pkgconfig tar:bzip2
 USE_XORG=	xtst xext
 USE_GNOME=	gtk30 cairo intlhack gnomedocutils librsvg2
 USE_GSTREAMER=	yes
@@ -26,8 +26,6 @@ CONFIGURE_ARGS+=--prefix=${LOCALBASE}
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 GLIB_SCHEMAS=	org.florence.gschema.xml
-
-MAN1=		${PORTNAME}.1 ${PORTNAME}_applet.1
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 

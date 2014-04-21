@@ -3,10 +3,11 @@
 
 PORTNAME=	libfm
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/libfm%20%28required%20by%20PCManFM%29/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	The libFM backend library to PCManFM
 
 LICENSE=	GPLv2
@@ -16,8 +17,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
 		libexif.so:${PORTSDIR}/graphics/libexif
 
-USE_XZ=		yes
-USES=		desktop-file-utils fam gmake pkgconfig shared-mime-info
+USES=		desktop-file-utils fam gmake pkgconfig shared-mime-info tar:xz
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	aclocal automake libtool
 CONFIGURE_ARGS+=--sysconfdir=${LOCALBASE}/etc
