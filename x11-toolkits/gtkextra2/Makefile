@@ -3,30 +3,26 @@
 
 PORTNAME=	gtkextra
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A useful widget set complementary to GTK+ 2.0
+COMMENT=	Useful widget set complementary to GTK+ 2.0
 
-USES=		pathfix pkgconfig gmake
+USES=		libtool pathfix pkgconfig gmake
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
-LATEST_LINK=	gtkextra2
 DOCSDIR=	${PREFIX}/share/doc/gtkextra2
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||' ${WRKSRC}/Makefile.in
@@ -34,11 +30,9 @@ post-patch:
 		${WRKSRC}/gtkextra/gtkcharsel.c
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 .for d in reference tutorial
-	@${MKDIR} ${DOCSDIR}/${d}
-	@(cd ${WRKSRC}/docs/${d} && ${COPYTREE_SHARE} . ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
+	@(cd ${WRKSRC}/docs/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>
