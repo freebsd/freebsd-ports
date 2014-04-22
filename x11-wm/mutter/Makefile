@@ -14,7 +14,7 @@ COMMENT=	Window and compositing manager based on Clutter
 
 BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
-		libclutter-glx-1.so:${PORTSDIR}/graphics/clutter \
+		libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter \
 		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 
