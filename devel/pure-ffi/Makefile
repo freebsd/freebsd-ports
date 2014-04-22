@@ -13,14 +13,12 @@ COMMENT=	Pure language interface to libffi
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 
 USES=		pure
 
 PLIST_FILES=	lib/pure/ffi.pure \
 		lib/pure/ffi.so
-
-NO_STAGE=	yes
 
 PORTDOCS=	README
 
@@ -28,17 +26,10 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
