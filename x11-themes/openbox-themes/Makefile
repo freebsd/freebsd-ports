@@ -17,10 +17,10 @@ RUN_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox
 NO_BUILD=	yes
 WRKSRC=		${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes
 	@for i in `${LS} ${WRKDIR}/${WRKSRC}`; do \
-		${CP} -r ${WRKDIR}/${WRKSRC}/$$i ${PREFIX}/share/themes/; \
+		${CP} -r ${WRKDIR}/${WRKSRC}/$$i ${STAGEDIR}${PREFIX}/share/themes/; \
 	done
 
 .include <bsd.port.mk>
