@@ -29,19 +29,11 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
+OPTIONS_SUB=	yes
 
+X11_USE=	XORG=x11
+X11_CONFIGURE_OFF=--with-x=no
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11
-PLIST_SUB+=	X11=""
-CONFLICTS+=	libwmf-nox11-0.*
-.else
-PKGNAMESUFFIX=	-nox11
-CONFIGURE_ARGS+=	--with-x=no
-PLIST_SUB+=	X11="@comment "
-CONFLICTS+=	libwmf-0.*
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|src include fonts doc|src include fonts|g' \
@@ -57,7 +49,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/doc --exclude '*Makefile*' -cf - . | \
 		${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGROUP} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
