@@ -11,6 +11,7 @@ lib/libpanelappletmm-%%VERSION%%.a
 lib/libpanelappletmm-%%VERSION%%.la
 lib/libpanelappletmm-%%VERSION%%.so
 lib/libpanelappletmm-%%VERSION%%.so.1
+lib/libpanelappletmm-%%VERSION%%.so.1.0.1
 lib/libpanelappletmm-%%API_VERSION%%/include/libpanelappletmmconfig.h
 lib/libpanelappletmm-%%API_VERSION%%/proc/m4/convert.m4
 lib/libpanelappletmm-%%API_VERSION%%/proc/m4/convert_libpanelappletmm.m4
