@@ -1,5 +1,5 @@
---- make/Makefile.orig	2012-06-29 14:51:42.000000000 +0900
-+++ make/Makefile	2012-11-10 00:12:19.000000000 +0900
+--- make/Makefile.orig	2013-07-14 11:23:53.000000000 +0900
++++ make/Makefile	2014-03-14 16:59:17.000000000 +0900
 @@ -30,9 +30,9 @@
  ##  LINKDIR      Linked Copies of TINKER Executables
  ##
@@ -73,7 +73,7 @@
  
  all:	${EXEFILES}
  
-@@ -612,70 +625,70 @@
+@@ -612,74 +625,74 @@
  	rm -f *.o *.a *.x
  
  listing:
@@ -143,7 +143,7 @@
 -	mv  xyzpdb.x     $(BINDIR)/xyzpdb
 -	mv  xyzsybyl.x   $(BINDIR)/xyzsybyl
 +	${BSD_INSTALL_PROGRAM}  alchemy.x    $(BINDIR)/alchemy
-+	${BSD_INSTALL_PROGRAM}  analyze.x    $(BINDIR)/analyze
++	${BSD_INSTALL_PROGRAM}  analyze.x    $(BINDIR)/analyze_t
 +	${BSD_INSTALL_PROGRAM}  anneal.x     $(BINDIR)/anneal
 +	${BSD_INSTALL_PROGRAM}  archive.x    $(BINDIR)/archive
 +	${BSD_INSTALL_PROGRAM}  bar.x        $(BINDIR)/bar
@@ -206,3 +206,17 @@
  
  remove_links:
  	rm -f $(LINKDIR)/alchemy
+-	rm -f $(LINKDIR)/analyze
++	rm -f $(LINKDIR)/analyze_t
+ 	rm -f $(LINKDIR)/anneal
+ 	rm -f $(LINKDIR)/archive
+ 	rm -f $(LINKDIR)/bar
+@@ -742,7 +755,7 @@
+ 
+ create_links:
+ 	ln -s $(BINDIR)/alchemy    $(LINKDIR)/alchemy
+-	ln -s $(BINDIR)/analyze    $(LINKDIR)/analyze
++	ln -s $(BINDIR)/analyze_t  $(LINKDIR)/analyze_t
+ 	ln -s $(BINDIR)/anneal     $(LINKDIR)/anneal
+ 	ln -s $(BINDIR)/archive    $(LINKDIR)/archive
+ 	ln -s $(BINDIR)/bar        $(LINKDIR)/bar
