@@ -1,0 +1,25 @@
+# $FreeBSD$
+
+PORTNAME=	soco
+PORTVERSION=	0.6
+CATEGORIES=	multimedia python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	conall@conall.net
+COMMENT=	Python library to control Sonos speakers
+
+LICENSE=	MIT
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	SoCo
+GH_PROJECT=	SoCo
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	6640f85
+
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
+.include <bsd.port.mk>
