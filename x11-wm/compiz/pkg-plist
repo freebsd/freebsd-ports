@@ -1,7 +1,6 @@
 bin/compiz
 bin/compiz-manager
 %%GTK2%%bin/gtk-window-decorator
-%%KDE3%%bin/kde-window-decorator
 include/compiz/compiz.h
 include/compiz/compiz-common.h
 include/compiz/compiz-core.h
@@ -78,9 +77,9 @@ lib/compiz/libscale.so
 lib/compiz/libscreenshot.a
 lib/compiz/libscreenshot.la
 lib/compiz/libscreenshot.so
-%%RSVG%%lib/compiz/libsvg.a
-%%RSVG%%lib/compiz/libsvg.la
-%%RSVG%%lib/compiz/libsvg.so
+%%SVG%%lib/compiz/libsvg.a
+%%SVG%%lib/compiz/libsvg.la
+%%SVG%%lib/compiz/libsvg.so
 lib/compiz/libswitcher.a
 lib/compiz/libswitcher.la
 lib/compiz/libswitcher.so
@@ -100,6 +99,7 @@ lib/libdecoration.a
 lib/libdecoration.la
 lib/libdecoration.so
 lib/libdecoration.so.0
+lib/libdecoration.so.0.0.0
 libdata/pkgconfig/compiz-cube.pc
 libdata/pkgconfig/compiz-gconf.pc
 libdata/pkgconfig/compiz-scale.pc
