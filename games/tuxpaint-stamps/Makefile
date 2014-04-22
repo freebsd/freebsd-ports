@@ -16,8 +16,9 @@ INSTALL_TARGET=	install-all
 
 DATADIR=	${PREFIX}/share/tuxpaint
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+		-e 's|DATA_PREFIX)|DESTDIR)$$(&|' \
+		${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.mk>
