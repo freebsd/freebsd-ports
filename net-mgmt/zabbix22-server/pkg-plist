@@ -1,4 +1,5 @@
 %%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.sample
+man/man8/zabbix_%%ZABBIX_BUILD%%.8.gz
 sbin/zabbix_%%ZABBIX_BUILD%%
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/mysql/data.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/mysql/schema.sql
