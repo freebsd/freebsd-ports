@@ -4,7 +4,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	2.2.12
-PORTREVISION?=	13
+PORTREVISION?=	14
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/${PORTNAME}/2.2
 PKGNAMESUFFIX=	20
@@ -13,22 +13,21 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+, Pango, Atk, and Glib
 
-USE_BZIP2=	yes
+USES+=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
+LIB_DEPENDS=	libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_AUTOTOOLS=	libtool
-USES=		pathfix gmake pkgconfig
+USES+=		pathfix gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	lthack gtk20
+USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--enable-static=yes \
 		--with-sigc-prefix=${LOCALBASE}
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gmessages.h|glib/gtestutils.h|g' \
 		${WRKSRC}/glib/src/*.ccg ${WRKSRC}/glib/glibmm/*.* \
