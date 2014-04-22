@@ -5,10 +5,6 @@
 %%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.1.10.2519/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.1.10.2519/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/bundles.json
-%%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.1.10.2519/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U2S48/3.1.10.2519/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.1.10.2519/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.1.10.2519/firmware.bin
 %%JAVASHAREDIR%%/unifi/lib/MRJAdapter.jar
 %%JAVASHAREDIR%%/unifi/lib/ace.jar
 %%JAVASHAREDIR%%/unifi/lib/annotations-api.jar
