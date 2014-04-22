@@ -15,11 +15,10 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOME=	gnomehack vte pygtk2
+USE_GNOME=	vte pygtk2
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--enable-python \
 		--disable-Bsymbolic \
 		--disable-freetypetest
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
