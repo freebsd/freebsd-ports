@@ -4,6 +4,7 @@ lib/libgtkgl-2.0.a
 lib/libgtkgl-2.0.la
 lib/libgtkgl-2.0.so
 lib/libgtkgl-2.0.so.1
+lib/libgtkgl-2.0.so.1.0.1
 libdata/pkgconfig/gtkgl-2.0.pc
 @dirrm include/gtkgl-2.0/gtkgl
 @dirrm include/gtkgl-2.0

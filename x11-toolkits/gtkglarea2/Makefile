@@ -4,7 +4,7 @@
 
 PORTNAME=	gtkglarea
 PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DISTNAME=	gtkglarea-${PORTVERSION}
@@ -13,14 +13,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An OpenGL widget for the GTK+2 GUI toolkit
 
-LATEST_LINK=	gtkglarea2
-USE_GNOME=	gnomehack gtk20
-USE_BZIP2=	yes
+USE_GNOME=	 gtk20
 USE_GL=		yes
-USES=		pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lib-GL
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
