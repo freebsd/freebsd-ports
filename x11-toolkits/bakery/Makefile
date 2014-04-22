@@ -4,29 +4,28 @@
 
 PORTNAME=	bakery
 PORTVERSION=	2.6.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A C++ Application Framework for use with Gtkmm
 
-LIB_DEPENDS=	gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
-		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
-		gnomevfsmm-2.6:${PORTSDIR}/devel/gnome-vfsmm \
-		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26
+LIB_DEPENDS=	libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
+		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
+		libgnomevfsmm-2.6.so:${PORTSDIR}/devel/gnome-vfsmm \
+		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26
 
-USE_GNOME=	gnomehack gnomeprefix intlhack ltverhack
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USE_GNOME=	gnomeprefix intlhack
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
 		${WRKSRC}/Makefile.in
