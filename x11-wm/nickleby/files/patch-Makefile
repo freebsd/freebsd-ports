@@ -1,0 +1,13 @@
+--- ./Makefile.orig	2007-10-17 09:12:58.000000000 +0200
++++ ./Makefile	2014-04-22 09:57:02.793478004 +0200
+@@ -21,8 +21,8 @@
+ 	${CC} ${CFLAGS} ${INC} -o nickleby nickleby.c ${LIB}
+ 
+ install: all
+-	${INSTALL_PROGRAM} nickleby ${DEST}
+-	${INSTALL_MAN} nickleby.1.gz ${PREFIX}/man/man1
++	${INSTALL_PROGRAM} nickleby ${DESTDIR}${PREFIX}/bin
++	${INSTALL_MAN} nickleby.1.gz ${DESTDIR}${PREFIX}/man/man1
+ 
+ clean:
+ 	${RM} -f nickleby
