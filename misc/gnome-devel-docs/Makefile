@@ -14,11 +14,9 @@ COMMENT=	Documents targeted for GNOME developers
 BUILD_DEPENDS=	gnome-doc-prepare:${PORTSDIR}/textproc/gnome-doc-utils
 RUN_DEPENDS=	gnome-doc-prepare:${PORTSDIR}/textproc/gnome-doc-utils
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomehier
 INSTALLS_OMF=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
