@@ -77,3 +77,18 @@ sbin/opendkim-testmsg
 @dirrm include/opendkim
 %%DKIMREP%%@dirrm include/dkim-rep
 @dirrmtry etc/mail
+%%FILTER%%man/man5/opendkim.conf.5.gz
+%%LUA%%man/man8/miltertest.8.gz
+man/man8/opendkim-genkey.8.gz
+man/man8/opendkim-genzone.8.gz
+man/man8/opendkim-testadsp.8.gz
+man/man8/opendkim-testkey.8.gz
+man/man8/opendkim-testmsg.8.gz
+%%FILTER%%man/man8/opendkim.8.gz
+%%LUA%%%%FILTER%%man/man3/opendkim-lua.3.gz
+%%STATS%%man/man8/opendkim-expire.8.gz
+%%STATS%%man/man8/opendkim-gengraphs.8.gz
+%%STATS%%man/man8/opendkim-genstats.8.gz
+%%STATS%%man/man8/opendkim-stats.8.gz
+%%STATS%%%%ODBX%%man/man1/opendkim-spam.1.gz
+%%STATS%%%%ODBX%%man/man8/opendkim-importstats.8.gz
