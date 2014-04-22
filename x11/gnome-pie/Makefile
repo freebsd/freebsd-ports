@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-pie
 PORTVERSION=	0.5.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -14,11 +14,11 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 RUN_DEPENDS=	gnome-icons-faenza>=1.3:${PORTSDIR}/x11-themes/gnome-icons-faenza \
 		gnome-settings-daemon>=2.32.1_4:${PORTSDIR}/sysutils/gnome-settings-daemon
-LIB_DEPENDS=	Xtst:${PORTSDIR}/x11/libXtst \
-		cairo:${PORTSDIR}/graphics/cairo \
-		gee:${PORTSDIR}/devel/libgee06 \
-		unique:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libgee.so:${PORTSDIR}/devel/libgee06 \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
+USE_XORG=	xtst
 GH_ACCOUNT=	Simmesimme
 GH_PROJECT=	Gnome-Pie
 GH_COMMIT=	5ea8b11
@@ -28,30 +28,14 @@ INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DOCS_CMAKE_ON=	-DINSTALL_DOCS:BOOL=ON
+MANPAGES_CMAKE_OFF=	-DNO_INSTALL_MANPAGES:BOOL=ON
 
-.if ${PORT_OPTIONS:MDOCS}
-CMAKE_ARGS+=	-DINSTALL_DOCS:BOOL=ON
-.endif
-
-.if ${PORT_OPTIONS:MMANPAGES}
-MAN1=	gnome-pie.1
-.else
-CMAKE_ARGS+=	-DNO_INSTALL_MANPAGES:BOOL=ON
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-CMAKE_ARGS+=	-DINSTALL_NLS:BOOL=ON
-USES+=		gettext
-PLIST_SUB=	NLS=""
-.else
-CMAKE_ARGS+=	-DINSTALL_NLS:BOOL=OFF
-PLIST_SUB=	NLS="@comment "
-.endif
-
-PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
+NLS_CMAKE_ON=	-DINSTALL_NLS:BOOL=ON
+NLS_USES=		gettext
+NLS_CMAKE_OFF=	-DINSTALL_NLS:BOOL=OFF
 
 REINPLACE_ARGS=	-e 's,%%DATADIR%%,${DATADIR},1' \
 		-e 's,%%DESKTOPDIR%%,${DESKTOPDIR},1' \
@@ -70,9 +54,6 @@ post-patch:
 			${WRKSRC}/src/gui/indicator.vala \
 			${WRKSRC}/src/utilities/paths.vala \
 			${WRKSRC}/resources/ui/*.ui
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 gnome-pie-user:
 	gconftool-2 --type string --set /desktop/gnome/interface/icon_theme "Faenza"

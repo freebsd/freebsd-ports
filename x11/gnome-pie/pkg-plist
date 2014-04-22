@@ -1,6 +1,6 @@
-@comment FreeBSD$
 bin/gnome-pie
-%%DESKTOPDIR%%/gnome-pie.desktop
+%%MANPAGES%%man/man1/gnome-pie.1.gz
+share/applications/gnome-pie.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%DATADIR%%/themes/adwaita/arrow.svg
 %%DATADIR%%/themes/adwaita/caption_mask.svg
@@ -95,4 +95,8 @@ share/icons/hicolor/scalable/apps/gnome-pie.svg
 @dirrm %%DATADIR%%/themes/adwaita
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
