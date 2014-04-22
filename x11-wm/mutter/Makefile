@@ -4,7 +4,7 @@
 
 PORTNAME=	mutter
 PORTVERSION=	2.31.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -13,30 +13,24 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Window and compositing manager based on Clutter
 
 BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		clutter-glx-1.0:${PORTSDIR}/graphics/clutter \
-		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
+		libclutter-glx-1.so:${PORTSDIR}/graphics/clutter \
+		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 
-USE_BZIP2=	yes
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm
-USES=		gettext gmake pkgconfig
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 ltverhack
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_GNOME=	gnomeprefix intlhack gtk20 gconf2
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	mutter.schemas
 
-MAN1=		mutter-message.1 mutter-theme-viewer.1 \
-		mutter-window-demo.1 mutter.1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 	    	${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
