@@ -3,7 +3,7 @@
 
 PORTNAME=	vdk
 PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/${PORTNAME}lib/VDK%20for%20both%20Linux%20and%20Windows%20%28this%20is%20the%20new%20version%29/VDKLIB%20%28C%2B%2B%20wrapper%20for%20GTK%2B%29
 
@@ -13,19 +13,15 @@ COMMENT=	C++ wrapper for GTK+ toolkit
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=        pathfix pkgconfig
+USES=	libtool pathfix pkgconfig
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no
 USE_LDCONFIG=	yes
-
-MAN1=		vdk-config-2.1
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS="-s"|CXXFLAGS="$$CXXFLAGS"|g ; \
@@ -38,4 +34,4 @@ post-patch:
 		's|<.*regex\.h>|<gnu/regex.h>|g' ${WRKSRC}/include/vdk/${file}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
