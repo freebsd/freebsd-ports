@@ -18,7 +18,7 @@ USE_CABAL=	async==2.0.1.4_4 \
 		attoparsec==0.10.4.0_5 \
 		cgi==3001.1.7.5_4,1 \
 		fgl==5.4.2.4_9 \
-		GLUT==2.4.0.0_4,1 \
+		GLUT==2.4.0.0_5,1 \
 		GLURaw==1.3.0.0_4 \
 		haskell-src==1.0.1.5_8 \
 		hashable==1.1.2.5_4,1 \
@@ -28,7 +28,7 @@ USE_CABAL=	async==2.0.1.4_4 \
 		mtl==2.1.2_6 \
 		network==2.4.1.2_4 \
 		OpenGL==2.8.0.0_4,1 \
-		OpenGLRaw==1.3.0.0_4 \
+		OpenGLRaw==1.3.0.0_5 \
 		parallel==3.2.0.3_6 \
 		parsec==3.1.3_6 \
 		primitive==0.5.0.1_6 \
