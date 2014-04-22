@@ -11,6 +11,7 @@ lib/libgnomeprintui-2-2.a
 lib/libgnomeprintui-2-2.la
 lib/libgnomeprintui-2-2.so
 lib/libgnomeprintui-2-2.so.0
+lib/libgnomeprintui-2-2.so.0.1.0
 libdata/pkgconfig/libgnomeprintui-2.2.pc
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/home.png
