@@ -123,10 +123,10 @@ lib/girepository-1.0/Cally-1.0.typelib
 lib/girepository-1.0/Clutter-1.0.typelib
 lib/girepository-1.0/ClutterX11-1.0.typelib
 lib/girepository-1.0/Cogl-1.0.typelib
-lib/libclutter-glx-1.0.a
 lib/libclutter-glx-1.0.la
 lib/libclutter-glx-1.0.so
 lib/libclutter-glx-1.0.so.0
+lib/libclutter-glx-1.0.so.0.400.0
 libdata/pkgconfig/cally-1.0.pc
 libdata/pkgconfig/clutter-1.0.pc
 libdata/pkgconfig/clutter-glx-1.0.pc
