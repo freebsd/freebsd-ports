@@ -169,11 +169,25 @@ fi
 	fi
 } >${WRKDIR}/.mtree
 
+pkg_get_recursive_deps() {
+	echo "$@"
+	PKG_CHECKED="${PKG_CHECKED} $@"
+	for depends in $(${PKG_QUERY} '%do' $@ | sort -u); do
+		[ -z "${depends}" ] && return
+		case " ${PKG_CHECKED} " in
+		*\ ${depends}\ *) continue ;;
+		esac
+		pkg_get_recursive_deps "${depends}"
+	done
+}
+
 ### GATHER DIRS OWNED BY RUN-DEPENDS. WHY ARE WE SCREAMING?
 : >${WRKDIR}/.run-depends-dirs
 if [ -n "${WITH_PKGNG}" ]; then
-	echo "${PACKAGE_DEPENDS}" | xargs ${PKG_QUERY} "%D" | \
-	    sed -e 's,/$,,' | sort -u >>${WRKDIR}/.run-depends-dirs
+	echo "${PACKAGE_DEPENDS}" | while read pkg; do \
+	    PKG_CHECKED= pkg_get_recursive_deps "${pkg}"; done | sort -u | \
+	    xargs ${PKG_QUERY} "%D" | sed -e 's,/$,,' | sort -u \
+	    >>${WRKDIR}/.run-depends-dirs
 else
 	# Evaluate ACTUAL-PACKAGE-DEPENDS
 	packagelist=
@@ -190,11 +204,11 @@ else
 			}
 EOF
 )
-		echo "${package_depends}" | while read line; do
-			${PKG_QUERY} -f ${line%%:*} | \
-			    awk "${awk_script}" | \
-			    sed -e "/^[^/]/s,^,${LOCALBASE}/,"
-		done | sort -u >>${WRKDIR}/.run-depends-dirs
+		echo "${package_depends}" | tr ' ' '\n' | cut -d : -f 1 | \
+		    sort -u | xargs -n 1 ${PKG_QUERY} -f | \
+		    awk "${awk_script}" | \
+		    sed -e "/^[^/]/s,^,${LOCALBASE}/," | sort -u \
+		    >>${WRKDIR}/.run-depends-dirs
 	fi
 fi
 unset PACKAGE_DEPENDS PKG_QUERY
