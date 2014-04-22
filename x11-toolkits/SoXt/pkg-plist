@@ -26,8 +26,10 @@ include/Inventor/Xt/viewers/SoXtViewer.h
 include/Inventor/Xt/widgets/SoXtPopupMenu.h
 lib/libSoXt.la
 lib/libSoXt.so
-lib/libSoXt.so.23
+lib/libSoXt.so.20
+lib/libSoXt.so.20.3.0
 libdata/pkgconfig/SoXt.pc
+man/man1/soxt-config.1.gz
 share/Coin/conf/soxt-default.cfg
 share/aclocal/soxt.m4
 @dirrm include/Inventor/Xt/widgets
