@@ -20,8 +20,8 @@ include/gtkdatabox/gtkdatabox_xyyc_graph.h
 %%GLADE%%lib/libglade/2.0/libdatabox.a
 %%GLADE%%lib/libglade/2.0/libdatabox.la
 %%GLADE%%lib/libglade/2.0/libdatabox.so
-lib/libgtkdatabox-0.9.2.so
 lib/libgtkdatabox-0.9.2.so.0
+lib/libgtkdatabox-0.9.2.so.0.0.0
 lib/libgtkdatabox.a
 lib/libgtkdatabox.la
 lib/libgtkdatabox.so
