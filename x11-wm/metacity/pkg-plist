@@ -13,7 +13,12 @@ lib/libmetacity-private.a
 lib/libmetacity-private.la
 lib/libmetacity-private.so
 lib/libmetacity-private.so.0
+lib/libmetacity-private.so.0.0.0
 libdata/pkgconfig/libmetacity-private.pc
+man/man1/metacity-message.1.gz
+man/man1/metacity-theme-viewer.1.gz
+man/man1/metacity-window-demo.1.gz
+man/man1/metacity.1.gz
 share/applications/metacity.desktop
 share/gnome-control-center/keybindings/50-metacity-desktop-key.xml
 share/gnome-control-center/keybindings/50-metacity-key.xml
