@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-desktop
 PORTVERSION=	2.32.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python-desktop/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -15,49 +15,41 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings used by modules in the GNOME Desktop
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_SUB=	yes
+
 BUILD_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy \
 		metacity<2.34.0:${PORTSDIR}/x11-wm/metacity
-LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
-		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser \
-		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
-		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
-		brasero-media.3:${PORTSDIR}/sysutils/brasero \
-		evdocument.3:${PORTSDIR}/graphics/evince
+LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
+		libtotem-plparser.so:${PORTSDIR}/multimedia/totem-pl-parser \
+		libgnome-media-profiles.so:${PORTSDIR}/audio/gnome-media \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
+		libbrasero-media.so:${PORTSDIR}/sysutils/brasero \
+		libevdocument.so:${PORTSDIR}/graphics/evince
 RUN_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_PYTHON=	2
-USE_GNOME=	gnomehack libgnomeprintui gnomepanel gnomedesktop \
+USE_GNOME=	libgnomeprintui gnomepanel gnomedesktop \
 		gtksourceview libwnck nautilus2 pygnome2 metacity \
 		evolutiondataserver
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-metacity --disable-nautilusburn
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
-.if !defined(NOPORTDOCS)
-DOCSDIR=	${PREFIX}/share/doc/py-gnome-desktop
-.else
-DOCSDIR=	${WRKSRC}/share/doc/py-gnome-desktop
-.endif
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${FIND} ${WRKSRC}/docs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|^HTML_DIR =.*|HTML_DIR = ${DOCSDIR}|g'
 	@${REINPLACE_CMD} -e 's|2.30|2.32|g' ${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${EG_DST_DIR}
-	${TAR} -C ${EG_SRC_DIR} --exclude *nautilusburn* -cf - . | ${TAR} -C ${EG_DST_DIR} -xf -
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
-	${CHMOD} -R go-w ${EG_DST_DIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EG_DST_DIR}
+	cd ${EG_SRC_DIR}; ${COPYTREE_SHARE} . ${STAGEDIR}${EG_DST_DIR}
+	${RM} -rf ${STAGEDIR}${EG_DST_DIR}/nautilusburn
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
