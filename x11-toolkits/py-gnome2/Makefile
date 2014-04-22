@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	2.28.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -15,35 +15,30 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GNOME 2
 
+OPTIONS_DEFINE=	EXAMPLES
+
+OPTIONS_SUB=	yes
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit
 
-LATEST_LINK=	py-gnome2
-USE_BZIP2=	yes
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gnomehack libgnomeui pygtk2
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	libgnomeui pygtk2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
+INSTALL_TARGET=	install-strip
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
 
-CONFLICTS=	py*-gnome-1*
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${EG_DST_DIR}
-	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xf -
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
-	${FIND} ${EG_DST_DIR} -type d -print | ${XARGS} ${CHMOD} 0755
-	${FIND} ${EG_DST_DIR} -type f -print | ${XARGS} ${CHMOD} 0444
-.endif
+	@${MKDIR} ${STAGEDIR}${EG_DST_DIR}
+	cd ${EG_SRC_DIR}; ${PAX} -rw . ${STAGEDIR}${EG_DST_DIR}
+	${FIND} ${STAGEDIR}${EG_DST_DIR} -type d -print | ${XARGS} ${CHMOD} 0755
+	${FIND} ${STAGEDIR}${EG_DST_DIR} -type f -print | ${XARGS} ${CHMOD} 0444
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
