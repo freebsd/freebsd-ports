@@ -1,5 +1,17 @@
---- Makefile.pre.in.orig	2013-05-16 02:32:57.000000000 +1000
-+++ Makefile.pre.in	2013-09-05 23:48:22.439871947 +1000
+# Description: Remove duplicate CFLAGS, CPPFLAGS, LDFLAGS by stripping CONFIGURE_*
+# Submitted by: koobs (r326729)
+# TODO: Upstream
+
+# Description: Fix out-of-tree build as a result of upstream #15819
+# Submitted by: rm (r318353)
+# Issue ID: http://bugs.python.org/issue15819#msg203348
+
+# Description: Run ranlib before installing the library read-only
+# Submitted by: antoine@ (r350207)
+# TODO: Upstream
+
+--- ./Makefile.pre.in.orig	2014-03-09 19:40:23.000000000 +1100
++++ ./Makefile.pre.in	2014-04-20 23:28:30.086226530 +1000
 @@ -70,18 +70,18 @@
  OPT=		@OPT@
  BASECFLAGS=	@BASECFLAGS@
@@ -25,7 +37,7 @@
  NO_AS_NEEDED=	@NO_AS_NEEDED@
  LDLAST=		@LDLAST@
  SGI_ABI=	@SGI_ABI@
-@@ -306,21 +306,21 @@
+@@ -310,21 +310,21 @@
  
  ##########################################################################
  # AST
@@ -51,7 +63,7 @@
  
  OPCODETARGETGEN= \
  		$(srcdir)/Python/makeopcodetargets.py
-@@ -742,7 +742,7 @@
+@@ -747,7 +747,7 @@
  Objects/setobject.o: $(srcdir)/Objects/stringlib/eq.h
  
  $(OPCODETARGETS_H): $(OPCODETARGETGEN_FILES)
@@ -60,7 +72,7 @@
  
  Python/ceval.o: $(OPCODETARGETS_H) $(srcdir)/Python/ceval_gil.h
  
-@@ -753,7 +753,7 @@
+@@ -758,7 +758,7 @@
  
  Objects/typeobject.o: Objects/typeslots.inc
  Objects/typeslots.inc: $(srcdir)/Include/typeslots.h $(srcdir)/Objects/typeslots.py
@@ -69,3 +81,13 @@
  
  ############################################################################
  # Header files
+@@ -1205,8 +1205,8 @@
+ 			if test "$(SHLIB_SUFFIX)" = .dll; then \
+ 				$(INSTALL_DATA) $(LDLIBRARY) $(DESTDIR)$(LIBPL) ; \
+ 			else \
++				$(RANLIB) $(LIBRARY) ; \
+ 				$(INSTALL_DATA) $(LIBRARY) $(DESTDIR)$(LIBPL)/$(LIBRARY) ; \
+-				$(RANLIB) $(DESTDIR)$(LIBPL)/$(LIBRARY) ; \
+ 			fi; \
+ 		else \
+ 			echo Skip install of $(LIBRARY) - use make frameworkinstall; \
