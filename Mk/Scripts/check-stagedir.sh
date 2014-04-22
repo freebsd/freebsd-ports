@@ -101,7 +101,7 @@ if [ $makeplist = 0 ] ; then
 		@fc\ *|@fcfontsdir\ *|@fontsdir\ *)
 			set -- $line
 			shift
-			echo "${comment}@dirrmtry ${cwd}/$@"
+			echo >&3 "${comment}${cwd}/$@"
 		;;
 
 		# order matters here - we must check @cwd first because
