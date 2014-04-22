@@ -7,6 +7,7 @@ lib/libzvt-2.0.a
 lib/libzvt-2.0.la
 lib/libzvt-2.0.so
 lib/libzvt-2.0.so.0
+lib/libzvt-2.0.so.0.0.1
 libdata/pkgconfig/libzvt-2.0.pc
 libexec/libzvt-2.0/gnome-pty-helper
 @dirrm libexec/libzvt-2.0
