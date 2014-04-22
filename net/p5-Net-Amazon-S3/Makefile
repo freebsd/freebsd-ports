@@ -36,7 +36,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-pre-build:
-	@${FIND} ${WRKSRC} -name \*.orig -delete
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.mk>
