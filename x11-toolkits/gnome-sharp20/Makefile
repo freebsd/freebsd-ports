@@ -10,17 +10,14 @@ MASTER_SITES=	GNOME
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GNOME interfaces for the .NET runtime
 
-LATEST_LINK=	gnome-sharp20
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake perl5 pkgconfig
+USES=		gmake libtool pathfix perl5 pkgconfig tar:bzip2
 USE_PERL5=	run
-USE_GNOME=	gnomehack gnomepanel gtksharp20 librsvg2 vte libgnomeprintui \
-		libgnomeui
+USE_GNOME=	gnomepanel gtksharp20 librsvg2 vte libgnomeprintui libgnomeui
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'
