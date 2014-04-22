@@ -89,7 +89,8 @@ include/Mowitz/MwVSliderP.h
 include/Mowitz/MwXFormat.h
 include/Mowitz/MwXutils.h
 @dirrm include/Mowitz
-lib/libMowitz.so.2
+lib/libMowitz.so.0
+lib/libMowitz.so.0.2.1
 lib/libMowitz.so
 lib/libMowitz.a
 share/Mowitz/fonts/agd.afm
