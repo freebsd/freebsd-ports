@@ -2,53 +2,50 @@
 # $FreeBSD$
 
 PORTNAME=	tulip
-PORTVERSION=	3.8.0
-PORTREVISION=	3
+PORTVERSION=	4.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A system dedicated to the visualization of huge graphs
+COMMENT=	System dedicated to the visualization of huge graphs
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-   		gzstream.0:${PORTSDIR}/devel/gzstream \
-		ftgl.2:${PORTSDIR}/graphics/ftgl \
-		qscintilla2:${PORTSDIR}/devel/qscintilla2 \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+OPTIONS_DEFINE=	DOCS
 
-USE_QT4=	corelib moc_build uic_build rcc_build gui opengl xml network qmake_build \
-		designer assistant assistantclient
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libQxtCore.so:${PORTSDIR}/devel/libqxt \
+		libOGDF.so:${PORTSDIR}/math/ogdf \
+		libpng.so:${PORTSDIR}/graphics/png
+
+USES=		cmake:outsource compiler:c++11-lib shebangfix dos2unix
+SHEBANG_FILES=	tulip-config.in
+DOS2UNIX_FILES=	software/tulip/src/main.cpp
+USE_CXXSTD=	c++11
 USE_GL=		glew glut
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
-USES=		cmake:outsource
-CMAKE_ARGS+=	-DLOCALBASE:PATH=${LOCALBASE} \
-		-DPYTHON_INCLUDEDIR:PATH=${PYTHON_INCLUDEDIR}
-USE_LDCONFIG=	${PREFIX}/lib/tlp
+USE_QT4=	corelib moc_build uic_build rcc_build gui opengl xml network qmake_build \
+		designer assistant assistantclient
+CXXFLAGS+=	-fPIC -I${LOCALBASE}/include -DNDEBUG -g -O0
+LDFLAGS+=	-L${LOCALBASE}/lib
+CMAKE_ARGS+=	-DPYTHON_INCLUDEDIR:PATH=${PYTHON_INCLUDEDIR} \
+    		-DLOCALBASE:PATH=${LOCALBASE} \
+		-DOGDFLibrary=${LOCALBASE}/lib/libOGDF.so \
+		-DOGDFInclude=${LOCALBASE}/include
+USE_LDCONFIG=	${PREFIX}/lib/tulip
 
-WRKSRC=		${WRKDIR}/${DISTNAME}-src
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_SUB+=	TULIP_VERSION=${PORTVERSION} \
 		TULIP_VERS=${PORTVERSION:R}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile on FreeBSD 7.X
-.endif
-
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}-${PORTVERSION}-html.tar.bz2
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 post-install:
-	${INSTALL} -d ${DOCSDIR}
-	(cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}-html && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}-html && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
