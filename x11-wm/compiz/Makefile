@@ -79,7 +79,7 @@ SVG_CONFIGURE_ENABLE=	librsvg
 SVG_USE=	GNOME=librsvg2
 
 GTK2_CONFIGURE_ENABLE=	gtk
-GTK2_USE=	glib20 libwnck
+GTK2_USE=	GNOME=glib20,libwnck
 
 FUSE_CONFIGURE_ENABLE=	fuse
 FUSE_USES=		fuse
