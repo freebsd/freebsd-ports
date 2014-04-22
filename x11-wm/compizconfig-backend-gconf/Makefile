@@ -11,16 +11,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gconf backend for CompizConfig
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
-LIB_DEPENDS=	compizconfig.0:${PORTSDIR}/x11-wm/libcompizconfig
+LIB_DEPENDS=	libcompizconfig.so:${PORTSDIR}/x11-wm/libcompizconfig
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+INSTALL_TARGET=	install-strip
 
-USES=		pathfix pkgconfig gmake tar:bzip2
+USES=		libtool pathfix pkgconfig gmake tar:bzip2
 USE_GNOME=	glib20 gconf2
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
 		${WRKSRC}/settings-backend/gconf.c	\
