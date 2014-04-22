@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://secdev.org/projects/scapy/files/
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	vanhu@FreeBSD.org
 COMMENT=	Powerful interactive packet manipulation program in python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dnet.so:${PORTSDIR}/net/py-libdnet \
