@@ -54,6 +54,7 @@ lib/libgnomeuimm-%%VERSION%%.a
 lib/libgnomeuimm-%%VERSION%%.la
 lib/libgnomeuimm-%%VERSION%%.so
 lib/libgnomeuimm-%%VERSION%%.so.1
+lib/libgnomeuimm-%%VERSION%%.so.1.0.4
 lib/libgnomeuimm-%%API_VERSION%%/include/libgnomeuimmconfig.h
 lib/libgnomeuimm-%%API_VERSION%%/proc/m4/convert.m4
 lib/libgnomeuimm-%%API_VERSION%%/proc/m4/convert_libgnomeuimm.m4
