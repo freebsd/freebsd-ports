@@ -12,7 +12,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	vanhu@netasq.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KAME racoon IKE daemon, ipsec-tools version
 
 CONFLICTS=	racoon-[0-9]*
