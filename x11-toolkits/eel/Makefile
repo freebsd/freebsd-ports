@@ -4,7 +4,7 @@
 
 PORTNAME=	eel
 PORTVERSION=	2.26.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,16 +12,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generally useful classes and extensions to GNOME
 
-USES=		gettext gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_XORG=	xrender
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack gnomedesktop ltverhack intlhack
-USE_AUTOTOOLS=	libtool
+USE_GNOME=	gnomeprefix gnomedesktop intlhack
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
