@@ -22,10 +22,9 @@ MAKE_ENV=		VPATH="${PYTHON_WRKSRC}"
 
 INSTALL_TARGET=	altinstall
 
-USES=		readline
+USES=		readline tar:xz
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USE_XZ=		yes
 
 PYTHON_VERSION=		python2.7
 PYTHON_NO_DEPENDS=	yes
