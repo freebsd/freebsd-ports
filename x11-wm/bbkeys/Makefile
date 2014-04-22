@@ -21,25 +21,19 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	`pkg-config --cflags xft`
 LDFLAGS+=	`pkg-config --libs xft`
 
-MAN1=		bbkeys.1
-MAN5=		bbkeysrc.5
 PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
 
-PLIST_FILES=	bin/bbkeys %%DATADIR%%/bbkeysrc %%DATADIR%%/defaultStyle
+PLIST_FILES=	bin/bbkeys %%DATADIR%%/bbkeysrc %%DATADIR%%/defaultStyle \
+		man/man1/bbkeys.1.gz man/man5/bbkeysrc.5.gz
 PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#: install-docDATA#:#' ${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S#^#${WRKSRC}/#} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S#^#${WRKSRC}/#} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
