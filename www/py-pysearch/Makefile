@@ -18,15 +18,14 @@ PYDISTUTILS_PKGNAME=	pYsearch
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -R ${WRKSRC}/docs/ ${STAGEDIR}${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
