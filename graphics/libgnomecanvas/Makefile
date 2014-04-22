@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomecanvas
 PORTVERSION=	2.30.3
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,21 +12,21 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A graphics library for GNOME
 
-USE_BZIP2=	yes
+USES+=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gettext gmake pkgconfig
+USES+=		gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack libglade2 libartlgpl2 ltverhack referencehack
+USE_GNOME=	libglade2 libartlgpl2 referencehack
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--enable-glade \
 		--disable-gtk-doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
 
 .endif
