@@ -3,28 +3,27 @@
 
 PORTNAME=	compiz-plugins-main
 PORTVERSION=	0.8.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for Compiz Composite Window Manager
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		pangocairo-1.0:${PORTSDIR}/x11-toolkits/pango
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz \
 		${LOCALBASE}/libdata/pkgconfig/bcop.pc:${PORTSDIR}/devel/compiz-bcop
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_GL=		yes
-USE_BZIP2=	yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig libtool tar:bzip2
 USE_CSTD=	gnu89
 USE_GNOME=	intltool
 USE_XORG=	glproto
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 
 GCONF_SCHEMAS=	compiz-animation.schemas \
 		compiz-colorfilter.schemas \
@@ -56,5 +55,4 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-schemas
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
