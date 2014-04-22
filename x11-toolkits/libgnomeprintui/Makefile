@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomeprintui
 PORTVERSION=	2.18.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,17 +15,16 @@ COMMENT=	Gnome print support library
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
-USE_BZIP2=	yes
 USE_XORG=	x11 xpm
-USES=		bison pathfix gettext gmake pkgconfig
+USES=		bison pathfix gettext gmake pkgconfig libtool tar:bzip2
 USE_GNOME=	gnomeprefix libgnomeprint libgnomecanvas \
-		intlhack ltverhack
+		intlhack
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
