@@ -4,7 +4,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME \
 		http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
@@ -12,17 +12,17 @@ MASTER_SITES=	GNOME \
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL based interactive canvas library
 
-LIB_DEPENDS=	json-glib-1.0:${PORTSDIR}/devel/json-glib
+LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
 LICENSE=	LGPL21
 
-USES=		pkgconfig gettext gmake
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gdkpixbuf2 gnomehack ltverhack gnomeprefix atk pango introspection:build
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	gdkpixbuf2 gnomeprefix atk pango introspection:build
+INSTALL_TARGET=	install-strip
 USE_GL=		gl
 USE_XORG=	glproto x11 xfixes xdamage xcomposite xi
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x --enable-conformance=no
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
