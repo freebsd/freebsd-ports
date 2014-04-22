@@ -14,11 +14,11 @@ COMMENT=	C++ wrapper for gnomevfs2 library
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_BZIP2=	yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	glibmm gnomevfs2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 
@@ -29,6 +29,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
 		${WRKSRC}/tools/extra_defs_gen/Makefile.in
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnomevfsmm-2.6.so.1.0.9
 .include <bsd.port.mk>
