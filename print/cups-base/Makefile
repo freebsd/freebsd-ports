@@ -4,7 +4,7 @@
 PORTNAME=	cups
 PORTVERSION=	1.7.1
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	2
+#PORTREVISION=	defined further
 CATEGORIES=	print
 MASTER_SITES=	http://www.cups.org/software/${DISTVERSION}/ \
 		EASYSW/${PORTNAME}/${DISTVERSION}
@@ -51,22 +51,20 @@ CUPSSYSGRP=	wheel
 GROUPS=	cups
 USERS=		cups
 
-USES+=		compiler
-
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 .if defined(CUPS_CLIENT)
-PORTREVISION=	0
+PORTREVISION=	1
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 OPTIONS_DEFINE=	GNUTLS
 .elif defined(CUPS_IMAGE)
-PORTREVISION=	0
+PORTREVISION=	1
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 OPTIONS_DEFINE=	GNUTLS
 .else
 INSTALLS_ICONS=	yes
-PORTREVISION=	0
+PORTREVISION=	1
 CUPS_SUFFIX=	-base
 OPTIONS_DEFINE=	GNUTLS LIBPAPER PHP PYTHON PAM DBUS LIBUSB XDG_OPEN AVAHI MDNSRESPONDER
 OPTIONS_DEFAULT=	LIBPAPER
@@ -300,13 +298,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/ulpt-cupsd.sh ${STAGEDIR}${PREFIX}/sbin/
 .endif
 
-# This is to workaround a CUPS bug. Should be fixed by 1.7.3.
-# pfg@ filed a bug report upstream: https://www.cups.org/str.php?L4397
-#
-.include <bsd.port.pre.mk>
-.if (defined(CUPS_CLIENT) || defined(CUPS_IMAGE)) && ${OPSYS} == "FreeBSD" && \
-	${OSVERSION} > 1000000 && ${COMPILER_TYPE} == clang
-CFLAGS+=	-fno-blocks
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
