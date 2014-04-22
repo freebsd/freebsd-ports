@@ -1,0 +1,4 @@
+SoCo (Sonos Controller) is a simple Python class that allows you to
+programmatically control Sonos speakers.
+
+WWW: https://github.com/SoCo/SoCo
