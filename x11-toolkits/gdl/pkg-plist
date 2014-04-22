@@ -12,6 +12,7 @@ include/libgdl-1.0/gdl/libgdltypebuiltins.h
 lib/libgdl-1.la
 lib/libgdl-1.so
 lib/libgdl-1.so.3
+lib/libgdl-1.so.3.0.0
 libdata/pkgconfig/gdl-1.0.pc
 %%DOCSDIR%%/gdl-gdl-dock-bar.html
 %%DOCSDIR%%/gdl-gdl-dock-item.html

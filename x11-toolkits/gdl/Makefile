@@ -4,20 +4,19 @@
 
 PORTNAME=	gdl
 PORTVERSION=	2.30.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Components intended to be shared between GNOME development tools
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20
-USES=		gettext gmake pkgconfig
+USE_GNOME=	gnomeprefix gtk20
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
