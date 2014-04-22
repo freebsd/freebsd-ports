@@ -1,0 +1,23 @@
+diff --git a/Makefile b/Makefile
+index 78abe03..9cde1f0 100644
+--- Makefile
++++ Makefile
+@@ -1,14 +1,11 @@
+-CC	:= gcc
+-CFLAGS	:= -O2 -Wall -Wextra -Wno-missing-field-initializers -Wno-unused-parameter -g2
+-LDFLAGS := -luuid
+ 
+ all: vhdtool
+ 
+-vhdtool: vhdtool.o
+-	$(CC) $^ $(LDFLAGS) -o $@
+-
+-vhdtool.o: vhdtool.c
++vhdtool:
++	$(CC) $(CFLAGS) $(LDFLAGS) -o vhdtool vhdtool.c
+ 
+ clean:
+ 	rm -f vhdtool vhdtool.o
+ 
++install:
++	# Nope.
