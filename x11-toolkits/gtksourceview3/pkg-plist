@@ -23,10 +23,10 @@ include/gtksourceview-3.0/gtksourceview/gtksourceundomanager.h
 include/gtksourceview-3.0/gtksourceview/gtksourceview-typebuiltins.h
 include/gtksourceview-3.0/gtksourceview/gtksourceview.h
 lib/girepository-1.0/GtkSource-3.0.typelib
-lib/libgtksourceview-3.0.a
 lib/libgtksourceview-3.0.la
 lib/libgtksourceview-3.0.so
 lib/libgtksourceview-3.0.so.0
+lib/libgtksourceview-3.0.so.0.0.0
 libdata/pkgconfig/gtksourceview-3.0.pc
 share/gir-1.0/GtkSource-3.0.gir
 share/doc/gtksourceview-3.0/GtkSourceBuffer.html
