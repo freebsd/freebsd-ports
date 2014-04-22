@@ -8,6 +8,7 @@ lib/libemeraldengine.a
 lib/libemeraldengine.la
 lib/libemeraldengine.so
 lib/libemeraldengine.so.0
+lib/libemeraldengine.so.0.0.0
 lib/emerald/engines/liblegacy.so
 lib/emerald/engines/liblegacy.la
 lib/emerald/engines/liblegacy.a
@@ -91,6 +92,10 @@ share/locale/sv/LC_MESSAGES/emerald.mo
 share/locale/tr/LC_MESSAGES/emerald.mo
 share/locale/bn_IN/LC_MESSAGES/emerald.mo
 share/pixmaps/emerald-theme-manager-icon.png
+@dirrmtry share/icons/hicolor/48x48/mimetypes
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/es_AR/LC_MESSAGES

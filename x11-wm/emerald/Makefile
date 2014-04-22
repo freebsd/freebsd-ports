@@ -2,7 +2,7 @@
 
 PORTNAME=	emerald
 PORTVERSION=	0.8.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -15,12 +15,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_GL=		gl
-USE_BZIP2=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig shared-mime-info
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		shared-mime-info tar:bzip2
 USE_GNOME=	gtk20 libwnck pango
 USE_XORG=	xrender
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
