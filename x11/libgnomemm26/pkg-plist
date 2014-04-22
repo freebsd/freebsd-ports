@@ -11,6 +11,7 @@ lib/libgnomemm-%%VERSION%%.a
 lib/libgnomemm-%%VERSION%%.la
 lib/libgnomemm-%%VERSION%%.so
 lib/libgnomemm-%%VERSION%%.so.1
+lib/libgnomemm-%%VERSION%%.so.1.0.5
 lib/libgnomemm-%%API_VERSION%%/include/libgnomemmconfig.h
 lib/libgnomemm-%%API_VERSION%%/proc/m4/convert.m4
 lib/libgnomemm-%%API_VERSION%%/proc/m4/convert_libgnomemm.m4
