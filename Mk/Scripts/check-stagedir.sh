@@ -63,6 +63,8 @@ if [ $makeplist = 0 ] ; then
 	echo "===> Checking for items in STAGEDIR missing from pkg-plist"
 
 	cwd=${PREFIX}
+	cwd_save=
+	commented_cwd=
 	while read line; do
 		# Handle deactivated OPTIONS. Treat "@comment file" as being in
 		# the plist so it does not show up as an orphan. PLIST_SUB uses
@@ -75,6 +77,19 @@ if [ $makeplist = 0 ] ; then
 			# but later prepend it again to create a list of
 			# all files commented and uncommented.
 			comment="@comment "
+			# Only consider comment @cwd for commented lines
+			if [ -n "${commented_cwd}" ]; then
+				[ -z "${cwd_save}" ] && cwd_save=${cwd}
+				cwd=${commented_cwd}
+			fi
+		else
+			# On first uncommented line, forget about commented
+			# @cwd
+			if [ -n "${cwd_save}" ]; then
+				cwd=${cwd_save}
+				cwd_save=
+				commented_cwd=
+			fi
 		fi
 
 		case $line in
@@ -107,29 +122,44 @@ if [ $makeplist = 0 ] ; then
 		# order matters here - we must check @cwd first because
 		# otherwise the @cwd* would also match it first, shadowing the
 		# @cwd) line.
-		@cwd|@cd) cwd=${PREFIX} ;;
+		@cwd|@cd)
+			# Don't actually reset cwd for commented @cwd
+			if [ -n "${comment}" ]; then
+				commented_cwd=${PREFIX}
+			else
+				cwd=${PREFIX}
+			fi
+			;;
 		@cwd*|@cd*)
 			set -- $line
-			cwd=$2
+			newcwd=$2
 			# Don't set cwd=/ as it causes // in plist and
 			# won't match later.
-			[ "${cwd}" = "/" ] && cwd=
+			[ "${newcwd}" = "/" ] && newcwd=
+			# Don't actually reset cwd for commented @cwd
+			if [ -n "${comment}" ]; then
+				commented_cwd=${newcwd}
+			else
+				cwd=${newcwd}
+			fi
+			unset newcwd
 			;;
 		@*) ;;
 		/*) echo "${comment}${line}" ;;
 		*)  echo "${comment}${cwd}/${line}" ;;
 		esac
-	done < ${TMPPLIST} 3>${WRKDIR}/.plist-dirs-unsorted | \
-	    sort >${WRKDIR}/.plist-files
+	done < ${TMPPLIST} 3>${WRKDIR}/.plist-dirs-unsorted \
+	    >${WRKDIR}/.plist-files-unsorted
 	unset TMPPLIST
 	# Create the -no-comments files and trim out @comment from the plists.
 	# This is used for various tests later.
 	sed -e '/^@comment/d' ${WRKDIR}/.plist-dirs-unsorted \
 	    >${WRKDIR}/.plist-dirs-unsorted-no-comments
 	sed -i '' -e 's/^@comment //' ${WRKDIR}/.plist-dirs-unsorted
-	sed -e '/^@comment/d' ${WRKDIR}/.plist-files \
+	sed -e '/^@comment/d' ${WRKDIR}/.plist-files-unsorted | sort \
 	    >${WRKDIR}/.plist-files-no-comments
-	sed -i '' -e 's/^@comment //' ${WRKDIR}/.plist-files
+	sed -e 's/^@comment //' ${WRKDIR}/.plist-files-unsorted | sort \
+	    >${WRKDIR}/.plist-files
 else
 	# generate plist - pretend the plist had been empty
 	: >${WRKDIR}/.plist-dirs-unsorted
