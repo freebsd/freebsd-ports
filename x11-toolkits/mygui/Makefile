@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mygui
-PORTVERSION=	3.2.0.git20140422
+PORTVERSION=	3.2.1.svn20140422
 CATEGORIES=	x11-toolkits graphics devel
-MASTER_SITES=	SF/my-gui/MyGUI/MyGUI_${PORTVERSION}
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+#		SF/my-gui/MyGUI/MyGUI_${PORTVERSION}
 DISTNAME=	MyGUI_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
