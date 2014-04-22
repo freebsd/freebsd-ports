@@ -1,5 +1,5 @@
---- CMake/Packages/FindFreetype.cmake.orig	2012-02-22 22:27:34.000000000 +0100
-+++ CMake/Packages/FindFreetype.cmake	2013-12-28 14:15:26.000000000 +0100
+--- CMake/Packages/FindFreetype.cmake.orig	2013-12-09 04:56:26.000000000 +0400
++++ CMake/Packages/FindFreetype.cmake	2014-04-22 05:18:05.042699865 +0400
 @@ -33,7 +33,7 @@
  findpkg_framework(FREETYPE)
  message(STATUS "CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
