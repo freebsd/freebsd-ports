@@ -7,12 +7,12 @@ PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 #		SF/brikx/Brikx/${PORTVERSION}
-EXTRACT_SUFX=	-src.tar.bz2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game - remove all tiles from the table
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image ttf
 
@@ -29,6 +29,7 @@ DESKTOP_ENTRIES="Brikx" \
 		false
 
 post-patch:
+	@${REINPLACE_CMD} -e '/\/-L\/-R\// d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/DIR_DATA/ s|data/|${DATADIR}/|' \
 		${WRKSRC}/src/brikx.h
 
