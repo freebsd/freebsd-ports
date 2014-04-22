@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small window manager
 
+BROKEN=		Does not build with any modern compiler
+
 USE_XORG=	x11 xext
 USES=		gmake
 REINPLACE_ARGS=	-i '' -e
