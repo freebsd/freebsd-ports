@@ -464,10 +464,12 @@ lib/libgdkmm-%%VERSION%%.a
 lib/libgdkmm-%%VERSION%%.la
 lib/libgdkmm-%%VERSION%%.so
 lib/libgdkmm-%%VERSION%%.so.1
+lib/libgdkmm-%%VERSION%%.so.1.1.0
 lib/libgtkmm-%%VERSION%%.a
 lib/libgtkmm-%%VERSION%%.la
 lib/libgtkmm-%%VERSION%%.so
 lib/libgtkmm-%%VERSION%%.so.1
+lib/libgtkmm-%%VERSION%%.so.1.1.0
 libdata/pkgconfig/gdkmm-%%API_VERSION%%.pc
 libdata/pkgconfig/gtkmm-%%API_VERSION%%.pc
 @dirrm lib/gtkmm-%%API_VERSION%%/proc/m4

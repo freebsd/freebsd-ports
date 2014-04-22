@@ -4,7 +4,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	3.8.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	30
@@ -13,7 +13,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+3
 
-USE_XZ=		yes
+USES+=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
@@ -21,17 +21,16 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	gtk30 ltverhack glibmm cairomm atkmm pangomm
+USES+=		gettext gmake libtool pathfix pkgconfig
+USE_GNOME=	gtk30 glibmm cairomm atkmm pangomm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-documentation \
 		--enable-static=yes
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="3.0" API_VERSION="3.0"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
 		${WRKSRC}/Makefile.in
