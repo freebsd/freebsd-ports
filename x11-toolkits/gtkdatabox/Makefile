@@ -3,12 +3,13 @@
 
 PORTNAME=	gtkdatabox
 PORTVERSION=	0.9.2.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GTK+2 widget to display large amounts of numerical data
+COMMENT=	GTK+2 widget to display large amounts of numerical data
 
 LICENSE=	LGPL21
 
@@ -16,36 +17,24 @@ OPTIONS_DEFINE=	GLADE GLADEUI DOCS EXAMPLES
 GLADE_DESC=	Enable libglade2 support
 GLADEUI_DESC=	Enable glade3 support
 
-USES=		pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${PREFIX}/include/${PORTNAME}" \
 		--with-html-dir="${PREFIX}/share/doc"
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+
+OPTIONS_SUB=yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+GLADE_USE=	GNOME=libglade2
+GLADE_CONFIGURE_ENABLE=	libglade
 
-.if ${PORT_OPTIONS:MGLADE}
-USE_GNOME+=	libglade2
-CONFIGURE_ARGS+=	--enable-libglade
-PLIST_SUB+=	GLADE=""
-.else
-CONFIGURE_ARGS+=	--disable-libglade
-PLIST_SUB+=	GLADE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGLADEUI}
-LIB_DEPENDS+=	gladeui-1:${PORTSDIR}/devel/glade3
-CONFIGURE_ARGS+=	--enable-glade
-PLIST_SUB+=	GLADEUI=""
-.else
-CONFIGURE_ARGS+=	--disable-glade
-PLIST_SUB+=	GLADEUI="@comment "
-.endif
+GLADEUI_LIB_DEPENDS=	libgladeui-1.so:${PORTSDIR}/devel/glade3
+GLADEUI_CONFIGURE_ENABLE=	glade
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -57,13 +46,8 @@ post-patch:
 .endfor
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} api ${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.c ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} api ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.c ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
