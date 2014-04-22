@@ -27,9 +27,11 @@ bin/soapui.sh
 %%PORTDOCS%%%%DOCSDIR%%/licenses/log4j-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/looks-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/mydoggy-LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses/myswing-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/not-yet-commons-ssl-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/opensaml-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/piccolo-LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses/proxy-vole-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/rhino-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/saxon-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/swingx-LICENSE.txt
@@ -43,34 +45,16 @@ bin/soapui.sh
 %%PORTDOCS%%%%DOCSDIR%%/licenses/xmlunit-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/xom-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/xstream-LICENSE.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/Sample REST Project-soapui-project.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/WSDL-WADL/NewsSearchError.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/WSDL-WADL/NewsSearchResponse.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/WSDL-WADL/YahooSearch.wadl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/Sample-Authentication-Project-soapui-project.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/Sample-REST-Project-soapui-project.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/Sample-SOAP-Project-soapui-project.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/WSDL-WADL/sample-service.wadl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/WSDL-WADL/sample-service.wsdl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/madonna_html.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/madonna_json.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/madonna_xml.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/2008_11_13t210453_150x114_us_spears.jpg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/addtomyyahoo4.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/bc_2.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/injection_graph_func.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/ma_nws_1.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/nw2.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/rss.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/thumb.jpg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/thumb_002.jpg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/vidlthumb.jpg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/vidlthumb_002.jpg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/ysch_srp_news_20070511.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/yschx_20061102.css
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/yschx_nws_20050610a.css
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/sample-soapui-project.xml
 %%DATADIR%%/bin/ext/readme.txt
 %%DATADIR%%/bin/loadtestrunner.sh
 %%DATADIR%%/bin/mockservicerunner.sh
 %%DATADIR%%/bin/securitytestrunner.sh
-%%DATADIR%%/bin/soapui-4.6.4.jar
+%%DATADIR%%/bin/soapui-5.0.0.jar
 %%DATADIR%%/bin/soapui-errors.log
 %%DATADIR%%/bin/soapui-log4j.xml
 %%DATADIR%%/bin/soapui-splash.png
@@ -80,26 +64,20 @@ bin/soapui.sh
 %%DATADIR%%/bin/testrunner.sh
 %%DATADIR%%/bin/toolrunner.sh
 %%DATADIR%%/bin/wargenerator.sh
-%%DATADIR%%/lib/MozillaInterfaces-3.0.jar
 %%DATADIR%%/lib/activation-1.1.jar
 %%DATADIR%%/lib/bcprov-jdk15-144.jar
 %%DATADIR%%/lib/binding-2.0.1.jar
 %%DATADIR%%/lib/cajo-1.142.jar
-%%DATADIR%%/lib/comfyj-2.9.jar
 %%DATADIR%%/lib/commons-beanutils-1.7.0.jar
 %%DATADIR%%/lib/commons-cli-1.0.jar
 %%DATADIR%%/lib/commons-codec-1.3.jar
 %%DATADIR%%/lib/commons-collections-3.2.1.jar
 %%DATADIR%%/lib/commons-httpclient-3.1.jar
-%%DATADIR%%/lib/commons-io-1.3.2.jar
+%%DATADIR%%/lib/commons-io-2.4.jar
 %%DATADIR%%/lib/commons-lang-2.4.jar
 %%DATADIR%%/lib/commons-logging-1.1.1.jar
 %%DATADIR%%/lib/cssparser-0.9.5.jar
 %%DATADIR%%/lib/dom4j-1.6.1.jar
-%%DATADIR%%/lib/engine-gecko-3.3.jar
-%%DATADIR%%/lib/engine-gecko15-3.3.jar
-%%DATADIR%%/lib/engine-ie-3.3.jar
-%%DATADIR%%/lib/engine-webkit-3.3.jar
 %%DATADIR%%/lib/ezmorph-1.0.5.jar
 %%DATADIR%%/lib/flex-messaging-common-1.0.jar
 %%DATADIR%%/lib/flex-messaging-core-1.0.jar
@@ -108,7 +86,6 @@ bin/soapui.sh
 %%DATADIR%%/lib/flex-messaging-remoting-1.0.jar
 %%DATADIR%%/lib/forms-1.0.7.jar
 %%DATADIR%%/lib/groovy-all-2.1.7.jar
-%%DATADIR%%/lib/proxy-vole-20121203.jar
 %%DATADIR%%/lib/guava-14.0.jar
 %%DATADIR%%/lib/hamcrest-core-1.1.jar
 %%DATADIR%%/lib/hermes-1.14.jar
@@ -122,17 +99,16 @@ bin/soapui.sh
 %%DATADIR%%/lib/jaxen-1.1-beta-8.jar
 %%DATADIR%%/lib/jcifs-1.2.9.jar
 %%DATADIR%%/lib/jdom-1.0.jar
+%%DATADIR%%/lib/jettison-1.2.jar
 %%DATADIR%%/lib/jetty-6.1.26.jar
 %%DATADIR%%/lib/jetty-util-6.1.26.jar
 %%DATADIR%%/lib/jms-1.1.jar
-%%DATADIR%%/lib/jniwrap-3.8.4.jar
 %%DATADIR%%/lib/joda-time-1.6.2.jar
 %%DATADIR%%/lib/js-1.7R2.jar
 %%DATADIR%%/lib/json-lib-2.2.2-jdk15.jar
 %%DATADIR%%/lib/jsr173_api-1.0.jar
 %%DATADIR%%/lib/jtidy-r872-jdk15.jar
 %%DATADIR%%/lib/junit-4.10.jar
-%%DATADIR%%/lib/jxbrowser-3.3.jar
 %%DATADIR%%/lib/l2fprod-common-directorychooser-7.3.jar
 %%DATADIR%%/lib/l2fprod-common-fontchooser-7.3.jar
 %%DATADIR%%/lib/log4j-1.2.14.jar
@@ -141,9 +117,13 @@ bin/soapui.sh
 %%DATADIR%%/lib/maven-plugin-api-2.0.jar
 %%DATADIR%%/lib/nekohtml-1.9.14.jar
 %%DATADIR%%/lib/not-yet-commons-ssl-0.3.11.jar
-%%DATADIR%%/lib/opensaml-2.4.1.jar
-%%DATADIR%%/lib/openws-1.4.1.jar
-%%DATADIR%%/lib/rsyntaxtextarea-2.0.1.jar
+%%DATADIR%%/lib/opensaml-2.5.1-1.jar
+%%DATADIR%%/lib/openws-1.4.2-1.jar
+%%DATADIR%%/lib/org.apache.oltu.oauth2.client-0.31.jar
+%%DATADIR%%/lib/org.apache.oltu.oauth2.common-0.31.jar
+%%DATADIR%%/lib/org.apache.oltu.oauth2.httpclient4-0.31.jar
+%%DATADIR%%/lib/proxy-vole-20131209.jar
+%%DATADIR%%/lib/rsyntaxtextarea-2.5.0.jar
 %%DATADIR%%/lib/sac-1.3.jar
 %%DATADIR%%/lib/saxon-9.1.0.8j.jar
 %%DATADIR%%/lib/saxon-dom-9.1.0.8j.jar
@@ -151,38 +131,30 @@ bin/soapui.sh
 %%DATADIR%%/lib/servlet-api-2.5-20081211.jar
 %%DATADIR%%/lib/slf4j-api-1.6.1.jar
 %%DATADIR%%/lib/swingx-soapui.jar
-%%DATADIR%%/lib/winpack-3.8.3.jar
 %%DATADIR%%/lib/ws-commons-util-1.0.2.jar
 %%DATADIR%%/lib/wsdl4j-1.6.2-fixed.jar
-%%DATADIR%%/lib/wss4j-1.6.2.jar
+%%DATADIR%%/lib/wss4j-1.6.14.jar
 %%DATADIR%%/lib/xalan-2.7.1.jar
 %%DATADIR%%/lib/xbean-fixed-2.4.0.jar
 %%DATADIR%%/lib/xbean_xpath-2.4.0.jar
 %%DATADIR%%/lib/xercesImpl-2.9.1.jar
-%%DATADIR%%/lib/xml-apis-1.0.b2.jar
+%%DATADIR%%/lib/xml-apis-1.3.04.jar
 %%DATADIR%%/lib/xml-apis-2.9.1.jar
 %%DATADIR%%/lib/xmlParserAPIs-2.6.2.jar
 %%DATADIR%%/lib/xmlpublic-2.4.0.jar
 %%DATADIR%%/lib/xmlsec-1.4.5.jar
-%%DATADIR%%/lib/xmltooling-1.3.1.jar
+%%DATADIR%%/lib/xmltooling-1.3.2-1.jar
 %%DATADIR%%/lib/xmlunit-1.2.jar
 %%DATADIR%%/lib/xom-1.1.jar
 %%DATADIR%%/lib/xstream-1.3.1.jar
-%%DATADIR%%/lib/xulrunner-linux-3.3.jar
-%%DATADIR%%/lib/xulrunner-linux64-3.3.jar
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/bin/listeners
-@dirrm %%DATADIR%%/bin/ext
-@dirrm %%DATADIR%%/bin/actions
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%
-@dirrmtry %%JAVASHAREDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials/restexample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials/WSDL-WADL
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/lib
+@dirrmtry %%DATADIR%%/bin/listeners
+@dirrmtry %%DATADIR%%/bin/ext
+@dirrmtry %%DATADIR%%/bin/actions
+@dirrmtry %%DATADIR%%/bin
+@dirrmtry %%DATADIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Tutorials/WSDL-WADL
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Tutorials
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/licenses
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
