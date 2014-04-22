@@ -13,12 +13,11 @@ DISTNAME=	pygtksourceview-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A python bindings for the version 2 of the GtkSourceView library
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix gtksourceview2 pygtk2
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	gnomeprefix gtksourceview2 pygtk2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
