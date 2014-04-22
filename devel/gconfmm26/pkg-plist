@@ -19,6 +19,7 @@ lib/libgconfmm-%%VERSION%%.a
 lib/libgconfmm-%%VERSION%%.la
 lib/libgconfmm-%%VERSION%%.so
 lib/libgconfmm-%%VERSION%%.so.1
+lib/libgconfmm-%%VERSION%%.so.1.0.6
 libdata/pkgconfig/gconfmm-%%API_VERSION%%.pc
 @dirrm lib/gconfmm-%%API_VERSION%%/include
 @dirrm lib/gconfmm-%%API_VERSION%%
