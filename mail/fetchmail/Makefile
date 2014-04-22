@@ -10,18 +10,23 @@ MASTER_SITES=	SF/${PORTNAME}/branch_6.3/ \
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 # Note USERS can only contain a single word as parts below rely on that.
-USERS=	${PORTNAME}
-GROUPS=	${USERS}
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
+
+USES=		gmake shebangfix tar:xz
+SHEBANG_FILES=	fetchmailconf.py
+python_OLD_CMD=	/usr/bin/env python
 
 USE_RC_SUBR=	fetchmail
-FETCHMAILRC=	${PREFIX}/etc/fetchmailrc
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
+SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} PORTNAME=${PORTNAME}
 
-USE_XZ=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
@@ -29,44 +34,37 @@ CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
 		--with-ssl=${OPENSSLBASE}
 
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAN1=	fetchmail.1
-MLINKS=	fetchmail.1 fetchmailconf.1
 
-OPTIONS_DEFINE=	X11 NLS NTLM GSSAPI
+OPTIONS_DEFINE=	X11 NLS NTLM GSSAPI POP2
 OPTIONS_DEFAULT=	GSSAPI
+OPTIONS_SUB=	yes
 X11_DESC=	Python/Tkinter dependencies for ``fetchmailconf''
-NTLM_DESC=	Build in support for NTLM/MSN authentication
-GSSAPI_DESC=	Build GSSAPI/Kerberos 5 support
+POP2_DESC=	POP2 Protocol support[obsolete]
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_ON=	--enable-nls
+NLS_CONFIGURE_OFF=	--disable-nls
 
 PORTDOCS=	FAQ FEATURES NEWS NOTES README README.SSL \
 		design-notes.html fetchmail-FAQ.html fetchmail-features.html \
 		esrs-design-notes.html
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Pop2 is obsolete
-.if defined(WITH_POP2)
+.if ${PORT_OPTIONS:MPOP2}
 CONFIGURE_ARGS+=	--enable-POP2
 .endif
 
 .if ${PORT_OPTIONS:MX11}
 USE_PYTHON_RUN=	yes
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter
-PLIST_SUB+=	X11="" NOX11="@comment "
+PLIST_SUB+=	NOX11="@comment "
 .else
 CONFIGURE_ARGS+=	PYTHON=:
 SUB_FILES+=	fetchmailconf
-PLIST_SUB+=	X11="@comment " NOX11=""
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=	NLS=""
-USES+=		gettext
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
+PLIST_SUB+=	NOX11=""
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI}
@@ -92,33 +90,20 @@ CONFIGURE_ARGS+=	--enable-NTLM
 PORTDOCS+=	README.NTLM
 .endif
 
-pre-patch:
-	@${REINPLACE_CMD} -e "s,^#!/usr/bin/env python,#!${LOCALBASE}/bin/python,g" \
-		${WRKSRC}/fetchmailconf.py
-
 post-build:
 	@${MAKE} -C ${WRKSRC} check
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .if empty(PORT_OPTIONS:MX11)
-	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf.py ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf.py ${STAGEDIR}${PREFIX}/libexec
 .endif
-	${MKDIR} -m 0755 "/var/run/${PORTNAME}"
-	${CHOWN} "${USERS}:${GROUPS}" "/var/run/${PORTNAME}"
-	${INSTALL} -m 644 -o ${USERS} -g ${GROUPS} ${FILESDIR}/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc.sample
-	if [ ! -f ${PREFIX}/etc/fetchmailrc ]; then \
-		${CP} -p ${PREFIX}/etc/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc ; \
-		${CHMOD} 600 ${PREFIX}/etc/fetchmailrc ; \
-	fi
-
-	@${ECHO_CMD} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} ""
+	${INSTALL} ${FILESDIR}/fetchmailrc.sample \
+		${STAGEDIR}${PREFIX}/etc/fetchmailrc.sample
 
 .include <bsd.port.mk>
