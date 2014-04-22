@@ -6,5 +6,4 @@ PKGNAMESUFFIX=	-proxy
 
 MASTERDIR=	${.CURDIR}/../zabbix2-server
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
