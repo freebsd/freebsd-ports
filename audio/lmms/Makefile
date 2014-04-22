@@ -24,17 +24,14 @@ RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:${PORTSDIR}/audio/caps-plugi
 		${LOCALBASE}/lib/ladspa/cmt.so:${PORTSDIR}/audio/cmt \
 		${LOCALBASE}/share/ladspa/rdf/swh-plugins.rdf:${PORTSDIR}/audio/swhplugins \
 		${LOCALBASE}/share/ladspa/rdf/tap-plugins.rdf:${PORTSDIR}/audio/tap-plugins \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 OPTIONS_DEFINE=	JACK PULSEAUDIO SDL
 
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
-USE_BZIP2=	yes
 USE_XORG=	xft
 USE_QT4=	corelib gui xml moc_build uic_build rcc_build \
 		qmake_build
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig tar:bzip2 desktop-file-utils shared-mime-info
 CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
 		-DWANT_CALF:BOOL=OFF \
 		-DWANT_CAPS:BOOL=OFF \
@@ -44,11 +41,6 @@ CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
 		-DWANT_TAP:BOOL=OFF \
 		-DWANT_VST:BOOL=OFF \
 		-DHAVE_STRTOLL=ON
-
-MANCOMPRESSED=	yes
-MAN1=		lmms.1
-
-USE_DOS2UNIX=	plugins/midi_import/portsmf/allegrowr.cpp plugins/midi_import/portsmf/mfmidi.cpp
 
 .include <bsd.port.options.mk>
 
@@ -90,10 +82,9 @@ post-patch:
 
 post-install:
 	@${LN} -sf ${DATADIR}/themes/default/icon.png \
-		${PREFIX}/share/pixmaps/lmms.png
-	@-update-mime-database ${PREFIX}/share/mime
+		${STAGEDIR}${PREFIX}/share/pixmaps/lmms.png
 	# make it setuid-root to be able to set realtime priority
 	# (root privileges are dropped in the main routine)
-	${CHMOD} u+s ${PREFIX}/bin/lmms
+	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/lmms
 
 .include <bsd.port.mk>
