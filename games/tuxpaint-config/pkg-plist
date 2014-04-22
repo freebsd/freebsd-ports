@@ -1,4 +1,5 @@
 bin/tuxpaint-config
+man/man1/tuxpaint-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
