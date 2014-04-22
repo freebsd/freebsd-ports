@@ -8,16 +8,15 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.mired.org/downloads/
 
 MAINTAINER=	mwm@mired.org
-COMMENT=	A simple menu patterened for use with ratpoison
+COMMENT=	Simple menu patterened for use with ratpoison
 
 USE_XORG=	x11
 ALL_TARGET=	ratmenu
-MAN1=		ratmenu.1
-PLIST_FILES=	bin/ratmenu
+PLIST_FILES=	bin/ratmenu \
+		man/man1/ratmenu.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ratmenu ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ratmenu.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/ratmenu ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ratmenu.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
