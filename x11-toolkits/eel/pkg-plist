@@ -40,6 +40,7 @@ lib/libeel-2.a
 lib/libeel-2.la
 lib/libeel-2.so
 lib/libeel-2.so.2
+lib/libeel-2.so.2.26.0
 libdata/pkgconfig/eel-2.0.pc
 share/locale/am/LC_MESSAGES/eel-2.0.mo
 share/locale/ang/LC_MESSAGES/eel-2.0.mo
