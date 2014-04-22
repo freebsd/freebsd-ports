@@ -25,6 +25,7 @@ NO_OPTIONS_SORT=yes
 USES=		pkgconfig perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	opendkim/opendkim-genkey.in
+SHEBANG_FILES=	opendkim/opendkim-genkey* reputation/opendkim-* stats/opendkim-*
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
@@ -33,7 +34,7 @@ PORTDOCS=	*
 OPTIONS_SINGLE=		RESOLV
 OPTIONS_SINGLE_RESOLV=	STOCK_RESOLVER UNBOUND
 OPTIONS_DEFINE=		FILTER GNUTLS LUA MEMCACHED BDB_BASE OPENDBX OPENLDAP \
-			POPAUTH QUERY_CACHE STATS
+			POPAUTH QUERY_CACHE STATS DEBUG
 OPTIONS_DEFAULT=	FILTER LUA UNBOUND
 
 STOCK_RESOLVER_DESC=	Use the stock resolver library
@@ -48,6 +49,7 @@ OPENLDAP_DESC=		Store filter policies in LDAP
 POPAUTH_DESC=		Use POP authentication DB
 QUERY_CACHE_DESC=	Cache DNS query results locally
 STATS_DESC=		Setup statistics tools
+DEBUG_DESC=		Build with debug symbols
 
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
@@ -86,12 +88,6 @@ CONFIGURE_ARGS+=--docdir=${WRKDIR}/doc
 
 .if ${PORT_OPTIONS:MSTATS}
 CONFIGURE_ARGS+=	--enable-stats
-MAN8+=			opendkim-expire.8 opendkim-gengraphs.8 \
-			opendkim-genstats.8 opendkim-stats.8
-. if ${PORT_OPTIONS:MOPENDBX}
-MAN1+=			opendkim-spam.1
-MAN8+=			opendkim-importstats.8
-. endif
 PLIST_SUB+=		STATS=""
 .else
 PLIST_SUB+=		STATS="@comment "
