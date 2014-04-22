@@ -3,7 +3,7 @@
 
 PORTNAME=	tasklist
 PORTVERSION=	0.10
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://gdesklets.zencomputer.ca/
 PKGNAMEPREFIX=	gdesklets-
@@ -19,15 +19,13 @@ DATADIR=	${PREFIX}/share
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-desklet-${PORTVERSION}
 
-NO_STAGE=	yes
 do-build:
 	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${NAME}|g' > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}
-	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/*.png ${DATADIR}/gdesklets/Displays/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/gdesklets/Displays/${NAME}/
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/gdesklets/Displays/${NAME}
+	@${INSTALL_DATA} ${WRKSRC}/*.display ${STAGEDIR}${DATADIR}/gdesklets/Displays/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/*.png ${STAGEDIR}${DATADIR}/gdesklets/Displays/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DATADIR}/gdesklets/Displays/${NAME}/
 
 .include <bsd.port.mk>
