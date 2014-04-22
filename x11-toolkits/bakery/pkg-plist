@@ -23,6 +23,7 @@ lib/libbakery-%%VERSION%%.a
 lib/libbakery-%%VERSION%%.la
 lib/libbakery-%%VERSION%%.so
 lib/libbakery-%%VERSION%%.so.1
+lib/libbakery-%%VERSION%%.so.1.0.0
 libdata/pkgconfig/bakery-%%API_VERSION%%.pc
 share/locale/ar/LC_MESSAGES/bakery.mo
 share/locale/bg/LC_MESSAGES/bakery.mo
