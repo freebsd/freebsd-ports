@@ -4,7 +4,7 @@
 
 PORTNAME=	gal2
 PORTVERSION=	2.5.3
-PORTREVISION?=	10
+PORTREVISION?=	11
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.5
@@ -14,23 +14,23 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A collection of widgets taken from GNOME 2 gnumeric
 
-USE_BZIP2=	yes
+USES+=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-USES=		pathfix gettext perl5 gmake pkgconfig
-USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui ltverhack
+USES+=		pathfix gettext perl5 gmake pkgconfig libtool
+USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=  libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="2.6" PORTVERSION=${PORTVERSION} \
 		SHLIBVERSION="2.4"
 
-NO_STAGE=	yes
 post-extract:
 	${TOUCH} -f ${WRKSRC}/gal/util/e-util-private.h
 
