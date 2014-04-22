@@ -38,6 +38,7 @@ lib/libgnomecanvasmm-%%VERSION%%.a
 lib/libgnomecanvasmm-%%VERSION%%.la
 lib/libgnomecanvasmm-%%VERSION%%.so
 lib/libgnomecanvasmm-%%VERSION%%.so.1
+lib/libgnomecanvasmm-%%VERSION%%.so.1.0.6
 lib/libgnomecanvasmm-%%API_VERSION%%/include/libgnomecanvasmmconfig.h
 lib/libgnomecanvasmm-%%API_VERSION%%/proc/m4/convert.m4
 lib/libgnomecanvasmm-%%API_VERSION%%/proc/m4/convert_libgnomecanvasmm.m4

@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomecanvasmm
 PORTVERSION=	2.26.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,21 +12,20 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgnomecanvas library
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 LATEST_LINK=	libgnomecanvasmm26
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack libgnomecanvas
+USES=		gmake pathfix libtool pkgconfig tar:bzip2
+USE_GNOME=	libgnomecanvas
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
 		${WRKSRC}/Makefile.in
