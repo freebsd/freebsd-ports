@@ -27,10 +27,12 @@ lib/libgsmext.a
 lib/libgsmext.la
 lib/libgsmext.so
 lib/libgsmext.so.1
+lib/libgsmext.so.1.0.4
 lib/libgsmme.a
 lib/libgsmme.la
 lib/libgsmme.so
 lib/libgsmme.so.1
+lib/libgsmme.so.1.0.4
 man/man1/gsmctl.1.gz
 man/man1/gsmpb.1.gz
 man/man1/gsmsendsms.1.gz
