@@ -4,7 +4,7 @@
 
 PORTNAME=	libglademm
 PORTVERSION=	2.6.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,28 +12,24 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libglade2 library
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+OPTIONS_DEFINE=	DOCS
+
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-LATEST_LINK=	libglademm24
-
-USE_BZIP2=	yes
 USE_XORG=	x11 ice
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack libglade2
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
 		${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = .*\)\(docs\)\(.*\)|\1\3|' ${WRKSRC}/Makefile.in
-.endif
 	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
 		${WRKSRC}/tools/extra_defs_gen/Makefile.in
 
