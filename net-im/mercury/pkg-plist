@@ -1,5 +1,4 @@
 bin/Mercury_Messenger
-%%INSTDIR%%/Mercury_Messenger
 %%INSTDIR%%/lib/dMSN.jar
 %%INSTDIR%%/resources/AppData/CustomEmoticons/MSN7.zip
 %%INSTDIR%%/resources/AppData/Games/.keep_me

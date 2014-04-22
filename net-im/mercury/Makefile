@@ -19,9 +19,12 @@ COMMENT=	Java Based MSN client
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 		jmfinit:${PORTSDIR}/java/jmf
 
+DEPRECATED=	MSN is dying and the domain mercury.im is down
+EXPIRATION_DATE=2014-05-31
+
 RCVER=		rc8a
 
-USES=		zip
+USES=		zip:infozip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
@@ -32,7 +35,7 @@ SUB_FILES=	Mercury_Messenger
 SUB_LIST=	JAVA_VERSION="${JAVA_VERSION}" JMF_JARS="${JMF_JARS:S|$|.jar|}"
 
 LINSTDIR?=	share/Mercury
-INSTDIR=	${PREFIX}/${LINSTDIR}
+INSTDIR=	${STAGEDIR}${PREFIX}/${LINSTDIR}
 PLIST_SUB=	INSTDIR=${LINSTDIR}
 SUB_DIRS=	lib resources
 DIR2PRUNE=	resources/AppData/Games		\
@@ -40,7 +43,7 @@ DIR2PRUNE=	resources/AppData/Games		\
 		resources/AppData/Skins
 
 DESKTOP_ENTRIES="Mercury Messenger" "${COMMENT}"	\
-		"${INSTDIR}/resources/online.png"	\
+		"${PREFIX}/${LINSTDIR}/resources/online.png"	\
 		"${SUB_FILES}"				\
 		"InstantMessaging;Java;Network;" true
 
@@ -53,7 +56,6 @@ PLIST_SUB+=	VID="" VIDJAR="${VIDJAR}"
 PLIST_SUB+=	VID="@comment " VIDJAR=""
 .endif
 
-NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKDIR}/icons
 	cd ${WRKDIR}/icons &&	\
@@ -61,8 +63,7 @@ post-extract:
 
 do-install:
 	${MKDIR} ${INSTDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${INSTDIR}
-	${LN} -sf ${INSTDIR}/${SUB_FILES} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${STAGEDIR}${PREFIX}/bin/
 .for sd in ${SUB_DIRS}
 	cd ${WRKDIR} && ${FIND} ${sd} -type d -exec ${MKDIR} ${INSTDIR}/{} \;
 	cd ${WRKDIR} && ${FIND} ${sd} -type f -exec ${INSTALL_DATA} {} ${INSTDIR}/{} \;
