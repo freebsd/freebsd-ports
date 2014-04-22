@@ -14,8 +14,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyramid>=0:${PORTSDIR}/www/py-pyramid
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-
-NO_STAGE=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
