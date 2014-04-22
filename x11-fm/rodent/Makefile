@@ -3,7 +3,7 @@
 
 PORTNAME=	rodent
 PORTVERSION=	4.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/${PORTVERSION}/
 
@@ -15,43 +15,31 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	gawk:${PORTSDIR}/japanese/gawk \
 		bash:${PORTSDIR}/shells/bash \
 		intltoolize:${PORTSDIR}/textproc/intltool
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		glib-2:${PORTSDIR}/devel/glib20 \
-		cairo:${PORTSDIR}/graphics/cairo \
-		rsvg-2:${PORTSDIR}/graphics/librsvg2 \
-		gtk-x11-2:${PORTSDIR}/x11-toolkits/gtk20 \
-		magic:${PORTSDIR}/sysutils/file
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libmagic.so:${PORTSDIR}/sysutils/file
 
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig desktop-file-utils
+USE_GNOME=	glib20 gtk20 librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--docdir=${DOCSDIR}
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
 
-MAN1=		fgr.1
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	${REINPLACE_CMD} -e 's,^\(docdir = \).*,\1${DOCSDIR},' \
 		${WRKSRC}/Build/share/Makefile.in
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
+.for a in ia64 powerpc sparc63
+BROKEN_${a}=		Does not compile on ia64, powerpc, or sparc64
+.endfor
 
 .include <bsd.port.mk>

@@ -26,15 +26,19 @@ bin/xffm
 lib/librfm.la
 lib/librfm.so
 lib/librfm.so.1
+lib/librfm.so.1.0.0
 lib/librfm_deskview.la
 lib/librfm_deskview.so
 lib/librfm_deskview.so.1
+lib/librfm_deskview.so.1.0.0
 lib/librfm_gridview.la
 lib/librfm_gridview.so
 lib/librfm_gridview.so.1
+lib/librfm_gridview.so.1.0.0
 lib/librodent.la
 lib/librodent.so
 lib/librodent.so.1
+lib/librodent.so.1.0.0
 %%NLS%%lib/locale/af/LC_MESSAGES/rodent.mo
 %%NLS%%lib/locale/ar/LC_MESSAGES/rodent.mo
 %%NLS%%lib/locale/as/LC_MESSAGES/rodent.mo
@@ -139,51 +143,68 @@ lib/librodent.so.1
 lib/rfm/modules/libcombobox.la
 lib/rfm/modules/libcombobox.so
 lib/rfm/modules/libcombobox.so.0
+lib/rfm/modules/libcombobox.so.0.0.0
 lib/rfm/modules/libcompletion.la
 lib/rfm/modules/libcompletion.so
 lib/rfm/modules/libcompletion.so.0
+lib/rfm/modules/libcompletion.so.0.0.0
 lib/rfm/modules/libfgr.la
 lib/rfm/modules/libfgr.so
 lib/rfm/modules/libfgr.so.0
+lib/rfm/modules/libfgr.so.0.0.0
 lib/rfm/modules/libicons.la
 lib/rfm/modules/libicons.so
 lib/rfm/modules/libicons.so.0
+lib/rfm/modules/libicons.so.0.0.0
 lib/rfm/modules/libmime.la
 lib/rfm/modules/libmime.so
 lib/rfm/modules/libmime.so.0
+lib/rfm/modules/libmime.so.0.0.0
 lib/rfm/modules/libmimezip.la
 lib/rfm/modules/libmimezip.so
 lib/rfm/modules/libmimezip.so.0
+lib/rfm/modules/libmimezip.so.0.0.0
 lib/rfm/modules/libops.la
 lib/rfm/modules/libops.so
 lib/rfm/modules/libops.so.0
+lib/rfm/modules/libops.so.0.0.0
 lib/rfm/modules/libproperties.la
 lib/rfm/modules/libproperties.so
 lib/rfm/modules/libproperties.so.0
+lib/rfm/modules/libproperties.so.0.0.0
 lib/rfm/modules/librun.la
 lib/rfm/modules/librun.so
 lib/rfm/modules/librun.so.0
+lib/rfm/modules/librun.so.0.0.0
 lib/rfm/modules/libsettings.la
 lib/rfm/modules/libsettings.so
 lib/rfm/modules/libsettings.so.0
+lib/rfm/modules/libsettings.so.0.0.0
 lib/rfm/plugins/libdotdesktop.la
 lib/rfm/plugins/libdotdesktop.so
 lib/rfm/plugins/libdotdesktop.so.0
+lib/rfm/plugins/libdotdesktop.so.0.0.0
 lib/rfm/plugins/libfstab.la
 lib/rfm/plugins/libfstab.so
 lib/rfm/plugins/libfstab.so.0
+lib/rfm/plugins/libfstab.so.0.0.0
 lib/rfm/plugins/libfuse.la
 lib/rfm/plugins/libfuse.so
 lib/rfm/plugins/libfuse.so.0
+lib/rfm/plugins/libfuse.so.0.0.0
 lib/rfm/plugins/libnfs.la
 lib/rfm/plugins/libnfs.so
 lib/rfm/plugins/libnfs.so.0
+lib/rfm/plugins/libnfs.so.0.0.0
 lib/rfm/plugins/libps.la
 lib/rfm/plugins/libps.so
 lib/rfm/plugins/libps.so.0
+lib/rfm/plugins/libps.so.0.0.0
 lib/rfm/plugins/libsftp.la
 lib/rfm/plugins/libsftp.so
 lib/rfm/plugins/libsftp.so.0
+lib/rfm/plugins/libsftp.so.0.0.0
+man/man1/fgr.1.gz
 share/applications/Rfm-mime.desktop
 share/applications/Rfm-root.desktop
 share/applications/Rodent-diff.desktop
@@ -934,7 +955,6 @@ share/rfm/modules/mime-module.xml
 @dirrm share/icons/Rodent/48x48
 @dirrm share/icons/Rodent
 @dirrmtry share/icons
-@dirrmtry share/pixmaps
 @dirrm lib/rfm/plugins
 @dirrm lib/rfm/modules
 @dirrm lib/rfm
