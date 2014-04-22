@@ -6,7 +6,7 @@ PORTVERSION=	0.2.2.r554
 CATEGORIES=	net security
 MASTER_SITES=	https://www.cypherpunk.at/ocat/download/Source/stable/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	IP-transparent Tor Hidden Service connector
 
 LICENSE=	GPLv3
