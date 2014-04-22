@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-extras
 PORTVERSION=	2.25.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -15,42 +15,32 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GNOME 2
 
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
-		gksu2.0:${PORTSDIR}/sysutils/libgksu \
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_SUB=	yes
+
+LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
+		libgksu2.so:${PORTSDIR}/sysutils/libgksu \
 #		gdl-1.2:${PORTSDIR}/x11-toolkits/gdl
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack libgtkhtml pygnome2 libgda4
+USE_GNOME=	libgtkhtml pygnome2 libgda4
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--disable-gdl
+INSTALL_TARGET=	install-strip
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-gnome-extras
-.else
-DOCSDIR=	${WRKSRC}/share/doc/py-gnome-extras
-.endif
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$mozpackage-gtkmozembed|$mozpackage|' \
 		${WRKSRC}/configure
-	@${FIND} ${WRKSRC}/docs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|^HTML_DIR =.*|HTML_DIR = ${DOCSDIR}|g'
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${EG_DST_DIR}
-	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xf -
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
-	${CHMOD} -R go-w ${EG_DST_DIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EG_DST_DIR}
+	cd ${EG_SRC_DIR}; ${COPYTREE_SHARE} . ${STAGEDIR}${EG_DST_DIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

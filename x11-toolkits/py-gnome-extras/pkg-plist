@@ -19,30 +19,30 @@ include/pygda-4.0/pygdavalue_conversions.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkspell.so
 libdata/pkgconfig/gnome-python-extras-2.0.pc
 libdata/pkgconfig/pygda-4.0.pc
-%%PORTDOCS%%share/examples/py-gnome/egg/recent/Bonobo_Sample_Hello.xml
-%%PORTDOCS%%share/examples/py-gnome/egg/recent/bonobo-view.py
-%%PORTDOCS%%share/examples/py-gnome/egg/recent/gtk-view.py
-%%PORTDOCS%%share/examples/py-gnome/egg/recent/populate-recent.py
-%%PORTDOCS%%share/examples/py-gnome/egg/trayicon.py
-%%PORTDOCS%%share/examples/py-gnome/gdl/gdl_combo_button.py
-%%PORTDOCS%%share/examples/py-gnome/gdl/gdl_dock.py
-%%PORTDOCS%%share/examples/py-gnome/gdl/gdl_test.py
-%%PORTDOCS%%share/examples/py-gnome/gksu2/simple.py
-%%PORTDOCS%%share/examples/py-gnome/gtkhtml2/simple-browser.py
-%%PORTDOCS%%share/examples/py-gnome/gtkspell/spell.py
-%%PORTDOCS%%share/examples/py-gnome/gtkspell/test.py
+%%EXAMPLES%%share/examples/py-gnome/egg/recent/Bonobo_Sample_Hello.xml
+%%EXAMPLES%%share/examples/py-gnome/egg/recent/bonobo-view.py
+%%EXAMPLES%%share/examples/py-gnome/egg/recent/gtk-view.py
+%%EXAMPLES%%share/examples/py-gnome/egg/recent/populate-recent.py
+%%EXAMPLES%%share/examples/py-gnome/egg/trayicon.py
+%%EXAMPLES%%share/examples/py-gnome/gdl/gdl_combo_button.py
+%%EXAMPLES%%share/examples/py-gnome/gdl/gdl_dock.py
+%%EXAMPLES%%share/examples/py-gnome/gdl/gdl_test.py
+%%EXAMPLES%%share/examples/py-gnome/gksu2/simple.py
+%%EXAMPLES%%share/examples/py-gnome/gtkhtml2/simple-browser.py
+%%EXAMPLES%%share/examples/py-gnome/gtkspell/spell.py
+%%EXAMPLES%%share/examples/py-gnome/gtkspell/test.py
 share/pygtk/2.0/argtypes/gda-arg-types.py
 share/pygtk/2.0/argtypes/gda-arg-types.pyc
 share/pygtk/2.0/argtypes/gda-arg-types.pyo
 share/pygtk/2.0/defs/gda.defs
 share/pygtk/2.0/defs/gtkhtml2.defs
 share/pygtk/2.0/defs/trayicon.defs
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gtkspell
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gtkhtml2
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gksu2
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gdl
-%%PORTDOCS%%@dirrm share/examples/py-gnome/egg/recent
-%%PORTDOCS%%@dirrm share/examples/py-gnome/egg
+%%EXAMPLES%%@dirrm share/examples/py-gnome/gtkspell
+%%EXAMPLES%%@dirrm share/examples/py-gnome/gtkhtml2
+%%EXAMPLES%%@dirrm share/examples/py-gnome/gksu2
+%%EXAMPLES%%@dirrm share/examples/py-gnome/gdl
+%%EXAMPLES%%@dirrm share/examples/py-gnome/egg/recent
+%%EXAMPLES%%@dirrm share/examples/py-gnome/egg
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu2
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/egg
 @dirrm include/pygda-4.0
