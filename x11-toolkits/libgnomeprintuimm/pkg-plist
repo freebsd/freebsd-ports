@@ -17,6 +17,7 @@ lib/libgnomeprintuimm-%%VERSION%%.a
 lib/libgnomeprintuimm-%%VERSION%%.la
 lib/libgnomeprintuimm-%%VERSION%%.so
 lib/libgnomeprintuimm-%%VERSION%%.so.3
+lib/libgnomeprintuimm-%%VERSION%%.so.3.0.0
 lib/libgnomeprintuimm-%%API_VERSION%%/include/libgnomeprintuimmconfig.h
 lib/libgnomeprintuimm-%%API_VERSION%%/proc/m4/convert.m4
 lib/libgnomeprintuimm-%%API_VERSION%%/proc/m4/convert_libgnomeprintuimm.m4
