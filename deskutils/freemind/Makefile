@@ -30,7 +30,6 @@ ZIP_CMD=	zip
 
 SUB_FILES=	freemind.sh
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}; \
 	${UNZIP_CMD} lib/freemind.jar freemind.properties; \
@@ -39,8 +38,8 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} \
-	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	${INSTALL_SCRIPT} ${WRKDIR}/freemind.sh ${PREFIX}/bin/freemind
+	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \; \
+	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
+	${INSTALL_SCRIPT} ${WRKDIR}/freemind.sh ${STAGEDIR}${PREFIX}/bin/freemind
 
 .include <bsd.port.mk>
