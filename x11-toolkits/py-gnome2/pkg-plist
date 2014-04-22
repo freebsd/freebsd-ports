@@ -36,28 +36,28 @@ lib/gnome-vfs-2.0/modules/libpythonmethod.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs/gnomevfsbonobo.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs/gnomevfsbonobo.so
 libdata/pkgconfig/gnome-python-2.0.pc
-%%PORTDOCS%%share/examples/py-gnome/bonobo/bonobo-application.py
-%%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui/Bonobo_Sample_Hello.xml
-%%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui/hello.py
-%%PORTDOCS%%share/examples/py-gnome/bonobo/echo/README
-%%PORTDOCS%%share/examples/py-gnome/bonobo/echo/echo-client.py
-%%PORTDOCS%%share/examples/py-gnome/bonobo/unknown.py
-%%PORTDOCS%%share/examples/py-gnome/bug-buddy-integration.py
-%%PORTDOCS%%share/examples/py-gnome/canvas/canvas-curve.py
-%%PORTDOCS%%share/examples/py-gnome/canvas/canvas-example.py
-%%PORTDOCS%%share/examples/py-gnome/gconf/basic-gconf-app.py
-%%PORTDOCS%%share/examples/py-gnome/gconf/simple-controller.py
-%%PORTDOCS%%share/examples/py-gnome/gconf/simple-view.py
-%%PORTDOCS%%share/examples/py-gnome/popt/goption.py
-%%PORTDOCS%%share/examples/py-gnome/popt/popt.py
-%%PORTDOCS%%share/examples/py-gnome/vfs/async-xfer.py
-%%PORTDOCS%%share/examples/py-gnome/vfs/async.py
-%%PORTDOCS%%share/examples/py-gnome/vfs/cancellation.py
-%%PORTDOCS%%share/examples/py-gnome/vfs/pygvfsmethod/README
-%%PORTDOCS%%share/examples/py-gnome/vfs/pygvfsmethod/pyfs.conf
-%%PORTDOCS%%share/examples/py-gnome/vfs/pygvfsmethod/pyfs.py
-%%PORTDOCS%%share/examples/py-gnome/vfs/shell.py
-%%PORTDOCS%%share/examples/py-gnome/vfs/sync-xfer.py
+%%EXAMPLES%%share/examples/py-gnome/bonobo/bonobo-application.py
+%%EXAMPLES%%share/examples/py-gnome/bonobo/bonoboui/Bonobo_Sample_Hello.xml
+%%EXAMPLES%%share/examples/py-gnome/bonobo/bonoboui/hello.py
+%%EXAMPLES%%share/examples/py-gnome/bonobo/echo/README
+%%EXAMPLES%%share/examples/py-gnome/bonobo/echo/echo-client.py
+%%EXAMPLES%%share/examples/py-gnome/bonobo/unknown.py
+%%EXAMPLES%%share/examples/py-gnome/bug-buddy-integration.py
+%%EXAMPLES%%share/examples/py-gnome/canvas/canvas-curve.py
+%%EXAMPLES%%share/examples/py-gnome/canvas/canvas-example.py
+%%EXAMPLES%%share/examples/py-gnome/gconf/basic-gconf-app.py
+%%EXAMPLES%%share/examples/py-gnome/gconf/simple-controller.py
+%%EXAMPLES%%share/examples/py-gnome/gconf/simple-view.py
+%%EXAMPLES%%share/examples/py-gnome/popt/goption.py
+%%EXAMPLES%%share/examples/py-gnome/popt/popt.py
+%%EXAMPLES%%share/examples/py-gnome/vfs/async-xfer.py
+%%EXAMPLES%%share/examples/py-gnome/vfs/async.py
+%%EXAMPLES%%share/examples/py-gnome/vfs/cancellation.py
+%%EXAMPLES%%share/examples/py-gnome/vfs/pygvfsmethod/README
+%%EXAMPLES%%share/examples/py-gnome/vfs/pygvfsmethod/pyfs.conf
+%%EXAMPLES%%share/examples/py-gnome/vfs/pygvfsmethod/pyfs.py
+%%EXAMPLES%%share/examples/py-gnome/vfs/shell.py
+%%EXAMPLES%%share/examples/py-gnome/vfs/sync-xfer.py
 share/gtk-doc/html/pygnomevfs/class-gnomevfs-context.html
 share/gtk-doc/html/pygnomevfs/class-gnomevfs-directoryhandle.html
 share/gtk-doc/html/pygnomevfs/class-gnomevfs-drive.html
@@ -90,15 +90,15 @@ share/pygtk/2.0/defs/ui.defs
 @dirrm share/gtk-doc/html/pygnomevfs
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-%%PORTDOCS%%@dirrm share/examples/py-gnome/vfs/pygvfsmethod
-%%PORTDOCS%%@dirrm share/examples/py-gnome/vfs
-%%PORTDOCS%%@dirrm share/examples/py-gnome/popt
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gconf
-%%PORTDOCS%%@dirrm share/examples/py-gnome/canvas
-%%PORTDOCS%%@dirrm share/examples/py-gnome/bonobo/echo
-%%PORTDOCS%%@dirrm share/examples/py-gnome/bonobo/bonoboui
-%%PORTDOCS%%@dirrm share/examples/py-gnome/bonobo
-%%PORTDOCS%%@dirrm share/examples/py-gnome
+%%EXAMPLES%%@dirrm share/examples/py-gnome/vfs/pygvfsmethod
+%%EXAMPLES%%@dirrm share/examples/py-gnome/vfs
+%%EXAMPLES%%@dirrm share/examples/py-gnome/popt
+%%EXAMPLES%%@dirrm share/examples/py-gnome/gconf
+%%EXAMPLES%%@dirrm share/examples/py-gnome/canvas
+%%EXAMPLES%%@dirrm share/examples/py-gnome/bonobo/echo
+%%EXAMPLES%%@dirrm share/examples/py-gnome/bonobo/bonoboui
+%%EXAMPLES%%@dirrm share/examples/py-gnome/bonobo
+%%EXAMPLES%%@dirrm share/examples/py-gnome
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo
