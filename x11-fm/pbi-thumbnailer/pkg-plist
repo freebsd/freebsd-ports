@@ -1,4 +1,2 @@
 bin/pbi-thumbnailer
 share/mime/packages/pbi-thumbnail-mime.xml
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
