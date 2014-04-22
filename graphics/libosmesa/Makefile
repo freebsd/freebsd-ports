@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libosmesa
-PORTVERSION=	10.1.0
+PORTVERSION=	10.1.1
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION:R}/
+MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
