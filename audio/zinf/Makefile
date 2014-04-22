@@ -13,8 +13,8 @@ COMMENT=	GTK-based MP3 player
 LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libgdbm.so:${PORTSDIR}/databases/gdbm
 
-USES=		pathfix pkgconfig gettext gmake perl5
-USE_GNOME=	gtk20 lthack
+USES=		pathfix libtool pkgconfig gettext gmake perl5
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 \
 		--disable-arts
@@ -28,6 +28,7 @@ OPTIONS_SUB=	yes
 
 ESOUND_CONFIGURE_OFF=	--disable-esd
 ESOUND_USE=		GNOME=esound
+INSTALL_TARGET=	install-strip
 
 VORBIS_CONFIGURE_OFF=	--disable-vorbis
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
