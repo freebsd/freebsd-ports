@@ -3,7 +3,7 @@
 
 PORTNAME=	Net-Amazon-S3
 PORTVERSION=	0.59
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,7 +36,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-pre-install:
+pre-build:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 .include <bsd.port.mk>
