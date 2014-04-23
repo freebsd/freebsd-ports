@@ -9,3 +9,17 @@
                  case 'f': savefiles = 1;
                            filepath = argv[i+1];
                            i++;
+@@ -103,11 +103,12 @@
+         TNEF.Debug = verbose;
+         if (TNEFParseFile(argv[i], &TNEF) == -1) {
+             printf("ERROR processing file\n");
+-            continue;
++            return 1;
+         }
+         ProcessTNEF(TNEF);
+         TNEFFree(&TNEF);
+     }
++    return 0;
+ }
+ 
+ void ProcessTNEF(TNEFStruct TNEF) {
