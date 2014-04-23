@@ -2718,6 +2718,7 @@ share/foomatic/db/source/PPD/Samsung/PS/Samsung_CLX-9252_9352_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_CLX-92x1_93x1_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_CLX-981x_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_CLX-982x_Series.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PS/Samsung_M332x_382x_402x_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_M337x_387x_407x_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_ML-2150_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_ML-2550_Series.ppd.gz
@@ -3608,6 +3609,7 @@ share/foomatic/db/source/opt/Postscript-Color.xml
 share/foomatic/db/source/opt/Postscript-Duplex.xml
 share/foomatic/db/source/opt/Postscript-InputSlot.xml
 share/foomatic/db/source/opt/Postscript-PageSize.xml
+share/foomatic/db/source/opt/Postscript-RGBProfile.xml
 share/foomatic/db/source/opt/Postscript-Resolution.xml
 share/foomatic/db/source/opt/Postscript-largeformat-PageSize.xml
 share/foomatic/db/source/opt/Postscript1-Resolution.xml
@@ -3855,6 +3857,7 @@ share/foomatic/db/source/printer/Brother-HL-2035.xml
 share/foomatic/db/source/printer/Brother-HL-2040.xml
 share/foomatic/db/source/printer/Brother-HL-2060.xml
 share/foomatic/db/source/printer/Brother-HL-2070N.xml
+share/foomatic/db/source/printer/Brother-HL-2135.xml
 share/foomatic/db/source/printer/Brother-HL-2140.xml
 share/foomatic/db/source/printer/Brother-HL-2170W.xml
 share/foomatic/db/source/printer/Brother-HL-2400CeN.xml
@@ -7427,6 +7430,7 @@ share/foomatic/db/source/printer/Samsung-CLX-981x.xml
 share/foomatic/db/source/printer/Samsung-CLX-982x.xml
 share/foomatic/db/source/printer/Samsung-M262x_282x.xml
 share/foomatic/db/source/printer/Samsung-M267x_287x.xml
+share/foomatic/db/source/printer/Samsung-M332x_382x_402x.xml
 share/foomatic/db/source/printer/Samsung-M337x_387x_407x.xml
 share/foomatic/db/source/printer/Samsung-ML-1000.xml
 share/foomatic/db/source/printer/Samsung-ML-1010.xml
