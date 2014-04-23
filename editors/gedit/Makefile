@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 USES=		desktop-file-utils gettext gmake libtool:keepla  pathfix \
 		pkgconfig tar:bzip2
-USE_XORG=	sm
+USE_XORG=	ice sm
 INSTALLS_OMF=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
@@ -44,5 +44,9 @@ PLIST_SUB+=	PYTHON=""
 CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
+
+post-patch:
+	${REINPLACE_CMD} '/EGG_SMCLIENT_LIBS =/s/$$/ -lICE/' \
+		${WRKSRC}/gedit/smclient/Makefile.in
 
 .include <bsd.port.post.mk>

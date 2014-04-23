@@ -28,6 +28,7 @@ INSTALLS_OMF=	yes
 USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
 		pkgconfig tar:bzip2
 USE_GNOME=	intlhack gnomeprefix gnomedocutils gconf2
+USE_XORG=	ice sm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
@@ -117,6 +118,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
 		-e 's|" == "|" = "|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/SMCLIENT_LIBS =/s/$$/ -lICE/' \
+		${WRKSRC}/cut-n-paste/smclient/Makefile.in
 	@${REINPLACE_CMD} -e '/^DOC_MODULE_VERSION/d' \
 		${WRKSRC}/help/reference/libdocument/Makefile.in \
 		${WRKSRC}/help/reference/libview/Makefile.in
