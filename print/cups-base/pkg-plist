@@ -372,6 +372,76 @@ sbin/ulpt-cupsd.sh
 %%DATADIR%%/templates/cs/test-page.tmpl
 %%DATADIR%%/templates/cs/trailer.tmpl
 %%DATADIR%%/templates/cs/users.tmpl
+%%DATADIR%%/templates/de/add-class.tmpl
+%%DATADIR%%/templates/de/add-printer.tmpl
+%%DATADIR%%/templates/de/add-rss-subscription.tmpl
+%%DATADIR%%/templates/de/admin.tmpl
+%%DATADIR%%/templates/de/choose-device.tmpl
+%%DATADIR%%/templates/de/choose-make.tmpl
+%%DATADIR%%/templates/de/choose-model.tmpl
+%%DATADIR%%/templates/de/choose-serial.tmpl
+%%DATADIR%%/templates/de/choose-uri.tmpl
+%%DATADIR%%/templates/de/class-added.tmpl
+%%DATADIR%%/templates/de/class-confirm.tmpl
+%%DATADIR%%/templates/de/class-deleted.tmpl
+%%DATADIR%%/templates/de/class-jobs-header.tmpl
+%%DATADIR%%/templates/de/class-modified.tmpl
+%%DATADIR%%/templates/de/class.tmpl
+%%DATADIR%%/templates/de/classes-header.tmpl
+%%DATADIR%%/templates/de/classes.tmpl
+%%DATADIR%%/templates/de/command.tmpl
+%%DATADIR%%/templates/de/edit-config.tmpl
+%%DATADIR%%/templates/de/error-op.tmpl
+%%DATADIR%%/templates/de/error.tmpl
+%%DATADIR%%/templates/de/header.tmpl
+%%DATADIR%%/templates/de/help-header.tmpl
+%%DATADIR%%/templates/de/help-printable.tmpl
+%%DATADIR%%/templates/de/help-trailer.tmpl
+%%DATADIR%%/templates/de/job-cancel.tmpl
+%%DATADIR%%/templates/de/job-hold.tmpl
+%%DATADIR%%/templates/de/job-move.tmpl
+%%DATADIR%%/templates/de/job-moved.tmpl
+%%DATADIR%%/templates/de/job-release.tmpl
+%%DATADIR%%/templates/de/job-restart.tmpl
+%%DATADIR%%/templates/de/jobs-header.tmpl
+%%DATADIR%%/templates/de/jobs.tmpl
+%%DATADIR%%/templates/de/list-available-printers.tmpl
+%%DATADIR%%/templates/de/modify-class.tmpl
+%%DATADIR%%/templates/de/modify-printer.tmpl
+%%DATADIR%%/templates/de/norestart.tmpl
+%%DATADIR%%/templates/de/option-boolean.tmpl
+%%DATADIR%%/templates/de/option-conflict.tmpl
+%%DATADIR%%/templates/de/option-header.tmpl
+%%DATADIR%%/templates/de/option-pickmany.tmpl
+%%DATADIR%%/templates/de/option-pickone.tmpl
+%%DATADIR%%/templates/de/option-trailer.tmpl
+%%DATADIR%%/templates/de/pager.tmpl
+%%DATADIR%%/templates/de/printer-accept.tmpl
+%%DATADIR%%/templates/de/printer-added.tmpl
+%%DATADIR%%/templates/de/printer-configured.tmpl
+%%DATADIR%%/templates/de/printer-confirm.tmpl
+%%DATADIR%%/templates/de/printer-default.tmpl
+%%DATADIR%%/templates/de/printer-deleted.tmpl
+%%DATADIR%%/templates/de/printer-jobs-header.tmpl
+%%DATADIR%%/templates/de/printer-modified.tmpl
+%%DATADIR%%/templates/de/printer-purge.tmpl
+%%DATADIR%%/templates/de/printer-reject.tmpl
+%%DATADIR%%/templates/de/printer-start.tmpl
+%%DATADIR%%/templates/de/printer-stop.tmpl
+%%DATADIR%%/templates/de/printer.tmpl
+%%DATADIR%%/templates/de/printers-header.tmpl
+%%DATADIR%%/templates/de/printers.tmpl
+%%DATADIR%%/templates/de/restart.tmpl
+%%DATADIR%%/templates/de/samba-export.tmpl
+%%DATADIR%%/templates/de/samba-exported.tmpl
+%%DATADIR%%/templates/de/search.tmpl
+%%DATADIR%%/templates/de/set-printer-options-header.tmpl
+%%DATADIR%%/templates/de/set-printer-options-trailer.tmpl
+%%DATADIR%%/templates/de/subscription-added.tmpl
+%%DATADIR%%/templates/de/subscription-canceled.tmpl
+%%DATADIR%%/templates/de/test-page.tmpl
+%%DATADIR%%/templates/de/trailer.tmpl
+%%DATADIR%%/templates/de/users.tmpl
 %%DATADIR%%/templates/edit-config.tmpl
 %%DATADIR%%/templates/error-op.tmpl
 %%DATADIR%%/templates/error.tmpl
@@ -468,16 +538,16 @@ sbin/ulpt-cupsd.sh
 %%DATADIR%%/templates/fr/error.tmpl
 %%DATADIR%%/templates/fr/header.tmpl
 %%DATADIR%%/templates/fr/help-header.tmpl
-%%DATADIR%%/templates/fr/help-trailer.tmpl
 %%DATADIR%%/templates/fr/help-printable.tmpl
+%%DATADIR%%/templates/fr/help-trailer.tmpl
 %%DATADIR%%/templates/fr/job-cancel.tmpl
 %%DATADIR%%/templates/fr/job-hold.tmpl
 %%DATADIR%%/templates/fr/job-move.tmpl
 %%DATADIR%%/templates/fr/job-moved.tmpl
 %%DATADIR%%/templates/fr/job-release.tmpl
 %%DATADIR%%/templates/fr/job-restart.tmpl
-%%DATADIR%%/templates/fr/jobs.tmpl
 %%DATADIR%%/templates/fr/jobs-header.tmpl
+%%DATADIR%%/templates/fr/jobs.tmpl
 %%DATADIR%%/templates/fr/list-available-printers.tmpl
 %%DATADIR%%/templates/fr/modify-class.tmpl
 %%DATADIR%%/templates/fr/modify-printer.tmpl
@@ -489,7 +559,6 @@ sbin/ulpt-cupsd.sh
 %%DATADIR%%/templates/fr/option-pickone.tmpl
 %%DATADIR%%/templates/fr/option-trailer.tmpl
 %%DATADIR%%/templates/fr/pager.tmpl
-%%DATADIR%%/templates/fr/printer.tmpl
 %%DATADIR%%/templates/fr/printer-accept.tmpl
 %%DATADIR%%/templates/fr/printer-added.tmpl
 %%DATADIR%%/templates/fr/printer-configured.tmpl
@@ -502,8 +571,9 @@ sbin/ulpt-cupsd.sh
 %%DATADIR%%/templates/fr/printer-reject.tmpl
 %%DATADIR%%/templates/fr/printer-start.tmpl
 %%DATADIR%%/templates/fr/printer-stop.tmpl
-%%DATADIR%%/templates/fr/printers.tmpl
+%%DATADIR%%/templates/fr/printer.tmpl
 %%DATADIR%%/templates/fr/printers-header.tmpl
+%%DATADIR%%/templates/fr/printers.tmpl
 %%DATADIR%%/templates/fr/restart.tmpl
 %%DATADIR%%/templates/fr/samba-export.tmpl
 %%DATADIR%%/templates/fr/samba-exported.tmpl
@@ -774,10 +844,11 @@ sbin/ulpt-cupsd.sh
 %%DATADIR%%/templates/test-page.tmpl
 %%DATADIR%%/templates/trailer.tmpl
 %%DATADIR%%/templates/users.tmpl
-%%PORTDOCS%%%%DOCSDIR%%/cups-printable.css
-%%PORTDOCS%%%%DOCSDIR%%/cups.css
 %%PORTDOCS%%%%DOCSDIR%%/ca/index.html
 %%PORTDOCS%%%%DOCSDIR%%/cs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/cups-printable.css
+%%PORTDOCS%%%%DOCSDIR%%/cups.css
+%%PORTDOCS%%%%DOCSDIR%%/de/index.html
 %%PORTDOCS%%%%DOCSDIR%%/es/index.html
 %%PORTDOCS%%%%DOCSDIR%%/fr/index.html
 %%PORTDOCS%%%%DOCSDIR%%/help/accounting.html
@@ -886,12 +957,13 @@ sbin/ulpt-cupsd.sh
 %%PORTDOCS%%%%DOCSDIR%%/ru/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ulpt-cupsd.conf
 share/applications/cups.desktop
+share/icons/hicolor/128x128/apps/cups.png
 share/icons/hicolor/16x16/apps/cups.png
 share/icons/hicolor/32x32/apps/cups.png
 share/icons/hicolor/64x64/apps/cups.png
-share/icons/hicolor/128x128/apps/cups.png
 share/locale/ca/cups_ca.po
 share/locale/cs/cups_cs.po
+share/locale/de/cups_de.po
 share/locale/es/cups_es.po
 share/locale/fr/cups_fr.po
 share/locale/it/cups_it.po
@@ -916,6 +988,7 @@ share/locale/ru/cups_ru.po
 @dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ca
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/it
@@ -933,6 +1006,7 @@ share/locale/ru/cups_ru.po
 @dirrm %%DATADIR%%/templates/it
 @dirrm %%DATADIR%%/templates/es
 @dirrm %%DATADIR%%/templates/fr
+@dirrm %%DATADIR%%/templates/de
 @dirrm %%DATADIR%%/templates
 @exec  mkdir -p %D/%%DATADIR%%/profiles
 @dirrm %%DATADIR%%/profiles
