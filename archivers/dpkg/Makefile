@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.17.6
-PORTREVISION=	2
+PORTVERSION=	1.17.7
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
@@ -44,8 +43,6 @@ NLS_USES=		gettext
 post-patch:
 	@${REINPLACE_CMD} 's|-t$$host|-t${ARCH}-freebsd|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} '/^#define TAR/ s|tar|g&|' \
-		${WRKSRC}/lib/dpkg/dpkg.h
 	@${REINPLACE_CMD} -E 's/(md5|sha1|sha256)sum/g&/g' \
 		${WRKSRC}/scripts/Dpkg/Checksums.pm
 	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/lib/*/Makefile.in
