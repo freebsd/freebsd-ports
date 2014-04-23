@@ -14,7 +14,7 @@ COMMENT=	Python FTP server library
 LICENSE=	MIT
 
 USE_PYTHON=		2
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 
 OPTIONS_DEFINE=		SENDFILE OPENSSL
 OPTIONS_DEFAULT=	SENDFILE OPENSSL
@@ -24,7 +24,6 @@ OPENSSL_DESC=		Enable FTP over SSL/TLS (RFC4217)
 # Workaround ports infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSENDFILE}
@@ -39,8 +38,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/demo/ ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/demo/ ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 test: build
