@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	drood
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Lightweight kqueue-based http/1.1 server
 
-MANCOMPRESSED=	yes
-
-INSTALL_TARGET=STAGEDIR=../stage/ install
+DESTDIRNAME=	STAGEDIR
 
 .include <bsd.port.mk>
