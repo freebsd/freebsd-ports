@@ -1,0 +1,24 @@
+--- doc/man/Makefile.default.orig	2011-05-15 01:59:35.000000000 -0700
++++ doc/man/Makefile.default	2014-04-11 12:08:08.000000000 -0700
+@@ -11,6 +11,7 @@
+ 
+ # Include version information
+ -include $(ROOT)/versions
++-include $(ROOT)/.config
+ 
+ 
+ ###############################################################################
+@@ -150,8 +151,11 @@
+ 		  ModuleTclVoiceMail.conf.5.gz ModuleDtmfRepeater.conf.5.gz \
+ 		  ModulePropagationMonitor.conf.5.gz \
+ 		  ModuleSelCallEnc.conf.5.gz \
+-		  remotetrx.1.gz remotetrx.conf.5.gz siglevdetcal.1.gz \
+-		  qtel.1.gz
++		  remotetrx.1.gz remotetrx.conf.5.gz siglevdetcal.1.gz
++
++ifdef QT_BIN
++PRE_TARGETS	+=qtel.1.gz
++endif
+ 
+ #POST_TARGETS	= 
+ 
