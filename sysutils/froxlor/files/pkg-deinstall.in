@@ -1,15 +1,23 @@
 #!/bin/sh
 # $FreeBSD$
 
-if [ "$2" == "POST-DEINSTALL" ]; then
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
 if [ -d %%WWWDIR%% ]; then
-	echo ""
-	echo "-------------------------------------------------------"
-	echo "Run the following command, if you plan to permanently"
-	echo "remove froxlor:"
-	echo ""
-	echo "  rm -rf %%WWWDIR%%"
-	echo "-------------------------------------------------------"
-	echo ""
+	wf=`find %%WWWDIR%% -not -type d | wc -l`
+
+	if [ $wf -ne 0 ]; then
+		echo ""
+		echo "-------------------------------------------------------"
+		echo "Run the following command, if you plan to permanently"
+		echo "remove froxlor:"
+		echo ""
+		echo "  rm -rf %%WWWDIR%%"
+		echo "-------------------------------------------------------"
+		echo ""
+	fi
 fi
-fi
+
+exit 0

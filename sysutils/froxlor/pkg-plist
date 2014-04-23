@@ -1,6 +1,7 @@
 @owner www
 @group www
 %%WWWDIR%%/COPYING
+%%WWWDIR%%/README.md
 %%WWWDIR%%/actions/admin/settings/000.version.php
 %%WWWDIR%%/actions/admin/settings/100.panel.php
 %%WWWDIR%%/actions/admin/settings/110.accounts.php
@@ -52,12 +53,11 @@
 %%WWWDIR%%/customer_tickets.php
 %%WWWDIR%%/customer_traffic.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/install/froxlor.sql
+%%WWWDIR%%/install/%%AP_NAME%%.sql
 %%WWWDIR%%/install/install.php
 %%WWWDIR%%/install/lib/class.FroxlorInstall.php
 %%WWWDIR%%/install/lng/english.lng.php
 %%WWWDIR%%/install/lng/german.lng.php
-%%WWWDIR%%/install/scripts/htpasswd-htaccess-remover.php
 %%WWWDIR%%/install/scripts/language-check.php
 %%WWWDIR%%/install/templates/assets/css/install.css
 %%WWWDIR%%/install/templates/assets/img/favicon.ico
@@ -76,15 +76,10 @@
 %%WWWDIR%%/install/templates/pagebottom.tpl
 %%WWWDIR%%/install/templates/textarea.tpl
 %%WWWDIR%%/install/tsmarty2c.php
-%%WWWDIR%%/install/updates/froxlor/0.9/update_0.9.inc.php
-%%WWWDIR%%/install/updates/froxlor/upgrade_syscp.inc.php
+%%WWWDIR%%/install/updates/%%AP_NAME%%/0.9/update_0.9.inc.php
+%%WWWDIR%%/install/updates/%%AP_NAME%%/upgrade_syscp.inc.php
 %%WWWDIR%%/install/updates/preconfig.php
 %%WWWDIR%%/install/updates/preconfig/0.9/preconfig_0.9.inc.php
-%%WWWDIR%%/install/updates/syscp/1.0/update_1.0.10_1.2-beta1.inc.php
-%%WWWDIR%%/install/updates/syscp/1.0/update_1.0_1.0.10.inc.php
-%%WWWDIR%%/install/updates/syscp/1.2/update_1.2-beta1_1.2.19.inc.php
-%%WWWDIR%%/install/updates/syscp/1.2/update_1.2.19_1.4.inc.php
-%%WWWDIR%%/install/updates/syscp/1.4/update_1.4.inc.php
 %%WWWDIR%%/install/updatesql.php
 %%WWWDIR%%/js/excanvas.min.js
 %%WWWDIR%%/js/html5shiv.js
@@ -123,6 +118,7 @@
 %%WWWDIR%%/js/plugins/jqplot.pyramidGridRenderer.min.js
 %%WWWDIR%%/js/plugins/jqplot.pyramidRenderer.min.js
 %%WWWDIR%%/js/plugins/jqplot.trendline.min.js
+%%WWWDIR%%/lib/ajax.php
 %%WWWDIR%%/lib/classes/Smarty
 %%WWWDIR%%/lib/classes/Smarty-3.1.15/COPYING.lib
 %%WWWDIR%%/lib/classes/Smarty-3.1.15/README
@@ -265,9 +261,9 @@
 %%WWWDIR%%/lib/classes/aps/class.ApsParser.php
 %%WWWDIR%%/lib/classes/aps/class.ApsUpdater.php
 %%WWWDIR%%/lib/classes/aps/class.DynamicProperties.php
-%%WWWDIR%%/lib/classes/database/class.db.php
-%%WWWDIR%%/lib/classes/domains/class.docrootsettings.php
-%%WWWDIR%%/lib/classes/froxlorclient/class.froxlorclient.php
+%%WWWDIR%%/lib/classes/database/class.Database.php
+%%WWWDIR%%/lib/classes/database/class.DbManager.php
+%%WWWDIR%%/lib/classes/database/manager/class.DbManagerMySQL.php
 %%WWWDIR%%/lib/classes/htmlpurifier/CREDITS
 %%WWWDIR%%/lib/classes/htmlpurifier/LICENSE
 %%WWWDIR%%/lib/classes/htmlpurifier/VERSION
@@ -649,6 +645,7 @@
 %%WWWDIR%%/lib/classes/ticket/class.ticket.php
 %%WWWDIR%%/lib/classes/webserver/class.ConfigIO.php
 %%WWWDIR%%/lib/classes/webserver/class.DomainSSL.php
+%%WWWDIR%%/lib/classes/webserver/class.WebserverBase.php
 %%WWWDIR%%/lib/configfiles/freebsd.inc.php
 %%WWWDIR%%/lib/configfiles/gentoo.inc.php
 %%WWWDIR%%/lib/configfiles/lucid.inc.php
@@ -708,11 +705,9 @@
 %%WWWDIR%%/lib/functions/aps/function.storeSettingApsWebserverModules.php
 %%WWWDIR%%/lib/functions/aps/function.sys_get_temp_dir.php
 %%WWWDIR%%/lib/functions/database/function.correctMysqlUsers.php
-%%WWWDIR%%/lib/functions/database/function.getTables.php
 %%WWWDIR%%/lib/functions/filedir/function.fileImmutable.php
 %%WWWDIR%%/lib/functions/filedir/function.findDirs.php
 %%WWWDIR%%/lib/functions/filedir/function.isConfigDir.php
-%%WWWDIR%%/lib/functions/filedir/function.maildirExists.php
 %%WWWDIR%%/lib/functions/filedir/function.makeChownWithNewStats.php
 %%WWWDIR%%/lib/functions/filedir/function.makeCorrectDir.php
 %%WWWDIR%%/lib/functions/filedir/function.makeCorrectFile.php
@@ -760,36 +755,30 @@
 %%WWWDIR%%/lib/functions/formfields/string/function.validateFormFieldString.php
 %%WWWDIR%%/lib/functions/formfields/text/function.getFormFieldOutputText.php
 %%WWWDIR%%/lib/functions/formfields/text/function.validateFormFieldText.php
-%%WWWDIR%%/lib/functions/froxlor/function.CorrectErrorDocument.php
-%%WWWDIR%%/lib/functions/froxlor/function.CronjobFunctions.php
-%%WWWDIR%%/lib/functions/froxlor/function.convertUtf8.php
-%%WWWDIR%%/lib/functions/froxlor/function.createAWStatsConf.php
-%%WWWDIR%%/lib/functions/froxlor/function.createAWStatsVhost.php
-%%WWWDIR%%/lib/functions/froxlor/function.customerHasPerlEnabled.php
-%%WWWDIR%%/lib/functions/froxlor/function.domainHasMainSubDomains.php
-%%WWWDIR%%/lib/functions/froxlor/function.domainHasSslIpPort.php
-%%WWWDIR%%/lib/functions/froxlor/function.generatePassword.php
-%%WWWDIR%%/lib/functions/froxlor/function.getAdmins.php
-%%WWWDIR%%/lib/functions/froxlor/function.getCustomerDetail.php
-%%WWWDIR%%/lib/functions/froxlor/function.getCustomerIdByDomain.php
-%%WWWDIR%%/lib/functions/froxlor/function.getCustomers.php
-%%WWWDIR%%/lib/functions/froxlor/function.getFilesystemQuota.php
-%%WWWDIR%%/lib/functions/froxlor/function.getIpAddresses.php
-%%WWWDIR%%/lib/functions/froxlor/function.getIpPortCombinations.php
-%%WWWDIR%%/lib/functions/froxlor/function.getLanguages.php
-%%WWWDIR%%/lib/functions/froxlor/function.getLoginNameByUid.php
-%%WWWDIR%%/lib/functions/froxlor/function.getPhpConfigs.php
-%%WWWDIR%%/lib/functions/froxlor/function.getServerId.php
-%%WWWDIR%%/lib/functions/froxlor/function.getSessionUserDetail.php
-%%WWWDIR%%/lib/functions/froxlor/function.getThemes.php
-%%WWWDIR%%/lib/functions/froxlor/function.inserttask.php
-%%WWWDIR%%/lib/functions/froxlor/function.isCustomerStdSubdomain.php
-%%WWWDIR%%/lib/functions/froxlor/function.isUtf8.php
-%%WWWDIR%%/lib/functions/froxlor/function.loadConfigArrayDir.php
-%%WWWDIR%%/lib/functions/froxlor/function.openRootDB.php
-%%WWWDIR%%/lib/functions/froxlor/function.updateCounters.php
-%%WWWDIR%%/lib/functions/froxlor/function.updateFunctions.php
-%%WWWDIR%%/lib/functions/froxlor/function.version_compare2.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.CorrectErrorDocument.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.CronjobFunctions.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.convertUtf8.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.createAWStatsConf.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.createAWStatsVhost.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.customerHasPerlEnabled.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.domainHasMainSubDomains.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.domainHasSslIpPort.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.generatePassword.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.getCustomerDetail.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.getFilesystemQuota.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.getIpAddresses.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.getIpPortCombinations.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.getLanguages.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.getLoginNameByUid.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.getPhpConfigs.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.getThemes.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.inserttask.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.isCustomerStdSubdomain.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.isUtf8.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.loadConfigArrayDir.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.updateCounters.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.updateFunctions.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.version_compare2.php
 %%WWWDIR%%/lib/functions/logger/constant.logger.php
 %%WWWDIR%%/lib/functions/output/function.RedirectCode.php
 %%WWWDIR%%/lib/functions/output/function.ask_yesno.php
@@ -835,6 +824,7 @@
 %%WWWDIR%%/lib/functions/validate/function.checkHostname.php
 %%WWWDIR%%/lib/functions/validate/function.checkMysqlAccessHost.php
 %%WWWDIR%%/lib/functions/validate/function.checkPathConflicts.php
+%%WWWDIR%%/lib/functions/validate/function.checkPhpInterfaceSetting.php
 %%WWWDIR%%/lib/functions/validate/function.checkUsername.php
 %%WWWDIR%%/lib/functions/validate/function.checkValidRegEx.php
 %%WWWDIR%%/lib/functions/validate/function.makeCorrectDestination.php
@@ -848,7 +838,7 @@
 %%WWWDIR%%/lib/functions/validate/function.validateUsername.php
 %%WWWDIR%%/lib/functions/validate/function.validate_ip.php
 %%WWWDIR%%/lib/init.php
-%%WWWDIR%%/lib/navigation/00.froxlor.main.php
+%%WWWDIR%%/lib/navigation/00.%%AP_NAME%%.main.php
 %%WWWDIR%%/lib/navigation/10.tickets.php
 %%WWWDIR%%/lib/navigation/20.aps.installer.php
 %%WWWDIR%%/lib/tables.inc.php
@@ -873,13 +863,13 @@
 %%WWWDIR%%/locales/de/LC_MESSAGES/default.mo
 %%WWWDIR%%/locales/de/LC_MESSAGES/default.po
 %%WWWDIR%%/locales/en/LC_MESSAGES/default.po
+%%WWWDIR%%/logs/.keep
 %%WWWDIR%%/packages/.keep
-%%WWWDIR%%/scripts/froxlor_master_cronjob.php
+%%WWWDIR%%/scripts/%%AP_NAME%%_master_cronjob.php
 %%WWWDIR%%/scripts/jobs/cron_apsinstaller.php
 %%WWWDIR%%/scripts/jobs/cron_apsupdater.php
 %%WWWDIR%%/scripts/jobs/cron_autoresponder.php
 %%WWWDIR%%/scripts/jobs/cron_backup.php
-%%WWWDIR%%/scripts/jobs/cron_lighttp.htaccess.php
 %%WWWDIR%%/scripts/jobs/cron_mailboxsize.php
 %%WWWDIR%%/scripts/jobs/cron_tasks.inc.dns.10.bind.php
 %%WWWDIR%%/scripts/jobs/cron_tasks.inc.http.10.apache.php
@@ -926,6 +916,7 @@
 %%WWWDIR%%/templates/Froxlor/admin/cronjobs/cronjob_edit.tpl
 %%WWWDIR%%/templates/Froxlor/admin/cronjobs/cronjobs.tpl
 %%WWWDIR%%/templates/Froxlor/admin/cronjobs/cronjobs_cronjob.tpl
+%%WWWDIR%%/templates/Froxlor/admin/cronjobs/cronjobs_cronjobmodule.tpl
 %%WWWDIR%%/templates/Froxlor/admin/customers/customers.tpl
 %%WWWDIR%%/templates/Froxlor/admin/customers/customers_add.tpl
 %%WWWDIR%%/templates/Froxlor/admin/customers/customers_customer.tpl
@@ -934,23 +925,12 @@
 %%WWWDIR%%/templates/Froxlor/admin/domains/domains_add.tpl
 %%WWWDIR%%/templates/Froxlor/admin/domains/domains_domain.tpl
 %%WWWDIR%%/templates/Froxlor/admin/domains/domains_edit.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclient_settings.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclient_settingsend.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclient_settingsoverview.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclient_settingsoverviewgroup.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclients.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclients_add.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclients_client.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclients_edit.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclients_tasks.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclients_tasks_head.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclients_view.tpl
-%%WWWDIR%%/templates/Froxlor/admin/froxlorclients/froxlorclients_view_clientinfo.tpl
 %%WWWDIR%%/templates/Froxlor/admin/index/change_language.tpl
 %%WWWDIR%%/templates/Froxlor/admin/index/change_password.tpl
 %%WWWDIR%%/templates/Froxlor/admin/index/change_theme.tpl
 %%WWWDIR%%/templates/Froxlor/admin/index/index.tpl
 %%WWWDIR%%/templates/Froxlor/admin/index/overview_item.tpl
+%%WWWDIR%%/templates/Froxlor/admin/index/send_error_report.tpl
 %%WWWDIR%%/templates/Froxlor/admin/ipsandports/ipsandports.tpl
 %%WWWDIR%%/templates/Froxlor/admin/ipsandports/ipsandports_add.tpl
 %%WWWDIR%%/templates/Froxlor/admin/ipsandports/ipsandports_edit.tpl
@@ -1215,6 +1195,7 @@
 %%WWWDIR%%/templates/Froxlor/customer/index/change_password.tpl
 %%WWWDIR%%/templates/Froxlor/customer/index/change_theme.tpl
 %%WWWDIR%%/templates/Froxlor/customer/index/index.tpl
+%%WWWDIR%%/templates/Froxlor/customer/index/send_error_report.tpl
 %%WWWDIR%%/templates/Froxlor/customer/mysql/mysql.tpl
 %%WWWDIR%%/templates/Froxlor/customer/mysql/mysqls.tpl
 %%WWWDIR%%/templates/Froxlor/customer/mysql/mysqls_add.tpl
@@ -1244,6 +1225,7 @@
 %%WWWDIR%%/templates/Froxlor/login/fpwd.tpl
 %%WWWDIR%%/templates/Froxlor/login/login.tpl
 %%WWWDIR%%/templates/Froxlor/login/login_ftp.tpl
+%%WWWDIR%%/templates/Froxlor/login/rpwd.tpl
 %%WWWDIR%%/templates/Froxlor/misc/alreadyinstalledhint.tpl
 %%WWWDIR%%/templates/Froxlor/misc/configurehint.tpl
 %%WWWDIR%%/templates/Froxlor/misc/dberrornice.tpl
@@ -1303,6 +1285,7 @@
 %%WWWDIR%%/templates/Sparkle/admin/cronjobs/cronjob_edit.tpl
 %%WWWDIR%%/templates/Sparkle/admin/cronjobs/cronjobs.tpl
 %%WWWDIR%%/templates/Sparkle/admin/cronjobs/cronjobs_cronjob.tpl
+%%WWWDIR%%/templates/Sparkle/admin/cronjobs/cronjobs_cronjobmodule.tpl
 %%WWWDIR%%/templates/Sparkle/admin/customers/customers.tpl
 %%WWWDIR%%/templates/Sparkle/admin/customers/customers_add.tpl
 %%WWWDIR%%/templates/Sparkle/admin/customers/customers_customer.tpl
@@ -1311,23 +1294,12 @@
 %%WWWDIR%%/templates/Sparkle/admin/domains/domains_add.tpl
 %%WWWDIR%%/templates/Sparkle/admin/domains/domains_domain.tpl
 %%WWWDIR%%/templates/Sparkle/admin/domains/domains_edit.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclient_settings.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclient_settingsend.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclient_settingsoverview.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclient_settingsoverviewgroup.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclients.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclients_add.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclients_client.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclients_edit.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclients_tasks.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclients_tasks_head.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclients_view.tpl
-%%WWWDIR%%/templates/Sparkle/admin/froxlorclients/froxlorclients_view_clientinfo.tpl
 %%WWWDIR%%/templates/Sparkle/admin/index/change_language.tpl
 %%WWWDIR%%/templates/Sparkle/admin/index/change_password.tpl
 %%WWWDIR%%/templates/Sparkle/admin/index/change_theme.tpl
 %%WWWDIR%%/templates/Sparkle/admin/index/index.tpl
 %%WWWDIR%%/templates/Sparkle/admin/index/overview_item.tpl
+%%WWWDIR%%/templates/Sparkle/admin/index/send_error_report.tpl
 %%WWWDIR%%/templates/Sparkle/admin/ipsandports/ipsandports.tpl
 %%WWWDIR%%/templates/Sparkle/admin/ipsandports/ipsandports_add.tpl
 %%WWWDIR%%/templates/Sparkle/admin/ipsandports/ipsandports_edit.tpl
@@ -1389,196 +1361,93 @@
 %%WWWDIR%%/templates/Sparkle/assets/css/main_ie.css
 %%WWWDIR%%/templates/Sparkle/assets/img/default.png
 %%WWWDIR%%/templates/Sparkle/assets/img/favicon.ico
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/aps.png
+%%WWWDIR%%/templates/Sparkle/assets/img/icons/add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/aps_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/aps_upload.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/aps_upload_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/archive_ticket.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/autoresponder.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/autoresponder_add.png
+%%WWWDIR%%/templates/Sparkle/assets/img/icons/archive.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/autoresponder_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/autoresponder_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/autoresponder_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/autoresponder_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/backup.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/backup_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/categories.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/categories_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/categories_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/categories_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/categories_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/categories_edit_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/clock.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_add.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_delete.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_delete_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_error.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_go.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_link.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_pause.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_play.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_red.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/clock_stop.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/delete.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/delete_20.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/delete_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/display.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/display_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/domain_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/domain_add_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/domain_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/domain_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/domains.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/domains_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/down.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/edit_20.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/email_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/email_add_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/email_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/email_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/email_forwarder_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/email_forwarder_add_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/emails.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/emails_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/encrypted.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/encrypted_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/error.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/error_big.png
+%%WWWDIR%%/templates/Sparkle/assets/img/icons/error_report_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/file_20.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/find.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/find_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/flag.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/folder.gif
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/folder_20.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/group_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/group_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/help.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/htaccess.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/htaccess_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/htaccess_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/htaccess_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/htaccess_edit_big copy.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/htaccess_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/htpasswd.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/htpasswd_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/htpasswd_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/htpasswd_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/htpasswd_edit.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/htpasswd_edit_big copy.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/htpasswd_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/info.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/info_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ipsports.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ipsports_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ipsports_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ipsports_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ipsports_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ipsports_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/link.gif
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/link.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/link_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/mail.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/mail_big.png
+%%WWWDIR%%/templates/Sparkle/assets/img/icons/lock.png
+%%WWWDIR%%/templates/Sparkle/assets/img/icons/lock_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/menubar_tickets.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/menubar_tickets_null.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/messages.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/messages_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/mysql.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/mysql_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/mysql_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/mysql_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/mysql_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/mysql_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/mysqls.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/mysqls_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ok_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/parent.gif
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/parent_20.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/password.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/password_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/phpsettings.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/phpsettings_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/phpsettings_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/phpsettings_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/phpsettings_edit.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/phpsettings_edit_big copy.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/phpsettings_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/rename.gif
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/rename_20.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/res_recalculate.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/res_recalculate_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/settings.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/settings_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/sort_both.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/sort_down.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/sort_up.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_customer.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_customer_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_global.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_global_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_shared.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_shared_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/syslog.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/syslog_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/syslog_truncate.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/syslog_truncate_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/tag_blue.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/tag_orange.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/templates.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/templates_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/templates_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/templates_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/templates_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/templates_edit_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/text_align_center.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/text_align_justify.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/text_align_left.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/text_align_right.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_add_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_answer.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_answer_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_archive.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_archive_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_archive_search.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_archive_search_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_close.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_close_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_new.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_new_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_reopen.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_reopen_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_reply.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_reply_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_show.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/ticket_show_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/tickets.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/tickets_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/traffic.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/traffic_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/traffic_big_old.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/trash.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/trash_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/unlock.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/up.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/user.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/user_add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/user_add_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/user_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/user_edit_big.png
-%%WWWDIR%%/templates/Sparkle/assets/img/icons/warning.png
+%%WWWDIR%%/templates/Sparkle/assets/img/icons/view.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/warning_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/logo.png
 %%WWWDIR%%/templates/Sparkle/assets/img/logo_grey.png
 %%WWWDIR%%/templates/Sparkle/assets/img/top.png
+%%WWWDIR%%/templates/Sparkle/assets/js/circular.js
+%%WWWDIR%%/templates/Sparkle/assets/js/jcanvas.min.js
 %%WWWDIR%%/templates/Sparkle/assets/js/main.js
 %%WWWDIR%%/templates/Sparkle/assets/js/traffic.js
 %%WWWDIR%%/templates/Sparkle/customer/aps/askyesno.tpl
@@ -1631,6 +1500,7 @@
 %%WWWDIR%%/templates/Sparkle/customer/index/change_password.tpl
 %%WWWDIR%%/templates/Sparkle/customer/index/change_theme.tpl
 %%WWWDIR%%/templates/Sparkle/customer/index/index.tpl
+%%WWWDIR%%/templates/Sparkle/customer/index/send_error_report.tpl
 %%WWWDIR%%/templates/Sparkle/customer/mysql/mysql.tpl
 %%WWWDIR%%/templates/Sparkle/customer/mysql/mysqls.tpl
 %%WWWDIR%%/templates/Sparkle/customer/mysql/mysqls_add.tpl
@@ -1660,6 +1530,7 @@
 %%WWWDIR%%/templates/Sparkle/login/fpwd.tpl
 %%WWWDIR%%/templates/Sparkle/login/login.tpl
 %%WWWDIR%%/templates/Sparkle/login/login_ftp.tpl
+%%WWWDIR%%/templates/Sparkle/login/rpwd.tpl
 %%WWWDIR%%/templates/Sparkle/misc/alreadyinstalledhint.tpl
 %%WWWDIR%%/templates/Sparkle/misc/configurehint.tpl
 %%WWWDIR%%/templates/Sparkle/misc/dberrornice.tpl
@@ -1689,24 +1560,24 @@
 %%WWWDIR%%/templates/Sparkle/webftp/webftp_main_multiple.tpl
 %%WWWDIR%%/templates/Sparkle/webftp/webftp_main_prompt.tpl
 %%WWWDIR%%/templates/Sparkle/webftp/webftp_main_rename.tpl
-%%WWWDIR%%/templates/misc/awstatsmodel/awstats.froxlor.model.conf
+%%WWWDIR%%/templates/misc/awstatsmodel/awstats.%%AP_NAME%%.model.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/apache2/etc_apache2_mods-enabled_fastcgi.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/courier/etc_courier_authdaemonrc
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/courier/etc_courier_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/cron/etc_cron.d_froxlor
+%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/cron/etc_cron.d_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/dkim/dkim-filter.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/dovecot/etc_dovecot_dovecot-sql.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/dovecot/etc_dovecot_dovecot.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_auth_30_froxlor-config
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_main_10_froxlor-config_options
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_router_180_froxlor-config
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_transport_30_froxlor-config
+%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_auth_30_%%AP_NAME%%-config
+%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_main_10_%%AP_NAME%%-config_options
+%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_router_180_%%AP_NAME%%-config
+%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_transport_30_%%AP_NAME%%-config
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/libnss/etc_nss-mysql-root.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/libnss/etc_nss-mysql.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/libnss/etc_nsswitch.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/logrotate/etc_logrotated_froxlor
+%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/logrotate/etc_logrotated_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/nginx/etc_init.d_php-fcgi
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/nginx/etc_nginx_fastcgi.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/nginx/etc_nginx_nginx.conf
@@ -1724,7 +1595,7 @@
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_mxaccess/etc_postfix_main.cf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/powerdns/etc_powerdns_pdns-froxlor.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/powerdns/etc_powerdns_pdns-%%AP_NAME%%.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/powerdns/etc_powerdns_pdns.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/proftpd/etc_proftpd_modules.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/proftpd/etc_proftpd_proftpd.conf
@@ -1742,7 +1613,7 @@
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/apache2/etc_apache2_mods-enabled_fastcgi.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/courier/etc_courier_authdaemonrc
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/courier/etc_courier_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/cron/etc_cron.d_froxlor
+%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/cron/etc_cron.d_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dkim/opendkim.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_10-auth.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_10-mail.conf
@@ -1754,15 +1625,15 @@
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_dovecot-sql.conf.ext
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_dovecot.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_auth_30_froxlor-config
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_main_10_froxlor-config_options
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_router_180_froxlor-config
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_transport_30_froxlor-config
+%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_auth_30_%%AP_NAME%%-config
+%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_main_10_%%AP_NAME%%-config_options
+%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_router_180_%%AP_NAME%%-config
+%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_transport_30_%%AP_NAME%%-config
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/libnss/etc_libnss-mysql-root.cfg
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/libnss/etc_libnss-mysql.cfg
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/libnss/etc_nsswitch.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/logrotate/etc_logrotated_froxlor
+%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/logrotate/etc_logrotated_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/nginx/etc_init.d_php-fcgi
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/nginx/etc_nginx_nginx.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_courier/etc_aliases
@@ -1808,7 +1679,7 @@
 %%WWWDIR%%/templates/misc/configfiles/freebsd/libnss/etc_nsswitch.conf
 %%WWWDIR%%/templates/misc/configfiles/freebsd/libnss/usr_local_etc_libnss-mysql-root.cfg
 %%WWWDIR%%/templates/misc/configfiles/freebsd/libnss/usr_local_etc_libnss-mysql.cfg
-%%WWWDIR%%/templates/misc/configfiles/freebsd/logrotate/etc_logrotated_froxlor
+%%WWWDIR%%/templates/misc/configfiles/freebsd/logrotate/etc_logrotated_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/freebsd/nginx/usr_local_etc_nginx_nginx.conf
 %%WWWDIR%%/templates/misc/configfiles/freebsd/postfix/etc_periodic.conf
 %%WWWDIR%%/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_main.cf
@@ -1828,7 +1699,7 @@
 %%WWWDIR%%/templates/misc/configfiles/gentoo/courier/etc_courier-imap_pop3d-ssl
 %%WWWDIR%%/templates/misc/configfiles/gentoo/courier/etc_courier_authlib_authdaemonrc
 %%WWWDIR%%/templates/misc/configfiles/gentoo/courier/etc_courier_authlib_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/gentoo/cron/etc_cron.d_froxlor
+%%WWWDIR%%/templates/misc/configfiles/gentoo/cron/etc_cron.d_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/gentoo/dkim/dkim-filter.conf
 %%WWWDIR%%/templates/misc/configfiles/gentoo/dovecot/etc_dovecot_dovecot-sql.conf
 %%WWWDIR%%/templates/misc/configfiles/gentoo/dovecot/etc_dovecot_dovecot.conf
@@ -1836,7 +1707,7 @@
 %%WWWDIR%%/templates/misc/configfiles/gentoo/libnss/etc_libnss-mysql.cfg
 %%WWWDIR%%/templates/misc/configfiles/gentoo/libnss/etc_nsswitch.conf
 %%WWWDIR%%/templates/misc/configfiles/gentoo/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/logrotate/etc_logrotated_froxlor
+%%WWWDIR%%/templates/misc/configfiles/gentoo/logrotate/etc_logrotated_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/gentoo/nginx/etc_init.d_php-fcgi
 %%WWWDIR%%/templates/misc/configfiles/gentoo/nginx/etc_nginx_fastcgi.conf
 %%WWWDIR%%/templates/misc/configfiles/gentoo/nginx/etc_nginx_nginx.conf
@@ -1865,15 +1736,15 @@
 %%WWWDIR%%/templates/misc/configfiles/gentoo/pureftpd/etc_pureftpd-mysql.conf
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/courier/etc_authlib_authdaemonrc
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/courier/etc_authlib_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/cron/etc_cron.d_froxlor
+%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/cron/etc_cron.d_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/dkim/dkim-filter.conf
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/dovecot/etc_dovecot_dovecot-sql.conf
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/dovecot/etc_dovecot_dovecot.conf
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_auth_30_froxlor-config
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_main_10_froxlor-config_options
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_router_180_froxlor-config
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_transport_30_froxlor-config
+%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_auth_30_%%AP_NAME%%-config
+%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_main_10_%%AP_NAME%%-config_options
+%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_router_180_%%AP_NAME%%-config
+%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_transport_30_%%AP_NAME%%-config
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_main.cf
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_mysql-virtual_alias_maps.cf
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
@@ -1893,7 +1764,7 @@
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/pure-ftpd/etc_pure-ftpd_mysql.conf
 %%WWWDIR%%/templates/misc/configfiles/sle_10/courier/etc_authlib_authdaemonrc
 %%WWWDIR%%/templates/misc/configfiles/sle_10/courier/etc_authlib_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/sle_10/cron/etc_cron.d_froxlor
+%%WWWDIR%%/templates/misc/configfiles/sle_10/cron/etc_cron.d_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/sle_10/dkim/dkim-filter.conf
 %%WWWDIR%%/templates/misc/configfiles/sle_10/postfix/etc_postfix_main.cf
 %%WWWDIR%%/templates/misc/configfiles/sle_10/postfix/etc_postfix_mysql-virtual_alias_maps.cf
@@ -1908,21 +1779,21 @@
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/apache2/etc_apache2_mods-enabled_fastcgi.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/courier/etc_courier_authdaemonrc
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/courier/etc_courier_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/cron/etc_cron.d_froxlor
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/cron/etc_cron.d_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/dkim/dkim-filter.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/dovecot/etc_dovecot_auth.d_01-dovecot-postfix.auth
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/dovecot/etc_dovecot_conf.d_01-dovecot-postfix.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/dovecot/etc_dovecot_dovecot-sql.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_auth_30_froxlor-config
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_main_10_froxlor-config_options
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_router_180_froxlor-config
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_transport_30_froxlor-config
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_auth_30_%%AP_NAME%%-config
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_main_10_%%AP_NAME%%-config_options
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_router_180_%%AP_NAME%%-config
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_transport_30_%%AP_NAME%%-config
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nss-mysql-root.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nss-mysql.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nsswitch.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/logrotate/etc_logrotated_froxlor
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/logrotate/etc_logrotated_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/nginx/etc_init.d_php-fcgi
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/nginx/etc_nginx_fastcgi.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/nginx/etc_nginx_nginx.conf
@@ -1940,7 +1811,7 @@
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_mxaccess/etc_postfix_main.cf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/powerdns/etc_powerdns_pdns-froxlor.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/powerdns/etc_powerdns_pdns-%%AP_NAME%%.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/powerdns/etc_powerdns_pdns.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/proftpd/etc_proftpd_modules.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/proftpd/etc_proftpd_proftpd.conf
@@ -1958,7 +1829,7 @@
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/apache2/etc_apache2_mods-enabled_fastcgi.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/courier/etc_courier_authdaemonrc
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/courier/etc_courier_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/cron/etc_cron.d_froxlor
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/cron/etc_cron.d_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/dovecot/etc_dovecot_conf.d_01_mail_stack_delivery.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/dovecot/etc_dovecot_conf.d_10_auth.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/dovecot/etc_dovecot_conf.d_auth-sql.conf.ext
@@ -1967,7 +1838,7 @@
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/libnss/etc_libnss-mysql.cfg
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/libnss/etc_nsswitch.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/logrotate/etc_logrotated_froxlor
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/logrotate/etc_logrotated_%%AP_NAME%%
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/nginx/etc_init.d_php-fcgi
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/nginx/etc_nginx_fastcgi.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/nginx/etc_nginx_nginx.conf
@@ -1985,7 +1856,7 @@
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_mxaccess/etc_postfix_main.cf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/powerdns/etc_powerdns_pdns-froxlor.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/powerdns/etc_powerdns_pdns-%%AP_NAME%%.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/powerdns/etc_powerdns_pdns.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/proftpd/etc_proftpd_modules.conf
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/proftpd/etc_proftpd_proftpd.conf
@@ -2152,7 +2023,6 @@
 @dirrmtry %%WWWDIR%%/templates/Sparkle/admin/logger
 @dirrmtry %%WWWDIR%%/templates/Sparkle/admin/ipsandports
 @dirrmtry %%WWWDIR%%/templates/Sparkle/admin/index
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/froxlorclients
 @dirrmtry %%WWWDIR%%/templates/Sparkle/admin/domains
 @dirrmtry %%WWWDIR%%/templates/Sparkle/admin/customers
 @dirrmtry %%WWWDIR%%/templates/Sparkle/admin/cronjobs
@@ -2193,7 +2063,6 @@
 @dirrmtry %%WWWDIR%%/templates/Froxlor/admin/logger
 @dirrmtry %%WWWDIR%%/templates/Froxlor/admin/ipsandports
 @dirrmtry %%WWWDIR%%/templates/Froxlor/admin/index
-@dirrmtry %%WWWDIR%%/templates/Froxlor/admin/froxlorclients
 @dirrmtry %%WWWDIR%%/templates/Froxlor/admin/domains
 @dirrmtry %%WWWDIR%%/templates/Froxlor/admin/customers
 @dirrmtry %%WWWDIR%%/templates/Froxlor/admin/cronjobs
@@ -2207,6 +2076,7 @@
 @dirrmtry %%WWWDIR%%/scripts/jobs
 @dirrmtry %%WWWDIR%%/scripts
 @dirrmtry %%WWWDIR%%/packages
+@dirrmtry %%WWWDIR%%/logs
 @dirrmtry %%WWWDIR%%/locales/en/LC_MESSAGES
 @dirrmtry %%WWWDIR%%/locales/en
 @dirrmtry %%WWWDIR%%/locales/de/LC_MESSAGES
@@ -2221,7 +2091,7 @@
 @dirrmtry %%WWWDIR%%/lib/functions/phphelpers
 @dirrmtry %%WWWDIR%%/lib/functions/output
 @dirrmtry %%WWWDIR%%/lib/functions/logger
-@dirrmtry %%WWWDIR%%/lib/functions/froxlor
+@dirrmtry %%WWWDIR%%/lib/functions/%%AP_NAME%%
 @dirrmtry %%WWWDIR%%/lib/functions/formfields/text
 @dirrmtry %%WWWDIR%%/lib/functions/formfields/string
 @dirrmtry %%WWWDIR%%/lib/functions/formfields/option
@@ -2295,8 +2165,7 @@
 @dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier
 @dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library
 @dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier
-@dirrmtry %%WWWDIR%%/lib/classes/froxlorclient
-@dirrmtry %%WWWDIR%%/lib/classes/domains
+@dirrmtry %%WWWDIR%%/lib/classes/database/manager
 @dirrmtry %%WWWDIR%%/lib/classes/database
 @dirrmtry %%WWWDIR%%/lib/classes/aps
 @dirrmtry %%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins
@@ -2311,14 +2180,10 @@
 @dirrmtry %%WWWDIR%%/lib
 @dirrmtry %%WWWDIR%%/js/plugins
 @dirrmtry %%WWWDIR%%/js
-@dirrmtry %%WWWDIR%%/install/updates/syscp/1.4
-@dirrmtry %%WWWDIR%%/install/updates/syscp/1.2
-@dirrmtry %%WWWDIR%%/install/updates/syscp/1.0
-@dirrmtry %%WWWDIR%%/install/updates/syscp
 @dirrmtry %%WWWDIR%%/install/updates/preconfig/0.9
 @dirrmtry %%WWWDIR%%/install/updates/preconfig
-@dirrmtry %%WWWDIR%%/install/updates/froxlor/0.9
-@dirrmtry %%WWWDIR%%/install/updates/froxlor
+@dirrmtry %%WWWDIR%%/install/updates/%%AP_NAME%%/0.9
+@dirrmtry %%WWWDIR%%/install/updates/%%AP_NAME%%
 @dirrmtry %%WWWDIR%%/install/updates
 @dirrmtry %%WWWDIR%%/install/templates/assets/img
 @dirrmtry %%WWWDIR%%/install/templates/assets/css
