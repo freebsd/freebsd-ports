@@ -18,5 +18,4 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyBookReader
 USE_GNOME=	pygtk2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
