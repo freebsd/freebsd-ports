@@ -51,6 +51,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="59e72db2-cae6-11e3-8420-00e0814cab4e">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py26-django</name>
+	<name>py27-django</name>
+	<name>py31-django</name>
+	<name>py32-django</name>
+	<name>py33-django</name>
+	<name>py34-django</name>
+	<range><ge>1.6</ge><lt>1.6.3</lt></range>
+	<range><ge>1.5</ge><lt>1.5.6</lt></range>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+      </package>
+      <package>
+	<name>py26-django-devel</name>
+	<name>py27-django-devel</name>
+	<range><lt>20140423,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2014/apr/21/security/">
+	  <p>These releases address an unexpected code-execution issue, a
+	    caching issue which can expose CSRF tokens and a MySQL typecasting
+	    issue. While these issues present limited risk and may not affect
+	    all Django users, we encourage all users to evaluate their own
+	    risk and upgrade as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2014/apr/21/security/</url>
+      <cvename>CVE-2014-0472</cvename>
+      <cvename>CVE-2014-0473</cvename>
+      <cvename>CVE-2014-0474</cvename>
+    </references>
+    <dates>
+      <discovery>2014-04-21</discovery>
+      <entry>2014-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b8d7194-ca88-11e3-9d8d-c80aa9043978">
     <topic>OpenSSL -- Remote Data Injection / DoS</topic>
     <affects>
