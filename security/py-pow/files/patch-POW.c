@@ -1,9 +1,10 @@
 --- POW.c.orig	2002-09-18 05:54:28.000000000 +0200
-+++ POW.c	2007-12-20 21:31:49.000000000 +0100
-@@ -47,8 +47,10 @@
++++ POW.c	2014-04-16 10:32:11.000000000 +0200
+@@ -46,9 +46,10 @@
+ #include <openssl/evp.h>
  #include <openssl/err.h>
  #include <openssl/md5.h>
- #include <openssl/md2.h>
+-#include <openssl/md2.h>
 +#include <openssl/rsa.h>
  #include <openssl/sha.h>
  #include <openssl/hmac.h>
@@ -11,7 +12,15 @@
  
  #include <time.h>
  
-@@ -304,54 +306,54 @@
+@@ -124,7 +125,6 @@
+ #define NO_DH
+ 
+ // digests
+-#define MD2_DIGEST            1
+ #define MD5_DIGEST            2
+ #define SHA_DIGEST            3
+ #define SHA1_DIGEST           4
+@@ -304,54 +304,54 @@
     switch(cipher_type)
     {
  #ifndef NO_DES
@@ -102,7 +111,7 @@
  #endif
        default:                return NULL;
     }
-@@ -580,7 +582,7 @@
+@@ -580,7 +580,7 @@
  X509_object_der_read(char *src, int len)
  {
     x509_object *self;
@@ -111,7 +120,28 @@
  
     if ( !(self = PyObject_New( x509_object, &x509type ) ) )
        goto error;
-@@ -2050,7 +2052,7 @@
+@@ -767,7 +767,6 @@
+ "         signed, it should be one of the following:\n"
+ "      </para>\n"
+ "      <simplelist>\n"
+-"         <member><constant>MD2_DIGEST</constant></member>\n"
+ "         <member><constant>MD5_DIGEST</constant></member>\n"
+ "         <member><constant>SHA_DIGEST</constant></member>\n"
+ "         <member><constant>SHA1_DIGEST</constant></member>\n"
+@@ -805,12 +804,6 @@
+             { PyErr_SetString( SSLErrorObject, "could not sign certificate" ); goto error; }
+          break;
+       }
+-      case MD2_DIGEST:
+-      { 
+-         if (!X509_sign(self->x509, pkey, EVP_md2() ) ) 
+-            { PyErr_SetString( SSLErrorObject, "could not sign certificate" ); goto error; }
+-         break;
+-      }
+       case SHA_DIGEST:
+       { 
+          if (!X509_sign(self->x509, pkey, EVP_sha() ) ) 
+@@ -2050,7 +2043,7 @@
  x509_crl_object_der_read(char *src, int len)
  {
     x509_crl_object *self;
@@ -120,7 +150,7 @@
  
     if ( !(self = PyObject_New( x509_crl_object, &x509_crltype ) ) )
        goto error;
-@@ -2435,7 +2437,7 @@
+@@ -2435,7 +2428,7 @@
  X509_REVOKED_dup(X509_REVOKED *rev)
  {
     return((X509_REVOKED *)ASN1_dup((int (*)())i2d_X509_REVOKED,
@@ -129,7 +159,28 @@
  }
  
  static PyObject *
-@@ -4576,7 +4578,7 @@
+@@ -2815,7 +2808,6 @@
+ "         signed, it should be one of the following:\n"
+ "      </para>\n"
+ "      <simplelist>\n"
+-"         <member><constant>MD2_DIGEST</constant></member>\n"
+ "         <member><constant>MD5_DIGEST</constant></member>\n"
+ "         <member><constant>SHA_DIGEST</constant></member>\n"
+ "         <member><constant>SHA1_DIGEST</constant></member>\n"
+@@ -2852,12 +2844,6 @@
+             { PyErr_SetString( SSLErrorObject, "could not sign certificate" ); goto error; }
+          break;
+       }
+-      case MD2_DIGEST:
+-      { 
+-         if (!X509_CRL_sign(self->crl, pkey, EVP_md2() ) ) 
+-            { PyErr_SetString( SSLErrorObject, "could not sign certificate" ); goto error; }
+-         break;
+-      }
+       case SHA_DIGEST:
+       { 
+          if (!X509_CRL_sign(self->crl, pkey, EVP_sha() ) ) 
+@@ -4576,7 +4562,7 @@
  asymmetric_object_der_read(int key_type, char *src, int len)
  {
     asymmetric_object *self=NULL;
@@ -138,7 +189,50 @@
  
     self = PyObject_New( asymmetric_object, &asymmetrictype );
     if (self == NULL)
-@@ -5777,7 +5779,7 @@
+@@ -5031,7 +5017,6 @@
+ "         following:\n"
+ "      </para>\n"
+ "      <simplelist>\n"
+-"         <member><constant>MD2_DIGEST</constant></member>\n"
+ "         <member><constant>MD5_DIGEST</constant></member>\n"
+ "         <member><constant>SHA_DIGEST</constant></member>\n"
+ "         <member><constant>SHA1_DIGEST</constant></member>\n"
+@@ -5063,8 +5048,6 @@
+ 
+    switch(digest_type)
+    {
+-      case MD2_DIGEST:
+-         { digest_nid = NID_md2; digest_len = MD2_DIGEST_LENGTH; break; }
+       case MD5_DIGEST:
+          { digest_nid = NID_md5; digest_len = MD5_DIGEST_LENGTH; break; }
+       case SHA_DIGEST:
+@@ -5141,7 +5124,6 @@
+ "         following:\n"
+ "      </para>\n"
+ "      <simplelist>\n"
+-"         <member><constant>MD2_DIGEST</constant></member>\n"
+ "         <member><constant>MD5_DIGEST</constant></member>\n"
+ "         <member><constant>SHA_DIGEST</constant></member>\n"
+ "         <member><constant>SHA1_DIGEST</constant></member>\n"
+@@ -5165,8 +5147,6 @@
+ 
+    switch(digest_type)
+    {
+-      case MD2_DIGEST:
+-         { digest_len = MD2_DIGEST_LENGTH; digest_nid = NID_md2; break; }
+       case MD5_DIGEST:
+          { digest_len = MD5_DIGEST_LENGTH; digest_nid = NID_md5; break; }
+       case SHA_DIGEST:
+@@ -5567,8 +5547,6 @@
+ 
+    switch(digest_type)
+    {
+-      case MD2_DIGEST: 
+-         { self->digest_type = MD2_DIGEST; EVP_DigestInit( &self->digest_ctx, EVP_md2() ); break; }
+       case MD5_DIGEST: 
+          { self->digest_type = MD5_DIGEST; EVP_DigestInit( &self->digest_ctx, EVP_md5() ); break; }
+       case SHA_DIGEST: 
+@@ -5777,7 +5755,7 @@
  hmac_object_new(int digest_type, char *key, int key_len)
  {
     hmac_object *self=NULL;
@@ -147,3 +241,36 @@
  
     self = PyObject_New( hmac_object, &hmactype );
     if (self == NULL)
+@@ -5785,8 +5763,6 @@
+ 
+    switch(digest_type)
+    {
+-      case MD2_DIGEST: 
+-         { md = EVP_md2(); break; }
+       case MD5_DIGEST: 
+          { md = EVP_md5(); break; }
+       case SHA_DIGEST: 
+@@ -6137,7 +6113,6 @@
+ "         of digest to create and should be one of the following: \n"
+ "      </para>\n"
+ "      <simplelist>\n"
+-"         <member><constant>MD2_DIGEST</constant></member>\n"
+ "         <member><constant>MD5_DIGEST</constant></member>\n"
+ "         <member><constant>SHA_DIGEST</constant></member>\n"
+ "         <member><constant>SHA1_DIGEST</constant></member>\n"
+@@ -6176,7 +6151,6 @@
+ "         string and <parameter>type</parameter> should be one of the following: \n"
+ "      </para>\n"
+ "      <simplelist>\n"
+-"         <member><constant>MD2_DIGEST</constant></member>\n"
+ "         <member><constant>MD5_DIGEST</constant></member>\n"
+ "         <member><constant>SHA_DIGEST</constant></member>\n"
+ "         <member><constant>SHA1_DIGEST</constant></member>\n"
+@@ -7078,7 +7052,6 @@
+ #endif
+ 
+    // message digests
+-   install_int_const( d, "MD2_DIGEST",                MD2_DIGEST );
+    install_int_const( d, "MD5_DIGEST",                MD5_DIGEST );
+    install_int_const( d, "SHA_DIGEST",                SHA_DIGEST );
+    install_int_const( d, "SHA1_DIGEST",               SHA1_DIGEST );
