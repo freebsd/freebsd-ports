@@ -547,6 +547,7 @@
     SUBDIR += gindent
     SUBDIR += gio-sharp
     SUBDIR += git
+    SUBDIR += git-bzr-ng
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
     SUBDIR += git-review
