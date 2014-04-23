@@ -3,7 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.redmine.org/releases/
 
@@ -28,6 +28,9 @@ USE_RUBY_FEATURES=	iconv
 USE_RAKE=	yes
 NO_BUILD=	yes
 SUB_LIST+=	RUBY_NAME=${RUBY_NAME}
+USERS=		${WWWOWN}
+GROUPS=		${WWWGRP}
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 OPTIONS_DEFINE=	MYSQL MYSQL2 POSTGRESQL RMAGIC WWWSERVER
 OPTIONS_DEFAULT=MYSQL2 RMAGIC WWWSERVER THIN
@@ -62,11 +65,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Gemfile
 
 .if ${PORT_OPTIONS:MWWWSERVER}
 .if ${PORT_OPTIONS:MTHIN}
-USERS=		${WWWOWN}
-GROUPS=		${WWWGRP}
 RUN_DEPENDS+=	thin:${PORTSDIR}/www/rubygem-thin
 USE_RC_SUBR=	redmine
 SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-thin-Gemfile
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
@@ -89,16 +91,11 @@ do-install:
 
 post-install:
 	${TOUCH} ${STAGEDIR}${WWWDIR}/Gemfile.lock
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/Gemfile.lock
 	
 	if ! [ -r ${STAGEDIR}${WWWDIR}/config/settings.yml ]; then		\
 		${INSTALL_DATA} ${STAGEDIR}${WWWDIR}/config/settings.yml-dist	\
 			${STAGEDIR}${WWWDIR}/config/settings.yml;		\
 	fi
-	for subdir in files log tmp public/plugin_assets; do \
-		${CHOWN} -R :${WWWGRP} ${STAGEDIR}${WWWDIR}/$$subdir; \
-		${CHMOD} -R g+w ${STAGEDIR}${WWWDIR}/$$subdir; \
-	done
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
