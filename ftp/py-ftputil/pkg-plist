@@ -1,3 +1,6 @@
+%%PYTHON_LIBDIR%%/site-packages/ftputil/setup.py
+%%PYTHON_LIBDIR%%/site-packages/ftputil/setup.pyc
+%%PYTHON_LIBDIR%%/site-packages/ftputil/setup.pyo
 %%PYTHON_SITELIBDIR%%/ftputil/__init__.py
 %%PYTHON_SITELIBDIR%%/ftputil/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ftputil/__init__.pyo
