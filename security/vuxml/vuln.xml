@@ -65,11 +65,9 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<blockquote cite="https://rt.openssl.org/Ticket/Display.html?id=2167">
-	  <p>Applications that use SSL_MODE_RELEASE_BUFFERS, such as nginx, are
-	    prone to a race condition which may allow a remote attacker to
-	    inject random data into other connections.</p>
-	</blockquote>
+	<p>Applications that use SSL_MODE_RELEASE_BUFFERS, such as nginx, are
+	  prone to a race condition which may allow a remote attacker to
+	  inject random data into other connections.</p>
       </body>
     </description>
     <references>
