@@ -55,6 +55,9 @@ post-patch:
 		 s|(LNETINC=).*|\1${LIBNET_INC}|; \
 		 s|(LNETLIB=).*|\1${LIBNET_LIB}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's,csin,_csin,g' \
+		${WRKSRC}/webmitm.c \
+		${WRKSRC}/sshmitm.c
 
 .if !empty(LIBNIDS_GLIB2)
 pre-configure:
