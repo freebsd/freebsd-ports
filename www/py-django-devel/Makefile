@@ -14,16 +14,14 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-SNAPSHOTDATE=	20131025
+SNAPSHOTDATE=	20140423
 
-USE_XZ=	yes
-USES=		gettext
+USES=		gettext tar:xz
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYTHON_PY3K_PLIST_HACK=	yes
-PYDISTUTILS_PKGNAME=	Django
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGVERSION=	1.7
 
 CONFLICTS=	py2[0-9]-django-[0-9]*
@@ -37,6 +35,9 @@ OPTIONS_DEFAULT=SQLITE
 OPTIONS_GROUP=	DATABASE
 OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
 HTMLDOCS_DESC=	Install the HTML documentation (requires Sphinx)
+
+PLIST_FILES=	man/man1/django-admin.1.gz \
+		man/man1/gather_profile_stats.1.gz
 
 .include <bsd.port.options.mk>
 
@@ -57,7 +58,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
 .endif
 
 .if ${PORT_OPTIONS:MHTMLDOCS}
-.	if empty(PORT_OPTIONS:MDOCS)
+.	if ! ${PORT_OPTIONS:MDOCS}
 IGNORE=	you cannot build documentation while setting NOPORTDOCS
 .	endif
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
