@@ -1,26 +1,21 @@
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/authorizers.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/authorizers.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/authorizers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/filesystems.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/filesystems.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/filesystems.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/handlers.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/handlers.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib/handlers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/ftpserver.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/ftpserver.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/ftpserver.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/authorizers.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/authorizers.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/authorizers.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/filesystems.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/filesystems.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/filesystems.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/handlers.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/handlers.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/handlers.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.pyo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/anti_flood_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keycert.pem
@@ -31,7 +26,5 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/winnt_ftpd.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib/contrib
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyftpdlib
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+@dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib
