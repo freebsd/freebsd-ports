@@ -67,15 +67,6 @@ PLIST_SUB+=		LDAP="@comment "
 
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
-MAN1=			k5srvutil.1 kadmin.1 krb5-config.1 krb5-send-pr.1 \
-			kpasswd.1 klist.1 kinit.1 kdestroy.1 kswitch.1 ksu.1 \
-			ktutil.1 \
-			sclient.1 kvno.1 compile_et.1
-MAN5=			kadm5.acl.5 kdc.conf.5 krb5.conf.5 .k5identity.5 \
-			.k5login.5 k5identity.5 k5login.5
-MAN8=			krb5kdc.8 kadmin.local.8 kdb5_ldap_util.8 kdb5_util.8 \
-			kadmind.8 kprop.8 kpropd.8 kproplog.8 sserver.8
-
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
