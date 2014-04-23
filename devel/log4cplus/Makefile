@@ -3,6 +3,7 @@
 
 PORTNAME=	log4cplus
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
@@ -11,7 +12,7 @@ COMMENT=	Logging library for C++
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		libtool pathfix
+USES=		libtool:keepla pathfix
 USE_XZ=		yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

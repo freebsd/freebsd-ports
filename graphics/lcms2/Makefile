@@ -3,6 +3,7 @@
 
 PORTNAME=	lcms2
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lcms/lcms/${PORTVERSION} \
 		http://www.littlecms.com/
@@ -22,7 +23,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		libtool pathfix
+USES=		libtool:keepla pathfix
 
 PORTDOCS=	*
 

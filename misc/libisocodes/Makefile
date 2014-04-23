@@ -3,7 +3,7 @@
 
 PORTNAME=	libisocodes
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 
@@ -16,10 +16,9 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06
 RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
-USE_XZ=		yes
-USES=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	glib20 gnomehier introspection:build libxml2
 GNU_CONFIGURE=	yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 gnomehier introspection:build libxml2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/xml/|${LOCALBASE}/share/xml/|g' \

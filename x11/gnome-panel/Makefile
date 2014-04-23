@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-panel
 PORTVERSION=	2.32.1
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -28,7 +28,7 @@ INSTALLS_OMF=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USES+=		pathfix libtool gettext gmake pkgconfig
+USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomedesktop libwnck gnomemenus \
 		gnomedocutils referencehack librsvg2
 GNU_CONFIGURE=	yes

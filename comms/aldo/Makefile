@@ -16,10 +16,10 @@ BROKEN=		Does not build with modern compilers
 LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf automake libtool
+USE_AUTOTOOLS=	autoconf automake
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
-USES=		gmake tar:bzip2 libtool
+USES=		gmake libtool tar:bzip2
 USE_GCC=	any
 
 PLIST_FILES=	bin/aldo \

@@ -14,10 +14,10 @@ XORG_CAT=	driver
 
 .if defined(WITH_NEW_XORG)
 ELO_VERSION=	1.4.1
-ELO_REVISION=	0
+ELO_REVISION=	1
 .else
 ELO_VERSION=	1.2.4
-ELO_REVISION=	0
+ELO_REVISION=	1
 .endif
 
 .include <bsd.port.mk>

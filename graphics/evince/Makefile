@@ -4,7 +4,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	2.32.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -25,7 +25,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
-USES=		desktop-file-utils gettext pathfix gmake pkgconfig libtool tar:bzip2
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+		pkgconfig tar:bzip2
 USE_GNOME=	intlhack gnomeprefix gnomedocutils gconf2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

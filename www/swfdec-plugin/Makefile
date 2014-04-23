@@ -3,7 +3,7 @@
 
 PORTNAME=	swfdec-plugin
 PORTVERSION=	0.8.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec-mozilla/0.8/
 DISTNAME=	swfdec-mozilla-${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	Flash rendering plugin
 
 LIB_DEPENDS=	libswfdec-0.8.so:${PORTSDIR}/graphics/swfdec
 
-USES=		pkgconfig webplugin:gecko libtool
+USES=		libtool:keepla pkgconfig webplugin:gecko
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip

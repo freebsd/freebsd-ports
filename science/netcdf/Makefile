@@ -3,7 +3,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	3.6.3
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -19,7 +19,7 @@ PORTSCOUT=	limit:^3\.
 CONFIGURE_ARGS=	--enable-shared
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		gmake libtool:keepla
 USE_LDCONFIG=	yes
 
 INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \

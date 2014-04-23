@@ -4,7 +4,7 @@
 
 PORTNAME=	eog
 PORTVERSION=	2.32.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,10 +15,11 @@ COMMENT=	The Eye Of Gnome image viewer
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+		pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack librsvg2 gconf2 gnomedesktop
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 GNOME_DESKTOP_VERSION=2

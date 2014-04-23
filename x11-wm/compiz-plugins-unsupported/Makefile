@@ -3,7 +3,7 @@
 
 PORTNAME=	compiz-plugins-unsupported
 PORTVERSION=	0.8.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -20,7 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GL=		yes
-USES=	pathfix gettext gmake pkgconfig libtool tar:bzip2
+USES=	pathfix gettext gmake libtool:keepla pkgconfig tar:bzip2
 USE_GNOME=	intltool
 USE_XORG=	glproto
 USE_LDCONFIG=	yes

@@ -4,7 +4,7 @@
 
 PORTNAME=	hal
 DISTVERSION=	0.5.14
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpolkit.so.2:${PORTSDIR}/sysutils/policykit \
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids \
 		bash:${PORTSDIR}/shells/bash
 
-USES=		pathfix gettext gmake libtool pkgconfig shebangfix
+USES=		gettext gmake libtool:keepla pathfix pkgconfig shebangfix
 USE_GNOME=	intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

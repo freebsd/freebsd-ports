@@ -1,22 +1,14 @@
-lib/libI810XvMC.la
 lib/libI810XvMC.so
 lib/libI810XvMC.so.1
 lib/libI810XvMC.so.1.0.0
-lib/libIntelXvMC.la
 lib/libIntelXvMC.so.1
 lib/libIntelXvMC.so
 lib/libIntelXvMC.so.1.0.0
-%%OLD%%lib/xorg/modules/drivers/ch7017.la
 %%OLD%%lib/xorg/modules/drivers/ch7017.so
-%%OLD%%lib/xorg/modules/drivers/ch7xxx.la
 %%OLD%%lib/xorg/modules/drivers/ch7xxx.so
-lib/xorg/modules/drivers/intel_drv.la
 lib/xorg/modules/drivers/intel_drv.so
-%%OLD%%lib/xorg/modules/drivers/ivch.la
 %%OLD%%lib/xorg/modules/drivers/ivch.so
-%%OLD%%lib/xorg/modules/drivers/sil164.la
 %%OLD%%lib/xorg/modules/drivers/sil164.so
-%%OLD%%lib/xorg/modules/drivers/tfp410.la
 %%OLD%%lib/xorg/modules/drivers/tfp410.so
 man/man4/intel.4x.gz
 @dirrmtry lib/xorg/modules/drivers

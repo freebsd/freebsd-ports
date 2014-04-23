@@ -3,7 +3,7 @@
 
 PORTNAME=	xf86-video-rdc
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://www.SpringDaemons.com/stas/
 

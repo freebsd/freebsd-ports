@@ -3,7 +3,7 @@
 
 PORTNAME=	giacxcas
 PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/ \
 		http://www.math.jussieu.fr/~han/xcas/sources/
@@ -28,11 +28,11 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 NO_CDROM=	French documentation is for non-commercial use only
 
 GNU_CONFIGURE=	yes
+USES=		desktop-file-utils gettext gmake libtool:keepla shebangfix
 USE_GL=		gl
-USE_XORG=	xcursor xft xi
+USE_XORG=	x11 xcursor xft xi
 USE_TEX=	latex:build dvipsk:build
 USE_LDCONFIG=	yes
-USES=		gettext gmake shebangfix desktop-file-utils
 USE_GCC=	yes
 DOCSDIR=	${PREFIX}/share/doc/giac
 PORTDOCS=	*
@@ -40,6 +40,7 @@ DATADIR=	${PREFIX}/share/giac
 PORTDATA=	*
 SHEBANG_FILES=	src/pgiac
 
+CONFIGURE_ENV=	X_LIBS=-lX11
 CPPFLAGS+=	-I${FLTKDEV-GIAC} -I${COCOALIB-GIAC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${FLTKDEV-GIAC}/lib -L${COCOALIB-GIAC}/lib -L${LOCALBASE}/lib
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -50,7 +51,8 @@ COCOALIB-GIAC=	${WRKDIR}/CoCoALib-0.9950
 
 INFO=		giac_es giac_us
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
 .if ${OSVERSION} >= 1000000
 CONFIGURE_ARGS+=	--disable-ntl
 .endif
@@ -73,4 +75,4 @@ pre-configure:
 	./configure --prefix=${FLTKDEV-GIAC} \
 	&& ${MAKE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	libwps
 PORTVERSION=	0.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig pathfix compiler:features
+USES=		compiler:features libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen

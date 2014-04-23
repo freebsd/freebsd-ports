@@ -4,7 +4,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	2.2.12
-PORTREVISION?=	14
+PORTREVISION?=	15
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/${PORTNAME}/2.2
 PKGNAMESUFFIX=	20
@@ -20,7 +20,7 @@ USES+=		tar:bzip2
 LIB_DEPENDS=	libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES+=		pathfix gmake libtool pkgconfig
+USES+=		gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20

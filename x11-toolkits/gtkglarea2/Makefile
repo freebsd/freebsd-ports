@@ -4,18 +4,18 @@
 
 PORTNAME=	gtkglarea
 PORTVERSION=	2.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DISTNAME=	gtkglarea-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An OpenGL widget for the GTK+2 GUI toolkit
+COMMENT=	OpenGL widget for the GTK+2 GUI toolkit
 
-USE_GNOME=	 gtk20
+USES=		libtool:keepla pathfix pkgconfig tar:bzip2
+USE_GNOME=	gtk20
 USE_GL=		yes
-USES=		libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lib-GL

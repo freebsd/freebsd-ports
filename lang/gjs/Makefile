@@ -4,7 +4,7 @@
 
 PORTNAME=	gjs
 PORTVERSION=	1.34.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 CONFLICTS_BUILD=spidermonkey17-1.7.*
 
-USES=		gettext gmake libtool pathfix pkgconfig shebangfix tar:xz
+USES=		gettext gmake libtool:keepla pathfix pkgconfig shebangfix tar:xz
 USE_PYTHON_BUILD=2
 USE_GNOME=	cairo glib20 gnomeprefix introspection:build intlhack
 USE_LDCONFIG=	yes

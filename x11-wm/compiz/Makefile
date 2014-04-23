@@ -2,7 +2,7 @@
 
 PORTNAME=	compiz
 PORTVERSION=	0.8.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	glxinfo:${PORTSDIR}/graphics/mesa-demos \
 XORG_CAT=	app
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gettext pathfix gmake libtool tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix tar:bzip2
 USE_GL=		glu
 USE_GNOME=	gconf2 libxslt
 USE_XORG=	xcomposite xfixes xdamage xrandr xrender ice sm xinerama glproto

@@ -3,7 +3,7 @@
 
 PORTNAME=	gsmlib
 PORTVERSION=	1.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms
 MASTER_SITES=	DEBIAN
 #TODO: examine the Debian patches, and changes in the Mandrake
@@ -13,7 +13,7 @@ DISTFILES=	gsmlib_1.10.orig.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to access GSM mobile phones through GSM modems
 
-USES=		gmake libtool
+USES=		gmake libtool:keepla
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

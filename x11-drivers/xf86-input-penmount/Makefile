@@ -14,10 +14,10 @@ XORG_CAT=	driver
 
 .if defined(WITH_NEW_XORG)
 PEN_VERSION=	1.5.0
-PEN_REVISION=	0
+PEN_REVISION=	1
 .else
 PEN_VERSION=	1.4.1
-PEN_REVISION=	1
+PEN_REVISION=	2
 .endif
 
 .include <bsd.port.mk>

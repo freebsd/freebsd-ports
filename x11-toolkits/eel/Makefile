@@ -4,7 +4,7 @@
 
 PORTNAME=	eel
 PORTVERSION=	2.26.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generally useful classes and extensions to GNOME
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_XORG=	xrender
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomedesktop intlhack

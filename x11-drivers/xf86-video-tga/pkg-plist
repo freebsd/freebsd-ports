@@ -1,4 +1,3 @@
-lib/xorg/modules/drivers/tga_drv.la
 lib/xorg/modules/drivers/tga_drv.so
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules

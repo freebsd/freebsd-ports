@@ -2,7 +2,7 @@
 
 PORTNAME=	libetonyek
 PORTVERSION=	0.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
@@ -22,10 +22,10 @@ OPTIONS_DEFINE=	DOCS TEST
 CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+USES=		gmake libtool:keepla pathfix pkgconfig
+USE_LDCONFIG=	yes
 USE_XZ=		yes
-USES=		gmake libtool pkgconfig pathfix
 
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen

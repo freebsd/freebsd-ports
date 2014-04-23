@@ -21,7 +21,7 @@ NO_CCACHE=	yes
 WITH_DEBUG=	yes
 CFLAGS+=	-O0 -g
 USE_LDCONFIG=	yes
-USES=		tar:xz libtool
+USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
@@ -92,7 +92,6 @@ PKG_BIN=	${WRKSRC}/src/pkg-static
 .endif
 
 post-install:
-	@${RM} -f ${STAGEDIR}${PREFIX}/lib/*.la
 	@${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a \
 		${STAGEDIR}${PREFIX}/lib/libpkg.a
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpkg.so.2

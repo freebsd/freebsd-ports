@@ -3,7 +3,7 @@
 
 PORTNAME=	libident
 PORTVERSION=	0.32
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.remlab.net/files/libident/
 
@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small library to interface the ident protocol server (rfc1413)
 
 OPTIONS_DEFINE=	DOCS
-USES=		libtool
+USES=		libtool:keepla
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

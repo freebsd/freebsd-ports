@@ -4,7 +4,7 @@
 
 PORTNAME=	glade3
 PORTVERSION=	3.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +17,7 @@ PORTSCOUT=	ignore
 
 INSTALLS_ICONS=	yes
 USE_GNOME=	gtk20 libxml2 gnomeprefix gnomedocutils
-USES=		gmake gettext libtool pathfix desktop-file-utils pkgconfig tar:xz
+USES=		gmake gettext libtool:keepla pathfix desktop-file-utils pkgconfig tar:xz
 INSTALLS_OMF=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

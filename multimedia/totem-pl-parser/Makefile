@@ -4,7 +4,7 @@
 
 PORTNAME=	totem-pl-parser
 PORTVERSION=	2.32.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 
-USES=		pathfix gettext pkgconfig gmake libtool tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix glib20 libxml2 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

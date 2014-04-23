@@ -4,7 +4,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME \
 		http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
 LICENSE=	LGPL21
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gdkpixbuf2 gnomeprefix atk pango introspection:build
 INSTALL_TARGET=	install-strip
 USE_GL=		gl

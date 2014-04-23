@@ -3,7 +3,7 @@
 
 PORTNAME=	pinball
 PORTVERSION=	0.3.1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	Emilia Pinball is a free pinball game
 
 LICENSE=	GPLv2
 
-USES=		gmake libtool
+USES=		gmake libtool:keepla
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

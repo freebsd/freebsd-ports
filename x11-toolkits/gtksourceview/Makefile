@@ -4,19 +4,19 @@
 
 PORTNAME=	gtksourceview
 PORTVERSION=	1.8.5
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A text widget that adds syntax highlighting to the GtkTextView widget
+COMMENT=	Widget that adds syntax highlighting to GtkTextView
 
 USES+=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-USES+=		gettext gmake libtool pathfix pkgconfig
+USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix libgnome libgnomeprintui intlhack referencehack
 GNU_CONFIGURE=	yes

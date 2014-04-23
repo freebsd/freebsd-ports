@@ -4,7 +4,7 @@
 
 PORTNAME=	libgdata
 PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 intltool introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include 

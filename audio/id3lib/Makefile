@@ -3,7 +3,7 @@
 
 PORTNAME=	id3lib
 PORTVERSION=	3.8.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -11,7 +11,7 @@ MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	Library for manipulating ID3v1/v1.1 and ID3v2 tags
 
 GNU_CONFIGURE=	yes
-USES=		iconv libtool
+USES=		iconv libtool:keepla
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

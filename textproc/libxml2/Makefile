@@ -4,7 +4,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.8.0
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \
@@ -17,7 +17,7 @@ COMMENT?=	XML parser library for GNOME
 .if !defined(REFERENCE_PORT)
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool pathfix pkgconfig
+USES=		gmake iconv libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-iconv=${ICONV_PREFIX} \
 		--with-html-dir=${PREFIX}/share/doc \

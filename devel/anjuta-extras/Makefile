@@ -4,7 +4,7 @@
 
 PORTNAME=	anjuta-extras
 PORTVERSION=	2.32.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -13,7 +13,7 @@ COMMENT=	Extra anjuta plugins
 
 LIB_DEPENDS=	libanjuta.so:${PORTSDIR}/devel/anjuta
 		
-USES=		gmake libtool tar:bzip2
+USES=		gmake libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

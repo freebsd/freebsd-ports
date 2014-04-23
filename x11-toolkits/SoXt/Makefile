@@ -3,7 +3,7 @@
 
 PORTNAME=	SoXt
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/
 
@@ -12,7 +12,7 @@ COMMENT=	GUI binding for using Open Inventor with Xt/Motif
 
 LIB_DEPENDS=	libCoin.so:${PORTSDIR}/graphics/Coin
 
-USES=		libtool motif pathfix perl5
+USES=		libtool:keepla motif pathfix perl5
 USE_GL=		yes
 USE_PERL5=	build
 USE_XORG=	xi

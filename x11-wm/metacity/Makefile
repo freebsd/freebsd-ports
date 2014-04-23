@@ -4,7 +4,7 @@
 
 PORTNAME=	metacity
 PORTVERSION=	2.30.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 
 USE_XORG=	x11 xcomposite xdamage
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix intlhack gconf2 gtk20

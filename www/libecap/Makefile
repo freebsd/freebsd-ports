@@ -3,7 +3,7 @@
 
 PORTNAME=	libecap
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www security
 MASTER_SITES=	http://www.measurement-factory.com/tmp/ecap/
 
@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		libtool
+USES=		libtool:keepla
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

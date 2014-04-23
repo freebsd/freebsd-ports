@@ -4,7 +4,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.10.2
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH?=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
 		--enable-tee
-USES=		libtool pathfix pkgconfig
+USES=		libtool:keepla pathfix pkgconfig
 USE_XORG=	pixman
 USE_GNOME=	referencehack
 USE_LDCONFIG=	yes

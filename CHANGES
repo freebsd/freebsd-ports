@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140423:
+AUTHOR: tijl@FreeBSD.org
+
+  The semantics of USES=libtool have changed.  It now deletes .la libraries
+  from the staging area to reduce overlinking.  USES=libtool:keepla can be
+  used in case they need to be kept.  This form still modifies .la libraries
+  to remove references to other libraries to reduce overlinking.
+
+  Note that .la libraries have to kept around as long as there are .la
+  libraries from other ports that refer to them.  Those ports need to use
+  some form of USES=libtool first such that those references are removed.
+
 20140419:
 AUTHOR: bdrewery@FreeBSD.org
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.5.907
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/xine/${PORTNAME}/${PORTVERSION}
 
@@ -19,10 +19,9 @@ LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr \
 OPTIONS_DEFINE=	MOZILLA_PLUGIN GNOME LIRC
 MOZILLA_PLUGIN_DESC=	Mozilla plugin
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-hal --with-libintl-prefix=${LOCALBASE}
 INSTALLS_ICONS=	yes
 

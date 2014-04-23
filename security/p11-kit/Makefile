@@ -3,6 +3,7 @@
 
 PORTNAME=	p11-kit
 PORTVERSION=	0.20.2
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
 
@@ -20,7 +21,7 @@ CONFIGURE_ARGS=	--disable-nls --enable-debug=no \
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 MAKE_ENV=	exampledir=${STAGEDIR}${EXAMPLESDIR}
 
-USES=		gmake pkgconfig pathfix libtool
+USES=		gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 pre-configure:

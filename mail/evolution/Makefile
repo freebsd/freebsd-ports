@@ -4,7 +4,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	2.32.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,8 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORT
 
 CONFLICTS=	evolution-3.[0-9]*
 
-USES=		bison desktop-file-utils gettext pathfix gmake libtool pkgconfig tar:bzip2 \
-		perl5
+USES=		bison desktop-file-utils gettext gmake libtool:keepla pathfix \
+		perl5 pkgconfig tar:bzip2
 USE_PERL5=	run
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver gtkhtml3 \
 		gnomedocutils gnomedesktop

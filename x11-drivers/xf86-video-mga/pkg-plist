@@ -1,4 +1,3 @@
-lib/xorg/modules/drivers/mga_drv.la
 lib/xorg/modules/drivers/mga_drv.so
 man/man4/mga.4x.gz
 @dirrmtry lib/xorg/modules/drivers

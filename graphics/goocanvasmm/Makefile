@@ -4,7 +4,7 @@
 
 PORTNAME=	goocanvasmm
 PORTVERSION=	0.15.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgoocanvas.so:${PORTSDIR}/graphics/goocanvas
 
 PORTSCOUT=	ignore:1
 
-USES=		libtool gmake pathfix pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtkmm24
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

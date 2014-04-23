@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-desktop
 PORTVERSION=	2.32.1
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,14 +12,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for GNOME 2
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 
+USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
 USE_XORG=	xpm
-USES+=		bison pathfix gettext libtool pkgconfig gmake
 USE_GNOME=	gnomeprefix intlhack gnomedocutils gconf2 pygtk2 \
 		referencehack
 USE_PYTHON=	2

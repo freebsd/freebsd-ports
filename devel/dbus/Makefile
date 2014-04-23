@@ -4,7 +4,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	1.6.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	libxml2
-USES=		gmake libtool pathfix
+USES=		gmake libtool:keepla pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--localstatedir=/var \

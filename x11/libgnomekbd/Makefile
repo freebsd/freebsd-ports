@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomekbd
 PORTVERSION=	2.32.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gconf2
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gettext libtool pathfix pkgconfig gmake tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -3,7 +3,7 @@
 
 PORTNAME=	libsamplerate
 PORTVERSION=	0.1.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/SRC/
 
@@ -12,7 +12,7 @@ COMMENT=	Secret Rabbit Code: a Sample Rate Converter for audio
 
 LICENSE=	GPLv2
 
-USES=	pathfix pkgconfig libtool:oldver
+USES=		libtool:oldver pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

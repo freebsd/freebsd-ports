@@ -3,7 +3,7 @@
 
 PORTNAME=	libpanelappletmm
 PORTVERSION=	2.26.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomepanel
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

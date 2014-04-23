@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomecanvasmm
 PORTVERSION=	2.26.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 LATEST_LINK=	libgnomecanvasmm26
 
-USES=		gmake pathfix libtool pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	libgnomecanvas
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

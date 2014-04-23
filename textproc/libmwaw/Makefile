@@ -2,7 +2,7 @@
 
 PORTNAME=	libmwaw
 PORTVERSION=	0.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,8 +20,8 @@ CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
+USES=		compiler:features libtool:keepla pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USES=		libtool pkgconfig pathfix tar:xz compiler:features
 
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen

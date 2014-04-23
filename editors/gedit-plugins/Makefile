@@ -4,7 +4,7 @@
 
 PORTNAME=	gedit-plugins
 PORTVERSION=	2.32.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +21,7 @@ CONFLICTS=	gedit-plugins-3.[0-9]*
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix gettext gmake pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gnomevfs2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
