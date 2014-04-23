@@ -62,7 +62,23 @@ Note:  Please add new entries to the beginning of this file.
 	<name>py33-django</name>
 	<name>py34-django</name>
 	<range><ge>1.6</ge><lt>1.6.3</lt></range>
+      </package>
+      <package>
+	<name>py26-django15</name>
+	<name>py27-django15</name>
+	<name>py31-django15</name>
+	<name>py32-django15</name>
+	<name>py33-django15</name>
+	<name>py34-django15</name>
 	<range><ge>1.5</ge><lt>1.5.6</lt></range>
+      </package>
+      <package>
+	<name>py26-django14</name>
+	<name>py27-django14</name>
+	<name>py31-django14</name>
+	<name>py32-django14</name>
+	<name>py33-django14</name>
+	<name>py34-django14</name>
 	<range><ge>1.4</ge><lt>1.4.11</lt></range>
       </package>
       <package>
