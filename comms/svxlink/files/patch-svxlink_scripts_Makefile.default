@@ -1,0 +1,17 @@
+--- svxlink/scripts/Makefile.default.orig	2010-12-04 06:27:53.000000000 -0800
++++ svxlink/scripts/Makefile.default	2014-04-10 01:39:24.000000000 -0700
+@@ -217,14 +217,6 @@
+ # Additional files to install
+ install-extras uninstall-extras rpm-extras:
+ 	$(DIRSPEC) /var/spool/svxlink[755,svxlink,daemon]
+-	$(FILESPEC) etc/logrotate.d/svxlink[644,root,root,config] /etc/logrotate.d
+-	$(FILESPEC) etc/logrotate.d/remotetrx[644,root,root,config] /etc/logrotate.d
+-	$(FILESPEC) etc/init.d/svxlink[755,root,root] /etc/init.d
+-	$(FILESPEC) etc/sysconfig/svxlink[755,root,root,config] /etc/sysconfig
+-	$(FILESPEC) etc/10-svxlink.rules[644,root,root,config] /etc/udev/rules.d
+-	$(FILESPEC) etc/90-svxlink.perms[644,root,root,config] /etc/security/console.perms.d
+-	$(FILESPEC) etc/init.d/remotetrx[755,root,root] /etc/init.d
+-	$(FILESPEC) etc/sysconfig/remotetrx[755,root,root,config] /etc/sysconfig
+ 
+ 
+ #

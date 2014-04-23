@@ -1,0 +1,11 @@
+--- svxlink/svxlink/Makefile.default.orig	2014-04-09 23:54:07.000000000 -0700
++++ svxlink/svxlink/Makefile.default	2014-04-09 23:54:12.000000000 -0700
+@@ -34,7 +34,7 @@
+ PROJLIBS	= -ltrx -llocationinfo -lasynccpp -lasyncaudio -lasynccore
+ 
+ # Libraries external to the project
+-LIBS		= -ldl -lpopt -lgsm $(TCL_LIBS) $(GCRYPT_LIBS) $(SIGC_LIBS)
++LIBS		= -lpopt -lgsm $(TCL_LIBS) $(GCRYPT_LIBS) $(SIGC_LIBS)
+ 
+ # Specify Qt header files here that you want to run the
+ # Qt Meta Object Compiler on (for programs).
