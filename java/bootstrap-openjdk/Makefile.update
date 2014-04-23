@@ -78,6 +78,8 @@ all:
 	@${SETENV} -i ${BUILD_ENV} \
 	    ${MAKE} -C "${JDK_PORTDIR}" ${JDK_BUILD_ARGS} stage
 	@${CP} -p /usr/lib/libstdc++.so.6 "${JDK_IMAGEDIR}/jre/lib/${ARCH}"
+	@${CP} -p "${FT2_IMAGEDIR}/lib/libfreetype.so.6" \
+	    "${JDK_IMAGEDIR}/jre/lib/${ARCH}"
 	@${FIND} "${JDK_IMAGEDIR}" -type f \
 	    -exec ${STRIP_CMD} -s {} \; 2> /dev/null
 .endif
