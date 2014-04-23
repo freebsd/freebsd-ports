@@ -37,6 +37,9 @@ X11_CONFIGURE_OFF=--with-x=no
 
 .if ! ${PORT_OPTIONS:MX11}
 PKGNAMESUFFIX=	-nox11
+CONFLICTS+=	libwmf-[0-9]*
+.else
+CONFLICTS+=	libwmf-nox11-[0-9]*
 .endif
 
 post-patch:
