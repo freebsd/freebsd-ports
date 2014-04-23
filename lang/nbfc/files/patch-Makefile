@@ -14,7 +14,7 @@
  y.tab.o: bf.y
 -	bison -yd bf.y
 -	gcc -c y.tab.c
-+	${YACC} -yd bf.y
++	${YACC} -d bf.y
 +	${CC} ${CFLAGS} -c y.tab.c
  
  compiler.o: compiler.c
