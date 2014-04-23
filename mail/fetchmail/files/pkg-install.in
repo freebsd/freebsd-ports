@@ -7,7 +7,7 @@ fi
 /bin/mkdir -m 0755 -p /var/run/%%PORTNAME%%
 /usr/sbin/chown "%%USERS%%:%%GROUPS%%" /var/run/%%PORTNAME%%
 /usr/sbin/chown "%%USERS%%:%%GROUPS%%" %%PREFIX%%/etc/fetchmailrc*
-/bin/chmod 0600 %%PREFXI%%/etc/fetchmailrc
-/bin/chmod 0644 %%PREFXI%%/etc/fetchmailrc.sample
+/bin/chmod 0600 %%PREFIX%%/etc/fetchmailrc
+/bin/chmod 0644 %%PREFIX%%/etc/fetchmailrc.sample
 
 exit
