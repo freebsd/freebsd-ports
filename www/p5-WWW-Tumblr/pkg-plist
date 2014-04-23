@@ -1,7 +1,22 @@
 %%SITE_PERL%%/WWW/Tumblr.pm
+%%SITE_PERL%%/WWW/Tumblr/API.pm
+%%SITE_PERL%%/WWW/Tumblr/Authentication.pm
+%%SITE_PERL%%/WWW/Tumblr/Authentication/APIKey.pm
+%%SITE_PERL%%/WWW/Tumblr/Authentication/None.pm
+%%SITE_PERL%%/WWW/Tumblr/Authentication/OAuth.pm
+%%SITE_PERL%%/WWW/Tumblr/Blog.pm
+%%SITE_PERL%%/WWW/Tumblr/ResponseError.pm
+%%SITE_PERL%%/WWW/Tumblr/Tagged.pm
+%%SITE_PERL%%/WWW/Tumblr/Test.pm
+%%SITE_PERL%%/WWW/Tumblr/User.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Tumblr/.packlist
 %%PERL5_MAN3%%/WWW::Tumblr.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Tumblr
+%%PERL5_MAN3%%/WWW::Tumblr::Blog.3.gz
+%%PERL5_MAN3%%/WWW::Tumblr::ResponseError.3.gz
+%%PERL5_MAN3%%/WWW::Tumblr::Tagged.3.gz
+%%PERL5_MAN3%%/WWW::Tumblr::User.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Tumblr
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrm %%SITE_PERL%%/WWW/Tumblr/Authentication
+@dirrm %%SITE_PERL%%/WWW/Tumblr
 @dirrmtry %%SITE_PERL%%/WWW
