@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2014-01-31 15:10:13.000000000 +0100
++++ CMakeLists.txt	2014-01-31 15:10:39.000000000 +0100
+@@ -535,7 +535,7 @@
+ #
+ # RPM installs documentation directly from the source tree
+ #
+-IF(NOT INSTALL_LAYOUT MATCHES "RPM")
++IF(NOT INSTALL_LAYOUT MATCHES "RPM" AND 0)
+   INSTALL(FILES COPYING LICENSE.mysql 
+     DESTINATION ${INSTALL_DOCREADMEDIR} 
+     COMPONENT Readme
