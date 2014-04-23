@@ -2,6 +2,7 @@ bin/dbus-cleanup-sockets
 bin/dbus-daemon
 bin/dbus-launch
 bin/dbus-monitor
+bin/dbus-run-session
 bin/dbus-send
 bin/dbus-uuidgen
 etc/dbus-1/session.conf
@@ -28,15 +29,20 @@ lib/libdbus-1.a
 lib/libdbus-1.la
 lib/libdbus-1.so
 lib/libdbus-1.so.3
-lib/libdbus-1.so.3.7.6
+lib/libdbus-1.so.3.8.3
 libdata/pkgconfig/dbus-1.pc
+@group %%GROUPS%%
+@mode 4750
 libexec/dbus-daemon-launch-helper
-man/man1/dbus-cleanup-sockets.1.gz
-man/man1/dbus-daemon.1.gz
-man/man1/dbus-launch.1.gz
-man/man1/dbus-monitor.1.gz
-man/man1/dbus-send.1.gz
-man/man1/dbus-uuidgen.1.gz
+@group
+@mode
+%%MANPAGES%%man/man1/dbus-cleanup-sockets.1.gz
+%%MANPAGES%%man/man1/dbus-daemon.1.gz
+%%MANPAGES%%man/man1/dbus-launch.1.gz
+%%MANPAGES%%man/man1/dbus-monitor.1.gz
+%%MANPAGES%%man/man1/dbus-run-session.1.gz
+%%MANPAGES%%man/man1/dbus-send.1.gz
+%%MANPAGES%%man/man1/dbus-uuidgen.1.gz
 @exec mkdir -p %D/etc/dbus-1/system.d
 @exec mkdir -p %D/share/dbus-1/interfaces
 @exec mkdir -p %D/share/dbus-1/services
@@ -53,3 +59,7 @@ man/man1/dbus-uuidgen.1.gz
 @dirrm etc/dbus-1/system.d
 @dirrm etc/dbus-1/session.d
 @dirrm etc/dbus-1
+@cwd /
+@dirrmtry /var/db/dbus
+@dirrmtry /var/run/dbus
+@cwd
