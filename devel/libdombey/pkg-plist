@@ -1,3 +1,4 @@
+bin/dombeykey
 include/dombey.h
 lib/libdombey.so
 lib/libdombey.so.%%PORTVERSION%%
