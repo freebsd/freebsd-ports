@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkjournal
 PORTVERSION=	0.3.5.b
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://sourcefiles.org/Productivity_Tools/Diary/ \
 		LOCAL/beech
@@ -21,9 +21,9 @@ PLIST_FILES=	bin/gtkjournal man/man1/gtkjournal.1.gz \
 		lib/libsqlitemm.so lib/libsqlitemm.so.0 \
 		lib/libsqlitemm.so.0.0.1
 
+USES=		gmake libtool:keepla pathfix pkgconfig
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig
 CONFIGURE_ARGS=	--enable-gtkspell
 USE_LDCONFIG=	yes
 

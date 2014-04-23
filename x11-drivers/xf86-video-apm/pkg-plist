@@ -1,4 +1,3 @@
-lib/xorg/modules/drivers/apm_drv.la
 lib/xorg/modules/drivers/apm_drv.so
 man/man4/apm.4x.gz
 @dirrmtry lib/xorg/modules/drivers

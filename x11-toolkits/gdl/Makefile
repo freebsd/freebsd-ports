@@ -4,15 +4,15 @@
 
 PORTNAME=	gdl
 PORTVERSION=	2.30.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Components intended to be shared between GNOME development tools
 
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix gtk20
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

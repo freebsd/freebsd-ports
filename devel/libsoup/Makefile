@@ -4,7 +4,7 @@
 
 PORTNAME=	libsoup
 PORTVERSION=	2.40.3
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +20,7 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gnomehier glib20 libxml2 referencehack intltool
 USE_SQLITE=	3
 USE_LDCONFIG=	yes

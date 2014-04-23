@@ -3,7 +3,7 @@
 
 PORTNAME=	gmp
 PORTVERSION=	5.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
@@ -16,8 +16,8 @@ LICENSE=	LGPL3
 OPTIONS_DEFINE=	CPU_OPTS
 CPU_OPTS_DESC=	Enable assembly optimizations for your CPU
 
+USES=		libtool:keepla
 USE_XZ=		yes
-USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_console
 PORTVERSION=	2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/sdlconsole/sdlconsole-source/sdlconsole-${PORTVERSION}
 DISTNAME=	sdlconsole-${PORTVERSION}
@@ -11,7 +11,7 @@ DISTNAME=	sdlconsole-${PORTVERSION}
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Drop down console that can be easily added to any SDL application
 
-USES=		libtool
+USES=		libtool:keepla
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

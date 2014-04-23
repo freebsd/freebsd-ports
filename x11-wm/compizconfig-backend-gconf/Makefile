@@ -3,7 +3,7 @@
 
 PORTNAME=	compizconfig-backend-gconf
 PORTVERSION=	0.8.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-USES=		libtool pathfix pkgconfig gmake tar:bzip2
+USES=		libtool:keepla pathfix pkgconfig gmake tar:bzip2
 USE_GNOME=	glib20 gconf2
 
 post-patch:

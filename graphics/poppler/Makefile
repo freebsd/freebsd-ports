@@ -4,7 +4,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.24.5
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
 USE_XZ=		yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

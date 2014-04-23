@@ -3,7 +3,7 @@
 
 PORTNAME=	xcb-util
 PORTVERSION=	0.3.9
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/

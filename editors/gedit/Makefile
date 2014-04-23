@@ -4,7 +4,7 @@
 
 PORTNAME=	gedit
 PORTVERSION=	2.30.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,8 +17,9 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
+USES=		desktop-file-utils gettext gmake libtool:keepla  pathfix \
+		pkgconfig tar:bzip2
 USE_XORG=	sm
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

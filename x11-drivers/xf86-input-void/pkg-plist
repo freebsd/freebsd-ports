@@ -1,4 +1,3 @@
-lib/xorg/modules/input/void_drv.la
 lib/xorg/modules/input/void_drv.so
 man/man4/void.4x.gz
 @dirrmtry lib/xorg/modules/input

@@ -4,7 +4,7 @@
 
 PORTNAME=	gal2
 PORTVERSION=	2.5.3
-PORTREVISION?=	11
+PORTREVISION?=	12
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.5
@@ -12,13 +12,13 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A collection of widgets taken from GNOME 2 gnumeric
+COMMENT=	Collection of widgets taken from GNOME 2 gnumeric
 
 USES+=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-USES+=		pathfix gettext perl5 gmake pkgconfig libtool
+USES+=		gettext gmake libtool:keepla pathfix perl5 pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui
 USE_XORG=	x11
 USE_LDCONFIG=	yes

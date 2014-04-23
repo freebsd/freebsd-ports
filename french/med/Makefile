@@ -3,6 +3,7 @@
 
 PORTNAME=	med
 DISTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	french science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -16,7 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		fortran gmake libtool tk
+USES=		fortran gmake libtool:keepla tk
 CONFIGURE_ARGS=	--disable-python --with-hdf5=${LOCALBASE}
 CONFIGURE_ENV=	WISH=${WISH}
 GNU_CONFIGURE=	yes

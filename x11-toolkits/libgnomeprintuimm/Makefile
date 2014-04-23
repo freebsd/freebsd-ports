@@ -3,7 +3,7 @@
 
 PORTNAME=	libgnomeprintuimm
 PORTVERSION=	2.5.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libgnomeprintmm-2.5.so:${PORTSDIR}/print/libgnomeprintmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix libgnomeprintui
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

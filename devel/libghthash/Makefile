@@ -3,7 +3,7 @@
 
 PORTNAME=	libghthash
 PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 
@@ -12,7 +12,7 @@ COMMENT=	Generic Hash Table
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		libtool
+USES=		libtool:keepla
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 AUTOMAKE_ARGS=	-a -c -f

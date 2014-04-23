@@ -4,7 +4,7 @@
 
 PORTNAME=	devhelp
 PORTVERSION=	2.32.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
 CONFLICTS=	devhelp-3.[0-9]*
 
 USE_XORG=	x11
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	intlhack gnomeprefix libgnomeui libwnck
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

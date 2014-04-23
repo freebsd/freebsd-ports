@@ -3,7 +3,7 @@
 
 PORTNAME=	clutter-box2d
 PORTVERSION=	0.10.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://source.clutter-project.org/sources/${PORTNAME}/0.10/
 
@@ -12,7 +12,7 @@ COMMENT=	Clutter Box2D integration library
 
 LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gnomeprefix
 USE_GL=		gl
 USE_XORG=	xp x11

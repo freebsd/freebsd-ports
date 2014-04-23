@@ -3,7 +3,7 @@
 
 PORTNAME=	rodent
 PORTVERSION=	4.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/${PORTVERSION}/
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/japanese/gawk \
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libmagic.so:${PORTSDIR}/sysutils/file
 
-USES=		gmake libtool pkgconfig desktop-file-utils
+USES=		desktop-file-utils gmake libtool:keepla pkgconfig
 USE_GNOME=	glib20 gtk20 librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--docdir=${DOCSDIR}

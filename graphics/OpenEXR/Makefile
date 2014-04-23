@@ -3,7 +3,7 @@
 
 PORTNAME=	OpenEXR
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SAVANNAH/openexr/
 DISTNAME=	openexr-${DISTVERSION}
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libImath.so:${PORTSDIR}/graphics/ilmbase
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-ilmbasetest --enable-imfexamples
 USE_LDCONFIG=	yes

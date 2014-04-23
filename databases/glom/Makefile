@@ -4,7 +4,7 @@
 
 PORTNAME=	glom
 PORTVERSION=	1.12.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -29,8 +29,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
-		shared-mime-info
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+		pkgconfig shared-mime-info
 USE_GNOME=	gnomedocutils gnomeprefix pygnomeextras
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes

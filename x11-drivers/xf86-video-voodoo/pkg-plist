@@ -1,4 +1,3 @@
-lib/xorg/modules/drivers/voodoo_drv.la
 lib/xorg/modules/drivers/voodoo_drv.so
 man/man4/voodoo.4x.gz
 @dirrmtry lib/xorg/modules/drivers

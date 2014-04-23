@@ -4,7 +4,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	2.32.0
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,11 +24,10 @@ CONFLICTS=	totem-3.[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USES=		pathfix gettext gmake desktop-file-utils libtool pkgconfig tar:bzip2 \
-		shebangfix
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+		pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	data/totem-bugreport.py
-USE_GNOME=	gnomeprefix intlhack nautilus2 \
-		pygtk2 gnomehier
+USE_GNOME=	gnomehier gnomeprefix intlhack nautilus2 pygtk2
 USE_GSTREAMER=	core gconf hal good mpeg2dec soup ugly python gio
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip

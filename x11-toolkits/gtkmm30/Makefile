@@ -4,7 +4,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	3.8.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	30
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES+=		gettext gmake libtool pathfix pkgconfig
+USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gtk30 glibmm cairomm atkmm pangomm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

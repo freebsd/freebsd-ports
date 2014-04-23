@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-sharp
 PORTVERSION=	2.24.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 
@@ -12,7 +12,7 @@ COMMENT=	GNOME interfaces for the .NET runtime
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix perl5 pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix perl5 pkgconfig tar:bzip2
 USE_PERL5=	run
 USE_GNOME=	gnomepanel gtksharp20 librsvg2 vte libgnomeprintui libgnomeui
 MAKE_JOBS_UNSAFE=	yes

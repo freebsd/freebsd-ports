@@ -3,7 +3,7 @@
 
 PORTNAME=	pam_mysql
 PORTVERSION=	0.7.r1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security databases
 MASTER_SITES=	SF/pam-mysql/pam-mysql/0.7RC1
 DISTNAME=	${PORTNAME}-0.7RC1${DISTVERSIONSUFFIX}
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-0.7RC1${DISTVERSIONSUFFIX}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Pam module for authenticating with MySQL
 
-USES=		libtool
+USES=		libtool:keepla
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --with-pam-mods-dir=${PREFIX}/lib --with-pam=/usr

@@ -4,7 +4,7 @@
 
 PORTNAME=	policykit
 PORTVERSION=	0.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 DISTNAME=	PolicyKit-${PORTVERSION}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 USERS=		polkit
 GROUPS=		polkit
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	glib20 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -4,7 +4,7 @@
 
 PORTNAME=	libIDL
 PORTVERSION=	0.8.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for creating trees of CORBA IDL files
 
-USES=		gmake bison libtool pathfix pkgconfig gettext tar:bzip2
+USES=		bison gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

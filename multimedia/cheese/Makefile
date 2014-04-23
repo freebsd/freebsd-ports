@@ -4,22 +4,22 @@
 
 PORTNAME=	cheese
 PORTVERSION=	2.32.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A Photobooth-inspired app for taking pictures and videos from webcam
+COMMENT=	Photobooth-inspired app for taking pictures and videos from webcam
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
 		libhal.so:${PORTSDIR}/sysutils/hal
 
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_XORG=	xxf86vm
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver librsvg2 \
 		gnomedocutils gnomedesktop
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GSTREAMER=	gconf good ogg theora v4l2 vorbis
 INSTALLS_OMF=	yes
 INSTALL_TARGET=	install-strip

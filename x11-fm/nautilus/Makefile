@@ -4,7 +4,7 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	2.32.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,8 +20,8 @@ LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 CONFLICTS=	nautilus-3.[0-9]*
 
 INSTALLS_ICONS=	yes
-USES=		gettext desktop-file-utils shared-mime-info gmake pkgconfig \
-		tar:bzip2 libtool pathfix
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+		pkgconfig shared-mime-info tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gnomedesktop \
 		librsvg2 gvfs
 INSTALL_TARGET=	install-strip

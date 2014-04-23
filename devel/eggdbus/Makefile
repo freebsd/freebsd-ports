@@ -4,7 +4,7 @@
 
 PORTNAME=	eggdbus
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -14,7 +14,7 @@ COMMENT=	D-Bus bindings for GObject
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USE_GNOME=	glib20
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

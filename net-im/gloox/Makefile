@@ -3,6 +3,7 @@
 
 PORTNAME=	gloox
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
@@ -14,8 +15,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libgnutls.so:${PORTSDIR}/security/gnutls
 
+USES=		compiler:c++11-lang libtool:keepla pathfix pkgconfig
 USE_BZIP2=	yes
-USES=		compiler:c++11-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

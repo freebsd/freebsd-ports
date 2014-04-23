@@ -4,6 +4,7 @@
 
 PORTNAME=	libpeas
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 USE_XZ=		yes
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gtk30 introspection:build
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

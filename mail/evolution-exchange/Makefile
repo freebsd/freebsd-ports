@@ -4,7 +4,7 @@
 
 PORTNAME=	evolution-exchange
 PORTVERSION=	2.32.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
 
 CONFLICTS=	evolution-exchange-3.[0-9]*
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_BDB=	41+
 USE_OPENLDAP=	yes
 USE_GNOME=	gnomeprefix intlhack

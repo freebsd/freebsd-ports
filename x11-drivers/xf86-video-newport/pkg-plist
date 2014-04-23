@@ -1,4 +1,3 @@
-lib/xorg/modules/drivers/newport_drv.la
 lib/xorg/modules/drivers/newport_drv.so
 man/man4/newport.4x.gz
 @dirrmtry lib/xorg/modules/drivers

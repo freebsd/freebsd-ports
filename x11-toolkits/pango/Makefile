@@ -4,7 +4,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.34.1
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
 
-USES+=		gettext gmake libtool pathfix pkgconfig
+USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo glib20 introspection:build referencehack

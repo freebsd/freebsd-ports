@@ -3,6 +3,7 @@
 
 PORTNAME=	iperf
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	http://stats.es.net/software/
 PKGNAMESUFFIX=	3
@@ -13,8 +14,8 @@ COMMENT=	Improved tool to measure TCP and UDP bandwidth
 LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
+USES=		libtool:keepla
 USE_LDCONFIG=	yes
-USES=		libtool
 
 # Set ${DOCSDIR} to avoid conflict with benchmarks/iperf ${DOCSDIR}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}

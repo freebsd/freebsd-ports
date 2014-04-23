@@ -4,6 +4,7 @@
 
 PORTNAME=	glib-networking
 PORTVERSION=	2.36.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,8 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 GNU_CONFIGURE=	yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 intltool
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

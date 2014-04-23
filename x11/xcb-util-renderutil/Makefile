@@ -2,7 +2,7 @@
 
 PORTNAME=	xcb-util-renderutil
 PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 

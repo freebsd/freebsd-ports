@@ -3,7 +3,7 @@
 
 PORTNAME=	libsigcx
 PORTVERSION=	0.6.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12
 
 OPTIONS_DEFINE=	STATIC
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=""

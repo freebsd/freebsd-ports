@@ -4,7 +4,7 @@
 
 PORTNAME=	goocanvas
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -13,7 +13,7 @@ COMMENT=	Canvas widget for GTK+
 
 PORTSCOUT=	ignore:1
 
-USES=		libtool pathfix pkgconfig tar:bzip2
+USES=		libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

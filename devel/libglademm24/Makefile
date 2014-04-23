@@ -4,7 +4,7 @@
 
 PORTNAME=	libglademm
 PORTVERSION=	2.6.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_XORG=	x11 ice
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

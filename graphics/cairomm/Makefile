@@ -4,7 +4,7 @@
 
 PORTNAME=	cairomm
 PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	cairo libxml++26
 CONFIGURE_ENV=	AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"
 CPPFLAGS+=	-I${LOCALBASE}/include

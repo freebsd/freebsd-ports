@@ -4,7 +4,7 @@
 
 PORTNAME=	liboobs
 PORTVERSION=	2.32.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
     		libhal.so:${PORTSDIR}/sysutils/hal
 RUN_DEPENDS=	${LOCALBASE}/etc/dbus-1/system.d/org.freedesktop.SystemToolsBackends.conf:${PORTSDIR}/sysutils/system-tools-backends
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 INSTALL_TARGET=	install-strip

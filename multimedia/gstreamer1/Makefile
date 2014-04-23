@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer1
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 DISTNAME=	${PORTNAME:S/1//}-${PORTVERSION}
@@ -17,7 +17,7 @@ LICENSE=	LGPL20
 PORTSCOUT=	limitw:1,even
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
-USES=		bison gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		bison gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomehier introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \

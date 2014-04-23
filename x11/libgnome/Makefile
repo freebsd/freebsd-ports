@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnome
 PORTVERSION=	2.32.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -23,7 +23,7 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 INSTALL_TARGET=	install-strip
 USE_GNOME=	gnomeprefix intlhack esound libbonobo \
 		gnomevfs2 referencehack
-USES+=		bison libtool pathfix gettext gmake pkgconfig
+USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
 USE_XORG=	xpm
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

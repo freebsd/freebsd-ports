@@ -2,7 +2,7 @@
 
 PORTNAME=	libodfgen
 PORTVERSION=	0.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/libwpd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -23,9 +23,9 @@ CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
+USES=		libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_XZ=		yes
-USES=		libtool pkgconfig pathfix
 
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen

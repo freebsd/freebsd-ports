@@ -14,10 +14,10 @@ XORG_CAT=	driver
 
 .if defined(WITH_NEW_XORG)
 VOID_VERSION=	1.4.0
-VOID_REVISION=	0
+VOID_REVISION=	1
 .else
 VOID_VERSION=	1.3.1
-VOID_REVISION=	0
+VOID_REVISION=	1
 .endif
 
 .include <bsd.port.mk>

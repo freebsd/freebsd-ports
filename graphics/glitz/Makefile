@@ -4,16 +4,16 @@
 
 PORTNAME=	glitz
 PORTVERSION=	0.5.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL image compositing library
 
+USES=		libtool:keepla pathfix
 USE_GL=		yes
 USE_XORG=	xt
-USES=	pathfix libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	2.28.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -13,7 +13,7 @@ DISTNAME=	gnome-python-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A set of Python bindings for GNOME 2
+COMMENT=	Python bindings for GNOME 2
 
 OPTIONS_DEFINE=	EXAMPLES
 
@@ -22,9 +22,9 @@ OPTIONS_SUB=	yes
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit
 
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	libgnomeui pygtk2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \

@@ -4,7 +4,7 @@
 
 PORTNAME=	mutter
 PORTVERSION=	2.31.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	gnomeprefix intlhack gtk20 gconf2

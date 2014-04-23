@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	2.24.4
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +18,7 @@ USES=		tar:bzip2
 
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
-USES+=		libtool pathfix gettext gmake pkgconfig
+USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomemimedata gconf2 \
 		referencehack
 INSTALL_TARGET=	install-strip

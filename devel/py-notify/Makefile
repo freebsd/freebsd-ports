@@ -3,7 +3,7 @@
 PORTNAME=	notify
 PORTVERSION=	0.1.1
 DISTVERSIONPREFIX=python-
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notify-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	pygtk2
 INSTALL_TARGET=	install-strip
 USE_PYTHON=	2

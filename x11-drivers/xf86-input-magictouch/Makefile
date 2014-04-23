@@ -2,7 +2,7 @@
 
 PORTNAME=	xf86-input-magictouch
 PORTVERSION=	1.0.0.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -19,6 +19,5 @@ IGNORE=		needs xf86_ansic.h which doesn't exist with recent xserver
 .endif
 
 XORG_CAT=	driver
-USES=		libtool
 
 .include <bsd.port.mk>

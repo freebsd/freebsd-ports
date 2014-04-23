@@ -3,18 +3,19 @@
 
 PORTNAME=	libvshadow
 PORTVERSION=	20140323
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSZDZXRFVMdnZCeHc/ \
 		LOCAL/antoine
 DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A library to support the Volume Service Snapshot (VSS) format
+COMMENT=	Library to support the Volume Service Snapshot (VSS) format
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		fuse gettext iconv libtool pathfix pkgconfig
+USES=		fuse gettext iconv libtool:keepla pathfix pkgconfig
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 

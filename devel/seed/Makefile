@@ -4,7 +4,7 @@
 
 PORTNAME=	seed
 PORTVERSION=	2.31.91
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi \
 CONFLICTS=	seed-3.[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20 intltool libxml2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

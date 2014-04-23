@@ -3,7 +3,7 @@
 
 PORTNAME=	libdnsres
 PORTVERSION=	0.1a
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 
@@ -12,7 +12,7 @@ COMMENT=	Provides a non-blocking thread-safe API for resolving DNS names
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
-USES=		libtool
+USES=		libtool:keepla
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--with-libevent=${LOCALBASE}

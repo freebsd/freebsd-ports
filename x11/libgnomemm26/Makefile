@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomemm
 PORTVERSION=	2.30.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,7 +15,7 @@ COMMENT=	C++ wrapper for libgnome library
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_XORG=	xext
 USE_GNOME=	libgnome
 GNU_CONFIGURE=	yes

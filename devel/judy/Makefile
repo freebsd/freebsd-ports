@@ -3,6 +3,7 @@
 
 PORTNAME=	Judy
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION}
 
@@ -11,7 +12,7 @@ COMMENT=	General purpose dynamic array
 
 LICENSE=	LGPL21
 
-USES=	gmake libtool
+USES=		gmake libtool:keepla
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	YES
 MAKE_JOBS_UNSAFE=	yes

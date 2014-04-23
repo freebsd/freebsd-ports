@@ -3,7 +3,7 @@
 
 PORTNAME=	gchemutils
 PORTVERSION=	0.14.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION:R}
@@ -24,8 +24,8 @@ PORTSCOUT=	limitw:1,even
 
 USE_XORG=	x11
 USE_GNOME=	gnomedocutils gtk30 intlhack libgsf libxml2
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
-		shared-mime-info tar:xz
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+		pkgconfig shared-mime-info tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

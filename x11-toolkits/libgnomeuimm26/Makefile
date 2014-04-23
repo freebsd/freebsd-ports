@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomeuimm
 PORTVERSION=	2.28.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,8 +19,8 @@ LIB_DEPENDS=	libgnomemm-2.6.so:${PORTSDIR}/x11/libgnomemm26 \
 		libgnomevfsmm-2.6.so:${PORTSDIR}/devel/gnome-vfsmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_XORG=	x11
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

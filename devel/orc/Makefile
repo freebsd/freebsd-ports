@@ -3,7 +3,7 @@
 
 PORTNAME=	orc
 PORTVERSION=	0.4.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES= 	http://gstreamer.freedesktop.org/data/src/orc/
 
@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pkgconfig
+USES=		gmake libtool:keepla pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--disable-gtk-doc

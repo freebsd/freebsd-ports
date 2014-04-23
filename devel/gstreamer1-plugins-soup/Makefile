@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 COMMENT=	Gstreamer soup http src plugin

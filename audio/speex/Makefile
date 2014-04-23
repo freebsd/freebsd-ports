@@ -3,7 +3,7 @@
 
 PORTNAME=	speex
 DISTVERSION=	1.2rc1
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
@@ -13,7 +13,7 @@ COMMENT=	Open-source patent-free voice codec
 
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
-USES=		libtool pathfix
+USES=		libtool:keepla pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE}

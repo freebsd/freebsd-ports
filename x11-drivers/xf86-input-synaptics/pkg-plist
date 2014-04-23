@@ -2,7 +2,6 @@ bin/synclient
 bin/syndaemon
 include/xorg/synaptics-properties.h
 %%OLD%%include/xorg/synaptics.h
-lib/xorg/modules/input/synaptics_drv.la
 lib/xorg/modules/input/synaptics_drv.so
 libdata/pkgconfig/xorg-synaptics.pc
 man/man1/synclient.1.gz

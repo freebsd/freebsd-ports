@@ -3,7 +3,7 @@
 
 PORTNAME=	protobuf-c
 PORTVERSION=	0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -12,7 +12,7 @@ COMMENT=	This package provides a code generator and runtime libraries to use Pro
 
 LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
-USES=		gmake pathfix pkgconfig libtool
+USES=		gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	gtkspell3
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	SF/gtkspell/${PORTVERSION}
 
@@ -13,7 +14,7 @@ BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 
 USE_GNOME=	gnomehier gnomeprefix gtk30 intlhack introspection:build
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

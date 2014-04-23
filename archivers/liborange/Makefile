@@ -3,6 +3,7 @@
 
 PORTNAME=	liborange
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Orange/${PORTVERSION}
 
@@ -22,7 +23,7 @@ VISE_DESC=		Build with expermential VISE support
 MSI_DESC=		Build with expermential MSI support
 
 GNU_CONFIGURE=	yes
-USES=	iconv libtool pathfix pkgconfig
+USES=		iconv libtool:keepla pathfix pkgconfig
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes

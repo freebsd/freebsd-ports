@@ -4,20 +4,20 @@
 
 PORTNAME=	bakery
 PORTVERSION=	2.6.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A C++ Application Framework for use with Gtkmm
+COMMENT=	C++ Application Framework for use with Gtkmm
 
 LIB_DEPENDS=	libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
 		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 		libgnomevfsmm-2.6.so:${PORTSDIR}/devel/gnome-vfsmm \
 		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26
 
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

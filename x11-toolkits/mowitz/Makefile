@@ -19,8 +19,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xawm=Xaw3d
 INSTALL_TARGET=	install-strip
 
-post-install:
-	${RM} ${STAGEDIR}${PREFIX}/lib/libMowitz.la
-# Anyone knows a better way?
-
 .include <bsd.port.mk>

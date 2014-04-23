@@ -3,12 +3,12 @@
 
 PORTNAME=	pkcs11-helper
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	SF/opensc/pkcs11-helper/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A helper library for multiple PKCS\#11 providers
+COMMENT=	Helper library for multiple PKCS\#11 providers
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
@@ -18,7 +18,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPL
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig tar:bzip2
+USES=		libtool:keepla pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \

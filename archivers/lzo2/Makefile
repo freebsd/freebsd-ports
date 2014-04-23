@@ -3,7 +3,7 @@
 
 PORTNAME=	lzo2
 PORTVERSION=	2.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		LOCAL/mandree
@@ -14,7 +14,7 @@ COMMENT=	Portable speedy, lossless data compression library
 
 LICENSE=	GPLv2
 
-USES=		libtool
+USES=		libtool:keepla
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --docdir=${DOCSDIR}
 USE_LDCONFIG=	yes

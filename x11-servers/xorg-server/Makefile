@@ -35,14 +35,14 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 
 .if defined(WITH_NEW_XORG)
 XORG_VERSION=	1.12.4
-XORG_REVISION=	5
+XORG_REVISION=	6
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang \
 		${FILESDIR}/extra-configure \
 		${FILESDIR}/extra-new-dix_dixfonts.c
 .else
 XORG_VERSION=	1.7.7
-XORG_REVISION=	12
+XORG_REVISION=	13
 PLIST_SUB+=	OLD="" NEW="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-Xserver-os-xprintf.c \
@@ -53,8 +53,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-old-dix_dixfonts.c
 .endif
 
-USE_BZIP2=	yes
-USES=		gmake perl5 libtool
+USES=		gmake libtool:keepla perl5 tar:bzip2
 USE_PERL5=	build
 USE_GL=		gl
 USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \

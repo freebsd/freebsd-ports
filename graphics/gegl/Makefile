@@ -3,7 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.2/
 
@@ -21,7 +21,7 @@ ENSCRIPT_DESC=	Enscript support
 SPIRO_DESC=	Spiro support
 #UMFPACK_DESC=	UMFpack support
 
-USES=		gettext gmake libtool pathfix pkgconfig shebangfix tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig shebangfix tar:bzip2
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.2
 GNU_CONFIGURE=	yes

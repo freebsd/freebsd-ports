@@ -4,6 +4,7 @@
 PORTNAME=	pd
 DISTVERSION=	0.45-4
 DISTVERSIONSUFFIX=	.src
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://msp.ucsd.edu/Software/
 
@@ -20,7 +21,7 @@ OPTIONS_DEFAULT=FFTW
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
-USES=		gettext gmake libtool pkgconfig shebangfix tk:wrapper
+USES=		gettext gmake libtool:keepla pkgconfig shebangfix tk:wrapper
 SHEBANG_FILES=	tcl/pkg_mkIndex.tcl
 SHEBANG_LANG=	tclsh
 tclsh_OLD_CMD=	/usr/bin/tclsh

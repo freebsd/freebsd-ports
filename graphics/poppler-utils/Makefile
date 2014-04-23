@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/graphics/poppler-utils/Makefile,v 1.8 2012/10/14 23:04:21 kwm Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-utils
 
 MAINTAINER=	gnome@FreeBSD.org

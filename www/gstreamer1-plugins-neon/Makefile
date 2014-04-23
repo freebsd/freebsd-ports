@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 
 COMMENT=	Gstreamer neon http source plugin

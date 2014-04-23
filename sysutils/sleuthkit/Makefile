@@ -3,6 +3,7 @@
 
 PORTNAME=	sleuthkit
 PORTVERSION=	4.1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
@@ -25,7 +26,7 @@ CONFLICTS=	ja-ls-[0-9]* icat-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_PERL="${PERL}"
-USES=		libtool perl5
+USES=		libtool:keepla perl5
 USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/tsk
 
