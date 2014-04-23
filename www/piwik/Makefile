@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwik
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
@@ -25,10 +25,8 @@ PHPMYSQLI_USE=	PHP=mysqli
 
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${LOCALBASE}/bin/python|' \
-		${WRKSRC}/misc/log-analytics/import_logs.py
-	@${RM} ${WRKSRC}/misc/log-analytics/import_logs.py.bak
+USES=		shebangfix
+SHEBANG_FILES=	misc/log-analytics/import_logs.py
 
 pre-install:
 	@if [ ! -f ${LOCALBASE}/bin/php ]; then \
