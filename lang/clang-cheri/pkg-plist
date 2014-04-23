@@ -1464,17 +1464,10 @@ sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/rdseedintrin.h
 sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/rtmintrin.h
 sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/shaintrin.h
 sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/smmintrin.h
-sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/stdalign.h
-sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/stdarg.h
-sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/stdbool.h
-sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/stddef.h
-sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/stdint.h
-sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/stdnoreturn.h
 sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/tbmintrin.h
 sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/tgmath.h
 sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/tmmintrin.h
 sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/unwind.h
-sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/varargs.h
 sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/wmmintrin.h
 sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/x86intrin.h
 sysroots/cheri-unknown-freebsd/tools/lib/clang/3.5/include/xmmintrin.h
