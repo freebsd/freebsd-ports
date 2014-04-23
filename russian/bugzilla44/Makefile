@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 CATEGORIES=	russian
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-ru/bugzilla-${PORTVERSION:R}-ru/${PORTVERSION}
-DISTNAME=	bugzilla-${PORTVERSION}-ru-20131127
+DISTNAME=	bugzilla-${PORTVERSION}-ru-20140422
 
 MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.ru
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
-	(cd ${WRKSRC}/ && ${PAX} -r -w * ${STAGEDIR}${WWWDIR})
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 # Maintainer
 plist:	patch
