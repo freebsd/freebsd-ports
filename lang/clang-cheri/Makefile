@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clang-cheri
-PORTVERSION=	3.4.20140416
+PORTVERSION=	3.4.20140423
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -12,6 +12,8 @@ COMMENT=	C, Objective-C, and C++ compiler with CHERI CPU support
 USES=		cmake:outsource compiler:c++11-lib ninja perl5 shebangfix
 USE_BZIP2=	yes
 USE_PYTHON=	yes
+
+BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
 TRIPLE=		cheri-unknown-freebsd
 SYSROOT=	${PREFIX}/sysroots/${TRIPLE}
@@ -46,6 +48,12 @@ COMMANDS=	\
 		clang-format \
 		git-clang-format \
 		llc \
+		lldb \
+		lldb-3.5 \
+		lldb-gdbserver \
+		lldb-gdbserver-3.5 \
+		lldb-platform \
+		lldb-platform-3.5 \
 		lli \
 		lli-child-target \
 		llvm-ar \
@@ -84,8 +92,8 @@ do-fetch:
 	svn export --force https://github.com/CTSRD-CHERI/llvm/trunk ${WRKSRC}
 	svn export --force https://github.com/CTSRD-CHERI/clang/trunk \
 	    ${WRKSRC}/tools/clang
-#	svn export --force https://github.com/CTSRD-CHERI/lldb/trunk \
-#	    ${WRKSRC}/tools/lldb
+	svn export --force https://github.com/CTSRD-CHERI/lldb/trunk \
+	    ${WRKSRC}/tools/lldb
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 .if ${USER} == brooks || ${USER} == bed22
 	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \

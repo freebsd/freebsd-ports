@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 LLVM_PREFIX="%%LLVM_PREFIX%%"
-LLVM_SUFFIX="%%LLVM_SUFFIX%%"
+TOOL_PREFIX="%%TOOL_PREFIX%%"
 
 tool=$(basename $0)
-tool="${LLVM_PREFIX}/bin/${tool%${LLVM_SUFFIX}}"
+tool="${LLVM_PREFIX}/bin/${tool#${TOOL_PREFIX}}"
 LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}${LLVM_PREFIX}/lib" \
     "${tool}" "${@}"
