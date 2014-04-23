@@ -14,10 +14,10 @@ QA_ENV+=	STAGEDIR=${STAGEDIR} \
 		PREFIX=${PREFIX} \
 		LOCALBASE=${LOCALBASE} \
 		"STRIP=${STRIP}"
-.if ${USES:Mdesktop-file-utils}
+.if !empty(USES:Mdesktop-file-utils)
 QA_ENV+=	USESDESKTOPFILEUTILS=yes
 .endif
-.if ${USES:Mshared-mime-info}
+.if !empty(USES:Mdesktop-file-utils)
 QA_ENV+=	USESSHAREDMIMEINFO=yes
 .endif
 CO_ENV+=	STAGEDIR=${STAGEDIR} \
