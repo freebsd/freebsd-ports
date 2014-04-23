@@ -28,6 +28,7 @@
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/jvm.cfg
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libawt.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libfontmanager.so
+%%JDK_ROOT%%/jre/lib/%%ARCH%%/libfreetype.so.6
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libjava.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/libjpeg.so
 %%JDK_ROOT%%/jre/lib/%%ARCH%%/liblcms.so
