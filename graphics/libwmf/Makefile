@@ -35,6 +35,10 @@ X11_USE=	XORG=x11
 X11_CONFIGURE_OFF=--with-x=no
 .include <bsd.port.options.mk>
 
+.if ! ${PORT_OPTIONS:MX11}
+PKGNAMESUFFIX=	-nox11
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|src include fonts doc|src include fonts|g' \
 		${WRKSRC}/Makefile.in
