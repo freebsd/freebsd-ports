@@ -1,0 +1,10 @@
+--- configure
++++ configure
+@@ -17021,6 +17021,7 @@
+ COMPIZ_REQUIRES="xcomposite \
+ 		 xfixes	    \
+ 		 xdamage    \
++		 xext       \
+ 		 xrandr	    \
+ 		 xinerama   \
+ 		 ice	    \
