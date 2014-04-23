@@ -19,16 +19,16 @@ LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 
 PORTSCOUT=	ignore:1
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-USES=		tar:xz
+USES=			tar:xz
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+
+PYDISTUTILS_AUTOPLIST=		yes
+PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHONPREFIX_LIBDIR}/lib-dynload
 
 DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 WRKSRC=		${PYTHON_WRKSRC}/Modules
-
-PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
-PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.pre.mk>
 
