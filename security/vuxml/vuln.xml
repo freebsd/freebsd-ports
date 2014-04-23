@@ -51,6 +51,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0b8d7194-ca88-11e3-9d8d-c80aa9043978">
+    <topic>OpenSSL -- Remote Data Injection / DoS</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_11</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><le>1.0.1g</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://rt.openssl.org/Ticket/Display.html?id=2167">
+	  <p>Applications that use SSL_MODE_RELEASE_BUFFERS, such as nginx, are
+	    prone to a race condition which may allow a remote attacker to
+	    inject random data into other connections.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://rt.openssl.org/Ticket/Display.html?id=2167</url>
+      <url>http://www.tedunangst.com/flak/post/analysis-of-openssl-freelist-reuse</url>
+      <cvename>CVE-2010-5298</cvename>
+    </references>
+    <dates>
+      <discovery>2010-02-09</discovery>
+      <entry>2014-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="608ed765-c700-11e3-848c-20cf30e32f6d">
     <topic>bugzilla -- Cross-Site Request Forgery</topic>
     <affects>
