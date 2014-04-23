@@ -5,11 +5,13 @@ PORTNAME=	gzstream
 DISTVERSION=	1.5
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	CENKES
-# http://www.cs.unc.edu/Research/compgeom/gzstream/gzstream.tgz
+MASTER_SITES=	CENKES \
+		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Provides zlib functionality in an iostream
+
+LICENSE=	LGPL21
 
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
