@@ -56,7 +56,7 @@ $FreeBSD$
  		case x$CC in
 -		  x*gcc*) make -f $makefile all PICFLAG=-fpic ;;
 -		  *)      make -f $makefile all ;;
-+		  x*gcc*) ${MAKE} -f $makefile all PICFLAG=-fpic ;;
++		  x*cc*) ${MAKE} -f $makefile all PICFLAG=-fpic ;;
 +		  *)      ${MAKE} -f $makefile all ;;
  		esac
  	fi
@@ -100,7 +100,7 @@ $FreeBSD$
 +endif
 +
 +# Define the object modules to be compiled and flags.
-+CC=gcc
++CC?=gcc
 +MAIN_OBJS = eclipseMain.o
 +COMMON_OBJS = eclipseConfig.o eclipseCommon.o eclipseGtkCommon.o eclipseGtkInit.o
 +DLL_OBJS	= eclipse.o eclipseGtk.o eclipseUtil.o eclipseJNI.o eclipseMozilla.o eclipseShm.o eclipseNix.o
@@ -326,8 +326,8 @@ $FreeBSD$
 +OPT_FLAGS=-O2 -g -s -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 +
 +core :
-+	gcc $(OPT_FLAGS) -fPIC -c $(JDK_INCLUDE) $(COMMON_INCLUDE) -o $(CORE.O) $(CORE.C)
-+	gcc $(OPT_FLAGS) -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(CORE.O) -lc
++	$(CC) $(OPT_FLAGS) -fPIC -c $(JDK_INCLUDE) $(COMMON_INCLUDE) -o $(CORE.O) $(CORE.C)
++	$(CC) $(OPT_FLAGS) -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(CORE.O) -lc
 +
 +clean :
 +	rm *.o
@@ -676,14 +676,14 @@ $FreeBSD$
 +compile:
 +	@echo "Building file: $(GNOMEPROXY.O)"
 +	@echo "Invoking: GCC C Compiler"
-+	gcc $(INCLUDE) $(COMPILER_FLAGS) -o $(GNOMEPROXY.O) $(GNOMEPROXY.C)
++	$(CC) $(INCLUDE) $(COMPILER_FLAGS) -o $(GNOMEPROXY.O) $(GNOMEPROXY.C)
 +	@echo "Finished building: $(GNOMEPROXY.O)"
 +	@echo " "
 +
 +link: compile
 +	@echo "Building target: $(LIB_NAME_FULL)"
 +	@echo "Invoking: GCC C Linker"
-+	gcc $(LINKER_FLAGS) -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(LIBS) $(GNOMEPROXY.O) -lc
++	$(CC) $(LINKER_FLAGS) -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(LIBS) $(GNOMEPROXY.O) -lc
 +	@echo "Finished building target: $(LIB_NAME_FULL)"
 +	@echo " "
 +
