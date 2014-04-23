@@ -93,12 +93,12 @@ if [ $makeplist = 0 ] ; then
 		fi
 
 		case $line in
-		@dirrm*|'@unexec rmdir'*)
+		@dirrm*|'@unexec rmdir'*|'@unexec /bin/rmdir'*)
 			line="$(printf %s "$line" \
-			    | sed -Ee 's/\|\|.*//;s|[0-9]*[[:space:]]*>[&]?[[:space:]]*[^[:space:]]+||g' \
-				-e "/^@unexec[[:space:]]+rmdir/s|([^%])%D([^%])|\1${PREFIX}\2|g" \
-				-e '/^@unexec[[:space:]]+rmdir/s|"(.*)"[[:space:]]+|\1|g' \
-				-e 's/@unexec[[:space:]]+rmdir[[:space:]]+//' \
+			    | sed -Ee 's/\|\|.*//;s|[[:space:]]+[0-9]*[[:space:]]*>[&]?[[:space:]]*[^[:space:]]+||g' \
+				-e "/^@unexec[[:space:]]+(\/bin\/)?rmdir/s|([^%])%D([^%])|\1${PREFIX}\2|g" \
+				-e '/^@unexec[[:space:]]+(\/bin\/)?rmdir/s|"(.*)"[[:space:]]*|\1|g' \
+				-e 's/@unexec[[:space:]]+(\/bin\/)?rmdir[[:space:]]+//' \
 				-e 's/@dirrm(try)?[[:space:]]+//' \
 				-e 's/[[:space:]]+$//')"
 			case "$line" in
