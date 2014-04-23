@@ -81,7 +81,6 @@ CONFIGURE_ARGS+=--without-gtk
 .if ${PORT_OPTIONS:MGNOME}
 CATEGORIES+=	gnome
 USE_GNOME=	gconf2
-USES+=		desktop-file-utils
 CONFIGURE_ARGS+=	--enable-mime
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 PLIST_SUB+=	GNOME=""
