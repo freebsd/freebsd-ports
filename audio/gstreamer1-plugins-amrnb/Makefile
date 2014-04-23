@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer OpenCore based Adaptive Multi-Rate Narrow-Band plugin

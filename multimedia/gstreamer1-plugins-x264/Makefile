@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer x264 plugin

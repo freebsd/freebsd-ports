@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	x11
 PKGNAMESUFFIX=	1-plugins-ximagesrc
 

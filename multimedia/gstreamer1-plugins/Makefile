@@ -6,7 +6,7 @@ PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
 # When chasing a shared library for a plug-in bump the PORTREVISION in the
 # plug-in port instead, like ${category}/gstreamer1-plugin-${PLUGIN}.
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
 		http://gstreamer.freedesktop.org/src/gst-plugins-bad/:bad \
@@ -27,16 +27,16 @@ RUN_DEPENDS+=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
-BASE_PORTVERSION=	1.2.3
+BASE_PORTVERSION=	1.2.4
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	1.2.3
+BAD_PORTVERSION=	1.2.4
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	1.2.3
+GOOD_PORTVERSION=	1.2.4
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
-UGLY_PORTVERSION=	1.2.3
+UGLY_PORTVERSION=	1.2.4
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
@@ -46,6 +46,7 @@ WANT_GSTREAMER=	yes
 USE_XZ=		yes
 USE_GNOME+=	glib20 gnomehier introspection:build libxml2
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 GST_PLUGIN?=	base
 USE_LDCONFIG=	yes
 
@@ -60,20 +61,11 @@ DEFAULT_AUDIOSRC?=	osssrc
 IGNORE=		DIST not specified
 .endif
 
-SHLIB_VERSION=	0
 VERSION=	1.0
-
 PLIST_SUB+=	VERSION="${VERSION}" \
-		SHLIB_VERSION="${SHLIB_VERSION}"
-
+		SOVERSION=0.204.0
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH}=="i386"
-PLIST_SUB+=	I386=""
-.else
-PLIST_SUB+=	I386="@comment "
-.endif
 
 .if ${GST_PLUGIN} == "base"
 DIST=	base
@@ -163,11 +155,6 @@ post-patch:
 	  s|$$(top_builddir)/gst-libs/gst/video/libgstbasevideo-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstbasevideo-$$(GST_API_VERSION).la|; \
 	  s|$$(top_builddir)/gst-libs/gst/video/libgstvideo-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstvideo-$$(GST_API_VERSION).la|'
 .endif
-.if ${GST_PLUGIN} == "flite"
-# Hack to get all the libraries linked to the flite plugin so it is useable.
-	-@${REINPLACE_CMD} -e 's|-Wl,--as-needed||g' \
-		${WRKSRC}/../gnome-libtool
-.endif
 
 # workaround a crash in clang 3.3 crash llvm bug # 15840
 .if ((${OSVERSION} >= 901504 && ${OSVERSION} < 902502) || \
@@ -177,11 +164,5 @@ USE_GCC=	any
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0
-
-post-install:
-.if ${GST_PLUGIN}==base || ${GST_PLUGIN}==bad
-	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst*.so.0
-.endif
-	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0/libgst*.so
 
 .include <bsd.port.post.mk>
