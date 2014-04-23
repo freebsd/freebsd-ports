@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bind10
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -18,7 +18,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/interprocess/sync/interprocess_upgradable_mutex.hpp:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/include/log4cplus/logger.h:${PORTSDIR}/devel/log4cplus \
-		sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3
+		sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3 \
+		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110 \
 		liblog4cplus.so:${PORTSDIR}/devel/log4cplus \
 		libicuuc.so:${PORTSDIR}/devel/icu \
@@ -26,7 +27,7 @@ LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110 \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
-USE_PYTHON=	3.3
+USE_PYTHON=	3
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USES=	compiler:c++11-lang pathfix pkgconfig
@@ -48,5 +49,13 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/cmdctl-certfile.pem.sample
 	${INSTALL_DATA} -m 640 ${WRKSRC}/src/bin/cmdctl/cmdctl-keyfile.pem \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/cmdctl-keyfile.pem.sample
+	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem.sample
+	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-keyfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-keyfile.pem.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE=	You have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
+.endif
+
+.include <bsd.port.post.mk>
