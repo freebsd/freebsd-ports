@@ -16,6 +16,7 @@ GH_COMMIT=	ff1ce7e
 
 CONFIGURE_ARGS=	--with-openssl
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 
 USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
 AUTOMAKE_ARGS=	--add-missing
