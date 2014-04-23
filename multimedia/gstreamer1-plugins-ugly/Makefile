@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer1-plugins-ugly/Makefile,v 1.3 2013/01/15 21:43:46 kwm Exp $
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	Ugly gstreamer-plugins

@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 COMMENT=	Gstreamer jpeg2000 decoder plugin

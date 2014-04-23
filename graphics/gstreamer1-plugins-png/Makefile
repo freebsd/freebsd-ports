@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	1-plugins-png
 
