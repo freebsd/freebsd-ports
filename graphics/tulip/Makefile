@@ -19,7 +19,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libQxtCore.so:${PORTSDIR}/devel/libqxt \
 		libOGDF.so:${PORTSDIR}/math/ogdf \
-		libpng.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USES=		cmake:outsource compiler:c++11-lib shebangfix dos2unix
 SHEBANG_FILES=	tulip-config.in
@@ -42,14 +43,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_SUB+=	TULIP_VERSION=${PORTVERSION} \
 		TULIP_VERS=${PORTVERSION:R}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-post-install:
-	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}-html && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
