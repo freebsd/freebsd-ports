@@ -17,6 +17,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
+CONFLICTS?=	libwmf-nox11-[0-9]*
+
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
@@ -33,14 +35,8 @@ OPTIONS_SUB=	yes
 
 X11_USE=	XORG=x11
 X11_CONFIGURE_OFF=--with-x=no
-.include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MX11}
-PKGNAMESUFFIX=	-nox11
-CONFLICTS+=	libwmf-[0-9]*
-.else
-CONFLICTS+=	libwmf-nox11-[0-9]*
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|src include fonts doc|src include fonts|g' \
