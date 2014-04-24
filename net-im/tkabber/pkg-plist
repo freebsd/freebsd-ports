@@ -1,4 +1,5 @@
 bin/tkabber
+bin/tkabber-remote
 %%PORTDOCS%%%%DOCSDIR%%/tkabber.html
 %%PORTDOCS%%%%DOCSDIR%%/tkabber.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/configs/badlop-config-home.tcl
@@ -37,8 +38,6 @@ bin/tkabber
 %%DATADIR%%/datagathering.tcl
 %%DATADIR%%/default.tcl
 %%DATADIR%%/disco.tcl
-%%DATADIR%%/doc/tkabber.html
-%%DATADIR%%/doc/tkabber.xml
 %%DATADIR%%/emoticons/default/beer.gif
 %%DATADIR%%/emoticons/default/facegrinning.gif
 %%DATADIR%%/emoticons/default/facehappy.gif
@@ -49,66 +48,24 @@ bin/tkabber
 %%DATADIR%%/emoticons/default/facewinking.gif
 %%DATADIR%%/emoticons/default/faceyukky.gif
 %%DATADIR%%/emoticons/default/icondef.xml
-%%DATADIR%%/examples/configs/badlop-config-home.tcl
-%%DATADIR%%/examples/configs/badlop-config.tcl
-%%DATADIR%%/examples/configs/config.tcl
-%%DATADIR%%/examples/configs/mtr-config.tcl
-%%DATADIR%%/examples/configs/teo-config.tcl
-%%DATADIR%%/examples/tclCarbonNotification-1.0.0/build.sh
-%%DATADIR%%/examples/tclCarbonNotification-1.0.0/tclCarbonNotification.tcl
-%%DATADIR%%/examples/tools/howto.txt
-%%DATADIR%%/examples/tools/jbot
-%%DATADIR%%/examples/tools/jsend.tcl
-%%DATADIR%%/examples/tools/rssbot
-%%DATADIR%%/examples/tools/rssbot.tcl
-%%DATADIR%%/examples/tools/tkabber_setstatus
-%%DATADIR%%/examples/xrdb/badlop-dark.xrdb
-%%DATADIR%%/examples/xrdb/black.xrdb
-%%DATADIR%%/examples/xrdb/dark.xrdb
-%%DATADIR%%/examples/xrdb/dark2.xrdb
-%%DATADIR%%/examples/xrdb/green.xrdb
-%%DATADIR%%/examples/xrdb/ice.xrdb
-%%DATADIR%%/examples/xrdb/light.xrdb
-%%DATADIR%%/examples/xrdb/lighthouse.xrdb
-%%DATADIR%%/examples/xrdb/ocean-deep.xrdb
-%%DATADIR%%/examples/xrdb/teopetuk.xrdb
-%%DATADIR%%/examples/xrdb/warm.xrdb
 %%DATADIR%%/filetransfer.tcl
 %%DATADIR%%/filters.tcl
 %%DATADIR%%/gpgme.tcl
 %%DATADIR%%/hooks.tcl
+%%DATADIR%%/idna.tcl
 %%DATADIR%%/iface.tcl
-%%DATADIR%%/ifacetk/bwidget_workarounds.tcl
 %%DATADIR%%/ifacetk/buttonbar.tcl
+%%DATADIR%%/ifacetk/bwidget_workarounds.tcl
 %%DATADIR%%/ifacetk/default.xrdb
 %%DATADIR%%/ifacetk/idefault.tcl
 %%DATADIR%%/ifacetk/iface.tcl
-%%DATADIR%%/ifacetk/ilogin.tcl
-%%DATADIR%%/ifacetk/iroster.tcl
+%%DATADIR%%/ifacetk/login.tcl
+%%DATADIR%%/ifacetk/muc.tcl
+%%DATADIR%%/ifacetk/roster.tcl
 %%DATADIR%%/ifacetk/systray.tcl
 %%DATADIR%%/ifacetk/unix.xrdb
 %%DATADIR%%/iq.tcl
 %%DATADIR%%/itemedit.tcl
-%%DATADIR%%/jabberlib/autoconnect.tcl
-%%DATADIR%%/jabberlib/https.tcl
-%%DATADIR%%/jabberlib/idna.tcl
-%%DATADIR%%/jabberlib/jabberlib.tcl
-%%DATADIR%%/jabberlib/jlibauth.tcl
-%%DATADIR%%/jabberlib/jlibcomponent.tcl
-%%DATADIR%%/jabberlib/jlibcompress.tcl
-%%DATADIR%%/jabberlib/jlibdns.tcl
-%%DATADIR%%/jabberlib/jlibsasl.tcl
-%%DATADIR%%/jabberlib/jlibtls.tcl
-%%DATADIR%%/jabberlib/namespaces.tcl
-%%DATADIR%%/jabberlib/ntlm.tcl
-%%DATADIR%%/jabberlib/pkgIndex.tcl
-%%DATADIR%%/jabberlib/socks4.tcl
-%%DATADIR%%/jabberlib/socks5.tcl
-%%DATADIR%%/jabberlib/stanzaerror.tcl
-%%DATADIR%%/jabberlib/streamerror.tcl
-%%DATADIR%%/jabberlib/transports.tcl
-%%DATADIR%%/jabberlib/wrapper.tcl
-%%DATADIR%%/joingrdialog.tcl
 %%DATADIR%%/login.tcl
 %%DATADIR%%/mclistbox/mclistbox.tcl
 %%DATADIR%%/messages.tcl
@@ -129,7 +86,7 @@ bin/tkabber
 %%DATADIR%%/msgs/uk.msg
 %%DATADIR%%/msgs/uk.rc
 %%DATADIR%%/muc.tcl
-%%DATADIR%%/negotiate.tcl
+%%DATADIR%%/namespaces.tcl
 %%DATADIR%%/pep.tcl
 %%DATADIR%%/pixmaps.tcl
 %%DATADIR%%/pixmaps/default-blue/docking/available-away.gif
@@ -344,6 +301,7 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/log_on_open.tcl
 %%DATADIR%%/plugins/chat/logger.tcl
 %%DATADIR%%/plugins/chat/me_command.tcl
+%%DATADIR%%/plugins/chat/muc_commands.tcl
 %%DATADIR%%/plugins/chat/muc_ignore.tcl
 %%DATADIR%%/plugins/chat/nick_colors.tcl
 %%DATADIR%%/plugins/chat/open_chat.tcl
@@ -351,24 +309,29 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/popupmenu.tcl
 %%DATADIR%%/plugins/chat/postpone.tcl
 %%DATADIR%%/plugins/chat/send_message.tcl
+%%DATADIR%%/plugins/chat/shuffle.tcl
 %%DATADIR%%/plugins/chat/unisymbols.tcl
 %%DATADIR%%/plugins/chat/update_tab.tcl
 %%DATADIR%%/plugins/filetransfer/http.tcl
 %%DATADIR%%/plugins/filetransfer/si.tcl
 %%DATADIR%%/plugins/general/autoaway.tcl
 %%DATADIR%%/plugins/general/avatars.tcl
+%%DATADIR%%/plugins/general/bob.tcl
 %%DATADIR%%/plugins/general/caps.tcl
-%%DATADIR%%/plugins/general/challenge.tcl
+%%DATADIR%%/plugins/general/captcha.tcl
 %%DATADIR%%/plugins/general/clientinfo.tcl
+%%DATADIR%%/plugins/general/comm.tcl
 %%DATADIR%%/plugins/general/copy_jid.tcl
+%%DATADIR%%/plugins/general/geometry.tcl
 %%DATADIR%%/plugins/general/headlines.tcl
 %%DATADIR%%/plugins/general/ispell.tcl
-%%DATADIR%%/plugins/general/jitworkaround.tcl
 %%DATADIR%%/plugins/general/message_archive.tcl
+%%DATADIR%%/plugins/general/nickname.tcl
 %%DATADIR%%/plugins/general/offline.tcl
 %%DATADIR%%/plugins/general/rawxml.tcl
 %%DATADIR%%/plugins/general/remote.tcl
 %%DATADIR%%/plugins/general/session.tcl
+%%DATADIR%%/plugins/general/sigh.tcl
 %%DATADIR%%/plugins/general/sound.tcl
 %%DATADIR%%/plugins/general/stats.tcl
 %%DATADIR%%/plugins/general/subscribe_gateway.tcl
@@ -377,7 +340,6 @@ bin/tkabber
 %%DATADIR%%/plugins/general/xcommands.tcl
 %%DATADIR%%/plugins/iq/browse.tcl
 %%DATADIR%%/plugins/iq/last.tcl
-%%DATADIR%%/plugins/iq/oob.tcl
 %%DATADIR%%/plugins/iq/ping.tcl
 %%DATADIR%%/plugins/iq/time.tcl
 %%DATADIR%%/plugins/iq/time2.tcl
@@ -395,17 +357,19 @@ bin/tkabber
 %%DATADIR%%/plugins/roster/backup.tcl
 %%DATADIR%%/plugins/roster/bkup_annotations.tcl
 %%DATADIR%%/plugins/roster/bkup_conferences.tcl
+%%DATADIR%%/plugins/roster/bkup_metacontacts.tcl
 %%DATADIR%%/plugins/roster/cache_categories.tcl
 %%DATADIR%%/plugins/roster/conferenceinfo.tcl
 %%DATADIR%%/plugins/roster/conferences.tcl
 %%DATADIR%%/plugins/roster/fetch_nicknames.tcl
-%%DATADIR%%/plugins/roster/roster_delimiter.tcl
+%%DATADIR%%/plugins/roster/metacontacts.tcl
 %%DATADIR%%/plugins/roster/rosterx.tcl
 %%DATADIR%%/plugins/search/browser.tcl
 %%DATADIR%%/plugins/search/chat.tcl
 %%DATADIR%%/plugins/search/custom.tcl
 %%DATADIR%%/plugins/search/headlines.tcl
 %%DATADIR%%/plugins/search/logger.tcl
+%%DATADIR%%/plugins/search/muclists.tcl
 %%DATADIR%%/plugins/search/rawxml.tcl
 %%DATADIR%%/plugins/search/search.tcl
 %%DATADIR%%/plugins/search/spanel.tcl
@@ -424,7 +388,7 @@ bin/tkabber
 %%DATADIR%%/plugins/windows/taskbar.tcl
 %%DATADIR%%/presence.tcl
 %%DATADIR%%/privacy.tcl
-%%DATADIR%%/private.tcl
+%%DATADIR%%/proxy.tcl
 %%DATADIR%%/pubsub.tcl
 %%DATADIR%%/register.tcl
 %%DATADIR%%/richtext.tcl
@@ -441,6 +405,7 @@ bin/tkabber
 %%DATADIR%%/sounds/default/groupchat_their_message_to_me.wav
 %%DATADIR%%/sounds/default/presence_available.wav
 %%DATADIR%%/sounds/default/presence_unavailable.wav
+%%DATADIR%%/sounds/default/sigh.wav
 %%DATADIR%%/sounds/psi/chat_their_message.wav
 %%DATADIR%%/sounds/psi/connected.wav
 %%DATADIR%%/sounds/psi/groupchat_server_message.wav
@@ -449,12 +414,65 @@ bin/tkabber
 %%DATADIR%%/sounds/psi/presence_available.wav
 %%DATADIR%%/sounds/psi/presence_unavailable.wav
 %%DATADIR%%/splash.tcl
-%%DATADIR%%/tclxml/pkgIndex.tcl
-%%DATADIR%%/tclxml/sgml-8.1.tcl
-%%DATADIR%%/tclxml/sgmlparser.tcl
-%%DATADIR%%/tclxml/tclparser-8.1.tcl
-%%DATADIR%%/tclxml/xml-8.1.tcl
-%%DATADIR%%/tclxml/xml__tcl.tcl
+%%DATADIR%%/tclxmpp/ChangeLog
+%%DATADIR%%/tclxmpp/doc/xmpp.man
+%%DATADIR%%/tclxmpp/doc/xmpp_jid.man
+%%DATADIR%%/tclxmpp/doc/xmpp_xml.man
+%%DATADIR%%/tclxmpp/examples/chessbot.tcl
+%%DATADIR%%/tclxmpp/examples/echo.tcl
+%%DATADIR%%/tclxmpp/examples/jsend.tcl
+%%DATADIR%%/tclxmpp/examples/rssbot.tcl
+%%DATADIR%%/tclxmpp/license.terms
+%%DATADIR%%/tclxmpp/tclxml/pkgIndex.tcl
+%%DATADIR%%/tclxmpp/tclxml/sgml.tcl
+%%DATADIR%%/tclxmpp/tclxml/sgmlparser.tcl
+%%DATADIR%%/tclxmpp/tclxml/tclparser.tcl
+%%DATADIR%%/tclxmpp/tclxml/xml.tcl
+%%DATADIR%%/tclxmpp/tclxml/xmltcl.tcl
+%%DATADIR%%/tclxmpp/xmpp/annotations.tcl
+%%DATADIR%%/tclxmpp/xmpp/auth.tcl
+%%DATADIR%%/tclxmpp/xmpp/blocking.tcl
+%%DATADIR%%/tclxmpp/xmpp/bob.tcl
+%%DATADIR%%/tclxmpp/xmpp/bookmarks.tcl
+%%DATADIR%%/tclxmpp/xmpp/bosh.tcl
+%%DATADIR%%/tclxmpp/xmpp/component.tcl
+%%DATADIR%%/tclxmpp/xmpp/compress.tcl
+%%DATADIR%%/tclxmpp/xmpp/data.tcl
+%%DATADIR%%/tclxmpp/xmpp/delay.tcl
+%%DATADIR%%/tclxmpp/xmpp/delimiter.tcl
+%%DATADIR%%/tclxmpp/xmpp/disco.tcl
+%%DATADIR%%/tclxmpp/xmpp/dns.tcl
+%%DATADIR%%/tclxmpp/xmpp/https.tcl
+%%DATADIR%%/tclxmpp/xmpp/iq.tcl
+%%DATADIR%%/tclxmpp/xmpp/jid.tcl
+%%DATADIR%%/tclxmpp/xmpp/metacontacts.tcl
+%%DATADIR%%/tclxmpp/xmpp/muc.tcl
+%%DATADIR%%/tclxmpp/xmpp/negotiate.tcl
+%%DATADIR%%/tclxmpp/xmpp/pconnect.tcl
+%%DATADIR%%/tclxmpp/xmpp/pep.tcl
+%%DATADIR%%/tclxmpp/xmpp/ping.tcl
+%%DATADIR%%/tclxmpp/xmpp/pkgIndex.tcl
+%%DATADIR%%/tclxmpp/xmpp/poll.tcl
+%%DATADIR%%/tclxmpp/xmpp/presence.tcl
+%%DATADIR%%/tclxmpp/xmpp/privacy.tcl
+%%DATADIR%%/tclxmpp/xmpp/private.tcl
+%%DATADIR%%/tclxmpp/xmpp/pubsub.tcl
+%%DATADIR%%/tclxmpp/xmpp/register.tcl
+%%DATADIR%%/tclxmpp/xmpp/roster.tcl
+%%DATADIR%%/tclxmpp/xmpp/sasl.tcl
+%%DATADIR%%/tclxmpp/xmpp/search.tcl
+%%DATADIR%%/tclxmpp/xmpp/socks4.tcl
+%%DATADIR%%/tclxmpp/xmpp/socks5.tcl
+%%DATADIR%%/tclxmpp/xmpp/stanzaerror.tcl
+%%DATADIR%%/tclxmpp/xmpp/starttls.tcl
+%%DATADIR%%/tclxmpp/xmpp/streamerror.tcl
+%%DATADIR%%/tclxmpp/xmpp/tcp.tcl
+%%DATADIR%%/tclxmpp/xmpp/tls.tcl
+%%DATADIR%%/tclxmpp/xmpp/transport.tcl
+%%DATADIR%%/tclxmpp/xmpp/xml.tcl
+%%DATADIR%%/tclxmpp/xmpp/xmpp.tcl
+%%DATADIR%%/tclxmpp/xmpp/zlib.tcl
+%%DATADIR%%/tkabber-remote.tcl
 %%DATADIR%%/tkabber.tcl
 %%DATADIR%%/trans.tcl
 %%DATADIR%%/trans/de.msg
@@ -466,7 +484,11 @@ bin/tkabber
 %%DATADIR%%/utils.tcl
 %%DATADIR%%/xmppmime.tcl
 @dirrm %%DATADIR%%/trans
-@dirrm %%DATADIR%%/tclxml
+@dirrm %%DATADIR%%/tclxmpp/xmpp
+@dirrm %%DATADIR%%/tclxmpp/tclxml
+@dirrm %%DATADIR%%/tclxmpp/examples
+@dirrm %%DATADIR%%/tclxmpp/doc
+@dirrm %%DATADIR%%/tclxmpp
 @dirrm %%DATADIR%%/sounds/psi
 @dirrm %%DATADIR%%/sounds/default
 @dirrm %%DATADIR%%/sounds
@@ -505,16 +527,9 @@ bin/tkabber
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/msgs
 @dirrm %%DATADIR%%/mclistbox
-@dirrm %%DATADIR%%/jabberlib
 @dirrm %%DATADIR%%/ifacetk
-@dirrm %%DATADIR%%/examples/xrdb
-@dirrm %%DATADIR%%/examples/tools
-@dirrm %%DATADIR%%/examples/tclCarbonNotification-1.0.0
-@dirrm %%DATADIR%%/examples/configs
-@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/emoticons/default
 @dirrm %%DATADIR%%/emoticons
-@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/contrib/starkit
 @dirrm %%DATADIR%%/contrib/gabber-docking-24x24
 @dirrm %%DATADIR%%/contrib/extract-translations
