@@ -4,6 +4,7 @@
 %%DOCS%%%%DOCSDIR%%/_images/Events.png
 %%DOCS%%%%DOCSDIR%%/_images/Kivy_App_Life_Cycle.png
 %%DOCS%%%%DOCSDIR%%/_images/accordion.jpg
+%%DOCS%%%%DOCSDIR%%/_images/actionbar.png
 %%DOCS%%%%DOCSDIR%%/_images/anchorlayout.gif
 %%DOCS%%%%DOCSDIR%%/_images/anchorlayout1.gif
 %%DOCS%%%%DOCSDIR%%/_images/anim_in_back.png
@@ -79,7 +80,7 @@
 %%DOCS%%%%DOCSDIR%%/_images/property_events_binding.png
 %%DOCS%%%%DOCSDIR%%/_images/quickstart.png
 %%DOCS%%%%DOCSDIR%%/_images/rstdocument.png
-%%DOCS%%%%DOCSDIR%%/_images/settings_kivy.jpg
+%%DOCS%%%%DOCSDIR%%/_images/settingswithspinner_kivy.jpg
 %%DOCS%%%%DOCSDIR%%/_images/size_hint[B].jpg
 %%DOCS%%%%DOCSDIR%%/_images/size_hint[b_].jpg
 %%DOCS%%%%DOCSDIR%%/_images/size_hint[bb].jpg
@@ -107,6 +108,119 @@
 %%DOCS%%%%DOCSDIR%%/_images/win-step8.png
 %%DOCS%%%%DOCSDIR%%/_images/win-step9.png
 %%DOCS%%%%DOCSDIR%%/_images/windows.png
+%%DOCS%%%%DOCSDIR%%/_modules/index.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/adapters/adapter.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/adapters/dictadapter.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/adapters/listadapter.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/adapters/models.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/adapters/simplelistadapter.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/animation.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/app.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/atlas.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/base.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/cache.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/clock.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/compat.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/config.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/context.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/core/audio.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/core/camera.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/core/image.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/core/spelling.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/core/text.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/core/text/markup.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/core/video.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/core/window.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/effects/dampedscroll.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/effects/kinetic.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/effects/opacityscroll.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/effects/scroll.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/event.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/ext.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/factory.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/garden.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/geometry.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/gesture.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/graphics.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/factory.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/motionevent.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/postproc/dejitter.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/postproc/doubletap.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/postproc/ignorelist.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/postproc/retaintouch.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/postproc/tripletap.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/provider.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/providers/tuio.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/providers/wm_pen.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/providers/wm_touch.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/recorder.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/input/shape.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/interactive.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/lang.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/loader.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/logger.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/metrics.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/modules/inspector.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/network/urlrequest.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/parser.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/resources.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/storage.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/storage/dictstore.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/storage/jsonstore.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/storage/redisstore.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/support.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/abstractview.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/accordion.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/actionbar.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/anchorlayout.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/behaviors.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/boxlayout.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/bubble.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/button.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/camera.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/carousel.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/checkbox.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/codeinput.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/colorpicker.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/dropdown.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/filechooser.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/floatlayout.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/gridlayout.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/image.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/label.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/layout.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/listview.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/modalview.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/pagelayout.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/popup.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/progressbar.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/relativelayout.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/rst.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/sandbox.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/scatter.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/scatterlayout.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/screenmanager.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/scrollview.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/settings.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/slider.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/spinner.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/splitter.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/stacklayout.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/stencilview.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/switch.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/tabbedpanel.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/textinput.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/togglebutton.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/treeview.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/video.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/videoplayer.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/vkeyboard.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/uix/widget.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/utils.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/vector.html
+%%DOCS%%%%DOCSDIR%%/_modules/kivy/weakmethod.html
 %%DOCS%%%%DOCSDIR%%/_sources/api-index.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.adapters.adapter.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.adapters.args_converters.txt
@@ -121,7 +235,9 @@
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.base.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.cache.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.clock.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.compat.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.config.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.context.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.core.audio.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.core.camera.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.core.clipboard.txt
@@ -142,6 +258,7 @@
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.ext.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.factory.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.garden.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.geometry.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.gesture.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.graphics.compiler.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.graphics.context.txt
@@ -168,6 +285,7 @@
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.input.provider.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.input.providers.androidjoystick.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.input.providers.hidinput.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.input.providers.leapfinger.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.input.providers.linuxwacom.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.input.providers.mactouch.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.input.providers.mouse.txt
@@ -183,7 +301,7 @@
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.input.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.interactive.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.lang.txt
-%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.lib.debug.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.lib.gstplayer.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.lib.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.loader.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.logger.txt
@@ -195,16 +313,23 @@
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.modules.screen.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.modules.touchring.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.modules.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.modules.webdebugger.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.network.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.network.urlrequest.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.parser.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.properties.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.resources.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.storage.dictstore.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.storage.jsonstore.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.storage.redisstore.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.storage.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.support.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.abstractview.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.accordion.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.actionbar.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.anchorlayout.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.behaviors.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.boxlayout.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.bubble.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.button.txt
@@ -222,10 +347,12 @@
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.layout.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.listview.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.modalview.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.pagelayout.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.popup.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.progressbar.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.relativelayout.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.rst.txt
+%%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.sandbox.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.scatter.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.scatterlayout.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.screenmanager.txt
@@ -292,6 +419,7 @@
 %%DOCS%%%%DOCSDIR%%/_sources/installation/installation-macosx.txt
 %%DOCS%%%%DOCSDIR%%/_sources/installation/installation-windows.txt
 %%DOCS%%%%DOCSDIR%%/_sources/installation/installation.txt
+%%DOCS%%%%DOCSDIR%%/_sources/installation/troubleshooting-macosx.txt
 %%DOCS%%%%DOCSDIR%%/_sources/philosophy.txt
 %%DOCS%%%%DOCSDIR%%/_sources/tutorials-index.txt
 %%DOCS%%%%DOCSDIR%%/_sources/tutorials/firstwidget.txt
@@ -344,7 +472,9 @@
 %%DOCS%%%%DOCSDIR%%/api-kivy.base.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.cache.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.clock.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.compat.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.config.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.context.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.core.audio.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.core.camera.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.core.clipboard.html
@@ -365,6 +495,7 @@
 %%DOCS%%%%DOCSDIR%%/api-kivy.ext.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.factory.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.garden.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.geometry.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.gesture.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.graphics.compiler.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.graphics.context.html
@@ -394,6 +525,7 @@
 %%DOCS%%%%DOCSDIR%%/api-kivy.input.providers.androidjoystick.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.input.providers.hidinput.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.input.providers.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.input.providers.leapfinger.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.input.providers.linuxwacom.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.input.providers.mactouch.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.input.providers.mouse.html
@@ -407,7 +539,7 @@
 %%DOCS%%%%DOCSDIR%%/api-kivy.input.shape.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.interactive.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.lang.html
-%%DOCS%%%%DOCSDIR%%/api-kivy.lib.debug.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.lib.gstplayer.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.lib.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.loader.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.logger.html
@@ -419,15 +551,22 @@
 %%DOCS%%%%DOCSDIR%%/api-kivy.modules.recorder.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.modules.screen.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.modules.touchring.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.modules.webdebugger.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.network.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.network.urlrequest.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.parser.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.properties.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.resources.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.storage.dictstore.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.storage.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.storage.jsonstore.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.storage.redisstore.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.support.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.abstractview.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.accordion.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.uix.actionbar.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.anchorlayout.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.uix.behaviors.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.boxlayout.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.bubble.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.button.html
@@ -446,10 +585,12 @@
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.layout.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.listview.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.modalview.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.uix.pagelayout.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.popup.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.progressbar.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.relativelayout.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.rst.html
+%%DOCS%%%%DOCSDIR%%/api-kivy.uix.sandbox.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.scatter.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.scatterlayout.html
 %%DOCS%%%%DOCSDIR%%/api-kivy.uix.screenmanager.html
@@ -516,6 +657,7 @@
 %%DOCS%%%%DOCSDIR%%/installation/installation-macosx.html
 %%DOCS%%%%DOCSDIR%%/installation/installation-windows.html
 %%DOCS%%%%DOCSDIR%%/installation/installation.html
+%%DOCS%%%%DOCSDIR%%/installation/troubleshooting-macosx.html
 %%DOCS%%%%DOCSDIR%%/objects.inv
 %%DOCS%%%%DOCSDIR%%/philosophy.html
 %%DOCS%%%%DOCSDIR%%/py-modindex.html
@@ -535,5 +677,18 @@
 %%DOCS%%@dirrm %%DOCSDIR%%/_sources/guide
 %%DOCS%%@dirrm %%DOCSDIR%%/_sources/gettingstarted
 %%DOCS%%@dirrm %%DOCSDIR%%/_sources
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/uix
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/storage
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/network
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/modules
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/input/providers
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/input/postproc
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/input
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/effects
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/core/text
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/core
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/adapters
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy
+%%DOCS%%@dirrm %%DOCSDIR%%/_modules
 %%DOCS%%@dirrm %%DOCSDIR%%/_images
 %%DOCS%%@dirrm %%DOCSDIR%%
