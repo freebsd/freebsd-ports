@@ -33,4 +33,4 @@ share/anthy/zipcode.t
 @dirrm share/anthy
 @dirrm include/anthy
 @dirrm %%ELISPDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
