@@ -3,6 +3,7 @@
 
 PORTNAME=	pp
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE \
 		http://de.nologin.ru/distfiles/sysutils/pp/
@@ -11,11 +12,14 @@ PROJECTHOST=	pipe-progress
 MAINTAINER=	a.arepo@gmail.com
 COMMENT=	Small and fast progress bar for pipe
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
+MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
 
 PLIST_FILES=	bin/pp
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e 's,char opt,int opt,' ${WRKSRC}/src/main.c
+
 .include <bsd.port.mk>
