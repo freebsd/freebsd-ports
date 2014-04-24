@@ -3,50 +3,42 @@
 
 PORTNAME=	urlgfe
 PORTVERSION=	0.7.1
-PORTREVISION?=	15
+PORTREVISION=	16
 CATEGORIES=	ftp www
 MASTER_SITES=	SF/urlget/Urlgfe%20%28legacy%29/${PORTVERSION}
 
 MAINTAINER=	chip-set@mail.ru
-COMMENT=	A download manager
+COMMENT=	Download manager
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_GNOME=	gtk20 lthack
-USES=		pkgconfig
-WANT_GNOME=	yes
+GNU_CONFIGURE=	yes
+USES=		dos2unix libtool pkgconfig
+USE_GNOME=	gtk20
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool
-USE_DOS2UNIX=	yes
+
+OPTIONS_DEFINE=	DOCS NLS
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomehier}!=""
-WITH_GNOME=	yes
-PLIST_SUB+=	GNOME:=""
-.else
-PLIST_SUB+=	GNOME:="@comment "
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 	@${REINPLACE_CMD} -e 's|[$$]{prefix}/doc/urlgfe|${DOCSDIR}|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|urlgfe_icon|urlgfe-icon|g ; \
-		s|/usr/share/pixmaps/urlgfe/||g' ${WRKSRC}/${PORTNAME}.desktop
+	@${REINPLACE_CMD} \
+		's|/usr/share/pixmaps/urlgfe/urlgfe_icon|${PREFIX}/share/pixmaps/urlgfe-icon|' \
+		${WRKSRC}/${PORTNAME}.desktop
 	@${REINPLACE_CMD} -e 's|	 -g|	 ${CFLAGS}|g' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|@MKINSTALLDIRS@|$$(top_srcdir)/@MKINSTALLDIRS@|g ; \
 		s|[$$][(]top_builddir[)]/[$$][(]MKINSTALLDIRS[)]|$$(top_srcdir)/mkinstalldirs|g' \
 			${WRKSRC}/po/Makefile.in.in
 
-.if defined(WITH_GNOME)
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/gnome/apps/Internet/
-	@${INSTALL_DATA} ${WRKSRC}/pixmaps/${PORTNAME}-icon.png ${PREFIX}/share/pixmaps/
-.endif
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	@${INSTALL_DATA} ${WRKSRC}/pixmaps/${PORTNAME}-icon.png ${STAGEDIR}${PREFIX}/share/pixmaps
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
