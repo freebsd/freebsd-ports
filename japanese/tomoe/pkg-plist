@@ -17,30 +17,23 @@ include/tomoe/tomoe-writing.h
 include/tomoe/tomoe.h
 @dirrmtry include/tomoe
 lib/libtomoe.a
-lib/libtomoe.la
 lib/libtomoe.so
-lib/libtomoe.so.1
+lib/libtomoe.so.0
+lib/libtomoe.so.0.1.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/tomoe.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/tomoe.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/tomoe.so
 %%EST%%lib/tomoe/module/dict/est.a
-%%EST%%lib/tomoe/module/dict/est.la
 %%EST%%lib/tomoe/module/dict/est.so
 %%MYSQL%%lib/tomoe/module/dict/mysql.a
-%%MYSQL%%lib/tomoe/module/dict/mysql.la
 %%MYSQL%%lib/tomoe/module/dict/mysql.so
 %%DICT_RUBY%%lib/tomoe/module/dict/ruby.a
-%%DICT_RUBY%%lib/tomoe/module/dict/ruby.la
 %%DICT_RUBY%%lib/tomoe/module/dict/ruby.so
 %%UNIHAN%%lib/tomoe/module/dict/unihan.a
-%%UNIHAN%%lib/tomoe/module/dict/unihan.la
 %%UNIHAN%%lib/tomoe/module/dict/unihan.so
 lib/tomoe/module/dict/xml.a
-lib/tomoe/module/dict/xml.la
 lib/tomoe/module/dict/xml.so
 @dirrm lib/tomoe/module/dict
 lib/tomoe/module/recognizer/simple.a
-lib/tomoe/module/recognizer/simple.la
 lib/tomoe/module/recognizer/simple.so
 @dirrm lib/tomoe/module/recognizer
 @dirrm lib/tomoe/module
@@ -84,6 +77,5 @@ share/tomoe/xml2est.rb
 @dirrm share/tomoe
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/rbtomoe.h
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/tomoe.a
-%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/tomoe.la
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/tomoe.so
 %%RUBY%%%%RUBY_SITELIBDIR%%/tomoe.rb
