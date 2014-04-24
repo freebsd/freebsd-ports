@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	www python
 MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION}/ \
 		CHEESESHOP
@@ -18,7 +18,6 @@ LICENSE=	BSD3CLAUSE
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	Django
 
 CONFLICTS=	py[23][0-9]-django-devel-[0-9]* py[23][0-9]-django-1.[0-57-9].*
 
