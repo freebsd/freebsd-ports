@@ -1,4 +1,4 @@
 bin/downtimes
 sbin/downtimed
-@exec /bin/mkdir -p /var/db/downtimed
-@unexec /bin/rmdir /var/db/downtimed 2>/dev/null || true
+@exec mkdir -p /var/db/downtimed
+@unexec rmdir /var/db/downtimed 2>/dev/null || true

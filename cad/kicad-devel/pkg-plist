@@ -2015,9 +2015,9 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DOCSDIR%%/scripts/make_global_table.sh
 @dirrm lib/kicad/plugins
 @dirrm lib/kicad
-@unexec /bin/rmdir %D/share/applications 2> /dev/null || true
-@unexec /bin/rmdir %D/share/mimelnk/application 2> /dev/null || true
-@unexec /bin/rmdir %D/share/mimelnk 2> /dev/null || true
+@unexec rmdir %D/share/applications 2> /dev/null || true
+@unexec rmdir %D/share/mimelnk/application 2> /dev/null || true
+@unexec rmdir %D/share/mimelnk 2> /dev/null || true
 @dirrm %%DATADIR%%/template
 @dirrm %%DATADIR%%/modules/packages3d/valves
 @dirrm %%DATADIR%%/modules/packages3d/to-xxx-packages

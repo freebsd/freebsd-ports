@@ -77,10 +77,10 @@
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/uppermiddle2.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/upperright.png
 @dirrm %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images
-@unexec /bin/rmdir %%WEBPREFIX%%/%%WEBDATADIR%%/%%WEBDATASUBDIR%% 2> /dev/null || true
-@unexec /bin/rmdir %%WEBPREFIX%%/%%WEBDATADIR%% 2> /dev/null || true
-@unexec /bin/rmdir %%WEBPREFIX%%/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
-@unexec /bin/rmdir %%WEBPREFIX%%/%%CGIBINDIR%% 2> /dev/null || true
+@unexec rmdir %%WEBPREFIX%%/%%WEBDATADIR%%/%%WEBDATASUBDIR%% 2> /dev/null || true
+@unexec rmdir %%WEBPREFIX%%/%%WEBDATADIR%% 2> /dev/null || true
+@unexec rmdir %%WEBPREFIX%%/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
+@unexec rmdir %%WEBPREFIX%%/%%CGIBINDIR%% 2> /dev/null || true
 @cwd %%REAL_PREFIX%%
 @dirrm %%DATADIR%%/html
 @dirrm %%DATADIR%%/lang

@@ -89,8 +89,8 @@ share/sqwebmail/webgpg
 @dirrm share/sqwebmail
 @dirrm libexec/sqwebmail
 %%CGIBINDIR%%/%%CGIBINSUBDIR%%/sqwebmail
-@unexec /bin/rmdir %D/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
-@unexec /bin/rmdir %D/%%CGIBINDIR%% 2> /dev/null || true
+@unexec rmdir %D/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
+@unexec rmdir %D/%%CGIBINDIR%% 2> /dev/null || true
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/bg.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluebottomleft.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluebottomright.png
@@ -138,5 +138,5 @@ share/sqwebmail/webgpg
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/trash2.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/uncancel.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/wikifmt.html
-@unexec /bin/rmdir %D/%%WEBDATADIR%%/%%WEBDATASUBDIR%% 2> /dev/null || true
-@unexec /bin/rmdir %D/%%WEBDATADIR%% 2> /dev/null || true
+@unexec rmdir %D/%%WEBDATADIR%%/%%WEBDATASUBDIR%% 2> /dev/null || true
+@unexec rmdir %D/%%WEBDATADIR%% 2> /dev/null || true

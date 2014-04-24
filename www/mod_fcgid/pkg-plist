@@ -3,4 +3,4 @@
 %%PORTDOCS%%%%DOCSDIR%%/mod_fcgid.html.en
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @exec install -m 700 -o www -g www -d /var/run/fcgidsock
-@unexec /bin/rmdir /var/run/fcgidsock 2>/dev/null || true
+@unexec rmdir /var/run/fcgidsock 2>/dev/null || true
