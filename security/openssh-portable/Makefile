@@ -207,12 +207,13 @@ NO_MTREE=		yes
 ETCSSH=			/etc/ssh
 USE_RCORDER=		openssh
 PLIST_SUB+=		NOTBASE="@comment "
-PLIST_SUB+=		BASEPREFIX="${PREFIX}"
 .else
 ETCSSH=			${PREFIX}/etc/ssh
 USE_RC_SUBR=		openssh
 PLIST_SUB+=		NOTBASE=""
 .endif
+
+PLIST_SUB+=		BASEPREFIX="${PREFIX}"
 
 # After all
 SUB_LIST+=		ETCSSH="${ETCSSH}"
