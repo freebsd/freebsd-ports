@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/kwnn/commonhd.h
 include/kwnn/cplib.h
 include/kwnn/jllib.h

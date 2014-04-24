@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/Wnn4/atod
 bin/Wnn4/atof
 bin/Wnn4/dtoa

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%GO_LIBDIR%%/github.com/ant0ine/go-json-rest.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/trie.a
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE

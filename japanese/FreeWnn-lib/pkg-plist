@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/wnn/commonhd.h
 include/wnn/config.h
 include/wnn/cplib.h
