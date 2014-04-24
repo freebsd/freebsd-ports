@@ -83,7 +83,6 @@
     SUBDIR += mess
     SUBDIR += minivmac
     SUBDIR += mtools
-    SUBDIR += mupen64-rice
     SUBDIR += mupen64plus
     SUBDIR += mupen64plus-audio-sdl
     SUBDIR += mupen64plus-core

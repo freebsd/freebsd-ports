@@ -6050,3 +6050,4 @@ emulators/mupen64-dummyaudio||2014-04-24|Has expired: Use mupen64plus instead
 emulators/mupen64-base|emulators/mupen64plus-core|2014-04-24|Has expired: Use mupen64plus instead
 x11/emu||2014-04-24|Has expired: Broken, not staged
 lang/ruby-doc-stdlib||2014-04-24|Has expired: Upstream rerolls frequently, online docs work well
+emulators/mupen64-rice|emulators/mupen64-video-rice|2014-04-24|Removed, part of removed mupen64
