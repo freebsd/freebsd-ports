@@ -31,6 +31,7 @@ OPTIONS_MULTI=		FLAVOR
 OPTIONS_MULTI_FLAVOR=	CLIENT SERVER SMP_CLIENT
 OPTIONS_DEFAULT=	CLIENT CURL CURL_DLOPEN SERVER OPTIMIZED_CFLAGS \
 			VORBIS SMP_CLIENT
+OPTIONS_SUB=		yes
 
 FLAVOR_DESC=		Clients and servers
 CLIENT_DESC=		Build client
@@ -40,7 +41,6 @@ GAMELIBS_DESC=		Force building game libraries
 OPENAL_DLOPEN_DESC=	Enable dynamic loading of OpenAL
 SMP_CLIENT_DESC=	Build SMP (threaded) client
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for arch in ${ARCH}
@@ -82,25 +82,16 @@ MAKE_ENV+=	USE_CODEC_VORBIS=1
 
 .if ${PORT_OPTIONS:MCLIENT}
 MAKE_ENV+=	BUILD_CLIENT=1
-PLIST_SUB+=	CLIENT=""
 WOPBIN+=	wop
-.else
-PLIST_SUB+=	CLIENT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSERVER}
 MAKE_ENV+=	BUILD_SERVER=1
-PLIST_SUB+=	SERVER=""
 WOPBIN+=	wopded
-.else
-PLIST_SUB+=	SERVER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	BUILD_GAME_SO=1
-PLIST_SUB+=	GAMELIBS=""
-.else
-PLIST_SUB+=	GAMELIBS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMP3}
@@ -114,10 +105,7 @@ MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=1
 
 .if ${PORT_OPTIONS:MSMP_CLIENT}
 MAKE_ENV+=	BUILD_CLIENT_SMP=1
-PLIST_SUB+=	SMPCLIENT=""
 WOPBIN+=	wop-smp
-.else
-PLIST_SUB+=	SMPCLIENT="@comment "
 .endif
 
 post-extract:
@@ -132,25 +120,25 @@ post-patch:
 # Do not log debug output of bots (can be enabled with "homedir"/"gamedir")
 	@${REINPLACE_CMD} -e 's|"botlib\.log"|"/dev/null"|' \
 		${WRKSRC}/code/botlib/be_interface.c
+	@${REINPLACE_CMD} '/callMask/ s|static||' \
+		${WRKSRC}/code/qcommon/vm_x86.c
 
 do-install:
-	@${MKDIR} ${DATADIR}/wop
-	${CP} -a ${WRKDIR}/wop/* ${DATADIR}/wop
+	@${MKDIR} ${STAGEDIR}${DATADIR}/wop
+	${CP} -a ${WRKDIR}/wop/* ${STAGEDIR}${DATADIR}/wop
 	${INSTALL_DATA} ${WRKDIR}/wop.png \
-		${PREFIX}/share/pixmaps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 .for bin in ${WOPBIN}
 # Rename wop* -> worldofpadman* to avoid conflicts with `games/wop'
 	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${bin} \
-		${PREFIX}/bin/${bin:S/wop/${PORTNAME}/}
+		${STAGEDIR}${PREFIX}/bin/${bin:S/wop/${PORTNAME}/}
 .endfor
 .if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/baseq3/*.so ${DATADIR}/wop
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/baseq3/*.so \
+		${STAGEDIR}${DATADIR}/wop
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${CP} -a ${WRKDIR}/readme/* ${DOCSDIR}
-.endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -a ${WRKDIR}/readme/* ${STAGEDIR}${DOCSDIR}
 
 generate-distfile:
 	@if [ -f ${DISTDIR}/${SRC_FILE}.tar.bz2 ]; then \
