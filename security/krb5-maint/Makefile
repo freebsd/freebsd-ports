@@ -43,7 +43,9 @@ LDAP=			Enable LDAP support
 PREFIX=			${KRB5_HOME}
 CFLAGS+=		-Wl,-rpath=${KRB5_HOME}/lib
 LDFLAGS+=		-Wl,-rpath=${KRB5_HOME}/lib
+.if ${KRB5_HOME} != ${LOCALBASE}
 BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
+.endif
 .endif
 LDFLAGS+=		-L${LOCALBASE}/lib
 CFLAGS+=		-I${LOCALBASE}/include

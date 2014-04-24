@@ -49,7 +49,9 @@ INFO=			krb5-admin krb5-install krb5-user
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
+.if ${KRB5_HOME} != ${LOCALBASE}
 BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
+.endif
 .endif
 
 CFLAGS+=		-I${PREFIX}/include
