@@ -14,7 +14,7 @@ COMMENT=	Y4mscaler scales, crops, and shifts Y'CbCr video
 
 BROKEN=		Conflicts with mjpegtools on /usr/local/bin/y4mscaler
 
-LIB_DEPENDS=	liblavjpeg-2.0.so:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS=	liblavjpeg.so:${PORTSDIR}/multimedia/mjpegtools
 
 USES=		gmake
 
