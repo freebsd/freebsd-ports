@@ -1,7 +1,7 @@
 include/ukcprog.h
 lib/libukcprog.a
-lib/libukcprog.la
 lib/libukcprog.so
 lib/libukcprog.so.0
+lib/libukcprog.so.0.0.1
 libdata/pkgconfig/libukcprog.pc
 man/man3/ukcprog.3.gz
