@@ -13,11 +13,16 @@ EXTRACT_ONLY=	${SOURCETARB}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Interactive meshes visualization
 
+LICENSE=	None
+LICENSE_NAME=	Special grant
+LICENSE_TEXT=	Special grant from the author
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 BUILD_DEPENDS=	${LOCALBASE}/include/cfortran.h:${PORTSDIR}/lang/cfortran
 
 USE_XORG=	x11 xmu xext
 USE_GL=		glut
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	makefile
 ALL_TARGET=	${OPSYS}
 MAKE_ENV=	WRKSRC="${WRKSRC}" ARCHI=${OPSYS} ARCH=${ARCH} OSREL=${OSREL}
@@ -37,7 +42,6 @@ PLIST_FILES+=	${MESHES:S|^|%%EXAMPLESDIR%%/|}
 PLIST_DIRS=	%%EXAMPLESDIR%%
 . endif
 
-NO_STAGE=	yes
 post-extract:
 	cd ${WRKDIR} &&	\
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${LIBTARBALL} ${EXTRACT_AFTER_ARGS} --exclude ${MAKEFILE}
@@ -50,10 +54,10 @@ pre-build:
 	${MKDIR} ${WRKSRC}/bin/${ARCH}/${OSREL}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${MESHES:S|^|${WRKSRC}/INRIA.dir/|} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${MESHES:S|^|${WRKSRC}/INRIA.dir/|} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
