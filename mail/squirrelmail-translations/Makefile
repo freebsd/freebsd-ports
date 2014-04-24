@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		squirrelmail-translations
-PORTVERSION=	20131229
+PORTVERSION=	20140420
 CATEGORIES=		mail www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw/squirrelmail
@@ -16,7 +16,7 @@ LICENSE=		GPLv2
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
-USE_BZIP2=		yes
+USES=			tar:bzip2 gettext
 
 WRKSRC=			${WRKDIR}/squirrelmail.locales
 
@@ -29,9 +29,9 @@ do-build:
 	@${RM} -r ${WRKSRC}/help/en_US
 
 do-install:
-	${MKDIR} ${STAGEDIR}${SQUIRRELDIR}
+	@${MKDIR} ${STAGEDIR}${SQUIRRELDIR}
 .for DIR in help images locale
-	cd ${WRKSRC} && ${FIND} ${DIR} | ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${DIR} ${STAGEDIR}${SQUIRRELDIR})
 .endfor
 
 .include <bsd.port.mk>
