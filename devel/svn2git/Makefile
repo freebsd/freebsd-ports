@@ -16,8 +16,7 @@ RUN_DEPENDS+=	git:${PORTSDIR}/devel/git \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
 
-USES=		qmake
-USE_XZ=		yes
+USES=		qmake tar:xz
 USE_QT4=	corelib
 
 OPTIONS_DEFINE=	FREEBSD_REPO

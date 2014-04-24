@@ -36,7 +36,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 USE_LDCONFIG32=	${PREFIX}/lib32 ${PREFIX}/lib32/wine
-USE_XZ=		yes
+USES=		tar:xz
 
 PORTSCOUT=	limitw:1,even
 
