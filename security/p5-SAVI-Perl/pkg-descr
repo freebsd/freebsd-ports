@@ -1,4 +1,10 @@
 This is sophossavi, the perl interface module to Sophos Anti virus.
 With thanks to the original author Paul B. Henson.
 
+Sophos AntiVirus from
+
+http://www.sophos.com/en-us/products/free-trials/shared-download-components/anti-virus-for-unix-and-netware.aspx
+
+needs to be installed to be able to build this.
+
 WWW: http://www.csupomona.edu/~henson/archive/projects/SAVI-Perl/dist/
