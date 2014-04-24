@@ -26,7 +26,6 @@ MAKE_ENV=	NO_ASM=y
 .endif
 
 post-patch: .SILENT
-	${MKDIR} ${STAGEDIR}${WRKSRC}/include/linux
 # Fix for GCC 4.1
 	${REINPLACE_CMD} -e '30d' ${WRKSRC}/src/vgabg.h
 	${REINPLACE_CMD} -e 's,^   (unsigned [[:alpha:]]*),,' \
