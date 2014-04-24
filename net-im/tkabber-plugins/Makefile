@@ -2,41 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	tkabber-plugins
-PORTVERSION=	20100131
-CATEGORIES=	net-im
-MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
+PORTVERSION=	1.1
+PORTEPOCH=	1
+CATEGORIES=	net-im tcl tk
+MASTER_SITES=	http://files.jabber.ru/tkabber/
 
-MAINTAINER=	c.kworr@gmail.com
+MAINTAINER=	mp39590@gmail.com
 COMMENT=	External Plugins for Tkabber
 
-RUN_DEPENDS=	tkabber-devel>=0.11.1.a.20100207:${PORTSDIR}/net-im/tkabber-devel
+LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+RUN_DEPENDS=	tkabber==1.1:${PORTSDIR}/net-im/tkabber
+
+USES=		tar:xz
 
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-SUBDIRS=	aniemoticons attline bc browser checkers chess ctcomp \
-		custom-urls cyrillize debug ejabberd floatingcontact \
+SUBDIRS=	aniemoticons attline battleship bc browser checkers chess \
+		ctcomp custom-urls cyrillize debug ejabberd floatingcontact \
 		floatinglog georoster gmail iconsets jidlink latex mute \
-		openurl osd poker presencecmd quiz quotelastmsg receipts \
+		openurl osd otr poker presencecmd quiz quotelastmsg receipts \
 		renju reversi singularity socials spy stripes tclchat \
 		tkabber-khim traffic unixkeys whiteboard
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${SUBDIRS}" ${DATADIR})
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.  for i in COPYING ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.  endfor
-.endif
-
-	${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${SUBDIRS} README" ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

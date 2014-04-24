@@ -1,3 +1,4 @@
+%%DATADIR%%/README
 %%DATADIR%%/aniemoticons/aniemoticons.tcl
 %%DATADIR%%/aniemoticons/anigif.tcl
 %%DATADIR%%/aniemoticons/msgs/de.msg
@@ -12,6 +13,25 @@
 %%DATADIR%%/attline/msgs/es.msg
 %%DATADIR%%/attline/msgs/pl.msg
 %%DATADIR%%/attline/msgs/ru.msg
+%%DATADIR%%/attline/msgs/uk.msg
+%%DATADIR%%/battleship/battleship.tcl
+%%DATADIR%%/battleship/msgs/ru.msg
+%%DATADIR%%/battleship/pixmaps/copybook/battleship-h.gif
+%%DATADIR%%/battleship/pixmaps/copybook/battleship-v.gif
+%%DATADIR%%/battleship/pixmaps/copybook/carrier-h.gif
+%%DATADIR%%/battleship/pixmaps/copybook/carrier-v.gif
+%%DATADIR%%/battleship/pixmaps/copybook/cruiser-h.gif
+%%DATADIR%%/battleship/pixmaps/copybook/cruiser-v.gif
+%%DATADIR%%/battleship/pixmaps/copybook/destroyer-h.gif
+%%DATADIR%%/battleship/pixmaps/copybook/destroyer-v.gif
+%%DATADIR%%/battleship/pixmaps/copybook/field-shaded.gif
+%%DATADIR%%/battleship/pixmaps/copybook/field.gif
+%%DATADIR%%/battleship/pixmaps/copybook/hit.gif
+%%DATADIR%%/battleship/pixmaps/copybook/icondef.xml
+%%DATADIR%%/battleship/pixmaps/copybook/miss.gif
+%%DATADIR%%/battleship/pixmaps/copybook/submarine-h.gif
+%%DATADIR%%/battleship/pixmaps/copybook/submarine-v.gif
+%%DATADIR%%/battleship/proto
 %%DATADIR%%/bc/bc.tcl
 %%DATADIR%%/bc/msgs/ru.msg
 %%DATADIR%%/bc/ru.dic
@@ -109,7 +129,9 @@
 %%DATADIR%%/ctcomp/VERSION
 %%DATADIR%%/ctcomp/ctcomp.tcl
 %%DATADIR%%/ctcomp/license.terms
+%%DATADIR%%/ctcomp/msgs/de.msg
 %%DATADIR%%/custom-urls/custom-urls.tcl
+%%DATADIR%%/custom-urls/msgs/pl.msg
 %%DATADIR%%/custom-urls/msgs/ru.msg
 %%DATADIR%%/cyrillize/cyrillize.tcl
 %%DATADIR%%/cyrillize/engrus.tbl
@@ -464,7 +486,29 @@
 %%DATADIR%%/openurl/msgs/ru.msg
 %%DATADIR%%/openurl/openurl.tcl
 %%DATADIR%%/osd/ChangeLog
+%%DATADIR%%/osd/msgs/ru.msg
 %%DATADIR%%/osd/osd.tcl
+%%DATADIR%%/otr/README
+%%DATADIR%%/otr/auth.tcl
+%%DATADIR%%/otr/key.tcl
+%%DATADIR%%/otr/msgs/ru.msg
+%%DATADIR%%/otr/otr.tcl
+%%DATADIR%%/otr/pixmaps/otr/finished.gif
+%%DATADIR%%/otr/pixmaps/otr/icondef.xml
+%%DATADIR%%/otr/pixmaps/otr/notprivate.gif
+%%DATADIR%%/otr/pixmaps/otr/private.gif
+%%DATADIR%%/otr/pixmaps/otr/unverified.gif
+%%DATADIR%%/otr/tclotr/auth.tcl
+%%DATADIR%%/otr/tclotr/crypto.tcl
+%%DATADIR%%/otr/tclotr/data.tcl
+%%DATADIR%%/otr/tclotr/key.tcl
+%%DATADIR%%/otr/tclotr/license.terms
+%%DATADIR%%/otr/tclotr/message.tcl
+%%DATADIR%%/otr/tclotr/otr.tcl
+%%DATADIR%%/otr/tclotr/pkgIndex.tcl
+%%DATADIR%%/otr/tclotr/smp.tcl
+%%DATADIR%%/otr/trans/ru.msg
+%%DATADIR%%/poker/msgs/ru.msg
 %%DATADIR%%/poker/pixmaps/classic/00.gif
 %%DATADIR%%/poker/pixmaps/classic/01.gif
 %%DATADIR%%/poker/pixmaps/classic/02.gif
@@ -601,6 +645,7 @@
 %%DATADIR%%/quotelastmsg/INSTALL
 %%DATADIR%%/quotelastmsg/README
 %%DATADIR%%/quotelastmsg/license.terms
+%%DATADIR%%/quotelastmsg/msgs/de.msg
 %%DATADIR%%/quotelastmsg/msgs/ru.msg
 %%DATADIR%%/quotelastmsg/quotelastmsg.tcl
 %%DATADIR%%/receipts/AUTHORS
@@ -666,6 +711,7 @@
 %%DATADIR%%/singularity/INSTALL
 %%DATADIR%%/singularity/README
 %%DATADIR%%/singularity/license.terms
+%%DATADIR%%/singularity/msgs/pl.msg
 %%DATADIR%%/singularity/msgs/ru.msg
 %%DATADIR%%/singularity/singularity.tcl
 %%DATADIR%%/socials/ChangeLog
@@ -685,6 +731,8 @@
 %%DATADIR%%/stripes/INSTALL
 %%DATADIR%%/stripes/README
 %%DATADIR%%/stripes/license.terms
+%%DATADIR%%/stripes/msgs/de.msg
+%%DATADIR%%/stripes/msgs/ru.msg
 %%DATADIR%%/stripes/stripes.tcl
 %%DATADIR%%/tclchat/msgs/es.msg
 %%DATADIR%%/tclchat/msgs/ru.msg
@@ -723,6 +771,7 @@
 %%DATADIR%%/unixkeys/README
 %%DATADIR%%/unixkeys/TODO
 %%DATADIR%%/unixkeys/license.terms
+%%DATADIR%%/unixkeys/msgs/ru.msg
 %%DATADIR%%/unixkeys/unixkeys.tcl
 %%DATADIR%%/whiteboard/ChangeLog
 %%DATADIR%%/whiteboard/msgs/de.msg
@@ -734,131 +783,141 @@
 %%DATADIR%%/whiteboard/msgs/uk.msg
 %%DATADIR%%/whiteboard/svgrender.tcl
 %%DATADIR%%/whiteboard/whiteboard.tcl
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/aniemoticons/msgs
-@dirrm %%DATADIR%%/aniemoticons
-@dirrm %%DATADIR%%/attline/msgs
-@dirrm %%DATADIR%%/attline
-@dirrm %%DATADIR%%/bc/msgs
-@dirrm %%DATADIR%%/bc
-@dirrm %%DATADIR%%/browser/msgs
-@dirrm %%DATADIR%%/browser
-@dirrm %%DATADIR%%/checkers/pixmaps/xboard
-@dirrm %%DATADIR%%/checkers/pixmaps/checkers
-@dirrm %%DATADIR%%/checkers/pixmaps
-@dirrm %%DATADIR%%/checkers/msgs
-@dirrm %%DATADIR%%/checkers/rules
-@dirrm %%DATADIR%%/checkers
-@dirrm %%DATADIR%%/chess/pixmaps/xboard
-@dirrm %%DATADIR%%/chess/pixmaps/classic
-@dirrm %%DATADIR%%/chess/pixmaps/wooden
-@dirrm %%DATADIR%%/chess/pixmaps
-@dirrm %%DATADIR%%/chess/msgs
-@dirrm %%DATADIR%%/chess
-@dirrm %%DATADIR%%/ctcomp
-@dirrm %%DATADIR%%/custom-urls/msgs
-@dirrm %%DATADIR%%/custom-urls
-@dirrm %%DATADIR%%/cyrillize/msgs
-@dirrm %%DATADIR%%/cyrillize
-@dirrm %%DATADIR%%/debug/msgs
-@dirrm %%DATADIR%%/debug
-@dirrm %%DATADIR%%/ejabberd/msgs
-@dirrm %%DATADIR%%/ejabberd
-@dirrm %%DATADIR%%/floatingcontact/msgs
-@dirrm %%DATADIR%%/floatingcontact
-@dirrm %%DATADIR%%/floatinglog/msgs
-@dirrm %%DATADIR%%/floatinglog
-@dirrm %%DATADIR%%/georoster/msgs
-@dirrm %%DATADIR%%/georoster
-@dirrm %%DATADIR%%/gmail/msgs
-@dirrm %%DATADIR%%/gmail
-@dirrm %%DATADIR%%/iconsets/gabber/services
-@dirrm %%DATADIR%%/iconsets/gabber/tkabber
-@dirrm %%DATADIR%%/iconsets/gabber/docking
-@dirrm %%DATADIR%%/iconsets/gabber/roster
-@dirrm %%DATADIR%%/iconsets/gabber
-@dirrm %%DATADIR%%/iconsets/gush/tkabber
-@dirrm %%DATADIR%%/iconsets/gush/docking
-@dirrm %%DATADIR%%/iconsets/gush/roster
-@dirrm %%DATADIR%%/iconsets/gush
-@dirrm %%DATADIR%%/iconsets/jajc/services
-@dirrm %%DATADIR%%/iconsets/jajc/tkabber
-@dirrm %%DATADIR%%/iconsets/jajc/docking
-@dirrm %%DATADIR%%/iconsets/jajc/roster
-@dirrm %%DATADIR%%/iconsets/jajc
-@dirrm %%DATADIR%%/iconsets/jarl/roster
-@dirrm %%DATADIR%%/iconsets/jarl
-@dirrm %%DATADIR%%/iconsets/msgs
-@dirrm %%DATADIR%%/iconsets/amibulb/tkabber
-@dirrm %%DATADIR%%/iconsets/amibulb/docking
-@dirrm %%DATADIR%%/iconsets/amibulb/roster
-@dirrm %%DATADIR%%/iconsets/amibulb
-@dirrm %%DATADIR%%/iconsets/psi/tkabber
-@dirrm %%DATADIR%%/iconsets/psi/roster
-@dirrm %%DATADIR%%/iconsets/psi
-@dirrm %%DATADIR%%/iconsets/icq/tkabber
-@dirrm %%DATADIR%%/iconsets/icq/docking
-@dirrm %%DATADIR%%/iconsets/icq/roster
-@dirrm %%DATADIR%%/iconsets/icq
-@dirrm %%DATADIR%%/iconsets/kroc/services
-@dirrm %%DATADIR%%/iconsets/kroc/tkabber
-@dirrm %%DATADIR%%/iconsets/kroc/docking
-@dirrm %%DATADIR%%/iconsets/kroc/roster
-@dirrm %%DATADIR%%/iconsets/kroc
-@dirrm %%DATADIR%%/iconsets
-@dirrm %%DATADIR%%/jidlink/plugins
-@dirrm %%DATADIR%%/jidlink/trans
-@dirrm %%DATADIR%%/jidlink/msgs
-@dirrm %%DATADIR%%/jidlink
-@dirrm %%DATADIR%%/latex/msgs
-@dirrm %%DATADIR%%/latex
-@dirrm %%DATADIR%%/mute/msgs
-@dirrm %%DATADIR%%/mute
-@dirrm %%DATADIR%%/openurl/msgs
-@dirrm %%DATADIR%%/openurl
-@dirrm %%DATADIR%%/osd
-@dirrm %%DATADIR%%/poker/pixmaps/classic
-@dirrm %%DATADIR%%/poker/pixmaps/doods
-@dirrm %%DATADIR%%/poker/pixmaps
-@dirrm %%DATADIR%%/poker/msgs
-@dirrm %%DATADIR%%/poker
-@dirrm %%DATADIR%%/presencecmd/msgs
-@dirrm %%DATADIR%%/presencecmd
-@dirrm %%DATADIR%%/quiz/msgs
-@dirrm %%DATADIR%%/quiz
-@dirrm %%DATADIR%%/quotelastmsg/msgs
-@dirrm %%DATADIR%%/quotelastmsg
-@dirrm %%DATADIR%%/receipts/images
-@dirrm %%DATADIR%%/receipts/msgs
-@dirrm %%DATADIR%%/receipts
-@dirrm %%DATADIR%%/renju/pixmaps/stones
-@dirrm %%DATADIR%%/renju/pixmaps/black
-@dirrm %%DATADIR%%/renju/pixmaps
-@dirrm %%DATADIR%%/renju/msgs
-@dirrm %%DATADIR%%/renju
+@dirrm %%DATADIR%%/whiteboard/msgs
+@dirrm %%DATADIR%%/whiteboard
+@dirrm %%DATADIR%%/unixkeys/msgs
+@dirrm %%DATADIR%%/unixkeys
+@dirrm %%DATADIR%%/traffic/msgs
+@dirrm %%DATADIR%%/traffic
+@dirrm %%DATADIR%%/tkabber-khim/msgs
+@dirrm %%DATADIR%%/tkabber-khim/khim
+@dirrm %%DATADIR%%/tkabber-khim
+@dirrm %%DATADIR%%/tclchat/msgs
+@dirrm %%DATADIR%%/tclchat
+@dirrm %%DATADIR%%/stripes/msgs
+@dirrm %%DATADIR%%/stripes
+@dirrm %%DATADIR%%/spy/msgs
+@dirrm %%DATADIR%%/spy
+@dirrm %%DATADIR%%/socials/msgs
+@dirrm %%DATADIR%%/socials
+@dirrm %%DATADIR%%/singularity/msgs
+@dirrm %%DATADIR%%/singularity
 @dirrm %%DATADIR%%/reversi/pixmaps/xboard
 @dirrm %%DATADIR%%/reversi/pixmaps/checkers
 @dirrm %%DATADIR%%/reversi/pixmaps
 @dirrm %%DATADIR%%/reversi/msgs
 @dirrm %%DATADIR%%/reversi
-@dirrm %%DATADIR%%/singularity/msgs
-@dirrm %%DATADIR%%/singularity
-@dirrm %%DATADIR%%/socials/msgs
-@dirrm %%DATADIR%%/socials
-@dirrm %%DATADIR%%/spy/msgs
-@dirrm %%DATADIR%%/spy
-@dirrm %%DATADIR%%/stripes
-@dirrm %%DATADIR%%/tclchat/msgs
-@dirrm %%DATADIR%%/tclchat
-@dirrm %%DATADIR%%/tkabber-khim/khim
-@dirrm %%DATADIR%%/tkabber-khim/msgs
-@dirrm %%DATADIR%%/tkabber-khim
-@dirrm %%DATADIR%%/traffic/msgs
-@dirrm %%DATADIR%%/traffic
-@dirrm %%DATADIR%%/unixkeys
-@dirrm %%DATADIR%%/whiteboard/msgs
-@dirrm %%DATADIR%%/whiteboard
+@dirrm %%DATADIR%%/renju/pixmaps/stones
+@dirrm %%DATADIR%%/renju/pixmaps/black
+@dirrm %%DATADIR%%/renju/pixmaps
+@dirrm %%DATADIR%%/renju/msgs
+@dirrm %%DATADIR%%/renju
+@dirrm %%DATADIR%%/receipts/msgs
+@dirrm %%DATADIR%%/receipts/images
+@dirrm %%DATADIR%%/receipts
+@dirrm %%DATADIR%%/quotelastmsg/msgs
+@dirrm %%DATADIR%%/quotelastmsg
+@dirrm %%DATADIR%%/quiz/msgs
+@dirrm %%DATADIR%%/quiz
+@dirrm %%DATADIR%%/presencecmd/msgs
+@dirrm %%DATADIR%%/presencecmd
+@dirrm %%DATADIR%%/poker/pixmaps/doods
+@dirrm %%DATADIR%%/poker/pixmaps/classic
+@dirrm %%DATADIR%%/poker/pixmaps
+@dirrm %%DATADIR%%/poker/msgs
+@dirrm %%DATADIR%%/poker
+@dirrm %%DATADIR%%/otr/trans
+@dirrm %%DATADIR%%/otr/tclotr
+@dirrm %%DATADIR%%/otr/pixmaps/otr
+@dirrm %%DATADIR%%/otr/pixmaps
+@dirrm %%DATADIR%%/otr/msgs
+@dirrm %%DATADIR%%/otr
+@dirrm %%DATADIR%%/osd/msgs
+@dirrm %%DATADIR%%/osd
+@dirrm %%DATADIR%%/openurl/msgs
+@dirrm %%DATADIR%%/openurl
+@dirrm %%DATADIR%%/mute/msgs
+@dirrm %%DATADIR%%/mute
+@dirrm %%DATADIR%%/latex/msgs
+@dirrm %%DATADIR%%/latex
+@dirrm %%DATADIR%%/jidlink/trans
+@dirrm %%DATADIR%%/jidlink/plugins
+@dirrm %%DATADIR%%/jidlink/msgs
+@dirrm %%DATADIR%%/jidlink
+@dirrm %%DATADIR%%/iconsets/psi/tkabber
+@dirrm %%DATADIR%%/iconsets/psi/roster
+@dirrm %%DATADIR%%/iconsets/psi
+@dirrm %%DATADIR%%/iconsets/msgs
+@dirrm %%DATADIR%%/iconsets/kroc/tkabber
+@dirrm %%DATADIR%%/iconsets/kroc/services
+@dirrm %%DATADIR%%/iconsets/kroc/roster
+@dirrm %%DATADIR%%/iconsets/kroc/docking
+@dirrm %%DATADIR%%/iconsets/kroc
+@dirrm %%DATADIR%%/iconsets/jarl/roster
+@dirrm %%DATADIR%%/iconsets/jarl
+@dirrm %%DATADIR%%/iconsets/jajc/tkabber
+@dirrm %%DATADIR%%/iconsets/jajc/services
+@dirrm %%DATADIR%%/iconsets/jajc/roster
+@dirrm %%DATADIR%%/iconsets/jajc/docking
+@dirrm %%DATADIR%%/iconsets/jajc
+@dirrm %%DATADIR%%/iconsets/icq/tkabber
+@dirrm %%DATADIR%%/iconsets/icq/roster
+@dirrm %%DATADIR%%/iconsets/icq/docking
+@dirrm %%DATADIR%%/iconsets/icq
+@dirrm %%DATADIR%%/iconsets/gush/tkabber
+@dirrm %%DATADIR%%/iconsets/gush/roster
+@dirrm %%DATADIR%%/iconsets/gush/docking
+@dirrm %%DATADIR%%/iconsets/gush
+@dirrm %%DATADIR%%/iconsets/gabber/tkabber
+@dirrm %%DATADIR%%/iconsets/gabber/services
+@dirrm %%DATADIR%%/iconsets/gabber/roster
+@dirrm %%DATADIR%%/iconsets/gabber/docking
+@dirrm %%DATADIR%%/iconsets/gabber
+@dirrm %%DATADIR%%/iconsets/amibulb/tkabber
+@dirrm %%DATADIR%%/iconsets/amibulb/roster
+@dirrm %%DATADIR%%/iconsets/amibulb/docking
+@dirrm %%DATADIR%%/iconsets/amibulb
+@dirrm %%DATADIR%%/iconsets
+@dirrm %%DATADIR%%/gmail/msgs
+@dirrm %%DATADIR%%/gmail
+@dirrm %%DATADIR%%/georoster/msgs
+@dirrm %%DATADIR%%/georoster
+@dirrm %%DATADIR%%/floatinglog/msgs
+@dirrm %%DATADIR%%/floatinglog
+@dirrm %%DATADIR%%/floatingcontact/msgs
+@dirrm %%DATADIR%%/floatingcontact
+@dirrm %%DATADIR%%/ejabberd/msgs
+@dirrm %%DATADIR%%/ejabberd
+@dirrm %%DATADIR%%/debug/msgs
+@dirrm %%DATADIR%%/debug
+@dirrm %%DATADIR%%/cyrillize/msgs
+@dirrm %%DATADIR%%/cyrillize
+@dirrm %%DATADIR%%/custom-urls/msgs
+@dirrm %%DATADIR%%/custom-urls
+@dirrm %%DATADIR%%/ctcomp/msgs
+@dirrm %%DATADIR%%/ctcomp
+@dirrm %%DATADIR%%/chess/pixmaps/xboard
+@dirrm %%DATADIR%%/chess/pixmaps/wooden
+@dirrm %%DATADIR%%/chess/pixmaps/classic
+@dirrm %%DATADIR%%/chess/pixmaps
+@dirrm %%DATADIR%%/chess/msgs
+@dirrm %%DATADIR%%/chess
+@dirrm %%DATADIR%%/checkers/rules
+@dirrm %%DATADIR%%/checkers/pixmaps/xboard
+@dirrm %%DATADIR%%/checkers/pixmaps/checkers
+@dirrm %%DATADIR%%/checkers/pixmaps
+@dirrm %%DATADIR%%/checkers/msgs
+@dirrm %%DATADIR%%/checkers
+@dirrm %%DATADIR%%/browser/msgs
+@dirrm %%DATADIR%%/browser
+@dirrm %%DATADIR%%/bc/msgs
+@dirrm %%DATADIR%%/bc
+@dirrm %%DATADIR%%/battleship/pixmaps/copybook
+@dirrm %%DATADIR%%/battleship/pixmaps
+@dirrm %%DATADIR%%/battleship/msgs
+@dirrm %%DATADIR%%/battleship
+@dirrm %%DATADIR%%/attline/msgs
+@dirrm %%DATADIR%%/attline
+@dirrm %%DATADIR%%/aniemoticons/msgs
+@dirrm %%DATADIR%%/aniemoticons
 @dirrm %%DATADIR%%
