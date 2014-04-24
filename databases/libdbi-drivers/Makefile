@@ -3,6 +3,7 @@
 
 PORTNAME=	libdbi-drivers
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DISTVERSION}
 
@@ -11,8 +12,8 @@ COMMENT=	Drivers for libdbi
 
 LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
 
-USE_GNOME=	lthack
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool:keepla
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-dbi-incdir=${LOCALBASE}/include/dbi
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
@@ -32,8 +33,6 @@ SQLITE3_CONFIGURE_WITH=	sqlite3
 
 PLIST_SUB+=	INGRES="@comment "
 PLIST_SUB+=	ORACLE="@comment "
-
-USES+=		gmake
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O20|${CFLAGS}|g' \

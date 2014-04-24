@@ -1,10 +1,7 @@
-%%MYSQL%%lib/dbd/libdbdmysql.a
 %%MYSQL%%lib/dbd/libdbdmysql.la
 %%MYSQL%%lib/dbd/libdbdmysql.so
-%%PGSQL%%lib/dbd/libdbdpgsql.a
 %%PGSQL%%lib/dbd/libdbdpgsql.la
 %%PGSQL%%lib/dbd/libdbdpgsql.so
-%%SQLITE3%%lib/dbd/libdbdsqlite3.a
 %%SQLITE3%%lib/dbd/libdbdsqlite3.la
 %%SQLITE3%%lib/dbd/libdbdsqlite3.so
 @dirrmtry lib/dbd
