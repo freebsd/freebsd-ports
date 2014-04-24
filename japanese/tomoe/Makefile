@@ -3,7 +3,7 @@
 
 PORTNAME=	tomoe
 PORTVERSION=	0.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -12,35 +12,20 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Tegaki Online MOji-ninshiki Engine
 
-USE_GNOME=	lthack gnomehack
-GNU_CONFIGURE=	yes
-USES=		gettext pkgconfig gmake perl5
-USE_LDCONFIG=	yes
-USE_RUBY=	yes
-USE_PERL5=	build
-
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-# We cannot use ${ARCH} nor ${UNAME} which are defined in bsd.port.mk, here.
-UNAME?=		/usr/bin/uname
-ARCH!=		${UNAME} -p
-.if !defined(OSVERSION)
-AWK?=		/usr/bin/awk
-SYSCTL?=	/sbin/sysctl
-.if exists(/usr/include/sys/param.h)
-OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
-.elif exists(/usr/src/sys/sys/param.h)
-OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
-.else
-OSVERSION!=	${SYSCTL} -n kern.osreldate
-.endif
-.endif
+GNU_CONFIGURE=	yes
+USES=		gettext gmake libtool pathfix perl5 pkgconfig
+USE_LDCONFIG=	yes
+USE_PERL5=	build
+
+CONFIGURE_ENV=	PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
+		pyexecdir=${PYTHON_SITELIBDIR} \
+		GMSGFMT="${LOCALBASE}/bin/msgfmt"
+CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=		DICT_RUBY EST MYSQL PYTHON RUBY UNIHAN
 OPTIONS_DEFAULT=	PYTHON
-.if ${ARCH} != "sparc64" && ${OSVERSION} < 700042
-OPTIONS_DEFAULT+=	UNIHAN
-.endif
 OPTIONS_SUB=		yes
 DICT_RUBY_DESC=		Enable Ruby based dictionary module
 DICT_RUBY_CONFIGURE_ENABLE=	dict-ruby
@@ -62,7 +47,7 @@ RUBY_CFLAGS=		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
 UNIHAN_DESC=		Enable Unihan database dictionary module
 UNIHAN_CONFIGURE_ENABLE=	unihan
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRUBY}
 BROKEN=		Broken with gem version of glib2
@@ -83,11 +68,6 @@ BUILD_DEPENDS+=	\
 	${RUBY_SITELIBDIR}/suikyo/suikyo.rb:${PORTSDIR}/japanese/suikyo
 .endif
 
-CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
-		pyexecdir=${PYTHON_SITELIBDIR} \
-		GMSGFMT="${LOCALBASE}/bin/msgfmt"
-CFLAGS+=	-I${LOCALBASE}/include
-
 .if ${PORT_OPTIONS:MUNIHAN}
 post-extract:
 	cd ${WRKSRC}/module/dict && \
@@ -101,4 +81,4 @@ post-patch:
 		${WRKSRC}/lib/tomoe.c \
 		${WRKSRC}/lib/glib-utils.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
