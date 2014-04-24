@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	v_sim
-PORTVERSION=	3.6.1.1
-PORTREVISION=	3
+PORTVERSION=	3.7.1
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 
@@ -15,28 +14,19 @@ LICENSE_NAME=	CeCILL
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
-
-USES=		fortran gmake pkgconfig
-USE_BZIP2=	yes
-USE_GNOME=	gtk20
+USES=		fortran gmake pkgconfig tar:bzip2
+USE_GNOME=	gtk20 cairo
 USE_GL=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc --disable-python-module
 CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS NLS EXAMPLES
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-MAN1=		v_sim.1
-.endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
@@ -46,7 +36,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_CDF)
-LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
 CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE}
 PLIST_SUB+=	CDF=""
 .else
@@ -55,7 +45,7 @@ PLIST_SUB+=	CDF="@comment "
 .endif
 
 .if !defined(WITHOUT_BABEL)
-LIB_DEPENDS+=	openbabel:${PORTSDIR}/science/openbabel
+LIB_DEPENDS+=	libopenbabel.so:${PORTSDIR}/science/openbabel
 CONFIGURE_ARGS+=--with-openbabel
 PLIST_SUB+=	BABEL=""
 .else
@@ -65,8 +55,8 @@ PLIST_SUB+=	BABEL="@comment "
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|$$datadir/doc/$$PACKAGE/examples|${EXAMPLESDIR}|'	\
-		-e 's|CFLAGS="-O2"|#CFLAGS="-O2"|;s|Werror ansi pedantic-errors||'	\
-		-e 's|$${docdir}/examples|${EXAMPLESDIR}|'				\
+		-e 's| CFLAGS="-O2"|#CFLAGS="-O2"|;s|Werror ansi pedantic-errors||'	\
+		-e 's| FCFLAGS="-O2"|FCFLAGS=${FFLAGS}|;s|$${docdir}/examples|${EXAMPLESDIR}|'	\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if ! ${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e 's|	po ||'	\

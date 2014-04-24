@@ -1,0 +1,10 @@
+--- lib/plug-ins/Makefile.in.orig	2014-04-09 09:37:31.000000000 +0200
++++ lib/plug-ins/Makefile.in	2014-04-24 23:23:33.000000000 +0200
+@@ -341,7 +341,6 @@
+ 	xsf \
+ 	cube \
+ 	abinit \
+-	python-gi \
+ 	archives \
+ 	bigdft
+ 
