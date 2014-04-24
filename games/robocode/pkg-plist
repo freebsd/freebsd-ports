@@ -92,6 +92,7 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/javadoc/robocode/control/RobocodeEngine.html
 %%DATADIR%%/javadoc/robocode/control/RobocodeListener.html
 %%DATADIR%%/javadoc/robocode/control/RobotResults.html
+%%DATADIR%%/javadoc/robocode/control/RobotSetup.html
 %%DATADIR%%/javadoc/robocode/control/RobotSpecification.html
 %%DATADIR%%/javadoc/robocode/control/events/BattleAdaptor.html
 %%DATADIR%%/javadoc/robocode/control/events/BattleCompletedEvent.html
@@ -178,6 +179,7 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/roborumble/roborumble.txt
 %%DATADIR%%/roborumble/teamrumble.txt
 %%DATADIR%%/roborumble/twinduel.txt
+%%DATADIR%%/robots/META-INF/MANIFEST.MF
 %%DATADIR%%/robots/sample/Corners.class
 %%DATADIR%%/robots/sample/Corners.java
 %%DATADIR%%/robots/sample/Corners.properties
@@ -270,28 +272,29 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/versions.md
 share/pixmaps/robocode.png
 share/pixmaps/roborumble.png
-@dirrm %%DATADIR%%/theme/editor
-@dirrm %%DATADIR%%/theme
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/robots/sampleteam
-@dirrm %%DATADIR%%/robots/samplesentry
-@dirrm %%DATADIR%%/robots/sampleex
-@dirrmtry %%DATADIR%%/robots/sample
-@dirrmtry %%DATADIR%%/robots
-@dirrmtry %%DATADIR%%/roborumble
-@dirrm %%DATADIR%%/license
-@dirrm %%DATADIR%%/libs
-@dirrm %%DATADIR%%/javadoc/robocode/util
+@dirrm %%DATADIR%%/battles
+@dirrm %%DATADIR%%/compilers
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/javadoc/resources
+@dirrm %%DATADIR%%/javadoc/robocode/annotation
+@dirrm %%DATADIR%%/javadoc/robocode/control/events
+@dirrm %%DATADIR%%/javadoc/robocode/control/snapshot
+@dirrm %%DATADIR%%/javadoc/robocode/control
 @dirrm %%DATADIR%%/javadoc/robocode/robotinterfaces/peer
 @dirrm %%DATADIR%%/javadoc/robocode/robotinterfaces
-@dirrm %%DATADIR%%/javadoc/robocode/control/snapshot
-@dirrm %%DATADIR%%/javadoc/robocode/control/events
-@dirrm %%DATADIR%%/javadoc/robocode/control
-@dirrm %%DATADIR%%/javadoc/robocode/annotation
+@dirrm %%DATADIR%%/javadoc/robocode/util
 @dirrm %%DATADIR%%/javadoc/robocode
-@dirrm %%DATADIR%%/javadoc/resources
 @dirrm %%DATADIR%%/javadoc
-@dirrmtry %%DATADIR%%/config
-@dirrm %%DATADIR%%/compilers
-@dirrm %%DATADIR%%/battles
+@dirrm %%DATADIR%%/libs
+@dirrm %%DATADIR%%/license
+@dirrmtry %%DATADIR%%/roborumble
+@dirrm %%DATADIR%%/robots/META-INF
+@dirrmtry %%DATADIR%%/robots/sample
+@dirrm %%DATADIR%%/robots/sampleex
+@dirrm %%DATADIR%%/robots/samplesentry
+@dirrm %%DATADIR%%/robots/sampleteam
+@dirrmtry %%DATADIR%%/robots
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/theme/editor
+@dirrm %%DATADIR%%/theme
 @dirrmtry %%DATADIR%%
