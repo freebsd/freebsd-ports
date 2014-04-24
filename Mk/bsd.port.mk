@@ -3328,9 +3328,6 @@ check-vulnerable:
 				vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
 			elif [ "${PORTNAME}" = "pkg" ]; then \
 				vlist=""; \
-			else \
-				${ECHO_MSG} "===> Unable to check vuln database as pkg(8) is missing"; \
-				exit 1; \
 			fi; \
 		elif [ -x "${LOCALBASE}/sbin/portaudit" ]; then \
 			vlist=`${LOCALBASE}/sbin/portaudit -X 14 "${PKGNAME}" \
