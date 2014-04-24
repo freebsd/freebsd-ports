@@ -69,8 +69,7 @@ USE_PERL5=	build
 USE_PYTHON=	yes
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
-USE_XZ=		yes
-USES=		bison compiler:c++11-lang gmake perl5 pkgconfig
+USES=		bison compiler:c++11-lang gmake perl5 pkgconfig tar:xz
 WANT_GNOME=	yes
 
 DISTFILES+=	${PORTNAME}-${LOVERSION}${EXTRACT_SUFX}
