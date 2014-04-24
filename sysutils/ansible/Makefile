@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	sysutils python
 MASTER_SITES=	SF/lifanov-ports-distfiles/sysutils/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
@@ -29,7 +29,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	036c819
+GH_COMMIT=	7b319d8
 
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
@@ -42,10 +42,8 @@ SHEBANG_FILES=	library/*/* \
 SUB_FILES=	pkg-message
 
 PLIST_FILES+=	man/man1/ansible-doc.1.gz \
-		man/man1/ansible-galaxy.1.gz \
 		man/man1/ansible-playbook.1.gz \
 		man/man1/ansible-pull.1.gz \
-		man/man1/ansible-vault.1.gz \
 		man/man1/ansible.1.gz \
 		${DESKTOPDIR}/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
