@@ -8,6 +8,7 @@ lib/libijs.a
 lib/libijs.la
 lib/libijs.so
 lib/libijs.so.1
+lib/libijs.so.1.0.1
 libdata/pkgconfig/ijs.pc
 man/man1/ijs-config.1.gz
 @dirrm include/ijs
