@@ -1,0 +1,38 @@
+Fix BadImplemented triggered in GDK 3
+
+Lead:
+https://bbs.archlinux.org/viewtopic.php?id=162012
+Debian bug:
+http://lists.debian.org/debian-x/2012/12/msg00133.html
+
+--- Xi/xiselectev.c.orig	2012-05-17 19:09:01.000000000 +0200
++++ Xi/xiselectev.c	2012-12-18 10:29:38.804469850 +0100
+@@ -175,17 +175,24 @@
+                 if (inputMasks)
+                     iclient = inputMasks->inputClients;
+                 for (; iclient; iclient = iclient->next) {
+-                    DeviceIntPtr dummy;
++                    DeviceIntPtr devTest;
++                    DeviceIntRec dummyTest;
+ 
+                     if (CLIENT_ID(iclient->resource) == client->index)
+                         continue;
+ 
+-                    dixLookupDevice(&dummy, evmask->deviceid, serverClient,
++                    if (evmask->deviceid == XIAllDevices ||
++                        evmask->deviceid == XIAllMasterDevices) {
++                        dummyTest.id = evmask->deviceid;
++                        devTest = &dummyTest;
++                    }
++                    else
++                        dixLookupDevice(&devTest, evmask->deviceid, serverClient,
+                                     DixReadAccess);
+-                    if (!dummy)
++                    if (!devTest)
+                         return BadImplementation;       /* this shouldn't happen */
+ 
+-                    if (xi2mask_isset(iclient->xi2mask, dummy, XI_TouchBegin))
++                    if (xi2mask_isset(iclient->xi2mask, devTest, XI_TouchBegin))
+                         return BadAccess;
+                 }
+             }
