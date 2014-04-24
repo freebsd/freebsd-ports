@@ -3,7 +3,7 @@
 
 PORTNAME=	maia
 DISTVERSION=	1.0.3-${SVNREVISION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
@@ -41,7 +41,7 @@ PEAR_DIR?=	${LOCALBASE}/share/pear
 PLIST_SUB+=	USERS="${USERS}" GROUPS="${GROUPS}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 OPTIONS_DEFINE=	APACHE LIGHTTPD WEBHOST MYSQL MYSQLSERVER PGSQL PGSQLSERVER DOVECOT \
-		POSTFIX PFA FUZZYOCR CLAMAV SPAMASSASSIN GRAPHICS BDB ALTERMIME CRYPT \
+		POSTFIX PFA FUZZYOCR CLAMAV SPAMASSASSIN BDB ALTERMIME CRYPT \
 		IPCOUNTRY DOMAINKEYS SPF DKIM FILE RAR ARJ UNARJ LHA ARC NOMARCH CAB \
 		RPM ZOO UNZOO LZOP FREEZE P7ZIP TNEF
 OPTIONS_DEFAULT=	MYSQL MYSQLSERVER DOVECOT POSTFIX CLAMAV SPAMASSASSIN BDB IPCOUNTRY \
@@ -59,7 +59,6 @@ PFA_DESC=		Use Postfixadmin
 FUZZYOCR_DESC=		Use FuzzyOcr
 CLAMAV_DESC=		Use ClamAV anti-virus
 SPAMASSASSIN_DESC=	Use SpamAssassin
-GRAPHICS_DESC=		Enable pie chart stats
 BDB_DESC=		Use BerkeleyDB
 ALTERMIME_DESC=		Use AlterMime
 CRYPT_DESC=		Encryption support
@@ -106,6 +105,26 @@ USE_APACHE_RUN=	22+
 USE_PHP=	bcmath ctype dom gettext hash iconv imap json mbstring \
 		mcrypt pdo pdo_sqlite posix session simplexml sockets \
 		sqlite3 tokenizer xml wddx xmlreader xmlwriter xmlrpc
+RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
+		${PEAR_DIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
+		${PEAR_DIR}/DB.php:${PORTSDIR}/databases/pear-DB \
+		${PEAR_DIR}/Pager/Pager.php:${PORTSDIR}/devel/pear-Pager \
+		${PEAR_DIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
+		${PEAR_DIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP \
+		${PEAR_DIR}/Log.php:${PORTSDIR}/sysutils/pear-Log \
+		${PEAR_DIR}/HTMLPurifier.php:${PORTSDIR}/devel/pear-htmlpurifier \
+		${PEAR_DIR}/Net/IMAP.php:${PORTSDIR}/mail/pear-Net_IMAP \
+		${PEAR_DIR}/Net/POP3.php:${PORTSDIR}/net/pear-Net_POP3 \
+		${PEAR_DIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
+		${PEAR_DIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color \
+		${PEAR_DIR}/Image/Canvas.php:${PORTSDIR}/graphics/pear-Image_Canvas \
+		${PEAR_DIR}/Image/Graph.php:${PORTSDIR}/graphics/pear-Image_Graph \
+		${PEAR_DIR}/Numbers/Roman.php:${PORTSDIR}/textproc/pear-Numbers_Roman \
+		${PEAR_DIR}/Numbers/Words.php:${PORTSDIR}/textproc/pear-Numbers_Words \
+		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
+PLIST_SUB+=     WEBHOST=""
+.else
+PLIST_SUB+=     WEBHOST="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -120,17 +139,6 @@ USE_PHP+=	pgsql
 
 .if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
-.endif
-
-.if ${PORT_OPTIONS:MWEBHOST}
-RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
-		${PEAR_DIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
-		${PEAR_DIR}/DB.php:${PORTSDIR}/databases/pear-DB \
-		${PEAR_DIR}/Pager/Pager.php:${PORTSDIR}/devel/pear-Pager \
-		${PEAR_DIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
-		${PEAR_DIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP \
-		${PEAR_DIR}/Log.php:${PORTSDIR}/sysutils/pear-Log \
-		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -171,14 +179,6 @@ RUN_DEPENDS+=	clamd:${PORTSDIR}/security/clamav
 
 .if ${PORT_OPTIONS:MSPAMASSASSIN}
 RUN_DEPENDS+=	spamassassin>=0:${PORTSDIR}/mail/spamassassin
-.endif
-
-.if ${PORT_OPTIONS:MGRAPHICS}
-RUN_DEPENDS+=	${PEAR_DIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color \
-		${PEAR_DIR}/Image/Canvas.php:${PORTSDIR}/graphics/pear-Image_Canvas \
-		${PEAR_DIR}/Image/Graph.php:${PORTSDIR}/graphics/pear-Image_Graph \
-		${PEAR_DIR}/Numbers/Roman.php:${PORTSDIR}/textproc/pear-Numbers_Roman \
-		${PEAR_DIR}/Numbers/Words.php:${PORTSDIR}/textproc/pear-Numbers_Words
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
@@ -304,9 +304,9 @@ post-patch:
 		-e "s|username = 'maia'|username = '${USERS}'|" \
 		-e "s|/var/lib/maia|${DATADIR}|" \
 		-e "s|/usr/bin/sa-learn|${PREFIX}/bin/sa-learn|" \
-		-e "s|local_cf_dir = undef|local_cf_dir = '${PREFIX}/etc/mail/spamassassin'|" \
+		-e "s|local_cf_dir = undef|local_cf_dir = '${ETCDIR}/mail/spamassassin'|" \
 		-e "s|system_rules_dir = undef|system_rules_dir = '/var/db/spamassassin'|" \
-		-e "s|user_rules_dir = undef|user_rules_dir = '${DATADIR}/.spamassassin'|" \
+		-e "s|user_rules_dir = undef|user_rules_dir = '${MAIAHOME}/.spamassassin'|" \
 		-e "s|template_dir = '/etc/maia/templates/'|template_dir = '${ETCDIR}/templates/'|" \
 			${WRKSRC}/maia.conf.dist
 
@@ -317,8 +317,12 @@ post-patch:
 	@${FIND} -E ${WRKSRC} -iregex '.*(bak|~)$$' -delete
 
 do-install:
+.if ${PORT_OPTIONS:MWEBHOST}
 	${MKDIR} -p ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC}/php && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/themes/*/compiled
+	${LN} -s ${PREFIX}/share/smarty ${STAGEDIR}${WWWDIR}/libs/Smarty
+.endif
 	${MKDIR} -p ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/scripts
 	${MKDIR} -p ${STAGEDIR}${ETCDIR}/templates
@@ -328,8 +332,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/maiad ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL} -m 644 ${WRKSRC}/maiad.conf.dist ${STAGEDIR}${ETCDIR}/maiad.conf.dist
 	${INSTALL} -m 644 ${WRKSRC}/maia.conf.dist ${STAGEDIR}${ETCDIR}/maia.conf.dist
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/themes/*/compiled
-	${LN} -s ${PREFIX}/share/smarty ${STAGEDIR}${WWWDIR}/libs/Smarty
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
