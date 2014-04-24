@@ -165,7 +165,7 @@ CONFIGURE_ARGS+=	--disable-libxml2
 .endif
 
 .if ${PORT_OPTIONS:MMJPEGTOOLS}
-LIB_DEPENDS+=	liblavjpeg-2.0.so:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	liblavjpeg.so:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--disable-mjpegtools

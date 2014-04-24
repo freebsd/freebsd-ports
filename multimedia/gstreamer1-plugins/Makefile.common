@@ -300,7 +300,7 @@ gst_mad_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
 gst_modplug_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
 
 # mpeg2enc
-gst_mpeg2enc_LIB_DEPENDS=	libmjpegutils-2.0.so:${PORTSDIR}/multimedia/mjpegtools
+gst_mpeg2enc_LIB_DEPENDS=	libmjpegutils.so:${PORTSDIR}/multimedia/mjpegtools
 
 # mpeg2dec
 gst_mpeg2dec_LIB_DEPENDS=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
