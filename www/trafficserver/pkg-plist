@@ -1,4 +1,3 @@
-@comment $FreeBSD: www/trafficserver/pkg-plist 331378 2013-10-23 12:12:40Z decke $
 @unexec if cmp -s %D/%%ETCDIR%%/cache.config %D/%%ETCDIR%%/cache.config.default; then rm %D/%%ETCDIR%%/cache.config; fi
 @unexec if cmp -s %D/%%ETCDIR%%/cluster.config %D/%%ETCDIR%%/cluster.config.default; then rm %D/%%ETCDIR%%/cluster.config; fi
 @unexec if cmp -s %D/%%ETCDIR%%/congestion.config %D/%%ETCDIR%%/congestion.config.default; then rm %D/%%ETCDIR%%/congestion.config; fi

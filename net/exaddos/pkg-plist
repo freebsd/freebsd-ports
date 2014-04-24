@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/exaddos
 %%PYTHON_SITELIBDIR%%/exaddos/__init__.py
 %%PYTHON_SITELIBDIR%%/exaddos/__init__.pyc

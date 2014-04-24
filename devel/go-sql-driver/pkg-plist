@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%GO_LIBDIR%%/github.com/go-sql-driver/mysql.a
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/AUTHORS
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/CHANGELOG.md
