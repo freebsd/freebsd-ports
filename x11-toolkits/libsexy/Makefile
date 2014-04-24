@@ -3,7 +3,7 @@
 
 PORTNAME=	libsexy
 PORTVERSION=	0.1.11
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexy/
 
@@ -16,10 +16,9 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		pkgconfig gettext
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack lthack gtk20 libxml2
+USES=		gettext libtool:keepla pathfix pkgconfig
+USE_GNOME=	gtk20 libxml2
 USE_LDCONFIG=	yes
 
 post-patch:
