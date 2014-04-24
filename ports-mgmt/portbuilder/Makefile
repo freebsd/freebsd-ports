@@ -10,11 +10,11 @@ MASTER_SITES=	http://cloud.github.com/downloads/DragonSA/portbuilder/
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Concurrent FreeBSD port builder
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_XZ=		yes
+USES=		tar:xz
 
 PORTDOCS=	BUGS ChangeLog COPYRIGHT README
 

@@ -15,8 +15,7 @@ COMMENT=	Python binding for the LZMA compression library
 
 LICENSE=	LGPL3
 
-USES=			pkgconfig
-USE_BZIP2=		yes
+USES=			pkgconfig tar:bzip2
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

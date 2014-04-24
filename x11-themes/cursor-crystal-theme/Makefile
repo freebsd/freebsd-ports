@@ -17,8 +17,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		xcursorgen:${PORTSDIR}/x11/xcursorgen
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|function ||' \
