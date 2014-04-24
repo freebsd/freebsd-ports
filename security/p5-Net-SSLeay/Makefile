@@ -3,6 +3,7 @@
 
 PORTNAME=	Net-SSLeay
 PORTVERSION=	1.58
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,8 +27,9 @@ PORTEXAMPLES=	*
 SHEBANG_FILES=	examples/*.pl
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}/
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Net/SSLeay/SSLeay.so
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/req.conf ${STAGEDIR}${EXAMPLESDIR}/req.conf
 
 .include <bsd.port.mk>
