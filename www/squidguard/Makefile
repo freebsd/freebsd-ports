@@ -2,7 +2,7 @@
 
 PORTNAME=	squidGuard
 PORTVERSION=	1.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	http://www.squidguard.org/Downloads/:a \
 		http://www.squidguard.org/Downloads/Contrib/:b
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-sg-config=${ETCDIR}/${PORTNAME}.conf \
 		--with-sg-dbhome=${DATADIR} \
 		--with-sg-logdir=${LOGDIR} \
+		--with-squiduser=${SQUID_UID} \
 		--exec-prefix=${PREFIX}
 CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
 
