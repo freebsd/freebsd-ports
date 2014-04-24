@@ -183,7 +183,7 @@ fi
 	fi
 	listmtree "${PORTSDIR}/Templates/BSD.local.dist" "${LOCALBASE}"
 
-	if [ -n "${GNOME_MTREE_FILE}" ]; then
+	if [ -n "${GNOME_MTREE_FILE}" ] && [ -f "${GNOME_MTREE_FILE}" ]; then
 		listmtree "${GNOME_MTREE_FILE}" "${PREFIX}"
 	fi
 	unset MTREE_FILE GNOME_MTREE_FILE
