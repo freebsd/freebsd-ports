@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	herbstluftwm
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://herbstluftwm.org/tarballs/
 
@@ -22,20 +21,9 @@ MAKE_ARGS=	PREFIX=${PREFIX} SYSCONFDIR=${PREFIX}/etc \
 		MANDIR=${PREFIX}/man
 
 OPTIONS_DEFINE=	BASH ZSH DOCS EXAMPLES
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBASH}
-PLIST_SUB+=	BASH=""
-.else
-PLIST_SUB+=	BASH="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MZSH}
-PLIST_SUB+=	ZSH=""
-.else
-PLIST_SUB+=	ZSH="@comment "
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/-[LI]\/usr/s,/usr,${LOCALBASE},' \
