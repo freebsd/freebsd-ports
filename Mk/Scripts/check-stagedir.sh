@@ -364,8 +364,11 @@ check_missing_plist_items() {
 	mkdir ${WRKDIR}/.missing-dirs
 	comm -23 ${WRKDIR}/.plist-dirs-sorted-no-comments \
 	    ${WRKDIR}/.staged-dirs-sorted > ${WRKDIR}/.missing-plist-dirs
-	sed "s,^,${WRKDIR}/.missing-dirs," ${WRKDIR}/.missing-plist-dirs | \
-	    xargs mkdir -p
+	# Creates the dirs in WRKDIR/.missing-dirs and ensure spaces are
+	# quoted.
+	sed -e "s,^,${WRKDIR}/.missing-dirs," \
+	    -e 's,^\(.*\)$,"\1",' \
+	    ${WRKDIR}/.missing-plist-dirs | xargs mkdir -p
 	find -ds ${WRKDIR}/.missing-dirs | \
 	    sed -e "s,^${WRKDIR}/.missing-dirs,," | \
 	    while read dir; do \
