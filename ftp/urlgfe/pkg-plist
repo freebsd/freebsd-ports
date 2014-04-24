@@ -1,13 +1,13 @@
 bin/urlgfe
-%%DOCSDIR%%/ABOUT-NLS
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%GNOME:%%share/gnome/apps/Internet/urlgfe.desktop
-%%GNOME:%%share/pixmaps/urlgfe-icon.png
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+share/applications/urlgfe.desktop
 share/locale/zh_TW/LC_MESSAGES/urlgfe.mo
-@dirrm %%DOCSDIR%%
+share/pixmaps/urlgfe-icon.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
