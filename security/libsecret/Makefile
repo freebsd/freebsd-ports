@@ -4,6 +4,7 @@
 
 PORTNAME=	libsecret
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 USE_XZ=		yes
 USE_GNOME=	gnomehier glib20 libxslt:build intltool introspection:build
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-introspection --disable-vala

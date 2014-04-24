@@ -3,6 +3,7 @@
 
 PORTNAME=	el
 PORTVERSION=	193
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/rene \
 		ftp://rene-ladan.nl/pub/distfiles/

@@ -1,5 +1,7 @@
 bin/noegnud-0.8.0-nethack-3.4.3
 bin/noegnud-nethack-3.4.3
+@owner games
+@group bin
 share/noegnud-0.8.0/nethack-3.4.3/license
 share/noegnud-0.8.0/nethack-3.4.3/logfile
 share/noegnud-0.8.0/nethack-3.4.3/nhdat
@@ -7,7 +9,7 @@ share/noegnud-0.8.0/nethack-3.4.3/noegnud-0.8.0-nethack-3.4.3
 share/noegnud-0.8.0/nethack-3.4.3/perm
 share/noegnud-0.8.0/nethack-3.4.3/record
 share/noegnud-0.8.0/nethack-3.4.3/recover
-@exec chown games:bin %D/share/noegnud-0.8.0/nethack-3.4.3
+@exec chown root:wheel %D/share/noegnud-0.8.0
 @exec chmod 775 %D/share/noegnud-0.8.0/nethack-3.4.3
 @dirrmtry share/noegnud-0.8.0/nethack-3.4.3/save
 @dirrmtry share/noegnud-0.8.0/nethack-3.4.3

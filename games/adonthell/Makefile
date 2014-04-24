@@ -4,7 +4,7 @@
 
 PORTNAME=	adonthell
 PORTVERSION=	0.3.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX} \
@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 LICENSE_DISTFILES=	${DISTFILES}
 
 LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
-		freetype:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_SDL=	mixer ttf sdl
 USE_PYTHON=	yes

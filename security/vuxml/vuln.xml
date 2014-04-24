@@ -51,6 +51,178 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="59e72db2-cae6-11e3-8420-00e0814cab4e">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py26-django</name>
+	<name>py27-django</name>
+	<name>py31-django</name>
+	<name>py32-django</name>
+	<name>py33-django</name>
+	<name>py34-django</name>
+	<range><ge>1.6</ge><lt>1.6.3</lt></range>
+      </package>
+      <package>
+	<name>py26-django15</name>
+	<name>py27-django15</name>
+	<name>py31-django15</name>
+	<name>py32-django15</name>
+	<name>py33-django15</name>
+	<name>py34-django15</name>
+	<range><ge>1.5</ge><lt>1.5.6</lt></range>
+      </package>
+      <package>
+	<name>py26-django14</name>
+	<name>py27-django14</name>
+	<name>py31-django14</name>
+	<name>py32-django14</name>
+	<name>py33-django14</name>
+	<name>py34-django14</name>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+      </package>
+      <package>
+	<name>py26-django-devel</name>
+	<name>py27-django-devel</name>
+	<range><lt>20140423,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2014/apr/21/security/">
+	  <p>These releases address an unexpected code-execution issue, a
+	    caching issue which can expose CSRF tokens and a MySQL typecasting
+	    issue. While these issues present limited risk and may not affect
+	    all Django users, we encourage all users to evaluate their own
+	    risk and upgrade as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2014/apr/21/security/</url>
+      <cvename>CVE-2014-0472</cvename>
+      <cvename>CVE-2014-0473</cvename>
+      <cvename>CVE-2014-0474</cvename>
+    </references>
+    <dates>
+      <discovery>2014-04-21</discovery>
+      <entry>2014-04-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0b8d7194-ca88-11e3-9d8d-c80aa9043978">
+    <topic>OpenSSL -- Remote Data Injection / DoS</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_11</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><le>1.0.1g</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Applications that use SSL_MODE_RELEASE_BUFFERS, such as nginx, are
+	  prone to a race condition which may allow a remote attacker to
+	  inject random data into other connections.</p>
+      </body>
+    </description>
+    <references>
+      <url>https://rt.openssl.org/Ticket/Display.html?id=2167</url>
+      <url>http://www.tedunangst.com/flak/post/analysis-of-openssl-freelist-reuse</url>
+      <cvename>CVE-2010-5298</cvename>
+    </references>
+    <dates>
+      <discovery>2010-02-09</discovery>
+      <entry>2014-04-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="608ed765-c700-11e3-848c-20cf30e32f6d">
+    <topic>bugzilla -- Cross-Site Request Forgery</topic>
+    <affects>
+      <package>
+	<name>bugzilla40</name>
+	<range><ge>2.0.0</ge><lt>4.4.3</lt></range>
+      </package>
+      <package>
+	<name>bugzilla42</name>
+	<range><ge>2.0.0</ge><lt>4.4.3</lt></range>
+      </package>
+      <package>
+	<name>bugzilla44</name>
+	<range><ge>2.0.0</ge><lt>4.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.11/">
+	  <p>The login form had no CSRF protection, meaning that
+	    an attacker could force the victim to log in using the
+	    attacker's credentials. If the victim then reports a new
+	    security sensitive bug, the attacker would get immediate
+	    access to this bug.</p>
+	  <p>
+	    Due to changes involved in the Bugzilla API, this fix is
+	    not backported to the 4.0 and 4.2 branches, meaning that
+	    Bugzilla 4.0.12 and older, and 4.2.8 and older, will
+	    remain vulnerable to this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1517</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=713926</url>
+    </references>
+    <dates>
+      <discovery>2014-04-17</discovery>
+      <entry>2014-04-18</entry>
+      <modified>2014-04-18</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="60bfa396-c702-11e3-848c-20cf30e32f6d">
+    <topic>bugzilla -- Social Engineering</topic>
+    <affects>
+      <package>
+	<name>bugzilla40</name>
+	<range><ge>2.0.0</ge><lt>4.0.12</lt></range>
+      </package>
+      <package>
+	<name>bugzilla42</name>
+	<range><ge>4.1.1</ge><lt>4.2.8</lt></range>
+      </package>
+      <package>
+	<name>bugzilla44</name>
+	<range><ge>4.4.0</ge><lt>4.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.11/">
+	  <p>Dangerous control characters can be inserted into
+	    Bugzilla, notably into bug comments. If the text, which
+	    may look safe, is copied into a terminal such as xterm or
+	    gnome-terminal, then unexpected commands could be executed
+	    on the local machine.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=968576</url>
+    </references>
+    <dates>
+      <discovery>2014-04-17</discovery>
+      <entry>2014-04-18</entry>
+      <modified>2014-04-18</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="abad20bf-c1b4-11e3-a5ac-001b21614864">
     <topic>OpenLDAP -- incorrect handling of NULL in certificate Common Name</topic>
     <affects>

@@ -3,7 +3,7 @@
 
 PORTNAME=	soya3d
 PORTVERSION=	0.14
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ COMMENT=	Very high level 3D engine for Python
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
-		freetype.9:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:${PORTSDIR}/graphics/py-editobj \
 		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu \
 		${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer

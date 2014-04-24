@@ -1,5 +1,7 @@
 bin/noegnud-0.8.0-nethack-3.4.2-deet
 bin/noegnud-nethack-3.4.2-deet
+@owner games
+@group bin
 share/noegnud-0.8.0/nethack-3.4.2-deet/license
 share/noegnud-0.8.0/nethack-3.4.2-deet/logfile
 share/noegnud-0.8.0/nethack-3.4.2-deet/nhdat
@@ -7,7 +9,7 @@ share/noegnud-0.8.0/nethack-3.4.2-deet/noegnud-0.8.0-nethack-3.4.2-deet
 share/noegnud-0.8.0/nethack-3.4.2-deet/perm
 share/noegnud-0.8.0/nethack-3.4.2-deet/record
 share/noegnud-0.8.0/nethack-3.4.2-deet/recover
-@exec chown games:bin %D/share/noegnud-0.8.0/nethack-3.4.2-deet
+@exec chown root:wheel %D/share/noegnud-0.8.0
 @exec chmod 775 %D/share/noegnud-0.8.0/nethack-3.4.2-deet
 @dirrmtry share/noegnud-0.8.0/nethack-3.4.2-deet/save
 @dirrmtry share/noegnud-0.8.0/nethack-3.4.2-deet

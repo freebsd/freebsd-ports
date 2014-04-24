@@ -3,6 +3,7 @@
 
 PORTNAME=	opendnssec
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 

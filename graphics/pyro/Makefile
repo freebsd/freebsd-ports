@@ -3,7 +3,7 @@
 
 PORTNAME=	pyro
 PORTVERSION=	1.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://nostatic.org/pyro/
 EXTRACT_SUFX=	.tgz

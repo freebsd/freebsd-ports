@@ -3,7 +3,7 @@
 
 PORTNAME=	ser
 PORTVERSION=	0.9.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/ser/ \
 		http://download2.berlios.de/ser/
@@ -15,6 +15,7 @@ COMMENT=	Fast and configurable SIP proxy
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
+USE_GNOME=	# empty
 USE_RC_SUBR=	ser
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -50,7 +51,7 @@ MAKE_ENV+=	POSTGRESQL=postgres
 
 .if !defined(WITHOUT_PRESENCE)
 PLIST_SUB+=	PA=""
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+USE_GNOME+=	libxml2
 .else
 PLIST_SUB+=	PA="@comment "
 MAKE_ENV+=	PA=pa

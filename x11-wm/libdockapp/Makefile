@@ -3,7 +3,7 @@
 
 PORTNAME=	libdockapp
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	xride
@@ -14,12 +14,12 @@ COMMENT=	Standard library for Window Maker dock apps
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes
 
-USES=		libtool
+USES=		libtool:keepla
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 USE_XORG=	xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-font --without-examples
-USE_LDCONFIG=	yes
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/dockapp

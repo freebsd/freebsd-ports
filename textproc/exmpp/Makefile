@@ -3,6 +3,7 @@
 
 PORTNAME=	exmpp
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	textproc net-im
 MASTER_SITES=	http://download.process-one.net/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -13,7 +14,7 @@ COMMENT=	Fast and scalable library for XMPP written in Erlang/OTP
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-static=yes \

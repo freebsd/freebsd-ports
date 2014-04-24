@@ -4,6 +4,7 @@
 
 PORTNAME=	goffice
 PORTVERSION=	0.10.11
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	010
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XZ=		yes
 USE_GNOME=	gnomeprefix gtk30 intlhack libgsf librsvg2
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

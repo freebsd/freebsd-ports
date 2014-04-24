@@ -21,20 +21,14 @@ DATADIR=	${Q3DIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../quake3-data/Makefile.include"
-.include <bsd.port.options.mk>
 
 do-install:
-	@${MKDIR} ${DATADIR}
-.for f in *.pk3 description.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
-.endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.  for f in beta3.html radio_commands.txt readme*.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.pk3 description.txt \
+		 ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} beta3.html radio_commands.txt \
+		readme*.txt ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

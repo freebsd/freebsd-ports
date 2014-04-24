@@ -3,7 +3,7 @@
 
 PORTNAME=	mtpaint
 PORTVERSION=	3.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gif.5:${PORTSDIR}/graphics/giflib \
-		freetype.9:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 OPTIONS_DEFINE=	LCMS2 OPENJPEG NLS
 OPTIONS_DEFAULT=	LCMS2 OPENJPEG

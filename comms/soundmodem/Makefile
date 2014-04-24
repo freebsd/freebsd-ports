@@ -2,7 +2,7 @@
 
 PORTNAME=	soundmodem
 PORTVERSION=	0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.baycom.org/~tom/ham/soundmodem/ \
 		http://chronos.org.uk/distfiles/

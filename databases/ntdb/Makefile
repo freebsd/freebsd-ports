@@ -63,10 +63,14 @@ CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
 _MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
 .endif
 
+.if defined(NO_PYTHON)
+CONFIGURE_ARGS+=	--disable-python
+.else
 USE_PYTHON_RUN=		yes
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/ntdb.so
 PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
 			%%PYTHON_LIBDIR%%
+.endif
 
 TDB_MAN3=		man/man3/ntdb.3.gz
 

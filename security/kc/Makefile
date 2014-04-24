@@ -3,6 +3,7 @@
 
 PORTNAME=	kc
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://github.com/levaidaniel/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 

@@ -1,5 +1,7 @@
 etc/mini_httpd.cnf.sample
 etc/rc.d/mini_httpd.sh
+man/man1/mini_httpd-htpasswd.1.gz
+man/man8/mini_httpd.8.gz
 sbin/mini_httpd
 sbin/mini_httpd-htpasswd
 sbin/mini_httpd_wrapper

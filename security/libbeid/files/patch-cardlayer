@@ -1,0 +1,111 @@
+--- cardlayer/src/cache.cpp.orig
++++ cardlayer/src/cache.cpp
+@@ -202,10 +202,8 @@
+ 		; // TODO: log
+ 	else
+ 	{
+-		size_t tmpHeader = fwrite(&header, sizeof(tCacheHeader), 1, f);
+-		tmpHeader = tmpHeader;	//avoid warning
+-		size_t tmpData   = fwrite(oData.GetBytes(), 1, oData.Size(), f);
+-		tmpData = tmpData;	//avoid warning
++		(void)fwrite(&header, sizeof(tCacheHeader), 1, f);
++		(void)fwrite(oData.GetBytes(), 1, oData.Size(), f);
+ 		fclose(f);
+ 	}
+ }
+--- cardlayer/src/card.cpp.orig
++++ cardlayer/src/card.cpp
+@@ -25,7 +25,7 @@
+ 
+ CCard::CCard(SCARDHANDLE hCard, CContext *poContext, CPinpad *poPinpad) :
+ 	m_hCard(hCard), m_poContext(poContext), m_poPinpad(poPinpad),
+-	m_oCache(poContext), m_ulLockCount(0), m_bSerialNrString(false),m_cardType(CARD_UNKNOWN)
++	m_oCache(poContext), m_cardType(CARD_UNKNOWN), m_ulLockCount(0), m_bSerialNrString(false)
+ {
+ }
+ 
+@@ -301,7 +301,7 @@
+ {
+ 	// By default no caching, card must implement this method
+ 	// to allow certain files to be cached (in a certain way).
+-	tCacheInfo dontCache = {DONT_CACHE};
++	tCacheInfo dontCache = {DONT_CACHE,0};
+ 
+ 	return dontCache;
+ }
+--- cardlayer/src/pkcs15.cpp.orig
++++ cardlayer/src/pkcs15.cpp
+@@ -27,7 +27,7 @@
+ {
+ 
+   const static tPin PinInvalid = {false, "",0,0,0,0,0,0, 0, 0, 0, 0, 0,PIN_ENC_BCD,"",""};
+-  const static tCert CertInvalid = {false, "", 0, 0,0,0};
++  const static tCert CertInvalid = {false, "", 0, 0,0,0,false,false,""};
+   const static tPrivKey PrivKeyInvalid = {false, "", 0,0,0,0,0,0,0,"", 0,false};
+ 
+   // Hardcoded Beid V1 PINs, keys, certs -- to be removed
+@@ -63,8 +63,7 @@
+   {
+   }
+ 
+-  CPKCS15::CPKCS15(CContext *poContext) :
+-    m_poContext(poContext)
++  CPKCS15::CPKCS15(CContext *poContext)
+   {
+     Clear();
+   }
+--- cardlayer/src/pkcs15.h.orig
++++ cardlayer/src/pkcs15.h
+@@ -90,7 +90,6 @@
+ 
+   private:
+     CCard *m_poCard;
+-    CContext *m_poContext;
+     PKCS15Parser *m_poParser;
+ 
+ #ifdef WIN32
+--- cardlayer/src/pkicard.cpp.orig
++++ cardlayer/src/pkicard.cpp
+@@ -363,7 +363,7 @@
+ tFileInfo CPkiCard::SelectFile(const std::string & csPath, bool bReturnFileInfo)
+ {
+ 	CByteArray oResp;
+-    tFileInfo xFileInfo = {0};
++    tFileInfo xFileInfo = {0,0,0};
+ 
+     unsigned long ulPathLen = (unsigned long) csPath.size();
+     if (ulPathLen % 4 != 0 || ulPathLen == 0)
+--- cardlayer/src/reader.cpp.orig
++++ cardlayer/src/reader.cpp
+@@ -280,8 +280,7 @@
+     }
+     catch(CMWException &e)
+     {
+-	unsigned long err = e.GetError();
+-	err = err;
++	(void)e.GetError();
+         return m_oPKCS15.GetSerialNr();
+     }
+ }
+--- cardlayer/src/threadpool.cpp.orig
++++ cardlayer/src/threadpool.cpp
+@@ -79,7 +79,7 @@
+ 	m_bRunning = false;
+ }
+ 
+-void CEventCallbackThread::Stop()
++void CEventCallbackThread::Stop(unsigned long ulSleepFrequency)
+ {
+ 	m_bStop = true;
+ }
+--- cardlayer/src/threadpool.h.orig
++++ cardlayer/src/threadpool.h
+@@ -42,7 +42,7 @@
+ 
+ 	void Run();
+ 
+-	void Stop();
++	void Stop(unsigned long ulSleepFrequency=100);
+ 
+ 	bool HasStopped();
+ 

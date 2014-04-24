@@ -3,7 +3,7 @@
 
 PORTNAME=	dtv
 PORTVERSION=	0.50
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 

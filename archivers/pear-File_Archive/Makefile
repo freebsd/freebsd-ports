@@ -26,7 +26,7 @@ PEAR_AUTOINSTALL=	YES
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MWITH_PEAR_MAIL}
+.if ${PORT_OPTIONS:MPEAR_MAIL}
 RUN_DEPENDS+=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail
 .endif
 

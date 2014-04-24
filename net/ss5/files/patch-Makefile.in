@@ -1,33 +1,54 @@
---- Makefile.in.orig	2009-07-17 18:03:01.000000000 -0300
-+++ Makefile.in	2011-05-11 15:16:05.000000000 -0300
-@@ -10,6 +10,11 @@
+--- Makefile.in.orig	2009-07-17 16:03:01.000000000 -0500
++++ Makefile.in
+@@ -1,7 +1,7 @@
+ SUBDIRS=src modules
+ 
+-dst_dir   = ${prefix}
+-OS        = @OS@
++dst_dir   = ${DESTDIR}${prefix}
++OS        = FreeBSD
+ lib_path_base   = @lib_path_base@
+ conf_path_base  = @conf_path_base@
+ bin_path_base   = @bin_path_base@
+@@ -10,7 +10,9 @@ man_path_base   = @man_path_base@
  log_path_base   = @log_path_base@
  trc_path_base   = @trc_path_base@
  
-+ss5_pam         = ${PREFIX}/etc/pam.d/ss5
-+ss5_share       = ${DATADIR}
-+ss5_examples    = ${EXAMPLESDIR}
-+ss5_man         = ${MANPREFIX}/man
-+
- CC = gcc
+-CC = gcc
++ss5_share       = ${DESTDIR}${DATADIR}
++ss5_examples    = ${DESTDIR}${EXAMPLESDIR}
++ss5_man         = ${DESTDIR}${MANPREFIX}/man
  
  CFLAGS=@CFLAGS@ -I . @EXTRA_CFLAGS@ 
-@@ -41,10 +46,21 @@
+ 
+@@ -32,19 +34,26 @@ src ::
+ 
+ .PHONY : install
+ install:
+-	@( if [ ! -d $(dst_dir)$(log_path_base) ]; then mkdir -p $(dst_dir)$(log_path_base); fi )
+-	@( if [ ! -d $(dst_dir)$(trc_path_base) ]; then mkdir -p $(dst_dir)$(trc_path_base); fi )
+-
+-	@( if [ ! -d $(dst_dir)$(bin_path_base) ]; then mkdir -p $(dst_dir)$(bin_path_base); fi )
+-	@( cp src/ss5 $(dst_dir)$(bin_path_base)/ )
+-	@( cp src/ss5srv $(dst_dir)$(bin_path_base)/ )
++	cp src/ss5 $(dst_dir)$(bin_path_base)/
++	cp src/ss5srv $(dst_dir)$(bin_path_base)/
  
  	@( if [ ! -d $(dst_dir)$(lib_path_base)/ss5 ]; then mkdir -p $(dst_dir)$(lib_path_base)/ss5; fi )
- 	@( find modules -name *.so -exec cp {} $(dst_dir)$(lib_path_base)/ss5/ \; )
+-	@( find modules -name *.so -exec cp {} $(dst_dir)$(lib_path_base)/ss5/ \; )
 -	@( cp modules/mod_statistics/statmgr.cgi $(dst_dir)$(lib_path_base)/ss5/ )
 -	@( cp modules/mod_balance/balamgr.cgi $(dst_dir)$(lib_path_base)/ss5/ )
 -	@( cp modules/mod_statistics/SS5Logo.jpg $(dst_dir)$(lib_path_base)/ss5/ )
 -	@( cp modules/mod_balance/SS5Logo.jpg $(dst_dir)$(lib_path_base)/ss5/ )
++	find modules -name *.so -exec cp {} $(dst_dir)$(lib_path_base)/ss5/ \;
 +
 +	@( if [ ! -d $(ss5_share) ] && [ $(OS) = "FreeBSD" ]; then mkdir -p $(ss5_share); fi )
-+	@( if [ $(OS) = "FreeBSD" ]; then \
++	if [ $(OS) = "FreeBSD" ]; then \
 +	 cp modules/mod_statistics/statmgr.cgi $(ss5_share)/ ; \
 +	 cp modules/mod_balance/balamgr.cgi $(ss5_share)/ ; \
 +	 cp modules/mod_statistics/SS5Logo.jpg $(ss5_share)/ ; \
 +	 cp modules/mod_balance/SS5Logo.jpg $(ss5_share)/ ; \
-+	fi )
++	fi
 +
 +	@( if [ $(OS) = "Linux" ] || [ $(OS) = "SunOS" ]; then \
 +	 cp modules/mod_statistics/statmgr.cgi $(dst_dir)$(lib_path_base)/ss5/ ; \
@@ -38,7 +59,7 @@
  
  	@( if [ $(OS) = "Linux" ]; then \
  	if [ ! -d $(dst_dir)/etc/rc.d/init.d ]; then mkdir -p $(dst_dir)/etc/rc.d/init.d; fi ; \
-@@ -67,10 +83,6 @@
+@@ -67,47 +76,52 @@ install:
  	if [ ! -f $(dst_dir)/etc/init.d/ss5 ]; then cp conf/ss5.init $(dst_dir)/etc/init.d/ss5; \
  	else cp conf/ss5.init $(dst_dir)/etc/init.d/ss5.rpmnew ; fi ; \
          fi )
@@ -48,11 +69,13 @@
 -        fi )
  
  	@( if [ ! -d $(dst_dir)$(doc_path_base)/ss5 ]; then mkdir -p $(dst_dir)$(doc_path_base)/ss5; fi )
- 	@( cp License $(dst_dir)$(doc_path_base)/ss5 )
-@@ -80,32 +92,47 @@
- 	@( cp modules/mod_balance/README.balamgr $(dst_dir)$(doc_path_base)/ss5 )
- 
- 	@( if [ ! -d $(dst_dir)$(man_path_base)/man1 ]; then mkdir -p $(dst_dir)$(man_path_base)/man1; fi )
+-	@( cp License $(dst_dir)$(doc_path_base)/ss5 )
+-	@( cp -r doc/ldap/* $(dst_dir)$(doc_path_base)/ss5 )
+-	@( cp -r doc/pam/* $(dst_dir)$(doc_path_base)/ss5 )
+-	@( cp modules/mod_statistics/README.statmgr $(dst_dir)$(doc_path_base)/ss5 )
+-	@( cp modules/mod_balance/README.balamgr $(dst_dir)$(doc_path_base)/ss5 )
+-
+-	@( if [ ! -d $(dst_dir)$(man_path_base)/man1 ]; then mkdir -p $(dst_dir)$(man_path_base)/man1; fi )
 -	@( cp man/$(OS)/ss5.1* $(dst_dir)$(man_path_base)/man1 )
 -	@( cp man/$(OS)/ss5srv.1* $(dst_dir)$(man_path_base)/man1 )
 -	@( if [ ! -d $(dst_dir)$(man_path_base)/man5 ]; then mkdir -p $(dst_dir)$(man_path_base)/man5; fi )
@@ -62,36 +85,46 @@
 -	@( cp man/$(OS)/ss5.conf.5* $(dst_dir)$(man_path_base)/man5 )
 -	@( cp man/$(OS)/ss5_gss.5* $(dst_dir)$(man_path_base)/man5 )
 -	@( cp man/$(OS)/ss5_supa.5* $(dst_dir)$(man_path_base)/man5 )
-+	@( if [ $(OS) = "FreeBSD" ] && [ ! -d $(ss5_man)/man1 ]; then mkdir -p $(ss5_man)/man1; fi )
-+	@( if [ $(OS) = "FreeBSD" ]; then cp man/$(OS)/ss5.1* $(ss5_man)/man1/; \
-+	 else cp man/$(OS)/ss5.1* $(dst_dir)$(man_path_base)/man1/; fi )
-+	@( if [ $(OS) = "FreeBSD" ]; then cp man/$(OS)/ss5srv.1* $(ss5_man)/man1/; \
-+	 else cp man/$(OS)/ss5srv.1* $(dst_dir)$(man_path_base)/man1/; fi )
-+	@( if [ ! -d $(dst_dir)$(man_path_base)/man5 ]; then mkdir -p $(dst_dir)$(man_path_base)/man5/; fi )
-+	@( if [ $(OS) = "FreeBSD" ] && [ ! -d $(ss5_man)/man5 ]; then mkdir -p $(ss5_man)/man5; fi )
-+	@( if [ $(OS) = "FreeBSD" ]; then cp man/$(OS)/ss5.passwd.5* $(ss5_man)/man5/; \
-+	 else cp man/$(OS)/ss5.passwd.5* $(dst_dir)$(man_path_base)/man5/; fi )
-+	@( if [ $(OS) = "FreeBSD" ]; then cp man/$(OS)/ss5.ha.5* $(ss5_man)/man5/; \
-+	 else cp man/$(OS)/ss5.ha.5* $(dst_dir)$(man_path_base)/man5/; fi )
-+	@( if [ $(OS) = "FreeBSD" ]; then cp man/$(OS)/ss5.pam.5* $(ss5_man)/man5/; \
-+	 else cp man/$(OS)/ss5.pam.5* $(dst_dir)$(man_path_base)/man5/; fi )
-+	@( if [ $(OS) = "FreeBSD" ]; then cp man/$(OS)/ss5.conf.5* $(ss5_man)/man5/; \
-+	 else cp man/$(OS)/ss5.conf.5* $(dst_dir)$(man_path_base)/man5/; fi )
-+	@( if [ $(OS) = "FreeBSD" ]; then cp man/$(OS)/ss5_gss.5* $(ss5_man)/man5/; \
-+	 else cp man/$(OS)/ss5_gss.5* $(dst_dir)$(man_path_base)/man5/; fi )
-+	@( if [ $(OS) = "FreeBSD" ]; then cp man/$(OS)/ss5_supa.5* $(ss5_man)/man5/; \
-+	 else cp man/$(OS)/ss5_supa.5* $(dst_dir)$(man_path_base)/man5/; fi )
- 
- 	@( if [ ! -d $(dst_dir)$(conf_path_base) ]; then mkdir -p $(dst_dir)$(conf_path_base); fi )
- 	@( if [ ! -d $(dst_dir)$(conf_path_base)/ss5 ]; then mkdir -p $(dst_dir)$(conf_path_base)/ss5; fi )
- 	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.conf ]; then cp conf/ss5.conf $(dst_dir)$(conf_path_base)/ss5; \
- 	else cp conf/ss5.conf $(dst_dir)$(conf_path_base)/ss5/ss5.conf.rpmnew ; fi )
+-
+-	@( if [ ! -d $(dst_dir)$(conf_path_base) ]; then mkdir -p $(dst_dir)$(conf_path_base); fi )
+-	@( if [ ! -d $(dst_dir)$(conf_path_base)/ss5 ]; then mkdir -p $(dst_dir)$(conf_path_base)/ss5; fi )
+-	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.conf ]; then cp conf/ss5.conf $(dst_dir)$(conf_path_base)/ss5; \
+-	else cp conf/ss5.conf $(dst_dir)$(conf_path_base)/ss5/ss5.conf.rpmnew ; fi )
 -	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.ha ]; then cp conf/ss5.ha $(dst_dir)$(conf_path_base)/ss5; \
 -	else cp conf/ss5.ha $(dst_dir)$(conf_path_base)/ss5/ss5.ha.rpmnew ; fi )
 -	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.passwd ]; then cp conf/ss5.passwd $(dst_dir)$(conf_path_base)/ss5; \
 -	else cp conf/ss5.passwd $(dst_dir)$(conf_path_base)/ss5/ss5.passwd.rpmnew ; fi )
-+	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.ha ]; then cp conf/ss5.ha $(dst_dir)$(conf_path_base)/ss5; fi )
-+	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.passwd ]; then cp conf/ss5.passwd $(dst_dir)$(conf_path_base)/ss5; fi )
++	cp License $(dst_dir)$(doc_path_base)/ss5
++	cp -r doc/ldap/README.ldap $(dst_dir)$(doc_path_base)/ss5
++	cp -r doc/pam/README.pam $(dst_dir)$(doc_path_base)/ss5
++	cp modules/mod_statistics/README.statmgr $(dst_dir)$(doc_path_base)/ss5
++	cp modules/mod_balance/README.balamgr $(dst_dir)$(doc_path_base)/ss5
++
++	if [ $(OS) = "FreeBSD" ]; then \
++	 cp man/$(OS)/ss5.1* $(ss5_man)/man1/; \
++	 cp man/$(OS)/ss5srv.1* $(ss5_man)/man1/; \
++	 cp man/$(OS)/ss5.passwd.5* $(ss5_man)/man5/; \
++	 cp man/$(OS)/ss5.ha.5* $(ss5_man)/man5/; \
++	 cp man/$(OS)/ss5.pam.5* $(ss5_man)/man5/; \
++	 cp man/$(OS)/ss5.conf.5* $(ss5_man)/man5/; \
++	 cp man/$(OS)/ss5_gss.5* $(ss5_man)/man5/; \
++	 cp man/$(OS)/ss5_supa.5* $(ss5_man)/man5/; \
++	else \
++	 cp man/$(OS)/ss5.1* $(dst_dir)$(man_path_base)/man1/; \
++	 cp man/$(OS)/ss5srv.1* $(dst_dir)$(man_path_base)/man1/; \
++	 cp man/$(OS)/ss5.passwd.5* $(dst_dir)$(man_path_base)/man5/; \
++	 cp man/$(OS)/ss5.ha.5* $(dst_dir)$(man_path_base)/man5/; \
++	 cp man/$(OS)/ss5.pam.5* $(dst_dir)$(man_path_base)/man5/; \
++	 cp man/$(OS)/ss5.conf.5* $(dst_dir)$(man_path_base)/man5/; \
++	 cp man/$(OS)/ss5_gss.5* $(dst_dir)$(man_path_base)/man5/; \
++	 cp man/$(OS)/ss5_supa.5* $(dst_dir)$(man_path_base)/man5/; \
++	fi
++
++	if [ ! -d $(dst_dir)$(conf_path_base) ]; then mkdir -p $(dst_dir)$(conf_path_base); fi
++	if [ ! -d $(dst_dir)$(conf_path_base)/ss5 ]; then mkdir -p $(dst_dir)$(conf_path_base)/ss5; fi
++	if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.conf ]; then cp conf/ss5.conf $(dst_dir)$(conf_path_base)/ss5; fi
++	if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.ha ]; then cp conf/ss5.ha $(dst_dir)$(conf_path_base)/ss5; fi
++	if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.passwd ]; then cp conf/ss5.passwd $(dst_dir)$(conf_path_base)/ss5; fi
  
 -	@( if [ $(OS) = "Linux" ] || [ $(OS) = "FreeBSD" ]; then \
 +	@( if [ $(OS) = "Linux" ]; then \
@@ -102,84 +135,12 @@
  	if [ ! -f $(dst_dir)/etc/pam.d/ss5 ]; then cp doc/pam/examples/ss5.pam $(dst_dir)/etc/pam.d/ss5; \
  	else cp doc/pam/examples/ss5.pam $(dst_dir)/etc/pam.d/ss5.rpmnew ; fi ; \
          fi )
-+	@( if [ $(OS) = "FreeBSD" ]; then \
-+	if [ ! -d $(ss5_examples) ]; then mkdir -p $(ss5_examples); fi; \
-+	if [ ! -f $(ss5_examples) ]; then cp doc/pam/examples/ss5.pam $(ss5_examples); \
-+	 cp doc/ldap/examples/* $(ss5_examples); \
-+	 rm -rf /usr/local/share/doc/ss5/examples/; \
-+	  fi; \
-+	fi )
++	if [ $(OS) = "FreeBSD" ]; then \
++	   mkdir -p $(ss5_examples); \
++	   cp doc/ldap/examples/* doc/pam/examples/ss5.pam $(ss5_examples); \
++	fi
  
- 	@( if [ ! -d $(dst_dir)/var/run/ss5 ]; then mkdir -p $(dst_dir)/var/run/ss5; fi )
+-	@( if [ ! -d $(dst_dir)/var/run/ss5 ]; then mkdir -p $(dst_dir)/var/run/ss5; fi )
  
-@@ -122,40 +149,68 @@
- 	@( if [ -d $(dst_dir)$(doc_path_base)/ss5 ]; then rm -rf $(dst_dir)$(doc_path_base)/ss5; fi )
  
- 	@( if [ -f $(dst_dir)$(man_path_base)/man1/ss5.1 ]; then rm -f $(dst_dir)$(man_path_base)/man1/ss5.1; fi )
-+	@( if [ -f $(ss5_man)/man1/ss5.1 ]; then rm -f $(ss5_man)/man1/ss5.1; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man1/ss5srv.1 ]; then rm -f $(dst_dir)$(man_path_base)/man1/ss5srv.1; fi )
-+	@( if [ -f $(ss5_man)/man1/ss5srv.1 ]; then rm -f $(ss5_man)/man1/ss5srv.1; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.passwd.5 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.passwd.5; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.passwd.5 ]; then rm -f $(ss5_man)/man5/ss5.passwd.5; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.ha.5 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.ha.5; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.ha.5 ]; then rm -f $(ss5_man)/man5/ss5.ha.5; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.conf.5 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.conf.5; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.conf.5 ]; then rm -f $(ss5_man)/man5/ss5.conf.5; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.pam.5 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.pam.5; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.pam.5 ]; then rm -f $(ss5_man)/man5/ss5.pam.5; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5_gss.5 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5_gss.5; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5_gss.5 ]; then rm -f $(ss5_man)/man5/ss5_gss.5; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5_supa.5 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5_supa.5; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5_supa.5 ]; then rm -f $(ss5_man)/man5/ss5_supa.5; fi )
- 
- 	@( if [ -f $(dst_dir)$(man_path_base)/man1/ss5.1.gz ]; then rm -f $(dst_dir)$(man_path_base)/man1/ss5.1.gz; fi )
-+	@( if [ -f $(ss5_man)/man1/ss5.1.gz ]; then rm -f $(ss5_man)/man1/ss5.1.gz; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man1/ss5srv.1.gz ]; then rm -f $(dst_dir)$(man_path_base)/man1/ss5srv.1.gz; fi )
-+	@( if [ -f $(ss5_man)/man1/ss5srv.1.gz ]; then rm -f $(ss5_man)/man1/ss5srv.1.gz; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.passwd.5.gz ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.passwd.5.gz; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.passwd.5.gz ]; then rm -f $(ss5_man)/man5/ss5.passwd.5.gz; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.ha.5.gz ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.ha.5.gz; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.ha.5.gz ]; then rm -f $(ss5_man)/man5/ss5.ha.5.gz; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.conf.5.gz ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.conf.5.gz; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.conf.5.gz ]; then rm -f $(ss5_man)/man5/ss5.conf.5.gz; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.pam.5.gz ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.pam.5.gz; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.pam.5.gz ]; then rm -f $(ss5_man)/man5/ss5.pam.5.gz; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5_gss.5.gz ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5_gss.5.gz; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5_gss.5.gz ]; then rm -f $(ss5_man)/man5/ss5_gss.5.gz; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5_supa.5.gz ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5_supa.5.gz; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5_supa.5.gz ]; then rm -f $(ss5_man)/man5/ss5_supa.5.gz; fi )
- 
- 	@( if [ -f $(dst_dir)$(man_path_base)/man1/ss5.1.bz2 ]; then rm -f $(dst_dir)$(man_path_base)/man1/ss5.1.bz2; fi )
-+	@( if [ -f $(ss5_man)/man1/ss5.1.bz2 ]; then rm -f $(ss5_man)/man1/ss5.1.bz2; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man1/ss5srv.1.bz2 ]; then rm -f $(dst_dir)$(man_path_base)/man1/ss5srv.1.bz2; fi )
-+	@( if [ -f $(ss5_man)/man1/ss5srv.1.bz2 ]; then rm -f $(ss5_man)/man1/ss5srv.1.bz2; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.passwd.5.bz2 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.passwd.5.bz2; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.passwd.5.bz2 ]; then rm -f $(ss5_man)/man5/ss5.passwd.5.bz2; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.ha.5.bz2 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.ha.5.bz2; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.ha.5.bz2 ]; then rm -f $(ss5_man)/man5/ss5.ha.5.bz2; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.conf.5.bz2 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.conf.5.bz2; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.conf.5.bz2 ]; then rm -f $(ss5_man)/man5/ss5.conf.5.bz2; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5.pam.5.bz2 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5.pam.5.bz2; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5.pam.5.bz2 ]; then rm -f $(ss5_man)/man5/ss5.pam.5.bz2; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5_gss.5.bz2 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5_gss.5.bz2; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5_gss.5.bz2 ]; then rm -f $(ss5_man)/man5/ss5_gss.5.bz2; fi )
- 	@( if [ -f $(dst_dir)$(man_path_base)/man5/ss5_supa.5.bz2 ]; then rm -f $(dst_dir)$(man_path_base)/man5/ss5_supa.5.bz2; fi )
-+	@( if [ -f $(ss5_man)/man5/ss5_supa.5.bz2 ]; then rm -f $(ss5_man)/man5/ss5_supa.5.bz2; fi )
- 
- 	@( if [ -d $(dst_dir)$(conf_path_base)/ss5 ]; then rm -rf $(dst_dir)$(conf_path_base)/ss5; fi )
- 
--	@( if [ $(OS) = "Linux" ] || [ $(OS) = "FreeBSD" ]; then \
-+	@( if [ $(OS) = "Linux" ]; then \
- 	if [ -f $(dst_dir)/etc/pam.d/ss5 ]; then rm -f $(dst_dir)/etc/pam.d/ss5; fi ; \
-         fi )
- 
-+	@( if [ $(OS) = "FreeBSD" ]; then \
-+	if [ -d $(ss5_examples) ]; then rm -rf $(ss5_examples); fi ; \
-+	fi )
-+
- 	@( if [ $(OS) = "Linux" ] || [ $(OS) = "FreeBSD" ]; then \
--	if [ -f $(dst_dir)$(boot_path_base)/ss5 ]; then rm -f $(dst_dir)$(boot_path_base)/ss5; fi; \
-+	if [ -f $(dst_dir)$(boot_path_base)/ss5 ]; then rm -rf $(dst_dir)$(boot_path_base)/ss5; fi; \
-         fi )
- 
- 	@( if [ $(OS) = "Linux" ]; then \
+ .PHONY : uninstall

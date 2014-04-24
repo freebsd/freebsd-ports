@@ -3,7 +3,7 @@
 
 PORTNAME=	imaging
 PORTVERSION=	1.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	http://effbot.org/media/downloads/ \
 		http://www.pythonware.net/storage/

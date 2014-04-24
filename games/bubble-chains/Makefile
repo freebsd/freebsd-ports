@@ -3,7 +3,7 @@
 
 PORTNAME=	bubble-chains
 PORTVERSION=	0.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://bubble-chains.sintegrial.com/files/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

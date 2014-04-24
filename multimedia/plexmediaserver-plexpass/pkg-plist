@@ -1657,6 +1657,7 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.search.videosurf/Search/VideoSurf/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.search.videosurf/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/SiteConfigurations.bundle/Contents/VERSION
@@ -2011,6 +2012,7 @@
 %%DATADIR%%/Resources/Plug-ins/Wikipedia.bundle/Contents/Resources/attribution.png
 %%DATADIR%%/Resources/Plug-ins/Wikipedia.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/Wikipedia.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Profiles/Android-AFTB.xml
 %%DATADIR%%/Resources/Profiles/Android.xml
 %%DATADIR%%/Resources/Profiles/Asus Transformer Prime TF201.xml
 %%DATADIR%%/Resources/Profiles/Chrome.xml
@@ -2702,7 +2704,6 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/OpenSSL/version.py
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/README
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/cjson.so
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/easy-install.pth
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7.egg-info
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/ElementInclude.py
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/__init__.py
@@ -2741,10 +2742,41 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/usedoctest.py
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/pyOpenSSL-0.11-py2.7.egg-info
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/python_cjson-1.0.5-py2.7.egg-info
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/setuptools-3.3-py2.7.egg
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/setuptools.pth
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-2.1.5-py2.7-freebsd-9.1-RELEASE-amd64.egg
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/site.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7.egg-info
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/__init__.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/_speedups.so
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/compat.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/decoder.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/encoder.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/ordered_dict.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/scanner.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/__init__.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_bigint_as_string.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_check_circular.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_decimal.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_decode.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_default.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_dump.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_encode_basestring_ascii.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_encode_for_html.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_errors.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_fail.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_float.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_for_json.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_indent.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_item_sort_key.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_namedtuple.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_pass1.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_pass2.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_pass3.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_recursion.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_scanstring.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_separators.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_speedups.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_tool.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_tuple.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_unicode.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tool.py
 %%DATADIR%%/Resources/Python/lib/python2.7/site.py
 %%DATADIR%%/Resources/Python/lib/python2.7/smtpd.py
 %%DATADIR%%/Resources/Python/lib/python2.7/smtplib.py
@@ -2938,6 +2970,8 @@
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/test
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/sqlite3
+@dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests
+@dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl
 @dirrmtry %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/rng

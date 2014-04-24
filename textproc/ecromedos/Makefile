@@ -3,7 +3,7 @@
 
 PORTNAME=	ecromedos
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc print www
 MASTER_SITES=	http://www.ecromedos.net/files/${PORTVERSION}/
 
@@ -13,12 +13,11 @@ COMMENT=	A document preparation system that allows concurrent publication
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
-LIB_DEPENDS=	libxml2.so.5:${PORTSDIR}/textproc/libxml2 \
-		libxslt.so.2:${PORTSDIR}/textproc/libxslt
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_TEX=	latex
+USE_GNOME=	libxml2 libxslt
 
 OPTIONS_DEFINE=	DOCS
 

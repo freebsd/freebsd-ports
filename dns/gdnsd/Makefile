@@ -3,6 +3,7 @@
 
 PORTNAME=	gdnsd
 PORTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/blblack/gdnsd/releases/download/v${PORTVERSION}/ \
 		http://gdnsd.scaleengine.net/gdnsd/

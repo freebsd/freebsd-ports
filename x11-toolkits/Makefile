@@ -252,7 +252,6 @@
     SUBDIR += unique
     SUBDIR += v
     SUBDIR += vdk
-    SUBDIR += vdkbuilder
     SUBDIR += viewklass
     SUBDIR += vte
     SUBDIR += vte-reference

@@ -3,7 +3,7 @@
 
 PORTNAME=	tux_aqfh
 PORTVERSION=	1.0.14
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxaqfh/tuxaqfh/${PORTVERSION}-classic \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

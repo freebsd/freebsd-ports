@@ -3,6 +3,7 @@
 
 PORTNAME=	matio
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -12,7 +13,7 @@ COMMENT=	Library for reading and writing Matlab MAT files
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix
+USES=		libtool:keepla pathfix
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

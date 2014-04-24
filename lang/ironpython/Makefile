@@ -21,6 +21,8 @@ GH_COMMIT=	568c234
 
 SUB_FILES=	ipy ipy64
 
+BROKEN=		does not build with mono 3.4.0
+
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/xbuild /t:Stage \
 		/p:Configuration=Release /p:ReferencedPlatform=V4 \

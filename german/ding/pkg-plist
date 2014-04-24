@@ -1,4 +1,5 @@
 bin/ding
+man/man1/ding.1.gz
 %%DATADIR%%/ding.png
 %%DATADIR%%/ding.desktop
 %%DATADIR%%/de_ch-en.txt

@@ -4,7 +4,7 @@
 
 PORTNAME=	vte
 PORTVERSION=	0.28.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,13 +12,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Gtk 2 based terminal widget with accessibility and I18N support
 
-USE_XZ=		yes
+USES+=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gnome-pty-helper
 
-USES=		bison gettext gmake libtool pathfix pkgconfig
+USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME?=	gnomeprefix gtk20 introspection:build referencehack

@@ -3,7 +3,7 @@
 
 PORTNAME=	glsfcave
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://user.ecc.u-tokyo.ac.jp/~g650192/glsfcave/ \
 		http://mirror.amdmi3.ru/distfiles/

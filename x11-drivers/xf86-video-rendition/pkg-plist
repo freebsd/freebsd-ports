@@ -1,4 +1,3 @@
-lib/xorg/modules/drivers/rendition_drv.la
 lib/xorg/modules/drivers/rendition_drv.so
 lib/xorg/modules/v10002d.uc
 lib/xorg/modules/v20002d.uc

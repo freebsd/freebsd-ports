@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mnrpes
-PORTVERSION=	2014033101
+PORTVERSION=	2014041501
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@robakdesign.com
@@ -16,7 +16,7 @@ USE_RUBY=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	nullDowntimeLtd
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	0b67031
+GH_COMMIT=	3f9942c
 
 USE_RC_SUBR=	mnrpes_receiver \
 		mnrpes_scheduler

@@ -13,7 +13,13 @@ USE_AUTOTOOLS=	aclocal automake libtool
 AUTOMAKE_ARGS=	--add-missing
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
-NO_STAGE=	yes
+PLIST_FILES=	libexec/tnftpd \
+				man/man5/ftpd.conf.5.gz man/man5/ftpusers.5.gz man/man8/tnftpd.8.gz
+PORTDOCS=	ChangeLog NEWS README THANKS COPYING
+PORTEXAMPLES=	ftpd.conf ftpusers
+
+SUB_FILES=	pkg-message
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007
@@ -22,33 +28,22 @@ CFLAGS+=	-DSUPPORT_UTMPX
 CFLAGS+=	-DSUPPORT_UTMP
 .endif
 
-MAN5=		ftpd.conf.5 ftpusers.5
-MAN8=		tnftpd.8
-PLIST_FILES=	libexec/tnftpd
-PORTDOCS=	ChangeLog NEWS README THANKS COPYING
-PORTEXAMPLES=	ftpd.conf ftpusers
-
-SUB_FILES=	pkg-message
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/tnftpd ${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/src/ftpd.conf.man ${PREFIX}/man/man5/ftpd.conf.5
-	${INSTALL_MAN} ${WRKSRC}/src/ftpusers.man ${PREFIX}/man/man5/ftpusers.5
-	${INSTALL_MAN} ${WRKSRC}/src/tnftpd.man ${PREFIX}/man/man8/tnftpd.8
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/tnftpd ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_MAN} ${WRKSRC}/src/ftpd.conf.man ${STAGEDIR}${PREFIX}/man/man5/ftpd.conf.5
+	${INSTALL_MAN} ${WRKSRC}/src/ftpusers.man ${STAGEDIR}${PREFIX}/man/man5/ftpusers.5
+	${INSTALL_MAN} ${WRKSRC}/src/tnftpd.man ${STAGEDIR}${PREFIX}/man/man8/tnftpd.8
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -10,7 +10,9 @@ MASTER_SITES=	http://pycallgraph.slowchop.com/files/download/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	A Python library that creates call graphs for Python programs
+COMMENT=	Python library that creates call graphs for Python programs
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 
@@ -23,15 +25,14 @@ MAN1=	pycallgraph.1
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/man/pycallgraph.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/pycallgraph.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endif
 
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_BIN} \* ${EXAMPLESDIR})
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_BIN} \* ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	ploticus
 PORTVERSION=	2.40
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	pl${PORTVERSION:S/.//}src
@@ -15,7 +15,7 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		ming:${PORTSDIR}/graphics/ming \
 		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 BUILD_WRKSRC=	${WRKSRC}/src
 

@@ -11,5 +11,7 @@ PORTSCOUT=	limitw:1,even
 
 WWWDIR=		${PREFIX}/www/bugzilla
 
+BINMODE=	700
+
 NO_BUILD=	yes
 

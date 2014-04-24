@@ -4165,13 +4165,13 @@ man/man6/crossloop.web.6.gz
 /var/games/crossfire/clockdata
 /var/games/crossfire/highscore
 /var/games/crossfire/temp.maps
-@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/unique-items || :
-@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/template-maps || :
-@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/players || :
-@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/maps || :
-@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/datafiles || :
-@unexec rmdir >/dev/null 2>&1 /var/games/crossfire/account || :
-@unexec rmdir >/dev/null 2>&1 /var/games/crossfire || :
+@unexec rmdir "/var/games/crossfire/unique-items" >/dev/null 2>&1 || :
+@unexec rmdir "/var/games/crossfire/template-maps" >/dev/null 2>&1 || :
+@unexec rmdir "/var/games/crossfire/players" >/dev/null 2>&1 || :
+@unexec rmdir "/var/games/crossfire/maps" >/dev/null 2>&1 || :
+@unexec rmdir "/var/games/crossfire/datafiles" >/dev/null 2>&1 || :
+@unexec rmdir "/var/games/crossfire/account" >/dev/null 2>&1 || :
+@unexec rmdir "/var/games/crossfire" >/dev/null 2>&1 || :
 @dirrmtry %%DATADIR%%/wizhelp
 @dirrm %%DATADIR%%/maps/world
 @dirrm %%DATADIR%%/maps/wolfsburg/volcano

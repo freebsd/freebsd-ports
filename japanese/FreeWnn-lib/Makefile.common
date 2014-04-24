@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 GNU_CONFIGURE=	yes
-USES=		libtool
+USES=		libtool:keepla
 USE_AUTOTOOLS=	aclocal autoheader autoconf libtoolize
 LIBTOOLIZE_ARGS=-i -c -f
 USE_BZIP2=	yes

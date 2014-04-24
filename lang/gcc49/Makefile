@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc49
-PORTVERSION=	4.9.0.20140406
+PORTVERSION=	4.9.1.s20140423
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -28,8 +28,8 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 # of executables and directories once installed.  A PORTVERSION of
 # 4.Y.2.s20130808 results in values of 4.Y-20130808, 4.Y.2, and 4Y
 # for these three.
-DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
-GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
+DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.s([0-9]+)/\1-\2/}
+GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USES=		gmake iconv perl5 tar:bzip2
@@ -129,7 +129,8 @@ pre-configure:
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
-	cd ${WRKSRC}; ${GMAKE} -sk check
+	cd ${WRKSRC}; ${GMAKE} -sk check \
+	; ${SRCDIR}/contrib/test_summary
 .endif
 
 post-install:

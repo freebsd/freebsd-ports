@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyro
-PORTVERSION=	4.24
+PORTVERSION=	4.25
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Distributed Object Middleware for Python(IPC/RPC)
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serpent>=1.3:${PORTSDIR}/devel/py-serpent
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serpent>=1.5:${PORTSDIR}/devel/py-serpent
 
 USES=			dos2unix
 USE_PYTHON=		yes

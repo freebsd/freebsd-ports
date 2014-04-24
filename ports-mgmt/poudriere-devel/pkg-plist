@@ -7,20 +7,24 @@ etc/rc.d/poudriered
 libexec/poudriere/cpdup
 libexec/poudriere/dirempty
 libexec/poudriere/dirwatch
-libexec/poudriere/make_index
 libexec/poudriere/nc
 libexec/poudriere/rename
+libexec/poudriere/tsort
 sbin/poudriered
 man/man8/poudriere.8.gz
 %%DATADIR%%/awk/dependency_loop.awk
 %%DATADIR%%/awk/humanize.awk
 %%DATADIR%%/awk/json.awk
 %%DATADIR%%/awk/siginfo_buildtime.awk
+%%DATADIR%%/awk/processonelog2.awk
+%%DATADIR%%/include/common.sh.dragonfly
+%%DATADIR%%/include/common.sh.freebsd
+%%DATADIR%%/include/fs.sh
+%%DATADIR%%/include/hash.sh
+%%DATADIR%%/include/parallel.sh
 %%DATADIR%%/bulk.sh
 %%DATADIR%%/clean.sh
 %%DATADIR%%/common.sh
-%%DATADIR%%/common.sh.dragonfly
-%%DATADIR%%/common.sh.freebsd
 %%DATADIR%%/daemon.sh
 %%DATADIR%%/distclean.sh
 %%DATADIR%%/html/assets/bootstrap/css/bootstrap-responsive.min.css
@@ -51,13 +55,13 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/pkgclean.sh
 %%DATADIR%%/ports.sh
 %%DATADIR%%/processonelog.sh
-%%DATADIR%%/processonelog2.sh
 %%DATADIR%%/queue.sh
 %%DATADIR%%/status.sh
 %%DATADIR%%/testport.sh
 %%ZSH%%share/zsh/site-functions/_poudriere
 %%ZSH%%@dirrmtry share/zsh/site-functions
 %%ZSH%%@dirrmtry share/zsh/
+@dirrm %%DATADIR%%/awk
 @dirrm %%DATADIR%%/html/assets/dataTables/js
 @dirrm %%DATADIR%%/html/assets/dataTables/images
 @dirrm %%DATADIR%%/html/assets/dataTables/css
@@ -68,7 +72,7 @@ man/man8/poudriere.8.gz
 @dirrm %%DATADIR%%/html/assets/bootstrap
 @dirrm %%DATADIR%%/html/assets
 @dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%/awk
+@dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%
 @dirrm libexec/poudriere
 @dirrmtry %%ETCDIR%%

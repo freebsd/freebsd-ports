@@ -1,16 +1,23 @@
 bin/filezilla
 bin/fzsftp
 bin/fzputtygen
+man/man1/filezilla.1.gz
+man/man1/fzputtygen.1.gz
+man/man1/fzsftp.1.gz
+man/man5/fzdefaults.xml.5.gz
+%%NLS%%share/locale/an/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/bg_BG/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/co/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/cs_CZ/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/da_DK/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/de/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/el/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/es/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/et_EE/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/eu_ES/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/fa_IR/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/fi_FI/LC_MESSAGES/filezilla.mo
@@ -25,6 +32,7 @@ bin/fzputtygen
 %%NLS%%share/locale/it/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ja_JP/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/kab/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/km_KH/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ko_KR/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ku/LC_MESSAGES/filezilla.mo
@@ -86,6 +94,7 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/16x16/speedlimits.png
 %%DATADIR%%/resources/16x16/symlink.png
 %%DATADIR%%/resources/16x16/synchronize.png
+%%DATADIR%%/resources/16x16/throbber.gif
 %%DATADIR%%/resources/16x16/unknown.png
 %%DATADIR%%/resources/16x16/upload.png
 %%DATADIR%%/resources/16x16/uploadadd.png
@@ -538,11 +547,14 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/theme.xml
 %%DATADIR%%/resources/toolbar.xrc
 %%DATADIR%%/resources/up.png
+%%DATADIR%%/resources/update.xrc
 share/icons/hicolor/16x16/apps/filezilla.png
 share/icons/hicolor/32x32/apps/filezilla.png
 share/icons/hicolor/48x48/apps/filezilla.png
 share/icons/hicolor/scalable/apps/filezilla.svg
 share/applications/filezilla.desktop
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/32x32/apps
@@ -550,6 +562,7 @@ share/applications/filezilla.desktop
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/resources/tango/48x48
 @dirrm %%DATADIR%%/resources/tango/32x32
 @dirrm %%DATADIR%%/resources/tango/16x16
@@ -595,8 +608,6 @@ share/applications/filezilla.desktop
 @dirrmtry share/locale/ro_RO
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
 @dirrmtry share/locale/nn_NO/LC_MESSAGES
 @dirrmtry share/locale/nn_NO
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
@@ -613,12 +624,12 @@ share/applications/filezilla.desktop
 @dirrmtry share/locale/ko_KR
 @dirrmtry share/locale/km_KH/LC_MESSAGES
 @dirrmtry share/locale/km_KH
+@dirrmtry share/locale/kab/LC_MESSAGES
+@dirrmtry share/locale/kab
 @dirrmtry share/locale/ja_JP/LC_MESSAGES
 @dirrmtry share/locale/ja_JP
 @dirrmtry share/locale/id_ID/LC_MESSAGES
 @dirrmtry share/locale/id_ID
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
 @dirrmtry share/locale/hu_HU/LC_MESSAGES
 @dirrmtry share/locale/hu_HU
 @dirrmtry share/locale/he_IL/LC_MESSAGES
@@ -635,7 +646,11 @@ share/applications/filezilla.desktop
 @dirrmtry share/locale/da_DK
 @dirrmtry share/locale/cs_CZ/LC_MESSAGES
 @dirrmtry share/locale/cs_CZ
+@dirrmtry share/locale/co/LC_MESSAGES
+@dirrmtry share/locale/co
 @dirrmtry share/locale/ca_ES@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca_ES@valencia
 @dirrmtry share/locale/bg_BG/LC_MESSAGES
 @dirrmtry share/locale/bg_BG
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an

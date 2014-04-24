@@ -14,6 +14,8 @@ COMMENT=	X.Org minimal distribution metaport
 NO_BUILD=	yes
 NO_MTREE=	yes
 
+.include <bsd.port.options.mk>
+
 VIDEO_DRIVER?=	vesa
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server \

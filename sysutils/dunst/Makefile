@@ -3,6 +3,7 @@
 
 PORTNAME=	dunst
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.knopwob.org/public/dunst-release/
 

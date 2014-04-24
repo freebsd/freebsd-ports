@@ -3,6 +3,7 @@
 
 PORTNAME=	createrepo
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://createrepo.baseurl.org/download/
 

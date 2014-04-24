@@ -20,6 +20,7 @@
     SUBDIR += aoe
     SUBDIR += apinger
     SUBDIR += appkonference
+    SUBDIR += aprsc
     SUBDIR += arp-scan
     SUBDIR += arp-sk
     SUBDIR += arpdig
@@ -173,7 +174,6 @@
     SUBDIR += gofish
     SUBDIR += gogoc
     SUBDIR += googlecl
-    SUBDIR += googolplex
     SUBDIR += gopher
     SUBDIR += gotthard
     SUBDIR += gpxe

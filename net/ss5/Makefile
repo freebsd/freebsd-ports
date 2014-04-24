@@ -3,6 +3,7 @@
 
 PORTNAME=	ss5
 PORTVERSION=	3.8.5
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -22,26 +23,20 @@ CONFIGURE_ARGS=	--with-binpathbase=${PREFIX}/sbin \
 		--with-libpath=${PREFIX}/lib
 
 MAKE_ENV=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
+MAKE_ARGS+=	CC=${CC}
 CFLAGS+=	-DLDAP_DEPRECATED
 
-MAN1=		ss5.1 ss5srv.1
-MAN5=		ss5.conf.5 ss5.pam.5 ss5.passwd.5 ss5.ha.5 ss5_gss.5 ss5_supa.5
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's,/usr/local/etc/opt/ss5,${PREFIX}/etc/ss5,' \
 		${WRKSRC}/include/config.h.in
 
 post-install:
-#	${TOUCH} ${PREFIX}/etc/ss5/ss5.ha.default
-#.if !exists(${PREFIX}/etc/ss5/ss5.ha)
-#	${TOUCH} ${PREFIX}/etc/ss5/ss5.ha
-#.endif
-	${INSTALL_DATA} ${WRKSRC}/conf/examples/ss5.ha ${PREFIX}/etc/${PORTNAME}/ss5.ha.default
-	if [ ! -f ${PREFIX}/etc/${PORTNAME}.ha ]; then \
-		${INSTALL_DATA} ${WRKSRC}/conf/examples/ss5.ha ${PREFIX}/etc/${PORTNAME}/ss5.ha ; \
-	fi
+	${INSTALL_DATA} ${WRKSRC}/conf/ss5.conf \
+		${STAGEDIR}${PREFIX}/etc/ss5/ss5.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/ss5.ha \
+		${STAGEDIR}${PREFIX}/etc/ss5/ss5.ha.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/ss5.passwd \
+		${STAGEDIR}${PREFIX}/etc/ss5/ss5.passwd.sample
 
 .include <bsd.port.mk>

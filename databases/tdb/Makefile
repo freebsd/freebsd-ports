@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		tdb
-PORTVERSION=		1.2.12
+PORTVERSION=		1.2.13
 PORTREVISION=		0
 PORTEPOCH=		1
 CATEGORIES=		databases
@@ -62,10 +62,14 @@ CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
 _MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
 .endif
 
+.if defined(NO_PYTHON)
+CONFIGURE_ARGS+=	--disable-python
+.else
 USE_PYTHON_RUN=		yes
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so
 PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
 			%%PYTHON_LIBDIR%%
+.endif
 
 TDB_MAN8=		man/man8/tdbbackup.8.gz \
 			man/man8/tdbdump.8.gz \

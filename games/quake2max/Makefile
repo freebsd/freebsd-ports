@@ -6,8 +6,7 @@ PORTVERSION=	0.45
 PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://www.bfeared.com/library/quake/archive/quakedev/qudos/quake2/engines/Quake2MaX/:src \
-		${MASTER_SITE_LOCAL:S/$/:data/}
-MASTER_SITE_SUBDIR=	alepulver/:data
+		LOCAL/alepulver/:data
 DISTNAME=	Quake2maX_${PORTVERSION}-src_unix
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src ${Q2MAX_DATA}:data
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -19,8 +18,7 @@ LICENSE=	GPLv2
 
 EXTRACT_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_XORG=	xxf86dga
 ALL_TARGET=	release
 WRKSRC=		${WRKDIR}/${DISTNAME:S/quake2max/Quake2maX/}
@@ -41,7 +39,6 @@ GLX_DESC=	Build OpenGL renderer
 SDLCLIENT_DESC=	Build SDL client
 SDLGL_DESC=	Build SDL OpenGL renderer
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}
@@ -118,17 +115,19 @@ post-patch:
 		${WRKSRC}/client/qmenu.c
 
 do-install:
-	@${MKDIR} ${LIBDIR}/baseq2
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/baseq2
 .for f in ${Q2MAX_BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for f in ${Q2MAX_REF}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/rfx_${f}.so ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/rfx_${f}.so ${STAGEDIR}${LIBDIR}
 .endfor
 .if ${PORT_OPTIONS:MGAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so ${LIBDIR}/baseq2
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so \
+		${STAGEDIR}${LIBDIR}/baseq2
 .endif
-	${INSTALL_DATA} ${WRKSRC}/_maxpak.pak ${LIBDIR}/baseq2/maxpak.pak
+	${INSTALL_DATA} ${WRKSRC}/_maxpak.pak \
+		${STAGEDIR}${LIBDIR}/baseq2/maxpak.pak
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.mk>

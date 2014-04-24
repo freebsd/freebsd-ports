@@ -3,6 +3,7 @@
 
 PORTNAME=	synonym
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.dv8.ro/Synonym/Synonym/source/
 DISTNAME=	${PORTNAME}-0.4-3

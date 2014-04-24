@@ -1,8 +1,0 @@
-DragonEgg is a gcc plugin that replaces GCC's optimizers and code
-generators with those from the LLVM project. It works with gcc-4.5
-or gcc-4.6, can target the x86-32/x86-64 and ARM processor families,
-and has been successfully used on the Darwin, FreeBSD, KFreeBSD,
-Linux and OpenBSD platforms. It fully supports Ada, C, C++ and
-Fortran. It has partial support for Go, Java, Obj-C and Obj-C++.
-
-WWW: http://dragonegg.llvm.org/

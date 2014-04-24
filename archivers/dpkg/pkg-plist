@@ -89,6 +89,7 @@ include/dpkg/version.h
 %%SITE_PERL%%/Dpkg/Control/Info.pm
 %%SITE_PERL%%/Dpkg/Control/Types.pm
 %%SITE_PERL%%/Dpkg/Deps.pm
+%%SITE_PERL%%/Dpkg/Dist/Files.pm
 %%SITE_PERL%%/Dpkg/ErrorHandling.pm
 %%SITE_PERL%%/Dpkg/Exit.pm
 %%SITE_PERL%%/Dpkg/File.pm
@@ -269,7 +270,10 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/fr/man8/update-alternatives.8.gz
 %%NLS%%man/hu/man5/dpkg.cfg.5.gz
 %%NLS%%man/hu/man5/dselect.cfg.5.gz
+%%NLS%%man/it/man1/dpkg-buildpackage.1.gz
+%%NLS%%man/it/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/it/man1/dpkg-deb.1.gz
+%%NLS%%man/it/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/it/man1/dpkg-name.1.gz
 %%NLS%%man/it/man1/dpkg-parsechangelog.1.gz
 %%NLS%%man/it/man1/dpkg-query.1.gz
@@ -292,6 +296,7 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/it/man5/deb.5.gz
 %%NLS%%man/it/man5/dpkg.cfg.5.gz
 %%NLS%%man/it/man5/dselect.cfg.5.gz
+%%NLS%%man/it/man8/dpkg-statoverride.8.gz
 %%NLS%%man/it/man8/start-stop-daemon.8.gz
 %%NLS%%man/it/man8/update-alternatives.8.gz
 %%NLS%%man/ja/man1/dpkg-deb.1.gz
@@ -445,6 +450,7 @@ man/man8/update-alternatives.8.gz
 %%NLS%%man/pl/man8/update-alternatives.8.gz
 %%NLS%%man/sv/man1/dpkg-architecture.1.gz
 %%NLS%%man/sv/man1/dpkg-buildflags.1.gz
+%%NLS%%man/sv/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/sv/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/sv/man1/dpkg-deb.1.gz
 %%NLS%%man/sv/man1/dpkg-distaddfile.1.gz
@@ -571,42 +577,16 @@ sbin/start-stop-daemon
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dselect.mo
-%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_TW
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
-%%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/vi
 %%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tl
-%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sk
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro
-%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/nn/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nn
 %%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/mr
 %%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ku
-%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ko
 %%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/km
-%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gl
-%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/el
 %%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/dz
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
 @dirrm %%DATADIR%%
@@ -625,6 +605,7 @@ sbin/start-stop-daemon
 @dirrm %%SITE_PERL%%/Dpkg/Source
 @dirrm %%SITE_PERL%%/Dpkg/Shlibs
 @dirrm %%SITE_PERL%%/Dpkg/Interface
+@dirrm %%SITE_PERL%%/Dpkg/Dist
 @dirrm %%SITE_PERL%%/Dpkg/Control
 @dirrm %%SITE_PERL%%/Dpkg/Compression
 @dirrm %%SITE_PERL%%/Dpkg/Changelog/Entry
@@ -635,6 +616,34 @@ sbin/start-stop-daemon
 @dirrmtry etc/dpkg/dpkg.cfg.d
 @dirrmtry etc/dpkg
 @dirrmtry etc/alternatives
+%%NLS%%@dirrmtry man/sv/man8
+%%NLS%%@dirrmtry man/sv/man5
+%%NLS%%@dirrmtry man/sv/man1
+%%NLS%%@dirrmtry man/sv
+%%NLS%%@dirrmtry man/pl/man8
+%%NLS%%@dirrmtry man/pl/man5
+%%NLS%%@dirrmtry man/pl/man1
+%%NLS%%@dirrmtry man/pl
+%%NLS%%@dirrmtry man/it/man8
+%%NLS%%@dirrmtry man/it/man5
+%%NLS%%@dirrmtry man/it/man1
+%%NLS%%@dirrmtry man/it
+%%NLS%%@dirrmtry man/hu/man8
+%%NLS%%@dirrmtry man/hu/man5
+%%NLS%%@dirrmtry man/hu/man1
+%%NLS%%@dirrmtry man/hu
+%%NLS%%@dirrmtry man/fr/man8
+%%NLS%%@dirrmtry man/fr/man5
+%%NLS%%@dirrmtry man/fr/man1
+%%NLS%%@dirrmtry man/fr
+%%NLS%%@dirrmtry man/es/man8
+%%NLS%%@dirrmtry man/es/man5
+%%NLS%%@dirrmtry man/es/man1
+%%NLS%%@dirrmtry man/es
+%%NLS%%@dirrmtry man/de/man8
+%%NLS%%@dirrmtry man/de/man5
+%%NLS%%@dirrmtry man/de/man1
+%%NLS%%@dirrmtry man/de
 @cwd /
 @exec mkdir -p %%DPKGDIR%%/alternatives
 @exec mkdir -p %%DPKGDIR%%/info

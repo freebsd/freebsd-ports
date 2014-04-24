@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-text-editor
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	editors mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

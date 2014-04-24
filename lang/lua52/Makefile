@@ -14,7 +14,7 @@ COMMENT=	Small, compilable scripting language providing easy access to C code
 LICENSE=	MIT
 
 LUA_VER=	5.2
-USES=		pkgconfig readline
+USES=		readline
 USE_LDCONFIG=	yes
 
 # Overriding __MAKE_CONF makes sure that we don't re-parse

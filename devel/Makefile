@@ -418,7 +418,6 @@
     SUBDIR += exercisix
     SUBDIR += f77flow
     SUBDIR += fam
-    SUBDIR += fampp
     SUBDIR += fastcrc
     SUBDIR += fb303
     SUBDIR += fc++
@@ -548,7 +547,9 @@
     SUBDIR += gindent
     SUBDIR += gio-sharp
     SUBDIR += git
+    SUBDIR += git-bzr-ng
     SUBDIR += git-merge-changelog
+    SUBDIR += git-modes
     SUBDIR += git-review
     SUBDIR += git-subversion
     SUBDIR += gitg
@@ -1193,7 +1194,6 @@
     SUBDIR += lua-lunit
     SUBDIR += lua-posix
     SUBDIR += lua-pty
-    SUBDIR += lua-redis-parser
     SUBDIR += lua-sysctl
     SUBDIR += luabind
     SUBDIR += luafilesystem
@@ -2784,6 +2784,7 @@
     SUBDIR += p5-Term-ReadLine-Zoid
     SUBDIR += p5-Term-ReadPassword
     SUBDIR += p5-Term-Screen
+    SUBDIR += p5-Term-ScreenColor
     SUBDIR += p5-Term-Shell
     SUBDIR += p5-Term-Size
     SUBDIR += p5-Term-Size-Any
@@ -3421,7 +3422,6 @@
     SUBDIR += projectcenter
     SUBDIR += protobuf
     SUBDIR += protobuf-c
-    SUBDIR += prototype
     SUBDIR += psptoolchain
     SUBDIR += psptoolchain-binutils
     SUBDIR += psptoolchain-gcc-stage1
@@ -4458,7 +4458,6 @@
     SUBDIR += shflags
     SUBDIR += shiboken
     SUBDIR += shmap
-    SUBDIR += showgrammar
     SUBDIR += shtk
     SUBDIR += shtool
     SUBDIR += sigslot

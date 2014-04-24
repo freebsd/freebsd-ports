@@ -12,9 +12,11 @@ COMMENT=	NAT-PMP lightweight library
 LICENSE=	BSD
 
 USES=		gmake
-MAKE_ENV+=	INSTALLPREFIX=${PREFIX}
-CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
+
+MAKE_ENV+=	INSTALLPREFIX=${PREFIX}
+
+CFLAGS+=	-fPIC
 
 PLIST_FILES=	bin/natpmpc \
 		include/natpmp.h \
@@ -22,5 +24,8 @@ PLIST_FILES=	bin/natpmpc \
 		lib/libnatpmp.so \
 		lib/libnatpmp.so.1
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/natpmpc \
+		${STAGEDIR}${PREFIX}/lib/libnatpmp.so.1
+
 .include <bsd.port.mk>

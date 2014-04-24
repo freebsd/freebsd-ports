@@ -1,5 +1,7 @@
 bin/noegnud-0.8.0-littlehack-0.0.1
 bin/noegnud-littlehack-0.0.1
+@owner games
+@group bin
 share/noegnud-0.8.0/littlehack-0.0.1/license
 share/noegnud-0.8.0/littlehack-0.0.1/logfile
 share/noegnud-0.8.0/littlehack-0.0.1/nhdat
@@ -7,7 +9,7 @@ share/noegnud-0.8.0/littlehack-0.0.1/noegnud-0.8.0-littlehack-0.0.1
 share/noegnud-0.8.0/littlehack-0.0.1/perm
 share/noegnud-0.8.0/littlehack-0.0.1/record
 share/noegnud-0.8.0/littlehack-0.0.1/recover
-@exec chown games:bin %D/share/noegnud-0.8.0/littlehack-0.0.1
+@exec chown root:wheel %D/share/noegnud-0.8.0
 @exec chmod 775 %D/share/noegnud-0.8.0/littlehack-0.0.1
 @dirrmtry share/noegnud-0.8.0/littlehack-0.0.1/save
 @dirrmtry share/noegnud-0.8.0/littlehack-0.0.1

@@ -6679,3 +6679,4 @@ share/icons/nuoveXT2/index.theme
 @dirrm share/icons/nuoveXT2/128x128/actions
 @dirrm share/icons/nuoveXT2/128x128
 @dirrm share/icons/nuoveXT2
+@dirrmtry share/icons

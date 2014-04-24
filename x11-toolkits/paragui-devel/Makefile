@@ -3,7 +3,7 @@
 
 PORTNAME=	paragui
 PORTVERSION=	1.1.8
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ COMMENT=	Cross-platform high-level application framework and GUI library(devel)
 
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
 		expat.6:${PORTSDIR}/textproc/expat2 \
-		freetype.9:${PORTSDIR}/print/freetype2 \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
 CONFLICTS=	paragui-[0-9]*

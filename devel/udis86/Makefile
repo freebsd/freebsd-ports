@@ -3,7 +3,7 @@
 
 PORTNAME=	udis86
 PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION:R}
@@ -13,7 +13,7 @@ COMMENT=	Minimalistic x86 and x86-64 disassembler library
 
 LICENSE=	BSD2CLAUSE
 
-USES=		libtool gmake
+USES=		gmake libtool:keepla
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

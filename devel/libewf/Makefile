@@ -3,6 +3,7 @@
 
 PORTNAME=	libewf
 PORTVERSION=	20140406
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSMTdoaVExWWNsRjg/ \
 		LOCAL/antoine
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-USES=		fuse gettext iconv libtool pathfix pkgconfig
+USES=		fuse gettext iconv libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_PYTHON=	2

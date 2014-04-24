@@ -141,6 +141,7 @@
     SUBDIR += spandsp-devel
     SUBDIR += splat
     SUBDIR += sredird
+    SUBDIR += svxlink
     SUBDIR += syncterm
     SUBDIR += tcpser
     SUBDIR += thebridge

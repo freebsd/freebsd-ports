@@ -57,7 +57,6 @@
     SUBDIR += egg-canna
     SUBDIR += eijiro-fpw
     SUBDIR += elisa8x8
-    SUBDIR += elvis
     SUBDIR += emacs-emcws
     SUBDIR += epwutil
     SUBDIR += esecanna

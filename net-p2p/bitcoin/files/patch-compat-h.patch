@@ -1,0 +1,18 @@
+--- src/compat.h.orig	2014-03-31 19:12:15.000000000 +1000
++++ src/compat.h	2014-03-31 19:12:39.000000000 +1000
+@@ -30,6 +30,7 @@
+ #else
+ #include <sys/types.h>
+ #include <arpa/inet.h>
++#include <sys/socket.h>
+ #include <ifaddrs.h>
+ #include <limits.h>
+ #include <net/if.h>
+@@ -37,7 +38,6 @@
+ #include <netinet/in.h>
+ #include <sys/fcntl.h>
+ #include <sys/mman.h>
+-#include <sys/socket.h>
+ #include <unistd.h>
+ #endif
+ 

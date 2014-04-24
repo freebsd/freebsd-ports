@@ -1,8 +1,9 @@
 include/X11/extensions/Xevie.h
-lib/libXevie.so.1
-lib/libXevie.so
-lib/libXevie.la
 lib/libXevie.a
+lib/libXevie.la
+lib/libXevie.so
+lib/libXevie.so.1
+lib/libXevie.so.1.0.0
 libdata/pkgconfig/xevie.pc
 man/man3/Xevie.3.gz
 man/man3/XevieEnd.3.gz

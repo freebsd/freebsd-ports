@@ -3,7 +3,7 @@
 
 PORTNAME=	gmpc-lyricwiki
 PORTVERSION=	11.8.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 

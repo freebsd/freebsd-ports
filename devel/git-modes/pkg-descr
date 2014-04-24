@@ -1,0 +1,13 @@
+GNU Emacs modes for Git-related files.
+
+* git-commit-mode - A major mode for editing Git commit messages
+  according to the guidelines by Tim Pope.
+* git-rebase-mode - A major mode for git-rebase-todo files created by
+  git rebase -i
+* gitconfig-mode - A 'conf-mode'-derived major mode for editing
+  .gitconfig files.
+* gitignore-mode - A 'conf-mode'-derived major mode for editing
+  .gitignore files.
+* gitattributes-mode - A major mode for editing .gitattributes files.
+
+WWW: https://github.com/magit/git-modes

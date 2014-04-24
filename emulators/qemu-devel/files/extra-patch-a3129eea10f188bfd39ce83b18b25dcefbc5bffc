@@ -1,0 +1,53 @@
+diff --git a/bsd-user/signal.c b/bsd-user/signal.c
+index 3619b00..01374a6 100644
+--- a/bsd-user/signal.c
++++ b/bsd-user/signal.c
+@@ -283,7 +283,8 @@ static int core_dump_signal(int sig)
+ /* Signal queue handling. */
+ static inline struct qemu_sigqueue *alloc_sigqueue(CPUArchState *env)
+ {
+-    TaskState *ts = env->opaque;
++    CPUState *cpu = thread_cpu;
++    TaskState *ts = (TaskState *)cpu->opaque;
+     struct qemu_sigqueue *q = ts->first_free;
+ 
+     if (!q) {
+@@ -296,7 +297,8 @@ static inline struct qemu_sigqueue *alloc_sigqueue(CPUArchState *env)
+ static inline void free_sigqueue(CPUArchState *env, struct qemu_sigqueue *q)
+ {
+ 
+-    TaskState *ts = env->opaque;
++    CPUState *cpu = thread_cpu;
++    TaskState *ts = (TaskState *)cpu->opaque;
+     q->next = ts->first_free;
+     ts->first_free = q;
+ }
+@@ -305,7 +307,8 @@ static inline void free_sigqueue(CPUArchState *env, struct qemu_sigqueue *q)
+ void QEMU_NORETURN force_sig(int target_sig)
+ {
+     CPUArchState *env = thread_cpu->env_ptr;
+-    TaskState *ts = (TaskState *)env->opaque;
++    CPUState *cpu = thread_cpu;
++    TaskState *ts = (TaskState *)cpu->opaque;
+     int core_dumped = 0;
+     int host_sig;
+     struct sigaction act;
+@@ -365,7 +368,8 @@ void QEMU_NORETURN force_sig(int target_sig)
+  */
+ int queue_signal(CPUArchState *env, int sig, target_siginfo_t *info)
+ {
+-    TaskState *ts = env->opaque;
++    CPUState *cpu = thread_cpu;
++    TaskState *ts = (TaskState *)cpu->opaque;
+     struct emulated_sigtable *k;
+     struct qemu_sigqueue *q, **pq;
+     abi_ulong handler;
+@@ -826,7 +830,7 @@ void process_pending_signals(CPUArchState *cpu_env)
+     struct emulated_sigtable *k;
+     struct target_sigaction *sa;
+     struct qemu_sigqueue *q;
+-    TaskState *ts = cpu_env->opaque;
++    TaskState *ts = cpu->opaque;
+ 
+     if (!ts->signal_pending) {
+         return;

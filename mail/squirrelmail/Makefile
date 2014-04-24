@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail
-PORTVERSION=	20131229
-PORTREVISION=	1
+PORTVERSION=	20140420
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw/squirrelmail
@@ -22,8 +21,7 @@ LICENSE=	GPLv2
 USE_PHP=	session mhash gettext mbstring pcre openssl xml
 WANT_PHP_WEB=	yes
 
-USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext tar:bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.stable/${PORTNAME}
 
@@ -85,7 +83,7 @@ do-build:
 
 	@${ECHO} "left_refresh=300" >> ${WRKSRC}/data/default_pref
 	@${MV} ${WRKSRC}/config/config_local.php ${WRKSRC}/config/config_local.php.sample
-	@${MV} ${WRKSRC}/data/default_pref ${WRKSRC}/data/default_pref-dist
+	@${MV} ${WRKSRC}/data/default_pref ${WRKSRC}/data/default_pref.sample
 	@${MKDIR} ${WRKSRC}/attach
 	@${CP} -p ${WRKSRC}/data/.htaccess ${WRKSRC}/attach/.htaccess
 

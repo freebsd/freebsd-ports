@@ -257,7 +257,7 @@ src/snort_dynamicsrc/stream_api.h
 src/snort_dynamicsrc/treenodes.h
 src/snort_dynamicsrc/util_unfold.c
 src/snort_dynamicsrc/util_unfold.h
-@unexec rmdir >/dev/null 2>&1 /var/log/snort || :
+@unexec rmdir "/var/log/snort" >/dev/null 2>&1 || :
 @dirrmtry src/snort_dynamicsrc
 @dirrmtry src
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

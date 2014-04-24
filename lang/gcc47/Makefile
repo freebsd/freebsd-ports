@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc47
-PORTVERSION=	4.7.4.20140412
+PORTVERSION=	4.7.4.20140419
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -101,6 +101,8 @@ INFO=		gcc${SUFFIX}/cpp \
 INFO+=		gcc${SUFFIX}/libquadmath \
 		gcc${SUFFIX}/libitm
 .endif
+SUB_FILES=	pkg-message
+SUB_LIST+=	TARGLIB=${TARGLIB}
 
 .if ${PORT_OPTIONS:MJAVA}
 ECJ_JAR=	${LOCALBASE}/share/java/ecj-4.5.jar

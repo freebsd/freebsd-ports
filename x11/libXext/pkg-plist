@@ -2,6 +2,7 @@ lib/libXext.a
 lib/libXext.la
 lib/libXext.so
 lib/libXext.so.6
+lib/libXext.so.6.4.0
 include/X11/extensions/MITMisc.h
 include/X11/extensions/XEVI.h
 include/X11/extensions/XLbx.h

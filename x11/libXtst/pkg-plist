@@ -4,6 +4,7 @@ lib/libXtst.a
 lib/libXtst.la
 lib/libXtst.so
 lib/libXtst.so.6
+lib/libXtst.so.6.1.0
 libdata/pkgconfig/xtst.pc
 man/man3/XTestCompareCurrentCursorWithWindow.3.gz
 man/man3/XTestCompareCursorWithWindow.3.gz

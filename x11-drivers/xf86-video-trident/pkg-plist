@@ -1,4 +1,3 @@
-lib/xorg/modules/drivers/trident_drv.la
 lib/xorg/modules/drivers/trident_drv.so
 man/man4/trident.4x.gz
 @dirrmtry lib/xorg/modules/drivers

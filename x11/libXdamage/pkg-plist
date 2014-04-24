@@ -3,5 +3,6 @@ lib/libXdamage.a
 lib/libXdamage.la
 lib/libXdamage.so
 lib/libXdamage.so.1
+lib/libXdamage.so.1.1.0
 libdata/pkgconfig/xdamage.pc
 @dirrmtry include/X11/extensions

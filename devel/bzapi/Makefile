@@ -2,7 +2,7 @@
 
 PORTNAME=	bzapi
 DISTVERSION=	165:82e75bdd00be
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/pgollucci
 
@@ -31,6 +31,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 WRKSRC=	${WRKDIR}/${PORTNAME}
+
+DEPRECATED=	Bugzilla has a native REST API, see https://wiki.mozilla.org/BMO/REST
+EXPIRATION_DATE=	2014-06-14
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/script/*.pl	${STAGEDIR}${PREFIX}/bin

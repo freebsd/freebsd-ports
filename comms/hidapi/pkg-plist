@@ -1,6 +1,5 @@
 include/hidapi/hidapi.h
 lib/libhidapi.a
-lib/libhidapi.la
 lib/libhidapi.so
 lib/libhidapi.so.0
 lib/libhidapi.so.0.0.0

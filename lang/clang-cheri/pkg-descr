@@ -1,0 +1,6 @@
+CHERI-Clang is a fork of the Clang compiler with support for the CHERI
+(Capability Hardware Enhanced RISC Instructions) ISA.
+
+It also has enhanced support for MIPS CPUs, particularly MIPS64.
+
+WWW: http://www.cl.cam.ac.uk/research/security/ctsrd/cheri.html

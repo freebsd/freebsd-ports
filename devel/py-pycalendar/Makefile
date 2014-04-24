@@ -9,13 +9,10 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	roland@micite.net
-COMMENT=	An iCalendar and vCard module for python
+COMMENT=	iCalendar and vCard module for python
 
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|distutils.core|setuptools|g' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

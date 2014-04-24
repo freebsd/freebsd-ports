@@ -3,7 +3,7 @@
 
 PORTNAME=	unshield
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Unshield/${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool pathfix
+USES=		libtool:keepla pathfix
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/lib/.libs/libunshield.so.0.0.0

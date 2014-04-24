@@ -3,7 +3,7 @@
 
 PORTNAME=	gdchart
 PORTVERSION=	0.11.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.fred.net/brv/chart/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -14,7 +14,7 @@ COMMENT=	Easy to use fast C API for creating charts and graphs
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		freetype:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ARGS=	PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}"

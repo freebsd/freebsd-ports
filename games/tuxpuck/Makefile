@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxpuck
 PORTVERSION=	0.8.2
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	games
 MASTER_SITES=	http://www.sourcefiles.org/Games/Sports/Miscellaneous/
 

@@ -1,6 +1,6 @@
---- configure.orig	2008-08-11 13:14:21.000000000 -0300
-+++ configure	2008-09-17 23:01:15.000000000 -0300
-@@ -2663,7 +2663,7 @@
+--- configure.orig	2014-02-15 06:07:59.000000000 -0800
++++ configure	2014-04-16 10:11:58.615876540 -0700
+@@ -3248,7 +3248,7 @@
  else
  
  		case "${target_os}" in
@@ -9,16 +9,52 @@
  			*) enable_mount_helper="no" ;;
  		esac
  
-@@ -19619,7 +19619,7 @@
- fi
+@@ -7991,7 +7991,7 @@
+ LIBTOOL_DEPS="$ltmain"
  
- 	;;
--darwin*|netbsd*|solaris*)
-+darwin*|netbsd*|solaris*|freebsd*)
- 	with_fuse="external"
- 	;;
- freebsd*)
-@@ -23029,7 +23029,7 @@
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++LIBTOOL='$(SHELL) /usr/local/bin/libtool'
+ 
+ 
+ 
+@@ -9527,7 +9527,7 @@
+       hardcode_shlibpath_var=no
+       ;;
+ 
+-    freebsd1*)
++    freebsd1.*)
+       ld_shlibs=no
+       ;;
+ 
+@@ -10402,7 +10402,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -10413,7 +10413,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -11894,7 +11894,7 @@
+ 		with_fuse="external"
+ 		;;
+ 	freebsd*)
+-		as_fn_error $? "Please see FreeBSD support at http://www.freshports.org/sysutils/fusefs-ntfs" "$LINENO" 5
++		with_fuse="external"
+ 		;;
+ 	*)
+ 		as_fn_error $? "ntfs-3g can be built for Linux, FreeBSD, Mac OS X, NetBSD, and Solaris only." "$LINENO" 5
+@@ -13967,7 +13967,7 @@
  fi
  
  # Settings

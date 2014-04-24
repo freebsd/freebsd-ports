@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	froxlor
-DISTVERSION=	0.9.30
+PORTVERSION=	0.9.31.2
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -18,6 +18,10 @@ NO_BUILD=	YES
 SUB_FILES+=	pkg-message pkg-deinstall
 
 USE_PHP=	xml bcmath posix filter session ftp mysql mysqli
+
+USES=		shebangfix
+
+SHEBANG_FILES=	froxlor/install/tsmarty2c.php
 
 OPTIONS_DEFINE=	POWERDNS LIBNSS LOGROTATE MYSQLS DKIM PCNTL NLS
 

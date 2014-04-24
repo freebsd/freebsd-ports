@@ -129,9 +129,9 @@ lib/pinball/libemilia_pin.a
 @dirrm lib/pinball
 @dirrm include/pinball
 @group games
-@unexec rmdir >/dev/null 2>&1 /var/games/pinball/tux || :
-@unexec rmdir >/dev/null 2>&1 /var/games/pinball/professor || :
-@unexec rmdir >/dev/null 2>&1 /var/games/pinball || :
+@unexec rmdir "/var/games/pinball/tux" >/dev/null 2>&1 || :
+@unexec rmdir "/var/games/pinball/professor" >/dev/null 2>&1 || :
+@unexec rmdir "/var/games/pinball" >/dev/null 2>&1 || :
 /var/games/pinball/professor/highscores
 /var/games/pinball/tux/highscores
 @group

@@ -2,6 +2,7 @@
 
 PORTNAME=	rssroll
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://chaosophia.net/downloads/rssroll/ \
 		http://ns1.chaosophia.net/downloads/rssroll/
@@ -12,7 +13,7 @@ COMMENT=	RSS collector in C
 LICENSE=	BSD
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		xml2:${PORTSDIR}/textproc/libxml2 \
+		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
 GNU_CONFIGURE=	yes

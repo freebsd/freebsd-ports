@@ -27,6 +27,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/panic.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/postproc.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/powersup.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/rating.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/rss.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/sabtray.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/scheduler.py
@@ -262,11 +263,15 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/refresh.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/rss-grey.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/rss.png
-%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sabnzbdplus.ico
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/%%PORTNAME%%.ico
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sound16.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-config.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-main.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-tilex.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-tiley.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/thumbdown20.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/thumbup20.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/vision16.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_0_eeeeee_40x100.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_55_c0402a_40x100.png
@@ -282,6 +287,9 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_999999_256x240.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_fbc856_256x240.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/jquery-ui-1.8.15.custom.css
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/rateit/delete.gif
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/rateit/rateit.css
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/rateit/star.gif
 %%DATADIR%%/interfaces/Plush/templates/status.tmpl
 %%DATADIR%%/interfaces/smpl/CreativeCommons2-5.txt
 %%DATADIR%%/interfaces/smpl/CreativeCommons3-0.txt
@@ -334,6 +342,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/smpl/templates/static/stylesheets/smpl.css
 %%DATADIR%%/interfaces/smpl/templates/status.tmpl
 %%DATADIR%%/interfaces/wizard/README.TXT
+%%DATADIR%%/interfaces/wizard/four.html
 %%DATADIR%%/interfaces/wizard/inc_bottom.tmpl
 %%DATADIR%%/interfaces/wizard/inc_top.tmpl
 %%DATADIR%%/interfaces/wizard/index.html
@@ -408,94 +417,96 @@ bin/SABnzbd.py
 %%DATADIR%%/util/__init__.py
 %%DATADIR%%/util/apireg.py
 %%DATADIR%%/util/mailslot.py
-@dirrm %%DATADIR%%/util
-@dirrm %%DATADIR%%/tools
-@dirrm %%DATADIR%%/po/nsis
-@dirrm %%DATADIR%%/po/main
-@dirrm %%DATADIR%%/po/email
-@dirrm %%DATADIR%%/po
-@dirrm %%DATADIR%%/locale/sv/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/sv
-@dirrm %%DATADIR%%/locale/ro/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ro
-@dirrm %%DATADIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/pt_BR
-@dirrm %%DATADIR%%/locale/pl/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/pl
-@dirrm %%DATADIR%%/locale/nl/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/nl
-@dirrm %%DATADIR%%/locale/nb/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/nb
-@dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/fr
-@dirrm %%DATADIR%%/locale/es/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/es
-@dirrm %%DATADIR%%/locale/de/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/de
-@dirrm %%DATADIR%%/locale/da/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/da
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/interfaces/wizard/static/javascript
-@dirrm %%DATADIR%%/interfaces/wizard/static/images
-@dirrm %%DATADIR%%/interfaces/wizard/static
-@dirrm %%DATADIR%%/interfaces/wizard
-@dirrm %%DATADIR%%/interfaces/smpl/templates/static/stylesheets/colorschemes
-@dirrm %%DATADIR%%/interfaces/smpl/templates/static/stylesheets
-@dirrm %%DATADIR%%/interfaces/smpl/templates/static/images/nuvola
-@dirrm %%DATADIR%%/interfaces/smpl/templates/static/images
-@dirrm %%DATADIR%%/interfaces/smpl/templates/static/excanvas
-@dirrm %%DATADIR%%/interfaces/smpl/templates/static/PlotKit
-@dirrm %%DATADIR%%/interfaces/smpl/templates/static/MochiKit
-@dirrm %%DATADIR%%/interfaces/smpl/templates/static
-@dirrm %%DATADIR%%/interfaces/smpl/templates
-@dirrm %%DATADIR%%/interfaces/smpl
-@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images
-@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast
-@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui
-@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav
-@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images
-@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold
-@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes
-@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets
-@dirrm %%DATADIR%%/interfaces/Plush/templates/static/javascripts
-@dirrm %%DATADIR%%/interfaces/Plush/templates/static
-@dirrm %%DATADIR%%/interfaces/Plush/templates
-@dirrm %%DATADIR%%/interfaces/Plush/licenses
-@dirrm %%DATADIR%%/interfaces/Plush
-@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/stylesheets/colorschemes
-@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/stylesheets
-@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/javascripts
-@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/images/light
-@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/images/dark
-@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/images
-@dirrm %%DATADIR%%/interfaces/Mobile/templates/static
-@dirrm %%DATADIR%%/interfaces/Mobile/templates
-@dirrm %%DATADIR%%/interfaces/Mobile/licenses
-@dirrm %%DATADIR%%/interfaces/Mobile
-@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg/js
-@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg/images
-@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg/ico
-@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg/css/images
-@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg/css
-@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg
-@dirrm %%DATADIR%%/interfaces/Config/templates
-@dirrm %%DATADIR%%/interfaces/Config
-@dirrm %%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes
-@dirrm %%DATADIR%%/interfaces/Classic/templates/static/stylesheets
-@dirrm %%DATADIR%%/interfaces/Classic/templates/static/javascript
-@dirrm %%DATADIR%%/interfaces/Classic/templates/static/images
-@dirrm %%DATADIR%%/interfaces/Classic/templates/static
-@dirrm %%DATADIR%%/interfaces/Classic/templates
-@dirrm %%DATADIR%%/interfaces/Classic
-@dirrm %%DATADIR%%/interfaces
-@dirrm %%DATADIR%%/gntp
-@dirrm %%DATADIR%%/cherrypy/wsgiserver
-@dirrm %%DATADIR%%/cherrypy/process
-@dirrm %%DATADIR%%/cherrypy/lib
-@dirrm %%DATADIR%%/cherrypy
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/util
+@dirrmtry %%DATADIR%%/tools
+@dirrmtry %%DATADIR%%/po/nsis
+@dirrmtry %%DATADIR%%/po/main
+@dirrmtry %%DATADIR%%/po/email
+@dirrmtry %%DATADIR%%/po
+@dirrmtry %%DATADIR%%/locale/sv/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/sv
+@dirrmtry %%DATADIR%%/locale/ro/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/ro
+@dirrmtry %%DATADIR%%/locale/pt_BR/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/pt_BR
+@dirrmtry %%DATADIR%%/locale/pl/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/pl
+@dirrmtry %%DATADIR%%/locale/nl/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/nl
+@dirrmtry %%DATADIR%%/locale/nb/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/nb
+@dirrmtry %%DATADIR%%/locale/fr/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/fr
+@dirrmtry %%DATADIR%%/locale/es/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/es
+@dirrmtry %%DATADIR%%/locale/de/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/de
+@dirrmtry %%DATADIR%%/locale/da/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/da
+@dirrmtry %%DATADIR%%/locale
+@dirrmtry %%DATADIR%%/interfaces/wizard/static/javascript
+@dirrmtry %%DATADIR%%/interfaces/wizard/static/images
+@dirrmtry %%DATADIR%%/interfaces/wizard/static
+@dirrmtry %%DATADIR%%/interfaces/wizard
+@dirrmtry %%DATADIR%%/interfaces/smpl/templates/static/stylesheets/colorschemes
+@dirrmtry %%DATADIR%%/interfaces/smpl/templates/static/stylesheets
+@dirrmtry %%DATADIR%%/interfaces/smpl/templates/static/images/nuvola
+@dirrmtry %%DATADIR%%/interfaces/smpl/templates/static/images
+@dirrmtry %%DATADIR%%/interfaces/smpl/templates/static/excanvas
+@dirrmtry %%DATADIR%%/interfaces/smpl/templates/static/PlotKit
+@dirrmtry %%DATADIR%%/interfaces/smpl/templates/static/MochiKit
+@dirrmtry %%DATADIR%%/interfaces/smpl/templates/static
+@dirrmtry %%DATADIR%%/interfaces/smpl/templates
+@dirrmtry %%DATADIR%%/interfaces/smpl
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/rateit
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static/stylesheets
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static/javascripts
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates/static
+@dirrmtry %%DATADIR%%/interfaces/Plush/templates
+@dirrmtry %%DATADIR%%/interfaces/Plush/licenses
+@dirrmtry %%DATADIR%%/interfaces/Plush
+@dirrmtry %%DATADIR%%/interfaces/Mobile/templates/static/stylesheets/colorschemes
+@dirrmtry %%DATADIR%%/interfaces/Mobile/templates/static/stylesheets
+@dirrmtry %%DATADIR%%/interfaces/Mobile/templates/static/javascripts
+@dirrmtry %%DATADIR%%/interfaces/Mobile/templates/static/images/light
+@dirrmtry %%DATADIR%%/interfaces/Mobile/templates/static/images/dark
+@dirrmtry %%DATADIR%%/interfaces/Mobile/templates/static/images
+@dirrmtry %%DATADIR%%/interfaces/Mobile/templates/static
+@dirrmtry %%DATADIR%%/interfaces/Mobile/templates
+@dirrmtry %%DATADIR%%/interfaces/Mobile/licenses
+@dirrmtry %%DATADIR%%/interfaces/Mobile
+@dirrmtry %%DATADIR%%/interfaces/Config/templates/staticcfg/js
+@dirrmtry %%DATADIR%%/interfaces/Config/templates/staticcfg/images
+@dirrmtry %%DATADIR%%/interfaces/Config/templates/staticcfg/ico
+@dirrmtry %%DATADIR%%/interfaces/Config/templates/staticcfg/css/images
+@dirrmtry %%DATADIR%%/interfaces/Config/templates/staticcfg/css
+@dirrmtry %%DATADIR%%/interfaces/Config/templates/staticcfg
+@dirrmtry %%DATADIR%%/interfaces/Config/templates
+@dirrmtry %%DATADIR%%/interfaces/Config
+@dirrmtry %%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes
+@dirrmtry %%DATADIR%%/interfaces/Classic/templates/static/stylesheets
+@dirrmtry %%DATADIR%%/interfaces/Classic/templates/static/javascript
+@dirrmtry %%DATADIR%%/interfaces/Classic/templates/static/images
+@dirrmtry %%DATADIR%%/interfaces/Classic/templates/static
+@dirrmtry %%DATADIR%%/interfaces/Classic/templates
+@dirrmtry %%DATADIR%%/interfaces/Classic
+@dirrmtry %%DATADIR%%/interfaces
+@dirrmtry %%DATADIR%%/gntp
+@dirrmtry %%DATADIR%%/cherrypy/wsgiserver
+@dirrmtry %%DATADIR%%/cherrypy/process
+@dirrmtry %%DATADIR%%/cherrypy/lib
+@dirrmtry %%DATADIR%%/cherrypy
+@dirrmtry %%DATADIR%%
 @dirrmtry sabnzbd
-@dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/utils
-@dirrm %%PYTHON_SITELIBDIR%%/sabnzbd
+@dirrmtry %%PYTHON_SITELIBDIR%%/sabnzbd/utils
+@dirrmtry %%PYTHON_SITELIBDIR%%/sabnzbd
 @dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
 @exec chown _sabnzbd:_sabnzbd %D/sabnzbd

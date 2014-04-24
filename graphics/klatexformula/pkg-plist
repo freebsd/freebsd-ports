@@ -36,6 +36,8 @@ include/klftools/qtcolortriangle.h
 lib/libklfapp.a
 lib/libklfbackend.a
 lib/libklftools.a
+man/man1/klatexformula.1.gz
+man/man1/klatexformula_cmdl.1.gz
 share/applications/klatexformula.desktop
 share/klatexformula/rccresources/klfbaseplugins-%%VERSION%%.rcc
 share/mime/packages/klatexformula-mime.xml

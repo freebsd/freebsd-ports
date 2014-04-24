@@ -3,6 +3,7 @@
 
 PORTNAME=	wolfpack
 PORTVERSION=	4.3.32
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	empserver/${DISTNAME}
@@ -10,8 +11,6 @@ DISTNAME=	empire-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Long term multiplayer strategy game
-
-BROKEN=		Fails to install
 
 MAKEFILE=	GNUmakefile
 USES=		gmake perl5
@@ -40,13 +39,10 @@ post-patch:
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DATADIR}
-	@${LN} -s ${BINDIR}/emp_server ${STAGEDIR}${PREFIX}/bin/emp_server
-	@${LN} -s ${BINDIR}/empire ${STAGEDIR}${PREFIX}/bin/emp_client
-	@${PREFIX}/lib/wolfpack/pconfig > ${STAGEDIR}${ETCDIR}/econfig.orig
-	@${CHOWN} -R ${USERS}:${GROUPS} ${STAGEDIR}${DATADIR} \
-		${STAGEDIR}${ETCDIR} ${STAGEDIR}${VARDIR}
-	@${CHMOD} -R u+w,o-rx ${STAGEDIR}${DATADIR} \
-		${STAGEDIR}${ETCDIR} ${STAGEDIR}${VARDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DATADIR}
+	${LN} -s ${BINDIR}/emp_server ${STAGEDIR}${PREFIX}/bin/emp_server
+	${LN} -s ${BINDIR}/empire ${STAGEDIR}${PREFIX}/bin/emp_client
+	${STAGEDIR}${PREFIX}/lib/wolfpack/pconfig > \
+		${STAGEDIR}${ETCDIR}/econfig.orig
 
 .include <bsd.port.post.mk>

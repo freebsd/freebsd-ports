@@ -3,18 +3,19 @@
 
 PORTNAME=	igraph
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/C%20library/${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 GNU_CONFIGURE=	yes
 USE_GCC=	any
 USES=		gmake
+USE_GNOME=	libxml2
 CONFIGURE_ARGS+=	--enable-gmp
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

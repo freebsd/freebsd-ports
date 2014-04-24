@@ -3,6 +3,7 @@
 
 PORTNAME=	gnomechess
 PORTVERSION=	3.10.2
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-chess/3.10

@@ -21,8 +21,6 @@ CONFLICTS?=	ucspi-ssl-tls-[0-9]*
 
 USES=		perl5
 
-RESTRICTED=	Non-explicit licensing terms
-
 PORTDOCS=	CHANGES TODO UCSPI-SSL
 
 WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
@@ -45,7 +43,7 @@ do-configure:
 	${ECHO_CMD} "/etc/ssl/dh1024.pem" > ${WRKSRC}/src/conf-dhfile
 
 do-build:
-	cd ${WRKSRC} && package/compile
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} package/compile
 
 do-install:
 .for x in ${SCRIPTS_TO_INSTALL}

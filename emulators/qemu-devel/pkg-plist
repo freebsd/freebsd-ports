@@ -2,6 +2,7 @@ bin/qemu-ga
 bin/qemu-img
 bin/qemu-io
 bin/qemu-nbd
+%%NONX86%%bin/qemu-system-aarch64
 %%NONX86%%bin/qemu-system-alpha
 %%NONX86%%bin/qemu-system-arm
 %%NONX86%%bin/qemu-system-cris
@@ -51,8 +52,10 @@ etc/qemu/target-x86_64.conf.sample
 @exec if [ ! -f %D/etc/qemu/target-x86_64.conf ] ; then cp -p %D/%F %D/etc/qemu/target-x86_64.conf; fi
 @dirrmtry etc/qemu
 %%DATADIR%%/QEMU,tcx.bin
+%%DATADIR%%/QEMU,cgthree.bin
 %%DATADIR%%/acpi-dsdt.aml
 %%DATADIR%%/q35-acpi-dsdt.aml
+%%DATADIR%%/bios-256k.bin
 %%DATADIR%%/bios.bin
 %%DATADIR%%/efi-e1000.rom
 %%DATADIR%%/efi-eepro100.rom

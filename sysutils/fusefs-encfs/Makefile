@@ -3,7 +3,7 @@
 
 PORTNAME=	encfs
 PORTVERSION=	1.7.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	fusefs-
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization \
 		--with-boost-filesystem=boost_filesystem
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		fuse gmake libtool pkgconfig
+USES=		fuse gmake libtool:keepla pkgconfig
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 

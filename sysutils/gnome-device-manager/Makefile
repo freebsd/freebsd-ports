@@ -15,7 +15,7 @@ LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
 
 USE_BZIP2=	yes
 USES=		gmake pkgconfig
-USE_GNOME=	gnomehack intlhack ltverhack libgnomeui
+USE_GNOME=	gnomehack intlhack ltverhack libgnomeui gnomedocutils
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

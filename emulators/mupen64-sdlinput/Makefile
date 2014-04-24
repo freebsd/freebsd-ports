@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTVERSION=	0.0.10
-PORTREVISION=	3
+PORTREVISION=	4
 PKGNAMESUFFIX=	-sdlinput
 
 COMMENT=	Blight's SDL input plugin for Mupen64
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 FIXFILES=	#
 

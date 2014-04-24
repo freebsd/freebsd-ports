@@ -3,7 +3,7 @@
 
 PORTNAME=	libgltext
 PORTVERSION=	0.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gltext/gltext/${PORTVERSION}
 DISTNAME=	gltext-${PORTVERSION}
@@ -11,7 +11,7 @@ DISTNAME=	gltext-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable font rendering library for C++
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	libtool
 USES=		gmake

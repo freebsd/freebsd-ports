@@ -3,37 +3,34 @@
 
 PORTNAME=	mkxvcd
 PORTVERSION=	2.0.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/kvcd4nix/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/kvcd4nix/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes high quality X/K/S/VCD movies from many formats
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
 		bash:${PORTSDIR}/shells/bash \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		transcode:${PORTSDIR}/multimedia/transcode
 
+USES=		shebangfix
+SHEBANG_FILES=	${PORTNAME}.sh
 NO_BUILD=	yes
-PLIST_FILES=	bin/mkxvcd
 
-PORTDOCS=	AUTHORS Changelog INSTALL README TODO
+PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
-		${WRKSRC}/mkxvcd.sh
+PORTDOCS=	AUTHORS Changelog README
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/mkxvcd.sh ${PREFIX}/bin/mkxvcd
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for docfile in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
-.endif
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

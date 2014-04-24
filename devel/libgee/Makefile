@@ -4,6 +4,7 @@
 
 PORTNAME=	libgee
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
 USE_XZ=		yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	glib20 gnomehier introspection:build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

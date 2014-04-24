@@ -3,7 +3,7 @@
 
 PORTNAME=	kanatest
 PORTVERSION=	0.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://clayo.org/kanatest/
 

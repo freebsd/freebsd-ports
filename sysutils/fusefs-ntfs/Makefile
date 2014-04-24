@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntfs
-PORTVERSION=	2012.1.15
+PORTVERSION=	2014.2.15
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tuxera.com/opensource/
@@ -21,7 +21,7 @@ USES=		fuse pkgconfig iconv
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
-		--disable-mtab --with-fuse=external
+		--disable-mtab --with-fuse=external --disable-ldconfig
 CPPFLAGS+=	-I${WRKSRC}/include/ntfs-3g/ -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

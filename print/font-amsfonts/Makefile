@@ -18,11 +18,10 @@ NO_BUILD=	yes
 
 FONTSDIR=	share/fonts/${PORTNAME}
 
+PLIST_SUB=	FONTSDIR=${FONTSDIR}
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	cd ${STAGEDIR}${PREFIX}/${FONTSDIR} && ${TAR} -x -z -U --strip-components 1 -f \
-	    ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${CHMOD} -R go-w ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${FONTSDIR}
 
 .include <bsd.port.mk>

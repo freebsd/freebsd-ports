@@ -3,7 +3,7 @@
 #    $MCom: ports/multimedia/gstreamer1/Makefile,v 1.5 2013/01/15 21:43:45 kwm Exp $
 
 PORTNAME=	gstreamer1
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 DISTNAME=	${PORTNAME:S/1//}-${PORTVERSION}
@@ -16,8 +16,7 @@ LICENSE=	LGPL20
 PORTSCOUT=	limitw:1,even
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
-USES=		bison gettext gmake libtool pathfix pkgconfig
-USE_XZ=		yes
+USES=		bison gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomehier introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \
@@ -26,7 +25,9 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-fatal-warnings \
 		--disable-gtk-doc
 CONFIGURE_ENV=	ac_cv_func_register_printf_function="no"
-PLIST_SUB=	VERSION=${GST10_VERSION}
+INSTALL_TARGET=	install-strip
+PLIST_SUB=	VERSION=${GST10_VERSION} \
+		SOVERSION=0.204.0
 USE_LDCONFIG=	yes
 GST10_VERSION=	1.0
 
@@ -59,9 +60,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst*-1.0.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0/libgst*.so
-
 .include <bsd.port.mk>
-

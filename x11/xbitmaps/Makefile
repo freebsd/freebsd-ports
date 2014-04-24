@@ -10,7 +10,7 @@ COMMENT=	X.Org bitmaps data
 
 LICENSE=	MIT
 
-USES=	pathfix
+USES=		pathfix
 
 XORG_CAT=	data
 

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libxkbcommon
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xkbcommon.org/download/
 
@@ -10,10 +11,11 @@ COMMENT=	Keymap handling library for toolkits and window systems
 
 LICENSE=	MIT
 
-USES=		gmake bison pathfix
+XORG_CAT=	lib
+USES=		gmake bison
 
-GNU_CONFIGURE=	yes
 USE_XZ=		yes
+USE_XORG=	xcb
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	--without-default-layout \

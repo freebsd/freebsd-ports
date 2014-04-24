@@ -24,13 +24,3 @@
  #CFLAGS =	-g ${CDEFS}
  LDFLAGS =	-s
  #LDFLAGS =	-g
-@@ -76,9 +79,7 @@
- 	-mkdir -p ${BINDIR}
- 	cp mini_httpd htpasswd ${BINDIR}
- 	rm -f ${MANDIR}/man8/mini_httpd.8 ${MANDIR}/man1/htpasswd.1
--	-mkdir -p ${MANDIR}/man8
- 	cp mini_httpd.8 ${MANDIR}/man8
--	-mkdir -p ${MANDIR}/man1
- 	cp htpasswd.1 ${MANDIR}/man1
- 
- clean:

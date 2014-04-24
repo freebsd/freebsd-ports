@@ -2,7 +2,7 @@
 
 PORTNAME=	charybdis
 PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc net
 MASTER_SITES=	http://www.stack.nl/~jilles/irc/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/

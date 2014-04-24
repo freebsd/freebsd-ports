@@ -26,7 +26,7 @@ MAN1=		ocrfeeder-cli.1 ocrfeeder.1
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	pygtk2 pygnomeextras
+USE_GNOME=	pygtk2 pygnomeextras gnomedocutils
 USES=		gettext gmake pkgconfig
 USE_GHOSTSCRIPT=yes
 

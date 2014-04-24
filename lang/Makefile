@@ -31,6 +31,7 @@
     SUBDIR += chicken
     SUBDIR += cint
     SUBDIR += cjs
+    SUBDIR += clang-cheri
     SUBDIR += clang-devel
     SUBDIR += clang32
     SUBDIR += clang33
@@ -50,7 +51,6 @@
     SUBDIR += dlv
     SUBDIR += dmd1
     SUBDIR += dmd2
-    SUBDIR += dragonegg-devel46
     SUBDIR += dragonegg46-33
     SUBDIR += dragonegg47-33
     SUBDIR += ecl
@@ -143,7 +143,6 @@
     SUBDIR += linux-f10-libg2c
     SUBDIR += linux-f10-tcl85
     SUBDIR += linux-j
-    SUBDIR += logo
     SUBDIR += lua
     SUBDIR += lua-mode.el
     SUBDIR += lua52
@@ -329,7 +328,6 @@
     SUBDIR += stklos
     SUBDIR += stldoc
     SUBDIR += swi-pl
-    SUBDIR += sxm
     SUBDIR += t3x
     SUBDIR += tcc
     SUBDIR += tcl-manual

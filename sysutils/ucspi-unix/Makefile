@@ -19,21 +19,20 @@ BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 CFLAGS+=	-I${BGLIBS_INC}
 LDFLAGS+=	-L${BGLIBS_LIB}
 
-PLIST_FILES=	bin/unixcat bin/unixclient bin/unixserver
-MAN1=		unixclient.1 unixserver.1
+PLIST_FILES=	bin/unixcat bin/unixclient bin/unixserver \
+		man/man1/unixclient.1.gz man/man1/unixserver.1.gz
 PORTDOCS=	NEWS PROTOCOL README TODO
 
 OPTIONS_DEFINE=	DOCS
 
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch: .SILENT
-	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
-	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
-	${ECHO_CMD} "${MANPREFIX}/man"	> ${WRKSRC}/conf-man
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}"		> ${WRKSRC}/conf-home
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"	> ${WRKSRC}/conf-bin
+	${ECHO_CMD} "${STAGEDIR}${MANPREFIX}/man"	> ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${LDFLAGS} ${STRIP}"	> ${WRKSRC}/conf-ld
 	${ECHO_CMD} "${BGLIBS_INC}"	> ${WRKSRC}/conf-bgincs
@@ -42,8 +41,8 @@ post-patch: .SILENT
 do-install:
 	cd ${WRKSRC} && ./installer
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

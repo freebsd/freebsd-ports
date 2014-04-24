@@ -18,18 +18,16 @@ COMMENT=	The noeGNUd UI for the LittleHack variation of Nethack
 RUN_DEPENDS=	${LOCALBASE}/share/${NOEGNUDVERSION}/data/gui:${PORTSDIR}/games/noegnud-data
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
-USES=		bison
+USES=		bison tar:bzip2
 USE_GL=		yes
 WANT_SDL=	yes
 USE_SDL=	sdl image mixer
-USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/variants
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 ALL_TARGET=	lh001
 INSTALL_TARGET=	install_lh001
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -46,7 +44,11 @@ post-extract:
 post-patch:
 	(cd ${WRKSRC} && ${MAKE} ${NOEGNUDVERSION}-littlehack-0.0.1)
 	@(${PATCH} ${PATCH_ARGS} < ${FILESDIR}/noegnud-littlehack.patch)
-
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E -e 's,ch(grp|own),true,' \
+		-e '/(^VARDIR|ln -s|sed)/! s,(GAME|SHELL|VAR)DIR),DESTDIR)$$(&,g' \
+		-e '/ln -s/ s,SHELLDIR,DESTDIR)$$(&,2' \
+		${WRKSRC}/${NOEGNUDVERSION}-littlehack-0.0.1/sys/unix/Makefile.top
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} ${NOEGNUDVERSION}-littlehack-0.0.1/Makefile)
 

@@ -14,6 +14,8 @@ COMMENT=	Common interface to HTTP fetchers for PycURL or urllib2
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/curl:${PORTSDIR}/ftp/py-curl
 
+BROKEN=		fails checksum
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

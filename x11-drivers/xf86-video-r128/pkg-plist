@@ -1,4 +1,3 @@
-lib/xorg/modules/drivers/r128_drv.la
 lib/xorg/modules/drivers/r128_drv.so
 man/man4/r128.4x.gz
 @dirrmtry lib/xorg/modules/drivers

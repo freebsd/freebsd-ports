@@ -3,7 +3,7 @@
 
 PORTNAME=	logjam
 PORTVERSION=	4.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://andy-shev.github.com/LogJam/download/
 

@@ -1,0 +1,15 @@
+--- a/bsd-user/arm/target_arch_cpu.c
++++ b/bsd-user/arm/target_arch_cpu.c
+@@ -18,10 +18,10 @@
+ 
+ void target_cpu_set_tls(CPUARMState *env, target_ulong newtls)
+ {
+-    env->cp15.c13_tls2 = newtls;
++    env->cp15.tpidrro_el0 = newtls;
+ }
+ 
+ target_ulong target_cpu_get_tls(CPUARMState *env)
+ {
+-    return (env->cp15.c13_tls2);
++    return (env->cp15.tpidrro_el0);
+ }

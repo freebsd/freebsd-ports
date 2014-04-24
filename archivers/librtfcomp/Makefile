@@ -3,7 +3,7 @@
 
 PORTNAME=	librtfcomp
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/SynCE/${PORTNAME}
 
@@ -13,8 +13,8 @@ COMMENT?=	Library for handling compressed RTF documents
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
+USES=		libtool:keepla
 USE_LDCONFIG=	yes
-USES=		libtool
 
 SLAVEDIRS=	archivers/py-librtfcomp
 

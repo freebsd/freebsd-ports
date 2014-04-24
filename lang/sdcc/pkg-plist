@@ -8,6 +8,8 @@ bin/sdar
 %%MCS51%%bin/sdas8051
 %%Z80%%bin/sdasgb
 %%Z80%%bin/sdasrab
+%%STM8%%bin/sdasstm8
+%%Z80%%bin/sdastlcs90
 %%Z80%%bin/sdasz80
 bin/sdcc
 bin/sdcclib
@@ -23,4 +25,5 @@ bin/sdnm
 bin/sdobjcopy
 bin/sdranlib
 %%UCSIM%%%%HC08%%bin/shc08
+%%UCSIM%%%%STM8%%bin/sstm8
 %%UCSIM%%%%Z80%%bin/sz80

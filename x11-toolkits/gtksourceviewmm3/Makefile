@@ -4,6 +4,7 @@
 
 PORTNAME=	gtksourceviewmm
 PORTVERSION=	3.2.0
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -11,14 +12,13 @@ PKGNAMESUFFIX=	3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ binding of GtkSourceView3
 
+USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_XZ=	yes
-USES=		pathfix gmake pkgconfig
 USE_GNOME=	gtksourceview3 gnomeprefix gtkmm30
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBAS}/lib
 CONFIGURE_ARGS=	--disable-documentation
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

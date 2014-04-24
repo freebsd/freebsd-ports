@@ -1,4 +1,3 @@
-lib/xorg/modules/input/hyperpen_drv.la
 lib/xorg/modules/input/hyperpen_drv.so
 @dirrmtry lib/xorg/modules/input
 @dirrmtry lib/xorg/modules

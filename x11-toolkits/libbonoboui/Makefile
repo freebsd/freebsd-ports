@@ -4,7 +4,7 @@
 
 PORTNAME=	libbonoboui
 PORTVERSION=	2.24.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -12,19 +12,19 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GUI frontend to the libbonobo component of GNOME 2
 
-USE_BZIP2=	yes
+USES+=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gettext gmake pkgconfig
+USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack \
+USE_GNOME=	gnomeprefix gnomehier intlhack \
 		libgnomecanvas libgnome referencehack
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
 
 .endif

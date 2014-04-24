@@ -33,7 +33,6 @@ FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
 
 post-extract: move-fonts rename-license
 
-NO_STAGE=	yes
 move-fonts:
 	${MKDIR} ${WRKSRC}
 	${MV} ${WRKDIR}/CODE2000.TTF ${WRKSRC}/${FONTNAME}.ttf
@@ -46,14 +45,7 @@ do-build:
 	cd ${WRKSRC} &&	${MKFONTDIR_CMD}
 
 do-install:
-	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/* ${FONTSDIR}
-
-post-install:
-	@${ECHO_MSG} "===> Running fc-cache"
-	-${FCCACHE_CMD} ${FONTSDIR}
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

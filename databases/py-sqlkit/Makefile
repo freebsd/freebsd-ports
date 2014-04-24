@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlkit
-PORTVERSION=	0.9.5.1
-PORTREVISION=	1
+PORTVERSION=	0.9.6.1
 CATEGORIES=	databases python
 MASTER_SITES=	http://sqlkit.argolinux.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:${PORTSDIR}/databases/py-s
 		${PYTHON_PKGNAMEPREFIX}Babel>=0:${PORTSDIR}/devel/py-babel
 
 USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
 USE_GNOME=	pygtk2
 USES=		desktop-file-utils gettext
 
@@ -29,7 +28,6 @@ SYBASE_DESC=	Sybase support
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${SED} -I.bak -e "s:/usr:${PREFIX}:" ${WRKSRC}/sqlkit.desktop
 
@@ -63,18 +61,15 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sybase>0:${PORTSDIR}/databases/py-sybase
 .endif
 
 post-install:
-	@${MKDIR} ${DESKTOPDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${ALL_PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/html/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for i in ${ALL_PORTDOCS_SUBDIR}
-	@${MKDIR} ${DOCSDIR}/${i}
-	@cd ${WRKSRC}/doc/html/${i} && ${COPYTREE_SHARE} . ${DOCSDIR}/${i}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
+	cd ${WRKSRC}/doc/html/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
-.endif
 
 .include <bsd.port.mk>

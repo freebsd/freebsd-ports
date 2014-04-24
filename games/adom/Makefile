@@ -3,13 +3,13 @@
 
 PORTNAME=	adom
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.adom.de/adom/download/linux/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-elf
 
 MAINTAINER=	sr-13@mail.ru
-COMMENT=	An rogue-like advanced rpg with color support (binary port)
+COMMENT=	Rogue-like advanced rpg with color support (binary port)
 
 LICENSE=	unknown
 LICENSE_NAME=	The ADOM License
@@ -22,13 +22,13 @@ OPTIONS_DEFINE=	DOCS
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USE_LINUX_APPS=	ncurses-base xorglibs
 
 WRKSRC=		${WRKDIR}/adom
 NO_BUILD=	yes
 STRIP=		# empty: do not strip linux binary!
 
-.include <bsd.port.options.mk>
+SUB_FILES=	pkg-message
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/adom ${STAGEDIR}${PREFIX}/bin

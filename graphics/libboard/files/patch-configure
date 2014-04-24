@@ -1,5 +1,5 @@
---- configure.orig	2012-05-26 19:06:25.069208812 +0600
-+++ configure	2012-05-26 19:08:46.373209460 +0600
+--- configure.orig	2010-07-16 09:07:39.000000000 +0200
++++ configure	2014-04-21 11:18:10.000000000 +0200
 @@ -117,23 +117,6 @@
  ##
  ## Are we on a 64 bits arch
@@ -24,6 +24,15 @@
  
  cat > Makefile <<EOF
  
+@@ -147,7 +130,7 @@
+ STATICLIB_NAME=\$(LIBNAME).\$(STATICLIB_EXTENSION)
+ DYNLIB=lib/\$(DYNLIB_NAME)
+ STATICLIB=lib/\$(STATICLIB_NAME)
+-PREFIX=$PREFIX
++PREFIX=\$(DESTDIR)$PREFIX
+ RM=rm -f
+ CP=cp
+ LD=\$(CXX)
 @@ -220,10 +203,6 @@
  	chmod 755 \$(PREFIX)/include/board
  	chmod 644 \$(PREFIX)/include/Board.h

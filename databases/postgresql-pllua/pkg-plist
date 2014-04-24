@@ -1,5 +1,5 @@
 lib/postgresql/pllua.so
-share/postgresql/contrib/pllua.sql
+share/postgresql/contrib/pllua--1.0.sql
 @dirrmtry lib/postgresql
 @dirrmtry share/postgresql/contrib
 @dirrmtry share/postgresql

@@ -215,6 +215,7 @@
     SUBDIR += duke3d-data
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
+    SUBDIR += dustrac
     SUBDIR += eboard
     SUBDIR += edge
     SUBDIR += editss
@@ -1176,7 +1177,6 @@
     SUBDIR += xzip
     SUBDIR += yadex
     SUBDIR += yahtzee
-    SUBDIR += yamsweeper
     SUBDIR += zangband
     SUBDIR += zatacka
     SUBDIR += zaz

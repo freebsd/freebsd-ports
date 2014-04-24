@@ -11,45 +11,34 @@ MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	FTP daemon using Samba-like share management mechanism
 
 OPTIONS_DEFINE=	MYSQL PGSQL SSL ICONV
-MYSQL_DESC=	Users database is a MySQL database
-PGSQL_DESC=	Users database is a PostgreSQL database
-SSL_DESC=	Enable SSL/TLS support
 ICONV_DESC=	Enable codepage to unicode conversion for UTF-8 FTP
 
 HAS_CONFIGURE=	yes
-MAKE_ENV=	OSTYPE=FreeBSD
-CONFIGURE_ARGS=	"--prefix=${PREFIX}"
+MAKE_ENV+=	OSTYPE=FreeBSD
+CONFIGURE_ARGS+=	"--prefix=${PREFIX}"
 
 USES=		perl5
 USE_RC_SUBR=	${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=	"--with-mysql"
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=	"--with-pgsql"
-.endif
-
-.if ${PORT_OPTIONS:MICONV}
-USES+=		iconv
-CONFIGURE_ARGS+=	"--with-iconv"
-.endif
-
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=	"--with-ssl"
-.endif
+MYSQL_USE=	MYSQL=yes
+MYSQL_CONFIGURE_WITH=	mysql
+PGSQL_USE=	PGSQL=yes
+PGSQL_CONFIGURE_WITH=	pgsql
+ICONV_USES=	iconv
+ICONV_CONFIGURE_WITH=	iconv
+SSL_CONFIGURE_WITH=		ssl
 
 post-extract:
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
+	${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CONFIGS = / s|\.conf|&.sample|g' ${WRKSRC}/Makefile
-	@cd ${WRKSRC}/conf/ && (${LS} *.conf | ${XARGS} -I % ${MV} % %.sample)
+	${REINPLACE_CMD} -e '/^CONFIGS = / s|\.conf|&.sample|g' ${WRKSRC}/Makefile
+	cd ${WRKSRC}/conf/ && (${LS} *.conf | ${XARGS} -I % ${MV} % %.sample)
 
-.include <bsd.port.post.mk>
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-user ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/*.sample ${STAGEDIR}${ETCDIR}
+
+.include <bsd.port.mk>

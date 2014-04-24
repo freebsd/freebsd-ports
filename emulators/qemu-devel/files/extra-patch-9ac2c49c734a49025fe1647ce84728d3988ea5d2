@@ -1,0 +1,14 @@
+diff --git a/bsd-user/freebsd/os-sys.c b/bsd-user/freebsd/os-sys.c
+index c8f999f..2578645 100644
+--- a/bsd-user/freebsd/os-sys.c
++++ b/bsd-user/freebsd/os-sys.c
+@@ -130,7 +130,8 @@ abi_long do_freebsd_sysctl(CPUArchState *env, abi_ulong namep, int32_t namelen,
+     abi_ulong oldlen = 0;
+     int32_t *snamep = g_malloc(sizeof(int32_t) * namelen), *p, *q, i;
+     uint32_t kind = 0;
+-    TaskState *ts = (TaskState *)env->opaque;
++    CPUState *cpu = ENV_GET_CPU(env);
++    TaskState *ts = cpu->opaque;
+ 
+     if (oldlenp) {
+         if (get_user_ual(oldlen, oldlenp)) {

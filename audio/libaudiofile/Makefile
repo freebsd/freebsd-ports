@@ -16,9 +16,8 @@ LICENSE=	LGPL21
 
 CONFLICTS=	osalp-0.7.*
 
-USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

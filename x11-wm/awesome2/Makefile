@@ -3,7 +3,7 @@
 
 PORTNAME=	awesome2
 PORTVERSION=	2.3.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 DISTNAME=	awesome-${PORTVERSION}
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
 LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
 		cairo.2:${PORTSDIR}/graphics/cairo \
-		freetype.9:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		iconv pkgconfig
 GNU_CONFIGURE=	yes

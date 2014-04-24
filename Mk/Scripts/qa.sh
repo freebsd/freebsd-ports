@@ -81,7 +81,7 @@ symlinks() {
 		[ -z "${l}" ] && continue
 		case "${link}" in
 			${STAGEDIR}*)
-				err "Bad symlinks ${l} pointing inside the stage directory"
+				err "Bad symlinks ${l#${STAGEDIR}${PREFIX}/} pointing inside the stage directory"
 				rc=1
 				;;
 		esac
@@ -106,7 +106,7 @@ paths() {
 			*/lib/ruby/gems/*/Makefile.html) continue ;;
 			*/lib/ruby/gems/*/mkmf.log) continue ;;
 		esac
-		err "${f} is referring to ${STAGEDIR}"
+		err "${f#${STAGEDIR}${PREFIX}/} is referring to ${STAGEDIR}"
 		rc=1
 	# Use heredoc to avoid losing rc from find|while subshell
 	done << EOF
@@ -123,8 +123,8 @@ stripped() {
 	find ${STAGEDIR} -type f -exec /usr/bin/file -nNF '' {} + | while
 	    read f output; do
 		case "${output}" in
-			ELF\ *\ executable,\ *,\ not\ stripped*|ELF\ *\ shared\ object,\ *,\ not\ stripped*)
-				warn "${f} is not stripped consider using \${STRIP_CMD}"
+			ELF\ *\ executable,\ *FreeBSD*,\ not\ stripped*|ELF\ *\ shared\ object,\ *FreeBSD*,\ not\ stripped*)
+				warn "${f#${STAGEDIR}${PREFIX}/} is not stripped consider using \${STRIP_CMD}"
 				;;
 		esac
 	done

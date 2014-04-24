@@ -1147,8 +1147,16 @@ MASTER_SITE_SAVANNAH+= \
 	http://download-mirror.savannah.gnu.org/releases/%SUBDIR%/
 .endif
 
+# List:		http://sourceforge.net/apps/trac/sourceforge/wiki/Mirrors
+# Updated:	2013-03-25
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
 MASTER_SITE_SOURCEFORGE+= http://downloads.sourceforge.net/project/%SUBDIR%/
+.for mirror in heanet sunet iweb switch freefr garr aarnet jaist master \
+	nchc ncu internode waix hivelocity superb-dca3 ufpr tenet \
+	netcologne ignum kent kaz
+MASTER_SITE_SOURCEFORGE+= \
+	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
+.endfor
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_JP)

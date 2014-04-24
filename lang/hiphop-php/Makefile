@@ -3,7 +3,7 @@
 
 PORTNAME=	hiphop-php
 PORTVERSION=	2.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/archive/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \
@@ -15,6 +15,8 @@ PATCH_SITES=	http://cpp.in/dev/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HipHop Virtual Machine for PHP (HHVM)
+
+BROKEN=		Fails to configure
 
 LICENSE=	PHP301 ZEND200 UNICODE
 LICENSE_COMB=	multi

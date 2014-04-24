@@ -3,7 +3,7 @@
 
 PORTNAME=	phplot
 PORTVERSION=	6.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	SF:source1 \
 		SF/${PORTNAME}/Manual/20130511:source2
@@ -32,7 +32,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFONTS}
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 .endif
 
 do-install:

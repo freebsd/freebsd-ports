@@ -3,13 +3,15 @@
 
 PORTNAME=	mail-notification
 DISTVERSION=	5.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
 
 MAINTAINER=	mwisnicki+freebsd@gmail.com
 COMMENT=	A mail notification for freedesktop.org-compliant system trays
+
+BROKEN=		Violates stagedir and fails to package
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libgnome-keyring.so:${PORTSDIR}/security/gnome-keyring \

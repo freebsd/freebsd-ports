@@ -4,7 +4,7 @@
 
 PORTNAME=	goocanvasmm
 PORTVERSION=	1.90.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -14,7 +14,7 @@ COMMENT=	C++ bindings for the goocanvas widget for GTK
 
 LIB_DEPENDS=	libgoocanvas-2.0.so:${PORTSDIR}/graphics/goocanvas2
 
-USES=		libtool gmake pathfix pkgconfig tar:xz
+USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	gtkmm30
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

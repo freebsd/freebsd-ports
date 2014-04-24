@@ -3,6 +3,7 @@ lib/libdmx.a
 lib/libdmx.la
 lib/libdmx.so
 lib/libdmx.so.1
+lib/libdmx.so.1.0.0
 libdata/pkgconfig/dmx.pc
 man/man3/DMX.3.gz
 man/man3/DMXAddInput.3.gz

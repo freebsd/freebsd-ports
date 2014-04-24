@@ -3,6 +3,7 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://waf.googlecode.com/files/:1
@@ -26,14 +27,14 @@ GH_COMMIT=	2758bc4
 
 WAF_VERSION=	1.7.15
 
-USES=		compiler:c11 desktop-file-utils gmake iconv pkgconfig
+USES=		compiler:c11 desktop-file-utils gmake iconv lua pkgconfig
 USE_PYTHON_BUILD=	yes
-USE_LUA=	5.1-5.2
 USE_XORG=	x11 xv xxf86vm
 INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man \
+		--lua=${LUA_VER_STR}fbsd \
 		--disable-debug-build \
 		--disable-mpg123 \
 		--disable-alsa \

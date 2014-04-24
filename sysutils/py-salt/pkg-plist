@@ -662,8 +662,6 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/renderers/py.pyc
 %%PYTHON_SITELIBDIR%%/salt/renderers/pydsl.py
 %%PYTHON_SITELIBDIR%%/salt/renderers/pydsl.pyc
-%%PYTHON_SITELIBDIR%%/salt/renderers/pyobjects.py
-%%PYTHON_SITELIBDIR%%/salt/renderers/pyobjects.pyc
 %%PYTHON_SITELIBDIR%%/salt/renderers/stateconf.py
 %%PYTHON_SITELIBDIR%%/salt/renderers/stateconf.pyc
 %%PYTHON_SITELIBDIR%%/salt/renderers/wempy.py
@@ -1022,8 +1020,6 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/utils/process.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/pydsl.py
 %%PYTHON_SITELIBDIR%%/salt/utils/pydsl.pyc
-%%PYTHON_SITELIBDIR%%/salt/utils/pyobjects.py
-%%PYTHON_SITELIBDIR%%/salt/utils/pyobjects.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/reclass.py
 %%PYTHON_SITELIBDIR%%/salt/utils/reclass.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/s3.py

@@ -182,7 +182,7 @@ post-extract:
 	@${PATCH} -d ${WRKSRC} -s -E < ${FILESDIR}/diff-${suffix}
 .endfor
 	@(cd ${WRKSRC}/libstdc++-v3/testsuite && ${REINPLACE_CMD} \
-	  -e 's|\*-\*-freebsd\*|*-*-dragonfly *-*-freebsd*|' ${CXXTS4DF})
+	  -e 's|\*-\*-freebsd\*|*-*-dragonfly* *-*-freebsd*|' ${CXXTS4DF})
 	@(cd ${WRKSRC}/libstdc++-v3/testsuite/22_locale && ${REINPLACE_CMD} \
 	  -e 's|ISO-8859|ISO8859|g' \
 	  -e 's|ja_JP.eucjp|ja_JP.eucJP|g' \

@@ -1,6 +1,12 @@
 %%WWWDIR%%/CONTRIBUTING.md
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/Gemfile
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/Gemfile.lock
+@owner
+@group
 %%WWWDIR%%/README.rdoc
 %%WWWDIR%%/Rakefile
 %%WWWDIR%%/app/controllers/account_controller.rb
@@ -2174,3 +2180,7 @@
 @dirrmtry %%WWWDIR%%/app/controllers
 @dirrmtry %%WWWDIR%%/app
 @dirrmtry %%WWWDIR%%
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/files
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/log
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/public/plugin_assets
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/tmp

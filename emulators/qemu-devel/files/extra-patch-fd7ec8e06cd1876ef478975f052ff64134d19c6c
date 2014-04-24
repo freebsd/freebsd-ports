@@ -1,0 +1,13 @@
+diff --git a/bsd-user/freebsd/os-thread.h b/bsd-user/freebsd/os-thread.h
+index 5e24852..28f737f 100644
+--- a/bsd-user/freebsd/os-thread.h
++++ b/bsd-user/freebsd/os-thread.h
+@@ -68,7 +68,7 @@ static abi_long do_freebsd_thr_exit(CPUArchState *cpu_env, abi_ulong tid_addr)
+     }
+     thread_cpu = NULL;
+     object_unref(OBJECT(ENV_GET_CPU(cpu_env)));
+-    ts = ((CPUArchState *)cpu_env)->opaque;
++    ts = cpu->opaque;
+     g_free(ts);
+     pthread_exit(NULL);
+     /* Doesn't return */

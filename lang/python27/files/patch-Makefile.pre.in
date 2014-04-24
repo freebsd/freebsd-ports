@@ -1,3 +1,15 @@
+# Description: Fix out-of-tree build as a result of upstream #15819
+# Submitted by: rm (r318353)
+# Issue ID: http://bugs.python.org/issue15819#msg203348
+
+# Description: Run pycompile only once
+# Submitted by: antoine (r350207)
+# TODO: ?
+
+# Description: Run ranlib before installing the library read-only
+# Submitted by: antoine@ (r350207)
+# TODO: Upstream
+
 --- ./Makefile.pre.in.orig	2013-11-10 07:36:41.000000000 +0000
 +++ ./Makefile.pre.in	2014-04-04 09:16:00.000000000 +0000
 @@ -285,9 +285,9 @@

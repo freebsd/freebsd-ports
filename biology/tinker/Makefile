@@ -2,17 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	tinker
-PORTVERSION=	6.2.06
-PORTREVISION=	4
+PORTVERSION=	6.2.6
+PORTREVISION=	5
 CATEGORIES=	biology
 MASTER_SITES=	http://dasher.wustl.edu/tinker/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose molecular modelling package
 
-RESTRICTED=	author requests no distribution except from his FTP site
+LICENSE=	tinker
+LICENSE_NAME=	TINKER license agreement
+LICENSE_FILE=	${WRKSRC}/doc/license.txt
+LICENSE_PERMS=	auto-accept
 
-CONFLICTS_INSTALL=	hunspell-[0-9]*
+RESTRICTED=	author requests no distribution except from his FTP site
 
 OPTIONS_DEFINE=	OPTIMIZED_FFLAGS DOCS EXAMPLES
 OPTIMIZED_FFLAGS_DESC=	compilation optimizations

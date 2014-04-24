@@ -3,6 +3,7 @@ lib/libXrandr.a
 lib/libXrandr.la
 lib/libXrandr.so
 lib/libXrandr.so.2
+lib/libXrandr.so.2.2.0
 libdata/pkgconfig/xrandr.pc
 man/man3/Xrandr.3.gz
 man/man3/XRRConfigCurrentConfiguration.3.gz

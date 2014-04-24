@@ -3,7 +3,7 @@
 
 PORTNAME=	clutter-gtk
 PORTVERSION=	0.10.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
 
 USE_BZIP2=	yes
 USE_GL=		gl
-USES=		gettext libtool pathfix gmake pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gnomeprefix
 USE_XORG=	xp x11

@@ -1,0 +1,136 @@
+bin/idjc
+lib/idjc/idjc.la
+lib/idjc/idjc.so
+lib/idjc/site-packages/idjc/__init__.py
+lib/idjc/site-packages/idjc/__init__.pyc
+lib/idjc/site-packages/idjc/__init__.pyo
+lib/idjc/site-packages/idjc/dialogs.py
+lib/idjc/site-packages/idjc/dialogs.pyc
+lib/idjc/site-packages/idjc/dialogs.pyo
+lib/idjc/site-packages/idjc/format.py
+lib/idjc/site-packages/idjc/format.pyc
+lib/idjc/site-packages/idjc/format.pyo
+lib/idjc/site-packages/idjc/gtkstuff.py
+lib/idjc/site-packages/idjc/gtkstuff.pyc
+lib/idjc/site-packages/idjc/gtkstuff.pyo
+lib/idjc/site-packages/idjc/irc.py
+lib/idjc/site-packages/idjc/irc.pyc
+lib/idjc/site-packages/idjc/irc.pyo
+lib/idjc/site-packages/idjc/jingles.py
+lib/idjc/site-packages/idjc/jingles.pyc
+lib/idjc/site-packages/idjc/jingles.pyo
+lib/idjc/site-packages/idjc/licence_window.py
+lib/idjc/site-packages/idjc/licence_window.pyc
+lib/idjc/site-packages/idjc/licence_window.pyo
+lib/idjc/site-packages/idjc/maingui.py
+lib/idjc/site-packages/idjc/maingui.pyc
+lib/idjc/site-packages/idjc/maingui.pyo
+lib/idjc/site-packages/idjc/midicontrols.py
+lib/idjc/site-packages/idjc/midicontrols.pyc
+lib/idjc/site-packages/idjc/midicontrols.pyo
+lib/idjc/site-packages/idjc/mutagentagger.py
+lib/idjc/site-packages/idjc/mutagentagger.pyc
+lib/idjc/site-packages/idjc/mutagentagger.pyo
+lib/idjc/site-packages/idjc/playergui.py
+lib/idjc/site-packages/idjc/playergui.pyc
+lib/idjc/site-packages/idjc/playergui.pyo
+lib/idjc/site-packages/idjc/popupwindow.py
+lib/idjc/site-packages/idjc/popupwindow.pyc
+lib/idjc/site-packages/idjc/popupwindow.pyo
+lib/idjc/site-packages/idjc/preferences.py
+lib/idjc/site-packages/idjc/preferences.pyc
+lib/idjc/site-packages/idjc/preferences.pyo
+lib/idjc/site-packages/idjc/prelims/__init__.py
+lib/idjc/site-packages/idjc/prelims/__init__.pyc
+lib/idjc/site-packages/idjc/prelims/__init__.pyo
+lib/idjc/site-packages/idjc/prelims/profiledialog.py
+lib/idjc/site-packages/idjc/prelims/profiledialog.pyc
+lib/idjc/site-packages/idjc/prelims/profiledialog.pyo
+lib/idjc/site-packages/idjc/songdb.py
+lib/idjc/site-packages/idjc/songdb.pyc
+lib/idjc/site-packages/idjc/songdb.pyo
+lib/idjc/site-packages/idjc/sourceclientgui.py
+lib/idjc/site-packages/idjc/sourceclientgui.pyc
+lib/idjc/site-packages/idjc/sourceclientgui.pyo
+lib/idjc/site-packages/idjc/tooltips.py
+lib/idjc/site-packages/idjc/tooltips.pyc
+lib/idjc/site-packages/idjc/tooltips.pyo
+lib/idjc/site-packages/idjc/utils.py
+lib/idjc/site-packages/idjc/utils.pyc
+lib/idjc/site-packages/idjc/utils.pyo
+lib/python2.7/site-packages/idjcmonitor.py
+lib/python2.7/site-packages/idjcmonitor.pyc
+lib/python2.7/site-packages/idjcmonitor.pyo
+share/applications/idjc.desktop
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/AUTHORS.gz
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/ChangeLog.gz
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/NEWS.gz
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/README.gz
+%%DATADIR%%/add3.png
+%%DATADIR%%/advance.png
+%%DATADIR%%/classic_cross.png
+%%DATADIR%%/control_c.png
+%%DATADIR%%/control_k.png
+%%DATADIR%%/control_n.png
+%%DATADIR%%/control_p.png
+%%DATADIR%%/crossout.png
+%%DATADIR%%/greenphone.png
+%%DATADIR%%/headroom.png
+%%DATADIR%%/icon.png
+%%DATADIR%%/interlude2.png
+%%DATADIR%%/jack2.png
+%%DATADIR%%/led_lit_amber_black_border_64x64.png
+%%DATADIR%%/led_lit_green_black_border_64x64.png
+%%DATADIR%%/led_lit_red_black_border_64x64.png
+%%DATADIR%%/led_unlit_clear_border_64x64.png
+%%DATADIR%%/listenerphones.png
+%%DATADIR%%/logo.png
+%%DATADIR%%/mic4.png
+%%DATADIR%%/mic_off.png
+%%DATADIR%%/mic_on.png
+%%DATADIR%%/mic_unshown.png
+%%DATADIR%%/mk2_cross.png
+%%DATADIR%%/next.png
+%%DATADIR%%/note.png
+%%DATADIR%%/pass.png
+%%DATADIR%%/pat3.png
+%%DATADIR%%/pause.png
+%%DATADIR%%/pbphone.png
+%%DATADIR%%/play2.png
+%%DATADIR%%/play3.png
+%%DATADIR%%/prev.png
+%%DATADIR%%/rec.png
+%%DATADIR%%/redphone.png
+%%DATADIR%%/repeat.png
+%%DATADIR%%/speedicon.png
+%%DATADIR%%/stop.png
+%%DATADIR%%/volume2.png
+share/locale/fr/LC_MESSAGES/idjc.mo
+share/locale/it/LC_MESSAGES/idjc.mo
+man/fr/man1/idjc-auto.1.gz
+man/fr/man1/idjc-ls.1.gz
+man/fr/man1/idjc-new.1.gz
+man/fr/man1/idjc-noauto.1.gz
+man/fr/man1/idjc-rm.1.gz
+man/fr/man1/idjc-run.1.gz
+man/fr/man1/idjc.1.gz
+man/man1/idjc-auto.1.gz
+man/man1/idjc-ls.1.gz
+man/man1/idjc-new.1.gz
+man/man1/idjc-noauto.1.gz
+man/man1/idjc-rm.1.gz
+man/man1/idjc-run.1.gz
+man/man1/idjc.1.gz
+share/pixmaps/idjc.png
+@dirrmtry man/man1
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%-%%PORTVERSION%%
+@dirrmtry lib/python2.7/site-packages
+@dirrmtry lib/python2.7
+@dirrmtry lib/idjc/site-packages/idjc/prelims
+@dirrmtry lib/idjc/site-packages/idjc
+@dirrmtry lib/idjc/site-packages
+@dirrmtry lib/idjc

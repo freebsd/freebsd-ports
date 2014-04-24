@@ -4,7 +4,7 @@
 
 PORTNAME=	gconfmm
 PORTVERSION=	2.28.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,24 +12,20 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for gconf2 API library
 
-LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm
+LIB_DEPENDS=	libglibmm-2.4.so:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/lib/libgtkmm-2.4.so.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
-LATEST_LINK=	gconfmm26
-
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_XORG=	x11
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack gconf2 referencehack
+USE_GNOME=	gconf2 referencehack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static --disable-documentation
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
 		${WRKSRC}/Makefile.in

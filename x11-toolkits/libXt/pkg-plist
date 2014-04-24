@@ -35,6 +35,7 @@ lib/libXt.a
 lib/libXt.la
 lib/libXt.so
 lib/libXt.so.6
+lib/libXt.so.6.0.0
 libdata/pkgconfig/xt.pc
 man/man3/MenuPopdown.3.gz
 man/man3/MenuPopup.3.gz

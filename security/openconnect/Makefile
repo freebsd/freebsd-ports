@@ -3,7 +3,7 @@
 
 PORTNAME=	openconnect
 PORTVERSION=	5.03
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/

@@ -28,7 +28,6 @@ PLIST_DIRS=	${U_BOOT_DIR} share/u-boot
 CROSS_PREFIX=	arm-eabi-
 ARCH=		arm
 
-NO_STAGE=	yes
 do-configure:
 	(cd ${WRKSRC}; ${GMAKE} CROSS_COMPILE=${CROSS_PREFIX} am335x_evm_config)
 
@@ -36,13 +35,10 @@ do-build:
 	(cd ${WRKSRC};${GMAKE} CROSS_COMPILE=${CROSS_PREFIX} )
 
 do-install:
-	${MKDIR} ${PREFIX}/${U_BOOT_DIR}
-	${CP} ${WRKSRC}/MLO ${PREFIX}/${U_BOOT_DIR}
-	${CP} ${WRKSRC}/u-boot.img ${PREFIX}/${U_BOOT_DIR}/bb-uboot.img
-	${TOUCH} ${PREFIX}/${U_BOOT_DIR}/bb-uenv.txt
-	${CP} ${.CURDIR}/pkg-descr ${PREFIX}/${U_BOOT_DIR}/README
-
-post-install:
-	${ECHO_CMD} U-Boot files are installed in ${U_BOOT_DIR}.
+	${MKDIR} ${STAGEDIR}${PREFIX}/${U_BOOT_DIR}
+	${CP} ${WRKSRC}/MLO ${STAGEDIR}${PREFIX}/${U_BOOT_DIR}
+	${CP} ${WRKSRC}/u-boot.img ${STAGEDIR}${PREFIX}/${U_BOOT_DIR}/bb-uboot.img
+	${TOUCH} ${STAGEDIR}${PREFIX}/${U_BOOT_DIR}/bb-uenv.txt
+	${CP} ${.CURDIR}/pkg-descr ${STAGEDIR}${PREFIX}/${U_BOOT_DIR}/README
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	mesa-demos
 PORTVERSION=	8.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/demos/${PORTVERSION}/
 DISTFILES=	mesa-demos-${PORTVERSION}${EXTRACT_SUFX}

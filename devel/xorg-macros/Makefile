@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xorg-macros
-PORTVERSION=	1.18.0
+PORTVERSION=	1.19.0
 CATEGORIES=	devel x11
 DISTNAME=	util-macros-$(PORTVERSION)
 

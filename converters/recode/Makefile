@@ -3,7 +3,7 @@
 
 PORTNAME=	recode
 PORTVERSION=	3.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	recode
@@ -12,7 +12,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts files between character sets and usages
 
 GNU_CONFIGURE=	yes
-USES=		gettext iconv libtool perl5
+USES=		gettext iconv libtool:keepla perl5
 USE_PERL5=	run build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-included-gettext

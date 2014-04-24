@@ -1,0 +1,36 @@
+--- Makefile.in.orig	2014-02-18 11:34:25.000000000 -0500
++++ Makefile.in	2014-04-16 12:45:51.000000000 -0500
+@@ -7,11 +7,8 @@
+ 
+ VARRUN=		/opt/aprsc/logs	# directory for aprsc.state and pid-file
+ VARLOG=		/opt/aprsc/logs	# directory for direct logfiles
+-CFGFILE=	@sysconfdir@/aprsc.conf	# default configuration file
+ SBINDIR=	@sbindir@	# installation path for programs
+ MANDIR=		@mandir@	# installation path for manual pages
+-SBINDIR=	/opt/aprsc/sbin
+-CFGFILE=	/opt/aprsc/etc/aprsc.conf
+ 
+ # generate version strings
+ VERSION:=$(shell cat VERSION)
+@@ -196,16 +193,13 @@
+ 
+ .PHONY:	install install-deb
+ install: all
+-	$(INSTALL_DIR) $(DESTDIR)/opt/aprsc/etc
+-	$(INSTALL_DIR) $(DESTDIR)/opt/aprsc/logs
+-	$(INSTALL_DIR) $(DESTDIR)/opt/aprsc/data
+-	$(INSTALL_DIR) $(DESTDIR)/opt/aprsc/web
+-	$(INSTALL_PROGRAM) aprsc $(DESTDIR)$(SBINDIR)/aprsc
+-	$(INSTALL_PROGRAM) aprsc_munin $(DESTDIR)$(SBINDIR)/aprsc_munin
++	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/etc/aprsc/web
++	$(INSTALL_PROGRAM) aprsc $(DESTDIR)$(PREFIX)$(SBINDIR)/aprsc
++	$(INSTALL_PROGRAM) aprsc_munin $(DESTDIR)$(PREFIX)$(SBINDIR)/aprsc_munin
+ 	$(INSTALL_DATA) aprsc.8 $(DESTDIR)$(MANDIR)/man8/aprsc.8
+-	$(INSTALL_DATA) $(subst src/,,$(WEBFILES)) $(DESTDIR)/opt/aprsc/web
++	$(INSTALL_DATA) $(subst src/,,$(WEBFILES)) $(DESTDIR)$(PREFIX)/etc/aprsc/web
+ 	if [ ! -f  $(DESTDIR)$(CFGFILE) ] ; then \
+-		$(INSTALL_DATA) aprsc.conf $(DESTDIR)$(CFGFILE) ; \
++		$(INSTALL_DATA) aprsc.conf $(DESTDIR)$(PREFIX)/etc/aprsc/aprsc.conf.example ; \
+ 	else true ; fi
+ 
+ # -------------------------------------------------------------------- #

@@ -308,6 +308,7 @@
     SUBDIR += id3ren
     SUBDIR += id3tool
     SUBDIR += id3v2
+    SUBDIR += idjc
     SUBDIR += ifp-line
     SUBDIR += ipod-sharp
     SUBDIR += jack
@@ -595,6 +596,7 @@
     SUBDIR += py-cddb
     SUBDIR += py-discogs-client
     SUBDIR += py-eyed3
+    SUBDIR += py-eyed3-06
     SUBDIR += py-fastaudio
     SUBDIR += py-id3
     SUBDIR += py-karaoke
@@ -666,6 +668,7 @@
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
+    SUBDIR += shout-idjc
     SUBDIR += shoutcast
     SUBDIR += sidplay
     SUBDIR += sidplay2

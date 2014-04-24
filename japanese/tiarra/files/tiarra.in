@@ -25,5 +25,6 @@ command_interpreter="/usr/bin/perl"
 required_dirs="${tiarra_chdir}"
 required_files="${tiarra_chdir}/${name}.conf"
 extra_commands="reload"
+sig_stop="${tiarra_sig_stop:-TERM}"
 
 run_rc_command "$1"

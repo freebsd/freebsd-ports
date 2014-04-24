@@ -1,0 +1,159 @@
+bin/svxlink
+bin/remotetrx
+bin/siglevdetcal
+%%QTEL%%bin/qtel
+@sample etc/svxlink/svxlink.d/ModuleHelp.conf.sample
+@sample etc/svxlink/svxlink.d/ModuleParrot.conf.sample
+@sample etc/svxlink/svxlink.d/ModuleEchoLink.conf.sample
+@sample etc/svxlink/svxlink.d/ModuleTclVoiceMail.conf.sample
+@sample etc/svxlink/svxlink.d/ModuleDtmfRepeater.conf.sample
+@sample etc/svxlink/svxlink.d/ModuleMetarInfo.conf.sample
+@sample etc/svxlink/svxlink.d/ModulePropagationMonitor.conf.sample
+@sample etc/svxlink/svxlink.d/ModuleSelCallEnc.conf.sample
+@sample etc/svxlink/svxlink.conf.sample
+@sample etc/svxlink/TclVoiceMail.conf.sample
+@sample etc/svxlink/.procmailrc.sample
+@sample etc/svxlink/remotetrx.conf.sample
+include/svxlink/AsyncApplication.h
+include/svxlink/AsyncFdWatch.h
+include/svxlink/AsyncTimer.h
+include/svxlink/AsyncIpAddress.h
+include/svxlink/AsyncTcpClient.h
+include/svxlink/AsyncDnsLookup.h
+include/svxlink/AsyncUdpSocket.h
+include/svxlink/AsyncTcpServer.h
+include/svxlink/AsyncTcpConnection.h
+include/svxlink/AsyncConfig.h
+include/svxlink/AsyncSerial.h
+include/svxlink/AsyncFileReader.h
+include/svxlink/AsyncAtTimer.h
+include/svxlink/AsyncExec.h
+include/svxlink/AsyncCppApplication.h
+include/svxlink/AsyncAudioSource.h
+include/svxlink/AsyncAudioSink.h
+include/svxlink/AsyncAudioProcessor.h
+include/svxlink/AsyncAudioClipper.h
+include/svxlink/AsyncAudioCompressor.h
+include/svxlink/AsyncAudioFilter.h
+include/svxlink/AsyncSigCAudioSink.h
+include/svxlink/AsyncSigCAudioSource.h
+include/svxlink/AsyncAudioIO.h
+include/svxlink/AsyncAudioSplitter.h
+include/svxlink/AsyncAudioDelayLine.h
+include/svxlink/AsyncAudioValve.h
+include/svxlink/AsyncAudioAmp.h
+include/svxlink/AsyncAudioSelector.h
+include/svxlink/AsyncAudioPassthrough.h
+include/svxlink/AsyncAudioMixer.h
+include/svxlink/AsyncAudioFifo.h
+include/svxlink/AsyncAudioDebugger.h
+include/svxlink/AsyncAudioPacer.h
+include/svxlink/AsyncAudioReader.h
+include/svxlink/AsyncAudioDecimator.h
+include/svxlink/AsyncAudioInterpolator.h
+include/svxlink/AsyncAudioStreamStateDetector.h
+include/svxlink/AsyncAudioEncoder.h
+include/svxlink/AsyncAudioDecoder.h
+include/svxlink/AsyncAudioRecorder.h
+include/svxlink/AsyncAudioJitterFifo.h
+include/svxlink/AsyncAudioDeviceFactory.h
+include/svxlink/AsyncAudioDevice.h
+%%QTEL%%include/svxlink/AsyncQtApplication.h
+include/svxlink/common.h
+include/svxlink/EchoLinkDirectory.h
+include/svxlink/EchoLinkDispatcher.h
+include/svxlink/EchoLinkQso.h
+include/svxlink/EchoLinkStationData.h
+include/svxlink/EchoLinkProxy.h
+lib/libasynccore.a
+lib/libasynccore-1.2.0.so
+lib/libasynccore.so.1.2
+lib/libasynccore.so
+lib/libasynccpp.a
+lib/libasynccpp-1.2.0.so
+lib/libasynccpp.so.1.2
+lib/libasynccpp.so
+lib/libasyncaudio.a
+lib/libasyncaudio-1.2.0.so
+lib/libasyncaudio.so.1.2
+lib/libasyncaudio.so
+%%QTEL%%lib/libasyncqt.a
+%%QTEL%%lib/libasyncqt-1.2.0.so
+%%QTEL%%lib/libasyncqt.so.1.2
+%%QTEL%%lib/libasyncqt.so
+lib/libecholib.a
+lib/svxlink/ModuleHelp.so
+lib/svxlink/ModuleParrot.so
+lib/svxlink/ModuleEchoLink.so
+lib/svxlink/ModuleTcl.so
+lib/svxlink/ModuleDtmfRepeater.so
+lib/svxlink/ModuleMetarInfo.so
+lib/libecholib-1.2.1.so
+lib/libecholib.so.1.2
+lib/libecholib.so
+lib/liblocationinfo.a
+lib/libtrx.a
+%%QTEL%%share/applications/qtel.desktop
+%%DATADIR%%/events.tcl
+%%DATADIR%%/events.d/RepeaterLogic.tcl
+%%DATADIR%%/events.d/SimplexLogic.tcl
+%%DATADIR%%/events.d/Module.tcl
+%%DATADIR%%/events.d/Logic.tcl
+%%DATADIR%%/events.d/CW.tcl
+%%DATADIR%%/events.d/SelCall.tcl
+%%DATADIR%%/events.d/locale.tcl
+%%DATADIR%%/events.d/Help.tcl
+%%DATADIR%%/events.d/Parrot.tcl
+%%DATADIR%%/events.d/EchoLink.tcl
+%%DATADIR%%/events.d/Tcl.tcl.example
+%%DATADIR%%/events.d/TclVoiceMail.tcl
+%%DATADIR%%/events.d/DtmfRepeater.tcl
+%%DATADIR%%/events.d/MetarInfo.tcl
+%%DATADIR%%/events.d/PropagationMonitor.tcl
+%%DATADIR%%/events.d/SelCallEnc.tcl
+%%DATADIR%%/modules.d/ModuleTcl.tcl.example
+%%DATADIR%%/modules.d/ModuleTclVoiceMail.tcl
+%%DATADIR%%/modules.d/ModulePropagationMonitor.tcl
+%%DATADIR%%/modules.d/ModuleSelCallEnc.tcl
+%%QTEL%%share/qtel/translations/qtel_sv.qm
+%%QTEL%%share/qtel/translations/qtel_de.qm
+%%QTEL%%share/qtel/translations/qtel_tr.qm
+%%QTEL%%share/qtel/translations/qtel_nl.qm
+%%QTEL%%share/qtel/translations/qtel_it.qm
+%%QTEL%%share/qtel/translations/qtel_uk.qm
+%%QTEL%%share/qtel/translations/qtel_ru.qm
+%%QTEL%%share/qtel/translations/qtel_hu.qm
+%%QTEL%%share/qtel/translations/qtel_es.qm
+%%QTEL%%share/qtel/translations/qtel_ja.qm
+%%QTEL%%share/qtel/translations/qtel_fr.qm
+%%QTEL%%share/qtel/sounds/connect.raw
+%%QTEL%%share/icons/link.xpm
+man/man1/svxlink.1.gz
+man/man1/remotetrx.1.gz
+man/man1/siglevdetcal.1.gz
+%%QTEL%%man/man1/qtel.1.gz
+man/man5/svxlink.conf.5.gz
+man/man5/ModuleHelp.conf.5.gz
+man/man5/ModuleParrot.conf.5.gz
+man/man5/ModuleEchoLink.conf.5.gz
+man/man5/ModuleTclVoiceMail.conf.5.gz
+man/man5/ModuleDtmfRepeater.conf.5.gz
+man/man5/ModulePropagationMonitor.conf.5.gz
+man/man5/ModuleSelCallEnc.conf.5.gz
+man/man5/remotetrx.conf.5.gz
+@dirrmtry etc/svxlink/svxlink.d
+@dirrmtry etc/svxlink
+@dirrm include/svxlink
+@dirrm lib/svxlink
+@dirrm %%DATADIR%%/events.d
+@dirrm %%DATADIR%%/modules.d
+@dirrm %%DATADIR%%
+%%QTEL%%@dirrm share/qtel/translations
+%%QTEL%%@dirrm share/qtel/sounds
+%%QTEL%%@dirrm share/qtel
+%%QTEL%%@dirrmtry share/applications
+%%QTEL%%@dirrmtry share/icons
+@unexec rmdir >/dev/null 2>&1 /var/spool/svxlink/voice_mail || :
+@unexec rmdir >/dev/null 2>&1 /var/spool/svxlink/qso_recorder || :
+@unexec rmdir >/dev/null 2>&1 /var/spool/svxlink/propagation_monitor || :
+@unexec rmdir >/dev/null 2>&1 /var/spool/svxlink || :

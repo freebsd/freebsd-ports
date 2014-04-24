@@ -5,23 +5,25 @@ PORTNAME=	ncftp
 PORTVERSION=	1.9.5
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
-DISTNAME=	ncftp-${PORTVERSION}
 PKGNAMESUFFIX=	1
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	FTP replacement with advanced user interface
 
-PLIST_FILES=	bin/${LATEST_LINK}
-MAN1=		ncftp.1
+OPTIONS_DEFINE=	AS_NCFTP
+AS_NCFTP_DESC=	Install binary as ncftp instead of ncftp1
 
-NO_STAGE=	yes
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "Use INSTALL_AS_NCFTP=yes to install ncftp1 as ${PREFIX}/bin/ncftp"
-	@${ECHO} ""
+.include <bsd.port.options.mk>
+
+NCFTP=	${PORTNAME}
+.if empty(PORT_OPTIONS:MAS_NCFTP)
+NCFTP:=	${NCFTP}${PKGNAMESUFFIX}
+.endif
+
+PLIST_FILES=	bin/${NCFTP} man/man1/${NCFTP}.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ncftp ${PREFIX}/bin/${LATEST_LINK}
-	cd ${WRKSRC}; ${INSTALL_MAN} ncftp.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${NCFTP}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${NCFTP}.1.gz
 
 .include <bsd.port.mk>

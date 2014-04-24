@@ -37,6 +37,7 @@ lib/libbonoboui-2.a
 lib/libbonoboui-2.la
 lib/libbonoboui-2.so
 lib/libbonoboui-2.so.0
+lib/libbonoboui-2.so.0.0.0
 lib/libglade/2.0/libbonobo.a
 lib/libglade/2.0/libbonobo.la
 lib/libglade/2.0/libbonobo.so

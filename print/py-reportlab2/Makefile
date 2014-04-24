@@ -3,6 +3,7 @@
 
 PORTNAME=	reportlab2
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.com/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -57,7 +58,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/fonts/adobe-cmaps/ac15/cid2code.txt:${PORTSDIR}
 .endif
 
 .if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 .endif
 
 post-install:

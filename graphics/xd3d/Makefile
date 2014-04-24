@@ -10,8 +10,9 @@ MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A simple scientific visualization tool
 
+LICENSE=	GPLv2
+
 #--------------------------------------------------------------------------
-NO_STAGE=	yes
 # You may define these options:
 #
 # - WITHOUT_IMAGEMAGICK	:	if you don't need to export bitmap images
@@ -35,7 +36,7 @@ RUN_DEPENDS+=	gifsicle:${PORTSDIR}/graphics/gifsicle
 MASTER_SITES_BACKUP=	http://pompo.net/ports/
 
 REINPLACE_ARGS=	-i ""
-FETCH_CMD=	/usr/bin/fetch
+FETCH_ARGS=
 FETCH_BEFORE_ARGS=	-R -o ${DISTDIR}/${DISTFILES}
 
 USES=		fortran
@@ -61,11 +62,11 @@ do-fetch:
 	|| ${FETCH_CMD} ${FETCH_BEFORE_ARGS} ${MASTER_SITES_BACKUP}${DISTFILES}
 .endif
 
-post-patch:
-	@${CP} ${WRKSRC}/RULES.freeBSD ${WRKSRC}/RULES
-	@${REINPLACE_CMD} -e "s|%%WRKSRC%%|${WRKSRC}|"		\
+pre-configure:
+	${CP} ${WRKSRC}/RULES.freeBSD ${WRKSRC}/RULES
+	${REINPLACE_CMD} -e "s|%%WRKSRC%%|${WRKSRC}|"		\
 		-e "s|%%PREFIX%%|${PREFIX}|"			\
-		-e "s|%%X11BASE%%|${LOCALBASE}|"			\
+		-e "s|%%X11BASE%%|${LOCALBASE}|"		\
 		-e "s|%%LANG%%|${XD3D_LANG}|"			\
 		-e "s|%%MEMORY_XD3D%%|${MEMORY_XD3D}|"		\
 		-e "s|%%F77%%|${F77}|"				\
@@ -76,15 +77,14 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -Rp ${WRKSRC}/Examples/* ${EXAMPLESDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+. for FILE in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
+. endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -Rp ${WRKSRC}/Examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>

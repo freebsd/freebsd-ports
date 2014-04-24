@@ -2,7 +2,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	9.06
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -162,7 +162,6 @@ post-install-docs:
 		( cd ${STAGEDIR}${DOCSDIR} && ${TAR} -xof - )
 
 post-install:
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/${PORTVERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gsc ${STAGEDIR}${PREFIX}/bin/gsx
 	${LN} -sf gsc ${STAGEDIR}${PREFIX}/bin/gs
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont \

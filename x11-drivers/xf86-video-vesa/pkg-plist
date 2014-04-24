@@ -1,4 +1,3 @@
-lib/xorg/modules/drivers/vesa_drv.la
 lib/xorg/modules/drivers/vesa_drv.so
 man/man4/vesa.4x.gz
 @dirrmtry lib/xorg/modules/drivers

@@ -1,13 +1,11 @@
---- software/crash_handling/CMakeLists.txt.orig	2012-02-23 12:13:29.000000000 +0100
-+++ software/crash_handling/CMakeLists.txt	2012-02-23 12:13:58.000000000 +0100
-@@ -27,10 +27,6 @@
- 
+--- software/crash_handling/CMakeLists.txt.orig	2014-04-18 11:54:11.000000000 +0200
++++ software/crash_handling/CMakeLists.txt	2014-04-18 11:54:21.000000000 +0200
+@@ -39,7 +39,7 @@
  ADD_LIBRARY(crash_handling STATIC ${LIB_SRCS})
  
--IF(UNIX)
+ IF(UNIX)
 -	TARGET_LINK_LIBRARIES(crash_handling dl)
--ENDIF(UNIX)
--
++	TARGET_LINK_LIBRARIES(crash_handling)
+ ENDIF(UNIX)
+ 
  IF(HAVE_BFD)
-     TARGET_LINK_LIBRARIES(crash_handling bfd)
- ENDIF(HAVE_BFD)

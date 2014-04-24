@@ -3,7 +3,7 @@
 
 PORTNAME=	ssddiff
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/1469/
 

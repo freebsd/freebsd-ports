@@ -3,7 +3,7 @@
 
 PORTNAME=	eblook
 PORTVERSION=	1.6.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
@@ -15,9 +15,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
 
+USES=		iconv
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-eb-includes=${PREFIX}/include \
-			--with-eb-libraries=${PREFIX}/lib
+CONFIGURE_ARGS=		--with-eb-conf=${PREFIX}/etc/eb.conf
+CPPFLAGS+=	-I${ICONV_PREFIX}/include
+LDFLAGS+=	-L${ICONV_PREFIX}/lib ${ICONV_LIB}
 
 INFO=		eblook
 PLIST_FILES=	bin/eblook
@@ -28,9 +30,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

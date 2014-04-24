@@ -3,6 +3,7 @@
 
 PORTNAME=	audacious
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -12,13 +13,12 @@ COMMENT=	A media player based on BMP and XMMS
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libmcs.so:${PORTSDIR}/devel/libmcs \
-		libmowgli.so:${PORTSDIR}/devel/libmowgli \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+		libmowgli.so:${PORTSDIR}/devel/libmowgli
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gmake tar:bzip2 desktop-file-utils
 USE_XORG=	x11 sm
-USE_GNOME=	gtk30
+USE_GNOME=	gtk30 libxml2
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

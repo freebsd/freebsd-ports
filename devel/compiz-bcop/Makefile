@@ -12,10 +12,9 @@ COMMENT=	Code generator for Compiz Fusion Plugins
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/getopt:${PORTSDIR}/misc/getopt
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_GNOME=	libxslt
 
 post-patch:

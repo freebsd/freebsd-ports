@@ -9,7 +9,7 @@
 
 PORTNAME=	lire
 PORTVERSION=	2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/
 

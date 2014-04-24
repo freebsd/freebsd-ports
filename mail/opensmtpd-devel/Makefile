@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	201403051040
+PORTVERSION=	201404151432
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -16,7 +16,7 @@ COMMENT=	OpenSMTPD is a free MTA (development snapshot)
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 OPENSMTPD_SNAPSHOT_VER=	p1
 
@@ -66,14 +66,8 @@ PAM_CONFIGURE_ON=	--with-pam --with-pam-service=smtpd
 REDIS_LIB_DEPENDS=	hiredis:${PORTSDIR}/databases/hiredis
 REDIS_CONFIGURE_ON=	--with-experimental-redis
 
-.include <bsd.port.options.mk>
-
-USE_OPENSSL=	yes
-
-# FreeBSD 7.3 and earlier need to use OpenSSL from ports
-.if ${OSVERSION} < 704000
+USE_OPENSSL=		yes
 WITH_OPENSSL_PORT=	yes
-.endif
 
 post-deinstall:
 		@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-DEINSTALL

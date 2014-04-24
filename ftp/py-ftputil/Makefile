@@ -18,7 +18,6 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOC_FILES=	README.html README.txt ftputil.html ftputil.txt ftputil_ru_utf8.txt
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-fetch:
@@ -28,9 +27,9 @@ do-fetch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

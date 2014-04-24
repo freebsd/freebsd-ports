@@ -153,7 +153,6 @@
     SUBDIR += multisync-syncml
     SUBDIR += myitcrm
     SUBDIR += nagaina
-    SUBDIR += narval
     SUBDIR += nemo-extensions
     SUBDIR += note
     SUBDIR += notecase

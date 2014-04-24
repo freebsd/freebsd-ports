@@ -159,6 +159,7 @@
     SUBDIR += gnutls
     SUBDIR += gnutls3
     SUBDIR += go.crypto
+    SUBDIR += goptlib
     SUBDIR += gorilla
     SUBDIR += gpa
     SUBDIR += gpasman
@@ -251,6 +252,7 @@
     SUBDIR += l5
     SUBDIR += lasso
     SUBDIR += libassuan
+    SUBDIR += libbeid
     SUBDIR += libbf
     SUBDIR += libcryptui
     SUBDIR += libecc
@@ -313,6 +315,7 @@
     SUBDIR += md5deep
     SUBDIR += mdcrack
     SUBDIR += medusa
+    SUBDIR += meek
     SUBDIR += metasploit
     SUBDIR += mhash
     SUBDIR += mindterm-binary
@@ -321,7 +324,6 @@
     SUBDIR += munge
     SUBDIR += mussh
     SUBDIR += nacl
-    SUBDIR += nbaudit
     SUBDIR += ncrack
     SUBDIR += ncrypt
     SUBDIR += nessus
@@ -628,7 +630,6 @@
     SUBDIR += pam_pwdfile
     SUBDIR += pam_require
     SUBDIR += pam_search_list
-    SUBDIR += pam_smb
     SUBDIR += pam_ssh_agent_auth
     SUBDIR += pam_yubico
     SUBDIR += pamtester
@@ -883,7 +884,6 @@
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-twitter_oauth
     SUBDIR += safesh
-    SUBDIR += saint
     SUBDIR += samba-virusfilter
     SUBDIR += samhain
     SUBDIR += samhain-client

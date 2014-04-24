@@ -3,7 +3,7 @@
 
 PORTNAME=	libxslt
 PORTVERSION=	1.1.28
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \

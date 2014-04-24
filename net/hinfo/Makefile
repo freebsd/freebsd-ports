@@ -24,31 +24,27 @@ DATADIR?=	${PREFIX}/lib/${PORTNAME}
 HINFO_DBFILES=	dnsbl.ins.pl whois.ins.pl
 HINFO_SCRIPTS=	hinfo hinfo-update myhostinfo.cgi
 
-MAN1=		hinfo.1
-MAN5=		hinfo.conf.5
-
 NO_BUILD=	yes
 
 # By default, we don't install myhostinfo.cgi.  Install it if you wish; it'll
 # already be patched for you.
-NO_STAGE=	yes
 post-extract:
 .for filename in ${HINFO_SCRIPTS}
 	${REINPLACE_CMD} -E '1s|^#!.+|#!${PERL}|' ${WRKSRC}/${filename}
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/hinfo ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/hinfo-update ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/hinfo.conf ${PREFIX}/etc/hinfo.conf.example
-.if !exists({PREFIX}/etc/hinfo.conf)
-	${INSTALL_DATA} ${WRKSRC}/hinfo.conf ${PREFIX}/etc/hinfo.conf
+	${INSTALL_SCRIPT} ${WRKSRC}/hinfo ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/hinfo-update ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/hinfo.conf ${STAGEDIR}${PREFIX}/etc/hinfo.conf.example
+.if !exists(${STAGEDIR}${PREFIX}/etc/hinfo.conf)
+	${INSTALL_DATA} ${WRKSRC}/hinfo.conf ${STAGEDIR}${PREFIX}/etc/hinfo.conf
 .endif
-	${INSTALL_MAN} ${WRKSRC}/hinfo.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/hinfo.conf.5 ${PREFIX}/man/man5/
-	@${MKDIR} ${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/hinfo.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/hinfo.conf.5 ${STAGEDIR}${PREFIX}/man/man5/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for filename in ${HINFO_DBFILES}
-	${INSTALL_DATA} ${WRKSRC}/${filename} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${filename} ${STAGEDIR}${DATADIR}
 .endfor
 
 .include <bsd.port.mk>

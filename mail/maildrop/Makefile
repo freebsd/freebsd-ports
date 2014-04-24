@@ -11,6 +11,7 @@
 
 PORTNAME=	maildrop
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -20,6 +21,7 @@ COMMENT=	Mail delivery agent (MDA) with filtering abilities
 LICENSE=	GPLv3
 
 USES=		iconv shebangfix perl5 tar:bzip2
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-use-flock=1 \
@@ -58,7 +60,7 @@ OPTIONS_MULTI=		AUTHLIB
 AUTHLIB_DESC=		Courier Auth Library support
 .endif
 
-OPTIONS_DEFINE+=	DOVECOTAUTH FAM GDBM MAILWRAPPER
+OPTIONS_DEFINE+=	DOVECOTAUTH FAM GDBM IDN MAILWRAPPER
 
 DOVECOTAUTH_DESC=	Dovecot Authentication support
 MAILWRAPPER_DESC=	Let configure guess which sendmail binary to use
@@ -67,6 +69,9 @@ OPTIONS_SUB=		yes
 GDBM_CONFIGURE_ON=	--with-db=gdbm
 GDBM_CONFIGURE_OFF=	--with-db=db
 GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+IDN_CONFIGURE_WITH=	libidn
+IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+MAILWRAPPER_CONFIGURE_OFF=	--enable-sendmail=/usr/sbin/sendmail
 
 .include <bsd.port.options.mk>
 
@@ -84,12 +89,10 @@ PLIST_SUB+=		MSGID='' MGID='${MAILDROP_SGID}'
 PLIST_SUB+=		MSGID='@comment ' MGID='mail'
 .endif
 
-.if ! ${PORT_OPTIONS:MMAILWRAPPER}
-CONFIGURE_ARGS+=	--enable-sendmail=/usr/sbin/sendmail
-.endif
-
-.if ${PORT_OPTIONS:MFAM} || exists(${LOCALBASE}/lib/libfam.so.0)
+.if ${PORT_OPTIONS:MFAM}
 USES+=			fam
+.else
+CONFIGURE_ARGS+=	ac_cv_header_fam_h=no ac_cv_lib_fam_FAMOpen=no
 .endif
 
 .if defined(MAILDROP_TRUSTED_USERS)

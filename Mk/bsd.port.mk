@@ -1194,6 +1194,7 @@ makepatch:
 		for i in `find . -type f -name '*.orig'`; do \
 			ORG=$$i; \
 			NEW=$${i%.orig}; \
+			cmp -s $${ORG} $${NEW} && continue; \
 			OUT=${FILESDIR}`${ECHO} $${NEW} | \
 				${SED} -e 's|/|__|g' \
 					-e 's|^\.__|/patch-|'`; \
@@ -1253,7 +1254,7 @@ WARNING+=	"If you do not want to see this message again set NO_WARNING_PKG_INSTA
 
 # Enable new xorg for FreeBSD versions after Radeon KMS was imported unless
 # WITHOUT_NEW_XORG is set.
-.if ${OSVERSION} >= 1100000
+.if (${OSVERSION} >= 902510 && ${OSVERSION} < 1000000) || ${OSVERSION} >= 1000704
 . if !defined(WITHOUT_NEW_XORG)
 WITH_NEW_XORG?=	yes
 . else
@@ -1614,6 +1615,15 @@ PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE}
 SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 		DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
 		WWWDIR=${WWWDIR} ETCDIR=${ETCDIR}
+# This is used for check-stagedir.sh and check_leftover.sh to replace
+# directories/files with PLIST_SUB %%KEYS%%.
+#  Remove VARS that are too generic
+#  Remove empty values
+#  Remove @comment values
+#  Remove quotes
+#  Replace . with \. for later sed(1) usage
+PLIST_SUB_SED_MIN?=	2
+PLIST_SUB_SED?= ${PLIST_SUB:C/.*=.{1,${PLIST_SUB_SED_MIN}}$//g:NEXTRACT_SUFX=*:NOSREL=*:NLIB32DIR=*:NPREFIX=*:NLOCALBASE=*:N*="":N*="@comment*:C/([^=]*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\./\\./g}
 
 PLIST_REINPLACE+=	dirrmtry stopdaemon rmtry
 PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir "%D/\1" 2>/dev/null || true!
@@ -3165,7 +3175,11 @@ all:
 .endif
 
 .if !target(all)
+.  if defined(NO_STAGE)
 all: build
+.  else
+all: stage
+.  endif
 .endif
 
 .if !defined(DEPENDS_TARGET)
@@ -3314,9 +3328,6 @@ check-vulnerable:
 				vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
 			elif [ "${PORTNAME}" = "pkg" ]; then \
 				vlist=""; \
-			else \
-				${ECHO_MSG} "===> Unable to check vuln database as pkg(8) is missing"; \
-				exit 1; \
 			fi; \
 		elif [ -x "${LOCALBASE}/sbin/portaudit" ]; then \
 			vlist=`${LOCALBASE}/sbin/portaudit -X 14 "${PKGNAME}" \
@@ -3650,9 +3661,10 @@ do-configure:
 
 # Build
 # XXX: ${MAKE_ARGS:N${DESTDIRNAME}=*} would be easier but it is not valid with the old fmake
+DO_MAKE_BUILD?=	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g}
 .if !target(do-build)
 do-build:
-	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g} ${ALL_TARGET}; then \
+	@(cd ${BUILD_WRKSRC}; if ! ${DO_MAKE_BUILD} ${ALL_TARGET}; then \
 		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
 			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT} 75 79 ; \
@@ -3818,13 +3830,23 @@ do-package: ${TMPPLIST}
 		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -D ${PKGMESSAGE}"; \
 	fi; \
 	${MKDIR} ${WRKDIR}/pkg; \
+	if ! [ -d "${PREFIX}" ]; then \
+	    if ! ${MKDIR} ${PREFIX}; then \
+		    ${ECHO_MSG} "=> Unable to create PREFIX. PREFIX must exist to create a package with pkg_install." >&2; \
+		    ${ECHO_MSG} "=> Manually create ${PREFIX} first." >&2; \
+		    exit 1; \
+		fi; \
+	    made_prefix=1; \
+	fi; \
 	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}; then \
+		[ -n "$${made_prefix}" ] && ${RMDIR} ${PREFIX}; \
 		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
 			${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null || \
 			    ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
 			cd ${.CURDIR} && eval ${MAKE} package-links; \
 		fi; \
 	else \
+		[ -n "$${made_prefix}" ] && ${RMDIR} ${PREFIX}; \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
 		exit 1; \
 	fi
@@ -4130,7 +4152,7 @@ create-users-groups:
 		if ! ${PW} usershow $$login >/dev/null 2>&1; then \
 			${ECHO_MSG}  "Creating user \`$$login' with uid \`$$uid'."; \
 			eval ${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell; \
-			case $$homedir in /nonexistent|/var/empty) ;; *) ${INSTALL} -d -g $$gid -o $$uid $$homedir;; esac; \
+			case $$homedir in /|/nonexistent|/var/empty) ;; *) ${INSTALL} -d -g $$gid -o $$uid $$homedir;; esac; \
 		else \
 			${ECHO_MSG} "Using existing user \`$$login'."; \
 		fi; \
@@ -4146,7 +4168,7 @@ create-users-groups:
 				${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell \n \
 				else \necho \"Using existing user '$$login'.\" \nfi" >> ${_UG_OUTPUT}; \
 		fi ; \
-		case $$homedir in /nonexistent|/var/empty) ;; *) ${ECHO_CMD} "@exec ${INSTALL} -d -g $$gid -o $$uid $$homedir" >> ${TMPPLIST};; esac; \
+		case $$homedir in /|/nonexistent|/var/empty) ;; *) ${ECHO_CMD} "@exec ${INSTALL} -d -g $$gid -o $$uid $$homedir" >> ${TMPPLIST};; esac; \
 	done
 .endfor
 .if defined(GROUPS)
@@ -6504,22 +6526,26 @@ _STAGE_DEP=		build
 _STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-install generate-plist \
 				pre-su-install
 .if defined(NEED_ROOT)
-_STAGE_SUSEQ=	create-users-groups do-install desktop-file-post-install kmod-post-install \
-				shared-mime-post-install webplugin-post-install \
-				post-install post-install-script move-uniquefiles post-stage compress-man \
+_STAGE_SUSEQ=	create-users-groups do-install desktop-file-post-install \
+				kmod-post-install shared-mime-post-install \
+				webplugin-post-install post-install post-install-script \
+				move-uniquefiles post-stage compress-man patch-lafiles \
 				install-rc-script install-ldconfig-file install-license \
-				install-desktop-entries add-plist-info add-plist-docs add-plist-examples \
-				add-plist-data add-plist-post move-uniquefiles-plist fix-plist-sequence
+				install-desktop-entries add-plist-info add-plist-docs \
+				add-plist-examples add-plist-data add-plist-post \
+				move-uniquefiles-plist fix-plist-sequence
 .if defined(DEVELOPER)
 _STAGE_SUSEQ+=	stage-qa
 .endif
 .else
-_STAGE_SEQ+=	create-users-groups do-install desktop-file-post-install kmod-post-install \
-				shared-mime-post-install webplugin-post-install post-install post-install-script \
-				move-uniquefiles post-stage compress-man install-rc-script install-ldconfig-file \
-				install-license install-desktop-entries add-plist-info add-plist-docs \
-				add-plist-examples add-plist-data add-plist-post move-uniquefiles-plist \
-				fix-plist-sequence
+_STAGE_SEQ+=	create-users-groups do-install desktop-file-post-install \
+				kmod-post-install shared-mime-post-install \
+				webplugin-post-install post-install post-install-script \
+				move-uniquefiles post-stage compress-man patch-lafiles \
+				install-rc-script install-ldconfig-file install-license \
+				install-desktop-entries add-plist-info add-plist-docs \
+				add-plist-examples add-plist-data add-plist-post \
+				move-uniquefiles-plist fix-plist-sequence
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	stage-qa
 .endif

@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	www mail
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Based Email Client and Scheduler
 
 .if !defined(WITHOUT_PHP_DEPENDS)

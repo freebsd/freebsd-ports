@@ -82,7 +82,6 @@
     SUBDIR += gmtk
     SUBDIR += gnome-mplayer
     SUBDIR += gnome-subtitles
-    SUBDIR += gopchop
     SUBDIR += gpac-libgpac
     SUBDIR += gpac-mp4box
     SUBDIR += gpodder
@@ -243,6 +242,7 @@
     SUBDIR += mxflib
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
+    SUBDIR += naludump
     SUBDIR += nxtvepg
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
@@ -295,6 +295,7 @@
     SUBDIR += py-periscope
     SUBDIR += py-qt4-multimedia
     SUBDIR += py-qt4-phonon
+    SUBDIR += py-soco
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
     SUBDIR += pyjama

@@ -1,0 +1,15 @@
+--- Makefile.orig	2013-03-09 00:18:15.000000000 -0800
++++ Makefile	2014-04-10 04:56:53.000000000 -0700
+@@ -67,10 +67,10 @@
+ ARCHIVENAME	= $$(basename $$(pwd)).tgz
+ 
+ # Used to get bold text in echo statements
+-BOLD		= "\033[1m"
++#BOLD		= "\033[1m"
+ 
+ # End bold text
+-NBOLD		= "\033[0m"
++#NBOLD		= "\033[0m"
+ 
+ # Create softlink
+ MKSOFT		= ln -s

@@ -20,7 +20,6 @@ OPTIONS_DEFINE=	MYSQL MYSQLI PGSQL SQLITE ORACLE
 OPTIONS_DEFAULT=	MYSQL MYSQLI
 MYSQLI_DESC=	MySQLI backend
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -45,7 +44,7 @@ CONFIGURE_ARGS+=	--with-oracle
 .endif
 
 do-install:
-	@${INSTALL} -d ${WWWDIR}
-	@cd ${WRKSRC}/frontends/php/ && ${COPYTREE_SHARE} . ${WWWDIR}
+	@${INSTALL} -d ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC}/frontends/php/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .include "${MASTERDIR}/Makefile"

@@ -1,11 +1,11 @@
 --- qt4-im/Makefile.orig	2012-03-05 20:26:54.000000000 +0800
-+++ qt4-im/Makefile	2014-04-12 11:02:12.447548888 +0800
++++ qt4-im/Makefile	2014-04-17 17:21:30.838404919 +0800
 @@ -3,7 +3,7 @@ QT=qt4
  QTIM=$(QT)/plugins/inputmethods
  IMMODULES=$(libdir)/$(DEB_BUILD_MULTIARCH)/$(QTIM)
  
 -INCS=-I../im-client -I/usr/include/X11 `pkg-config QtCore QtGui --cflags`
-+INCS=-I../im-client -I$(prefix)/include/X11 `pkg-config QtCore QtGui --cflags`
++INCS=-I../im-client -I$(prefix)/include -I$(prefix)/include/X11 `pkg-config QtCore QtGui --cflags`
  CXXFLAGS=$(OPTFLAGS) $(INCS) -Wall -D_REENTRANT -DUNIX=1 -fPIC  -DQT4 -DQT_SHARED \
  -DQT_IMMODULE -DPIC
  OBJS= moc_gcin-qt.o gcin-qt.o im-gcin-qt.o gcin-imcontext-qt.o

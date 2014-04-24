@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mygui
-PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTVERSION=	3.2.1.svn20140422
 CATEGORIES=	x11-toolkits graphics devel
-MASTER_SITES=	SF/my-gui/MyGUI/MyGUI_${PORTVERSION}
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+#		SF/my-gui/MyGUI/MyGUI_${PORTVERSION}
 DISTNAME=	MyGUI_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,13 +15,13 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
 		libOIS.so:${PORTSDIR}/devel/ois
 
-BROKEN=		Does not compile with graphics/ogre3d 1.9.0
-
-USES=		cmake pkgconfig zip
+USES=		cmake pkgconfig zip dos2unix compiler:c++11-lib
 CMAKE_ARGS=	-DMYGUI_BUILD_DEMOS=OFF -DMYGUI_BUILD_DOCS=OFF
 USE_LDCONFIG=	yes
-USE_GCC=	yes
-USE_DOS2UNIX=	*.cpp *.h
+DOS2UNIX_GLOB=	*.cpp *.h *.cmake
+
+USE_CXXSTD=	c++11
+CXXFLAGS+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e '/install/ s|lib/pkgconfig|libdata/pkgconfig|' \

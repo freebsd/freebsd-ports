@@ -3,7 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.2.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.2/
@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	12
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
+
+DEPRECATED=	Unmaintained upstream, no ports depending on it. Use graphics/GraphicsMagick13 instead
+EXPIRATION_DATE=	2014-05-20
 
 CONFLICTS=	GraphicsMagick-1.[13].* GraphicsMagick13-*
 

@@ -10,6 +10,7 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	HOME=${WRKSRC}
 
 NO_CDROM=	Non-commercial use only
 

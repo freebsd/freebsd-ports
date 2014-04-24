@@ -8,11 +8,11 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	vanhu@netasq.com
+MAINTAINER=	vanhu@FreeBSD.org
 COMMENT=	KAME racoon IKE daemon, ipsec-tools version
 
 CONFLICTS=	racoon-[0-9]*
@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 
 INSTALL_TARGET=	install-strip
 
-USES=		libtool
+USES=		libtool:keepla
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --sysconfdir=${PREFIX}/etc/racoon \

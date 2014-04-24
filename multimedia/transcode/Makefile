@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -165,7 +165,7 @@ CONFIGURE_ARGS+=	--disable-libxml2
 .endif
 
 .if ${PORT_OPTIONS:MMJPEGTOOLS}
-LIB_DEPENDS+=	liblavjpeg-2.0.so:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	liblavjpeg.so:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--disable-mjpegtools

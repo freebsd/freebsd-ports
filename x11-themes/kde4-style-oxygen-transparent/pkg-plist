@@ -4,10 +4,10 @@ lib/kde4/kwin3_oxygen_transparent.so
 lib/kde4/kwin_oxygen_transparent_config.so
 lib/kde4/plugins/styles/oxygen_transparent.so
 lib/liboxygentransparentstyle.so
-lib/liboxygentransparentstyle.so.4
-lib/liboxygentransparentstyle.so.%%KDE4_GENERIC_LIB_VERSION%%
+lib/liboxygentransparentstyle.so.5
+lib/liboxygentransparentstyle.so.5.0.1
 lib/liboxygentransparentstyleconfig.so
-lib/liboxygentransparentstyleconfig.so.4
-lib/liboxygentransparentstyleconfig.so.%%KDE4_GENERIC_LIB_VERSION%%
+lib/liboxygentransparentstyleconfig.so.5
+lib/liboxygentransparentstyleconfig.so.5.0.1
 share/apps/kstyle/themes/oxygen_transparent.themerc
 share/apps/kwin/oxygentransparentclient.desktop

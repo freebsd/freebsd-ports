@@ -3,7 +3,7 @@
 
 PORTNAME=	xmlsec
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/430/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

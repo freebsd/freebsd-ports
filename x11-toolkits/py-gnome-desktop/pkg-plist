@@ -84,33 +84,33 @@ libdata/pkgconfig/gnome-python-desktop-2.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/index.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/pygtksourceview.devhelp
-%%PORTDOCS%%share/examples/py-gnome/applet/GNOME_PythonAppletSample.server
-%%PORTDOCS%%share/examples/py-gnome/applet/README
-%%PORTDOCS%%share/examples/py-gnome/applet/applet.py
-%%PORTDOCS%%share/examples/py-gnome/braseroburn/write-audio-video.py
-%%PORTDOCS%%share/examples/py-gnome/braseroburn/write-data.py
-%%PORTDOCS%%share/examples/py-gnome/braseroburn/write-image.py
-%%PORTDOCS%%share/examples/py-gnome/braseromedia/drive_selection.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/README
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_01.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_02.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_03.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_04.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_05.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_06.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_08.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_09.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_10.glade
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_10.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_11.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/sample-image.png
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/test-print.py
-%%PORTDOCS%%share/examples/py-gnome/gtksourceview/test-widget.py
-%%PORTDOCS%%share/examples/py-gnome/keyring-async.py
-%%PORTDOCS%%share/examples/py-gnome/keyring.py
-%%PORTDOCS%%share/examples/py-gnome/mediaprofiles/profiles.py
-%%PORTDOCS%%share/examples/py-gnome/rsvg/rsvg-cairo.py
-%%PORTDOCS%%share/examples/py-gnome/wnck_example.py
+%%EXAMPLES%%share/examples/py-gnome/applet/GNOME_PythonAppletSample.server
+%%EXAMPLES%%share/examples/py-gnome/applet/README
+%%EXAMPLES%%share/examples/py-gnome/applet/applet.py
+%%EXAMPLES%%share/examples/py-gnome/braseroburn/write-audio-video.py
+%%EXAMPLES%%share/examples/py-gnome/braseroburn/write-data.py
+%%EXAMPLES%%share/examples/py-gnome/braseroburn/write-image.py
+%%EXAMPLES%%share/examples/py-gnome/braseromedia/drive_selection.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/README
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_01.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_02.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_03.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_04.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_05.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_06.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_08.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_09.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_10.glade
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_10.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/example_11.py
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/sample-image.png
+%%EXAMPLES%%share/examples/py-gnome/gnomeprint/test-print.py
+%%EXAMPLES%%share/examples/py-gnome/gtksourceview/test-widget.py
+%%EXAMPLES%%share/examples/py-gnome/keyring-async.py
+%%EXAMPLES%%share/examples/py-gnome/keyring.py
+%%EXAMPLES%%share/examples/py-gnome/mediaprofiles/profiles.py
+%%EXAMPLES%%share/examples/py-gnome/rsvg/rsvg-cairo.py
+%%EXAMPLES%%share/examples/py-gnome/wnck_example.py
 share/pygtk/2.0/defs/_gnomedesktop.defs
 share/pygtk/2.0/defs/applet.defs
 share/pygtk/2.0/defs/art.defs
@@ -125,14 +125,14 @@ share/pygtk/2.0/defs/metacity.defs
 share/pygtk/2.0/defs/print.defs
 share/pygtk/2.0/defs/printui.defs
 share/pygtk/2.0/defs/wnck.defs
-%%PORTDOCS%%@dirrm share/examples/py-gnome/rsvg
-%%PORTDOCS%%@dirrm share/examples/py-gnome/mediaprofiles
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gtksourceview
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gnomeprint
-%%PORTDOCS%%@dirrm share/examples/py-gnome/braseromedia
-%%PORTDOCS%%@dirrm share/examples/py-gnome/braseroburn
-%%PORTDOCS%%@dirrm share/examples/py-gnome/applet
-%%PORTDOCS%%@dirrmtry share/examples/py-gnome
+%%EXAMPLES%%@dirrm share/examples/py-gnome/rsvg
+%%EXAMPLES%%@dirrm share/examples/py-gnome/mediaprofiles
+%%EXAMPLES%%@dirrm share/examples/py-gnome/gtksourceview
+%%EXAMPLES%%@dirrm share/examples/py-gnome/gnomeprint
+%%EXAMPLES%%@dirrm share/examples/py-gnome/braseromedia
+%%EXAMPLES%%@dirrm share/examples/py-gnome/braseroburn
+%%EXAMPLES%%@dirrm share/examples/py-gnome/applet
+%%EXAMPLES%%@dirrmtry share/examples/py-gnome
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pygtksourceview
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pygnomeprintui
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pygnomeprint

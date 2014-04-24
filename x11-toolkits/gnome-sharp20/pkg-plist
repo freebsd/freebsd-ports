@@ -135,3 +135,5 @@ share/gapi-2.0/gnome-vfs-api.xml
 @dirrm lib/mono/gac/gconf-sharp
 @dirrm lib/mono/gac/art-sharp/2.24.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/art-sharp
+@dirrmtry lib/mono/gac
+@dirrmtry lib/mono/

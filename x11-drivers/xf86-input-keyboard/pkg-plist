@@ -1,4 +1,3 @@
-lib/xorg/modules/input/kbd_drv.la
 lib/xorg/modules/input/kbd_drv.so
 man/man4/kbd.4x.gz
 @dirrmtry lib/xorg/modules/input

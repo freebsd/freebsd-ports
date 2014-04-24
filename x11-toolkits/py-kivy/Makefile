@@ -44,16 +44,6 @@ OPTIONS_GROUP_CAMERA=	OPENCV GSTREAMER
 OPTIONS_GROUP_SPELLING=	ENCHANT
 OPTIONS_GROUP_CLIPBOARD=	PYGAME
 
-.if !defined(ARCH)
-ARCH!=		uname -p
-.endif
-.if ${ARCH} == i386
-OPTIONS_GROUP_VIDEO+=	PYGLET
-.if !defined(WITH_NEW_XORG)
-BROKEN=		Does not compile with old libGL on i386: Undefined symbol glBlendEquationSeparate
-.endif
-.endif
-
 CAMERA_DESC=	Camera support
 CLIPBOARD_DESC=	Clipboard support
 IMAGE_DESC=	Image support
@@ -84,7 +74,21 @@ TEST_USES=		display:build
 X11_MAKE_ENV=		USE_X11=1
 X11_USE=		XORG=x11
 
+.if !defined(ARCH)
+ARCH!=		uname -p
+.endif
+
+.if ${ARCH} == i386
+OPTIONS_GROUP_VIDEO+=	PYGLET
+.endif
+
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
+.if !defined(WITH_NEW_XORG)
+BROKEN=		Does not compile with old libGL on i386: Undefined symbol glBlendEquationSeparate
+.endif
+.endif
 
 .if ${PORT_OPTIONS:MPDF}
 .if empty(PORT_OPTIONS:MDOCS)

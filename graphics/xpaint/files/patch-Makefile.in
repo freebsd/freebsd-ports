@@ -1,6 +1,6 @@
---- Makefile.in.orig	2013-01-26 15:21:12.000000000 +0100
-+++ Makefile.in	2014-01-25 23:16:07.000000000 +0100
-@@ -283,7 +283,7 @@ top_builddir = @top_builddir@
+--- Makefile.in.orig	2014-04-17 16:50:14.000000000 +0200
++++ Makefile.in	2014-04-21 15:13:31.000000000 +0200
+@@ -358,7 +358,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  BINDIR = $(prefix)/bin
  SHAREDIR = $(prefix)/share/xpaint
@@ -9,7 +9,7 @@
  PRINT_COMMAND = lpr
  LPCCMD = /usr/sbin/lpc status
  #define LPCCMD 
-@@ -1005,14 +1005,14 @@ docs: INSTALL README TODO ChangeLog
+@@ -1041,14 +1041,14 @@ docs: INSTALL README TODO ChangeLog
  .PHONY:
  
  version.h:
@@ -21,13 +21,13 @@
 -	$(CC) substads.c -o $@
 +	$(CC) $(CFLAGS) substads.c -o $@
  
- preproc: preproc.c
+ preproc: preproc.c version.h
 -	$(CC) preproc.c -o $@
 +	$(CC) $(CFLAGS) preproc.c -o $@
  
  DefaultRC.txt.h: substads DefaultRC
  	./substads -ad2c DefaultRC $@
-@@ -1020,21 +1020,20 @@ DefaultRC.txt.h: substads DefaultRC
+@@ -1056,21 +1056,20 @@ DefaultRC.txt.h: substads DefaultRC
  messages.h: preproc
  	./preproc > messages.h
  

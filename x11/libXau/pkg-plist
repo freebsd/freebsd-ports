@@ -2,8 +2,8 @@ include/X11/Xauth.h
 lib/libXau.a
 lib/libXau.la
 lib/libXau.so
-lib/libXau.so.0
 lib/libXau.so.6
+lib/libXau.so.6.0.0
 libdata/pkgconfig/xau.pc
 man/man3/Xau.3.gz
 man/man3/XauDisposeAuth.3.gz

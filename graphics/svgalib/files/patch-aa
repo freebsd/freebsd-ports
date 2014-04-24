@@ -1,5 +1,5 @@
---- Makefile.cfg.orig	Tue May 29 21:39:13 2001
-+++ Makefile.cfg	Thu Jul 31 18:12:15 2003
+--- Makefile.cfg.orig	2001-05-29 16:39:13.000000000 +0200
++++ Makefile.cfg	2014-04-18 19:02:17.000000000 +0200
 @@ -9,8 +9,8 @@
  # to n means yes!
  
@@ -110,3 +110,13 @@
  
  #
  # Comment out any dac support that you don't want included in the library.
+@@ -289,6 +289,6 @@
+ 
+ # Utilites used.
+ AR	  = ar
+-INSTALL_PROGRAM	= install -c -s -m 755 -o root -g bin
+-INSTALL_SHLIB	= install -c -m 755 -o root -g bin
+-INSTALL_DATA	= install -c -m 644 -o root -g bin
++INSTALL_PROGRAM	?= install -c -s -m 755
++INSTALL_SHLIB	?= install -c -m 755
++INSTALL_DATA	?= install -c -m 644

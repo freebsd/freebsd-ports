@@ -3,16 +3,16 @@
 
 PORTNAME=	lxde-icon-theme
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/lxde/LXDE%20Icon%20Theme/lxde-icon-theme-${PORTVERSION}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	LXDE Icon Theme
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	YES
-USES=		gmake iconv
+USES=		gmake iconv tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
@@ -20,7 +20,6 @@ DATADIR=	${PREFIX}/share/lxde
 INSTALLS_ICONS=	YES
 
 PORTDOCS=	AUTHORS
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

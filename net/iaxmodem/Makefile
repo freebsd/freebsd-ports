@@ -21,14 +21,12 @@ SUB_FILES=	pkg-message
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	sbin/${PORTNAME}
+PLIST_FILES=	sbin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTDOCS=	CHANGES FAQ README
 PORTEXAMPLES=	config.ttyIAX iaxmodem-cfg.ttyIAX
-MAN1=		${PORTNAME}.1
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -38,18 +36,11 @@ post-patch:
 		${WRKSRC}/iaxmodem.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iaxmodem ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/iaxmodem.1 ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${INSTALL_PROGRAM} ${WRKSRC}/iaxmodem ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/iaxmodem.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

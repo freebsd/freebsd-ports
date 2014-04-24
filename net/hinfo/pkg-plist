@@ -1,5 +1,10 @@
+man/man1/hinfo.1.gz
+man/man5/hinfo.conf.5.gz
 bin/hinfo
 etc/hinfo.conf
 etc/hinfo.conf.example
 sbin/hinfo-update
-@unexec rm -fR %%PREFIX%%/lib/hinfo
+%%DATADIR%%/dnsbl.ins.pl
+%%DATADIR%%/whois.ins.pl
+@dirrm %%DATADIR%%
+@dirrmtry lib/hinfo

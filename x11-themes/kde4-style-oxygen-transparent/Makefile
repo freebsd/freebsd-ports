@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oxygen-transparent
-PORTVERSION=	2013.01.02
-PORTREVISION=	3
+PORTVERSION=	2014.03.10
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	LOCAL/dbn/${PORTNAME}
 PKGNAMEPREFIX=	kde4-style-
@@ -15,7 +14,6 @@ LICENSE=	GPLv2
 
 USE_KDE4=	kdelibs kdehier kdeprefix workspace automoc4
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USES=		cmake
-USE_XZ=		yes
+USES=		cmake tar:xz
 
 .include <bsd.port.mk>

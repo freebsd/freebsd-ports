@@ -13,8 +13,7 @@ COMMENT=	Userspace interface to kernel Direct Rendering Module services
 LIB_DEPENDS=	libpciaccess.so:${PORTSDIR}/devel/libpciaccess \
 		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -49,7 +48,7 @@ CONFIGURE_ARGS+=--disable-manpages
 PLIST_SUB+=	MAN="@comment "
 .endif
 
-LIBDRM_VERSION=	2.4.50
+LIBDRM_VERSION=	2.4.52
 LIBDRM_REVISION=0
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-configure \
@@ -65,7 +64,7 @@ LIBDRM_REVISION=1
 PLIST_SUB+=	OLD="" NEW="@comment " NOUVEAU=""
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+.if ${ARCH} == amd64 || ${ARCH} == i386
 PLIST_SUB+=	INTEL_DRIVER=""
 PLIST_SUB+=	RADEON_DRIVERS=""
 .elif ${ARCH} == ia64 || ${ARCH} == powerpc || ${ARCH} == powerpc64

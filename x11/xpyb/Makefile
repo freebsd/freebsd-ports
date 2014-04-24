@@ -3,6 +3,7 @@
 
 PORTNAME=	xpyb
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	dist

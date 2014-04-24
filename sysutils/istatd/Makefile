@@ -3,6 +3,7 @@
 
 PORTNAME=	istatd
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/tiwilliam/${PORTNAME}/
 

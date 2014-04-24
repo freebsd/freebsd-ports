@@ -1,11 +1,17 @@
 bin/fax
 bin/efax
 bin/efix
-etc/efax.rc.sample
-etc/efax.rc.sample.ja
-@cwd /
-var/spool/fax/outgoing/lock
-@dirrmtry var/spool/fax/incoming
-@dirrmtry var/spool/fax/outgoing
-@dirrmtry var/spool/fax
-@cwd
+@sample etc/efax.rc.sample
+@sample etc/efax.rc.ja.sample
+man/man1/fax.1.gz
+man/man1/efax.1.gz
+man/man1/efix.1.gz
+@owner uucp
+@group dialer
+/var/spool/fax/incoming/.keepme
+/var/spool/fax/outgoing/lock
+@dirrmtry /var/spool/fax/outgoing
+@dirrmtry /var/spool/fax/incoming
+@dirrmtry /var/spool/fax
+@group
+@owner

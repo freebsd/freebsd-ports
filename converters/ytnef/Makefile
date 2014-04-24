@@ -3,31 +3,34 @@
 
 PORTNAME=	ytnef
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unpack data in MS Outlook TNEF format
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libytnef.so:${PORTSDIR}/devel/libytnef
 RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	src/ytnef/*.pl
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/ytnef bin/ytnefprocess.pl bin/ytnefprint
 PORTDOCS=	AUTHORS NEWS README
+PLIST_FILES=	bin/ytnef bin/ytnefprint bin/ytnefprocess.pl
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|' \
-		${WRKSRC}/src/ytnef/ytnefprocess.pl
+	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share|' \
+		${WRKSRC}/src/ytnef/*.pl
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

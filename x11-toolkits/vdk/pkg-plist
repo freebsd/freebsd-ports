@@ -99,8 +99,10 @@ include/vdk-2/vdk/widcontain.h
 lib/libvdk-2.a
 lib/libvdk-2.la
 lib/libvdk-2.so
-lib/libvdk-2.so.7
+lib/libvdk-2.so.2
+lib/libvdk-2.so.2.5.1
 libdata/pkgconfig/vdk-2.x.pc
+man/man1/vdk-config-2.1.gz
 share/aclocal/vdk-2.m4
 @dirrm include/vdk-2/vdk
 @dirrm include/vdk-2

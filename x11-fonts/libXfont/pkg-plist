@@ -17,5 +17,6 @@ lib/libXfont.a
 lib/libXfont.la
 lib/libXfont.so
 lib/libXfont.so.1
+lib/libXfont.so.1.4.1
 libdata/pkgconfig/xfont.pc
 @dirrmtry include/X11/fonts

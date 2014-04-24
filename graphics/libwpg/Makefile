@@ -2,7 +2,7 @@
 
 PORTNAME=	libwpg
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -14,8 +14,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libwpd-0.9.so:${PORTSDIR}/textproc/libwpd
 
-USES=		libtool pkgconfig perl5 pathfix
-USE_BZIP2=	yes
+USES=		libtool:keepla pathfix perl5 pkgconfig shebangfix tar:bzip2
+SHEBANG_FILES=	${WRKSRC}/src/conv/svg/wpg2svgbatch.pl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-werror

@@ -3,6 +3,7 @@
 
 PORTNAME=	asir
 PORTVERSION=	20110810
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/ \

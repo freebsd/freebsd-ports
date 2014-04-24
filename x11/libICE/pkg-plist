@@ -8,6 +8,7 @@ lib/libICE.a
 lib/libICE.la
 lib/libICE.so
 lib/libICE.so.6
+lib/libICE.so.6.3.0
 libdata/pkgconfig/ice.pc
 %%DOCSDIR%%/ICElib.xml
 %%DOCSDIR%%/ice.xml

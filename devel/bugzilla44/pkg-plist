@@ -1041,7 +1041,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/images/callouts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en/html/api/extensions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/extensions
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Whine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/WebService/Server

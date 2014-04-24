@@ -1,3 +1,13 @@
+From nox Mon Sep 17 00:00:00 2001
+From: Juergen Lock <nox@jelal.kn-bremen.de>
+Date: 05 Apr 2014 21:06:00 +0200
+Subject: Fix bsd-user FreeBSD hw.availpages sysctl
+
+hw.availpages is defined as OID_AUTO so the mib can change; find out
+it's value at the first hw.* sysctl syscall.
+
+Signed-off-by: Juergen Lock <nox@jelal.kn-bremen.de>
+
 --- a/bsd-user/freebsd/os-sys.c
 +++ b/bsd-user/freebsd/os-sys.c
 @@ -219,24 +219,36 @@ abi_long do_freebsd_sysctl(CPUArchState 

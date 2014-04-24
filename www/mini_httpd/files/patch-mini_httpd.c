@@ -1,4 +1,4 @@
---- mini_httpd.c~	Wed Dec  3 19:27:22 2003
+--- mini_httpd.c.orig	Wed Dec  3 19:27:22 2003
 +++ mini_httpd.c	Thu May  6 23:36:20 2004
 @@ -816,7 +816,7 @@
  	    }

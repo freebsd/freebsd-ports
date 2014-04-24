@@ -3,18 +3,18 @@
 
 PORTNAME=	pcmanfm
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/PCManFM/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	PCMan File Manager
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfm-gtk.so:${PORTSDIR}/x11/libfm
 
-USE_XZ=		yes
-USES=		desktop-file-utils fam gmake pathfix pkgconfig
+USES=		desktop-file-utils fam gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	aclocal automake libtool
 

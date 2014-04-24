@@ -75,7 +75,6 @@
     SUBDIR += p5-Net-DirectConnect-TigerHash
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += phex
-    SUBDIR += py-fngrab
     SUBDIR += py-kenosis
     SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc

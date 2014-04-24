@@ -6080,6 +6080,17 @@
  
  JNIEXPORT void JNICALL Java_sun_management_DiagnosticCommandImpl_setNotificationEnabled
  (JNIEnv *env, jobject dummy, jboolean enabled) {
+--- jdk/src/share/native/sun/management/GcInfoBuilder.c
++++ jdk/src/share/native/sun/management/GcInfoBuilder.c
+@@ -190,7 +190,7 @@
+ 
+     if (ext_att_count <= 0) {
+         JNU_ThrowIllegalArgumentException(env, "Invalid ext_att_count");
+-        return;
++        return 0;
+     }
+ 
+     gc_stat.usage_before_gc = usageBeforeGC;
 --- jdk/src/solaris/bin/ergo_i586.c
 +++ jdk/src/solaris/bin/ergo_i586.c
 @@ -106,7 +106,7 @@

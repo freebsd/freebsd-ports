@@ -237,7 +237,6 @@
     SUBDIR += mail-notification
     SUBDIR += mail2sms
     SUBDIR += mailagent
-    SUBDIR += mailcrypt
     SUBDIR += maildirsync
     SUBDIR += maildrop
     SUBDIR += mailfmt

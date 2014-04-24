@@ -1,5 +1,8 @@
+@comment $FreeBSD: mail/fetchmail/pkg-plist 315268 2013-03-26 08:56:28Z mandree $
 bin/fetchmail
 bin/fetchmailconf
+man/man1/fetchmail.1.gz
+man/man1/fetchmailconf.1.gz
 %%NOX11%%libexec/fetchmailconf.py
 %%NLS%%share/locale/ca/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/fetchmail.mo
@@ -28,10 +31,6 @@ bin/fetchmailconf
 %%X11%%%%PYTHON_SITELIBDIR%%/fetchmailconf.py
 %%X11%%%%PYTHON_SITELIBDIR%%/fetchmailconf.pyc
 %%X11%%%%PYTHON_SITELIBDIR%%/fetchmailconf.pyo
-@exec /usr/bin/install -d -m 755 -o fetchmail -g fetchmail /var/run/fetchmail
 @unexec if cmp -s %D/etc/fetchmailrc.sample %D/etc/fetchmailrc; then rm -f %D/etc/fetchmailrc; fi
 etc/fetchmailrc.sample
 @exec if [ ! -f %D/etc/fetchmailrc ] ; then cp -p %D/%F %B/fetchmailrc; fi
-@cwd /var/run
-@unexec rm -f %D/fetchmail/fetchmail.pid 2>/dev/null || true
-@dirrmtry fetchmail

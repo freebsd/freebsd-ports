@@ -3,7 +3,7 @@
 
 PORTNAME=	lasso
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/594/
 

@@ -147,11 +147,11 @@ sbin/yadifad
 /var/yadifa/masters/localhost.zone
 /var/yadifa/masters/localhost6.zone
 /var/yadifa/masters/somedomain.eu.zone
-@unexec rmdir >/dev/null 2>&1 /var/yadifa/xfr || :
-@unexec rmdir >/dev/null 2>&1 /var/yadifa/slaves || :
-@unexec rmdir >/dev/null 2>&1 /var/yadifa/masters || :
-@unexec rmdir >/dev/null 2>&1 /var/yadifa/keys || :
-@unexec rmdir >/dev/null 2>&1 /var/yadifa || :
+@unexec rmdir "/var/yadifa/xfr" >/dev/null 2>&1 || :
+@unexec rmdir "/var/yadifa/slaves" >/dev/null 2>&1 || :
+@unexec rmdir "/var/yadifa/masters" >/dev/null 2>&1 || :
+@unexec rmdir "/var/yadifa/keys" >/dev/null 2>&1 || :
+@unexec rmdir "/var/yadifa" >/dev/null 2>&1 || :
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry include/dnszone
 @dirrmtry include/dnsdb

@@ -2,7 +2,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://snapshot.opera.com/${MASTER_SITES_VER_PATH}/
@@ -14,7 +14,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser (Next version)
 IGNORE=		Development version is not currently active. Use www/opera instead of
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info

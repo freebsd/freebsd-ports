@@ -3,7 +3,7 @@
 
 PORTNAME=	pypanel
 PORTVERSION=	2.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 DISTNAME=	PyPanel-${PORTVERSION}
@@ -11,7 +11,7 @@ DISTNAME=	PyPanel-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop panel written in Python
 
-LIB_DEPENDS=	libfreetype.so.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

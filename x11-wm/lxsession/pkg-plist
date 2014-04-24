@@ -72,6 +72,8 @@ man/man1/lxsession.1.gz
 %%DATADIR%%/images/system-shutdown.png
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fo
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES

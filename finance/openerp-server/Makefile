@@ -3,6 +3,7 @@
 
 PORTNAME=	openerp-server
 PORTVERSION=	7.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	finance python
 MASTER_SITES=	http://nightly.openerp.com/7.0/nightly/src/

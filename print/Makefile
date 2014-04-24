@@ -154,7 +154,6 @@
     SUBDIR += latex-tipa
     SUBDIR += latex-ucs
     SUBDIR += latex2rtf
-    SUBDIR += latex2slides
     SUBDIR += latexdiff
     SUBDIR += latexmk
     SUBDIR += lgrind
@@ -316,7 +315,6 @@
     SUBDIR += txtbdf2ps
     SUBDIR += typetools
     SUBDIR += utopia
-    SUBDIR += wprint
     SUBDIR += xdvi
     SUBDIR += xdvik
     SUBDIR += xfce4-print

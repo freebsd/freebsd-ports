@@ -1,5 +1,6 @@
 %%PERL5_MAN3%%/Chatbot::Eliza.3.gz
 %%SITE_PERL%%/Chatbot/Eliza.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chatbot/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chatbot/Eliza/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chatbot/Eliza
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chatbot
 @dirrmtry %%SITE_PERL%%/Chatbot

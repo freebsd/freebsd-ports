@@ -73,7 +73,6 @@ share/applications/midori.desktop
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriBrowser.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriExtension.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriPreferences.html
-%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriViewable.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-midori-app.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-midori-array.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-midori-bookmarks-db.html
@@ -225,7 +224,7 @@ share/locale/zh_TW/LC_MESSAGES/midori.mo
 %%APIDOCS%%@dirrmtry share/gtk-doc/html
 %%APIDOCS%%@dirrmtry share/gtk-doc
 @dirrm %%DOCSDIR%%
-@dirrm share/appdata
+@dirrmtry share/appdata
 @dirrm lib/midori
 @dirrm etc/xdg/midori/extensions/adblock
 @dirrm etc/xdg/midori/extensions

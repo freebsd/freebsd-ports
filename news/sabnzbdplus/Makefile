@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.7.16
+PORTVERSION=	0.7.17
 PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -99,15 +99,15 @@ RUN_DEPENDS+=	par2repair:${PORTSDIR}/archivers/par2cmdline-tbb
 .endif
 
 .if ${PORT_OPTIONS:MFEEDPARSER}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser
 .endif
 
 .if ${PORT_OPTIONS:MYENC}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_yenc.so:${PORTSDIR}/news/py-yenc
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}yenc>=0:${PORTSDIR}/news/py-yenc
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl
 .endif
 
 .if ${PORT_OPTIONS:MUNRAR}

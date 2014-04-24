@@ -4,7 +4,7 @@
 
 PORTNAME=	bug-buddy
 PORTVERSION=	2.32.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,7 +15,7 @@ COMMENT=	Bug reporting tool for GNOME 2
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla  pathfix pkgconfig tar:bzip2
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -1,6 +1,6 @@
---- eficasQt.orig	2013-01-24 17:21:25.000000000 +0100
-+++ eficasQt	2013-03-16 16:07:04.000000000 +0100
-@@ -18,21 +18,16 @@
+--- eficasQt.orig	2014-04-17 22:44:45.000000000 +0200
++++ eficasQt	2014-04-17 22:49:47.000000000 +0200
+@@ -18,21 +18,19 @@
  # ==============================================================================
  
  set_prefix() {
@@ -15,6 +15,9 @@
  set_prefix $0
  
 -export ASTER_ROOT=$prefix
++# Work-around for the py-numpy breakage - see PR ports/188114
++FIXNUMPY=%%GCC_RUNTIME%%
++
 +export ASTER_ROOT=%%LOCALBASE%%/aster
  # set environment
 -if [ -f /etc/codeaster/profile.sh ]; then
@@ -27,10 +30,10 @@
  fi
  
  # start Python interpreter
-@@ -44,5 +39,5 @@
+@@ -44,5 +42,5 @@
  PYTHONPATH=$PYTHONPATH:$EFICAS_ROOT/UiQT4
  PYTHONPATH=$PYTHONPATH:$EFICAS_ROOT/Editeur
  
 -$PYTHONEXECUTABLE $eficasdir/Aster/qtEficas_aster.py $*
-+$PYTHONEXECUTABLE $eficasdir/Aster/qtEficas_aster.pyo $*
++LD_LIBRARY_PATH=$FIXNUMPY $PYTHONEXECUTABLE $eficasdir/Aster/qtEficas_aster.pyo $*
  

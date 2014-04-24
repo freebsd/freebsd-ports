@@ -3,7 +3,7 @@
 
 PORTNAME=	xmoto
 PORTVERSION=	0.5.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/

@@ -1,5 +1,7 @@
 bin/noegnud-0.8.0-slashem-0.0.6E4F8
 bin/noegnud-slashem-0.0.6E4F8
+@owner games
+@group bin
 share/noegnud-0.8.0/slashem-0.0.6E4F8/Arc-fila.lev
 share/noegnud-0.8.0/slashem-0.0.6E4F8/Arc-filb.lev
 share/noegnud-0.8.0/slashem-0.0.6E4F8/Arc-goal.lev
@@ -179,7 +181,7 @@ share/noegnud-0.8.0/slashem-0.0.6E4F8/wizard2.lev
 share/noegnud-0.8.0/slashem-0.0.6E4F8/wizard3.lev
 share/noegnud-0.8.0/slashem-0.0.6E4F8/wizhelp
 share/noegnud-0.8.0/slashem-0.0.6E4F8/yeenoghu.lev
-@exec chown games:bin %D/share/noegnud-0.8.0/slashem-0.0.6E4F8
+@exec chown root:wheel %D/share/noegnud-0.8.0
 @exec chmod 775 %D/share/noegnud-0.8.0/slashem-0.0.6E4F8
 @dirrmtry share/noegnud-0.8.0/slashem-0.0.6E4F8/save
 @dirrmtry share/noegnud-0.8.0/slashem-0.0.6E4F8

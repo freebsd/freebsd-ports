@@ -3,6 +3,7 @@
 
 PORTNAME=	grub2-bhyve
 DISTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -24,7 +25,8 @@ USES=		bison gettext gmake
 PLIST_FILES=	sbin/grub-bhyve
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=	--with-platform=emu CC=${CC} LEX=${LOCALBASE}/bin/flex \
-		--enable-grub-mount=no --enable-grub-mkfont=no
+		--enable-grub-mount=no --enable-grub-mkfont=no \
+		--enable-grub-emu-sdl=no
 
 .include <bsd.port.pre.mk>
 

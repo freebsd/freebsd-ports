@@ -3,7 +3,7 @@
 
 PORTNAME=	xgobi
 PORTVERSION=	2002.06.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math graphics
 MASTER_SITES=	http://public.research.att.com/~stat/xgobi/
 DISTNAME=	xgobi

@@ -1,5 +1,14 @@
---- RULES.freeBSD.orig	Mon Dec  1 14:55:58 2003
-+++ RULES.freeBSD	Thu Jan 29 21:43:28 2004
+--- RULES.freeBSD.orig	2005-03-14 15:22:08.000000000 +0100
++++ RULES.freeBSD	2014-04-21 11:45:00.000000000 +0200
+@@ -17,7 +17,7 @@
+ # Install directory
+ #
+ #INSTALL_DIR = /usr/local/bin
+-INSTALL_DIR = %%PREFIX%%/bin
++INSTALL_DIR = $(DESTDIR)%%PREFIX%%/bin
+ 
+ #
+ # Location of the X11 lib (libX11.a)
 @@ -54,11 +54,11 @@
  #
  # Options for the Fortran compiler

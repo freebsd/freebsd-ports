@@ -3,11 +3,11 @@
 
 PORTNAME=	lxterminal
 PORTVERSION=	0.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%20${PORTVERSION}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Lightweight terminal emulator from the LXDE project
 
 LICENSE=	GPLv2

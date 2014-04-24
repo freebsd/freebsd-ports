@@ -3,7 +3,7 @@
 
 PORTNAME=	wkhtmltopdf
 PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	GH:wk \
 		http://github.com/${GH_ACCOUNT}/qt/archive/${WKQT_TAGNAME}.tar.gz?dummy=/:wkqt

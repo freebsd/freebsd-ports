@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-image-viewer
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

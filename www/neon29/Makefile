@@ -3,7 +3,7 @@
 
 PORTNAME=	neon29
 PORTVERSION=	0.29.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
@@ -49,7 +49,7 @@ LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
 .if ${PORT_OPTIONS:MLIBXML}
 CONFIGURE_ARGS+=--with-libxml2
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+USE_GNOME+=	libxml2
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}

@@ -3,6 +3,7 @@
 
 PORTNAME=	alien
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://nodeload.github.com/mascarenhas/alien/tarball/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -16,12 +17,12 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
-USE_LUA=	5.1
+USES=		lua
 
 WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_SRC_SUFX}
 CFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR} \
 		-DBSD -fPIC
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR} -llua -shared
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR} -llua-${LUA_VER} -shared
 MAKE_ENV+=	LIB_OPTION="${LDFLAGS}" LIB_EXT=".so" LUA="${LUA_CMD}"
 TESTS_EXCLUDE=	tests/alien tests/alien.lua
 
@@ -54,7 +55,7 @@ post-patch:	.SILENT
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}/${PORTNAME}
-	(cd ${WRKSRC}/src/alien && ${INSTALL_PROGRAM} core.so struct.so \
+	(cd ${WRKSRC}/src/alien && ${INSTALL_LIB} core.so struct.so \
 		${STAGEDIR}${LUA_MODLIBDIR}/${PORTNAME})
 	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/alien.lua ${STAGEDIR}${LUA_MODSHAREDIR}

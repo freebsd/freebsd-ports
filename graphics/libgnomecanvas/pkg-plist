@@ -19,6 +19,7 @@ lib/libgnomecanvas-2.a
 lib/libgnomecanvas-2.la
 lib/libgnomecanvas-2.so
 lib/libgnomecanvas-2.so.0
+lib/libgnomecanvas-2.so.0.3000.3
 libdata/pkgconfig/libgnomecanvas-2.0.pc
 share/locale/am/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ang/LC_MESSAGES/libgnomecanvas-2.0.mo

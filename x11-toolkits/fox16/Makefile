@@ -3,7 +3,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.6.49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/ \
     		http://ftp.fox-toolkit.org/pub/
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 MAJORVER=	${PORTVERSION:R}
 PLIST_SUB+=	MAJORVER=${MAJORVER}
 
-USES+=		libtool pathfix
+USES=		libtool:keepla pathfix
 USE_GL=		yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

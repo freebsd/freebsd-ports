@@ -1,0 +1,17 @@
+etc/aprsc/web/aprsc.css
+etc/aprsc/web/aprsc.js
+etc/aprsc/web/index.html
+etc/aprsc/web/favicon.ico
+etc/aprsc/web/aprsc-logo.png
+etc/aprsc/web/aprsc-joulukissa.jpg
+etc/aprsc/web/excanvas.min.js
+etc/aprsc/web/jquery.flot.min.js
+etc/aprsc/web/jquery.flot.selection.min.js
+@unexec if cmp -s %D/etc/aprsc/aprsc.conf %D/etc/aprsc/aprsc.conf.example ; then rm -f %D/etc/aprsc/aprsc.conf ; fi
+etc/aprsc/aprsc.conf.example
+@exec if [ ! -f %D/etc/aprsc/aprsc.conf ]; then cp -p %D/%F %B/aprsc/aprscs.conf; fi
+man/man8/aprsc.8.gz
+sbin/aprsc
+sbin/aprsc_munin
+@dirrm etc/aprsc/web
+@dirrm etc/aprsc

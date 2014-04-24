@@ -42,7 +42,7 @@ sbin/samba_spnupdate
 sbin/samba_upgradedns
 sbin/smbd
 %%SWAT%%sbin/swat
-%%WINBIND%%sbin/winbindd
+sbin/winbindd
 include/samba4/charset.h
 include/samba4/core/doserr.h
 include/samba4/core/error.h

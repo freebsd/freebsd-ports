@@ -1,4 +1,3 @@
-lib/xorg/modules/drivers/scfb_drv.la
 lib/xorg/modules/drivers/scfb_drv.so
 man/man4/scfb.4x.gz
 @dirrmtry lib/xorg/modules/drivers

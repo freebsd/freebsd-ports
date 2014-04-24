@@ -20,6 +20,9 @@ CONFLICTS=	tkabber-[0-9]*
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+DEPRECATED=	Unfetchable, outdated by net-im/tkabber
+EXPIRATION_DATE=2014-05-23
+
 USE_BZIP2=	yes
 USES=		tk:85+,run
 

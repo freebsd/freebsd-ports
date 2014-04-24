@@ -3,6 +3,7 @@
 
 PORTNAME=	stonesoup
 PORTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
@@ -61,7 +62,7 @@ BUILD_DEPENDS+=	fc-list:${PORTSDIR}/x11-fonts/fontconfig \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2
 USE_SDL=	sdl image
 .else
 USES+=		ncurses

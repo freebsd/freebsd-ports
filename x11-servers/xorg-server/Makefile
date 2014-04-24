@@ -35,14 +35,15 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 
 .if defined(WITH_NEW_XORG)
 XORG_VERSION=	1.12.4
-XORG_REVISION=	4
+XORG_REVISION=	7
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang \
 		${FILESDIR}/extra-configure \
+		${FILESDIR}/extra-new-bad-impl \
 		${FILESDIR}/extra-new-dix_dixfonts.c
 .else
 XORG_VERSION=	1.7.7
-XORG_REVISION=	11
+XORG_REVISION=	13
 PLIST_SUB+=	OLD="" NEW="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-Xserver-os-xprintf.c \
@@ -53,8 +54,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-old-dix_dixfonts.c
 .endif
 
-USE_BZIP2=	yes
-USES=		gmake perl5
+USES=		gmake libtool:keepla perl5 tar:bzip2
 USE_PERL5=	build
 USE_GL=		gl
 USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
@@ -65,12 +65,12 @@ USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		videoproto compositeproto trapproto recordproto xineramaproto \
 		xinerama evieproto xfont fontenc xkbui pixman pciaccess
 
-MAKE_JOBS_UNSAFE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS?=--disable-dmx --disable-xvfb --disable-xnest \
 		--without-xmlto --disable-docs --disable-devel-docs \
 		--localstatedir=/var --without-dtrace --disable-xephyr \
 		--enable-record=yes
+INSTALL_TARGET=	install-strip
 
 .if ${SLAVE_PORT} == "no"
 SUB_FILES=	pkg-install pkg-deinstall
@@ -106,11 +106,11 @@ CONFIGURE_ARGS+=	--enable-aiglx=yes
 CONFIGURE_ARGS+=	--enable-aiglx=no
 .endif
 
+# We handle Xorg setuid in the plist. This allows to build xorg-server as a user
+CONFIGURE_ARGS+=--enable-install-setuid=no
 .if ${PORT_OPTIONS:MSUID}
-CONFIGURE_ARGS+=--enable-install-setuid=yes
 PLIST_SUB+=	SUID=""
 .else
-CONFIGURE_ARGS+=--enable-install-setuid=no
 PLIST_SUB+=	SUID="@comment "
 .endif
 
@@ -195,11 +195,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/.xorg
 	${INSTALL_LIB} ${WRKSRC}/hw/xfree86/dixmods/.libs/libglx.so \
 		${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/.xorg/
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/*.so
-.if !defined(WITH_NEW_XORG)
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/*.so
-.endif
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/multimedia/*.so
 
 .if defined(WITH_NEW_XORG)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/X11/xorg.conf.d

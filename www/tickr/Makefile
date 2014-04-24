@@ -3,7 +3,7 @@
 
 PORTNAME=	tickr
 PORTVERSION=	0.6.4
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.newsrssticker.com/src/ \
 		LOCAL/nivit/

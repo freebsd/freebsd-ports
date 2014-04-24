@@ -3,7 +3,7 @@
 
 PORTNAME=	pybookreader
 PORTVERSION=	0.5.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/PyBookReader/PyBookReader%2BOrnamentBook-${PORTVERSION}
 DISTNAME=	PyBookReader-${PORTVERSION}
@@ -18,5 +18,4 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyBookReader
 USE_GNOME=	pygtk2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

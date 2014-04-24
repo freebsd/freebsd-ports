@@ -3,7 +3,7 @@
 
 PORTNAME=	libgdiplus
 PORTVERSION=	2.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libcairo.so:${PORTSDIR}/graphics/cairo
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_XORG=	x11

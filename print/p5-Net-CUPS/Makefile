@@ -12,7 +12,8 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Interface to the CUPS API
 
 BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-client
-LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups-image
+LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups-image \
+		libcupsfilters.so:${PORTSDIR}/print/cups-filters
 
 USES=		perl5
 USE_PERL5=	configure

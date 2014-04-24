@@ -3,6 +3,7 @@
 
 PORTNAME=	freedbd
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	net audio
 MASTER_SITES=	http://rink.nu/downloads/projects/
 

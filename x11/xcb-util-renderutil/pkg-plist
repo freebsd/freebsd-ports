@@ -1,6 +1,7 @@
 include/xcb/xcb_renderutil.h
-lib/libxcb-render-util.so.0
-lib/libxcb-render-util.so
-lib/libxcb-render-util.la
 lib/libxcb-render-util.a
+lib/libxcb-render-util.la
+lib/libxcb-render-util.so
+lib/libxcb-render-util.so.0
+lib/libxcb-render-util.so.0.0.0
 libdata/pkgconfig/xcb-renderutil.pc

@@ -3,7 +3,7 @@
 
 PORTNAME=	Text-ChaSen
 PORTVERSION=	1.03
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese textproc perl5
 MASTER_SITES=	SFJP
 MASTER_SITE_SUBDIR=	chasen-legacy/32224
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libchasen.so:${PORTSDIR}/japanese/chasen-base
 
 DISTINFO_FILE=	${.CURDIR}/../chasen-base/distinfo
 
-CHASEN_VERSION=	2.4.4
+CHASEN_VERSION=	2.4.5
 
 WRKSRC=		${WRKDIR}/chasen-${CHASEN_VERSION}/perl
 USES=		perl5

@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/sampsvr.cfg %D/etc/sampsvr.cfg.dist; then rm -f %D/etc/sampsvr.cfg; fi
-etc/sampsvr.cfg.dist
-@exec [ -f %B/sampsvr.cfg ] || cp %B/%f %B/sampsvr.cfg
+@sample etc/sampsvr.cfg.sample
 %%SAMPDIR%%/announce
 %%SAMPDIR%%/samp-npc
 %%SAMPDIR%%/samp03svr

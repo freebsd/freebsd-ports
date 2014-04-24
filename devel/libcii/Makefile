@@ -26,7 +26,6 @@ SAMPLES=	double calc ids	mpcalc wf xref cref iref kref \
 		idents words basename dirname
 I386_SAMPLES=	sort spin sieve
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
@@ -56,35 +55,35 @@ pre-build:
 # .h is placed in	${PREFIX}/include/cii
 #
 do-install:
-	@${MKDIR} ${CIIDEST}
-	@${MKDIR} ${CIIDEST}/${CIIMAJOR}
-	@${MKDIR} ${CIIDEST}/${CIIMAJOR}/include
-	@${MKDIR} ${CIIDEST}/${CIIMAJOR}/examples
+	@${MKDIR} ${STAGEDIR}${CIIDEST}
+	@${MKDIR} ${STAGEDIR}${CIIDEST}/${CIIMAJOR}
+	@${MKDIR} ${STAGEDIR}${CIIDEST}/${CIIMAJOR}/include
+	@${MKDIR} ${STAGEDIR}${CIIDEST}/${CIIMAJOR}/examples
 ##
-	${INSTALL_DATA} ${CIIBUILD}/libcii.a ${CIIDEST}/${CIIMAJOR}
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${CIIDEST}/${CIIMAJOR}/include
+	${INSTALL_DATA} ${CIIBUILD}/libcii.a ${STAGEDIR}${CIIDEST}/${CIIMAJOR}
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${CIIDEST}/${CIIMAJOR}/include
 ##
-	${LN} -sf ${CIIDEST}/${CIIMAJOR}/libcii.a ${PREFIX}/lib/libcii.a
-	${LN} -sf ${CIIDEST}/${CIIMAJOR}/include ${PREFIX}/include/cii
+	${LN} -sf ${CIIDEST}/${CIIMAJOR}/libcii.a ${STAGEDIR}${PREFIX}/lib/libcii.a
+	${LN} -sf ${CIIDEST}/${CIIMAJOR}/include ${STAGEDIR}${PREFIX}/include/cii
 ##
 .for a in ${SAMPLES}
-	${INSTALL_PROGRAM} ${CIIBUILD}/${a} ${CIIDEST}/${CIIMAJOR}/examples
+	${INSTALL_PROGRAM} ${CIIBUILD}/${a} ${STAGEDIR}${CIIDEST}/${CIIMAJOR}/examples
 .endfor
 .if ${ARCH} == "i386"
 .  for a in ${I386_SAMPLES}
-	${INSTALL_PROGRAM} ${CIIBUILD}/${a} ${CIIDEST}/${CIIMAJOR}/examples
+	${INSTALL_PROGRAM} ${CIIBUILD}/${a} ${STAGEDIR}${CIIDEST}/${CIIMAJOR}/examples
 .  endfor
 .endif
 ##
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cii
-	@${MKDIR} ${PREFIX}/share/doc/cii/examples
-	@${MKDIR} ${PREFIX}/share/doc/cii/src
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cii
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cii/examples
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cii/src
 .for f in CPYRIGHT README history.html install.html makefile packing.lst
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/cii
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/share/doc/cii
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/doc/cii/examples
-	${INSTALL_DATA} ${WRKSRC}/src/* ${PREFIX}/share/doc/cii/src
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${PREFIX}/share/doc/cii/examples
+	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/share/doc/cii/src
 .endif
 
 .include <bsd.port.post.mk>

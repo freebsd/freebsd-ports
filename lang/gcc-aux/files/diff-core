@@ -1,8 +1,3 @@
---- gcc/DEV-PHASE.orig
-+++ gcc/DEV-PHASE
-@@ -1 +1 @@
--experimental
-+prerelease
 --- /dev/null
 +++ gcc/config/dragonfly-stdint.h
 @@ -0,0 +1,56 @@
@@ -328,23 +323,6 @@
 +
 +#define INTPTR_TYPE       (LONG_TYPE_SIZE == 64 ? "long int" : "int")
 +#define UINTPTR_TYPE      (LONG_TYPE_SIZE == 64 ? "long unsigned int" : "unsigned int")
---- gcc/config/arm/arm.h.orig
-+++ gcc/config/arm/arm.h
-@@ -937,13 +937,13 @@
- 
- #ifndef ARM_TARGET2_DWARF_FORMAT
- #define ARM_TARGET2_DWARF_FORMAT DW_EH_PE_pcrel
-+#endif
- 
- /* ttype entries (the only interesting data references used)
-    use TARGET2 relocations.  */
- #define ASM_PREFERRED_EH_DATA_FORMAT(code, data) \
-   (((code) == 0 && (data) == 1 && ARM_UNWIND_INFO) ? ARM_TARGET2_DWARF_FORMAT \
- 			       : DW_EH_PE_absptr)
--#endif
- 
- /* The native (Norcroft) Pascal compiler for the ARM passes the static chain
-    as an invisible last argument (possible since varargs don't exist in
 --- /dev/null
 +++ gcc/config/i386/dragonfly.h
 @@ -0,0 +1,105 @@
@@ -1431,7 +1409,7 @@
  insn-preds.c: s-preds; @true
  tm-preds.h: s-preds-h; @true
  tm-constrs.h: s-constrs-h; @true
-@@ -3210,6 +3221,9 @@
+@@ -3217,6 +3228,9 @@
  	  ( cd $(DESTDIR)$(bindir) && \
  	    $(LN) $(GCC_INSTALL_NAME)$(exeext) $(target_noncanonical)-gcc-$(version)$(exeext) ); \
  	fi

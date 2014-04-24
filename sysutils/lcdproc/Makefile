@@ -3,6 +3,7 @@
 
 PORTNAME=	lcdproc
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -110,7 +111,7 @@ PLIST_SUB+=		USB="@comment " FTDI="@comment " HID="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=		libfreetype.so:${PORTSDIR}/print/freetype2
 .else
 CONFIGURE_ARGS+=	--disable-freetype
 .endif

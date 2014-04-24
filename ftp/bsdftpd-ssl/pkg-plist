@@ -1,27 +1,31 @@
 bin/ftps
-libexec/ftpd
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+man/man1/ftps.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/cert/cert-nopass.sh
-%%PORTDOCS%%%%DOCSDIR%%/cert/cert-pass.sh
-%%PORTDOCS%%%%DOCSDIR%%/cert/cert-dummy.sh
-%%PORTDOCS%%%%DOCSDIR%%/cert/xCA.sh
-%%PORTDOCS%%%%DOCSDIR%%/docs/README
-%%PORTDOCS%%%%DOCSDIR%%/docs/cert-basics.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/cert-howto.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/ciphers.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/licenses
-%%PORTDOCS%%%%DOCSDIR%%/docs/standards.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/verify.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/x509_auth.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpchroot
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpusers
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rc.conf.d/bsdftpd_ssl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cert
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rc.conf.d
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README-docs
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/cert-basics.txt
+%%PORTDOCS%%%%DOCSDIR%%/cert-howto.txt
+%%PORTDOCS%%%%DOCSDIR%%/ciphers.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses
+%%PORTDOCS%%%%DOCSDIR%%/standards.txt
+%%PORTDOCS%%%%DOCSDIR%%/verify.txt
+%%PORTDOCS%%%%DOCSDIR%%/x509_auth.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cert/cert-nopass.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cert/cert-pass.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cert/cert-dummy.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cert/xCA.sh
+%%SERVER%%libexec/ftpd
+%%SERVER%%man/man5/ftpchroot.5.gz
+%%SERVER%%man/man5/ftpchroot-ssl.5.gz
+%%SERVER%%man/man5/xferlog.5.gz
+%%SERVER%%man/man8/ftpd.8.gz
+%%SERVER%%man/man8/ftpd-ssl.8.gz
+%%SERVER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.examples
+%%SERVER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpchroot
+%%SERVER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpusers
+%%SERVER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rc_conf_d.bsdftpd_ssl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cert
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

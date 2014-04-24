@@ -3,7 +3,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	18.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
@@ -32,7 +32,7 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MFLTK}
 LIB_DEPENDS+=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		freetype:${PORTSDIR}/print/freetype2 \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		fltk_images:${PORTSDIR}/x11-toolkits/fltk

@@ -12,6 +12,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	HOME=${WRKSRC}
 USE_DOS2UNIX=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"

@@ -3,6 +3,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	22.86
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF/xdvi/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	tex-
@@ -11,7 +12,7 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		paper:${PORTSDIR}/print/libpaper
 
 USES=		iconv gmake motif

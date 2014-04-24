@@ -5,6 +5,7 @@ libexec/promscrcount.lua
 libexec/promscrsample.lua
 libexec/promupdiff.sh
 libexec/promupping.sh
+man/man1/prommgr.1.gz
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/THANKS

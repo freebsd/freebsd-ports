@@ -4,6 +4,7 @@ lib/libXxf86dga.a
 lib/libXxf86dga.la
 lib/libXxf86dga.so
 lib/libXxf86dga.so.1
+lib/libXxf86dga.so.1.0.0
 libdata/pkgconfig/xxf86dga.pc
 man/man3/XDGA.3.gz
 man/man3/XDGAOpenFramebuffer.3.gz

@@ -1,11 +1,9 @@
 # Description: Remove duplicate CFLAGS, CPPFLAGS, LDFLAGS by stripping CONFIGURE_*
-# Changeset: https://svnweb.freebsd.org/ports?view=revision&revision=326729
-# Submitted by: koobs@
+# Submitted by: koobs (r326729)
 # TODO: Upstream
 
 # Description: Run ranlib before installing the library read-only
-# Changeset: https://svnweb.freebsd.org/ports?view=revision&revision=350207
-# Submitted by: antoine@
+# Submitted by: antoine@ (r350207)
 # TODO: Upstream
 
 --- ./Makefile.pre.in.orig	2014-03-17 13:31:30.000000000 +1100

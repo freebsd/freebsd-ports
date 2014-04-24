@@ -17,7 +17,6 @@ share/applications/higan.desktop
 %%DATADIR%%/shaders/Scanline.shader/manifest.bml
 %%DATADIR%%/shaders/Scanline.shader/scanline.fs
 share/pixmaps/higan.png
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/shaders/Scanline.shader
 @dirrm %%DATADIR%%/shaders/Edge Detection.shader
 @dirrm %%DATADIR%%/shaders/Curvature.shader

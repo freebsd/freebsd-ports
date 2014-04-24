@@ -391,7 +391,7 @@ gst_mad_PLIST_FILES=	${GST_LIB_DIR}/libgstmad.la \
 gst_mad_DIST=	ugly
 
 # mpeg2enc
-gst_mpeg2enc_LIB_DEPENDS+=	libmjpegutils-2.0.so:${PORTSDIR}/multimedia/mjpegtools
+gst_mpeg2enc_LIB_DEPENDS+=	libmjpegutils.so:${PORTSDIR}/multimedia/mjpegtools
 gst_mpeg2enc_PLIST_FILES=	${GST_LIB_DIR}/libgstmpeg2enc.la \
 		${GST_LIB_DIR}/libgstmpeg2enc.so
 gst_mpeg2enc_DIST=	bad

@@ -3,7 +3,7 @@
 
 PORTNAME=	luxrays
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://src.luxrender.net/luxrays/archive/
 DISTNAME=	${HG_NODEID}

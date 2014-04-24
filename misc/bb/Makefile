@@ -3,7 +3,7 @@
 
 PORTNAME=	bb
 PORTVERSION=	1.3.r1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	SF/aa-project/${PORTNAME}/1.3rc1
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High quality audio-visual demonstration for text terminal
 
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
-		mikmod.2:${PORTSDIR}/audio/libmikmod
+		libmikmod.so:${PORTSDIR}/audio/libmikmod
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/bb-1.3.0

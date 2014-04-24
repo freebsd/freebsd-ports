@@ -3,7 +3,7 @@
 
 PORTNAME=	hexchat
 PORTVERSION=	2.9.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://dl.hexchat.org/${PORTNAME}/
 

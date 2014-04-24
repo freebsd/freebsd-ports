@@ -3,7 +3,7 @@
 
 PORTNAME=	inventor
 PORTVERSION=	2.1.5.p10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://oss.sgi.com/projects/inventor/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-/}
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	c47g@gmx.at
 COMMENT=	This is SGI's Open Inventor (TM)
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		GLU.1:${PORTSDIR}/graphics/libGLU
 

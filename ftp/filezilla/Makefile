@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filezilla
-PORTVERSION=	3.6.0.2
-PORTREVISION=	1
+PORTVERSION=	3.8.0
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -15,15 +14,14 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
-		gnutls:${PORTSDIR}/security/gnutls \
-		idn:${PORTSDIR}/dns/libidn \
-		tinyxml:${PORTSDIR}/textproc/tinyxml
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
+		libidn.so:${PORTSDIR}/dns/libidn \
+		libtinyxml.so:${PORTSDIR}/textproc/tinyxml
 
 
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_SQLITE=	3
 USE_WX=		2.8
 WX_CONF_ARGS=	relative
@@ -33,17 +31,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=		filezilla.1 fzputtygen.1 fzsftp.1
-MAN5=		fzdefaults.xml.5
-
 OPTIONS_DEFINE=	DBUS NLS
 OPTIONS_DEFAULT=DBUS NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--with-dbus
 .else
 CONFIGURE_ARGS+=	--without-dbus

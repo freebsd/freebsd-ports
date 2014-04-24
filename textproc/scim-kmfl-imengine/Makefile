@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-kmfl-imengine
 PORTVERSION=	0.9.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
@@ -14,7 +14,7 @@ COMMENT=	SCIM KMFL IMEngine platform for Keyman (KMN) language keyboards
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype.9:${PORTSDIR}/print/freetype2 \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		kmfl.0:${PORTSDIR}/textproc/libkmfl \
 		kmflcomp.0:${PORTSDIR}/textproc/kmflcomp \
 		png15:${PORTSDIR}/graphics/png

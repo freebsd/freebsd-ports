@@ -14,6 +14,9 @@ man/man6/empsched.6.gz
 man/man6/fairland.6.gz
 man/man6/files.6.gz
 man/man6/pconfig.6.gz
+@owner wolfpack
+@group wolfpack
+@mode 644
 %%DATADIR%%/README
 %%DATADIR%%/builtin/infra.config
 %%DATADIR%%/builtin/item.config
@@ -301,14 +304,17 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/work
 %%DATADIR%%/info.nr/xdump
 %%DATADIR%%/info.nr/zdone
+@mode 640
 etc/wolfpack/schedule
 @unexec if cmp -s %B/econfig.orig %B/econfig; then rm -f %B/econfig; fi
 etc/wolfpack/econfig.orig
 @exec if [ ! -f %B/econfig ] ; then cp -p %D/%F %B/econfig; fi
+@mode 755
 @dirrm %%DATADIR%%/builtin
 @dirrm %%DATADIR%%/info.nr
 @dirrm %%DATADIR%%
 @dirrm lib/wolfpack
+@mode 750
 @dirrmtry etc/wolfpack
 @dirrmtry var/wolfpack
 @dirrmtry var

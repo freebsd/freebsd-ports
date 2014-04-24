@@ -47,7 +47,6 @@ MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-fonts/${${l:U}_DISTNAME}:${l:U}
 # Do not use the same OPTIONS directory as "games/tuxpaint".
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Set DISTFILES and PLIST_FILES according to OPTIONS.
@@ -63,16 +62,16 @@ PLIST_DIRS+=	%%DATADIR%%/fonts/locale/${${l:U}_CODE}_docs
 
 # Install seleted fonts.
 do-install:
-	${MKDIR} ${DATADIR}/fonts/locale
+	@${MKDIR} ${STAGEDIR}${DATADIR}/fonts/locale
 .for l in ${LANGS}
 .	if ${PORT_OPTIONS:M${l:U}}
 		${INSTALL_DATA} \
 			${WRKSRC}/${PORTNAME}-ttf-${${l:U}_DISTNAME}/${${l:U}_CODE}.ttf \
-			${DATADIR}/fonts/locale
-		${MKDIR} ${DATADIR}/fonts/locale/${${l:U}_CODE}_docs
+			${STAGEDIR}${DATADIR}/fonts/locale
+		@${MKDIR} ${STAGEDIR}${DATADIR}/fonts/locale/${${l:U}_CODE}_docs
 		${INSTALL_DATA} \
 			${WRKSRC}/${PORTNAME}-ttf-${${l:U}_DISTNAME}/*.txt \
-			${DATADIR}/fonts/locale/${${l:U}_CODE}_docs
+			${STAGEDIR}${DATADIR}/fonts/locale/${${l:U}_CODE}_docs
 .	endif
 .endfor
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	dcmtk
 DISTVERSION=	3.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://dicom.offis.de/pub/dicom/offis/software/${PORTNAME}/${PORTNAME}${PORTVERSION:S/.//g}/
 

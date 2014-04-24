@@ -3,6 +3,7 @@
 
 PORTNAME=	libmetalink
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/ \
 		LOCAL/sunpoet

@@ -4,7 +4,7 @@
 PORTNAME=	jmf
 PORTVERSION=	2.1.1e
 PORTREVISION=	2
-CATEGORIES=	java
+CATEGORIES=	java multimedia
 MASTER_SITES=	#http://java.sun.com/products/java-media/jmf/2.1.1/download.html
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-alljava
 
@@ -24,15 +24,14 @@ RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
 PORTDOCS=	*
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Check for JMF sources
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	because of licensing restrictions, you must fetch the source\
 distribution manually.\
-Please access: http://java.sun.com/products/java-media/jmf/2.1.1/download.html\
-with a web browser and follow the "Download JMF ${PORTVERSION}" link.\
+Please access: http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-java-client-419417.html \
+with a web browser and follow the "Java Media Framework (JMF) ${PORTVERSION}" link.\
 Select download format: cross-platform format.  Please place this file in\
 ${DISTDIR}
 .endif
@@ -44,13 +43,13 @@ do-configure:
 	@${FIND} ${WRKSRC}/bin -type f \( -name '*.bak' -o -name '*.orig' \) -delete
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/jm* ${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/jm* ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${WRKSRC}/lib/jmf.properties \
-		${JAVAJARDIR}/
+		${STAGEDIR}${JAVAJARDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>

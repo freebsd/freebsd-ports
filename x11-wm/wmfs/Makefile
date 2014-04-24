@@ -3,7 +3,7 @@
 
 PORTNAME=	wmfs
 DISTVERSION=	201104
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://wmfs.info/attachments/download/45/ \
 		http://cloud.github.com/downloads/xorg62/wmfs/

@@ -2,6 +2,7 @@
 
 PORTNAME=	cbsd
 PORTVERSION=	10.0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bsdstore.ru/downloads/ \
 		GH
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
 GH_PROJECT=	cbsd
-GH_COMMIT=	a5d3690
+GH_COMMIT=	dd342aa
 
 USE_RC_SUBR=	cbsdd cbsdrsyncd
 

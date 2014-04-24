@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sieverules
-PORTVERSION=	0.9.2
+PORTVERSION=	2.1.2
 PORTEPOCH=	1
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
@@ -12,14 +12,14 @@ COMMENT=	Roundcube webmail sieve plugin
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	roundcube>=0.9.2:${PORTSDIR}/mail/roundcube
-RUN_DEPENDS=	roundcube>=0.9.2:${PORTSDIR}/mail/roundcube
+BUILD_DEPENDS=	roundcube>=1.0:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=1.0:${PORTSDIR}/mail/roundcube
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JohnDoh
 GH_PROJECT=	Roundcube-Plugin-SieveRules-Managesieve
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	6eda4de
+GH_TAGNAME=	${PORTVERSION}
+GH_COMMIT=	f606c1a
 
 NO_BUILD=	yes
 
@@ -34,9 +34,8 @@ x-generate-plist: build
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${WRKDIR}/pkg-plist.tmp
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

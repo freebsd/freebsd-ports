@@ -22,6 +22,7 @@
 #                       you want it to be. It uses '_sabnzbd' group by
 #                       default. Do not sets it as empty or it will run
 #                       as wheel.
+# sabnzbd_pidfile:      Set the location of the sabnzbd pidfile
 
 . /etc/rc.subr
 
@@ -33,14 +34,15 @@ load_rc_config ${name}
 : ${sabnzbd_user:=_sabnzbd}
 : ${sabnzbd_group:=_sabnzbd}
 : ${sabnzbd_conf_dir="%%PREFIX%%/sabnzbd"}
+: ${sabnzbd_pidfile:="/var/run/sabnzbd/sabnzbd.pid"}
 
-pidfile=/var/run/sabnzbd/sabnzbd-$(grep -m1 ^port ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9]').pid
+pidfile=${sabnzbd_pidfile}
 
 start_precmd="${name}_prestart"
 extra_commands="status"
 command_interpreter="%%PYTHON_CMD%%"
 command="%%PREFIX%%/bin/SABnzbd.py"
-command_args="--daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini --pid ${pidfile%/*}"
+command_args="--daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini --pidfile ${pidfile}"
 
 sabnzbd_prestart()
 {

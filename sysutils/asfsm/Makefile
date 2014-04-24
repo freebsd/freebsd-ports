@@ -3,7 +3,7 @@
 
 PORTNAME=	asfsm
 DISTVERSION=	1.0pre15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	AFTERSTEP/apps/asfsm/ \
 		http://tigr.net/afterstep/download/asfsm/

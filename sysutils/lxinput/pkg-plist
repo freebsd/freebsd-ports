@@ -67,6 +67,8 @@ share/applications/lxinput.desktop
 %%DATADIR%%/input-mouse.png
 %%DATADIR%%/lxinput.ui
 @dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fo
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES

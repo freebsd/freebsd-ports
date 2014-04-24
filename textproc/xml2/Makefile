@@ -3,6 +3,7 @@
 
 PORTNAME=	xml2
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.ofb.net/gale/ \
 		http://www.it.ca/~paul/src/

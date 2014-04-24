@@ -3,10 +3,11 @@
 
 PORTNAME=	lxmenu-data
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/lxmenu-data%20%28desktop%20menu%29/lxmenu-data%20${PORTVERSION}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Menu data used by lxpanel
 
 LICENSE=	GPLv2
@@ -24,7 +25,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS README TODO
-
 OPTIONS_DEFINE=	DOCS
 
 post-install:

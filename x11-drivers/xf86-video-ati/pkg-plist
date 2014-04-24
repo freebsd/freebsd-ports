@@ -1,12 +1,7 @@
-lib/xorg/modules/drivers/ati_drv.la
 lib/xorg/modules/drivers/ati_drv.so
-lib/xorg/modules/drivers/radeon_drv.la
 lib/xorg/modules/drivers/radeon_drv.so
-%%OLD%%lib/xorg/modules/multimedia/theatre200_drv.la
 %%OLD%%lib/xorg/modules/multimedia/theatre200_drv.so
-%%OLD%%lib/xorg/modules/multimedia/theatre_detect_drv.la
 %%OLD%%lib/xorg/modules/multimedia/theatre_detect_drv.so
-%%OLD%%lib/xorg/modules/multimedia/theatre_drv.la
 %%OLD%%lib/xorg/modules/multimedia/theatre_drv.so
 man/man4/ati.4x.gz
 man/man4/radeon.4x.gz

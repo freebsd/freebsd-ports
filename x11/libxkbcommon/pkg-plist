@@ -1,10 +1,18 @@
+include/xkbcommon/xkbcommon.h
 include/xkbcommon/xkbcommon-compat.h
 include/xkbcommon/xkbcommon-keysyms.h
 include/xkbcommon/xkbcommon-names.h
-include/xkbcommon/xkbcommon.h
+include/xkbcommon/xkbcommon-x11.h
 lib/libxkbcommon.a
 lib/libxkbcommon.la
 lib/libxkbcommon.so
 lib/libxkbcommon.so.0
+lib/libxkbcommon.so.0.0.0
 libdata/pkgconfig/xkbcommon.pc
+libdata/pkgconfig/xkbcommon-x11.pc
+lib/libxkbcommon-x11.a
+lib/libxkbcommon-x11.la
+lib/libxkbcommon-x11.so
+lib/libxkbcommon-x11.so.0
+lib/libxkbcommon-x11.so.0.0.0
 @dirrm include/xkbcommon

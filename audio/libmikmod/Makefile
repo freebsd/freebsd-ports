@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	libmikmod
-PORTVERSION=	3.1.16
+PORTVERSION=	3.3.6
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF/mikmod/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF/mikmod/libmikmod/${PORTVERSION}/
 
 MAINTAINER=	neuroworker@gmail.com
 COMMENT=	MikMod Sound Library
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool pkgconfig
+USES=		gmake libtool:keepla pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-esd
 USE_LDCONFIG=	yes

@@ -2,18 +2,18 @@
 
 PORTNAME=	splix
 PORTVERSION=	2.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUPS printer drivers for Samsung Printer Language printers
 
-BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-base
+LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups-image
+BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-client
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GMAKE=	yes
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 MODELS=		DELL SAMSUNG XEROX
 PPD_DELL=	1100 1110
@@ -28,7 +28,7 @@ PPD_SAMSUNG_JBIG=	clp200 clp300 clp600 clx216x clx2170 clx3160
 PPD_XEROX_JBIG=		ph6110
 
 FILTER_FILE=	rastertoqpdl pstoqpdl
-CUPS_CONFIG=	${PREFIX}/bin/cups-config
+CUPS_CONFIG=	${LOCALBASE}/bin/cups-config
 BIN_DEST_DIR=	`${CUPS_CONFIG} --serverbin | ${SED} \
 		's|${LOCALBASE}|${PREFIX}|'`/filter
 CUPS_DATA_DIR=	`${CUPS_CONFIG} --datadir | ${SED} \
@@ -42,7 +42,6 @@ JBIG_DESC=	Enable use of JBIG algorithm (pattented)
 BLACKOPTIM_DESC=	Enable black correction algorithm
 OPTIONS_DEFAULT=	JBIG BLACKOPTIM
 
-NO_STAGE=	yes
 .include "bsd.port.options.mk"
 
 post-patch:
@@ -55,7 +54,7 @@ post-configure:
 .if ${PORT_OPTIONS:MJBIG}
 PPD_SAMSUNG+=	${PPD_SAMSUNG_JBIG}
 PPD_XEROX+=	${PPD_XEROX_JBIG}
-LIB_DEPENDS+=	jbig:${PORTSDIR}/graphics/jbigkit
+LIB_DEPENDS+=	libjbig.so:${PORTSDIR}/graphics/jbigkit
 .else
 MAKE_ARGS+=	DISABLE_JBIG=1
 .endif
@@ -69,15 +68,16 @@ MAKE_ARGS+=	CACHESIZE=${CACHESIZE}
 .endif
 
 do-install:
+	${MKDIR} ${STAGEDIR}${BIN_DEST_DIR}
 .for MODEL in ${MODELS}
-	${MKDIR} ${DEST_DIR_${MODEL}}
+	${MKDIR} ${STAGEDIR}${DEST_DIR_${MODEL}}
 .for PPD in $(PPD_${MODEL})
-	${INSTALL_DATA} ${WRKSRC}/ppd/${PPD}.ppd $(DEST_DIR_${MODEL})
+	${INSTALL_DATA} ${WRKSRC}/ppd/${PPD}.ppd ${STAGEDIR}$(DEST_DIR_${MODEL})
 .endfor
 .endfor
 
 .for FILTER in ${FILTER_FILE}
-	${INSTALL_PROGRAM} ${WRKSRC}/optimized/${FILTER} ${BIN_DEST_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/optimized/${FILTER} ${STAGEDIR}${BIN_DEST_DIR}
 .endfor
 
 .include <bsd.port.mk>
