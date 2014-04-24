@@ -1,27 +1,19 @@
---- sl.c.orig	1998-07-22 16:01:01.000000000 +0200
-+++ sl.c	2011-11-01 18:53:45.000000000 +0100
-@@ -32,6 +32,11 @@
+--- sl.c.orig	2014-01-04 00:18:33.000000000 -0500
++++ sl.c	2014-03-16 16:16:47.000000000 -0400
+@@ -37,6 +37,12 @@
  #include <unistd.h>
  #include "sl.h"
  
-+void add_man(int, int);
-+int add_D51(int);
 +int add_sl(int);
-+void add_smoke(int,int);
++int add_C51(int);
++int add_D51(int);
++void add_man(int, int);
++void add_smoke(int, int);
 +
  int ACCIDENT  = 0;
  int LOGO      = 0;
  int FLY       = 0;
-@@ -59,7 +64,7 @@
-     }
- }
- 
--void main(int argc, char *argv[])
-+int main(int argc, char *argv[])
- {
-     int x, i;
- 
-@@ -85,6 +90,8 @@
+@@ -99,6 +105,8 @@
      }
      mvcur(0, COLS - 1, LINES - 1, 0);
      endwin();
@@ -30,7 +22,7 @@
  }
  
  
-@@ -129,7 +136,7 @@
+@@ -143,7 +151,7 @@
  }
  
  
@@ -39,7 +31,16 @@
  {
      static char *d51[D51PATTERNS][D51HIGHT + 1]
  	= {{D51STR1, D51STR2, D51STR3, D51STR4, D51STR5, D51STR6, D51STR7,
-@@ -170,7 +177,7 @@
+@@ -183,7 +191,7 @@
+     return OK;
+ }
+ 
+-add_C51(int x)
++int add_C51(int x)
+ {
+     static char *c51[C51PATTERNS][C51HIGHT + 1]
+ 	= {{C51STR1, C51STR2, C51STR3, C51STR4, C51STR5, C51STR6, C51STR7,
+@@ -224,7 +232,7 @@
  }
  
  
@@ -48,7 +49,7 @@
  {
      static char *man[2][2] = {{"", "(O)"}, {"Help!", "\\O/"}};
      int i;
-@@ -181,7 +188,7 @@
+@@ -235,7 +243,7 @@
  }
  
  
