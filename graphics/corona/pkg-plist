@@ -3,5 +3,4 @@ bin/corona-config
 include/corona.h
 lib/libcorona-1.0.2.so
 lib/libcorona.a
-lib/libcorona.la
 lib/libcorona.so
