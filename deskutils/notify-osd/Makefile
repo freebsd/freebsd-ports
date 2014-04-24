@@ -3,7 +3,7 @@
 
 PORTNAME=	notify-osd
 PORTVERSION=	0.9.29
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/43419242/ \
 		CRITICAL
@@ -23,8 +23,16 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig
 USE_GNOME=	libwnck gconf2
 USE_XORG=	pixman
-USE_GCC=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lpixman-1
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} '/SUBDIRS =/s/tests//' ${WRKSRC}/Makefile.in
+.if ${OSVERSION} < 900033
+	@${REINPLACE_CMD} 's/-Bsymbolic-functions/-Bsymbolic/' \
+		${WRKSRC}/src/Makefile.in
+.endif
 
 .include <bsd.port.mk>
