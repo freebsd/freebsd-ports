@@ -2783,6 +2783,7 @@
     SUBDIR += p5-Term-ReadLine-Zoid
     SUBDIR += p5-Term-ReadPassword
     SUBDIR += p5-Term-Screen
+    SUBDIR += p5-Term-ScreenColor
     SUBDIR += p5-Term-Shell
     SUBDIR += p5-Term-Size
     SUBDIR += p5-Term-Size-Any
