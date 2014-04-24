@@ -3,29 +3,28 @@
 
 PORTNAME=	mlterm
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Multilingual X11 terminal emulator
 
-LIB_DEPENDS=	Xft:${PORTSDIR}/x11-fonts/libXft
-
-USE_XORG=	sm
-USE_GNOME=	gtk20 lthack vte
-USE_AUTOTOOLS=	libtool
-LIBTOOLFILES=	configure kiklib/configure mkf/configure
+USES=		gettext libtool perl5 pkgconfig
+USE_XORG=	sm xft
+USE_GNOME=	gtk20 vte
+USE_LDCONFIG=	yes
 USE_PERL5=	build
-USES=		gettext pkgconfig perl5
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp \
 		--enable-optimize-redrawing \
 		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader" \
 		--disable-iiimf
-CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	CAIRO FRIBIDI IBUS M17NLIB SCIM SIXEL UIM
+OPTIONS_DEFINE=	CAIRO DOCS FRIBIDI IBUS M17NLIB SCIM SIXEL UIM
 CAIRO_DESC=	"Use Cairo for type engine (experimental)"
 FRIBIDI_DESC=	"Use Fribidi for BiDi rendering"
 IBUS_DESC=	"IBUS support (experimental)"
@@ -34,8 +33,7 @@ SCIM_DESC=	"SCIM support (experimental)"
 SIXEL_DESC=	"Sixel graphics support"
 UIM_DESC=	"uim support (experimental)"
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFRIBIDI}
 CONFIGURE_ARGS+=	--enable-fribidi
@@ -48,7 +46,6 @@ PLIST_SUB+=	FRIBIDI="@comment "
 
 .if ${PORT_OPTIONS:MUIM}
 CONFIGURE_ARGS+=	--enable-uim
-MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	uim:${PORTSDIR}/textproc/uim
 PLIST_SUB+=	UIM=""
 .else
@@ -58,7 +55,6 @@ PLIST_SUB+=	UIM="@comment "
 
 .if ${PORT_OPTIONS:MM17NLIB}
 CONFIGURE_ARGS+=	--enable-m17nlib
-MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	m17n:${PORTSDIR}/devel/m17n-lib
 PLIST_SUB+=	M17NLIB=""
 .else
@@ -68,7 +64,6 @@ PLIST_SUB+=	M17NLIB="@comment "
 
 .if ${PORT_OPTIONS:MSCIM}
 CONFIGURE_ARGS+=	--enable-scim
-MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	scim-1.0:${PORTSDIR}/textproc/scim
 PLIST_SUB+=	SCIM=""
 .else
@@ -78,7 +73,6 @@ PLIST_SUB+=	SCIM="@comment "
 
 .if ${PORT_OPTIONS:MIBUS}
 CONFIGURE_ARGS+=	--enable-ibus
-MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	ibus-1.0:${PORTSDIR}/textproc/ibus
 PLIST_SUB+=	IBUS=""
 .else
@@ -88,7 +82,6 @@ PLIST_SUB+=	IBUS="@comment "
 
 .if ${PORT_OPTIONS:MCAIRO}
 CONFIGURE_ARGS+=	--with-type-engines="xcore,xft,cairo"
-MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
 PLIST_SUB+=	CAIRO=""
 .else
@@ -104,23 +97,11 @@ CONFIGURE_ARGS+=	--disable-sixel
 PLIST_SUB+=	SIXEL="@comment "
 .endif
 
-.if ${OSVERSION} >= 900004
-MAKE_ENV=	LIBS_LOCAL=-lutempter
-.else
-MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
+.if ${OSVERSION} < 900004
 LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 .endif
 
-USE_LDCONFIG=	yes
-
-MAN1=	mlterm.1 mlclient.1
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,echo aout,echo elf,g" ${WRKSRC}/configure \
-		${WRKSRC}/kiklib/configure ${WRKSRC}/mkf/configure
-
 post-configure:
-	@${CP} ${LIBTOOL} ${WRKSRC}
 	@${REINPLACE_CMD} -e "s,@CGI_BIN@,${PREFIX}/libexec/w3mmlconfig," \
 		${WRKSRC}/tool/w3mmlconfig/mlconfig.cgi
 .if ${OSVERSION} >= 900004
@@ -129,11 +110,10 @@ post-configure:
 .endif
 
 post-install:
-	(cd ${WRKSRC}/tool/w3mmlconfig; ${MAKE} install)
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ja/README.ja ${DOCSDIR}
-.endif
+	(cd ${WRKSRC}/tool/w3mmlconfig && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/ja/README.ja ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
