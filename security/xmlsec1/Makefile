@@ -3,7 +3,7 @@
 
 PORTNAME=	xmlsec1
 PORTVERSION=	1.2.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -22,12 +22,13 @@ NSS_DESC=		Enable Mozilla's NSS support
 NSS_CONFIGURE_WITH=	nss="${LOCALBASE}" nspr="${LOCALBASE}"
 NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 
-USE_OPENSSL=	yes
-USE_GNOME=	lthack libxml2 libxslt
-USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool:oldver pathfix pkgconfig
+USE_OPENSSL=	yes
+USE_GNOME=	libxml2 libxslt
+USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
-USES=		pkgconfig pathfix
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -48,7 +49,7 @@ post-patch:
 	    -e 's|^confexecdir =.*$$|confexecdir = \$$(sysconfdir)|g' \
 	    -e 's|/tmp/\*\.log|${WRKSRC}/*.log|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/objformat=/s|=`[^`]*`|=elf|' \
+	@${REINPLACE_CMD} \
 	    -e '/^XMLSEC_SHLIBSFX="/s|"[^"]*"|".so"|' \
 	    -e 's|openssl_exlibs=-ldl|openssl_exlibs=|' \
 	    -e 's|-ldl"|"|' \
@@ -76,8 +77,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^\(xmlsec1_LDADD = \)\\$$,\1 -L${LOCALBASE}/lib ${PTHREAD_LIBS}\\,' \
 		${WRKSRC}/apps/Makefile.in
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxmlsec1*.so
 
 .include <bsd.port.mk>
