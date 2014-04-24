@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stevedore
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +12,7 @@ COMMENT=	Manage dynamic plugins for Python applications
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	${PKGNAMEPREFIX}pbr>0:${PORTSDIR}/devel/py-pbr
 TEST_DEPENDS=	${PKGNAMEPREFIX}coverage>=3.5.3:${PORTSDIR}/devel/py-coverage \
 		${PKGNAMEPREFIX}mock>=1.0.1:${PORTSDIR}/devel/py-mock \
 		${PKGNAMEPREFIX}nose>=1.3.0:${PORTSDIR}/devel/py-nose \
@@ -38,7 +38,7 @@ PYDISTUTILS_BUILD_TARGET+=	build_sphinx --all-files --fresh-env
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/build/sphinx/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/docs/build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 regression-test: build
