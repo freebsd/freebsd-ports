@@ -331,6 +331,7 @@
     SUBDIR += dbus-glib
     SUBDIR += dbus-qt4
     SUBDIR += dbus-qt5
+    SUBDIR += dbus-tcl
     SUBDIR += dbus-sharp
     SUBDIR += dbus-sharp-glib
     SUBDIR += dcmtk
