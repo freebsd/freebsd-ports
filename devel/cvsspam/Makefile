@@ -36,10 +36,6 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/cvsspam.conf \
 		${STAGEDIR}${PREFIX}/etc/cvsspam.conf.sample
-.if !exists(${STAGEDIR}${PREFIX}/etc/cvsspam.conf)
-	${INSTALL_DATA} ${WRKSRC}/cvsspam.conf \
-		${STAGEDIR}${PREFIX}/etc/cvsspam.conf
-.endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
