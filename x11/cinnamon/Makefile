@@ -1,10 +1,10 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11/cinnamon/Makefile 18993 2014-01-29 21:33:54Z kwm $
+#    $MCom: ports/trunk/x11/cinnamon/Makefile 19552 2014-04-19 11:03:59Z gusi $
 
 PORTNAME=	cinnamon
 PORTVERSION=	2.0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -38,24 +38,23 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 
 WRKSRC=		${WRKDIR}/Cinnamon-${PORTVERSION}
 
-USE_XORG=	x11 xfixes sm
 USES=		gettext gmake pathfix pkgconfig shebangfix
-# this happens before moving the file to ${PREFIX} (which then will be copied to ${STAGEDIR}${PREFIX}
-SHEBANG_FILES=	files/usr/bin/cinnamon2d
-USE_AUTOTOOLS=	libtool autoconf automake
 USE_GNOME=	evolutiondataserver3 gconf2 gnomedesktop3 gnomemenus3 \
 		gnomeprefix gtk30 intlhack introspection:build
+# this happens before moving the file to ${PREFIX} (which then will be copied to ${STAGEDIR}${PREFIX})
+SHEBANG_FILES=	files/usr/bin/cinnamon2d
+USE_AUTOTOOLS=	libtool autoconf automake
+USE_XORG=	x11 xfixes sm
 USE_GSTREAMER=	theora vp8 ogg
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-
-GLIB_SCHEMAS=	org.cinnamon.gschema.xml
-
 CONFIGURE_ARGS+=--enable-compile-warnings=no \
 		--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
 CPPFLAGS+=	-I${LOCALASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+GLIB_SCHEMAS=	org.cinnamon.gschema.xml
 
 OPTIONS_DEFINE=	NLS
 
