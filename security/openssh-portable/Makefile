@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	6.6p1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -31,6 +31,9 @@ ETCOLD=			${PREFIX}/etc
 
 SUDO?=		# empty
 MAKE_ENV+=	SUDO="${SUDO}"
+
+# https://github.com/openssh/openssh-portable/commit/5618210618256bbf5f4f71b2887ff186fd451736.patch
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-openssh661
 
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN LPK X509 KERB_GSSAPI \
@@ -102,14 +105,15 @@ TCP_WRAPPERS_CONFIGURE_WITH=	tcp-wrappers
 LIBEDIT_CONFIGURE_WITH=	libedit
 BSM_CONFIGURE_ON=	--with-audit=bsm
 
-
 .include <bsd.port.pre.mk>
+
+PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gsskex
 
 # http://www.psc.edu/index.php/hpn-ssh
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 PORTDOCS+=		HPN-README
 HPN_VERSION=		14v2
-HPN_DISTVERSION=	6.6p1
+HPN_DISTVERSION=	6.6.1p1
 PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:S/$/:hpn/}
 PATCH_SITE_SUBDIR+=	hpnssh/HPN-SSH%20${HPN_VERSION}%20${HPN_DISTVERSION}/:hpn
 PATCHFILES+=		${PORTNAME}-${HPN_DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn
@@ -119,8 +123,6 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn-build-options
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn-no-hpn
 .  endif
 .endif
-
-PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gsskex
 
 .if ${OSVERSION} >= 900000
 CONFIGURE_LIBS+=	-lutil
@@ -157,15 +159,15 @@ BROKEN=		KERB_GSSAPI Requires either MIT or HEMIDAL, does not build with base He
 .endif
 
 .if ${PORT_OPTIONS:MHEIMDAL_BASE} && !exists(/usr/lib/libkrb5.so)
-IGNORE=		You have selected HEIMDAL_BASE but do not have heimdal installed in base
+IGNORE=		you have selected HEIMDAL_BASE but do not have heimdal installed in base
 .endif
 
 .if ${PORT_OPTIONS:MPAM} && !exists(/usr/include/security/pam_modules.h)
-IGNORE=		Pam must be installed in base
+IGNORE=		PAM must be installed in base
 .endif
 
 .if ${PORT_OPTIONS:MTCP_WRAPPERS} && !exists(/usr/include/tcpd.h)
-IGNORE=		Required /usr/include/tcpd.h missing
+IGNORE=		required /usr/include/tcpd.h missing
 .endif
 
 .if defined(OPENSSH_OVERWRITE_BASE)
@@ -257,8 +259,8 @@ pre-install:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/ssh_config.out ${STAGEDIR}${ETCSSH}/ssh_config-dist
-	${INSTALL_DATA} ${WRKSRC}/sshd_config.out ${STAGEDIR}${ETCSSH}/sshd_config-dist
+	${MV} ${STAGEDIR}${ETCSSH}/ssh_config ${STAGEDIR}${ETCSSH}/ssh_config.sample
+	${MV} ${STAGEDIR}${ETCSSH}/sshd_config ${STAGEDIR}${ETCSSH}/sshd_config.sample
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/HPN-README ${STAGEDIR}${DOCSDIR}
