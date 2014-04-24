@@ -6036,3 +6036,17 @@ biology/finchtv||2014-04-18|Has expired: Broken for more than 6 months
 net-im/ari-yahoo||2014-04-18|Has expired: Broken for more than 1 year (http://www.icculus.org/ari-yahoo/)
 www/sams||2014-04-21|Depends on PHP 4 which was removed two years ago
 x11-toolkits/vdkbuidler||2014-04-22|Abandonware, not stage friendly
+emulators/mupen64-sdlinput|emulators/mupen64plus-input-sdl|2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-sdlaudio|emulators/mupen64plus-audio-sdl|2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-tr64||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-gln64||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-sound||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-rsp||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-input||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-glide|emulators/mupen64plus-video-glide64|2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64|emulators/mupen64plus|2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-softgfx||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-dummyaudio||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-base|emulators/mupen64plus-core|2014-04-24|Has expired: Use mupen64plus instead
+x11/emu||2014-04-24|Has expired: Broken, not staged
+lang/ruby-doc-stdlib||2014-04-24|Has expired: Upstream rerolls frequently, online docs work well

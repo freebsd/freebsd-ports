@@ -55,7 +55,6 @@
     SUBDIR += editres
     SUBDIR += efreet
     SUBDIR += emprint
-    SUBDIR += emu
     SUBDIR += erun
     SUBDIR += eterm
     SUBDIR += evieext
