@@ -2,48 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	sl
-PORTVERSION=	3.03${SLPATCHVERSION}
+PORTVERSION=5.01
 CATEGORIES=	games
-MASTER_SITES=	http://www.tkl.iis.u-tokyo.ac.jp/~toyoda/sl/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tar
-
-.if defined(WITH_PERSISTENT)
-SLPATCHVERSION=	.5p1
-PATCH_SITES=	http://www.izumix.org.uk/sl/ \
-		http://www.SpringDaemons.com/stas/
-PATCHFILES=	sl5-1.patch
-PATCH_DIST_STRIP=	-p1
-.endif
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
 COMMENT=	A steam locomotive runs across the screen if you type "sl" instead of "ls"
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+USE_GITHUB=	yes
+GH_ACCOUNT=	mtoyoda
+GH_COMMIT=	5891c2d
 
-ALL_TARGET=	sl
-MAN1=		sl.1
-MANLANG=	ja
-
-NO_STAGE=	yes
-pre-everything::
-.if !defined(WITH_PERSISTENT)
-	@${ECHO_MSG}
-	@${ECHO_MSG} " If you want to apply additional patch to make sl more annoying,"
-	@${ECHO_MSG} " hit Ctrl-C right now and use \"make WITH_PERSISTENT=yes\""
-	@${ECHO_MSG}
-.endif
+PLIST_FILES=bin/${PORTNAME} man/man1/${PORTNAME}.1.gz man/ja/man1/${PORTNAME}.1.gz
+PORTDOCS=	*
 
 do-build:
-	@${CC} ${CFLAGS} -I${WRKSRC} -o ${WRKSRC}/sl ${WRKSRC}/sl.c -lcurses -ltermcap
+	${CC} ${CFLAGS} -I${WRKSRC} -o ${WRKSRC}/sl ${WRKSRC}/sl.c -lncurses
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sl ${PREFIX}/bin
-	${MV} ${WRKSRC}/sl.1 ${WRKSRC}/sl.man
-	nkf -e ${WRKSRC}/sl.man > ${WRKSRC}/sl.1
-	${INSTALL_MAN} ${WRKSRC}/sl.1 ${PREFIX}/man/ja/man1
-	${MKDIR} ${PREFIX}/share/doc/sl
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sl
-	${INSTALL_DATA} ${WRKSRC}/sl.txt ${PREFIX}/share/doc/sl
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.ja ${STAGEDIR}${MANPREFIX}/man/ja/man1/${PORTNAME}.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in README.md README.ja.md LICENSE
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
