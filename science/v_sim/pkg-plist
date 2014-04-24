@@ -2,15 +2,40 @@ bin/v_sim
 lib/libv_sim-3.a
 lib/libv_sim-3.la
 lib/libv_sim-3.so
-lib/libv_sim-3.so.6
+lib/libv_sim-3.so.7
 %%BABEL%%lib/v_sim/plug-ins/libobloader.a
 %%BABEL%%lib/v_sim/plug-ins/libobloader.la
 %%BABEL%%lib/v_sim/plug-ins/libobloader.so
-%%BABEL%%lib/v_sim/plug-ins/libobloader.so.6
-%%DOCSDIR%%/ChangeLog.en
-%%DOCSDIR%%/ChangeLog.fr
+%%BABEL%%lib/v_sim/plug-ins/libobloader.so.7
+%%PORTDOCS%%man/man1/v_sim.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.en
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.fr
+%%PORTDOCS%%%%DOCSDIR%%/ToolFileFormat.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuBox.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuData.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExt.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtAxes.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtBg.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtBoxLegend.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtForces.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtFrame.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtInfos.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtLegend.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtMaps.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtNodeVectors.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtNodes.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtPairs.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtPaths.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtPlanes.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtScale.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtShade.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlExtSurfaces.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuGlView.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuNodeArray.html
 %%PORTDOCS%%%%DOCSDIR%%/VisuObject.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuPairLink.html
 %%PORTDOCS%%%%DOCSDIR%%/VisuRendering.html
+%%PORTDOCS%%%%DOCSDIR%%/VisuScalarField.html
 %%PORTDOCS%%%%DOCSDIR%%/annotation-glossary.html
 %%PORTDOCS%%%%DOCSDIR%%/api-3.1.html
 %%PORTDOCS%%%%DOCSDIR%%/api-3.2.html
@@ -18,6 +43,7 @@ lib/libv_sim-3.so.6
 %%PORTDOCS%%%%DOCSDIR%%/api-3.4.html
 %%PORTDOCS%%%%DOCSDIR%%/api-3.5.html
 %%PORTDOCS%%%%DOCSDIR%%/api-3.6.html
+%%PORTDOCS%%%%DOCSDIR%%/api-3.7.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-full.html
 %%PORTDOCS%%%%DOCSDIR%%/authors
 %%PORTDOCS%%%%DOCSDIR%%/axesTransform.png
@@ -47,23 +73,20 @@ lib/libv_sim-3.so.6
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up.png
+%%PORTDOCS%%%%DOCSDIR%%/v-sim-VisuBoxed.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-atomic-xyz.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-axes.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-box.html
+%%PORTDOCS%%%%DOCSDIR%%/v-sim-atomic-yaml.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-cylinder.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-dataFile.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-dataNode.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-dumpThroughGdkPixbuf.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-dumpToABINIT.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-dumpToAscii.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-dumpToGif.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-dumpToPsAndPdf.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-dumpToSVG.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-dumpToTiff.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-dumpToXyz.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-extInfos.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-extraNode.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-fogAndBGColor.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-geometry.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-gtk-about.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-gtk-colorComboBoxWidget.html
@@ -71,6 +94,7 @@ lib/libv_sim-3.so.6
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-gtk-cylinder.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-gtk-dumpDialogWidget.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-gtk-elementComboBox.html
+%%PORTDOCS%%%%DOCSDIR%%/v-sim-gtk-fieldChooser.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-gtk-interactive.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-gtk-lineObjectWidget.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-gtk-main.html
@@ -91,7 +115,6 @@ lib/libv_sim-3.so.6
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-gtkSpin.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-interactive.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-isoline.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-legend.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-light.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-map.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-marks.html
@@ -118,40 +141,31 @@ lib/libv_sim-3.so.6
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-renderingAtomic.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-renderingMode.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-renderingSpin.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-rings.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-scalarFields.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-scale.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-surfaces-points.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-surfaces-resources.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-surfaces.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-text.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-toolColor.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-toolConfigFile.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-toolFileFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-toolFortran.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-toolMatrix.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-toolOptions.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-toolPhysic.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-toolShade.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-vibration.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-view.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-actionInterface.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-basic.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-commandLine.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-configFile.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-data.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-dump.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-elements.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-extension.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-gtk.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-nodes.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-openGL.html
-%%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-pairs.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-visu-plugins.html
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-wire.html
-%%PORTDOCS%%%%DOCSDIR%%/v_sim.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/v_sim.devhelp2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aluminium.d3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cinchonidine.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coord_vib_g_co.xyz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo-browser.tar.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.ascii
@@ -172,7 +186,7 @@ share/icons/hicolor/24x24/apps/v_sim.png
 share/icons/hicolor/32x32/apps/v_sim.png
 share/icons/hicolor/48x48/apps/v_sim.png
 share/icons/hicolor/scalable/apps/v_sim.svg
-%%NLS%%share/locale/fr/LC_MESSAGES/v_sim.mo
+share/locale/fr/LC_MESSAGES/v_sim.mo
 share/pixmaps/v_sim.xpm
 %%DATADIR%%/pixmaps/axes-angles.png
 %%DATADIR%%/pixmaps/axes-box.png
@@ -223,12 +237,21 @@ share/pixmaps/v_sim.xpm
 %%DATADIR%%/v_sim.res
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/v_sim/plug-ins
 @dirrm lib/v_sim
-@dirrmtry lib/python/site-packages/gtk-2.0/gi/overrides
-@dirrmtry lib/python/site-packages/gtk-2.0/gi
-@dirrmtry lib/python/site-packages/gtk-2.0
-@dirrmtry lib/python/site-packages
-@dirrmtry lib/python
