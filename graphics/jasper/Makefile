@@ -3,22 +3,20 @@
 
 PORTNAME=	jasper
 PORTVERSION=	1.900.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		${MASTER_SITE_IMAGEMAGICK}
 MASTER_SITE_SUBDIR=	ImageMagick/delegates
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An implementation of the codec specified in the JPEG-2000 standard
+COMMENT=	Implementation of the codec specified in the JPEG-2000 standard
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	MIT
 
-USE_AUTOTOOLS=	libtool
-USES=		zip
-USE_GNOME=	lthack
+USES=		libtool:keepla zip
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
