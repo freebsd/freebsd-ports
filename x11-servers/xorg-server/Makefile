@@ -35,10 +35,11 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 
 .if defined(WITH_NEW_XORG)
 XORG_VERSION=	1.12.4
-XORG_REVISION=	6
+XORG_REVISION=	7
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang \
 		${FILESDIR}/extra-configure \
+		${FILESDIR}/extra-new-bad-impl \
 		${FILESDIR}/extra-new-dix_dixfonts.c
 .else
 XORG_VERSION=	1.7.7
@@ -69,6 +70,7 @@ CONFIGURE_ARGS?=--disable-dmx --disable-xvfb --disable-xnest \
 		--without-xmlto --disable-docs --disable-devel-docs \
 		--localstatedir=/var --without-dtrace --disable-xephyr \
 		--enable-record=yes
+INSTALL_TARGET=	install-strip
 
 .if ${SLAVE_PORT} == "no"
 SUB_FILES=	pkg-install pkg-deinstall
@@ -104,11 +106,11 @@ CONFIGURE_ARGS+=	--enable-aiglx=yes
 CONFIGURE_ARGS+=	--enable-aiglx=no
 .endif
 
+# We handle Xorg setuid in the plist. This allows to build xorg-server as a user
+CONFIGURE_ARGS+=--enable-install-setuid=no
 .if ${PORT_OPTIONS:MSUID}
-CONFIGURE_ARGS+=--enable-install-setuid=yes
 PLIST_SUB+=	SUID=""
 .else
-CONFIGURE_ARGS+=--enable-install-setuid=no
 PLIST_SUB+=	SUID="@comment "
 .endif
 
@@ -193,11 +195,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/.xorg
 	${INSTALL_LIB} ${WRKSRC}/hw/xfree86/dixmods/.libs/libglx.so \
 		${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/.xorg/
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/*.so
-.if !defined(WITH_NEW_XORG)
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/*.so
-.endif
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/multimedia/*.so
 
 .if defined(WITH_NEW_XORG)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/X11/xorg.conf.d
