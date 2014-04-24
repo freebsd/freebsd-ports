@@ -17,8 +17,6 @@ COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
 
 LICENSE=	LGPL20
 
-USE_XZ=		yes
-
 .if defined(REFERENCE_PORT)
 PORTSCOUT=	ignore:1
 .else
@@ -33,7 +31,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk pango gdkpixbuf2 ltverhack gtk-update-icon-cache \
 		introspection:build
-USES=		gettext gmake pathfix perl5 pkgconfig
+USES=		gettext gmake pathfix perl5 pkgconfig tar:xz
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit
