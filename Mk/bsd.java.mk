@@ -163,16 +163,16 @@ _JAVA_VENDOR_LIST=		openjdk oracle sun
 
 # Set all meta-information about JDK ports:
 # port location, corresponding JAVA_HOME, JDK version, OS, vendor
-_JAVA_PORT_NATIVE_OPENJDK_JDK_1_8_INFO=		PORT=java/openjdk8			HOME=${LOCALBASE}/openjdk8 \
-											VERSION=1.8.0	OS=native	VENDOR=openjdk
-_JAVA_PORT_NATIVE_OPENJDK_JDK_1_7_INFO=		PORT=java/openjdk7			HOME=${LOCALBASE}/openjdk7 \
-											VERSION=1.7.0	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_1_6_INFO=		PORT=java/openjdk6			HOME=${LOCALBASE}/openjdk6 \
 											VERSION=1.6.0	OS=native	VENDOR=openjdk
-_JAVA_PORT_LINUX_ORACLE_JDK_1_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
-											VERSION=1.8.0	OS=linux	VENDOR=oracle
+_JAVA_PORT_NATIVE_OPENJDK_JDK_1_7_INFO=		PORT=java/openjdk7			HOME=${LOCALBASE}/openjdk7 \
+											VERSION=1.7.0	OS=native	VENDOR=openjdk
+_JAVA_PORT_NATIVE_OPENJDK_JDK_1_8_INFO=		PORT=java/openjdk8			HOME=${LOCALBASE}/openjdk8 \
+											VERSION=1.8.0	OS=native	VENDOR=openjdk
 _JAVA_PORT_LINUX_SUN_JDK_1_7_INFO=			PORT=java/linux-sun-jdk17	HOME=${LOCALBASE}/linux-sun-jdk1.7.0 \
 											VERSION=1.7.0	OS=linux	VENDOR=sun
+_JAVA_PORT_LINUX_ORACLE_JDK_1_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
+											VERSION=1.8.0	OS=linux	VENDOR=oracle
 
 # Verbose description for each VENDOR
 _JAVA_VENDOR_openjdk=		"OpenJDK BSD Porting Team"
@@ -183,17 +183,13 @@ _JAVA_VENDOR_sun=			Sun
 _JAVA_OS_native=	Native
 _JAVA_OS_linux=		Linux
 
-# Enforce preferred Java ports according to OS
-_JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_OPENJDK_JDK_1_6
-
-# List all JDK ports
-__JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_OPENJDK_JDK_1_8 \
+# List all JDK ports in order of preference
+__JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_OPENJDK_JDK_1_6 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_1_7 \
-					JAVA_PORT_NATIVE_OPENJDK_JDK_1_6 \
-					JAVA_PORT_LINUX_ORACLE_JDK_1_8 \
-					JAVA_PORT_LINUX_SUN_JDK_1_7
+					JAVA_PORT_NATIVE_OPENJDK_JDK_1_8 \
+					JAVA_PORT_LINUX_SUN_JDK_1_7 \
+					JAVA_PORT_LINUX_ORACLE_JDK_1_8
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
-					${_JAVA_PREFERRED_PORTS} \
 					${__JAVA_PORTS_ALL}
 
 # Set the name of the file that indicates that a JDK is indeed installed, as a
