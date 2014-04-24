@@ -283,7 +283,6 @@
     SUBDIR += rexx-wrapper
     SUBDIR += rhino
     SUBDIR += rubinius
-    SUBDIR += ruby-doc-stdlib
     SUBDIR += ruby19
     SUBDIR += ruby20
     SUBDIR += ruby21
