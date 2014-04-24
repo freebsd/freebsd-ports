@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icinga
-PORTVERSION=	1.11.1
-PORTREVISION=	1
+PORTVERSION=	1.11.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/Icinga/${PORTNAME}-core/releases/download/v${PORTVERSION}/
 
@@ -55,7 +54,8 @@ CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
 		--enable-nanosleep
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		PERL=${PERL}
+		PERL=${PERL} \
+		HOME=${WRKDIR} # prevent creation of .rnd file
 
 INSTALL_TARGET=	install install-config install-eventhandlers install-webconf
 
