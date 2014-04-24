@@ -3,6 +3,7 @@
 
 PORTNAME=	scim-pinyin
 PORTVERSION=	0.5.92
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
@@ -12,9 +13,8 @@ COMMENT=	SCIM Chinese Smart Pinyin input method
 BUILD_DEPENDS=	scim>=1.2.0:${PORTSDIR}/textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GNOME=	lthack
-USES=		pathfix iconv gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+USES=		gmake iconv libtool:keepla pathfix pkgconfig
 
 CONFIGURE_ARGS+=	--disable-skim-support
 
