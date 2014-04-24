@@ -362,6 +362,7 @@
     SUBDIR += pear-Services_Weather
     SUBDIR += pear-Text_Figlet
     SUBDIR += pecl-timezonedb
+    SUBDIR += pfm
     SUBDIR += php5-calendar
     SUBDIR += php53-calendar
     SUBDIR += php55-calendar
