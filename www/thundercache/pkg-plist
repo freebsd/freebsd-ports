@@ -14,4 +14,4 @@ thunder/sbin/log.sh
 @dirrm thunder/cache
 @dirrm thunder
 @unexec /bin/rm /var/run/thunder/thunder.pid 2>/dev/null || true
-@unexec /bin/rmdir /var/run/thunder 2>/dev/null || true
+@unexec rmdir /var/run/thunder 2>/dev/null || true

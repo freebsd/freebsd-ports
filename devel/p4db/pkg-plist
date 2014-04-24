@@ -72,4 +72,4 @@ perforce/p4db/www/viewConfig.pm
 %%PORTDOCS%%perforce/p4db/doc/README.html
 %%PORTDOCS%%@dirrm perforce/p4db/doc
 @dirrm perforce/p4db
-@unexec /bin/rmdir %D/perforce 2>/dev/null || true
+@unexec rmdir %D/perforce 2>/dev/null || true

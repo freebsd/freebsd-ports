@@ -68,7 +68,7 @@ share/pixmaps/gnome-cups-manager/printer-tray-normal.png
 share/pixmaps/gnome-cups-manager/printer-tray-stopped.png
 @dirrm share/pixmaps/gnome-cups-manager
 @dirrm %%DATADIR%%
-@unexec /bin/rmdir %D/sbin 2>/dev/null || /usr/bin/true
+@unexec rmdir %D/sbin 2>/dev/null || /usr/bin/true
 @dirrmtry include/libgnomecups-1/libgnomecups
 @dirrmtry include/libgnomecups-1
 @dirrmtry share/locale/xh/LC_MESSAGES
