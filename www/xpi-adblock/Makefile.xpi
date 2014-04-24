@@ -171,11 +171,10 @@ do-install:
 	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
 		then ${INSTALL_DATA} ${FILESDIR}/chrome.manifest ${STAGEDIR}${_TD_FULL}/ ; fi
 	@${CHMOD} -R a+rX,go-w ${STAGEDIR}${_TD_FULL}/
-	@for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL} ${STAGEDR}$$_dir/ ${_Q} ; }
 	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${STAGEDIR}${PREFIX},%D,}' ${_A}
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL} $$_dir/ ${_Q}; }' ${_A}
 	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${XPI_ID} ; }' ${_A}
-	@${ECHO_CMD} '@unexec rmdir ${XPI_DIRS_TRY:S,^,%D/,} ${_Q}' ${_A}
+	@for _dir in ${XPI_DIRS_TRY} ; { ${ECHO_CMD} "@unexec rmdir %D/$$_dir ${_Q}" ${_A} ; }
 .endif
 
 .if !target(relink)
