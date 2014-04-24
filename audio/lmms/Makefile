@@ -31,7 +31,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	xft
 USE_QT4=	corelib gui xml moc_build uic_build rcc_build \
 		qmake_build
-USES=		cmake pkgconfig tar:bzip2 desktop-file-utils shared-mime-info
+USES=		cmake pkgconfig tar:bzip2 desktop-file-utils shared-mime-info dos2unix
 CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
 		-DWANT_CALF:BOOL=OFF \
 		-DWANT_CAPS:BOOL=OFF \
@@ -41,7 +41,7 @@ CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
 		-DWANT_TAP:BOOL=OFF \
 		-DWANT_VST:BOOL=OFF \
 		-DHAVE_STRTOLL=ON
-USE_DOS2UNIX=	plugins/midi_import/portsmf/allegrowr.cpp plugins/midi_import/portsmf/mfmidi.cpp CMakeLists.txt
+DOS2UNIX_FILES=	plugins/midi_import/portsmf/allegrowr.cpp plugins/midi_import/portsmf/mfmidi.cpp CMakeLists.txt
 
 .include <bsd.port.options.mk>
 
