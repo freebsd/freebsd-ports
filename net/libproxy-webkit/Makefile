@@ -9,8 +9,8 @@ PKGNAMESUFFIX=	-webkit
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	WebKit JavaScript plug-in for libproxy
 
-LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy \
-		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy \
+		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
@@ -19,9 +19,9 @@ USES=		pkgconfig
 
 LIBPROXY_SLAVE=	webkit
 
-NO_STAGE=	yes
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/libproxy/${PORTVERSION}/modules/
 	${INSTALL_LIB} ${WRKSRC}/libproxy/pacrunner_webkit.so \
-		${PREFIX}/lib/libproxy/${PORTVERSION}/modules/
+		${STAGEDIR}${PREFIX}/lib/libproxy/${PORTVERSION}/modules/
 
 .include "${MASTERDIR}/Makefile"
