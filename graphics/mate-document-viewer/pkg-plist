@@ -69,9 +69,11 @@ lib/atril/3/backends/tiffdocument.atril-backend
 lib/libatrildocument.a
 lib/libatrildocument.so
 lib/libatrildocument.so.3
+lib/libatrildocument.so.3.0.0
 lib/libatrilview.a
 lib/libatrilview.so
 lib/libatrilview.so.3
+lib/libatrilview.so.3.0.0
 %%CAJA%%lib/caja/extensions-2.0/libatril-properties-page.a
 %%CAJA%%lib/caja/extensions-2.0/libatril-properties-page.so
 libdata/pkgconfig/atril-document-1.5.0.pc
