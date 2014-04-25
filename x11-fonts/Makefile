@@ -23,6 +23,7 @@
     SUBDIR += code2000
     SUBDIR += code2001
     SUBDIR += comfortaa-ttf
+    SUBDIR += comic-neue
     SUBDIR += consolamono-ttf
     SUBDIR += croscorefonts-fonts-ttf
     SUBDIR += cyberbit-ttfonts
