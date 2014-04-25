@@ -1,0 +1,13 @@
+bin/file65
+bin/ldo65
+bin/printcbm
+bin/reloc65
+bin/uncpk
+bin/xa65
+man/man1/file65.1.gz
+man/man1/ldo65.1.gz
+man/man1/printcbm.1.gz
+man/man1/reloc65.1.gz
+man/man1/uncpk.1.gz
+man/man1/xa.1.gz
+man/man1/xa65.1.gz
