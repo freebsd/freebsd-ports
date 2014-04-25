@@ -34,7 +34,6 @@ lib/liboobs-1.a
 lib/liboobs-1.la
 lib/liboobs-1.so
 lib/liboobs-1.so.5
-lib/liboobs-1.so.5.0.0
 libdata/pkgconfig/liboobs-1.pc
 %%DOCSDIR%%/OobsGroup.html
 %%DOCSDIR%%/OobsGroupsConfig.html
