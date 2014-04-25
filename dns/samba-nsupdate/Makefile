@@ -37,24 +37,18 @@ CONFIGURE_ARGS+=	\
 			--without-idn \
 			--with-randomdev=/dev/random
 
-NO_STAGE=		yes
-
 OPTIONS_DEFINE=	IPV6
 
-.include <bsd.port.options.mk>
+SIGCHASE_CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
+IPV6_CONFIGURE_ON=	--enable-ipv6
+
+PLIST_FILES=		bin/${UNIQUENAME} \
+			man/man1/${UNIQUENAME}.1.gz
 
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64")
 ARCH=		x86_64
-.endif
-
-.if ${PORT_OPTIONS:MSIGCHASE}
-CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 # Enable OpenSSL API
@@ -71,27 +65,23 @@ LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=	--with-gssapi="${LOCALBASE}"
 .endif
 
-MAN1=			${UNIQUENAME}.1
-
-PLIST_FILES=		bin/${UNIQUENAME}
-
 post-patch:
-			@${REINPLACE_CMD} \
-				-e 's|^SUBDIRS.*|SUBDIRS = lib bin|' \
-				-e 's|isc-config.sh installdirs|installdirs|' \
-				-e 's|.*INSTALL.*isc-config.*||' \
-				-e 's|.*INSTALL.*bind.keys.*||' \
-			${WRKSRC}/Makefile.in
-			@${REINPLACE_CMD} \
-				-e 's|^SUBDIRS.*|SUBDIRS = ${PORTNAME}|' \
-				-e 's|^.*check confgen ||' \
-			${WRKSRC}/bin/Makefile.in
-			@${REINPLACE_CMD} \
-				-e 's|${PORTNAME}|${UNIQUENAME}|g' \
-			${WRKSRC}/bin/nsupdate/${PORTNAME}.1
+	@${REINPLACE_CMD} \
+		-e 's|^SUBDIRS.*|SUBDIRS = lib bin|' \
+		-e 's|isc-config.sh installdirs|installdirs|' \
+		-e 's|.*INSTALL.*isc-config.*||' \
+		-e 's|.*INSTALL.*bind.keys.*||' \
+	${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} \
+		-e 's|^SUBDIRS.*|SUBDIRS = ${PORTNAME}|' \
+		-e 's|^.*check confgen ||' \
+	${WRKSRC}/bin/Makefile.in
+	@${REINPLACE_CMD} \
+		-e 's|${PORTNAME}|${UNIQUENAME}|g' \
+	${WRKSRC}/bin/nsupdate/${PORTNAME}.1
 
 do-install:
-			${INSTALL_MAN} ${WRKSRC}/bin/nsupdate/${PORTNAME}.1 ${MANPREFIX}/man/man1/${UNIQUENAME}.1
-			${INSTALL_PROGRAM} ${WRKSRC}/bin/nsupdate/${PORTNAME} ${PREFIX}/bin/${UNIQUENAME}
+	${INSTALL_MAN} ${WRKSRC}/bin/nsupdate/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${UNIQUENAME}.1
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/nsupdate/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${UNIQUENAME}
 
 .include <bsd.port.post.mk>
