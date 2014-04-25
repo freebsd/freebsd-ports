@@ -13,7 +13,6 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USES=		pathfix
 USE_GNOME=	libxslt
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
