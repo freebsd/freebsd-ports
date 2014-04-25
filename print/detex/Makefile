@@ -3,6 +3,7 @@
 
 PORTNAME=	detex
 PORTVERSION=	2.8
+PORTREVISIO=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.cs.purdue.edu/homes/trinkle/detex/
 EXTRACT_SUFX=	.tar
@@ -10,15 +11,25 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Strips TeX/LaTeX codes from a file
 
-DEPRECATED=	Unmaintained since 2002
-EXPIRATION_DATE=	2014-04-17
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNO_MALLOC_DECL -DHAVE_STRING_H"
-MAN1=		detex.1
-PLIST_FILES=	bin/detex
+LICENSE=	MIT
 
-NO_STAGE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNO_MALLOC_DECL -DHAVE_STRING_H"
+
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+
+PORTDOCS=	README
+OPTIONS_DEFINE=	DOCS
+
+post-extract:
+	@(cd ${WRKSRC} && ${MV} ${PORTNAME}.1l ${PORTNAME}.1)
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/detex ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1}l ${MANPREFIX}/man/man1/${MAN1}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
