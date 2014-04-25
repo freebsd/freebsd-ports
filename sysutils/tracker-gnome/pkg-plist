@@ -2,6 +2,9 @@ bin/tracker-applet
 bin/tracker-preferences
 bin/tracker-search-tool
 etc/xdg/autostart/tracker-applet.desktop
+man/man1/tracker-applet.1.gz
+man/man1/tracker-preferences.1.gz
+man/man1/tracker-search-tool.1.gz
 share/applications/tracker-preferences.desktop
 share/applications/tracker-search-tool.desktop
 %%DATADIR%%/icons/thumbnail_frame.png

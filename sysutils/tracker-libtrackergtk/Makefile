@@ -11,5 +11,4 @@ PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../../sysutils/tracker-client
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

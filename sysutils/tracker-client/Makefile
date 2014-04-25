@@ -12,57 +12,58 @@ PKGNAMESUFFIX?=	-client
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Object database, tag/metadata database, search tool and indexer
 
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
-		exif.12:${PORTSDIR}/graphics/libexif \
-		wv-1.2.4:${PORTSDIR}/textproc/wv \
-		gmime-2.0.4:${PORTSDIR}/mail/gmime2 \
-		qdbm.14:${PORTSDIR}/databases/qdbm \
-		exempi.3:${PORTSDIR}/textproc/exempi \
-		hal.1:${PORTSDIR}/sysutils/hal \
-		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser \
-		raptor.3:${PORTSDIR}/textproc/raptor \
-		ogg:${PORTSDIR}/audio/libogg \
-		iptcdata.3:${PORTSDIR}/graphics/libiptcdata
+		libexif.so:${PORTSDIR}/graphics/libexif \
+		libwv-1.2.so:${PORTSDIR}/textproc/wv \
+		libgmime-2.0.so:${PORTSDIR}/mail/gmime2 \
+		libqdbm.so:${PORTSDIR}/databases/qdbm \
+		libexempi.so:${PORTSDIR}/textproc/exempi \
+		libhal.so:${PORTSDIR}/sysutils/hal \
+		libtotem-plparser.so:${PORTSDIR}/multimedia/totem-pl-parser \
+		libraptor.so:${PORTSDIR}/textproc/raptor \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libiptcdata.so:${PORTSDIR}/graphics/libiptcdata
 RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
 		o3totxt:${PORTSDIR}/converters/o3read \
 		pdftotext:${PORTSDIR}/graphics/poppler-utils \
 		w3m:${PORTSDIR}/www/w3m
 
-USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomehack gnomeprefix ltasneededhack intltool ltverhack
-USES=		fam:gamin gettext gmake pkgconfig
+USE_GNOME=	gnomeprefix intltool
+USES=		fam:gamin gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	core
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/tracker
+INSTALL_TARGET=	install-strip
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
 CONFIGURE_ARGS=	--enable-video-extractor=gstreamer \
 		--enable-file-monitoring=fam \
 		--with-session-bus-services-dir=${LOCALBASE}/share/dbus-1/services \
 		--enable-external-qdbm --enable-libexif --enable-libvorbis \
 		--enable-libiptcdata
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(TRACKER_SLAVE)
-LIB_DEPENDS+=	trackerclient:${PORTSDIR}/sysutils/tracker-client
+LIB_DEPENDS+=	libtrackerclient.so:${PORTSDIR}/sysutils/tracker-client
 . if ${TRACKER_SLAVE}=="gnome"
 PKGNAMESUFFIX=	-gnome
-LIB_DEPENDS+=	tracker-gtk:${PORTSDIR}/sysutils/tracker-libtrackergtk
+LIB_DEPENDS+=	libtracker-gtk.so:${PORTSDIR}/sysutils/tracker-libtrackergtk
 BUILD_WRKSRC=	${WRKSRC}/src/tracker-applet
 INSTALL_WRKSRC=	${WRKSRC}/src/tracker-applet
 EXTRA_WRKSRC=	src/tracker-preferences src/tracker-search-tool
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
 RUN_DEPENDS+=	${LOCALBASE}/libexec/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
 USE_GNOME+=	gnomedesktop libgsf
-MAN1+=		tracker-applet.1 tracker-search-tool.1 tracker-preferences.1
+MAN=		tracker-applet.1 tracker-search-tool.1 tracker-preferences.1
 CONFIGURE_ARGS+=--enable-deskbar-applet \
 		--with-deskbar-applet-handler-dir=${LOCALBASE}/libexec/deskbar-applet/handlers
+LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/tracker
 . endif
 . if defined(TRACKER_SLAVE) && ${TRACKER_SLAVE}=="libtrackergtk"
 PKGNAMESUFFIX=	-libtrackergtk
@@ -71,13 +72,6 @@ BUILD_WRKSRC=	${WRKSRC}/src/libtracker-gtk
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 . endif
 .else
-MAN1+=	tracker-extract.1 tracker-files.1 \
-	tracker-info.1 \
-	tracker-meta-folder.1 tracker-query.1 \
-	tracker-search.1 tracker-services.1 tracker-stats.1 \
-	tracker-status.1 tracker-tag.1 tracker-thumbnailer.1 tracker-unique.1 trackerd.1
-
-MAN5+=	tracker.cfg.5
 CONFIGURE_ARGS+=	--disable-libtrackergtk --disable-gui \
 			--disable-trackerapplet --disable-gsf \
 			--disable-preferences   --disable-deskbar-applet \
@@ -99,16 +93,15 @@ post-build:
 
 post-install:
 .if defined(TRACKER_SLAVE) && ${TRACKER_SLAVE}=="libtrackergtk"
-	${MKDIR} ${PREFIX}/lib/tracker/extract-modules
-	@(cd ${WRKSRC}/src/tracker-extract && for f in .a .la .so ; \
-	do ${INSTALL_DATA} .libs/libextract-msoffice$${f} \
-		${PREFIX}/lib/tracker/extract-modules ; done)
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/tracker/extract-modules
+	${INSTALL_LIB} ${WRKSRC}/src/tracker-extract/.libs/libextract-msoffice.so \
+		${STAGEDIR}${PREFIX}/lib/tracker/extract-modules
 .elif defined(TRACKER_SLAVE) && ${TRACKER_SLAVE}=="gnome"
 . for dir in ${EXTRA_WRKSRC}
 	@(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 . endfor
-. for man in ${MAN1}
-	@(cd ${WRKSRC} && ${INSTALL_DATA} docs/manpages/${man} ${PREFIX}/man/man1/${man})
+. for man in ${MAN}
+	@(cd ${WRKSRC} && ${INSTALL_DATA} docs/manpages/${man} ${STAGEDIR}${MAN1PREFIX}/man/man1/${man})
 . endfor
 .endif
 
