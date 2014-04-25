@@ -7,7 +7,6 @@ include/libxklavier/xkl_engine_marshal.h
 include/libxklavier/xklavier.h
 lib/girepository-1.0/Xkl-1.0.typelib
 lib/libxklavier.a
-lib/libxklavier.la
 lib/libxklavier.so
 lib/libxklavier.so.16
 lib/libxklavier.so.16.2.0
