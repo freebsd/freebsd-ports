@@ -4,7 +4,7 @@
 
 PORTNAME=	libgweather
 PORTVERSION=	2.30.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -12,22 +12,20 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to accessing online weather informations
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
-LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
 CONFLICTS=	libgweather-3.[0-9]*
 
-USES=		gettext pathfix pkgconfig
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gconf2 ltverhack
+USES=		gmake gettext libtool:keepla pathfix pkgconfig tar:bzip2
+USE_GNOME=	gnomeprefix intlhack gconf2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	gweather.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
