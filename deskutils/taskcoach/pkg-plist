@@ -1385,6 +1385,12 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/frame.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/frame.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/frame.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/hcalendar.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/hcalendar.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/hcalendar.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/hcalendarconfig.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/hcalendarconfig.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/hcalendarconfig.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/itemctrl.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/itemctrl.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/itemctrl.pyo
@@ -1427,6 +1433,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/treectrl.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/treectrl.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/treectrl.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/wxevents.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/wxevents.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/wxevents.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/__init__.pyo
@@ -1441,67 +1450,67 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/font.pyo
 share/applications/taskcoach.desktop
 share/pixmaps/taskcoach.png
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/tools
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/xdg
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/timeline
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/squaremap
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/util
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/backends
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/backends
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/application
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/command
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/config
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attachment
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attribute/color
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attribute/font
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attribute/icon
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attribute
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/categorizable
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/category
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/effort
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/note
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/help
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/iphone
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/mailer
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/meta
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/notify
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/patterns
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/csv
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/html
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/icalendar
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/xml
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/speak
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/chardet
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/zoneinfo
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/chardet
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp/test
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/gntp
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/backends
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests/backends
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/tests
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/util
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/squaremap
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/timeline
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/xdg
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/speak
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/xml
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/icalendar
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/html
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/csv
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/patterns
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/notify
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/meta
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/mailer
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/iphone
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/i18n
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/help
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/note
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/effort
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/category
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/categorizable
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attribute/icon
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attribute/font
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attribute/color
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attribute
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attachment
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/config
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/command
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/application
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/tools
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib
