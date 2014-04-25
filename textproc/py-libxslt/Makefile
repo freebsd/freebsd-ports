@@ -14,9 +14,8 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
 USES=		pathfix
-USE_GNOME=	lthack libxslt
+USE_GNOME=	libxslt
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--with-python=${PYTHON_CMD}
 
