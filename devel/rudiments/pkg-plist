@@ -201,8 +201,8 @@ include/rudiments/variablebuffer.h
 include/rudiments/xmldom.h
 include/rudiments/xmldomnode.h
 include/rudiments/xmlsax.h
-lib/librudiments-%%VERSION%%.so
 lib/librudiments-%%VERSION%%.so.1
+lib/librudiments-%%VERSION%%.so.1.0.0
 lib/librudiments.a
 lib/librudiments.la
 lib/librudiments.so

@@ -3,7 +3,7 @@
 
 PORTNAME=	rudiments
 PORTVERSION=	0.46
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -12,9 +12,9 @@ COMMENT=	C++ class library for daemons, clients, servers, and more
 
 LICENSE=	LGPL20
 
+GNU_CONFIGURE=	yes
 USES=		libtool:keepla pkgconfig shebangfix
 SHEBANG_FILES=	doc/programming/insert.pl
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
