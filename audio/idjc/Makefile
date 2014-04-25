@@ -3,6 +3,7 @@
 
 PORTNAME=	idjc
 PORTVERSION=	0.8.14
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	SF/idjc/idjc/0.8
 
@@ -26,29 +27,22 @@ RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=0:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus
 
-USES=			desktop-file-utils gettext gmake pathfix pkgconfig
-CONFIGURE_ENV+=		PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
+USES=		compiler:nestedfct desktop-file-utils gettext gmake \
+		libtool pathfix pkgconfig
+LDFLAGS=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
-HAS_CONFIGURE=		yes
+GNU_CONFIGURE=		yes
 USE_PYTHON=		2.7
 USE_PYTHON_PREFIX=	yes
 USE_GNOME=		glib20 pygtk2
-USE_GCC=		4.6+
 
-MANLANG=		"" fr it
 PLIST_SUB+=		PORTVERSION="${PORTVERSION}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900000
-BROKEN=	audio/shout-idjc IPv6 problem on compile in sock.c
-.endif
-
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 pre-install:
 	${REINPLACE_CMD} 's|libvorbis.so.0|libvorbis.so|' \
 		${WRKSRC}/python/format.py
 	${REINPLACE_CMD} 's|#! /usr/local/bin/python2.72.7|#\!${LOCALBASE}/bin/${PYTHON_VERSION}|' \
 		${WRKSRC}/idjc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
