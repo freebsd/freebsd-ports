@@ -4,21 +4,22 @@
 
 PORTNAME=	libspectre
 PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A small library for rendering Postscript documents
+COMMENT=	Small library for rendering Postscript documents
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool:keepla pathfix
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack gnomeprefix ltverhack
+USE_GNOME=	gnomeprefix
 USE_GHOSTSCRIPT=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
