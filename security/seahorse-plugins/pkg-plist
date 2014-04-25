@@ -2,18 +2,17 @@ bin/seahorse-agent
 bin/seahorse-preferences
 bin/seahorse-tool
 %%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.a
-%%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.la
 %%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.so
 %%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/seahorse.ephy-extension
 %%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.a
-%%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.la
 %%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.so
 %%GEDIT%%lib/gedit-2/plugins/seahorse-pgp.gedit-plugin
 %%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-seahorse.a
-%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-seahorse.la
 %%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-seahorse.so
 lib/seahorse/seahorse-applet
 libdata/bonobo/servers/GNOME_SeahorseApplet.server
+man/man1/seahorse-agent.1.gz
+man/man1/seahorse-tool.1.gz
 share/applications/seahorse-pgp-encrypted.desktop
 share/applications/seahorse-pgp-keys.desktop
 share/applications/seahorse-pgp-preferences.desktop
@@ -214,10 +213,6 @@ share/pixmaps/seahorse-plugins/scalable/seahorse-sign.svg
 @dirrm share/gnome/help/seahorse-applet/es
 @dirrm share/gnome/help/seahorse-applet/C
 @dirrm share/gnome/help/seahorse-applet
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES

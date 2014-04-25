@@ -4,7 +4,7 @@
 
 PORTNAME=	seahorse-plugins
 PORTVERSION=	2.30.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,17 +12,19 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plug-ins for the Seahorse key and password management application
 
-LIB_DEPENDS=	cryptui:${PORTSDIR}/security/seahorse \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libcryptui.so:${PORTSDIR}/security/seahorse \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USE_BZIP2=	yes
-USES=		pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake libtool pkgconfig tar:bzip2 \
+		desktop-file-utils shared-mime-info
 USE_GNOME=	intlhack gnomeprefix gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=	--disable-update-mime-database
 
 OPTIONS_DEFINE=	NAUTILUS GEDIT APPLET NOTIFY
 OPTIONS_DEFAULT=NAUTILUS GEDIT APPLET NOTIFY
@@ -31,9 +33,7 @@ GEDIT_DESC=	GEdit plug-in support
 APPLET_DESC=	Clipboard encryption applet
 
 GCONF_SCHEMAS=	seahorse-plugins.schemas
-MAN1=		seahorse-agent.1 seahorse-tool.1
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGEDIT}
@@ -66,7 +66,7 @@ PLIST_SUB+=	APPLET="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify
 .endif
@@ -76,9 +76,5 @@ post-patch:
 		-e 's|epiphany-2.24|epiphany-2.26|g' \
 		-e 's|2.24|2.26|g' \
 			${WRKSRC}/configure
-
-post-install:
-	@-update-desktop-database
-	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>
