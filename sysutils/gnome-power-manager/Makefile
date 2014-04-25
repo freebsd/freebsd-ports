@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-power-manager
 PORTVERSION=	2.32.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,44 +12,34 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Power management system for the GNOME Desktop
 
-LIB_DEPENDS=	upower-glib.1:${PORTSDIR}/sysutils/upower \
-		canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
-		notify.4:${PORTSDIR}/devel/libnotify \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower \
+		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
 
 CONFLICTS=	gnome-power-manager-3.[0-9]*
 
-USES=		gettext gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix gnomehack intlhack libwnck \
-		gnomedocutils gnomepanel
+USE_GNOME=	gnomeprefix intlhack libwnck gnomedocutils gnomepanel
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-doc-dir=${PREFIX}/share/doc \
 		--disable-docbook-docs \
 		--enable-hal
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	gnome-power-manager.schemas
 
-.if !defined(NO_INSTALL_MANPAGES)
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml
-MAN1=		gnome-power-manager.1 gnome-power-preferences.1 \
-		gnome-power-statistics.1
-.endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lresolv|| ; s|-Werror||g' \
 		${WRKSRC}/configure
-.if defined(NO_INSTALL_MANPAGES)
-	@${REINPLACE_CMD} -e "s|2MAN_TRUE=$$|2MAN_TRUE='#'|g ; \
-		s|2MAN_FALSE='#'|2MAN_FALSE=|g" ${WRKSRC}/configure
-.endif
 
 .include <bsd.port.mk>

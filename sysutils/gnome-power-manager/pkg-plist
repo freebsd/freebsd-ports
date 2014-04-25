@@ -7,6 +7,9 @@ libdata/bonobo/servers/GNOME_BrightnessApplet.server
 libdata/bonobo/servers/GNOME_InhibitApplet.server
 libexec/gnome-brightness-applet
 libexec/gnome-inhibit-applet
+man/man1/gnome-power-manager.1.gz
+man/man1/gnome-power-preferences.1.gz
+man/man1/gnome-power-statistics.1.gz
 sbin/gnome-power-backlight-helper
 share/applications/gnome-power-preferences.desktop
 share/applications/gnome-power-statistics.desktop
@@ -303,7 +306,6 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-100-charging.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-100.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-missing.png
-%%DATADIR%%/icons/hicolor/icon-theme.cache
 %%DATADIR%%/icons/hicolor/scalable/actions/gpm-hibernate.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/gpm-suspend.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ac-adapter.svg
