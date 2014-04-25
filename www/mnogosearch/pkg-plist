@@ -72,12 +72,9 @@ include/udm_xmalloc.h
 include/udmsearch.h
 lib/libmnogocharset-3.4.so
 lib/libmnogocharset.a
-lib/libmnogocharset.la
 lib/libmnogocharset.so
 lib/libmnogosearch-3.4.so
-lib/libmnogosearch-3.4.so.%%SHLIB_VER%%
 lib/libmnogosearch.a
-lib/libmnogosearch.la
 lib/libmnogosearch.so
 man/man1/indexer.1.gz
 man/man5/indexer.conf.5.gz
