@@ -10,5 +10,4 @@ TRACKER_SLAVE=	gnome
 PLIST=		${.CURDIR}/pkg-plist
 MASTERDIR=	${.CURDIR}/../../sysutils/tracker-client
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

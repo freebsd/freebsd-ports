@@ -4,11 +4,8 @@ include/libtracker-gtk/tracker-metadata-tile.h
 include/libtracker-gtk/tracker-tag-bar.h
 include/libtracker-gtk/tracker-ui.h
 include/libtracker-gtk/tracker-utils.h
-lib/libtracker-gtk.a
-lib/libtracker-gtk.la
 lib/libtracker-gtk.so
 lib/libtracker-gtk.so.0
-lib/tracker/extract-modules/libextract-msoffice.a
-lib/tracker/extract-modules/libextract-msoffice.la
+lib/libtracker-gtk.so.0.695.0
 lib/tracker/extract-modules/libextract-msoffice.so
 @dirrm include/libtracker-gtk
