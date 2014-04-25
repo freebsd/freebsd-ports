@@ -29,18 +29,10 @@ SUB_FILES=	pkg-message
 SUB_LIST=	FONTSDIR=${FONTSDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-NO_STAGE=	yes
 do-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} *.txt ${DOCSDIR}
-.endif
-	${MKDIR} ${FONTSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} *.ttf ${FONTSDIR}
-
-post-install:
-	@${ECHO_MSG} "===> Running fc-cache"
-	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} *.txt ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
