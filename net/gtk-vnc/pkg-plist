@@ -3,6 +3,7 @@ lib/libgtk-vnc-1.0.a
 lib/libgtk-vnc-1.0.la
 lib/libgtk-vnc-1.0.so
 lib/libgtk-vnc-1.0.so.0
+lib/libgtk-vnc-1.0.so.0.0.1
 %%PYTHON_SITELIBDIR%%/gtkvnc.a
 %%PYTHON_SITELIBDIR%%/gtkvnc.la
 %%PYTHON_SITELIBDIR%%/gtkvnc.so
