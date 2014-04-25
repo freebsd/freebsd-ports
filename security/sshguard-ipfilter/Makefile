@@ -9,5 +9,4 @@ COMMENT=        Protect hosts from brute force attacks against ssh and other ser
 SSHGUARDFW=	ipfilter
 MASTERDIR=	${.CURDIR}/../sshguard
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
