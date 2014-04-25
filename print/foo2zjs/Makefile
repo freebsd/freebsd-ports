@@ -24,6 +24,8 @@ SHEBANG_FILES=	msexpand
 SUB_FILES=	pkg-message
 EXTRAFILES=	msexpand getweb
 
+MAKE_JOBS_UNSAFE=	YES
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
