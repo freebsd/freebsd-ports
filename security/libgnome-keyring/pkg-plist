@@ -1,10 +1,10 @@
 include/gnome-keyring-1/gnome-keyring-memory.h
 include/gnome-keyring-1/gnome-keyring-result.h
 include/gnome-keyring-1/gnome-keyring.h
-lib/libgnome-keyring.a
 lib/libgnome-keyring.la
 lib/libgnome-keyring.so
 lib/libgnome-keyring.so.0
+lib/libgnome-keyring.so.0.1.1
 libdata/pkgconfig/gnome-keyring-1.pc
 share/doc/gnome-keyring/ch01.html
 share/doc/gnome-keyring/gnome-keyring-Callbacks.html
