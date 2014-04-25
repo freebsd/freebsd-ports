@@ -8,53 +8,32 @@ MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
 PKGNAMESUFFIX=	65
 
 MAINTAINER=	uffe@uffe.org
-COMMENT=	MOS-6502 two-pass cross-assembler for MOS 6502 and compatible CPUs
+COMMENT=	Two-pass cross-assembler for MOS 6502 and compatible CPUs
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+LICENSE=	GPLv2
 
-USES=	gmake
+USES=		gmake
 
-MAKE_ARGS= CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
-
-MAN1=	file65.1 ldo65.1 printcbm.1 reloc65.1 uncpk.1 xa.1
-MLINKS=	xa.1 xa65.1
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-PLIST_FILES=	bin/xa65 \
-		bin/file65 \
-		bin/ldo65 \
-		bin/reloc65 \
-		bin/printcbm \
-		bin/uncpk
-
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xa ${PREFIX}/bin/xa65
+	${INSTALL_PROGRAM} ${WRKSRC}/xa ${STAGEDIR}${PREFIX}/bin/xa65
 .for file in file65 ldo65 reloc65 printcbm uncpk
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-
-.for man in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${man} ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${LN} -sf xa.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/xa65.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in ChangeLog README.1st TODO
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in COPYING ChangeLog README.1st TODO
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
