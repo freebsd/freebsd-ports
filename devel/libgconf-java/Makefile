@@ -13,7 +13,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for GConf
 
 DEPRECATED=	Unmaintained, outdated not depend on
-EXPIRATION_DATE=	2014-25-05
+EXPIRATION_DATE=	2014-05-25
 
 BUILD_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
 RUN_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java

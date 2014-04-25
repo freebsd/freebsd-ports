@@ -13,7 +13,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper GLib 2
 
 DEPRECATED=	Unmaintained, outdated not depend on
-EXPIRATION_DATE=	2014-25-05
+EXPIRATION_DATE=	2014-05-25
 
 OPTIONS_DEFINE=	DOCS
 
