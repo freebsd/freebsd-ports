@@ -12,17 +12,19 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for GConf
 
+DEPRECATED=	Unmaintained, outdated not depend on
+EXPIRATION_DATE=	2014-25-05
+
 BUILD_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
 RUN_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
-USE_GNOME=	gnomehack gconf2
+USE_GNOME=	gconf2
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 
@@ -39,7 +41,6 @@ post-patch:
 		${WRKSRC}/configure
 
 do-install:
-	${MKDIR} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/.libs/libgconfjni-${GCONF_API_VERSION}.so \
 		${PREFIX}/lib/libgconfjni-${GCONF_API_VERSION}.so.1
 	${LN} -sf ${PREFIX}/lib/libgconfjni-${GCONF_API_VERSION}.so.1 \

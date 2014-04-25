@@ -12,19 +12,21 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for libglade
 
+DEPRECATED=	Unmaintained, outdated not depend on
+EXPIRATION_DATE=	2014-25-05
+
 BUILD_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java \
 		${JAVALIBDIR}/gnome${GNOME_API_VERSION}.jar:${PORTSDIR}/x11/libgnome-java
 RUN_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java \
 		${JAVALIBDIR}/gnome${GNOME_API_VERSION}.jar:${PORTSDIR}/x11/libgnome-java
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
-USE_GNOME=	gnomehack libglade2
+USE_GNOME=	libglade2
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 
@@ -36,17 +38,15 @@ PLIST_SUB=		GLADE_API_VERSION=${GLADE_API_VERSION} \
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 		${WRKSRC}/configure
 
 do-install:
-	${MKDIR} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/.libs/libgladejni-${GLADE_API_VERSION}.so \
-		${PREFIX}/lib/libgladejni-${GLADE_API_VERSION}.so.1
-	${LN} -sf ${PREFIX}/lib/libgladejni-${GLADE_API_VERSION}.so.1 \
-		${PREFIX}/lib/libgladejni-${GLADE_API_VERSION}.so
+	${INSTALL_LIB} ${WRKSRC}/.libs/libgladejni-${GLADE_API_VERSION}.so \
+		${STAGEDIR}${PREFIX}/lib/libgladejni-${GLADE_API_VERSION}.so.1
+	${LN} -sf libgladejni-${GLADE_API_VERSION}.so.1 \
+		${STAGEDIR}${PREFIX}/lib/libgladejni-${GLADE_API_VERSION}.so
 	${MKDIR} ${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/glade-java.pc	${PREFIX}/libdata/pkgconfig
 	${MKDIR} ${JAVAJARDIR}
