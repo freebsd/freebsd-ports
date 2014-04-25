@@ -22,6 +22,7 @@ lib/libgnetwork-1.0.a
 lib/libgnetwork-1.0.la
 lib/libgnetwork-1.0.so
 lib/libgnetwork-1.0.so.0
+lib/libgnetwork-1.0.so.0.0.9
 libdata/pkgconfig/libgnetwork-1.0.pc
 %%DOCSDIR%%/GNetworkConnection.html
 %%DOCSDIR%%/GNetworkDatagram.html
