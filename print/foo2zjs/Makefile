@@ -25,6 +25,8 @@ SUB_FILES=	pkg-message ${DEVDCONF_FILE}
 EXTRAFILES=	msexpand getweb
 DEVDCONF_FILE=	${PORTNAME}.conf
 
+MAKE_JOBS_UNSAFE=	YES
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
