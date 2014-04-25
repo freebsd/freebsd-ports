@@ -10,19 +10,17 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNOME applet that shows network status
+COMMENT=	GNOME applet that shows network status
 
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnome gnomepanel \
-		gnomedocutils
-USES=		gettext gmake pkgconfig
+USE_GNOME=	intlhack gnomeprefix libgnome gnomepanel gnomedocutils
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	netstatus.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
