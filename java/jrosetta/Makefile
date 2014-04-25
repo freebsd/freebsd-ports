@@ -14,7 +14,6 @@ COMMENT=	API for building a graphical console in Swing
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/jrosetta-api.jar \
@@ -23,7 +22,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/jrosetta-api.jar \
 OPTIONS_DEFINE=	COMPILE
 COMPILE_DESC=	Download and compile source instead of binaries
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPILE}
@@ -56,14 +54,14 @@ do-build:
 do-install:
 .if ${PORT_OPTIONS:MCOMPILE}
 	${INSTALL_DATA} ${OUTPUT}/jrosetta-api/${PORTVERSION}/jrosetta-api-${PORTVERSION}.jar \
-		${JAVAJARDIR}/jrosetta-api.jar
+		${STAGEDIR}${JAVAJARDIR}/jrosetta-api.jar
 	${INSTALL_DATA} ${OUTPUT}/jrosetta-engine/${PORTVERSION}/jrosetta-engine-${PORTVERSION}.jar \
-		${JAVAJARDIR}/jrosetta-engine.jar
+		${STAGEDIR}${JAVAJARDIR}/jrosetta-engine.jar
 .else
 	${INSTALL_DATA} ${DISTDIR}/jrosetta-api-${PORTVERSION}.jar \
-		${JAVAJARDIR}/jrosetta-api.jar
+		${STAGEDIR}${JAVAJARDIR}/jrosetta-api.jar
 	${INSTALL_DATA} ${DISTDIR}/jrosetta-engine-${PORTVERSION}.jar \
-		${JAVAJARDIR}/jrosetta-engine.jar
+		${STAGEDIR}${JAVAJARDIR}/jrosetta-engine.jar
 .endif
 
 .include <bsd.port.mk>
