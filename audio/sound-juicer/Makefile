@@ -4,7 +4,7 @@
 
 PORTNAME=	sound-juicer
 PORTVERSION=	2.32.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,8 +20,7 @@ LIB_DEPENDS=	libmusicbrainz3.so:${PORTSDIR}/audio/libmusicbrainz3 \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libbrasero-media.so:${PORTSDIR}/sysutils/brasero
 
-USE_BZIP2=	yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:bzip2 desktop-file-utils
 INSTALLS_OMF=	yes
 USE_GNOME=	intlhack gnomeprefix gconf2 libglade2 gnomedocutils
 USE_GSTREAMER=	cdparanoia vorbis flac gconf good gio
@@ -30,6 +29,7 @@ CONFIGURE_ARGS=	--enable-ignore-missing-cd
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	sound-juicer.schemas
 
