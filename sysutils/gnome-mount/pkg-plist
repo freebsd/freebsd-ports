@@ -3,6 +3,7 @@ bin/gnome-mount
 bin/gnome-umount
 libdata/pkgconfig/gnome-mount.pc
 %%DATADIR%%/gnome-mount-properties.glade
+man/man1/gnome-mount.1.gz
 share/locale/ar/LC_MESSAGES/gnome-mount.mo
 share/locale/be/LC_MESSAGES/gnome-mount.mo
 share/locale/be@latin/LC_MESSAGES/gnome-mount.mo
