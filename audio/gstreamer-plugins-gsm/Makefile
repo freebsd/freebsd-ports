@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/audio/gstreamer-plugins-gsm/Makefile,v 1.5 2008/03/19 14:05:29 ahze Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer gsm encoding/decoding plugin

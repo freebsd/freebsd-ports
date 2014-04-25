@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/audio/gstreamer-plugins-shout2/Makefile,v 1.3 2008/03/19 14:05:31 ahze Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer icecast plugin
