@@ -33,7 +33,6 @@ XTERM_SAVE_DESC=	Restore xterm screen after exit
 
 ALL_TARGET=	# empty
 MAKE_ARGS+=	CC=${CC} CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP=${STRIP_CMD} CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=termlib
-MAKE_JOBS_UNSAFE=	yes
 PATCH=		${LOCALBASE}/bin/gpatch
 PATCH_DIST_ARGS=--batch --directory ${WRKSRC} --forward --quiet --remove-empty-files ${PATCH_DIST_STRIP}
 REINPLACE_ARGS=	-i ''
