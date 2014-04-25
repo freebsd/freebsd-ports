@@ -123,6 +123,7 @@ foomatic/db/source/printer/Dell-1355.xml
 foomatic/db/source/printer/Dell-C1765.xml
 foomatic/db/source/printer/Epson-AcuLaser_M1400.xml
 foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM205.xml
+foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM215.xml
 foomatic/db/source/printer/Fuji_Xerox-DocuPrint_M215.xml
 foomatic/db/source/printer/Fuji_Xerox-DocuPrint_P205.xml
 foomatic/db/source/printer/Generic-OAKT_Printer.xml
@@ -209,6 +210,7 @@ share/cups/model/Dell-1355.ppd.gz
 share/cups/model/Dell-C1765.ppd.gz
 share/cups/model/Epson-AcuLaser_M1400.ppd.gz
 share/cups/model/Fuji_Xerox-DocuPrint_CM205.ppd.gz
+share/cups/model/Fuji_Xerox-DocuPrint_CM215.ppd.gz
 share/cups/model/Fuji_Xerox-DocuPrint_M215.ppd.gz
 share/cups/model/Fuji_Xerox-DocuPrint_P205.ppd.gz
 share/cups/model/Generic-OAKT_Printer.ppd.gz
