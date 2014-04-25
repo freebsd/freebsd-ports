@@ -3,17 +3,17 @@
 
 PORTNAME=	florist-gpl
 PORTVERSION=	2012
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	POSIX Ada binding, IEEE Standards 1003.5(b,c)
 
 LICENSE=	GPLv3
 
-USES=		ada
+USES=		ada tar:tgz
 GNU_CONFIGURE=	yes
 
 post-extract:
