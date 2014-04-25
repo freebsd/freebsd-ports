@@ -3,7 +3,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		4
+PORTREVISION=		5
 PORTEPOCH=		1
 CATEGORIES=		emulators
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-9.4.x
@@ -46,7 +46,6 @@ USES=			pkgconfig kmod
 USE_GNOME=		glib20
 USE_LDCONFIG=		yes
 CPPFLAGS+=		-Wno-deprecated-declarations
-KMODDIR=		${PREFIX}/lib/vmware-tools/modules/drivers
 
 SSP_UNSAFE=		kernel module does not support ssp
 
