@@ -3,7 +3,7 @@
 
 PORTNAME=	redland
 PORTVERSION=	1.0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libraptor2.so:${PORTSDIR}/textproc/raptor2 \
 
 USE_AUTOTOOLS=	libltdl
 USE_PERL5=	build
-USES=		gmake pathfix perl5 pkgconfig shebangfix
+USES=		gmake libtool pathfix perl5 pkgconfig shebangfix
 SHEBANG_FILES=	scripts/touch-mtime.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-threestore=no

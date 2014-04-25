@@ -2,9 +2,9 @@ bin/rasqal-config
 bin/roqet
 include/rasqal/rasqal.h
 lib/librasqal.a
-lib/librasqal.la
 lib/librasqal.so
 lib/librasqal.so.3
+lib/librasqal.so.3.0.0
 libdata/pkgconfig/rasqal.pc
 man/man1/rasqal-config.1.gz
 man/man1/roqet.1.gz
