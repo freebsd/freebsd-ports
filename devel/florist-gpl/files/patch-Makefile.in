@@ -12,7 +12,7 @@
 +		 $(DESTDIR)$(PREFIX)/include/florist
 +	$(BSD_INSTALL_DATA) floristlib/*.ad[bs] $(DESTDIR)$(PREFIX)/include/florist
 +	$(BSD_INSTALL_DATA) floristlib/*.ali $(DESTDIR)$(PREFIX)/lib/florist
-+	$(BSD_INSTALL_LIB)  floristlib/*.a $(DESTDIR)$(PREFIX)/lib/florist
++	$(BSD_INSTALL_DATA) floristlib/*.a $(DESTDIR)$(PREFIX)/lib/florist
 +	$(BSD_INSTALL_DATA) florist.gpr $(DESTDIR)$(PREFIX)/lib/gnat
  
  .PHONY: install clean distclean regen
