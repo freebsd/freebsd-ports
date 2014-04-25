@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	c++-gtk-utils
-PORTVERSION=	2.2.5
-PORTREVISION=	1
+PORTVERSION=	2.2.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/cxx-gtk-utils/cxx-gtk-utils/${PORTVERSION}/
 DISTNAME=	c%2B%2B-gtk-utils-${PORTVERSION}
@@ -14,8 +13,7 @@ COMMENT=	Lightweight library for programming GTK+ programs
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-USE_GCC=	yes
-USES=		pathfix pkgconfig
+USES=		compiler:c++11-lib pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
@@ -30,6 +28,9 @@ OPTIONS_DEFINE=	DEBUG DOCS
 DEBUG_CONFIGURE_ON=	--enable-debug
 
 .include <bsd.port.options.mk>
+
+post-configure:
+	@${REINPLACE_CMD} '/^SUBDIRS/ s|tests||' ${WRKSRC}/Makefile
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
