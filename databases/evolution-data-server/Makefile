@@ -4,7 +4,7 @@
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	2.32.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,20 +20,18 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libtasn1.so:${PORTSDIR}/security/libtasn1 \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		bison pathfix gettext pkgconfig
-USE_GNOME=	gnomeprefix intlhack ltverhack ltasneededhack gconf2 \
-		libxml2
+USES=		bison gettext gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	gnomeprefix intlhack gconf2 libxml2
 USE_OPENLDAP=	yes
 USE_SQLITE=	3
-USE_AUTOTOOLS=	libtool
 USE_BDB=	41+
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--enable-gnome-keyring=yes \
 		--with-openldap=yes \
 		--with-libdb=${LOCALBASE}
+INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
@@ -41,22 +39,17 @@ PLIST_SUB=	VERSION="2.32" EVO_VERSION="1.2"
 
 OPTIONS_DEFINE=	WEATHER KERBEROS
 OPTIONS_DEFAULT=WEATHER KERBEROS
+OPTIONS_SUB=	yes
 WEATHER_DESC=	Weather calendar backend
+
+WEATHER_LIB_DEPENDS=	libgweather.so:${PORTSDIR}/net/libgweather
+WEATHER_CONFIGURE_WITH=	weather
+KERBEROS_CONFIGURE_WITH=	--with-krb5=/usr
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKERBEROS}
-CONFIGURE_ARGS+=	--with-krb5=/usr
-KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
-.endif
-
-.if ${PORT_OPTIONS:MWEATHER}
-LIB_DEPENDS+=		libgweather.so:${PORTSDIR}/net/libgweather
-CONFIGURE_ARGS+=	--with-weather
-PLIST_SUB+=		WEATHER=""
-.else
-CONFIGURE_ARGS+=	--without-weather
-PLIST_SUB+=		WEATHER="@comment "
+KRB5_LIB=	`/usr/bin/krb5-config gssapi --libs`
 .endif
 
 EDS_BDB_MSG=	"!!!WARNING!!!: Berkeley Database version is ${BDB_VER}.  If this is an upgrade, you may experience problems if you or any other Evolution-data-server users were previously using BDB_VER 41."
