@@ -13,12 +13,7 @@ DCONF_SLAVE=	editor
 MASTERDIR=	${.CURDIR}/../dconf
 
 PLIST=		${.CURDIR}/pkg-plist
-
-NO_STAGE=	yes
-do-build:
-	@cd ${WRKSRC}/editor && ${GMAKE}
-
-do-install:
-	@cd ${WRKSRC}/editor && ${GMAKE} install
+BUILD_WRKSRC=	${WRKSRC}/editor
+INSTALL_WRKSRC=	${WRKSRC}/editor
 
 .include "${MASTERDIR}/Makefile"
