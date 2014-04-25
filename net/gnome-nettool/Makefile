@@ -11,24 +11,23 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNOME utility that provides network information statistics
+COMMENT=	GNOME utility that provides network information statistics
 
-LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
+LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libglade2 gconf2 gnomedocutils
+USE_GNOME=	intlhack gnomeprefix libglade2 gconf2 gnomedocutils
 GNOME_DESKTOP_VERSION=2
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-DHAVE_SOCKADDR_SA_LEN
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 post-install:
 	${LN} -sf ${PREFIX}/share/gnome-nettool/pixmaps/gnome-nettool.png \
-		${PREFIX}/share/pixmaps/gnome-nettool.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/gnome-nettool.png
 
 .include <bsd.port.mk>
