@@ -13,7 +13,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for the cairo graphics package
 
 DEPRECATED=	Unmaintained, outdated not depend on
-EXPIRATION_DATE=	2014-25-05
+EXPIRATION_DATE=	2014-05-25
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libglibjni-${GLIB_API_VERSION}.so:${PORTSDIR}/devel/glib-java

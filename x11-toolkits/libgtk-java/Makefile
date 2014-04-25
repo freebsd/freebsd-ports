@@ -12,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for Gtk+, Pango, Atk, and Glib
 
 DEPRECATED=	Unmaintained, outdated not depend on
-EXPIRATION_DATE=	2014-25-05
+EXPIRATION_DATE=	2014-05-25
 
 LIB_DEPENDS=	cairojni-${CAIRO_API_VERSION}.1:${PORTSDIR}/graphics/cairo-java
 
