@@ -11,17 +11,16 @@ MASTER_SITES=	http://hal.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	HAL device manager for the GNOME Desktop
 
-LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack intlhack ltverhack libgnomeui gnomedocutils
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	intlhack libgnomeui gnomedocutils
+GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
