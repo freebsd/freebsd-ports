@@ -4,7 +4,7 @@
 
 PORTNAME=	goobox
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,28 +20,22 @@ LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_XORG=	x11
-USES=		gettext gmake pkgconfig
-USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 desktopfileutils
+USES=		gettext gmake desktop-file-utils pathfix pkgconfig tar:bzip2
+USE_GNOME=	gnomeprefix intlhack gtk20 gconf2
 USE_GSTREAMER=	cdparanoia gconf core gio
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	goobox.schemas
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
-CONFIGURE_ARGS+=--enable-notification
-.else
-CONFIGURE_ARGS+=--disable-notification
-.endif
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_CONFIGURE_ENABLE=	notification
 
 .include <bsd.port.mk>
