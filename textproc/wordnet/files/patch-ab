@@ -83,7 +83,7 @@
 +	if (*ptype == '\0' &&
 +	    (*pstr == '\n' || *pstr == ' ' || *pstr == '\0')) {
 +	    if (end)
-+		*(const char **)end = pstr;
++		*(const void **)end = pstr;
  	    return(i);
 +	}
      }
