@@ -1,5 +1,5 @@
 %%CLIENT%%bin/worldofpadman
-%%SMPCLIENT%%bin/worldofpadman-smp
+%%SMP_CLIENT%%bin/worldofpadman-smp
 %%SERVER%%bin/worldofpadmanded
 %%PORTDOCS%%%%DOCSDIR%%/banner.html
 %%PORTDOCS%%%%DOCSDIR%%/copyright_de.html
