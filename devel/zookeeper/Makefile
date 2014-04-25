@@ -22,9 +22,7 @@ JAVA_RUN=	yes
 
 USE_RC_SUBR=	zookeeper
 
-OPTIONS_DEFINE=	DOC
-DOC_DESC=	Install documentation
-OPTIONS_DEFAULT=	DOC
+OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
 
@@ -38,8 +36,6 @@ PLIST_SUB=	PORTNAME=${PORTNAME} \
 		PORTVERSION=${PORTVERSION} \
 		RESETPREFIX=${PREFIX}
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin
@@ -51,11 +47,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${PREFIX}/${PORTNAME}
 
 post-install:
-.if ${PORT_OPTIONS:MDOC}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
 	@${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}/var/run/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
