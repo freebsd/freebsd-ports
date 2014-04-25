@@ -34,6 +34,14 @@ SUB_LIST=	JAVAJARDIR=${JAVAJARDIR} CAIRO_API_VERSION=${CAIRO_API_VERSION}
 CONFIGURE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 MAKE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION} == 1.6.0
+PLIST_SUB+=	JDK16="" NOTJDK16="@comment "
+.else
+PLIST_SUB+=	JDK16="@comment " NOTJDK16=""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 		${WRKSRC}/configure
@@ -57,4 +65,4 @@ do-install:
 	cd ${WRKSRC}/doc/api && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/api
 	${TOUCH} ${STAGEDIR}${DOCSDIR}/api/packages.html
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
