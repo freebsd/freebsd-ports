@@ -3,7 +3,7 @@
 
 PORTNAME=	mate-document-viewer
 PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -19,10 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig
-USE_XZ=		yes
-USE_MATE=	autogen common:build docutils icontheme intlhack \
-		ltasneededhack ltverhack
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:xz
+USE_MATE=	autogen common:build docutils icontheme intlhack
 USE_XORG=	sm
 USE_GNOME=	cairo glib20 gnomehier gtk20 libxml2
 INSTALLS_OMF=	yes
@@ -33,6 +31,7 @@ CONFIGURE_ARGS=	--with-gtk=2.0
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 PATHFIX_MAKEFILEIN=	Makefile.*
 
 GLIB_SCHEMAS=	org.mate.Atril.gschema.xml
