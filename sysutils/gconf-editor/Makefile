@@ -13,17 +13,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A gconf database editor for the GNOME 2 environment
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gnomedocutils
+USE_GNOME=	gnomeprefix intlhack libgnomeui gnomedocutils
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gconf-editor.1
 GCONF_SCHEMAS=	gconf-editor.schemas
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

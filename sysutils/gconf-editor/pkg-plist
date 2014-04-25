@@ -1,4 +1,5 @@
 bin/gconf-editor
+man/man1/gconf-editor.1.gz
 share/applications/gconf-editor.desktop
 %%DATADIR%%/icons/hicolor/16x16/status/type-boolean.png
 %%DATADIR%%/icons/hicolor/16x16/status/type-float.png
