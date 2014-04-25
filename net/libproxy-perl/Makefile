@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-perl
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Perl binding for libproxy
 
-LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
@@ -18,12 +18,11 @@ USES=		perl5
 
 LIBPROXY_SLAVE=	perl
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${SITE_PERL}/mach/auto/Net/Libproxy ${SITE_PERL}/mach/Net
+	${MKDIR} ${STAGEDIR}${SITE_PERL}/mach/auto/Net/Libproxy ${STAGEDIR}${SITE_PERL}/mach/Net
 	${INSTALL_LIB} ${WRKSRC}/perl/blib/arch/auto/Net/Libproxy.so \
-		${SITE_PERL}/mach/auto/Net/Libproxy/
+		${STAGEDIR}${SITE_PERL}/mach/auto/Net/Libproxy/
 	${INSTALL_DATA} ${WRKSRC}/perl/blib/lib/Libproxy.pm \
-		${SITE_PERL}/mach/Net/
+		${STAGEDIR}${SITE_PERL}/mach/Net/
 
 .include "${MASTERDIR}/Makefile"

@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-python
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	python binding for libproxy
 
-LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
@@ -18,7 +18,6 @@ USE_PYTHON=	yes
 
 LIBPROXY_SLAVE=	python
 
-NO_STAGE=	yes
 do-build:
 # empty	
 
@@ -29,9 +28,10 @@ post-build:
 		${WRKSRC}/bindings/python
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 .for file in libproxy.py libproxy.pyc libproxy.pyo
 	${INSTALL_DATA} ${WRKSRC}/bindings/python/${file} \
-		${PYTHON_SITELIBDIR}
+		${STAGEDIR}${PYTHON_SITELIBDIR}
 .endfor
 
 .include "${MASTERDIR}/Makefile"
