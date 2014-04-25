@@ -118,6 +118,27 @@
    else
      if test "x$OPENJDK_TARGET_OS" = xsolaris; then
        # If it is not gcc, then assume it is the Oracle Solaris Studio Compiler
+@@ -887,18 +889,9 @@
+   AC_SUBST(PACKAGE_PATH)
+ 
+   if test "x$OPENJDK_TARGET_CPU_ENDIAN" = xlittle; then
+-    # The macro _LITTLE_ENDIAN needs to be defined the same to avoid the
+-    #   Sun C compiler warning message: warning: macro redefined: _LITTLE_ENDIAN
+-    #   (The Solaris X86 system defines this in file /usr/include/sys/isa_defs.h).
+-    #   Note: -Dmacro         is the same as    #define macro 1
+-    #         -Dmacro=        is the same as    #define macro
+-    if test "x$OPENJDK_TARGET_OS" = xsolaris; then
+-      CCXXFLAGS_JDK="$CCXXFLAGS_JDK -D_LITTLE_ENDIAN="
+-    else
+-      CCXXFLAGS_JDK="$CCXXFLAGS_JDK -D_LITTLE_ENDIAN"
+-    fi
++    CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DVM_LITTLE_ENDIAN"
+   else
+-    CCXXFLAGS_JDK="$CCXXFLAGS_JDK -D_BIG_ENDIAN"
++    CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DVM_BIG_ENDIAN"
+   fi
+   if test "x$OPENJDK_TARGET_OS" = xlinux; then
+     CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DLINUX"
 --- hotspot/make/bsd/makefiles/build_vm_def.sh
 +++ hotspot/make/bsd/makefiles/build_vm_def.sh
 @@ -1,12 +1,21 @@
@@ -5407,40 +5428,6 @@
 +    <includes>${includes}</includes>
 +    <excludes>${excludes}</excludes>
 +</source-folder>
---- jdk/make/netbeans/j2se/nbproject/project.xml
-+++ jdk/make/netbeans/j2se/nbproject/project.xml
-@@ -34,6 +34,7 @@
- <!DOCTYPE project [
-     <!ENTITY properties SYSTEM "../../common/properties.ent">
-     <!ENTITY share-sources SYSTEM "../../common/share-sources.ent">
-+    <!ENTITY bsd-sources SYSTEM "../../common/bsd-sources.ent">
-     <!ENTITY macosx-sources SYSTEM "../../common/macosx-sources.ent">
-     <!ENTITY unix-sources SYSTEM "../../common/unix-sources.ent">
-     <!ENTITY windows-sources SYSTEM "../../common/windows-sources.ent">
-@@ -41,6 +42,7 @@
-     <!ENTITY build-folder SYSTEM "../../common/build-folder.ent">
-     <!ENTITY standard-bindings SYSTEM "../../common/standard-bindings.ent">
-     <!ENTITY share-view SYSTEM "../../common/share-view.ent">
-+    <!ENTITY bsd-view SYSTEM "../../common/bsd-view.ent">
-     <!ENTITY macosx-view SYSTEM "../../common/macosx-view.ent">
-     <!ENTITY unix-view SYSTEM "../../common/unix-view.ent">
-     <!ENTITY windows-view SYSTEM "../../common/windows-view.ent">
-@@ -60,6 +62,7 @@
-             </properties>
-             <folders>
-                 &share-sources;
-+                &bsd-sources;
-                 &macosx-sources;
-                 &unix-sources;
-                 &windows-sources;
-@@ -86,6 +89,7 @@
-             <view>
-                 <items>
-                     &share-view;
-+                    &bsd-view;
-                     &macosx-view;
-                     &unix-view;
-                     &windows-view;
 --- jdk/make/netbeans/common/java-data-native.ent
 +++ jdk/make/netbeans/common/java-data-native.ent
 @@ -34,6 +34,7 @@
@@ -5487,6 +5474,40 @@
      <macrodef name="make-run">
              <attribute name="target"/>
              <attribute name="dir"/>
+--- jdk/make/netbeans/j2se/nbproject/project.xml
++++ jdk/make/netbeans/j2se/nbproject/project.xml
+@@ -34,6 +34,7 @@
+ <!DOCTYPE project [
+     <!ENTITY properties SYSTEM "../../common/properties.ent">
+     <!ENTITY share-sources SYSTEM "../../common/share-sources.ent">
++    <!ENTITY bsd-sources SYSTEM "../../common/bsd-sources.ent">
+     <!ENTITY macosx-sources SYSTEM "../../common/macosx-sources.ent">
+     <!ENTITY unix-sources SYSTEM "../../common/unix-sources.ent">
+     <!ENTITY windows-sources SYSTEM "../../common/windows-sources.ent">
+@@ -41,6 +42,7 @@
+     <!ENTITY build-folder SYSTEM "../../common/build-folder.ent">
+     <!ENTITY standard-bindings SYSTEM "../../common/standard-bindings.ent">
+     <!ENTITY share-view SYSTEM "../../common/share-view.ent">
++    <!ENTITY bsd-view SYSTEM "../../common/bsd-view.ent">
+     <!ENTITY macosx-view SYSTEM "../../common/macosx-view.ent">
+     <!ENTITY unix-view SYSTEM "../../common/unix-view.ent">
+     <!ENTITY windows-view SYSTEM "../../common/windows-view.ent">
+@@ -60,6 +62,7 @@
+             </properties>
+             <folders>
+                 &share-sources;
++                &bsd-sources;
+                 &macosx-sources;
+                 &unix-sources;
+                 &windows-sources;
+@@ -86,6 +89,7 @@
+             <view>
+                 <items>
+                     &share-view;
++                    &bsd-view;
+                     &macosx-view;
+                     &unix-view;
+                     &windows-view;
 --- jdk/make/netbeans/world/nbproject/project.xml
 +++ jdk/make/netbeans/world/nbproject/project.xml
 @@ -34,12 +34,14 @@
@@ -5531,6 +5552,69 @@
  #define JLI_Lseek                       lseek
  #endif
  #endif /* _WIN32 */
+--- jdk/src/share/classes/sun/awt/FontConfiguration.java
++++ jdk/src/share/classes/sun/awt/FontConfiguration.java
+@@ -1146,7 +1146,7 @@
+      */
+     HashMap<String, Boolean> existsMap;
+     public boolean needToSearchForFile(String fileName) {
+-        if (!FontUtilities.isLinux) {
++        if (!FontUtilities.isLinux && !FontUtilities.isBSD) {
+             return false;
+         } else if (existsMap == null) {
+            existsMap = new HashMap<String, Boolean>();
+--- jdk/src/share/classes/sun/awt/OSInfo.java
++++ jdk/src/share/classes/sun/awt/OSInfo.java
+@@ -39,6 +39,7 @@
+         WINDOWS,
+         LINUX,
+         SOLARIS,
++        BSD,
+         MACOSX,
+         UNKNOWN
+     }
+@@ -101,6 +102,10 @@
+                 return SOLARIS;
+             }
+ 
++            if (osName.endsWith("BSD")) {
++                return BSD;
++            }
++
+             if (osName.contains("OS X")) {
+                 return MACOSX;
+             }
+--- jdk/src/share/classes/sun/font/FontUtilities.java
++++ jdk/src/share/classes/sun/font/FontUtilities.java
+@@ -48,6 +48,8 @@
+ 
+     public static boolean isLinux;
+ 
++    public static boolean isBSD;
++
+     public static boolean isMacOSX;
+ 
+     public static boolean isSolaris8;
+@@ -78,6 +80,8 @@
+ 
+                 isLinux = osName.startsWith("Linux");
+ 
++                isBSD = osName.endsWith("BSD");
++
+                 isMacOSX = osName.contains("OS X"); // TODO: MacOSX
+ 
+                 String t2kStr = System.getProperty("sun.java2d.font.scaler");
+--- jdk/src/share/classes/sun/font/SunFontManager.java
++++ jdk/src/share/classes/sun/font/SunFontManager.java
+@@ -418,7 +418,7 @@
+                          * registerFonts method as on-screen these JRE fonts
+                          * always go through the T2K rasteriser.
+                          */
+-                        if (FontUtilities.isLinux) {
++                        if (FontUtilities.isLinux || FontUtilities.isBSD) {
+                             /* Linux font configuration uses these fonts */
+                             registerFontDir(jreFontDirName);
+                         }
 --- jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java
 +++ jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java
 @@ -1298,7 +1298,7 @@
@@ -5542,6 +5626,54 @@
              charset("x-COMPOUND_TEXT", "COMPOUND_TEXT",
                      new String[] {
                          "COMPOUND_TEXT",        // JDK historical
+--- jdk/src/share/classes/sun/print/PSPrinterJob.java
++++ jdk/src/share/classes/sun/print/PSPrinterJob.java
+@@ -1587,7 +1587,7 @@
+         }
+ 
+        String osname = System.getProperty("os.name");
+-       if (osname.equals("Linux") || osname.contains("OS X")) {
++       if (osname.equals("Linux") || osname.endsWith("BSD") || osname.contains("OS X")) {
+             execCmd = new String[ncomps];
+             execCmd[n++] = "/usr/bin/lpr";
+             if ((pFlags & PRINTER) != 0) {
+--- jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java
++++ jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java
+@@ -48,6 +48,7 @@
+                     public Boolean run() {
+                             String osname = System.getProperty("os.name");
+                             if (osname.startsWith("SunOS") ||
++                                osname.endsWith("BSD") ||
+                                 osname.contains("OS X") ||
+                                 osname.startsWith("Linux")) {
+                                 return new Boolean(System.getProperty
+--- jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java
++++ jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java
+@@ -90,6 +90,12 @@
+                                     "libgssapi_krb5.so",
+                                     "libgssapi_krb5.so.2",
+                                 };
++                            } else if (osname.endsWith("BSD")) {
++                                gssLibs = new String[]{
++                                    "libgssapi.so",
++                                    "libgssapi_krb5.so",
++                                    "libgssapi_krb5.so.10",
++                                };
+                             } else if (osname.contains("OS X")) {
+                                 gssLibs = new String[]{
+                                     "libgssapi_krb5.dylib",
+--- jdk/src/share/classes/sun/security/krb5/internal/ccache/FileCredentialsCache.java
++++ jdk/src/share/classes/sun/security/krb5/internal/ccache/FileCredentialsCache.java
+@@ -403,7 +403,8 @@
+             long uid = 0;
+ 
+             if (osname.startsWith("SunOS") ||
+-                (osname.startsWith("Linux"))) {
++                osname.startsWith("Linux") ||
++                osname.endsWith("BSD")) {
+                 try {
+                     Class<?> c = Class.forName
+                         ("com.sun.security.auth.module.UnixSystem");
 --- jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider
 +++ jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider
 @@ -31,3 +31,4 @@
@@ -6050,6 +6182,2408 @@
 +#
 +# Example:
 +#   jdk.tls.disabledAlgorithms=MD5, SHA1, DSA, RSA keySize < 2048
+--- jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp
++++ jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp
+@@ -62,7 +62,7 @@
+ 
+ #endif // End of ZLIB
+ 
+-#ifdef _BIG_ENDIAN
++#ifdef VM_BIG_ENDIAN
+ #define SWAP_BYTES(a) \
+     ((((a) << 8) & 0xff00) | 0x00ff) & (((a) >> 8) | 0xff00)
+ #else
+--- jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c
++++ jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c
+@@ -120,7 +120,7 @@
+ }
+ 
+ /* conversion from/to 16 bit signed little endian to native endian samples */
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ #define MAP_LE_SHORT2SAMPLE(sh) ((MAP_Sample) (sh))
+ #define MAP_SAMPLE2LE_SHORT(sample) (sample)
+ #define MAP_SAMPLE2LE_SHORT_CLIP(sample) MAP_ClipAndConvertToShort(sample)
+@@ -131,7 +131,7 @@
+ #endif
+ 
+ /* conversion from/to 16 bit signed big endian to native endian samples */
+-#ifndef _LITTLE_ENDIAN
++#ifndef VM_LITTLE_ENDIAN
+ #define MAP_BE_SHORT2SAMPLE(sh) ((MAP_Sample) (sh))
+ #define MAP_SAMPLE2BE_SHORT(sample) (sample)
+ #define MAP_SAMPLE2BE_SHORT_CLIP(sample) MAP_ClipAndConvertToShort(sample)
+@@ -150,7 +150,7 @@
+ #define MAP_SAMPLE2INT8_CLIP(sample) MAP_ClipAndConvertToByte(sample)
+ 
+ /* macros for endian conversion */
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ #define MAP_NATIVE2LE16(a) (a)
+ #define MAP_NATIVE2BE16(a) MAP_SWAP16_impl(a)
+ #define MAP_NATIVE2LE32(a) (a)
+--- jdk/src/share/native/com/sun/media/sound/Utilities.c
++++ jdk/src/share/native/com/sun/media/sound/Utilities.c
+@@ -28,7 +28,7 @@
+ 
+ 
+ int UTIL_IsBigEndianPlatform() {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     return 0;
+ #else
+     return 1;
+--- jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h
++++ jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h
+@@ -40,7 +40,7 @@
+ #endif
+ #endif
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ #define __HI(x) *(1+(int*)&x)
+ #define __LO(x) *(int*)&x
+ #define __HIp(x) *(1+(int*)x)
+--- jdk/src/share/native/sun/awt/image/awt_parseImage.c
++++ jdk/src/share/native/sun/awt/image/awt_parseImage.c
+@@ -599,7 +599,7 @@
+     switch(type) {
+         case java_awt_image_BufferedImage_TYPE_INT_ARGB:
+         case java_awt_image_BufferedImage_TYPE_INT_ARGB_PRE:
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+             colorOrder[0] = 2;
+             colorOrder[1] = 1;
+             colorOrder[2] = 0;
+@@ -612,7 +612,7 @@
+ #endif
+             break;
+         case java_awt_image_BufferedImage_TYPE_INT_BGR:
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+             colorOrder[0] = 0;
+             colorOrder[1] = 1;
+             colorOrder[2] = 2;
+@@ -623,7 +623,7 @@
+ #endif
+             break;
+         case java_awt_image_BufferedImage_TYPE_INT_RGB:
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+             colorOrder[0] = 2;
+             colorOrder[1] = 1;
+             colorOrder[2] = 0;
+--- jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c
++++ jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c
+@@ -1175,7 +1175,7 @@
+ 
+ #define NLUT 8
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ #define INDEXES    { 3, 2, 1, 0, 7, 6, 5, 4 }
+ #else
+ #define INDEXES    { 0, 1, 2, 3, 4, 5, 6, 7 }
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c
+@@ -86,7 +86,7 @@
+ #endif /* MLIB_USE_FTOI_CLAMPING */
+ 
+ /***************************************************************/
+-#if defined(_LITTLE_ENDIAN) && !defined(_NO_LONGLONG)
++#if defined(VM_LITTLE_ENDIAN) && !defined(_NO_LONGLONG)
+ 
+ /* NB: Explicit cast to DTYPE is necessary to avoid warning from Microsoft VC compiler.
+       And we need to explicitly define cast behavior if source exceeds destination range.
+@@ -103,7 +103,7 @@
+   dp[0    ] = (DTYPE) ((res0) & DTYPE_MASK);                      \
+   dp[chan1] = (DTYPE) ((res1) & DTYPE_MASK)
+ 
+-#endif /* defined(_LITTLE_ENDIAN) && !defined(_NO_LONGLONG) */
++#endif /* defined(VM_LITTLE_ENDIAN) && !defined(_NO_LONGLONG) */
+ 
+ /***************************************************************/
+ #ifdef _NO_LONGLONG
+@@ -114,17 +114,17 @@
+ 
+ #else /* _NO_LONGLONG */
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[chan1]) << 32) | ((mlib_s64)sp[0] & 0xffffffff)
+ 
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[0]) << 32) | ((mlib_s64)sp[chan1] & 0xffffffff)
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ #endif /* _NO_LONGLONG */
+ 
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c
+@@ -126,7 +126,7 @@
+ #define D2I(x) CLAMP_S32((x) SAT_OFF)
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define STORE2(res0, res1)                                      \
+   dp[0    ] = res1;                                             \
+@@ -138,7 +138,7 @@
+   dp[0    ] = res0;                                             \
+   dp[chan1] = res1
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ #ifdef _NO_LONGLONG
+@@ -149,17 +149,17 @@
+ 
+ #else /* _NO_LONGLONG */
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[chan1]) << 32) | S64TOS32((mlib_s64)sp[0])
+ 
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[0]) << 32) | S64TOS32((mlib_s64)sp[chan1])
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ #endif /* _NO_LONGLONG */
+ 
+ /***************************************************************/
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c
+@@ -94,7 +94,7 @@
+ #define D2I(x) CLAMP_S32((x) SAT_OFF)
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define STORE2(res0, res1)                                      \
+   dp[0    ] = res1;                                             \
+@@ -106,7 +106,7 @@
+   dp[0    ] = res0;                                             \
+   dp[chan1] = res1
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ #ifdef _NO_LONGLONG
+@@ -117,17 +117,17 @@
+ 
+ #else /* _NO_LONGLONG */
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[chan1]) << 32) | S64TOS32((mlib_s64)sp[0])
+ 
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[0]) << 32) | S64TOS32((mlib_s64)sp[chan1])
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ #endif /* _NO_LONGLONG */
+ 
+ /***************************************************************/
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c
+@@ -126,7 +126,7 @@
+ #define D2I(x) CLAMP_S32((x) SAT_OFF)
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define STORE2(res0, res1)                                      \
+   dp[0    ] = res1;                                             \
+@@ -138,7 +138,7 @@
+   dp[0    ] = res0;                                             \
+   dp[chan1] = res1
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ #ifdef _NO_LONGLONG
+@@ -149,17 +149,17 @@
+ 
+ #else /* _NO_LONGLONG */
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[chan1]) << 32) | S64TOS32((mlib_s64)sp[0])
+ 
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[0]) << 32) | S64TOS32((mlib_s64)sp[chan1])
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ #endif /* _NO_LONGLONG */
+ 
+ /***************************************************************/
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c
+@@ -95,7 +95,7 @@
+ #define D2I(x) CLAMP_S32((x) SAT_OFF)
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define STORE2(res0, res1)                                      \
+   dp[0    ] = res1;                                             \
+@@ -107,7 +107,7 @@
+   dp[0    ] = res0;                                             \
+   dp[chan1] = res1
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ #ifdef _NO_LONGLONG
+@@ -118,17 +118,17 @@
+ 
+ #else /* _NO_LONGLONG */
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[chan1]) << 32) | S64TOS32((mlib_s64)sp[0])
+ 
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[0]) << 32) | S64TOS32((mlib_s64)sp[chan1])
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ #endif /* _NO_LONGLONG */
+ 
+ /***************************************************************/
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c
+@@ -126,7 +126,7 @@
+ #define D2I(x) CLAMP_S32((x) SAT_OFF)
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define STORE2(res0, res1)                                      \
+   dp[0    ] = res1;                                             \
+@@ -138,7 +138,7 @@
+   dp[0    ] = res0;                                             \
+   dp[chan1] = res1
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ #ifdef _NO_LONGLONG
+@@ -149,17 +149,17 @@
+ 
+ #else /* _NO_LONGLONG */
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[chan1]) << 32) | S64TOS32((mlib_s64)sp[0])
+ 
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[0]) << 32) | S64TOS32((mlib_s64)sp[chan1])
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ #endif /* _NO_LONGLONG */
+ 
+ /***************************************************************/
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c
+@@ -94,7 +94,7 @@
+ #define D2I(x) CLAMP_S32((x) SAT_OFF)
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define STORE2(res0, res1)                                      \
+   dp[0    ] = res1;                                             \
+@@ -106,7 +106,7 @@
+   dp[0    ] = res0;                                             \
+   dp[chan1] = res1
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ #ifdef _NO_LONGLONG
+@@ -117,17 +117,17 @@
+ 
+ #else /* _NO_LONGLONG */
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[chan1]) << 32) | S64TOS32((mlib_s64)sp[0])
+ 
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[0]) << 32) | S64TOS32((mlib_s64)sp[chan1])
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ #endif /* _NO_LONGLONG */
+ 
+ /***************************************************************/
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c
+@@ -95,7 +95,7 @@
+     dst = dp[0];
+     if (ld_offset + size < 32) {
+       dmask = (mask0 << (32 - size)) >> ld_offset;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+       src = (src0 >> (ld_offset - ls_offset));
+       dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -104,12 +104,12 @@
+ #else
+       src = (src0 >> (ld_offset - ls_offset));
+       dp[0] = (dst & (~dmask)) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       return;
+     }
+ 
+     dmask = mask0 >> ld_offset;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+     src = (src0 >> (ld_offset - ls_offset));
+     dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -118,7 +118,7 @@
+ #else
+     src = (src0 >> (ld_offset - ls_offset));
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     j = 32 - ld_offset;
+     dp++;
+     ls_offset += j;
+@@ -131,7 +131,7 @@
+ 
+     if (ld_offset + size < 32) {
+       dmask = (mask0 << (32 - size)) >> ld_offset;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+       src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+       src = (src0 << shift) | (src1 >> (32 - shift));
+@@ -141,12 +141,12 @@
+ #else
+       src = (src0 << shift) | (src1 >> (32 - shift));
+       dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       return;
+     }
+ 
+     dmask = mask0 >> ld_offset;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 << shift) | (src1 >> (32 - shift));
+@@ -156,7 +156,7 @@
+ #else
+     src = (src0 << shift) | (src1 >> (32 - shift));
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     j = 32 - ld_offset;
+     dp++;
+     sp++;
+@@ -164,19 +164,19 @@
+   }
+ 
+   if (j < size) src1 = sp[0];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+   src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+   for (; j <= size - 32; j += 32) {
+     src0 = src1;
+     src1 = sp[1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 << ls_offset) | (src1 >> (32 - ls_offset));
+     dp[0] = (src << 24) | ((src & 0xFF00) << 8) | ((src >> 8) & 0xFF00) | (src >> 24);
+ #else
+     dp[0] = (src0 << ls_offset) | (src1 >> (32 - ls_offset));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     sp++;
+     dp++;
+   }
+@@ -187,7 +187,7 @@
+     if (ls_offset + j > 32) src1 = sp[1];
+     dst = dp[0];
+     dmask = mask0 << (32 - j);
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 << ls_offset) | (src1 >> (32 - ls_offset));
+     dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -196,7 +196,7 @@
+ #else
+     src = (src0 << ls_offset) | (src1 >> (32 - ls_offset));
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+   }
+ 
+ #else /* _LONGLONG */
+@@ -315,7 +315,7 @@
+     dst = dp[0];
+     if (ld_offset >= size) {
+       dmask = (lmask0 << (32 - size)) >> (ld_offset - size);
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+       src = (src0 << (ls_offset - ld_offset));
+       dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -324,12 +324,12 @@
+ #else
+       src = (src0 << (ls_offset - ld_offset));
+       dp[0] = (dst & (~dmask)) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       return;
+     }
+ 
+     dmask = lmask0 << (32 - ld_offset);
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+     src = (src0 << (ls_offset - ld_offset));
+     dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -338,7 +338,7 @@
+ #else
+     src = (src0 << (ls_offset - ld_offset));
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     j = ld_offset;
+     dp--;
+     ls_offset -= j;
+@@ -351,7 +351,7 @@
+ 
+     if (ld_offset >= size) {
+       dmask = (lmask0 << (32 - size)) >> (ld_offset - size);
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+       src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+       src = (src0 >> shift) | (src1 << (32 - shift));
+@@ -361,12 +361,12 @@
+ #else
+       src = (src0 >> shift) | (src1 << (32 - shift));
+       dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       return;
+     }
+ 
+     dmask = lmask0 << (32 - ld_offset);
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 >> shift) | (src1 << (32 - shift));
+@@ -376,7 +376,7 @@
+ #else
+     src = (src0 >> shift) | (src1 << (32 - shift));
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     j = ld_offset;
+     dp--;
+     sp--;
+@@ -384,22 +384,22 @@
+   }
+ 
+   if (j < size) src1 = sp[0];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+   src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ #ifdef __SUNPRO_C
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+   for (; j <= size - 32; j += 32) {
+     src0 = src1;
+     src1 = sp[-1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 >> (32 - ls_offset)) | (src1 << ls_offset);
+     dp[0] = (src << 24) | ((src & 0xFF00) << 8) | ((src >> 8) & 0xFF00) | (src >> 24);
+ #else
+     dp[0] = (src0 >> (32 - ls_offset)) | (src1 << ls_offset);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     sp--;
+     dp--;
+   }
+@@ -410,7 +410,7 @@
+     if (ls_offset < j) src1 = sp[-1];
+     dst = dp[0];
+     dmask = lmask0 >> (32 - j);
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 >> (32 - ls_offset)) | (src1 << ls_offset);
+     dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -419,7 +419,7 @@
+ #else
+     src = (src0 >> (32 - ls_offset)) | (src1 << ls_offset);
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+   }
+ 
+ #else  /* _LONGLONG */
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c
+@@ -168,7 +168,7 @@
+ }
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ #define READ_U8_D64(table0, table1, table2, table3)             \
+   t0 = *(mlib_d64*)((mlib_u8*)table0 + ((s0 << 3) & 0x7F8));    \
+@@ -184,7 +184,7 @@
+   t2 = *(mlib_d64*)((mlib_u8*)table2 + ((s0 >> 5)  & 0x7F8));   \
+   t3 = *(mlib_d64*)((mlib_u8*)table3 + ((s0 << 3)  & 0x7F8))
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ void mlib_ImageLookUp_U8_D64(const mlib_u8  *src,
+@@ -613,7 +613,7 @@
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+       for (i = 0; i < size - 7; i += 4, dp += 8, sa++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 5) & 0x7F8));
+@@ -623,12 +623,12 @@
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         dp[0] = t0;
+         dp[1] = t1;
+         dp[2] = t2;
+         dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 21) & 0x7F8));
+@@ -638,7 +638,7 @@
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0];
+         dp[4] = t0;
+         dp[5] = t1;
+@@ -646,7 +646,7 @@
+         dp[7] = t3;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 5) & 0x7F8));
+@@ -656,12 +656,12 @@
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[0] = t0;
+       dp[1] = t1;
+       dp[2] = t2;
+       dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 21) & 0x7F8));
+@@ -671,7 +671,7 @@
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[4] = t0;
+       dp[5] = t1;
+       dp[6] = t2;
+@@ -719,7 +719,7 @@
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+       for (i = 0; i < size - 7; i += 4, dp += 12, sa++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+@@ -733,14 +733,14 @@
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+         t4 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+         t5 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         dp[0] = t0;
+         dp[1] = t1;
+         dp[2] = t2;
+         dp[3] = t3;
+         dp[4] = t4;
+         dp[5] = t5;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+@@ -754,7 +754,7 @@
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+         t4 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+         t5 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0];
+         dp[6] = t0;
+         dp[7] = t1;
+@@ -764,7 +764,7 @@
+         dp[11] = t5;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+@@ -778,14 +778,14 @@
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+       t4 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+       t5 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[0] = t0;
+       dp[1] = t1;
+       dp[2] = t2;
+       dp[3] = t3;
+       dp[4] = t4;
+       dp[5] = t5;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+@@ -799,7 +799,7 @@
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+       t4 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+       t5 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[6] = t0;
+       dp[7] = t1;
+       dp[8] = t2;
+@@ -852,7 +852,7 @@
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+       for (i = 0; i < size - 7; i += 4, dp += 16, sa++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+@@ -862,12 +862,12 @@
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 21) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 21) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         dp[0] = t0;
+         dp[1] = t1;
+         dp[2] = t2;
+         dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 5) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 5) & 0x7F8));
+@@ -877,12 +877,12 @@
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         dp[4] = t0;
+         dp[5] = t1;
+         dp[6] = t2;
+         dp[7] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+@@ -892,12 +892,12 @@
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 5) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 5) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         dp[8] = t0;
+         dp[9] = t1;
+         dp[10] = t2;
+         dp[11] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 21) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 21) & 0x7F8));
+@@ -907,7 +907,7 @@
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0];
+         dp[12] = t0;
+         dp[13] = t1;
+@@ -915,7 +915,7 @@
+         dp[15] = t3;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+@@ -925,12 +925,12 @@
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 21) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 21) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[0] = t0;
+       dp[1] = t1;
+       dp[2] = t2;
+       dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 5) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 5) & 0x7F8));
+@@ -940,12 +940,12 @@
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[4] = t0;
+       dp[5] = t1;
+       dp[6] = t2;
+       dp[7] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+@@ -955,12 +955,12 @@
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 5) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 5) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[8] = t0;
+       dp[9] = t1;
+       dp[10] = t2;
+       dp[11] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 21) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 21) & 0x7F8));
+@@ -970,7 +970,7 @@
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[12] = t0;
+       dp[13] = t1;
+       dp[14] = t2;
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c
+@@ -88,7 +88,7 @@
+ } d64_2_f32;
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ static const mlib_u32 mlib_bit_mask[16] = {
+   0x00000000u, 0xFF000000u, 0x00FF0000u, 0xFFFF0000u,
+@@ -126,7 +126,7 @@
+   0x00000000u, 0x00FFFFFFu, 0xFF000000u, 0xFFFFFFFFu
+ };
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ mlib_status mlib_ImageLookUp_Bit_U8_1(const mlib_u8 *src,
+@@ -228,13 +228,13 @@
+ #endif /* __SUNPRO_C */
+     for (; i <= (size - 16); i += 16) {
+       s0 = *(mlib_u16*)sa;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       *da++ = dd_array[s0 & 0xFF];
+       *da++ = dd_array[s0 >> 8];
+ #else
+       *da++ = dd_array[s0 >> 8];
+       *da++ = dd_array[s0 & 0xFF];
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       sa += 2;
+     }
+ 
+@@ -258,20 +258,20 @@
+         val1 = p_dd[2*val0+1];
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       emask = (mlib_u32)((mlib_s32)(-1)) >> ((4 - (size - i)) * 8);
+ #else
+       emask = (mlib_s32)(-1) << ((4 - (size - i)) * 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       ((mlib_u32*)da)[0] = (val1 & emask) | (((mlib_u32*)da)[0] &~ emask);
+ 
+ #else /* _NO_LONGLONG */
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       mlib_u64 emask = (mlib_u64)((mlib_s64)(-1)) >> ((8 - (size - i)) * 8);
+ #else
+       mlib_u64 emask = (mlib_s64)(-1) << ((8 - (size - i)) * 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+       ((mlib_u64*)da)[0] = (((mlib_u64*)dd_array)[sa[0]] & emask) | (((mlib_u64*)da)[0] &~ emask);
+ 
+@@ -323,13 +323,13 @@
+ 
+   val0 = table[0][0];
+   val1 = table[0][1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+   val0 = val0 | (table[1][0] << 8);
+   val1 = val1 | (table[1][1] << 8);
+ #else
+   val0 = (val0 << 8) | table[1][0];
+   val1 = (val1 << 8) | table[1][1];
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+   val0 |= (val0 << 16);
+   val1 |= (val1 << 16);
+ 
+@@ -394,11 +394,11 @@
+         dd1 = dd2;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       emask = (mlib_u32)((mlib_s32)(-1)) >> ((4 - (size - i)) * 8);
+ #else
+       emask = (mlib_s32)(-1) << ((4 - (size - i)) * 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       ((mlib_u32*)da)[0] = (dd1 & emask) | (((mlib_u32*)da)[0] &~ emask);
+ 
+ #else /* _NO_LONGLONG */
+@@ -412,11 +412,11 @@
+         dd = ((mlib_u64*)dd_array)[s0 & 0xf];
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       emask = (mlib_u64)((mlib_s64)(-1)) >> ((8 - (size - i)) * 8);
+ #else
+       emask = (mlib_s64)(-1) << ((8 - (size - i)) * 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       ((mlib_u64*)da)[0] = (dd & emask) | (((mlib_u64*)da)[0] &~ emask);
+ 
+ #endif /* _NO_LONGLONG */
+@@ -462,7 +462,7 @@
+ 
+   buffs = buff + size;
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+   l0 = (table[0][0] << 24) | (table[2][0] << 16) | (table[1][0] << 8) | (table[0][0]);
+   h0 = (table[0][1] << 24) | (table[2][1] << 16) | (table[1][1] << 8) | (table[0][1]);
+   l1 = (l0 >> 8); l1 |= (l1 << 24);
+@@ -476,7 +476,7 @@
+   h1 = (h0 << 8); h1 |= (h1 >> 24);
+   l2 = (l1 << 8); l2 |= (l2 >> 24);
+   h2 = (h1 << 8); h2 |= (h2 >> 24);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+   /* calculate lookup table */
+ #ifdef __SUNPRO_C
+@@ -564,11 +564,11 @@
+         dd = ((mlib_u32*)(d_array12 + (s0 & 0xF)))[1];
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       emask = (mlib_u32)((mlib_s32)(-1)) >> ((4 - (size - i)) * 8);
+ #else
+       emask = (mlib_s32)(-1) << ((4 - (size - i)) * 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       da[0] = (dd & emask) | (da[0] &~ emask);
+     }
+ 
+@@ -611,13 +611,13 @@
+ 
+   buffs = buff + size;
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+   l = (table[3][0] << 24) | (table[2][0] << 16) | (table[1][0] << 8) | (table[0][0]);
+   h = (table[3][1] << 24) | (table[2][1] << 16) | (table[1][1] << 8) | (table[0][1]);
+ #else
+   l = (table[0][0] << 24) | (table[1][0] << 16) | (table[2][0] << 8) | (table[3][0]);
+   h = (table[0][1] << 24) | (table[1][1] << 16) | (table[2][1] << 8) | (table[3][1]);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+   ((mlib_u32*)lh)[0] = l;  ((mlib_u32*)lh)[1] = l;
+   ((mlib_u32*)lh)[2] = l;  ((mlib_u32*)lh)[3] = h;
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c
+@@ -30,7 +30,7 @@
+ typedef union {
+   mlib_d64 db;
+   struct {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     mlib_s32 int1, int0;
+ #else
+     mlib_s32 int0, int1;
+--- jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c
+@@ -275,11 +275,11 @@
+       for (i = 0; j <= (b_size - 4); j += 4, i++) {
+         src0 = src1;
+         src1 = pws[i + 1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         pwd[i] = (src0 >> lshift) | (src1 << rshift);
+ #else
+         pwd[i] = (src0 << lshift) | (src1 >> rshift);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       }
+ 
+       sa += i << 2;
+@@ -381,11 +381,11 @@
+         for (; j <= (src_width - 4); j += 4) {
+           src0 = src1;
+           src1 = ps[1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           *((mlib_s32 *) (pdst_row + j)) = (src0 >> shl) | (src1 << shr);
+ #else
+           *((mlib_s32 *) (pdst_row + j)) = (src0 << shl) | (src1 >> shr);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           ps++;
+         }
+       }
+@@ -414,11 +414,11 @@
+         for (; j <= (src_width - 8); j += 8) {
+           src0 = src1;
+           src1 = ps[1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           *((mlib_s64 *) (pdst_row + j)) = (src0 >> shl) | (src1 << shr);
+ #else
+           *((mlib_s64 *) (pdst_row + j)) = (src0 << shl) | (src1 >> shr);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           ps++;
+         }
+       }
+@@ -484,11 +484,11 @@
+         for (; j <= (src_width - 2); j += 2) {
+           src0 = src1;
+           src1 = ps[1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           *((mlib_s32 *) (pdst_row + j)) = (src0 >> 16) | (src1 << 16);
+ #else
+           *((mlib_s32 *) (pdst_row + j)) = (src0 << 16) | (src1 >> 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           ps++;
+         }
+       }
+@@ -516,11 +516,11 @@
+         for (; j <= (src_width - 4); j += 4) {
+           src0 = src1;
+           src1 = ps[1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           *((mlib_s64 *) (pdst_row + j)) = (src0 >> shl) | (src1 << shr);
+ #else
+           *((mlib_s64 *) (pdst_row + j)) = (src0 << shl) | (src1 >> shr);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           ps++;
+         }
+       }
+@@ -585,11 +585,11 @@
+         for (; j <= (src_width - 2); j += 2) {
+           src0 = src1;
+           src1 = ps[1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           *((mlib_s64 *) (pdst_row + j)) = (src0 >> 32) | (src1 << 32);
+ #else
+           *((mlib_s64 *) (pdst_row + j)) = (src0 << 32) | (src1 >> 32);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           ps++;
+         }
+       }
+@@ -687,11 +687,11 @@
+ #endif /* __SUNPRO_C */
+       for (; n > SIZE; n -= SIZE) {
+         s1 = *tmp++;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         *(TYPE *) dp = (s0 >> shl) | (s1 << shr);
+ #else
+         *(TYPE *) dp = (s0 << shl) | (s1 >> shr);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = s1;
+         dp += SIZE;
+         sp += SIZE;
+--- jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c
++++ jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c
+@@ -120,7 +120,7 @@
+   }                                                               \
+ }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ /***************************************************************/
+ #define READ_U8_U8_ALIGN(table0, table1, table2, table3)        \
+@@ -163,7 +163,7 @@
+   t2 = *(mlib_u32*)((mlib_u8*)table2 + ((s0 >> 14)  & 0x3FC));  \
+   t3 = *(mlib_u32*)((mlib_u8*)table3 + ((s0 >> 22)  & 0x3FC))
+ 
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ 
+ /***********/
+ #define READ_U8_U8_ALIGN(table0, table1, table2, table3)        \
+@@ -206,7 +206,7 @@
+   t2 = *(mlib_u32*)((mlib_u8*)table2 + ((s0 >> 6)  & 0x3FC));   \
+   t3 = *(mlib_u32*)((mlib_u8*)table3 + ((s0 << 2)  & 0x3FC))
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ void mlib_c_ImageLookUp_U8_U8(const mlib_u8 *src,
+@@ -297,11 +297,11 @@
+         da[0] = t;
+         da++;
+         dp = (mlib_u8 *) da;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         *dp++ = tab[s2 >> 8];
+ #else
+         *dp++ = tab[s2 & 0xFF];
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         sp = (mlib_u8 *) sa;
+         i += 5;
+         for (; i < size; i++, dp++, sp++)
+@@ -403,11 +403,11 @@
+         da[0] = t;
+         da++;
+         dp = (mlib_u8 *) da;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         *dp++ = tab0[s2 >> 8];
+ #else
+         *dp++ = tab0[s2 & 0xFF];
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         sp = (mlib_u8 *) sa;
+         i += 5;
+ 
+@@ -544,11 +544,11 @@
+         da[0] = t;
+         da++;
+         dp = (mlib_u8 *) da;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         *dp++ = tab1[s2 >> 8];
+ #else
+         *dp++ = tab1[s2 & 0xFF];
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         sp = (mlib_u8 *) sa;
+         i += 5;
+ 
+@@ -694,11 +694,11 @@
+         da[0] = t;
+         da++;
+         dp = (mlib_u8 *) da;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         *dp++ = tab0[s2 >> 8];
+ #else
+         *dp++ = tab0[s2 & 0xFF];
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         sp = (mlib_u8 *) sa;
+         i += 5;
+ 
+@@ -1852,21 +1852,21 @@
+     s0 = tab0[0];
+     s1 = tab1[0];
+     for (i = 1; i < 256; i++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       s2 = (s1 << 8) + s0;
+ #else
+       s2 = (s0 << 8) + s1;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       s0 = tab0[i];
+       s1 = tab1[i];
+       tab[i - 1] = (mlib_u16) s2;
+     }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     s2 = (s1 << 8) + s0;
+ #else
+     s2 = (s0 << 8) + s1;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     tab[255] = (mlib_u16) s2;
+ 
+     for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
+@@ -1897,11 +1897,11 @@
+         for (i = 0; i < size - 3; i += 2, da++, sa += 2) {
+           t0 = tab[s0];
+           t1 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           t = (t1 << 16) + t0;
+ #else
+           t = (t0 << 16) + t1;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           s0 = sa[0];
+           s1 = sa[1];
+           da[0] = t;
+@@ -1909,11 +1909,11 @@
+ 
+         t0 = tab[s0];
+         t1 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t = (t1 << 16) + t0;
+ #else
+         t = (t0 << 16) + t1;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da[0] = t;
+         da++;
+ 
+@@ -1927,13 +1927,13 @@
+ 
+         if (off > 1) {
+           t0 = tab[sa[0]];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           dp[1] = (t0 >> 8);
+           dp[0] = t0;
+ #else
+           dp[0] = (t0 >> 8);
+           dp[1] = t0;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           sa++;
+           size--;
+           dp += 2;
+@@ -1941,11 +1941,11 @@
+ 
+         t0 = tab[sa[0]];
+         sa++;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         *dp++ = t0;
+ #else
+         *dp++ = (t0 >> 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+         da = (mlib_s32 *) dp;
+ 
+@@ -1959,11 +1959,11 @@
+         for (i = 0; i < size - 4; i += 2, da++, sa += 2) {
+           t1 = tab[s0];
+           t2 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           t = (t0 >> 8) + (t1 << 8) + (t2 << 24);
+ #else
+           t = (t0 << 24) + (t1 << 8) + (t2 >> 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           t0 = t2;
+           s0 = sa[0];
+           s1 = sa[1];
+@@ -1972,29 +1972,29 @@
+ 
+         t1 = tab[s0];
+         t2 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t = (t0 >> 8) + (t1 << 8) + (t2 << 24);
+ #else
+         t = (t0 << 24) + (t1 << 8) + (t2 >> 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da[0] = t;
+         da++;
+         dp = (mlib_u8 *) da;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         dp[0] = (t2 >> 8);
+ #else
+         dp[0] = t2;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+         if ((size & 1) == 0) {
+           t0 = tab[sa[0]];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           dp[2] = (t0 >> 8);
+           dp[1] = t0;
+ #else
+           dp[1] = (t0 >> 8);
+           dp[2] = t0;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         }
+       }
+     }
+@@ -2012,22 +2012,22 @@
+     s1 = tab1[0];
+     s2 = tab2[0];
+     for (i = 1; i < 256; i++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       s3 = (s2 << 24) + (s1 << 16) + (s0 << 8);
+ #else
+       s3 = (s0 << 16) + (s1 << 8) + s2;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       s0 = tab0[i];
+       s1 = tab1[i];
+       s2 = tab2[i];
+       tab[i - 1] = s3;
+     }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     s3 = (s2 << 24) + (s1 << 16) + (s0 << 8);
+ #else
+     s3 = (s0 << 16) + (s1 << 8) + s2;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     tab[255] = s3;
+ 
+     for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
+@@ -2064,24 +2064,24 @@
+       for (i = 0; i < size - 7; i += 4, da += 3, sa += 4) {
+         t0 = tab[s0];
+         t1 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         da[0] = (t0 >> 8) + (t1 << 16);
+         res2 = (t1 >> 16);
+ #else
+         da[0] = (t0 << 8) + (t1 >> 16);
+         res2 = (t1 << 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0];
+         s1 = sa[1];
+         t0 = tab[s0];
+         t1 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res2 += (t0 << 8);
+         res1 = (t0 >> 24) + t1;
+ #else
+         res2 += (t0 >> 8);
+         res1 = (t0 << 24) + t1;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[2];
+         s1 = sa[3];
+         da[1] = res2;
+@@ -2090,24 +2090,24 @@
+ 
+       t0 = tab[s0];
+       t1 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       da[0] = (t0 >> 8) + (t1 << 16);
+       res2 = (t1 >> 16);
+ #else
+       da[0] = (t0 << 8) + (t1 >> 16);
+       res2 = (t1 << 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       s0 = sa[0];
+       s1 = sa[1];
+       t0 = tab[s0];
+       t1 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       res2 += (t0 << 8);
+       res1 = (t0 >> 24) + t1;
+ #else
+       res2 += (t0 >> 8);
+       res1 = (t0 << 24) + t1;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       da[1] = res2;
+       da[2] = res1;
+       da += 3;
+@@ -2143,11 +2143,11 @@
+     s2 = tab2[0];
+     s3 = tab3[0];
+     for (i = 1; i < 256; i++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       s4 = (s3 << 24) + (s2 << 16) + (s1 << 8) + s0;
+ #else
+       s4 = (s0 << 24) + (s1 << 16) + (s2 << 8) + s3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       s0 = tab0[i];
+       s1 = tab1[i];
+       s2 = tab2[i];
+@@ -2155,11 +2155,11 @@
+       tab[i - 1] = s4;
+     }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     s4 = (s3 << 24) + (s2 << 16) + (s1 << 8) + s0;
+ #else
+     s4 = (s0 << 24) + (s1 << 16) + (s2 << 8) + s3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     tab[255] = s4;
+ 
+     for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
+@@ -2225,13 +2225,13 @@
+         for (i = 0; i < size - 4; i += 2, da += 2, sa += 2) {
+           t1 = tab[s0];
+           t2 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           res1 = (t0 >> shift) + (t1 << shift1);
+           res2 = (t1 >> shift) + (t2 << shift1);
+ #else
+           res1 = (t0 << shift) + (t1 >> shift1);
+           res2 = (t1 << shift) + (t2 >> shift1);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           t0 = t2;
+           s0 = sa[0];
+           s1 = sa[1];
+@@ -2241,28 +2241,28 @@
+ 
+         t1 = tab[s0];
+         t2 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res1 = (t0 >> shift) + (t1 << shift1);
+         res2 = (t1 >> shift) + (t2 << shift1);
+ #else
+         res1 = (t0 << shift) + (t1 >> shift1);
+         res2 = (t1 << shift) + (t2 >> shift1);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da[0] = res1;
+         da[1] = res2;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = (da[2] >> shift1);
+         da[2] = (t2 >> shift) + (t0 << shift1);
+ #else
+         t0 = (da[2] << shift1);
+         da[2] = (t2 << shift) + (t0 >> shift1);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da += 2;
+         dp = (mlib_u8 *) da + (4 - off);
+ 
+         if ((size & 1) == 0) {
+           t0 = tab[sa[0]];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           dp[3] = (mlib_u8) (t0 >> 24);
+           dp[2] = (mlib_u8) (t0 >> 16);
+           dp[1] = (mlib_u8) (t0 >> 8);
+@@ -2272,7 +2272,7 @@
+           dp[1] = (mlib_u8) (t0 >> 16);
+           dp[2] = (mlib_u8) (t0 >> 8);
+           dp[3] = (mlib_u8) t0;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         }
+       }
+     }
+@@ -2348,13 +2348,13 @@
+         t3 = tab0[s1];
+         t4 = tab1[s1];
+         t5 = tab2[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         da[0] = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+         res2 = (t5 << 8) + t4;
+ #else
+         da[0] = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+         res2 = (t4 << 24) + (t5 << 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0];
+         s1 = sa[1];
+         t0 = tab0[s0];
+@@ -2363,13 +2363,13 @@
+         t3 = tab0[s1];
+         t4 = tab1[s1];
+         t5 = tab2[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res2 += ((t1 << 24) + (t0 << 16));
+         res1 = (t5 << 24) + (t4 << 16) + (t3 << 8) + t2;
+ #else
+         res2 += ((t0 << 8) + t1);
+         res1 = (t2 << 24) + (t3 << 16) + (t4 << 8) + t5;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[2];
+         s1 = sa[3];
+         da[1] = res2;
+@@ -2382,13 +2382,13 @@
+       t3 = tab0[s1];
+       t4 = tab1[s1];
+       t5 = tab2[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       da[0] = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+       res2 = (t5 << 8) + t4;
+ #else
+       da[0] = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+       res2 = (t4 << 24) + (t5 << 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       s0 = sa[0];
+       s1 = sa[1];
+       t0 = tab0[s0];
+@@ -2397,13 +2397,13 @@
+       t3 = tab0[s1];
+       t4 = tab1[s1];
+       t5 = tab2[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       res2 += ((t1 << 24) + (t0 << 16));
+       res1 = (t5 << 24) + (t4 << 16) + (t3 << 8) + t2;
+ #else
+       res2 += ((t0 << 8) + t1);
+       res1 = (t2 << 24) + (t3 << 16) + (t4 << 8) + t5;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       da[1] = res2;
+       da[2] = res1;
+       da += 3;
+@@ -2455,11 +2455,11 @@
+           t1 = tab1[s0];
+           t2 = tab2[s0];
+           t3 = tab3[s0];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           res = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+ #else
+           res = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           s0 = sa[0];
+           da[0] = res;
+         }
+@@ -2468,11 +2468,11 @@
+         t1 = tab1[s0];
+         t2 = tab2[s0];
+         t3 = tab3[s0];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+ #else
+         res = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da[0] = res;
+ 
+       }
+@@ -2496,11 +2496,11 @@
+         t2 = tab2[s0];
+         t3 = tab3[s0];
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res1 = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+ #else
+         res1 = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+         s0 = sa[0];
+         sa++;
+@@ -2513,13 +2513,13 @@
+           t1 = tab1[s0];
+           t2 = tab2[s0];
+           t3 = tab3[s0];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           res2 = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+           res = (res1 >> shift) + (res2 << shift1);
+ #else
+           res2 = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+           res = (res1 << shift) + (res2 >> shift1);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           res1 = res2;
+           s0 = sa[0];
+           da[0] = res;
+@@ -2529,21 +2529,21 @@
+         t1 = tab1[s0];
+         t2 = tab2[s0];
+         t3 = tab3[s0];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res2 = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+         res = (res1 >> shift) + (res2 << shift1);
+ #else
+         res2 = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+         res = (res1 << shift) + (res2 >> shift1);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da[0] = res;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res1 = (da[1] >> shift1);
+         da[1] = (res2 >> shift) + (res1 << shift1);
+ #else
+         res1 = (da[1] << shift1);
+         da[1] = (res2 << shift) + (res1 >> shift1);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       }
+     }
+   }
+@@ -2617,13 +2617,13 @@
+         t3 = tab0[s1];
+         t4 = tab1[s1];
+         t5 = tab2[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         da[0] = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+         res2 = (t5 << 8) + t4;
+ #else
+         da[0] = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+         res2 = (t4 << 24) + (t5 << 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0];
+         s1 = sa[1];
+         t0 = tab0[s0];
+@@ -2632,13 +2632,13 @@
+         t3 = tab0[s1];
+         t4 = tab1[s1];
+         t5 = tab2[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res2 += ((t1 << 24) + (t0 << 16));
+         res1 = (t5 << 24) + (t4 << 16) + (t3 << 8) + t2;
+ #else
+         res2 += ((t0 << 8) + t1);
+         res1 = (t2 << 24) + (t3 << 16) + (t4 << 8) + t5;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[2];
+         s1 = sa[3];
+         da[1] = res2;
+@@ -2651,13 +2651,13 @@
+       t3 = tab0[s1];
+       t4 = tab1[s1];
+       t5 = tab2[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       da[0] = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+       res2 = (t5 << 8) + t4;
+ #else
+       da[0] = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+       res2 = (t4 << 24) + (t5 << 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       s0 = sa[0];
+       s1 = sa[1];
+       t0 = tab0[s0];
+@@ -2666,13 +2666,13 @@
+       t3 = tab0[s1];
+       t4 = tab1[s1];
+       t5 = tab2[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       res2 += ((t1 << 24) + (t0 << 16));
+       res1 = (t5 << 24) + (t4 << 16) + (t3 << 8) + t2;
+ #else
+       res2 += ((t0 << 8) + t1);
+       res1 = (t2 << 24) + (t3 << 16) + (t4 << 8) + t5;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       da[1] = res2;
+       da[2] = res1;
+       da += 3;
+@@ -2724,11 +2724,11 @@
+           t1 = tab1[s0];
+           t2 = tab2[s0];
+           t3 = tab3[s0];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           res = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+ #else
+           res = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           s0 = sa[0];
+           da[0] = res;
+         }
+@@ -2737,11 +2737,11 @@
+         t1 = tab1[s0];
+         t2 = tab2[s0];
+         t3 = tab3[s0];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+ #else
+         res = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da[0] = res;
+ 
+       }
+@@ -2765,11 +2765,11 @@
+         t2 = tab2[s0];
+         t3 = tab3[s0];
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res1 = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+ #else
+         res1 = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+         s0 = sa[0];
+         sa++;
+@@ -2782,13 +2782,13 @@
+           t1 = tab1[s0];
+           t2 = tab2[s0];
+           t3 = tab3[s0];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           res2 = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+           res = (res1 >> shift) + (res2 << shift1);
+ #else
+           res2 = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+           res = (res1 << shift) + (res2 >> shift1);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           res1 = res2;
+           s0 = sa[0];
+           da[0] = res;
+@@ -2798,21 +2798,21 @@
+         t1 = tab1[s0];
+         t2 = tab2[s0];
+         t3 = tab3[s0];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res2 = (t3 << 24) + (t2 << 16) + (t1 << 8) + t0;
+         res = (res1 >> shift) + (res2 << shift1);
+ #else
+         res2 = (t0 << 24) + (t1 << 16) + (t2 << 8) + t3;
+         res = (res1 << shift) + (res2 >> shift1);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da[0] = res;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res1 = (da[1] >> shift1);
+         da[1] = (res2 >> shift) + (res1 << shift1);
+ #else
+         res1 = (da[1] << shift1);
+         da[1] = (res2 << shift) + (res1 >> shift1);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       }
+     }
+   }
+@@ -2863,21 +2863,21 @@
+     s0 = tab0[0];
+     s1 = tab1[0];
+     for (i = 1; i < 256; i++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       s2 = (s1 << 16) + s0;
+ #else
+       s2 = (s0 << 16) + s1;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       s0 = tab0[i];
+       s1 = tab1[i];
+       tab[i - 1] = s2;
+     }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     s2 = (s1 << 16) + s0;
+ #else
+     s2 = (s0 << 16) + s1;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     tab[255] = s2;
+ 
+     for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
+@@ -2919,11 +2919,11 @@
+       else {
+ 
+         t0 = tab[*sa++];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         *dp++ = (mlib_u16) (t0);
+ #else
+         *dp++ = (mlib_u16) (t0 >> 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da = (mlib_u32 *) dp;
+         s0 = sa[0];
+         s1 = sa[1];
+@@ -2935,13 +2935,13 @@
+         for (i = 0; i < size - 4; i += 2, da += 2, sa += 2) {
+           t1 = tab[s0];
+           t2 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           res1 = (t0 >> 16) + (t1 << 16);
+           res2 = (t1 >> 16) + (t2 << 16);
+ #else
+           res1 = (t0 << 16) + (t1 >> 16);
+           res2 = (t1 << 16) + (t2 >> 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           t0 = t2;
+           s0 = sa[0];
+           s1 = sa[1];
+@@ -2951,32 +2951,32 @@
+ 
+         t1 = tab[s0];
+         t2 = tab[s1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res1 = (t0 >> 16) + (t1 << 16);
+         res2 = (t1 >> 16) + (t2 << 16);
+ #else
+         res1 = (t0 << 16) + (t1 >> 16);
+         res2 = (t1 << 16) + (t2 >> 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da[0] = res1;
+         da[1] = res2;
+         da += 2;
+         dp = (mlib_u16 *) da;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         dp[0] = (mlib_u16) (t2 >> 16);
+ #else
+         dp[0] = (mlib_u16) t2;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+         if ((size & 1) == 0) {
+           t0 = tab[sa[0]];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           dp[2] = (mlib_u16) (t0 >> 16);
+           dp[1] = (mlib_u16) t0;
+ #else
+           dp[1] = (mlib_u16) (t0 >> 16);
+           dp[2] = (mlib_u16) t0;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         }
+       }
+     }
+@@ -2994,13 +2994,13 @@
+     s1 = tab1[0];
+     s2 = tab2[0];
+     for (i = 1; i < 256; i++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       s3 = (s0 << 16);
+       s4 = (s2 << 16) + s1;
+ #else
+       s3 = s0;
+       s4 = (s1 << 16) + s2;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       s0 = tab0[i];
+       s1 = tab1[i];
+       s2 = tab2[i];
+@@ -3008,13 +3008,13 @@
+       tab[2 * i - 1] = s4;
+     }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     s4 = (s2 << 16) + s1;
+     tab[510] = s0 << 16;
+ #else
+     s4 = (s1 << 16) + s2;
+     tab[510] = s0;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     tab[511] = s4;
+ 
+     for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
+@@ -3050,13 +3050,13 @@
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab + s0 + 4);
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab + s1);
+         t3 = *(mlib_u32 *) ((mlib_u8 *) tab + s1 + 4);
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res1 = (t0 >> 16) + (t1 << 16);
+         res2 = (t1 >> 16) + t2;
+ #else
+         res1 = (t0 << 16) + (t1 >> 16);
+         res2 = (t1 << 16) + t2;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0] << 3;
+         s1 = sa[1] << 3;
+         da[0] = res1;
+@@ -3068,13 +3068,13 @@
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab + s0 + 4);
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab + s1);
+       t3 = *(mlib_u32 *) ((mlib_u8 *) tab + s1 + 4);
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       res1 = (t0 >> 16) + (t1 << 16);
+       res2 = (t1 >> 16) + t2;
+ #else
+       res1 = (t0 << 16) + (t1 >> 16);
+       res2 = (t1 << 16) + t2;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       da[0] = res1;
+       da[1] = res2;
+       da[2] = t3;
+@@ -3105,13 +3105,13 @@
+     s2 = tab2[0];
+     s3 = tab3[0];
+     for (i = 1; i < 256; i++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       s4 = (s1 << 16) + s0;
+       s5 = (s3 << 16) + s2;
+ #else
+       s4 = (s0 << 16) + s1;
+       s5 = (s2 << 16) + s3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       s0 = tab0[i];
+       s1 = tab1[i];
+       s2 = tab2[i];
+@@ -3120,13 +3120,13 @@
+       tab[2 * i - 1] = s5;
+     }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     s4 = (s1 << 16) + s0;
+     s5 = (s3 << 16) + s2;
+ #else
+     s4 = (s0 << 16) + s1;
+     s5 = (s2 << 16) + s3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+     tab[510] = s4;
+     tab[511] = s5;
+ 
+@@ -3181,18 +3181,18 @@
+ 
+         t4 = tab[2 * sa[0]];
+         t5 = tab[2 * sa[0] + 1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         *dp++ = (mlib_u16) (t4);
+ #else
+         *dp++ = (mlib_u16) (t4 >> 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         sa++;
+         da = (mlib_u32 *) dp;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         *da++ = (t4 >> 16) + (t5 << 16);
+ #else
+         *da++ = (t4 << 16) + (t5 >> 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0] << 3;
+         s1 = sa[1] << 3;
+         sa += 2;
+@@ -3205,7 +3205,7 @@
+           t1 = *(mlib_u32 *) ((mlib_u8 *) tab + s0 + 4);
+           t2 = *(mlib_u32 *) ((mlib_u8 *) tab + s1);
+           t3 = *(mlib_u32 *) ((mlib_u8 *) tab + s1 + 4);
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           res1 = (t5 >> 16) + (t0 << 16);
+           res2 = (t0 >> 16) + (t1 << 16);
+           res3 = (t1 >> 16) + (t2 << 16);
+@@ -3215,7 +3215,7 @@
+           res2 = (t0 << 16) + (t1 >> 16);
+           res3 = (t1 << 16) + (t2 >> 16);
+           res4 = (t2 << 16) + (t3 >> 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           s0 = sa[0] << 3;
+           s1 = sa[1] << 3;
+           da[0] = res1;
+@@ -3229,7 +3229,7 @@
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab + s0 + 4);
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab + s1);
+         t3 = *(mlib_u32 *) ((mlib_u8 *) tab + s1 + 4);
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         res1 = (t5 >> 16) + (t0 << 16);
+         res2 = (t0 >> 16) + (t1 << 16);
+         res3 = (t1 >> 16) + (t2 << 16);
+@@ -3239,36 +3239,36 @@
+         res2 = (t0 << 16) + (t1 >> 16);
+         res3 = (t1 << 16) + (t2 >> 16);
+         res4 = (t2 << 16) + (t3 >> 16);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         da[0] = res1;
+         da[1] = res2;
+         da[2] = res3;
+         da[3] = res4;
+         da += 4;
+         dp = (mlib_u16 *) da;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         dp[0] = (mlib_u16) (t3 >> 16);
+ #else
+         dp[0] = (mlib_u16) t3;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+         if ((size & 1) == 0) {
+           t0 = tab[2 * sa[0]];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           dp[2] = (mlib_u16) (t0 >> 16);
+           dp[1] = (mlib_u16) t0;
+ #else
+           dp[1] = (mlib_u16) (t0 >> 16);
+           dp[2] = (mlib_u16) t0;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           t0 = tab[2 * sa[0] + 1];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+           dp[4] = (mlib_u16) (t0 >> 16);
+           dp[3] = (mlib_u16) t0;
+ #else
+           dp[3] = (mlib_u16) (t0 >> 16);
+           dp[4] = (mlib_u16) t0;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         }
+       }
+     }
+@@ -3439,7 +3439,7 @@
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+       for (i = 0; i < size - 7; i += 4, dp += 8, sa++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 << 2) & 0x3FC));
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 6) & 0x3FC));
+@@ -3449,12 +3449,12 @@
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 22) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 14) & 0x3FC));
+         t3 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         dp[0] = t0;
+         dp[1] = t1;
+         dp[2] = t2;
+         dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 14) & 0x3FC));
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 22) & 0x3FC));
+@@ -3464,7 +3464,7 @@
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 6) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 << 2) & 0x3FC));
+         t3 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0];
+         dp[4] = t0;
+         dp[5] = t1;
+@@ -3472,7 +3472,7 @@
+         dp[7] = t3;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 << 2) & 0x3FC));
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 6) & 0x3FC));
+@@ -3482,12 +3482,12 @@
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 22) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 14) & 0x3FC));
+       t3 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[0] = t0;
+       dp[1] = t1;
+       dp[2] = t2;
+       dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 14) & 0x3FC));
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 22) & 0x3FC));
+@@ -3497,7 +3497,7 @@
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 6) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 << 2) & 0x3FC));
+       t3 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[4] = t0;
+       dp[5] = t1;
+       dp[6] = t2;
+@@ -3545,7 +3545,7 @@
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+       for (i = 0; i < size - 7; i += 4, dp += 12, sa++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 << 2) & 0x3FC));
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 << 2) & 0x3FC));
+@@ -3559,14 +3559,14 @@
+         t3 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 14) & 0x3FC));
+         t4 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+         t5 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 14) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         dp[0] = t0;
+         dp[1] = t1;
+         dp[2] = t2;
+         dp[3] = t3;
+         dp[4] = t4;
+         dp[5] = t5;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 14) & 0x3FC));
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 14) & 0x3FC));
+@@ -3580,7 +3580,7 @@
+         t3 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 << 2) & 0x3FC));
+         t4 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+         t5 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 << 2) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0];
+         dp[6] = t0;
+         dp[7] = t1;
+@@ -3590,7 +3590,7 @@
+         dp[11] = t5;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 << 2) & 0x3FC));
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 << 2) & 0x3FC));
+@@ -3604,14 +3604,14 @@
+       t3 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 14) & 0x3FC));
+       t4 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+       t5 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 14) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[0] = t0;
+       dp[1] = t1;
+       dp[2] = t2;
+       dp[3] = t3;
+       dp[4] = t4;
+       dp[5] = t5;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 14) & 0x3FC));
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 14) & 0x3FC));
+@@ -3625,7 +3625,7 @@
+       t3 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 << 2) & 0x3FC));
+       t4 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+       t5 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 << 2) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[6] = t0;
+       dp[7] = t1;
+       dp[8] = t2;
+@@ -3678,7 +3678,7 @@
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+       for (i = 0; i < size - 7; i += 4, dp += 16, sa++) {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 << 2) & 0x3FC));
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 << 2) & 0x3FC));
+@@ -3688,12 +3688,12 @@
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 22) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 22) & 0x3FC));
+         t3 = *(mlib_u32 *) ((mlib_u8 *) tab3 + ((s0 >> 22) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         dp[0] = t0;
+         dp[1] = t1;
+         dp[2] = t2;
+         dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 6) & 0x3FC));
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 6) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 6) & 0x3FC));
+@@ -3703,12 +3703,12 @@
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 14) & 0x3FC));
+         t3 = *(mlib_u32 *) ((mlib_u8 *) tab3 + ((s0 >> 14) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         dp[4] = t0;
+         dp[5] = t1;
+         dp[6] = t2;
+         dp[7] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 14) & 0x3FC));
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 14) & 0x3FC));
+@@ -3718,12 +3718,12 @@
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 6) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 6) & 0x3FC));
+         t3 = *(mlib_u32 *) ((mlib_u8 *) tab3 + ((s0 >> 6) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         dp[8] = t0;
+         dp[9] = t1;
+         dp[10] = t2;
+         dp[11] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 22) & 0x3FC));
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 22) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 22) & 0x3FC));
+@@ -3733,7 +3733,7 @@
+         t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+         t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 << 2) & 0x3FC));
+         t3 = *(mlib_u32 *) ((mlib_u8 *) tab3 + ((s0 << 2) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         s0 = sa[0];
+         dp[12] = t0;
+         dp[13] = t1;
+@@ -3741,7 +3741,7 @@
+         dp[15] = t3;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 << 2) & 0x3FC));
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 << 2) & 0x3FC));
+@@ -3751,12 +3751,12 @@
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 22) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 22) & 0x3FC));
+       t3 = *(mlib_u32 *) ((mlib_u8 *) tab3 + ((s0 >> 22) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[0] = t0;
+       dp[1] = t1;
+       dp[2] = t2;
+       dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 6) & 0x3FC));
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 6) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 6) & 0x3FC));
+@@ -3766,12 +3766,12 @@
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 14) & 0x3FC));
+       t3 = *(mlib_u32 *) ((mlib_u8 *) tab3 + ((s0 >> 14) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[4] = t0;
+       dp[5] = t1;
+       dp[6] = t2;
+       dp[7] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 14) & 0x3FC));
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 14) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 14) & 0x3FC));
+@@ -3781,12 +3781,12 @@
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 6) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 6) & 0x3FC));
+       t3 = *(mlib_u32 *) ((mlib_u8 *) tab3 + ((s0 >> 6) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[8] = t0;
+       dp[9] = t1;
+       dp[10] = t2;
+       dp[11] = t3;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+       t0 = *(mlib_u32 *) ((mlib_u8 *) tab0 + ((s0 >> 22) & 0x3FC));
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 >> 22) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 >> 22) & 0x3FC));
+@@ -3796,7 +3796,7 @@
+       t1 = *(mlib_u32 *) ((mlib_u8 *) tab1 + ((s0 << 2) & 0x3FC));
+       t2 = *(mlib_u32 *) ((mlib_u8 *) tab2 + ((s0 << 2) & 0x3FC));
+       t3 = *(mlib_u32 *) ((mlib_u8 *) tab3 + ((s0 << 2) & 0x3FC));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+       dp[12] = t0;
+       dp[13] = t1;
+       dp[14] = t2;
+--- jdk/src/share/native/sun/awt/medialib/mlib_image.h
++++ jdk/src/share/native/sun/awt/medialib/mlib_image.h
+@@ -27,9 +27,6 @@
+ #ifndef MLIB_IMAGE_H
+ #define MLIB_IMAGE_H
+ 
+-#ifdef MACOSX
+-#include <machine/endian.h>
+-#endif
+ #include <mlib_types.h>
+ #include <mlib_status.h>
+ #include <mlib_sys.h>
 --- jdk/src/share/native/sun/awt/medialib/mlib_sys.c
 +++ jdk/src/share/native/sun/awt/medialib/mlib_sys.c
 @@ -26,7 +26,7 @@
@@ -6061,15 +8595,49 @@
  #include <unistd.h>
  #include <sys/param.h>
  #else
-@@ -92,7 +92,7 @@
+@@ -92,6 +92,9 @@
     * alignment. -- from stdlib.h of MS VC++5.0.
     */
    return (void *) malloc(size);
--#elif defined(MACOSX)
-+#elif defined(_ALLBSD_SOURCE)
++#elif defined(__FreeBSD__)
++  void *ret;
++  return posix_memalign(&ret, 8, size) ? NULL : ret;
+ #elif defined(MACOSX)
    return valloc(size);
  #else
-   return (void *) memalign(8, size);
+--- jdk/src/share/native/sun/font/layout/LEStandalone.h
++++ jdk/src/share/native/sun/font/layout/LEStandalone.h
+@@ -136,7 +136,7 @@
+ #define U_CAPI extern "C"
+ 
+ #if !defined(U_IS_BIG_ENDIAN)
+-    #ifdef _LITTLE_ENDIAN
++    #ifdef VM_LITTLE_ENDIAN
+         #define U_IS_BIG_ENDIAN 0
+     #endif
+ #endif
+--- jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c
++++ jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c
+@@ -182,7 +182,7 @@
+         return 0L;
+     }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     /* Reversing data packed into int for LE archs */
+     if (isInIntPacked) {
+         inFormatter ^= DOSWAP_SH(1);
+--- jdk/src/share/native/sun/java2d/cmm/lcms/lcms2.h
++++ jdk/src/share/native/sun/java2d/cmm/lcms/lcms2.h
+@@ -202,7 +202,7 @@
+ // Try to detect big endian platforms. This list can be endless, so only some checks are performed over here.
+ // you can pass this toggle to the compiler by using -DCMS_USE_BIG_ENDIAN or something similar
+ 
+-#if defined(_HOST_BIG_ENDIAN) || defined(__BIG_ENDIAN__) || defined(WORDS_BIGENDIAN)
++#if defined(_HOST_BIG_ENDIAN) || defined(__BIG_ENDIAN__) || defined(WORDS_BIGENDIAN) || defined(VM_BIG_ENDIAN)
+ #   define CMS_USE_BIG_ENDIAN      1
+ #endif
+ 
 --- jdk/src/share/native/sun/management/DiagnosticCommandImpl.c
 +++ jdk/src/share/native/sun/management/DiagnosticCommandImpl.c
 @@ -26,6 +26,7 @@
@@ -6091,6 +8659,17 @@
      }
  
      gc_stat.usage_before_gc = usageBeforeGC;
+--- jdk/src/solaris/back/util_md.h
++++ jdk/src/solaris/back/util_md.h
+@@ -51,7 +51,7 @@
+ 
+ /* On little endian machines, convert java big endian numbers. */
+ 
+-#if defined(_LITTLE_ENDIAN)
++#if defined(VM_LITTLE_ENDIAN)
+ 
+ #define HOST_TO_JAVA_CHAR(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
+ #define HOST_TO_JAVA_SHORT(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
 --- jdk/src/solaris/bin/ergo_i586.c
 +++ jdk/src/solaris/bin/ergo_i586.c
 @@ -106,7 +106,7 @@
@@ -6162,6 +8741,35 @@
  #endif
  
  #define JVM_DLL         "libjvm.so"
+--- jdk/src/solaris/classes/sun/awt/X11FontManager.java
++++ jdk/src/solaris/classes/sun/awt/X11FontManager.java
+@@ -213,7 +213,7 @@
+         if (fontID != null) {
+             fileName = (String)fontNameMap.get(fontID);
+             /* On Linux check for the Lucida Oblique fonts */
+-            if (fileName == null && FontUtilities.isLinux && !isOpenJDK()) {
++            if (fileName == null && (FontUtilities.isLinux || FontUtilities.isBSD) && !isOpenJDK()) {
+                 if (oblmap == null) {
+                     initObliqueLucidaFontMap();
+                 }
+@@ -712,7 +712,7 @@
+         if (fontConfigDirs == null) {
+             return;
+         }
+-        if (FontUtilities.isLinux) {
++        if (FontUtilities.isLinux || FontUtilities.isBSD) {
+             fontConfigDirs.add(jreLibDirName+File.separator+"oblique-fonts");
+         }
+         fontdirs = (String[])fontConfigDirs.toArray(new String[0]);
+@@ -740,7 +740,7 @@
+          */
+         FontConfiguration mFontConfig = new MFontConfiguration(this);
+         if (FontUtilities.isOpenSolaris ||
+-            (FontUtilities.isLinux &&
++            ((FontUtilities.isLinux || FontUtilities.isBSD) &&
+              (!mFontConfig.foundOsSpecificFile() ||
+               !mFontConfig.fontFilesArePresent()) ||
+              (FontUtilities.isSolaris && !mFontConfig.fontFilesArePresent()))) {
 --- jdk/src/solaris/classes/sun/net/PortConfig.java
 +++ jdk/src/solaris/classes/sun/net/PortConfig.java
 @@ -52,7 +52,7 @@
@@ -6230,6 +8838,16 @@
          if (osname.contains("OS X"))
              return createProvider("sun.nio.fs.MacOSXFileSystemProvider");
          throw new AssertionError("Platform not recognized");
+--- jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java
++++ jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java
+@@ -130,6 +130,7 @@
+ 
+     static boolean isBSD() {
+         return (osname.equals("Linux") ||
++                osname.endsWith("BSD") ||
+                 osname.contains("OS X"));
+     }
+ 
 --- jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java
 +++ jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java
 @@ -266,7 +266,7 @@
@@ -6241,6 +8859,17 @@
              }
              BsdVirtualMachine.write(fd, b, 0, b.length);
          }
+--- jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c
++++ jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c
+@@ -140,7 +140,7 @@
+                                       (float) ((int) sr->samp_rates[s]),
+                                       DAUDIO_PCM, /* encoding - let's only do PCM */
+                                       (bits[b] > 8)?TRUE:TRUE, /* isSigned */
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+                                       FALSE /* little endian */
+ #else
+                                       (bits[b] > 8)?TRUE:FALSE  /* big endian */
 --- jdk/src/solaris/native/common/jni_util_md.c
 +++ jdk/src/solaris/native/common/jni_util_md.c
 @@ -28,6 +28,7 @@
@@ -6251,6 +8880,33 @@
  
  jstring nativeNewStringPlatform(JNIEnv *env, const char *str) {
      return NULL;
+--- jdk/src/solaris/native/java/lang/java_props_md.c
++++ jdk/src/solaris/native/java/lang/java_props_md.c
+@@ -552,23 +552,11 @@
+     sprops.sun_jnu_encoding = sprops.encoding;
+ #endif
+ 
+-#ifdef _ALLBSD_SOURCE
+-#if BYTE_ORDER == _LITTLE_ENDIAN
+-     sprops.unicode_encoding = "UnicodeLittle";
+- #else
+-     sprops.unicode_encoding = "UnicodeBig";
+- #endif
+-#else /* !_ALLBSD_SOURCE */
+-#ifdef __linux__
+-#if __BYTE_ORDER == __LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+     sprops.unicode_encoding = "UnicodeLittle";
+ #else
+     sprops.unicode_encoding = "UnicodeBig";
+ #endif
+-#else
+-    sprops.unicode_encoding = "UnicodeBig";
+-#endif
+-#endif /* _ALLBSD_SOURCE */
+ 
+     /* user properties */
+     {
 --- jdk/src/solaris/native/java/net/Inet4AddressImpl.c
 +++ jdk/src/solaris/native/java/net/Inet4AddressImpl.c
 @@ -36,20 +36,13 @@
@@ -6690,6 +9346,112 @@
      }
      sprintf(buf, (const char *)"GMT%c%02d:%02d",
              sign, (int)(offset/3600), (int)((offset%3600)/60));
+--- jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c
++++ jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c
+@@ -63,9 +63,6 @@
+  *    MLIB_EDGE_SRC_PADDED
+  */
+ 
+-#ifdef MACOSX
+-#include <machine/endian.h>
+-#endif
+ #include <mlib_image.h>
+ #include <mlib_ImageZoom.h>
+ 
+@@ -102,7 +99,7 @@
+ 
+ /***************************************************************/
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ 
+ static const mlib_u32 mlib_bit_mask4[16] = {
+   0x00000000u, 0xFF000000u, 0x00FF0000u, 0xFFFF0000u,
+@@ -111,7 +108,7 @@
+   0x0000FFFFu, 0xFF00FFFFu, 0x00FFFFFFu, 0xFFFFFFFFu
+ };
+ 
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ 
+ static const mlib_u32 mlib_bit_mask4[16] = {
+   0x00000000u, 0x000000FFu, 0x0000FF00u, 0x0000FFFFu,
+@@ -120,7 +117,7 @@
+   0xFFFF0000u, 0xFFFF00FFu, 0xFFFFFF00u, 0xFFFFFFFFu
+ };
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ 
+@@ -344,11 +341,11 @@
+ #ifdef _NO_LONGLONG
+ 
+ typedef struct {
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+   mlib_u32 uint1, uint0;
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+   mlib_u32 uint0, uint1;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ } two_uint;
+ 
+ /***************************************************************/
+@@ -511,11 +508,11 @@
+         DTYPE mask;
+         MASK(mask);
+         off *= 8;
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         LSHIFT(dd_old, da[0], 64 - off);
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+         RSHIFT(dd_old, da[0], 64 - off);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+ 
+ #ifdef __SUNPRO_C
+ #pragma pipeloop(0)
+@@ -540,30 +537,30 @@
+ 
+           res = (res & 0xff) | (res >> 8);
+           dd = gray_mask[res];
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ /* *da++ = (dd_old >> (64 - off)) | (dd << off);*/
+           RSHIFT(dd_old, dd_old, 64 - off);
+           LSHIFT(dtmp, dd, off);
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ /* *da++ = (dd_old << (64 - off)) | (dd >> off);*/
+           LSHIFT(dd_old, dd_old, 64 - off);
+           RSHIFT(dtmp, dd, off);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+           LOGIC(*da++, dd_old, dtmp, |);
+           dd_old = dd;
+         }
+ 
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+ /* da[0] = (dd_old >> (64 - off)) | (da[0] & ((mlib_u64)((mlib_s64) -1) << off));*/
+         LSHIFT(dtmp, mask, off);
+         LOGIC(dtmp, da[0], dtmp, &);
+         RSHIFT(dtmp1, dd_old, 64 - off);
+-#else /* _LITTLE_ENDIAN */
++#else /* VM_LITTLE_ENDIAN */
+ /* da[0] = (dd_old << (64 - off)) | (da[0] & ((mlib_u64)((mlib_s64) -1) >> off));*/
+         RSHIFT(dtmp, mask, off);
+         LOGIC(dtmp, da[0], dtmp, &);
+         LSHIFT(dtmp1, dd_old, 64 - off);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* VM_LITTLE_ENDIAN */
+         LOGIC(da[0], dtmp, dtmp1, |);
+       }
+       else {                                               /* aligned */
 --- jdk/src/solaris/native/sun/management/OperatingSystemImpl.c
 +++ jdk/src/solaris/native/sun/management/OperatingSystemImpl.c
 @@ -342,7 +342,13 @@
@@ -6810,6 +9572,26 @@
  #include <sys/un.h>
  #include <fcntl.h>
  
+--- jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp
++++ jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp
+@@ -308,7 +308,7 @@
+                                       DAUDIO_PCM,
+                                       (bitsArray[bitIndex]==8)?FALSE:TRUE,  /* signed */
+                                       (bitsArray[bitIndex]==8)?FALSE:
+-#ifndef _LITTLE_ENDIAN
++#ifndef VM_LITTLE_ENDIAN
+                                       TRUE /* big endian */
+ #else
+                                       FALSE /* little endian */
+@@ -860,7 +860,7 @@
+         return NULL;
+     }
+     if (sampleSizeInBits > 8 &&
+-#ifdef _LITTLE_ENDIAN
++#ifdef VM_LITTLE_ENDIAN
+         isBigEndian
+ #else
+         !isBigEndian
 --- make/Main.gmk
 +++ make/Main.gmk
 @@ -58,7 +58,11 @@
@@ -6852,3 +9634,14 @@
  
    ifneq (,$$($1_BIN))
      $$(error BIN has been replaced with OBJECT_DIR)
+--- nashorn/test/script/jfx.js
++++ nashorn/test/script/jfx.js
+@@ -89,7 +89,7 @@
+     var sb = new StringBuffer(goldenDir);
+     if (OSInfo.getOSType() == OSType.WINDOWS) {
+         f2 = new File(sb.append(fsep + "windows.png").toString());
+-    } else if (OSInfo.getOSType() == OSType.LINUX) {
++    } else if (OSInfo.getOSType() == OSType.LINUX || OSInfo.getOSType() == OSType.BSD) {
+         f2 = new File(sb.append(fsep + "linux.png").toString());
+     } else if (OSInfo.getOSType() == OSType.MACOSX) {
+         f2 = new File(sb.append(fsep + "macosx.png").toString());
