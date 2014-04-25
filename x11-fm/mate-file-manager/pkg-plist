@@ -15,9 +15,9 @@ include/caja/libcaja-extension/caja-property-page-provider.h
 include/caja/libcaja-extension/caja-property-page.h
 lib/girepository-1.0/Caja-2.0.typelib
 lib/libcaja-extension.a
-lib/libcaja-extension.la
 lib/libcaja-extension.so
 lib/libcaja-extension.so.1
+lib/libcaja-extension.so.1.4.0
 libdata/pkgconfig/libcaja-extension.pc
 libexec/caja-convert-metadata
 man/man1/caja.1.gz
@@ -319,7 +319,6 @@ share/pixmaps/caja/thumbnail_frame.png
 @dirrm share/caja/ui
 @dirrm share/caja/patterns
 @dirrm share/caja
-@dirrmtry lib/caja/extensions-2.0
-@dirrmtry lib/caja
+@dirrmtry share/mime/application
 @dirrm include/caja/libcaja-extension
 @dirrm include/caja
