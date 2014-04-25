@@ -3,7 +3,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.19.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -83,9 +83,6 @@ CATEGORIES+=	gnome
 USE_GNOME=	gconf2
 CONFIGURE_ARGS+=	--enable-mime
 GCONF_SCHEMAS=	${PORTNAME}.schemas
-PLIST_SUB+=	GNOME=""
-.else
-PLIST_SUB+=	GNOME="@comment "
 .endif
 
 post-patch:
