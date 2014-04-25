@@ -33,6 +33,7 @@ USE_MYSQL=	client
 USES=		gmake pkgconfig
 USE_OPENSSL=	yes
 USE_JAVA=	yes
+USE_GCC=	yes
 JAVA_VERSION=	1.6+
 JAVA_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:env
