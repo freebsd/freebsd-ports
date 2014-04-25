@@ -64,7 +64,7 @@
 name="sshguard"
 rcvar="sshguard_enable"
 
-load_rc_config $name
+load_rc_config sshguard
 
 : ${sshguard_enable:="NO"}
 : ${sshguard_blacklist="40:/var/db/sshguard/blacklist.db"}
@@ -74,14 +74,13 @@ load_rc_config $name
 : ${sshguard_whitelistfile="%%PREFIX%%/etc/sshguard.whitelist"}
 : ${sshguard_watch_logs="/var/log/auth.log:/var/log/maillog"}
 
-pidfile=${sshguard_pidfile:-"/var/run/${name}.pid"}
+pidfile=${sshguard_pidfile:-"/var/run/sshguard.pid"}
 
 command="/usr/sbin/daemon"
-actual_command="%%PREFIX%%/sbin/${name}"
+actual_command="%%PREFIX%%/sbin/sshguard"
 procname="${actual_command}"
-start_precmd="${name}_prestart"
-
-command_args="-cf ${actual_command} -b ${sshguard_blacklist} ${sshguard_watch_params} -a ${sshguard_safety_thresh} -p ${sshguard_pardon_min_interval} -s ${sshguard_prescribe_interval} -w ${sshguard_whitelistfile} -i ${sshguard_pidfile}"
+start_precmd="sshguard_prestart"
+command_args="-cf ${actual_command} -b ${sshguard_blacklist} \${sshguard_watch_params} -a ${sshguard_safety_thresh} -p ${sshguard_pardon_min_interval} -s ${sshguard_prescribe_interval} -w ${sshguard_whitelistfile} -i ${pidfile}"
 
 sshguard_prestart()
 {
