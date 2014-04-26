@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A collection of themes and icons for GNOME2
+COMMENT=	Collection of themes and icons for GNOME2
 
 BUILD_DEPENDS=	gtk-engines2>=2.15.0:${PORTSDIR}/x11-themes/gtk-engines2 \
 		icon-naming-utils>=0.8.7:${PORTSDIR}/x11-themes/icon-naming-utils
@@ -18,13 +18,12 @@ RUN_DEPENDS=	gtk-engines2>=2.15.0:${PORTSDIR}/x11-themes/gtk-engines2
 
 CONFLICTS=	clearlooks-metacity-0.*
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gettext gmake pkgconfig tar:bzip2
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack metacity gtk20
+USE_GNOME=	gnomeprefix intlhack metacity gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
