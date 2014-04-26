@@ -13,24 +13,21 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 system monitor program
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
-LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
-		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
+		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
 CONFLICTS=	gnome-system-monitor-3.[0-9]*
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libwnck gnomevfs2 gnomedocutils \
-		librsvg2
+USE_GNOME=	gnomeprefix intlhack libwnck gnomevfs2 gnomedocutils librsvg2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lutil
 
 GCONF_SCHEMAS=	gnome-system-monitor.schemas
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<glib/gtypes.h>|<glib.h>|g' \
 		-e 's|<glib/gmacros.h>|<glib.h>|g' \
