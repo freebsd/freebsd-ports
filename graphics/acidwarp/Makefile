@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/hacks/svgalib
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	SVGAlib demo which displays trippy mathematical images in cycling colors
 
 LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
