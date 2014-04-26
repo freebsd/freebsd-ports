@@ -1647,6 +1647,9 @@ share/icons/hicolor/48x48/apps/lyx.png
 %%DATADIR%%/lyx2lyx/lyx_2_0.py
 %%DATADIR%%/lyx2lyx/lyx_2_0.pyc
 %%DATADIR%%/lyx2lyx/lyx_2_0.pyo
+%%DATADIR%%/lyx2lyx/lyx_2_1.py
+%%DATADIR%%/lyx2lyx/lyx_2_1.pyc
+%%DATADIR%%/lyx2lyx/lyx_2_1.pyo
 %%DATADIR%%/lyx2lyx/parser_tools.py
 %%DATADIR%%/lyx2lyx/parser_tools.pyc
 %%DATADIR%%/lyx2lyx/parser_tools.pyo
