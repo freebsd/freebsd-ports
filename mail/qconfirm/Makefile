@@ -3,39 +3,41 @@
 
 PORTNAME=	qconfirm
 PORTVERSION=	0.14.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://smarden.org/qconfirm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter spam by requesting confirmation from sender
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/package/COPYING
+
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}
+
 ALL_TARGET=	default
 
-MAN1=		qconfirm.1 qconfirm-accept.1 qconfirm-check.1 \
-		qconfirm-check-mid.1 qconfirm-conf.1 \
-		qconfirm-cdb-check.1 qconfirm-cdb-update.1 \
-		qconfirm-control.1 qconfirm-inject.1 \
-		qconfirm-notice.1 qconfirm-return.1
-DOCS=		package/CHANGES package/COPYING package/README doc/*.html
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
+	${ECHO_CMD} "${CC} ${LDFLAGS}" > ${WRKSRC}/src/conf-ld
 
 do-build:
-	cd ${WRKSRC} && package/compile
-	@${ECHO_MSG} "Type 'make test' to run self-tests"
-
-test:
-	cd ${WRKSRC} && package/check
+	(cd ${WRKSRC} && package/compile)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+	(cd ${WRKSRC}/command && ${INSTALL_PROGRAM} * \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/man && ${INSTALL_MAN} *.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html \
+		${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/package && ${INSTALL_DATA} CHANGES README \
+		${STAGEDIR}${DOCSDIR})
+
+test: build
+	(cd ${WRKSRC} && package/check)
 
 .include <bsd.port.mk>
