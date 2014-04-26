@@ -4,7 +4,7 @@
 
 PORTNAME=	policykit-gnome
 PORTVERSION=	0.9.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 DISTNAME=	PolicyKit-gnome-${PORTVERSION}
@@ -12,20 +12,18 @@ DISTNAME=	PolicyKit-gnome-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME frontend to the PolicyKit framework
 
-LIB_DEPENDS=	polkit.2:${PORTSDIR}/sysutils/policykit
+LIB_DEPENDS=	libpolkit.so:${PORTSDIR}/sysutils/policykit
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext pkgconfig
-USE_GNOME=	gnomehack intlhack gnomedocutils gconf2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USE_GNOME=	intlhack gnomedocutils gconf2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--localstatedir=/var
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	polkit-gnome.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
