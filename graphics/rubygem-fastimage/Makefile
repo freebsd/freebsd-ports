@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fastimage
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	FastImage finds the size or type of an image
 
 LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-addressable>=2.3.5:${PORTSDIR}/www/rubygem-addressable
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
