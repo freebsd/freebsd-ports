@@ -60,8 +60,6 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Sonderpunkte.small.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Turnier.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Turnier.small.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Zählung.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Zählung.small.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/create_screenshots.sh
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Spielerkonfiguration.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Spielerkonfiguration.small.png
@@ -198,10 +196,6 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/symbols/thrown_kings.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/symbols/thrown_nines.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/symbols/thrown_nines_and_kings.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Änderungsliste.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Änderungsliste.small.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Über.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Über.small.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/player_config.html
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/problems.html
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/reservation.html
