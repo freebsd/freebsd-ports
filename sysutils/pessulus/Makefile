@@ -10,28 +10,25 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A lockdown editor for GNOME
+COMMENT=	Lockdown editor for GNOME
 
-USE_GMAKE=	yes
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2 pygnomedesktop
-WANT_GNOME=	yes
+OPTIONS_DEFINE=	DOCS
+
+USES=		gettext gmake tar:bzip2
+USE_GNOME=	gnomeprefix intlhack pygnome2 pygnomedesktop
 USE_PYTHON=	yes
-USES=		gettext
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 DOCS=		AUTHORS COPYING ChangeLog HACKING \
 		MAINTAINERS NEWS README TODO
 
-.ifndef (NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
