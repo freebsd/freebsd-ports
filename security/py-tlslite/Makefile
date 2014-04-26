@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tlslite
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.6
 CATEGORIES=	security python
-MASTER_SITES=	http://cloud.github.com/downloads/trevp/tlslite/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
