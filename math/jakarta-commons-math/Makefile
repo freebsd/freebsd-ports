@@ -3,76 +3,67 @@
 
 PORTNAME=	commons-math
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	math java
-MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
+MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}/:source1 \
+		http://repo1.maven.org/maven2/junit/junit/4.8.2/:source2
+MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-math,math,}/:source1
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz:source1 \
+		junit-4.8.2.jar:source2
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Java library of self-contained mathematics and statistics components
 
-BUILD_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVAJARDIR}/junit.jar:${PORTSDIR}/java/junit \
-		${JAVAJARDIR}/commons-discovery.jar:${PORTSDIR}/java/jakarta-commons-discovery
-RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVAJARDIR}/commons-discovery.jar:${PORTSDIR}/java/jakarta-commons-discovery
+LICENSE=	APACHE20
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	jar
-MAKE_ARGS=	-Dlibdir=${WRKDIR} -Dnoget=true \
-		-Dcommons-logging.jar="file://${JAVAJARDIR}/commons-logging.jar" \
-		-Dcommons-discovery.jar="file://${JAVAJARDIR}/commons-discovery.jar"
+MAKE_ARGS=	-Dlibdir=${WRKDIR} -Dnoget=true
 
-COMMONS_LOGGING_API=	${LOCALBASE}/share/doc/commons-logging/api
-.if exists(${COMMONS_LOGGING_API})
-MAKE_ARGS+=	-Dcommons-logging.api=${COMMONS_LOGGING_API}
-.endif
+JARFILE=	${PORTNAME:S,3,,}-${PORTVERSION}.jar
+DESTJARFILE=	${PORTNAME}.jar
+PLIST_FILES+=	%%JAVAJARDIR%%/${DESTJARFILE}
 
-COMMONS_DISCOVERY_API=	${LOCALBASE}/share/doc/commons-discovery/api
-.if exists(${COMMONS_DISCOVERY_API})
-MAKE_ARGS+=	-Dcommons-logging.api=${COMMONS_DISCOVERY_API}
-.endif
+OPTIONS_DEFINE=	DOCS
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	javadoc
 OTHERDOCS=	LICENSE.txt NOTICE.txt
 PORTDOCS=	apidocs ${OTHERDOCS}
 .endif
-JARFILE=	${PORTNAME}-${PORTVERSION}.jar
-DESTJARFILE=	${PORTNAME}.jar
-PLIST_FILES+=	%%JAVAJARDIR%%/${DESTJARFILE}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${ECHO_CMD}) | ${TAIL} -n 1
+JDK_API=	${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${ECHO_CMD} | ${TAIL} -n 1
 .if ${JDK_API} != ""
-MAKE_ARGS+=	-Djdk.api=${JDK_API}
+MAKE_ARGS+=	-Djdk.api=$$(${JDK_API})
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e 's#junit-#junit#g' \
-			-e 's#/usr/share/junit#${JAVAJARDIR}#g' \
-			${WRKSRC}/build.xml
+post-extract:
+	${MKDIR} ${WRKSRC}/lib
+	${CP} ${DISTDIR}/junit-4.8.2.jar ${WRKSRC}/lib/
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${DESTJARFILE}
 	@${ECHO_MSG} " [ DONE ]"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/target \
-	  && ${FIND} -s apidocs -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} -s apidocs -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	  && ${FIND} -s apidocs -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
+	  && ${FIND} -s apidocs -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
+	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
