@@ -16,13 +16,11 @@ BUILD_DEPENDS=	gtk-engines2>=2.11.0:${PORTSDIR}/x11-themes/gtk-engines2 \
 		icon-naming-utils>=0.8.1:${PORTSDIR}/x11-themes/icon-naming-utils
 RUN_DEPENDS=	gtk-engines2>=2.11.0:${PORTSDIR}/x11-themes/gtk-engines2
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack libgnomeui intlhack
+USES=		gettext gmake pkgconfig tar:bzip2
+USE_GNOME=	libgnomeui intlhack
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
