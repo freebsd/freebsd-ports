@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	1.3.11
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -18,18 +17,13 @@ NODE_DEVEL_DESC=Use www/node-devel instead of www/node
 NO_BUILD=	yes
 USES=		tar:xz
 
-MAKE_ARGS+=	npm_config_prefix=${STAGEDIR}${PREFIX}
+MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
-PLIST_SUB+=	MANPREFIX="${MANPREFIX:S,${PREFIX}/,,}"
+PLIST_SUB=	MANPREFIX=lib/node_modules/npm
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNODE_DEVEL}
-RUN_DEPENDS+=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
-.else
-RUN_DEPENDS+=	node>=0.8.0:${PORTSDIR}/www/node
-.endif
+NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
+NODE_DEVEL_RUN_DEPENDS_OFF=	node>=0.8.0:${PORTSDIR}/www/node
 
 post-patch:
 	@${SED} -i '' -e 's|node cli.js|& --cache ${WRKDIR}/.cache|; /^install: / s| docclean||' ${WRKSRC}/Makefile
@@ -50,9 +44,9 @@ MS_VERSIONFILE=	${MS_WRKSRC}/.version
 MS_WRKSRC=	${WRKSRC}/tmp
 
 GITHUB_PROJECT=	${PORTNAME}
-GITHUB_TAGSURL=	https://github.com/isaacs/npm/tags
+GITHUB_TAGSURL=	https://github.com/npm/npm/tags
 GITHUB_TARBALL=	https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/archive/${GITHUB_VERSION}.tar.gz
-GITHUB_USER=	isaacs
+GITHUB_USER=	npm
 GITHUB_VERSION=	v${MS_VERSION}
 
 maketar: do-clean extract
@@ -66,13 +60,13 @@ maketar: do-clean extract
 	@${SED} -i '' -e '/manRoot/ s|, "share"||' ${MS_WRKSRC}/${MS_DISTNAME}/lib/build.js ${MS_WRKSRC}/${MS_DISTNAME}/lib/unbuild.js
 	@${SED} -i '' -e '1 s|#!/bin/bash|#!${LOCALBASE}/bin/bash|' ${MS_WRKSRC}/${MS_DISTNAME}/scripts/doc-build.sh
 	@${GREP} -lr share/man ${MS_WRKSRC}/${MS_DISTNAME}/doc/ ${MS_WRKSRC}/${MS_DISTNAME}/scripts/ | ${XARGS} -I % ${SED} -i '' 's|share/man|man|g' %
-	@cd ${MS_WRKSRC}/${MS_DISTNAME}/ && ${GMAKE}
+	@cd ${MS_WRKSRC}/${MS_DISTNAME}/ && ${MAKE_CMD}
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type d -exec ${CHMOD} 755 '{}' \;
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type f -exec ${CHMOD} 644 '{}' \;
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type f -name '*.sh' -exec ${CHMOD} 755 '{}' \;
 	@cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${MS_DISTNAME}.tar.xz ${MS_DISTNAME}/
 	@${SED} -i '' -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile
 	@sudo ${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/
-	@cd ${.CURDIR}/ && ${MAKE} makesum
+	@cd ${.CURDIR}/ && ${MAKE_CMD} makesum
 
 .include <bsd.port.mk>
