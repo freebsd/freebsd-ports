@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sshkit
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Toolkit for remotely running commands on groups of servers
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	rubygem-net-scp>=1.1.2:${PORTSDIR}/security/rubygem-net-scp \
-		rubygem-net-ssh>=0:${PORTSDIR}/security/rubygem-net-ssh \
+		rubygem-net-ssh>=2.8.0:${PORTSDIR}/security/rubygem-net-ssh \
 		rubygem-term-ansicolor>=0:${PORTSDIR}/devel/rubygem-term-ansicolor
 
 USE_RUBY=	yes
