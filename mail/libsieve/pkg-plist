@@ -3,10 +3,4 @@ include/sieve2_error.h
 lib/libsieve.la
 lib/libsieve.so
 lib/libsieve.so.1
-lib/pkgconfig/libsieve.pc
-share/licenses/libsieve-2.3.1/LGPL21
-share/licenses/libsieve-2.3.1/LICENSE
-share/licenses/libsieve-2.3.1/catalog.mk
-@dirrm share/licenses/libsieve-2.3.1
-@dirrmtry share/licenses
-@dirrmtry lib/pkgconfig
+libdata/pkgconfig/libsieve.pc
