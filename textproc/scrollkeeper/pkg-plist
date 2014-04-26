@@ -14,9 +14,16 @@ bin/scrollkeeper-uninstall
 bin/scrollkeeper-update
 etc/scrollkeeper.conf
 lib/libscrollkeeper.a
-lib/libscrollkeeper.la
 lib/libscrollkeeper.so
 lib/libscrollkeeper.so.0
+lib/libscrollkeeper.so.0.0.0
+man/man1/scrollkeeper-config.1.gz
+man/man1/scrollkeeper-gen-seriesid.1.gz
+man/man5/scrollkeeper.conf.5.gz
+man/man7/scrollkeeper.7.gz
+man/man8/scrollkeeper-preinstall.8.gz
+man/man8/scrollkeeper-rebuilddb.8.gz
+man/man8/scrollkeeper-update.8.gz
 share/omf/scrollkeeper/writing_scrollkeeper_omf_files-C.omf
 share/scrollkeeper/Templates/C/scrollkeeper_cl.xml
 share/scrollkeeper/Templates/am/scrollkeeper_cl.xml
