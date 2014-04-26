@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-pie
 PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -16,6 +16,7 @@ RUN_DEPENDS=	gnome-icons-faenza>=1.3:${PORTSDIR}/x11-themes/gnome-icons-faenza \
 		gnome-settings-daemon>=2.32.1_4:${PORTSDIR}/sysutils/gnome-settings-daemon
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libgee.so:${PORTSDIR}/devel/libgee06 \
+		librsvg-2.so:${PORTSDIR}/graphics/librsvg2 \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 USE_XORG=	xtst
