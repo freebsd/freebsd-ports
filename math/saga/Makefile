@@ -108,5 +108,6 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_saga_api-${PORTVERSION}.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsaga_gdi-${PORTVERSION}.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/saga/*.so
+	${RM} ${STAGEDIR}${PREFIX}/lib/saga/*.la
 
 .include <bsd.port.post.mk>
