@@ -4,25 +4,24 @@
 
 PORTNAME=	gnome-spell
 PORTVERSION=	1.0.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNOME/Bonobo component for spell checking
+COMMENT=	GNOME/Bonobo component for spell checking
 
-LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
-USES=		gettext gmake pkgconfig perl5
+USE_GNOME=	gnomeprefix intlhack libgnomeui
+USES=		gettext gmake libtool pathfix pkgconfig perl5 tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION=${PORTVERSION}
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@mkdir_p@|mkdir -p|g' \
 		${WRKSRC}/po/Makefile.in.in
