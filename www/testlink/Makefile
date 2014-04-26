@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	testlink
-PORTVERSION=	1.9.9
+PORTVERSION=	1.9.10
 CATEGORIES=	www devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/TestLink%201.9/TestLink%20${PORTVERSION}
@@ -23,7 +23,7 @@ PORTEXAMPLES=	*
 DOCS=	CHANGELOG CODE_REUSE README
 EXAMPLES=	db_sample file_examples samples.txt
 
-OPTIONS_DEFINE=		OPENLDAP EXTJS
+OPTIONS_DEFINE=		DOCS EXAMPLES OPENLDAP EXTJS
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	MYSQL PGSQL
 MYSQL_DESC=		back-end (use mysql PHP extension)
@@ -63,30 +63,26 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} cfg ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} custom ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} gui ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} install ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} locale ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} logs ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} third_party ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} upload_area ${STAGEDIR}${WWWDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.php* ${STAGEDIR}${WWWDIR}
-.if ${PORT_OPTIONS:MDOCS}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} cfg ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} custom ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} gui ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} install ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} locale ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} logs ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} third_party ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} upload_area ${STAGEDIR}${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.php* ${STAGEDIR}${WWWDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${TAR} ${EXCLUDE_EXAMPLES} -C ${WRKSRC}/docs -cf - . | ${TAR} --unlink -C ${STAGEDIR}${DOCSDIR} -xf -
-	@${LN} -s ${DOCSDIR} ${STAGEDIR}${WWWDIR}/docs
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+	${TAR} ${EXCLUDE_EXAMPLES} -C ${WRKSRC}/docs -cf - . | ${TAR} --unlink -C ${STAGEDIR}${DOCSDIR} -xf -
+	${LN} -s ${DOCSDIR} ${STAGEDIR}${WWWDIR}/docs
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EXAMPLES}
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 x-generate-plist: stage
 	${FIND} ${STAGEDIR}${WWWDIR} -type f | ${SORT} | ${SED} -e 's,${STAGEDIR}${WWWDIR},%%WWWDIR%%,g' > pkg-plist.new
