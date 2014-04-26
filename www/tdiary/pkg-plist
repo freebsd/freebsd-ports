@@ -146,6 +146,7 @@
 %%WWWDIR%%/misc/plugin/referer-antibot.rb
 %%WWWDIR%%/misc/plugin/referer-utf8.rb
 %%WWWDIR%%/misc/plugin/referer_scheme.rb
+%%WWWDIR%%/misc/plugin/search-default.rb
 %%WWWDIR%%/misc/plugin/search_control.rb
 %%WWWDIR%%/misc/plugin/search_form.rb
 %%WWWDIR%%/misc/plugin/sn.rb
@@ -153,6 +154,7 @@
 %%WWWDIR%%/misc/plugin/squeeze.rb
 %%WWWDIR%%/misc/plugin/src.rb
 %%WWWDIR%%/misc/plugin/tb-show.rb
+%%WWWDIR%%/misc/plugin/theme_online.rb
 %%WWWDIR%%/misc/plugin/title_list.rb
 %%WWWDIR%%/misc/plugin/title_tag.rb
 %%WWWDIR%%/misc/plugin/tlink.rb
@@ -233,6 +235,8 @@
 %%WWWDIR%%/tdiary/dispatcher/index_main.rb
 %%WWWDIR%%/tdiary/dispatcher/update_main.rb
 %%WWWDIR%%/tdiary/environment.rb
+%%WWWDIR%%/tdiary/extensions.rb
+%%WWWDIR%%/tdiary/extensions/core.rb
 %%WWWDIR%%/tdiary/filter.rb
 %%WWWDIR%%/tdiary/filter/default.rb
 %%WWWDIR%%/tdiary/filter/spam.rb
@@ -447,6 +451,7 @@
 %%WWWDIR%%/theme/book2-feminine/book2-feminine.css
 %%WWWDIR%%/theme/book3-sky/README
 %%WWWDIR%%/theme/book3-sky/book3-sky.css
+%%WWWDIR%%/theme/bootstrap/README
 %%WWWDIR%%/theme/bootstrap/bootstrap.css
 %%WWWDIR%%/theme/bootstrap/css/bootstrap-responsive.css
 %%WWWDIR%%/theme/bootstrap/css/bootstrap-responsive.min.css
@@ -471,6 +476,7 @@
 %%WWWDIR%%/theme/bubble/bubble_anchor_b.png
 %%WWWDIR%%/theme/bubble/bubble_back.png
 %%WWWDIR%%/theme/bubble/bubble_pre.png
+%%WWWDIR%%/theme/cafe-mint-julep-soda/README
 %%WWWDIR%%/theme/cafe-mint-julep-soda/cafe-mint-julep-soda-back-iphone.jpg
 %%WWWDIR%%/theme/cafe-mint-julep-soda/cafe-mint-julep-soda-back.jpg
 %%WWWDIR%%/theme/cafe-mint-julep-soda/cafe-mint-julep-soda-update.jpg
@@ -756,6 +762,7 @@
 %%WWWDIR%%/theme/gear/gear.css
 %%WWWDIR%%/theme/gear/gear_h2.png
 %%WWWDIR%%/theme/gear/gear_sanchor.png
+%%WWWDIR%%/theme/genjson.rb
 %%WWWDIR%%/theme/germany/README
 %%WWWDIR%%/theme/germany/germany.css
 %%WWWDIR%%/theme/germany/germany_anchor.png
@@ -947,6 +954,7 @@
 %%WWWDIR%%/theme/greentea3/README
 %%WWWDIR%%/theme/greentea3/greentea3.css
 %%WWWDIR%%/theme/greentea3/greentea3_back.jpg
+%%WWWDIR%%/theme/gustav/README
 %%WWWDIR%%/theme/gustav/gustav.css
 %%WWWDIR%%/theme/gustav/gustav_back.jpg
 %%WWWDIR%%/theme/gustav/gustav_back_iphone.jpg
@@ -1066,6 +1074,7 @@
 %%WWWDIR%%/theme/himawari/himawari_anchor.gif
 %%WWWDIR%%/theme/himawari/himawari_bg.jpg
 %%WWWDIR%%/theme/himawari/himawari_canchor.gif
+%%WWWDIR%%/theme/hsbt/README
 %%WWWDIR%%/theme/hsbt/hsbt.css
 %%WWWDIR%%/theme/husen/README
 %%WWWDIR%%/theme/husen/husen.css
@@ -1740,6 +1749,7 @@
 %%WWWDIR%%/theme/teacup/teacup_anchor2.png
 %%WWWDIR%%/theme/teacup/teacup_h1.png
 %%WWWDIR%%/theme/themebench.html
+%%WWWDIR%%/theme/themes.json
 %%WWWDIR%%/theme/thin/README
 %%WWWDIR%%/theme/thin/thin.css
 %%WWWDIR%%/theme/thin/thin_canchor.png
@@ -1883,6 +1893,8 @@
 %%WWWDIR%%/theme/zef/zef.css
 %%WWWDIR%%/update.fcgi
 %%WWWDIR%%/update.rb
+@exec mkdir -p %D/%%WWWDIR%%/tmp
+@dirrm %%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%/theme/zef
 @dirrm %%WWWDIR%%/theme/yukon
 @dirrm %%WWWDIR%%/theme/ymck
@@ -2237,6 +2249,7 @@
 @dirrm %%WWWDIR%%/tdiary/lang
 @dirrm %%WWWDIR%%/tdiary/io
 @dirrm %%WWWDIR%%/tdiary/filter
+@dirrm %%WWWDIR%%/tdiary/extensions
 @dirrm %%WWWDIR%%/tdiary/dispatcher
 @dirrm %%WWWDIR%%/tdiary/cache
 @dirrm %%WWWDIR%%/tdiary/application/extensions
