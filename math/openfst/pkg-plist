@@ -13,6 +13,7 @@ bin/fstconnect
 bin/fstconvert
 bin/fstdeterminize
 bin/fstdifference
+bin/fstdisambiguate
 bin/fstdraw
 bin/fstencode
 bin/fstepsnormalize
@@ -21,6 +22,8 @@ bin/fstequivalent
 bin/fstinfo
 bin/fstintersect
 bin/fstinvert
+bin/fstlinear
+bin/fstloglinearapply
 bin/fstmap
 bin/fstminimize
 bin/fstprint
@@ -66,6 +69,7 @@ include/fst/const-fst.h
 include/fst/determinize.h
 include/fst/dfs-visit.h
 include/fst/difference.h
+include/fst/disambiguate.h
 include/fst/edit-fst.h
 include/fst/encode.h
 include/fst/epsnormalize.h
@@ -85,6 +89,15 @@ include/fst/extensions/far/main.h
 include/fst/extensions/far/print-strings.h
 include/fst/extensions/far/stlist.h
 include/fst/extensions/far/sttable.h
+include/fst/extensions/linear/linear-fst-data-builder.h
+include/fst/extensions/linear/linear-fst-data.h
+include/fst/extensions/linear/linear-fst.h
+include/fst/extensions/linear/linearscript.h
+include/fst/extensions/linear/loglinear-apply.h
+include/fst/extensions/linear/trie.h
+include/fst/extensions/ngram/bitmap-index.h
+include/fst/extensions/ngram/ngram-fst.h
+include/fst/extensions/ngram/nthbit.h
 include/fst/extensions/pdt/collection.h
 include/fst/extensions/pdt/compose.h
 include/fst/extensions/pdt/expand.h
@@ -97,6 +110,7 @@ include/fst/extensions/pdt/replace.h
 include/fst/extensions/pdt/reverse.h
 include/fst/extensions/pdt/shortest-path.h
 include/fst/factor-weight.h
+include/fst/filter-state.h
 include/fst/flags.h
 include/fst/float-weight.h
 include/fst/fst-decl.h
@@ -118,6 +132,7 @@ include/fst/map.h
 include/fst/mapped-file.h
 include/fst/matcher-fst.h
 include/fst/matcher.h
+include/fst/memory.h
 include/fst/minimize.h
 include/fst/mutable-fst.h
 include/fst/pair-weight.h
@@ -290,24 +305,41 @@ lib/fst/libfstfar.so.1
 lib/fst/libfstfarscript.la
 lib/fst/libfstfarscript.so
 lib/fst/libfstfarscript.so.1
+lib/fst/libfstlinearscript.la
+lib/fst/libfstlinearscript.so
+lib/fst/libfstlinearscript.so.1
 lib/fst/libfstlookahead.la
 lib/fst/libfstlookahead.so
 lib/fst/libfstlookahead.so.0
+lib/fst/libfstngram.la
+lib/fst/libfstngram.so
+lib/fst/libfstngram.so.1
 lib/fst/libfstpdtscript.la
 lib/fst/libfstpdtscript.so
 lib/fst/libfstpdtscript.so.1
+lib/fst/linear_classifier-fst.la
+lib/fst/linear_classifier-fst.so
+lib/fst/linear_classifier-fst.so.0
+lib/fst/linear_tagger-fst.la
+lib/fst/linear_tagger-fst.so
+lib/fst/linear_tagger-fst.so.0
+lib/fst/ngram-fst.la
+lib/fst/ngram-fst.so
+lib/fst/ngram-fst.so.0
 lib/fst/olabel_lookahead-fst.la
 lib/fst/olabel_lookahead-fst.so
 lib/fst/olabel_lookahead-fst.so.0
 lib/libfst.la
 lib/libfst.so
-lib/libfst.so.1
+lib/libfst.so.2
 lib/libfstscript.la
 lib/libfstscript.so
 lib/libfstscript.so.1
-@dirrm include/fst/script
-@dirrm include/fst/extensions/pdt
-@dirrm include/fst/extensions/far
-@dirrm include/fst/extensions
-@dirrm include/fst
 @dirrm lib/fst
+@dirrm include/fst/extensions/far
+@dirrm include/fst/extensions/linear
+@dirrm include/fst/extensions/ngram
+@dirrm include/fst/extensions/pdt
+@dirrm include/fst/extensions
+@dirrm include/fst/script
+@dirrm include/fst
