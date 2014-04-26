@@ -1,27 +1,15 @@
---- configure.orig	2012-06-26 15:33:50.000000000 +0000
-+++ configure
-@@ -88,6 +88,8 @@ while : ; do
-         withcurses=no;;
-     -no-shared-libs|--no-shared-libs)
-         withsharedlibs=no;;
-+    -no-x11|--no-x11)
-+        x11_wanted=no;;
-     -x11include*|--x11include*)
-         x11_include_dir=$2; shift;;
-     -x11lib*|--x11lib*)
-@@ -537,9 +539,9 @@ if test $withsharedlibs = "yes"; then
-       mksharedlib="$flexlink"
-       mkmaindll="$flexlink -maindll"
+--- configure.orig	2013-08-23 08:22:36.000000000 +0200
++++ configure	2014-04-26 14:15:43.000000000 +0200
+@@ -547,7 +547,7 @@
        shared_libraries_supported=true;;
--    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*)
-+    *-*-linux-gnu|*-*-linux|*-*-dragonfly*|*-*-freebsd*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*)
+     *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*)
        sharedcccompopts="-fPIC"
 -      mksharedlib="$bytecc -shared"
 +      mksharedlib="$bytecc $bytecclinkopts -shared"
        bytecclinkopts="$bytecclinkopts -Wl,-E"
        byteccrpath="-Wl,-rpath,"
        mksharedlibrpath="-Wl,-rpath,"
-@@ -549,7 +551,7 @@ if test $withsharedlibs = "yes"; then
+@@ -557,7 +557,7 @@
        case "$bytecc" in
          gcc*)
            sharedcccompopts="-fPIC"
@@ -30,7 +18,7 @@
            byteccrpath="-Wl,-rpath,"
            mksharedlibrpath="-Wl,-rpath,"
            shared_libraries_supported=true;;
-@@ -565,11 +567,11 @@ if test $withsharedlibs = "yes"; then
+@@ -573,11 +573,11 @@
          gcc*)
            sharedcccompopts="-fPIC"
            if sh ./solaris-ld; then
@@ -44,7 +32,7 @@
              bytecclinkopts="$bytecclinkopts -Wl,-E"
              natdynlinkopts="-Wl,-E"
              byteccrpath="-Wl,-rpath,"
-@@ -593,12 +595,12 @@ if test $withsharedlibs = "yes"; then
+@@ -601,12 +601,12 @@
        mksharedlibrpath="-rpath "
        shared_libraries_supported=true;;
      i[3456]86-*-darwin[89].*)
@@ -54,12 +42,12 @@
        dl_needs_underscore=false
        shared_libraries_supported=true;;
      *-apple-darwin*)
--      mksharedlib="$bytecc -bundle -flat_namespace -undefined suppress"
-+      mksharedlib="$bytecc $bytecclinkopts -bundle -flat_namespace -undefined suppress"
+-      mksharedlib="$bytecc -bundle -flat_namespace -undefined suppress -Wl,-no_compact_unwind"
++      mksharedlib="$bytecc $bytecclinkopts -bundle -flat_namespace -undefined suppress -Wl,-no_compact_unwind"
        bytecccompopts="$dl_defs $bytecccompopts"
        dl_needs_underscore=false
        shared_libraries_supported=true;;
-@@ -608,7 +610,7 @@ if test $withsharedlibs = "yes"; then
+@@ -616,7 +616,7 @@
        shared_libraries_supported=false;;
      *-*-openbsd*)
        sharedcccompopts="-fPIC"
@@ -68,67 +56,40 @@
        bytecclinkopts="$bytecclinkopts -Wl,-E"
        natdynlinkopts="-Wl,-E"
        byteccrpath="-Wl,-rpath,"
-@@ -633,7 +635,7 @@ if test $withsharedlibs = "yes"; then
-     x86_64-*-linux*)              natdynlink=true;;
-     i[3456]86-*-darwin[89].*)     natdynlink=true;;
-     i[3456]86-*-darwin*)
--      if test $arch64 == true; then
-+      if test $arch64 = true; then
-         natdynlink=true
-       fi;;
-     x86_64-*-darwin*)             natdynlink=true;;
-@@ -641,6 +643,8 @@ if test $withsharedlibs = "yes"; then
-     sparc*-*-linux*)              natdynlink=true;;
-     i686-*-kfreebsd*)             natdynlink=true;;
-     x86_64-*-kfreebsd*)           natdynlink=true;;
-+    i[345]86-*-dragonfly*)        natdynlink=true;;
-+    x86_64-*-dragonfly*)          natdynlink=true;;
-     i[345]86-*-freebsd*)          natdynlink=true;;
-     x86_64-*-freebsd*)            natdynlink=true;;
-     i[345]86-*-openbsd*)          natdynlink=true;;
-@@ -672,6 +676,7 @@ case "$host" in
-   sparc*-*-gnu*)                arch=sparc; system=gnu;;
-   i[3456]86-*-linux*)           arch=i386; system=linux_`sh ./runtest elf.c`;;
-   i[3456]86-*-*bsd*)            arch=i386; system=bsd_`sh ./runtest elf.c`;;
-+  i[3456]86-*-dragonfly*)       arch=i386; system=bsd_`sh ./runtest elf.c`;;
-   i[3456]86-*-nextstep*)        arch=i386; system=nextstep;;
-   i[3456]86-*-solaris*)         if $arch64; then
-                                   arch=amd64; system=solaris
-@@ -687,6 +692,7 @@ case "$host" in
+@@ -695,6 +695,7 @@
                                  fi;;
    i[3456]86-*-gnu*)             arch=i386; system=gnu;;
    powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
-+  powerpc-*-freebsd*)           arch=power; model=ppc; system=elf;;
++  powerpc*-*-freebsd*)          arch=power; model=ppc; system=elf;;
    powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
+   powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd_elf;;
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
-   powerpc-*-darwin*)            arch=power; system=rhapsody
-@@ -700,6 +706,7 @@ case "$host" in
-   arm*-*-linux-gnueabi)         arch=arm; system=linux_eabi;;
-   x86_64-*-linux*)              arch=amd64; system=linux;;
-   x86_64-*-gnu*)                arch=amd64; system=gnu;;
-+  x86_64-*-dragonfly*)          arch=amd64; system=dragonfly;;
-   x86_64-*-freebsd*)            arch=amd64; system=freebsd;;
-   x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
-   x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
-@@ -724,7 +731,7 @@ else
+@@ -734,7 +735,7 @@
  fi
  
  nativecccompopts=''
 -nativecclinkopts=''
 +nativecclinkopts=""
+ # FIXME the naming of nativecclinkopts is broken: these are options for
+ # ld (for shared libs), not for cc
  nativeccrpath="$byteccrpath"
- 
- case "$arch,$nativecc,$system,$host_type" in
-@@ -786,6 +793,8 @@ case "$arch,$model,$system" in
+@@ -803,6 +804,7 @@
    amd64,*,linux) profiling='prof';;
    amd64,*,gnu) profiling='prof';;
    arm,*,linux*) profiling='prof';;
-+  *,*,dragonfly) profiling='prof';;
 +  *,*,freebsd) profiling='prof';;
    *) profiling='noprof';;
  esac
  
-@@ -1544,10 +1553,10 @@ fi
+@@ -1388,7 +1390,6 @@
+         x11_libs="-L$dir"
+         case "$host" in
+           *-kfreebsd*-gnu) x11_link="-L$dir -lX11";;
+-          *-*-*bsd*) x11_link="-R$dir -L$dir -lX11";;
+           *) x11_link="-L$dir -lX11";;
+         esac
+       fi
+@@ -1564,10 +1565,10 @@
  # Look for BFD library
  
  if ./hasgot -i bfd.h && \
