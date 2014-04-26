@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	3.8.1
+PORTVERSION=	3.9
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/
@@ -19,9 +19,7 @@ USE_PHP=	curl gd mysql pcre tokenizer xml zip
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-SUB_FILES=	pkg-message pkg-install
-SUB_LIST=	CHGRP="${CHGRP}" CHOWN="${CHOWN}" CHMOD="${CHMOD}"\
-		FIND="${FIND}" WWWGRP="${WWWGRP}" WWWOWN="${WWWOWN}"
+SUB_FILES=	pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 PORTDOCS=	license.txt readme.html
 
@@ -33,21 +31,20 @@ pre-everything::
 	@sleep 1
 
 pre-install:
-	cd ${WRKSRC}/ && \
-		(${FIND} -s * -type f | ${SED} -e 's|^|%%WWWDIR%%/|'; \
-		${FIND} -d . -type d | ${SED} -e 's|^\.|@dirrm %%WWWDIR%%|') > ${PLIST}
+	${ECHO_CMD} '@owner www' > ${PLIST}
+	${ECHO_CMD} '@group www' >> ${PLIST}
+	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} -e 's|^|%%WWWDIR%%/|' >> ${PLIST}
+	cd ${WRKSRC}/ && ${FIND} -d . -type d | ${SED} -e 's|^\.|@dirrm %%WWWDIR%%|' >> ${PLIST}
+	${ECHO_CMD} '@owner' >> ${PLIST}
+	${ECHO_CMD} '@group' >> ${PLIST}
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL} -d -g ${WWWGRP} -m 755 -o ${WWWOWN} ${STAGEDIR}${WWWDIR}/
+	${INSTALL} -d -m 755 ${STAGEDIR}${WWWDIR}/
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
+	${FIND} ${STAGEDIR}${WWWDIR}/ -type d -exec ${CHMOD} g+w '{}' \;
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-
-post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
