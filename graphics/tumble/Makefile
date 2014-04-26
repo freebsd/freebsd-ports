@@ -3,42 +3,45 @@
 
 PORTNAME=	tumble
 PORTVERSION=	0.33
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics print
 MASTER_SITES=	http://tumble.brouhaha.com/download/ \
-		http://www.predatorlabs.net/dl/
+		http://www.sourcefiles.org/Graphics/Tools/Conversion/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates a PDF file from image files
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		netpbm.1:${PORTSDIR}/graphics/netpbm
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+LICENSE=	GPLv2
 
-USE_GMAKE=	yes
-USES=		bison
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
+		libnetpbm.so:${PORTSDIR}/graphics/netpbm
 
+USES=		bison gmake
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-ONLY_FOR_ARCHS=	amd64 arm i386 ia64 pc98
-ONLY_FOR_ARCHS_REASON=	Only works on little endian systems
+NOT_FOR_ARCHS=	powerpc sparc64
+NOT_FOR_ARCHS_REASON=	Only works on little endian systems
 
-PLIST_FILES=	bin/tumble
 PORTDOCS=	README
+PLIST_FILES=	bin/tumble
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|LDFLAGS =|LDFLAGS= ${LDFLAGS}|' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|-lpbm|-lnetpbm|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^\(CFLAGS\) =.*|\1 := $$(CFLAGS)| ; \
+		 s|^\(LDFLAGS\) =.*|\1 := $$(LDFLAGS)| ; \
+		 s|-O3|| ; \
+		 s|-lpbm|-lnetpbm| ; \
+		 s|strip|true|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tumble ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} tumble \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
