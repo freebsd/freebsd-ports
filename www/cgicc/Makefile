@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	cgicc
-PORTVERSION=	3.2.12
+PORTVERSION=	3.2.14
 CATEGORIES=	www devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	C++ class library for writing CGI applications
 
 LICENSE=	LGPL3 # (or later)
@@ -23,13 +23,8 @@ CXXFLAGS+=	-Wno-unknown-pragmas
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-.else
-CONFIGURE_ENV+=	ac_cv_prog_DOXYGEN="${ECHO_CMD}"
-.endif
+DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_CONFIGURE_ENV_OFF=	ac_cv_prog_DOXYGEN="${ECHO_CMD}"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
