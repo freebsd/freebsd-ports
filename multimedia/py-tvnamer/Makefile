@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	tvnamer
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Automatically names downloaded/recorded TV-episode
 
 LICENSE=	GPLv2
