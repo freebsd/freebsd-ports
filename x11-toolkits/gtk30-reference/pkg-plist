@@ -121,7 +121,6 @@ share/doc/gdk3/ur_angle.png
 share/doc/gdk3/watch.png
 share/doc/gdk3/xterm.png
 share/doc/gtk3/AbstractObjects.html
-share/doc/gtk3/Actions.html
 share/doc/gtk3/Application.html
 share/doc/gtk3/ApplicationChoosing.html
 share/doc/gtk3/Builder.html
@@ -241,7 +240,6 @@ share/doc/gtk3/GtkPageSetup.html
 share/doc/gtk3/GtkPageSetupUnixDialog.html
 share/doc/gtk3/GtkPaned.html
 share/doc/gtk3/GtkPaperSize.html
-share/doc/gtk3/GtkPlug.html
 share/doc/gtk3/GtkPrintContext.html
 share/doc/gtk3/GtkPrintJob.html
 share/doc/gtk3/GtkPrintSettings.html
@@ -271,7 +269,6 @@ share/doc/gtk3/GtkSeparatorMenuItem.html
 share/doc/gtk3/GtkSeparatorToolItem.html
 share/doc/gtk3/GtkSettings.html
 share/doc/gtk3/GtkSizeGroup.html
-share/doc/gtk3/GtkSocket.html
 share/doc/gtk3/GtkSpinButton.html
 share/doc/gtk3/GtkSpinner.html
 share/doc/gtk3/GtkStatusIcon.html
@@ -362,10 +359,6 @@ share/doc/gtk3/broadwayd.html
 share/doc/gtk3/button.png
 share/doc/gtk3/ch02.html
 share/doc/gtk3/ch03.html
-share/doc/gtk3/ch25s02.html
-share/doc/gtk3/ch27s02.html
-share/doc/gtk3/ch29s02.html
-share/doc/gtk3/ch29s03.html
 share/doc/gtk3/chap-drawing-model.html
 share/doc/gtk3/check-button.png
 share/doc/gtk3/checklist-gdkeventexpose-region.html
@@ -374,7 +367,6 @@ share/doc/gtk3/checklist-named-icons.html
 share/doc/gtk3/checks.png
 share/doc/gtk3/color-button.png
 share/doc/gtk3/colorchooser.png
-share/doc/gtk3/colorsel.png
 share/doc/gtk3/combo-box-entry.png
 share/doc/gtk3/combo-box.png
 share/doc/gtk3/dialog-error.png
@@ -423,7 +415,6 @@ share/doc/gtk3/focus.png
 share/doc/gtk3/folder.png
 share/doc/gtk3/font-button.png
 share/doc/gtk3/fontchooser.png
-share/doc/gtk3/fontsel.png
 share/doc/gtk3/format-indent-less-ltr.png
 share/doc/gtk3/format-indent-less-rtl.png
 share/doc/gtk3/format-indent-more-ltr.png
