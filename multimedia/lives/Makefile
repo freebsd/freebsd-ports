@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -34,7 +33,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		sswf:${PORTSDIR}/graphics/sswf \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
-		mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		transcode:${PORTSDIR}/multimedia/transcode \
@@ -43,7 +41,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
-USES=		perl5 pkgconfig tar:bzip2 
+USES=		perl5 pkgconfig shebangfix tar:bzip2 
+SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \
+		smogrify tools/autolives.pl
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_PYTHON=	yes
@@ -52,26 +52,27 @@ USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-ldvgrab --disable-gtk3
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
-		OMC/lives-OMC.txt \
-		RFX/LiVES-Perl.odt RFX/rfxbuilder.odt RFX/RFX.spec \
-		docs/clip_format.txt \
+		OMC/lives-OMC.txt RFX/LiVES-Perl.odt RFX/rfxbuilder.odt \
+		RFX/RFX.spec docs/clip_format.txt \
 		lives-plugins/marcos-encoders/README.multi_encoder \
 		weed-docs/weedspec.txt weed-docs/weedevents.txt
 
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
 
-OPTIONS_DEFINE=	DOCS DOXYGEN FREI0R NLS
+OPTIONS_DEFINE=	DOCS DOXYGEN FREI0R MATROSKA NLS
 OPTIONS_SUB=	yes
 
-DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
-FREI0R_BUILD_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
-FREI0R_RUN_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+FREI0R_BUILD_DEPENDS=	frei0r>0:${PORTSDIR}/graphics/frei0r
+FREI0R_RUN_DEPENDS=	frei0r>0:${PORTSDIR}/graphics/frei0r
+MATROSKA_RUN_DEPENDS=	mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
