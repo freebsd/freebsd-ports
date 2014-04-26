@@ -8,8 +8,10 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TIMA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	More advanced and flexible object tree style for XML::Parser
+
+LICENSE=	ART10
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
