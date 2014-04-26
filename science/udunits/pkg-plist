@@ -6,10 +6,3 @@ lib/libudunits2.a
 lib/libudunits2.la
 lib/libudunits2.so
 lib/libudunits2.so.0
-%%DATADIR%%/udunits2-accepted.xml
-%%DATADIR%%/udunits2-base.xml
-%%DATADIR%%/udunits2-common.xml
-%%DATADIR%%/udunits2-derived.xml
-%%DATADIR%%/udunits2-prefixes.xml
-%%DATADIR%%/udunits2.xml
-@dirrm %%DATADIR%%
