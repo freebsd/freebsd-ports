@@ -15,14 +15,14 @@ include/libgtkhtml-%%VERSION%%/gtkhtml/gtkhtml.h
 include/libgtkhtml-%%VERSION%%/gtkhtml/htmlenums.h
 include/libgtkhtml-%%VERSION%%/gtkhtml/htmltokenizer.h
 include/libgtkhtml-%%VERSION%%/gtkhtml/htmltypes.h
-lib/libgtkhtml-%%VERSION%%.a
 lib/libgtkhtml-%%VERSION%%.la
 lib/libgtkhtml-%%VERSION%%.so
 lib/libgtkhtml-%%VERSION%%.so.19
-lib/libgtkhtml-editor-%%VERSION%%.a
+lib/libgtkhtml-%%VERSION%%.so.19.1.1
 lib/libgtkhtml-editor-%%VERSION%%.la
 lib/libgtkhtml-editor-%%VERSION%%.so
 lib/libgtkhtml-editor-%%VERSION%%.so.0
+lib/libgtkhtml-editor-%%VERSION%%.so.0.0.0
 libdata/pkgconfig/gtkhtml-editor-%%VERSION%%.pc
 libdata/pkgconfig/libgtkhtml-%%VERSION%%.pc
 share/gtkhtml-%%VERSION%%/gtkhtml-editor-builder.ui
