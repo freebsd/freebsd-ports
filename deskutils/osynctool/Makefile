@@ -13,8 +13,7 @@ LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync
 
 CONFLICTS=	msynctool-0.2*
 
-USE_BZIP2=	yes
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/bash_completion.d/${PORTNAME}.sh
