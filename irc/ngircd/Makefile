@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ngircd
-PORTVERSION=	21
+PORTVERSION=	21.1
 PORTEPOCH=	1
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.berlios.de/pub/%SUBDIR%/ \
-		http://arthur.barton.de/pub/%SUBDIR%/
+MASTER_SITES=	http://arthur.barton.de/pub/%SUBDIR%/ \
+		http://ngircd.mirror.3rz.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,69 +14,50 @@ COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
 LICENSE=	GPLv2
 
-USE_RC_SUBR=	ngircd
+USES=		tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-silent-rules # --docdir=${WRKDIR}/tmproot
+USE_RC_SUBR=	ngircd
+
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS TCP_WRAPPERS SYSLOG ZLIB IPV6 OPENSSL GNUTLS IRCPLUS IDENT SNIFFER DEBUG
-OPTIONS_DEFAULT=TCP_WRAPPERS SYSLOG ZLIB IPV6 IRCPLUS
-NO_OPTIONS_SORT=yes
-TCP_WRAPPERS_DESC=	Enable TCP wrappers support
-SYSLOG_DESC=		Enable syslog() support
-ZLIB_DESC=		Enable ZLIB compression
-IRCPLUS_DESC=		Enable IRC+ protocol
-IDENT_DESC=		Enable IDENT (AUTH) protocol support
-SNIFFER_DESC=		Enable IRC traffic sniffer
-DEBUG_DESC=		Show additional debug output
+PORTDOCS=	*
+PLIST_FILES=	etc/ngircd.conf.sample \
+		man/man5/ngircd.conf.5.gz \
+		man/man8/ngircd.8.gz \
+		sbin/ngircd
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		DEBUG DOCS ICONV IDENT IPV6 IRCPLUS LIBWRAP \
+			SNIFFER SYSLOG ZLIB
+OPTIONS_RADIO=		TLS
+OPTIONS_RADIO_TLS=	GNUTLS OPENSSL
+OPTIONS_DEFAULT=	ICONV IRCPLUS LIBWRAP OPENSSL SYSLOG ZLIB
 
-.if exists(/usr/include/tcpd.h) && !defined(WITHOUT_TCP_WRAPPERS)
-CONFIGURE_ARGS+=	--with-tcp-wrappers
-.endif
+DEBUG_CONFIGURE_EBABLE=	debug
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_WITH=	gnutls
+ICONV_USES=		iconv
+ICONV_CONFIGURE_WITH=	iconv
+IDENT_DESC=		IDENT (AUTH) protocol support
+IDENT_LIB_DEPENDS=	libident.so:${PORTSDIR}/security/libident
+INDENT_CONFIGURE_WITH=	dent
+IPV6_CONFIGURE_ENABLE=	ipv6
+IRCPLUS_DESC=		IRC+ protocol
+IRCPLUS_CONFIGURE_ENABLE=	ircplus
+LIBWRAP_CONFIGURE_WITH=	tcp-wrappers
+OPENSSL_USE=		openssl=yes
+OPENSSL_CONFIGURE_WITH=	openssl
+SNIFFER_DESC=		IRC traffic sniffer
+SNIFFER_CONFIGURE_ENABLE=	sniffer
+SYSLOG_CONFIGURE_WITH=	syslog
+ZLIB_CONFIGURE_WITH=	zlib
 
-.if empty(PORT_OPTIONS:MSYSLOG)
-CONFIGURE_ARGS+=	--without-syslog
-.endif
-
-.if empty(PORT_OPTIONS:MZLIB)
-CONFIGURE_ARGS+=	--without-zlib
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-CONFIGURE_ARGS+=	--with-openssl
-USE_OPENSSL=yes
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-CONFIGURE_ARGS+=	--with-gnutls
-LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
-.endif
-
-.if empty(PORT_OPTIONS:MIRCPLUS)
-CONFIGURE_ARGS+=	--disable-ircplus
-.endif
-
-.if ${PORT_OPTIONS:MIDENT}
-LIB_DEPENDS+=		ident:${PORTSDIR}/security/libident
-CONFIGURE_ARGS+=	--with-ident
-.endif
-
-.if ${PORT_OPTIONS:MSNIFFER}
-CONFIGURE_ARGS+=	--enable-sniffer
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if ! ${PORT_OPTIONS:MDOCS}
-MAKE_ARGS+=		NOPORTDOCS=yes
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/LIBS/s|-liconv|${ICONV_LIB}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/toplevel/s| \.\./COPYING|| ; \
+		 /INSTALL/s|.conf$$|.conf.sample|' ${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>
