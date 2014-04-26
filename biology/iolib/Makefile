@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	io_lib
-PORTVERSION=	1.13.0
-PORTREVISION=	1
+PORTVERSION=	1.13.5
 CATEGORIES=	biology
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	staden/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/staden/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose trace file (and Experiment File) reading interface
