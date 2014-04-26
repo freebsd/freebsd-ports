@@ -84,6 +84,7 @@
 %%WWWDIR%%/js/tinymce/skins/lightgray/skin.min.css
 %%WWWDIR%%/js/tinymce/themes/modern/theme.min.js
 %%WWWDIR%%/js/tinymce/tinymce.min.js
+%%WWWDIR%%/js/tinymce/x.min.js
 @dirrm %%WWWDIR%%/js/tinymce/themes/modern
 @dirrm %%WWWDIR%%/js/tinymce/themes
 @dirrm %%WWWDIR%%/js/tinymce/skins/lightgray/img
