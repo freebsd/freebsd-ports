@@ -1,49 +1,39 @@
 # $FreeBSD$
 
 PORTNAME=	flot
-PORTVERSION=	0.7
+PORTVERSION=	0.8.2
 CATEGORIES=	www devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://www.flotcharts.org/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript plotting library for jQuery
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USES=		zip
 
 USERS=	www
 GROUPS=	www
 
-NO_BUILD=	YES
-
-PORTDOCS=	API.txt	\
-		FAQ.txt	\
-		NEWS.txt \
-		PLUGINS.txt \
-		README.txt
+PORTDOCS=	*
 PORTEXAMPLES=	*
-
-NO_STAGE=	yes
-do-install:
-	@${INSTALL} -d -g ${USERS} -o ${GROUPS} ${WWWDIR}
-	${INSTALL_DATA} -o www -g www ${WRKSRC}/*.js ${WWWDIR}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
-.endif
+do-install:
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.js \
+		${STAGEDIR}${WWWDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.md \
+		${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "*" \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
