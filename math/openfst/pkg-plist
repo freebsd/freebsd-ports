@@ -210,7 +210,6 @@ include/fst/script/weight-class.h
 include/fst/shortest-distance.h
 include/fst/shortest-path.h
 include/fst/signed-log-weight.h
-include/fst/slist.h
 include/fst/sparse-power-weight.h
 include/fst/sparse-tuple-weight.h
 include/fst/state-map.h
