@@ -38,6 +38,10 @@ DOCSDIR=	${PREFIX}/share/doc/mpd5
 PORTDOCS=	${HTMLNUM:S/^/mpd/:S/$/.html/} mpd.html mpd.ps README	\
 		mpd_toc.html
 PLIST_DIRS=	etc/mpd5
-PLIST_FILES=	${CONFSUF:S/^/etc\/mpd5\/mpd./:S/$/.sample/} sbin/mpd5 man/man8/mpd5.8.gz
+PLIST_FILES=	${CONFSUF:S/^/etc\/mpd5\/mpd./:S/$/.sample/} sbin/mpd5
+
+.if !defined(WITHOUT_MAN)
+PLIST_FILES+=	man/man8/mpd5.8.gz
+.endif
 
 .include <bsd.port.mk>
