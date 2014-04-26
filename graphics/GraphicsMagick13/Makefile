@@ -3,7 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.19
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
@@ -25,8 +25,7 @@ CONFLICTS=	GraphicsMagick-1.[12].* GraphicsMagick12-*
 
 PORTSCOUT=	limit:^1\.3\.
 
-USE_BZIP2=	yes
-USES=		iconv
+USES=		iconv tar:bzip2
 USE_GNOME=	libxml2
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
