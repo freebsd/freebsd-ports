@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack-Middleware-RemoveRedundantBody
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
