@@ -39,6 +39,7 @@ share/applications/bme.desktop
 share/applications/epiphany.desktop
 share/dbus-1/services/org.gnome.Epiphany.service
 lib/girepository-1.0/Epiphany-2.30.typelib
+man/man1/epiphany.1.gz
 share/gir-1.0/Epiphany-2.30.gir
 %%DOCSDIR%%/EphyDialog.html
 %%DOCSDIR%%/EphyLocationAction.html
