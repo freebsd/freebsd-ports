@@ -11,25 +11,23 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An Open Document Cataloging Project
+COMMENT=	Open Document Cataloging Project
 
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-    		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml
+		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml
 
 DOCBOOK_VERSION=4.2
 
-CONFLICTS=	rarian-[0-9]*
+CONFLICTS_INSTALL=	rarian-[0-9]*
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
-USES=		bison pathfix gettext
+USES=		bison pathfix gettext gmake tar:bzip2 libtool
 USE_GNOME=	gnomehier libxslt intlhack
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share \
 		--with-omfdirs=${PREFIX}/share/omf \
 		--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
@@ -37,15 +35,6 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl" \
 		LOCALBASE="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB=	LOCALBASE=${LOCALBASE}
-
-MAN1=	scrollkeeper-config.1 scrollkeeper-gen-seriesid.1
-MAN5=	scrollkeeper.conf.5
-MAN7=	scrollkeeper.7
-MAN8=	scrollkeeper-preinstall.8 scrollkeeper-rebuilddb.8 \
-	scrollkeeper-update.8
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e   \
@@ -55,4 +44,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/extract/dtds/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
