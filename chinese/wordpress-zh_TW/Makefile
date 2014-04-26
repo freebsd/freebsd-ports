@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	3.8.1
+PORTVERSION=	3.9
 CATEGORIES=	chinese www
 MASTER_SITES=	http://tw.wordpress.org/ \
 		http://mirror.joehorn.idv.tw/wordpress/
@@ -27,8 +27,7 @@ PORTDOCS=	readme.html
 
 OPTIONS_DEFINE=	DOCS
 
-SUB_FILES+=	pkg-message
-SUB_LISTS+=	WWWDIR=${WWWDIR}
+SUB_FILES=	pkg-message
 
 pre-everything::
 	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
@@ -36,27 +35,20 @@ pre-everything::
 	@sleep 1
 
 pre-install:
-	cd ${WRKSRC} && ${FIND} -s * -type f | \
-		${SED} -e 's|^|${WWWDIR:S|${PREFIX}/||}/|' > ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${WWWDIR:S|${PREFIX}/||}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WWWDIR:S|${PREFIX}/||} >> ${PLIST}
+	${ECHO_CMD} '@owner www' > ${PLIST}
+	${ECHO_CMD} '@group www' >> ${PLIST}
+	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} -e 's|^|%%WWWDIR%%/|' >> ${PLIST}
+	cd ${WRKSRC}/ && ${FIND} -d . -type d | ${SED} -e 's|^\.|@dirrm %%WWWDIR%%|' >> ${PLIST}
+	${ECHO_CMD} '@owner' >> ${PLIST}
+	${ECHO_CMD} '@group' >> ${PLIST}
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
-.include <bsd.port.options.mk>
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' >> ${TMPPLIST}
-	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}
-.endfor
+	${INSTALL} -d -m 755 ${STAGEDIR}${WWWDIR}/
+	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
+	${FIND} ${STAGEDIR}${WWWDIR}/ -type d -exec ${CHMOD} g+w '{}' \;
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
