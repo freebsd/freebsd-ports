@@ -1,6 +1,7 @@
 bin/chronic
 bin/combine
 bin/errno
+bin/ifdata
 bin/ifne
 bin/isutf8
 bin/lckdo
@@ -14,6 +15,7 @@ bin/zrun
 %%MANPAGES%%man/man1/chronic.1.gz
 %%MANPAGES%%man/man1/combine.1.gz
 %%MANPAGES%%man/man1/errno.1.gz
+%%MANPAGES%%man/man1/ifdata.1.gz
 %%MANPAGES%%man/man1/ifne.1.gz
 %%MANPAGES%%man/man1/isutf8.1.gz
 %%MANPAGES%%man/man1/lckdo.1.gz

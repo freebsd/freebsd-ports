@@ -1,0 +1,200 @@
+'\" t
+.\"     Title: ifdata
+.\"    Author: Joey Hess
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 2006-03-07
+.\"    Manual: moreutils
+.\"    Source: moreutils
+.\"  Language: English
+.\"
+.TH "IFDATA" "1" "2006\-03\-07" "moreutils" "moreutils"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+ifdata \- get network interface info without parsing ifconfig output
+.SH "SYNOPSIS"
+.HP \w'\fBifdata\fR\ 'u
+\fBifdata\fR [options] {\fIiface\fR}
+.SH "DESCRIPTION"
+.PP
+
+\fBifdata\fR
+can be used to check for the existence of a network interface, or to get information abut the interface, such as its IP address\&. Unlike
+\fBifconfig\fR
+or
+\fBip\fR,
+\fBifdata\fR
+has simple to parse output that is designed to be easily used by a shell script\&.
+.SH "OPTIONS"
+.PP
+\fB\-h\fR
+.RS 4
+Print out a help summary\&.
+.RE
+.PP
+\fB\-e\fR
+.RS 4
+Test to see if the interface exists, exit nonzero if it does not\&.
+.RE
+.PP
+\fB\-p\fR
+.RS 4
+Prints out the whole configuration of the interface\&.
+.RE
+.PP
+\fB\-pe\fR
+.RS 4
+Prints "yes" or "no" if the interface exists or not\&.
+.RE
+.PP
+\fB\-pa\fR
+.RS 4
+Prints the IPv4 address of the interface\&.
+.RE
+.PP
+\fB\-pn\fR
+.RS 4
+Prints the netmask of the interface\&.
+.RE
+.PP
+\fB\-pN\fR
+.RS 4
+Prints the network address of the interface\&.
+.RE
+.PP
+\fB\-pb\fR
+.RS 4
+Prints the broadcast address of the interface\&.
+.RE
+.PP
+\fB\-pm\fR
+.RS 4
+Prints the MTU of the interface\&.
+.RE
+.PP
+Following options are Linux only\&.
+.PP
+\fB\-ph\fR
+.RS 4
+Prints the hardware address of the interface\&.
+.RE
+.PP
+\fB\-pf\fR
+.RS 4
+Prints the flags of the interface\&.
+.RE
+.PP
+\fB\-si\fR
+.RS 4
+Prints out all the input statistics of the interface\&.
+.RE
+.PP
+\fB\-sip\fR
+.RS 4
+Prints the number of input packets\&.
+.RE
+.PP
+\fB\-sib\fR
+.RS 4
+Prints the number of input bytes\&.
+.RE
+.PP
+\fB\-sie\fR
+.RS 4
+Prints the number of input errors\&.
+.RE
+.PP
+\fB\-sid\fR
+.RS 4
+Prints the number of dropped input packets\&.
+.RE
+.PP
+\fB\-sif\fR
+.RS 4
+Prints the number of input fifo overruns\&.
+.RE
+.PP
+\fB\-sic\fR
+.RS 4
+Print the number of compressed input packets\&.
+.RE
+.PP
+\fB\-sim\fR
+.RS 4
+Prints the number of input multicast packets\&.
+.RE
+.PP
+\fB\-so\fR
+.RS 4
+Prints out all the output statistics of the interface\&.
+.RE
+.PP
+\fB\-sop\fR
+.RS 4
+Prints the number of output packets\&.
+.RE
+.PP
+\fB\-sob\fR
+.RS 4
+Prints the number of output bytes\&.
+.RE
+.PP
+\fB\-soe\fR
+.RS 4
+Prints the number of output errors\&.
+.RE
+.PP
+\fB\-sod\fR
+.RS 4
+Prints the number of dropped output packets\&.
+.RE
+.PP
+\fB\-sof\fR
+.RS 4
+Prints the number of output fifo overruns\&.
+.RE
+.PP
+\fB\-sox\fR
+.RS 4
+Print the number of output collisions\&.
+.RE
+.PP
+\fB\-soc\fR
+.RS 4
+Prints the number of output carrier losses\&.
+.RE
+.PP
+\fB\-som\fR
+.RS 4
+Prints the number of output multicast packets\&.
+.RE
+.PP
+\fB\-bips\fR
+.RS 4
+Prints the number of bytes of incoming traffic measured in one second\&.
+.RE
+.PP
+\fB\-bops\fR
+.RS 4
+Prints the number of bytes of outgoing traffic measured in one second\&.
+.RE
+.SH "AUTHOR"
+.PP
+Benjamin BAYART
