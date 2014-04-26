@@ -5,7 +5,6 @@ bin/lwp-download
 bin/lwp-dump
 bin/lwp-mirror
 bin/lwp-request
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/.packlist
 %%SITE_PERL%%/LWP.pm
 %%SITE_PERL%%/LWP/Authen/Basic.pm
 %%SITE_PERL%%/LWP/Authen/Digest.pm
@@ -31,6 +30,7 @@ bin/lwp-request
 %%SITE_PERL%%/LWP/UserAgent.pm
 %%SITE_PERL%%/lwpcook.pod
 %%SITE_PERL%%/lwptut.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/.packlist
 %%PERL5_MAN3%%/LWP.3.gz
 %%PERL5_MAN3%%/LWP::Authen::Ntlm.3.gz
 %%PERL5_MAN3%%/LWP::ConnCache.3.gz
@@ -49,7 +49,7 @@ man/man1/lwp-download.1.gz
 man/man1/lwp-dump.1.gz
 man/man1/lwp-mirror.1.gz
 man/man1/lwp-request.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP
 @dirrmtry %%SITE_PERL%%/LWP/Protocol
 @dirrmtry %%SITE_PERL%%/LWP/Authen
 @dirrmtry %%SITE_PERL%%/LWP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP

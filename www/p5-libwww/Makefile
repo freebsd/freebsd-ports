@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwww
-PORTVERSION=	6.05
+PORTVERSION=	6.06
 CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN/LWP
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,11 @@ DISTNAME=	libwww-perl-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl5 library for WWW access
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Authen-NTLM>=1.02:${PORTSDIR}/security/p5-Authen-NTLM \
+		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
 		p5-File-Listing>=6:${PORTSDIR}/sysutils/p5-File-Listing \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
@@ -32,13 +36,9 @@ CONFIGURE_ARGS=	--aliases
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MHTTPS}
-BUILD_DEPENDS+=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https
-RUN_DEPENDS+=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https
-.endif
+HTTPS_BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+			p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https
+HTTPS_RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+			p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https
 
 .include <bsd.port.mk>
