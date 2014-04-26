@@ -4,5 +4,3 @@ objects are Perl hashes and arrays where you access the properties
 of the objects using normal Perl syntax.
 
 WWW: http://search.cpan.org/dist/XML-Grove/
-
-Seamus Venasse <svenasse@polaris.ca>

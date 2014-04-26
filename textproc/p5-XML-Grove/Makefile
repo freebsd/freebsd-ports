@@ -7,8 +7,10 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl-style XML objects
+
+LICENSE=	ART10
 
 BUILD_DEPENDS=	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
