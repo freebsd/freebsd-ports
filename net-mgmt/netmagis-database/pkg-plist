@@ -64,7 +64,6 @@ sbin/netmagis-dbupgrade
 @dirrmtry lib/netmagis
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/with-views/zones
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/with-views
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/upgrade
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/no-view/zones
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/no-view
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
