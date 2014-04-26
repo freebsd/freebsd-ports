@@ -3,7 +3,7 @@
 
 PORTNAME=	easysoap
 PORTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/SWANSONG
 DISTNAME=	EasySoap++-${PORTVERSION}
@@ -11,22 +11,16 @@ DISTNAME=	EasySoap++-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ SOAP Library based on expat
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	-I${LOCALBASE}/include
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ENV=	ac_cv_lib_stdcpp_main=no
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	    ${WRKSRC}/configure
-
-post-install:
-	@${RM} -f ${PREFIX}/lib/libeasysoap.la
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
