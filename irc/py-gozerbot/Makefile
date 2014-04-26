@@ -8,7 +8,6 @@ CATEGORIES=	irc python
 MASTER_SITES=	http://gozerbot.org/media/tarball/ \
 		${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	gozerbot-${PORTVERSION}
 
 MAINTAINER=	sten@blinkenlights.nl
 COMMENT=	Gozerbot - A modular Python IRC and Jabber bot
@@ -26,18 +25,17 @@ MAN1=		gozerbot.1
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
-	${CP} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}
+	${CP} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
-	@${INSTALL_MAN} ${WRKSRC}/man/gozerbot.1.FreeBSD ${PREFIX}/man/man1/gozerbot.1
+	@${INSTALL_MAN} ${WRKSRC}/man/gozerbot.1.FreeBSD ${STAGEDIR}${MAN1PREFIX}/gozerbot.1
 
 .if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
