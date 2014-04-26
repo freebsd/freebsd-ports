@@ -54,7 +54,8 @@ USE_RC_SUBR=		tracd
 SUB_LIST+=		PYTHON_CMD=${PYTHON_CMD}
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample-plugins	${FIND} ${WRKSRC}/contrib -type f -maxdepth 1 -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/ \;
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample-plugins
+	${FIND} ${WRKSRC}/contrib -type f -maxdepth 1 -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/ \;
 	(cd ${WRKSRC}/sample-plugins && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/sample-plugins)
 	@${MKDIR} ${STAGEDIR}${DATADIR}/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/cgi-bin/* ${STAGEDIR}${DATADIR}/cgi-bin
