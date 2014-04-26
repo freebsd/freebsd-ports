@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rb-inotify
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
