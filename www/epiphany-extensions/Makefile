@@ -4,7 +4,7 @@
 
 PORTNAME=	epiphany-extensions
 PORTVERSION=	2.30.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -13,20 +13,19 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of add-ons for the Epiphany web browser
 
 BUILD_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
-		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
 
 CONFLICTS=	epiphany-extensions-3.[0-9]*
 
-USES=		gettext gmake pkgconfig
-USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack
+USES=		gettext gmake pathfix libtool pkgconfig tar:bzip2
+USE_GNOME=	gnomeprefix intlhack
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+INSTALL_TARGET=	install-strip
 
 EPHY_EXTENSIONS=really-all
 EPHY_VERSION=	${PORTVERSION:R}
@@ -36,12 +35,11 @@ PLIST_SUB=	VERSION=${EPHY_VERSION} EPHY_VERSION=${EPHY_VERSION}
 OPTIONS_DEFINE=	OPENSP
 OPENSP_DESC=	OpenSP SGML support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSP}
 CONFIGURE_ARGS+=	--enable-opensp=yes
-LIB_DEPENDS+=		osp.5:${PORTSDIR}/textproc/opensp
+LIB_DEPENDS+=		libosp.so:${PORTSDIR}/textproc/opensp
 .else
 CONFIGURE_ARGS+=	--disable-opensp
 .endif
