@@ -1,18 +1,19 @@
 # Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
 # $FreeBSD$
 
-PORTNAME=		resin
-PORTVERSION=		3.1.13
-CATEGORIES=		www java
-MASTER_SITES=		http://www.caucho.com/download/
+PORTNAME=	resin
+PORTVERSION=	3.1.14
+CATEGORIES=	www java
+MASTER_SITES=	http://www.caucho.com/download/
 
-MAINTAINER=		5u623l20@gmail.com
-COMMENT=		Java-based Application Server, 3.x branch
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	Java-based Application Server, 3.x branch
+
+LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	APACHE22
 APACHE22_DESC=	Use Apache 2.2
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_JAVA=		yes
@@ -35,7 +36,7 @@ PORT?=			8080
 APP_NAME_SUFFIX=	${PORTVERSION:C/\..*$//}
 APP_NAME?=		${PORTNAME}${APP_NAME_SUFFIX}
 LATEST_LINK=		${APP_NAME}
-APP_HOME?=		${PREFIX}/${APP_NAME}
+APP_HOME?=		${STAGEDIR}${PREFIX}/${APP_NAME}
 PID_FILE?=		${APP_HOME}/${APP_NAME}.pid
 LOG_FILE?=		${APP_HOME}/${APP_NAME}.log
 
@@ -80,7 +81,7 @@ SUB_LIST=	APP_HOME=${APP_HOME} \
 		LOG_FILE=${LOG_FILE} \
 		PID_FILE=${PID_FILE} \
 		PORT=${PORT} \
-		PREFIX=${PREFIX} \
+		PREFIX=${STAGEDIR}${PREFIX} \
 		PYTHON_CMD=${PYTHON_CMD} \
 		USERS=${USERS}
 
@@ -89,7 +90,7 @@ post-extract:
 	@${TAR} xf ${WRKSRC}/webapps/resin-doc.war -C ${WRKSRC}/webapps/resin-doc && ${RM} ${WRKSRC}/webapps/resin-doc.war
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${resin.home}/conf/app-default.xml|${PREFIX}/etc/${APP_NAME}/app-default.xml|' \
+	@${REINPLACE_CMD} -e 's|$${resin.home}/conf/app-default.xml|${STAGEDIR}${PREFIX}/etc/${APP_NAME}/app-default.xml|' \
 		${WRKSRC}/conf/resin.conf
 
 post-build:
@@ -97,28 +98,20 @@ post-build:
 
 # Resin does not handle installation, so proceed now
 do-install:
-.for i in ${APP_HOME} ${APP_HOME}/lib ${PREFIX}/etc/${APP_NAME}
-	@install -d -g ${WWWOWN} -o ${WWWGRP} ${i}
-.endfor
-	if [ ! -e ${PREFIX}/etc/${APP_NAME}/resin.xml ]; then \
-			${ECHO_MSG} "   Installing local configuration file: ${PREFIX}/etc/${APP_NAME}/resin.xml" ;\
-			${INSTALL_DATA} ${WRKSRC}/conf/resin.conf ${PREFIX}/etc/${APP_NAME}/resin.xml ;\
-	else \
-		${ECHO_MSG} "   Preserving local configuration file: ${PREFIX}/etc/${APP_NAME}/resin.xml" ;\
-	fi
-	${INSTALL_DATA} ${WRKSRC}/conf/resin.conf ${PREFIX}/etc/${APP_NAME}/resin.xml-dist
-	${INSTALL_DATA} ${WRKSRC}/conf/app-default.xml ${PREFIX}/etc/${APP_NAME}
-	${INSTALL_SCRIPT} ${WRKDIR}/resin3ctl ${PREFIX}/sbin
-	cd ${WRKSRC}/webapps && ${COPYTREE_SHARE} \* ${APP_HOME}/webapps
-	cd ${WRKSRC}/lib  && ${COPYTREE_SHARE} \* ${APP_HOME}/lib
+#.for i in ${APP_HOME} ${APP_HOME}/lib ${STAGEDIR}${PREFIX}/etc/${APP_NAME}
+#	@install -d -g ${WWWOWN} -o ${WWWGRP} ${i}
+#.endfor
+	install -d -g ${WWWOWN} -o ${WWWGRP} ${i} ${APP_HOME} ${APP_HOME}/lib ${STAGEDIR}${PREFIX}/etc/${APP_NAME}
+	${ECHO_MSG} "   Installing local configuration file: ${STAGEDIR}${PREFIX}/etc/${APP_NAME}/resin.xml"
+	${INSTALL_DATA} ${WRKSRC}/conf/resin.conf ${STAGEDIR}${PREFIX}/etc/${APP_NAME}/resin.xml 
+	${INSTALL_DATA} ${WRKSRC}/conf/resin.conf ${STAGEDIR}${PREFIX}/etc/${APP_NAME}/resin.xml-dist
+	${INSTALL_DATA} ${WRKSRC}/conf/app-default.xml ${STAGEDIR}${PREFIX}/etc/${APP_NAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/resin3ctl ${STAGEDIR}${PREFIX}/sbin
+	cd ${WRKSRC}/webapps && ${COPYTREE_SHARE} . ${APP_HOME}/webapps
+	cd ${WRKSRC}/lib  && ${COPYTREE_SHARE} . ${APP_HOME}/lib
 
 .if ${PORT_OPTIONS:MAPACHE22}
 	${APXS} -i -n caucho -a ${WRKSRC}/modules/c/src/apache2/.libs/mod_caucho.so
 .endif
-	@${ECHO_MSG}
-	@${ECHO_MSG} "********************************************************************************"
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} "********************************************************************************"
-	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
