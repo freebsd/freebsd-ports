@@ -3,7 +3,7 @@
 
 PORTNAME=	libgii
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/ggi/ggi-core/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -14,9 +14,10 @@ COMMENT=	GGI API for input sources
 LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_BZIP2=	yes
+USES=		libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -51,8 +52,8 @@ PLIST_SUB+=	VGL="@comment "
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/libgii.conf ${STAGEDIR}${PREFIX}/etc/ggi/libgii.conf.dist
-	${INSTALL_DATA} ${WRKSRC}/filter/mouse/mouse ${STAGEDIR}${PREFIX}/etc/ggi/filter/mouse.dist
-	${INSTALL_DATA} ${WRKSRC}/filter/keytrans/keytrans ${STAGEDIR}${PREFIX}/etc/ggi/filter/keytrans.dist
+	${MV} ${STAGEDIR}${PREFIX}/etc/ggi/libgii.conf ${STAGEDIR}${PREFIX}/etc/ggi/libgii.conf.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/ggi/filter/mouse ${STAGEDIR}${PREFIX}/etc/ggi/filter/mouse.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/ggi/filter/keytrans ${STAGEDIR}${PREFIX}/etc/ggi/filter/keytrans.sample
 
 .include <bsd.port.mk>
