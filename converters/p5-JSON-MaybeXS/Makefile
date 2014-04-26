@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	JSON-MaybeXS
-PORTVERSION=	1.001000
+PORTVERSION=	1.002002
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Cpanel-JSON-XS>=2.33.10:${PORTSDIR}/converters/p5-Cpanel-JSON-XS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Without-Module>=0.17:${PORTSDIR}/devel/p5-Test-Without-Module
+TEST_DEPENDS=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
+		p5-Test-Without-Module>=0.17:${PORTSDIR}/devel/p5-Test-Without-Module
 
 USE_PERL5=	configure
 USES=		perl5
