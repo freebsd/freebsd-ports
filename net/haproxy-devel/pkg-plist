@@ -25,6 +25,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/rate-shaping.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/sess_par_sec.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/acl.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/body-parsing.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/buffer-operations.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/buffer-ops.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/connect-status.txt
@@ -41,6 +42,8 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-docs.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-parsing.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/pattern.dia
+%%PORTDOCS%%%%DOCSDIR%%/internals/pattern.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/polling-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/repartition-be-fe-fi.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stats-v2.txt
