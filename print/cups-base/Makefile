@@ -4,7 +4,7 @@
 PORTNAME=	cups
 PORTVERSION=	1.7.1
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
+#PORTREVISION=	defined further
 CATEGORIES=	print
 MASTER_SITES=	http://www.cups.org/software/${DISTVERSION}/ \
 		EASYSW/${PORTNAME}/${DISTVERSION}
@@ -54,18 +54,18 @@ USERS=		cups
 
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 .if defined(CUPS_CLIENT)
-PORTREVISION=	0
+PORTREVISION=	1
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 OPTIONS_DEFINE=	GNUTLS
 .elif defined(CUPS_IMAGE)
-PORTREVISION=	0
+PORTREVISION=	1
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 OPTIONS_DEFINE=	GNUTLS
 .else
 INSTALLS_ICONS=	yes
-PORTREVISION=	0
+PORTREVISION=	1
 CUPS_SUFFIX=	-base
 OPTIONS_DEFINE=	GNUTLS LIBPAPER PHP PYTHON PAM DBUS LIBUSB XDG_OPEN AVAHI MDNSRESPONDER
 OPTIONS_DEFAULT=	LIBPAPER
@@ -299,12 +299,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/ulpt-cupsd.sh ${STAGEDIR}${PREFIX}/sbin/
 .endif
 
-# This is just a band-aid to unbreak print/cups-client at systems with default gcc compiler,
-# should be reworked to build with blocks and libdispatch support (via options).
-#
-.include <bsd.port.pre.mk>
-.if defined(CUPS_CLIENT) && ${OPSYS} == "FreeBSD" && ${OSVERSION} > 1000000
-CFLAGS+=	-fno-blocks
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
