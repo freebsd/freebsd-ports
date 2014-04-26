@@ -38,6 +38,8 @@ PLIST_SUB=		GLADE_API_VERSION=${GLADE_API_VERSION} \
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 		${WRKSRC}/configure
@@ -47,29 +49,23 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/libgladejni-${GLADE_API_VERSION}.so.1
 	${LN} -sf libgladejni-${GLADE_API_VERSION}.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libgladejni-${GLADE_API_VERSION}.so
-	${MKDIR} ${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/glade-java.pc	${PREFIX}/libdata/pkgconfig
-	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/glade${GLADE_API_VERSION}.jar ${JAVAJARDIR}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/api
-	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
-	${TOUCH} ${DOCSDIR}/api/packages.html
-	${MKDIR} ${DOCSDIR}/examples
-	cd ${WRKSRC}/doc/examples && ${FIND} . \
-		| ${CPIO} -pdmu ${DOCSDIR}/examples
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/glade-java.pc	${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/glade${GLADE_API_VERSION}.jar ${STAGEDIR}${JAVAJARDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/api
+	cd ${WRKSRC}/doc/api && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/api
+	${TOUCH} ${STAGEDIR}${DOCSDIR}/api/packages.html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/examples
+	cd ${WRKSRC}/doc/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/examples
 	@${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%GLADE_API_VERSION%%|${GLADE_API_VERSION}|g' \
 		 < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
