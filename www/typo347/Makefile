@@ -35,15 +35,12 @@ GD_DESC=	GDlib/freetype support
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 MBSTRING_DESC=	${MULTIBYTE_DESC}
 
+CURL_USE=	PHP=curl
+GD_USE=		PHP=gd
+MBSTRING_USE=	PHP=mbstring
+ZLIB_USE=	PHP=zlib
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCURL}
-USE_PHP+=	curl
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-USE_PHP+=	gd
-.endif
 
 .if ${PORT_OPTIONS:MIMAGICK}
 .if ${PORT_OPTIONS:MX11}
@@ -51,14 +48,6 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .else
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MMBSTRING}
-USE_PHP+=	mbstring
-.endif
-
-.if ${PORT_OPTIONS:MZLIB}
-USE_PHP+=	zlib
 .endif
 
 pre-install:
