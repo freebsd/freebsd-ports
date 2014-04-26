@@ -14,11 +14,11 @@ COMMENT?=	Extremely lightweight and simple web browser for GNOME 2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
-		soup-gnome-2.4:${PORTSDIR}/devel/libsoup-gnome \
-		notify:${PORTSDIR}/devel/libnotify \
-		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
+		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		${LOCALBASE}/share/icons/HighContrastLargePrint/index.theme:${PORTSDIR}/x11-themes/gnome-themes
@@ -27,9 +27,8 @@ CONFLICTS=	epiphany-3.[0-9]*
 
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
 USE_PYTHON=	yes
-USES=		desktop-file-utils gettext pathfix gmake pkgconfig
+USES=		desktop-file-utils gettext pathfix gmake libtool pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gnomedesktop
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
@@ -43,26 +42,23 @@ GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas
 
 PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}"
 
-MAN1=		epiphany.1
-
 OPTIONS_DEFINE=	NSS SPELLCHECK SEED
 OPTIONS_DEFAULT=NSS SPELLCHECK
 NSS_DESC=	Import passwords from 2.26 and older on first run
 SPELLCHECK_DESC=Enable spell checking by default
 SEED_DESC=	Seed (JavaScript) support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNSS}
-LIB_DEPENDS+=	nss3:${PORTSDIR}/security/nss
+LIB_DEPENDS+=	libnss3.so:${PORTSDIR}/security/nss
 CONFIGURE_ARGS+=--enable-nss
 .else
 CONFIGURE_ARGS+=--disable-nss
 .endif
 
 .if ${PORT_OPTIONS:MSEED}
-LIB_DEPENDS+=	seed:${PORTSDIR}/devel/seed
+LIB_DEPENDS+=	libseed.so:${PORTSDIR}/devel/seed
 CONFIGURE_ARGS+=--enable-seed
 .endif
 
