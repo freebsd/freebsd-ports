@@ -24,5 +24,4 @@ USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 PYDISTUTILS_PKGNAME=	pylirc
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
