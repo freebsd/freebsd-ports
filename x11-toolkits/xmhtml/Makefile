@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XmHTML
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 CATEGORIES=	x11-toolkits www
 MASTER_SITES=	SF/${PORTNAME:L}
 EXTRACT_SUFX=	.tgz
@@ -27,10 +27,14 @@ do-install:
 	(cd ${WRKSRC}/include/XmHTML && ${INSTALL_DATA} *.h \
 		${STAGEDIR}${PREFIX}/include/XmHTML)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	@(cd ${WRKSRC}/html && ${FIND} . ! -name "*Makefile*" | \
+		${CPIO} --quiet -dump -R ${SHAREOWN}:${SHAREGRP} \
+		${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in book contrib examples
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${EXAMPLESDIR})
+	@(cd ${WRKSRC} && ${FIND} ${i} ! -name "*Makefile*" | \
+		${CPIO} --quiet -dump -R ${SHAREOWN}:${SHAREGRP} \
+		${STAGEDIR}${EXAMPLESDIR})
 .endfor
 
 .include <bsd.port.mk>
