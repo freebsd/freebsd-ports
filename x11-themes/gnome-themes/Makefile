@@ -24,6 +24,5 @@ USE_GNOME=	gnomeprefix intlhack metacity gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
