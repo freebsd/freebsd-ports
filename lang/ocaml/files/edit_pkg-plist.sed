@@ -1,6 +1,9 @@
-/.p.cmx$/s@^@%%PROF%%@
+/\.p\.cmx$/s@^@%%PROF%%@
 /examples_labeltk/{
   s@share/examples@%%EXAMPLESDIR%%@
   s@^@%%TK%%@
 }
 /graphics/s@^@%%X11%%@
+/labltk/s@^@%%TK%%@
+/ocamlbrowser/s@^@%%TK%%@
+/dlllabltk.so/s@^@%%TK%%@
