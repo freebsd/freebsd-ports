@@ -298,8 +298,6 @@ lib/netmagis/tmpl/fr/statorg.html
 lib/netmagis/tmpl/fr/statuser.html
 lib/netmagis/tmpl/fr/topolist.html
 lib/netmagis/tmpl/fr/topotop.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth-ldap.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth-pgsql.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf
 %%WWWDIR%%/add
 %%WWWDIR%%/admgrp
