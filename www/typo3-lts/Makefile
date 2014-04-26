@@ -16,7 +16,6 @@ PORTSCOUT=	limit:^6\.2\.
 NO_BUILD=	yes
 USE_PHP=	ctype filter json mysqli pcre session xml
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=52
 
 TYPO3WWW=	www
 TYPO3RELEASE=	LTS
@@ -36,19 +35,14 @@ IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 MBSTRING_DESC=	${MULTIBYTE_DESC}
 MYSQL_DESC=	Install MySQL Server
 
+APC_USE=	PHP=apc
+CURL_USE=	PHP=curl
+GD_USE=		PHP=gd
+MBSTRING_USE=	PHP=mbstring
+MYSQL_USE=	MYSQL=server
+ZLIB_USE=	PHP=zlib
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPC}
-USE_PHP+=	apc
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-USE_PHP+=	curl
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-USE_PHP+=	gd
-.endif
 
 .if ${PORT_OPTIONS:MIMAGICK}
 .if ${PORT_OPTIONS:MX11}
@@ -56,19 +50,6 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .else
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MMBSTRING}
-USE_PHP+=	mbstring
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	server
-IGNORE_WITH_MYSQL=	50
-.endif
-
-.if ${PORT_OPTIONS:MZLIB}
-USE_PHP+=	zlib
 .endif
 
 #pre-install:
