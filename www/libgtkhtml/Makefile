@@ -4,7 +4,7 @@
 
 PORTNAME=	libgtkhtml
 PORTVERSION=	2.11.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,13 +12,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight HTML rendering/printing/editing engine
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomeprefix gnomehack libxslt gnomevfs2 ltverhack
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USE_GNOME=	gnomeprefix libxslt gnomevfs2
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=  libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
