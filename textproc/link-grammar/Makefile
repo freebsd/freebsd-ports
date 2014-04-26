@@ -2,43 +2,40 @@
 
 PORTNAME=	link-grammar
 PORTVERSION=	4.7.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A grammar checking library
+COMMENT=	Grammar checking library
 
-LIB_DEPENDS=	pspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	libpspell.so:${PORTSDIR}/textproc/aspell
 
-USE_GNOME=	gnomehack ltverhack
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
+OPTIONS_DEFINE=	DOCS
+
+USES=		dos2unix gmake libtool pathfix
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	yes
 USE_CSTD=	gnu99
-CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pthreads \
 		--disable-java-bindings \
 		--disable-hunspell \
 		--enable-aspell
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
 
 DOCS=		AUTHORS LICENSE MAINTAINERS README
-MAN1=		link-parser.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/configure ${WRKSRC}/${PORTNAME}/Makefile.in
 
-.ifndef (NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

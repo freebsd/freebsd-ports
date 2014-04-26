@@ -2,10 +2,11 @@ bin/link-parser
 include/link-grammar/link-features.h
 include/link-grammar/link-includes.h
 lib/liblink-grammar.a
-lib/liblink-grammar.la
 lib/liblink-grammar.so
 lib/liblink-grammar.so.4
+lib/liblink-grammar.so.4.7.4
 libdata/pkgconfig/link-grammar.pc
+man/man1/link-parser.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS
