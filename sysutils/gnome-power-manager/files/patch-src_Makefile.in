@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2010-06-06 12:19:04.000000000 +0200
-+++ src/Makefile.in	2010-06-06 12:21:46.000000000 +0200
-@@ -499,6 +499,7 @@
+--- ./src/Makefile.in.orig	2014-04-26 09:59:28.000000000 +0000
++++ ./src/Makefile.in	2014-04-26 10:00:02.000000000 +0000
+@@ -502,6 +502,7 @@
  	$(GNOME_LIBS)					\
  	$(UNIQUE_LIBS)					\
  	$(DBUS_LIBS)					\
@@ -8,7 +8,7 @@
  	-lm
  
  gnome_power_statistics_CFLAGS = \
-@@ -520,6 +521,7 @@
+@@ -523,6 +524,7 @@
  	$(UNIQUE_LIBS)					\
  	$(GPM_EXTRA_LIBS)				\
  	$(UPOWER_LIBS)					\
@@ -16,7 +16,7 @@
  	-lm
  
  gnome_power_preferences_CFLAGS = \
-@@ -573,6 +575,7 @@
+@@ -580,6 +582,7 @@
  	$(LIBNOTIFY_LIBS)				\
  	$(GPM_EXTRA_LIBS)				\
  	$(UPOWER_LIBS)					\
@@ -24,7 +24,7 @@
  	-lm
  
  gnome_power_manager_CFLAGS = \
-@@ -639,6 +642,7 @@
+@@ -648,6 +651,7 @@
  	$(X11_LIBS)						\
  	$(LIBNOTIFY_LIBS)				\
  	$(GPM_EXTRA_LIBS)				\
@@ -32,3 +32,20 @@
  	-lm
  
  gnome_power_self_test_CFLAGS = -DEGG_TEST $(AM_CFLAGS) $(WARNINGFLAGS)
+@@ -2014,14 +2018,14 @@
+ 	@GLIB_GENMARSHAL@ $< --prefix=gpm_marshal --header > $@
+ 
+ org.gnome.PowerManager.h: org.gnome.PowerManager.xml
+-	libtool --mode=execute dbus-binding-tool	\
++	$(LIBTOOL) --mode=execute dbus-binding-tool	\
+ 		--prefix=gpm_manager			\
+ 		--mode=glib-server			\
+ 		--output=org.gnome.PowerManager.h	\
+ 		$(srcdir)/org.gnome.PowerManager.xml
+ 
+ org.gnome.PowerManager.Backlight.h: org.gnome.PowerManager.Backlight.xml
+-	libtool --mode=execute dbus-binding-tool	\
++	$(LIBTOOL) --mode=execute dbus-binding-tool	\
+ 		--prefix=gpm_backlight			\
+ 		--mode=glib-server			\
+ 		--output=org.gnome.PowerManager.Backlight.h	\
