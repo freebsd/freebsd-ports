@@ -71,6 +71,7 @@ lib/libgtkhtml-2.a
 lib/libgtkhtml-2.la
 lib/libgtkhtml-2.so
 lib/libgtkhtml-2.so.0
+lib/libgtkhtml-2.so.0.0.0
 libdata/pkgconfig/libgtkhtml-2.0.pc
 @dirrm include/gtkhtml-2.0/libgtkhtml/view
 @dirrm include/gtkhtml-2.0/libgtkhtml/util
