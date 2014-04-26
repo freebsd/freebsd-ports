@@ -147,7 +147,7 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/man/vice.1
-	${REINPLACE_CMD} -e "s|^localedir.*|localedir = ${LOCALBASE}/share/locale|" \
+	${REINPLACE_CMD} -e 's|^localedir.*|localedir = $$(DESTDIR)${LOCALBASE}/share/locale|' \
 		${WRKSRC}/po/Makefile.in.in
 	${REINPLACE_CMD} -e 's|lungif|lgif|g' -e 's|== "x|= "x|' \
 		-e 's|"DATADIRNAME"/locale|share/locale|' \
