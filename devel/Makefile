@@ -4214,6 +4214,7 @@
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-brightbox
     SUBDIR += rubygem-fog-core
+    SUBDIR += rubygem-fog-json
     SUBDIR += rubygem-font-awesome-rails
     SUBDIR += rubygem-foreman
     SUBDIR += rubygem-foreman_api
