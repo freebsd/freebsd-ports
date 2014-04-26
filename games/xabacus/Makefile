@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xabacus
-PORTVERSION=	7.7.1
+PORTVERSION=	8.0.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
 		http://ftp.tux.org/pub/tux/bagleyd/xabacus/
@@ -12,31 +12,38 @@ COMMENT=	Abacus for X Window System
 
 LICENSE=	BSD
 
-OPTIONS_DEFINE=	MOTIF ESOUND
-OPTIONS_DEFAULT=	MOTIF
-
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-nas
+INSTALLS_ICONS=	yes
 
+DESKTOP_ENTRIES="XAbacus" "" "abacus" "${PORTNAME}" "" ""
+
+OPTIONS_DEFINE=		ESOUND MOTIF
+OPTIONS_DEFAULT=	MOTIF
+
+ESOUND_LIB_DEPENDS_OFF=	librplay.so:${PORTSDIR}/audio/rplay
+ESOUND_USE=		gnome=esound
+ESOUND_CONFIGURE_ON=	--without-rplay --with-esound
+ESOUND_CONFIGURE_OFF=	--with-rplay --without-esound
+ESOUND_LDFLAGS=		-L${LOCALBASE}/lib -laudiofile
 MOTIF_USES=	motif
 MOTIF_CONFIGURE_WITH=	motif
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MESOUND}
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=	--without-rplay --with-esound
-.else
-LIB_DEPENDS+=		librplay.so:${PORTSDIR}/audio/rplay
-CONFIGURE_ARGS+=	--with-rplay --without-esound
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|/games/|/|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|\($$(datadir)\)/games|\1| ; \
+		 s|@XWIDGETLDFLAGS@|@LDFLAGS@| ; \
+		 s|\([[:blank:]]\)/usr/games|\1$$(DESTDIR)$$(bindir)| ; \
+		 /chmod/s|^|#| ; \
+		 /chown/s|^|#|' ${WRKSRC}/Makefile.in
 
-post-configure:
-	@${REINPLACE_CMD} -e '/^XWIDGETLDFLAGS/d' ${WRKSRC}/Makefile
+post-install:
+.for i in 16 22 24 32 48
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps
+	(cd ${WRKSRC}/pixmaps/${i}x${i} && ${INSTALL_DATA} abacus.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps)
+.endfor
 
 .include <bsd.port.mk>
