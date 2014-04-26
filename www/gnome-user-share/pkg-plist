@@ -1,6 +1,5 @@
 bin/gnome-file-share-properties
 etc/xdg/autostart/gnome-user-share.desktop
-lib/nautilus/extensions-2.0/libnautilus-share-extension.la
 lib/nautilus/extensions-2.0/libnautilus-share-extension.so
 libexec/gnome-user-share
 share/applications/gnome-user-share-properties.desktop
