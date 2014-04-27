@@ -7,14 +7,12 @@ CATEGORIES=	www python
 MASTER_SITES=	http://pyblosxom.github.io/download/
 
 MAINTAINER=	jun-g@daemonfreaks.com
-COMMENT=	A lightweight weblog system
+COMMENT=	Lightweight weblog system
 
 LICENSE=	MIT
 
 USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-
-NO_STAGE=	yes
+USE_PYDISTUTILS=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -22,8 +20,8 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \. ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \. ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
