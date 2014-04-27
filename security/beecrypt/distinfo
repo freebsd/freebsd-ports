@@ -1,2 +1,4 @@
 SHA256 (beecrypt-4.2.1.tar.gz) = 286f1f56080d1a6b1d024003a5fa2158f4ff82cae0c6829d3c476a4b5898c55d
 SIZE (beecrypt-4.2.1.tar.gz) = 882758
+SHA256 (mpntrbits.patch) = aa313e42c85dfc653a443ca5eaf56691bb8155e612023d1b7d354141f44fd146
+SIZE (mpntrbits.patch) = 1213

@@ -1,12 +1,14 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-
 PORTNAME=	beecrypt
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
+PATCHFILES=	mpntrbits.patch
+PATCH_SITES=	http://sourceforge.net/p/beecrypt/patches/_discuss/thread/bff89ba1/5387/attachment/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	BeeCrypt is an open source cryptography library
 
 USE_AUTOTOOLS=	libtool
@@ -25,10 +27,15 @@ CONFIGURE_ARGS+=	--enable-openmp
 CONFIGURE_ARGS+=	--disable-openmp
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
+# Configure tries to guess our CPU-features using Linux-centric logic.
+# Help it here:
+.for o in sse3 sse2 sse mmx
+.if ${MACHINE_CPU:M$o} != ""
+CPPFLAGS+=	-DOPTIMIZE_${o:U}
 .endif
+.endfor
 
-.include <bsd.port.post.mk>
+regression-test test check: build
+	${MAKE} -C ${WRKSRC} check
+
+.include <bsd.port.mk>
