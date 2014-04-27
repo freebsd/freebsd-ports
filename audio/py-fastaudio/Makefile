@@ -5,7 +5,7 @@ PORTNAME=	fastaudio
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	audio python
-MASTER_SITES=	http://www.freenet.org.nz/python/pyPortAudio/:site1 \
+MASTER_SITES=	http://freenet.mcnabhosting.com/python/pyPortAudio/:site1 \
 		http://www.portaudio.com/archives/:site2
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	fastaudio
@@ -24,7 +24,6 @@ PLIST_DIRS=
 EXAMPLESDIR=	${LOCALBASE}/share/examples/py-${PORTNAME}
 
 USES=		zip:infozip
-NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
@@ -52,8 +51,8 @@ post-patch:
 
 post-install:
 .if !defined(WITHOUT_EXAMPLES)
-	( ${MKDIR} ${EXAMPLESDIR} && \
-		${INSTALL_DATA} ${WRKSRC}/demo.py ${EXAMPLESDIR}/ )
+	( ${MKDIR} ${STAGEDIR}${EXAMPLESDIR} && \
+		${INSTALL_DATA} ${WRKSRC}/demo.py ${STAGEDIR}${EXAMPLESDIR}/ )
 .endif
 
 .include <bsd.port.mk>
