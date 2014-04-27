@@ -1,3 +1,49 @@
+share/mplayer/skins/Blue/README
+share/mplayer/skins/Blue/VERSION
+share/mplayer/skins/Blue/about.png
+share/mplayer/skins/Blue/bareqb.png
+share/mplayer/skins/Blue/barexit.png
+share/mplayer/skins/Blue/barffwd.png
+share/mplayer/skins/Blue/barfwd.png
+share/mplayer/skins/Blue/barmute.png
+share/mplayer/skins/Blue/barplay.png
+share/mplayer/skins/Blue/barrev.png
+share/mplayer/skins/Blue/barrevv.png
+share/mplayer/skins/Blue/barstop.png
+share/mplayer/skins/Blue/barzoom.png
+share/mplayer/skins/Blue/eqb.png
+share/mplayer/skins/Blue/exit.png
+share/mplayer/skins/Blue/font-pl.png
+share/mplayer/skins/Blue/font.fnt
+share/mplayer/skins/Blue/forward.png
+share/mplayer/skins/Blue/icons/icon32x32.png
+share/mplayer/skins/Blue/icons/icon48x48.png
+share/mplayer/skins/Blue/load.png
+share/mplayer/skins/Blue/main-silver.png
+share/mplayer/skins/Blue/main.png
+share/mplayer/skins/Blue/menu.png
+share/mplayer/skins/Blue/menus.png
+share/mplayer/skins/Blue/minimize.png
+share/mplayer/skins/Blue/mute.png
+share/mplayer/skins/Blue/next.png
+share/mplayer/skins/Blue/play.png
+share/mplayer/skins/Blue/playbar.png
+share/mplayer/skins/Blue/playlist.png
+share/mplayer/skins/Blue/pos.png
+share/mplayer/skins/Blue/prefs.png
+share/mplayer/skins/Blue/prev.png
+share/mplayer/skins/Blue/progres-long2c.png
+share/mplayer/skins/Blue/progres-long2d.png
+share/mplayer/skins/Blue/rev.png
+share/mplayer/skins/Blue/skin
+share/mplayer/skins/Blue/skinb.png
+share/mplayer/skins/Blue/stop.png
+share/mplayer/skins/Blue/subblue.png
+share/mplayer/skins/Blue/subload.png
+share/mplayer/skins/Blue/symbols.fnt
+share/mplayer/skins/Blue/symbols2.png
+share/mplayer/skins/Blue/symbolsg.fnt
+share/mplayer/skins/Blue/zoom-3.png
 %%ABYSS%%share/mplayer/skins/Abyss/README
 %%ABYSS%%share/mplayer/skins/Abyss/VERSION
 %%ABYSS%%share/mplayer/skins/Abyss/bal-button.png
@@ -392,52 +438,6 @@
 %%CYRUS%%share/mplayer/skins/Cyrus/sub.png
 %%CYRUS%%share/mplayer/skins/Cyrus/symbols.fnt
 %%CYRUS%%share/mplayer/skins/Cyrus/symbols.png
-%%DEFAULT%%share/mplayer/skins/Blue/README
-%%DEFAULT%%share/mplayer/skins/Blue/VERSION
-%%DEFAULT%%share/mplayer/skins/Blue/about.png
-%%DEFAULT%%share/mplayer/skins/Blue/bareqb.png
-%%DEFAULT%%share/mplayer/skins/Blue/barexit.png
-%%DEFAULT%%share/mplayer/skins/Blue/barffwd.png
-%%DEFAULT%%share/mplayer/skins/Blue/barfwd.png
-%%DEFAULT%%share/mplayer/skins/Blue/barmute.png
-%%DEFAULT%%share/mplayer/skins/Blue/barplay.png
-%%DEFAULT%%share/mplayer/skins/Blue/barrev.png
-%%DEFAULT%%share/mplayer/skins/Blue/barrevv.png
-%%DEFAULT%%share/mplayer/skins/Blue/barstop.png
-%%DEFAULT%%share/mplayer/skins/Blue/barzoom.png
-%%DEFAULT%%share/mplayer/skins/Blue/eqb.png
-%%DEFAULT%%share/mplayer/skins/Blue/exit.png
-%%DEFAULT%%share/mplayer/skins/Blue/font-pl.png
-%%DEFAULT%%share/mplayer/skins/Blue/font.fnt
-%%DEFAULT%%share/mplayer/skins/Blue/forward.png
-%%DEFAULT%%share/mplayer/skins/Blue/icons/icon32x32.png
-%%DEFAULT%%share/mplayer/skins/Blue/icons/icon48x48.png
-%%DEFAULT%%share/mplayer/skins/Blue/load.png
-%%DEFAULT%%share/mplayer/skins/Blue/main-silver.png
-%%DEFAULT%%share/mplayer/skins/Blue/main.png
-%%DEFAULT%%share/mplayer/skins/Blue/menu.png
-%%DEFAULT%%share/mplayer/skins/Blue/menus.png
-%%DEFAULT%%share/mplayer/skins/Blue/minimize.png
-%%DEFAULT%%share/mplayer/skins/Blue/mute.png
-%%DEFAULT%%share/mplayer/skins/Blue/next.png
-%%DEFAULT%%share/mplayer/skins/Blue/play.png
-%%DEFAULT%%share/mplayer/skins/Blue/playbar.png
-%%DEFAULT%%share/mplayer/skins/Blue/playlist.png
-%%DEFAULT%%share/mplayer/skins/Blue/pos.png
-%%DEFAULT%%share/mplayer/skins/Blue/prefs.png
-%%DEFAULT%%share/mplayer/skins/Blue/prev.png
-%%DEFAULT%%share/mplayer/skins/Blue/progres-long2c.png
-%%DEFAULT%%share/mplayer/skins/Blue/progres-long2d.png
-%%DEFAULT%%share/mplayer/skins/Blue/rev.png
-%%DEFAULT%%share/mplayer/skins/Blue/skin
-%%DEFAULT%%share/mplayer/skins/Blue/skinb.png
-%%DEFAULT%%share/mplayer/skins/Blue/stop.png
-%%DEFAULT%%share/mplayer/skins/Blue/subblue.png
-%%DEFAULT%%share/mplayer/skins/Blue/subload.png
-%%DEFAULT%%share/mplayer/skins/Blue/symbols.fnt
-%%DEFAULT%%share/mplayer/skins/Blue/symbols2.png
-%%DEFAULT%%share/mplayer/skins/Blue/symbolsg.fnt
-%%DEFAULT%%share/mplayer/skins/Blue/zoom-3.png
 %%DEFAULT_SMALL%%share/mplayer/skins/Blue-small/README
 %%DEFAULT_SMALL%%share/mplayer/skins/Blue-small/VERSION
 %%DEFAULT_SMALL%%share/mplayer/skins/Blue-small/bareqb.png
@@ -875,6 +875,7 @@
 %%MENTALIC%%share/mplayer/skins/mentalic/play.png
 %%MENTALIC%%share/mplayer/skins/mentalic/pos.png
 %%MENTALIC%%share/mplayer/skins/mentalic/prev.png
+%%MENTALIC%%share/mplayer/skins/mentalic/slider.png
 %%MENTALIC%%share/mplayer/skins/mentalic/skin
 %%MENTALIC%%share/mplayer/skins/mentalic/stop.png
 %%MENTALIC%%share/mplayer/skins/mentalic/sub.png
@@ -1844,7 +1845,6 @@
 %%WINDOWSMEDIAPLAYER6%%share/mplayer/skins/WMP6/view.png
 %%WINDOWSMEDIAPLAYER6%%share/mplayer/skins/WMP6/vol.png
 share/mplayer/skins/default
-share/mplayer/skins/%%PKGNAME%%
 %%XMMPLAYER%%@dirrm share/mplayer/skins/xmmplayer
 %%XINE_LCD%%@dirrm share/mplayer/skins/xine-lcd
 %%XFCE4%%@dirrm share/mplayer/skins/XFce4
@@ -1897,8 +1897,6 @@ share/mplayer/skins/%%PKGNAME%%
 %%DISAPPEARER%%@dirrm share/mplayer/skins/disappearer/volume
 %%DISAPPEARER%%@dirrm share/mplayer/skins/disappearer
 %%DEFAULT_SMALL%%@dirrm share/mplayer/skins/Blue-small
-%%DEFAULT%%@dirrm share/mplayer/skins/Blue/icons
-%%DEFAULT%%@dirrm share/mplayer/skins/Blue
 %%CYRUS%%@dirrm share/mplayer/skins/Cyrus
 %%CUBICPLAYER%%@dirrm share/mplayer/skins/CubicPlayer
 %%CORNERMP_AQUA%%@dirrm share/mplayer/skins/CornerMP-aqua
@@ -1915,5 +1913,7 @@ share/mplayer/skins/%%PKGNAME%%
 %%ABYSS%%@dirrm share/mplayer/skins/Abyss/icons
 %%ABYSS%%@dirrm share/mplayer/skins/Abyss
 %%WINDOWSMEDIAPLAYER6%%@dirrm share/mplayer/skins/WMP6
+@dirrm share/mplayer/skins/Blue/icons
+@dirrm share/mplayer/skins/Blue
 @dirrm share/mplayer/skins
 @dirrmtry share/mplayer/
