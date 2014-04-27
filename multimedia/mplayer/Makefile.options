@@ -10,7 +10,7 @@
 # Feature options:
 # These options influence some general behaviour of mplayer. Almost all of the featues,
 # for example all the codecs, are selected via the OPTIONS framework.
-# The following options WITH_DVD_DEVICE, WITH_CDROM_DEVICE, WITH_LANG are *not*
+# The following options WITH_DVD_DEVICE, WITH_CDROM_DEVICE, are *not*
 # selected via the options framework and must be set via make.conf or by passing
 # the variable to make during build, e.g. make WITH_DVD_DEVICE=/dev/cd0
 #
@@ -22,18 +22,9 @@
 # WITH_CDROM_DEVICE=/path/to/desired/device
 # default: /dev/cd0
 # This option changes the default cdrom device, maybe useful for VCDs
-#
-# WITH_LANG=<your choice>
-# default: en
-# Enables language support bg, cz, de, dk, en, es, fr, gr, hu, it, ko, nl, no, pl, pt_BR, ro, ru, sk, tr, uk, zh
-#
 
 # Non-OPTIONS knob handling
 # =========================
-
-.if defined(WITH_LANG)
-CONFIGURE_ARGS+=--language=${WITH_LANG}
-.endif
 
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
@@ -56,12 +47,6 @@ DEFAULT_KERN_HZ=1024
 
 # Non-simplified OPTIONS handling
 # ===============================
-
-.if ${PORT_OPTIONS:MESOUND}
-USE_GNOME+=	esound
-.else
-CONFIGURE_ARGS+=	--disable-esd
-.endif
 
 .if ${PORT_OPTIONS:MIPV6}
 CATEGORIES+=	ipv6
@@ -98,22 +83,6 @@ CONFIGURE_ARGS+=	--disable-tv-v4l1 \
 
 # Build system handling (including OPTIONS)
 # =========================================
-
-#On i386, gcc runs out of general purpose registers when
-#trying to compile a debug version with the default flags.
-.if ${PORT_OPTIONS:MDEBUG}
-WITH_DEBUG=	yes
-CONFIGURE_ARGS+=	--enable-debug
-.if ${ARCH} == "i386"
-DEBUG_FLAGS=	-g -fomit-frame-pointer
-.endif
-.else
-.if ${PORT_OPTIONS:MOCFLAGS}
-CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math
-.else
-CFLAGS+=	-O -fomit-frame-pointer
-.endif #OCFLAGS
-.endif #DEBUG
 
 # Supported architectures for clang
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
@@ -167,6 +136,34 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 .endif
 
+
+# Extra build options for debugging and profiling
+# ===============================================
+
+#On i386, gcc runs out of general purpose registers when
+#trying to compile a debug version with the default flags.
+.if ${PORT_OPTIONS:MDEBUG}
+WITH_DEBUG=	yes
+CONFIGURE_ARGS+=	--enable-debug
+.if ${ARCH} == "i386" && !defined(WITH_BASE_CLANG)
+DEBUG_FLAGS=	-g -fomit-frame-pointer
+.endif
+.else
+.if ${PORT_OPTIONS:MOCFLAGS}
+CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math
+.else
+CFLAGS+=	-O -fomit-frame-pointer
+.endif #OCFLAGS
+.endif #DEBUG
+
+.if ${PORT_OPTIONS:MPROFILE}
+CONFIGURE_ARGS+=	--enable-profile
+LDFLAGS+=	-pg
+.endif
+
+# Edge case: binary codecs on i386, mostly superseded by internal ffmpeg
+# ======================================================================
+
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 .if ${PORT_OPTIONS:MWIN32} && !defined(PACKAGE_BUILDING) && ${ARCH} == "i386"
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
@@ -179,6 +176,9 @@ CONFIGURE_ARGS+=	--disable-win32dll \
 .endif
 .endif # ARCH == i386/amd64
 
+
+# Additional extra libraries handling
+# ===================================
 
 .if defined(EXTRA_LIBS)
 CONFIGURE_ARGS+=	--extra-libs="${EXTRA_LIBS}"

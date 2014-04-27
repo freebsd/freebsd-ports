@@ -3,7 +3,6 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	2
 
 COMMENT=	Convenient video file and movie encoder
 
@@ -12,8 +11,8 @@ COMMENT=	Convenient video file and movie encoder
 OPTIONS_DEFINE=	AMR_NB AMR_WB BLURAY CDIO CDPARANOIA DEBUG DIRAC \
 		DV FAAC FONTCONFIG FRIBIDI GIF GSM IPV6 JACK \
 		LADSPA LIBMNG LZO MAD NAS OCFLAGS OPENAL OPENJPEG \
-		OPUS OTCHAIN PULSEAUDIO REAL RTCPU RTMP SCHROEDINGER \
-		SMB THEORA TWOLAME V4L VPX WIN32 X264 XVID
+		OPUS OTCHAIN PROFILE PULSEAUDIO REAL RTCPU RTMP \
+		SCHROEDINGER SMB THEORA TWOLAME V4L VPX WIN32 X264 XVID
 
 OPTIONS_DEFAULT=GIF IPV6 OCFLAGS RTCPU WIN32 X264 XVID
 
@@ -49,7 +48,6 @@ SHEBANG_FILES=	TOOLS/calcbpp.pl TOOLS/checktree.sh TOOLS/countquant.pl	\
 		TOOLS/wma2ogg.pl
 
 .include "${.CURDIR}/../mplayer/Makefile.optvars"
-.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--disable-mplayer \
@@ -58,7 +56,6 @@ CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-vdpau \
 			--disable-rtc \
 			--disable-arts \
-			--disable-esd \
 			--disable-caca \
 			--disable-lirc \
 			--disable-sdl \
@@ -81,7 +78,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "There are some knobs which *can* *not* be selected via the"
 	@${ECHO_MSG} "OPTIONS framework. At the moment, their defaults are:"
-	@${ECHO_MSG} "WITH_LANG=<LanguageCode>"
 	@${ECHO_MSG} "DEFAULT_DVD_DEVICE=/dev/cd0"
 	@${ECHO_MSG} "DEFAULT_CDROM_DEVICE=/dev/cd0"
 
@@ -95,6 +91,7 @@ post-patch:
 		-e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		-e 's|-lbz2|/usr/lib/libbz2.so|' \
 		-e 's|-lncurses|/usr/lib/libncurses.so|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
