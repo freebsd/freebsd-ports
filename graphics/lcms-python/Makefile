@@ -12,7 +12,7 @@ COMMENT=	Light Color Management System (python bindings)
 
 LICENSE=	MIT
 
-LIB_DEPENDS+=	lcms:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
@@ -28,11 +28,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_lcms.so \
 		%%PYTHON_SITELIBDIR%%/lcms.py
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/.libs/_lcms.so \
-		${PYTHON_SITELIBDIR}/_lcms.so
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_LIB} ${INSTALL_WRKSRC}/.libs/_lcms.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/_lcms.so
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/lcms.py \
-		${PYTHON_SITELIBDIR}/lcms.py
+		${STAGEDIR}${PYTHON_SITELIBDIR}/lcms.py
 
 .include <bsd.port.mk>
