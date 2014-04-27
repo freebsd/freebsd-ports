@@ -16,6 +16,8 @@ EXTRACT_ONLY=	fMSX37.zip
 MAINTAINER=	dk@farm.org
 COMMENT=	Portable MSX/MSX2/MSX2+ Emulator
 
+BROKEN=		Unfetchable
+
 USE_XORG=	xi x11
 USES=		gmake dos2unix zip
 DOS2UNIX_FILES=	EMULib/Unix/LibUnix.c EMULib/Unix/NetUnix.c EMULib/Rules.gcc \

@@ -13,6 +13,8 @@ COMMENT=	A wiki compiler
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-CGI-FormBuilder>=0:${PORTSDIR}/www/p5-CGI-FormBuilder \

@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/IRPF-Licenses.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
+BROKEN=		Unfetchable
+
 USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME:U}2014
 

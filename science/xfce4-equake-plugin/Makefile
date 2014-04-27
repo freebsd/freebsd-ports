@@ -13,6 +13,8 @@ COMMENT=	Earthquake monitor plugin for the Xfce panel
 
 LICENSE=	GPLv3
 
+BROKEN=		Checksum and size mismatch
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USES=	gettext pkgconfig gmake
