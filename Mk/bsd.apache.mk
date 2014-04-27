@@ -488,6 +488,12 @@ do-install:
 . else
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 	@${APXS} -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} -i -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
+.	if !defined(DEBUG)	
+		@${ECHO_MSG} "===> strip ${APACHEMODDIR}/${MODULENAME}.so"
+		@[ -e ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so ] && ${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
+.	else
+		@${ECHO_MSG} "===> DEBUG is set, will not strip ${APACHEMODDIR}/${MODULENAME}.so"
+.	endif
 . endif
 .endif
 .endif          # defined(AP_FAST_BUILD)
