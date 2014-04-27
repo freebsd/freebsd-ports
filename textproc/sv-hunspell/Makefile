@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	2.24
+PORTVERSION=	2.26
 CATEGORIES=	textproc
 MASTER_SITES=	http://extensions.libreoffice.org/extension-center/swedish-spelling-dictionary-den-stora-svenska-ordlistan/releases/${PORTVERSION}/ \
 		LOCAL/sunpoet/${PORTNAME}
