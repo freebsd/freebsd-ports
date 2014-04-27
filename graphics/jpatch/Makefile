@@ -9,9 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/JPatch%200.4%20PREVIEW%201
 DISTNAME=	${PORTNAME}0_4preview1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A spline based 3D modeling tool
-
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+COMMENT=	Spline based 3D modeling tool
 
 USES=		zip
 USE_JAVA=	yes
@@ -24,9 +22,8 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 
 SUB_FILES=	jpatch.sh
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/jpatch.jar ${JAVAJARDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/jpatch.sh ${PREFIX}/bin/jpatch
+	${INSTALL_DATA} ${WRKSRC}/jpatch.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/jpatch.sh ${STAGEDIR}${PREFIX}/bin/jpatch
 
 .include <bsd.port.mk>
