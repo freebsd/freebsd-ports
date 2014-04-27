@@ -5,6 +5,6 @@ include/libaacs/filesystem.h
 lib/libaacs.a
 lib/libaacs.la
 lib/libaacs.so
-lib/libaacs.so.3
+lib/libaacs.so.4
 libdata/pkgconfig/libaacs.pc
 @dirrm include/libaacs
