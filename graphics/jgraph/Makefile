@@ -16,12 +16,12 @@ EXTRACT_BEFORE_ARGS=	-c
 EXTRACT_AFTER_ARGS=	| ${SH}
 
 NO_WRKSUBDIR=	yes
-MAN1=		jgraph.1
 MAKEFILE=	makefile
-
 MAKE_ENV+=	DATADIR=${DATADIR}
-
 CFLAGS+=	-Wno-return-type
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -E -e 's,(PREFIX|DATADIR)},DESTDIR}$${&,' \
+		-e 's|-o bin -g bin||' ${WRKSRC}/makefile
+
 .include <bsd.port.mk>

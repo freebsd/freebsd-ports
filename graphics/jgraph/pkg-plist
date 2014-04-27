@@ -1,4 +1,5 @@
 bin/jgraph
+man/man1/jgraph.1.gz
 %%DATADIR%%/acc.jgr
 %%DATADIR%%/ad.jgr
 %%DATADIR%%/alb.jgr
