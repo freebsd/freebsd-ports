@@ -13,7 +13,7 @@ DISTNAME=	gtkDPS-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk bindings for the Display GhostScript System
 
-LIB_DEPENDS+=	dpstk:${PORTSDIR}/x11/dgs
+LIB_DEPENDS=	libdpstk.so:${PORTSDIR}/x11/dgs
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
@@ -24,28 +24,17 @@ CONFIGURE_ARGS=	--with-dps-includes=${LOCALBASE}/include \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+alpha_BROKEN=	Does not compile on alpha
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		Does not compile on alpha
-.endif
+NLS_USES=	gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|gnulocaledir)|DESTDIR)$$(&|' \
+		${WRKSRC}/po/Makefile.in.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
