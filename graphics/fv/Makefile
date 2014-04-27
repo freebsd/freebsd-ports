@@ -13,11 +13,10 @@ COMMENT=	Viewer of hdr/pfm images
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		pkgconfig zip
+USES=		gmake pkgconfig zip
 USE_GL=		glut
-USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
 
 CXXFLAGS+=	$$(pkg-config --cflags libpng15) \
@@ -29,13 +28,11 @@ LDFLAGS+=	$$(pkg-config --libs libpng15) \
 PORTDOCS=	AUTHORS ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DEBUG DOCS
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITH_DEBUG)
+.if ! ${PORT_OPTIONS:MDEBUG}
 CXXFLAGS+=	-DNDEBUG
 .endif
 
@@ -46,11 +43,8 @@ post-patch:
 		 s|^LDFLAGS=|LDFLAGS?=|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
