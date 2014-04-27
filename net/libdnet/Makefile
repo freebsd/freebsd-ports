@@ -2,35 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	libdnet
-PORTVERSION=	1.11
-PORTREVISION?=	3
+PORTVERSION=	1.12
 CATEGORIES?=	net
-MASTER_SITES=	SF/libdnet/libdnet/libdnet-${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER?=	onatan@gmail.com
-COMMENT=	A simple interface to low level networking routines
+COMMENT=	Simple interface to low level networking routines
+
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+CONFIGURE_ENV=	ac_cv_dnet_bsd_bpf=yes
+USES=		libtool:keepla tar:tgz
 
 .if !defined(LIBDNET_SLAVE)
 CONFIGURE_ARGS+=	--without-python
 USE_LDCONFIG=	yes
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(LIBDNET_SLAVE)
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|shrext|shrext_cmds|g' ${WRKSRC}/configure
 
-post-build:
-	@cd ${WRKSRC}/src ; ${CC} ${CFLAGS} -shared -o libdnet.so .libs/addr-util.o .libs/addr.o .libs/blob.o .libs/ip-util.o .libs/ip6.o .libs/rand.o .libs/arp-bsd.o .libs/eth-bsd.o .libs/fw-pf.o .libs/intf.o .libs/ip.o .libs/route-bsd.o .libs/tun-bsd.o
-
-post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/
-	@${LN} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
