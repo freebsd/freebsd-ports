@@ -866,8 +866,10 @@
     SUBDIR += rubygem-jugyo-twitter_oauth
     SUBDIR += rubygem-metasploit_data_models
     SUBDIR += rubygem-net-scp
+    SUBDIR += rubygem-net-scp11
     SUBDIR += rubygem-net-sftp
     SUBDIR += rubygem-net-ssh
+    SUBDIR += rubygem-net-ssh27
     SUBDIR += rubygem-net-ssh-gateway
     SUBDIR += rubygem-net-ssh-multi
     SUBDIR += rubygem-nmap-parser
