@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.1.2
-PORTREVISION=	6
+DISTVERSION=	2.1.4
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -417,6 +416,8 @@ post-patch:
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \
 		${WRKSRC}/include/vlc_config.h
 	@${RM} -rf ${WRKSRC}/modules/access/v4l2/linux
+	@${REINPLACE_CMD} -e '/^DEFAULT_INCLUDES/s|$$| $$(GNUTLS_CFLAGS)|g' \
+		${WRKSRC}/modules/misc/Makefile.in
 
 post-install:
 	@if [ -n "${MTREE_FILE}" ]; then \
