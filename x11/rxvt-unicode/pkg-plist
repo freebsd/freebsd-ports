@@ -23,6 +23,7 @@ bin/urxvtd
 %%PERL%%lib/urxvt/perl/selection-autotransform
 %%PERL%%lib/urxvt/perl/selection-pastebin
 %%PERL%%lib/urxvt/perl/selection-popup
+%%PERL%%lib/urxvt/perl/selection-to-clipboard
 %%PERL%%lib/urxvt/perl/tabbed
 %%PERL%%lib/urxvt/perl/urxvt-popup
 %%PERL%%lib/urxvt/perl/xim-onthespot
@@ -48,6 +49,7 @@ bin/urxvtd
 %%PERL%%man/man1/urxvt-selection-autotransform.1.gz
 %%PERL%%man/man1/urxvt-selection-pastebin.1.gz
 %%PERL%%man/man1/urxvt-selection-popup.1.gz
+%%PERL%%man/man1/urxvt-selection-to-clipboard.1.gz
 %%PERL%%man/man1/urxvt-selection.1.gz
 %%PERL%%man/man1/urxvt-tabbed.1.gz
 %%PERL%%man/man1/urxvt-xim-onthespot.1.gz
