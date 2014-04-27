@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://home.worldonline.dk/byrial/spellutils/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Programs used to isolate some parts or texts before spell-checking
 
 LICENSE=	GPLv2
