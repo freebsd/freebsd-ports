@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-mount-plugin
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.6.7
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -14,10 +13,9 @@ COMMENT=	Mount and umount utility for the Xfce4 panel
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool intlhack
-USES=		gettext pkgconfig gmake
+USES=		gettext pkgconfig gmake tar:bzip2
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_XFCE=	configenv libmenu panel
