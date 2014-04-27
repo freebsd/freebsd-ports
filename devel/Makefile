@@ -2279,6 +2279,7 @@
     SUBDIR += p5-Memoize-ExpireLRU
     SUBDIR += p5-Meta-Builder
     SUBDIR += p5-MetaCPAN-API
+    SUBDIR += p5-MetaCPAN-Client
     SUBDIR += p5-Metabase-Client-Simple
     SUBDIR += p5-Metabase-Fact
     SUBDIR += p5-Method-Alias
