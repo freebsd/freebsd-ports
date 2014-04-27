@@ -10,11 +10,6 @@ share/icons/hicolor/22x22/apps/fyre.png
 share/icons/hicolor/24x24/apps/fyre.png
 share/icons/hicolor/48x48/mimetypes/application-x-fyre-animation.png
 share/icons/hicolor/scalable/apps/fyre.svg
-share/mime/application/x-fyre-animation.xml
 share/mime/packages/fyre.xml
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
