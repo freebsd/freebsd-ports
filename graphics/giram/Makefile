@@ -8,9 +8,9 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A POV-Ray oriented modeller
+COMMENT=	POV-Ray oriented modeller
 
-LIB_DEPENDS=	3ds-1.3:${PORTSDIR}/graphics/lib3ds
+LIB_DEPENDS=	lib3ds-1.so:${PORTSDIR}/graphics/lib3ds
 BUILD_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -25,18 +25,15 @@ CONFIGURE_ARGS=	--datadir="${PREFIX}/lib" \
 		--with-lib3ds-prefix="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		giram.1
+OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '36s,static ,,' ${WRKSRC}/src/tools/tool_disc.c
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/*.pov ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.pov ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
