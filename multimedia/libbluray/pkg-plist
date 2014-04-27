@@ -10,6 +10,8 @@ include/libbluray/overlay.h
 lib/libbluray.a
 lib/libbluray.la
 lib/libbluray.so
-lib/libbluray.so.4
+lib/libbluray.so.6
 libdata/pkgconfig/libbluray.pc
 @dirrm include/libbluray
+%%JAVA%%lib/libbluray/libbluray.jar
+%%JAVA%%@dirrm lib/libbluray
