@@ -28,20 +28,13 @@ PLIST_FILES=	${SHLIB_FILES:S|^|lib/linux-adobesvg/|}
 PLIST_DIRS=	${LIBDIR:S|^${PREFIX}/||}
 PORTDOCS=	LICENSE.txt ReadMe.html SVGHelp.html
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${MKDIR} ${LIBDIR}
-	${INSTALL_PROGRAM} ${SHLIB_FILES:S|^|${WRKSRC}/|} ${LIBDIR}
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${LIBDIR}
+	${INSTALL_PROGRAM} ${SHLIB_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${LIBDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
 
