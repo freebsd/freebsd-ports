@@ -13,6 +13,8 @@ COMMENT=	Marco d'Itri whois client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 USES=		iconv gmake perl5
 USE_XZ=		yes
 USE_PERL5=	build

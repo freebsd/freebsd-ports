@@ -10,6 +10,8 @@ MASTER_SITES=	https://dx.burplex.com/dcraw-m/ \
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Modified Decoder for RAW files from digital cameras
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
