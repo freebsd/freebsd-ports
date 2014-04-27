@@ -1085,6 +1085,7 @@
     SUBDIR += libplist
     SUBDIR += libpo6
     SUBDIR += libpthread-stubs
+    SUBDIR += libqcow
     SUBDIR += libqxt
     SUBDIR += librcc
     SUBDIR += librcd
