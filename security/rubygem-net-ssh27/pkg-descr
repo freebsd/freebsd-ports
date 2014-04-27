@@ -1,0 +1,11 @@
+Net::SSH is a pure-Ruby implementation of the SSH2 client protocol. It
+supports the following features:
+
+ - User authentication via explicit username/password, or using a
+   public-key/private-key pair.
+ - Port forwarding, both from the local host to a remote computer via
+   the remote host, and from the remote host to the local host.
+ - Execute processes on the remote machine, both interactively and
+   non-interactively ("batch").
+
+WWW: https://github.com/net-ssh/net-ssh
