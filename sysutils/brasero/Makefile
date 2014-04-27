@@ -23,7 +23,7 @@ RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 CONFLICTS=	brasero-3.[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_XORG=	sm
+USE_XORG=	ice sm
 USES=		pathfix gettext shared-mime-info gmake pkgconfig tar:bzip2 \
 		libtool desktop-file-utils
 USE_GNOME=	intlhack gnomeprefix gnomedocutils
@@ -72,5 +72,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|" == "|" = "|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/proc/self/fd/0|/dev/fd/0|g' ${WRKSRC}/po/*.po
+	@${REINPLACE_CMD} -e '/BRASERO_SM_LIBS =/s/$$/ -lICE/' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
