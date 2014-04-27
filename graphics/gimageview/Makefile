@@ -10,95 +10,55 @@ MASTER_SITES=	SF/gtkmmviewer/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another GTK+ based image viewer
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		gmake pkgconfig
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME=	gtk20
+USE_XORG=	xinerama ice
+CONFIGURE_ARGS=	--with-gtk2
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CFLAGS+=	-DUSE_GTK2
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	SPLASH NLS LIBMNG LIBWMF LIBRSVG2 LIBEXIF MPLAYER LIBXINE IMLIB
 OPTIONS_DEFAULT=SPLASH NLS LIBMNG LIBWMF LIBRSVG2 LIBEXIF MPLAYER
 NO_OPTIONS_SORT=yes
-SPLASH_DESC=	Show splash screen on startup
-IMLIB_DESC=	imlib, disable gdk-pixbuf
+OPTIONS_SUB=	yes
 
-USE_GNOME=	gtk20
-USE_XORG=	xinerama ice
-CONFIGURE_ARGS=	--with-gtk2
-CFLAGS+=	-DUSE_GTK2
+SPLASH_DESC=		Show splash screen on startup
+SPLASH_CONFIGURE_ENABLE=splash
 
-NO_STAGE=	yes
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
+
+IMLIB_DESC=		imlib, disable gdk-pixbuf
+IMLIB_CONFIGURE_ENABLE=	gdk-pixbuf
+IMLIB_USE=		GNOME=imlib
+
+LIBMNG_CONFIGURE_WITH=	libmng
+LIBMNG_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+
+LIBWMF_CONFIGURE_WITH=	libwmf
+LIBWMF_LIB_DEPENDS=	libwmf.so:${PORTSDIR}/graphics/libwmf
+
+LIBRSVG2_CONFIGURE_WITH=librsvg
+LIBRSVG2_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
+
+LIBEXIF_CONFIGURE_ENABLE=exif
+LIBEXIF_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+LIBEXIF_EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-exit_view.c
+
+MPLAYER_CONFIGURE_ENABLE=mplayer
+MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+
+LIBXINE_CONFIGURE_WITH=	xine
+LIBXINE_LIB_DEPENDS=	xine:${PORTSDIR}/multimedia/libxine
+
 .include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MSPLASH}
-CONFIGURE_ARGS+=	--disable-splash
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MIMLIB}
-USE_GNOME+=	imlib
-CONFIGURE_ARGS+=	--disable-gdk-pixbuf
-.endif
-
-.if ${PORT_OPTIONS:MLIBMNG}
-LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
-PLIST_SUB+=	WITH_LIBMNG=""
-.else
-CONFIGURE_ARGS+=	--without-libmng
-PLIST_SUB+=	WITH_LIBMNG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLIBWMF}
-LIB_DEPENDS+=	wmf:${PORTSDIR}/graphics/libwmf
-PLIST_SUB+=	WITH_LIBWMF=""
-.else
-CONFIGURE_ARGS+=	--without-libwmf
-PLIST_SUB+=	WITH_LIBWMF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLIBRSVG2}
-LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
-PLIST_SUB+=	WITH_LIBRSVG=""
-.else
-CONFIGURE_ARGS+=	--without-librsvg
-PLIST_SUB+=	WITH_LIBRSVG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLIBEXIF}
-LIB_DEPENDS+=	exif:${PORTSDIR}/graphics/libexif
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-exit_view.c
-.else
-CONFIGURE_ARGS+=	--disable-exif
-.endif
-
-.if ${PORT_OPTIONS:MMPLAYER}
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
-CONFIGURE_ARGS+=	--enable-mplayer
-PLIST_SUB+=	WITH_LIBMPLAYER=""
-.else
-CONFIGURE_ARGS+=	--disable-mplayer
-PLIST_SUB+=	WITH_LIBMPLAYER="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLIBXINE}
-LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
-CONFIGURE_ARGS+=	--with-xine
-PLIST_SUB+=	WITH_LIBXINE=""
-.else
-CONFIGURE_ARGS+=	--without-xine
-PLIST_SUB+=	WITH_LIBXINE="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/DATADIRNAME=lib/DATADIRNAME=share/g' \
@@ -107,6 +67,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/gnome/apps/|/apps/|' \
 		${WRKSRC}/gimageview.spec \
 		${WRKSRC}/etc/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} \
+		's|= $$(DESTDIR)|= |' {} \;
 
 post-configure:
 .if ${PORT_OPTIONS:MIMLIB}
