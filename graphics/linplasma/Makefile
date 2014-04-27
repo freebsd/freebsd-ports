@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/hacks/svgalib
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sinus plasma, an SVGAlib demo
 
-LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
 
 ONLY_FOR_ARCHS=	i386
 
@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/linplasma
 PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s:PI:M_PI:" ${WRKSRC}/linplasma.c
 	@${REINPLACE_CMD} -e \
@@ -28,11 +29,9 @@ post-patch:
 			${WRKSRC}/linplasma.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/linplasma ${PREFIX}/bin
-	${CHMOD} +s ${PREFIX}/bin/linplasma
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/linplasma ${STAGEDIR}${PREFIX}/bin
+	${CHMOD} +s ${STAGEDIR}${PREFIX}/bin/linplasma
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
