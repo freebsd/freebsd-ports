@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	LOCAL/swills https://codeload.github.com/mitchellh/vagrant/legacy.tar.gz/v${PORTVERSION}?dummy=/
 
@@ -25,12 +25,12 @@ RUN_DEPENDS=	rubygem-main>=1.0:${PORTSDIR}/devel/rubygem-main \
 		rubygem-rb-inotify>=0.9.3:${PORTSDIR}/devel/rubygem-rb-inotify \
 		rubygem-listen>=2.4.1:${PORTSDIR}/devel/rubygem-listen \
 		rubygem-log4r>=1.1.10:${PORTSDIR}/sysutils/rubygem-log4r \
-		rubygem-net-ssh>=2.7.0:${PORTSDIR}/security/rubygem-net-ssh \
-		rubygem-net-scp>=1.1.2:${PORTSDIR}/security/rubygem-net-scp \
+		rubygem-net-ssh27=2.7.0,2:${PORTSDIR}/security/rubygem-net-ssh27 \
+		rubygem-net-scp11=1.1.2:${PORTSDIR}/security/rubygem-net-scp11 \
 		rubygem-rb-kqueue>=0.2.2:${PORTSDIR}/devel/rubygem-rb-kqueue \
 		rubygem-wdm>=0.1.0:${PORTSDIR}/devel/rubygem-wdm
 
-WRKSRC=		${WRKDIR}/mitchellh-vagrant-8c05b08
+WRKSRC=		${WRKDIR}/mitchellh-vagrant-285c7cd
 USE_RUBY=	yes
 GEMFILES=	vagrant-${PORTVERSION}.gem
 RUBYGEMBIN=	gem${RUBY_SUFFIX}
