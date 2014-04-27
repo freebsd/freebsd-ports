@@ -30,6 +30,8 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 BROKEN=                fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-05-27
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc: exhausts virtual memory

@@ -25,6 +25,8 @@ USES=		gmake
 INFO=		clint
 MAKE_JOBS_UNSAFE=	yes
 BROKEN=		fails to find python.h
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-05-27
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
