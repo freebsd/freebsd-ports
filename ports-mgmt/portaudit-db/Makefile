@@ -3,7 +3,7 @@
 
 PORTNAME=	portaudit-db
 PORTVERSION=	0.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ports-mgmt
 DISTFILES=
 
@@ -27,7 +27,7 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 
 do-build:
 .for f in packaudit.sh packaudit.conf
-	@${SED} ${SED_SCRIPT} "${FILESDIR}/$$f" > "${WRKDIR}/${f}"
+	@${SED} ${SED_SCRIPT} "${FILESDIR}/$f" > "${WRKDIR}/${f}"
 .endfor
 
 do-install:
