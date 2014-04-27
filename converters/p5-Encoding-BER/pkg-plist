@@ -1,0 +1,15 @@
+%%PERL5_MAN3%%/Encoding::BER.3.gz
+%%PERL5_MAN3%%/Encoding::BER::CER.3.gz
+%%PERL5_MAN3%%/Encoding::BER::DER.3.gz
+%%PERL5_MAN3%%/Encoding::BER::Dumper.3.gz
+%%PERL5_MAN3%%/Encoding::BER::SNMP.3.gz
+%%SITE_PERL%%/Encoding/BER.pm
+%%SITE_PERL%%/Encoding/BER/CER.pm
+%%SITE_PERL%%/Encoding/BER/DER.pm
+%%SITE_PERL%%/Encoding/BER/Dumper.pm
+%%SITE_PERL%%/Encoding/BER/SNMP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding/BER/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding/BER
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding
+@dirrm %%SITE_PERL%%/Encoding/BER
+@dirrmtry %%SITE_PERL%%/Encoding
