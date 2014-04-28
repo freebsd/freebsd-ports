@@ -19,7 +19,8 @@ LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libspamc.so:${PORTSDIR}/mail/spamassassin
 RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight
 
 USES=		desktop-file-utils bison gettext gmake libtool:keepla \
