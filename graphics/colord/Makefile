@@ -45,6 +45,9 @@ OPTIONS_DEFINE=	MANPAGES
 
 .include <bsd.port.options.mk>
 
+# workaround for buggy handling of "@cwd" in pkg_*
+PLIST_SUB+=	REALPREFIX=${PREFIX}
+
 .if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml

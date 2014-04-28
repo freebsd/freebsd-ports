@@ -200,4 +200,4 @@ share/polkit-1/actions/org.freedesktop.color.policy
 @cwd /
 @dirrmtry var/db/colord/icc
 @dirrmtry var/db/colord
-@cwd
+@cwd %%REALPREFIX%%
