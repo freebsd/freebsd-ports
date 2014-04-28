@@ -85,7 +85,6 @@
     SUBDIR += gnome-desktop
     SUBDIR += gnome-desktop-reference
     SUBDIR += gnome-menus
-    SUBDIR += gnome-panel-reference
     SUBDIR += gnome-pie
     SUBDIR += gnome-screensaver
     SUBDIR += gnome-session
