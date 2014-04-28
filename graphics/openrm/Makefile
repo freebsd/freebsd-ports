@@ -12,11 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DEMO_DISTFILE:S/$/:demo/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-WRKSRC=		${WRKDIR}/rm${PORTVERSION:R:S/.//g}
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USES=		shebangfix perl5
 SHEBANG_FILES=	doc/*.pl
@@ -32,6 +28,7 @@ MAKE_ARGS=	AR="${AR}" \
 		RM="${RM}" \
 		STRIP_CMD="${STRIP_CMD}" \
 		X11BASE="${LOCALBASE}"
+WRKSRC=		${WRKDIR}/rm${PORTVERSION:R:S/.//g}
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 
@@ -40,7 +37,8 @@ CFLAGS+=	-fPIC -DPIC
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}
@@ -67,35 +65,24 @@ post-patch:
 .endif
 
 do-install:
-# install includes
-	@${MKDIR} ${PREFIX}/include/rm
-	${INSTALL_DATA} ${WRKSRC}/include/rm/*.h ${PREFIX}/include/rm
-# install libraries
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/rm
+	${INSTALL_DATA} ${WRKSRC}/include/rm/*.h ${STAGEDIR}${PREFIX}/include/rm
 .for f in librm librmaux librmi librmv
-	${INSTALL_DATA} ${WRKSRC}/lib/${f}.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/${f}.so.1 ${PREFIX}/lib
-	${LN} -fs ${f}.so.1 ${PREFIX}/lib/${f}.so
+	${INSTALL_DATA} ${WRKSRC}/lib/${f}.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/${f}.so.1 ${STAGEDIR}${PREFIX}/lib
+	${LN} -fs ${f}.so.1 ${STAGEDIR}${PREFIX}/lib/${f}.so
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/FUTUREPLANS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/RELEASENOTES ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/HTML
-	${INSTALL_DATA} ${WRKSRC}/doc/HTML/*.html ${DOCSDIR}/HTML
-	@${MKDIR} ${DOCSDIR}/HTML/images
-	${INSTALL_DATA} ${WRKSRC}/doc/HTML/images/* ${DOCSDIR}/HTML/images
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/HTML/images
+	(cd ${WRKSRC} && ${INSTALL_DATA} FUTUREPLANS README RELEASENOTES \
+		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/doc/HTML/*.html ${STAGEDIR}${DOCSDIR}/HTML
+	${INSTALL_DATA} ${WRKSRC}/doc/HTML/images/* \
+		${STAGEDIR}${DOCSDIR}/HTML/images
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${DEMO_WRKSRC}/README ${EXAMPLESDIR}
-	${INSTALL_DATA} ${DEMO_WRKSRC}/configure ${EXAMPLESDIR}
-	${INSTALL_DATA} ${DEMO_WRKSRC}/makeinclude ${EXAMPLESDIR}
-	${INSTALL_DATA} ${DEMO_WRKSRC}/Makefile.x11 ${EXAMPLESDIR}
-	${INSTALL_DATA} ${DEMO_WRKSRC}/*.c ${EXAMPLESDIR}
-	${INSTALL_DATA} ${DEMO_WRKSRC}/*.h ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/data
-	${INSTALL_DATA} ${DEMO_WRKSRC}/data/* ${EXAMPLESDIR}/data
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/data
+	(cd ${DEMO_WRKSRC} && ${INSTALL_DATA} README configure makeinclude \
+		Makefile.x11 *.c *.h ${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_DATA} ${DEMO_WRKSRC}/data/* ${STAGEDIR}${EXAMPLESDIR}/data
 .endif
 
 .include <bsd.port.post.mk>
