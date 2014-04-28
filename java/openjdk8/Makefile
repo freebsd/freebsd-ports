@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -166,12 +166,12 @@ post-patch:
 	    ${FILESDIR}/bsd.fontconfig.properties.in > \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	    ${WRKSRC}/common/autoconf/toolchain.m4 \
 	    ${WRKSRC}/configure \
-	    ${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp \
-	    ${WRKSRC}/jdk/make/lib/SoundLibraries.gmk \
 	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
-	    ${WRKSRC}/jdk/src/solaris/bin/java_md_solinux.h \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java
+	@${REINPLACE_CMD} -e 's|/usr/local/java/classes|${LOCALBASE}/share/java/classes|' \
+	    ${WRKSRC}/jdk/src/bsd/doc/man/*.1
 	@${REINPLACE_CMD} -e 's|%%ICONV_CPPFLAGS%%|${ICONV_CPPFLAGS}|' \
 	    -e 's|%%ICONV_LDFLAGS%%|${ICONV_LDFLAGS}|' \
 	    ${WRKSRC}/jdk/make/lib/CoreLibraries.gmk \
