@@ -1,3 +1,4 @@
+bin/jarnal-open-file.sh
 bin/jarnal.sh
 bin/jarnalannotate.sh
 %%DATADIR%%/templates/annotate.jaj
