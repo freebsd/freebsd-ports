@@ -3,7 +3,6 @@ lib/grilo-0.2/grl-bliptv.xml
 lib/grilo-0.2/grl-bookmarks.xml
 lib/grilo-0.2/grl-filesystem.xml
 lib/grilo-0.2/grl-flickr.xml
-lib/grilo-0.2/grl-freebox.xml
 lib/grilo-0.2/grl-gravatar.xml
 lib/grilo-0.2/grl-jamendo.xml
 lib/grilo-0.2/grl-lastfm-albumart.xml
@@ -26,8 +25,6 @@ lib/grilo-0.2/libgrlfilesystem.la
 lib/grilo-0.2/libgrlfilesystem.so
 lib/grilo-0.2/libgrlflickr.la
 lib/grilo-0.2/libgrlflickr.so
-lib/grilo-0.2/libgrlfreebox.la
-lib/grilo-0.2/libgrlfreebox.so
 lib/grilo-0.2/libgrlgravatar.la
 lib/grilo-0.2/libgrlgravatar.so
 lib/grilo-0.2/libgrljamendo.la
