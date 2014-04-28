@@ -3,6 +3,5 @@
 
 CELESTIA_UI=	gtk
 MASTERDIR=	${.CURDIR}/../celestia
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"
