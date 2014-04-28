@@ -9,11 +9,11 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	PornView is an image viewer/manager
+COMMENT=	Image viewer/manager
 
-LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
-		png15:${PORTSDIR}/graphics/png \
-		xcb-render-util:${PORTSDIR}/x11/xcb-util-renderutil
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libxcb-render-util.so:${PORTSDIR}/x11/xcb-util-renderutil
 
 USE_XORG=	x11 xi xext xinerama
 USES=		pkgconfig
@@ -25,22 +25,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lm
 
 OPTIONS_DEFINE=	LIBXINE MPLAYER NLS
 OPTIONS_DEFAULT=	LIBXINE
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MLIBXINE}
-LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
-CONFIGURE_ARGS+=	--enable-xine
-.elif ${PORT_OPTIONS:MMPLAYER}
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
-CONFIGURE_ARGS+=	--enable-mplayer
-.endif
-.if ! ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	WITH_NLS="@comment "
-.else
-PLIST_SUB+=	WITH_NLS=""
-.endif
+LIBXINE_CONFIGURE_ENABLE=	xine
+LIBXINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
+
+MPLAYER_CONFIGURE_ENABLE=	mplayer
+MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e \
