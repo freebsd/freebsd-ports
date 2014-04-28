@@ -9,18 +9,19 @@ MASTER_SITES=	http://www.mox.net/downloads/ \
 		http://www.xunix.org/~flz/distfiles/
 
 MAINTAINER=	flz@FreeBSD.org
-COMMENT=	A small utility to convert Windows icon files into .xpm and .png files
+COMMENT=	Small utility to convert Windows icon files into .xpm and .png files
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+
+MAKE_ARGS=	CC="${CC}"
 
 PLIST_FILES=	bin/icoconvert
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^icoconvert|all|' -e 's|^\(FLAGS=\)|\1-I${LOCALBASE}/include |' \
 		-e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/icoconvert ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/icoconvert ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

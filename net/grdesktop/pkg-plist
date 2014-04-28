@@ -1,4 +1,5 @@
 bin/grdesktop
+man/man1/grdesktop.1.gz
 share/application-registry/grdesktop.applications
 share/applications/grdesktop.desktop
 share/gnome/help/grdesktop/C/grdesktop.xml

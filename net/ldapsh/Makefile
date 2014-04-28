@@ -21,21 +21,13 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_FILES=	pkg-message
 
-MAN1=		ldapsh.1
-MAN3=		Net::LDAP::Shell.3 Net::LDAP::Config.3 \
-		Net::LDAP::Shell::Parse.3 Net::LDAP::Shell::Util.3
-
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
-
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} -e "s,/usr/local/bin/perl,${PERL}," ${WRKSRC}/ldapsh
+SHEBANG_FILES=	ldapsh
 
 post-install:
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/COMMANDS ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/examples/ldapsh_config ${EXAMPLESDIR}/
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/COMMANDS ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/ldapsh_config ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

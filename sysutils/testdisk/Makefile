@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	testdisk
-PORTVERSION=	6.13
-PORTREVISION=	1
+PORTVERSION=	6.14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -10,16 +9,18 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Tool to check and undelete partitions
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--without-ewf
 
-MAN8=		fidentify.8 testdisk.8 photorec.8
-PLIST_FILES=	bin/fidentify bin/testdisk bin/photorec
+PLIST_FILES=	bin/fidentify bin/testdisk bin/photorec \
+		man/man8/fidentify.8.gz man/man8/photorec.8.gz \
+		man/man8/testdisk.8.gz
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	ICONV PROGSREISERFS NTFS DOCS
@@ -32,18 +33,8 @@ NTFSPROGS_DESC=		Use ntfsprogs extensions
 PROGSREISERFS_DESC=	Use reiserfs extensions
 #		E2FSPROGS "Use ext2fs extensions" off \
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-#.if !defined(NOPORTDOCS)
-#DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}
-#.endif
-
-.if ${PORT_OPTIONS:MICONV}
-USES=		iconv
-.else
-CONFIGURE_ARGS+=--without-iconv
-.endif
+ICONV_USES=		iconv
+ICONV_CONFIGURE_OFF=	--without-iconv
 
 # e2fsprogs does not provide ext2fs.so any more
 # since it does not do 'make install-libs'
@@ -53,30 +44,17 @@ CONFIGURE_ARGS+=--without-iconv
 #CONFIGURE_ARGS+=--without-ext2fs
 #.endif
 
-.if ${PORT_OPTIONS:MNTFS3G}
-LIB_DEPENDS+=	ntfs-3g:${PORTSDIR}/sysutils/fusefs-ntfs
-.else
-CONFIGURE_ARGS+=--without-ntfs3g
-.endif
+NTFS3G_LIB_DEPENDS=	libntfs-3g.so:${PORTSDIR}/sysutils/fusefs-ntfs
+NTFS3G_CONFIGURE_OFF=	--without-ntfs3g
 
-.if ${PORT_OPTIONS:MNTFSPROGS}
-LIB_DEPENDS+=	ntfs:${PORTSDIR}/sysutils/ntfsprogs
-.else
-CONFIGURE_ARGS+=--without-ntfs
-.endif
+NTFSPROGS_LIB_DEPENDS=	libntfs.so:${PORTSDIR}/sysutils/ntfsprogs
+NTFS_PROGS_CONFIGURE_ARGS=	--without-ntfs
 
-.if ${PORT_OPTIONS:MPROGSREISERFS}
-LIB_DEPENDS+=	reiserfs-0.3.0:${PORTSDIR}/sysutils/progsreiserfs
-.else
-CONFIGURE_ARGS+=--without-reiserfs
-.endif
+PROGSREISERFS_LIB_DEPENDS=	libreiserfs-0.3.so:${PORTSDIR}/sysutils/progsreiserfs
+PROGSREISERFS_CONFIGURE_OFF=	--without-reiserfs
 
 post-patch:
-.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|/doc/.(PACKAGE)-.(VERSION)|/doc/${PORTNAME}|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/doc\/testdisk\/html/d' ${WRKSRC}/Makefile.in
-.else
-	@${REINPLACE_CMD} -e '/\/doc\/$$(PACKAGE)-$$(VERSION)/d' ${WRKSRC}/Makefile.in
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
