@@ -1,4 +1,4 @@
 bin/icegenerator
-etc/icegenerator.conf.dist
+@sample etc/icegenerator.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
