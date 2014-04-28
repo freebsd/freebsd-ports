@@ -1,5 +1,7 @@
 bin/decibel-audio-player
 bin/decibel-audio-player-remote
+man/man1/decibel-audio-player-remote.1.gz
+man/man1/decibel-audio-player.1.gz
 share/applications/decibel-audio-player.desktop
 %%DATADIR%%/pix/audioscrobbler.png
 %%DATADIR%%/pix/category-decibel.png
