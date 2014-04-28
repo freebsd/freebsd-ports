@@ -3562,13 +3562,17 @@ do-patch:
 .if defined(EXTRA_PATCHES)
 	@set -e ; \
 	for i in ${EXTRA_PATCHES}; do \
-		${ECHO_MSG} "===>  Applying extra patch $$i" ; \
 		case $$i in \
-		*.Z|*.gz) ${GZCAT} $$i ;; \
-		*.bz2) ${BZCAT} $$i ;; \
-		*.xz) ${XZCAT} $$i ;; \
-		*) ${CAT} $$i ;; \
-		esac | ${PATCH} ${PATCH_ARGS} ; \
+		*:-p[0-9]) patch_file=$${i%:*} ; patch_strip=$${i##*:} ;; \
+		*) patch_file=$$i ;; \
+		esac ; \
+		${ECHO_MSG} "===>  Applying extra patch $$patch_file" ; \
+		case $$patfh_file in \
+		*.Z|*.gz) ${GZCAT} $$patch_file ;; \
+		*.bz2) ${BZCAT} $$patch_file ;; \
+		*.xz) ${XZCAT} $$patch_file ;; \
+		*) ${CAT} $$patch_file ;; \
+		esac | ${PATCH} ${PATCH_ARGS} $$patch_strip ; \
 	done
 .endif
 	@set -e ;\
