@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	3.3.5
-PORTREVISION=	1
-CATEGORIES=	devel
+PORTVERSION=	3.3.6
+CATEGORIES=	www
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
 		http://ftp.gwdg.de/pub/misc/otrs/ \
@@ -41,9 +40,10 @@ BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA
+
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		shebangfix perl5
+USES=		shebangfix perl5 tar:bzip2
 SHEBANG_FILES=	bin/cgi-bin/*.pl bin/fcgi-bin/*.pl bin/*.pl \
 		scripts/auto_build/*.pl scripts/tools/*.pl scripts/*.pl
 
@@ -58,13 +58,11 @@ POP3_DESC=		Fetch email via POP3
 SMTP_DESC=		Send email via SMTP
 REPORTS_MODULES_DESC=	Reports support
 
-USE_BZIP2=	yes
-
 OTRSDIR=	${PREFIX}/otrs
 USERS=		${PORTNAME}
 GROUPS=		${USERS} www
 
-SUB_FILES=	pkg-install pkg-message
+SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 ROOT_DIRS_LIST=	Kernel bin scripts doc
@@ -78,16 +76,15 @@ DOCS_DIRS_LIST=	"" manual/en
 DOCS_FILES_LIST=	C[A-Z]* INSTALL.md RE* UPGRADING.md
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
-CRON_SCRIPTS=	${OTRSDIR}/var/cron/
+CRON_SCRIPTS=	${STAGEDIR}${OTRSDIR}/var/cron/
 CLEAN_FILES=	scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/js/thirdparty/ckeditor-4.0/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
 USE_APACHE_RUN=	22+
 
-PLIST_SUB+=	VER_CKEDITOR="4.3"
+PLIST_SUB+=	VER_CKEDITOR="4.3" OTRS_USER=${USERS} WWWOWN=${WWWOWN}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -173,42 +170,38 @@ do-build:
 .endif
 
 do-install:
-	@${MKDIR} ${ROOT_DIRS_LIST:S!^!${OTRSDIR}/!} ${BIN_DIRS_LIST:S!^!${OTRSDIR}/bin/!} \
-		${SCRIPTS_DIRS_LIST:S!^!${OTRSDIR}/scripts/!}
-	@${INSTALL_DATA} ${WRKSRC}/.*.dist ${OTRSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/RELEASE ${OTRSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/ARCHIVE ${OTRSDIR}/
+.for D in ${ROOT_DIRS_LIST:S!^!${OTRSDIR}/!} ${BIN_DIRS_LIST:S!^!${OTRSDIR}/bin/!} ${SCRIPTS_DIRS_LIST:S!^!${OTRSDIR}/scripts/!}
+	${MKDIR} ${STAGEDIR}${D}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/.*.dist ${STAGEDIR}${OTRSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/RELEASE ${STAGEDIR}${OTRSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ARCHIVE ${STAGEDIR}${OTRSDIR}/
 .for D in ${BIN_DIRS_LIST}
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${D}/*.* ${OTRSDIR}/bin/${D}/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${D}/*.* ${STAGEDIR}${OTRSDIR}/bin/${D}/
 .endfor
-	@(cd ${WRKSRC} && ${PAX} -r -w Kernel var ${OTRSDIR})
-.if !exists(${OTRSDIR}/Kernel/Config.pm)
-	@${CP} ${OTRSDIR}/Kernel/Config.pm.dist ${OTRSDIR}/Kernel/Config.pm
-.endif
-.if !exists(${OTRSDIR}/Kernel/Config/GenericAgent.pm)
-	@${CP} ${OTRSDIR}/Kernel/Config/GenericAgent.pm.dist ${OTRSDIR}/Kernel/Config/GenericAgent.pm
-.endif
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${OTRSDIR}/Kernel
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][lh] ${OTRSDIR}/scripts/
-	@${INSTALL_DATA} ${WRKSRC}/scripts/apache* \
-		${WRKSRC}/scripts/*.sql ${OTRSDIR}/scripts/
-	@${INSTALL_DATA} ${WRKSRC}/scripts/database/update/*.* ${OTRSDIR}/scripts/database/update/
-	@${INSTALL_DATA} ${WRKSRC}/scripts/database/*.* ${OTRSDIR}/scripts/database/
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/test/*.t ${OTRSDIR}/scripts/test/
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/tools/*.pl ${OTRSDIR}/scripts/tools/
+	(cd ${WRKSRC} && ${PAX} -r -w Kernel var ${STAGEDIR}${OTRSDIR})
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${OTRSDIR}/Kernel
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][lh] ${STAGEDIR}${OTRSDIR}/scripts/
+	${INSTALL_DATA} ${WRKSRC}/scripts/apache* \
+		${WRKSRC}/scripts/*.sql ${STAGEDIR}${OTRSDIR}/scripts/
+	${INSTALL_DATA} ${WRKSRC}/scripts/database/update/*.* ${STAGEDIR}${OTRSDIR}/scripts/database/update/
+	${INSTALL_DATA} ${WRKSRC}/scripts/database/*.* ${STAGEDIR}${OTRSDIR}/scripts/database/
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/test/*.t ${STAGEDIR}${OTRSDIR}/scripts/test/
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/tools/*.pl ${STAGEDIR}${OTRSDIR}/scripts/tools/
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCS_DIRS_LIST:S!^!${DOCSDIR}/!}
-	@${INSTALL_DATA} ${DOCS_FILES_LIST:S!^!${WRKSRC}/!} ${DOCSDIR}/
+	${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
+.for D in ${DOCS_DIRS_LIST:S!^!${DOCSDIR}/!}
+	${MKDIR} ${STAGEDIR}${D}
+.endfor
+	${INSTALL_DATA} ${DOCS_FILES_LIST:S!^!${WRKSRC}/!} ${STAGEDIR}${DOCSDIR}/
 .for D in ${DOCS_DIRS_LIST}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${D}/*.* ${DOCSDIR}/${D}/
+	${INSTALL_DATA} ${WRKSRC}/doc/${D}/*.* ${STAGEDIR}${DOCSDIR}/${D}/
 .endfor
 .endif
-	@${FIND} ${CRON_SCRIPTS} -type f -name *.dist | ${SED} -e "p;s/\.dist//" | ${XARGS} -n2 ${MV}
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${FIND} ${CRON_SCRIPTS} -type f -name *.dist | ${SED} -e "p;s/\.dist//" | ${XARGS} -n2 ${MV}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/var/article
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/var/httpd/htdocs/js/js-cache/
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/var/tmp
 
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \

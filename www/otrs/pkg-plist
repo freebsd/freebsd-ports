@@ -1,18 +1,18 @@
 otrs/.fetchmailrc.dist
 otrs/.mailfilter.dist
 otrs/.procmailrc.dist
-@unexec if cmp -s %D/otrs/Kernel/Config.pm %D/otrs/Kernel/Config.pm.dist; then rm -f %D/otrs/Kernel/Config.pm; fi
+@unexec if cmp -s %D/otrs/Kernel/Config.pm.dist %D/otrs/Kernel/Config.pm; then rm -f %D/otrs/Kernel/Config.pm; fi
 otrs/Kernel/Config.pm.dist
-@exec [ -f %B/Config.pm ] || cp %B/%f %B/Config.pm
+@exec if [ ! -f %B/Config.pm ] ; then cp -p %D/%F %B/Config.pm; fi
 otrs/Kernel/Config/Defaults.pm
 otrs/Kernel/Config/Files/Framework.xml
 otrs/Kernel/Config/Files/GenericInterface.xml
 otrs/Kernel/Config/Files/ProcessManagement.xml
 otrs/Kernel/Config/Files/Scheduler.xml
 otrs/Kernel/Config/Files/Ticket.xml
-@unexec if cmp -s %D/otrs/Kernel/Config/GenericAgent.pm %D/otrs/Kernel/Config/GenericAgent.pm.dist; then rm -f %D/otrs/Kernel/Config/GenericAgent.pm; fi
+@unexec if cmp -s %D/otrs/Kernel/Config/GenericAgent.pm.dist %D/otrs/Kernel/Config/GenericAgent.pm; then rm -f %D/otrs/Kernel/Config/GenericAgent.pm; fi
 otrs/Kernel/Config/GenericAgent.pm.dist
-@exec [ -f %B/GenericAgent.pm ] || cp %B/%f %B/GenericAgent.pm
+@exec if [ ! -f %D/otrs/Kernel/Config/GenericAgent.pm ] ; then cp -p %D/%F %B/GenericAgent.pm ; fi
 otrs/Kernel/Config/GenericAgent.pm.examples
 otrs/Kernel/GenericInterface/Debugger.pm
 otrs/Kernel/GenericInterface/Event/Handler.pm
@@ -136,6 +136,7 @@ otrs/Kernel/Modules/AdminSalutation.pm
 otrs/Kernel/Modules/AdminScheduler.pm
 otrs/Kernel/Modules/AdminSelectBox.pm
 otrs/Kernel/Modules/AdminService.pm
+otrs/Kernel/Modules/AdminServiceCenter.pm
 otrs/Kernel/Modules/AdminSession.pm
 otrs/Kernel/Modules/AdminSignature.pm
 otrs/Kernel/Modules/AdminState.pm
@@ -209,6 +210,7 @@ otrs/Kernel/Modules/Installer.pm
 otrs/Kernel/Modules/PictureUpload.pm
 otrs/Kernel/Modules/PublicDefault.pm
 otrs/Kernel/Modules/PublicRepository.pm
+otrs/Kernel/Modules/PublicSupportDataCollector.pm
 otrs/Kernel/Modules/SpellingInline.pm
 otrs/Kernel/Modules/Test.pm
 otrs/Kernel/Output/HTML/ArticleAttachmentDownload.pm
@@ -280,6 +282,7 @@ otrs/Kernel/Output/HTML/Standard/AAACalendar.dtl
 otrs/Kernel/Output/HTML/Standard/AAAGenericInterface.dtl
 otrs/Kernel/Output/HTML/Standard/AAAMonth.dtl
 otrs/Kernel/Output/HTML/Standard/AAAPreferences.dtl
+otrs/Kernel/Output/HTML/Standard/AAASupportDataCollector.dtl
 otrs/Kernel/Output/HTML/Standard/AAAStats.dtl
 otrs/Kernel/Output/HTML/Standard/AAATicket.dtl
 otrs/Kernel/Output/HTML/Standard/AAAWeekDay.dtl
@@ -344,6 +347,7 @@ otrs/Kernel/Output/HTML/Standard/AdminScheduler.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSecureMode.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSelectBox.dtl
 otrs/Kernel/Output/HTML/Standard/AdminService.dtl
+otrs/Kernel/Output/HTML/Standard/AdminServiceCenterSupportDataCollector.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSession.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSignature.dtl
 otrs/Kernel/Output/HTML/Standard/AdminState.dtl
@@ -630,6 +634,7 @@ otrs/Kernel/System/NotificationEvent.pm
 otrs/Kernel/System/PDF.pm
 otrs/Kernel/System/PID.pm
 otrs/Kernel/System/Package.pm
+otrs/Kernel/System/Package/Event/SupportDataSend.pm
 otrs/Kernel/System/PostMaster.pm
 otrs/Kernel/System/PostMaster/DestQueue.pm
 otrs/Kernel/System/PostMaster/Filter.pm
@@ -764,6 +769,52 @@ otrs/Kernel/System/Web/UploadCache/FS.pm
 otrs/Kernel/System/WebUserAgent.pm
 otrs/Kernel/System/XML.pm
 otrs/Kernel/System/YAML.pm
+otrs/Kernel/System/SupportDataCollector.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/TablePresence.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/mssql/Size.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/mssql/Version.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/mysql/Charset.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/mysql/MaxAllowedPacket.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/mysql/Performance.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/mysql/Size.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/mysql/StorageEngine.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/mysql/TableStatus.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/mysql/Version.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/oracle/NLS.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/oracle/Version.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/postgresql/Charset.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/postgresql/DateStyle.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/postgresql/Size.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Database/postgresql/Version.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OS/DiskPartitionOTRS.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OS/DiskSpace.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OS/DiskSpacePartitions.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OS/Distribution.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OS/KernelVersion.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OS/Load.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OS/PerlModules.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OS/PerlVersion.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OS/Swap.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/ConfigSettings.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/DatabaseRecords.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/DefaultSOAPUser.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/DefaultUser.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/ErrorLog.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/FQDN.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/FileSystemWritable.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/PackageDeployment.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/PackageList.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/SystemID.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/IndexModule.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/OpenTickets.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/SearchIndexModule.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/StaticDBOrphanedRecords.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Version.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/Performance.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/EnvironmentVariables.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/IIS/Performance.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Version.pm
+otrs/Kernel/System/SupportDataCollector/PluginBase.pm
 otrs/ARCHIVE
 otrs/RELEASE
 otrs/bin/Cron.sh
@@ -831,6 +882,7 @@ otrs/bin/otrs.RebuildEscalationIndex.pl
 otrs/bin/otrs.RebuildFulltextIndex.pl
 otrs/bin/otrs.RebuildTicketIndex.pl
 otrs/bin/otrs.RefreshSMIMEKeys.pl
+otrs/bin/otrs.RegistrationUpdate.pl
 otrs/bin/otrs.ReprocessMails.pl
 otrs/bin/otrs.Scheduler.pl
 otrs/bin/otrs.Scheduler4win.pl
@@ -931,6 +983,7 @@ otrs/scripts/test/StandardResponse.t
 otrs/scripts/test/State.t
 otrs/scripts/test/Stats.t
 otrs/scripts/test/StdAttachment.t
+otrs/scripts/test/SupportDataCollector.t
 otrs/scripts/test/SysConfig.t
 otrs/scripts/test/SystemAddress.t
 otrs/scripts/test/SystemData.t
@@ -1963,6 +2016,7 @@ otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.GenericInterface.
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.PerformanceLog.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.ProcessManagement.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.Registration.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.ServiceCenter.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.SysConfig.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.Google.css
@@ -2207,7 +2261,6 @@ otrs/var/httpd/htdocs/skins/Customer/default/img/zoomexpandall.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/zoomexpandone.png
 @unexec [ -s %D/otrs/var/log/TicketCounter.log ] || rm -f %D/otrs/var/log/TicketCounter.log
 otrs/var/logo-otrs.png
-otrs/var/packages/Support-1.5.4.opm
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.de.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.en.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.de.xml
@@ -2231,6 +2284,7 @@ otrs/var/stats/Stats.StatusActionOverview.en.xml
 otrs/var/stats/Stats.TicketOverview.de.xml
 otrs/var/stats/Stats.TicketOverview.en.xml
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/otrs_admin_book.pdf
+@exec chown -R %%OTRS_USER%%:%%WWWOWN%% %D/otrs
 @dirrmtry otrs/var/tmp
 @dirrmtry otrs/var/stats
 @dirrmtry otrs/var/spool
@@ -2489,6 +2543,19 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrm otrs/Kernel/System/Ticket/Acl
 @dirrm otrs/Kernel/System/Ticket
 @dirrm otrs/Kernel/System/SysConfig
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/IIS
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/Webserver
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/OTRS
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/OS
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/Database/postgresql
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/Database/oracle
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/Database/mssql
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/Database/mysql
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin/Database
+@dirrm otrs/Kernel/System/SupportDataCollector/Plugin
+@dirrm otrs/Kernel/System/SupportDataCollector
 @dirrm otrs/Kernel/System/Stats/Static
 @dirrm otrs/Kernel/System/Stats/Dynamic
 @dirrm otrs/Kernel/System/Stats
@@ -2504,6 +2571,8 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrm otrs/Kernel/System/PostMaster/LoopProtection
 @dirrm otrs/Kernel/System/PostMaster/Filter
 @dirrm otrs/Kernel/System/PostMaster
+@dirrm otrs/Kernel/System/Package/Event
+@dirrm otrs/Kernel/System/Package
 @dirrm otrs/Kernel/System/MailAccount
 @dirrm otrs/Kernel/System/Log
 @dirrm otrs/Kernel/System/LinkObject
