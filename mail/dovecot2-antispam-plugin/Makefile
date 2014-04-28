@@ -3,7 +3,7 @@
 
 PORTNAME=	dovecot2-antispam-plugin
 PORTVERSION=	20130429
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
@@ -29,5 +29,8 @@ ACLOCAL_ARGS=	-I m4
 PLIST_FILES=	lib/dovecot/lib90_antispam_plugin.so \
 		man/man7/dovecot-antispam.7.gz
 PLIST_DIRSTRY=	lib/dovecot
+
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} strip
 
 .include <bsd.port.mk>
