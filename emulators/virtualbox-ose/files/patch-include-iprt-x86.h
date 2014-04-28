@@ -1,6 +1,6 @@
 --- include/iprt/x86.h.orig	2014-02-25 11:59:50.000000000 -0500
 +++ include/iprt/x86.h	2014-03-11 16:46:08.000000000 -0400
-@@ -35,6 +35,15 @@
+@@ -35,6 +35,16 @@
  # pragma D depends_on library vbox-types.d
  #endif
  
@@ -11,6 +11,7 @@
 +# undef MSR_IA32_PLATFORM_ID
 +# undef MSR_BBL_CR_CTL3
 +# undef MSR_IA32_MISC_ENABLE
++# undef MSR_IA32_FEATURE_CONTROL
 +#endif
 +
  /* Workaround for Solaris sys/regset.h defining CS, DS */
