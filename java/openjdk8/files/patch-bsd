@@ -180,7 +180,18 @@
  ifeq ($(OS_VENDOR),Darwin)
 --- hotspot/make/bsd/makefiles/gcc.make
 +++ hotspot/make/bsd/makefiles/gcc.make
-@@ -201,12 +201,15 @@
+@@ -168,6 +168,10 @@
+   CFLAGS += -DDONT_USE_PRECOMPILED_HEADER
+ endif
+ 
++ifeq ($(OS_VENDOR), FreeBSD)
++  CFLAGS+= -DPACKAGE_PATH=\"$(PACKAGE_PATH)\"
++endif
++
+ #------------------------------------------------------------------------
+ # Compiler flags
+ 
+@@ -201,12 +205,15 @@
  endif
  
  ifeq ($(USE_CLANG), true)
@@ -1392,7 +1403,7 @@
          ld_library_path = (char *) malloc(sizeof(REG_DIR) + sizeof("/lib/") +
              strlen(cpu_arch) + sizeof(DEFAULT_LIBPATH));
 +#ifdef __FreeBSD__
-+        sprintf(ld_library_path, DEFAULT_LIBPATH ":/usr/local/lib");
++        sprintf(ld_library_path, DEFAULT_LIBPATH ":" PACKAGE_PATH "/lib");
 +#else
          sprintf(ld_library_path, REG_DIR "/lib/%s:" DEFAULT_LIBPATH, cpu_arch);
  #endif
@@ -1502,6 +1513,27 @@
  #elif defined(__APPLE__) || defined(__NetBSD__)
    struct sched_param sp;
    int policy;
+@@ -3943,7 +3940,10 @@
+   }
+   int fd;
+   int o_delete = (oflag & O_DELETE);
+-  oflag = oflag & ~O_DELETE;
++  oflag &= ~O_DELETE;
++#ifdef O_CLOEXEC
++  oflag |= O_CLOEXEC;
++#endif
+ 
+   fd = ::open(path, oflag, mode);
+   if (fd == -1) return -1;
+@@ -3988,7 +3988,7 @@
+      * 4843136: (process) pipe file descriptor from Runtime.exec not being closed
+      * 6339493: (process) Runtime.exec does not close all file descriptors on Solaris 9
+      */
+-#ifdef FD_CLOEXEC
++#if !defined(O_CLOEXEC) && defined(FD_CLOEXEC)
+     {
+         int flags = ::fcntl(fd, F_GETFD);
+         if (flags != -1)
 --- hotspot/src/os/bsd/vm/vmError_bsd.cpp
 +++ hotspot/src/os/bsd/vm/vmError_bsd.cpp
 @@ -44,7 +44,7 @@
@@ -1750,7 +1782,11 @@
    ORIGIN_ARG += $(call SET_EXECUTABLE_ORIGIN,$(ORIGIN_ROOT)/lib$(OPENJDK_TARGET_CPU_LIBDIR))
  endif
  
-@@ -150,11 +150,13 @@
+@@ -147,14 +147,17 @@
+           -DLIBARCHNAME='"$(OPENJDK_TARGET_CPU_LEGACY)"' \
+           -DLAUNCHER_NAME='"$(LAUNCHER_NAME)"' \
+           -DPROGNAME='"$1"' $(DPACKAGEPATH) \
++          -DPACKAGE_PATH='"$(PACKAGE_PATH)"' \
            $2, \
        CFLAGS_linux := -fPIC, \
        CFLAGS_solaris := -KPIC -DHAVE_GETHRTIME, \
@@ -1764,7 +1800,7 @@
            $(call SET_SHARED_LIBRARY_NAME,$(LIBRARY_PREFIX)$(SHARED_LIBRARY_SUFFIX)), \
        LDFLAGS_solaris := $$($1_LDFLAGS_solaris) \
            $(call SET_SHARED_LIBRARY_NAME,$(LIBRARY_PREFIX)$(SHARED_LIBRARY_SUFFIX)), \
-@@ -165,6 +167,7 @@
+@@ -165,6 +168,7 @@
            $(JDK_OUTPUTDIR)/objs/libjava/java.lib advapi32.lib $5, \
        LDFLAGS_SUFFIX_linux := -L$(JDK_OUTPUTDIR)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli -ljli $(LIBDL) -lc, \
        LDFLAGS_SUFFIX_solaris := -L$(JDK_OUTPUTDIR)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli -ljli -lthread $(LIBDL) -lc, \
@@ -1772,7 +1808,7 @@
        OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/$1_objs$(OUTPUT_SUBDIR), \
        OUTPUT_DIR := $$($1_OUTPUT_DIR_ARG)$(OUTPUT_SUBDIR), \
        PROGRAM := $1, \
-@@ -457,6 +460,7 @@
+@@ -457,6 +461,7 @@
      CFLAGS_linux := -fPIC, \
      CFLAGS_solaris := -KPIC, \
      CFLAGS_macosx := -fPIC, \
@@ -1780,7 +1816,7 @@
      MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libunpack/mapfile-vers-unpack200, \
      LDFLAGS := $(UNPACKEXE_ZIPOBJS), \
      LDFLAGS_windows := $(CXXFLAGS_JDKEXE), \
-@@ -465,6 +469,7 @@
+@@ -465,6 +470,7 @@
          $(call SET_SHARED_LIBRARY_ORIGIN), \
      LDFLAGS_linux := -lc, \
      LDFLAGS_solaris := $(UNPACKEXE_LDFLAGS_solaris) -lc, \
@@ -1788,7 +1824,7 @@
      LDFLAGS_SUFFIX := $(LIBCXX), \
      OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/unpackexe$(OUTPUT_SUBDIR), \
      OUTPUT_DIR := $(JDK_OUTPUTDIR)/objs/unpackexe$(OUTPUT_SUBDIR), \
-@@ -522,6 +527,10 @@
+@@ -522,6 +528,10 @@
    BUILD_JEXEC := 1
  endif # OPENJDK_TARGET_OS
  
@@ -1799,7 +1835,7 @@
  #
  # jdk/make/java/jexec/Makefile
  #
-@@ -554,6 +563,7 @@
+@@ -554,6 +564,7 @@
            $(BUILD_JEXEC_INC), \
        CFLAGS_linux := -fPIC, \
        CFLAGS_solaris := -KPIC, \
@@ -1807,7 +1843,7 @@
        LDFLAGS := $(LDFLAGS_JDKEXE) \
            $(call SET_SHARED_LIBRARY_NAME,$(LIBRARY_PREFIX)$(SHARED_LIBRARY_SUFFIX)), \
        OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/jexec_obj, \
-@@ -576,6 +586,9 @@
+@@ -576,6 +587,9 @@
  ifeq ($(OPENJDK_TARGET_OS), solaris)
    BUILD_LAUNCHERS += $(JAVA_RMI_CGI)
  endif
@@ -1817,7 +1853,7 @@
  
  # TODO:
  # On windows java-rmi.cgi shouldn't be bundled since Java 1.2, but has been built all
-@@ -601,11 +614,11 @@
+@@ -601,11 +615,11 @@
  LINK_JSPAWNHELPER_OBJECTS := $(JDK_OUTPUTDIR)/objs/libjava/childproc.o
  LINK_JSPAWNHELPER_FLAGS :=
  
@@ -4872,6 +4908,15 @@
      VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
      RC_FLAGS := $(RC_FLAGS) \
          -D "JDK_FNAME=zip.dll" \
+@@ -376,7 +378,7 @@
+ # Append defines depending on target platform
+ LIBJLI_CFLAGS += $(OPENJDK_TARGET_CPU_JLI_CFLAGS)
+ 
+-ifeq ($(OPENJDK_TARGET_OS), macosx)
++ifneq ($(findstring $(OPENJDK_TARGET_OS), bsd macosx), )
+   LIBJLI_CFLAGS += -DPACKAGE_PATH=\"$(PACKAGE_PATH)\"
+ endif
+ 
 @@ -412,9 +414,11 @@
      LDFLAGS_linux := $(call SET_SHARED_LIBRARY_ORIGIN,/..), \
      LDFLAGS_solaris := $(call SET_SHARED_LIBRARY_ORIGIN,/..), \
@@ -5061,11 +5106,11 @@
 +          -DUSE_PORTS=TRUE, \
 +      CFLAGS_linux := -DUSE_PLATFORM_MIDI_OUT=TRUE \
            -DUSE_PLATFORM_MIDI_IN=TRUE, \
-+      CFLAGS_bsd := -I/usr/local/include, \
++      CFLAGS_bsd := -I$(PACKAGE_PATH)/include, \
        MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libjsoundalsa/mapfile-vers, \
        LDFLAGS := $(LDFLAGS_JDKLIB) \
            $(call SET_SHARED_LIBRARY_ORIGIN), \
-+      LDFLAGS_bsd := -L/usr/local/lib, \
++      LDFLAGS_bsd := -L$(PACKAGE_PATH)/lib, \
        LDFLAGS_SUFFIX := $(ALSA_LIBS) -ljava -ljvm, \
        OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/libjsoundalsa, \
        DEBUG_SYMBOLS := $(DEBUG_ALL_BINARIES)))
@@ -8586,25 +8631,25 @@
  #include <mlib_sys.h>
 --- jdk/src/share/native/sun/awt/medialib/mlib_sys.c
 +++ jdk/src/share/native/sun/awt/medialib/mlib_sys.c
-@@ -26,7 +26,7 @@
- 
- #include <stdlib.h>
- #include <string.h>
--#ifdef MACOSX
-+#ifdef _ALLBSD_SOURCE
+@@ -29,7 +29,7 @@
+ #ifdef MACOSX
  #include <unistd.h>
  #include <sys/param.h>
- #else
-@@ -92,6 +92,9 @@
-    * alignment. -- from stdlib.h of MS VC++5.0.
-    */
+-#else
++#elif !defined(_ALLBSD_SOURCE)
+ #include <malloc.h>
+ #endif
+ #include <mlib_types.h>
+@@ -94,6 +94,9 @@
    return (void *) malloc(size);
-+#elif defined(__FreeBSD__)
-+  void *ret;
-+  return posix_memalign(&ret, 8, size) ? NULL : ret;
  #elif defined(MACOSX)
    return valloc(size);
++#elif defined(_ALLBSD_SOURCE)
++  void *ret;
++  return posix_memalign(&ret, 8, size) ? NULL : ret;
  #else
+   return (void *) memalign(8, size);
+ #endif /* _MSC_VER */
 --- jdk/src/share/native/sun/font/layout/LEStandalone.h
 +++ jdk/src/share/native/sun/font/layout/LEStandalone.h
 @@ -136,7 +136,7 @@
@@ -8683,7 +8728,40 @@
   * A utility method for asking the CPU about itself.
 --- jdk/src/solaris/bin/java_md_solinux.c
 +++ jdk/src/solaris/bin/java_md_solinux.c
-@@ -928,9 +928,13 @@
+@@ -297,9 +297,9 @@
+     if (llp == NULL && dmllp == NULL) {
+         return JNI_FALSE;
+     }
+-#ifdef __linux
++#ifndef __solaris__
+     /*
+-     * On linux, if a binary is running as sgid or suid, glibc sets
++     * On linux and BSD, if a binary is running as sgid or suid, glibc/libc sets
+      * LD_LIBRARY_PATH to the empty string for security purposes. (In contrast,
+      * on Solaris the LD_LIBRARY_PATH variable for a privileged binary does not
+      * lose its settings; but the dynamic linker does apply more scrutiny to the
+@@ -310,12 +310,18 @@
+      * libraries will be handled by the RPATH. In reality, this check is
+      * redundant, as the previous check for a non-null LD_LIBRARY_PATH will
+      * return back to the calling function forthwith, it is left here to safe
+-     * guard against any changes, in the glibc's existing security policy.
++     * guard against any changes, in the glibc/libc's existing security policy.
+      */
++#ifndef _ALLBSD_SOURCE
+     if ((getgid() != getegid()) || (getuid() != geteuid())) {
+         return JNI_FALSE;
+     }
+-#endif /* __linux */
++#else
++    if (issetugid()) {
++        return JNI_FALSE;
++    }
++#endif /* ! _ALLBSD_SOURCE */
++#endif /* ! __solaris__ */
+ 
+     /*
+      * Prevent recursions. Since LD_LIBRARY_PATH is the one which will be set by
+@@ -928,9 +934,13 @@
              }
          }
      }
@@ -8698,7 +8776,7 @@
          char buf[PATH_MAX+1];
          int len = readlink(self, buf, PATH_MAX);
          if (len >= 0) {
-@@ -938,7 +942,7 @@
+@@ -938,7 +948,7 @@
              exec_path = JLI_StringDup(buf);
          }
      }
@@ -8707,7 +8785,7 @@
      {
          /* Not implemented */
      }
-@@ -1000,7 +1004,7 @@
+@@ -1000,7 +1010,7 @@
  int
  ContinueInNewThread0(int (JNICALL *continuation)(void *), jlong stack_size, void * args) {
      int rslt;
@@ -8716,7 +8794,7 @@
      pthread_t tid;
      pthread_attr_t attr;
      pthread_attr_init(&attr);
-@@ -1025,7 +1029,7 @@
+@@ -1025,7 +1035,7 @@
      }
  
      pthread_attr_destroy(&attr);
@@ -8725,9 +8803,74 @@
      thread_t tid;
      long flags = 0;
      if (thr_create(NULL, stack_size, (void *(*)(void *))continuation, args, flags, &tid) == 0) {
+@@ -1036,7 +1046,7 @@
+       /* See above. Continue in current thread if thr_create() failed */
+       rslt = continuation(args);
+     }
+-#endif /* __linux__ */
++#endif /* ! __solaris__ */
+     return rslt;
+ }
+ 
+@@ -1044,13 +1054,13 @@
+ #define MAX_PID_STR_SZ   20
+ 
+ void SetJavaLauncherPlatformProps() {
+-   /* Linux only */
+-#ifdef __linux__
++   /* Linux and BSD only */
++#ifndef __solaris__
+     const char *substr = "-Dsun.java.launcher.pid=";
+     char *pid_prop_str = (char *)JLI_MemAlloc(JLI_StrLen(substr) + MAX_PID_STR_SZ + 1);
+     sprintf(pid_prop_str, "%s%d", substr, getpid());
+     AddOption(pid_prop_str, NULL);
+-#endif /* __linux__ */
++#endif /* ! __solaris__ */
+ }
+ 
+ int
 --- jdk/src/solaris/bin/java_md_solinux.h
 +++ jdk/src/solaris/bin/java_md_solinux.h
-@@ -54,10 +54,10 @@
+@@ -26,17 +26,26 @@
+ #ifndef JAVA_MD_SOLINUX_H
+ #define JAVA_MD_SOLINUX_H
+ 
+-#ifdef HAVE_GETHRTIME
++#if defined(HAVE_GETHRTIME) || defined(__FreeBSD__)
+ /*
+  * Support for doing cheap, accurate interval timing.
+  */
++#ifdef HAVE_GETHRTIME
+ #include <sys/time.h>
++#else /* __FreeBSD__ */
++#include <time.h>
++#define gethrtime() __extension__ ({ \
++    struct timespec tp; \
++    clock_gettime(CLOCK_MONOTONIC, &tp); \
++    (uint64_t)tp.tv_sec*1000000 + tp.tv_nsec/1000; \
++})
++#endif /* HAVE_GETHRTIME */
+ #define CounterGet()              (gethrtime()/1000)
+ #define Counter2Micros(counts)    (counts)
+-#else  /* ! HAVE_GETHRTIME */
++#else /* ! HAVE_GETHRTIME && ! __FreeBSD__ */
+ #define CounterGet()              (0)
+ #define Counter2Micros(counts)    (1)
+-#endif /* HAVE_GETHRTIME */
++#endif /* HAVE_GETHRTIME || __FreeBSD__ */
+ 
+ /* pointer to environment */
+ extern char **environ;
+@@ -48,16 +57,19 @@
+ #ifdef __linux__
+ static const char *system_dir   = "/usr/java";
+ static const char *user_dir     = "/java";
++#elif defined(__FreeBSD__)
++static const char *system_dir  = PACKAGE_PATH "/openjdk8";
++static const char *user_dir    = "/java";
+ #else /* Solaris */
+ static const char *system_dir   = "/usr/jdk";
+ static const char *user_dir     = "/jdk";
  #endif
  
  #include <dlfcn.h>
@@ -8882,6 +9025,15 @@
      return NULL;
 --- jdk/src/solaris/native/java/lang/java_props_md.c
 +++ jdk/src/solaris/native/java/lang/java_props_md.c
+@@ -151,7 +151,7 @@
+     lc = setlocale(cat, NULL);
+ #endif
+ 
+-#ifndef __linux__
++#if !defined(__linux__) && !defined(__FreeBSD__)
+     if (lc == NULL) {
+         return 0;
+     }
 @@ -552,23 +552,11 @@
      sprops.sun_jnu_encoding = sprops.encoding;
  #endif
@@ -9306,7 +9458,19 @@
      if (ni_class == NULL) {
 --- jdk/src/solaris/native/java/util/TimeZone_md.c
 +++ jdk/src/solaris/native/java/util/TimeZone_md.c
-@@ -123,7 +123,7 @@
+@@ -52,7 +52,11 @@
+ #if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ 
+ 
++#ifdef __FreeBSD__
++static const char *ETC_TIMEZONE_FILE = "/var/db/zoneinfo";
++#else
+ static const char *ETC_TIMEZONE_FILE = "/etc/timezone";
++#endif
+ static const char *ZONEINFO_DIR = "/usr/share/zoneinfo";
+ static const char *DEFAULT_ZONEINFO_FILE = "/etc/localtime";
+ #else
+@@ -123,7 +127,7 @@
          return NULL;
      }
  
@@ -9315,7 +9479,7 @@
      && (defined(_POSIX_PTHREAD_SEMANTICS) || defined(_LP64)))
      while (readdir_r(dirp, entry, &dp) == 0 && dp != NULL) {
  #else
-@@ -211,7 +211,7 @@
+@@ -211,7 +215,7 @@
      return tz;
  }
  
@@ -9324,7 +9488,25 @@
  
  /*
   * Performs Linux specific mapping and returns a zone ID
-@@ -677,7 +677,7 @@
+@@ -227,7 +231,7 @@
+     char *buf;
+     size_t size;
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__FreeBSD__)
+     /*
+      * Try reading the /etc/timezone file for Debian distros. There's
+      * no spec of the file format available. This parsing assumes that
+@@ -251,7 +255,7 @@
+             return tz;
+         }
+     }
+-#endif /* __linux__ */
++#endif /* __linux__ || __FreeBSD__ */
+ 
+     /*
+      * Next, try /etc/localtime to find the zone ID.
+@@ -677,7 +681,7 @@
   * Returns a GMT-offset-based zone ID. (e.g., "GMT-08:00")
   */
  
@@ -9333,7 +9515,7 @@
  
  char *
  getGMTOffsetID()
-@@ -693,10 +693,10 @@
+@@ -693,10 +697,10 @@
      local_tm = localtime(&clock);
      if (local_tm->tm_gmtoff >= 0) {
          offset = (time_t) local_tm->tm_gmtoff;
@@ -9346,6 +9528,246 @@
      }
      sprintf(buf, (const char *)"GMT%c%02d:%02d",
              sign, (int)(offset/3600), (int)((offset%3600)/60));
+@@ -738,4 +742,4 @@
+             sign, (int)(offset/3600), (int)((offset%3600)/60));
+     return strdup(buf);
+ }
+-#endif /* MACOSX */
++#endif /* _ALLBSD_SOURCE */
+--- jdk/src/solaris/native/sun/awt/awt_Font.c
++++ jdk/src/solaris/native/sun/awt/awt_Font.c
+@@ -260,7 +260,7 @@
+             if (strcmp(style, "regular") == 0) {
+                 altstyle = "roman";
+             }
+-#if defined(__linux__) || defined(MACOSX)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+             if (!strcmp(family, "lucidasans")) {
+                 family = "lucida";
+             }
+--- jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c
++++ jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c
+@@ -120,7 +120,7 @@
+  */
+ 
+ #define MAXFRAMEBUFFERS 16
+-#if defined(__linux__) || defined(MACOSX)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ typedef struct {
+    int   screen_number;
+    short x_org;
+@@ -423,20 +423,15 @@
+     if (XQueryExtension(awt_display, "RENDER",
+                         &major_opcode, &first_event, &first_error))
+     {
+-        xrenderLibHandle = dlopen("libXrender.so.1", RTLD_LAZY | RTLD_GLOBAL);
+-
+-#ifdef MACOSX
+-#define XRENDER_LIB "/usr/X11/lib/libXrender.dylib"
+-#else
+-#define XRENDER_LIB "libXrender.so"
+-#endif
++        xrenderLibHandle = dlopen(VERSIONED_JNI_LIB_NAME("Xrender", "1"),
++                                  RTLD_LAZY | RTLD_GLOBAL);
+ 
+         if (xrenderLibHandle == NULL) {
+-            xrenderLibHandle = dlopen(XRENDER_LIB,
++            xrenderLibHandle = dlopen(JNI_LIB_NAME("Xrender"),
+                                       RTLD_LAZY | RTLD_GLOBAL);
+         }
+ 
+-#ifndef __linux__ /* SOLARIS */
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE) /* SOLARIS */
+         if (xrenderLibHandle == NULL) {
+             xrenderLibHandle = dlopen("/usr/sfw/lib/libXrender.so.1",
+                                       RTLD_LAZY | RTLD_GLOBAL);
+@@ -580,7 +575,7 @@
+ }
+ 
+ #ifndef HEADLESS
+-#if defined(__linux__) || defined(MACOSX)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ static void xinerama_init_linux()
+ {
+     void* libHandle = NULL;
+@@ -631,7 +626,7 @@
+     }
+ }
+ #endif
+-#if !defined(__linux__) && !defined(MACOSX) /* Solaris */
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE) /* Solaris */
+ static void xinerama_init_solaris()
+ {
+     void* libHandle = NULL;
+@@ -691,11 +686,11 @@
+     }
+ 
+     DTRACE_PRINTLN("Xinerama extension is available");
+-#if defined(__linux__) || defined(MACOSX)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     xinerama_init_linux();
+ #else /* Solaris */
+     xinerama_init_solaris();
+-#endif /* __linux__ || MACOSX */
++#endif /* __linux__ || _ALLBSD_SOURCE */
+ }
+ #endif /* HEADLESS */
+ 
+@@ -1589,7 +1584,7 @@
+ {
+     jobject point = NULL;
+ #ifndef HEADLESS    /* return NULL in HEADLESS, Linux */
+-#if !defined(__linux__) && !defined(MACOSX)
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
+     int x,y;
+ 
+     AWT_LOCK();
+@@ -1602,7 +1597,7 @@
+         DTRACE_PRINTLN("unable to call XineramaSolarisCenterFunc: symbol is null");
+     }
+     AWT_FLUSH_UNLOCK();
+-#endif /* __linux __ || MACOSX */
++#endif /* __linux __ || _ALLBSD_SOURCE */
+ #endif /* HEADLESS */
+     return point;
+ }
+--- jdk/src/solaris/native/sun/awt/awt_Robot.c
++++ jdk/src/solaris/native/sun/awt/awt_Robot.c
+@@ -45,7 +45,7 @@
+ #include "wsutils.h"
+ #include "list.h"
+ #include "multiVis.h"
+-#if defined(__linux__) || defined(MACOSX)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <sys/socket.h>
+ #endif
+ 
+--- jdk/src/solaris/native/sun/awt/extutil.h
++++ jdk/src/solaris/native/sun/awt/extutil.h
+@@ -58,7 +58,7 @@
+  */
+ /* $XFree86: xc/include/extensions/extutil.h,v 1.5 2001/01/17 17:53:20 dawes Exp $ */
+ 
+-#if defined(__linux__) || defined(MACOSX)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ 
+ #ifndef _EXTUTIL_H_
+ #define _EXTUTIL_H_
+@@ -248,4 +248,4 @@
+         char *proc(Display *dpy, int code, XExtCodes *codes, char *buf, int n)
+ #endif
+ 
+-#endif /* __linux__ || MACOSX */
++#endif /* __linux__ || _ALLBSD_SOURCE */
+--- jdk/src/solaris/native/sun/awt/fontpath.c
++++ jdk/src/solaris/native/sun/awt/fontpath.c
+@@ -23,9 +23,9 @@
+  * questions.
+  */
+ 
+-#if defined(__linux__)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <string.h>
+-#endif /* __linux__ */
++#endif /* __linux__ || _ALLBSD_SOURCE */
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <strings.h>
+@@ -64,7 +64,7 @@
+ 
+ #define MAXFDIRS 512    /* Max number of directories that contain fonts */
+ 
+-#if !defined(__linux__)
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
+ /*
+  * This can be set in the makefile to "/usr/X11" if so desired.
+  */
+@@ -114,6 +114,21 @@
+     NULL, /* terminates the list */
+ };
+ 
++#elif defined(_ALLBSD_SOURCE)
++static char *fullBSDFontPath[] = {
++    PACKAGE_PATH "/lib/X11/fonts/TrueType",
++    PACKAGE_PATH "/lib/X11/fonts/truetype",
++    PACKAGE_PATH "/lib/X11/fonts/TTF",
++    PACKAGE_PATH "/lib/X11/fonts/OTF",
++    PACKAGE_PATH "/share/fonts/TrueType",
++    PACKAGE_PATH "/share/fonts/truetype",
++    PACKAGE_PATH "/share/fonts/TTF",
++    PACKAGE_PATH "/share/fonts/OTF",
++    PACKAGE_PATH "/lib/X11/fonts/Type1",
++    PACKAGE_PATH "/share/fonts/Type1",
++    NULL, /* terminates the list */
++};
++
+ #else /* __linux */
+ /* All the known interesting locations we have discovered on
+  * various flavors of Linux
+@@ -370,7 +385,7 @@
+ 
+ #endif /* !HEADLESS */
+ 
+-#if defined(__linux__)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ /* from awt_LoadLibrary.c */
+ JNIEXPORT jboolean JNICALL AWTIsHeadless();
+ #endif
+@@ -497,6 +512,8 @@
+ 
+ #if defined(__linux__)
+     knowndirs = fullLinuxFontPath;
++#elif defined(_ALLBSD_SOURCE)
++    knowndirs = fullBSDFontPath;
+ #else /* IF SOLARIS */
+     knowndirs = fullSolarisFontPath;
+ #endif
+@@ -507,8 +524,8 @@
+      * be initialised.
+      */
+ #ifndef HEADLESS
+-#if defined(__linux__)
+-    /* There's no headless build on linux ... */
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
++    /* There's no headless build on linux and BSD ... */
+     if (!AWTIsHeadless()) { /* .. so need to call a function to check */
+ #endif
+       /* Using the X11 font path to locate font files is now a fallback
+@@ -523,7 +540,7 @@
+         x11dirs = getX11FontPath();
+     }
+     AWT_UNLOCK();
+-#if defined(__linux__)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     }
+ #endif
+ #endif /* !HEADLESS */
+@@ -1203,7 +1220,7 @@
+              */
+             if (fontformat != NULL
+                 && (strcmp((char*)fontformat, "TrueType") != 0)
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+                 && (strcmp((char*)fontformat, "Type 1") != 0)
+ #endif
+              ) {
+--- jdk/src/solaris/native/sun/java2d/j2d_md.h
++++ jdk/src/solaris/native/sun/java2d/j2d_md.h
+@@ -28,11 +28,11 @@
+ #include <sys/types.h>
+ 
+ /*
+- * Linux and MACOSX's version of <sys/types.h> does not define intptr_t
++ * Linux and BSD's version of <sys/types.h> does not define intptr_t
+  */
+-#if defined(__linux__) || defined(MACOSX)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <stdint.h>
+-#endif /* __linux__ || MACOSX */
++#endif /* __linux__ || _ALLBSD_SOURCE */
+ 
+ typedef unsigned char   jubyte;
+ typedef unsigned short  jushort;
 --- jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c
 +++ jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c
 @@ -63,9 +63,6 @@
@@ -9452,9 +9874,126 @@
          LOGIC(da[0], dtmp, dtmp1, |);
        }
        else {                                               /* aligned */
+--- jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c
++++ jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c
+@@ -804,7 +804,7 @@
+ static int initialized;
+ static int usevis = JNI_TRUE;
+ 
+-#if defined(__linux__) || defined(MACOSX)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #   define ULTRA_CHIP   "sparc64"
+ #else
+ #   define ULTRA_CHIP   "sun4u"
 --- jdk/src/solaris/native/sun/management/OperatingSystemImpl.c
 +++ jdk/src/solaris/native/sun/management/OperatingSystemImpl.c
-@@ -342,7 +342,13 @@
+@@ -56,6 +56,9 @@
+ #include <limits.h>
+ #include <stdlib.h>
+ #include <unistd.h>
++#ifdef __FreeBSD__
++#include <vm/vm_param.h>
++#endif
+ 
+ static jlong page_size = 0;
+ 
+@@ -164,6 +167,25 @@
+         throw_internal_error(env, "sysctlbyname failed");
+     }
+     return available ? (jlong)vmusage.xsu_avail : (jlong)vmusage.xsu_total;
++#elif defined(__FreeBSD__)
++    struct xswdev xsw;
++    size_t mibsize, size;
++    jlong npages;
++    int mib[16], n;
++
++    mibsize = sizeof(mib) / sizeof(mib[0]);
++    if (sysctlnametomib("vm.swap_info", mib, &mibsize) == -1)
++       return (0);
++    for (n = 0, npages = 0; ; n++) {
++       mib[mibsize] = n;
++       size = sizeof(xsw);
++       if (sysctl(mib, mibsize + 1, &xsw, &size, NULL, 0) == -1)
++           break;
++       npages += xsw.xsw_nblks;
++       if (available)
++           npages -= xsw.xsw_used;
++    }
++    return (npages * page_size);
+ #else /* _ALLBSD_SOURCE */
+     /*
+      * XXXBSD: there's no way available to get swap info in
+@@ -239,11 +261,30 @@
+         throw_internal_error(env, "task_info failed");
+     }
+     return t_info.virtual_size;
++#elif defined(__FreeBSD__)
++    FILE *fp;
++    unsigned long end, start;
++    jlong total = 0;
++
++    if ((fp = fopen("/proc/curproc/map", "r")) == NULL) {
++        throw_internal_error(env, "Unable to open /proc/curproc/map");
++        return -1;
++    }
++
++    for (;;) {
++       // Ignore everything except start and end entries
++       if (fscanf(fp, "0x%lx 0x%lx %*[^\n]\n", &start, &end) != 2 || start > end)
++           break;
++       total += end - start;
++    }
++
++    fclose(fp);
++    return total;
+ #else /* _ALLBSD_SOURCE */
+     /*
+-     * XXXBSD: there's no way available to do it in FreeBSD, AFAIK.
++     * XXXBSD: there's no way available to do it in BSD, AFAIK.
+      */
+-    // throw_internal_error(env, "Unimplemented in FreeBSD");
++    // throw_internal_error(env, "Unimplemented in BSD");
+     return (64 * MB);
+ #endif
+ }
+@@ -320,11 +361,27 @@
+         return -1;
+     }
+     return (jlong)vm_stats.free_count * page_size;
++#elif defined(__FreeBSD__)
++    static const char *vm_stats[] = {
++       "vm.stats.vm.v_free_count",
++       "vm.stats.vm.v_cache_count",
++       /* "vm.stats.vm.v_inactive_count", */
++       NULL
++    };
++    size_t size;
++    jlong free_pages;
++    u_int i, npages;
++    for (i = 0, free_pages = 0, size = sizeof(npages); vm_stats[i] != NULL; i++) {
++       if (sysctlbyname(vm_stats[i], &npages, &size, NULL, 0) == -1)
++           return 0;
++       free_pages += npages;
++    }
++    return (free_pages * page_size);
+ #elif defined(_ALLBSD_SOURCE)
+     /*
+-     * XXBSDL no way to do it in FreeBSD
++     * XXBSDL no way to do it in BSD
+      */
+-    // throw_internal_error(env, "unimplemented in FreeBSD")
++    // throw_internal_error(env, "unimplemented in BSD")
+     return (128 * MB);
+ #else // solaris / linux
+     jlong num_avail_physical_pages = sysconf(_SC_AVPHYS_PAGES);
+@@ -336,13 +393,19 @@
+ Java_sun_management_OperatingSystemImpl_getTotalPhysicalMemorySize
+   (JNIEnv *env, jobject mbean)
+ {
+-#ifdef _ALLBSD_SOURCE
++#if defined(_ALLBSD_SOURCE) && !defined(_SC_PHYS_PAGES)
+     jlong result = 0;
+     int mib[2];
      size_t rlen;
  
      mib[0] = CTL_HW;
@@ -9468,6 +10007,42 @@
      rlen = sizeof(result);
      if (sysctl(mib, 2, &result, &rlen, NULL, 0) != 0) {
          throw_internal_error(env, "sysctl failed");
+@@ -356,6 +419,11 @@
+ }
+ 
+ 
++#ifdef _ALLBSD_SOURCE
++#define FD_DIR "/dev/fd"
++#else
++#define FD_DIR "/proc/self/fd"
++#endif
+ 
+ JNIEXPORT jlong JNICALL
+ Java_sun_management_OperatingSystemImpl_getOpenFileDescriptorCount
+@@ -405,21 +473,15 @@
+     free(fds);
+ 
+     return nfiles;
+-#elif defined(_ALLBSD_SOURCE)
+-    /*
+-     * XXXBSD: there's no way available to do it in FreeBSD, AFAIK.
+-     */
+-    // throw_internal_error(env, "Unimplemented in FreeBSD");
+-    return (100);
+ #else /* solaris/linux */
+     DIR *dirp;
+     struct dirent dbuf;
+     struct dirent* dentp;
+     jlong fds = 0;
+ 
+-    dirp = opendir("/proc/self/fd");
++    dirp = opendir(FD_DIR);
+     if (dirp == NULL) {
+-        throw_internal_error(env, "Unable to open directory /proc/self/fd");
++        throw_internal_error(env, "Unable to open directory " FD_DIR);
+         return -1;
+     }
+ 
 --- jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h
 +++ jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h
 @@ -67,7 +67,7 @@
@@ -9572,6 +10147,17 @@
  #include <sys/un.h>
  #include <fcntl.h>
  
+--- jdk/src/solaris/native/sun/xawt/XWindow.c
++++ jdk/src/solaris/native/sun/xawt/XWindow.c
+@@ -886,7 +886,7 @@
+ {
+     KeySym originalKeysym = *keysym;
+ 
+-#if !defined(__linux__) && !defined(MACOSX)
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
+     /* The following code on Linux will cause the keypad keys
+      * not to echo on JTextField when the NumLock is on. The
+      * keysyms will be 0, because the last parameter 2 is not defined.
 --- jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp
 +++ jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp
 @@ -308,7 +308,7 @@
