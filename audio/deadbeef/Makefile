@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.5.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -18,10 +18,9 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig gettext iconv shebangfix
-NO_STAGE=	yes
+USES=		gmake pkgconfig gettext iconv shebangfix tar:bzip2 desktop-file-utils \
+		libtool
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout \
 		CPPFLAGS="-I../dumb/dumb-kode54/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lexecinfo -lintl"
@@ -29,6 +28,7 @@ WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	CONFIG_SHELL="${LOCALBASE}/bin/bash"
 SHEBANG_FILES=	yasmwrapper.sh
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	PULSEAUDIO GUI VFS LASTFM ART EQ SID FFAP VTX HOTKEYS OGG FFMPEG \
 		FLAC SNDFILE WAV CDDA GME DUMB NOTIFY MUSEPACK WILD TTA DCA AAC \
@@ -64,242 +64,109 @@ MONO2STEREO_DESC=	mono2stereo DSP plugin
 CONVERTER_DESC=		Build converter
 VFS_ZIP_DESC=		ZIP support
 
+OPTIONS_SUB=	yes
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
+
+GUI_USE=	GNOME="gtk20,glib20"
+GUI_CONFIGURE_OFF=	--disable-gtkui --disable-gtk3
+
+VFS_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+VFS_CONFIGURE_OFF=	--disable-vfs-curl
+
+LASTFM_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LASTFM_CONFIGURE_OFF=	--disable-lfm
+
+EQ_CONFIGURE_OFF=	--disable-supereq
+
+SID_CONFIGURE_OFF=	--disable-sid
+
+FFAP_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+FFAP_CONFIGURE_OFF=	--disable-ffap
+
+VTX_CONFIGURE_OFF=	--disable-vtx
+
+ADP_CONFIGURE_OFF=	--disable-adplug
+
+HOTKEYS_CONFIGURE_OFF=	--disable-hotkeys
+
+OGG_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+OGG_CONFIGURE_OFF=	--disable-vorbis
+
+FFMPEG_LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
+		libavformat0.so:${PORTSDIR}/multimedia/ffmpeg0 \
+		libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_CONFIGURE_ENABLE=	ffmpeg
+
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_CONFIGURE_OFF=	--disable-flac
+
+SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_CONFIGURE_OFF=	--disable-sndfile
+
+WAV_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAV_CONFIGURE_OFF=	--disable-wavpack
+
+CDDA_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
+			libcddb.so:${PORTSDIR}/audio/libcddb
+CDDA_CONFIGURE_OFF=	--disable-cdda
+
+GME_CONFIGURE_OFF=	--disable-gme
+
+DUMB_CONFIGURE_OFF=	--disable-dumb
+
+NOTIFY_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+NOTIFY_CONFIGURE_OFF=	--disable-notify
+
+MUSEPACK_CONFIGURE_OFF=	--disable-musepack
+
+WILD_RUN_DEPENDS=	${LOCALBASE}/share/freepats/crude.cfg:${PORTSDIR}/audio/freepats
+WILD_CONFIGURE_OFF=	--disable-wildmidi
+
+TTA_CONFIGURE_OFF=	--disable-tta
+
+DCA_CONFIGURE_OFF=	--disable-dca
+
+AAC_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad
+AAC_CONFIGURE_OFF=	--disable-aac
+
+MMS_CONFIGURE_OFF=	--disable-mms
+
+SHN_CONFIGURE_OFF=	--disable-shn
+
+AO_CONFIGURE_OFF=	--disable-ao
+
+SHELLEXEC_CONFIGURE_ARGS+=	--disable-shellexec
+
+NLS_CONFIGURE_OFF=	--disable-nls
+
+M3U_CONFIGURE_OFF=	--disable-m3u
+
+SPF_CONFIGURE_OFF=	--disable-psf
+
+DSP_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+DSP_CONFIGURE_OFF=	--disable-src
+
+MONO2STEREO_CONFIGURE_OFF=	--disable-mono2stereo
+
+VFS_ZIP_LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip
+VFS_ZIP_CONFIGURE_OFF=	--disable-vfs-zip
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-PLIST_SUB+=	PULSE=""
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-.else
-CONFIGURE_ARGS+=	--disable-pulse
-PLIST_SUB+=	PULSE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGUI}
-PLIST_SUB+=	GUI=""
-USE_GNOME=	gtk20 glib20
-.else
-CONFIGURE_ARGS+=	--disable-gtkui
-CONFIGURE_ARGS+=	--disable-gtk3
-PLIST_SUB+=	GUI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVFS}
-PLIST_SUB+=	VFS=""
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-.else
-CONFIGURE_ARGS+=	--disable-vfs-curl
-PLIST_SUB+=	VFS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLASTFM}
-PLIST_SUB+=	LASTFM=""
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-.else
-CONFIGURE_ARGS+=	--disable-lfm
-PLIST_SUB+=	LASTFM="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MART}
 .if ${PORT_OPTIONS:MVFS}
 CONFIGURE_ARTS+=	--disable-artwork-imlib2
 PLIST_SUB+=	ART=""
 LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
-		jpeg:${PORTSDIR}/graphics/jpeg
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 .else
 BROKEN=		VFS plugin required for album art loader, please rerun 'make config' and either disable ART or enable VFS
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-artwork
 PLIST_SUB+=	ART="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MEQ}
-PLIST_SUB+=	EQ=""
-.else
-CONFIGURE_ARGS+=	--disable-supereq
-PLIST_SUB+=	EQ="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSID}
-PLIST_SUB+=	SID=""
-.else
-CONFIGURE_ARGS+=	--disable-sid
-PLIST_SUB+=	SID="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFFAP}
-PLIST_SUB+=	FFAP=""
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
-.else
-CONFIGURE_ARGS+=	--disable-ffap
-PLIST_SUB+=	FFAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVTX}
-PLIST_SUB+=	VTX=""
-.else
-CONFIGURE_ARGS+=	--disable-vtx
-PLIST_SUB+=	VTX="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MADP}
-PLIST_SUB+=	ADP=""
-.else
-CONFIGURE_ARGS+=	--disable-adplug
-PLIST_SUB+=	ADP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MHOTKEYS}
-PLIST_SUB+=	HOTKEYS=""
-.else
-CONFIGURE_ARGS+=	--disable-hotkeys
-PLIST_SUB+=	HOTKEYS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOGG}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-PLIST_SUB+=	OGG=""
-.else
-CONFIGURE_ARGS+=	--disable-vorbis
-PLIST_SUB+=	OGG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-PLIST_SUB+=	FFMPEG=""
-LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		libavformat0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0
-CONFIGURE_ARGS+=	--enable-ffmpeg
-.else
-CONFIGURE_ARGS+=	--disable-ffmpeg
-PLIST_SUB+=	FFMPEG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
-PLIST_SUB+=	FLAC=""
-.else
-CONFIGURE_ARGS+=	--disable-flac
-PLIST_SUB+=	FLAC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-PLIST_SUB+=	SNDFILE=""
-.else
-CONFIGURE_ARGS+=	--disable-sndfile
-PLIST_SUB+=	SNDFILE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MWAV}
-LIB_DEPENDS+=	libwavpack.so:${PORTSDIR}/audio/wavpack
-PLIST_SUB+=	WAV=""
-.else
-CONFIGURE_ARGS+=	--disable-wavpack
-PLIST_SUB+=	WAV="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCDDA}
-PLIST_SUB+=	CDDA=""
-LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
-		libcddb.so:${PORTSDIR}/audio/libcddb
-.else
-CONFIGURE_ARGS+=	--disable-cdda
-PLIST_SUB+=	CDDA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGME}
-PLIST_SUB+=	GME=""
-.else
-CONFIGURE_ARGS+=	--disable-gme
-PLIST_SUB+=	GME="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDUMB}
-PLIST_SUB+=	DUMB=""
-.else
-CONFIGURE_ARGS+=	--disable-dumb
-PLIST_SUB+=	DUMB="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNOTIFY}
-PLIST_SUB+=	NOTIFY=""
-LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-.else
-CONFIGURE_ARGS+=	--disable-notify
-PLIST_SUB+=	NOTIFY="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMUSEPACK}
-PLIST_SUB+=	MUSEPACK=""
-.else
-CONFIGURE_ARGS+=	--disable-musepack
-PLIST_SUB+=	MUSEPACK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MWILD}
-RUN_DEPENDS+=	${LOCALBASE}/share/freepats/crude.cfg:${PORTSDIR}/audio/freepats
-PLIST_SUB+=	WILD=""
-.else
-CONFIGURE_ARGS+=	--disable-wildmidi
-PLIST_SUB+=	WILD="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTTA}
-PLIST_SUB+=	TTA=""
-.else
-CONFIGURE_ARGS+=	--disable-tta
-PLIST_SUB+=	TTA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDCA}
-PLIST_SUB+=	DCA=""
-.else
-CONFIGURE_ARGS+=	--disable-dca
-PLIST_SUB+=	DCA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MAAC}
-PLIST_SUB+=	AAC=""
-LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
-.else
-CONFIGURE_ARGS+=	--disable-aac
-PLIST_SUB+=	AAC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMMS}
-PLIST_SUB+=	MMS=""
-.else
-CONFIGURE_ARGS+=	--disable-mms
-PLIST_SUB+=	MMS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSHN}
-PLIST_SUB+=	SHN=""
-.else
-CONFIGURE_ARGS+=	--disable-shn
-PLIST_SUB+=	SHN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MAO}
-PLIST_SUB+=	AO=""
-.else
-CONFIGURE_ARGS+=	--disable-ao
-PLIST_SUB+=	AO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSHELLEXEC}
-PLIST_SUB+=	SHELLEXEC=""
-.else
-CONFIGURE_ARGS+=	--disable-shellexec
-PLIST_SUB+=	SHELLEXEC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCONVERTER}
@@ -312,43 +179,6 @@ BROKEN=		CONVERTER plugin required for gui, please rerun 'make config' and eithe
 .else
 CONFIGURE_ARGS+=	--disable-converter
 PLIST_SUB+=	CONVERTER="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MM3U}
-PLIST_SUB+=	M3U=""
-.else
-CONFIGURE_ARGS+=	--disable-m3u
-PLIST_SUB+=	M3U="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPSF}
-PLIST_SUB+=	PSF=""
-.else
-CONFIGURE_ARGS+=	--disable-psf
-PLIST_SUB+=	PSF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDSP}
-PLIST_SUB+=	DSP=""
-LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-.else
-CONFIGURE_ARGS+=	--disable-src
-PLIST_SUB+=	DSP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMONO2STEREO}
-PLIST_SUB+=	MONO2STEREO=""
-.else
-CONFIGURE_ARGS+=	--disable-mono2stereo
-PLIST_SUB+=	MONO2STEREO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVFS_ZIP}
-PLIST_SUB+=	VFS_ZIP=""
-LIB_DEPENDS+=	libzip.so:${PORTSDIR}/archivers/libzip
-.else
-CONFIGURE_ARGS+=	--disable-vfs-zip
-PLIST_SUB+=	VFS_ZIP="@comment "
 .endif
 
 post-patch:
