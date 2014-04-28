@@ -11,39 +11,28 @@ DISTNAME=	rss-glx_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL screensaver collection
 
-LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick \
-		GLC.0:${PORTSDIR}/graphics/quesoglc
+LIB_DEPENDS=	libMagickWand.so:${PORTSDIR}/graphics/ImageMagick \
+		libGLC.so:${PORTSDIR}/graphics/quesoglc
 
-OPTIONS_DEFINE=	FREEALUT GLEW
-FREEALUT_DESC=	Enable freealut support
-GLEW_DESC=	Enable GLEW support
-
-USE_BZIP2=	yes
 USE_GL=		glut
-USES=	pathfix gmake
+USES=		gmake pathfix tar:bzip2
 GNU_CONFIGURE=	yes
-
-MAN1=		biof.1 busyspheres.1 colorfire.1 cyclone.1 drempels.1 \
-		euphoria.1 feedback.1 fieldlines.1 flocks.1 flux.1 \
-		helios.1 hufo_smoke.1 hufo_tunnel.1 hyperspace.1 lattice.1 \
-		lorenz.1 matrixview.1 pixelcity.1 plasma.1 skyrocket.1 \
-		solarwinds.1 spirographx.1 sundancer2.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXext
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	FREEALUT GLEW
+
+FREEALUT_DESC=	Enable freealut support
+FREEALUT_CONFIGURE_ENABLE=	sound
+FREEALUT_USES=	openal:alut
+
+GLEW_DESC=	Enable GLEW support
+GLEW_USE=	GL=glew
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFREEALUT}
-USES+=		openal:alut
-.else
-CONFIGURE_ARGS+=	--disable-sound
-.endif
-
-.if ${PORT_OPTIONS:MGLEW}
-USE_GL+=	glew
-.else
+.if ! ${PORT_OPTIONS:MGLEW}
 CONFIGURE_ENV+=	ac_cv_header_GL_glew_h=no
 .endif
 
