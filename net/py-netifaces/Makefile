@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netifaces
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	http://alastairs-place.net/projects/netifaces/
