@@ -152,11 +152,8 @@ include/libecasound/two-stage-linear-envelope.h
 include/libecasoundc/eca-control-interface.h
 include/libecasoundc/ecasoundc.h
 lib/libecasound.a
-lib/libecasound.la
 lib/libecasoundc.a
-lib/libecasoundc.la
 lib/libkvutils.a
-lib/libkvutils.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ecacontrol.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/eci.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyeca.py

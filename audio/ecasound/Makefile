@@ -3,6 +3,7 @@
 
 PORTNAME=	ecasound
 PORTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		http://nosignal.fi/download/ \
@@ -20,8 +21,8 @@ OPTIONS_DEFINE=	ALSA AUDIOFILE JACK LIBLO LIBOIL PYTHON SAMPLERATE SNDFILE
 OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 
-USES=		gmake readline
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool readline
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-liblilv \
 		--disable-rubyecasound \
 		--enable-sys-readline \
