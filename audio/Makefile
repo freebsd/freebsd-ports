@@ -58,7 +58,6 @@
     SUBDIR += btc
     SUBDIR += calf
     SUBDIR += cam
-    SUBDIR += cantus_3
     SUBDIR += caps-plugins
     SUBDIR += ccaudio2
     SUBDIR += cd-console
