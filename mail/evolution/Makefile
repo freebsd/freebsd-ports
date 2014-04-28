@@ -19,8 +19,7 @@ LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libspamc.so:${PORTSDIR}/mail/spamassassin
+		libnotify.so:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight
 
 USES=		desktop-file-utils bison gettext gmake libtool:keepla \
@@ -63,7 +62,7 @@ PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
 OPTIONS_DEFINE=	LDAP WEATHER CANBERRA PST
-OPTIONS_DEFAULT=LDAP WEATHER CANBERRA
+OPTIONS_DEFAULT=LDAP WEATHER CANBERRA SPAMASSASSIN
 OPTIONS_GROUP=	SPAM
 OPTIONS_GROUP_SPAM=SPAMASSASSIN BOGOFILTER
 
