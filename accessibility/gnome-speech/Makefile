@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-speech
 PORTVERSION=	0.4.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	accessibility audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,9 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME text-to-speech API
 
-USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix libbonobo
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static

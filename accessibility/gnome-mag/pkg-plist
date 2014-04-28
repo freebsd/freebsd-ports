@@ -1,11 +1,8 @@
 bin/magnifier
 include/gnome-mag-1.0/magnifier/GNOME_Magnifier.h
-lib/libgnome-mag.a
-lib/libgnome-mag.la
 lib/libgnome-mag.so
 lib/libgnome-mag.so.2
-lib/orbit-2.0/GNOME_Magnifier_module.a
-lib/orbit-2.0/GNOME_Magnifier_module.la
+lib/libgnome-mag.so.2.4.3
 lib/orbit-2.0/GNOME_Magnifier_module.so
 libdata/bonobo/servers/GNOME_Magnifier.server
 libdata/pkgconfig/gnome-mag-1.0.pc

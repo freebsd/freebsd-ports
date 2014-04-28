@@ -4,7 +4,7 @@
 
 PORTNAME=	gnopernicus
 PORTVERSION=	1.1.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	accessibility x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -14,25 +14,24 @@ COMMENT=	Collection of accessibility apps for GNOME 2
 
 LIB_DEPENDS=	libgnome-mag.so:${PORTSDIR}/accessibility/gnome-mag
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui atspi gnomespeech
+USE_GNOME=	gnomeprefix intlhack libgnomeui atspi gnomespeech
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gtk+-2.0`
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	SED="${SED}"
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	brlmonitor.schemas gnopernicus.schemas remote.schemas
-SHLIB_VERSION=	2
-PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^F||' \
 		${WRKSRC}/help/braille_monitor/C/brlmonitor-C.omf \
 		${WRKSRC}/help/braille_monitor/es/brlmonitor-es.omf
 	@${CP} ${FILESDIR}/gnopernicus-mag-config ${WRKSRC}/gnopi
+	@${REINPLACE_CMD} -e 's|test$$||' ${WRKSRC}/*/Makefile.in
 
 .include <bsd.port.mk>
