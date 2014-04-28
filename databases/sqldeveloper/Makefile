@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	4.0.0.13.80
+PORTVERSION=	4.0.1.14.48
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
@@ -44,7 +44,7 @@ restart this installation
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing scripts..."
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
 	@${ECHO_MSG} " [ DONE ]"
 
 .for d in configuration dataminer dropins dvt equinox \
@@ -53,7 +53,7 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing data directory '${d}'..."
 	@cd ${WRKSRC} && ${FIND} ${d} -type d \
 		-exec ${MKDIR} ${STAGEDIR}/${DATADIR}/\{} \;
-	cd ${WRKSRC} && ${FIND} ${d} -type f \
+	@cd ${WRKSRC} && ${FIND} ${d} -type f \
 		-not -name "*.orig" \
 		-not -name "*.exe" \
 		-not -name "*.bat" \
@@ -63,12 +63,12 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
 
-	${INSTALL_DATA} ${WRKSRC}/view-source-paths.lis ${STAGEDIR}/${DATADIR}/view-source-paths.lis
+	@${INSTALL_DATA} ${WRKSRC}/view-source-paths.lis ${STAGEDIR}/${DATADIR}/view-source-paths.lis
 	@${ECHO_MSG} -n ">> Installing icon ..."
-	${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}/${DATADIR}/icon.png
+	@${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}/${DATADIR}/icon.png
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} readme.html ${STAGEDIR}/${DOCSDIR})
+	@(cd ${WRKSRC} && ${INSTALL_DATA} readme.html ${STAGEDIR}/${DOCSDIR})
 
 .include <bsd.port.post.mk>
