@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.36.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -17,15 +17,14 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libgd.so:${PORTSDIR}/${GD_PORT}
 
-USES=		bison gmake pkgconfig shebangfix
-USE_AUTOTOOLS=	libltdl libtool
-WANT_GNOME=	yes
+USES=		bison gmake libtool:keepla pathfix pkgconfig shebangfix
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
+MAKE_ENV=	EXPR_COMPAT=yes
 
 SHEBANG_LANG=	tcl
 tcl_OLD_CMD=	/usr/bin/tclsh
@@ -166,8 +165,6 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--disable-io --disable-ocaml --disable-java \
 		--disable-sharp
 
-CONFIGURE_ENV+=	MISSING=${TRUE}
-
 .if ${PORT_OPTIONS:MGUILE}
 BROKEN=	guile is too old
 .endif
@@ -273,7 +270,6 @@ SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.tcl
 post-patch:
 	${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} \
-		-e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		-e "s|\([^:]*:.*\) install-pdfDATA\(.*\)|\1\2|g" \
 		-e "s|\([^:]*:.*\) install-htmlDATA\(.*\)|\1\2|g" \
 		-e "s|\([^:]*:.*\) install-txtDATA\(.*\)|\1\2|g" \
