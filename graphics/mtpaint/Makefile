@@ -3,7 +3,7 @@
 
 PORTNAME=	mtpaint
 PORTVERSION=	3.40
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -13,68 +13,58 @@ COMMENT=	Simple painting program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		gif.5:${PORTSDIR}/graphics/giflib \
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libgif.so:${PORTSDIR}/graphics/giflib \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-OPTIONS_DEFINE=	LCMS2 OPENJPEG NLS
-OPTIONS_DEFAULT=	LCMS2 OPENJPEG
-OPENJPEG_DESC=	Enable OpenJPEG support
-
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USES=		gmake pkgconfig iconv
+USES=		desktop-file-utils gmake iconv pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
 		--localedir=${PREFIX}/share/locale \
 		gtk2 cflags asneeded ft jpeg tiff man GIF
 
-MAN1=		${PORTNAME}.1
+OPTIONS_DEFINE=	LCMS2 OPENJPEG NLS
+OPTIONS_DEFAULT=	LCMS2 OPENJPEG
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLCMS2}
-LIB_DEPENDS+=	lcms2.2:${PORTSDIR}/graphics/lcms2
+LIB_DEPENDS+=	liblcms2.so:${PORTSDIR}/graphics/lcms2
 CONFIGURE_ARGS+=lcms2
 .else
 CONFIGURE_ARGS+=nolcms
 .endif
 
 .if ${PORT_OPTIONS:MOPENJPEG}
-LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
+LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
 CONFIGURE_ARGS+=jp2
 .else
-LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
+LIB_DEPENDS+=	libjasper.so:${PORTSDIR}/graphics/jasper
 CONFIGURE_ARGS+=jasper
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CONFIGURE_ARGS+=intl
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
-		${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
-		${MANPREFIX}/man/man1
+		${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.desktop \
-		${PREFIX}/share/applications
+		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.png \
-		${PREFIX}/share/pixmaps
-.if ${PORT_OPTIONS:MNLS}
+		${STAGEDIR}${PREFIX}/share/pixmaps
 .for lang in cs de es fr gl hu it ja nl pl pt pt_BR ru sk sv tl tr zh_CN zh_TW
-	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
-		${PREFIX}/share/locale/${lang}/LC_MESSAGES/mtpaint.mo
+		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/mtpaint.mo
 .endfor
-.endif
 
 .include <bsd.port.mk>
