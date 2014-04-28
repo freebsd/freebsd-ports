@@ -13,11 +13,11 @@ COMMENT=	Small and simple OpenGL image viewer with transparency support
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		gif.5:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libgif.so:${PORTSDIR}/graphics/giflib
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_EFL=	imlib2
 USE_GL=		glut
 WRKSRC=		${WRKDIR}/sviewgl-src
@@ -26,13 +26,10 @@ MAKE_ARGS=	CC=${CXX}
 
 PLIST_FILES=	bin/sviewgl
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,${CFLAGS}, ; s,/usr/include,${LOCALBASE}/include,g ; \
 		s,=-s,=-L${LOCALBASE}/lib,' ${WRKSRC}/Makefile
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sviewgl ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/sviewgl ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
