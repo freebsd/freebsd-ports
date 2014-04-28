@@ -2,6 +2,7 @@
 
 PORTNAME=	open-motif
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 # MASTER_SITES=	SF/${PORTNAME}/Motif%202.3.4%20Source%20Code/
 MASTER_SITES=	SF/motif/Motif%202.3.4%20Source%20Code/
@@ -22,8 +23,11 @@ CONFLICTS=	lesstif-[0-9]*
 # WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/motif-${PORTVERSION}
 
-USES=		iconv gmake pkgconfig
-USE_AUTOTOOLS=	libtool autoconf:env automake:env
+USES=		gmake iconv libtool:keepla pkgconfig
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+ACLOCAL_ARGS=	-I.
+AUTOMAKE_ARGS=	-a -c -f --foreign
+LIBTOOLIZE_ARGS=-i -c -f
 USE_XORG=	xaw xbitmaps xft
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -33,11 +37,7 @@ USE_CSTD=	gnu89
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-CONFIGURE_ARGS+=	--with-pic
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 # fix sections
@@ -52,13 +52,10 @@ post-patch:
 		 s|file formats|5|'
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/configure.ac
 
-pre-configure:
-	cd ${WRKSRC} && ./autogen.sh
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in BUGREPORT README RELNOTES
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
