@@ -3,11 +3,14 @@
 
 PORTNAME=	lxmusic
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/ghostbsdproject/package/LXMusic/
 
 MAINTAINER=	ericturgeon@ghostbsd.org
 COMMENT=	LXDE music player based on xmms2
+
+OPTIONS_DEFINE=	DOCS NLS
 
 LICENSE=	MIT GPLv2
 LICENSE_COMB=	dual
@@ -16,10 +19,10 @@ LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2 \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 
 USES=		gmake desktop-file-utils pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -27,28 +30,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 PORTDOCS=	AUTHORS README
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-post-patch:
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's|data po|data|' \
-		${WRKSRC}/Makefile.in
-
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=nls
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
