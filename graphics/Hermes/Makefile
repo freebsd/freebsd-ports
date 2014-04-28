@@ -3,28 +3,26 @@
 
 PORTNAME=	Hermes
 PORTVERSION=	1.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.su.se/pub/lunar/source-archive/ \
 		GENTOO
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast pixel formats conversion library
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
-CFLAGS+=	-w
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS ChangeLog FAQ README TODO TODO.conversion
+DOC_FILES1=	AUTHORS ChangeLog FAQ README
 
 DOCSRCDIR2=	${WRKSRC}/docs/api
 DOCSDIR2=	${DOCSDIR}/docs/api
@@ -43,9 +41,10 @@ IGNORE=		is broken on sparc64: interchanges red and blue colour channels in imag
 .endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.1
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR3}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES3:S|^|${DOCSRCDIR3}/|} ${STAGEDIR}${DOCSDIR3}
 

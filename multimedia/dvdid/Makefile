@@ -3,23 +3,25 @@
 
 PORTNAME=	dvdid
 PORTVERSION=	0.2.0a
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dvdid.cjkey.org.uk/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for calculating dvdids
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.1
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} dvdid.tag ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html/api

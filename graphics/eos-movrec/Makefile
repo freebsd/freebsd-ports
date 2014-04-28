@@ -3,11 +3,11 @@
 
 PORTNAME=	eos-movrec
 DISTVERSION=	0.3.2_beta
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Capture short movies with Canon DSLR camera
 
 LICENSE=	GPLv2

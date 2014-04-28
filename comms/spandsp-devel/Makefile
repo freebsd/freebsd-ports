@@ -1,14 +1,15 @@
+# Created by: William Lloyd <wlloyd@slap.net>
 # $FreeBSD$
 
 PORTNAME=	spandsp
 DISTVERSION=	0.0.6pre21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/
 PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSP library and software FAX machine
 
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
@@ -39,10 +40,12 @@ CONFIGURE_ARGS+=--disable-doc
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspandsp.so.2
+
 .if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && \
-		${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR} "-type d -or -mindepth 1")
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "-type d -or -mindepth 1")
 .endif
 
 .include <bsd.port.mk>

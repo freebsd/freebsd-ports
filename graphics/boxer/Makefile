@@ -3,7 +3,7 @@
 
 PORTNAME=	boxer
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/boxc/${PORTNAME:C/^b/B/}%20-%20the%20Box%20GUI/${DISTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	box
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for Box the figure description language
 
 LICENSE=	GPLv3
@@ -25,14 +25,13 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 USE_LDCONFIG=	yes
 
+PLIST_FILES=	share/pixmaps/${PORTNAME}.png
+
 PORTDOCS=	ChangeLog
+OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Boxer" "" "${PORTNAME}" \
 		"${PORTNAME}" "Application;Graphics;" ""
-
-OPTIONS_DEFINE=	DOCS
-
-PLIST_FILES=	share/pixmaps/${PORTNAME}.png
 
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
