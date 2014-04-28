@@ -6052,3 +6052,7 @@ lang/ruby-doc-stdlib||2014-04-24|Has expired: Upstream rerolls frequently, onlin
 emulators/mupen64-rice|emulators/mupen64-video-rice|2014-04-24|Removed, part of removed mupen64
 devel/otrs|www/otrs|2014-04-28|OTRS is actually web based ticket system and it has nothing with development
 audio/cantus_3||2014-04-28|Broken for a while, does not build with modern compilers
+multimedia/xfce4-xmms-plugin||2014-04-28|Has expired: Abandonware, and can't select another player instead XMMS
+multimedia/xmms-weasel||2014-04-28|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-sexyspc||2014-04-28|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/libmusicbrainz4|audio/libmusicbrainz5|2014-04-28|Has expired: Please use audio/libmusicbrainz5 instead

@@ -393,12 +393,10 @@
     SUBDIR += xbmc
     SUBDIR += xbmc-addon-pvr
     SUBDIR += xfce4-parole
-    SUBDIR += xfce4-xmms-plugin
     SUBDIR += xine
     SUBDIR += xmms
     SUBDIR += xmms-skins
     SUBDIR += xmms-skins-huge
-    SUBDIR += xmms-weasel
     SUBDIR += xporthdmv
     SUBDIR += xtheater
     SUBDIR += xvid
