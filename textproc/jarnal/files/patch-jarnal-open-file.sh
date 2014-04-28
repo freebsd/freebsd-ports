@@ -1,6 +1,6 @@
---- jarnalannotate.sh.orig	2013-05-01 23:14:48.000000000 +0200
-+++ jarnalannotate.sh	2014-04-28 21:48:45.000000000 +0200
-@@ -1,23 +1,24 @@
+--- jarnal-open-file.sh.orig	2014-02-20 07:10:52.000000000 +0100
++++ jarnal-open-file.sh	2014-04-28 21:58:13.000000000 +0200
+@@ -1,19 +1,20 @@
 -#! /bin/bash
 +#! /bin/sh
  
@@ -32,8 +32,3 @@
  fi
  if [ -f upgrade-jarnal.jar ]; then
  	cp -f jarnal.jar old-jarnal.jar
- 	cp -f upgrade-jarnal.jar jarnal.jar
- 	rm -f upgrade-jarnal.jar
- fi
--java -Dfile.encoding=UTF-8 -Xmx192m -jar jarnal.jar -t templates/annotate.jaj -b "$1" "$2" "$3" "$4" "$5"
-+java -Dfile.encoding=UTF-8 -Xmx192m -jar jarnal.jar -t %%DATADIR%%/templates/annotate.jaj -b "$1" "$2" "$3" "$4" "$5"

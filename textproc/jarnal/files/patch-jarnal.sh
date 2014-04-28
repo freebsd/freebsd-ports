@@ -1,11 +1,29 @@
---- jarnal.sh.orig	2009-09-02 15:02:32.000000000 +0200
-+++ jarnal.sh	2010-08-28 15:46:31.000000000 +0200
-@@ -1,14 +1,14 @@
+--- jarnal.sh.orig	2013-05-01 23:14:56.000000000 +0200
++++ jarnal.sh	2014-04-28 21:45:35.000000000 +0200
+@@ -1,23 +1,24 @@
 -#! /bin/bash
 +#! /bin/sh
  
--cd `dirname $0`
+-SOURCE=$0
+-echo $SOURCE
+-while [ -h "$SOURCE" ]; do
+- DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+- SOURCE="$(readlink "$SOURCE")"
+- [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+-done
+-DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+-cd $DIR 
++#SOURCE=$0
++#echo $SOURCE
++#while [ -h "$SOURCE" ]; do
++# DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
++# SOURCE="$(readlink "$SOURCE")"
++# [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
++#done
++#DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
++#cd $DIR
 +cd %%JAVAJARDIR%%
+ 
  if [ -d upgrade-lib ]; then
  	cp -fr lib old-lib
  	cp -fr upgrade-lib lib
