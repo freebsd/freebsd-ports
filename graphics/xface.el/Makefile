@@ -40,7 +40,8 @@ PLIST_SUB+=	E21_ONLY="@comment " \
 PLIST_SUB+=	LISPDIR=${LISPDIR} \
 		DOCSDIR=share/doc/${PORTNAME}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 .if (${EMACS_PORT_NAME} == emacs21)
 	${CP} ${DISTDIR}/x-face-e21.el.gz ${WRKSRC}
@@ -53,15 +54,13 @@ post-build:
 	-f batch-byte-compile x-face-e21.el)
 .endif
 do-install:
-	${MKDIR} ${PREFIX}/${LISPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${LISPDIR}
 .for i in ${LISP_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${i}.el ${WRKSRC}/${i}.elc ${PREFIX}/${LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i}.el ${WRKSRC}/${i}.elc \
+		${STAGEDIR}${PREFIX}/${LISPDIR}
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in METHOD.ja README.ja README-Anim.ja TODO.ja
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} METHOD.ja README.ja README-Anim.ja \
+		TODO.ja ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
