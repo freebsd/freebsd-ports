@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer-plugins-moodbar
 PORTVERSION=	0.1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://pwsp.net/~qbob/ \
 		http://redundancy.redundancy.org/mirror/
@@ -17,44 +17,22 @@ LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 
 CFLAGS:=	${CFLAGS} -O2
 USE_GSTREAMER=	yes good
-NO_STAGE=	yes
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	MP3 OGG FLAC MP4 MUSEPACK WMA
 OPTIONS_DEFAULT= MP3 OGG
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-plugindir=${PREFIX}/lib/gstreamer-${GST_VERSION}
 PLIST_SUB+=	VERSION="${GST_VERSION}"
 
-.include <bsd.port.pre.mk>
+MP3_USE=	GSTREAMER=mp3
+OGG_USE=	GSTREAMER=vorbis,ogg
+FLAC_USE=	GSTREAMER=flac
+MP4_USE=	GSTREAMER=faad,bad
+MUSEPACK_USE=	GSTREAMER=musepack
+WMA_USE=	GSTREAMER=ffmpeg
 
-.if ${PORT_OPTIONS:MMP3}
-USE_GSTREAMER+=	mp3
-.endif
-
-.if ${PORT_OPTIONS:MOGG}
-USE_GSTREAMER+=	vorbis ogg
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-USE_GSTREAMER+=	flac
-.endif
-
-.if ${PORT_OPTIONS:MMP4}
-USE_GSTREAMER+=	faad bad
-.endif
-
-.if ${PORT_OPTIONS:MMUSEPACK}
-USE_GSTREAMER+=	musepack
-.endif
-
-.if ${PORT_OPTIONS:MWMA}
-USE_GSTREAMER+=	ffmpeg
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
