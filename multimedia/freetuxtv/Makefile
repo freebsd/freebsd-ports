@@ -1,13 +1,13 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	freetuxtv
 PORTVERSION=	0.6.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WebTV player based on GTK2+ and LibVLC
 
 LICENSE=	GPLv3

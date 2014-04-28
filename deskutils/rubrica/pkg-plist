@@ -119,5 +119,3 @@ share/pixmaps/rubrica2/scalable/query.svg
 @dirrm lib/libral
 @dirrm include/libral-1.0/libral
 @dirrm include/libral-1.0
-@dirrmtry etc/gconf/schemas
-@dirrmtry etc/gconf

@@ -1,11 +1,12 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gtk-youtube-viewer
 PORTVERSION=	3.0.9
+PORTREVISION=	1
 CATEGORIES=	multimedia perl5
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK Search and play YouTube videos streaming in MPlayer
 
 LICENSE=	ART20 GPLv3
@@ -34,8 +35,6 @@ BUILD_DEPENDS=	p5-Test-More-UTF8>=0:${PORTSDIR}/devel/p5-Test-More-UTF8 \
 		p5-Socket>=0:${PORTSDIR}/net/p5-Socket
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		mplayer:${PORTSDIR}/multimedia/mplayer
-
-CONFLICTS=	youtube-viewer-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trizen
@@ -91,7 +90,8 @@ post-patch:
 .if ! ${PORT_OPTIONS:MCLI}
 	@${REINPLACE_CMD} -e "s|'bin/youtube-viewer',||" \
 		${WRKSRC}/Build.PL
-	@${REINPLACE_CMD} -i '' -e '/copy(catfile($$main_dir, qw(bin youtube-viewer))/,+1d' \
+	@${REINPLACE_CMD} -i '' -e \
+		'/copy(catfile($$main_dir, qw(bin youtube-viewer))/,+1d' \
 		${WRKSRC}/Build.PL
 .endif
 

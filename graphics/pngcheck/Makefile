@@ -3,11 +3,11 @@
 
 PORTNAME=	pngcheck
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/png-mng/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks the integrity of PNG images
 
 LICENSE=	MIT GPLv2

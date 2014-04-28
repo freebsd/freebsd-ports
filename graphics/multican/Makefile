@@ -3,11 +3,11 @@
 
 PORTNAME=	multican
 DISTVERSION=	0.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remote control utility for Canon DSLR cameras
 
 LICENSE=	GPLv2
@@ -18,8 +18,7 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	bin/multican lib/libmultican.so.0 lib/libmultican.so \
 		include/canonio.h include/usbio.h
 
-PORTDOCS=	ChangeLog README TODO
-
+PORTDOCS=	ChangeLog README
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

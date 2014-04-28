@@ -3,10 +3,11 @@
 
 PORTNAME=	photopc
 PORTVERSION=	3.07
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control cameras based on Sierra Imaging chipset and compatibles
 
 GNU_CONFIGURE=	yes
@@ -19,10 +20,10 @@ PLIST_FILES=	bin/epinfo \
 		man/man1/photopc.1.gz
 
 PORTDOCS=	README protocol.htm usage.htm
-
 OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
 .include <bsd.port.mk>

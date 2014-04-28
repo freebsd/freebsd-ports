@@ -3,11 +3,11 @@
 
 PORTNAME=	pngwriter
 PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for creating PNG images
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
