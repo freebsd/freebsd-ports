@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serf
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	www
 MASTER_SITES=	http://serf.googlecode.com/svn/src_releases/
 
@@ -45,6 +45,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/design-guide.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${SUB_FILES:S|^|${WRKDIR}/|} ${STAGEDIR}${PREFIX}/lib
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libserf-1.so.1.3.0
 
 regression-test check: build
 	@(cd ${WRKSRC} && ${SCONS_BIN} check)
