@@ -1,0 +1,20 @@
+--- configure.orig	2013-08-27 13:34:44.000000000 +0200
++++ configure	2014-03-26 23:49:03.494985827 +0100
+@@ -18043,7 +18043,7 @@
+          SQLITE_LIBDIR="$i/lib"
+          break
+       elif test -d "$i/lib" ; then
+-         SQLITE_LIB="-lsqlite"
++         SQLITE_LIB="-L$i/lib -lsqlite"
+          SQLITE_LIBDIR="$i/lib"
+ 	 break
+       fi
+@@ -18564,7 +18564,7 @@
+          SQLITE3_LIBDIR="$i/lib"
+          break
+       elif test -d "$i/lib" ; then
+-         SQLITE3_LIB="-lsqlite3"
++         SQLITE3_LIB="-L$i/lib -lsqlite3"
+          SQLITE3_LIBDIR="$i/lib"
+          break
+       fi
