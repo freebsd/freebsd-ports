@@ -10,21 +10,18 @@ MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A console graphics viewer using the svga console graphics library
+COMMENT=	Console graphics viewer using the svga console graphics library
 
-LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
+USES=		gmake
 ALL_TARGET=	seejpeg
-
-MAN1=		seejpeg.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/seejpeg
-USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/seejpeg man/man1/seejpeg.1.gz
+
 post-extract:
 	${CHMOD} 0644 ${WRKSRC}/Makefile
 
