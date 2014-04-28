@@ -12,6 +12,7 @@ include/cinnamon-desktop/libcinnamon-desktop/gnome-xkb-info.h
 lib/libcinnamon-desktop.la
 lib/libcinnamon-desktop.so
 lib/libcinnamon-desktop.so.4
+lib/libcinnamon-desktop.so.4.0.0
 lib/girepository-1.0/CDesktopEnums-3.0.typelib
 lib/girepository-1.0/CinnamonDesktop-3.0.typelib
 libdata/pkgconfig/cinnamon-desktop.pc

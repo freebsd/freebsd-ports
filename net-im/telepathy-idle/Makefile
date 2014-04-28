@@ -1,9 +1,9 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-idle/Makefile 18961 2013-12-15 21:20:29Z kwm $
+#    $MCom: ports/trunk/net-im/telepathy-idle/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	telepathy-idle
-PORTVERSION=	0.1.14
+PORTVERSION=	0.2.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 

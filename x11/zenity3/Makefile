@@ -1,9 +1,9 @@
 # Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/zenity3/Makefile 18972 2014-01-16 21:18:10Z kwm $
+#   $MCom: ports/trunk/x11/zenity3/Makefile 19592 2014-04-28 10:11:43Z kwm $
 
 PORTNAME=	zenity
-PORTVERSION=	3.6.0
+PORTVERSION=	3.12.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -18,24 +18,16 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	gtkada-1.2.* zenity-2.*
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	x11
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=		libnotify.so:${PORTSDIR}/devel/libnotify
-CONFIGURE_ARGS+=	--enable-libnotify
-.else
-CONFIGURE_ARGS+=	--disable-libnotify
-.endif
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_CONFIGURE_ENABLE=libnotify
 
 .include <bsd.port.mk>

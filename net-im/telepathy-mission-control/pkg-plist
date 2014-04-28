@@ -15,6 +15,7 @@ lib/libmission-control-plugins.a
 lib/libmission-control-plugins.la
 lib/libmission-control-plugins.so
 lib/libmission-control-plugins.so.0
+lib/libmission-control-plugins.so.0.5.1
 libdata/pkgconfig/mission-control-plugins.pc
 libexec/mission-control-5
 man/man1/mc-tool.1.gz

@@ -1,6 +1,7 @@
-include/cogl/cogl-pango/cogl-pango.h
+include/cogl/cogl/cogl-atlas-texture.h
 include/cogl/cogl/cogl-attribute-buffer.h
 include/cogl/cogl/cogl-attribute.h
+include/cogl/cogl/cogl-auto-texture.h
 include/cogl/cogl/cogl-bitmap.h
 include/cogl/cogl/cogl-buffer.h
 include/cogl/cogl/cogl-clip-state.h
@@ -13,24 +14,30 @@ include/cogl/cogl/cogl-deprecated.h
 include/cogl/cogl/cogl-depth-state.h
 include/cogl/cogl/cogl-display.h
 include/cogl/cogl/cogl-enum-types.h
+include/cogl/cogl/cogl-error.h
 include/cogl/cogl/cogl-euler.h
+include/cogl/cogl/cogl-fence.h
 include/cogl/cogl/cogl-fixed.h
+include/cogl/cogl/cogl-frame-info.h
+include/cogl/cogl/cogl-framebuffer-deprecated.h
 include/cogl/cogl/cogl-framebuffer.h
 include/cogl/cogl/cogl-gles2-types.h
 include/cogl/cogl/cogl-gles2.h
 include/cogl/cogl/cogl-glib-source.h
+include/cogl/cogl/cogl-glx.h
 include/cogl/cogl/cogl-index-buffer.h
 include/cogl/cogl/cogl-indices.h
+include/cogl/cogl/cogl-macros.h
 include/cogl/cogl/cogl-material-compat.h
+include/cogl/cogl/cogl-matrix-stack.h
 include/cogl/cogl/cogl-matrix.h
 include/cogl/cogl/cogl-meta-texture.h
 include/cogl/cogl/cogl-object.h
 include/cogl/cogl/cogl-offscreen.h
 include/cogl/cogl/cogl-onscreen-template.h
 include/cogl/cogl/cogl-onscreen.h
+include/cogl/cogl/cogl-output.h
 include/cogl/cogl/cogl-pango.h
-include/cogl/cogl/cogl-path-functions.h
-include/cogl/cogl/cogl-path.h
 include/cogl/cogl/cogl-pipeline-layer-state.h
 include/cogl/cogl/cogl-pipeline-state.h
 include/cogl/cogl/cogl-pipeline.h
@@ -45,12 +52,15 @@ include/cogl/cogl/cogl-shader.h
 include/cogl/cogl/cogl-snippet.h
 include/cogl/cogl/cogl-sub-texture.h
 include/cogl/cogl/cogl-swap-chain.h
+include/cogl/cogl/cogl-texture-2d-gl.h
 include/cogl/cogl/cogl-texture-2d-sliced.h
 include/cogl/cogl/cogl-texture-2d.h
 include/cogl/cogl/cogl-texture-3d.h
+include/cogl/cogl/cogl-texture-deprecated.h
 include/cogl/cogl/cogl-texture-pixmap-x11.h
 include/cogl/cogl/cogl-texture-rectangle.h
 include/cogl/cogl/cogl-texture.h
+include/cogl/cogl/cogl-type-casts.h
 include/cogl/cogl/cogl-types.h
 include/cogl/cogl/cogl-vector.h
 include/cogl/cogl/cogl-version.h
@@ -59,30 +69,57 @@ include/cogl/cogl/cogl-xlib-renderer.h
 include/cogl/cogl/cogl-xlib.h
 include/cogl/cogl/cogl.h
 include/cogl/cogl/cogl1-context.h
-include/cogl/cogl/cogl2-compatibility.h
 include/cogl/cogl/cogl2-experimental.h
-include/cogl/cogl/cogl2-path.h
+include/cogl/cogl/deprecated/cogl-auto-texture.h
+include/cogl/cogl/deprecated/cogl-clip-state.h
+include/cogl/cogl/deprecated/cogl-clutter-xlib.h
+include/cogl/cogl/deprecated/cogl-clutter.h
+include/cogl/cogl/deprecated/cogl-fixed.h
+include/cogl/cogl/deprecated/cogl-framebuffer-deprecated.h
+include/cogl/cogl/deprecated/cogl-material-compat.h
+include/cogl/cogl/deprecated/cogl-shader.h
+include/cogl/cogl/deprecated/cogl-texture-deprecated.h
+include/cogl/cogl/deprecated/cogl-type-casts.h
+include/cogl/cogl/deprecated/cogl-vertex-buffer.h
 include/cogl/cogl/gl-prototypes/cogl-core-functions.h
 include/cogl/cogl/gl-prototypes/cogl-gles2-functions.h
 include/cogl/cogl/gl-prototypes/cogl-glsl-functions.h
 include/cogl/cogl/gl-prototypes/cogl-in-gles-core-functions.h
 include/cogl/cogl/gl-prototypes/cogl-in-gles2-core-functions.h
+include/cogl/cogl-pango/cogl-pango.h
+include/cogl/cogl-path/cogl-path-enum-types.h
+include/cogl/cogl-path/cogl-path-types.h
+include/cogl/cogl-path/cogl-path.h
+include/cogl/cogl-path/cogl1-path-functions.h
+include/cogl/cogl-path/cogl2-path-functions.h
 lib/girepository-1.0/Cogl-1.0.typelib
+lib/girepository-1.0/Cogl-2.0.typelib
 lib/girepository-1.0/CoglPango-1.0.typelib
+lib/girepository-1.0/CoglPango-2.0.typelib
+lib/libcogl-pango.la
 lib/libcogl-pango.so
-lib/libcogl-pango.so.0
-lib/libcogl-pango.so.0.0.0
+lib/libcogl-pango.so.20
+lib/libcogl-pango.so.20.1.0
+lib/libcogl-path.la
+lib/libcogl-path.so
+lib/libcogl-path.so.20
+lib/libcogl-path.so.20.1.0
+lib/libcogl.la
 lib/libcogl.so
-lib/libcogl.so.11
-lib/libcogl.so.11.0.3
+lib/libcogl.so.20
+lib/libcogl.so.20.1.0
 libdata/pkgconfig/cogl-1.0.pc
+libdata/pkgconfig/cogl-path-1.0.pc
 libdata/pkgconfig/cogl-2.0-experimental.pc
+libdata/pkgconfig/cogl-path-2.0-experimental.pc
 libdata/pkgconfig/cogl-gl-1.0.pc
 libdata/pkgconfig/cogl-pango-1.0.pc
 libdata/pkgconfig/cogl-pango-2.0-experimental.pc
 share/cogl/examples-data/crate.jpg
 share/gir-1.0/Cogl-1.0.gir
+share/gir-1.0/Cogl-2.0.gir
 share/gir-1.0/CoglPango-1.0.gir
+share/gir-1.0/CoglPango-2.0.gir
 share/locale/an/LC_MESSAGES/cogl.mo
 share/locale/ar/LC_MESSAGES/cogl.mo
 share/locale/as/LC_MESSAGES/cogl.mo
@@ -123,6 +160,7 @@ share/locale/pl/LC_MESSAGES/cogl.mo
 share/locale/pt/LC_MESSAGES/cogl.mo
 share/locale/pt_BR/LC_MESSAGES/cogl.mo
 share/locale/ru/LC_MESSAGES/cogl.mo
+share/locale/sk/LC_MESSAGES/cogl.mo
 share/locale/sl/LC_MESSAGES/cogl.mo
 share/locale/sr/LC_MESSAGES/cogl.mo
 share/locale/sr@latin/LC_MESSAGES/cogl.mo
@@ -158,6 +196,8 @@ share/locale/zh_TW/LC_MESSAGES/cogl.mo
 @dirrmtry share/cogl/examples-data
 @dirrmtry share/cogl
 @dirrm include/cogl/cogl/gl-prototypes
+@dirrm include/cogl/cogl/deprecated
+@dirrm include/cogl/cogl-path
 @dirrm include/cogl/cogl
 @dirrm include/cogl/cogl-pango
 @dirrm include/cogl

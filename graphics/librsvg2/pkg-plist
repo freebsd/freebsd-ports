@@ -7,13 +7,11 @@ lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-svg.a
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-svg.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-svg.so
 lib/girepository-1.0/Rsvg-2.0.typelib
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsvg.a
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsvg.la
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsvg.so
 lib/librsvg-2.a
 lib/librsvg-2.la
 lib/librsvg-2.so
 lib/librsvg-2.so.2
+lib/librsvg-2.so.2.40.2
 libdata/pkgconfig/librsvg-2.0.pc
 man/man1/rsvg-convert.1.gz
 share/doc/rsvg-2.0/RsvgHandle.html
@@ -43,17 +41,8 @@ share/doc/rsvg-2.0/rsvg.html
 share/doc/rsvg-2.0/style.css
 share/doc/rsvg-2.0/up.png
 share/gir-1.0/Rsvg-2.0.gir
-share/themes/bubble/gtk-2.0/blue.svg
-share/themes/bubble/gtk-2.0/green.svg
-share/themes/bubble/gtk-2.0/gtkrc
-share/themes/bubble/gtk-2.0/orange.svg
-share/themes/bubble/gtk-2.0/purple.svg
-share/themes/bubble/gtk-2.0/red.svg
-man/man1/rsvg-convert.1.gz
 @dirrm share/doc/rsvg-2.0
 @dirrm include/librsvg-2.0/librsvg
 @dirrm include/librsvg-2.0
-@dirrmtry share/themes/bubble/gtk-2.0
-@dirrmtry share/themes/bubble
 @exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true

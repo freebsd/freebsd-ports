@@ -58,6 +58,7 @@
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
+    SUBDIR += appdata-tools
     SUBDIR += apr1
     SUBDIR += apr2
     SUBDIR += arduino
@@ -241,6 +242,7 @@
     SUBDIR += clig
     SUBDIR += clint
     SUBDIR += clisp-hyperspec
+    SUBDIR += cluttermm
     SUBDIR += cmake
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
@@ -1007,6 +1009,7 @@
     SUBDIR += libghthash
     SUBDIR += libgii
     SUBDIR += libgit2
+    SUBDIR += libgit2-glib
     SUBDIR += libglade-java
     SUBDIR += libglade2
     SUBDIR += libglade2-reference
@@ -3120,6 +3123,7 @@
     SUBDIR += pcl
     SUBDIR += pcre
     SUBDIR += pcre++
+    SUBDIR += pcsc-ada
     SUBDIR += pcsc-lite
     SUBDIR += pdcurses
     SUBDIR += pdcurses-the
@@ -3412,8 +3416,8 @@
     SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
-    SUBDIR += ppl
     SUBDIR += poxml
+    SUBDIR += ppl
     SUBDIR += premake
     SUBDIR += premake4
     SUBDIR += preps-gui
@@ -3974,11 +3978,16 @@
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += py-zope.viewlet
+    SUBDIR += py3-dbus
+    SUBDIR += py3-gobject3
+    SUBDIR += py3-xdg
     SUBDIR += py_static_check
     SUBDIR += pybaz
     SUBDIR += pybugz
     SUBDIR += pychecker
     SUBDIR += pycount
+    SUBDIR += pydbus-common
+    SUBDIR += pygobject3-common
     SUBDIR += pylint
     SUBDIR += pymacs
     SUBDIR += pyobfuscate

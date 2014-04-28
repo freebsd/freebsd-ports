@@ -20,12 +20,10 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-USE_XZ=		yes
 USE_GSTREAMER=	yes
 USE_XORG=	xt
-USES=		bison gettext gmake perl5 pkgconfig
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk20 libxslt ltverhack introspection:build
+USES=		bison gettext gmake libtool:keepla perl5 pkgconfig tar:xz
+USE_GNOME=	gtk20 libxslt introspection:build
 USE_SQLITE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -35,6 +33,7 @@ CONFIGURE_ENV=	ac_cv_path_FLEX="${LOCALBASE}/bin/flex" \
 		ac_cv_path_DOLT_BASH=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-gtk=2.0 \
 		--enable-svg-fonts \
 		--disable-geolocation \
@@ -84,9 +83,6 @@ post-patch:
 		${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp
 	@${FIND} ${WRKSRC} -name GNUmakefile.* | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
-# disable static library.
-	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|' \
-		${WRKDIR}/gnome-libtool
 	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
 		${WRKSRC}/Source/WebCore/dom/make_names.pl \
 		${WRKSRC}/Source/WebCore/css/make-css-file-arrays.pl \

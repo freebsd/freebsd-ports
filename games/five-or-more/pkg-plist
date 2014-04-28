@@ -1,15 +1,13 @@
 bin/five-or-more
 man/man6/five-or-more.6.gz
 share/appdata/five-or-more.appdata.xml
-share/applications/glines.desktop
+share/applications/five-or-more.desktop
 share/five-or-more/five-or-more-preferences.ui
 share/five-or-more/five-or-more.ui
 share/five-or-more/menu.ui
 share/five-or-more/themes/balls.svg
-share/five-or-more/themes/classic.png
 share/five-or-more/themes/dots.png
 share/five-or-more/themes/gumball.png
-share/five-or-more/themes/pulse.png
 share/five-or-more/themes/shapes.svg
 @unexec [ -s %D/share/games/glines.Large.scores ] || rm -f %D/share/games/glines.Large.scores
 @unexec [ -s %D/share/games/glines.Medium.scores ] || rm -f %D/share/games/glines.Medium.scores
@@ -828,7 +826,6 @@ share/locale/zh_TW/LC_MESSAGES/five-or-more.mo
 @dirrm share/help/C/five-or-more
 @dirrmtry share/help/C
 @dirrmtry share/help
-@dirrmtry share/games
 @dirrmtry share/five-or-more/themes
 @dirrmtry share/five-or-more
 @dirrmtry share/appdata

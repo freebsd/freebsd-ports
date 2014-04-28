@@ -26,45 +26,65 @@ include/grilo-0.2/grl-util.h
 include/grilo-0.2/grl-value-helper.h
 include/grilo-0.2/net/grl-net-wc.h
 include/grilo-0.2/net/grl-net.h
+include/grilo-0.2/pls/grl-pls.h
 lib/girepository-1.0/Grl-0.2.typelib
 lib/girepository-1.0/GrlNet-0.2.typelib
+lib/girepository-1.0/GrlPls-0.2.typelib
 lib/libgrilo-0.2.a
 lib/libgrilo-0.2.la
 lib/libgrilo-0.2.so
 lib/libgrilo-0.2.so.1
+lib/libgrilo-0.2.so.1.6.0
 lib/libgrlnet-0.2.a
 lib/libgrlnet-0.2.la
 lib/libgrlnet-0.2.so
 lib/libgrlnet-0.2.so.0
+lib/libgrlnet-0.2.so.0.1.7
+lib/libgrlpls-0.2.a
+lib/libgrlpls-0.2.la
+lib/libgrlpls-0.2.so
+lib/libgrlpls-0.2.so.0
+lib/libgrlpls-0.2.so.0.0.2
 libdata/pkgconfig/grilo-0.2.pc
 libdata/pkgconfig/grilo-net-0.2.pc
+libdata/pkgconfig/grilo-pls-0.2.pc
 man/man1/grl-inspect.1.gz
 share/gir-1.0/Grl-0.2.gir
 share/gir-1.0/GrlNet-0.2.gir
+share/gir-1.0/GrlPls-0.2.gir
 share/locale/as/LC_MESSAGES/grilo.mo
+share/locale/ca/LC_MESSAGES/grilo.mo
+share/locale/ca@valencia/LC_MESSAGES/grilo.mo
 share/locale/cs/LC_MESSAGES/grilo.mo
 share/locale/da/LC_MESSAGES/grilo.mo
 share/locale/de/LC_MESSAGES/grilo.mo
 share/locale/el/LC_MESSAGES/grilo.mo
 share/locale/es/LC_MESSAGES/grilo.mo
+share/locale/eo/LC_MESSAGES/grilo.mo
 share/locale/fr/LC_MESSAGES/grilo.mo
 share/locale/gl/LC_MESSAGES/grilo.mo
 share/locale/id/LC_MESSAGES/grilo.mo
 share/locale/it/LC_MESSAGES/grilo.mo
+share/locale/he/LC_MESSAGES/grilo.mo
+share/locale/hu/LC_MESSAGES/grilo.mo
 share/locale/ja/LC_MESSAGES/grilo.mo
 share/locale/ko/LC_MESSAGES/grilo.mo
 share/locale/lt/LC_MESSAGES/grilo.mo
 share/locale/lv/LC_MESSAGES/grilo.mo
+share/locale/ml/LC_MESSAGES/grilo.mo
 share/locale/nb/LC_MESSAGES/grilo.mo
 share/locale/pa/LC_MESSAGES/grilo.mo
 share/locale/pl/LC_MESSAGES/grilo.mo
+share/locale/pt/LC_MESSAGES/grilo.mo
 share/locale/pt_BR/LC_MESSAGES/grilo.mo
 share/locale/ru/LC_MESSAGES/grilo.mo
 share/locale/sk/LC_MESSAGES/grilo.mo
 share/locale/sl/LC_MESSAGES/grilo.mo
 share/locale/sr/LC_MESSAGES/grilo.mo
 share/locale/sr@latin/LC_MESSAGES/grilo.mo
+share/locale/sv/LC_MESSAGES/grilo.mo
 share/locale/tg/LC_MESSAGES/grilo.mo
+share/locale/uk/LC_MESSAGES/grilo.mo
 share/locale/zh_CN/LC_MESSAGES/grilo.mo
 share/locale/zh_HK/LC_MESSAGES/grilo.mo
 share/locale/zh_TW/LC_MESSAGES/grilo.mo
@@ -78,5 +98,6 @@ share/vala/vapi/grilo-net-0.2.vapi
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm include/grilo-0.2/pls
 @dirrm include/grilo-0.2/net
 @dirrm include/grilo-0.2

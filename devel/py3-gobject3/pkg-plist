@@ -1,0 +1,87 @@
+%%PYTHON_SITELIBDIR%%/gi/__init__.py
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/__init__.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/__init__.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/_constants.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/_constants.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/_option.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/_option.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/_propertyhelper.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/_propertyhelper.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/_signalhelper.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/_signalhelper.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/docstring.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/docstring.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/importer.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/importer.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/module.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/module.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/pygtkcompat.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/pygtkcompat.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/types.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/types.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/_constants.py
+%%PYTHON_SITELIBDIR%%/gi/_gi.la
+%%PYTHON_SITELIBDIR%%/gi/_gi.so
+%%PYTHON_SITELIBDIR%%/gi/_gi_cairo.la
+%%PYTHON_SITELIBDIR%%/gi/_gi_cairo.so
+%%PYTHON_SITELIBDIR%%/gi/_gobject/__init__.py
+%%PYTHON_SITELIBDIR%%/gi/_gobject/__pycache__/__init__.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/_gobject/__pycache__/__init__.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/_option.py
+%%PYTHON_SITELIBDIR%%/gi/_propertyhelper.py
+%%PYTHON_SITELIBDIR%%/gi/_signalhelper.py
+%%PYTHON_SITELIBDIR%%/gi/docstring.py
+%%PYTHON_SITELIBDIR%%/gi/importer.py
+%%PYTHON_SITELIBDIR%%/gi/module.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/GIMarshallingTests.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/GLib.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/GObject.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gdk.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gio.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gtk.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/Pango.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/__init__.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GIMarshallingTests.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GIMarshallingTests.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GLib.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GLib.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GObject.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GObject.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gdk.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gdk.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gio.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gio.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gtk.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gtk.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Pango.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Pango.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/__init__.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/__init__.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/keysyms.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/keysyms.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/keysyms.py
+%%PYTHON_SITELIBDIR%%/gi/pygtkcompat.py
+%%PYTHON_SITELIBDIR%%/gi/repository/__init__.py
+%%PYTHON_SITELIBDIR%%/gi/repository/__pycache__/__init__.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/repository/__pycache__/__init__.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/types.py
+%%PYTHON_SITELIBDIR%%/pygobject-%%VERSION%%-py%%PYTHON_VERSION%%-freebsd-%%UNAME_R%%-%%ARCH%%.egg-info
+%%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.py
+%%PYTHON_SITELIBDIR%%/pygtkcompat/__pycache__/__init__.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/pygtkcompat/__pycache__/__init__.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/pygtkcompat/__pycache__/generictreemodel.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/pygtkcompat/__pycache__/generictreemodel.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/pygtkcompat/__pycache__/pygtkcompat.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/pygtkcompat/__pycache__/pygtkcompat.cpython-%%PYTVER%%.pyo
+%%PYTHON_SITELIBDIR%%/pygtkcompat/generictreemodel.py
+%%PYTHON_SITELIBDIR%%/pygtkcompat/pygtkcompat.py
+@dirrm %%PYTHON_SITELIBDIR%%/pygtkcompat/__pycache__
+@dirrm %%PYTHON_SITELIBDIR%%/pygtkcompat
+@dirrm %%PYTHON_SITELIBDIR%%/gi/repository/__pycache__
+@dirrm %%PYTHON_SITELIBDIR%%/gi/repository
+@dirrm %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__
+@dirrm %%PYTHON_SITELIBDIR%%/gi/overrides
+@dirrm %%PYTHON_SITELIBDIR%%/gi/_gobject/__pycache__
+@dirrm %%PYTHON_SITELIBDIR%%/gi/_gobject
+@dirrm %%PYTHON_SITELIBDIR%%/gi/__pycache__
+@dirrm %%PYTHON_SITELIBDIR%%/gi

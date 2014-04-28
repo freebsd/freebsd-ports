@@ -6,6 +6,7 @@ lib/libtelepathy-farstream.a
 lib/libtelepathy-farstream.la
 lib/libtelepathy-farstream.so
 lib/libtelepathy-farstream.so.3
+lib/libtelepathy-farstream.so.3.0.1
 libdata/pkgconfig/telepathy-farstream.pc
 share/gir-1.0/TelepathyFarstream-0.6.gir
 share/gtk-doc/html/telepathy-farstream/TfChannel.html

@@ -1,6 +1,6 @@
---- glib/Makefile.in.orig	2013-09-26 18:20:03.000000000 +0200
-+++ glib/Makefile.in	2013-09-26 18:21:19.000000000 +0200
-@@ -2824,7 +2824,7 @@
+--- glib/Makefile.in.orig	2014-03-09 10:06:29.765325337 +0000
++++ glib/Makefile.in	2014-03-09 10:06:46.935323979 +0000
+@@ -2834,7 +2834,7 @@
  info-am:
  
  install-data-am: install-data-local install-deprecatedincludeHEADERS \
@@ -9,7 +9,7 @@
  	install-glibsubincludeHEADERS \
  	install-installed_testLTLIBRARIES \
  	install-installed_testPROGRAMS install-installed_testSCRIPTS \
-@@ -3125,8 +3125,6 @@
+@@ -3084,8 +3084,6 @@
  	$(AM_V_GEN) $(SED) -e "s|\@datadir\@|$(datadir)|" $(srcdir)/libglib-gdb.py.in > $(builddir)/libglib-gdb.py
  
  install-data-hook: libglib-gdb.py

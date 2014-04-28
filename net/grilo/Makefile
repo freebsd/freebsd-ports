@@ -1,9 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom$
+#   $MCom: ports/trunk/net/grilo/Makefile 19593 2014-04-28 11:41:58Z gusi $
 
 PORTNAME=	grilo
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.10
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -12,12 +12,12 @@ COMMENT=	Grilo is a framework focused on making media discovery and browsing
 
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		liboauth.so:${PORTSDIR}/net/liboauth
+		liboauth.so:${PORTSDIR}/net/liboauth \
+		libtotem-plparser.so:${PORTSDIR}/multimedia/totem-pl-parser
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	glib20 gnomehier intlhack introspection:build libxml2 ltverhack
+USE_GNOME=	glib20 gnomehier intlhack introspection:build libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-vala -disable-debug
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -32,12 +32,5 @@ OPTIONS_DEFINE=	UI
 UI_DESC=	Enable testing UI
 UI_CONFIGURE_ENABLE=test-ui
 UI_USE=		GNOME=gtk30
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's|libvala-0.20|libvala-0.22|g' ${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgrilo-0.2.so.1
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgrlnet-0.2.so.0 
 
 .include <bsd.port.mk>

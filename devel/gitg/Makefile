@@ -1,39 +1,31 @@
-# Created by: kipz <somicide@gmail.com>
+# Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
+#   $MCom: ports/trunk/devel/gitg/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	gitg
-PORTVERSION=	0.2.7
-CATEGORIES=	devel deskutils gnome
+PORTVERSION=	0.3.2
+CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome3
 
-MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	GTK-based git repository viewer
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME GUI client to view git repositories
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
+LIB_DEPENDS=	libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
+		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
+		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
+		libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
+		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
+		libgee-0.8.so:${PORTSDIR}/devel/libgee
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		git:${PORTSDIR}/devel/git
-
-CONFLICTS=	gitg0-[0-9]*
-
-USE_XZ=		yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 gtksourceview3 intlhack libxslt
+USE_PYTHON=	3
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-maintainer-mode \
-		--enable-compile-warnings=no
-USE_GNOME=	glib20 gtk30 gtksourceview3
-USES=		gettext gmake pkgconfig pathfix
-
 INSTALLS_ICONS=	yes
-GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
-
+CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=nls
 
 .include <bsd.port.mk>

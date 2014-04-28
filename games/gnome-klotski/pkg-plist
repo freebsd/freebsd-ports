@@ -1,7 +1,7 @@
 bin/gnome-klotski
 man/man6/gnome-klotski.6.gz
 share/appdata/gnome-klotski.appdata.xml
-share/applications/gnotski.desktop
+share/applications/gnome-klotski.desktop
 share/gnome-klotski/gnome-klotski.svg
 share/help/C/gnome-klotski/figures/gnotski_start_window.png
 share/help/C/gnome-klotski/figures/gnotski_win.png
@@ -260,5 +260,18 @@ share/locale/zh_TW/LC_MESSAGES/gnome-klotski.mo
 @dirrm share/help/C/gnome-klotski
 @dirrmtry share/help/C
 @dirrmtry share/help
+@dirrmtry share/icons/HighContrast/48x48/apps
+@dirrmtry share/icons/HighContrast/48x48
+@dirrmtry share/icons/HighContrast/32x32/apps
+@dirrmtry share/icons/HighContrast/32x32
+@dirrmtry share/icons/HighContrast/256x256/apps
+@dirrmtry share/icons/HighContrast/256x256
+@dirrmtry share/icons/HighContrast/24x24/apps
+@dirrmtry share/icons/HighContrast/24x24
+@dirrmtry share/icons/HighContrast/22x22/apps
+@dirrmtry share/icons/HighContrast/22x22
+@dirrmtry share/icons/HighContrast/16x16/apps
+@dirrmtry share/icons/HighContrast/16x16
+@dirrmtry share/icons/HighContrast
 @dirrmtry share/gnome-klotski
 @dirrmtry share/appdata

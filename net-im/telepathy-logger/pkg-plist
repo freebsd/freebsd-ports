@@ -10,6 +10,7 @@ lib/libtelepathy-logger.a
 lib/libtelepathy-logger.la
 lib/libtelepathy-logger.so
 lib/libtelepathy-logger.so.3
+lib/libtelepathy-logger.so.3.3.0
 libdata/pkgconfig/telepathy-logger-0.2.pc
 libexec/telepathy-logger
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Logger.service

@@ -1,9 +1,9 @@
 # Created by: fenner
 # $FreeBSD$
-#    $MCom: ports/trunk/textproc/gtk-doc/Makefile 19009 2014-03-02 22:41:42Z kwm $
+#    $MCom: ports/trunk/textproc/gtk-doc/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	gtk-doc
-PORTVERSION=	1.18
+PORTVERSION=	1.20
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
@@ -11,6 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Code documentation system, originally for GTK+
 
 BUILD_DEPENDS=	jade:${PORTSDIR}/textproc/jade \
+		itstool:${PORTSDIR}/textproc/itstool \
 		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		rarian-sk-config:${PORTSDIR}/textproc/rarian
@@ -25,12 +26,10 @@ CATALOG_DIR=		${PREFIX}/share/sgml/${PORTNAME}
 XMLCATMGR=		${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
-USE_XZ=		yes
-GNU_CONFIGURE=	yes
+USES=		gmake pathfix perl5 pkgconfig tar:xz
+USE_GNOME=	gnomeprefix libxslt
 USE_PYTHON=	yes
-USES=		gmake pathfix perl5 pkgconfig
-USE_GNOME=	gnomeprefix libxslt gnomedocutils
-INSTALLS_OMF=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
 
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \

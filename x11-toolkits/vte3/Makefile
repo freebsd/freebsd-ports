@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/vte3/Makefile 18941 2013-12-08 01:18:10Z kwm $
+#   $MCom: ports/trunk/x11-toolkits/vte3/Makefile 19582 2014-04-26 16:58:36Z gusi $
 
 PORTNAME?=	vte
-PORTVERSION=	0.34.7
-PORTREVISION?=	0
+PORTVERSION=	0.36.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/gnome-pty-helper/vte/}/${PORTVERSION:R}
@@ -15,7 +14,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Terminal widget with improved accessibility and I18N support
 
-USE_XZ=		yes
+USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 VTE3_SLAVE?=	no
@@ -24,10 +23,10 @@ VTE3_SLAVE?=	no
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gnome-pty-helper
 .endif
 
-USES=		bison gettext gmake pathfix pkgconfig
+USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME?=	gnomeprefix gtk30 ltverhack referencehack introspection:build
+USE_GNOME?=	gnomeprefix gtk30 referencehack introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS?=--disable-python \

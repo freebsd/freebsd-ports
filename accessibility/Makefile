@@ -31,6 +31,7 @@
     SUBDIR += orca
     SUBDIR += py-atspi
     SUBDIR += py-papi
+    SUBDIR += py3-atspi
     SUBDIR += qt4-accessible
     SUBDIR += redshift
     SUBDIR += rubygem-atk

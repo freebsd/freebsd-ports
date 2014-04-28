@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gnome-terminal3/Makefile 18559 2013-06-17 20:56:34Z kwm $
+#   $MCom: ports/trunk/x11/gnome-terminal/Makefile 19584 2014-04-26 17:21:18Z gusi $
 
 PORTNAME=	gnome-terminal
-PORTVERSION=	3.6.2
+PORTVERSION=	3.12.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,23 +12,34 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal component for the GNOME 3 Desktop
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+		itstool:${PORTSDIR}/textproc/itstool \
+		appdata-tools>=0:${PORTSDIR}/devel/appdata-tools 
+LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
-INSTALLS_OMF=	yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack nautilus3 vte3
 USE_XORG=	sm ice
-USE_GNOME=	gconf2 gnomeprefix intlhack vte3 gnomedocutils
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-search-provider
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GCONF_SCHEMAS=	gnome-terminal.schemas
+GLIB_SCHEMAS=	org.gnome.Terminal.gschema.xml
+
+OPTIONS_SUB=			yes
+OPTIONS_DEFINE=			MIGRATION
+OPTIONS_DEFAULT=		MIGRATION
+MIGRATION_CONFIGURE_ENABLE=	migration
+MIGRATION_USE=			GNOME=gconf2
+MIGRATION_DESC=			Profile migration to gsettings (pulls in gconf2)
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
 		${WRKSRC}/configure ${WRKSRC}/config.h.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libterminal-nautilus.so
 
 .include <bsd.port.mk>

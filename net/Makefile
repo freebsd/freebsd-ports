@@ -156,8 +156,10 @@
     SUBDIR += fspd
     SUBDIR += fsplib
     SUBDIR += g2ipmsg
+    SUBDIR += geoclue
     SUBDIR += geocode-glib
     SUBDIR += get_iplayer
+    SUBDIR += gfbgraph
     SUBDIR += gini
     SUBDIR += gkrellmqst
     SUBDIR += gkrellmwireless2
@@ -168,6 +170,7 @@
     SUBDIR += gnome-netstatus
     SUBDIR += gnome-nettool
     SUBDIR += gnome-online-accounts
+    SUBDIR += gnome-online-miners
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
     SUBDIR += go.net
@@ -303,6 +306,7 @@
     SUBDIR += libbgpdump
     SUBDIR += libcapn
     SUBDIR += libcmis
+    SUBDIR += libdmapsharing
     SUBDIR += libdnet
     SUBDIR += libexosip2
     SUBDIR += libfb

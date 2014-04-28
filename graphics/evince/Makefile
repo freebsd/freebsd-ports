@@ -1,10 +1,9 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/evince3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#    $MCom: ports-experimental/trunk/graphics/evince/Makefile 19493 2014-04-14 18:50:59Z gusi $
 
 PORTNAME=	evince
-PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTVERSION=	3.12.1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,19 +15,19 @@ BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome
 		itstool:${PORTSDIR}/textproc/itstool \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
-		libspectre.so:${PORTSDIR}/print/libspectre
+		libspectre.so:${PORTSDIR}/print/libspectre \
+		libsecret-1.so:${PORTSDIR}/security/libsecret
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+		pkgconfig tar:xz
+USE_GNOME=	gnomeprefix intlhack introspection:build
 USE_LDCONFIG=	yes
-USE_XZ=		yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_XORG=	ice
 INSTALLS_ICONS=	yes
-INSTALLS_OMF=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig
-USE_GNOME=	intlhack gnomeprefix ltasneededhack introspection:build
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-xps --enable-introspection
 
@@ -108,6 +107,7 @@ PLIST_SUB+=		COMICS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
 		-e 's|" == "|" = "|g' \
+		-e 's|-Werror||g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^DOC_MODULE_VERSION/d' \
 		${WRKSRC}/help/reference/libdocument/Makefile.in \

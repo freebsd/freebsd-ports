@@ -16,7 +16,7 @@ RUN_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_XORG=	x11 xkbfile
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	libxml2 glib20 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

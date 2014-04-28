@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/gnome-control-center3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/sysutils/gnome-control-center/Makefile 19547 2014-04-16 13:29:05Z gusi $
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	3.6.3
-PORTREVISION=	1
+PORTVERSION=	3.12.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,17 +13,21 @@ COMMENT=	Control center for GNOME 3 project
 
 BUILD_DEPENDS=	gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>=3.2.2:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libxklavier.so:${PORTSDIR}/x11/libxklavier \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
+		libaccountsservice.so:${PORTSDIR}/sysutils/accountsservice \
 		libcolord.so:${PORTSDIR}/graphics/colord \
+		libcolord-gtk.so:${PORTSDIR}/graphics/colord-gtk \
 		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
 		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
 		libsocialweb.so:${PORTSDIR}/www/libsocialweb \
 		libpwquality.so:${PORTSDIR}/security/libpwquality \
 		libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libgrilo-0.2.so:${PORTSDIR}/net/grilo \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 		gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
@@ -36,10 +39,8 @@ RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 
 CONFLICTS=	gnome-media-2.[0-9]*
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig shared-mime-info
-USE_GNOME=	gnomeprefix gnomehier intlhack libxml2 gnomemenus3 \
-		libgnomekbd gnomedesktop3 gconf2
+USES=		gettext gmake pathfix pkgconfig tar:xz
+USE_GNOME=	gnomedesktop3 gnomehier gnomemenus3 gnomeprefix intlhack libxml2
 USE_XORG=	xscrnsaver x11 xxf86misc kbproto xi
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -79,8 +80,5 @@ CONFIGURE_ARGS+=--without-cheese
 post-patch:
 	@${REINPLACE_CMD} -e 's|datetime wacom|datetime|g' \
 		${WRKSRC}/panels/Makefile.in
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/control-center-1/panels/lib*.so
 
 .include <bsd.port.mk>

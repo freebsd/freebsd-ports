@@ -1,10 +1,9 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-# $FreeBSD: head/devel/glib20/Makefile 344586 2014-02-16 15:40:34Z kwm $
-#   $MCom: ports/trunk/devel/glib20/Makefile 19256 2014-03-23 21:28:27Z kwm $
+# $FreeBSD$
+#   $MCom: ports/trunk/devel/glib20/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	glib
-PORTVERSION=	2.38.2
-PORTREVISION=	2
+PORTVERSION=	2.40.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -14,7 +13,7 @@ COMMENT=	Some useful routines of C programming (current stable version)
 
 LICENSE=	LGPL20
 
-USE_XZ=		yes
+USES=		tar:xz
 PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
@@ -26,8 +25,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
-USES=		gettext gmake iconv:wchar_t libtool pathfix perl5 pkgconfig \
-		shebangfix
+USES+=		gettext gmake iconv:wchar_t libtool:keepla pathfix perl5 \
+		pkgconfig shebangfix
 USE_PYTHON=	yes
 PYTHON_PY3K_PLIST_HACK=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
@@ -41,7 +40,7 @@ INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
 
-LIBVERSION=	0.3800.2
+LIBVERSION=	0.4000.0
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 OPTIONS_DEFINE=	COLLATION_FIX DEBUG GDB
@@ -99,8 +98,6 @@ PLIST_SUB+=	GDB="@comment "
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug=yes \
 			--disable-silent-rules
-.else
-CONFIGURE_ARGS+=	--disable-modular-tests
 .endif
 
 post-patch:

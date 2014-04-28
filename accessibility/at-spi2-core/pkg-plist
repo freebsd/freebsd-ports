@@ -11,6 +11,7 @@ include/at-spi-2.0/atspi/atspi-device-listener.h
 include/at-spi-2.0/atspi/atspi-device-listener-private.h
 include/at-spi-2.0/atspi/atspi-document.h
 include/at-spi-2.0/atspi/atspi-editabletext.h
+include/at-spi-2.0/atspi/atspi-enum-types.h
 include/at-spi-2.0/atspi/atspi-event-listener.h
 include/at-spi-2.0/atspi/atspi-event-listener-private.h
 include/at-spi-2.0/atspi/atspi-gmain.c
@@ -26,6 +27,7 @@ include/at-spi-2.0/atspi/atspi-registry.h
 include/at-spi-2.0/atspi/atspi-relation.h
 include/at-spi-2.0/atspi/atspi-selection.h
 include/at-spi-2.0/atspi/atspi-stateset.h
+include/at-spi-2.0/atspi/atspi-table-cell.h
 include/at-spi-2.0/atspi/atspi-table.h
 include/at-spi-2.0/atspi/atspi-text.h
 include/at-spi-2.0/atspi/atspi-types.h
@@ -34,6 +36,7 @@ lib/girepository-1.0/Atspi-2.0.typelib
 lib/libatspi.la
 lib/libatspi.so
 lib/libatspi.so.0
+lib/libatspi.so.0.0.1
 libdata/pkgconfig/atspi-2.pc
 libexec/at-spi-bus-launcher
 libexec/at-spi2-registryd
@@ -54,6 +57,7 @@ share/gtk-doc/html/libatspi/ch01.html
 share/gtk-doc/html/libatspi/home.png
 share/gtk-doc/html/libatspi/index.html
 share/gtk-doc/html/libatspi/index.sgml
+share/gtk-doc/html/libatspi/left-insensitive.png
 share/gtk-doc/html/libatspi/left.png
 share/gtk-doc/html/libatspi/libatspi-AtspiApplication.html
 share/gtk-doc/html/libatspi/libatspi-atspi-action.html
@@ -75,8 +79,10 @@ share/gtk-doc/html/libatspi/libatspi-atspi-types.html
 share/gtk-doc/html/libatspi/libatspi-atspi-value.html
 share/gtk-doc/html/libatspi/libatspi.devhelp2
 share/gtk-doc/html/libatspi/object-tree.html
+share/gtk-doc/html/libatspi/right-insensitive.png
 share/gtk-doc/html/libatspi/right.png
 share/gtk-doc/html/libatspi/style.css
+share/gtk-doc/html/libatspi/up-insensitive.png
 share/gtk-doc/html/libatspi/up.png
 share/locale/an/LC_MESSAGES/at-spi2-core.mo
 share/locale/as/LC_MESSAGES/at-spi2-core.mo
@@ -99,6 +105,8 @@ share/locale/eu/LC_MESSAGES/at-spi2-core.mo
 share/locale/fa/LC_MESSAGES/at-spi2-core.mo
 share/locale/fi/LC_MESSAGES/at-spi2-core.mo
 share/locale/fr/LC_MESSAGES/at-spi2-core.mo
+share/locale/fur/LC_MESSAGES/at-spi2-core.mo
+share/locale/ga/LC_MESSAGES/at-spi2-core.mo
 share/locale/gl/LC_MESSAGES/at-spi2-core.mo
 share/locale/gu/LC_MESSAGES/at-spi2-core.mo
 share/locale/he/LC_MESSAGES/at-spi2-core.mo
@@ -153,6 +161,8 @@ share/locale/zh_TW/LC_MESSAGES/at-spi2-core.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

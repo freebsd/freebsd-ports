@@ -1,9 +1,9 @@
---- data/org.gnome.settings-daemon.plugins.gschema.xml.in.in.orig	2013-04-08 08:40:28.207584852 +0000
-+++ data/org.gnome.settings-daemon.plugins.gschema.xml.in.in	2013-04-08 08:40:35.790584900 +0000
-@@ -7,17 +7,14 @@
+--- data/org.gnome.settings-daemon.plugins.gschema.xml.in.in.orig	2014-03-04 16:15:04.000000000 +0000
++++ data/org.gnome.settings-daemon.plugins.gschema.xml.in.in	2014-03-14 00:06:02.791034492 +0000
+@@ -15,18 +15,15 @@
      <child name="color" schema="org.gnome.settings-daemon.plugins.color"/>
      <child name="cursor" schema="org.gnome.settings-daemon.plugins.cursor"/>
-     <child name="font" schema="org.gnome.settings-daemon.plugins.font"/>
+     <child name="datetime" schema="org.gnome.settings-daemon.plugins.datetime"/>
 -    <child name="gsdwacom" schema="org.gnome.settings-daemon.plugins.gsdwacom"/>
      <child name="housekeeping" schema="org.gnome.settings-daemon.plugins.housekeeping"/>
      <child name="keyboard" schema="org.gnome.settings-daemon.plugins.keyboard"/>
@@ -12,6 +12,7 @@
 -    <child name="orientation" schema="org.gnome.settings-daemon.plugins.orientation"/>
      <child name="power" schema="org.gnome.settings-daemon.plugins.power"/>
      <child name="print-notifications" schema="org.gnome.settings-daemon.plugins.print-notifications"/>
+     <child name="screensaver-proxy" schema="org.gnome.settings-daemon.plugins.screensaver-proxy"/>
      <child name="smartcard" schema="org.gnome.settings-daemon.plugins.smartcard"/>
      <child name="sound" schema="org.gnome.settings-daemon.plugins.sound"/>
 -    <child name="updates" schema="org.gnome.settings-daemon.plugins.updates"/>

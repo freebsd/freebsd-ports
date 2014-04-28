@@ -1,8 +1,9 @@
+# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/five-or-more/Makefile 18839 2013-10-30 23:48:38Z kwm $
+#   $MCom: ports/trunk/games/five-or-more/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	five-or-more
-PORTVERSION=	3.10.1
+PORTVERSION=	3.12.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,11 +13,10 @@ COMMENT=	Form a line of 5 or more colored balls
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
-INSTALLS_ICONS=	yes
-USE_GNOME=	gtk30 intlhack librsvg2 libxml2:build
+USES=		gettext gmake pathfix pkgconfig tar:xz
+USE_GNOME=	gtk30 intlhack librsvg2
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

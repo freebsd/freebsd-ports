@@ -155,6 +155,15 @@ share/help/oc/gnome-system-log/log-filter.page
 share/help/oc/gnome-system-log/log-search.page
 share/help/oc/gnome-system-log/log-view.page
 share/help/oc/gnome-system-log/pref-font-size.page
+share/help/pt_BR/gnome-system-log/index.page
+share/help/pt_BR/gnome-system-log/introduction.page
+share/help/pt_BR/gnome-system-log/log-close.page
+share/help/pt_BR/gnome-system-log/log-copy.page
+share/help/pt_BR/gnome-system-log/log-filter.page
+share/help/pt_BR/gnome-system-log/log-search.page
+share/help/pt_BR/gnome-system-log/log-view.page
+share/help/pt_BR/gnome-system-log/pref-font-size.page
+share/help/pt_BR/gnome-system-log/figures/log-viewer-main.png
 share/help/ru/gnome-system-log/figures/log-viewer-main.png
 share/help/ru/gnome-system-log/index.page
 share/help/ru/gnome-system-log/introduction.page
@@ -200,12 +209,19 @@ share/help/zh_CN/gnome-system-log/log-filter.page
 share/help/zh_CN/gnome-system-log/log-search.page
 share/help/zh_CN/gnome-system-log/log-view.page
 share/help/zh_CN/gnome-system-log/pref-font-size.page
+share/icons/HighContrast/16x16/apps/logview.png
+share/icons/HighContrast/22x22/apps/logview.png
+share/icons/HighContrast/24x24/apps/logview.png
+share/icons/HighContrast/256x256/apps/logview.png
+share/icons/HighContrast/32x32/apps/logview.png
+share/icons/HighContrast/48x48/apps/logview.png
 share/icons/hicolor/16x16/apps/logview.png
 share/icons/hicolor/22x22/apps/logview.png
 share/icons/hicolor/256x256/apps/logview.png
 share/icons/hicolor/32x32/apps/logview.png
 share/icons/hicolor/48x48/apps/logview.png
 share/locale/af/LC_MESSAGES/gnome-system-log.mo
+share/locale/an/LC_MESSAGES/gnome-system-log.mo
 share/locale/am/LC_MESSAGES/gnome-system-log.mo
 share/locale/ar/LC_MESSAGES/gnome-system-log.mo
 share/locale/as/LC_MESSAGES/gnome-system-log.mo
@@ -237,6 +253,7 @@ share/locale/eu/LC_MESSAGES/gnome-system-log.mo
 share/locale/fa/LC_MESSAGES/gnome-system-log.mo
 share/locale/fi/LC_MESSAGES/gnome-system-log.mo
 share/locale/fr/LC_MESSAGES/gnome-system-log.mo
+share/locale/fur/LC_MESSAGES/gnome-system-log.mo
 share/locale/ga/LC_MESSAGES/gnome-system-log.mo
 share/locale/gl/LC_MESSAGES/gnome-system-log.mo
 share/locale/gu/LC_MESSAGES/gnome-system-log.mo
@@ -285,6 +302,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-system-log.mo
 share/locale/sv/LC_MESSAGES/gnome-system-log.mo
 share/locale/ta/LC_MESSAGES/gnome-system-log.mo
 share/locale/te/LC_MESSAGES/gnome-system-log.mo
+share/locale/tg/LC_MESSAGES/gnome-system-log.mo
 share/locale/th/LC_MESSAGES/gnome-system-log.mo
 share/locale/tr/LC_MESSAGES/gnome-system-log.mo
 share/locale/ug/LC_MESSAGES/gnome-system-log.mo
@@ -301,6 +319,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-system-log.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/tg/LC_MESSAGES
+@dirrmtry share/locale/tg
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -309,6 +329,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-system-log.mo
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/help/pt_BR/gnome-system-log/figures
+@dirrmtry share/help/pt_BR/gnome-system-log
+@dirrmtry share/help/pt_BR
 @dirrmtry share/locale/ps/LC_MESSAGES
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -325,6 +348,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-system-log.mo
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
@@ -341,6 +366,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-system-log.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
 @dirrmtry share/help/zh_CN/gnome-system-log/figures
 @dirrmtry share/help/zh_CN/gnome-system-log
 @dirrmtry share/help/zh_CN
@@ -408,3 +435,16 @@ share/locale/zh_TW/LC_MESSAGES/gnome-system-log.mo
 @dirrmtry share/help/C/gnome-system-log
 @dirrmtry share/help/C
 @dirrmtry share/help
+@dirrmtry share/icons/HighContrast/48x48/apps
+@dirrmtry share/icons/HighContrast/48x48
+@dirrmtry share/icons/HighContrast/32x32/apps
+@dirrmtry share/icons/HighContrast/32x32
+@dirrmtry share/icons/HighContrast/256x256/apps
+@dirrmtry share/icons/HighContrast/256x256
+@dirrmtry share/icons/HighContrast/24x24/apps
+@dirrmtry share/icons/HighContrast/24x24
+@dirrmtry share/icons/HighContrast/22x22/apps
+@dirrmtry share/icons/HighContrast/22x22
+@dirrmtry share/icons/HighContrast/16x16/apps
+@dirrmtry share/icons/HighContrast/16x16
+@dirrmtry share/icons/HighContrast

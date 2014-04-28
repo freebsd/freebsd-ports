@@ -1,59 +1,59 @@
 bin/accerciser
-%%PYTHON_SITELIBDIR%%/accerciser/__init__.py
-%%PYTHON_SITELIBDIR%%/accerciser/__init__.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/__init__.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/about_dialog.py
-%%PYTHON_SITELIBDIR%%/accerciser/about_dialog.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/about_dialog.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/accerciser.py
-%%PYTHON_SITELIBDIR%%/accerciser/accerciser.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/accerciser.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/accessible_treeview.py
-%%PYTHON_SITELIBDIR%%/accerciser/accessible_treeview.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/accessible_treeview.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/bookmarks.py
-%%PYTHON_SITELIBDIR%%/accerciser/bookmarks.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/bookmarks.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/hotkey_manager.py
-%%PYTHON_SITELIBDIR%%/accerciser/hotkey_manager.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/hotkey_manager.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/i18n.py
-%%PYTHON_SITELIBDIR%%/accerciser/i18n.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/i18n.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/icons.py
-%%PYTHON_SITELIBDIR%%/accerciser/icons.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/icons.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/main_window.py
-%%PYTHON_SITELIBDIR%%/accerciser/main_window.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/main_window.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/node.py
-%%PYTHON_SITELIBDIR%%/accerciser/node.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/node.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/__init__.py
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/__init__.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/__init__.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/base_plugin.py
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/base_plugin.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/base_plugin.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/message.py
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/message.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/message.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/plugin_manager.py
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/plugin_manager.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/plugin_manager.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/view.py
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/view.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/plugin/view.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/prefs_dialog.py
-%%PYTHON_SITELIBDIR%%/accerciser/prefs_dialog.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/prefs_dialog.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/tools.py
-%%PYTHON_SITELIBDIR%%/accerciser/tools.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/tools.pyo
-%%PYTHON_SITELIBDIR%%/accerciser/ui_manager.py
-%%PYTHON_SITELIBDIR%%/accerciser/ui_manager.pyc
-%%PYTHON_SITELIBDIR%%/accerciser/ui_manager.pyo
 man/man1/accerciser.1.gz
+%%PYTHON_SITELIBDIR%%/accerciser/__init__.py
+%%PYTHON_SITELIBDIR%%/accerciser/about_dialog.py
+%%PYTHON_SITELIBDIR%%/accerciser/accerciser.py
+%%PYTHON_SITELIBDIR%%/accerciser/accessible_treeview.py
+%%PYTHON_SITELIBDIR%%/accerciser/bookmarks.py
+%%PYTHON_SITELIBDIR%%/accerciser/hotkey_manager.py
+%%PYTHON_SITELIBDIR%%/accerciser/i18n.py
+%%PYTHON_SITELIBDIR%%/accerciser/icons.py
+%%PYTHON_SITELIBDIR%%/accerciser/main_window.py
+%%PYTHON_SITELIBDIR%%/accerciser/node.py
+%%PYTHON_SITELIBDIR%%/accerciser/prefs_dialog.py
+%%PYTHON_SITELIBDIR%%/accerciser/tools.py
+%%PYTHON_SITELIBDIR%%/accerciser/ui_manager.py
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/__init__.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/__init__.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/about_dialog.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/about_dialog.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/accerciser.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/accerciser.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/accessible_treeview.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/accessible_treeview.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/bookmarks.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/bookmarks.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/hotkey_manager.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/hotkey_manager.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/i18n.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/i18n.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/icons.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/icons.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/main_window.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/main_window.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/node.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/node.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/prefs_dialog.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/prefs_dialog.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/tools.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/tools.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/ui_manager.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__pycache__/ui_manager.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__init__.py
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/base_plugin.py
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/message.py
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/plugin_manager.py
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/view.py
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__/__init__.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__/__init__.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__/base_plugin.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__/base_plugin.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__/message.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__/message.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__/plugin_manager.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__/plugin_manager.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__/view.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__/view.cpython-33.pyo
 %%DATADIR%%/pixmaps/hicolor/22x22/acceleratorlabel.png
 %%DATADIR%%/pixmaps/hicolor/22x22/alert.png
 %%DATADIR%%/pixmaps/hicolor/22x22/animation.png
@@ -632,6 +632,7 @@ share/help/zh_CN/accerciser/ipython_plugin.page
 share/help/zh_CN/accerciser/preferences.page
 share/help/zh_CN/accerciser/quick_select_plugin.page
 share/help/zh_CN/accerciser/validator_plugin.page
+share/icons/HighContrast/scalable/apps/accerciser.svg
 share/icons/hicolor/16x16/apps/accerciser.png
 share/icons/hicolor/22x22/apps/accerciser.png
 share/icons/hicolor/32x32/apps/accerciser.png
@@ -697,6 +698,7 @@ share/locale/sr/LC_MESSAGES/accerciser.mo
 share/locale/sr@latin/LC_MESSAGES/accerciser.mo
 share/locale/sv/LC_MESSAGES/accerciser.mo
 share/locale/te/LC_MESSAGES/accerciser.mo
+share/locale/tg/LC_MESSAGES/accerciser.mo
 share/locale/th/LC_MESSAGES/accerciser.mo
 share/locale/tr/LC_MESSAGES/accerciser.mo
 share/locale/ug/LC_MESSAGES/accerciser.mo
@@ -737,42 +739,62 @@ share/locale/zh_TW/LC_MESSAGES/accerciser.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/help/zh_CN/accerciser/figures
-@dirrmtry share/help/zh_CN/accerciser
-@dirrmtry share/help/uk/accerciser/figures
-@dirrmtry share/help/uk/accerciser
-@dirrmtry share/help/sv/accerciser/figures
-@dirrmtry share/help/sv/accerciser
-@dirrmtry share/help/sl/accerciser/figures
-@dirrmtry share/help/sl/accerciser
-@dirrmtry share/help/pt_BR/accerciser/figures
-@dirrmtry share/help/pt_BR/accerciser
-@dirrmtry share/help/pl/accerciser/figures
-@dirrmtry share/help/pl/accerciser
-@dirrmtry share/help/oc/accerciser/figures
-@dirrmtry share/help/oc/accerciser
-@dirrmtry share/help/ja/accerciser/figures
-@dirrmtry share/help/ja/accerciser
-@dirrmtry share/help/it/accerciser/figures
-@dirrmtry share/help/it/accerciser
-@dirrmtry share/help/gl/accerciser/figures
-@dirrmtry share/help/gl/accerciser
-@dirrmtry share/help/fr/accerciser/figures
-@dirrmtry share/help/fr/accerciser
-@dirrmtry share/help/es/accerciser/figures
-@dirrmtry share/help/es/accerciser
-@dirrmtry share/help/en_GB/accerciser/figures
-@dirrmtry share/help/en_GB/accerciser
-@dirrmtry share/help/el/accerciser/figures
-@dirrmtry share/help/el/accerciser
-@dirrmtry share/help/de/accerciser/figures
-@dirrmtry share/help/de/accerciser
-@dirrmtry share/help/cs/accerciser/figures
-@dirrmtry share/help/cs/accerciser
-@dirrmtry share/help/ca/accerciser/figures
-@dirrmtry share/help/ca/accerciser
-@dirrmtry share/help/C/accerciser/figures
-@dirrmtry share/help/C/accerciser
+@dirrmtry share/icons/HighContrast/scalable/apps
+@dirrmtry share/icons/HighContrast/scalable
+@dirrmtry share/icons/HighContrast
+@dirrm share/help/zh_CN/accerciser/figures
+@dirrm share/help/zh_CN/accerciser
+@dirrmtry share/help/zh_CN
+@dirrm share/help/uk/accerciser/figures
+@dirrm share/help/uk/accerciser
+@dirrmtry share/help/uk
+@dirrm share/help/sv/accerciser/figures
+@dirrm share/help/sv/accerciser
+@dirrmtry share/help/sv
+@dirrm share/help/sl/accerciser/figures
+@dirrm share/help/sl/accerciser
+@dirrmtry share/help/sl
+@dirrm share/help/pt_BR/accerciser/figures
+@dirrm share/help/pt_BR/accerciser
+@dirrmtry share/help/pt_BR
+@dirrm share/help/pl/accerciser/figures
+@dirrm share/help/pl/accerciser
+@dirrmtry share/help/pl
+@dirrm share/help/oc/accerciser/figures
+@dirrm share/help/oc/accerciser
+@dirrmtry share/help/oc
+@dirrm share/help/ja/accerciser/figures
+@dirrm share/help/ja/accerciser
+@dirrmtry share/help/ja
+@dirrm share/help/it/accerciser/figures
+@dirrm share/help/it/accerciser
+@dirrmtry share/help/it
+@dirrm share/help/gl/accerciser/figures
+@dirrm share/help/gl/accerciser
+@dirrmtry share/help/gl
+@dirrm share/help/fr/accerciser/figures
+@dirrm share/help/fr/accerciser
+@dirrmtry share/help/fr
+@dirrm share/help/es/accerciser/figures
+@dirrm share/help/es/accerciser
+@dirrmtry share/help/es
+@dirrm share/help/en_GB/accerciser/figures
+@dirrm share/help/en_GB/accerciser
+@dirrmtry share/help/en_GB
+@dirrm share/help/el/accerciser/figures
+@dirrm share/help/el/accerciser
+@dirrmtry share/help/el
+@dirrm share/help/de/accerciser/figures
+@dirrm share/help/de/accerciser
+@dirrmtry share/help/de
+@dirrm share/help/cs/accerciser/figures
+@dirrm share/help/cs/accerciser
+@dirrmtry share/help/cs
+@dirrm share/help/ca/accerciser/figures
+@dirrm share/help/ca/accerciser
+@dirrmtry share/help/ca
+@dirrm share/help/C/accerciser/figures
+@dirrm share/help/C/accerciser
 @dirrmtry share/help/C
 @dirrmtry share/help
 @dirrm %%DATADIR%%/plugins
@@ -782,5 +804,7 @@ share/locale/zh_TW/LC_MESSAGES/accerciser.mo
 @dirrm %%DATADIR%%/pixmaps/hicolor
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/accerciser/plugin/__pycache__
 @dirrm %%PYTHON_SITELIBDIR%%/accerciser/plugin
+@dirrm %%PYTHON_SITELIBDIR%%/accerciser/__pycache__
 @dirrm %%PYTHON_SITELIBDIR%%/accerciser

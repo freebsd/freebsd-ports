@@ -63,8 +63,8 @@
     SUBDIR += flvstreamer
     SUBDIR += flvtool++
     SUBDIR += fpc-dts
-    SUBDIR += fpc-matroska
     SUBDIR += fpc-libvlc
+    SUBDIR += fpc-matroska
     SUBDIR += freetuxtv
     SUBDIR += freevo
     SUBDIR += fxtv
@@ -173,6 +173,7 @@
     SUBDIR += libgnome-media-profiles
     SUBDIR += libkate
     SUBDIR += libmatroska
+    SUBDIR += libmediaart
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
@@ -285,6 +286,7 @@
     SUBDIR += py-enzyme
     SUBDIR += py-ffmpeg
     SUBDIR += py-gstreamer
+    SUBDIR += py-gstreamer1
     SUBDIR += py-guessit
     SUBDIR += py-kaa-base
     SUBDIR += py-kaa-imlib2
@@ -298,6 +300,7 @@
     SUBDIR += py-soco
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
+    SUBDIR += py3-gstreamer1
     SUBDIR += pyjama
     SUBDIR += pymp
     SUBDIR += qmmp
@@ -326,6 +329,7 @@
     SUBDIR += smplayer-themes
     SUBDIR += sms1xxx-kmod
     SUBDIR += smtube
+    SUBDIR += snappy
     SUBDIR += spigot
     SUBDIR += spook
     SUBDIR += spotify-websocket-api

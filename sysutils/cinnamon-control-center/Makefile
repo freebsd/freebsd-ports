@@ -1,10 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 19449 2014-04-04 08:03:30Z gusi $
+#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	cinnamon-control-center
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -30,25 +29,27 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter \
 		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
+		libcinnamon-menu-3.so:${PORTSDIR}/x11/cinnamon-menus \
 		libgjs.so:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		cinnamon-settings-daemon>=0:${PORTSDIR}/sysutils/cinnamon-settings-daemon \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
-USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	evolutiondataserver3 gconf2 gnomemenus3 gnomeprefix \
+USES=		gettext libtool:keepla gmake pathfix pkgconfig
+USE_GNOME=	evolutiondataserver3 gconf2 gnomeprefix \
 		gtk30 intlhack libgnomekbd
 USE_XORG=	x11 xfixes sm
 USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtool autoconf automake
+USE_AUTOTOOLS=	libtoolize autoconf automake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-compile-warnings=no
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	CUPS
 OPTIONS_DEFAULT=CUPS
@@ -71,9 +72,5 @@ post-patch:
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cinnamon-control-center-1/panels/lib*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcinnamon-control-center.so.1
 
 .include <bsd.port.mk>

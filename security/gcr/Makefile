@@ -1,16 +1,17 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/security/gcr/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#    $MCom: ports/trunk/security/gcr/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	gcr
-PORTVERSION=	3.6.2
+PORTVERSION=	3.12.0
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for bits of crypto UI and parsing
 
-BUILD_DEPENDS=	gtk-doc>0:${PORTSDIR}/textproc/gtk-doc
+BUILD_DEPENDS=	gtk-doc>0:${PORTSDIR}/textproc/gtk-doc \
+		vapigen:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libtasn1.so:${PORTSDIR}/security/libtasn1 \
 		libp11-kit.so:${PORTSDIR}/security/p11-kit \
@@ -18,10 +19,9 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 
 CONFLICTS=	gnome-keyring-2.[0-9]*
 
-USE_XZ=		yes
-USE_GNOME=	gtk30 intlhack introspection:build
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shared-mime-info
+USE_GNOME=	gtk30 gnomehier intlhack introspection:build
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+		pkgconfig shared-mime-info tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

@@ -12,6 +12,7 @@ lib/girepository-1.0/Gdl-3.typelib
 lib/libgdl-3.la
 lib/libgdl-3.so
 lib/libgdl-3.so.5
+lib/libgdl-3.so.5.0.8
 libdata/pkgconfig/gdl-3.0.pc
 share/doc/gdl3-3.0/GdlDock.html
 share/doc/gdl3-3.0/GdlDockBar.html
@@ -107,6 +108,7 @@ share/locale/sr/LC_MESSAGES/gdl-3.mo
 share/locale/sr@latin/LC_MESSAGES/gdl-3.mo
 share/locale/sv/LC_MESSAGES/gdl-3.mo
 share/locale/te/LC_MESSAGES/gdl-3.mo
+share/locale/tg/LC_MESSAGES/gdl-3.mo
 share/locale/th/LC_MESSAGES/gdl-3.mo
 share/locale/tr/LC_MESSAGES/gdl-3.mo
 share/locale/ug/LC_MESSAGES/gdl-3.mo

@@ -1,10 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gsettings-desktop-schemas/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/devel/gsettings-desktop-schemas/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	gsettings-desktop-schemas
-PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTVERSION=	3.12.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,23 +15,28 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:${PORTSDIR}/x11-fonts/cantarell-fonts
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix perl5 pkgconfig
+USES=		gettext gmake pathfix perl5 pkgconfig tar:xz
 USE_PERL5=	build
 USE_GNOME=	intltool glib20 gnomehier introspection:build
 GNU_CONFIGURE=	yes
 
 GLIB_SCHEMAS=	org.gnome.desktop.a11y.applications.gschema.xml \
+		org.gnome.desktop.a11y.gschema.xml \
 		org.gnome.desktop.a11y.keyboard.gschema.xml \
 		org.gnome.desktop.a11y.magnifier.gschema.xml \
 		org.gnome.desktop.a11y.mouse.gschema.xml \
+		org.gnome.desktop.app-folders.gschema.xml \
 		org.gnome.desktop.background.gschema.xml \
 		org.gnome.desktop.default-applications.gschema.xml \
+		org.gnome.desktop.datetime.gschema.xml \
 		org.gnome.desktop.enums.xml \
 		org.gnome.desktop.input-sources.gschema.xml \
 		org.gnome.desktop.interface.gschema.xml \
 		org.gnome.desktop.lockdown.gschema.xml \
+		org.gnome.desktop.notifications.gschema.xml \
 		org.gnome.desktop.media-handling.gschema.xml \
+		org.gnome.desktop.privacy.gschema.xml \
+		org.gnome.desktop.search-providers.gschema.xml \
 		org.gnome.desktop.screensaver.gschema.xml \
 		org.gnome.desktop.session.gschema.xml \
 		org.gnome.desktop.sound.gschema.xml \

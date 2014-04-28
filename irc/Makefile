@@ -92,6 +92,7 @@
     SUBDIR += pear-Net_SmartIRC
     SUBDIR += pircbot
     SUBDIR += pisg
+    SUBDIR += polari
     SUBDIR += psybnc
     SUBDIR += py-fishcrypt
     SUBDIR += py-gozerbot

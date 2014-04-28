@@ -1,9 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gdl3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/x11-toolkits/gdl/Makefile 19335 2014-03-25 19:25:32Z kwm $
 
 PORTNAME=	gdl
-PORTVERSION=	3.6.2
+PORTVERSION=	3.12.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -15,15 +15,14 @@ COMMENT=	Components intended to be shared between GNOME development tools
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_XZ=		yes
 USE_GNOME=	gnomeprefix gtk30 intltool
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdl-3.so.5
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdl-3.so.*
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/editors/gedit3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/editors/gedit/Makefile 19503 2014-04-14 21:06:16Z gusi $
 
 PORTNAME=	gedit
-PORTVERSION=	3.6.2
+PORTVERSION=	3.12.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,23 +20,24 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
+USES=		desktop-file-utils gettext gmake libtool:keepla \
+		pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtksourceview3 intlhack introspection:build \
+		libxml2 py3gobject3
 USE_XORG=	sm
-USE_XZ=		yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig
-USE_PYTHON=	yes
-INSTALLS_OMF=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix intlhack gtksourceview3 libxml2 \
-		gnomedocutils pygobject3
+GNU_CONFIGURE=	yes
+USE_PYTHON=	3
 CONFIGURE_ARGS=	--disable-updater
-CONFIGURE_ARGS+=--disable-zeitgeist
-CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
+CONFIGURE_ARGS+=--disable-zeitgeist \
+		--enable-python
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
+CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB=	VERSION="3.0"
+PLIST_SUB=	VERSION="3.12"
 
 GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \
-		org.gnome.gedit.gschema.xml \
 		org.gnome.gedit.plugins.externaltools.gschema.xml \
+		org.gnome.gedit.gschema.xml \
 		org.gnome.gedit.plugins.filebrowser.enums.xml \
 		org.gnome.gedit.plugins.filebrowser.gschema.xml \
 		org.gnome.gedit.plugins.pythonconsole.gschema.xml \
@@ -45,6 +46,5 @@ GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gedit/plugins/lib*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gedit/libgedit-private.so
 
 .include <bsd.port.mk>

@@ -1,10 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/cinnamon-settings-daemon/Makefile 19448 2014-04-04 07:28:02Z gusi $
+#   $MCom: ports/trunk/sysutils/cinnamon-settings-daemon/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	cinnamon-settings-daemon
-PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -31,10 +30,10 @@ RUN_DEPENDS=	cinnamon-session:${PORTSDIR}/x11/cinnamon-session \
 
 USE_GNOME=	gnomehier gnomeprefix intlhack libgnomekbd \
 		libxslt:build
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext libtool:keepla gmake pathfix pkgconfig tar:xz
 USE_XORG=	xxf86misc
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool autoconf automake
+USE_AUTOTOOLS=	libtoolize autoconf automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -44,6 +43,7 @@ CONFIGURE_ARGS=	--disable-gudev \
 		--with-gnome-distributor="FreeBSD GNOME Project"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.cinnamon.settings-daemon.enums.xml \
 		org.cinnamon.settings-daemon.peripherals.gschema.xml \
@@ -84,11 +84,10 @@ PLIST_SUB+=	SMARTCARD="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/gnome|${PREFIX}/etc/gnome|g' \
 		${WRKSRC}/data/org.cinnamon.settings-daemon.plugins.xrandr.gschema.xml.in.in
+	@${REINPLACE_CMD} -e '/wacom/d' \
+		${WRKSRC}/data/Makefile.am
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cinnamon-settings-daemon-3.0/lib*.so
 
 .include <bsd.port.mk>

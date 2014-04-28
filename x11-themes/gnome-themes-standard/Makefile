@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-themes/gnome-themes-standard/Makefile 18572 2013-06-18 10:03:30Z kwm $
+#   $MCom: ports-experimental/trunk/x11-themes/gnome-themes-standard/Makefile 19307 2014-03-25 07:34:54Z gusi $
 
 PORTNAME=	gnome-themes-standard
-PORTVERSION=	3.10.0
+PORTVERSION=	3.12.0
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,8 +13,7 @@ COMMENT=	Standard themes for GNOME
 
 CONFLICTS=	gnome-themes-2.[0-9]*
 
-USE_XZ=		yes
-USES=		gettext:build gmake pathfix pkgconfig
+USES=		gettext:build gmake pathfix pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gtk30 intlhack librsvg2
 GNU_CONFIGURE=	yes

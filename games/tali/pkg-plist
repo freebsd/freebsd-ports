@@ -1,84 +1,91 @@
 bin/tali
 man/man6/tali.6.gz
-share/applications/gtali.desktop
+share/appdata/tali.appdata.xml
+share/applications/tali.desktop
 @unexec [ -s %D/share/games/gtali.Colors.scores ] || rm -f %D/share/games/gtali.Colors.scores
 @unexec [ -s %D/share/games/gtali.Regular.scores ] || rm -f %D/share/games/gtali.Regular.scores
-share/help/C/gtali/figures/mainwindow.png
-share/help/C/gtali/figures/preferences.png
-share/help/C/gtali/index.docbook
-share/help/C/gtali/legal.xml
-share/help/ca/gtali/figures/mainwindow.png
-share/help/ca/gtali/figures/preferences.png
-share/help/ca/gtali/index.docbook
-share/help/ca/gtali/legal.xml
-share/help/cs/gtali/figures/mainwindow.png
-share/help/cs/gtali/figures/preferences.png
-share/help/cs/gtali/index.docbook
-share/help/cs/gtali/legal.xml
-share/help/da/gtali/figures/mainwindow.png
-share/help/da/gtali/figures/preferences.png
-share/help/da/gtali/index.docbook
-share/help/da/gtali/legal.xml
-share/help/de/gtali/figures/mainwindow.png
-share/help/de/gtali/figures/preferences.png
-share/help/de/gtali/index.docbook
-share/help/de/gtali/legal.xml
-share/help/el/gtali/figures/mainwindow.png
-share/help/el/gtali/figures/preferences.png
-share/help/el/gtali/index.docbook
-share/help/el/gtali/legal.xml
-share/help/en_GB/gtali/figures/mainwindow.png
-share/help/en_GB/gtali/figures/preferences.png
-share/help/en_GB/gtali/index.docbook
-share/help/en_GB/gtali/legal.xml
-share/help/es/gtali/figures/mainwindow.png
-share/help/es/gtali/figures/preferences.png
-share/help/es/gtali/index.docbook
-share/help/es/gtali/legal.xml
-share/help/eu/gtali/figures/mainwindow.png
-share/help/eu/gtali/figures/preferences.png
-share/help/eu/gtali/index.docbook
-share/help/eu/gtali/legal.xml
-share/help/fr/gtali/figures/mainwindow.png
-share/help/fr/gtali/figures/preferences.png
-share/help/fr/gtali/index.docbook
-share/help/fr/gtali/legal.xml
-share/help/gl/gtali/figures/mainwindow.png
-share/help/gl/gtali/figures/preferences.png
-share/help/gl/gtali/index.docbook
-share/help/gl/gtali/legal.xml
-share/help/it/gtali/figures/mainwindow.png
-share/help/it/gtali/figures/preferences.png
-share/help/it/gtali/index.docbook
-share/help/it/gtali/legal.xml
-share/help/oc/gtali/figures/mainwindow.png
-share/help/oc/gtali/figures/preferences.png
-share/help/oc/gtali/index.docbook
-share/help/oc/gtali/legal.xml
-share/help/pt_BR/gtali/figures/mainwindow.png
-share/help/pt_BR/gtali/figures/preferences.png
-share/help/pt_BR/gtali/index.docbook
-share/help/pt_BR/gtali/legal.xml
-share/help/sl/gtali/figures/mainwindow.png
-share/help/sl/gtali/figures/preferences.png
-share/help/sl/gtali/index.docbook
-share/help/sl/gtali/legal.xml
-share/help/sr/gtali/figures/mainwindow.png
-share/help/sr/gtali/figures/preferences.png
-share/help/sr/gtali/index.docbook
-share/help/sr/gtali/legal.xml
-share/help/sr@latin/gtali/figures/mainwindow.png
-share/help/sr@latin/gtali/figures/preferences.png
-share/help/sr@latin/gtali/index.docbook
-share/help/sr@latin/gtali/legal.xml
-share/help/sv/gtali/figures/mainwindow.png
-share/help/sv/gtali/figures/preferences.png
-share/help/sv/gtali/index.docbook
-share/help/sv/gtali/legal.xml
-share/help/zh_CN/gtali/figures/mainwindow.png
-share/help/zh_CN/gtali/figures/preferences.png
-share/help/zh_CN/gtali/index.docbook
-share/help/zh_CN/gtali/legal.xml
+share/help/C/tali/index.docbook
+share/help/C/tali/legal.xml
+share/help/C/tali/figures/mainwindow.png
+share/help/C/tali/figures/preferences.png
+share/help/ca/tali/index.docbook
+share/help/ca/tali/legal.xml
+share/help/ca/tali/figures/mainwindow.png
+share/help/ca/tali/figures/preferences.png
+share/help/cs/tali/index.docbook
+share/help/cs/tali/legal.xml
+share/help/cs/tali/figures/mainwindow.png
+share/help/cs/tali/figures/preferences.png
+share/help/da/tali/index.docbook
+share/help/da/tali/legal.xml
+share/help/da/tali/figures/mainwindow.png
+share/help/da/tali/figures/preferences.png
+share/help/de/tali/index.docbook
+share/help/de/tali/legal.xml
+share/help/de/tali/figures/mainwindow.png
+share/help/de/tali/figures/preferences.png
+share/help/el/tali/index.docbook
+share/help/el/tali/legal.xml
+share/help/el/tali/figures/mainwindow.png
+share/help/el/tali/figures/preferences.png
+share/help/en_GB/tali/index.docbook
+share/help/en_GB/tali/legal.xml
+share/help/en_GB/tali/figures/mainwindow.png
+share/help/en_GB/tali/figures/preferences.png
+share/help/es/tali/index.docbook
+share/help/es/tali/legal.xml
+share/help/es/tali/figures/mainwindow.png
+share/help/es/tali/figures/preferences.png
+share/help/eu/tali/index.docbook
+share/help/eu/tali/legal.xml
+share/help/eu/tali/figures/mainwindow.png
+share/help/eu/tali/figures/preferences.png
+share/help/fr/tali/index.docbook
+share/help/fr/tali/legal.xml
+share/help/fr/tali/figures/mainwindow.png
+share/help/fr/tali/figures/preferences.png
+share/help/gl/tali/index.docbook
+share/help/gl/tali/legal.xml
+share/help/gl/tali/figures/mainwindow.png
+share/help/gl/tali/figures/preferences.png
+share/help/it/tali/index.docbook
+share/help/it/tali/legal.xml
+share/help/it/tali/figures/mainwindow.png
+share/help/it/tali/figures/preferences.png
+share/help/oc/tali/index.docbook
+share/help/oc/tali/legal.xml
+share/help/oc/tali/figures/mainwindow.png
+share/help/oc/tali/figures/preferences.png
+share/help/pt_BR/tali/index.docbook
+share/help/pt_BR/tali/legal.xml
+share/help/pt_BR/tali/figures/mainwindow.png
+share/help/pt_BR/tali/figures/preferences.png
+share/help/sl/tali/index.docbook
+share/help/sl/tali/legal.xml
+share/help/sl/tali/figures/mainwindow.png
+share/help/sl/tali/figures/preferences.png
+share/help/sr/tali/index.docbook
+share/help/sr/tali/legal.xml
+share/help/sr/tali/figures/mainwindow.png
+share/help/sr/tali/figures/preferences.png
+share/help/sr@latin/tali/index.docbook
+share/help/sr@latin/tali/legal.xml
+share/help/sr@latin/tali/figures/mainwindow.png
+share/help/sr@latin/tali/figures/preferences.png
+share/help/sv/tali/index.docbook
+share/help/sv/tali/legal.xml
+share/help/sv/tali/figures/mainwindow.png
+share/help/sv/tali/figures/preferences.png
+share/help/zh_CN/tali/index.docbook
+share/help/zh_CN/tali/legal.xml
+share/help/zh_CN/tali/figures/mainwindow.png
+share/help/zh_CN/tali/figures/preferences.png
+share/icons/HighContrast/16x16/apps/tali.png
+share/icons/HighContrast/22x22/apps/tali.png
+share/icons/HighContrast/24x24/apps/tali.png
+share/icons/HighContrast/256x256/apps/tali.png
+share/icons/HighContrast/32x32/apps/tali.png
+share/icons/HighContrast/48x48/apps/tali.png
 share/icons/hicolor/16x16/apps/tali.png
 share/icons/hicolor/22x22/apps/tali.png
 share/icons/hicolor/24x24/apps/tali.png
@@ -187,42 +194,75 @@ share/tali/kismet4.svg
 share/tali/kismet5.svg
 share/tali/kismet6.svg
 @dirrmtry share/tali
-@dirrmtry share/help/zh_CN/gtali/figures
-@dirrmtry share/help/zh_CN/gtali
-@dirrmtry share/help/sv/gtali/figures
-@dirrmtry share/help/sv/gtali
-@dirrmtry share/help/sr@latin/gtali/figures
-@dirrmtry share/help/sr@latin/gtali
-@dirrmtry share/help/sr/gtali/figures
-@dirrmtry share/help/sr/gtali
-@dirrmtry share/help/sl/gtali/figures
-@dirrmtry share/help/sl/gtali
-@dirrmtry share/help/pt_BR/gtali/figures
-@dirrmtry share/help/pt_BR/gtali
-@dirrmtry share/help/oc/gtali/figures
-@dirrmtry share/help/oc/gtali
-@dirrmtry share/help/it/gtali/figures
-@dirrmtry share/help/it/gtali
-@dirrmtry share/help/gl/gtali/figures
-@dirrmtry share/help/gl/gtali
-@dirrmtry share/help/fr/gtali/figures
-@dirrmtry share/help/fr/gtali
-@dirrmtry share/help/eu/gtali/figures
-@dirrmtry share/help/eu/gtali
-@dirrmtry share/help/es/gtali/figures
-@dirrmtry share/help/es/gtali
-@dirrmtry share/help/en_GB/gtali/figures
-@dirrmtry share/help/en_GB/gtali
-@dirrmtry share/help/el/gtali/figures
-@dirrmtry share/help/el/gtali
-@dirrmtry share/help/de/gtali/figures
-@dirrmtry share/help/de/gtali
-@dirrmtry share/help/da/gtali/figures
-@dirrmtry share/help/da/gtali
-@dirrmtry share/help/cs/gtali/figures
-@dirrmtry share/help/cs/gtali
-@dirrmtry share/help/ca/gtali/figures
-@dirrmtry share/help/ca/gtali
-@dirrmtry share/help/C/gtali/figures
-@dirrmtry share/help/C/gtali
-@dirrmtry share/games
+@dirrmtry share/icons/HighContrast/48x48/apps
+@dirrmtry share/icons/HighContrast/48x48
+@dirrmtry share/icons/HighContrast/32x32/apps
+@dirrmtry share/icons/HighContrast/32x32
+@dirrmtry share/icons/HighContrast/256x256/apps
+@dirrmtry share/icons/HighContrast/256x256
+@dirrmtry share/icons/HighContrast/24x24/apps
+@dirrmtry share/icons/HighContrast/24x24
+@dirrmtry share/icons/HighContrast/22x22/apps
+@dirrmtry share/icons/HighContrast/22x22
+@dirrmtry share/icons/HighContrast/16x16/apps
+@dirrmtry share/icons/HighContrast/16x16
+@dirrmtry share/icons/HighContrast
+@dirrm share/help/zh_CN/tali/figures
+@dirrm share/help/zh_CN/tali
+@dirrmtry share/help/zh_CN
+@dirrm share/help/sv/tali/figures
+@dirrm share/help/sv/tali
+@dirrmtry share/help/sv
+@dirrm share/help/sr@latin/tali/figures
+@dirrm share/help/sr@latin/tali
+@dirrmtry share/help/sr@latin
+@dirrm share/help/sr/tali/figures
+@dirrm share/help/sr/tali
+@dirrmtry share/help/sr
+@dirrm share/help/sl/tali/figures
+@dirrm share/help/sl/tali
+@dirrmtry share/help/sl
+@dirrm share/help/pt_BR/tali/figures
+@dirrm share/help/pt_BR/tali
+@dirrmtry share/help/pt_BR
+@dirrm share/help/oc/tali/figures
+@dirrm share/help/oc/tali
+@dirrmtry share/help/oc
+@dirrm share/help/it/tali/figures
+@dirrm share/help/it/tali
+@dirrmtry share/help/it
+@dirrm share/help/gl/tali/figures
+@dirrm share/help/gl/tali
+@dirrmtry share/help/gl
+@dirrm share/help/fr/tali/figures
+@dirrm share/help/fr/tali
+@dirrmtry share/help/fr
+@dirrm share/help/eu/tali/figures
+@dirrm share/help/eu/tali
+@dirrmtry share/help/eu
+@dirrm share/help/es/tali/figures
+@dirrm share/help/es/tali
+@dirrmtry share/help/es
+@dirrm share/help/en_GB/tali/figures
+@dirrm share/help/en_GB/tali
+@dirrmtry share/help/en_GB
+@dirrm share/help/el/tali/figures
+@dirrm share/help/el/tali
+@dirrmtry share/help/el
+@dirrm share/help/de/tali/figures
+@dirrm share/help/de/tali
+@dirrmtry share/help/de
+@dirrm share/help/da/tali/figures
+@dirrm share/help/da/tali
+@dirrmtry share/help/da
+@dirrm share/help/cs/tali/figures
+@dirrm share/help/cs/tali
+@dirrmtry share/help/cs
+@dirrm share/help/ca/tali/figures
+@dirrm share/help/ca/tali
+@dirrmtry share/help/ca
+@dirrm share/help/C/tali/figures
+@dirrm share/help/C/tali
+@dirrmtry share/help/C
+@dirrmtry share/help
+@dirrmtry share/appdata

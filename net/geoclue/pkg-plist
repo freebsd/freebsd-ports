@@ -1,0 +1,15 @@
+etc/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
+etc/dbus-1/system.d/org.freedesktop.GeoClue2.conf
+%%ETCDIR%%/geoclue.conf
+libdata/pkgconfig/geoclue-2.0.pc
+libexec/geoclue
+libexec/geoclue-2.0/demos/where-am-i
+share/applications/geoclue-demo-agent.desktop
+share/applications/geoclue-where-am-i.desktop
+share/dbus-1/system-services/org.freedesktop.GeoClue2.service
+%%DATADIR%%-2.0/geoclue-agent-interface.xml
+%%DATADIR%%-2.0/geoclue-interface.xml
+@dirrm %%DATADIR%%-2.0
+@dirrm libexec/geoclue-2.0/demos
+@dirrm libexec/geoclue-2.0
+@dirrm %%ETCDIR%%

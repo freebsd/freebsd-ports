@@ -15,7 +15,6 @@ etc/xdg/menus/cinnamon-applications.menu
 lib/cinnamon/Cinnamon-0.1.typelib
 lib/cinnamon/Gvc-1.0.typelib
 lib/cinnamon/St-1.0.typelib
-lib/cinnamon/libcinnamon.la
 lib/cinnamon/libcinnamon.so
 lib/cinnamon-desktop-editor/cinnamon-desktop-editor.py
 lib/cinnamon-desktop-editor/directory-editor.ui
@@ -36,10 +35,11 @@ lib/cinnamon-menu-editor/cme/MenuEditor.py
 lib/cinnamon-menu-editor/cme/__init__.py
 lib/cinnamon-menu-editor/cme/config.py
 lib/cinnamon-menu-editor/cme/util.py
-lib/cinnamon-screensaver-lock-dialog/cinnamon-screensaver-lock-dialog.glade
 lib/cinnamon-screensaver-lock-dialog/cinnamon-screensaver-lock-dialog.py
+lib/cinnamon-screensaver-lock-dialog/cinnamon-screensaver-lock-dialog.ui
 lib/cinnamon-settings/cinnamon-settings.py
 lib/cinnamon-settings/cinnamon-settings.ui
+lib/cinnamon-settings/modules/cs_power.py
 lib/cinnamon-settings/bin/ExtensionCore.py
 lib/cinnamon-settings/bin/SettingsWidgets.py
 lib/cinnamon-settings/bin/Spices.py
@@ -51,55 +51,6 @@ lib/cinnamon-settings/bin/imtools.py
 lib/cinnamon-settings/bin/installSchema.py
 lib/cinnamon-settings/bin/removeSchema.py
 lib/cinnamon-settings/bin/xlet-settings.ui
-lib/cinnamon-settings/data/cinnamon.png
-lib/cinnamon-settings/data/inactive.png
-lib/cinnamon-settings/data/installed.svg
-lib/cinnamon-settings/data/running.svg
-lib/cinnamon-settings/data/system.svg
-lib/cinnamon-settings/data/update.svg
-lib/cinnamon-settings/data/user.png
-lib/cinnamon-settings/data/icons/applets.svg
-lib/cinnamon-settings/data/icons/backgrounds.svg
-lib/cinnamon-settings/data/icons/bluetooth.svg
-lib/cinnamon-settings/data/icons/cat-admin.svg
-lib/cinnamon-settings/data/icons/cat-appearance.svg
-lib/cinnamon-settings/data/icons/cat-hardware.svg
-lib/cinnamon-settings/data/icons/cat-prefs.svg
-lib/cinnamon-settings/data/icons/color.svg
-lib/cinnamon-settings/data/icons/date-time.svg
-lib/cinnamon-settings/data/icons/default-applications.svg
-lib/cinnamon-settings/data/icons/desklets.svg
-lib/cinnamon-settings/data/icons/desktop-effects.svg
-lib/cinnamon-settings/data/icons/desktop.svg
-lib/cinnamon-settings/data/icons/details.svg
-lib/cinnamon-settings/data/icons/display.svg
-lib/cinnamon-settings/data/icons/drivers.svg
-lib/cinnamon-settings/data/icons/extensions.svg
-lib/cinnamon-settings/data/icons/firewall.svg
-lib/cinnamon-settings/data/icons/fonts.svg
-lib/cinnamon-settings/data/icons/general.svg
-lib/cinnamon-settings/data/icons/keyboard.svg
-lib/cinnamon-settings/data/icons/language.svg
-lib/cinnamon-settings/data/icons/login.svg
-lib/cinnamon-settings/data/icons/mouse.svg
-lib/cinnamon-settings/data/icons/network.svg
-lib/cinnamon-settings/data/icons/overview.svg
-lib/cinnamon-settings/data/icons/panel.svg
-lib/cinnamon-settings/data/icons/power.svg
-lib/cinnamon-settings/data/icons/printer.svg
-lib/cinnamon-settings/data/icons/region.svg
-lib/cinnamon-settings/data/icons/screen.svg
-lib/cinnamon-settings/data/icons/screensaver.svg
-lib/cinnamon-settings/data/icons/sound.svg
-lib/cinnamon-settings/data/icons/sources.svg
-lib/cinnamon-settings/data/icons/startup-programs.svg
-lib/cinnamon-settings/data/icons/themes.svg
-lib/cinnamon-settings/data/icons/tiling.svg
-lib/cinnamon-settings/data/icons/universal-access.svg
-lib/cinnamon-settings/data/icons/user-accounts.svg
-lib/cinnamon-settings/data/icons/user.svg
-lib/cinnamon-settings/data/icons/windows.svg
-lib/cinnamon-settings/data/icons/workspaces.svg
 lib/cinnamon-settings/data/spices/applet-detail.html
 lib/cinnamon-settings/data/spices/jquery.js
 lib/cinnamon-settings/modules/cs_applets.py
@@ -137,7 +88,29 @@ man/man1/gnome-session-cinnamon.1.gz
 man/man1/gnome-session-cinnamon2d.1.gz
 share/applications/cinnamon-add-panel-launcher.desktop
 share/applications/cinnamon-menu-editor.desktop
+share/applications/cinnamon-settings-applets.desktop
+share/applications/cinnamon-settings-backgrounds.desktop
+share/applications/cinnamon-settings-calendar.desktop
+share/applications/cinnamon-settings-default.desktop
+share/applications/cinnamon-settings-desklets.desktop
+share/applications/cinnamon-settings-desktop.desktop
+share/applications/cinnamon-settings-effects.desktop
+share/applications/cinnamon-settings-extensions.desktop
+share/applications/cinnamon-settings-fonts.desktop
+share/applications/cinnamon-settings-general.desktop
+share/applications/cinnamon-settings-hotcorner.desktop
+share/applications/cinnamon-settings-info.desktop
+share/applications/cinnamon-settings-keyboard.desktop
+share/applications/cinnamon-settings-mouse.desktop
+share/applications/cinnamon-settings-panel.desktop
+share/applications/cinnamon-settings-power.desktop
+share/applications/cinnamon-settings-screensaver.desktop
+share/applications/cinnamon-settings-themes.desktop
+share/applications/cinnamon-settings-tiling.desktop
+share/applications/cinnamon-settings-user.desktop
 share/applications/cinnamon-settings-users.desktop
+share/applications/cinnamon-settings-windows.desktop
+share/applications/cinnamon-settings-workspaces.desktop
 share/applications/cinnamon-settings.desktop
 share/applications/cinnamon.desktop
 share/applications/cinnamon2d.desktop
@@ -423,10 +396,12 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/applets/notifications@cinnamon.org/low-notif-symbolic.svg
 %%DATADIR%%/applets/notifications@cinnamon.org/metadata.json
 %%DATADIR%%/applets/notifications@cinnamon.org/normal-notif-symbolic.svg
+%%DATADIR%%/applets/notifications@cinnamon.org/settings-schema.json
 %%DATADIR%%/applets/panel-launchers@cinnamon.org/applet.js
 %%DATADIR%%/applets/panel-launchers@cinnamon.org/metadata.json
 %%DATADIR%%/applets/power@cinnamon.org/applet.js
 %%DATADIR%%/applets/power@cinnamon.org/metadata.json
+%%DATADIR%%/applets/power@cinnamon.org/settings-schema.json
 %%DATADIR%%/applets/recent@cinnamon.org/applet.js
 %%DATADIR%%/applets/recent@cinnamon.org/metadata.json
 %%DATADIR%%/applets/removable-drives@cinnamon.org/applet.js
@@ -447,6 +422,7 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/applets/show-desktop@cinnamon.org/metadata.json
 %%DATADIR%%/applets/sound@cinnamon.org/applet.js
 %%DATADIR%%/applets/sound@cinnamon.org/metadata.json
+%%DATADIR%%/applets/sound@cinnamon.org/settings-schema.json
 %%DATADIR%%/applets/spacer@cinnamon.org/applet.js
 %%DATADIR%%/applets/spacer@cinnamon.org/metadata.json
 %%DATADIR%%/applets/spacer@cinnamon.org/settings-schema.json
@@ -457,6 +433,7 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/applets/user@cinnamon.org/applet.js
 %%DATADIR%%/applets/user@cinnamon.org/icon.png
 %%DATADIR%%/applets/user@cinnamon.org/metadata.json
+%%DATADIR%%/applets/user@cinnamon.org/settings-schema.json
 %%DATADIR%%/applets/user@cinnamon.org/stylesheet.css
 %%DATADIR%%/applets/window-list@cinnamon.org/applet.js
 %%DATADIR%%/applets/window-list@cinnamon.org/metadata.json
@@ -582,6 +559,7 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/js/ui/settings.js
 %%DATADIR%%/js/ui/soundManager.js
 %%DATADIR%%/js/ui/statusIconDispatcher.js
+%%DATADIR%%/js/ui/systray.js
 %%DATADIR%%/js/ui/themeManager.js
 %%DATADIR%%/js/ui/tooltips.js
 %%DATADIR%%/js/ui/tweener.js
@@ -611,7 +589,7 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/theme/close-window.svg
 %%DATADIR%%/theme/close.svg
 %%DATADIR%%/theme/corner-ripple.png
-%%DATADIR%%/theme/menu.png
+%%DATADIR%%/theme/menu.svg
 %%DATADIR%%/theme/overview-hover.png
 %%DATADIR%%/theme/overview.png
 %%DATADIR%%/theme/player-paused.svg
@@ -653,9 +631,57 @@ share/desktop-directories/cinnamon-system-tools.directory
 share/desktop-directories/cinnamon-system.directory
 share/desktop-directories/cinnamon-utility-accessibility.directory
 share/desktop-directories/cinnamon-utility.directory
+share/polkit-1/actions/org.cinnamon.settings-users.policy
 share/xsessions/cinnamon.desktop
 share/xsessions/cinnamon2d.desktop
 @dirrm share/xsessions
+share/icons/hicolor/scalable/categories/cs-applets.svg
+share/icons/hicolor/scalable/categories/cs-backgrounds.svg
+share/icons/hicolor/scalable/categories/cs-bluetooth.svg
+share/icons/hicolor/scalable/categories/cs-cat-admin.svg
+share/icons/hicolor/scalable/categories/cs-cat-appearance.svg
+share/icons/hicolor/scalable/categories/cs-cat-hardware.svg
+share/icons/hicolor/scalable/categories/cs-cat-prefs.svg
+share/icons/hicolor/scalable/categories/cs-color.svg
+share/icons/hicolor/scalable/categories/cs-date-time.svg
+share/icons/hicolor/scalable/categories/cs-default-applications.svg
+share/icons/hicolor/scalable/categories/cs-desklets.svg
+share/icons/hicolor/scalable/categories/cs-desktop-effects.svg
+share/icons/hicolor/scalable/categories/cs-desktop.svg
+share/icons/hicolor/scalable/categories/cs-details.svg
+share/icons/hicolor/scalable/categories/cs-display.svg
+share/icons/hicolor/scalable/categories/cs-drivers.svg
+share/icons/hicolor/scalable/categories/cs-extensions.svg
+share/icons/hicolor/scalable/categories/cs-firewall.svg
+share/icons/hicolor/scalable/categories/cs-fonts.svg
+share/icons/hicolor/scalable/categories/cs-general.svg
+share/icons/hicolor/scalable/categories/cs-keyboard.svg
+share/icons/hicolor/scalable/categories/cs-language.svg
+share/icons/hicolor/scalable/categories/cs-login.svg
+share/icons/hicolor/scalable/categories/cs-mouse.svg
+share/icons/hicolor/scalable/categories/cs-network.svg
+share/icons/hicolor/scalable/categories/cs-overview.svg
+share/icons/hicolor/scalable/categories/cs-panel.svg
+share/icons/hicolor/scalable/categories/cs-power.svg
+share/icons/hicolor/scalable/categories/cs-printer.svg
+share/icons/hicolor/scalable/categories/cs-region.svg
+share/icons/hicolor/scalable/categories/cs-screen.svg
+share/icons/hicolor/scalable/categories/cs-screensaver.svg
+share/icons/hicolor/scalable/categories/cs-sound.svg
+share/icons/hicolor/scalable/categories/cs-sources.svg
+share/icons/hicolor/scalable/categories/cs-startup-programs.svg
+share/icons/hicolor/scalable/categories/cs-tablet.svg
+share/icons/hicolor/scalable/categories/cs-themes.svg
+share/icons/hicolor/scalable/categories/cs-tiling.svg
+share/icons/hicolor/scalable/categories/cs-universal-access.svg
+share/icons/hicolor/scalable/categories/cs-user-accounts.svg
+share/icons/hicolor/scalable/categories/cs-user.svg
+share/icons/hicolor/scalable/categories/cs-windows.svg
+share/icons/hicolor/scalable/categories/cs-workspaces.svg
+share/icons/hicolor/scalable/emblems/cs-xlet-installed.svg
+share/icons/hicolor/scalable/emblems/cs-xlet-running.svg
+share/icons/hicolor/scalable/emblems/cs-xlet-system.svg
+share/icons/hicolor/scalable/emblems/cs-xlet-update.svg
 @dirrm %%DATADIR%%/theme
 @dirrm %%DATADIR%%/shaders
 @dirrm %%DATADIR%%/search_providers
@@ -704,7 +730,6 @@ share/xsessions/cinnamon2d.desktop
 @dirrm libexec/cinnamon
 @dirrm lib/cinnamon-settings/modules
 @dirrm lib/cinnamon-settings/data/spices
-@dirrm lib/cinnamon-settings/data/icons
 @dirrm lib/cinnamon-settings/data
 @dirrm lib/cinnamon-settings/bin
 @dirrm lib/cinnamon-settings-users

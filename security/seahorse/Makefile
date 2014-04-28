@@ -1,9 +1,10 @@
 # Created by: Dave McKay <dave@mu.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/security/seahorse3/Makefile 18480 2013-05-17 20:20:19Z kwm $
+#   $MCom: ports-experimental/trunk/security/seahorse/Makefile 19530 2014-04-15 14:24:24Z kwm $
 
 PORTNAME=	seahorse
-PORTVERSION=	3.6.3
+PORTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,18 +16,14 @@ BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
-		libcryptui.so:${PORTSDIR}/security/libcryptui \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 USE_XORG=	sm
 USE_LDCONFIG=	yes
-USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack gnomeprefix gtk30
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

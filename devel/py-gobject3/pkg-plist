@@ -1,36 +1,28 @@
-include/pygobject-3.0/pygobject.h
-lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.la
-lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.so
-lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.so.0
 %%PYTHON_SITELIBDIR%%/gi/__init__.py
 %%PYTHON_SITELIBDIR%%/gi/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gi/_constants.py
+%%PYTHON_SITELIBDIR%%/gi/_constants.pyc
+%%PYTHON_SITELIBDIR%%/gi/_constants.pyo
 %%PYTHON_SITELIBDIR%%/gi/_gi.la
 %%PYTHON_SITELIBDIR%%/gi/_gi.so
 %%PYTHON_SITELIBDIR%%/gi/_gi_cairo.la
 %%PYTHON_SITELIBDIR%%/gi/_gi_cairo.so
-%%PYTHON_SITELIBDIR%%/gi/_glib/__init__.py
-%%PYTHON_SITELIBDIR%%/gi/_glib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gi/_glib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gi/_glib/_glib.la
-%%PYTHON_SITELIBDIR%%/gi/_glib/_glib.so
-%%PYTHON_SITELIBDIR%%/gi/_glib/option.py
-%%PYTHON_SITELIBDIR%%/gi/_glib/option.pyc
-%%PYTHON_SITELIBDIR%%/gi/_glib/option.pyo
 %%PYTHON_SITELIBDIR%%/gi/_gobject/__init__.py
 %%PYTHON_SITELIBDIR%%/gi/_gobject/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gi/_gobject/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gi/_gobject/_gobject.la
-%%PYTHON_SITELIBDIR%%/gi/_gobject/_gobject.so
-%%PYTHON_SITELIBDIR%%/gi/_gobject/constants.py
-%%PYTHON_SITELIBDIR%%/gi/_gobject/constants.pyc
-%%PYTHON_SITELIBDIR%%/gi/_gobject/constants.pyo
-%%PYTHON_SITELIBDIR%%/gi/_gobject/propertyhelper.py
-%%PYTHON_SITELIBDIR%%/gi/_gobject/propertyhelper.pyc
-%%PYTHON_SITELIBDIR%%/gi/_gobject/propertyhelper.pyo
-%%PYTHON_SITELIBDIR%%/gi/_gobject/signalhelper.py
-%%PYTHON_SITELIBDIR%%/gi/_gobject/signalhelper.pyc
-%%PYTHON_SITELIBDIR%%/gi/_gobject/signalhelper.pyo
+%%PYTHON_SITELIBDIR%%/gi/_option.py
+%%PYTHON_SITELIBDIR%%/gi/_option.pyc
+%%PYTHON_SITELIBDIR%%/gi/_option.pyo
+%%PYTHON_SITELIBDIR%%/gi/_propertyhelper.py
+%%PYTHON_SITELIBDIR%%/gi/_propertyhelper.pyc
+%%PYTHON_SITELIBDIR%%/gi/_propertyhelper.pyo
+%%PYTHON_SITELIBDIR%%/gi/_signalhelper.py
+%%PYTHON_SITELIBDIR%%/gi/_signalhelper.pyc
+%%PYTHON_SITELIBDIR%%/gi/_signalhelper.pyo
+%%PYTHON_SITELIBDIR%%/gi/docstring.py
+%%PYTHON_SITELIBDIR%%/gi/docstring.pyc
+%%PYTHON_SITELIBDIR%%/gi/docstring.pyo
 %%PYTHON_SITELIBDIR%%/gi/importer.py
 %%PYTHON_SITELIBDIR%%/gi/importer.pyc
 %%PYTHON_SITELIBDIR%%/gi/importer.pyo
@@ -73,7 +65,7 @@ lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.so.0
 %%PYTHON_SITELIBDIR%%/gi/types.py
 %%PYTHON_SITELIBDIR%%/gi/types.pyc
 %%PYTHON_SITELIBDIR%%/gi/types.pyo
-%%PYTHON_SITELIBDIR%%/pygobject-%%VERSION%%-pypython%%PYTHON_VER%%-freebsd-%%UNAME_R%%-%%ARCH%%.egg-info
+%%PYTHON_SITELIBDIR%%/pygobject-%%VERSION%%-py%%PYTHON_VERSION%%-freebsd-%%UNAME_R%%-%%ARCH%%.egg-info
 %%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.py
 %%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.pyo
@@ -83,11 +75,8 @@ lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.so.0
 %%PYTHON_SITELIBDIR%%/pygtkcompat/pygtkcompat.py
 %%PYTHON_SITELIBDIR%%/pygtkcompat/pygtkcompat.pyc
 %%PYTHON_SITELIBDIR%%/pygtkcompat/pygtkcompat.pyo
-libdata/pkgconfig/pygobject-3.0.pc
 @dirrm %%PYTHON_SITELIBDIR%%/pygtkcompat
 @dirrm %%PYTHON_SITELIBDIR%%/gi/repository
 @dirrm %%PYTHON_SITELIBDIR%%/gi/overrides
 @dirrm %%PYTHON_SITELIBDIR%%/gi/_gobject
-@dirrm %%PYTHON_SITELIBDIR%%/gi/_glib
 @dirrm %%PYTHON_SITELIBDIR%%/gi
-@dirrmtry include/pygobject-3.0

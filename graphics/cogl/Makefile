@@ -1,10 +1,9 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports/trunk/graphics/cogl/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#  $MCom: ports-experimental/trunk/graphics/cogl/Makefile 19235 2014-03-23 07:26:21Z kwm $
 
 PORTNAME=	cogl
-PORTVERSION=	1.12.2
-PORTREVISION=	1
+PORTVERSION=	1.18.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -16,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	clutter-1.6.[0-9]*
 
-USES=		gettext gmake libtool pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	gdkpixbuf2 gnomeprefix atk pango introspection:build
 USE_GL=		gl

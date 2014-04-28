@@ -20,6 +20,7 @@ lib/libyelp.a
 lib/libyelp.la
 lib/libyelp.so
 lib/libyelp.so.0
+lib/libyelp.so.0.0.0
 share/applications/yelp.desktop
 share/doc/libyelp/YelpDocument.html
 share/doc/libyelp/YelpLocationEntry.html
@@ -35,7 +36,6 @@ share/doc/libyelp/index.html
 share/doc/libyelp/index.sgml
 share/doc/libyelp/left.png
 share/doc/libyelp/libyelp-yelp-error.html
-share/doc/libyelp/libyelp.devhelp
 share/doc/libyelp/libyelp.devhelp2
 share/doc/libyelp/object-tree.html
 share/doc/libyelp/right.png
@@ -74,6 +74,7 @@ share/locale/fi/LC_MESSAGES/yelp.mo
 share/locale/fr/LC_MESSAGES/yelp.mo
 share/locale/fur/LC_MESSAGES/yelp.mo
 share/locale/ga/LC_MESSAGES/yelp.mo
+share/locale/gd/LC_MESSAGES/yelp.mo
 share/locale/gl/LC_MESSAGES/yelp.mo
 share/locale/gu/LC_MESSAGES/yelp.mo
 share/locale/km/LC_MESSAGES/yelp.mo
@@ -177,6 +178,187 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 %%DATADIR%%/icons/hicolor/scalable/status/yelp-page-tip-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/status/yelp-page-ui-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/status/yelp-page-video-symbolic.svg
+%%DATADIR%%/mathjax/MathJax.js
+%%DATADIR%%/mathjax/config/MMLorHTML.js
+%%DATADIR%%/mathjax/config/yelp.js
+%%DATADIR%%/mathjax/extensions/MathEvents.js
+%%DATADIR%%/mathjax/extensions/MathMenu.js
+%%DATADIR%%/mathjax/extensions/MathZoom.js
+%%DATADIR%%/mathjax/extensions/mml2jax.js
+%%DATADIR%%/mathjax/extensions/HTML-CSS/handle-floats.js
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Bold.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Bold.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-BoldItalic.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Bold.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Italic.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Script-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Typewriter-Regular.woff
+%%DATADIR%%/mathjax/jax/element/mml/jax.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/Arrows.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/BasicLatin.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/CombDiactForSymbols.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/Dingbats.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/GeneralPunctuation.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/GeometricShapes.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/GreekAndCoptic.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/Latin1Supplement.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/LetterlikeSymbols.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/Makefile.am
+%%DATADIR%%/mathjax/jax/element/mml/optable/MathOperators.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/MiscMathSymbolsA.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/MiscMathSymbolsB.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/MiscSymbolsAndArrows.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/MiscTechnical.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/SpacingModLetters.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/SuppMathOperators.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/SupplementalArrowsA.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/SupplementalArrowsB.js
+%%DATADIR%%/mathjax/jax/input/MathML/config.js
+%%DATADIR%%/mathjax/jax/input/MathML/jax.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/a.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/b.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/c.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/d.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/e.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/f.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/fr.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/g.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/h.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/i.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/j.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/k.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/l.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/m.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/n.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/o.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/opf.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/p.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/q.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/r.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/s.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/scr.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/t.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/u.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/v.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/w.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/x.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/y.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/z.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/config.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/jax.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/Makefile.am
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/annotation-xml.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/maction.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/menclose.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/mglyph.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/mmultiscripts.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/ms.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/mtable.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/multiline.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/fontdata-extra.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/fontdata.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/Arrows.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/BBBold.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/BoxDrawing.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/Dingbats.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/EnclosedAlphanum.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/GeneralPunctuation.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/GeometricShapes.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/GreekAndCoptic.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/Latin1Supplement.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/LatinExtendedA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/LetterlikeSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/MathOperators.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/MiscMathSymbolsB.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/MiscSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/MiscTechnical.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/PUA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/SpacingModLetters.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/SuppMathOperators.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Caligraphic/Bold/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Caligraphic/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Bold/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Bold/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Bold/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Bold/PUA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Regular/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Regular/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Regular/PUA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Bold/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/BoldItalic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Italic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/Arrows.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/CombDiactForSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/GeneralPunctuation.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/GeometricShapes.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/Latin1Supplement.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/LatinExtendedA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/LatinExtendedB.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/LetterlikeSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/MathOperators.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/MiscMathSymbolsA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/MiscSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/MiscTechnical.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/SpacingModLetters.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/SuppMathOperators.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/SupplementalArrowsA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic/GeneralPunctuation.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic/Latin1Supplement.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic/LetterlikeSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular/GeometricShapes.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular/MiscSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular/SpacingModLetters.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Math/BoldItalic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Math/Italic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Bold/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Bold/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Bold/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Bold/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Italic/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Italic/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Italic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Italic/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Regular/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Regular/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Regular/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Script/Regular/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Script/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Script/Regular/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size1/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size2/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size3/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size4/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter/Regular/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter/Regular/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter/Regular/Other.js
+%%DATADIR%%/mathjax/jax/output/NativeMML/config.js
+%%DATADIR%%/mathjax/jax/output/NativeMML/jax.js
 %%DATADIR%%/xslt/db2html.xsl
 %%DATADIR%%/xslt/info2html.xsl
 %%DATADIR%%/xslt/mal2html.xsl
@@ -184,6 +366,63 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 %%DATADIR%%/xslt/yelp-common.xsl
 share/yelp-xsl/xslt/common/domains/yelp.xml
 @dirrm %%DATADIR%%/xslt
+@dirrm %%DATADIR%%/mathjax/jax/output/NativeMML
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size4/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size4
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size3/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size3
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size2/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size2
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size1/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size1
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Script/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Script
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Italic
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Bold
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Math/Italic
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Math/BoldItalic
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Math
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Italic
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/BoldItalic
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Bold
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Bold
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Caligraphic/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Caligraphic/Bold
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Caligraphic
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload
+@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS
+@dirrm %%DATADIR%%/mathjax/jax/output
+@dirrm %%DATADIR%%/mathjax/jax/input/MathML/entities
+@dirrm %%DATADIR%%/mathjax/jax/input/MathML
+@dirrm %%DATADIR%%/mathjax/jax/input
+@dirrm %%DATADIR%%/mathjax/jax/element/mml/optable
+@dirrm %%DATADIR%%/mathjax/jax/element/mml
+@dirrm %%DATADIR%%/mathjax/jax/element
+@dirrm %%DATADIR%%/mathjax/jax
+@dirrm %%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff
+@dirrm %%DATADIR%%/mathjax/fonts/HTML-CSS/TeX
+@dirrm %%DATADIR%%/mathjax/fonts/HTML-CSS
+@dirrm %%DATADIR%%/mathjax/fonts
+@dirrm %%DATADIR%%/mathjax/extensions/HTML-CSS
+@dirrm %%DATADIR%%/mathjax/extensions
+@dirrm %%DATADIR%%/mathjax/config
+@dirrm %%DATADIR%%/mathjax
 @dirrm %%DATADIR%%/icons/hicolor/scalable/status
 @dirrm %%DATADIR%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/icons/hicolor/scalable

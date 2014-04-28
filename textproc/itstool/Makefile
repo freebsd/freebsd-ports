@@ -1,5 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/textproc/itstool/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	itstool
 PORTVERSION=	2.0.2
@@ -15,7 +16,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON_RUN=	2
 GNU_CONFIGURE=	yes
 

@@ -1,20 +1,24 @@
 bin/alacarte
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/MainWindow.py
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/MainWindow.pyc
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/MainWindow.pyo
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/MenuEditor.py
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/MenuEditor.pyc
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/MenuEditor.pyo
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/__init__.py
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/__init__.pyc
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/__init__.pyo
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/config.py
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/config.pyc
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/config.pyo
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/util.py
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/util.pyc
-%%PYTHON_LIBDIR%%/site-packages/Alacarte/util.pyo
+lib/python/site-packages/Alacarte/ItemEditor.py
+lib/python/site-packages/Alacarte/MainWindow.py
+lib/python/site-packages/Alacarte/MenuEditor.py
+lib/python/site-packages/Alacarte/__init__.py
+lib/python/site-packages/Alacarte/config.py
+lib/python/site-packages/Alacarte/util.py
+lib/python/site-packages/Alacarte/__pycache__/ItemEditor.cpython-33.pyc
+lib/python/site-packages/Alacarte/__pycache__/ItemEditor.cpython-33.pyo
+lib/python/site-packages/Alacarte/__pycache__/MenuEditor.cpython-33.pyc
+lib/python/site-packages/Alacarte/__pycache__/MenuEditor.cpython-33.pyo
+lib/python/site-packages/Alacarte/__pycache__/__init__.cpython-33.pyc
+lib/python/site-packages/Alacarte/__pycache__/__init__.cpython-33.pyo
+lib/python/site-packages/Alacarte/__pycache__/config.cpython-33.pyc
+lib/python/site-packages/Alacarte/__pycache__/config.cpython-33.pyo
+lib/python/site-packages/Alacarte/__pycache__/util.cpython-33.pyc
+lib/python/site-packages/Alacarte/__pycache__/util.cpython-33.pyo
+man/man1/alacarte.1.gz
 share/alacarte/alacarte.ui
+share/alacarte/directory-editor.ui
+share/alacarte/launcher-editor.ui
 share/applications/alacarte.desktop
 share/icons/hicolor/16x16/apps/alacarte.png
 share/icons/hicolor/22x22/apps/alacarte.png
@@ -124,4 +128,7 @@ share/locale/zu/LC_MESSAGES/alacarte.mo
 @dirrm share/locale/bem/LC_MESSAGES
 @dirrm share/locale/bem
 @dirrm share/alacarte
-@dirrm %%PYTHON_LIBDIR%%/site-packages/Alacarte
+@dirrm lib/python/site-packages/Alacarte/__pycache__
+@dirrm lib/python/site-packages/Alacarte
+@dirrmtry lib/python/site-packages
+@dirrmtry lib/python

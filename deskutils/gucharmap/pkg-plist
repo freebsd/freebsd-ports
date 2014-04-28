@@ -18,6 +18,7 @@ lib/libgucharmap_2_90.la
 lib/libgucharmap_2_90.so
 lib/libgucharmap_2_90.so.7
 libdata/pkgconfig/gucharmap-2.90.pc
+share/appdata/gucharmap.appdata.xml
 share/applications/gucharmap.desktop
 share/gir-1.0/Gucharmap-2.90.gir
 share/help/C/gucharmap/index.docbook
@@ -134,6 +135,7 @@ share/locale/sr@latin/LC_MESSAGES/gucharmap.mo
 share/locale/sv/LC_MESSAGES/gucharmap.mo
 share/locale/ta/LC_MESSAGES/gucharmap.mo
 share/locale/te/LC_MESSAGES/gucharmap.mo
+share/locale/tg/LC_MESSAGES/gucharmap.mo
 share/locale/th/LC_MESSAGES/gucharmap.mo
 share/locale/tr/LC_MESSAGES/gucharmap.mo
 share/locale/ug/LC_MESSAGES/gucharmap.mo
@@ -219,5 +221,6 @@ share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
 @dirrm share/help/C/gucharmap
 @dirrmtry share/help/C
 @dirrmtry share/help
+@dirrmtry share/appdata
 @dirrm include/gucharmap-2.90/gucharmap
 @dirrm include/gucharmap-2.90

@@ -1,6 +1,6 @@
---- libsoup/Makefile.in.orig	2013-03-30 07:53:47.000000000 +0000
-+++ libsoup/Makefile.in	2013-03-30 07:56:16.000000000 +0000
-@@ -146,7 +146,7 @@
+--- libsoup/Makefile.in.orig	2014-03-10 13:11:37.184605224 +0000
++++ libsoup/Makefile.in	2014-03-10 13:13:20.683597512 +0000
+@@ -176,7 +176,7 @@
  	$(AM_CFLAGS) $(CFLAGS) $(libsoup_2_4_la_LDFLAGS) $(LDFLAGS) -o \
  	$@
  @BUILD_LIBSOUP_GNOME_TRUE@libsoup_gnome_2_4_la_DEPENDENCIES =  \
@@ -9,7 +9,7 @@
  am__libsoup_gnome_2_4_la_SOURCES_DIST = soup-cookie-jar-sqlite.c \
  	soup-gnome-features.c soup-proxy-resolver-gnome.h \
  	soup-proxy-resolver-gnome.c soup-password-manager-gnome.h \
-@@ -582,7 +582,7 @@
+@@ -629,7 +629,7 @@
  @BUILD_LIBSOUP_GNOME_TRUE@	-export-symbols $(srcdir)/libsoup-gnome-2.4.sym
  
  @BUILD_LIBSOUP_GNOME_TRUE@libsoup_gnome_2_4_la_LIBADD = \
@@ -18,12 +18,12 @@
  @BUILD_LIBSOUP_GNOME_TRUE@	$(GLIB_LIBS)
  
  @BUILD_LIBSOUP_GNOME_TRUE@libsoup_gnome_2_4_la_SOURCES = \
-@@ -637,7 +637,7 @@
+@@ -682,7 +682,7 @@
  @BUILD_LIBSOUP_GNOME_TRUE@@HAVE_INTROSPECTION_TRUE@	--include-uninstalled=$(builddir)/Soup-2.4.gir
  
- @BUILD_LIBSOUP_GNOME_TRUE@@HAVE_INTROSPECTION_TRUE@SoupGNOME_2_4_gir_CFLAGS = $(INCLUDES)
+ @BUILD_LIBSOUP_GNOME_TRUE@@HAVE_INTROSPECTION_TRUE@SoupGNOME_2_4_gir_CFLAGS = $(AM_CPPFLAGS)
 -@BUILD_LIBSOUP_GNOME_TRUE@@HAVE_INTROSPECTION_TRUE@SoupGNOME_2_4_gir_LIBS = libsoup-gnome-2.4.la libsoup-2.4.la
-+@BUILD_LIBSOUP_GNOME_TRUE@@HAVE_INTROSPECTION_TRUE@SoupGNOME_2_4_gir_LIBS = libsoup-gnome-2.4.la -lsoup-2.4
++@BUILD_LIBSOUP_GNOME_TRUE@@HAVE_INTROSPECTION_TRUE@SoupGNOME_2_4_gir_LIBS = libsoup-gnome-2.4.la soup-2.4
  @BUILD_LIBSOUP_GNOME_TRUE@@HAVE_INTROSPECTION_TRUE@SoupGNOME_2_4_gir_FILES = $(addprefix $(srcdir)/,$(gi_soup_gnome_files))
  @BUILD_LIBSOUP_GNOME_TRUE@@HAVE_INTROSPECTION_TRUE@SoupGNOME_2_4_gir_EXPORT_PACKAGES = libsoup-gnome-2.4
  @HAVE_INTROSPECTION_TRUE@girdir = $(datadir)/gir-1.0

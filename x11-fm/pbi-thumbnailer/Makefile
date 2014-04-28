@@ -14,6 +14,4 @@ USES=		pkgconfig tar:bzip2 uidfix shared-mime-info
 USE_GNOME=	gtk20 gconf2
 MAKE_ENV=	GCONF_CONFIG_SOURCE=${GCONF_CONFIG_SOURCE} UPDATE_MIME_DATABASE=${TRUE}
 
-GCONF_SCHEMAS=	pbi-thumbnail.schemas
-
 .include <bsd.port.mk>

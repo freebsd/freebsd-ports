@@ -13,6 +13,7 @@ lib/libmetacity-private.a
 lib/libmetacity-private.la
 lib/libmetacity-private.so
 lib/libmetacity-private.so.0
+lib/libmetacity-private.so.0.0.0
 libdata/pkgconfig/libmetacity-private.pc
 man/man1/metacity-message.1.gz
 man/man1/metacity-theme-viewer.1.gz

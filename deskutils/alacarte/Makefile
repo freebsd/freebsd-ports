@@ -1,20 +1,23 @@
 # Created by: Joe Maloney jmaloney@pkgdemon.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/deskutils/alacarte/Makefile 18888 2013-11-13 15:24:02Z gusi $
+#   $MCom: ports/trunk/deskutils/alacarte/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	alacarte
-PORTVERSION=	3.6.1
-CATEGORIES=	x11 gnome
+PORTVERSION=	3.11.91
+PORTREVISION=	1
+CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Freedesktop compliant menu editor for GNOME
 
-USE_XZ=		yes
-USE_GNOME=	gnomemenus3 gnomeprefix intlhack pygobject3
-USES=		gettext gmake pkgconfig
-USE_PYTHON=	yes
+BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+
+USES=		gettext gmake pkgconfig tar:xz
+USE_GNOME=	gnomemenus3 gnomeprefix intlhack libxslt:build \
+		py3gobject3
+USE_PYTHON=	3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -1,9 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/yelp3/Makefile 18692 2013-09-22 00:45:30Z kwm $
+#   $MCom: ports-experimental/trunk/x11/yelp/Makefile 19337 2014-03-25 19:31:08Z kwm $
 
 PORTNAME=	yelp
-PORTVERSION=	3.6.2
+PORTVERSION=	3.12.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,10 +19,10 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/yelp-xsl.pc:${PORTSDIR}/textproc/y
 LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/yelp-xsl.pc:${PORTSDIR}/textproc/yelp-xsl
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+		pkgconfig tar:xz
 USE_XORG=	x11 ice
-USE_GNOME=	gnomeprefix intlhack gtk30 libxslt libxml2
+USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 libxslt
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -40,6 +40,6 @@ LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyelp.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyelp.so.*
 
 .include <bsd.port.post.mk>

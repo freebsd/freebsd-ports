@@ -1,8 +1,9 @@
+# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/cheese3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/multimedia/cheese/Makefile 19524 2014-04-15 05:58:53Z gusi $
 
 PORTNAME=	cheese
-PORTVERSION=	3.6.0
+PORTVERSION=	3.12.1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,16 +17,14 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_
 		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libhal.so:${PORTSDIR}/sysutils/hal \
-		libgee.so.2:${PORTSDIR}/devel/libgee06 \
 		libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \
 		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-video-effects.pc:${PORTSDIR}/graphics/gnome-video-effects
 
-USE_XORG=	xxf86vm x11
-USE_XZ=		yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 librsvg2 \
 		gnomedesktop3 libxml2:build introspection:build
-USES=		gettext gmake pathfix pkgconfig
+USE_XORG=	xxf86vm x11
 USE_GSTREAMER1=	bad good jpeg ogg theora v4l2 vpx
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

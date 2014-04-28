@@ -279,9 +279,11 @@ lib/girepository-1.0/WebKit-1.0.typelib
 lib/libjavascriptcoregtk-1.0.la
 lib/libjavascriptcoregtk-1.0.so
 lib/libjavascriptcoregtk-1.0.so.0
+lib/libjavascriptcoregtk-1.0.so.0.13.4
 lib/libwebkitgtk-1.0.la
 lib/libwebkitgtk-1.0.so
 lib/libwebkitgtk-1.0.so.0
+lib/libwebkitgtk-1.0.so.0.13.4
 libdata/pkgconfig/javascriptcoregtk-1.0.pc
 libdata/pkgconfig/webkit-1.0.pc
 libdata/pkgconfig/webkitgtk-1.0.pc

@@ -1,74 +1,75 @@
 bin/gnome-sudoku
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/colors.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/colors.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/colors.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/dancer.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/dancer.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/dancer.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/defaults.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/defaults.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/defaults.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/defs.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/defs.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/defs.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/dialog_swallower.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/dialog_swallower.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/dialog_swallower.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/game_selector.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/game_selector.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/game_selector.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gnome_sudoku.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gnome_sudoku.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gnome_sudoku.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gsudoku.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gsudoku.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gsudoku.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/Undo.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/Undo.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/Undo.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/__init__.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/dialog_extras.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/dialog_extras.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/dialog_extras.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/main.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/main.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/main.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/number_box.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/number_box.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/number_box.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/pausable.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/pausable.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/pausable.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/printing.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/printing.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/printing.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/saver.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/saver.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/saver.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/simple_debug.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/simple_debug.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/simple_debug.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_maker.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_maker.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_maker.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_thumber.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_thumber.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_thumber.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.pyo
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/tracker_info.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/tracker_info.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/tracker_info.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/colors.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/dancer.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/defaults.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/defs.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/dialog_swallower.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/game_selector.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gnome_sudoku.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gsudoku.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/main.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/number_box.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/pausable.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/printing.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/saver.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/simple_debug.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/sudoku.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/sudoku_maker.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/sudoku_thumber.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/timer.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/tracker_info.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/__init__.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/__init__.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/colors.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/colors.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/dancer.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/dancer.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/defaults.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/defaults.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/defs.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/defs.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/dialog_swallower.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/dialog_swallower.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/game_selector.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/game_selector.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/gnome_sudoku.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/gnome_sudoku.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/gsudoku.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/gsudoku.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/main.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/main.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/number_box.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/number_box.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/pausable.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/pausable.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/printing.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/printing.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/saver.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/saver.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/simple_debug.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/simple_debug.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/sudoku.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/sudoku.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/sudoku_maker.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/sudoku_maker.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/sudoku_thumber.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/sudoku_thumber.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/timer.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/timer.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/tracker_info.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/__pycache__/tracker_info.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gtk_goodies/Undo.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gtk_goodies/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gtk_goodies/dialog_extras.py
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gtk_goodies/__pycache__/Undo.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gtk_goodies/__pycache__/Undo.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gtk_goodies/__pycache__/__init__.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gtk_goodies/__pycache__/__init__.cpython-33.pyo
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gtk_goodies/__pycache__/dialog_extras.cpython-33.pyc
+%%PYTHON_LIBDIR%%/site-packages/gnome_sudoku/gtk_goodies/__pycache__/dialog_extras.cpython-33.pyo
 man/man6/gnome-sudoku.6.gz
+share/appdata/gnome-sudoku.appdata.xml
 share/applications/gnome-sudoku.desktop
 share/gnome-sudoku/images/footprints.png
 share/gnome-sudoku/print_games.ui
@@ -408,6 +409,36 @@ share/help/gl/gnome-sudoku/strategy.page
 share/help/gl/gnome-sudoku/toolbar.page
 share/help/gl/gnome-sudoku/trackers.page
 share/help/gl/gnome-sudoku/translate.page
+share/help/hu/gnome-sudoku/basics.page
+share/help/hu/gnome-sudoku/bug-filing.page
+share/help/hu/gnome-sudoku/commandline.page
+share/help/hu/gnome-sudoku/develop.page
+share/help/hu/gnome-sudoku/documentation.page
+share/help/hu/gnome-sudoku/highlighting.page
+share/help/hu/gnome-sudoku/hints.page
+share/help/hu/gnome-sudoku/index.page
+share/help/hu/gnome-sudoku/keyboard-shortcuts.page
+share/help/hu/gnome-sudoku/legal.xml
+share/help/hu/gnome-sudoku/license.page
+share/help/hu/gnome-sudoku/notes.page
+share/help/hu/gnome-sudoku/print-blank-puzzles.page
+share/help/hu/gnome-sudoku/print-inprogress-game.page
+share/help/hu/gnome-sudoku/rules.page
+share/help/hu/gnome-sudoku/save-resume.page
+share/help/hu/gnome-sudoku/statistics.page
+share/help/hu/gnome-sudoku/strategy.page
+share/help/hu/gnome-sudoku/toolbar.page
+share/help/hu/gnome-sudoku/trackers.page
+share/help/hu/gnome-sudoku/translate.page
+share/help/hu/gnome-sudoku/figures/logo.png
+share/help/hu/gnome-sudoku/figures/logo32.png
+share/help/hu/gnome-sudoku/figures/possible-numbers.png
+share/help/hu/gnome-sudoku/figures/resuming.png
+share/help/hu/gnome-sudoku/figures/rowcolumnbox.png
+share/help/hu/gnome-sudoku/figures/stats-very-hard.png
+share/help/hu/gnome-sudoku/figures/strategy1.png
+share/help/hu/gnome-sudoku/figures/strategy2.png
+share/help/hu/gnome-sudoku/figures/trackers.webm
 share/help/it/gnome-sudoku/basics.page
 share/help/it/gnome-sudoku/bug-filing.page
 share/help/it/gnome-sudoku/commandline.page
@@ -683,7 +714,6 @@ share/icons/HighContrast/22x22/apps/gnome-sudoku.png
 share/icons/HighContrast/24x24/apps/gnome-sudoku.png
 share/icons/HighContrast/256x256/apps/gnome-sudoku.png
 share/icons/HighContrast/48x48/apps/gnome-sudoku.png
-share/icons/HighContrast/scalable/apps/gnome-sudoku.svg
 share/icons/hicolor/16x16/apps/gnome-sudoku.png
 share/icons/hicolor/22x22/apps/gnome-sudoku.png
 share/icons/hicolor/24x24/apps/gnome-sudoku.png
@@ -815,6 +845,17 @@ share/locale/zh_TW/LC_MESSAGES/gnome-sudoku.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/icons/HighContrast/48x48/apps
+@dirrmtry share/icons/HighContrast/48x48
+@dirrmtry share/icons/HighContrast/256x256/apps
+@dirrmtry share/icons/HighContrast/256x256
+@dirrmtry share/icons/HighContrast/24x24/apps
+@dirrmtry share/icons/HighContrast/24x24
+@dirrmtry share/icons/HighContrast/22x22/apps
+@dirrmtry share/icons/HighContrast/22x22
+@dirrmtry share/icons/HighContrast/16x16/apps
+@dirrmtry share/icons/HighContrast/16x16
+@dirrmtry share/icons/HighContrast
 @dirrm share/help/zh_CN/gnome-sudoku/figures
 @dirrm share/help/zh_CN/gnome-sudoku
 @dirrmtry share/help/zh_CN
@@ -842,6 +883,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-sudoku.mo
 @dirrm share/help/it/gnome-sudoku/figures
 @dirrm share/help/it/gnome-sudoku
 @dirrmtry share/help/it
+@dirrm share/help/hu/gnome-sudoku/figures
+@dirrm share/help/hu/gnome-sudoku
+@dirrmtry share/help/hu
 @dirrm share/help/gl/gnome-sudoku/figures
 @dirrm share/help/gl/gnome-sudoku
 @dirrmtry share/help/gl
@@ -879,5 +923,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-sudoku.mo
 @dirrmtry share/gnome-sudoku/puzzles
 @dirrmtry share/gnome-sudoku/images
 @dirrmtry share/gnome-sudoku
+@dirrmtry share/appdata
+@dirrmtry %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/__pycache__
 @dirrmtry %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies
+@dirrmtry %%PYTHON_SITELIBDIR%%/gnome_sudoku/__pycache__
 @dirrmtry %%PYTHON_SITELIBDIR%%/gnome_sudoku

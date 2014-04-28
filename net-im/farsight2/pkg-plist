@@ -47,6 +47,7 @@ lib/libgstfarsight-0.10.a
 lib/libgstfarsight-0.10.la
 lib/libgstfarsight-0.10.so
 lib/libgstfarsight-0.10.so.0
+lib/libgstfarsight-0.10.so.0.9.1
 %%PYTHON_SITELIBDIR%%/farsight.a
 %%PYTHON_SITELIBDIR%%/farsight.la
 %%PYTHON_SITELIBDIR%%/farsight.so

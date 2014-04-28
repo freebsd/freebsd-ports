@@ -1,3 +1,4 @@
+bin/gapplication
 bin/gdbus
 bin/gdbus-codegen
 bin/gio-querymodules
@@ -109,6 +110,7 @@ include/glib-2.0/gio/gnetworkaddress.h
 include/glib-2.0/gio/gnetworking.h
 include/glib-2.0/gio/gnetworkmonitor.h
 include/glib-2.0/gio/gnetworkservice.h
+include/glib-2.0/gio/gnotification.h
 include/glib-2.0/gio/goutputstream.h
 include/glib-2.0/gio/gpermission.h
 include/glib-2.0/gio/gpollableinputstream.h
@@ -141,6 +143,8 @@ include/glib-2.0/gio/gsocketcontrolmessage.h
 include/glib-2.0/gio/gsocketlistener.h
 include/glib-2.0/gio/gsocketservice.h
 include/glib-2.0/gio/gsrvtarget.h
+include/glib-2.0/gio/gsubprocess.h
+include/glib-2.0/gio/gsubprocesslauncher.h
 include/glib-2.0/gio/gtask.h
 include/glib-2.0/gio/gtcpconnection.h
 include/glib-2.0/gio/gtcpwrapperconnection.h
@@ -294,8 +298,9 @@ libdata/pkgconfig/gthread-2.0.pc
 share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
-%%GDB%%share/gdb/auto-load/libglib-2.0.so.0-gdb.py
-%%GDB%%share/gdb/auto-load/libgobject-2.0.so.0-gdb.py
+share/bash-completion/completions/gapplication
+%%GDB%%share/gdb/auto-load/libglib-2.0.so.%%LIBVERSION%%-gdb.py
+%%GDB%%share/gdb/auto-load/libgobject-2.0.so.%%LIBVERSION%%-gdb.py
 share/glib-2.0/codegen/__init__.py
 share/glib-2.0/codegen/__init__.pyc
 share/glib-2.0/codegen/__init__.pyo

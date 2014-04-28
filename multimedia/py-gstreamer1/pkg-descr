@@ -1,0 +1,10 @@
+gst-python provides a convenient wrapper for the GStreamer library for
+use in Python programs, and takes care of many of the boring details
+such as managing memory and type casting.
+
+Like the GTK library itself gst-python is licensed under the GNU LGPL, so is
+suitable for use in both free software and proprietary applications.  It
+is already in use in many applications ranging from small single purpose
+scripts up to large full features applications.
+
+WWW: http://gstreamer.freedesktop.org/

@@ -1,76 +1,85 @@
 bin/gcr-viewer
 include/gck-1/gck/gck-deprecated.h
 include/gck-1/gck/gck-enum-types.h
+include/gck-1/gck/gck-version.h
 include/gck-1/gck/gck.h
 include/gck-1/gck/pkcs11.h
 include/gck-1/gck/pkcs11n.h
 include/gck-1/gck/pkcs11x.h
 include/gcr-3/gcr/gcr-base.h
-include/gcr-3/gcr/gcr-certificate-basics-widget.h
 include/gcr-3/gcr/gcr-certificate-chain.h
-include/gcr-3/gcr/gcr-certificate-details-widget.h
-include/gcr-3/gcr/gcr-certificate-renderer.h
 include/gcr-3/gcr/gcr-certificate-request.h
-include/gcr-3/gcr/gcr-certificate-widget.h
 include/gcr-3/gcr/gcr-certificate.h
-include/gcr-3/gcr/gcr-collection-model.h
 include/gcr-3/gcr/gcr-collection.h
 include/gcr-3/gcr/gcr-column.h
-include/gcr-3/gcr/gcr-combo-selector.h
 include/gcr-3/gcr/gcr-comparable.h
 include/gcr-3/gcr/gcr-deprecated-base.h
-include/gcr-3/gcr/gcr-deprecated.h
 include/gcr-3/gcr/gcr-enum-types-base.h
-include/gcr-3/gcr/gcr-enum-types.h
-include/gcr-3/gcr/gcr-failure-renderer.h
 include/gcr-3/gcr/gcr-filter-collection.h
 include/gcr-3/gcr/gcr-fingerprint.h
 include/gcr-3/gcr/gcr-icons.h
-include/gcr-3/gcr/gcr-import-button.h
 include/gcr-3/gcr/gcr-import-interaction.h
 include/gcr-3/gcr/gcr-importer.h
-include/gcr-3/gcr/gcr-key-renderer.h
-include/gcr-3/gcr/gcr-key-widget.h
 include/gcr-3/gcr/gcr-library.h
-include/gcr-3/gcr/gcr-list-selector.h
 include/gcr-3/gcr/gcr-mock-prompter.h
 include/gcr-3/gcr/gcr-parser.h
 include/gcr-3/gcr/gcr-pkcs11-certificate.h
-include/gcr-3/gcr/gcr-prompt-dialog.h
 include/gcr-3/gcr/gcr-prompt.h
-include/gcr-3/gcr/gcr-renderer.h
 include/gcr-3/gcr/gcr-secret-exchange.h
-include/gcr-3/gcr/gcr-secure-entry-buffer.h
 include/gcr-3/gcr/gcr-secure-memory.h
 include/gcr-3/gcr/gcr-simple-certificate.h
 include/gcr-3/gcr/gcr-simple-collection.h
 include/gcr-3/gcr/gcr-system-prompt.h
 include/gcr-3/gcr/gcr-system-prompter.h
-include/gcr-3/gcr/gcr-tree-selector.h
 include/gcr-3/gcr/gcr-trust.h
 include/gcr-3/gcr/gcr-types.h
 include/gcr-3/gcr/gcr-union-collection.h
-include/gcr-3/gcr/gcr-unlock-options-widget.h
 include/gcr-3/gcr/gcr-unlock-options.h
-include/gcr-3/gcr/gcr-viewer-widget.h
-include/gcr-3/gcr/gcr-viewer.h
+include/gcr-3/gcr/gcr-version.h
 include/gcr-3/gcr/gcr.h
+include/gcr-3/ui/gcr-certificate-basics-widget.h
+include/gcr-3/ui/gcr-certificate-details-widget.h
+include/gcr-3/ui/gcr-certificate-renderer.h
+include/gcr-3/ui/gcr-certificate-widget.h
+include/gcr-3/ui/gcr-collection-model.h
+include/gcr-3/ui/gcr-combo-selector.h
+include/gcr-3/ui/gcr-deprecated.h
+include/gcr-3/ui/gcr-enum-types.h
+include/gcr-3/ui/gcr-failure-renderer.h
+include/gcr-3/ui/gcr-import-button.h
+include/gcr-3/ui/gcr-key-renderer.h
+include/gcr-3/ui/gcr-key-widget.h
+include/gcr-3/ui/gcr-list-selector.h
+include/gcr-3/ui/gcr-prompt-dialog.h
+include/gcr-3/ui/gcr-renderer.h
+include/gcr-3/ui/gcr-secure-entry-buffer.h
+include/gcr-3/ui/gcr-tree-selector.h
+include/gcr-3/ui/gcr-ui.h
+include/gcr-3/ui/gcr-unlock-options-widget.h
+include/gcr-3/ui/gcr-viewer-widget.h
+include/gcr-3/ui/gcr-viewer.h
 lib/girepository-1.0/Gck-1.typelib
 lib/girepository-1.0/Gcr-3.typelib
+lib/girepository-1.0/GcrUi-3.typelib
 lib/libgck-1.la
 lib/libgck-1.so
 lib/libgck-1.so.0
-lib/libgcr-3.la
+lib/libgck-1.so.0.0.0
 lib/libgcr-3.so
 lib/libgcr-3.so.1
+lib/libgcr-3.so.1.0.0
 lib/libgcr-base-3.la
 lib/libgcr-base-3.so
 lib/libgcr-base-3.so.1
-lib/libmock-test-module.la
-lib/libmock-test-module.so
+lib/libgcr-base-3.so.1.0.0
+lib/libgcr-ui-3.la
+lib/libgcr-ui-3.so
+lib/libgcr-ui-3.so.1
+lib/libgcr-ui-3.so.1.0.0
 libdata/pkgconfig/gck-1.pc
 libdata/pkgconfig/gcr-3.pc
 libdata/pkgconfig/gcr-base-3.pc
+libdata/pkgconfig/gcr-ui-3.pc
 libexec/gcr-prompter
 share/GConf/gsettings/org.gnome.crypto.pgp.convert
 share/GConf/gsettings/org.gnome.crypto.pgp_keyservers.convert
@@ -82,6 +91,7 @@ share/gcr-3/ui/gcr-pkcs11-import-dialog.ui
 share/gcr-3/ui/gcr-unlock-options-widget.ui
 share/gir-1.0/Gck-1.gir
 share/gir-1.0/Gcr-3.gir
+share/gir-1.0/GcrUi-3.gir
 share/gtk-doc/html/gck/GckAttributes.html
 share/gtk-doc/html/gck/GckEnumerator.html
 share/gtk-doc/html/gck/GckModule.html
@@ -93,6 +103,7 @@ share/gtk-doc/html/gck/annotation-glossary.html
 share/gtk-doc/html/gck/gck-Errors.html
 share/gtk-doc/html/gck/gck-GckAttribute.html
 share/gtk-doc/html/gck/gck-GckModule-lists.html
+share/gtk-doc/html/gck/gck-Library-Utilities.html
 share/gtk-doc/html/gck/gck-Miscellaneous-Functions.html
 share/gtk-doc/html/gck/gck-PKCS11-URIs.html
 share/gtk-doc/html/gck/gck.devhelp2
@@ -111,6 +122,7 @@ share/gtk-doc/html/gcr-3/GcrCertificateWidget.html
 share/gtk-doc/html/gcr-3/GcrCollection.html
 share/gtk-doc/html/gcr-3/GcrCollectionModel.html
 share/gtk-doc/html/gcr-3/GcrComboSelector.html
+share/gtk-doc/html/gcr-3/GcrComparable.html
 share/gtk-doc/html/gcr-3/GcrImportButton.html
 share/gtk-doc/html/gcr-3/GcrImporter.html
 share/gtk-doc/html/gcr-3/GcrKeyWidget.html
@@ -138,10 +150,10 @@ share/gtk-doc/html/gcr-3/combo-selector.png
 share/gtk-doc/html/gcr-3/gcr-3.devhelp2
 share/gtk-doc/html/gcr-3/gcr-GcrCertificateRequest.html
 share/gtk-doc/html/gcr-3/gcr-GcrColumn.html
-share/gtk-doc/html/gcr-3/gcr-GcrComparable.html
 share/gtk-doc/html/gcr-3/gcr-GcrImportInteraction.html
 share/gtk-doc/html/gcr-3/gcr-Key-Fingerprints.html
-share/gtk-doc/html/gcr-3/gcr-Library-Settings.html
+share/gtk-doc/html/gcr-3/gcr-Library-PKCS#11.html
+share/gtk-doc/html/gcr-3/gcr-Library-Utilities.html
 share/gtk-doc/html/gcr-3/gcr-Non-pageable-Memory.html
 share/gtk-doc/html/gcr-3/gcr-Trust-Storage-and-Lookups.html
 share/gtk-doc/html/gcr-3/home.png
@@ -263,6 +275,7 @@ share/locale/sv/LC_MESSAGES/gcr.mo
 share/locale/ta/LC_MESSAGES/gcr.mo
 share/locale/te/LC_MESSAGES/gcr.mo
 share/locale/th/LC_MESSAGES/gcr.mo
+share/locale/tg/LC_MESSAGES/gcr.mo
 share/locale/tr/LC_MESSAGES/gcr.mo
 share/locale/ug/LC_MESSAGES/gcr.mo
 share/locale/uk/LC_MESSAGES/gcr.mo
@@ -272,12 +285,20 @@ share/locale/zh_CN/LC_MESSAGES/gcr.mo
 share/locale/zh_HK/LC_MESSAGES/gcr.mo
 share/locale/zh_TW/LC_MESSAGES/gcr.mo
 share/mime/packages/gcr-crypto-types.xml
+share/vala/vapi/gck-1.deps
+share/vala/vapi/gck-1.vapi
+share/vala/vapi/gcr-3.deps
+share/vala/vapi/gcr-3.vapi
+share/vala/vapi/gcr-ui-3.deps
+share/vala/vapi/gcr-ui-3.vapi
+share/vala/vapi/pkcs11.vapi
 @dirrm share/gtk-doc/html/gcr-3
 @dirrm share/gtk-doc/html/gck
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
 @dirrm share/gcr-3/ui
 @dirrm share/gcr-3
+@dirrm include/gcr-3/ui
 @dirrm include/gcr-3/gcr
 @dirrm include/gcr-3
 @dirrm include/gck-1/gck

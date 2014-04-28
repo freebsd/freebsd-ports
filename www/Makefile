@@ -188,7 +188,6 @@
     SUBDIR += entrans
     SUBDIR += ephemera
     SUBDIR += epiphany
-    SUBDIR += epiphany-extensions
     SUBDIR += erwn
     SUBDIR += eventum
     SUBDIR += evolution-webcal

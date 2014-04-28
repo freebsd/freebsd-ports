@@ -1,20 +1,17 @@
 bin/four-in-a-row
 man/man6/four-in-a-row.6.gz
 share/appdata/four-in-a-row.appdata.xml
-share/applications/gnect.desktop
-%%DATADIR%%/bg_grotty.jpg
-%%DATADIR%%/bg_nightfall.jpg
+share/applications/four-in-a-row.desktop
 %%DATADIR%%/bg_toplight.png
+%%DATADIR%%/tileset_50x50_faenza-glines-icon1.svg
+%%DATADIR%%/tileset_50x50_faenza-glines-icon2.svg
+%%DATADIR%%/tileset_50x50_faenza-gnect-icon.svg
 %%DATADIR%%/sounds/bad.ogg
 %%DATADIR%%/sounds/bonus.ogg
 %%DATADIR%%/sounds/reverse.ogg
 %%DATADIR%%/sounds/slide.ogg
-%%DATADIR%%/tileset_50x50_catseyes.png
-%%DATADIR%%/tileset_50x50_glassy.png
 %%DATADIR%%/tileset_50x50_hcinverse.svg
 %%DATADIR%%/tileset_50x50_hcontrast.svg
-%%DATADIR%%/tileset_50x50_square.png
-%%DATADIR%%/tileset_50x50_sunspot.svg
 %%DATADIR%%/white_ob.cn4.gz
 share/help/C/four-in-a-row/appearance.page
 share/help/C/four-in-a-row/basics.page
@@ -413,6 +410,19 @@ share/locale/zh_TW/LC_MESSAGES/four-in-a-row.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/icons/HighContrast/48x48/apps
+@dirrmtry share/icons/HighContrast/48x48
+@dirrmtry share/icons/HighContrast/32x32/apps
+@dirrmtry share/icons/HighContrast/32x32
+@dirrmtry share/icons/HighContrast/256x256/apps
+@dirrmtry share/icons/HighContrast/256x256
+@dirrmtry share/icons/HighContrast/24x24/apps
+@dirrmtry share/icons/HighContrast/24x24
+@dirrmtry share/icons/HighContrast/22x22/apps
+@dirrmtry share/icons/HighContrast/22x22
+@dirrmtry share/icons/HighContrast/16x16/apps
+@dirrmtry share/icons/HighContrast/16x16
+@dirrmtry share/icons/HighContrast
 @dirrmtry share/help/zh_CN/four-in-a-row/figures
 @dirrmtry share/help/zh_CN/four-in-a-row
 @dirrmtry share/help/zh_CN
@@ -473,6 +483,7 @@ share/locale/zh_TW/LC_MESSAGES/four-in-a-row.mo
 @dirrmtry share/help/C/four-in-a-row/figures
 @dirrmtry share/help/C/four-in-a-row
 @dirrmtry share/help/C
+@dirrmtry share/help
 @dirrmtry %%DATADIR%%/sounds
 @dirrmtry %%DATADIR%%
 @dirrmtry share/appdata

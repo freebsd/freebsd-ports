@@ -1,9 +1,9 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libnotify/Makefile 19001 2014-02-07 11:57:24Z kwm $
+#   $MCom: ports/trunk/devel/libnotify/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	libnotify
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -13,9 +13,8 @@ COMMENT=	Library for desktop notifications
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_XZ=		yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack glib20 gdkpixbuf2 introspection
-USES=		gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

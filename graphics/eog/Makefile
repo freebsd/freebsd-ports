@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/eog3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/graphics/eog/Makefile 19504 2014-04-14 21:10:37Z gusi $
 
 PORTNAME=	eog
-PORTVERSION=	3.6.2
+PORTVERSION=	3.12.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,12 +19,10 @@ LIB_DEPENDS=	libpeas-gtk-1.0.so:${PORTSDIR}/devel/libpeas \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USE_XZ=		yes
 USE_GNOME=	gnomeprefix intlhack librsvg2 gtk30 gnomedesktop3 \
 		introspection:build
 INSTALLS_ICONS=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shared-mime-info
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

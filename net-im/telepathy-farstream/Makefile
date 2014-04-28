@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-farstream/Makefile 18966 2013-12-20 12:11:23Z kwm $
+#    $MCom: ports/trunk/net-im/telepathy-farstream/Makefile 19593 2014-04-28 11:41:58Z gusi $
 
 PORTNAME=	telepathy-farstream
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -15,19 +15,16 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
 		libfarstream-0.2.so:${PORTSDIR}/net-im/farstream
 
+USES=		gmake libtool:keepla pathfix pkgconfig
+USE_GNOME=	glib20 libxslt:build introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USES=		gmake pathfix pkgconfig
-USE_GNOME=	glib20 libxslt:build ltverhack introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(^pkgconfigdir =\).*|\1 ${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/telepathy-farstream/Makefile.in
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
 
 .include <bsd.port.mk>

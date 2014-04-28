@@ -496,7 +496,6 @@
     SUBDIR += libcaca
     SUBDIR += libcdr
     SUBDIR += libchamplain
-    SUBDIR += libchamplain08
     SUBDIR += libdmtx
     SUBDIR += libdrm
     SUBDIR += libecwj2
@@ -515,6 +514,7 @@
     SUBDIR += libgnomecanvas-reference
     SUBDIR += libgnomecanvasmm26
     SUBDIR += libgphoto2
+    SUBDIR += libgxps
     SUBDIR += libimg
     SUBDIR += libiptcdata
     SUBDIR += libjpeg-turbo

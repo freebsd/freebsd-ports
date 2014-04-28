@@ -1,9 +1,9 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/multimedia/libquvi/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	libquvi
-PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTVERSION=	0.9.4
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE
@@ -11,21 +11,26 @@ MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cross-platform library for parsing flash media stream URLs
 
-LICENSE=	LGPL21 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	AGPLv3
 
-BUILD_DEPENDS=	libquvi-scripts>=0.4.0:${PORTSDIR}/multimedia/libquvi-scripts
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	libquvi-scripts>=0.9:${PORTSDIR}/multimedia/libquvi-scripts
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libproxy.so:${PORTSDIR}/net/libproxy \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS
 
 PORTSCOUT=	limit:0.4.[0-9]*
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+USES=		iconv lua pathfix pkgconfig tar:xz
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		iconv lua pathfix pkgconfig tar:xz
+CPPFLAGS+=	-I${LOCALBASE}/include
+
+QUVI_VER=	0.9
+PLIST_SUB+=	VERSION=${QUVI_VER}
 
 PROJECTHOST=	quvi
 
@@ -33,7 +38,6 @@ post-patch:
 	@${REINPLACE_CMD} 's/lua-5.1/lua-${LUA_VER}/g' ${WRKSRC}/configure
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/doc/nd/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libquvi-*.so
 
 .include <bsd.port.mk>

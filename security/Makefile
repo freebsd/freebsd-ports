@@ -254,7 +254,6 @@
     SUBDIR += libassuan
     SUBDIR += libbeid
     SUBDIR += libbf
-    SUBDIR += libcryptui
     SUBDIR += libecc
     SUBDIR += libfprint
     SUBDIR += libgcrypt
@@ -897,7 +896,6 @@
     SUBDIR += scanssh
     SUBDIR += scrypt
     SUBDIR += seahorse
-    SUBDIR += seahorse-sharing
     SUBDIR += seccure
     SUBDIR += secpanel
     SUBDIR += sectok

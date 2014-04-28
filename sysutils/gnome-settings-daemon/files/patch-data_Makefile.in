@@ -1,0 +1,34 @@
+--- data/Makefile.in.orig	2014-03-15 10:38:22.618467723 +0000
++++ data/Makefile.in	2014-03-15 10:39:58.357459569 +0000
+@@ -91,10 +91,7 @@
+ 	$(srcdir)/org.gnome.settings-daemon.plugins.media-keys.gschema.xml.in.in \
+ 	$(srcdir)/org.gnome.settings-daemon.peripherals.gschema.xml.in.in \
+ 	$(srcdir)/org.gnome.settings-daemon.plugins.housekeeping.gschema.xml.in.in \
+-	$(srcdir)/org.gnome.settings-daemon.plugins.orientation.gschema.xml.in.in \
+-	$(srcdir)/org.gnome.settings-daemon.plugins.updates.gschema.xml.in.in \
+ 	$(srcdir)/org.gnome.settings-daemon.plugins.xrandr.gschema.xml.in.in \
+-	$(srcdir)/org.gnome.settings-daemon.peripherals.wacom.gschema.xml.in.in \
+ 	$(srcdir)/org.gnome.settings-daemon.plugins.print-notifications.gschema.xml.in.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
+@@ -114,10 +111,7 @@
+ 	org.gnome.settings-daemon.plugins.media-keys.gschema.xml.in \
+ 	org.gnome.settings-daemon.peripherals.gschema.xml.in \
+ 	org.gnome.settings-daemon.plugins.housekeeping.gschema.xml.in \
+-	org.gnome.settings-daemon.plugins.orientation.gschema.xml.in \
+-	org.gnome.settings-daemon.plugins.updates.gschema.xml.in \
+ 	org.gnome.settings-daemon.plugins.xrandr.gschema.xml.in \
+-	org.gnome.settings-daemon.peripherals.wacom.gschema.xml.in \
+ 	org.gnome.settings-daemon.plugins.print-notifications.gschema.xml.in
+ CONFIG_CLEAN_VPATH_FILES =
+ AM_V_P = $(am__v_P_@AM_V@)
+@@ -417,9 +411,6 @@
+ 	org.gnome.settings-daemon.plugins.housekeeping.gschema.xml	\
+ 	org.gnome.settings-daemon.plugins.print-notifications.gschema.xml	\
+ 	org.gnome.settings-daemon.plugins.xrandr.gschema.xml		\
+-	org.gnome.settings-daemon.plugins.updates.gschema.xml		\
+-	org.gnome.settings-daemon.plugins.orientation.gschema.xml	\
+-	org.gnome.settings-daemon.peripherals.wacom.gschema.xml
+ 
+ convertdir = $(datadir)/GConf/gsettings
+ convert_DATA = gnome-settings-daemon.convert

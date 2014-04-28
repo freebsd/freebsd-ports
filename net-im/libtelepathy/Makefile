@@ -1,5 +1,5 @@
 # $FreeBSD$
-#    $MCom: ports/net-im/libtelepathy/Makefile,v 1.3 2008/02/27 14:00:06 ahze Exp $
+#    $MCom: ports/trunk/net-im/libtelepathy/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	libtelepathy
 PORTVERSION=	0.3.3
@@ -12,17 +12,19 @@ COMMENT=	Flexible Communications Framework
 
 LIB_PC_DEPENDS=	dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 USE_PYTHON_BUILD=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack glib20 ltverhack
-USE_AUTOTOOLS=	libtool
+USE_GNOME=	glib20 libxslt:build
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lglib-2.0 `pkg-config --libs telepathy-glib`
 
-NO_STAGE=	yes
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtelepathy.so.2.*
 .include <bsd.port.mk>

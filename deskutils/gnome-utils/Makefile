@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-utils/Makefile 18911 2013-11-22 10:09:54Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-utils/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	gnome-utils
-PORTVERSION=	3.6.0
+PORTVERSION=	3.12.0
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	# empty
@@ -21,7 +21,10 @@ RUN_DEPENDS=	baobab>=3.0:${PORTSDIR}/deskutils/baobab \
 		gnome-dictionary>=3.0:${PORTSDIR}/deskutils/gnome-dictionary \
 		gnome-system-log>=3.0:${PORTSDIR}/deskutils/gnome-system-log \
 		gnome-font-viewer>=3.0:${PORTSDIR}/deskutils/gnome-font-viewer \
-		gnome-system-monitor>=3.0:${PORTSDIR}/sysutils/gnome-system-monitor
+		gnome-system-monitor>=3.0:${PORTSDIR}/sysutils/gnome-system-monitor \
+		gnome-photos>=3.0:${PORTSDIR}/deskutils/gnome-photos \
+		gnome-clocks>=3.0:${PORTSDIR}/deskutils/gnome-clocks \
+		gnome-maps>=3.0:${PORTSDIR}/deskutils/gnome-maps
 
 NO_BUILD=	yes
 NO_INSTALL=	yes

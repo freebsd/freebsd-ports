@@ -1,9 +1,10 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/totem/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/multimedia/totem/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	totem
-PORTVERSION=	3.6.3
+PORTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,7 +14,9 @@ COMMENT=	Gstreamer-based video player for the GNOME 3 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
-		grilo-plugins>=0.2:${PORTSDIR}/net/grilo-plugins
+		appdata-tools>=0:${PORTSDIR}/devel/appdata-tools \
+		itstool:${PORTSDIR}/textproc/itstool \
+		grilo-plugins>=0:${PORTSDIR}/net/grilo-plugins
 LIB_DEPENDS=	libgdata.so.13:${PORTSDIR}/devel/libgdata \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
@@ -24,25 +27,27 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
 		gnome-settings-daemon>=2.91.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		gnome-icon-theme-symbolic>=2.91.0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
-		grilo-plugins>=0.2:${PORTSDIR}/net/grilo-plugins
+		grilo-plugins>=0:${PORTSDIR}/net/grilo-plugins
 
-USE_PYTHON=	yes
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shebangfix tar:xz
+USE_GNOME=	gnomehier gnomeprefix gtk30 intlhack introspection:build \
+		libxml2 nautilus3 py3gobject3
 USE_XORG=	x11 xproto xtst ice sm
-USE_XZ=		yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig shebangfix
-USE_GNOME=	gnomeprefix intlhack gtk30 libxml2 nautilus3 ltverhack \
-		pygobject3 gnomedocutils gnomehier introspection:build
 USE_GSTREAMER1=	core good bad soup ugly
+USE_PYTHON=	3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-INSTALLS_OMF=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
+CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LIBS="-lXrandr"
 CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 SHEBANG_FILES=	data/totem-bugreport.py
+CONFIGURE_ENV+=	APPDATA_VALIDATE="${LOCALBASE}/bin/appdata-validate --nonet"
+MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 
 GLIB_SCHEMAS=	org.gnome.totem.enums.xml \
 		org.gnome.totem.gschema.xml \
@@ -50,7 +55,8 @@ GLIB_SCHEMAS=	org.gnome.totem.enums.xml \
 
 OPTIONS_DEFINE=	LIRC BROWSER_PLUGINS
 BROWSER_PLUGINS_DESC=	Web browser plugins
-TRACKER_DESC=	Tracker local search plugin
+
+PLIST_SUB+=	PYVER=${PYTHON_VER:S/.//}
 
 OPTIONS_DEFAULT=BROWSER_PLUGINS
 
@@ -65,14 +71,6 @@ TOTEM_PLUGINS=	brasero-disc-recorder chapters dbusservice im-status grilo gromit
 # iplayer zeitgeist-dp grilo
 
 .include <bsd.port.options.mk>
-
-#.if defined(WITH_TRACKER)
-#LIB_DEPENDS+=	tracker-gtk:${PORTSDIR}/sysutils/tracker-libtrackergtk
-#TOTEM_PLUGINS:=	${TOTEM_PLUGINS} tracker
-#PLIST_SUB+=	TRACKER=""
-#.else
-PLIST_SUB+=	TRACKER="@comment "
-#.endif
 
 .if ${PORT_OPTIONS:MLIRC}
 LIB_DEPENDS+=	liblirc_client.so:${PORTSDIR}/comms/lirc

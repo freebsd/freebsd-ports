@@ -1,9 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-desktop/Makefile 18985 2014-01-21 12:30:41Z gusi $
+#   $MCom: ports/trunk/x11/cinnamon-desktop/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	cinnamon-desktop
-PORTVERSION=	2.0.4
+PORTVERSION=	2.2.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -17,17 +17,17 @@ BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:${PORTSDIR}/x11/xkeyboard-config \
 		${LOCALBASE}/libdata/pkgconfig/xkbfile.pc:${PORTSDIR}/x11/libxkbfile
 
-USE_XZ=		yes
 USE_XORG=	x11 xrandr xext
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool autoconf automake
+USE_AUTOTOOLS=	libtoolize autoconf automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.cinnamon.desktop.a11y.applications.gschema.xml \
 		org.cinnamon.desktop.a11y.keyboard.gschema.xml \
 		org.cinnamon.desktop.a11y.magnifier.gschema.xml \
@@ -44,13 +44,9 @@ GLIB_SCHEMAS=	org.cinnamon.desktop.a11y.applications.gschema.xml \
 		org.cinnamon.desktop.sound.gschema.xml \
 		org.cinnamon.desktop.thumbnail-cache.gschema.xml \
 		org.cinnamon.desktop.thumbnailers.gschema.xml \
-		org.cinnamon.desktop.wm.preferences.gschema.xml \
-		org.cinnamon.system.locale.gschema.xml
+		org.cinnamon.desktop.wm.preferences.gschema.xml
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcinnamon-desktop.so*
 
 .include <bsd.port.mk>

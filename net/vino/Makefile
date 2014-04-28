@@ -1,9 +1,9 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/vino3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/net/vino/Makefile 19321 2014-03-25 13:15:22Z gusi $
 
 PORTNAME=	vino
-PORTVERSION=	3.6.2
+PORTVERSION=	3.12.0
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,8 +18,7 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 		libavahi-glib.so:${PORTSDIR}/net/avahi-app
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	xdamage xfixes xtst
 GNU_CONFIGURE=	yes

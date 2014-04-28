@@ -24,7 +24,7 @@ USE_XZ=		yes
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gnomehier orbit2 gtk20 libxml2 \
 		referencehack intlhack dconf introspection:build
 USE_LDCONFIG=	yes

@@ -1,4 +1,3 @@
-bin/gmenu-simple-editor
 etc/xdg/menus/gnome-applications.menu
 include/gnome-menus-3.0/gmenu-tree.h
 lib/girepository-1.0/GMenu-3.0.typelib
@@ -6,45 +5,26 @@ lib/libgnome-menu-3.a
 lib/libgnome-menu-3.la
 lib/libgnome-menu-3.so
 lib/libgnome-menu-3.so.0
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/__init__.py
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/__init__.pyc
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/__init__.pyo
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/config.py
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/config.pyc
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/config.pyo
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/main.py
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/main.pyc
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/main.pyo
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/maindialog.py
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/maindialog.pyc
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/maindialog.pyo
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/menufilewriter.py
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/menufilewriter.pyc
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/menufilewriter.pyo
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/menutreemodel.py
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/menutreemodel.pyc
-%%PYTHON_SITELIBDIR%%/GMenuSimpleEditor/menutreemodel.pyo
+lib/libgnome-menu-3.so.0.0.1
 libdata/pkgconfig/libgnome-menu-3.0.pc
-share/applications/gmenu-simple-editor.desktop
 share/desktop-directories/AudioVideo.directory
 share/desktop-directories/Development.directory
 share/desktop-directories/Education.directory
 share/desktop-directories/Game.directory
 share/desktop-directories/Graphics.directory
-share/desktop-directories/Hardware.directory
 share/desktop-directories/KDE.directory
 share/desktop-directories/Network.directory
 share/desktop-directories/Office.directory
-share/desktop-directories/Personal.directory
 share/desktop-directories/System-Tools.directory
-share/desktop-directories/System.directory
 share/desktop-directories/Utility-Accessibility.directory
 share/desktop-directories/Utility.directory
 share/desktop-directories/X-GNOME-Menu-Applications.directory
 share/desktop-directories/X-GNOME-Other.directory
+share/desktop-directories/X-GNOME-Sundry.directory
+share/desktop-directories/X-GNOME-SystemSettings.directory
+share/desktop-directories/X-GNOME-Utilities.directory
 share/desktop-directories/X-GNOME-WebApplications.directory
 share/gir-1.0/GMenu-3.0.gir
-share/gnome-menus/ui/gmenu-simple-editor.ui
 share/locale/af/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/an/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/ar/LC_MESSAGES/gnome-menus-3.0.mo
@@ -90,6 +70,7 @@ share/locale/hi/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/hr/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/hu/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/hy/LC_MESSAGES/gnome-menus-3.0.mo
+share/locale/ia/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/id/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/ig/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/io/LC_MESSAGES/gnome-menus-3.0.mo
@@ -139,6 +120,7 @@ share/locale/sv/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/szl/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/ta/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/te/LC_MESSAGES/gnome-menus-3.0.mo
+share/locale/tg/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/th/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/tr/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/ug/LC_MESSAGES/gnome-menus-3.0.mo
@@ -151,10 +133,7 @@ share/locale/zh_CN/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/zu/LC_MESSAGES/gnome-menus-3.0.mo
-@dirrm share/gnome-menus/ui
-@dirrm share/gnome-menus
 @dirrmtry share/desktop-directories
-@dirrm %%PYTHON_SITELIBDIR%%/GMenuSimpleEditor
 @dirrm include/gnome-menus-3.0
 @dirrmtry etc/xdg/menus
 @dirrmtry share/locale/zu/LC_MESSAGES
@@ -207,6 +186,8 @@ share/locale/zu/LC_MESSAGES/gnome-menus-3.0.mo
 @dirrmtry share/locale/io
 @dirrmtry share/locale/ig/LC_MESSAGES
 @dirrmtry share/locale/ig
+@dirrmtry share/locale/ia/LC_MESSAGES
+@dirrmtry share/locale/ia
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/ha/LC_MESSAGES

@@ -1,10 +1,9 @@
 # Created by: Frank Steinborn <steinex@nognu.de>
 # $FreeBSD$
-#    $MCom: ports/trunk/devel/libgee/Makefile 19007 2014-02-16 10:11:57Z kwm $
+#    $MCom: ports/trunk/devel/libgee/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	libgee
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTVERSION=	0.14.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -15,8 +14,7 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
-USE_XZ=		yes
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomehier introspection:build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

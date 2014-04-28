@@ -14,6 +14,7 @@
     SUBDIR += baobab
     SUBDIR += basket
     SUBDIR += bigyear
+    SUBDIR += bijiben
     SUBDIR += bitcollider
     SUBDIR += cairo-dock
     SUBDIR += cairo-dock-plugins
@@ -66,13 +67,18 @@
     SUBDIR += global-menu
     SUBDIR += gnochm
     SUBDIR += gnome-blog
+    SUBDIR += gnome-clocks
     SUBDIR += gnome-contacts
     SUBDIR += gnome-dictionary
     SUBDIR += gnome-documents
+    SUBDIR += gnome-epub-thumbnailer
     SUBDIR += gnome-font-viewer
     SUBDIR += gnome-main-menu
+    SUBDIR += gnome-maps
+    SUBDIR += gnome-photos
     SUBDIR += gnome-screenshot
     SUBDIR += gnome-search-tool
+    SUBDIR += gnome-sound-recorder
     SUBDIR += gnome-system-log
     SUBDIR += gnome-tweak-tool
     SUBDIR += gnome-utils
@@ -153,6 +159,7 @@
     SUBDIR += multisync-syncml
     SUBDIR += myitcrm
     SUBDIR += nagaina
+    SUBDIR += nautilus-sendto
     SUBDIR += nemo-extensions
     SUBDIR += note
     SUBDIR += notecase

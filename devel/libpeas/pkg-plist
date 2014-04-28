@@ -16,22 +16,22 @@ lib/girepository-1.0/PeasGtk-1.0.typelib
 lib/libpeas-1.0.la
 lib/libpeas-1.0.so
 lib/libpeas-1.0.so.0
-lib/libpeas-1.0.so.0.801.0
-%%GJS%%lib/libpeas-1.0/loaders/libgjsloader.la
-%%GJS%%lib/libpeas-1.0/loaders/libgjsloader.so
-%%PYTHONS%%lib/libpeas-1.0/loaders/libpythonloader.la
-%%PYTHONS%%lib/libpeas-1.0/loaders/libpythonloader.so
+lib/libpeas-1.0.so.0.1000.0
+%%PYTHONS%%lib/libpeas-1.0/loaders/libpython3loader.la
+%%PYTHONS%%lib/libpeas-1.0/loaders/libpython3loader.so
 %%SEED%%lib/libpeas-1.0/loaders/libseedloader.la
 %%SEED%%lib/libpeas-1.0/loaders/libseedloader.so
 lib/libpeas-gtk-1.0.la
 lib/libpeas-gtk-1.0.so
 lib/libpeas-gtk-1.0.so.0
-lib/libpeas-gtk-1.0.so.0.801.0
-%%GJS%%lib/peas-demo/plugins/gjshello/gjshello.js
-%%GJS%%lib/peas-demo/plugins/gjshello/gjshello.plugin
+lib/libpeas-gtk-1.0.so.0.1000.0
 lib/peas-demo/plugins/helloworld/helloworld.plugin
 lib/peas-demo/plugins/helloworld/libhelloworld.la
 lib/peas-demo/plugins/helloworld/libhelloworld.so
+%%PYTHONS%%lib/peas-demo/plugins/pythonhello/__pycache__/pythonhello.cpython-33.pyc
+%%PYTHONS%%lib/peas-demo/plugins/pythonhello/__pycache__/pythonhello.cpython-33.pyo
+%%PYTHONS%%lib/peas-demo/plugins/pythonhello/pythonhello.plugin
+%%PYTHONS%%lib/peas-demo/plugins/pythonhello/pythonhello.py
 lib/peas-demo/plugins/secondtime/libsecondtime.la
 lib/peas-demo/plugins/secondtime/libsecondtime.so
 lib/peas-demo/plugins/secondtime/secondtime.plugin
@@ -58,13 +58,16 @@ share/gtk-doc/html/libpeas/ch03.html
 share/gtk-doc/html/libpeas/home.png
 share/gtk-doc/html/libpeas/index.html
 share/gtk-doc/html/libpeas/index.sgml
+share/gtk-doc/html/libpeas/left-insensitive.png
 share/gtk-doc/html/libpeas/left.png
 share/gtk-doc/html/libpeas/libpeas-PeasExtension.html
 share/gtk-doc/html/libpeas/libpeas.devhelp2
 share/gtk-doc/html/libpeas/peas-gtk-plugin-manager.png
 share/gtk-doc/html/libpeas/pt01.html
+share/gtk-doc/html/libpeas/right-insensitive.png
 share/gtk-doc/html/libpeas/right.png
 share/gtk-doc/html/libpeas/style.css
+share/gtk-doc/html/libpeas/up-insensitive.png
 share/gtk-doc/html/libpeas/up.png
 share/icons/hicolor/16x16/actions/libpeas-plugin.png
 share/icons/hicolor/22x22/actions/libpeas-plugin.png
@@ -158,8 +161,9 @@ share/locale/zh_TW/LC_MESSAGES/libpeas.mo
 @dirrmtry share/locale/an
 @dirrm share/gtk-doc/html/libpeas
 %%SEED%%@dirrm lib/peas-demo/plugins/seedhello
+@dirrm lib/peas-demo/plugins/pythonhello/__pycache__
+@dirrm lib/peas-demo/plugins/pythonhello
 @dirrm lib/peas-demo/plugins/secondtime
-%%GJS%%@dirrm lib/peas-demo/plugins/gjshello
 @dirrm lib/peas-demo/plugins/helloworld
 @dirrm lib/peas-demo/plugins
 @dirrm lib/peas-demo

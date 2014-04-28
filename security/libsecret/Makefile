@@ -1,10 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/security/libsecret/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/security/libsecret/Makefile 19553 2014-04-20 07:23:27Z gusi $
 
 PORTNAME=	libsecret
-PORTVERSION=	0.15
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
@@ -14,12 +13,12 @@ COMMENT=	Library to access the secret service API
 BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USE_XZ=		yes
-USE_GNOME=	gnomehier glib20 libxslt:build intltool introspection:build
-USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
+USE_GNOME=	gnomehier glib20 libxslt:build intltool \
+		introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-introspection --disable-vala
+CONFIGURE_ARGS+=--enable-introspection
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsecret-1.so.0

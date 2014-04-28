@@ -1,9 +1,9 @@
 # Created by: Ade Lovett <ade@lovett.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/gdk-pixbuf2/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#    $MCom: ports/trunk/graphics/gdk-pixbuf2/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	gdk-pixbuf
-PORTVERSION=	2.30.0
+PORTVERSION=	2.30.7
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -12,11 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graphic library for GTK+
 
-USE_XZ=		yes
 USE_XORG=	xt xi x11
-USE_AUTOTOOLS=	libtool
-USES=		gmake pathfix pkgconfig
-USE_GNOME+=	gnomehier glib20 ltverhack introspection:build
+USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
+USE_GNOME+=	gnomehier glib20 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

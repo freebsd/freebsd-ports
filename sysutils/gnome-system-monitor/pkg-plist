@@ -1,280 +1,109 @@
 bin/gnome-system-monitor
+libexec/gnome-system-monitor/gsm-kill
+libexec/gnome-system-monitor/gsm-renice
+share/appdata/gnome-system-monitor.appdata.xml
+share/applications/gnome-system-monitor-kde.desktop
 share/applications/gnome-system-monitor.desktop
-%%DATADIR%%/interface.ui
-%%DATADIR%%/lsof.ui
-%%DATADIR%%/openfiles.ui
-%%DATADIR%%/preferences.ui
-%%DATADIR%%/renice.ui
-share/help/C/gnome-system-monitor/figures/addColumn.png
-share/help/C/gnome-system-monitor/figures/changePriority.png
-share/help/C/gnome-system-monitor/figures/colorPanel.png
-share/help/C/gnome-system-monitor/figures/columnContextMenu.png
-share/help/C/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/C/gnome-system-monitor/figures/memoryMaps.png
-share/help/C/gnome-system-monitor/figures/moreInfo.png
-share/help/C/gnome-system-monitor/figures/processListing.png
-share/help/C/gnome-system-monitor/figures/sortButton.png
-share/help/C/gnome-system-monitor/figures/sortMenu.png
-share/help/C/gnome-system-monitor/figures/sortMenu2.png
-share/help/C/gnome-system-monitor/figures/systemMonitor.png
-share/help/C/gnome-system-monitor/figures/viewMenu.png
-share/help/C/gnome-system-monitor/index.docbook
+share/help/C/gnome-system-monitor/commandline.page
+share/help/C/gnome-system-monitor/cpu-check.page
+share/help/C/gnome-system-monitor/cpu-mem-normal.page
+share/help/C/gnome-system-monitor/cpu-multicore.page
+share/help/C/gnome-system-monitor/fs-device.page
+share/help/C/gnome-system-monitor/fs-diskusage.page
+share/help/C/gnome-system-monitor/fs-info.page
+share/help/C/gnome-system-monitor/fs-showall.page
+share/help/C/gnome-system-monitor/index.page
 share/help/C/gnome-system-monitor/legal.xml
-share/help/ar/gnome-system-monitor/figures/addColumn.png
-share/help/ar/gnome-system-monitor/figures/changePriority.png
-share/help/ar/gnome-system-monitor/figures/colorPanel.png
-share/help/ar/gnome-system-monitor/figures/columnContextMenu.png
-share/help/ar/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/ar/gnome-system-monitor/figures/memoryMaps.png
-share/help/ar/gnome-system-monitor/figures/moreInfo.png
-share/help/ar/gnome-system-monitor/figures/processListing.png
-share/help/ar/gnome-system-monitor/figures/sortButton.png
-share/help/ar/gnome-system-monitor/figures/sortMenu.png
-share/help/ar/gnome-system-monitor/figures/sortMenu2.png
-share/help/ar/gnome-system-monitor/figures/systemMonitor.png
-share/help/ar/gnome-system-monitor/figures/viewMenu.png
-share/help/ar/gnome-system-monitor/index.docbook
-share/help/ar/gnome-system-monitor/legal.xml
-share/help/bg/gnome-system-monitor/figures/addColumn.png
-share/help/bg/gnome-system-monitor/figures/changePriority.png
-share/help/bg/gnome-system-monitor/figures/colorPanel.png
-share/help/bg/gnome-system-monitor/figures/columnContextMenu.png
-share/help/bg/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/bg/gnome-system-monitor/figures/memoryMaps.png
-share/help/bg/gnome-system-monitor/figures/moreInfo.png
-share/help/bg/gnome-system-monitor/figures/processListing.png
-share/help/bg/gnome-system-monitor/figures/sortButton.png
-share/help/bg/gnome-system-monitor/figures/sortMenu.png
-share/help/bg/gnome-system-monitor/figures/sortMenu2.png
-share/help/bg/gnome-system-monitor/figures/systemMonitor.png
-share/help/bg/gnome-system-monitor/figures/viewMenu.png
-share/help/bg/gnome-system-monitor/index.docbook
-share/help/bg/gnome-system-monitor/legal.xml
-share/help/ca/gnome-system-monitor/figures/addColumn.png
-share/help/ca/gnome-system-monitor/figures/changePriority.png
-share/help/ca/gnome-system-monitor/figures/colorPanel.png
-share/help/ca/gnome-system-monitor/figures/columnContextMenu.png
-share/help/ca/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/ca/gnome-system-monitor/figures/memoryMaps.png
-share/help/ca/gnome-system-monitor/figures/moreInfo.png
-share/help/ca/gnome-system-monitor/figures/processListing.png
-share/help/ca/gnome-system-monitor/figures/sortButton.png
-share/help/ca/gnome-system-monitor/figures/sortMenu.png
-share/help/ca/gnome-system-monitor/figures/sortMenu2.png
-share/help/ca/gnome-system-monitor/figures/systemMonitor.png
-share/help/ca/gnome-system-monitor/figures/viewMenu.png
-share/help/ca/gnome-system-monitor/index.docbook
-share/help/ca/gnome-system-monitor/legal.xml
-share/help/cs/gnome-system-monitor/figures/addColumn.png
-share/help/cs/gnome-system-monitor/figures/changePriority.png
-share/help/cs/gnome-system-monitor/figures/colorPanel.png
-share/help/cs/gnome-system-monitor/figures/columnContextMenu.png
-share/help/cs/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/cs/gnome-system-monitor/figures/memoryMaps.png
-share/help/cs/gnome-system-monitor/figures/moreInfo.png
-share/help/cs/gnome-system-monitor/figures/processListing.png
-share/help/cs/gnome-system-monitor/figures/sortButton.png
-share/help/cs/gnome-system-monitor/figures/sortMenu.png
-share/help/cs/gnome-system-monitor/figures/sortMenu2.png
-share/help/cs/gnome-system-monitor/figures/systemMonitor.png
-share/help/cs/gnome-system-monitor/figures/viewMenu.png
-share/help/cs/gnome-system-monitor/index.docbook
-share/help/cs/gnome-system-monitor/legal.xml
-share/help/da/gnome-system-monitor/figures/addColumn.png
-share/help/da/gnome-system-monitor/figures/changePriority.png
-share/help/da/gnome-system-monitor/figures/colorPanel.png
-share/help/da/gnome-system-monitor/figures/columnContextMenu.png
-share/help/da/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/da/gnome-system-monitor/figures/memoryMaps.png
-share/help/da/gnome-system-monitor/figures/moreInfo.png
-share/help/da/gnome-system-monitor/figures/processListing.png
-share/help/da/gnome-system-monitor/figures/sortButton.png
-share/help/da/gnome-system-monitor/figures/sortMenu.png
-share/help/da/gnome-system-monitor/figures/sortMenu2.png
-share/help/da/gnome-system-monitor/figures/systemMonitor.png
-share/help/da/gnome-system-monitor/figures/viewMenu.png
-share/help/da/gnome-system-monitor/index.docbook
-share/help/da/gnome-system-monitor/legal.xml
-share/help/de/gnome-system-monitor/figures/addColumn.png
-share/help/de/gnome-system-monitor/figures/changePriority.png
-share/help/de/gnome-system-monitor/figures/colorPanel.png
-share/help/de/gnome-system-monitor/figures/columnContextMenu.png
-share/help/de/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/de/gnome-system-monitor/figures/memoryMaps.png
-share/help/de/gnome-system-monitor/figures/moreInfo.png
-share/help/de/gnome-system-monitor/figures/processListing.png
-share/help/de/gnome-system-monitor/figures/sortButton.png
-share/help/de/gnome-system-monitor/figures/sortMenu.png
-share/help/de/gnome-system-monitor/figures/sortMenu2.png
-share/help/de/gnome-system-monitor/figures/systemMonitor.png
-share/help/de/gnome-system-monitor/figures/viewMenu.png
-share/help/de/gnome-system-monitor/index.docbook
-share/help/de/gnome-system-monitor/legal.xml
-share/help/el/gnome-system-monitor/figures/addColumn.png
-share/help/el/gnome-system-monitor/figures/changePriority.png
-share/help/el/gnome-system-monitor/figures/colorPanel.png
-share/help/el/gnome-system-monitor/figures/columnContextMenu.png
-share/help/el/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/el/gnome-system-monitor/figures/memoryMaps.png
-share/help/el/gnome-system-monitor/figures/moreInfo.png
-share/help/el/gnome-system-monitor/figures/processListing.png
-share/help/el/gnome-system-monitor/figures/sortButton.png
-share/help/el/gnome-system-monitor/figures/sortMenu.png
-share/help/el/gnome-system-monitor/figures/sortMenu2.png
-share/help/el/gnome-system-monitor/figures/systemMonitor.png
-share/help/el/gnome-system-monitor/figures/viewMenu.png
-share/help/el/gnome-system-monitor/index.docbook
+share/help/C/gnome-system-monitor/mem-check.page
+share/help/C/gnome-system-monitor/mem-swap.page
+share/help/C/gnome-system-monitor/memory-map-use.page
+share/help/C/gnome-system-monitor/net-bits.page
+share/help/C/gnome-system-monitor/process-explain.page
+share/help/C/gnome-system-monitor/process-files.page
+share/help/C/gnome-system-monitor/process-identify-file.page
+share/help/C/gnome-system-monitor/process-identify-hog.page
+share/help/C/gnome-system-monitor/process-kill.page
+share/help/C/gnome-system-monitor/process-many.page
+share/help/C/gnome-system-monitor/process-priority-change.page
+share/help/C/gnome-system-monitor/process-status.page
+share/help/C/gnome-system-monitor/process-update-speed.page
+share/help/C/gnome-system-monitor/solaris-mode.page
+share/help/C/gnome-system-monitor/units.page
+share/help/el/gnome-system-monitor/commandline.page
+share/help/el/gnome-system-monitor/cpu-check.page
+share/help/el/gnome-system-monitor/cpu-mem-normal.page
+share/help/el/gnome-system-monitor/cpu-multicore.page
+share/help/el/gnome-system-monitor/fs-device.page
+share/help/el/gnome-system-monitor/fs-diskusage.page
+share/help/el/gnome-system-monitor/fs-info.page
+share/help/el/gnome-system-monitor/fs-showall.page
+share/help/el/gnome-system-monitor/index.page
 share/help/el/gnome-system-monitor/legal.xml
-share/help/es/gnome-system-monitor/figures/addColumn.png
-share/help/es/gnome-system-monitor/figures/changePriority.png
-share/help/es/gnome-system-monitor/figures/colorPanel.png
-share/help/es/gnome-system-monitor/figures/columnContextMenu.png
-share/help/es/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/es/gnome-system-monitor/figures/memoryMaps.png
-share/help/es/gnome-system-monitor/figures/moreInfo.png
-share/help/es/gnome-system-monitor/figures/processListing.png
-share/help/es/gnome-system-monitor/figures/sortButton.png
-share/help/es/gnome-system-monitor/figures/sortMenu.png
-share/help/es/gnome-system-monitor/figures/sortMenu2.png
-share/help/es/gnome-system-monitor/figures/systemMonitor.png
-share/help/es/gnome-system-monitor/figures/viewMenu.png
-share/help/es/gnome-system-monitor/index.docbook
+share/help/el/gnome-system-monitor/mem-check.page
+share/help/el/gnome-system-monitor/mem-swap.page
+share/help/el/gnome-system-monitor/memory-map-use.page
+share/help/el/gnome-system-monitor/net-bits.page
+share/help/el/gnome-system-monitor/process-explain.page
+share/help/el/gnome-system-monitor/process-files.page
+share/help/el/gnome-system-monitor/process-identify-file.page
+share/help/el/gnome-system-monitor/process-identify-hog.page
+share/help/el/gnome-system-monitor/process-kill.page
+share/help/el/gnome-system-monitor/process-many.page
+share/help/el/gnome-system-monitor/process-priority-change.page
+share/help/el/gnome-system-monitor/process-status.page
+share/help/el/gnome-system-monitor/process-update-speed.page
+share/help/el/gnome-system-monitor/solaris-mode.page
+share/help/el/gnome-system-monitor/units.page
+share/help/es/gnome-system-monitor/commandline.page
+share/help/es/gnome-system-monitor/cpu-check.page
+share/help/es/gnome-system-monitor/cpu-mem-normal.page
+share/help/es/gnome-system-monitor/cpu-multicore.page
+share/help/es/gnome-system-monitor/fs-device.page
+share/help/es/gnome-system-monitor/fs-diskusage.page
+share/help/es/gnome-system-monitor/fs-info.page
+share/help/es/gnome-system-monitor/fs-showall.page
+share/help/es/gnome-system-monitor/index.page
 share/help/es/gnome-system-monitor/legal.xml
-share/help/eu/gnome-system-monitor/figures/addColumn.png
-share/help/eu/gnome-system-monitor/figures/changePriority.png
-share/help/eu/gnome-system-monitor/figures/colorPanel.png
-share/help/eu/gnome-system-monitor/figures/columnContextMenu.png
-share/help/eu/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/eu/gnome-system-monitor/figures/memoryMaps.png
-share/help/eu/gnome-system-monitor/figures/moreInfo.png
-share/help/eu/gnome-system-monitor/figures/processListing.png
-share/help/eu/gnome-system-monitor/figures/sortButton.png
-share/help/eu/gnome-system-monitor/figures/sortMenu.png
-share/help/eu/gnome-system-monitor/figures/sortMenu2.png
-share/help/eu/gnome-system-monitor/figures/systemMonitor.png
-share/help/eu/gnome-system-monitor/figures/viewMenu.png
-share/help/eu/gnome-system-monitor/index.docbook
-share/help/eu/gnome-system-monitor/legal.xml
-share/help/fr/gnome-system-monitor/figures/addColumn.png
-share/help/fr/gnome-system-monitor/figures/changePriority.png
-share/help/fr/gnome-system-monitor/figures/colorPanel.png
-share/help/fr/gnome-system-monitor/figures/columnContextMenu.png
-share/help/fr/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/fr/gnome-system-monitor/figures/memoryMaps.png
-share/help/fr/gnome-system-monitor/figures/moreInfo.png
-share/help/fr/gnome-system-monitor/figures/processListing.png
-share/help/fr/gnome-system-monitor/figures/sortButton.png
-share/help/fr/gnome-system-monitor/figures/sortMenu.png
-share/help/fr/gnome-system-monitor/figures/sortMenu2.png
-share/help/fr/gnome-system-monitor/figures/systemMonitor.png
-share/help/fr/gnome-system-monitor/figures/viewMenu.png
-share/help/fr/gnome-system-monitor/index.docbook
+share/help/es/gnome-system-monitor/mem-check.page
+share/help/es/gnome-system-monitor/mem-swap.page
+share/help/es/gnome-system-monitor/memory-map-use.page
+share/help/es/gnome-system-monitor/net-bits.page
+share/help/es/gnome-system-monitor/process-explain.page
+share/help/es/gnome-system-monitor/process-files.page
+share/help/es/gnome-system-monitor/process-identify-file.page
+share/help/es/gnome-system-monitor/process-identify-hog.page
+share/help/es/gnome-system-monitor/process-kill.page
+share/help/es/gnome-system-monitor/process-many.page
+share/help/es/gnome-system-monitor/process-priority-change.page
+share/help/es/gnome-system-monitor/process-status.page
+share/help/es/gnome-system-monitor/process-update-speed.page
+share/help/es/gnome-system-monitor/solaris-mode.page
+share/help/es/gnome-system-monitor/units.page
+share/help/fr/gnome-system-monitor/commandline.page
+share/help/fr/gnome-system-monitor/cpu-check.page
+share/help/fr/gnome-system-monitor/cpu-mem-normal.page
+share/help/fr/gnome-system-monitor/cpu-multicore.page
+share/help/fr/gnome-system-monitor/fs-device.page
+share/help/fr/gnome-system-monitor/fs-diskusage.page
+share/help/fr/gnome-system-monitor/fs-info.page
+share/help/fr/gnome-system-monitor/fs-showall.page
+share/help/fr/gnome-system-monitor/index.page
 share/help/fr/gnome-system-monitor/legal.xml
-share/help/gl/gnome-system-monitor/figures/addColumn.png
-share/help/gl/gnome-system-monitor/figures/changePriority.png
-share/help/gl/gnome-system-monitor/figures/colorPanel.png
-share/help/gl/gnome-system-monitor/figures/columnContextMenu.png
-share/help/gl/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/gl/gnome-system-monitor/figures/memoryMaps.png
-share/help/gl/gnome-system-monitor/figures/moreInfo.png
-share/help/gl/gnome-system-monitor/figures/processListing.png
-share/help/gl/gnome-system-monitor/figures/sortButton.png
-share/help/gl/gnome-system-monitor/figures/sortMenu.png
-share/help/gl/gnome-system-monitor/figures/sortMenu2.png
-share/help/gl/gnome-system-monitor/figures/systemMonitor.png
-share/help/gl/gnome-system-monitor/figures/viewMenu.png
-share/help/gl/gnome-system-monitor/index.docbook
-share/help/gl/gnome-system-monitor/legal.xml
-share/help/oc/gnome-system-monitor/figures/addColumn.png
-share/help/oc/gnome-system-monitor/figures/changePriority.png
-share/help/oc/gnome-system-monitor/figures/colorPanel.png
-share/help/oc/gnome-system-monitor/figures/columnContextMenu.png
-share/help/oc/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/oc/gnome-system-monitor/figures/memoryMaps.png
-share/help/oc/gnome-system-monitor/figures/moreInfo.png
-share/help/oc/gnome-system-monitor/figures/processListing.png
-share/help/oc/gnome-system-monitor/figures/sortButton.png
-share/help/oc/gnome-system-monitor/figures/sortMenu.png
-share/help/oc/gnome-system-monitor/figures/sortMenu2.png
-share/help/oc/gnome-system-monitor/figures/systemMonitor.png
-share/help/oc/gnome-system-monitor/figures/viewMenu.png
-share/help/oc/gnome-system-monitor/index.docbook
-share/help/oc/gnome-system-monitor/legal.xml
-share/help/pa/gnome-system-monitor/figures/addColumn.png
-share/help/pa/gnome-system-monitor/figures/changePriority.png
-share/help/pa/gnome-system-monitor/figures/colorPanel.png
-share/help/pa/gnome-system-monitor/figures/columnContextMenu.png
-share/help/pa/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/pa/gnome-system-monitor/figures/memoryMaps.png
-share/help/pa/gnome-system-monitor/figures/moreInfo.png
-share/help/pa/gnome-system-monitor/figures/processListing.png
-share/help/pa/gnome-system-monitor/figures/sortButton.png
-share/help/pa/gnome-system-monitor/figures/sortMenu.png
-share/help/pa/gnome-system-monitor/figures/sortMenu2.png
-share/help/pa/gnome-system-monitor/figures/systemMonitor.png
-share/help/pa/gnome-system-monitor/figures/viewMenu.png
-share/help/pa/gnome-system-monitor/index.docbook
-share/help/pa/gnome-system-monitor/legal.xml
-share/help/ru/gnome-system-monitor/figures/addColumn.png
-share/help/ru/gnome-system-monitor/figures/changePriority.png
-share/help/ru/gnome-system-monitor/figures/colorPanel.png
-share/help/ru/gnome-system-monitor/figures/columnContextMenu.png
-share/help/ru/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/ru/gnome-system-monitor/figures/memoryMaps.png
-share/help/ru/gnome-system-monitor/figures/moreInfo.png
-share/help/ru/gnome-system-monitor/figures/processListing.png
-share/help/ru/gnome-system-monitor/figures/sortButton.png
-share/help/ru/gnome-system-monitor/figures/sortMenu.png
-share/help/ru/gnome-system-monitor/figures/sortMenu2.png
-share/help/ru/gnome-system-monitor/figures/systemMonitor.png
-share/help/ru/gnome-system-monitor/figures/viewMenu.png
-share/help/ru/gnome-system-monitor/index.docbook
-share/help/ru/gnome-system-monitor/legal.xml
-share/help/sl/gnome-system-monitor/figures/addColumn.png
-share/help/sl/gnome-system-monitor/figures/changePriority.png
-share/help/sl/gnome-system-monitor/figures/colorPanel.png
-share/help/sl/gnome-system-monitor/figures/columnContextMenu.png
-share/help/sl/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/sl/gnome-system-monitor/figures/memoryMaps.png
-share/help/sl/gnome-system-monitor/figures/moreInfo.png
-share/help/sl/gnome-system-monitor/figures/processListing.png
-share/help/sl/gnome-system-monitor/figures/sortButton.png
-share/help/sl/gnome-system-monitor/figures/sortMenu.png
-share/help/sl/gnome-system-monitor/figures/sortMenu2.png
-share/help/sl/gnome-system-monitor/figures/systemMonitor.png
-share/help/sl/gnome-system-monitor/figures/viewMenu.png
-share/help/sl/gnome-system-monitor/index.docbook
-share/help/sl/gnome-system-monitor/legal.xml
-share/help/sv/gnome-system-monitor/figures/addColumn.png
-share/help/sv/gnome-system-monitor/figures/changePriority.png
-share/help/sv/gnome-system-monitor/figures/colorPanel.png
-share/help/sv/gnome-system-monitor/figures/columnContextMenu.png
-share/help/sv/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/sv/gnome-system-monitor/figures/memoryMaps.png
-share/help/sv/gnome-system-monitor/figures/moreInfo.png
-share/help/sv/gnome-system-monitor/figures/processListing.png
-share/help/sv/gnome-system-monitor/figures/sortButton.png
-share/help/sv/gnome-system-monitor/figures/sortMenu.png
-share/help/sv/gnome-system-monitor/figures/sortMenu2.png
-share/help/sv/gnome-system-monitor/figures/systemMonitor.png
-share/help/sv/gnome-system-monitor/figures/viewMenu.png
-share/help/sv/gnome-system-monitor/index.docbook
-share/help/sv/gnome-system-monitor/legal.xml
-share/help/zh_CN/gnome-system-monitor/figures/addColumn.png
-share/help/zh_CN/gnome-system-monitor/figures/changePriority.png
-share/help/zh_CN/gnome-system-monitor/figures/colorPanel.png
-share/help/zh_CN/gnome-system-monitor/figures/columnContextMenu.png
-share/help/zh_CN/gnome-system-monitor/figures/gnome-system-monitor_window.png
-share/help/zh_CN/gnome-system-monitor/figures/memoryMaps.png
-share/help/zh_CN/gnome-system-monitor/figures/moreInfo.png
-share/help/zh_CN/gnome-system-monitor/figures/processListing.png
-share/help/zh_CN/gnome-system-monitor/figures/sortButton.png
-share/help/zh_CN/gnome-system-monitor/figures/sortMenu.png
-share/help/zh_CN/gnome-system-monitor/figures/sortMenu2.png
-share/help/zh_CN/gnome-system-monitor/figures/systemMonitor.png
-share/help/zh_CN/gnome-system-monitor/figures/viewMenu.png
-share/help/zh_CN/gnome-system-monitor/index.docbook
-share/help/zh_CN/gnome-system-monitor/legal.xml
+share/help/fr/gnome-system-monitor/mem-check.page
+share/help/fr/gnome-system-monitor/mem-swap.page
+share/help/fr/gnome-system-monitor/memory-map-use.page
+share/help/fr/gnome-system-monitor/net-bits.page
+share/help/fr/gnome-system-monitor/process-explain.page
+share/help/fr/gnome-system-monitor/process-files.page
+share/help/fr/gnome-system-monitor/process-identify-file.page
+share/help/fr/gnome-system-monitor/process-identify-hog.page
+share/help/fr/gnome-system-monitor/process-kill.page
+share/help/fr/gnome-system-monitor/process-many.page
+share/help/fr/gnome-system-monitor/process-priority-change.page
+share/help/fr/gnome-system-monitor/process-status.page
+share/help/fr/gnome-system-monitor/process-update-speed.page
+share/help/fr/gnome-system-monitor/solaris-mode.page
+share/help/fr/gnome-system-monitor/units.page
 share/locale/am/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ar/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/as/LC_MESSAGES/gnome-system-monitor.mo
@@ -305,12 +134,14 @@ share/locale/fa/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/fi/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/fr/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ga/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/gd/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/gl/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/gu/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/he/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/hi/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/hr/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/hu/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/ky/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/id/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/it/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ja/LC_MESSAGES/gnome-system-monitor.mo
@@ -353,6 +184,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/sv/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ta/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/te/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/tg/LC_MESSAGES/gnome-system-monitor.mo 
 share/locale/th/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/tr/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ug/LC_MESSAGES/gnome-system-monitor.mo
@@ -361,10 +193,7 @@ share/locale/vi/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-system-monitor.mo
-share/pixmaps/gnome-system-monitor/download.svg
-share/pixmaps/gnome-system-monitor/side.png
-share/pixmaps/gnome-system-monitor/upload.svg
-@dirrm share/pixmaps/gnome-system-monitor
+share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES
@@ -391,6 +220,8 @@ share/pixmaps/gnome-system-monitor/upload.svg
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
@@ -405,59 +236,15 @@ share/pixmaps/gnome-system-monitor/upload.svg
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrm share/help/zh_CN/gnome-system-monitor/figures
-@dirrm share/help/zh_CN/gnome-system-monitor
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sv/gnome-system-monitor/figures
-@dirrm share/help/sv/gnome-system-monitor
-@dirrmtry share/help/sv
-@dirrm share/help/sl/gnome-system-monitor/figures
-@dirrm share/help/sl/gnome-system-monitor
-@dirrmtry share/help/sl
-@dirrm share/help/ru/gnome-system-monitor/figures
-@dirrm share/help/ru/gnome-system-monitor
-@dirrmtry share/help/ru
-@dirrm share/help/pa/gnome-system-monitor/figures
-@dirrm share/help/pa/gnome-system-monitor
-@dirrmtry share/help/pa
-@dirrm share/help/oc/gnome-system-monitor/figures
-@dirrm share/help/oc/gnome-system-monitor
-@dirrmtry share/help/oc
-@dirrm share/help/gl/gnome-system-monitor/figures
-@dirrm share/help/gl/gnome-system-monitor
-@dirrmtry share/help/gl
-@dirrm share/help/fr/gnome-system-monitor/figures
 @dirrm share/help/fr/gnome-system-monitor
 @dirrmtry share/help/fr
-@dirrm share/help/eu/gnome-system-monitor/figures
-@dirrm share/help/eu/gnome-system-monitor
-@dirrmtry share/help/eu
-@dirrm share/help/es/gnome-system-monitor/figures
 @dirrm share/help/es/gnome-system-monitor
 @dirrmtry share/help/es
-@dirrm share/help/el/gnome-system-monitor/figures
 @dirrm share/help/el/gnome-system-monitor
 @dirrmtry share/help/el
-@dirrm share/help/de/gnome-system-monitor/figures
-@dirrm share/help/de/gnome-system-monitor
-@dirrmtry share/help/de
-@dirrm share/help/da/gnome-system-monitor/figures
-@dirrm share/help/da/gnome-system-monitor
-@dirrmtry share/help/da
-@dirrm share/help/cs/gnome-system-monitor/figures
-@dirrm share/help/cs/gnome-system-monitor
-@dirrmtry share/help/cs
-@dirrm share/help/ca/gnome-system-monitor/figures
-@dirrm share/help/ca/gnome-system-monitor
-@dirrmtry share/help/ca
-@dirrm share/help/bg/gnome-system-monitor/figures
-@dirrm share/help/bg/gnome-system-monitor
-@dirrmtry share/help/bg
-@dirrm share/help/ar/gnome-system-monitor/figures
-@dirrm share/help/ar/gnome-system-monitor
-@dirrmtry share/help/ar
-@dirrm share/help/C/gnome-system-monitor/figures
 @dirrm share/help/C/gnome-system-monitor
 @dirrmtry share/help/C
 @dirrmtry share/help
-@dirrm %%DATADIR%%
+@dirrmtry share/appdata
+@dirrm libexec/gnome-system-monitor
+

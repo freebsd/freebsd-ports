@@ -1,4 +1,5 @@
 bin/lightsoff
+share/appdata/lightsoff.appdata.xml
 share/applications/lightsoff.desktop
 share/help/C/lightsoff/basic.page
 share/help/C/lightsoff/bug-filing.page
@@ -28,6 +29,20 @@ share/help/ca/lightsoff/license.page
 share/help/ca/lightsoff/rules.page
 share/help/ca/lightsoff/strategy.page
 share/help/ca/lightsoff/translate.page
+share/help/cs/lightsoff/basic.page
+share/help/cs/lightsoff/bug-filing.page
+share/help/cs/lightsoff/develop.page
+share/help/cs/lightsoff/documentation.page
+share/help/cs/lightsoff/index.page
+share/help/cs/lightsoff/legal.xml
+share/help/cs/lightsoff/license.page
+share/help/cs/lightsoff/rules.page
+share/help/cs/lightsoff/strategy.page
+share/help/cs/lightsoff/translate.page
+share/help/cs/lightsoff/figures/lightsoff.jpg
+share/help/cs/lightsoff/figures/lightsoff.ogv
+share/help/cs/lightsoff/figures/lightsoff_logo.jpg
+share/help/cs/lightsoff/figures/lo1.jpg
 share/help/de/lightsoff/basic.page
 share/help/de/lightsoff/bug-filing.page
 share/help/de/lightsoff/develop.page
@@ -299,6 +314,7 @@ share/locale/sr@latin/LC_MESSAGES/lightsoff.mo
 share/locale/sv/LC_MESSAGES/lightsoff.mo
 share/locale/ta/LC_MESSAGES/lightsoff.mo
 share/locale/te/LC_MESSAGES/lightsoff.mo
+share/locale/tg/LC_MESSAGES/lightsoff.mo
 share/locale/th/LC_MESSAGES/lightsoff.mo
 share/locale/tr/LC_MESSAGES/lightsoff.mo
 share/locale/ug/LC_MESSAGES/lightsoff.mo
@@ -350,6 +366,17 @@ share/locale/zh_TW/LC_MESSAGES/lightsoff.mo
 @dirrmtry share/locale/an/LC_MESSAGES
 @dirrmtry share/locale/an
 @dirrmtry share/lightsoff
+@dirrmtry share/icons/HighContrast/48x48/apps
+@dirrmtry share/icons/HighContrast/48x48
+@dirrmtry share/icons/HighContrast/256x256/apps
+@dirrmtry share/icons/HighContrast/256x256
+@dirrmtry share/icons/HighContrast/24x24/apps
+@dirrmtry share/icons/HighContrast/24x24
+@dirrmtry share/icons/HighContrast/22x22/apps
+@dirrmtry share/icons/HighContrast/22x22
+@dirrmtry share/icons/HighContrast/16x16/apps
+@dirrmtry share/icons/HighContrast/16x16
+@dirrmtry share/icons/HighContrast
 @dirrm share/help/zh_CN/lightsoff/figures
 @dirrm share/help/zh_CN/lightsoff
 @dirrmtry share/help/zh_CN
@@ -389,6 +416,9 @@ share/locale/zh_TW/LC_MESSAGES/lightsoff.mo
 @dirrm share/help/de/lightsoff/figures
 @dirrm share/help/de/lightsoff
 @dirrmtry share/help/de
+@dirrm share/help/cs/lightsoff/figures
+@dirrm share/help/cs/lightsoff
+@dirrmtry share/help/cs
 @dirrm share/help/ca/lightsoff/figures
 @dirrm share/help/ca/lightsoff
 @dirrmtry share/help/ca
@@ -396,3 +426,4 @@ share/locale/zh_TW/LC_MESSAGES/lightsoff.mo
 @dirrm share/help/C/lightsoff
 @dirrmtry share/help/C
 @dirrmtry share/help
+@dirrmtry share/appdata

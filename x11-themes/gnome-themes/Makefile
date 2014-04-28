@@ -17,12 +17,12 @@ RUN_DEPENDS=	gtk-engines2>=2.15.0:${PORTSDIR}/x11-themes/gtk-engines2
 
 CONFLICTS=	clearlooks-metacity-0.* gnome-themes-standard-3.[0-9]*
 
-USE_BZIP2=	yes
-USES=		gettext gmake pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix intlhack metacity gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

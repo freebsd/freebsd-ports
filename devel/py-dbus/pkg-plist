@@ -1,8 +1,5 @@
-include/dbus-1.0/dbus/dbus-python.h
-%%PYTHON_SITELIBDIR%%/_dbus_bindings.a
 %%PYTHON_SITELIBDIR%%/_dbus_bindings.la
 %%PYTHON_SITELIBDIR%%/_dbus_bindings.so
-%%PYTHON_SITELIBDIR%%/_dbus_glib_bindings.a
 %%PYTHON_SITELIBDIR%%/_dbus_glib_bindings.la
 %%PYTHON_SITELIBDIR%%/_dbus_glib_bindings.so
 %%PYTHON_SITELIBDIR%%/dbus/__init__.py
@@ -62,26 +59,5 @@ include/dbus-1.0/dbus/dbus-python.h
 %%PYTHON_SITELIBDIR%%/dbus/types.py
 %%PYTHON_SITELIBDIR%%/dbus/types.pyc
 %%PYTHON_SITELIBDIR%%/dbus/types.pyo
-libdata/pkgconfig/dbus-python.pc
-%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES.txt
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES.html
-%%PORTDOCS%%%%DOCSDIR%%/HACKING.txt
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/HACKING.html
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/NEWS.html
-%%PORTDOCS%%%%DOCSDIR%%/PY3PORT.txt
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/README.html
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/TODO.html
-%%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-async-client.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-client.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-service.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-signal-emitter.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-signal-recipient.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/list-system-services.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/dbus/mainloop
 @dirrm %%PYTHON_SITELIBDIR%%/dbus

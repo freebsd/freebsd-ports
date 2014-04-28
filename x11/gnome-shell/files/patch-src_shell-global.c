@@ -1,14 +1,15 @@
---- src/shell-global.c.orig	2012-10-03 22:10:22.000000000 +0000
-+++ src/shell-global.c	2012-10-03 22:12:09.000000000 +0000
-@@ -1255,9 +1255,9 @@
-   GError *error = NULL;
-   
-   /* Linux specific (I think, anyways). */
--  if (!g_file_get_contents ("/proc/self/cmdline", &buf, &len, &error))
+--- src/shell-global.c.orig	2014-03-19 18:15:45.680036087 +0000
++++ src/shell-global.c	2014-03-19 18:16:14.289034013 +0000
+@@ -1145,6 +1145,12 @@
+     g_warning ("failed to get command line args: %d", errno);
+     return;
+   }
++#elif defined __FreeBSD__
 +  if (!g_file_get_contents ("/proc/curproc/cmdline", &buf, &len, &error))
-     {
--      g_warning ("failed to get /proc/self/cmdline: %s", error->message);
++    {
 +      g_warning ("failed to get /proc/curproc/cmdline: %s", error->message);
-       return;
-     }
-       
++      return;
++    }
+ #else
+   return;
+ #endif

@@ -1,10 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/gnome-settings-daemon3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/sysutils/gnome-settings-daemon/Makefile 19545 2014-04-16 12:23:11Z gusi $
 
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	3.6.3
-PORTREVISION=	1
+PORTVERSION=	3.12.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,7 +11,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 settings daemon
 
-BUILD_DEPENDS=	gnome-session>=3.0.0:${PORTSDIR}/x11/gnome-session \
+BUILD_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
+		geoclue>=0:${PORTSDIR}/net/geoclue \
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
@@ -22,18 +23,21 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
 		libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	gnome-session>=3.0.0:${PORTSDIR}/x11/gnome-session \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
+		libgweather-3.so:${PORTSDIR}/net/libgweather
+RUN_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
+		geoclue>=0:${PORTSDIR}/net/geoclue \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_XORG=	xxf86misc
-USE_XZ=		yes
-USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libgnomekbd gnomehier
-USES=		gettext gmake pathfix pkgconfig
+USE_GNOME=	gnomehier gnomedesktop3 gnomeprefix intlhack
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-gudev \
 		--disable-systemd \
+		--disable-rfkill \
 		--disable-packagekit
 #		--disable-ibus \
 #--with-pnpids=${LOCALBASE}/share/libgnome-desktop-3.0/pnp.ids
@@ -47,6 +51,7 @@ SMARTCARD_DESC=	Smartcard support
 GLIB_SCHEMAS=	org.gnome.settings-daemon.enums.xml \
 		org.gnome.settings-daemon.peripherals.gschema.xml \
 		org.gnome.settings-daemon.plugins.color.gschema.xml \
+		org.gnome.settings-daemon.plugins.datetime.gschema.xml \
 		org.gnome.settings-daemon.plugins.gschema.xml \
 		org.gnome.settings-daemon.plugins.housekeeping.gschema.xml \
 		org.gnome.settings-daemon.plugins.keyboard.gschema.xml \
@@ -55,6 +60,8 @@ GLIB_SCHEMAS=	org.gnome.settings-daemon.enums.xml \
 		org.gnome.settings-daemon.plugins.print-notifications.gschema.xml \
 		org.gnome.settings-daemon.plugins.xrandr.gschema.xml \
 		org.gnome.settings-daemon.plugins.xsettings.gschema.xml
+# work around missing cursor with xorg-server 1.12.
+GLIB_SCHEMAS+=	cursor-plugin.gschema.override
 
 .include <bsd.port.options.mk>
 
@@ -80,6 +87,8 @@ post-patch:
 		${WRKSRC}/data/org.gnome.settings-daemon.plugins.xrandr.gschema.xml.in.in
 
 post-install:
+	${INSTALL_DATA} ${FILESDIR}/cursor-plugin.gschema.override \
+		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gnome-settings-daemon-3.0/lib*.so
 
 .include <bsd.port.mk>

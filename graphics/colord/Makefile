@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/colord/Makefile 19009 2014-03-02 22:41:42Z kwm $
+#    $MCom: ports/trunk/graphics/colord/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	colord
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -17,9 +17,8 @@ LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 USERS=		colord
 GROUPS=		colord
 
-USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomehier glib20 intlhack introspection:build
-USES=		gettext gmake pathfix pkgconfig
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

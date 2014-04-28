@@ -1,11 +1,11 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/seed3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/devel/seed/Makefile 19198 2014-03-19 15:15:47Z gusi $
 # NOTE: It may be necessary to update ${FILESDIR}/Seed.js on each release.
 # To do that, just replace imports.searchPaths with "." and ".." elements.
 
 PORTNAME=	seed
-PORTVERSION=	3.2.0
+PORTVERSION=	3.8.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,12 +19,10 @@ LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libmpfr.so:${PORTSDIR}/math/mpfr
 
-USE_XZ=		yes
-GNU_CONFIGURE=	yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intltool libxml2 introspection
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_SQLITE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

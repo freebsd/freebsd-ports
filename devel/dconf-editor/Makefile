@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/dconf-editor/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/devel/dconf-editor/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	dconf
 PORTREVISION=	0
@@ -14,10 +14,7 @@ MASTERDIR=	${.CURDIR}/../dconf
 
 PLIST=		${.CURDIR}/pkg-plist
 
-do-build:
-	@cd ${WRKSRC}/editor && ${GMAKE}
-
-do-install:
-	@cd ${WRKSRC}/editor && DESTDIR=${STAGEDIR} ${GMAKE} install
+BUILD_WRKSRC=	${WRKSRC}/editor
+INSTALL_WRKSRC=	${WRKSRC}/editor
 
 .include "${MASTERDIR}/Makefile"

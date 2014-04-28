@@ -92,7 +92,7 @@ lib/libgdata.a
 lib/libgdata.la
 lib/libgdata.so
 lib/libgdata.so.13
-lib/libgdata.so.13.5.2
+lib/libgdata.so.13.5.3
 libdata/pkgconfig/libgdata.pc
 share/doc/gdata/GDataAPPCategories.html
 share/doc/gdata/GDataAccessHandler.html

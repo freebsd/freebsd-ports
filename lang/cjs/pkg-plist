@@ -28,12 +28,6 @@ include/cjs-1.0/gi/param.h
 include/cjs-1.0/gi/repo.h
 include/cjs-1.0/gi/union.h
 include/cjs-1.0/gi/value.h
-lib/libcjs-dbus.la
-lib/libcjs-dbus.so
-lib/libcjs-dbus.so.0
-lib/libcjs.la
-lib/libcjs.so
-lib/libcjs.so.0
 lib/cjs/girepository-1.0/CjsPrivate-1.0.typelib
 lib/cjs-1.0/cairoNative.la
 lib/cjs-1.0/cairoNative.so
@@ -53,6 +47,14 @@ lib/cjs-1.0/mainloop.la
 lib/cjs-1.0/mainloop.so
 lib/cjs-1.0/system.la
 lib/cjs-1.0/system.so
+lib/libcjs-dbus.la
+lib/libcjs-dbus.so
+lib/libcjs-dbus.so.0
+lib/libcjs-dbus.so.0.0.0
+lib/libcjs.la
+lib/libcjs.so
+lib/libcjs.so.0
+lib/libcjs.so.0.0.0
 libdata/pkgconfig/cjs-1.0.pc
 libdata/pkgconfig/cjs-dbus-1.0.pc
 libdata/pkgconfig/cjs-internals-1.0.pc

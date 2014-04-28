@@ -179,6 +179,7 @@
     SUBDIR += nitpicker
     SUBDIR += nocol
     SUBDIR += nrpe
+    SUBDIR += nrpe-ssl
     SUBDIR += nsca
     SUBDIR += nsca-client
     SUBDIR += nsca27

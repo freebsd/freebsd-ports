@@ -14,6 +14,7 @@ include/libwnck-3.0/libwnck/workspace.h
 lib/libwnck-3.la
 lib/libwnck-3.so
 lib/libwnck-3.so.0
+lib/libwnck-3.so.0.2.2
 libdata/pkgconfig/libwnck-3.0.pc
 lib/girepository-1.0/Wnck-3.0.typelib
 share/gtk-doc/html/libwnck-3.0/WnckApplication.html
@@ -47,6 +48,7 @@ share/gtk-doc/html/libwnck-3.0/ix13.html
 share/gtk-doc/html/libwnck-3.0/ix14.html
 share/gtk-doc/html/libwnck-3.0/left.png
 share/gtk-doc/html/libwnck-3.0/libwnck-3.0.devhelp2
+share/gtk-doc/html/libwnck-3.0/libwnck-Icons-Functions.html
 share/gtk-doc/html/libwnck-3.0/libwnck-Miscellaneous-Functions.html
 share/gtk-doc/html/libwnck-3.0/libwnck-Resource-Usage-of-X-Clients.html
 share/gtk-doc/html/libwnck-3.0/libwnck-Version-Information.html

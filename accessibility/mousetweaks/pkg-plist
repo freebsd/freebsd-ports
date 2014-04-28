@@ -24,6 +24,8 @@ share/locale/eu/LC_MESSAGES/mousetweaks.mo
 share/locale/fa/LC_MESSAGES/mousetweaks.mo
 share/locale/fi/LC_MESSAGES/mousetweaks.mo
 share/locale/fr/LC_MESSAGES/mousetweaks.mo
+share/locale/fur/LC_MESSAGES/mousetweaks.mo
+share/locale/gd/LC_MESSAGES/mousetweaks.mo
 share/locale/gl/LC_MESSAGES/mousetweaks.mo
 share/locale/gu/LC_MESSAGES/mousetweaks.mo
 share/locale/he/LC_MESSAGES/mousetweaks.mo
@@ -59,6 +61,7 @@ share/locale/sr@latin/LC_MESSAGES/mousetweaks.mo
 share/locale/sv/LC_MESSAGES/mousetweaks.mo
 share/locale/ta/LC_MESSAGES/mousetweaks.mo
 share/locale/te/LC_MESSAGES/mousetweaks.mo
+share/locale/tg/LC_MESSAGES/mousetweaks.mo
 share/locale/th/LC_MESSAGES/mousetweaks.mo
 share/locale/tr/LC_MESSAGES/mousetweaks.mo
 share/locale/ug/LC_MESSAGES/mousetweaks.mo

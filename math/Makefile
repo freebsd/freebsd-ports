@@ -149,6 +149,7 @@
     SUBDIR += gmm++
     SUBDIR += gmp
     SUBDIR += gmp-ecm
+    SUBDIR += gnome-calculator
     SUBDIR += gnubc
     SUBDIR += gnumeric
     SUBDIR += gnuplot

@@ -1,5 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/x11/mate-session-manager/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	mate-session-manager
 PORTVERSION=	1.6.1
@@ -19,8 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consoleki
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_MATE=	settingsdaemon
 USE_XORG=	ice sm xau xext xrandr xrender xtrans xtst
 USE_GNOME=	glib20 gnomehier gtk20 intlhack librsvg2 libxslt pango

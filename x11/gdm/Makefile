@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gdm/Makefile 18858 2013-11-07 19:21:23Z gusi $
+#   $MCom: ports/trunk/x11/gdm/Makefile 19591 2014-04-28 09:28:22Z gusi $
 
 PORTNAME=	gdm
-PORTVERSION=	3.6.2
+PORTVERSION=	3.12.1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -39,20 +40,18 @@ RUN_DEPENDS+=	xrdb:${PORTSDIR}/x11/xrdb \
 USERS=		gdm
 GROUPS=		gdm
 
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 USE_XORG=	dmx dmxproto
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
-USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	dconf gnomehier gnomeprefix intlhack introspection librsvg2 gnomepanel3
+USES=		gettext gmake pathfix pkgconfig tar:xz
+USE_GNOME=	dconf gnomehier gnomeprefix intlhack introspection librsvg2
 GNU_CONFIGURE=	yes
 GLIB_SCHEMAS=	org.gnome.login-screen.gschema.xml
 CONFIGURE_ARGS=	--disable-static \
 		--mandir=${PREFIX}/man \
-		--with-lang-file=${PREFIX}/etc/gdm/i18n \
+		--with-lang-file=${PREFIX}/etc/gdm/locale.conf \
 		--with-at-spi-registryd-directory=${LOCALBASE}/libexec \
 		--with-custom-conf=${PREFIX}/etc/gdm/custom.conf \
 		--with-dbus-sys=${PREFIX}/etc/dbus-1/system.d \
@@ -76,7 +75,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 SUB_FILES+=	gdm-launch-environment \
 		gdm-password \
 		gdm-autologin \
-		client.conf
+		client.conf \
+		locale.conf
 
 GDMDIR?=	${PREFIX}/etc/gdm
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -127,9 +127,7 @@ post-patch:
 		${WRKSRC}/data/Xsession.in
 	@${RM}	${WRKSRC}/data/applications/gdm-simple-greeter.desktop \
 		${WRKSRC}/data/applications/gdm-simple-greeter.desktop.in \
-		${WRKSRC}/data/applications/gnome-mag.desktop \
 		${WRKSRC}/data/applications/gnome-shell.desktop \
-		${WRKSRC}/data/applications/gok.desktop
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/gdm.conf-custom \
@@ -139,7 +137,6 @@ post-install:
 	${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/dm/Sessions
 
 	${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/gdm/home
-	${CHOWN} ${USER}:${GROUP} ${STAGEDIR}${PREFIX}/etc/gdm/home
 	${CHMOD} 1770 ${STAGEDIR}${PREFIX}/etc/gdm/home
 	${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/gdm/home/.pulse/
 
@@ -149,11 +146,12 @@ post-install:
 
 	${INSTALL_DATA} ${WRKDIR}/client.conf ${STAGEDIR}${PREFIX}/etc/gdm/home/.pulse/
 
+	${INSTALL_DATA} ${WRKDIR}/locale.conf ${STAGEDIR}${PREFIX}/etc/gdm/
+
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdm*.so.1
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gdm/simple-greeter/extensions/lib*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdm.so.1
 
 # logwtmp lives here.
 .if ${OSVERSION} < 900000

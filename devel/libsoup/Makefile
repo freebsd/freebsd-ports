@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libsoup/Makefile 19016 2014-03-08 09:05:27Z kwm $
+#   $MCom: ports/trunk/devel/libsoup/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	libsoup
-PORTVERSION=	2.42.3.1
-PORTREVISION?=	0
+PORTVERSION=	2.46.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,30 +15,30 @@ BUILD_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
 
-USE_XZ=		yes
+USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomehier glib20 libxml2 referencehack intltool
+USES+=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 gnomehier intltool introspection:build \
+		libxml2 referencehack
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_PYTHON_BUILD=	2
+USE_PYTHON_BUILD=	3
 CONFIGURE_ARGS=	--disable-more-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-LIBVERSION=	1.6.0
+LIBVERSION=	1.7.0
 PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
 
 .if defined(SOUP_SLAVE)
-USE_SQLITE=	3
+USE_SQLITE=	yes
 LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 CONFIGURE_ARGS+=--with-gnome
 .else
-USE_GNOME+=	introspection:build
 CONFIGURE_ARGS+=--without-gnome
 .endif
 
@@ -50,11 +49,11 @@ post-patch:
 		${WRKSRC}/libsoup/tld-parser.py
 
 .if defined(SOUP_SLAVE)
-do-build:
-	cd ${WRKSRC}/libsoup && ${GMAKE} libsoup-gnome-2.4.la
-
 do-install:
+	@${SED} '/^relink_command/d' ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.la
 	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.la ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/libsoup/SoupGNOME-2.4.gir ${STAGEDIR}${PREFIX}/share/gir-1.0/
+	${INSTALL_DATA} ${WRKSRC}/libsoup/SoupGNOME-2.4.typelib ${STAGEDIR}${PREFIX}/lib/girepository-1.0/
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.1 ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.${LIBVERSION} ${STAGEDIR}${PREFIX}/lib/

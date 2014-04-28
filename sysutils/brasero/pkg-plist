@@ -76,8 +76,6 @@ lib/brasero3/plugins/libbrasero-vob.la
 lib/brasero3/plugins/libbrasero-vob.so
 lib/brasero3/plugins/libbrasero-wodim.la
 lib/brasero3/plugins/libbrasero-wodim.so
-lib/girepository-1.0/BraseroBurn-3.6.0.typelib
-lib/girepository-1.0/BraseroMedia-3.6.0.typelib
 lib/libbrasero-burn3.la
 lib/libbrasero-burn3.so
 lib/libbrasero-burn3.so.3
@@ -87,14 +85,19 @@ lib/libbrasero-media3.so.3
 lib/libbrasero-utils3.la
 lib/libbrasero-utils3.so
 lib/libbrasero-utils3.so.3
+lib/girepository-1.0/BraseroBurn-3.1.typelib
+lib/girepository-1.0/BraseroMedia-3.1.typelib
 %%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-brasero-extension.la
 %%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-brasero-extension.so
 libdata/pkgconfig/libbrasero-burn3.pc
 libdata/pkgconfig/libbrasero-media3.pc
 man/man1/brasero.1.gz
 share/GConf/gsettings/brasero.convert
+share/appdata/brasero.appdata.xml
 %%NAUTILUS%%share/applications/brasero-nautilus.desktop
 share/applications/brasero.desktop
+share/gir-1.0/BraseroBurn-3.1.gir
+share/gir-1.0/BraseroMedia-3.1.gir
 %%DATADIR%%/icons/hicolor/16x16/actions/insert-pause.png
 %%DATADIR%%/icons/hicolor/16x16/actions/iso-image-burn.png
 %%DATADIR%%/icons/hicolor/16x16/actions/iso-image-new.png
@@ -305,10 +308,9 @@ share/doc/libbrasero-media/object-tree.html
 share/doc/libbrasero-media/right.png
 share/doc/libbrasero-media/style.css
 share/doc/libbrasero-media/up.png
-share/gir-1.0/BraseroBurn-3.6.0.gir
-share/gir-1.0/BraseroMedia-3.6.0.gir
 share/help/C/brasero/create-cover.page
 share/help/C/brasero/figures/brasero-main-window.png
+share/help/C/brasero/figures/logo32.png
 share/help/C/brasero/index.page
 share/help/C/brasero/introduction.page
 share/help/C/brasero/prob-cd.page
@@ -324,6 +326,7 @@ share/help/C/brasero/tools-blank.page
 share/help/C/brasero/tools-check-integrity.page
 share/help/bg/brasero/create-cover.page
 share/help/bg/brasero/figures/brasero-main-window.png
+share/help/bg/brasero/figures/logo32.png
 share/help/bg/brasero/index.page
 share/help/bg/brasero/introduction.page
 share/help/bg/brasero/prob-cd.page
@@ -339,6 +342,7 @@ share/help/bg/brasero/tools-blank.page
 share/help/bg/brasero/tools-check-integrity.page
 share/help/ca/brasero/create-cover.page
 share/help/ca/brasero/figures/brasero-main-window.png
+share/help/ca/brasero/figures/logo32.png
 share/help/ca/brasero/index.page
 share/help/ca/brasero/introduction.page
 share/help/ca/brasero/prob-cd.page
@@ -354,6 +358,7 @@ share/help/ca/brasero/tools-blank.page
 share/help/ca/brasero/tools-check-integrity.page
 share/help/cs/brasero/create-cover.page
 share/help/cs/brasero/figures/brasero-main-window.png
+share/help/cs/brasero/figures/logo32.png
 share/help/cs/brasero/index.page
 share/help/cs/brasero/introduction.page
 share/help/cs/brasero/prob-cd.page
@@ -369,6 +374,7 @@ share/help/cs/brasero/tools-blank.page
 share/help/cs/brasero/tools-check-integrity.page
 share/help/de/brasero/create-cover.page
 share/help/de/brasero/figures/brasero-main-window.png
+share/help/de/brasero/figures/logo32.png
 share/help/de/brasero/index.page
 share/help/de/brasero/introduction.page
 share/help/de/brasero/prob-cd.page
@@ -384,6 +390,7 @@ share/help/de/brasero/tools-blank.page
 share/help/de/brasero/tools-check-integrity.page
 share/help/el/brasero/create-cover.page
 share/help/el/brasero/figures/brasero-main-window.png
+share/help/el/brasero/figures/logo32.png
 share/help/el/brasero/index.page
 share/help/el/brasero/introduction.page
 share/help/el/brasero/prob-cd.page
@@ -399,6 +406,7 @@ share/help/el/brasero/tools-blank.page
 share/help/el/brasero/tools-check-integrity.page
 share/help/en_GB/brasero/create-cover.page
 share/help/en_GB/brasero/figures/brasero-main-window.png
+share/help/en_GB/brasero/figures/logo32.png
 share/help/en_GB/brasero/index.page
 share/help/en_GB/brasero/introduction.page
 share/help/en_GB/brasero/prob-cd.page
@@ -414,6 +422,7 @@ share/help/en_GB/brasero/tools-blank.page
 share/help/en_GB/brasero/tools-check-integrity.page
 share/help/es/brasero/create-cover.page
 share/help/es/brasero/figures/brasero-main-window.png
+share/help/es/brasero/figures/logo32.png
 share/help/es/brasero/index.page
 share/help/es/brasero/introduction.page
 share/help/es/brasero/prob-cd.page
@@ -429,6 +438,7 @@ share/help/es/brasero/tools-blank.page
 share/help/es/brasero/tools-check-integrity.page
 share/help/eu/brasero/create-cover.page
 share/help/eu/brasero/figures/brasero-main-window.png
+share/help/eu/brasero/figures/logo32.png
 share/help/eu/brasero/index.page
 share/help/eu/brasero/introduction.page
 share/help/eu/brasero/prob-cd.page
@@ -444,6 +454,7 @@ share/help/eu/brasero/tools-blank.page
 share/help/eu/brasero/tools-check-integrity.page
 share/help/fi/brasero/create-cover.page
 share/help/fi/brasero/figures/brasero-main-window.png
+share/help/fi/brasero/figures/logo32.png
 share/help/fi/brasero/index.page
 share/help/fi/brasero/introduction.page
 share/help/fi/brasero/prob-cd.page
@@ -459,6 +470,7 @@ share/help/fi/brasero/tools-blank.page
 share/help/fi/brasero/tools-check-integrity.page
 share/help/fr/brasero/create-cover.page
 share/help/fr/brasero/figures/brasero-main-window.png
+share/help/fr/brasero/figures/logo32.png
 share/help/fr/brasero/index.page
 share/help/fr/brasero/introduction.page
 share/help/fr/brasero/prob-cd.page
@@ -474,6 +486,7 @@ share/help/fr/brasero/tools-blank.page
 share/help/fr/brasero/tools-check-integrity.page
 share/help/gl/brasero/create-cover.page
 share/help/gl/brasero/figures/brasero-main-window.png
+share/help/gl/brasero/figures/logo32.png
 share/help/gl/brasero/index.page
 share/help/gl/brasero/introduction.page
 share/help/gl/brasero/prob-cd.page
@@ -489,6 +502,7 @@ share/help/gl/brasero/tools-blank.page
 share/help/gl/brasero/tools-check-integrity.page
 share/help/hu/brasero/create-cover.page
 share/help/hu/brasero/figures/brasero-main-window.png
+share/help/hu/brasero/figures/logo32.png
 share/help/hu/brasero/index.page
 share/help/hu/brasero/introduction.page
 share/help/hu/brasero/prob-cd.page
@@ -502,8 +516,25 @@ share/help/hu/brasero/project-video.page
 share/help/hu/brasero/split-track.page
 share/help/hu/brasero/tools-blank.page
 share/help/hu/brasero/tools-check-integrity.page
+share/help/id/brasero/create-cover.page
+share/help/id/brasero/figures/brasero-main-window.png
+share/help/id/brasero/figures/logo32.png
+share/help/id/brasero/index.page
+share/help/id/brasero/introduction.page
+share/help/id/brasero/prob-cd.page
+share/help/id/brasero/prob-dvd.page
+share/help/id/brasero/project-audio.page
+share/help/id/brasero/project-data.page
+share/help/id/brasero/project-disc-copy.page
+share/help/id/brasero/project-image-burn.page
+share/help/id/brasero/project-save.page
+share/help/id/brasero/project-video.page
+share/help/id/brasero/split-track.page
+share/help/id/brasero/tools-blank.page
+share/help/id/brasero/tools-check-integrity.page
 share/help/it/brasero/create-cover.page
 share/help/it/brasero/figures/brasero-main-window.png
+share/help/it/brasero/figures/logo32.png
 share/help/it/brasero/index.page
 share/help/it/brasero/introduction.page
 share/help/it/brasero/prob-cd.page
@@ -517,8 +548,25 @@ share/help/it/brasero/project-video.page
 share/help/it/brasero/split-track.page
 share/help/it/brasero/tools-blank.page
 share/help/it/brasero/tools-check-integrity.page
+share/help/ja/brasero/create-cover.page
+share/help/ja/brasero/figures/brasero-main-window.png
+share/help/ja/brasero/figures/logo32.png
+share/help/ja/brasero/index.page
+share/help/ja/brasero/introduction.page
+share/help/ja/brasero/prob-cd.page
+share/help/ja/brasero/prob-dvd.page
+share/help/ja/brasero/project-audio.page
+share/help/ja/brasero/project-data.page
+share/help/ja/brasero/project-disc-copy.page
+share/help/ja/brasero/project-image-burn.page
+share/help/ja/brasero/project-save.page
+share/help/ja/brasero/project-video.page
+share/help/ja/brasero/split-track.page
+share/help/ja/brasero/tools-blank.page
+share/help/ja/brasero/tools-check-integrity.page
 share/help/ko/brasero/create-cover.page
 share/help/ko/brasero/figures/brasero-main-window.png
+share/help/ko/brasero/figures/logo32.png
 share/help/ko/brasero/index.page
 share/help/ko/brasero/introduction.page
 share/help/ko/brasero/prob-cd.page
@@ -534,6 +582,7 @@ share/help/ko/brasero/tools-blank.page
 share/help/ko/brasero/tools-check-integrity.page
 share/help/lv/brasero/create-cover.page
 share/help/lv/brasero/figures/brasero-main-window.png
+share/help/lv/brasero/figures/logo32.png
 share/help/lv/brasero/index.page
 share/help/lv/brasero/introduction.page
 share/help/lv/brasero/prob-cd.page
@@ -549,6 +598,7 @@ share/help/lv/brasero/tools-blank.page
 share/help/lv/brasero/tools-check-integrity.page
 share/help/pl/brasero/create-cover.page
 share/help/pl/brasero/figures/brasero-main-window.png
+share/help/pl/brasero/figures/logo32.png
 share/help/pl/brasero/index.page
 share/help/pl/brasero/introduction.page
 share/help/pl/brasero/prob-cd.page
@@ -562,8 +612,25 @@ share/help/pl/brasero/project-video.page
 share/help/pl/brasero/split-track.page
 share/help/pl/brasero/tools-blank.page
 share/help/pl/brasero/tools-check-integrity.page
+share/help/pt_BR/brasero/create-cover.page
+share/help/pt_BR/brasero/figures/brasero-main-window.png
+share/help/pt_BR/brasero/figures/logo32.png
+share/help/pt_BR/brasero/index.page
+share/help/pt_BR/brasero/introduction.page
+share/help/pt_BR/brasero/prob-cd.page
+share/help/pt_BR/brasero/prob-dvd.page
+share/help/pt_BR/brasero/project-audio.page
+share/help/pt_BR/brasero/project-data.page
+share/help/pt_BR/brasero/project-disc-copy.page
+share/help/pt_BR/brasero/project-image-burn.page
+share/help/pt_BR/brasero/project-save.page
+share/help/pt_BR/brasero/project-video.page
+share/help/pt_BR/brasero/split-track.page
+share/help/pt_BR/brasero/tools-blank.page
+share/help/pt_BR/brasero/tools-check-integrity.page
 share/help/ro/brasero/create-cover.page
 share/help/ro/brasero/figures/brasero-main-window.png
+share/help/ro/brasero/figures/logo32.png
 share/help/ro/brasero/index.page
 share/help/ro/brasero/introduction.page
 share/help/ro/brasero/prob-cd.page
@@ -579,6 +646,7 @@ share/help/ro/brasero/tools-blank.page
 share/help/ro/brasero/tools-check-integrity.page
 share/help/ru/brasero/create-cover.page
 share/help/ru/brasero/figures/brasero-main-window.png
+share/help/ru/brasero/figures/logo32.png
 share/help/ru/brasero/index.page
 share/help/ru/brasero/introduction.page
 share/help/ru/brasero/prob-cd.page
@@ -594,6 +662,7 @@ share/help/ru/brasero/tools-blank.page
 share/help/ru/brasero/tools-check-integrity.page
 share/help/sl/brasero/create-cover.page
 share/help/sl/brasero/figures/brasero-main-window.png
+share/help/sl/brasero/figures/logo32.png
 share/help/sl/brasero/index.page
 share/help/sl/brasero/introduction.page
 share/help/sl/brasero/prob-cd.page
@@ -609,6 +678,7 @@ share/help/sl/brasero/tools-blank.page
 share/help/sl/brasero/tools-check-integrity.page
 share/help/sv/brasero/create-cover.page
 share/help/sv/brasero/figures/brasero-main-window.png
+share/help/sv/brasero/figures/logo32.png
 share/help/sv/brasero/index.page
 share/help/sv/brasero/introduction.page
 share/help/sv/brasero/prob-cd.page
@@ -624,6 +694,7 @@ share/help/sv/brasero/tools-blank.page
 share/help/sv/brasero/tools-check-integrity.page
 share/help/te/brasero/create-cover.page
 share/help/te/brasero/figures/brasero-main-window.png
+share/help/te/brasero/figures/logo32.png
 share/help/te/brasero/index.page
 share/help/te/brasero/introduction.page
 share/help/te/brasero/prob-cd.page
@@ -639,6 +710,7 @@ share/help/te/brasero/tools-blank.page
 share/help/te/brasero/tools-check-integrity.page
 share/help/zh_CN/brasero/create-cover.page
 share/help/zh_CN/brasero/figures/brasero-main-window.png
+share/help/zh_CN/brasero/figures/logo32.png
 share/help/zh_CN/brasero/index.page
 share/help/zh_CN/brasero/introduction.page
 share/help/zh_CN/brasero/prob-cd.page
@@ -654,6 +726,7 @@ share/help/zh_CN/brasero/tools-blank.page
 share/help/zh_CN/brasero/tools-check-integrity.page
 share/help/zh_HK/brasero/create-cover.page
 share/help/zh_HK/brasero/figures/brasero-main-window.png
+share/help/zh_HK/brasero/figures/logo32.png
 share/help/zh_HK/brasero/index.page
 share/help/zh_HK/brasero/introduction.page
 share/help/zh_HK/brasero/prob-cd.page
@@ -669,6 +742,7 @@ share/help/zh_HK/brasero/tools-blank.page
 share/help/zh_HK/brasero/tools-check-integrity.page
 share/help/zh_TW/brasero/create-cover.page
 share/help/zh_TW/brasero/figures/brasero-main-window.png
+share/help/zh_TW/brasero/figures/logo32.png
 share/help/zh_TW/brasero/index.page
 share/help/zh_TW/brasero/introduction.page
 share/help/zh_TW/brasero/prob-cd.page
@@ -755,6 +829,7 @@ share/locale/sr@latin/LC_MESSAGES/brasero.mo
 share/locale/sv/LC_MESSAGES/brasero.mo
 share/locale/ta/LC_MESSAGES/brasero.mo
 share/locale/te/LC_MESSAGES/brasero.mo
+share/locale/tg/LC_MESSAGES/brasero.mo
 share/locale/th/LC_MESSAGES/brasero.mo
 share/locale/tr/LC_MESSAGES/brasero.mo
 share/locale/ug/LC_MESSAGES/brasero.mo
@@ -824,6 +899,9 @@ share/mime/packages/brasero.xml
 @dirrm share/help/ro/brasero/figures
 @dirrm share/help/ro/brasero
 @dirrmtry share/help/ro
+@dirrm share/help/pt_BR/brasero/figures
+@dirrm share/help/pt_BR/brasero
+@dirrmtry share/help/pt_BR
 @dirrm share/help/pl/brasero/figures
 @dirrm share/help/pl/brasero
 @dirrmtry share/help/pl
@@ -833,9 +911,15 @@ share/mime/packages/brasero.xml
 @dirrm share/help/ko/brasero/figures
 @dirrm share/help/ko/brasero
 @dirrmtry share/help/ko
+@dirrm share/help/ja/brasero/figures
+@dirrm share/help/ja/brasero
+@dirrmtry share/help/ja
 @dirrm share/help/it/brasero/figures
 @dirrm share/help/it/brasero
 @dirrmtry share/help/it
+@dirrm share/help/id/brasero/figures
+@dirrm share/help/id/brasero
+@dirrmtry share/help/id
 @dirrm share/help/hu/brasero/figures
 @dirrm share/help/hu/brasero
 @dirrmtry share/help/hu

@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/devel/libgdata/Makefile 18878 2013-11-11 19:28:42Z gusi $
+#    $MCom: ports-experimental/trunk/devel/libgdata/Makefile 19553 2014-04-20 07:23:27Z gusi $
 
 PORTNAME=	libgdata
-PORTVERSION=	0.14.0
+PORTVERSION=	0.14.1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -20,11 +20,11 @@ RUN_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
 
 CONFLICTS=	libgdata-0.6.*
 
-USE_XZ=		yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 gnomehier gnomeprefix intltool \
+			introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	glib20 gnomehier gnomeprefix intltool introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip

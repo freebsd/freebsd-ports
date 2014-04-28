@@ -7,7 +7,7 @@ lib/gtk-2.0/modules/libcanberra-gtk-module.so
 lib/libcanberra-gtk.la
 lib/libcanberra-gtk.so
 lib/libcanberra-gtk.so.0
-lib/libcanberra-gtk.so.0.1.8
+lib/libcanberra-gtk.so.0.1.9
 lib/libcanberra.la
 lib/libcanberra.so
 lib/libcanberra.so.0
@@ -32,7 +32,6 @@ libdata/pkgconfig/libcanberra.pc
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/libcanberra-canberra-gtk.html
 %%DOCSDIR%%/libcanberra-canberra.html
-%%DOCSDIR%%/libcanberra.devhelp
 %%DOCSDIR%%/libcanberra.devhelp2
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css

@@ -33,6 +33,7 @@
     SUBDIR += fvwm-themes
     SUBDIR += gnome-backgrounds
     SUBDIR += gnome-bluecurve-theme
+    SUBDIR += gnome-icon-theme-symbolic
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-crystal
@@ -54,6 +55,7 @@
     SUBDIR += gnome-icons-ximian-south
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extras
+    SUBDIR += gnome-themes-standard
     SUBDIR += greybird-theme
     SUBDIR += gtk-aluminumalloy-cryogenic-theme
     SUBDIR += gtk-aluminumalloy-smog-theme
@@ -85,6 +87,7 @@
     SUBDIR += gtk-oxygen-engine
     SUBDIR += gtk-qnxtheme
     SUBDIR += gtk-qt4-engine
+    SUBDIR += gtk-theme-engine-clearlooks
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk3-oxygen-engine
     SUBDIR += gtk3-unico-engine
@@ -133,9 +136,6 @@
     SUBDIR += linux-hicolor-icon-theme
     SUBDIR += lxappearance
     SUBDIR += lxde-icon-theme
-    SUBDIR += gnome-icon-theme-symbolic
-    SUBDIR += gnome-themes-standard
-    SUBDIR += gtk-theme-engine-clearlooks
     SUBDIR += mate-backgrounds
     SUBDIR += mate-icon-theme
     SUBDIR += mate-icon-theme-faenza
@@ -152,6 +152,7 @@
     SUBDIR += metacity-milk-theme
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
+    SUBDIR += mint-themes
     SUBDIR += murrine-configurator
     SUBDIR += nimbus
     SUBDIR += numix-theme

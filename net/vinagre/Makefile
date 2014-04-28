@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports/trunk/net/vinagre3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#  $MCom: ports-experimental/trunk/net/vinagre/Makefile 19501 2014-04-14 19:41:06Z gusi $
 
 PORTNAME=	vinagre
-PORTVERSION=	3.6.2
+PORTVERSION=	3.12.1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,9 +20,8 @@ LIB_DEPENDS=	libgtk-vnc-2.0.so:${PORTSDIR}/net/gtk-vnc \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
-USE_XZ=		yes
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shared-mime-info
+		shared-mime-info tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 vte3
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -49,8 +48,7 @@ PLIST_SUB+=	TELEPATHY="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRDP}
-BUILD_DEPENDS+=	rdesktop:${PORTSDIR}/net/rdesktop
-RUN_DEPENDS+=	rdesktop:${PORTSDIR}/net/rdesktop
+RUN_DEPENDS+=	xfreerdp:${PORTSDIR}/net/freerdp
 CONFIGURE_ARGS+=--enable-rdp
 PLIST_SUB+=	RDP=""
 .else

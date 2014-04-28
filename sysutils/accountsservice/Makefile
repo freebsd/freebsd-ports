@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/accountsservice/Makefile 19237 2014-03-23 07:57:22Z gusi $
+#    $MCom: ports/trunk/sysutils/accountsservice/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	accountsservice
 PORTVERSION=	0.6.37
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
 USE_GNOME=	glib20 gnomehier intlhack introspection:build libxslt
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-systemd --localstatedir=/var/

@@ -1,7 +1,7 @@
 bin/gnome-tetravex
 man/man6/gnome-tetravex.6.gz
+share/appdata/gnome-tetravex.appdata.xml
 share/applications/gnome-tetravex.desktop
-share/gnome-tetravex/gnome-tetravex.ui
 share/help/C/gnome-tetravex/figures/gnome-tetravex-logo.png
 share/help/C/gnome-tetravex/figures/gnome-tetravex-video.ogv
 share/help/C/gnome-tetravex/hint.page
@@ -102,6 +102,16 @@ share/help/fr/gnome-tetravex/shortcut.page
 share/help/fr/gnome-tetravex/size.page
 share/help/fr/gnome-tetravex/usage.page
 share/help/fr/gnome-tetravex/winning.page
+share/help/gl/gnome-tetravex/hint.page
+share/help/gl/gnome-tetravex/index.page
+share/help/gl/gnome-tetravex/license.page
+share/help/gl/gnome-tetravex/move.page
+share/help/gl/gnome-tetravex/shortcut.page
+share/help/gl/gnome-tetravex/size.page
+share/help/gl/gnome-tetravex/usage.page
+share/help/gl/gnome-tetravex/winning.page
+share/help/gl/gnome-tetravex/figures/gnome-tetravex-logo.png
+share/help/gl/gnome-tetravex/figures/gnome-tetravex-video.ogv
 share/help/hu/gnome-tetravex/figures/gnome-tetravex-logo.png
 share/help/hu/gnome-tetravex/figures/gnome-tetravex-video.ogv
 share/help/hu/gnome-tetravex/hint.page
@@ -372,6 +382,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-tetravex.mo
 @dirrm share/help/hu/gnome-tetravex/figures
 @dirrm share/help/hu/gnome-tetravex
 @dirrmtry share/help/hu
+@dirrm share/help/gl/gnome-tetravex/figures
+@dirrm share/help/gl/gnome-tetravex
+@dirrmtry share/help/gl
 @dirrm share/help/fr/gnome-tetravex/figures
 @dirrm share/help/fr/gnome-tetravex
 @dirrmtry share/help/fr
@@ -403,4 +416,17 @@ share/locale/zh_TW/LC_MESSAGES/gnome-tetravex.mo
 @dirrm share/help/C/gnome-tetravex
 @dirrmtry share/help/C
 @dirrmtry share/help
-@dirrmtry share/gnome-tetravex
+@dirrmtry share/icons/HighContrast/48x48/apps
+@dirrmtry share/icons/HighContrast/48x48
+@dirrmtry share/icons/HighContrast/32x32/apps
+@dirrmtry share/icons/HighContrast/32x32
+@dirrmtry share/icons/HighContrast/256x256/apps
+@dirrmtry share/icons/HighContrast/256x256
+@dirrmtry share/icons/HighContrast/24x24/apps
+@dirrmtry share/icons/HighContrast/24x24
+@dirrmtry share/icons/HighContrast/22x22/apps
+@dirrmtry share/icons/HighContrast/22x22
+@dirrmtry share/icons/HighContrast/16x16/apps
+@dirrmtry share/icons/HighContrast/16x16
+@dirrmtry share/icons/HighContrast
+@dirrmtry share/appdata

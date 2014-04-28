@@ -1,5 +1,6 @@
 bin/gnome-font-viewer
 bin/gnome-thumbnail-font
+share/appdata/gnome-font-viewer.appdata.xml
 share/applications/gnome-font-viewer.desktop
 share/locale/af/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/am/LC_MESSAGES/gnome-font-viewer.mo
@@ -33,7 +34,9 @@ share/locale/eu/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/fa/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/fi/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/fr/LC_MESSAGES/gnome-font-viewer.mo
+share/locale/fur/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ga/LC_MESSAGES/gnome-font-viewer.mo
+share/locale/gd/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/gl/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/gu/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/he/LC_MESSAGES/gnome-font-viewer.mo
@@ -44,10 +47,12 @@ share/locale/id/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/it/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ja/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ka/LC_MESSAGES/gnome-font-viewer.mo
+share/locale/kk/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/km/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/kn/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ko/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ku/LC_MESSAGES/gnome-font-viewer.mo
+share/locale/ky/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/lt/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/lv/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/mai/LC_MESSAGES/gnome-font-viewer.mo
@@ -81,6 +86,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/sv/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ta/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/te/LC_MESSAGES/gnome-font-viewer.mo
+share/locale/tg/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/th/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/tr/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ug/LC_MESSAGES/gnome-font-viewer.mo
@@ -93,6 +99,7 @@ share/locale/zh_HK/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/uz@cyrillic/LC_MESSAGES/gnome-font-viewer.mo
 share/thumbnailers/gnome-font-viewer.thumbnailer
+@dirrmtry share/appdata
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -125,6 +132,8 @@ share/thumbnailers/gnome-font-viewer.thumbnailer
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES

@@ -1,10 +1,10 @@
 # Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gtk30/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/x11-toolkits/gtk30/Makefile 19481 2014-04-12 21:28:04Z gusi $
 # Please keep gtk30 and x11-themes/gnome-themes-standard minor version in sync
 
 PORTNAME=	gtk
-PORTVERSION=	3.10.7
+PORTVERSION=	3.12.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -18,7 +18,7 @@ COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
 
 LICENSE=	LGPL20
 
-USE_XZ=		yes
+USES=		tar:xz
 
 .if defined(REFERENCE_PORT)
 PORTSCOUT=	ignore:1
@@ -32,16 +32,17 @@ RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hico
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	atk pango gdkpixbuf2 gtk-update-icon-cache \
-		introspection:build
-USES=		gettext gmake libtool pathfix perl5 pkgconfig
+USE_GNOME=	atk gdkpixbuf2 gtk-update-icon-cache \
+		introspection:build pango
+USES+=		gettext gmake libtool:keepla pathfix perl5 pkgconfig
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
-CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit
+CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit \
+		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-LIBVERSION=	0.1000.7
+LIBVERSION=	0.1200.1
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
@@ -70,6 +71,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@LN_S@|${LN} -sf|' ${WRKSRC}/gtk/Makefile.in
 	@${REINPLACE_CMD} -e 's|file,cups|file,cups,lpr|' \
 		${WRKSRC}/gtk/Makefile.in
+	@${REINPLACE_CMD} -e 's|-DG_DISABLE_CHECKS||' \
+		${WRKSRC}/configure
 
 pre-configure:
 .if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-xlib.pc)
@@ -86,11 +89,12 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/${GTK3_VERSION}/loaders
 	${INSTALL_MAN} ${WRKSRC}/docs/reference/gtk/gtk-query-immodules-3.0.1 \
 		${STAGEDIR}${PREFIX}/man/man1
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdk-3.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgtk-3.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgailutil-3.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdk-3.so.0.*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgtk-3.so.0.*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgailutil-3.so.*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/immodules/im*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/printbackends/libprintbackend-*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/immodules/im-*.so
 
 .include <bsd.port.mk>
 

@@ -1,9 +1,10 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11-fm/nemo/Makefile 19447 2014-04-03 10:27:31Z gusi $
+#    $MCom: ports/trunk/x11-fm/nemo/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	nemo
-PORTVERSION=	2.0.8
+PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -13,6 +14,7 @@ COMMENT=	File manager for the Cinnamon desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		gtkdocize:${PORTSDIR}/textproc/gtk-doc \
+		py*-polib>=0:${PORTSDIR}/devel/py-polib \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
@@ -22,15 +24,17 @@ LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		desktop-file-utils gettext gmake pathfix \
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
 		pkgconfig shared-mime-info
-USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libxml2 \
-		introspection:build
+USE_GNOME=	gnomedesktop3 gnomeprefix intlhack introspection:build \
+		libxml2 pygobject3
 INSTALLS_ICONS=	yes
+USE_PYTHON=	2
+USE_AUTOTOOLS=	libtoolize autoconf automake
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool autoconf automake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-static --disable-packagekit
 
 GLIB_SCHEMAS=	org.nemo.gschema.xml
@@ -71,13 +75,19 @@ post-patch:
 		${WRKSRC}/data/nemo.xml.in \
 		${WRKSRC}/libnemo-private/nemo-file-utilities.h
 
+#	@${REINPLACE_CMD} '/merge_action/d' \
+#		${WRKSRC}/files/Makefile.in
+
 	@${FIND} ${WRKSRC} -name \* | ${XARGS} ${EGREP} -l "#!.*\/usr\/bin\/python" | \
-		${XARGS} ${REINPLACE_CMD} -I "" -e "s|#!.*python.*|#!/usr/bin/env python|g"
+		${XARGS} ${REINPLACE_CMD} -I "" -e "s|#!.*python.*|#!${PYTHON_CMD}|g"
+
+	@${REINPLACE_CMD} 's|\"/usr|\"${PREFIX}|g' \
+		${WRKSRC}/data/merge_action_strings
+
+	@${REINPLACE_CMD} 's|"files", "usr"|"files", "${PREFIX}".strip("/")|g' \
+		${WRKSRC}/data/merge_action_strings
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnemo-extension.so.5 
 
 .include <bsd.port.mk>

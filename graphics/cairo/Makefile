@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/cairo/Makefile 18956 2013-12-12 14:55:22Z kwm $
+#   $MCom: ports/trunk/graphics/cairo/Makefile 19593 2014-04-28 11:41:58Z gusi $
 
 PORTNAME=	cairo
 PORTVERSION=	1.12.16
@@ -13,19 +13,19 @@ COMMENT=	Vector graphics library with cross-device output support
 
 PORTSCOUT=	skipv:5c-1\.[1-3]
 
+USES=		tar:xz
+
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_XZ=		yes
-USES=		pathfix pkgconfig
+USES+=		libtool:keepla pathfix pkgconfig
 USE_XORG=	pixman xext
-USE_GNOME=	ltverhack referencehack
+USE_GNOME=	referencehack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-ltverhack_PATCH_FILES=	build/ltmain.sh
 
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
@@ -99,10 +99,6 @@ post-patch:
 	@${REINPLACE_CMD} 's|@CAIRO_CFLAGS@|-I$$(top_srcdir)/src/glew &|' \
 		${WRKSRC}/src/Makefile.in
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcairo*.so.2
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cairo/*.so.0
 
 .include <bsd.port.post.mk>
 

@@ -1,7 +1,6 @@
 bin/dconf-editor
+share/appdata/dconf-editor.appdata.xml
 share/applications/dconf-editor.desktop
-share/dconf-editor/dconf-editor-menu.ui
-share/dconf-editor/dconf-editor.ui
 share/icons/HighContrast/16x16/apps/dconf-editor.png
 share/icons/HighContrast/22x22/apps/dconf-editor.png
 share/icons/HighContrast/24x24/apps/dconf-editor.png
@@ -15,4 +14,17 @@ share/icons/hicolor/256x256/apps/dconf-editor.png
 share/icons/hicolor/32x32/apps/dconf-editor.png
 share/icons/hicolor/48x48/apps/dconf-editor.png
 share/icons/hicolor/64x64/apps/dconf-editor.png
-@dirrm share/dconf-editor
+@dirrmtry share/icons/HighContrast/48x48/apps
+@dirrmtry share/icons/HighContrast/48x48
+@dirrmtry share/icons/HighContrast/32x32/apps
+@dirrmtry share/icons/HighContrast/32x32
+@dirrmtry share/icons/HighContrast/256x256/apps
+@dirrmtry share/icons/HighContrast/256x256
+@dirrmtry share/icons/HighContrast/24x24/apps
+@dirrmtry share/icons/HighContrast/24x24
+@dirrmtry share/icons/HighContrast/22x22/apps
+@dirrmtry share/icons/HighContrast/22x22
+@dirrmtry share/icons/HighContrast/16x16/apps
+@dirrmtry share/icons/HighContrast/16x16
+@dirrmtry share/icons/HighContrast
+@dirrmtry share/appdata

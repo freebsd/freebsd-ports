@@ -12,10 +12,12 @@ lib/libgnomekbd.a
 lib/libgnomekbd.la
 lib/libgnomekbd.so
 lib/libgnomekbd.so.8
+lib/libgnomekbd.so.8.0.0
 lib/libgnomekbdui.a
 lib/libgnomekbdui.la
 lib/libgnomekbdui.so
 lib/libgnomekbdui.so.8
+lib/libgnomekbdui.so.8.0.0
 libdata/pkgconfig/libgnomekbd.pc
 libdata/pkgconfig/libgnomekbdui.pc
 share/GConf/gsettings/libgnomekbd.convert

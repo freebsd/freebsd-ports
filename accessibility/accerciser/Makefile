@@ -1,9 +1,10 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/accessibility/accerciser3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/accessibility/accerciser/Makefile 19366 2014-03-26 15:53:47Z gusi $
 
 PORTNAME=	accerciser
-PORTVERSION=	3.6.2
+PORTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,10 +18,9 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desk
 RUN_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		at-spi2-core>=2.1.5:${PORTSDIR}/accessibility/at-spi2-core
 
-USE_XZ=		yes
-USE_GNOME=	gtk30 pygobject3 intlhack
-USE_PYTHON=	yes
-USES=		gettext gmake pkgconfig shebangfix
+USES=		gettext gmake pkgconfig shebangfix tar:xz
+USE_GNOME=	gtk30 intlhack py3gobject3
+USE_PYTHON=	3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

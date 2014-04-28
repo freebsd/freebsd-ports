@@ -1,9 +1,9 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/mail/evolution/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	evolution
-PORTVERSION=	3.6.4
+PORTVERSION=	3.12.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,24 +11,25 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
+		highlight:${PORTSDIR}/textproc/highlight
 LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
+		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
+		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
-		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libnotify.so:${PORTSDIR}/devel/libnotify
+RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight
 
-USE_XZ=		yes
-USES=		desktop-file-utils bison gettext gmake pathfix pkgconfig \
-		shebangfix
-USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 gtkhtml4 \
-		gnomedocutils ltasneededhack gnomedesktop3
-USE_AUTOTOOLS=	libtool
+USES=		desktop-file-utils bison gettext gmake libtool:keepla \
+		pathfix pkgconfig shebangfix tar:xz
+USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix gtkhtml4 \
+		intlhack
+GNU_CONFIGURE=	yes
 USE_GSTREAMER1=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/evolution/%%VERSION%%
 CONFIGURE_ARGS=	--enable-nss=yes \
 		--with-sub-version=" FreeBSD GNOME Team Port"
 # gtkimageview needs to get a gtk3 release first.
@@ -56,81 +57,51 @@ GLIB_SCHEMAS=	org.gnome.evolution.gschema.xml \
 		org.gnome.evolution.plugin.publish-calendar.gschema.xml \
 		org.gnome.evolution.plugin.templates.gschema.xml
 
-EVO_VERSION=	3.6
+EVO_VERSION=	3.12
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
-OPTIONS_DEFINE=	LDAP WEATHER CANBERRA SPAMASSASSIN PST
+OPTIONS_DEFINE=	LDAP WEATHER CANBERRA PST
 OPTIONS_DEFAULT=LDAP WEATHER CANBERRA
+OPTIONS_GROUP=	SPAM
+OPTIONS_GROUP_SPAM=SPAMASSASSIN BOGOFILTER
+
+OPTIONS_SUB=	yes
+
 CANBERRA_DESC=	Canberra theme audio plugin
 WEATHER_DESC=	Weather calendar backend
+SPAM_DESC=	Spam filter support
 SPAMASSASSIN_DESC=	SpamAssassin spam filtering
+BOGOFILTER_DESC=	Bogofilter spam filtering
 PST_DESC=	Outlook .pst importer
 MAPS_DESC=	Contact maps
 
-.include <bsd.port.options.mk>
+LDAP_CONFIGURE_WITH=	openldap
+LDAP_USE=	OPENLDAP=yes
 
-USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
+WEATHER_LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather
+WEATHER_CONFIGURE_ENABLE=	weather
 
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-openldap=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-openldap=no
-.endif
+SPAMASSASSIN_CONFIGURE_ENABLE=	spamassassin
+SPAMASSASSIN_BUILD_DEPEND=	spamassassin:${PORTSDIR}/mail/spamassassin
+SPAMASSASSIN_RUN_DEPEND=	spamassassin:${PORTSDIR}/mail/spamassassin
 
-.if ${PORT_OPTIONS:MWEATHER}
-LIB_DEPENDS+=	libgweather-3.so:${PORTSDIR}/net/libgweather
-CONFIGURE_ARGS+=--enable-weather
-PLIST_SUB+=	WEATHER=""
-.else
-CONFIGURE_ARGS+=--disable-weather
-PLIST_SUB+=	WEATHER="@comment "
-.endif
+BOGOFILTER_CONFIGURE_ENABLE=	bogofilter
+BOGOFILTER_BUILD_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
+BOGOFILTER_RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
 
-.if ${PORT_OPTIONS:MSPAMASSASSIN}
-RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/spamassassin
-.endif
+CANBERRA_LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+CANBERRA_CONFIGURE_ENABLE=	canberra
 
-.if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL) || defined(NO_KERBEROS)
-HEIMDAL_HOME?=		${LOCALBASE}
-LIB_DEPENDS+=		krb5.26:${PORTSDIR}/security/heimdal
-CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} \
-			--with-krb5-includes=${HEIMDAL_HOME}/include
-KRB5_LIB=		`${HEIMDAL_HOME}/bin/krb5-config gssapi --libs`
-.elif !defined(NO_KERBEROS)
-CONFIGURE_ARGS+=	--with-krb5=/usr
-KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
-.endif
+PST_CONFIGURE_ENABLE=	pst-import
+PST_BUILD_DEPENDS=	libpst>=0.6.58_1:${PORTSDIR}/mail/libpst
+PST_RUN_DEPENDS=	libpst>=0.6.58_1:${PORTSDIR}/mail/libpst
 
-.if ${PORT_OPTIONS:MCANBERRA}
-LIB_DEPENDS+=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
-CONFIGURE_ARGS+=--enable-canberra=yes
-PLIST_SUB+=	CANBERRA=""
-.else
-CONFIGURE_ARGS+=--enable-canberra=no
-PLIST_SUB+=	CANBERRA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPST}
-CONFIGURE_ARGS+=	--enable-pst-import
-BUILD_DEPENDS+=		libpst>=0.6.58_1:${PORTSDIR}/mail/libpst
-RUN_DEPENDS+=		libpst>=0.6.58_1:${PORTSDIR}/mail/libpst
-PLIST_SUB+=		PST=""
-.else
-CONFIGURE_ARGS+=	--disable-pst-import
-PLIST_SUB+=		PST="@comment "
-.endif
-
-#.if ${PORT_OPTIONS:MMAPS}
-# needs geoclue
-#LIB_DEPENDS+=		champlain-0.12:${PORTSDIR}/graphics/libchamplain
-#CONFIGURE_ARGS+=	--enable-contact-maps
-#PLIST_SUB+=		MAPS=""
-#.else
-CONFIGURE_ARGS+=	--disable-contact-maps
-PLIST_SUB+=		MAPS="@comment "
-#.endif
+CONFIGURE_ARGS+=--disable-contact-maps
+#MAPS_CONFIGURE_ENABLE=	contact-maps
+#MAPS_LIB_DEPENDS=	libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain \
+#			libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
+#MAPS_BUILD_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^plugins_standard_always/s/audio-inline//' \
@@ -141,11 +112,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
 		${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
 		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c
-	@${SH} ${FILESDIR}/fix-plugins.sh ${WRKSRC}
+#	@${SH} ${FILESDIR}/fix-plugins.sh ${WRKSRC}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/evolution/${EVO_VERSION}/modules/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/evolution/3.6/lib*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/evolution/3.6/plugins/liborg-gnome-*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/evolution/*/*/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/evolution/*/lib*.so
 
 .include <bsd.port.mk>

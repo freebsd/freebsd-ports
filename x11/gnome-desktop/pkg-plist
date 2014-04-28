@@ -1,39 +1,46 @@
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-slide-show.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-thumbnail.h
-include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-utils.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-idle-monitor.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-languages.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-pnp-ids.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-rr-config.h
-include/gnome-desktop-3.0/libgnome-desktop/gnome-rr-labeler.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-rr.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-wall-clock.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-xkb-info.h
 lib/girepository-1.0/GnomeDesktop-3.0.typelib
-lib/libgnome-desktop-3.a
 lib/libgnome-desktop-3.la
 lib/libgnome-desktop-3.so
-lib/libgnome-desktop-3.so.4
+lib/libgnome-desktop-3.so.10
+lib/libgnome-desktop-3.so.10.0.0
 libdata/pkgconfig/gnome-desktop-3.0.pc
 libexec/gnome-rr-debug
 share/doc/gnome-desktop3/GnomeDesktopThumbnailFactory.html
+share/doc/gnome-desktop3/GnomeIdleMonitor.html
+share/doc/gnome-desktop3/GnomeWallClock.html
+share/doc/gnome-desktop3/GnomeXkbInfo.html
 share/doc/gnome-desktop3/background.html
+share/doc/gnome-desktop3/idle-monitor.html
+share/doc/gnome-desktop3/gnome-desktop3-Language-Utilities.html
 share/doc/gnome-desktop3/gnome-desktop3-gnome-bg.html
-share/doc/gnome-desktop3/gnome-desktop3-gnome-desktop-utils.html
+share/doc/gnome-desktop3/gnome-desktop3-gnome-pnp-ids.html
 share/doc/gnome-desktop3/gnome-desktop3-gnome-rr-config.html
-share/doc/gnome-desktop3/gnome-desktop3-gnome-rr-labeler.html
 share/doc/gnome-desktop3/gnome-desktop3.devhelp2
 share/doc/gnome-desktop3/home.png
 share/doc/gnome-desktop3/index.html
 share/doc/gnome-desktop3/index.sgml
 share/doc/gnome-desktop3/intro.html
+share/doc/gnome-desktop3/languages.html
 share/doc/gnome-desktop3/left.png
-share/doc/gnome-desktop3/libgnome.html
 share/doc/gnome-desktop3/randr.html
 share/doc/gnome-desktop3/right.png
 share/doc/gnome-desktop3/gnome-desktop3-gnome-rr.html
 share/doc/gnome-desktop3/style.css
 share/doc/gnome-desktop3/thumbnail.html
 share/doc/gnome-desktop3/up.png
+share/doc/gnome-desktop3/wall-clock.html
+share/doc/gnome-desktop3/xkb-info.html
 share/gnome/gnome-version.xml
 share/help/C/fdl/index.docbook
 share/help/C/gpl/index.docbook
@@ -43,6 +50,7 @@ share/help/ar/gpl/index.docbook
 share/help/ar/lgpl/index.docbook
 share/help/ca/fdl/index.docbook
 share/help/ca/gpl/index.docbook
+share/help/ca/lgpl/index.docbook
 share/help/cs/gpl/index.docbook
 share/help/de/fdl/index.docbook
 share/help/de/gpl/index.docbook
@@ -62,6 +70,7 @@ share/help/fr/fdl/index.docbook
 share/help/fr/gpl/index.docbook
 share/help/fr/lgpl/index.docbook
 share/help/gl/fdl/index.docbook
+share/help/gl/gpl/index.docbook
 share/help/hu/fdl/index.docbook
 share/help/hu/gpl/index.docbook
 share/help/hu/lgpl/index.docbook
@@ -75,6 +84,8 @@ share/help/oc/lgpl/index.docbook
 share/help/pa/gpl/index.docbook
 share/help/pa/lgpl/index.docbook
 share/help/pl/fdl/index.docbook
+share/help/pt_BR/fdl/index.docbook
+share/help/pt_BR/gpl/index.docbook
 share/help/pt_BR/lgpl/index.docbook
 share/help/sl/fdl/index.docbook
 share/help/sl/gpl/index.docbook
@@ -119,6 +130,7 @@ share/locale/da/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/de/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/dz/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/el/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/en/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-desktop-3.0.mo
@@ -132,6 +144,7 @@ share/locale/fr/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/fur/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/fy/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ga/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/gd/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/gl/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/gu/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ha/LC_MESSAGES/gnome-desktop-3.0.mo
@@ -190,6 +203,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/sv/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ta/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/te/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/tg/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/th/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/tk/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/tr/LC_MESSAGES/gnome-desktop-3.0.mo
@@ -318,6 +332,8 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-3.0.mo
 @dirrmtry share/help/sl/fdl
 @dirrmtry share/help/sl
 @dirrmtry share/help/pt_BR/lgpl
+@dirrmtry share/help/pt_BR/gpl
+@dirrmtry share/help/pt_BR/fdl
 @dirrmtry share/help/pt_BR
 @dirrmtry share/help/pl/fdl
 @dirrmtry share/help/pl
@@ -338,6 +354,7 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-3.0.mo
 @dirrmtry share/help/hu/gpl
 @dirrmtry share/help/hu/fdl
 @dirrmtry share/help/hu
+@dirrmtry share/help/gl/gpl
 @dirrmtry share/help/gl/fdl
 @dirrmtry share/help/gl
 @dirrmtry share/help/fr/lgpl
@@ -365,6 +382,7 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-3.0.mo
 @dirrmtry share/help/de
 @dirrmtry share/help/cs/gpl
 @dirrmtry share/help/cs
+@dirrmtry share/help/ca/lgpl
 @dirrmtry share/help/ca/gpl
 @dirrmtry share/help/ca/fdl
 @dirrmtry share/help/ca

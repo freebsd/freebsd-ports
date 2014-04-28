@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-system-log/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/deskutils/gnome-system-log/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	gnome-system-log
-PORTVERSION=	3.6.1
+PORTVERSION=	3.9.90
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,11 +15,10 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
-USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack gtk30
+INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

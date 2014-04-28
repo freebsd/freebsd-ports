@@ -1,53 +1,7 @@
 bin/gnome-control-center
-bin/gnome-sound-applet
-etc/xdg/autostart/gnome-sound-applet.desktop
-etc/xdg/menus/gnomecc.menu
-lib/control-center-1/panels/libbackground.a
-lib/control-center-1/panels/libbackground.la
-lib/control-center-1/panels/libbackground.so
-lib/control-center-1/panels/libcolor.a
-lib/control-center-1/panels/libcolor.la
-lib/control-center-1/panels/libcolor.so
-lib/control-center-1/panels/libdate_time.a
-lib/control-center-1/panels/libdate_time.la
-lib/control-center-1/panels/libdate_time.so
-lib/control-center-1/panels/libdisplay.a
-lib/control-center-1/panels/libdisplay.la
-lib/control-center-1/panels/libdisplay.so
-lib/control-center-1/panels/libinfo.a
-lib/control-center-1/panels/libinfo.la
-lib/control-center-1/panels/libinfo.so
-lib/control-center-1/panels/libkeyboard.a
-lib/control-center-1/panels/libkeyboard.la
-lib/control-center-1/panels/libkeyboard.so
-lib/control-center-1/panels/libmouse-properties.a
-lib/control-center-1/panels/libmouse-properties.la
-lib/control-center-1/panels/libmouse-properties.so
-lib/control-center-1/panels/libonline-accounts.a
-lib/control-center-1/panels/libonline-accounts.la
-lib/control-center-1/panels/libonline-accounts.so
-lib/control-center-1/panels/libpower.a
-lib/control-center-1/panels/libpower.la
-lib/control-center-1/panels/libpower.so
-%%CUPS%%lib/control-center-1/panels/libprinters.a
-%%CUPS%%lib/control-center-1/panels/libprinters.la
-%%CUPS%%lib/control-center-1/panels/libprinters.so
-lib/control-center-1/panels/libregion.a
-lib/control-center-1/panels/libregion.la
-lib/control-center-1/panels/libregion.so
-lib/control-center-1/panels/libscreen.a
-lib/control-center-1/panels/libscreen.la
-lib/control-center-1/panels/libscreen.so
-lib/control-center-1/panels/libsound.a
-lib/control-center-1/panels/libsound.la
-lib/control-center-1/panels/libsound.so
-lib/control-center-1/panels/libuniversal-access.a
-lib/control-center-1/panels/libuniversal-access.la
-lib/control-center-1/panels/libuniversal-access.so
-lib/control-center-1/panels/libuser-accounts.a
-lib/control-center-1/panels/libuser-accounts.la
-lib/control-center-1/panels/libuser-accounts.so
 libdata/pkgconfig/gnome-keybindings.pc
+libexec/cc-remote-login-helper
+libexec/gnome-control-center-search-provider
 man/man1/gnome-control-center.1.gz
 share/applications/gnome-background-panel.desktop
 share/applications/gnome-color-panel.desktop
@@ -57,15 +11,19 @@ share/applications/gnome-display-panel.desktop
 share/applications/gnome-info-panel.desktop
 share/applications/gnome-keyboard-panel.desktop
 share/applications/gnome-mouse-panel.desktop
+share/applications/gnome-notifications-panel.desktop
 share/applications/gnome-online-accounts-panel.desktop
 share/applications/gnome-power-panel.desktop
-%%CUPS%%share/applications/gnome-printers-panel.desktop
+share/applications/gnome-privacy-panel.desktop
 share/applications/gnome-region-panel.desktop
-share/applications/gnome-screen-panel.desktop
+share/applications/gnome-search-panel.desktop
+share/applications/gnome-sharing-panel.desktop
 share/applications/gnome-sound-panel.desktop
 share/applications/gnome-universal-access-panel.desktop
 share/applications/gnome-user-accounts-panel.desktop
-share/desktop-directories/gnomecc.directory
+share/bash-completion/completions/gnome-control-center
+share/dbus-1/services/org.gnome.ControlCenter.SearchProvider.service
+share/dbus-1/services/org.gnome.ControlCenter.service
 %%DATADIR%%/datetime/backward
 %%DATADIR%%/icons/hicolor/16x16/devices/audio-headset.svg
 %%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-high.png
@@ -110,148 +68,9 @@ share/desktop-directories/gnomecc.directory
 %%DATADIR%%/keybindings/01-screenshot.xml
 %%DATADIR%%/keybindings/01-system.xml
 %%DATADIR%%/keybindings/50-accessibility.xml
-%%DATADIR%%/pixmaps/gnome-about-me-lock-open.png
-%%DATADIR%%/pixmaps/gnome-about-me-lock.png
-%%DATADIR%%/pixmaps/left-index-finger.png
-%%DATADIR%%/pixmaps/left-index-finger.svg
-%%DATADIR%%/pixmaps/left-little-finger.png
-%%DATADIR%%/pixmaps/left-little-finger.svg
-%%DATADIR%%/pixmaps/left-middle-finger.png
-%%DATADIR%%/pixmaps/left-middle-finger.svg
-%%DATADIR%%/pixmaps/left-ring-finger.png
-%%DATADIR%%/pixmaps/left-ring-finger.svg
-%%DATADIR%%/pixmaps/left-thumb.png
-%%DATADIR%%/pixmaps/left-thumb.svg
 %%DATADIR%%/pixmaps/noise-texture-light.png
-%%DATADIR%%/pixmaps/print_error.png
-%%DATADIR%%/pixmaps/print_error.svg
-%%DATADIR%%/pixmaps/print_ok.png
-%%DATADIR%%/pixmaps/print_ok.svg
-%%DATADIR%%/pixmaps/right-index-finger.png
-%%DATADIR%%/pixmaps/right-index-finger.svg
-%%DATADIR%%/pixmaps/right-little-finger.png
-%%DATADIR%%/pixmaps/right-little-finger.svg
-%%DATADIR%%/pixmaps/right-middle-finger.png
-%%DATADIR%%/pixmaps/right-middle-finger.svg
-%%DATADIR%%/pixmaps/right-ring-finger.png
-%%DATADIR%%/pixmaps/right-ring-finger.svg
-%%DATADIR%%/pixmaps/right-thumb.png
-%%DATADIR%%/pixmaps/right-thumb.svg
 %%DATADIR%%/sounds/gnome-sounds-default.xml
-%%DATADIR%%/ui/GnomeLogoVerticalMedium.svg
-%%DATADIR%%/ui/background/background.ui
-%%DATADIR%%/ui/color.ui
-%%DATADIR%%/ui/datetime/bg_dim.png
-%%DATADIR%%/ui/datetime/bg.png
-%%DATADIR%%/ui/datetime/cc.png
-%%DATADIR%%/ui/datetime/datetime.ui
-%%DATADIR%%/ui/datetime/pin.png
-%%DATADIR%%/ui/datetime/timezone_-1.png
-%%DATADIR%%/ui/datetime/timezone_-10.png
-%%DATADIR%%/ui/datetime/timezone_-10_dim.png
-%%DATADIR%%/ui/datetime/timezone_-11.png
-%%DATADIR%%/ui/datetime/timezone_-11_dim.png
-%%DATADIR%%/ui/datetime/timezone_-1_dim.png
-%%DATADIR%%/ui/datetime/timezone_-2.png
-%%DATADIR%%/ui/datetime/timezone_-2_dim.png
-%%DATADIR%%/ui/datetime/timezone_-3.5.png
-%%DATADIR%%/ui/datetime/timezone_-3.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_-3.png
-%%DATADIR%%/ui/datetime/timezone_-3_dim.png
-%%DATADIR%%/ui/datetime/timezone_-4.5.png
-%%DATADIR%%/ui/datetime/timezone_-4.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_-4.png
-%%DATADIR%%/ui/datetime/timezone_-4_dim.png
-%%DATADIR%%/ui/datetime/timezone_-5.5.png
-%%DATADIR%%/ui/datetime/timezone_-5.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_-5.png
-%%DATADIR%%/ui/datetime/timezone_-5_dim.png
-%%DATADIR%%/ui/datetime/timezone_-6.png
-%%DATADIR%%/ui/datetime/timezone_-6_dim.png
-%%DATADIR%%/ui/datetime/timezone_-7.png
-%%DATADIR%%/ui/datetime/timezone_-7_dim.png
-%%DATADIR%%/ui/datetime/timezone_-8.png
-%%DATADIR%%/ui/datetime/timezone_-8_dim.png
-%%DATADIR%%/ui/datetime/timezone_-9.5.png
-%%DATADIR%%/ui/datetime/timezone_-9.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_-9.png
-%%DATADIR%%/ui/datetime/timezone_-9_dim.png
-%%DATADIR%%/ui/datetime/timezone_0.png
-%%DATADIR%%/ui/datetime/timezone_0_dim.png
-%%DATADIR%%/ui/datetime/timezone_1.png
-%%DATADIR%%/ui/datetime/timezone_10.5.png
-%%DATADIR%%/ui/datetime/timezone_10.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_10.png
-%%DATADIR%%/ui/datetime/timezone_10_dim.png
-%%DATADIR%%/ui/datetime/timezone_11.5.png
-%%DATADIR%%/ui/datetime/timezone_11.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_11.png
-%%DATADIR%%/ui/datetime/timezone_11_dim.png
-%%DATADIR%%/ui/datetime/timezone_12.75.png
-%%DATADIR%%/ui/datetime/timezone_12.75_dim.png
-%%DATADIR%%/ui/datetime/timezone_12.png
-%%DATADIR%%/ui/datetime/timezone_12_dim.png
-%%DATADIR%%/ui/datetime/timezone_13.png
-%%DATADIR%%/ui/datetime/timezone_13_dim.png
-%%DATADIR%%/ui/datetime/timezone_14.png
-%%DATADIR%%/ui/datetime/timezone_14_dim.png
-%%DATADIR%%/ui/datetime/timezone_1_dim.png
-%%DATADIR%%/ui/datetime/timezone_2.png
-%%DATADIR%%/ui/datetime/timezone_2_dim.png
-%%DATADIR%%/ui/datetime/timezone_3.5.png
-%%DATADIR%%/ui/datetime/timezone_3.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_3.png
-%%DATADIR%%/ui/datetime/timezone_3_dim.png
-%%DATADIR%%/ui/datetime/timezone_4.5.png
-%%DATADIR%%/ui/datetime/timezone_4.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_4.png
-%%DATADIR%%/ui/datetime/timezone_4_dim.png
-%%DATADIR%%/ui/datetime/timezone_5.5.png
-%%DATADIR%%/ui/datetime/timezone_5.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_5.75.png
-%%DATADIR%%/ui/datetime/timezone_5.75_dim.png
-%%DATADIR%%/ui/datetime/timezone_5.png
-%%DATADIR%%/ui/datetime/timezone_5_dim.png
-%%DATADIR%%/ui/datetime/timezone_6.5.png
-%%DATADIR%%/ui/datetime/timezone_6.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_6.png
-%%DATADIR%%/ui/datetime/timezone_6_dim.png
-%%DATADIR%%/ui/datetime/timezone_7.png
-%%DATADIR%%/ui/datetime/timezone_7_dim.png
-%%DATADIR%%/ui/datetime/timezone_8.75.png
-%%DATADIR%%/ui/datetime/timezone_8.75_dim.png
-%%DATADIR%%/ui/datetime/timezone_8.png
-%%DATADIR%%/ui/datetime/timezone_8_dim.png
-%%DATADIR%%/ui/datetime/timezone_9.5.png
-%%DATADIR%%/ui/datetime/timezone_9.5_dim.png
-%%DATADIR%%/ui/datetime/timezone_9.png
-%%DATADIR%%/ui/datetime/timezone_9_dim.png
-%%DATADIR%%/ui/display-capplet.ui
-%%DATADIR%%/ui/gnome-keyboard-panel.ui
-%%DATADIR%%/ui/gnome-mouse-properties.ui
-%%DATADIR%%/ui/gnome-mouse-test.ui
-%%DATADIR%%/ui/gnome-region-panel.ui
-%%DATADIR%%/ui/gnome-region-panel-input-chooser.ui
-%%DATADIR%%/ui/info.ui
-%%DATADIR%%/ui/language-chooser.ui
-%%DATADIR%%/ui/online-accounts.ui
-%%DATADIR%%/ui/power.ui
-%%CUPS%%%%DATADIR%%/ui/printers/jobs-dialog.ui
-%%CUPS%%%%DATADIR%%/ui/printers/new-printer-dialog.ui
-%%CUPS%%%%DATADIR%%/ui/printers/options-dialog.ui
-%%CUPS%%%%DATADIR%%/ui/printers/ppd-selection-dialog.ui
-%%CUPS%%%%DATADIR%%/ui/printers/printers.ui
-%%DATADIR%%/ui/screen.ui
-%%DATADIR%%/ui/scroll-test-gegl.svg
-%%DATADIR%%/ui/scroll-test.svg
-%%DATADIR%%/ui/shell.ui
-%%DATADIR%%/ui/uap.ui
-%%DATADIR%%/ui/user-accounts/account-dialog.ui
-%%DATADIR%%/ui/user-accounts/account-fingerprint.ui
-%%DATADIR%%/ui/user-accounts/password-dialog.ui
-%%DATADIR%%/ui/user-accounts/photo-dialog.ui
-%%DATADIR%%/ui/user-accounts/user-accounts-dialog.ui
-%%DATADIR%%/ui/zoom-options.ui
+share/gnome-shell/search-providers/gnome-control-center-search-provider.ini
 share/icons/hicolor/16x16/apps/gnome-power-manager.png
 share/icons/hicolor/16x16/apps/goa-panel.png
 share/icons/hicolor/16x16/apps/multimedia-volume-control.png
@@ -302,6 +121,7 @@ share/icons/hicolor/scalable/status/audio-input-microphone-muted-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/am/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/an/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/ar/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/as/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
@@ -448,6 +268,7 @@ share/locale/ta/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/ta/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/te/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/te/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/tg/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/tr/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -492,103 +313,36 @@ share/pixmaps/faces/sunset.jpg
 share/pixmaps/faces/tennis-ball.png
 share/pixmaps/faces/yellow-rose.jpg
 share/polkit-1/actions/org.gnome.controlcenter.datetime.policy
+share/polkit-1/actions/org.gnome.controlcenter.remote-login-helper.policy
 share/polkit-1/actions/org.gnome.controlcenter.user-accounts.policy
 share/polkit-1/rules.d/gnome-control-center.rules
 share/sounds/gnome/default/alerts/bark.ogg
 share/sounds/gnome/default/alerts/drip.ogg
 share/sounds/gnome/default/alerts/glass.ogg
 share/sounds/gnome/default/alerts/sonar.ogg
-@dirrm share/sounds/gnome/default/alerts
-@dirrm share/sounds/gnome/default
-@dirrm share/sounds/gnome
+@dirrmtry share/sounds/gnome/default/alerts
+@dirrmtry share/sounds/gnome/default
+@dirrmtry share/sounds/gnome
 @dirrmtry share/pixmaps/faces
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/my/LC_MESSAGES
-@dirrmtry share/locale/my
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/lo/LC_MESSAGES
-@dirrmtry share/locale/lo
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
 @dirrmtry share/locale/ilo/LC_MESSAGES
 @dirrmtry share/locale/ilo
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm %%DATADIR%%/ui/user-accounts
-%%CUPS%%@dirrm %%DATADIR%%/ui/printers
-@dirrm %%DATADIR%%/ui/datetime
-@dirrm %%DATADIR%%/ui/background
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/icons/hicolor/48x48/devices
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/32x32/status
-@dirrm %%DATADIR%%/icons/hicolor/32x32/devices
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/24x24/status
-@dirrm %%DATADIR%%/icons/hicolor/24x24/devices
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/22x22/status
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16/devices
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/datetime
-@dirrmtry share/desktop-directories
-@dirrm lib/control-center-1/panels
-@dirrm lib/control-center-1
+@dirrmtry share/gnome-shell/search-providers
+@dirrmtry share/gnome-shell
+@dirrmtry %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%/pixmaps
+@dirrmtry %%DATADIR%%/icons/hicolor/48x48/devices
+@dirrmtry %%DATADIR%%/icons/hicolor/48x48
+@dirrmtry %%DATADIR%%/icons/hicolor/32x32/status
+@dirrmtry %%DATADIR%%/icons/hicolor/32x32/devices
+@dirrmtry %%DATADIR%%/icons/hicolor/32x32
+@dirrmtry %%DATADIR%%/icons/hicolor/24x24/status
+@dirrmtry %%DATADIR%%/icons/hicolor/24x24/devices
+@dirrmtry %%DATADIR%%/icons/hicolor/24x24
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22/status
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16/status
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16/devices
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16
+@dirrmtry %%DATADIR%%/icons/hicolor
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/datetime

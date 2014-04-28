@@ -1,12 +1,13 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/libcanberra/Makefile 19002 2014-02-07 17:13:44Z kwm $
+#   $MCom: ports/trunk/audio/libcanberra/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	libcanberra
-PORTVERSION=	0.28
-PORTREVISION=	4
+PORTVERSION=	0.30
+PORTREVISION=	2
 CATEGORIES=	audio devel
-MASTER_SITES=	http://0pointer.de/lennart/projects/libcanberra/
+MASTER_SITES=	http://0pointer.de/lennart/projects/libcanberra/ \
+		http://pkgs.fedoraproject.org/repo/pkgs/libcanberra/libcanberra-0.30.tar.xz/34cb7e4430afaf6f447c4ebdb9b42072/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the Freedesktop sound theme spec
@@ -16,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LGPL
 
 LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 
-USES=		gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomeprefix gnomehier gtk20 gconf2
+USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
+USE_GNOME=	gnomehier gnomeprefix gtk20 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl
@@ -26,9 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-.if !defined(SLAVEPORT)
-GCONF_SCHEMAS=	libcanberra.schemas
-.else
+.if defined(SLAVEPORT)
 OPTIONS_DEFINE=	PULSEAUDIO GSTREAMER
 .endif
 
@@ -52,7 +51,7 @@ PLIST_SUB+=	PULSE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER=	yes
+USE_GSTREAMER1=	yes
 PLIST_SUB+=	GSTREAMER=""
 .else
 CONFIGURE_ARGS+=--disable-gstreamer

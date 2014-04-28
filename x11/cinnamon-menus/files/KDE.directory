@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=KDE
+Comment=Some comment about KDE menu
+Icon=/usr/local/share/icons/default.kde/48x48/apps/kmenu.png
+Type=Directory

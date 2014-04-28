@@ -30,6 +30,7 @@ lib/libmuffin.a
 lib/libmuffin.la
 lib/libmuffin.so
 lib/libmuffin.so.0
+lib/libmuffin.so.0.0.0
 lib/muffin/Meta-Muffin.0.gir
 lib/muffin/Meta-Muffin.0.typelib
 lib/muffin/plugins/default.so

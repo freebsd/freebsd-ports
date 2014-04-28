@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/eog-plugins3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/graphics/eog-plugins/Makefile 19511 2014-04-14 21:44:49Z gusi $
 
 PORTNAME=	eog-plugins
-PORTVERSION=	3.6.1
+PORTVERSION=	3.12.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,15 +11,14 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plug-ins for the Eye of GNOME image viewer application
 
-BUILD_DEPENDS=	eog>=3.6.0:${PORTSDIR}/graphics/eog
+BUILD_DEPENDS=	eog:${PORTSDIR}/graphics/eog
 LIB_DEPENDS=	libgdata.so.13:${PORTSDIR}/devel/libgdata \
 		libexif.so:${PORTSDIR}/graphics/libexif \
 		libpeas-1.0.so:${PORTSDIR}/devel/libpeas
-RUN_DEPENDS=	eog>=3.6.0:${PORTSDIR}/graphics/eog
+RUN_DEPENDS=	eog:${PORTSDIR}/graphics/eog
 
-USE_XZ=		yes
 USE_GNOME=	gnomeprefix intlhack gtk30
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -40,9 +39,10 @@ PLIST_SUB+=	CHAMPLAIN=""
 PLIST_SUB+=	CHAMPLAIN="@comment "
 .endif
 
+PLIST_SUB+=	PYVER=${PYTHON_VER:S|.||}
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=--enable-python
-USE_PYTHON=	yes
+USE_PYTHON=	3
 PLIST_SUB+=	PYTHON=""
 GLIB_SCHEMAS+=	org.gnome.eog.plugins.export-to-folder.gschema.xml \
 		org.gnome.eog.plugins.fullscreenbg.gschema.xml \

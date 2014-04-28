@@ -1,9 +1,9 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/telepathy-salut/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/net-im/telepathy-salut/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	telepathy-salut
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -23,6 +23,8 @@ USE_SQLITE=	3
 CONFIGURE_ARGS=	--disable-Werror --enable-avahi-tests=no
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
+
+PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make -C|${GMAKE} -C|g' \

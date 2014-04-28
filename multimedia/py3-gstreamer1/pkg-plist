@@ -1,0 +1,8 @@
+%%PYTHON_LIBDIR%%/site-packages/gi/overrides/Gst.py
+%%PYTHON_LIBDIR%%/site-packages/gi/overrides/GstPbutils.py
+%%PYTHON_LIBDIR%%/site-packages/gi/overrides/__pycache__/Gst.cpython-%%PYTVER%%.pyc
+%%PYTHON_LIBDIR%%/site-packages/gi/overrides/__pycache__/Gst.cpython-%%PYTVER%%.pyo
+%%PYTHON_LIBDIR%%/site-packages/gi/overrides/__pycache__/GstPbutils.cpython-%%PYTVER%%.pyc
+%%PYTHON_LIBDIR%%/site-packages/gi/overrides/__pycache__/GstPbutils.cpython-%%PYTVER%%.pyo
+%%PYTHON_LIBDIR%%/site-packages/gi/overrides/_gi_gst.la
+%%PYTHON_LIBDIR%%/site-packages/gi/overrides/_gi_gst.so

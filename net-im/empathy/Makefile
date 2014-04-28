@@ -1,10 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/empathy3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/net-im/empathy/Makefile 19491 2014-04-14 15:07:51Z gusi $
 
 PORTNAME=	empathy
-PORTVERSION=	3.6.2
-PORTREVISION=	1
+PORTVERSION=	3.12.1
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -14,6 +13,7 @@ COMMENT=	GNOME IM client based around telepathy
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		geoclue>=0:${PORTSDIR}/net/geoclue \
 		itstool:${PORTSDIR}/textproc/itstool \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
@@ -34,25 +34,26 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		geoclue>=0:${PORTSDIR}/net/geoclue \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
-USE_LDCONFIG=	yes
-USE_GNOME=	evolutiondataserver3 gnomeprefix ltverhack
-USE_GSTREAMER1=	yes
-USE_AUTOTOOLS=	libtool
-INSTALLS_OMF=	yes
-INSTALLS_ICONS=	yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USE_GNOME=	evolutiondataserver3 gnomeprefix
 USE_PYTHON=	yes
+USE_GSTREAMER1=	yes
+USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
+MAKE_JOBS_UNSAFE=	YES
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-Werror \
 		--enable-goa \
 		--enable-gst-1.0=yes \
-		--enable-location=no
+		--enable-location=yes
 
-GLIB_SCHEMAS=	org.gnome.Empathy.gschema.xml
+GLIB_SCHEMAS=	org.gnome.Empathy.gschema.xml \
+		org.gnome.telepathy-account-widgets.gschema.xml
 
 OPTIONS_DEFINE=	JABBER MSN IRC SALUT HAZE MAP CHEESE
 OPTIONS_DEFAULT=JABBER MSN IRC SALUT      MAP
@@ -63,7 +64,6 @@ SALUT_DESC=	Enable link-local (serverless) XMPP support
 HAZE_DESC=	Enable libpurple protocol integration
 MAP_DESC=	Enable graphical map support
 CHEESE_DESC=	Enable cheese camera support
-NST_DESC=	Enable Nautilus SendTo plugin
 
 .include <bsd.port.options.mk>
 
@@ -87,16 +87,6 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-salut:${PORTSDIR}/net-im/telepathy-
 RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-haze
 .endif
 
-#.${PORT_OPTIONS:MNST}
-#BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/nautilus-sendto.pc:${PORTSDIR}/deskutils/nautilus-sendto
-#RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/nautilus-sendto.pc:${PORTSDIR}/deskutils/nautilus-sendto
-#CONFIGURE_ARGS+=--enable-nautilus-sendto=yes
-#PLIST_SUB+=	NST=""
-#.else
-CONFIGURE_ARGS+=--enable-nautilus-sendto=no
-PLIST_SUB+=	NST="@comment "
-#.endif
-
 .if ${PORT_OPTIONS:MMAP}
 USE_GL=		gl
 LIB_DEPENDS+=	libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain
@@ -108,20 +98,20 @@ PLIST_SUB+=	MAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCHEESE}
-BUILD_DEPENDS+=	cheese>=3.0.0:${PORTSDIR}/multimedia/cheese
-RUN_DEPENDS+=	cheese>=3.0.0:${PORTSDIR}/multimedia/cheese
+BUILD_DEPENDS+=	cheese>=0:${PORTSDIR}/multimedia/cheese
+RUN_DEPENDS+=	cheese>=0:${PORTSDIR}/multimedia/cheese
 CONFIGURE_ARGS+=--with-cheese
 .else
 CONFIGURE_ARGS+=--without-cheese
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|clutter-gst-1.0|clutter-gst-2.0|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|clutter-gst-1.0|clutter-gst-2.0|g ;\
+		s|MISSION_CONTROL_PLUGINS_DIR=`pkg-config -|MISSION_CONTROL_PLUGINS_DIR=$${libdir}/`pkg-config -|g' \
+			${WRKSRC}/configure
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/empathy/libempathy-3.6.2.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/empathy/libempathy-gtk-3.6.2.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/empathy/libempathy-*3.12.1.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mission-control-plugins.0/mcp-account-manager-goa.so
 
 .include <bsd.port.mk>

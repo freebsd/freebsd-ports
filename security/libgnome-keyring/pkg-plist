@@ -5,6 +5,7 @@ lib/girepository-1.0/GnomeKeyring-1.0.typelib
 lib/libgnome-keyring.la
 lib/libgnome-keyring.so
 lib/libgnome-keyring.so.0
+lib/libgnome-keyring.so.0.2.0
 libdata/pkgconfig/gnome-keyring-1.pc
 share/doc/gnome-keyring/annotation-glossary.html
 share/doc/gnome-keyring/ch01.html
@@ -54,7 +55,9 @@ share/locale/eu/LC_MESSAGES/libgnome-keyring.mo
 share/locale/fa/LC_MESSAGES/libgnome-keyring.mo
 share/locale/fi/LC_MESSAGES/libgnome-keyring.mo
 share/locale/fr/LC_MESSAGES/libgnome-keyring.mo
+share/locale/fur/LC_MESSAGES/libgnome-keyring.mo
 share/locale/fy/LC_MESSAGES/libgnome-keyring.mo
+share/locale/gd/LC_MESSAGES/libgnome-keyring.mo
 share/locale/gl/LC_MESSAGES/libgnome-keyring.mo
 share/locale/gu/LC_MESSAGES/libgnome-keyring.mo
 share/locale/he/LC_MESSAGES/libgnome-keyring.mo
@@ -90,6 +93,7 @@ share/locale/sr@latin/LC_MESSAGES/libgnome-keyring.mo
 share/locale/sv/LC_MESSAGES/libgnome-keyring.mo
 share/locale/ta/LC_MESSAGES/libgnome-keyring.mo
 share/locale/te/LC_MESSAGES/libgnome-keyring.mo
+share/locale/tg/LC_MESSAGES/libgnome-keyring.mo
 share/locale/th/LC_MESSAGES/libgnome-keyring.mo
 share/locale/tr/LC_MESSAGES/libgnome-keyring.mo
 share/locale/ug/LC_MESSAGES/libgnome-keyring.mo
@@ -105,6 +109,8 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-keyring.mo
 @dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/tg/LC_MESSAGES
+@dirrmtry share/locale/tg
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -115,8 +121,12 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-keyring.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd
 @dirrmtry share/locale/fy/LC_MESSAGES
 @dirrmtry share/locale/fy
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

@@ -1,8 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/sysutils/mate-power-manager/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	mate-power-manager
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -21,8 +23,7 @@ RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_MATE=	autogen common:build docutils intlhack libmatekeyring \
 		panel
 USE_XORG=	x11 xext xproto xrandr xrender

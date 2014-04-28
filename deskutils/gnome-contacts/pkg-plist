@@ -1,5 +1,6 @@
 bin/gnome-contacts
 libexec/gnome-contacts-search-provider
+share/appdata/gnome-contacts.appdata.xml
 share/applications/gnome-contacts.desktop
 share/dbus-1/services/org.gnome.Contacts.SearchProvider.service
 share/gnome-shell/search-providers/gnome-contacts-search-provider.ini
@@ -9,6 +10,7 @@ share/locale/as/LC_MESSAGES/gnome-contacts.mo
 share/locale/ast/LC_MESSAGES/gnome-contacts.mo
 share/locale/be/LC_MESSAGES/gnome-contacts.mo
 share/locale/bg/LC_MESSAGES/gnome-contacts.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-contacts.mo
 share/locale/ca/LC_MESSAGES/gnome-contacts.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-contacts.mo
 share/locale/cs/LC_MESSAGES/gnome-contacts.mo
@@ -24,7 +26,9 @@ share/locale/eu/LC_MESSAGES/gnome-contacts.mo
 share/locale/fa/LC_MESSAGES/gnome-contacts.mo
 share/locale/fi/LC_MESSAGES/gnome-contacts.mo
 share/locale/fr/LC_MESSAGES/gnome-contacts.mo
+share/locale/fur/LC_MESSAGES/gnome-contacts.mo
 share/locale/ga/LC_MESSAGES/gnome-contacts.mo
+share/locale/gd/LC_MESSAGES/gnome-contacts.mo
 share/locale/gl/LC_MESSAGES/gnome-contacts.mo
 share/locale/gu/LC_MESSAGES/gnome-contacts.mo
 share/locale/he/LC_MESSAGES/gnome-contacts.mo
@@ -34,6 +38,7 @@ share/locale/id/LC_MESSAGES/gnome-contacts.mo
 share/locale/it/LC_MESSAGES/gnome-contacts.mo
 share/locale/ja/LC_MESSAGES/gnome-contacts.mo
 share/locale/ko/LC_MESSAGES/gnome-contacts.mo
+share/locale/kk/LC_MESSAGES/gnome-contacts.mo
 share/locale/kn/LC_MESSAGES/gnome-contacts.mo
 share/locale/lt/LC_MESSAGES/gnome-contacts.mo
 share/locale/lv/LC_MESSAGES/gnome-contacts.mo
@@ -56,6 +61,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-contacts.mo
 share/locale/sv/LC_MESSAGES/gnome-contacts.mo
 share/locale/ta/LC_MESSAGES/gnome-contacts.mo
 share/locale/te/LC_MESSAGES/gnome-contacts.mo
+share/locale/tg/LC_MESSAGES/gnome-contacts.mo
 share/locale/th/LC_MESSAGES/gnome-contacts.mo
 share/locale/tr/LC_MESSAGES/gnome-contacts.mo
 share/locale/ug/LC_MESSAGES/gnome-contacts.mo

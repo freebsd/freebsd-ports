@@ -1,9 +1,10 @@
 # Created by: ade, archie
-# $FreeBSD$
+# $FreeBSD: head/x11-fm/mate-file-manager/Makefile 352090 2014-04-25 07:23:15Z bapt $
+#   $MCom: ports/trunk/x11-fm/mate-file-manager/Makefile 19574 2014-04-25 21:11:18Z kwm $
 
 PORTNAME=	mate-file-manager
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -19,15 +20,14 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/gvfsd:${PORTSDIR}/devel/gvfs
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shared-mime-info
-USE_XZ=		yes
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		shared-mime-info tar:xz
 USE_MATE=	desktop icontheme:run
 USE_XORG=	ice x11 xrender
 USE_GNOME=	glib20 gnomehier gtk20 intlhack introspection:build \
-		libxml2 ltasneededhack ltverhack pango
+		libxml2 pango
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBPNG="-L${LOCALBASE}/lib -lpng -lz"
 CONFIGURE_ARGS=	--enable-static \
@@ -36,14 +36,11 @@ CONFIGURE_ARGS=	--enable-static \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.mate.caja.gschema.xml \
 		org.mate.media-handling.gschema.xml
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/caja/extensions-2.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcaja-extension.so.1
 
 .include <bsd.port.mk>

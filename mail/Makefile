@@ -121,7 +121,6 @@
     SUBDIR += evolution
     SUBDIR += evolution-ews
     SUBDIR += evolution-exchange
-    SUBDIR += evolution-kolab
     SUBDIR += evolution-mapi
     SUBDIR += exact
     SUBDIR += exilog

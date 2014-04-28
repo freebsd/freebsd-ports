@@ -28,6 +28,7 @@
     SUBDIR += brightside
     SUBDIR += cinnamon
     SUBDIR += cinnamon-desktop
+    SUBDIR += cinnamon-menus
     SUBDIR += cinnamon-screensaver
     SUBDIR += cinnamon-session
     SUBDIR += cl-clx
@@ -84,7 +85,6 @@
     SUBDIR += gnome-desktop
     SUBDIR += gnome-desktop-reference
     SUBDIR += gnome-menus
-    SUBDIR += gnome-panel
     SUBDIR += gnome-panel-reference
     SUBDIR += gnome-pie
     SUBDIR += gnome-screensaver

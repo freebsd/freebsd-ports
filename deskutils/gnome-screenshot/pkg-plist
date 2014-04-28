@@ -4,6 +4,7 @@ share/GConf/gsettings/gnome-screenshot.convert
 share/applications/gnome-screenshot.desktop
 share/locale/af/LC_MESSAGES/gnome-screenshot.mo
 share/locale/am/LC_MESSAGES/gnome-screenshot.mo
+share/locale/an/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ar/LC_MESSAGES/gnome-screenshot.mo
 share/locale/as/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ast/LC_MESSAGES/gnome-screenshot.mo
@@ -34,7 +35,9 @@ share/locale/eu/LC_MESSAGES/gnome-screenshot.mo
 share/locale/fa/LC_MESSAGES/gnome-screenshot.mo
 share/locale/fi/LC_MESSAGES/gnome-screenshot.mo
 share/locale/fr/LC_MESSAGES/gnome-screenshot.mo
+share/locale/fur/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ga/LC_MESSAGES/gnome-screenshot.mo
+share/locale/gd/LC_MESSAGES/gnome-screenshot.mo
 share/locale/gl/LC_MESSAGES/gnome-screenshot.mo
 share/locale/gu/LC_MESSAGES/gnome-screenshot.mo
 share/locale/he/LC_MESSAGES/gnome-screenshot.mo
@@ -82,6 +85,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-screenshot.mo
 share/locale/sv/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ta/LC_MESSAGES/gnome-screenshot.mo
 share/locale/te/LC_MESSAGES/gnome-screenshot.mo
+share/locale/tg/LC_MESSAGES/gnome-screenshot.mo
 share/locale/th/LC_MESSAGES/gnome-screenshot.mo
 share/locale/tr/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ug/LC_MESSAGES/gnome-screenshot.mo
@@ -98,6 +102,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-screenshot.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/tg/LC_MESSAGES
+@dirrmtry share/locale/tg
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -120,6 +126,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-screenshot.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
@@ -134,3 +142,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-screenshot.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an

@@ -17,11 +17,3 @@
  *)
  	os_win32=no
  	NO_UNDEFINED='-no-undefined'
-@@ -16512,6 +16522,7 @@
- 		#include <sys/socket.h>
- 		#include <netinet/in.h>
- 		#include <netdb.h>
-+		#include <stdio.h>
- 
- 		#define BUFSIZE (sizeof(struct hostent)+10)
- 

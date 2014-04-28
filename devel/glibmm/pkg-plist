@@ -77,6 +77,7 @@ include/giomm-%%API_VERSION%%/giomm/mount.h
 include/giomm-%%API_VERSION%%/giomm/mountoperation.h
 include/giomm-%%API_VERSION%%/giomm/networkaddress.h
 include/giomm-%%API_VERSION%%/giomm/networkservice.h
+include/giomm-%%API_VERSION%%/giomm/notification.h
 include/giomm-%%API_VERSION%%/giomm/outputstream.h
 include/giomm-%%API_VERSION%%/giomm/pollableinputstream.h
 include/giomm-%%API_VERSION%%/giomm/pollableoutputstream.h
@@ -156,6 +157,7 @@ include/giomm-%%API_VERSION%%/giomm/private/mount_p.h
 include/giomm-%%API_VERSION%%/giomm/private/mountoperation_p.h
 include/giomm-%%API_VERSION%%/giomm/private/networkaddress_p.h
 include/giomm-%%API_VERSION%%/giomm/private/networkservice_p.h
+include/giomm-%%API_VERSION%%/giomm/private/notification_p.h
 include/giomm-%%API_VERSION%%/giomm/private/outputstream_p.h
 include/giomm-%%API_VERSION%%/giomm/private/pollableinputstream_p.h
 include/giomm-%%API_VERSION%%/giomm/private/pollableoutputstream_p.h
@@ -309,6 +311,7 @@ include/glibmm-%%API_VERSION%%/glibmm/private/unicode_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/uriutils_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/valuearray_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/variant_p.h
+include/glibmm-%%API_VERSION%%/glibmm/private/variantdict_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/variantiter_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/varianttype_p.h
 include/glibmm-%%API_VERSION%%/glibmm/property.h
@@ -342,6 +345,7 @@ include/glibmm-%%API_VERSION%%/glibmm/value_custom.h
 include/glibmm-%%API_VERSION%%/glibmm/valuearray.h
 include/glibmm-%%API_VERSION%%/glibmm/variant.h
 include/glibmm-%%API_VERSION%%/glibmm/variant_basictypes.h
+include/glibmm-%%API_VERSION%%/glibmm/variantdict.h
 include/glibmm-%%API_VERSION%%/glibmm/variantiter.h
 include/glibmm-%%API_VERSION%%/glibmm/varianttype.h
 include/glibmm-%%API_VERSION%%/glibmm/vectorutils.h

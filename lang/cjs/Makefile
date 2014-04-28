@@ -1,9 +1,10 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/lang/cjs/Makefile 18985 2014-01-21 12:30:41Z gusi $
+#    $MCom: ports/trunk/lang/cjs/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	cjs
-PORTVERSION=	2.0.0
+PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -17,20 +18,19 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 CONFLICTS_BUILD=spidermonkey17-1.7.*
 
-USES=		gettext gmake pathfix pkgconfig shebangfix
-USE_PYTHON_BUILD=yes
-USE_GNOME=      cairo glib20 gnomeprefix introspection:build \
+USES=		gettext libtool:keepla gmake pathfix pkgconfig shebangfix
+USE_GNOME=	cairo glib20 gnomeprefix introspection:build \
 		intlhack
+USE_PYTHON_BUILD=yes
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool autoconf automake
-
-CONFIGURE_ARGS+=--enable-compile-warnings=no
-
+USE_AUTOTOOLS=	libtoolize autoconf automake
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS+=--enable-compile-warnings=no
 
 SHEBANG_FILES=	scripts/make-tests
 python_OLD_CMD=	/usr/bin/env python
@@ -38,9 +38,5 @@ python_CMD=	${PYTHON_CMD}
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcjs*so*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cjs-1.0/*so
 
 .include <bsd.port.mk>

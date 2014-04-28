@@ -1,37 +1,32 @@
 bin/cheese
 include/cheese/cheese-avatar-chooser.h
+include/cheese/cheese-avatar-widget.h
 include/cheese/cheese-camera-device-monitor.h
 include/cheese/cheese-camera-device.h
 include/cheese/cheese-camera.h
 include/cheese/cheese-effect.h
 include/cheese/cheese-gtk.h
+include/cheese/cheese-resource.h
 include/cheese/cheese-widget.h
 include/cheese/cheese.h
-lib/girepository-1.0/Cheese-3.0.typelib
 lib/libcheese-gtk.la
 lib/libcheese-gtk.so
 lib/libcheese-gtk.so.23
+lib/libcheese-gtk.so.23.1.8
 lib/libcheese.la
 lib/libcheese.so
 lib/libcheese.so.7
+lib/libcheese.so.7.0.24
+lib/girepository-1.0/Cheese-3.0.typelib
 libdata/pkgconfig/cheese-gtk.pc
 libdata/pkgconfig/cheese.pc
+share/appdata/cheese.appdata.xml
 share/applications/cheese.desktop
-%%DATADIR%%/cheese-actions.ui
-%%DATADIR%%/cheese-main-window.ui
-%%DATADIR%%/cheese-prefs.ui
-%%DATADIR%%/cheese-viewport.json
-%%DATADIR%%/cheese.catalog
-%%DATADIR%%/cheese.css
-%%DATADIR%%/pixmaps/camera-icon.svg
-%%DATADIR%%/pixmaps/cheese-1.svg
-%%DATADIR%%/pixmaps/cheese-2.svg
-%%DATADIR%%/pixmaps/cheese-3.svg
-%%DATADIR%%/pixmaps/thumbnail-frame.png
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/CheeseAvatarChooser.html
+%%DOCSDIR%%/CheeseAvatarWidget.html
 %%DOCSDIR%%/CheeseCamera.html
 %%DOCSDIR%%/CheeseCameraDevice.html
 %%DOCSDIR%%/CheeseCameraDeviceMonitor.html
@@ -53,16 +48,33 @@ share/applications/cheese.desktop
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left-insensitive.png
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/libcheese-gtk.html
 %%DOCSDIR%%/libcheese.html
 %%DOCSDIR%%/object-tree.html
+%%DOCSDIR%%/right-insensitive.png
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/running-cheese.html
 %%DOCSDIR%%/style.css
+%%DOCSDIR%%/up-insensitive.png
 %%DOCSDIR%%/up.png
 share/gir-1.0/Cheese-3.0.gir
+share/help/C/cheese/burst-mode.page
 share/help/C/cheese/effects-apply.page
+share/help/C/cheese/index.page
+share/help/C/cheese/introduction.page
+share/help/C/cheese/legal.xml
+share/help/C/cheese/photo-delete.page
+share/help/C/cheese/photo-save.page
+share/help/C/cheese/photo-take.page
+share/help/C/cheese/photo-view.page
+share/help/C/cheese/pref-countdown.page
+share/help/C/cheese/pref-flash.page
+share/help/C/cheese/pref-fullscreen.page
+share/help/C/cheese/pref-image-properties.page
+share/help/C/cheese/pref-resolution.page
+share/help/C/cheese/video-record.page
 share/help/C/cheese/figures/cheese-delete.png
 share/help/C/cheese/figures/cheese-effects.png
 share/help/C/cheese/figures/cheese-introduction.png
@@ -73,21 +85,21 @@ share/help/C/cheese/figures/cheese.png
 share/help/C/cheese/figures/effects.png
 share/help/C/cheese/figures/image-properties.png
 share/help/C/cheese/figures/settings.png
-share/help/C/cheese/index.page
-share/help/C/cheese/introduction.page
-share/help/C/cheese/mode-wide.page
-share/help/C/cheese/photo-delete.page
-share/help/C/cheese/photo-save.page
-share/help/C/cheese/photo-take.page
-share/help/C/cheese/photo-view.page
-share/help/C/cheese/pref-burst-mode.page
-share/help/C/cheese/pref-countdown.page
-share/help/C/cheese/pref-flash.page
-share/help/C/cheese/pref-fullscreen.page
-share/help/C/cheese/pref-image-properties.page
-share/help/C/cheese/pref-photo-resolution.page
-share/help/C/cheese/video-record.page
+share/help/ca/cheese/burst-mode.page
 share/help/ca/cheese/effects-apply.page
+share/help/ca/cheese/index.page
+share/help/ca/cheese/introduction.page
+share/help/ca/cheese/legal.xml
+share/help/ca/cheese/photo-delete.page
+share/help/ca/cheese/photo-save.page
+share/help/ca/cheese/photo-take.page
+share/help/ca/cheese/photo-view.page
+share/help/ca/cheese/pref-countdown.page
+share/help/ca/cheese/pref-flash.page
+share/help/ca/cheese/pref-fullscreen.page
+share/help/ca/cheese/pref-image-properties.page
+share/help/ca/cheese/pref-resolution.page
+share/help/ca/cheese/video-record.page
 share/help/ca/cheese/figures/cheese-delete.png
 share/help/ca/cheese/figures/cheese-effects.png
 share/help/ca/cheese/figures/cheese-introduction.png
@@ -98,21 +110,21 @@ share/help/ca/cheese/figures/cheese.png
 share/help/ca/cheese/figures/effects.png
 share/help/ca/cheese/figures/image-properties.png
 share/help/ca/cheese/figures/settings.png
-share/help/ca/cheese/index.page
-share/help/ca/cheese/introduction.page
-share/help/ca/cheese/mode-wide.page
-share/help/ca/cheese/photo-delete.page
-share/help/ca/cheese/photo-save.page
-share/help/ca/cheese/photo-take.page
-share/help/ca/cheese/photo-view.page
-share/help/ca/cheese/pref-burst-mode.page
-share/help/ca/cheese/pref-countdown.page
-share/help/ca/cheese/pref-flash.page
-share/help/ca/cheese/pref-fullscreen.page
-share/help/ca/cheese/pref-image-properties.page
-share/help/ca/cheese/pref-photo-resolution.page
-share/help/ca/cheese/video-record.page
+share/help/cs/cheese/burst-mode.page
 share/help/cs/cheese/effects-apply.page
+share/help/cs/cheese/index.page
+share/help/cs/cheese/introduction.page
+share/help/cs/cheese/legal.xml
+share/help/cs/cheese/photo-delete.page
+share/help/cs/cheese/photo-save.page
+share/help/cs/cheese/photo-take.page
+share/help/cs/cheese/photo-view.page
+share/help/cs/cheese/pref-countdown.page
+share/help/cs/cheese/pref-flash.page
+share/help/cs/cheese/pref-fullscreen.page
+share/help/cs/cheese/pref-image-properties.page
+share/help/cs/cheese/pref-resolution.page
+share/help/cs/cheese/video-record.page
 share/help/cs/cheese/figures/cheese-delete.png
 share/help/cs/cheese/figures/cheese-effects.png
 share/help/cs/cheese/figures/cheese-introduction.png
@@ -123,21 +135,21 @@ share/help/cs/cheese/figures/cheese.png
 share/help/cs/cheese/figures/effects.png
 share/help/cs/cheese/figures/image-properties.png
 share/help/cs/cheese/figures/settings.png
-share/help/cs/cheese/index.page
-share/help/cs/cheese/introduction.page
-share/help/cs/cheese/mode-wide.page
-share/help/cs/cheese/photo-delete.page
-share/help/cs/cheese/photo-save.page
-share/help/cs/cheese/photo-take.page
-share/help/cs/cheese/photo-view.page
-share/help/cs/cheese/pref-burst-mode.page
-share/help/cs/cheese/pref-countdown.page
-share/help/cs/cheese/pref-flash.page
-share/help/cs/cheese/pref-fullscreen.page
-share/help/cs/cheese/pref-image-properties.page
-share/help/cs/cheese/pref-photo-resolution.page
-share/help/cs/cheese/video-record.page
+share/help/de/cheese/burst-mode.page
 share/help/de/cheese/effects-apply.page
+share/help/de/cheese/index.page
+share/help/de/cheese/introduction.page
+share/help/de/cheese/legal.xml
+share/help/de/cheese/photo-delete.page
+share/help/de/cheese/photo-save.page
+share/help/de/cheese/photo-take.page
+share/help/de/cheese/photo-view.page
+share/help/de/cheese/pref-countdown.page
+share/help/de/cheese/pref-flash.page
+share/help/de/cheese/pref-fullscreen.page
+share/help/de/cheese/pref-image-properties.page
+share/help/de/cheese/pref-resolution.page
+share/help/de/cheese/video-record.page
 share/help/de/cheese/figures/cheese-delete.png
 share/help/de/cheese/figures/cheese-effects.png
 share/help/de/cheese/figures/cheese-introduction.png
@@ -148,21 +160,21 @@ share/help/de/cheese/figures/cheese.png
 share/help/de/cheese/figures/effects.png
 share/help/de/cheese/figures/image-properties.png
 share/help/de/cheese/figures/settings.png
-share/help/de/cheese/index.page
-share/help/de/cheese/introduction.page
-share/help/de/cheese/mode-wide.page
-share/help/de/cheese/photo-delete.page
-share/help/de/cheese/photo-save.page
-share/help/de/cheese/photo-take.page
-share/help/de/cheese/photo-view.page
-share/help/de/cheese/pref-burst-mode.page
-share/help/de/cheese/pref-countdown.page
-share/help/de/cheese/pref-flash.page
-share/help/de/cheese/pref-fullscreen.page
-share/help/de/cheese/pref-image-properties.page
-share/help/de/cheese/pref-photo-resolution.page
-share/help/de/cheese/video-record.page
+share/help/el/cheese/burst-mode.page
 share/help/el/cheese/effects-apply.page
+share/help/el/cheese/index.page
+share/help/el/cheese/introduction.page
+share/help/el/cheese/legal.xml
+share/help/el/cheese/photo-delete.page
+share/help/el/cheese/photo-save.page
+share/help/el/cheese/photo-take.page
+share/help/el/cheese/photo-view.page
+share/help/el/cheese/pref-countdown.page
+share/help/el/cheese/pref-flash.page
+share/help/el/cheese/pref-fullscreen.page
+share/help/el/cheese/pref-image-properties.page
+share/help/el/cheese/pref-resolution.page
+share/help/el/cheese/video-record.page
 share/help/el/cheese/figures/cheese-delete.png
 share/help/el/cheese/figures/cheese-effects.png
 share/help/el/cheese/figures/cheese-introduction.png
@@ -173,46 +185,21 @@ share/help/el/cheese/figures/cheese.png
 share/help/el/cheese/figures/effects.png
 share/help/el/cheese/figures/image-properties.png
 share/help/el/cheese/figures/settings.png
-share/help/el/cheese/index.page
-share/help/el/cheese/introduction.page
-share/help/el/cheese/mode-wide.page
-share/help/el/cheese/photo-delete.page
-share/help/el/cheese/photo-save.page
-share/help/el/cheese/photo-take.page
-share/help/el/cheese/photo-view.page
-share/help/el/cheese/pref-burst-mode.page
-share/help/el/cheese/pref-countdown.page
-share/help/el/cheese/pref-flash.page
-share/help/el/cheese/pref-fullscreen.page
-share/help/el/cheese/pref-image-properties.page
-share/help/el/cheese/pref-photo-resolution.page
-share/help/el/cheese/video-record.page
-share/help/en_GB/cheese/effects-apply.page
-share/help/en_GB/cheese/figures/cheese-delete.png
-share/help/en_GB/cheese/figures/cheese-effects.png
-share/help/en_GB/cheese/figures/cheese-introduction.png
-share/help/en_GB/cheese/figures/cheese-record.png
-share/help/en_GB/cheese/figures/cheese-save.png
-share/help/en_GB/cheese/figures/cheese-take.png
-share/help/en_GB/cheese/figures/cheese.png
-share/help/en_GB/cheese/figures/effects.png
-share/help/en_GB/cheese/figures/image-properties.png
-share/help/en_GB/cheese/figures/settings.png
-share/help/en_GB/cheese/index.page
-share/help/en_GB/cheese/introduction.page
-share/help/en_GB/cheese/mode-wide.page
-share/help/en_GB/cheese/photo-delete.page
-share/help/en_GB/cheese/photo-save.page
-share/help/en_GB/cheese/photo-take.page
-share/help/en_GB/cheese/photo-view.page
-share/help/en_GB/cheese/pref-burst-mode.page
-share/help/en_GB/cheese/pref-countdown.page
-share/help/en_GB/cheese/pref-flash.page
-share/help/en_GB/cheese/pref-fullscreen.page
-share/help/en_GB/cheese/pref-image-properties.page
-share/help/en_GB/cheese/pref-photo-resolution.page
-share/help/en_GB/cheese/video-record.page
+share/help/es/cheese/burst-mode.page
 share/help/es/cheese/effects-apply.page
+share/help/es/cheese/index.page
+share/help/es/cheese/introduction.page
+share/help/es/cheese/legal.xml
+share/help/es/cheese/photo-delete.page
+share/help/es/cheese/photo-save.page
+share/help/es/cheese/photo-take.page
+share/help/es/cheese/photo-view.page
+share/help/es/cheese/pref-countdown.page
+share/help/es/cheese/pref-flash.page
+share/help/es/cheese/pref-fullscreen.page
+share/help/es/cheese/pref-image-properties.page
+share/help/es/cheese/pref-resolution.page
+share/help/es/cheese/video-record.page
 share/help/es/cheese/figures/cheese-delete.png
 share/help/es/cheese/figures/cheese-effects.png
 share/help/es/cheese/figures/cheese-introduction.png
@@ -223,46 +210,21 @@ share/help/es/cheese/figures/cheese.png
 share/help/es/cheese/figures/effects.png
 share/help/es/cheese/figures/image-properties.png
 share/help/es/cheese/figures/settings.png
-share/help/es/cheese/index.page
-share/help/es/cheese/introduction.page
-share/help/es/cheese/mode-wide.page
-share/help/es/cheese/photo-delete.page
-share/help/es/cheese/photo-save.page
-share/help/es/cheese/photo-take.page
-share/help/es/cheese/photo-view.page
-share/help/es/cheese/pref-burst-mode.page
-share/help/es/cheese/pref-countdown.page
-share/help/es/cheese/pref-flash.page
-share/help/es/cheese/pref-fullscreen.page
-share/help/es/cheese/pref-image-properties.page
-share/help/es/cheese/pref-photo-resolution.page
-share/help/es/cheese/video-record.page
-share/help/fi/cheese/effects-apply.page
-share/help/fi/cheese/figures/cheese-delete.png
-share/help/fi/cheese/figures/cheese-effects.png
-share/help/fi/cheese/figures/cheese-introduction.png
-share/help/fi/cheese/figures/cheese-record.png
-share/help/fi/cheese/figures/cheese-save.png
-share/help/fi/cheese/figures/cheese-take.png
-share/help/fi/cheese/figures/cheese.png
-share/help/fi/cheese/figures/effects.png
-share/help/fi/cheese/figures/image-properties.png
-share/help/fi/cheese/figures/settings.png
-share/help/fi/cheese/index.page
-share/help/fi/cheese/introduction.page
-share/help/fi/cheese/mode-wide.page
-share/help/fi/cheese/photo-delete.page
-share/help/fi/cheese/photo-save.page
-share/help/fi/cheese/photo-take.page
-share/help/fi/cheese/photo-view.page
-share/help/fi/cheese/pref-burst-mode.page
-share/help/fi/cheese/pref-countdown.page
-share/help/fi/cheese/pref-flash.page
-share/help/fi/cheese/pref-fullscreen.page
-share/help/fi/cheese/pref-image-properties.page
-share/help/fi/cheese/pref-photo-resolution.page
-share/help/fi/cheese/video-record.page
+share/help/fr/cheese/burst-mode.page
 share/help/fr/cheese/effects-apply.page
+share/help/fr/cheese/index.page
+share/help/fr/cheese/introduction.page
+share/help/fr/cheese/legal.xml
+share/help/fr/cheese/photo-delete.page
+share/help/fr/cheese/photo-save.page
+share/help/fr/cheese/photo-take.page
+share/help/fr/cheese/photo-view.page
+share/help/fr/cheese/pref-countdown.page
+share/help/fr/cheese/pref-flash.page
+share/help/fr/cheese/pref-fullscreen.page
+share/help/fr/cheese/pref-image-properties.page
+share/help/fr/cheese/pref-resolution.page
+share/help/fr/cheese/video-record.page
 share/help/fr/cheese/figures/cheese-delete.png
 share/help/fr/cheese/figures/cheese-effects.png
 share/help/fr/cheese/figures/cheese-introduction.png
@@ -273,21 +235,21 @@ share/help/fr/cheese/figures/cheese.png
 share/help/fr/cheese/figures/effects.png
 share/help/fr/cheese/figures/image-properties.png
 share/help/fr/cheese/figures/settings.png
-share/help/fr/cheese/index.page
-share/help/fr/cheese/introduction.page
-share/help/fr/cheese/mode-wide.page
-share/help/fr/cheese/photo-delete.page
-share/help/fr/cheese/photo-save.page
-share/help/fr/cheese/photo-take.page
-share/help/fr/cheese/photo-view.page
-share/help/fr/cheese/pref-burst-mode.page
-share/help/fr/cheese/pref-countdown.page
-share/help/fr/cheese/pref-flash.page
-share/help/fr/cheese/pref-fullscreen.page
-share/help/fr/cheese/pref-image-properties.page
-share/help/fr/cheese/pref-photo-resolution.page
-share/help/fr/cheese/video-record.page
+share/help/gl/cheese/burst-mode.page
 share/help/gl/cheese/effects-apply.page
+share/help/gl/cheese/index.page
+share/help/gl/cheese/introduction.page
+share/help/gl/cheese/legal.xml
+share/help/gl/cheese/photo-delete.page
+share/help/gl/cheese/photo-save.page
+share/help/gl/cheese/photo-take.page
+share/help/gl/cheese/photo-view.page
+share/help/gl/cheese/pref-countdown.page
+share/help/gl/cheese/pref-flash.page
+share/help/gl/cheese/pref-fullscreen.page
+share/help/gl/cheese/pref-image-properties.page
+share/help/gl/cheese/pref-resolution.page
+share/help/gl/cheese/video-record.page
 share/help/gl/cheese/figures/cheese-delete.png
 share/help/gl/cheese/figures/cheese-effects.png
 share/help/gl/cheese/figures/cheese-introduction.png
@@ -298,21 +260,21 @@ share/help/gl/cheese/figures/cheese.png
 share/help/gl/cheese/figures/effects.png
 share/help/gl/cheese/figures/image-properties.png
 share/help/gl/cheese/figures/settings.png
-share/help/gl/cheese/index.page
-share/help/gl/cheese/introduction.page
-share/help/gl/cheese/mode-wide.page
-share/help/gl/cheese/photo-delete.page
-share/help/gl/cheese/photo-save.page
-share/help/gl/cheese/photo-take.page
-share/help/gl/cheese/photo-view.page
-share/help/gl/cheese/pref-burst-mode.page
-share/help/gl/cheese/pref-countdown.page
-share/help/gl/cheese/pref-flash.page
-share/help/gl/cheese/pref-fullscreen.page
-share/help/gl/cheese/pref-image-properties.page
-share/help/gl/cheese/pref-photo-resolution.page
-share/help/gl/cheese/video-record.page
+share/help/hu/cheese/burst-mode.page
 share/help/hu/cheese/effects-apply.page
+share/help/hu/cheese/index.page
+share/help/hu/cheese/introduction.page
+share/help/hu/cheese/legal.xml
+share/help/hu/cheese/photo-delete.page
+share/help/hu/cheese/photo-save.page
+share/help/hu/cheese/photo-take.page
+share/help/hu/cheese/photo-view.page
+share/help/hu/cheese/pref-countdown.page
+share/help/hu/cheese/pref-flash.page
+share/help/hu/cheese/pref-fullscreen.page
+share/help/hu/cheese/pref-image-properties.page
+share/help/hu/cheese/pref-resolution.page
+share/help/hu/cheese/video-record.page
 share/help/hu/cheese/figures/cheese-delete.png
 share/help/hu/cheese/figures/cheese-effects.png
 share/help/hu/cheese/figures/cheese-introduction.png
@@ -323,21 +285,21 @@ share/help/hu/cheese/figures/cheese.png
 share/help/hu/cheese/figures/effects.png
 share/help/hu/cheese/figures/image-properties.png
 share/help/hu/cheese/figures/settings.png
-share/help/hu/cheese/index.page
-share/help/hu/cheese/introduction.page
-share/help/hu/cheese/mode-wide.page
-share/help/hu/cheese/photo-delete.page
-share/help/hu/cheese/photo-save.page
-share/help/hu/cheese/photo-take.page
-share/help/hu/cheese/photo-view.page
-share/help/hu/cheese/pref-burst-mode.page
-share/help/hu/cheese/pref-countdown.page
-share/help/hu/cheese/pref-flash.page
-share/help/hu/cheese/pref-fullscreen.page
-share/help/hu/cheese/pref-image-properties.page
-share/help/hu/cheese/pref-photo-resolution.page
-share/help/hu/cheese/video-record.page
+share/help/id/cheese/burst-mode.page
 share/help/id/cheese/effects-apply.page
+share/help/id/cheese/index.page
+share/help/id/cheese/introduction.page
+share/help/id/cheese/legal.xml
+share/help/id/cheese/photo-delete.page
+share/help/id/cheese/photo-save.page
+share/help/id/cheese/photo-take.page
+share/help/id/cheese/photo-view.page
+share/help/id/cheese/pref-countdown.page
+share/help/id/cheese/pref-flash.page
+share/help/id/cheese/pref-fullscreen.page
+share/help/id/cheese/pref-image-properties.page
+share/help/id/cheese/pref-resolution.page
+share/help/id/cheese/video-record.page
 share/help/id/cheese/figures/cheese-delete.png
 share/help/id/cheese/figures/cheese-effects.png
 share/help/id/cheese/figures/cheese-introduction.png
@@ -348,171 +310,21 @@ share/help/id/cheese/figures/cheese.png
 share/help/id/cheese/figures/effects.png
 share/help/id/cheese/figures/image-properties.png
 share/help/id/cheese/figures/settings.png
-share/help/id/cheese/index.page
-share/help/id/cheese/introduction.page
-share/help/id/cheese/mode-wide.page
-share/help/id/cheese/photo-delete.page
-share/help/id/cheese/photo-save.page
-share/help/id/cheese/photo-take.page
-share/help/id/cheese/photo-view.page
-share/help/id/cheese/pref-burst-mode.page
-share/help/id/cheese/pref-countdown.page
-share/help/id/cheese/pref-flash.page
-share/help/id/cheese/pref-fullscreen.page
-share/help/id/cheese/pref-image-properties.page
-share/help/id/cheese/pref-photo-resolution.page
-share/help/id/cheese/video-record.page
-share/help/it/cheese/effects-apply.page
-share/help/it/cheese/figures/cheese-delete.png
-share/help/it/cheese/figures/cheese-effects.png
-share/help/it/cheese/figures/cheese-introduction.png
-share/help/it/cheese/figures/cheese-record.png
-share/help/it/cheese/figures/cheese-save.png
-share/help/it/cheese/figures/cheese-take.png
-share/help/it/cheese/figures/cheese.png
-share/help/it/cheese/figures/effects.png
-share/help/it/cheese/figures/image-properties.png
-share/help/it/cheese/figures/settings.png
-share/help/it/cheese/index.page
-share/help/it/cheese/introduction.page
-share/help/it/cheese/mode-wide.page
-share/help/it/cheese/photo-delete.page
-share/help/it/cheese/photo-save.page
-share/help/it/cheese/photo-take.page
-share/help/it/cheese/photo-view.page
-share/help/it/cheese/pref-burst-mode.page
-share/help/it/cheese/pref-countdown.page
-share/help/it/cheese/pref-flash.page
-share/help/it/cheese/pref-fullscreen.page
-share/help/it/cheese/pref-image-properties.page
-share/help/it/cheese/pref-photo-resolution.page
-share/help/it/cheese/video-record.page
-share/help/ko/cheese/effects-apply.page
-share/help/ko/cheese/figures/cheese-delete.png
-share/help/ko/cheese/figures/cheese-effects.png
-share/help/ko/cheese/figures/cheese-introduction.png
-share/help/ko/cheese/figures/cheese-record.png
-share/help/ko/cheese/figures/cheese-save.png
-share/help/ko/cheese/figures/cheese-take.png
-share/help/ko/cheese/figures/cheese.png
-share/help/ko/cheese/figures/effects.png
-share/help/ko/cheese/figures/image-properties.png
-share/help/ko/cheese/figures/settings.png
-share/help/ko/cheese/index.page
-share/help/ko/cheese/introduction.page
-share/help/ko/cheese/mode-wide.page
-share/help/ko/cheese/photo-delete.page
-share/help/ko/cheese/photo-save.page
-share/help/ko/cheese/photo-take.page
-share/help/ko/cheese/photo-view.page
-share/help/ko/cheese/pref-burst-mode.page
-share/help/ko/cheese/pref-countdown.page
-share/help/ko/cheese/pref-flash.page
-share/help/ko/cheese/pref-fullscreen.page
-share/help/ko/cheese/pref-image-properties.page
-share/help/ko/cheese/pref-photo-resolution.page
-share/help/ko/cheese/video-record.page
-share/help/lv/cheese/effects-apply.page
-share/help/lv/cheese/figures/cheese-delete.png
-share/help/lv/cheese/figures/cheese-effects.png
-share/help/lv/cheese/figures/cheese-introduction.png
-share/help/lv/cheese/figures/cheese-record.png
-share/help/lv/cheese/figures/cheese-save.png
-share/help/lv/cheese/figures/cheese-take.png
-share/help/lv/cheese/figures/cheese.png
-share/help/lv/cheese/figures/effects.png
-share/help/lv/cheese/figures/image-properties.png
-share/help/lv/cheese/figures/settings.png
-share/help/lv/cheese/index.page
-share/help/lv/cheese/introduction.page
-share/help/lv/cheese/mode-wide.page
-share/help/lv/cheese/photo-delete.page
-share/help/lv/cheese/photo-save.page
-share/help/lv/cheese/photo-take.page
-share/help/lv/cheese/photo-view.page
-share/help/lv/cheese/pref-burst-mode.page
-share/help/lv/cheese/pref-countdown.page
-share/help/lv/cheese/pref-flash.page
-share/help/lv/cheese/pref-fullscreen.page
-share/help/lv/cheese/pref-image-properties.page
-share/help/lv/cheese/pref-photo-resolution.page
-share/help/lv/cheese/video-record.page
-share/help/nl/cheese/effects-apply.page
-share/help/nl/cheese/figures/cheese-delete.png
-share/help/nl/cheese/figures/cheese-effects.png
-share/help/nl/cheese/figures/cheese-introduction.png
-share/help/nl/cheese/figures/cheese-record.png
-share/help/nl/cheese/figures/cheese-save.png
-share/help/nl/cheese/figures/cheese-take.png
-share/help/nl/cheese/figures/cheese.png
-share/help/nl/cheese/figures/effects.png
-share/help/nl/cheese/figures/image-properties.png
-share/help/nl/cheese/figures/settings.png
-share/help/nl/cheese/index.page
-share/help/nl/cheese/introduction.page
-share/help/nl/cheese/mode-wide.page
-share/help/nl/cheese/photo-delete.page
-share/help/nl/cheese/photo-save.page
-share/help/nl/cheese/photo-take.page
-share/help/nl/cheese/photo-view.page
-share/help/nl/cheese/pref-burst-mode.page
-share/help/nl/cheese/pref-countdown.page
-share/help/nl/cheese/pref-flash.page
-share/help/nl/cheese/pref-fullscreen.page
-share/help/nl/cheese/pref-image-properties.page
-share/help/nl/cheese/pref-photo-resolution.page
-share/help/nl/cheese/video-record.page
-share/help/oc/cheese/effects-apply.page
-share/help/oc/cheese/figures/cheese-delete.png
-share/help/oc/cheese/figures/cheese-effects.png
-share/help/oc/cheese/figures/cheese-introduction.png
-share/help/oc/cheese/figures/cheese-record.png
-share/help/oc/cheese/figures/cheese-save.png
-share/help/oc/cheese/figures/cheese-take.png
-share/help/oc/cheese/figures/cheese.png
-share/help/oc/cheese/figures/effects.png
-share/help/oc/cheese/figures/image-properties.png
-share/help/oc/cheese/figures/settings.png
-share/help/oc/cheese/index.page
-share/help/oc/cheese/introduction.page
-share/help/oc/cheese/mode-wide.page
-share/help/oc/cheese/photo-delete.page
-share/help/oc/cheese/photo-save.page
-share/help/oc/cheese/photo-take.page
-share/help/oc/cheese/photo-view.page
-share/help/oc/cheese/pref-burst-mode.page
-share/help/oc/cheese/pref-countdown.page
-share/help/oc/cheese/pref-flash.page
-share/help/oc/cheese/pref-fullscreen.page
-share/help/oc/cheese/pref-image-properties.page
-share/help/oc/cheese/pref-photo-resolution.page
-share/help/oc/cheese/video-record.page
-share/help/pa/cheese/effects-apply.page
-share/help/pa/cheese/figures/cheese-delete.png
-share/help/pa/cheese/figures/cheese-effects.png
-share/help/pa/cheese/figures/cheese-introduction.png
-share/help/pa/cheese/figures/cheese-record.png
-share/help/pa/cheese/figures/cheese-save.png
-share/help/pa/cheese/figures/cheese-take.png
-share/help/pa/cheese/figures/cheese.png
-share/help/pa/cheese/figures/effects.png
-share/help/pa/cheese/figures/image-properties.png
-share/help/pa/cheese/figures/settings.png
-share/help/pa/cheese/index.page
-share/help/pa/cheese/introduction.page
-share/help/pa/cheese/mode-wide.page
-share/help/pa/cheese/photo-delete.page
-share/help/pa/cheese/photo-save.page
-share/help/pa/cheese/photo-take.page
-share/help/pa/cheese/photo-view.page
-share/help/pa/cheese/pref-burst-mode.page
-share/help/pa/cheese/pref-countdown.page
-share/help/pa/cheese/pref-flash.page
-share/help/pa/cheese/pref-fullscreen.page
-share/help/pa/cheese/pref-image-properties.page
-share/help/pa/cheese/pref-photo-resolution.page
-share/help/pa/cheese/video-record.page
+share/help/pt_BR/cheese/burst-mode.page
 share/help/pt_BR/cheese/effects-apply.page
+share/help/pt_BR/cheese/index.page
+share/help/pt_BR/cheese/introduction.page
+share/help/pt_BR/cheese/legal.xml
+share/help/pt_BR/cheese/photo-delete.page
+share/help/pt_BR/cheese/photo-save.page
+share/help/pt_BR/cheese/photo-take.page
+share/help/pt_BR/cheese/photo-view.page
+share/help/pt_BR/cheese/pref-countdown.page
+share/help/pt_BR/cheese/pref-flash.page
+share/help/pt_BR/cheese/pref-fullscreen.page
+share/help/pt_BR/cheese/pref-image-properties.page
+share/help/pt_BR/cheese/pref-resolution.page
+share/help/pt_BR/cheese/video-record.page
 share/help/pt_BR/cheese/figures/cheese-delete.png
 share/help/pt_BR/cheese/figures/cheese-effects.png
 share/help/pt_BR/cheese/figures/cheese-introduction.png
@@ -523,21 +335,21 @@ share/help/pt_BR/cheese/figures/cheese.png
 share/help/pt_BR/cheese/figures/effects.png
 share/help/pt_BR/cheese/figures/image-properties.png
 share/help/pt_BR/cheese/figures/settings.png
-share/help/pt_BR/cheese/index.page
-share/help/pt_BR/cheese/introduction.page
-share/help/pt_BR/cheese/mode-wide.page
-share/help/pt_BR/cheese/photo-delete.page
-share/help/pt_BR/cheese/photo-save.page
-share/help/pt_BR/cheese/photo-take.page
-share/help/pt_BR/cheese/photo-view.page
-share/help/pt_BR/cheese/pref-burst-mode.page
-share/help/pt_BR/cheese/pref-countdown.page
-share/help/pt_BR/cheese/pref-flash.page
-share/help/pt_BR/cheese/pref-fullscreen.page
-share/help/pt_BR/cheese/pref-image-properties.page
-share/help/pt_BR/cheese/pref-photo-resolution.page
-share/help/pt_BR/cheese/video-record.page
+share/help/ru/cheese/burst-mode.page
 share/help/ru/cheese/effects-apply.page
+share/help/ru/cheese/index.page
+share/help/ru/cheese/introduction.page
+share/help/ru/cheese/legal.xml
+share/help/ru/cheese/photo-delete.page
+share/help/ru/cheese/photo-save.page
+share/help/ru/cheese/photo-take.page
+share/help/ru/cheese/photo-view.page
+share/help/ru/cheese/pref-countdown.page
+share/help/ru/cheese/pref-flash.page
+share/help/ru/cheese/pref-fullscreen.page
+share/help/ru/cheese/pref-image-properties.page
+share/help/ru/cheese/pref-resolution.page
+share/help/ru/cheese/video-record.page
 share/help/ru/cheese/figures/cheese-delete.png
 share/help/ru/cheese/figures/cheese-effects.png
 share/help/ru/cheese/figures/cheese-introduction.png
@@ -548,21 +360,21 @@ share/help/ru/cheese/figures/cheese.png
 share/help/ru/cheese/figures/effects.png
 share/help/ru/cheese/figures/image-properties.png
 share/help/ru/cheese/figures/settings.png
-share/help/ru/cheese/index.page
-share/help/ru/cheese/introduction.page
-share/help/ru/cheese/mode-wide.page
-share/help/ru/cheese/photo-delete.page
-share/help/ru/cheese/photo-save.page
-share/help/ru/cheese/photo-take.page
-share/help/ru/cheese/photo-view.page
-share/help/ru/cheese/pref-burst-mode.page
-share/help/ru/cheese/pref-countdown.page
-share/help/ru/cheese/pref-flash.page
-share/help/ru/cheese/pref-fullscreen.page
-share/help/ru/cheese/pref-image-properties.page
-share/help/ru/cheese/pref-photo-resolution.page
-share/help/ru/cheese/video-record.page
+share/help/sl/cheese/burst-mode.page
 share/help/sl/cheese/effects-apply.page
+share/help/sl/cheese/index.page
+share/help/sl/cheese/introduction.page
+share/help/sl/cheese/legal.xml
+share/help/sl/cheese/photo-delete.page
+share/help/sl/cheese/photo-save.page
+share/help/sl/cheese/photo-take.page
+share/help/sl/cheese/photo-view.page
+share/help/sl/cheese/pref-countdown.page
+share/help/sl/cheese/pref-flash.page
+share/help/sl/cheese/pref-fullscreen.page
+share/help/sl/cheese/pref-image-properties.page
+share/help/sl/cheese/pref-resolution.page
+share/help/sl/cheese/video-record.page
 share/help/sl/cheese/figures/cheese-delete.png
 share/help/sl/cheese/figures/cheese-effects.png
 share/help/sl/cheese/figures/cheese-introduction.png
@@ -573,96 +385,21 @@ share/help/sl/cheese/figures/cheese.png
 share/help/sl/cheese/figures/effects.png
 share/help/sl/cheese/figures/image-properties.png
 share/help/sl/cheese/figures/settings.png
-share/help/sl/cheese/index.page
-share/help/sl/cheese/introduction.page
-share/help/sl/cheese/mode-wide.page
-share/help/sl/cheese/photo-delete.page
-share/help/sl/cheese/photo-save.page
-share/help/sl/cheese/photo-take.page
-share/help/sl/cheese/photo-view.page
-share/help/sl/cheese/pref-burst-mode.page
-share/help/sl/cheese/pref-countdown.page
-share/help/sl/cheese/pref-flash.page
-share/help/sl/cheese/pref-fullscreen.page
-share/help/sl/cheese/pref-image-properties.page
-share/help/sl/cheese/pref-photo-resolution.page
-share/help/sl/cheese/video-record.page
-share/help/sv/cheese/effects-apply.page
-share/help/sv/cheese/figures/cheese-delete.png
-share/help/sv/cheese/figures/cheese-effects.png
-share/help/sv/cheese/figures/cheese-introduction.png
-share/help/sv/cheese/figures/cheese-record.png
-share/help/sv/cheese/figures/cheese-save.png
-share/help/sv/cheese/figures/cheese-take.png
-share/help/sv/cheese/figures/cheese.png
-share/help/sv/cheese/figures/effects.png
-share/help/sv/cheese/figures/image-properties.png
-share/help/sv/cheese/figures/settings.png
-share/help/sv/cheese/index.page
-share/help/sv/cheese/introduction.page
-share/help/sv/cheese/mode-wide.page
-share/help/sv/cheese/photo-delete.page
-share/help/sv/cheese/photo-save.page
-share/help/sv/cheese/photo-take.page
-share/help/sv/cheese/photo-view.page
-share/help/sv/cheese/pref-burst-mode.page
-share/help/sv/cheese/pref-countdown.page
-share/help/sv/cheese/pref-flash.page
-share/help/sv/cheese/pref-fullscreen.page
-share/help/sv/cheese/pref-image-properties.page
-share/help/sv/cheese/pref-photo-resolution.page
-share/help/sv/cheese/video-record.page
-share/help/te/cheese/effects-apply.page
-share/help/te/cheese/figures/cheese-delete.png
-share/help/te/cheese/figures/cheese-effects.png
-share/help/te/cheese/figures/cheese-introduction.png
-share/help/te/cheese/figures/cheese-record.png
-share/help/te/cheese/figures/cheese-save.png
-share/help/te/cheese/figures/cheese-take.png
-share/help/te/cheese/figures/cheese.png
-share/help/te/cheese/figures/effects.png
-share/help/te/cheese/figures/image-properties.png
-share/help/te/cheese/figures/settings.png
-share/help/te/cheese/index.page
-share/help/te/cheese/introduction.page
-share/help/te/cheese/mode-wide.page
-share/help/te/cheese/photo-delete.page
-share/help/te/cheese/photo-save.page
-share/help/te/cheese/photo-take.page
-share/help/te/cheese/photo-view.page
-share/help/te/cheese/pref-burst-mode.page
-share/help/te/cheese/pref-countdown.page
-share/help/te/cheese/pref-flash.page
-share/help/te/cheese/pref-fullscreen.page
-share/help/te/cheese/pref-image-properties.page
-share/help/te/cheese/pref-photo-resolution.page
-share/help/te/cheese/video-record.page
-share/help/th/cheese/effects-apply.page
-share/help/th/cheese/figures/cheese-delete.png
-share/help/th/cheese/figures/cheese-effects.png
-share/help/th/cheese/figures/cheese-introduction.png
-share/help/th/cheese/figures/cheese-record.png
-share/help/th/cheese/figures/cheese-save.png
-share/help/th/cheese/figures/cheese-take.png
-share/help/th/cheese/figures/cheese.png
-share/help/th/cheese/figures/effects.png
-share/help/th/cheese/figures/image-properties.png
-share/help/th/cheese/figures/settings.png
-share/help/th/cheese/index.page
-share/help/th/cheese/introduction.page
-share/help/th/cheese/mode-wide.page
-share/help/th/cheese/photo-delete.page
-share/help/th/cheese/photo-save.page
-share/help/th/cheese/photo-take.page
-share/help/th/cheese/photo-view.page
-share/help/th/cheese/pref-burst-mode.page
-share/help/th/cheese/pref-countdown.page
-share/help/th/cheese/pref-flash.page
-share/help/th/cheese/pref-fullscreen.page
-share/help/th/cheese/pref-image-properties.page
-share/help/th/cheese/pref-photo-resolution.page
-share/help/th/cheese/video-record.page
+share/help/zh_CN/cheese/burst-mode.page
 share/help/zh_CN/cheese/effects-apply.page
+share/help/zh_CN/cheese/index.page
+share/help/zh_CN/cheese/introduction.page
+share/help/zh_CN/cheese/legal.xml
+share/help/zh_CN/cheese/photo-delete.page
+share/help/zh_CN/cheese/photo-save.page
+share/help/zh_CN/cheese/photo-take.page
+share/help/zh_CN/cheese/photo-view.page
+share/help/zh_CN/cheese/pref-countdown.page
+share/help/zh_CN/cheese/pref-flash.page
+share/help/zh_CN/cheese/pref-fullscreen.page
+share/help/zh_CN/cheese/pref-image-properties.page
+share/help/zh_CN/cheese/pref-resolution.page
+share/help/zh_CN/cheese/video-record.page
 share/help/zh_CN/cheese/figures/cheese-delete.png
 share/help/zh_CN/cheese/figures/cheese-effects.png
 share/help/zh_CN/cheese/figures/cheese-introduction.png
@@ -673,45 +410,14 @@ share/help/zh_CN/cheese/figures/cheese.png
 share/help/zh_CN/cheese/figures/effects.png
 share/help/zh_CN/cheese/figures/image-properties.png
 share/help/zh_CN/cheese/figures/settings.png
-share/help/zh_CN/cheese/index.page
-share/help/zh_CN/cheese/introduction.page
-share/help/zh_CN/cheese/mode-wide.page
-share/help/zh_CN/cheese/photo-delete.page
-share/help/zh_CN/cheese/photo-save.page
-share/help/zh_CN/cheese/photo-take.page
-share/help/zh_CN/cheese/photo-view.page
-share/help/zh_CN/cheese/pref-burst-mode.page
-share/help/zh_CN/cheese/pref-countdown.page
-share/help/zh_CN/cheese/pref-flash.page
-share/help/zh_CN/cheese/pref-fullscreen.page
-share/help/zh_CN/cheese/pref-image-properties.page
-share/help/zh_CN/cheese/pref-photo-resolution.page
-share/help/zh_CN/cheese/video-record.page
-share/icons/hicolor/16x16/actions/browse-webcam-effects.png
-share/icons/hicolor/16x16/actions/cheese-take-burst.png
-share/icons/hicolor/16x16/actions/cheese-take-photo.png
 share/icons/hicolor/16x16/apps/cheese.png
-share/icons/hicolor/22x22/actions/browse-webcam-effects.png
-share/icons/hicolor/22x22/actions/cheese-take-burst.png
-share/icons/hicolor/22x22/actions/cheese-take-photo.png
 share/icons/hicolor/22x22/apps/cheese.png
-share/icons/hicolor/24x24/actions/browse-webcam-effects.png
-share/icons/hicolor/24x24/actions/cheese-take-burst.png
-share/icons/hicolor/24x24/actions/cheese-take-photo.png
 share/icons/hicolor/24x24/apps/cheese.png
 share/icons/hicolor/256x256/apps/cheese.png
-share/icons/hicolor/32x32/actions/browse-webcam-effects.png
-share/icons/hicolor/32x32/actions/cheese-take-burst.png
-share/icons/hicolor/32x32/actions/cheese-take-photo.png
 share/icons/hicolor/32x32/apps/cheese.png
-share/icons/hicolor/48x48/actions/browse-webcam-effects.png
-share/icons/hicolor/48x48/actions/cheese-take-burst.png
-share/icons/hicolor/48x48/actions/cheese-take-photo.png
 share/icons/hicolor/48x48/apps/cheese.png
-share/icons/hicolor/scalable/actions/browse-webcam-effects.svg
-share/icons/hicolor/scalable/actions/cheese-take-burst.svg
-share/icons/hicolor/scalable/actions/cheese-take-photo.svg
 share/locale/af/LC_MESSAGES/cheese.mo
+share/locale/an/LC_MESSAGES/cheese.mo
 share/locale/ar/LC_MESSAGES/cheese.mo
 share/locale/as/LC_MESSAGES/cheese.mo
 share/locale/ast/LC_MESSAGES/cheese.mo
@@ -736,6 +442,7 @@ share/locale/eu/LC_MESSAGES/cheese.mo
 share/locale/fa/LC_MESSAGES/cheese.mo
 share/locale/fi/LC_MESSAGES/cheese.mo
 share/locale/fr/LC_MESSAGES/cheese.mo
+share/locale/fur/LC_MESSAGES/cheese.mo
 share/locale/ga/LC_MESSAGES/cheese.mo
 share/locale/gl/LC_MESSAGES/cheese.mo
 share/locale/gu/LC_MESSAGES/cheese.mo
@@ -781,6 +488,7 @@ share/locale/sr@latin/LC_MESSAGES/cheese.mo
 share/locale/sv/LC_MESSAGES/cheese.mo
 share/locale/ta/LC_MESSAGES/cheese.mo
 share/locale/te/LC_MESSAGES/cheese.mo
+share/locale/tg/LC_MESSAGES/cheese.mo
 share/locale/th/LC_MESSAGES/cheese.mo
 share/locale/tr/LC_MESSAGES/cheese.mo
 share/locale/ug/LC_MESSAGES/cheese.mo
@@ -791,123 +499,36 @@ share/locale/zh_CN/LC_MESSAGES/cheese.mo
 share/locale/zh_HK/LC_MESSAGES/cheese.mo
 share/locale/zh_TW/LC_MESSAGES/cheese.mo
 share/locale/zu/LC_MESSAGES/cheese.mo
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-@dirrmtry share/help/zh_CN/cheese/figures
-@dirrmtry share/help/zh_CN/cheese
-@dirrmtry share/help/zh_CN
-@dirrmtry share/help/th/cheese/figures
-@dirrmtry share/help/th/cheese
-@dirrmtry share/help/th
-@dirrmtry share/help/te/cheese/figures
-@dirrmtry share/help/te/cheese
-@dirrmtry share/help/te
-@dirrmtry share/help/sv/cheese/figures
-@dirrmtry share/help/sv/cheese
-@dirrmtry share/help/sv
-@dirrmtry share/help/sl/cheese/figures
-@dirrmtry share/help/sl/cheese
-@dirrmtry share/help/sl
-@dirrmtry share/help/ru/cheese/figures
-@dirrmtry share/help/ru/cheese
-@dirrmtry share/help/ru
-@dirrmtry share/help/pt_BR/cheese/figures
-@dirrmtry share/help/pt_BR/cheese
-@dirrmtry share/help/pt_BR
-@dirrmtry share/help/pa/cheese/figures
-@dirrmtry share/help/pa/cheese
-@dirrmtry share/help/pa
-@dirrmtry share/help/oc/cheese/figures
-@dirrmtry share/help/oc/cheese
-@dirrmtry share/help/oc
-@dirrmtry share/help/nl/cheese/figures
-@dirrmtry share/help/nl/cheese
-@dirrmtry share/help/nl
-@dirrmtry share/help/lv/cheese/figures
-@dirrmtry share/help/lv/cheese
-@dirrmtry share/help/lv
-@dirrmtry share/help/ko/cheese/figures
-@dirrmtry share/help/ko/cheese
-@dirrmtry share/help/ko
-@dirrmtry share/help/it/cheese/figures
-@dirrmtry share/help/it/cheese
-@dirrmtry share/help/it
-@dirrmtry share/help/id/cheese/figures
-@dirrmtry share/help/id/cheese
-@dirrmtry share/help/id
-@dirrmtry share/help/hu/cheese/figures
-@dirrmtry share/help/hu/cheese
-@dirrmtry share/help/hu
-@dirrmtry share/help/gl/cheese/figures
-@dirrmtry share/help/gl/cheese
-@dirrmtry share/help/gl
-@dirrmtry share/help/fr/cheese/figures
-@dirrmtry share/help/fr/cheese
-@dirrmtry share/help/fr
-@dirrmtry share/help/fi/cheese/figures
-@dirrmtry share/help/fi/cheese
-@dirrmtry share/help/fi
-@dirrmtry share/help/es/cheese/figures
-@dirrmtry share/help/es/cheese
-@dirrmtry share/help/es
-@dirrmtry share/help/en_GB/cheese/figures
-@dirrmtry share/help/en_GB/cheese
-@dirrmtry share/help/en_GB
-@dirrmtry share/help/el/cheese/figures
-@dirrmtry share/help/el/cheese
-@dirrmtry share/help/el
-@dirrmtry share/help/de/cheese/figures
-@dirrmtry share/help/de/cheese
-@dirrmtry share/help/de
-@dirrmtry share/help/cs/cheese/figures
-@dirrmtry share/help/cs/cheese
-@dirrmtry share/help/cs
-@dirrmtry share/help/ca/cheese/figures
-@dirrmtry share/help/ca/cheese
-@dirrmtry share/help/ca
-@dirrmtry share/help/C/cheese/figures
-@dirrmtry share/help/C/cheese
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
+@dirrm share/help/zh_CN/cheese/figures
+@dirrm share/help/zh_CN/cheese
+@dirrm share/help/sl/cheese/figures
+@dirrm share/help/sl/cheese
+@dirrm share/help/ru/cheese/figures
+@dirrm share/help/ru/cheese
+@dirrm share/help/ru
+@dirrm share/help/pt_BR/cheese/figures
+@dirrm share/help/pt_BR/cheese
+@dirrm share/help/id/cheese/figures
+@dirrm share/help/id/cheese
+@dirrm share/help/id
+@dirrm share/help/hu/cheese/figures
+@dirrm share/help/hu/cheese
+@dirrm share/help/gl/cheese/figures
+@dirrm share/help/gl/cheese
+@dirrm share/help/fr/cheese/figures
+@dirrm share/help/fr/cheese
+@dirrm share/help/es/cheese/figures
+@dirrm share/help/es/cheese
+@dirrm share/help/el/cheese/figures
+@dirrm share/help/el/cheese
+@dirrm share/help/de/cheese/figures
+@dirrm share/help/de/cheese
+@dirrm share/help/cs/cheese/figures
+@dirrm share/help/cs/cheese
+@dirrm share/help/ca/cheese/figures
+@dirrm share/help/ca/cheese
+@dirrm share/help/C/cheese/figures
+@dirrm share/help/C/cheese
+@dirrm share/appdata
 @dirrm include/cheese
+@dirrm %%DOCSDIR%%

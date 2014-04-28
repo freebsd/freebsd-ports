@@ -1,8 +1,6 @@
 bin/mutter
-bin/mutter-message
-bin/mutter-theme-viewer
-bin/mutter-window-demo
 include/mutter/meta/atomnames.h
+include/mutter/meta/barrier.h
 include/mutter/meta/boxes.h
 include/mutter/meta/common.h
 include/mutter/meta/compositor-mutter.h
@@ -14,12 +12,15 @@ include/mutter/meta/group.h
 include/mutter/meta/keybindings.h
 include/mutter/meta/main.h
 include/mutter/meta/meta-background-actor.h
+include/mutter/meta/meta-background-group.h
+include/mutter/meta/meta-background.h
+include/mutter/meta/meta-cursor-tracker.h
+include/mutter/meta/meta-idle-monitor.h
 include/mutter/meta/meta-plugin.h
 include/mutter/meta/meta-shadow-factory.h
 include/mutter/meta/meta-shaped-texture.h
 include/mutter/meta/meta-window-actor.h
 include/mutter/meta/prefs.h
-include/mutter/meta/preview-widget.h
 include/mutter/meta/screen.h
 include/mutter/meta/theme.h
 include/mutter/meta/types.h
@@ -35,14 +36,51 @@ lib/mutter/Meta-3.0.typelib
 lib/mutter/plugins/default.so
 libdata/pkgconfig/libmutter.pc
 libdata/pkgconfig/mutter-plugins.pc
-man/man1/mutter-message.1.gz
-man/man1/mutter-theme-viewer.1.gz
-man/man1/mutter-window-demo.1.gz
 man/man1/mutter.1.gz
 share/GConf/gsettings/mutter-schemas.convert
 share/applications/mutter.desktop
+share/doc/meta/MetaBackgroundActor.html
+share/doc/meta/MetaBarrier.html
+share/doc/meta/MetaDisplay.html
+share/doc/meta/MetaPlugin.html
+share/doc/meta/MetaRectangle.html
+share/doc/meta/MetaScreen.html
+share/doc/meta/MetaShadowFactory.html
+share/doc/meta/MetaShapedTexture.html
+share/doc/meta/MetaWindow.html
+share/doc/meta/MetaWindowActor.html
+share/doc/meta/MetaWorkspace.html
+share/doc/meta/annotation-glossary.html
+share/doc/meta/api-index-full.html
+share/doc/meta/core-reference.html
+share/doc/meta/deprecated-api-index.html
+share/doc/meta/home.png
+share/doc/meta/index.html
+share/doc/meta/index.sgml
+share/doc/meta/left-insensitive.png
+share/doc/meta/left.png
+share/doc/meta/meta-Common.html
+share/doc/meta/meta-Errors.html
+share/doc/meta/meta-Gradients.html
+share/doc/meta/meta-Main.html
+share/doc/meta/meta-MetaCompositor.html
+share/doc/meta/meta-MetaGroup.html
+share/doc/meta/meta-MetaKeybinding.html
+share/doc/meta/meta-Preferences.html
+share/doc/meta/meta-Utility-functions.html
+share/doc/meta/meta.devhelp2
+share/doc/meta/mutter-overview.html
+share/doc/meta/object-tree.html
+share/doc/meta/right-insensitive.png
+share/doc/meta/right.png
+share/doc/meta/running-mutter.html
+share/doc/meta/style.css
+share/doc/meta/up-insensitive.png
+share/doc/meta/up.png
 share/gnome/wm-properties/mutter-wm.desktop
+share/gnome-control-center/keybindings/50-mutter-navigation.xml
 share/gnome-control-center/keybindings/50-mutter-windows.xml
+share/gnome-control-center/keybindings/50-mutter-system.xml
 share/locale/am/LC_MESSAGES/mutter.mo
 share/locale/ar/LC_MESSAGES/mutter.mo
 share/locale/as/LC_MESSAGES/mutter.mo
@@ -87,6 +125,7 @@ share/locale/is/LC_MESSAGES/mutter.mo
 share/locale/it/LC_MESSAGES/mutter.mo
 share/locale/ja/LC_MESSAGES/mutter.mo
 share/locale/ka/LC_MESSAGES/mutter.mo
+share/locale/kk/LC_MESSAGES/mutter.mo
 share/locale/kn/LC_MESSAGES/mutter.mo
 share/locale/ko/LC_MESSAGES/mutter.mo
 share/locale/ku/LC_MESSAGES/mutter.mo
@@ -123,6 +162,7 @@ share/locale/sr@latin/LC_MESSAGES/mutter.mo
 share/locale/sv/LC_MESSAGES/mutter.mo
 share/locale/ta/LC_MESSAGES/mutter.mo
 share/locale/te/LC_MESSAGES/mutter.mo
+share/locale/tg/LC_MESSAGES/mutter.mo
 share/locale/th/LC_MESSAGES/mutter.mo
 share/locale/tk/LC_MESSAGES/mutter.mo
 share/locale/tr/LC_MESSAGES/mutter.mo
@@ -135,9 +175,6 @@ share/locale/yo/LC_MESSAGES/mutter.mo
 share/locale/zh_CN/LC_MESSAGES/mutter.mo
 share/locale/zh_HK/LC_MESSAGES/mutter.mo
 share/locale/zh_TW/LC_MESSAGES/mutter.mo
-%%DATADIR%%/icons/mutter-window-demo.png
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
 @dirrm lib/mutter/plugins
 @dirrm lib/mutter
 @dirrm include/mutter/meta
@@ -190,3 +227,4 @@ share/locale/zh_TW/LC_MESSAGES/mutter.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/doc/meta

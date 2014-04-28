@@ -1,6 +1,6 @@
 # Created by: Edgardo Garcia Hoeffler <edybsd@yahoo.com.ar>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-fm/gnome-commander2/Makefile 19463 2014-04-07 19:47:01Z gusi $
+#   $MCom: ports/trunk/x11-fm/gnome-commander2/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.4.1
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 
 CONFLICTS=	gnome-commander-[0-9]*
 
-USES=		gmake libtool pathfix tar:xz
+USES=		gmake libtool:keepla pathfix tar:xz
 USE_GNOME=	gnomedocutils gnomeprefix intlhack libgnomeui
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -1,10 +1,9 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/glibmm/Makefile 19001 2014-02-07 11:57:24Z kwm $
+#   $MCom: ports/trunk/devel/glibmm/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	glibmm
-PORTVERSION=	2.38.1
-PORTREVISION?=	0
+PORTVERSION=	2.40.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -13,7 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interfaces for glib2
 
-USE_XZ=		yes
+USES=		tar:xz
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
@@ -21,7 +20,7 @@ PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		gettext gmake libtool pathfix perl5 pkgconfig
+USES+=		gettext gmake libtool:keepla pathfix perl5 pkgconfig
 USE_GNOME=	glib20 libsigc++20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

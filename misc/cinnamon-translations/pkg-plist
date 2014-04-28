@@ -406,6 +406,8 @@ share/locale/zh_TW/LC_MESSAGES/nemo.mo
 share/locale/zu/LC_MESSAGES/cinnamon-control-center.mo
 @dirrm share/locale/zu/LC_MESSAGES
 @dirrm share/locale/zu
+@dirrm share/locale/zh_HK/LC_MESSAGES
+@dirrm share/locale/zh_HK
 @dirrm share/locale/yi/LC_MESSAGES
 @dirrm share/locale/yi
 @dirrm share/locale/xh/LC_MESSAGES

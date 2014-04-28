@@ -1,6 +1,6 @@
---- gobject/Makefile.in.orig	2013-09-26 18:22:19.000000000 +0200
-+++ gobject/Makefile.in	2013-09-26 18:23:11.000000000 +0200
-@@ -2001,7 +2001,7 @@
+--- gobject/Makefile.in.orig	2014-03-09 10:09:41.628312066 +0000
++++ gobject/Makefile.in	2014-03-09 10:09:48.181311433 +0000
+@@ -2003,7 +2003,7 @@
  
  info-am:
  
@@ -9,7 +9,7 @@
  	install-installed_testLTLIBRARIES \
  	install-installed_testPROGRAMS install-installed_testSCRIPTS \
  	install-installed_test_metaDATA \
-@@ -2279,9 +2279,7 @@
+@@ -2230,9 +2230,7 @@
  uninstall-gdb:
  	-rm -r $(DESTDIR)$(datadir)/gdb
  

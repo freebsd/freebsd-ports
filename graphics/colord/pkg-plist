@@ -16,6 +16,7 @@ include/colord-1/colord/cd-device-sync.h
 include/colord-1/colord/cd-device.h
 include/colord-1/colord/cd-dom.h
 include/colord-1/colord/cd-enum.h
+include/colord-1/colord/cd-icc-store.h
 include/colord-1/colord/cd-icc.h
 include/colord-1/colord/cd-interp-akima.h
 include/colord-1/colord/cd-interp-linear.h

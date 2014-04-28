@@ -50,6 +50,7 @@ include/libsoup-%%VERSION%%/libsoup/soup-xmlrpc.h
 include/libsoup-%%VERSION%%/libsoup/soup.h
 lib/girepository-1.0/Soup-%%VERSION%%.typelib
 lib/libsoup-%%VERSION%%.a
+lib/libsoup-%%VERSION%%.la
 lib/libsoup-%%VERSION%%.so
 lib/libsoup-%%VERSION%%.so.1
 lib/libsoup-%%VERSION%%.so.%%LIBVERSION%%
@@ -75,7 +76,6 @@ share/gtk-doc/html/libsoup-%%VERSION%%/SoupMessageHeaders.html
 share/gtk-doc/html/libsoup-%%VERSION%%/SoupMultipart.html
 share/gtk-doc/html/libsoup-%%VERSION%%/SoupMultipartInputStream.html
 share/gtk-doc/html/libsoup-%%VERSION%%/SoupProxyResolverDefault.html
-share/gtk-doc/html/libsoup-%%VERSION%%/SoupProxyURIResolver.html
 share/gtk-doc/html/libsoup-%%VERSION%%/SoupRequest.html
 share/gtk-doc/html/libsoup-%%VERSION%%/SoupRequestData.html
 share/gtk-doc/html/libsoup-%%VERSION%%/SoupRequestFile.html
@@ -97,6 +97,7 @@ share/gtk-doc/html/libsoup-%%VERSION%%/home.png
 share/gtk-doc/html/libsoup-%%VERSION%%/index.html
 share/gtk-doc/html/libsoup-%%VERSION%%/index.sgml
 share/gtk-doc/html/libsoup-%%VERSION%%/ix01.html
+share/gtk-doc/html/libsoup-%%VERSION%%/left-insensitive.png
 share/gtk-doc/html/libsoup-%%VERSION%%/left.png
 share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-GValue-Support.html
 share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-HTML-Form-Support.html
@@ -110,9 +111,12 @@ share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%.devhelp2
 share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-build-howto.html
 share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-client-howto.html
 share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-server-howto.html
+share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-request-howto.html
 share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-session-porting.html
+share/gtk-doc/html/libsoup-%%VERSION%%/right-insensitive.png
 share/gtk-doc/html/libsoup-%%VERSION%%/right.png
 share/gtk-doc/html/libsoup-%%VERSION%%/style.css
+share/gtk-doc/html/libsoup-%%VERSION%%/up-insensitive.png
 share/gtk-doc/html/libsoup-%%VERSION%%/up.png
 share/locale/an/LC_MESSAGES/libsoup.mo
 share/locale/as/LC_MESSAGES/libsoup.mo
@@ -148,6 +152,7 @@ share/locale/lv/LC_MESSAGES/libsoup.mo
 share/locale/ml/LC_MESSAGES/libsoup.mo
 share/locale/mr/LC_MESSAGES/libsoup.mo
 share/locale/nb/LC_MESSAGES/libsoup.mo
+share/locale/nl/LC_MESSAGES/libsoup.mo
 share/locale/or/LC_MESSAGES/libsoup.mo
 share/locale/pa/LC_MESSAGES/libsoup.mo
 share/locale/pl/LC_MESSAGES/libsoup.mo

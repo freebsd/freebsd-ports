@@ -1,8 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/libcanberra-gtk3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports-experimental/trunk/audio/libcanberra-gtk3/Makefile 19090 2014-03-11 16:57:43Z gusi $
 
-PORTREVISION=	2
 CATEGORIES=	audio devel
 PKGNAMESUFFIX=	-gtk3
 
@@ -25,7 +24,7 @@ do-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libcanberra-gtk3.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
-.for i in .so .so.0 .so.0.1.8
+.for i in .so .so.0 .so.0.1.9
 	${INSTALL_LIB} ${WRKSRC}/src/.libs/libcanberra-gtk3${i} \
 		${STAGEDIR}${PREFIX}/lib/
 .endfor

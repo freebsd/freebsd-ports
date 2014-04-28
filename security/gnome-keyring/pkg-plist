@@ -7,8 +7,6 @@ etc/xdg/autostart/gnome-keyring-secrets.desktop
 etc/xdg/autostart/gnome-keyring-ssh.desktop
 lib/gnome-keyring/devel/gkm-gnome2-store-standalone.la
 lib/gnome-keyring/devel/gkm-gnome2-store-standalone.so
-lib/gnome-keyring/devel/gkm-roots-store-standalone.la
-lib/gnome-keyring/devel/gkm-roots-store-standalone.so
 lib/gnome-keyring/devel/gkm-secret-store-standalone.la
 lib/gnome-keyring/devel/gkm-secret-store-standalone.so
 lib/gnome-keyring/devel/gkm-ssh-store-standalone.la
@@ -52,6 +50,7 @@ share/locale/fa/LC_MESSAGES/gnome-keyring.mo
 share/locale/fi/LC_MESSAGES/gnome-keyring.mo
 share/locale/fr/LC_MESSAGES/gnome-keyring.mo
 share/locale/ga/LC_MESSAGES/gnome-keyring.mo
+share/locale/gd/LC_MESSAGES/gnome-keyring.mo
 share/locale/gl/LC_MESSAGES/gnome-keyring.mo
 share/locale/gu/LC_MESSAGES/gnome-keyring.mo
 share/locale/he/LC_MESSAGES/gnome-keyring.mo
@@ -97,6 +96,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-keyring.mo
 share/locale/sv/LC_MESSAGES/gnome-keyring.mo
 share/locale/ta/LC_MESSAGES/gnome-keyring.mo
 share/locale/te/LC_MESSAGES/gnome-keyring.mo
+share/locale/tg/LC_MESSAGES/gnome-keyring.mo
 share/locale/th/LC_MESSAGES/gnome-keyring.mo
 share/locale/tr/LC_MESSAGES/gnome-keyring.mo
 share/locale/ug/LC_MESSAGES/gnome-keyring.mo
@@ -115,6 +115,8 @@ share/p11-kit/modules/gnome-keyring.module
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/tg/LC_MESSAGES
+@dirrmtry share/locale/tg
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
@@ -131,6 +133,8 @@ share/p11-kit/modules/gnome-keyring.module
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES

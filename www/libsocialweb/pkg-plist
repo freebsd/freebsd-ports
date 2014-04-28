@@ -87,7 +87,6 @@ share/gtk-doc/html/libsocialweb-client/index.html
 share/gtk-doc/html/libsocialweb-client/index.sgml
 share/gtk-doc/html/libsocialweb-client/left.png
 share/gtk-doc/html/libsocialweb-client/libsocialweb-client-sw-item.html
-share/gtk-doc/html/libsocialweb-client/libsocialweb-client.devhelp
 share/gtk-doc/html/libsocialweb-client/libsocialweb-client.devhelp2
 share/gtk-doc/html/libsocialweb-client/object-tree.html
 share/gtk-doc/html/libsocialweb-client/right.png
@@ -110,7 +109,6 @@ share/gtk-doc/html/libsocialweb-dbus/home.png
 share/gtk-doc/html/libsocialweb-dbus/index.html
 share/gtk-doc/html/libsocialweb-dbus/index.sgml
 share/gtk-doc/html/libsocialweb-dbus/left.png
-share/gtk-doc/html/libsocialweb-dbus/libsocialweb-dbus.devhelp
 share/gtk-doc/html/libsocialweb-dbus/libsocialweb-dbus.devhelp2
 share/gtk-doc/html/libsocialweb-dbus/libsocialweb.html
 share/gtk-doc/html/libsocialweb-dbus/right.png
@@ -142,7 +140,6 @@ share/gtk-doc/html/libsocialweb/libsocialweb-sw-module.html
 share/gtk-doc/html/libsocialweb/libsocialweb-sw-online.html
 share/gtk-doc/html/libsocialweb/libsocialweb-sw-utils.html
 share/gtk-doc/html/libsocialweb/libsocialweb-sw-web.html
-share/gtk-doc/html/libsocialweb/libsocialweb.devhelp
 share/gtk-doc/html/libsocialweb/libsocialweb.devhelp2
 share/gtk-doc/html/libsocialweb/object-tree.html
 share/gtk-doc/html/libsocialweb/right.png

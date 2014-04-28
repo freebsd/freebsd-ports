@@ -1,13 +1,13 @@
---- panels/user-accounts/um-utils.c.orig	2011-09-17 14:55:58.000000000 +0200
-+++ panels/user-accounts/um-utils.c	2011-09-17 14:57:01.000000000 +0200
-@@ -25,7 +25,16 @@
- #include <stdlib.h>
- #include <sys/types.h>
+--- panels/user-accounts/um-utils.c.orig	2014-03-03 11:55:25.000000000 +0000
++++ panels/user-accounts/um-utils.c	2014-03-15 15:23:03.820288215 +0000
+@@ -26,6 +26,16 @@
+ #include <limits.h>
+ #include <unistd.h>
  #include <pwd.h>
 +#ifdef __FreeBSD__
 +#include <sys/param.h>
 +#if __FreeBSD_version < 900000
- #include <utmp.h>
++#include <utmp.h>
 +#else
 +#include <utmpx.h>
 +/* from the old utmp.h */
@@ -15,5 +15,5 @@
 +#endif
 +#endif
  
- #include <glib.h>
- #include <glib/gi18n.h>
+ #include <gio/gio.h>
+ #include <gio/gunixoutputstream.h>

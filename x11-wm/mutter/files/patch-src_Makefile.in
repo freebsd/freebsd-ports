@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	2012-12-15 03:21:20.000000000 +0000
-+++ src/Makefile.in	2012-12-15 03:21:29.000000000 +0000
-@@ -620,7 +620,7 @@
+--- src/Makefile.in.orig	2014-03-10 23:46:42.731979257 +0000
++++ src/Makefile.in	2014-03-10 23:48:02.536972483 +0000
+@@ -722,7 +722,7 @@
  @HAVE_INTROSPECTION_TRUE@	$(libmutterinclude_base_headers)	\
- @HAVE_INTROSPECTION_TRUE@	$(filter %.c,$(libmutter_la_SOURCES))
+ @HAVE_INTROSPECTION_TRUE@	$(filter %.c,$(libmutter_la_SOURCES) $(nodist_libmutter_la_SOURCES))
  
 -@HAVE_INTROSPECTION_TRUE@@META_GIR@_SCANNERFLAGS = --warn-all --warn-error
 +@HAVE_INTROSPECTION_TRUE@@META_GIR@_SCANNERFLAGS = --warn-all
- mutter_theme_viewer_LDADD = $(MUTTER_LIBS) libmutter.la
  testboxes_SOURCES = core/testboxes.c
  testgradient_SOURCES = ui/testgradient.c
+ testasyncgetprop_SOURCES = core/testasyncgetprop.c

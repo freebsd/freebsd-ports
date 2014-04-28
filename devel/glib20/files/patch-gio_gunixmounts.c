@@ -27,47 +27,6 @@
  #include <sys/ucred.h>
  #include <sys/mount.h>
  #include <fstab.h>
-@@ -243,22 +249,29 @@ g_unix_is_mount_path_system_internal (co
-     "/",              /* we already have "Filesystem root" in Nautilus */ 
-     "/bin",
-     "/boot",
-+    "/compat/linux/proc",
-+    "/compat/linux/sys",
-     "/dev",
-     "/etc",
-     "/home",
-     "/lib",
-     "/lib64",
-+    "/libexec",
-     "/live/cow",
-     "/live/image",
-     "/media",
-     "/mnt",
-     "/opt",
-+    "/rescue",
-     "/root",
-     "/sbin",
-     "/srv",
-     "/tmp",
-     "/usr",
-     "/usr/local",
-+    "/usr/obj",
-+    "/usr/ports",
-+    "/usr/src",
-     "/var",
-     "/var/crash",
-     "/var/local",
-@@ -299,8 +312,10 @@ guess_system_internal (const char *mount
-     "devfs",
-     "devpts",
-     "ecryptfs",
-+    "fdescfs",
-     "kernfs",
-     "linprocfs",
-+    "nullfs",
-     "proc",
-     "procfs",
-     "ptyfs",
 @@ -1126,6 +1141,10 @@ get_mounts_timestamp (void)
        if (stat (monitor_file, &buf) == 0)
  	return (guint64)buf.st_mtime;

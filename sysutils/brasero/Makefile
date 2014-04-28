@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/brasero3/Makefile 18503 2013-05-27 13:37:42Z kwm $
+#    $MCom: ports-experimental/trunk/sysutils/brasero/Makefile 19426 2014-04-01 08:55:12Z gusi $
 
 PORTNAME=	brasero
-PORTVERSION=	3.6.1
+PORTVERSION=	3.11.3
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,19 +19,18 @@ RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shared-mime-info
-USE_XZ=		yes
+		shared-mime-info tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack libxml2
 GNU_CONFIGURE=	yes
 USE_XORG=	sm ice
-USE_GNOME=	gconf2 gnomeprefix gtk30 intlhack libxml2
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-inotify --enable-search=no --enable-playlist=no \
 		--enable-introspection=yes
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_CAM_LIB_H=1
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_CAM_LIB_H=1 -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 
 GLIB_SCHEMAS=	org.gnome.brasero.gschema.xml
 

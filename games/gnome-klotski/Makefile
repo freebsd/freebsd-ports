@@ -1,8 +1,9 @@
+# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-klotski/Makefile 18839 2013-10-30 23:48:38Z kwm $
+#   $MCom: ports/trunk/games/gnome-klotski/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	gnome-klotski
-PORTVERSION=	3.10.0
+PORTVERSION=	3.12.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,10 +14,9 @@ COMMENT=	Gnome klotski
 BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
 		itstool:${PORTSDIR}/textproc/itstool
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
-INSTALLS_ICONS=	yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack librsvg2 libxml2:build
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

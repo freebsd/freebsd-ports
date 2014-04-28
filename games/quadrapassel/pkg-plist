@@ -1,5 +1,6 @@
 bin/quadrapassel
 man/man6/quadrapassel.6.gz
+share/appdata/quadrapassel.appdata.xml
 share/applications/quadrapassel.desktop
 share/help/C/quadrapassel/bug-filing.page
 share/help/C/quadrapassel/develop.page
@@ -361,6 +362,30 @@ share/help/oc/quadrapassel/playgame.page
 share/help/oc/quadrapassel/preferences.page
 share/help/oc/quadrapassel/score.page
 share/help/oc/quadrapassel/translate.page
+share/help/pt_BR/quadrapassel/bug-filing.page
+share/help/pt_BR/quadrapassel/develop.page
+share/help/pt_BR/quadrapassel/documentation.page
+share/help/pt_BR/quadrapassel/get-involved.page
+share/help/pt_BR/quadrapassel/index.page
+share/help/pt_BR/quadrapassel/legal.xml
+share/help/pt_BR/quadrapassel/license.page
+share/help/pt_BR/quadrapassel/playgame.page
+share/help/pt_BR/quadrapassel/preferences.page
+share/help/pt_BR/quadrapassel/score.page
+share/help/pt_BR/quadrapassel/translate.page
+share/help/pt_BR/quadrapassel/media/fig2.png
+share/help/pt_BR/quadrapassel/media/fig3.png
+share/help/pt_BR/quadrapassel/media/fig4.png
+share/help/pt_BR/quadrapassel/media/fig5.png
+share/help/pt_BR/quadrapassel/media/go-home.png
+share/help/pt_BR/quadrapassel/media/go-previous.png
+share/help/pt_BR/quadrapassel/media/part1.jpg
+share/help/pt_BR/quadrapassel/media/part2.jpg
+share/help/pt_BR/quadrapassel/media/part3.jpg
+share/help/pt_BR/quadrapassel/media/part4.jpg
+share/help/pt_BR/quadrapassel/media/previous.png
+share/help/pt_BR/quadrapassel/media/quadrapassel.png
+share/help/pt_BR/quadrapassel/media/quadrapassel22.png
 share/help/ro/quadrapassel/bug-filing.page
 share/help/ro/quadrapassel/develop.page
 share/help/ro/quadrapassel/documentation.page
@@ -652,6 +677,19 @@ share/quadrapassel/sounds/turn.ogg
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/icons/HighContrast/48x48/apps
+@dirrmtry share/icons/HighContrast/48x48
+@dirrmtry share/icons/HighContrast/32x32/apps
+@dirrmtry share/icons/HighContrast/32x32
+@dirrmtry share/icons/HighContrast/256x256/apps
+@dirrmtry share/icons/HighContrast/256x256
+@dirrmtry share/icons/HighContrast/24x24/apps
+@dirrmtry share/icons/HighContrast/24x24
+@dirrmtry share/icons/HighContrast/22x22/apps
+@dirrmtry share/icons/HighContrast/22x22
+@dirrmtry share/icons/HighContrast/16x16/apps
+@dirrmtry share/icons/HighContrast/16x16
+@dirrmtry share/icons/HighContrast
 @dirrm share/help/zh_CN/quadrapassel/media
 @dirrm share/help/zh_CN/quadrapassel
 @dirrmtry share/help/zh_CN
@@ -670,6 +708,9 @@ share/quadrapassel/sounds/turn.ogg
 @dirrm share/help/ro/quadrapassel/media
 @dirrm share/help/ro/quadrapassel
 @dirrmtry share/help/ro
+@dirrm share/help/pt_BR/quadrapassel/media
+@dirrm share/help/pt_BR/quadrapassel
+@dirrmtry share/help/pt_BR
 @dirrm share/help/oc/quadrapassel/media
 @dirrm share/help/oc/quadrapassel
 @dirrmtry share/help/oc
@@ -716,3 +757,4 @@ share/quadrapassel/sounds/turn.ogg
 @dirrm share/help/C/quadrapassel
 @dirrmtry share/help/C
 @dirrmtry share/help
+@dirrmtry share/appdata
