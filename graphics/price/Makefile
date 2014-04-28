@@ -19,5 +19,4 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/PRICE-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
