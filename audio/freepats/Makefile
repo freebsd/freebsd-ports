@@ -9,8 +9,7 @@ MASTER_SITES=	http://freepats.zenvoid.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free and open set of instrument patches
 
-USE_BZIP2=	yes
-
+USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
