@@ -277,14 +277,17 @@ lib/libMrm.a
 lib/libMrm.la
 lib/libMrm.so
 lib/libMrm.so.4
+lib/libMrm.so.4.0.4
 lib/libUil.a
 lib/libUil.la
 lib/libUil.so
 lib/libUil.so.4
+lib/libUil.so.4.0.4
 lib/libXm.a
 lib/libXm.la
 lib/libXm.so
 lib/libXm.so.4
+lib/libXm.so.4.0.4
 man/man1/mwm.1.gz
 man/man1/uil.1.gz
 man/man1/xmbind.1.gz
