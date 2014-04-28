@@ -17,8 +17,10 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOME=	imlib
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/capture sbin/setbrightness sbin/vaiobat
+PORTDOCS=	README README.FreeBSD
+
+OPTIONS_DEFINE=	DOCS
 
 post-build:
 	cd ${WRKSRC}; \
@@ -26,12 +28,11 @@ post-build:
 	${CC} ${CFLAGS} -o vaiobat vaiobat.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/capture ${PREFIX}/bin/capture
-	${INSTALL_PROGRAM} ${WRKSRC}/setbrightness ${PREFIX}/sbin/setbrightness
-	${INSTALL_PROGRAM} ${WRKSRC}/vaiobat ${PREFIX}/sbin/vaiobat
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}/README
-.if!defined(NOPORTDOCS)
-	${INSTALL_MAN} ${PATCHDIR}/README.FreeBSD ${DOCSDIR}/README.FreeBSD
-.endif
-.include <bsd.port.post.mk>
+	${INSTALL_PROGRAM} ${WRKSRC}/capture ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} setbrightness vaiobat \
+		${STAGEDIR}${PREFIX}/sbin)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PATCHDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
