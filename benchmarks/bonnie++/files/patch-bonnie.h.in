@@ -1,0 +1,20 @@
+--- bonnie.h.in.orig    2009-08-21 18:45:50.068536643 +0000
++++ bonnie.h.in 2009-08-21 18:45:58.564755017 +0000
+@@ -1,8 +1,6 @@
+ #ifndef BONNIE
+ #define BONNIE
+ 
+-using namespace std;
+-
+ #define BON_VERSION "@version@"
+ #define CSV_VERSION "@csv_version@"
+ 
+@@ -12,6 +10,8 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ 
++using namespace std;
++
+ typedef FILE *PFILE;
+ 
+ #define SemKey 4711

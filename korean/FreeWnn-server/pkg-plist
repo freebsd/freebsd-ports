@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/kWnn4/katod
 bin/kWnn4/katof
 bin/kWnn4/kdtoa

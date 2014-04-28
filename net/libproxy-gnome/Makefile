@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME plug-in for libproxy
 
-LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
@@ -19,12 +19,11 @@ USES=		pkgconfig
 
 LIBPROXY_SLAVE=	gnome
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
 	${INSTALL_LIB} ${WRKSRC}/libproxy/config_gnome.so \
-		${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
 	${INSTALL_PROGRAM} ${WRKSRC}/libproxy/pxgconf \
-		${PREFIX}/libexec/
+		${STAGEDIR}${PREFIX}/libexec/
 
 .include "${MASTERDIR}/Makefile"

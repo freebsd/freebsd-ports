@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_encoding
 PORTVERSION=	20021209
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://webdav.todo.gr.jp/download/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -11,10 +11,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for non-ASCII filename interoperability
 
-
-# This port will work with the following version of Apache and anything newer.
-# Mostly because of the dependency of mod_dav.
-#APACHE_VERSION=	1.3.6
+LICENSE=	APACHE11
 
 USE_APACHE=	22+
 USES=		iconv gmake
@@ -32,8 +29,6 @@ CONFIGURE_ENV=	LIBS='-L${LOCALBASE}/lib' \
 		PATH="${PREFIX}/bin:${PREFIX}/sbin:${PATH}"
 CPPFLAGS+=	-I${APACHEINCLUDEDIR} -I${LOCALBASE}/include
 
-PLIST_FILES=	${APACHEMODDIR}/mod_encoding.so
-
 EXTRA_PATCHES=	${PATCHDIR}/apache22_patch
 
 .if !defined(WITHOUT_ICONV_FIX)
@@ -44,5 +39,10 @@ EXTRA_PATCHES+=	${PATCHDIR}/iconv_hook-20040430.patch
 EXTRA_PATCHES+=	${PATCHDIR}/queryfix-patch22
 .endif
 
-NO_STAGE=	yes
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+	$(APXS) -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} \
+		-i -n ${MODULENAME} ${WRKSRC}/${MODULENAME}.la
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
+
 .include <bsd.port.mk>

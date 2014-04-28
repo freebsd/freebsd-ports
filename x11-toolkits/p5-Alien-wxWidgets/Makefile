@@ -16,15 +16,16 @@ USE_PERL5=	modbuild
 USE_WX=		3.0
 WX_COMPS=	wx
 WX_UNICODE=	yes
-WX_UNI=		uni_
 CONFIGURE_ARGS+=	--wxWidgets-build=0 --wxWidgets-unicode=1
-
-WX_UVER!=	${MAKE} -C ${.CURDIR}/../../x11-toolkits/wxgtk30 -V'$${PORTVERSION:C/\./_/g}'
-PLIST_SUB+=	WX_UVER=${WX_UVER} WX_UNI=${WX_UNI}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/wx-config/${WX_CONFIG:T}/' ${WRKSRC}/Build.PL
 	@${REINPLACE_CMD} -e "s/\'wx-config/\'${WX_CONFIG:T}/" -e "s/lc_r/lpthread/" \
 		${WRKSRC}/inc/My/Build/Any_wx_config.pm
 
+post-install:
+	# file name is function of wx version, add it dynamically
+	@(cd ${STAGEDIR}${PREFIX}; ${FIND} * -type f -name gtk2_\* -print \
+		>> ${TMPPLIST})
+	
 .include <bsd.port.mk>

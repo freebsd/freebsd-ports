@@ -16,9 +16,12 @@ SSHGUARDCONFLINE="auth.info;authpriv.info     |exec $PKG_PREFIX/sbin/sshguard"
 
 case "$2" in
 	"DEINSTALL")
-		if (test -f "$SYSLOGCONF" && grep -q '^[^#].*sshguard' "$SYSLOGCONF")
+	    if test -f "$SYSLOGCONF" && grep -q '^[^#].*sshguard' "$SYSLOGCONF"
         then
-            TMPFILE=`mktemp -q /tmp/syslogcXX`
+            if ! TMPFILE=`mktemp -q /tmp/syslogcXX`; then
+		echo "Couldn't create temporary file"
+		exit 1
+	    fi
             if grep -qx "$SSHGUARDCONFLINE" "$SYSLOGCONF"
             then
                 # remove default sshguard entry from syslog.conf

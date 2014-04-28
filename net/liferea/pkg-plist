@@ -1,16 +1,22 @@
 bin/liferea
 bin/liferea-add-feed
+lib/liferea/girepository-1.0/Liferea-3.0.typelib
+lib/liferea/plugins/gnome-keyring.plugin
+lib/liferea/plugins/gnome-keyring.py
+lib/liferea/plugins/media-player.plugin
+lib/liferea/plugins/media-player.py
 man/man1/liferea.1.gz
 man/pl/man1/liferea.1.gz
+share/GConf/gsettings/liferea.convert
+share/appdata/liferea.appdata.xml
 share/applications/liferea.desktop
+share/icons/hicolor/16x16/apps/liferea.png
+share/icons/hicolor/22x22/apps/liferea.png
+share/icons/hicolor/24x24/apps/liferea.png
+share/icons/hicolor/32x32/apps/liferea.png
+share/icons/hicolor/48x48/apps/liferea.png
+share/icons/hicolor/scalable/apps/liferea.svg
 share/liferea/auth.ui
-share/liferea/google_source.ui
-share/liferea/liferea.ui
-share/liferea/new_subscription.ui
-share/liferea/node_source.ui
-share/liferea/opml_source.ui
-share/liferea/simple_subscription.ui
-share/liferea/ttrss_source.ui
 share/liferea/css/adblock.css
 share/liferea/css/liferea.css
 share/liferea/css/user.css
@@ -24,8 +30,6 @@ share/liferea/doc/html/faq_de.html
 share/liferea/doc/html/faq_en.html
 share/liferea/doc/html/folders_de.html
 share/liferea/doc/html/folders_en.html
-share/liferea/doc/html/greader_de.html
-share/liferea/doc/html/greader_en.html
 share/liferea/doc/html/headlines_de.html
 share/liferea/doc/html/headlines_en.html
 share/liferea/doc/html/help_feed_default.png
@@ -51,6 +55,8 @@ share/liferea/doc/html/help_subscribe_1.6.0.png
 share/liferea/doc/html/help_vfolder_1.6.0.png
 share/liferea/doc/html/newsbin_de.html
 share/liferea/doc/html/newsbin_en.html
+share/liferea/doc/html/onlineservices_de.html
+share/liferea/doc/html/onlineservices_en.html
 share/liferea/doc/html/preferences_de.html
 share/liferea/doc/html/preferences_en.html
 share/liferea/doc/html/reference.css
@@ -65,6 +71,12 @@ share/liferea/doc/html/topics_en.html
 share/liferea/doc/html/updating_de.html
 share/liferea/doc/html/updating_en.html
 share/liferea/dtd/html.ent
+share/liferea/gir-1.0/Liferea-3.0.gir
+share/liferea/google_source.ui
+share/liferea/inoreader_source.ui
+share/liferea/liferea.ui
+share/liferea/new_subscription.ui
+share/liferea/node_source.ui
 share/liferea/opml/feedlist_bg.opml
 share/liferea/opml/feedlist_ca.opml
 share/liferea/opml/feedlist_de.opml
@@ -82,6 +94,7 @@ share/liferea/opml/feedlist_pt.opml
 share/liferea/opml/feedlist_pt_BR.opml
 share/liferea/opml/feedlist_sk.opml
 share/liferea/opml/feedlist_sv.opml
+share/liferea/opml_source.ui
 share/liferea/pixmaps/attachment.png
 share/liferea/pixmaps/available.png
 share/liferea/pixmaps/available_offline.png
@@ -97,19 +110,18 @@ share/liferea/pixmaps/grayflag.png
 share/liferea/pixmaps/newsbin.png
 share/liferea/pixmaps/unread.png
 share/liferea/pixmaps/vfolder.png
+share/liferea/prefs.ui
+share/liferea/reedah_source.ui
+share/liferea/simple_subscription.ui
+share/liferea/theoldreader_source.ui
+share/liferea/ttrss_source.ui
 share/liferea/xslt/feed.xml
 share/liferea/xslt/folder.xml
-share/liferea/xslt/item.xml
 share/liferea/xslt/i18n-filter.xslt
+share/liferea/xslt/item.xml
 share/liferea/xslt/newsbin.xml
 share/liferea/xslt/source.xml
 share/liferea/xslt/vfolder.xml
-share/icons/hicolor/16x16/apps/liferea.png
-share/icons/hicolor/22x22/apps/liferea.png
-share/icons/hicolor/24x24/apps/liferea.png
-share/icons/hicolor/32x32/apps/liferea.png
-share/icons/hicolor/48x48/apps/liferea.png
-share/icons/hicolor/scalable/apps/liferea.svg
 share/locale/ar/LC_MESSAGES/liferea.mo
 share/locale/ast/LC_MESSAGES/liferea.mo
 share/locale/be@latin/LC_MESSAGES/liferea.mo
@@ -146,9 +158,14 @@ share/locale/uk/LC_MESSAGES/liferea.mo
 share/locale/vi/LC_MESSAGES/liferea.mo
 share/locale/zh_CN/LC_MESSAGES/liferea.mo
 share/locale/zh_TW/LC_MESSAGES/liferea.mo
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrm share/liferea/xslt
 @dirrm share/liferea/pixmaps
 @dirrm share/liferea/opml
+@dirrm share/liferea/gir-1.0
 @dirrm share/liferea/dtd
 @dirrm share/liferea/doc/html
 @dirrm share/liferea/doc
@@ -156,3 +173,7 @@ share/locale/zh_TW/LC_MESSAGES/liferea.mo
 @dirrm share/liferea
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
+@dirrmtry share/appdata
+@dirrm lib/liferea/plugins
+@dirrm lib/liferea/girepository-1.0
+@dirrm lib/liferea

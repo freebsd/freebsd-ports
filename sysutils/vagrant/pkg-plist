@@ -1,5 +1,5 @@
-%%GEMS_DIR%%/cache/vagrant-%%PORTVERSION%%.gem
-%%GEMS_DIR%%/specifications/vagrant-%%PORTVERSION%%.gemspec
+%%GEMS_DIR%%cache/vagrant-%%PORTVERSION%%.gem
+%%GEMS_DIR%%specifications/vagrant-%%PORTVERSION%%.gemspec
 bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/CHANGELOG.md
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/CONTRIBUTING.md
@@ -1000,3 +1000,7 @@ bin/vagrant
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/contrib
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/bin
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%
+@unexec rmdir %D/%%GEMS_DIR%%/doc 2>/dev/null || true
+@unexec rmdir %D/%%GEMS_DIR%%/specifications 2>/dev/null || true
+@unexec rmdir %D/%%GEMS_DIR%%/gems 2>/dev/null || true
+@unexec rmdir %D/%%GEMS_DIR%%/cache 2>/dev/null || true

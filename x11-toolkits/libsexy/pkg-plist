@@ -9,6 +9,7 @@ lib/libsexy.a
 lib/libsexy.la
 lib/libsexy.so
 lib/libsexy.so.2
+lib/libsexy.so.2.0.4
 libdata/pkgconfig/libsexy.pc
 share/gtk-doc/html/libsexy/SexyIconEntry.html
 share/gtk-doc/html/libsexy/SexySpellEntry.html

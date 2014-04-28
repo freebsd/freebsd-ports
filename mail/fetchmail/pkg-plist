@@ -1,4 +1,3 @@
-@comment $FreeBSD: mail/fetchmail/pkg-plist 315268 2013-03-26 08:56:28Z mandree $
 bin/fetchmail
 bin/fetchmailconf
 man/man1/fetchmail.1.gz

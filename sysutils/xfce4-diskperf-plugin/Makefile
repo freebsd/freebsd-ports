@@ -13,10 +13,9 @@ COMMENT=	Graphical representation of the disk IO
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu panel
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 
 LDFLAGS+=	-ldevstat
 

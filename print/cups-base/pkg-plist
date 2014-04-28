@@ -957,10 +957,10 @@ sbin/ulpt-cupsd.sh
 %%PORTDOCS%%%%DOCSDIR%%/ru/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ulpt-cupsd.conf
 share/applications/cups.desktop
-share/icons/hicolor/128x128/apps/cups.png
-share/icons/hicolor/16x16/apps/cups.png
-share/icons/hicolor/32x32/apps/cups.png
-share/icons/hicolor/64x64/apps/cups.png
+%%WITH_ICONS%%share/icons/hicolor/128x128/apps/cups.png
+%%WITH_ICONS%%share/icons/hicolor/16x16/apps/cups.png
+%%WITH_ICONS%%share/icons/hicolor/32x32/apps/cups.png
+%%WITH_ICONS%%share/icons/hicolor/64x64/apps/cups.png
 share/locale/ca/cups_ca.po
 share/locale/cs/cups_cs.po
 share/locale/de/cups_de.po
@@ -976,16 +976,16 @@ share/locale/ru/cups_ru.po
 @unexec rmdir "/var/log/cups" >/dev/null 2>&1 || :
 @unexec rmdir "/var/db/cups/rss" >/dev/null 2>&1 || :
 @unexec rmdir "/var/db/cups" >/dev/null 2>&1 || :
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+%%WITH_ICONS%%@dirrmtry share/icons/hicolor/16x16/apps
+%%WITH_ICONS%%@dirrmtry share/icons/hicolor/16x16
+%%WITH_ICONS%%@dirrmtry share/icons/hicolor/32x32/apps
+%%WITH_ICONS%%@dirrmtry share/icons/hicolor/32x32
+%%WITH_ICONS%%@dirrmtry share/icons/hicolor/64x64/apps
+%%WITH_ICONS%%@dirrmtry share/icons/hicolor/64x64
+%%WITH_ICONS%%@dirrmtry share/icons/hicolor/128x128/apps
+%%WITH_ICONS%%@dirrmtry share/icons/hicolor/128x128
+%%WITH_ICONS%%@dirrmtry share/icons/hicolor
+%%WITH_ICONS%%@dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ca
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/de

@@ -9,15 +9,14 @@ CATEGORIES=	net dns gnome
 MASTER_SITES=	http://0pointer.de/~sebest/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNOME applet that shows available network services using mDNS
+COMMENT=	GNOME applet that shows available network services using mDNS
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi
 
-USES=		gettext
+USES=		gettext gmake pathfix
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack pygnomedesktop
-USE_GMAKE=	yes
+USE_GNOME=	gnomeprefix intlhack pygnomedesktop
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -25,13 +24,12 @@ CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	service-discovery-applet.schemas
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	    	${WRKSRC}/plugins/gconfterminal.py.in
+		${WRKSRC}/plugins/gconfterminal.py.in
 
 post-install:
 	@${LOCALBASE}/bin/gtk-update-icon-cache -f -q --ignore-theme-index \
-		${PREFIX}/share/service-discovery-applet/icons
+		${STAGEDIR}${PREFIX}/share/service-discovery-applet/icons
 
 .include <bsd.port.mk>

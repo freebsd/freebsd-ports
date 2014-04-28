@@ -3,7 +3,7 @@
 
 PORTNAME=	mate-text-editor
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -19,9 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig
-USE_XZ=		yes
-USE_MATE=	autogen common:build docutils intlhack ltasneededhack
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:xz
+INSTALL_TARGET=	install-strip
+USE_MATE=	autogen common:build docutils intlhack
 USE_XORG=	sm x11
 USE_GNOME=	glib20 gnomehier gtk20 gtksourceview2 gvfs libxml2 \
 		pygobject pygtk2 pygtksourceview

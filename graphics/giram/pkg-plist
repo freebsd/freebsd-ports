@@ -37,6 +37,7 @@ lib/giram/0.3/user_install
 libexec/giram/plug-ins/Box
 libexec/giram/plug-ins/Rotate
 libexec/giram/plug-ins/Spheres
+man/man1/giram.1.gz
 %%DOCSDIR%%/Tutorial
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Cone.pov
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Disc.pov

@@ -231,4 +231,4 @@ man/man1/gtk-config.1.gz
 @dirrm include/gtk12/gtk
 @dirrm include/gtk12/gdk
 @dirrm include/gtk12
-@unexec /bin/rmdir %D/share/themes 2>/dev/null || /usr/bin/true
+@unexec rmdir %D/share/themes 2>/dev/null || /usr/bin/true

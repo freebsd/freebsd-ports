@@ -12,6 +12,8 @@ COMMENT=	Open source photo manager for GNOME
 
 LICENSE=	LGPL21
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	vala>=0.18.0:${PORTSDIR}/lang/vala \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \

@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-schedule
 PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-2/${PORTNAME}-${PORTVERSION}
 
@@ -13,33 +13,23 @@ COMMENT=	GNOME GUI for configuring a users crontab
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	APPLET NLS
+OPTIONS_DEFAULT=	APPLET
+OPTIONS_SUB=	yes
+
 BUILD_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
+USES=		gmake pathfix
 USE_PYTHON=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack pygnome2
+USE_GNOME=	gnomeprefix pygnome2
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
-.if  !defined(WITHOUT_APPLET)
-CONFIGURE_ARGS+=	--enable-applet
-PLIST_SUB+=	APPLET=""
-.else
-CONFIGURE_ARGS+=	--disable-applet
-PLIST_SUB+=	APPLET="@comment "
-.endif
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+APPLET_CONFIGURE_ENABLE=	applet
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	--disable-nls
 
 post-extract:
 	@${RM} ${WRKSRC}/src/config.py

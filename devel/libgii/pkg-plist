@@ -1,14 +1,8 @@
 bin/mhub
 %%WITH_X%%bin/xsendbut
-@unexec if cmp -s %D/etc/ggi/filter/keytrans %D/etc/ggi/filter/keytrans.dist; then rm -f %D/etc/ggi/filter/keytrans; fi
-etc/ggi/filter/keytrans.dist
-@exec [ -f %B/keytrans ] || cp %B/%f %B/keytrans
-@unexec if cmp -s %D/etc/ggi/filter/mouse %D/etc/ggi/filter/mouse.dist; then rm -f %D/etc/ggi/filter/mouse; fi
-etc/ggi/filter/mouse.dist
-@exec [ -f %B/mouse ] || cp %B/%f %B/mouse
-@unexec if cmp -s %D/etc/ggi/libgii.conf %D/etc/ggi/libgii.conf.dist; then rm -f %D/etc/ggi/libgii.conf; fi
-etc/ggi/libgii.conf.dist
-@exec [ -f %B/libgii.conf ] || cp %B/%f %B/libgii.conf
+@sample etc/ggi/filter/keytrans.sample
+@sample etc/ggi/filter/mouse.sample
+@sample etc/ggi/libgii.conf.sample
 include/ggi/errors.h
 include/ggi/events.h
 include/ggi/gg-defs.h
@@ -64,10 +58,12 @@ lib/libgg.a
 lib/libgg.la
 lib/libgg.so
 lib/libgg.so.1
+lib/libgg.so.1.0.0
 lib/libgii.a
 lib/libgii.la
 lib/libgii.so
 lib/libgii.so.1
+lib/libgii.so.1.0.0
 man/man1/mhub.1.gz
 man/man1/xsendbut.1.gz
 man/man3/GG_CIRCLEQ_EMPTY.3.gz

@@ -8,4 +8,4 @@ etc/mail/greylist.conf.sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry etc/mail
-@unexec [ -f /var/milter-greylist/greylist.db ] || /bin/rmdir /var/milter-greylist || true
+@unexec [ -f /var/milter-greylist/greylist.db ] || rmdir /var/milter-greylist || true

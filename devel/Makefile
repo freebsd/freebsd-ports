@@ -333,6 +333,7 @@
     SUBDIR += dbus-glib
     SUBDIR += dbus-qt4
     SUBDIR += dbus-qt5
+    SUBDIR += dbus-tcl
     SUBDIR += dbus-sharp
     SUBDIR += dbus-sharp-glib
     SUBDIR += dcmtk
@@ -1088,6 +1089,7 @@
     SUBDIR += libplist
     SUBDIR += libpo6
     SUBDIR += libpthread-stubs
+    SUBDIR += libqcow
     SUBDIR += libqxt
     SUBDIR += librcc
     SUBDIR += librcd
@@ -1355,7 +1357,6 @@
     SUBDIR += ossp-val
     SUBDIR += ossp-var
     SUBDIR += ossp-xds
-    SUBDIR += otrs
     SUBDIR += p4
     SUBDIR += p4.el
     SUBDIR += p4api
@@ -1960,6 +1961,7 @@
     SUBDIR += p5-ExtUtils-InstallPaths
     SUBDIR += p5-ExtUtils-LibBuilder
     SUBDIR += p5-ExtUtils-MakeMaker
+    SUBDIR += p5-ExtUtils-MakeMaker-CPANfile
     SUBDIR += p5-ExtUtils-MakeMaker-Coverage
     SUBDIR += p5-ExtUtils-Manifest
     SUBDIR += p5-ExtUtils-ParseXS
@@ -2281,6 +2283,7 @@
     SUBDIR += p5-Memoize-ExpireLRU
     SUBDIR += p5-Meta-Builder
     SUBDIR += p5-MetaCPAN-API
+    SUBDIR += p5-MetaCPAN-Client
     SUBDIR += p5-Metabase-Client-Simple
     SUBDIR += p5-Metabase-Fact
     SUBDIR += p5-Method-Alias
@@ -4221,6 +4224,9 @@
     SUBDIR += rubygem-file-tail
     SUBDIR += rubygem-filemagic
     SUBDIR += rubygem-fog
+    SUBDIR += rubygem-fog-brightbox
+    SUBDIR += rubygem-fog-core
+    SUBDIR += rubygem-fog-json
     SUBDIR += rubygem-font-awesome-rails
     SUBDIR += rubygem-foreman
     SUBDIR += rubygem-foreman_api
@@ -4551,6 +4557,7 @@
     SUBDIR += tclxml
     SUBDIR += tdl
     SUBDIR += terminality
+    SUBDIR += tesla
     SUBDIR += tevent
     SUBDIR += tex-kpathsea
     SUBDIR += tex-web2c
@@ -4619,6 +4626,7 @@
     SUBDIR += xdg-user-dirs
     SUBDIR += xdg-utils
     SUBDIR += xfce4-dev-tools
+    SUBDIR += xfce4-vala
     SUBDIR += xmake
     SUBDIR += xmltooling
     SUBDIR += xorg-macros

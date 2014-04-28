@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-cups-group=${GROUPS}		\
 			--with-system-groups=${CUPSSYSGRP}	\
 			--with-docdir=${DOCSDIR}		\
-			--with-icondir=${PREFIX}/share/icons	\
 			--with-menudir=${DESKTOPDIR}		\
 			--with-domainsocket=${CUPS_SOCKET}	\
 			--with-cachedir=${CUPS_CACHEDIR}	\
@@ -63,14 +62,14 @@ CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 OPTIONS_DEFINE=	GNUTLS
 .else
-INSTALLS_ICONS=	yes
 PORTREVISION=	0
 CUPS_SUFFIX=	-base
-OPTIONS_DEFINE=	GNUTLS LIBPAPER PHP PYTHON PAM DBUS LIBUSB XDG_OPEN AVAHI MDNSRESPONDER
-OPTIONS_DEFAULT=	LIBPAPER MDNSRESPONDER
+OPTIONS_DEFINE=	GNUTLS LIBPAPER PHP PYTHON PAM DBUS LIBUSB XDG_OPEN AVAHI MDNSRESPONDER ICONS
+OPTIONS_DEFAULT=	LIBPAPER MDNSRESPONDER ICONS
 NO_OPTIONS_SORT=	yes
 .endif
 
+ICONS_DESC=		Desktop icons
 LIBUSB_DESC=		USB support
 XDG_OPEN_DESC=		Build with XDG_OPEN as browser
 
@@ -197,6 +196,15 @@ CONFIGURE_ARGS+=	--enable-libusb
 .else
 CONFIGURE_ARGS+=	--disable-libusb
 .endif
+
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MICONS}
+INSTALLS_ICONS=	yes
+CONFIGURE_ARGS+=	--with-icondir=${PREFIX}/share/icons
+PLIST_SUB+=		WITH_ICONS=""
+.else
+PLIST_SUB+=		WITH_ICONS="@comment "
+.endif
+
 CONFIGURE_ARGS+=	LIBS="-lssp_nonshared"
 
 .if ! defined(CUPS_CLIENT) && ! defined(CUPS_IMAGE)

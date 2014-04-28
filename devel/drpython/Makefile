@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drpython
-PORTVERSION=	3.11.3
-PORTREVISION=	4
+PORTVERSION=	3.11.4
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/DrPython%20%283.x%29/${PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -14,26 +13,43 @@ COMMENT=	Highly customizable cross-platform ide to aid programming in Python
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/DrPython
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+
+NO_ARCH=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	DrPython
-USE_WX=		2.6+
+USE_WX=		2.8
 WX_COMPS=	python:lib
-
-DESKTOP_ENTRIES=	"DrPython" "Python editor and IDE" \
-			"${PYTHONPREFIX_SITELIBDIR}/drpython/bitmaps/drpython.png" \
-			"drpython" "Development;IDE;" "false"
 
 PLIST_FILES=	bin/drpython
 
-NO_STAGE=	yes
-post-install:
+DESKTOP_ENTRIES="DrPython" "Python editor and IDE" \
+		"${PYTHONPREFIX_SITELIBDIR}/drpython/bitmaps/drpython.png" \
+		"drpython" "Development;IDE;" ""
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/postinst.py/d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e \
+		's|firefox|xdg-open|' ${WRKSRC}/drPreferences.py
+
+pre-build:
+	@(cd ${WRKSRC}/docsrc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} html)
+	@(cd ${WRKSRC}/docsrc/_build/html && ${CP} -f *.html *.js \
+		${WRKSRC}/documentation)
+
+post-build:
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/drpython.sh
 	@${ECHO_CMD} 'exec ${PYTHON_CMD} -m drpython.drpython' >> ${WRKDIR}/drpython.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/drpython.sh ${PREFIX}/bin/drpython
+
+post-install:
+	(cd ${WRKDIR} && ${INSTALL_SCRIPT} drpython.sh \
+		${STAGEDIR}${PREFIX}/bin/drpython)
 
 .include <bsd.port.mk>

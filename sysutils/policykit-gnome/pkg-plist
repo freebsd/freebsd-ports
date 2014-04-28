@@ -9,6 +9,7 @@ lib/libpolkit-gnome.a
 lib/libpolkit-gnome.la
 lib/libpolkit-gnome.so
 lib/libpolkit-gnome.so.0
+lib/libpolkit-gnome.so.0.0.0
 libdata/pkgconfig/polkit-gnome.pc
 libexec/polkit-gnome-manager
 share/PolicyKit/policy/org.gnome.policykit.examples.policy

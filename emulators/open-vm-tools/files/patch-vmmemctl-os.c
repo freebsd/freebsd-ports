@@ -1,5 +1,5 @@
---- modules/freebsd/vmmemctl/os.c.orig	2013-09-23 15:51:10.000000000 +0000
-+++ modules/freebsd/vmmemctl/os.c	2013-11-16 19:55:06.152925027 +0000
+--- modules/freebsd/vmmemctl/os.c.orig	2013-09-23 10:51:10.000000000 -0500
++++ modules/freebsd/vmmemctl/os.c	2014-04-23 15:51:43.823041178 -0500
 @@ -37,9 +37,11 @@
  #include <sys/param.h>
  #include <sys/systm.h>
@@ -12,7 +12,19 @@
  #include <sys/sysctl.h>
  
  #include <vm/vm.h>
-@@ -295,7 +297,13 @@
+@@ -223,7 +225,11 @@ static __inline__ unsigned long os_ffz(u
+ unsigned long
+ OS_ReservedPageGetLimit(void)
+ {
++#if __FreeBSD_version < 1100015
+    return cnt.v_page_count;
++#else
++   return vm_cnt.v_page_count;
++#endif
+ }
+ 
+ 
+@@ -295,7 +301,13 @@ OS_ReservedPageGetHandle(PA64 pa)     //
  Mapping
  OS_MapPageHandle(PageHandle handle)     // IN
  {
@@ -26,7 +38,7 @@
     vm_page_t page = (vm_page_t)handle;
  
     if (!res) {
-@@ -352,7 +360,11 @@
+@@ -352,7 +364,11 @@ void
  OS_UnmapPage(Mapping mapping)           // IN
  {
     pmap_qremove((vm_offset_t)mapping, 1);
@@ -38,7 +50,19 @@
  }
  
  
-@@ -369,14 +381,23 @@
+@@ -360,7 +376,11 @@ static void
+ os_pmap_alloc(os_pmap *p) // IN
+ {
+    /* number of pages (div. 8) */
++#if __FreeBSD_version < 1100015
+    p->size = (cnt.v_page_count + 7) / 8;
++#else
++   p->size = (vm_cnt.v_page_count + 7) / 8;
++#endif
+ 
+    /*
+     * expand to nearest word boundary 
+@@ -369,14 +389,23 @@ os_pmap_alloc(os_pmap *p) // IN
     p->size = (p->size + sizeof(unsigned long) - 1) & 
                           ~(sizeof(unsigned long) - 1);
  
@@ -62,7 +86,7 @@
     p->size = 0;
     p->bitmap = NULL;
  }
-@@ -449,12 +470,31 @@
+@@ -449,12 +478,31 @@ os_kmem_free(vm_page_t page) // IN
     os_state *state = &global_state;
     os_pmap *pmap = &state->pmap;
  
@@ -99,7 +123,7 @@
  }
  
  
-@@ -466,8 +506,19 @@
+@@ -466,8 +514,19 @@ os_kmem_alloc(int alloc_normal_failed) /
     os_state *state = &global_state;
     os_pmap *pmap = &state->pmap;
  
@@ -119,7 +143,7 @@
        return NULL;
     }
  
-@@ -488,6 +539,11 @@
+@@ -488,6 +547,11 @@ os_kmem_alloc(int alloc_normal_failed) /
     if (!page) {
        os_pmap_putindex(pmap, pindex);
     }

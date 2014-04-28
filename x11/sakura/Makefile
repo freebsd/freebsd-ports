@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	DOCS
 
 USE_GNOME=	vte3
-USES=		cmake pkgconfig gettext
-USE_BZIP2=	yes
+USES=		cmake pkgconfig gettext tar:bzip2
 LDFLAGS+=	-lintl
 
 post-patch:

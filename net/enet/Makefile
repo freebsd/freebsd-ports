@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enet
-PORTVERSION=	1.3.11
+PORTVERSION=	1.3.12
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://enet.bespin.org/download/
@@ -24,6 +24,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libenet.so.7
 	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

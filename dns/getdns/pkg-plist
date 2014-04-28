@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/getdns/getdns.h
 include/getdns/getdns_extra.h
 %%LIBEV%%include/getdns/getdns_ext_libev.h

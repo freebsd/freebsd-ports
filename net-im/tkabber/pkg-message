@@ -1,0 +1,23 @@
+Tkabber is a heavily extensible Jabber client, a lot of things can be
+scripted or customized. For complete documentation please refer to
+tkabber.html which comes with the package if you selected DOCS option,
+or read it online:
+
+	http://tkabber.jabber.ru/files/doc/tkabber.html
+
+Additional documentation, tips & tricks can be found in Tkabber wiki,
+which is available on following languages:
+
+	Russian: http://ru.tkabber.jabe.ru
+	English: http://en.tkabber.jabe.ru
+	Ukranian: http://ua.tkabber.jabe.ru
+
+To chat with the developers and ask questions you can use official
+technical support conference:
+
+	tkabber@conference.jabber.ru
+
+Also, you can install net-im/tkabber-plugins port, which provides a lot
+of additional Tkabber plugins, such as games to play with you jabber
+buddies (chess, checkers, etc), otr plugin for encrypted conversations,
+whiteboard for collaboration drawings, etc.

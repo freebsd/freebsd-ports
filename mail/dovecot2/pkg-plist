@@ -111,14 +111,14 @@ include/dovecot/hostpid.h
 include/dovecot/http-client-private.h
 include/dovecot/http-client.h
 include/dovecot/http-date.h
-include/dovecot/http-header.h
 include/dovecot/http-header-parser.h
+include/dovecot/http-header.h
 include/dovecot/http-message-parser.h
 include/dovecot/http-parser.h
-include/dovecot/http-request.h
 include/dovecot/http-request-parser.h
-include/dovecot/http-response.h
+include/dovecot/http-request.h
 include/dovecot/http-response-parser.h
+include/dovecot/http-response.h
 include/dovecot/http-transfer.h
 include/dovecot/http-url.h
 include/dovecot/imap-arg.h
@@ -135,6 +135,7 @@ include/dovecot/imap-fetch.h
 include/dovecot/imap-id.h
 include/dovecot/imap-list.h
 include/dovecot/imap-match.h
+include/dovecot/imap-metadata.h
 include/dovecot/imap-msgpart-url.h
 include/dovecot/imap-msgpart.h
 include/dovecot/imap-notify.h
@@ -180,6 +181,7 @@ include/dovecot/ioloop-iolist.h
 include/dovecot/ioloop-notify-fd.h
 include/dovecot/ioloop-private.h
 include/dovecot/ioloop.h
+include/dovecot/iostream-lz4.h
 include/dovecot/iostream-openssl.h
 include/dovecot/iostream-private.h
 include/dovecot/iostream-rawlog-private.h
@@ -199,6 +201,7 @@ include/dovecot/istream-chain.h
 include/dovecot/istream-concat.h
 include/dovecot/istream-crlf.h
 include/dovecot/istream-dot.h
+include/dovecot/istream-fs-file.h
 include/dovecot/istream-hash.h
 include/dovecot/istream-header-filter.h
 include/dovecot/istream-jsonstr.h
@@ -453,6 +456,9 @@ lib/dovecot/lib05_pop3_migration_plugin.so
 lib/dovecot/lib05_snarf_plugin.a
 lib/dovecot/lib05_snarf_plugin.la
 lib/dovecot/lib05_snarf_plugin.so
+lib/dovecot/lib10_mail_filter_plugin.a
+lib/dovecot/lib10_mail_filter_plugin.la
+lib/dovecot/lib10_mail_filter_plugin.so
 lib/dovecot/lib10_quota_plugin.a
 lib/dovecot/lib10_quota_plugin.la
 lib/dovecot/lib10_quota_plugin.so
@@ -575,7 +581,9 @@ libexec/dovecot/xml2text
 man/man1/deliver.1.gz
 man/man1/doveadm-altmove.1.gz
 man/man1/doveadm-auth.1.gz
+man/man1/doveadm-batch.1.gz
 man/man1/doveadm-config.1.gz
+man/man1/doveadm-copy.1.gz
 man/man1/doveadm-deduplicate.1.gz
 man/man1/doveadm-director.1.gz
 man/man1/doveadm-dump.1.gz
@@ -610,9 +618,9 @@ man/man1/dsync.1.gz
 man/man7/doveadm-search-query.7.gz
 sbin/dovecot
 share/aclocal/dovecot.m4
-@dirrm libexec/dovecot
-@dirrm lib/dovecot/doveadm
-@dirrmtry lib/dovecot/auth
-@dirrm lib/dovecot
-@dirrm include/dovecot
 %%PORTDOCS%%@dirrmtry %%ETCDIR%%
+@dirrm include/dovecot
+@dirrmtry lib/dovecot/auth
+@dirrm lib/dovecot/doveadm
+@dirrm lib/dovecot
+@dirrm libexec/dovecot

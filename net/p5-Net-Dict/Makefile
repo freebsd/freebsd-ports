@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Dict
-PORTVERSION=	2.15
+PORTVERSION=	2.17
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NEILB
@@ -18,7 +18,7 @@ USE_PERL5=	configure
 USES=		perl5
 
 post-patch:
-	@${REINPLACE_CMD} -e '/&configure_testsuite/d; /EXE_FILES/d' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 	@${ECHO_CMD} '$$HOST = "test.dict.org"; $$PORT = 2628;' > ${WRKSRC}/t/test_host.cfg
 
 .include <bsd.port.mk>

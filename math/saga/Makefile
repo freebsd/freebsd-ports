@@ -3,6 +3,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -108,5 +109,6 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_saga_api-${PORTVERSION}.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsaga_gdi-${PORTVERSION}.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/saga/*.so
+	${RM} ${STAGEDIR}${PREFIX}/lib/saga/*.la
 
 .include <bsd.port.post.mk>

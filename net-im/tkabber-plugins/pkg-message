@@ -1,0 +1,8 @@
+For complete review of the installed plugins look inside README document
+installed allong with this package.
+
+To use plugins create a link of installation folder to your
+~/.tkabber/plugins directory.
+
+Then start Tkabber and use Tkabber->Customize->Plugins Management menu
+to activate particular plugin.

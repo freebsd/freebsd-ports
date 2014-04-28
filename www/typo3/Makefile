@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	6.1.7
+PORTVERSION=	6.1.8
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -16,7 +16,6 @@ PORTSCOUT=	limit:^6\.1\.
 NO_BUILD=	yes
 USE_PHP=	ctype filter json mysqli pcre session xml
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=52
 
 TYPO3WWW=	www
 TYPO3RELEASE=
@@ -25,7 +24,11 @@ TYPO3PKG=	${PORTNAME}-${PORTVERSION}
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}
 TYPO3DUMMY=	dummy-${PORTVERSION}
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+USERS=		${WWWOWN}
+GROUPS=		${WWWGRP}
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
+		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX} ${TYPO3DUMMY}${EXTRACT_SUFX}
 
@@ -36,39 +39,21 @@ IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 MBSTRING_DESC=	${MULTIBYTE_DESC}
 MYSQL_DESC=	Install MySQL Server
 
+APC_USE=	PHP=apc
+CURL_USE=	PHP=curl
+GD_USE=		PHP=gd
+MBSTRING_USE=	PHP=mbstring
+MYSQL_USE=	MYSQL=server
+ZLIB_USE=	PHP=zlib
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPC}
-USE_PHP+=	apc
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-USE_PHP+=	curl
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-USE_PHP+=	gd
-.endif
 
 .if ${PORT_OPTIONS:MIMAGICK}
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .else
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MMBSTRING}
-USE_PHP+=	mbstring
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	server
-IGNORE_WITH_MYSQL=	50
-.endif
-
-.if ${PORT_OPTIONS:MZLIB}
-USE_PHP+=	zlib
 .endif
 
 pre-install:
@@ -80,10 +65,7 @@ pre-install:
 do-install:
 	${CP} -R ${WRKDIR}/${TYPO3DUMMY}/ ${STAGEDIR}${PREFIX}/${TYPO3SITE}
 	${CP} -R ${WRKDIR}/${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3WWW}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${TYPO3SITE}
 	${RM} ${STAGEDIR}${PREFIX}/${TYPO3SITE}/typo3_src && \
-		cd ${STAGEDIR}${PREFIX}/${TYPO3SITE} && \
-		${LN} -s ../${TYPO3SRC} typo3_src
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3SRC}
+		${LN} -s ../${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3SITE}/typo3_src
 
 .include <bsd.port.mk>

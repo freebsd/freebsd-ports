@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-GDAL
-PORTVERSION=	1.10.1
-PORTREVISION=	1
+PORTVERSION=	1.11.0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -29,8 +28,5 @@ post-install:
 	${SED} -i '' 's|^${STAGEDIR}||' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/GDAL/Const/.packlist ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/*/.packlist
 	${CHMOD} u+w ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/*/*.so
 	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/*/*.so
-
-regression-test test: build
-	-cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>

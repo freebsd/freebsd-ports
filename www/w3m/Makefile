@@ -10,6 +10,7 @@ MASTER_SITES=	SF/w3m/w3m/w3m-${PORTVERSION}
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	Pager/text-based WWW browser
 
+USES=		perl5
 USE_OPENSSL=	yes
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
@@ -17,7 +18,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-img-0.5.*
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gc=${LOCALBASE}
+CONFIGURE_ARGS=	--with-gc=${LOCALBASE} \
+		ac_cv_path_PERL=${PERL}
 
 DOCS=		FAQ.html HISTORY MANUAL.html README \
 		README.dict README.func README.m17n STORY.html keymap.default \

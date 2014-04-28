@@ -4,7 +4,7 @@
 
 PORTNAME=	cairo-java
 PORTVERSION=	1.0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics java
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,15 +12,18 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for the cairo graphics package
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		glibjni-${GLIB_API_VERSION}.1:${PORTSDIR}/devel/glib-java
+DEPRECATED=	Unmaintained, outdated not depend on
+EXPIRATION_DATE=	2014-05-25
 
-USE_BZIP2=	yes
-USES=		gmake pathfix pkgconfig
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libglibjni-${GLIB_API_VERSION}.so:${PORTSDIR}/devel/glib-java
+
+OPTIONS_DEFINE=	docs
+
+USES=		gmake pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_OS=	native
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
@@ -34,33 +37,35 @@ SUB_LIST=	JAVAJARDIR=${JAVAJARDIR} CAIRO_API_VERSION=${CAIRO_API_VERSION}
 CONFIGURE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 MAKE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION} == 1.6.0
+PLIST_SUB+=	JDK16="" NOTJDK16="@comment "
+.else
+PLIST_SUB+=	JDK16="@comment " NOTJDK16=""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 		${WRKSRC}/configure
 
 do-install:
-	${MKDIR} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/.libs/libcairojni-${CAIRO_API_VERSION}.so \
-		${PREFIX}/lib/libcairojni-${CAIRO_API_VERSION}.so.1
-	${LN} -sf ${PREFIX}/lib/libcairojni-${CAIRO_API_VERSION}.so.1 \
-		${PREFIX}/lib/libcairojni-${CAIRO_API_VERSION}.so
-	${MKDIR} ${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/cairo-java.pc ${PREFIX}/libdata/pkgconfig
-	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/cairo${CAIRO_API_VERSION}.jar ${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/.libs/libcairojni-${CAIRO_API_VERSION}.so \
+		${STAGEDIR}${PREFIX}/lib/libcairojni-${CAIRO_API_VERSION}.so.1
+	${LN} -sf libcairojni-${CAIRO_API_VERSION}.so.1 \
+		${STAGEDIR}${PREFIX}/lib/libcairojni-${CAIRO_API_VERSION}.so
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/cairo-java.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/cairo${CAIRO_API_VERSION}.jar ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/api
+	cd ${WRKSRC}/doc/api && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/api
+	${TOUCH} ${STAGEDIR}${DOCSDIR}/api/packages.html
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/api
-	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
-	${TOUCH} ${DOCSDIR}/api/packages.html
-.endif
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

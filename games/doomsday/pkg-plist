@@ -10,46 +10,54 @@ lib/doomsday/libdehread.so.2.0
 lib/doomsday/libdehread.so.2.0.0
 lib/doomsday/libdoom.so
 lib/doomsday/libdoom.so.1
-lib/doomsday/libdoom.so.1.13
-lib/doomsday/libdoom.so.1.13.2
+lib/doomsday/libdoom.so.1.14
+lib/doomsday/libdoom.so.1.14.1
 lib/doomsday/libdoom64.so
 lib/doomsday/libdoom64.so.1
-lib/doomsday/libdoom64.so.1.13
-lib/doomsday/libdoom64.so.1.13.2
+lib/doomsday/libdoom64.so.1.14
+lib/doomsday/libdoom64.so.1.14.1
 lib/doomsday/libexample.so
 lib/doomsday/libexample.so.1
 lib/doomsday/libexample.so.1.2
 lib/doomsday/libexample.so.1.2.0
 lib/doomsday/libheretic.so
 lib/doomsday/libheretic.so.1
-lib/doomsday/libheretic.so.1.13
-lib/doomsday/libheretic.so.1.13.2
+lib/doomsday/libheretic.so.1.14
+lib/doomsday/libheretic.so.1.14.1
 lib/doomsday/libhexen.so
 lib/doomsday/libhexen.so.1
-lib/doomsday/libhexen.so.1.13
-lib/doomsday/libhexen.so.1.13.2
+lib/doomsday/libhexen.so.1.14
+lib/doomsday/libhexen.so.1.14.1
+lib/doomsday/libsavegameconverter.so
+lib/doomsday/libsavegameconverter.so.1
+lib/doomsday/libsavegameconverter.so.1.0
+lib/doomsday/libsavegameconverter.so.1.0.0
 lib/doomsday/libwadmapconverter.so
 lib/doomsday/libwadmapconverter.so.1
 lib/doomsday/libwadmapconverter.so.1.1
 lib/doomsday/libwadmapconverter.so.1.1.1
 lib/libdeng1.so
 lib/libdeng1.so.1
-lib/libdeng1.so.1.13
-lib/libdeng1.so.1.13.2
+lib/libdeng1.so.1.14
+lib/libdeng1.so.1.14.1
 lib/libdeng2.so
 lib/libdeng2.so.2
 lib/libdeng2.so.2.0
 lib/libdeng2.so.2.0.0
+lib/libdeng_appfw.so
+lib/libdeng_appfw.so.1
+lib/libdeng_appfw.so.1.14
+lib/libdeng_appfw.so.1.14.1
 lib/libdeng_gui.so
 lib/libdeng_gui.so.1
-lib/libdeng_gui.so.1.13
-lib/libdeng_gui.so.1.13.2
+lib/libdeng_gui.so.1.14
+lib/libdeng_gui.so.1.14.1
 lib/libdeng_shell.so
 lib/libdeng_shell.so.0
 lib/libdeng_shell.so.0.1
 lib/libdeng_shell.so.0.1.0
-man/man6/doomsday.6.gz
 man/man6/doomsday-server.6.gz
+man/man6/doomsday.6.gz
 %%DATADIR%%/data/doomsday.pk3
 %%DATADIR%%/data/fonts/console11.dfn
 %%DATADIR%%/data/fonts/console14.dfn
@@ -72,17 +80,19 @@ man/man6/doomsday-server.6.gz
 %%DATADIR%%/data/jheretic/libheretic.pk3
 %%DATADIR%%/data/jhexen/libhexen.pk3
 %%DATADIR%%/modules/Config.de
+%%DATADIR%%/modules/Log.de
+%%DATADIR%%/modules/Updater.de
 %%DATADIR%%/modules/appconfig.de
 %%DATADIR%%/modules/bootstrap.de
 %%DATADIR%%/modules/gui.de
 %%DATADIR%%/modules/recutil.de
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/data/jhexen
-@dirrm %%DATADIR%%/data/jheretic
-@dirrm %%DATADIR%%/data/jdoom64
-@dirrm %%DATADIR%%/data/jdoom
-@dirrm %%DATADIR%%/data/graphics
-@dirrm %%DATADIR%%/data/fonts
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-@dirrm lib/doomsday
+@dirrmtry lib/doomsday
+@dirrmtry %%DATADIR%%/data/fonts
+@dirrmtry %%DATADIR%%/data/graphics
+@dirrmtry %%DATADIR%%/data/jdoom
+@dirrmtry %%DATADIR%%/data/jdoom64
+@dirrmtry %%DATADIR%%/data/jheretic
+@dirrmtry %%DATADIR%%/data/jhexen
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%/modules
+@dirrmtry %%DATADIR%%

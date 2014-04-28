@@ -4,14 +4,13 @@
 #
 # $FreeBSD$
 
-MPLAYER_SNAPSHOT_DATE=	2013-12-23
+MPLAYER_SNAPSHOT_DATE=	2014-04-18
 MPLAYER_PORT_VERSION=	1.1.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES?=	multimedia audio
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	riggs/mplayer
 DISTNAME=	mplayer-${MPLAYER_PORT_VERSION:S/.r/./g}
 WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
-
-PROJECTHOST=	bsdistfiles
 
 MAINTAINER?=	riggs@FreeBSD.org
 
@@ -22,8 +21,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 
-USES=		gmake iconv ncurses
-USE_XZ=		yes
+USES=		gmake iconv ncurses tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -36,7 +34,10 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-alsa \
 		--disable-bitmap-font \
 		--disable-crystalhd \
+		--disable-esd \
 		--disable-faad \
+		--disable-ggi \
+		--disable-ggiwmh \
 		--disable-liba52 \
 		--disable-libbs2b \
 		--disable-libilbc \
@@ -46,6 +47,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-joystick \
 		--disable-mad \
 		--disable-mp3lib \
+		--disable-libmpeg2 \
 		--disable-nemesi \
 		--disable-speex \
 		--enable-ass-internal

@@ -3,7 +3,7 @@
 
 PORTNAME=	metapixel
 PORTVERSION=	1.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/metapixel/files/ \
 		http://mirror.roe.ch/dist/metapixel/
@@ -13,43 +13,38 @@ COMMENT=	Photomosaic generator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 CPPFLAGS+=	$$(libpng-config --I_opts) -I${LOCALBASE}/include -I.
 LDFLAGS+=	$$(libpng-config --L_opts) -L${LOCALBASE}/lib
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	metapixel-prepare metapixel-sizesort
 
-MAN1=		metapixel.1
 PLIST_FILES=	bin/metapixel \
 		bin/metapixel-convert \
 		bin/metapixel-imagesize \
 		bin/metapixel-prepare \
-		bin/metapixel-sizesort
+		bin/metapixel-sizesort \
+		man/man1/metapixel.1.gz
 PORTDOCS=	NEWS README
 PORTEXAMPLES=	metapixelrc
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${RM} ${WRKSRC}/getopt.h
 
 do-install:
-	cd ${WRKSRC}/ && \
-		${INSTALL_PROGRAM} metapixel metapixel-convert metapixel-imagesize ${PREFIX}/bin/ && \
-		${INSTALL_SCRIPT} metapixel-prepare metapixel-sizesort ${PREFIX}/bin/ && \
-		${INSTALL_MAN} metapixel.1 ${PREFIX}/man/man1/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} metapixel metapixel-convert \
+		metapixel-imagesize ${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} metapixel-prepare \
+		metapixel-sizesort ${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_MAN} ${WRKSRC}/metapixel.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

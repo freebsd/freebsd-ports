@@ -316,6 +316,8 @@ include/wine/windows/dwrite.h
 include/wine/windows/dwrite.idl
 include/wine/windows/dwrite_1.h
 include/wine/windows/dwrite_1.idl
+include/wine/windows/dwrite_2.h
+include/wine/windows/dwrite_2.idl
 include/wine/windows/dxdiag.h
 include/wine/windows/dxerr8.h
 include/wine/windows/dxerr9.h
@@ -513,6 +515,8 @@ include/wine/windows/netcon.h
 include/wine/windows/netcon.idl
 include/wine/windows/netfw.h
 include/wine/windows/netfw.idl
+include/wine/windows/netlistmgr.h
+include/wine/windows/netlistmgr.idl
 include/wine/windows/nldef.h
 include/wine/windows/npapi.h
 include/wine/windows/nspapi.h
@@ -858,7 +862,7 @@ lib32/libdrm_intel.so.1
 %%OSREL11%%lib32/libdrm_radeon.so.1
 lib32/libexpat.so.6
 lib32/libfontconfig.so.1
-lib32/libfreetype.so.9
+lib32/libfreetype.so.6
 lib32/libgettextpo.so.5
 lib32/libgnutls.so.26
 %%OSREL8%%lib32/libiconv.so.3
@@ -874,8 +878,8 @@ lib32/libwine.so
 lib32/libwine.so.1
 %%OSREL11%%lib32/libxcb-dri2.so.0
 lib32/libxcb-glx.so.0
-lib32/libxcb.so.2
-lib32/libxml2.so.5
+lib32/libxcb.so.1
+lib32/libxml2.so.2
 lib32/libxslt.so.2
 lib32/wine/acledit.dll.so
 lib32/wine/aclui.dll.so
@@ -1432,6 +1436,7 @@ lib32/wine/fakedlls/nddeapi.dll
 lib32/wine/fakedlls/net.exe
 lib32/wine/fakedlls/netapi32.dll
 lib32/wine/fakedlls/netcfgx.dll
+lib32/wine/fakedlls/netprofm.dll
 lib32/wine/fakedlls/netsh.exe
 lib32/wine/fakedlls/netstat.exe
 lib32/wine/fakedlls/newdev.dll
@@ -1515,6 +1520,7 @@ lib32/wine/fakedlls/schedsvc.dll
 lib32/wine/fakedlls/schtasks.exe
 lib32/wine/fakedlls/scrrun.dll
 lib32/wine/fakedlls/scsiport.sys
+lib32/wine/fakedlls/sdbinst.exe
 lib32/wine/fakedlls/secedit.exe
 lib32/wine/fakedlls/secur32.dll
 lib32/wine/fakedlls/security.dll
@@ -1984,6 +1990,7 @@ lib32/wine/nddeapi.dll.so
 lib32/wine/net.exe.so
 lib32/wine/netapi32.dll.so
 lib32/wine/netcfgx.dll.so
+lib32/wine/netprofm.dll.so
 lib32/wine/netsh.exe.so
 lib32/wine/netstat.exe.so
 lib32/wine/newdev.dll.so
@@ -2067,6 +2074,7 @@ lib32/wine/schedsvc.dll.so
 lib32/wine/schtasks.exe.so
 lib32/wine/scrrun.dll.so
 lib32/wine/scsiport.sys.so
+lib32/wine/sdbinst.exe.so
 lib32/wine/secedit.exe.so
 lib32/wine/secur32.dll.so
 lib32/wine/security.dll.so

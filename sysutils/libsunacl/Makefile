@@ -9,14 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Wrapper providing SunOS NFSv4 ACL API
 
+USES=		uidfix
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/sunacl.h lib/libsunacl.a lib/libsunacl.so.1 lib/libsunacl.so
 MAKE_ENV=	NO_PROFILE=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-IGNORE=		no NFSv4 ACL support before FreeBSD 8.0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

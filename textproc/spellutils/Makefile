@@ -7,38 +7,32 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://home.worldonline.dk/byrial/spellutils/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Programs used to isolate some parts or texts before spell-checking
 
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gettext
-CONFIGURE_ENV=		LIBS='-L${LOCALBASE}/lib'
+USES=		gettext tar:bzip2
+CONFIGURE_ENV=	LIBS='-L${LOCALBASE}/lib'
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lintl
-
-MAN1=		pospell.1 newsbody.1
 
 DOCS=		NEWS README
 EXAMPLES=	aspell.sl
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.for FILE in ${EXAMPLES}
-	@${INSTALL_DATA} ${FILESDIR}/${FILE} ${EXAMPLESDIR}
-.endfor
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"
-	@${ECHO_MSG}
+.if !defined(NOPORTEXAMPLES)
+.for FILE in ${EXAMPLES}
+	${INSTALL_DATA} ${FILESDIR}/${FILE} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

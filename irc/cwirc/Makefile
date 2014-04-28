@@ -3,7 +3,7 @@
 
 PORTNAME=	cwirc
 PORTVERSION=	2.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc comms hamradio
 MASTER_SITES=	http://users.skynet.be/ppc/cwirc/download/ \
 		${MASTER_SITE_LOCAL}

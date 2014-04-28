@@ -2,38 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	tkabber
-PORTVERSION=	0.11.1
-CATEGORIES=	net-im
+PORTVERSION=	1.1
+CATEGORIES=	net-im ipv6 tcl tk
 MASTER_SITES=	http://files.jabber.ru/tkabber/
 
-MAINTAINER=	c.kworr@gmail.com
+MAINTAINER=	mp39590@gmail.com
 COMMENT=	Tcl/Tk based jabber client
 
-RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib \
-		${LOCALBASE}/lib/tls/pkgIndex.tcl:${PORTSDIR}/devel/tcltls \
-		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
+LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+RUN_DEPENDS=	tcllib>=1.2:${PORTSDIR}/devel/tcllib \
+		bwidget>=1.4:${PORTSDIR}/x11-toolkits/bwidget
 
-CONFLICTS=	tkabber-devel-*
+OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 SOUND TDOM TKCON TKTRAY TLS
+OPTIONS_DEFAULT=	TLS
 
-USES=		tk:85
+CONFLICTS=	tkabber-devel-[0-9]*
+
+USES=		tar:xz
+
+IPV6_USES=	tk:86+
+IPV6_USES_OFF=	tk:85+
+SOUND_RUN_DEPENDS=	snack>=2.2.10:${PORTSDIR}/audio/snack
+TDOM_DESC=	Use more efficient tDOM parser for XML
+TDOM_RUN_DEPENDS=	tDOM>=0.8.0:${PORTSDIR}/www/tdom
+TKCON_DESC=	Install devel/tkcon for interactive debugging
+TKCON_RUN_DEPENDS=	tkcon>=2.3:${PORTSDIR}/devel/tkcon
+TKTRAY_DESC=	Install x11-toolkits/tktray for system tray support
+TKTRAY_RUN_DEPENDS=	tktray>=1.3:${PORTSDIR}/x11-toolkits/tktray
+TLS_RUN_DEPENDS=	tcltls>=1.4.1:${PORTSDIR}/devel/tcltls
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
 
-SUBDIRS=	contrib doc emoticons examples ifacetk jabberlib mclistbox \
-		msgs pixmaps plugins sounds tclxml trans
+SUBDIRS=	contrib emoticons ifacetk mclistbox \
+		msgs pixmaps plugins sounds tclxmpp trans
 
 .include <bsd.port.options.mk>
 
-post-patch:
-	${REINPLACE_CMD} -e 's|%%WISH%%|${WISH}|g' \
-	    ${WRKSRC}/Makefile ${WRKSRC}/tkabber.tcl
-
 do-install:
-	${ECHO} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabber.tcl \
-		-name tkabber \"\$$@\"\n" > ${STAGEDIR}${PREFIX}/bin/tkabber
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/tkabber
+	${ECHO_CMD} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabber.tcl \
+		-name tkabber \"\$$@\"\n" > ${WRKDIR}/tkabber.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/tkabber.sh ${STAGEDIR}${PREFIX}/bin/tkabber
+	${ECHO_CMD} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabber-remote.tcl \
+		-name tkabber-remote \"\$$@\"\n" > ${WRKDIR}/tkabber-remote.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/tkabber-remote.sh ${STAGEDIR}${PREFIX}/bin/tkabber-remote
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} ${WRKSRC}/*.tcl ${STAGEDIR}${DATADIR}
 .for i in ${SUBDIRS}

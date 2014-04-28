@@ -13,9 +13,8 @@ COMMENT=	Earthquake monitor plugin for the Xfce panel
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=	gettext pkgconfig gmake
+USES=	gettext pkgconfig gmake tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libexo libmenu libutil panel
 USE_XORG=	x11

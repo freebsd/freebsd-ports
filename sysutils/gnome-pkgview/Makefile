@@ -11,16 +11,15 @@ MASTER_SITES=	http://www.mikegtn.net/packages/gnome-pkgview/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Displays the version of GNOME components installed
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui intlhack
-USES=		gettext gmake pkgconfig
+USE_GNOME=	gnomeprefix gnomehier libgnomeui intlhack
+USES=		gettext gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	gnome-pkgview.schemas
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/config-path.c

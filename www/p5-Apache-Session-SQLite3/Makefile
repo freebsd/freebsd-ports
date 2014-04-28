@@ -7,8 +7,11 @@ CATEGORIES=	www databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Use DBD::SQLite 1.x for Apache::Session storage
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Apache-Session>=0:${PORTSDIR}/www/p5-Apache-Session \
 		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite

@@ -67,6 +67,7 @@
 %%WWWDIR%%/gui/templates/execute/bugAdd.tpl
 %%WWWDIR%%/gui/templates/execute/bugDelete.tpl
 %%WWWDIR%%/gui/templates/execute/editExecution.tpl
+%%WWWDIR%%/gui/templates/execute/execDashboard.tpl
 %%WWWDIR%%/gui/templates/execute/execExport.tpl
 %%WWWDIR%%/gui/templates/execute/execHistory.tpl
 %%WWWDIR%%/gui/templates/execute/execNavigator.tpl
@@ -155,6 +156,7 @@
 %%WWWDIR%%/gui/templates/requirements/project_req_spec_mgmt.tpl
 %%WWWDIR%%/gui/templates/requirements/reqCompareVersions.tpl
 %%WWWDIR%%/gui/templates/requirements/reqCopy.tpl
+%%WWWDIR%%/gui/templates/requirements/reqCreateFromIssueMantisXML.tpl
 %%WWWDIR%%/gui/templates/requirements/reqCreateTestCases.tpl
 %%WWWDIR%%/gui/templates/requirements/reqEdit.tpl
 %%WWWDIR%%/gui/templates/requirements/reqExport.tpl
@@ -242,6 +244,7 @@
 %%WWWDIR%%/gui/templates/testcases/tcTree.tpl
 %%WWWDIR%%/gui/templates/testcases/tcView.tpl
 %%WWWDIR%%/gui/templates/testcases/tcView_viewer.tpl
+%%WWWDIR%%/gui/templates/tree_control_add_tc_navigator.inc.tpl
 %%WWWDIR%%/gui/templates/usermanagement/rolesEdit.tpl
 %%WWWDIR%%/gui/templates/usermanagement/rolesView.tpl
 %%WWWDIR%%/gui/templates/usermanagement/tabsmenu.tpl
@@ -271,6 +274,7 @@
 %%WWWDIR%%/gui/themes/default/images/attachment.gif
 %%WWWDIR%%/gui/themes/default/images/bar2.gif
 %%WWWDIR%%/gui/themes/default/images/brick.png
+%%WWWDIR%%/gui/themes/default/images/brick_go.png
 %%WWWDIR%%/gui/themes/default/images/btn_attach.gif
 %%WWWDIR%%/gui/themes/default/images/bug.png
 %%WWWDIR%%/gui/themes/default/images/bug1.gif
@@ -295,6 +299,7 @@
 %%WWWDIR%%/gui/themes/default/images/checkmark-2.gif
 %%WWWDIR%%/gui/themes/default/images/checkmark.gif
 %%WWWDIR%%/gui/themes/default/images/close_win.gif
+%%WWWDIR%%/gui/themes/default/images/cog.png
 %%WWWDIR%%/gui/themes/default/images/company_logo.png
 %%WWWDIR%%/gui/themes/default/images/connect.png
 %%WWWDIR%%/gui/themes/default/images/contact.gif
@@ -319,11 +324,13 @@
 %%WWWDIR%%/gui/themes/default/images/exec_icon.png
 %%WWWDIR%%/gui/themes/default/images/export.png
 %%WWWDIR%%/gui/themes/default/images/export_import.png
+%%WWWDIR%%/gui/themes/default/images/eye.png
 %%WWWDIR%%/gui/themes/default/images/favicon.ico
 %%WWWDIR%%/gui/themes/default/images/filter.png
 %%WWWDIR%%/gui/themes/default/images/flag_green.png
 %%WWWDIR%%/gui/themes/default/images/flag_yellow.png
 %%WWWDIR%%/gui/themes/default/images/folder_link.png
+%%WWWDIR%%/gui/themes/default/images/font_delete.png
 %%WWWDIR%%/gui/themes/default/images/ghost16x16.png
 %%WWWDIR%%/gui/themes/default/images/ghost32x32.png
 %%WWWDIR%%/gui/themes/default/images/history.png
@@ -335,6 +342,7 @@
 %%WWWDIR%%/gui/themes/default/images/icon-foldout.gif
 %%WWWDIR%%/gui/themes/default/images/icon_edit.png
 %%WWWDIR%%/gui/themes/default/images/information.png
+%%WWWDIR%%/gui/themes/default/images/information_small.png
 %%WWWDIR%%/gui/themes/default/images/insert_step.png
 %%WWWDIR%%/gui/themes/default/images/jos_box_grey_bl.png
 %%WWWDIR%%/gui/themes/default/images/jos_box_grey_br.png
@@ -347,8 +355,11 @@
 %%WWWDIR%%/gui/themes/default/images/link_error.png
 %%WWWDIR%%/gui/themes/default/images/lock-mini.png
 %%WWWDIR%%/gui/themes/default/images/lock.png
+%%WWWDIR%%/gui/themes/default/images/lock_open.png
 %%WWWDIR%%/gui/themes/default/images/magnifier.png
+%%WWWDIR%%/gui/themes/default/images/magnifier_zoom_in.png
 %%WWWDIR%%/gui/themes/default/images/minus.gif
+%%WWWDIR%%/gui/themes/default/images/monitor_lightning.png
 %%WWWDIR%%/gui/themes/default/images/navbar.gif
 %%WWWDIR%%/gui/themes/default/images/new_f2_16.png
 %%WWWDIR%%/gui/themes/default/images/note_edit.png
@@ -442,6 +453,9 @@
 %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.10/mssql/DB.1.9.10/step1/db_data_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.10/mysql/DB.1.9.10/step1/db_data_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.10/postgres/DB.1.9.10/step1/db_data_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/step1/db_schema_update.sql
@@ -552,6 +566,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetUserByLogin.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientRemovePlatformFromTestPlan.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResult.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultForcingTester.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultOVERWRITE.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSample.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSample2.php
@@ -562,6 +577,8 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCase.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCaseCustomFieldDesignValue.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUploadTestCaseAttachment.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/client_issue6159_t1.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/client_issue6159_t2.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/css/style.css
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/img/icon-foldout.gif
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/index.php
@@ -594,6 +611,7 @@
 %%WWWDIR%%/lib/execute/bugAdd.php
 %%WWWDIR%%/lib/execute/bugDelete.php
 %%WWWDIR%%/lib/execute/editExecution.php
+%%WWWDIR%%/lib/execute/execDashboard.php
 %%WWWDIR%%/lib/execute/execExport.php
 %%WWWDIR%%/lib/execute/execHistory.php
 %%WWWDIR%%/lib/execute/execNavigator.php
@@ -690,24 +708,33 @@
 %%WWWDIR%%/lib/inventory/setInventory.php
 %%WWWDIR%%/lib/issuetrackerintegration/bugzilladbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/bugzillaxmlrpcInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/bugzilla/cfg.bugzilla.mozilla.org.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/bugzilla/test.bugzilladb.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/bugzilla/test.bugzillaxmlrpc.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/fogbugz/test.fogbugz.api.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/fogbugz/test.fogbugzrestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/gforge/test.gforgesoapInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/jiraOnDemandCfg.xml
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.createIssue.jiraOnDemand.jirasoapInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.createIssueWithAffectedVersions.jiraOnDemand.jirasoapInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.createIssueWithCustomFields.jiraOnDemand.jirasoapInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.getIssue.jiraOnDemand.jirasoapInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.jiraOnDemand.jirasoapInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.jiradbInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/db/test.jiradbInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl/create.sh
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl/create_debug.txt
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl/issue.json
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/test.createIssue.jiraOnDemand.jirarestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/test.getIssue.jiraOnDemand.jirarestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/config_string_jira_on_demand_full.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/config_string_jira_on_demand_mini.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/jiraOnDemandCfg.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/test.createIssue.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/test.createIssueWithAffectedVersions.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/test.createIssueWithCustomFields.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/test.getIssue.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/test.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/test.jirasoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis/test.mantissoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis/test2_int_mantissoap.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/redmine-issue01.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/redmine-issue02.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-fman.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-localhost.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-raw-api.01.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine.01.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine.rest.php
@@ -721,6 +748,7 @@
 %%WWWDIR%%/lib/issuetrackerintegration/issueTrackerInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/jiraCommons.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/jiradbInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/jirarestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/jirasoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/mantisdbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/mantissoapInterface.class.php
@@ -767,6 +795,7 @@
 %%WWWDIR%%/lib/reqmgrsystems/reqMgrSystemView.php
 %%WWWDIR%%/lib/requirements/reqCommands.class.php
 %%WWWDIR%%/lib/requirements/reqCompareVersions.php
+%%WWWDIR%%/lib/requirements/reqCreateFromIssueMantisXML.php
 %%WWWDIR%%/lib/requirements/reqEdit.php
 %%WWWDIR%%/lib/requirements/reqExport.php
 %%WWWDIR%%/lib/requirements/reqImport.php
@@ -3583,6 +3612,9 @@
 %%WWWDIR%%/third_party/ext-js/ux/gridfilters/images/sort_filtered_desc.gif
 %%WWWDIR%%/third_party/ext-js/ux/gridfilters/menu/ListMenu.js
 %%WWWDIR%%/third_party/ext-js/ux/gridfilters/menu/RangeMenu.js
+%%WWWDIR%%/third_party/fayp-jira-rest/Jira.php
+%%WWWDIR%%/third_party/fayp-jira-rest/README.md
+%%WWWDIR%%/third_party/fayp-jira-rest/RestRequest.php
 %%WWWDIR%%/third_party/fckeditor/_documentation.html
 %%WWWDIR%%/third_party/fckeditor/_whatsnew.html
 %%WWWDIR%%/third_party/fckeditor/editor/_source/classes/fckcontextmenu.js
@@ -5092,6 +5124,7 @@
 @dirrm %%WWWDIR%%/third_party/fckeditor/editor/_source
 @dirrm %%WWWDIR%%/third_party/fckeditor/editor
 @dirrm %%WWWDIR%%/third_party/fckeditor
+@dirrm %%WWWDIR%%/third_party/fayp-jira-rest
 @dirrm %%WWWDIR%%/third_party/ext-js/ux/gridfilters/menu
 @dirrm %%WWWDIR%%/third_party/ext-js/ux/gridfilters/images
 @dirrm %%WWWDIR%%/third_party/ext-js/ux/gridfilters/filter
@@ -5577,6 +5610,10 @@
 @dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/trac
 @dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine
 @dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/db
 @dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira
 @dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/gforge
 @dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/fogbugz
@@ -5683,6 +5720,16 @@
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/postgres/DB.1.9.10/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/postgres/DB.1.9.10
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/postgres
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/mysql/DB.1.9.10/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/mysql/DB.1.9.10
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/mysql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/mssql/DB.1.9.10/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/mssql/DB.1.9.10
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/stepZ
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/step1
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4

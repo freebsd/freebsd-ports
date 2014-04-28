@@ -340,66 +340,66 @@ include/omniORBpy.h
 %%PORTDOCS%%%%DOCSDIR%%/omniORBpy.pdf
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORBpy.bib
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORBpy.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/echo/echo.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/echo/echo_clt.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/echo/echo_srv.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/echo/example_echo.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/echo/example_echo_clt.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/echo/example_echo_coloc.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/echo/example_echo_nsclt.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/echo/example_echo_nssrv.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/echo/example_echo_srv.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/GNUmakefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/GNUmakefile.in
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/dir.mk
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/echo.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/embed.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/embed.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/fortune/fortune.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/fortune/fortune_server.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/poa/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/poa/echo.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/poa/mainthread.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/poa/servantactivator.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/poa/servantlocator.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/poa/singlethread.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/random/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/random/random.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/random/random_clt.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/PerfTest.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/TypeTest.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/pclient.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/pserver.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/tclient.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/tserver.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/tictactoe/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/tictactoe/gameClient.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/tictactoe/gameServer.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/tictactoe/tictactoe.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/simple/client.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/simple/server.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/simple/value.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/tests/client.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/tests/server.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/tests/value1.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/valuetype/tests/value2.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/weather/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/weather/gauge.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/weather/weather.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/weather/weatherInfo.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/weather/wserver.py
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/weather
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/valuetype/tests
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/valuetype/simple
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/valuetype
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tictactoe
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tests
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/random
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/poa
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/fortune
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/embed
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/echo
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/echo.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/echo_clt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/echo_srv.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/example_echo.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/example_echo_clt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/example_echo_coloc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/example_echo_nsclt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/example_echo_nssrv.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/example_echo_srv.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/GNUmakefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/GNUmakefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/dir.mk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/echo.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/embed.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/embed.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortune/fortune.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortune/fortune_server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poa/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poa/echo.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poa/mainthread.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poa/servantactivator.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poa/servantlocator.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poa/singlethread.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/random/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/random/random.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/random/random_clt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/PerfTest.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/TypeTest.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pclient.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pserver.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/tclient.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/tserver.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictactoe/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictactoe/gameClient.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictactoe/gameServer.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictactoe/tictactoe.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/simple/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/simple/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/simple/value.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/tests/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/tests/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/tests/value1.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/tests/value2.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather/gauge.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather/weather.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather/weatherInfo.idl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather/wserver.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/weather
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/valuetype/tests
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/valuetype/simple
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/valuetype
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tictactoe
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/random
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/poa
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fortune
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/embed
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

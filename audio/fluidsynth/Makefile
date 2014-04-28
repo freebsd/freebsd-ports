@@ -14,9 +14,8 @@ LICENSE=	LGPL20
 OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO SNDFILE
 OPTIONS_DEFAULT=	JACK
 
-USE_BZIP2=	yes
 USE_GNOME=	glib20
-USES=		cmake pkgconfig ninja
+USES=		cmake pkgconfig ninja tar:bzip2
 CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes

@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-mag
 PORTVERSION=	0.16.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,14 +12,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen magnifier
 
-USE_BZIP2=	yes
 USE_XORG=	xfixes xdamage ice xcomposite sm
-USE_GNOME=	gnomehack gnomeprefix atspi libbonobo intlhack ltverhack
-USES=		gmake gettext pkgconfig
-USE_AUTOTOOLS=	libtool
+USE_GNOME=	gnomeprefix atspi libbonobo intlhack
+USES=		gmake gettext libtool pathfix pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 DOCSDIR=	${PREFIX}/share/doc/gnome-mag-${PORTVERSION}
 

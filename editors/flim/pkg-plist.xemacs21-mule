@@ -88,4 +88,4 @@
 %%EMACS_PACKAGESDIR%%/man/flim/mime-ja.texi
 @dirrm %%EMACS_PACKAGESDIR%%/man/flim
 share/flim/%%FLIM_COOKIE%%
-@unexec /bin/rmdir %D/share/flim||(echo "===>  Please ignore above error.";true)
+@unexec rmdir %D/share/flim||(echo "===>  Please ignore above error.";true)

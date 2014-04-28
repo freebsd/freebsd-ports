@@ -29,19 +29,15 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	BUILDTIME="YES"
 
+OPTIONS_DEFINE=		FFMPEG SPEEX
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_CONFIGURE_ON=	--enable-rfc2190avcodec=${LOCALBASE}/include/ffmpeg
+
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_CONFIGURE_ON=	--enable-localspeex=no
+SPEEX_CONFIGURE_OFF=	--enable-localspeex=yes
+
 .include <bsd.port.pre.mk>
-
-.ifdef (WITH_FFMPEG)
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=	--enable-rfc2190avcodec=${LOCALBASE}/include/ffmpeg
-.endif
-
-.ifdef (WITH_SPEEX)
-LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
-CONFIGURE_ARGS+=	--enable-localspeex=no
-.else
-CONFIGURE_ARGS+=	--enable-localspeex=yes
-.endif
 
 .if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
 CFLAGS+=	-fPIC

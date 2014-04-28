@@ -12,17 +12,15 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple commandline wrapper around gpg for gnome-keyring
 
 BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
-LIB_DEPENDS=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/gnome-keyring
 RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	libgnomeui
 CONFIGURE_ENV=	set_more_warnings="no"
 
-PLIST_FILES=	bin/gnome-gpg
-MAN1=		gnome-gpg.1
+PLIST_FILES=	bin/gnome-gpg \
+		man/man1/gnome-gpg.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

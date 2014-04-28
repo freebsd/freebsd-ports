@@ -6,7 +6,7 @@ PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
 # When chasing a shared library for a plug-in bump the PORTREVISION in the 
 # plug-in port instead, like ${category}/gstreamer-plugin-${PLUGIN}.
-PORTREVISION?=	3
+PORTREVISION?=	4
 PORTEPOCH=	3
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
@@ -43,11 +43,11 @@ DIST?=		good
 SHLIB_VERSION=	1
 VERSION=	${GST_VERSION}
 WANT_GSTREAMER=	yes
-USE_BZIP2=	yes
-USE_GNOME+=	ltverhack ltasneededhack introspection:build
-USES=		gettext gmake pathfix pkgconfig shebangfix
-USE_AUTOTOOLS=	libtool
+USE_GNOME+=	introspection:build
+USES=		gettext gmake libtool:keepla pathfix pkgconfig shebangfix tar:bzip2
+GNU_CONFIGURE=	yes
 GST_PLUGIN?=	base
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--disable-option-checking
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -157,22 +157,11 @@ post-patch:
 		s|DEFAULT_AUDIOSRC="alsasrc"|DEFAULT_AUDIOSRC="${DEFAULT_AUDIOSRC}"|' \
         	-e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
-.if ${GST_PLUGIN} == "flite"
-# Hack to get all the libraries linked to the flite plugin so it is useable.
-	-@${REINPLACE_CMD} -e 's|-Wl,--as-needed||g' \
-		${WRKSRC}/../gnome-libtool
-.endif
 
 # workaround a crash in clang 3.3 crash llvm bug # 15840
 .if ((${OSVERSION} >= 901504 && ${OSVERSION} < 902502) || \
      (${OSVERSION} >= 1000037 && ${OSVERSION} < 1000056))
 USE_GCC=	any
 .endif
-
-post-install:
-.if ${GST_PLUGIN}==base
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst*.so.0
-.endif
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-0.10/lib*.so
 
 .include <bsd.port.post.mk>

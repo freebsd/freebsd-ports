@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libaacs
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
 		http://blu.opsec.eu/
@@ -10,14 +10,15 @@ MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Advanced Access Content System implementation
 
+LICENSE=	LGPL21
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgpg-error.so:${PORTSDIR}/security/libgpg-error
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
-USES=		bison gettext iconv
+USES=		bison gettext iconv tar:bzip2
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	LEX="${LOCALBASE}/bin/flex"
@@ -30,18 +31,11 @@ MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 run-autotools:
 	@cd ${WRKSRC} && ${SH} bootstrap
 
-plist: build
+plist: stage
 	@${ECHO} "===> Rebuilding PLIST."
-	@${MKDIR} "${WRKDIR}/plist"
-	@cd ${WRKSRC} && ( \
-		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} --prefix="${WRKDIR}/plist" && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} pkgconfigdir="${WRKDIR}/plist/libdata/pkgconfig" ${INSTALL_TARGET} ; \
-		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} \
-	)
-	@${FIND} -ds "${WRKDIR}/plist/" -not -type d \
-		| ${SED} "s|${WRKDIR}/plist/||1" > ${PLIST}
-	@${FIND} -ds "${WRKDIR}/plist/" -type d -mindepth 2 \
-		| ${SED} -e "/pkgconfig/d" -e "s|${WRKDIR}/plist/|@dirrm |1" >> ${PLIST}
-	@${RM} -rf "${WRKDIR}/plist"
+	@${MTREE_CMD} -cp "${STAGEDIR}${PREFIX}/" > "${WRKDIR}/plist.mtree"
+	@${MTREE_CMD} -Sf "${WRKDIR}/plist.mtree" -f "${MTREE_FILE}" \
+		| ${SED} -ne '/ dir /{s/ .*//;s/^/@dirrm /;H;};t dirs' \
+		         -e 's/ .*//p;:dirs' -e '$${g;s/^\n//p;}' > ${PLIST}
 
 .include <bsd.port.mk>

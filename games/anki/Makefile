@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	2.0.24
+PORTVERSION=	2.0.26
 CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Flashcard trainer with spaced repetition
 
 LICENSE=	AGPLv3

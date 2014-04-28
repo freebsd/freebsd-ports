@@ -16,7 +16,6 @@ NO_WRKSUBDIR=	YES
 ALL_TARGET=	icmpquery
 
 do-extract:
-		@${MKDIR} ${STAGEDIR}${WRKDIR}
 		@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
 		@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 

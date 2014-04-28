@@ -270,6 +270,7 @@ lib/ocaml/compiler-libs/asmgen.cmi
 lib/ocaml/compiler-libs/asmlibrarian.cmi
 lib/ocaml/compiler-libs/asmlink.cmi
 lib/ocaml/compiler-libs/asmpackager.cmi
+lib/ocaml/compiler-libs/ast_mapper.cmi
 lib/ocaml/compiler-libs/asttypes.cmi
 lib/ocaml/compiler-libs/btype.cmi
 lib/ocaml/compiler-libs/bytegen.cmi
@@ -289,8 +290,10 @@ lib/ocaml/compiler-libs/cmt_format.cmi
 lib/ocaml/compiler-libs/cmx_format.cmi
 lib/ocaml/compiler-libs/coloring.cmi
 lib/ocaml/compiler-libs/comballoc.cmi
+lib/ocaml/compiler-libs/compenv.cmi
 lib/ocaml/compiler-libs/compile.cmi
 lib/ocaml/compiler-libs/compilenv.cmi
+lib/ocaml/compiler-libs/compmisc.cmi
 lib/ocaml/compiler-libs/config.cmi
 lib/ocaml/compiler-libs/consistbl.cmi
 lib/ocaml/compiler-libs/ctype.cmi
@@ -301,6 +304,7 @@ lib/ocaml/compiler-libs/emit.cmi
 lib/ocaml/compiler-libs/emitaux.cmi
 lib/ocaml/compiler-libs/emitcode.cmi
 lib/ocaml/compiler-libs/env.cmi
+lib/ocaml/compiler-libs/envaux.cmi
 lib/ocaml/compiler-libs/errors.cmi
 lib/ocaml/compiler-libs/expunge.cmi
 lib/ocaml/compiler-libs/genprintval.cmi
@@ -351,6 +355,7 @@ lib/ocaml/compiler-libs/parser.cmi
 lib/ocaml/compiler-libs/parsetree.cmi
 lib/ocaml/compiler-libs/path.cmi
 lib/ocaml/compiler-libs/pparse.cmi
+lib/ocaml/compiler-libs/pprintast.cmi
 lib/ocaml/compiler-libs/predef.cmi
 lib/ocaml/compiler-libs/primitive.cmi
 lib/ocaml/compiler-libs/printast.cmi
@@ -395,6 +400,8 @@ lib/ocaml/compiler-libs/typeclass.cmi
 lib/ocaml/compiler-libs/typecore.cmi
 lib/ocaml/compiler-libs/typedecl.cmi
 lib/ocaml/compiler-libs/typedtree.cmi
+lib/ocaml/compiler-libs/typedtreeIter.cmi
+lib/ocaml/compiler-libs/typedtreeMap.cmi
 lib/ocaml/compiler-libs/typemod.cmi
 lib/ocaml/compiler-libs/typeopt.cmi
 lib/ocaml/compiler-libs/types.cmi
@@ -764,9 +771,9 @@ lib/ocaml/int_misc.cmx
 %%TK%%lib/ocaml/labltk/tkcompiler
 %%TK%%lib/ocaml/labltk/tkthread.cmi
 %%TK%%lib/ocaml/labltk/tkthread.cmo
-%%THREADS%%%%TK%%lib/ocaml/labltk/tkthread.cmx
+%%TK%%lib/ocaml/labltk/tkthread.cmx
 %%TK%%lib/ocaml/labltk/tkthread.mli
-%%THREADS%%%%TK%%lib/ocaml/labltk/tkthread.o
+%%TK%%lib/ocaml/labltk/tkthread.o
 %%TK%%lib/ocaml/labltk/tkvars.cmi
 %%TK%%lib/ocaml/labltk/tkvars.cmx
 %%TK%%lib/ocaml/labltk/tkvars.mli
@@ -863,6 +870,8 @@ lib/ocaml/ocamlbuild/ocamlbuild_executor.cmx
 lib/ocaml/ocamlbuild/ocamlbuild_executor.o
 lib/ocaml/ocamlbuild/ocamlbuild_pack.cmi
 lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmi
+lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmo
+lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmx
 lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmi
 lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmo
 lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmx
@@ -870,7 +879,6 @@ lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.o
 lib/ocaml/ocamlbuild/ocamlbuildlib.a
 lib/ocaml/ocamlbuild/ocamlbuildlib.cma
 lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa
-lib/ocaml/ocamldoc/custom/.keep
 lib/ocaml/ocamldoc/ocamldoc.hva
 lib/ocaml/ocamldoc/odoc.cmi
 lib/ocaml/ocamldoc/odoc_analyse.cmi
@@ -1082,54 +1090,117 @@ lib/ocaml/weak.cmx
 lib/ocaml/weak.ml
 lib/ocaml/weak.mli
 %%PROF%%lib/ocaml/weak.p.cmx
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/.ignore
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/Makefile
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/Makefile.nt
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/addition.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/eyes.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/fileinput.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/fileopen.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/helloworld.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/images/CamlBook.gif
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/images/Lambda2.back.gif
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/images/dojoji.back.gif
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/jptest.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/mytext.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/socketinput.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/taddition.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/tetris.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/text.ml
-%%TK%%%%EXAMPLESDIR%%/examples_camltk/winskel.ml
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/.ignore
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/Lambda2.back.gif
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/Makefile
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/Makefile.nt
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/README
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/calc.ml
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/clock.ml
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/demo.ml
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/eyes.ml
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/hello.ml
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/hello.tcl
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/lang.ml
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/taquin.ml
-%%TK%%%%EXAMPLESDIR%%/examples_labltk/tetris.ml
-%%TK%%@dirrm %%EXAMPLESDIR%%/examples_labltk
-%%TK%%@dirrm %%EXAMPLESDIR%%/examples_camltk/images
-%%TK%%@dirrm %%EXAMPLESDIR%%/examples_camltk
-@dirrmtry %%EXAMPLESDIR%%
-@dirrm lib/ocaml/vmthreads
-%%THREADS%%@dirrm lib/ocaml/threads
+man/man1/ocaml.1.gz
+man/man1/ocamlbuild.1.gz
+man/man1/ocamlc.1.gz
+man/man1/ocamlc.opt.1.gz
+man/man1/ocamlcp.1.gz
+man/man1/ocamldebug.1.gz
+man/man1/ocamldep.1.gz
+man/man1/ocamldoc.1.gz
+man/man1/ocamllex.1.gz
+man/man1/ocamlmktop.1.gz
+man/man1/ocamlopt.1.gz
+man/man1/ocamlopt.opt.1.gz
+man/man1/ocamloptp.1.gz
+man/man1/ocamlprof.1.gz
+man/man1/ocamlrun.1.gz
+man/man1/ocamlyacc.1.gz
+man/mann/Arg.3o.gz
+man/mann/Array.3o.gz
+man/mann/ArrayLabels.3o.gz
+man/mann/Bigarray.3o.gz
+man/mann/Bigarray.Array1.3o.gz
+man/mann/Bigarray.Array2.3o.gz
+man/mann/Bigarray.Array3.3o.gz
+man/mann/Bigarray.Genarray.3o.gz
+man/mann/Buffer.3o.gz
+man/mann/Callback.3o.gz
+man/mann/CamlinternalLazy.3o.gz
+man/mann/CamlinternalMod.3o.gz
+man/mann/CamlinternalOO.3o.gz
+man/mann/Complex.3o.gz
+man/mann/Digest.3o.gz
+man/mann/Filename.3o.gz
+man/mann/Format.3o.gz
+man/mann/Gc.3o.gz
+man/mann/Genlex.3o.gz
+man/mann/Hashtbl.3o.gz
+man/mann/Hashtbl.HashedType.3o.gz
+man/mann/Hashtbl.Make.3o.gz
+man/mann/Hashtbl.MakeSeeded.3o.gz
+man/mann/Hashtbl.S.3o.gz
+man/mann/Hashtbl.SeededHashedType.3o.gz
+man/mann/Hashtbl.SeededS.3o.gz
+man/mann/Int32.3o.gz
+man/mann/Int64.3o.gz
+man/mann/Lexing.3o.gz
+man/mann/List.3o.gz
+man/mann/ListLabels.3o.gz
+man/mann/Map.3o.gz
+man/mann/Map.Make.3o.gz
+man/mann/Map.OrderedType.3o.gz
+man/mann/Map.S.3o.gz
+man/mann/Marshal.3o.gz
+man/mann/MoreLabels.3o.gz
+man/mann/MoreLabels.Hashtbl.3o.gz
+man/mann/MoreLabels.Hashtbl.HashedType.3o.gz
+man/mann/MoreLabels.Hashtbl.Make.3o.gz
+man/mann/MoreLabels.Hashtbl.MakeSeeded.3o.gz
+man/mann/MoreLabels.Hashtbl.S.3o.gz
+man/mann/MoreLabels.Hashtbl.SeededHashedType.3o.gz
+man/mann/MoreLabels.Hashtbl.SeededS.3o.gz
+man/mann/MoreLabels.Map.3o.gz
+man/mann/MoreLabels.Map.Make.3o.gz
+man/mann/MoreLabels.Map.OrderedType.3o.gz
+man/mann/MoreLabels.Map.S.3o.gz
+man/mann/MoreLabels.Set.3o.gz
+man/mann/MoreLabels.Set.Make.3o.gz
+man/mann/MoreLabels.Set.OrderedType.3o.gz
+man/mann/MoreLabels.Set.S.3o.gz
+man/mann/Nativeint.3o.gz
+man/mann/Num.3o.gz
+man/mann/Obj.3o.gz
+man/mann/Oo.3o.gz
+man/mann/Parsing.3o.gz
+man/mann/Pervasives.3o.gz
+man/mann/Pervasives.LargeFile.3o.gz
+man/mann/Printexc.3o.gz
+man/mann/Printf.3o.gz
+man/mann/Queue.3o.gz
+man/mann/Random.3o.gz
+man/mann/Random.State.3o.gz
+man/mann/Scanf.3o.gz
+man/mann/Scanf.Scanning.3o.gz
+man/mann/Set.Make.3o.gz
+man/mann/Set.OrderedType.3o.gz
+man/mann/Set.S.3o.gz
+man/mann/Sort.3o.gz
+man/mann/Stack.3o.gz
+man/mann/StdLabels.3o.gz
+man/mann/StdLabels.Array.3o.gz
+man/mann/StdLabels.List.3o.gz
+man/mann/StdLabels.String.3o.gz
+man/mann/Str.3o.gz
+man/mann/Stream.3o.gz
+man/mann/StringLabels.3o.gz
+man/mann/Sys.3o.gz
+man/mann/Unix.3o.gz
+man/mann/Unix.LargeFile.3o.gz
+man/mann/Weak.3o.gz
+man/mann/Weak.Make.3o.gz
+man/mann/Weak.S.3o.gz
+@dirrmtry lib/ocaml/vmthreads
+@dirrmtry lib/ocaml/threads
 @dirrmtry lib/ocaml/stublibs
-@dirrm lib/ocaml/ocamldoc/custom
-@dirrm lib/ocaml/ocamldoc
-@dirrm lib/ocaml/ocamlbuild
+@dirrmtry lib/ocaml/ocamldoc
+@dirrmtry lib/ocaml/ocamlbuild
 %%TK%%@dirrmtry lib/ocaml/labltk
-@dirrm lib/ocaml/compiler-libs
-@dirrm lib/ocaml/camlp4/Camlp4Top
-@dirrm lib/ocaml/camlp4/Camlp4Printers
-@dirrm lib/ocaml/camlp4/Camlp4Parsers
-@dirrm lib/ocaml/camlp4/Camlp4Filters
-@dirrm lib/ocaml/camlp4
-@dirrm lib/ocaml/caml
-@dirrm lib/ocaml
+@dirrmtry lib/ocaml/compiler-libs
+@dirrmtry lib/ocaml/camlp4/Camlp4Top
+@dirrmtry lib/ocaml/camlp4/Camlp4Printers
+@dirrmtry lib/ocaml/camlp4/Camlp4Parsers
+@dirrmtry lib/ocaml/camlp4/Camlp4Filters
+@dirrmtry lib/ocaml/camlp4
+@dirrmtry lib/ocaml/caml
+@dirrmtry lib/ocaml

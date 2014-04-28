@@ -3,17 +3,22 @@
 
 PORTNAME=	libsieve
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://cloud.github.com/downloads/sodabrew/libsieve/
+MASTER_SITES=	GHC
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing, sorting, and filtering mail
 
-LICENSE=LGPL21
+LICENSE=	LGPL21
 
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sodabrew
+
+USES=		bison gmake pathfix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX}
-USES=		bison gmake
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
 bin/assetml-query
 include/libassetml-1.0/libassetml/assetml.h
-lib/libassetml.a
 lib/libassetml.la
 lib/libassetml.so
 lib/libassetml.so.0
+lib/libassetml.so.0.0.0
 libdata/pkgconfig/libassetml.pc
 share/gnome/help/libassetml/C/libassetml.html
 share/gnome/help/libassetml/C/topic.dat
@@ -13,6 +13,6 @@ share/locale/ja/LC_MESSAGES/libassetml.mo
 @exec /bin/mkdir -p %D/share/assetml
 @dirrm share/gnome/help/libassetml/C
 @dirrm share/gnome/help/libassetml
-@unexec /bin/rmdir %D/share/assetml 2>/dev/null || /usr/bin/true
+@unexec rmdir %D/share/assetml 2>/dev/null || /usr/bin/true
 @dirrm include/libassetml-1.0/libassetml
 @dirrm include/libassetml-1.0

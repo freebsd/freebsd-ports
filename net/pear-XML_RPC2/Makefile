@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	XML_RPC2
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	net devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	XML-RPC client/server library
+
+LICENSE=	PHP301
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite \

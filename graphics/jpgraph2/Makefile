@@ -5,15 +5,15 @@ PORTNAME=	jpgraph
 PORTVERSION=	3.0.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://hem.bredband.net/jpgraph2/
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PHP=	gd
-NO_STAGE=	yes
 
 NO_CDROM=	The free version cannot be used in a commercial context
 
@@ -21,20 +21,16 @@ PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-LATEST_LINK=	jpgraph2
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/src/*.php ${DATADIR}
-	${CP} ${WRKSRC}/src/*.dat ${DATADIR}
-	${CP} -R ${WRKSRC}/src/lang ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docportal/* ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} ${WRKSRC}/src/Examples/* ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} ${WRKSRC}/src/*.php ${STAGEDIR}${DATADIR}
+	${CP} ${WRKSRC}/src/*.dat ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/src/lang ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -R ${WRKSRC}/docportal/* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} ${WRKSRC}/src/Examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

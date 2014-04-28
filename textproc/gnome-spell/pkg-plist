@@ -1,6 +1,5 @@
 lib/gnome-spell/libgnome-spell-component-0.3.so
 lib/gnome-spell/libgnome-spell-component.a
-lib/gnome-spell/libgnome-spell-component.la
 lib/gnome-spell/libgnome-spell-component.so
 libdata/bonobo/servers/GNOME_Spell.server
 share/control-center-2.0/icons/spell-checker.png

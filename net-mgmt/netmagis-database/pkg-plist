@@ -6,9 +6,18 @@ lib/netmagis/sql22/schema-mac.sql
 lib/netmagis/sql22/schema-main.sql
 lib/netmagis/sql22/triggers.sql
 lib/netmagis/triggers.sql
+lib/netmagis/upgrade/12-13/upgrade.sql
+lib/netmagis/upgrade/13-14/upgrade.sql
+lib/netmagis/upgrade/14-15/upgrade.sql
+lib/netmagis/upgrade/15-20/README.pgauth
+lib/netmagis/upgrade/15-20/pgauth.sed
+lib/netmagis/upgrade/15-20/upgrade.sql
+lib/netmagis/upgrade/20-21/upgrade.sql
+lib/netmagis/upgrade/21-22/upgrade.sql
 sbin/netmagis-dbcreate
 sbin/netmagis-dbimport
 sbin/netmagis-dbmaint
+sbin/netmagis-dbupgrade
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.database
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/no-view/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/no-view/domain.txt
@@ -26,14 +35,6 @@ sbin/netmagis-dbmaint
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/no-view/zones/example.org
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/no-view/zones/plant1.example.com
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/no-view/zones/subsid.co.zz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade/12-13/upgrade.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade/13-14/upgrade.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade/14-15/upgrade.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade/15-20/README.pgauth
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade/15-20/pgauth.sed
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade/15-20/upgrade.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade/20-21/upgrade.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade/21-22/upgrade.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/with-views/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/with-views/domain.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/with-views/group.txt
@@ -53,16 +54,16 @@ sbin/netmagis-dbmaint
 @dirrmtry var/netmagis
 @dirrmtry var
 @dirrmtry lib/netmagis/sql22
+@dirrmtry lib/netmagis/upgrade/12-13
+@dirrmtry lib/netmagis/upgrade/13-14
+@dirrmtry lib/netmagis/upgrade/14-15
+@dirrmtry lib/netmagis/upgrade/15-20
+@dirrmtry lib/netmagis/upgrade/20-21
+@dirrmtry lib/netmagis/upgrade/21-22
+@dirrmtry lib/netmagis/upgrade
 @dirrmtry lib/netmagis
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/with-views/zones
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/with-views
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/upgrade/21-22
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/upgrade/20-21
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/upgrade/15-20
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/upgrade/14-15
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/upgrade/13-14
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/upgrade/12-13
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/upgrade
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/no-view/zones
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/no-view
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

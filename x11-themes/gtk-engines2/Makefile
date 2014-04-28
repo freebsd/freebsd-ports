@@ -4,7 +4,7 @@
 
 PORTNAME=	gtk-engines2
 PORTVERSION=	2.20.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -16,29 +16,24 @@ COMMENT=	Theme engine for the GTK+-2.0 toolkit
 
 CONFLICTS=	gtk-smooth-engine-[0-9]* clearlooks-[0-9]*
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack gtk20 intlhack ltasneededhack
-USES=		gettext gmake pkgconfig
+USE_GNOME=	gtk20 intlhack
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	ANIMATION
 ANIMATION_DESC=	Experimental animated progressbars
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MANIMATION}
-CONFIGURE_ARGS+=	--enable-animation
-.endif
+ANIMATION_CONFIGURE_ENABLE=	animation
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib.*\.h>|glib.h>|g' \
 		${WRKSRC}/engines/clearlooks/src/animation.c
 
 post-install:
-	@(cd ${WRKSRC}/po && ${GMAKE} install)
+	@(cd ${WRKSRC}/po && ${MAKE_CMD} install DESTDIR=${STAGEDIR})
 
 .include <bsd.port.mk>

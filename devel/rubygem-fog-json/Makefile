@@ -1,0 +1,20 @@
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	fog-json
+PORTVERSION=	1.0.0
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Extraction of the JSON parsing tools between providers
+
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-multi_json>=1:${PORTSDIR}/devel/rubygem-multi_json
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+.include <bsd.port.mk>

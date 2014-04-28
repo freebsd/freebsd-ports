@@ -1,3 +1,0 @@
-include/GL/aux.h
-include/GL/tk.h
-lib/libaux.a

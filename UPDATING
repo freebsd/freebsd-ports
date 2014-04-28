@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140427:
+  AFFECTS: users of graphics/gdal
+  AUTHOR: sunpoet@FreeBSD.org
+
+  Due to changes in header files, please deinstall gdal first while updating
+  from 1.9.x/1.10.x to 1.11.x.
+
 20140420:
   AFFECTS: users of net/samba4
   AUTHOR: timur@FreeBSD.org
@@ -1150,7 +1157,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of graphics/gdal
   AUTHOR: sunpoet@FreeBSD.org
 
-  Due to the changes in gdal.h, please deinstall gdal first while updating
+  Due to changes in header files, please deinstall gdal first while updating
   from 1.9.x to 1.10.x.
 
 20130830:

@@ -4,9 +4,9 @@ include/gnome-device-manager/gdm-info-provider-iface.h
 include/gnome-device-manager/gdm-info-provider.h
 include/gnome-device-manager/gdm-pool.h
 lib/libgnome-device-manager.a
-lib/libgnome-device-manager.la
 lib/libgnome-device-manager.so
 lib/libgnome-device-manager.so.0
+lib/libgnome-device-manager.so.0.0.0
 libdata/pkgconfig/gnome-device-manager.pc
 share/applications/gnome-device-manager.desktop
 share/gnome/help/gnome-device-manager/C/figures/gnome-device-manager.png

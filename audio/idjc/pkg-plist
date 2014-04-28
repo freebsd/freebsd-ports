@@ -1,5 +1,4 @@
 bin/idjc
-lib/idjc/idjc.la
 lib/idjc/idjc.so
 lib/idjc/site-packages/idjc/__init__.py
 lib/idjc/site-packages/idjc/__init__.pyc
@@ -62,10 +61,10 @@ lib/python2.7/site-packages/idjcmonitor.py
 lib/python2.7/site-packages/idjcmonitor.pyc
 lib/python2.7/site-packages/idjcmonitor.pyo
 share/applications/idjc.desktop
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/AUTHORS.gz
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/ChangeLog.gz
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/NEWS.gz
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/README.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.gz
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.gz
 %%DATADIR%%/add3.png
 %%DATADIR%%/advance.png
 %%DATADIR%%/classic_cross.png
@@ -127,7 +126,7 @@ share/pixmaps/idjc.png
 @dirrmtry man/fr
 @dirrmtry man
 @dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%-%%PORTVERSION%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry lib/python2.7/site-packages
 @dirrmtry lib/python2.7
 @dirrmtry lib/idjc/site-packages/idjc/prelims

@@ -1,6 +1,15 @@
+@group games
+@owner games
 bin/xabacus
-man/man6/xabacus.6.gz
+@owner
+@group
 lib/X11/app-defaults/Abacus
+man/man6/xabacus.6.gz
+share/icons/hicolor/16x16/apps/abacus.png
+share/icons/hicolor/22x22/apps/abacus.png
+share/icons/hicolor/24x24/apps/abacus.png
+share/icons/hicolor/32x32/apps/abacus.png
+share/icons/hicolor/48x48/apps/abacus.png
 %%DATADIR%%/Abacus.ps
 %%DATADIR%%/Abacus1_1.les
 %%DATADIR%%/Abacus1_2.les
@@ -27,5 +36,6 @@ lib/X11/app-defaults/Abacus
 %%DATADIR%%/Abacusru4_1.les
 %%DATADIR%%/Abacusru5_1.les
 %%DATADIR%%/bump.au
+%%DATADIR%%/drip.au
 %%DATADIR%%/move.au
 @dirrm %%DATADIR%%

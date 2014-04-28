@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MetaCPAN-API
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -22,6 +22,8 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-TinyMocker>=0:${PORTSDIR}/devel/p5-Test-TinyMocker
+
+DEPRECATED=	Use devel/p5-MetaCPAN-Client instead
 
 USES=		perl5
 USE_PERL5=	modbuild

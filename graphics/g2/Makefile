@@ -11,13 +11,16 @@ MASTER_SITE_SUBDIR=	libs/graphics
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use, portable, and powerful 2D graphics library
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -E 's,(INC|LIB)DIR),DESTDIR)$$(&,g' \
+		${WRKSRC}/Makefile.in
+
 do-build:
 	cd ${WRKSRC} ; make depend ; make
 

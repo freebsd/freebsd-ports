@@ -3,7 +3,7 @@
 
 PORTNAME=	anthy
 PORTVERSION=	9100h
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/37536
@@ -20,22 +20,19 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/alt-cannadic/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		libtool:oldver pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	lthack
 
-DOCSDIR=	share/doc/ja/anthy
+DOCSDIR=	${PREFIX}/share/doc/ja/anthy
 ELISPDIR=	share/emacs/site-lisp/anthy
 PLIST_SUB=	ELISPDIR=${ELISPDIR}
 
 OPTIONS_DEFINE=	2CHDIC ODIC GSKKDIC DOCS
-OPTIONS_DEFAULT=	DOCS
 
 2CHDIC_DESC=	2ch Dictionary
 ODIC_DESC=	Okinawa Dictionary
 GSKKDIC_DESC=	SKK Dictionary
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:M2CHDIC}
@@ -80,15 +77,11 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e \
 		's| install-lispLISP||g' ${WRKSRC}/src-util/Makefile.in
-	${REINPLACE_CMD} -e \
-		's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
 post-install:
-	${MKDIR} ${PREFIX}/${ELISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/src-util/*.el ${PREFIX}/${ELISPDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ELISP ${PREFIX}/${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/src-util/*.el ${STAGEDIR}${PREFIX}/${ELISPDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/ELISP ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

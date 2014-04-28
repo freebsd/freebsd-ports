@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.1.2
-PORTREVISION=	4
+DISTVERSION=	2.1.4
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -17,7 +17,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libproxy.so:${PORTSDIR}/net/libproxy \
-		libdvbpsi.so:${PORTSDIR}/multimedia/libdvbpsi
+		libdvbpsi.so:${PORTSDIR}/multimedia/libdvbpsi \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 
@@ -243,8 +245,7 @@ X264_CONFIGURE_ENABLE=	x264
 ZVBI_LIB_DEPENDS=	libzvbi.so:${PORTSDIR}/devel/libzvbi
 ZVBI_CONFIGURE_ENABLE=	zvbi
 
-USE_XZ=		yes
-USES=		desktop-file-utils iconv perl5 gmake pkgconfig
+USES=		desktop-file-utils iconv perl5 gmake pkgconfig tar:xz
 USE_PERL5=	build
 USE_CSTD=	gnu99
 WANT_GNOME=	yes
@@ -404,13 +405,6 @@ WITH_CDROM_DEVICE?=/dev/acd0
 WITH_DVD_DEVICE?=/dev/acd0
 .endif
 
-# If you change this value, the dependency will not be recorded
-.if !defined(WITH_VLC_DEFAULT_FONT)
-WITH_VLC_DEFAULT_FONT=		${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
-WITH_VLC_DEFAULT_MONO_FONT=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/VeraMono.ttf
-RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		-e '\|LIBS|s|-lrt||' \
@@ -419,12 +413,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = \$$\(prefix\)/libdata/pkgconfig|' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/lib/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf|${WITH_VLC_DEFAULT_FONT}|' \
-		${WRKSRC}/modules/text_renderer/freetype.c
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \
 		${WRKSRC}/include/vlc_config.h
 	@${RM} -rf ${WRKSRC}/modules/access/v4l2/linux
+	@${REINPLACE_CMD} -e '/^DEFAULT_INCLUDES/s|$$| $$(GNUTLS_CFLAGS)|g' \
+		${WRKSRC}/modules/misc/Makefile.in
 
 post-install:
 	@if [ -n "${MTREE_FILE}" ]; then \

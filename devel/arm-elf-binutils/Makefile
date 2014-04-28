@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	arm-elf-
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	GNU binutils for vanilla ARM cross-development
 
-USE_BZIP2=	yes
-USES=		gettext gmake
+USES=		gettext gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror \
 		--disable-nls CFLAGS="-I/usr/local/include"

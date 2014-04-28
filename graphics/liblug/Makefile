@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	libs/graphics
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Multi-format graphics manipulation library
 
-LIB_DEPENDS=		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=		libtiff.so:${PORTSDIR}/graphics/tiff
 
 PLIST_FILES=		lib/liblug.a
 USE_XORG=		x11
@@ -21,7 +21,6 @@ WRKSRC=			${WRKDIR}/lug
 MAKEFILE=		Makefile.linux
 USE_LDCONFIG=		yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DiTIFF|-DiTIFF -DTIFF_VERSION=TIFF_VERSION_CLASSIC|' \
 		${WRKSRC}/Makefile.linux

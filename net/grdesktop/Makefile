@@ -14,21 +14,18 @@ COMMENT=	GNOME frontend for the remote desktop client (rdesktop)
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	libgnomeui gnomeprefix gnomehack
+USES=		pathfix gmake pkgconfig
+USE_GNOME=	libgnomeui gnomeprefix
 GCONF_SCHEMAS=	grdesktop.schemas
 INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-keymap-path=${LOCALBASE}/share/rdesktop/keymaps
 
-MAN1=		grdesktop.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(GETTEXT_PACKAGE =\).*|\1 grdesktop|' ${WRKSRC}/po/Makefile.in.in
 
 post-install:
-	@${INSTALL_DATA} ${PREFIX}/share/pixmaps/grdesktop/icon.png ${PREFIX}/share/pixmaps/grdesktop.png
+	@${INSTALL_DATA} ${STAGEDIR}${PREFIX}/share/pixmaps/grdesktop/icon.png ${STAGEDIR}${PREFIX}/share/pixmaps/grdesktop.png
 
 .include <bsd.port.mk>

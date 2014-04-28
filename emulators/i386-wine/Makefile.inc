@@ -3,6 +3,7 @@
 
 PORTNAME=	wine
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -36,10 +37,14 @@ PKGDEINSTALL=	${PKGINSTALL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 USE_LDCONFIG32=	${PREFIX}/lib32 ${PREFIX}/lib32/wine
-USE_XZ=		yes
+USES=		tar:xz
+
+GECKO_RUN_DEPENDS=   ${DATADIR}/gecko/wine_gecko-2.21-x86.msi:${PORTSDIR}/emulators/wine-gecko
+MONO_RUN_DEPENDS=   ${DATADIR}/mono/wine-mono-0.0.8.msi:${PORTSDIR}/emulators/wine-mono
 
 PORTSCOUT=	limitw:1,even
 
+# Included for OPSYS and OSVERSION
 .include <bsd.port.pre.mk>
 
 .for osrel in 8 9 10 11
@@ -53,14 +58,6 @@ PLIST_SUB+=	OSREL${osrel}="@comment "
 .if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 803000 && ${OSVERSION} < 900000) && !(${OSVERSION} >= 901000 && ${OSVERSION} < 1000000) && !(${OSVERSION} >= 1000510 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100007 && ${OSVERSION} < 1200000))
 IGNORE=		binaries compiled for FreeBSD 8.3+, 9.1+, 10.0+ and -current only
 DISTFILES=
-.endif
-
-.if ${PORT_OPTIONS:MGECKO}
-RUN_DEPENDS+=   ${DATADIR}/gecko/wine_gecko-2.21-x86.msi:${PORTSDIR}/emulators/wine-gecko
-.endif
-
-.if ${PORT_OPTIONS:MMONO}
-RUN_DEPENDS+=   ${DATADIR}/mono/wine-mono-0.0.8.msi:${PORTSDIR}/emulators/wine-mono
 .endif
 
 do-extract:
@@ -85,7 +82,6 @@ port-update:
 	${MAKE} pkg-plist.${osrel} PLIST=pkg-plist.${osrel} OSREL=${osrel}
 .endfor
 	${MV} ${.CURDIR}/distinfo~ ${.CURDIR}/distinfo
-	${MAKE} pkg-plist
 	python ${FILESDIR}/mergeplist.py ${.CURDIR}/pkg-plist.* > ${PLIST}
 	${RM} ${.CURDIR}/pkg-plist.*
 

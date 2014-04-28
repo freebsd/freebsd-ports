@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	4.5.32
+PORTVERSION=	4.5.33
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 PKGNAMESUFFIX=	${TYPO3RELEASE}
@@ -25,7 +25,11 @@ TYPO3PKG=	${PORTNAME}-${PORTVERSION}
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}
 TYPO3DUMMY=	dummy-${PORTVERSION}
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+USERS=		${WWWOWN}
+GROUPS=		${WWWGRP}
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
+		WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX} ${TYPO3DUMMY}${EXTRACT_SUFX}
 
@@ -34,30 +38,19 @@ GD_DESC=	GDlib/freetype support
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 MBSTRING_DESC=	${MULTIBYTE_DESC}
 
+CURL_USE=	PHP=curl
+GD_USE=		PHP=gd
+MBSTRING_USE=	PHP=mbstring
+ZLIB_USE=	PHP=zlib
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCURL}
-USE_PHP+=	curl
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-USE_PHP+=	gd
-.endif
 
 .if ${PORT_OPTIONS:MIMAGICK}
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .else
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MMBSTRING}
-USE_PHP+=	mbstring
-.endif
-
-.if ${PORT_OPTIONS:MZLIB}
-USE_PHP+=	zlib
 .endif
 
 pre-install:
@@ -67,10 +60,7 @@ pre-install:
 do-install:
 	${CP} -R ${WRKDIR}/${TYPO3DUMMY}/ ${STAGEDIR}${PREFIX}/${TYPO3SITE}
 	${CP} -R ${WRKDIR}/${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3WWW}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${TYPO3SITE}
 	${RM} ${STAGEDIR}${PREFIX}/${TYPO3SITE}/typo3_src && \
-		cd ${STAGEDIR}${PREFIX}/${TYPO3SITE} && \
-		${LN} -s ../${TYPO3SRC} typo3_src
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3SRC}
+		${LN} -s ../${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3SITE}/typo3_src
 
 .include <bsd.port.mk>

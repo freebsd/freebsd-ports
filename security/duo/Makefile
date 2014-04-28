@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duo
-PORTVERSION=	1.9.7
-PORTREVISION=	2
+PORTVERSION=	1.9.10
 CATEGORIES=	security
 MASTER_SITES=	https://dl.duosecurity.com/ \
 		http://mirrors.rit.edu/zi/
@@ -37,6 +36,8 @@ post-patch:
 .endif
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libduo.so.3
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/security/pam_duo.so
 	@${INSTALL} -o sshd -g wheel -m 700 ${WRKSRC}/login_duo/login_duo.conf \
 	    ${STAGEDIR}${PREFIX}/etc/login_duo.conf.sample
 	@${INSTALL_DATA} -m 700 ${WRKSRC}/pam_duo/pam_duo.conf \
@@ -49,6 +50,5 @@ post-install:
 		${CP} -p ${STAGEDIR}${PREFIX}/etc/pam_duo.conf.sample \
 		    ${STAGEDIR}${PREFIX}/etc/pam_duo.conf ; \
 	fi
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

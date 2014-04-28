@@ -16,8 +16,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	qsvn-[0-9]*
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 CMAKE_ARGS+=	-DSUBVERSION_INCLUDE_DIR=${LOCALBASE}/include/subversion-1
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_LDCONFIG=	yes

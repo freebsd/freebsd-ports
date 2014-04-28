@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	doomsday
-PORTVERSION=	1.13.2
+PORTVERSION=	1.14.1
 CATEGORIES=	games
 MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Enhanced Doom, Heretic, and Hexen source port
 
 LICENSE=	GPLv2
@@ -40,12 +40,19 @@ OPENAL_QMAKE_OFF=	CONFIG+=deng_noopenal
 
 PORTSCOUT=	limit:^\d+\.\d+\.\d+$$
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 1000052
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+.endif
+
 post-patch:
-	${REINPLACE_CMD} 's,share/man,man,' \
+	@${REINPLACE_CMD} 's,share/man,man,' \
 		${PATCH_WRKSRC}/doomsday/client/client.pro \
 		${PATCH_WRKSRC}/doomsday/server/server.pro
-	${REINPLACE_CMD} 's,python,${PYTHON_CMD},' \
+	@${REINPLACE_CMD} 's,python,${PYTHON_CMD},' \
 		${PATCH_WRKSRC}/doomsday/config.pri \
 		${PATCH_WRKSRC}/doomsday/build/build.pro
+	# Removing three non ascii bytes
+	@${REINPLACE_CMD} '1s,^...,,' ${WRKSRC}/doomsday/client/src/client/cl_sound.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

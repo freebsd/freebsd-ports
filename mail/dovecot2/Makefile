@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.10
+PORTVERSION=	2.2.12
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -34,11 +34,10 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
 		--without-shadow
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 
-USERS=		${PORTNAME} dovenull
+USERS=		dovecot dovenull
 GROUPS=		${USERS}
 
 PROTOCOLS=	imap pop3
@@ -55,11 +54,59 @@ VPOPMAIL_DESC=	vpopmail support
 LUCENE_DESC=	CLucene FTS support
 SOLR_DESC=	Solr FTS support
 
-.include <bsd.port.pre.mk>
+OPTIONS_SUB=		yes
+DOCS_CONFIGURE_WITH=	docs
+GSSAPI_CONFIGURE_WITH=	gssapi
+GSSAPI_LDFLAGS=		-lgssapi_krb5
+KQUEUE_CONFIGURE_OFF=	--with-ioloop=poll
+KQUEUE_CONFIGURE_ON=	--with-ioloop=kqueue
+LDAP_CONFIGURE_WITH=	ldap
+LDAP_USE=		OPENLDAP=yes
+LIBWRAP_CONFIGURE_WITH=	libwrap
+LUCENE_CONFIGURE_WITH=	lucene
+LUCENE_LIB_DEPENDS=	libclucene-core.so:${PORTSDIR}/textproc/clucene
+MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_USE=		MYSQL=yes
+PGSQL_CONFIGURE_WITH=	pgsql
+PGSQL_USE=		PGSQL=yes
+SOLR_BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+SOLR_CONFIGURE_WITH=	solr
+SOLR_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+SQLITE_CONFIGURE_WITH=	sqlite
+SQLITE_USE=		SQLITE=3
+SSL_CONFIGURE_OFF=	--without-ssl
+SSL_CONFIGURE_ON=	--with-ssl=openssl
+VPOPMAIL_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/bin/vchkpw:${PORTSDIR}/mail/vpopmail
+VPOPMAIL_CONFIGURE_WITH=vpopmail
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "arm"
 BROKEN=		Does not build on arm
 .endif
+
+DOCS=		AUTHORS COPYING COPYING.LGPL COPYING.MIT INSTALL NEWS TODO README
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+.if ${PORT_OPTIONS:MSSL}
+PROTOCOLS+=	imaps pop3s
+.endif
+
+.if ${PORT_OPTIONS:MLDAP}
+_REQUIRE+=	slapd
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
+_REQUIRE+=	postgresql
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL}
+_REQUIRE+=	mysql
+.endif
+
+SUB_LIST+=	REQUIRE="${_REQUIRE}"
+SUB_FILES+=	pkg-deinstall pkg-message
 
 # sed script for dovecot.conf
 REINPLACE=	s!%%PROTOCOLS%%!${PROTOCOLS}!g;\
@@ -70,133 +117,6 @@ REINPLACE=	s!%%PROTOCOLS%%!${PROTOCOLS}!g;\
 		s![[:<:]]doc/(dovecot-[^-]+)-example.conf[[:>:]]!${EXAMPLESDIR}/\1.conf!g;\
 		s!\#sendmail_path = /usr/.*!sendmail_path = /usr/sbin/sendmail!g;
 
-.if ${PORT_OPTIONS:MDOCS}
-DOCS=		AUTHORS COPYING COPYING.LGPL COPYING.MIT INSTALL NEWS TODO README
-PORTDOCS=	*
-.else
-CONFIGURE_ARGS+=	--without-docs
-.endif
-
-PORTEXAMPLES=	*
-
-## kqueue(2) support
-#
-.if ${PORT_OPTIONS:MKQUEUE}
-CONFIGURE_ARGS+=--with-ioloop=kqueue
-.else
-CONFIGURE_ARGS+=--with-ioloop=poll
-.endif
-
-## SSL support
-#
-.if ${PORT_OPTIONS:MSSL}
-PROTOCOLS+=	imaps pop3s
-PLIST_SUB+=	SSL=""
-.else
-PLIST_SUB+=	SSL="@comment "
-CONFIGURE_ARGS+=--without-ssl
-.endif
-
-## GSSAPI support
-#
-.if ${PORT_OPTIONS:MGSSAPI}
-CONFIGURE_ARGS+=--with-gssapi
-LDFLAGS+=	-lgssapi_krb5
-.else
-CONFIGURE_ARGS+=--without-gssapi
-.endif
-
-## VPopMail Support
-#
-.if ${PORT_OPTIONS:MVPOPMAIL}
-BUILD_DEPENDS+=	${LOCALBASE}/vpopmail/bin/vchkpw:${PORTSDIR}/mail/vpopmail
-CONFIGURE_ARGS+=--with-vpopmail
-.else
-CONFIGURE_ARGS+=--without-vpopmail
-.endif
-
-## OpenLDAP Support
-#
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-ldap
-PLIST_SUB+=	LDAP=""
-_REQUIRE+=	slapd
-.else
-CONFIGURE_ARGS+=--without-ldap
-PLIST_SUB+=	LDAP="@comment "
-.endif
-
-## CLucene FTS support
-#
-.if ${PORT_OPTIONS:MLUCENE}
-CONFIGURE_ARGS+=--with-lucene
-LIB_DEPENDS+=	libclucene-core.so:${PORTSDIR}/textproc/clucene
-PLIST_SUB+=	LUCENE=""
-.else
-PLIST_SUB+=	LUCENE="@comment "
-.endif
-
-## PostgreSQL Support
-#
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=--with-pgsql
-PLIST_SUB+=	SQL=""
-_REQUIRE+=	postgresql
-.else
-CONFIGURE_ARGS+=--without-pgsql
-PLIST_SUB+=	SQL="@comment "
-.endif
-
-## MySQL Support
-#
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql
-PLIST_SUB+=	SQL=""
-_REQUIRE+=	mysql
-.else
-CONFIGURE_ARGS+=--without-mysql
-PLIST_SUB+=	SQL="@comment "
-.endif
-
-## SQLite Support
-#
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	3
-CONFIGURE_ARGS+=--with-sqlite
-PLIST_SUB+=	SQL=""
-.else
-CONFIGURE_ARGS+=--without-sqlite
-PLIST_SUB+=	SQL="@comment "
-.endif
-
-## SOLR support
-#
-.if ${PORT_OPTIONS:MSOLR}
-CONFIGURE_ARGS+=--with-solr
-BUILD_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
-PLIST_SUB+=	SOLR=""
-.else
-CONFIGURE_ARGS+=--without-solr
-PLIST_SUB+=	SOLR="@comment "
-.endif
-
-## libwrap support
-#
-.if ${PORT_OPTIONS:MLIBWRAP}
-CONFIGURE_ARGS+=--with-libwrap
-PLIST_SUB+=	LIBWRAP=""
-.else
-CONFIGURE_ARGS+=--without-libwrap
-PLIST_SUB+=	LIBWRAP="@comment "
-.endif
-
-SUB_LIST=	REQUIRE="${_REQUIRE}"
-SUB_FILES=	pkg-deinstall pkg-message
-
 post-patch:
 	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
 		${WRKSRC}/doc/example-config/dovecot.conf
@@ -204,12 +124,17 @@ post-patch:
 		s!-example\.conf[[:>:]]!.conf!g;\
 		s!^(confdir[[:space:]]+=[[:space:]]+)\$$\(sysconfdir\)!\1${EXAMPLESDIR}!g;\
 		' ${WRKSRC}/*/Makefile.in ${WRKSRC}/Makefile.in
+# exclude this file
+	${REINPLACE_CMD} -e '/2b/d' ${WRKSRC}/doc/wiki/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_SCRIPT} dovecot-openssl.cnf mkcert.sh ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_SCRIPT} dovecot-openssl.cnf mkcert.sh ${STAGEDIR}${EXAMPLESDIR})
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dovecot/lib*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dovecot/auth/lib*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dovecot/doveadm/lib*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

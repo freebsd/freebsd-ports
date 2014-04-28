@@ -5,11 +5,7 @@ Python interpreter.  This library provides extensive file format
 support, an efficient internal representation, and fairly powerful
 image processing capabilities.
 
-The main distribution site for this software is:
-
-WWW:	http://www.pythonware.com/products/pil/index.htm
-
 The PIL handbook is not included in this distribution; to get the
-latest version, check:
+latest version, check: http://www.pythonware.com/library.htm
 
-	http://www.pythonware.com/library.htm
+WWW: http://www.pythonware.com/products/pil/index.htm

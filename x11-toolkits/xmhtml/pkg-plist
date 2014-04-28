@@ -83,9 +83,6 @@ lib/libXmHTML.so.1
 %%PORTDOCS%%%%DOCSDIR%%/structures.html
 %%PORTDOCS%%%%DOCSDIR%%/xmhtml_prog.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/Imakefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/Makefile.org
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/Makefile.orig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/autosize_html.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/forced_html.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/html.c
@@ -93,8 +90,6 @@ lib/libXmHTML.so.1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/simple_html.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/simple_html2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/work_window.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/Makefile.org
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/VUEorDT.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/drawBttn.c
@@ -106,9 +101,6 @@ lib/libXmHTML.so.1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/swallow2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/HTMLDemos.ad
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/Imakefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/Makefile.org
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/Makefile.orig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/cache.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/cache.h

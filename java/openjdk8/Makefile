@@ -2,6 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -35,7 +36,8 @@ BUILD_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-DOS2UNIX_FILES=	jdk/src/share/classes/com/sun/org/apache/xml/internal/security/resource/xmlsecurity_en.properties
+DOS2UNIX_FILES=	jdk/src/share/classes/com/sun/org/apache/xml/internal/security/resource/xmlsecurity_en.properties \
+		nashorn/test/script/jfx.js
 SHEBANG_FILES=	configure
 
 _MAKE_JOBS=	#
@@ -50,6 +52,7 @@ JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/j2sdk-image
 JDK_OSARCH=	bsd-${ARCH:S/i386/x86/:S/amd64/x86_64/}
 INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}
 
+NO_CCACHE=		yes
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
@@ -64,7 +67,8 @@ CONFIGURE_ARGS+=	--with-build-number="b${JDK_BUILD_NUMBER}"
 .if ${JDK_UPDATE_VERSION} > 0
 CONFIGURE_ARGS+=	--with-update-version=${JDK_UPDATE_VERSION}
 .endif
-CONFIGURE_ARGS+=	--disable-freetype-bundling \
+CONFIGURE_ARGS+=	--disable-ccache \
+			--disable-freetype-bundling \
 			--disable-zip-debug-info \
 			--with-alsa=${LOCALBASE} \
 			--with-cacerts-file=${FILESDIR}/cacerts \

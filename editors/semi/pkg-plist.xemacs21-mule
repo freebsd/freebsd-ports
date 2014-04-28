@@ -59,4 +59,4 @@
 %%EMACS_PACKAGESDIR%%/man/semi/mime-ui-ja.texi
 @dirrm %%EMACS_PACKAGESDIR%%/man/semi
 share/semi/%%SEMI_COOKIE%%
-@unexec /bin/rmdir %D/share/semi||(echo "===>  Please ignore above error.";true)
+@unexec rmdir %D/share/semi||(echo "===>  Please ignore above error.";true)

@@ -799,8 +799,6 @@ libdata/pkgconfig/wbclient.pc
 @dirrm %%PYTHON_SITELIBDIR%%/samba/external
 @dirrm %%PYTHON_SITELIBDIR%%/samba/dcerpc
 @dirrm %%PYTHON_SITELIBDIR%%/samba
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
 %%DATADIR%%/codepages/de.msg
 %%DATADIR%%/codepages/en.msg
 %%DATADIR%%/codepages/fi.msg

@@ -3,7 +3,7 @@
 
 PORTNAME=	ptmalloc2
 PORTVERSION=	20060605
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.malloc.de/malloc/
 DISTNAME=	${PORTNAME}-current
@@ -24,7 +24,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/malloc.h ${STAGEDIR}${PREFIX}/${INCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/libmalloc.a ${STAGEDIR}${PREFIX}/lib/libptmalloc2.a
 	${INSTALL_DATA} ${WRKSRC}/malloc.so ${STAGEDIR}${PREFIX}/lib/libptmalloc2.so.0
-	${LN} -s libptmalloc.so.0 ${STAGEDIR}${PREFIX}/lib/libptmalloc2.so
+	${LN} -s libptmalloc2.so.0 ${STAGEDIR}${PREFIX}/lib/libptmalloc2.so
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check

@@ -10,15 +10,13 @@ MASTER_SITES=	http://www.kokkonen.net/tjko/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate listing and MD5, check jpegs for error, delete broken ones
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
-MAKE_ARGS=	mandir=${MANPREFIX}/man
+MAKE_ARGS=	mandir=${MANPREFIX}/man INSTALL_ROOT=${STAGEDIR}
 
-MAN1=		jpeginfo.1
-PLIST_FILES=	bin/jpeginfo
+PLIST_FILES=	bin/jpeginfo man/man1/jpeginfo.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

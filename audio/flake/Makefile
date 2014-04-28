@@ -14,8 +14,7 @@ LICENSE=	LGPL21
 
 CONFIGURE_ARGS+=	--cc="${CC}"
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/flake include/flake.h lib/libflake.a

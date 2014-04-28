@@ -3808,7 +3808,6 @@ devel/p5-Class-MOP||2012-10-27|Has expired: distribution has been merged with de
 x11-toolkits/ocaml-lablgtk||2012-10-27|Has expired: Abandoned upstream, consider using x11-toolkit/ocaml-lablgtk2
 audio/xmms-arts_output||2012-10-28|Has expired: Outdated and distfile no longer available
 databases/pear-MDB2_Driver_ibase||2012-10-28|Has expired: BROKEN for more than 6 month
-security/py-fchksum||2012-11-02|Has expired: No more public distfiles
 textproc/xerces-c||2012-11-05|Has expired: No more supported upstream, consider using xerces-c2 or xerces-c3
 x11-wm/wampager||2012-11-05|Has expired: Development ceased
 x11-wm/waimea||2012-11-05|Has expired: Development ceased
@@ -6099,3 +6098,19 @@ biology/finchtv||2014-04-18|Has expired: Broken for more than 6 months
 net-im/ari-yahoo||2014-04-18|Has expired: Broken for more than 1 year (http://www.icculus.org/ari-yahoo/)
 www/sams||2014-04-21|Depends on PHP 4 which was removed two years ago
 x11-toolkits/vdkbuidler||2014-04-22|Abandonware, not stage friendly
+emulators/mupen64-sdlinput|emulators/mupen64plus-input-sdl|2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-sdlaudio|emulators/mupen64plus-audio-sdl|2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-tr64||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-gln64||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-sound||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-rsp||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-input||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-glide|emulators/mupen64plus-video-glide64|2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64|emulators/mupen64plus|2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-softgfx||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-dummyaudio||2014-04-24|Has expired: Use mupen64plus instead
+emulators/mupen64-base|emulators/mupen64plus-core|2014-04-24|Has expired: Use mupen64plus instead
+x11/emu||2014-04-24|Has expired: Broken, not staged
+lang/ruby-doc-stdlib||2014-04-24|Has expired: Upstream rerolls frequently, online docs work well
+emulators/mupen64-rice|emulators/mupen64-video-rice|2014-04-24|Removed, part of removed mupen64
+devel/otrs|www/otrs|2014-04-28|OTRS is actually web based ticket system and it has nothing with development

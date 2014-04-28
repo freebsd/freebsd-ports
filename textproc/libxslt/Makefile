@@ -3,7 +3,7 @@
 
 PORTNAME=	libxslt
 PORTVERSION=	1.1.28
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \
@@ -15,10 +15,11 @@ COMMENT?=	The XSLT C library for GNOME
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gmake
+USES=		gmake libtool:oldver pathfix
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USE_GNOME?=	gnomehack libxml2
+USE_GNOME?=	libxml2
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -36,17 +37,9 @@ MEM_DEBUG_DESC=	Enable memory debugging
 CRYPTO_DESC=	Enable crypto support for exslt
 .endif
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMEM_DEBUG}
-CONFIGURE_ARGS+=	--with-mem-debug
-.endif
-
-.if ${PORT_OPTIONS:MCRYPTO}
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
-.else
-CONFIGURE_ARGS+=--without-crypto
-.endif
+MEM_DEBUG_CONFIGURE_ON=	--with-mem-debug
+CRYPTO_CONFIGURE_WITH=	crypto
+CRYPTO_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \

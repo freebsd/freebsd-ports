@@ -12,6 +12,8 @@ COMMENT=	Personal full text search package, based on Xapian
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	xapian-core>=0:${PORTSDIR}/databases/xapian-core
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		xsltproc:${PORTSDIR}/textproc/libxslt \

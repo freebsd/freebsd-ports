@@ -12,24 +12,21 @@ DISTNAME=	${PORTNAME}${PORTVERSION}dev
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use fast C API for creating charts and graphs
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		jpeg:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
+USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ARGS=	PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}"
 USE_LDCONFIG=	yes
 
-DOCS=		README.txt
 EXAMPLES=	ft_samp.c gdc_pie_samp.c gdc_samp1.c gdc_samp2.c
 
-.if defined(NO_PROFILE)
-PLIST_SUB+=	PROFILE="@comment "
-.else
-PLIST_SUB+=	PROFILE=
-.endif
+OPTIONS_DEFINE=	DOCS EXAMPLES PROFILE
+OPTIONS_DEFAULT=PROFILE
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's/^#ifdef HAVE_JPEG/#ifndef NO_JPEG/' \
@@ -46,17 +43,9 @@ post-patch:
 			${WRKSRC}/gdc_pie_samp.c
 
 post-install:
-.if !defined(NOPORTDOCS)
-.for f in ${DOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
-.endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-.for f in ${EXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}/
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

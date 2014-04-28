@@ -589,6 +589,7 @@
     SUBDIR += orangehrm
     SUBDIR += oscommerce
     SUBDIR += otter-browser
+    SUBDIR += otrs
     SUBDIR += owncloud
     SUBDIR += p5-AMF-Perl
     SUBDIR += p5-Acme-Monta
@@ -1526,6 +1527,7 @@
     SUBDIR += py-django-signals-ahoy
     SUBDIR += py-django-simple-captcha
     SUBDIR += py-django-storages
+    SUBDIR += py-django-subdomains
     SUBDIR += py-django-tables2
     SUBDIR += py-django-tagging
     SUBDIR += py-django-tastypie
@@ -2058,6 +2060,7 @@
     SUBDIR += twill
     SUBDIR += twms
     SUBDIR += typo3
+    SUBDIR += typo3-lts
     SUBDIR += typo345
     SUBDIR += typo347
     SUBDIR += typolight

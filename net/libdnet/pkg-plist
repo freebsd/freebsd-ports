@@ -1,11 +1,10 @@
 sbin/dnet
 bin/dnet-config
-lib/libdnet
-lib/libdnet.1
 lib/libdnet.a
 lib/libdnet.la
 lib/libdnet.so
 lib/libdnet.so.1
+lib/libdnet.so.1.0.1
 include/dnet.h
 include/dnet/addr.h
 include/dnet/arp.h

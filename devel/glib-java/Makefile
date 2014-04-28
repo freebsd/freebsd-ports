@@ -12,6 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper GLib 2
 
+DEPRECATED=	Unmaintained, outdated not depend on
+EXPIRATION_DATE=	2014-05-25
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		gmake libtool pathfix pkgconfig tar:bzip2
@@ -66,4 +69,12 @@ do-install:
 		s|%%GLIB_API_VERSION%%|${GLIB_API_VERSION}|g' \
 		 < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION} == 1.6.0
+PLIST_SUB+=	JDK16="" NOTJDK16="@comment "
+.else
+PLIST_SUB+=	JDK16="@comment " NOTJDK16=""
+.endif
+
+.include <bsd.port.post.mk>

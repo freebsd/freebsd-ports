@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	1.9.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	KERNEL_ORG
+MASTER_SITE_SUBDIR=	software/scm/git
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
 # We manually extract the htmldocs.
@@ -14,8 +14,6 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT?=	Distributed source code management tool
-
-PROJECTHOST=	git-core
 
 CONFLICTS?=	git-subversion-[0-9]*
 
@@ -252,6 +250,11 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MP4}
 	${INSTALL_SCRIPT} ${WRKSRC}/git-p4.py ${STAGEDIR}${PREFIX}/bin/
+.endif
+
+post-stage:
+.if ${PORT_OPTIONS:MPERL}
+	${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
 .endif
 
 .include <bsd.port.mk>

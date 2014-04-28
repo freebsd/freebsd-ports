@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgpg-error
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -12,7 +12,7 @@ COMMENT=	Common error values for all GnuPG components
 
 OPTIONS_DEFINE=	DOCS NLS
 
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
 USE_LDCONFIG=		yes

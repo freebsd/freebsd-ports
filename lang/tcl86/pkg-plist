@@ -1693,4 +1693,3 @@ libdata/pkgconfig/tcl.pc
 @dirrm include/tcl%%TCL_VER%%/unix
 @dirrm include/tcl%%TCL_VER%%/generic
 @dirrm include/tcl%%TCL_VER%%
-

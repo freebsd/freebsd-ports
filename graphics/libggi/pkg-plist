@@ -1,9 +1,7 @@
 bin/ggiteleserver
 bin/cube3d
 bin/monitest
-@unexec if cmp -s %D/etc/ggi/libggi.conf %D/etc/ggi/libggi.conf.dist; then rm -f %D/etc/ggi/libggi.conf; fi
-etc/ggi/libggi.conf.dist
-@exec [ -f %B/libggi.conf ] || cp %B/%f %B/libggi.conf
+@sample etc/ggi/libggi.conf.sample
 include/ggi/display/aa.h
 include/ggi/display/auto.h
 include/ggi/display/directx.h
@@ -136,6 +134,7 @@ lib/libggi.a
 lib/libggi.la
 lib/libggi.so
 lib/libggi.so.2
+lib/libggi.so.2.0.2
 man/man1/cube3d.1.gz
 man/man1/demo.1.gz
 man/man1/ggi-demo.1.gz

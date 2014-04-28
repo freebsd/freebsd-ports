@@ -1,4 +1,0 @@
-bin/sl
-%%DOCSDIR%%/README
-%%DOCSDIR%%/sl.txt
-@dirrm %%DOCSDIR%%

@@ -14,13 +14,12 @@ LICENSE=	BSD GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS=	libmecab.so:${PORTSDIR}/japanese/mecab
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_EGGINFO=	${PORTNAME}_python-${PKGVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|cmd1("mecab-config --version")|"${PKGVERSION}"|' \
 		${WRKSRC}/setup.py

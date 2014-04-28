@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-kde
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	KDE plug-in for libproxy
 
-LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
@@ -19,10 +19,9 @@ USE_KDE4=	automoc4 kdelibs
 
 LIBPROXY_SLAVE=	kde
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
 	${INSTALL_LIB} ${WRKSRC}/lib/config_kde4.so \
-		${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
 
 .include "${MASTERDIR}/Makefile"

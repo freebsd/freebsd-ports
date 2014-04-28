@@ -10,10 +10,10 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Generates a static plist for a port
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
-USE_XZ=		yes
+USES=		tar:xz
 
 PLIST_FILES=	bin/genplist man/man1/genplist.1.gz
 

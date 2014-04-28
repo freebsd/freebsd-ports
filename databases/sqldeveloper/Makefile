@@ -29,6 +29,8 @@ SUB_LIST=	JAVA_HOME=${JAVA_HOME} PORTNAME=${PORTNAME}
 
 PORTDOCS=	readme.html
 
+.include <bsd.port.pre.mk>
+
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	Due to Oracle license restrictions, you must fetch the source \
 distribution manually. Please access \
@@ -69,4 +71,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} readme.html ${STAGEDIR}/${DOCSDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

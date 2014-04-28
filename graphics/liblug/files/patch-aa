@@ -97,7 +97,7 @@
 -		cp liblug.a $(LIBLUGDEST); \
 -		chmod 644 $(LIBLUGDEST)/liblug.a; \
 -		@echo "OK."
-+		/usr/bin/install -c -o root -g wheel -m 444 liblug.a $(LIBLUGDEST)
++		/usr/bin/install -c -m 444 liblug.a $(DESTDIR)$(LIBLUGDEST)
  
  archive:;	( cd .. ; tar cvf lug-1.0.tar lug ; compress lug-1.0.tar )
  

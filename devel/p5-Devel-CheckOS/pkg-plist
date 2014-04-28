@@ -6,6 +6,7 @@ man/man1/use-devel-assertos.1.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Apple.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::BSDOS.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::BeOS.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::Bitrig.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Cygwin.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::DEC.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::DGUX.3.gz
@@ -66,6 +67,7 @@ man/man1/use-devel-assertos.1.gz
 %%SITE_PERL%%/Devel/AssertOS/Apple.pm
 %%SITE_PERL%%/Devel/AssertOS/BSDOS.pm
 %%SITE_PERL%%/Devel/AssertOS/BeOS.pm
+%%SITE_PERL%%/Devel/AssertOS/Bitrig.pm
 %%SITE_PERL%%/Devel/AssertOS/Cygwin.pm
 %%SITE_PERL%%/Devel/AssertOS/DEC.pm
 %%SITE_PERL%%/Devel/AssertOS/DGUX.pm

@@ -9,15 +9,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	jabberpy-${PORTVERSION}-0
 
 MAINTAINER=	flz@FreeBSD.org
-COMMENT=	A Python Jabber library
+COMMENT=	Python Jabber library
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	jabber.py
-PYDISTUTILS_PKGVERSION=	0.3-1
+PYDISTUTILS_AUTOPLIST=	yes
+PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/jabber.pth
 
-NO_STAGE=	yes
 post-install:
-	@${ECHO} "jabber" > ${PYTHON_SITELIBDIR}/jabber.pth
+	@${ECHO} "jabber" > ${STAGEDIR}${PYTHON_SITELIBDIR}/jabber.pth
 
 .include <bsd.port.mk>

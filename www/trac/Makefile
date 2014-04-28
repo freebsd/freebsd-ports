@@ -3,7 +3,7 @@
 
 PORTNAME=	trac
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -51,6 +51,7 @@ USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 USE_RC_SUBR=		tracd
+SUB_LIST+=		PYTHON_CMD=${PYTHON_CMD}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample-plugins

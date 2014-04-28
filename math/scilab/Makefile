@@ -3,7 +3,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.3.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -12,10 +12,8 @@ MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 DISTFILES=	${DISTNAME}-src.tar.gz:scilab
 EXTRACT_ONLY=	${DISTNAME}-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Scientific software package for numerical computations
-
-BROKEN=		Fails to configure
 
 EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 # A partial dependencies list can be found at:
@@ -29,7 +27,8 @@ USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-gfortran
+CONFIGURE_ARGS=	--with-gfortran \
+		--without-hdf5
 CONFIGURE_ENV=	ac_cv_search_pthread_join="${PTHREAD_LIBS}" \
 	BLAS_LIBS="${BLAS_LIBS}" LAPACK_LIBS="${LAPACK_LIBS}"
 # prevert from creating $HOME/.Scilab during build
@@ -84,7 +83,6 @@ DISTFILES+=	${SAXON_DISTFILE}:saxon
 .if ! ${PORT_OPTIONS:MGUI}
 CONFIGURE_ARGS+=	--without-gui \
 			--without-javasci \
-			--without-hdf5 \
 			--without-xcos \
 			--disable-build-help
 CONFIGURE_ENV +=	JAVADOC="${TRUE}"
@@ -95,8 +93,6 @@ JGRAPHX_VERSION=	1.4.1.0
 JGRAPHX_JAR=	jgraphx-${JGRAPHX_VERSION:C/\./_/g}.jar
 
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bin-JAVA_HOME
-
-LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5-18
 
 GUI_DEPENDS=	${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
@@ -115,7 +111,6 @@ GUI_DEPENDS=	${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
 		${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${JAVALIBDIR}/jhdf5.jar:${PORTSDIR}/science/hdf-java \
 		${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-commons-beanutils
 
 # Can't use USE_ANT because it overrides do-build target

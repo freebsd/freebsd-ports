@@ -12,17 +12,16 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Webcal(endar) handler for gnome
 
-USE_BZIP2=	yes
-USES=		gettext gmake pathfix perl5 pkgconfig
+USES=		gettext gmake pathfix perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	evolution-webcal.schemas
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@mkdir_p@|mkdir -p|g' \
 		${WRKSRC}/po/Makefile.in.in

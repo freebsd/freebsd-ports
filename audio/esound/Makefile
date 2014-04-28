@@ -4,7 +4,7 @@
 
 PORTNAME=	esound
 PORTVERSION=	0.2.41
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -14,11 +14,11 @@ COMMENT=	Sound library for enlightenment package
 
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
-USE_AUTOTOOLS=	libtool
-USES=		pathfix pkgconfig:both tar:bzip2
+USES=		libtool:keepla pathfix pkgconfig:both tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	JW=false
+INSTALL_TARGET=	install-strip
 
 CONFLICTS=	py*-ro-[0-9]*
 
@@ -27,7 +27,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/esd.conf ${STAGEDIR}${PREFIX}/etc/esd.conf.default
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libesd*.so.2
+	${INSTALL_DATA} ${WRKSRC}/esd.conf ${STAGEDIR}${PREFIX}/etc/esd.conf.sample
 
 .include <bsd.port.mk>

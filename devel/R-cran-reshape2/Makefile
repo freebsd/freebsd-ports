@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	reshape2
-PORTVERSION=	1.2.2
-PORTREVISION=	6
+PORTVERSION=	1.4
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +11,7 @@ COMMENT=	Flexibly reshape data: a reboot of the reshape package
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-plyr>=1.5:${PORTSDIR}/devel/R-cran-plyr \
+RUN_DEPENDS=	R-cran-plyr>=1.8.1:${PORTSDIR}/devel/R-cran-plyr \
 		R-cran-stringr>0:${PORTSDIR}/textproc/R-cran-stringr
 
 USES=	cran:auto-plist

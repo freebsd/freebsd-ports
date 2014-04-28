@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	em-websocket
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	EventMachine based WebSocket server
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-eventmachine>=0.12.9:${PORTSDIR}/devel/rubygem-eventmachine \
-		rubygem-http_parser.rb>=0.5.3:${PORTSDIR}/net/rubygem-http_parser.rb
+		rubygem-http_parser.rb>=0.6.0:${PORTSDIR}/net/rubygem-http_parser.rb
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

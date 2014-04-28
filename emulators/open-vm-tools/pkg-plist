@@ -16,6 +16,7 @@ lib/open-vm-tools/plugins/common/libvix.la
 %%X11%%lib/open-vm-tools/plugins/vmusr/libresolutionSet.so
 %%X11%%lib/open-vm-tools/plugins/vmusr/libdesktopEvents.so
 %%X11%%lib/open-vm-tools/plugins/vmusr/libdndcp.so
+%%X11%%etc/xdg/autostart/vmware-user.desktop
 lib/libhgfs.a
 lib/libhgfs.la
 lib/libhgfs.so
@@ -58,13 +59,13 @@ share/vmware-tools/scripts/vmware/network
 @unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
 @unexec if test -h %D/etc/vmware-tools/plugins; then rm -f %D/etc/vmware-tools/plugins; fi
 etc/pam.d/vmtoolsd
+@dirrmtry lib/vmware-tools/modules/drivers
 @dirrmtry lib/vmware-tools/modules/input
 @dirrmtry lib/vmware-tools/modules
 @dirrmtry lib/vmware-tools
 @dirrmtry share/vmware-tools/scripts/vmware
 @dirrmtry share/vmware-tools/scripts
 @dirrmtry share/vmware-tools
-@dirrmtry libdata/pkgconfig
 @dirrm lib/open-vm-tools/plugins/common
 @dirrm lib/open-vm-tools/plugins/vmsvc
 %%X11%%@dirrm lib/open-vm-tools/plugins/vmusr

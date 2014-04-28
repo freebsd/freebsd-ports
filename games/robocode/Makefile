@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	robocode
-PORTVERSION=	1.9.1.0
+PORTVERSION=	1.9.2.0
 CATEGORIES=	games java
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${DISTVERSION}-setup.jar
 DIST_SUBDIR=	java
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
 
 LICENSE=	EPL
 
 USES=		dos2unix zip
-DOS2UNIX_GLOB=	*.html *.css *.team package-list
+DOS2UNIX_GLOB=	*.html *.css *.team package-list MANIFEST.MF
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_EXTRACT=	yes

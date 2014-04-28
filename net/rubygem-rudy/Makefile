@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	EC2 deployment tool
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-amazon-ec2>=0.9.10:${PORTSDIR}/net/rubygem-amazon-ec2 \
 		rubygem-aws-s3>=0.6.1:${PORTSDIR}/net/rubygem-aws-s3 \
 		rubygem-annoy>=0.5.6:${PORTSDIR}/devel/rubygem-annoy \

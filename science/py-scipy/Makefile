@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Scientific tools for Python
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS+=	${PYNUMPY} \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft

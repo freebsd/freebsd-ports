@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-DNSBL-MultiDaemon
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	dns mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,12 @@ BUILD_DEPENDS=	p5-File-SafeDO>=0.12:${PORTSDIR}/devel/p5-File-SafeDO \
 		p5-NetAddr-IP>=4.067:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-Unix-Syslog>=0.97:${PORTSDIR}/sysutils/p5-Unix-Syslog
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+OPTIONS_DEFINE=	RHBL
+OPTIONS_DEFAULT=RHBL
+RHBL_DESC=	RHBL checking of URBL domains
+RHBL_BUILD_DEPENDS=	p5-URBL-Prepare>=0.08:${PORTSDIR}/dns/p5-URBL-Prepare
+RHBL_RUN_DEPENDS=	p5-URBL-Prepare>=0.08:${PORTSDIR}/dns/p5-URBL-Prepare
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

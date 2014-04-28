@@ -21,8 +21,7 @@ RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac \
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdehier kdeprefix libkcddb libkcompactdisc
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	libukcprog
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
@@ -17,11 +17,9 @@ COMMENT=	Generally useful low level routines
 
 NO_CDROM=	License (see source) does not permit selling for profit
 
-USE_AUTOTOOLS=	libtool
 DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig
-USE_GNOME=	lthack
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		desktop-file-utils pathfix pkgconfig shared-mime-info
-USE_GNOME=	gnomeprefix intlhack libgnomeui lthack pygtk2
+USE_GNOME=	gnomeprefix intlhack libgnomeui pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

@@ -4,13 +4,18 @@
 PORTNAME=	netaddr
 PORTVERSION=	0.7.10
 CATEGORIES=	net python
-MASTER_SITES=	https://github.com/downloads/drkjam/netaddr/
+MASTER_SITES=	GHC
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library for the manipulation of network addresses
 
 LICENSE=	BSD
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	drkjam
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

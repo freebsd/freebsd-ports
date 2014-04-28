@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GREYC's Magic Image Converter
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick13 \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libMagick++.so:${PORTSDIR}/graphics/ImageMagick \

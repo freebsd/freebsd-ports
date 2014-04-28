@@ -1,12 +1,11 @@
 include/shoutidjc/shout.h
 lib/libshout-idjc.a
-lib/libshout-idjc.la
 lib/libshout-idjc.so
-lib/libshout-idjc.so.5
+lib/libshout-idjc.so.3
+lib/libshout-idjc.so.3.2.0
 libdata/pkgconfig/shout-idjc.pc
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-@dirrmtry %%DOCSDIR%%
-@dirrmtry libdata/pkgconfig
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry include/shoutidjc
