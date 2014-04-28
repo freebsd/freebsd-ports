@@ -20,6 +20,11 @@ bin/ldapsh
 %%SITE_PERL%%/Net/LDAP/Shell/Util.pm
 %%SITE_PERL%%/Net/LDAP/Shell/grammar.yp
 %%SITE_PERL%%/Net/LDAP/Shell/makefile
+%%PERL5_MAN3%%/Net::LDAP::Config.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Shell.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Shell::Parse.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Shell::Util.3.gz
+man/man1/ldapsh.1.gz
 %%DOCSDIR%%/COMMANDS
 %%EXAMPLESDIR%%/ldapsh_config
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ldapsh
