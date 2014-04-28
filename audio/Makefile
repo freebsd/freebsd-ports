@@ -378,7 +378,6 @@
     SUBDIR += libmpd
     SUBDIR += libmpdclient
     SUBDIR += libmusicbrainz3
-    SUBDIR += libmusicbrainz4
     SUBDIR += libmusicbrainz5
     SUBDIR += libnjb
     SUBDIR += libnoise
@@ -807,7 +806,6 @@
     SUBDIR += xmms-sapplug
     SUBDIR += xmms-scrobbler
     SUBDIR += xmms-sexypsf
-    SUBDIR += xmms-sexyspc
     SUBDIR += xmms-shn
     SUBDIR += xmms-timidity
     SUBDIR += xmms-volnorm
