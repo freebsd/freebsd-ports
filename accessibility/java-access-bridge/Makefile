@@ -15,10 +15,9 @@ COMMENT=	Gnome Java Accessibility Bridge
 BUILD_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
 RUN_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-USE_GNOME=	atspi gnomehack
+USE_GNOME=	atspi
 USE_JAVA=	yes
 JAVA_OS=	native
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}

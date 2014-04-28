@@ -8,6 +8,7 @@ lib/libgnomespeech.a
 lib/libgnomespeech.la
 lib/libgnomespeech.so
 lib/libgnomespeech.so.7
+lib/libgnomespeech.so.7.0.1
 lib/orbit-2.0/GNOME_Speech_module.a
 lib/orbit-2.0/GNOME_Speech_module.la
 lib/orbit-2.0/GNOME_Speech_module.so
