@@ -10,8 +10,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Library and tools to read, create, and modify mp4 files
 
 CONFLICTS=	mpeg4ip-libmp4v2-[0-9.]*
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 MAKEFILE=	GNUmakefile
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
