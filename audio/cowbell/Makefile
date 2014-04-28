@@ -10,10 +10,11 @@ MASTER_SITES=	http://more-cowbell.org/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Elegant music organizer
 
-LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+
+BROKEN=		No more public distfiles
 
 USES=		gmake pathfix gettext iconv pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	gnomeprefix intltool gtksharp20
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
