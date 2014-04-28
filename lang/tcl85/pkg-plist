@@ -108,8 +108,6 @@ lib/tcl%%TCL_VER%%/encoding/shiftjis.enc
 lib/tcl%%TCL_VER%%/encoding/symbol.enc
 lib/tcl%%TCL_VER%%/encoding/tis-620.enc
 lib/tcl%%TCL_VER%%/history.tcl
-lib/tcl%%TCL_VER%%/http1.0/http.tcl
-lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/init.tcl
 lib/tcl%%TCL_VER%%/msgs/af.msg
 lib/tcl%%TCL_VER%%/msgs/af_za.msg
@@ -238,8 +236,6 @@ lib/tcl%%TCL_VER%%/msgs/zh_cn.msg
 lib/tcl%%TCL_VER%%/msgs/zh_hk.msg
 lib/tcl%%TCL_VER%%/msgs/zh_sg.msg
 lib/tcl%%TCL_VER%%/msgs/zh_tw.msg
-lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
-lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/package.tcl
 lib/tcl%%TCL_VER%%/parray.tcl
 lib/tcl%%TCL_VER%%/safe.tcl
@@ -1556,14 +1552,18 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Africa
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata
 %%MODULES%%lib/tcl%%TCL_VER%%/http-2.7.12.tm
-%%MODULES%%lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.12.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/http1.0/http.tcl
+%%MODULES%%lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.5.2.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
+%%MODULES%%lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
+%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.12.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.5.tm
-@dirrm lib/tcl%%TCL_VER%%/platform
-@dirrm lib/tcl%%TCL_VER%%/opt0.4
+%%MODULES%%@dirrm lib/tcl%%TCL_VER%%/platform
+%%MODULES%%@dirrm lib/tcl%%TCL_VER%%/opt0.4
+%%MODULES%%@dirrm lib/tcl%%TCL_VER%%/http1.0
 @dirrm lib/tcl%%TCL_VER%%/msgs
-@dirrm lib/tcl%%TCL_VER%%/http1.0
 @dirrm lib/tcl%%TCL_VER%%/encoding
 @dirrmtry lib/tcl%%TCL_VER%%
 @dirrm include/tcl%%TCL_VER%%/unix
