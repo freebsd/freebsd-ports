@@ -1,21 +1,35 @@
 --- port.h.in.orig	2009-08-21 18:45:50.068536643 +0000
 +++ port.h.in	2009-08-21 18:45:58.564755017 +0000
-@@ -3,18 +3,8 @@
- 
+@@ -4,12 +4,12 @@
  #include "conf.h"
  
--#ifndef HAVE_MIN_MAX
+ #ifndef HAVE_MIN_MAX
 -#if defined(HAVE_ALGO_H) || defined(HAVE_ALGO)
 -#ifdef HAVE_ALGO
--#include <algo>
++#if defined(HAVE_ALGORITHM)
++#include <algorithm>
++#elif defined(HAVE_ALGO)
+ #include <algo>
 -#else
--#include <algo.h>
++#elif defined(HAVE_ALGO_H)
+ #include <algo.h>
 -#endif
--#else
+ #else
  #define min(XX,YY) ((XX) < (YY) ? (XX) : (YY))
  #define max(XX,YY) ((XX) > (YY) ? (XX) : (YY))
--#endif
--#endif
- 
+@@ -19,14 +19,7 @@
  @semun@
  @bool@
+ @snprintf@
+-#ifndef _LARGEFILE64_SOURCE
+-@large_file@
+-#endif
+-#ifdef _LARGEFILE64_SOURCE
+-#define OFF_T_PRINTF "%lld"
+-#else
+-#define OFF_T_PRINTF "%d"
+-#endif
++#define OFF_T_PRINTF "%ld"
+ 
+ #if @true_false@
+ #define false 0
