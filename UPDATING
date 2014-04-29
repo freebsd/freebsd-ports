@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140428:
+  AFFECTS: users of java/openjdk7
+  AUTHOR: glewis@FreeBSD.org
+
+  The previous version of openjdk7 had a bug that will prevent it from
+  being able to bootstrap itself.  Please deinstall openjdk7 before
+  building the new version.
+
 20140427:
   AFFECTS: users of graphics/gdal
   AUTHOR: sunpoet@FreeBSD.org
