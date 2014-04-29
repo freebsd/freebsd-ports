@@ -1285,6 +1285,20 @@
  
  COMPILE.CC       = $(CC_COMPILE) -c
  GENASM.CC        = $(CC_COMPILE) -S
+--- hotspot/src/cpu/x86/vm/globals_x86.hpp
++++ hotspot/src/cpu/x86/vm/globals_x86.hpp
+@@ -70,11 +70,7 @@
+ define_pd_global(bool, RewriteBytecodes,     true);
+ define_pd_global(bool, RewriteFrequentPairs, true);
+ 
+-#ifdef _ALLBSD_SOURCE
+-define_pd_global(bool, UseMembar,            true);
+-#else
+ define_pd_global(bool, UseMembar,            false);
+-#endif
+ 
+ // GC Ergo Flags
+ define_pd_global(uintx, CMSYoungGenPerWorker, 64*M);  // default max size of CMS young gen, per GC worker thread
 --- hotspot/src/cpu/x86/vm/jni_x86.h
 +++ hotspot/src/cpu/x86/vm/jni_x86.h
 @@ -34,7 +34,7 @@
@@ -1372,6 +1386,23 @@
 +  return false;
 +}
 +#endif
+--- hotspot/src/os/bsd/vm/jsig.c
++++ hotspot/src/os/bsd/vm/jsig.c
+@@ -140,9 +140,13 @@
+ }
+ 
+ sa_handler_t sigset(int sig, sa_handler_t disp) {
++#ifdef __FreeBSD__
++  return set_signal(sig, disp, true);
++#else
+   printf("sigset() is not supported by BSD");
+   exit(0);
+- }
++#endif
++}
+ 
+ static int call_os_sigaction(int sig, const struct sigaction  *act,
+                              struct sigaction *oact) {
 --- hotspot/src/os/bsd/vm/osThread_bsd.cpp
 +++ hotspot/src/os/bsd/vm/osThread_bsd.cpp
 @@ -30,7 +30,7 @@
@@ -1853,18 +1884,13 @@
  
  # TODO:
  # On windows java-rmi.cgi shouldn't be bundled since Java 1.2, but has been built all
-@@ -601,11 +615,11 @@
+@@ -601,7 +615,7 @@
  LINK_JSPAWNHELPER_OBJECTS := $(JDK_OUTPUTDIR)/objs/libjava/childproc.o
  LINK_JSPAWNHELPER_FLAGS :=
  
 -ifneq ($(findstring $(OPENJDK_TARGET_OS), macosx solaris), )
 +ifneq ($(findstring $(OPENJDK_TARGET_OS), macosx solaris bsd), )
    BUILD_JSPAWNHELPER := 1
- endif
- 
--ifeq ($(OPENJDK_TARGET_OS), macosx)
-+ifneq ($(findstring $(OPENJDK_TARGET_OS), macosx bsd), )
-   BUILD_JSPAWNHELPER_DST_DIR := $(JDK_OUTPUTDIR)/lib
  endif
  
 --- jdk/make/CopyFiles.gmk
@@ -4793,6 +4819,18 @@
  ###
  
  $(GENDATA_FONT_CONFIG_DST)/%.src: \
+--- jdk/make/gensrc/GensrcMisc.gmk
++++ jdk/make/gensrc/GensrcMisc.gmk
+@@ -64,9 +64,6 @@
+ 
+ ifeq ($(OPENJDK_TARGET_OS_API), posix)
+   UPSUFFIX := $(OPENJDK_TARGET_OS)
+-  ifeq ($(OPENJDK_TARGET_OS), macosx)
+-    UPSUFFIX := bsd
+-  endif
+   # UNIXProcess.java is different for solaris and linux. We need to copy
+   # the correct UNIXProcess.java over to $(JDK_OUTPUTDIR)/gensrc/java/lang/.
+ 
 --- jdk/make/lib/Awt2dLibraries.gmk
 +++ jdk/make/lib/Awt2dLibraries.gmk
 @@ -305,7 +305,7 @@
@@ -4963,18 +5001,16 @@
      VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
 --- jdk/make/lib/NetworkingLibraries.gmk
 +++ jdk/make/lib/NetworkingLibraries.gmk
-@@ -46,6 +46,10 @@
+@@ -42,7 +42,7 @@
+   LIBNET_EXCLUDE_FILES += linux_close.c
+ endif
+ 
+-ifneq ($(OPENJDK_TARGET_OS), macosx)
++ifeq (,$(findstring $(OPENJDK_TARGET_OS), bsd macosx))
    LIBNET_EXCLUDE_FILES += bsd_close.c
  endif
  
-+ifneq ($(OPENJDK_TARGET_OS), bsd)
-+  LIBNET_EXCLUDE_FILES += bsd_close.c
-+endif
-+
- ifeq ($(OPENJDK_TARGET_OS), windows)
-   LIBNET_EXCLUDE_FILES += PlainSocketImpl.c PlainDatagramSocketImpl.c SdpSupport.c
- else
-@@ -69,6 +73,7 @@
+@@ -69,6 +69,7 @@
      LDFLAGS_SUFFIX_macosx := -ljvm -ljava, \
      LDFLAGS_SUFFIX_solaris := -ljvm -ljava -lnsl -lsocket $(LIBDL) -lc, \
      LDFLAGS_SUFFIX_linux := $(LIBDL) -ljvm -lpthread -ljava, \
@@ -8884,6 +8920,19 @@
  #endif
  
  #define JVM_DLL         "libjvm.so"
+--- jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd
++++ jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd
+@@ -94,8 +94,9 @@
+         {
+             public LaunchMechanism run() {
+                 String javahome = System.getProperty("java.home");
++                String osArch = System.getProperty("os.arch");
+ 
+-                helperpath = toCString(javahome + "/lib/jspawnhelper");
++                helperpath = toCString(javahome + "/lib/" + osArch + "/jspawnhelper");
+                 String s = System.getProperty(
+                     "jdk.lang.Process.launchMechanism", "posix_spawn");
+ 
 --- jdk/src/solaris/classes/sun/awt/X11FontManager.java
 +++ jdk/src/solaris/classes/sun/awt/X11FontManager.java
 @@ -213,7 +213,7 @@
