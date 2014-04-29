@@ -3,6 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.14.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -28,7 +29,6 @@ USES=		dos2unix pkgconfig shebangfix
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
-		--enable-foomatic-rip-hplip-install \
 		--enable-hpijs-install \
 		--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 		--with-cupsfilterdir=${PREFIX}/libexec/cups/filter \
@@ -161,5 +161,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hp
 	${INSTALL_DATA} ${WRKSRC}/hplip.conf ${STAGEDIR}${PREFIX}/etc/hp/hplip.conf.sample
 	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
+	${LN} -sf ${LOCALBASE}/bin/foomatic-rip ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip-hplip
 
 .include <bsd.port.mk>
