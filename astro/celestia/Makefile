@@ -49,10 +49,10 @@ LDFLAGS+=	-lGL
 .elif ${CELESTIA_UI} == "gtk"
 CONFIGURE_ARGS+=	--with-gtk
 USE_GNOME+=	gtk20
+PLIST_FILES=	share/applications/celestia.desktop
 .elif ${CELESTIA_UI} == "gnome"
 CATEGORIES+=	gnome
 CONFIGURE_ARGS+=	--with-gnome
-PLIST_FILES=	share/applications/celestia.desktop
 USE_GNOME+=	libgnomeui
 GCONF_SCHEMAS=	celestia.schemas
 PLIST_FILES=	share/applications/celestia.desktop
