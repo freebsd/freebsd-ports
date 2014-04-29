@@ -52,7 +52,6 @@ share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/printers.py
 %%JAVA%%bin/gtnameserv%%SUFFIX%%
 %%JAVA%%bin/jcf-dump%%SUFFIX%%
 %%JAVA%%bin/jv-convert%%SUFFIX%%
-%%JAVA%%bin/rebuild-gcj-db%%SUFFIX%%
 %%JAVA%%libdata/pkgconfig/libgcj-4.7.pc
 %%JAVA%%man/man1/aot-compile%%SUFFIX%%.1.gz
 %%JAVA%%man/man1/gappletviewer%%SUFFIX%%.1.gz
@@ -75,7 +74,6 @@ share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/printers.py
 %%JAVA%%man/man1/gtnameserv%%SUFFIX%%.1.gz
 %%JAVA%%man/man1/jcf-dump%%SUFFIX%%.1.gz
 %%JAVA%%man/man1/jv-convert%%SUFFIX%%.1.gz
-%%JAVA%%man/man1/rebuild-gcj-db%%SUFFIX%%.1.gz
 %%JAVA%%man/man3/ffi%%SUFFIX%%.3.gz
 %%JAVA%%man/man3/ffi_call%%SUFFIX%%.3.gz
 %%JAVA%%man/man3/ffi_prep_cif%%SUFFIX%%.3.gz
