@@ -1,0 +1,11 @@
+GRIBEX is an interface for encoding and decoding WMO FM-92 GRIB edition 1
+messages and some ancillary subroutines for controlling printing and debugging.
+The GRIBEX software was developed at the European Centre for Medium-range
+Weather Forecasts (ECMWF) and is part of the EMOS library. EMOS is mostly
+written in Fortran. Therefore it has only a Fortran interface.
+
+CGRIBEX is a lightweight version of GRIBEX written in ANSI C with a portable
+Fortran interface. For best compatibility some of the C sources were converted
+from the Fortran GRIBEX version.
+
+WWW: https://code.zmaw.de/projects/cgribex
