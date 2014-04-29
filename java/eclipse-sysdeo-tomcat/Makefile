@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-tomcat
 DISTNAME=	tomcatPluginV31
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sysdeo Tomcat Launcher plugin for Eclipse
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse

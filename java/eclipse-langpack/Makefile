@@ -14,7 +14,7 @@ DISTFILES=	NLpack1-eclipse-SDK-${PORTVERSION}-gtk${EXTRACT_SUFX} \
 		NLpackBidi-eclipse-SDK-${PORTVERSION}-gtk${EXTRACT_SUFX}
 DIST_SUBDIR=    eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse Language Pack Feature
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse

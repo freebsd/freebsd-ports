@@ -24,7 +24,7 @@ DISTFILES=	${ECLIPSE_BUILD_SRCFILE}:1 \
 DIST_SUBDIR=	eclipse
 EXTRACT_ONLY=	${ECLIPSE_BUILD_SRCFILE}
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open extensible IDE for anything and nothing in particular
 
 EXTRACT_DEPENDS=${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip

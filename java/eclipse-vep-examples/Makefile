@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-examples
 DISTNAME=	VE-examples-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual Editor Project for the Eclipse IDE (examples)
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
