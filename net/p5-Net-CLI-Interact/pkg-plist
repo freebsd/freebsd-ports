@@ -12,8 +12,8 @@
 %%SITE_PERL%%/Net/CLI/Interact/Role/Prompt.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Base.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Loopback.pm
-%%SITE_PERL%%/Net/CLI/Interact/Transport/Platform/Win32.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Platform/Unix.pm
+%%SITE_PERL%%/Net/CLI/Interact/Transport/Platform/Win32.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Role/ConnectCore.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/SSH.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Serial.pm
