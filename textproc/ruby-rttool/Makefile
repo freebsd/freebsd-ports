@@ -12,7 +12,7 @@ DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	RT into HTML and plain text converter
 
-BROKEN=		not staged
+LICENSE=	RUBY
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
@@ -24,20 +24,17 @@ RUBY_MODNAME=	rt
 DOCS_EN=	rttool.en.html rttool.en.rd
 DOCS_JA=	rttool.ja.html rttool.ja.rd
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${RUBY_MODEXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 
 .include <bsd.port.mk>
