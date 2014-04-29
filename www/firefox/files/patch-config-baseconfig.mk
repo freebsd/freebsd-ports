@@ -9,6 +9,6 @@
 +idldir = $(datadir)/idl/%%MOZILLA%%
 +installdir = $(libdir)/%%MOZILLA%%
 +sdkdir = $(libdir)/%%MOZILLA%%
- DIST = $(DEPTH)/dist
- 
- # We do magic with OBJ_SUFFIX in config.mk, the following ensures we don't
+ ifndef TOP_DIST
+ TOP_DIST = dist
+ endif

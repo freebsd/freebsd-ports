@@ -1,19 +1,4 @@
-commit c269a16
-Author: Jeff Muizelaar <jmuizelaar@mozilla.com>
-Date:   Fri Sep 14 15:54:55 2012 -0400
-
-    Bug 791305. Use libjpeg's color conversion code instead of our own. r=joe,r=khuey
-    
-    libjpeg-turbo supports converting directly to a format compatible with cairo's
-    FORMAT_RGB24. Use that instead of our own handcoded function. This also gives
-    us SSE2 and NEON version of this function.
-    
-    --HG--
-    extra : rebase_source : 18f48925f023a33ec2a097d4f4e5cc2ab40be1e9
----
- configure.in                     |   6 +-
- image/decoders/nsJPEGDecoder.cpp | 311 ++-------------------------------------
- 2 files changed, 20 insertions(+), 297 deletions(-)
+# Partially revert bug 791305 to allow building with system IJG jpeg library
 
 diff --git configure.in configure.in
 index f0aeb5d..1c01010 100644
