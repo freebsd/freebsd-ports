@@ -2,6 +2,7 @@
 
 PORTNAME=	fnccheck
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	FunctionCheck-${PORTVERSION}
@@ -12,12 +13,11 @@ COMMENT=	Profiling library/utilities for C/C++ programs
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BROKEN=		Missing header
+BUILD_DEPENDS=	gnulibiberty>0:${PORTSDIR}/devel/gnulibiberty \
+		libbfd>0:${PORTSDIR}/devel/libbfd
 
-USE_BINUTILS=	yes
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
 LIBTOOLIZE_ARGS=--force
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--force-missing --add-missing --foreign
 USE_LDCONFIG=	yes
 
@@ -27,18 +27,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 STRIP=		# none
 
 INFO=		libfc
-
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-# should be same as binutils
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-LDFLAGS+=	-lintl
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \
