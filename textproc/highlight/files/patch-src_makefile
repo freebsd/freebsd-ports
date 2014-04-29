@@ -1,0 +1,38 @@
+--- src/makefile.orig	2014-04-04 19:26:25.000000000 +0200
++++ src/makefile	2014-04-29 16:12:06.000000000 +0200
+@@ -12,7 +12,7 @@
+ 
+ # See src/gui-qt/highlight.pro for the Qt GUI compilation options
+ 
+-CXX=c++
++CXX?=c++
+ 
+ # Added -qt4 because of Arch Linux Qt5 migration
+ QMAKE=qmake-qt4
+@@ -33,15 +33,14 @@
+ # Include path
+ INCLUDE_DIR=./include/
+ 
+-
+ # If Lua 5.2 is not default on your system yet you have to:
+ # - remove -DUSE_LUA52
+ # - use lua5.1 in the pkg-config calls
+ 
+-LUA_CFLAGS=$(shell pkg-config --cflags lua) -DUSE_LUA52
++LUA_CFLAGS=$(shell pkg-config --cflags lua-5.2) -DUSE_LUA52
+ 
+ # default lua lib
+-LUA_LIBS=$(shell pkg-config --libs lua)
++LUA_LIBS=$(shell pkg-config --libs lua-5.2)
+ 
+ # luajit lib
+ # LUA_LIBS=$(shell pkg-config --libs luajit)
+@@ -68,7 +67,7 @@
+ #LDFLAGS = ${LDFLAGS} -s
+ #LDFLAGS= -Wl,--as-needed
+ 
+-CXX_COMPILE=${CXX} ${CFLAGS} -c -I ${INCLUDE_DIR} ${LUA_CFLAGS}
++CXX_COMPILE=${CXX} ${CFLAGS} -c -I ${INCLUDE_DIR} -I%%LOCALBASE%%/include ${LUA_CFLAGS}
+ 
+ # Data directories (data dir, configuration file dir)
+ CXX_DIR=-DHL_DATA_DIR=\"${HL_DATA_DIR}\" -DHL_CONFIG_DIR=\"${HL_CONFIG_DIR}\"
