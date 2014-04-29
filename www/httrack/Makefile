@@ -3,6 +3,7 @@
 
 PORTNAME=	httrack
 PORTVERSION=	3.48.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.httrack.com/ \
 		http://mirror.httrack.com/historical/ \
@@ -20,11 +21,13 @@ CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
-USES=		gmake iconv
+USE_LDCONFIG=	${PREFIX}/lib/httrack
+USES=		gmake iconv shebangfix
 
 PORTDATA=	*
 PORTDOCS=	*
+
+SHEBANG_FILES=	src/webhttrack
 
 post-patch:
 	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/ s|-O -g3 ||g' ${WRKSRC}/configure
@@ -33,5 +36,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${STAGEDIR}${DOCSDIR}/httrack.css
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so ${STAGEDIR}${PREFIX}/lib/httrack/lib*.so
 
 .include <bsd.port.mk>
