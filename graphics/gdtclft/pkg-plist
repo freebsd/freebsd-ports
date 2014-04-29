@@ -1,4 +1,0 @@
-%%DIR%%/pkgIndex.tcl
-%%DIR%%/%%SHLIB_NAME%%
-%%DIR%%/%%SHLIB_LINK%%
-@dirrm %%DIR%%
