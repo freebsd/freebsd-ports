@@ -234,6 +234,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: ohauer@FreeBSD.org
 
   APR was updated to 1.5.0, BDB requirement was bumped to 48+
+  It is necessary to first remove the old version of devel/apr1.
 
   Please rebuild all ports which are using functions from APR/APR-util
   such as Apache, Subversion, etc.
