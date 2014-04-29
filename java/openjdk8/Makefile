@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -160,6 +160,8 @@ post-extract:
 	@${RMDIR} ${WRKSRC}/jdk/src/macosx/classes/java/net \
 	    ${WRKSRC}/jdk/src/macosx/native/sun/nio/ch \
 	    ${WRKSRC}/jdk/src/macosx/native/sun/nio
+	@${CP} -f ${WRKSRC}/jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd \
+	    ${WRKSRC}/jdk/src/solaris/classes/java/lang/UNIXProcess.java.macosx
 
 post-patch:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
@@ -200,14 +202,10 @@ do-install:
 	    "-not ( -type d -name bin -prune )"
 	@cd ${JDK_IMAGEDIR} && \
 	    ${COPYTREE_BIN} "bin jre/bin" ${STAGEDIR}${INSTALLDIR}
-	@cd ${JDK_IMAGEDIR} && \
-	    ${INSTALL_PROGRAM} jre/lib/jspawnhelper \
-	    ${STAGEDIR}${INSTALLDIR}/jre/lib
-	@cd ${JDK_IMAGEDIR} && \
-	    ${INSTALL_PROGRAM} jre/lib/${ARCH}/jexec \
+	@${INSTALL_PROGRAM} ${JDK_IMAGEDIR}/jre/lib/${ARCH}/jexec \
+	    ${JDK_IMAGEDIR}/jre/lib/${ARCH}/jspawnhelper \
 	    ${STAGEDIR}${INSTALLDIR}/jre/lib/${ARCH}
-	@cd ${JDK_IMAGEDIR} && \
-	    ${INSTALL_PROGRAM} lib/${ARCH}/jexec \
+	@${INSTALL_PROGRAM} ${JDK_IMAGEDIR}/lib/${ARCH}/jexec \
 	    ${STAGEDIR}${INSTALLDIR}/lib/${ARCH}
 	@${ECHO} "@unexec ${LOCALBASE}/bin/unregistervm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${STAGEDIR}${INSTALLDIR} -not -type d | ${SORT} | \
