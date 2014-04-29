@@ -20,7 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 PLIST_SUB=	LIBVERSION=${LIBVERSION} \
 		LIBFILE=${LIBFILE}
 
-MAN3=		caldate.3 caldate_mjd.3 caltime.3 caltime_tai.3 leapsecs.3 \
+MAN_FILES=	caldate.3 caldate_mjd.3 caltime.3 caltime_tai.3 leapsecs.3 \
 		tai.3 tai_now.3 tai_pack.3 taia.3 taia_now.3 taia_pack.3
 
 # port information
@@ -29,7 +29,6 @@ LIBFILE=	libtai
 PROGRAM_FILES=	easter nowutc leapsecs yearcal
 HEADER_FILES=	caldate.h caltime.h leapsecs.h tai.h taia.h uint64.h
 
-NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} -e "s!%%PREFIX%%!${PREFIX}!g" \
 		${WRKSRC}/leapsecs.3 ${WRKSRC}/leapsecs_read.c
@@ -53,20 +52,20 @@ post-build:
 
 do-install:
 	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${BINGRP} -m 644 \
-		${WRKSRC}/leapsecs.dat ${PREFIX}/etc
-.for i in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/man/man3
+		${WRKSRC}/leapsecs.dat ${STAGEDIR}${PREFIX}/etc
+.for i in ${MAN_FILES}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/man/man3
 .endfor
 .for i in ${PROGRAM_FILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/${LIBFILE}.a ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/${LIBFILE}.so.${LIBVERSION} ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/${LIBFILE}.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/${LIBFILE}.so.${LIBVERSION} ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/${LIBFILE}.so.${LIBVERSION} \
-		${PREFIX}/lib/${LIBFILE}.so
-	@${MKDIR} ${PREFIX}/include/${PORTNAME}
+		${STAGEDIR}${PREFIX}/lib/${LIBFILE}.so
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 .for file in ${HEADER_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 .endfor
 
 .include <bsd.port.mk>
