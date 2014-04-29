@@ -15,8 +15,4 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV+=	YACC=${YACC}
 
-MAN5=		wackamole.conf.5
-MAN8=		wackamole.8 wackatrl.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
