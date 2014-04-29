@@ -27,6 +27,7 @@
     SUBDIR += cdf
     SUBDIR += cdo
     SUBDIR += cgnslib
+    SUBDIR += cgribex
     SUBDIR += checkmol
     SUBDIR += chemical-mime-data
     SUBDIR += chemtool
