@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Function-Parameters
-PORTVERSION=	1.03.01
+PORTVERSION=	1.04.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAUKE
@@ -23,7 +23,7 @@ TEST_DEPENDS=	p5-Dir-Self>=0:${PORTSDIR}/devel/p5-Dir-Self \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased
 
-USE_PERL5=	5.14+ configure
+USE_PERL5=	configure
 USES=		perl5
 
 .include <bsd.port.mk>
