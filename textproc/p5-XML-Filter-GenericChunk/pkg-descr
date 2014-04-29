@@ -3,5 +3,3 @@ parse wellballanced chunks from SAX events and transforms this chunk
 into a sequence of SAX events.
 
 WWW: http://search.cpan.org/dist/XML-Filter-GenericChunk/
-
-Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
