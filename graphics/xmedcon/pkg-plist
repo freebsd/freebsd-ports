@@ -45,4 +45,14 @@ lib/libmdc.a
 lib/libmdc.la
 lib/libmdc.so
 lib/libmdc.so.2
+man/man1/medcon.1.gz
+%%X11%%man/man1/xmedcon.1.gz
+man/man1/xmedcon-config.1.gz
+man/man3/medcon.3.gz
+man/man4/m-acr.4.gz
+man/man4/m-anlz.4.gz
+man/man4/m-ecat.4.gz
+man/man4/m-gif.4.gz
+man/man4/m-intf.4.gz
+man/man4/m-inw.4.gz
 share/aclocal/xmedcon.m4
