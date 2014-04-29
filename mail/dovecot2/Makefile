@@ -35,6 +35,9 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
 		--without-shadow
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 
 USERS=		dovecot dovenull
