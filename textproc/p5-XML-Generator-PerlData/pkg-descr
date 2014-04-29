@@ -3,5 +3,3 @@ nested Perl data structures, while providing finer-grained control over the
 resulting document streams.
 
 WWW: http://search.cpan.org/dist/XML-Generator-PerlData/
-
-Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
