@@ -9,10 +9,9 @@ MASTER_SITES=	http://billposer.org/Software/Downloads/
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Convert between textual representations of numbers and binary
 
-USE_BZIP2=	yes
-USES=		gettext
-
 LICENSE=	GPLv3
+
+USES=		gettext tar:bzip2
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
