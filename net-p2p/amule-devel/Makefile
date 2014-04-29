@@ -18,7 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 
 CONFLICTS=	amule-[0-9]*
 
-USES=		bison gmake pkgconfig perl5 shebangfix tar:bzip2
+USES=		bison gmake pkgconfig perl5 shebangfix tar:bzip2 \
+		desktop-file-utils
 USE_PERL5=	build
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
@@ -41,7 +42,6 @@ AMULECMD_DESC=		Compile aMule command line client
 AMULEDAEMON_DESC=	Compile aMule daemon version
 AMULEGUI_DESC=		Compile aMule remote GUI
 CAS_DESC=		Compile aMule Statistics for console
-DEBUG_DESC=		Compile aMule with debugging output
 ED2K_DESC=		Compile aMule ed2k links handler
 FILEVIEW_DESC=		Compile file viewer for console (EXPERIMENTAL)
 MMAP_DESC=		Use mapped memory
