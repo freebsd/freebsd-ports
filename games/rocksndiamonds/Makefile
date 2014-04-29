@@ -6,15 +6,14 @@ PORTVERSION=	3.3.1.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/:game \
 		http://www.artsoft.org/RELEASES/rocksndiamonds/levels/:levels_artsoft \
-		http://www.bd-fans.com/Files/RnD/Levels/ \
-		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
 # Please contact the MAINTAINER if a Level is missing
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:game \
 		rnd_jue-3.3.0.0${EXTRACT_SUFX}:game \
 		${LEVELS_ARTSOFT:S/$/.zip/}:levels_artsoft \
 		${LEVELS_BD_FANS:S/$/.zip/} \
 		Tutorial_Alpha.zip \
-		${PORTNAME}_icons.zip:icons
+		${PORTNAME}_icons.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		rnd_jue-3.3.0.0.tar.gz \
