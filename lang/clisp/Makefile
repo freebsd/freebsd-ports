@@ -7,15 +7,18 @@ PORTREVISION=	5
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION}
 
-MAINTAINER=	jsa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Common Lisp implementation
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GNU-GPL
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
 LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline \
 		sigsegv.2:${PORTSDIR}/devel/libsigsegv
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/GNU-GPL
+DEPRECATED=	development has ceased, not staged
+EXPIRATION_DATE=	2014-07-28
 
 USE_GCC=	any
 USES=		iconv
