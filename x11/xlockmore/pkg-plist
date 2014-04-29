@@ -1,0 +1,10 @@
+%%GTK2%%bin/xglock
+@mode 4111
+@owner root
+bin/xlock
+@mode
+@owner
+lib/X11/app-defaults/XLock
+man/man1/xlock.1.gz
+%%GTK2%%share/xlock/xglockrc
+%%GTK2%%@dirrm share/xlock

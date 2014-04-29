@@ -3,7 +3,7 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.43
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
 		ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
@@ -12,21 +12,20 @@ MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
 MAINTAINER?=	jgh@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-motif --without-ttf --without-editres \
 		--without-dtsaver --without-rplay --without-nas \
-		--without-gtk --without-esound
+		--without-gtk --without-esound --disable-setuid
 
 USE_GNOME=	#
 USE_XORG=	x11 xaw ice
 
 LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock man/man1/xlock.1.gz
-
 OPTIONS_DEFINE=	MESAGL MB SYSLOG DISABLE_ALLOW_ROOT NICE_ONLY BLANK_ONLY \
 		KERBEROS4 BAD_PAM GTK2 TIME_BOMB CUSTOMIZATION MAGICK
+OPTIONS_SUB=	yes
 
 MESAGL_DESC=	Mesa 3D (for GL modes)
 MB_DESC=	Xmb function series
@@ -48,7 +47,7 @@ NO_OPTIONS_SORT=yes
 MAKE_ARGS+=	bindir=${STAGEDIR}${PREFIX}/bin \
 		mandir=${STAGEDIR}${PREFIX}/man/man1 \
 		datarootdir=${STAGEDIR}${PREFIX}/share \
-		xapploaddir=${STAGEDIR}${PREFIX}/lib/X11/app-defaults
+		xapploaddir=${PREFIX}/lib/X11/app-defaults
 
 .include <bsd.port.options.mk>
 
@@ -106,8 +105,6 @@ CONFIGURE_ARGS+=	--enable-syslog
 .if ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	--with-gtk2
 USE_GNOME+=	gtk20
-PLIST_FILES+=	bin/xglock share/xlock/xglockrc
-PLIST_DIRS+=	share/xlock
 .else
 CONFIGURE_ARGS+=	--without-gtk2
 .endif
