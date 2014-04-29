@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Test/MaxMind/DB/Common/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind/DB/Common/.packlist
 %%PERL5_MAN3%%/MaxMind::DB::Common.3.gz
+%%PERL5_MAN3%%/MaxMind::DB::Metadata.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind/DB/Common
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind/DB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind
