@@ -16,7 +16,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
-USE_XORG=	sm
+USE_XORG=	ice sm
 USE_GNOME=	gnomeprefix intlhack gconf2 vte gnomedocutils libgnome
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -27,5 +27,7 @@ GCONF_SCHEMAS=	gnome-terminal.schemas
 post-patch:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
 		${WRKSRC}/configure ${WRKSRC}/config.h.in
+	@${REINPLACE_CMD} '/SMCLIENT_LIBS =/s/$$/ -lICE/' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
