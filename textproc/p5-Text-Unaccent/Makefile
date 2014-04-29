@@ -8,8 +8,10 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Remove accents from a string
+
+LICENSE=	GPLv2
 
 USES=		iconv perl5
 USE_PERL5=	configure
