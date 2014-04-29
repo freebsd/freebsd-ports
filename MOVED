@@ -5996,7 +5996,7 @@ graphics/camediaplay||2014-04-13|Has expired: Unmaintained since 2001
 math/umatrix||2014-04-13|Has expired: Unmaintained since 2001
 lang/f77||2014-04-13|Has expired: Unmaintained since 2001
 security/labrea||2014-04-14|Has expired: Unmaintained since 2003
-lang/dmd|lang/dmd1|2014-04-14|Upline no longer supports dmd 1.X, it is now the secondary dmd port.
+lang/dmd|lang/dmd1|2014-04-14|Upline no longer supports dmd 1.X, it is now the secondary dmd port
 www/mod_python3|www/mod_python33|2014-04-15|Port moved to reflect PKGNAMESUFFIX
 lang/dragonegg-devel46||2014-04-16|C++ library incompatibilities, unmainteined upstream
 ports-mgmt/pkgsearch||2014-04-18|Has expired: Upstream disappeared
@@ -6049,7 +6049,7 @@ emulators/mupen64-dummyaudio||2014-04-24|Has expired: Use mupen64plus instead
 emulators/mupen64-base|emulators/mupen64plus-core|2014-04-24|Has expired: Use mupen64plus instead
 x11/emu||2014-04-24|Has expired: Broken, not staged
 lang/ruby-doc-stdlib||2014-04-24|Has expired: Upstream rerolls frequently, online docs work well
-emulators/mupen64-rice|emulators/mupen64-video-rice|2014-04-24|Removed, part of removed mupen64
+emulators/mupen64-rice|emulators/mupen64plus-video-rice|2014-04-24|Removed, part of removed mupen64
 devel/otrs|www/otrs|2014-04-28|OTRS is actually web based ticket system and it has nothing with development
 audio/cantus_3||2014-04-28|Broken for a while, does not build with modern compilers
 multimedia/xfce4-xmms-plugin||2014-04-28|Has expired: Abandonware, and can't select another player instead XMMS
