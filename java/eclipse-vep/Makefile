@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	VE-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A framework for creating GUI builders for Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \

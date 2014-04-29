@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	lomboz-emf-gef-jem-${PORTVERSION:S/.r/RC/}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A J2EE developer tool build as a plugin for the eclipse platform
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
