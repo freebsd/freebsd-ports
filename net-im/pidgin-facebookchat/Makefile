@@ -8,14 +8,17 @@ CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PROJECTHOST}-source-${PORTVERSION}
 
-MAINTAINER=	jsa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Facebook Chat for Pidgin
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	json-glib-1.0.0:${PORTSDIR}/devel/json-glib
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
-LICENSE=	GPLv3
+DEPRECATED=	obsolete, development has ceased, not staged
+EXPIRATION_DATE=	2014-07-27
 
 PROJECTHOST=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
