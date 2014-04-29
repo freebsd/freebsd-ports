@@ -33,7 +33,8 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # 						listed in '_ALL_DEPENDS'. If your port doesn't
 # 						need one of those then you can use '-' like
 # 						'USE_MOZILLA= -png -vpx' to subtract the
-# 						dependencies.
+# 						dependencies. Experimental deps use '+' like
+# 						'USE_MOZILLA= +speex +theora'.
 #
 # GECKO_PLIST_PRE_FILES	Manual add files in the plist if it needs.
 #
@@ -140,7 +141,7 @@ MOZ_OPTIONS+=	--enable-jemalloc
 .endif
 
 # Standard depends
-_ALL_DEPENDS=	cairo event ffi harfbuzz hunspell icu jpeg nspr nss opus png pixman sqlite vorbis vpx
+_ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss opus png pixman soundtouch sqlite vorbis vpx
 
 cairo_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 cairo_MOZ_OPTIONS=	--enable-system-cairo
@@ -155,10 +156,13 @@ ffi_MOZ_OPTIONS=	--enable-system-ffi
 ffi_EXTRACT_AFTER_ARGS=	--exclude mozilla*/js/src/ctypes/libffi
 
 .if exists(${FILESDIR}/patch-bug847568) || exists(${FILESDIR}/patch-z-bug847568)
+graphite_LIB_DEPENDS=	libgraphite2.so:${PORTSDIR}/graphics/graphite2
+graphite_MOZ_OPTIONS=	--with-system-graphite2
+graphite_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/graphite2
+
 harfbuzz_LIB_DEPENDS=	libharfbuzz.so:${PORTSDIR}/print/harfbuzz
-harfbuzz_MOZ_OPTIONS=	--with-system-harfbuzz --with-system-graphite2
-harfbuzz_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/harfbuzz \
-								--exclude mozilla*/gfx/graphite2
+harfbuzz_MOZ_OPTIONS=	--with-system-harfbuzz
+harfbuzz_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/harfbuzz
 .endif
 
 hunspell_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
@@ -197,11 +201,27 @@ png_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
 png_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libpng
 
+.if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
+soundtouch_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
+soundtouch_MOZ_OPTIONS=	--with-system-soundtouch
+soundtouch_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libsoundtouch
+
+# XXX disabled: bug 913854 not yet upstreamed
+speex_LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speex
+speex_MOZ_OPTIONS=	--with-system-speex
+speex_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libspeex_resampler
+.endif
+
 sqlite_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite
 sqlite_EXTRACT_AFTER_ARGS=	--exclude mozilla*/db/sqlite3
 
 .if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
+# XXX disabled: update to 1.2.x or review backported fixes
+theora_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+theora_MOZ_OPTIONS=	--with-system-theora
+theora_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libtheora
+
 vorbis_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 vorbis_MOZ_OPTIONS=	--with-system-vorbis --with-system-ogg
 vorbis_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libvorbis \
@@ -217,7 +237,7 @@ vpx_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libvpx
 ${use:S/-/_WITHOUT_/}=	${TRUE}
 .endfor
 
-.for dep in ${_ALL_DEPENDS}
+.for dep in ${_ALL_DEPENDS} ${USE_MOZILLA:M+*:S/+//}
 .if !defined(_WITHOUT_${dep})
 BUILD_DEPENDS+=	${${dep}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${${dep}_LIB_DEPENDS}
@@ -367,7 +387,12 @@ MOZ_OPTIONS+=	--enable-alsa
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
+. if ${PORT_OPTIONS:MALSA}
 BUILD_DEPENDS+=	pulseaudio>0:${PORTSDIR}/audio/pulseaudio
+. else
+# pull pulse package if we cannot fallback to another backend
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+. endif
 MOZ_OPTIONS+=	--enable-pulseaudio
 .else
 MOZ_OPTIONS+=	--disable-pulseaudio

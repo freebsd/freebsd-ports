@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.15.5
+PORTVERSION=	3.16
 #DISTVERSIONSUFFIX=	.with.ckbi.1.93
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src
@@ -11,10 +11,10 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		nspr>=4.10.2:${PORTSDIR}/devel/nspr \
+		nspr>=4.10.3:${PORTSDIR}/devel/nspr \
 		sqlite3>=3.7.15:${PORTSDIR}/databases/sqlite3
-LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/nss
 
@@ -24,7 +24,7 @@ USES=		gmake perl5
 USE_PERL5=	build
 MAKE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib" \
 		SQLITE_INCLUDE_DIR="${LOCALBASE}/include" \
-		NSS_ENABLE_ECC=1 NSS_USE_SYSTEM_SQLITE=1
+		NSS_USE_SYSTEM_SQLITE=1
 CFLAGS+=	-I${LOCALBASE}/include/nspr
 
 SUB_FILES=	nss-config nss.pc

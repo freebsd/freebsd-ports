@@ -1,21 +1,25 @@
-# Allow building against system-wide ogg/vorbis/opus.
+# Allow more config/external/ libs built against system-wide version.
 
 diff --git config/Makefile.in config/Makefile.in
-index 5383399..4393ae8 100644
+index 5383399..0410004 100644
 --- config/Makefile.in
 +++ config/Makefile.in
-@@ -79,6 +79,9 @@ export:: $(export-preqs)
+@@ -79,6 +79,13 @@ export:: $(export-preqs)
  		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
  		-DMOZ_NATIVE_GRAPHITE2=$(MOZ_NATIVE_GRAPHITE2) \
  		-DMOZ_NATIVE_HARFBUZZ=$(MOZ_NATIVE_HARFBUZZ) \
 +		-DMOZ_NATIVE_OGG=$(MOZ_NATIVE_OGG) \
++		-DMOZ_NATIVE_THEORA=$(MOZ_NATIVE_THEORA) \
 +		-DMOZ_NATIVE_VORBIS=$(MOZ_NATIVE_VORBIS) \
++		-DMOZ_NATIVE_TREMOR=$(MOZ_NATIVE_TREMOR) \
 +		-DMOZ_NATIVE_OPUS=$(MOZ_NATIVE_OPUS) \
++		-DMOZ_NATIVE_SPEEX=$(MOZ_NATIVE_SPEEX) \
++		-DMOZ_NATIVE_SOUNDTOUCH=$(MOZ_NATIVE_SOUNDTOUCH) \
  		$(srcdir)/system-headers | $(PERL) $(topsrcdir)/nsprpub/config/make-system-wrappers.pl system_wrappers
  	$(INSTALL) system_wrappers $(DIST)
  
 diff --git config/external/moz.build config/external/moz.build
-index c22a36c..740402e 100644
+index f67c5c7..eb909ce 100644
 --- config/external/moz.build
 +++ config/external/moz.build
 @@ -15,13 +15,13 @@ if CONFIG['MOZ_UPDATER']:
@@ -26,7 +30,8 @@ index c22a36c..740402e 100644
 +if CONFIG['MOZ_VORBIS'] and not CONFIG['MOZ_NATIVE_VORBIS']:
      external_dirs += ['media/libvorbis']
  
- if CONFIG['MOZ_TREMOR']:
+-if CONFIG['MOZ_TREMOR']:
++if CONFIG['MOZ_TREMOR'] and not CONFIG['MOZ_NATIVE_TREMOR']:
      external_dirs += ['media/libtremor']
  
 -if CONFIG['MOZ_OPUS']:
@@ -34,22 +39,56 @@ index c22a36c..740402e 100644
      external_dirs += ['media/libopus']
  
  if CONFIG['MOZ_WEBM']:
-@@ -34,7 +34,9 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ_NATIVE_LIBVPX']:
+@@ -34,16 +34,23 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ
      external_dirs += ['media/libvpx']
  
  if CONFIG['MOZ_OGG']:
 -    external_dirs += ['media/libogg', 'media/libtheora']
 +    if not CONFIG['MOZ_NATIVE_OGG']:
 +        external_dirs += ['media/libogg']
-+    external_dirs += ['media/libtheora']
++    if not CONFIG['MOZ_NATIVE_THEORA']:
++        external_dirs += ['media/libtheora']
  
  if not CONFIG['MOZ_NATIVE_PNG']:
      external_dirs += ['media/libpng']
+ 
++if not CONFIG['MOZ_NATIVE_SPEEX']:
++    external_dirs += ['media/libspeex_resampler']
++
++if not CONFIG['MOZ_NATIVE_SOUNDTOUCH']:
++    external_dirs += ['media/libsoundtouch']
++
+ external_dirs += [
+     'media/kiss_fft',
+     'media/libcubeb',
+-    'media/libspeex_resampler',
+-    'media/libsoundtouch',
+ ]
+ 
+ PARALLEL_DIRS += ['../../' + i for i in external_dirs]
 diff --git config/system-headers config/system-headers
-index b711fc3..fd3c14f 100644
+index bef567c..9807c29 100644
 --- config/system-headers
 +++ config/system-headers
-@@ -1153,3 +1153,17 @@ graphite2/Segment.h
+@@ -1050,8 +1050,6 @@ X11/Xutil.h
+ xpt_struct.h
+ xpt_xdr.h
+ zmouse.h
+-speex/speex_resampler.h
+-soundtouch/SoundTouch.h
+ #if MOZ_NATIVE_PNG==1
+ png.h
+ #endif
+@@ -1119,6 +1117,8 @@ ogg/ogg.h
+ ogg/os_types.h
+ nestegg/nestegg.h
+ cubeb/cubeb.h
++speex/speex_resampler.h
++soundtouch/SoundTouch.h
+ #endif
+ gst/gst.h
+ gst/app/gstappsink.h
+@@ -1155,3 +1155,29 @@ graphite2/Segment.h
  harfbuzz/hb-ot.h
  harfbuzz/hb.h
  #endif
@@ -57,9 +96,15 @@ index b711fc3..fd3c14f 100644
 +ogg/ogg.h
 +ogg/os_types.h
 +#endif
++#if MOZ_NATIVE_THEORA==1
++theora/theoradec.h
++#endif
 +#if MOZ_NATIVE_VORBIS==1
 +vorbis/codec.h
 +vorbis/vorbisenc.h
++#endif
++#if MOZ_NATIVE_TREMOR==1
++tremor/ivorbiscodec.h
 +#endif
 +#if MOZ_NATIVE_OPUS==1
 +opus.h
@@ -67,11 +112,17 @@ index b711fc3..fd3c14f 100644
 +opus/opus.h
 +opus/opus_multistream.h
 +#endif
++#if MOZ_NATIVE_SPEEX==1
++speex/speex_resampler.h
++#endif
++#if MOZ_NATIVE_SOUNDTOUCH==1
++soundtouch/SoundTouch.h
++#endif
 diff --git configure.in configure.in
-index df49287..05e97ff 100644
+index 87db361..7947626 100644
 --- configure.in
 +++ configure.in
-@@ -5130,6 +5130,40 @@ if test "${ac_cv_c_attribute_aligned}" != "0"; then
+@@ -5211,6 +5211,57 @@ if test "${ac_cv_c_attribute_aligned}" != "0"; then
  fi
  
  dnl ========================================================
@@ -81,7 +132,7 @@ index df49287..05e97ff 100644
 +MOZ_ARG_WITH_BOOL(system-ogg,
 +[  --with-system-ogg       Use system libogg (located with pkgconfig)],
 +MOZ_NATIVE_OGG=1,
-+MOZ_NATIVE_OGG= )
++MOZ_NATIVE_OGG=)
 +
 +if test -n "$MOZ_NATIVE_OGG"; then
 +    PKG_CHECK_MODULES(MOZ_OGG, ogg >= 1.2.1)
@@ -98,7 +149,7 @@ index df49287..05e97ff 100644
 +MOZ_ARG_WITH_BOOL(system-vorbis,
 +[  --with-system-vorbis    Use system libvorbis (located with pkgconfig)],
 +MOZ_NATIVE_VORBIS=1,
-+MOZ_NATIVE_VORBIS= )
++MOZ_NATIVE_VORBIS=)
 +
 +if test -n "$MOZ_NATIVE_VORBIS"; then
 +    PKG_CHECK_MODULES(MOZ_VORBIS, vorbis vorbisenc >= 1.3.4)
@@ -109,10 +160,27 @@ index df49287..05e97ff 100644
 +AC_SUBST(MOZ_VORBIS_LIBS)
 +
 +dnl ========================================================
++dnl Check for integer-only libvorbis aka tremor
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-tremor,
++[  --with-system-tremor    Use system libtremor (located with pkgconfig)],
++MOZ_NATIVE_TREMOR=1,
++MOZ_NATIVE_TREMOR=)
++
++if test -n "$MOZ_NATIVE_TREMOR"; then
++    PKG_CHECK_MODULES(MOZ_TREMOR, vorbisidec >= 1.2.1)
++fi
++
++AC_SUBST(MOZ_NATIVE_TREMOR)
++AC_SUBST(MOZ_TREMOR_CFLAGS)
++AC_SUBST(MOZ_TREMOR_LIBS)
++
++dnl ========================================================
  dnl = Disable Opus audio codec support
  dnl ========================================================
  MOZ_ARG_DISABLE_BOOL(opus,
-@@ -5138,6 +5172,25 @@ MOZ_ARG_DISABLE_BOOL(opus,
+@@ -5219,6 +5274,76 @@ MOZ_ARG_DISABLE_BOOL(opus,
      MOZ_OPUS=1)
  
  dnl ========================================================
@@ -122,7 +190,7 @@ index df49287..05e97ff 100644
 +MOZ_ARG_WITH_BOOL(system-opus,
 +[  --with-system-opus      Use system libopus (located with pkgconfig)],
 +MOZ_NATIVE_OPUS=1,
-+MOZ_NATIVE_OPUS= )
++MOZ_NATIVE_OPUS=)
 +
 +if test -n "$MOZ_NATIVE_OPUS"; then
 +    PKG_CHECK_MODULES(MOZ_OPUS, opus >= 1.1)
@@ -135,30 +203,132 @@ index df49287..05e97ff 100644
 +AC_SUBST(MOZ_OPUS_LIBS)
 +
 +dnl ========================================================
++dnl Check for libtheora
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-theora,
++[  --with-system-theora    Use system libtheora (located with pkgconfig)],
++MOZ_NATIVE_THEORA=1,
++MOZ_NATIVE_THEORA=)
++
++if test -n "$MOZ_NATIVE_THEORA"; then
++    PKG_CHECK_MODULES(MOZ_THEORA, theora >= 1.2)
++fi
++
++AC_SUBST(MOZ_NATIVE_THEORA)
++AC_SUBST(MOZ_THEORA_CFLAGS)
++AC_SUBST(MOZ_THEORA_LIBS)
++
++dnl ========================================================
++dnl Check for libspeex resampler
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-speex,
++[  --with-system-speex     Use system libspeex (located with pkgconfig)],
++MOZ_NATIVE_SPEEX=1,
++MOZ_NATIVE_SPEEX=)
++
++if test -n "$MOZ_NATIVE_SPEEX"; then
++    PKG_CHECK_MODULES(MOZ_SPEEX, speexdsp >= 1.2)
++fi
++
++AC_SUBST(MOZ_NATIVE_SPEEX)
++AC_SUBST(MOZ_SPEEX_CFLAGS)
++AC_SUBST(MOZ_SPEEX_LIBS)
++
++dnl ========================================================
++dnl Check for libsoundtouch
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-soundtouch,
++[  --with-system-soundtouch Use system libsoundtouch (located with pkgconfig)],
++MOZ_NATIVE_SOUNDTOUCH=1,
++MOZ_NATIVE_SOUNDTOUCH=)
++
++if test -n "$MOZ_NATIVE_SOUNDTOUCH"; then
++    PKG_CHECK_MODULES(MOZ_SOUNDTOUCH, soundtouch >= 1.7.0)
++fi
++
++AC_SUBST(MOZ_NATIVE_SOUNDTOUCH)
++AC_SUBST(MOZ_SOUNDTOUCH_CFLAGS)
++AC_SUBST(MOZ_SOUNDTOUCH_LIBS)
++
++dnl ========================================================
  dnl = Disable VP8 decoder support
  dnl ========================================================
  MOZ_ARG_DISABLE_BOOL(webm,
+diff --git content/media/AudioStream.cpp content/media/AudioStream.cpp
+index 88c8aa6..6b03288 100644
+--- content/media/AudioStream.cpp
++++ content/media/AudioStream.cpp
+@@ -13,7 +13,6 @@
+ #include "mozilla/Mutex.h"
+ #include <algorithm>
+ #include "mozilla/Preferences.h"
+-#include "soundtouch/SoundTouch.h"
+ #include "Latency.h"
+ 
+ namespace mozilla {
+diff --git content/media/AudioStream.h content/media/AudioStream.h
+index 085676d..00c54fb 100644
+--- content/media/AudioStream.h
++++ content/media/AudioStream.h
+@@ -15,6 +15,7 @@
+ #include "mozilla/StaticMutex.h"
+ 
+ #include "cubeb/cubeb.h"
++#include "soundtouch/SoundTouch.h"
+ 
+ template <>
+ class nsAutoRefTraits<cubeb_stream> : public nsPointerRefTraits<cubeb_stream>
 diff --git content/media/Makefile.in content/media/Makefile.in
-index 68f360e..76f2d57 100644
+index fd34449..c6c42c8 100644
 --- content/media/Makefile.in
 +++ content/media/Makefile.in
-@@ -7,4 +7,16 @@ include $(topsrcdir)/config/rules.mk
+@@ -6,3 +6,31 @@ include $(topsrcdir)/config/rules.mk
+ 
  CFLAGS   += $(GSTREAMER_CFLAGS)
  CXXFLAGS += $(GSTREAMER_CFLAGS)
- 
++
 +ifdef MOZ_NATIVE_OGG
 +CXXFLAGS += $(MOZ_OGG_CFLAGS)
++endif
++
++ifdef MOZ_NATIVE_THEORA
++CXXFLAGS += $(MOZ_THEORA_CFLAGS)
 +endif
 +
 +ifdef MOZ_NATIVE_VORBIS
 +CXXFLAGS += $(MOZ_VORBIS_CFLAGS)
 +endif
 +
++ifdef MOZ_NATIVE_TREMOR
++CXXFLAGS += $(MOZ_TREMOR_CFLAGS)
++endif
++
 +ifdef MOZ_NATIVE_OPUS
 +CXXFLAGS += $(MOZ_OPUS_CFLAGS)
 +endif
 +
- AudioNodeEngineNEON.$(OBJ_SUFFIX): CXXFLAGS += -mfpu=neon
++ifdef MOZ_NATIVE_SPEEX
++CXXFLAGS += $(MOZ_SPEEX_CFLAGS)
++endif
++
++ifdef MOZ_NATIVE_SOUNDTOUCH
++CXXFLAGS += $(MOZ_SOUNDTOUCH_CFLAGS)
++endif
+diff --git media/libcubeb/src/Makefile.in media/libcubeb/src/Makefile.in
+index 4c14494..1cb98e2 100644
+--- media/libcubeb/src/Makefile.in
++++ media/libcubeb/src/Makefile.in
+@@ -9,3 +9,7 @@ CFLAGS += \
+         $(MOZ_ALSA_CFLAGS) \
+         $(MOZ_PULSEAUDIO_CFLAGS) \
+         $(NULL)
++
++ifdef MOZ_NATIVE_SPEEX
++CFLAGS += $(MOZ_SPEEX_CFLAGS)
++endif
 diff --git media/libtheora/Makefile.in media/libtheora/Makefile.in
 new file mode 100644
 index 0000000..1f02dc0
@@ -205,7 +375,7 @@ index 0000000..1f02dc0
 +CFLAGS += $(MOZ_OGG_CFLAGS)
 +endif
 diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
-index c5e82c4..91ef86a 100644
+index bbc971c..6ed7e41 100644
 --- media/webrtc/signaling/test/Makefile.in
 +++ media/webrtc/signaling/test/Makefile.in
 @@ -48,6 +48,12 @@ LIBS += \
@@ -230,7 +400,7 @@ index 00e77e7..55f48ab 100644
          ['build_with_mozilla==1', {
            # Mozilla provides its own build of the opus library.
 -          'include_dirs': [
--            '$(DIST)/include/opus',
+-            '/media/libopus/include',
 -           ]
 +          'cflags_mozilla': [
 +            '$(MOZ_OPUS_CFLAGS)',
@@ -239,10 +409,10 @@ index 00e77e7..55f48ab 100644
            'dependencies': [
              '<(DEPTH)/third_party/opus/opus.gyp:opus'
 diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
-index 27f488e..cd27084 100644
+index d42137a..695e75a8 100644
 --- toolkit/library/Makefile.in
 +++ toolkit/library/Makefile.in
-@@ -91,6 +91,18 @@ ifdef MOZ_NATIVE_HUNSPELL
+@@ -77,6 +77,34 @@ ifdef MOZ_NATIVE_HUNSPELL
  EXTRA_DSO_LDOPTS += $(MOZ_HUNSPELL_LIBS)
  endif
  
@@ -250,12 +420,28 @@ index 27f488e..cd27084 100644
 +EXTRA_DSO_LDOPTS += $(MOZ_OGG_LIBS)
 +endif
 +
++ifdef MOZ_NATIVE_THEORA
++EXTRA_DSO_LDOPTS += $(MOZ_THEORA_LIBS)
++endif
++
 +ifdef MOZ_NATIVE_VORBIS
 +EXTRA_DSO_LDOPTS += $(MOZ_VORBIS_LIBS)
 +endif
 +
++ifdef MOZ_NATIVE_TREMOR
++EXTRA_DSO_LDOPTS += $(MOZ_TREMOR_LIBS)
++endif
++
 +ifdef MOZ_NATIVE_OPUS
 +EXTRA_DSO_LDOPTS += $(MOZ_OPUS_LIBS)
++endif
++
++ifdef MOZ_NATIVE_SPEEX
++EXTRA_DSO_LDOPTS += $(MOZ_SPEEX_LIBS)
++endif
++
++ifdef MOZ_NATIVE_SOUNDTOUCH
++EXTRA_DSO_LDOPTS += $(MOZ_SOUNDTOUCH_LIBS)
 +endif
 +
  ifdef MOZ_NATIVE_LIBEVENT
