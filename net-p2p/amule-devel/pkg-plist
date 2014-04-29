@@ -281,4 +281,4 @@
 %%NLS%%@dirrmtry share/locale/it_CH
 %%NLS%%@dirrmtry share/locale/ko_KR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ko_KR
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
