@@ -1,4 +1,13 @@
 bin/iterm
+man/man1/iterm.1.gz
+%%PERL5_MAN3%%/IPA.3.gz
+%%PERL5_MAN3%%/IPA::Geometry.3.gz
+%%PERL5_MAN3%%/IPA::Global.3.gz
+%%PERL5_MAN3%%/IPA::Local.3.gz
+%%PERL5_MAN3%%/IPA::Misc.3.gz
+%%PERL5_MAN3%%/IPA::Morphology.3.gz
+%%PERL5_MAN3%%/IPA::Point.3.gz
+%%PERL5_MAN3%%/IPA::Region.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/IPA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/IPAsupp.h
 %%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/generic/Geometry.h
