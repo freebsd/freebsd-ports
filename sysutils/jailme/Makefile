@@ -11,7 +11,10 @@ COMMENT=	A setuid version of jexec to allow normal users access to jails
 
 PLIST_FILES=	sbin/jailme
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${STAGEDIR}${PREFIX}|' \
+		${WRKSRC}/${MAKEFILE}
+
 .include <bsd.port.mk>
