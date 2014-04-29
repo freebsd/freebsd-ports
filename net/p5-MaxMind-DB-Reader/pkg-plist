@@ -15,7 +15,6 @@ bin/mmdb-verify-database
 %%SITE_PERL%%/MaxMind/DB/Verifier.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind/DB/Reader/.packlist
 %%PERL5_MAN3%%/MaxMind::DB::Reader.3.gz
-%%PERL5_MAN3%%/MaxMind::DB::Reader::PP.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind/DB/Reader
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind/DB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind
