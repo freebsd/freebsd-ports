@@ -2,6 +2,10 @@ bin/getmail
 bin/getmail_fetch
 bin/getmail_maildir
 bin/getmail_mbox
+man/man1/getmail.1.gz
+man/man1/getmail_fetch.1.gz
+man/man1/getmail_maildir.1.gz
+man/man1/getmail_mbox.1.gz
 %%PYTHON_SITELIBDIR%%/getmailcore/__init__.py
 %%PYTHON_SITELIBDIR%%/getmailcore/__init__.pyc
 %%PYTHON_SITELIBDIR%%/getmailcore/__init__.pyo
@@ -44,6 +48,6 @@ bin/getmail_mbox
 %%PYTHON_SITELIBDIR%%/getmailcore/utilities.py
 %%PYTHON_SITELIBDIR%%/getmailcore/utilities.pyc
 %%PYTHON_SITELIBDIR%%/getmailcore/utilities.pyo
-%%EXAMPLESDIR%%/getmailrc-examples
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getmailrc-examples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/getmailcore
