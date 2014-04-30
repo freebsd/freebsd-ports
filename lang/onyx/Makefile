@@ -14,13 +14,17 @@ BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
 LIB_DEPENDS=	libedit.so:${PORTSDIR}/devel/libedit \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		desthack tar:bzip2
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libedit-prefix=${LOCALBASE} \
 		--with-pcre-prefix=${LOCALBASE}
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	ONYX_VERSION=${PORTVERSION}
+
+MAN1=		onyx.1 onyx_config.1
+
+NO_STAGE=	yes
 
 BROKEN_ia64=	Coredump during build on ia64
 
@@ -31,7 +35,10 @@ do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook)
 
 do-install:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} cook install)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook install)
+
+post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/onyx
+	 @${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
