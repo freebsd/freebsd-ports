@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	screen
-PORTVERSION=	4.0.3
-PORTREVISION=	14
+PORTVERSION=	4.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -30,18 +29,23 @@ SHOWENC_DESC=		Show encoding on the status line
 
 OPTIONS_SUB=
 
+USES=		gmake
+
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
 .if ${PORT_OPTIONS:MMAN}
-MAKE_ARGS+=	-DWITH_MAN
+MAKE_ARGS+=	WITH_MAN=1
+PLIST_SUB+=	MAN=""
+.else
+PLIST_SUB+=	MAN="@comment"
 .endif
 .if ${PORT_OPTIONS:MINFO}
 .if !exists(/usr/bin/install-info)
 RUN_DEPENDS+=	install-info:${PORTSDIR}/print/texinfo
 .endif
 INFO=		screen
-MAKE_ARGS+=	-DWITH_INFO
+MAKE_ARGS+=	WITH_INFO=1
 .endif
 
 # Enables support for 256 colour xterm.  Note that you may need to
