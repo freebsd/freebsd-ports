@@ -2,7 +2,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.8.0-7
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -33,16 +33,14 @@ COMMENT=	Image processing tools
 
 LICENSE=	APACHE20
 
-USES=		gmake pkgconfig:both pathfix perl5 shebangfix
+USES=		gmake libtool:keepla pathfix perl5 pkgconfig:both shebangfix
 SHEBANG_FILES=	www/source/examples.pl
 USE_XZ=		yes
 USE_PERL5=	run build patch
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libltdl
-# For some reason, using our libtool breaks the build into pieces:
-#USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --without-dps --without-lcms
+CONFIGURE_ARGS=	--without-dps --without-lcms
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
