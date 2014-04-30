@@ -51,6 +51,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="670d732a-cdd4-11e3-aac2-0022fb6fcf92">
+    <topic>mohawk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mohawk</name>
+	<range><lt>2.0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The mohawk project reports:</p>
+	<blockquote cite="http://fossil.bsdsx.fr/mohawk/tktview?name=1707f0e351">
+	  <p>Segfault when parsing malformed / unescaped url, coredump when setting syslog facility.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://fossil.bsdsx.fr/mohawk/tktview?name=1707f0e351</url>
+      <url>http://fossil.bsdsx.fr/mohawk/tktview?name=1c7565019e</url>
+    </references>
+    <dates>
+      <discovery>2014-04-10</discovery>
+      <entry>2014-04-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7cf25a0c-d031-11e3-947b-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
