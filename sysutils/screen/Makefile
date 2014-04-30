@@ -5,7 +5,12 @@ PORTNAME=	screen
 PORTVERSION=	4.0.3
 PORTREVISION=	14
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
+MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
+		ftp://ftp.gnu.org/gnu/screen/ \
+		ftp://gnu.mirror.iweb.com/screen/ \
+		http://gnu.mirror.iweb.com/screen/ \
+		http://mirror.sdunix.com/gnu/
+		ftp://mirrors.kernel.org/gnu/screen/ \
 		http://komquats.com/distfiles/ \
 		http://people.freebsd.org/~cy/distfiles/ \
 		GNU
