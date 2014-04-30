@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20140102
+PORTVERSION=	3.20140227
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
-		http://kitenet.net/~joey/debian/unstable/
+		http://kitenet.net/~joey/debian/unstable/ \
+		LOCAL/mat/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	A wiki compiler
 
 LICENSE=	GPLv2
-
-BROKEN=		Unfetchable
 
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
@@ -67,7 +66,8 @@ post-patch:
 		-e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
 	@${REINPLACE_CMD} -i '' \
-		-e "s|/etc/ikiwiki/wikilist|${PREFIX}/etc/ikiwiki/wikilist|" \
+		-e "s|/etc/ikiwiki|${ETCDIR}|" \
+		${WRKSRC}/auto.setup ${WRKSRC}/auto-blog.setup \
 		${WRKSRC}/ikiwiki-mass-rebuild \
 		${WRKSRC}/doc/ikiwiki-mass-rebuild.mdwn \
 		${WRKSRC}/ikiwiki-update-wikilist \
@@ -75,7 +75,7 @@ post-patch:
 	@${REINPLACE_CMD} -i '' \
 		-e 's|$$(PREFIX)/share/man|$$(PREFIX)/man|' \
 		-e 's|-wholename|-path|' \
-		-e 's|\(-install -d $$(DESTDIR)/etc/ikiwiki\)|#\1|' \
+		-e 's|\(-install -d $$(DESTDIR)$$(SYSCONFDIR)\)|#\1|' \
 		-e 's|\(-install -m 0644 wikilist\)|#\1|' \
 		-e 's|\(-install -m 0644 auto.setup\)|#\1|' \
 		-e 's|\(-install -m 0644 auto-blog.setup\)|#\1|' \
@@ -111,9 +111,9 @@ post-patch:
 .endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ikiwiki
-	${INSTALL_DATA} ${WRKSRC}/auto.setup ${STAGEDIR}${PREFIX}/etc/ikiwiki
-	${INSTALL_DATA} ${WRKSRC}/auto-blog.setup ${STAGEDIR}${PREFIX}/etc/ikiwiki
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/auto.setup ${STAGEDIR}${ETCDIR}/auto.setup.sample
+	${INSTALL_DATA} ${WRKSRC}/auto-blog.setup ${STAGEDIR}${ETCDIR}/auto-blog.setup.sample
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
