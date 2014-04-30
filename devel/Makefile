@@ -1108,6 +1108,7 @@
     SUBDIR += libsigsegv
     SUBDIR += libslang2
     SUBDIR += libslave
+    SUBDIR += libsmdev
     SUBDIR += libsoup
     SUBDIR += libsoup-gnome
     SUBDIR += libsoup-reference
