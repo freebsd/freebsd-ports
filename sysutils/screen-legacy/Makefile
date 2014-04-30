@@ -14,6 +14,7 @@ MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		http://komquats.com/distfiles/ \
 		http://people.freebsd.org/~cy/distfiles/ \
 		GNU
+PKGNAMESUFFIX=	-legacy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Multi-screen window manager
