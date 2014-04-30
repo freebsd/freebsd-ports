@@ -1,0 +1,18 @@
+bin/smdevinfo
+include/libsmdev.h
+include/libsmdev/codepage.h
+include/libsmdev/definitions.h
+include/libsmdev/error.h
+include/libsmdev/extern.h
+include/libsmdev/features.h
+include/libsmdev/types.h
+lib/libsmdev.a
+lib/libsmdev.so
+lib/libsmdev.so.1
+lib/libsmdev.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pysmdev.a
+%%PYTHON_SITELIBDIR%%/pysmdev.so
+libdata/pkgconfig/libsmdev.pc
+man/man1/smdevinfo.1.gz
+man/man3/libsmdev.3.gz
+@dirrm include/libsmdev
