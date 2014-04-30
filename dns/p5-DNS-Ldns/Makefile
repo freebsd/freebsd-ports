@@ -7,5 +7,4 @@ BUILD_P5PERL=yes
 
 PLIST=	${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
