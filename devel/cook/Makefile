@@ -18,20 +18,17 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=	c_incl.1 cook.1 cook_bom.1 cook_lic.1 cook_rsh.1 cookfp.1 cooktime.1 \
-	find_libs.1 make2cook.1 roffpp.1
-MANCOMPRESSED=	no
-USES=		gettext
+USES=		gettext perl5
+DESTDIRNAME=	RPM_BUILD_ROOT
 
 # Make sure that the whole directory tree exists.
-NO_STAGE=	yes
 pre-install:
-	${MKDIR} ${PREFIX}/share/cook/en/man1
-	${MKDIR} ${PREFIX}/lib/cook/en/LC_MESSAGES
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/cook/en/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/cook/en/LC_MESSAGES
 
 # cook installs extra copies of the manpages in a directory that MANLANG can't
 # cope with.  Delete the extra copies.
 post-install:
-	@${RM} -rf ${PREFIX}/share/cook/en/man1
+	@${RM} -rf ${STAGEDIR}${PREFIX}/share/cook/en/man1
 
 .include <bsd.port.mk>
