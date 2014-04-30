@@ -51,6 +51,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7cf25a0c-d031-11e3-947b-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>34.0.1847.132</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports (belatedly):</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>9 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[354967] High CVE-2014-1730: Type confusion in V8. Credit to
+	      Anonymous.</li>
+	    <li>[349903] High CVE-2014-1731: Type confusion in DOM. Credit to
+	      John Butler.</li>
+	    <li>[359802] High CVE-2014-1736: Integer overflow in V8. Credit to
+	      SkyLined working with HP's Zero Day Initiative.</li>
+	    <li>[352851] Medium CVE-2014-1732: Use-after-free in Speech
+	      Recognition. Credit to Khalil Zhani.</li>
+	    <li>[351103] Medium CVE-2014-1733: Compiler bug in Seccomp-BPF.
+	      Credit to Jed Davis.</li>
+	    <li>[367314] CVE-2014-1734: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[359130, 359525, 360429] CVE-2014-1735: Multiple
+	      vulnerabilities in V8 fixed in version 3.24.35.33.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1730</cvename>
+      <cvename>CVE-2014-1731</cvename>
+      <cvename>CVE-2014-1732</cvename>
+      <cvename>CVE-2014-1733</cvename>
+      <cvename>CVE-2014-1734</cvename>
+      <cvename>CVE-2014-1735</cvename>
+      <cvename>CVE-2014-1736</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-04-24</discovery>
+      <entry>2014-04-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="985d4d6c-cfbd-11e3-a003-b4b52fce4ce8">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
