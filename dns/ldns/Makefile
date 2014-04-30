@@ -135,4 +135,9 @@ post-install:
 
 .endif # BUILD_PYLDNS || BUILD_P5PERL
 
+.if defined(BUILD_P5PERL)
+post-stage::
+	${SED} -i '' 's|^${STAGEDIR}||' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/DNS/LDNS/.packlist
+.endif
+
 .include <bsd.port.mk>
