@@ -302,7 +302,7 @@ Use freely and get yourself a pademelon...
 +				if (2+subcmdVec[subi].subcmds+subcmdVec[subi].ishandle > (unsigned)argc) {
  					Tcl_SetResult(interp, "GD handle(s) not specified", TCL_STATIC);
  					return TCL_ERROR;
-@@ -369,12 +392,26 @@
+@@ -369,12 +392,27 @@
  							  subcmdVec[subi].ishandle);
  					  argi++) {
 -					if (! gdHandleXlate(interp, gdData->handleTbl, 
@@ -321,10 +321,11 @@ Use freely and get yourself a pademelon...
 +			if (clientData != NULL && subcmdVec[subi].unsafearg != 0) {
 +				const char *fname =
 +				    Tcl_GetString(objv[subcmdVec[subi].unsafearg]);
-+				if (!Tcl_IsChannelExisting(fname))
-+				Tcl_AppendResult(interp, "Access to ", fname,
-+				    " not allowed in safe interpreter", TCL_STATIC);
-+				return TCL_ERROR;
++				if (!Tcl_IsChannelExisting(fname)) {
++					Tcl_AppendResult(interp, "Access to ", fname,
++					    " not allowed in safe interpreter", TCL_STATIC);
++					return TCL_ERROR;
++				}
 +			}
 +
  			/* Call the subcommand function. */
