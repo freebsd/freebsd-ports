@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140428:
+AUTHOR: bapt@FreeBSD.org
+
+  EXTRA_PATCHES has been extended to support a new syntax:
+
+  EXTRA_PATCHES=	file:-pX
+
+  Where X is the pathname strip count passed to patch(1)
+
 20140423:
 AUTHOR: tijl@FreeBSD.org
 
