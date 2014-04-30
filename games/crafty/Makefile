@@ -61,7 +61,6 @@ DISTFILES+=	${UTILS:S/$/:utils/}
 
 .if ${PORT_OPTIONS:MBOOK}
 BOOKS+=		book.bin
-DISTFILES+=	${BOOKS:S/$/:books/}
 PKGNAMESUFFIX=	-open-default
 CONFLICTS+=	crafty-open-enormous-* crafty-open-large-* crafty-open-medium-*
 .endif
