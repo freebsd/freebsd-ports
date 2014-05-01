@@ -6,6 +6,7 @@ PORTVERSION=	6.2.1
 PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
+PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	freebsd-ports@charlieroot.de
 COMMENT=	The typo3 content management system
