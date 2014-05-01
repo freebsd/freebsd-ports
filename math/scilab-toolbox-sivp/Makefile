@@ -2,7 +2,7 @@
 
 PORTNAME=	sivp
 DISTVERSION=	1.0.0.r286
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math graphics multimedia
 MASTER_SITES=	LOCAL/makc
 PKGNAMEPREFIX=	scilab-toolbox-
@@ -14,8 +14,8 @@ BUILD_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 LIB_DEPENDS=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
 RUN_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 
-USES=		pkgconfig
-USE_XZ=		yes
+USES=		dos2unix pkgconfig tar:xz
+DOS2UNIX_FILES=	etc/SIVP.start
 
 SCILAB_CMD=	${LOCALBASE}/bin/scilab
 CONTRIBDIR?=	share/scilab/contrib
