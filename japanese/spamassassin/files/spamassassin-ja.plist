@@ -7,6 +7,4 @@
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Tokenizer::MeCab.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Tokenizer::SimpleJA.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Util::Charset.3.gz
-@unexec if cmp -s %D/%%ETCDIR%%/%%TOKENIZER_PRE%%.sample %D/%%ETCDIR%%/%%TOKENIZER_PRE%%; then rm -f %D/%%ETCDIR%%/%%TOKENIZER_PRE%%; fi
-%%ETCDIR%%/%%TOKENIZER_PRE%%.sample
-@exec if [ ! -f %B/%%TOKENIZER_PRE%% ]; then cp -p %B/%f %B/%%TOKENIZER_PRE%%; fi
+@sample %%ETCDIR%%/%%TOKENIZER_PRE%%.sample
