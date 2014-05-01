@@ -1,4 +1,5 @@
 bin/gcipher
+man/man1/gcipher.1.gz
 share/applications/gcipher.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIB
 %%PORTDOCS%%%%DOCSDIR%%/README

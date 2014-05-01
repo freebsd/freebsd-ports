@@ -3,6 +3,7 @@
 
 PORTNAME=	bruteforceblocker
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
 		${MASTER_SITE_LOCAL}
@@ -20,27 +21,17 @@ NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
+PORT_OPTIONS=	DOCS
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/sbin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf-dist
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in INSTALL CHANGELOG CREDITS
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
-		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf-dist ${PREFIX}/etc/${PORTNAME}.conf ; \
-	fi
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>

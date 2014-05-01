@@ -17,7 +17,6 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -31,8 +30,8 @@ pre-install:
 		< ${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/* ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>

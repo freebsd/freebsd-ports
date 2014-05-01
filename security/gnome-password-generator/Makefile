@@ -13,14 +13,13 @@ COMMENT=	GNOME 2 password generator
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${SED} -e 's|/usr/bin/python|${PYTHON_CMD}|g ; \
 		 s|/usr/share|${PREFIX}/share|g' ${PORTNAME}.py > ${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.png ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/*.desktop ${PREFIX}/share/applications
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/*.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/*.desktop ${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>

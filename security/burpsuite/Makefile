@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		%%JAVAJARDIR%%/${DISTNAME}.jar
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Get BSFEL agreement
@@ -32,16 +31,16 @@ pre-extract:
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 pre-install:
-	@${SED} -e 's:%%PATH%%:${JAVAJARDIR}/:' \
+	${SED} -e 's:%%PATH%%:${JAVAJARDIR}/:' \
 		-e 's:%%JAVA_CMD%%:${JAVA}:' \
 		-e 's:%%BURP%%:${JAVAJARDIR}/${DISTNAME}.jar:' \
 		< ${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>
