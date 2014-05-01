@@ -24,20 +24,22 @@ USE_SDL=	mixer net sdl
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README
+OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
-DESKTOP_ENTRIES="Pacman Arena" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES="Pacman Arena" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@prefix@|${DATADIR}| ; \
+	@${REINPLACE_CMD} -e 's|@prefix@|${DATADIR}|; \
 		s|@datadir@/pacman|${DATADIR}|' \
-		 ${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:S/arena//} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:S/arena//} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for d in gfx sfx
 	@(cd ${WRKSRC}/../ && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
@@ -50,7 +52,7 @@ do-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
