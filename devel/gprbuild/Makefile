@@ -3,7 +3,7 @@
 
 PORTNAME=	gprbuild
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	gprbuild-gpl-${YEAR}-src
@@ -25,7 +25,7 @@ USES=		ada gmake
 MAKE_ARGS+=	BUILD=production
 MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER}
 PORTDOCS=	html txt pdf info
-PORTEXAMPLES=	.
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
