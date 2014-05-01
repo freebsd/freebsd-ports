@@ -27,7 +27,7 @@ OPTIONS_SUB=	yes
 FOP_DESC=		textproc/fop plugin (required for math/scilab)
 FOP_BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
 			${JAVALIBDIR}/xmlgraphics-commons.jar:${PORTSDIR}/graphics/xmlgraphics-commons
-FOP_RUN_DEPENDS:=	${FOP_BUILD_DEPENDS}
+FOP_RUN_DEPENDS:=	${FOP_BUILD_DEPENDS} \
 			${JAVASHAREDIR}/batik/batik.jar:${PORTSDIR}/graphics/batik \
 			${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
 			${JAVALIBDIR}/commons-io.jar:${PORTSDIR}/devel/jakarta-commons-io \
