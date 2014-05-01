@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	seqtools
-PORTVERSION=	4.24
-PORTREVISION=	1
+PORTVERSION=	4.25
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/seqtools/PRODUCTION/
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Tools for visualising sequence alignments
 
 LICENSE=        GPLv3
