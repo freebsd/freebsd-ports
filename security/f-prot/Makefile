@@ -45,7 +45,7 @@ do-install:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 	${CP} ${WRKSRC}/doc/CHANGES ${STAGEDIR}${DOCSDIR}
 	${CP} ${WRKSRC}/doc/LICENSE ${STAGEDIR}${DOCSDIR}
 	${CP} ${WRKSRC}/doc/LICENSE-FPAV ${STAGEDIR}${DOCSDIR}
