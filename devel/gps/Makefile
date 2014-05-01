@@ -124,7 +124,5 @@ post-install:
 	   -e 's/^/@dirrm /g' >> ${TMPPLIST}
 	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${TMPPLIST}
 	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/examples 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
