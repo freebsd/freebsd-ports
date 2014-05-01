@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -145,8 +145,14 @@ ICONV_LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 .endif
 
 post-extract:
-	@${CP} ${FILESDIR}/jdk-test-javax-imageio-plugins-jpeg-truncated.jpg \
-	    ${WRKSRC}/jdk/test/javax/imageio/plugins/jpeg/truncated.jpg
+	@${MV} -f ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-debug \
+	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx
+	@${MV} -f ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-product \
+	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-product.macosx
+	@${CP} -f ${WRKSRC}/hotspot/make/linux/makefiles/mapfile-vers-debug \
+	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-debug
+	@${CP} -f ${WRKSRC}/hotspot/make/linux/makefiles/mapfile-vers-product \
+	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-product
 	@${MKDIR} ${WRKSRC}/jdk/src/bsd/classes/java/net \
 	    ${WRKSRC}/jdk/src/bsd/classes/sun/nio/ch
 	@${MV} -f ${WRKSRC}/jdk/src/macosx/classes/java/net/DefaultInterface.java \
@@ -162,6 +168,8 @@ post-extract:
 	    ${WRKSRC}/jdk/src/macosx/native/sun/nio
 	@${CP} -f ${WRKSRC}/jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd \
 	    ${WRKSRC}/jdk/src/solaris/classes/java/lang/UNIXProcess.java.macosx
+	@${CP} -f ${FILESDIR}/jdk-test-javax-imageio-plugins-jpeg-truncated.jpg \
+	    ${WRKSRC}/jdk/test/javax/imageio/plugins/jpeg/truncated.jpg
 
 post-patch:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
@@ -198,15 +206,11 @@ post-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
 	@cd ${JDK_IMAGEDIR} && \
-	    ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR} \
-	    "-not ( -type d -name bin -prune )"
-	@cd ${JDK_IMAGEDIR} && \
-	    ${COPYTREE_BIN} "bin jre/bin" ${STAGEDIR}${INSTALLDIR}
-	@${INSTALL_PROGRAM} ${JDK_IMAGEDIR}/jre/lib/${ARCH}/jexec \
-	    ${JDK_IMAGEDIR}/jre/lib/${ARCH}/jspawnhelper \
-	    ${STAGEDIR}${INSTALLDIR}/jre/lib/${ARCH}
-	@${INSTALL_PROGRAM} ${JDK_IMAGEDIR}/lib/${ARCH}/jexec \
-	    ${STAGEDIR}${INSTALLDIR}/lib/${ARCH}
+	    ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
+	@cd ${STAGEDIR}${INSTALLDIR} && \
+	    ${FIND} bin jre/bin -type f -exec ${CHMOD} ${BINMODE} {} \; && \
+	    ${CHMOD} ${BINMODE} jre/lib/${ARCH}/jexec \
+	    jre/lib/${ARCH}/jspawnhelper lib/${ARCH}/jexec
 	@${ECHO} "@unexec ${LOCALBASE}/bin/unregistervm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${STAGEDIR}${INSTALLDIR} -not -type d | ${SORT} | \
 	    ${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}

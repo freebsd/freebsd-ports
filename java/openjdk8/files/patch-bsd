@@ -141,7 +141,7 @@
      CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DLINUX"
 --- hotspot/make/bsd/makefiles/build_vm_def.sh
 +++ hotspot/make/bsd/makefiles/build_vm_def.sh
-@@ -1,12 +1,21 @@
+@@ -1,12 +1,22 @@
  #!/bin/sh
  
  # If we're cross compiling use that path for nm
@@ -155,18 +155,33 @@
 -$NM -Uj $* | awk '
 -   { if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 }
 -   '
-+case `uname` in
-+    *BSD )
-+        $NM --defined-only $* | awk '
-+            { if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 ";" }
-+        '
-+        ;;
-+    Darwin )
-+        $NM -Uj $* | awk '
-+            { if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 }
-+        '
-+        ;;
-+esac
++if [ "$(uname -s)" = Darwin ]; then
++    $NM -Uj $* | awk '
++        { if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 }
++    '
++    exit
++fi
++$NM --defined-only $* \
++    | awk '{
++              if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 ";"
++              if ($3 ~ /^UseSharedSpaces$/) print "\t" $3 ";"
++              if ($3 ~ /^_ZN9Arguments17SharedArchivePathE$/) print "\t" $3 ";"
++          }' \
++    | sort -u
+--- hotspot/make/bsd/makefiles/debug.make
++++ hotspot/make/bsd/makefiles/debug.make
+@@ -35,7 +35,10 @@
+ # to inhibit the effect of the previous line on CFLAGS.
+ 
+ # Linker mapfile
+-MAPFILE = $(GAMMADIR)/make/bsd/makefiles/mapfile-vers-debug
++ifeq ($(OS_VENDOR), Darwin)
++MAPSUFX = .macosx
++endif
++MAPFILE = $(GAMMADIR)/make/bsd/makefiles/mapfile-vers-debug$(MAPSUFX)
+ 
+ VERSION = debug
+ SYSDEFS += -DASSERT
 --- hotspot/make/bsd/makefiles/defs.make
 +++ hotspot/make/bsd/makefiles/defs.make
 @@ -254,7 +254,7 @@
@@ -178,6 +193,20 @@
  
  # Library suffix
  ifeq ($(OS_VENDOR),Darwin)
+--- hotspot/make/bsd/makefiles/fastdebug.make
++++ hotspot/make/bsd/makefiles/fastdebug.make
+@@ -56,7 +56,10 @@
+ # to inhibit the effect of the previous line on CFLAGS.
+ 
+ # Linker mapfile
+-MAPFILE = $(GAMMADIR)/make/bsd/makefiles/mapfile-vers-debug
++ifeq ($(OS_VENDOR), Darwin)
++MAPSUFX = .macosx
++endif
++MAPFILE = $(GAMMADIR)/make/bsd/makefiles/mapfile-vers-debug$(MAPSUFX)
+ 
+ VERSION = fastdebug
+ SYSDEFS += -DASSERT -DCHECK_UNHANDLED_OOPS
 --- hotspot/make/bsd/makefiles/gcc.make
 +++ hotspot/make/bsd/makefiles/gcc.make
 @@ -168,6 +168,10 @@
@@ -335,945 +364,53 @@
 +
 --- hotspot/make/bsd/makefiles/mapfile-vers-debug
 +++ hotspot/make/bsd/makefiles/mapfile-vers-debug
-@@ -24,238 +24,245 @@
- # Only used for OSX/Darwin builds
- 
- # Define public interface.
--                # _JNI
--                _JNI_CreateJavaVM
--                _JNI_GetCreatedJavaVMs
--                _JNI_GetDefaultJavaVMInitArgs
--
--                # _JVM
--                _JVM_Accept
--                _JVM_ActiveProcessorCount
--                _JVM_AllocateNewArray
--                _JVM_AllocateNewObject
--                _JVM_ArrayCopy
--                _JVM_AssertionStatusDirectives
--                _JVM_Available
--                _JVM_Bind
--                _JVM_ClassDepth
--                _JVM_ClassLoaderDepth
--                _JVM_Clone
--                _JVM_Close
--                _JVM_CX8Field
--                _JVM_CompileClass
--                _JVM_CompileClasses
--                _JVM_CompilerCommand
--                _JVM_Connect
--                _JVM_ConstantPoolGetClassAt
--                _JVM_ConstantPoolGetClassAtIfLoaded
--                _JVM_ConstantPoolGetDoubleAt
--                _JVM_ConstantPoolGetFieldAt
--                _JVM_ConstantPoolGetFieldAtIfLoaded
--                _JVM_ConstantPoolGetFloatAt
--                _JVM_ConstantPoolGetIntAt
--                _JVM_ConstantPoolGetLongAt
--                _JVM_ConstantPoolGetMethodAt
--                _JVM_ConstantPoolGetMethodAtIfLoaded
--                _JVM_ConstantPoolGetMemberRefInfoAt
--                _JVM_ConstantPoolGetSize
--                _JVM_ConstantPoolGetStringAt
--                _JVM_ConstantPoolGetUTF8At
--                _JVM_CountStackFrames
--                _JVM_CurrentClassLoader
--                _JVM_CurrentLoadedClass
--                _JVM_CurrentThread
--                _JVM_CurrentTimeMillis
--                _JVM_DefineClass
--                _JVM_DefineClassWithSource
--                _JVM_DefineClassWithSourceCond
--                _JVM_DesiredAssertionStatus
--                _JVM_DisableCompiler
--                _JVM_DoPrivileged
--                _JVM_DTraceGetVersion
--                _JVM_DTraceActivate
--                _JVM_DTraceIsProbeEnabled
--                _JVM_DTraceIsSupported
--                _JVM_DTraceDispose
--                _JVM_DumpAllStacks
--                _JVM_DumpThreads
--                _JVM_EnableCompiler
--                _JVM_Exit
--                _JVM_FillInStackTrace
--                _JVM_FindClassFromClass
--                _JVM_FindClassFromClassLoader
--                _JVM_FindClassFromBootLoader
--                _JVM_FindLibraryEntry
--                _JVM_FindLoadedClass
--                _JVM_FindPrimitiveClass
--                _JVM_FindSignal
--                _JVM_FreeMemory
--                _JVM_GC
--                _JVM_GetAllThreads
--                _JVM_GetArrayElement
--                _JVM_GetArrayLength
--                _JVM_GetCPClassNameUTF
--                _JVM_GetCPFieldClassNameUTF
--                _JVM_GetCPFieldModifiers
--                _JVM_GetCPFieldNameUTF
--                _JVM_GetCPFieldSignatureUTF
--                _JVM_GetCPMethodClassNameUTF
--                _JVM_GetCPMethodModifiers
--                _JVM_GetCPMethodNameUTF
--                _JVM_GetCPMethodSignatureUTF
--                _JVM_GetCallerClass
--                _JVM_GetClassAccessFlags
--                _JVM_GetClassAnnotations
--                _JVM_GetClassCPEntriesCount
--                _JVM_GetClassCPTypes
--                _JVM_GetClassConstantPool
--                _JVM_GetClassContext
--                _JVM_GetClassDeclaredConstructors
--                _JVM_GetClassDeclaredFields
--                _JVM_GetClassDeclaredMethods
--                _JVM_GetClassFieldsCount
--                _JVM_GetClassInterfaces
--                _JVM_GetClassLoader
--                _JVM_GetClassMethodsCount
--                _JVM_GetClassModifiers
--                _JVM_GetClassName
--                _JVM_GetClassNameUTF
--                _JVM_GetClassSignature
--                _JVM_GetClassSigners
--                _JVM_GetClassTypeAnnotations
--                _JVM_GetComponentType
--                _JVM_GetDeclaredClasses
--                _JVM_GetDeclaringClass
--                _JVM_GetEnclosingMethodInfo
--                _JVM_GetFieldAnnotations
--                _JVM_GetFieldIxModifiers
--                _JVM_GetFieldTypeAnnotations
--                _JVM_GetHostName
--                _JVM_GetInheritedAccessControlContext
--                _JVM_GetInterfaceVersion
--                _JVM_GetLastErrorString
--                _JVM_GetManagement
--                _JVM_GetMethodAnnotations
--                _JVM_GetMethodDefaultAnnotationValue
--                _JVM_GetMethodIxArgsSize
--                _JVM_GetMethodIxByteCode
--                _JVM_GetMethodIxByteCodeLength
--                _JVM_GetMethodIxExceptionIndexes
--                _JVM_GetMethodIxExceptionTableEntry
--                _JVM_GetMethodIxExceptionTableLength
--                _JVM_GetMethodIxExceptionsCount
--                _JVM_GetMethodIxLocalsCount
--                _JVM_GetMethodIxMaxStack
--                _JVM_GetMethodIxModifiers
--                _JVM_GetMethodIxNameUTF
--                _JVM_GetMethodIxSignatureUTF
--                _JVM_GetMethodParameterAnnotations
--                _JVM_GetMethodParameters
--                _JVM_GetMethodTypeAnnotations
--                _JVM_GetPrimitiveArrayElement
--                _JVM_GetProtectionDomain
--                _JVM_GetSockName
--                _JVM_GetSockOpt
--                _JVM_GetStackAccessControlContext
--                _JVM_GetStackTraceDepth
--                _JVM_GetStackTraceElement
--                _JVM_GetSystemPackage
--                _JVM_GetSystemPackages
--                _JVM_GetThreadStateNames
--                _JVM_GetThreadStateValues
--                _JVM_GetVersionInfo
--                _JVM_Halt
--                _JVM_HoldsLock
--                _JVM_IHashCode
--                _JVM_InitAgentProperties
--                _JVM_InitProperties
--                _JVM_InitializeCompiler
--                _JVM_InitializeSocketLibrary
--                _JVM_InternString
--                _JVM_Interrupt
--                _JVM_InvokeMethod
--                _JVM_IsArrayClass
--                _JVM_IsConstructorIx
--                _JVM_IsInterface
--                _JVM_IsInterrupted
--                _JVM_IsNaN
--                _JVM_IsPrimitiveClass
--                _JVM_IsSameClassPackage
--                _JVM_IsSilentCompiler
--                _JVM_IsSupportedJNIVersion
--                _JVM_IsThreadAlive
--                _JVM_IsVMGeneratedMethodIx
--                _JVM_LatestUserDefinedLoader
--                _JVM_Listen
--                _JVM_LoadClass0
--                _JVM_LoadLibrary
--                _JVM_Lseek
--                _JVM_MaxObjectInspectionAge
--                _JVM_MaxMemory
--                _JVM_MonitorNotify
--                _JVM_MonitorNotifyAll
--                _JVM_MonitorWait
--                _JVM_NanoTime
--                _JVM_NativePath
--                _JVM_NewArray
--                _JVM_NewInstanceFromConstructor
--                _JVM_NewMultiArray
--                _JVM_OnExit
--                _JVM_Open
--                _JVM_RaiseSignal
--                _JVM_RawMonitorCreate
--                _JVM_RawMonitorDestroy
--                _JVM_RawMonitorEnter
--                _JVM_RawMonitorExit
--                _JVM_Read
--                _JVM_Recv
--                _JVM_RecvFrom
--                _JVM_RegisterSignal
--                _JVM_ReleaseUTF
--                _JVM_ResolveClass
--                _JVM_ResumeThread
--                _JVM_Send
--                _JVM_SendTo
--                _JVM_SetArrayElement
--                _JVM_SetClassSigners
--                _JVM_SetLength
--                _JVM_SetNativeThreadName
--                _JVM_SetPrimitiveArrayElement
--                _JVM_SetSockOpt
--                _JVM_SetThreadPriority
--                _JVM_Sleep
--                _JVM_Socket
--                _JVM_SocketAvailable
--                _JVM_SocketClose
--                _JVM_SocketShutdown
--                _JVM_StartThread
--                _JVM_StopThread
--                _JVM_SuspendThread
--                _JVM_SupportsCX8
--                _JVM_Sync
--                _JVM_Timeout
--                _JVM_TotalMemory
--                _JVM_TraceInstructions
--                _JVM_TraceMethodCalls
--                _JVM_UnloadLibrary
--                _JVM_Write
--                _JVM_Yield
--                _JVM_handle_bsd_signal
--
--                # debug _JVM
--                _JVM_AccessVMBooleanFlag
--                _JVM_AccessVMIntFlag
--                _JVM_VMBreakPoint
-+
-+SUNWprivate_1.1 {
-+        global:
-+                # JNI
-+                JNI_CreateJavaVM;
-+                JNI_GetCreatedJavaVMs;
-+                JNI_GetDefaultJavaVMInitArgs;
-+
-+                # JVM
-+                JVM_Accept;
-+                JVM_ActiveProcessorCount;
-+                JVM_AllocateNewArray;
-+                JVM_AllocateNewObject;
-+                JVM_ArrayCopy;
-+                JVM_AssertionStatusDirectives;
-+                JVM_Available;
-+                JVM_Bind;
-+                JVM_ClassDepth;
-+                JVM_ClassLoaderDepth;
-+                JVM_Clone;
-+                JVM_Close;
-+                JVM_CX8Field;
-+                JVM_CompileClass;
-+                JVM_CompileClasses;
-+                JVM_CompilerCommand;
-+                JVM_Connect;
-+                JVM_ConstantPoolGetClassAt;
-+                JVM_ConstantPoolGetClassAtIfLoaded;
-+                JVM_ConstantPoolGetDoubleAt;
-+                JVM_ConstantPoolGetFieldAt;
-+                JVM_ConstantPoolGetFieldAtIfLoaded;
-+                JVM_ConstantPoolGetFloatAt;
-+                JVM_ConstantPoolGetIntAt;
-+                JVM_ConstantPoolGetLongAt;
-+                JVM_ConstantPoolGetMethodAt;
-+                JVM_ConstantPoolGetMethodAtIfLoaded;
-+                JVM_ConstantPoolGetMemberRefInfoAt;
-+                JVM_ConstantPoolGetSize;
-+                JVM_ConstantPoolGetStringAt;
-+                JVM_ConstantPoolGetUTF8At;
-+                JVM_CountStackFrames;
-+                JVM_CurrentClassLoader;
-+                JVM_CurrentLoadedClass;
-+                JVM_CurrentThread;
-+                JVM_CurrentTimeMillis;
-+                JVM_DefineClass;
-+                JVM_DefineClassWithSource;
-+                JVM_DefineClassWithSourceCond;
-+                JVM_DesiredAssertionStatus;
-+                JVM_DisableCompiler;
-+                JVM_DoPrivileged;
-+                JVM_DTraceGetVersion;
-+                JVM_DTraceActivate;
-+                JVM_DTraceIsProbeEnabled;
-+                JVM_DTraceIsSupported;
-+                JVM_DTraceDispose;
-+                JVM_DumpAllStacks;
-+                JVM_DumpThreads;
-+                JVM_EnableCompiler;
-+                JVM_Exit;
-+                JVM_FillInStackTrace;
-+                JVM_FindClassFromClass;
-+                JVM_FindClassFromClassLoader;
-+                JVM_FindClassFromBootLoader;
-+                JVM_FindLibraryEntry;
-+                JVM_FindLoadedClass;
-+                JVM_FindPrimitiveClass;
-+                JVM_FindSignal;
-+                JVM_FreeMemory;
-+                JVM_GC;
-+                JVM_GetAllThreads;
-+                JVM_GetArrayElement;
-+                JVM_GetArrayLength;
-+                JVM_GetCPClassNameUTF;
-+                JVM_GetCPFieldClassNameUTF;
-+                JVM_GetCPFieldModifiers;
-+                JVM_GetCPFieldNameUTF;
-+                JVM_GetCPFieldSignatureUTF;
-+                JVM_GetCPMethodClassNameUTF;
-+                JVM_GetCPMethodModifiers;
-+                JVM_GetCPMethodNameUTF;
-+                JVM_GetCPMethodSignatureUTF;
-+                JVM_GetCallerClass;
-+                JVM_GetClassAccessFlags;
-+                JVM_GetClassAnnotations;
-+                JVM_GetClassCPEntriesCount;
-+                JVM_GetClassCPTypes;
-+                JVM_GetClassConstantPool;
-+                JVM_GetClassContext;
-+                JVM_GetClassDeclaredConstructors;
-+                JVM_GetClassDeclaredFields;
-+                JVM_GetClassDeclaredMethods;
-+                JVM_GetClassFieldsCount;
-+                JVM_GetClassInterfaces;
-+                JVM_GetClassLoader;
-+                JVM_GetClassMethodsCount;
-+                JVM_GetClassModifiers;
-+                JVM_GetClassName;
-+                JVM_GetClassNameUTF;
-+                JVM_GetClassSignature;
-+                JVM_GetClassSigners;
-+                JVM_GetClassTypeAnnotations;
-+                JVM_GetComponentType;
-+                JVM_GetDeclaredClasses;
-+                JVM_GetDeclaringClass;
-+                JVM_GetEnclosingMethodInfo;
-+                JVM_GetFieldAnnotations;
-+                JVM_GetFieldIxModifiers;
-+                JVM_GetFieldTypeAnnotations;
-+                JVM_GetHostName;
-+                JVM_GetInheritedAccessControlContext;
-+                JVM_GetInterfaceVersion;
-+                JVM_GetLastErrorString;
-+                JVM_GetManagement;
-+                JVM_GetMethodAnnotations;
-+                JVM_GetMethodDefaultAnnotationValue;
-+                JVM_GetMethodIxArgsSize;
-+                JVM_GetMethodIxByteCode;
-+                JVM_GetMethodIxByteCodeLength;
-+                JVM_GetMethodIxExceptionIndexes;
-+                JVM_GetMethodIxExceptionTableEntry;
-+                JVM_GetMethodIxExceptionTableLength;
-+                JVM_GetMethodIxExceptionsCount;
-+                JVM_GetMethodIxLocalsCount;
-+                JVM_GetMethodIxMaxStack;
-+                JVM_GetMethodIxModifiers;
-+                JVM_GetMethodIxNameUTF;
-+                JVM_GetMethodIxSignatureUTF;
-+                JVM_GetMethodParameterAnnotations;
-+                JVM_GetMethodParameters;
-+                JVM_GetMethodTypeAnnotations;
-+                JVM_GetPrimitiveArrayElement;
-+                JVM_GetProtectionDomain;
-+                JVM_GetSockName;
-+                JVM_GetSockOpt;
-+                JVM_GetStackAccessControlContext;
-+                JVM_GetStackTraceDepth;
-+                JVM_GetStackTraceElement;
-+                JVM_GetSystemPackage;
-+                JVM_GetSystemPackages;
-+                JVM_GetThreadStateNames;
-+                JVM_GetThreadStateValues;
-+                JVM_GetVersionInfo;
-+                JVM_Halt;
-+                JVM_HoldsLock;
-+                JVM_IHashCode;
-+                JVM_InitAgentProperties;
-+                JVM_InitProperties;
-+                JVM_InitializeCompiler;
-+                JVM_InitializeSocketLibrary;
-+                JVM_InternString;
-+                JVM_Interrupt;
-+                JVM_InvokeMethod;
-+                JVM_IsArrayClass;
-+                JVM_IsConstructorIx;
-+                JVM_IsInterface;
-+                JVM_IsInterrupted;
-+                JVM_IsNaN;
-+                JVM_IsPrimitiveClass;
-+                JVM_IsSameClassPackage;
-+                JVM_IsSilentCompiler;
-+                JVM_IsSupportedJNIVersion;
-+                JVM_IsThreadAlive;
-+                JVM_IsVMGeneratedMethodIx;
-+                JVM_LatestUserDefinedLoader;
-+                JVM_Listen;
-+                JVM_LoadClass0;
-+                JVM_LoadLibrary;
-+                JVM_Lseek;
-+                JVM_MaxObjectInspectionAge;
-+                JVM_MaxMemory;
-+                JVM_MonitorNotify;
-+                JVM_MonitorNotifyAll;
-+                JVM_MonitorWait;
-+                JVM_NanoTime;
-+                JVM_NativePath;
-+                JVM_NewArray;
-+                JVM_NewInstanceFromConstructor;
-+                JVM_NewMultiArray;
-+                JVM_OnExit;
-+                JVM_Open;
-+                JVM_RaiseSignal;
-+                JVM_RawMonitorCreate;
-+                JVM_RawMonitorDestroy;
-+                JVM_RawMonitorEnter;
-+                JVM_RawMonitorExit;
-+                JVM_Read;
-+                JVM_Recv;
-+                JVM_RecvFrom;
-+                JVM_RegisterSignal;
-+                JVM_ReleaseUTF;
-+                JVM_ResolveClass;
-+                JVM_ResumeThread;
-+                JVM_Send;
-+                JVM_SendTo;
-+                JVM_SetArrayElement;
-+                JVM_SetClassSigners;
-+                JVM_SetLength;
-+                JVM_SetNativeThreadName;
-+                JVM_SetPrimitiveArrayElement;
-+                JVM_SetSockOpt;
-+                JVM_SetThreadPriority;
-+                JVM_Sleep;
-+                JVM_Socket;
-+                JVM_SocketAvailable;
-+                JVM_SocketClose;
-+                JVM_SocketShutdown;
-+                JVM_StartThread;
-+                JVM_StopThread;
-+                JVM_SuspendThread;
-+                JVM_SupportsCX8;
-+                JVM_Sync;
-+                JVM_Timeout;
-+                JVM_TotalMemory;
-+                JVM_TraceInstructions;
-+                JVM_TraceMethodCalls;
-+                JVM_UnloadLibrary;
-+                JVM_Write;
-+                JVM_Yield;
+@@ -242,7 +242,7 @@
+                 JVM_UnloadLibrary;
+                 JVM_Write;
+                 JVM_Yield;
+-                JVM_handle_linux_signal;
 +                JVM_handle_bsd_signal;
-+
-+                # debug JVM
-+                JVM_AccessVMBooleanFlag;
-+                JVM_AccessVMIntFlag;
-+                JVM_VMBreakPoint;
  
-                 # miscellaneous functions
--                _jio_fprintf
--                _jio_printf
--                _jio_snprintf
--                _jio_vfprintf
--                _jio_vsnprintf
-+                jio_fprintf;
-+                jio_printf;
-+                jio_snprintf;
-+                jio_vfprintf;
-+                jio_vsnprintf;
- 
-                 # This is for Forte Analyzer profiling support.
--                _AsyncGetCallTrace
-+                AsyncGetCallTrace;
- 
-                 # INSERT VTABLE SYMBOLS HERE
- 
-+        local:
-+                *;
-+};
-+
+                 # debug JVM
+                 JVM_AccessVMBooleanFlag;
 --- hotspot/make/bsd/makefiles/mapfile-vers-product
 +++ hotspot/make/bsd/makefiles/mapfile-vers-product
-@@ -24,233 +24,239 @@
- # Only used for OSX/Darwin builds
- 
- # Define public interface.
--                # _JNI
--                _JNI_CreateJavaVM
--                _JNI_GetCreatedJavaVMs
--                _JNI_GetDefaultJavaVMInitArgs
--
--                # _JVM
--                _JVM_Accept
--                _JVM_ActiveProcessorCount
--                _JVM_AllocateNewArray
--                _JVM_AllocateNewObject
--                _JVM_ArrayCopy
--                _JVM_AssertionStatusDirectives
--                _JVM_Available
--                _JVM_Bind
--                _JVM_ClassDepth
--                _JVM_ClassLoaderDepth
--                _JVM_Clone
--                _JVM_Close
--                _JVM_CX8Field
--                _JVM_CompileClass
--                _JVM_CompileClasses
--                _JVM_CompilerCommand
--                _JVM_Connect
--                _JVM_ConstantPoolGetClassAt
--                _JVM_ConstantPoolGetClassAtIfLoaded
--                _JVM_ConstantPoolGetDoubleAt
--                _JVM_ConstantPoolGetFieldAt
--                _JVM_ConstantPoolGetFieldAtIfLoaded
--                _JVM_ConstantPoolGetFloatAt
--                _JVM_ConstantPoolGetIntAt
--                _JVM_ConstantPoolGetLongAt
--                _JVM_ConstantPoolGetMethodAt
--                _JVM_ConstantPoolGetMethodAtIfLoaded
--                _JVM_ConstantPoolGetMemberRefInfoAt
--                _JVM_ConstantPoolGetSize
--                _JVM_ConstantPoolGetStringAt
--                _JVM_ConstantPoolGetUTF8At
--                _JVM_CountStackFrames
--                _JVM_CurrentClassLoader
--                _JVM_CurrentLoadedClass
--                _JVM_CurrentThread
--                _JVM_CurrentTimeMillis
--                _JVM_DefineClass
--                _JVM_DefineClassWithSource
--                _JVM_DefineClassWithSourceCond
--                _JVM_DesiredAssertionStatus
--                _JVM_DisableCompiler
--                _JVM_DoPrivileged
--                _JVM_DTraceGetVersion
--                _JVM_DTraceActivate
--                _JVM_DTraceIsProbeEnabled
--                _JVM_DTraceIsSupported
--                _JVM_DTraceDispose
--                _JVM_DumpAllStacks
--                _JVM_DumpThreads
--                _JVM_EnableCompiler
--                _JVM_Exit
--                _JVM_FillInStackTrace
--                _JVM_FindClassFromClass
--                _JVM_FindClassFromClassLoader
--                _JVM_FindClassFromBootLoader
--                _JVM_FindLibraryEntry
--                _JVM_FindLoadedClass
--                _JVM_FindPrimitiveClass
--                _JVM_FindSignal
--                _JVM_FreeMemory
--                _JVM_GC
--                _JVM_GetAllThreads
--                _JVM_GetArrayElement
--                _JVM_GetArrayLength
--                _JVM_GetCPClassNameUTF
--                _JVM_GetCPFieldClassNameUTF
--                _JVM_GetCPFieldModifiers
--                _JVM_GetCPFieldNameUTF
--                _JVM_GetCPFieldSignatureUTF
--                _JVM_GetCPMethodClassNameUTF
--                _JVM_GetCPMethodModifiers
--                _JVM_GetCPMethodNameUTF
--                _JVM_GetCPMethodSignatureUTF
--                _JVM_GetCallerClass
--                _JVM_GetClassAccessFlags
--                _JVM_GetClassAnnotations
--                _JVM_GetClassCPEntriesCount
--                _JVM_GetClassCPTypes
--                _JVM_GetClassConstantPool
--                _JVM_GetClassContext
--                _JVM_GetClassDeclaredConstructors
--                _JVM_GetClassDeclaredFields
--                _JVM_GetClassDeclaredMethods
--                _JVM_GetClassFieldsCount
--                _JVM_GetClassInterfaces
--                _JVM_GetClassLoader
--                _JVM_GetClassMethodsCount
--                _JVM_GetClassModifiers
--                _JVM_GetClassName
--                _JVM_GetClassNameUTF
--                _JVM_GetClassSignature
--                _JVM_GetClassSigners
--                _JVM_GetClassTypeAnnotations
--                _JVM_GetComponentType
--                _JVM_GetDeclaredClasses
--                _JVM_GetDeclaringClass
--                _JVM_GetEnclosingMethodInfo
--                _JVM_GetFieldAnnotations
--                _JVM_GetFieldIxModifiers
--                _JVM_GetFieldTypeAnnotations
--                _JVM_GetHostName
--                _JVM_GetInheritedAccessControlContext
--                _JVM_GetInterfaceVersion
--                _JVM_GetLastErrorString
--                _JVM_GetManagement
--                _JVM_GetMethodAnnotations
--                _JVM_GetMethodDefaultAnnotationValue
--                _JVM_GetMethodIxArgsSize
--                _JVM_GetMethodIxByteCode
--                _JVM_GetMethodIxByteCodeLength
--                _JVM_GetMethodIxExceptionIndexes
--                _JVM_GetMethodIxExceptionTableEntry
--                _JVM_GetMethodIxExceptionTableLength
--                _JVM_GetMethodIxExceptionsCount
--                _JVM_GetMethodIxLocalsCount
--                _JVM_GetMethodIxMaxStack
--                _JVM_GetMethodIxModifiers
--                _JVM_GetMethodIxNameUTF
--                _JVM_GetMethodIxSignatureUTF
--                _JVM_GetMethodParameterAnnotations
--                _JVM_GetMethodParameters
--                _JVM_GetMethodTypeAnnotations
--                _JVM_GetPrimitiveArrayElement
--                _JVM_GetProtectionDomain
--                _JVM_GetSockName
--                _JVM_GetSockOpt
--                _JVM_GetStackAccessControlContext
--                _JVM_GetStackTraceDepth
--                _JVM_GetStackTraceElement
--                _JVM_GetSystemPackage
--                _JVM_GetSystemPackages
--                _JVM_GetThreadStateNames
--                _JVM_GetThreadStateValues
--                _JVM_GetVersionInfo
--                _JVM_Halt
--                _JVM_HoldsLock
--                _JVM_IHashCode
--                _JVM_InitAgentProperties
--                _JVM_InitProperties
--                _JVM_InitializeCompiler
--                _JVM_InitializeSocketLibrary
--                _JVM_InternString
--                _JVM_Interrupt
--                _JVM_InvokeMethod
--                _JVM_IsArrayClass
--                _JVM_IsConstructorIx
--                _JVM_IsInterface
--                _JVM_IsInterrupted
--                _JVM_IsNaN
--                _JVM_IsPrimitiveClass
--                _JVM_IsSameClassPackage
--                _JVM_IsSilentCompiler
--                _JVM_IsSupportedJNIVersion
--                _JVM_IsThreadAlive
--                _JVM_IsVMGeneratedMethodIx
--                _JVM_LatestUserDefinedLoader
--                _JVM_Listen
--                _JVM_LoadClass0
--                _JVM_LoadLibrary
--                _JVM_Lseek
--                _JVM_MaxObjectInspectionAge
--                _JVM_MaxMemory
--                _JVM_MonitorNotify
--                _JVM_MonitorNotifyAll
--                _JVM_MonitorWait
--                _JVM_NanoTime
--                _JVM_NativePath
--                _JVM_NewArray
--                _JVM_NewInstanceFromConstructor
--                _JVM_NewMultiArray
--                _JVM_OnExit
--                _JVM_Open
--                _JVM_RaiseSignal
--                _JVM_RawMonitorCreate
--                _JVM_RawMonitorDestroy
--                _JVM_RawMonitorEnter
--                _JVM_RawMonitorExit
--                _JVM_Read
--                _JVM_Recv
--                _JVM_RecvFrom
--                _JVM_RegisterSignal
--                _JVM_ReleaseUTF
--                _JVM_ResolveClass
--                _JVM_ResumeThread
--                _JVM_Send
--                _JVM_SendTo
--                _JVM_SetArrayElement
--                _JVM_SetClassSigners
--                _JVM_SetLength
--                _JVM_SetNativeThreadName
--                _JVM_SetPrimitiveArrayElement
--                _JVM_SetSockOpt
--                _JVM_SetThreadPriority
--                _JVM_Sleep
--                _JVM_Socket
--                _JVM_SocketAvailable
--                _JVM_SocketClose
--                _JVM_SocketShutdown
--                _JVM_StartThread
--                _JVM_StopThread
--                _JVM_SuspendThread
--                _JVM_SupportsCX8
--                _JVM_Sync
--                _JVM_Timeout
--                _JVM_TotalMemory
--                _JVM_TraceInstructions
--                _JVM_TraceMethodCalls
--                _JVM_UnloadLibrary
--                _JVM_Write
--                _JVM_Yield
--                _JVM_handle_bsd_signal
-+SUNWprivate_1.1 {
-+        global:
-+                # JNI
-+                JNI_CreateJavaVM;
-+                JNI_GetCreatedJavaVMs;
-+                JNI_GetDefaultJavaVMInitArgs;
-+
-+                # JVM
-+                JVM_Accept;
-+                JVM_ActiveProcessorCount;
-+                JVM_AllocateNewArray;
-+                JVM_AllocateNewObject;
-+                JVM_ArrayCopy;
-+                JVM_AssertionStatusDirectives;
-+                JVM_Available;
-+                JVM_Bind;
-+                JVM_ClassDepth;
-+                JVM_ClassLoaderDepth;
-+                JVM_Clone;
-+                JVM_Close;
-+                JVM_CX8Field;
-+                JVM_CompileClass;
-+                JVM_CompileClasses;
-+                JVM_CompilerCommand;
-+                JVM_Connect;
-+                JVM_ConstantPoolGetClassAt;
-+                JVM_ConstantPoolGetClassAtIfLoaded;
-+                JVM_ConstantPoolGetDoubleAt;
-+                JVM_ConstantPoolGetFieldAt;
-+                JVM_ConstantPoolGetFieldAtIfLoaded;
-+                JVM_ConstantPoolGetFloatAt;
-+                JVM_ConstantPoolGetIntAt;
-+                JVM_ConstantPoolGetLongAt;
-+                JVM_ConstantPoolGetMethodAt;
-+                JVM_ConstantPoolGetMethodAtIfLoaded;
-+                JVM_ConstantPoolGetMemberRefInfoAt;
-+                JVM_ConstantPoolGetSize;
-+                JVM_ConstantPoolGetStringAt;
-+                JVM_ConstantPoolGetUTF8At;
-+                JVM_CountStackFrames;
-+                JVM_CurrentClassLoader;
-+                JVM_CurrentLoadedClass;
-+                JVM_CurrentThread;
-+                JVM_CurrentTimeMillis;
-+                JVM_DefineClass;
-+                JVM_DefineClassWithSource;
-+                JVM_DefineClassWithSourceCond;
-+                JVM_DesiredAssertionStatus;
-+                JVM_DisableCompiler;
-+                JVM_DoPrivileged;
-+                JVM_DTraceGetVersion;
-+                JVM_DTraceActivate;
-+                JVM_DTraceIsProbeEnabled;
-+                JVM_DTraceIsSupported;
-+                JVM_DTraceDispose;
-+                JVM_DumpAllStacks;
-+                JVM_DumpThreads;
-+                JVM_EnableCompiler;
-+                JVM_Exit;
-+                JVM_FillInStackTrace;
-+                JVM_FindClassFromClass;
-+                JVM_FindClassFromClassLoader;
-+                JVM_FindClassFromBootLoader;
-+                JVM_FindLibraryEntry;
-+                JVM_FindLoadedClass;
-+                JVM_FindPrimitiveClass;
-+                JVM_FindSignal;
-+                JVM_FreeMemory;
-+                JVM_GC;
-+                JVM_GetAllThreads;
-+                JVM_GetArrayElement;
-+                JVM_GetArrayLength;
-+                JVM_GetCPClassNameUTF;
-+                JVM_GetCPFieldClassNameUTF;
-+                JVM_GetCPFieldModifiers;
-+                JVM_GetCPFieldNameUTF;
-+                JVM_GetCPFieldSignatureUTF;
-+                JVM_GetCPMethodClassNameUTF;
-+                JVM_GetCPMethodModifiers;
-+                JVM_GetCPMethodNameUTF;
-+                JVM_GetCPMethodSignatureUTF;
-+                JVM_GetCallerClass;
-+                JVM_GetClassAccessFlags;
-+                JVM_GetClassAnnotations;
-+                JVM_GetClassCPEntriesCount;
-+                JVM_GetClassCPTypes;
-+                JVM_GetClassConstantPool;
-+                JVM_GetClassContext;
-+                JVM_GetClassDeclaredConstructors;
-+                JVM_GetClassDeclaredFields;
-+                JVM_GetClassDeclaredMethods;
-+                JVM_GetClassFieldsCount;
-+                JVM_GetClassInterfaces;
-+                JVM_GetClassLoader;
-+                JVM_GetClassMethodsCount;
-+                JVM_GetClassModifiers;
-+                JVM_GetClassName;
-+                JVM_GetClassNameUTF;
-+                JVM_GetClassSignature;
-+                JVM_GetClassSigners;
-+                JVM_GetClassTypeAnnotations;
-+                JVM_GetComponentType;
-+                JVM_GetDeclaredClasses;
-+                JVM_GetDeclaringClass;
-+                JVM_GetEnclosingMethodInfo;
-+                JVM_GetFieldAnnotations;
-+                JVM_GetFieldIxModifiers;
-+                JVM_GetFieldTypeAnnotations;
-+                JVM_GetHostName;
-+                JVM_GetInheritedAccessControlContext;
-+                JVM_GetInterfaceVersion;
-+                JVM_GetLastErrorString;
-+                JVM_GetManagement;
-+                JVM_GetMethodAnnotations;
-+                JVM_GetMethodDefaultAnnotationValue;
-+                JVM_GetMethodIxArgsSize;
-+                JVM_GetMethodIxByteCode;
-+                JVM_GetMethodIxByteCodeLength;
-+                JVM_GetMethodIxExceptionIndexes;
-+                JVM_GetMethodIxExceptionTableEntry;
-+                JVM_GetMethodIxExceptionTableLength;
-+                JVM_GetMethodIxExceptionsCount;
-+                JVM_GetMethodIxLocalsCount;
-+                JVM_GetMethodIxMaxStack;
-+                JVM_GetMethodIxModifiers;
-+                JVM_GetMethodIxNameUTF;
-+                JVM_GetMethodIxSignatureUTF;
-+                JVM_GetMethodParameterAnnotations;
-+                JVM_GetMethodParameters;
-+                JVM_GetMethodTypeAnnotations;
-+                JVM_GetPrimitiveArrayElement;
-+                JVM_GetProtectionDomain;
-+                JVM_GetSockName;
-+                JVM_GetSockOpt;
-+                JVM_GetStackAccessControlContext;
-+                JVM_GetStackTraceDepth;
-+                JVM_GetStackTraceElement;
-+                JVM_GetSystemPackage;
-+                JVM_GetSystemPackages;
-+                JVM_GetThreadStateNames;
-+                JVM_GetThreadStateValues;
-+                JVM_GetVersionInfo;
-+                JVM_Halt;
-+                JVM_HoldsLock;
-+                JVM_IHashCode;
-+                JVM_InitAgentProperties;
-+                JVM_InitProperties;
-+                JVM_InitializeCompiler;
-+                JVM_InitializeSocketLibrary;
-+                JVM_InternString;
-+                JVM_Interrupt;
-+                JVM_InvokeMethod;
-+                JVM_IsArrayClass;
-+                JVM_IsConstructorIx;
-+                JVM_IsInterface;
-+                JVM_IsInterrupted;
-+                JVM_IsNaN;
-+                JVM_IsPrimitiveClass;
-+                JVM_IsSameClassPackage;
-+                JVM_IsSilentCompiler;
-+                JVM_IsSupportedJNIVersion;
-+                JVM_IsThreadAlive;
-+                JVM_IsVMGeneratedMethodIx;
-+                JVM_LatestUserDefinedLoader;
-+                JVM_Listen;
-+                JVM_LoadClass0;
-+                JVM_LoadLibrary;
-+                JVM_Lseek;
-+                JVM_MaxObjectInspectionAge;
-+                JVM_MaxMemory;
-+                JVM_MonitorNotify;
-+                JVM_MonitorNotifyAll;
-+                JVM_MonitorWait;
-+                JVM_NanoTime;
-+                JVM_NativePath;
-+                JVM_NewArray;
-+                JVM_NewInstanceFromConstructor;
-+                JVM_NewMultiArray;
-+                JVM_OnExit;
-+                JVM_Open;
-+                JVM_RaiseSignal;
-+                JVM_RawMonitorCreate;
-+                JVM_RawMonitorDestroy;
-+                JVM_RawMonitorEnter;
-+                JVM_RawMonitorExit;
-+                JVM_Read;
-+                JVM_Recv;
-+                JVM_RecvFrom;
-+                JVM_RegisterSignal;
-+                JVM_ReleaseUTF;
-+                JVM_ResolveClass;
-+                JVM_ResumeThread;
-+                JVM_Send;
-+                JVM_SendTo;
-+                JVM_SetArrayElement;
-+                JVM_SetClassSigners;
-+                JVM_SetLength;
-+                JVM_SetNativeThreadName;
-+                JVM_SetPrimitiveArrayElement;
-+                JVM_SetSockOpt;
-+                JVM_SetThreadPriority;
-+                JVM_Sleep;
-+                JVM_Socket;
-+                JVM_SocketAvailable;
-+                JVM_SocketClose;
-+                JVM_SocketShutdown;
-+                JVM_StartThread;
-+                JVM_StopThread;
-+                JVM_SuspendThread;
-+                JVM_SupportsCX8;
-+                JVM_Sync;
-+                JVM_Timeout;
-+                JVM_TotalMemory;
-+                JVM_TraceInstructions;
-+                JVM_TraceMethodCalls;
-+                JVM_UnloadLibrary;
-+                JVM_Write;
-+                JVM_Yield;
+@@ -242,7 +242,7 @@
+                 JVM_UnloadLibrary;
+                 JVM_Write;
+                 JVM_Yield;
+-                JVM_handle_linux_signal;
 +                JVM_handle_bsd_signal;
  
                  # miscellaneous functions
--                _jio_fprintf
--                _jio_printf
--                _jio_snprintf
--                _jio_vfprintf
--                _jio_vsnprintf
-+                jio_fprintf;
-+                jio_printf;
-+                jio_snprintf;
-+                jio_vfprintf;
-+                jio_vsnprintf;
+                 jio_fprintf;
+--- hotspot/make/bsd/makefiles/optimized.make
++++ hotspot/make/bsd/makefiles/optimized.make
+@@ -38,6 +38,9 @@
+ # to inhibit the effect of the previous line on CFLAGS.
  
-                 # This is for Forte Analyzer profiling support.
--                _AsyncGetCallTrace
-+                AsyncGetCallTrace;
+ # Linker mapfile
+-MAPFILE = $(GAMMADIR)/make/bsd/makefiles/mapfile-vers-debug
++ifeq ($(OS_VENDOR), Darwin)
++MAPSUFX = .macosx
++endif
++MAPFILE = $(GAMMADIR)/make/bsd/makefiles/mapfile-vers-debug$(MAPSUFX)
  
-                 # INSERT VTABLE SYMBOLS HERE
+ VERSION = optimized
+--- hotspot/make/bsd/makefiles/product.make
++++ hotspot/make/bsd/makefiles/product.make
+@@ -38,7 +38,10 @@
+ # to inhibit the effect of the previous line on CFLAGS.
  
-+        local:
-+                *;
-+};
-+
+ # Linker mapfile
+-MAPFILE = $(GAMMADIR)/make/bsd/makefiles/mapfile-vers-product
++ifeq ($(OS_VENDOR), Darwin)
++  MAPSUFX = .macosx
++endif
++MAPFILE = $(GAMMADIR)/make/bsd/makefiles/mapfile-vers-product$(MAPSUFX)
+ 
+ SYSDEFS += -DPRODUCT
+ VERSION = optimized
 --- hotspot/make/bsd/makefiles/rules.make
 +++ hotspot/make/bsd/makefiles/rules.make
 @@ -34,7 +34,7 @@
@@ -1403,6 +540,140 @@
  
  static int call_os_sigaction(int sig, const struct sigaction  *act,
                               struct sigaction *oact) {
+--- hotspot/src/os/bsd/vm/jvm_bsd.cpp
++++ hotspot/src/os/bsd/vm/jvm_bsd.cpp
+@@ -50,6 +50,7 @@
+     case INTERRUPT_SIGNAL:
+     case SIGFPE:
+     case SIGILL:
++    case SIGBUS:
+     case SIGSEGV:
+ 
+     /* The following signal is used by the VM to dump thread stacks unless
+@@ -110,71 +111,29 @@
+ JVM_END
+ 
+ /*
+-  All the defined signal names for Bsd.
++  All the defined signal names for BSD are defined by sys_signame[].
+ 
+   NOTE that not all of these names are accepted by our Java implementation
+ 
+   Via an existing claim by the VM, sigaction restrictions, or
+   the "rules of Unix" some of these names will be rejected at runtime.
+   For example the VM sets up to handle USR1, sigaction returns EINVAL for
+-  STOP, and Bsd simply doesn't allow catching of KILL.
++  STOP, and BSD simply doesn't allow catching of KILL.
+ 
+   Here are the names currently accepted by a user of sun.misc.Signal with
+   1.4.1 (ignoring potential interaction with use of chaining, etc):
+ 
+-    HUP, INT, TRAP, ABRT, IOT, BUS, USR2, PIPE, ALRM, TERM, STKFLT,
+-    CLD, CHLD, CONT, TSTP, TTIN, TTOU, URG, XCPU, XFSZ, VTALRM, PROF,
+-    WINCH, POLL, IO, PWR, SYS
+-
++      HUP, INT, TRAP, ABRT, EMT, SYS, PIPE, ALRM, TERM, URG, TSTP, CONT,
++      CHLD, TTIN, TTOU, IO, XCPU, XFSZ, VTALRM, PROF, WINCH, INFO, USR2
+ */
+ 
+-struct siglabel {
+-  const char *name;
+-  int   number;
+-};
+-
+-struct siglabel siglabels[] = {
+-  /* derived from /usr/include/bits/signum.h on RH7.2 */
+-   "HUP",       SIGHUP,         /* Hangup (POSIX).  */
+-  "INT",        SIGINT,         /* Interrupt (ANSI).  */
+-  "QUIT",       SIGQUIT,        /* Quit (POSIX).  */
+-  "ILL",        SIGILL,         /* Illegal instruction (ANSI).  */
+-  "TRAP",       SIGTRAP,        /* Trace trap (POSIX).  */
+-  "ABRT",       SIGABRT,        /* Abort (ANSI).  */
+-  "EMT",        SIGEMT,         /* EMT trap  */
+-  "FPE",        SIGFPE,         /* Floating-point exception (ANSI).  */
+-  "KILL",       SIGKILL,        /* Kill, unblockable (POSIX).  */
+-  "BUS",        SIGBUS,         /* BUS error (4.2 BSD).  */
+-  "SEGV",       SIGSEGV,        /* Segmentation violation (ANSI).  */
+-  "SYS",        SIGSYS,         /* Bad system call. Only on some Bsden! */
+-  "PIPE",       SIGPIPE,        /* Broken pipe (POSIX).  */
+-  "ALRM",       SIGALRM,        /* Alarm clock (POSIX).  */
+-  "TERM",       SIGTERM,        /* Termination (ANSI).  */
+-  "URG",        SIGURG,         /* Urgent condition on socket (4.2 BSD).  */
+-  "STOP",       SIGSTOP,        /* Stop, unblockable (POSIX).  */
+-  "TSTP",       SIGTSTP,        /* Keyboard stop (POSIX).  */
+-  "CONT",       SIGCONT,        /* Continue (POSIX).  */
+-  "CHLD",       SIGCHLD,        /* Child status has changed (POSIX).  */
+-  "TTIN",       SIGTTIN,        /* Background read from tty (POSIX).  */
+-  "TTOU",       SIGTTOU,        /* Background write to tty (POSIX).  */
+-  "IO",         SIGIO,          /* I/O now possible (4.2 BSD).  */
+-  "XCPU",       SIGXCPU,        /* CPU limit exceeded (4.2 BSD).  */
+-  "XFSZ",       SIGXFSZ,        /* File size limit exceeded (4.2 BSD).  */
+-  "VTALRM",     SIGVTALRM,      /* Virtual alarm clock (4.2 BSD).  */
+-  "PROF",       SIGPROF,        /* Profiling alarm clock (4.2 BSD).  */
+-  "WINCH",      SIGWINCH,       /* Window size change (4.3 BSD, Sun).  */
+-  "INFO",       SIGINFO,        /* Information request.  */
+-  "USR1",       SIGUSR1,        /* User-defined signal 1 (POSIX).  */
+-  "USR2",       SIGUSR2         /* User-defined signal 2 (POSIX).  */
+-  };
+-
+ JVM_ENTRY_NO_ENV(jint, JVM_FindSignal(const char *name))
+ 
+   /* find and return the named signal's number */
+ 
+-  for(uint i=0; i<ARRAY_SIZE(siglabels); i++)
+-    if(!strcmp(name, siglabels[i].name))
+-      return siglabels[i].number;
++  for (int i = 1; i < NSIG; i++)
++    if (strcasecmp(name, sys_signame[i]) == 0)
++      return i;
+ 
+   return -1;
+ 
+@@ -182,11 +141,14 @@
+ 
+ // used by os::exception_name()
+ extern bool signal_name(int signo, char* buf, size_t len) {
+-  for(uint i = 0; i < ARRAY_SIZE(siglabels); i++) {
+-    if (signo == siglabels[i].number) {
+-      jio_snprintf(buf, len, "SIG%s", siglabels[i].name);
+-      return true;
+-    }
+-  }
+-  return false;
++  if (signo <= 0 || signo >= NSIG)
++    return false;
++  char signame[8];
++  const char *s = sys_signame[signo];
++  uint i;
++  for (i = 0; i < sizeof(signame) - 1 && s[i] != '\0'; i++)
++    signame[i] = toupper(s[i]);
++  signame[i] = '\0';
++  jio_snprintf(buf, len, "SIG%s", signame);
++  return true;
+ }
+--- hotspot/src/os/bsd/vm/jvm_bsd.h
++++ hotspot/src/os/bsd/vm/jvm_bsd.h
+@@ -112,20 +112,6 @@
+ #define SHUTDOWN2_SIGNAL SIGINT
+ #define SHUTDOWN3_SIGNAL SIGTERM
+ 
+-#ifndef SIGRTMIN
+-#ifdef __OpenBSD__
+-#define SIGRTMIN        1
+-#else
+-#define SIGRTMIN        33
+-#endif
+-#endif
+-#ifndef SIGRTMAX
+-#ifdef __OpenBSD__
+-#define SIGRTMAX        31
+-#else
+-#define SIGRTMAX        63
+-#endif
+-#endif
+ #endif /* JVM_MD_H */
+ 
+ #endif // OS_BSD_VM_JVM_BSD_H
 --- hotspot/src/os/bsd/vm/osThread_bsd.cpp
 +++ hotspot/src/os/bsd/vm/osThread_bsd.cpp
 @@ -30,7 +30,7 @@
@@ -1416,20 +687,90 @@
    _thread_id        = NULL;
 --- hotspot/src/os/bsd/vm/os_bsd.cpp
 +++ hotspot/src/os/bsd/vm/os_bsd.cpp
-@@ -102,6 +102,12 @@
+@@ -102,6 +102,16 @@
  # include <sys/ioctl.h>
  # include <sys/syscall.h>
  
-+#if __FreeBSD_version > 900030
-+# include <pthread_np.h>
-+#else
-+# include <sys/thr.h>
++#ifdef __FreeBSD__
++# if __FreeBSD_version > 900030
++#  include <pthread_np.h>
++# else
++#  include <sys/thr.h>
++# endif
++# include <sys/cpuset.h>
++# include <vm/vm_param.h>
 +#endif
 +
  #if defined(__FreeBSD__) || defined(__NetBSD__)
  # include <elf.h>
  #endif
-@@ -434,8 +440,12 @@
+@@ -161,6 +171,28 @@
+ 
+ // available here means free
+ julong os::Bsd::available_memory() {
++#ifdef __FreeBSD__
++  static const char *vm_stats[] = {
++    "vm.stats.vm.v_free_count",
++    "vm.stats.vm.v_cache_count",
++    "vm.stats.vm.v_inactive_count"
++  };
++  size_t size;
++  julong free_pages;
++  u_int i, npages;
++
++  for (i = 0, free_pages = 0; i < sizeof(vm_stats) / sizeof(vm_stats[0]); i++)
++{
++    size = sizeof(npages);
++    if (sysctlbyname(vm_stats[i], &npages, &size, NULL, 0) == -1) {
++      free_pages = 0;
++      break;
++    }
++    free_pages += npages;
++  }
++  if (free_pages > 0)
++    return free_pages * os::vm_page_size();
++#endif
+   uint64_t available = physical_memory() >> 2;
+ #ifdef __APPLE__
+   mach_msg_type_number_t count = HOST_VM_INFO64_COUNT;
+@@ -200,7 +232,7 @@
+   static bool init = false;
+   static bool privileges = false;
+   if (!init) {
+-    privileges = (getuid() != geteuid()) || (getgid() != getegid());
++    privileges = issetugid();
+     init = true;
+   }
+   return privileges;
+@@ -240,6 +272,19 @@
+ 
+ 
+ void os::Bsd::initialize_system_info() {
++#ifdef __FreeBSD__
++  int cpu_val = sysconf(_SC_NPROCESSORS_CONF);
++  if (cpu_val >= 1)
++    set_processor_count(cpu_val);
++  else
++    set_processor_count(1); // fallback
++
++  long phys_pages = sysconf(_SC_PHYS_PAGES);
++  if (phys_pages > 0)
++    _physical_memory = (julong)phys_pages * _page_size;
++  else
++    _physical_memory = 256*M; // fallback
++#else
+   int mib[2];
+   size_t len;
+   int cpu_val;
+@@ -289,6 +334,7 @@
+        _physical_memory = MIN2(_physical_memory, (julong)limits.rlim_cur);
+   }
+ #endif
++#endif
+ }
+ 
+ #ifdef __APPLE__
+@@ -434,8 +480,12 @@
  #else
          ld_library_path = (char *) malloc(sizeof(REG_DIR) + sizeof("/lib/") +
              strlen(cpu_arch) + sizeof(DEFAULT_LIBPATH));
@@ -1442,7 +783,7 @@
  
          /*
           * Get the user setting of LD_LIBRARY_PATH, and prepended it.  It
-@@ -1148,7 +1158,13 @@
+@@ -1148,7 +1198,13 @@
    return retval;
  
  #elif __FreeBSD__
@@ -1457,7 +798,7 @@
  #elif __OpenBSD__
    retval = syscall(SYS_getthrid);
  #elif __NetBSD__
-@@ -1158,11 +1174,14 @@
+@@ -1158,11 +1214,14 @@
    if (retval == -1) {
      return getpid();
    }
@@ -1473,7 +814,7 @@
  #else
    return (intx)::pthread_self();
  #endif
-@@ -1562,24 +1581,6 @@
+@@ -1562,24 +1621,6 @@
    return dlsym(handle, name);
  }
  
@@ -1498,7 +839,7 @@
  void os::print_dll_info(outputStream *st) {
    st->print_cr("Dynamic libraries:");
  #ifdef RTLD_DI_LINKMAP
-@@ -1629,14 +1630,14 @@
+@@ -1629,14 +1670,14 @@
  }
  
  void os::print_os_info_brief(outputStream* st) {
@@ -1515,19 +856,75 @@
  
    os::Posix::print_uname_info(st);
  
-@@ -1659,11 +1660,6 @@
+@@ -1649,6 +1690,29 @@
+   // Nothing to do for now.
+ }
+ 
++#ifdef __FreeBSD__
++static void get_swap_info(int *total_pages, int *used_pages) {
++  struct xswdev xsw;
++  size_t mibsize, size;
++  int mib[16];
++  int n, total = 0, used = 0;
++
++  mibsize = sizeof(mib) / sizeof(mib[0]);
++  if (sysctlnametomib("vm.swap_info", mib, &mibsize) != -1) {
++    for (n = 0; ; n++) {
++      mib[mibsize] = n;
++      size = sizeof(xsw);
++      if (sysctl(mib, mibsize + 1, &xsw, &size, NULL, 0) == -1)
++        break;
++      total += xsw.xsw_nblks;
++      used += xsw.xsw_used;
++    }
++  }
++  *total_pages = total;
++  *used_pages = used;
++}
++#endif
++
+ void os::print_memory_info(outputStream* st) {
+ 
+   st->print("Memory:");
+@@ -1658,11 +1722,14 @@
+             os::physical_memory() >> 10);
    st->print("(" UINT64_FORMAT "k free)",
              os::available_memory() >> 10);
-   st->cr();
+-  st->cr();
 -
 -  // meminfo
 -  st->print("\n/proc/meminfo:\n");
 -  _print_ascii_file("/proc/meminfo", st);
--  st->cr();
++#ifdef __FreeBSD__
++  int total, used;
++  get_swap_info(&total, &used);
++  st->print(", swap " UINT64_FORMAT "k",
++            (total * os::vm_page_size()) >> 10);
++  st->print("(" UINT64_FORMAT "k free)",
++            ((total - used) * os::vm_page_size()) >> 10);
++#endif
+   st->cr();
  }
  
- // Taken from /usr/include/bits/siginfo.h  Supposed to be architecture specific
-@@ -1943,7 +1939,7 @@
+@@ -1675,7 +1742,7 @@
+ 
+ const char *fpe_names[] = { "FPE0", "FPE_INTDIV", "FPE_INTOVF", "FPE_FLTDIV",
+                           "FPE_FLTOVF", "FPE_FLTUND", "FPE_FLTRES",
+-                          "FPE_FLTINV", "FPE_FLTSUB", "FPE_FLTDEN" };
++                          "FPE_FLTINV", "FPE_FLTSUB" };
+ 
+ const char *segv_names[] = { "SEGV0", "SEGV_MAPERR", "SEGV_ACCERR" };
+ 
+@@ -1701,7 +1768,7 @@
+     st->print(", si_addr=" PTR_FORMAT, si->si_addr);
+     break;
+   case SIGFPE:
+-    st->print(", si_code=%d (%s)", c, c > 9 ? "" : fpe_names[c]);
++    st->print(", si_code=%d (%s)", c, c > 8 ? "" : fpe_names[c]);
+     st->print(", si_addr=" PTR_FORMAT, si->si_addr);
+     break;
+   case SIGSEGV:
+@@ -1943,7 +2010,7 @@
      os_semaphore_t _semaphore;
  };
  
@@ -1536,7 +933,7 @@
    SEM_INIT(_semaphore, 0);
  }
  
-@@ -2746,6 +2742,7 @@
+@@ -2746,6 +2813,7 @@
    return OS_OK;
  #elif defined(__FreeBSD__)
    int ret = pthread_setprio(thread->osthread()->pthread_id(), newpri);
@@ -1544,7 +941,89 @@
  #elif defined(__APPLE__) || defined(__NetBSD__)
    struct sched_param sp;
    int policy;
-@@ -3943,7 +3940,10 @@
+@@ -3340,18 +3408,6 @@
+   }
+ }
+ 
+-
+-/////
+-// glibc on Bsd platform uses non-documented flag
+-// to indicate, that some special sort of signal
+-// trampoline is used.
+-// We will never set this flag, and we should
+-// ignore this flag in our diagnostic
+-#ifdef SIGNIFICANT_SIGNAL_MASK
+-#undef SIGNIFICANT_SIGNAL_MASK
+-#endif
+-#define SIGNIFICANT_SIGNAL_MASK (~0x04000000)
+-
+ static const char* get_signal_handler_name(address handler,
+                                            char* buf, int buflen) {
+   int offset;
+@@ -3375,9 +3431,6 @@
+ 
+   sigaction(sig, NULL, &sa);
+ 
+-  // See comment for SIGNIFICANT_SIGNAL_MASK define
+-  sa.sa_flags &= SIGNIFICANT_SIGNAL_MASK;
+-
+   st->print("%s: ", os::exception_name(sig, buf, buflen));
+ 
+   address handler = (sa.sa_flags & SA_SIGINFO)
+@@ -3398,7 +3451,7 @@
+   // May be, handler was resetted by VMError?
+   if(rh != NULL) {
+     handler = rh;
+-    sa.sa_flags = VMError::get_resetted_sigflags(sig) & SIGNIFICANT_SIGNAL_MASK;
++    sa.sa_flags = VMError::get_resetted_sigflags(sig);
+   }
+ 
+   st->print(", sa_flags="   PTR32_FORMAT, sa.sa_flags);
+@@ -3473,8 +3526,6 @@
+   os_sigaction(sig, (struct sigaction*)NULL, &act);
+ 
+ 
+-  act.sa_flags &= SIGNIFICANT_SIGNAL_MASK;
+-
+   address thisHandler = (act.sa_flags & SA_SIGINFO)
+     ? CAST_FROM_FN_PTR(address, act.sa_sigaction)
+     : CAST_FROM_FN_PTR(address, act.sa_handler) ;
+@@ -3534,6 +3585,14 @@
+ 
+ extern bool signal_name(int signo, char* buf, size_t len);
+ 
++#ifndef SIGRTMAX
++#ifdef __OpenBSD__
++#define SIGRTMAX        31
++#else
++#define SIGRTMAX        63
++#endif
++#endif
++
+ const char* os::exception_name(int exception_code, char* buf, size_t size) {
+   if (0 < exception_code && exception_code <= SIGRTMAX) {
+     // signal
+@@ -3733,6 +3792,19 @@
+ };
+ 
+ int os::active_processor_count() {
++#ifdef __FreeBSD__
++  int online_cpus = 0;
++  cpuset_t mask;
++  if (cpuset_getaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID, -1, sizeof(mask),
++      &mask) == 0)
++    for (u_int i = 0; i < sizeof(mask) / sizeof(long); i++)
++      online_cpus += __builtin_popcountl(((long *)&mask)[i]);
++  if (online_cpus > 0 && online_cpus <= _processor_count)
++    return online_cpus;
++  online_cpus = sysconf(_SC_NPROCESSORS_ONLN);
++  if (online_cpus >= 1)
++    return online_cpus;
++#endif
+   return _processor_count;
+ }
+ 
+@@ -3943,7 +4015,10 @@
    }
    int fd;
    int o_delete = (oflag & O_DELETE);
@@ -1556,7 +1035,7 @@
  
    fd = ::open(path, oflag, mode);
    if (fd == -1) return -1;
-@@ -3988,7 +3988,7 @@
+@@ -3988,7 +4063,7 @@
       * 4843136: (process) pipe file descriptor from Runtime.exec not being closed
       * 6339493: (process) Runtime.exec does not close all file descriptors on Solaris 9
       */
@@ -1585,6 +1064,16 @@
                     os::current_process_id(), os::current_process_id());
  
        os::fork_and_exec(buf);
+--- hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp
++++ hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp
+@@ -42,7 +42,6 @@
+ #endif // AMD64
+ 
+ define_pd_global(intx, CompilerThreadStackSize,  0);
+-define_pd_global(uintx, SurvivorRatio,           8);
+ 
+ define_pd_global(uintx, JVMInvokeMethodSlack,    8192);
+ 
 --- hotspot/src/share/vm/code/relocInfo.hpp
 +++ hotspot/src/share/vm/code/relocInfo.hpp
 @@ -364,7 +364,7 @@
