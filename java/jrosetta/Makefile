@@ -9,7 +9,7 @@ MASTER_SITES=	http://maven.artenum.com/content/groups/public/com/artenum/${PORTN
 		http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTNAME}-api/${PORTVERSION}/:api \
 		http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTNAME}-engine/${PORTVERSION}/:engine
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	API for building a graphical console in Swing
 
 USES=		zip
