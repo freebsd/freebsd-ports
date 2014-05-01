@@ -31,7 +31,7 @@ pre-install:
 		pkg-message > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} \
 		${STAGEDIR}${ETCDIR}/${DISTNAME}.sample
 	${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 760 ${WRKDIR}/${DISTNAME} ${PREFIX}/sbin
