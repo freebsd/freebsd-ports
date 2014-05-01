@@ -34,6 +34,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} \
 		${STAGEDIR}${ETCDIR}/${DISTNAME}.sample
-	${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 760 ${WRKDIR}/${DISTNAME} ${PREFIX}/sbin
+	${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 760 ${WRKDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
