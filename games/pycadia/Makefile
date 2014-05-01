@@ -1,11 +1,11 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pycadia
 PORTVERSION=	0.5.1
 PORTREVISION=	5
 CATEGORIES=	games python
-MASTER_SITES=	${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/} \
+MASTER_SITES=	GENTOO/distfiles \
 		SF/nemysisfreebsdp/games/
 DIST_SUBDIR=	python
 
@@ -19,10 +19,9 @@ RUN_DEPENDS=	${PYGAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	pygtk2 libgnomeui
-USE_PYTHON=	yes
+USE_PYTHON=	2
 
-PORTDOCS=	CHANGELOG README TODO gravity.txt
-
+PORTDOCS=	CHANGELOG README gravity.txt
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Pycadia" "" "${PORTNAME}" \
@@ -40,17 +39,18 @@ do-build:
 do-install:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
 		${WRKDIR}/${PORTNAME}.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .for d in glade pixmaps sounds
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
-
-.for d in  *.py *.pyc *.pyo
-	@(cd ${WRKSRC} ; ${INSTALL_SCRIPT} ${d} ${STAGEDIR}${DATADIR})
+.for f in *.py *.pyc *.pyo
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 
-	@(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 555 ${PORTNAME}.py spacewarpy.py vektoroids.py)
+	@(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 555 \
+		 ${PORTNAME}.py spacewarpy.py vektoroids.py)
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf ${STAGEDIR}${DATADIR}
 
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/pysteroids.png \
