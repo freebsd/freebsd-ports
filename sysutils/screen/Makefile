@@ -3,6 +3,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -17,14 +18,12 @@ MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Multi-screen window manager
 
-OPTIONS_DEFINE=	CJK INFO MAN NETHACK XTERM_256 HOSTINLOCKED SHOWENC
+OPTIONS_DEFINE=	INFO MAN NETHACK XTERM_256 SHOWENC
 OPTIONS_DEFAULT=	INFO MAN NETHACK XTERM_256
-CJK_DESC=		Treat CJK ambiguous characters as full width
 INFO_DESC=		Build and install info documentation
 MAN_DESC=		Build and install man pages
 NETHACK_DESC=		Enable nethack-style messages
 XTERM_256_DESC=		Enable support for 256 colour xterm
-HOSTINLOCKED_DESC=	Print user@host in locked message
 SHOWENC_DESC=		Show encoding on the status line
 
 OPTIONS_SUB=
@@ -58,15 +57,6 @@ CFLAGS+=	-DCOLORS256
 
 .if ! ${PORT_OPTIONS:MNETHACK}
 CFLAGS+=	-DNONETHACK
-.endif
-
-# treat CJK ambiguous characters as full width via option "cjkwidth"
-.if ${PORT_OPTIONS:MCJK}
-EXTRA_PATCHES+=	${FILESDIR}/opt-cjkwidth
-.endif
-
-.if ${PORT_OPTIONS:MHOSTINLOCKED}
-EXTRA_PATCHES+= ${FILESDIR}/opt-hostinlocked
 .endif
 
 # show encoding on the status line via option "showenc"
