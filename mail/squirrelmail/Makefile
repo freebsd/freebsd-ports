@@ -97,13 +97,11 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${SQUIRRELDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.php ${STAGEDIR}${SQUIRRELDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/configure ${STAGEDIR}${SQUIRRELDIR}
-	cd ${WRKSRC} && \
+	(cd ${WRKSRC} && \
 		${FIND} attach class config data functions help images include locale plugins po scripts src themes \
-		| ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR}
-	${CHMOD} 730 ${STAGEDIR}${SQUIRRELDIR}/attach
-	${CHMOD} 750 ${STAGEDIR}${SQUIRRELDIR}/data
+		| ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR})
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${FIND} . | ${CPIO} -pdmu --quiet ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

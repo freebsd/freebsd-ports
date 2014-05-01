@@ -1,7 +1,5 @@
 etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/attach/.htaccess
-@exec chown %%SMUSER%%:%%SMGROUP%% %B
-@exec chmod 730 %B
 %%SQUIRRELDIR%%/class/.htaccess
 %%SQUIRRELDIR%%/class/deliver/Deliver.class.php
 %%SQUIRRELDIR%%/class/deliver/Deliver_IMAP.class.php
@@ -31,8 +29,6 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/data/.htaccess
 @sample %%SQUIRRELDIR%%/data/default_pref.sample
 %%SQUIRRELDIR%%/data/index.php
-@exec chown %%SMUSER%%:%%SMGROUP%% %B
-@exec chmod 750 %B
 %%SQUIRRELDIR%%/functions/.htaccess
 %%SQUIRRELDIR%%/functions/abook_database.php
 %%SQUIRRELDIR%%/functions/abook_ldap_server.php
@@ -502,13 +498,25 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/functions/encode
 @dirrm %%SQUIRRELDIR%%/functions/decode
 @dirrm %%SQUIRRELDIR%%/functions
+@owner %%SMUSER%%
+@group %%SMGROUP%%
+@mode 0750
 @dirrm %%SQUIRRELDIR%%/data
+@mode
+@group
+@owner
 @dirrmtry %%SQUIRRELDIR%%/config
 @dirrm %%SQUIRRELDIR%%/class/mime
 @dirrm %%SQUIRRELDIR%%/class/helper
 @dirrm %%SQUIRRELDIR%%/class/deliver
 @dirrm %%SQUIRRELDIR%%/class
+@owner %%SMUSER%%
+@group %%SMGROUP%%
+@mode 0730
 @dirrmtry %%SQUIRRELDIR%%/attach
+@mode
+@group
+@owner
 @dirrmtry %%SQUIRRELDIR%%
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
