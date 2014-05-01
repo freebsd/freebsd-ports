@@ -89,7 +89,7 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 evolutiondataserver gal2 
 		pygtksourceview vte
 
 # GNOME 3 components
-_USE_GNOME_ALL+= dconf gtk30 gtksourceview3 libgda5 libgda5-ui pygobject3 \
+_USE_GNOME_ALL+= dconf gtk30 gtkhtml4 gtksourceview3 libgda5 libgda5-ui pygobject3 \
 		vte3
 
 # C++ bindings
@@ -486,6 +486,10 @@ intlhack_USE_GNOME_IMPL=intltool
 gtkhtml3_LIB_DEPENDS=	libgtkhtml-3.14.so:${PORTSDIR}/www/gtkhtml3
 gtkhtml3_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-3.14.pc
 gtkhtml3_USE_GNOME_IMPL=libglade2
+
+gtkhtml4_LIB_DEPENDS=	libgtkhtml-4.0.so:${PORTSDIR}/www/gtkhtml4
+gtkhtml4_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-4.0.pc
+gtkhtml4_USE_GNOME_IMPL=gtk30 libxml2
 
 gnomespeech_LIB_DEPENDS=libgnomespeech.so:${PORTSDIR}/accessibility/gnome-speech
 gnomespeech_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-speech-1.0.pc
