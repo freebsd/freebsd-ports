@@ -2,7 +2,7 @@
 
 PORTNAME=	compiz
 PORTVERSION=	0.8.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -117,7 +117,7 @@ PLIST_SUB+=	GNOME="@comment "
 CONFIGURE_ARGS+=	--enable-dbus
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
-.if ${PORT_OPTIONS:MGTK} && ${PORT_OPTIONS:MGNOME}
+.if ${PORT_OPTIONS:MGTK2} && ${PORT_OPTIONS:MGNOME}
 CONFIGURE_ARGS+=	--enable-dbus-glib
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
@@ -132,5 +132,8 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/compiz-manager ${STAGEDIR}${PREFIX}/bin/compiz-manager
+.if ${PORT_OPTIONS:MGNOME}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/window-manager-settings/libcompiz.so
+.endif
 
 .include <bsd.port.mk>
