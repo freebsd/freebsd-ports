@@ -44,8 +44,8 @@ WEATHER_DESC=	Weather calendar backend
 
 WEATHER_LIB_DEPENDS=	libgweather.so:${PORTSDIR}/net/libgweather
 WEATHER_CONFIGURE_WITH=	weather
-KERBEROS_CONFIGURE_WITH=	krb5=/usr
-KERBEROS_CONFGIURE_WITHOUT=	--without-krb5
+KERBEROS_CONFIGURE_ON=	--with-krb5=/usr
+KERBEROS_CONFIGURE_OFF=	--without-krb5
 
 .include <bsd.port.options.mk>
 
