@@ -118,7 +118,7 @@ libdata/pkgconfig/libdecoration.pc
 %%GNOME%%window-manager-settings/libcompiz.a
 %%GNOME%%window-manager-settings/libcompiz.so
 %%GNOME%%@cwd %%RESETPREFIX%%
-share/applications/compiz.desktop
+%%GNOME%%share/applications/compiz.desktop
 share/locale/af/LC_MESSAGES/compiz.mo
 share/locale/ar/LC_MESSAGES/compiz.mo
 share/locale/bg/LC_MESSAGES/compiz.mo
