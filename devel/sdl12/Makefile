@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.15
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
@@ -16,11 +16,9 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-USE_AUTOTOOLS=	libtool
+USES=		gmake iconv libtool:oldver pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-WANT_GNOME=	yes
-USES=		pathfix pkgconfig iconv gmake
 CONFIGURE_ENV=	ac_cv_header_libusbhid_h=no
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -63,11 +61,8 @@ X11_USE=			XORG=x11,xrender,xrandr,xextproto
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MVGL}
-DISPLAY_MSG=		${CAT} ${PKGMESSAGE}
-.else
+.if ! ${PORT_OPTIONS:MVGL}
 PKGMESSAGE=		none
-DISPLAY_MSG=		${DO_NADA}
 .endif
 
 post-patch:
@@ -81,6 +76,5 @@ post-install:
 		${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/ "! -regex .*/man3.*"
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} &&\
 		${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}/
-	@${DISPLAY_MSG}
 
 .include <bsd.port.mk>
