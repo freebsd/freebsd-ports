@@ -161,6 +161,8 @@ BUILD_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
 .endif
 RUN_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
 .if defined(WANT_PHP_MOD) || (defined(WANT_PHP_WEB) && defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "")
+USE_APACHE_RUN=	22+
+.include "${PORTSDIR}/Mk/bsd.apache.mk"
 RUN_DEPENDS+=	${PHPBASE}/${APACHEMODDIR}/libphp5.so:${PORTSDIR}/${MOD_PHP_PORT}
 .endif
 
