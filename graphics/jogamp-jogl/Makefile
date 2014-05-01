@@ -2,128 +2,60 @@
 # $FreeBSD$
 
 PORTNAME=	jogamp-jogl
-PORTVERSION=	2.0.20100914
-PORTREVISION=	1
+PORTVERSION=	2.1.5
 CATEGORIES=	graphics devel java
-MASTER_SITES=	http://www.potion-studios.com/ \
-		LOCAL/makc
-DISTFILES=	sgothel-gluegen-VALID_BUILDS_01-144-ga61c650.tar.gz \
-		sgothel-jogl-OpenGL_3_3_Integration-8-gdc9191f.tar.gz
+MASTER_SITES=	http://jogamp.org/deployment/jogamp-current/archive/Sources/
+DISTFILES=	jogl-v${PORTVERSION}.tar.7z \
+		gluegen-v${PORTVERSION}.tar.7z
 
-MAINTAINER=	tphilipp@potion-studios.com
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Java bindings for OpenGL
 
-LIB_DEPENDS=	drm.2:${PORTSDIR}/graphics/libdrm
-BUILD_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper     \
-		${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+EXTRACT_DEPENDS=	${7Z_CMD}:${PORTSDIR}/archivers/p7zip
+BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+RUN_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
 
-CONFLICTS=	jogl-1.*
-
-MAKE_ENV+=	_JAVA_OPTIONS="-Xmx512m"
-NO_WRKSUBDIR=	yes
-WRKSRC=		${WRKDIR}
-
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-
-ALL_TARGET=	all
-
-# This JOGL port features supported for i386 and amd64, only.
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_XORG=	x11 xau xdamage xdmcp xext xf86vidmodeproto xfixes xproto xt \
-		xxf86vm
-USE_GL=		gl
 USE_ANT=	yes
-USE_LDCONFIG=	yes
+USE_GCC=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+USE_XORG=	x11 xcursor xrandr xrender xxf86vm
 
+7Z_CMD=		${LOCALBASE}/bin/7z
+EXTRACT_CMD=	${7Z_CMD}
+EXTRACT_BEFORE_ARGS=	x -so
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+
+PATCH_WRKSRC=	${WRKDIR}
 BUILD_WRKSRC=	${WRKDIR}/jogl/make
+BUILD_BINPATH=	${WRKSRC}/bin
+MAKE_ENV+=	PATH="${BUILD_BINPATH}:${PATH}"
 
-NO_STAGE=	yes
 post-extract:
-	${MV} ${WRKDIR}/sgothel-gluegen-a61c650 ${WRKDIR}/gluegen
-	${MV} ${WRKDIR}/sgothel-jogl-dc9191f ${WRKDIR}/jogl
+	${MV} ${WRKDIR}/gluegen-v${PORTVERSION} ${WRKDIR}/gluegen
+	${MV} ${WRKDIR}/jogl-v${PORTVERSION} ${WRKDIR}/jogl
+	${MKDIR} ${BUILD_BINPATH}
+	${LN} -sf ${LOCALBASE}/bin/${CC} ${BUILD_BINPATH}/gcc
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|g' \
-		${WRKDIR}/gluegen/make/build.xml \
-		${WRKDIR}/gluegen/make/gluegen.properties
-	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKDIR}|g' \
-		${WRKDIR}/gluegen/make/gluegen-properties.xml
+	${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|g' \
+		${BUILD_WRKSRC}/build-common.xml
+
+pre-build:
+	@(cd ${WRKDIR}/gluegen/make; \
+		${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
-	cd ${WRKDIR}/jogl/build/lib && ${INSTALL_DATA} \
-		libgluegen-rt.so \
-		libjogl_desktop.so \
-		libjogl_es1.so \
-		libjogl_es2.so \
-		libjogl_gl2es12.so \
-		libnativewindow_awt.so \
-		libnativewindow_x11.so \
-		libnewt.so \
-		${PREFIX}/lib
-	cd ${WRKDIR}/jogl/build/jar && ${INSTALL_DATA} \
-		gluegen-rt-cdc.jar \
-		gluegen-rt.jar \
-		jogl.all-noawt.jar \
-		jogl.all.cdc.jar \
-		jogl.all.jar \
-		jogl.awt.jar \
-		jogl.core.cdc.jar \
-		jogl.core.jar \
-		jogl.egl.cdc.jar \
-		jogl.egl.jar \
-		jogl.gl2es12.cdc.jar \
-		jogl.gl2es12.jar \
-		jogl.gldesktop.dbg.jar \
-		jogl.gldesktop.jar \
-		jogl.gles1.cdc.jar \
-		jogl.gles1.dbg.cdc.jar \
-		jogl.gles1.dbg.jar \
-		jogl.gles1.jar \
-		jogl.gles2.cdc.jar \
-		jogl.gles2.dbg.cdc.jar \
-		jogl.gles2.dbg.jar \
-		jogl.gles2.jar \
-		jogl.glu.gldesktop.jar \
-		jogl.glu.mipmap.cdc.jar \
-		jogl.glu.mipmap.jar \
-		jogl.glu.tess.cdc.jar \
-		jogl.glu.tess.jar \
-		jogl.os.x11.cdc.jar \
-		jogl.os.x11.jar \
-		jogl.sdk.jar \
-		jogl.test.jar \
-		jogl.util.awt.jar \
-		jogl.util.cdc.jar \
-		jogl.util.fixedfuncemu.cdc.jar \
-		jogl.util.fixedfuncemu.jar \
-		jogl.util.gldesktop.jar \
-		jogl.util.jar \
-		nativewindow.all-noawt.jar \
-		nativewindow.all.cdc.jar \
-		nativewindow.all.jar \
-		nativewindow.awt.jar \
-		nativewindow.core.cdc.jar \
-		nativewindow.core.jar \
-		nativewindow.os.x11.cdc.jar \
-		nativewindow.os.x11.jar \
-		newt.all-noawt.jar \
-		newt.all.cdc.jar \
-		newt.all.jar \
-		newt.awt.jar \
-		newt.broadcomegl.cdc.jar \
-		newt.broadcomegl.jar \
-		newt.core.cdc.jar \
-		newt.core.jar \
-		newt.intelgdl.cdc.jar \
-		newt.intelgdl.jar \
-		newt.ogl.cdc.jar \
-		newt.ogl.jar \
-		newt.os.x11.cdc.jar \
-		newt.os.x11.jar \
-		${JAVAJARDIR}
+	${INSTALL_LIB} ${WRKDIR}/gluegen/build/obj/libgluegen-rt.so \
+		${STAGEDIR}${PREFIX}/lib/libgluegen2-rt.so
+	${INSTALL_DATA} ${WRKDIR}/gluegen/build/gluegen-rt.jar \
+		${STAGEDIR}${JAVAJARDIR}/gluegen2-rt.jar
+	${INSTALL_DATA} ${WRKDIR}/gluegen/build/gluegen.jar \
+		${STAGEDIR}${JAVAJARDIR}/gluegen2.jar
+	${INSTALL_LIB} ${WRKDIR}/jogl/build/lib/*.so \
+		${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKDIR}/jogl/build/jar/jogl-all.jar \
+		${STAGEDIR}${JAVAJARDIR}/jogl2.jar
 
 .include <bsd.port.mk>
