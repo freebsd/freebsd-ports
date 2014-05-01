@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL_image-${PORTVERSION}
@@ -18,8 +18,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libwebp.so:${PORTSDIR}/graphics/webp
 
-USES=		gmake pkgconfig:build pathfix
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool:oldver pkgconfig pathfix
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
