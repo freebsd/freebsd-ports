@@ -1,5 +1,4 @@
-@unexec if [ -f %D/%%WWWDIR%%/config/config.php ] && cmp -s %D%/%%WWWDIR%%/config/config.php %D%/%%WWWDIR%%/config/config.php.sample; then rm -f %D%/%%WWWDIR%%/config/config.php; fi
-%%WWWDIR%%/config/config.php.sample
+@sample %%WWWDIR%%/config/config.php.sample
 %%WWWDIR%%/config/constants.php
 %%WWWDIR%%/config/index.html
 %%WWWDIR%%/config/init.php
@@ -172,7 +171,6 @@
 %%WWWDIR%%/templates/sendmail.template.php
 %%WWWDIR%%/templates/summary.template.php
 %%WWWDIR%%/templates/viewmail.template.php
-@dirrmtry %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/lib/pear/PEAR/Validator
 @dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Windowseol
 @dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Unixeol
@@ -199,6 +197,7 @@
 @dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/contrib/mysql
 @dirrm %%WWWDIR%%/contrib
+@dirrmtry %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/img
 @dirrm %%WWWDIR%%/lang
 @dirrm %%WWWDIR%%/scripts

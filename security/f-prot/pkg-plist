@@ -1,9 +1,7 @@
 bin/fpscan
 bin/fpupdate
 @unexec if [ -L /etc/f-prot.conf ]; then rm /etc/f-prot.conf; fi
-@unexec if cmp -s %D/etc/f-prot.conf.sample %D/etc/f-prot.conf; then rm -f %D/etc/f-prot.conf; fi
-etc/f-prot.conf.sample
-@exec if [ ! -f %D/etc/f-prot.conf ]; then cp -p %D/%F %B/f-prot.conf; fi
+@sample etc/f-prot.conf.sample
 @exec if [ ! -e /etc/f-prot.conf ]; then ln -s %D/etc/f-prot.conf /etc/f-prot.conf; fi
 etc/periodic/daily/900.fpupdate
 libexec/f-prot/README
@@ -12,6 +10,9 @@ libexec/f-prot/fpscan
 libexec/f-prot/fpupdate
 libexec/f-prot/license.key
 libexec/f-prot/product.data
+man/man1/fpscan.1.gz
+man/man5/f-prot.conf.5.gz
+man/man8/fpupdate.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE-FPAV

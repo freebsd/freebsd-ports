@@ -1,11 +1,7 @@
 **********************************************************************
 
 In order to start using clamav-unofficial-sigs, you need to configure
-it first. A sample configuration file has been installed to:
-
-%%PREFIX%%/etc/clamav-unofficial-sigs.conf.sample
-
-Modify it according to your needs and copy to:
+modify the configuration file according to your needs:
 
 %%PREFIX%%/etc/clamav-unofficial-sigs.conf
 

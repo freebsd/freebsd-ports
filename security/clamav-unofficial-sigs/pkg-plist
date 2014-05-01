@@ -1,5 +1,6 @@
 bin/clamav-unofficial-sigs.sh
-etc/clamav-unofficial-sigs.conf.sample
+@sample etc/clamav-unofficial-sigs.conf.sample
+man/man8/clamav-unofficial-sigs.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE

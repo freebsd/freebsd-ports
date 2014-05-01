@@ -2,7 +2,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec if cmp -s %D/etc/bruteforceblocker.conf %D/etc/bruteforceblocker.conf-dist; then rm -f %D/etc/bruteforceblocker.conf; fi
-etc/bruteforceblocker.conf-dist
-@exec if [ ! -f %D/etc/bruteforceblocker.conf ] ; then cp -p %D/%F %B/bruteforceblocker.conf; fi
+@sample etc/bruteforceblocker.conf.sample
 sbin/bruteforceblocker
