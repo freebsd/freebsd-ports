@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 USES=	tar:bzip2 gmake
 
-OPTIONS_DEFINE=	LIBNET
+OPTIONS_DEFINE=	LIBNET DOCS
 OPTIONS_DEFAULT=LIBNET
 LIBNET_DESC=	Build with libnet support
 
@@ -24,7 +24,6 @@ MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/fiked man/man1/fiked.1.gz
 PORTDOCS=	README NEWS
-PORT_OPTIONS=	DOCS
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 

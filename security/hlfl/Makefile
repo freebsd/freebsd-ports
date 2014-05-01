@@ -14,7 +14,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datadir=${LOCALBASE}/share/doc
 PORTDOCS=	services.hlfl sample_1.hlfl sample_2.hlfl test.hlfl syntax.txt
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
-PORT_OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/hlfl ${STAGEDIR}${PREFIX}/bin

@@ -20,7 +20,6 @@ RUN_DEPENDS=	p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap\
 OPTIONS_DEFINE=	SUID_ROOT DOCS
 SUID_ROOT_DESC=	Install aimsniff with set-uid bit
 
-PORT_OPTIONS=	DOCS
 PORTDOCS=	README table.struct rc.aimsniff
 
 USES=		perl5

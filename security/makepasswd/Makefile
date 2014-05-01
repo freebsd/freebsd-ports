@@ -22,7 +22,7 @@ NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
-PORT_OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 RUN_DEPENDS+=	p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
 		p5-Crypt-OpenSSL-Random>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random

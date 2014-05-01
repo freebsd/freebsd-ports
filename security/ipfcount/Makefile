@@ -15,7 +15,7 @@ PLIST_FILES=	bin/ipfcount man/man1/ipfcount.1.gz
 
 USES=		perl5
 
-PORT_OPTIONS=	EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	100.ipfcount
 SUB_FILES=	pkg-message

@@ -19,7 +19,7 @@ CFLAGS+=	-fPIC
 SUB_LIST=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^ifd-//}
 
-PORT_OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README
 PLIST_FILES=	lib/pcsc/drivers/libslb_rf60.so

@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=   ${WRKSRC}/COPYING
 
 USES=	gmake
-PORT_OPTIONS=	EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
 # inplace replacement to remove relative binary path in examples scripts
 post-patch:

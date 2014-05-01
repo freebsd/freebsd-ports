@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 AUTOMAKE_ARGS=	--add-missing
 
-PORT_OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${FIND} ${WRKSRC} -type l -delete
