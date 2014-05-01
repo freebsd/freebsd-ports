@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
 MAINTAINER=	cordeiro@nic.br
 COMMENT=	Tool to locally check for signs of a rootkit
 
-PORT_OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 SCRIPT_FILES=	chkrootkit
 PROG_FILES=	chklastlog \

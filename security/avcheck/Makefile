@@ -14,7 +14,7 @@ PORTDOCS=	README.AVP README.AVP.de README.DrWeb README.Exim \
 		README.Postfix README.Postfix.de README.Sendmail eicar.msg \
 		eicar.txt
 
-PORT_OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^CC/#CC/g ; s/^CFLAGS/#CFLAGS/g' ${WRKSRC}/Makefile

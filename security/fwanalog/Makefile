@@ -19,7 +19,7 @@ CONFFILES=	fwanalog-dom.tab \
 		fwanalog.opts \
 		services.conf
 
-PORT_OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} \
