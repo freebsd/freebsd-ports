@@ -1,6 +1,6 @@
---- ppapi/shared_impl/private/net_address_private_impl.cc.orig	2012-10-31 21:01:33.000000000 +0200
-+++ ppapi/shared_impl/private/net_address_private_impl.cc	2012-11-07 14:41:26.000000000 +0200
-@@ -12,6 +12,10 @@
+--- ./ppapi/shared_impl/private/net_address_private_impl.cc.orig	2014-04-24 22:35:40.000000000 +0200
++++ ./ppapi/shared_impl/private/net_address_private_impl.cc	2014-04-24 23:23:46.000000000 +0200
+@@ -14,6 +14,10 @@
  #include <sys/types.h>
  #endif
  
@@ -11,7 +11,7 @@
  #include <string.h>
  
  #include <string>
-@@ -26,7 +30,7 @@
+@@ -28,7 +32,7 @@
  #include "ppapi/shared_impl/var.h"
  #include "ppapi/thunk/thunk.h"
  

@@ -1,6 +1,6 @@
---- gpu/config/gpu_test_config.cc.orig	2013-09-02 21:22:26.000000000 +0300
-+++ gpu/config/gpu_test_config.cc	2013-09-02 21:23:55.000000000 +0300
-@@ -17,8 +17,6 @@
+--- ./gpu/config/gpu_test_config.cc.orig	2014-04-24 22:35:32.000000000 +0200
++++ ./gpu/config/gpu_test_config.cc	2014-04-24 23:23:46.000000000 +0200
+@@ -23,8 +23,6 @@
  GPUTestConfig::OS GetCurrentOS() {
  #if defined(OS_CHROMEOS)
    return GPUTestConfig::kOsChromeOS;
@@ -9,7 +9,7 @@
  #elif defined(OS_WIN)
    int32 major_version = 0;
    int32 minor_version = 0;
-@@ -53,6 +51,8 @@
+@@ -61,6 +59,8 @@
    }
  #elif defined(OS_ANDROID)
    return GPUTestConfig::kOsAndroid;

@@ -1,6 +1,6 @@
---- gpu/config/gpu_control_list_unittest.cc.orig	2013-09-02 21:20:16.000000000 +0300
-+++ gpu/config/gpu_control_list_unittest.cc	2013-09-02 21:21:01.000000000 +0300
-@@ -177,8 +177,7 @@
+--- ./gpu/config/gpu_control_list_unittest.cc.orig	2014-04-24 22:35:32.000000000 +0200
++++ ./gpu/config/gpu_control_list_unittest.cc	2014-04-24 23:23:46.000000000 +0200
+@@ -175,8 +175,7 @@
    features = control_list->MakeDecision(
        GpuControlList::kOsLinux, kOsVersion, gpu_info());
    EXPECT_SINGLE_FEATURE(features, TEST_FEATURE_0);

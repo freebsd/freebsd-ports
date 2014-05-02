@@ -1,6 +1,6 @@
---- base/process/memory_unittest.cc.orig	2013-09-24 23:49:53.000000000 +0300
-+++ base/process/memory_unittest.cc	2013-09-24 23:50:57.000000000 +0300
-@@ -153,12 +153,12 @@
+--- ./base/process/memory_unittest.cc.orig	2014-04-24 22:36:10.000000000 +0200
++++ ./base/process/memory_unittest.cc	2014-04-24 23:23:41.000000000 +0200
+@@ -151,12 +151,12 @@
  
  // Android doesn't implement set_new_handler, so we can't use the
  // OutOfMemoryTest cases.
@@ -15,7 +15,7 @@
      !defined(OS_WIN) && \
      !defined(ADDRESS_SANITIZER) && !defined(THREAD_SANITIZER)
  
-@@ -375,5 +375,5 @@
+@@ -372,5 +372,5 @@
  #endif  // !ARCH_CPU_64_BITS
  #endif  // OS_MACOSX
  
