@@ -3,65 +3,34 @@
 
 PORTNAME=	PGP-Sign
 PORTVERSION=	0.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Create detached PGP signatures for data
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
-CONFIGURE_ARGS=	PGPS=${PGPS} PGPV=${PGPV} PGPSTYLE=${PGPSTYLE}
+CONFIGURE_ARGS=	PGP=${PGP} PGPSTYLE=${PGPSTYLE}
 
-# If DEFAULTPGP isn't defined, it gets set to PGP2.  If you don't like
-# the values that this process assigns to PGP (or PGPV and PGPS) and
-# PGPSTYLE, they can be predefined.
-#
 # Currently useful values for DEFAULTPGP are:
 # PGP2 - PGP 2.6.* or a reasonable facsimile thereof
-# PGP5 - PGP 5 or a work-alike
 # GPG  - Gnu Privacy Guard
 
-.ifndef DEFAULTPGP
-DEFAULTPGP=	GPG
-.endif
-
-.if (${DEFAULTPGP} == PGP2 )
-BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
-RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
-PGPSTYLE?=	PGP2
-.ifndef PGP
-PGP!=	which pgp || ${ECHO} ${PREFIX}/bin/pgp
-.endif
-.elif (${DEFAULTPGP} == PGP5 )
-BUILD_DEPENDS=	pgps:${PORTSDIR}/security/pgp5
-RUN_DEPENDS=	pgps:${PORTSDIR}/security/pgp5
-PGPSTYLE?=	PGP5
-.ifndef PGPS
-PGPS!=	which pgps || ${ECHO} ${PREFIX}/bin/pgps
-.endif
-.ifndef PGPV
-PGPV!=	which pgpv || ${ECHO} ${PREFIX}/bin/pgpv
-.endif
-.ifndef PGP
-PGP!=	which pgp || ${ECHO} ${PREFIX}/bin/pgp
-.endif
-.elif (${DEFAULTPGP} == GPG)
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
-PGPSTYLE?=	GPG
-.ifndef PGP
-PGP!=	which gpg || ${ECHO} ${PREFIX}/bin/gpg
-.endif
-.else
-.error Unsupported DEFAULTPGP value.  See the Makefile for a list of acceptable values.
-.endif
-
-.ifdef PGP
-PGPS?=	${PGP}
-PGPV?=	${PGP}
-.endif
+OPTIONS_SINGLE=	DEFAULTPGP
+OPTIONS_SINGLE_DEFAULTPGP=	GNUPG PGP2
+OPTIONS_DEFAULT=	GNUPG
+PGP2_DESC=	PGP2 support
+GNUPG_BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+GNUPG_CONFIGURE_ON=	PGP=${LOCALBASE}/bin/gpg PGPSTYLE=GPG
+GNUPG_RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+PGP2_BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
+PGP2_CONFIGURE_ON=	PGP=${LOCALBASE}/bin/pgp PGPSTYLE=PGP2
+PGP2_RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
 .include <bsd.port.mk>
