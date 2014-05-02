@@ -920,6 +920,7 @@
     SUBDIR += lasi
     SUBDIR += lcov
     SUBDIR += leaktracer
+    SUBDIR += leiningen
     SUBDIR += lemon
     SUBDIR += lfcbase
     SUBDIR += lfcxml
