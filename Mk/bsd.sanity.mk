@@ -108,8 +108,10 @@ DEV_WARNING+=	"USE_PYDISTUTILS=easy_install is deprecated, please use USE_PYDIST
 DEV_WARNING+=	"PYDISTUTILS_PKGNAME has no effect for USE_PYDISTUTILS=yes and PYDISTUTILS_AUTOPLIST=yes"
 .endif
 
-.if defined(USE_AUTOTOOLS) && (${USE_AUTOTOOLS:Mlibtool} || ${USE_AUTOTOOLS:Mlibtool\:env})
+.if defined(USE_AUTOTOOLS)
+.  if ${USE_AUTOTOOLS:Mlibtool} || ${USE_AUTOTOOLS:Mlibtool\:env}
 DEV_WARNING+=	"USE_AUTOTOOLS=libtool is deprecated, please use USES=libtool"
+.  endif
 .endif
 
 .if defined(USE_GNOME) && ${USE_GNOME:Mltverhack*}
