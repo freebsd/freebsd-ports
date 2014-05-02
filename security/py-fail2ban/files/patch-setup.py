@@ -1,12 +1,13 @@
---- setup.py.orig	2013-06-10 03:40:55.000000000 -0400
-+++ setup.py	2013-06-10 03:41:17.000000000 -0400
-@@ -67,9 +67,6 @@
+--- setup.py.orig	2014-04-02 18:37:35.000000000 +0200
++++ setup.py	2014-04-02 18:38:12.000000000 +0200
+@@ -141,10 +141,6 @@
  						),
- 						('/var/run/fail2ban',
+ 						('/var/lib/fail2ban',
  							''
 -						),
 -						('/usr/share/doc/fail2ban',
--							['README.md', 'DEVELOP', 'doc/run-rootless.txt']
+-							['README.md', 'README.Solaris', 'DEVELOP', 'FILTERS',
+-							 'doc/run-rootless.txt']
  						)
- 					]
- )
+ 					],
+ 	**setup_extra
