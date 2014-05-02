@@ -1,5 +1,3 @@
-@group www
-@owner www
 %%WWWDIR%%/excanvas.js
 %%WWWDIR%%/excanvas.min.js
 %%WWWDIR%%/jquery.colorhelpers.js
@@ -34,8 +32,6 @@
 %%WWWDIR%%/jquery.flot.threshold.min.js
 %%WWWDIR%%/jquery.flot.time.js
 %%WWWDIR%%/jquery.flot.time.min.js
-%%WWWDIR%%/jquery.js
-%%WWWDIR%%/jquery.min.js
-@owner
-@group
+%%JQUERY%%%%WWWDIR%%/jquery.js
+%%JQUERY%%%%WWWDIR%%/jquery.min.js
 @dirrmtry %%WWWDIR%%
