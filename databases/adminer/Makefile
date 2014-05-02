@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 			${PORTNAME}-${PORTVERSION}-mysql.php ${PORTNAME}-${PORTVERSION}-mysql-en.php
 EXTRACT_ONLY= ${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Full-featured database management tool written in PHP
 
 LICENSE=	APACHE20
