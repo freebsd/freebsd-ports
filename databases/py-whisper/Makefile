@@ -10,10 +10,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Fixed-size database, similar in design to RRD
 
+LICENSE=	APACHE20
+
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
