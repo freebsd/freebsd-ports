@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	lfcbase
-PORTVERSION=	1.5.8
+PORTVERSION=	1.5.9
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Collection of basic c++ classes, used for databases/cego
 
 LICENSE=	GPLv3
