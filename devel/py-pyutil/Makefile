@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	pyutil
-PORTVERSION=	1.9.7
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Collection of mature utilities for Python programmers
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.1:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}zbase32>=1.1.0:${PORTSDIR}/converters/zbase32
