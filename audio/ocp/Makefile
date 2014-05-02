@@ -3,7 +3,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.20
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.cubic.org/ocp/ \
@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=	--without-adplug
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
-USE_SDL=		sound
+USE_SDL=		sdl
 CONFIGURE_ARGS+=	--with-sdl=yes
 PLIST_SUB+=		SDL=""
 .else
