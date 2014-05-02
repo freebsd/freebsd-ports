@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
 
 LICENSE=	GPLv2
@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS BUGS ChangeLog README
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

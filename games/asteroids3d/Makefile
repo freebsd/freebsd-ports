@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/3d/3D/}-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	First-person shooter blowing up asteroids in 3D space
 
 LICENSE=	GPLv2

@@ -10,7 +10,7 @@ DISTFILES=	hhh-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons.tar.gz:icons
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Pacman with a fast food twist
 
 LICENSE=	GPLv2 OFL11
@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/hhh-2008-03-29
 USES=		gmake
 USE_SDL=	sdl image mixer ttf
 ALL_TARGET=	# empty
+CFLAGS+=	-Wno-tautological-compare -Wno-deprecated-writable-strings \
+		-Wno-self-assign-field
 
 PORTDOCS=	CHANGELOG README
 OPTIONS_DEFINE=	DOCS
@@ -48,7 +50,7 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
 .for f in *.ogg *.ttf *.dat *.png
-	@(cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 
 post-install:

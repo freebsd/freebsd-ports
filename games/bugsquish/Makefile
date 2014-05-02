@@ -6,12 +6,11 @@ PORTVERSION=	0.0.6
 PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/bugsquish/src/ \
-		ftp://ftp.billsgames.com/unix/x/bugsquish/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:music
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_music${EXTRACT_SUFX}:music
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Action game not unlike light gun arcade games
 
 LICENSE=	GPLv2
@@ -21,8 +20,7 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 USES=		gmake
 USE_SDL=	image mixer sdl
 
-PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
-
+PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Bug Squish" "" "${PORTNAME}" \

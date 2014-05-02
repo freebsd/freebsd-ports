@@ -4,4 +4,4 @@
 #
 
 cd "%%DATADIR%%"
-exec /usr/bin/env python ./pyawale.py
+exec %%PYTHON_CMD%% ./pyawale.py

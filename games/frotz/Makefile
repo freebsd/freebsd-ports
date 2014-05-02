@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/d//}/ \
 		http://www.ifarchive.org/if-archive/infocom/interpreters/frotz/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Infocom games interpreter
 
 LICENSE=	GPLv2

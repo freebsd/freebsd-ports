@@ -1,13 +1,14 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hitori
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Logic game similar to Sudoku
 
 LICENSE=	GPLv3 CCbyNCSA3
@@ -20,8 +21,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		xml2po:${PORTSDIR}/textproc/gnome-doc-utils \
 		itstool:${PORTSDIR}/textproc/itstool
 
-USE_XZ=		yes
-USES=		gmake pkgconfig desktop-file-utils
+USES=		gmake pkgconfig tar:xz
 USE_GNOME=	cairo glib20 gtk30
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	BERLIOS \
 		SF/${PORTNAME}.berlios/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	3D downhill racing game... kind of like TuxRacer Improved
 
 LICENSE=	GPLv2
@@ -16,17 +16,14 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig dos2unix desktop-file-utils
+USES=		gmake pkgconfig dos2unix desktop-file-utils tar:bzip2
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 USE_SDL=	mixer sdl
 USE_GL=		gl
 USE_XORG=	x11 xi xext xmu xt
 GNU_CONFIGURE=	yes
-CFLAGS+=	-w
 
 PORTDOCS=	AUTHORS ChangeLog ChangeLog-pre0.3.9 ChangeLog-tuxracer
-
 OPTIONS_DEFINE= DOCS
 
 post-patch:

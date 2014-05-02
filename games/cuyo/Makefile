@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Nice, innovative, challenging Tetris-like game
 
 LICENSE=	GPLv2
@@ -20,10 +20,9 @@ USES=		iconv
 GNU_CONFIGURE=	yes
 USE_SDL=	mixer image
 USE_XORG=	xdmcp xau x11
-CFLAGS+=	-w
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	NEWS TODO
+PORTDOCS=	AUTHORS NEWS TODO
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

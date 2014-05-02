@@ -9,7 +9,7 @@ DISTNAME=	barbie-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	You are a seahorse and you want to go to the moon!
 
 LICENSE=	GPLv2

@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Simple 2D puzzle game with bombs
 
 LICENSE=	GPLv2
@@ -28,10 +28,9 @@ INSTALLS_ICONS=	yes
 USE_PYTHON=	yes
 
 PORTDOCS=	ChangeLog readme.txt
+OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}
-
-OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -i '' '/words = name.split()/,/self.name = name/s/^/#/' \
@@ -47,10 +46,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .for d in bombz levels pngs sounds FreeSans.ttf
-	@(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
-.for d in *.py *.pyc *.pyo
-	@(cd ${WRKSRC} ; ${INSTALL_SCRIPT} ${d} ${STAGEDIR}${DATADIR})
+.for f in *.py *.pyc *.pyo
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \

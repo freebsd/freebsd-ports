@@ -12,7 +12,7 @@ DISTFILES=	chains-${DISTVERSION}${EXTRACT_SUFX} \
 EXTRACT_SUFX=	-src.7z
 EXTRACT_ONLY=	chains-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	The aim is to remove all of the targets on each level
 
 LICENSE=	GPLv2
@@ -36,8 +36,6 @@ OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Bubble Chains" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
-
-.include <bsd.port.options.mk>
 
 P7ZIP_CMD=	${LOCALBASE}/bin/7z
 P7ZIP_ARGS=	x -o${WRKDIR}
