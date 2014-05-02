@@ -10,7 +10,9 @@ DISTNAME=	PyCogent-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A toolkit for statistical analysis of biological sequences
+COMMENT=	Toolkit for statistical analysis of biological sequences
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/bin/cython:${PORTSDIR}/lang/cython \
@@ -21,6 +23,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	cogent
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
