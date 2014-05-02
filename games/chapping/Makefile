@@ -3,7 +3,7 @@
 
 PORTNAME=	chapping
 PORTVERSION=	0.43
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://forja.rediris.es/frs/download.php/760/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -12,8 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Turn based board football game
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_SDL=	sdl image gfx ttf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source

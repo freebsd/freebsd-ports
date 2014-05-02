@@ -3,7 +3,7 @@
 
 PORTNAME=	galaxyhack
 PORTVERSION=	1.74
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/Fleet%20packages/020906:fleets
@@ -26,8 +26,7 @@ FLEETS_DESC=	Additional fleets
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-USE_BZIP2=	yes
-USES=		dos2unix gmake
+USES=		dos2unix gmake tar:bzip2
 USE_SDL=	gfx image mixer sdl
 ALL_TARGET=	${PORTNAME}
 

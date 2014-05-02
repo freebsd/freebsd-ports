@@ -3,7 +3,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-1.0/
 DISTNAME=	ClanLib-${PORTVERSION}
@@ -20,9 +20,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libmikmod.so:${PORTSDIR}/audio/libmikmod \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pathfix pkgconfig
 USE_XORG=	x11 xi
-USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_SDL=	gfx
 USE_GL=		yes

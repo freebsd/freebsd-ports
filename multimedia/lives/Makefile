@@ -3,6 +3,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -41,7 +42,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
-USES=		perl5 pkgconfig shebangfix tar:bzip2 
+USES=		libtool pathfix perl5 pkgconfig shebangfix tar:bzip2 
 SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \
 		smogrify tools/autolives.pl
 GNU_CONFIGURE=	yes
@@ -94,8 +95,6 @@ post-patch:
 		${WRKSRC}/lives-plugins/plugins/decoders/ogg_decoder.h
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/|${LOCALBASE}/lib/|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/frei0r.c
-	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/libweed/Makefile.in
 	@${REINPLACE_CMD} 's|/bin/touch|/usr/bin/touch|g' \
 		${WRKSRC}/src/callbacks.c \
 		${WRKSRC}/src/saveplay.c \
