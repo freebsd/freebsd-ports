@@ -4,13 +4,13 @@
  SRCS = sslscan.c
 -BINPATH = /usr/bin/
 -MANPATH = /usr/share/man/
-+BINPATH = ${PREFIX}/bin/
-+MANPATH = ${PREFIX}/man
++BINPATH = ${STAGEDIR}${PREFIX}/bin/
++MANPATH = ${STAGEDIR}${PREFIX}/man
 +CC =	${CC}
  
  all:
 -	gcc -g -Wall -lssl -o sslscan $(SRCS) $(LDFLAGS) $(CFLAGS)
-+	${CC} -g -Wall -lssl -o sslscan $(SRCS) $(LDFLAGS) $(CFLAGS)
++	${CC} -g -Wall -lssl -lcrypto -o sslscan $(SRCS) $(LDFLAGS) $(CFLAGS)
  
  install:
 -	cp sslscan $(BINPATH)
