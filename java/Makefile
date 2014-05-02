@@ -130,6 +130,7 @@
     SUBDIR += openjdk6-jre
     SUBDIR += openjdk7
     SUBDIR += openjdk8
+    SUBDIR += openjdk8-jre
     SUBDIR += phpeclipse
     SUBDIR += poseidon
     SUBDIR += proguard
