@@ -1,8 +1,8 @@
---- chrome/test/base/testing_browser_process.h.orig	2011-11-01 10:43:07.000000000 +0200
-+++ chrome/test/base/testing_browser_process.h	2011-11-19 19:35:37.000000000 +0200
-@@ -110,7 +110,7 @@
+--- ./chrome/test/base/testing_browser_process.h.orig	2014-04-24 22:34:34.000000000 +0200
++++ ./chrome/test/base/testing_browser_process.h	2014-04-24 23:23:43.000000000 +0200
+@@ -101,7 +101,7 @@
+   virtual DownloadStatusUpdater* download_status_updater() OVERRIDE;
    virtual DownloadRequestLimiter* download_request_limiter() OVERRIDE;
-   virtual bool plugin_finder_disabled() const OVERRIDE;
  
 -#if (defined(OS_WIN) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
 +#if (defined(OS_WIN) || defined(OS_LINUX) || defined(OS_FREEBSD)) && !defined(OS_CHROMEOS)

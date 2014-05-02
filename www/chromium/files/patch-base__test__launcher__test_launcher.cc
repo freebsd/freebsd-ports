@@ -1,6 +1,6 @@
---- base/test/launcher/test_launcher.cc.orig	2014-01-07 21:01:10.000000000 +0100
-+++ base/test/launcher/test_launcher.cc	2014-01-13 01:36:07.000000000 +0100
-@@ -36,6 +36,10 @@
+--- ./base/test/launcher/test_launcher.cc.orig	2014-04-24 22:36:09.000000000 +0200
++++ ./base/test/launcher/test_launcher.cc	2014-04-24 23:23:41.000000000 +0200
+@@ -39,6 +39,10 @@
  #include "base/mac/scoped_nsautorelease_pool.h"
  #endif
  

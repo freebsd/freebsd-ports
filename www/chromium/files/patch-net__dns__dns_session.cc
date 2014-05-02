@@ -1,6 +1,6 @@
---- net/dns/dns_session.cc.orig	2013-08-19 01:54:01.000000000 +0200
-+++ net/dns/dns_session.cc	2013-08-26 12:42:02.000000000 +0200
-@@ -176,7 +176,7 @@
+--- ./net/dns/dns_session.cc.orig	2014-04-24 22:35:54.000000000 +0200
++++ ./net/dns/dns_session.cc	2014-04-24 23:23:46.000000000 +0200
+@@ -178,7 +178,7 @@
    base::TimeDelta current_error = rtt - estimate;
    estimate += current_error / 8;  // * alpha
    base::TimeDelta abs_error = base::TimeDelta::FromInternalValue(

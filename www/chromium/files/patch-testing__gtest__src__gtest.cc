@@ -1,6 +1,6 @@
---- testing/gtest/src/gtest.cc.orig	2011-09-14 11:19:34.000000000 +0300
-+++ testing/gtest/src/gtest.cc	2011-09-27 00:34:58.000000000 +0300
-@@ -114,6 +114,10 @@
+--- ./testing/gtest/src/gtest.cc.orig	2014-04-24 22:36:14.000000000 +0200
++++ ./testing/gtest/src/gtest.cc	2014-04-24 23:23:47.000000000 +0200
+@@ -117,6 +117,10 @@
  
  #endif  // GTEST_OS_LINUX
  
@@ -11,7 +11,7 @@
  #if GTEST_HAS_EXCEPTIONS
  # include <stdexcept>
  #endif
-@@ -1621,7 +1625,7 @@
+@@ -1592,7 +1596,7 @@
  
  #if GTEST_OS_WINDOWS
    return _wcsicmp(lhs, rhs) == 0;

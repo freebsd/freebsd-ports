@@ -1,6 +1,6 @@
 --- base/memory/shared_memory.h.orig	2011-04-01 21:54:26.066717848 +0300
 +++ base/memory/shared_memory.h	2011-04-01 21:55:14.292717813 +0300
-@@ -10,6 +10,7 @@
+@@ -12,6 +12,7 @@
  
  #if defined(OS_POSIX)
  #include <sys/types.h>
@@ -10,7 +10,7 @@
  #endif
 --- third_party/libjingle/source/talk/base/stream.h.orig	2011-04-01 22:16:30.129717654 +0300
 +++ third_party/libjingle/source/talk/base/stream.h	2011-04-01 22:16:48.245715495 +0300
-@@ -28,6 +28,7 @@
+@@ -30,6 +30,7 @@
  #ifndef TALK_BASE_STREAM_H__
  #define TALK_BASE_STREAM_H__
  
@@ -40,7 +40,7 @@
  
 --- third_party/ffmpeg/libavutil/cpu.c.orig	2013-11-16 01:26:14.000000000 +0100
 +++ third_party/ffmpeg/libavutil/cpu.c	2013-11-19 00:24:53.000000000 +0100
-@@ -21,6 +21,9 @@
+@@ -24,6 +24,9 @@
  #include "opt.h"
  #include "common.h"
  

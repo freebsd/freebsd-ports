@@ -1,8 +1,8 @@
---- ./chrome/tools/build/linux/sed.sh.orig	2010-12-16 02:11:59.000000000 +0100
-+++ ./chrome/tools/build/linux/sed.sh	2010-12-20 20:15:08.000000000 +0100
+--- ./chrome/tools/build/linux/sed.sh.orig	2014-04-24 22:34:55.000000000 +0200
++++ ./chrome/tools/build/linux/sed.sh	2014-04-24 23:23:44.000000000 +0200
 @@ -1,4 +1,4 @@
--#!/bin/bash
+-#!/bin/sh
 +#!/usr/bin/env bash
  
- # Copyright (c) 2009 The Chromium Authors. All rights reserved.
+ # Copyright (c) 2011 The Chromium Authors. All rights reserved.
  # Use of this source code is governed by a BSD-style license that can be

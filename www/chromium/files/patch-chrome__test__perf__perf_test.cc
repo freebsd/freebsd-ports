@@ -1,5 +1,5 @@
---- chrome/test/perf/perf_test.cc.orig	2013-08-19 21:01:58.000000000 +0300
-+++ chrome/test/perf/perf_test.cc	2013-08-19 21:03:16.000000000 +0300
+--- ./chrome/test/perf/perf_test.cc.orig	2014-04-24 22:34:37.000000000 +0200
++++ ./chrome/test/perf/perf_test.cc	2014-04-24 23:23:43.000000000 +0200
 @@ -352,7 +352,7 @@
    AppendResult(output, "ws_final_t", "", "ws_f_t" + trace_name,
                 total_working_set_size, "bytes",
