@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/kicad
 USES=		cmake dos2unix desktop-file-utils shared-mime-info zip
 # Boost templates and compiler and library support for the ISO C++ 2011 standard from include/wx-3.0
 USES+=		compiler:gcc-c++11-lib
-MAKE_JOBS_UNSAFE=yes
 DOS2UNIX_GLOB=	*.cmake sch_bus_entry.h sch_line.h sch_no_connect.h
 USE_XORG=	x11 ice xext
 USE_GL=		yes
