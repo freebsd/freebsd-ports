@@ -19,13 +19,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS+=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix perl5 pkgconfig
+USES=		gettext gmake libtool:keepla pathfix perl5 pkgconfig tar:xz
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	atk pango gdkpixbuf2 introspection:build ltverhack
+USE_GNOME=	atk pango gdkpixbuf2 introspection:build
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 PATCHDIR=	${.CURDIR}/../../x11-toolkits/gtk20/files

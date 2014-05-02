@@ -301,12 +301,15 @@ lib/gtk-2.0/modules/libgail.so
 lib/libgailutil.la
 lib/libgailutil.so
 lib/libgailutil.so.18
+lib/libgailutil.so.%%LIBGAILVER%%
 lib/libgdk-x11-2.0.la
 lib/libgdk-x11-2.0.so
 lib/libgdk-x11-2.0.so.0
+lib/libgdk-x11-2.0.so.%%LIBGVER%%
 lib/libgtk-x11-2.0.la
 lib/libgtk-x11-2.0.so
 lib/libgtk-x11-2.0.so.0
+lib/libgtk-x11-2.0.so.%%LIBGVER%%
 libdata/pkgconfig/gail.pc
 libdata/pkgconfig/gdk-2.0.pc
 libdata/pkgconfig/gdk-x11-2.0.pc
