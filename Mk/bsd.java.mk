@@ -36,6 +36,9 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 # JAVA_BUILD		When set, it means that the selected JDK port should be
 #					added to build dependencies for the port.
 #
+# JAVA_EXTRACT		This variable works exactly the same as JAVA_BUILD but
+#					regarding extract dependencies.
+#
 # JAVA_RUN			This variable works exactly the same as JAVA_BUILD but
 #					regarding run dependencies.
 #
