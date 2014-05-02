@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.20.1
+PORTVERSION=	2.20.9
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Relational and transactional database system
 
 LICENSE=	GPLv3
