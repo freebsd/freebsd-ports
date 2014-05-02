@@ -1,0 +1,9 @@
+# $FreeBSD$
+
+PORTREVISION=	0
+PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-jre
+
+BUILD_JRE=	yes
+MASTERDIR=	${.CURDIR}/../openjdk8
+
+.include "${MASTERDIR}/Makefile"
