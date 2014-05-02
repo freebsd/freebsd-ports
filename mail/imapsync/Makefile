@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	imapsync
-PORTVERSION=	1.580
-PORTREVISION=	1
+PORTVERSION=	1.584
 CATEGORIES=	mail perl5
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	IMAP synchronization, copy or migration tool
 
 RUN_DEPENDS=	p5-Mail-IMAPClient>0:${PORTSDIR}/mail/p5-Mail-IMAPClient \
@@ -18,6 +17,8 @@ RUN_DEPENDS=	p5-Mail-IMAPClient>0:${PORTSDIR}/mail/p5-Mail-IMAPClient \
 
 USES=		perl5
 NO_BUILD=	yes
+
+PORTSCOUT=	limit:^1\.(\d\.){3}
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
