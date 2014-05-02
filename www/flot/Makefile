@@ -5,7 +5,7 @@ PORTVERSION=	0.8.3
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.flotcharts.org/downloads/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	melvyn@magemana.nl
 COMMENT=	JavaScript plotting library for jQuery
 
 LICENSE=	MIT
@@ -18,7 +18,10 @@ USES=		zip
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES JQUERY
+JQUERY_DESC=	Include provided JQuery 1.8.3
+OPTIONS_DEFAULT=	JQUERY
+OPTIONS_SUB=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
