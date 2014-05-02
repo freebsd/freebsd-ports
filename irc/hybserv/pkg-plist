@@ -1,4 +1,6 @@
 etc/rc.d/hybserv.sh
+@owner hybserv
+@group hybserv
 hybserv/cleandb
 hybserv/doc/COPYING
 hybserv/doc/INSTALL
