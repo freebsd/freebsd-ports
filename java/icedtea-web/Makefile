@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
+JAVA_VERSION=	1.6 1.7
 USE_PERL5=	build
 USE_XORG=	x11
 USES=		desktop-file-utils gmake perl5 pkgconfig shebangfix
