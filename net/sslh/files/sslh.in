@@ -5,25 +5,23 @@
 # sslh startup script
 #
 # PROVIDE: sslh
-# REQUIRE: login
+# REQUIRE: LOGIN FILESYSTEMS ldconfig sshd
 # KEYWORD: shutdown
 #
-# Add the following to /etc/rc.conf[.local] to enable this service
-#
+# Add the following to /etc/rc.conf[.local] to enable this service:
 # sslh_enable="YES"
 #
-# You can fine tune others variables too:
-# You can fine tune others variables too:
+# You can fine tune other variables too:
 # sslh_mode="fork | select"
 # fork: stable but slow performance
 # select: new but high performance
-# sslh_fib: Routing table number
+# sslh_fib: routing table number
 
 sslh_precmd() {
 	if command -v check_namevarlist > /dev/null 2>&1; then
 		check_namevarlist fib && return 0
 	fi
-	sysctl net.fibs >/dev/null 2>&1 || return 0
+	sysctl net.fibs > /dev/null 2>&1 || return 0
 
 	sslh_fib=${sslh_fib:-"NONE"}
 	case "$sslh_fib" in
@@ -33,7 +31,7 @@ sslh_precmd() {
 		command="setfib -F ${sslh_fib} ${command}"
 		;;
 	esac
-} 
+}
 
 . /etc/rc.subr
 
@@ -47,8 +45,11 @@ sslh_enable=${sslh_enable:-"NO"}
 sslh_mode=${sslh_mode:-"fork"}
 
 required_files="%%PREFIX%%/etc/${name}.conf"
-for value in listening sshtarget ssltarget sshtimeout openvpntarget xmpptarget tinctarget;do
-	eval "[ -n \"\${sslh_${value}}\" ]" && warn "${name}_${value} no more used: Configuration file available"
+
+for value in listening openvpntarget sshtarget sshtimeout ssltarget \
+    tinctarget xmpptarget; do
+	eval "[ -n \"\${sslh_${value}}\" ]" && \
+	    warn "${name}_${value} no longer used: configuration file available"
 done
 
 command="%%PREFIX%%/sbin/${name}-${sslh_mode}"
