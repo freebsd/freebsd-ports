@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	harfbuzz
-PORTVERSION=	0.9.25
-PORTREVISION=	2
+PORTVERSION=	0.9.28
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 
@@ -14,20 +13,17 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libicudata.so:${PORTSDIR}/devel/icu \
 		libgraphite2.so:${PORTSDIR}/graphics/graphite2
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
-USE_GNOME=	cairo glib20 ltverhack
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USE_GNOME=	cairo glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-graphite2
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000024
 EXTRA_PATCHES=	${PATCHDIR}/extra-src_hb-open-type-private.hh
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libharfbuzz*.so.0
 
 .include <bsd.port.post.mk>

@@ -11,7 +11,9 @@ include/harfbuzz/hb-ft.h
 include/harfbuzz/hb-glib.h
 include/harfbuzz/hb-graphite2.h
 include/harfbuzz/hb-icu.h
+include/harfbuzz/hb-ot-font.h
 include/harfbuzz/hb-ot-layout.h
+include/harfbuzz/hb-ot-shape.h
 include/harfbuzz/hb-ot-tag.h
 include/harfbuzz/hb-ot.h
 include/harfbuzz/hb-set.h
@@ -23,9 +25,11 @@ include/harfbuzz/hb.h
 lib/libharfbuzz-icu.la
 lib/libharfbuzz-icu.so
 lib/libharfbuzz-icu.so.0
+lib/libharfbuzz-icu.so.0.928.0
 lib/libharfbuzz.la
 lib/libharfbuzz.so
 lib/libharfbuzz.so.0
+lib/libharfbuzz.so.0.928.0
 libdata/pkgconfig/harfbuzz-icu.pc
 libdata/pkgconfig/harfbuzz.pc
 share/gtk-doc/html/harfbuzz/annotation-glossary.html
