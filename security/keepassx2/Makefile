@@ -4,9 +4,9 @@
 PORTNAME=	KeePassX
 DISTVERSION=	2.0
 CATEGORIES=	security
-MASTER_SITES=	https://www.keepassx.org/dev/attachments/download/36/
+MASTER_SITES=	https://www.keepassx.org/dev/attachments/download/69/
 PKGNAMESUFFIX=	-alpha
-DISTNAME=	${PORTNAME:L}-${DISTVERSION}${PKGNAMESUFFIX}4
+DISTNAME=	${PORTNAME:L}-${DISTVERSION}${PKGNAMESUFFIX}6
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Cross Platform Password Manager
@@ -19,7 +19,6 @@ DATADIR=	${PREFIX}/share/${PORTNAME:L}
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
 USES=		cmake
-USE_GCC=	any
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	corelib gui xml qtestlib dbus uic_build moc_build \
