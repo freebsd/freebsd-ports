@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Very popular card game with variable skill levels
 
 LICENSE=	GPLv2
@@ -24,12 +24,11 @@ CONFIGURE_ARGS=	--disable-silent-rules
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
-PORTDOCS=	AUTHORS ChangeLog README TODO
-
-DESKTOP_ENTRIES="Euchre" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;CardGame;" false
-
+PORTDOCS=	AUTHORS ChangeLog README
 OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="Euchre" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;CardGame;" ""
 
 post-patch:
 	@${REINPLACE_CMD} -e \

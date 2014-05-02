@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
 DISTNAME=	${PORTNAME}-pre6a-src_freebsd_and_v${DISTVERSION}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	2d biplane dogfight game
 
 LICENSE=	GPLv2
@@ -27,7 +27,7 @@ DOC_FILES1=	ChangeLog README
 
 DOCSRCDIR2=	${WRKSRC}/doc
 DOCSDIR2=	${DOCSDIR}/doc
-DOC_FILES2=	1.0-features 33fps.out BUGS TODO WHISHLIST *.txt \
+DOC_FILES2=	1.0-features 33fps.out BUGS WHISHLIST *.txt \
 		collisions.tm design.dia design.pdf fun.ps
 
 OPTIONS_DEFINE=	DOCS

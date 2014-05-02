@@ -7,20 +7,18 @@ PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/packages/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Puzzle game similar to PipeMania
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 USES=		gmake
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -w
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="PipeNightDreams" "" ${PORTNAME} \

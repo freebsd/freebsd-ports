@@ -8,10 +8,10 @@ CATEGORIES=	games
 MASTER_SITES=	SF/llk-linux/llk-linux-source/${DISTVERSION}
 DISTNAME=	llk_linux-${DISTVERSION}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Tile matching game
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
 USES=		pkgconfig
 USE_GNOME=	gtk20 esound
@@ -41,7 +41,6 @@ post-patch:
 		${WRKSRC}/src/main.c
 	@${REINPLACE_CMD} -e 's|Pos.__pos|Pos|' \
 		${WRKSRC}/src/pak/pak.c
-
 
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|po||' \

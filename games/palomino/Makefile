@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
 		${PORTNAME}_data_sounds_${SOUNDS_VER}${EXTRACT_SUFX} \
 		${PORTNAME}_data_terrain_${TERRAIN_VER}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Action flight simulation computer program using OSG
 
 LICENSE=	GPLv2

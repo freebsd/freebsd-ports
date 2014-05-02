@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}${DISTVERSION}.py \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Steer your ship(s) with the keyboard
 
 LICENSE=	GPLv3

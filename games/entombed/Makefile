@@ -5,13 +5,12 @@ PORTNAME=	entombed
 PORTVERSION=	2007.07.04
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/entombed/ \
-		ftp://ftp.billsgames.com/unix/x/entombed/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	One- or two-player maze game based on the Entombed
 
 LICENSE=	GPLv2
@@ -19,12 +18,11 @@ LICENSE=	GPLv2
 USES=		gmake
 USE_SDL=	image mixer sdl
 
-PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
-
-DESKTOP_ENTRIES="Entombed" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
+PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt
 OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="Entombed" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=gcc|CC=${CC}|' \

@@ -11,7 +11,7 @@ DISTFILES=	fop-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	fop-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Dungeon-crawling game
 
 LICENSE=	GPLv2
@@ -22,12 +22,11 @@ USES=		gmake
 USE_SDL=	image mixer sdl
 MAKE_JOBS_SAFE=	yes
 
-PORTDOCS=	CHANGES.txt README.txt TODO.txt
-
-DESKTOP_ENTRIES="Fight or Perish" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
+PORTDOCS=	CHANGES.txt README.txt
 OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="Fight or Perish" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/data/| ; \
@@ -39,7 +38,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fop ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} "images maps sounds" ${STAGEDIR}${DATADIR}/data)
+	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} "images maps sounds" \
+		${STAGEDIR}${DATADIR}/data)
 
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/

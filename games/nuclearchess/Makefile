@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Chess variant designed to be short and fun for all players
 
 LICENSE=	GPLv2
@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 
 PORTDOCS=	AUTHORS ChangeLog
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="NuclearChess" "" "${PORTNAME}" \

@@ -2,11 +2,9 @@
 
 IceBreaker has been installed.
 
+When you have problems with usage, please reinstall IceBreaker
 
-When you have problems with usage please reinstall
-
-cd /usr/ports/games/icebreaker ; make deinstall ; make clean ; make reinstall
-
+cd /usr/ports/games/icebreaker && make deinstall clean reinstall
 
 Have fun!
 

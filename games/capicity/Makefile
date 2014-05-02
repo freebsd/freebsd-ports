@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/capitalism/Capi%20City/${PORTVERSION}/
 DISTNAME=	CapiCity_${DISTVERSION}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Qt client for the Monopd server
 
 LICENSE=	GPLv2

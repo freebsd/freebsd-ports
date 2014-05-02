@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Game about a duck that is in a maze
 
 LICENSE=	GPLv2
@@ -24,7 +24,8 @@ USES=		shebangfix
 SHEBANG_FILES=	*.py mopelib/mopelib.py
 USE_PYTHON=	yes
 
-PORTDOCS=	TODO.txt index.html style.css
+PORTDOCS=	index.html style.css
+OPTIONS_DEFINE= DOCS
 
 SUB_FILES=	${PORTNAME}.sh
 
@@ -46,11 +47,11 @@ do-install:
 .for d in images levels mopelib music sounds
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
-.for d in *.py *.pyc *.pyo
-	${INSTALL_SCRIPT} ${WRKSRC}/${d} ${STAGEDIR}${DATADIR}
+.for f in *.py *.pyc *.pyo
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-.for d in duckmazerc.txt version
-	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DATADIR}
+.for f in duckmazerc.txt version
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/

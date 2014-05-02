@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Tank game for 2 players
 
 LICENSE=	GPLv3
@@ -24,10 +24,13 @@ GH_PROJECT=	schwarzweiss
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	d95263f
 
+USES=		shebangfix
+SHEBANG_FILES=	schwarzweiss_start.py data/*.py
+python_OLD_CMD?=	/usr/bin/env python 
+python_CMD?=		${PYTHON_CMD}
 USE_PYTHON=	2
 
 PORTDOCS=	readme.txt
-
 OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
@@ -47,9 +50,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR})
-
-.for d in  *.py *.pyc *.pyo
-	@(cd ${WRKSRC} ; ${INSTALL_SCRIPT} ${d} ${STAGEDIR}${DATADIR})
+.for f in *.py *.pyc *.pyo
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \

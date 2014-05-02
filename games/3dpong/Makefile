@@ -6,14 +6,13 @@ PORTVERSION=	0.5
 PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/3dpong/src/ \
-		ftp://ftp.billsgames.com/unix/x/3dpong/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	X Window 3D Pong game for 1 or 2 players
 
 LICENSE=	GPLv2
@@ -24,7 +23,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		XLIB="-L${LOCALBASE}/lib -lX11"
 USE_CSTD=	gnu89
 
-PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
+PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

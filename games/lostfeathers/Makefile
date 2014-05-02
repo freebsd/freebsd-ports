@@ -11,19 +11,21 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Help a bird to recover his magical feathers
 
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	avbin>=0:${PORTSDIR}/multimedia/avbin
 
-USES=		zip
+USES=		shebangfix zip
+SHEBANG_FILES=	run_game.py
+python_OLD_CMD?=	/usr/bin/env python 
+python_CMD?=		${PYTHON_CMD}
 USE_GNOME=	pygtk2 librsvg2
 USE_PYTHON=	yes
 
 PORTDOCS=	README.txt
-
 OPTIONS_DEFINE=	DOCS
 
 # Wrong versioning upstream
@@ -33,10 +35,6 @@ SUB_FILES=	${PORTNAME}
 
 DESKTOP_ENTRIES="The Lost Feathers" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
-		${WRKSRC}/run_game.py
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
@@ -48,8 +46,7 @@ do-install:
 .for d in cocos data gamelib pyglet
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
-
-.for f in  *.py *.pyc *.pyo
+.for f in *.py *.pyc *.pyo
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 

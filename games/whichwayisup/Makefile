@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}_b${DISTVERSION:S/.//g}${EXTRACT_SUFX} \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}_b${DISTVERSION:S/.//g}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Platformer game with rotational twist
 
 LICENSE=	GPLv2
@@ -27,7 +27,6 @@ USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	README.txt changelog.txt
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Which Way Is Up" "" "${PORTNAME}" \

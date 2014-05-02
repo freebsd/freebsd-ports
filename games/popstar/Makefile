@@ -5,13 +5,12 @@ PORTNAME=	popstar
 PORTVERSION=	0.0.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/popstar/ \
-		ftp://ftp.billsgames.com/unix/x/popstar/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Simple puzzle game involving floating stars
 
 LICENSE=	GPLv2 CCbyNCSA3
@@ -23,12 +22,11 @@ LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 USES=		gmake
 USE_SDL=	image mixer sdl
 
-PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
-
-DESKTOP_ENTRIES="Pop Star" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
+PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt
 OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="Pop Star" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	capitalism
@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Capitalism/0.5/
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Qt client for the Monopd server
 
 LICENSE=	GPLv2
@@ -32,8 +32,8 @@ PORTDOCS=	README changelog readme.txt
 INSTALLS_ICONS=	yes
 ICON_SIZES=	16x16 22x22 24x24 32x32 48x48 64x64
 
-DESKTOP_ENTRIES="Capitalism" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;BoardGame;" true
+DESKTOP_ENTRIES="Capitalism" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;BoardGame;" ""
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -44,7 +44,8 @@ NLS_USES=	gettext
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Capitalism ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/Capitalism \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .for d in games images
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})

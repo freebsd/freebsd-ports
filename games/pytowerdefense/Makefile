@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/PyTowerDefense0.5/Source%20%28Python%202.5%20or%202
 DISTNAME=	${PORTNAME}${DISTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Tower Defense Game
 
 LICENSE=	GPLv3
@@ -21,13 +21,12 @@ USE_PYTHON=	2
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	README modding.txt
+OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}
 
-DESKTOP_ENTRIES="PyTowerDefense" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
-OPTIONS_DEFINE=	DOCS
+DESKTOP_ENTRIES="PyTowerDefense" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
@@ -38,14 +37,11 @@ do-install:
 		${WRKDIR}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-
-.for d in  *.py *.pyc *.pyo
-	@(cd ${WRKSRC} ; ${INSTALL_SCRIPT} ${d} ${STAGEDIR}${DATADIR})
-.endfor
-
 .for d in audio images
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
+.for f in *.py *.pyc *.pyo
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 
 	${LN} -sf ${DATADIR}/images/tower_square.png \
