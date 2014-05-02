@@ -365,6 +365,7 @@
     SUBDIR += libgig
     SUBDIR += libgme
     SUBDIR += libgpod
+    SUBDIR += libgroove
     SUBDIR += libid3tag
     SUBDIR += libkcddb
     SUBDIR += libkcompactdisc
