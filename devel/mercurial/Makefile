@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	2.9.2
+PORTVERSION=	3.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -13,9 +13,8 @@ LICENSE=	GPLv2
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
-USES=		shebangfix
 
-OPTIONS_DEFINE=	CA_BUNDLE DATA DOCS NLS
+OPTIONS_DEFINE=	CA_BUNDLE DATA DOCS EXAMPLES NLS
 OPTIONS_DEFAULT=DATA
 OPTIONS_SUB=	yes
 CA_BUNDLE_DESC=	Install CA Certificates
@@ -41,11 +40,9 @@ CONTRIB_FILES=	bash_completion \
 		perf.py \
 		pylintrc \
 		python-hook-examples.py \
-		sample.hgrc \
 		simplemerge \
 		tcsh_completion \
 		tcsh_completion_build.sh \
-		tmplrewrite.py \
 		undumprevlog \
 		zsh_completion \
 		vim/HGAnnotate.vim \
@@ -55,8 +52,6 @@ CONTRIB_FILES=	bash_completion \
 		vim/patchreview.txt \
 		vim/patchreview.vim
 DOCS=		CONTRIBUTORS README
-
-SHEBANG_FILES=	contrib/tmplrewrite.py
 
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 NLS_USES=		gettext
@@ -92,6 +87,11 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/sample.hgrc \
+		${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

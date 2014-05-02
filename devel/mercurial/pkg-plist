@@ -98,9 +98,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/histedit.py
 %%PYTHON_SITELIBDIR%%/hgext/histedit.pyc
 %%PYTHON_SITELIBDIR%%/hgext/histedit.pyo
-%%PYTHON_SITELIBDIR%%/hgext/interhg.py
-%%PYTHON_SITELIBDIR%%/hgext/interhg.pyc
-%%PYTHON_SITELIBDIR%%/hgext/interhg.pyo
 %%PYTHON_SITELIBDIR%%/hgext/keyword.py
 %%PYTHON_SITELIBDIR%%/hgext/keyword.pyc
 %%PYTHON_SITELIBDIR%%/hgext/keyword.pyo
@@ -211,6 +208,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/branchmap.py
 %%PYTHON_SITELIBDIR%%/mercurial/branchmap.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/branchmap.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/bundle2.py
+%%PYTHON_SITELIBDIR%%/mercurial/bundle2.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/bundle2.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/bundlerepo.py
 %%PYTHON_SITELIBDIR%%/mercurial/bundlerepo.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/bundlerepo.pyo
@@ -269,6 +269,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/error.py
 %%PYTHON_SITELIBDIR%%/mercurial/error.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/error.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/exchange.py
+%%PYTHON_SITELIBDIR%%/mercurial/exchange.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/exchange.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/extensions.py
 %%PYTHON_SITELIBDIR%%/mercurial/extensions.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/extensions.pyo
@@ -710,6 +713,7 @@ man/man5/hgignore.5.gz
 man/man5/hgrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.hgrc
 %%DATA%%%%DATADIR%%/contrib/bash_completion
 %%DATA%%%%DATADIR%%/contrib/casesmash.py
 %%DATA%%%%DATADIR%%/contrib/check-code.py
@@ -731,11 +735,9 @@ man/man5/hgrc.5.gz
 %%DATA%%%%DATADIR%%/contrib/perf.py
 %%DATA%%%%DATADIR%%/contrib/pylintrc
 %%DATA%%%%DATADIR%%/contrib/python-hook-examples.py
-%%DATA%%%%DATADIR%%/contrib/sample.hgrc
 %%DATA%%%%DATADIR%%/contrib/simplemerge
 %%DATA%%%%DATADIR%%/contrib/tcsh_completion
 %%DATA%%%%DATADIR%%/contrib/tcsh_completion_build.sh
-%%DATA%%%%DATADIR%%/contrib/tmplrewrite.py
 %%DATA%%%%DATADIR%%/contrib/undumprevlog
 %%DATA%%%%DATADIR%%/contrib/vim/HGAnnotate.vim
 %%DATA%%%%DATADIR%%/contrib/vim/hg-menu.vim
@@ -753,6 +755,7 @@ man/man5/hgrc.5.gz
 %%DATA%%@dirrm %%DATADIR%%/contrib/hgfixes
 %%DATA%%@dirrm %%DATADIR%%/contrib
 %%DATA%%@dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/spartan
