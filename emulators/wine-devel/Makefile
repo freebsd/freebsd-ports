@@ -3,6 +3,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.7.17
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -29,7 +30,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-gphoto --without-gsm --without-gstreamer \
 		--without-mpg123 --without-opencl \
 		--with-oss --without-sane --without-tiff \
-		--without-v4l --without-xcomposite --without-xinerama
+		--without-v4l --with-xcomposite --without-xinerama
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
@@ -80,7 +81,7 @@ OPENAL_USES=		openal
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
 X11_CONFIGURE_WITH=	x fontconfig glu opengl xinput2 xrandr freetype
-X11_USE=		GL=glu XORG=xcursor,xi,xpm,xrandr,xrender
+X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xpm,xrandr,xrender
 X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 			libfreetype.so:${PORTSDIR}/print/freetype2 \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg \
