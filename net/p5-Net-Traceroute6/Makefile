@@ -8,8 +8,10 @@ CATEGORIES=	net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl module to parse traceroute6(8) output
+
+LICENSE=	MIT
 
 BUILD_DEPENDS=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS:=	${BUILD_DEPENDS}
