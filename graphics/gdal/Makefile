@@ -3,7 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -91,7 +91,7 @@ MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
 MYSQL_USE=		MYSQL=yes
 NETCDF_CONFIGURE_OFF=	--with-netcdf=no
 NETCDF_CONFIGURE_ON=	--with-netcdf=${LOCALBASE}
-NETCDF_LIB_DEPENDS=	libnetcdf.so.7:${PORTSDIR}/science/netcdf4
+NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 ODBC_CONFIGURE_OFF=	--with-odbc=no
 ODBC_CONFIGURE_ON=	--with-odbc=${LOCALBASE}
 ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC

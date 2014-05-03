@@ -3,7 +3,7 @@
 
 PORTNAME=	gmt
 PORTVERSION=	4.5.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.geologi.uio.no/pub/%SUBDIR%/ \
@@ -25,7 +25,7 @@ LICENSE_COMB=	multi
 LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 LICENSE_DISTFILES_LGPL3=	${GSHHG_DISTNAME}${EXTRACT_SUFX}
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf4
+LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

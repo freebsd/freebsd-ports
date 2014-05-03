@@ -3,7 +3,7 @@
 
 PORTNAME=	grads
 PORTVERSION=	1.9b4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics science math
 MASTER_SITES=	ftp://grads.iges.org/grads/1.9/:src \
 		ftp://grads.iges.org/grads/:other
@@ -55,7 +55,7 @@ PLIST_SUB+=		NETCDF="@comment " HDF=""
 .endif
 
 .if ${PORT_OPTIONS:MNETCDF}
-LIB_DEPENDS+=		netcdf:${PORTSDIR}/science/netcdf4
+LIB_DEPENDS+=		libnetcdf.so:${PORTSDIR}/science/netcdf
 CONFIGURE_ARGS+=	--with-nc
 PLIST_SUB+=		NETCDF="" HDF="@comment "
 .endif

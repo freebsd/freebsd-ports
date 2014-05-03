@@ -12,13 +12,14 @@
 
 PORTNAME=	minc
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	science biology
 MASTER_SITES=	http://www.nitrc.org/frs/downloadlink.php/400/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Medical Imaging NetCDF
 
-LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
