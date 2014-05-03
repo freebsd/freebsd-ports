@@ -8,8 +8,10 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Net_TCLink.pm-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A module to for connecting to the TrustCommerce payment gateway
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	Module to for connecting to the TrustCommerce payment gateway
+
+LICENSE=	LGPL21
 
 USES=		perl5
 USE_PERL5=	configure
