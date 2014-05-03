@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140503:
+  AFFECTS: users of science/hdf5* and science/netcdf*
+  AUTHOR: sunpoet@FreeBSD.org
+
+  There are major version changes in HDF5 and NetCDF ports:
+  - science/hdf5: updated from 1.6.9 to 1.8.12
+  - science/hdf5-18: replaced by science/hdf5
+  - science/netcdf: updated from 3.6.3 to 4.3.2
+                    C++/Fortran binding moved into new ports (by upstream)
+  - science/netcdf-cxx: new port for C++ binding of NetCDF
+  - science/netcdf-fortran: new port for Fortran binding of NetCDF
+  - science/netcdf-ftn: replaced by science/netcdf-fortran
+  - science/netcdf3-ftn: replaced by science/netcdf-fortran
+  - science/netcdf4: replaced by science/netcdf
+
+  Please deinstall them before building the new versions.
+
 20140428:
   AFFECTS: users of java/openjdk7
   AUTHOR: glewis@FreeBSD.org
