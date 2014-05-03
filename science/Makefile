@@ -103,9 +103,6 @@
     SUBDIR += netcdf
     SUBDIR += netcdf-cxx
     SUBDIR += netcdf-fortran
-    SUBDIR += netcdf-ftn
-    SUBDIR += netcdf3-ftn
-    SUBDIR += netcdf4
     SUBDIR += nifticlib
     SUBDIR += openbabel
     SUBDIR += openkim
