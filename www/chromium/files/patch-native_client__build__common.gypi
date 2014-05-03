@@ -1,7 +1,7 @@
---- ./native_client/build/common.gypi.orig	2010-12-16 02:12:20.000000000 +0100
-+++ ./native_client/build/common.gypi	2010-12-20 20:15:08.000000000 +0100
-@@ -375,7 +375,7 @@
-     },
+--- ./native_client/build/common.gypi.orig	2014-04-24 22:36:13.000000000 +0200
++++ ./native_client/build/common.gypi	2014-04-24 23:23:46.000000000 +0200
+@@ -262,7 +262,7 @@
+     ],
    },
    'conditions': [
 -    ['OS=="linux"', {

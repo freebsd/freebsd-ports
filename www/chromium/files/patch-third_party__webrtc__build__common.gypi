@@ -1,7 +1,7 @@
---- third_party/webrtc/build/common.gypi.orig	2013-07-16 16:41:06.000000000 +0300
-+++ third_party/webrtc/build/common.gypi	2013-07-16 17:21:31.000000000 +0300
+--- ./third_party/webrtc/build/common.gypi.orig	2014-04-24 22:37:12.000000000 +0200
++++ ./third_party/webrtc/build/common.gypi	2014-04-24 23:23:48.000000000 +0200
 @@ -272,6 +272,13 @@
-           #'WEBRTC_CLOCK_TYPE_REALTIME',
+           'WEBRTC_LINUX',
          ],
        }],
 +      ['os_bsd==1', {

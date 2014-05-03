@@ -1,6 +1,6 @@
---- v8/src/checks.cc.orig	2014-01-07 21:03:55.000000000 +0100
-+++ v8/src/checks.cc	2014-01-08 01:14:20.000000000 +0100
-@@ -41,7 +41,7 @@
+--- v8/src/checks.cc.orig	2014-03-07 23:57:27.000000000 +0100
++++ v8/src/checks.cc	2014-03-08 00:04:14.000000000 +0100
+@@ -44,7 +44,7 @@
  static V8_INLINE void DumpBacktrace() {
  #if V8_LIBC_GLIBC || V8_OS_BSD
    void* trace[100];
