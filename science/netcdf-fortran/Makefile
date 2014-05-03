@@ -27,6 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 INFO=		netcdf-f77 netcdf-f90
 
 AUTOMAKE_ARGS=	--add-missing
+LIBTOOLIZE_ARGS=--copy --force --install
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 post-install:
