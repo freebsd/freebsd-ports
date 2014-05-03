@@ -3,7 +3,7 @@
 
 PORTNAME=	netCDF4
 PORTVERSION=	1.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science python
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	netcdf4-python
@@ -16,7 +16,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libnetcdf.so:${PORTSDIR}/science/netcdf4
+		libnetcdf.so:${PORTSDIR}/science/netcdf
 RUN_DEPENDS=	${PYNUMPY}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

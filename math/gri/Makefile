@@ -3,13 +3,14 @@
 
 PORTNAME=	gri
 PORTVERSION=	2.12.23
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible plotting language for producing scientific graphs
 
-LIB_DEPENDS=	netcdf:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 
 USES=		readline
 USE_GMAKE=	yes

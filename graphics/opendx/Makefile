@@ -3,7 +3,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics math java
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--without-hdf
 .endif
 
 .if !defined(WITHOUT_NETCDF)
-LIB_DEPENDS+=	netcdf:${PORTSDIR}/science/netcdf4
+LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
 .else
 CONFIGURE_ARGS+=	--without-netcdf
 .endif

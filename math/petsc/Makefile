@@ -3,7 +3,7 @@
 
 PORTNAME=	petsc
 DISTVERSION=	2.3.3-p0
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -187,7 +187,7 @@ CONFIGURE_ARGS+=	--with-scalapack=1	\
 WITH_NETCDF=	yes
 .endif
 .if defined(WITH_NETCDF)
-LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
 CONFIGURE_ENV+=	PNETCDF_INCLUDE=${LOCALBASE}/include	\
 		PNETCDF_LIB=${LOCALBASE}/lib
 .endif

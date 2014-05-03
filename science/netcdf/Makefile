@@ -1,65 +1,65 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	3.6.3
-PORTREVISION?=	7
+PORTVERSION=	4.3.2
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
 		LOCAL/sunpoet
-PKGNAMESUFFIX?=	3
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT?=	Library for machine-independent, array-oriented data access
+COMMENT=	C library for machine-independent, array-oriented data access
 
-CONFLICTS=	hdf-4.* netcdf-4.*
-PORTSCOUT=	limit:^3\.
+LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
 
-CONFIGURE_ARGS=	--enable-shared
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
-GNU_CONFIGURE=	yes
-USES=		gmake libtool:keepla
+CONFLICTS_INSTALL=	hdf-4.[0-9]* netcdf-3.[0-9]* netcdf3-3.[0-9]*
+PORTSCOUT=	limit:^4\.
+
+OPTIONS_DEFINE=	DAP DOCS DOXYGEN SZIP
+OPTIONS_DEFAULT=DAP SZIP
+DAP_DESC=	Build DAP client and remote testing
+SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
+
+CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -fPIC -DPIC
+CMAKE_ARGS=	-DHDF5_INCLUDE_DIRS=${LOCALBASE} -DUSE_HDF5=ON -DZLIB_INCLUDE_DIRS=/usr
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+USES=		cmake pathfix
 
-INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
-		netcdf-install netcdf-tutorial
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PORTDOCS=	*
 
-OPTIONS_DEFINE=	FORTRAN DOCS
-FORTRAN_DESC=	Build library for Fortran
+DAP_CMAKE_OFF=		-DENABLE_DAP=OFF -DENABLE_DAP_REMOTE_TESTS=OFF
+DAP_CMAKE_ON=		-DCURL_INCLUDE_DIRS=${LOCALBASE} -DENABLE_DAP=ON
+DAP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_CMAKE_OFF=	-DENABLE_DOXYGEN=OFF
+DOXYGEN_CMAKE_ON=	-DENABLE_DOXYGEN=ON
+SZIP_CMAKE_OFF=		-DUSE_SZIP=OFF
+SZIP_CMAKE_ON=		-DSZIP_DIR=${LOCALBASE} -DSZIP_INCLUDE_DIRS=${LOCALBASE} -DUSE_SZIP=ON
+SZIP_LDFLAGS=		-lsz
+SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=--enable-docs-install
-.else
-CONFIGURE_ARGS+=--disable-docs-install
-.endif
-
-.if ${PORT_OPTIONS:MFORTRAN}
-CPPFLAGS+=	-DpgiFortran
-CONFLICTS+=	netcdf-3.*
-PLIST_SUB+=	FORTRAN=""
-USES+=		fortran
-.else
-CONFIGURE_ARGS+=--disable-f77 --disable-f90
-CONFLICTS+=	netcdf-ftn-3.*
-PLIST_SUB+=	FORTRAN="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'291 s/\(html_docs)\).*/\1/' \
-		${WRKSRC}/man/Makefile.in
-	@${REINPLACE_CMD} -e \
-		'271 s/\(info_docs\).*/html_docs\)/' \
-		${WRKSRC}/man4/Makefile.in
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '790 s/install-docDATA //' \
-		${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e '/man4/d; s|share/cmake|&/Modules|; s|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/libsrc/CMakeLists.txt ${WRKSRC}/ncdump/CMakeLists.txt ${WRKSRC}/ncgen/CMakeLists.txt ${WRKSRC}/ncgen3/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|mmap|_&|g' ${WRKSRC}/nc_test/tst_diskless.c ${WRKSRC}/nc_test/tst_diskless3.c
+
+post-build:
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
+	@cd ${WRKSRC}/man4 && ${LOCALBASE}/bin/doxygen .
 .endif
 
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+post-install:
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/man4/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+.endif
+
+regression-test test: build
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>

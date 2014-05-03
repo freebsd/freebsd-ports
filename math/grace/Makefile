@@ -3,7 +3,7 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.23
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
 		ftp://ftp.ntua.gr/pub/graphics/grace/src/stable/ \
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--without-fftw
 .endif
 
 .if ${PORT_OPTIONS:MNETCDF}
-LIB_DEPENDS+=	netcdf:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
 CONFIGURE_ARGS+=	--enable-netcdf
 .else
 CONFIGURE_ARGS+=	--disable-netcdf
