@@ -15,40 +15,25 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_AUTOTOOLS=	libtool
 
+PLIST_FILES=	bin/sysbench
+PORTDOCS=	manual.html
+
 OPTIONS_DEFINE=	LARGEFILE MYSQL PGSQL DOCS
 OPTIONS_DEFAULT=	LARGEFILE MYSQL
-LARGEFILE_DESC=	Enable Largefile support
 
-.include <bsd.port.options.mk>
+LARGEFILE_DESC=			Largefile support
+LARGEFILE_CONFIGURE_ENABLE=	largefile
 
-.if ${PORT_OPTIONS:MLARGEFILE}
-CONFIGURE_ARGS+=	--enable-largefile
-.else
-CONFIGURE_ARGS+=	--disable-largefile
-.endif
+MYSQL_CONFIGURE_ON=	--with-mysql
+MYSQL_CONFIGURE_OFF=	--with-mysql=no
+MYSQL_USE=		MYSQL=yes
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql
-.else
-CONFIGURE_ARGS+=	--with-mysql=no
-.endif
-
-.if ${PORT_OPTIONS:MPOSTGRESQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-pgsql
-.else
-CONFIGURE_ARGS+=	--with-pgsql=no
-.endif
+PGSQL_CONFIGURE_ON=	--with-pgsql
+PGSQL_CONFIGURE_OFF=	--with-pgsql=no
+PGSQL_USE=		PGSQL=yes
 
 post-configure:
 	@${REINPLACE_CMD} -e 's/^program_transform_name/#/' \
 		${WRKSRC}/Makefile ${WRKSRC}/sysbench/Makefile
-
-.if empty(PORT_OPTIONS:MDOCS)
-post-install:
-	${RM} ${DOCSDIR}/manual.html
-	${RMDIR} ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
