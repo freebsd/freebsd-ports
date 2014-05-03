@@ -70,7 +70,6 @@
     SUBDIR += hdf
     SUBDIR += hdf-java
     SUBDIR += hdf5
-    SUBDIR += hdf5-18
     SUBDIR += hs-bio
     SUBDIR += isaac-cfd
     SUBDIR += jmol
