@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.marcuscom.com/pbi-thumbnailer/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generates icon thumbnails for PC-BSD installer files
 
+BROKEN=		Violates stagedir and fails to package
+
 USES=		pkgconfig tar:bzip2 uidfix shared-mime-info
 USE_GNOME=	gtk20 gconf2
 MAKE_ENV=	GCONF_CONFIG_SOURCE=${GCONF_CONFIG_SOURCE} UPDATE_MIME_DATABASE=${TRUE}
