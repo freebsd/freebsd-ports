@@ -3,7 +3,7 @@
 
 PORTNAME=	paraview
 PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}-source
@@ -17,7 +17,7 @@ LICENSE_FILE=	${PATCH_WRKSRC}/License_v1.2.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:${PORTSDIR}/math/py-matplotlib
-LIB_DEPENDS=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18 \
+LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \

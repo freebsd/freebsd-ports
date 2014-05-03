@@ -3,7 +3,7 @@
 
 PORTNAME=	h5utils
 PORTVERSION=	1.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/${PORTNAME}/
 
@@ -21,9 +21,9 @@ CFLAGS +=	-L${LOCALBASE}/lib -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libpng15 ${PTHREAD_LIBS}
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS +=	hdf5:${PORTSDIR}/science/hdf5 \
-		png15:${PORTSDIR}/graphics/png \
-		matheval.1:${PORTSDIR}/devel/libmatheval
+LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libmatheval.so:${PORTSDIR}/devel/libmatheval
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

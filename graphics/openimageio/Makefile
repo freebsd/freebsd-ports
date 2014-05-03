@@ -3,7 +3,7 @@
 
 PORTNAME=	openimageio
 PORTVERSION=	1.3.9
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -39,7 +39,7 @@ OCIO_DESC=		Colour management support
 .if ${SLAVE_PORT} == no
 LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libhdf5.so:${PORTSDIR}/science/hdf5-18 \
+		libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libopencv_legacy.so:${PORTSDIR}/graphics/opencv \
 		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg \
 		libwebp.so:${PORTSDIR}/graphics/webp

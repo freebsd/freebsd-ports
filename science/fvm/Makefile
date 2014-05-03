@@ -3,7 +3,7 @@
 
 PORTNAME=	fvm
 PORTVERSION=	0.15.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science parallel
 MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libmed.so:${PORTSDIR}/french/med	\
 		libbft.so:${PORTSDIR}/science/bft	\
-		libhdf5.so.7:${PORTSDIR}/science/hdf5-18\
+		libhdf5.so:${PORTSDIR}/science/hdf5	\
 		libcgns.so:${PORTSDIR}/science/cgnslib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
