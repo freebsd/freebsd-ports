@@ -28,7 +28,6 @@ USE_LDCONFIG=	yes
 USES=		cmake pathfix
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-PORTDOCS=	*
 
 DAP_CMAKE_OFF=		-DENABLE_DAP=OFF -DENABLE_DAP_REMOTE_TESTS=OFF
 DAP_CMAKE_ON=		-DCURL_INCLUDE_DIRS=${LOCALBASE} -DENABLE_DAP=ON
@@ -42,6 +41,10 @@ SZIP_LDFLAGS=		-lsz
 SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOXYGEN}
+PORTDOCS=	*
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/man4/d; s|share/cmake|&/Modules|; s|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
