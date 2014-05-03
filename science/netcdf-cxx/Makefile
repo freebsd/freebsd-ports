@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USES=		pathfix
-WRKSRC=		${WRKDIR}/Unidata-${PORTNAME}4-b477274
+WRKSRC=		${WRKDIR}/${PORTNAME}4-${PORTVERSION}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnetcdf_c++4.so.1
