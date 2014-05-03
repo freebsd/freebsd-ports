@@ -1668,6 +1668,7 @@
     SUBDIR += p5-Curses-UI
     SUBDIR += p5-Curses-Widgets
     SUBDIR += p5-Cvs
+    SUBDIR += p5-Cwd-Guard
     SUBDIR += p5-DB_File-Lock
     SUBDIR += p5-Daemon-Control
     SUBDIR += p5-Dancer-Debug
