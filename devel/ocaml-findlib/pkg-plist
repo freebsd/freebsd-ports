@@ -140,5 +140,5 @@ man/man5/site-lib.5.gz
 @dirrm lib/ocaml/site-lib/camlp4
 @dirrm lib/ocaml/site-lib/compiler-libs
 @dirrm lib/ocaml/site-lib/bigarray
-@dirrmtry lib/ocaml/site-lib/labltk
+%%TOOLBOX%%@dirrmtry lib/ocaml/site-lib/labltk
 @dirrmtry lib/ocaml/site-lib
