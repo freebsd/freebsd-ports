@@ -10,6 +10,8 @@ MASTER_SITES=	http://w140.com/audio/ CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find similar music by perceptual hashing
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libplot.so:${PORTSDIR}/graphics/plotutils \
 		libfftw3.so:${PORTSDIR}/math/fftw3
@@ -20,7 +22,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${SCRS}
-CFLAGS=		-I${LOCALBASE}/include -L. -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include -L. -L${LOCALBASE}/lib
 MAKE_ENV=	VPATH=common
 PORTDOCS=	README
 BINS=		sonic_reducer vector_pairs
