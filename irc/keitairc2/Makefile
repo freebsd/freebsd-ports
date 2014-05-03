@@ -25,7 +25,6 @@ NO_BUILD=	yes
 
 SHEBANG_FILES=	keitairc
 
-NO_STAGE=	yes
 post-extract:
 	${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM} -rf
 
@@ -37,10 +36,8 @@ post-patch:
 		${WRKSRC}/lib/Keitairc/Config.pm
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/keitairc ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-.for dir in doc etc lib
-	${CP} -R ${WRKSRC}/${dir} ${DATADIR}
-.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/keitairc ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "doc etc lib" ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
