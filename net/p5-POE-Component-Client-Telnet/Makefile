@@ -8,12 +8,15 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	POE component that provides non-blocking access to Net::Telnet
 
-BUILD_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
 		p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet \
-		p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump
+		p5-POE>=0.31:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
