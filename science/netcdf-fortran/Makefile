@@ -3,6 +3,7 @@
 
 PORTNAME=	netcdf-fortran
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/Unidata/${PORTNAME}/archive/ \
 		LOCAL/sunpoet
