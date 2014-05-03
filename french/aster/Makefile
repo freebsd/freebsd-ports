@@ -3,6 +3,7 @@
 
 PORTNAME=		aster
 DISTVERSION=		${ASTER_DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=		french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -35,7 +36,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
 		${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch		\
 		${PYNUMPY}
-LIB_DEPENDS+=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18			\
+LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5				\
 		libmed.so:${PORTSDIR}/french/med				\
 		libmetis.so.0:${PORTSDIR}/math/metis-edf
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\

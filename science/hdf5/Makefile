@@ -2,74 +2,61 @@
 # $FreeBSD$
 
 PORTNAME=	hdf5
-PORTVERSION=	1.6.9
-PORTREVISION=	2
+PORTVERSION=	1.8.12
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current16/src/ \
-		ftp://ftp.hdfgroup.org/HDF5/prev-releases/ \
-		ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/ \
-		LOCAL/chinsan
+MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
+		ftp://ftp.hdfgroup.org/HDF5/current/src/ \
+		http://www.hdfgroup.org/ftp/HDF5/releases/${DISTNAME}/src/ \
+		ftp://ftp.hdfgroup.org/HDF5/releases/${DISTNAME}/src/
+#DISTNAME=	${PORTNAME}-${PORTVERSION}-patch1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
-CONFLICTS=	hdf5-1.8.*
+LICENSE=	BSD4CLAUSE
 
-USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
-LIBTOOLFILES=	configure c++/configure
-CONFIGURE_ARGS=	--disable-debug \
-		--enable-cxx \
+CONFLICTS_INSTALL=	hdf-4.[0-9]* hdf5-1.6.[0-9]*
+
+OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
+OPTIONS_SUB=	yes
+
+CFLAGS+=	-D__BSD_VISIBLE
+CONFIGURE_ARGS=	--enable-cxx \
+		--enable-hl \
 		--enable-instrument \
-		--enable-production \
 		--enable-strict-format-checks \
-		--enable-threadsafe \
 		--with-pthread=/usr \
-		--with-ssl=/usr \
 		--with-zlib=/usr
-ALL_TARGET=	lib progs
-MAKE_JOBS_UNSAFE=	yes
+GNU_CONFIGURE=	yes
+MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
+USE_LDCONFIG=	yes
+USES=		libtool tar:bzip2
 
-.include <bsd.port.pre.mk>
+PORTEXAMPLES=	*
 
-.if defined(WITH_FORTRAN)
-LIBTOOLFILES+=		fortran/configure
-USES+=			fortran
-CONFIGURE_ENV+=		F9X=${FC}
-CONFIGURE_ARGS+=	--enable-fortran
-PLIST_SUB+=		FORTRAN=""
-.else
-PLIST_SUB+=		FORTRAN="@comment "
-.endif
+NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS_REASON=	does not compile
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ${ARCH}
-.endif
+DEBUG_CONFIGURE_OFF=	--enable-production
+DEBUG_CONFIGURE_ON=	--disable-production --enable-debug=all
+FORTRAN_CONFIGURE_ENV=	F9X=${FC}
+FORTRAN_CONFIGURE_OFF=	--disable-fortran --disable-fortran2003
+FORTRAN_CONFIGURE_ON=	--enable-fortran --enable-fortran2003
+FORTRAN_USES=		fortran
+SZIP_CONFIGURE_ARGS=	--with-szlib=${LOCALBASE}
+SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' \
-		-e 's|[\$$]LDFLAGS -pthread|\$$LDFLAGS ${PTHREAD_LIBS}|g'  \
-			${WRKSRC}/config/freebsd ${WRKSRC}/c++/config/freebsd
+	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags
-	@${REINPLACE_CMD} -e 's|objformat=|#objformat=|g' \
-		-e 's|\(version_type=freebsd\)-.*|\1-elf|g' \
-			${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
-.if defined(NOPORTEXAMPLES)
-.for i in . c++ hl fortran
 	@${REINPLACE_CMD} \
-		-e 's,\((cd examples && $$(MAKE) $$@) || exit 1;\),#\1,g' \
-			${WRKSRC}/${i}/Makefile.in
-.endfor
-.endif
+		-e '/LD_LIBRARY_PATH/ s|^|#|' \
+		-e 's|/share/hdf5_examples|/${EXAMPLESDIR_REL}|' \
+		-e 's|(INSTALL)|(INSTALL_DATA)|' \
+			`${FIND} ${WRKSRC} -regex '.*/examples/Makefile.in'`
+	@${REINPLACE_CMD} -e 's|\[ -a|\[ -f|g' `${FIND} ${WRKSRC} -name \*.sh\*`
 
-post-install:
-.for i in gif2h5 h52gif h5debug h5diff h5dump h5import h5jam h5ls h5repack h5repart h5unjam
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
-.endfor
+regression-test test: build
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.11.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -68,7 +69,7 @@ GTA_CONFIGURE_ON=	--with-gta=${LOCALBASE}
 GTA_LIB_DEPENDS=	libgta.so:${PORTSDIR}/devel/libgta
 HDF5_CONFIGURE_OFF=	--with-hdf5=no
 HDF5_CONFIGURE_ON=	--with-hdf5=${LOCALBASE}
-HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5-18
+HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
 ICONV_CONFIGURE_OFF=	--with-libiconv-prefix=no
 ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 ICONV_LDFLAGS=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}

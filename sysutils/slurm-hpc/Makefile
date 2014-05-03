@@ -3,6 +3,7 @@
 
 PORTNAME=	slurm
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/latest/ \
@@ -17,11 +18,8 @@ LICENSE=	GPLv1
 LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
 		libmunge.so:${PORTSDIR}/security/munge \
-		librrd.so:${PORTSDIR}/databases/rrdtool
-# Testing for hdf5.so is insufficient.  It will accept hdf5 1.6 and
-# slurm requires hdf5 1.8.  h5copy is present only in 1.8.
-BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+		librrd.so:${PORTSDIR}/databases/rrdtool \
+		libhdf5.so:${PORTSDIR}/science/hdf5
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

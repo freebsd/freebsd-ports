@@ -3,7 +3,7 @@
 
 PORTNAME=	tables
 PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	SF/py${PORTNAME:L}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +16,9 @@ COMMENT=	Hierarchical database for Python
 BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/bin/cython:${PORTSDIR}/lang/cython \
 		${PYTHON_PKGNAMEPREFIX}numexpr>=1.4.1:${PORTSDIR}/math/py-numexpr
-LIB_DEPENDS=	hdf5:${PORTSDIR}/science/hdf5-18 \
-		lzo2:${PORTSDIR}/archivers/lzo2 \
-		ucl:${PORTSDIR}/archivers/ucl
+LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
+		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
+		libucl.so:${PORTSDIR}/archivers/ucl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes

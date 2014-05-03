@@ -3,6 +3,7 @@
 
 PORTNAME=	hdf-java
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	science java
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/releases/HDF-JAVA/hdf-java-${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -10,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java interface to HDF5
 
-LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5-18 \
+LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_JAVA=	yes
@@ -33,7 +34,7 @@ CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}/include,${JAVA_HOME}/jre/lib/ \
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	SZIP DOCS
-SZIP_DESC=	SZIP support (must match with science/hdf5-18)
+SZIP_DESC=	SZIP support (must match with science/hdf5)
 
 .include <bsd.port.options.mk>
 
