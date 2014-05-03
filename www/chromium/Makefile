@@ -4,7 +4,7 @@
 #TODO eadler: s/python/python2/g on a number of files, chromium does not build with python3
 
 PORTNAME=	chromium
-PORTVERSION=	33.0.1750.152
+PORTVERSION=	34.0.1847.132
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm \
 		flock:${PORTSDIR}/sysutils/flock \
-		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
+		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
@@ -133,7 +133,6 @@ ALL_TARGET+=	${TEST_TARGETS}
 DEBUG_MAKE_ENV=	V=1
 .if ${PORT_OPTIONS:MDEBUG}
 BUILDTYPE=	Debug
-GYP_DEFINES+=	remove_webcore_debug_symbols=1
 .else
 BUILDTYPE=	Release
 GYP_DEFINES+=	buildtype=Official
@@ -179,11 +178,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" \
-		${WRKSRC}/base/base.gypi \
-		${WRKSRC}/build/common.gypi \
 		${WRKSRC}/crypto/crypto.gyp \
-		${WRKSRC}/third_party/libvpx/libvpx.gyp \
-		${WRKSRC}/third_party/WebKit/Source/testing/testing.gyp \
 		${WRKSRC}/v8/tools/gyp/v8.gyp \
 		${WRKSRC}/v8/build/toolchain.gypi
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" \
@@ -191,17 +186,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/bin/gcc|${CC}|" \
 		${WRKSRC}/third_party/WebKit/Source/build/scripts/preprocessor.pm \
 		${WRKSRC}/third_party/WebKit/Source/build/scripts/scripts.gypi
-	@${REINPLACE_CMD} -e "s|is_linux|(is_linux or is_bsd)|" \
-		${WRKSRC}/chrome/browser/browser_resources.grd \
-		${WRKSRC}/chrome/app/theme/theme_resources.grd \
-		${WRKSRC}/chrome/browser/resources/task_manager/defines.js \
-		${WRKSRC}/tools/grit/grit/xtb_reader_unittest.py \
-		${WRKSRC}/ui/base/strings/app_locale_settings.grd \
-		${WRKSRC}/ui/base/strings/app_locale_settings_bn.xtb \
-		${WRKSRC}/ui/base/strings/app_locale_settings_ja.xtb \
-		${WRKSRC}/ui/base/strings/app_locale_settings_ko.xtb \
-		${WRKSRC}/ui/base/strings/app_locale_settings_ml.xtb \
-		${WRKSRC}/ui/base/strings/app_locale_settings_th.xtb
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
@@ -219,7 +203,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/product_logo_48.png ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/out/${BUILDTYPE}/chrome-wrapper \
 		${WRKSRC}/out/${BUILDTYPE}/xdg-settings ${STAGEDIR}${DATADIR}
-.for p in chrome chrome_100_percent content_resources resources
+.for p in chrome_100_percent content_resources resources
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak ${STAGEDIR}${DATADIR}
 .endfor
 .for f in chrome libffmpegsumo.so protoc

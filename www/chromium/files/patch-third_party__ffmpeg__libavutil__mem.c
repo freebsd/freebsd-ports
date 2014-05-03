@@ -1,7 +1,7 @@
---- third_party/ffmpeg/libavutil/mem.c.orig	2011-09-11 11:03:30.000000000 +0300
-+++ third_party/ffmpeg/libavutil/mem.c	2011-09-12 23:49:42.000000000 +0300
-@@ -31,7 +31,7 @@
- #include <limits.h>
+--- ./third_party/ffmpeg/libavutil/mem.c.orig	2014-04-24 22:36:23.000000000 +0200
++++ ./third_party/ffmpeg/libavutil/mem.c	2014-04-24 23:23:47.000000000 +0200
+@@ -32,7 +32,7 @@
+ #include <stdint.h>
  #include <stdlib.h>
  #include <string.h>
 -#if HAVE_MALLOC_H

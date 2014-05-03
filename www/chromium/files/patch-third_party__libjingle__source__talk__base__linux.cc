@@ -1,5 +1,5 @@
---- third_party/libjingle/source/talk/base/linux.cc.orig	2013-07-15 17:38:04.000000000 +0300
-+++ third_party/libjingle/source/talk/base/linux.cc	2013-07-15 17:39:04.000000000 +0300
+--- ./third_party/libjingle/source/talk/base/linux.cc.orig	2014-04-24 22:36:53.000000000 +0200
++++ ./third_party/libjingle/source/talk/base/linux.cc	2014-04-24 23:23:48.000000000 +0200
 @@ -25,7 +25,7 @@
   * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   */
@@ -9,7 +9,7 @@
  #include "talk/base/linux.h"
  
  #include <ctype.h>
-@@ -279,4 +279,4 @@
+@@ -362,4 +362,4 @@
  
  }  // namespace talk_base
  

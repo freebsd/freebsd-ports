@@ -1,14 +1,14 @@
---- build/gyp_chromium.orig	2014-02-20 21:28:44.000000000 +0100
-+++ build/gyp_chromium	2014-02-25 21:48:32.000000000 +0100
-@@ -245,8 +245,9 @@
+--- ./build/gyp_chromium.orig	2014-04-24 22:36:09.000000000 +0200
++++ ./build/gyp_chromium	2014-04-24 23:23:42.000000000 +0200
+@@ -477,8 +477,9 @@
+     args.append('--check')
  
    supplemental_includes = GetSupplementalFiles()
- 
 -  if not RunGN(supplemental_includes):
 -    sys.exit(1)
 +  #TODO port GN to FreeBSD
 +  #if not RunGN(supplemental_includes):
 +  #  sys.exit(1)
- 
    args.extend(
        ['-I' + i for i in additional_include_files(supplemental_includes, args)])
+ 

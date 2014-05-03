@@ -1,5 +1,5 @@
---- chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig	2013-07-15 20:44:54.000000000 +0300
-+++ chrome/renderer/pepper/pepper_flash_font_file_host.cc	2013-07-15 20:45:49.000000000 +0300
+--- ./chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig	2014-04-24 22:34:56.000000000 +0200
++++ ./chrome/renderer/pepper/pepper_flash_font_file_host.cc	2014-04-24 23:23:43.000000000 +0200
 @@ -13,7 +13,7 @@
  #include "ppapi/proxy/ppapi_messages.h"
  #include "ppapi/proxy/serialized_structs.h"
@@ -9,7 +9,7 @@
  #include "content/public/common/child_process_sandbox_support_linux.h"
  #endif
  
-@@ -28,12 +28,12 @@
+@@ -26,12 +26,12 @@
      : ResourceHost(host->GetPpapiHost(), instance, resource),
        renderer_ppapi_host_(host),
        fd_(-1) {
@@ -24,7 +24,7 @@
  }
  
  PepperFlashFontFileHost::~PepperFlashFontFileHost() {
-@@ -54,7 +54,7 @@
+@@ -52,7 +52,7 @@
      uint32_t table) {
    std::string contents;
    int32_t result = PP_ERROR_FAILED;
@@ -33,7 +33,7 @@
    if (fd_ != -1) {
      size_t length = 0;
      if (content::GetFontTable(fd_, table, 0 /* offset */, NULL, &length)) {
-@@ -69,7 +69,7 @@
+@@ -67,7 +67,7 @@
        }
      }
    }

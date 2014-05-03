@@ -1,8 +1,8 @@
---- chrome/browser/diagnostics/diagnostics_writer.cc.orig	2013-11-08 07:40:50.000000000 +0100
-+++ chrome/browser/diagnostics/diagnostics_writer.cc	2013-11-16 11:31:52.000000000 +0100
+--- ./chrome/browser/diagnostics/diagnostics_writer.cc.orig	2014-04-24 22:35:10.000000000 +0200
++++ ./chrome/browser/diagnostics/diagnostics_writer.cc	2014-04-24 23:23:42.000000000 +0200
 @@ -268,7 +268,7 @@
        console_->SetColor(color);
-       console_->Write(ASCIIToUTF16(result));
+       console_->Write(base::ASCIIToUTF16(result));
      }
 -    if (format_ == MACHINE) {
 +    if (format_ == THEMACHINE) {
