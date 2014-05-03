@@ -1,4 +1,5 @@
 bin/alephone
+man/man6/alephone.6.gz
 %%DATADIR%%/Fonts
 %%DATADIR%%/MML/Interface_Rects.mml
 %%DATADIR%%/MML/Transparent_Liquids.mml

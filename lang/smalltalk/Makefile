@@ -3,7 +3,7 @@
 
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -24,11 +24,9 @@ TK_CONFIGURE_WITH=tcl=${LOCALBASE}/lib/tcl8.4 tk=${LOCALBASE}/lib/tk8.4
 PGSQL_USE=	PGSQL=yes
 SDL_USE=	SDL=image,mixer,sdl,sound,ttf
 
-USE_AUTOTOOLS=	libtool
+USES=		gmake iconv libtool pkgconfig shebangfix tar:xz
 USE_GNOME=	pango
-USES=		shebangfix pkgconfig iconv gmake
 USE_SQLITE=	yes
-USE_XZ=		yes
 USE_XORG=	ice xi xmu
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes
@@ -51,18 +49,11 @@ INFO=		gst gst-base gst-libs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails to install on sparc64
-.endif
+BROKEN_sparc64=	Fails to install on sparc64
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-		-e 's/ia64-\*-\* /&|amd64-*-* /' \
+	@${REINPLACE_CMD} -e 's/ia64-\*-\* /&|amd64-*-* /' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's/x86_64-\*-freebsd\* /&| amd64-*-freebsd* / ' \
-		${WRKSRC}/libffi/configure
 	@${REINPLACE_CMD} -e 's/lrintl (truncl/lroundl (truncl/' \
 		${WRKSRC}/libgst/prims.def \
 		${WRKSRC}/libgst/prims.inl
@@ -80,4 +71,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/smalltalk/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

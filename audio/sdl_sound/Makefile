@@ -3,20 +3,22 @@
 
 PORTNAME=	sdl_sound
 PORTVERSION=	1.0.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://offload1.icculus.org:9090/SDL_sound/downloads/ \
 		http://offload2.icculus.org:9090/SDL_sound/downloads/
 DISTNAME=	SDL_sound-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A SDL audio library and player for some popular sound file formats
+COMMENT=	SDL audio library and player for some popular sound file formats
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		FLAC MIKMOD MIDI MODPLUG PHYSFS SMPEG SPEEX VORBIS
 OPTIONS_DEFAULT=	FLAC MIKMOD MIDI MODPLUG PHYSFS SMPEG SPEEX VORBIS
@@ -25,7 +27,7 @@ MIDI_DESC=	Software MIDI music
 PHYSFS_DESC=	PhysicsFS support
 SMPEG_DESC=	MP3 audio format
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
@@ -85,6 +87,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/decoders/timidity/options.h
+	@${REINPLACE_CMD} 's|timidity.cfg|${PREFIX}/share/timidity/&|' \
+		${WRKSRC}/decoders/timidity/options.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

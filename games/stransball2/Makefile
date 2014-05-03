@@ -3,14 +3,14 @@
 
 PORTNAME=	stransball2
 PORTVERSION=	1.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		http://braingames.bugreport.nl/stransball2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:C/\.//}-linux
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A sequel to Transball and Transball 2 THRUST-type games
+COMMENT=	Sequel to Transball and Transball 2 THRUST-type games
 
 LIB_DEPENDS=	libSGE.so:${PORTSDIR}/devel/sdl_sge
 
