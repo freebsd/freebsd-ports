@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--disable-cgribex \
 		--disable-extra \
 		--disable-grib \
 		--disable-ieg \
-		--disable-service
+		--disable-service \
 		--enable-cdi-lib \
 		--program-transform-name="" \
 		--with-zlib=/usr
