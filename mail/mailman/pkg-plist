@@ -2223,6 +2223,7 @@
 %%MMDIR%%/tests/bounces/simple_37.txt
 %%MMDIR%%/tests/bounces/simple_38.txt
 %%MMDIR%%/tests/bounces/simple_39.txt
+%%MMDIR%%/tests/bounces/simple_40.txt
 %%MMDIR%%/tests/bounces/sina_01.txt
 %%MMDIR%%/tests/bounces/smtp32_01.txt
 %%MMDIR%%/tests/bounces/smtp32_02.txt
@@ -2258,7 +2259,7 @@
 %%MMDIR%%/tests/test_smtp.py
 %%MMDIR%%/tests/testall.py
 %%PYTHON_SITELIBDIR%%/mailman-info.txt
-@dirrmtry %%PYTHON_SITELIBDIR%%
+@comment @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrm %%MMDIR%%/tests/msgs
 @dirrm %%MMDIR%%/tests/bounces
 @dirrm %%MMDIR%%/tests
