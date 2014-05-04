@@ -245,7 +245,6 @@ taetgen-*		math/tetgen		Academic or personal use only
 tarsnap-*		sysutils/tarsnap	license restricts redistribution of source and binaries
 tcetest_*		games/linux-enemyterritory-tce	Redistribution limited
 teamspeak*		audio/teamspeak3-server	No redistribution
-texcm-ttf-20010117/*	x11-fonts/texcm-ttf	Cannot be sold or distributed with any commercial product
 TFMESS_BSP_FreeBSD_*	security/bsp_upektfmess	License prohibits redistribution
 thundercache		www/thundercache	Commercial software with shareware license to 50 threads
 tinker*			biology/tinker		Distribution is prohibited

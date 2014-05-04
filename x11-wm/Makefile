@@ -140,7 +140,6 @@
     SUBDIR += selectwm
     SUBDIR += simple-ccsm
     SUBDIR += spectrwm
-    SUBDIR += stumpwm
     SUBDIR += swm
     SUBDIR += tinywm
     SUBDIR += transset

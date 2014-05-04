@@ -6062,3 +6062,26 @@ science/netcdf-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran 
 science/netcdf3-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf4|science/netcdf|2014-05-03|Use science/netcdf instead
 net/wackamole||2014-05-04|Has expired: Depends on expired www/spread
+x11-toolkits/gigi||2014-05-04|Has expired: Does not compile on 10 or higher
+net/asterisk-oh323||2014-05-04|Has expired: Depends on broken and unsupported asterisk14
+net/asterisk14||2014-05-04|Has expired: Broken and unsupported
+net/asterisk14-addons||2014-05-04|Has expired: Depends on broken and unsupported asterisk14
+ports-mgmt/pkg_install||2014-05-04|Has expired: Replaced by ports-mgmt/pkg
+x11-drivers/xf86-input-magictouch||2014-05-04|Has expired: Does not compile
+x11-drivers/xf86-video-cyrix||2014-05-04|Has expired: requires pciVideoPtr typedef
+x11-drivers/xf86-video-sis-intel||2014-05-04|Has expired: requires pciVideoPtr typedef
+net/py-spreadmodule||2014-05-04|Has expired: Depends on expired net/spread
+net/p5-Spread-Message||2014-05-04|Has expired: Depends on expired net/spread
+net/p5-POE-Component-Spread||2014-05-04|Has expired: Depends on expired net/spread
+net/p5-Spread-Session||2014-05-04|Has expired: Depends on expired net/spread
+sysutils/wmmemload||2014-05-04|Has expired: Broken
+lang/ml-pnet||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+lang/treecc||2014-05-04|Has expired: PNET dependency decommissioned Dec 2012
+lang/pnetlib||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+lang/pnet-base||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+benchmarks/pnetmark||2014-05-04|Has expired: PNET dependency decommissioned Dec 2012
+lang/pnet||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+x11-wm/stumpwm||2014-05-04|Has expired: Broken for more than 4 months
+sysutils/cpupowerd||2014-05-04|Has expired: Not maintained from upstream anymore and only supports ancient AMD K8.
+net/pchar||2014-05-04|Has expired: Obsolete, abandoned
+x11-fonts/texcm-ttf||2014-05-04|Has expired: Should be replaced by x11-fonts/stix-fonts
