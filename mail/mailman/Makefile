@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.17
+DISTVERSION=	2.1.18
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -65,10 +65,10 @@ OPTIONS_SINGLE=	MTA
 OPTIONS_SINGLE_MTA=	SENDMAIL EXIM4 POSTFIX COURIER
 OPTIONS_DEFINE=	HTDIG NAMAZU2 NLS DOCS
 OPTIONS_DEFAULT=	SENDMAIL
-SENDMAIL_DESC=	for use with sendmail
+COURIER_DESC=	for use with courier
 EXIM4_DESC=	for use with exim4
 POSTFIX_DESC=	for use with postfix
-COURIER_DESC=	for use with courier
+SENDMAIL_DESC=	for use with sendmail
 HTDIG_DESC=	- EXPERIMENTAL - htdig integration patches
 NAMAZU2_DESC=	Make private archives searchable with namazu2
 MTA_DESC=	Integrate with which MTA?
@@ -120,6 +120,9 @@ RUN_DEPENDS+=	mknmz:${PORTSDIR}/databases/namazu2
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mailman-Cgi-private.py
 .endif
 
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:${PORTSDIR}/dns/py-dnspython
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:${PORTSDIR}/dns/py-dnspython
+
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may change the following build options:"
@@ -169,6 +172,8 @@ post-install:
 	    -d ${MAILMANDIR}/${dir} ${dir})
 .endfor
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/pythonlib/*.egg-info
+	# mm_cfg.py is handled by pkg-plist:
+	@${RM} -f ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.py
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.pyc
 	${MKDIR} ${STAGEDIR}${PREFIX}/${IMGDIR}
 .for imgfile in ${IMGFILES}
