@@ -5,7 +5,7 @@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
 -LIBS = `curl-config --libs` -lmusicbrainz -lm -lstdc++
-+LIBS = `curl-config --libs` -lm -lstdc++
++LIBS = `curl-config --libs` -lm
  LIBTOOL = @LIBTOOL@
  LN_S = @LN_S@
  LTLIBOBJS = @LTLIBOBJS@

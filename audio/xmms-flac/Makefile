@@ -2,7 +2,7 @@
 
 PORTNAME=	xmms-flac
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 DISTNAME=	flac-${PORTVERSION}
@@ -12,19 +12,14 @@ COMMENT=	XMMS input plugin for playing FLAC files
 
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
 		libFLAC.so:${PORTSDIR}/audio/flac \
-		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libogg.so:${PORTSDIR}/audio/libogg
 
-USES=		gettext iconv tar:xz
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk12
-USE_XORG=	x11 xau xcb xdmcp xext xi
-
+USES=		iconv libtool tar:xz
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 MAKEFILE=	${FILESDIR}/Makefile
 
 PLIST_FILES=	lib/xmms/Input/libxmms-flac.so

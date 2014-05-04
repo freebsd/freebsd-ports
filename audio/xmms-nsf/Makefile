@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms-nsf
 PORTVERSION=	0.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://optronic.sourceforge.net/files/ \
 		CRITICAL
@@ -17,16 +17,14 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
+USES=		libtool
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
+CONFIGURE_ARGS=	--disable-static --with-pic
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-CFLAGS+=	-fPIC
-
-PLIST_FILES=	lib/xmms/Input/libnsf.a \
-		lib/xmms/Input/libnsf.la \
-		lib/xmms/Input/libnsf.so
+PLIST_FILES=	lib/xmms/Input/libnsf.so
 
 SUB_FILES=	pkg-message
 SUB_LIST=	VERSION=${PORTVERSION}
@@ -34,9 +32,5 @@ SUB_LIST=	VERSION=${PORTVERSION}
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
 		${WRKSRC}/src/nes/nestypes.h
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

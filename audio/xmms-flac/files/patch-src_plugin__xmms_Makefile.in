@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/plugin_xmms/Makefile.in.orig	2013-05-27 10:11:57.951933000 +0200
 +++ src/plugin_xmms/Makefile.in	2013-06-09 19:13:03.000000000 +0200
 @@ -127,8 +127,7 @@ libxmms_flac_la_DEPENDENCIES =  \

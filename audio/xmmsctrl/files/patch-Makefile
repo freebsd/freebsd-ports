@@ -9,8 +9,8 @@
  DEFS     := -DPRETTY_PRINT -D_GNU_SOURCE -DVERSION=\"$(VERSION)\"
 -CFLAGS   := $(WARN) -O2 $(shell xmms-config --cflags) $(DEFS)
 -LDFLAGS  := $(shell xmms-config --libs)
-+CFLAGS   += $(WARN) $(shell xmms-config --cflags) $(DEFS) $(PTHREAD_CFLAGS)
-+LDFLAGS  := $(shell xmms-config --libs) $(PTHREAD_LIBS)
++CFLAGS   += $(WARN) $(shell xmms-config --cflags) $(DEFS)
++LDFLAGS  := $(shell xmms-config --libs)
  
 -all : $(TARGET) HELP
 +all : $(TARGET)
