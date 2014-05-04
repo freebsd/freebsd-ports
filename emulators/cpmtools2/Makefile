@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	cpmtools2
-PORTVERSION=	2.18
+PORTVERSION=	2.19
+PORTREVISION=	1
 CATEGORIES=	emulators sysutils
-MASTER_SITES=	http://www.moria.de/~michael/cpmtools/
+MASTER_SITES=	http://www.moria.de/~michael/cpmtools/files/
 DISTNAME=	${PORTNAME:C/2$//}-${PORTVERSION}
 
 MAINTAINER=	ak@FreeBSD.org
