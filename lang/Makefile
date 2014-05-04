@@ -155,7 +155,6 @@
     SUBDIR += metaocaml
     SUBDIR += mit-scheme
     SUBDIR += mixal
-    SUBDIR += ml-pnet
     SUBDIR += mlton
     SUBDIR += mmix
     SUBDIR += modula3
@@ -247,9 +246,6 @@
     SUBDIR += picoc
     SUBDIR += pike76
     SUBDIR += pike78
-    SUBDIR += pnet
-    SUBDIR += pnet-base
-    SUBDIR += pnetlib
     SUBDIR += polyml
     SUBDIR += ptoc
     SUBDIR += pure
@@ -338,7 +334,6 @@
     SUBDIR += tinypy
     SUBDIR += tolua
     SUBDIR += tolua++
-    SUBDIR += treecc
     SUBDIR += tuareg-mode.el
     SUBDIR += twelf
     SUBDIR += ucc
