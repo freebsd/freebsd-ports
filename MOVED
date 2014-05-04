@@ -6061,3 +6061,4 @@ science/hdf5-18|science/hdf5|2014-05-03|Use science/hdf5 instead
 science/netcdf-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf3-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf4|science/netcdf|2014-05-03|Use science/netcdf instead
+net/wackamole||2014-05-04|Has expired: Depends on expired www/spread
