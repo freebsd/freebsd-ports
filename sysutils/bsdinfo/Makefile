@@ -1,4 +1,4 @@
-# Created by: samu <s@samu.pl>
+# Created by: samu <freebsd-ports@samu.pl>
 # $FreeBSD$
 
 PORTNAME=	bsdinfo
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/samupl/bsdinfo/
 
-MAINTAINER=	s@samu.pl
+MAINTAINER=	freebsd-ports@samu.pl
 COMMENT=	Simple utility to display system-based information
 
 GNU_CONFIGURE=	yes
