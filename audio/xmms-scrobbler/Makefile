@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmms-scrobbler
-PORTREVISION=	6
+PORTREVISION=	7
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	XMMS plugin for Audioscrobbler.com
@@ -11,6 +11,6 @@ CONFLICTS=	scrobbler-*
 
 MASTERDIR=	${.CURDIR}/../scrobbler
 
-WITH_XMMS=	yes
+OPTIONS_SLAVE=	XMMS
 
 .include "${MASTERDIR}/Makefile"

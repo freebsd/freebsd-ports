@@ -2,7 +2,7 @@
 
 PORTNAME=	xmmsctrl
 PORTVERSION=	1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://user.it.uu.se/~adavid/utils/ \
 		http://distro.ibiblio.org/pub/linux/distributions/pdaxrom/src/ \
@@ -19,8 +19,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake
 USE_CSTD=	gnu89
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 PORTDOCS=	Changelog README
 

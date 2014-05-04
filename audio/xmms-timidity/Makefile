@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms-timidity
 PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.shikadi.net/utils/files/
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_LDCONFIG=	${PREFIX}/lib/xmms/Input
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_GNOME=	gtk12
 CXXFLAGS+=	-I${LOCALBASE}/include `glib-config --cflags` -g -fPIC
 
@@ -23,11 +23,12 @@ FILES=	xmms-timidity.cpp
 PLIST_FILES=	lib/xmms/Input/libxmms-timidity.so
 
 do-build:
-	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -c ${FILES} -o xmms-timidity.o
+	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} ${FILES} -o libxmms-timidity.so \
+		-shared -pthread
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
-	${INSTALL_DATA} ${WRKSRC}/${FILES} \
+	${INSTALL_DATA} ${WRKSRC}/libxmms-timidity.so \
 	    ${STAGEDIR}${PREFIX}/lib/xmms/Input/libxmms-timidity.so
 
 .include <bsd.port.mk>

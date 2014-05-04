@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms-ahx
 PORTVERSION=	0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 
@@ -15,17 +15,13 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-PLIST_FILES=	lib/xmms/Input/libahx.la \
-		lib/xmms/Input/libahx.so
+PLIST_FILES=	lib/xmms/Input/libahx.so
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake libtool
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\(objformat=\).*|\1elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

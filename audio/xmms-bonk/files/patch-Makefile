@@ -16,7 +16,7 @@ $FreeBSD$
  
  libbonk.so : bonk-xmms.cc
 -	$(CPP) $(CFLAGS) -shared -o libbonk.so bonk-xmms.cc -lstdc++
-+	$(CXX) $(CXXFLAGS) -shared -o libbonk.so bonk-xmms.cc -lstdc++
++	$(CXX) $(CXXFLAGS) -shared -o libbonk.so bonk-xmms.cc
  
  install : libbonk.so
  	cp libbonk.so $(INSTDIR)

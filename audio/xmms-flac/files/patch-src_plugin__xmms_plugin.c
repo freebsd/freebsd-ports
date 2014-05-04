@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/plugin_xmms/plugin.c.orig
 +++ src/plugin_xmms/plugin.c
 @@ -140,7 +140,7 @@
