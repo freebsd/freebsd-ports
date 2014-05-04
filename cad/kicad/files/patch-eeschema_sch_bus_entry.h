@@ -5,7 +5,7 @@
      bool IsConnectable() const { return true; }
  
 -    void GetConnectionPoints( vector< wxPoint >& aPoints ) const;
-+    void GetConnectionPoints( std::__1::vector< wxPoint >& aPoints ) const;
++    void GetConnectionPoints( std::vector< wxPoint >& aPoints ) const;
  
      wxString GetSelectMenuText() const;
  

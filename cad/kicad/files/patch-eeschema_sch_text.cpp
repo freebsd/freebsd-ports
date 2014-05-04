@@ -5,7 +5,7 @@
  
  
 -void SCH_TEXT::GetConnectionPoints( vector< wxPoint >& aPoints ) const
-+void SCH_TEXT::GetConnectionPoints( std::__1::vector< wxPoint >& aPoints ) const
++void SCH_TEXT::GetConnectionPoints( std::vector< wxPoint >& aPoints ) const
  {
      // Normal text labels do not have connection points.  All others do.
      if( Type() == SCH_TEXT_T )
@@ -14,7 +14,7 @@
  
  
 -void SCH_TEXT::GetNetListItem( vector<NETLIST_OBJECT*>& aNetListItems,
-+void SCH_TEXT::GetNetListItem( std::__1::vector<NETLIST_OBJECT*>& aNetListItems,
++void SCH_TEXT::GetNetListItem( std::vector<NETLIST_OBJECT*>& aNetListItems,
                                 SCH_SHEET_PATH*          aSheetPath )
  {
      if( GetLayer() == LAYER_NOTES || GetLayer() == LAYER_SHEETLABEL )

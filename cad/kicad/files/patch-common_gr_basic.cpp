@@ -5,7 +5,7 @@
  
      // A clip box exists: clip and draw the polygon.
 -    static vector<wxPoint> clippedPolygon;
-+    static std::__1::vector<wxPoint> clippedPolygon;
++    static std::vector<wxPoint> clippedPolygon;
      static pointVector     inputPolygon, outputPolygon;
  
      inputPolygon.clear();

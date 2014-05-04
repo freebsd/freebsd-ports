@@ -5,7 +5,7 @@
  
  
 -void SCH_SHEET::GetConnectionPoints( vector< wxPoint >& aPoints ) const
-+void SCH_SHEET::GetConnectionPoints( std::__1::vector< wxPoint >& aPoints ) const
++void SCH_SHEET::GetConnectionPoints( std::vector< wxPoint >& aPoints ) const
  {
      for( size_t i = 0; i < GetPins().size(); i++ )
          aPoints.push_back( GetPins()[i].m_Pos );
@@ -14,7 +14,7 @@
  
  
 -void SCH_SHEET::GetNetListItem( vector<NETLIST_OBJECT*>& aNetListItems,
-+void SCH_SHEET::GetNetListItem( std::__1::vector<NETLIST_OBJECT*>& aNetListItems,
++void SCH_SHEET::GetNetListItem( std::vector<NETLIST_OBJECT*>& aNetListItems,
                                  SCH_SHEET_PATH*          aSheetPath )
  {
      SCH_SHEET_PATH sheetPath = *aSheetPath;

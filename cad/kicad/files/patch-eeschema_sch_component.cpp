@@ -5,7 +5,7 @@
  
  
 -void SCH_COMPONENT::GetConnectionPoints( vector< wxPoint >& aPoints ) const
-+void SCH_COMPONENT::GetConnectionPoints( std::__1::vector< wxPoint >& aPoints ) const
++void SCH_COMPONENT::GetConnectionPoints( std::vector< wxPoint >& aPoints ) const
  {
      LIB_PIN* pin;
      LIB_COMPONENT* component = CMP_LIBRARY::FindLibraryComponent( m_ChipName );
@@ -14,7 +14,7 @@
  
  
 -void SCH_COMPONENT::GetNetListItem( vector<NETLIST_OBJECT*>& aNetListItems,
-+void SCH_COMPONENT::GetNetListItem( std::__1::vector<NETLIST_OBJECT*>& aNetListItems,
++void SCH_COMPONENT::GetNetListItem( std::vector<NETLIST_OBJECT*>& aNetListItems,
                                      SCH_SHEET_PATH*          aSheetPath )
  {
      LIB_COMPONENT* component = CMP_LIBRARY::FindLibraryComponent( GetLibName() );
@@ -23,7 +23,7 @@
  bool SCH_COMPONENT::doIsConnected( const wxPoint& aPosition ) const
  {
 -    vector< wxPoint > pts;
-+    std::__1::vector< wxPoint > pts;
++    std::vector< wxPoint > pts;
  
      GetConnectionPoints( pts );
  

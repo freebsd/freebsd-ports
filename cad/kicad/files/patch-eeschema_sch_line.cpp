@@ -5,7 +5,7 @@
  
  
 -void SCH_LINE::GetConnectionPoints( vector< wxPoint >& aPoints ) const
-+void SCH_LINE::GetConnectionPoints( std::__1::vector< wxPoint >& aPoints ) const
++void SCH_LINE::GetConnectionPoints( std::vector< wxPoint >& aPoints ) const
  {
      aPoints.push_back( m_start );
      aPoints.push_back( m_end );
@@ -14,7 +14,7 @@
  
  
 -void SCH_LINE::GetNetListItem( vector<NETLIST_OBJECT*>& aNetListItems,
-+void SCH_LINE::GetNetListItem( std::__1::vector<NETLIST_OBJECT*>& aNetListItems,
++void SCH_LINE::GetNetListItem( std::vector<NETLIST_OBJECT*>& aNetListItems,
                                 SCH_SHEET_PATH*          aSheetPath )
  {
      // Net list item not required for graphic lines.

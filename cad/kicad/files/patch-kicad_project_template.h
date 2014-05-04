@@ -5,7 +5,7 @@
       * and have not yet been through any renaming
       */
 -    vector<wxFileName> GetFileList();
-+    std::__1::vector<wxFileName> GetFileList();
++    std::vector<wxFileName> GetFileList();
  };
  
  #endif

@@ -5,7 +5,7 @@
      virtual bool IsSelectStateChanged( const wxRect& aRect );
  
 -    virtual void GetConnectionPoints( vector< wxPoint >& aPoints ) const;
-+    virtual void GetConnectionPoints( std::__1::vector< wxPoint >& aPoints ) const;
++    virtual void GetConnectionPoints( std::vector< wxPoint >& aPoints ) const;
  
      virtual bool CanIncrementLabel() const { return true; }
  
@@ -14,7 +14,7 @@
      virtual BITMAP_DEF GetMenuImage() const { return  add_text_xpm; }
  
 -    virtual void GetNetListItem( vector<NETLIST_OBJECT*>& aNetListItems,
-+    virtual void GetNetListItem( std::__1::vector<NETLIST_OBJECT*>& aNetListItems,
++    virtual void GetNetListItem( std::vector<NETLIST_OBJECT*>& aNetListItems,
                                   SCH_SHEET_PATH*          aSheetPath );
  
      virtual wxPoint GetPosition() const { return m_Pos; }
