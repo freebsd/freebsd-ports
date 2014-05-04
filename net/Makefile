@@ -1240,7 +1240,6 @@
     SUBDIR += vortex
     SUBDIR += vserver
     SUBDIR += vtun
-    SUBDIR += wackamole
     SUBDIR += wackford-squeers
     SUBDIR += wakeonlan
     SUBDIR += whois
