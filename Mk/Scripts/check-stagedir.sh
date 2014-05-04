@@ -320,8 +320,18 @@ check_invalid_directories_mtree() {
 	    | sort_dfs | sed "${sed_dirs}" \
 	    >>${WRKDIR}/.invalid-plist-mtree || :
 	if [ -s "${WRKDIR}/.invalid-plist-mtree" ]; then
-		ret=1
 		while read line; do
+			# Skip removal of PREFIX and PREFIX/info from
+			# bsd.port.mk for now. The removal of info may
+			# be a bug; it's part of BSD.local.dist.
+			# See ports/74691
+			if [ "${PREFIX}" != "${LOCALBASE}" ]; then
+				case "${line}" in
+					"@dirrmtry info") continue ;;
+					"@unexec rmdir \"${PREFIX}\" >/dev/null 2>&1 || :") continue ;;
+				esac
+			fi
+			ret=1
 			echo "Error: Owned by MTREE: ${line}" >&2
 		done < ${WRKDIR}/.invalid-plist-mtree
 	fi
