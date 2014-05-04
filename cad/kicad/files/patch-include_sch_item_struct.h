@@ -5,7 +5,7 @@
  typedef boost::ptr_vector< SCH_ITEM > SCH_ITEMS;
  typedef SCH_ITEMS::iterator SCH_ITEMS_ITR;
 -typedef vector< SCH_ITEMS_ITR > SCH_ITEMS_ITRS;
-+typedef std::__1::vector< SCH_ITEMS_ITR > SCH_ITEMS_ITRS;
++typedef std::vector< SCH_ITEMS_ITR > SCH_ITEMS_ITRS;
  
  
  #define FMT_IU          SCH_ITEM::FormatInternalUnits
@@ -14,7 +14,7 @@
       * @param aItemList - List of DANGLING_END_ITEMS to add to.
       */
 -    virtual void GetEndPoints( vector< DANGLING_END_ITEM >& aItemList ) {}
-+    virtual void GetEndPoints( std::__1::vector< DANGLING_END_ITEM >& aItemList ) {}
++    virtual void GetEndPoints( std::vector< DANGLING_END_ITEM >& aItemList ) {}
  
      /**
       * Function IsDanglingStateChanged
@@ -23,7 +23,7 @@
       * @return True if the dangling state has changed from it's current setting.
       */
 -    virtual bool IsDanglingStateChanged( vector< DANGLING_END_ITEM >& aItemList ) { return false; }
-+    virtual bool IsDanglingStateChanged( std::__1::vector< DANGLING_END_ITEM >& aItemList ) { return false; }
++    virtual bool IsDanglingStateChanged( std::vector< DANGLING_END_ITEM >& aItemList ) { return false; }
  
      virtual bool IsDangling() const { return false; }
  
@@ -32,7 +32,7 @@
       * @param aPoints List of connection points to add to.
       */
 -    virtual void GetConnectionPoints( vector< wxPoint >& aPoints ) const { }
-+    virtual void GetConnectionPoints( std::__1::vector< wxPoint >& aPoints ) const { }
++    virtual void GetConnectionPoints( std::vector< wxPoint >& aPoints ) const { }
  
      /**
       * Function ClearConnections
@@ -41,7 +41,7 @@
       * </p>
       */
 -    virtual void GetNetListItem( vector<NETLIST_OBJECT*>& aNetListItems,
-+    virtual void GetNetListItem( std::__1::vector<NETLIST_OBJECT*>& aNetListItems,
++    virtual void GetNetListItem( std::vector<NETLIST_OBJECT*>& aNetListItems,
                                   SCH_SHEET_PATH*          aSheetPath ) { }
  
      /**

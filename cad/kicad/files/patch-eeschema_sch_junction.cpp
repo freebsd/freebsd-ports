@@ -5,14 +5,14 @@
  
  
 -void SCH_JUNCTION::GetConnectionPoints( vector< wxPoint >& aPoints ) const
-+void SCH_JUNCTION::GetConnectionPoints( std::__1::vector< wxPoint >& aPoints ) const
++void SCH_JUNCTION::GetConnectionPoints( std::vector< wxPoint >& aPoints ) const
  {
      aPoints.push_back( m_pos );
  }
  
  
 -void SCH_JUNCTION::GetNetListItem( vector<NETLIST_OBJECT*>& aNetListItems,
-+void SCH_JUNCTION::GetNetListItem( std::__1::vector<NETLIST_OBJECT*>& aNetListItems,
++void SCH_JUNCTION::GetNetListItem( std::vector<NETLIST_OBJECT*>& aNetListItems,
                                     SCH_SHEET_PATH*          aSheetPath )
  {
      NETLIST_OBJECT* item = new NETLIST_OBJECT();

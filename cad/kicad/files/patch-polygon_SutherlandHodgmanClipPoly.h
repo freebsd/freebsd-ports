@@ -7,9 +7,9 @@
 -typedef vector<PointF>                 pointVector;
 -typedef vector<PointF>::iterator       pointIterator;
 -typedef vector<PointF>::const_iterator cpointIterator;
-+typedef std::__1::vector<PointF>                 pointVector;
-+typedef std::__1::vector<PointF>::iterator       pointIterator;
-+typedef std::__1::vector<PointF>::const_iterator cpointIterator;
++typedef std::vector<PointF>                 pointVector;
++typedef std::vector<PointF>::iterator       pointIterator;
++typedef std::vector<PointF>::const_iterator cpointIterator;
  
  class SutherlandHodgman
  {

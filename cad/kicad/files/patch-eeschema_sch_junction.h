@@ -5,14 +5,14 @@
      bool IsConnectable() const { return true; }
  
 -    void GetConnectionPoints( vector< wxPoint >& aPoints ) const;
-+    void GetConnectionPoints( std::__1::vector< wxPoint >& aPoints ) const;
++    void GetConnectionPoints( std::vector< wxPoint >& aPoints ) const;
  
      wxString GetSelectMenuText() const { return wxString( _( "Junction" ) ); }
  
      BITMAP_DEF GetMenuImage() const { return  add_junction_xpm; }
  
 -    void GetNetListItem( vector<NETLIST_OBJECT*>& aNetListItems, SCH_SHEET_PATH* aSheetPath );
-+    void GetNetListItem( std::__1::vector<NETLIST_OBJECT*>& aNetListItems, SCH_SHEET_PATH* aSheetPath );
++    void GetNetListItem( std::vector<NETLIST_OBJECT*>& aNetListItems, SCH_SHEET_PATH* aSheetPath );
  
      wxPoint GetPosition() const { return m_pos; }
  

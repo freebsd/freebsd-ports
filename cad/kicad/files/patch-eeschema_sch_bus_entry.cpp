@@ -5,7 +5,7 @@
  
  
 -void SCH_BUS_ENTRY::GetConnectionPoints( vector< wxPoint >& aPoints ) const
-+void SCH_BUS_ENTRY::GetConnectionPoints( std::__1::vector< wxPoint >& aPoints ) const
++void SCH_BUS_ENTRY::GetConnectionPoints( std::vector< wxPoint >& aPoints ) const
  {
      aPoints.push_back( m_pos );
      aPoints.push_back( m_End() );

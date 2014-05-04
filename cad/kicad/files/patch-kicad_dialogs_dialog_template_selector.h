@@ -5,7 +5,7 @@
  {
  protected:
 -    vector<TEMPLATE_SELECTION_PANEL*> m_panels;
-+    std::__1::vector<TEMPLATE_SELECTION_PANEL*> m_panels;
++    std::vector<TEMPLATE_SELECTION_PANEL*> m_panels;
      void AddTemplate( int aPage, PROJECT_TEMPLATE* aTemplate );
      TEMPLATE_WIDGET* m_selectedWidget;
  

@@ -5,7 +5,7 @@
      bool IsConnectable() const { return true; }
  
 -    void GetConnectionPoints( vector< wxPoint >& aPoints ) const;
-+    void GetConnectionPoints(std::__1::vector< wxPoint >& aPoints ) const;
++    void GetConnectionPoints(std::vector< wxPoint >& aPoints ) const;
  
      SEARCH_RESULT Visit( INSPECTOR* inspector, const void* testData,
                                   const KICAD_T scanTypes[] );
@@ -14,7 +14,7 @@
      BITMAP_DEF GetMenuImage() const { return add_hierarchical_subsheet_xpm; }
  
 -    void GetNetListItem( vector<NETLIST_OBJECT*>& aNetListItems,
-+    void GetNetListItem( std::__1::vector<NETLIST_OBJECT*>& aNetListItems,
++    void GetNetListItem( std::vector<NETLIST_OBJECT*>& aNetListItems,
                                   SCH_SHEET_PATH*          aSheetPath );
  
      SCH_ITEM& operator=( const SCH_ITEM& aSheet );
