@@ -1,5 +1,3 @@
-Memoize::ExpireLRU is a module that implements LRU expiration for
-Memoize.
+Memoize::ExpireLRU is a module that implements LRU expiration for Memoize.
 
-Author: Brent B. Powers
 WWW: http://search.cpan.org/dist/Memoize-ExpireLRU/
