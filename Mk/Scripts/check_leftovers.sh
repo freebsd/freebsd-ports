@@ -47,7 +47,7 @@ tmpplist=$(make -C ${portdir} -VTMPPLIST)
 while read modtype path extra; do
 	# Ignore everything from these files/directories
 	case "${path}" in
-		${HOME:-/root}/.ccache/*|\
+		${HOME:-/root}/.ccache/*|/root/.ccache/*|\
 		/compat/linux/proc/*|\
 		/dev/*|\
 		/etc/make.conf.bak|\
