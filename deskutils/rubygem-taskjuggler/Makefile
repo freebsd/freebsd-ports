@@ -6,7 +6,7 @@ PORTVERSION=	3.5.0
 CATEGORIES=	deskutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Project management tool for UNIX based operating systems
 
 LICENSE=	GPLv2
