@@ -4,7 +4,7 @@
 PORTNAME=	fairymax
 PORTVERSION=	4.8S.6
 CATEGORIES=	games
-MASTER_SITES=	http://freeheimdall.homeunix.org/files/
+MASTER_SITES=	http://freeheimdall.spdns.org/files/
 DISTNAME=	${PORTNAME}-0e4813b
 # http://hgm.nubati.net/cgi-bin/gitweb.cgi?p=fairymax.git;a=snapshot;h=0e4813b1b6dbb8a2a85c5b6a42486cfa52724d68;sf=tgz
 
