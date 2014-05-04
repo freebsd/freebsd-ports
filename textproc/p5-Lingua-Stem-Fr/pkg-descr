@@ -1,6 +1,4 @@
-Lingua::Stem::Fr - Porter's stemming algorithm for French
-
-This module applies the Porter Stemming Algorithm to its parameters,
-returning the stemmed words.
+Lingua::Stem::Fr uses the modified version of the Porter Stemming Algorithm to
+return a stemmed words.
 
 WWW: http://search.cpan.org/dist/Lingua-Stem-Fr/

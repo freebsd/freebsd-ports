@@ -1,7 +1,7 @@
-%%PERL5_MAN3%%/Lingua::Stem::Fr.3.gz
 %%SITE_PERL%%/Lingua/Stem/Fr.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Fr/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Fr
+%%PERL5_MAN3%%/Lingua::Stem::Fr.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Fr
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrmtry %%SITE_PERL%%/Lingua/Stem
