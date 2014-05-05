@@ -20,7 +20,7 @@ MLINKS=		mp.1 digestp.1	- filep.1	- filofaxp.1 \
 		- timemanp.1	- timesysp.1
 
 PAPERSIZE?=	letter
-.if ${PAPERSIZE:L} == a4
+.if ${PAPERSIZE:tl} == a4
 INSTALL_TARGET=	install-a4
 .endif
 

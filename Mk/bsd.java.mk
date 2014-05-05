@@ -410,7 +410,7 @@ do-build:
 
 # Then test if a JAVAC has to be set (JAVA_BUILD==jdk)
 .		if defined(JAVA_BUILD)
-.			if (${JAVA_BUILD:U} == "JDK") && !defined(JAVAC)
+.			if (${JAVA_BUILD:tu} == "JDK") && !defined(JAVAC)
 JAVAC?=			${JAVA_HOME}/bin/javac
 .			endif
 .		endif

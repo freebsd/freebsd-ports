@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.angelfire.com/mt2/quakebots/:prog \
 		http://ponpoko.tri6.net/3zb2/routes/:routes
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:U}
+DISTNAME=	${PORTNAME:tu}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:prog \
 		${PORTNAME}src${PORTVERSION:S/0.//}${EXTRACT_SUFX}:prog
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}

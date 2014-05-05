@@ -69,12 +69,12 @@ _M1LINKS=	df.1	dfspace.1 \
 MANEXT=		.gz
 .endif
 
-.for sect in ${_MSECS:U}
+.for sect in ${_MSECS:tu}
 . if defined(_MAN${sect})
-_MANPAGES+=	${_MAN${sect}:S%^%${_MANPREFIX}/man${sect:L}/%}
+_MANPAGES+=	${_MAN${sect}:S%^%${_MANPREFIX}/man${sect:tl}/%}
 . endif
 . if defined(_M${sect}LINKS)
-_MLINKS_PREPEND+=${_M${sect}LINKS:S%^%${_MANPREFIX}/man${sect:L}/%:S%$%${MANEXT}%}
+_MLINKS_PREPEND+=${_M${sect}LINKS:S%^%${_MANPREFIX}/man${sect:tl}/%:S%$%${MANEXT}%}
 . endif
 .endfor
 

@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--disable-openmp
 # Help it here:
 .for o in sse3 sse2 sse mmx
 .if ${MACHINE_CPU:M$o} != ""
-CPPFLAGS+=	-DOPTIMIZE_${o:U}
+CPPFLAGS+=	-DOPTIMIZE_${o:tu}
 .endif
 .endfor
 

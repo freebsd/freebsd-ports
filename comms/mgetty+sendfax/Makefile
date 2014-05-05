@@ -69,7 +69,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-DAUTO_PPP
-.if defined(WITH_FIDO) && ${WITH_FIDO:L} != no
+.if defined(WITH_FIDO) && ${WITH_FIDO:tl} != no
 CFLAGS+=	-DFIDO
 .endif
 

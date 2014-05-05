@@ -41,7 +41,7 @@ PYTHON_DESC=		Enable Python console
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:L}${OSREL}
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 .endif
 
 CONFIGURE_ARGS+=	--disable-shared --with-gmp=${PREFIX}

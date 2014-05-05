@@ -18,7 +18,7 @@ PYDISTUTILS_AUTOPLIST=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:
-	${REINPLACE_CMD} -e 's/linux/${OPSYS:L}/;s|gcc|${CC}|;s|g++|${CXX}|' \
+	${REINPLACE_CMD} -e 's/linux/${OPSYS:tl}/;s|gcc|${CC}|;s|g++|${CXX}|' \
 	${WRKSRC}/pylib/gyp/generator/make.py
 
 .include <bsd.port.post.mk>

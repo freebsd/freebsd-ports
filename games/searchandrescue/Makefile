@@ -5,7 +5,7 @@ PORTNAME=	SearchAndRescue
 PORTVERSION=	1.4.0
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME:L}/Program/
+MASTER_SITES=	SF/${PORTNAME:tl}/Program/
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	A flight simulator in which the player rescues people
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/searchandrescue/human.ini:${PORTSDIR}/games/sear
 USE_SDL=	mixer
 USE_XORG=	x11 xau xdmcp xext xmu xpm xxf86vm
 USE_GL=		glu
-WRKSRC=		${WRKDIR}/${PORTNAME:L}_${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME:tl}_${PORTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		${DESKTOPDIR:S,${PREFIX}/,,}/${PORTNAME}.desktop \

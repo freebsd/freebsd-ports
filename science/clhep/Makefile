@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 
-WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:U}
+WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:tu}
 
 USES=		gmake perl5
 USE_PERL5=	build

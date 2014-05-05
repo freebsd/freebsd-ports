@@ -5,7 +5,7 @@ PORTVERSION=	0.6.3.3
 PORTREVISION=	3
 CATEGORIES=	ports-mgmt sysutils kde
 MASTER_SITES=	http://opendesktop.org/CONTENT/content-files/
-DISTNAME=	84745-${PORTNAME:L}-${PORTVERSION}
+DISTNAME=	84745-${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE interface for PackageKit
@@ -22,6 +22,6 @@ USES=		cmake gettext pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME:tl}-${PORTVERSION}
 
 .include <bsd.port.mk>

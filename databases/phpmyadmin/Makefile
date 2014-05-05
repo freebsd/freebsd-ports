@@ -4,7 +4,7 @@
 PORTNAME=	phpMyAdmin
 DISTVERSION=	4.1.14
 CATEGORIES=	databases www
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -63,7 +63,7 @@ SHEBANG_FILES=	libraries/plugins/transformations/generator_main_class.sh \
 
 .for opt in ${OPTIONS_DEFINE} ${OPTIONS_MULTI_DB_connect}
 .    if ${PORT_OPTIONS:M${opt}}
-USE_PHP+=	${opt:L}
+USE_PHP+=	${opt:tl}
 .    endif
 .endfor
 

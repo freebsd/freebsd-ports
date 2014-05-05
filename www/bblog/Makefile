@@ -5,7 +5,7 @@ PORTNAME=	bBlog
 PORTVERSION=	0.7.6
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A elegant personal publishing system with Smarty
@@ -14,9 +14,9 @@ USE_PHP=	mysql pcre session
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
-WRKSRC=		${WRKDIR}/${PORTNAME:L}
+WRKSRC=		${WRKDIR}/${PORTNAME:tl}
 WWWDOCROOT?=	www
-BBLOGURL?=	${PORTNAME:L}
+BBLOGURL?=	${PORTNAME:tl}
 BBLOGDIR?=	${WWWDOCROOT}/${BBLOGURL}
 
 SUB_FILES=	pkg-message
@@ -44,18 +44,18 @@ pre-patch:
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}
+	@${MKDIR} ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${BBLOGDIR}
 	@${CHGRP} -R ${WWWGRP} ${PREFIX}/${BBLOGDIR}
 	@${CHMOD} 755 ${PREFIX}/${BBLOGDIR}
 .for f in archives.php documentation.txt htaccess-cleanurls index.php item rss.php search.php section
 	${INSTALL_DATA} ${WRKDIR}/${f} ${PREFIX}/${BBLOGDIR}
 .endfor
-	@${CP} -Rv ${WRKSRC}/* ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}/compiled_templates/
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}/cache/
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}/cache/favorites.xml
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}/config.php
+	@${CP} -Rv ${WRKSRC}/* ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}
+	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/compiled_templates/
+	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/cache/
+	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/cache/favorites.xml
+	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/config.php
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

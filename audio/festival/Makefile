@@ -82,10 +82,10 @@ post-patch::
 .include <bsd.port.options.mk>
 
 .for m in nas esd
-.	if ${PORT_OPTIONS:M${m:U}}
+.	if ${PORT_OPTIONS:M${m:tu}}
 LIB_DEPENDS+=	lib${m:nas=audio}.so:${PORTSDIR}/audio/${m:esd=esound}
 post-patch::
-	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ${m:U}_AUDIO,INCLUDE_MODULES += ${m:U}_AUDIO,' \
+	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ${m:tu}_AUDIO,INCLUDE_MODULES += ${m:tu}_AUDIO,' \
 		${WRKDIR}/*/config/config.in
 CONFIGURE_ARGS+=--enable-$m
 .	else

@@ -23,7 +23,7 @@ USE_XORG=	xpm
 DOS2UNIX_GLOB=	*.cpp *.h config.mk makefile
 MAKEFILE=	makefile
 MAKE_ARGS=	DEPTH="${WRKSRC}"
-ALL_TARGET=	${OPSYS:L}
+ALL_TARGET=	${OPSYS:tl}
 
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}

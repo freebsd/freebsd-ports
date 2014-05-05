@@ -362,7 +362,7 @@ CONFIGURE_ARGS+=	--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\
 # XXX
 .for m in ${SAMBA4_MODULES}
 PLIST_REINPLACE+=	${m}
-PLIST_REINPLACE_${m:U}=	s|^@comment ${m} ||g
+PLIST_REINPLACE_${m:tu}=	s|^@comment ${m} ||g
 .endfor
 ##############################################################################
 # !SAMBA4_SUBPORT

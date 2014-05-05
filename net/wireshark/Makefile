@@ -42,12 +42,12 @@ WIRESHARK_LIBS=
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
     reordercap
 .if defined(LITE)
-PLIST_SUB+=		${x:U}="@comment $x not installed" \
-    			${x:U}_MAN="@comment $x not installed "
+PLIST_SUB+=		${x:tu}="@comment $x not installed" \
+    			${x:tu}_MAN="@comment $x not installed "
 CONFIGURE_ARGS+=	--enable-$x=no
 .else
-PLIST_SUB+=		${x:U}=bin/$x \
-    			${x:U}_MAN=""
+PLIST_SUB+=		${x:tu}=bin/$x \
+    			${x:tu}_MAN=""
 .endif
 .endfor
 

@@ -45,7 +45,7 @@ LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-ffmpeg
 .endif
 
-MACHINE=	${OPSYS:U}
+MACHINE=	${OPSYS:tu}
 
 SUB_LIST=	PREFIX=${PREFIX}
 SUB_FILES=	pkg-message

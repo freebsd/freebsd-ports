@@ -147,7 +147,7 @@ IGNORE=		lowercase WITH_STATIC_MODULES="${WITH_STATIC_MODULES}"\
 # Setting "@comment " as default.
 .for module in ${AVAILABLE_MODULES:O}
 ${module}_PLIST_SUB=	"@comment "
-_DISABLE_MODULES+=		--disable-${module:L}
+_DISABLE_MODULES+=		--disable-${module:tl}
 .endfor
 
 # Configure
@@ -219,17 +219,17 @@ APACHE_MODULES+=	${module}
 .if defined(WITH_STATIC_MODULES)
 .  for module in ${APACHE_MODULES}
 .    if ${WITH_STATIC_MODULES:M${module}}
-_CONFIGURE_ARGS+=	--enable-${module:L}
+_CONFIGURE_ARGS+=	--enable-${module:tl}
 .    else
-_CONFIGURE_ARGS+=	--enable-${module:L}=shared
+_CONFIGURE_ARGS+=	--enable-${module:tl}=shared
 .    endif
 .  endfor
 CONFIGURE_ARGS+=	${_CONFIGURE_ARGS:O}
 .elif defined(WITH_STATIC_APACHE) || defined(WITH_ALL_STATIC_MODULES)
 WITH_STATIC_MODULES=	${APACHE_MODULES}
-CONFIGURE_ARGS+=	--enable-modules="${APACHE_MODULES:O:L}"
+CONFIGURE_ARGS+=	--enable-modules="${APACHE_MODULES:O:tl}"
 .else
-CONFIGURE_ARGS+=	--enable-mods-shared="${APACHE_MODULES:O:L}"
+CONFIGURE_ARGS+=	--enable-mods-shared="${APACHE_MODULES:O:tl}"
 .endif
 
 # ====================================

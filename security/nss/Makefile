@@ -5,7 +5,7 @@ PORTNAME=	nss
 PORTVERSION=	3.16
 #DISTVERSIONSUFFIX=	.with.ckbi.1.93
 CATEGORIES=	security
-MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src
+MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications

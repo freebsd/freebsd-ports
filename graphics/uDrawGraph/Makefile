@@ -6,7 +6,7 @@ PORTVERSION=	3.1.1
 #PORTREVISION=	0
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.informatik.uni-bremen.de/uDrawGraph/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${PKGNUM}-${OPSYS:L}-${ARCH}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${PKGNUM}-${OPSYS:tl}-${ARCH}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A graph drawing/visualization system

@@ -15,7 +15,7 @@ _INCLUDE_BSD_DEFAULT_VERSIONS_MK=	yes
 
 .for lang in ${DEFAULT_VERSIONS}
 _l=		${lang:C/=.*//g}
-${_l:U}_DEFAULT=	${lang:C/.*=//g}
+${_l:tu}_DEFAULT=	${lang:C/.*=//g}
 .endfor
 
 APACHE_DEFAULT?=	2.2

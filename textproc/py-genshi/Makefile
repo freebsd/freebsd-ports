@@ -6,7 +6,7 @@ PORTVERSION=	0.7
 PORTREVISION=	1
 #PORTEPOCH=	0
 CATEGORIES=	textproc www python
-MASTER_SITES=	http://ftp.edgewall.com/pub/${PORTNAME:L}/
+MASTER_SITES=	http://ftp.edgewall.com/pub/${PORTNAME:tl}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org

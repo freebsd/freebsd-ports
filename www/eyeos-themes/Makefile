@@ -44,11 +44,11 @@ NO_STAGE=	yes
 .for theme in ${OPTIONS_DEFINE:M*_THEME:S/_THEME//}
 .if ${PORT_OPTIONS:M${theme}_THEME}
 EYETHEMES+=	${theme}
-PLIST_SUB+=	${theme:U}=${THEMESDIR:S,^${PREFIX}/,,}/${theme}
-PLIST_SUB+=	D${theme:U}="@dirrm ${THEMESDIR:S,^${PREFIX}/,,}/${theme}"
+PLIST_SUB+=	${theme:tu}=${THEMESDIR:S,^${PREFIX}/,,}/${theme}
+PLIST_SUB+=	D${theme:tu}="@dirrm ${THEMESDIR:S,^${PREFIX}/,,}/${theme}"
 .else
-PLIST_SUB+=	${theme:U}="@comment "
-PLIST_SUB+=	D${theme:U}="@comment "
+PLIST_SUB+=	${theme:tu}="@comment "
+PLIST_SUB+=	D${theme:tu}="@comment "
 .endif
 .endfor
 
@@ -70,11 +70,11 @@ create-plist: build
 	:>${PLIST}
 .for theme in ${OPTIONS:M*_THEME:S/_THEME//:O}
 	${FIND} -s ${WRKSRC}/${theme} -type f -or -type l | \
-		${SED} -e 's#^${WRKSRC}/${theme}#%%${theme:U}%%#' >> ${PLIST}
+		${SED} -e 's#^${WRKSRC}/${theme}#%%${theme:tu}%%#' >> ${PLIST}
 .endfor
 .for theme in ${OPTIONS:M*_THEME:S/_THEME//:O}
 	${FIND} -ds ${WRKSRC}/${theme} -type d | \
-		${SED} -e 's#^${WRKSRC}/${theme}#%%D${theme:U}%%#' >> ${PLIST}
+		${SED} -e 's#^${WRKSRC}/${theme}#%%D${theme:tu}%%#' >> ${PLIST}
 .endfor
 	${ECHO_CMD} @dirrmtry %%EYEDIR%%/system/themes >> ${PLIST}
 	${ECHO_CMD} @dirrmtry %%EYEDIR%%/system >> ${PLIST}

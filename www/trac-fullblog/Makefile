@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
+PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:tl}
 PORTVERSION=	0.1.1
 PORTREVISION=	1
 CATEGORIES=	www devel python

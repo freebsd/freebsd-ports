@@ -5,7 +5,7 @@ PORTNAME=	OpenSP
 PORTVERSION=	1.5.2
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	SF/openjade/${PORTNAME:L}/${PORTVERSION}
+MASTER_SITES=	SF/openjade/${PORTNAME:tl}/${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	This package is a collection of SGML/XML tools called OpenSP

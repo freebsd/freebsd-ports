@@ -57,12 +57,12 @@ PLIST_SUB+=	XATRIX="@comment "
 
 post-extract:
 .for f in rogue xatrix
-.   if ${PORT_OPTIONS:M${f:U}}
+.   if ${PORT_OPTIONS:M${f:tu}}
 	@${MKDIR} ${WRKSRC}/src/${f}
 	@(cd ${WRKSRC}/src/${f} && ${GUNZIP_CMD} -c \
 		${DISTDIR}/${DIST_SUBDIR}/${f}src320.shar.Z > \
 		${f}src320.shar && \
-		${TAIL} +${${f:U}_OFF} ${f}src320.shar | ${SH})
+		${TAIL} +${${f:tu}_OFF} ${f}src320.shar | ${SH})
 .   endif
 .endfor
 
@@ -76,7 +76,7 @@ do-install:
 	${CP} -R ${WRKSRC}/src/game ${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/Makefile.game ${DATADIR}/game/Makefile
 .for f in ctf rogue xatrix
-.   if ${PORT_OPTIONS:M${f:U}}
+.   if ${PORT_OPTIONS:M${f:tu}}
 	${CP} -R ${WRKSRC}/src/${f} ${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/Makefile.${f} ${DATADIR}/${f}/Makefile
 .   endif

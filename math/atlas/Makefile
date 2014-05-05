@@ -150,13 +150,13 @@ post-configure:
 
 do-build:
 .for opt in shared static
-.  if ${PORT_OPTIONS:M${opt:U}}
+.  if ${PORT_OPTIONS:M${opt:tu}}
 	@${ECHO_CMD} "Building the LAPACK archives with ${opt} ATLAS flags:"
 	F77FLAGS="`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ${EXTRA_FFLAGS}" ; \
-	LW=`${MAKE} -C ${PORTSDIR}/math/lapack -V ${${opt:U}_LAPACK_WRKSRC}` ; \
-	${MAKE} -C ${PORTSDIR}/math/lapack WITH_${opt:U}=yes \
+	LW=`${MAKE} -C ${PORTSDIR}/math/lapack -V ${${opt:tu}_LAPACK_WRKSRC}` ; \
+	${MAKE} -C ${PORTSDIR}/math/lapack WITH_${opt:tu}=yes \
 		clean patch ; \
-	cd $${LW} ; ${SETENV} ${MAKE_ENV:NFFLAGS=*} EXTRAFLAGS="${${opt:U}_FLAGS}" \
+	cd $${LW} ; ${SETENV} ${MAKE_ENV:NFFLAGS=*} EXTRAFLAGS="${${opt:tu}_FLAGS}" \
 		FFLAGS="-pipe $${F77FLAGS}" ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
 		ARCH="${AR}" lapacklib ; \
 	TIMEFLAG=`${MAKE} -f ${WRKSRC}/saved_flags -V TIMEFLAG` ; \
@@ -168,7 +168,7 @@ do-build:
 		--with-netlib-lapack="${WRKSRC}/${opt}/liblapack_${opt}.a" \
 		--prefix="${PREFIX}" -v 2 $${TIMEFLAG} ${ARCHDEFFLAG} \
 		-Ss f77lib " " -Ss pmake "${MAKE} ${_MAKE_JOBS}" \
-		-Fa alg "${${opt:U}_FLAGS} " -b ${POINTER} ; \
+		-Fa alg "${${opt:tu}_FLAGS} " -b ${POINTER} ; \
 	if [ "x${WITH_ARCHDEF}" != "x" ] ; then \
 		if [ "x${ARCHDEF}" != "xNONE" ] ; then \
 			if [ -f ${ARCHDEF} ] ; then \
@@ -194,7 +194,7 @@ L2=	-Wl,--no-whole-archive -Wl,--as-needed ${PTHREAD_LIBS}
 
 post-build:
 .for opt in shared static
-.  if ${PORT_OPTIONS:M${opt:U}}
+.  if ${PORT_OPTIONS:M${opt:tu}}
 	@${ECHO_CMD} "Timing ${opt} ATLAS:"
 	@cd ${WRKSRC}/${opt} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} time ; \
 	cd ARCHS ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} ArchNew tarfile
@@ -218,9 +218,9 @@ SHARED_BLAS=	-L${LOCALBASE}/lib -lblas
 
 check regression-test test: build
 .  for opt in shared static
-.    if ${PORT_OPTIONS:M${opt:U}}
+.    if ${PORT_OPTIONS:M${opt:tu}}
 	@${ECHO_CMD} "Testing ${opt} ATLAS:"
-	@cd ${WRKSRC}/${opt} ; ${SETENV} ${MAKE_ENV} BLAS="${${opt:U}_BLAS}" \
+	@cd ${WRKSRC}/${opt} ; ${SETENV} ${MAKE_ENV} BLAS="${${opt:tu}_BLAS}" \
 	${MAKE} ${MAKE_ARGS} check ptcheck error_report
 .    endif
 .  endfor
@@ -240,7 +240,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/cblas.h   ${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/include/clapack.h ${PREFIX}/include
 .for opt in shared static
-.  if ${PORT_OPTIONS:M${opt:U}}
+.  if ${PORT_OPTIONS:M${opt:tu}}
 	@${MKDIR} ${PREFIX}/include/atlas/${opt}
 	@${INSTALL_DATA} ${WRKSRC}/${opt}/include/* ${PREFIX}/include/atlas/${opt}
 	@cd ${PREFIX} ; \

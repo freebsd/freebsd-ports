@@ -6,7 +6,7 @@ PORTVERSION=	6.2.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
-DISTNAME=	${PORTNAME:U}-${PORTVERSION}
+DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive Communication Environment for C++
@@ -68,9 +68,9 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC}/ace \
-		&& ${ECHO_CMD} "#include <ace/config-${OPSYS:L}.h>" >> config.h
+		&& ${ECHO_CMD} "#include <ace/config-${OPSYS:tl}.h>" >> config.h
 	@cd ${WRKSRC}/include/makeinclude \
-		&& ${ECHO_CMD} "include \$$(ACE_ROOT)/include/makeinclude/platform_${OPSYS:L}.GNU" >> platform_macros.GNU \
+		&& ${ECHO_CMD} "include \$$(ACE_ROOT)/include/makeinclude/platform_${OPSYS:tl}.GNU" >> platform_macros.GNU \
 		&& ${ECHO_CMD} "CC=	${CC}" >> platform_macros.GNU \
 		&& ${ECHO_CMD} "CXX=	${CXX}" >> platform_macros.GNU \
 		&& ${ECHO_CMD} "CPPFLAGS=	${CPPFLAGS}" >> platform_macros.GNU \

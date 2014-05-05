@@ -22,7 +22,7 @@ NEED_ROOT=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-RUBY_MODNAME=	${PORTNAME:L}
+RUBY_MODNAME=	${PORTNAME:tl}
 
 CONFIGURE_ARGS=	--with-gd-lib="${LOCALBASE}/lib" \
 		--with-jpeg \

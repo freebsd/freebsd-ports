@@ -4,7 +4,7 @@
 PORTNAME=	screenFetch
 PORTVERSION=	3.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/jgh/sysutils/${PORTNAME:L}/ \
+MASTER_SITES=	LOCAL/jgh/sysutils/${PORTNAME:tl}/ \
 		GH
 
 MAINTAINER=	jgh@FreeBSD.org
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/screenFetch bin/screenfetch
 PORTDOCS=	CHANGELOG README.mkdn TODO
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME:L}-dev ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME:tl}-dev ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${LN} -fs ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/screenfetch
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}

@@ -82,7 +82,7 @@ PLIST_SUB+=	GAME="@comment "
 .  if ${PORT_OPTIONS:M${opt}}
 MAKE_ENV+=	BUILD_${opt}=YES
 PLIST_SUB+=	${opt}=""
-Q2REF+=		${opt:L:S/glx/gl/:S/sdlgl/sdl/}
+Q2REF+=		${opt:tl:S/glx/gl/:S/sdlgl/sdl/}
 .  else
 PLIST_SUB+=	${opt}="@comment "
 .  endif

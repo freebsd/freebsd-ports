@@ -225,7 +225,7 @@ post-configure:
 		${XARGS} ${REINPLACE_CMD} -E -e '/^INSTALL[ 	]+=/s|$$| -m 755|'
 .for hdr in sys/mbuf.h netinet/in_pcb.h netinet/in_var.h netinet/ip6.h
 	@${REINPLACE_CMD} -E -e '\
-		s!^.*#undef.*(HAVE_${hdr:U:S/./_/g:S/\//_/g}).*$$!#define \1 1!g' \
+		s!^.*#undef.*(HAVE_${hdr:tu:S/./_/g:S/\//_/g}).*$$!#define \1 1!g' \
 			${WRKSRC}/include/net-snmp/net-snmp-config.h
 .endfor
 .if ${PORT_OPTIONS:MPYTHON}

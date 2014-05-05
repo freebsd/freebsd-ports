@@ -30,8 +30,8 @@ USE_XORG=	xft xpm xt
 USES=		pkgconfig pathfix gmake shebangfix
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:L}
-CONFIGURE_TARGET=	${ARCH}-${OPSYS:L}
+CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:tl}
+CONFIGURE_TARGET=	${ARCH}-${OPSYS:tl}
 CONFIGURE_ARGS=	--with-world --without-jpl --enable-shared
 MAKE_ARGS=	DISABLE_PKGS=jpl \
 		ac_cv_lib_ossp_uuid_uuid_create=no ac_cv_lib_uuid_uuid_create=no
@@ -42,7 +42,7 @@ swipl_CMD=	${LOCALBASE}/bin/swipl
 SHEBANG_FILES=	library/dialect/sicstus/swipl-lfr.pl \
 		packages/http/examples/demo_inetd
 
-PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:L} \
+PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:tl} \
 		VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>

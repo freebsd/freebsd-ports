@@ -5,7 +5,7 @@ PORTNAME=	xsv
 PORTVERSION=	3.1
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/XSV/
-DISTNAME=	${PORTNAME:U}-${DISTVERSION}
+DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	XML Schema Validator

@@ -52,9 +52,9 @@ SUB_FILES=	pkg-message
 BUILDNAME=	${FPC_ARCH}-freebsd
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		BUILDNAME=${BUILDNAME}
-DISTFILES+=	${PPNAME}-${PORTVERSION}-${OPSYS:L}${EXTRACT_SUFX}:bootstrap \
+DISTFILES+=	${PPNAME}-${PORTVERSION}-${OPSYS:tl}${EXTRACT_SUFX}:bootstrap \
 		${DISTNAME:S/$/.man/}${EXTRACT_SUFX}:man
-MAKE_ARGS+=	PP=${WRKDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:L} \
+MAKE_ARGS+=	PP=${WRKDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:tl} \
 		FPCMAKE=${WRKDIR}/${FPCSRCDIR}/utils/fpcm/fpcmake \
 		FPCTARGET=${BUILDNAME} \
 		ARCH=${FPC_ARCH} \
@@ -65,8 +65,8 @@ MAKE_ARGS+=	PP=${WRKDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:L} \
 do-extract:
 # unpack binary distribution
 	@${MKDIR} ${WRKDIR}
-	@${TAR} xfz ${_DISTDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:L}${EXTRACT_SUFX} --directory \
-		${WRKDIR} && ${CHMOD} +x ${WRKDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:L}
+	@${TAR} xfz ${_DISTDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:tl}${EXTRACT_SUFX} --directory \
+		${WRKDIR} && ${CHMOD} +x ${WRKDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:tl}
 # unpack man files
 	@${TAR} xfz ${_DISTDIR}/${DISTNAME:S/$/.man/}${EXTRACT_SUFX} --directory \
 		${WRKDIR}

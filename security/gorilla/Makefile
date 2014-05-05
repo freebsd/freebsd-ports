@@ -30,7 +30,7 @@ GORILLAARCH=	bogus
 WITHOUTSO=	"@comment "
 .endif
 
-PLIST_SUB+=	GORILLAARCH=${GORILLAARCH:L} WITHOUTSO=${WITHOUTSO}
+PLIST_SUB+=	GORILLAARCH=${GORILLAARCH:tl} WITHOUTSO=${WITHOUTSO}
 
 WRKSRC=		${WRKDIR}/zdia-${PORTNAME}-${DISTVERSIONSUFFIX}
 USES=		tk:85+,run
@@ -54,7 +54,7 @@ post-patch:
 do-build:
 .if !defined(WITHOUTSO)
 	${MV} ${WRKDIR}/${PORTNAME}-sha256/sha256/${GORILLAARCH}/ \
-		${WRKSRC}/sources/tcllib/sha256c/${GORILLAARCH:L}
+		${WRKSRC}/sources/tcllib/sha256c/${GORILLAARCH:tl}
 .endif
 
 

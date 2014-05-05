@@ -5,9 +5,9 @@ PORTNAME=	XNap
 DISTVERSION=	2.5r3
 PORTREVISION=	3
 CATEGORIES=	net-p2p audio java
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/2.5r3
-#DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/-pre/:S/.b/-beta/}
-DISTNAME=	${PORTNAME:L}-${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/2.5r3
+#DISTNAME=	${PORTNAME:tl}-${PORTVERSION:S/.p/-pre/:S/.b/-beta/}
+DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	conrads@cox.net
 COMMENT=	Pure Java napster client; also, supports OpenNap & giFT (FastTrack)
@@ -23,8 +23,8 @@ DOC_FILES=	AUTHORS COPYING COPYING.LIB NEWS README \
 PORTDOCS=	${DOC_FILES}
 
 PLIST_FILES=	\
-		bin/${PORTNAME:L} \
-		%%JAVAJARDIR%%/${PORTNAME:L}.jar
+		bin/${PORTNAME:tl} \
+		%%JAVAJARDIR%%/${PORTNAME:tl}.jar
 
 NO_STAGE=	yes
 post-patch:
@@ -36,8 +36,8 @@ post-patch:
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/xnap.jar \
-		${JAVAJARDIR}/${PORTNAME:L}.jar
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:L}
+		${JAVAJARDIR}/${PORTNAME:tl}.jar
+	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:tl}
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOC_FILES}

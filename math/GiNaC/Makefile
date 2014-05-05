@@ -6,7 +6,7 @@ PORTVERSION=	1.6.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
-DISTNAME=	${PORTNAME:L}-${PORTVERSION}
+DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	C++ library for symbolic mathematical calculations

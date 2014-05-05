@@ -276,7 +276,7 @@ php-ini:
 .endif
 
 # Extensions
-.if defined(_POSTMKINCLUDED) && ${USE_PHP:L} != "yes"
+.if defined(_POSTMKINCLUDED) && ${USE_PHP:tl} != "yes"
 # non-version specific components
 _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
 		exif fileinfo filter ftp gd gettext gmp \
@@ -389,7 +389,7 @@ ext=		${extension}
 BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/hash.so:${PORTSDIR}/${hash_DEPENDS}
 .				endif
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/hash.so:${PORTSDIR}/${hash_DEPENDS}
-.			elif ${ext:L} != "yes"
+.			elif ${ext:tl} != "yes"
 check-makevars::
 			@${ECHO_CMD} "Unknown extension ${extension} for PHP ${PHP_VER}."
 			@${FALSE}

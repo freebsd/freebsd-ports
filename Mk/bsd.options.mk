@@ -434,7 +434,7 @@ SUB_LIST:=	${SUB_LIST} ${opt}="@comment " NO_${opt}=""
 .    if defined(${opt}_USE)
 .      for option in ${${opt}_USE}
 _u=		${option:C/=.*//g}
-USE_${_u:U}+=	${option:C/.*=//g:C/,/ /g}
+USE_${_u:tu}+=	${option:C/.*=//g:C/,/ /g}
 .      endfor
 .    endif
 .    if defined(${opt}_CONFIGURE_ENABLE)

@@ -220,7 +220,7 @@ _WANT_WX=				yes
 
 .	for __WANT_WX in ${_WANT_WX}
 .		if defined(_WX_UC_AVAILABLE) && \
-		   (${_WX_VERS_UC_ALL:M${__WANT_WX}} != "" || ${_WANT_WX:L} == "yes")
+		   (${_WX_VERS_UC_ALL:M${__WANT_WX}} != "" || ${_WANT_WX:tl} == "yes")
 _WX_WANT_UNICODE=		yes
 .		endif
 .	endfor
@@ -249,7 +249,7 @@ IGNORE?=				selected multiple values for WANT_WX: ${_WANT_WX}
 .		endif
 _HAVE_WX=				#
 # Check for all versions.
-.		if ${_WANT_WX:L} == "yes"
+.		if ${_WANT_WX:tl} == "yes"
 .			for comp in ${_WX_COMPS_ALL}
 .				for ver in ${_WX_VER_FINAL}
 _WX_COMP=				_WX_FILE_${comp}_${ver}
@@ -564,9 +564,9 @@ MAKE_ENV+=				WX_CONFIG=${WX_CONFIG}
 CONFIGURE_ENV+=			WX_CONFIG=${WX_CONFIG}
 
 .if defined(WX_CONF_ARGS)
-.	if ${WX_CONF_ARGS:L} == "absolute"
+.	if ${WX_CONF_ARGS:tl} == "absolute"
 CONFIGURE_ARGS+=		--with-wx-config=${WX_CONFIG}
-.	elif ${WX_CONF_ARGS:L} == "relative"
+.	elif ${WX_CONF_ARGS:tl} == "relative"
 CONFIGURE_ARGS+=		--with-wx=${LOCALBASE} \
 						--with-wx-config=${WX_CONFIG:T}
 .	else

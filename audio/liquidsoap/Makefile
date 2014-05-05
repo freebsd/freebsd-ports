@@ -165,7 +165,7 @@ CONFIGURE_ARGS+=	--disable-bjack
 .endif
 
 .for i in ${_ALL_PACKAGES}
-.if ${PORT_OPTIONS:M${i:U}}
+.if ${PORT_OPTIONS:M${i:tu}}
 .if defined(LIB_DEPENDS_${i})
 LIB_DEPENDS+=	${LIB_DEPENDS_${i}}
 .endif

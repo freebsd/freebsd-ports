@@ -6,7 +6,7 @@ PORTVERSION=	0.1
 PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/openquicktime/OpenQuicktime%20v1/1.0b
-DISTNAME=	${PORTNAME:L}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,7 +31,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gcc -g|${CC}|g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:L} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:tl} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

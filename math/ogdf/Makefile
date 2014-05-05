@@ -22,7 +22,7 @@ USES=		zip
 USE_LDCONFIG=	yes
 USE_PYTHON=	build
 
-WRKSRC=		${WRKDIR}/${PORTNAME:U}
+WRKSRC=		${WRKDIR}/${PORTNAME:tu}
 
 .include <bsd.port.options.mk>
 

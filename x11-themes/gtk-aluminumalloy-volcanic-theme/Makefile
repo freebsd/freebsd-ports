@@ -16,7 +16,7 @@ COMMENT=	Port of Mac OS X theme Aluminum Alloy (${FLAVOR} flavor)
 TYPE?=		gtk
 FLAVOR?=	volcanic
 
-THEME_NAME=	AluminumAlloy-${FLAVOR:U:C/^(.).*$/\1/g}${FLAVOR:C/^(.)//}
+THEME_NAME=	AluminumAlloy-${FLAVOR:tu:C/^(.).*$/\1/g}${FLAVOR:C/^(.)//}
 WRKSRC=		${WRKDIR}/${THEME_NAME}
 
 USE_BZIP2=	yes

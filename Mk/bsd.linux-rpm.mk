@@ -130,7 +130,7 @@ linux-rpm-clean-portdocs:
 
 .  if defined(AUTOMATIC_PLIST)
 
-.    if ${USE_LINUX} == "f10" || ${USE_LINUX:L} == "yes"
+.    if ${USE_LINUX} == "f10" || ${USE_LINUX:tl} == "yes"
 _LINUX_BASE_SUFFIX=		f10
 .    else
 # other linux_base ports do not provide a pkg-plist file
