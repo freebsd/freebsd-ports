@@ -6086,3 +6086,4 @@ sysutils/cpupowerd||2014-05-04|Has expired: Not maintained from upstream anymore
 net/pchar||2014-05-04|Has expired: Obsolete, abandoned
 x11-fonts/texcm-ttf||2014-05-04|Has expired: Should be replaced by x11-fonts/stix-fonts
 devel/buildapp||2014-05-05|Has expired: Broken for more than 6 months
+converters/konwert||2014-05-05||Broken with modern compilers, not stage, no upstream
