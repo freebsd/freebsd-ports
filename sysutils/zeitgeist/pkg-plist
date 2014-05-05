@@ -15,6 +15,7 @@ bin/zeitgeist-daemon
 %%PYTHON_SITELIBDIR%%/zeitgeist/mimetypes.pyc
 %%PYTHON_SITELIBDIR%%/zeitgeist/mimetypes.pyo
 libdata/pkgconfig/zeitgeist-daemon.pc
+man/man1/zeitgeist-daemon.1.gz
 share/dbus-1/services/org.gnome.zeitgeist.service
 share/locale/bg/LC_MESSAGES/zeitgeist.mo
 share/locale/ca/LC_MESSAGES/zeitgeist.mo
