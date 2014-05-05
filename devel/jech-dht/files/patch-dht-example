@@ -57,7 +57,7 @@ one and MD5) at run-time, rather than at compile-time.
 -           "                   port [address port]...\n");
 +    printf("Usage: dht-example [-q] [-4] [-6] [-i filename] [-b address] [-m]\n"
 +           "                   port [address port]...\n"
-+           "(Use -m if you wish to use MD5 digest instead of crypt()-based)");
++           "(Use -m to use MD5 digest instead of crypt()-based one)\n");
      exit(1);
  }
 @@ -420,25 +433,28 @@
