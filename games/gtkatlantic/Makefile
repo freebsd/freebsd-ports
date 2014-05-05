@@ -4,26 +4,24 @@
 PORTNAME=	gtkatlantic
 PORTVERSION=	0.4.4
 CATEGORIES=	games
-MASTER_SITES=	http://download.tuxfamily.org/gtkatlantic/downloads/v0.4/ \
+MASTER_SITES=	http://download.tuxfamily.org/gtkatlantic/downloads/v${PORTVERSION:R}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Game like Monopoly(tm)
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -w
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
-
 OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
@@ -31,6 +29,9 @@ ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
 
 DESKTOP_ENTRIES="GtkAtlantic" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;BoardGame;" ""
+
+# Wrong versioning upstream, Upstream use GTK3 in newer Versions
+PORTSCOUT=	ignore:1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/CFLAGS=/s|-ggdb|$$CFLAGS|' ${WRKSRC}/configure
