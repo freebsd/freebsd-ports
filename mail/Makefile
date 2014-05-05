@@ -42,6 +42,7 @@
     SUBDIR += bulk_mailer
     SUBDIR += c-sig
     SUBDIR += c-sig-emacs21
+    SUBDIR += california
     SUBDIR += cclient
     SUBDIR += chk4mail
     SUBDIR += claws-mail
@@ -152,6 +153,7 @@
     SUBDIR += firepay
     SUBDIR += ftrack
     SUBDIR += gbuffy
+    SUBDIR += geary
     SUBDIR += gensig
     SUBDIR += getlive
     SUBDIR += getmail

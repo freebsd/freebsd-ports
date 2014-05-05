@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11/cinnamon/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#    $MCom: ports/trunk/x11/cinnamon/Makefile 19601 2014-04-30 16:33:25Z gusi $
 
 PORTNAME=	cinnamon
 PORTVERSION=	2.2.3
@@ -38,7 +38,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 
 WRKSRC=		${WRKDIR}/Cinnamon-${PORTVERSION}
 
-USES=		gettext gmake libtool pathfix pkgconfig shebangfix
+USES=		gettext gmake libtool:keepla pathfix pkgconfig shebangfix
 USE_GNOME=	evolutiondataserver3 gconf2 gnomedesktop3 \
 		gnomeprefix gtk30 intlhack introspection:build
 # this happens before moving the file to ${PREFIX} (which then will be copied to ${STAGEDIR}${PREFIX})

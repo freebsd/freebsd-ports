@@ -1,0 +1,24 @@
+bin/california
+share/doc/california/AUTHORS
+share/doc/california/COPYING
+share/doc/california/ChangeLog
+share/doc/california/INSTALL
+share/doc/california/NEWS
+share/doc/california/README
+share/applications/california.desktop
+share/locale/cs/LC_MESSAGES/california.mo
+share/locale/de/LC_MESSAGES/california.mo
+share/locale/el/LC_MESSAGES/california.mo
+share/locale/es/LC_MESSAGES/california.mo
+share/locale/fi/LC_MESSAGES/california.mo
+share/locale/gl/LC_MESSAGES/california.mo
+share/locale/he/LC_MESSAGES/california.mo
+share/locale/hu/LC_MESSAGES/california.mo
+share/locale/pl/LC_MESSAGES/california.mo
+share/locale/pt_BR/LC_MESSAGES/california.mo
+share/locale/sl/LC_MESSAGES/california.mo
+share/locale/sr/LC_MESSAGES/california.mo
+share/locale/sr@latin/LC_MESSAGES/california.mo
+share/locale/sv/LC_MESSAGES/california.mo
+share/locale/uk/LC_MESSAGES/california.mo
+@dirrm %%DOCSDIR%%

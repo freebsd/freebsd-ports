@@ -1,7 +1,7 @@
 lib/grilo-0.2/grl-apple-trailers.xml
 lib/grilo-0.2/grl-bliptv.xml
 lib/grilo-0.2/grl-bookmarks.xml
-lib/grilo-0.2/grl-dmap.xml
+%%DMAP%%lib/grilo-0.2/grl-dmap.xml
 lib/grilo-0.2/grl-filesystem.xml
 lib/grilo-0.2/grl-flickr.xml
 lib/grilo-0.2/grl-freebox.xml
@@ -18,7 +18,7 @@ lib/grilo-0.2/grl-raitv.xml
 lib/grilo-0.2/grl-shoutcast.xml
 lib/grilo-0.2/grl-tmdb.xml
 %%TRACKER%%lib/grilo-0.2/grl-tracker.xml
-lib/grilo-0.2/grl-upnp.xml
+%%UPNP%%lib/grilo-0.2/grl-upnp.xml
 lib/grilo-0.2/grl-vimeo.xml
 lib/grilo-0.2/grl-youtube.xml
 lib/grilo-0.2/libgrlappletrailers.la
@@ -27,8 +27,8 @@ lib/grilo-0.2/libgrlbliptv.la
 lib/grilo-0.2/libgrlbliptv.so
 lib/grilo-0.2/libgrlbookmarks.la
 lib/grilo-0.2/libgrlbookmarks.so
-lib/grilo-0.2/libgrldmap.la
-lib/grilo-0.2/libgrldmap.so
+%%DMAP%%lib/grilo-0.2/libgrldmap.la
+%%DMAP%%lib/grilo-0.2/libgrldmap.so
 lib/grilo-0.2/libgrlfilesystem.la
 lib/grilo-0.2/libgrlfilesystem.so
 lib/grilo-0.2/libgrlflickr.la
@@ -61,8 +61,8 @@ lib/grilo-0.2/libgrltmdb.la
 lib/grilo-0.2/libgrltmdb.so
 %%TRACKER%%lib/grilo-0.2/libgrltracker.la
 %%TRACKER%%lib/grilo-0.2/libgrltracker.so
-lib/grilo-0.2/libgrlupnp.la
-lib/grilo-0.2/libgrlupnp.so
+%%UPNP%%lib/grilo-0.2/libgrlupnp.la
+%%UPNP%%lib/grilo-0.2/libgrlupnp.so
 lib/grilo-0.2/libgrlvimeo.la
 lib/grilo-0.2/libgrlvimeo.so
 lib/grilo-0.2/libgrlyoutube.la

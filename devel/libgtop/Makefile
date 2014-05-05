@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libgtop/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/devel/libgtop/Makefile 19599 2014-04-30 16:25:25Z gusi $
 
 PORTNAME=	libgtop
-PORTVERSION=	2.28.5
+PORTVERSION=	2.30.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,9 +19,9 @@ USE_GNOME=	gnomeprefix glib20 intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_NET_IF_VAR_H -D_WANT_IFADDR
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lutil
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--disable-introspection
+CONFIGURE_ARGS=	--enable-introspection
 
 INFO=		libgtop2
 
