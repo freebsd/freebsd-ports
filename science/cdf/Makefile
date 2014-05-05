@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
 
-MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=${OPSYS:tl} ENV=gnu      \
+MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=freebsd ENV=gnu      \
 		FORTRAN=yes FC_freebsd=${F77}
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
