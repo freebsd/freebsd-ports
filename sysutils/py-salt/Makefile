@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	2014.1.3
+PORTVERSION=	2014.1.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -54,15 +54,14 @@ post-patch:
 	doc/man/salt-call.1 salt/config.py \
 	salt/modules/mysql.py salt/utils/parsers.py salt/modules/tls.py \
 	salt/modules/postgres.py salt/utils/migrations.py
-	@${REINPLACE_CMD} -e 's|/etc/salt|${PREFIX}/etc/salt|' \
-		-e 's|/srv/salt|${PREFIX}/etc/salt/states|' \
-		-e 's|/srv/pillar|${PREFIX}/etc/salt/pillar|' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's|/etc/salt|${ETCDIR}|' \
+		-e 's|/srv/salt|${ETCDIR}/states|' \
+		-e 's|/srv/pillar|${ETCDIR}/pillar|' ${WRKSRC}/${file}
 .endfor
 
 post-install:
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/master ${STAGEDIR}${ETCDIR}/master.sample
 	${INSTALL_DATA} ${WRKSRC}/conf/minion ${STAGEDIR}${ETCDIR}/minion.sample
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
