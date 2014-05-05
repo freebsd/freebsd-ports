@@ -340,7 +340,6 @@
     SUBDIR += gnarr
     SUBDIR += gno3dtet
     SUBDIR += gnome-games
-    SUBDIR += gnome-games-extra-data
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
     SUBDIR += gnomechess
