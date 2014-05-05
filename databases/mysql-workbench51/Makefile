@@ -2,51 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-workbench-oss
-PORTVERSION?=	5.1.16
-PORTREVISION=	9
+PORTVERSION=	5.1.16
+PORTREVISION=	10
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQLGUITools
-PKGNAMESUFFIX?=	51
+PKGNAMESUFFIX=	51
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The MySQL Workbench
 
-LIB_DEPENDS+=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libzip.so:${PORTSDIR}/archivers/libzip \
-		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libcairo.so:${PORTSDIR}/graphics/cairo
+		libzip.so:${PORTSDIR}/archivers/libzip
 
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	PYTHON
 
-USE_AUTOTOOLS=	autoheader autoconf automake aclocal libtool
-AUTOMAKE_ARGS=	--add-missing --foreign
-ACLOCAL_ARGS=
-AUTOCONF_ARGS=
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+ACLOCAL_ARGS=	-I m4
+AUTOMAKE_ARGS=	-a -c -f --foreign
+LIBTOOLIZE_ARGS=-i -c -f
 USE_LDCONFIG=	${PREFIX}/lib/mysql-workbench
-SUBDIRS=	ext/yassl/taocrypt ext/yassl .
-AUTOTOOLSFILES=	configure.in
+SUBDIRS=	ext/yassl/taocrypt ext/yassl ext/ctemplate/ctemplate-src .
 
-USES=		dos2unix
+USES=		dos2unix libtool
 DOS2UNIX_REGEX=	.*ext/yassl/.*(Makefile.am|configure.in)
-USE_GL=		gl glu
-USE_GNOME=	libglade2 intltool libgnome gtk20 pango orbit2
+USE_GL=		gl
+USE_GNOME=	cairo gtkmm24 libglade2 libgnome libsigc++20 libxml2
 USE_LUA=	5.1
 LUA_COMPS=	lua
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PKGNAMESUFFIX} == 51
-CONFLICTS=	mysql-workbench-oss52*
-EXTRA_PATCHES=	${PATCHDIR}/extra-51-modules__wb.utils__Makefile.am
-.endif
-
+CONFLICTS=	mysql-workbench-gpl*
 DATADIR=	${PREFIX}/share/mysql-workbench
 
 CXXFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
@@ -57,6 +45,8 @@ CONFIGURE_ENV=	GNOME2_DIR="${LOCALBASE}" LUA_LIBS="-llua"
 USE_MYSQL=	client
 DEFAULT_MYSQL_VER=	51
 IGNORE_WITH_MYSQL=	55
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--enable-python-modules
@@ -75,6 +65,12 @@ post-patch:
 		${WRKSRC}/plugins/wb.printing/backend/stdafx.h \
 		${WRKSRC}/plugins/db.mysql/backend/db_plugin_be.cpp
 
+run-autotools-libtoolize:
+.for dir in ${SUBDIRS}
+	@(cd ${WRKSRC}/${dir} && \
+		${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} ${LIBTOOLIZE_ARGS})
+.endfor
+
 run-autotools-aclocal:
 .for dir in ${SUBDIRS}
 	@(cd ${WRKSRC}/${dir} && \
@@ -83,9 +79,8 @@ run-autotools-aclocal:
 
 run-autotools-autoheader:
 .for dir in ${SUBDIRS}
-	@(cd ${WRKSRC}/${dir} && if ${GREP} "^AM_CONFIG_HEADER" configure.in \
-		>/dev/null; then ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
-		${AUTOHEADER_ARGS}; fi)
+	@(cd ${WRKSRC}/${dir} && \
+		${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} ${AUTOHEADER_ARGS})
 .endfor
 
 run-autotools-automake:
@@ -100,4 +95,4 @@ run-autotools-autoconf:
 		${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} ${AUTOCONF_ARGS})
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

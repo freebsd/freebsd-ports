@@ -1,7 +1,5 @@
 bin/repsnapper
-@unexec if cmp -s %D/etc/xdg/repsnapper/repsnapper.conf.sample %D/etc/xdg/repsnapper/repsnapper.conf; then rm -f %D/etc/xdg/repsnapper/repsnapper.conf; fi
-etc/xdg/repsnapper/repsnapper.conf.sample
-@exec if [ ! -f %D/etc/xdg/repsnapper/repsnapper.conf ] ; then cp -p %D/%F %B/repsnapper.conf; fi
+@sample etc/xdg/repsnapper/repsnapper.conf.sample
 share/applications/repsnapper.desktop
 %%NLS%%share/locale/en_GB/LC_MESSAGES/repsnapper.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/repsnapper.mo
