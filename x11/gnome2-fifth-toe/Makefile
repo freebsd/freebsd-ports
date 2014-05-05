@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.92 2007/10/18 23:45:20 marcus Exp $
 
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-fifth-toe
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		bluefish:${PORTSDIR}/www/bluefish \
 		liferea:${PORTSDIR}/net/liferea \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
-		${LOCALBASE}/share/gnome-games/glines/pixmaps/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
 		inkscape:${PORTSDIR}/graphics/inkscape \
 		atomix:${PORTSDIR}/games/atomix \
 		${LOCALBASE}/share/gnome/help/gdp-handbook/C/builddocs.xml:${PORTSDIR}/misc/gnome-devel-docs
