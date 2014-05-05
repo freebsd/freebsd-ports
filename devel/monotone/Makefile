@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	monotone
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.monotone.ca/downloads/${PORTVERSION}/
 
