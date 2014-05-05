@@ -11,15 +11,12 @@ MASTER_SITES=	http://api.pgxn.org/dist/hashtypes/${PORTVERSION}/ \
 MAINTAINER=	oss-contrib@dreamindustries.co
 COMMENT=	Hash data types for PostgreSQL
 
-USES=		gmake zip
-USE_PGSQL=	yes
+USES=		gmake pgsql zip
 
 MAKE_ARGS=	USE_PGXS=1 MODULEDIR=extension
 MODULEDIR=	${PREFIX}/share/postgresql/extension
 
-NO_STAGE=	yes
 post-install:
-	@[ -f ${MODULEDIR}/${PORTNAME}.control ] || \
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.control ${MODULEDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.control ${STAGEDIR}${MODULEDIR}
 
 .include <bsd.port.mk>

@@ -18,8 +18,8 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/gnat/apq.gpr:${PORTSDIR}/databases/apq
 RUN_DEPENDS=	${LOCALBASE}/lib/gnat/apq.gpr:${PORTSDIR}/databases/apq
 
-USES=		ada tar:bzip2
-USE_PGSQL=	yes
+USES=		ada tar:bzip2 pgsql
+WANT_PGSQL=	lib
 HAS_CONFIGURE=	yes
 WRKPATH=	${WRKDIR}/build
 CONFIGURE_ARGS= --prefix=${PREFIX} \
