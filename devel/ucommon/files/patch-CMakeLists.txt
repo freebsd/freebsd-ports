@@ -1,26 +1,25 @@
---- CMakeLists.txt	2013-07-28 05:32:06.000000000 -0500
-+++ CMakeLists.txt	2013-10-01 18:00:14.000000000 -0500
-@@ -30,7 +30,9 @@
+--- CMakeLists.txt.orig	2014-05-05 09:49:48.000000000 +0200
++++ CMakeLists.txt	2014-05-05 09:58:30.000000000 +0200
+@@ -37,7 +37,9 @@
  # when we override default install prefix, assume full path is used...
  
  set(INSTALL_INCLUDEDIR include)
 -set(INSTALL_BINDIR bin)
-+if (NOT INSTALL_BINDIR)
-+  set(INSTALL_BINDIR bin)
-+endif ()
++if(NOT INSTALL_BINDIR)
++    set(INSTALL_BINDIR bin)
++endif()
  
  if(WIN32)
-     set(INSTALL_MANDIR man)
-@@ -50,7 +52,7 @@
-         endif()
-     endif()
-     set(INSTALL_SBINDIR sbin)
--    set(INSTALL_MANDIR share/man)
+     set(MODULE_FLAGS "-module -shared -no-undefined")
+@@ -53,6 +55,7 @@
+     set(MODULE_FLAGS "-module -shared -avoid-version")
+     set(SYSCONFDIR "/etc" CACHE PATH "config directory")
+     set(STATEDIR "/var" CACHE PATH "state directory")
 +    set(INSTALL_MANDIR man)
-     set(INSTALL_LOCALE share/locale)
-     set(INSTALL_DOCDIR share/doc/${PROJECT_NAME})
-     set(INSTALL_INFODIR share/info)
-@@ -207,15 +209,17 @@
+ endif()
+ 
+ if(NOT INSTALL_SBINDIR)
+@@ -227,13 +230,15 @@
  
  
  if(UNIX OR MSYS OR MINGW OR CYGWIN)
@@ -31,7 +30,7 @@
 -        check_library_exists(compat dlopen "" HAVE_COMPAT_LIB)
 -        if(HAVE_COMPAT_LIB)
 -            set (UCOMMON_LIBS ${UCOMMON_LIBS} compat)
-+    if (NOT ${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++    if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
 +        check_library_exists(dl dlopen "" HAVE_DL_LIB)
 +        if (HAVE_DL_LIB)
 +            set (UCOMMON_LIBS ${UCOMMON_LIBS} dl)
@@ -41,47 +40,44 @@
 +                set (UCOMMON_LIBS ${UCOMMON_LIBS} compat)
 +            endif()
          endif()
--    endif()
-+    endif ()
+     endif()
  
-     check_library_exists(dld shl_load "" HAVE DLD_LIB)
-     if (HAVE_DLD_LIB)
-@@ -309,7 +313,11 @@
+@@ -330,7 +335,11 @@
  check_include_files(sys/event.h HAVE_SYS_EVENT_H)
  check_include_files(syslog.h HAVE_SYSLOG_H)
  check_include_files(openssl/ssl.h HAVE_OPENSSL)
-+if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
-+    set (HAVE_OPENSSL_FIPS_H "")
-+else ()
- check_include_files(openssl/fips.h HAVE_OPENSSL_FIPS_H)
-+endif ()
+-check_include_files(openssl/fips.h HAVE_OPENSSL_FIPS_H)
++if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++    set(HAVE_OPENSSL_FIPS_H "")
++else()
++    check_include_files(openssl/fips.h HAVE_OPENSSL_FIPS_H)
++endif()
  check_include_files(libintl.h HAVE_LIBINTL_H)
  check_include_files(netinet/in.h HAVE_NETINET_IN_H)
  check_include_files(net/if.h HAVE_NET_IF_H)
-@@ -411,11 +419,20 @@
+@@ -434,11 +443,19 @@
      endforeach()
      foreach(lib ${UCOMMON_LIBS})
          STRING(REGEX REPLACE "^[-]l" "" slib ${lib})
 -        set(PACKAGE_LIBS "${PACKAGE_LIBS} -l${slib}")
 +        if(${lib} STREQUAL "-pthread")
-+		set(PACKAGE_LIBS "${PACKAGE_LIBS} ${slib}")
++            set(PACKAGE_LIBS "${PACKAGE_LIBS} ${slib}" )
 +        else()
-+		set(PACKAGE_LIBS "${PACKAGE_LIBS} -l${slib}")
++            set(PACKAGE_LIBS "${PACKAGE_LIBS} -l${slib}")
 +        endif()
-+        STRING(REGEX REPLACE "^[-]l" "" slib ${lib})
      endforeach()
      foreach(lib ${SECURE_LIBS})
          STRING(REGEX REPLACE "^[-]l" "" slib ${lib})
 -        set(ADDITIONAL_LIBS "${ADDITIONAL_LIBS} -l${slib}")
-+	if(${lib} STREQUAL "-pthread")
-+		set(ADDITIONAL_LIBS "${ADDITIONAL_LIBS} ${slib}")
-+	else()
-+		set(ADDITIONAL_LIBS "${ADDITIONAL_LIBS} -l${slib}")
-+	endif()
++        if(${lib} STREQUAL "-pthread")
++            set(ADDITIONAL_LIBS "${ADDITIONAL_LIBS} ${slib}")
++        else()
++            set(ADDITIONAL_LIBS "${ADDITIONAL_LIBS} -l${slib}")
++        endif()
      endforeach()
      configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc)
      configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}-config.cmake ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config)
-@@ -566,11 +583,11 @@
+@@ -594,11 +611,11 @@
  endif()
  
  if(NOT WIN32)
