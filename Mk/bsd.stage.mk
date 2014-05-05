@@ -17,7 +17,7 @@ QA_ENV+=	STAGEDIR=${STAGEDIR} \
 .if !empty(USES:Mdesktop-file-utils)
 QA_ENV+=	USESDESKTOPFILEUTILS=yes
 .endif
-.if !empty(USES:Mdesktop-file-utils)
+.if !empty(USES:Mshared-mime-info)
 QA_ENV+=	USESSHAREDMIMEINFO=yes
 .endif
 CO_ENV+=	STAGEDIR=${STAGEDIR} \
