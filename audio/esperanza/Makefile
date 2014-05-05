@@ -29,4 +29,7 @@ MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}"
 PLIST_FILES=	bin/esperanza
 DESKTOP_ENTRIES="Esperanza" "" "" "${PORTNAME}" "Audio;Player;" false
 
+post-patch:
+	@${ECHO} "QMAKE_LFLAGS= -lX11" >> /${WRKSRC}/src/ui/ui.pro
+
 .include <bsd.port.mk>

@@ -38,6 +38,7 @@ PLIST_DIRS=	lib/qlwm/files \
 SUB_FILES=	qlwm
 
 post-patch:
+	@${ECHO} "QMAKE_LFLAGS= -lXext -lX11" >> /${WRKSRC}/src/qlwm.pro
 	@${REINPLACE_CMD} -e 's|/usr/local/qlwm|${PREFIX}/lib/qlwm|g ; \
 		 s|/usr/local/man|${MANPREFIX}/man|g' ${WRKSRC}/Makefile
 
