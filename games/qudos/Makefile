@@ -114,7 +114,7 @@ MAKE_ENV+=	WITH_GAME_MOD=NO
 .  if ${PORT_OPTIONS:M${opt}}
 MAKE_ENV+=	BUILD_${opt}=YES
 PLIST_SUB+=	${opt}=""
-Q2REF+=		${opt:L}
+Q2REF+=		${opt:tl}
 .  else
 MAKE_ENV+=	BUILD_${opt}=NO
 PLIST_SUB+=	${opt}="@comment "
@@ -199,8 +199,8 @@ do-install:
 .if ${PORT_OPTIONS:MGAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so ${LIBDIR}/baseq2
 .endif
-.for mod in ${MOD_LIST:L}
-.if ${PORT_OPTIONS:M${mod:U}}
+.for mod in ${MOD_LIST:tl}
+.if ${PORT_OPTIONS:M${mod:tu}}
 	@${MKDIR} ${LIBDIR}/${mod}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${mod}/game.so ${LIBDIR}/${mod}
 .endif

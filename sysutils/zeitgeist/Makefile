@@ -18,16 +18,13 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
-USE_GNOME=	gnomehack intlhack pygobject
+USE_GNOME=	intlhack pygobject
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake gettext
+USES=		gmake gettext pathfix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=	zeitgeist-daemon.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|g' \
 		${WRKSRC}/extra/rdfxml2py

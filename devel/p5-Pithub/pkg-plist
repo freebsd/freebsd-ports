@@ -28,8 +28,11 @@
 %%SITE_PERL%%/Pithub/Repos/Forks.pm
 %%SITE_PERL%%/Pithub/Repos/Hooks.pm
 %%SITE_PERL%%/Pithub/Repos/Keys.pm
+%%SITE_PERL%%/Pithub/Repos/Releases.pm
+%%SITE_PERL%%/Pithub/Repos/Releases/Assets.pm
 %%SITE_PERL%%/Pithub/Repos/Starring.pm
 %%SITE_PERL%%/Pithub/Repos/Stats.pm
+%%SITE_PERL%%/Pithub/Repos/Statuses.pm
 %%SITE_PERL%%/Pithub/Repos/Watching.pm
 %%SITE_PERL%%/Pithub/Result.pm
 %%SITE_PERL%%/Pithub/Search.pm
@@ -68,8 +71,11 @@
 %%PERL5_MAN3%%/Pithub::Repos::Forks.3.gz
 %%PERL5_MAN3%%/Pithub::Repos::Hooks.3.gz
 %%PERL5_MAN3%%/Pithub::Repos::Keys.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Releases.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Releases::Assets.3.gz
 %%PERL5_MAN3%%/Pithub::Repos::Starring.3.gz
 %%PERL5_MAN3%%/Pithub::Repos::Stats.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Statuses.3.gz
 %%PERL5_MAN3%%/Pithub::Repos::Watching.3.gz
 %%PERL5_MAN3%%/Pithub::Result.3.gz
 %%PERL5_MAN3%%/Pithub::Search.3.gz
@@ -77,12 +83,13 @@
 %%PERL5_MAN3%%/Pithub::Users::Emails.3.gz
 %%PERL5_MAN3%%/Pithub::Users::Followers.3.gz
 %%PERL5_MAN3%%/Pithub::Users::Keys.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pithub
-@dirrmtry %%SITE_PERL%%/Pithub/Users
-@dirrmtry %%SITE_PERL%%/Pithub/Repos
-@dirrmtry %%SITE_PERL%%/Pithub/PullRequests
-@dirrmtry %%SITE_PERL%%/Pithub/Orgs
-@dirrmtry %%SITE_PERL%%/Pithub/Issues
-@dirrmtry %%SITE_PERL%%/Pithub/GitData
-@dirrmtry %%SITE_PERL%%/Pithub/Gists
-@dirrmtry %%SITE_PERL%%/Pithub
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pithub
+@dirrm %%SITE_PERL%%/Pithub/Users
+@dirrm %%SITE_PERL%%/Pithub/Repos/Releases
+@dirrm %%SITE_PERL%%/Pithub/Repos
+@dirrm %%SITE_PERL%%/Pithub/PullRequests
+@dirrm %%SITE_PERL%%/Pithub/Orgs
+@dirrm %%SITE_PERL%%/Pithub/Issues
+@dirrm %%SITE_PERL%%/Pithub/GitData
+@dirrm %%SITE_PERL%%/Pithub/Gists
+@dirrm %%SITE_PERL%%/Pithub

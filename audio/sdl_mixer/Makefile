@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -13,9 +13,8 @@ COMMENT=	A sample multi-channel audio mixer library
 
 LICENSE=	ZLIB
 
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool:oldver pathfix pkgconfig
 USE_SDL=	sdl
-USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -48,7 +47,7 @@ SMPEG_CONFIGURE_ENABLE=		music-mp3
 VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=	music-ogg
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTIMIDITYPLUS}
 RUN_DEPENDS+=	${LOCALBASE}/share/timidity/timidity.cfg-eawpats:${PORTSDIR}/audio/eawpats
@@ -64,4 +63,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CONFIG_FILE%%|${CONFIG_FILE}|g' \
 		${WRKSRC}/timidity/config.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

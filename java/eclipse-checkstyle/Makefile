@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	com.atlassw.tools.eclipse.checkstyle_${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrates the Checkstyle Java code auditor into Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse

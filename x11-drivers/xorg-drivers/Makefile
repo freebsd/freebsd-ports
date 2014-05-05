@@ -10,8 +10,6 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org drivers meta-port
 
-.MAKE.FreeBSD_UL=	yes
-
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
 INPUTDIR=	${PREFIX}/lib/xorg/modules/input
 
@@ -69,9 +67,9 @@ OPTIONS_DEFAULT=	MOUSE \
 			VESA
 
 .for type in input video
-. for a in ${${type:U}_DRIVERS}
-OPTIONS_DEFINE+=	${a:U}
-${a:U}_DESC=	Install ${a} ${type} driver
+. for a in ${${type:tu}_DRIVERS}
+OPTIONS_DEFINE+=	${a:tu}
+${a:tu}_DESC=	Install ${a} ${type} driver
 . endfor
 .endfor
 
@@ -106,12 +104,12 @@ VIDEO_DRIVERS+=	sunffb
 .endif
 
 .for type in input video
-. for i in ${${type:U}_DRIVERS}
-.  if ${PORT_OPTIONS:M${i:U}} != ""
+. for i in ${${type:tu}_DRIVERS}
+.  if ${PORT_OPTIONS:M${i:tu}} != ""
 .   if ${QUIRKS:M${i}\:*:C/.*://} != ""
-RUN_DEPENDS+=	${${type:U}DIR}/${QUIRKS:M${i}\:*:C/.*://}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
+RUN_DEPENDS+=	${${type:tu}DIR}/${QUIRKS:M${i}\:*:C/.*://}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
 .   else
-RUN_DEPENDS+=	${${type:U}DIR}/${i}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
+RUN_DEPENDS+=	${${type:tu}DIR}/${i}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
 .   endif
 .  endif
 . endfor

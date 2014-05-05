@@ -6,6 +6,10 @@
 %%TX_SHELL_U%%=
 %%TX_SHELL_U%%_CONF=%%TX_CONF_FULL%%
 
+if [ ! -f "${%%TX_SHELL_U%%_CONF}" ]; then
+    %%TX_SHELL_U%%_CONF=${%%TX_SHELL_U%%_CONF}.sample
+fi
+
 if [ -f "${%%TX_SHELL_U%%_CONF}" ]; then
   . ${%%TX_SHELL_U%%_CONF}
   if [ -n "${%%TX_SHELL_U%%}" ]; then

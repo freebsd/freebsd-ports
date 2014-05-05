@@ -6,8 +6,7 @@
 Please read: %%DOCSDIR%%/INSTALL
 ****************************************************
 
-Then, create and edit %%WWWDIR%%/config/config.php
-An example is provided in %%WWWDIR%%/config/config.php.sample 
+Then, edit %%WWWDIR%%/config/config.php
 
 Also, please note that MailZu needs PHP's short_open_tag
 boolean to be "on" (this is detault in typical installations

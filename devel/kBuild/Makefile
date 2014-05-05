@@ -29,7 +29,7 @@ KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTORECONF=${AUTORECONF} \
 		AUTOPOINT=true
 USE_GCC=	any
-KBUILD_TARGET=	${OPSYS:L}
+KBUILD_TARGET=	${OPSYS:tl}
 
 KBUILD_BINS=	kDepIDB kDepPre kObjCache kmk kmk_append kmk_ash kmk_cat \
 		kmk_chmod kmk_cmp kmk_cp kmk_echo kmk_expr kmk_gmake \

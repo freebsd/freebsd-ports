@@ -3,7 +3,7 @@
 
 PORTNAME=	fwanalog
 PORTVERSION=	0.6.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	http://tud.at/programm/fwanalog/
 
@@ -12,8 +12,6 @@ COMMENT=	Firewall log summarizer that uses Analog
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog
 
-ETCDIR=		${PREFIX}/etc/${PORTNAME}
-PLIST_SUB+=	ETCDIR=${ETCDIR}
 CONFFILES=	fwanalog-dom.tab \
 		fwanalog.analog.conf \
 		fwanalog.analog.conf.local \
@@ -21,7 +19,8 @@ CONFFILES=	fwanalog-dom.tab \
 		fwanalog.opts \
 		services.conf
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} \
 		-e "s,the script's directory.*$$,${ETCDIR},;" \
@@ -34,17 +33,14 @@ do-build:
 	${LN} ${WRKSRC}/fwanalog.opts.freebsd ${WRKSRC}/fwanalog.opts
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/fwanalog.sh ${PREFIX}/sbin/fwanalog
-	${MKDIR} ${ETCDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/fwanalog.sh ${STAGEDIR}${PREFIX}/sbin/fwanalog
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for i in ${CONFFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${ETCDIR}/${i}-dist
-	${TEST} -f ${ETCDIR}/${i} || ${INSTALL_DATA} ${WRKSRC}/${i} ${ETCDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${ETCDIR}/${i}.sample
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

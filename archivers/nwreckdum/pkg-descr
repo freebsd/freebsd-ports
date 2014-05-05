@@ -1,4 +1,2 @@
 NWReckDum is Quake PACK file format (.pak) manipulator.  It allows one to
 list, extract, and create packed game data files easily from command line.
-
-Author: Daniel Reed <n@ml.org>

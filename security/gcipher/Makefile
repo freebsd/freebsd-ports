@@ -3,7 +3,7 @@
 
 PORTNAME=	gcipher
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	SF
 
@@ -18,7 +18,8 @@ USE_PYTHON=	yes
 MAN1=		gcipher.1
 LICENSE_FILES=	${WRKSRC}/LICENSE
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^VERSION/s|=.*|= "${PORTVERSION}"|g ; \
@@ -33,29 +34,27 @@ do-build:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/src/gcipher ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gcipher.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/src/gcipher.desktop ${PREFIX}/share/applications
-	@${MKDIR} ${DATADIR}/lib
-	@(cd ${WRKSRC}/src && \
+	${INSTALL_SCRIPT} ${WRKSRC}/src/gcipher ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/gcipher.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/src/gcipher.desktop ${STAGEDIR}${PREFIX}/share/applications
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
+	(cd ${WRKSRC}/src && \
 		${FIND} . -name '*.glade' \
 			-o -name '*.gladep' \
 			-o -name '*.py' \
 			-o -name '*.pyc' \
 			-o -name '*.pyo' | \
-		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/lib)
-	@${MKDIR} ${DATADIR}/plugins
-	@(cd ${WRKSRC}/plugins && \
+		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/lib)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins
+	(cd ${WRKSRC}/plugins && \
 		${FIND} . -name '*.glade' \
 			-o -name '*.gladep' \
 			-o -name '*.py' | \
-		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/plugins)
-	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} && \
-		${INSTALL_DATA} CONTRIB README ${DOCSDIR})
-.endif
+		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/plugins)
+	${FIND} ${STAGEDIR}${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
+	${FIND} ${STAGEDIR}${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && \
+		${INSTALL_DATA} CONTRIB README ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

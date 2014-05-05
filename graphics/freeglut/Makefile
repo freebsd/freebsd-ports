@@ -53,7 +53,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/progs/demos/Fractals/fractals.dat ${STAGEDIR}${EXAMPLESDIR}
 .for prog in ${BINS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/progs/demos/${prog}/.libs/${prog:L} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/progs/demos/${prog}/.libs/${prog:tl} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif

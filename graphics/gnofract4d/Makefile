@@ -3,10 +3,11 @@
 
 PORTNAME=	gnofract4d
 PORTVERSION=	3.14.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
 
 LICENSE=	BSD3CLAUSE

@@ -3,13 +3,13 @@
 
 PORTNAME=	skencil
 PORTVERSION=	1.0.a784
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	sk1
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/alpha_rev/}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive drawing program
 
 LICENSE=	LGPL20
@@ -27,14 +27,12 @@ USE_XORG=	x11 xext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-
 PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION:R}alpha-py${PYTHON_VER}.egg-info
 
 CFLAGS+=	-I${TK_INCLUDEDIR} -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
 
 PORTDOCS=	README
-
 OPTIONS_DEFINE=	DOCS NLS
 
 NLS_USES=	gettext
@@ -56,6 +54,12 @@ post-patch:
 .endif
 
 post-install:
+.for l in streamfilter paxmodule pstokenize _sketchmodule intl skreadmodule \
+		_type1module paxtkinter
+	${STRIP_CMD} \
+	${STAGEDIR}${PYTHON}${PYTHON_SITELIBDIR}/skencil/Sketch/Modules/${l}.so
+.endfor
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

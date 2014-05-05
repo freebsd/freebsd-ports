@@ -2,43 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	highlight
-PORTVERSION=	2.16
+PORTVERSION=	3.18
 PORTEPOCH=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
 
-USES=		gmake
+BUILD_DEPENDS=	boost-libs>0:${PORTSDIR}/devel/boost-libs
+
+USES=		gmake lua:52 pkgconfig tar:bzip2
 MAKEFILE=	makefile
 MAKE_ARGS=	CXX="${CXX}" \
 		CFLAGS="${CXXFLAGS} ${CPPFLAGS} -DHAVE_DECL_GETOPT" \
 		LDFLAGS="${LDFLAGS}"
 
-PORTDOCS=	ChangeLog INSTALL README README_DE \
-		README_LANGLIST README_REGEX TODO
-PORTEXAMPLES=	*
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|^PREFIX =|PREFIX ?=|' \
 		-e 's|^conf_dir =.*|conf_dir = $${PREFIX}/etc/highlight/|' \
 		${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e 's|^CXX=|CXX?=|' ${WRKSRC}/src/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|^CXX=|CXX?=|' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/src/${MAKEFILE}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/filetypes.conf ${STAGEDIR}${ETCDIR}/filetypes.conf.sample
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for d in langDefs themes
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} $d ${STAGEDIR}${DATADIR})
-.endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+post-install:
+	@cd ${STAGEDIR}${PREFIX}/etc/highlight && ${MV} filetypes.conf \
+		filetypes.conf.sample
 
 .include <bsd.port.mk>

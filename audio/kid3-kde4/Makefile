@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kid3
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.1
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -64,7 +63,7 @@ CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}KDE"
 PLIST_SUB+=	QT="@comment " KDE=""
 .endif
 
-PLIST_SUB+=	SHLIB_VER=${PORTVERSION}
+PLIST_SUB+=	SHLIB_VER=${PORTVERSION}.0
 
 CLI_DESC=	Build and install command line utility
 CLI_USES=	readline

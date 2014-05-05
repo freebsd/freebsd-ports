@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
 MAINTAINER=	cordeiro@nic.br
 COMMENT=	Tool to locally check for signs of a rootkit
 
+OPTIONS_DEFINE=	DOCS
+
 SCRIPT_FILES=	chkrootkit
 PROG_FILES=	chklastlog \
 		chkwtmp \
@@ -36,7 +38,6 @@ PLIST_FILES=	${ALL_TARGET:C,^,sbin/,}
 
 BINMODE=	0700
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007
@@ -53,11 +54,9 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT}  ${SCRIPT_FILES:C,^,${WRKSRC}/,} ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${PROG_FILES:C,^,${WRKSRC}/,}   ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:C,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT}  ${SCRIPT_FILES:C,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${PROG_FILES:C,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:C,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

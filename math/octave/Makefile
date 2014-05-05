@@ -3,7 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	octave
@@ -27,7 +27,7 @@ LIB_DEPENDS=	GraphicsMagick.14:${PORTSDIR}/graphics/GraphicsMagick13 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		ftgl:${PORTSDIR}/graphics/ftgl \
-		hdf5:${PORTSDIR}/science/hdf5-18 \
+		libhdf5.so:${PORTSDIR}/science/hdf5 \
 		pcre.3:${PORTSDIR}/devel/pcre \
 		qhull.5:${PORTSDIR}/math/qhull5 \
 		qrupdate:${PORTSDIR}/math/qrupdate \

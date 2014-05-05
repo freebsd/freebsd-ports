@@ -2,17 +2,17 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	1
+PORTREVISION?=	4
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
 		LOCAL/jkim:jdk,jtreg
-PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}
+PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-src-b132-03_mar_2014
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:jdk
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
+COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 LICENSE=	GPLv2
 
@@ -48,9 +48,14 @@ MAKE_ENV+=	CLASSPATH="" JAVA_HOME="" LD_LIBRARY_PATH="" MAKEFLAGS=""
 MAKE_ENV+=	IGNORE_OLD_CONFIG=true
 
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-normal-server-${JDK_BUILD_TYPE}
+.if !defined(BUILD_JRE)
 JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/j2sdk-image
+JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2sdk-image/jre
+.else
+JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2re-image
+.endif
 JDK_OSARCH=	bsd-${ARCH:S/i386/x86/:S/amd64/x86_64/}
-INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}
+INSTALLDIR=	${PREFIX}/${PKGBASE}
 
 NO_CCACHE=		yes
 NOPRECIOUSMAKEVARS=	yes
@@ -83,24 +88,32 @@ CONFIGURE_ARGS+=	--disable-ccache \
 CONFIGURE_SCRIPT=	../../configure
 CONFIGURE_WRKSRC=	${WRKSRC}/common/autoconf
 
-OPTIONS_DEFINE=		POLICY TEST TZUPDATE
-OPTIONS_DEFAULT=	POLICY RELEASE TZUPDATE
+OPTIONS_DEFINE=		POLICY TZUPDATE
+OPTIONS_DEFAULT=	POLICY TZUPDATE
+POLICY_DESC=		Install the Unlimited Strength Policy Files
+TZUPDATE_DESC=		Update the time zone data
+
+POLICY_CONFIGURE_ENABLE=unlimited-crypto
+TZUPDATE_RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
+
+.if !defined(BUILD_JRE)
+OPTIONS_DEFINE+=	TEST
+OPTIONS_DEFAULT+=	RELEASE
 OPTIONS_SINGLE=		BUILD
 OPTIONS_SINGLE_BUILD=	DEBUG DEBUGFAST RELEASE
 BUILD_DESC=		Select OpenJDK build type
 DEBUG_DESC=		Build for debugging (without optimizations)
 DEBUGFAST_DESC=		Build for debugging (with optimizations)
-POLICY_DESC=		Install the Unlimited Strength Policy Files
 RELEASE_DESC=		Build for release (default)
 TEST_DESC=		Run regression tests
-TZUPDATE_DESC=		Update the time zone data
 
-POLICY_CONFIGURE_ENABLE=unlimited-crypto
 RELEASE_CONFIGURE_ON=	--disable-debug-symbols
 TEST_ALL_TARGET=	test
 TEST_CONFIGURE_ON=	--with-jtreg=${WRKDIR}/jtreg
 TEST_DISTFILES=		jtreg${JTREG_VERSION}-${JTREG_BUILD_NUMBER}.tar.gz:jtreg
-TZUPDATE_RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
+.else
+CONFIGURE_ARGS+=	--disable-debug-symbols
+.endif
 
 .include <bsd.port.options.mk>
 
@@ -108,7 +121,7 @@ TZUPDATE_RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 JDK_BUILD_TYPE=	slowdebug
 .elif ${PORT_OPTIONS:MDEBUGFAST}
 JDK_BUILD_TYPE=	fastdebug
-.elif ${PORT_OPTIONS:MRELEASE}
+.else
 JDK_BUILD_TYPE=	release
 .endif
 
@@ -145,8 +158,14 @@ ICONV_LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 .endif
 
 post-extract:
-	@${CP} ${FILESDIR}/jdk-test-javax-imageio-plugins-jpeg-truncated.jpg \
-	    ${WRKSRC}/jdk/test/javax/imageio/plugins/jpeg/truncated.jpg
+	@${MV} -f ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-debug \
+	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx
+	@${MV} -f ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-product \
+	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-product.macosx
+	@${CP} -f ${WRKSRC}/hotspot/make/linux/makefiles/mapfile-vers-debug \
+	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-debug
+	@${CP} -f ${WRKSRC}/hotspot/make/linux/makefiles/mapfile-vers-product \
+	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-product
 	@${MKDIR} ${WRKSRC}/jdk/src/bsd/classes/java/net \
 	    ${WRKSRC}/jdk/src/bsd/classes/sun/nio/ch
 	@${MV} -f ${WRKSRC}/jdk/src/macosx/classes/java/net/DefaultInterface.java \
@@ -160,18 +179,22 @@ post-extract:
 	@${RMDIR} ${WRKSRC}/jdk/src/macosx/classes/java/net \
 	    ${WRKSRC}/jdk/src/macosx/native/sun/nio/ch \
 	    ${WRKSRC}/jdk/src/macosx/native/sun/nio
+	@${CP} -f ${WRKSRC}/jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd \
+	    ${WRKSRC}/jdk/src/solaris/classes/java/lang/UNIXProcess.java.macosx
+	@${CP} -f ${FILESDIR}/jdk-test-javax-imageio-plugins-jpeg-truncated.jpg \
+	    ${WRKSRC}/jdk/test/javax/imageio/plugins/jpeg/truncated.jpg
 
 post-patch:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    ${FILESDIR}/bsd.fontconfig.properties.in > \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	    ${WRKSRC}/common/autoconf/toolchain.m4 \
 	    ${WRKSRC}/configure \
-	    ${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp \
-	    ${WRKSRC}/jdk/make/lib/SoundLibraries.gmk \
 	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
-	    ${WRKSRC}/jdk/src/solaris/bin/java_md_solinux.h \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java
+	@${REINPLACE_CMD} -e 's|/usr/local/java/classes|${LOCALBASE}/share/java/classes|' \
+	    ${WRKSRC}/jdk/src/bsd/doc/man/*.1
 	@${REINPLACE_CMD} -e 's|%%ICONV_CPPFLAGS%%|${ICONV_CPPFLAGS}|' \
 	    -e 's|%%ICONV_LDFLAGS%%|${ICONV_LDFLAGS}|' \
 	    ${WRKSRC}/jdk/make/lib/CoreLibraries.gmk \
@@ -179,41 +202,45 @@ post-patch:
 	@${CHMOD} 755 ${WRKSRC}/configure
 
 post-build:
+.if !defined(BUILD_JRE)
 	@${JDK_IMAGEDIR}/bin/jar cfe \
-	    ${JDK_IMAGEDIR}/jre/lib/compilefontconfig.jar \
+	    ${JRE_IMAGEDIR}/lib/compilefontconfig.jar \
 	    build.tools.compilefontconfig.CompileFontConfig \
 	    -C ${JDK_BUILDDIR}/jdk/btclasses build/tools/compilefontconfig
 	@${JDK_IMAGEDIR}/bin/jar cfe \
-	    ${JDK_IMAGEDIR}/jre/lib/javazic.jar \
+	    ${JRE_IMAGEDIR}/lib/javazic.jar \
 	    build.tools.tzdb.TzdbZoneRulesCompiler \
 	    -C ${JDK_BUILDDIR}/jdk/btclasses build/tools/tzdb
+.endif
 .if ${PORT_OPTIONS:MTZUPDATE}
 	@# Update time zones
-	@${RM} -rf ${JDK_IMAGEDIR}/jre/lib/zi
-	@${LN} -sf ${LOCALBASE}/share/java/zi ${JDK_IMAGEDIR}/jre/lib
+	@${RM} -rf ${JRE_IMAGEDIR}/lib/zi
+	@${LN} -sf ${LOCALBASE}/share/java/zi ${JRE_IMAGEDIR}/lib
 .endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
-	@cd ${JDK_IMAGEDIR} && \
-	    ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR} \
-	    "-not ( -type d -name bin -prune )"
-	@cd ${JDK_IMAGEDIR} && \
-	    ${COPYTREE_BIN} "bin jre/bin" ${STAGEDIR}${INSTALLDIR}
-	@cd ${JDK_IMAGEDIR} && \
-	    ${INSTALL_PROGRAM} jre/lib/jspawnhelper \
-	    ${STAGEDIR}${INSTALLDIR}/jre/lib
-	@cd ${JDK_IMAGEDIR} && \
-	    ${INSTALL_PROGRAM} jre/lib/${ARCH}/jexec \
-	    ${STAGEDIR}${INSTALLDIR}/jre/lib/${ARCH}
-	@cd ${JDK_IMAGEDIR} && \
-	    ${INSTALL_PROGRAM} lib/${ARCH}/jexec \
-	    ${STAGEDIR}${INSTALLDIR}/lib/${ARCH}
+.if !defined(BUILD_JRE)
+	@cd ${JDK_IMAGEDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
+	@cd ${STAGEDIR}${INSTALLDIR} && \
+	    ${FIND} bin jre/bin -type f -exec ${CHMOD} ${BINMODE} {} \; && \
+	    ${CHMOD} ${BINMODE} jre/lib/${ARCH}/jexec \
+	    jre/lib/${ARCH}/jspawnhelper lib/${ARCH}/jexec
+.else
+	@cd ${JRE_IMAGEDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
+	@cd ${STAGEDIR}${INSTALLDIR} && \
+	    ${FIND} bin -type f -exec ${CHMOD} ${BINMODE} {} \; && \
+	    ${CHMOD} ${BINMODE} lib/${ARCH}/jexec lib/${ARCH}/jspawnhelper
+.endif
 	@${ECHO} "@unexec ${LOCALBASE}/bin/unregistervm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${STAGEDIR}${INSTALLDIR} -not -type d | ${SORT} | \
 	    ${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${INSTALLDIR} -type d | ${SORT} -r | \
 	    ${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.if !defined(BUILD_JRE)
 	@${ECHO} "@exec ${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # OpenJDK${JDK_MAJOR_VERSION}'" >> ${TMPPLIST}
+.else
+	@${ECHO} "@exec ${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # OpenJDK${JDK_MAJOR_VERSION} JRE'" >> ${TMPPLIST}
+.endif
 
 .include <bsd.port.post.mk>

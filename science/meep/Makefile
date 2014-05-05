@@ -3,7 +3,7 @@
 
 PORTNAME=	meep
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/meep/
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile \
 		libblas.so:${PORTSDIR}/math/blas \
 		libctl.so:${PORTSDIR}/science/libctl \
-		libhdf5.so:${PORTSDIR}/science/hdf5-18
+		libhdf5.so:${PORTSDIR}/science/hdf5
 RUN_DEPENDS+=	harminv:${PORTSDIR}/science/harminv
 
 GNU_CONFIGURE=	yes

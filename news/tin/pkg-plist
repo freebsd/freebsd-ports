@@ -1,8 +1,7 @@
 bin/metamutt
 bin/opt-case.pl
+bin/rtin
 bin/tin
-@exec ln -fs %f %B/rtin
-@unexec rm -f %B/rtin
 bin/tinews.pl
 bin/tinurl_handler.pl
 bin/w2r.pl

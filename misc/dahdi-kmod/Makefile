@@ -57,7 +57,7 @@ PLIST_SUB+=	X86="@comment "
 .endif
 
 .for _f in ${FIRMWARES}
-${_f}_NAME?=	dahdi-fw-${_f:L:S/_/-/g}
+${_f}_NAME?=	dahdi-fw-${_f:tl:S/_/-/g}
 ${_f}_DIR?=	${${_f}_NAME}.bin
 ${_f}_DISTFILE=	${${_f}_NAME}-${${_f}_VERSION}.tar.gz
 DISTFILES+=	${${_f}_DISTFILE}:firmware

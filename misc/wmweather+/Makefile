@@ -3,6 +3,7 @@
 
 PORTNAME=	wmweather+
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	SF/wmweatherplus/wmweather%2B/ \
 		SF/nemysisfreebsdp/misc/:icons
@@ -10,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays current conditions and forecasts with icons and text
 
 LICENSE=	GPLv2
@@ -52,9 +53,9 @@ DESKTOP_ENTRIES="${PORTNAME}" "" "${PORTNAME}" \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWM}
-LIB_DEPENDS+=	wraster:${PORTSDIR}/x11-wm/windowmaker
+LIB_DEPENDS+=	libWMaker.so:${PORTSDIR}/x11-wm/windowmaker
 .else
-LIB_DEPENDS+=	wraster:${PORTSDIR}/x11-wm/libwraster
+LIB_DEPENDS+=	libwraster.so:${PORTSDIR}/x11-wm/libwraster
 .endif
 
 post-patch:

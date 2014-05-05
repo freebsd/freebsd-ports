@@ -36,7 +36,7 @@ PORTDOCS=	${DOC_FILES} \
 		javadoc
 
 PLIST_FILES=	\
-		%%JAVAJARDIR%%/${PORTNAME:L}.jar
+		%%JAVAJARDIR%%/${PORTNAME:tl}.jar
 
 NO_STAGE=	yes
 pre-build:
@@ -46,7 +46,7 @@ pre-build:
 do-install:
 # jar
 	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/dist/lib/${PORTNAME:L}.jar \
+	@${INSTALL_DATA} ${WRKSRC}/dist/lib/${PORTNAME:tl}.jar \
 		${JAVAJARDIR}/
 # docs
 .ifndef(NOPORTDOCS)

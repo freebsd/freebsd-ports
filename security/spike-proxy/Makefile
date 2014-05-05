@@ -5,7 +5,7 @@ PORTNAME=	spike-proxy
 PORTVERSION=	1.4.8
 CATEGORIES=	security
 MASTER_SITES=	http://www.immunitysec.com/downloads/
-DISTNAME=	SP${PORTVERSION:L:C/\.//g}
+DISTNAME=	SP${PORTVERSION:tl:C/\.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	onatan@gmail.com

@@ -3,7 +3,7 @@
 
 PORTNAME=	onyx
 PORTVERSION=	5.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
@@ -11,25 +11,22 @@ MAINTAINER=	jasone@FreeBSD.org
 COMMENT=	Embeddable stack-based threaded interpreted language
 
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
-LIB_DEPENDS=	edit.6:${PORTSDIR}/devel/libedit \
-		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libedit.so:${PORTSDIR}/devel/libedit \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libedit-prefix=${LOCALBASE} \
 		--with-pcre-prefix=${LOCALBASE}
 USE_LDCONFIG=	yes
 
-MAN1=		onyx.1 onyx_config.1
-
 PLIST_SUB=	ONYX_VERSION=${PORTVERSION}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+MAN1=		onyx.1 onyx_config.1
 
-.if ${ARCH} == "ia64"
-BROKEN=		Coredump during build on ia64
-.endif
+NO_STAGE=	yes
+
+BROKEN_ia64=	Coredump during build on ia64
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
@@ -42,6 +39,6 @@ do-install:
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/onyx
-	@${CAT} ${PKGMESSAGE}
+	 @${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

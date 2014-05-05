@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/pyawale/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	African board game
 
 LICENSE=	GPLv2
@@ -29,8 +29,6 @@ DOC_FILES2=	*.rest *.html *.jpg
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.py' | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|'
@@ -41,15 +39,17 @@ do-build:
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+		${WRKDIR}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	@(cd ${WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.desktop \
+		${STAGEDIR}${DESKTOPDIR}
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>

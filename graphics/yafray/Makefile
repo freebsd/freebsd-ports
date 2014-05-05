@@ -9,23 +9,26 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 		#http://www.yafaray.org/sites/default/files/download/builds/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fast XML based raytracer
+COMMENT=	Fast XML based raytracer
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USES=		scons
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 pre-patch:
 	@${MV} ${WRKSRC}/linux-settings.py ${WRKSRC}/freebsd-settings.py
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		-e 's|%%CXXFLAGS%%|${CXXFLAGS}|' \
+		${WRKSRC}/freebsd-settings.py
 
-.if ${OSVERSION} >= 1000000
-BROKEN=		does not build
-.endif
+do-install:
+	(cd ${WRKSRC} && ${MAKE_CMD} prefix=${STAGEDIR}${PREFIX} install)
+	(cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/${PORTNAME} \
+		lib/*.so lib/yafray/*.so)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

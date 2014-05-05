@@ -6,7 +6,7 @@ PORTVERSION=	1.19
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Mission and Objective based 2D Platform Game
 
 LICENSE=	GPLv2 CCbyNCSA3

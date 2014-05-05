@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	com.quantum.feature_${PORTVERSION}.bin.dist
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database access and SQL editor for the Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \

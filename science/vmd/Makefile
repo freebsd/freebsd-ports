@@ -3,6 +3,7 @@
 
 PORTNAME=		vmd
 DISTVERSION=		1.9.1
+PORTREVISION=		1
 CATEGORIES=		science graphics python tcl tk
 MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b2/:tachyon \
 			http://www.photonlimited.com/~johns/tachyon/files/0.99b2/:tachyon \
@@ -16,10 +17,10 @@ COMMENT=		A molecular visualization program
 
 BUILD_DEPENDS=		makedepend:${PORTSDIR}/devel/makedepend \
 			${PYNUMERIC}
-LIB_DEPENDS=		tcl85:${PORTSDIR}/lang/tcl85 \
-			tk85:${PORTSDIR}/x11-toolkits/tk85 \
-			fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-			netcdf:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=		libtcl85.so:${PORTSDIR}/lang/tcl85 \
+			libtk85.so:${PORTSDIR}/x11-toolkits/tk85 \
+			libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
+			libnetcdf.so:${PORTSDIR}/science/netcdf
 RUN_DEPENDS=		${PYNUMERIC}
 
 USES=			gmake perl5

@@ -81,6 +81,7 @@ include/libdap/test/TestByte.h
 include/libdap/test/TestCommon.h
 include/libdap/test/TestFloat32.h
 include/libdap/test/TestFloat64.h
+include/libdap/test/TestFunction.h
 include/libdap/test/TestGrid.h
 include/libdap/test/TestInt16.h
 include/libdap/test/TestInt32.h
@@ -97,11 +98,11 @@ include/libdap/xdr-datatypes.h
 lib/libdap.a
 lib/libdap.la
 lib/libdap.so
-lib/libdap.so.16
+lib/libdap.so.17
 lib/libdapclient.a
 lib/libdapclient.la
 lib/libdapclient.so
-lib/libdapclient.so.5
+lib/libdapclient.so.6
 lib/libdapserver.a
 lib/libdapserver.la
 lib/libdapserver.so

@@ -3,6 +3,7 @@
 
 PORTNAME=	hlfl
 PORTVERSION=	0.60.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.hlfl.org/pub/hlfl/
 
@@ -11,18 +12,16 @@ COMMENT=	High Level Firewall Language
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datadir=${LOCALBASE}/share/doc
-DOC_FILES=	services.hlfl sample_1.hlfl sample_2.hlfl test.hlfl syntax.txt
-MAN1=		hlfl.1
+PORTDOCS=	services.hlfl sample_1.hlfl sample_2.hlfl test.hlfl syntax.txt
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/hlfl ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/doc/${MAN1} ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/hlfl
-.for i in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/hlfl
+	${INSTALL_PROGRAM} ${WRKSRC}/src/hlfl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

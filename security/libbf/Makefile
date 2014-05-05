@@ -20,21 +20,20 @@ MAKEFLAGS+=	BF_ENC=bf_enc.o
 
 WRKSRC=		${WRKDIR}/bf
 
-MYPORTDOCS=	blowfish.doc COPYRIGHT README VERSION
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+PORTDOCS=	blowfish.doc COPYRIGHT README VERSION
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bfspeed ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bftest ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libblowfish.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/blowfish.h ${PREFIX}/include
+	${INSTALL_PROGRAM} ${WRKSRC}/bfspeed ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bftest ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libblowfish.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/blowfish.h ${STAGEDIR}${PREFIX}/include
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${MYPORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

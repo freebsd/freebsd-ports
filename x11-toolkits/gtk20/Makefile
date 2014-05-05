@@ -4,7 +4,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.24.22
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,7 +17,7 @@ COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 
 LICENSE=	LGPL20
 
-USE_XZ=		yes
+USES=		tar:xz
 
 PORTSCOUT=	limitw:0,even
 
@@ -27,9 +27,9 @@ RUN_DEPENDS+=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		python:${PORTSDIR}/lang/python
 
-USES=		gettext gmake pathfix perl5 pkgconfig
+USES+=		gettext gmake libtool:keepla pathfix perl5 pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	atk pango gdkpixbuf2 introspection:build ltverhack \
+USE_GNOME=	atk pango gdkpixbuf2 introspection:build \
 		gtk-update-icon-cache
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -38,6 +38,7 @@ USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 CONFIGURE_ARGS=	--with-xinput=yes --enable-explicit-deps
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	CUPS DEBUG
 OPTIONS_DEFAULT=CUPS
@@ -49,6 +50,8 @@ CUPS_CONFIGURE_OFF=	--disable-cups
 DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
 .include <bsd.port.options.mk>
+
+PLIST_SUB+=	LIBGAILVER=18.0.1 LIBGVER=0.2400.22
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${GREP} -l lgmodule | \

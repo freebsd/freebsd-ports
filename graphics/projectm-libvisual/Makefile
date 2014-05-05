@@ -3,7 +3,7 @@
 PORTNAME=	projectM-libvisual
 PORTVERSION=	2.0.1
 CATEGORIES=	graphics audio
-MASTER_SITES=	SF/${PORTNAME:L:S/-libvisual//}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl:S/-libvisual//}/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}-Source
 
 MAINTAINER=	crees@FreeBSD.org

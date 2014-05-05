@@ -1,0 +1,118 @@
+This allow switching the hashing algorithm (between a crypt(3)-based
+one and MD5) at run-time, rather than at compile-time.
+
+	-mi
+
+--- dht-example.c	2014-05-03 14:37:50.000000000 -0400
++++ dht-example.c	2014-05-04 21:34:58.000000000 -0400
+@@ -12,4 +12,5 @@
+ #include <fcntl.h>
+ #include <sys/time.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <sys/types.h>
+@@ -17,4 +18,7 @@
+ #include <netdb.h>
+ #include <sys/signal.h>
++#include <signal.h>
++#include <unistd.h>
++#include <md5.h>
+ 
+ #include "dht.h"
+@@ -91,4 +95,11 @@
+ static unsigned char buf[4096];
+ 
++typedef void (hashing_method)(void *, int,
++	const void *, int,
++	const void *, int,
++	const void *, int);
++
++static hashing_method *hasher, crypt_hash, md5_hash;
++
+ int
+ main(int argc, char **argv)
+@@ -112,9 +123,8 @@
+     memset(&sin6, 0, sizeof(sin6));
+     sin6.sin6_family = AF_INET6;
+-
+-
++    hasher = crypt_hash;
+ 
+     while(1) {
+-        opt = getopt(argc, argv, "q46b:i:");
++        opt = getopt(argc, argv, "q46b:i:m");
+         if(opt < 0)
+             break;
+@@ -143,4 +153,6 @@
+             id_file = optarg;
+             break;
++	case 'm':
++            hasher = md5_hash;
+         default:
+             goto usage;
+@@ -405,6 +417,7 @@
+     
+  usage:
+-    printf("Usage: dht-example [-q] [-4] [-6] [-i filename] [-b address]...\n"
+-           "                   port [address port]...\n");
++    printf("Usage: dht-example [-q] [-4] [-6] [-i filename] [-b address] [-m]\n"
++           "                   port [address port]...\n"
++           "(Use -m to use MD5 digest instead of crypt()-based one)\n");
+     exit(1);
+ }
+@@ -420,25 +433,28 @@
+ /* We need to provide a reasonably strong cryptographic hashing function.
+    Here's how we'd do it if we had RSA's MD5 code. */
+-#if 0
+-void
+-dht_hash(void *hash_return, int hash_size,
++static void
++md5_hash(void *hash_return, int hash_size,
+          const void *v1, int len1,
+          const void *v2, int len2,
+          const void *v3, int len3)
+ {
+-    static MD5_CTX ctx;
++    MD5_CTX ctx;
+     MD5Init(&ctx);
+     MD5Update(&ctx, v1, len1);
+     MD5Update(&ctx, v2, len2);
+     MD5Update(&ctx, v3, len3);
+-    MD5Final(&ctx);
+-    if(hash_size > 16)
+-        memset((char*)hash_return + 16, 0, hash_size - 16);
+-    memcpy(hash_return, ctx.digest, hash_size > 16 ? 16 : hash_size);
++    if (hash_size >= 16) {
++        MD5Final(hash_return, &ctx);
++        if(hash_size > 16)
++            memset((char*)hash_return + 16, 0, hash_size - 16);
++    } else {
++        unsigned char digest[16];
++        MD5Final(digest, &ctx);
++	memcpy(hash_return, digest, hash_size);
++    }
+ }
+-#else
+ /* But for this example, we might as well use something weaker. */
+-void
+-dht_hash(void *hash_return, int hash_size,
++static void
++crypt_hash(void *hash_return, int hash_size,
+          const void *v1, int len1,
+          const void *v2, int len2,
+@@ -460,5 +476,14 @@
+     strncpy(hash_return, crypt(key, "jc"), hash_size);
+ }
+-#endif
++
++void
++dht_hash(void *hash_return, int hash_size,
++         const void *v1, int len1,
++         const void *v2, int len2,
++         const void *v3, int len3)
++{
++	hasher(hash_return, hash_size, v1, len1,
++	    v2, len2, v3, len3);
++}
+ 
+ int

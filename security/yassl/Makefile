@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyassl
-PORTVERSION=	2.9.0
+PORTVERSION=	3.0.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.yassl.com/
 
@@ -10,8 +10,7 @@ COMMENT=	Embedded SSL C-Library
 
 LICENSE=	GPLv2
 
-USES=		zip
-USE_AUTOTOOLS=	libtool
+USES=		zip libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-shared --enable-static \
@@ -24,6 +23,7 @@ post-configure:
 	@${REINPLACE_CMD} \
 		-e 's|$${prefix}/cyassl/include|$${prefix}/include/cyassl|' \
 		-e 's|$${prefix}/cyassl/lib|$${prefix}/lib/cyassl|' \
+		-e '/^pkgconfigdir/s|(libdir)|&data|' \
 		${WRKSRC}/Makefile
 	# i386 assembly is broken: do not use
 	@${REINPLACE_CMD} -e 's/(TFM_X86)/(TFM_X86_BROKEN)/' \

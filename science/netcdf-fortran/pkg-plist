@@ -1,0 +1,11 @@
+bin/nf-config
+include/netcdf.inc
+include/netcdf.mod
+include/typesizes.mod
+lib/libnetcdff.a
+lib/libnetcdff.so
+lib/libnetcdff.so.5
+lib/libnetcdff.so.5.3.1
+libdata/pkgconfig/netcdf-fortran.pc
+man/man3/netcdf_f77.3.gz
+man/man3/netcdf_f90.3.gz

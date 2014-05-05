@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	MetaCPAN-Client
-PORTVERSION=	1.002.000
+PORTVERSION=	1.003000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:MICKEY
+MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Comprehensive, DWIM-featured client to the MetaCPAN API
@@ -15,7 +14,7 @@ COMMENT=	Comprehensive, DWIM-featured client to the MetaCPAN API
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+BUILD_DEPENDS=	p5-JSON-MaybeXS>=0:${PORTSDIR}/converters/p5-JSON-MaybeXS \
 		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
 		p5-Search-Elasticsearch>=1.10:${PORTSDIR}/textproc/p5-Search-Elasticsearch \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny

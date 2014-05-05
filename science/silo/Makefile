@@ -4,6 +4,7 @@
 PORTNAME=	silo
 PORTVERSION=	4.9.1
 DISTVERSIONSUFFIX=	-bsd
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/silo-${PORTVERSION}/
 

@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-source${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-source${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Side scrolling arcade game
 
 LICENSE=	LGPL20
@@ -33,12 +33,12 @@ DOCSRCDIR2=	${WRKSRC}/maptool
 DOCSDIR2=	${DOCSDIR}/maptool
 DOC_FILES2=	manual.txt
 
-DESKTOP_ENTRIES="Adventures on Planet Zephulor" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="Adventures on Planet Zephulor" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 SUB_FILES=	${PORTNAME}
-
-OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!.*python|#!${PYTHON_CMD}|' \
@@ -58,9 +58,8 @@ post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>

@@ -871,6 +871,7 @@ sbin/radwatch
 %%DATADIR%%/dictionary.xedia
 %%DATADIR%%/dictionary.xylan
 %%DATADIR%%/dictionary.zeus
+%%DATADIR%%/dictionary.zte
 %%DATADIR%%/dictionary.zyxel
 @unexec rmdir "/var/run/radiusd" >/dev/null 2>&1 || :
 @unexec rmdir "/var/log/radacct" >/dev/null 2>&1 || :

@@ -9,9 +9,9 @@ MASTER_SITES=	http://nostatic.org/pyro/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple OpenGL-based firework simulator
+COMMENT=	Simple OpenGL-based firework simulator
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_GL=		gl glut
 USE_XORG=	xi xmu xext
@@ -21,7 +21,8 @@ PLIST_FILES=	bin/pyro ${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib.h|g' ${WRKSRC}/*.c
 
@@ -31,14 +32,10 @@ do-build:
 		-L${LOCALBASE}/lib -ljpeg -lm -lXmu -lXi -lXext -lGL -lGLU -lglut
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
-
-.ifndef (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

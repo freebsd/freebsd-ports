@@ -4,30 +4,40 @@
 
 PORTNAME=	guile
 PORTVERSION=	1.8.8
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
+
+LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 USE_AUTOTOOLS=	autoconf libltdl
-USES=		gettext gmake ncurses
+USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-fwrapv
+INSTALL_TARGET=	install-strip
 
-GUILE_VER=	1.8
-PLIST_SUB=	GUILE_VER=${GUILE_VER}
+PLIST_SUB=	GUILE_VER=${PORTVERSION:R}
 
 REINPLACE_FILES=	libguile/smob.c libguile/filesys.c libguile/gc.c \
 			libguile/mallocs.c libguile/eval.c libguile/gc-malloc.c \
 			libguile/ports.c libguile/gc-mark.c libguile/gc_os_dep.c
 
 INFO=		goops guile-tut guile r5rs
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
 post-extract:
 	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}

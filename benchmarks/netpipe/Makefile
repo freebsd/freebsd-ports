@@ -15,7 +15,7 @@ COMMENT=	Self-scaling network benchmark
 PORTDOCS=	README netpipe_paper.ps
 PLIST_FILES=	bin/NPtcp bin/NPtcp6 man/man1/netpipe.1.gz
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:L}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 
 do-build:
 	cd ${WRKSRC} \

@@ -3,11 +3,11 @@
 
 PORTNAME=	cbview
 PORTVERSION=	0.06
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sourcefiles.org/Toys/Humor/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer/converter for CBR/CBZ comic book archives
 
 LICENSE=	GPLv2
@@ -23,7 +23,6 @@ USES=		perl5
 PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	Changes README TODO
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

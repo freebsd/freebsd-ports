@@ -54,8 +54,8 @@ BOOTSTRAP_TRIPLET=	i386-bootstrap-freebsd8.0/4.6.0
 .if ${OPSYS} == DragonFly
 BOOTSTRAP_TRIPLET=	${GARCH}-bootstrap-dragonfly2.8/4.6.0
 .endif
-BLD_TARGET=		${GARCH}-aux-${OPSYS:L}${OSREL}
-BOOTSTRAP_COMPILER=	gnat-bootstrap.${GARCH}.${OPSYS:L}.tar.bz2
+BLD_TARGET=		${GARCH}-aux-${OPSYS:tl}${OSREL}
+BOOTSTRAP_COMPILER=	gnat-bootstrap.${GARCH}.${OPSYS:tl}.tar.bz2
 
 WRKSRC=			${WRKDIR}/gcc-${GCC_VERSION}
 BUILDDIR=		${WRKDIR}/build

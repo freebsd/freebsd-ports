@@ -1,6 +1,6 @@
---- third_party/libjingle/libjingle.gyp.orig	2013-08-09 22:05:45.000000000 +0300
-+++ third_party/libjingle/libjingle.gyp	2013-08-18 00:43:44.000000000 +0300
-@@ -532,7 +532,7 @@
+--- ./third_party/libjingle/libjingle.gyp.orig	2014-04-24 22:35:58.000000000 +0200
++++ ./third_party/libjingle/libjingle.gyp	2014-04-24 23:23:47.000000000 +0200
+@@ -543,7 +543,7 @@
              '<(libjingle_source)/talk/base/unixfilesystem.h',
            ],
          }],
@@ -9,12 +9,12 @@
            'sources': [
              '<(libjingle_source)/talk/base/latebindingsymboltable.cc',
              '<(libjingle_source)/talk/base/latebindingsymboltable.h',
-@@ -772,7 +772,7 @@
+@@ -795,7 +795,7 @@
                ],
              }],
              # TODO(mallinath) - Enable SCTP for iOS.
 -            ['OS!="ios"', {
 +            ['OS!="ios" and os_bsd!=1', {
                'defines': [
-                 ['HAVE_SCTP',
+                 'HAVE_SCTP',
                ],

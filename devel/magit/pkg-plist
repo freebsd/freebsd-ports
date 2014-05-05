@@ -1,21 +1,19 @@
-etc/emacs/site-start.d/50magit.el
-share/emacs/site-lisp/magit-bisect.el
-share/emacs/site-lisp/magit-bisect.elc
-share/emacs/site-lisp/magit-blame.el
-share/emacs/site-lisp/magit-blame.elc
-share/emacs/site-lisp/magit-key-mode.el
-share/emacs/site-lisp/magit-key-mode.elc
-share/emacs/site-lisp/magit-stgit.el
-share/emacs/site-lisp/magit-stgit.elc
-share/emacs/site-lisp/magit-svn.el
-share/emacs/site-lisp/magit-svn.elc
-share/emacs/site-lisp/magit-topgit.el
-share/emacs/site-lisp/magit-topgit.elc
-share/emacs/site-lisp/magit-wip.el
-share/emacs/site-lisp/magit-wip.elc
-share/emacs/site-lisp/magit.el
-share/emacs/site-lisp/magit.elc
-share/emacs/site-lisp/rebase-mode.el
-share/emacs/site-lisp/rebase-mode.elc
-@dirrmtry etc/emacs/site-start.d
-@dirrmtry etc/emacs
+%%ELISPDIR%%/magit-bisect.el
+%%ELISPDIR%%/magit-bisect.elc
+%%ELISPDIR%%/magit-blame.el
+%%ELISPDIR%%/magit-blame.elc
+%%ELISPDIR%%/magit-key-mode.el
+%%ELISPDIR%%/magit-key-mode.elc
+%%ELISPDIR%%/magit-stgit.el
+%%ELISPDIR%%/magit-stgit.elc
+%%ELISPDIR%%/magit-svn.el
+%%ELISPDIR%%/magit-svn.elc
+%%ELISPDIR%%/magit-topgit.el
+%%ELISPDIR%%/magit-topgit.elc
+%%ELISPDIR%%/magit-wip.el
+%%ELISPDIR%%/magit-wip.elc
+%%ELISPDIR%%/magit.el
+%%ELISPDIR%%/magit.elc
+%%ELISPDIR%%/rebase-mode.el
+%%ELISPDIR%%/rebase-mode.elc
+@dirrm %%ELISPDIR%%

@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		http://legacy.xmms2.org/ \
@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 
 CONFLICTS?=	ru-xmms-[0-9]* zh-xmms-[0-9]*
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils pathfix gmake iconv tar:bzip2
+USES=		desktop-file-utils gmake iconv libtool pathfix tar:bzip2
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 USE_XORG=	sm x11 xxf86vm
@@ -80,8 +80,8 @@ LIB_DEPENDS+=	librcc.so:${PORTSDIR}/devel/librcc \
 		librcd.so:${PORTSDIR}/devel/librcd
 
 USE_AUTOTOOLS=	aclocal autoheader libtoolize autoconf automake
-LIBTOOLIZE_ARGS=--install --force
-AUTOMAKE_ARGS=	--add-missing --force-missing
+LIBTOOLIZE_ARGS=-i -c -f
+AUTOMAKE_ARGS=	-a -c -f
 USE_OPENSSL=	yes
 .endif
 

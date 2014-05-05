@@ -10,18 +10,20 @@ MASTER_SITES=	http://www-users.cs.umn.edu/~wburdick/ftp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another mp3 player
 
-GNU_CONFIGURE=	yes
 USES=		gmake
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_prog_gcc=no
 
-PLIST_FILES=	bin/amp \
-		man/man1/amp.1.gz
+PLIST_FILES=	bin/amp man/man1/amp.1.gz
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|-O6 -ffast-math -fomit-frame-pointer|${CFLAGS}|' \
-		-e 's|gcc|${CC}|' ${WRKSRC}/Makefile
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/CC="gcc"/s|^|#| ; \
+		 /CFLAGS=$$/s|^|#| ; \
+		 s|-O6|$$CFLAGS|' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/amp ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/amp.1 ${STAGEDIR}${PREFIX}/man/man1
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} amp ${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} amp.1 ${STAGEDIR}${PREFIX}/man/man1)
 
 .include <bsd.port.mk>

@@ -40,6 +40,10 @@ QUICK GUIDE TO ADDING A NEW ENTRY
 4. fix any errors
 5. profit!
 
+Addtional tests can be done this way:
+ $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py26-django-1.6
+ $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py27-django-1.6.1
+
 Extensive documentation of the format and help with writing and verifying
 a new entry is available in The Porter's Handbook at:
 
@@ -47,44 +51,294 @@ a new entry is available in The Porter's Handbook at:
 
 Help is also available from ports-security@freebsd.org.
 
-Note:  Please add new entries to the beginning of this file.
+Notes:
+  * Please add new entries to the beginning of this file.
+  * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6fb521b0-d388-11e3-a790-000c2980a9f3">
+    <topic>strongswan -- Remote Authentication Bypass</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><lt>5.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>strongSwan developers report:</p>
+	<blockquote cite="www.strongswan.org/blog/2014/04/14/strongswan-authentication-bypass-vulnerability-(cve-2014-2338).html">
+	  <p>Remote attackers are able to bypass authentication by rekeying an
+	    IKE_SA during (1) initiation or (2) re-authentication, which
+	    triggers the IKE_SA state to be set to established.</p>
+	  <p>Only installations that actively initiate or re-authenticate IKEv2
+	    IKE_SAs are affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-2338</cvename>
+      <url>http://www.strongswan.org/blog/2014/04/14/strongswan-authentication-bypass-vulnerability-%28cve-2014-2338%29.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-12</discovery>
+      <entry>2014-05-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="670d732a-cdd4-11e3-aac2-0022fb6fcf92">
+    <topic>mohawk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mohawk</name>
+	<range><lt>2.0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The mohawk project reports:</p>
+	<blockquote cite="http://fossil.bsdsx.fr/mohawk/tktview?name=1707f0e351">
+	  <p>Segfault when parsing malformed / unescaped url, coredump when setting syslog facility.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://fossil.bsdsx.fr/mohawk/tktview?name=1707f0e351</url>
+      <url>http://fossil.bsdsx.fr/mohawk/tktview?name=1c7565019e</url>
+    </references>
+    <dates>
+      <discovery>2014-04-10</discovery>
+      <entry>2014-04-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7cf25a0c-d031-11e3-947b-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>34.0.1847.132</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports (belatedly):</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>9 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[354967] High CVE-2014-1730: Type confusion in V8. Credit to
+	      Anonymous.</li>
+	    <li>[349903] High CVE-2014-1731: Type confusion in DOM. Credit to
+	      John Butler.</li>
+	    <li>[359802] High CVE-2014-1736: Integer overflow in V8. Credit to
+	      SkyLined working with HP's Zero Day Initiative.</li>
+	    <li>[352851] Medium CVE-2014-1732: Use-after-free in Speech
+	      Recognition. Credit to Khalil Zhani.</li>
+	    <li>[351103] Medium CVE-2014-1733: Compiler bug in Seccomp-BPF.
+	      Credit to Jed Davis.</li>
+	    <li>[367314] CVE-2014-1734: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[359130, 359525, 360429] CVE-2014-1735: Multiple
+	      vulnerabilities in V8 fixed in version 3.24.35.33.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1730</cvename>
+      <cvename>CVE-2014-1731</cvename>
+      <cvename>CVE-2014-1732</cvename>
+      <cvename>CVE-2014-1733</cvename>
+      <cvename>CVE-2014-1734</cvename>
+      <cvename>CVE-2014-1735</cvename>
+      <cvename>CVE-2014-1736</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-04-24</discovery>
+      <entry>2014-04-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="985d4d6c-cfbd-11e3-a003-b4b52fce4ce8">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>29.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>24.5.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>29.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.26</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>24.5.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.26</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>24.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-34 Miscellaneous memory safety hazards
+	    (rv:29.0 / rv:24.5)</p>
+	  <p>MFSA 2014-35 Privilege escalation through Mozilla Maintenance
+	    Service Installer</p>
+	  <p>MFSA 2014-36 Web Audio memory corruption issues</p>
+	  <p>MFSA 2014-37 Out of bounds read while decoding JPG images</p>
+	  <p>MFSA 2014-38 Buffer overflow when using non-XBL object as
+	    XBL</p>
+	  <p>MFSA 2014-39 Use-after-free in the Text Track Manager
+	    for HTML video</p>
+	  <p>MFSA 2014-41 Out-of-bounds write in Cairo</p>
+	  <p>MFSA 2014-42 Privilege escalation through Web Notification
+	    API</p>
+	  <p>MFSA 2014-43 Cross-site scripting (XSS) using history
+	    navigations</p>
+	  <p>MFSA 2014-44 Use-after-free in imgLoader while resizing
+	    images</p>
+	  <p>MFSA 2014-45 Incorrect IDNA domain name matching for
+	    wildcard certificates</p>
+	  <p>MFSA 2014-46 Use-after-free in nsHostResolve</p>
+	  <p>MFSA 2014-47 Debugger can bypass XrayWrappers
+	    with JavaScript</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1492</cvename>
+      <cvename>CVE-2014-1518</cvename>
+      <cvename>CVE-2014-1519</cvename>
+      <cvename>CVE-2014-1520</cvename>
+      <cvename>CVE-2014-1522</cvename>
+      <cvename>CVE-2014-1523</cvename>
+      <cvename>CVE-2014-1524</cvename>
+      <cvename>CVE-2014-1525</cvename>
+      <cvename>CVE-2014-1526</cvename>
+      <cvename>CVE-2014-1527</cvename>
+      <cvename>CVE-2014-1528</cvename>
+      <cvename>CVE-2014-1529</cvename>
+      <cvename>CVE-2014-1530</cvename>
+      <cvename>CVE-2014-1531</cvename>
+      <cvename>CVE-2014-1532</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-34.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-35.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-36.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-37.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-38.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-39.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-41.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-42.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-43.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-44.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-45.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-46.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-47.html</url>
+      <url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2014-04-29</discovery>
+      <entry>2014-04-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="59e72db2-cae6-11e3-8420-00e0814cab4e">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>py26-django</name>
+	<range><ge>1.6</ge><lt>1.6.3</lt></range>
+      </package>
+      <package>
 	<name>py27-django</name>
+	<range><ge>1.6</ge><lt>1.6.3</lt></range>
+      </package>
+      <package>
 	<name>py31-django</name>
+	<range><ge>1.6</ge><lt>1.6.3</lt></range>
+      </package>
+      <package>
 	<name>py32-django</name>
+	<range><ge>1.6</ge><lt>1.6.3</lt></range>
+      </package>
+      <package>
 	<name>py33-django</name>
+	<range><ge>1.6</ge><lt>1.6.3</lt></range>
+      </package>
+      <package>
 	<name>py34-django</name>
 	<range><ge>1.6</ge><lt>1.6.3</lt></range>
-	<range><ge>1.5</ge><lt>1.5.6</lt></range>
-	<range><ge>1.4</ge><lt>1.4.11</lt></range>
       </package>
       <package>
 	<name>py26-django15</name>
+	<range><ge>1.5</ge><lt>1.5.6</lt></range>
+      </package>
+      <package>
 	<name>py27-django15</name>
+	<range><ge>1.5</ge><lt>1.5.6</lt></range>
+      </package>
+      <package>
 	<name>py31-django15</name>
+	<range><ge>1.5</ge><lt>1.5.6</lt></range>
+      </package>
+      <package>
 	<name>py32-django15</name>
+	<range><ge>1.5</ge><lt>1.5.6</lt></range>
+      </package>
+      <package>
 	<name>py33-django15</name>
+	<range><ge>1.5</ge><lt>1.5.6</lt></range>
+      </package>
+      <package>
 	<name>py34-django15</name>
 	<range><ge>1.5</ge><lt>1.5.6</lt></range>
       </package>
       <package>
 	<name>py26-django14</name>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+      </package>
+      <package>
 	<name>py27-django14</name>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+      </package>
+      <package>
 	<name>py31-django14</name>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+      </package>
+      <package>
 	<name>py32-django14</name>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+      </package>
+      <package>
 	<name>py33-django14</name>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+      </package>
+      <package>
 	<name>py34-django14</name>
 	<range><ge>1.4</ge><lt>1.4.11</lt></range>
       </package>
       <package>
 	<name>py26-django-devel</name>
+	<range><lt>20140423,1</lt></range>
+      </package>
+      <package>
 	<name>py27-django-devel</name>
 	<range><lt>20140423,1</lt></range>
       </package>
@@ -110,7 +364,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-04-21</discovery>
       <entry>2014-04-23</entry>
-      <modified>2014-04-24</modified>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -231,6 +485,9 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>openldap24-client</name>
+	<range><lt>2.4.18</lt></range>
+      </package>
+      <package>
 	<name>linux-f10-openldap</name>
 	<range><lt>2.4.18</lt></range>
       </package>
@@ -262,6 +519,9 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>curl</name>
+	<range><ge>7.10.6</ge><le>7.21.6</le></range>
+      </package>
+      <package>
 	<name>linux-f10-curl</name>
 	<range><ge>7.10.6</ge><le>7.21.6</le></range>
       </package>
@@ -284,6 +544,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-06-23</discovery>
       <entry>2014-04-11</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -292,6 +553,9 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>dbus-glib</name>
+	<range><lt>0.100.1</lt></range>
+      </package>
+      <package>
 	<name>linux-f10-dbus-glib</name>
 	<range><lt>0.100.1</lt></range>
       </package>
@@ -316,6 +580,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-02-15</discovery>
       <entry>2014-04-11</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -324,6 +589,9 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>nas</name>
+	<range><lt>1.9.4</lt></range>
+      </package>
+      <package>
 	<name>linux-f10-nas-libs</name>
 	<range><lt>1.9.4</lt></range>
       </package>
@@ -355,6 +623,9 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>libaudiofile</name>
+	<range><lt>0.2.7</lt></range>
+      </package>
+      <package>
 	<name>linux-f10-libaudiofile</name>
 	<range><lt>0.2.7</lt></range>
       </package>
@@ -377,6 +648,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-12-30</discovery>
       <entry>2014-04-11</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -740,8 +1012,10 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>joomla2</name>
-	<name>joomla3</name>
 	<range><ge>2.5.*</ge><le>2.5.18</le></range>
+      </package>
+      <package>
+	<name>joomla3</name>
 	<range><ge>3.0.*</ge><le>3.2.2</le></range>
       </package>
     </affects>
@@ -775,6 +1049,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-03-01</discovery>
       <entry>2014-03-23</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -1449,11 +1724,18 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gnutls</name>
+	<range><lt>2.12.23_4</lt></range>
+      </package>
+      <package>
 	<name>linux-f10-gnutls</name>
 	<range><lt>2.12.23_4</lt></range>
       </package>
       <package>
 	<name>gnutls-devel</name>
+	<range><lt>3.1.22</lt></range>
+	<range><gt>3.2.0</gt><lt>3.2.12</lt></range>
+      </package>
+      <package>
 	<name>gnutls3</name>
 	<range><lt>3.1.22</lt></range>
 	<range><gt>3.2.0</gt><lt>3.2.12</lt></range>
@@ -1489,7 +1771,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-03-03</discovery>
       <entry>2014-03-04</entry>
-      <modified>2014-03-04</modified>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -1575,8 +1857,20 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>subversion</name>
-	<range><ge>1.8.0</ge><lt>1.8.8</lt></range>
 	<range><ge>1.3.0</ge><lt>1.7.16</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.8</lt></range>
+      </package>
+      <package>
+	<name>subversion16</name>
+	<range><ge>1.3.0</ge><lt>1.7.16</lt></range>
+      </package>
+      <package>
+	<name>subversion17</name>
+	<range><ge>1.3.0</ge><lt>1.7.16</lt></range>
+      </package>
+      <package>
+	<name>subversion18</name>
+	<range><ge>1.8.0</ge><lt>1.8.8</lt></range>
       </package>
     </affects>
     <description>
@@ -1599,6 +1893,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-01-10</discovery>
       <entry>2014-02-26</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -2588,16 +2883,25 @@ JavaScript code would be executed.</p>
     <affects>
       <package>
 	<name>bind99</name>
+	<range><lt>9.9.4.2</lt></range>
+      </package>
+      <package>
 	<name>bind99-base</name>
 	<range><lt>9.9.4.2</lt></range>
       </package>
       <package>
 	<name>bind98</name>
+	<range><lt>9.8.6.2</lt></range>
+      </package>
+      <package>
 	<name>bind98-base</name>
 	<range><lt>9.8.6.2</lt></range>
       </package>
       <package>
 	<name>bind96</name>
+	<range><lt>9.6.3.2.ESV.R10.2</lt></range>
+      </package>
+      <package>
 	<name>bind96-base</name>
 	<range><lt>9.6.3.2.ESV.R10.2</lt></range>
       </package>
@@ -2630,7 +2934,7 @@ JavaScript code would be executed.</p>
     <dates>
       <discovery>2014-01-08</discovery>
       <entry>2014-01-13</entry>
-      <modified>2014-01-15</modified>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -2785,6 +3089,9 @@ JavaScript code would be executed.</p>
     <affects>
       <package>
 	<name>gnupg</name>
+	<range><lt>1.4.16</lt></range>
+      </package>
+      <package>
 	<name>gnupg1</name>
 	<range><lt>1.4.16</lt></range>
       </package>
@@ -2821,7 +3128,7 @@ JavaScript code would be executed.</p>
     <dates>
       <discovery>2013-12-18</discovery>
       <entry>2013-12-18</entry>
-      <modified>2013-12-18</modified>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -3125,17 +3432,41 @@ JavaScript code would be executed.</p>
     <affects>
       <package>
 	<name>rubygem-actionmailer</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
 	<name>rubygem-actionpack</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
 	<name>rubygem-activemodel</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
 	<name>rubygem-activerecord</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
 	<name>rubygem-activeresource</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
 	<name>rubygem-activesupport</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
 	<name>rubygem-rails</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
 	<name>rubygem-railties</name>
 	<range><lt>3.2.16</lt></range>
       </package>
       <package>
 	<name>rubygem-actionpack4</name>
+	<range><lt>4.0.2</lt></range>
+      </package>
+      <package>
 	<name>rubygem-activesupport4</name>
 	<range><lt>4.0.2</lt></range>
       </package>
@@ -3178,6 +3509,7 @@ JavaScript code would be executed.</p>
     <dates>
       <discovery>2013-12-03</discovery>
       <entry>2013-12-08</entry>
+      <modified>2014-04-23</modified>
     </dates>
   </vuln>
 
@@ -3281,8 +3613,10 @@ JavaScript code would be executed.</p>
     <affects>
       <package>
 	<name>joomla2</name>
-	<name>joomla3</name>
 	<range><ge>2.5.*</ge><le>2.5.14</le></range>
+      </package>
+      <package>
+	<name>joomla3</name>
 	<range><ge>3.0.*</ge><le>3.1.5</le></range>
       </package>
     </affects>
@@ -3311,6 +3645,7 @@ JavaScript code would be executed.</p>
     <dates>
       <discovery>2013-11-01</discovery>
       <entry>2013-12-04</entry>
+      <modified>2014-04-23</modified>
     </dates>
   </vuln>
 
@@ -4006,9 +4341,21 @@ JavaScript code would be executed.</p>
     <affects>
       <package>
 	<name>py26-pycrypto</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
 	<name>py27-pycrypto</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
 	<name>py31-pycrypto</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
 	<name>py32-pycrypto</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
 	<name>py33-pycrypto</name>
 	<range><lt>2.6.1</lt></range>
       </package>
@@ -4033,6 +4380,7 @@ JavaScript code would be executed.</p>
     <dates>
       <discovery>2013-10-17</discovery>
       <entry>2013-10-19</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -4041,10 +4389,25 @@ JavaScript code would be executed.</p>
     <affects>
       <package>
 	<name>zh-wordpress-zh_CN</name>
+	<range><lt>3.6.1</lt></range>
+      </package>
+      <package>
 	<name>zh-wordpress-zh_TW</name>
+	<range><lt>3.6.1</lt></range>
+      </package>
+      <package>
 	<name>de-wordpress</name>
+	<range><lt>3.6.1</lt></range>
+      </package>
+      <package>
 	<name>ja-wordpress</name>
+	<range><lt>3.6.1</lt></range>
+      </package>
+      <package>
 	<name>ru-wordpress</name>
+	<range><lt>3.6.1</lt></range>
+      </package>
+      <package>
 	<name>wordpress</name>
 	<range><lt>3.6.1</lt></range>
       </package>
@@ -4079,6 +4442,7 @@ JavaScript code would be executed.</p>
     <dates>
       <discovery>2013-09-11</discovery>
       <entry>2013-10-19</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -4116,11 +4480,18 @@ JavaScript code would be executed.</p>
     <affects>
       <package>
 	<name>bugzilla</name>
-	<name>bugzilla40</name>
-	<name>bugzilla42</name>
-	<name>bugzilla44</name>
 	<range><ge>4.0.0</ge><lt>4.0.11</lt></range>
+      </package>
+      <package>
+	<name>bugzilla40</name>
+	<range><ge>4.0.0</ge><lt>4.0.11</lt></range>
+      </package>
+      <package>
+	<name>bugzilla42</name>
 	<range><ge>4.2.0</ge><lt>4.2.7</lt></range>
+      </package>
+      <package>
+	<name>bugzilla44</name>
 	<range><ge>4.4</ge><lt>4.4.1</lt></range>
       </package>
     </affects>
@@ -4169,6 +4540,7 @@ JavaScript code would be executed.</p>
     <dates>
       <discovery>2013-10-16</discovery>
       <entry>2013-10-17</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -4460,9 +4832,21 @@ affected..</p>
     <affects>
       <package>
 	<name>py26-graphite-web</name>
+	<range><ge>0.9.5</ge><lt>0.9.11</lt></range>
+      </package>
+      <package>
 	<name>py27-graphite-web</name>
+	<range><ge>0.9.5</ge><lt>0.9.11</lt></range>
+      </package>
+      <package>
 	<name>py31-graphite-web</name>
+	<range><ge>0.9.5</ge><lt>0.9.11</lt></range>
+      </package>
+      <package>
 	<name>py32-graphite-web</name>
+	<range><ge>0.9.5</ge><lt>0.9.11</lt></range>
+      </package>
+      <package>
 	<name>py33-graphite-web</name>
 	<range><ge>0.9.5</ge><lt>0.9.11</lt></range>
       </package>
@@ -4484,7 +4868,7 @@ affected..</p>
     <dates>
       <discovery>2013-08-21</discovery>
       <entry>2013-09-30</entry>
-      <modified>2013-09-30</modified>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -4493,12 +4877,19 @@ affected..</p>
     <affects>
       <package>
 	<name>py26-django</name>
+	<range><ge>1.5</ge><lt>1.5.4</lt></range>
+	<range><ge>1.4</ge><lt>1.4.8</lt></range>
+      </package>
+      <package>
 	<name>py27-django</name>
 	<range><ge>1.5</ge><lt>1.5.4</lt></range>
 	<range><ge>1.4</ge><lt>1.4.8</lt></range>
       </package>
       <package>
 	<name>py26-django-devel</name>
+	<range><lt>20130922,1</lt></range>
+      </package>
+      <package>
 	<name>py27-django-devel</name>
 	<range><lt>20130922,1</lt></range>
       </package>
@@ -4520,7 +4911,7 @@ affected..</p>
     <dates>
       <discovery>2013-09-15</discovery>
       <entry>2013-09-22</entry>
-      <modified>2013-09-30</modified>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -4754,12 +5145,19 @@ affected..</p>
     <affects>
       <package>
 	<name>py26-django</name>
+	<range><ge>1.5</ge><lt>1.5.3</lt></range>
+	<range><ge>1.4</ge><lt>1.4.7</lt></range>
+      </package>
+      <package>
 	<name>py27-django</name>
 	<range><ge>1.5</ge><lt>1.5.3</lt></range>
 	<range><ge>1.4</ge><lt>1.4.7</lt></range>
       </package>
       <package>
 	<name>py26-django-devel</name>
+	<range><lt>20130912,1</lt></range>
+      </package>
+      <package>
 	<name>py27-django-devel</name>
 	<range><lt>20130912,1</lt></range>
       </package>
@@ -4782,7 +5180,7 @@ affected..</p>
     <dates>
       <discovery>2013-09-10</discovery>
       <entry>2013-09-12</entry>
-      <modified>2013-09-30</modified>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -5010,6 +5408,9 @@ affected..</p>
     <affects>
       <package>
 	<name>libgcrypt</name>
+	<range><lt>1.5.3</lt></range>
+      </package>
+      <package>
 	<name>linux-f10-libgcrypt</name>
 	<range><lt>1.5.3</lt></range>
       </package>
@@ -5579,9 +5980,21 @@ affected..</p>
       </package>
       <package>
 	<name>zh-wordpress-zh_CN</name>
+	<range><lt>3.5.2</lt></range>
+      </package>
+      <package>
 	<name>zh-wordpress-zh_TW</name>
+	<range><lt>3.5.2</lt></range>
+      </package>
+      <package>
 	<name>de-wordpress</name>
+	<range><lt>3.5.2</lt></range>
+      </package>
+      <package>
 	<name>ja-wordpress</name>
+	<range><lt>3.5.2</lt></range>
+      </package>
+      <package>
 	<name>ru-wordpress</name>
 	<range><lt>3.5.2</lt></range>
       </package>
@@ -5619,6 +6032,7 @@ affected..</p>
     <dates>
       <discovery>2013-06-21</discovery>
       <entry>2013-07-27</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -5627,11 +6041,17 @@ affected..</p>
     <affects>
       <package>
 	<name>bind99</name>
+	<range><gt>9.9.3</gt><lt>9.9.3.2</lt></range>
+      </package>
+      <package>
 	<name>bind99-base</name>
 	<range><gt>9.9.3</gt><lt>9.9.3.2</lt></range>
       </package>
       <package>
 	<name>bind98</name>
+	<range><gt>9.8.5</gt><lt>9.8.5.2</lt></range>
+      </package>
+      <package>
 	<name>bind98-base</name>
 	<range><gt>9.8.5</gt><lt>9.8.5.2</lt></range>
       </package>
@@ -8404,8 +8824,17 @@ affected..</p>
     <affects>
       <package>
 	<name>opera</name>
+	<range><lt>12.15</lt></range>
+      </package>
+      <package>
 	<name>opera-devel</name>
+	<range><lt>12.15</lt></range>
+      </package>
+      <package>
 	<name>linux-opera</name>
+	<range><lt>12.15</lt></range>
+      </package>
+      <package>
 	<name>linux-opera-devel</name>
 	<range><lt>12.15</lt></range>
       </package>
@@ -8425,7 +8854,7 @@ affected..</p>
     </references>
     <dates>
       <discovery>2013-04-04</discovery>
-      <entry>2013-04-06</entry>
+      <entry>2014-04-30</entry>
     </dates>
   </vuln>
 
@@ -10757,9 +11186,21 @@ affected..</p>
       </package>
       <package>
 	<name>zh-wordpress-zh_CN</name>
+	<range><lt>3.5.1</lt></range>
+      </package>
+      <package>
 	<name>zh-wordpress-zh_TW</name>
+	<range><lt>3.5.1</lt></range>
+      </package>
+      <package>
 	<name>de-wordpress</name>
+	<range><lt>3.5.1</lt></range>
+      </package>
+      <package>
 	<name>ja-wordpress</name>
+	<range><lt>3.5.1</lt></range>
+      </package>
+      <package>
 	<name>ru-wordpress</name>
 	<range><lt>3.5.1</lt></range>
       </package>
@@ -10796,6 +11237,7 @@ affected..</p>
     <dates>
       <discovery>2013-01-24</discovery>
       <entry>2013-01-29</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -11805,8 +12247,17 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>opera</name>
+	<range><lt>12.12</lt></range>
+      </package>
+      <package>
 	<name>opera-devel</name>
+	<range><lt>12.12</lt></range>
+      </package>
+      <package>
 	<name>linux-opera</name>
+	<range><lt>12.12</lt></range>
+      </package>
+      <package>
 	<name>linux-opera-devel</name>
 	<range><lt>12.12</lt></range>
       </package>
@@ -11831,6 +12282,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2012-12-18</discovery>
       <entry>2012-12-18</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -12278,8 +12730,17 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>opera</name>
+	<range><lt>12.11</lt></range>
+      </package>
+      <package>
 	<name>opera-devel</name>
+	<range><lt>12.11</lt></range>
+      </package>
+      <package>
 	<name>linux-opera</name>
+	<range><lt>12.11</lt></range>
+      </package>
+      <package>
 	<name>linux-opera-devel</name>
 	<range><lt>12.11</lt></range>
       </package>
@@ -12304,6 +12765,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2012-11-19</discovery>
       <entry>2012-11-22</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -12869,8 +13331,17 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>opera</name>
+	<range><lt>12.10</lt></range>
+      </package>
+      <package>
 	<name>opera-devel</name>
+	<range><lt>12.10</lt></range>
+      </package>
+      <package>
 	<name>linux-opera</name>
+	<range><lt>12.10</lt></range>
+      </package>
+      <package>
 	<name>linux-opera-devel</name>
 	<range><lt>12.10</lt></range>
       </package>
@@ -12903,6 +13374,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2012-11-06</discovery>
       <entry>2012-11-06</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -13432,6 +13904,9 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>xlockmore</name>
+	<range><lt>5.40_1</lt></range>
+      </package>
+      <package>
 	<name>ja-xlockmore</name>
 	<range><lt>5.40_1</lt></range>
       </package>
@@ -13454,6 +13929,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2012-10-17</discovery>
       <entry>2012-10-17</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -14014,11 +14490,17 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>ImageMagick</name>
+	<range><le>6.7.8.6</le></range>
+      </package>
+      <package>
 	<name>ImageMagick-nox11</name>
 	<range><le>6.7.8.6</le></range>
       </package>
       <package>
 	<name>GraphicsMagick</name>
+	<range><ge>1.3.0</ge><le>1.3.16</le></range>
+      </package>
+      <package>
 	<name>GraphicsMagick-nox11</name>
 	<range><ge>1.3.0</ge><le>1.3.16</le></range>
       </package>
@@ -14049,6 +14531,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2012-07-28</discovery>
       <entry>2012-09-20</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -16253,12 +16736,19 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>py26-django</name>
+	<range><ge>1.4</ge><lt>1.4.1</lt></range>
+	<range><ge>1.3</ge><lt>1.3.2</lt></range>
+      </package>
+      <package>
 	<name>py27-django</name>
 	<range><ge>1.4</ge><lt>1.4.1</lt></range>
 	<range><ge>1.3</ge><lt>1.3.2</lt></range>
       </package>
       <package>
 	<name>py26-django-devel</name>
+	<range><lt>20120731,1</lt></range>
+      </package>
+      <package>
 	<name>py27-django-devel</name>
 	<range><lt>20120731,1</lt></range>
       </package>
@@ -16288,7 +16778,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2012-07-30</discovery>
       <entry>2012-07-31</entry>
-      <modified>2012-08-02</modified>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -17282,6 +17772,9 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>ImageMagick</name>
+	<range><lt>6.7.6.4</lt></range>
+      </package>
+      <package>
 	<name>ImageMagick-nox11</name>
 	<range><lt>6.7.6.4</lt></range>
       </package>
@@ -17307,6 +17800,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2012-03-28</discovery>
       <entry>2012-06-14</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 
@@ -17954,6 +18448,9 @@ executed in your Internet Explorer while displaying the email.</p>
     <affects>
       <package>
 	<name>libxml2</name>
+	<range><lt>2.7.8_3</lt></range>
+      </package>
+      <package>
 	<name>linux-f10-libxml2</name>
 	<range><lt>2.7.8_3</lt></range>
       </package>
@@ -17983,6 +18480,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2012-05-15</discovery>
       <entry>2012-05-18</entry>
+      <modified>2014-04-30</modified>
     </dates>
   </vuln>
 

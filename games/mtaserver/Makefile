@@ -1,7 +1,7 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
-PORTNAME=	${MTANAME:L}
+PORTNAME=	${MTANAME:tl}
 PORTVERSION=	0.5
 PORTREVISION=	2
 CATEGORIES=	games linux

@@ -3,6 +3,7 @@
 
 PORTNAME=	qtads
 PORTVERSION=	2.1.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-2.x/${PORTVERSION}
 
@@ -11,8 +12,7 @@ COMMENT=	Cross-platform multimedia interpreter for TADS games
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig qmake
-USE_BZIP2=	yes
+USES=		gmake pkgconfig qmake tar:bzip2
 USE_QT4=	gui moc_build network rcc_build uic_build
 USE_SDL=	sdl mixer sound
 

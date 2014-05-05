@@ -1,5 +1,5 @@
 --- ./lib/functions.php.orig	2012-10-01 07:54:14.000000000 +0100
-+++ ./lib/functions.php	2014-04-27 09:42:04.122737345 +0100
++++ ./lib/functions.php	2014-05-03 07:57:44.751570981 +0100
 @@ -2127,7 +2127,7 @@
   *        crypt, ext_des, md5crypt, blowfish, md5, sha, smd5, ssha, sha512, or clear.
   * @return string The hashed password.

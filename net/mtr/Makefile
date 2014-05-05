@@ -19,7 +19,8 @@ GLIB_DESC=	Build with glib library
 X11_DESC=	Build X11-enabled mtr
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+LDFLAGS+=	-lncurses
+USES=		ncurses pkgconfig
 
 PLIST_FILES=	man/man8/mtr.8.gz \
 		sbin/mtr

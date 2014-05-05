@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	RJSONIO
-DISTVERSION=	1.0-3
-PORTREVISION=	4
+DISTVERSION=	1.2-0.2
 CATEGORIES=	converters
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Serialize R objects to JSON, JavaScript Object Notation
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=	cran:auto-plist
 

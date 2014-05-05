@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfst
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.openfst.org/twiki/pub/FST/FstDownload/
 
@@ -11,7 +11,7 @@ COMMENT=	Library for working with weighted finite-state transducers (FSTs)
 
 LICENSE=	APACHE20
 
-USE_GCC=	yes
+USES=		compiler:c++11-lang
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-compact-fsts --enable-const-fsts --enable-far --enable-linear-fsts --enable-ngram-fsts --enable-lookahead-fsts --enable-pdt

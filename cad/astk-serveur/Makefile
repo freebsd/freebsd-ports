@@ -151,7 +151,7 @@ WITH_ED=	vi
 .endif
 
 unamesm=	${OPSYS} ${ARCH}
-v_ifdef=	${OPSYS:U}
+v_ifdef=	${OPSYS:tu}
 SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
 
 .if !defined(PACKAGE_BUILDING)

@@ -31,9 +31,9 @@ MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
-TARGET_SDIR=	x86_64-unknown-${OPSYS:L}${OSREL}
+TARGET_SDIR=	x86_64-unknown-${OPSYS:tl}${OSREL}
 .else
-TARGET_SDIR=	${ARCH}-unknown-${OPSYS:L}${OSREL}
+TARGET_SDIR=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 REDUCECSL=	${WRKSRC}/cslbuild/${TARGET_SDIR}/csl
 

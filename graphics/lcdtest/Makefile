@@ -3,7 +3,7 @@
 
 PORTNAME=	lcdtest
 PORTVERSION=	1.18
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.brouhaha.com/~eric/software/lcdtest/download/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -11,12 +11,12 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LCD monitor test pattern generator
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/Liberation/LiberationMono-Bold.ttf:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
+RUN_DEPENDS=	liberation-fonts-ttf>0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
 
 USE_SDL=	sdl image ttf
 
@@ -29,11 +29,11 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	README
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/fonts/liberation/|${LOCALBASE}/lib/X11/fonts/Liberation/|' \
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/fonts/liberation/|${LOCALBASE}/lib/X11/fonts/Liberation/|' \
 		${WRKSRC}/src/lcdtest.c
 
 do-build:

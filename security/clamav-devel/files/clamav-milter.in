@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: clamav-milter
+# PROVIDE: clamav_milter
 # REQUIRE: LOGIN clamd
 # BEFORE: mail
 # KEYWORD: shutdown
@@ -11,7 +11,7 @@
 #
 # Add the following lines to /etc/rc.conf to enable clamav-milter:
 #
-#clamav_milter_enable="YES"
+# clamav_milter_enable="YES"
 #
 # See clamav-milter(1) for flags
 #
@@ -20,6 +20,18 @@
 
 name=clamav_milter
 rcvar=clamav_milter_enable
+
+load_rc_config $name
+
+: ${clamav_milter_enable:=NO}
+: ${clamav_milter_socket="%%CLAMAV_MILTER_SOCKET%%"}
+: ${clamav_milter_flags="-c ${conf_file}"}
+: ${clamav_milter_socktimeout=60}
+: ${clamav_milter_socket_mode=777}
+: ${clamav_milter_socket_user=%%CLAMAVUSER%%}
+: ${clamav_milter_socket_group=%%CLAMAVGROUP%%}
+: ${clamav_clamd_enable:=NO}
+: ${clamav_clamd_socket="%%CLAMAV_CLAMD_SOCKET%%"}
 
 conf_file=%%PREFIX%%/etc/clamav-milter.conf
 command=%%PREFIX%%/sbin/clamav-milter
@@ -88,18 +100,5 @@ start_postcmd()
 		%%CHOWN%% ${clamav_milter_socket_user}:${clamav_milter_socket_group} ${clamav_milter_socket}
 	fi
 }
-
-# read settings, set default values
-load_rc_config $name
-: ${clamav_milter_enable="NO"}
-: ${clamav_milter_socket="%%CLAMAV_MILTER_SOCKET%%"}
-: ${clamav_milter_flags="-c ${conf_file}"}
-: ${clamav_milter_socktimeout="60"}
-: ${clamav_milter_socket_mode="777"}
-: ${clamav_milter_socket_user="%%CLAMAVUSER%%"}
-: ${clamav_milter_socket_group="%%CLAMAVGROUP%%"}
-
-: ${clamav_clamd_socket="%%CLAMAV_CLAMD_SOCKET%%"}
-: ${clamav_clamd_enable="NO"}
 
 run_rc_command "$1"

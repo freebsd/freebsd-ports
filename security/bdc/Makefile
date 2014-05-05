@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.2-fbsd${BDREL}
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	BitDefender Console Antivirus for FreeBSD
 
-LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	libc.so.5:${PORTSDIR}/misc/compat5x
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
@@ -23,7 +23,8 @@ RESTRICTED=	License prohibits redistribution
 
 BDREL=		5
 
-NO_STAGE=	yes
+SUB_LIST=	bdc pkg-message
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -36,18 +37,14 @@ Once the file has been downloaded, move it to ${DISTDIR} and restart the build
 .endif
 
 do-install:
-	@cd ${WRKDIR} && ${TAR} -cf - bdc | ${TAR} -xf - -C ${PREFIX}/
-	@${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/bdc
-	@${CHMOD} -R a=rX,u+w ${PREFIX}/bdc/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} bdc ${STAGEDIR}${PREFIX}
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}/bdc
+	${CHMOD} -R a=rX,u+w ${STAGEDIR}${PREFIX}/bdc/
 
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%PORTNAME%%|${PORTNAME}|g' \
-		< ${PKGDIR}/pkg-message > ${PKGMESSAGE}
+	${MV} ${STAGEDIR}${PREFIX}/bdc/doc ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${STAGEDIR}${PREFIX}/bdc/man/bdc.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${RM} -f ${STAGEDIR}${PREFIX}/bdc/man
 
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g'  \
-		< ${FILESDIR}/bdc > ${PREFIX}/bin/bdc
-	@${CHMOD} +x ${PREFIX}/bin/bdc
-
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKDIR}/bdc ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>

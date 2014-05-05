@@ -7,8 +7,11 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A class for discovering the local system's IP address
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	Class for discovering the local system's IP address
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS:=	${BUILD_DEPENDS}

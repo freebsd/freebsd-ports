@@ -16,6 +16,16 @@ lib/cook/en/LC_MESSAGES/file_check.mo
 lib/cook/en/LC_MESSAGES/find_libs.mo
 lib/cook/en/LC_MESSAGES/make2cook.mo
 lib/cook/en/LC_MESSAGES/roffpp.mo
+man/man1/c_incl.1.gz
+man/man1/cook.1.gz
+man/man1/cook_bom.1.gz
+man/man1/cook_lic.1.gz
+man/man1/cook_rsh.1.gz
+man/man1/cookfp.1.gz
+man/man1/cooktime.1.gz
+man/man1/find_libs.1.gz
+man/man1/make2cook.1.gz
+man/man1/roffpp.1.gz
 share/cook/as
 share/cook/bison
 share/cook/c

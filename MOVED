@@ -6059,7 +6059,7 @@ graphics/camediaplay||2014-04-13|Has expired: Unmaintained since 2001
 math/umatrix||2014-04-13|Has expired: Unmaintained since 2001
 lang/f77||2014-04-13|Has expired: Unmaintained since 2001
 security/labrea||2014-04-14|Has expired: Unmaintained since 2003
-lang/dmd|lang/dmd1|2014-04-14|Upline no longer supports dmd 1.X, it is now the secondary dmd port.
+lang/dmd|lang/dmd1|2014-04-14|Upline no longer supports dmd 1.X, it is now the secondary dmd port
 www/mod_python3|www/mod_python33|2014-04-15|Port moved to reflect PKGNAMESUFFIX
 lang/dragonegg-devel46||2014-04-16|C++ library incompatibilities, unmainteined upstream
 ports-mgmt/pkgsearch||2014-04-18|Has expired: Upstream disappeared
@@ -6112,5 +6112,42 @@ emulators/mupen64-dummyaudio||2014-04-24|Has expired: Use mupen64plus instead
 emulators/mupen64-base|emulators/mupen64plus-core|2014-04-24|Has expired: Use mupen64plus instead
 x11/emu||2014-04-24|Has expired: Broken, not staged
 lang/ruby-doc-stdlib||2014-04-24|Has expired: Upstream rerolls frequently, online docs work well
-emulators/mupen64-rice|emulators/mupen64-video-rice|2014-04-24|Removed, part of removed mupen64
+emulators/mupen64-rice|emulators/mupen64plus-video-rice|2014-04-24|Removed, part of removed mupen64
 devel/otrs|www/otrs|2014-04-28|OTRS is actually web based ticket system and it has nothing with development
+audio/cantus_3||2014-04-28|Broken for a while, does not build with modern compilers
+multimedia/xfce4-xmms-plugin||2014-04-28|Has expired: Abandonware, and can't select another player instead XMMS
+multimedia/xmms-weasel||2014-04-28|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/xmms-sexyspc||2014-04-28|Has expired: Abandonware, please consider using multimedia/audacious instead
+audio/libmusicbrainz4|audio/libmusicbrainz5|2014-04-28|Has expired: Please use audio/libmusicbrainz5 instead
+cad/kicad-library||2014-05-02|kicad-library is no more distributed separately
+science/hdf5-18|science/hdf5|2014-05-03|Use science/hdf5 instead
+science/netcdf-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
+science/netcdf3-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
+science/netcdf4|science/netcdf|2014-05-03|Use science/netcdf instead
+net/wackamole||2014-05-04|Has expired: Depends on expired www/spread
+x11-toolkits/gigi||2014-05-04|Has expired: Does not compile on 10 or higher
+net/asterisk-oh323||2014-05-04|Has expired: Depends on broken and unsupported asterisk14
+net/asterisk14||2014-05-04|Has expired: Broken and unsupported
+net/asterisk14-addons||2014-05-04|Has expired: Depends on broken and unsupported asterisk14
+ports-mgmt/pkg_install||2014-05-04|Has expired: Replaced by ports-mgmt/pkg
+x11-drivers/xf86-input-magictouch||2014-05-04|Has expired: Does not compile
+x11-drivers/xf86-video-cyrix||2014-05-04|Has expired: requires pciVideoPtr typedef
+x11-drivers/xf86-video-sis-intel||2014-05-04|Has expired: requires pciVideoPtr typedef
+net/py-spreadmodule||2014-05-04|Has expired: Depends on expired net/spread
+net/p5-Spread-Message||2014-05-04|Has expired: Depends on expired net/spread
+net/p5-POE-Component-Spread||2014-05-04|Has expired: Depends on expired net/spread
+net/p5-Spread-Session||2014-05-04|Has expired: Depends on expired net/spread
+sysutils/wmmemload||2014-05-04|Has expired: Broken
+lang/ml-pnet||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+lang/treecc||2014-05-04|Has expired: PNET dependency decommissioned Dec 2012
+lang/pnetlib||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+lang/pnet-base||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+benchmarks/pnetmark||2014-05-04|Has expired: PNET dependency decommissioned Dec 2012
+lang/pnet||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
+x11-wm/stumpwm||2014-05-04|Has expired: Broken for more than 4 months
+sysutils/cpupowerd||2014-05-04|Has expired: Not maintained from upstream anymore and only supports ancient AMD K8.
+net/pchar||2014-05-04|Has expired: Obsolete, abandoned
+x11-fonts/texcm-ttf||2014-05-04|Has expired: Should be replaced by x11-fonts/stix-fonts
+devel/buildapp||2014-05-05|Has expired: Broken for more than 6 months
+converters/konwert||2014-05-05|Broken with modern compilers, not stage, no upstream
+graphics/gimp-gap||2014-05-05|Broken with gimp 2.8, no release in 5 years.

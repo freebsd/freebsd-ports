@@ -7,7 +7,7 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF/releases/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME:U}${PORTVERSION}/src/
+MASTER_SITE_SUBDIR=	${PORTNAME:tu}${PORTVERSION}/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)

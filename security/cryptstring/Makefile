@@ -12,9 +12,8 @@ COMMENT=	Crypto Strings for PHP
 NO_BUILD=	yes
 USE_PHP=	mcrypt mhash
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/cs.inc.php ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/cs.inc.php ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

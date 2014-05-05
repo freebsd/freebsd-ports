@@ -7,5 +7,3 @@ share/icons/hicolor/512x512/apps/eos-movrec.png
 share/pixmaps/eos-movrec.png
 @dirrmtry share/icons/hicolor/512x512/apps
 @dirrmtry share/icons/hicolor/512x512
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons

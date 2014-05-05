@@ -3,7 +3,7 @@
 
 PORTNAME=	vigra
 PORTVERSION=	1.9.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://hci.iwr.uni-heidelberg.de/vigra/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -29,7 +29,7 @@ NUMPY_DESC=		NumPy mathematical computing (USE Fortran/GCC46+)
 
 .if ${PORT_OPTIONS:MHDF5}
 CMAKE_ARGS+=	-DWITH_HDF5=1
-LIB_DEPENDS+=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5
 .else
 CMAKE_ARGS+=	-DWITH_HDF5=0
 .endif
@@ -50,7 +50,7 @@ USE_PYTHON=	2
 BUILD_DEPENDS+=	nosetests:${PORTSDIR}/devel/py-nose
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
 #BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 PLIST_SUB+=	PYTHON=""
 .else

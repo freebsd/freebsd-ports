@@ -24,21 +24,17 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=1.08:${PORTSDIR}/security/p5-Crypt-Rijndael \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
-MAN1=	${PORTNAME}.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/kpcli
+PLIST_FILES=	bin/kpcli man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}.pl ${WRKSRC}/${PORTNAME}
+	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}.pl ${WRKSRC}/${PORTNAME}
 
 do-build:
 	${LOCALBASE}/bin/pod2man ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.1
-	${GZIP_CMD} ${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${MAN1PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

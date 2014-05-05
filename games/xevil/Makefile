@@ -23,7 +23,7 @@ USE_XORG=	xpm
 DOS2UNIX_GLOB=	*.cpp *.h config.mk makefile
 MAKEFILE=	makefile
 MAKE_ARGS=	DEPTH="${WRKSRC}"
-ALL_TARGET=	${OPSYS:L}
+ALL_TARGET=	${OPSYS:tl}
 
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
@@ -33,7 +33,7 @@ post-patch:
 		's|^static char|static const char|'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/x11/${OPSYS:U}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/x11/${OPSYS:tu}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/instructions

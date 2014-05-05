@@ -3,7 +3,7 @@
 
 PORTNAME=	kroc
 PORTVERSION=	1.5.r6372
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.i-scream.org/pub/kroc/ \
 		ftp://ftp.i-scream.org/pub/kroc/
@@ -15,12 +15,13 @@ COMMENT=	The Kent Retargetable occam-pi Compiler
 BROKEN=		Fails to build
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 ONLY_FOR_ARCHS=	i386
 
-USE_BZIP2=	yes
+USES=		pathfix pkgconfig tar:bzip2
+PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_MYSQL=	yes
@@ -30,26 +31,16 @@ USE_GNOME=	libxslt
 USE_AUTOTOOLS=	autoconf:env automake:env
 USE_XORG=	xmu xi
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
 
-MAN1=		kmakef.1 kroc.1 mkoccdeps.1 occ21.1 occamdoc.1
-MAN3=		libconvert-inmos.3 libcourse-cycles.3 libcourse-nets.3 \
-		libcourse-utils.3 libfile.3 libhostio-inmos.3 libmath-inmos.3 \
-		libproc.3 libsock.3 libstreamio-inmos.3 libstring-inmos.3
-
-NO_STAGE=	yes
-
-# Fix pkgconfig location
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.am" -type f | \
-		${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
+	@${FIND} ${WRKSRC} -type f -name configure.ac | \
+		${XARGS} ${REINPLACE_CMD} '/AM_C_PROTOTYPES/d'
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} \
 		${AUTORECONF} -f -i)
 
 regression-test:
-	@cd ${WRKSRC} && ${MAKE} check
+	@(cd ${WRKSRC} && ${MAKE_CMD} check)
 
 .include <bsd.port.mk>

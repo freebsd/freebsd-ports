@@ -36,8 +36,8 @@ CFLAGS+=	-fno-stack-protector
 
 # add lua prefix to directories
 .for p in data: docs:doc/ examples:examples/
-${p:C/:.*//:U}DIR_REL=	share/${p:C/.*://}${LUA_PKGNAMEPREFIX}${PORTNAME}
-${p:C/:.*//:U}DIR=	${PREFIX}/${${p:C/:.*//:U}DIR_REL}
+${p:C/:.*//:tu}DIR_REL=	share/${p:C/.*://}${LUA_PKGNAMEPREFIX}${PORTNAME}
+${p:C/:.*//:tu}DIR=	${PREFIX}/${${p:C/:.*//:tu}DIR_REL}
 .endfor
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

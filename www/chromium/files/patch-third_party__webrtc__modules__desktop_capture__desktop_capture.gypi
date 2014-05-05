@@ -1,6 +1,6 @@
---- third_party/webrtc/modules/desktop_capture/desktop_capture.gypi.orig	2013-08-16 22:24:59.000000000 +0300
-+++ third_party/webrtc/modules/desktop_capture/desktop_capture.gypi	2013-08-16 22:27:28.000000000 +0300
-@@ -75,6 +75,11 @@
+--- ./third_party/webrtc/modules/desktop_capture/desktop_capture.gypi.orig	2014-04-24 22:37:06.000000000 +0200
++++ ./third_party/webrtc/modules/desktop_capture/desktop_capture.gypi	2014-04-24 23:23:48.000000000 +0200
+@@ -99,6 +99,11 @@
              ],
            },
          }],
@@ -11,4 +11,4 @@
 +        }],
          ['OS!="win" and OS!="mac" and use_x11==0', {
            'sources': [
-             "screen_capturer_null.cc",
+             "mouse_cursor_monitor_null.cc",

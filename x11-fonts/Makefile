@@ -152,7 +152,6 @@
     SUBDIR += stix-fonts
     SUBDIR += suxus
     SUBDIR += terminus-font
-    SUBDIR += texcm-ttf
     SUBDIR += tkfont
     SUBDIR += tmu
     SUBDIR += ttmkfdir

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc49
-PORTVERSION=	4.9.1.s20140423
+PORTVERSION=	4.9.1.s20140430
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -51,9 +51,9 @@ BOOTSTRAP_DESC=		Build using a full bootstrap
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:L}${OSREL}
+CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 .else
-CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:L}${OSREL}
+CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${ARCH} == powerpc64

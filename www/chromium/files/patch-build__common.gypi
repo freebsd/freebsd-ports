@@ -1,6 +1,6 @@
---- build/common.gypi.orig	2014-02-20 21:28:44.000000000 +0100
-+++ build/common.gypi	2014-02-24 23:02:26.000000000 +0100
-@@ -573,7 +573,7 @@
+--- ./build/common.gypi.orig	2014-04-24 22:36:09.000000000 +0200
++++ ./build/common.gypi	2014-04-24 23:23:42.000000000 +0200
+@@ -565,7 +565,7 @@
          }],
  
          # DBus usage.
@@ -9,7 +9,7 @@
            'use_dbus%': 1,
          }, {
            'use_dbus%': 0,
-@@ -1008,6 +1008,10 @@
+@@ -1002,6 +1002,10 @@
      # able to turn it off for various reasons.
      'linux_disable_pie%': 0,
  
@@ -20,16 +20,16 @@
      # The release channel that this build targets. This is used to restrict
      # channel-specific build options, like which installer packages to create.
      # The default is 'all', which does no channel-specific filtering.
-@@ -1283,7 +1287,7 @@
-       }],
-       ['os_posix==1 and OS!="mac" and OS!="ios"', {
-         # Figure out the python architecture to decide if we build pyauto.
--        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/<(system_libdir)/libpython<(python_ver).so.1.0)',
-+        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)<(prefix_dir)/lib/libpython<(python_ver).so.1)',
-         'conditions': [
-           ['target_arch=="mipsel"', {
-             'werror%': '',
-@@ -3610,6 +3614,13 @@
+@@ -1322,7 +1326,7 @@
+           # TODO(jungshik): Turn this on on Android.
+           # For ChromeOS, this should be turned on in chromeos-chrome.ebuild
+           # file as well by adding icu_use_data_file_flag=1 to BUILD_DEFINES.
+-          ['OS!="android"', {
++          ['OS!="android" and os_bsd!=1', {
+             'icu_use_data_file_flag%': 1,
+           }],
+         ],
+@@ -3701,6 +3705,13 @@
          'ldflags': [
            '-Wl,--no-keep-memory',
          ],

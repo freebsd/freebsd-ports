@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual database query tool for Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \

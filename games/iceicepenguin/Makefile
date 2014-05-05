@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	iceicepenguin
@@ -11,7 +11,7 @@ DISTFILES=	iip.${DISTVERSION}-final${EXTRACT_SUFX} \
 		${PORTNAME}_icons_1${EXTRACT_SUFX}:icons
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Remake of an old SEGA Dreamcast game called Chu Chu Rocket
 
 LICENSE=	GPLv3
@@ -25,6 +25,7 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 
 PORTDOCS=	CHANGELOG.txt readme.txt
+OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96

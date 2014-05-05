@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.4.7
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -535,6 +534,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_STICKY}
+IGNORE=	STICKY: update require
 USE_HTTP_SSL=	yes
 NGINX_UPSTREAM_STICKY_VERSION=	1.1
 MASTER_SITES+=	http://nginx-sticky-module.googlecode.com/files/:upstreamsticky
@@ -660,6 +660,7 @@ CFLAGS+=	-DNDEBUG
 .endif
 
 .if ${PORT_OPTIONS:MPOSTGRES}
+IGNORE=	POSTGRES: update require
 USE_PGSQL=	yes
 NGINX_POSTGRES_VERSION=	0.9
 MASTER_SITES+=	http://labs.frickle.com/files/:postgres
@@ -740,12 +741,14 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSI
 .endif
 
 .if ${PORT_OPTIONS:MSYSLOG_SUPPORT}
+IGNORE=	SYSLOG: update require
 NGINX_SYSLOG_SUPPORT_FACILITY?=	LOG_DAEMON
 CONFIGURE_ARGS+=--with-syslog --with-syslog-facility=${NGINX_SYSLOG_SUPPORT_FACILITY}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-syslog_support
 .endif
 
 .if ${PORT_OPTIONS:MTCP_PROXY}
+IGNORE=	TCP_PROXY: update require
 NGINX_TCP_PROXY_VERSION=	0.26
 GIT_TCP_PROXY_VERSION=	0-gb83e5a6
 MASTER_SITES+=	https://github.com/yaoweibin/nginx_tcp_proxy_module/tarball/v${NGINX_TCP_PROXY_VERSION}/:tcp_proxy

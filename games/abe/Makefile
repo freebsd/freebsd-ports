@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Abe's Amazing Adventure
 
 LICENSE=	GPLv2
@@ -26,16 +26,18 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-DESKTOP_ENTRIES="Abe's Amazing Avanture" "" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ""
-
 OPTIONS_DEFINE=	DOCS GOD_MODE OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	GOD_MODE OPTIMIZED_CFLAGS
 GOD_MODE_DESC=	Enable God Mode (toggle with 'g')
 
+DESKTOP_ENTRIES="Abe's Amazing Avanture" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
+
 .include <bsd.port.options.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%u|%zu|' ${WRKSRC}/src/MapIO.c
+
 .if ${PORT_OPTIONS:MGOD_MODE} || ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 . if ${PORT_OPTIONS:MGOD_MODE}
 	@${REINPLACE_CMD} -e 's|#define GOD_MODE 0|#define GOD_MODE 1|' \
@@ -49,9 +51,6 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 . endif
 .endif
-
-	@${REINPLACE_CMD} -e 's|%u|%zu|' \
-	${WRKSRC}/src/MapIO.c
 
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \

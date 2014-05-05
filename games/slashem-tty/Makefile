@@ -6,7 +6,7 @@ PORTVERSION=	0.0.7E.7F.3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/0.0.7E7F3
 PKGNAMESUFFIX=	-tty
-DISTNAME=	se${PORTVERSION:S/.//g:L}
+DISTNAME=	se${PORTVERSION:S/.//g:tl}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A dungeon explorin', slashin', hackin' game

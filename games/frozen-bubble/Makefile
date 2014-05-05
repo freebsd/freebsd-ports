@@ -3,7 +3,7 @@
 
 PORTNAME=	frozen-bubble
 DISTVERSION=	2.2.1-beta1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.frozen-bubble.org/data/
 
@@ -22,8 +22,7 @@ RUN_DEPENDS=	p5-SDL>=2.511:${PORTSDIR}/devel/p5-SDL \
 		p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
 		p5-Alien-SDL>=1.413:${PORTSDIR}/devel/p5-Alien-SDL
 
-USES=		perl5 pkgconfig
-USE_BZIP2=	yes
+USES=		perl5 pkgconfig tar:bzip2
 USE_PERL5=	modbuild
 USE_SDL=	mixer pango sdl ttf
 CFLAGS+=	-Qunused-arguments

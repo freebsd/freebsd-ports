@@ -5,7 +5,7 @@ PORTNAME=	Hyperlatex
 DISTVERSION=	2.9a
 PORTREVISION=	4
 CATEGORIES=	print
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/2.9a
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/2.9a
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce HTML and printed documents from LaTeX source

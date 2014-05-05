@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CPAN-Meta
-PORTVERSION=	2.140640
+PORTVERSION=	2.141170
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements \
 		p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
-		p5-Parse-CPAN-Meta>=1.44.03:${PORTSDIR}/devel/p5-Parse-CPAN-Meta \
-		p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		p5-Parse-CPAN-Meta>=1.44.03:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

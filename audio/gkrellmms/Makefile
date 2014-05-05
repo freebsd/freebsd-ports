@@ -3,7 +3,7 @@
 
 PORTNAME=	gkrellmms
 PORTVERSION=	0.5.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
 

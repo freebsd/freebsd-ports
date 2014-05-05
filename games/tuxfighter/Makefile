@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tuxfighter
@@ -11,7 +11,7 @@ DISTFILES=	TuxFighter${DISTVERSION}.tar.gz \
 		${PORTNAME}_icons.tar.gz:icons
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Little Asteroids-like Shooter game
 
 LICENSE=	GPLv2
@@ -20,17 +20,18 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}
 
-USE_PYTHON=	yes
+USE_PYTHON=	2
 
 PORTDOCS=	readme_TuxFighter54.txt
+OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	48x48 64x64 72x72 96x96
 
-SUB_FILES=	${PORTNAME}
+SUB_FILES=	${PORTNAME} pkg-message
 
-DESKTOP_ENTRIES="TuxFighter" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+DESKTOP_ENTRIES="TuxFighter" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
@@ -41,13 +42,10 @@ do-install:
 		${WRKDIR}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-
-.for d in  *.py *.pyc *.pyo
-	@(cd ${WRKSRC} ; ${INSTALL_SCRIPT} ${d} ${STAGEDIR}${DATADIR})
-.endfor
-
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR})
+.for f in *.py *.pyc *.pyo
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
+.endfor
 
 post-install:
 .for s in ${ICON_SIZES}

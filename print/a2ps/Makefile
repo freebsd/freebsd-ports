@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--with-medium=libpaper --sharedstatedir=${PREFIX}/share \
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
 PAPERSIZE?=
-.if ${PAPERSIZE:L} == a4
+.if ${PAPERSIZE:tl} == a4
 RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:${PORTSDIR}/print/papersize-default-a4
 .endif
 

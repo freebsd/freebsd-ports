@@ -72,14 +72,14 @@ KO.SANSSERIF=	HYGoThic-Medium
 all:
 	@${MKDIR} CIDFont Font
 .for T in ${TEMPLATES_TTF}
-	@for F in ${${T:U}}; do \
+	@for F in ${${T:tu}}; do \
 		echo "Generating CIDFont/$${F}"; \
 		sed -e "s,%%FONTNAME%%,$$F,g" \
 		    -e "s,%%GS_FONTDIR%%,${GS_FONTDIR}," \
-		    -e "s,%%GENERICFONTNAME%%,${${T:U}.GENERIC}," \
-		    -e "s,%%GENERICFONTNAME_SUBST%%,${${T:U}.GENERIC_SUBST}," \
+		    -e "s,%%GENERICFONTNAME%%,${${T:tu}.GENERIC}," \
+		    -e "s,%%GENERICFONTNAME_SUBST%%,${${T:tu}.GENERIC_SUBST}," \
 		    < template.ttcidfont > CIDFont/$${F}; \
-		for D in ${${T:U:C/\.[^.]*$//}.CMAPS}; do \
+		for D in ${${T:tu:C/\.[^.]*$//}.CMAPS}; do \
 			if [ -d ${CMAPDIR}/$${D}/CMap ]; then \
 			CMAPS=`cd ${CMAPDIR}/$${D}/CMap; echo *`; \
 			elif [ -r ${CMAPDIR}/$${D} ]; then \
@@ -92,22 +92,22 @@ all:
 				sed -e "s,%%FONTNAME%%,$$F,g" \
 				    -e "s,%%GS_FONTDIR%%,${GS_FONTDIR}," \
 				    -e "s,%%CMAPNAME%%,$${C}," \
-				    -e "s,%%GENERICFONTNAME%%,${${T:U}.GENERIC}," \
-		    		    -e "s,%%GENERICFONTNAME_SUBST%%,${${T:U}.GENERIC_SUBST}," \
+				    -e "s,%%GENERICFONTNAME%%,${${T:tu}.GENERIC}," \
+		    		    -e "s,%%GENERICFONTNAME_SUBST%%,${${T:tu}.GENERIC_SUBST}," \
 				    < template.font > Font/$${F}-$${C}; \
 			done; \
 		done; \
 	done | awk "${PROGRESS}"
 .endfor
 .for T in ${TEMPLATES_CID}
-	@for F in ${${T:U}}; do \
+	@for F in ${${T:tu}}; do \
 		echo "Generating CIDFont/$${F}"; \
 		sed -e "s,%%FONTNAME%%,$$F,g" \
 		    -e "s,%%GS_FONTDIR%%,${GS_FONTDIR}," \
-		    -e "s,%%GENERICFONTNAME%%,${${T:U}.GENERIC}," \
-		    -e "s,%%GENERICFONTNAME_SUBST%%,${${T:U}.GENERIC_SUBST}," \
+		    -e "s,%%GENERICFONTNAME%%,${${T:tu}.GENERIC}," \
+		    -e "s,%%GENERICFONTNAME_SUBST%%,${${T:tu}.GENERIC_SUBST}," \
 		    < template.cidfont > CIDFont/$${F}; \
-		for D in ${${T:U:C/\.[^.]*$//}.CMAPS}; do \
+		for D in ${${T:tu:C/\.[^.]*$//}.CMAPS}; do \
 			if [ -d ${CMAPDIR}/$${D}/CMap ]; then \
 			CMAPS=`cd ${CMAPDIR}/$${D}/CMap; echo *`; \
 			elif [ -r ${CMAPDIR}/$${D} ]; then \
@@ -120,8 +120,8 @@ all:
 				sed -e "s,%%FONTNAME%%,$$F,g" \
 				    -e "s,%%GS_FONTDIR%%,${GS_FONTDIR}," \
 				    -e "s,%%CMAPNAME%%,$${C}," \
-				    -e "s,%%GENERICFONTNAME%%,${${T:U}.GENERIC}," \
-		    		    -e "s,%%GENERICFONTNAME_SUBST%%,${${T:U}.GENERIC_SUBST}," \
+				    -e "s,%%GENERICFONTNAME%%,${${T:tu}.GENERIC}," \
+		    		    -e "s,%%GENERICFONTNAME_SUBST%%,${${T:tu}.GENERIC_SUBST}," \
 				    < template.font > Font/$${F}-$${C}; \
 			done; \
 		done; \
@@ -137,5 +137,5 @@ install:
 	${MKDIR} ${GS_RESCMAPDIR}
 	cd ${GS_RESCMAPDIR} && ${LN} -s -f `${FIND} ${CMAPDIR} -type f` .
 .for T in ${TEMPLATES_CID}
-	cd ${GS_RESCIDFONTDIR} && ${LN} -s -f ${CIDFONTDIR}/${${T:U}.GENERIC_SUBST} ${${T:U}.GENERIC_SUBST}
+	cd ${GS_RESCIDFONTDIR} && ${LN} -s -f ${CIDFONTDIR}/${${T:tu}.GENERIC_SUBST} ${${T:tu}.GENERIC_SUBST}
 .endfor

@@ -4,7 +4,7 @@
 PORTNAME=	i2p
 PORTVERSION=	0.9.11
 CATEGORIES=	security java net-p2p
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTVERSION} \
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTVERSION} \
 		http://download.i2p2.no/releases/${PORTVERSION}/ \
 		http://download2.geti2p.com/${PORTVERSION}/ \
 		http://download.geti2p.com/${PORTVERSION}/ \

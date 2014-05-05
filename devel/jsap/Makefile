@@ -6,7 +6,7 @@ DISTVERSION=	2.1
 PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME:U}-${DISTVERSION}
+DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java package to parse command-line arguments

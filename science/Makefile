@@ -27,6 +27,7 @@
     SUBDIR += cdf
     SUBDIR += cdo
     SUBDIR += cgnslib
+    SUBDIR += cgribex
     SUBDIR += checkmol
     SUBDIR += chemical-mime-data
     SUBDIR += chemtool
@@ -69,7 +70,6 @@
     SUBDIR += hdf
     SUBDIR += hdf-java
     SUBDIR += hdf5
-    SUBDIR += hdf5-18
     SUBDIR += hs-bio
     SUBDIR += isaac-cfd
     SUBDIR += jmol
@@ -101,9 +101,8 @@
     SUBDIR += mpqc-mpich
     SUBDIR += ncs
     SUBDIR += netcdf
-    SUBDIR += netcdf-ftn
-    SUBDIR += netcdf3-ftn
-    SUBDIR += netcdf4
+    SUBDIR += netcdf-cxx
+    SUBDIR += netcdf-fortran
     SUBDIR += nifticlib
     SUBDIR += openbabel
     SUBDIR += openkim

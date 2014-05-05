@@ -3,6 +3,7 @@
 
 PORTNAME=	mjpegtools
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME:S/tools//}/${PORTNAME}/${PORTVERSION}
 
@@ -16,9 +17,10 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 CONFLICTS=	mplex-[0-9]*
 
-USES=		gmake pkgconfig
+USES=		gmake libtool pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile.am
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-LIBTOOLIZE_ARGS=--force
+LIBTOOLIZE_ARGS=-i -c -f
 ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} \
 		-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --foreign
@@ -47,7 +49,6 @@ SDL_CONFIGURE_OFF=	--without-libsdl --without-sdlgfx
 SIMD_CONFIGURE_ENABLE=	simd-accel
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 CFLAGS:=	${CFLAGS:N-O*:N-fno-strict*}
@@ -61,8 +62,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's| \*-\*-linux\*)| *-*-*)| ; \
 		 /ARCHFLAGS=/s|^|#|g' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e \
-		'/^pkgconfigdir/s|$$(libdir)|$$(prefix)/libdata|g' ${WRKSRC}/Makefile.am
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/missing
@@ -75,4 +74,4 @@ post-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

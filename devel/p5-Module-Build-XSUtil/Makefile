@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Build-XSUtil
-PORTVERSION=	0.06
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,9 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Devel-CheckCompiler>=0.02:${PORTSDIR}/devel/p5-Devel-CheckCompiler
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
+		p5-Cwd-Guard>=0:${PORTSDIR}/devel/p5-Cwd-Guard \
+		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive
 
 USE_PERL5=	modbuild
 USES=		perl5

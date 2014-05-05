@@ -1,5 +1,6 @@
 bin/isomaster
-%%DESKTOPDIR%%/isomaster.desktop
+man/man1/isomaster.1.gz
+share/applications/isomaster.desktop
 %%DATADIR%%/icons/add2-kearone.png
 %%DATADIR%%/icons/delete-kearone.png
 %%DATADIR%%/icons/extract2-kearone.png
@@ -9,6 +10,7 @@ bin/isomaster
 share/locale/ar/LC_MESSAGES/isomaster.mo
 share/locale/be@latin/LC_MESSAGES/isomaster.mo
 share/locale/bg/LC_MESSAGES/isomaster.mo
+share/locale/bn_IN/LC_MESSAGES/isomaster.mo
 share/locale/ca/LC_MESSAGES/isomaster.mo
 share/locale/cs/LC_MESSAGES/isomaster.mo
 share/locale/da/LC_MESSAGES/isomaster.mo
@@ -19,6 +21,7 @@ share/locale/et/LC_MESSAGES/isomaster.mo
 share/locale/fi/LC_MESSAGES/isomaster.mo
 share/locale/fo/LC_MESSAGES/isomaster.mo
 share/locale/fr/LC_MESSAGES/isomaster.mo
+share/locale/gl/LC_MESSAGES/isomaster.mo
 share/locale/he/LC_MESSAGES/isomaster.mo
 share/locale/hr/LC_MESSAGES/isomaster.mo
 share/locale/hu/LC_MESSAGES/isomaster.mo
@@ -49,12 +52,7 @@ share/locale/zh_CN/LC_MESSAGES/isomaster.mo
 share/locale/zh_TW/LC_MESSAGES/isomaster.mo
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry %%DESKTOPDIR%%

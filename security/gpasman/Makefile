@@ -16,8 +16,7 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"
 
-NO_STAGE=	yes
 do-install:
-	 ${INSTALL_PROGRAM} ${WRKSRC}/src/gpasman ${PREFIX}/bin
+	 ${INSTALL_PROGRAM} ${WRKSRC}/src/gpasman ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

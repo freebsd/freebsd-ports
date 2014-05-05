@@ -4,16 +4,14 @@ PORTNAME=	gmic
 PORTVERSION=	1.5.8.3
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME} \
-		SF/${PORTNAME}/old
+MASTER_SITES=	SF/${PORTNAME}/ \
+		SF/${PORTNAME}/old_versions/
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GREYC's Magic Image Converter
-
-BROKEN=		Unfetchable
 
 LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick13 \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \

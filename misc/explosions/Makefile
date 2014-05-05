@@ -3,16 +3,15 @@
 
 PORTNAME=	explosions
 PORTVERSION=	0.2005.07.31
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/${PORTNAME}/ \
-		ftp://ftp.billsgames.com/unix/x/${PORTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${PORTVERSION:S/^0.//}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION:S/^0.//}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D objects flying around resembling explosions with various effects
 
 LICENSE=	GPLv2
@@ -24,7 +23,6 @@ USE_PERL5=	build
 USE_SDL=	sdl image
 
 PORTDOCS=	BUGS.txt CHANGES.txt README.txt
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Explosions" "" "${PORTNAME}" \

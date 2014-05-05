@@ -23,7 +23,7 @@ CONFLICTS=	cups-base-1.[2-9]*
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-USE_RC_SUBR=	${PORTNAME:L}
+USE_RC_SUBR=	${PORTNAME:tl}
 
 SUB_FILES=	pkg-message pkg-install
 SUB_LIST=	SYSCONFDIR="${SYSCONFDIR}"

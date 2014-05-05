@@ -29,10 +29,7 @@
     SUBDIR += asio
     SUBDIR += aslookup
     SUBDIR += asterisk
-    SUBDIR += asterisk-oh323
     SUBDIR += asterisk11
-    SUBDIR += asterisk14
-    SUBDIR += asterisk14-addons
     SUBDIR += avahi
     SUBDIR += avahi-app
     SUBDIR += avahi-autoipd
@@ -726,7 +723,6 @@
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-PubSub
     SUBDIR += p5-POE-Component-Server-Twirc
-    SUBDIR += p5-POE-Component-Spread
     SUBDIR += p5-POEx-Role-TCPServer
     SUBDIR += p5-POSIX-Socket
     SUBDIR += p5-POSIX-getpeername
@@ -758,8 +754,6 @@
     SUBDIR += p5-Socket6
     SUBDIR += p5-Socks
     SUBDIR += p5-Sort-Key-IPv4
-    SUBDIR += p5-Spread-Message
-    SUBDIR += p5-Spread-Session
     SUBDIR += p5-Test-URI
     SUBDIR += p5-URI
     SUBDIR += p5-URI-FromHash
@@ -793,7 +787,6 @@
     SUBDIR += passlogd
     SUBDIR += pathneck
     SUBDIR += pbnc
-    SUBDIR += pchar
     SUBDIR += pdb
     SUBDIR += pear-Auth_RADIUS
     SUBDIR += pear-File_Bittorrent2
@@ -943,7 +936,6 @@
     SUBDIR += py-soappy-devel
     SUBDIR += py-soapy
     SUBDIR += py-speedtest-cli
-    SUBDIR += py-spreadmodule
     SUBDIR += py-suds
     SUBDIR += py-tofu
     SUBDIR += py-tweepy
@@ -1249,7 +1241,6 @@
     SUBDIR += vortex
     SUBDIR += vserver
     SUBDIR += vtun
-    SUBDIR += wackamole
     SUBDIR += wackford-squeers
     SUBDIR += wakeonlan
     SUBDIR += whois

@@ -6,13 +6,12 @@ PORTVERSION=	0.4
 PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/icbm3d/  \
-		ftp://ftp.billsgames.com/unix/x/icbm3d/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME}.${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}.${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Inter-Continental Ballistic Missiles, 3D
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -25,7 +24,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	README.txt
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="ICBM3D" "" "${PORTNAME}" \

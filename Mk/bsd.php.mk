@@ -161,6 +161,8 @@ BUILD_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
 .endif
 RUN_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
 .if defined(WANT_PHP_MOD) || (defined(WANT_PHP_WEB) && defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "")
+USE_APACHE_RUN=	22+
+.include "${PORTSDIR}/Mk/bsd.apache.mk"
 RUN_DEPENDS+=	${PHPBASE}/${APACHEMODDIR}/libphp5.so:${PORTSDIR}/${MOD_PHP_PORT}
 .endif
 
@@ -274,7 +276,7 @@ php-ini:
 .endif
 
 # Extensions
-.if defined(_POSTMKINCLUDED) && ${USE_PHP:L} != "yes"
+.if defined(_POSTMKINCLUDED) && ${USE_PHP:tl} != "yes"
 # non-version specific components
 _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
 		exif fileinfo filter ftp gd gettext gmp \
@@ -387,7 +389,7 @@ ext=		${extension}
 BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/hash.so:${PORTSDIR}/${hash_DEPENDS}
 .				endif
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/hash.so:${PORTSDIR}/${hash_DEPENDS}
-.			elif ${ext:L} != "yes"
+.			elif ${ext:tl} != "yes"
 check-makevars::
 			@${ECHO_CMD} "Unknown extension ${extension} for PHP ${PHP_VER}."
 			@${FALSE}

@@ -14,13 +14,6 @@
 +        const struct sockaddr_in6 *sin6 = (const struct sockaddr_in6*)sa;
          const unsigned char *address = (const unsigned char*)&sin6->sin6_addr;
          return sin6->sin6_port == 0 ||
-@@ -687,5 +687,5 @@
-     int i;
- 
--    if(salen > sizeof(struct sockaddr_storage))
-+    if((unsigned)salen > sizeof(struct sockaddr_storage))
-         abort();
- 
 @@ -1281,13 +1281,13 @@
      int i, len;
      struct storage *st;

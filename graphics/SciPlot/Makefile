@@ -19,7 +19,7 @@ MAKE_ENV=	EXTRA_DEFINES="-fPIC" LIBNAME=${LIBNAME}
 USE_LDCONFIG=	yes
 
 INCLUDES=	SciPlot.h SciPlotP.h SciPlotUtil.h
-LIBNAME=	lib${PORTNAME:L}	# Remove :L for libSciPlot
+LIBNAME=	lib${PORTNAME:tl}	# Remove :tl for libSciPlot
 PLIST_SUB=	LIBNAME=${LIBNAME}
 
 PORTDOCS=	README SciPlot.html SciPlotDemo.html SciPlotProg.html

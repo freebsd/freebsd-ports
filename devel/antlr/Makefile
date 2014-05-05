@@ -6,7 +6,7 @@ PORTVERSION=	2.7.7
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr2.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition
 
 CONFLICTS=	pccts-[0-9]*

@@ -150,7 +150,6 @@
     SUBDIR += bugzilla42
     SUBDIR += bugzilla44
     SUBDIR += build
-    SUBDIR += buildapp
     SUBDIR += buildbot
     SUBDIR += buildbot-slave
     SUBDIR += buildtool
@@ -922,6 +921,7 @@
     SUBDIR += lasi
     SUBDIR += lcov
     SUBDIR += leaktracer
+    SUBDIR += leiningen
     SUBDIR += lemon
     SUBDIR += lfcbase
     SUBDIR += lfcxml
@@ -1112,6 +1112,7 @@
     SUBDIR += libsigsegv
     SUBDIR += libslang2
     SUBDIR += libslave
+    SUBDIR += libsmdev
     SUBDIR += libsoup
     SUBDIR += libsoup-gnome
     SUBDIR += libsoup-reference
@@ -1670,6 +1671,7 @@
     SUBDIR += p5-Curses-UI
     SUBDIR += p5-Curses-Widgets
     SUBDIR += p5-Cvs
+    SUBDIR += p5-Cwd-Guard
     SUBDIR += p5-DB_File-Lock
     SUBDIR += p5-Daemon-Control
     SUBDIR += p5-Dancer-Debug
@@ -3603,6 +3605,7 @@
     SUBDIR += py-durus
     SUBDIR += py-dynrules
     SUBDIR += py-eggtestinfo
+    SUBDIR += py-enum34
     SUBDIR += py-epsilon
     SUBDIR += py-event
     SUBDIR += py-experimental.cssselect

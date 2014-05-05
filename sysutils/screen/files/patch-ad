@@ -1,18 +1,13 @@
---- configure.orig	Fri Dec  5 15:46:53 2003
-+++ configure	Sat Mar  4 10:18:24 2006
-@@ -4746,48 +4746,6 @@
- sed 's/^/| /' conftest.$ac_ext >&5
+--- configure.orig	2014-04-26 03:58:46.000000000 -0700
++++ configure	2014-04-29 19:47:03.900706999 -0700
+@@ -4857,46 +4857,6 @@
  
- olibs="$LIBS"
+ else
+   olibs="$LIBS"
 -LIBS="-lcurses $olibs"
--{ echo "$as_me:$LINENO: checking libcurses..." >&5
--echo "$as_me: checking libcurses..." >&6;}
--cat >conftest.$ac_ext <<_ACEOF
--#line $LINENO "configure"
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking libcurses..." >&5
+-$as_echo "$as_me: checking libcurses..." >&6;}
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 -/* end confdefs.h.  */
 -
 -int
@@ -29,36 +24,43 @@
 -  return 0;
 -}
 -_ACEOF
--rm -f conftest.$ac_objext conftest$ac_exeext
--if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
--  (eval $ac_link) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } &&
--         { ac_try='test -s conftest$ac_exeext'
--  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
--  (eval $ac_try) 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; }; then
--  :
--else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
+-if ac_fn_c_try_link "$LINENO"; then :
 -
- LIBS="-ltermcap $olibs"
- { echo "$as_me:$LINENO: checking libtermcap..." >&5
- echo "$as_me: checking libtermcap..." >&6;}
-@@ -4907,8 +4865,6 @@
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+-else
+-  LIBS="-ltermcap $olibs"
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking libtermcap..." >&5
+-$as_echo "$as_me: checking libtermcap..." >&6;}
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-int
+-main ()
+-{
+-tgetent((char *)0, (char *)0);
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-
+-else
+   LIBS="-ltermlib $olibs"
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking libtermlib..." >&5
+ $as_echo "$as_me: checking libtermlib..." >&6;}
+@@ -5001,12 +4961,6 @@
  fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
 -fi
--rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
  
- if test "$cross_compiling" = yes; then
-   { { echo "$as_me:$LINENO: error: cannot run test program while cross compiling
-@@ -4927,7 +4883,8 @@
+ if test "$cross_compiling" = yes; then :
+   { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+@@ -5019,7 +4973,8 @@
  
  main()
  {
@@ -67,8 +69,17 @@
 + exit(strcmp(tgoto("%d%d", 0, 1), "1") ? 0 : 1);
  }
  _ACEOF
- rm -f conftest$ac_exeext
-@@ -5314,19 +5271,16 @@
+ if ac_fn_c_try_run "$LINENO"; then :
+@@ -5066,7 +5021,7 @@
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for SVR4 ptys..." >&5
+ $as_echo "$as_me: checking for SVR4 ptys..." >&6;}
+ sysvr4ptys=
+-if test -c /dev/ptmx ; then
++if test -c /nonexistent ; then
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -5177,19 +5132,16 @@
  fi
  rm -f conftest*
  
@@ -90,9 +101,9 @@
 -fi
 -
  
- # Check whether --with-pty-mode or --without-pty-mode was given.
- if test "${with_pty_mode+set}" = set; then
-@@ -5575,6 +5529,8 @@
+ # Check whether --with-pty-mode was given.
+ if test "${with_pty_mode+set}" = set; then :
+@@ -5416,6 +5368,8 @@
  #if defined(SVR4) && !defined(DGUX)
  #include <utmpx.h>
  #define utmp utmpx
@@ -101,19 +112,12 @@
  #else
  #include <utmp.h>
  #endif
-@@ -5627,6 +5583,8 @@
+@@ -5484,6 +5438,10 @@
  #if defined(SVR4) && !defined(DGUX)
  #include <utmpx.h>
  #define utmp utmpx
 +#define pututline pututxline
 +#define getutent getutxent
- #else
- #include <utmp.h>
- #endif
-@@ -5683,6 +5641,8 @@
- #if defined(SVR4) && !defined(DGUX)
- #include <utmpx.h>
- #define utmp utmpx
 +#define pututline pututxline
 +#define getutent getutxent
  #else

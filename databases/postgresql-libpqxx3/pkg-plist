@@ -83,7 +83,6 @@ include/pqxx/version
 include/pqxx/version.hxx
 lib/libpqxx-3.1.so
 lib/libpqxx.a
-lib/libpqxx.la
 lib/libpqxx.so
 libdata/pkgconfig/libpqxx.pc
 @dirrm include/pqxx/internal/gates

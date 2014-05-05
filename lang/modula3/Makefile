@@ -69,8 +69,8 @@ BOOTDIST=	${DST2}
 MARCH=		x86_64
 . endif
 
-NEWBOOTNAME=	m3-bootstrap.${MARCH}.${OPSYS:U}.${OSREL:S/.//}.tar.bz2
-M3TARGET=	${MARCH}_${OPSYS:U}
+NEWBOOTNAME=	m3-bootstrap.${MARCH}.${OPSYS:tu}.${OSREL:S/.//}.tar.bz2
+M3TARGET=	${MARCH}_${OPSYS:tu}
 .endif
 
 do-extract:

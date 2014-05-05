@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.3.7
-PORTREVISION=	2
+PORTVERSION=	0.3.9
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	GH:0 GHC:0 http://waf.googlecode.com/files/:1
+MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
+		http://www.freehackers.org/~tnagy/release/:1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 waf-${WAF_VERSION}:1
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -23,9 +23,9 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	2758bc4
+GH_COMMIT=	ca8dc91
 
-WAF_VERSION=	1.7.15
+WAF_VERSION=	1.7.16
 
 USES=		compiler:c11 desktop-file-utils gmake iconv lua pkgconfig
 USE_PYTHON_BUILD=	yes

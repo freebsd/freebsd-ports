@@ -32,12 +32,16 @@ man/man1/kid3.1.gz
 %%KDE%%share/doc/HTML/en/kid3/index.docbook
 %%QT%%share/doc/kid3-qt/kid3_de.html
 %%QT%%share/doc/kid3-qt/kid3_en.html
+%%QT%%share/icons/hicolor/128x128/apps/kid3-qt.png
+%%KDE%%share/icons/hicolor/128x128/apps/kid3.png
 %%QT%%share/icons/hicolor/16x16/apps/kid3-qt.png
 %%KDE%%share/icons/hicolor/16x16/apps/kid3.png
 %%QT%%share/icons/hicolor/32x32/apps/kid3-qt.png
 %%KDE%%share/icons/hicolor/32x32/apps/kid3.png
 %%QT%%share/icons/hicolor/48x48/apps/kid3-qt.png
 %%KDE%%share/icons/hicolor/48x48/apps/kid3.png
+%%QT%%share/icons/hicolor/64x64/apps/kid3-qt.png
+%%KDE%%share/icons/hicolor/64x64/apps/kid3.png
 %%QT%%share/icons/hicolor/scalable/apps/kid3-qt.svg
 %%KDE%%share/icons/hicolor/scalable/apps/kid3.svgz
 %%DATADIR%%/translations/kid3_cs.qm

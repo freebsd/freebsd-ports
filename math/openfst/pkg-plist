@@ -330,7 +330,7 @@ lib/fst/olabel_lookahead-fst.so
 lib/fst/olabel_lookahead-fst.so.0
 lib/libfst.la
 lib/libfst.so
-lib/libfst.so.2
+lib/libfst.so.3
 lib/libfstscript.la
 lib/libfstscript.so
 lib/libfstscript.so.1

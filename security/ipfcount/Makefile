@@ -3,7 +3,7 @@
 
 PORTNAME=	ipfcount
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://deathbeforedecaf.net/misc/ports/ \
 		http://users.netleader.com.au/~rob/
@@ -11,18 +11,15 @@ MASTER_SITES=	http://deathbeforedecaf.net/misc/ports/ \
 MAINTAINER=	freebsd@deathbeforedecaf.net
 COMMENT=	Summarise ipf logs by counting and sorting the fields
 
-PLIST_FILES=	bin/ipfcount
-MAN1=		ipfcount.1
+PLIST_FILES=	bin/ipfcount man/man1/ipfcount.1.gz
 
 USES=		perl5
 
-.if !defined(NOPORTDOCS)
-PLIST_DIRS=	%%EXAMPLESDIR%%
-PLIST_FILES+=	%%EXAMPLESDIR%%/100.ipfcount
-SUB_FILES=	pkg-message
-.endif
+OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
+PORTEXAMPLES=	100.ipfcount
+SUB_FILES=	pkg-message
+
 post-patch:
 	@${REINPLACE_CMD} -e '1s,^#![^ ]*,#!${PERL},' ${WRKSRC}/ipfcount
 
@@ -30,16 +27,9 @@ do-build:
 	cd ${WRKSRC} && pod2man ipfcount > ipfcount.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ipfcount ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ipfcount.1 ${PREFIX}/man/man1/ipfcount.1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/100.ipfcount ${EXAMPLESDIR}
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${CAT} ${PKGMESSAGE}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/ipfcount ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ipfcount.1 ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/100.ipfcount ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

@@ -1,27 +1,18 @@
 PACKAGE		= Gdtclft
 VERSION		= 2.3
-SHLIB_NAME	= lib${PACKAGE}2.so.3
+SHLIB_NAME	= lib${PACKAGE}2.so
 
-SRCS		= gdhandle.c gdCmd.c
+SRCS		= gdCmd.c
 
+LOCALBASE	?=/usr/local
 PREFIX		?=/usr/local
 TCL_VER		?=8.4
-WARNS		= 2
+WARNS		= 3
 
-.if exists(${PREFIX}/lib/tcl${TCL_VER}/tclConfig.sh)
-# If for some reason  the file does not exist -- make the best guess. In
-# reality, it will exist by the time we are actually doing the build, so
-# the quality of the guess does not matter. But we still try well. -mi
-TCL_STUB_LIB_SPEC!=	. ${PREFIX}/lib/tcl${TCL_VER}/tclConfig.sh; \
-		echo $$TCL_STUB_LIB_SPEC
-.else
-TCL_STUB_LIB_SPEC=	-L${PREFIX}/lib -ltclstub${TCL_VER:S/.//}
-.endif
+LDADD		= -L${LOCALBASE}/lib -lgd -lpng -lz -lm -ltcl${TCL_SHLIB_VER}
 
-LDADD		= -L${PREFIX}/lib -lgd -lpng -lz -lm ${TCL_STUB_LIB_SPEC}
-
-CFLAGS		+=-I${PREFIX}/include/tcl${TCL_VER} -I${PREFIX}/include/gd
-CFLAGS		+=-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -I${PREFIX}/include
+CFLAGS		+=-I${LOCALBASE}/include/tcl${TCL_VER} -I${LOCALBASE}/include/gd
+CFLAGS		+=-DNDEBUG -Wall -I. -I${LOCALBASE}/include
 CFLAGS		+=-DVERSION=\"${VERSION}\"
 
 all: pkgIndex.tcl
@@ -29,17 +20,14 @@ all: pkgIndex.tcl
 pkgIndex.tcl:
 	echo 'package ifneeded $(PACKAGE) $(VERSION) [list load [file join $$dir $(SHLIB_NAME)] $(PACKAGE)]' > pkgIndex.tcl
 
-DIR		= lib/tcl${TCL_VER}/gdtclft
+DIR	= lib/tcl${TCL_VER}/gdtclft
 LIBDIR	= ${PREFIX}/${DIR}
-MANDIR		= ${PREFIX}/man/man
+MANDIR	= ${PREFIX}/man/man
 
-${LIBDIR}:
-	${MKDIR} ${LIBDIR}
+${STAGEDIR}${LIBDIR}:
+	${MKDIR} $@
 
-env:
-	@${ECHO} SHLIB_NAME=${SHLIB_NAME} SHLIB_LINK=${SHLIB_LINK} DIR=${DIR}
-
-beforeinstall: ${LIBDIR}
-	${INSTALL_DATA} pkgIndex.tcl ${LIBDIR}
+beforeinstall: ${STAGEDIR}${LIBDIR}
+	${INSTALL_DATA} pkgIndex.tcl ${STAGEDIR}${LIBDIR}
 
 .include <bsd.lib.mk>

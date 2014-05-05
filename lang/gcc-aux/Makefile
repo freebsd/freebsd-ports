@@ -22,8 +22,8 @@ LANGS=			c c++ ada
 APPLY_DIFFS=		core cxx ada
 INTENDED_COMPILER=	NATIVE
 GARCH=			${ARCH:S/amd64/x86_64/}
-BOOTSTRAP_COMPILER=	gnat-bootstrap.${GARCH}.${OPSYS:L}.tar.bz2
-BLD_TARGET=		${GARCH}-aux-${OPSYS:L}${OSREL}
+BOOTSTRAP_COMPILER=	gnat-bootstrap.${GARCH}.${OPSYS:tl}.tar.bz2
+BLD_TARGET=		${GARCH}-aux-${OPSYS:tl}${OSREL}
 FULL_GNATGCC=		NOT_SET
 OS_LABEL4VERS=		[${OPSYS}${GARCH:M*64:S/amd_//:S/x86_//}]
 NO_MTREE=		yes
@@ -72,7 +72,7 @@ REVFILE=		${WRKSRC}/gcc/REVISION
 BOOTSTRAP_PREFIX=	${WRKDIR}/bootstrap
 PKG_PREFIX=		${PREFIX}/${PORTNAME}
 MANPREFIX=		${PREFIX}/${PORTNAME}/share
-BSFILENAME=		ada-bootstrap.${GARCH}.${OPSYS:L}.${OSREL:S/.//}.tar.bz2
+BSFILENAME=		ada-bootstrap.${GARCH}.${OPSYS:tl}.${OSREL:S/.//}.tar.bz2
 
 # If we find gnatmake and friends in a standard location, then we'll use this
 # compiler instead of downloading the bootstrap.

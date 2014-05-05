@@ -1,11 +1,8 @@
 # $FreeBSD$
 
-# tell bmake we use the old :L :U modifiers
-.MAKE.FreeBSD_UL= yes
-
 INN_LAYOUT?=		old
 
-.if !empty(INN_LAYOUT:L:Mnew)
+.if !empty(INN_LAYOUT:tl:Mnew)
 #-----------------------------------------------------------------------
 # New-style layout. Keep database, spool, and other transient data under
 # /var, where it should be.
@@ -18,7 +15,7 @@ INN_LOGDIR=		${VARBASE}/log/news
 INN_DBDIR=		${VARBASE}/news/db
 INN_TMPDIR=		${VARBASE}/news/tmp
 INN_NEWSSPOOL=		${VARBASE}/news
-.elif !empty(INN_LAYOUT:L:Mhier)
+.elif !empty(INN_LAYOUT:tl:Mhier)
 #-----------------------------------------------------------------------
 # hier(7)-ish layout. As above, but try to use standard directories
 # under /var.

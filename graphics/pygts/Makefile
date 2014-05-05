@@ -12,11 +12,10 @@ COMMENT=	Python binding for GNU Triangulated Surface(GTS) Library
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	gts.5:${PORTSDIR}/graphics/gts
+LIB_DEPENDS=	libgts.so:${PORTSDIR}/graphics/gts
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USES=			pkgconfig
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

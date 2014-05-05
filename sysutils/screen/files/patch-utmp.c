@@ -1,6 +1,6 @@
---- utmp.c
-+++ utmp.c
-@@ -404,12 +404,6 @@
+--- utmp.c.orig	2014-04-26 09:22:09.000000000 -0700
++++ utmp.c	2014-04-29 19:42:22.660642853 -0700
+@@ -409,12 +409,6 @@
    register slot_t slot;
    struct utmp u;
    int saved_ut;
@@ -13,7 +13,7 @@
  
    wi->w_slot = (slot_t)0;
    if (!utmpok || wi->w_type != W_TYPE_PTY)
-@@ -430,51 +424,12 @@
+@@ -435,51 +429,12 @@
      makeuser(&u, stripdev(wi->w_tty), LoginName, wi->w_pid);
  
  #ifdef UTHOST
@@ -67,21 +67,12 @@
      {
        Msg(errno,"Could not write %s", UtmpName);
        UT_CLOSE;
-@@ -589,7 +544,7 @@
+@@ -598,7 +553,7 @@
  struct utmp *u;
  {
    u->ut_type = DEAD_PROCESS;
--#if !defined(linux) || defined(EMPTY)
-+#if (!defined(linux) || defined(EMPTY)) && !defined(__FreeBSD__)
+-#if (!defined(linux) || defined(EMPTY)) && !defined(__CYGWIN__)
++#if (!defined(linux) || defined(EMPTY)) && !defined(__CYGWIN__) && !defined(__FreeBSD__)
    u->ut_exit.e_termination = 0;
    u->ut_exit.e_exit = 0;
  #endif
-@@ -728,7 +683,7 @@
- {
-   strncpy(u->ut_line, line, sizeof(u->ut_line));
-   strncpy(u->ut_name, user, sizeof(u->ut_name));
--  (void)time((time_t *)&u->ut_time);
-+  u->ut_time = time(NULL);
- }
- 
- static slot_t

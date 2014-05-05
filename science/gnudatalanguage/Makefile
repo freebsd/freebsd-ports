@@ -3,7 +3,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.4
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -15,8 +15,6 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT?=	GDL, a free IDL compatible incremental compiler
 
 LICENSE=	GPLv2
-
-#NO_STAGE=	yes
 
 #---------------------------------------------------------------------------
 # You may define these options:
@@ -72,7 +70,7 @@ CMAKE_ARGS+=	-DGRAPHICSMAGICK:BOOL=NO
 .endif
 
 .if !defined(WITHOUT_HDF5)
-LIB_DEPENDS+=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5
 CMAKE_ARGS+=	-DHDF5:BOOL=YES
 .else
 CMAKE_ARGS+=	-DHDF5:BOOL=NO

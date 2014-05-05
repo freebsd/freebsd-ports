@@ -1,3 +1,0 @@
-bin/sysbench
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

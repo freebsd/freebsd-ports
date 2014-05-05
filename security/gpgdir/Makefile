@@ -20,12 +20,10 @@ NO_BUILD=	yes
 USE_PERL5=	run
 USES=		perl5
 
-MAN1=		gpgdir.1
-PLIST_FILES=	bin/gpgdir
+PLIST_FILES=	bin/gpgdir man/man1/gpgdir.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/gpgdir ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/gpgdir.1 ${MANPREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/gpgdir ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/gpgdir.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

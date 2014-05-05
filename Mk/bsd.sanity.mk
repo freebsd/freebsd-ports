@@ -55,10 +55,6 @@ DEV_WARNING+=	"USE_GNOME=gnomehack is deprecated, please use USES=pathfix"
 DEV_WARNING+=	"USE_GNOME=desktopfileutils is deprecated, please use USES=desktop-file-utils"
 .endif
 
-#.if defined(USE_GNOME) && ${USE_GNOME:Mltverhack*}
-#DEV_WARNING+=	"USE_GNOME=ltverhack is now useless LIB_DEPENDS can properly handle all kind of library version"
-#.endif
-
 .if defined(LIB_DEPENDS) && ${LIB_DEPENDS:Nlib*}
 DEV_WARNING+=	"Please use the new format for LIB_DEPENDS, see handbook for details"
 .endif
@@ -110,6 +106,16 @@ DEV_WARNING+=	"USE_PYDISTUTILS=easy_install is deprecated, please use USE_PYDIST
 
 .if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} != "easy_install" && defined(PYDISTUTILS_AUTOPLIST) && defined(PYDISTUTILS_PKGNAME)
 DEV_WARNING+=	"PYDISTUTILS_PKGNAME has no effect for USE_PYDISTUTILS=yes and PYDISTUTILS_AUTOPLIST=yes"
+.endif
+
+.if defined(USE_AUTOTOOLS)
+.  if ${USE_AUTOTOOLS:Mlibtool} || ${USE_AUTOTOOLS:Mlibtool\:env}
+DEV_WARNING+=	"USE_AUTOTOOLS=libtool is deprecated, please use USES=libtool"
+.  endif
+.endif
+
+.if defined(USE_GNOME) && ${USE_GNOME:Mltverhack*}
+DEV_WARNING+=	"USE_GNOME=ltverhack is deprecated, please use USES=libtool"
 .endif
 
 SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \

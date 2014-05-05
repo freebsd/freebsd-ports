@@ -18,6 +18,9 @@ USE_BZIP2=	true
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
+DEPRECATED=	Unusable, subscription radio streaming service will come to an end
+EXPIRATION_DATE=2014-06-02
+
 MAN1=		shell-fm.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/shell-fm

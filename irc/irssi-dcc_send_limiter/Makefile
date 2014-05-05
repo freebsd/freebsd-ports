@@ -29,7 +29,6 @@ PLIST_DIRS=	lib/irssi/modules/lib
 
 CFLAGS+=	-shared -fPIC -I${LOCALBASE}/include/irssi -I${LOCALBASE}/include/irssi/src -I${LOCALBASE}/include/irssi/src/core -I${LOCALBASE}/include/irssi/src/irc/core -I${LOCALBASE}/include/irssi/src/irc/dcc `pkg-config --cflags glib-2.0`
 
-NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -39,7 +38,8 @@ do-build:
 	${CC} ${CFLAGS} -o ${WRKDIR}/${DISTNAME}.so ${WRKDIR}/${DISTFILES}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/irssi/modules/lib
-	${CP} ${WRKSRC}/${DISTNAME}.so ${PREFIX}/lib/irssi/modules/lib/${DISTNAME}.so
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi/modules/lib
+	${INSTALL_LIB} ${WRKSRC}/${DISTNAME}.so \
+		${STAGEDIR}${PREFIX}/lib/irssi/modules/lib
 
 .include <bsd.port.mk>

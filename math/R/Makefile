@@ -369,7 +369,7 @@ check-all: build
 post-install:
 .for L in R Rblas Rlapack
 	@(cd ${STAGEDIR}${PREFIX}/lib/R/lib; if [ -f lib${L}.so ] ; then \
-	${LN} -sf lib${L}.so lib${L}.so.${${L:U}_SOVERSION} ; fi)
+	${LN} -sf lib${L}.so lib${L}.so.${${L:tu}_SOVERSION} ; fi)
 .endfor
 .if ${PORT_OPTIONS:MINFO_MANUALS} && ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/doc/manual; \

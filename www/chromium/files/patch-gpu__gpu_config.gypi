@@ -1,6 +1,6 @@
---- gpu/gpu_config.gypi.orig	2013-08-12 20:57:26.000000000 +0000
-+++ gpu/gpu_config.gypi	2013-08-12 20:58:18.000000000 +0000
-@@ -67,7 +67,7 @@
+--- ./gpu/gpu_config.gypi.orig	2014-04-24 22:35:32.000000000 +0200
++++ ./gpu/gpu_config.gypi	2014-04-24 23:23:46.000000000 +0200
+@@ -63,7 +63,7 @@
          '../third_party/amd/amd_videocard_info_win.cc',
        ],
      }],

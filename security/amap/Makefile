@@ -3,6 +3,7 @@
 
 PORTNAME=	amap
 PORTVERSION=	5.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	groups/thc
@@ -15,19 +16,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 USE_OPENSSL=	yes
 
-MAN1=		amap.1
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
 PORTDOCS=	README TODO CHANGES AMAP-LIB-INTERFACE
-.endif
-PLIST_SUB=	AMAPLIBDIR=lib/${PORTNAME} AMAPINCDIR=include/${PORTNAME}
 
-CONF_DIR=	${PREFIX}/etc/${PORTNAME}
 LOCAL_CONF_FILES=	appdefs.resp appdefs.rpc appdefs.trig
 
-SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	LOCAL_CONF_FILES="${LOCAL_CONF_FILES}" CONF_DIR="${CONF_DIR}"
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local|${LOCALBASE}|g; \
@@ -38,26 +31,23 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|etc/|etc/amap/|g' ${WRKSRC}/amap-lib.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/amap ${PREFIX}/bin
-	${LN} -s ${PREFIX}/bin/amap ${PREFIX}/bin/amap6
-	${INSTALL_PROGRAM} ${WRKSRC}/amapcrap ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/amap-lib.o ${PREFIX}/lib/${PORTNAME}
-	${MKDIR} ${PREFIX}/include/${PORTNAME}
-.	for i in amap.h amap-inc.h amap-lib.h
-		${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include/${PORTNAME}
-.	endfor
-	${MKDIR} ${CONF_DIR}
-.	for i in ${LOCAL_CONF_FILES}
-		${INSTALL_DATA} ${WRKSRC}/${i} ${CONF_DIR}/${i}.default
-.	endfor
-	${INSTALL_MAN} ${WRKSRC}/amap.1 ${MANPREFIX}/man/man1
-.	if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
-.		for i in ${PORTDOCS}
-			${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.		endfor
-.	endif
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${INSTALL_PROGRAM} ${WRKSRC}/amap ${STAGEDIR}${PREFIX}/bin
+	${LN} -s amap ${STAGEDIR}${PREFIX}/bin/amap6
+	${INSTALL_PROGRAM} ${WRKSRC}/amapcrap ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/amap-lib.o ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+.for i in amap.h amap-inc.h amap-lib.h
+		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+.endfor
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+.for i in ${LOCAL_CONF_FILES}
+		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${ETCDIR}/${i}.sample
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/amap.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTDOCS}
+		${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

@@ -4,6 +4,7 @@
 
 PORTNAME=	qdbm
 PORTVERSION=	1.8.78
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/qdbm/
 
@@ -12,6 +13,7 @@ COMMENT?=	Quick Database Manager
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CFLAGS+=	-fPIC
 
 .if !defined(SLAVEPORT)
 USES+=		iconv

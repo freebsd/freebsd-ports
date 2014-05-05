@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	24.4.0
+DISTVERSION=	24.5.0
 CATEGORIES=	mail news net-im ipv6
-MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
+		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 
@@ -16,7 +17,9 @@ BUILD_DEPENDS=	nspr>=4.10.2:${PORTSDIR}/devel/nspr \
 		sqlite3>=3.7.17:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
+		soundtouch>=1.7.0:${PORTSDIR}/audio/soundtouch \
 		harfbuzz>=0.9.16:${PORTSDIR}/print/harfbuzz \
+		graphite2>=1.2.3:${PORTSDIR}/graphics/graphite2 \
 		libvorbis>=1.3.4:${PORTSDIR}/audio/libvorbis \
 		opus>=1.1:${PORTSDIR}/audio/opus \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
@@ -87,7 +90,7 @@ DISTFILES+=	${EM_DISTFILE}:enigmail
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 EM_DISTNAME=	enigmail-${EM_VERSION}
 EM_DISTFILE=	${EM_DISTNAME}.tar.gz
-EM_XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/bin/${EM_DISTNAME}-${OPSYS:L}-${ARCH:S/amd64/x86_64/}.xpi
+EM_XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/bin/${EM_DISTNAME}-${OPSYS:tl}-${ARCH:S/amd64/x86_64/}.xpi
 EM_ORIG_ID=	{847b3a00-7ab1-11d4-8f02-006008948af5}
 EM_ID=		${PORTNAME}@mozilla-enigmail.org
 EM_ID_RFILES=	${XPI_LIBDIR}/${EM_ID}/install.rdf \
@@ -99,7 +102,7 @@ EM_ID_RFILES=	${XPI_LIBDIR}/${EM_ID}/install.rdf \
 MOZ_OPTIONS+=	--enable-calendar
 MOZ_MK_OPTIONS+=	MOZ_CO_PROJECT=calendar
 LIGHTNING_DIR=	share/lightning
-XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/xpi-stage/lightning-${L_VERSION}.en-US.${OPSYS:L}${OSREL}-${ARCH:S/amd64/x86_64/}.xpi
+XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/xpi-stage/lightning-${L_VERSION}.en-US.${OPSYS:tl}${OSREL}-${ARCH:S/amd64/x86_64/}.xpi
 XPI_ORIG_ID=	{e2fda1a4-762b-4020-b5ad-a41df1933103}
 XPI_ID=		lightning@thunderbird.mozilla.org
 .else

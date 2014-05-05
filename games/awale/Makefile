@@ -6,7 +6,7 @@ PORTVERSION=	1.5
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	African board game
 
 LICENSE=	GPLv2
@@ -17,7 +17,6 @@ USES=		desktop-file-utils tk
 SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

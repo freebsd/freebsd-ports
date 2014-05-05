@@ -5,10 +5,9 @@ PORTNAME=	vectoroids
 PORTVERSION=	1.1.0
 PORTREVISION=	15
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/vectoroids/src/ \
-		ftp://ftp.billsgames.com/unix/x/vectoroids/src/
+MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/vectoroids/src/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Vector-based rock-shooting game similar to Asteroids
 
 LICENSE=	GPLv2
@@ -17,14 +16,13 @@ USES=		gmake
 USE_SDL=	image mixer sdl
 
 PORTDOCS=	CHANGES.txt README.txt
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Vectoroids" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
-	@${FIND} ${WRKDIR} -name .xvpics | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKDIR} -name .xvpics | ${XARGS} ${RM} -fr
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

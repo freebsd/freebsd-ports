@@ -11,15 +11,12 @@ DISTNAME=	pgAgent-${PORTVERSION}-Source
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Job scheduler for PostgreSQL
 
-USES=		cmake
+USES=		cmake pgsql
 CMAKE_ARGS=	-DSTATIC_BUILD:BOOL=NO -DWX_CONFIG_PATH:FILEPATH="${WX_CONFIG}"
 USE_WX=		2.8
 WX_UNICODE=	yes
-USE_PGSQL=	yes
-IGNORE_WITH_PGSQL=	82 83
 
 PLIST_FILES=	bin/pgagent
 PORTDATA=	*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

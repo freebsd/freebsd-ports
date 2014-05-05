@@ -6,7 +6,7 @@ PORTVERSION=	0.8.4
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://marc.mongenet.ch/OSS/XGalaga/ \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
@@ -21,14 +21,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gmake
 ALL_TARGET=	${PORTNAME}
 USE_XORG=	x11 xpm
-CFLAGS+=	-w
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz \
 		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	README
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="XGalaga++" "" "${PORTNAME}" \
@@ -43,8 +41,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/xgalaga++.6x ${STAGEDIR}${MAN6PREFIX}/man/man6/xgalaga++.6
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6x \
+		${STAGEDIR}${MAN6PREFIX}/man/man6/${PORTNAME}.6
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

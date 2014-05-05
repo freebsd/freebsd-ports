@@ -3,34 +3,38 @@
 
 PORTNAME=	Gdtclft
 PORTVERSION=	2.2.5
-PORTREVISION=	11
+PORTREVISION=	13
 CATEGORIES=	graphics tcl
-MASTER_SITES=	http://www.graphviz.org/pub/
+MASTER_SITES=	
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A TCL interface to the Thomas Boutell's Gd library
 
-LIB_DEPENDS=	tcl${TCL_DVER}.1:${PORTSDIR}/lang/tcl${TCL_DVER} \
-		gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
-TCL_VER?=	8.4
-TCL_DVER=	${TCL_VER:S/.//}
+USES=		tcl:84+ uidfix
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
-			INSTALL_DATA="${INSTALL_DATA}"
+			TCL_SHLIB_VER=${TCL_SHLIB_VER} \
+			INSTALL_DATA="${INSTALL_DATA}" STAGEDIR="${STAGEDIR}"
 ALL_TARGET=	all
 
 MANN=		gdtclft.n
+MANCOMPRESSED=	no
+GDTCLDIR=	lib/tcl${TCL_VER}/gdtclft
+PLIST_DIRS=	${GDTCLDIR}
+PLIST_FILES=	${GDTCLDIR}/pkgIndex.tcl
+PLIST_FILES+=	${GDTCLDIR}/libGdtclft2.so
+.if !defined(NO_STAGE)
+PLIST_FILES+=	${__MANPAGES}
+.endif
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -Ee 's,[[:space:]]+$$,,' ${WRKSRC}/${MANN}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/${MANN} ${PREFIX}/man/mann/
+	${INSTALL_MAN} ${WRKSRC}/${MANN} ${STAGEDIR}${PREFIX}/man/mann/
 
 .include <bsd.port.mk>
-
-PLIST_SUB!=	${SETENV} TCL_VER=${TCL_VER} ${MAKE} -f ${MAKEFILE} env

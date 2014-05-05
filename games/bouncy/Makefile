@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-post-${DISTVERSION}.tgz \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}-post-${DISTVERSION}.tgz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	You are a hungry rabbit. Eat food to complete the level
 
 LICENSE=	GPLv2
@@ -26,20 +26,24 @@ USE_PYTHON=	2
 
 PORTDOCS=	README.txt
 
+OPTIONS_DEFINE=	DOCS SHADER
+SHADER_DESC=	Hardware shader support
+OPTIONS_DEFAULT=	SHADER
+
 INSTALLS_ICONS=	yes
 
 SUB_FILES=	${PORTNAME}
 
-DESKTOP_ENTRIES="Bouncy the Hungry Rabbit" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
-OPTIONS_DEFINE=	SHADER
-SHADER_DESC=	Hardware shader support
-OPTIONS_DEFAULT=	SHADER
+DESKTOP_ENTRIES="Bouncy the Hungry Rabbit" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 .include <bsd.port.options.mk>
 
-post-extract:
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.py' | ${XARGS} \
+		${REINPLACE_CMD} -e 's|^.*#!.*python.*$$|#!${PYTHON_CMD}|'
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
+
 .if ${PORT_OPTIONS:MSHADER}
 	@${REINPLACE_CMD} -i '' '/#try/,/#    print/s/#//' ${WRKSRC}/objects.py
 .endif
@@ -53,14 +57,11 @@ do-install:
 		${WRKDIR}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-
-.for d in  *.py *.pyc *.pyo
-	@(cd ${WRKSRC} ; ${INSTALL_SCRIPT} ${d} ${STAGEDIR}${DATADIR})
-.endfor
-
 .for d in data pyglyph
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
+.for f in *.py *.pyc *.pyo
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \

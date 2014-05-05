@@ -1,0 +1,6 @@
+bin/fakebo
+@sample etc/fakebo.conf.sample
+man/man1/fakebo.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/custom.replies
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -3,12 +3,12 @@
 
 PORTNAME=	autoq3d
 PORTVERSION=	1.40
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/AutoQ3D%20${PORTVERSION}
 DISTNAME=	AutoQ3DCommunity${PORTVERSION:C/\./-/}qt4source
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 quick 3D model editor
 
 LICENSE=	GPLv2 GPLv3
@@ -21,7 +21,6 @@ USE_GL=		glu
 USE_QT4=	corelib gui opengl moc_build
 
 PORTDOCS=	3DQformat.txt ChangeLog.txt
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="AutoQ3D" "" "${PORTNAME}" \

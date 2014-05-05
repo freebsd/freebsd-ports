@@ -11,20 +11,19 @@ MASTER_SITES=	http://www.ibiblio.org/propaganda/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, flexible, extensible, and bloat-free image viewer for X11
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg	\
-		png15:${PORTSDIR}/graphics/png		\
-		tiff.4:${PORTSDIR}/graphics/tiff	\
-		gif.5:${PORTSDIR}/graphics/giflib	\
-		Imlib.5:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg	\
+		libpng15.so:${PORTSDIR}/graphics/png		\
+		libtiff.so:${PORTSDIR}/graphics/tiff	\
+		libgif.so:${PORTSDIR}/graphics/giflib	\
+		libImlib.so:${PORTSDIR}/graphics/imlib
 
 PLIST_FILES=	bin/show
 
-NO_STAGE=	yes
 post-extract:
 	@${CP} ${PATCHDIR}/Makefile ${WRKSRC}
 	@${RM} ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/show ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/show ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bind
-PORTVERSION=	9.10.0rc1
-PORTREVISION=	3
+PORTVERSION=	9.10.0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -15,7 +14,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.10.0rc1
+ISCVERSION=	9.10.0
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -31,9 +30,11 @@ ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS=	bind9*-9.[456789].* bind9*-sdb-9.[456789].* bind-tools-9.*
 
+SUB_FILES=	pkg-message
+
 OPTIONS_SUB=	yes
 OPTIONS_DEFAULT=	IPV6 SSL THREADS SIGCHASE IDN
-OPTIONS_DEFINE=		IDN REPLACE_BASE LARGE_FILE \
+OPTIONS_DEFINE=		IDN LARGE_FILE \
 			FIXED_RRSET SIGCHASE IPV6 THREADS GSSAPI FILTER_AAAA
 OPTIONS_RADIO=	CRYPTO
 OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
@@ -47,7 +48,6 @@ OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 .endif	# BIND_TOOLS_SLAVE
 
 SSL_DESC=		Build with OpenSSL (Required for DNSSEC)
-REPLACE_BASE_DESC=	Replace base BIND (FreeBSD 9.x and earlier)
 LARGE_FILE_DESC=	64-bit file support
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
@@ -134,7 +134,7 @@ GSSAPI_CONFIGURE_WITH=	gssapi
 ARCH=		x86_64
 .endif
 
-.if !${PORT_OPTIONS:MLINKS} || ${PORT_OPTIONS:MREPLACE_BASE}
+.if !${PORT_OPTIONS:MLINKS}
 PKGINSTALL=${NONEXISTENT}
 .endif
 
@@ -144,50 +144,33 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if ${PORT_OPTIONS:MREPLACE_BASE}
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
-IGNORE=		REPLACE_BASE option is not supported on this release
-.endif
-PKGNAMESUFFIX=	-base
-PREFIX=		/usr
-PLIST_SUB+=	SHARE_MAN="share/"
-NO_MTREE=	yes
-BIND_DESTETC=	/etc/namedb
-.else
-PLIST_SUB+=	SHARE_MAN=""
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
-BIND_DESTETC=	${PREFIX}/etc/namedb
 PKGINSTALL=	${NONEXISTENT}
+PLIST_SUB+=	NOBASE="" BASE="@comment "
+SUB_LIST+=	NOBASE="" BASE="@comment "
+USE_RC_SUBR+=	named
+SUB_FILES+=	named.conf
 .else
-BIND_DESTETC=	${PREFIX}/etc
+ETCDIR=		${PREFIX}/etc
+PLIST_SUB+=	NOBASE="@comment " BASE=""
+SUB_LIST+=	NOBASE="@comment " BASE=""
+.if ${PORT_OPTIONS:MSSL}
+WITH_OPENSSL_PORT=	yes
 .endif
 .endif
 
 PKGDEINSTALL=	${PKGINSTALL}
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--sysconfdir=${BIND_DESTETC}
-PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
-SUB_LIST+=	BIND_DESTETC="${BIND_DESTETC}"
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
-PLIST_SUB+=	NOBASE="" BASE="@comment "
-USE_RC_SUBR+=	named
-SUB_FILES+=	named.conf
-.else
-PLIST_SUB+=	NOBASE="@comment " BASE=""
-.if ${PORT_OPTIONS:MSSL}
-WITH_OPENSSL_PORT=	yes
-.endif
-.endif
+			--sysconfdir=${ETCDIR}
 
 .if !defined(BIND_TOOLS_SLAVE)
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
 	@${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.Dist
-	@${SED} -e 's#/etc/named.conf#${BIND_DESTETC}/named.conf#g' \
-		-e 's#/etc/rndc.conf#${BIND_DESTETC}/rndc.conf#g' \
+	@${SED} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
+		-e 's#/etc/rndc.conf#${ETCDIR}/rndc.conf#g' \
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
 .endfor
@@ -213,18 +196,18 @@ post-install:
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
-	${MKDIR} ${STAGEDIR}${BIND_DESTETC}
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 .for i in dynamic master slave working
-	@${MKDIR} ${STAGEDIR}${BIND_DESTETC}/$i
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/$i
 .endfor
-	${INSTALL_DATA} ${WRKDIR}/named.conf ${STAGEDIR}${BIND_DESTETC}/named.conf.sample
-	${INSTALL_DATA} ${FILESDIR}/named.root ${STAGEDIR}${BIND_DESTETC}
-	${INSTALL_DATA} ${FILESDIR}/empty.db ${STAGEDIR}${BIND_DESTETC}/master
-	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${STAGEDIR}${BIND_DESTETC}/master
-	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${STAGEDIR}${BIND_DESTETC}/master
+	${INSTALL_DATA} ${WRKDIR}/named.conf ${STAGEDIR}${ETCDIR}/named.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/named.root ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/empty.db ${STAGEDIR}${ETCDIR}/master
+	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${STAGEDIR}${ETCDIR}/master
+	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${STAGEDIR}${ETCDIR}/master
 .endif
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
-		${STAGEDIR}${BIND_DESTETC}/rndc.conf.sample
+		${STAGEDIR}${ETCDIR}/rndc.conf.sample
 
 .endif	# BIND_TOOLS_SLAVE
 

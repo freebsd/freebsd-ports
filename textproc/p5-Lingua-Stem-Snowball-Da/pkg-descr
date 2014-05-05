@@ -1,4 +1,4 @@
-Lingua::Stem::Snowball::Da is a perl port of the danish
-stemmer at http://snowball.sourceforge.net.
+The stem function takes a scalar as a parameter and stems the word according to
+Martin Porters Danish stemming algorithm.
 
 WWW: http://search.cpan.org/dist/Lingua-Stem-Snowball-Da/

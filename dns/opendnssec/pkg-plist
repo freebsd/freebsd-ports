@@ -30,6 +30,21 @@ sbin/ods-signerd
 %%DATADIR%%/signconf.rng
 %%DATADIR%%/zonelist.rnc
 %%DATADIR%%/zonelist.rng
+man/man1/ods-hsmspeed.1.gz
+man/man1/ods-hsmutil.1.gz
+man/man1/ods-ksmutil.1.gz
+man/man1/ods-kaspcheck.1.gz
+man/man5/ods-timing.5.gz
+man/man7/opendnssec.7.gz
+man/man8/ods-control.8.gz
+man/man8/ods-enforcerd.8.gz
+man/man8/ods-signer.8.gz
+man/man8/ods-signerd.8.gz
+@exec chown opendnssec:opendnssec %D/var/opendnssec/unsigned
+@exec chown opendnssec:opendnssec %D/var/opendnssec/tmp
+@exec chown opendnssec:opendnssec %D/var/opendnssec/signed
+@exec chown opendnssec:opendnssec %D/var/opendnssec/signconf
+@dirrm var/opendnssec
 @dirrm var/opendnssec/unsigned
 @dirrm var/opendnssec/tmp
 @dirrm var/opendnssec/signed
@@ -37,11 +52,6 @@ sbin/ods-signerd
 @dirrm var/opendnssec
 @dirrm %%DATADIR%%
 @dirrm %%ETCDIR%%
-@exec mkdir -p %D/var/run/opendnssec
-@exec mkdir -p %D/var/opendnssec/unsigned
-@exec mkdir -p %D/var/opendnssec/tmp
-@exec mkdir -p %D/var/opendnssec/signed
-@exec mkdir -p %D/var/opendnssec/signconf
 @dirrmtry var/run/opendnssec
 @dirrmtry var/run
 @dirrmtry var

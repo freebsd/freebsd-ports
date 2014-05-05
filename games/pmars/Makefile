@@ -55,7 +55,7 @@ X11_ARGS+=	CFLAGS+="-DXWINGRAPHX" \
 
 do-build:
 .for f in ${TARGETS}
-	@(cd ${BUILD_WRKSRC}; ${MAKE} ${MAKE_ARGS} ${${f:U}_ARGS} \
+	@(cd ${BUILD_WRKSRC}; ${MAKE} ${MAKE_ARGS} ${${f:tu}_ARGS} \
 		${ALL_TARGET} clean)
 	@(cd ${BUILD_WRKSRC}; ${MV} ${PORTNAME} ${PORTNAME}-${f})
 .endfor

@@ -4,15 +4,12 @@
 PORTNAME=	XML-DBMS
 PORTVERSION=	1.03
 CATEGORIES=	textproc databases perl5
-MASTER_SITES=	ftp://ftp.rpbourret.com/
+MASTER_SITES=	http://www.rpbourret.com/xmldbms/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	perl-xml-dbms-1.03
-EXTRACT_SUFX=	.tgz
+DISTNAME=	perl-${PORTNAME:tl}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl port of Java package XML-DBMS v1.0
-
-OPTIONS_DEFINE=	EXAMPLES
 
 BUILD_DEPENDS=	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
@@ -20,8 +17,10 @@ BUILD_DEPENDS=	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+OPTIONS_DEFINE=	EXAMPLES
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		dos2unix perl5
+USES=		dos2unix perl5 tar:tgz
 USE_PERL5=	configure
 
 post-install:

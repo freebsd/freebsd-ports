@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	de.jayefem.${PORTNAME}_free_${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse plugin to use logger easily in Java projects
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse

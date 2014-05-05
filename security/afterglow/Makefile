@@ -21,22 +21,21 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/data
-	${MKDIR} ${DATADIR}/charts
-	${MKDIR} ${DATADIR}/graph
-	${MKDIR} ${DATADIR}/loganalysis
-	${MKDIR} ${DATADIR}/parsers
-	(cd ${WRKSRC}/data/ && ${COPYTREE_SHARE} \* ${DATADIR}/data "! -name generate.pl")
-	(cd ${WRKSRC}/data/ && ${COPYTREE_BIN} \* ${DATADIR}/data "-name generate.pl")
-	(cd ${WRKSRC}/src/perl/charts/ && ${COPYTREE_SHARE} \* ${DATADIR}/charts "! -name *\.pl")
-	(cd ${WRKSRC}/src/perl/charts/ && ${COPYTREE_BIN} \* ${DATADIR}/charts "-name *\.pl")
-	(cd ${WRKSRC}/src/perl/graph/ && ${COPYTREE_SHARE} \* ${DATADIR}/graph "! -name *\.pl")
-	(cd ${WRKSRC}/src/perl/graph/ && ${COPYTREE_BIN} \* ${DATADIR}/graph "-name *\.pl")
-	(cd ${WRKSRC}/src/perl/loganalysis/ && ${COPYTREE_SHARE} \* ${DATADIR}/loganalysis "! ( -name *\.pl -or -name *\.sh )")
-	(cd ${WRKSRC}/src/perl/loganalysis/ && ${COPYTREE_BIN} \* ${DATADIR}/loganalysis "( -name *\.pl -or -name *\.sh )")
-	(cd ${WRKSRC}/src/perl/parsers/ && ${COPYTREE_SHARE} \* ${DATADIR}/parsers "! -name *\.pl")
-	(cd ${WRKSRC}/src/perl/parsers/ && ${COPYTREE_BIN} \* ${DATADIR}/parsers "-name *\.pl")
+	${MKDIR} ${STAGEDIR}${DATADIR}/data
+	${MKDIR} ${STAGEDIR}${DATADIR}/charts
+	${MKDIR} ${STAGEDIR}${DATADIR}/graph
+	${MKDIR} ${STAGEDIR}${DATADIR}/loganalysis
+	${MKDIR} ${STAGEDIR}${DATADIR}/parsers
+	(cd ${WRKSRC}/data/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/data "! -name generate.pl")
+	(cd ${WRKSRC}/data/ && ${COPYTREE_BIN} \* ${STAGEDIR}${DATADIR}/data "-name generate.pl")
+	(cd ${WRKSRC}/src/perl/charts/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/charts "! -name *\.pl")
+	(cd ${WRKSRC}/src/perl/charts/ && ${COPYTREE_BIN} \* ${STAGEDIR}${DATADIR}/charts "-name *\.pl")
+	(cd ${WRKSRC}/src/perl/graph/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/graph "! -name *\.pl")
+	(cd ${WRKSRC}/src/perl/graph/ && ${COPYTREE_BIN} \* ${STAGEDIR}${DATADIR}/graph "-name *\.pl")
+	(cd ${WRKSRC}/src/perl/loganalysis/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/loganalysis "! ( -name *\.pl -or -name *\.sh )")
+	(cd ${WRKSRC}/src/perl/loganalysis/ && ${COPYTREE_BIN} \* ${STAGEDIR}${DATADIR}/loganalysis "( -name *\.pl -or -name *\.sh )")
+	(cd ${WRKSRC}/src/perl/parsers/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/parsers "! -name *\.pl")
+	(cd ${WRKSRC}/src/perl/parsers/ && ${COPYTREE_BIN} \* ${STAGEDIR}${DATADIR}/parsers "-name *\.pl")
 
 .include <bsd.port.mk>

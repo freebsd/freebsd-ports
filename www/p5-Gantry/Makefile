@@ -35,7 +35,7 @@ USE_PERL5=	modbuild
 CONFIGURE_ARGS=	</dev/null
 PLIST_SUB+=	WWWDIR=${WWWDIR}
 
-WWWDIR=		${PREFIX}/www/${PORTNAME:L}
+WWWDIR=		${PREFIX}/www/${PORTNAME:tl}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/home/httpd/html/gantry,${WWWDIR},g' \

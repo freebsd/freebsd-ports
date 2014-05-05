@@ -17,10 +17,10 @@ PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/requests.txt %%DATADIR%%/subdomains.txt
 PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
-	@${REINPLACE_CMD} -E '/^#define/s!([a-z]*\.txt)!${DATADIR}/\1!' ${WRKSRC}/${DISTNAME:L}.c
+	@${REINPLACE_CMD} -E '/^#define/s!([a-z]*\.txt)!${DATADIR}/\1!' ${WRKSRC}/${DISTNAME:tl}.c
 
 do-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${PTHREAD_CFLAGS} -o ${PORTNAME} ${DISTNAME:L}.c ${PTHREAD_LIBS}
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${PTHREAD_CFLAGS} -o ${PORTNAME} ${DISTNAME:tl}.c ${PTHREAD_LIBS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

@@ -1,6 +1,6 @@
---- chrome/browser/plugins/plugins_resource_service.cc.orig	2013-01-03 16:15:04.489512557 +0200
-+++ chrome/browser/plugins/plugins_resource_service.cc	2013-01-03 16:16:48.346512702 +0200
-@@ -31,7 +31,7 @@
+--- ./chrome/browser/plugins/plugins_resource_service.cc.orig	2014-04-24 22:35:10.000000000 +0200
++++ ./chrome/browser/plugins/plugins_resource_service.cc	2014-04-24 23:23:43.000000000 +0200
+@@ -33,7 +33,7 @@
    std::string filename;
  #if defined(OS_WIN)
    filename = "plugins_win.json";

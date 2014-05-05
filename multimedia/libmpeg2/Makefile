@@ -31,7 +31,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| -O3|| ; s|<termio|&s|' \
 		${WRKSRC}/configure
 # AMD64 prefers position independent code
-.if ${ARCH:L} == "amd64"
+.if ${ARCH:tl} == "amd64"
 	@${REINPLACE_CMD} -e '/CFLAGS/s| -prefer-non-pic||' \
 		${WRKSRC}/configure
 .endif

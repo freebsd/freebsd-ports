@@ -3,7 +3,7 @@
 
 PORTNAME=	mailzu
 DISTVERSION=	0.8rc3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MailZu%200.8RC3
 DISTNAME=	MailZu_${DISTVERSION:S/rc/RC/}
@@ -36,43 +36,23 @@ PGSQL_DESC=	Use PostgreSQL database/auth storage backend
 IMAP_DESC=	Use IMAP auth backend
 LDAP_DESC=	Use LDAP auth backend
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
-
-.if ${PORT_OPTIONS:MIMAP}
-USE_PHP+=	imap
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.endif
+MYSQL_USE=	PHP=mysql
+PGSQL_USE=	PHP=pgsql
+IMAP_USE=	PHP=imap
+LDAP_USE=	PHP=ldap
 
 do-install:
-	@${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} -m 755 ${WWWDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.php* ${WRKSRC}/*.js* ${WRKSRC}/*.css* ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "config contrib img lang lib templates" \
-		${WWWDIR} "! -name *.orig"
-	@cd ${WRKSRC} && ${COPYTREE_BIN} scripts ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.php* ${WRKSRC}/*.js* ${WRKSRC}/*.css* ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "config contrib img lang lib templates" \
+		${STAGEDIR}${WWWDIR} "! -name *.orig")
+	(cd ${WRKSRC} && ${COPYTREE_BIN} scripts ${STAGEDIR}${WWWDIR})
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/CHANGELOG ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/docs/* ${DOCSDIR}
-.endif
-	@${CHMOD} 644 ${WWWDIR}/config/config.php.sample
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+	${CHMOD} 644 ${STAGEDIR}${WWWDIR}/config/config.php.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

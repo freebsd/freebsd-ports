@@ -34,8 +34,8 @@ RDEP=	AIFF:sox SHN:shorten FLAC APE:mac OFR:ofr:optimfrog LPAC WV:wavpack \
 .for o in ${PORT_OPTIONS}
 m=	${RDEP:M${o}*}
 .if ${m}
-b=	${m:C/^[A-Z]*://:C/:.*//:L}
-p=	${m:C/^[A-Z]*://:C/.*://:L}
+b=	${m:C/^[A-Z]*://:C/:.*//:tl}
+p=	${m:C/^[A-Z]*://:C/.*://:tl}
 RUN_DEPENDS+=	${b}:${PORTSDIR}/audio/${p}
 RUN_DEPENDS:=	${RUN_DEPENDS}
 .endif

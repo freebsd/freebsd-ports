@@ -13,21 +13,16 @@ COMMENT=	General-purpose fuzzer with simple, command-line interface
 LICENSE=	APACHE20
 LICENSE_FILE=   ${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
+USES=	gmake
+OPTIONS_DEFINE=	EXAMPLES
 
 # inplace replacement to remove relative binary path in examples scripts
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -i "" -E "s,\.\./,," ${WRKSRC}/examples/*.sh
-
-do-build:
-	@(cd ${WRKSRC}; ${GMAKE})
+	${REINPLACE_CMD} -i "" -E "s,\.\./,," ${WRKSRC}/examples/*.sh
 
 do-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

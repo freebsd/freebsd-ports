@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-02-11 22:06:01.000000000 +0100
++++ Makefile	2014-05-01 01:58:43.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ VERSION=$(shell ./genver.sh -r)
+ USELIBCONFIG=1	# Use libconfig? (necessary to use configuration files)
+-USELIBWRAP=	# Use libwrap?
++USELIBWRAP?=	# Use libwrap?
+ USELIBCAP=	# Use libcap?
+ COV_TEST= 	# Perform test coverage?
+ PREFIX=/usr/local

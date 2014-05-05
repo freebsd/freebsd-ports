@@ -1012,15 +1012,34 @@
      FS="/"
 --- jdk/test/sun/security/tools/jarsigner/diffend.sh
 +++ jdk/test/sun/security/tools/jarsigner/diffend.sh
-@@ -41,7 +41,7 @@
- # set platform-dependent variables
- OS=`uname -s`
- case "$OS" in
--  SunOS | Linux | Darwin )
-+  SunOS | Linux | *BSD | Darwin )
-     NULL=/dev/null
-     PS=":"
+@@ -47,6 +47,13 @@
      FS="/"
+     CP="${FS}bin${FS}cp -f"
+     ;;
++  *BSD )
++    NULL=/dev/null
++    PS=":"
++    FS="/"
++    PATH="${PATH}${PS}${FS}usr${FS}local${FS}bin"
++    CP="${FS}bin${FS}cp -f"
++    ;;
+   CYGWIN* )
+     NULL=/dev/null
+     PS=";"
+--- jdk/test/sun/security/tools/jarsigner/emptymanifest.sh
++++ jdk/test/sun/security/tools/jarsigner/emptymanifest.sh
+@@ -39,6 +39,11 @@
+   Windows_* )
+     FS="\\"
+     ;;
++  *BSD )
++    PS=":"
++    FS="/"
++    PATH="${PATH}${PS}${FS}usr${FS}local${FS}bin"
++    ;;
+   * )
+     FS="/"
+     ;;
 --- jdk/test/sun/security/tools/jarsigner/oldsig.sh
 +++ jdk/test/sun/security/tools/jarsigner/oldsig.sh
 @@ -42,7 +42,7 @@

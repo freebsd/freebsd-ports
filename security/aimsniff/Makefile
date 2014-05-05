@@ -27,7 +27,6 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/aimsniff
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/GDBM_File.pm)
@@ -35,18 +34,15 @@ NO_STAGE=	yes
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/aimSniff.pl ${PREFIX}/bin/aimsniff
+	${INSTALL_SCRIPT} ${WRKSRC}/aimSniff.pl ${STAGEDIR}${PREFIX}/bin/aimsniff
 .if ${PORT_OPTIONS:MSUID_ROOT}
-	${CHMOD} u+s ${PREFIX}/bin/aimsniff
-.else
+	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/aimsniff
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

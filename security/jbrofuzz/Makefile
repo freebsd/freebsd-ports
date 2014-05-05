@@ -19,23 +19,20 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	JAVA_CMD=${JAVA} JBROFUZZ=${PORTNAME}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${JAVASHAREDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/JBroFuzz.jar ${JAVASHAREDIR}/${PORTNAME}/${PORTNAME}.jar
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
-	( cd ${WRKSRC}/fuzzers/ && ${COPYTREE_SHARE} . ${DATADIR}/fuzzers/ )
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	( cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR} )
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.	for I in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${I} ${DOCSDIR}
-.	endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/JBroFuzz.jar ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/${PORTNAME}.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	( cd ${WRKSRC}/fuzzers/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/fuzzers/ )
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	( cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} )
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for I in ${PORTDOCS}
+		${INSTALL_DATA} ${WRKSRC}/${I} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.post.mk>

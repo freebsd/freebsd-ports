@@ -11,27 +11,22 @@ COMMENT=	Real-time graphics effect able to increase the size of small bitmaps
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-OPTIONS_DEFINE_i386=	MMX
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	$$(libpng15-config --I_opts)
 LDFLAGS+=	$$(libpng15-config --L_opts)
 
-MAN1=		scalex.1 scalerx.1
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/scalex bin/scalerx
+PLIST_FILES=	bin/scalex bin/scalerx man/man1/scalex.1.gz \
+		man/man1/scalerx.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE_i386=	MMX
 
-.if ${PORT_OPTIONS:MMMX}
-CPPFLAGS+=	-DHAVE_MMX
-.endif
+MMX_CPPFLAGS+=	-DHAVE_MMX
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -40,13 +35,9 @@ post-patch:
 		 s|__x86_64__|__amd64__|' ${WRKSRC}/*.[ch]
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html ${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/example && ${INSTALL_DATA} *.png ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/example && ${INSTALL_DATA} *.png ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
---- third_party/libusb/libusb.gyp.orig	2013-06-19 01:35:24.000000000 +0000
-+++ third_party/libusb/libusb.gyp	2013-06-24 21:04:31.000000000 +0000
-@@ -67,6 +67,19 @@
-             '_GNU_SOURCE=1',
+--- ./third_party/libusb/libusb.gyp.orig	2014-04-24 22:35:57.000000000 +0200
++++ ./third_party/libusb/libusb.gyp	2014-04-24 23:23:48.000000000 +0200
+@@ -93,6 +93,19 @@
            ],
+           'msvs_disabled_warnings': [ 4267 ],
          }],
 +        ['OS == "freebsd"', {
 +          'type': 'none',

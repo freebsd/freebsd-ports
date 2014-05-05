@@ -12,6 +12,7 @@
 
 PORTNAME=	minc
 PORTVERSION=	2.0.18
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	science biology
 MASTER_SITES=	http://packages.bic.mni.mcgill.ca/tgz/ \
@@ -23,8 +24,8 @@ COMMENT=	Medical Imaging NetCDF
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	libnetcdf.so.4:${PORTSDIR}/science/netcdf \
-		libhdf5.so.0:${PORTSDIR}/science/hdf5
+LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
+		libhdf5.so:${PORTSDIR}/science/hdf5
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

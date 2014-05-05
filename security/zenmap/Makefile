@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenmap
-PORTVERSION=	6.45
+PORTVERSION=	6.46
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		SF/nemysisfreebsdp/security/:icons

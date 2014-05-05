@@ -18,9 +18,6 @@ RUN_DEPENDS=	pbmtoepsi:${PORTSDIR}/graphics/netpbm
 USE_GHOSTSCRIPT_RUN=	yes
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
-.SILENT:
-
 pre-patch:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/pstoepsi ${WRKDIR}/pstoepsi.prefix
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/README.this-site ${WRKDIR}
@@ -31,9 +28,8 @@ do-build:
 	${GZIP_CMD} ${WRKDIR}/README.this-site
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/pstoepsi ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/pstoepsi
-	${INSTALL_DATA} ${WRKDIR}/README.this-site.gz \
-			${PREFIX}/share/doc/pstoepsi
+	${INSTALL_SCRIPT} ${WRKDIR}/pstoepsi ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/README.this-site.gz ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

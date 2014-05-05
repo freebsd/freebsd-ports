@@ -249,7 +249,7 @@ SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,,'
 BROKEN=		deprecated LDAP option defined, use WITH_OPENLDAP or WITH_OPENLDAP_VER
 .endif
 
-.if ${PORT_OPTIONS:MOPENLDAP_VER} && ${WITH_OPENLDAP_VER:L} != "auto"
+.if ${PORT_OPTIONS:MOPENLDAP_VER} && ${WITH_OPENLDAP_VER:tl} != "auto"
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 
@@ -289,7 +289,7 @@ SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS:S/,/\\,/g},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES:S/,/\\,/g},'
 
 .if ${PORT_OPTIONS:MMYSQL}
-.if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER:L} == "auto"
+.if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER:tl} == "auto"
 IGNORE=		WITH_MYSQL_VER set to "${WITH_MYSQL_VER}" is no longer supported.
 IGNORE+=	Just don't set WITH_MYSQL_VER if you want to use system-default version
 .else
@@ -339,11 +339,11 @@ SEDLIST+=	-e 's,^\# (AUTH_CYRUS_SASL=),\1,' \
 
 .if ${PORT_OPTIONS:MAUTH_RADIUS}
 WITH_RADIUS_TYPE?=	RADLIB
-.if ${WITH_RADIUS_TYPE:L} == radlib
+.if ${WITH_RADIUS_TYPE:tl} == radlib
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-lradius,' \
 		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1/etc/radius.conf,' \
 		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADLIB,'
-.elif ${WITH_RADIUS_TYPE:L} == radiusclient
+.elif ${WITH_RADIUS_TYPE:tl} == radiusclient
 LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -lradiusclient-ng,' \
 		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE:S/,/\\,/g}/etc/radiusclient-ng/radiusclient.conf,' \

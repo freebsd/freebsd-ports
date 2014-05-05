@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-PORTVERSION=	${EMACS_VER}
+PORTVERSION=	${EMACS_VER}.${EMACS_REV}
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
-MASTER_SITES=	GNU_ALPHA
-MASTER_SITE_SUBDIR=	emacs/pretest	
+MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ashish
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -21,7 +22,8 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 
-EMACS_VER=	24.3.90
+EMACS_VER=	24.4.50
+EMACS_REV=	117036
 GNU_CONFIGURE=	yes
 USES=		ncurses pkgconfig gmake shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -47,8 +49,8 @@ INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 		ebrowse ede ediff edt efaq eieio eintr elisp emacs-mime emacs-gnutls emacs epa \
 		erc ert eshell eudc eww flymake forms gnus htmlfontify idlwave ido info \
 		mairix-el message mh-e newsticker nxml-mode octave-mode \
-		org pcl-cvs pgg rcirc reftex remember sasl sc semantic ses sieve \
-		smtpmail speedbar srecode todo-mode tramp url vip viper widget wisent woman
+		org pcl-cvs pgg rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar \
+		srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
 OPTIONS_DEFINE=	X11 ACL DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SCROLLBARS \
 		XFT XIM XML XPM MAGICK GNUTLS GSETTINGS LTO FILENOTIFY

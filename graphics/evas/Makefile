@@ -24,24 +24,24 @@ OPTIONS_DEFAULT=BUFFER OPENGL X11 \
 		PNG PMAPS PSD TGA TIFF WBMP XPM
 
 .for NODE in ${OPTIONS_MULTI_ENGINES}
-${NODE}_DESC=	Install ${NODE:L} engine
+${NODE}_DESC=	Install ${NODE:tl} engine
 .endfor
 
 .for NODE in ${OPTIONS_DEFINE}
-${NODE}_DESC=	Install ${NODE:L} loader
+${NODE}_DESC=	Install ${NODE:tl} loader
 .endfor
 
 .include <bsd.port.options.mk>
 
 .for NODE in ${OPTIONS_MULTI_ENGINES}
 .  if ${PORT_OPTIONS:M${NODE}}
-USE_EFL_EVAS_ENGINES+=	${NODE:L}
+USE_EFL_EVAS_ENGINES+=	${NODE:tl}
 .  endif
 .endfor
 
 .for NODE in ${OPTIONS_DEFINE}
 .  if ${PORT_OPTIONS:M${NODE}}
-USE_EFL_EVAS_LOADERS+=	${NODE:L}
+USE_EFL_EVAS_LOADERS+=	${NODE:tl}
 .  endif
 .endfor
 

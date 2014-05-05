@@ -16,9 +16,7 @@ BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
 IGNORE_WITH_PGSQL=	82 83
 
-USES=		gettext
-USE_PGSQL=	yes
-USE_GMAKE=	yes
+USES=		gettext gmake pgsql
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	${PTHREAD_CFLAGS}

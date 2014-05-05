@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.clearsilver.net/downloads/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME:L}-${PORTVERSION}
+DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl bindings for fast and powerful template system

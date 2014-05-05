@@ -3,6 +3,7 @@
 
 PORTNAME=	bruteforceblocker
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
 		${MASTER_SITE_LOCAL}
@@ -17,30 +18,21 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 
+OPTIONS_DEFINE=	DOCS
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
+SHEBANG_FILES=	${PORTNAME}.pl
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/sbin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf-dist
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in INSTALL CHANGELOG CREDITS
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
-		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf-dist ${PREFIX}/etc/${PORTNAME}.conf ; \
-	fi
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>

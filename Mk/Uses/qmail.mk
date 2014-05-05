@@ -42,7 +42,7 @@ _QMAIL_VALID_SLAVEPORTS=	ldap mysql spamcontrol tls
 
 .  if defined(QMAIL_SLAVEPORT)
 .    for slave in ${_QMAIL_VALID_SLAVEPORTS}
-.      if ${QMAIL_SLAVEPORT:L} == ${slave}
+.      if ${QMAIL_SLAVEPORT:tl} == ${slave}
 _QMAIL_SLAVEPORT_OKAY=	true
 .      endif
 .    endfor
@@ -53,7 +53,7 @@ IGNORE=	Invalid QMAIL_SLAVEPORT value. Only one can be set, valid values are: ${
 .  endif
 
 .  if defined(QMAIL_SLAVEPORT)
-_QMAIL_DEPENDS=	${QMAIL_PREFIX}/bin/qmail-send:${PORTSDIR}/mail/qmail-${QMAIL_SLAVEPORT:L}
+_QMAIL_DEPENDS=	${QMAIL_PREFIX}/bin/qmail-send:${PORTSDIR}/mail/qmail-${QMAIL_SLAVEPORT:tl}
 .  else
 _QMAIL_DEPENDS=	${QMAIL_PREFIX}/bin/qmail-send:${PORTSDIR}/mail/qmail
 .  endif

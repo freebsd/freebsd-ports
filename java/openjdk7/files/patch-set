@@ -2473,6 +2473,25 @@
 +endif
  
  CFLAGS += -DVM_LITTLE_ENDIAN
+--- hotspot/make/bsd/makefiles/build_vm_def.sh	2013-09-06 11:21:59.000000000 -0700
++++ hotspot/make/bsd/makefiles/build_vm_def.sh	2014-04-28 17:39:01.000000000 -0700
+@@ -7,6 +7,16 @@
+ NM=nm
+ fi
+ 
++if [ `uname` == "OpenBSD" ] ; then
++$NM $* \
++    | awk '{
++              if ($2 != "U") if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 ";"
++              if ($2 != "U") if ($3 ~ /^UseSharedSpaces$/) print "\t" $3 ";"
++              if ($2 != "U") if ($3 ~ /^_ZN9Arguments17SharedArchivePathE$/) print "\t" $3 ";"
++          }' \
++    | sort -u
++else
+ $NM -Uj $* | awk '
+    { if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 }
+    '
++fi
 --- hotspot/make/bsd/makefiles/buildtree.make	2013-09-06 11:22:00.000000000 -0700
 +++ hotspot/make/bsd/makefiles/buildtree.make	2014-04-20 12:39:31.000000000 -0700
 @@ -1,5 +1,5 @@
@@ -2509,7 +2528,7 @@
  .dbxrc:  $(BUILDTREE_MAKE)
  	@echo Creating $@ ...
 --- hotspot/make/bsd/makefiles/gcc.make	2013-09-06 11:22:00.000000000 -0700
-+++ hotspot/make/bsd/makefiles/gcc.make	2014-04-20 12:39:31.000000000 -0700
++++ hotspot/make/bsd/makefiles/gcc.make	2014-04-28 17:39:01.000000000 -0700
 @@ -116,7 +116,10 @@
  CFLAGS += -fno-rtti
  CFLAGS += -fno-exceptions
@@ -2522,6 +2541,19 @@
  # version 4 and above support fvisibility=hidden (matches jni_x86.h file)
  # except 4.1.2 gives pointless warnings that can't be disabled (afaik)
  ifneq "$(shell expr \( $(CC_VER_MAJOR) \> 4 \) \| \( \( $(CC_VER_MAJOR) = 4 \) \& \( $(CC_VER_MINOR) \>= 3 \) \))" "0"
+@@ -214,7 +217,11 @@
+ 
+ # Flags for generating make dependency flags.
+ ifneq ("${CC_VER_MAJOR}", "2")
+-DEPFLAGS = -fpch-deps -MMD -MP -MF $(DEP_DIR)/$(@:%=%.d)
++DEPFLAGS =
++ifeq (,$(findstring clang,$(shell $(CC) -v 2>&1)))
++DEPFLAGS += -fpch-deps
++endif
++DEPFLAGS += -MMD -MP -MF $(DEP_DIR)/$(@:%=%.d)
+ endif
+ 
+ # -DDONT_USE_PRECOMPILED_HEADER will exclude all includes in precompiled.hpp.
 --- hotspot/make/bsd/makefiles/jsig.make	2013-09-06 11:22:00.000000000 -0700
 +++ hotspot/make/bsd/makefiles/jsig.make	2014-04-20 12:39:31.000000000 -0700
 @@ -36,9 +36,16 @@
@@ -3325,7 +3357,7 @@
 +}
 +
 --- hotspot/src/os/bsd/vm/os_bsd.cpp	2013-09-06 11:22:03.000000000 -0700
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	2014-04-20 12:39:29.000000000 -0700
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	2014-04-28 17:39:01.000000000 -0700
 @@ -187,6 +187,8 @@
  static int SR_signum = SIGUSR2;
  sigset_t SR_sigset;
@@ -3335,19 +3367,21 @@
  
  ////////////////////////////////////////////////////////////////////////////////
  // utility functions
-@@ -355,7 +357,11 @@
+@@ -355,7 +357,13 @@
     * since it returns a 64 bit value)
     */
    mib[0] = CTL_HW;
 +#ifdef HW_MEMSIZE
    mib[1] = HW_MEMSIZE;
++#elif defined (HW_USERMEM64)
++  mib[1] = HW_USERMEM64;
 +#else
 +  mib[1] = HW_USERMEM;
 +#endif
    len = sizeof(mem_val);
    if (sysctl(mib, 2, &mem_val, &len, NULL, 0) != -1) {
         assert(len == sizeof(mem_val), "unexpected data size");
-@@ -971,13 +977,14 @@
+@@ -971,13 +979,14 @@
  #endif
  
  #ifdef __APPLE__
@@ -3364,7 +3398,7 @@
    return m_ident_info.thread_id;
  }
  #endif
-@@ -1009,9 +1016,14 @@
+@@ -1009,9 +1018,14 @@
  
  #ifdef _ALLBSD_SOURCE
  #ifdef __APPLE__
@@ -3382,7 +3416,7 @@
  #else
    // thread_id is pthread_id on BSD
    osthread->set_thread_id(::pthread_self());
-@@ -1207,8 +1219,14 @@
+@@ -1207,8 +1221,14 @@
    // Store pthread info into the OSThread
  #ifdef _ALLBSD_SOURCE
  #ifdef __APPLE__
@@ -3399,7 +3433,7 @@
  #else
    osthread->set_thread_id(::pthread_self());
  #endif
-@@ -1830,7 +1848,7 @@
+@@ -1830,7 +1850,7 @@
  
  intx os::current_thread_id() {
  #ifdef __APPLE__
@@ -3408,7 +3442,7 @@
  #else
    return (intx)::pthread_self();
  #endif
-@@ -2381,14 +2399,14 @@
+@@ -2381,14 +2401,14 @@
  }
  
  void os::print_os_info_brief(outputStream* st) {
@@ -3425,7 +3459,7 @@
  
    os::Posix::print_uname_info(st);
  
-@@ -2397,10 +2415,6 @@
+@@ -2397,10 +2417,6 @@
    os::Posix::print_load_average(st);
  }
  
@@ -3436,7 +3470,7 @@
  void os::print_memory_info(outputStream* st) {
  
    st->print("Memory:");
-@@ -2417,6 +2431,7 @@
+@@ -2417,6 +2433,7 @@
    st->print("(" UINT64_FORMAT "k free)",
              os::available_memory() >> 10);
  #ifndef _ALLBSD_SOURCE
@@ -3444,7 +3478,7 @@
    st->print(", swap " UINT64_FORMAT "k",
              ((jlong)si.totalswap * si.mem_unit) >> 10);
    st->print("(" UINT64_FORMAT "k free)",
-@@ -2424,12 +2439,22 @@
+@@ -2424,12 +2441,22 @@
  #endif
    st->cr();
  
@@ -3467,7 +3501,7 @@
  // Taken from /usr/include/bits/siginfo.h  Supposed to be architecture specific
  // but they're the same for all the bsd arch that we support
  // and they're the same for solaris but there's no common place to put this.
-@@ -2575,6 +2600,25 @@
+@@ -2575,6 +2602,25 @@
          len = strlen(buf);
          jrelib_p = buf + len;
  
@@ -3493,7 +3527,7 @@
          // Add the appropriate library subdir
          snprintf(jrelib_p, buflen-len, "/jre/lib");
          if (0 != access(buf, F_OK)) {
-@@ -2604,6 +2648,7 @@
+@@ -2604,6 +2650,7 @@
            if (rp == NULL)
              return;
          }
@@ -3501,7 +3535,7 @@
        }
      }
    }
-@@ -2707,10 +2752,14 @@
+@@ -2707,10 +2754,14 @@
      bool timedwait(unsigned int sec, int nsec);
    private:
      jlong currenttime() const;
@@ -3517,7 +3551,7 @@
    SEM_INIT(_semaphore, 0);
  }
  
-@@ -2775,7 +2824,7 @@
+@@ -2775,7 +2826,7 @@
  
  bool Semaphore::timedwait(unsigned int sec, int nsec) {
    struct timespec ts;
@@ -3526,7 +3560,7 @@
  
    while (1) {
      int result = sem_timedwait(&_semaphore, &ts);
-@@ -2996,7 +3045,11 @@
+@@ -2996,7 +3047,11 @@
  }
  
  void os::pd_free_memory(char *addr, size_t bytes, size_t alignment_hint) {
@@ -3538,7 +3572,7 @@
  }
  
  void os::numa_make_global(char *addr, size_t bytes) {
-@@ -3829,6 +3882,7 @@
+@@ -3829,6 +3884,7 @@
    return OS_OK;
  #elif defined(__FreeBSD__)
    int ret = pthread_setprio(thread->osthread()->pthread_id(), newpri);
@@ -3826,6 +3860,17 @@
    st->print(" Build %d", osvi.dwBuildNumber);
    st->print(" %s", osvi.szCSDVersion);           // service pack
    st->cr();
+--- hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	2013-09-06 11:22:04.000000000 -0700
++++ hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	2014-04-28 17:39:01.000000000 -0700
+@@ -945,7 +945,7 @@
+   if (rslt != 0)
+     fatal(err_msg("pthread_stackseg_np failed with err = %d", rslt));
+ 
+-  *bottom = (address)((char *)ss.ss_sp - ss.ss_size);
++  *bottom = (address)(align_size_up((intptr_t)ss.ss_sp, os::vm_page_size()) - ss.ss_size);
+   *size   = ss.ss_size;
+ #elif defined(_ALLBSD_SOURCE)
+   pthread_attr_t attr;
 --- hotspot/src/os_cpu/bsd_zero/vm/os_bsd_zero.cpp	2013-09-06 11:22:04.000000000 -0700
 +++ hotspot/src/os_cpu/bsd_zero/vm/os_bsd_zero.cpp	2014-04-20 12:39:31.000000000 -0700
 @@ -24,7 +24,7 @@
@@ -3892,6 +3937,26 @@
          (m->name() != vmSymbols::object_initializer_name())) {
  
        Symbol* name = m->name();
+--- hotspot/src/share/vm/code/relocInfo.hpp	2013-09-06 11:22:10.000000000 -0700
++++ hotspot/src/share/vm/code/relocInfo.hpp	2014-04-28 17:39:01.000000000 -0700
+@@ -371,7 +371,7 @@
+   // "immediate" in the prefix header word itself.  This optimization
+   // is invisible outside this module.)
+ 
+-  inline friend relocInfo prefix_relocInfo(int datalen = 0);
++  inline friend relocInfo prefix_relocInfo(int datalen);
+ 
+  protected:
+   // an immediate relocInfo optimizes a prefix with one 10-bit unsigned value
+@@ -466,7 +466,7 @@
+   return relocInfo(relocInfo::none, relocInfo::offset_limit() - relocInfo::offset_unit);
+ }
+ 
+-inline relocInfo prefix_relocInfo(int datalen) {
++inline relocInfo prefix_relocInfo(int datalen = 0) {
+   assert(relocInfo::fits_into_immediate(datalen), "datalen in limits");
+   return relocInfo(relocInfo::data_prefix_tag, relocInfo::RAW_BITS, relocInfo::datalen_tag | datalen);
+ }
 --- hotspot/src/share/vm/gc_implementation/shared/gcTraceSend.cpp	2013-09-06 11:22:12.000000000 -0700
 +++ hotspot/src/share/vm/gc_implementation/shared/gcTraceSend.cpp	2014-04-20 12:39:30.000000000 -0700
 @@ -109,7 +109,7 @@
@@ -4324,8 +4389,22 @@
          iterator->TState = ObjectWaiter::TS_ENTER ;
       }
 --- hotspot/src/share/vm/runtime/os.cpp	2013-09-06 11:22:15.000000000 -0700
-+++ hotspot/src/share/vm/runtime/os.cpp	2014-04-20 12:39:30.000000000 -0700
-@@ -1139,9 +1139,6 @@
++++ hotspot/src/share/vm/runtime/os.cpp	2014-04-28 17:39:01.000000000 -0700
+@@ -399,13 +399,6 @@
+     if (_native_java_library == NULL) {
+       vm_exit_during_initialization("Unable to load native library", ebuf);
+     }
+-
+-#if defined(__OpenBSD__)
+-    // Work-around OpenBSD's lack of $ORIGIN support by pre-loading libnet.so
+-    // ignore errors
+-    dll_build_name(buffer, sizeof(buffer), Arguments::get_dll_dir(), "net");
+-    dll_load(buffer, ebuf, sizeof(ebuf));
+-#endif
+   }
+   static jboolean onLoaded = JNI_FALSE;
+   if (onLoaded) {
+@@ -1139,9 +1132,6 @@
          "%/lib/jce.jar:"
          "%/lib/charsets.jar:"
          "%/lib/jfr.jar:"
@@ -21278,7 +21357,7 @@
      java/lang/reflect/AccessibleObject.java \
      java/lang/reflect/Field.java \
 --- jdk/make/java/java/Makefile	2013-09-06 11:27:37.000000000 -0700
-+++ jdk/make/java/java/Makefile	2014-04-20 12:39:22.000000000 -0700
++++ jdk/make/java/java/Makefile	2014-04-28 17:39:02.000000000 -0700
 @@ -84,6 +84,7 @@
                  java/util/prefs/FileSystemPreferencesFactory.java \
  
@@ -21299,7 +21378,7 @@
  
  ifeq ($(HAVE_ALTZONE),true)
  OTHER_CPPFLAGS += -DHAVE_ALTZONE
-@@ -451,3 +454,36 @@
+@@ -451,3 +454,39 @@
  clean::
  	$(RM) $(GENSRCDIR)/sun/util/CoreResourceBundleControl.java
  
@@ -21311,6 +21390,9 @@
 +endif
 +ifeq ($(PLATFORM), macosx)
 +    HELPER_EXE = $(LIBDIR)/jspawnhelper
++    BUILDHELPER = 1
++endif
++ifeq ($(PLATFORM), bsd)
 +    BUILDHELPER = 1
 +endif
 +
@@ -56058,8 +56140,8 @@
  static const char *system_dir   = "/usr/jdk";
  static const char *user_dir     = "/jdk";
 --- jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd	2013-09-06 11:29:06.000000000 -0700
-+++ jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd	2014-04-20 12:39:22.000000000 -0700
-@@ -63,11 +63,59 @@
++++ jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd	2014-04-28 17:39:02.000000000 -0700
+@@ -63,11 +63,66 @@
      private /* final */ InputStream  stdout;
      private /* final */ InputStream  stderr;
  
@@ -56094,7 +56176,14 @@
 +            public LaunchMechanism run() {
 +                String javahome = System.getProperty("java.home");
 +
-+                helperpath = toCString(javahome + "/lib/jspawnhelper");
++                String osname = System.getProperty("os.name");
++                if (osname.endsWith("BSD")) {
++                    String osArch = System.getProperty("os.arch");
++                    helperpath = toCString(javahome + "/lib/" + osArch + "/jspawnhelper");
++                } else {
++                    helperpath = toCString(javahome + "/lib/jspawnhelper");
++                }
++
 +                String s = System.getProperty(
 +                    "jdk.lang.Process.launchMechanism", "posix_spawn");
 +
@@ -56120,7 +56209,7 @@
       *
       * @param fds an array of three file descriptors.
       *        Indexes 0, 1, and 2 correspond to standard input,
-@@ -80,7 +128,8 @@
+@@ -80,7 +135,8 @@
       *        output.
       * @return the pid of the subprocess
       */
@@ -56130,7 +56219,7 @@
                                     byte[] argBlock, int argc,
                                     byte[] envBlock, int envc,
                                     byte[] dir,
-@@ -132,7 +181,9 @@
+@@ -132,7 +188,9 @@
                  final boolean redirectErrorStream)
              throws IOException {
  
@@ -56141,7 +56230,7 @@
                            argBlock, argc,
                            envBlock, envc,
                            dir,
-@@ -236,11 +287,10 @@
+@@ -236,11 +294,10 @@
          try { stderr.close(); } catch (IOException ignored) {}
      }
  
@@ -56620,6 +56709,17 @@
 +        return upper;
 +    }
 +}
+--- jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	2013-09-06 11:29:08.000000000 -0700
++++ jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	2014-04-28 17:39:02.000000000 -0700
+@@ -50,7 +50,7 @@
+             return new SolarisAsynchronousChannelProvider();
+         if (osname.equals("Linux"))
+             return new LinuxAsynchronousChannelProvider();
+-        if (osname.contains("OS X"))
++        if (osname.contains("OS X") || osname.endsWith("BSD"))
+             return new BsdAsynchronousChannelProvider();
+         throw new InternalError("platform not recognized");
+     }
 --- jdk/src/solaris/classes/sun/nio/ch/DevPollArrayWrapper.java	2013-09-06 11:29:08.000000000 -0700
 +++ jdk/src/solaris/classes/sun/nio/ch/DevPollArrayWrapper.java	2014-04-20 12:39:22.000000000 -0700
 @@ -26,9 +26,11 @@
@@ -57894,7 +57994,7 @@
  }
  
 --- jdk/src/solaris/native/java/lang/childproc.c	1969-12-31 16:00:00.000000000 -0800
-+++ jdk/src/solaris/native/java/lang/childproc.c	2014-04-20 12:39:22.000000000 -0700
++++ jdk/src/solaris/native/java/lang/childproc.c	2014-04-28 17:39:02.000000000 -0700
 @@ -0,0 +1,387 @@
 +/*
 + * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
@@ -57961,12 +58061,12 @@
 +}
 +
 +#if defined(__OpenBSD__)
-+static int
++int
 +closeDescriptors(void)
 +{
-+	    int err;
-+	        RESTARTABLE(closefrom(FAIL_FILENO + 1), err);
-+		    return err;
++    int err;
++    RESTARTABLE(closefrom(FAIL_FILENO + 1), err);
++    return err;
 +}
 +#else
 +
@@ -58678,8 +58778,8 @@
                  (*env)->SetObjectArrayElement(env, ret, inet6Index, iaObj);
                  inet6Index++;
 --- jdk/src/solaris/native/java/net/NetworkInterface.c	2013-09-06 11:29:10.000000000 -0700
-+++ jdk/src/solaris/native/java/net/NetworkInterface.c	2014-04-20 12:39:22.000000000 -0700
-@@ -60,14 +60,18 @@
++++ jdk/src/solaris/native/java/net/NetworkInterface.c	2014-04-28 17:39:02.000000000 -0700
+@@ -60,14 +60,19 @@
  #include <sys/param.h>
  #include <sys/ioctl.h>
  #include <sys/sockio.h>
@@ -58689,6 +58789,7 @@
  #include <net/if_var.h>
 +#elif defined(__OpenBSD__)
 +#include <netinet/if_ether.h>
++#include <netinet6/in6_var.h>
 +#elif defined(__NetBSD__)
 +#include <net/if_ether.h>
 +#endif
@@ -58700,7 +58801,7 @@
  
  #include "jvm.h"
  #include "jni_util.h"
-@@ -118,7 +122,6 @@
+@@ -118,7 +123,6 @@
  static jmethodID ni_ia4ctrID;
  static jmethodID ni_ia6ctrID;
  static jmethodID ni_ibctrID;
@@ -58708,7 +58809,7 @@
  static jfieldID ni_ibaddressID;
  static jfieldID ni_ib4broadcastID;
  static jfieldID ni_ib4maskID;
-@@ -193,7 +196,6 @@
+@@ -193,7 +197,6 @@
      ni_ia4ctrID = (*env)->GetMethodID(env, ni_ia4cls, "<init>", "()V");
      ni_ia6ctrID = (*env)->GetMethodID(env, ni_ia6cls, "<init>", "()V");
      ni_ibctrID = (*env)->GetMethodID(env, ni_ibcls, "<init>", "()V");
@@ -58716,7 +58817,7 @@
      ni_ibaddressID = (*env)->GetFieldID(env, ni_ibcls, "address", "Ljava/net/InetAddress;");
      ni_ib4broadcastID = (*env)->GetFieldID(env, ni_ibcls, "broadcast", "Ljava/net/Inet4Address;");
      ni_ib4maskID = (*env)->GetFieldID(env, ni_ibcls, "maskLength", "S");
-@@ -332,11 +334,9 @@
+@@ -332,11 +335,9 @@
  #ifdef AF_INET6
                  if (family == AF_INET6) {
                      jbyte *bytes = (jbyte *)&(((struct sockaddr_in6*)addrP->addr)->sin6_addr);
@@ -58729,7 +58830,7 @@
                      i = 0;
                      while (i < 16) {
                          if (caddr[i] != bytes[i]) {
-@@ -670,21 +670,17 @@
+@@ -670,21 +671,17 @@
              int scope=0;
              iaObj = (*env)->NewObject(env, ni_ia6cls, ni_ia6ctrID);
              if (iaObj) {
@@ -58755,7 +58856,7 @@
              }
              ibObj = (*env)->NewObject(env, ni_ibcls, ni_ibctrID);
              if (ibObj) {
-@@ -1293,11 +1289,15 @@
+@@ -1293,11 +1290,15 @@
        return -1;
    }
  
@@ -58771,7 +58872,7 @@
    return 0;
  }
  
-@@ -1989,11 +1989,15 @@
+@@ -1989,11 +1990,15 @@
        return -1;
    }
  
@@ -59720,8 +59821,8 @@
  #else
  #   define ULTRA_CHIP   "sun4u"
 --- jdk/src/solaris/native/sun/net/portconfig.c	1969-12-31 16:00:00.000000000 -0800
-+++ jdk/src/solaris/native/sun/net/portconfig.c	2014-04-20 12:39:22.000000000 -0700
-@@ -0,0 +1,122 @@
++++ jdk/src/solaris/native/sun/net/portconfig.c	2014-04-28 17:39:02.000000000 -0700
+@@ -0,0 +1,140 @@
 +/*
 + * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
 + * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -59788,6 +59889,24 @@
 +    {
 +        range->lower = net_getParam("/dev/tcp", "tcp_smallest_anon_port");
 +        range->higher = net_getParam("/dev/tcp", "tcp_largest_anon_port");
++        return 0;
++    }
++#elif defined(__OpenBSD__)
++    {
++        int mib[3];
++        mib[0] = CTL_NET;
++        mib[1] = PF_INET;
++
++        mib[2] = IPCTL_IPPORT_HIFIRSTAUTO;
++        size_t rlen = sizeof(range->lower);
++        if (sysctl(mib, 3, &range->lower, &rlen, NULL, 0) == -1)
++            return -1;
++
++        mib[2] = IPCTL_IPPORT_HILASTAUTO;
++        rlen = sizeof(range->higher);
++        if (sysctl(mib, 3, &range->higher, &rlen, NULL, 0) == -1)
++            return -1;
++
 +        return 0;
 +    }
 +#elif defined(_ALLBSD_SOURCE)

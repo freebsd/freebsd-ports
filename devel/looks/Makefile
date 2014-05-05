@@ -8,7 +8,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://www.jgoodies.com/download/libraries/${PORTNAME}/
 DISTNAME=	jgoodies-${PORTNAME}-${PORTVERSION:S|.|_|g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	JGoodies Looks improve the appearance of your Java applications
 
 OPTIONS_DEFINE=	DOCS

@@ -46,89 +46,89 @@ _USE_SDL_ALL+=	gfx2 image2 mixer2 net2 sdl2 ttf2
 #
 # Variables used to determine what is needed:
 # _SUBDIR_xxx	subdirectory below ${PORTSDIR} (required)
-# _PORTDIR_xxx	subdirectory below ${PORTSDIR}/${_SUBDIR_xxx}, default sdl_xxx
-# _LIB_xxx		name of the shared lib, default SDL_xxx
+# _PORTDIR_xxx	subdirectory below ${PORTSDIR}/${_SUBDIR_xxx}
+# _LIB_xxx		name of the shared lib
 # _REQUIRES_xxx	also needs these SDL libraries
 #
 
 _SUBDIR_console=	devel
 _PORTDIR_console=	sdl_console
-_LIB_console=		SDL_console-2.1
+_LIB_console=		libSDL_console.so
 _REQUIRES_console=	sdl
 
 _SUBDIR_gfx=	graphics
 _PORTDIR_gfx=	sdl_gfx
-_LIB_gfx=	SDL_gfx
+_LIB_gfx=	libSDL_gfx.so
 _REQUIRES_gfx=	sdl
 
 _SUBDIR_image=	graphics
 _PORTDIR_image=	sdl_image
-_LIB_image=	SDL_image-1.2
+_LIB_image=	libSDL_image.so
 _REQUIRES_image=sdl
 
 _SUBDIR_mixer=	audio
 _PORTDIR_mixer=	sdl_mixer
-_LIB_mixer=	SDL_mixer-1.2
+_LIB_mixer=	libSDL_mixer.so
 _REQUIRES_mixer=sdl
 
 _SUBDIR_mm=	devel
 _PORTDIR_mm=	sdlmm
-_LIB_mm=	SDLmm
+_LIB_mm=	libSDLmm.so
 _REQUIRES_mm=	sdl
 
 _SUBDIR_net=	net
 _PORTDIR_net=	sdl_net
-_LIB_net=	SDL_net-1.2
+_LIB_net=	libSDL_net.so
 _REQUIRES_net=	sdl
 
 _SUBDIR_pango=	x11-toolkits
 _PORTDIR_pango=	sdl_pango
-_LIB_pango=	SDL_Pango
+_LIB_pango=	libSDL_Pango.so
 _REQUIRES_pango=sdl
 
 _SUBDIR_sdl=	devel
 _PORTDIR_sdl=	sdl12
-_LIB_sdl=	SDL-1.2
+_LIB_sdl=	libSDL.so
 _REQUIRES_sdl=
 
 _SUBDIR_sound=	audio
 _PORTDIR_sound=	sdl_sound
-_LIB_sound=	SDL_sound
+_LIB_sound=	libSDL_sound.so
 _REQUIRES_sound=sdl
 
 _SUBDIR_ttf=	graphics
 _PORTDIR_ttf=	sdl_ttf
-_LIB_ttf=	SDL_ttf-2.0
+_LIB_ttf=	libSDL_ttf.so
 _REQUIRES_ttf=	sdl
 
 _SUBDIR_gfx2=	graphics
 _PORTDIR_gfx2=	sdl2_gfx
-_LIB_gfx2=	SDL2_gfx
+_LIB_gfx2=	libSDL2_gfx.so
 _REQUIRES_gfx2=	sdl2
 
 _SUBDIR_image2=		graphics
 _PORTDIR_image2=	sdl2_image
-_LIB_image2=		SDL2_image
+_LIB_image2=		libSDL2_image.so
 _REQUIRES_image2=	sdl2
 
 _SUBDIR_mixer2=		audio
 _PORTDIR_mixer2=	sdl2_mixer
-_LIB_mixer2=		SDL2_mixer
+_LIB_mixer2=		libSDL2_mixer.so
 _REQUIRES_mixer2=	sdl2
 
 _SUBDIR_net2=	net
 _PORTDIR_net2=	sdl2_net
-_LIB_net2=	SDL2_net
+_LIB_net2=	libSDL2_net.so
 _REQUIRES_net2=	sdl2
 
 _SUBDIR_sdl2=	devel
 _PORTDIR_sdl2=	sdl20
-_LIB_sdl2=	SDL2
+_LIB_sdl2=	libSDL2.so
 _REQUIRES_sdl2=
 
 _SUBDIR_ttf2=	graphics
 _PORTDIR_ttf2=	sdl2_ttf
-_LIB_ttf2=	SDL2_ttf
+_LIB_ttf2=	libSDL2_ttf.so
 _REQUIRES_ttf2=	sdl2
 
 #

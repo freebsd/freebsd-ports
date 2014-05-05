@@ -3,11 +3,11 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.62
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
 
 LICENSE=	GPLv2
@@ -27,6 +27,7 @@ USES=		pathfix pkgconfig
 USE_GHOSTSCRIPT=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 
 CPPFLAGS+=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

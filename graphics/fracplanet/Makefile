@@ -3,14 +3,14 @@
 
 PORTNAME=	fracplanet
 PORTVERSION=	0.4.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons.tar.gz:icons
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for creating random fractal planets and terrain
 
 LICENSE=	GPLv2
@@ -31,13 +31,13 @@ CONFIGURE_ARGS=	-spec ${QMAKESPEC}
 PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	 BUGS NEWS README THANKS TODO ${PORTNAME}.css ${PORTNAME}.htm
+DOC_FILES1=	 BUGS NEWS README THANKS ${PORTNAME}.css ${PORTNAME}.htm
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
-DESKTOP_ENTRIES="Fracplanet" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Graphics;" false
+DESKTOP_ENTRIES="Fracplanet" "" "${PORTNAME}" \
+		"${PORTNAME}" "Graphics;" ""
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_GROUP=	DOXYGEN
@@ -61,12 +61,14 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's|qmake-qt4|${QMAKE} ${QMAKE_ARGS}|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lboost_program_options|-lboost_program_options -lGLU|' \
+	@${REINPLACE_CMD} -e \
+		's|-lboost_program_options|-lboost_program_options -lGLU|' \
 		${WRKSRC}/fracplanet.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/man1/fracplanet.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/

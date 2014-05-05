@@ -18,9 +18,4 @@ USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		iterm.1
-MAN3=		IPA.3 IPA::Geometry.3 IPA::Global.3 IPA::Local.3 IPA::Misc.3 \
-		IPA::Morphology.3 IPA::Point.3 IPA::Region.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -14,8 +14,7 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface for using perl5 to access PostgreSQL databases
 
-USE_PGSQL=	yes
-USES=		perl5
+USES=		perl5 pgsql
 USE_PERL5=	configure
 
 CONFIGURE_ENV=	POSTGRES_INCLUDE=${LOCALBASE}/include POSTGRES_LIB=${LOCALBASE}/lib

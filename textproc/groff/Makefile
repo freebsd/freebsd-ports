@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk
 
 # Canonicalize to A4 if set.
-.if defined(A4) || (defined(PAPERSIZE) && ${PAPERSIZE:U} == "A4")
+.if defined(A4) || (defined(PAPERSIZE) && ${PAPERSIZE:tu} == "A4")
 PAPERSIZE=A4
 .endif
 .if defined(PAPERSIZE)

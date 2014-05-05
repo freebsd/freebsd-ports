@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTVERSION=	1.5.3
 CATEGORIES=	databases
 MASTER_SITES=	http://tarantool.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
@@ -13,17 +12,17 @@ COMMENT=	High performance key/value storage server
 
 LICENSE=	BSD
 
-TR_REV=		248-g1f7eab2
+TR_REV=		102-g2857a4e
 MAKE_JOBS_UNSAFE=yes
 USES=		cmake gettext:build gmake iconv perl5 compiler:c++11-lang
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
-CMAKE_ARGS=	-DCMAKE_MAN_DIR=man \
-		-DCMAKE_SYSCONF_DIR=${ETCDIR} \
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=man \
+		-DCMAKE_INSTALL_SYSCONFDIR=${ETCDIR} \
 		-DCMAKE_LOCALSTATE_DIR=${DATADIR}
 
-OPTIONS_DEFINE=	CLIENT
+OPTIONS_DEFINE=	CLIENT DEBUG
 OPTIONS_GROUP=	PLUGINS
 OPTIONS_GROUP_PLUGINS=	MYSQL PGSQL
 PLUGINS_DESC=	Plugins list
@@ -32,7 +31,7 @@ DEBUG_DESC=	Enable debug
 MYSQL_DESC=	Install MySQL plugin
 PGSQL_DESC=	Install PostgreSQL plugin
 
-OPTIONS_DEFAULT=CLIENT
+OPTIONS_DEFAULT=CLIENT MYSQL
 
 .include <bsd.port.options.mk>
 
@@ -73,6 +72,10 @@ PLIST_SUB+=	PGSQL="@comment "
 PLIST_SUB+=	PLUGINS=""
 .else
 PLIST_SUB+=	PLUGINS="@comment "
+.endif
+
+.if ${OSVERSION} < 900000
+BROKEN=		Does not build on FreeBSD < 9.0
 .endif
 
 .include <bsd.port.mk>

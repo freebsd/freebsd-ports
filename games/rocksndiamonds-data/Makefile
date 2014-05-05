@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rocksndiamonds-data
@@ -6,7 +6,7 @@ PORTVERSION=	20131106
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/rocksndiamonds/levels/:levels \
 		http://www.artsoft.org/RELEASES/unix/rocksndiamonds/levels/:unix_levels \
-		http://www.bd-fans.com/Files/RnD/Levels/
+		SF/nemysisfreebsdp/${CATEGORIES}/rocksndiamonds/
 DISTFILES=	BD2K3-1.0.0.zip:levels \
 		Boulder_Dash_Dream-1.0.0.zip:levels \
 		Emerald_Mine_Club-2.1.1.7z:levels \

@@ -1,14 +1,39 @@
---- build/gyp_chromium.orig	2014-02-20 21:28:44.000000000 +0100
-+++ build/gyp_chromium	2014-02-25 21:48:32.000000000 +0100
-@@ -245,8 +245,9 @@
+--- ./build/gyp_chromium.orig	2014-04-24 22:36:09.000000000 +0200
++++ ./build/gyp_chromium	2014-04-24 23:23:42.000000000 +0200
+@@ -39,8 +39,6 @@
+ sys.path.insert(1, os.path.join(chrome_src, 'third_party', 'WebKit',
+     'Source', 'build', 'scripts'))
+ 
+-import find_depot_tools
+-
+ # On Windows, Psyco shortens warm runs of build/gyp_chromium by about
+ # 20 seconds on a z600 machine with 12 GB of RAM, from 90 down to 70
+ # seconds.  Conversely, memory usage of build/gyp_chromium with Psyco
+@@ -376,6 +374,7 @@
+   # TODO(bradnelson): take this out once this issue is fixed:
+   #    http://code.google.com/p/gyp/issues/detail?id=177
+   if sys.platform == 'cygwin':
++    import find_depot_tools
+     depot_tools_path = find_depot_tools.add_depot_tools_to_path()
+     python_dir = sorted(glob.glob(os.path.join(depot_tools_path,
+                                                'python2*_bin')))[-1]
+@@ -441,6 +440,7 @@
+   # don't use the automatic toolchain, as it currently only supports VS2013.
+   msvs_version = os.environ.get('GYP_MSVS_VERSION', '2013')
+   if sys.platform in ('win32', 'cygwin') and msvs_version.startswith('2013'):
++    import find_depot_tools
+     depot_tools_path = find_depot_tools.add_depot_tools_to_path()
+     toolchain = os.path.normpath(os.path.join(
+         depot_tools_path, 'win_toolchain', 'vs2013_files'))
+@@ -477,8 +477,9 @@
+     args.append('--check')
  
    supplemental_includes = GetSupplementalFiles()
- 
 -  if not RunGN(supplemental_includes):
 -    sys.exit(1)
 +  #TODO port GN to FreeBSD
 +  #if not RunGN(supplemental_includes):
 +  #  sys.exit(1)
- 
    args.extend(
        ['-I' + i for i in additional_include_files(supplemental_includes, args)])
+ 

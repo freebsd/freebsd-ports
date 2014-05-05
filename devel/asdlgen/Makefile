@@ -52,7 +52,7 @@ MAKE_ENV+=	SMLNJ_DEVEL=yes
 # http://java.sun.com/docs/books/tutorial/java/package/namingpkgs.html
 pre-patch:
 .for dir in StdPkl StdPrims StdTypes
-	cd ${WRKSRC}/src/java/asts && [ -d ${dir} ] && ${MV} ${dir} ${dir:L}
+	cd ${WRKSRC}/src/java/asts && [ -d ${dir} ] && ${MV} ${dir} ${dir:tl}
 .endfor
 
 post-build:

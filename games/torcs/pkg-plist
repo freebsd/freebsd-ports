@@ -37,7 +37,6 @@ lib/torcs/setup_linux.sh
 lib/torcs/texmapper-bin
 lib/torcs/torcs-bin
 lib/torcs/trackgen-bin
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
 share/games/torcs/Ticon.ico
 share/games/torcs/Ticon.png
 share/games/torcs/cars/155-DTM/155-DTM-lod1.acc
@@ -3017,7 +3016,6 @@ share/games/torcs/wheels/trb1-6/wheel3d.png
 @dirrm share/games/torcs/cars
 @dirrm share/games/torcs
 @dirrmtry share/games
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/torcs/modules/track
 @dirrm lib/torcs/modules/telemetry
 @dirrm lib/torcs/modules/simu

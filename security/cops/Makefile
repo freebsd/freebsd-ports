@@ -24,7 +24,6 @@ C_SRC=		home.chk.c user.chk.c is_able.c is_something.c \
 		addto.c clearfiles.c filewriters.c members.c tilde.c \
 		crc.c crc_check.c
 
-NO_STAGE=	yes
 pre-build:
 	${SED} \
 	    -e 's,^SECURE=/usr/foo/bar,SECURE=${PREFIX}/cops,g' \
@@ -35,10 +34,10 @@ pre-build:
 	${MV} ${WRKSRC}/cops.out ${WRKSRC}/cops
 
 do-install:
-	${MKDIR} ${PREFIX}/cops
+	${MKDIR} ${STAGEDIR}${PREFIX}/cops
 	${TAR} -C ${WRKSRC} --exclude "*.old" -cf - . | \
-		${TAR} -C ${PREFIX}/cops --unlink -xf -
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/cops
-	${CHMOD} -R go-rwx ${PREFIX}/cops
+		${TAR} -C ${STAGEDIR}${PREFIX}/cops --unlink -xf -
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}/cops
+	${CHMOD} -R go-rwx ${STAGEDIR}${PREFIX}/cops
 
 .include <bsd.port.mk>

@@ -3,9 +3,10 @@
 
 PORTNAME=	xgalaga-sdl
 PORTVERSION=	2.1.1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/ \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}-sdl${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-sdl${EXTRACT_SUFX}
@@ -17,7 +18,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-sdl
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_SDL=	sdl gfx image mixer ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
@@ -26,11 +27,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	CREDITS README
-
-DESKTOP_ENTRIES="XGalaga SDL" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
 OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="XGalaga SDL" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CREDITS||' \

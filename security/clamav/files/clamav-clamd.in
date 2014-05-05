@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: clamd
+# PROVIDE: clamav_clamd
 # REQUIRE: LOGIN
 # BEFORE: mail
 # KEYWORD: shutdown
@@ -22,31 +22,27 @@
 name=clamav_clamd
 rcvar=clamav_clamd_enable
 
+# read settings, set default values
+load_rc_config "$name"
+
+: ${clamav_clamd_enable:=NO}
+: ${clamav_clamd_socket="%%CLAMAV_CLAMD_SOCKET%%"}
+
 command=%%PREFIX%%/sbin/clamd
 required_dirs=%%DBDIR%%
 required_files=%%PREFIX%%/etc/clamd.conf
 
-# read settings, set default values
-load_rc_config "$name"
-: ${clamav_clamd_enable="NO"}
-: ${clamav_clamd_socket="%%CLAMAV_CLAMD_SOCKET%%"}
-
 start_precmd=clamav_clamd_precmd
+extra_commands=reload
+reload_cmd="%%PREFIX%%/bin/clamdscan --reload"
 
 #clamav .93 won't start without a valid main.c[vl]d file
-clamav_clamd_precmd() {
+clamav_clamd_precmd()
+{
 	if [ ! -f %%DBDIR%%/main.cvd -a ! -f %%DBDIR%%/main.cld ];then
 		echo "Missing %%DBDIR%%/*.cvd or *.cld files.  You must run freshclam first"
 		exit 1
 	fi
-}
-
-extra_commands="reload"
-reload_cmd=clamd_reload
-
-clamd_reload()
-{
-  %%PREFIX%%/bin/clamdscan --reload
 }
 
 run_rc_command "$1"

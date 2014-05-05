@@ -36,6 +36,9 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 # JAVA_BUILD		When set, it means that the selected JDK port should be
 #					added to build dependencies for the port.
 #
+# JAVA_EXTRACT		This variable works exactly the same as JAVA_BUILD but
+#					regarding extract dependencies.
+#
 # JAVA_RUN			This variable works exactly the same as JAVA_BUILD but
 #					regarding run dependencies.
 #
@@ -407,7 +410,7 @@ do-build:
 
 # Then test if a JAVAC has to be set (JAVA_BUILD==jdk)
 .		if defined(JAVA_BUILD)
-.			if (${JAVA_BUILD:U} == "JDK") && !defined(JAVAC)
+.			if (${JAVA_BUILD:tu} == "JDK") && !defined(JAVAC)
 JAVAC?=			${JAVA_HOME}/bin/javac
 .			endif
 .		endif

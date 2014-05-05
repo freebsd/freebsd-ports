@@ -3,7 +3,7 @@
 
 PORTNAME=		spamassassin
 PORTVERSION=	3.4.0
-PORTREVISION?=	9		# also bump japanese/spamassassin
+PORTREVISION?=	10		# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -171,10 +171,9 @@ pre-su-install:
 
 post-install::
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spamc
-	@${MKDIR} ${STAGEDIR}/var/lib/spamassassin ${STAGEDIR}${DBDIR}/spamassassin
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/sql ${STAGEDIR}${DOCSDIR}/ldap
+	@${MKDIR} ${STAGEDIR}/var/lib/spamassassin ${STAGEDIR}${DBDIR}/spamassassin ${STAGEDIR}/var/run/spamd
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/sql/* ${STAGEDIR}${DOCSDIR}/sql
-	${INSTALL_DATA} ${WRKSRC}/ldap/* ${STAGEDIR}${DOCSDIR}/ldap
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "sql ldap" ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.post.mk>

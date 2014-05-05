@@ -19,6 +19,9 @@ USE_XORG=	glproto x11 xext xi xxf86vm xdamage xfixes dri2proto
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+CONFIGURE_ARGS+=--disable-egl --disable-gles2 --disable-wayland \
+		--disable-gbm --disable-vg --disable-osmesa
+
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE=	NVIDIA

@@ -32,8 +32,8 @@ HOMARDDIR=	${PREFIX}/${LHOMARDDIR}
 AHPY=		aster_homard_py
 HOMARDSCRIPT=	${PORTNAME}_base ASTER_HOMARD/aster_homard_py/aster_homard_3.py
 # This name is requested to run aster's make test
-HOMARDPG=	${PORTNAME:U}_V${PORTVERSION:R}.out
-HOMARDWDIR=	${PORTNAME:U}
+HOMARDPG=	${PORTNAME:tu}_V${PORTVERSION:R}.out
+HOMARDWDIR=	${PORTNAME:tu}
 
 DOCS=		A_Lire.txt Readme.txt
 

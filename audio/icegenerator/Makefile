@@ -3,6 +3,7 @@
 
 PORTNAME=		icegenerator
 DISTVERSION=		0.5.5-pre2
+PORTREVISION=		1
 CATEGORIES=		audio net
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/0.5.5-pre2
 
@@ -13,29 +14,19 @@ LIB_DEPENDS=		libshout.so:${PORTSDIR}/audio/libshout2
 
 GNU_CONFIGURE=		yes
 USES=			gmake pkgconfig
-NO_STAGE=	yes
 CONFIGURE_ARGS=		--exec-prefix=${PREFIX}
 
 OPTIONS_DEFINE=		DOCS MYSQL PGSQL
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	YES
-CONFIGURE_ARGS+=	--with-mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	YES
-CONFIGURE_ARGS+=	--with-pgsql
-.endif
+MYSQL_USE=	MYSQL=YES
+MYSQL_CONFIGURE_ON=	--with-mysql
+PGSQL_USE=	PGSQL=YES
+PGSQL_CONFIGURE_ON=	--with-pgsql
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	${INSTALL_DATA} ${WRKSRC}/etc/icegenerator.conf.dist ${PREFIX}/etc
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/icegenerator.conf.dist \
+		${STAGEDIR}${PREFIX}/etc/icegenerator.conf.sample
 
 .include <bsd.port.mk>

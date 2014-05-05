@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PostScript-PPD
-PORTVERSION=	0.0205
+PORTVERSION=	0.0206
 CATEGORIES=	print perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,5 @@ TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 
 USE_PERL5=	configure
 USES=		perl5
-
-post-patch:
-	@${REINPLACE_CMD} -e '/lj4515.ppd/d' ${WRKSRC}/t/30_difficult.t
 
 .include <bsd.port.mk>

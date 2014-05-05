@@ -44,11 +44,11 @@ CONFIGURE_ARGS=	--with-hwloc-prefix=${LOCALBASE} ac_cv_path_BASH_SHELL=""
 .for pm in ${OPTIONS_GROUP_PM}
 . if ${PORT_OPTIONS:M${pm}}
 .  if empty(PMLIST)
-PMLIST=		${pm:L}
+PMLIST=		${pm:tl}
 .  elif ${PORT_OPTIONS:MD${pm}}
-PMLIST:=	${pm:L},${PMLIST}
+PMLIST:=	${pm:tl},${PMLIST}
 .  else
-PMLIST:=	${PMLIST},${pm:L}
+PMLIST:=	${PMLIST},${pm:tl}
 .  endif
 . endif
 .endfor

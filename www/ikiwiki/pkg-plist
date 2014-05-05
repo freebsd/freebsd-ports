@@ -3,8 +3,8 @@ bin/ikiwiki-calendar
 bin/ikiwiki-makerepo
 bin/ikiwiki-transition
 bin/ikiwiki-update-wikilist
-%%ETCDIR%%/auto-blog.setup
-%%ETCDIR%%/auto.setup
+@sample %%ETCDIR%%/auto-blog.setup.sample
+@sample %%ETCDIR%%/auto.setup.sample
 lib/ikiwiki/plugins/proxy.py
 lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki.pm
@@ -453,7 +453,14 @@ sbin/ikiwiki-mass-rebuild
 %%PO4A%%%%DATADIR%%/locale/fr/directives/ikiwiki/directive/toggle.mdwn
 %%PO4A%%%%DATADIR%%/locale/fr/directives/ikiwiki/directive/version.mdwn
 %%PO4A%%%%DATADIR%%/locale/fr/smiley/smileys.mdwn
+%%DATADIR%%/openid-selector/ikiwiki/openid/aol.png
+%%DATADIR%%/openid-selector/ikiwiki/openid/goa-account-flickr.png
+%%DATADIR%%/openid-selector/ikiwiki/openid/goa-account-google.png
+%%DATADIR%%/openid-selector/ikiwiki/openid/goa-account-yahoo.png
+%%DATADIR%%/openid-selector/ikiwiki/openid/livejournal.png
 %%DATADIR%%/openid-selector/ikiwiki/openid/openid-jquery.js
+%%DATADIR%%/openid-selector/ikiwiki/openid/verisign.png
+%%DATADIR%%/openid-selector/ikiwiki/openid/wordpress.png
 %%DATADIR%%/osm/ikiwiki/images/osm.png
 %%DATADIR%%/osm/ikiwiki/osm.js
 %%DATADIR%%/po/cs/basewiki/ikiwiki.cs.po

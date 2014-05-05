@@ -1,0 +1,20 @@
+--- ./config/config.php.example.orig	2014-05-03 08:00:05.933577117 +0100
++++ ./config/config.php.example	2014-05-03 08:00:38.259564444 +0100
+@@ -379,7 +379,7 @@
+ 
+ /* Default password hashing algorithm. One of md5, ssha, sha, md5crpyt, smd5,
+    blowfish, crypt or leave blank for now default algorithm. */
+-// $servers->setValue('appearance','password_hash','md5');
++// $servers->setValue('appearance','password_hash_custom','md5');
+ 
+ /* If you specified 'cookie' or 'session' as the auth_type above, you can
+    optionally specify here an attribute to use when logging in. If you enter
+@@ -546,7 +546,7 @@
+ $servers->setValue('sasl','authz_id_replacement','$1');
+ $servers->setValue('sasl','props',null);
+ 
+-$servers->setValue('appearance','password_hash','md5');
++$servers->setValue('appearance','password_hash_custom','md5');
+ $servers->setValue('login','attr','dn');
+ $servers->setValue('login','fallback_dn',false);
+ $servers->setValue('login','class',null);

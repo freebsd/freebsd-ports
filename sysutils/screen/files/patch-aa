@@ -1,7 +1,7 @@
---- Makefile.in.orig	Thu Feb 14 22:36:33 2002
-+++ Makefile.in	Tue Feb 19 13:18:38 2002
-@@ -71,14 +71,8 @@
- 	$(CC) -c -I. -I$(srcdir) $(M_CFLAGS) $(DEFS) $(OPTIONS) $(CFLAGS) $<
+--- Makefile.in.orig	2014-04-26 03:58:35.000000000 -0700
++++ Makefile.in	2014-04-29 18:55:12.050906602 -0700
+@@ -83,19 +83,13 @@
+ 	    $(OPTIONS) $(CFLAGS) $<
  
  install_bin: .version screen
 -	-if [ -f $(DESTDIR)$(bindir)/$(SCREEN) ] && [ ! -f $(DESTDIR)$(bindir)/$(SCREEN).old ]; \
@@ -11,9 +11,24 @@
 -# This doesn't work if $(bindir)/screen is a symlink
 -	-if [ -f $(DESTDIR)$(bindir)/screen ] && [ ! -f $(DESTDIR)$(bindir)/screen.old ]; then mv $(DESTDIR)$(bindir)/screen $(DESTDIR)$(bindir)/screen.old; fi
 -	rm -f $(DESTDIR)$(bindir)/screen
--	(cd $(DESTDIR)$(bindir) && ln -sf $(SCREEN) screen)
+-	(cd $(DESTDIR)$(bindir) && ln -f -s $(SCREEN) screen)
 +	$(INSTALL_PROGRAM) screen $(DESTDIR)$(bindir)/screen
 +	-chown root:wheel $(DESTDIR)$(bindir)/screen && chmod 4755 $(DESTDIR)$(bindir)/screen
  	cp $(srcdir)/utf8encodings/?? $(DESTDIR)$(SCREENENCODINGS)
  
  ###############################################################################
+ install: installdirs install_bin
+-	cd doc ; $(MAKE) install
++	cd doc ; $(MAKE) $(MAKE_ARGS) install
+ 	-if [ -d /usr/lib/terminfo ]; then \
+ 		PATH="$$PATH:/usr/5bin" tic ${srcdir}/terminfo/screeninfo.src; \
+ 		chmod 644 /usr/lib/terminfo/s/screen*; \
+@@ -108,7 +102,7 @@
+ installdirs:
+ # Path leading to ETCSCREENRC and Socketdirectory not checked.
+ 	$(srcdir)/etc/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(SCREENENCODINGS)
+-	cd doc ; $(MAKE) installdirs
++	cd doc ; $(MAKE) $(MAKE_ARGS) installdirs
+ 
+ uninstall: .version
+ 	rm -f $(DESTDIR)$(bindir)/$(SCREEN)

@@ -75,7 +75,7 @@ check regression-test test: build
 	LD_LIBRARY_PATH="/lib:/usr/lib:${LOCALBASE}/lib:${WRKSRC}" \
 	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} all3
 .for t in d q s
-	@${PRINTF} "\n\n\n\t\t%s\n\n\n" "REPORT OF ${t:U}. PRECISION TEST RESULTS:"
+	@${PRINTF} "\n\n\n\t\t%s\n\n\n" "REPORT OF ${t:tu}. PRECISION TEST RESULTS:"
 	@${CAT} ${WRKSRC}/c/${t}p/tall${t}p.lst-xxx
 .endfor
 

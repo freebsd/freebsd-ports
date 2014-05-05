@@ -5,7 +5,7 @@ PORTNAME=	dradis
 DISTVERSION=	2.6.1
 CATEGORIES=	security
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME:L}/${PORTNAME:L}/v${PORTVERSION}
+MASTER_SITE_SUBDIR=${PORTNAME:tl}/${PORTNAME:tl}/v${PORTVERSION}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	semprix@gmx.com
@@ -39,15 +39,11 @@ RUBY_NO_BUILD_DEPENDS=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*(css|rb|txt|js|RELEASE_NOTES)$$
 
-NO_STAGE=	yes
 pre-install:
-	@${FIND} ${WRKSRC}/server -type f \( -name "*.bak" -o -name "*.orig" -o -name "*.swp" \) -delete
+	${FIND} ${WRKSRC}/server -type f \( -name "*.bak" -o -name "*.orig" -o -name "*.swp" \) -delete
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PORTNAME}
-	@( cd ${WRKSRC} && ${COPYTREE_SHARE} server ${PREFIX}/${PORTNAME}/ )
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	( cd ${WRKSRC} && ${COPYTREE_SHARE} server ${STAGEDIR}${PREFIX}/${PORTNAME}/ )
 
 .include <bsd.port.mk>

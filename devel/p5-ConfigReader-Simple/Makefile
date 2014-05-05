@@ -7,10 +7,13 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple configuration file parser
 
-TEST_DEPENDS=	p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 USES=		perl5

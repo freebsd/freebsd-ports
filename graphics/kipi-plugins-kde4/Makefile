@@ -10,8 +10,6 @@ DISTFILES=	#
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 kipi graphics plugins (meta port)
 
-.MAKE.FreeBSD_UL=	yes
-
 NO_BUILD=	yes
 NO_INSTALL=	yes
 NO_MTREE=	yes
@@ -25,9 +23,9 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 NO_OPTIONS_SORT=	yes
 
 .for plugin in ${KIPI_PLUGINS_ALL}
-OPTIONS_DEFINE+=	${plugin:U}
-${plugin:U}_DESC=	${${plugin}_DESC}
-${plugin:U}_RUN_DEPENDS=	kipi-plugin-${plugin}>=${DIGIKAM_VER}:${PORTSDIR}/graphics/kipi-plugin-${plugin}
+OPTIONS_DEFINE+=	${plugin:tu}
+${plugin:tu}_DESC=	${${plugin}_DESC}
+${plugin:tu}_RUN_DEPENDS=	kipi-plugin-${plugin}>=${DIGIKAM_VER}:${PORTSDIR}/graphics/kipi-plugin-${plugin}
 .endfor
 
 NLS_DEP=	digikam-l10n>=${DIGIKAM_VER}:${PORTSDIR}/graphics/digikam-kde4-l10n

@@ -3,6 +3,7 @@
 
 PORTNAME=	ipfilter2dshield
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.dshield.org/clients/
 DISTNAME=	dshield-freebsd.pl
@@ -18,29 +19,21 @@ USES=		perl5
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-NO_STAGE=	yes
-do-extract:
-	[ -d ${WRKDIR} ] || ${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/${DISTNAME}
+NO_BUILD=	yes
 
-do-build:
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/${DISTNAME}
 
 pre-install:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		-e "s=%%DISTNAME%%=${DISTNAME}=g" \
 		pkg-message > ${PKGMESSAGE}
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
-		-e "s=%%PORTNAME%%=${PORTNAME}=g" \
-		-e "s=%%DISTNAME%%=${DISTNAME}=g" \
-		pkg-deinstall > ${PKGDEINSTALL}
 
 do-install:
-	[ -d ${PREFIX}/etc/${PORTNAME} ] || ${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	${INSTALL} -o root -g wheel -m 644 ${WRKDIR}/${DISTNAME} \
-		${PREFIX}/etc/${PORTNAME}/${DISTNAME}.dist
-	${INSTALL} -o root -g wheel -m 760 ${WRKDIR}/${DISTNAME} ${PREFIX}/sbin
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} \
+		${STAGEDIR}${ETCDIR}/${DISTNAME}.sample
+	${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 760 ${WRKDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

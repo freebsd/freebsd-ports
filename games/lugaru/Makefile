@@ -18,27 +18,26 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg
 
-USE_BZIP2=	yes
-USES=		cmake openal:soft pkgconfig
+USES=		cmake openal:soft pkgconfig tar:bzip2
 USE_GL=		glu
 USE_SDL=	sdl
 USE_XORG=	sm
 USE_GCC=	yes
 
 PORTDOCS=	README
-
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}
 
-DESKTOP_ENTRIES="Lugaru" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ActionGame;" false
+DESKTOP_ENTRIES="Lugaru" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ActionGame;" ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/lugaru|${DATADIR}|' \
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${LN} -sf ${DATADIR}/Data/Textures/Lugaru.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png

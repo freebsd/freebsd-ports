@@ -6,11 +6,11 @@ PORTVERSION=	0.6.3
 PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generative software that evolves images/textures/patterns
 
 LICENSE=	GPLv2
@@ -32,7 +32,7 @@ INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
 
 DESKTOP_ENTRIES="Evolvotron" "Interactive image generator" "${PORTNAME}" \
-		"${PORTNAME}" "Graphics;2DGraphics;" true
+		"${PORTNAME}" "Graphics;2DGraphics;" ""
 
 OPTIONS_DEFINE=	DOCS
 
@@ -71,7 +71,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .for m in evolvotron.1 evolvotron_mutate.1 evolvotron_render.1
-	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${m} ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${m} \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
 .endfor
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

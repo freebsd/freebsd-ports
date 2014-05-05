@@ -3,27 +3,29 @@
 
 PORTNAME=	gltron
 PORTVERSION=	0.70
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A 3D worm game for two players for X Window System
+COMMENT=	3D worm game for two players for X Window System
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
+USES=		gmake
 USE_GL=		gl
 USE_SDL=	sdl sound
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-warn
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	SDL_NET
 SDL_NET_DESC=	Network Support
+SDL_NET_USE=	SDL=net
+SLD_NET_CONFIGURE_ENABLE=	network
 
 DESKTOP_ENTRIES=	"GLtron" \
 	"3D lightcycle game" \
@@ -31,14 +33,6 @@ DESKTOP_ENTRIES=	"GLtron" \
 	"gltron" \
 	"Game;ArcadeGame;" \
 	false
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSDL_NET}
-USE_SDL+=	net
-CONFIGURE_ARGS+=	--enable-network
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS="-D|CFLAGS="$$CFLAGS -D|g ; \
@@ -49,11 +43,9 @@ post-patch:
 		 s|-ansi -pedantic||g'
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+--- ./jogl/make/build-common.xml.orig	2014-04-29 16:52:29.835776699 +0000
++++ ./jogl/make/build-common.xml	2014-04-29 16:56:14.552780952 +0000
+@@ -128,8 +128,8 @@
+         <condition property="swt.jar" value="${project.root}/make/lib/swt/win32-win32-x86/swt-debug.jar">
+           <istrue value="${isWindowsX86}" />
+         </condition>
+-        <condition property="swt.jar" value="${project.root}/make/lib/swt/gtk-freebsd-x86_64/swt.jar">
+-          <istrue value="${isFreeBSDAMD64}" />
++        <condition property="swt.jar" value="%%JAVALIBDIR%%/swt-devel.jar">
++          <istrue value="${isFreeBSD}" />
+         </condition>
+         <condition property="swt.jar" value="${project.root}/make/lib/swt/gtk-linux-x86_64/swt-debug.jar">
+           <istrue value="${isLinuxAMD64}" />

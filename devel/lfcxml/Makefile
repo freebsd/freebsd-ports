@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	lfcxml
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	C++ XML library, used for databases/cego
 
 LICENSE=	GPLv3

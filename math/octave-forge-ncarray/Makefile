@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-ncarray
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE=	GPLv2
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		ncArray
+OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 

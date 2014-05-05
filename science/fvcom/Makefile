@@ -3,7 +3,7 @@
 
 PORTNAME=	fvcom
 PORTVERSION=	2.7.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	science
 MASTER_SITES=	http://fvcom.smast.umassd.edu/FVCOM/index.html/
 DISTNAME=	sourcecode1
@@ -13,7 +13,7 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
 
 # Check netcdf lib for Fortran support!
-LIB_DEPENDS+=	libnetcdff.so:${PORTSDIR}/science/netcdf-ftn \
+LIB_DEPENDS+=	libnetcdff.so:${PORTSDIR}/science/netcdf-fortran \
 		liblapack.so:${PORTSDIR}/math/lapack \
 		libblas.so:${PORTSDIR}/math/lapack
 

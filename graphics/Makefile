@@ -264,7 +264,6 @@
     SUBDIR += gimp-elsamuko-script
     SUBDIR += gimp-ez-perspective-plugin
     SUBDIR += gimp-focusblur-plugin
-    SUBDIR += gimp-gap
     SUBDIR += gimp-gmic-plugin
     SUBDIR += gimp-help
     SUBDIR += gimp-jagged-border-script

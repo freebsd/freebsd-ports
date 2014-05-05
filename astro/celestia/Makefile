@@ -3,7 +3,7 @@
 
 PORTNAME=	celestia
 PORTVERSION=	1.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Celestia-source/${PORTVERSION}
 PKGNAMESUFFIX=	-${CELESTIA_UI}
@@ -16,12 +16,12 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-NO_STAGE=	yes
-USES=		gettext gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gettext gmake libtool lua pkgconfig
 USE_GL=		gl
-USE_LUA=	5.0+	# should be optional, but the build fails without it
-WANT_GNOME=	yes
+GNU_CONFIGURE=	yes
+EXTRA_PATCHES=	${FILESDIR}/celestia-1.6.1-lua-5.2.patch:-p1 \
+		${FILESDIR}/celestia-1.6.1-gcc47.patch:-p1 \
+		${FILESDIR}/celestia-1.6.1-gcc48.patch:-p1
 
 CXXFLAGS+=	-fsigned-char	# fix text rendering (see Gentoo bug 316573)
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -45,20 +45,23 @@ CONFLICTS=	${UI_LIST:S|${CELESTIA_UI}||:S|^|celestia-|:S|$|-[0-9]*|}
 .if ${CELESTIA_UI} == "glut"
 CONFIGURE_ARGS+=	--with-glut
 USE_GL+=	glut
+LDFLAGS+=	-lGL
 .elif ${CELESTIA_UI} == "gtk"
 CONFIGURE_ARGS+=	--with-gtk
 USE_GNOME+=	gtk20
+PLIST_FILES=	share/applications/celestia.desktop
 .elif ${CELESTIA_UI} == "gnome"
 CATEGORIES+=	gnome
 CONFIGURE_ARGS+=	--with-gnome
 USE_GNOME+=	libgnomeui
 GCONF_SCHEMAS=	celestia.schemas
+PLIST_FILES=	share/applications/celestia.desktop
 .else
 IGNORE=		requires one of the <${UI_LIST}> values for CELESTIA_UI
 .endif
 
 .if ${CELESTIA_UI} == "gtk" || ${CELESTIA_UI} == "gnome"
-USE_GNOME+=	gnomehack
+USES+=		pathfix
 LIB_DEPENDS+=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora
 STARTUP_NOTIFY=	true
@@ -69,13 +72,7 @@ STARTUP_NOTIFY=	false
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-DESKTOP_ENTRIES="Celestia" "Explore the space" \
-		"${PREFIX}/share/pixmaps/celestia.png" "celestia" \
-		"Astronomy;Education;Science;" ${STARTUP_NOTIFY}
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 # Fix Lua discovery pkg-config(1) calls
@@ -100,10 +97,8 @@ post-install:
 # correct icons are properly installed for other cases, but doing it here
 # does not hurt and simplifies PLIST handling
 	${INSTALL_DATA} ${WRKSRC}/src/celestia/gtk/data/celestia.png \
-		${PREFIX}/share/pixmaps
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+		${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

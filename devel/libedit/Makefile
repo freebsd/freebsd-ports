@@ -2,29 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	libedit
-PORTVERSION=	2.6.10
-PORTREVISION=	2
+PORTVERSION=	${EDITVERSION}.${EDITDATE}
+DISTVERSION=	${EDITDATE}-${EDITVERSION}
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.astron.com/pub/libedit/ \
-		http://www.canonware.com/download/libedit/
+MASTER_SITES=	http://thrysoee.dk/editline/
 
-MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	Command line editing library
+MAINTAINER=	bapt@FreeBSD.org
+COMMENT=	Command line editor library
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
+USES=		libtool pathfix
+EDITVERSION=	3.1
+EDITDATE=	20140213
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=	--enable-widec
 
-post-extract:
-	${MV} ${WRKSRC}/readline ${WRKSRC}/editline
+CPPFLAGS=	-D__weakref_visible=extern
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(PREFIX)|$$(DESTDIR)&|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|CFLAGS -O|CFLAGS|g ; \
-		 s|MAJOR="2"|MAJOR="6"|g' ${WRKSRC}/configure
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libedit.so
+	@${REINPLACE_CMD} -e "s/__weak_reference/__weak_extern/g" ${WRKSRC}/src/vi.c
 
 .include <bsd.port.mk>

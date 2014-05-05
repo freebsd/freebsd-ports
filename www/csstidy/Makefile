@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opensource CSS parser and optimiser
 
+LICENSE=	GPLv2
+
 USES=		zip
 NO_WRKSUBDIR=	yes
 

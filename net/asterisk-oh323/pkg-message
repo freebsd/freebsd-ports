@@ -1,9 +1,0 @@
-
-*********************************************
-*                                           *
-* Do not forget to disable loading          *
-* the chan_h323 module as it will most      *
-* likely prevent the Asterisk from working! *
-*                                           *
-*********************************************
-

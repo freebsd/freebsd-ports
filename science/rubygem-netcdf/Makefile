@@ -3,12 +3,13 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	0.6.6.1
+PORTREVISION=	1
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby interface to the NetCDF scientific IO library
+COMMENT=	Ruby interface to the NetCDF scientific IO library
 
 BUILD_DEPENDS=	rubygem-narray>=0:${PORTSDIR}/math/rubygem-narray
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf

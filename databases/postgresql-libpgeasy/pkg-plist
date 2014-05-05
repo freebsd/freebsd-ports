@@ -1,8 +1,8 @@
 include/libpgeasy.h
 lib/libpgeasy.a
-lib/libpgeasy.la
 lib/libpgeasy.so
 lib/libpgeasy.so.3
+lib/libpgeasy.so.3.0.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/pginsert.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/pgmultiresult.c
