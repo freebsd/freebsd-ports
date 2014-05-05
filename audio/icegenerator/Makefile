@@ -3,14 +3,14 @@
 
 PORTNAME=		icegenerator
 DISTVERSION=		0.5.5-pre2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		audio net
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/0.5.5-pre2
 
 MAINTAINER=		funkblaster@mail.ru
 COMMENT=		Direct streaming generator for Icecast/Shoutcast
 
-LIB_DEPENDS=		libshout.so:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS=		libshout.so:${PORTSDIR}/audio/libshout
 
 GNU_CONFIGURE=		yes
 USES=			gmake pkgconfig

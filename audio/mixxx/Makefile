@@ -4,7 +4,7 @@
 PORTNAME=	mixxx
 PORTVERSION=	1.11.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.mixxx.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -45,7 +45,7 @@ GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 GPERFTOOLS_MAKE_ARGS=	perftools=1
 GPERFTOOLS_MAKE_ARGS_OFF=	perftools=0
 LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
-SHOUTCAST_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2
+SHOUTCAST_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
 SHOUTCAST_MAKE_ARGS=	shoutcast=1
 SHOUTCAST_MAKE_ARGS_OFF=	shoutcast=0
 WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack

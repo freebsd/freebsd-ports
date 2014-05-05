@@ -2,7 +2,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.18.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -184,7 +184,7 @@ CONFIGURE_ARGS+=--with-zeroconf=no
 .  if ${PORT_OPTIONS:MTREMOR}
 IGNORE=		shoutcast and tremor do not coexist; use vorbis instead
 .  endif
-LIB_DEPENDS+=	libshout.so:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS+=	libshout.so:${PORTSDIR}/audio/libshout
 CONFIGURE_ARGS+=--enable-vorbis-encoder \
 		--enable-shout
 .else
