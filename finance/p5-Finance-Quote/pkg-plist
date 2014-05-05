@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Finance/Quote/BMONesbittBurns.pm
 %%SITE_PERL%%/Finance/Quote/BSERO.pm
 %%SITE_PERL%%/Finance/Quote/Bourso.pm
+%%SITE_PERL%%/Finance/Quote/CSE.pm
 %%SITE_PERL%%/Finance/Quote/Cdnfundlibrary.pm
 %%SITE_PERL%%/Finance/Quote/Citywire.pm
 %%SITE_PERL%%/Finance/Quote/Cominvest.pm
@@ -55,7 +56,7 @@
 %%SITE_PERL%%/Finance/Quote/Yahoo/USA.pm
 %%SITE_PERL%%/Finance/Quote/YahooJSON.pm
 %%SITE_PERL%%/Finance/Quote/ZA.pm
-%%SITE_PERL%%/Finance/Quote/za_unittrusts.pm
+%%SITE_PERL%%/Finance/Quote/ZA_UnitTrusts.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote/.packlist
 %%PERL5_MAN3%%/Finance::Quote.3.gz
 %%PERL5_MAN3%%/Finance::Quote::AEX.3.gz
@@ -65,6 +66,7 @@
 %%PERL5_MAN3%%/Finance::Quote::BMONesbittBurns.3.gz
 %%PERL5_MAN3%%/Finance::Quote::BSERO.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Bourso.3.gz
+%%PERL5_MAN3%%/Finance::Quote::CSE.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Cdnfundlibrary.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Citywire.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Cominvest.3.gz
@@ -110,7 +112,7 @@
 %%PERL5_MAN3%%/Finance::Quote::Yahoo::USA.3.gz
 %%PERL5_MAN3%%/Finance::Quote::YahooJSON.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ZA.3.gz
-%%PERL5_MAN3%%/Finance::Quote::za_unittrusts.3.gz
+%%PERL5_MAN3%%/Finance::Quote::ZA_UnitTrusts.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
 @dirrm %%SITE_PERL%%/Finance/Quote/Yahoo
