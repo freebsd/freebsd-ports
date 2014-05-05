@@ -57,6 +57,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="89709e58-d497-11e3-a3d5-5453ed2e2b49">
+    <topic>qt4-xml -- XML Entity Expansion Denial of Service</topic>
+    <affects>
+      <package>
+	<name>qt4-xml</name>
+	<range><lt>4.8.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Richard J. Moore reports:</p>
+	<blockquote cite="http://lists.qt-project.org/pipermail/announce/2013-December/000036.html">
+	  <p>QXmlSimpleReader in Qt versions prior to 5.2 supports
+	    expansion of internal entities in XML documents without
+	    placing restrictions to ensure the document does not cause
+	    excessive memory usage. If an application using this API
+	    processes untrusted data then the application may use
+	    unexpected amounts of memory if a malicious document is
+	    processed.</p>
+	  <p>It is possible to construct XML documents using internal
+	    entities that consume large amounts of memory and other
+	    resources to process, this is known as the 'Billion Laughs'
+	    attack. Qt versions prior to 5.2 did not offer protection
+	    against this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4549</cvename>
+      <url>http://lists.qt-project.org/pipermail/announce/2013-December/000036.html</url>
+    </references>
+    <dates>
+      <discovery>2013-12-05</discovery>
+      <entry>2014-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6fb521b0-d388-11e3-a790-000c2980a9f3">
     <topic>strongswan -- Remote Authentication Bypass</topic>
     <affects>
