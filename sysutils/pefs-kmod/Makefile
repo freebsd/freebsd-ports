@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pefs
-DISTVERSION=	2013-10-13
+DISTVERSION=	2014-03-31
 CATEGORIES=	sysutils
-MASTER_SITES=	https://pefs.googlecode.com/files/
+MASTER_SITES=	LOCAL/gleb
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	gleb@FreeBSD.org
@@ -18,5 +18,15 @@ MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 ONLY_FOR_ARCHS=	i386 amd64	# not tested on other archs
 
 USES=		kmod uidfix
+
+OPTIONS_DEFINE=	AESNI
+OPTIONS_DEFAULT=
+AESNI_DESC=	Enable AES-NI hardware acceleration
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAESNI}
+MAKE_ENV+=	PEFS_AESNI=yes
+.endif
 
 .include <bsd.port.mk>
