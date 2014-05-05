@@ -1032,16 +1032,16 @@
 %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/networkaccessmanagerfactory/qml/networkaccessmanagerfactory/view.qml
 %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/Makefile
 %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/README
-%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/Clock.qml
-%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/center.png
-%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/clock.png
-%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/hour.png
-%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/libqmlqtimeexampleplugin.so
-%%DEBUG%%%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/libqmlqtimeexampleplugin.so.debug
-%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/minute.png
-%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/qmldir
 %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/libqmlqwidgetsplugin.so
 %%DEBUG%%%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/libqmlqwidgetsplugin.so.debug
+%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/Clock.qml
+%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/center.png
+%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/clock.png
+%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/hour.png
+%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/libqmlqtimeexampleplugin.so
+%%DEBUG%%%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/libqmlqtimeexampleplugin.so.debug
+%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/minute.png
+%%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample/qmldir
 %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/plugin.cpp
 %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/plugins.pro
 %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/plugins.qml
@@ -4831,9 +4831,9 @@
 @dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout
 @dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/qgraphicslayouts/layoutitem
 @dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/qgraphicslayouts
-@dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com/nokia/TimeExample
-@dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com/nokia
-@dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/com
+@dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org/qtproject/TimeExample
+@dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org/qtproject
+@dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins/org
 @dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/plugins
 @dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/networkaccessmanagerfactory/qml/networkaccessmanagerfactory
 @dirrm %%QT_EXAMPLEDIR%%/examples/declarative/cppextensions/networkaccessmanagerfactory/qml

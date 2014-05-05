@@ -3,7 +3,6 @@
 
 PORTNAME=	qmake
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -64,7 +63,6 @@ post-patch:
 		-e '/gcc-base-unix.conf/d' \
 		${WRKSRC:H}/mkspecs/freebsd-clang/qmake.conf
 
-	@${RM} ${WRKSRC:H}/mkspecs/features/unix/*.orig
 	@${RM} ${WRKSRC:H}/mkspecs/*/*.orig
 
 do-configure: apply-slist
