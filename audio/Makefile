@@ -390,7 +390,6 @@
     SUBDIR += libsamplerate
     SUBDIR += libshairport
     SUBDIR += libshout
-    SUBDIR += libshout2
     SUBDIR += libsidplay
     SUBDIR += libsidplay2
     SUBDIR += libsidplayfp
