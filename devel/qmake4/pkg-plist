@@ -419,6 +419,10 @@
 %%QT_MKSPECDIR%%/unsupported/macx-clang/Info.plist.lib
 %%QT_MKSPECDIR%%/unsupported/macx-clang/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/macx-clang/qplatformdefs.h
+%%QT_MKSPECDIR%%/unsupported/macx-clang-libc++/Info.plist.app
+%%QT_MKSPECDIR%%/unsupported/macx-clang-libc++/Info.plist.lib
+%%QT_MKSPECDIR%%/unsupported/macx-clang-libc++/qmake.conf
+%%QT_MKSPECDIR%%/unsupported/macx-clang-libc++/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/macx-iosdevice-clang-legacy/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/macx-iosdevice-clang-legacy/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/macx-iosdevice-clang/qmake.conf
@@ -481,6 +485,8 @@
 %%QT_MKSPECDIR%%/win32-msvc2010/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-msvc2012/qmake.conf
 %%QT_MKSPECDIR%%/win32-msvc2012/qplatformdefs.h
+%%QT_MKSPECDIR%%/win32-msvc2013/qmake.conf
+%%QT_MKSPECDIR%%/win32-msvc2013/qplatformdefs.h
 %%QT_MKSPECDIR%%/wince50standard-armv4i-msvc2005/default_post.prf
 %%QT_MKSPECDIR%%/wince50standard-armv4i-msvc2005/qmake.conf
 %%QT_MKSPECDIR%%/wince50standard-armv4i-msvc2005/qplatformdefs.h
@@ -571,6 +577,7 @@
 @dirrm %%QT_MKSPECDIR%%/wince50standard-mipsii-msvc2005
 @dirrm %%QT_MKSPECDIR%%/wince50standard-armv4i-msvc2008
 @dirrm %%QT_MKSPECDIR%%/wince50standard-armv4i-msvc2005
+@dirrm %%QT_MKSPECDIR%%/win32-msvc2013
 @dirrm %%QT_MKSPECDIR%%/win32-msvc2012
 @dirrm %%QT_MKSPECDIR%%/win32-msvc2010
 @dirrm %%QT_MKSPECDIR%%/win32-msvc2008
@@ -603,6 +610,7 @@
 @dirrm %%QT_MKSPECDIR%%/unsupported/macx-iosdevice-g++
 @dirrm %%QT_MKSPECDIR%%/unsupported/macx-iosdevice-clang-legacy
 @dirrm %%QT_MKSPECDIR%%/unsupported/macx-iosdevice-clang
+@dirrm %%QT_MKSPECDIR%%/unsupported/macx-clang-libc++
 @dirrm %%QT_MKSPECDIR%%/unsupported/macx-clang
 @dirrm %%QT_MKSPECDIR%%/unsupported/linux-scratchbox2-g++
 @dirrm %%QT_MKSPECDIR%%/unsupported/linux-host-g++

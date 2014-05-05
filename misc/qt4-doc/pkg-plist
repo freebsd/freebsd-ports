@@ -229,8 +229,8 @@
 %%DOCSDIR%%/html/declarative-cppextensions-networkaccessmanagerfactory-networkaccessmanagerfactory-qrc.html
 %%DOCSDIR%%/html/declarative-cppextensions-networkaccessmanagerfactory-qml-networkaccessmanagerfactory-view-qml.html
 %%DOCSDIR%%/html/declarative-cppextensions-networkaccessmanagerfactory.html
-%%DOCSDIR%%/html/declarative-cppextensions-plugins-com-nokia-timeexample-clock-qml.html
-%%DOCSDIR%%/html/declarative-cppextensions-plugins-com-nokia-timeexample-qmldir.html
+%%DOCSDIR%%/html/declarative-cppextensions-plugins-org-qtproject-timeexample-clock-qml.html
+%%DOCSDIR%%/html/declarative-cppextensions-plugins-org-qtproject-timeexample-qmldir.html
 %%DOCSDIR%%/html/declarative-cppextensions-plugins-plugin-cpp.html
 %%DOCSDIR%%/html/declarative-cppextensions-plugins-plugins-pro.html
 %%DOCSDIR%%/html/declarative-cppextensions-plugins-plugins-qml.html
