@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -209,7 +209,7 @@ SIDPLAY_LIB_DEPENDS=	libsidplay2.so:${PORTSDIR}/audio/libsidplay2
 SIDPLAY_LDFLAGS=	-L${LOCALBASE}/lib/sidplay/builders
 SIDPLAY_CONFIGURE_ENABLE=	sid
 
-SHOUTCAST_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2
+SHOUTCAST_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
 SHOUTCAST_CONFIGURE_ENABLE=	shout
 
 STREAM_CONFIGURE_ENABLE=	sout

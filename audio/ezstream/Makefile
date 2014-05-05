@@ -3,7 +3,7 @@
 
 PORTNAME=	ezstream
 PORTVERSION=	0.5.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/ \
 		http://svn.xiph.org/releases/ezstream/
@@ -11,7 +11,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/ \
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Command line utility for streaming to icecast servers
 
-LIB_DEPENDS=	libshout.so.5:${PORTSDIR}/audio/libshout2 \
+LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 OPTIONS_DEFINE=	TAGLIB DOCS EXAMPLES

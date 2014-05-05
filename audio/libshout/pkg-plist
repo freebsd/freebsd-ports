@@ -1,34 +1,8 @@
 include/shout/shout.h
-lib/libshout.so.2
-lib/libshout.so
-lib/libshout.la
 lib/libshout.a
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/overview.html
-%%DOCSDIR%%/initialization.html
-%%DOCSDIR%%/connection.html
-%%DOCSDIR%%/datastreaming.html
-%%DOCSDIR%%/metadata.html
-%%DOCSDIR%%/datastructures.html
-%%DOCSDIR%%/shout_conn_t.html
-%%DOCSDIR%%/shout_connect.html
-%%DOCSDIR%%/shout_disconnect.html
-%%DOCSDIR%%/shout_sleep.html
-%%DOCSDIR%%/shout_init_connection.html
-%%DOCSDIR%%/shout_send_data.html
-%%DOCSDIR%%/shout_update_metadata.html
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/example.html
-%%DOCSDIR%%/example_c.html
-%%DOCSDIR%%/reference.html
-%%DOCSDIR%%/errorhandling.html
-%%DOCSDIR%%/shout_strerror.html
-%%DOCSDIR%%/README
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/CHANGES
-%%EXAMPLESDIR%%/Makefile
-%%EXAMPLESDIR%%/example.c
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
+lib/libshout.so
+lib/libshout.so.3
+lib/libshout.so.3.2.0
+libdata/pkgconfig/shout.pc
+share/aclocal/shout.m4
 @dirrm include/shout

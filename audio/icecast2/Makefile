@@ -3,7 +3,7 @@
 
 PORTNAME=	icecast2
 PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://downloads.xiph.org/releases/icecast/:source \
@@ -21,7 +21,7 @@ COMMENT=	Streaming mp3/ogg-vorbis audio server
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libshout.so:${PORTSDIR}/audio/libshout2 \
+		libshout.so:${PORTSDIR}/audio/libshout \
 		libspeex.so:${PORTSDIR}/audio/speex \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \

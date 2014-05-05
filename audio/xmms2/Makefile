@@ -4,7 +4,7 @@
 PORTNAME?=	xmms2
 PORTVERSION=	0.8
 DISTVERSIONSUFFIX=DrO_o
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 
@@ -172,7 +172,7 @@ PLIST_SUB+=	GVFS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MICES}
-LIB_DEPENDS+=	libshout.so:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS+=	libshout.so:${PORTSDIR}/audio/libshout
 PLIST_SUB+=	ICES=""
 .else
 EXCLUDE+=	--without-plugins="ices"
