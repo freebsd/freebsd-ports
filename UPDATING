@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140505:
+  AFFECTS: users of databases/libiodbc
+  AUTHOR: bapt@FreeBSD.org
+
+  libiodbc no longer provide the odbc compatibility
+
+  Rebuild all ports that are linked to libiodbc
+  # portmaster -r libiodbc
+  or
+  # portupgrade -r databases/libiodbc
+
 20140503:
   AFFECTS: users of science/hdf5* and science/netcdf*
   AUTHOR: sunpoet@FreeBSD.org

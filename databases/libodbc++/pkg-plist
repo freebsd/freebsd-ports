@@ -12,9 +12,8 @@ include/odbc++/setup.h
 include/odbc++/statement.h
 include/odbc++/threads.h
 include/odbc++/types.h
-lib/libodbc++.a
-lib/libodbc++.la
 lib/libodbc++.so
 lib/libodbc++.so.4
+lib/libodbc++.so.4.0.0
 libdata/pkgconfig/libodbc++.pc
 @dirrm include/odbc++

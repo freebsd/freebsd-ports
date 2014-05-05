@@ -5,10 +5,13 @@ include/soci/blob.h
 %%BOOST%%include/soci/boost-gregorian-date.h
 %%BOOST%%include/soci/boost-optional.h
 %%BOOST%%include/soci/boost-tuple.h
+include/soci/connection-parameters.h
 include/soci/connection-pool.h
 include/soci/empty/soci-empty.h
 include/soci/error.h
 include/soci/exchange-traits.h
+%%FIREBIRD%%include/soci/firebird/common.h
+%%FIREBIRD%%include/soci/firebird/soci-firebird.h
 include/soci/into-type.h
 include/soci/into.h
 %%MYSQL%%include/soci/mysql/common.h
@@ -18,6 +21,7 @@ include/soci/into.h
 include/soci/once-temp-type.h
 %%PGSQL%%include/soci/postgresql/common.h
 %%PGSQL%%include/soci/postgresql/soci-postgresql.h
+include/soci/query_transformation.h
 include/soci/prepare-temp-type.h
 include/soci/procedure.h
 include/soci/ref-counted-prepare-info.h
@@ -49,29 +53,34 @@ include/soci/values.h
 include/soci/version.h
 lib/libsoci_core.a
 lib/libsoci_core.so
-lib/libsoci_core.so.3.1
-lib/libsoci_core.so.3.1.0
+lib/libsoci_core.so.3.2
+lib/libsoci_core.so.3.2.2
 lib/libsoci_empty.a
 lib/libsoci_empty.so
-lib/libsoci_empty.so.3.1
-lib/libsoci_empty.so.3.1.0
+lib/libsoci_empty.so.3.2
+lib/libsoci_empty.so.3.2.2
 %%MYSQL%%lib/libsoci_mysql.a
 %%MYSQL%%lib/libsoci_mysql.so
-%%MYSQL%%lib/libsoci_mysql.so.3.1
-%%MYSQL%%lib/libsoci_mysql.so.3.1.0
+%%MYSQL%%lib/libsoci_mysql.so.3.2
+%%MYSQL%%lib/libsoci_mysql.so.3.2.2
 %%ODBC%%lib/libsoci_odbc.a
 %%ODBC%%lib/libsoci_odbc.so
-%%ODBC%%lib/libsoci_odbc.so.3.1
-%%ODBC%%lib/libsoci_odbc.so.3.1.0
+%%ODBC%%lib/libsoci_odbc.so.3.2
+%%ODBC%%lib/libsoci_odbc.so.3.2.2
 %%PGSQL%%lib/libsoci_postgresql.a
 %%PGSQL%%lib/libsoci_postgresql.so
-%%PGSQL%%lib/libsoci_postgresql.so.3.1
-%%PGSQL%%lib/libsoci_postgresql.so.3.1.0
+%%PGSQL%%lib/libsoci_postgresql.so.3.2
+%%PGSQL%%lib/libsoci_postgresql.so.3.2.2
 %%SQLITE%%lib/libsoci_sqlite3.a
 %%SQLITE%%lib/libsoci_sqlite3.so
-%%SQLITE%%lib/libsoci_sqlite3.so.3.1
-%%SQLITE%%lib/libsoci_sqlite3.so.3.1.0
+%%SQLITE%%lib/libsoci_sqlite3.so.3.2
+%%SQLITE%%lib/libsoci_sqlite3.so.3.2.2
+%%FIREBIRD%%lib/libsoci_firebird.a
+%%FIREBIRD%%lib/libsoci_firebird.so
+%%FIREBIRD%%lib/libsoci_firebird.so.3.2
+%%FIREBIRD%%lib/libsoci_firebird.so.3.2.2
 @dirrm include/soci/sqlite3
+@dirrm include/soci/firebird
 @dirrm include/soci/postgresql
 @dirrm include/soci/odbc
 @dirrm include/soci/mysql

@@ -13,12 +13,8 @@ COMMENT=	Edinburgh-style Prolog compiler
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-# note that the ports unixodbc and libiodbc conflict
-OPTIONS_SINGLE=	ODBC
-OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
-OPTIONS_DEFAULT=UNIXODBC
-UNIXODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
-IODBC_LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
+OPTIONS_DEFINE=	ODBC
+ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

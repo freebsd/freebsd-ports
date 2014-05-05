@@ -3,6 +3,7 @@
 
 PORTNAME=		openldap
 DISTVERSION=		2.4.39
+PORTREVISION=		1
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -428,14 +429,7 @@ CONFIGURE_ARGS+=	--enable-spasswd
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=	--enable-sql=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_SQL=${BACKEND_PLIST}
-WITH_ODBC_TYPE?=	iODBC
-.if ${WITH_ODBC_TYPE:tl} == iodbc
-LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
-.elif ${WITH_ODBC_TYPE:tl} == unixodbc
-LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
-.else
-BROKEN=			choose either iODBC or unixODBC for WITH_ODBC_TYPE
-.endif
+LIB_DEPENDS+=		libodbc.so:${PORTSDIR}/databases/unixODBC
 .else
 PLIST_SUB+=		BACK_SQL="@comment "
 .endif

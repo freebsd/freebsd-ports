@@ -3,6 +3,7 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/brianb/mdbtools/archive/
 DISTNAME=	${PORTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	mysql-workbench-gpl
 PORTVERSION=	5.2.47
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/MySQLGUITools
@@ -82,12 +82,8 @@ PLIST_SUB+=	PYTHON_UTILS=""
 PLIST_SUB+=	PYTHON_UTILS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MUNIXODBC}
-LIB_DEPENDS+=	libodbccr.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=--with-unixodbc
-.else
-LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

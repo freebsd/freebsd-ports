@@ -14,8 +14,6 @@ LICENSE_COMB=	multi
 
 OPTIONS_DEFINE=	DOCS
 
-CONFLICTS=	libiodbc-[0-9]*
-
 USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_msql_h=no
