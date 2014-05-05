@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES+=		tk
 NO_BUILD=	yes
 
-PORTEXAMPLES=	${PORTNAME:L}
+PORTEXAMPLES=	${PORTNAME:tl}
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.options.mk>
@@ -31,10 +31,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/runit.tcl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/runitrc.sample ${STAGEDIR}${EXAMPLESDIR}/${PORTNAME:L}
+	${INSTALL_DATA} ${WRKSRC}/runitrc.sample ${STAGEDIR}${EXAMPLESDIR}/${PORTNAME:tl}
 	@${ECHO_MSG} "		"
 	@${ECHO_MSG} "-------------------------------------------------------------------"
-	@${ECHO_MSG} "===> Installing runitrc.sample in ${EXAMPLESDIR}/${PORTNAME:L}"
+	@${ECHO_MSG} "===> Installing runitrc.sample in ${EXAMPLESDIR}/${PORTNAME:tl}"
 	@${ECHO_MSG} "===> Copy runitrc.sample to ~/.runitrc and modify if you wish"
 	@${ECHO_MSG} "-------------------------------------------------------------------"
 	@${ECHO_MSG} "		"

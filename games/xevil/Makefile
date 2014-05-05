@@ -33,7 +33,7 @@ post-patch:
 		's|^static char|static const char|'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/x11/${OPSYS:U}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/x11/${OPSYS:tu}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/instructions

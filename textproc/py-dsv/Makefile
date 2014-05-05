@@ -6,7 +6,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	SF/python-${PORTNAME}/python-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:U}-${PORTVERSION}
+DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to parse or write delimeter-separated (e.g. CSV) files
