@@ -2,7 +2,7 @@
 
 PORTNAME=	liborcus
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel misc
 MASTER_SITES=	http://kohei.us/files/orcus/src/
 
@@ -16,9 +16,8 @@ LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-spreadsheet-model --disable-werror \
 		--with-boost="${LOCALBASE}" \
