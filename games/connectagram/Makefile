@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	connectagram
@@ -7,13 +7,12 @@ CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Word unscrambling game
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
-USES=		qmake
+USES=		qmake tar:bzip2
 USE_QT4=	moc_build rcc_build gui network iconengines_run \
 		imageformats_run
 INSTALLS_ICONS=	yes
@@ -37,7 +36,8 @@ post-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR})
 	@(cd ${WRKSRC}/icons && ${COPYTREE_SHARE} patterns ${STAGEDIR}${DATADIR})
 
-	@(cd ${WRKSRC}/icons && ${COPYTREE_SHARE} hicolor ${STAGEDIR}${PREFIX}/share/icons/)
+	@(cd ${WRKSRC}/icons && ${COPYTREE_SHARE} hicolor \
+		${STAGEDIR}${PREFIX}/share/icons/)
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 			${STAGEDIR}${PREFIX}/share/pixmaps/
 

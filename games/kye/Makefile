@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kye
@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		kye-data_extra_levels.20120818.tar.gz:levels
 DIST_SUBDIR=	kye
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Puzzle game with arcade game elements
 
 RESTRICTED=	kye-data_nuke_levels is charityware
@@ -27,7 +27,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 PORTDOCS=	NEWS README
-
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	pkg-message

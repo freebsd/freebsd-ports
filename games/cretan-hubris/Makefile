@@ -1,13 +1,13 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cretan-hubris
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/radius-engine/egp/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Maze on the Isle of Crete
 
 LICENSE=	GPLv2 CCbyNCSA3

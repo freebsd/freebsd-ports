@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pyspacewar
@@ -9,7 +9,7 @@ MASTER_SITES=	http://mg.pov.lt/${PORTNAME}/\
 		LOCAL/beech
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Two ships duel in a gravity field
 
 LICENSE=	GPLv2
@@ -26,8 +26,7 @@ PLIST_FILES=	share/icons/hicolor/16x16/apps/pyspacewar.png \
 		share/icons/hicolor/48x48/apps/pyspacewar.png \
 		share/pixmaps/${PORTNAME}.png
 
-PORTDOCS=	NEWS.txt README.txt TODO.txt performance-notes.txt
-
+PORTDOCS=	NEWS.txt README.txt performance-notes.txt
 OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes

@@ -1,9 +1,9 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	syobon
 PORTVERSION=	1.0.1
-PORTREVISION=	5
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://download.zapek.com/software/${PORTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Platform game as Super Mario Bros
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -25,7 +25,6 @@ ALL_TARGET=	${PORTNAME}
 MAKE_ENV=	GAMEDATA="${DATADIR}"
 
 PORTDOCS=	README.txt
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Syobon Action" "" "${PORTNAME}" \

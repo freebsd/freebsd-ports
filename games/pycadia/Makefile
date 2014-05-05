@@ -9,7 +9,7 @@ MASTER_SITES=	GENTOO/distfiles \
 		SF/nemysisfreebsdp/games/
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Home to vector gaming, Python style
 
 LICENSE=	GPLv2
