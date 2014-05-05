@@ -3,6 +3,7 @@
 
 PORTNAME=	libpqxx
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
 PKGNAMEPREFIX=	postgresql-
@@ -16,23 +17,15 @@ LICENSE=	BSD3CLAUSE
 CONFLICTS=	postgresql-libpqxx-3.* postgresql-libpqxx3-3.*
 PORTSCOUT=	limit:^2\.
 
-USE_PGSQL=	yes
 USE_PYTHON_BUILD=	yes
-USES=		gmake shebangfix
+USES=		gmake libtool pgsql shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-SOVERSION=	4
-PLIST_SUB=	PORTVERSION=${PORTVERSION:R} \
-		SOVERSION=${SOVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 SHEBANG_FILES=	${WRKSRC}/tools/splitconfig
 python_CMD=	${PYTHON_CMD}
 
 CONFIGURE_ARGS=	--enable-shared \
 		--disable-dependency-tracking
-
-post-install:
-#	This is needed for ldconfig
-	${LN} -sf libpqxx-${PORTVERSION}.so \
-		${STAGEDIR}${PREFIX}/lib/libpqxx.so.${SOVERSION}
 
 .include <bsd.port.mk>

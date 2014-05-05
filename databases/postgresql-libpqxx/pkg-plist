@@ -93,9 +93,7 @@ include/pqxx/version
 include/pqxx/version.hxx
 lib/libpqxx-%%PORTVERSION%%.so
 lib/libpqxx.a
-lib/libpqxx.la
 lib/libpqxx.so
-lib/libpqxx.so.%%SOVERSION%%
 libdata/pkgconfig/libpqxx.pc
 @dirrm include/pqxx/internal/gates
 @dirrm include/pqxx/internal

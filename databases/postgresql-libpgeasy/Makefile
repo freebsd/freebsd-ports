@@ -11,23 +11,21 @@ MASTER_SITE_SUBDIR=	projects/gborg/pgeasy/stable
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	pgsql@FreeBSD.org
-COMMENT=	An easy-to-use C interface to PostgreSQL
+COMMENT=	Easy-to-use C interface to PostgreSQL
 
-USE_AUTOTOOLS=	libtool
-USE_PGSQL=	YES
-USES=		gmake
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USES=		gmake libtool pgsql
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/postgresql/${PORTNAME}
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@- ${MKDIR} -m 755 ${EXAMPLESDIR} ;\
-	${INSTALL} ${WRKSRC}/examples/* ${EXAMPLESDIR} ;\
-	${MKDIR} -m 755 ${DOCSDIR} ;\
-	${INSTALL} ${WRKSRC}/docs/libpgeasy.html ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/libpgeasy.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
