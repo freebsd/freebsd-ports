@@ -1,21 +1,30 @@
---- Makefile.orig	2012-02-25 20:11:08.159711102 +0900
-+++ Makefile	2012-02-25 20:13:34.152398624 +0900
-@@ -61,13 +61,13 @@
+--- Makefile.orig	2012-09-25 04:41:19.000000000 +0900
++++ Makefile	2013-09-21 23:01:04.000000000 +0900
+@@ -1,5 +1,5 @@
+ VERSION=1.2.0
+-EMACS=emacs
++#EMACS=emacs
+ PREFIX=/usr/local
+ SYSCONFDIR=/etc
+ ELS=magit.el magit-svn.el magit-topgit.el magit-stgit.el magit-key-mode.el magit-bisect.el magit-wip.el rebase-mode.el magit-blame.el
+@@ -64,15 +64,13 @@
+ install: install_core install_docs
+ 
  install_core: core
- 	mkdir -p $(DESTDIR)$(PREFIX)/share/emacs/site-lisp
- 	install -m 644 $(ELS) $(ELCS) $(DESTDIR)$(PREFIX)/share/emacs/site-lisp
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/emacs/site-lisp
+-	install -m 644 $(ELS) $(ELCS) $(DESTDIR)$(PREFIX)/share/emacs/site-lisp
 -	mkdir -p $(DESTDIR)$(SYSCONFDIR)/emacs/site-start.d
 -	install -m 644 50magit.el $(DESTDIR)$(SYSCONFDIR)/emacs/site-start.d/50magit.el
-+	mkdir -p $(DESTDIR)$(PREFIX)$(SYSCONFDIR)/emacs/site-start.d
-+	install -m 644 50magit.el $(DESTDIR)$(PREFIX)$(SYSCONFDIR)/emacs/site-start.d/50magit.el
++	mkdir -p $(ELISPDIR)
++	install -m 644 $(ELS) $(ELCS) $(ELISPDIR)
  
  install_docs: docs
 -	mkdir -p $(DESTDIR)$(PREFIX)/share/info
 -	install -m 644 magit.info $(DESTDIR)$(PREFIX)/share/info
 -	install-info --info-dir=$(DESTDIR)$(PREFIX)/share/info $(DESTDIR)$(PREFIX)/share/info/magit.info
-+	mkdir -p $(DESTDIR)$(PREFIX)/info
-+	install -m 644 magit.info $(DESTDIR)$(PREFIX)/info
-+	install-info --info-dir=$(DESTDIR)$(PREFIX)/info $(DESTDIR)$(PREFIX)/info/magit.info
++	mkdir -p $(INFODIR)
++	install -m 644 magit.info $(INFODIR)
++	install-info --info-dir=$(INFODIR) $(INFODIR)/magit.info
  
  install_contrib: contrib
  	mkdir -p $(DESTDIR)$(PREFIX)/share/emacs/site-lisp
