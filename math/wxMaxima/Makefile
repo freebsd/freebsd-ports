@@ -6,7 +6,7 @@ PORTVERSION=	13.04.2
 PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 #MASTER_SITE_SUBDIR=	${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -32,7 +32,7 @@ post-install:
 	@${LN} -s ${DATADIR}/wxmaxima.png ${PREFIX}/share/pixmaps/wxmaxima.png
 	@${LOCALBASE}/bin/desktop-file-install \
 		--mode=${SHAREMODE} --dir=${DESKTOPDIR} \
-		--rebuild-mime-info-cache ${WRKSRC}/${PORTNAME:L}.desktop
+		--rebuild-mime-info-cache ${WRKSRC}/${PORTNAME:tl}.desktop
 # 		--rebuild-mime-info-cache ${WRKSRC}/${PORTNAME:tl}.desktop
 	@${CAT} ${PKGMESSAGE}
 

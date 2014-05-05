@@ -24,7 +24,7 @@ PEAR_AUTOINSTALL=	yes
 
 .for opt in BCMATH GMP
 .    if ${PORT_OPTIONS:M${opt}}
-USE_PHP+=	${opt:L}
+USE_PHP+=	${opt:tl}
 .    endif
 .endfor
 

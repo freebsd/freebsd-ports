@@ -5,7 +5,7 @@ PORTNAME=	WebCalendar
 PORTVERSION=	1.0.5
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}%201.0/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}%201.0/${PORTVERSION}
 PORTSCOUT=	limit:^1\.0\.
 
 MAINTAINER=	ports@FreeBSD.org
@@ -36,7 +36,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:L}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 PORTDOCS=	README \
 		WebCalendar-Database.html \
 		WebCalendar-DeveloperGuide.html \

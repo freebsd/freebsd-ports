@@ -6,9 +6,9 @@ DISTVERSION=	2.3b
 PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/
+MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:tl}/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME:L}-${DISTVERSION}
+DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for SpamAssassin which scans image attachments for spam
