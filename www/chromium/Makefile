@@ -138,12 +138,12 @@ BUILDTYPE=	Release
 GYP_DEFINES+=	buildtype=Official
 .endif
 
-CONFIGURE_ENV+=	CC=${CC} \
-		CXX=${CXX} \
+CONFIGURE_ENV+=	CC="${CC}" \
+		CXX="${CXX}" \
 		GYP_GENERATORS=ninja \
 		GYP_DEFINES="${GYP_DEFINES}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
-		GPERF=${LOCALBASE}/bin/gperf
+		GPERF="${LOCALBASE}/bin/gperf"
 MAKE_ARGS+=	-C out/${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
