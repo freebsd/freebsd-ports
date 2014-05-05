@@ -6089,3 +6089,4 @@ devel/buildapp||2014-05-05|Has expired: Broken for more than 6 months
 converters/konwert||2014-05-05|Broken with modern compilers, not stage, no upstream
 graphics/gimp-gap||2014-05-05|Broken with gimp 2.8, no release in 5 years.
 games/gnome-games-extra-data||2014-05-05|Not used in GNOME 3.
+audio/libshout2|audio/libshout|2014-05-05|Use audio/libshout instead
