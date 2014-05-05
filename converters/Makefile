@@ -41,7 +41,6 @@
     SUBDIR += iconv-rfc1345
     SUBDIR += igbinary
     SUBDIR += ish
-    SUBDIR += konwert
     SUBDIR += libb64
     SUBDIR += libiconv
     SUBDIR += libticonv
