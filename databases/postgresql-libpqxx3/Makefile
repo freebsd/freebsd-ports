@@ -3,6 +3,7 @@
 
 PORTNAME=	libpqxx
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pqxx.org/download/software/${PORTNAME}/
 PKGNAMEPREFIX=	postgresql-
@@ -15,12 +16,12 @@ COMMENT=	New C++ interface for PostgreSQL
 CONFLICTS=	postgresql-libpqxx-[2-4].*
 PORTSCOUT=	limit:^2\.
 
-USE_PGSQL=	yes
-USES=		gmake pkgconfig shebangfix
+USES=		gmake libtool pgsql pkgconfig shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_PYTHON_BUILD=	yes
+INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	tools/splitconfig
 python_CMD=	${PYTHON_CMD}
