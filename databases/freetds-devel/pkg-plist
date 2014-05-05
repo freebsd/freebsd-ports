@@ -34,10 +34,13 @@ lib/libct.a
 lib/libct.la
 lib/libct.so
 lib/libct.so.4
+lib/libct.so.4.0.0
 lib/libsybdb.a
 lib/libsybdb.la
 lib/libsybdb.so
 lib/libsybdb.so.5
+lib/libsybdb.so.5.0.0
+%%ODBC%%lib/libtdsodbc.so.0.0.0
 %%ODBC%%lib/libtdsodbc.so.0
 %%ODBC%%lib/libtdsodbc.so
 %%ODBC%%lib/libtdsodbc.la

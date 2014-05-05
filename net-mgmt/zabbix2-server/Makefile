@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--with-net-snmp
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 
-OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP ODBC JAVAGW MYSQL
+OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP JAVAGW MYSQL
 OPTIONS_DEFAULT=	MYSQL IPV6 FPING JABBER CURL
 
 CURL_DESC=	Support for web monitoring
@@ -79,12 +79,9 @@ NMAP_DESC=	Build/install nmap for o/s detection
 SSH_DESC=	Support for SSH-based checks
 ODBC_DESC=	Support for database checks via ODBC
 JAVAGW_DESC=	Support for Java gateway
-IODBC_DESC=	Use iODBC for ODBC support
-UNIXODBC_DESC=	Use UnixODBC for ODBC support
 
-OPTIONS_SINGLE=	DB ODBC
-OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE ORACLE
-OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE ORACLE ODBC
 
 .include <bsd.port.options.mk>
 
@@ -140,12 +137,7 @@ LIB_DEPENDS+=	libssh2.so:${PORTSDIR}/security/libssh2
 CONFIGURE_ARGS+=	--with-ssh2
 .endif
 
-.if ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
-CONFIGURE_ARGS+=	--with-iodbc
-.endif
-
-.if ${PORT_OPTIONS:MUNIXODBC}
+.if ${PORT_OPTIONS:MODBC}
 LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-unixodbc
 .endif

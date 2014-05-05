@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 COMMENT=	Qt ${DB_DESC} plugin
+PORTREVISION=	1
 
 DB=		ODBC
 DB_DESC=	Open Database Connectivity

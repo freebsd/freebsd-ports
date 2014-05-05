@@ -3,7 +3,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -33,7 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lopencv_core
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 USE_WX=		3.0
-USES=		compiler:features iconv:wchar_t dos2unix
+USES=		compiler:features iconv:wchar_t dos2unix libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WX_UNICODE=	yes
 
@@ -109,6 +109,5 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_saga_api-${PORTVERSION}.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsaga_gdi-${PORTVERSION}.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/saga/*.so
-	${RM} ${STAGEDIR}${PREFIX}/lib/saga/*.la
 
 .include <bsd.port.post.mk>
