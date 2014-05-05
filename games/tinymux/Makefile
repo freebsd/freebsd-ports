@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto
 
 PATCHLEVEL=	12
 
@@ -42,11 +42,11 @@ OPTIONS_RADIO=	MYSQL
 OPTIONS_RADIO_MYSQL=	ASYNCHRONOUS_SQL INLINE_SQL
 
 ASYNCHRONOUS_SQL_DESC=	MySQL asynchronous support is unique to TinyMUX
-FIRANMUX_DESC=	Firan MUX via Firan's database (need MEMORY_BASED)
+FIRANMUX_DESC=		Firan MUX via Firan database (need MEMORY_BASED)
 INLINE_SQL_DESC=	MySQL support compatible with PennMUSH, TinyMUSH 3.x
 MEMORY_BASED_DESC=	Memory Based Database support
 REALITY_LVLS_DESC=	Reality Levels support
-SELFCHECK_DESC=	Enable expensive self-checking
+SELFCHECK_DESC=		Enable expensive self-checking
 WOD_REALMS_DESC=	World of Darkness Realms support
 
 ASYNCHRONOUS_SQL_CONFIGURE_ENABLE=	stubslave
