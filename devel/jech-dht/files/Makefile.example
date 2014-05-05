@@ -4,4 +4,6 @@ NO_MAN=	nope, too much to ask
 LDADD=	-L. -ldht -lcrypt -lmd
 BINDIR=	${STAGEDIR}${PREFIX}/bin
 
+WARNS=	3
+
 .include <bsd.prog.mk>
