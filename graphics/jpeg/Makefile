@@ -3,7 +3,7 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		http://sylvana.net/jpegcrop/:exif
@@ -20,9 +20,10 @@ CONFLICTS=	libjpeg-turbo-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION2}
 DISTVERSION2=	8d
-USE_AUTOTOOLS=	libtool
+# TODO: Remove :oldver together with patch-configure.
+USES=		libtool:oldver
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-shared --enable-static
 
 ADDITIONAL_HEADER=	jinclude.h jpegint.h
 
