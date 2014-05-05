@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -63,6 +63,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-syscall.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysctl-hw-availpages
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysctl-0oldlen
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-mmap.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysctl-hw-pagesizes
 .endif
 
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
