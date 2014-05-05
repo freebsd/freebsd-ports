@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocamlgraph
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.5
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/ocamlgraph/
@@ -13,13 +13,17 @@ COMMENT=	Graph manipulation library for OCaml
 
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=GUI
-GUI_DESC=	Include GUI user programs: viewer and editor
+OPTIONS_SUB=	yes
+GUI_DESC=		Include GUI user programs: viewer and editor
+GUI_BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+GUI_RUN_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+GUI_CONFIGURE_OFF=	LABLGTK2=no
 
+USES=		gmake
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 USE_OCAMLFIND_PLIST=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_SUB+=	OCAMLGRAPHDIR="${OCAML_LIBDIR}/${PORTNAME}"
@@ -29,22 +33,11 @@ INSTALL_TARGET=	install install-findlib
 
 MAKE_JOBS_UNSAFE=	yes
 
-PORTSCOUT=	skipv:1.81
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-PLIST_SUB+=	GUI=""
-.else
-CONFIGURE_ARGS+=	LABLGTK2=no
-PLIST_SUB+=		GUI="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	doc
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	*
 
 post-patch:
@@ -55,8 +48,8 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc; ${INSTALL_DATA} * ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
