@@ -46,9 +46,9 @@ RK_DIR.WNN7=		${LOCALBASE}/lib/wnn/ja_JP/rk.wnn7
 
 .for I in ${OPTIONS_DEFINE:NDOCS}
 .if ${PORT_OPTIONS:M${I}}
-INPUT_METHOD+=	${I:S/_/+/g:L}
-SUB_FILES+=	ONEW_CONF-for-${I:S/_/+/g:L}
-PLIST_FILES+=	lib/libonew-${I:S/_/+/g:L}.a
+INPUT_METHOD+=	${I:S/_/+/g:tl}
+SUB_FILES+=	ONEW_CONF-for-${I:S/_/+/g:tl}
+PLIST_FILES+=	lib/libonew-${I:S/_/+/g:tl}.a
 RK_DIR+=	${RK_DIR.${I}}
 .endif
 .endfor

@@ -13,7 +13,6 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Meta-port of all gstreamer plugins with options
 
-.MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
 NO_INSTALL=	yes
 NO_MTREE=	yes
@@ -22,9 +21,9 @@ USE_GSTREAMER=	yes
 .include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
 
 .for all in ${_GSTREAMER_PLUGINS}
-OPTIONS_DEFINE+=	${all:U}
-${all:U}_DESC=	${all} plugin
-OPTIONS_DEFAULT+=	${all:U}
+OPTIONS_DEFINE+=	${all:tu}
+${all:tu}_DESC=	${all} plugin
+OPTIONS_DEFAULT+=	${all:tu}
 .endfor
 
 .include <bsd.port.pre.mk>
@@ -42,8 +41,8 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NSPC} # i386 only
 .endif
 
 .for f in ${OPTIONS_DEFINE}
-.if ${PORT_OPTIONS:M${f:U}}
-USE_GSTREAMER+=	${f:L}
+.if ${PORT_OPTIONS:M${f:tu}}
+USE_GSTREAMER+=	${f:tl}
 .endif
 .endfor
 

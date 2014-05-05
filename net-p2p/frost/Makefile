@@ -91,6 +91,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
 .endfor
 # wrapper
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:L}
+	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:tl}
 
 .include <bsd.port.mk>

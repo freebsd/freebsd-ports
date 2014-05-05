@@ -46,7 +46,7 @@ USE_QT4+=	dbus
 .endif
 
 do-configure:
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "no"
+.if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "no"
 	@cd ${WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} \
 		./configure --prefix=${PREFIX}
 .else
@@ -60,7 +60,7 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "no"
+.if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "no"
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent
 	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/

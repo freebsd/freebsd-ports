@@ -12,8 +12,6 @@ COMMENT=	The meta port for GIMP User Manual
 
 LICENSE=	GFDL
 
-.MAKE.FreeBSD_UL=	yes
-
 NO_BUILD=	yes
 NO_INSTALL=	yes
 NO_MTREE=	yes
@@ -49,7 +47,7 @@ sl_NAME=	Slovenian
 sv_NAME=	Swedish
 zh_CN_NAME=	Chinese Simplified
 
-OPTIONS_DEFINE=	ALL ${LANG_ALL_HTML:U}
+OPTIONS_DEFINE=	ALL ${LANG_ALL_HTML:tu}
 OPTIONS_DEFAULT=	ALL
 ALL_DESC=	All translations
 
@@ -57,8 +55,8 @@ ALL_DESC=	All translations
 ${lang}_DETECT?=	${LOCALBASE}/share/gimp/help/${lang}/index.html
 ${lang}_PORT?=		misc/gimp-help-${lang}
 ${lang}_NAME?=		${lang}
-${lang:U}_DESC=		${${lang}_NAME}
-${lang:U}_RUN_DEPENDS=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
+${lang:tu}_DESC=		${${lang}_NAME}
+${lang:tu}_RUN_DEPENDS=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 ALL_RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 .endfor
 

@@ -7,7 +7,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
-DISTNAME=	${PORTNAME:U}_${PORTVERSION}
+DISTNAME=	${PORTNAME:tu}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web/Perforce Browser

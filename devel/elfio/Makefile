@@ -6,7 +6,7 @@ PORTVERSION=	1.0.3
 PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/ELFIO-sources/ELFIO-${PORTVERSION}
-DISTNAME=	${PORTNAME:U}-${PORTVERSION}
+DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for reading and generating files in the ELF binary format

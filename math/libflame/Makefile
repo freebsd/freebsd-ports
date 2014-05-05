@@ -86,7 +86,7 @@ WITH_BLAS=	gotoblas
 CONFIGURE_ARGS+=	--disable-goto-interfaces
 .for b in M K N
 .if defined(${b}_BLOCKSIZE)
-CONFIGURE_ARGS+=	--enable-default-${b:L}-blocksize=${${b}_BLOCKSIZE}
+CONFIGURE_ARGS+=	--enable-default-${b:tl}-blocksize=${${b}_BLOCKSIZE}
 .endif
 .endfor
 .endif
@@ -295,7 +295,7 @@ post-configure:
 do-build:
 .for o in SHARED STATIC
 .if ${PORT_OPTIONS:M${o}}
-	@${PRINTF} "\n\n\n===> Building ${o:L} library:\n\n\n\n"
+	@${PRINTF} "\n\n\n===> Building ${o:tl} library:\n\n\n\n"
 	@cd ${WRKSRC}${o:S|^|_|:M*STATIC}; ${SETENV} ${MAKE_ENV} ${GMAKE} \
 	${_MAKE_JOBS} ${MAKE_ARGS} libs
 .endif
@@ -331,7 +331,7 @@ check regression-test test: build
 	install-headers
 .for o in SHARED STATIC
 .if ${PORT_OPTIONS:M${o}}
-	@${PRINTF} "\n\n\n===> Testing ${o:L} library:\n\n\n\n"
+	@${PRINTF} "\n\n\n===> Testing ${o:tl} library:\n\n\n\n"
 	@cd ${WRKSRC}${o:S|^|_|:M*STATIC}/test;  ${SETENV} ${MAKE_ENV} \
 	${GMAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
 	LIBBLAS="-L${LOCALBASE}/lib ${BLAS} -lm" \

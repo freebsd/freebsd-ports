@@ -45,7 +45,7 @@ DTRACE_DESC=	Enable DTrace support (experimental)
 
 OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
 
-ERL_RELEASE=	R${PORTVERSION:S/.//g:U:S/1$/-1/}
+ERL_RELEASE=	R${PORTVERSION:S/.//g:tu:S/1$/-1/}
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes

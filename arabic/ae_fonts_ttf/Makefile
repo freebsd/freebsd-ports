@@ -39,7 +39,7 @@ FONTS+=	${font}
 
 .for font in KASR SHMOOKH
 .  if ${PORT_OPTIONS:M${font}}
-FONTS+=	${font:C/(.).*/\1/}${font:L:C/.//}
+FONTS+=	${font:C/(.).*/\1/}${font:tl:C/.//}
 .  endif
 .endfor
 

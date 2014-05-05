@@ -119,7 +119,7 @@ OPTIONS_DEFAULT=	CTYPE \
 
 .for opt in ${OPTIONS_DEFINE}
 .	if ${PORT_OPTIONS:M${opt}}
-USE_PHP+=	${opt:L}
+USE_PHP+=	${opt:tl}
 .	endif
 .endfor
 

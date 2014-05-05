@@ -429,9 +429,9 @@ CONFIGURE_ARGS+=	--enable-spasswd
 CONFIGURE_ARGS+=	--enable-sql=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_SQL=${BACKEND_PLIST}
 WITH_ODBC_TYPE?=	iODBC
-.if ${WITH_ODBC_TYPE:L} == iodbc
+.if ${WITH_ODBC_TYPE:tl} == iodbc
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
-.elif ${WITH_ODBC_TYPE:L} == unixodbc
+.elif ${WITH_ODBC_TYPE:tl} == unixodbc
 LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 .else
 BROKEN=			choose either iODBC or unixODBC for WITH_ODBC_TYPE

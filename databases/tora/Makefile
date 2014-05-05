@@ -47,7 +47,7 @@ RUN_DEPENDS+=	${ORACLE_HOME}/network/admin/tnsnames.ora:${PORTSDIR}/databases/or
 
 ORACLE_HOME?=	${LOCALBASE}/oracle8-client
 ORACLE_VER=	8i	# Client version
-CONFIGURE_ARGS+=	--with-oracle=${ORACLE_HOME} --with-oci-version=${ORACLE_VER:U}
+CONFIGURE_ARGS+=	--with-oracle=${ORACLE_HOME} --with-oci-version=${ORACLE_VER:tu}
 .endif
 
 run-autotools:

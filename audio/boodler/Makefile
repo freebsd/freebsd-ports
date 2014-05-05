@@ -33,7 +33,7 @@ pre-everything::
 	@${ECHO} "interfaces. The default is to use OSS."
 	@${ECHO} ""
 
-.if ${DRIVER:L} == "esd"
+.if ${DRIVER:tl} == "esd"
 LIB_DEPENDS+=	libesd.so:${PORTSDIR}/audio/esound
 .endif
 
@@ -49,7 +49,7 @@ post-patch:
 	@${RMDIR} ${WRKDIR}/boodler-snd/string
 
 do-build:
-	(cd ${WRKSRC} && ${PYTHON_CMD} configure.py --driver ${DRIVER:L} ${PIC} --include ${PREFIX}/include --lib ${PREFIX}/lib && make)
+	(cd ${WRKSRC} && ${PYTHON_CMD} configure.py --driver ${DRIVER:tl} ${PIC} --include ${PREFIX}/include --lib ${PREFIX}/lib && make)
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/effects ${WRKSRC}/boodle/
 
 do-install:

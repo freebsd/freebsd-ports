@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 SUB_FILES=	pkg-install pkg-message
-SUB_LIST=	DB_TYPE=${DB_TYPE:L}
+SUB_LIST=	DB_TYPE=${DB_TYPE:tl}
 PORTEXAMPLES=	*
 
 USE_RC_SUBR=	sympa
@@ -78,7 +78,7 @@ OPTIONS_RADIO_DATABASE=	ORACLE PGSQL SYBASE MYSQL
 SYBASE_DESC=	Sybase database
 
 .ifdef DB_TYPE
-DB_TYPE:=	${DB_TYPE:U}
+DB_TYPE:=	${DB_TYPE:tu}
 .  for option in ${OPTIONS_RADIO_DATABASE}
 .    if ${DB_TYPE} == ${option:S,PGSQL,PG,}
 OPTIONS_SET+=	${option}

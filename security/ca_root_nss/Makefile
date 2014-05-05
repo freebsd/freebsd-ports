@@ -3,7 +3,7 @@
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
 CATEGORIES=	security
-MASTER_SITES=	MOZILLA/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src
+MASTER_SITES=	MOZILLA/security/nss/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
 
 MAINTAINER=	gecko@FreeBSD.org

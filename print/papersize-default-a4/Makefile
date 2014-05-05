@@ -5,7 +5,7 @@ PORTNAME=	papersize-default
 PORTVERSION=	0.0.20120302
 CATEGORIES=	print
 MASTER_SITES=	# none
-PKGNAMESUFFIX=	-${DEFAULTPAPERSIZE:L}
+PKGNAMESUFFIX=	-${DEFAULTPAPERSIZE:tl}
 DISTFILES=	# none
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -17,7 +17,7 @@ NO_BUILD=	yes
 
 DEFAULTPAPERSIZE?=	a4
 .for P in a4 letter
-.if ${DEFAULTPAPERSIZE:L:M${P}} != ${P}
+.if ${DEFAULTPAPERSIZE:tl:M${P}} != ${P}
 CONFLICTS_INSTALL+=	papersize-default-${P}-[0-9]*
 .endif
 .endfor
@@ -25,7 +25,7 @@ CONFLICTS_INSTALL+=	papersize-default-${P}-[0-9]*
 PLIST_FILES=	etc/papersize
 
 do-install:
-	${LN} -s -f papersize.${DEFAULTPAPERSIZE:L} \
+	${LN} -s -f papersize.${DEFAULTPAPERSIZE:tl} \
 		${STAGEDIR}${PREFIX}/etc/papersize
 
 .include <bsd.port.mk>

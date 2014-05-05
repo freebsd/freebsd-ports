@@ -12,7 +12,7 @@ COMMENT=	Agile dynamic language for the JVM
 
 LICENSE=	APACHE20
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:U}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:tu}
 
 USES=		zip
 USE_JAVA=	yes
@@ -34,7 +34,7 @@ SUB_FILES=	set-groovy_home.sed
 
 do-install:
 	@${ECHO_MSG} -n ">> Staging JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/embeddable/${PORTNAME}-all-${DISTVERSION:U}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${WRKSRC}/embeddable/${PORTNAME}-all-${DISTVERSION:tu}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Staging data files in ${DATADIR}..."
 	@cd ${WRKSRC} \

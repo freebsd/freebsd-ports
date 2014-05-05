@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/include	\
 USES=		fortran
 FFLAGS+=	-O2
 PFX=		${PORTNAME}
-TARGET=		${OPSYS:L}
+TARGET=		${OPSYS:tl}
 PLIST_SUB=	PFX=${PFX} TARGET=${TARGET}
 
 .if !defined(WITHOUT_UMFPACK)

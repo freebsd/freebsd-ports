@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS=	i386
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_GMAKE=	yes
-MAKE_ARGS=	OS=${OPSYS:U} KERNEL=${OSREL:S/.//g}
+MAKE_ARGS=	OS=${OPSYS:tu} KERNEL=${OSREL:S/.//g}
 
 # This will play merry hell with portlint(1)
 BINS=		bonus/asmutils basename cal cat chmod chown chroot cmp cp \

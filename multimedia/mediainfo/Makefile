@@ -36,8 +36,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/MediaInfo/Project/GNU/CLI/.libs/mediainfo ${PREFIX}/bin/
 .for library in MediaInfo Zen
-	${INSTALL_LIB} ${WRKSRC}/${library}Lib/Project/GNU/Library/.libs/lib${library:L}.so.0 ${PREFIX}/lib/
-	${LN} -fs lib${library:L}.so.0 ${PREFIX}/lib/lib${library:L}.so
+	${INSTALL_LIB} ${WRKSRC}/${library}Lib/Project/GNU/Library/.libs/lib${library:tl}.so.0 ${PREFIX}/lib/
+	${LN} -fs lib${library:tl}.so.0 ${PREFIX}/lib/lib${library:tl}.so
 .endfor
 
 .include <bsd.port.mk>

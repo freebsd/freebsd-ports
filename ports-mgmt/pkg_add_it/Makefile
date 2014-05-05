@@ -20,7 +20,7 @@ PKG_RELEASE!=	${UNAME} -r | ${CUT} -d '-' -f 1,2 | ${SED} -e 's|\.[0-9]*.*|-STAB
 
 post-patch:
 	${REINPLACE_CMD} -e 's|@PKG_ARCH@|${ARCH}|' \
-		-e 's|@PKG_RELEASE@|${PKG_RELEASE:L}|' ${WRKSRC}/pkg_add_it.conf
+		-e 's|@PKG_RELEASE@|${PKG_RELEASE:tl}|' ${WRKSRC}/pkg_add_it.conf
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/pkg_add_it.conf ${PREFIX}/etc/

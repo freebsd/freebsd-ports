@@ -64,8 +64,8 @@ BOOTSTRAP_TRIPLET=	x86_64-bootstrap-dragonfly2.8/4.6.0
 BOOTSTRAP_TRIPLET=	i386-bootstrap-dragonfly2.8/4.6.0
 .  endif
 .endif
-BLD_TARGET=		${GARCH}-aux-${OPSYS:L}${OSREL}
-BOOTSTRAP_COMPILER=	gnat-bootstrap.${GARCH}.${OPSYS:L}.tar.bz2
+BLD_TARGET=		${GARCH}-aux-${OPSYS:tl}${OSREL}
+BOOTSTRAP_COMPILER=	gnat-bootstrap.${GARCH}.${OPSYS:tl}.tar.bz2
 
 WRKSRC=			${WRKDIR}/gcc-${GCC_VERSION}
 BUILDDIR=		${WRKDIR}/build

@@ -11,8 +11,6 @@
 #
 # $FreeBSD$
 
-.MAKE.FreeBSD_UL=	yes
-
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
@@ -86,7 +84,7 @@ DESCR=			${.CURDIR}/pkg-descr
 PLIST=			${.CURDIR}/pkg-plist
 WRKSRC=			${WRKDIR}/Mesa-${MESADISTVERSION}
 
-COMPONENT=		${PORTNAME:L:C/^lib//:C/mesa-//}
+COMPONENT=		${PORTNAME:tl:C/^lib//:C/mesa-//}
 
 .if ${COMPONENT:Mglesv2} == ""
 CONFIGURE_ARGS+=	--disable-gles2

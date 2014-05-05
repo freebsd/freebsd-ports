@@ -46,7 +46,7 @@ PLIST_SUB+=	FREEBSD_DIR=${FREEBSD_DIR}
 # Hack to prevent rbx from creating $HOME/.rbx during compilation of gems
 MAKE_ENV+=	HOME=${WRKSRC}
 
-F_OS=		${OPSYS:L}
+F_OS=		${OPSYS:tl}
 F_MAJOR=	${OSREL:C/\..*$//}
 FREEBSD_DIR=	${F_ARCH}-${F_OS}-${F_MAJOR}
 

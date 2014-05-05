@@ -50,8 +50,8 @@ OPTIONS_SET+=	${AVAILABLEFORMATS}
 
 .for O in ${AVAILABLEFORMATS}
 .if ${PORT_OPTIONS:M${O}}
-DOCFORMAT+=	${O:L:S,_,-,}
-PLIST_FORMATS+=	${O:L:S,_,-,}
+DOCFORMAT+=	${O:tl:S,_,-,}
+PLIST_FORMATS+=	${O:tl:S,_,-,}
 .endif
 .endfor
 

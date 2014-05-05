@@ -40,7 +40,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 		x264:${PORTSDIR}/multimedia/x264 \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
-WRKSRC=		${WRKDIR}/${DISTNAME:L}
+WRKSRC=		${WRKDIR}/${DISTNAME:tl}
 
 USES=		libtool pathfix perl5 pkgconfig shebangfix tar:bzip2 
 SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \

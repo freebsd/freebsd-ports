@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6
-DISTNAME=	${PORTNAME:U}-${PORTVERSION}
+DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The Visualization Toolkit

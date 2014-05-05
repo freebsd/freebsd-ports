@@ -283,7 +283,7 @@ do-install:
 	cd ${WRKDIR} && \
 		${INSTALL_MAN} ${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
 	${LN} -sf ${PREFIX}/man/man8/${PORTNAME}.8 \
-		${STAGEDIR}${PREFIX}/man/man8/${PORTNAME:L}.8
+		${STAGEDIR}${PREFIX}/man/man8/${PORTNAME:tl}.8
 	@${ECHO_MSG} " [DONE]"
 
 .include <bsd.port.mk>

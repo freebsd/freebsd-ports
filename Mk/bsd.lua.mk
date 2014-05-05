@@ -243,7 +243,7 @@ IGNORE?=				selected multiple values for WANT_LUA: ${_WANT_LUA}
 .		endif
 _HAVE_LUA=				#
 # Check for all versions.
-.		if ${_WANT_LUA:L} == "yes"
+.		if ${_WANT_LUA:tl} == "yes"
 .			for comp in ${_LUA_COMPS_ALL}
 .				for ver in ${_LUA_VERS_ALL}
 _LUA_COMP=				_LUA_FILE_${comp}_${ver}
@@ -534,7 +534,7 @@ BUILD_DEPENDS+=			${_LUA_FILE_${comp_part}_${_LUA_VER}}:${PORTSDIR}/${_LUA_PORT_
 RUN_DEPENDS+=			${_LUA_FILE_${comp_part}_${_LUA_VER}}:${PORTSDIR}/${_LUA_PORT_${comp_part}_${_LUA_VER}}
 .			endif
 .		else
-${_LUA_DEP_TYPE:U}_DEPENDS+=	${_LUA_FILE_${comp_part}_${_LUA_VER}}:${PORTSDIR}/${_LUA_PORT_${comp_part}_${_LUA_VER}}
+${_LUA_DEP_TYPE:tu}_DEPENDS+=	${_LUA_FILE_${comp_part}_${_LUA_VER}}:${PORTSDIR}/${_LUA_PORT_${comp_part}_${_LUA_VER}}
 .		endif
 .	endfor
 .endfor

@@ -10,11 +10,11 @@ MASTER_SITES=	\
 		http://www.mavetju.org/download/adopted/:tapes \
 		ftp://ftp.komkon.org/pub/EMUL8/P2000/Tapes/:tapes \
 		http://www.mavetju.org/download/adopted/:code
-DISTFILES=	${PORTNAME:U}${EXTRACT_SUFX}:code \
+DISTFILES=	${PORTNAME:tu}${EXTRACT_SUFX}:code \
 		tapeconv.zip:code \
 		${M2000TAPES:S/$/.gz:tapes/}
 DIST_SUBDIR=	m2000
-EXTRACT_ONLY=	${PORTNAME:U}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME:tu}${EXTRACT_SUFX}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	A portable emulator for the Philips P2000 home computer

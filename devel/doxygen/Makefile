@@ -64,7 +64,7 @@ CONFIGURE_ENV=	QTDIR="${QTDIR}"
 CONFIGURE_ARGS+=--with-doxywizard
 .endif # QT4
 
-.if ${MACHINE_ARCH:L} == alpha
+.if ${MACHINE_ARCH:tl} == alpha
 CONFIGURE_ARGS+=	--enable-langs no
 .endif
 
@@ -74,7 +74,7 @@ PLIST_FILES+=	bin/doxywizard
 
 pre-configure:
 	@cd ${WRKSRC};for pro in src/*.pro.in addon/doxywizard/doxywizard.pro.in;do \
-		${ECHO} "unix:LIBS += ${ICONV_LIB}" >> $$pro; done
+		${ECHO} "unix:tlIBS += ${ICONV_LIB}" >> $$pro; done
 	@${CHMOD} +x ${WRKSRC}/configure
 
 post-configure:

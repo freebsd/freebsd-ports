@@ -54,7 +54,7 @@ DEBUG_CONFIGURE_ENABLE=	debug
 
 .include <bsd.port.options.mk>
 
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "yes" && defined(USE_PYTHON)
+.if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "yes" && defined(USE_PYTHON)
 CONFIGURE_ARGS+=	--enable-python-binding \
 			--with-boost-python=boost_python
 .else

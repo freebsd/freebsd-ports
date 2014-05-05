@@ -78,21 +78,21 @@ CONFLICTS_TETEX= \
 	latex2e-[0-9]*
 
 # override the user configuration
-.if !empty(USE_TEX:U:MTETEX)
+.if !empty(USE_TEX:tu:MTETEX)
 TEX_DEFAULT=	tetex
-.elif !empty(USE_TEX:U:MTEXLIVE)
+.elif !empty(USE_TEX:tu:MTEXLIVE)
 TEX_DEFAULT=	texlive
 .endif
 
-.if !empty(TEX_DEFAULT:U:MTETEX)
+.if !empty(TEX_DEFAULT:tu:MTETEX)
 CONFLICTS_INSTALL+=	${CONFLICTS_TEXLIVE}
-.elif !empty(TEX_DEFAULT:U:MTEXLIVE)
+.elif !empty(TEX_DEFAULT:tu:MTEXLIVE)
 CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
 .else
 .error malformed TEX_DEFAULT: ${TEX_DEFAULT}
 .endif
 
-_TEX_LABEL:=	${TEX_DEFAULT:U:S/TEXLIVE/TEX/}
+_TEX_LABEL:=	${TEX_DEFAULT:tu:S/TEXLIVE/TEX/}
 
 _USE_TETEX_TEXMF=	${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf
 _USE_TEX_TEXMF=		${LOCALBASE}/${TEXMFDISTDIR}/README:${PORTSDIR}/print/texlive-texmf
@@ -146,13 +146,13 @@ _USE_TEX_FULL=	texmf base web2c infra \
 		dvipsk dvipdfmx xdvik \
 		kpathsea:lib ptexenc:lib
 
-.if !empty(USE_TEX:U:MFULL)
+.if !empty(USE_TEX:tu:MFULL)
 USE_TEX:=	${_USE_${_TEX_LABEL}_FULL}
 .endif
 
-.for _UU in ${USE_TEX:U}
+.for _UU in ${USE_TEX:tu}
 _U:=	${_UU}	# ugly but necessary in for loop
-. if !empty(_U:U:MKPATHSEA) || !empty(_U:U:MPTEXENC)
+. if !empty(_U:tu:MKPATHSEA) || !empty(_U:tu:MPTEXENC)
 _U:=	${_U}:lib
 . endif
 . if empty(_U:M*\:*)
@@ -160,7 +160,7 @@ _C:=	BUILD RUN
 . else
 _C:=	${_U:C/.*://}
 . endif
-. for _CC in ${_C:U}
+. for _CC in ${_C:tu}
 TEX_${_CC}_DEPENDS+=${_USE_${_TEX_LABEL}_${_UU:C/:.*$//}}
 . endfor
 .endfor
@@ -207,14 +207,14 @@ post-install-script: do-texhash
 . for F in ${TEX_FORMATS}
 do-fmtutil: do-fmtutil-$F post-install-$F
 do-fmtutil-$F:
-	@${TEST} -n '${TEX_FORMAT_${F:U}}'
+	@${TEST} -n '${TEX_FORMAT_${F:tu}}'
 	@${TEST} -r ${LOCALBASE}/${FMTUTIL_CNF}
 	@exec < ${LOCALBASE}/${FMTUTIL_CNF} && \
 		${RM} ${LOCALBASE}/${FMTUTIL_CNF} && \
 		(${GREP} -v "\#$F\$$"; \
-			${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:U}}) \
+			${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:tu}}) \
 			> ${LOCALBASE}/${FMTUTIL_CNF}
-	@${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:U}} | \
+	@${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:tu}} | \
 		while read format dum; do \
 		${SETENV} PATH=${PATH}:${LOCALBASE}/bin \
 			TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} \
@@ -224,14 +224,14 @@ do-fmtutil-$F:
 	@${ECHO_CMD} "@exec exec < ${LOCALBASE}/${FMTUTIL_CNF} && " \
 		"${RM} ${LOCALBASE}/${FMTUTIL_CNF} && " \
 		"(${GREP} -v \"\#$F\$$\"; ${PRINTF} \"%%s\t\#$F\n\" " \
-		"${TEX_FORMAT_${F:U}:S,",\\",g}) " \
+		"${TEX_FORMAT_${F:tu}:S,",\\",g}) " \
 		"> ${LOCALBASE}/${FMTUTIL_CNF}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec exec < ${LOCALBASE}/${FMTUTIL_CNF} && " \
 		"${RM} ${LOCALBASE}/${FMTUTIL_CNF} && " \
 		"${GREP} -v \"\#$F\$$\" " \
 		"> ${LOCALBASE}/${FMTUTIL_CNF}" >> ${TMPPLIST}
-_PLIST_FILES+=	${TEX_FORMAT_${F:U}_FILES}
-_PLIST_DIRSTRY+=${TEX_FORMAT_${F:U}_DIRS}
+_PLIST_FILES+=	${TEX_FORMAT_${F:tu}_FILES}
+_PLIST_DIRSTRY+=${TEX_FORMAT_${F:tu}_DIRS}
 . endfor
 post-install-script: do-fmtutil
 

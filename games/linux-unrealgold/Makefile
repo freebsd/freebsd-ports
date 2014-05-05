@@ -105,7 +105,7 @@ do-extract:
 # Original CD
 .elif defined(ORIGINAL)
 .for dir in ${CDDIRS:NSystem:NMaps/UPak:NSounds/int} Manuals
-	@${LN} -sf ${CDROM_MOUNT}/${dir:U} ${WRKDIR}/source/${dir}
+	@${LN} -sf ${CDROM_MOUNT}/${dir:tu} ${WRKDIR}/source/${dir}
 .endfor
 .for _file in UDSDemo.u UPak.u
 	@${CP} ${CDROM_MOUNT}/SYSTEM/${_file} ${WRKDIR}/source/System

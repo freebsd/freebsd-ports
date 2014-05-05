@@ -5,7 +5,7 @@ PORTNAME=	phpSysInfo
 DISTVERSION=	3.0-RC9
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/3.0-RC9
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/3.0-RC9
 
 MAINTAINER=	walt@relnor.com
 COMMENT=	A PHP script for displaying system information
@@ -16,7 +16,7 @@ WANT_PHP_WEB=	yes
 CONFLICTS=	phpsysinfo-2.[0-9]*
 IGNORE=		please use www/phpsysinfo
 
-WRKSRC=		${WRKDIR}/${PORTNAME:L}
+WRKSRC=		${WRKDIR}/${PORTNAME:tl}
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

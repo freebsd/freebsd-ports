@@ -5,7 +5,7 @@ PORTNAME=	dnsmax-perl
 PORTVERSION=	1.0.1
 CATEGORIES=	dns
 MASTER_SITES=	SF/dynamicdns/${PORTNAME}/${PORTVERSION}
-DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/-pre/:S/.b/-beta/}
+DISTNAME=	${PORTNAME:tl}-${PORTVERSION:S/.p/-pre/:S/.b/-beta/}
 
 MAINTAINER=	dan@algenta.com
 COMMENT=	DNSMax-perl is a perl DNS update client for the REST DNSMax protocol

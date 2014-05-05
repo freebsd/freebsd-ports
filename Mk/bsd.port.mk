@@ -1138,8 +1138,6 @@ PKG_ENV+=		PORTSDIR=${PORTSDIR}
 
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
-# tell bmake we use the old :L :U modifiers
-.MAKE.FreeBSD_UL= yes
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
@@ -1368,7 +1366,7 @@ IGNORE=			PORTVERSION ${PORTVERSION} may not contain '-' '_' or ','
 .endif
 DISTVERSION?=	${PORTVERSION:S/:/::/g}
 .elif defined(DISTVERSION)
-PORTVERSION=	${DISTVERSION:L:C/([a-z])[a-z]+/\1/g:C/([0-9])([a-z])/\1.\2/g:C/:(.)/\1/g:C/[^a-z0-9+]+/./g}
+PORTVERSION=	${DISTVERSION:tl:C/([a-z])[a-z]+/\1/g:C/([0-9])([a-z])/\1.\2/g:C/:(.)/\1/g:C/[^a-z0-9+]+/./g}
 .endif
 
 PORTREVISION?=	0
@@ -1530,7 +1528,7 @@ USES+=	gmake
 .endif
 
 .if defined(USE_DOS2UNIX)
-.if ${USE_DOS2UNIX:U}=="YES"
+.if ${USE_DOS2UNIX:tu}=="YES"
 DOS2UNIX_REGEX?=	.*
 .else
 .if ${USE_DOS2UNIX:M*/*}
@@ -1752,7 +1750,7 @@ BINUTILS?=	ADDR2LINE AR AS CPPFILT GPROF LD NM OBJCOPY OBJDUMP RANLIB \
 	READELF SIZE STRINGS
 BINUTILS_NO_MAKE_ENV?=
 . for b in ${BINUTILS}
-${b}=	${LOCALBASE}/bin/${b:C/PP/++/:L}
+${b}=	${LOCALBASE}/bin/${b:C/PP/++/:tl}
 .  if defined(GNU_CONFIGURE) || defined(BINUTILS_CONFIGURE)
 CONFIGURE_ENV+=	${b}="${${b}}"
 .  endif
@@ -1766,7 +1764,7 @@ MAKE_ENV+=	${b}="${${b}}"
 .include "${PORTSDIR}/Mk/bsd.ldap.mk"
 .endif
 
-.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
+.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
 SUB_FILES+=	${USE_RC_SUBR}
 .endif
 
@@ -1774,10 +1772,10 @@ SUB_FILES+=	${USE_RC_SUBR}
 SUB_FILES+=	${USE_RCORDER}
 .endif
 
-.if defined(USE_LDCONFIG) && ${USE_LDCONFIG:L} == "yes"
+.if defined(USE_LDCONFIG) && ${USE_LDCONFIG:tl} == "yes"
 USE_LDCONFIG=	${PREFIX}/lib
 .endif
-.if defined(USE_LDCONFIG32) && ${USE_LDCONFIG32:L} == "yes"
+.if defined(USE_LDCONFIG32) && ${USE_LDCONFIG32:tl} == "yes"
 IGNORE=			has USE_LDCONFIG32 set to yes, which is not correct
 .endif
 
@@ -1802,7 +1800,7 @@ STRIP_CMD=	${TRUE}
 
 # Allow the user to specify another linux_base version.
 .	if defined(OVERRIDE_LINUX_BASE_PORT)
-.		if ${USE_LINUX:L} == yes
+.		if ${USE_LINUX:tl} == yes
 USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 .		endif
 .	endif
@@ -1813,7 +1811,7 @@ USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 .	if exists(${PORTSDIR}/emulators/linux_base-${USE_LINUX})
 LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
 .	else
-.		if ${USE_LINUX:L} == "yes"
+.		if ${USE_LINUX:tl} == "yes"
 LINUX_BASE_PORT=	${LINUXBASE}/etc/fedora-release:${PORTSDIR}/emulators/linux_base-f10
 .		else
 IGNORE=		cannot be built: there is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT
@@ -1840,7 +1838,7 @@ _GL_glw_LIB_DEPENDS=		libGLw.so:${PORTSDIR}/graphics/libGLw
 _GL_glut_LIB_DEPENDS=		libglut.so:${PORTSDIR}/graphics/freeglut
 
 .if defined(USE_GL)
-. if ${USE_GL:L} == "yes"
+. if ${USE_GL:tl} == "yes"
 USE_GL=		glu
 . endif
 . for _component in ${USE_GL}
@@ -2924,13 +2922,13 @@ _COUNT=1
 # MAN${sect} is for man pages installed for all languages in MANLANG for a given
 # section.
 .if defined(MAN${sect})
-_MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:L}/%}
+_MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:tl}/%}
 .endif
 
 # Language specific MAN${sect} variables are for man pages installed in that
 # language, but not necessarily all languages in MANLANG.
-.if defined(MAN${sect}_${manlang:S%^man/%%:U})
-_MANPAGES+=	${MAN${sect}_${manlang:S%^man/%%:U}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:L}/%}
+.if defined(MAN${sect}_${manlang:S%^man/%%:tu})
+_MANPAGES+=	${MAN${sect}_${manlang:S%^man/%%:tu}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:tl}/%}
 .endif
 
 .endfor
@@ -2942,7 +2940,7 @@ _MANPAGES+=	${MAN${sect}_${manlang:S%^man/%%:U}:S%^%${MAN${sect}PREFIX}/${manlan
 # of MAN${sect}PREFIX.
 .for sect in 1 2 3 4 5 6 7 8 9 L N
 .if defined(MAN${sect}_EN)
-_MANPAGES+=	${MAN${sect}_EN:S%^%${MAN${sect}PREFIX}/man/man${sect:L}/%}
+_MANPAGES+=	${MAN${sect}_EN:S%^%${MAN${sect}PREFIX}/man/man${sect:tl}/%}
 .endif
 .endfor
 
@@ -3222,7 +3220,7 @@ DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
 ################################################################
 .if ((!defined(OPTIONS_DEFINE) && !defined(OPTIONS_SINGLE) && !defined(OPTIONS_MULTI)) \
 	&& !defined(OPTIONS_GROUP) && !defined(OPTIONS_RADIO) \
-	|| defined(CONFIG_DONE_${UNIQUENAME:U}) || \
+	|| defined(CONFIG_DONE_${UNIQUENAME:tu}) || \
 	defined(PACKAGE_BUILDING) || defined(BATCH))
 _OPTIONS_OK=yes
 .endif
@@ -4684,7 +4682,7 @@ check-checksum-algorithms:
 	@ \
 	${checksum_init} \
 	\
-	for alg in ${CHECKSUM_ALGORITHMS:U}; do \
+	for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
 		eval alg_executable=\$$$$alg; \
 		if [ -z "$$alg_executable" ]; then \
 			${ECHO_MSG} "Checksum algorithm $$alg: Couldn't find the executable."; \
@@ -4707,7 +4705,7 @@ makesum: check-checksum-algorithms
 		${checksum_init} \
 		\
 		for file in ${_CKSUMFILES}; do \
-			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
+			for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
 				eval alg_executable=\$$$$alg; \
 				\
 				if [ $$alg_executable != "NO" ]; then \
@@ -4718,7 +4716,7 @@ makesum: check-checksum-algorithms
 		done \
 	)
 	@for file in ${_IGNOREFILES}; do \
-		for alg in ${CHECKSUM_ALGORITHMS:U}; do \
+		for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
 			${ECHO_CMD} "$$alg ($$file) = IGNORE" >> ${DISTINFO_FILE}; \
 		done; \
 	done
@@ -4733,7 +4731,7 @@ checksum: fetch check-checksum-algorithms
 		for file in ${_CKSUMFILES}; do \
 			ignored="true"; \
 			_file=$${file#${DIST_SUBDIR}/*};	\
-			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
+			for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
 				ignore="false"; \
 				eval alg_executable=\$$$$alg; \
 				\
@@ -4788,7 +4786,7 @@ checksum: fetch check-checksum-algorithms
 			_file=$${file#${DIST_SUBDIR}/*};	\
 			ignored="true"; \
 			alreadymatched="false"; \
-			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
+			for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
 				ignore="false"; \
 				eval alg_executable=\$$$$alg; \
 				\
@@ -4926,7 +4924,7 @@ _INSTALL_DEPENDS=	\
 		${ECHO_MSG} "===>   Returning to build of ${PKGNAME}";
 
 .for deptype in PKG EXTRACT PATCH FETCH BUILD RUN
-${deptype:L}-depends:
+${deptype:tl}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
 	@set -e ; for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
@@ -5584,7 +5582,7 @@ apply-slist:
 .endfor
 .for i in pkg-message pkg-install pkg-deinstall pkg-req
 .if ${SUB_FILES:M${i}*}!=""
-${i:S/-//:U}=	${WRKDIR}/${SUB_FILES:M${i}*}
+${i:S/-//:tu}=	${WRKDIR}/${SUB_FILES:M${i}*}
 .endif
 .endfor
 .endif
@@ -5637,8 +5635,8 @@ generate-plist:
 .endfor
 
 .for reinplace in ${PLIST_REINPLACE}
-.if defined(PLIST_REINPLACE_${reinplace:U})
-	@${SED} -i "" -e '${PLIST_REINPLACE_${reinplace:U}}' ${TMPPLIST}
+.if defined(PLIST_REINPLACE_${reinplace:tu})
+	@${SED} -i "" -e '${PLIST_REINPLACE_${reinplace:tu}}' ${TMPPLIST}
 .endif
 .endfor
 
@@ -5799,7 +5797,7 @@ add-plist-post:
 .endif
 
 .if !target(install-rc-script)
-.if defined(USE_RCORDER) || defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
+.if defined(USE_RCORDER) || defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
 install-rc-script:
 .if defined(USE_RCORDER)
 	@${ECHO_MSG} "===> Staging early rc.d startup script(s)"
@@ -5810,7 +5808,7 @@ install-rc-script:
 	done
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 .endif
-.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
+.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
 	@${ECHO_MSG} "===> Staging rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 	@for i in ${USE_RC_SUBR}; do \
@@ -6169,7 +6167,7 @@ showconfig:
 .for otype in MULTI GROUP SINGLE RADIO
 .  for m in ${OPTIONS_${otype}}
 .    if empty(${m}_DESC)
-		@${ECHO_MSG} "====> Options available for the ${otype:L} ${m}${${otype}_EOL}"
+		@${ECHO_MSG} "====> Options available for the ${otype:tl} ${m}${${otype}_EOL}"
 .    else
 		@${ECHO_MSG} "====> ${${m}_DESC}${${otype}_EOL}"
 .    endif
@@ -6642,43 +6640,43 @@ _${_t}_REAL_SUSEQ+=	${s}
 # target noting that config is no longer needed.
 .if !target(${target}) && defined(_OPTIONS_OK)
 _PHONY_TARGETS+= ${target}
-${target}: ${${target:U}_COOKIE}
+${target}: ${${target:tu}_COOKIE}
 .elif !target(${target})
 ${target}: config-conditional
-	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE_${UNIQUENAME:U}=1 ${${target:U}_COOKIE}
+	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE_${UNIQUENAME:tu}=1 ${${target:tu}_COOKIE}
 .elif target(${target}) && defined(IGNORE)
 .endif
 
-.if !exists(${${target:U}_COOKIE})
+.if !exists(${${target:tu}_COOKIE})
 
 # Define the real target behavior. Depend on the target's *_DEP. Execute
 # the target's *_SEQ. Also handle su and USE_SUBMAKE needs.
-.if ${UID} != 0 && defined(_${target:U}_REAL_SUSEQ) && !defined(INSTALL_AS_USER)
+.if ${UID} != 0 && defined(_${target:tu}_REAL_SUSEQ) && !defined(INSTALL_AS_USER)
 .  if defined(USE_SUBMAKE)
-${${target:U}_COOKIE}: ${_${target:U}_DEP}
-	@cd ${.CURDIR} && ${MAKE} ${_${target:U}_REAL_SEQ}
+${${target:tu}_COOKIE}: ${_${target:tu}_DEP}
+	@cd ${.CURDIR} && ${MAKE} ${_${target:tu}_REAL_SEQ}
 .  else  # !USE_SUBMAKE
-${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_REAL_SEQ}
+${${target:tu}_COOKIE}: ${_${target:tu}_DEP} ${_${target:tu}_REAL_SEQ}
 .  endif # USE_SUBMAKE
 	@${ECHO_MSG} "===>  Switching to root credentials for '${target}' target"
 	@cd ${.CURDIR} && \
-		${SU_CMD} "${MAKE} ${_${target:U}_REAL_SUSEQ}"
+		${SU_CMD} "${MAKE} ${_${target:tu}_REAL_SUSEQ}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
 .else # No SU needed
 .  if defined(USE_SUBMAKE)
-${${target:U}_COOKIE}: ${_${target:U}_DEP}
+${${target:tu}_COOKIE}: ${_${target:tu}_DEP}
 	@cd ${.CURDIR} && \
-		${MAKE} ${_${target:U}_REAL_SEQ} ${_${target:U}_REAL_SUSEQ}
+		${MAKE} ${_${target:tu}_REAL_SEQ} ${_${target:tu}_REAL_SUSEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
 .  else # !USE_SUBMAKE
-${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_REAL_SEQ} ${_${target:U}_REAL_SUSEQ}
+${${target:tu}_COOKIE}: ${_${target:tu}_DEP} ${_${target:tu}_REAL_SEQ} ${_${target:tu}_REAL_SUSEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
 .  endif # USE_SUBMAKE
 .endif # SU needed
 
 .else # exists(cookie)
-${${target:U}_COOKIE}::
+${${target:tu}_COOKIE}::
 	@if [ -e ${.TARGET} ]; then \
 		${DO_NADA}; \
 	else \

@@ -6,7 +6,7 @@ PORTVERSION=	2008.07.31
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.tu-berlin.de/pub/algebra/Kant/Kash_3/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
-DISTFILES=	${PORTNAME:U}-${ELFTYPE}-i686-${PORTVERSION:S|.|-|g}.tar.bz2
+DISTFILES=	${PORTNAME:tu}-${ELFTYPE}-i686-${PORTVERSION:S|.|-|g}.tar.bz2
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A computer algebra system for computing in algebraic number fields
@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_LINUX=	yes
 
 SUB_FILES=	${PORTNAME}
-WRKSRC=	${WRKDIR}/${PORTNAME:U}-${ELFTYPE}-i686-${PORTVERSION:S|.|-|g}
+WRKSRC=	${WRKDIR}/${PORTNAME:tu}-${ELFTYPE}-i686-${PORTVERSION:S|.|-|g}
 
 
 FIND_DATA=	-type f -mindepth 1 -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
@@ -44,7 +44,7 @@ LN_OPTS=	-sf
 ELFTYPE=	Linux
 
 .if ${PORT_OPTIONS:MOPTLIB}
-DISTFILES+=	${PORTNAME:U}-lib-archindep-${PORTVERSION:S|.|-|g}.tar.bz2
+DISTFILES+=	${PORTNAME:tu}-lib-archindep-${PORTVERSION:S|.|-|g}.tar.bz2
 OPTLIB=
 .else
 OPTLIB=	"@comment "
@@ -53,7 +53,7 @@ OPTLIB=	"@comment "
 do-install:
 	${MKDIR} ${DATADIR};
 .if ${PORT_OPTIONS:MOPTLIB}
-	cd ${WRKDIR}/${PORTNAME:U}-lib-archindep-${PORTVERSION:S|.|-|g}; \
+	cd ${WRKDIR}/${PORTNAME:tu}-lib-archindep-${PORTVERSION:S|.|-|g}; \
 	${COPYTREE_SHARE} . ${DATADIR}
 .endif
 	cd ${WRKSRC}; \

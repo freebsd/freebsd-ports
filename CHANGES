@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140505:
+AUTHOR: bapt@FreeBSD.org
+
+  :U and :L syntax is not supported anymore in the ports tree, :tu and :tl
+  should be used instead
+
+  This makes the ports tree incompatible with make(1) version that does not
+  support :tu and :tl (aka FreeBSD 8.3 and earlier)
+
 20140428:
 AUTHOR: bapt@FreeBSD.org
 

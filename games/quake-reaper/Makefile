@@ -24,11 +24,11 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in Autoexec.cfg PROGS.DAT
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/${f:L}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/${f:tl}
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in B08chg.txt Dedserv.txt Reaprb80.txt Skinspec.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f:L}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f:tl}
 .endfor
 
 .include "${.CURDIR}/../quake-data/Makefile.include"

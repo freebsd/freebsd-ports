@@ -29,19 +29,16 @@ CHINESE_SIMPLIFIED_CODE=	zh_cn
 KOREAN_CODE=			ko
 VIETNAMESE_CODE=		vi
 
-#Bmake compatibility
-.MAKE.FreeBSD_UL= yes
-
 # Generate options menu.
 .for l in ${LANGS}
-OPTIONS_DEFINE+=	${l:U}
-OPTIONS_DEFAULT+=	${l:U}
-${l:U}_DESC=	${l:S/_/ /} fonts
+OPTIONS_DEFINE+=	${l:tu}
+OPTIONS_DEFAULT+=	${l:tu}
+${l:tu}_DESC=	${l:S/_/ /} fonts
 .endfor
 
 # Set MASTER_SITES
 .for l in ${LANGS}
-MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-fonts/${${l:U}_DISTNAME}:${l:U}
+MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-fonts/${${l:tu}_DISTNAME}:${l:tu}
 .endfor
 
 # Do not use the same OPTIONS directory as "games/tuxpaint".
@@ -51,12 +48,12 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 # Set DISTFILES and PLIST_FILES according to OPTIONS.
 .for l in ${LANGS}
-.	if ${PORT_OPTIONS:M${l:U}}
-DISTFILES+=	${PORTNAME}-ttf-${${l:U}_DISTNAME}${EXTRACT_SUFX}:${l:U}
-PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:U}_CODE}.ttf
-PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:U}_CODE}_docs/COPYING.txt
-PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:U}_CODE}_docs/README.txt
-PLIST_DIRS+=	%%DATADIR%%/fonts/locale/${${l:U}_CODE}_docs
+.	if ${PORT_OPTIONS:M${l:tu}}
+DISTFILES+=	${PORTNAME}-ttf-${${l:tu}_DISTNAME}${EXTRACT_SUFX}:${l:tu}
+PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:tu}_CODE}.ttf
+PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:tu}_CODE}_docs/COPYING.txt
+PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:tu}_CODE}_docs/README.txt
+PLIST_DIRS+=	%%DATADIR%%/fonts/locale/${${l:tu}_CODE}_docs
 .	endif
 .endfor
 
@@ -64,14 +61,14 @@ PLIST_DIRS+=	%%DATADIR%%/fonts/locale/${${l:U}_CODE}_docs
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/fonts/locale
 .for l in ${LANGS}
-.	if ${PORT_OPTIONS:M${l:U}}
+.	if ${PORT_OPTIONS:M${l:tu}}
 		${INSTALL_DATA} \
-			${WRKSRC}/${PORTNAME}-ttf-${${l:U}_DISTNAME}/${${l:U}_CODE}.ttf \
+			${WRKSRC}/${PORTNAME}-ttf-${${l:tu}_DISTNAME}/${${l:tu}_CODE}.ttf \
 			${STAGEDIR}${DATADIR}/fonts/locale
-		@${MKDIR} ${STAGEDIR}${DATADIR}/fonts/locale/${${l:U}_CODE}_docs
+		@${MKDIR} ${STAGEDIR}${DATADIR}/fonts/locale/${${l:tu}_CODE}_docs
 		${INSTALL_DATA} \
-			${WRKSRC}/${PORTNAME}-ttf-${${l:U}_DISTNAME}/*.txt \
-			${STAGEDIR}${DATADIR}/fonts/locale/${${l:U}_CODE}_docs
+			${WRKSRC}/${PORTNAME}-ttf-${${l:tu}_DISTNAME}/*.txt \
+			${STAGEDIR}${DATADIR}/fonts/locale/${${l:tu}_CODE}_docs
 .	endif
 .endfor
 

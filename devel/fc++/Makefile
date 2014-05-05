@@ -5,7 +5,7 @@ PORTNAME=	fc++
 PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://people.cs.umass.edu/~yannis/fc++/
-DISTNAME=	${PORTNAME:U}.${PORTVERSION}
+DISTNAME=	${PORTNAME:tu}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional Programming in C++

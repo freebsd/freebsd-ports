@@ -63,7 +63,7 @@ post-patch:
 			${WRKSRC}/doc/manual/*/manual-*/*.html
 	@${REINPLACE_CMD} -e '/\.css/d' ${WRKSRC}/doc/manual/*/Makefile
 .if ${PAPERSIZE}==a4
-	@${REINPLACE_CMD} 's|%%PAPERSIZE%%|${PAPERSIZE:U}|' \
+	@${REINPLACE_CMD} 's|%%PAPERSIZE%%|${PAPERSIZE:tu}|' \
 		${WRKSRC}/muttprint
 .else
 	@${REINPLACE_CMD} 's|%%PAPERSIZE%%|${PAPERSIZE}|' \

@@ -6,7 +6,7 @@ PORTVERSION=	2.03p24
 DISTVERSION=	2.03pre24
 PORTEPOCH=	1
 CATEGORIES=	www graphics
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}-beta/${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}-beta/${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails

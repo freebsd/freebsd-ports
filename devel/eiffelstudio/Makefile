@@ -30,7 +30,7 @@ SUB_FILES=	${PORTNAME} pkg-message
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
 NATIVE_ARCHS=	i386 amd64
-EIFFEL_HOST=	${OPSYS:L}-${EIFFEL_ARCH}
+EIFFEL_HOST=	${OPSYS:tl}-${EIFFEL_ARCH}
 PLIST_SUB+=	EIFFEL_HOST="${EIFFEL_HOST}"
 SUB_LIST+=	EIFFEL_HOST="${EIFFEL_HOST}"
 
@@ -49,9 +49,9 @@ EIFFEL_ARCH=		x86
 
 .for arch in ${NATIVE_ARCHS}
 . if ${EIFFEL_ARCH} == ${arch:S/i386/x86/:S/amd64/x86-64/}
-PLIST_SUB+=	${arch:U}=""
+PLIST_SUB+=	${arch:tu}=""
 . else
-PLIST_SUB+=	${arch:U}="@comment "
+PLIST_SUB+=	${arch:tu}="@comment "
 . endif
 .endfor
 

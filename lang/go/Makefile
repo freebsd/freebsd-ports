@@ -50,7 +50,7 @@ do-build:
 	cd ${WRKSRC}/src && \
 		CC=${CC} \
 		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go \
-		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:L} \
+		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
 		${SH} make.bash
 
 do-install:

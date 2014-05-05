@@ -25,7 +25,7 @@ post-patch:
 
 do-build:
 .for f in srtshift srtrate
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -D${f:U} -o ${f} ${PORTNAME}.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -D${f:tu} -o ${f} ${PORTNAME}.c
 .endfor
 
 do-install:

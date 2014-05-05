@@ -5,7 +5,7 @@ PORTNAME=	xarchiver
 PORTVERSION=	0.5.3
 CATEGORIES=	archivers
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:L}
+MASTER_SITE_SUBDIR=	${PORTNAME:tl}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK+2 frontend to various archiving tools

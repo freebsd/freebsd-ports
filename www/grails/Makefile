@@ -10,7 +10,7 @@ MASTER_SITES=	http://dist.codehaus.org/grails/ \
 MAINTAINER=	mjs@bur.st
 COMMENT=	Web framework built on Groovy
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:U}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:tu}
 
 USES=		zip
 USE_JAVA=	yes

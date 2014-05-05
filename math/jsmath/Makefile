@@ -4,7 +4,7 @@
 PORTNAME=	jsMath
 DISTVERSION=	3.6e
 CATEGORIES=	math www
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	JavaScript tool for including mathematics in web pages

@@ -83,9 +83,9 @@ post-patch:
 do-build: build-profile build-shared build-static
 
 .for o in PROFILE SHARED STATIC
-build-${o:L}: patch
+build-${o:tl}: patch
 .if ${PORT_OPTIONS:M${o}}
-	@${PRINTF} "\n\nBuilding ${o:L} libraries:\n\n\n"
+	@${PRINTF} "\n\nBuilding ${o:tl} libraries:\n\n\n"
 	@cd ${WRKSRC_${o}}/src; ${SETENV} ${MAKE_ENV} EXTRAFLAGS="${FLAGS_${o}}" \
 	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} all
 
@@ -107,9 +107,9 @@ MAKE_ENV+=		BLLIB="${BLAS}"
 check regression-test test: ${TESTS}
 
 .for o in PROFILE SHARED STATIC
-test-${o:L}: build-${o:L}
+test-${o:tl}: build-${o:tl}
 .if ${PORT_OPTIONS:M${o}}
-	@${PRINTF} "\n\nTesting ${o:L} libraries:\n\n\n"
+	@${PRINTF} "\n\nTesting ${o:tl} libraries:\n\n\n"
 	@cd ${WRKSRC_${o}}/testing; ${SETENV} ${MAKE_ENV} EXTRAFLAGS="${FLAGS_${o}}" \
 	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} all run
 	@${CAT} ${WRKSRC_${o}}/testing/*.out

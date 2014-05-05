@@ -11,7 +11,6 @@ DIST_SUBDIR=	stardict
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionaries from Quick for StarDict
 
-.MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
@@ -41,15 +40,15 @@ OPTIONS_DEFINE=	ALL
 OPTIONS_DEFAULT=	ALL
 ALL_DESC=	All dictionaries
 .for dict in ${DICTIONARIES}
-OPTIONS_DEFINE+=	${dict:U:S|-|_|g}
-${dict:U:S|-|_|g}_DESC=	${dict} dictionary
+OPTIONS_DEFINE+=	${dict:tu:S|-|_|g}
+${dict:tu:S|-|_|g}_DESC=	${dict} dictionary
 ${dict}_DISTNAME=	${PORTNAME}_${dict}-${PORTVERSION}
 .endfor
 
 .include <bsd.port.options.mk>
 
 .for dict in ${DICTIONARIES}
-.if ${PORT_OPTIONS:MALL} || ${PORT_OPTIONS:M${dict:U:S|-|_|g}}
+.if ${PORT_OPTIONS:MALL} || ${PORT_OPTIONS:M${dict:tu:S|-|_|g}}
 INSTALL_DICTIONARIES+=	${dict}
 DISTFILES+=	${${dict}_DISTNAME}${EXTRACT_SUFX}
 .endif

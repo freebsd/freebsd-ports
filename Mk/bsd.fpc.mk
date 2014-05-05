@@ -75,7 +75,7 @@ _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi fcl-async 
 _FPC_CFG_UNITS=	fastcgi fcl-web
 
 .if defined(WANT_FPC_BASE)
-.       if ${WANT_FPC_BASE:L} == "yes"
+.       if ${WANT_FPC_BASE:tl} == "yes"
 USE_FPC=	gdbint graph hash httpd22 httpd24 ibase mysql odbc oracle pasjpeg paszlib \
 		postgres pthreads regexpr sqlite
 .       else
@@ -84,14 +84,14 @@ IGNORE= unknown value, please use "yes" instead of
 .endif
 
 .if defined(WANT_FPC_ALL)
-.	if ${WANT_FPC_ALL:L} == "yes"
+.	if ${WANT_FPC_ALL:tl} == "yes"
 USE_FPC=	${_FPC_ALL_UNITS}
 .	else
 IGNORE=	unknown value, please use "yes" instead of
 .	endif
 .endif
 
-.if ${USE_FPC:L} != "yes"
+.if ${USE_FPC:tl} != "yes"
 .	for UNITS in ${USE_FPC}
 .		if ${_FPC_ALL_UNITS:M${UNITS}}==""
 IGNORE= cannot install: unknown FPC unit ${UNITS}

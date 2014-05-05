@@ -18,7 +18,7 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
 
-VER=		${PORTVERSION:L}
+VER=		${PORTVERSION:tl}
 JARFILES=	JTS_Test acme jts-${VER}
 
 NO_STAGE=	yes

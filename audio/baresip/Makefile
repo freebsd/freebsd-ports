@@ -58,7 +58,7 @@ X11_DESC=	X11 module [broken]
 
 .for o in ${OPTIONS_DEFINE}
 .  ifndef $o_DESC
-$o_DESC=	${o:C,^(.).*,\1,}${o:C,^.,,:L} module
+$o_DESC=	${o:C,^(.).*,\1,}${o:C,^.,,:tl} module
 .  endif
 .endfor
 

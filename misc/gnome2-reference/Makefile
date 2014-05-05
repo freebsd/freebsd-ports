@@ -53,21 +53,19 @@ NO_BUILD=	yes
 NO_INSTALL=	yes
 NO_MTREE=	yes
 
-.MAKE.FreeBSD_UL= yes
-
 REF_LIST_INC=	${.CURDIR}/Makefile.inc
 .include "${REF_LIST_INC}"
 
 .for ref in ${_PORT_REF_LIST:C/^([^:]+).*/\1/}
-OPTIONS_DEFINE+=	${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:U}
-OPTIONS_DEFAULT+=	${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:U}
-${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:U}_DESC=	Install ${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//} programing reference
+OPTIONS_DEFINE+=	${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:tu}
+OPTIONS_DEFAULT+=	${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:tu}
+${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:tu}_DESC=	Install ${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//} programing reference
 .endfor
 
 .include <bsd.port.options.mk>
 
 .for ref in ${_PORT_REF_LIST}
-.if ${PORT_OPTIONS:M${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:U:C/^([^:]+).*/\1/}}
+.if ${PORT_OPTIONS:M${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:tu:C/^([^:]+).*/\1/}}
 RUN_DEPENDS+=	${ref:C|^[^:]+:([^:]+).*|\1|:C|^[^/]+/([^/]+).*|\1|}>0:${PORTSDIR}/${ref:C/^([^:]+).*/\1/}
 .endif
 .endfor

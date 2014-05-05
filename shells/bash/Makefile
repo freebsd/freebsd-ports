@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--without-bash-malloc \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:L} != "no")
+.if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:tl} != "no")
 CONFIGURE_ARGS+=	--enable-static-link
 PKGNAMESUFFIX=		-static
 CONFLICTS+=		bash-[0-9]*

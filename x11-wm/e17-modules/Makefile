@@ -12,7 +12,7 @@ COMMENT=	Meta-port for e17 modules
 
 NO_BUILD=	yes
 WANT_EFL=	yes
-E17_ARCH=	${OPSYS:L}${OSREL}-${ARCH}
+E17_ARCH=	${OPSYS:tl}${OSREL}-${ARCH}
 
 MODULES=	alarm comp-scale cpu deskshow diskio eektool elfe empris engage eooorg \
 		everything-aspell everything-mpris everything-pidgin everything-places \
@@ -28,19 +28,19 @@ EVERYTHING_SHOTGUN_PATH=	evry-shotgun
 EVERYTHING_WEBSEARCH_PATH=	evry-websearch
 
 .for M in ${MODULES}
-OPTIONS_DEFINE+=	${M:U:S,-,_,g}
-OPTIONS_DEFAULT+=	${M:U:S,-,_,g}
-${M:U:S,-,_,g}_DESC=	Install ${M} module
+OPTIONS_DEFINE+=	${M:tu:S,-,_,g}
+OPTIONS_DEFAULT+=	${M:tu:S,-,_,g}
+${M:tu:S,-,_,g}_DESC=	Install ${M} module
 .endfor
 
 .include <bsd.port.options.mk>
 
 .for M in ${MODULES}
-. if !defined(${M:U:S,-,_,g}_PATH)
-${M:U:S,-,_,g}_PATH=	${M}
+. if !defined(${M:tu:S,-,_,g}_PATH)
+${M:tu:S,-,_,g}_PATH=	${M}
 . endif
-. if ${PORT_OPTIONS:M${M:U:S,-,_,g}}
-RUN_DEPENDS+=	${LOCALBASE}/lib/enlightenment/modules/${${M:U:S,-,_,g}_PATH}/${E17_ARCH}/module.so:${PORTSDIR}/x11-wm/e17-module-${M}
+. if ${PORT_OPTIONS:M${M:tu:S,-,_,g}}
+RUN_DEPENDS+=	${LOCALBASE}/lib/enlightenment/modules/${${M:tu:S,-,_,g}_PATH}/${E17_ARCH}/module.so:${PORTSDIR}/x11-wm/e17-module-${M}
 . endif
 .endfor
 
