@@ -2,70 +2,62 @@
 # $FreeBSD$
 
 PORTNAME=	libmapi
-PORTVERSION=	0.9
-PORTREVISION=	6
+PORTVERSION=	2.1
 CATEGORIES=	mail
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=openchange/openchange/openchange-${PORTVERSION}%20${CODENAME}/
+MASTER_SITES=	http://tracker.openchange.org/attachments/download/${DOWNLOADCODE}/
 DISTNAME=	openchange-${PORTVERSION}-${CODENAME}
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Open Source implementation of Microsoft Exchange protocols
 
-BROKEN=		Does not compile
-
-BUILD_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4 \
-		pidl:${PORTSDIR}/devel/p5-Parse-Pidl
+BUILD_DEPENDS=	samba4>=4.0.1:${PORTSDIR}/net/samba4 \
+		p5-Parse-Pidl>=4.0.1:${PORTSDIR}/devel/p5-Parse-Pidl
 LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical \
 		libtdb.so:${PORTSDIR}/databases/tdb \
 		libtevent.so:${PORTSDIR}/devel/tevent \
 		libtalloc.so:${PORTSDIR}/devel/talloc
-RUN_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4
+RUN_DEPENDS=	samba4>=4.0.1:${PORTSDIR}/net/samba4
 
-HOSTCONFIG=	${LOCALBASE}/libdata/pkgconfig/samba-hostconfig.pc
+CODENAME=	QUADRANT
+DOWNLOADCODE=	244
 
-CODENAME=	COCHRANE
-USE_GMAKE=	yes
 USE_SQLITE=	3
-USES=		pkgconfig
+USES=		gmake pathfix pkgconfig shebangfix
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-samba=${LOCALBASE}
+CONFIGURE_ENV=	ac_cv_path_DOXYGEN=""
+SHEBANG_FILES=	libmapi/conf/mparse.pl \
+		script/check_exchange \
+		setup/openchange_newuser \
+		setup/openchange_provision
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BOOST DOXYGEN
-OPTIONS_DEFAULT=	BOOST
-BOOST_DESC=	Enable libmapi++ (needs boost)
+OPTIONS_DEFAULT=BOOST
+BOOST_LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+BOOST_CONFIGURE_ENV_OFF=	ov_cv_boost_thread=no
+BOOST_DESC=	libmapi C++ library (needs boost)
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_path_DOXYGEN=""
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-CONFIGURE_ARGS+=	--disable-swig-perl
 CONFIGURE_ARGS+=	--disable-pymapi
-
-.if ${PORT_OPTIONS:MBOOST} || exists(${LOCALBASE}/lib/libboost_thread.so)
-LIB_DEPENDS+=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
-PLIST_SUB+=	BOOST=""
-.else
-PLIST_SUB+=	BOOST="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDOXYGEN} || exists(${LOCALBASE}/bin/doxygen)
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-PLIST_SUB+=	DOXYGEN=""
-.else
-PLIST_SUB+=	DOXYGEN="@comment "
-.endif
+#  --enable-openchange-qt4 Compile OpenChange Qt4 wrapper.
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+	@${REINPLACE_CMD} -e "s/mkdir --parent/mkdir -p/g; \
+		s,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,g" \
 		${WRKSRC}/Makefile
 
 post-install:
-.for i in libmapi libmapiadmin libmapiproxy libmapiserver libmapistore libocpf
-	@${LN} -fs ${PREFIX}/lib/${i}.so.0.9 ${PREFIX}/lib/${i}.so.0
-.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/openchange
+	cd ${WRKSRC}/doc/doxygen/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/openchange/
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/*
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/lib*.so.*
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/shared-modules/dcerpc_server/dcesrv_mapiproxy.so
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/modules/dcerpc_mapiproxy*/*.so
 
 .include <bsd.port.mk>
