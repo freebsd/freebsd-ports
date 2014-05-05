@@ -24,7 +24,9 @@
 %%OCAMLGRAPHDIR%%/graph.cmi
 %%OCAMLGRAPHDIR%%/graph.cmo
 %%OCAMLGRAPHDIR%%/graph.cmx
+%%OCAMLGRAPHDIR%%/graph.cmxs
 %%OCAMLGRAPHDIR%%/graph.cmxa
+%%OCAMLGRAPHDIR%%/graph.o
 %%OCAMLGRAPHDIR%%/graphml.mli
 %%OCAMLGRAPHDIR%%/graphviz.mli
 %%OCAMLGRAPHDIR%%/imperative.mli
@@ -39,6 +41,7 @@
 %%OCAMLGRAPHDIR%%/pack.mli
 %%OCAMLGRAPHDIR%%/path.mli
 %%OCAMLGRAPHDIR%%/persistent.mli
+%%OCAMLGRAPHDIR%%/prim.mli
 %%OCAMLGRAPHDIR%%/rand.mli
 %%OCAMLGRAPHDIR%%/sig.mli
 %%OCAMLGRAPHDIR%%/sig_pack.mli
