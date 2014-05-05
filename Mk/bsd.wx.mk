@@ -551,7 +551,7 @@ BUILD_DEPENDS+=			${_WX_FILE_${comp_part}_${_WX_VER}}:${PORTSDIR}/${_WX_PORT_${c
 RUN_DEPENDS+=			${_WX_FILE_${comp_part}_${_WX_VER}}:${PORTSDIR}/${_WX_PORT_${comp_part}_${_WX_VER}}
 .			endif
 .		else
-${_WX_DEP_TYPE:U}_DEPENDS+=	${_WX_FILE_${comp_part}_${_WX_VER}}:${PORTSDIR}/${_WX_PORT_${comp_part}_${_WX_VER}}
+${_WX_DEP_TYPE:tu}_DEPENDS+=	${_WX_FILE_${comp_part}_${_WX_VER}}:${PORTSDIR}/${_WX_PORT_${comp_part}_${_WX_VER}}
 .		endif
 .	endfor
 .endfor
