@@ -6085,3 +6085,4 @@ x11-wm/stumpwm||2014-05-04|Has expired: Broken for more than 4 months
 sysutils/cpupowerd||2014-05-04|Has expired: Not maintained from upstream anymore and only supports ancient AMD K8.
 net/pchar||2014-05-04|Has expired: Obsolete, abandoned
 x11-fonts/texcm-ttf||2014-05-04|Has expired: Should be replaced by x11-fonts/stix-fonts
+devel/buildapp||2014-05-05|Has expired: Broken for more than 6 months
