@@ -1,9 +1,12 @@
+%%WWWDIR%%/.editorconfig
 %%WWWDIR%%/.htaccess.dist
+%%WWWDIR%%/.travis.yml
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README
 %%WWWDIR%%/VERSION
 %%WWWDIR%%/bin/.htaccess
 %%WWWDIR%%/bin/dwpage.php
+%%WWWDIR%%/bin/gittool.php
 %%WWWDIR%%/bin/indexer.php
 %%WWWDIR%%/bin/render.php
 %%WWWDIR%%/bin/striplangs.php
@@ -309,6 +312,7 @@
 %%WWWDIR%%/inc/init.php
 %%WWWDIR%%/inc/io.php
 %%WWWDIR%%/inc/lang/.htaccess
+%%WWWDIR%%/inc/lang/af/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/af/lang.php
 %%WWWDIR%%/inc/lang/ar/admin.txt
 %%WWWDIR%%/inc/lang/ar/adminplugins.txt
@@ -321,6 +325,7 @@
 %%WWWDIR%%/inc/lang/ar/editrev.txt
 %%WWWDIR%%/inc/lang/ar/index.txt
 %%WWWDIR%%/inc/lang/ar/install.html
+%%WWWDIR%%/inc/lang/ar/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/ar/lang.php
 %%WWWDIR%%/inc/lang/ar/locked.txt
 %%WWWDIR%%/inc/lang/ar/login.txt
@@ -358,6 +363,7 @@
 %%WWWDIR%%/inc/lang/az/editrev.txt
 %%WWWDIR%%/inc/lang/az/index.txt
 %%WWWDIR%%/inc/lang/az/install.html
+%%WWWDIR%%/inc/lang/az/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/az/lang.php
 %%WWWDIR%%/inc/lang/az/locked.txt
 %%WWWDIR%%/inc/lang/az/login.txt
@@ -390,6 +396,7 @@
 %%WWWDIR%%/inc/lang/bg/editrev.txt
 %%WWWDIR%%/inc/lang/bg/index.txt
 %%WWWDIR%%/inc/lang/bg/install.html
+%%WWWDIR%%/inc/lang/bg/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/bg/lang.php
 %%WWWDIR%%/inc/lang/bg/locked.txt
 %%WWWDIR%%/inc/lang/bg/login.txt
@@ -469,6 +476,7 @@
 %%WWWDIR%%/inc/lang/ca/editrev.txt
 %%WWWDIR%%/inc/lang/ca/index.txt
 %%WWWDIR%%/inc/lang/ca/install.html
+%%WWWDIR%%/inc/lang/ca/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/ca/lang.php
 %%WWWDIR%%/inc/lang/ca/locked.txt
 %%WWWDIR%%/inc/lang/ca/login.txt
@@ -505,6 +513,7 @@
 %%WWWDIR%%/inc/lang/cs/editrev.txt
 %%WWWDIR%%/inc/lang/cs/index.txt
 %%WWWDIR%%/inc/lang/cs/install.html
+%%WWWDIR%%/inc/lang/cs/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/cs/lang.php
 %%WWWDIR%%/inc/lang/cs/locked.txt
 %%WWWDIR%%/inc/lang/cs/login.txt
@@ -542,6 +551,7 @@
 %%WWWDIR%%/inc/lang/da/editrev.txt
 %%WWWDIR%%/inc/lang/da/index.txt
 %%WWWDIR%%/inc/lang/da/install.html
+%%WWWDIR%%/inc/lang/da/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/da/lang.php
 %%WWWDIR%%/inc/lang/da/locked.txt
 %%WWWDIR%%/inc/lang/da/login.txt
@@ -579,6 +589,7 @@
 %%WWWDIR%%/inc/lang/de-informal/editrev.txt
 %%WWWDIR%%/inc/lang/de-informal/index.txt
 %%WWWDIR%%/inc/lang/de-informal/install.html
+%%WWWDIR%%/inc/lang/de-informal/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/de-informal/lang.php
 %%WWWDIR%%/inc/lang/de-informal/locked.txt
 %%WWWDIR%%/inc/lang/de-informal/login.txt
@@ -616,6 +627,7 @@
 %%WWWDIR%%/inc/lang/de/editrev.txt
 %%WWWDIR%%/inc/lang/de/index.txt
 %%WWWDIR%%/inc/lang/de/install.html
+%%WWWDIR%%/inc/lang/de/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/de/lang.php
 %%WWWDIR%%/inc/lang/de/locked.txt
 %%WWWDIR%%/inc/lang/de/login.txt
@@ -653,6 +665,7 @@
 %%WWWDIR%%/inc/lang/el/editrev.txt
 %%WWWDIR%%/inc/lang/el/index.txt
 %%WWWDIR%%/inc/lang/el/install.html
+%%WWWDIR%%/inc/lang/el/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/el/lang.php
 %%WWWDIR%%/inc/lang/el/locked.txt
 %%WWWDIR%%/inc/lang/el/login.txt
@@ -727,6 +740,7 @@
 %%WWWDIR%%/inc/lang/eo/editrev.txt
 %%WWWDIR%%/inc/lang/eo/index.txt
 %%WWWDIR%%/inc/lang/eo/install.html
+%%WWWDIR%%/inc/lang/eo/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/eo/lang.php
 %%WWWDIR%%/inc/lang/eo/locked.txt
 %%WWWDIR%%/inc/lang/eo/login.txt
@@ -764,6 +778,7 @@
 %%WWWDIR%%/inc/lang/es/editrev.txt
 %%WWWDIR%%/inc/lang/es/index.txt
 %%WWWDIR%%/inc/lang/es/install.html
+%%WWWDIR%%/inc/lang/es/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/es/lang.php
 %%WWWDIR%%/inc/lang/es/locked.txt
 %%WWWDIR%%/inc/lang/es/login.txt
@@ -791,6 +806,7 @@
 %%WWWDIR%%/inc/lang/es/updateprofile.txt
 %%WWWDIR%%/inc/lang/es/uploadmail.txt
 %%WWWDIR%%/inc/lang/et/admin.txt
+%%WWWDIR%%/inc/lang/et/adminplugins.txt
 %%WWWDIR%%/inc/lang/et/backlinks.txt
 %%WWWDIR%%/inc/lang/et/conflict.txt
 %%WWWDIR%%/inc/lang/et/denied.txt
@@ -799,6 +815,7 @@
 %%WWWDIR%%/inc/lang/et/edit.txt
 %%WWWDIR%%/inc/lang/et/editrev.txt
 %%WWWDIR%%/inc/lang/et/index.txt
+%%WWWDIR%%/inc/lang/et/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/et/lang.php
 %%WWWDIR%%/inc/lang/et/locked.txt
 %%WWWDIR%%/inc/lang/et/login.txt
@@ -813,11 +830,17 @@
 %%WWWDIR%%/inc/lang/et/register.txt
 %%WWWDIR%%/inc/lang/et/registermail.txt
 %%WWWDIR%%/inc/lang/et/resendpwd.txt
+%%WWWDIR%%/inc/lang/et/resetpwd.txt
 %%WWWDIR%%/inc/lang/et/revisions.txt
 %%WWWDIR%%/inc/lang/et/searchpage.txt
 %%WWWDIR%%/inc/lang/et/showrev.txt
 %%WWWDIR%%/inc/lang/et/stopwords.txt
+%%WWWDIR%%/inc/lang/et/subscr_digest.txt
+%%WWWDIR%%/inc/lang/et/subscr_form.txt
+%%WWWDIR%%/inc/lang/et/subscr_list.txt
+%%WWWDIR%%/inc/lang/et/subscr_single.txt
 %%WWWDIR%%/inc/lang/et/updateprofile.txt
+%%WWWDIR%%/inc/lang/et/uploadmail.txt
 %%WWWDIR%%/inc/lang/eu/admin.txt
 %%WWWDIR%%/inc/lang/eu/adminplugins.txt
 %%WWWDIR%%/inc/lang/eu/backlinks.txt
@@ -829,6 +852,7 @@
 %%WWWDIR%%/inc/lang/eu/editrev.txt
 %%WWWDIR%%/inc/lang/eu/index.txt
 %%WWWDIR%%/inc/lang/eu/install.html
+%%WWWDIR%%/inc/lang/eu/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/eu/lang.php
 %%WWWDIR%%/inc/lang/eu/locked.txt
 %%WWWDIR%%/inc/lang/eu/login.txt
@@ -866,6 +890,7 @@
 %%WWWDIR%%/inc/lang/fa/editrev.txt
 %%WWWDIR%%/inc/lang/fa/index.txt
 %%WWWDIR%%/inc/lang/fa/install.html
+%%WWWDIR%%/inc/lang/fa/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/fa/lang.php
 %%WWWDIR%%/inc/lang/fa/locked.txt
 %%WWWDIR%%/inc/lang/fa/login.txt
@@ -903,6 +928,7 @@
 %%WWWDIR%%/inc/lang/fi/editrev.txt
 %%WWWDIR%%/inc/lang/fi/index.txt
 %%WWWDIR%%/inc/lang/fi/install.html
+%%WWWDIR%%/inc/lang/fi/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/fi/lang.php
 %%WWWDIR%%/inc/lang/fi/locked.txt
 %%WWWDIR%%/inc/lang/fi/login.txt
@@ -937,6 +963,7 @@
 %%WWWDIR%%/inc/lang/fo/edit.txt
 %%WWWDIR%%/inc/lang/fo/editrev.txt
 %%WWWDIR%%/inc/lang/fo/index.txt
+%%WWWDIR%%/inc/lang/fo/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/fo/lang.php
 %%WWWDIR%%/inc/lang/fo/locked.txt
 %%WWWDIR%%/inc/lang/fo/login.txt
@@ -966,6 +993,7 @@
 %%WWWDIR%%/inc/lang/fr/editrev.txt
 %%WWWDIR%%/inc/lang/fr/index.txt
 %%WWWDIR%%/inc/lang/fr/install.html
+%%WWWDIR%%/inc/lang/fr/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/fr/lang.php
 %%WWWDIR%%/inc/lang/fr/locked.txt
 %%WWWDIR%%/inc/lang/fr/login.txt
@@ -1003,6 +1031,7 @@
 %%WWWDIR%%/inc/lang/gl/editrev.txt
 %%WWWDIR%%/inc/lang/gl/index.txt
 %%WWWDIR%%/inc/lang/gl/install.html
+%%WWWDIR%%/inc/lang/gl/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/gl/lang.php
 %%WWWDIR%%/inc/lang/gl/locked.txt
 %%WWWDIR%%/inc/lang/gl/login.txt
@@ -1041,6 +1070,7 @@
 %%WWWDIR%%/inc/lang/he/editrev.txt
 %%WWWDIR%%/inc/lang/he/index.txt
 %%WWWDIR%%/inc/lang/he/install.html
+%%WWWDIR%%/inc/lang/he/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/he/lang.php
 %%WWWDIR%%/inc/lang/he/locked.txt
 %%WWWDIR%%/inc/lang/he/login.txt
@@ -1064,6 +1094,7 @@
 %%WWWDIR%%/inc/lang/he/updateprofile.txt
 %%WWWDIR%%/inc/lang/he/uploadmail.txt
 %%WWWDIR%%/inc/lang/hi/diff.txt
+%%WWWDIR%%/inc/lang/hi/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/hi/lang.php
 %%WWWDIR%%/inc/lang/hr/admin.txt
 %%WWWDIR%%/inc/lang/hr/backlinks.txt
@@ -1073,6 +1104,7 @@
 %%WWWDIR%%/inc/lang/hr/edit.txt
 %%WWWDIR%%/inc/lang/hr/editrev.txt
 %%WWWDIR%%/inc/lang/hr/index.txt
+%%WWWDIR%%/inc/lang/hr/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/hr/lang.php
 %%WWWDIR%%/inc/lang/hr/locked.txt
 %%WWWDIR%%/inc/lang/hr/login.txt
@@ -1090,6 +1122,17 @@
 %%WWWDIR%%/inc/lang/hr/showrev.txt
 %%WWWDIR%%/inc/lang/hr/stopwords.txt
 %%WWWDIR%%/inc/lang/hr/updateprofile.txt
+%%WWWDIR%%/inc/lang/hu-formal/admin.txt
+%%WWWDIR%%/inc/lang/hu-formal/adminplugins.txt
+%%WWWDIR%%/inc/lang/hu-formal/backlinks.txt
+%%WWWDIR%%/inc/lang/hu-formal/conflict.txt
+%%WWWDIR%%/inc/lang/hu-formal/denied.txt
+%%WWWDIR%%/inc/lang/hu-formal/diff.txt
+%%WWWDIR%%/inc/lang/hu-formal/draft.txt
+%%WWWDIR%%/inc/lang/hu-formal/edit.txt
+%%WWWDIR%%/inc/lang/hu-formal/editrev.txt
+%%WWWDIR%%/inc/lang/hu-formal/index.txt
+%%WWWDIR%%/inc/lang/hu-formal/lang.php
 %%WWWDIR%%/inc/lang/hu/admin.txt
 %%WWWDIR%%/inc/lang/hu/adminplugins.txt
 %%WWWDIR%%/inc/lang/hu/backlinks.txt
@@ -1101,6 +1144,7 @@
 %%WWWDIR%%/inc/lang/hu/editrev.txt
 %%WWWDIR%%/inc/lang/hu/index.txt
 %%WWWDIR%%/inc/lang/hu/install.html
+%%WWWDIR%%/inc/lang/hu/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/hu/lang.php
 %%WWWDIR%%/inc/lang/hu/locked.txt
 %%WWWDIR%%/inc/lang/hu/login.txt
@@ -1164,6 +1208,7 @@
 %%WWWDIR%%/inc/lang/ia/uploadmail.txt
 %%WWWDIR%%/inc/lang/id-ni/lang.php
 %%WWWDIR%%/inc/lang/id/admin.txt
+%%WWWDIR%%/inc/lang/id/adminplugins.txt
 %%WWWDIR%%/inc/lang/id/backlinks.txt
 %%WWWDIR%%/inc/lang/id/conflict.txt
 %%WWWDIR%%/inc/lang/id/denied.txt
@@ -1173,6 +1218,7 @@
 %%WWWDIR%%/inc/lang/id/editrev.txt
 %%WWWDIR%%/inc/lang/id/index.txt
 %%WWWDIR%%/inc/lang/id/install.html
+%%WWWDIR%%/inc/lang/id/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/id/lang.php
 %%WWWDIR%%/inc/lang/id/locked.txt
 %%WWWDIR%%/inc/lang/id/login.txt
@@ -1187,14 +1233,17 @@
 %%WWWDIR%%/inc/lang/id/register.txt
 %%WWWDIR%%/inc/lang/id/registermail.txt
 %%WWWDIR%%/inc/lang/id/resendpwd.txt
+%%WWWDIR%%/inc/lang/id/resetpwd.txt
 %%WWWDIR%%/inc/lang/id/revisions.txt
 %%WWWDIR%%/inc/lang/id/searchpage.txt
 %%WWWDIR%%/inc/lang/id/showrev.txt
 %%WWWDIR%%/inc/lang/id/stopwords.txt
+%%WWWDIR%%/inc/lang/id/subscr_digest.txt
 %%WWWDIR%%/inc/lang/id/updateprofile.txt
 %%WWWDIR%%/inc/lang/id/uploadmail.txt
 %%WWWDIR%%/inc/lang/is/adminplugins.txt
 %%WWWDIR%%/inc/lang/is/diff.txt
+%%WWWDIR%%/inc/lang/is/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/is/lang.php
 %%WWWDIR%%/inc/lang/is/login.txt
 %%WWWDIR%%/inc/lang/is/recent.txt
@@ -1210,6 +1259,7 @@
 %%WWWDIR%%/inc/lang/it/editrev.txt
 %%WWWDIR%%/inc/lang/it/index.txt
 %%WWWDIR%%/inc/lang/it/install.html
+%%WWWDIR%%/inc/lang/it/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/it/lang.php
 %%WWWDIR%%/inc/lang/it/locked.txt
 %%WWWDIR%%/inc/lang/it/login.txt
@@ -1247,6 +1297,7 @@
 %%WWWDIR%%/inc/lang/ja/editrev.txt
 %%WWWDIR%%/inc/lang/ja/index.txt
 %%WWWDIR%%/inc/lang/ja/install.html
+%%WWWDIR%%/inc/lang/ja/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/ja/lang.php
 %%WWWDIR%%/inc/lang/ja/locked.txt
 %%WWWDIR%%/inc/lang/ja/login.txt
@@ -1273,6 +1324,18 @@
 %%WWWDIR%%/inc/lang/ja/subscr_single.txt
 %%WWWDIR%%/inc/lang/ja/updateprofile.txt
 %%WWWDIR%%/inc/lang/ja/uploadmail.txt
+%%WWWDIR%%/inc/lang/ka/admin.txt
+%%WWWDIR%%/inc/lang/ka/adminplugins.txt
+%%WWWDIR%%/inc/lang/ka/backlinks.txt
+%%WWWDIR%%/inc/lang/ka/conflict.txt
+%%WWWDIR%%/inc/lang/ka/denied.txt
+%%WWWDIR%%/inc/lang/ka/diff.txt
+%%WWWDIR%%/inc/lang/ka/draft.txt
+%%WWWDIR%%/inc/lang/ka/edit.txt
+%%WWWDIR%%/inc/lang/ka/editrev.txt
+%%WWWDIR%%/inc/lang/ka/index.txt
+%%WWWDIR%%/inc/lang/ka/lang.php
+%%WWWDIR%%/inc/lang/kk/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/kk/lang.php
 %%WWWDIR%%/inc/lang/km/admin.txt
 %%WWWDIR%%/inc/lang/km/backlinks.txt
@@ -1281,6 +1344,7 @@
 %%WWWDIR%%/inc/lang/km/edit.txt
 %%WWWDIR%%/inc/lang/km/editrev.txt
 %%WWWDIR%%/inc/lang/km/index.txt
+%%WWWDIR%%/inc/lang/km/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/km/lang.php
 %%WWWDIR%%/inc/lang/km/login.txt
 %%WWWDIR%%/inc/lang/km/newpage.txt
@@ -1301,6 +1365,7 @@
 %%WWWDIR%%/inc/lang/ko/editrev.txt
 %%WWWDIR%%/inc/lang/ko/index.txt
 %%WWWDIR%%/inc/lang/ko/install.html
+%%WWWDIR%%/inc/lang/ko/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/ko/lang.php
 %%WWWDIR%%/inc/lang/ko/locked.txt
 %%WWWDIR%%/inc/lang/ko/login.txt
@@ -1395,6 +1460,7 @@
 %%WWWDIR%%/inc/lang/lb/edit.txt
 %%WWWDIR%%/inc/lang/lb/editrev.txt
 %%WWWDIR%%/inc/lang/lb/index.txt
+%%WWWDIR%%/inc/lang/lb/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/lb/lang.php
 %%WWWDIR%%/inc/lang/lb/locked.txt
 %%WWWDIR%%/inc/lang/lb/login.txt
@@ -1422,6 +1488,7 @@
 %%WWWDIR%%/inc/lang/lt/edit.txt
 %%WWWDIR%%/inc/lang/lt/editrev.txt
 %%WWWDIR%%/inc/lang/lt/index.txt
+%%WWWDIR%%/inc/lang/lt/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/lt/lang.php
 %%WWWDIR%%/inc/lang/lt/locked.txt
 %%WWWDIR%%/inc/lang/lt/login.txt
@@ -1449,6 +1516,7 @@
 %%WWWDIR%%/inc/lang/lv/editrev.txt
 %%WWWDIR%%/inc/lang/lv/index.txt
 %%WWWDIR%%/inc/lang/lv/install.html
+%%WWWDIR%%/inc/lang/lv/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/lv/lang.php
 %%WWWDIR%%/inc/lang/lv/locked.txt
 %%WWWDIR%%/inc/lang/lv/login.txt
@@ -1498,6 +1566,7 @@
 %%WWWDIR%%/inc/lang/mg/searchpage.txt
 %%WWWDIR%%/inc/lang/mg/showrev.txt
 %%WWWDIR%%/inc/lang/mk/adminplugins.txt
+%%WWWDIR%%/inc/lang/mk/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/mk/lang.php
 %%WWWDIR%%/inc/lang/mk/read.txt
 %%WWWDIR%%/inc/lang/mk/recent.txt
@@ -1532,6 +1601,7 @@
 %%WWWDIR%%/inc/lang/mr/stopwords.txt
 %%WWWDIR%%/inc/lang/mr/updateprofile.txt
 %%WWWDIR%%/inc/lang/mr/uploadmail.txt
+%%WWWDIR%%/inc/lang/ms/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/ms/lang.php
 %%WWWDIR%%/inc/lang/ne/admin.txt
 %%WWWDIR%%/inc/lang/ne/backlinks.txt
@@ -1564,6 +1634,7 @@
 %%WWWDIR%%/inc/lang/nl/editrev.txt
 %%WWWDIR%%/inc/lang/nl/index.txt
 %%WWWDIR%%/inc/lang/nl/install.html
+%%WWWDIR%%/inc/lang/nl/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/nl/lang.php
 %%WWWDIR%%/inc/lang/nl/locked.txt
 %%WWWDIR%%/inc/lang/nl/login.txt
@@ -1601,6 +1672,7 @@
 %%WWWDIR%%/inc/lang/no/editrev.txt
 %%WWWDIR%%/inc/lang/no/index.txt
 %%WWWDIR%%/inc/lang/no/install.html
+%%WWWDIR%%/inc/lang/no/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/no/lang.php
 %%WWWDIR%%/inc/lang/no/locked.txt
 %%WWWDIR%%/inc/lang/no/login.txt
@@ -1615,6 +1687,7 @@
 %%WWWDIR%%/inc/lang/no/register.txt
 %%WWWDIR%%/inc/lang/no/registermail.txt
 %%WWWDIR%%/inc/lang/no/resendpwd.txt
+%%WWWDIR%%/inc/lang/no/resetpwd.txt
 %%WWWDIR%%/inc/lang/no/revisions.txt
 %%WWWDIR%%/inc/lang/no/searchpage.txt
 %%WWWDIR%%/inc/lang/no/showrev.txt
@@ -1636,6 +1709,7 @@
 %%WWWDIR%%/inc/lang/pl/editrev.txt
 %%WWWDIR%%/inc/lang/pl/index.txt
 %%WWWDIR%%/inc/lang/pl/install.html
+%%WWWDIR%%/inc/lang/pl/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/pl/lang.php
 %%WWWDIR%%/inc/lang/pl/locked.txt
 %%WWWDIR%%/inc/lang/pl/login.txt
@@ -1673,6 +1747,7 @@
 %%WWWDIR%%/inc/lang/pt-br/editrev.txt
 %%WWWDIR%%/inc/lang/pt-br/index.txt
 %%WWWDIR%%/inc/lang/pt-br/install.html
+%%WWWDIR%%/inc/lang/pt-br/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/pt-br/lang.php
 %%WWWDIR%%/inc/lang/pt-br/locked.txt
 %%WWWDIR%%/inc/lang/pt-br/login.txt
@@ -1710,6 +1785,7 @@
 %%WWWDIR%%/inc/lang/pt/editrev.txt
 %%WWWDIR%%/inc/lang/pt/index.txt
 %%WWWDIR%%/inc/lang/pt/install.html
+%%WWWDIR%%/inc/lang/pt/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/pt/lang.php
 %%WWWDIR%%/inc/lang/pt/locked.txt
 %%WWWDIR%%/inc/lang/pt/login.txt
@@ -1745,6 +1821,7 @@
 %%WWWDIR%%/inc/lang/ro/editrev.txt
 %%WWWDIR%%/inc/lang/ro/index.txt
 %%WWWDIR%%/inc/lang/ro/install.html
+%%WWWDIR%%/inc/lang/ro/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/ro/lang.php
 %%WWWDIR%%/inc/lang/ro/locked.txt
 %%WWWDIR%%/inc/lang/ro/login.txt
@@ -1781,6 +1858,7 @@
 %%WWWDIR%%/inc/lang/ru/editrev.txt
 %%WWWDIR%%/inc/lang/ru/index.txt
 %%WWWDIR%%/inc/lang/ru/install.html
+%%WWWDIR%%/inc/lang/ru/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/ru/lang.php
 %%WWWDIR%%/inc/lang/ru/locked.txt
 %%WWWDIR%%/inc/lang/ru/login.txt
@@ -1818,6 +1896,7 @@
 %%WWWDIR%%/inc/lang/sk/editrev.txt
 %%WWWDIR%%/inc/lang/sk/index.txt
 %%WWWDIR%%/inc/lang/sk/install.html
+%%WWWDIR%%/inc/lang/sk/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/sk/lang.php
 %%WWWDIR%%/inc/lang/sk/locked.txt
 %%WWWDIR%%/inc/lang/sk/login.txt
@@ -1855,6 +1934,7 @@
 %%WWWDIR%%/inc/lang/sl/editrev.txt
 %%WWWDIR%%/inc/lang/sl/index.txt
 %%WWWDIR%%/inc/lang/sl/install.html
+%%WWWDIR%%/inc/lang/sl/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/sl/lang.php
 %%WWWDIR%%/inc/lang/sl/locked.txt
 %%WWWDIR%%/inc/lang/sl/login.txt
@@ -1869,6 +1949,7 @@
 %%WWWDIR%%/inc/lang/sl/register.txt
 %%WWWDIR%%/inc/lang/sl/registermail.txt
 %%WWWDIR%%/inc/lang/sl/resendpwd.txt
+%%WWWDIR%%/inc/lang/sl/resetpwd.txt
 %%WWWDIR%%/inc/lang/sl/revisions.txt
 %%WWWDIR%%/inc/lang/sl/searchpage.txt
 %%WWWDIR%%/inc/lang/sl/showrev.txt
@@ -1890,6 +1971,7 @@
 %%WWWDIR%%/inc/lang/sq/editrev.txt
 %%WWWDIR%%/inc/lang/sq/index.txt
 %%WWWDIR%%/inc/lang/sq/install.html
+%%WWWDIR%%/inc/lang/sq/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/sq/lang.php
 %%WWWDIR%%/inc/lang/sq/locked.txt
 %%WWWDIR%%/inc/lang/sq/login.txt
@@ -1925,6 +2007,7 @@
 %%WWWDIR%%/inc/lang/sr/editrev.txt
 %%WWWDIR%%/inc/lang/sr/index.txt
 %%WWWDIR%%/inc/lang/sr/install.html
+%%WWWDIR%%/inc/lang/sr/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/sr/lang.php
 %%WWWDIR%%/inc/lang/sr/locked.txt
 %%WWWDIR%%/inc/lang/sr/login.txt
@@ -1960,6 +2043,7 @@
 %%WWWDIR%%/inc/lang/sv/editrev.txt
 %%WWWDIR%%/inc/lang/sv/index.txt
 %%WWWDIR%%/inc/lang/sv/install.html
+%%WWWDIR%%/inc/lang/sv/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/sv/lang.php
 %%WWWDIR%%/inc/lang/sv/locked.txt
 %%WWWDIR%%/inc/lang/sv/login.txt
@@ -1980,6 +2064,7 @@
 %%WWWDIR%%/inc/lang/sv/searchpage.txt
 %%WWWDIR%%/inc/lang/sv/showrev.txt
 %%WWWDIR%%/inc/lang/sv/stopwords.txt
+%%WWWDIR%%/inc/lang/sv/subscr_digest.txt
 %%WWWDIR%%/inc/lang/sv/subscr_form.txt
 %%WWWDIR%%/inc/lang/sv/subscr_single.txt
 %%WWWDIR%%/inc/lang/sv/updateprofile.txt
@@ -1994,6 +2079,7 @@
 %%WWWDIR%%/inc/lang/th/edit.txt
 %%WWWDIR%%/inc/lang/th/editrev.txt
 %%WWWDIR%%/inc/lang/th/index.txt
+%%WWWDIR%%/inc/lang/th/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/th/lang.php
 %%WWWDIR%%/inc/lang/th/locked.txt
 %%WWWDIR%%/inc/lang/th/login.txt
@@ -2024,6 +2110,7 @@
 %%WWWDIR%%/inc/lang/tr/editrev.txt
 %%WWWDIR%%/inc/lang/tr/index.txt
 %%WWWDIR%%/inc/lang/tr/install.html
+%%WWWDIR%%/inc/lang/tr/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/tr/lang.php
 %%WWWDIR%%/inc/lang/tr/locked.txt
 %%WWWDIR%%/inc/lang/tr/login.txt
@@ -2056,6 +2143,7 @@
 %%WWWDIR%%/inc/lang/uk/editrev.txt
 %%WWWDIR%%/inc/lang/uk/index.txt
 %%WWWDIR%%/inc/lang/uk/install.html
+%%WWWDIR%%/inc/lang/uk/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/uk/lang.php
 %%WWWDIR%%/inc/lang/uk/locked.txt
 %%WWWDIR%%/inc/lang/uk/login.txt
@@ -2088,6 +2176,7 @@
 %%WWWDIR%%/inc/lang/vi/edit.txt
 %%WWWDIR%%/inc/lang/vi/editrev.txt
 %%WWWDIR%%/inc/lang/vi/index.txt
+%%WWWDIR%%/inc/lang/vi/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/vi/lang.php
 %%WWWDIR%%/inc/lang/vi/locked.txt
 %%WWWDIR%%/inc/lang/vi/login.txt
@@ -2113,6 +2202,7 @@
 %%WWWDIR%%/inc/lang/zh-tw/editrev.txt
 %%WWWDIR%%/inc/lang/zh-tw/index.txt
 %%WWWDIR%%/inc/lang/zh-tw/install.html
+%%WWWDIR%%/inc/lang/zh-tw/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/zh-tw/lang.php
 %%WWWDIR%%/inc/lang/zh-tw/locked.txt
 %%WWWDIR%%/inc/lang/zh-tw/login.txt
@@ -2150,6 +2240,7 @@
 %%WWWDIR%%/inc/lang/zh/editrev.txt
 %%WWWDIR%%/inc/lang/zh/index.txt
 %%WWWDIR%%/inc/lang/zh/install.html
+%%WWWDIR%%/inc/lang/zh/jquery.ui.datepicker.js
 %%WWWDIR%%/inc/lang/zh/lang.php
 %%WWWDIR%%/inc/lang/zh/locked.txt
 %%WWWDIR%%/inc/lang/zh/login.txt
@@ -2236,21 +2327,98 @@
 %%WWWDIR%%/lib/images/email.png
 %%WWWDIR%%/lib/images/error.png
 %%WWWDIR%%/lib/images/external-link.png
+%%WWWDIR%%/lib/images/fileicons/32x32/7z.png
+%%WWWDIR%%/lib/images/fileicons/32x32/asm.png
+%%WWWDIR%%/lib/images/fileicons/32x32/bash.png
+%%WWWDIR%%/lib/images/fileicons/32x32/bz2.png
+%%WWWDIR%%/lib/images/fileicons/32x32/c.png
+%%WWWDIR%%/lib/images/fileicons/32x32/cc.png
+%%WWWDIR%%/lib/images/fileicons/32x32/conf.png
+%%WWWDIR%%/lib/images/fileicons/32x32/cpp.png
+%%WWWDIR%%/lib/images/fileicons/32x32/cs.png
+%%WWWDIR%%/lib/images/fileicons/32x32/csh.png
+%%WWWDIR%%/lib/images/fileicons/32x32/css.png
+%%WWWDIR%%/lib/images/fileicons/32x32/csv.png
+%%WWWDIR%%/lib/images/fileicons/32x32/deb.png
+%%WWWDIR%%/lib/images/fileicons/32x32/diff.png
+%%WWWDIR%%/lib/images/fileicons/32x32/doc.png
+%%WWWDIR%%/lib/images/fileicons/32x32/docx.png
+%%WWWDIR%%/lib/images/fileicons/32x32/file.png
+%%WWWDIR%%/lib/images/fileicons/32x32/gif.png
+%%WWWDIR%%/lib/images/fileicons/32x32/gz.png
+%%WWWDIR%%/lib/images/fileicons/32x32/h.png
+%%WWWDIR%%/lib/images/fileicons/32x32/hpp.png
+%%WWWDIR%%/lib/images/fileicons/32x32/htm.png
+%%WWWDIR%%/lib/images/fileicons/32x32/html.png
+%%WWWDIR%%/lib/images/fileicons/32x32/ico.png
+%%WWWDIR%%/lib/images/fileicons/32x32/java.png
+%%WWWDIR%%/lib/images/fileicons/32x32/jpeg.png
+%%WWWDIR%%/lib/images/fileicons/32x32/jpg.png
+%%WWWDIR%%/lib/images/fileicons/32x32/js.png
+%%WWWDIR%%/lib/images/fileicons/32x32/json.png
+%%WWWDIR%%/lib/images/fileicons/32x32/lua.png
+%%WWWDIR%%/lib/images/fileicons/32x32/mp3.png
+%%WWWDIR%%/lib/images/fileicons/32x32/mp4.png
+%%WWWDIR%%/lib/images/fileicons/32x32/odc.png
+%%WWWDIR%%/lib/images/fileicons/32x32/odf.png
+%%WWWDIR%%/lib/images/fileicons/32x32/odg.png
+%%WWWDIR%%/lib/images/fileicons/32x32/odi.png
+%%WWWDIR%%/lib/images/fileicons/32x32/odp.png
+%%WWWDIR%%/lib/images/fileicons/32x32/ods.png
+%%WWWDIR%%/lib/images/fileicons/32x32/odt.png
+%%WWWDIR%%/lib/images/fileicons/32x32/ogg.png
+%%WWWDIR%%/lib/images/fileicons/32x32/ogv.png
+%%WWWDIR%%/lib/images/fileicons/32x32/pas.png
+%%WWWDIR%%/lib/images/fileicons/32x32/pdf.png
+%%WWWDIR%%/lib/images/fileicons/32x32/php.png
+%%WWWDIR%%/lib/images/fileicons/32x32/pl.png
+%%WWWDIR%%/lib/images/fileicons/32x32/png.png
+%%WWWDIR%%/lib/images/fileicons/32x32/ppt.png
+%%WWWDIR%%/lib/images/fileicons/32x32/pptx.png
+%%WWWDIR%%/lib/images/fileicons/32x32/ps.png
+%%WWWDIR%%/lib/images/fileicons/32x32/py.png
+%%WWWDIR%%/lib/images/fileicons/32x32/rar.png
+%%WWWDIR%%/lib/images/fileicons/32x32/rb.png
+%%WWWDIR%%/lib/images/fileicons/32x32/rpm.png
+%%WWWDIR%%/lib/images/fileicons/32x32/rtf.png
+%%WWWDIR%%/lib/images/fileicons/32x32/sh.png
+%%WWWDIR%%/lib/images/fileicons/32x32/sql.png
+%%WWWDIR%%/lib/images/fileicons/32x32/swf.png
+%%WWWDIR%%/lib/images/fileicons/32x32/sxc.png
+%%WWWDIR%%/lib/images/fileicons/32x32/sxd.png
+%%WWWDIR%%/lib/images/fileicons/32x32/sxi.png
+%%WWWDIR%%/lib/images/fileicons/32x32/sxw.png
+%%WWWDIR%%/lib/images/fileicons/32x32/tar.png
+%%WWWDIR%%/lib/images/fileicons/32x32/tgz.png
+%%WWWDIR%%/lib/images/fileicons/32x32/txt.png
+%%WWWDIR%%/lib/images/fileicons/32x32/wav.png
+%%WWWDIR%%/lib/images/fileicons/32x32/webm.png
+%%WWWDIR%%/lib/images/fileicons/32x32/xls.png
+%%WWWDIR%%/lib/images/fileicons/32x32/xlsx.png
+%%WWWDIR%%/lib/images/fileicons/32x32/xml.png
+%%WWWDIR%%/lib/images/fileicons/32x32/zip.png
 %%WWWDIR%%/lib/images/fileicons/7z.png
-%%WWWDIR%%/lib/images/fileicons/audio.png
+%%WWWDIR%%/lib/images/fileicons/README
+%%WWWDIR%%/lib/images/fileicons/asm.png
+%%WWWDIR%%/lib/images/fileicons/bash.png
 %%WWWDIR%%/lib/images/fileicons/bz2.png
 %%WWWDIR%%/lib/images/fileicons/c.png
+%%WWWDIR%%/lib/images/fileicons/cc.png
 %%WWWDIR%%/lib/images/fileicons/conf.png
 %%WWWDIR%%/lib/images/fileicons/cpp.png
 %%WWWDIR%%/lib/images/fileicons/cs.png
+%%WWWDIR%%/lib/images/fileicons/csh.png
 %%WWWDIR%%/lib/images/fileicons/css.png
 %%WWWDIR%%/lib/images/fileicons/csv.png
 %%WWWDIR%%/lib/images/fileicons/deb.png
+%%WWWDIR%%/lib/images/fileicons/diff.png
 %%WWWDIR%%/lib/images/fileicons/doc.png
 %%WWWDIR%%/lib/images/fileicons/docx.png
 %%WWWDIR%%/lib/images/fileicons/file.png
 %%WWWDIR%%/lib/images/fileicons/gif.png
 %%WWWDIR%%/lib/images/fileicons/gz.png
+%%WWWDIR%%/lib/images/fileicons/h.png
+%%WWWDIR%%/lib/images/fileicons/hpp.png
 %%WWWDIR%%/lib/images/fileicons/htm.png
 %%WWWDIR%%/lib/images/fileicons/html.png
 %%WWWDIR%%/lib/images/fileicons/ico.png
@@ -2259,8 +2427,10 @@
 %%WWWDIR%%/lib/images/fileicons/jpeg.png
 %%WWWDIR%%/lib/images/fileicons/jpg.png
 %%WWWDIR%%/lib/images/fileicons/js.png
+%%WWWDIR%%/lib/images/fileicons/json.png
 %%WWWDIR%%/lib/images/fileicons/lua.png
 %%WWWDIR%%/lib/images/fileicons/mp3.png
+%%WWWDIR%%/lib/images/fileicons/mp4.png
 %%WWWDIR%%/lib/images/fileicons/odc.png
 %%WWWDIR%%/lib/images/fileicons/odf.png
 %%WWWDIR%%/lib/images/fileicons/odg.png
@@ -2269,6 +2439,8 @@
 %%WWWDIR%%/lib/images/fileicons/ods.png
 %%WWWDIR%%/lib/images/fileicons/odt.png
 %%WWWDIR%%/lib/images/fileicons/ogg.png
+%%WWWDIR%%/lib/images/fileicons/ogv.png
+%%WWWDIR%%/lib/images/fileicons/pas.png
 %%WWWDIR%%/lib/images/fileicons/pdf.png
 %%WWWDIR%%/lib/images/fileicons/php.png
 %%WWWDIR%%/lib/images/fileicons/pl.png
@@ -2281,6 +2453,7 @@
 %%WWWDIR%%/lib/images/fileicons/rb.png
 %%WWWDIR%%/lib/images/fileicons/rpm.png
 %%WWWDIR%%/lib/images/fileicons/rtf.png
+%%WWWDIR%%/lib/images/fileicons/sh.png
 %%WWWDIR%%/lib/images/fileicons/sql.png
 %%WWWDIR%%/lib/images/fileicons/swf.png
 %%WWWDIR%%/lib/images/fileicons/sxc.png
@@ -2291,6 +2464,7 @@
 %%WWWDIR%%/lib/images/fileicons/tgz.png
 %%WWWDIR%%/lib/images/fileicons/txt.png
 %%WWWDIR%%/lib/images/fileicons/wav.png
+%%WWWDIR%%/lib/images/fileicons/webm.png
 %%WWWDIR%%/lib/images/fileicons/xls.png
 %%WWWDIR%%/lib/images/fileicons/xlsx.png
 %%WWWDIR%%/lib/images/fileicons/xml.png
@@ -2313,6 +2487,7 @@
 %%WWWDIR%%/lib/images/interwiki/phpfn.gif
 %%WWWDIR%%/lib/images/interwiki/sb.gif
 %%WWWDIR%%/lib/images/interwiki/skype.gif
+%%WWWDIR%%/lib/images/interwiki/user.png
 %%WWWDIR%%/lib/images/interwiki/wp.gif
 %%WWWDIR%%/lib/images/interwiki/wpde.gif
 %%WWWDIR%%/lib/images/interwiki/wpes.gif
@@ -2453,6 +2628,7 @@
 %%WWWDIR%%/lib/plugins/acl/lang/eo/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/es/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/es/lang.php
+%%WWWDIR%%/lib/plugins/acl/lang/et/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/et/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/eu/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/eu/lang.php
@@ -2466,14 +2642,12 @@
 %%WWWDIR%%/lib/plugins/acl/lang/gl/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/he/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/he/lang.php
-%%WWWDIR%%/lib/plugins/acl/lang/hi/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/hr/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/hr/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/hu/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/hu/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/ia/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/ia/lang.php
-%%WWWDIR%%/lib/plugins/acl/lang/id-ni/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/id/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/is/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/it/help.txt
@@ -2486,14 +2660,12 @@
 %%WWWDIR%%/lib/plugins/acl/lang/la/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/la/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/lb/help.txt
-%%WWWDIR%%/lib/plugins/acl/lang/lb/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/lt/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/lv/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/lv/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/mk/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/mr/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/mr/lang.php
-%%WWWDIR%%/lib/plugins/acl/lang/ms/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/ne/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/nl/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/nl/lang.php
@@ -2542,6 +2714,7 @@
 %%WWWDIR%%/lib/plugins/action.php
 %%WWWDIR%%/lib/plugins/admin.php
 %%WWWDIR%%/lib/plugins/auth.php
+%%WWWDIR%%/lib/plugins/authad/action.php
 %%WWWDIR%%/lib/plugins/authad/adLDAP/adLDAP.php
 %%WWWDIR%%/lib/plugins/authad/adLDAP/classes/adLDAPComputers.php
 %%WWWDIR%%/lib/plugins/authad/adLDAP/classes/adLDAPContacts.php
@@ -2558,28 +2731,38 @@
 %%WWWDIR%%/lib/plugins/authad/auth.php
 %%WWWDIR%%/lib/plugins/authad/conf/default.php
 %%WWWDIR%%/lib/plugins/authad/conf/metadata.php
+%%WWWDIR%%/lib/plugins/authad/lang/ar/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/bg/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/cs/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/da/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/de-informal/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/de/lang.php
 %%WWWDIR%%/lib/plugins/authad/lang/de/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/el/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/en/lang.php
 %%WWWDIR%%/lib/plugins/authad/lang/en/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/eo/lang.php
 %%WWWDIR%%/lib/plugins/authad/lang/eo/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/es/lang.php
 %%WWWDIR%%/lib/plugins/authad/lang/es/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/fi/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/fr/lang.php
 %%WWWDIR%%/lib/plugins/authad/lang/fr/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/hu/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/it/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/ja/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/ko/lang.php
 %%WWWDIR%%/lib/plugins/authad/lang/ko/settings.php
-%%WWWDIR%%/lib/plugins/authad/lang/lv/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/nl/lang.php
 %%WWWDIR%%/lib/plugins/authad/lang/nl/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/no/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/pl/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/pt-br/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/pt/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/ru/lang.php
 %%WWWDIR%%/lib/plugins/authad/lang/ru/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/sk/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/sl/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/sv/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/zh-tw/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/zh/settings.php
@@ -2587,6 +2770,7 @@
 %%WWWDIR%%/lib/plugins/authldap/auth.php
 %%WWWDIR%%/lib/plugins/authldap/conf/default.php
 %%WWWDIR%%/lib/plugins/authldap/conf/metadata.php
+%%WWWDIR%%/lib/plugins/authldap/lang/ar/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/bg/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/cs/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/da/settings.php
@@ -2595,19 +2779,22 @@
 %%WWWDIR%%/lib/plugins/authldap/lang/en/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/eo/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/es/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/et/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/fi/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/fr/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/he/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/hu/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/it/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/ja/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/ko/settings.php
-%%WWWDIR%%/lib/plugins/authldap/lang/lv/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/nl/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/no/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/pl/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/pt-br/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/pt/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/ru/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/sk/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/sl/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/sv/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/zh-tw/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/zh/settings.php
@@ -2623,13 +2810,11 @@
 %%WWWDIR%%/lib/plugins/authmysql/lang/en/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/eo/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/es/settings.php
-%%WWWDIR%%/lib/plugins/authmysql/lang/fi/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/fr/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/hu/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/it/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/ja/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/ko/settings.php
-%%WWWDIR%%/lib/plugins/authmysql/lang/lv/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/nl/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/pl/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/pt-br/settings.php
@@ -2651,15 +2836,12 @@
 %%WWWDIR%%/lib/plugins/authpgsql/lang/de/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/en/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/eo/settings.php
-%%WWWDIR%%/lib/plugins/authpgsql/lang/fi/settings.php
+%%WWWDIR%%/lib/plugins/authpgsql/lang/es/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/fr/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/hu/settings.php
-%%WWWDIR%%/lib/plugins/authpgsql/lang/it/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/ja/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/ko/settings.php
-%%WWWDIR%%/lib/plugins/authpgsql/lang/lv/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/nl/settings.php
-%%WWWDIR%%/lib/plugins/authpgsql/lang/pl/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/pt-br/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/pt/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/ru/settings.php
@@ -2714,7 +2896,6 @@
 %%WWWDIR%%/lib/plugins/config/lang/he/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/he/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/hi/lang.php
-%%WWWDIR%%/lib/plugins/config/lang/hr/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/hu/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/hu/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/ia/intro.txt
@@ -2722,27 +2903,22 @@
 %%WWWDIR%%/lib/plugins/config/lang/id-ni/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/id-ni/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/id/intro.txt
-%%WWWDIR%%/lib/plugins/config/lang/id/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/is/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/it/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/it/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/ja/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/ja/lang.php
-%%WWWDIR%%/lib/plugins/config/lang/kk/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/ko/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/ko/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/la/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/la/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/lb/intro.txt
-%%WWWDIR%%/lib/plugins/config/lang/lb/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/lt/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/lt/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/lv/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/lv/lang.php
-%%WWWDIR%%/lib/plugins/config/lang/mk/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/mr/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/mr/lang.php
-%%WWWDIR%%/lib/plugins/config/lang/ms/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/ne/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/nl/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/nl/lang.php
@@ -2773,7 +2949,6 @@
 %%WWWDIR%%/lib/plugins/config/lang/tr/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/uk/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/uk/lang.php
-%%WWWDIR%%/lib/plugins/config/lang/vi/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/zh-tw/intro.txt
 %%WWWDIR%%/lib/plugins/config/lang/zh-tw/lang.php
 %%WWWDIR%%/lib/plugins/config/lang/zh/intro.txt
@@ -2783,120 +2958,91 @@
 %%WWWDIR%%/lib/plugins/config/settings/config.metadata.php
 %%WWWDIR%%/lib/plugins/config/settings/extra.class.php
 %%WWWDIR%%/lib/plugins/config/style.css
+%%WWWDIR%%/lib/plugins/extension/_test/extension.test.php
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/either1/script.js
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/eithersub2/either2/script.js
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/plgfoo5/plugin.info.txt
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub3/plugin3/syntax.php
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub4/plugin4/plugin.info.txt
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub6/plgfoo6/plugin.info.txt
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/plugin1/syntax.php
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/plugin2/plugin.info.txt
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/template1/main.php
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/template1/style.ini
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/template2/template.info.txt
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/tplfoo5/template.info.txt
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub3/template3/main.php
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub3/template3/style.ini
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub4/template4/template.info.txt
+%%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub6/tplfoo6/template.info.txt
+%%WWWDIR%%/lib/plugins/extension/action.php
+%%WWWDIR%%/lib/plugins/extension/admin.php
+%%WWWDIR%%/lib/plugins/extension/all.less
+%%WWWDIR%%/lib/plugins/extension/helper/extension.php
+%%WWWDIR%%/lib/plugins/extension/helper/gui.php
+%%WWWDIR%%/lib/plugins/extension/helper/list.php
+%%WWWDIR%%/lib/plugins/extension/helper/repository.php
+%%WWWDIR%%/lib/plugins/extension/images/disabled.png
+%%WWWDIR%%/lib/plugins/extension/images/donate.png
+%%WWWDIR%%/lib/plugins/extension/images/down.png
+%%WWWDIR%%/lib/plugins/extension/images/enabled.png
+%%WWWDIR%%/lib/plugins/extension/images/icons.xcf
+%%WWWDIR%%/lib/plugins/extension/images/license.txt
+%%WWWDIR%%/lib/plugins/extension/images/overlay.png
+%%WWWDIR%%/lib/plugins/extension/images/plugin.png
+%%WWWDIR%%/lib/plugins/extension/images/tag.png
+%%WWWDIR%%/lib/plugins/extension/images/template.png
+%%WWWDIR%%/lib/plugins/extension/images/up.png
+%%WWWDIR%%/lib/plugins/extension/images/warning.png
+%%WWWDIR%%/lib/plugins/extension/lang/de/intro_install.txt
+%%WWWDIR%%/lib/plugins/extension/lang/de/intro_plugins.txt
+%%WWWDIR%%/lib/plugins/extension/lang/de/intro_search.txt
+%%WWWDIR%%/lib/plugins/extension/lang/de/intro_templates.txt
+%%WWWDIR%%/lib/plugins/extension/lang/de/lang.php
+%%WWWDIR%%/lib/plugins/extension/lang/en/intro_install.txt
+%%WWWDIR%%/lib/plugins/extension/lang/en/intro_plugins.txt
+%%WWWDIR%%/lib/plugins/extension/lang/en/intro_search.txt
+%%WWWDIR%%/lib/plugins/extension/lang/en/intro_templates.txt
+%%WWWDIR%%/lib/plugins/extension/lang/en/lang.php
+%%WWWDIR%%/lib/plugins/extension/lang/eo/intro_install.txt
+%%WWWDIR%%/lib/plugins/extension/lang/eo/intro_plugins.txt
+%%WWWDIR%%/lib/plugins/extension/lang/eo/intro_search.txt
+%%WWWDIR%%/lib/plugins/extension/lang/eo/intro_templates.txt
+%%WWWDIR%%/lib/plugins/extension/lang/eo/lang.php
+%%WWWDIR%%/lib/plugins/extension/lang/es/lang.php
+%%WWWDIR%%/lib/plugins/extension/lang/fr/intro_install.txt
+%%WWWDIR%%/lib/plugins/extension/lang/fr/intro_plugins.txt
+%%WWWDIR%%/lib/plugins/extension/lang/fr/intro_search.txt
+%%WWWDIR%%/lib/plugins/extension/lang/fr/intro_templates.txt
+%%WWWDIR%%/lib/plugins/extension/lang/fr/lang.php
+%%WWWDIR%%/lib/plugins/extension/lang/ja/intro_install.txt
+%%WWWDIR%%/lib/plugins/extension/lang/ja/intro_plugins.txt
+%%WWWDIR%%/lib/plugins/extension/lang/ja/intro_search.txt
+%%WWWDIR%%/lib/plugins/extension/lang/ja/intro_templates.txt
+%%WWWDIR%%/lib/plugins/extension/lang/ja/lang.php
+%%WWWDIR%%/lib/plugins/extension/lang/ko/intro_install.txt
+%%WWWDIR%%/lib/plugins/extension/lang/ko/intro_plugins.txt
+%%WWWDIR%%/lib/plugins/extension/lang/ko/intro_search.txt
+%%WWWDIR%%/lib/plugins/extension/lang/ko/intro_templates.txt
+%%WWWDIR%%/lib/plugins/extension/lang/ko/lang.php
+%%WWWDIR%%/lib/plugins/extension/lang/nl/intro_install.txt
+%%WWWDIR%%/lib/plugins/extension/lang/nl/intro_plugins.txt
+%%WWWDIR%%/lib/plugins/extension/lang/nl/intro_search.txt
+%%WWWDIR%%/lib/plugins/extension/lang/nl/intro_templates.txt
+%%WWWDIR%%/lib/plugins/extension/lang/nl/lang.php
+%%WWWDIR%%/lib/plugins/extension/lang/ru/lang.php
+%%WWWDIR%%/lib/plugins/extension/lang/sk/lang.php
+%%WWWDIR%%/lib/plugins/extension/lang/zh/intro_install.txt
+%%WWWDIR%%/lib/plugins/extension/lang/zh/intro_plugins.txt
+%%WWWDIR%%/lib/plugins/extension/lang/zh/intro_search.txt
+%%WWWDIR%%/lib/plugins/extension/lang/zh/intro_templates.txt
+%%WWWDIR%%/lib/plugins/extension/lang/zh/lang.php
+%%WWWDIR%%/lib/plugins/extension/plugin.info.txt
+%%WWWDIR%%/lib/plugins/extension/script.js
+%%WWWDIR%%/lib/plugins/extension/style.less
 %%WWWDIR%%/lib/plugins/index.html
 %%WWWDIR%%/lib/plugins/info/plugin.info.txt
 %%WWWDIR%%/lib/plugins/info/syntax.php
-%%WWWDIR%%/lib/plugins/plugin/admin.php
-%%WWWDIR%%/lib/plugins/plugin/classes/ap_delete.class.php
-%%WWWDIR%%/lib/plugins/plugin/classes/ap_download.class.php
-%%WWWDIR%%/lib/plugins/plugin/classes/ap_enable.class.php
-%%WWWDIR%%/lib/plugins/plugin/classes/ap_info.class.php
-%%WWWDIR%%/lib/plugins/plugin/classes/ap_manage.class.php
-%%WWWDIR%%/lib/plugins/plugin/classes/ap_update.class.php
-%%WWWDIR%%/lib/plugins/plugin/lang/af/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/ar/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/ar/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/bg/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/bg/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/ca-valencia/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/ca-valencia/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/ca/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/ca/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/cs/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/cs/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/da/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/da/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/de-informal/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/de-informal/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/de/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/de/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/el/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/el/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/en/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/en/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/eo/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/eo/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/es/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/es/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/et/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/eu/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/eu/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/fa/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/fa/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/fi/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/fi/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/fr/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/fr/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/gl/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/gl/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/he/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/he/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/hi/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/hr/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/hu/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/hu/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/ia/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/ia/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/id-ni/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/id/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/is/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/it/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/it/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/ja/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/ja/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/kk/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/ko/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/ko/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/la/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/la/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/lb/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/lb/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/lt/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/lt/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/lv/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/lv/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/mk/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/mr/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/mr/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/ms/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/ne/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/nl/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/nl/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/no/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/no/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/pl/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/pl/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/pt-br/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/pt-br/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/pt/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/pt/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/ro/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/ro/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/ru/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/ru/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/sk/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/sk/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/sl/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/sl/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/sq/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/sq/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/sr/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/sr/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/sv/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/sv/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/th/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/th/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/tr/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/tr/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/uk/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/uk/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/vi/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/zh-tw/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/zh-tw/lang.php
-%%WWWDIR%%/lib/plugins/plugin/lang/zh/admin_plugin.txt
-%%WWWDIR%%/lib/plugins/plugin/lang/zh/lang.php
-%%WWWDIR%%/lib/plugins/plugin/plugin.info.txt
-%%WWWDIR%%/lib/plugins/plugin/style.css
 %%WWWDIR%%/lib/plugins/popularity/action.php
 %%WWWDIR%%/lib/plugins/popularity/admin.php
 %%WWWDIR%%/lib/plugins/popularity/helper.php
@@ -2935,7 +3081,6 @@
 %%WWWDIR%%/lib/plugins/popularity/lang/es/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/es/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/es/submitted.txt
-%%WWWDIR%%/lib/plugins/popularity/lang/et/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/eu/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/eu/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/eu/submitted.txt
@@ -2954,7 +3099,6 @@
 %%WWWDIR%%/lib/plugins/popularity/lang/he/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/he/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/hi/lang.php
-%%WWWDIR%%/lib/plugins/popularity/lang/hr/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/hu/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/hu/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/hu/submitted.txt
@@ -2962,7 +3106,6 @@
 %%WWWDIR%%/lib/plugins/popularity/lang/ia/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/id-ni/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/id-ni/lang.php
-%%WWWDIR%%/lib/plugins/popularity/lang/id/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/is/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/it/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/it/lang.php
@@ -2970,22 +3113,18 @@
 %%WWWDIR%%/lib/plugins/popularity/lang/ja/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/ja/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/ja/submitted.txt
-%%WWWDIR%%/lib/plugins/popularity/lang/kk/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/ko/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/ko/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/ko/submitted.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/la/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/la/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/la/submitted.txt
-%%WWWDIR%%/lib/plugins/popularity/lang/lb/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/lt/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/lv/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/lv/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/lv/submitted.txt
-%%WWWDIR%%/lib/plugins/popularity/lang/mk/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/mr/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/mr/lang.php
-%%WWWDIR%%/lib/plugins/popularity/lang/ms/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/ne/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/nl/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/nl/lang.php
@@ -3027,7 +3166,6 @@
 %%WWWDIR%%/lib/plugins/popularity/lang/uk/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/uk/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/uk/submitted.txt
-%%WWWDIR%%/lib/plugins/popularity/lang/vi/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/zh-tw/intro.txt
 %%WWWDIR%%/lib/plugins/popularity/lang/zh-tw/lang.php
 %%WWWDIR%%/lib/plugins/popularity/lang/zh-tw/submitted.txt
@@ -3037,7 +3175,6 @@
 %%WWWDIR%%/lib/plugins/popularity/plugin.info.txt
 %%WWWDIR%%/lib/plugins/remote.php
 %%WWWDIR%%/lib/plugins/revert/admin.php
-%%WWWDIR%%/lib/plugins/revert/lang/af/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/ar/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/ar/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/bg/intro.txt
@@ -3075,33 +3212,24 @@
 %%WWWDIR%%/lib/plugins/revert/lang/gl/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/he/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/he/lang.php
-%%WWWDIR%%/lib/plugins/revert/lang/hi/lang.php
-%%WWWDIR%%/lib/plugins/revert/lang/hr/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/hu/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/hu/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/ia/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/ia/lang.php
-%%WWWDIR%%/lib/plugins/revert/lang/id-ni/lang.php
-%%WWWDIR%%/lib/plugins/revert/lang/id/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/is/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/it/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/it/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/ja/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/ja/lang.php
-%%WWWDIR%%/lib/plugins/revert/lang/kk/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/ko/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/ko/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/la/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/la/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/lb/intro.txt
-%%WWWDIR%%/lib/plugins/revert/lang/lb/lang.php
-%%WWWDIR%%/lib/plugins/revert/lang/lt/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/lv/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/lv/lang.php
-%%WWWDIR%%/lib/plugins/revert/lang/mk/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/mr/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/mr/lang.php
-%%WWWDIR%%/lib/plugins/revert/lang/ms/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/ne/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/nl/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/nl/lang.php
@@ -3133,7 +3261,6 @@
 %%WWWDIR%%/lib/plugins/revert/lang/tr/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/uk/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/uk/lang.php
-%%WWWDIR%%/lib/plugins/revert/lang/vi/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/zh-tw/intro.txt
 %%WWWDIR%%/lib/plugins/revert/lang/zh-tw/lang.php
 %%WWWDIR%%/lib/plugins/revert/lang/zh/intro.txt
@@ -3142,11 +3269,6 @@
 %%WWWDIR%%/lib/plugins/safefnrecode/action.php
 %%WWWDIR%%/lib/plugins/safefnrecode/plugin.info.txt
 %%WWWDIR%%/lib/plugins/syntax.php
-%%WWWDIR%%/lib/plugins/testing/action.php
-%%WWWDIR%%/lib/plugins/testing/plugin.info.txt
-%%WWWDIR%%/lib/plugins/usermanager/_test/csv_export.test.php
-%%WWWDIR%%/lib/plugins/usermanager/_test/csv_import.test.php
-%%WWWDIR%%/lib/plugins/usermanager/_test/mocks.class.php
 %%WWWDIR%%/lib/plugins/usermanager/admin.php
 %%WWWDIR%%/lib/plugins/usermanager/images/search.png
 %%WWWDIR%%/lib/plugins/usermanager/lang/af/lang.php
@@ -3265,8 +3387,6 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/he/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/he/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/he/list.txt
-%%WWWDIR%%/lib/plugins/usermanager/lang/hi/lang.php
-%%WWWDIR%%/lib/plugins/usermanager/lang/hr/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/hu/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/hu/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/hu/edit.txt
@@ -3280,7 +3400,6 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/ia/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ia/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/ia/list.txt
-%%WWWDIR%%/lib/plugins/usermanager/lang/id-ni/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/id/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/id/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/id/edit.txt
@@ -3316,7 +3435,6 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/la/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/la/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/la/list.txt
-%%WWWDIR%%/lib/plugins/usermanager/lang/lb/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/lb/list.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/lt/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/lt/delete.txt
@@ -3342,7 +3460,6 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/mr/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/mr/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/mr/list.txt
-%%WWWDIR%%/lib/plugins/usermanager/lang/ms/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/ne/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ne/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ne/edit.txt
@@ -3443,7 +3560,6 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/uk/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/uk/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/uk/list.txt
-%%WWWDIR%%/lib/plugins/usermanager/lang/vi/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw/edit.txt
@@ -3509,6 +3625,7 @@
 %%WWWDIR%%/lib/scripts/tw-sack.js
 %%WWWDIR%%/lib/styles/all.css
 %%WWWDIR%%/lib/styles/feed.css
+%%WWWDIR%%/lib/styles/geshi.less
 %%WWWDIR%%/lib/styles/index.html
 %%WWWDIR%%/lib/styles/print.css
 %%WWWDIR%%/lib/styles/screen.css
@@ -3586,9 +3703,8 @@
 @dirrm %%WWWDIR%%/lib/scripts/jquery/jquery-ui-theme
 @dirrm %%WWWDIR%%/lib/scripts/jquery
 @dirrm %%WWWDIR%%/lib/scripts
-@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/zh
-@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/vi
+@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/uk
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/tr
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/th
@@ -3599,13 +3715,12 @@
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/ru
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/ro
-@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/pl
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/no
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/nl
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/ne
-@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/ms
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/mr
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/mk
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/lv
@@ -3617,12 +3732,9 @@
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/it
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/is
-@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/id-ni
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/id
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/ia
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/hu
-@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/hr
-@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/hi
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/he
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/gl
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/fr
@@ -3634,24 +3746,21 @@
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/en
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/el
-@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/cs
-@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/ca-valencia
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/ca
+@dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/ca-valencia
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/ar
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/af
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/images
-@dirrm %%WWWDIR%%/lib/plugins/usermanager/_test
 @dirrm %%WWWDIR%%/lib/plugins/usermanager
-@dirrm %%WWWDIR%%/lib/plugins/testing
 @dirrm %%WWWDIR%%/lib/plugins/safefnrecode
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/zh
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/vi
+@dirrm %%WWWDIR%%/lib/plugins/revert/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/uk
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/tr
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/th
@@ -3662,30 +3771,22 @@
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/ru
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/ro
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/revert/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/pl
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/no
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/nl
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/ne
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/ms
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/mr
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/mk
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/lv
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/lt
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/lb
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/la
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/ko
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/kk
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/it
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/is
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/id-ni
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/id
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/ia
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/hu
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/hr
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/hi
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/he
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/gl
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/fr
@@ -3697,20 +3798,18 @@
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/en
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/el
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/revert/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/cs
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/ca-valencia
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/ca
+@dirrm %%WWWDIR%%/lib/plugins/revert/lang/ca-valencia
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang/ar
-@dirrm %%WWWDIR%%/lib/plugins/revert/lang/af
 @dirrm %%WWWDIR%%/lib/plugins/revert/lang
 @dirrm %%WWWDIR%%/lib/plugins/revert
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/zh
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/vi
+@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/uk
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/tr
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/th
@@ -3721,29 +3820,23 @@
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ru
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ro
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/pl
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/no
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/nl
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ne
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ms
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/mr
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/mk
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/lv
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/lt
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/lb
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/la
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ko
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/kk
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/it
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/is
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/id-ni
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/id
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ia
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/hu
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/hr
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/hi
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/he
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/gl
@@ -3751,87 +3844,63 @@
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/fi
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/fa
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/eu
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/et
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/es
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/en
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/el
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/cs
-@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ca-valencia
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ca
+@dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ca-valencia
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/ar
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang/af
 @dirrm %%WWWDIR%%/lib/plugins/popularity/lang
 @dirrm %%WWWDIR%%/lib/plugins/popularity
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/zh-tw
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/zh
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/vi
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/uk
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/tr
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/th
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/sv
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/sr
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/sq
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/sl
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/sk
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/ru
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/ro
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/pt-br
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/pt
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/pl
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/no
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/nl
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/ne
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/ms
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/mr
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/mk
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/lv
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/lt
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/lb
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/la
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/ko
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/kk
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/ja
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/it
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/is
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/id-ni
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/id
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/ia
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/hu
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/hr
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/hi
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/he
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/gl
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/fr
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/fi
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/fa
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/eu
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/et
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/es
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/eo
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/en
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/el
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/de-informal
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/de
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/da
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/cs
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/ca-valencia
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/ca
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/bg
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/ar
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang/af
-@dirrm %%WWWDIR%%/lib/plugins/plugin/lang
-@dirrm %%WWWDIR%%/lib/plugins/plugin/classes
-@dirrm %%WWWDIR%%/lib/plugins/plugin
 @dirrm %%WWWDIR%%/lib/plugins/info
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/zh
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/sk
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/ru
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/nl
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/ko
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/ja
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/fr
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/es
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/eo
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/en
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/extension/lang
+@dirrm %%WWWDIR%%/lib/plugins/extension/images
+@dirrm %%WWWDIR%%/lib/plugins/extension/helper
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub6/tplfoo6
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub6
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub4/template4
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub4
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub3/template3
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub3
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplfoo5
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/template2
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/template1
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plugin2
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plugin1
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub6/plgfoo6
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub6
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub4/plugin4
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub4
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub3/plugin3
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub3
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgfoo5
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/eithersub2/either2
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/eithersub2
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/either1
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata
+@dirrm %%WWWDIR%%/lib/plugins/extension/_test
+@dirrm %%WWWDIR%%/lib/plugins/extension
 @dirrm %%WWWDIR%%/lib/plugins/config/settings
-@dirrm %%WWWDIR%%/lib/plugins/config/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/zh
-@dirrm %%WWWDIR%%/lib/plugins/config/lang/vi
+@dirrm %%WWWDIR%%/lib/plugins/config/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/uk
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/tr
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/th
@@ -3842,29 +3911,25 @@
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/ru
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/ro
-@dirrm %%WWWDIR%%/lib/plugins/config/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/config/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/pl
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/no
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/nl
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/ne
-@dirrm %%WWWDIR%%/lib/plugins/config/lang/ms
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/mr
-@dirrm %%WWWDIR%%/lib/plugins/config/lang/mk
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/lv
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/lt
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/lb
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/la
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/ko
-@dirrm %%WWWDIR%%/lib/plugins/config/lang/kk
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/it
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/is
-@dirrm %%WWWDIR%%/lib/plugins/config/lang/id-ni
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/id
+@dirrm %%WWWDIR%%/lib/plugins/config/lang/id-ni
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/ia
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/hu
-@dirrm %%WWWDIR%%/lib/plugins/config/lang/hr
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/hi
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/he
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/gl
@@ -3877,12 +3942,12 @@
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/en
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/el
-@dirrm %%WWWDIR%%/lib/plugins/config/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/config/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/cs
-@dirrm %%WWWDIR%%/lib/plugins/config/lang/ca-valencia
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/ca
+@dirrm %%WWWDIR%%/lib/plugins/config/lang/ca-valencia
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/ar
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/af
@@ -3890,98 +3955,98 @@
 @dirrm %%WWWDIR%%/lib/plugins/config/images
 @dirrm %%WWWDIR%%/lib/plugins/config
 @dirrm %%WWWDIR%%/lib/plugins/authplain
-@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/zh
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/sv
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/sl
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/ru
-@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/pt
-@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/pl
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/nl
-@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/lv
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/ko
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/ja
-@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/it
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/hu
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/fr
-@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/fi
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/es
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/en
-@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/cs
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/conf
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql
-@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/zh
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/sv
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/sl
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/ru
-@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/pl
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/nl
-@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/lv
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/ko
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/it
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/hu
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/fr
-@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/fi
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/es
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/en
-@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/cs
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/conf
 @dirrm %%WWWDIR%%/lib/plugins/authmysql
-@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/zh
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/sv
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/sl
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/ru
-@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/pl
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/no
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/nl
-@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/lv
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/ko
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/it
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/hu
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/he
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/fr
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/fi
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/et
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/es
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/en
-@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/cs
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/bg
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/ar
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang
 @dirrm %%WWWDIR%%/lib/plugins/authldap/conf
 @dirrm %%WWWDIR%%/lib/plugins/authldap
-@dirrm %%WWWDIR%%/lib/plugins/authad/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/zh
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/sv
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/sl
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/ru
-@dirrm %%WWWDIR%%/lib/plugins/authad/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/pl
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/no
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/nl
-@dirrm %%WWWDIR%%/lib/plugins/authad/lang/lv
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/ko
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/it
@@ -3992,11 +4057,12 @@
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/en
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/el
-@dirrm %%WWWDIR%%/lib/plugins/authad/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/cs
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/bg
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/ar
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang
 @dirrm %%WWWDIR%%/lib/plugins/authad/conf
 @dirrm %%WWWDIR%%/lib/plugins/authad/adLDAP/collections
@@ -4004,8 +4070,8 @@
 @dirrm %%WWWDIR%%/lib/plugins/authad/adLDAP
 @dirrm %%WWWDIR%%/lib/plugins/authad
 @dirrm %%WWWDIR%%/lib/plugins/acl/pix
-@dirrm %%WWWDIR%%/lib/plugins/acl/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/zh
+@dirrm %%WWWDIR%%/lib/plugins/acl/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/vi
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/uk
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/tr
@@ -4017,13 +4083,12 @@
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/ru
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/ro
-@dirrm %%WWWDIR%%/lib/plugins/acl/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/acl/lang/pt-br
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/pl
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/no
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/nl
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/ne
-@dirrm %%WWWDIR%%/lib/plugins/acl/lang/ms
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/mr
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/mk
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/lv
@@ -4035,12 +4100,10 @@
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/it
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/is
-@dirrm %%WWWDIR%%/lib/plugins/acl/lang/id-ni
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/id
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/ia
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/hu
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/hr
-@dirrm %%WWWDIR%%/lib/plugins/acl/lang/hi
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/he
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/gl
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/fr
@@ -4052,12 +4115,12 @@
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/en
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/el
-@dirrm %%WWWDIR%%/lib/plugins/acl/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/acl/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/cs
-@dirrm %%WWWDIR%%/lib/plugins/acl/lang/ca-valencia
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/ca
+@dirrm %%WWWDIR%%/lib/plugins/acl/lang/ca-valencia
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/ar
 @dirrm %%WWWDIR%%/lib/plugins/acl/lang/af
@@ -4070,6 +4133,7 @@
 @dirrm %%WWWDIR%%/lib/images/license/badge
 @dirrm %%WWWDIR%%/lib/images/license
 @dirrm %%WWWDIR%%/lib/images/interwiki
+@dirrm %%WWWDIR%%/lib/images/fileicons/32x32
 @dirrm %%WWWDIR%%/lib/images/fileicons
 @dirrm %%WWWDIR%%/lib/images/admin
 @dirrm %%WWWDIR%%/lib/images
@@ -4077,8 +4141,8 @@
 @dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/inc/phpseclib
 @dirrm %%WWWDIR%%/inc/parser
-@dirrm %%WWWDIR%%/inc/lang/zh-tw
 @dirrm %%WWWDIR%%/inc/lang/zh
+@dirrm %%WWWDIR%%/inc/lang/zh-tw
 @dirrm %%WWWDIR%%/inc/lang/vi
 @dirrm %%WWWDIR%%/inc/lang/uk
 @dirrm %%WWWDIR%%/inc/lang/tr
@@ -4090,8 +4154,8 @@
 @dirrm %%WWWDIR%%/inc/lang/sk
 @dirrm %%WWWDIR%%/inc/lang/ru
 @dirrm %%WWWDIR%%/inc/lang/ro
-@dirrm %%WWWDIR%%/inc/lang/pt-br
 @dirrm %%WWWDIR%%/inc/lang/pt
+@dirrm %%WWWDIR%%/inc/lang/pt-br
 @dirrm %%WWWDIR%%/inc/lang/pl
 @dirrm %%WWWDIR%%/inc/lang/no
 @dirrm %%WWWDIR%%/inc/lang/nl
@@ -4108,13 +4172,15 @@
 @dirrm %%WWWDIR%%/inc/lang/ko
 @dirrm %%WWWDIR%%/inc/lang/km
 @dirrm %%WWWDIR%%/inc/lang/kk
+@dirrm %%WWWDIR%%/inc/lang/ka
 @dirrm %%WWWDIR%%/inc/lang/ja
 @dirrm %%WWWDIR%%/inc/lang/it
 @dirrm %%WWWDIR%%/inc/lang/is
-@dirrm %%WWWDIR%%/inc/lang/id-ni
 @dirrm %%WWWDIR%%/inc/lang/id
+@dirrm %%WWWDIR%%/inc/lang/id-ni
 @dirrm %%WWWDIR%%/inc/lang/ia
 @dirrm %%WWWDIR%%/inc/lang/hu
+@dirrm %%WWWDIR%%/inc/lang/hu-formal
 @dirrm %%WWWDIR%%/inc/lang/hr
 @dirrm %%WWWDIR%%/inc/lang/hi
 @dirrm %%WWWDIR%%/inc/lang/he
@@ -4129,12 +4195,12 @@
 @dirrm %%WWWDIR%%/inc/lang/eo
 @dirrm %%WWWDIR%%/inc/lang/en
 @dirrm %%WWWDIR%%/inc/lang/el
-@dirrm %%WWWDIR%%/inc/lang/de-informal
 @dirrm %%WWWDIR%%/inc/lang/de
+@dirrm %%WWWDIR%%/inc/lang/de-informal
 @dirrm %%WWWDIR%%/inc/lang/da
 @dirrm %%WWWDIR%%/inc/lang/cs
-@dirrm %%WWWDIR%%/inc/lang/ca-valencia
 @dirrm %%WWWDIR%%/inc/lang/ca
+@dirrm %%WWWDIR%%/inc/lang/ca-valencia
 @dirrm %%WWWDIR%%/inc/lang/bn
 @dirrm %%WWWDIR%%/inc/lang/bg
 @dirrm %%WWWDIR%%/inc/lang/az

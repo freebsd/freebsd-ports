@@ -3,7 +3,6 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.dokuwiki.org/src/dokuwiki/
 DISTNAME=	${DIST_VER}
@@ -14,10 +13,13 @@ COMMENT=	Simple and easy to use wiki, no database required
 
 LICENSE=	GPLv2
 
-DIST_VER=	${PORTNAME}-2013-12-08
+DIST_VER=	${PORTNAME}-2014-05-05
 USE_PHP=	gd mbstring openssl pcre session xml zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
+
+# XXX - What the author is thinking about?
+WRKSRC=		${WRKDIR}/${PORTNAME}-2014-05-06
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME}
