@@ -2,4 +2,5 @@ lib/libavahi-ui-gtk3.a
 lib/libavahi-ui-gtk3.la
 lib/libavahi-ui-gtk3.so
 lib/libavahi-ui-gtk3.so.0
+lib/libavahi-ui-gtk3.so.0.1.4
 libdata/pkgconfig/avahi-ui-gtk3.pc
