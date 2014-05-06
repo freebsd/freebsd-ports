@@ -15,6 +15,7 @@ lib/libsndfile.a
 lib/libsndfile.la
 lib/libsndfile.so
 lib/libsndfile.so.1
+lib/libsndfile.so.1.0.25
 libdata/pkgconfig/sndfile.pc
 man/man1/sndfile-cmp.1.gz
 man/man1/sndfile-concat.1.gz

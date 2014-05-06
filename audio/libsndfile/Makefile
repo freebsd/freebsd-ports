@@ -3,7 +3,7 @@
 
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.25
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/files/
 
@@ -12,7 +12,7 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
 LICENSE=	LGPL21
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gcc-pipe \
 		--disable-sqlite \
