@@ -10,6 +10,7 @@ include/c++/v1/__functional_base_03
 include/c++/v1/__hash_table
 include/c++/v1/__locale
 include/c++/v1/__mutex_base
+include/c++/v1/__refstring
 include/c++/v1/__split_buffer
 include/c++/v1/__sso_allocator
 include/c++/v1/__std_stream
@@ -30,6 +31,7 @@ include/c++/v1/c++/v1/__functional_base_03
 include/c++/v1/c++/v1/__hash_table
 include/c++/v1/c++/v1/__locale
 include/c++/v1/c++/v1/__mutex_base
+include/c++/v1/c++/v1/__refstring
 include/c++/v1/c++/v1/__split_buffer
 include/c++/v1/c++/v1/__sso_allocator
 include/c++/v1/c++/v1/__std_stream

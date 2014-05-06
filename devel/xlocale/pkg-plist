@@ -1,0 +1,3 @@
+lib/libxlocale.so.0
+lib/libxlocale.so
+include/xlocale.h
