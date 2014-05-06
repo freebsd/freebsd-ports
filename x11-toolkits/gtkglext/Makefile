@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkglext
 PORTVERSION=	1.2.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 DIST_SUBDIR=	gnome2
@@ -13,22 +13,10 @@ COMMENT=	OpenGL extension to GTK+
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
-USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp \
-		xext xfixes xi xinerama xmu xrandr xrender xt xxf86vm
+GNU_CONFIGURE=	yes
+USES=		gettext gmake iconv libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GL=		glu
-USES=		gettext gmake iconv pathfix pkgconfig
-USE_GNOME=	gdkpixbuf2 gtk20 pangox-compat
+USE_GNOME=	gtk20 pangox-compat
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
