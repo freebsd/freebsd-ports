@@ -45,6 +45,16 @@ LTOPLUGIN_DESC=	Build LTO plugin (requires gold)
 OPTIONS_DEFAULT=	CMAKE LIT MANPAGES
 OPTIONS_SUB=	yes
 
+ASSERTS_CONFIGURE_ENABLE=	assertions
+CMAKE_BUILD_DEPENDS=		cmake:${PORTSDIR}/devel/cmake
+DOCS_BUILD_DEPENDS=		sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_CONFIGURE_ENABLE=		docs
+LTOPLUGIN_BUILD_DEPENDS=	ld.gold:${PORTSDIR}/devel/binutils
+LTOPLUGIN_RUN_DEPENDS=		ld.gold:${PORTSDIR}/devel/binutils
+LTOPLUGIN_CONFIGURE_ON=		--with-binutils-include=${LOCALBASE}/include
+LTOPLUGIN_PLIST_FILES=		llvm${LLVM_SUFFIX}/lib/LLVMgold.so
+MANPAGES_BUILD_DEPENDS=		sphinx-build:${PORTSDIR}/textproc/py-sphinx
+
 LLVM_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
 PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE}
 
@@ -85,26 +95,13 @@ STRIP_LIBS=	BugpointPasses.so \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERTS}
-CONFIGURE_ARGS+=	--enable-assertions
 RELEASE_TYPE=		Release+Asserts
 .else
-CONFIGURE_ARGS+=	--disable-assertions
 RELEASE_TYPE=		Release
 .endif
 
 .if ${PORT_OPTIONS:MCMAKE}
-BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
 PORTDATA+=	cmake
-.endif
-
-.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-docs
-.else
-CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
@@ -113,13 +110,6 @@ USE_PYTHON=		yes
 LIT_COMMANDS=		lit llvm-lit FileCheck
 .else
 USE_PYTHON_BUILD=	yes
-.endif
-
-.if ${PORT_OPTIONS:MLTOPLUGIN}
-BUILD_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
-RUN_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
-CONFIGURE_ARGS+=	--with-binutils-include=${LOCALBASE}/include
-PLIST_FILES+=		llvm${LLVM_SUFFIX}/lib/LLVMgold.so
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
@@ -132,6 +122,10 @@ PLIST_FILES+=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900000
+BROKEN=	GCC failing on 8.x
+.endif
 
 .if !defined(SVN_REV)
 .if defined(BOOTSTRAP)
@@ -232,9 +226,9 @@ post-install:
 	    ${STAGEDIR}${PREFIX}/bin/lit${LLVM_SUFFIX}
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
 	    ${STAGEDIR}${PREFIX}/bin/llvm-lit${LLVM_SUFFIX}
-	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX}
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
 	${INSTALL_DATA} ${WRKSRC}/utils/lit/lit/*.py \
-	    ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX}
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
 	${INSTALL_PROGRAM} ${WRKSRC}/${RELEASE_TYPE}/bin/FileCheck \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
