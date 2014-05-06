@@ -289,7 +289,7 @@ IGNORE=				needs Python ${_PYTHON_VERSION_NONSUPPORTED}.\
 					But you specified ${_PYTHON_VERSION}
 .else
 .undef _PYTHON_VERSION
-.for ver in ${_PYTHON_ALLBRANCHES}
+.for ver in ${PYTHON2_DEFAULT} ${PYTHON3_DEFAULT} ${_PYTHON_ALLBRANCHES}
 __VER=		${ver}
 .if !defined(_PYTHON_VERSION) && \
 	!(!empty(_PYTHON_VERSION_MINIMUM) && ( \
