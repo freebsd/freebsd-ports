@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-print
 PORTVERSION=	4.6.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	print xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/archive/xfprint/${PORTVERSION:R}
@@ -20,8 +20,7 @@ RUN_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
-USES=		gettext pkgconfig gmake pathfix
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libgui libutil xfconf

@@ -3,7 +3,7 @@
 
 PORTNAME=	verve-plugin
 PORTVERSION=	1.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/panel-plugins/${PKGNAMEPREFIX}${PORTNAME}/${PORTVERSION:R}
@@ -18,12 +18,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20 intltool intlhack
 USE_XFCE=	configenv panel libexo libgui libutil
-USES=		pkgconfig pathfix gmake
 
 OPTIONS_DEFINE=	NLS DBUS
 OPTIONS_DEFAULT=	NLS DBUS
