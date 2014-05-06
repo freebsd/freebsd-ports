@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaz
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -11,7 +11,7 @@ COMMENT=	Z39.50/SR client and API library
 
 LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 
-USES=		iconv pathfix pkgconfig shebangfix tcl
+USES=		iconv libtool pathfix pkgconfig shebangfix tcl
 SHEBANG_FILES=	util/yaz-asncomp
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
