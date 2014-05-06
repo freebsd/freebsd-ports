@@ -4,22 +4,22 @@
 
 PORTNAME=	gtkspell
 PORTVERSION=	2.0.16
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	marcus
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GTK+ 2 spell checking component
+COMMENT=	GTK+ 2 spell checking component
 
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk20 intlhack
-USES=		gettext gmake pkgconfig pathfix
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
