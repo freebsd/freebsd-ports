@@ -13,13 +13,13 @@ include/sidplayfp/sidversion.h
 include/stilview/stil.h
 include/stilview/stildefs.h
 lib/libsidplayfp.a
-lib/libsidplayfp.la
 lib/libsidplayfp.so
-lib/libsidplayfp.so.3
+lib/libsidplayfp.so.%%SIDPLAYFP_SHLIB_MVER%%
+lib/libsidplayfp.so.%%SIDPLAYFP_SHLIB_VER%%
 lib/libstilview.a
-lib/libstilview.la
 lib/libstilview.so
-lib/libstilview.so.0
+lib/libstilview.so.%%STILVIEW_SHLIB_MVER%%
+lib/libstilview.so.%%STILVIEW_SHLIB_VER%%
 libdata/pkgconfig/libsidplayfp.pc
 libdata/pkgconfig/libstilview.pc
 @dirrmtry include/sidplayfp/builders
