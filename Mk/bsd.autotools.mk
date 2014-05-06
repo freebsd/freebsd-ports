@@ -308,6 +308,8 @@ LIBTOOLFILES?=		aclocal.m4
 LIBTOOLFILES?=		${CONFIGURE_SCRIPT}
 . endif
 
+LIBTOOLIZE_ARGS?=	-i -c -f
+
 LIBTOOL_DEPENDS=	libtool>=2.4:${PORTSDIR}/${LIBTOOL_PORT}
 BUILD_DEPENDS+=		${LIBTOOL_DEPENDS}
 .endif
@@ -329,15 +331,13 @@ ${var:tu}_ENV+=		${AUTOTOOLS_VARS}
 #---------------------------------------------------------------------------
 
 .if !target(run-autotools)
-.ORDER:			run-autotools run-autotools-aclocal \
-				patch-autotools-libtool run-autotools-autoheader \
-				run-autotools-libtoolize run-autotools-autoconf \
-				run-autotools-automake
+.ORDER:			run-autotools run-autotools-libtoolize run-autotools-aclocal \
+				patch-autotools-libtool run-autotools-autoconf \
+				run-autotools-autoheader run-autotools-automake
 
-run-autotools:: run-autotools-aclocal \
-				patch-autotools-libtool run-autotools-autoheader \
-				run-autotools-libtoolize run-autotools-autoconf \
-				run-autotools-automake
+run-autotools::	run-autotools-libtoolize run-autotools-aclocal \
+				patch-autotools-libtool run-autotools-autoconf \
+				run-autotools-autoheader run-autotools-automake
 .endif
 
 .if !target(run-autotools-aclocal)
