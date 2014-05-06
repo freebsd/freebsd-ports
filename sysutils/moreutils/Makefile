@@ -41,7 +41,7 @@ PERL_MANPAGES=	chronic.1 \
 SHEBANG_FILES=	${PERL_MANPAGES:R}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|__APPLE__|__FreeBSD__|' ${WRKSRC}/ifdata.c
+	@${REINPLACE_CMD} -e 's|__APPLE__|__${OPSYS}__|' ${WRKSRC}/ifdata.c
 	@cd ${FILESDIR}/ && ${CP} ${CANNED_MANPAGES} ${WRKSRC}/
 
 post-build:
