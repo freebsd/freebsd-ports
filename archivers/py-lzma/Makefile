@@ -15,7 +15,6 @@ LICENSE=	LGPL21
 
 ONLY_FOR_ARCHS=	i386
 
-NO_STAGE=	yes
 USE_DOS2UNIX=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
@@ -33,8 +32,8 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
