@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Full integrated office productivity suite
 
