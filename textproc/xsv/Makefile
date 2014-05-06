@@ -7,7 +7,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/XSV/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	XML Schema Validator
 
 LICENSE=	GPLv2
@@ -20,7 +20,7 @@ PYDISTUTILS_AUTOPLIST=  yes
 INSTALLS_EGGINFO=	yes
 USE_LDCONFIG=	yes
 
-PORTDOCS=	pc-shrinkwrap xsv-status.xml xsv-status.html 
+PORTDOCS=	pc-shrinkwrap xsv-status.xml xsv-status.html
 PORTEXAMPLES=	triv.xml triv.xsd tiny.xml tiny.xsd
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
