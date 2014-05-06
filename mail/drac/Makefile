@@ -19,6 +19,7 @@ PLIST_FILES=	sbin/rpc.dracd include/drac.h lib/libdrac.a \
 
 USE_CSTD=	gnu89
 
+MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=		DB
 OPTIONS_RADIO=		MUA
 OPTIONS_RADIO_MUA=	POSTFIX EXIM
