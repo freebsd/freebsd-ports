@@ -6,6 +6,7 @@ lib/libavahi-ui.a
 lib/libavahi-ui.la
 lib/libavahi-ui.so
 lib/libavahi-ui.so.0
+lib/libavahi-ui.so.0.1.4
 libdata/pkgconfig/avahi-ui.pc
 man/man1/bshell.1.gz
 man/man1/bssh.1.gz

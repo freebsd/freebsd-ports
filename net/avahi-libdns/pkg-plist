@@ -3,5 +3,6 @@ lib/libdns_sd.a
 lib/libdns_sd.la
 lib/libdns_sd.so
 lib/libdns_sd.so.1
+lib/libdns_sd.so.1.0.0
 libdata/pkgconfig/avahi-compat-libdns_sd.pc
 @dirrm include/avahi-compat-libdns_sd
