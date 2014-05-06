@@ -8,7 +8,7 @@ include/libetonyek-0.0/libetonyek/libetonyek.h
 lib/libetonyek-0.0.la
 lib/libetonyek-0.0.so
 lib/libetonyek-0.0.so.0
-lib/libetonyek-0.0.so.0.0.3
+lib/libetonyek-0.0.so.0.0.4
 libdata/pkgconfig/libetonyek-0.0.pc
 @dirrm include/libetonyek-0.0/libetonyek
 @dirrm include/libetonyek-0.0
