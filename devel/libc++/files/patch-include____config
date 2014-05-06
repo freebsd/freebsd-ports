@@ -1,0 +1,11 @@
+--- ./include/__config.orig	2014-01-06 16:23:02.000000000 +0100
++++ ./include/__config	2014-05-06 14:12:18.649712048 +0200
+@@ -309,7 +309,7 @@
+ #endif
+ 
+ #if __ISO_C_VISIBLE >= 2011 || __cplusplus >= 201103L
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) && _FreeBSD_version >= 901501
+ #define _LIBCPP_HAS_QUICK_EXIT
+ #define _LIBCPP_HAS_C11_FEATURES
+ #elif defined(__linux__)
