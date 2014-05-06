@@ -26,6 +26,7 @@
     SUBDIR += comic-neue
     SUBDIR += consolamono-ttf
     SUBDIR += croscorefonts-fonts-ttf
+    SUBDIR += crosextrafonts-caladea-ttf
     SUBDIR += cyberbit-ttfonts
     SUBDIR += cyr-rfx
     SUBDIR += dejavu
