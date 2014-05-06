@@ -4,7 +4,7 @@
 
 PORTNAME=	grip
 PORTVERSION=	3.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -15,9 +15,9 @@ LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_XORG=	x11
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui vte
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
