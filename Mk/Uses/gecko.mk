@@ -53,17 +53,17 @@ _GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:M[0-9][0-9]*:C/([0-9][0-9]).*/\1/g
 
 .elif ${_GECKO_ARGS:Mseamonkey}
 
-_GECKO_DEFAULT_VERSION=	25
-_GECKO_VERSIONS=		25
+_GECKO_DEFAULT_VERSION=	26
+_GECKO_VERSIONS=		26
 _GECKO_TYPE=	seamonkey
 
 .if exists(${LOCALBASE}/bin/seamonkey)
 _GECKO_INSTALLED_VER!=	${LOCALBASE}/bin/seamonkey --version 2>/dev/null
-_GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:M[0-9][0-9]*:C/([0-9][0-9]).*/\1/g}
+_GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:M[0-9]*:C/[0-9].([0-9][0-9]).*/\1/g}
 .endif
 
 # Dependence lines for different Seamonkey versions
-22_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+26_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 .elif ${_GECKO_ARGS:Mthunderbird}
 

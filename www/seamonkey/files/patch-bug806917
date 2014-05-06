@@ -5,24 +5,24 @@ Date:   Fri Jan 03 08:16:54 2014 -0800
     Bug 806917 - support GStreamer 1.0
 ---
  configure.in                                      |  66 ++-
- content/media/gstreamer/GStreamerAllocator.cpp    | 198 +++++++
+ content/media/gstreamer/GStreamerAllocator.cpp    | 197 +++++++
  content/media/gstreamer/GStreamerAllocator.h      |  25 +
  content/media/gstreamer/GStreamerFormatHelper.cpp |  13 +-
  content/media/gstreamer/GStreamerFunctionList.h   |  93 +++-
  content/media/gstreamer/GStreamerLoader.cpp       |  48 +-
  content/media/gstreamer/GStreamerLoader.h         |   8 +
- content/media/gstreamer/GStreamerReader-0.10.cpp  | 203 +++++++
+ content/media/gstreamer/GStreamerReader-0.10.cpp  | 200 +++++++
  content/media/gstreamer/GStreamerReader.cpp       | 632 ++++++++++++++--------
  content/media/gstreamer/GStreamerReader.h         |  42 +-
  content/media/gstreamer/moz.build                 |  11 +-
  content/media/test/manifest.js                    |   6 +-
- 12 files changed, 1061 insertions(+), 284 deletions(-)
+ 12 files changed, 1057 insertions(+), 284 deletions(-)
 
 diff --git configure.in configure.in
 index 9776b8d..0b1698d 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -3955,6 +3955,7 @@ MOZ_SAMPLE_TYPE_FLOAT32=
+@@ -3988,6 +3988,7 @@ MOZ_SAMPLE_TYPE_FLOAT32=
  MOZ_SAMPLE_TYPE_S16=
  MOZ_OPUS=1
  MOZ_WEBM=1
@@ -30,12 +30,13 @@ index 9776b8d..0b1698d 100644
  MOZ_DIRECTSHOW=
  MOZ_WMF=
  MOZ_FMP4=
-@@ -5606,43 +5607,60 @@ dnl = Enable GStreamer
- dnl ========================================================
- if test "$OS_TARGET" = "Linux"; then
-   MOZ_GSTREAMER=1
-+  GST_API_VERSION=0.10
- fi
+@@ -5634,44 +5635,61 @@ WINNT|Darwin|Android)
+     ;;
+ *)
+     MOZ_GSTREAMER=1
++    GST_API_VERSION=0.10
+     ;;
+ esac
  
 -MOZ_ARG_ENABLE_BOOL(gstreamer,
 -[  --enable-gstreamer           Enable GStreamer support],
@@ -120,7 +121,7 @@ new file mode 100644
 index 0000000..69d0385
 --- /dev/null
 +++ mozilla/content/media/gstreamer/GStreamerAllocator.cpp
-@@ -0,0 +1,198 @@
+@@ -0,0 +1,197 @@
 +#ifdef HAVE_CONFIG_H
 +#include "config.h"
 +#endif
@@ -179,8 +180,7 @@ index 0000000..69d0385
 +    mem->image->Release();
 +
 +  ImageContainer* container = ((MozGfxMemoryAllocator*) mem->memory.allocator)->reader->GetImageContainer();
-+  ImageFormat format = PLANAR_YCBCR;
-+  mem->image = reinterpret_cast<PlanarYCbCrImage*>(container->CreateImage(&format, 1).get());
++  mem->image = reinterpret_cast<PlanarYCbCrImage*>(container->CreateImage(ImageFormat::PLANAR_YCBCR).get());
 +  mem->data = mem->image->AllocateAndGetNewBuffer(mem->memory.size);
 +}
 +
@@ -673,7 +673,7 @@ new file mode 100644
 index 0000000..fb98bde
 --- /dev/null
 +++ mozilla/content/media/gstreamer/GStreamerReader-0.10.cpp
-@@ -0,0 +1,203 @@
+@@ -0,0 +1,200 @@
 +#include "nsError.h"
 +#include "MediaDecoderStateMachine.h"
 +#include "AbstractMediaDecoder.h"
@@ -718,13 +718,10 @@ index 0000000..fb98bde
 +{
 +  /* allocate an image using the container */
 +  ImageContainer* container = mDecoder->GetImageContainer();
-+  if (!container) {
-+    // We don't have an ImageContainer. We probably belong to an <audio>
-+    // element.
-+    return GST_FLOW_NOT_SUPPORTED;
++  if (container == nullptr) {
++    return GST_FLOW_ERROR;
 +  }
-+  ImageFormat format = PLANAR_YCBCR;
-+  PlanarYCbCrImage* img = reinterpret_cast<PlanarYCbCrImage*>(container->CreateImage(&format, 1).get());
++  PlanarYCbCrImage* img = reinterpret_cast<PlanarYCbCrImage*>(container->CreateImage(ImageFormat::PLANAR_YCBCR).get());
 +  nsRefPtr<PlanarYCbCrImage> image = dont_AddRef(img);
 +
 +  /* prepare a GstBuffer pointing to the underlying PlanarYCbCrImage buffer */
@@ -802,16 +799,16 @@ index 0000000..fb98bde
 +
 +  PlanarYCbCrImage::Data data;
 +  data.mPicX = data.mPicY = 0;
-+  data.mPicSize = nsIntSize(mPicture.width, mPicture.height);
-+  data.mStereoMode = STEREO_MODE_MONO;
++  data.mPicSize = gfx::IntSize(mPicture.width, mPicture.height);
++  data.mStereoMode = StereoMode::MONO;
 +
 +  data.mYChannel = GST_BUFFER_DATA(aBuffer);
 +  data.mYStride = gst_video_format_get_row_stride(mFormat, 0, mPicture.width);
-+  data.mYSize = nsIntSize(data.mYStride,
++  data.mYSize = gfx::IntSize(data.mYStride,
 +      gst_video_format_get_component_height(mFormat, 0, mPicture.height));
 +  data.mYSkip = 0;
 +  data.mCbCrStride = gst_video_format_get_row_stride(mFormat, 1, mPicture.width);
-+  data.mCbCrSize = nsIntSize(data.mCbCrStride,
++  data.mCbCrSize = gfx::IntSize(data.mCbCrStride,
 +      gst_video_format_get_component_height(mFormat, 1, mPicture.height));
 +  data.mCbChannel = data.mYChannel + gst_video_format_get_component_offset(mFormat, 1,
 +      mPicture.width, mPicture.height);
@@ -1047,7 +1044,7 @@ index 2be45dc..54509e3 100644
  
    g_object_set(mPlayBin, "uri", "appsrc://",
                 "video-sink", mVideoSink,
-@@ -331,7 +340,7 @@ nsresult GStreamerReader::ReadMetadata(MediaInfo* aInfo,
+@@ -331,13 +340,12 @@ nsresult GStreamerReader::ReadMetadata(MediaInfo* aInfo,
        /* Little trick: set the target caps to "skip" so that playbin2 fails to
         * find a decoder for the stream we want to skip.
         */
@@ -1056,7 +1053,13 @@ index 2be45dc..54509e3 100644
        g_object_set(filter, "caps", filterCaps, nullptr);
        gst_caps_unref(filterCaps);
        gst_object_unref(filter);
-@@ -358,6 +367,7 @@ nsresult GStreamerReader::ReadMetadata(MediaInfo* aInfo,
+     }
+ 
+-    /* start the pipeline */
+     LOG(PR_LOG_DEBUG, "starting metadata pipeline");
+     gst_element_set_state(mPlayBin, GST_STATE_PAUSED);
+ 
+@@ -358,6 +366,7 @@ nsresult GStreamerReader::ReadMetadata(MediaInfo* aInfo,
        gst_message_unref(message);
        ret = NS_ERROR_FAILURE;
      } else {
@@ -1227,7 +1230,7 @@ index 2be45dc..54509e3 100644
             * something else has happened (Eos, etc...). Return to the state machine
             * to process it.
             */
-@@ -524,24 +573,43 @@ bool GStreamerReader::DecodeAudioData()
+@@ -533,24 +584,44 @@ bool GStreamerReader::DecodeAudioData()
        }
      }
  
@@ -1245,8 +1248,9 @@ index 2be45dc..54509e3 100644
    int64_t timestamp = GST_BUFFER_TIMESTAMP(buffer);
    timestamp = gst_segment_to_stream_time(&mAudioSegment,
        GST_FORMAT_TIME, timestamp);
-+  
++
    timestamp = GST_TIME_AS_USECONDS(timestamp);
++
    int64_t duration = 0;
    if (GST_CLOCK_TIME_IS_VALID(GST_BUFFER_DURATION(buffer)))
      duration = GST_TIME_AS_USECONDS(GST_BUFFER_DURATION(buffer));
@@ -1313,7 +1317,7 @@ index 2be45dc..54509e3 100644
    if ((aKeyFrameSkip && !isKeyframe)) {
      gst_buffer_unref(buffer);
      return true;
-@@ -618,73 +695,55 @@ bool GStreamerReader::DecodeVideoFrame(bool &aKeyFrameSkip,
+@@ -611,10 +687,18 @@ bool GStreamerReader::DecodeVideoFrame(bool &aKeyFrameSkip,
                 "frame has invalid timestamp");
  
    timestamp = GST_TIME_AS_USECONDS(timestamp);
@@ -1326,16 +1330,14 @@ index 2be45dc..54509e3 100644
 +
    if (timestamp < aTimeThreshold) {
      LOG(PR_LOG_DEBUG, "skipping frame %" GST_TIME_FORMAT
--                      " threshold %" GST_TIME_FORMAT,
+                       " threshold %" GST_TIME_FORMAT,
 -                      GST_TIME_ARGS(timestamp), GST_TIME_ARGS(aTimeThreshold));
-+                       " threshold %" GST_TIME_FORMAT,
-+                       GST_TIME_ARGS(timestamp * 1000),
-+                       GST_TIME_ARGS(aTimeThreshold * 1000));
++                      GST_TIME_ARGS(timestamp * 1000),
++                      GST_TIME_ARGS(aTimeThreshold * 1000));
      gst_buffer_unref(buffer);
      return true;
    }
--
-   if (!buffer)
+@@ -623,61 +707,36 @@ bool GStreamerReader::DecodeVideoFrame(bool &aKeyFrameSkip,
      /* no more frames */
      return false;
  
@@ -1499,7 +1501,7 @@ index 2be45dc..54509e3 100644
      if (format == GST_FORMAT_TIME) {
        LOG(PR_LOG_DEBUG, "pipeline duration %" GST_TIME_FORMAT,
              GST_TIME_ARGS (duration));
-@@ -866,108 +954,6 @@ gboolean GStreamerReader::SeekData(GstAppSrc* aSrc, guint64 aOffset)
+@@ -893,109 +984,6 @@ gboolean GStreamerReader::SeekData(GstAppSrc* aSrc, guint64 aOffset)
    return NS_SUCCEEDED(rv);
  }
  
@@ -1563,8 +1565,9 @@ index 2be45dc..54509e3 100644
 -    // element.
 -    return GST_FLOW_NOT_SUPPORTED;
 -  }
--  ImageFormat format = PLANAR_YCBCR;
--  PlanarYCbCrImage* img = reinterpret_cast<PlanarYCbCrImage*>(container->CreateImage(&format, 1).get());
+-  PlanarYCbCrImage* img =
+-    reinterpret_cast<PlanarYCbCrImage*>(
+-      container->CreateImage(ImageFormat::PLANAR_YCBCR).get());
 -  nsRefPtr<PlanarYCbCrImage> image = dont_AddRef(img);
 -
 -  /* prepare a GstBuffer pointing to the underlying PlanarYCbCrImage buffer */
@@ -1791,16 +1794,16 @@ index 2be45dc..54509e3 100644
 +               "Unsupported number of components in video frame");
 +
 +  aData->mPicX = aData->mPicY = 0;
-+  aData->mPicSize = nsIntSize(mPicture.width, mPicture.height);
-+  aData->mStereoMode = STEREO_MODE_MONO;
++  aData->mPicSize = gfx::IntSize(mPicture.width, mPicture.height);
++  aData->mStereoMode = StereoMode::MONO;
 +
 +  aData->mYChannel = GST_VIDEO_FRAME_COMP_DATA(aFrame, 0);
 +  aData->mYStride = GST_VIDEO_FRAME_COMP_STRIDE(aFrame, 0);
-+  aData->mYSize = nsIntSize(GST_VIDEO_FRAME_COMP_WIDTH(aFrame, 0),
++  aData->mYSize = gfx::IntSize(GST_VIDEO_FRAME_COMP_WIDTH(aFrame, 0),
 +                          GST_VIDEO_FRAME_COMP_HEIGHT(aFrame, 0));
 +  aData->mYSkip = GST_VIDEO_FRAME_COMP_PSTRIDE(aFrame, 0) - 1;
 +  aData->mCbCrStride = GST_VIDEO_FRAME_COMP_STRIDE(aFrame, 1);
-+  aData->mCbCrSize = nsIntSize(GST_VIDEO_FRAME_COMP_WIDTH(aFrame, 1),
++  aData->mCbCrSize = gfx::IntSize(GST_VIDEO_FRAME_COMP_WIDTH(aFrame, 1),
 +                             GST_VIDEO_FRAME_COMP_HEIGHT(aFrame, 1));
 +  aData->mCbChannel = GST_VIDEO_FRAME_COMP_DATA(aFrame, 1);
 +  aData->mCrChannel = GST_VIDEO_FRAME_COMP_DATA(aFrame, 2);

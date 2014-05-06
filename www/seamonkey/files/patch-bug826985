@@ -26,25 +26,26 @@ index 55e4cd1..76567b3 100644
  dnl enable once Signaling lands
      MOZ_WEBRTC_SIGNALING=1
      AC_DEFINE(MOZ_WEBRTC_SIGNALING)
-@@ -8981,6 +8984,10 @@ elif test "${OS_TARGET}" = "Android"; then
-    fi
- fi
- 
-+if test -n "$MOZ_LIBV4L2_LIBS"; then
-+   EXTRA_GYP_DEFINES="$EXTRA_GYP_DEFINES -D use_libv4l2=1"
-+fi
-+
- if test -n "$MOZ_WEBRTC"; then
-    AC_MSG_RESULT("generating WebRTC Makefiles...")
- 
+diff --git build/gyp.mozbuild build/gyp.mozbuild
+index b483cd1..f1dd1f0 100644
+--- mozilla/build/gyp.mozbuild
++++ mozilla/build/gyp.mozbuild
+@@ -11,6 +11,7 @@ gyp_vars = {
+     'have_ethtool_cmd_speed_hi': 1 if CONFIG['MOZ_WEBRTC_HAVE_ETHTOOL_SPEED_HI'] else 0,
+     'include_alsa_audio': 1 if CONFIG['MOZ_ALSA'] else 0,
+     'include_pulse_audio': 1 if CONFIG['MOZ_PULSEAUDIO'] else 0,
++    'use_libv4l2': 1 if CONFIG['MOZ_LIBV4L2_LIBS'] else 0,
+     # basic stuff for everything
+     'include_internal_video_render': 0,
+     'clang_use_chrome_plugins': 0,
 diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
 index b483cd1..f1dd1f0 100644
 --- mozilla/media/webrtc/signaling/test/Makefile.in
 +++ mozilla/media/webrtc/signaling/test/Makefile.in
-@@ -17,6 +17,7 @@ LIBS = \
+@@ -7,6 +7,7 @@ LIBS = \
+   $(NSPR_LIBS) \
    $(NSS_LIBS) \
    $(REALTIME_LIBS) \
-   $(MOZ_JS_LIBS) \
 +  $(MOZ_LIBV4L2_LIBS) \
    $(DEPTH)/xpcom/glue/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) \
    $(DEPTH)/media/mtransport/standalone/$(LIB_PREFIX)mtransport_s.$(LIB_SUFFIX) \
@@ -152,11 +153,14 @@ diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
 index 9c16ffa..1db3794 100644
 --- mozilla/toolkit/library/Makefile.in
 +++ mozilla/toolkit/library/Makefile.in
-@@ -121,6 +121,7 @@ endif
+@@ -182,6 +182,10 @@ endif
+ 
  EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,gkmedias,$(DIST)/lib)
  
- ifdef MOZ_WEBRTC
++ifdef MOZ_LIBV4L2_LIBS
 +EXTRA_DSO_LDOPTS += $(MOZ_LIBV4L2_LIBS)
- ifdef MOZ_WEBRTC_SIGNALING
- SHARED_LIBRARY_LIBS += \
-   $(DEPTH)/media/webrtc/signaling/signaling_ecc/$(LIB_PREFIX)ecc.$(LIB_SUFFIX) \
++endif
++
+ ifdef MOZ_WEBRTC
+ ifeq (WINNT,$(OS_TARGET))
+ EXTRA_DSO_LDOPTS += \
