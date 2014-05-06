@@ -14,10 +14,10 @@ index 14bfc0d..5383399 100644
  	$(INSTALL) system_wrappers $(DIST)
  
 diff --git config/system-headers config/system-headers
-index 126391e..b711fc3 100644
+index 18e8703..bdc5f82 100644
 --- mozilla/config/system-headers
 +++ mozilla/config/system-headers
-@@ -1144,3 +1144,11 @@ unicode/utypes.h
+@@ -1145,3 +1145,11 @@ unicode/utypes.h
  #endif
  libutil.h
  unwind.h
@@ -30,36 +30,54 @@ index 126391e..b711fc3 100644
 +harfbuzz/hb.h
 +#endif
 diff --git configure.in configure.in
-index bbc7b40..1747206 100644
+index ac38f40..87536b7 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -7848,6 +7848,34 @@ if test "$USE_FC_FREETYPE"; then
+@@ -8032,6 +8032,52 @@ if test "$USE_FC_FREETYPE"; then
  fi
  
  dnl ========================================================
-+dnl Check for graphite2 and harfbuzz
++dnl Check for harfbuzz
 +dnl ========================================================
 +
 +MOZ_ARG_WITH_BOOL(system-harfbuzz,
 +[  --with-system-harfbuzz  Use system harfbuzz (located with pkgconfig)],
 +MOZ_NATIVE_HARFBUZZ=1,
-+MOZ_NATIVE_HARFBUZZ= )
++MOZ_NATIVE_HARFBUZZ=)
 +
 +if test -n "$MOZ_NATIVE_HARFBUZZ"; then
 +    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 0.9.25)
 +fi
++
 +AC_SUBST(MOZ_NATIVE_HARFBUZZ)
 +AC_SUBST(MOZ_HARFBUZZ_CFLAGS)
 +AC_SUBST(MOZ_HARFBUZZ_LIBS)
 +
++dnl ========================================================
++dnl Check for graphite2
++dnl ========================================================
 +MOZ_ARG_WITH_BOOL(system-graphite2,
 +[  --with-system-graphite2 Use system graphite2 (located with pkgconfig)],
 +MOZ_NATIVE_GRAPHITE2=1,
-+MOZ_NATIVE_GRAPHITE2= )
++MOZ_NATIVE_GRAPHITE2=)
 +
 +if test -n "$MOZ_NATIVE_GRAPHITE2"; then
-+    PKG_CHECK_MODULES(MOZ_GRAPHITE2, graphite2 >= 1.2.4)
++    PKG_CHECK_MODULES(MOZ_GRAPHITE2, graphite2)
++
++    dnl graphite2.pc has bogus version, check manually
++    AC_TRY_COMPILE([ #include <graphite2/Font.h>
++                     #define GR2_VERSION_REQUIRE(major,minor,bugfix)  \
++                             ( GR2_VERSION_MAJOR * 10000 + GR2_VERSION_MINOR \
++                               * 100 + GR2_VERSION_BUGFIX >= \
++                               (major) * 10000 + (minor) * 100 + (bugfix) )
++                   ], [
++                     #if !GR2_VERSION_REQUIRE(1,2,4)
++                     #error "Insufficient graphite2 version."
++                     #endif
++                   ], [],
++                   [AC_MSG_ERROR([--with-system-graphite2 requested but no working libgraphite2 found])])
 +fi
++
 +AC_SUBST(MOZ_NATIVE_GRAPHITE2)
 +AC_SUBST(MOZ_GRAPHITE2_CFLAGS)
 +AC_SUBST(MOZ_GRAPHITE2_LIBS)
@@ -110,7 +128,7 @@ index 519aa46..6929751 100644
      'thebes',
      'ipc',
 diff --git gfx/skia/Makefile.in gfx/skia/Makefile.in
-index 07a77a3..067f7bd 100644
+index ee0efb2..98e169d6f 100644
 --- mozilla/gfx/skia/Makefile.in
 +++ mozilla/gfx/skia/Makefile.in
 @@ -15,6 +15,10 @@ ifeq (qt,$(MOZ_WIDGET_TOOLKIT))
@@ -123,9 +141,9 @@ index 07a77a3..067f7bd 100644
 +
  include $(topsrcdir)/config/rules.mk
  
- ifneq (,$(INTEL_ARCHITECTURE))
+ ifeq ($(CPU_ARCH)_$(GNU_CC),arm_1)
 diff --git gfx/thebes/Makefile.in gfx/thebes/Makefile.in
-index e9f6b6c..0df2d8d 100644
+index 45c36ae..79d32cf 100644
 --- mozilla/gfx/thebes/Makefile.in
 +++ mozilla/gfx/thebes/Makefile.in
 @@ -13,6 +13,14 @@ DEFINES := $(filter-out -DUNICODE,$(DEFINES))
@@ -144,7 +162,7 @@ index e9f6b6c..0df2d8d 100644
  CXXFLAGS += $(CAIRO_FT_CFLAGS)
  endif
 diff --git intl/unicharutil/util/Makefile.in intl/unicharutil/util/Makefile.in
-index f6b9f7c..11c44f4 100644
+index f6b9f7c..60863f4 100644
 --- mozilla/intl/unicharutil/util/Makefile.in
 +++ mozilla/intl/unicharutil/util/Makefile.in
 @@ -21,3 +21,7 @@ ifdef _MSC_VER
@@ -153,25 +171,28 @@ index f6b9f7c..11c44f4 100644
  endif
 +
 +ifdef MOZ_NATIVE_HARFBUZZ
-+nsUnicodePropertyData.$(OBJ_SUFFIX): CXXFLAGS+=$(MOZ_HARFBUZZ_CFLAGS)
++CXXFLAGS += $(MOZ_HARFBUZZ_CFLAGS)
 +endif
 diff --git netwerk/dns/Makefile.in netwerk/dns/Makefile.in
-index 1cacbd7..a8cd156 100644
+index 1cacbd7..f5d72bb 100644
 --- mozilla/netwerk/dns/Makefile.in
 +++ mozilla/netwerk/dns/Makefile.in
-@@ -9,3 +9,7 @@ include $(topsrcdir)/config/rules.mk
+@@ -5,6 +5,10 @@
+ 
+ include $(topsrcdir)/config/rules.mk
+ 
++ifdef MOZ_NATIVE_HARFBUZZ
++CXXFLAGS += $(MOZ_HARFBUZZ_CFLAGS)
++endif
++
+ # Generate the include file containing compact, static definitions
  # for effective TLD data.
  etld_data.inc: $(srcdir)/prepare_tlds.py $(srcdir)/effective_tld_names.dat
- 	$(PYTHON) $(srcdir)/prepare_tlds.py $(srcdir)/effective_tld_names.dat > etld_data.inc
-+
-+ifdef MOZ_NATIVE_HARFBUZZ
-+nsIDNService.$(OBJ_SUFFIX): CXXFLAGS+=$(MOZ_HARFBUZZ_CFLAGS)
-+endif
 diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
-index 007f272..27f488e 100644
+index 67f0db9..d42137a 100644
 --- mozilla/toolkit/library/Makefile.in
 +++ mozilla/toolkit/library/Makefile.in
-@@ -103,6 +103,14 @@ ifndef MOZ_TREE_PIXMAN
+@@ -89,6 +89,14 @@ ifndef MOZ_TREE_PIXMAN
  EXTRA_DSO_LDOPTS += $(MOZ_PIXMAN_LIBS)
  endif
  
