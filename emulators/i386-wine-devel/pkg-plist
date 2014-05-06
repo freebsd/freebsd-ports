@@ -846,6 +846,7 @@ lib32/libGLU.so.1
 lib32/libX11-xcb.so.1
 lib32/libX11.so.6
 lib32/libXau.so.6
+lib32/libXcomposite.so.1
 lib32/libXcursor.so.1
 lib32/libXdamage.so.1
 lib32/libXdmcp.so.6
