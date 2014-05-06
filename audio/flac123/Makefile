@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	flac123
-PORTVERSION=	0.0.11
-PORTREVISION=	5
+PORTVERSION=	0.0.12
 CATEGORIES=	audio
-MASTER_SITES=	SF/flac-tools/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/flac-tools/${PORTNAME}/
+DISTVERSIONSUFFIX=	-release
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command-line player for flac audio files
@@ -16,6 +17,8 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 
 OPTIONS_DEFINE=	DOCS
 
+USE_AUTOTOOLS=	aclocal autoconf automake
+AUTOMAKE_ARGS=	--add-missing
 USES=		gmake
 GNU_CONFIGURE=	yes
 
