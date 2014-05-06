@@ -16,13 +16,12 @@ USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 REINPLACE_ARGS=	-i ""
 
-NO_STAGE=	yes
 pre-patch:
 	# Removing blanks at EOL
 	${FIND} ${WRKSRC} -type f -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -E 's/[[:blank:]]+$$//g'
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/uncompyle2.py ${PREFIX}/bin/uncompyle2
+	${INSTALL_SCRIPT} ${WRKSRC}/uncompyle2.py ${STAGEDIR}${PREFIX}/bin/uncompyle2
 
 .include <bsd.port.mk>
