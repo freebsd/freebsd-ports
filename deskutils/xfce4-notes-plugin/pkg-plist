@@ -3,9 +3,9 @@ bin/xfce4-notes-settings
 bin/xfce4-popup-notes
 etc/xdg/autostart/xfce4-notes-autostart.desktop
 lib/xfce4/panel-plugins/libnotes.a
-lib/xfce4/panel-plugins/libnotes.la
 lib/xfce4/panel-plugins/libnotes.so
 lib/xfce4/panel-plugins/libnotes.so.0
+lib/xfce4/panel-plugins/libnotes.so.0.0.0
 share/applications/xfce4-notes.desktop
 share/icons/hicolor/16x16/apps/xfce4-notes-plugin.png
 share/icons/hicolor/22x22/apps/xfce4-notes-plugin.png

@@ -3,7 +3,7 @@
 
 PORTNAME=	libxfce4gui
 PORTVERSION=	4.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/archive/libxfcegui4/${PORTVERSION:R}
@@ -13,15 +13,13 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Various Gtk widgets for the Xfce Desktop
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack libglade2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil
 USE_XORG=	sm x11
-USES=	pathfix pkgconfig gmake
 
 CONFIGURE_ARGS+=--disable-gladeui
 
