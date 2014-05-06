@@ -4,6 +4,7 @@ share/applications/openMSX-Catapult.desktop
 %%DATADIR%%/resources/bitmaps/diskimage.png
 %%DATADIR%%/resources/bitmaps/eject.png
 %%DATADIR%%/resources/bitmaps/file.png
+%%DATADIR%%/resources/bitmaps/harddisk.png
 %%DATADIR%%/resources/bitmaps/ledoff.png
 %%DATADIR%%/resources/bitmaps/ledon.png
 %%DATADIR%%/resources/bitmaps/romimage.png
