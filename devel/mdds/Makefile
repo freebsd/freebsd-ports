@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdds
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	devel
 MASTER_SITES=	http://kohei.us/files/mdds/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 PROJECTHOST=	multidimalgorithm
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 
 do-configure:
