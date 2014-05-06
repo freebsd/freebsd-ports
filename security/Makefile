@@ -92,6 +92,7 @@
     SUBDIR += cryptopp
     SUBDIR += cryptstring
     SUBDIR += cvm
+    SUBDIR += cyassl
     SUBDIR += cyrus-sasl2
     SUBDIR += cyrus-sasl2-gssapi
     SUBDIR += cyrus-sasl2-ldapdb
@@ -1019,7 +1020,6 @@
     SUBDIR += yafic
     SUBDIR += yapet
     SUBDIR += yara
-    SUBDIR += yassl
     SUBDIR += yersinia
     SUBDIR += ykclient
     SUBDIR += ykpers

@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140506:
+  AFFECTS: users of security/yassl
+  AUTHOR: gahr@FreeBSD.org
+
+  security/yassl was moved to security/cyassl to match the original package
+  name.  Please do the following according to package manager used.
+
+  # portmaster -o security/cyassl security/yassl
+    or
+  # portupgrade -fo security/cyassl security/yassl
+    or
+  # pkg set -o security/yassl:security/cyassl
+
 20140505:
   AFFECTS: users of databases/libiodbc
   AUTHOR: bapt@FreeBSD.org
