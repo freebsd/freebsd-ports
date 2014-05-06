@@ -142,7 +142,6 @@
     SUBDIR += bpython
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
-    SUBDIR += bsdlibdwarf
     SUBDIR += bufferpool
     SUBDIR += bug-buddy
     SUBDIR += bugzilla40
