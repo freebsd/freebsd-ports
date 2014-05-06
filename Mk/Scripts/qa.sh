@@ -172,7 +172,18 @@ suidfiles() {
 	return 0
 }
 
-checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles"
+libtool() {
+	if [ -z "${USESLIBTOOL}" ]; then
+		find ${STAGEDIR} -type f -name '*.la' | while read f; do
+			grep -q 'libtool library' "${f}" &&
+				warn ".la libraries found, port needs USES=libtool" &&
+				return 0 || true
+		done
+		# The return above continues here.
+	fi
+}
+
+checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool"
 
 ret=0
 cd ${STAGEDIR}
