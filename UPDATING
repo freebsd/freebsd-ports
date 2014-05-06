@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140506:
+  AFFECTS: users of ports-mgmt/portshaker
+  AUTHOR: romain@FreeBSD.org
+
+  ports-mgmt/portshaker was updated to avoid creating an aditional 'ports'
+  subdirectory when merging to a poudriere_tree without ZFS, so that
+  portshaker's default location matches poudriere's default location.
+  
+  Users of poudriere on non-ZFS systems should not anymore have to pass extra
+  options to poudriere for it to find the ports tree.
+
+20140506:
   AFFECTS: users of security/yassl
   AUTHOR: gahr@FreeBSD.org
 
