@@ -41,7 +41,7 @@ OPENAL_QMAKE_OFF=	CONFIG+=deng_noopenal
 PORTSCOUT=	limit:^\d+\.\d+\.\d+$$
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 1000052
+.if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} < 1000052)
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
