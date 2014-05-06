@@ -3,7 +3,7 @@
 
 PORTNAME=	SpotifyWebsocketAPI
 PORTVERSION=	0.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +13,7 @@ COMMENT=	Websocket API and client for Spotify
 NO_ARCH=	yes
 
 USE_GITHUB=	yes
-GH_COMMIT=	5f3a646
+GH_COMMIT=	9ad8639
 GH_ACCOUNT=	Hexxeh
 GH_PROJECT=	spotify-websocket-api
 GH_TAGNAME=	${GH_COMMIT}
