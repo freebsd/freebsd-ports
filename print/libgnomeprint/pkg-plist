@@ -39,6 +39,7 @@ lib/libgnomeprint-2-2.a
 lib/libgnomeprint-2-2.la
 lib/libgnomeprint-2-2.so
 lib/libgnomeprint-2-2.so.0
+lib/libgnomeprint-2-2.so.0.1.0
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-clip.a
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-clip.la
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-clip.so
