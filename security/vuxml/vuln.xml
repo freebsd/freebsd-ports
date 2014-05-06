@@ -57,6 +57,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1959e847-d4f0-11e3-84b0-0018fe623f2b">
+    <topic>OpenSSL -- NULL pointer dereference / DoS</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenBSD and David Ramos reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/05/02/5">
+	  <p>Applications that use SSL_MODE_RELEASE_BUFFERS, such as nginx/apache,
+	  are prone to a race condition which may allow a remote attacker to
+	  crash the current service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2014/05/02/5</url>
+      <url>https://rt.openssl.org/Ticket/Display.html?user=guest&amp;pass=guest&amp;id=3321</url>
+      <cvename>CVE-2014-0198</cvename>
+    </references>
+    <dates>
+      <discovery>2014-05-02</discovery>
+      <entry>2014-05-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="89709e58-d497-11e3-a3d5-5453ed2e2b49">
     <topic>qt4-xml -- XML Entity Expansion Denial of Service</topic>
     <affects>
