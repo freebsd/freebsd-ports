@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libuv
-PORTVERSION=	0.11.24
+PORTVERSION=	0.11.25
 CATEGORIES=	devel
 MASTER_SITES=	http://libuv.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -20,7 +20,7 @@ TEST_DEPENDS=	gyp:${PORTSDIR}/devel/py-gyp-devel	\
 
 USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
 ACLOCAL_ARGS=	-I m4
-USES=		pkgconfig
+USES=		pkgconfig libtool
 USE_LDCONFIG=	yes
 
 run-autotools:
