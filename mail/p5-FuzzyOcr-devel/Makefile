@@ -5,10 +5,10 @@ PORTNAME=	FuzzyOcr
 DISTVERSION=	3.6.0
 PORTREVISION=	5
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/
+MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:tl}/
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME:L}-${DISTVERSION}
+DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	ismail.yenigul@endersys.com.tr
 COMMENT=	Plugin for SpamAssassin which scans image attachments for spam
