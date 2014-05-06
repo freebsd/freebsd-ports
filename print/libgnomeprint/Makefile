@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomeprint
 PORTVERSION=	2.18.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,18 +12,16 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome print support library
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		bison pathfix gettext gmake pkgconfig
-USE_GNOME=	gnomeprefix intlhack gnomehier glib20 pango libxml2 \
-		libartlgpl2 ltverhack
+GNU_CONFIGURE=	yes
+USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
+USE_GNOME=	gnomeprefix intlhack glib20 pango libxml2 libartlgpl2
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -45,8 +43,6 @@ PLIST_SUB+=		CUPS:="@comment "
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<malloc[.]h>|<stdlib.h>|'
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|tests||" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|doc||" ${WRKSRC}/Makefile.in
 
