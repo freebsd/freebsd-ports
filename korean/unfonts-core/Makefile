@@ -3,6 +3,7 @@
 
 PORTNAME=	unfonts
 PORTVERSION?=	1.0.2.080608
+PORTREVISION?=	1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES?=	http://kldp.net/frs/download.php/4695/
 PKGNAMESUFFIX=	-${FONTCAT}
@@ -35,6 +36,9 @@ FONTLIST?=	UnBatang \
 		UnPilgi \
 		UnPilgiBold
 FONTFILES=	${FONTLIST:S/$/.ttf/} fonts.dir fonts.scale
+
+PLIST_DIRS=	${FONTSDIR}
+PLIST_FILES=	${FONTFILES:S|^|${FONTSDIR}/|}
 
 do-build:
 	${LOCALBASE}/bin/mkfontscale ${WRKSRC}
