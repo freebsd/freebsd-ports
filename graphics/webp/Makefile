@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google WebP image format conversion tool
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
