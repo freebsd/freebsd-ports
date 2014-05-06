@@ -6091,3 +6091,4 @@ graphics/gimp-gap||2014-05-05|Broken with gimp 2.8, no release in 5 years.
 games/gnome-games-extra-data||2014-05-05|Not used in GNOME 3.
 audio/libshout2|audio/libshout|2014-05-05|Use audio/libshout instead
 devel/bsdlibdwarf||2014-05-06|Has expired: Outdated, included in all supported versions of FreeBSD
+security/yassl|security/cyassl|2014-05-06|Moved to match upstream name
