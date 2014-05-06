@@ -24,7 +24,7 @@ include/mac/StdLibFileIO.h
 include/mac/UnBitArrayBase.h
 include/mac/config.h
 lib/libmac.a
-lib/libmac.la
 lib/libmac.so
 lib/libmac.so.2
+lib/libmac.so.2.0.0
 @dirrm include/mac
