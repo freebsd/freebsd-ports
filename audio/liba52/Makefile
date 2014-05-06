@@ -14,8 +14,7 @@ COMMENT=	Free library for decoding ATSC A/52 streams, aka AC-3
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_AUTOTOOLS=	libtool
-USES=		gmake
+USES=		gmake libtool:keepla
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
 USE_LDCONFIG=	yes
@@ -29,11 +28,10 @@ DJBFFT_CFLAGS=		-I${LOCALBASE}/include
 DJBFFT_LDFLAGS=		-L${LOCALBASE}/lib
 DJBFFT_CONFIGURE_ON=	--enable-djbfft
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "powerpc"
-CFLAGS+=	-fPIC
-.endif
+CFLAGS_amd64=	-fPIC
+CFLAGS_powerpc=	-fPIC
 
 HEADER_FILES=	liba52/a52_internal.h
 
@@ -50,6 +48,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/liba52.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/liba52/a52_internal.h ${STAGEDIR}${PREFIX}/include/a52dec
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liba52.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liba52.so.0.*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
