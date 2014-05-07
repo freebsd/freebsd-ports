@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140507:
+  AFFECTS: users of lang/open-cobol
+  AUTHOR: johans@FreeBSD.org
+
+  lang/open-cobol was moved to lang/gnu-cobol to match the new package
+  name. Please do the following according to package manager used.
+
+  # portmaster -o lang/gnu-cobol lang/open-cobol
+    or
+  # portupgrade -fo lang/gnu-cobol lang/open-cobol
+    or
+  # pkg set -o lang/open-cobol:lang/gnu-cobol
+
 20140506:
   AFFECTS: users of ports-mgmt/portshaker
   AUTHOR: romain@FreeBSD.org
