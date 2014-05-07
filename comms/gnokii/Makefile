@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=	--disable-mysql
 PLIST_SUB+=	MSM='@comment '
 . endif
 . if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 PLIST_SUB+=	PGM=''
 . else
 CONFIGURE_ARGS+=	--disable-postgres
