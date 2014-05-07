@@ -19,13 +19,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 GH_COMMIT=	237b125
 
+USES=		libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf automake libtool aclocal autoheader libtoolize
+USE_AUTOTOOLS=	autoconf automake aclocal autoheader libtoolize
 CONFIGURE_ARGS=	LUA="${LUA_CMD}" \
 		LUA_INCLUDE="-I${LUA_INCDIR}" \
 		LUA_LIB="-L${LUA_LIBDIR} -llua-${LUA_VER}"
-USES=		gmake lua tar:bzip2
-USE_PGSQL=	yes
+USES=		gmake lua pgsql tar:bzip2
 USE_GNOME=	libxml2
 
 PLIST_FILES=	bin/nodecachefilereader \
