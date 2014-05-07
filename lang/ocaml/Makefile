@@ -110,7 +110,7 @@ CONFIGURE_ARGS+=-no-tk
 
 OCAML_ARCH= ${ARCH:S/x86_64/amd64/:S/powerpc/power/}
 
-.if ${OCAML_ARCH} == power
+.if defined(NO_PROFILE) || ${OCAML_ARCH} == power || ${OPSYS} == DragonFly
 PLIST_SUB+=	PROF="@comment "
 .else
 PLIST_SUB+=	PROF=""
