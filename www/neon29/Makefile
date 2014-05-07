@@ -3,7 +3,7 @@
 
 PORTNAME=	neon29
 PORTVERSION=	0.29.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
@@ -23,11 +23,9 @@ LIBXML_DESC=		libxml2 XML parser support
 PROXY_DESC=		libproxy support
 XML_DESC=		XML parser library
 
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-USES=		pathfix
-USE_GNOME=	ltverhack
+USES=		pathfix libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--with-libs=${LOCALBASE}:${PREFIX}
@@ -44,7 +42,7 @@ WARNING+=	"Enable the OPENSSL option or disable the CA_BUNDLE option"
 
 .if ${PORT_OPTIONS:MEXPAT}
 CONFIGURE_ARGS+=--with-expat
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
 .endif
 
 .if ${PORT_OPTIONS:MLIBXML}
@@ -71,7 +69,7 @@ CONFIGURE_ARGS+=--without-gssapi
 
 .if ${PORT_OPTIONS:MPROXY}
 CONFIGURE_ARGS+=--with-libproxy
-LIB_DEPENDS+=	proxy.1:${PORTSDIR}/net/libproxy
+LIB_DEPENDS+=	libproxy.so:${PORTSDIR}/net/libproxy
 .else
 CONFIGURE_ARGS+=--without-libproxy
 .endif
@@ -83,5 +81,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${STAGEDIR}${MANPREFIX}/man/man3
 	${MAKE} -C ${WRKSRC} install-html ${MAKE_ARGS}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libneon.so.27.*
 
 .include <bsd.port.mk>
