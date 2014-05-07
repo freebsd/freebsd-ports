@@ -1,5 +1,22 @@
---- makefile.orig	2012-09-12 03:22:51.000000000 +0800
-+++ makefile	2013-06-28 09:55:32.000000000 +0800
+--- ./makefile.orig	2014-05-08 01:51:14.473846505 +0200
++++ ./makefile	2014-05-08 01:52:41.930012434 +0200
+@@ -8,13 +8,13 @@
+ PREFIX ?= /usr/local
+ 
+ # Place where to copy FastDB header files
+-INCSPATH=$(PREFIX)/include/fastdb
++INCSPATH=$(DESTDIR)$(PREFIX)/include/fastdb
+ 
+ #Place where to copy Fastdb library
+-LIBSPATH=$(PREFIX)/lib
++LIBSPATH=$(DESTDIR)$(PREFIX)/lib
+ 
+ #Place where to copy Fastdb subsql utility
+-BINSPATH=$(PREFIX)/bin
++BINSPATH=$(DESTDIR)$(PREFIX)/bin
+ 
+ ifdef NO_PTHREADS
+ OBJS = class.o compiler.o database.o xml.o hashtab.o file.o symtab.o ttree.o rtree.o container.o \
 @@ -38,8 +38,8 @@
  THRLIBS=
  SUFF=
@@ -58,7 +75,7 @@
 +	${BSD_INSTALL_DATA} $(INCS) $(INCSPATH)
  	mkdir -p $(LIBSPATH)
 -	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
-+	${BSD_INSTALL_DATA} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
++	${BSD_INSTALL_LIB} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
  	(cd $(LIBSPATH) && ln -f -s $(FASTDB_SHARED) libfastdb$(SUFF).so \
  	 && ln -f -s $(CLI_SHARED) libcli$(SUFF).so)
  	if [ -f $(JNI_LIB) ]; then cp $(JNI_LIB) $(LIBSPATH); \
