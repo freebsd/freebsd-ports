@@ -13,9 +13,8 @@ COMMENT=	Arcade-style game with elements of economy and adventure
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libguichan.so:${PORTSDIR}/devel/guichan
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake pkgconfig
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
 USE_GL=		gl
 USE_SDL=	sdl mixer image
 USE_PYTHON=	yes

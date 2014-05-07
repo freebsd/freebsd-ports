@@ -13,8 +13,7 @@ COMMENT=	Psychic Bodyguard FPS - protect the VIP
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		gmake openal:al,alut
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake openal:al,alut
 USE_SDL=	sdl
 USE_GL=		yes
 

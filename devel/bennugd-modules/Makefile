@@ -14,16 +14,14 @@ COMMENT=	High level open source game development suite, modules
 LIB_DEPENDS=	libbgdrtm.so:${PORTSDIR}/devel/bennugd-core \
 		libpng.so:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 dos2unix pkgconfig
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/bennugd"
 CONFIGURE_ENV=	ZLIB_CFLAGS=" " ZLIB_LIBS="-lz"
-
-USE_DOS2UNIX=	*.c
+DOS2UNIX_GLOB=	*.c
 
 WRKSRC=		${WRKDIR}/bennugd/${PORTNAME}
 
