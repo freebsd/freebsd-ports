@@ -6545,9 +6545,10 @@ _STAGE_DEP=		build
 _STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-install generate-plist \
 				pre-su-install
 .if defined(NEED_ROOT)
-_STAGE_SUSEQ=	create-users-groups do-install desktop-file-post-install \
+_STAGE_SUSEQ=	create-users-groups do-install \
 				kmod-post-install shared-mime-post-install \
 				webplugin-post-install post-install post-install-script \
+				desktop-file-post-install \
 				move-uniquefiles post-stage compress-man patch-lafiles \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
@@ -6557,9 +6558,10 @@ _STAGE_SUSEQ=	create-users-groups do-install desktop-file-post-install \
 _STAGE_SUSEQ+=	stage-qa
 .endif
 .else
-_STAGE_SEQ+=	create-users-groups do-install desktop-file-post-install \
+_STAGE_SEQ+=	create-users-groups do-install \
 				kmod-post-install shared-mime-post-install \
 				webplugin-post-install post-install post-install-script \
+				desktop-file-post-install \
 				move-uniquefiles post-stage compress-man patch-lafiles \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
