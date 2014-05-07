@@ -62,6 +62,7 @@ MAKE_ARGS+=	DEBUG_FLAGS="-O1 -g"
 .endif
 
 .if ${PORT_OPTIONS:MX11}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/X:${PORTSDIR}/x11-servers/xorg-server
 VBOX_WITH_X11=	1
 USE_XORG=	xcursor xmu inputproto xorg-server xrandr
 .else
