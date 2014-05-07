@@ -11,8 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A color matching game
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 qmake
 USE_QT4=	corelib gui moc_build rcc_build
 INSTALLS_ICONS=	yes
 
