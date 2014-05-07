@@ -12,39 +12,26 @@ COMMENT=	Store and retrieve data in a key/value format in a hash database
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-.if defined(WITH_BERKELEY_DB)
-LIB_DEPENDS+=	libdb3.so:${PORTSDIR}/databases/db3
-DB_INC=		-I${LOCALBASE}/include/db3
-CONFIGURE_ARGS=	--with-berkeley
-.else
-LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
-.endif
-.if !defined(NOPORTDOCS)
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-.endif
+OPTIONS_DEFINE=	BDB EXAMPLES
+
+BDB_LIB_DEPENDS=	libdb3.so:${PORTSDIR}/databases/db3
+BDB_CPPFLAGS=		-I${LOCALBASE}/include/db3
+BDB_CONFIGURE_ON=	--with-berkeley
+BDB_LIB_DEPENDS_OFF=	libgdbm.so:${PORTSDIR}/databases/gdbm
+
+EXAMPLES_RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include ${DB_INC}
+CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 
-USE_GMAKE=	yes
+USES=		gmake
 REINPLACE_ARGS=	-i ""
-
-MAN1=	dbtool.1
 
 SH2BASH=	samples/account-db/accdb
 UB2PFX=		samples/locate/locate samples/locate/updatedb
-
-NO_STAGE=	yes
-post-extract:
-.if !defined(WITH_BERKELEY_DB)
-	@${ECHO_MSG}
-	@${ECHO_MSG} " Build with gdbm by default. "
-	@${ECHO_MSG} " If you want to use BerkeleyDB, you can build with WITH_BERKELEY_DB=yes"
-	@${ECHO_MSG}
-.endif
 
 post-patch:
 .for file in dbtool.cc engine.cc engine.h
@@ -63,11 +50,7 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -Rp ${WRKSRC}/samples/* ${EXAMPLESDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${CP} -Rp ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
