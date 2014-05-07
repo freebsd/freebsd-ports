@@ -198,4 +198,13 @@ lib/ocaml/camlp5/token.cmx
 lib/ocaml/camlp5/token.mli
 lib/ocaml/camlp5/versdep.cmi
 lib/ocaml/camlp5/versdep.cmx
+man/man1/camlp5.1.gz
+man/man1/camlp5o.1.gz
+man/man1/camlp5o.opt.1.gz
+man/man1/camlp5r.1.gz
+man/man1/camlp5r.opt.1.gz
+man/man1/camlp5sch.1.gz
+man/man1/mkcamlp5.1.gz
+man/man1/mkcamlp5.opt.1.gz
+man/man1/ocpp5.1.gz
 @dirrm lib/ocaml/camlp5
