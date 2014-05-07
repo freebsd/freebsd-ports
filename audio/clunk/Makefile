@@ -10,18 +10,12 @@ MASTER_SITES=	SF/clunk
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Real-time 3D sound generation library
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		tar:bzip2 cmake
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	SSE
 OPTIONS_DEFAULT_amd64=SSE
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSE}
-CMAKE_ARGS+=	-DWITH_SSE:BOOL=TRUE
-.endif
+SSE_CMAKE_ON=	-DWITH_SSE:BOOL=TRUE
 
 .include <bsd.port.mk>
