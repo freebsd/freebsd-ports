@@ -3,15 +3,16 @@
 
 PORTNAME=	dbconnect
 PORTVERSION=	0.3.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/DBConnect%20API%200.3%20Source%20Code/DBConnect%20API%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use C++ object API to allow applications to connect to databases
 
+USES=		gmake dos2unix
+
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 
@@ -21,7 +22,6 @@ LDFLAG+=	${PTHREAD_LIBS}
 OPTIONS_DEFINE=	MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
@@ -37,7 +37,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=	--enable-pgsql=yes \
 			--with-pgsql_include=${LOCALBASE}/include \
 			--with-pgsql_lib=${LOCALBASE}/lib
@@ -53,14 +53,14 @@ post-patch:
 
 do-install:
 	@cd ${WRKSRC}; \
-	${CP} -r include/dbconn ${PREFIX}/include/; \
+	${CP} -r include/dbconn ${STAGEDIR}${PREFIX}/include/; \
 	for lib in `find lib -type l -name *.so`; do \
 		libpath=`${DIRNAME} $${lib}`; \
 		libname=`${BASENAME} $${lib}|${SED} -e 's/\.so$$//'`; \
-		${INSTALL_DATA} $${libpath}/$${libname}-${PORTVERSION}.so \
-			${PREFIX}/lib; \
-		(cd ${PREFIX}/lib; ${LN} -fs $${libname}-${PORTVERSION}.so \
-			$${libname}.so); \
+		${INSTALL_LIB} $${libpath}/$${libname}-${PORTVERSION}.so \
+			${STAGEDIR}${PREFIX}/lib; \
+		${LN} -fs $${libname}-${PORTVERSION}.so \
+			${STAGEDIR}${PREFIX}/lib/$${libname}.so; \
 	done
 
 .include <bsd.port.mk>
