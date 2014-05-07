@@ -2,6 +2,7 @@ bin/stonesoup
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.crawlrc
 %%DATADIR%%/dat/clua/autofight.lua
+%%DATADIR%%/dat/clua/automagic.lua
 %%DATADIR%%/dat/clua/gearset.lua
 %%DATADIR%%/dat/clua/kills.lua
 %%DATADIR%%/dat/clua/runrest.lua
@@ -48,13 +49,19 @@ bin/stonesoup
 %%DATADIR%%/dat/des/altar/vehumet_trees.des
 %%DATADIR%%/dat/des/altar/xom_monty_hall.des
 %%DATADIR%%/dat/des/altar/yredelemnul_ordeal.des
+%%DATADIR%%/dat/des/arrival/arrival_guide.txt
+%%DATADIR%%/dat/des/arrival/large.des
+%%DATADIR%%/dat/des/arrival/simple.des
+%%DATADIR%%/dat/des/arrival/small.des
+%%DATADIR%%/dat/des/arrival/twisted.des
 %%DATADIR%%/dat/des/branches/abyss.des
 %%DATADIR%%/dat/des/branches/blade.des
 %%DATADIR%%/dat/des/branches/coc.des
 %%DATADIR%%/dat/des/branches/crypt.des
+%%DATADIR%%/dat/des/branches/depths.des
+%%DATADIR%%/dat/des/branches/depths_encompass.des
 %%DATADIR%%/dat/des/branches/dis.des
 %%DATADIR%%/dat/des/branches/elf.des
-%%DATADIR%%/dat/des/branches/forest.des
 %%DATADIR%%/dat/des/branches/geh.des
 %%DATADIR%%/dat/des/branches/hell.des
 %%DATADIR%%/dat/des/branches/lair.des
@@ -90,11 +97,6 @@ bin/stonesoup
 %%DATADIR%%/dat/des/builder/rooms.des
 %%DATADIR%%/dat/des/builder/shops.des
 %%DATADIR%%/dat/des/builder/uniques.des
-%%DATADIR%%/dat/des/entry/entry_guide.txt
-%%DATADIR%%/dat/des/entry/large.des
-%%DATADIR%%/dat/des/entry/simple.des
-%%DATADIR%%/dat/des/entry/small.des
-%%DATADIR%%/dat/des/entry/twisted.des
 %%DATADIR%%/dat/des/guide.txt
 %%DATADIR%%/dat/des/portals/bailey.des
 %%DATADIR%%/dat/des/portals/bazaar.des
@@ -116,10 +118,10 @@ bin/stonesoup
 %%DATADIR%%/dat/des/serial/gnoll_camp.des
 %%DATADIR%%/dat/des/serial/ice.des
 %%DATADIR%%/dat/des/serial/magic_research.des
+%%DATADIR%%/dat/des/serial/park.des
 %%DATADIR%%/dat/des/serial/ponds.des
 %%DATADIR%%/dat/des/serial/serial_guide.txt
 %%DATADIR%%/dat/des/serial/sigils.des
-%%DATADIR%%/dat/des/serial/teleporters.des
 %%DATADIR%%/dat/des/serial/undead.des
 %%DATADIR%%/dat/des/serial/window.des
 %%DATADIR%%/dat/des/sprint/arena_sprint.des
@@ -132,23 +134,24 @@ bin/stonesoup
 %%DATADIR%%/dat/des/sprint/sprint_mu.des
 %%DATADIR%%/dat/des/sprint/zigsprint.des
 %%DATADIR%%/dat/des/test.des
+%%DATADIR%%/dat/des/test/suite-los.des
+%%DATADIR%%/dat/des/test/suite.des
 %%DATADIR%%/dat/des/traps/beogh_trap.des
 %%DATADIR%%/dat/des/traps/boulders.des
 %%DATADIR%%/dat/des/traps/grate.des
 %%DATADIR%%/dat/des/traps/rats_trap.des
 %%DATADIR%%/dat/des/traps/spider_basket.des
-%%DATADIR%%/dat/des/traps/xom_trap.des
-%%DATADIR%%/dat/des/tutorial/lesson1.des
+%%DATADIR%%/dat/des/tutorial/lesson%%LUA_VER_SH%%.des
 %%DATADIR%%/dat/des/tutorial/lesson2.des
 %%DATADIR%%/dat/des/tutorial/lesson3.des
 %%DATADIR%%/dat/des/tutorial/lesson4.des
 %%DATADIR%%/dat/des/tutorial/lesson5.des
 %%DATADIR%%/dat/des/variable/ambush.des
 %%DATADIR%%/dat/des/variable/ancient_champions.des
+%%DATADIR%%/dat/des/variable/arcadia.des
 %%DATADIR%%/dat/des/variable/cathedral_bats.des
 %%DATADIR%%/dat/des/variable/compat.des
-%%DATADIR%%/dat/des/variable/dk_crumbling.des
-%%DATADIR%%/dat/des/variable/encompass.des
+%%DATADIR%%/dat/des/variable/d_encompass.des
 %%DATADIR%%/dat/des/variable/float.des
 %%DATADIR%%/dat/des/variable/geyser.des
 %%DATADIR%%/dat/des/variable/grated_community.des
@@ -158,7 +161,6 @@ bin/stonesoup
 %%DATADIR%%/dat/des/variable/mini.des
 %%DATADIR%%/dat/des/variable/mini_features.des
 %%DATADIR%%/dat/des/variable/mini_monsters.des
-%%DATADIR%%/dat/des/variable/tomb_raider.des
 %%DATADIR%%/dat/des/zotdef/zotdef.des
 %%DATADIR%%/dat/descript/ability.txt
 %%DATADIR%%/dat/descript/backgrounds.txt
@@ -267,7 +269,6 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/hints.txt
 %%DATADIR%%/dat/descript/hu/backgrounds.txt
 %%DATADIR%%/dat/descript/hu/species.txt
-%%DATADIR%%/dat/descript/it/ability.txt
 %%DATADIR%%/dat/descript/it/backgrounds.txt
 %%DATADIR%%/dat/descript/it/branches.txt
 %%DATADIR%%/dat/descript/it/cards.txt
@@ -280,7 +281,6 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/it/quotes.txt
 %%DATADIR%%/dat/descript/it/skills.txt
 %%DATADIR%%/dat/descript/it/species.txt
-%%DATADIR%%/dat/descript/it/spells.txt
 %%DATADIR%%/dat/descript/it/tutorial.txt
 %%DATADIR%%/dat/descript/it/unident.txt
 %%DATADIR%%/dat/descript/it/unrand.txt
@@ -288,8 +288,10 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/ja/ability.txt
 %%DATADIR%%/dat/descript/ja/backgrounds.txt
 %%DATADIR%%/dat/descript/ja/branches.txt
+%%DATADIR%%/dat/descript/ja/cards.txt
 %%DATADIR%%/dat/descript/ja/commands.txt
 %%DATADIR%%/dat/descript/ja/gods.txt
+%%DATADIR%%/dat/descript/ja/hints.txt
 %%DATADIR%%/dat/descript/ja/items.txt
 %%DATADIR%%/dat/descript/ja/monsters.txt
 %%DATADIR%%/dat/descript/ja/skills.txt
@@ -324,6 +326,7 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/lt/unident.txt
 %%DATADIR%%/dat/descript/lv/ability.txt
 %%DATADIR%%/dat/descript/lv/backgrounds.txt
+%%DATADIR%%/dat/descript/lv/branches.txt
 %%DATADIR%%/dat/descript/lv/cards.txt
 %%DATADIR%%/dat/descript/lv/commands.txt
 %%DATADIR%%/dat/descript/lv/features.txt
@@ -332,8 +335,10 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/lv/items.txt
 %%DATADIR%%/dat/descript/lv/monsters.txt
 %%DATADIR%%/dat/descript/lv/skills.txt
+%%DATADIR%%/dat/descript/lv/species.txt
 %%DATADIR%%/dat/descript/lv/spells.txt
 %%DATADIR%%/dat/descript/lv/tutorial.txt
+%%DATADIR%%/dat/descript/lv/unident.txt
 %%DATADIR%%/dat/descript/lv/unrand.txt
 %%DATADIR%%/dat/descript/monsters.txt
 %%DATADIR%%/dat/descript/nl/ability.txt
@@ -342,8 +347,12 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/pl/ability.txt
 %%DATADIR%%/dat/descript/pl/backgrounds.txt
 %%DATADIR%%/dat/descript/pl/cards.txt
+%%DATADIR%%/dat/descript/pl/commands.txt
+%%DATADIR%%/dat/descript/pl/features.txt
 %%DATADIR%%/dat/descript/pl/gods.txt
+%%DATADIR%%/dat/descript/pl/hints.txt
 %%DATADIR%%/dat/descript/pl/items.txt
+%%DATADIR%%/dat/descript/pl/monsters.txt
 %%DATADIR%%/dat/descript/pl/quotes.txt
 %%DATADIR%%/dat/descript/pl/skills.txt
 %%DATADIR%%/dat/descript/pl/species.txt
@@ -382,6 +391,8 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/tr/commands.txt
 %%DATADIR%%/dat/descript/tr/gods.txt
 %%DATADIR%%/dat/descript/tr/items.txt
+%%DATADIR%%/dat/descript/tr/quotes.txt
+%%DATADIR%%/dat/descript/tr/species.txt
 %%DATADIR%%/dat/descript/tr/tutorial.txt
 %%DATADIR%%/dat/descript/tr/unident.txt
 %%DATADIR%%/dat/descript/tr/unrand.txt
@@ -398,6 +409,7 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/zh/hints.txt
 %%DATADIR%%/dat/descript/zh/items.txt
 %%DATADIR%%/dat/descript/zh/monsters.txt
+%%DATADIR%%/dat/descript/zh/quotes.txt
 %%DATADIR%%/dat/descript/zh/skills.txt
 %%DATADIR%%/dat/descript/zh/species.txt
 %%DATADIR%%/dat/descript/zh/spells.txt
@@ -431,7 +443,7 @@ bin/stonesoup
 %%DATADIR%%/dat/dlua/layout/theme.lua
 %%DATADIR%%/dat/dlua/layout/vector.lua
 %%DATADIR%%/dat/dlua/layout/zonify.lua
-%%DATADIR%%/dat/dlua/lm_1way.lua
+%%DATADIR%%/dat/dlua/lm_%%LUA_VER_SH%%way.lua
 %%DATADIR%%/dat/dlua/lm_door.lua
 %%DATADIR%%/dat/dlua/lm_fog.lua
 %%DATADIR%%/dat/dlua/lm_items.lua
@@ -464,6 +476,7 @@ bin/stonesoup
 %%DATADIR%%/dat/dlua/v_paint.lua
 %%DATADIR%%/dat/dlua/v_rooms.lua
 %%DATADIR%%/dat/dlua/v_shapes.lua
+%%DATADIR%%/dat/dlua/vault.lua
 %%DATADIR%%/dat/dlua/ziggurat.lua
 %%SDL%%%%DATADIR%%/dat/tiles/feat.png
 %%SDL%%%%DATADIR%%/dat/tiles/floor.png
@@ -473,8 +486,10 @@ bin/stonesoup
 %%SDL%%%%DATADIR%%/dat/tiles/main.png
 %%SDL%%%%DATADIR%%/dat/tiles/player.png
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-32x32.png
-%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-512x512.png
+%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-%%LUA_VER_STR%%2x%%LUA_VER_STR%%2.png
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-win32.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_gastronok.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_mnoleg.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_dragon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_evil_mage.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_invasion.png
@@ -485,6 +500,7 @@ bin/stonesoup
 %%SDL%%%%DATADIR%%/dat/tiles/title_omndra_zot_demon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_pooryurik_knight.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_psiweapon_kiku.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_psiweapon_roxanne.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_shadyamish_octm.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_white_noise_entering_the_dungeon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_white_noise_grabbing_the_orb.png
@@ -513,7 +529,6 @@ bin/stonesoup
 %%DATADIR%%/docs/develop/tiles_creation.txt
 %%DATADIR%%/docs/develop/translation.txt
 %%DATADIR%%/docs/fight_simulator.txt
-%%DATADIR%%/docs/key_changes.txt
 %%DATADIR%%/docs/keybind.txt
 %%DATADIR%%/docs/license/cc0.txt
 %%DATADIR%%/docs/license/lgpl.txt
@@ -526,64 +541,67 @@ bin/stonesoup
 %%DATADIR%%/docs/quickstart.txt
 %%DATADIR%%/docs/ssh_guide.txt
 %%DATADIR%%/docs/tiles_help.txt
-%%DATADIR%%/settings/0.12_monster_glyphs.txt
+%%DATADIR%%/settings/0.%%LUA_VER_SH%%2_monster_glyphs.txt
+%%DATADIR%%/settings/0.%%LUA_VER_SH%%3_monster_glyphs.txt
 %%DATADIR%%/settings/0.9_monster_glyphs.txt
 %%DATADIR%%/settings/034_command_keys.txt
 %%DATADIR%%/settings/034_monster_glyphs.txt
 %%DATADIR%%/settings/052_monster_glyphs.txt
 %%DATADIR%%/settings/060_monster_glyphs.txt
-%%DATADIR%%/settings/071_monster_glyphs.txt
+%%DATADIR%%/settings/07%%LUA_VER_SH%%_monster_glyphs.txt
 %%DATADIR%%/settings/080_monster_glyphs.txt
 %%DATADIR%%/settings/advanced_optioneering.txt
+%%DATADIR%%/settings/colemak_command_keys.txt
 %%DATADIR%%/settings/dvorak_command_keys.txt
 %%DATADIR%%/settings/init.txt
 %%DATADIR%%/settings/no_vi_command_keys.txt
-@dirrmtry %%DATADIR%%/settings
-@dirrmtry %%DATADIR%%/docs/license
-@dirrmtry %%DATADIR%%/docs/develop/levels
-@dirrmtry %%DATADIR%%/docs/develop
-@dirrmtry %%DATADIR%%/docs
-%%SDL%%@dirrmtry %%DATADIR%%/dat/tiles
-@dirrmtry %%DATADIR%%/dat/dlua/layout
-@dirrmtry %%DATADIR%%/dat/dlua
-@dirrmtry %%DATADIR%%/dat/descript/zh
-@dirrmtry %%DATADIR%%/dat/descript/tr
-@dirrmtry %%DATADIR%%/dat/descript/ru
-@dirrmtry %%DATADIR%%/dat/descript/pt
-@dirrmtry %%DATADIR%%/dat/descript/pl
-@dirrmtry %%DATADIR%%/dat/descript/nl
-@dirrmtry %%DATADIR%%/dat/descript/lv
-@dirrmtry %%DATADIR%%/dat/descript/lt
-@dirrmtry %%DATADIR%%/dat/descript/ko
-@dirrmtry %%DATADIR%%/dat/descript/ja
-@dirrmtry %%DATADIR%%/dat/descript/it
-@dirrmtry %%DATADIR%%/dat/descript/hu
-@dirrmtry %%DATADIR%%/dat/descript/fr
-@dirrmtry %%DATADIR%%/dat/descript/fi
-@dirrmtry %%DATADIR%%/dat/descript/es
-@dirrmtry %%DATADIR%%/dat/descript/el
-@dirrmtry %%DATADIR%%/dat/descript/de
-@dirrmtry %%DATADIR%%/dat/descript/da
-@dirrmtry %%DATADIR%%/dat/descript/cs
-@dirrmtry %%DATADIR%%/dat/descript
-@dirrmtry %%DATADIR%%/dat/des/zotdef
-@dirrmtry %%DATADIR%%/dat/des/variable
-@dirrmtry %%DATADIR%%/dat/des/tutorial
-@dirrmtry %%DATADIR%%/dat/des/traps
-@dirrmtry %%DATADIR%%/dat/des/sprint
-@dirrmtry %%DATADIR%%/dat/des/serial
-@dirrmtry %%DATADIR%%/dat/des/portals
-@dirrmtry %%DATADIR%%/dat/des/entry
-@dirrmtry %%DATADIR%%/dat/des/builder
-@dirrmtry %%DATADIR%%/dat/des/branches
-@dirrmtry %%DATADIR%%/dat/des/altar
-@dirrmtry %%DATADIR%%/dat/des
-@dirrmtry %%DATADIR%%/dat/defaults
-@dirrmtry %%DATADIR%%/dat/database/pl
-@dirrmtry %%DATADIR%%/dat/database/el
-@dirrmtry %%DATADIR%%/dat/database
-@dirrmtry %%DATADIR%%/dat/clua
-@dirrmtry %%DATADIR%%/dat
-@dirrmtry %%DATADIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/dat/clua
+@dirrm %%DATADIR%%/dat/database/el
+@dirrm %%DATADIR%%/dat/database/pl
+@dirrm %%DATADIR%%/dat/database
+@dirrm %%DATADIR%%/dat/defaults
+@dirrm %%DATADIR%%/dat/des/altar
+@dirrm %%DATADIR%%/dat/des/arrival
+@dirrm %%DATADIR%%/dat/des/branches
+@dirrm %%DATADIR%%/dat/des/builder
+@dirrm %%DATADIR%%/dat/des/portals
+@dirrm %%DATADIR%%/dat/des/serial
+@dirrm %%DATADIR%%/dat/des/sprint
+@dirrm %%DATADIR%%/dat/des/test
+@dirrm %%DATADIR%%/dat/des/traps
+@dirrm %%DATADIR%%/dat/des/tutorial
+@dirrm %%DATADIR%%/dat/des/variable
+@dirrm %%DATADIR%%/dat/des/zotdef
+@dirrm %%DATADIR%%/dat/des
+@dirrm %%DATADIR%%/dat/descript/cs
+@dirrm %%DATADIR%%/dat/descript/da
+@dirrm %%DATADIR%%/dat/descript/de
+@dirrm %%DATADIR%%/dat/descript/el
+@dirrm %%DATADIR%%/dat/descript/es
+@dirrm %%DATADIR%%/dat/descript/fi
+@dirrm %%DATADIR%%/dat/descript/fr
+@dirrm %%DATADIR%%/dat/descript/hu
+@dirrm %%DATADIR%%/dat/descript/it
+@dirrm %%DATADIR%%/dat/descript/ja
+@dirrm %%DATADIR%%/dat/descript/ko
+@dirrm %%DATADIR%%/dat/descript/lt
+@dirrm %%DATADIR%%/dat/descript/lv
+@dirrm %%DATADIR%%/dat/descript/nl
+@dirrm %%DATADIR%%/dat/descript/pl
+@dirrm %%DATADIR%%/dat/descript/pt
+@dirrm %%DATADIR%%/dat/descript/ru
+@dirrm %%DATADIR%%/dat/descript/tr
+@dirrm %%DATADIR%%/dat/descript/zh
+@dirrm %%DATADIR%%/dat/descript
+@dirrm %%DATADIR%%/dat/dlua/layout
+@dirrm %%DATADIR%%/dat/dlua
+%%SDL%%@dirrm %%DATADIR%%/dat/tiles
+@dirrm %%DATADIR%%/dat
+@dirrm %%DATADIR%%/docs/develop/levels
+@dirrm %%DATADIR%%/docs/develop
+@dirrm %%DATADIR%%/docs/license
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/settings
+@dirrm %%DATADIR%%

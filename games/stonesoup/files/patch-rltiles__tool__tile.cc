@@ -1,6 +1,6 @@
---- ./rltiles/tool/tile.cc.orig	2013-09-30 20:32:00.000000000 +0200
-+++ ./rltiles/tool/tile.cc	2013-10-11 22:07:08.178890955 +0200
-@@ -125,10 +125,10 @@
+--- ./rltiles/tool/tile.cc.orig	2014-04-09 17:36:33.000000000 +0200
++++ ./rltiles/tool/tile.cc	2014-05-06 21:21:37.808135615 +0200
+@@ -123,10 +123,10 @@
              if (flags[x + y * m_width])
                  continue;
  
