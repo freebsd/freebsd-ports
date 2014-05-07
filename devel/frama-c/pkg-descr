@@ -13,4 +13,4 @@ code where an error can happen at run-time. And it allows its user to
 manipulate functional specifications, and to prove that the source code
 satisfies these specifications.
 
-WWW:	http://frama-c.com/index.html
+WWW: http://frama-c.com/index.html
