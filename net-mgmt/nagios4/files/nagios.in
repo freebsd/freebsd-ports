@@ -14,37 +14,37 @@
 # nagios_precache (bool):  Set to "NO" by default.
 #                          Set it to "YES" to enable pre-caching.
 # nagios_flags (str):      Set to "" by default.
-# nagios_configfile (str): Set to "%%PREFIX%%/etc/nagios/nagios.cfg" by default.
+# nagios_configfile (str): Set to "%%ETCDIR%%/nagios.cfg" by default.
 #
 
 . /etc/rc.subr
 
-name="nagios"
+name=nagios
 rcvar=nagios_enable
-
-command="%%PREFIX%%/bin/nagios"
-command_args="-d"
-extra_commands="reload configtest"
-pidfile="%%NAGIOSDIR%%/nagios.lock"
-nagios_user="%%NAGIOSUSER%%"
-
-start_precmd="start_precmd"
-stop_postcmd="stop_postcmd"
-restart_precmd="nagios_checkconfig"
-reload_precmd="reload_precmd"
-configtest_cmd="nagios_checkconfig"
-sig_reload=HUP
 
 load_rc_config "${name}"
 
-[ -z "${nagios_enable}" ]       && nagios_enable="NO"
-[ -z "${nagios_configfile}" ]   && nagios_configfile="%%PREFIX%%/etc/nagios/nagios.cfg"
-[ -z "${nagios_precache}" ]     && nagios_precache="NO"
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+restart_precmd=nagios_checkconfig
+reload_precmd=reload_precmd
+configtest_cmd=nagios_checkconfig
+sig_reload=HUP
+
+nagios_program=${nagios_program:-"%%PREFIX%%/bin/nagios"}	# Path to named, if you want a different one.
+command_args=${command_args:-"-d"}
+extra_commands=${extra_commands:-"reload configtest"}
+pidfile=${pidfile:-"%%NAGIOSDIR%%/nagios.lock"}
+nagios_user=${nagios_user:-"%%NAGIOSUSER%%"}
+nagios_group=${nagios_group:-"%%NAGIOSGROUP%%"}
+nagios_configfile=${nagios_configfile:-"%%ETCDIR%%/nagios.cfg"}
+nagios_precache=${nagios_precache:-"NO"}
 
 required_files="${nagios_configfile}"
 command_args="${command_args} ${nagios_configfile}"
 
-nagios_cacheconfig() {
+nagios_cacheconfig()
+{
   if ! checkyesno nagios_precache; then
     return 0
   fi
@@ -61,7 +61,8 @@ nagios_cacheconfig() {
   fi
 }
 
-nagios_checkconfig() {
+nagios_checkconfig()
+{
   echo -n "Performing sanity check of nagios configuration: "
   ${command} -v ${nagios_configfile} 2>&1 >/dev/null
   if [ $? != 0 ]; then
@@ -73,7 +74,8 @@ nagios_checkconfig() {
   fi
 }
 
-reload_precmd() {
+reload_precmd()
+{
   if ! nagios_checkconfig; then
     return 1
   fi
@@ -83,7 +85,8 @@ reload_precmd() {
   fi
 }
 
-start_precmd() {
+start_precmd()
+{
   if ! nagios_checkconfig; then
     return 1
   fi
@@ -96,7 +99,8 @@ start_precmd() {
   rm -f "%%NAGIOSDIR%%/rw/nagios.cmd"
 }
 
-stop_postcmd() {
+stop_postcmd()
+{
   rm -f "%%NAGIOSDIR%%/nagios.tmp" "%%NAGIOSDIR%%/rw/nagios.cmd"
 }
 
