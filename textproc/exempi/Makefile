@@ -4,22 +4,23 @@
 
 PORTNAME=	exempi
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A port of Adobe XMP SDK to work on UNIX
+COMMENT=	Port of Adobe XMP SDK to work on UNIX
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	ltverhack
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-unittest=no
 CONFIGURE_ENV=	LIBS="${ICONV_LIB}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		pathfix iconv
+USES=		pathfix iconv libtool:keepla
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
