@@ -6,4 +6,5 @@ include/uv.h
 lib/libuv.a
 lib/libuv.so
 lib/libuv.so.11
+lib/libuv.so.11.0.0
 libdata/pkgconfig/libuv.pc
