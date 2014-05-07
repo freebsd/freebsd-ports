@@ -17,16 +17,26 @@
 
 . /etc/rc.subr
 
-name="sssd"
+name=sssd
 rcvar=sssd_enable
-
-command="%%PREFIX%%/sbin/$name"
-sssd_flags="-f -D"
-pidfile="/var/run/$name.pid"
-required_files="%%PREFIX%%/etc/$name/$name.conf"
 
 # read configuration and set defaults
 load_rc_config "$name"
-: ${sssd_enable="NO"}
+
+: ${sssd_enable:=NO}
+: ${sssd_conf="%%PREFIX%%/etc/sssd/ssd.conf"}
+: ${sssd_flags="-f -D"}
+
+command="%%PREFIX%%/sbin/$name"
+pidfile="/var/run/$name.pid"
+required_files="${sssd_conf}"
+start_precmd=sssd_prestart
+
+sssd_prestart()
+{
+	for i in db/sss db/sss_mc log/sssd run/sss/krb5.include.d run/sss/private run/sss; do
+		if [ ! -d var/${i} ]; then mkdir -p /var/${i}; fi
+	done
+}
 
 run_rc_command "$1"

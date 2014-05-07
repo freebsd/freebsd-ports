@@ -3,7 +3,7 @@
 
 PORTNAME=	sssd
 DISTVERSION=	1.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=   https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -107,5 +107,11 @@ post-install:
 	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s nss_sss.so.2 nss_sss.so.1)
 	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s pam_sss.so pam_sss.so.5)
 	@${RM} -f ${STAGEDIR}${PREFIX}/lib/ldb/memberof.la
+
+	# clean these up from the install; we create them in rc script start_precmd
+.for VARDIRS in db/sss db/sss_mc log/sssd run/sss/krb5.include.d run/sss/private run/sss
+	@${RMDIR} ${STAGEDIR}/var/${VARDIRS}
+.endfor
+
 
 .include <bsd.port.post.mk>
