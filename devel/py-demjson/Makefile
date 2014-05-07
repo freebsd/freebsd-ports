@@ -13,8 +13,6 @@ COMMENT=	Encoder, Decoder, and Lint/Validator for JSON
 
 LICENSE=	LGPL3
 
-USE_PYTHON=	yes
-
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
