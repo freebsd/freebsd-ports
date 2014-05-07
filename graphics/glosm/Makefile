@@ -14,8 +14,7 @@ COMMENT=	3D OpenGL renderer for OpenStreetMap
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		tar:bzip2 cmake
 USE_GL=		gl
 USE_SDL=	sdl
 
