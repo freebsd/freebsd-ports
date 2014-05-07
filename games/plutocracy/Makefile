@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_SDL=	sdl pango
 USE_GL=		gl glu
 USE_PYTHON=	yes
