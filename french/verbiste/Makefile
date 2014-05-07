@@ -3,7 +3,7 @@
 
 PORTNAME=	verbiste
 PORTVERSION=	0.1.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french textproc
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
@@ -14,19 +14,16 @@ OPTIONS_DEFINE=	GTK2 GNOME
 
 LICENSE=	GPLv2
 
-USES=		pathfix pkgconfig iconv
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	ltverhack libxml2
+USES=		pathfix pkgconfig iconv libtool shebangfix
+SHEBANG_FILES=	${WRKSRC}/examples/*.pl
+GNU_CONFIGURE=	yes
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		french-conjugator.1 french-deconjugator.1
-MAN3=		verbiste.3
-MANLANG=	"" fr
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
@@ -53,10 +50,10 @@ PLIST_SUB+=	HASGUI="@comment "
 .endif
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in README *.java *.c
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
