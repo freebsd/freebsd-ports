@@ -11,8 +11,7 @@ MASTER_SITES=	http://www.level7.org.uk/chroma/download/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Abstract puzzle game
 
-USE_BZIP2=	yes
-USES=		gettext
+USES=		tar:bzip2 gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lintl"
 CPPFLAGS+=	-I${LOCALBASE}/include
