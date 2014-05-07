@@ -16,10 +16,9 @@ RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 
 CONFLICTS=	gitg-[0-9]*
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake pkgconfig pathfix
 GNU_CONFIGURE=	yes
-USE_GNOME=	gconf2 gtk20 gtksourceview2 gnomehack
-USES=		gmake pkgconfig
+USE_GNOME=	gconf2 gtk20 gtksourceview2
 
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	gitg.schemas
