@@ -18,13 +18,12 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-sc
 
 CONFLICTS=	gitg0-[0-9]*
 
-USE_XZ=		yes
+USES=		tar:xz gettext gmake pkgconfig pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-maintainer-mode \
 		--enable-compile-warnings=no
 USE_GNOME=	glib20 gtk30 gtksourceview3
-USES=		gettext gmake pkgconfig pathfix
 
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
