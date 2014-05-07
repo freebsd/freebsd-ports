@@ -7,6 +7,7 @@ lib/libgnomecups-1.0.a
 lib/libgnomecups-1.0.la
 lib/libgnomecups-1.0.so
 lib/libgnomecups-1.0.so.1
+lib/libgnomecups-1.0.so.1.0.0
 libdata/pkgconfig/libgnomecups-1.0.pc
 share/locale/ar/LC_MESSAGES/libgnomecups.mo
 share/locale/bg/LC_MESSAGES/libgnomecups.mo
