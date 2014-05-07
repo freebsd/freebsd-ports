@@ -1,6 +1,4 @@
 sbin/www6to4
-etc/www6to4/www6to4.conf.sample
-etc/www6to4/www6to4_forward.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm etc/www6to4
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@sample %%ETCDIR%%/www6to4.conf.sample
+@sample %%ETCDIR%%/www6to4_forward.conf.sample
+@dirrmtry %%ETCDIR%%

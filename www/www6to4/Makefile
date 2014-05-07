@@ -10,27 +10,28 @@ MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Lightweight http proxy to help IPv4 only browsers
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/}
 
 USE_RC_SUBR=	www6to4
 
-NO_STAGE=	yes
+PORTDOCS=	README
+
+ALL_TARGET=	www6to4
+
 post-patch:
-	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,' \
-		${WRKSRC}/www6to4.c
+	@${REINPLACE_CMD} -e 's,/etc,${ETCDIR},' \
+		${WRKSRC}/www6to4.c ${WRKSRC}/www6to4.conf
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/www6to4 ${PREFIX}/sbin
-	@if [ ! -d ${PREFIX}/etc/www6to4 ]; then \
-		${MKDIR} ${PREFIX}/etc/www6to4; fi
+	${INSTALL_PROGRAM} ${WRKSRC}/www6to4 ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/www6to4.conf \
-		${PREFIX}/etc/www6to4/www6to4.conf.sample
+		${STAGEDIR}${ETCDIR}/www6to4.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/www6to4_forward.conf \
-		${PREFIX}/etc/www6to4/www6to4_forward.conf.sample
-.if !defined(NOPORTDOCS)
-	if [ ! -d ${DOCSDIR} ]; then \
-		${MKDIR} ${DOCSDIR}; fi
-	${INSTALL_DATA} ${WRKSRC}/README \
-		${DOCSDIR}
-.endif
+		${STAGEDIR}${ETCDIR}/www6to4_forward.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
