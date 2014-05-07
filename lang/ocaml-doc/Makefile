@@ -16,6 +16,9 @@ EXTRACT_ONLY=	${DISTNAME}-refman-html.tar.gz
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Documentation (HTML, PS) for the Objective Caml
 
+DEPRECATED=	Documentation is now included in lang/ocaml
+EXPIRATION_DATE=2014-06-01
+
 NO_BUILD=	yes
 
 PORTDOCS=	${DISTNAME:R}-refman.ps \
@@ -26,14 +29,13 @@ PORTDOCS=	${DISTNAME:R}-refman.ps \
 IGNORE=		installs only documentation and you have NOPORTDOCS defined
 .endif
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DOCSDIR}/html/libref
-	cd ${WRKDIR}/htmlman/libref && ${INSTALL_DATA} * ${DOCSDIR}/html/libref
-	cd ${WRKDIR}/htmlman && ${INSTALL_DATA} [a-km-z]* libg* ${DOCSDIR}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html/libref
+	cd ${WRKDIR}/htmlman/libref && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/html/libref
+	cd ${WRKDIR}/htmlman && ${INSTALL_DATA} [a-km-z]* libg* ${STAGEDIR}${DOCSDIR}/html
 	cp ${DISTDIR}/${DISTNAME:R}-refman.ps.gz ${WRKDIR}
 	${GUNZIP_CMD} ${WRKDIR}/${DISTNAME:R}-refman.ps.gz
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME:R}-refman.ps ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME:R}-refman.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME:R}-refman.ps ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME:R}-refman.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
