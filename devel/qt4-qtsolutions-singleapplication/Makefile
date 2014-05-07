@@ -13,7 +13,7 @@ MAINTAINER=	yurkis@gmail.com
 COMMENT=	Qt 4 Solutions Single Application Framework
 
 USES=		qmake
-USE_QT4=	moc_build rcc_build uic_build gui network
+USE_QT4?=	moc_build rcc_build uic_build gui network
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/qt-solutions-qt-solutions/${SUB_PROJECT_NAME}
