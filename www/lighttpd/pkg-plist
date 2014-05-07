@@ -1,174 +1,60 @@
-@unexec if cmp -s %D/etc/lighttpd/lighttpd.conf %D/etc/lighttpd/lighttpd.conf.sample; then rm -f %D/etc/lighttpd/lighttpd.conf; fi
-etc/lighttpd/lighttpd.conf.sample
-@exec [ -f %B/lighttpd.conf ] || cp %B/%f %B/lighttpd.conf
-@unexec if cmp -s %D/etc/lighttpd/modules.conf %D/etc/lighttpd/modules.conf.sample; then rm -f %D/etc/lighttpd/modules.conf; fi
-etc/lighttpd/modules.conf.sample
-@exec [ -f %B/modules.conf ] || cp %B/%f %B/modules.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/access_log.conf %D/etc/lighttpd/conf.d/access_log.conf.sample; then rm -f %D/etc/lighttpd/conf.d/access_log.conf; fi
-etc/lighttpd/conf.d/access_log.conf.sample
-@exec [ -f %B/access_log.conf ] || cp %B/%f %B/access_log.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/auth.conf %D/etc/lighttpd/conf.d/auth.conf.sample; then rm -f %D/etc/lighttpd/conf.d/auth.conf; fi
-etc/lighttpd/conf.d/auth.conf.sample
-@exec [ -f %B/auth.conf ] || cp %B/%f %B/auth.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/cgi.conf %D/etc/lighttpd/conf.d/cgi.conf.sample; then rm -f %D/etc/lighttpd/conf.d/cgi.conf; fi
-etc/lighttpd/conf.d/cgi.conf.sample
-@exec [ -f %B/cgi.conf ] || cp %B/%f %B/cgi.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/cml.conf %D/etc/lighttpd/conf.d/cml.conf.sample; then rm -f %D/etc/lighttpd/conf.d/cml.conf; fi
-etc/lighttpd/conf.d/cml.conf.sample
-@exec [ -f %B/cml.conf ] || cp %B/%f %B/cml.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/compress.conf %D/etc/lighttpd/conf.d/compress.conf.sample; then rm -f %D/etc/lighttpd/conf.d/compress.conf; fi
-etc/lighttpd/conf.d/compress.conf.sample
-@exec [ -f %B/compress.conf ] || cp %B/%f %B/compress.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/debug.conf %D/etc/lighttpd/conf.d/debug.conf.sample; then rm -f %D/etc/lighttpd/conf.d/debug.conf; fi
-etc/lighttpd/conf.d/debug.conf.sample
-@exec [ -f %B/debug.conf ] || cp %B/%f %B/debug.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/dirlisting.conf %D/etc/lighttpd/conf.d/dirlisting.conf.sample; then rm -f %D/etc/lighttpd/conf.d/dirlisting.conf; fi
-etc/lighttpd/conf.d/dirlisting.conf.sample
-@exec [ -f %B/dirlisting.conf ] || cp %B/%f %B/dirlisting.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/evhost.conf %D/etc/lighttpd/conf.d/evhost.conf.sample; then rm -f %D/etc/lighttpd/conf.d/evhost.conf; fi
-etc/lighttpd/conf.d/evhost.conf.sample
-@exec [ -f %B/evhost.conf ] || cp %B/%f %B/evhost.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/expire.conf %D/etc/lighttpd/conf.d/expire.conf.sample; then rm -f %D/etc/lighttpd/conf.d/expire.conf; fi
-etc/lighttpd/conf.d/expire.conf.sample
-@exec [ -f %B/expire.conf ] || cp %B/%f %B/expire.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/fastcgi.conf %D/etc/lighttpd/conf.d/fastcgi.conf.sample; then rm -f %D/etc/lighttpd/conf.d/fastcgi.conf; fi
-etc/lighttpd/conf.d/fastcgi.conf.sample
-@exec [ -f %B/fastcgi.conf ] || cp %B/%f %B/fastcgi.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/magnet.conf %D/etc/lighttpd/conf.d/magnet.conf.sample; then rm -f %D/etc/lighttpd/conf.d/magnet.conf; fi
-etc/lighttpd/conf.d/magnet.conf.sample
-@exec [ -f %B/magnet.conf ] || cp %B/%f %B/magnet.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/mime.conf %D/etc/lighttpd/conf.d/mime.conf.sample; then rm -f %D/etc/lighttpd/conf.d/mime.conf; fi
-etc/lighttpd/conf.d/mime.conf.sample
-@exec [ -f %B/mime.conf ] || cp %B/%f %B/mime.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/mysql_vhost.conf %D/etc/lighttpd/conf.d/mysql_vhost.conf.sample; then rm -f %D/etc/lighttpd/conf.d/mysql_vhost.conf; fi
-etc/lighttpd/conf.d/mysql_vhost.conf.sample
-@exec [ -f %B/mysql_vhost.conf ] || cp %B/%f %B/mysql_vhost.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/proxy.conf %D/etc/lighttpd/conf.d/proxy.conf.sample; then rm -f %D/etc/lighttpd/conf.d/proxy.conf; fi
-etc/lighttpd/conf.d/proxy.conf.sample
-@exec [ -f %B/proxy.conf ] || cp %B/%f %B/proxy.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/rrdtool.conf %D/etc/lighttpd/conf.d/rrdtool.conf.sample; then rm -f %D/etc/lighttpd/conf.d/rrdtool.conf; fi
-etc/lighttpd/conf.d/rrdtool.conf.sample
-@exec [ -f %B/rrdtool.conf ] || cp %B/%f %B/rrdtool.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/scgi.conf %D/etc/lighttpd/conf.d/scgi.conf.sample; then rm -f %D/etc/lighttpd/conf.d/scgi.conf; fi
-etc/lighttpd/conf.d/scgi.conf.sample
-@exec [ -f %B/scgi.conf ] || cp %B/%f %B/scgi.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/secdownload.conf %D/etc/lighttpd/conf.d/secdownload.conf.sample; then rm -f %D/etc/lighttpd/conf.d/secdownload.conf; fi
-etc/lighttpd/conf.d/secdownload.conf.sample
-@exec [ -f %B/secdownload.conf ] || cp %B/%f %B/secdownload.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/simple_vhost.conf %D/etc/lighttpd/conf.d/simple_vhost.conf.sample; then rm -f %D/etc/lighttpd/conf.d/simple_vhost.conf; fi
-etc/lighttpd/conf.d/simple_vhost.conf.sample
-@exec [ -f %B/simple_vhost.conf ] || cp %B/%f %B/simple_vhost.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/ssi.conf %D/etc/lighttpd/conf.d/ssi.conf.sample; then rm -f %D/etc/lighttpd/conf.d/ssi.conf; fi
-etc/lighttpd/conf.d/ssi.conf.sample
-@exec [ -f %B/ssi.conf ] || cp %B/%f %B/ssi.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/status.conf %D/etc/lighttpd/conf.d/status.conf.sample; then rm -f %D/etc/lighttpd/conf.d/status.conf; fi
-etc/lighttpd/conf.d/status.conf.sample
-@exec [ -f %B/status.conf ] || cp %B/%f %B/status.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/trigger_b4_dl.conf %D/etc/lighttpd/conf.d/trigger_b4_dl.conf.sample; then rm -f %D/etc/lighttpd/conf.d/trigger_b4_dl.conf; fi
-etc/lighttpd/conf.d/trigger_b4_dl.conf.sample
-@exec [ -f %B/trigger_b4_dl.conf ] || cp %B/%f %B/trigger_b4_dl.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/userdir.conf %D/etc/lighttpd/conf.d/userdir.conf.sample; then rm -f %D/etc/lighttpd/conf.d/userdir.conf; fi
-etc/lighttpd/conf.d/userdir.conf.sample
-@exec [ -f %B/userdir.conf ] || cp %B/%f %B/userdir.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/webdav.conf %D/etc/lighttpd/conf.d/webdav.conf.sample; then rm -f %D/etc/lighttpd/conf.d/webdav.conf; fi
-etc/lighttpd/conf.d/webdav.conf.sample
-@exec [ -f %B/webdav.conf ] || cp %B/%f %B/webdav.conf
+@sample etc/lighttpd/lighttpd.conf.sample
+@sample etc/lighttpd/modules.conf.sample
+@sample etc/lighttpd/conf.d/access_log.conf.sample
+@sample etc/lighttpd/conf.d/auth.conf.sample
+@sample etc/lighttpd/conf.d/cml.conf.sample
+@sample etc/lighttpd/conf.d/cgi.conf.sample
+@sample etc/lighttpd/conf.d/compress.conf.sample
+@sample etc/lighttpd/conf.d/debug.conf.sample
+@sample etc/lighttpd/conf.d/dirlisting.conf.sample
+@sample etc/lighttpd/conf.d/evhost.conf.sample
+@sample etc/lighttpd/conf.d/expire.conf.sample
+@sample etc/lighttpd/conf.d/fastcgi.conf.sample
+@sample etc/lighttpd/conf.d/magnet.conf.sample
+@sample etc/lighttpd/conf.d/mime.conf.sample
+@sample etc/lighttpd/conf.d/mysql_vhost.conf.sample
+@sample etc/lighttpd/conf.d/proxy.conf.sample
+@sample etc/lighttpd/conf.d/rrdtool.conf.sample
+@sample etc/lighttpd/conf.d/scgi.conf.sample
+@sample etc/lighttpd/conf.d/secdownload.conf.sample
+@sample etc/lighttpd/conf.d/simple_vhost.conf.sample
+@sample etc/lighttpd/conf.d/ssi.conf.sample
+@sample etc/lighttpd/conf.d/status.conf.sample
+@sample etc/lighttpd/conf.d/trigger_b4_dl.conf.sample
+@sample etc/lighttpd/conf.d/userdir.conf.sample
+@sample etc/lighttpd/conf.d/webdav.conf.sample
 etc/lighttpd/vhosts.d/vhosts.template
-lib/lighttpd/mod_access.a
-lib/lighttpd/mod_access.la
 lib/lighttpd/mod_access.so
-lib/lighttpd/mod_accesslog.a
-lib/lighttpd/mod_accesslog.la
 lib/lighttpd/mod_accesslog.so
-lib/lighttpd/mod_alias.a
-lib/lighttpd/mod_alias.la
 lib/lighttpd/mod_alias.so
-lib/lighttpd/mod_auth.a
-lib/lighttpd/mod_auth.la
 lib/lighttpd/mod_auth.so
-lib/lighttpd/mod_cgi.a
-lib/lighttpd/mod_cgi.la
 lib/lighttpd/mod_cgi.so
-lib/lighttpd/mod_cml.a
-lib/lighttpd/mod_cml.la
 lib/lighttpd/mod_cml.so
-lib/lighttpd/mod_compress.a
-lib/lighttpd/mod_compress.la
 lib/lighttpd/mod_compress.so
-lib/lighttpd/mod_dirlisting.a
-lib/lighttpd/mod_dirlisting.la
 lib/lighttpd/mod_dirlisting.so
-lib/lighttpd/mod_evasive.a
-lib/lighttpd/mod_evasive.la
 lib/lighttpd/mod_evasive.so
-lib/lighttpd/mod_evhost.a
-lib/lighttpd/mod_evhost.la
 lib/lighttpd/mod_evhost.so
-lib/lighttpd/mod_expire.a
-lib/lighttpd/mod_expire.la
 lib/lighttpd/mod_expire.so
-lib/lighttpd/mod_extforward.a
-lib/lighttpd/mod_extforward.la
 lib/lighttpd/mod_extforward.so
-lib/lighttpd/mod_fastcgi.a
-lib/lighttpd/mod_fastcgi.la
 lib/lighttpd/mod_fastcgi.so
-lib/lighttpd/mod_flv_streaming.a
-lib/lighttpd/mod_flv_streaming.la
 lib/lighttpd/mod_flv_streaming.so
-lib/lighttpd/mod_indexfile.a
-lib/lighttpd/mod_indexfile.la
 lib/lighttpd/mod_indexfile.so
-lib/lighttpd/mod_magnet.a
-lib/lighttpd/mod_magnet.la
 lib/lighttpd/mod_magnet.so
-lib/lighttpd/mod_mysql_vhost.a
-lib/lighttpd/mod_mysql_vhost.la
 lib/lighttpd/mod_mysql_vhost.so
-lib/lighttpd/mod_proxy.a
-lib/lighttpd/mod_proxy.la
 lib/lighttpd/mod_proxy.so
-lib/lighttpd/mod_redirect.a
-lib/lighttpd/mod_redirect.la
 lib/lighttpd/mod_redirect.so
-lib/lighttpd/mod_rewrite.a
-lib/lighttpd/mod_rewrite.la
 lib/lighttpd/mod_rewrite.so
-lib/lighttpd/mod_rrdtool.a
-lib/lighttpd/mod_rrdtool.la
 lib/lighttpd/mod_rrdtool.so
-lib/lighttpd/mod_scgi.a
-lib/lighttpd/mod_scgi.la
 lib/lighttpd/mod_scgi.so
-lib/lighttpd/mod_secdownload.a
-lib/lighttpd/mod_secdownload.la
 lib/lighttpd/mod_secdownload.so
-lib/lighttpd/mod_setenv.a
-lib/lighttpd/mod_setenv.la
 lib/lighttpd/mod_setenv.so
-lib/lighttpd/mod_simple_vhost.a
-lib/lighttpd/mod_simple_vhost.la
 lib/lighttpd/mod_simple_vhost.so
-lib/lighttpd/mod_ssi.a
-lib/lighttpd/mod_ssi.la
 lib/lighttpd/mod_ssi.so
-lib/lighttpd/mod_staticfile.a
-lib/lighttpd/mod_staticfile.la
 lib/lighttpd/mod_staticfile.so
-lib/lighttpd/mod_status.a
-lib/lighttpd/mod_status.la
 lib/lighttpd/mod_status.so
-lib/lighttpd/mod_trigger_b4_dl.a
-lib/lighttpd/mod_trigger_b4_dl.la
 lib/lighttpd/mod_trigger_b4_dl.so
-lib/lighttpd/mod_userdir.a
-lib/lighttpd/mod_userdir.la
 lib/lighttpd/mod_userdir.so
-lib/lighttpd/mod_usertrack.a
-lib/lighttpd/mod_usertrack.la
 lib/lighttpd/mod_usertrack.so
-lib/lighttpd/mod_webdav.a
-lib/lighttpd/mod_webdav.la
 lib/lighttpd/mod_webdav.so
 man/man8/lighttpd.8.gz
 sbin/lighttpd
