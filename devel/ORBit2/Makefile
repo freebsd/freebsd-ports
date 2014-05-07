@@ -30,6 +30,8 @@ post-patch:
 		${WRKSRC}/src/orb/orb-core/orbit-typelib.c
 	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure ${WRKSRC}/linc2/src/Makefile.in
+	@${REINPLACE_CMD} '/DESTDIR.*RANLIB/d' \
+		${WRKSRC}/src/services/name/Makefile.in
 
 post-install:
 	@${ECHO_CMD} "ORBIIOPIPv4=0" > ${STAGEDIR}${PREFIX}/etc/orbit2rc.sample
