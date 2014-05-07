@@ -50,12 +50,13 @@ PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 MAKE_ENV+=	LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
 SUB_FILES=	pkg-message
 
-USE_AUTOTOOLS=	autoconf automake aclocal libtool
+USE_AUTOTOOLS=	autoconf automake aclocal
 AUTOMAKE_ARGS= --add-missing
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_OPENLDAP=	yes
-USES=		gettext gmake iconv pkgconfig
+USES=		gettext gmake iconv pkgconfig shebangfix libtool
+SHEBANG_FILES=	src/tools/sss_obfuscate
 
 USE_RC_SUBR=	${PORTNAME}
 PORTDATA=	*
