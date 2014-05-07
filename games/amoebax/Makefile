@@ -17,21 +17,16 @@ LICENSE_NAME_FAL=	Free Art License, version 1.2
 LICENSE_FILE_FAL=	${WRKSRC}/COPYING.LAL
 LICENSE_PERMS_FAL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
-USES=		gmake
 USE_SDL=	sdl mixer image
 
 PORTDOCS=	*
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|doc||' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|datarootdir|datadir|' ${WRKSRC}/data/Makefile.in
-	@${FIND} ${WRKSRC}/ -name Makefile.in|${XARGS}\
-		${REINPLACE_CMD} -e '/^pkgdatadir =/s|=.*|= ${DATADIR}|'
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/manual.pdf ${STAGEDIR}${DOCSDIR}
+post-patch:
+	@${REINPLACE_CMD} -e 's|datarootdir|datadir|' \
+		${WRKSRC}/data/Makefile.in ${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>
