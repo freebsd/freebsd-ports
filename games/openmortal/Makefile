@@ -12,11 +12,10 @@ COMMENT=	A parody of the once popular coin-up fighting game, Mortal Kombat
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 dos2unix perl5
 GNU_CONFIGURE=	yes
-USES=		perl5
 USE_SDL=	mixer image sdl net
-USE_DOS2UNIX=	src/gfx.cpp
+DOS2UNIX_FILES=	src/gfx.cpp
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*

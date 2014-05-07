@@ -11,8 +11,7 @@ MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A rewritten engine for Flashback
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		tar:bzip2 gmake
 USE_SDL=	sdl
 
 ALL_TARGET=	rs

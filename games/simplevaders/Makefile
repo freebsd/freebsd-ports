@@ -13,7 +13,7 @@ COMMENT=	A Space-Invaders like 2D space shooter
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 

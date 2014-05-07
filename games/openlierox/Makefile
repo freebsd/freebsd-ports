@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libalut.so:${PORTSDIR}/audio/freealut
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 cmake openal pkgconfig
 USE_SDL=	sdl image
 USE_GNOME=	libxml2
 USE_GCC=	any # too many gcc'isms
@@ -26,7 +26,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USES=		cmake openal pkgconfig
 CMAKE_ARGS=	-DHAWKNL_BUILTIN=YES \
 		-DLIBZIP_BUILTIN=YES \
 		-DBREAKPAD=NO \

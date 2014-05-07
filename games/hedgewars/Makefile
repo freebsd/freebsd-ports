@@ -18,8 +18,7 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	depends on fpc which is only available for i386 and amd64
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		tar:bzip2 cmake
 USE_SDL=	sdl mixer image ttf net
 USE_FPC=	opengl libpng
 USE_LUA=	5.1+

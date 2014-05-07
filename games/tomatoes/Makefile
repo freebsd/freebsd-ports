@@ -15,10 +15,9 @@ COMMENT=	Tomato-smashing, Q-Bert style
 WRKSRC=		${WRKDIR}/tomatoes-${PORTVERSION}5
 TDATA=		${WRKDIR}/tomatoes-${PORTVERSION}
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake
 USE_SDL=	mixer image
 USE_GL=		gl
-USES=		gmake
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CXX}" \
 		MPKDIR="${DATADIR}/" \

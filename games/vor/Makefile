@@ -11,9 +11,8 @@ MASTER_SITES=	http://qualdan.com/vor/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Dodge the rocks until you die
 
-USES=		gmake
+USES=		tar:bzip2 gmake
 USE_SDL=	mixer image sdl
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -29,12 +28,8 @@ DESKTOP_ENTRIES="Variations on Rockdodger" \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
