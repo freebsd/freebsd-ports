@@ -11,23 +11,21 @@ COMMENT=	Main Memory Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GMAKE=	yes
+OPTIONS_DEFINE=	DOCS
+
+USES=		gmake dos2unix
+USE_GCC=	any
 MAKE_ENV=	OSTYPE="${OPSYS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	${MAKEFILE}
+DOS2UNIX_FILES=	${MAKEFILE}
 
 PORTDOCS=	FastDB.htm
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/FastDB.htm ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/FastDB.htm ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
