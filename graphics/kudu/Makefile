@@ -14,9 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 pkgconfig
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
 USE_GL=		gl
 USE_PYTHON=	yes
 

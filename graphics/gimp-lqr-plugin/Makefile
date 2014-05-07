@@ -14,9 +14,8 @@ COMMENT=	Liquid rescale GIMP plug-in
 LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app \
 		liblqr-1.so:${PORTSDIR}/graphics/liblqr-1
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins

@@ -14,10 +14,9 @@ COMMENT=	A simple application for finding paths in different subways maps
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+USES=		tar:bzip2 gettext gmake
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
-USE_BZIP2=	yes
-USES=		gettext gmake
 
 PORTDOCS=	AUTHORS NEWS README README.data TODO
 

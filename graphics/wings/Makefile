@@ -22,8 +22,7 @@ MAKE_JOBS_UNSAFE=yes
 
 SUB_FILES=	${PORTNAME}.sh
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		tar:bzip2 gmake
 
 PORTSCOUT=	limitw:1,even
 

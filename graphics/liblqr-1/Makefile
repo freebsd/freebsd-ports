@@ -11,9 +11,8 @@ MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An easy to use C/C++ seam carving library
 
+USES=		tar:bzip2 gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

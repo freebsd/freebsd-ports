@@ -14,9 +14,8 @@ LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 pathfix gmake
 GNU_CONFIGURE=	yes
-USES=		pathfix gmake
 USE_GL=		gl glu glut
 USE_LDCONFIG=	yes
 
