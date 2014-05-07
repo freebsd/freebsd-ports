@@ -3,6 +3,7 @@
 
 PORTNAME=	gettext
 PORTVERSION=	0.18.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -13,7 +14,7 @@ MASTER_SITE_SUBDIR=	gettext
 MAINTAINER=	autotools@FreeBSD.org
 COMMENT=	GNU gettext package
 
-USES=		charsetfix iconv
+USES=		charsetfix iconv libtool:oldver
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-csharp --disable-java \
 		--disable-openmp --disable-threads \
