@@ -1750,7 +1750,6 @@ lib/scribes/GenericPlugins/OpenFile/Trigger.pyo
 lib/scribes/GenericPlugins/OpenFile/__init__.py
 lib/scribes/GenericPlugins/OpenFile/__init__.pyc
 lib/scribes/GenericPlugins/OpenFile/__init__.pyo
-lib/scribes/GenericPlugins/Paragraph/.__junk
 lib/scribes/GenericPlugins/Paragraph/Manager.py
 lib/scribes/GenericPlugins/Paragraph/Manager.pyc
 lib/scribes/GenericPlugins/Paragraph/Manager.pyo
@@ -2301,7 +2300,6 @@ lib/scribes/GenericPlugins/SaveFile/Trigger.pyo
 lib/scribes/GenericPlugins/SaveFile/__init__.py
 lib/scribes/GenericPlugins/SaveFile/__init__.pyc
 lib/scribes/GenericPlugins/SaveFile/__init__.pyo
-lib/scribes/GenericPlugins/ScrollNavigation/.__junk
 lib/scribes/GenericPlugins/ScrollNavigation/Manager.py
 lib/scribes/GenericPlugins/ScrollNavigation/Manager.pyc
 lib/scribes/GenericPlugins/ScrollNavigation/Manager.pyo
