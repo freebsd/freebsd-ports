@@ -3,7 +3,7 @@
 
 PORTNAME=	oxim
 PORTVERSION=	1.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 		ftp://140.111.128.66/odp/OXIM/Source/
@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Open X Input Method server
 
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/fireflysung.ttf:${PORTSDIR}/chinese/fireflyttf
 
 OPTIONS_DEFINE=	GTK2 CHEWING UNICODE
@@ -20,13 +21,13 @@ CHEWING_DESC=	 Chewing input module
 UNICODE_DESC=	 Unicode input module
 
 USES=		iconv pkgconfig
-USE_XORG=	x11 xft xpm xtst
+USE_XORG=	x11 xft xpm xtst xext
 WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} -lfontconfig -lXext
 CONFIGURE_ARGS+=--disable-bimsphone-module \
 		--disable-static \
 		--with-conf-dir=${PREFIX}/etc/${PORTNAME} \
