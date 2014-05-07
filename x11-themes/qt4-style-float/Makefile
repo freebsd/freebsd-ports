@@ -15,8 +15,7 @@ COMMENT=	Style for Qt 4 and KDE
 
 LICENSE=	GPLv2
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 qmake
 USE_QT4=	corelib gui moc_build rcc_build
 
 WRKSRC=		${WRKDIR}/floatstyle-${PORTVERSION}

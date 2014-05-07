@@ -17,11 +17,10 @@ LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libvigraimpex.so:${PORTSDIR}/graphics/vigra
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 cmake
 USE_XORG=	x11 xext sm ice xxf86vm
 USE_QT4=	corelib gui qt3support assistantclient \
 		linguist_build qmake_build moc_build uic_build rcc_build
-USES=		cmake
 
 CMAKE_ARGS=	-DQTTRANS_LRELEASE_EXECUTABLE="${LOCALBASE}/bin/lrelease-qt4"
 
