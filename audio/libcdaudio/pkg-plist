@@ -1,8 +1,8 @@
 bin/libcdaudio-config
 include/cdaudio.h
 lib/libcdaudio.a
-lib/libcdaudio.la
 lib/libcdaudio.so
 lib/libcdaudio.so.1
+lib/libcdaudio.so.1.0.0
 libdata/pkgconfig/libcdaudio.pc
 share/aclocal/libcdaudio.m4
