@@ -76,7 +76,7 @@ PLIST_SUB+=		LOGROOT="${LIGHTTPD_LOGROOT}" \
 
 .endif # !defined(_BUILDING_LIGHTTPD_MODULE)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 # Default REQUIRE to rc.d script
@@ -88,7 +88,7 @@ PORTDOCS=	${DOCS}
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-openssl \
 			--with-openssl-includes=${OPENSSLINC} \
 			--with-openssl-libs=${OPENSSLLIB}
@@ -227,4 +227,4 @@ regression-test: test
 
 .endif # !defined(_BUILDING_LIGHTTPD_MODULE)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
