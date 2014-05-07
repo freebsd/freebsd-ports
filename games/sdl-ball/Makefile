@@ -13,12 +13,11 @@ COMMENT=	Arkanoid/Breakout clone with pretty graphics
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 dos2unix gmake
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 MAKE_ENV=	DATADIR=${DATADIR}/
-USE_DOS2UNIX=	main.cpp
+DOS2UNIX_FILES=	main.cpp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -27,8 +26,6 @@ PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-build:
 	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} `${SDL_CONFIG} --cflags --libs` \
@@ -39,9 +36,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/themes && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

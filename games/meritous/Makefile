@@ -14,11 +14,10 @@ COMMENT=	Action-adventure dungeon crawl game
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		tar:bzip2 dos2unix gmake
 USE_SDL=	sdl mixer image
 ALL_TARGET=	default
-USE_DOS2UNIX=	dat/d/helpfile.txt src/*.c
+DOS2UNIX_FILES=	dat/d/helpfile.txt src/boss.c src/levelblit.c
 
 PLIST_FILES=	bin/${PORTNAME}
 
