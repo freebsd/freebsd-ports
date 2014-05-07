@@ -13,9 +13,8 @@ COMMENT=	Single- and multi-player first-person shooter based on Cube 2
 
 LICENSE=	ZLIB
 
-USES=		gmake
+USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
 BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -11,12 +11,12 @@ DISTNAME=	bennugd-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High level open source game development suite, core libs
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 dos2unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --bindir="${PREFIX}/libexec"
 SUB_FILES=	bgdc bgdi
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	*.c *.h
+DOS2UNIX_GLOB=	*.c *.h
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	Segfaults on !i386

@@ -15,8 +15,7 @@ COMMENT=	Python bindings for The Open Dynamics Engine
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
-USE_BZIP2=	yes
-
+USES=		tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	PyODE
