@@ -25,7 +25,7 @@ USE_GNOME=	libxml2
 USE_PYTHON=	yes
 USE_QT4=	corelib moc_build uic_build rcc_build gui opengl xml network qmake_build \
 		designer assistant assistantclient
-CXXFLAGS+=	-fPIC -I${LOCALBASE}/include -DNDEBUG -g -O0
+CXXFLAGS+=	-fPIC -I${LOCALBASE}/include -DNDEBUG -DOGDF_DLL
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DPYTHON_INCLUDEDIR:PATH=${PYTHON_INCLUDEDIR} \
     		-DLOCALBASE:PATH=${LOCALBASE} \
