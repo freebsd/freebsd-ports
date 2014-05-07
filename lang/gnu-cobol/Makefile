@@ -1,0 +1,33 @@
+# Created by: ijliao
+# $FreeBSD$
+
+PORTNAME=	gnu-cobol
+PORTVERSION=	1.1
+CATEGORIES=	lang
+MASTER_SITES=	GNU/gnucobol
+
+MAINTAINER=	johans@FreeBSD.org
+COMMENT=	Open-source COBOL compiler
+
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+
+USE_BDB=	yes
+USES=		gmake libtool
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+
+INFO=		gnu-cobol
+
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+CONFIGURE_ENABLE=nls
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|__gmp_randinit|__gmpz_init|g ; \
+		 s|db-4.[0-9]|${BDB_LIB_NAME}|g' ${WRKSRC}/configure
+
+.include <bsd.port.mk>
