@@ -18,10 +18,9 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
-USE_XZ=		yes
+USES=		tar:xz cmake openal
 USE_SDL=	sdl
 USE_GL=		gl glu
-USES=		cmake openal
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" -DDATA_DIR=arx
 
 SUB_FILES=	pkg-message
