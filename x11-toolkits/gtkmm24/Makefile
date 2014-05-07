@@ -13,7 +13,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+
 
-USES=		tar:xz
+USES+=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
