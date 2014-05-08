@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.3.10
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -116,7 +117,8 @@ CONFIGURE_ARGS+=--build-headless
 
 .if ${PORT_OPTIONS:MQT4}
 QT_NONSTANDARD=	yes
-USE_QT4=	gui network moc_build opengl uic_build rcc_build linguist
+USE_QT4=	linguist_build moc_build rcc_build uic_build
+USE_QT4+=	gui network opengl
 INSTALLS_ICONS=	yes
 VBOX_FRONTENDS+=VirtualBox VBoxTestOGL
 .else
