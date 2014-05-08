@@ -17,6 +17,8 @@ LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 OPTIONS_DEFINE=	X11
 OPTIONS_SUB=	yes
 
