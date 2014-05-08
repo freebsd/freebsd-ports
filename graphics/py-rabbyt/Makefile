@@ -15,7 +15,6 @@ COMMENT=	Fast sprite library for Python
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	Rabbyt
 PYDISTUTILS_ARCHDEP=	yes
 USE_GL=			gl glu
 
