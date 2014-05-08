@@ -11,11 +11,11 @@ DISTNAME=	StructureSynth-Source-v${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Rule-based 3D structure generator
 
-USES=		qmake zip
+USES=		qmake zip dos2unix
 USE_GL=		glu
 USE_QT4=	corelib gui opengl moc_build rcc_build xml script
 WRKSRC=		${WRKDIR}/structure-synth
-USE_DOS2UNIX=	*.cpp *.h
+DOS2UNIX_GLOB=	*.cpp *.h
 
 post-extract:
 	@${MV} "${WRKDIR}/Structure Synth Source Code" ${WRKSRC}
