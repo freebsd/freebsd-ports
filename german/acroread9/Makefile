@@ -10,5 +10,4 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 
 ADOBE_LANG=	DEU
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

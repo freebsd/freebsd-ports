@@ -20,9 +20,9 @@ LICENSE_PERMS=	auto-accept
 
 RUN_DEPENDS=	acroreadwrapper>=0.0.20110529:${PORTSDIR}/print/acroreadwrapper
 
+USES=		tar:bzip2
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
-USE_BZIP2=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	cups-libs gdkpixbuf gtk2 libgcrypt libgpg-error libxml2 pango
 USE_LDCONFIG=	yes
@@ -49,7 +49,7 @@ LANGCODE=	chs:zh_CN cht:zh_TW dan:da_DK deu:de_DE enu:en_US \
 ADOBE_LANG?=	ENU
 .for L in ${ADOBE_LANG:tl}
 LOCALE_NAME=	${LANGCODE:M${L}\:*:C/.*\://}
-MANLANG=	${LOCALE_NAME:C/_.*//:C/en/""/}
+MANLANG=	${LOCALE_NAME:C/_.*//:C/en//}
 LANG_${L:tu}=	""
 LANG_NON${L:tu}=	"@comment "
 .endfor
@@ -68,31 +68,27 @@ INSTALLDIR=	${PREFIX}/${ACRODIR}
 INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 			InstallDir=${INSTALLDIR} \
 			UNAME_r="Linux Compatibility on FreeBSD" \
-			${SH} ./INSTALL --install_path=${INSTALLDIR} > /dev/null
-
-MAN1=		acroread.1
-MANCOMPRESSED=	yes
+			${SH} ./INSTALL --install_path=${STAGEDIR}${INSTALLDIR} > /dev/null
+.if !empty(MANLANG)
 MANINSTALLDIR=	man/${MANLANG}
-NO_STAGE=	yes
-post-man-install:
-	${MKDIR} ${MANPREFIX}/${MANINSTALLDIR}/man1
-	${LN} -s -f \
-		${INSTALLDIR}/Adobe/Reader9/Resource/Shell/acroread.1.gz \
-		${MANPREFIX}/${MANINSTALLDIR}/man1/
+.else
+MANINSTALLDIR=	man
+.endif
 
-pre-su-install:
+pre-install:
 	@${MKDIR} ${WRKDIR}/bin
 	@${INSTALL_SCRIPT} \
 		${WRKDIR}/ln ${WRKDIR}/rm ${WRKDIR}/mv \
 		${WRKDIR}/bin
 
 do-install:
-	@${ECHO_CMD} Installing...
-	@${MKDIR} ${INSTALLDIR}
-	@${MKDIR} ${PREFIX}/share/desktop-directories
+	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/desktop-directories
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC} > /dev/null
-
-post-install: post-man-install
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${MANPREFIX}/${MANINSTALLDIR}/man1
+	${LN} -s -f \
+		${INSTALLDIR}/Adobe/Reader9/Resource/Shell/acroread.1.gz \
+		${STAGEDIR}${MANPREFIX}/${MANINSTALLDIR}/man1/
+	${SED} -i "" -e "s,${STAGEDIR},," ${STAGEDIR}${INSTALLDIR}/Adobe/Reader9/Reader/GlobalPrefs/.config
 
 .include <bsd.port.mk>
