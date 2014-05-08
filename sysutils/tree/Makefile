@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tree
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/ \
 		CENKES
@@ -26,6 +26,5 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-
 
 .include <bsd.port.mk>
