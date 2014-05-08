@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ProjectTox-Core
-PORTVERSION=	0.140421
+PORTVERSION=	0.140508
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,11 +18,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	ProjectTox-Core
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	38e3b35
+GH_COMMIT=	52bfd7c
 
 USE_AUTOTOOLS=	automake autoconf libtoolize
-USES=		pkgconfig
+USES=		pkgconfig pathfix libtool
 USE_LDCONFIG=	yes
+PATHFIX_MAKEFILEIN=	Makefile.am
+INSTALL_TARGET=		install-strip
 
 OPTIONS_RADIO=		CRYPTO
 OPTIONS_RADIO_CRYPTO=	SODIUM NACL
