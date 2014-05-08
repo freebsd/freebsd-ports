@@ -3,7 +3,7 @@
 
 PORTNAME=	pixie
 PORTVERSION=	2.2.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Pixie%20${PORTVERSION}
 DISTNAME=	Pixie-src-${PORTVERSION}
@@ -14,17 +14,13 @@ COMMENT=	Photorealistic renderer with Pixar's RenderMan-like interface
 
 LICENSE=	LGPL21 # (or later)
 
-LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		tiff:${PORTSDIR}/graphics/tiff \
-		fltk_gl:${PORTSDIR}/x11-toolkits/fltk
-
-OPTIONS_DEFINE=	DOCS
-
-WRKSRC=		${WRKDIR}/Pixie
+LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libfltk_gl.so:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GL=		glu
-USES=		bison pathfix
-USE_AUTOTOOLS=	libtool
+USES=		bison libtool pathfix
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/pixie \
 		--libdir=${PREFIX}/lib/pixie \
 		--with-docdir=${DOCSDIR} \
@@ -35,21 +31,21 @@ CONFIGURE_ARGS=	--includedir=${PREFIX}/include/pixie \
 		--with-modulesdir=${PREFIX}/lib/pixie/modules \
 		--with-openexr-prefix=${LOCALBASE} \
 		--enable-openexr-threads
+WRKSRC=		${WRKDIR}/Pixie
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-MAN1=		rndr.1 sdrc.1 sdrinfo.1 texmake.1
 PORTDOCS=	*
 
 CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+sparc64_BROKEN=	Does not compile on sparc64
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
@@ -60,19 +56,17 @@ post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g ; \
 		 s|-lpthread|-pthread|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g ; \
-		 /^install-data-am:/s|install-nobase_docDATA||g' ${WRKSRC}/Makefile.in
-.for file in src/ri/Makefile.in src/sdr/Makefile.in
-	@${REINPLACE_CMD} -e '/^includedir/s|=.*$$|= @includedir@|g' ${WRKSRC}/${file}
-.endfor
+		 /^install-data-am:/s|install-nobase_docDATA||g' \
+		 ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^includedir/s|=.*$$|= @includedir@|g' \
+		${WRKSRC}/src/ri/Makefile.in \
+		${WRKSRC}/src/sdr/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog DEVNOTES NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-	@(cd ${WRKSRC}/doc && ${FIND} . ! -name "*Makefile*" | \
-		${CPIO} -dump -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog DEVNOTES NEWS \
+		README ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
+		'! -name "*Makefile*"')
 
 .include <bsd.port.post.mk>
