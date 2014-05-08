@@ -1,33 +1,20 @@
---- src/pycountry/locales/tr/LC_MESSAGES/iso639.po.orig	2014-04-03 17:51:19.000000000 +0400
-+++ src/pycountry/locales/tr/LC_MESSAGES/iso639.po	2014-04-07 19:03:57.000000000 +0400
-@@ -866,7 +866,7 @@
+--- src/pycountry/locales/tr/LC_MESSAGES/iso639.po.orig	2014-05-02 07:47:16.000000000 +0400
++++ src/pycountry/locales/tr/LC_MESSAGES/iso639.po	2014-05-08 19:07:21.000000000 +0400
+@@ -1660,7 +1660,7 @@
  
- #. name for ind, id
- msgid "Indonesian"
--msgstr "Endonezyaca"
-+msgstr "Endonezce"
+ #. name for spa, es
+ msgid "Spanish; Castilian"
+-msgstr "Spanish; Castilian"
++msgstr "İspanyolca; Kastilyaca"
  
- #. name for ine
- #, fuzzy
-@@ -1208,9 +1208,8 @@
- msgstr "Balsa"
+ #. name for srd, sc
+ msgid "Sardinian"
+@@ -1864,7 +1864,7 @@
  
- #. name for msa, ms
--#, fuzzy
- msgid "Malay"
--msgstr "Balsa"
-+msgstr "Malayca"
+ #. name for ukr, uk
+ msgid "Ukrainian"
+-msgstr "Ukrainian"
++msgstr "Ukraynaca"
  
- #. name for mdf
- msgid "Moksha"
-@@ -1254,9 +1253,8 @@
- 
- # src/prefs.c:1124 src/prefs_callbacks.c:222 src/prefs_callbacks.c:396
- #. name for mlt, mt
--#, fuzzy
- msgid "Maltese"
--msgstr "Yanlış"
-+msgstr "Maltaca"
- 
- #. name for mnc
- #, fuzzy
+ #. name for umb
+ msgid "Umbundu"
