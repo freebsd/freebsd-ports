@@ -5,19 +5,19 @@ include/IL/ilu.h
 include/IL/ilu_region.h
 %%X11%%include/IL/ilut.h
 lib/libIL.a
-lib/libIL.la
 lib/libIL.so
-lib/libIL.so.2
+lib/libIL.so.1
+lib/libIL.so.1.1.0
 lib/libILU.a
-lib/libILU.la
 lib/libILU.so
-lib/libILU.so.2
+lib/libILU.so.1
+lib/libILU.so.1.1.0
 %%X11%%lib/libILUT.a
-%%X11%%lib/libILUT.la
 %%X11%%lib/libILUT.so
-%%X11%%lib/libILUT.so.2
+%%X11%%lib/libILUT.so.1
+%%X11%%lib/libILUT.so.1.1.0
 libdata/pkgconfig/IL.pc
 libdata/pkgconfig/ILU.pc
 %%X11%%libdata/pkgconfig/ILUT.pc
-@dirrm %%DATADIR%%
 @dirrm include/IL
+@dirrm %%DATADIR%%

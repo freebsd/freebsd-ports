@@ -3,14 +3,14 @@
 
 PORTNAME=	cegui
 PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.8
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library providing windowing and widgets for graphics APIs
 
-LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
+LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		pcre.3:${PORTSDIR}/devel/pcre \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		execinfo:${PORTSDIR}/devel/libexecinfo
