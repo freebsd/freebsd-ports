@@ -1,6 +1,0 @@
-bin/jexctags
-include/readtags.h
-lib/readtags.o
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README_J.TXT
-@dirrm %%DOCSDIR%%
