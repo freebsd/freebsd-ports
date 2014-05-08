@@ -4281,6 +4281,7 @@
     SUBDIR += rubygem-main
     SUBDIR += rubygem-map
     SUBDIR += rubygem-mash
+    SUBDIR += rubygem-mercenary
     SUBDIR += rubygem-metaclass
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-method_source
