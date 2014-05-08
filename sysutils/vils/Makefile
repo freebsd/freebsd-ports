@@ -11,7 +11,7 @@ DISTFILES=	vils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use your favorite editor to rename files
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	zsh:${PORTSDIR}/shells/zsh
 
