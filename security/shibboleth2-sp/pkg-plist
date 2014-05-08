@@ -139,6 +139,7 @@ lib/libshibsp.so.6
 lib/libshibsp.so
 lib/shibboleth/adfs.so
 lib/shibboleth/adfs-lite.so
+lib/shibboleth/odbc-store.so
 lib/shibboleth/plugins-lite.so
 lib/shibboleth/plugins.so
 %%WITH_APACHE_22%%lib/shibboleth/mod_shib_22.so
@@ -166,15 +167,6 @@ share/doc/shibboleth/OPENSSL.LICENSE
 share/doc/shibboleth/README.txt
 share/doc/shibboleth/RELEASE.txt
 share/doc/shibboleth/main.css
-@exec mkdir -p /var/db/shibboleth
-@exec chown -R %%SHIBD_USER%%:%%SHIBD_GROUP%% /var/db/shibboleth
-@exec mkdir -p /var/log/shibboleth
-@exec chown -R %%SHIBD_USER%%:%%SHIBD_GROUP%% /var/log/shibboleth
-@exec mkdir -p /var/run/shibboleth
-@exec chown -R %%SHIBD_USER%%:%%WWWGRP%%  /var/run/shibboleth
-@exec chmod -R u=rwx,g=rx,o= /var/run/shibboleth
-@dirrmtry /var/db/shibboleth
-@dirrmtry /var/run/shibboleth
 @dirrmtry share/doc/shibboleth/api
 @dirrmtry share/doc/shibboleth
 @dirrmtry lib/shibboleth
@@ -191,3 +183,13 @@ share/doc/shibboleth/main.css
 @dirrmtry include/shibsp/attribute
 @dirrmtry include/shibsp
 @dirrmtry etc/shibboleth
+@exec install -d -o %%SHIBD_USER%% -g %%SHIBD_GROUP%% -m 755 /var/log/shibboleth
+@exec install -d -o %%SHIBD_USER%% -g %%SHIBD_GROUP%% -m 755 /var/cache/shibboleth
+@exec install -d -o %%SHIBD_USER%% -g %%WWWGRP%% -m 750 /var/run/shibboleth
+@user %%SHIBD_USER%%
+@group %%SHIBD_GROUP%%
+@dirrmtry /var/log/shibboleth
+@dirrmtry /var/cache/shibboleth
+@mode 750
+@group %%WWWGRP%%
+@dirrmtry /var/run/shibboleth
