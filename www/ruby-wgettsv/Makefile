@@ -10,7 +10,7 @@ DISTNAME=	wgettsv
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	qingfeng@douban.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collect WWW resources and generate TSV data
 
 USE_RUBY=		yes
