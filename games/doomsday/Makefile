@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doomsday
-PORTVERSION=	1.14.1
+PORTVERSION=	1.14.2
 CATEGORIES=	games
 MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
 
