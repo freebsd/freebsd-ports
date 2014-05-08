@@ -13,10 +13,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A 3D dungeon crawling adventure in the spirit of NetHack
 
-USES=		gmake
+USES=		gmake dos2unix
 USE_SDL=	sdl ttf mixer image
 USE_GL=		yes
-USE_DOS2UNIX=	*.c
+DOS2UNIX_GLOB=	*.c
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/game
 MAKEFILE=	Makefile.unix
