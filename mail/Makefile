@@ -508,6 +508,7 @@
     SUBDIR += postfix-policyd-spf-python
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
+    SUBDIR += postfix-tls
     SUBDIR += postfix210
     SUBDIR += postfix27
     SUBDIR += postfix28
