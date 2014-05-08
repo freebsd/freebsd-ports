@@ -8,6 +8,8 @@ bin/print
 bin/prs
 bin/thot
 bin/thoteditor
+man/man1/cextract.1.gz
+man/man5/cextrc.5.gz
 share/thot/batch/APP.GRM
 share/thot/batch/PRESEN.GRM
 share/thot/batch/STRUCT.GRM
