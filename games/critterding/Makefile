@@ -14,7 +14,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		tar:bzip2 pkgconfig
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
+USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtoolize
 USE_SDL=	sdl
 USE_GL=		gl
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
