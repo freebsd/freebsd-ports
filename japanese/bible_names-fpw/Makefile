@@ -9,23 +9,22 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/bible_names/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dictionary for HITCHCOCK'S BIBLE NAMES (EPWING V1 format)
+COMMENT=	Dictionary for HITCHCOCK'S BIBLE NAMES (EPWING V1 format)
 
 USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/biblenam
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/bible_names-fpw/biblenam/data
-	${INSTALL_DATA} ${WRKSRC}/biblenam/data/honmon ${PREFIX}/share/dict/bible_names-fpw/biblenam/data
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/bible_names-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/bible_names-fpw/biblenam/data
+	${INSTALL_DATA} ${WRKSRC}/biblenam/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/bible_names-fpw/biblenam/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/bible_names-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
