@@ -9,15 +9,6 @@
  			*) enable_mount_helper="no" ;;
  		esac
  
-@@ -7991,7 +7991,7 @@
- LIBTOOL_DEPS="$ltmain"
- 
- # Always use our own libtool.
--LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL='$(SHELL) /usr/local/bin/libtool'
- 
- 
- 
 @@ -9527,7 +9527,7 @@
        hardcode_shlibpath_var=no
        ;;
