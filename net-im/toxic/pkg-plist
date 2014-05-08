@@ -1,0 +1,5 @@
+bin/toxic
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toxic.conf
+%%DATADIR%%/DHTnodes
+@dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
