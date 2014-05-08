@@ -8,13 +8,14 @@ MASTER_SITES=	SF/pythonsiphon/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	xride@FreeBSD.org
-COMMENT=	A module for python that adds cpan-like functionality
+COMMENT=	Module for python that adds cpan-like functionality
+
+LICENSE=	BSD2CLAUSE
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-NO_STAGE=	yes
 post-install:
-	@${MV} -f ${PREFIX}/bin/ciphon.py ${PREFIX}/bin/ciphon
+	@${MV} -f ${STAGEDIR}${PREFIX}/bin/ciphon.py ${STAGEDIR}${PREFIX}/bin/ciphon
 
 .include <bsd.port.mk>
