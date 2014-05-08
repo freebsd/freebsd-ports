@@ -40,10 +40,10 @@ lib/libsybdb.la
 lib/libsybdb.so
 lib/libsybdb.so.5
 lib/libsybdb.so.5.0.0
-%%ODBC%%lib/libtdsodbc.so.0.0.0
-%%ODBC%%lib/libtdsodbc.so.0
-%%ODBC%%lib/libtdsodbc.so
-%%ODBC%%lib/libtdsodbc.la
-%%ODBC%%lib/libtdsodbc.a
-%%ODBC%%bin/bsqlodbc
+lib/libtdsodbc.so.0.0.0
+lib/libtdsodbc.so.0
+lib/libtdsodbc.so
+lib/libtdsodbc.la
+lib/libtdsodbc.a
+bin/bsqlodbc
 @dirrm etc/freetds

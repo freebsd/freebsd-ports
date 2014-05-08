@@ -9,7 +9,7 @@ CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
 
 LICENSE=	LGPL20
