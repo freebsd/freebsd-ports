@@ -858,6 +858,7 @@
     SUBDIR += p5-Text-Typography
     SUBDIR += p5-Text-Unaccent
     SUBDIR += p5-Text-VimColor
+    SUBDIR += p5-Text-VisualWidth
     SUBDIR += p5-Text-WikiCreole
     SUBDIR += p5-Text-WikiFormat
     SUBDIR += p5-Text-WordDiff
