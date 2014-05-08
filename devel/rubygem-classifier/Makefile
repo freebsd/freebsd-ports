@@ -7,7 +7,9 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A classifier module for Bayesian and other types of classifications
+COMMENT=	Classifier module for Bayesian and other types of classifications
+
+LICENSE=	LGPL21
 
 RUN_DEPENDS=	rubygem-fast-stemmer>=1.0.0:${PORTSDIR}/devel/rubygem-fast-stemmer
 
