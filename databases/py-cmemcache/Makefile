@@ -7,7 +7,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	http://gijsbert.org/downloads/cmemcache/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	qingfeng@douban.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python API for memcached, a distributed memory cache daemon
 
 LIB_DEPENDS=	libmemcache.so:${PORTSDIR}/databases/libmemcache

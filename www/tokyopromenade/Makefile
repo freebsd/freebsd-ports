@@ -6,7 +6,7 @@ PORTVERSION=	0.9.22
 CATEGORIES=	www
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/
 
-MAINTAINER=	qingfeng@douban.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A content management system
 
 BUILD_DEPENDS=	tokyocabinet>=1.4.31:${PORTSDIR}/databases/tokyocabinet \
