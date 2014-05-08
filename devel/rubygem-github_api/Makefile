@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Wrapper that supports all of the GitHub API v3 methods
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-addressable>=0:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-faraday>=0.8.7:${PORTSDIR}/www/rubygem-faraday \
 		rubygem-hashie>=1.2:${PORTSDIR}/devel/rubygem-hashie \
