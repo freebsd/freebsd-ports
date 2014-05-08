@@ -3,6 +3,7 @@ bin/clambc
 bin/clamconf
 bin/clamdtop
 bin/clamscan
+bin/clamsubmit
 bin/clamdscan
 bin/freshclam
 bin/sigtool
@@ -25,6 +26,7 @@ man/man1/clamconf.1.gz
 man/man1/clamdscan.1.gz
 man/man1/clamdtop.1.gz
 man/man1/clamscan.1.gz
+man/man1/clamsubmit.1.gz
 man/man1/freshclam.1.gz
 man/man1/sigtool.1.gz
 man/man5/clamav-milter.conf.5.gz
@@ -32,12 +34,6 @@ man/man5/clamd.conf.5.gz
 man/man5/freshclam.conf.5.gz
 man/man8/clamav-milter.8.gz
 man/man8/clamd.8.gz
-@unexec if cmp -s %D/etc/clamd.conf %D/etc/clamd.conf.sample; then rm -f %D/etc/clamd.conf; fi
-etc/clamd.conf.sample
-@exec [ -f %B/clamd.conf ] || cp %B/%f %B/clamd.conf
-@unexec if cmp -s %D/etc/freshclam.conf %D/etc/freshclam.conf.sample; then rm -f %D/etc/freshclam.conf; fi
-etc/freshclam.conf.sample
-@exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf
-%%MILTER%%@unexec if cmp -s %D/etc/clamav-milter.conf %D/etc/clamav-milter.conf.sample; then rm -f %D/etc/clamav-milter.conf; fi
-%%MILTER%%etc/clamav-milter.conf.sample
-%%MILTER%%@exec [ -f %B/clamav-milter.conf ] || cp %B/%f %B/clamav-milter.conf
+@sample etc/clamd.conf.sample
+@sample etc/freshclam.conf.sample
+%%MILTER%%@sample etc/clamav-milter.conf.sample
