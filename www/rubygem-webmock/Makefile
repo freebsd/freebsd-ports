@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Allows stubbing HTTP requests and setting expectations on the requests
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-crack>=0.3.2:${PORTSDIR}/devel/rubygem-crack \
 		rubygem-addressable>=2.2.7:${PORTSDIR}/www/rubygem-addressable
 
