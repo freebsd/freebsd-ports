@@ -10,14 +10,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A python implementation of a JSON (http//:json.org) reader/writer
+COMMENT=	Python implementation of a JSON (http//:json.org) reader/writer
+
+LICENSE=	LGPL20
 
 NO_WRKSUBDIR=	yes
 
 USES=		zip
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
 do-build:
 	# compile python files
 	cd ${WRKDIR}; \
@@ -27,7 +28,8 @@ do-build:
 	done; \
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	@cd ${WRKDIR}; \
-	${FIND} . \( -name "*.py" -or -name "*.pyc" \) -exec ${INSTALL_SCRIPT} \{\} ${PYTHON_SITELIBDIR} \;
+	${FIND} . \( -name "*.py" -or -name "*.pyc" \) -exec ${INSTALL_SCRIPT} \{\} ${STAGEDIR}${PYTHON_SITELIBDIR} \;
 
 .include <bsd.port.mk>
