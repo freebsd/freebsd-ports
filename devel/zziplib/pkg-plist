@@ -35,21 +35,21 @@ include/zzip/zzip.h
 include/zzip/zzip32.h
 include/zziplib.h
 lib/libzzip.a
-lib/libzzip.la
 lib/libzzip.so
 lib/libzzip.so.13
+lib/libzzip.so.13.0.62
 lib/libzzipfseeko.a
-lib/libzzipfseeko.la
 lib/libzzipfseeko.so
 lib/libzzipfseeko.so.13
+lib/libzzipfseeko.so.13.0.62
 lib/libzzipmmapped.a
-lib/libzzipmmapped.la
 lib/libzzipmmapped.so
 lib/libzzipmmapped.so.13
+lib/libzzipmmapped.so.13.0.62
 lib/libzzipwrap.a
-lib/libzzipwrap.la
 lib/libzzipwrap.so
 lib/libzzipwrap.so.13
+lib/libzzipwrap.so.13.0.62
 %%SDL%%libdata/pkgconfig/SDL_rwops_zzip.pc
 libdata/pkgconfig/zzip-zlib-config.pc
 libdata/pkgconfig/zzipfseeko.pc
@@ -146,5 +146,5 @@ man/man3/zzip_tell32.3.gz
 man/man3/zzip_telldir.3.gz
 man/man3/zzip_telldir32.3.gz
 share/aclocal/zziplib.m4
-@dirrm include/zzip
 %%SDL%%@dirrm include/SDL_rwops_zzip
+@dirrm include/zzip
