@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	BitVector-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	A pure-Python memory-efficient packed representation for bit arrays
+COMMENT=	Pure-Python memory-efficient packed representation for bit arrays
 
 LICENSE=	PSFL
 
@@ -21,9 +21,11 @@ PORTDOCS=	README BitVector-${PORTVERSION}.html
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/BitVector.py \
 		%%PYTHON_SITELIBDIR%%/BitVector.pyc \
-		%%PYTHON_SITELIBDIR%%/BitVector.pyo
+		%%PYTHON_SITELIBDIR%%/BitVector.pyo \
+		%%PYTHON_LIBDIR%%/site-packages/setup.py \
+		%%PYTHON_LIBDIR%%/site-packages/setup.pyc \
+		%%PYTHON_LIBDIR%%/site-packages/setup.pyo
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/test.py
 
@@ -31,8 +33,8 @@ post-extract:
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 regression-test:
