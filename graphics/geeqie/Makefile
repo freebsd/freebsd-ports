@@ -12,8 +12,8 @@ COMMENT=	Lightweight image viewer forked from GQview
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gtk20 desktopfileutils
+USES=		gettext gmake pkgconfig desktop-file-utils
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
 		--htmldir="${DOCSDIR}/html" \
