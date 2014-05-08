@@ -38,31 +38,21 @@ SIMP_FILES=	Adobe-GB1.cidToUnicode EUC-CN.unicodeMap GBK.unicodeMap \
 TRAD_FILES=	Adobe-CNS1.cidToUnicode Big5.unicodeMap \
 		Big5ascii.unicodeMap README
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/chinese-simplified
+	${MKDIR} ${STAGEDIR}${DATADIR}/chinese-simplified
 	cd ${WRKSRC}/xpdf-chinese-simplified \
-		&& ${INSTALL_DATA} ${SIMP_FILES} ${DATADIR}/chinese-simplified
-	${MKDIR} ${DATADIR}/chinese-traditional
+		&& ${INSTALL_DATA} ${SIMP_FILES} ${STAGEDIR}${DATADIR}/chinese-simplified
+	${MKDIR} ${STAGEDIR}${DATADIR}/chinese-traditional
 	cd ${WRKSRC}/xpdf-chinese-traditional \
-		&& ${INSTALL_DATA} ${TRAD_FILES} ${DATADIR}/chinese-traditional
-	${INSTALL_DATA} ${WRKSRC}/dot.xpdfrc ${DATADIR}/chinese-traditional
-	${MKDIR} ${DATADIR}/chinese-traditional/CMap
-	cd ${DATADIR}/chinese-traditional/CMap && \
+		&& ${INSTALL_DATA} ${TRAD_FILES} ${STAGEDIR}${DATADIR}/chinese-traditional
+	${INSTALL_DATA} ${WRKSRC}/dot.xpdfrc ${STAGEDIR}${DATADIR}/chinese-traditional
+	${MKDIR} ${STAGEDIR}${DATADIR}/chinese-traditional/CMap
+	cd ${STAGEDIR}${DATADIR}/chinese-traditional/CMap && \
 		${FIND} ${ADOBECMAPDIR}/ac15/CMap \
 			-type f -exec ${LN} -s -f {} . \;
-	${MKDIR} ${DATADIR}/chinese-simplified/CMap
-	cd ${DATADIR}/chinese-simplified/CMap && \
+	${MKDIR} ${STAGEDIR}${DATADIR}/chinese-simplified/CMap
+	cd ${STAGEDIR}${DATADIR}/chinese-simplified/CMap && \
 		${FIND} ${ADOBECMAPDIR}/ag15/CMap \
 			-type f -exec ${LN} -s -f {} . \;
-
-post-install:
-	exec < ${LOCALBASE}/etc/xpdfrc; \
-		${RM} -f ${LOCALBASE}/etc/xpdfrc; \
-		( ${GREP} -v "${EXTRARC}"; \
-		${ECHO_CMD} "include ${EXTRARC}" ) \
-		> ${LOCALBASE}/etc/xpdfrc
-	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${LOCALBASE}/etc/xpdfrc
-	${CHMOD} 0444 ${LOCALBASE}/etc/xpdfrc
 
 .include <bsd.port.mk>
