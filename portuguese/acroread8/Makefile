@@ -9,5 +9,4 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 
 ADOBE_LANG=	PTB
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
