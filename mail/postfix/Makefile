@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.11.0
+PORTVERSION=	2.11.1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -22,19 +22,28 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 VDAVERSION=	2.10.0
-CONFLICTS=	courier-0.* postfix-1.* postfix2?-* postfix21?-* \
-		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
-		sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
+CONFLICTS_INSTALL?=	courier-0.* postfix-1.* postfix2?-* postfix21?-* \
+		postfix-current-2.* postfix-current-base-2.* postfix-tls-* \
+		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_LANG=	perl
+SHEBANG_FILES=	auxiliary/qshape/qshape.pl
+
 USE_SUBMAKE=	yes
 USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 OPTIONS_DEFINE=	PCRE SASL2 TLS BDB MYSQL PGSQL SQLITE OPENLDAP LDAP_SASL \
-		CDB NIS VDA TEST SPF INST_BASE LMDB
+		CDB NIS VDA TEST SPF INST_BASE LMDB DOCS
+
+OPTIONS_RADIO=		RG1 RG2
+OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
+OPTIONS_RADIO_RG2=	SASLKRB5 SASLKMIT
+OPTIONS_DEFAULT=	PCRE
+
 PCRE_DESC=	Perl Compatible Regular Expressions
 SASL2_DESC=	Cyrus SASLv2 (Simple Auth. and Sec. Layer)
 DOVECOT_DESC=	Dovecot 1.x SASL authentication method
@@ -55,41 +64,17 @@ TEST_DESC=	SMTP/LMTP test server and generator
 SPF_DESC=	SPF support (via libspf2 1.2.x)
 INST_BASE_DESC=	Install into /usr and /etc/postfix
 LMDB_DESC=	LMDB maps
-
-OPTIONS_RADIO=	RG1 RG2
-OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
-OPTIONS_RADIO_RG2=	SASLKRB5 SASLKMIT
 RG1_DESC=	Dovecot SASL authentication methods
 RG2_DESC=	Kerberos network authentication protocol type
 
-OPTIONS_DEFAULT=	PCRE
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
-	postlock.1 postlog.1 postmap.1 postmulti.1 postqueue.1 postsuper.1 \
-	sendmail.1 qshape.1
-
-MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
-	header_checks.5 ldap_table.5 lmdb_table.5 master.5 memcache_table.5 \
-	mysql_table.5 nisplus_table.5 pcre_table.5 pgsql_table.5 postconf.5 \
-	postfix-wrapper.5 regexp_table.5 relocated.5 socketmap_table.5 \
-	sqlite_table.5 tcp_table.5 transport.5 virtual.5
-
-MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 dnsblog.8 error.8 flush.8 local.8 master.8 \
-	oqmgr.8 pickup.8 pipe.8 postscreen.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
-	smtp.8 smtpd.8 spawn.8 tlsmgr.8 tlsproxy.8 trivial-rewrite.8 verify.8 virtual.8
-
-MLINKS=	sendmail.1 mailq.1 \
-	sendmail.1 newaliases.1 \
-	header_checks.5 body_checks.5 \
-	bounce.8 defer.8 \
-	bounce.8 trace.8 \
-	smtp.8 lmtp.8
 
 HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
+
+STRIP_LIBEXEC=	anvil bounce cleanup discard dnsblog error flush lmtp local master \
+		nqmgr oqmgr pickup pipe postscreen proxymap qmgr qmqpd scache showq \
+		smtp smtpd spawn tlsmgr tlsproxy trivial-rewrite verify virtual
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
 OLD_MAILER!=	${GREP} -m 1 '^purgestat' /etc/mail/mailer.conf || ${ECHO_CMD}
@@ -108,8 +93,31 @@ MAKEFILEFLAGS+=	DEBUG=
 
 MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 
-POSTFIX_CCARGS+=	\$$(WARN) \
-			-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
+.if ${PORT_OPTIONS:MINST_BASE}
+PKGNAMESUFFIX=	-base
+PREFIX=		/usr
+ETCDIR=		/etc/postfix
+USE_RCORDER=	postfix
+PLIST_SUB+=	BASE="" BMAN="share/"
+.else
+USE_RC_SUBR=	postfix
+PLIST_SUB+=	BASE="@comment " BMAN=""
+.endif
+
+PLIST_SUB+=	PFETC=${ETCDIR} RESETPREFIX=${PREFIX}
+
+.if ${PORT_OPTIONS:MDOCS}
+READMEDIR=	${DOCSDIR}
+.else
+READMEDIR=	no
+.endif
+
+DAEMONDIR=	${PREFIX}/libexec/postfix
+
+SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" DAEMONDIR="${DAEMONDIR}"
+SUB_FILES+=	pkg-install pkg-message
+
+POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
 			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
 			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
@@ -122,6 +130,7 @@ POSTFIX_CCARGS+=	\$$(WARN) \
 			-DDEF_DATA_DIR=\\\"/var/db/postfix\\\" \
 			-DDEF_MAIL_OWNER=\\\"postfix\\\" \
 			-DDEF_SGID_GROUP=\\\"maildrop\\\" \
+			-Wmissing-prototypes -Wformat -Wno-comment
 
 # Default requirement for postfix rc script
 _REQUIRE=		LOGIN cleanvar
@@ -244,21 +253,9 @@ PLIST_SUB+=		VDA="@comment "
 .if ${PORT_OPTIONS:MTEST}
 BINTEST=	qmqp-sink qmqp-source smtp-sink smtp-source
 MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
-MAN1+=		${MANTEST}
 PLIST_SUB+=	TEST=""
 .else
 PLIST_SUB+=	TEST="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MINST_BASE}
-PKGNAMESUFFIX=	-base
-PREFIX=		/usr
-ETCDIR=		/etc/postfix
-USE_RCORDER=	postfix
-PLIST_SUB+=	BASE=""
-.else
-USE_RC_SUBR=	postfix
-PLIST_SUB+=	BASE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLMDB}
@@ -266,19 +263,6 @@ LIB_DEPENDS+=		liblmdb.so:${PORTSDIR}/databases/lmdb
 POSTFIX_CCARGS+=	-DHAS_LMDB -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -llmdb
 .endif
-
-PLIST_SUB+=	PFETC=${ETCDIR}
-
-.if ${PORT_OPTIONS:MDOCS}
-READMEDIR=	${DOCSDIR}
-.else
-READMEDIR=	no
-.endif
-
-DAEMONDIR=	${PREFIX}/libexec/postfix
-
-SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" DAEMONDIR="${DAEMONDIR}"
-SUB_FILES+=	pkg-install pkg-message
 
 # sed script for files in ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man
 REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}/sbin!;\
@@ -343,8 +327,13 @@ do-configure:
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
 
+pre-install:
+.if ${PORT_OPTIONS:MINST_BASE}
+	${MKDIR} ${STAGEDIR}/etc/rc.d
+.endif
+
 do-install:
-	@cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
+	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=/tmp \
 		config_directory=${ETCDIR} \
 		command_directory=${PREFIX}/sbin \
 		daemon_directory=${DAEMONDIR} \
@@ -353,21 +342,22 @@ do-install:
 		manpage_directory=${MANPREFIX}/man \
 		newaliases_path=${PREFIX}/bin/newaliases \
 		readme_directory=${READMEDIR} \
-		sendmail_path=${PREFIX}/sbin/sendmail
-	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
-	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/bin/qshape
-	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${MAN1PREFIX}/man/man1
-.for f in ${BINTEST}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
-.endfor
-.for f in ${MANTEST}
-	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MAN1PREFIX}/man/man1
-.endfor
+		sendmail_path=${PREFIX}/sbin/sendmail )
+
+# == do not overwrite existing config
+	${RM} ${STAGEDIR}${ETCDIR}/main.cf ${STAGEDIR}${ETCDIR}/master.cf
+	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${STAGEDIR}${PREFIX}/bin/rmail
+	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${STAGEDIR}${PREFIX}/bin/qshape
+	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${STAGEDIR}${MANPREFIX}/man/man1
+.if ${PORT_OPTIONS:MTEST}
+	${INSTALL_PROGRAM} ${BINTEST:S|^|${WRKSRC}/bin/|} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${MANTEST:S|^|${WRKSRC}/man/man1/|} ${STAGEDIR}${MANPREFIX}/man/man1
+.endif
 
 post-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	# Fix compressed man pages
-	@${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${DAEMONDIR}/postfix-files
-	@${CAT} ${PKGMESSAGE}
+# Fix compressed man pages and strip executables
+	${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${STAGEDIR}${DAEMONDIR}/postfix-files
+	-@${STRIP_CMD} ${STRIP_LIBEXEC:S|^|${STAGEDIR}${PREFIX}/libexec/postfix/|}
+	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
 
 .include <bsd.port.mk>
