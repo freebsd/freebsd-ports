@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shibboleth-sp
-PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTVERSION=	2.5.3
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
@@ -11,9 +10,9 @@ MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 
 BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	saml.8:${PORTSDIR}/security/opensaml2
+LIB_DEPENDS=	libsaml.so.8:${PORTSDIR}/security/opensaml2 libodbc.so:${PORTSDIR}/databases/unixODBC
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_ENV=	NOKEYGEN=YES
 USE_LDCONFIG=	yes
@@ -27,7 +26,6 @@ GROUPS=		shibd
 USE_APACHE=	22-24
 USE_OPENSSL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} == 22
@@ -49,13 +47,8 @@ PLIST_SUB+=	SHIBD_USER=${USERS}
 PLIST_SUB+=	SHIBD_GROUP=${GROUPS}
 
 CONFIGURE_ARGS+=	--localstatedir=/var --with-log4shib=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-odbc
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE} --with-xmltooling=${LOCALBASE}
 CONFIGURE_ARGS+=	--disable-doxygen-doc
-
-post-install:
-	${CHOWN} -R ${USERS}:${GROUPS} /var/db/shibboleth ;\
-	${CHOWN} -R ${USERS}:${GROUPS} /var/log/shibboleth ;\
-       	${CHOWN} -R ${USERS}:${WWWGRP} /var/run/shibboleth ;\
-       	${CHMOD} -R u=rwx,g=rx,o= /var/run/shibboleth
 
 .include <bsd.port.post.mk>

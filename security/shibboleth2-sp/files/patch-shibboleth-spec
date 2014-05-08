@@ -24,12 +24,3 @@
  # Fix ownership of log files (even on new installs, if they're left from an older one).
  %{__chown} %{runuser}:%{runuser} %{_localstatedir}/log/shibboleth/* 2>/dev/null || :
  
-@@ -304,7 +296,7 @@
- %{_libdir}/shibboleth/*
- %attr(0750,%{runuser},%{runuser}) %dir %{_localstatedir}/log/shibboleth
- %attr(0755,%{runuser},%{runuser}) %dir %{_localstatedir}/run/shibboleth
--%attr(0755,%{runuser},%{runuser}) %dir %{_localstatedir}/cache/shibboleth
-+%attr(0755,%{runuser},%{runuser}) %dir %{_localstatedir}/db/shibboleth
- %dir %{_datadir}/xml/shibboleth
- %{_datadir}/xml/shibboleth/*
- %dir %{_datadir}/shibboleth

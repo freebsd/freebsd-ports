@@ -32,8 +32,7 @@
 -pkgwebdir = $(datadir)/@PACKAGE_NAME@
 +pkgwebdir = $(datadir)/doc/@PACKAGE_NAME@
  pkgrundir = $(localstatedir)/run/@PACKAGE_NAME@
--pkgcachedir = $(localstatedir)/cache/@PACKAGE_NAME@
-+pkgcachedir = $(localstatedir)/db/@PACKAGE_NAME@
+ pkgcachedir = $(localstatedir)/cache/@PACKAGE_NAME@
  pkgsysconfdir = $(sysconfdir)/@PACKAGE_NAME@
  pkgsysconf_DATA = \
  	shibd-redhat \
@@ -46,8 +45,7 @@
 -pkgwebdir = $(datadir)/@PACKAGE_NAME@
 +pkgwebdir = $(datadir)/doc/@PACKAGE_NAME@
  pkgrundir = $(localstatedir)/run/@PACKAGE_NAME@
--pkgcachedir = $(localstatedir)/cache/@PACKAGE_NAME@
-+pkgcachedir = $(localstatedir)/db/@PACKAGE_NAME@
+ pkgcachedir = $(localstatedir)/cache/@PACKAGE_NAME@
  pkgsysconfdir = $(sysconfdir)/@PACKAGE_NAME@
  pkgsysconf_DATA = \
  	shibd-redhat \
