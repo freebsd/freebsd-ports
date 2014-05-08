@@ -462,7 +462,6 @@ share/cegui-0/xml_schemas/Samples.xsd
 @dirrm include/cegui-0/CEGUI
 @dirrm include/cegui-0
 @dirrm lib/cegui-0.8
-@dirrmtry libdata/pkgconfig
 @dirrm share/cegui-0/animations
 @dirrm share/cegui-0/fonts
 @dirrm share/cegui-0/imagesets
