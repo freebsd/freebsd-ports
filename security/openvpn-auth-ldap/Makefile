@@ -11,6 +11,8 @@ DISTNAME=	auth-ldap-${PORTVERSION}
 MAINTAINER=	snb@FreeBSD.org
 COMMENT=	LDAP authentication plugin for OpenVPN
 
+USES=		objc
+
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c \
 		${NONEXISTENT}:${PORTSDIR}/security/openvpn:extract
 
@@ -24,17 +26,12 @@ CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
 PORTDOCS=	README
 PORTEXAMPLES=	auth-ldap.conf
 PLIST_FILES=	lib/openvpn-auth-ldap.so
+OBJCFLAGS+=	-L/usr/local/lib
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 900000
-# Use GCC from ports because Objective-C support is no longer included
-# in base.  lang/libobjc2 + clang currently do not work, nor do newer
-# versions of GCC.
-USE_GCC=	4.6
 CONFIGURE_ENV+=	OBJC="${CC}"
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn-auth-ldap.so
