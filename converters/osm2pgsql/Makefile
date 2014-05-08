@@ -3,7 +3,7 @@
 
 PORTNAME=	osm2pgsql
 PORTVERSION=	0.84.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -19,13 +19,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 GH_COMMIT=	237b125
 
-USES=		libtool
-GNU_CONFIGURE=	yes
+USES=		gmake libtool lua pgsql tar:bzip2
 USE_AUTOTOOLS=	autoconf automake aclocal autoheader libtoolize
+AUTOMAKE_ARGS=	-a -c -f
 CONFIGURE_ARGS=	LUA="${LUA_CMD}" \
 		LUA_INCLUDE="-I${LUA_INCDIR}" \
 		LUA_LIB="-L${LUA_LIBDIR} -llua-${LUA_VER}"
-USES=		gmake lua pgsql tar:bzip2
 USE_GNOME=	libxml2
 
 PLIST_FILES=	bin/nodecachefilereader \
@@ -38,9 +37,6 @@ PORTDATA=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/m4/*.m4
-
-run-autotools:
-	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ./autogen.sh
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
