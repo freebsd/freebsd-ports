@@ -11,11 +11,11 @@ DISTNAME=	connectFive
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Place five pieces in a row on a 3D board
 
-USES=		gmake
+USES=		gmake dos2unix
 USE_SDL=	sdl
 USE_GL=		gl
 USE_XORG=	xmu xext x11
-USE_DOS2UNIX=	glfont2.h
+DOS2UNIX_FILES=	glfont2.h
 
 MAKEFILE=	Makefile.linux
 ALL_TARGET=	default

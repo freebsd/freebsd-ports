@@ -14,10 +14,10 @@ COMMENT=	Top-down survival shoot 'em up
 
 LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
+USES=		cmake gettext zip dos2unix
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
-USES=		cmake gettext zip
-USE_DOS2UNIX=	CMakeLists.txt src/system/utility/FileUtility.cpp
+DOS2UNIX_FILES=	CMakeLists.txt src/system/utility/FileUtility.cpp
 CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}

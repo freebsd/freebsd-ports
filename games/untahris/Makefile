@@ -11,8 +11,9 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Play several classic fun, simple arcade games in multiplayer mode
 
+USES=		dos2unix
 USE_SDL=	sdl net ttf mixer
-USE_DOS2UNIX=	intface.cpp
+DOS2UNIX_FILES=	intface.cpp
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -20,8 +21,6 @@ PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|VeraBd.ttf|${DATADIR}/VeraBd.ttf|; \
@@ -38,9 +37,7 @@ do-install:
 .for f in VeraBd.ttf graph16*.unt *.wav
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
