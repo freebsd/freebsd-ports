@@ -17,19 +17,17 @@ LICENSE_TEXT=	Requires license from Microsoft, please see \
 		http://www.microsoft.com/en-us/legal/intellectualproperty/IPLicensing/Programs/exFATFileSystem.aspx
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
-LIB_DEPENDS=	ublio:${PORTSDIR}/devel/libublio
+LIB_DEPENDS=	libublio.so:${PORTSDIR}/devel/libublio
 
 USES=		fuse iconv
 USE_SCONS=	yes
 
-MAN8=		mount.exfat-fuse.8
-PLIST_FILES=	bin/mount.exfat-fuse bin/mount.exfat
+PLIST_FILES=	bin/mount.exfat-fuse bin/mount.exfat man/man8/mount.exfat-fuse.8.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fuse/mount.exfat-fuse ${PREFIX}/bin
-	${LN} -s ${PREFIX}/bin/mount.exfat-fuse ${PREFIX}/bin/mount.exfat
-	${INSTALL_MAN} ${WRKSRC}/fuse/${MAN8} ${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/fuse/mount.exfat-fuse ${STAGEDIR}${PREFIX}/bin
+	${LN} -s ${PREFIX}/bin/mount.exfat-fuse ${STAGEDIR}${PREFIX}/bin/mount.exfat
+	${INSTALL_MAN} ${WRKSRC}/fuse/mount.exfat-fuse.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/|' ${WRKSRC}/SConstruct
