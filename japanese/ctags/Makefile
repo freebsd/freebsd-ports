@@ -7,26 +7,26 @@ CATEGORIES=	japanese devel
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA025040/ctags/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A feature-filled tagfile generator with Japanese support
-
-WRKSRC=	${WRKDIR}/${DISTNAME:S/j1//}
+COMMENT=	Feature-filled tagfile generator with Japanese support
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-macro-patterns --with-readlib
-
-MAN1=		jexctags.1
-
+WRKSRC=		${WRKDIR}/${DISTNAME:S/j1//}
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/jexctags include/readtags.h lib/readtags.o \
+		man/man1/jexctags.1.gz
+PORTDOCS=	README README_J.TXT
+
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -E '/^DEST_/ s,(bin|lib|inc|man1)dir),DESTDIR)$$(&,g' \
+		${WRKSRC}/Makefile.in
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in README README_J.TXT
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
-	@${STRIP_CMD} ${PREFIX}/bin/jexctags
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jexctags
 
 .include <bsd.port.mk>
