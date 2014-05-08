@@ -10,7 +10,7 @@ MASTER_SITES=	http://members.core.com/~stabro/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A SLang-based IRC client
+COMMENT=	SLang-based IRC client
 
 LIB_DEPENDS=	${LIB_DEPENDS_LIBSLANG}
 
@@ -20,7 +20,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLANG_INCDIR?=	${LOCALBASE}/include
 SLANG_LIBDIR?=	${LOCALBASE}/lib
-LIB_DEPENDS_LIBSLANG?=	slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS_LIBSLANG?=	libslang.so.2:${PORTSDIR}/devel/libslang2
 
 MAKE_ARGS=	SLANG_INCDIR="${SLANG_INCDIR}" \
 		SLANG_LIBDIR="${SLANG_LIBDIR}" \
@@ -42,20 +42,13 @@ DOCS+=		BUGS \
 		sldocs/VFile.txt \
 		sldocs/utilsfun.txt
 
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} -e "s,/usr/local,${LOCALBASE}," ${WRKSRC}/Makefile ${WRKSRC}/scripts/init.sl
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' ${WRKSRC}/Makefile
+
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/share/doc/slirc
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/slirc/
-.endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
