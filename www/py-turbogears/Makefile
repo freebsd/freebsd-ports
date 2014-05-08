@@ -26,7 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.1.2:${PORTSDIR}/www/py-cherrypy 
 
 USES=		gettext
 USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	ELIXIR NOSE SQLOBJECT SQLALCHEMY
@@ -36,7 +37,6 @@ NOSE_DESC=	Use nose TG[testtools]
 SQLOBJECT_DESC=	Use SQLObject as DB backend
 SQLALCHEMY_DESC=Use SQLAlchemy as DB backend TG[future]
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
