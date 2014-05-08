@@ -55,7 +55,7 @@ AUTOMAKE_ARGS= --add-missing
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_OPENLDAP=	yes
-USES=		gettext gmake iconv pkgconfig shebangfix libtool
+USES=		gettext gmake iconv pkgconfig shebangfix
 SHEBANG_FILES=	src/tools/sss_obfuscate
 
 USE_RC_SUBR=	${PORTNAME}
