@@ -29,7 +29,7 @@ VDAVERSION=	2.7.13
 CONFLICTS=	courier-0.* postfix-1.* postfix2[89]-* postfix21?-* \
 		postfix-2.* postfix-base-2.* postfix-current-2.* \
 		postfix-current-base-2.* sendmail-8.* sendmail+*-8.* \
-		smail-3.* zmailer-2.* opensmtpd-[0-9]*
+		smail-3.* zmailer-2.* opensmtpd-[0-9]* postfix-tls-*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
