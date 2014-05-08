@@ -4144,6 +4144,7 @@
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
     SUBDIR += rubygem-bioruby
+    SUBDIR += rubygem-blankslate
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-bugspots
