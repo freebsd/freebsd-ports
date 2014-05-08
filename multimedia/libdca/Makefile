@@ -9,9 +9,8 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSIO
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free DTS Coherent Acoustics decoder
 
+USES=		tar:bzip2 pkgconfig pathfix
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		pkgconfig pathfix
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
