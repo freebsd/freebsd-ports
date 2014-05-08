@@ -12,6 +12,8 @@ DISTNAME=	JCC-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	C++ code generator for calling Java from C++/Python
 
+LICENSE=	APACHE20
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	JCC
@@ -31,5 +33,4 @@ MAKE_ENV+=	JCC_INCLUDES=${JCC_INCLUDES} JCC_CFLAGS=${JCC_CFLAGS} \
 		JCC_JAVADOC=${JAVADOC} \
 		JCC_JAVAC=javac JCC_ARGSEP=";"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
