@@ -17,7 +17,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-extract:
 		@${RM} -rf ${WRKDIR}
 		@${MKDIR} ${WRKDIR}
@@ -27,6 +26,6 @@ do-extract:
 
 do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} \
-			${PREFIX}/bin/VTPSfont
+			${STAGEDIR}${PREFIX}/bin/VTPSfont
 
 .include <bsd.port.mk>
