@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yara
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,8 +10,8 @@ COMMENT=	Python bindings for yara
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plusvic
-GH_TAGNAME=	v2.0.0
-GH_COMMIT=	d5dbefb
+GH_TAGNAME=	2.1.0
+GH_COMMIT=	1f0559b
 
 LIB_DEPENDS=	libyara.so:${PORTSDIR}/security/yara
 
