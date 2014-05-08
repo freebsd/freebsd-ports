@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	wgettsv
 EXTRACT_SUFX=
 
-MAINTAINER=	qingfeng@douban.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collect WWW resources and generate TSV data
 
 USES=		shebangfix
