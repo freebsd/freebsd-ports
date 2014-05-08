@@ -1,5 +1,5 @@
---- ../Makefile.in.orig	Wed Oct  8 04:13:58 1997
-+++ ../Makefile.in	Sun Oct  3 23:44:16 1999
+--- ../Makefile.in.orig	1997-10-08 10:13:58.000000000 +0200
++++ ../Makefile.in	2014-05-08 10:31:05.418730130 +0200
 @@ -17,6 +17,7 @@
  
  SUBDIRS	= tools tablelib thotlib batch drawlib indexlib thot amaya
@@ -12,8 +12,8 @@
  	  do if test -d $$dir ; then cd $$dir ; \
  	  $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" install ; \
  	  cd .. ; fi ;done )
-+	@(set -x;for file in $(BINS);\
-+	  do $(INSTALL_BIN) $$file ${bindir}; done )
++	(for file in $(BINS);\
++	  do $(BSD_INSTALL_PROGRAM) $$file $(DESTDIR)${bindir}; done )
  
  uninstall : 
  	@(for dir in $(SUBDIRS) ;\

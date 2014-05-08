@@ -23,7 +23,7 @@
  	strcat (filename, THOT_RC_FILENAME);
 +	if (!TtaFileExist (&filename[0]))
 +	{
-+		sprintf(homecmd,"/bin/cp /usr/local/share/thot/config/thot.ini %s%s.thotrc\n",home_dir,DIR_STR);
++		sprintf(homecmd,"/bin/cp %%PREFIX%%/share/thot/config/thot.ini %s%s.thotrc\n",home_dir,DIR_STR);
 +		fprintf(stderr,"Copying system thot.ini into ~/.thotrc.\n");
 +		system(homecmd);
 +		sprintf(homecmd,"/bin/chmod u+w %s%s.thotrc\n",home_dir,DIR_STR);
