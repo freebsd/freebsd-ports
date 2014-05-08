@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Library of Simple JSON and XML Parsing
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-safe_yaml>=0.9.0:${PORTSDIR}/devel/rubygem-safe_yaml
 
 USE_RUBY=	yes
