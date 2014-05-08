@@ -6,7 +6,7 @@ PORTVERSION=	0.5.3
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	qingfeng@douban.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another distributed key-value storage system from Douban Inc
 
 GNU_CONFIGURE=	yes
