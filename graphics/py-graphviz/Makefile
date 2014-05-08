@@ -22,7 +22,6 @@ PYDISTUTILS_PKGNAME=	pygraphviz
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+; \
 		s+^docdirbase.*=.*+docdirbase = "${DOCSDIR:S/${PREFIX}\///}"+' ${WRKSRC}/setup.py
