@@ -1,4 +1,5 @@
-%%HPXCVT%%bin/HPXcvt
+%%CFITSIO%%bin/HPXcvt
+%%CFITSIO%%bin/wcsware
 bin/fitshdr
 include/wcslib
 include/wcslib-%%VERSION%%/cel.h
@@ -29,7 +30,9 @@ lib/libwcs.so
 lib/libwcs.so.%%VERSION%%
 lib/libwcs.so.4
 libdata/pkgconfig/wcslib.pc
+%%CFITSIO%%man/man1/HPXcvt.1.gz
 man/man1/fitshdr.1.gz
+%%CFITSIO%%man/man1/wcsware.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_0x73.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_vars_0x62.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcshdr_8h-source.html
