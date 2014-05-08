@@ -100,10 +100,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/motion.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/motion-dist.conf \
 		${STAGEDIR}${PREFIX}/etc/motion.conf.sample
-.if !exists(${STAGEDIR}${PREFIX}/etc/motion.conf)
-	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/motion.conf.sample \
-		${STAGEDIR}${PREFIX}/etc/motion.conf
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
