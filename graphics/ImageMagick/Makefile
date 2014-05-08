@@ -2,7 +2,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.8.0-7
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -278,7 +278,7 @@ CONFIGURE_ARGS+=	--without-freetype
 
 # Webp support
 .if ${PORT_OPTIONS:MWEBP}
-LIB_DEPENDS+=		webp:${PORTSDIR}/graphics/webp
+LIB_DEPENDS+=		libwebp.so:${PORTSDIR}/graphics/webp
 CONFIGURE_ARGS+=	--with-webp
 PLIST_SUB+=		WEBP=""
 .else
