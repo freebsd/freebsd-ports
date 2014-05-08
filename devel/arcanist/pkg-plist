@@ -1,0 +1,644 @@
+bin/arc
+lib/php/arcanist/LICENSE
+lib/php/arcanist/NOTICE
+lib/php/arcanist/README
+lib/php/arcanist/bin/arc
+lib/php/arcanist/bin/arc.bat
+lib/php/arcanist/externals/README
+lib/php/arcanist/externals/includes/README
+lib/php/arcanist/externals/pep8/README
+lib/php/arcanist/externals/pep8/pep8.py
+lib/php/arcanist/resources/php_compat_info.json
+lib/php/arcanist/resources/shell/bash-completion
+lib/php/arcanist/resources/test/diverse_symbols.php.example
+lib/php/arcanist/scripts/__init_script__.php
+lib/php/arcanist/scripts/arcanist.php
+lib/php/arcanist/scripts/breakout.py
+lib/php/arcanist/scripts/hgdaemon/hgdaemon_client.php
+lib/php/arcanist/scripts/hgdaemon/hgdaemon_server.php
+lib/php/arcanist/scripts/lib/PhutilLibraryMapBuilder.php
+lib/php/arcanist/scripts/php_extension_classes.txt
+lib/php/arcanist/scripts/php_extension_functions.txt
+lib/php/arcanist/scripts/phutil_rebuild_map.php
+lib/php/arcanist/scripts/phutil_symbols.php
+lib/php/arcanist/scripts/repository/binary_safe_diff.sh
+lib/php/arcanist/scripts/update_compat_info.php
+lib/php/arcanist/src/__phutil_library_init__.php
+lib/php/arcanist/src/__phutil_library_map__.php
+lib/php/arcanist/src/configuration/ArcanistConfiguration.php
+lib/php/arcanist/src/configuration/ArcanistConfigurationManager.php
+lib/php/arcanist/src/configuration/ArcanistSettings.php
+lib/php/arcanist/src/configuration/__tests__/ArcanistBritishTestCase.php
+lib/php/arcanist/src/difference/ArcanistDiffUtils.php
+lib/php/arcanist/src/difference/__tests__/ArcanistDiffUtilsTestCase.php
+lib/php/arcanist/src/differential/ArcanistDifferentialCommitMessage.php
+lib/php/arcanist/src/differential/ArcanistDifferentialCommitMessageParserException.php
+lib/php/arcanist/src/differential/ArcanistDifferentialDependencyGraph.php
+lib/php/arcanist/src/differential/constants/ArcanistDifferentialRevisionHash.php
+lib/php/arcanist/src/differential/constants/ArcanistDifferentialRevisionStatus.php
+lib/php/arcanist/src/docs/book/arcanist.book
+lib/php/arcanist/src/events/constant/ArcanistEventType.php
+lib/php/arcanist/src/exception/ArcanistChooseInvalidRevisionException.php
+lib/php/arcanist/src/exception/ArcanistChooseNoRevisionsException.php
+lib/php/arcanist/src/exception/ArcanistUsageException.php
+lib/php/arcanist/src/exception/usage/ArcanistNoEffectException.php
+lib/php/arcanist/src/exception/usage/ArcanistNoEngineException.php
+lib/php/arcanist/src/exception/usage/ArcanistUncommittedChangesException.php
+lib/php/arcanist/src/exception/usage/ArcanistUserAbortException.php
+lib/php/arcanist/src/extensions/README
+lib/php/arcanist/src/hgdaemon/ArcanistHgClientChannel.php
+lib/php/arcanist/src/hgdaemon/ArcanistHgProxyClient.php
+lib/php/arcanist/src/hgdaemon/ArcanistHgProxyServer.php
+lib/php/arcanist/src/hgdaemon/ArcanistHgServerChannel.php
+lib/php/arcanist/src/infrastructure/testing/ArcanistTestCase.php
+lib/php/arcanist/src/lint/ArcanistLintMessage.php
+lib/php/arcanist/src/lint/ArcanistLintPatcher.php
+lib/php/arcanist/src/lint/ArcanistLintResult.php
+lib/php/arcanist/src/lint/ArcanistLintSeverity.php
+lib/php/arcanist/src/lint/engine/ArcanistConfigurationDrivenLintEngine.php
+lib/php/arcanist/src/lint/engine/ArcanistLintEngine.php
+lib/php/arcanist/src/lint/engine/ArcanistSingleLintEngine.php
+lib/php/arcanist/src/lint/engine/ComprehensiveLintEngine.php
+lib/php/arcanist/src/lint/engine/ExampleLintEngine.php
+lib/php/arcanist/src/lint/engine/PhutilLintEngine.php
+lib/php/arcanist/src/lint/engine/UnitTestableArcanistLintEngine.php
+lib/php/arcanist/src/lint/linter/ArcanistBaseXHPASTLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistCSSLintLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistCSharpLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistConduitLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistCppcheckLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistCpplintLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistExternalLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistFilenameLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistFlake8Linter.php
+lib/php/arcanist/src/lint/linter/ArcanistFutureLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistGeneratedLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistJSHintLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistJSONLintLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistLesscLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistMergeConflictLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistNoLintLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistPEP8Linter.php
+lib/php/arcanist/src/lint/linter/ArcanistPhpcsLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistPhutilLibraryLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistPhutilXHPASTLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistPuppetLintLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistPyFlakesLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistPyLintLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistRubyLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistScalaSBTLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistScriptAndRegexLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistSpellingLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistTextLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistXHPASTLinter.php
+lib/php/arcanist/src/lint/linter/ArcanistXMLLinter.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistArcanistLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistCSSLintLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistCpplintLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistFlake8LinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistJSHintLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistJSONLintLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistLesscLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistNoLintTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistPEP8LinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistPHPCSLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistPhutilXHPASTLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistPuppetLintLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistPyFlakesLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistRubyLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistSpellingLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistTextLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistXHPASTLintTestSwitchHook.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistXHPASTLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/ArcanistXMLLinterTestCase.php
+lib/php/arcanist/src/lint/linter/__tests__/cpp/googlestyle.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/csslint/duplicate-properties.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/csslint/empty-rule.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/flake8/undefined.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jshint/dot-notation.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jshint/expected-conditional.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jshint/jshint.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jshint/missing-semicolon.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jshint/unnecessary-semicolon.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/10.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/11.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/12.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/13.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/14.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/15.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/16.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/17.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/19.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/20.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/21.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/22.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/23.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/24.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/25.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/26.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/27.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/28.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/29.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/3.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/30.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/31.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/32.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/33.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/34.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/4.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/5.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/6.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/7.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/8.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/jsonlint/9.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/colors.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/comments.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/css-3.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/css-escapes.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/css-guards.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/css.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/detached-rulesets.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/empty.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/add-mixed-units.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/add-mixed-units2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/at-rules-undefined-var.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/bad-variable-declaration1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/color-func-invalid-color.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/comment-in-selector.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/css-guard-default-func.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/detached-ruleset-1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/detached-ruleset-2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/detached-ruleset-3.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/detached-ruleset-4.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/detached-ruleset-5.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/detached-ruleset-6.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/divide-mixed-units.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/extend-no-selector.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/extend-not-at-end.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/import-missing.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/import-no-semi.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/javascript-error.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/javascript-undefined-var.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/mixed-mixin-definition-args-1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/mixed-mixin-definition-args-2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/mixin-not-defined.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/mixin-not-matched.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/mixin-not-matched2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/mixin-not-visible-in-scope-1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/mixins-guards-default-func-1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/mixins-guards-default-func-2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/mixins-guards-default-func-3.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/multiple-guards-on-css-selectors.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/multiple-guards-on-css-selectors2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/multiply-mixed-units.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/parens-error-1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/parens-error-2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/parens-error-3.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/parse-error-curly-bracket.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/parse-error-extra-parens.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/parse-error-missing-bracket.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/parse-error-missing-parens.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/percentage-missing-space.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/property-asterisk-only-name.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/property-ie5-hack.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/property-in-root.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/property-in-root3.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/property-interp-not-defined.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/recursive-variable.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/svg-gradient1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/svg-gradient2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/svg-gradient3.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/errors/unit-function.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/extend-chaining.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/extend-clearfix.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/extend-exact.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/extend-media.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/extend-nest.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/extend-selector.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/extend.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/extract-and-length.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/functions.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/ie-filters.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/javascript.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/lazy-eval.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/media.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/merge.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/mixins-args.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/mixins-closure.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/mixins-guards-default-func.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/mixins-guards.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/mixins-important.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/mixins-interpolated.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/mixins-named-args.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/mixins-nested.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/mixins-pattern.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/mixins.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/no-output.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/operations.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/parens.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/property-name-interp.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/rulesets.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/scope.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/selectors.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/strings.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/variables-in-at-rules.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/variables.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/lessc/whitespace.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/pep8/imports.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/phlxhp/array-combine.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/phlxhp/deprecated-function.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/phlxhp/pht.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/phlxhp/xsprintf.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/phpcs/basics.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/phpcs/no-errors.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/2sp_soft_tabs.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/arrow_alignment.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/double_quoted_strings.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/duplicate_params.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/ensure_not_symlink_target.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/file_mode.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/hard_tabs.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/names_containing_dash.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/quoted_booleans.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/right_to_left_relationship.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/site.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/slash_comments.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/star_comments.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/puppet-lint/unquoted_file_mode.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/pyflakes/pyflakes.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/ruby/hello.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/ruby/semicolon.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/ruby/wvswc.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/spelling/spell.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/text/bof-whitespace-1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/text/bof-whitespace-2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/text/empty-file.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/text/eof-whitespace.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/text/nocommit-hook.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/text/nocommit-nohook.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/array-index.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/call-parens-hug-closing.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/creative-brace-use.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/decl-parens-hug-closing.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/duplicate-key-in-array.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/dynamic-define.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/embedded-tags.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/exit-expression.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/hash-comments.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/index-function.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/keyword-casing.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/naming-conventions.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/no-segfault-on-abstract.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/no-segfault-on-exit.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/nowdoc.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/parens-hug-contents.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/php-tags-bad.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/php-tags-echo-form.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/php-tags-good.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/php-tags-script.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/php-tags-short.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/php53.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/php54.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/preg-quote.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/ragged-classtree-edges.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/reused-iterator-reference.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/reused-iterators.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/reused-local.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/single-pass-adjacent-patches.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/slowness.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/space-after-control-keywords.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/space-around-operators.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/surprising-constructors.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/switches.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/syntax-error.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/tautological-expressions.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/todo.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/undeclared-variables.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/unreasonably-deep-nesting.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/use-of-this-in-static-method.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/variable-variables.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xhpast/wrong-concat-operator.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/almost-empty.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/attr1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/attr2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/attr3.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/attr4.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/big-entity-name.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/big-name-1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/big-name-2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/cdata-1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/cdata-2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/char-ref.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/comment.list-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/empty-cdata.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/empty.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/gjobs.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/languages-1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/languages-2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/languages-3.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/languages-4.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/languages-5.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/languages-6.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/languages-7.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/slashdot.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/svg.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/title.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/xhtml.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/xlink.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/xml/youtube.lint-test
+lib/php/arcanist/src/lint/linter/reporter.js
+lib/php/arcanist/src/lint/linter/spelling/ArcanistSpellingDefaultData.php
+lib/php/arcanist/src/lint/linter/xhpast/ArcanistXHPASTLintNamingHook.php
+lib/php/arcanist/src/lint/linter/xhpast/ArcanistXHPASTLintSwitchHook.php
+lib/php/arcanist/src/lint/linter/xhpast/__tests__/ArcanistXHPASTLintNamingHookTestCase.php
+lib/php/arcanist/src/lint/renderer/ArcanistLintConsoleRenderer.php
+lib/php/arcanist/src/lint/renderer/ArcanistLintJSONRenderer.php
+lib/php/arcanist/src/lint/renderer/ArcanistLintLikeCompilerRenderer.php
+lib/php/arcanist/src/lint/renderer/ArcanistLintNoneRenderer.php
+lib/php/arcanist/src/lint/renderer/ArcanistLintRenderer.php
+lib/php/arcanist/src/lint/renderer/ArcanistLintSummaryRenderer.php
+lib/php/arcanist/src/parser/ArcanistBaseCommitParser.php
+lib/php/arcanist/src/parser/ArcanistBundle.php
+lib/php/arcanist/src/parser/ArcanistCommentRemover.php
+lib/php/arcanist/src/parser/ArcanistDiffParser.php
+lib/php/arcanist/src/parser/__tests__/ArcanistBaseCommitParserTestCase.php
+lib/php/arcanist/src/parser/__tests__/ArcanistBundleTestCase.php
+lib/php/arcanist/src/parser/__tests__/ArcanistCommentRemoverTestCase.php
+lib/php/arcanist/src/parser/__tests__/ArcanistDiffParserTestCase.php
+lib/php/arcanist/src/parser/__tests__/base85/expect1.txt
+lib/php/arcanist/src/parser/__tests__/base85/expect2.txt
+lib/php/arcanist/src/parser/__tests__/bundle.git.tgz
+lib/php/arcanist/src/parser/__tests__/bundle/disjoint-hunks.diff
+lib/php/arcanist/src/parser/__tests__/bundle/disjoint-hunks.new
+lib/php/arcanist/src/parser/__tests__/bundle/disjoint-hunks.old
+lib/php/arcanist/src/parser/__tests__/bundle/trailing-context.diff
+lib/php/arcanist/src/parser/__tests__/bundle/trailing-context.new
+lib/php/arcanist/src/parser/__tests__/bundle/trailing-context.old
+lib/php/arcanist/src/parser/__tests__/bundle/trailing-newline.diff
+lib/php/arcanist/src/parser/__tests__/bundle/trailing-newline.new
+lib/php/arcanist/src/parser/__tests__/bundle/trailing-newline.old
+lib/php/arcanist/src/parser/__tests__/diff/basic-binary.udiff
+lib/php/arcanist/src/parser/__tests__/diff/basic-missing-both-newlines-plus.udiff
+lib/php/arcanist/src/parser/__tests__/diff/basic-missing-both-newlines.udiff
+lib/php/arcanist/src/parser/__tests__/diff/basic-missing-new-newline-plus.udiff
+lib/php/arcanist/src/parser/__tests__/diff/basic-missing-new-newline.udiff
+lib/php/arcanist/src/parser/__tests__/diff/basic-missing-old-newline-plus.udiff
+lib/php/arcanist/src/parser/__tests__/diff/basic-missing-old-newline.udiff
+lib/php/arcanist/src/parser/__tests__/diff/basic-multi-hunk-content.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/basic-multi-hunk.udiff
+lib/php/arcanist/src/parser/__tests__/diff/colorized.hggitdiff
+lib/php/arcanist/src/parser/__tests__/diff/comment.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/custom-prefixes.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-binary-change.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-binary.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-commit-logdecorate.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-commit.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-copy-plus.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-copy.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-delete-file.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-empty-files.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-filemode-change-only.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-filemode-change.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-format-patch.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-ignore-whitespace-only.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-merge-header.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-mnemonicprefix.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-move-edit.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-move-plus.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-move.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-new-file.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-odd-filename.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/git-replace-symlink.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/hg-binary-change.hgdiff
+lib/php/arcanist/src/parser/__tests__/diff/hg-binary-delete.hgdiff
+lib/php/arcanist/src/parser/__tests__/diff/hg-diff-range.hgdiff
+lib/php/arcanist/src/parser/__tests__/diff/hg-patch-git.hgdiff
+lib/php/arcanist/src/parser/__tests__/diff/hg-patch.hgdiff
+lib/php/arcanist/src/parser/__tests__/diff/hg-solo-binary-change.hgdiff
+lib/php/arcanist/src/parser/__tests__/diff/more-newlines.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/rcs-addline.rcsdiff
+lib/php/arcanist/src/parser/__tests__/diff/rcs-deleteline.rcsdiff
+lib/php/arcanist/src/parser/__tests__/diff/suppress-blank-empty.gitdiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-1.7-property-added.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-binary-add.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-binary-diff-freebsd.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-binary-diff.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-empty-file.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-ignore-whitespace-only.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-property-add.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-property-delete.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-property-merge.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-property-merged.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-property-modify.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-property-multiline.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-property-older-than-1.5.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-property-windows.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svnlook-add.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svnlook-basics.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svnlook-copied.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svnlook-delete.svndiff
+lib/php/arcanist/src/parser/__tests__/patches/141452e2a775ee86409e8779dd2eda767b4fe8ab.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/176a4c2c3fd88b2d598ce41a55d9c3958be9fd2d.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/1830a13adf764b55743f7edc6066451898d8ffa4.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/1c5fe4e2243bb19d6b3bf15896177b13768e6eb6.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/2658fd01d5355abe5d4c7ead3a0e7b4b3449fe77.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/30d23787e1ecd254c884afbe37afa612f61e3904.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/337ccec314075a2bdb4a912ef467d35d04a713e4.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/39c8e7dd3914edff087a6214f0cd996ad08e5b3d.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/3f5c6d735e64c25a04f83be48ef184b25b5282f0.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/49395994a1a8a06287e40a3b318be4349e8e0288.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/5de5f3dfda1b7db2eb054e57699f05aaf1f4483e.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/5dec8bf28557f078d1987c4e8cfb53d08310f522.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/6d5e64a4a7a6a036c53b1d087184cb2c70099f2c.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/6d9eb65a2c2b56dee64d72f59554c1cca748dd34.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/8ecc728bcc9b482a9a91527ea471b04fc1a025cf.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/a5a53c424f3c2a7e85f6aee35e834c8ec5b3dbe3.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/a73b28e139296d23ade768f2346038318b331f94.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/b0c9663ecda5f666f62dad245a3a7549aac5e636.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/b454edb3bb29890ee5b3af5ef66ce6a24d15d882.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/b6ecdb3b4801f3028d88ba49940a558360847dbf.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/c0ba9bfe3695f95c3f558bc5797eeba421d32483.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/c573c25d1a767d270fed504cd993e78aba936338.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/d26628e588cf7d16368845b121c6ac6c781e81d0.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/d53dc614090c6c7d6d023e170877d7f611f18f5a.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/df340e88d8aba12e8f2b8827f01f0cd9f35eb758.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/f19fb9fa1385c01b53bdb6d8842dd154e47151ec.gitpatch
+lib/php/arcanist/src/parser/__tests__/patches/fb28468d25a5fdd063aca4ca559454c998a0af51.gitpatch
+lib/php/arcanist/src/parser/diff/ArcanistDiffChange.php
+lib/php/arcanist/src/parser/diff/ArcanistDiffChangeType.php
+lib/php/arcanist/src/parser/diff/ArcanistDiffHunk.php
+lib/php/arcanist/src/repository/api/ArcanistGitAPI.php
+lib/php/arcanist/src/repository/api/ArcanistMercurialAPI.php
+lib/php/arcanist/src/repository/api/ArcanistRepositoryAPI.php
+lib/php/arcanist/src/repository/api/ArcanistSubversionAPI.php
+lib/php/arcanist/src/repository/api/__tests__/ArcanistRepositoryAPIMiscTestCase.php
+lib/php/arcanist/src/repository/api/__tests__/ArcanistRepositoryAPIStateTestCase.php
+lib/php/arcanist/src/repository/api/__tests__/state/git_basic.git.tgz
+lib/php/arcanist/src/repository/api/__tests__/state/hg_basic.hg.tgz
+lib/php/arcanist/src/repository/api/__tests__/state/svn_basic.svn.tgz
+lib/php/arcanist/src/repository/hookapi/ArcanistHookAPI.php
+lib/php/arcanist/src/repository/hookapi/ArcanistSubversionHookAPI.php
+lib/php/arcanist/src/repository/parser/ArcanistMercurialParser.php
+lib/php/arcanist/src/repository/parser/__tests__/ArcanistMercurialParserTestCase.php
+lib/php/arcanist/src/repository/parser/__tests__/mercurial/branches-basic.txt
+lib/php/arcanist/src/repository/parser/__tests__/mercurial/branches-empty.txt
+lib/php/arcanist/src/repository/parser/__tests__/mercurial/branches-with-spaces.txt
+lib/php/arcanist/src/repository/parser/__tests__/mercurial/log-basic.txt
+lib/php/arcanist/src/repository/parser/__tests__/mercurial/log-empty.txt
+lib/php/arcanist/src/repository/parser/__tests__/mercurial/status-basic.txt
+lib/php/arcanist/src/repository/parser/__tests__/mercurial/status-moves.txt
+lib/php/arcanist/src/unit/ArcanistUnitTestResult.php
+lib/php/arcanist/src/unit/engine/ArcanistBaseTestResultParser.php
+lib/php/arcanist/src/unit/engine/ArcanistBaseUnitTestEngine.php
+lib/php/arcanist/src/unit/engine/ArcanistXUnitTestResultParser.php
+lib/php/arcanist/src/unit/engine/CSharpToolsTestEngine.php
+lib/php/arcanist/src/unit/engine/GoTestResultParser.php
+lib/php/arcanist/src/unit/engine/NoseTestEngine.php
+lib/php/arcanist/src/unit/engine/PhpunitResultParser.php
+lib/php/arcanist/src/unit/engine/PhpunitTestEngine.php
+lib/php/arcanist/src/unit/engine/PhutilUnitTestEngine.php
+lib/php/arcanist/src/unit/engine/PytestTestEngine.php
+lib/php/arcanist/src/unit/engine/XUnitTestEngine.php
+lib/php/arcanist/src/unit/engine/__tests__/GoTestResultParserTestCase.php
+lib/php/arcanist/src/unit/engine/__tests__/PHPUnitTestEngineTestCase.php
+lib/php/arcanist/src/unit/engine/__tests__/PhutilUnitTestEngineTestCase.php
+lib/php/arcanist/src/unit/engine/__tests__/XUnitTestResultParserTestCase.php
+lib/php/arcanist/src/unit/engine/__tests__/testresults/go.multiple-test-cases-failure
+lib/php/arcanist/src/unit/engine/__tests__/testresults/go.multiple-test-cases-successful
+lib/php/arcanist/src/unit/engine/__tests__/testresults/go.nonverbose
+lib/php/arcanist/src/unit/engine/__tests__/testresults/go.single-test-case-failure
+lib/php/arcanist/src/unit/engine/__tests__/testresults/go.single-test-case-successful
+lib/php/arcanist/src/unit/engine/__tests__/testresults/xunit.invalid-xml
+lib/php/arcanist/src/unit/engine/__tests__/testresults/xunit.no-tests
+lib/php/arcanist/src/unit/engine/__tests__/testresults/xunit.simple
+lib/php/arcanist/src/unit/engine/phutil/ArcanistPhutilTestCase.php
+lib/php/arcanist/src/unit/engine/phutil/testcase/ArcanistPhutilTestCaseTestCase.php
+lib/php/arcanist/src/unit/engine/phutil/testcase/ArcanistPhutilTestSkippedException.php
+lib/php/arcanist/src/unit/engine/phutil/testcase/ArcanistPhutilTestTerminatedException.php
+lib/php/arcanist/src/unit/renderer/ArcanistUnitConsoleRenderer.php
+lib/php/arcanist/src/unit/renderer/ArcanistUnitRenderer.php
+lib/php/arcanist/src/workflow/ArcanistAliasWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistAmendWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistAnoidWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistBackoutWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistBaseWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistBookmarkWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistBranchWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistBrowseWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistCallConduitWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistCloseRevisionWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistCloseWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistCommitWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistCoverWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistDiffWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistDownloadWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistExportWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistFeatureWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistFlagWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistGetConfigWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistGitHookPreReceiveWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistHelpWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistInlinesWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistInstallCertificateWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistLandWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistLiberateWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistLintWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistListWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistMarkCommittedWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistPasteWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistPatchWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistRevertWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistSetConfigWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistShellCompleteWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistSvnHookPreCommitWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistTasksWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistTodoWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistUnitWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistUpgradeWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistUploadWorkflow.php
+lib/php/arcanist/src/workflow/ArcanistWhichWorkflow.php
+lib/php/arcanist/src/workflow/exception/ArcanistCapabilityNotSupportedException.php
+lib/php/arcanist/src/workingcopyidentity/ArcanistWorkingCopyIdentity.php
+@dirrm lib/php/arcanist/bin
+@dirrm lib/php/arcanist/externals/includes
+@dirrm lib/php/arcanist/externals/pep8
+@dirrm lib/php/arcanist/externals
+@dirrm lib/php/arcanist/resources/shell
+@dirrm lib/php/arcanist/resources/test
+@dirrm lib/php/arcanist/resources
+@dirrm lib/php/arcanist/scripts/hgdaemon
+@dirrm lib/php/arcanist/scripts/lib
+@dirrm lib/php/arcanist/scripts/repository
+@dirrm lib/php/arcanist/scripts
+@dirrm lib/php/arcanist/src/configuration/__tests__
+@dirrm lib/php/arcanist/src/configuration
+@dirrm lib/php/arcanist/src/difference/__tests__
+@dirrm lib/php/arcanist/src/difference
+@dirrm lib/php/arcanist/src/differential/constants
+@dirrm lib/php/arcanist/src/differential
+@dirrm lib/php/arcanist/src/docs/book
+@dirrm lib/php/arcanist/src/docs
+@dirrm lib/php/arcanist/src/events/constant
+@dirrm lib/php/arcanist/src/events
+@dirrm lib/php/arcanist/src/exception/usage
+@dirrm lib/php/arcanist/src/exception
+@dirrm lib/php/arcanist/src/extensions
+@dirrm lib/php/arcanist/src/hgdaemon
+@dirrm lib/php/arcanist/src/infrastructure/testing
+@dirrm lib/php/arcanist/src/infrastructure
+@dirrm lib/php/arcanist/src/lint/engine
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/cpp
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/csslint
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/flake8
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/jshint
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/jsonlint
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/lessc/errors
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/lessc
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/pep8
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/phlxhp
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/phpcs
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/puppet-lint
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/pyflakes
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/ruby
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/spelling
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/text
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/xhpast
+@dirrm lib/php/arcanist/src/lint/linter/__tests__/xml
+@dirrm lib/php/arcanist/src/lint/linter/__tests__
+@dirrm lib/php/arcanist/src/lint/linter/spelling
+@dirrm lib/php/arcanist/src/lint/linter/xhpast/__tests__
+@dirrm lib/php/arcanist/src/lint/linter/xhpast
+@dirrm lib/php/arcanist/src/lint/linter
+@dirrm lib/php/arcanist/src/lint/renderer
+@dirrm lib/php/arcanist/src/lint
+@dirrm lib/php/arcanist/src/parser/__tests__/base85
+@dirrm lib/php/arcanist/src/parser/__tests__/bundle
+@dirrm lib/php/arcanist/src/parser/__tests__/diff
+@dirrm lib/php/arcanist/src/parser/__tests__/patches
+@dirrm lib/php/arcanist/src/parser/__tests__
+@dirrm lib/php/arcanist/src/parser/diff
+@dirrm lib/php/arcanist/src/parser
+@dirrm lib/php/arcanist/src/repository/api/__tests__/state
+@dirrm lib/php/arcanist/src/repository/api/__tests__
+@dirrm lib/php/arcanist/src/repository/api
+@dirrm lib/php/arcanist/src/repository/hookapi
+@dirrm lib/php/arcanist/src/repository/parser/__tests__/mercurial
+@dirrm lib/php/arcanist/src/repository/parser/__tests__
+@dirrm lib/php/arcanist/src/repository/parser
+@dirrm lib/php/arcanist/src/repository
+@dirrm lib/php/arcanist/src/unit/engine/__tests__/testresults
+@dirrm lib/php/arcanist/src/unit/engine/__tests__
+@dirrm lib/php/arcanist/src/unit/engine/phutil/testcase
+@dirrm lib/php/arcanist/src/unit/engine/phutil
+@dirrm lib/php/arcanist/src/unit/engine
+@dirrm lib/php/arcanist/src/unit/renderer
+@dirrm lib/php/arcanist/src/unit
+@dirrm lib/php/arcanist/src/workflow/exception
+@dirrm lib/php/arcanist/src/workflow
+@dirrm lib/php/arcanist/src/workingcopyidentity
+@dirrm lib/php/arcanist/src
+@dirrm lib/php/arcanist

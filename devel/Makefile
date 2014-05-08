@@ -60,6 +60,7 @@
     SUBDIR += apiextractor
     SUBDIR += apr1
     SUBDIR += apr2
+    SUBDIR += arcanist
     SUBDIR += arduino
     SUBDIR += arduino-glcd
     SUBDIR += arduino-irremote
@@ -1081,6 +1082,7 @@
     SUBDIR += libpff
     SUBDIR += libphish
     SUBDIR += libphk
+    SUBDIR += libphutil
     SUBDIR += libplist
     SUBDIR += libpo6
     SUBDIR += libpthread-stubs
