@@ -18,27 +18,19 @@ WRKSRC=		${WRKDIR}/DrCreep
 
 SUB_FILES+=	pkg-message
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 801000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_stdafx.cpp
-.endif
-
 do-build:
-	cd ${WRKSRC} && ${CXX} -DFREEBSD -o ${PORTNAME} ${CXXFLAGS} \
+	@(cd ${WRKSRC} && ${CXX} -DFREEBSD -o ${PORTNAME} ${CXXFLAGS} \
 		`${SDL_CONFIG} --cflags --libs` -I./src src/*.cpp src/graphics/*.cpp \
 		src/graphics/scale/*.cpp src/castle/*.cpp src/castle/objects/*.cpp \
-		src/vic-ii/*.cpp src/resid-0.16/*.cpp src/sound/*.cpp -lcompat
+		src/vic-ii/*.cpp src/resid-0.16/*.cpp src/sound/*.cpp -lcompat)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}/data
-	${MKDIR} ${DATADIR}/data/castle
-	${MKDIR} ${DATADIR}/data/castles
-	${MKDIR} ${DATADIR}/data/save
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data/castle
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data/castles
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data/save
 
-	${INSTALL_DATA} ${WRKSRC}/run/data/char.rom ${DATADIR}/data
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/run/data/char.rom ${STAGEDIR}${DATADIR}/data
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
