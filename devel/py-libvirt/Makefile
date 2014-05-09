@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/python/ \
 		ftp://libvirt.org/libvirt/python/
