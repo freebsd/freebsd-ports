@@ -18,11 +18,8 @@ NO_BUILD=	yes
 USE_GNOME=	pygtk2 librsvg2
 USE_PYTHON=	yes
 
-MANCOMPRESSED=	yes
-MAN1=		tucan.1
 USES=		gettext
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -Ee 's|#! /usr/bin/env python|#! ${PYTHON_CMD}|' ${WRKSRC}/tucan.py
 
@@ -31,21 +28,21 @@ pre-install:
 	${RM} ${WRKSRC}/core/*.orig
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${MKDIR} ${DATADIR}/core
-	${MKDIR} ${DATADIR}/default_plugins
-	${MKDIR} ${DATADIR}/i18n
-	${MKDIR} ${DATADIR}/media
-	${MKDIR} ${DATADIR}/ui
-	${INSTALL_SCRIPT} ${WRKSRC}/tucan.py ${PREFIX}/share/tucan/
-	${LN} -s ${PREFIX}/share/tucan/tucan.py ${PREFIX}/bin/tucan
-	(cd ${WRKSRC}/core/ && ${COPYTREE_SHARE} \* ${DATADIR}/core/)
-	(cd ${WRKSRC}/default_plugins/ && ${COPYTREE_SHARE} \* ${DATADIR}/default_plugins/)
-	(cd ${WRKSRC}/i18n/ && ${COPYTREE_SHARE} \* ${DATADIR}/i18n/)
-	(cd ${WRKSRC}/media/ && ${COPYTREE_SHARE} \* ${DATADIR}/media/)
-	(cd ${WRKSRC}/ui/ && ${COPYTREE_SHARE} \* ${DATADIR}/ui/)
-	${INSTALL_DATA} ${WRKSRC}/media/tucan.png ${PREFIX}/share/pixmaps/
-	${INSTALL_MAN} ${WRKSRC}/tucan.1.gz ${PREFIX}/man/man1/
-	${INSTALL} ${WRKSRC}/tucan.desktop ${PREFIX}/share/applications/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/core
+	${MKDIR} ${STAGEDIR}${DATADIR}/default_plugins
+	${MKDIR} ${STAGEDIR}${DATADIR}/i18n
+	${MKDIR} ${STAGEDIR}${DATADIR}/media
+	${MKDIR} ${STAGEDIR}${DATADIR}/ui
+	${INSTALL_SCRIPT} ${WRKSRC}/tucan.py ${STAGEDIR}${PREFIX}/share/tucan/
+	${LN} -s ${PREFIX}/share/tucan/tucan.py ${STAGEDIR}${PREFIX}/bin/tucan
+	(cd ${WRKSRC}/core/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/core/)
+	(cd ${WRKSRC}/default_plugins/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/default_plugins/)
+	(cd ${WRKSRC}/i18n/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/i18n/)
+	(cd ${WRKSRC}/media/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/media/)
+	(cd ${WRKSRC}/ui/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/ui/)
+	${INSTALL_DATA} ${WRKSRC}/media/tucan.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_MAN} ${WRKSRC}/tucan.1.gz ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL} ${WRKSRC}/tucan.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 .include <bsd.port.mk>
