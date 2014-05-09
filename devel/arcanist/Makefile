@@ -2,6 +2,7 @@
 
 PORTNAME=	arcanist
 PORTVERSION=	20140508
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 
@@ -12,7 +13,7 @@ LICENSE=	APACHE20
 
 PHP_DESTDIR=	lib/php/arcanist
 RUN_DEPENDS=	php5-libphutil>0:${PORTSDIR}/devel/libphutil
-USE_PHP=	curl json
+USE_PHP=	curl json simplexml
 USE_GITHUB=	yes
 NO_BUILD=	yes
 GH_ACCOUNT=	facebook
