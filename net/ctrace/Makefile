@@ -16,12 +16,10 @@ RUN_DEPENDS=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP \
 NO_BUILD=	yes
 USES=		perl5
 
-MAN1=		ctrace.1
-PLIST_FILES=	sbin/ctrace
+PLIST_FILES=	sbin/ctrace man/man1/ctrace.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ctrace ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/ctrace.man ${PREFIX}/man/man1/ctrace.1
+	${INSTALL_SCRIPT} ${WRKSRC}/ctrace ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/ctrace.man ${STAGEDIR}${PREFIX}/man/man1/ctrace.1
 
 .include <bsd.port.mk>
