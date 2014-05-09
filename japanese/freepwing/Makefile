@@ -12,10 +12,8 @@ COMMENT=	Free JIS X 4081 (subset of EPWING V1) Formatter
 
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
-USES=		perl5
-USE_GMAKE=	yes
+USES=		gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgdocdir=${DOCSDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
