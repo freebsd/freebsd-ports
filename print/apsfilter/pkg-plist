@@ -2,6 +2,11 @@ bin/aps2file
 bin/apsfilter-bug
 bin/apspreview
 etc/apsfilter/basedir
+man/man1/aps2file.1.gz
+man/man1/apsfilter-bug.1.gz
+man/man1/apsfilter.1.gz
+man/man1/apspreview.1.gz
+man/man5/apsfilterrc.5.gz
 %%DATADIR%%/SETUP
 %%DATADIR%%/bin/apsfilter
 %%DATADIR%%/bin/setup_dvips.sh
