@@ -1,6 +1,8 @@
 bin/jed
 bin/rgrep
-%%X11%%
+%%X11%%bin/xjed
+man/man1/jed.1.gz
+man/man1/rgrep.1.gz
 %%DATADIR%%/bin/getmail
 %%DATADIR%%/lib/colors/README
 %%DATADIR%%/lib/colors/black1.sl

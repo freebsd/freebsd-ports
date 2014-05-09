@@ -11,51 +11,41 @@ MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}-B${VERSION:R}-${VERSION:E}__J${JP_VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-extralibs-${VERSION}.tar.gz
+DIST_SUBDIR=	jed
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A SLang-based text editor (w/ Japanese support)
+COMMENT=	SLang-based text editor (w/ Japanese support)
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
+LIB_DEPENDS=	libslang.so:${PORTSDIR}/japanese/libslang
 
 VERSION=	0.99.8
 JP_VERSION=	067
 
-DIST_SUBDIR=	jed
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lcurses"
 CONFIGURE_ARGS=	--enable-x-locale=no
 ALL_TARGET=	${BINSTUFF} getmail
-MAN1=		jed.1 rgrep.1
-
 MAKE_JOBS_UNSAFE=  yes
+INFO=		jed
 
 JED_ROOT=	${DATADIR}
 BINSTUFF=	jed rgrep
 
 OPTIONS_DEFINE=	DOCS X11 CANNA
 OPTIONS_DEFAULT= CANNA X11
-CANNA_DESC=	Canna support
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+CANNA_DESC=		Canna support
+CANNA_CONFIGURE_ON=	--with-canna=yes
+CANNA_CONFIGURE_OFF=	--with-canna=no
+CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
+
+X11_USE=	XORG=x11,xext,xt
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-INFO=		jed
-.endif
-
-.if ${PORT_OPTIONS:MCANNA}
-CONFIGURE_ARGS+=	--with-canna=yes
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
-.else
-CONFIGURE_ARGS+=	--with-canna=no
-.endif
-
 .if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xext xt
 BINSTUFF+=	xjed
-PLIST_SUB=	X11="bin/xjed"
-.else
-PLIST_SUB=	X11="@comment "
 .endif
 
 _OBJDIR=	${WRKSRC}/src/${ARCH}objs
@@ -77,28 +67,21 @@ post-patch:
 	@${RM} ${_INFODIR}/*.orig
 
 do-install:
-	${MKDIR} ${JED_ROOT}
-	cd ${JED_ROOT} && ${MKDIR} bin lib lib/colors lib/tm
-	cd ${_OBJDIR} && ${INSTALL_PROGRAM} ${BINSTUFF} ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${_OBJDIR}/getmail ${JED_ROOT}/bin/
-	${INSTALL_DATA} ${_LIBDIR}/*.sl \
-		${_LIBDIR}/*.dat \
-		${_LIBDIR}/*.hlp \
-		${_LIBDIR}/jed.rc \
-		${JED_ROOT}/lib/
-	${INSTALL_DATA} ${_LIBDIR}/colors/* ${JED_ROOT}/lib/colors/
-	${INSTALL_DATA} ${_LIBDIR}/tm/* ${JED_ROOT}/lib/tm/
-	cd ${_DOCDIR} && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DATA} ${_INFODIR}/jed.info ${PREFIX}/info/
-	${INSTALL_DATA} ${_INFODIR}/jed.1in ${PREFIX}/info/jed.info-1
-	${INSTALL_DATA} ${_INFODIR}/jed.2in ${PREFIX}/info/jed.info-2
-	${INSTALL_DATA} ${_INFODIR}/jed.3in ${PREFIX}/info/jed.info-3
-	${MKDIR} ${DOCSDIR}
-	cd ${_DOCDIR} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${JED_ROOT}
+	@(cd ${STAGEDIR}${JED_ROOT} && ${MKDIR} bin lib lib/colors lib/tm)
+	(cd ${_OBJDIR} && ${INSTALL_PROGRAM} ${BINSTUFF} ${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${_OBJDIR}/getmail ${STAGEDIR}${JED_ROOT}/bin
+	(cd ${_LIBDIR} && ${INSTALL_DATA} *.sl *.dat *.hlp jed.rc \
+		${STAGEDIR}${JED_ROOT}/lib)
+	${INSTALL_DATA} ${_LIBDIR}/colors/* ${STAGEDIR}${JED_ROOT}/lib/colors
+	${INSTALL_DATA} ${_LIBDIR}/tm/* ${STAGEDIR}${JED_ROOT}/lib/tm
+	(cd ${_DOCDIR} && ${INSTALL_MAN} jed.1 rgrep.1 \
+		${STAGEDIR}${PREFIX}/man/man1)
+	${INSTALL_DATA} ${_INFODIR}/jed.info ${STAGEDIR}${PREFIX}/info
+	${INSTALL_DATA} ${_INFODIR}/jed.1in ${STAGEDIR}${PREFIX}/info/jed.info-1
+	${INSTALL_DATA} ${_INFODIR}/jed.2in ${STAGEDIR}${PREFIX}/info/jed.info-2
+	${INSTALL_DATA} ${_INFODIR}/jed.3in ${STAGEDIR}${PREFIX}/info/jed.info-3
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${_DOCDIR} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
