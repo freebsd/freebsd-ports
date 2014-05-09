@@ -2,7 +2,7 @@
 
 PORTNAME=	arcanist
 PORTVERSION=	20140508
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 
@@ -12,7 +12,8 @@ COMMENT=	Command line interface for Phabricator
 LICENSE=	APACHE20
 
 PHP_DESTDIR=	lib/php/arcanist
-RUN_DEPENDS=	php5-libphutil>0:${PORTSDIR}/devel/libphutil
+RUN_DEPENDS=	php5-libphutil>0:${PORTSDIR}/devel/libphutil \
+		bash:${PORTSDIR}/shells/bash
 USE_PHP=	curl json simplexml
 USE_GITHUB=	yes
 NO_BUILD=	yes
