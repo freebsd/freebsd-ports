@@ -9,27 +9,26 @@ MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+DIST_SUBDIR=	esecanna
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Esecanna module for Wnn6
 
-LIB_DEPENDS=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
+LIB_DEPENDS=	libwnn6.so:${PORTSDIR}/japanese/Wnn6-lib
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 LDFLAGS+=	-L${PREFIX}/lib
 CFLAGS+=	-I${PREFIX}/include/wnn6
 
-DIST_SUBDIR=    esecanna
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/esecanna
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/esecanna
 .for i in README CHANGES
-	${INSTALL_DATA} ${WRKSRC}/${i}.jp ${PREFIX}/share/doc/esecanna/${i}.wnn6.jp
+	${INSTALL_DATA} ${WRKSRC}/${i}.jp \
+		${STAGEDIR}${PREFIX}/share/doc/esecanna/${i}.wnn6.jp
 .endfor
-.endif
 
 .include <bsd.port.mk>
