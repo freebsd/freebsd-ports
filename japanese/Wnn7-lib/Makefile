@@ -22,7 +22,6 @@ PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=DOCS
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/config/Project.tmpl \
@@ -34,14 +33,10 @@ post-patch:
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make World -f Makefile.ini
 
-.include <bsd.port.options.mk>
-
 post-install:
-	${MKDIR} ${PREFIX}/include/wnn7/wnn
-	${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn7/wnn
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/wnn7/wnn
+	${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${STAGEDIR}${PREFIX}/include/wnn7/wnn
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
