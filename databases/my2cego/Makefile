@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Imports mysqldump files into cego
 
 LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase \
