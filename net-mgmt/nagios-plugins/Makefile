@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/ \
@@ -14,6 +14,8 @@ COMMENT=	Plugins for Nagios
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+CONFLICTS_INSTALL=	monitoring-plugins-*
 
 USES=		charsetfix gmake perl5 libtool
 CHARSETFIX_MAKEFILEIN=Makefile.am
