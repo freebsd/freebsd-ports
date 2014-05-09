@@ -14,28 +14,23 @@ COMMENT=	Graphical password applet for entering SSH passphrase
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/README
 
+USES=		uidfix
 USE_XORG=	x11 xt sm ice
 DOCSDIR=	${PREFIX}/share/doc/ssh-askpass
 PLIST_FILES=	bin/x11-ssh-askpass \
 		bin/ssh-askpass \
-		lib/X11/app-defaults/SshAskpass
+		lib/X11/app-defaults/SshAskpass \
+		man/man1/ssh-askpass.1.gz \
+		man/man1/x11-ssh-askpass.1.gz
 PORTDOCS=	README TODO ChangeLog
 
-MAN1=		x11-ssh-askpass.1
-MLINKS=		x11-ssh-askpass.1 ssh-askpass.1
-
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-extract:
 	${INSTALL_DATA} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

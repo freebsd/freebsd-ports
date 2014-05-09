@@ -41,10 +41,10 @@ ssh-askpass: ${PROG}
 	ln -s -f $? $@
 
 beforeinstall:
-	mkdir -p ${FILESDIR}
+	mkdir -p ${DESTDIR}${FILESDIR}
 
 afterinstall:
-	ln -s -f ${PROG} ${BINDIR}/ssh-askpass
-	ln -s -f ${PROG}.1 ${MANDIR}1/ssh-askpass.1
+	ln -s -f ${PROG} ${DESTDIR}${BINDIR}/ssh-askpass
+	ln -s -f ${PROG}.1 ${DESTDIR}${MANDIR}1/ssh-askpass.1
 
 .include <bsd.prog.mk>
