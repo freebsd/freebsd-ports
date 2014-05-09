@@ -5,7 +5,7 @@
 -DESTDIR = /usr/local/bin
 -MANUAL = /usr/local/man/man1/kbanner.1
 -CFLAGS = -O
-+DESTDIR = ${PREFIX}/bin
++DESTDIR = 
 +MANUAL = ${PREFIX}/man/man1/kbanner.1
  OBJ = kbanner.o font1.o font2.o font3.o
  
@@ -26,5 +26,5 @@
  install: kbanner
 -	cp kbanner $(DESTDIR)/
 -	cp kbanner.1 $(MANUAL)
-+	${BSD_INSTALL_PROGRAM} kbanner $(DESTDIR)/
-+	${BSD_INSTALL_MAN} kbanner.1 $(MANUAL)
++	${BSD_INSTALL_PROGRAM} kbanner $(DESTDIR)/$(PREFIX)/bin
++	${BSD_INSTALL_MAN} kbanner.1 $(DESTDIR)$(MANUAL)
