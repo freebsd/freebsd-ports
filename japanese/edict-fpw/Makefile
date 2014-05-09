@@ -9,23 +9,23 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/edict/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Japanese <-> English Dictionary (EPWING V1 format)
+COMMENT=	Japanese <-> English Dictionary (EPWING V1 format)
 
 USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/edict
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/edict-fpw/edict/data
-	${INSTALL_DATA} ${WRKSRC}/edict/data/honmon ${PREFIX}/share/dict/edict-fpw/edict/data
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/edict-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme.pkg edict.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/edict-fpw/edict/data
+	${INSTALL_DATA} ${WRKSRC}/edict/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/edict-fpw/edict/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/edict-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} readme.pkg edict.txt \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
