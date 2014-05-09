@@ -16,8 +16,7 @@ CONFIGURE_ARGS=	--program-transform-name= --bindir=${PREFIX}/sbin
 
 PLIST_FILES=	sbin/openupsd etc/openupsd.conf.sample
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/openupsd.conf ${PREFIX}/etc/openupsd.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/openupsd.conf ${STAGEDIR}${PREFIX}/etc/openupsd.conf.sample
 
 .include <bsd.port.mk>
