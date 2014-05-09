@@ -26,10 +26,11 @@ USE_RC_SUBR=	vboxnet
 ONLY_FOR_ARCHS=	i386 amd64
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
-		--disable-xpcom --disable-sdl-ttf --disable-pulse \
-		--disable-alsa --disable-dbus --disable-python \
-		--build-headless
+CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal
+CONFIGURE_ARGS+=--disable-alsa --disable-dbus --disable-docs \
+		--disable-libvpx --disable-pulse --disable-python \
+		--disable-sdl-ttf --disable-xpcom
+CONFIGURE_ARGS+=--build-headless
 
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-4* virtualbox-ose-kmod-legacy-4*
 
