@@ -17,8 +17,6 @@ Chart::PNGgraph::mixed
     individual graph types won't work very well. Multiple bar graphs in a mixed
     graph won't display very nicely.
 
-Additional types:
-
 Chart::PNGgraph::pie
     Create a pie chart.
 
