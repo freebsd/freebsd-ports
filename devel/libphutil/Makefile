@@ -11,7 +11,7 @@ COMMENT=	Collection of PHP utility classes
 LICENSE=	APACHE20
 
 PHP_DESTDIR=	lib/php/libphutil
-USE_PHP=	yes
+USE_PHP=	xml
 USE_GITHUB=	yes
 NO_BUILD=	yes
 GH_ACCOUNT=	facebook
