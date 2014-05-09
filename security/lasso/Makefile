@@ -23,7 +23,6 @@ USE_PYTHON_BUILD=	yes
 
 OPTIONS_DEFINE=	PERL PHP PYTHON
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !empty(PORT_OPTIONS:MPERL)
@@ -58,9 +57,9 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
 post-install:
-	${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
+	${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
 .ifdef(NOPORTDOCS)
-	${RM} -rf ${DOCSDIR}
+	${RM} -rf ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

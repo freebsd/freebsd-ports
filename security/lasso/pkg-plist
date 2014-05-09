@@ -307,8 +307,6 @@ lib/liblasso.la
 lib/liblasso.so
 lib/liblasso.so.8
 libdata/pkgconfig/lasso.pc
-@dirrmtry libdata/pkgconfig
-@dirrmtry libdata
 @dirrmtry include/lasso/xml/ws
 @dirrmtry include/lasso/xml/saml-2.0
 @dirrmtry include/lasso/xml/id-wsf-2.0
