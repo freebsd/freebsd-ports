@@ -14,19 +14,16 @@ COMMENT=	Japanese address book
 ALL_TARGET=
 USE_GNOME=	gtk12
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e "s@gcc@${CC}@g; \
 			s@-g@${CFLAGS}@g; \
 			s@gtk-config@${GTK_CONFIG}@g" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/jyuroku ${LOCALBASE}/bin
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/jyuroku ${STAGEDIR}${LOCALBASE}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
