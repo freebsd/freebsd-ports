@@ -1,5 +1,3 @@
-From README
-
 This module provides perl access to Glib and GLib's GObject libraries.
 GLib is a portability and utility library; GObject provides a generic
 type system with inheritance and a powerful signal system.  Together
