@@ -203,7 +203,6 @@
 %%SLIMDIR%%/Plugins/TrackStat/lib/Time/Stopwatch.pm
 %%SLIMDIR%%/Plugins/TrackStat/strings.txt
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/lib/Time
-@dirrm %%SLIMDIR%%/Plugins/TrackStat/lib/Plugins
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/lib
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/iTunes
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/iPengConfiguration
@@ -225,10 +224,6 @@
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng
-@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/plugins/TrackStat/html/images
-@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/plugins/TrackStat/html
-@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/plugins/TrackStat
-@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/plugins
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/html/images
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/html
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770
@@ -267,5 +262,3 @@
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/Backup
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/Amarok
 @dirrm %%SLIMDIR%%/Plugins/TrackStat
-@dirrmtry %%SLIMDIR%%/Plugins
-@dirrmtry %%SLIMDIR%%

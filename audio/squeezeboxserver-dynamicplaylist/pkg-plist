@@ -79,5 +79,3 @@
 @dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Default
 @dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML
 @dirrm %%SLIMDIR%%/Plugins/DynamicPlayList
-@dirrmtry %%SLIMDIR%%/Plugins
-@dirrmtry %%SLIMDIR%%
