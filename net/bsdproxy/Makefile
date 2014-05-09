@@ -11,14 +11,12 @@ COMMENT=	A TCP proxy, demonstrating use of the kevent(2)/kqueue(2) API
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
-NO_STAGE=	yes
 
-DOCS=		ChangeLog README
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	ChangeLog README
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
