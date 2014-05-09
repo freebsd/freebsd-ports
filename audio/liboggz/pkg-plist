@@ -133,7 +133,6 @@ man/man1/oggz.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/latex/structoggz__packet.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/structoggz__position.tex
 @dirrm include/oggz
-@dirrmtry libdata/pkgconfig
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/latex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

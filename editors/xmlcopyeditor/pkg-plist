@@ -370,4 +370,3 @@ share/pixmaps/xmlcopyeditor.png
 @dirrm %%DATADIR%%/dtd
 @dirrm %%DATADIR%%/catalog
 @dirrm %%DATADIR%%
-@dirrmtry share/pixmaps

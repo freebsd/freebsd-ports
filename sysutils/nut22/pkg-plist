@@ -81,7 +81,6 @@ sbin/upssched
 %%NUT_CGI%%%%WWWDIR%%/index.html
 %%NUT_CGI%%%%WWWDIR%%/nut-banner.png
 @dirrmtry etc/nut
-@dirrmtry libdata/pkgconfig
 @dirrmtry libexec/nut
 @dirrmtry %%STATEDIR%%
 %%NUT_CGI%%@dirrm %%CGIDIR%%

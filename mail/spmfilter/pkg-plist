@@ -31,7 +31,6 @@ man/man5/spmfilter.conf.5.gz
 @unexec if cmp -s %D/etc/spmfilter.conf.sample %D/etc/spmfilter.conf; then rm -f %D/etc/spmfilter.conf; fi
 etc/spmfilter.conf.sample
 @exec if [ ! -f %D/etc/spmfilter.conf ] ; then cp -p %D/%F %B/spmfilter.conf; fi
-@dirrmtry libdata/pkgconfig
 @dirrm include/spmfilter/smf
 @dirrm include/spmfilter
 @dirrmtry lib/spmfilter

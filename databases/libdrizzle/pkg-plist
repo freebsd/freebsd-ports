@@ -357,5 +357,4 @@ libdata/pkgconfig/libdrizzle.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%
-@dirrmtry libdata/pkgconfig
 @dirrm include/libdrizzle

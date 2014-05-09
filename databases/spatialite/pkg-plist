@@ -21,5 +21,4 @@ lib/libspatialite.la
 lib/libspatialite.so
 lib/libspatialite.so.6
 libdata/pkgconfig/spatialite.pc
-@dirrmtry libdata/pkgconfig
 @dirrm include/spatialite
