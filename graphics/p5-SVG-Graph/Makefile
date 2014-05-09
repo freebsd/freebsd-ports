@@ -8,8 +8,10 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Visualize your data in Scalable Vector Graphics (SVG) format
+
+LICENSE=	ART20
 
 BUILD_DEPENDS=	p5-Math-Spline>=0:${PORTSDIR}/math/p5-Math-Spline \
 		p5-SVG>=0:${PORTSDIR}/textproc/p5-SVG \
