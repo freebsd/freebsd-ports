@@ -3,7 +3,7 @@
 
 PORTNAME=	netcdf-fortran
 PORTVERSION=	4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/Unidata/${PORTNAME}/archive/ \
 		LOCAL/sunpoet
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 
 CONFLICTS=	netcdf-ftn-[0-9]* netcdf3-ftn-[0-9]*
 
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
+CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC -DgFortran
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
