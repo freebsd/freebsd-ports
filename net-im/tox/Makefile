@@ -20,7 +20,8 @@ GH_PROJECT=	ProjectTox-Core
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	52bfd7c
 
-USE_AUTOTOOLS=	automake autoconf libtoolize
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	-a -c -f
 USES=		pkgconfig pathfix libtool
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
@@ -60,6 +61,5 @@ CONFIGURE_ARGS+=	--with-nacl-libs=${LOCALBASE}/lib
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/configure.ac
-	cd ${WRKSRC} && ./autogen.sh
 
 .include <bsd.port.mk>
