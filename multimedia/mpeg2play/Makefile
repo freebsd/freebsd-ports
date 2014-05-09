@@ -14,18 +14,12 @@ USES=		imake motif
 USE_XORG=	x11 xext xp xt
 ALL_TARGET=	mpeg2play
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mpeg2play ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Mpeg2play ${PREFIX}/lib/X11/app-defaults
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/mpeg2play ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/Mpeg2play ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
