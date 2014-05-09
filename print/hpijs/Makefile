@@ -9,7 +9,7 @@ MASTER_SITES=	SF/hpinkjet/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drivers and support resources for HP Inkjet Printers
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 CONFLICTS=	hplip-[0-9]*
 
@@ -23,22 +23,23 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	CUPS DOCS FOOMATIC
 OPTIONS_DEFAULT=	CUPS FOOMATIC
 FOOMATIC_DESC=	Install foomatic-rip and PPD files
+INSTALL_TARGET=	install-exec install-foomatic
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS} || ${PORT_OPTIONS:MFOOMATIC}
 CONFLICTS+=		foomatic-filters-*
-USES=			perl5
+USES+=			perl5 shebangfix
 CONFIGURE_ARGS+=	--enable-foomatic-install
 PLIST_SUB+=		FOOMATIC=""
+SHEBANG_FILES=		foomatic-rip
 .else
 CONFIGURE_ARGS+=	--disable-foomatic-install
 PLIST_SUB+=		FOOMATIC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=		cups:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=		libcups.so:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=	--enable-cups-install
 PLIST_SUB+=		CUPS=""
 .else
@@ -46,7 +47,7 @@ CONFIGURE_ARGS+=	--disable-cups-install
 PLIST_SUB+=		CUPS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share/cups|${LOCALBASE}/share/cups|g ; \
@@ -55,21 +56,12 @@ post-patch:
 
 .if empty(PORT_OPTIONS:MCUPS) && empty(PORT_OPTIONS:MFOOMATIC)
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hpijs ${PREFIX}/bin
-.else
-INSTALL_TARGET=	install-exec install-foomatic
+	${INSTALL_PROGRAM} ${WRKSRC}/hpijs ${STAGEDIR}${PREFIX}/bin
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MCUPS}
-	@${LN} -s ${PREFIX}/bin/foomatic-rip ${LOCALBASE}/libexec/cups/filter/foomatic-rip
-	@${LN} -s ${PREFIX}/share/ppd ${LOCALBASE}/share/cups/model/foomatic-ppds
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/gs_hpijs.png ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/hpijs_readme.html ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/gs_hpijs.png ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/hpijs_readme.html ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
