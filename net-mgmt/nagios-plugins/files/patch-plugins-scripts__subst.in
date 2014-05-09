@@ -1,5 +1,5 @@
 --- ./plugins-scripts/subst.in.orig	2014-03-04 22:41:57.000000000 +0100
-+++ ./plugins-scripts/subst.in	2014-04-16 11:38:35.000000000 +0200
++++ ./plugins-scripts/subst.in	2014-05-09 18:08:34.000000000 +0200
 @@ -1,7 +1,7 @@
  #!/usr/bin/awk
  
@@ -18,3 +18,12 @@
  	c=substr($0,RSTART,RLENGTH);
  	sub(c,which(c,path));
  }
+@@ -65,7 +65,7 @@
+ # Trusted path mechanism (deprecated)
+ 
+ /^[ \t]*\$ENV[ \t]*\{[ \t'"]*PATH[ \t"']*\}[ \t]*=/ {
+-	sub(/\=[ \t]*['"][^"']+["']/,"='@with_trusted_path@' # autoconf-derived");
++	sub(/\=[ \t]*['"][^"']+["'];/,"='@with_trusted_path@'; # autoconf-derived");
+ }
+ 
+ /^[\t ]*(export[\t ]*)?PATH[\t ]*=['"]+.+["']$/ {
