@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.26
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 		http://cyrusimap.org/releases/
@@ -13,7 +13,7 @@ COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool perl5
+USES=		libtool:keepla pathfix perl5
 USE_PERL5=	patch
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
