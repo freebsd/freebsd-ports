@@ -1,8 +1,6 @@
 ***************************************************************************
 
-Note: dnetc has been installed with a sample configuration.
-
-To change this run:
+To change the dnetc configuration run:
 
     %%BINDIR%%/dnetc -config
 
