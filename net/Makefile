@@ -1025,6 +1025,7 @@
     SUBDIR += rubygem-ipaddress
     SUBDIR += rubygem-iproto
     SUBDIR += rubygem-macaddr
+    SUBDIR += rubygem-netrc
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
     SUBDIR += rubygem-network_interface
