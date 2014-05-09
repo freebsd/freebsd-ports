@@ -497,8 +497,6 @@ include/qxmpp/QXmppArchiveIq.h
 %%DOCSDIR%%/html/QXmppArchiveManager_8h_source.html
 %%DOCSDIR%%/html/QXmppArchiveIq_8h_source.html
 @dirrm include/qxmpp
-@dirrmtry libdata/pkgconfig
-@dirrmtry libdata
 @dirrm %%DOCSDIR%%/html/search
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%

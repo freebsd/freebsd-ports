@@ -1,4 +1,3 @@
-@dirrmtry libdata/pkgconfig
 @dirrmtry lib/cmake
 @dirrmtry etc/gnuradio/conf.d
 @dirrmtry etc/gnuradio

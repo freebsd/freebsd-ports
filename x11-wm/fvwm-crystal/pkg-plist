@@ -3293,7 +3293,6 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/wallpapers/fvwm-crystal-bright1-1024x768.jpg
 %%DATADIR%%/fvwm/wallpapers/fvwm-crystal-dark1-1024x768.jpg
 %%DATADIR%%/fvwm/wallpapers/fvwm-crystal-dark2-1024x768.jpg
-@dirrm share/pixmaps
 @dirrm %%DATADIR%%/fvwm/wallpapers
 @dirrm %%DATADIR%%/fvwm/scripts/FvwmMPD
 @dirrm %%DATADIR%%/fvwm/scripts

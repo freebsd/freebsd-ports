@@ -106,4 +106,3 @@ share/pixmaps/TrustedQSL.png
 @dirrm share/TrustedQSL/help/tqslapp
 @dirrm share/TrustedQSL/help
 @dirrm share/TrustedQSL
-@dirrmtry share/pixmaps

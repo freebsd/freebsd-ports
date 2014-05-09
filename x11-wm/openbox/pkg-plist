@@ -193,7 +193,6 @@ share/xsessions/openbox.desktop
 @dirrmtry share/themes
 @dirrmtry share/gnome-session/sessions
 @dirrmtry share/gnome-session
-@dirrmtry libdata/pkgconfig
 @dirrm include/openbox/%%VERSION%%/obt
 @dirrm include/openbox/%%VERSION%%/obrender
 @dirrm include/openbox/%%VERSION%%
