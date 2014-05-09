@@ -35,7 +35,7 @@ shebangonefile() {
 	/bin/csh) ;;
 	/bin/sh) ;;
 	*)
-		err "${interp} is an invalid shebang you need USES=shebangfix for ${f#${STAGEDIR}${PREFIX}/}"
+		err "'${interp}' is an invalid shebang you need USES=shebangfix for '${f#${STAGEDIR}${PREFIX}/}'"
 		rc=1
 		;;
 	esac
@@ -49,14 +49,22 @@ shebang() {
 	rc=0
 	
 	while read f; do
+		# No results presents a blank line from heredoc.
 		[ -z "${f}" ] && continue
 		shebangonefile "${f}" || rc=1
 	# Use heredoc to avoid losing rc from find|while subshell
-	done << EOF
-$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${PREFIX}/libexec -type f -perm +111 2>/dev/null)
-EOF
-	while read l link; do
+	done <<-EOF
+	$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
+	    ${STAGEDIR}${PREFIX}/libexec -type f -perm +111 2>/dev/null)
+	EOF
+
+	# Split stat(1) result into 2 lines and read each line separately to
+	# retain spaces in filenames.
+	while read l; do
+		# No results presents a blank line
 		[ -z "${l}" ] && continue
+		read link
+
 		case "${link}" in
 		/*) f="${STAGEDIR}${link}" ;;
 		*) f="${l%/*}/${link}" ;;
@@ -65,9 +73,11 @@ EOF
 			shebangonefile "${f}" || rc=1
 		fi
 	# Use heredoc to avoid losing rc from find|while subshell
-	done << EOF
-$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${PREFIX}/libexec -type l -exec stat -f "%N %Y" {} + 2>/dev/null)
-EOF
+	done <<-EOF
+	$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
+	    ${STAGEDIR}${PREFIX}/libexec -type l \
+	    -exec stat -f "%N${LF}%Y" {} + 2>/dev/null)
+	EOF
 
 	return ${rc}
 }
@@ -77,18 +87,22 @@ symlinks() {
 
 	rc=0
 
-	while read l link; do
+	# Split stat(1) result into 2 lines and read each line separately to
+	# retain spaces in filenames.
+	while read l; do
+		# No results presents a blank line from heredoc.
 		[ -z "${l}" ] && continue
+		read link
 		case "${link}" in
 			${STAGEDIR}*)
-				err "Bad symlinks ${l#${STAGEDIR}${PREFIX}/} pointing inside the stage directory"
+				err "Bad symlink '${l#${STAGEDIR}${PREFIX}/}' pointing inside the stage directory"
 				rc=1
 				;;
 		esac
-	# Use heredoc to avoid losing rc from find|while subshell
-	done << EOF
-$(find ${STAGEDIR} -type l -exec stat -f "%N %Y" {} +)
-EOF
+	# Use heredoc to avoid losing rc from find|while subshell.
+	done <<-EOF
+	$(find ${STAGEDIR} -type l -exec stat -f "%N${LF}%Y" {} +)
+	EOF
 
 	return ${rc}
 }
@@ -99,6 +113,7 @@ paths() {
 	rc=0
 
 	while read f; do
+		# No results presents a blank line from heredoc.
 		[ -z "${f}" ] && continue
 		# Ignore false-positive/harmless files
 		case "${f}" in
@@ -106,12 +121,12 @@ paths() {
 			*/lib/ruby/gems/*/Makefile.html) continue ;;
 			*/lib/ruby/gems/*/mkmf.log) continue ;;
 		esac
-		err "${f#${STAGEDIR}${PREFIX}/} is referring to ${STAGEDIR}"
+		err "'${f#${STAGEDIR}${PREFIX}/}' is referring to ${STAGEDIR}"
 		rc=1
 	# Use heredoc to avoid losing rc from find|while subshell
-	done << EOF
-$(find ${STAGEDIR} -type f -exec grep -l "${STAGEDIR}" {} +)
-EOF
+	done <<-EOF
+	$(find ${STAGEDIR} -type f -exec grep -l "${STAGEDIR}" {} +)
+	EOF
 
 	return ${rc}
 }
@@ -120,11 +135,15 @@ EOF
 stripped() {
 	[ -x /usr/bin/file ] || return # this is fatal
 	[ -n "${STRIP}" ] || return 0
-	find ${STAGEDIR} -type f -exec /usr/bin/file -nNF '' {} + | while
-	    read f output; do
+	# Split file and result into 2 lines and read separately to ensure
+	# files with spaces are kept intact.
+	find ${STAGEDIR} -type f \
+	    -exec /usr/bin/file -nNF "${LF}" {} + |
+	    while read f; do
+		    read output
 		case "${output}" in
 			ELF\ *\ executable,\ *FreeBSD*,\ not\ stripped*|ELF\ *\ shared\ object,\ *FreeBSD*,\ not\ stripped*)
-				warn "${f#${STAGEDIR}${PREFIX}/} is not stripped consider using \${STRIP_CMD}"
+				warn "'${f#${STAGEDIR}${PREFIX}/}' is not stripped consider using \${STRIP_CMD}"
 				;;
 		esac
 	done
