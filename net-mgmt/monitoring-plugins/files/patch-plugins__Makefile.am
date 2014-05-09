@@ -1,0 +1,11 @@
+--- ./plugins/Makefile.am.orig	2014-04-27 19:59:06.000000000 +0200
++++ ./plugins/Makefile.am	2014-05-09 18:45:30.000000000 +0200
+@@ -14,7 +14,7 @@
+ VPATH = $(top_srcdir) $(top_srcdir)/lib $(top_srcdir)/plugins $(top_srcdir)/plugins/t
+ 
+ AM_CPPFLAGS = -I.. -I$(top_srcdir)/lib -I$(top_srcdir)/gl -I$(top_srcdir)/intl \
+-	@LDAPINCLUDE@ @PGINCLUDE@ @SSLINCLUDE@
++	@LDAPINCLUDE@ @PGINCLUDE@ @SSLINCLUDE@ @RADIUSINCLUDE@
+ 
+ localedir = $(datadir)/locale
+ # gettext docs say to use AM_CPPFLAGS, but per module_CPPFLAGS override this
