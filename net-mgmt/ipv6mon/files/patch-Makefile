@@ -7,7 +7,7 @@
 +LDADD=	-lpcap
 +
 +FILES=		ipv6mon.conf
-+FILESNAME=	ipv6mon.conf.dist
++FILESNAME=	ipv6mon.conf.sample
 +FILESDIR=	etc
 +
 +BINDIR=	sbin
