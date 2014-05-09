@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLAlchemy-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A Python SQL toolkit and Object Relational Mapper (series 0.6)
+COMMENT=	Python SQL toolkit and Object Relational Mapper (series 0.6)
 
 LICENSE=	MIT
 
@@ -35,7 +35,6 @@ MSSQL_DESC=	MS SQL Server backend
 NOSE_DESC=	Use Nose for unit tests
 SYBASE_DESC=	Sybase backend
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCEXTENSIONS}
@@ -93,19 +92,19 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Sybase.py:${PORTSDIR}/databases/py-sybase
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${AL_PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for i in ${AL_PORTDOCS_SUBDIR}
-	${MKDIR} ${DOCSDIR}/${i}
-	@cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${DOCSDIR}/${i}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
+	@cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .if ${PYTHON_REL} >= 320
