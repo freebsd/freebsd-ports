@@ -23,10 +23,9 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	jalbum.sh
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${TAR} -cf - * | ${TAR} -xf - -C ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/jalbum.sh ${PREFIX}/bin/jalbum
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${TAR} -cf - * | ${TAR} -xf - -C ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/jalbum.sh ${STAGEDIR}${PREFIX}/bin/jalbum
 
 .include <bsd.port.mk>
