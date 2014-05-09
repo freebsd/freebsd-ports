@@ -9,33 +9,28 @@ MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+DIST_SUBDIR=	esecanna
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Esecanna module for VJE-Delta 3.0
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
-USES=		perl5
+USES=		gmake perl5
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 # VJE-Delta 3.0 is installed under /usr/local fixedly
 CONFIGURE_ARGS=	--with-vjecfgfile="/usr/local/etc/vje30/vje.cfg"
 
-DIST_SUBDIR=    esecanna
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
-	${REINPLACE_CMD} -e " \
-		s,!!PREFIX!!,${PREFIX},g; \
-		" \
-		${WRKSRC}/README.jp
+	@${REINPLACE_CMD} "s,!!PREFIX!!,${PREFIX},g;" ${WRKSRC}/README.jp
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/esecanna
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/esecanna
 .for i in README CHANGES
-	${INSTALL_DATA} ${WRKSRC}/${i}.jp ${PREFIX}/share/doc/esecanna/${i}.vje30.jp
+	${INSTALL_DATA} ${WRKSRC}/${i}.jp \
+		${STAGEDIR}${PREFIX}/share/doc/esecanna/${i}.vje30.jp
 .endfor
-.endif
 
 .include <bsd.port.mk>
