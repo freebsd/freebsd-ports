@@ -3,7 +3,7 @@
 
 PORTNAME=	intlfonts
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	intlfonts
@@ -15,6 +15,8 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 RUN_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
+
+OPTIONS_DEFINE=	DOCS
 
 USE_XORG=	x11
 PLIST_SUB+=	FONTSDIR=${FONTSDIR} T1_FONTSDIR=${T1_FONTSDIR} \
@@ -37,7 +39,6 @@ TT_FONTSDIR=	lib/X11/fonts/TrueType
 PKGINSTALL=	${WRKDIR}/INSTALL
 PKGDEINSTALL=	${WRKDIR}/DEINSTALL
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; \
 	for dir in ${NORMAL_FONTS} ${BIG_FONTS}; do \
@@ -56,29 +57,20 @@ do-build:
 			< ${FILESDIR}/$${f}.tmpl > ${WRKDIR}/$${f}; \
 	done
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 do-install:
 	(cd ${WRKSRC}; \
-	  ${MKDIR} ${PREFIX}/${FONTSDIR}; \
+	  ${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}; \
 	  for dir in ${NORMAL_FONTS} ${BIG_FONTS}; do \
-	  	${INSTALL_DATA} $$dir/*.pcf.gz ${PREFIX}/${FONTSDIR} ; \
+	  	${INSTALL_DATA} $$dir/*.pcf.gz ${STAGEDIR}${PREFIX}/${FONTSDIR} ; \
 	  done; \
-	  ${MKDIR} ${PREFIX}/${T1_FONTSDIR}; \
-	  ${INSTALL_DATA} Type1/*.* ${PREFIX}/${T1_FONTSDIR} ; \
-	  ${MKDIR} ${PREFIX}/${TT_FONTSDIR}; \
-	  ${INSTALL_DATA} TrueType/*.ttf ${PREFIX}/${TT_FONTSDIR} ; \
+	  ${MKDIR} ${STAGEDIR}${PREFIX}/${T1_FONTSDIR}; \
+	  ${INSTALL_DATA} Type1/*.* ${STAGEDIR}${PREFIX}/${T1_FONTSDIR} ; \
+	  ${MKDIR} ${STAGEDIR}${PREFIX}/${TT_FONTSDIR}; \
+	  ${INSTALL_DATA} TrueType/*.ttf ${STAGEDIR}${PREFIX}/${TT_FONTSDIR} ; \
 	)
-
-post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/Emacs.ap ${WRKSRC}/NEWS \
-		${DOCSDIR}
-.endif
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
