@@ -16,20 +16,21 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/jargon
 EXTRACT_BEFORE_ARGS=	-qL
 
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/jargon-fpw/jargon/data
-	${MKDIR} ${PREFIX}/share/dict/jargon-fpw/jargon/gaiji
-	${INSTALL_DATA} ${WRKSRC}/jargon/data/honmon ${PREFIX}/share/dict/jargon-fpw/jargon/data
-	${INSTALL_DATA} ${WRKSRC}/jargon/gaiji/gai16f ${PREFIX}/share/dict/jargon-fpw/jargon/gaiji
-	${INSTALL_DATA} ${WRKSRC}/jargon/gaiji/gai16h ${PREFIX}/share/dict/jargon-fpw/jargon/gaiji
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/jargon-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme.1st readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/jargon-fpw/jargon/data
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/jargon-fpw/jargon/gaiji
+	${INSTALL_DATA} ${WRKSRC}/jargon/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/jargon-fpw/jargon/data
+	${INSTALL_DATA} ${WRKSRC}/jargon/gaiji/gai16f \
+		${STAGEDIR}${PREFIX}/share/dict/jargon-fpw/jargon/gaiji
+	${INSTALL_DATA} ${WRKSRC}/jargon/gaiji/gai16h \
+		${STAGEDIR}${PREFIX}/share/dict/jargon-fpw/jargon/gaiji
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/jargon-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} readme.1st readme.txt \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
