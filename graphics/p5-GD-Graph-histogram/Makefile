@@ -10,12 +10,14 @@ MASTER_SITE_SUBDIR=	CPAN:WHIZDOG
 PKGNAMEPREFIX=	p5-
 DISTNAME=	GDGraph-histogram-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Histogram plotting module for perl5
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure
