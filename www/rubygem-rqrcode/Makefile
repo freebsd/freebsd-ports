@@ -2,7 +2,7 @@
 
 PORTNAME=	rqrcode
 PORTVERSION=	0.4.2
-CATEGORIES=	devel rubygems
+CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	rpaulo@FreeBSD.org
