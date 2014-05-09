@@ -11,21 +11,22 @@ DISTNAME=	Py2Play-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Peer-to-peer network game engine
 
+LICENSE=	GPLv2
+
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Py2Play
 EXAMPLESDIR=	${PREFIX}/share/examples/py-py2play
 
-NO_STAGE=	yes
 post-install:
 .ifndef NOPORTEXAMPLES
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/startdemo ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/startdemo ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
