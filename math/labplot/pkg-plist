@@ -55,6 +55,3 @@ share/mime/packages/lml.desktop
 @dirrmtry share/apps/LabPlot2
 @dirrmtry share/apps
 @dirrmtry share/applications/kde4
-@dirrmtry share/applications
-@dirrmtry share
-@dirrmtry bin

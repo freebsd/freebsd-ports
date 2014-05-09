@@ -21,8 +21,7 @@ NETCDF_DESC=	NetCDF data support
 
 WRKSRC=		${WRKDIR}/beta2
 
-USE_BZIP2=	yes
-USES=		cmake shared-mime-info
+USES=		tar:bzip2 cmake shared-mime-info
 USE_XORG=	xft xpm
 USE_GCC=	yes
 USE_KDE4=	automoc4 kdelibs kdeprefix
@@ -33,7 +32,7 @@ INSTALLS_ICONS=	yes
 CDF_LIB_DEPENDS=	libcdf.so:${PORTSDIR}/science/cdf
 CDF_CMAKE_OFF=		-DCDF_LIBRARY:STRING=""
 
-HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5	
+HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
 HDF5_CMAKE_OFF=		-DHDF5_LIBRARY:STRING=""
 
 NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
@@ -47,6 +46,6 @@ post-patch:
 		${WRKSRC}/src/backend/core/AbstractAspect.h
 	@${REINPLACE_CMD} -e \
 		's|!isnan|!std::isnan|' \
-		${WRKSRC}/src/backend/worksheet/plots/cartesian/CartesianCoordinateSystem.cpp 
+		${WRKSRC}/src/backend/worksheet/plots/cartesian/CartesianCoordinateSystem.cpp
 
 .include <bsd.port.mk>
