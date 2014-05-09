@@ -3,4 +3,4 @@ include/harminv.h
 lib/libharminv.a
 lib/libharminv.la
 libdata/pkgconfig/harminv.pc
-@dirrmtry libdata/pkgconfig
+man/man1/harminv.1.gz
