@@ -9,5 +9,4 @@ share/pixmaps/pidgin/pidgin-audacious-remote/previous.png
 share/pixmaps/pidgin/pidgin-audacious-remote/stop.png
 @dirrm share/pixmaps/pidgin/pidgin-audacious-remote
 @dirrmtry share/pixmaps/pidgin
-@dirrmtry share/pixmaps
 @dirrmtry lib/pidgin
