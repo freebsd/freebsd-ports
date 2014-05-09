@@ -8,8 +8,11 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Game-tree search with object oriented interface
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	modbuild
