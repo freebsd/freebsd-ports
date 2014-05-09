@@ -3749,6 +3749,7 @@
     SUBDIR += py-pycparser
     SUBDIR += py-pydasm
     SUBDIR += py-pyechonest
+    SUBDIR += py-pyelftools
     SUBDIR += py-pyev
     SUBDIR += py-pyflakes
     SUBDIR += py-pygit2
