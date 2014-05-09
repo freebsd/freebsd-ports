@@ -1,0 +1,7 @@
+Object oriented helper routines for your Nagios plugin:
+
+This is the place for common routines when writing Nagios plugins. The idea is
+to make it as easy as possible for developers to conform to the plugin
+guidelines (http://nagiosplug.sourceforge.net/developer-guidelines.html).
+
+WWW: http://search.cpan.org/dist/Nagios-Plugin/

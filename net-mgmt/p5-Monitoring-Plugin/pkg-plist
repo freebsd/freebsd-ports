@@ -1,0 +1,21 @@
+%%SITE_PERL%%/Monitoring/Plugin.pm
+%%SITE_PERL%%/Monitoring/Plugin/Config.pm
+%%SITE_PERL%%/Monitoring/Plugin/ExitResult.pm
+%%SITE_PERL%%/Monitoring/Plugin/Functions.pm
+%%SITE_PERL%%/Monitoring/Plugin/Getopt.pm
+%%SITE_PERL%%/Monitoring/Plugin/Performance.pm
+%%SITE_PERL%%/Monitoring/Plugin/Range.pm
+%%SITE_PERL%%/Monitoring/Plugin/Threshold.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Monitoring/Plugin/.packlist
+%%PERL5_MAN3%%/Monitoring::Plugin.3.gz
+%%PERL5_MAN3%%/Monitoring::Plugin::Config.3.gz
+%%PERL5_MAN3%%/Monitoring::Plugin::ExitResult.3.gz
+%%PERL5_MAN3%%/Monitoring::Plugin::Functions.3.gz
+%%PERL5_MAN3%%/Monitoring::Plugin::Getopt.3.gz
+%%PERL5_MAN3%%/Monitoring::Plugin::Performance.3.gz
+%%PERL5_MAN3%%/Monitoring::Plugin::Range.3.gz
+%%PERL5_MAN3%%/Monitoring::Plugin::Threshold.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Monitoring/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Monitoring
+@dirrm %%SITE_PERL%%/Monitoring/Plugin
+@dirrmtry %%SITE_PERL%%/Monitoring
