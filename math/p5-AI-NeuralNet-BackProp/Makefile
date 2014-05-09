@@ -7,8 +7,11 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl module implementing a back-propagation feed-forward neural network
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	Perl module implementing back-propagation feed-forward neural network
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 NO_WRKSUBDIR=	yes
 USES=		perl5 zip
