@@ -1,4 +1,3 @@
-%%SITE_PERL%%/Devel/Autoflush.pod
 %%SITE_PERL%%/Devel/Autoflush.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Autoflush/.packlist
 %%PERL5_MAN3%%/Devel::Autoflush.3.gz
