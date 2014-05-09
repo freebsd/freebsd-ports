@@ -4,40 +4,24 @@ bin/fig2ps2tex.sh
 bin/pic2tpic
 bin/transfig
 lib/X11/fig2dev/cs_CZ.ps
-@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/hr_HR.ps
-@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/hu_HU.ps
-@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/pl_PL.ps
-@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/ro_RO.ps
-@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/sk_SK.ps
-@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/sl_SI.ps
-@unexec rm -f %D/lib/X11/fig2dev/sl_SI.ps
-@unexec rm -f %D/lib/X11/fig2dev/sk_SK.ps
-@unexec rm -f %D/lib/X11/fig2dev/ro_RO.ps
-@unexec rm -f %D/lib/X11/fig2dev/pl_PL.ps
-@unexec rm -f %D/lib/X11/fig2dev/hu_HU.ps
-@unexec rm -f %D/lib/X11/fig2dev/hr_HR.ps
+lib/X11/fig2dev/hr_HR.ps
+lib/X11/fig2dev/hu_HU.ps
+lib/X11/fig2dev/pl_PL.ps
+lib/X11/fig2dev/ro_RO.ps
+lib/X11/fig2dev/sk_SK.ps
+lib/X11/fig2dev/sl_SI.ps
 lib/X11/fig2dev/japanese.ps
-@exec ln -sf japanese.ps %D/lib/X11/fig2dev/ja.ps
-@exec ln -sf japanese.ps %D/lib/X11/fig2dev/ja_JP.EUC.ps
-@exec ln -sf japanese.ps %D/lib/X11/fig2dev/ja_JP.eucJP.ps
-@exec ln -sf japanese.ps %D/lib/X11/fig2dev/ja_JP.ps
-@exec ln -sf japanese.ps %D/lib/X11/fig2dev/ja_JP.ujis.ps
-@unexec rm -f %D/lib/X11/fig2dev/ja_JP.ujis.ps
-@unexec rm -f %D/lib/X11/fig2dev/ja_JP.ps
-@unexec rm -f %D/lib/X11/fig2dev/ja_JP.eucJP.ps
-@unexec rm -f %D/lib/X11/fig2dev/ja_JP.EUC.ps
-@unexec rm -f %D/lib/X11/fig2dev/ja.ps
+lib/X11/fig2dev/ja.ps
+lib/X11/fig2dev/ja_JP.EUC.ps
+lib/X11/fig2dev/ja_JP.eucJP.ps
+lib/X11/fig2dev/ja_JP.ps
+lib/X11/fig2dev/ja_JP.ujis.ps
 lib/X11/fig2dev/korean.ps
-@exec ln -sf korean.ps %D/lib/X11/fig2dev/ko.ps
-@exec ln -sf korean.ps %D/lib/X11/fig2dev/ko_KR.EUC.ps
-@exec ln -sf korean.ps %D/lib/X11/fig2dev/ko_KR.eucKR.ps
-@exec ln -sf korean.ps %D/lib/X11/fig2dev/ko_KR.ps
-@exec ln -sf korean.ps %D/lib/X11/fig2dev/ko_KR.ujis.ps
-@unexec rm -f %D/lib/X11/fig2dev/ko_KR.ujis.ps
-@unexec rm -f %D/lib/X11/fig2dev/ko_KR.ps
-@unexec rm -f %D/lib/X11/fig2dev/ko_KR.eucKR.ps
-@unexec rm -f %D/lib/X11/fig2dev/ko_KR.EUC.ps
-@unexec rm -f %D/lib/X11/fig2dev/ko.ps
+lib/X11/fig2dev/ko.ps
+lib/X11/fig2dev/ko_KR.EUC.ps
+lib/X11/fig2dev/ko_KR.eucKR.ps
+lib/X11/fig2dev/ko_KR.ps
+lib/X11/fig2dev/ko_KR.ujis.ps
 lib/X11/xfig/bitmaps/bricks.bmp
 lib/X11/xfig/bitmaps/circles.bmp
 lib/X11/xfig/bitmaps/crosshatch.bmp
@@ -87,6 +71,10 @@ lib/X11/xfig/bitmaps/vert_leftshingle.bmp
 lib/X11/xfig/bitmaps/vert_rightshingle.bmp
 lib/X11/xfig/bitmaps/vert_saw.bmp
 lib/X11/xfig/bitmaps/vertical.bmp
+man/man1/fig2dev.1.gz
+man/man1/fig2ps2tex.1.gz
+man/man1/pic2tpic.1.gz
+man/man1/transfig.1.gz
 @dirrm lib/X11/xfig/bitmaps
 @dirrmtry lib/X11/xfig
 @dirrm lib/X11/fig2dev
