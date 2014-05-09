@@ -12,9 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kanji code conversion Filter
 
 INSTALL_TARGET=	install install.man
-MANLANG=	ja
-MAN1=		kcc.1
-PLIST_FILES=	bin/kcc
+PLIST_FILES=	bin/kcc man/ja/man1/kcc.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
