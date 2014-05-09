@@ -88,5 +88,3 @@
 @dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN
 @dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML
 @dirrm %%SLIMDIR%%/Plugins/SuperDateTime
-@dirrmtry %%SLIMDIR%%/Plugins
-@dirrmtry %%SLIMDIR%%
