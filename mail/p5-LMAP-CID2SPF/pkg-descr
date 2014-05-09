@@ -8,6 +8,6 @@ It will convert an XML-fragment as proposed by CID to a record that can
 be added to DNS as proposed by SPF.
 
 SEE ALSO
-
-  CID: http://www.microsoft.com/mscorp/twc/privacy/spam_callerid.mspx
   SPF: http://spf.pobox.com/
+
+WWW: http://www.baschny.de/spf/
