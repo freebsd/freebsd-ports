@@ -107,6 +107,7 @@
     SUBDIR += macroscope
     SUBDIR += mbrowse
     SUBDIR += mk-livestatus
+    SUBDIR += monitoring-plugins
     SUBDIR += mrtg
     SUBDIR += mrtg-ping-probe
     SUBDIR += mtrace
