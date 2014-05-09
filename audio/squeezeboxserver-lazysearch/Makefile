@@ -16,15 +16,15 @@ COMMENT=	Squeezebox Server plugin for performing lazy searches
 RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
 
 USES=		zip
-NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SLIMDIR?=	squeezeboxserver
 PLIST_SUB+=	SLIMDIR=${SLIMDIR}
 
 do-install:
-	${MKDIR} ${PREFIX}/${SLIMDIR}/Plugins/LazySearch2
-	${CP} -R ${WRKSRC}/LazySearch2/* ${PREFIX}/${SLIMDIR}/Plugins/LazySearch2
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SLIMDIR}/Plugins/LazySearch2
+	${CP} -R ${WRKSRC}/LazySearch2/* ${STAGEDIR}${PREFIX}/${SLIMDIR}/Plugins/LazySearch2
 
 .include <bsd.port.mk>
