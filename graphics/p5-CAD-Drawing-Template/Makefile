@@ -8,11 +8,14 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Replace tags with text and geometry
 
-BUILD_DEPENDS=	p5-CAD-Drawing>=0:${PORTSDIR}/graphics/p5-CAD-Drawing \
-		p5-CAD-Calc>=0:${PORTSDIR}/math/p5-CAD-Calc
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-CAD-Calc>=0:${PORTSDIR}/math/p5-CAD-Calc \
+		p5-CAD-Drawing>=0:${PORTSDIR}/graphics/p5-CAD-Drawing
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
