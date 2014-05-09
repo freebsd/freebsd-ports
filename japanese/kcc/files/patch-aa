@@ -1,23 +1,31 @@
---- Makefile.orig	Mon Mar 28 20:05:28 1994
-+++ Makefile	Mon Jun 23 21:24:12 1997
-@@ -7,15 +7,16 @@
+--- Makefile.orig	1994-03-28 13:05:28.000000000 +0200
++++ Makefile	2014-05-09 21:13:14.000000000 +0200
+@@ -7,10 +7,11 @@
  
  #	@(#)Makefile 2.3 (Y.Tonooka) 3/28/94
  
 -          BINPATH = /usr/local/bin
 -          MANPATH = /usr/local/man
 -          JMANDIR = japanese
+-           CFLAGS = -O
 +          PREFIX?= /usr/local
 +          BINPATH = ${PREFIX}/bin
 +          MANPATH = ${PREFIX}/man
 +          JMANDIR = ja
-            CFLAGS = -O
++           CFLAGS?= -O
  
              SHELL = /bin/sh
                 CP = cp
-              MAKE = make
--          INSTALL = install
-+          INSTALL = install -c
+@@ -34,10 +35,10 @@
  
-              CMDS = kcc
-              SRCS = kcc.c
+ $(BINPATH)/kcc: kcc.c
+ 	$(MAKE) kcc
+-	$(INSTALL) -s kcc $(BINPATH)
++	$(BSD_INSTALL_PROGRAM) kcc $(DESTDIR)$(BINPATH)
+ 
+ $(MANPATH)/$(JMANDIR)/man1/kcc.1: kcc.jman
+-	$(INSTALL) -m 644 kcc.jman $@
++	$(BSD_INSTALL_MAN) kcc.jman $(DESTDIR)$(MANPATH)/$(JMANDIR)/man1/kcc.1
+ 
+ clean:
+ 	rm -f $(CMDS) $(OBJS) mon.out gmon.out make.log
