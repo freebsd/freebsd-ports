@@ -9,23 +9,22 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/Fumeikai/
 DISTNAME=	Fumeikai-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An abbreviation (alphabet-->Japanese) dictionary (EPWING V1 format)
+COMMENT=	Abbreviation (alphabet-->Japanese) dictionary (EPWING V1 format)
 
 USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/fumeikai
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/fumeikai-fpw/fumeikai/data
-	${INSTALL_DATA} ${WRKSRC}/fumeikai/data/honmon ${PREFIX}/share/dict/fumeikai-fpw/fumeikai/data
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/fumeikai-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/fumeikai-fpw/fumeikai/data
+	${INSTALL_DATA} ${WRKSRC}/fumeikai/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/fumeikai-fpw/fumeikai/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/fumeikai-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
