@@ -4464,6 +4464,7 @@
     SUBDIR += serdisplib
     SUBDIR += sfio
     SUBDIR += sfml
+    SUBDIR += sfml1
     SUBDIR += sfslite
     SUBDIR += sfslite-dbg
     SUBDIR += sfslite-noopt
