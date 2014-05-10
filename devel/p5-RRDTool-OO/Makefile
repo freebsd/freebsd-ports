@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	stefan@fh-mainz.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RRDTool::OO - Object-oriented interface to RRDTool
 
 BUILD_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \

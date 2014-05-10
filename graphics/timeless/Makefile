@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	shaun
 
-MAINTAINER=	nehe@cruzinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD/SDL port of Tran's Timeless Demo with Sound
 
 USE_SDL=	sdl mixer

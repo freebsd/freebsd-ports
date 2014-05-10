@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/CUnit/2.1-0
 DISTNAME=	${PORTNAME:S/^cu/CU/}-${DISTVERSION}-src
 
-MAINTAINER=	stefan@fh-mainz.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated unit testing framework for C
 
 CONFLICTS=	c-unit-[0-9]*
