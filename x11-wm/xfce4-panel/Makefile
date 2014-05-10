@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-panel
 PORTVERSION=	4.10.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -15,10 +16,10 @@ LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=		desktop-file-utils gmake pathfix perl5 pkgconfig compiler
+USES=		desktop-file-utils gmake libtool:keepla pathfix perl5 \
+		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv garcon libexo libmenu libutil xfconf
@@ -28,13 +29,7 @@ CONFIGURE_ARGS+=--enable-gio-unix
 
 OPTIONS_DEFINE=		NLS DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1000000
-.if ${COMPILER_TYPE} == clang
-CFLAGS_amd64=	-fPIC
-.endif
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
@@ -53,4 +48,4 @@ CONFIGURE_ARGS+=--without-html-dir
 PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
