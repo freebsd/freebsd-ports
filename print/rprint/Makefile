@@ -7,7 +7,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://gwdu111.gwdg.de/pub/FreeBSD/misc/ \
 		ftp://gwdu112.gwdg.de/pub/FreeBSD/misc/
 
-MAINTAINER=	kheuer@gwdu60.gwdg.de
+MAINTAINER=	kheuer@gwdg.de
 COMMENT=	Remote printing utility using a raw bidirectional tcp connection
 
 MAN1=		rprint.1
