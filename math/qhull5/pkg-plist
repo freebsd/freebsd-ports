@@ -15,9 +15,9 @@ include/qhull/qhull.h
 include/qhull/qset.h
 include/qhull/user.h
 lib/libqhull.a
-lib/libqhull.la
 lib/libqhull.so
 lib/libqhull.so.5
+lib/libqhull.so.5.0.0
 %%PORTDOCS%%man/man1/qhull.1.gz
 %%PORTDOCS%%man/man1/rbox.1.gz
 @comment These doc files must be ditributed even with NOPORTDOCS
