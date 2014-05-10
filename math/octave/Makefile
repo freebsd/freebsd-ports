@@ -3,7 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.8.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	octave
@@ -61,7 +61,7 @@ OPTIONS_DEFINE=	DOCS
 
 INFO=		octave liboctave
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libopenblas.so)
 WITH_BLAS?=	openblas
@@ -108,7 +108,7 @@ post-install:
 .endfor
 	${RM} -f ${WRKDIR}/PLIST
 .for d in ${PREFIX}/include/octave-${OCTAVE_VERSION} ${PREFIX}/share/octave/${OCTAVE_VERSION} ${PREFIX}/share/octave/site ${PREFIX}/lib/octave/${OCTAVE_VERSION} ${PREFIX}/libexec/octave/${OCTAVE_VERSION}
-	@${FIND} -s ${STAGEDIR}$d -not -type d | \
+	@${FIND} -s ${STAGEDIR}$d -not -type d -not -name '*.la' | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${WRKDIR}/PLIST
 	@${FIND} -s ${STAGEDIR}$d -type d -empty | \
 		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@exec ${MKDIR} %D/,' \
@@ -130,4 +130,4 @@ post-install:
 check regression-test: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
