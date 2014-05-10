@@ -14,7 +14,7 @@ COMMENT=	Multiple dictionary server for the SKK
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/cdb:build
 RUN_DEPENDS=	${LOCALBASE}/${SKKDIR}/SKK-JISYO.${SKKJISYO_TYPE}.cdb:${PORTSDIR}/japanese/skk-jisyo-cdb
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 SKKDIR?=	share/skk
 SKKJISYO_TYPE?=	L
@@ -24,10 +24,11 @@ USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-cdb=`cd ${PORTSDIR}/databases/cdb; ${MAKE} -V WRKSRC`
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/skkdic-p2cdb sbin/multiskkserv sbin/multiskkserv-ctl
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/multiskkserv ${PREFIX}/sbin
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/multiskkserv-ctl ${PREFIX}/sbin
-	@${INSTALL_PROGRAM} ${WRKSRC}/tools/skkdic-p2cdb ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/multiskkserv ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/multiskkserv-ctl ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/skkdic-p2cdb ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
