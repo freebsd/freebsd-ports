@@ -9,5 +9,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Users Traffic Count
 
-NO_STAGE=	yes
+MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}" \
+		INSTALL_PROG="${INSTALL_SCRIPT}" \
+		INSTALL_CONF="${INSTALL_DATA}"
+
+post-build:
+	${STRIP_CMD} ${WRKSRC}/bin/count_client
+
 .include <bsd.port.mk>
