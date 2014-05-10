@@ -6,7 +6,7 @@ PORTVERSION=	1.11
 CATEGORIES=	dns
 MASTER_SITES=	SF
 
-MAINTAINER=	stefan@fh-mainz.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to make using DNS easier
 
 DESTDIRNAME=	RPM_BUILD_ROOT

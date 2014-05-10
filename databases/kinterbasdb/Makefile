@@ -8,7 +8,7 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=		rud@cs.uni-magdeburg.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Python extension for Firebird/Interbase(R) relational databases
 
 LIB_DEPENDS=		libgds.so.2:${PORTSDIR}/databases/firebird20-client

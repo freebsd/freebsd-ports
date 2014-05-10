@@ -8,7 +8,7 @@ CATEGORIES=	misc java
 MASTER_SITES=	SF/${PORTNAME}2/Pipe%202/PIPE2%20V${PORTVERSION}
 DISTNAME=	pipe25_rc5
 
-MAINTAINER=	stefan@fh-mainz.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for creating and analysing Petri nets
 
 USES=		zip

@@ -7,7 +7,7 @@ CATEGORIES=		sysutils
 MASTER_SITES=		SF/mtxorb/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		ports@emorific.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Control Daemon for Matrix Orbital LCD screens
 
 MAN1=			mtxorbd.1
