@@ -1,4 +1,8 @@
 bin/timidity
+man/ja/man1/timidity.1.gz
+man/ja/man5/timidity.cfg.5.gz
+man/man1/timidity.1.gz
+man/man5/timidity.cfg.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.alsaseq
 %%PORTDOCS%%%%DOCSDIR%%/README.dl
 %%PORTDOCS%%%%DOCSDIR%%/README.m2m
@@ -11,7 +15,5 @@ bin/timidity
 %%PORTDOCS%%share/doc/ja/timidity++/README.sf
 %%PORTDOCS%%@dirrm share/doc/ja/timidity++/
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%TIMID_LIBDIR%%
-@exec mkdir -p %D/share/timidity
 @dirrmtry %%TIMID_LIBDIR%%
 @dirrmtry share/timidity
