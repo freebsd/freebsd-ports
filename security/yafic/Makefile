@@ -3,6 +3,7 @@
 
 PORTNAME=	yafic
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -10,7 +11,7 @@ MAINTAINER=	allan@saddi.com
 COMMENT=	Yet Another File Integrity Checker, similar to Tripwire
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 LDFLAGS+=	-static
 
 .if defined(WITHOUT_OPENSSL)
@@ -20,31 +21,27 @@ PLIST_SUB+=	CRYPTO="@comment "
 PLIST_SUB+=	CRYPTO=""
 .endif
 
-MAN1=		yafic.1
-.if !defined(WITHOUT_OPENSSL)
-MAN1+=		yafic-sign.1
-MLINKS=		yafic-sign.1 yafic-check.1
-.endif
-MAN5=		yafic.conf.5
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
+post-patch:
+	@${SED} -e "s;@@PREFIX@@;${PREFIX};g" \
+		${.CURDIR}/pkg-message > ${PKGMESSAGE}
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/yafic ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/yafic ${STAGEDIR}${PREFIX}/bin
 .if !defined(WITHOUT_OPENSSL)
-	${INSTALL_PROGRAM} ${WRKSRC}/yafic-sign ${PREFIX}/bin
-	${LN} -f ${PREFIX}/bin/yafic-sign ${PREFIX}/bin/yafic-check
+	${INSTALL_PROGRAM} ${WRKSRC}/yafic-sign ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf yafic-sign ${STAGEDIR}${PREFIX}/bin/yafic-check
 .endif
-	${INSTALL_MAN} ${WRKSRC}/yafic.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/yafic.1 ${STAGEDIR}${PREFIX}/man/man1
 .if !defined(WITHOUT_OPENSSL)
-	${INSTALL_MAN} ${WRKSRC}/yafic-sign.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/yafic-sign.1 ${STAGEDIR}${PREFIX}/man/man1
+	${LN} -sf yafic-sign.1 ${STAGEDIR}${PREFIX}/man/man1/yafic-check.1
 .endif
-	${INSTALL_MAN} ${WRKSRC}/yafic.conf.5 ${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/yafic.conf.5 ${STAGEDIR}${PREFIX}/man/man5
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/yafic
-	@${CP} ${FILESDIR}/yafic.conf.sample ${EXAMPLESDIR}
-	@${ECHO}
-	@${SED} -e "s%@@PREFIX@@%${PREFIX}%g" ${PKGMESSAGE}
-	@${ECHO}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/yafic
+	@${CP} ${FILESDIR}/yafic.conf.sample ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

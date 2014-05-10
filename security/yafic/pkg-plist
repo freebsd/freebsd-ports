@@ -1,5 +1,9 @@
 bin/yafic
 %%CRYPTO%%bin/yafic-sign
 %%CRYPTO%%bin/yafic-check
+man/man1/yafic.1.gz
+%%CRYPTO%%man/man1/yafic-check.1.gz
+%%CRYPTO%%man/man1/yafic-sign.1.gz
+man/man5/yafic.conf.5.gz
 %%EXAMPLESDIR%%/yafic.conf.sample
 @dirrm share/examples/yafic
