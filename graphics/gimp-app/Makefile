@@ -4,7 +4,7 @@
 
 PORTNAME?=	gimp-app
 PORTVERSION=	2.8.10
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -32,14 +32,14 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libbabl-0.1.so:${PORTSDIR}/x11/babl
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
-USE_BZIP2=	yes
-USE_XORG=	xpm xmu xext
 GNU_CONFIGURE=	yes
-USE_GNOME+=	intltool intlhack gtk20 libartlgpl2 ltverhack gnomehier
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig
+USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+		pkgconfig tar:bzip2
+USE_XORG=	xpm xmu xext
+USE_GNOME+=	intltool intlhack gtk20 libartlgpl2 gnomehier
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--disable-gtk-doc \
 		--without-linux-input \
@@ -196,15 +196,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"libpng"|"libpng15"|' \
 	    	-e 's|x86_64|amd64|g' \
 		${WRKSRC}/configure
-
-
-.if defined(GIMP_SLAVE) && ${GIMP_SLAVE}==pygimp
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gimp/2.2/python/*.so
-.elif ! defined(GIMP_SLAVE)
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgimp*-2.0.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gimp/2.2/modules/*.so
-.endif
 
 .include <bsd.port.mk>
