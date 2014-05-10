@@ -11,4 +11,6 @@ etc/aewm/aewmrc.sample
 @unexec if cmp -s %D/etc/aewm/clientsrc.sample %D/etc/aewm/clientsrc; then rm -f %D/etc/aewm/clientsrc; fi
 etc/aewm/clientsrc.sample
 @exec if [ ! -e %D/etc/aewm/clientsrc ]; then cp %D/etc/aewm/clientsrc.sample %D/etc/aewm/clientsrc; fi
+man/man1/aeclients.1.gz
+man/man1/aewm.1.gz
 @dirrmtry etc/aewm
