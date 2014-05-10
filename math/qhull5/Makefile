@@ -3,7 +3,7 @@
 
 PORTNAME=	qhull
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.qhull.org/download/
 DISTNAME=	${PORTNAME}-2003.1
@@ -18,7 +18,7 @@ COMMENT=	Qhull computes convex hulls, Delaunay triangulations, and halfspaces
 
 CONFLICTS=	qhull-2011* afni-[0-9]*
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
