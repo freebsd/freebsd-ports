@@ -16,9 +16,11 @@ include/xfce4/libxfce4ui-1/libxfce4ui/xfce-titled-dialog.h
 lib/libxfce4kbd-private-2.la
 lib/libxfce4kbd-private-2.so
 lib/libxfce4kbd-private-2.so.0
+lib/libxfce4kbd-private-2.so.0.0.0
 lib/libxfce4ui-1.la
 lib/libxfce4ui-1.so
 lib/libxfce4ui-1.so.0
+lib/libxfce4ui-1.so.0.0.0
 libdata/pkgconfig/libxfce4kbd-private-2.pc
 libdata/pkgconfig/libxfce4ui-1.pc
 share/applications/xfce4-about.desktop
