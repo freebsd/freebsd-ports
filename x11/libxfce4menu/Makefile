@@ -3,7 +3,7 @@
 
 PORTNAME=	libxfce4menu
 PORTVERSION=	4.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	libxfce4ui-${PORTVERSION}
@@ -13,12 +13,11 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Widgets library for the Xfce desktop environment
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil xfconf
 INSTALLS_ICONS=	yes
-USES=		pathfix pkgconfig gmake
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 
 CONFIGURE_ARGS=	--with-vendor-info=FreeBSD
 
