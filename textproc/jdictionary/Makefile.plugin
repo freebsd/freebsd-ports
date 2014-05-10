@@ -3,7 +3,7 @@
 
 EXTRACT_SUFX=	#
 
-MAINTAINER?=	janos.mohacsi@bsd.hu
+MAINTAINER?=	jmohacsi@bsd.hu
 COMMENT?=	JDictionary plugin master port
 
 RUN_DEPENDS+=	jdictionary:${PORTSDIR}/textproc/jdictionary
