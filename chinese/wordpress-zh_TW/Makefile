@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	3.9
+PORTVERSION=	3.9.1
 CATEGORIES=	chinese www
 MASTER_SITES=	http://tw.wordpress.org/ \
 		http://mirror.joehorn.idv.tw/wordpress/
