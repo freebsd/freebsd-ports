@@ -10,14 +10,16 @@ DISTNAME=	woff-code-latest
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert TTF/OTF fonts to WOFF web embeddable format and back
 
+LICENSE=	GPLv2 LGPL21 MPL
+LICENSE_COMB=	multi
+
 NO_WRKSUBDIR=	yes
 USES=		gmake zip
 
 PLIST_FILES=	bin/sfnt2woff bin/woff2sfnt
 
-NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sfnt2woff ${WRKSRC}/woff2sfnt \
-		 ${PREFIX}/bin
+		 ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
