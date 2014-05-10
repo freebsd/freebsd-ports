@@ -8,7 +8,7 @@ MASTER_SITES=	# put the tarball manually
 DISTFILES=	distrib.tar.Z
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mzaki@biol.s.u-tokyo.ac.jp
+MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Phrap is a program for assembling shotgun DNA sequence data
 
 RESTRICTED=	Redistribution is not permitted in any form. You must request the tarball via e-mail. Free for academic use.

@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.phrap.org/consed/distributions/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_linux
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	mzaki@biol.s.u-tokyo.ac.jp
+MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	A graphical tool for editing Phrap assemblies
 
 RUN_DEPENDS=	phred:${PORTSDIR}/biology/phred \

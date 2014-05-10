@@ -8,7 +8,7 @@ MASTER_SITES=	# put the tarball manually
 DISTNAME=	${PORTNAME}-dist-${PORTVERSION:S/0.//}-acd
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	mzaki@biol.s.u-tokyo.ac.jp
+MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Base calling and quality value assignment on DNA sequencing
 
 RESTRICTED=	Redistribution is not permitted in any form. You must request the tarball via e-mail. Free for academic use.
