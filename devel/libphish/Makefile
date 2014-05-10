@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://download.berlios.de/opdb/ \
 		http://download2.berlios.de/opdb/ \
 
-MAINTAINER=	citycat4@ngs.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform library to interact with the Open Phishing Database
 
 BUILD_DEPENDS=	xmlwf:${PORTSDIR}/textproc/expat2
