@@ -5,8 +5,7 @@ PORTNAME=	calctool
 PORTVERSION=	2.4.13
 PORTREVISION=	5
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nsayer
+MASTER_SITES=	LOCAL/nsayer
 DISTNAME=	calctool-2.4pl13
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,9 +19,6 @@ X11_DESC=	Build X11 version of calctool
 TTY_DESC=	Build tty version of calctool
 XVIEW_DESC=	Build tty version of calctool
 
-MAN1=		calctool.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -62,13 +58,13 @@ post-patch:
 				${WRKSRC}/Makefile
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/libcalctool.so.1 ${PREFIX}/lib
-	@(cd ${PREFIX}/lib; ${LN} -sf libcalctool.so.1 libcalctool.so)
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/libcalctool.so.1 ${STAGEDIR}${PREFIX}/lib
+	@(cd ${STAGEDIR}${PREFIX}/lib; ${LN} -sf libcalctool.so.1 libcalctool.so)
 .for BIN in ${BINARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${BIN} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${BIN} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/calctool.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/calctool.help ${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/calctool.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/calctool.help ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
