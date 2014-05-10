@@ -14,17 +14,16 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-required${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Izumo collection of Gravis Ultrasound MIDI patches
 
-# Not useful without timidity.
-RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
-
-NO_CDROM=	Some of the patches are marked no-commercial-use
-
 NO_BUILD=	yes
-
-WRKSRC=		${WRKDIR}/timidity
+NO_CDROM=	Some of the patches are marked no-commercial-use
 PLIST_SUB=	TIMIDITY_DATADIR=${TIMIDITY_DATADIR}
+WRKSRC=		${WRKDIR}/timidity
 
 TIMIDITY_DATADIR=	share/timidity
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/timidity|/guspat|g' ${WRKSRC}/timidity.cfg
+	@${RM} ${WRKSRC}/timidity.cfg.bak
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
