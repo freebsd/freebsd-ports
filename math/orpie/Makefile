@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES+=	math
 MASTER_SITES=	http://pessimization.com/software/orpie/
 
-MAINTAINER=	dylan@dylex.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fullscreen RPN calculator for the console
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
