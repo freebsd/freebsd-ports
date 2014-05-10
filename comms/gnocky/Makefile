@@ -12,8 +12,7 @@ COMMENT=	Graphical (GTK+2) frontend for gnokii
 
 LIB_DEPENDS=	libgnokii.so:${PORTSDIR}/comms/gnokii
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
