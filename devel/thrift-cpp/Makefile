@@ -20,8 +20,6 @@ DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libevent-1.4.so:${PORTSDIR}/devel/libevent
 
-BUILDIR=		${WRKDIR}/${DISTNAME}/lib/cpp
-
 USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake libtool
 ACLOCAL_ARGS=	-I${WRKSRC}/aclocal
 AUTOMAKE_ARGS=	--foreign --add-missing --copy
@@ -31,6 +29,8 @@ GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 MAKE_JOBS_UNSAFE=	yes
 PLIST_SUB=		PORTVERSION="${THRIFT_PORTVERSION}"
+BUILD_WRKSRC=		${WRKSRC}/lib/cpp
+INSTALL_WRKSRC=		${WRKSRC}/lib/cpp
 
 OPTIONS_DEFINE=		QT4
 QT4_CONFIGURE_WITH=	qt4
@@ -50,9 +50,6 @@ CONFIGURE_ARGS+=        \
 		--without-python \
 		--without-ruby
 
-
-NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
@@ -67,11 +64,11 @@ post-patch:
 	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$${prefix}/libdata/pkgconfig,' ${WRKSRC}/lib/cpp/Makefile.am
 
 post-install:
-	@${LN} -sf ${PREFIX}/lib/libthrift-${PORTVERSION}.so ${PREFIX}/lib/libthrift.so.0
-	@${LN} -sf ${PREFIX}/lib/libthriftnb-${PORTVERSION}.so ${PREFIX}/lib/libthriftnb.so.0
-	@${LN} -sf ${PREFIX}/lib/libthriftz-${PORTVERSION}.so ${PREFIX}/lib/libthriftz.so.0
+	${LN} -sf libthrift-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib/libthrift.so.0
+	${LN} -sf libthriftnb-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib/libthriftnb.so.0
+	${LN} -sf libthriftz-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib/libthriftz.so.0
 .if ${PORT_OPTIONS:MQT4}
-	@${LN} -sf ${PREFIX}/lib/libthriftqt-${PORTVERSION}.so ${PREFIX}/lib/libthriftqt.so.0
+	${LN} -sf libthriftqt-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib/libthriftqt.so.0
 .endif
 
 .include "../thrift/bsd.thrift.mk"
