@@ -6,7 +6,7 @@ DISTVERSION=	3-6-8
 CATEGORIES=	textproc java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3-6/${PORTVERSION}
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data Mining Software in Java
 
 LICENSE=	GPLv2

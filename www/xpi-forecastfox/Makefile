@@ -6,7 +6,7 @@ PORTVERSION=	2.2.1
 DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Get international weather forecasts and display them
 
 XPI_DISTNAME=	${PORTNAME}_weather
