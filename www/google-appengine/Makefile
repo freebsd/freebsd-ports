@@ -14,6 +14,8 @@ COMMENT=	Development tools for Google App Engine (SDK)
 LICENSE=	APACHE20 BSD3CLAUSE GPLv2 LGPL21 MIT MPL PSFL
 LICENSE_COMB=	multi
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_VER}:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6:${PORTSDIR}/security/py-pycrypto

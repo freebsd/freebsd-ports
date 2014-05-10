@@ -12,6 +12,8 @@ COMMENT=	API Extractor library to build PySide
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
 USE_GNOME=	libxml2 libxslt
