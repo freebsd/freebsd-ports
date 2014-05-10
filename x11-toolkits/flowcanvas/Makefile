@@ -18,14 +18,12 @@ LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26 \
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		tar:bzip2 pkgconfig
 USE_PYTHON_BUILD=yes
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
@@ -47,6 +45,6 @@ do-build:
 	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} ${WAF_JOBS} build)
 
 do-install:
-	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} install)
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} --destdir=${STAGEDIR} install)
 
 .include <bsd.port.post.mk>
