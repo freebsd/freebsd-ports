@@ -13,6 +13,8 @@ COMMENT=	C++ code generator for CPython extensions
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libxslt.so:${PORTSDIR}/textproc/libxslt
 
