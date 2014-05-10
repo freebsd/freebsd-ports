@@ -10,6 +10,12 @@ SRCS=	MidiDev.cxx TclmDr75.cxx ChanPres.cxx Event.cxx MChanPrf.cxx	\
 SRCS+=	TclmIntp.cxx tclmCmd.cxx tclmEvnt.cxx tclmPlay.cxx	\
 	tclmPtch.cxx tclmUtil.cxx
 
+MAN=	mplay.1 mrec.1 tclmidi.1 minfo.1 midtotcl.1 \
+	midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
+	midimake.n midimerg.n midiplay.n midiput.n midiread.n \
+	midirec.n midirew.n midisplt.n midistop.n midiwait.n \
+	midiwrit.n midivers.n midimove.n midicopy.n mididel.n \
+	miditrck.n mididev.n miditime.n midifeat.n
 
 SRCS+=	rb.c list.c
 SHLIB_NAME=	tclmidi31.so
