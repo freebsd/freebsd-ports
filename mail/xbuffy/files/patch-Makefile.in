@@ -1,0 +1,28 @@
+--- Makefile.in.orig	1998-07-01 14:15:32.000000000 +0400
++++ Makefile.in	2014-05-10 03:42:48.000000000 +0400
+@@ -41,17 +41,16 @@
+ 	(cd libdyn && $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS) -I..")
+ 
+ install: xbuffy @LED@
+-	$(srcdir)/mkinstalldirs $(bindir)
+-	-mv -f $(bindir)/xbuffy $(bindir)/xbuffy.old
+-	$(INSTALL) -m 755 xbuffy $(bindir)
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
++	$(INSTALL) -m 755 xbuffy $(DESTDIR)$(bindir)
+ 	-if [ "@LED@" ]; then  \
+-		$(INSTALL) -m 4755 led $(bindir); \
++		$(INSTALL) -m 4755 led $(DESTDIR)$(bindir); \
+ 	fi
+-	$(srcdir)/mkinstalldirs $(mandir)/man1
+-	$(INSTALL) -m 644 $(srcdir)/xbuffy.man $(mandir)/man1/xbuffy.1
+-	-if [ ! -f $(libdir)/X11/app-defaults/XBuffy ]; then \
+-		$(srcdir)/mkinstalldirs $(libdir)/X11/app-defaults; \
+-		$(INSTALL) -m 644 $(srcdir)/XBuffy.ad $(libdir)/X11/app-defaults/XBuffy; \
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
++	$(INSTALL) -m 644 $(srcdir)/xbuffy.man $(DESTDIR)$(mandir)/man1/xbuffy.1
++	-if [ ! -f $(DESTDIR)$(libdir)/X11/app-defaults/XBuffy ]; then \
++		$(srcdir)/mkinstalldirs $(DESTDIR)$(libdir)/X11/app-defaults; \
++		$(INSTALL) -m 644 $(srcdir)/XBuffy.ad $(DESTDIR)$(libdir)/X11/app-defaults/XBuffy; \
+ 	fi
+ 
+ uninstall:
