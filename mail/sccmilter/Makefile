@@ -8,7 +8,7 @@ CATEGORIES=	mail sysutils
 MASTER_SITES=	http://openoffice.mirahost.ru/fileZ/ports/ \
 		http://citycat4.land.ru/
 
-MAINTAINER=	citycat4@ngs.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sendmail spam control and canceling filter, based on Milter API
 
 .if !exists(/usr/lib/libmilter.a)
