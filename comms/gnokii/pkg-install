@@ -11,7 +11,7 @@ fi
 
 case "$2" in
 "POST-INSTALL")
-	chgrp $GROUP $BINS
+	chgrp gnokii $BINS
 	chmod 750 ${BINS}
 	chmod u+s ${SUIDBINS}
 	;;
