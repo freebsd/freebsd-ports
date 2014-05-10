@@ -1793,6 +1793,8 @@
     SUBDIR += rubygem-haml-coderay
     SUBDIR += rubygem-haml-contrib
     SUBDIR += rubygem-haml-rails
+    SUBDIR += rubygem-heroku
+    SUBDIR += rubygem-heroku-api
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-html2haml
     SUBDIR += rubygem-http-cookie
