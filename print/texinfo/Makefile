@@ -4,8 +4,8 @@
 PORTNAME=	texinfo
 PORTVERSION=	5.2.20140427
 CATEGORIES=	print
-MASTER_SITES=	GNU \
-		ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/
+MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/ \
+		GNU
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} htmlxref.cnf texinfo.tex texi2dvi
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
