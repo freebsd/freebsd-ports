@@ -4415,6 +4415,7 @@
     SUBDIR += rubygem-timers
     SUBDIR += rubygem-timers1
     SUBDIR += rubygem-tins
+    SUBDIR += rubygem-tins0
     SUBDIR += rubygem-toml
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-treetop
