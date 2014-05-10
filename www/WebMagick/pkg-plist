@@ -2,6 +2,7 @@
 etc/webmagickrc.dist
 @exec [ ! -f %B/webmagickrc ] && cp %B/%f %B/webmagickrc
 bin/webmagick
+man/man1/webmagick.1.gz
 www/data/webmagick/aqua_next.gif
 www/data/webmagick/aqua_prev.gif
 www/data/webmagick/blank.html
