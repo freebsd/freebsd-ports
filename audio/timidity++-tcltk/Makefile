@@ -7,6 +7,5 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk interface for TiMidity++
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

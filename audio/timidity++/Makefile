@@ -19,11 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/timidity/timidity.cfg:${PORTSDIR}/audio/eawpats
 CONFLICTS=	timidity-0.*
 .endif
 
-USES=		gmake
-NO_STAGE=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
-
 
 PLIST_SUB+=	TIMID_LIBDIR=${TIMID_LIBDIR} EUCJP_LOCALE=${EUCJP_LOCALE}
 
@@ -47,10 +44,6 @@ LDFLAGS+=	-export-dynamic
 DOCFILES=	README.alsaseq README.dl README.m2m README.mts README.sf
 DOCLANG=	C ja_JP.eucJP
 
-MANLANG=	"" ja
-MAN1=		timidity.1
-MAN5=		timidity.cfg.5
-
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--without-x --disable-spectrogram --disable-wrd --disable-dynamic
 .else
@@ -70,13 +63,13 @@ CONFIGURE_ARGS+=--enable-audio=oss,vorbis
 .endif
 
 pre-su-install:
-	@${MKDIR} ${PREFIX}/share/timidity ${PREFIX}/${TIMID_LIBDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/timidity ${STAGEDIR}${PREFIX}/${TIMID_LIBDIR}
 
 post-install::
 	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.eucJP/timidity.1 \
-		${PREFIX}/man/ja/man1
+		${STAGEDIR}${PREFIX}/man/ja/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.eucJP/timidity.cfg.5 \
-		${PREFIX}/man/ja/man5
+		${STAGEDIR}${PREFIX}/man/ja/man5
 .else # defined(PKGNAMESUFFIX)
 .include "${MASTERDIR}/Makefile.interface"
 .endif # !defined(PKGNAMESUFFIX)
@@ -84,13 +77,10 @@ post-install::
 post-install::
 .if ${PORT_OPTIONS:MDOCS} && defined(DOCFILES)
 .for lang in ${DOCLANG}
-	${MKDIR} ${PREFIX}/share/doc/${lang:C,^C$,,:C,ja_.*,ja/,}timidity++
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/${lang:C,^C$,,:C,ja_.*,ja/,}timidity++
 	cd ${WRKSRC}/doc/${lang} && ${INSTALL_DATA} ${DOCFILES}	\
-	    ${PREFIX}/share/doc/${lang:C,^C$,,:C,ja_.*,ja/,}timidity++/
+	    ${STAGEDIR}${PREFIX}/share/doc/${lang:C,^C$,,:C,ja_.*,ja/,}timidity++/
 .endfor
-.endif
-.if exists(${PKGMESSAGE})
-	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
