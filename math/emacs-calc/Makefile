@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	emacs-
 
-MAINTAINER=	andrewb@cs.cmu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrary-precision calculator for Emacs
 
 CONFLICTS=	emacs-22.* xemacs-packages-\*
