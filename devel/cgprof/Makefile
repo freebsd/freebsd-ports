@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://mvertes.free.fr/download/
 
-MAINTAINER=	adam.freebsd@fastmail.fm
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates colored graphs for profiled executables using gcc and gprof
 
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \

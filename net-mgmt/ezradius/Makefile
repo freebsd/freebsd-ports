@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.2.1stable
 DISTNAME=	${PORTNAME}-${PORTVERSION}stable${EXTRACT_SUFFIX}
 
-MAINTAINER=	lucio@zetasolucoes.com.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EzRADIUS is FreeRADIUS and Chillispot web-based management software
 
 RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius2

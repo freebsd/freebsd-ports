@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://point-at-infinity.org/ssss/
 
-MAINTAINER=	luke@novum.am.lublin.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shamir's Secret Sharing Scheme
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
