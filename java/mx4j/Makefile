@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/MX4J%20Binary/${PORTVERSION}
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source implementation of the Java Management Extensions (JMX)
 
 USE_JAVA=	yes

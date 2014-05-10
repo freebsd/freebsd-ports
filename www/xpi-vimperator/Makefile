@@ -6,7 +6,7 @@ PORTVERSION=	3.5
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vim look and feel for Firefox
 
 LICENSE=MIT
