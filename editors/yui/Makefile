@@ -7,7 +7,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://www.sheltonsoft.ru/fileZ/software/ \
 		http://www.askd.ru/~shelton/design/
 
-MAINTAINER=	citycat4@ngs.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rich-featured multi-windows console text editor
 
 USE_BZIP2=	yes
