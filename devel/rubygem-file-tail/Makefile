@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library that allows Ruby to 'tail' files
 
-RUN_DEPENDS=	rubygem-tins>=0.5.0:${PORTSDIR}/devel/rubygem-tins
+RUN_DEPENDS=	rubygem-tins0>=0.5.0:${PORTSDIR}/devel/rubygem-tins0
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
