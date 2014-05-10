@@ -3,7 +3,7 @@
 
 PORTNAME=	astrolog
 PORTVERSION=	5.41g
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc astro
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/ephe/archive_gzip/:ephe \
 		ftp://ftp.astro.com/pub/swisseph/:libswe \
@@ -38,7 +38,6 @@ PORTDOCS=	helpfile.540 readme.541 changes.txt
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -50,18 +49,15 @@ post-extract:
 	${RM} ${WRKDIR}/swe[a-z]*
 
 do-install:
-	-@${MKDIR} ${PREFIX}/lib/astrolog
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/astrolog
 	cd ${WRKDIR} && \
-		${INSTALL_DATA} fixstars.ast *.se1 ${PREFIX}/lib/astrolog
+		${INSTALL_DATA} fixstars.ast *.se1 ${STAGEDIR}${PREFIX}/lib/astrolog
 	cd ${WRKSRC}; \
-		${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog/astrolog.dat-dist; \
-		if [ ! -f ${PREFIX}/lib/astrolog/astrolog.dat ] ; then \
-			${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog; \
-		fi
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} astrolog ${PREFIX}/bin
+		${INSTALL_DATA} astrolog.dat ${STAGEDIR}${PREFIX}/lib/astrolog/astrolog.dat-dist
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} astrolog ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 	@${ECHO_MSG}
 	@${ECHO_MSG} "See the file ${PREFIX}/share/doc/astrolog/helpfile.540 for help"
