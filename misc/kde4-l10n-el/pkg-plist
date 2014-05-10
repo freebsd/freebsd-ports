@@ -600,6 +600,7 @@ share/locale/el/LC_MESSAGES/kwin.mo
 share/locale/el/LC_MESSAGES/kwin_art_clients.mo
 share/locale/el/LC_MESSAGES/kwin_clients.mo
 share/locale/el/LC_MESSAGES/kwin_effects.mo
+share/locale/el/LC_MESSAGES/kwin_scripting.mo
 share/locale/el/LC_MESSAGES/kwinshutdown.mo
 share/locale/el/LC_MESSAGES/kwinstartmenu.mo
 share/locale/el/LC_MESSAGES/kwordquiz.mo

@@ -1,0 +1,33 @@
+commit e1724800ecf3c6a7035dfa7bcaa50b2a8f48688f
+Author: David Faure <faure@kde.org>
+Date:   Fri May 2 10:26:38 2014 +0200
+
+    Fix crash when DesktopNames isn't set
+    
+    BUG: 334159
+    FIXED-IN: 4.11.10
+
+diff --git a/kdm/backend/client.c b/kdm/backend/client.c
+index 335cc3e..a2d06c2 100644
+--- ./kdm/backend/client.c
++++ ./kdm/backend/client.c
+@@ -1810,12 +1810,14 @@ startClient(volatile int *pid)
+                             !(sessargs = iniEntry(str, "Desktop Entry", "Exec", 0)))
+                         sessargs = "";
+                     buf = iniEntry(str, "Desktop Entry", "DesktopNames", 0);
+-                    for (buf2 = buf; *buf2; ++buf2) {
+-                        if (*buf2 == ';')
+-                            *buf2 = ':';
++                    if (buf) {
++                        for (buf2 = buf; *buf2; ++buf2) {
++                            if (*buf2 == ';')
++                                *buf2 = ':';
++                        }
++                        userEnviron = setEnv(userEnviron, "XDG_CURRENT_DESKTOP", buf);
++                        free(buf);
+                     }
+-                    userEnviron = setEnv(userEnviron, "XDG_CURRENT_DESKTOP", buf);
+-                    free(buf);
+                     free(str);
+                     free(fname);
+                     goto gotit;
