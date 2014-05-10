@@ -7,7 +7,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.robobunny.com/projects/weatherspect/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weather simulation in ASCII art
 
 LICENSE=	ART10 GPLv1
