@@ -19,9 +19,9 @@ include/gnokii/virtmodem.h
 include/gnokii/wappush.h
 @dirrm include/gnokii
 lib/libgnokii.a
-lib/libgnokii.la
 lib/libgnokii.so
 lib/libgnokii.so.7
+lib/libgnokii.so.7.0.0
 libdata/pkgconfig/gnokii.pc
 libdata/pkgconfig/xgnokii.pc
 man/man1/gnokii.1.gz
@@ -43,18 +43,14 @@ share/locale/sv/LC_MESSAGES/gnokii.mo
 %%SMSD%%share/smsd/README
 %%SMSD%%share/smsd/action
 %%SMSD%%lib/smsd/libsmsd_file.a
-%%SMSD%%lib/smsd/libsmsd_file.la
 %%SMSD%%lib/smsd/libsmsd_file.so
 %%MSM%%lib/smsd/libsmsd_mysql.a
-%%MSM%%lib/smsd/libsmsd_mysql.la
 %%MSM%%lib/smsd/libsmsd_mysql.so
 %%MSM%%share/smsd/sms.tables.mysql.sql
 %%PGM%%lib/smsd/libsmsd_pq.a
-%%PGM%%lib/smsd/libsmsd_pq.la
 %%PGM%%lib/smsd/libsmsd_pq.so
 %%PGM%%share/smsd/sms.tables.pq.sql
 %%SQLT%%lib/smsd/libsmsd_sqlite.a
-%%SQLT%%lib/smsd/libsmsd_sqlite.la
 %%SQLT%%lib/smsd/libsmsd_sqlite.so
 %%SMSD%%@dirrm lib/smsd
 %%SMSD%%@dirrm share/smsd
