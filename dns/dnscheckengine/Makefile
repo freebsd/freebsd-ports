@@ -8,7 +8,7 @@ CATEGORIES=	dns perl5
 MASTER_SITES=	ftp://www.ns.gen.tx.us/pub/software/dnscheck-se/
 DISTNAME=	DNSCheck-1.1
 
-MAINTAINER=	dnscheckengine-port@academ.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS checker from the folks that run the .SE top level domain
 
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-Random>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random \

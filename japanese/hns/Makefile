@@ -7,7 +7,7 @@ CATEGORIES=	japanese www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	h14m/22597
 
-MAINTAINER=	hnsmaster@h14m.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hyper NIKKI System, a CGI system for Electric Diary Interchange
 
 USES=		perl5

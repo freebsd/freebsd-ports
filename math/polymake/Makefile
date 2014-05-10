@@ -6,7 +6,7 @@ PORTVERSION=	2.9.9
 CATEGORIES=	math java
 MASTER_SITES=	http://wwwopt.mathematik.tu-darmstadt.de/polymake/lib/exe/fetch.php/download/
 
-MAINTAINER=	gawrilow@math.tu-berlin.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A framework for experimental discrete geometry
 
 BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \

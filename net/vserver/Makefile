@@ -6,7 +6,7 @@ PORTVERSION=	2.43c
 CATEGORIES=	net
 MASTER_SITES=	http://www.enforcer.cc/vchat/filez/
 
-MAINTAINER=	mickey@enforcer.cc
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server software of the VChat conference system
 
 HAS_CONFIGURE=	yes
