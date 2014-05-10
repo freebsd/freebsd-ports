@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	crossfire-client
-PORTVERSION=	1.70.0
-PORTREVISION=	6
+PORTVERSION=	1.71.0
 CATEGORIES=	games
-MASTER_SITES=	SF/crossfire/crossfire-${PORTVERSION}
+MASTER_SITES=	SF/crossfire/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Cooperative multiplayer graphical RPG and adventure game
@@ -16,20 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_GL=		glut
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	gtk20
 USE_SDL=	sdl image mixer
-
-CONFIGURE_ARGS+=	--disable-alsa --disable-alsa9
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-patch:
-	${REINPLACE_CMD} -e '/#include <curl\/types.h>/d' \
-		${WRKSRC}/common/metaserver.c
-	${REINPLACE_CMD} -e "/mandir='${datarootdir}\/man'/d" \
-		${WRKSRC}/configure
 
 post-install:
 	${CP} ${WRKSRC}/pixmaps/48x48.png ${WRKSRC}/pixmaps/crossfire-client.png
