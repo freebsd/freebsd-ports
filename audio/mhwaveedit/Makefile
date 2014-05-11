@@ -11,10 +11,8 @@ COMMENT=	A graphical program for editing sound files
 
 LICENSE=	GPLv2
 
-USES=		pkgconfig
-NO_STAGE=	yes
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack gtk20
+USES=		tar:bzip2 pkgconfig pathfix
+USE_GNOME=	gtk20
 WANT_GNOME=	yes
 WANT_SDL=	yes
 GNU_CONFIGURE=	yes
@@ -24,6 +22,7 @@ CONFIGURE_ARGS=	--disable-optimization --without-alsalib \
 		--without-arts
 
 PLIST_FILES=	bin/mhwaveedit \
+		man/man1/mhwaveedit.1.gz \
 		share/locale/de/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/es/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/fr/LC_MESSAGES/mhwaveedit.mo \
@@ -34,8 +33,6 @@ PLIST_FILES=	bin/mhwaveedit \
 		share/locale/zh_CN/LC_MESSAGES/mhwaveedit.mo \
 		share/applications/mhwaveedit.desktop \
 		share/pixmaps/mhwaveedit.xpm
-
-MAN1=		mhwaveedit.1
 
 OPTIONS_DEFINE=	DOUBLE_SAMPLES SNDFILE SAMPLERATE OSS \
 		PORTAUDIO SDL JACK \
@@ -105,7 +102,7 @@ CONFIGURE_ARGS+=	--without-esound
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIBS_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+LIBS_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--with-pulse
 .else
 CONFIGURE_ARGS+=	--without-pulse
