@@ -1,8 +1,9 @@
-# Created by: rpsfa@rit.edu
+# Created by: Ryan Steinmetz <rpsfa@rit.edu>
 # $FreeBSD$
 
 PORTNAME=	skipfish
 PORTVERSION=	2.10b
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -19,13 +20,10 @@ LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn \
 USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 
-MAN1=		skipfish.1
-
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README COPYING ChangeLog
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -33,19 +31,16 @@ post-patch:
 		-e 's:"assets":"${DATADIR}/assets":' ${WRKSRC}/src/config.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/skipfish ${PREFIX}/bin/skipfish
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/sfscandiff ${PREFIX}/bin/sfscandiff
-	${INSTALL_MAN} ${WRKSRC}/doc/skipfish.1 ${PREFIX}/man/man1
-	(cd ${WRKSRC}/assets/ && ${COPYTREE_SHARE} . ${DATADIR}/assets/)
-	(cd ${WRKSRC}/dictionaries/ && ${COPYTREE_SHARE} . ${DATADIR}/dictionaries/)
+	${INSTALL_PROGRAM} ${WRKSRC}/skipfish ${STAGEDIR}${PREFIX}/bin/skipfish
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/sfscandiff ${STAGEDIR}${PREFIX}/bin/sfscandiff
+	${INSTALL_MAN} ${WRKSRC}/doc/skipfish.1 ${STAGEDIR}${PREFIX}/man/man1
+	(cd ${WRKSRC}/assets/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/assets/)
+	(cd ${WRKSRC}/dictionaries/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/dictionaries/)
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for doc in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .	endfor
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

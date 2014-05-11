@@ -21,15 +21,15 @@
 -	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-veridec
 -	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-dh
 -	install -m0644 seccure.1 $(DESTDIR)/usr/share/man/man1
-+	install -m0755 seccure-key $(PREFIX)/bin
-+	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-encrypt
-+	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-decrypt
-+	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-sign
-+	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-verify
-+	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-signcrypt
-+	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-veridec
-+	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-dh
-+	install -m0644 seccure.1 $(PREFIX)/man/man1
++	install -m0755 seccure-key $(DESTDIR)$(PREFIX)/bin
++	ln -f $(DESTDIR)$(PREFIX)/bin/seccure-key $(DESTDIR)$(PREFIX)/bin/seccure-encrypt
++	ln -f $(DESTDIR)$(PREFIX)/bin/seccure-key $(DESTDIR)$(PREFIX)/bin/seccure-decrypt
++	ln -f $(DESTDIR)$(PREFIX)/bin/seccure-key $(DESTDIR)$(PREFIX)/bin/seccure-sign
++	ln -f $(DESTDIR)$(PREFIX)/bin/seccure-key $(DESTDIR)$(PREFIX)/bin/seccure-verify
++	ln -f $(DESTDIR)$(PREFIX)/bin/seccure-key $(DESTDIR)$(PREFIX)/bin/seccure-signcrypt
++	ln -f $(DESTDIR)$(PREFIX)/bin/seccure-key $(DESTDIR)$(PREFIX)/bin/seccure-veridec
++	ln -f $(DESTDIR)$(PREFIX)/bin/seccure-key $(DESTDIR)$(PREFIX)/bin/seccure-dh
++	install -m0644 seccure.1 $(DESTDIR)$(PREFIX)/man/man1
  
  clean:
  	rm -f *.o *~ seccure-key seccure-encrypt seccure-decrypt seccure-sign \

@@ -3,6 +3,7 @@
 
 PORTNAME=	check_email_delivery
 PORTVERSION=	0.7.1b
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://buhacoff.net/software/check_email_delivery/archive/ \
 		http://mirrors.rit.edu/zi/
@@ -28,25 +29,24 @@ DOC_FILES=	check_email_delivery.html check_email_delivery.pod \
 
 PORTSCOUT=	ignore:1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/nagios
-	${INSTALL_SCRIPT} ${WRKSRC}/check_email_delivery ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_email_delivery_epn ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_quota ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_quota_epn ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_receive ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_receive_epn ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_smtp_send ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_smtp_send_epn ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/imap_ssl_cert ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/imap_ssl_cert_epn ${PREFIX}/libexec/nagios/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${WRKSRC}/check_email_delivery ${STAGEDIR}${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/check_email_delivery_epn ${STAGEDIR}${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_quota ${STAGEDIR}${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_quota_epn ${STAGEDIR}${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_receive ${STAGEDIR}${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_receive_epn ${STAGEDIR}${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/check_smtp_send ${STAGEDIR}${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/check_smtp_send_epn ${STAGEDIR}${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/imap_ssl_cert ${STAGEDIR}${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/imap_ssl_cert_epn ${STAGEDIR}${PREFIX}/libexec/nagios/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
