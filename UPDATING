@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140511:
+  AFFECTS: users of databases/firebird*
+  AUTHOR: bapt@FreeBSD.org
+
+  The default version of databases/firebird* have been changed to support
+  DEFAULT_VERSIONS variable
+
+  DEFAULT_VERSIONS=firebird=2.5
+
 20140507:
   AFFECTS: users of lang/open-cobol
   AUTHOR: johans@FreeBSD.org
