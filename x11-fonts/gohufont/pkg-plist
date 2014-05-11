@@ -1,5 +1,3 @@
-%%FONTDIR%%/fonts.dir
-%%FONTDIR%%/fonts.scale
 %%FONTDIR%%/gohufont-11.pcf.gz
 %%FONTDIR%%/gohufont-11b.pcf.gz
 %%FONTDIR%%/gohufont-14.pcf.gz
@@ -8,6 +6,4 @@
 %%FONTDIR%%/gohufont-uni-11b.pcf.gz
 %%FONTDIR%%/gohufont-uni-14.pcf.gz
 %%FONTDIR%%/gohufont-uni-14b.pcf.gz
-@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm %%FONTDIR%%
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
