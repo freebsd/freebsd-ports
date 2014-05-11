@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit_data_models
-PORTVERSION=	0.16.4
+PORTVERSION=	0.17.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	tanawts@gmail.com
 COMMENT=	Database layer for Metasploit
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	rubygem-activerecord>=3.2.13:${PORTSDIR}/databases/rubygem-activerecord \
 		rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
