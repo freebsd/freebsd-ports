@@ -11,11 +11,11 @@ DISTNAME=	Cultivation_${PORTVERSION}_UnixSource
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Unique game of conflict and cooperation in a gardening community
 
-LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS=	libportaudio.so.0:${PORTSDIR}/audio/portaudio
 
+USES=		gmake
 USE_XORG=	x11 xi xext xmu
 USE_GL=		glut
-USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/game2
 BUILD_WRKSRC=	${WRKSRC}/gameSource
@@ -23,11 +23,7 @@ MAKE_ARGS=	CXX=${CXX}
 
 PORTDOCS=	changeLog.txt how_to_play.txt
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@cd ${WRKSRC} && ${CAT} Makefile.GnuLinux Makefile.common \
@@ -41,19 +37,15 @@ post-patch:
 		${WRKSRC}/../minorGems/util/TranslationManager.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/Cultivation ${PREFIX}/bin
-	${MKDIR} ${DATADIR}/languages
-	${INSTALL_DATA} ${BUILD_WRKSRC}/font.tga ${DATADIR}
-	${INSTALL_DATA} ${BUILD_WRKSRC}/features.txt ${DATADIR}
-	${INSTALL_DATA} ${BUILD_WRKSRC}/language.txt ${DATADIR}
-	${INSTALL_DATA} ${BUILD_WRKSRC}/languages/* ${DATADIR}/languages
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/Cultivation ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}/languages
+	${INSTALL_DATA} ${BUILD_WRKSRC}/font.tga ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/features.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/language.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/languages/* ${STAGEDIR}${DATADIR}/languages
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/documentation/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/documentation/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
