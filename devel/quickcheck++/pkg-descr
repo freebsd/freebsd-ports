@@ -14,4 +14,4 @@ distribution of test data and to write custom test data generators.
 The framework also allows the specification of fixed test data, as
 can be done with more traditional unit testing frameworks.
 
-WWW:	http://software.legiasoft.com/quickcheck/
+WWW: http://software.legiasoft.com/quickcheck/
