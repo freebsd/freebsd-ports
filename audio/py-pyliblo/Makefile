@@ -8,8 +8,10 @@ CATEGORIES=	audio python
 MASTER_SITES=	http://das.nasophon.de/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A Python wrapper for the Liblo OSC Library
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Python wrapper for the Liblo OSC Library
+
+LICENSE=	LGPL21
 
 BUILD_DEPENDS=	pyrex>=0.9.4:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
