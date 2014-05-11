@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	obspy
-PORTVERSION=	0.8.4
-PORTREVISION=	3
+PORTVERSION=	0.9.2
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python framework for seismological observatories
+
+LICENSE=	LGPL3
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.6.0:${PORTSDIR}/science/py-scipy \
@@ -20,11 +21,12 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=			fortran zip
+USE_LDCONFIG=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 PYEASYINSTALL_ARCHDEP=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s#FC#${FC}#g" ${WRKSRC}/setup.py
 
