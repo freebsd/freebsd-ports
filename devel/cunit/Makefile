@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/CUnit/2.1-0
 DISTNAME=	${PORTNAME:S/^cu/CU/}-${DISTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automated unit testing framework for C
 
 CONFLICTS=	c-unit-[0-9]*
@@ -19,8 +19,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoheader
 USE_LDCONFIG=	yes
-
-MAN3=	CUnit.3
 
 OPTIONS_DEFINE=	DEB AUT BAS CON CUR EXA ITE MEM
 DEB_DESC=	Debug interface
@@ -34,7 +32,6 @@ MEM_DESC=	Internal memory tracking
 
 OPTIONS_DEFAULT=	AUT BAS CON
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@|/share/doc/@PACKAGE@|g' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@|/share/doc/@PACKAGE@|g' ${WRKSRC}/doc/headers/Makefile.in
