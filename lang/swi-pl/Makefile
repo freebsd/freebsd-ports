@@ -11,10 +11,8 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
-
-OPTIONS_DEFINE=	ODBC
-ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libodbc.so:${PORTSDIR}/databases/unixODBC
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
