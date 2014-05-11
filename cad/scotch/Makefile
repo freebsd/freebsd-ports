@@ -19,7 +19,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 CONFLICTS=	gbase-0.* gmap-2006.*
 
 USES=		gmake
-MAKE_JOBS_UNSAFE=	yes
+
+MAKE_JOBS_UNSAFE=yes
 
 .if defined(MAINTAINER_MODE)
 USES+=		fortran
@@ -38,17 +39,9 @@ BINS=		acpl amk_ccc amk_fft2 amk_grf amk_hy amk_m2 amk_p2 atst	\
 		mord mtst
 INCS=		esmumps.h scotch.h scotchf.h
 LIBS=		libesmumps.a libscotch.a libscotcherr.a libscotcherrexit.a libscotchmetis.a
-LICDOCS=	CeCILL-C_V1-en.txt CeCILL-C_V1-fr.txt
 DOCVER=		${PORTVERSION:R:R:R}
 PORTDOCS=	ptscotch_user${DOCVER}.pdf scotch_user${DOCVER}.pdf
 EXAMPLES=	scotch_example_1.f scotch_example_2.f90
-
-MAN1=		acpl.1 amk_ccc.1 amk_fft2.1 amk_grf.1 amk_hy.1 amk_m2.1 amk_p2.1	\
-		atst.1 dggath.1 dgmap.1 dgord.1 dgpart.1 dgscat.1 dgtst.1 gbase.1 gcv.1	\
-		gmap.1 gmk_hy.1 gmk_m2.1 gmk_m3.1 gmk_msh.1 gmk_ub2.1 gmtst.1 gord.1	\
-		gotst.1 gout.1 gpart.1 gtst.1 mcv.1 mmk_m2.1 mmk_m3.1 mord.1 mtst.1
-
-PKGMESSAGE=	${WRKSRC}/LICENSE_en.txt
 
 .if !defined(WITHOUT_MPI)
 LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
@@ -66,7 +59,6 @@ PLIST_SUB+=	MPI=""
 PLIST_SUB+=	MPI="@comment "
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -83,38 +75,29 @@ pre-everything::
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's/-lthread/-pthread/;s/-lpthread/-pthread/'	\
+	${REINPLACE_CMD} -e 's/-lthread/-pthread/;s/-lpthread/-pthread/'\
 		-e 's/CLIBFLAGS	=/CLIBFLAGS	= -fPIC/'	\
 		${WRKSRC}/src/Make.inc/Makefile.inc.${MF}_pc_freebsd
 	${LN} -sf ${WRKSRC}/src/Make.inc/Makefile.inc.${MF}_pc_freebsd	\
 		${WRKSRC}/src/Makefile.inc
-	${REINPLACE_CMD} -e 's|in subdirectory "doc"|under ${DATADIR}|'	\
-		${WRKSRC}/LICENSE_en.txt
+	${REINPLACE_CMD} -E -e 's|cd (.*) ; * \$$\(MAKE\)|\$$(MAKE) -C \1|'	\
+		-e 's|\&\& \$$\(MAKE\)||' ${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${BINS:S|^|${WRKSRC}/bin/|} ${PREFIX}/bin
-	${INSTALL_DATA} ${INCS:S|^|${WRKSRC}/include/|} ${PREFIX}/include
-	${INSTALL_DATA} ${LIBS:S|^|${WRKSRC}/lib/|} ${PREFIX}/lib
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${LICDOCS:S|^|${WRKSRC}/doc/|} ${DATADIR}
-	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/man/man1/|} ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${BINS:S|^|${WRKSRC}/bin/|} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${INCS:S|^|${WRKSRC}/include/|} ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${LIBS:S|^|${WRKSRC}/lib/|} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/grf ${EXAMPLESDIR}/tgt
-	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/grf/* ${EXAMPLESDIR}/grf
-	${INSTALL_DATA} ${WRKSRC}/tgt/* ${EXAMPLESDIR}/tgt
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/grf ${STAGEDIR}${EXAMPLESDIR}/tgt
+	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/grf/* ${STAGEDIR}${EXAMPLESDIR}/grf
+	${INSTALL_DATA} ${WRKSRC}/tgt/* ${STAGEDIR}${EXAMPLESDIR}/tgt
 .endif
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
@@ -122,8 +105,8 @@ regression-test:	install
 	${GUNZIP_CMD} -c ${EXAMPLESDIR}/grf/bump.grf.gz |	\
 	gmap - ${WRKDIR}/ccc3.tgt ${WRKDIR}/brol.map)
 	(cd ${WRKSRC}/examples &&	\
-	${FC} -o scotch_test scotch_example_1.f	\
-		-I${PREFIX}/include -L${PREFIX}/lib -lscotch -lscotcherr -lm	\
+	${FC} -o scotch_test scotch_example_1.f ${FCFLAGS}	\
+		-I${PREFIX}/include ${LDFLAGS} -L${PREFIX}/lib -lscotch -lscotcherr -lm	\
 	&& ./scotch_test)
 . if !defined(WITHOUT_MPI)
 	(${GUNZIP_CMD} -c ${EXAMPLESDIR}/grf/bump.grf.gz | dgtst)
