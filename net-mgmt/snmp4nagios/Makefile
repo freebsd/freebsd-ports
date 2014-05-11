@@ -3,7 +3,7 @@
 
 PORTNAME=	SNMP4Nagios
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
@@ -21,7 +21,6 @@ NAGIOSDIR?=	/var/spool/nagios
 OPTIONS_DEFINE=	RRDTOOL
 RRDTOOL_DESC=	Build with rrdtool support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \

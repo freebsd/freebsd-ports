@@ -3,6 +3,7 @@
 
 PORTNAME=	userinfo
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -19,5 +20,4 @@ GNU_CONFIGURE=	yes
 MAN1=		ui.1
 MLINKS=		ui.1 userinfo.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

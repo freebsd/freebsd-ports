@@ -28,6 +28,7 @@ bin/sfscandiff
 %%DATADIR%%/dictionaries/medium.wl
 %%DATADIR%%/dictionaries/extensions-only.wl
 %%DATADIR%%/dictionaries/minimal.wl
+man/man1/skipfish.1.gz
 @dirrm %%DATADIR%%/dictionaries
 @dirrm %%DATADIR%%/assets
 @dirrm %%DATADIR%%

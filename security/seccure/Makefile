@@ -3,7 +3,7 @@
 
 PORTNAME=	seccure
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://point-at-infinity.org/seccure/ \
 		${MASTER_SITE_NETBSD}
@@ -11,9 +11,8 @@ MASTER_SITES=	http://point-at-infinity.org/seccure/ \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Elliptic Curve Crypto Utility for Reliable Encryption
 
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-MAN1=		seccure.1
+USE_GCC=	any
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
