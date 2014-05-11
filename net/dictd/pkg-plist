@@ -1,4 +1,6 @@
 bin/dictzip
+man/man1/dictzip.1.gz
+man/man8/dictd.8.gz
 sbin/dictd
 @unexec if cmp -s %D/etc/dictd.conf %D/etc/dictd.conf.sample; then rm -f %D/etc/dictd.conf; fi
 etc/dictd.conf.sample
