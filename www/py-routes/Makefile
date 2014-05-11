@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	routes
-PORTVERSION=	1.13
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP/source/R/Routes
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Routes-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A Routing package for Python that matches URLs to dicts and vice versa
+COMMENT=	Routing package for Python that matches URLs to dicts and vice versa
+
+LICENSE=	MIT
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
