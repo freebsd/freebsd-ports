@@ -31,7 +31,6 @@ TD1_DESC=	Variant with centered '~'
 SUB_LIST=	FONTDIR="${PREFIX}/${FONTDIR}"
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ALL_TARGET=	pcf
@@ -77,13 +76,7 @@ post-build:
 	@${GZIP_CMD} ${WRKSRC}/*.pcf
 
 do-install:
-	@${MKDIR} ${PREFIX}/${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${PREFIX}/${FONTDIR}
-
-post-install:
-	@cd ${PREFIX}/${FONTDIR}; mkfontdir
-	@${CP} ${PREFIX}/${FONTDIR}/fonts.dir ${PREFIX}/${FONTDIR}/fonts.scale || true
-	@command fc-cache -f -v ${PREFIX}/${FONTDIR} || true
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${STAGEDIR}${PREFIX}/${FONTDIR}
 
 .include <bsd.port.mk>
