@@ -12,9 +12,11 @@ MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Utility for ejecting media from CD or optical disk drive
 
+USES=		uidfix
 PLIST_FILES=	sbin/eject \
 		man/man1/eject.1.gz
 PORTDOCS=	README README-J
+MAKE_ARGS=	BINOWN=${BINOWN}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,4555,555,' ${WRKSRC}/Makefile
