@@ -204,9 +204,6 @@ include/freeradius/udpfromto.h
 %%EXPM%%%%RLMRUBY%%%%LIBDIR%%/rlm_ruby.a
 %%EXPM%%%%RLMRUBY%%%%LIBDIR%%/rlm_ruby.la
 %%EXPM%%%%RLMRUBY%%%%LIBDIR%%/rlm_ruby.so
-%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.a
-%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.la
-%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.so
 %%LIBDIR%%/rlm_sql.a
 %%LIBDIR%%/rlm_sql.la
 %%LIBDIR%%/rlm_sql.so
@@ -526,7 +523,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/files/accounting
 %%EXAMPLESDIR%%/raddb/mods-config/files/authorize
 %%EXAMPLESDIR%%/raddb/mods-config/files/pre-proxy
-%%EXAMPLESDIR%%/raddb/mods-config/perl/example.pl
+%%RLMPERL%%%%EXAMPLESDIR%%/raddb/mods-config/perl/example.pl
 %%EXAMPLESDIR%%/raddb/mods-config/preprocess/hints
 %%EXAMPLESDIR%%/raddb/mods-config/preprocess/huntgroups
 %%RLMPYTHON%%%%EXAMPLESDIR%%/raddb/mods-config/python/example.py
@@ -868,7 +865,7 @@ sbin/radmin
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql
 %%RLMPYTHON%%@dirrm %%EXAMPLESDIR%%/raddb/mods-config/python
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/preprocess
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/perl
+%%RLMPERL%%@dirrm %%EXAMPLESDIR%%/raddb/mods-config/perl
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/files
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/attr_filter
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config
