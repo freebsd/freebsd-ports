@@ -77,7 +77,6 @@
     SUBDIR += poudriere-devel
     SUBDIR += prhistory
     SUBDIR += psearch
-    SUBDIR += pver
     SUBDIR += symports
     SUBDIR += tinderbox
     SUBDIR += tinderbox-devel
