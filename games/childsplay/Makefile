@@ -13,6 +13,8 @@ COMMENT=	Educative games for children
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sqlalchemy \
 		${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
