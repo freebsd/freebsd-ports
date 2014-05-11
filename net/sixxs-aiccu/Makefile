@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.sixxs.net/archive/sixxs/aiccu/unix/
 PKGNAMEPREFIX=	sixxs-
 DISTNAME=	aiccu_20070115
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 
 LIB_DEPENDS=	libgnutls-openssl.so:${PORTSDIR}/security/gnutls
