@@ -2,6 +2,7 @@
 
 PORTNAME=	libvdpau
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/~aplattner/libvdpau/snapshot/
 
@@ -11,7 +12,7 @@ COMMENT=	VDPAU wrapper and tracing library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		libtool:keepla pkgconfig
 USE_XZ=		yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
