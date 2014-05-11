@@ -2,16 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	dnsutl
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	dns
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Programs to make using DNS easier
 
-DESTDIRNAME=	RPM_BUILD_ROOT
+LIB_DEPENDS=	libexplain.so:${PORTSDIR}/devel/libexplain
+
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all sure
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/man1/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
