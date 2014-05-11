@@ -6094,3 +6094,4 @@ devel/bsdlibdwarf||2014-05-06|Has expired: Outdated, included in all supported v
 security/yassl|security/cyassl|2014-05-06|Moved to match upstream name
 lang/open-cobol|lang/gnu-cobol|2014-05-07|Moved to match upstream name change
 sysutils/lire||2014-05-11|Project is dead
+net/ipfw-graph||2014-05-11|Project is dead
