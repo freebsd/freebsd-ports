@@ -36,10 +36,10 @@ MODELS_DESC=	Install 3D models (17MB)
 SOUNDTRACKS_DESC=	Install enhanced soundtracks (482MB)
 TEXTURES_DESC=	Install high resolution textures (157MB)
 
-MODELS_DISTFILES+=	vmodels-${f}-1.4.3${EXTRACT_SUFX}:vmd \
-			vmodels-${f}-1.4.3${EXTRACT_SUFX}:vmhr \
-			vmodels-${f}-1.4.3${EXTRACT_SUFX}:vmhx \
-			vmodels-${f}-1.4.3${EXTRACT_SUFX}:vms
+MODELS_DISTFILES+=	vmodels-doom-1.4.3${EXTRACT_SUFX}:vmd \
+			vmodels-heretic-1.4.3${EXTRACT_SUFX}:vmhr \
+			vmodels-hexen-1.4.3${EXTRACT_SUFX}:vmhx \
+			vmodels-strife-1.4.3${EXTRACT_SUFX}:vms
 
 .for f in doom doom1 doom2
 TEXTURES_DISTFILES+=	vtextures-${f}-1.1${EXTRACT_SUFX}:vt11
