@@ -6098,3 +6098,5 @@ net/ipfw-graph||2014-05-11|Project is dead
 java/linux-sun-jre16||2014-05-11|Has expired: Unsupported and known for multiple security vulnerabilities
 java/linux-sun-jdk16||2014-05-11|Has expired: Unsupported and known for multiple security vulnerabilities
 ports-mgmt/pver||2014-05-11|Has expired: does not support pkgng
+databases/firebird20-client|databases/firebird25-client|2014-05-11|Firebird 2.0 is EOLed
+databases/firebird20-server|databases/firebird25-server|2014-05-11|Firebird 2.0 is EOLed
