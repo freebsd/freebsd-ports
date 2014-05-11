@@ -3,6 +3,7 @@
 
 PORTNAME=	ode
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/opende/ODE/${PORTVERSION}
@@ -10,53 +11,39 @@ MASTER_SITES=	SF/opende/ODE/${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Articulated rigid body dynamics library
 
+LICENSE=	LGPL21 BSD3CLAUSE
+LICENSE_COMB=	dual
+
 CONFLICTS=	ode-devel-[0-9].*
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake libtool
 USE_GL=		yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-
-OPTIONS_DEFINE=	GIMPACT GYROSCOPIC DOUBLE OU
+OPTIONS_DEFINE=		GIMPACT GYROSCOPIC DOUBLE OU
 OPTIONS_DEFAULT=	GYROSCOPIC
+
 GIMPACT_DESC=		Enable gimpact instead of opcode support
 GYROSCOPIC_DESC=	Configure ODE to work with gyroscopic term
 DOUBLE_DESC=		Enable double precision (BROKEN with GIMPACT)
 OU_DESC=		Enable Thread-local storage (Experimental)
 
+GIMPACT_CONFIGURE_ON=	--with-trimesh=gimpact
+GIMPACT_CONFIGURE_OFF=	--with-trimesh=opcode
+GYROSCOPIC_CONFIGURE_ENABLE=	gyroscopic
+DOUBLE_CONFIGURE_ENABLE=	double-precision
+OU_CONFIGURE_ENABLE=		ou
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC -DPIC
 .endif
 
-.if ${PORT_OPTIONS:MGIMPACT} && defined(WITH_DOUBLE)
-IGNORE=	currently double precision is not supported by gimpact
-.endif
-
-.if ! ${PORT_OPTIONS:MGIMPACT}
-CONFIGURE_ARGS+=	--with-trimesh=opcode
-.else
-CONFIGURE_ARGS+=	--with-trimesh=gimpact
-.endif
-
-.if ! ${PORT_OPTIONS:MGYROSCOPIC}
-CONFIGURE_ARGS+=	--disable-gyroscopic
-.endif
-
-.if ${PORT_OPTIONS:MDOUBLE}
-CONFIGURE_ARGS+=	--enable-double-precision
-.endif
-
-.if ${PORT_OPTIONS:MOU}
-CONFIGURE_ARGS+=	--enable-ou
-.else
-CONFIGURE_ARGS+=	--disable-ou
+.if ${PORT_OPTIONS:MGIMPACT} && ${PORT_OPTIONS:MDOUBLE}
+IGNORE=		currently double precision is not supported by gimpact
 .endif
 
 post-patch:
@@ -75,6 +62,6 @@ post-patch:
 
 post-install:
 	${SED} -e '/PACKAGE/ s|^|//|; /VERSION/ s|^|//|' ${WRKSRC}/ode/src/config.h \
-		> ${PREFIX}/include/ode/config.h
+		> ${STAGEDIR}${PREFIX}/include/ode/config.h
 
 .include <bsd.port.post.mk>
