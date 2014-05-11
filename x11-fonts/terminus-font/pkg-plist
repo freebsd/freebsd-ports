@@ -1,5 +1,3 @@
-%%FONTDIR%%/fonts.dir
-%%FONTDIR%%/fonts.scale
 %%FONTDIR%%/ter-524b.pcf.gz
 %%FONTDIR%%/ter-k12b.pcf.gz
 %%FONTDIR%%/ter-216b.pcf.gz
@@ -234,4 +232,4 @@
 %%FONTDIR%%/ter-u18n.pcf.gz
 %%FONTDIR%%/ter-x18b.pcf.gz
 %%FONTDIR%%/ter-x18n.pcf.gz
-@dirrm %%FONTDIR%%
+@fcfontsdir %%FONTDIR%%
