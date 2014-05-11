@@ -25,6 +25,6 @@ command_args="${dhcprelay_ifaces} ${dhcprelay_server}"
 
 load_rc_config ${name}
 
-dhcprelay_enable=${dhcprelay_enable:"NO"}
+dhcprelay_enable=${dhcprelay_enable:-"NO"}
 
 run_rc_command "$1"
