@@ -8,6 +8,7 @@ lib/libcunit.a
 lib/libcunit.la
 lib/libcunit.so
 lib/libcunit.so.1
+man/man3/CUnit.3.gz
 share/CUnit/CUnit-List.dtd
 share/CUnit/CUnit-List.xsl
 share/CUnit/CUnit-Run.dtd
