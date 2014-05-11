@@ -24,14 +24,12 @@ USE_KDE4=	automoc4
 USE_PYTHON_BUILD=	yes
 USE_QT4=	dbus declarative qtestlib \
 		moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
-USES=		cmake
+USES=		tar:bzip2 cmake
 USE_LDCONFIG=	yes
 
 # To be kept in sync with sysutils/zeitgeist.
 ZEITGEIST_VERSION=	0.8.2
 
-NO_STAGE=	yes
 post-extract:
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${_DISTDIR}/zeitgeist-${ZEITGEIST_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS})
@@ -64,8 +62,5 @@ pre-build:
 		${CAT} *.trig | \
 		${LOCALBASE}/bin/rapper -i trig -o rdfxml -I ZeitgeistNamespace - | \
 		./rdfxml2py >> zeitgeist.py
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
