@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sequential image viewer
 
 LIB_DEPENDS=	libunrar.so:${PORTSDIR}/archivers/libunrar

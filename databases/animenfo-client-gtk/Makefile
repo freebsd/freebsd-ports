@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-client-gui-gtk${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-client-gui-gtk
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AnimeNfo client with GTK support
 
 LICENSE=	GPLv2

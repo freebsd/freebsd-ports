@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-client${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-client
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AnimeNfo client
 
 LICENSE=	GPLv2
