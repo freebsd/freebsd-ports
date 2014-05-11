@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
 
-LICENSE=	GPL
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
