@@ -249,6 +249,7 @@
     SUBDIR += polyml
     SUBDIR += ptoc
     SUBDIR += pure
+    SUBDIR += py-clojure
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
     SUBDIR += pypy
