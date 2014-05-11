@@ -15,7 +15,7 @@ COMMENT=	Xlib-based two-dimensional drawing tool and hyper-object browser
 LICENSE=	QPLv1
 LICENSE_NAME=	Q PUBLIC LICENSE v1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.QPL
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
