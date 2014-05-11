@@ -1,13 +1,11 @@
+=====================================================================
 For additional Quod Libet plugins:
 
-1. Fetch plugins archive.
+1. Fetch plugins archive from project download page:
+   https://bitbucket.org/lazka/quodlibet-files/raw/default/releases/quodlibet-plugins-2.6.3.tar.gz
 
-	fetch http://quodlibet.googlecode.com/files/quodlibet-plugins-2.2.tar.gz
-
-2. Extract archive.
-
-	tar xvfz quodlibet-plugins-2.2.tar.gz
-
-3. Copy extracted files to Quod Libet plugins directory.
-
-	cp -R quodlibet-plugins-2.2/* ~/.quodlibet/plugins/
+2. Extract archive into plugin dir in a user's home directory
+   mkdir -p ~/.quodlibet/plugins/
+   cd ~/.quodlibet/plugins/
+   tar xf path/to/downloaded/quodlibet-plugins-2.6.3.tar.gz
+=====================================================================
