@@ -1,5 +1,5 @@
---- states/hl/Makefile.in.orig	Wed Mar  5 01:40:07 2003
-+++ states/hl/Makefile.in	Tue Mar  2 06:33:27 2004
+--- states/hl/Makefile.in.orig	2003-03-05 10:40:07.000000000 +0300
++++ states/hl/Makefile.in	2014-05-11 17:58:23.000000000 +0400
 @@ -186,9 +186,9 @@
  diffs.st diffu.st elisp.st fortran.st fortran_pp.st haskell.st html.st	\
  idl.st inf.st java.st javascript.st ksh.st m4.st mail.st makefile.st	\
@@ -13,3 +13,17 @@
  
  
  states = $(misc) $(styles) $(languages) $(highlightings)
+@@ -330,10 +330,10 @@
+ 
+ 
+ install-data-local:
+-	$(top_srcdir)/mkinstalldirs $(datadir)/enscript
+-	$(top_srcdir)/mkinstalldirs $(datadir)/enscript/hl
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir)/enscript
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir)/enscript/hl
+ 	for f in $(states); do \
+-	  $(INSTALL_DATA) $(srcdir)/$$f $(datadir)/enscript/hl/$$f; \
++	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(datadir)/enscript/hl/$$f; \
+ 	done
+ 
+ uninstall-local:

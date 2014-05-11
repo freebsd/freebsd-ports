@@ -12,14 +12,14 @@ DISTNAME=	enscript-${PORTVERSION}
 MAINTAINER?=	rafan@FreeBSD.org
 COMMENT=	ASCII to PostScript filter
 
+USES=		shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
-NO_STAGE=	yes
+CONFIGURE_ENV=	PERL="${perl_CMD}"
 
 CONFLICTS?=	enscript-a4-* enscript-letterdj-*
 
 INFO=		enscript
-MAN1=		diffpp.1 enscript.1 sliceprint.1 states.1
 
 PAPERSIZE?=	letter
 PS?=		Letter

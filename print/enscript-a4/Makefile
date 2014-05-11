@@ -8,5 +8,4 @@ PS=		A4
 
 MASTERDIR=	${.CURDIR}/../enscript-letter
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
