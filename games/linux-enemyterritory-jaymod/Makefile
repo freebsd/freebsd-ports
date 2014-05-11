@@ -24,12 +24,9 @@ DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 CLIENT_PK3=	${PORTNAME}-${PORTVERSION}.pk3
 PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OMNIBOT_RUN_DEPENDS=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot
 
-.if ${PORT_OPTIONS:MOMNIBOT}
-RUN_DEPENDS+=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot
-.endif
+.include <bsd.port.options.mk>
 
 do-build:
 .for f in et etded
@@ -40,26 +37,18 @@ do-build:
 
 do-install:
 .for f in et etded
-	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} ${STAGEDIR}${DATADIR}
 .for f in jaymod.cfg server.cfg
-	${CP} -p ${WRKSRC}/${f} ${DATADIR}/${f}.sample
+	@${CP} -p ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/${f}.sample
 .endfor
-	${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} README.txt doc/jaymod.pdf ${DOCSDIR}
-.endif
-
-post-install:
-	@if [ ! -f ${DATADIR}/jaymod.cfg ]; then \
-		${CP} -p ${DATADIR}/jaymod.cfg.sample ${DATADIR}/jaymod.cfg ; \
-	fi
-	@if [ ! -f ${DATADIR}/server.cfg ]; then \
-		${CP} -p ${DATADIR}/server.cfg.sample ${DATADIR}/server.cfg ; \
-	fi
+	@${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in README.txt doc/jaymod.pdf
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
