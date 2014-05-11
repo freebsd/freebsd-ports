@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+POST-INSTALL)
+	mkdir -p /var/lib/pacman /var/cache/pacman/pkg
+	;;
+esac

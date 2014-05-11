@@ -23,9 +23,20 @@ etc/pacman.conf.dist
 include/alpm.h
 include/alpm_list.h
 lib/libalpm.a
-lib/libalpm.la
 lib/libalpm.so
 lib/libalpm.so.7
+lib/libalpm.so.7.0.3
+man/man3/libalpm.3.gz
+man/man5/PKGBUILD.5.gz
+man/man5/makepkg.conf.5.gz
+man/man5/pacman.conf.5.gz
+man/man8/makepkg.8.gz
+man/man8/pacman-key.8.gz
+man/man8/pacman.8.gz
+man/man8/pkgdelta.8.gz
+man/man8/repo-add.8.gz
+man/man8/repo-remove.8.gz
+man/man8/vercmp.8.gz
 %%NLS%%share/locale/ca/LC_MESSAGES/libalpm.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/pacman-scripts.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/pacman.mo
@@ -116,5 +127,4 @@ lib/libalpm.so.7
 %%DATADIR%%/PKGBUILD.proto
 %%DATADIR%%/proto.install
 @dirrm %%DATADIR%%
-@exec mkdir -p %%PACMAN_ROOT%%
-@unexec rmdir %%PACMAN_ROOT%% 2>/dev/null || true
+@dirrmtry %%PACMAN_ROOT%%
