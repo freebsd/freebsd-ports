@@ -6095,3 +6095,5 @@ security/yassl|security/cyassl|2014-05-06|Moved to match upstream name
 lang/open-cobol|lang/gnu-cobol|2014-05-07|Moved to match upstream name change
 sysutils/lire||2014-05-11|Project is dead
 net/ipfw-graph||2014-05-11|Project is dead
+java/linux-sun-jre16||2014-05-11|Has expired: Unsupported and known for multiple security vulnerabilities
+java/linux-sun-jdk16||2014-05-11|Has expired: Unsupported and known for multiple security vulnerabilities
