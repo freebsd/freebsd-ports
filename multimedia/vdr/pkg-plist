@@ -143,27 +143,13 @@ include/vdr/videodir.h
 %%TTXPATCH%%include/vdr/vdrttxtsubshooks.h
 @exec mkdir -p %D/etc/vdr/plugins
 @exec chown %%VDR_USER%%:%%VDR_GROUP%% %D/etc/vdr %D/etc/vdr/plugins
-@unexec if cmp -s %D/etc/vdr/remote.conf.sample %D/etc/vdr/remote.conf; then rm -f %D/etc/vdr/remote.conf; fi
-etc/vdr/remote.conf.sample
-@exec if [ ! -f %D/etc/vdr/remote.conf ] ; then cp -p %D/%F %B/remote.conf; fi
-@unexec if cmp -s %D/etc/vdr/channels.conf.sample %D/etc/vdr/channels.conf; then rm -f %D/etc/vdr/channels.conf; fi
-etc/vdr/channels.conf.sample
-@exec if [ ! -f %D/etc/vdr/channels.conf ] ; then cp -p %D/%F %B/channels.conf; fi
-@unexec if cmp -s %D/etc/vdr/diseqc.conf.sample %D/etc/vdr/diseqc.conf; then rm -f %D/etc/vdr/diseqc.conf; fi
-etc/vdr/diseqc.conf.sample
-@exec if [ ! -f %D/etc/vdr/diseqc.conf ] ; then cp -p %D/%F %B/diseqc.conf; fi
-@unexec if cmp -s %D/etc/vdr/keymacros.conf.sample %D/etc/vdr/keymacros.conf; then rm -f %D/etc/vdr/keymacros.conf; fi
-etc/vdr/keymacros.conf.sample
-@exec if [ ! -f %D/etc/vdr/keymacros.conf ] ; then cp -p %D/%F %B/keymacros.conf; fi
-@unexec if cmp -s %D/etc/vdr/scr.conf.sample %D/etc/vdr/scr.conf; then rm -f %D/etc/vdr/scr.conf; fi
-etc/vdr/scr.conf.sample
-@exec if [ ! -f %D/etc/vdr/scr.conf ] ; then cp -p %D/%F %B/scr.conf; fi
-@unexec if cmp -s %D/etc/vdr/sources.conf.sample %D/etc/vdr/sources.conf; then rm -f %D/etc/vdr/sources.conf; fi
-etc/vdr/sources.conf.sample
-@exec if [ ! -f %D/etc/vdr/sources.conf ] ; then cp -p %D/%F %B/sources.conf; fi
-@unexec if cmp -s %D/etc/vdr/svdrphosts.conf.sample %D/etc/vdr/svdrphosts.conf; then rm -f %D/etc/vdr/svdrphosts.conf; fi
-etc/vdr/svdrphosts.conf.sample
-@exec if [ ! -f %D/etc/vdr/svdrphosts.conf ] ; then cp -p %D/%F %B/svdrphosts.conf; fi
+@sample etc/vdr/remote.conf.sample
+@sample etc/vdr/channels.conf.sample
+@sample etc/vdr/diseqc.conf.sample
+@sample etc/vdr/keymacros.conf.sample
+@sample etc/vdr/scr.conf.sample
+@sample etc/vdr/sources.conf.sample
+@sample etc/vdr/svdrphosts.conf.sample
 %%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ca_ES
 %%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
