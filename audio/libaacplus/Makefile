@@ -3,7 +3,7 @@
 
 PORTNAME=	libaacplus
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://media.wnet.ua/~tipok/aacplus/:site1\
 		ftp://ftp.3gpp.org/Specs/archive/26_series/26.410/:site2\
@@ -24,12 +24,13 @@ RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensin
 CONFLICTS=	aacplusenc-0*
 
 USE_CSTD=	gnu89
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig libtool:keepla
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
 
 AUTOMAKE_ARGS=	--add-missing
 LIBTOOLIZE_ARGS=--automake
