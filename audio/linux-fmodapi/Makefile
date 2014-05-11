@@ -12,14 +12,16 @@ DISTNAME=	fmodapi42416linux
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Music & Sound effects system
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 INSTALL_SHLIB=	yes
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
-NO_BUILD=	yes
 USE_LINUX_PREFIX=	yes
+NO_BUILD=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,%%PREFIX%%,${STAGEDIR}${PREFIX},' ${WRKSRC}/Makefile
+
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.mk>
