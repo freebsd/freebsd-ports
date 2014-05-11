@@ -20,7 +20,7 @@ BUILD_DEPENDS=	wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28 \
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=      kicad-2008*
+CONFLICTS=      kicad-2013*
 
 DOCVERSION=	1.1
 LIBVERSION=	1.0
