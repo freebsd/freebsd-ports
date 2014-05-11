@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rbllookup-ng
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	dns mail
 MASTER_SITES=	http://www.mavetju.org/download/
 
