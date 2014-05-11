@@ -6097,3 +6097,4 @@ sysutils/lire||2014-05-11|Project is dead
 net/ipfw-graph||2014-05-11|Project is dead
 java/linux-sun-jre16||2014-05-11|Has expired: Unsupported and known for multiple security vulnerabilities
 java/linux-sun-jdk16||2014-05-11|Has expired: Unsupported and known for multiple security vulnerabilities
+ports-mgmt/pver||2014-05-11|Has expired: does not support pkgng
