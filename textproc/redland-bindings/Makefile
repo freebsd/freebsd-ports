@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	redland-bindings
-PORTVERSION=	1.0.16.1
-CATEGORIES?=	textproc
+PORTVERSION=	1.0.17.1
+CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
-MAINTAINER?=	kde@FreeBSD.org
-COMMENT?=	Language bindings for the Redland package
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Language bindings for the Redland package
 
 # Even though GPLv3 is not explicitly mentioned in the port's LICENSE.html, one
 # of its licenses is "GPLv2 or newer", which includes GPLv3.
@@ -28,7 +28,7 @@ PERL_USES=		perl5
 PHP_CONFIGURE_WITH=	php
 PHP_USE=		PHP=yes PHP_BUILD=yes
 PYTHON_CONFIGURE_WITH=	python
-PYTHON_USE=		PYTHON=2.5+
+PYTHON_USE=		PYTHON=yes
 RUBY_CONFIGURE_WITH=	ruby
 RUBY_USE=		RUBY=yes
 
@@ -37,6 +37,7 @@ RUBY_USE=		RUBY=yes
 post-install:
 .if ${PORT_OPTIONS:MPERL}
 	${RM} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
+	${SED} -i '' -e 's,^${STAGEDIR},,g' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/RDF/Redland/CORE/.packlist
 .endif
 
 .include <bsd.port.mk>
