@@ -10,8 +10,6 @@ MASTER_SITE_SUBDIR=	utils/shell
 MAINTAINER=	peter@FreeBSD.org
 COMMENT=	Paint Changed Characters
 
-MAKE_ENV=	BIN=${PREFIX}/bin MAN=${PREFIX}/man DATA=${PREFIX}/libdata
-MAN1=		paicc.1
+MAKE_ENV+=	BIN=${STAGEDIR}${PREFIX}/bin MAN=${STAGEDIR}${PREFIX}/man DATA=${STAGEDIR}${PREFIX}/libdata
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
