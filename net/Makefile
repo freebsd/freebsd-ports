@@ -236,7 +236,6 @@
     SUBDIR += iodine
     SUBDIR += ip6_int
     SUBDIR += ipa_ipfw
-    SUBDIR += ipfw-graph
     SUBDIR += ipgrab
     SUBDIR += iplog
     SUBDIR += ipsorc
