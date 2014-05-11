@@ -11,11 +11,13 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Python extension for Firebird/Interbase(R) relational databases
 
-LIB_DEPENDS=		libgds.so.2:${PORTSDIR}/databases/firebird20-client
+BROKEN=			Does not build with modern compilers
+
 RUN_DEPENDS=		${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py:${PORTSDIR}/lang/py-mx-base
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_FIREBIRD=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
