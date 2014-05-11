@@ -2,96 +2,65 @@
 # $FreeBSD$
 
 PORTNAME=	cunit
-DISTVERSION=	2.1-0
-PORTREVISION=	2
+PORTVERSION=	2.1.3
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/CUnit/2.1-0
-DISTNAME=	${PORTNAME:S/^cu/CU/}-${DISTVERSION}-src
+MASTER_SITES=	SF/${PORTNAME}/CUnit/${PORTVERSION:R}-${PORTVERSION:E}
+DISTNAME=	CUnit-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automated unit testing framework for C
 
+LICENSE=	LGPL20
+
 CONFLICTS=	c-unit-[0-9]*
 
-WRKSRC=	${WRKDIR}/${PORTNAME:S/^cu/CU/}-${DISTVERSION}
-DOCSDIR=	${PREFIX}/share/doc/CUnit
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoheader
-USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=	DEB AUT BAS CON CUR EXA ITE MEM
-DEB_DESC=	Debug interface
-AUT_DESC=	Automated(XML) interface
+OPTIONS_DEFINE=	AUT BAS CON CUR DEB EXA ITE MEM
+OPTIONS_DEFAULT=AUT BAS CON
+OPTIONS_SUB=	yes
+AUT_DESC=	Automated (XML) interface
 BAS_DESC=	Basic interface
 CON_DESC=	Console interface
 CUR_DESC=	Curses interface
-EXA_DESC=	Compile example programs
-ITE_DESC=	Compile internal test program
+DEB_DESC=	Debug interface
+EXA_DESC=	Example programs
+ITE_DESC=	Internal test program
 MEM_DESC=	Internal memory tracking
 
-OPTIONS_DEFAULT=	AUT BAS CON
+GNU_CONFIGURE=	yes
+USES=		gmake libtool pathfix tar:bzip2
+USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
+USE_LDCONFIG=	yes
+
+DATADIR=	${PREFIX}/share/CUnit
+DOCSDIR=	${PREFIX}/share/doc/CUnit
+EXAMPLESDIR=	${PREFIX}/share/examples/CUnit
+PORTDATA=	*
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+AUTOMAKE_ARGS=	--add-missing
+LIBTOOLIZE_ARGS=--copy --force --install
+PATHFIX_MAKEFILEIN=	Makefile.am
+
+AUT_CONFIGURE_ENABLE=	automated
+BAS_CONFIGURE_ENABLE=	basic
+CON_CONFIGURE_ENABLE=	console
+CUR_CONFIGURE_ENABLE=	curses
+DEB_CONFIGURE_ENABLE=	debug
+EXA_CONFIGURE_ENABLE=	examples
+ITE_CONFIGURE_ENABLE=	test
+MEM_CONFIGURE_ENABLE=	memtrace
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@|/share/doc/@PACKAGE@|g' ${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@|/share/doc/@PACKAGE@|g' ${WRKSRC}/doc/headers/Makefile.in
-	@${REINPLACE_CMD} -e 's|/@PACKAGE@/Examples/Automated|/examples/@PACKAGE@/Automated|g' ${WRKSRC}/Examples/AutomatedTest/Makefile.in
-	@${REINPLACE_CMD} -e 's|/@PACKAGE@/Examples/Basic|/examples/@PACKAGE@/Basic|g' ${WRKSRC}/Examples/BasicTest/Makefile.in
-	@${REINPLACE_CMD} -e 's|/@PACKAGE@/Examples/Console|/examples/@PACKAGE@/Console|g' ${WRKSRC}/Examples/ConsoleTest/Makefile.in
-	@${REINPLACE_CMD} -e 's|/@PACKAGE@/Examples/Curses|/examples/@PACKAGE@/Curses|g' ${WRKSRC}/Examples/CursesTest/Makefile.in
-.if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|CUnit doc Man Share|CUnit Man Share|g' ${WRKSRC}/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@|/share/doc/@PACKAGE@|g' ${WRKSRC}/doc/Makefile.am ${WRKSRC}/doc/headers/Makefile.am
+	@${REINPLACE_CMD} -e 's|/@PACKAGE@/Examples/|/examples/@PACKAGE@/|g' ${WRKSRC}/Examples/*/Makefile.in
+	@${REINPLACE_CMD} -e 's|CUnit-[A-Z][a-z]*\.[a-z]*|${DATADIR}/&|' ${WRKSRC}/CUnit/Sources/Automated/Automated.c
+	@${REINPLACE_CMD} -e '/fprintf/ s|Memory-Dump\.[a-z]*|${DATADIR}/&|' ${WRKSRC}/CUnit/Sources/Framework/MyMem.c
 
-.include <bsd.port.options.mk>
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcunit.so.1.0.1
 
-.if ${PORT_OPTIONS:MDEB}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-.if ${PORT_OPTIONS:MAUT}
-PLIST_FILES+=		include/CUnit/Automated.h
-.else
-CONFIGURE_ARGS+=	--disable-automated
-.endif
-.if ${PORT_OPTIONS:MBAS}
-PLIST_FILES+=		include/CUnit/Basic.h
-.else
-CONFIGURE_ARGS+=	--disable-basic
-.endif
-.if ${PORT_OPTIONS:MCON}
-PLIST_FILES+=		include/CUnit/Console.h
-.else
-CONFIGURE_ARGS+=	--disable-console
-.endif
-.if ${PORT_OPTIONS:MCUR}
-CONFIGURE_ARGS+=	--enable-curses
-PLIST_FILES+=		include/CUnit/CUCurses.h
-.endif
-.if ${PORT_OPTIONS:MEXA}
-CONFIGURE_ARGS+=	--enable-examples
-.if ${PORT_OPTIONS:MAUT}
-PLIST_FILES+=		share/examples/CUnit/Automated/AutomatedTest \
-			share/examples/CUnit/Automated/README
-.endif
-.if ${PORT_OPTIONS:MBAS}
-PLIST_FILES+=		share/examples/CUnit/Basic/BasicTest \
-			share/examples/CUnit/Basic/README
-.endif
-.if ${PORT_OPTIONS:MCON}
-PLIST_FILES+=		share/examples/CUnit/Console/ConsoleTest \
-			share/examples/CUnit/Console/README
-.endif
-.if ${PORT_OPTIONS:MCUR}
-PLIST_FILES+=		share/examples/CUnit/Curses/CursesTest \
-			share/examples/CUnit/Curses/README
-.endif
-.endif
-.if ${PORT_OPTIONS:MITE}
-CONFIGURE_ARGS+=	--enable-test
-PLIST_FILES+=		share/CUnit/Test/test_cunit
-.endif
-.if ${PORT_OPTIONS:MMEM}
-CONFIGURE_ARGS+=	--enable-memtrace
-.endif
+regression-test test: build
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
