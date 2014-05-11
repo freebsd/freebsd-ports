@@ -9,10 +9,9 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion18
 MASTER_SITE_SUBDIR=	subversion
 
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
-USES+=		pkgconfig
+USES+=		tar:bzip2 pkgconfig
 
 LICENSE=	APACHE20
 
@@ -114,10 +113,10 @@ post-patch:
 	@${ECHO_CMD} "#define ORGANIZATION_NAME \"${ORGANIZATION}\"" > ${WRKSRC}/subversion/freebsd-organization.h
 .endif
 # shebangfix
-	${GREP} -Rl -e '#!/bin/b' -e '#!/bin/env' -e '#!/usr/bin/p' ${WRKSRC}/tools/ \
+	@${GREP} -Rl -e '#!/bin/b' -e '#!/bin/env' -e '#!/usr/bin/p' ${WRKSRC}/tools/ \
 		| ${XARGS} ${REINPLACE_CMD} -e '1s|#\!/bin/b|#\!/usr/local/bin/b|' \
 		-e '1s|#\!/bin/env|#\!/usr/bin/env|' \
 		-e '1s|#\!/usr/bin/p|#\!/usr/local/bin/p|'
 # remove all .bak files to clean the stage
-	${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
