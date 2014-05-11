@@ -12,6 +12,9 @@ COMMENT=	The typo3 content management system
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upgrade to www/typo3 or www/typo3-lts
+EXPIRATION_DATE=	2015-03-31
+
 PORTSCOUT=	limit:^4\.5\.
 
 NO_BUILD=	yes
