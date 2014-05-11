@@ -532,16 +532,12 @@ USE_FIREBIRD=	${WITH_FIREBIRD_VER}
 .endif
 
 .if ${USE_FIREBIRD:tl} == "yes"
-FIREBIRD_VER=	25
+FIREBIRD_VER=	${FIREBIRD_DEFAULT:S/.//}
 .else
 FIREBIRD_VER=	${USE_FIREBIRD}
 .endif
 
-.if ${FIREBIRD_VER} == "2"
-LIB_DEPENDS+=	libfbclient.so:${PORTSDIR}/databases/firebird20-client
-.elif ${FIREBIRD_VER} == "20"
-LIB_DEPENDS+=	libfbclient.so:${PORTSDIR}/databases/firebird20-client
-.elif ${FIREBIRD_VER} == "21"
+.if ${FIREBIRD_VER} == "21"
 LIB_DEPENDS+=	libfbclient.so:${PORTSDIR}/databases/firebird21-client
 .elif ${FIREBIRD_VER} == "25"
 LIB_DEPENDS+=	libfbclient.so:${PORTSDIR}/databases/firebird25-client
