@@ -460,7 +460,6 @@
     SUBDIR += linux-f10-procps
     SUBDIR += linux-nero
     SUBDIR += linuxfdisk
-    SUBDIR += lire
     SUBDIR += livecd
     SUBDIR += lmmon
     SUBDIR += lmon
