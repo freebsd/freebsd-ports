@@ -9,8 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/${PORTVERSION}/
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	High performance realtime 3D engine
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 DOS2UNIX_GLOB=	Makefile *.cpp *.h *.txt
 USES=		dos2unix gmake zip
@@ -32,7 +32,6 @@ EXAMPLEDIRS=	01.HelloWorld 02.Quake3Map 03.CustomSceneNode 04.Movement 05.UserIn
 OPTIONS_DEFINE=	DEBUG EXAMPLES JOYSTICK
 JOYSTICK_DESC=	Support for Linux Joystick
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if (${ARCH} == "amd64") || (${ARCH} == "ia64")
@@ -73,28 +72,25 @@ post-patch:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/include/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	cd ${WRKSRC}/include && \
-		${INSTALL_DATA} *.h ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lib/FreeBSD/libIrrlicht.a ${PREFIX}/lib
+		${INSTALL_DATA} *.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lib/FreeBSD/libIrrlicht.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/FreeBSD/libIrrlicht.so.${SHARED_LIB_VER} \
-		${PREFIX}/lib && ${LN} -s libIrrlicht.so.${SHARED_LIB_VER} \
-			${PREFIX}/lib/libIrrlicht.so
+		${STAGEDIR}${PREFIX}/lib && ${LN} -s libIrrlicht.so.${SHARED_LIB_VER} \
+			${STAGEDIR}${PREFIX}/lib/libIrrlicht.so
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 .for DIRE in ${EXAMPLEDIRS}
-	${MKDIR} ${EXAMPLESDIR}/${DIRE}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${DIRE}
 	${INSTALL_DATA} ${WRKSRC}/examples/${DIRE}/Makefile \
-		${EXAMPLESDIR}/${DIRE}
+		${STAGEDIR}${EXAMPLESDIR}/${DIRE}
 	${FIND} ${WRKSRC}/examples/${DIRE} \( -name "*.cpp" -or -name "*.h" \) \
-		-exec ${INSTALL_DATA} "{}" ${EXAMPLESDIR}/${DIRE} \;
+		-exec ${INSTALL_DATA} "{}" ${STAGEDIR}${EXAMPLESDIR}/${DIRE} \;
 .endfor
-	${MKDIR} ${EXAMPLESDIR}/media
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/media
 	${FIND} ${WRKSRC}/media -type f \
-		-exec ${INSTALL_DATA} "{}" ${EXAMPLESDIR}/media \;
+		-exec ${INSTALL_DATA} "{}" ${STAGEDIR}${EXAMPLESDIR}/media \;
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
