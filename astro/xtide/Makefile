@@ -3,10 +3,11 @@
 
 PORTNAME=	xtide
 PORTVERSION=	2.13.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro geography
-MASTER_SITES=	ftp://ftp.flaterco.com/xtide/ \
-		http://www.c-s.li/ports/
+MASTER_SITES=	http://www.c-s.li/ports/ \
+		ftp://ftp.flaterco.com/xtide/
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${TCD_DISTNAME}-r3${EXTRACT_SUFX} \
 		${HARM_DISTNAME}-free${EXTRACT_SUFX}
@@ -18,8 +19,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
 
@@ -27,7 +27,7 @@ CPPFLAGS+=	-I../${TCD_DISTNAME} -I${LOCALBASE}/include/libpng15 -Wno-deprecated-
 LDFLAGS+=	-L../${TCD_DISTNAME}/.libs -L${LOCALBASE}/lib
 
 TCD_DISTNAME=	libtcd-2.2.5
-HARM_DISTNAME=	harmonics-dwf-20121224
+HARM_DISTNAME=	harmonics-dwf-20131228
 WVS_DISTNAME=	wvs
 
 OPTIONS_DEFINE=	WVS X11
