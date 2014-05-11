@@ -22,6 +22,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTSCOUT=	skipv:4.22
 
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 DESKTOP_ENTRIES="Brain Workshop" \
 		"Dual N-Back mental exercise" \
 		"${DATADIR}/brain.png" \
@@ -29,15 +32,14 @@ DESKTOP_ENTRIES="Brain Workshop" \
 		"Game;LogicGame;" \
 		false
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^FOLDER_RES = / s|res|${DATADIR}|; \
 		/^FOLDER_DATA = / s|.data.|os.environ["HOME"]+"/.brainworkshop"|' \
 		${WRKSRC}/brainworkshop.pyw
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/brainworkshop.pyw ${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/res/* ${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/brainworkshop.pyw ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/res/* ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
