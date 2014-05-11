@@ -66,8 +66,6 @@
     SUBDIR += evolution-data-server
     SUBDIR += exist
     SUBDIR += fastdb
-    SUBDIR += firebird20-client
-    SUBDIR += firebird20-server
     SUBDIR += firebird21-client
     SUBDIR += firebird21-server
     SUBDIR += firebird25-client
