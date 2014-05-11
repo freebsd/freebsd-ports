@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The classic cat-and-mouse
 
 NO_WRKSUBDIR=	yes

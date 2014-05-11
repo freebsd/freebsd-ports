@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	LOCAL/mph
 DISTNAME=	unix8m
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infocom game interpreter for X11
 
 USES=		imake tar:tgz
