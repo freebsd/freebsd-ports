@@ -5,7 +5,7 @@
  
  # installation prefix
 -PREFIX=/usr/local
-+#PREFIX=/usr/local
++PREFIX=@@STAGEDIR@@@@PREFIX@@
  
  ########################################
  #

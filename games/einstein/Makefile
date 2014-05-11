@@ -14,7 +14,12 @@ COMMENT=	Remake of old DOS game Sherlock, which was inspired by Albert Einstein'
 USE_SDL=	sdl ttf mixer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} \
+		-e "s,@@STAGEDIR@@,${STAGEDIR}," \
+		-e "s,@@PREFIX@@,${PREFIX}," \
+		${WRKSRC}/Makefile
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
