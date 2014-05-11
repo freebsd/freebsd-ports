@@ -90,3 +90,4 @@
 %%DATADIR%%/ship.nph
 %%DATADIR%%/surfs_up.nph
 %%DATADIR%%/szymanowski1.nph
+@dirrmtry %%DATADIR%%

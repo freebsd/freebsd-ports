@@ -13,18 +13,17 @@ COMMENT=	Level pack for Numpty Physics
 
 RUN_DEPENDS=	numptyphysics:${PORTSDIR}/games/numptyphysics
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/npcomplete
 DATADIR=	${PREFIX}/share/numptyphysics
 
-NO_STAGE=	yes
 post-extract:
 # this level will crash the game
 	@${RM} -f "${WRKSRC}/L02_bridge Gaps tut.nph"
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.nph ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.nph ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
