@@ -22,22 +22,19 @@ ALL_TARGET=	default
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_FILES=	bin/${PORTNAME} share/applications/nathive.desktop
+PORTDATA=	*
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/BASE =/ s|=.*|= ${PREFIX}/|; \
-		s|cp -r \([^ ]*\)/|cp -R \1|; \
 		s|python |${PYTHON_CMD} |' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|/usr/share/nathive|${DATADIR}|' \
 		${WRKSRC}/${PORTNAME}.desktop
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/install.*DOC/ d; /mkdir -p.*BASE.*DOC/ d' \
-		${WRKSRC}/${MAKEFILE}
-.endif
+
+post-build:
+	${STRIP_CMD} ${WRKSRC}/nathive/libc/*.so
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 --- makefile.orig	2010-10-12 23:16:42.000000000 +0400
-+++ makefile	2013-08-30 20:24:54.366229703 +0400
-@@ -84,10 +84,7 @@
++++ makefile	2014-05-11 16:16:28.000000000 +0400
+@@ -84,41 +84,36 @@
  	@rm -rf doc/build/html/_sources
  
  root:
@@ -12,12 +12,54 @@
  
  
  dirs:
-@@ -113,7 +110,7 @@
- 	# Exclude source files.
- 	find $(BASE)$(APP) -name "*.c" -delete
+-	mkdir -p $(BASE)$(APP)
+-	mkdir -p $(BASE)$(BIN)
+-	mkdir -p $(BASE)$(DOC)
+-	mkdir -p $(BASE)$(LAUNCH)
++	mkdir -p $(DESTDIR)$(BASE)$(APP)
++	mkdir -p $(DESTDIR)$(BASE)$(BIN)
++	mkdir -p $(DESTDIR)$(BASE)$(LAUNCH)
++	mkdir -p $(DESTDIR)$(BASE)$(DOC)
+ 
+ 
+ install: root dirs unpyc
+ 	# Shared files.
+-	cp    nathive.py    $(BASE)$(APP)
+-	cp    AUTHORS       $(BASE)$(APP)
+-	cp    COPYING       $(BASE)$(APP)
+-	cp    COPYING-BRIEF $(BASE)$(APP)
+-	cp    META          $(BASE)$(APP)
+-	cp -r cfg/          $(BASE)$(APP)
+-	cp -r img/          $(BASE)$(APP)
+-	cp -r nathive/      $(BASE)$(APP)
+-	cp -r palettes/     $(BASE)$(APP)
+-	cp -r po/           $(BASE)$(APP)
+-	chmod -R 755        $(BASE)$(APP)
+-	# Exclude source files.
+-	find $(BASE)$(APP) -name "*.c" -delete
++	cp    nathive.py    $(DESTDIR)$(BASE)$(APP)
++	cp    AUTHORS       $(DESTDIR)$(BASE)$(APP)
++	cp    COPYING       $(DESTDIR)$(BASE)$(APP)
++	cp    COPYING-BRIEF $(DESTDIR)$(BASE)$(APP)
++	cp    META          $(DESTDIR)$(BASE)$(APP)
++	cp -R cfg           $(DESTDIR)$(BASE)$(APP)
++	cp -R img           $(DESTDIR)$(BASE)$(APP)
++	cp -R nathive       $(DESTDIR)$(BASE)$(APP)
++	cp -R palettes      $(DESTDIR)$(BASE)$(APP)
++	cp -R po            $(DESTDIR)$(BASE)$(APP)
++	chmod -R 755        $(DESTDIR)$(BASE)$(APP)
  	# Binary and launcher.
 -	install -m 755 -T nathive.sh      $(BASE)$(BIN)/nathive
-+	install -m 755    nathive.sh      $(BASE)$(BIN)/nathive
- 	install -m 644    nathive.desktop $(BASE)$(LAUNCH)
+-	install -m 644    nathive.desktop $(BASE)$(LAUNCH)
++	install -m 755    nathive.sh      $(DESTDIR)$(BASE)$(BIN)/nathive
++	install -m 644    nathive.desktop $(DESTDIR)$(BASE)$(LAUNCH)
  	# Documentation.
- 	install -m 644 AUTHORS $(BASE)$(DOC)
+-	install -m 644 AUTHORS $(BASE)$(DOC)
+-	install -m 644 COPYING $(BASE)$(DOC)
+-	install -m 644 README  $(BASE)$(DOC)
++	install -m 644 AUTHORS $(DESTDIR)$(BASE)$(DOC)
++	install -m 644 COPYING $(DESTDIR)$(BASE)$(DOC)
++	install -m 644 README  $(DESTDIR)$(BASE)$(DOC)
+ 
+ 
+ uninstall: root
