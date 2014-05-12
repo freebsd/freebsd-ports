@@ -36,5 +36,3 @@ share/locale/tr/LC_MESSAGES/paprefs.mo
 share/locale/uk/LC_MESSAGES/paprefs.mo
 share/locale/zh_CN/LC_MESSAGES/paprefs.mo
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
