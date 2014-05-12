@@ -11,13 +11,11 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C library provides a Gtk+ widget to display rasterized maps/markers
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	libclutter-gtk-0.10.so:${PORTSDIR}/graphics/clutter-gtk \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
-RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	gnomeprefix gtk20
+USE_GNOME=	gnomeprefix gtk20 introspection:build,run
 USE_SQLITE=	3
 USE_GL=		gl
 GNU_CONFIGURE=	yes

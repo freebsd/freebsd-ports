@@ -116,10 +116,8 @@ share/vala/vapi/champlain-%%VERSION%%.deps
 share/vala/vapi/champlain-%%VERSION%%.vapi
 share/vala/vapi/champlain-gtk-%%VERSION%%.deps
 share/vala/vapi/champlain-gtk-%%VERSION%%.vapi
-@dirrmtry share/gir-1.0
 @dirrm share/doc/libchamplain-gtk
 @dirrm %%DOCSDIR%%
-@dirrmtry lib/girepository-1.0
 @dirrm include/libchamplain-gtk-%%VERSION%%/champlain-gtk
 @dirrm include/libchamplain-gtk-%%VERSION%%
 @dirrm include/libchamplain-%%VERSION%%/champlain
