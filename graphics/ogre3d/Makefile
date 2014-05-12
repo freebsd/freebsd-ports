@@ -27,7 +27,7 @@ USE_XORG=	xaw xrandr
 
 .if ${PORT_OPTIONS:MBOOST}
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-RUND_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 PLIST_SUB+=	BOOSTTRUE=""
 PLIST_SUB+=	BOOSTFALSE="@comment "
 .else
