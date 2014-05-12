@@ -9,7 +9,7 @@ MASTER_SITES=	SF/fraqtive/Fraqtive/Fraqtive%20${PORTVERSION}/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Draws Mandelbrot and Julia fractals
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_QT4=	gui opengl xml qmake_build uic_build moc_build rcc_build
 QT_NONSTANDARD=	yes
 USE_GL=		glu

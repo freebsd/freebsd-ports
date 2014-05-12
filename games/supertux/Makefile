@@ -10,8 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Side-scroller game similar to Super Mario Brothers
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_SDL=	image mixer
 USE_GL=		gl
 GNU_CONFIGURE=	yes

@@ -9,8 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:C,\..*,.0,}/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Lightweight KDE browser based on WebKit
 
-USE_XZ=		yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	script webkit \
 		moc_build qmake_build rcc_build uic_build

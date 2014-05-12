@@ -9,8 +9,7 @@ MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt 4 based dictionary program (stardict clone)
 
-USES=		dos2unix pkgconfig qmake
-USE_BZIP2=	yes
+USES=		dos2unix pkgconfig qmake tar:bzip2
 USE_QT4=	gui network xml uic_build moc_build rcc_build
 DOS2UNIX_FILES=	qstardict.pri
 

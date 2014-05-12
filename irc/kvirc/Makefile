@@ -22,12 +22,11 @@ COMMENT?=	IRC client for KDE 4
 CONFLICTS_INSTALL=	kvirc-qt4-4.*
 .endif
 
-USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_PERL5=	build
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		dbus gui network sql xml
-USES=		cmake gettext perl5
+USES=		cmake gettext perl5 tar:bzip2
 CMAKE_ARGS=	-DWANT_ESD=no -DWANT_DOXYGEN=no \
 		-DMANDIR=${MANPREFIX}
 INSTALLS_ICONS=	yes

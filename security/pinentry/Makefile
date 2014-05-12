@@ -5,8 +5,7 @@ PORTNAME=	pinentry
 PORTVERSION=	0.8.3
 PORTREVISION?=	0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNUPG}
-MASTER_SITE_SUBDIR=	pinentry
+MASTER_SITES=	GNUPG/pinentry
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT?=	Collection of simple PIN or passphrase entry dialogs
@@ -16,8 +15,7 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 
 CONFLICTS_INSTALL?=	pinentry-[a-z]*
 
-USE_BZIP2=	yes
-USES=		iconv gmake pkgconfig
+USES=		iconv gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-pinentry-qt
 INFO=		pinentry

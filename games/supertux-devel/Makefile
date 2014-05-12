@@ -14,10 +14,9 @@ LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USE_BZIP2=	yes
 USE_SDL=	image
 USE_GL=		glew
-USES=		cmake:outsource iconv openal:al
+USES=		cmake:outsource iconv openal:al tar:bzip2
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 post-patch:

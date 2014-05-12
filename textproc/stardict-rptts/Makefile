@@ -14,7 +14,7 @@ COMMENT=	Real People TTS for StarDict
 PROJECTHOST=	stardict-3
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 do-install:
 		${TAR} jxvf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} -C ${STAGEDIR}${PREFIX}/share
