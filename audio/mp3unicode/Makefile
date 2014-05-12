@@ -11,8 +11,7 @@ COMMENT=	ID3 tags charset converter
 
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
-USE_BZIP2=	yes
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ICONV_CFLAGS="-I${LOCALBASE}/include" \
 		ICONV_LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
