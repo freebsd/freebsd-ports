@@ -11,24 +11,21 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Logger utility library for the Telepathy framework
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 LICENSE=	LGPL21
 
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 intltool gnomedocutils ltverhack libxml2 \
-		libxslt:build
+		libxslt:build introspection:build
 USE_SQLITE=	yes
 USE_PYTHON_BUILD=	yes
 GLIB_SCHEMAS=	org.freedesktop.Telepathy.Logger.gschema.xml
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|/usr/bin/env python|g' \
 		${WRKSRC}/tools/*.py
