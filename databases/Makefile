@@ -229,6 +229,7 @@
     SUBDIR += mysqltuner
     SUBDIR += mytop
     SUBDIR += mywwwatcher
+    SUBDIR += nagios-check_mongodb
     SUBDIR += nagios-check_postgres_replication
     SUBDIR += nagios-check_redis
     SUBDIR += namazu2
