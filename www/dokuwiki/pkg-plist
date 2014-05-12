@@ -1,6 +1,4 @@
-%%WWWDIR%%/.editorconfig
 %%WWWDIR%%/.htaccess.dist
-%%WWWDIR%%/.travis.yml
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README
 %%WWWDIR%%/VERSION
@@ -2958,23 +2956,6 @@
 %%WWWDIR%%/lib/plugins/config/settings/config.metadata.php
 %%WWWDIR%%/lib/plugins/config/settings/extra.class.php
 %%WWWDIR%%/lib/plugins/config/style.css
-%%WWWDIR%%/lib/plugins/extension/_test/extension.test.php
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/either1/script.js
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/eithersub2/either2/script.js
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/plgfoo5/plugin.info.txt
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub3/plugin3/syntax.php
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub4/plugin4/plugin.info.txt
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub6/plgfoo6/plugin.info.txt
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/plugin1/syntax.php
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/plugin2/plugin.info.txt
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/template1/main.php
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/template1/style.ini
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/template2/template.info.txt
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/tplfoo5/template.info.txt
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub3/template3/main.php
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub3/template3/style.ini
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub4/template4/template.info.txt
-%%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub6/tplfoo6/template.info.txt
 %%WWWDIR%%/lib/plugins/extension/action.php
 %%WWWDIR%%/lib/plugins/extension/admin.php
 %%WWWDIR%%/lib/plugins/extension/all.less
@@ -3874,29 +3855,6 @@
 @dirrm %%WWWDIR%%/lib/plugins/extension/lang
 @dirrm %%WWWDIR%%/lib/plugins/extension/images
 @dirrm %%WWWDIR%%/lib/plugins/extension/helper
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub6/tplfoo6
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub6
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub4/template4
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub4
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub3/template3
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplsub3
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/tplfoo5
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/template2
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/template1
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plugin2
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plugin1
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub6/plgfoo6
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub6
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub4/plugin4
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub4
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub3/plugin3
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgsub3
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/plgfoo5
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/eithersub2/either2
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/eithersub2
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata/either1
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test/testdata
-@dirrm %%WWWDIR%%/lib/plugins/extension/_test
 @dirrm %%WWWDIR%%/lib/plugins/extension
 @dirrm %%WWWDIR%%/lib/plugins/config/settings
 @dirrm %%WWWDIR%%/lib/plugins/config/lang/zh

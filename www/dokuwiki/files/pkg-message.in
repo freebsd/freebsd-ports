@@ -1,15 +1,24 @@
-=================================================================
-          	**** NOTE ****
-1) Please add the following to your apache config, and restart.
-    
-    # Directives to allow use of dokuwiki
-    #
-    Alias /%%PORTNAME%% "%%WWWDIR%%/
+======================================================================
+                          INSTALLATION NOTES
 
-2) Open the following page in your browser and follow the instructions:
-    http://www.your.host/dokuwiki/install.php
+The wiki program have been installed to %%WWWDIR%%.
 
-  For FULL configuration instructions see
-  http://wiki.splitbrain.org/wiki:config
+Please configure your web server to allow running PHP scripts there.
 
-=================================================================
+Please create dedicated data directory outside the installation directory
+and make it owned by the process running these PHP scripts.  It is important
+to make sure that your PHP intepreter does not allow running PHP scripts
+there.
+
+For first install, you may have to manually copy the contents from
+%%WWWDIR%%/data into the newly created data directory and change
+the owner of %%WWWDIR%%/conf to the web server.
+
+Please go to http://www.your.host/dokuwiki/install.php to finish the
+installation.  For FULL configuration instructions, see
+http://wiki.splitbrain.org/wiki:config
+
+After installation please change the permissions of
+%%WWWDIR%%/conf back to root:wheel.
+
+======================================================================
