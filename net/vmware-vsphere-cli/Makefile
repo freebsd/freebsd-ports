@@ -3,6 +3,7 @@
 
 PORTNAME=		vmware-vsphere-cli
 PORTVERSION=		5.5.0
+PORTREVISION=		1
 CATEGORIES=		net perl5
 MASTER_SITES=		#http://communities.vmware.com/community/vmtn/developer/downloads
 DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
@@ -23,11 +24,12 @@ RUN_DEPENDS=		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
 			p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 			p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 
-USES=			perl5
+USES=			perl5 shebangfix
 USE_PERL5=		configure
 RESTRICTED=		May not be redistributed.  Must accept license to download.
 NO_CDROM=		May not be redistributed.  Must accept license to download.
 NO_PACKAGE=		May not be redistributed.  Must accept license to download.
+SHEBANG_FILES=		bin/* apps/host/* apps/general/* apps/vm/*
 
 DISTREL=		1384587
 

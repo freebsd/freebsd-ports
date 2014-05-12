@@ -52,6 +52,12 @@ bin/vmregister.pl
 bin/vmsnapshot.pl
 bin/vmtemplate.pl
 bin/vmware-cmd
+%%PERL5_MAN3%%/VMware::VICommon.3.gz
+%%PERL5_MAN3%%/VMware::VILib.3.gz
+%%PERL5_MAN3%%/VMware::VIM25Runtime.3.gz
+%%PERL5_MAN3%%/VMware::VIM25Stub.3.gz
+%%PERL5_MAN3%%/VMware::VIM2Runtime.3.gz
+%%PERL5_MAN3%%/VMware::VIM2Stub.3.gz
 %%SITE_PERL%%/WSMan/WSBasic.pm
 %%SITE_PERL%%/WSMan/Stubs/vmware_storagepool.pm
 %%SITE_PERL%%/WSMan/Stubs/vmware_storageextent.pm
