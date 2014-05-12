@@ -12,12 +12,11 @@ COMMENT=	GTK+ and Gnome extension for Tcl
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-LIB_DEPENDS=	canberra:${PORTSDIR}/audio/libcanberra \
-   		notify:${PORTSDIR}/devel/libnotify \
-		gtkimageview:${PORTSDIR}/x11-toolkits/gtkimageview
+LIB_DEPENDS=	libcanberra.so:${PORTSDIR}/audio/libcanberra \
+   		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libgtkimageview.so:${PORTSDIR}/x11-toolkits/gtkimageview
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig tcl
+USES=		gmake pkgconfig tar:bzip2 tcl
 USE_GNOME=	gtk20 libglade2
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${TCL_INCLUDEDIR} -L${TCL_LIBDIR}
@@ -34,12 +33,11 @@ PLIST_FILES=	${BASEDIR}/${PORTNAME}.so \
 		${BASEDIR}/pkgIndex.tcl
 PLIST_DIRS=	${BASEDIR}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|; \
 	    s|%%LOCALBASE%%|${LOCALBASE}|; \
 	    s|%%SHORT_TCL_VER%%|${TCL_VER:S/.//}|' \
 	    ${BUILD_WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|\[info library\]|${PREFIX}/lib|; s|tclsh|${TCLSH}|g;' ${BUILD_WRKSRC}/install.tcl
+	${REINPLACE_CMD} -e 's|\[info library\]|${STAGEDIR}${PREFIX}/lib|; s|tclsh|${TCLSH}|g;' ${BUILD_WRKSRC}/install.tcl
 
 .include <bsd.port.mk>
