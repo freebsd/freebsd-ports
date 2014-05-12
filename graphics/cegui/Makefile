@@ -11,9 +11,9 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library providing windowing and widgets for graphics APIs
 
 LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
-		pcre.3:${PORTSDIR}/devel/pcre \
+		libpcre.so:${PORTSDIR}/devel/pcre \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.9.0:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
 RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.9.0:${PORTSDIR}/graphics/ogre3d
