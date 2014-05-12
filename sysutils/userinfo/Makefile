@@ -3,7 +3,7 @@
 
 PORTNAME=	userinfo
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -16,8 +16,5 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-
-MAN1=		ui.1
-MLINKS=		ui.1 userinfo.1
 
 .include <bsd.port.mk>
