@@ -9,6 +9,10 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A fast, simple, and transactional Java persistence engine
 
+LICENSE=	APACHE20
+
+OPTIONS=	DOCS EXAMPLES
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -22,17 +26,12 @@ PORTEXAMPLES=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/${DISTNAME}.jar \
-		${JAVAJARDIR}/${PORTNAME}.jar
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-.endif
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
