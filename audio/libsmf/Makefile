@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Standard MIDI File format library
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=	pathfix pkgconfig readline:port
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
