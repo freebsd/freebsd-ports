@@ -10,7 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	eric@camachat.org
 COMMENT=	Mount UPnP A/V Media
 
-LIB_DEPENDS=	upnp.9:${PORTSDIR}/devel/upnp
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
 
 PLIST_FILES=	bin/${PORTNAME}
 GNU_CONFIGURE=	yes
@@ -21,11 +23,8 @@ CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-NO_STAGE=	yes
 post-install:
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
