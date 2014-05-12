@@ -1,0 +1,4 @@
+bin/ripit
+man/man1/ripit.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

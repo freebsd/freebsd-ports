@@ -10,38 +10,28 @@ MASTER_SITES=	http://www.suwald.com/ripit/
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Command line audio CD ripper
 
+LICENSE=	GPLv2
+
 # See pkg-message about other dependencies.
 RUN_DEPENDS=	p5-CDDB_get>=0:${PORTSDIR}/audio/p5-CDDB_get \
 	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 	p5-WebService-MusicBrainz>=0:${PORTSDIR}/www/p5-WebService-MusicBrainz \
 	p5-MusicBrainz-DiscID>=0:${PORTSDIR}/audio/p5-MusicBrainz-DiscID \
 	lame:${PORTSDIR}/audio/lame \
-	cdparanoia:${PORTSDIR}/audio/cdparanoia \
+	cdparanoia:${PORTSDIR}/audio/cdparanoia
 
-USES=		perl5 shebangfix
-NO_STAGE=	yes
+USES=		perl5 shebangfix tar:bzip2
 NO_BUILD=	yes
-PLIST_FILES=	bin/ripit
-MAN1=		ripit.1
-PORTEXAMPLES=	config
 USE_PERL5=	run
-USE_BZIP2=	yes
 SHEBANG_FILES=	ripit.pl
 perl_OLD_CMD=	/usr/bin/env perl
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ripit.pl ${PREFIX}/bin/ripit
-	${INSTALL_MAN} ${WRKSRC}/ripit.1 ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/config ${EXAMPLESDIR}/config
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/ripit.pl ${STAGEDIR}${PREFIX}/bin/ripit
+	${INSTALL_MAN} ${WRKSRC}/ripit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/config ${STAGEDIR}${EXAMPLESDIR}/config
 
 .include <bsd.port.mk>
