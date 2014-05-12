@@ -1769,8 +1769,7 @@
 %%ORACLE_PREFIX%%/rdbms/lib.old/libmdhh.a
 %%ORACLE_PREFIX%%/rdbms/lib.old/config.o
 %%ORACLE_PREFIX%%/rdbms/lib.old/sysliblist
-@exec ln -s rdbms/lib %D/%%ORACLE_PREFIX%%/lib
-@rmtry %%ORACLE_PREFIX%%/lib
+%%ORACLE_PREFIX%%/lib
 @dirrm %%ORACLE_PREFIX%%/network/admin
 @dirrm %%ORACLE_PREFIX%%/network
 @dirrm %%ORACLE_PREFIX%%/ocommon/install
