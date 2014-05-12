@@ -1,5 +1,3 @@
-lib/geany/multiterm.a
-lib/geany/multiterm.la
 lib/geany/multiterm.so
 %%DOCSDIR%%/multiterm/AUTHORS
 %%DOCSDIR%%/multiterm/COPYING

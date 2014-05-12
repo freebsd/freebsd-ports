@@ -1,5 +1,3 @@
-lib/geany/geanynumberedbookmarks.a
-lib/geany/geanynumberedbookmarks.la
 lib/geany/geanynumberedbookmarks.so
 %%DOCSDIR%%/geanynumberedbookmarks/AUTHORS
 %%DOCSDIR%%/geanynumberedbookmarks/COPYING

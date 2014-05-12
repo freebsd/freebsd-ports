@@ -1,5 +1,3 @@
-lib/geany/spellcheck.a
-lib/geany/spellcheck.la
 lib/geany/spellcheck.so
 %%DOCSDIR%%/spellcheck/AUTHORS
 %%DOCSDIR%%/spellcheck/COPYING

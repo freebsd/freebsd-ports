@@ -1,5 +1,3 @@
-lib/geany/devhelp.a
-lib/geany/devhelp.la
 lib/geany/devhelp.so
 %%DOCSDIR%%/devhelp/AUTHORS
 %%DOCSDIR%%/devhelp/COPYING

@@ -1,5 +1,3 @@
-lib/geany/geanyinsertnum.a
-lib/geany/geanyinsertnum.la
 lib/geany/geanyinsertnum.so
 %%DOCSDIR%%/geanyinsertnum/AUTHORS
 %%DOCSDIR%%/geanyinsertnum/COPYING

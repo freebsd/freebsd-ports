@@ -1,5 +1,3 @@
-lib/geany/geanylipsum.a
-lib/geany/geanylipsum.la
 lib/geany/geanylipsum.so
 %%DOCSDIR%%/geanylipsum/AUTHORS
 %%DOCSDIR%%/geanylipsum/COPYING

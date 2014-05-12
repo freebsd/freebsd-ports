@@ -1,5 +1,3 @@
-lib/geany/updatechecker.a
-lib/geany/updatechecker.la
 lib/geany/updatechecker.so
 %%DOCSDIR%%/updatechecker/AUTHORS
 %%DOCSDIR%%/updatechecker/COPYING

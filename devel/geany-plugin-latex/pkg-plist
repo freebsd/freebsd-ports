@@ -1,5 +1,3 @@
-lib/geany/geanylatex.a
-lib/geany/geanylatex.la
 lib/geany/geanylatex.so
 %%DOCSDIR%%/geanylatex/AUTHORS
 %%DOCSDIR%%/geanylatex/COPYING

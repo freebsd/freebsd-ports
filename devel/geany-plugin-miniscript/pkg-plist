@@ -1,5 +1,3 @@
-lib/geany/geanyminiscript.a
-lib/geany/geanyminiscript.la
 lib/geany/geanyminiscript.so
 %%DOCSDIR%%/geanyminiscript/AUTHORS
 %%DOCSDIR%%/geanyminiscript/COPYING

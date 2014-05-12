@@ -1,5 +1,3 @@
-lib/geany/geanyextrasel.a
-lib/geany/geanyextrasel.la
 lib/geany/geanyextrasel.so
 %%DOCSDIR%%/geanyextrasel/AUTHORS
 %%DOCSDIR%%/geanyextrasel/COPYING

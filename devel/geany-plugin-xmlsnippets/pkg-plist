@@ -1,5 +1,3 @@
-lib/geany/xmlsnippets.a
-lib/geany/xmlsnippets.la
 lib/geany/xmlsnippets.so
 %%DOCSDIR%%/xmlsnippets/AUTHORS
 %%DOCSDIR%%/xmlsnippets/COPYING
