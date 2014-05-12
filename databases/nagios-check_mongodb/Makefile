@@ -3,8 +3,8 @@
 
 PORTNAME=	check_mongodb
 PORTVERSION=	0.1
-CATEGORIES=	databases perl5
-PKGNAMEPREFIX=	nagios-
+CATEGORIES=	databases python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}nagios-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Nagios plugin to check mongodb server
