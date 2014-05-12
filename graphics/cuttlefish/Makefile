@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.caida.org/tools/visualization/cuttlefish/code/
 
-MAINTAINER=	mjl@luckie.org.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plots diurnal and geographical patterns of supplied data
 
 RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
