@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xbmc
-DISTVERSION=	13.0.beta1
-PORTREVISION=	2
+DISTVERSION=	13.0.rc1
 CATEGORIES=	multimedia
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -17,7 +16,6 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		nasm:${PORTSDIR}/devel/nasm \
-		dvdread-config:${PORTSDIR}/multimedia/libdvdread \
 		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20 \
 		swig2.0:${PORTSDIR}/devel/swig20
 LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
@@ -54,8 +52,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
-GH_COMMIT=	128426f
-GH_TAGNAME=	Gotham-beta1
+GH_COMMIT=	2372235
+GH_TAGNAME=	Gotham_rc1
 
 USES=		gmake iconv:wchar_t pkgconfig
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
