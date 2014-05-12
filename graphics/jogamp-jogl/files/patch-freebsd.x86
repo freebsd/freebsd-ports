@@ -1,0 +1,62 @@
+--- jogl/make/build-jogl.xml.orig	2014-03-11 00:59:24.000000000 +0000
++++ jogl/make/build-jogl.xml	2014-05-12 07:33:35.849403725 +0000
+@@ -1195,7 +1195,7 @@
+ 
+       <!-- linker configuration -->
+  
+-      <linker id="linker.cfg.freebsd.jogl.x11" extends="linker.cfg.freebsd">
++      <linker id="linker.cfg.freebsd.x86.jogl.x11" extends="linker.cfg.freebsd.x86">
+         <syslibset dir="/usr/local/lib" libs="X11"/>
+       </linker>
+ 
+@@ -1383,7 +1383,7 @@
+     <target name="c.configure.freebsd.x86" depends="c.configure.x11" if="isFreeBSDX86">
+       <echo message="FreeBSD" />
+       <property name="compiler.cfg.id"                     value="compiler.cfg.freebsd.jogl" />
+-      <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.jogl.x11" />
++      <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.x86.jogl.x11" />
+     </target>
+ 
+     <target name="c.configure.freebsd.amd64" depends="c.configure.x11" if="isFreeBSDAMD64">
+--- jogl/make/build-nativewindow.xml.orig	2014-03-11 00:59:24.000000000 +0000
++++ jogl/make/build-nativewindow.xml	2014-05-12 07:32:13.047407428 +0000
+@@ -365,7 +365,7 @@
+ 
+       <!-- linker configuration -->
+ 
+-      <linker id="linker.cfg.freebsd.nativewindow.x11" extends="linker.cfg.freebsd">
++      <linker id="linker.cfg.freebsd.x86.nativewindow.x11" extends="linker.cfg.freebsd.x86">
+         <syslibset dir="/usr/local/lib" libs="X11"/>
+         <syslibset dir="/usr/local/lib" libs="Xxf86vm" />
+         <syslibset dir="/usr/local/lib" libs="Xrender"/>
+@@ -562,7 +562,7 @@
+     <target name="c.configure.freebsd.x86" if="isFreeBSDX86">
+       <echo message="FreeBSD.x86" />
+       <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.nativewindow" />
+-      <property name="linker.cfg.id.oswin"                  value="linker.cfg.freebsd.nativewindow.x11" />
++      <property name="linker.cfg.id.oswin"                  value="linker.cfg.freebsd.x86.nativewindow.x11" />
+     </target>
+     
+     <target name="c.configure.freebsd.amd64" if="isFreeBSDAMD64">
+--- jogl/make/build-newt.xml.orig	2014-03-11 00:59:24.000000000 +0000
++++ jogl/make/build-newt.xml	2014-05-12 07:32:57.565406321 +0000
+@@ -273,7 +273,7 @@
+ 
+       <!-- linker configuration -->
+ 
+-      <linker id="linker.cfg.freebsd.newt.x11" extends="linker.cfg.freebsd">
++      <linker id="linker.cfg.freebsd.x86.newt.x11" extends="linker.cfg.freebsd.x86">
+         <linkerarg value="-L/usr/local/lib"/>
+         <syslibset libs="X11"/>
+         <syslibset libs="Xrandr"/>
+@@ -528,8 +528,8 @@
+     <target name="c.configure.freebsd.x86" if="isFreeBSDX86">
+       <echo message="FreeBSD.x86" />
+       <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.newt" />
+-      <condition property="linker.cfg.id.oswin"             value="linker.cfg.freebsd.newt.x11"
+-                                                            else="linker.cfg.freebsd">
++      <condition property="linker.cfg.id.oswin"             value="linker.cfg.freebsd.x86.newt.x11"
++                                                            else="linker.cfg.freebsd.x86">
+           <isset property="isX11" />
+       </condition>
+       <echo message="linker.cfg.id.oswin ${linker.cfg.id.oswin}" />
