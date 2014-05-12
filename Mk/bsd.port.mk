@@ -3340,6 +3340,9 @@ check-vulnerable:
 		if [ -n "${WITH_PKGNG}" ]; then \
 			if [ -x "${PKG_BIN}" ]; then \
 				vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
+				if [ "$${vlist}" = "0 problem(s) in the installed packages found." ]; then \
+					vlist=""; \
+				fi; \
 			elif [ "${PORTNAME}" = "pkg" ]; then \
 				vlist=""; \
 			fi; \
