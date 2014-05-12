@@ -21,9 +21,6 @@ USE_GNOME=	intltool gnomehack glib20 gtk20
 USE_LDCONFIG=	yes
 WANT_GSTREAMER=	yes
 
-MANLANG=	"" ja
-MAN1=		cut-diff.1 cutter.1
-
 OPTIONS_DEFINE=	GOFFICE GSTREAMER SOUP LCOV
 GOFFICE_DESC=	GOffice support
 SOUP_DESC=	libsoup support
@@ -32,7 +29,6 @@ LCOV_DESC=	Force dependency on lcov
 regression-test: build
 	@${SETENV} LC_ALL=C ${GMAKE} -C ${WRKSRC} check
 
-NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
