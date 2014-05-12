@@ -12,13 +12,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject-based library to parse a host of playlist formats
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
-RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	gnomeprefix glib20 libxml2 intlhack
+USE_GNOME=	gnomeprefix glib20 libxml2 intlhack introspection:build,run
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -30,6 +28,6 @@ QUVI_DESC=	Enable flash media stream URL support
 
 QUVI_LIB_DEPENDS=	libquvi.so:${PORTSDIR}/multimedia/libquvi
 QUVI_CONFIGURE_ON=	--enable-enable-quvi
-QUVI_CONFIGURE_OFF	=--enable-enable-quvi=no
+QUVI_CONFIGURE_OFF=	--enable-enable-quvi=no
 
 .include <bsd.port.mk>
