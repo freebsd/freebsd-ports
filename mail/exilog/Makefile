@@ -3,19 +3,23 @@
 
 PORTNAME=	exilog
 PORTVERSION=	0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exilog/
 
-MAINTAINER=	ler@lerctr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to centralize and visualize Exim logs with a web front end
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
+#RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
-USES=		perl5
+OPTIONS_DEFINE=	DOCS
+
+USES=		perl5 shebangfix
 NO_BUILD=	yes
+
+SHEBANG_FILES=	exilog_agent.pl exilog_cleanup.pl
 
 # Default sql backend
 WITH_SQL_BACKEND?=	mysql
@@ -37,8 +41,9 @@ EXILOGDIR?=	${PREFIX}/www/exilog
 .else
 EXILOGDIR?=	${PREFIX}/exilog
 .endif
-NO_STAGE=	yes
+
 .include <bsd.port.pre.mk>
+
 .if defined(WITHOUT_AGENT)
 PLIST_SUB+=	AGENT="@comment "
 .else
@@ -48,12 +53,10 @@ PLIST_SUB+=	AGENT=""
 
 PLIST_SUB+=	EXILOGDIR="${EXILOGDIR:S,^${PREFIX}/,,}"
 
-.if !defined(NOPORTDOCS)
 PORTDOC_FILES=	doc/Changelog \
 		doc/exilog.txt \
 		doc/mysql-db-script.sql \
 		doc/pgsql-db-script.sql
-.endif
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
@@ -64,25 +67,20 @@ pre-patch:
 	@${REINPLACE_CMD} -e "s,\(use exilog_config\),use lib \'${EXILOGDIR}\'; \1," ${WRKSRC}/exilog_cleanup.pl
 
 do-install:
-	@${MKDIR} ${EXILOGDIR}
-	@${MKDIR} ${EXILOGDIR}/icons
-	@${CP} ${WRKSRC}/*.pm ${WRKSRC}/*.css ${WRKSRC}/*.js ${EXILOGDIR}
-	@${CP} ${WRKSRC}/icons/*  ${EXILOGDIR}/icons
-
+	@${MKDIR} ${STAGEDIR}${EXILOGDIR} ${STAGEDIR}${EXILOGDIR}/icons
+	@${CP} ${WRKSRC}/*.pm ${WRKSRC}/*.css ${WRKSRC}/*.js ${STAGEDIR}${EXILOGDIR}
+	@${CP} ${WRKSRC}/icons/* ${STAGEDIR}${EXILOGDIR}/icons
 .if !defined(WITHOUT_AGENT)
-	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_agent.pl ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_agent.pl ${STAGEDIR}${PREFIX}/sbin
 .endif
-	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_cleanup.pl ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_cgi.pl ${EXILOGDIR}
-	@${CP} ${WRKSRC}/exilog.conf-example ${PREFIX}/etc/exilog.conf-dist
-	@${CHMOD} 0600 ${PREFIX}/etc/exilog.conf-dist
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/etc/exilog.conf-dist
-	@${CP} ${FILESDIR}/htaccess ${EXILOGDIR}/.htaccess
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_cleanup.pl ${STAGEDIR}${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_cgi.pl ${STAGEDIR}${EXILOGDIR}
+	@${CP} ${WRKSRC}/exilog.conf-example ${STAGEDIR}${PREFIX}/etc/exilog.conf-dist
+	@${CHMOD} 0600 ${STAGEDIR}${PREFIX}/etc/exilog.conf-dist
+	@${CP} ${FILESDIR}/htaccess ${STAGEDIR}${EXILOGDIR}/.htaccess
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>
