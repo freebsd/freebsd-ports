@@ -3,7 +3,7 @@
 
 PORTNAME=	enscript
 PORTVERSION=	1.6.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES+=	print
 MASTER_SITES=	http://www.codento.com/people/mtr/genscript/
 PKGNAMESUFFIX=	-${PAPERSIZE}
@@ -12,7 +12,7 @@ DISTNAME=	enscript-${PORTVERSION}
 MAINTAINER?=	rafan@FreeBSD.org
 COMMENT=	ASCII to PostScript filter
 
-USES=		shebangfix
+USES=		shebangfix perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
 CONFIGURE_ENV=	PERL="${perl_CMD}"
