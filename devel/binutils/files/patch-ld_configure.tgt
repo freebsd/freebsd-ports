@@ -1,0 +1,18 @@
+DragonFly 3.7 has moved a number of system libraries to /lib and the bfd
+linker does not follow symlinks by design.  A patch to add /lib to the
+default search path has already been sent to binutils developers.  That
+patch does not include the deletion of /usr/pkg/lib since it is to be
+used by pkgsrc as well, but there's no reason to search that path by a
+linker built by FreeBSD ports.
+
+--- ld/configure.tgt.orig	2013-11-26 11:37:33.000000000 +0000
++++ ld/configure.tgt
+@@ -773,7 +773,7 @@ NATIVE_LIB_DIRS='/usr/local/lib /lib /us
+ case "${target}" in
+ 
+ *-*-dragonfly*)
+-  NATIVE_LIB_DIRS='/usr/lib /usr/pkg/lib /usr/local/lib'
++  NATIVE_LIB_DIRS='/lib /usr/lib /usr/local/lib'
+   ;;
+ 
+ *-*-freebsd*)
