@@ -3,7 +3,7 @@
 
 PORTNAME=	libaacplus
 PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://media.wnet.ua/~tipok/aacplus/:site1\
 		ftp://ftp.3gpp.org/Specs/archive/26_series/26.410/:site2\
@@ -33,7 +33,6 @@ MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 
 AUTOMAKE_ARGS=	--add-missing
-LIBTOOLIZE_ARGS=--automake
 
 OPTIONS_DEFINE=	FFTW3
 OPTIONS_DEFAULT=FFTW3
