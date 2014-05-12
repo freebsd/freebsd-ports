@@ -4,7 +4,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.11.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
@@ -12,17 +12,16 @@ MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	XML-based font configuration API for X Windows
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
+USES+=		gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig
-USE_GNOME=	ltverhack
 CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
 		--with-templatedir=${PREFIX}/etc/fonts/conf.avail \
 		--with-xmldir=${PREFIX}/etc/fonts \
