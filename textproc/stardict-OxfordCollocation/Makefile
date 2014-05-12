@@ -9,7 +9,7 @@ DISTNAME=	stardict-oxford_collocations-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Oxford English Collocation Dictionary
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 .include "${.CURDIR}/../../russian/stardict-mueller7/files/Makefile.common"
 .include <bsd.port.mk>

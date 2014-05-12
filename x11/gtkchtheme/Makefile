@@ -11,8 +11,7 @@ DISTNAME=	gtk-chtheme-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	GTK2 theme changer
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/gtk-chtheme \

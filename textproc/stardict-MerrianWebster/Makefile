@@ -8,7 +8,7 @@ MASTER_SITES=	http://abloz.com/huzheng/stardict-dic/dict.org/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Merrian Webster 10th dictionary
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 .include "${.CURDIR}/../../russian/stardict-mueller7/files/Makefile.common"
 .include <bsd.port.mk>

@@ -15,8 +15,7 @@ RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
 
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 USE_QT4=	gui network xml imageformats_run \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	xscrnsaver

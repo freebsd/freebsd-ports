@@ -9,9 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt 4 based frontend for QEMU
 
-USE_BZIP2=	yes
 USE_QT4=	gui xml uic_build moc_build rcc_build
-USES=		qmake
+USES=		qmake tar:bzip2
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
 DESKTOP_ENTRIES="QtEmu" "QEMU frontend" "" \

@@ -15,10 +15,9 @@ COMMENT=	Rally car racing game
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
 
-USES=		openal:al,alut
+USES=		openal:al,alut tar:bzip2
 USE_SDL=	sdl image
 USE_GL=		glu
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

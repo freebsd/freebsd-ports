@@ -9,7 +9,7 @@ DISTNAME=	stardict-en-ru-bars-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	New Comprehensive English-Russian dictionary
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 .include "${.CURDIR}/../stardict-mueller7/files/Makefile.common"
 .include <bsd.port.mk>
