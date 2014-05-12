@@ -138,8 +138,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrm share/gnome-menus
 @dirrmtry share/desktop-directories
 @dirrm include/gnome-menus
-@dirrmtry share/gir-1.0
-@dirrmtry lib/girepository-1.0
 @dirrmtry etc/xdg/menus
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK

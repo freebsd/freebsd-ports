@@ -12,8 +12,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the FreeDesktop Desktop Menu Spec
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix intlhack glib20 ltverhack introspection:build
 USES=		pkgconfig gettext gmake pathfix
