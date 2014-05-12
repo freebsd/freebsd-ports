@@ -1283,6 +1283,7 @@
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Thomson.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/TiPhone.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Toshiba.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Unknown.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Vertu.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Vestel.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Videocon.ico
@@ -1295,7 +1296,6 @@
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Zonda.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/eTouch.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/i-mobile.ico
-%%WWWDIR%%/plugins/DevicesDetection/images/brand/unknown.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/screens/camera.png
 %%WWWDIR%%/plugins/DevicesDetection/images/screens/carbrowser.png
 %%WWWDIR%%/plugins/DevicesDetection/images/screens/computer.png
@@ -2965,49 +2965,6 @@
 %%WWWDIR%%/vendor/piwik/device-detector/regexes/mobiles.yml
 %%WWWDIR%%/vendor/piwik/device-detector/regexes/oss.yml
 %%WWWDIR%%/vendor/piwik/device-detector/regexes/televisions.yml
-%%WWWDIR%%/vendor/sebastian/diff/.gitignore
-%%WWWDIR%%/vendor/sebastian/diff/.travis.yml
-%%WWWDIR%%/vendor/sebastian/diff/LICENSE
-%%WWWDIR%%/vendor/sebastian/diff/README.md
-%%WWWDIR%%/vendor/sebastian/diff/build.xml
-%%WWWDIR%%/vendor/sebastian/diff/build/package.xml
-%%WWWDIR%%/vendor/sebastian/diff/composer.json
-%%WWWDIR%%/vendor/sebastian/diff/phpunit.xml.dist
-%%WWWDIR%%/vendor/sebastian/diff/src/Chunk.php
-%%WWWDIR%%/vendor/sebastian/diff/src/Diff.php
-%%WWWDIR%%/vendor/sebastian/diff/src/Differ.php
-%%WWWDIR%%/vendor/sebastian/diff/src/Line.php
-%%WWWDIR%%/vendor/sebastian/diff/src/Parser.php
-%%WWWDIR%%/vendor/sebastian/diff/src/autoload.php
-%%WWWDIR%%/vendor/sebastian/environment/.gitignore
-%%WWWDIR%%/vendor/sebastian/environment/.travis.yml
-%%WWWDIR%%/vendor/sebastian/environment/LICENSE
-%%WWWDIR%%/vendor/sebastian/environment/README.md
-%%WWWDIR%%/vendor/sebastian/environment/build.xml
-%%WWWDIR%%/vendor/sebastian/environment/composer.json
-%%WWWDIR%%/vendor/sebastian/environment/phpunit.xml.dist
-%%WWWDIR%%/vendor/sebastian/environment/src/Runtime.php
-%%WWWDIR%%/vendor/sebastian/exporter/.gitignore
-%%WWWDIR%%/vendor/sebastian/exporter/.travis.yml
-%%WWWDIR%%/vendor/sebastian/exporter/LICENSE
-%%WWWDIR%%/vendor/sebastian/exporter/README.md
-%%WWWDIR%%/vendor/sebastian/exporter/build.xml
-%%WWWDIR%%/vendor/sebastian/exporter/composer.json
-%%WWWDIR%%/vendor/sebastian/exporter/phpunit.xml.dist
-%%WWWDIR%%/vendor/sebastian/exporter/src/Context.php
-%%WWWDIR%%/vendor/sebastian/exporter/src/Exception.php
-%%WWWDIR%%/vendor/sebastian/exporter/src/Exporter.php
-%%WWWDIR%%/vendor/sebastian/version/.gitattributes
-%%WWWDIR%%/vendor/sebastian/version/.gitignore
-%%WWWDIR%%/vendor/sebastian/version/ChangeLog.md
-%%WWWDIR%%/vendor/sebastian/version/LICENSE
-%%WWWDIR%%/vendor/sebastian/version/README.md
-%%WWWDIR%%/vendor/sebastian/version/build.xml
-%%WWWDIR%%/vendor/sebastian/version/build/package.xml
-%%WWWDIR%%/vendor/sebastian/version/build/phpunit.xml
-%%WWWDIR%%/vendor/sebastian/version/composer.json
-%%WWWDIR%%/vendor/sebastian/version/src/Version.php
-%%WWWDIR%%/vendor/sebastian/version/src/autoload.php
 %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/.gitignore
 %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Application.php
 %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/CHANGELOG.md
@@ -3335,17 +3292,6 @@
 @dirrm %%WWWDIR%%/vendor/symfony/console/Symfony
 @dirrm %%WWWDIR%%/vendor/symfony/console
 @dirrm %%WWWDIR%%/vendor/symfony
-@dirrm %%WWWDIR%%/vendor/sebastian/version/src
-@dirrm %%WWWDIR%%/vendor/sebastian/version/build
-@dirrm %%WWWDIR%%/vendor/sebastian/version
-@dirrm %%WWWDIR%%/vendor/sebastian/exporter/src
-@dirrm %%WWWDIR%%/vendor/sebastian/exporter
-@dirrm %%WWWDIR%%/vendor/sebastian/environment/src
-@dirrm %%WWWDIR%%/vendor/sebastian/environment
-@dirrm %%WWWDIR%%/vendor/sebastian/diff/src
-@dirrm %%WWWDIR%%/vendor/sebastian/diff/build
-@dirrm %%WWWDIR%%/vendor/sebastian/diff
-@dirrm %%WWWDIR%%/vendor/sebastian
 @dirrm %%WWWDIR%%/vendor/piwik/device-detector/regexes
 @dirrm %%WWWDIR%%/vendor/piwik/device-detector
 @dirrm %%WWWDIR%%/vendor/piwik
