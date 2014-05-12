@@ -18,5 +18,4 @@ USE_PYTHON=	yes
 USES=		gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
