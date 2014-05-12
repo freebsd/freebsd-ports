@@ -10,7 +10,7 @@ MASTER_SITES=	http://devel.ringlet.net/sysutils/timelimit/
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Limit the absolute execution time of a process
 
-#LICENSE=	BSD - no proof
+LICENSE=	BSD2CLAUSE
 
 CONFLICTS=	netpipes-[0-9]*
 
