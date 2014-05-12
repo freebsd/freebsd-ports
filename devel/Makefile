@@ -1115,6 +1115,7 @@
     SUBDIR += libsoup-reference
     SUBDIR += libspark2012
     SUBDIR += libstatgrab
+    SUBDIR += libstatgrab0
     SUBDIR += libstrfunc
     SUBDIR += libstroke
     SUBDIR += libsysinfo

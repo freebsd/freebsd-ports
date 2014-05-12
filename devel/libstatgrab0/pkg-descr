@@ -1,0 +1,9 @@
+The libstatgrab library provides an easy to use interface for
+accessing system statistics and information. Available statistics
+include CPU, Load, Memory, Swap, Disk I/O, and Network I/O.
+
+Also part of the package are two tools; saidar provides a curses-based
+interface to viewing live system statistics, and statgrab is a
+sysctl-like interface to the statistics.
+
+WWW: http://www.i-scream.org/libstatgrab/
