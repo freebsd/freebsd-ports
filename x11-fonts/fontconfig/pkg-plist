@@ -62,6 +62,7 @@ lib/libfontconfig.a
 lib/libfontconfig.la
 lib/libfontconfig.so
 lib/libfontconfig.so.1
+lib/libfontconfig.so.1.8.0
 libdata/pkgconfig/fontconfig.pc
 man/man1/fc-cache.1.gz
 man/man1/fc-cat.1.gz
