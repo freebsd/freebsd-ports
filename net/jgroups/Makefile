@@ -11,34 +11,33 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Java toolkit for reliable multicast communication
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/LICENSE
+
+OPTIONS_DEFINE=	DOCS
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	jar
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadoc
-.endif
+
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 PORTDATA=	*
 PORTDOCS=	*
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	javadoc
+.endif
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/${DISTNAME}.Final.jar \
-		${JAVAJARDIR}/${PORTNAME}.jar
-.if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-sources.jar \
-		${DATADIR}/
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/dist/README ${DOCSDIR}/
-	@(cd ${WRKSRC}/dist && ${COPYTREE_SHARE} javadoc ${DOCSDIR})
-.endif
+		${STAGEDIR}${DATADIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/dist/README ${STAGEDIR}${DOCSDIR}/
+	@(cd ${WRKSRC}/dist && ${COPYTREE_SHARE} javadoc ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
