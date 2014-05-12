@@ -23,8 +23,7 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 
 WRKSRC=		${WRKDIR}/truecrypt-${PORTVERSION}-source
 
-USES=		fuse iconv pkgconfig
-USE_GMAKE=	yes
+USES=		fuse iconv pkgconfig gmake
 RESTRICTED=	May not be redistributed.  Must accept license to download.
 NO_CDROM=	May not be redistributed.  Must accept license to download.
 NO_PACKAGE=	May not be redistributed.  Must accept license to download.
